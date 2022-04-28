@@ -14,13 +14,13 @@ To make the plugin work better, you may need to check the [page config](../../co
 
 ::: info
 
-`vuepress-theme-hope` provides `seo` options in `themeConfig.plugins` as plugin options to `vuepress-plugin-seo2`.
+`vuepress-theme-hope` passes `plugins.seo` in theme options as plugin options to `vuepress-plugin-seo2`.
 
 :::
 
 The plugin will make your site fully support [Open Content Protocol OGP](https://ogp.me/) and [JSON-LD 1.1](https://www.w3.org/TR/json-ld-api/) to fully enhance the SEO of the site.
 
-If you don’t need this plugin, please set `themeConfig.plugins.seo` to `false`.
+If you don’t need this plugin, please set `plugins.seo` to `false` in theme options.
 
 <!-- more -->
 
@@ -28,7 +28,7 @@ If you don’t need this plugin, please set `themeConfig.plugins.seo` to `false`
 
 The plugin works out of the box. Without any config, it will extract information from the page content as much as possible to complete the necessary tags required by OGP and JSON-LD.
 
-By default, the plugin will read the SiteConfig, ThemeConfig and page frontmatter to automatically generate tags as much as possible. Such as site name, page title, page type, writing date, last update date, and article tags are all automatically generated.
+By default, the plugin will read the site config and page frontmatter to automatically generate tags as much as possible. Such as site name, page title, page type, writing date, last update date, and article tags are all automatically generated.
 
 The following are the `<meta>` tags and their values that will be injected into `<head>` by default:
 
@@ -46,7 +46,7 @@ The following are the `<meta>` tags and their value injected into `<head>` by de
 |        `og:image`        | `themeConfig.hostname` + `page.frontmatter.image` \|\|first image in page \|\| `fallbackImage` in plugin options |
 |    `og:updated_time`     |                                              `page.git.updateTime`                                               |
 |       `og:locale`        |                                                   `page.lang`                                                    |
-|  `og:locale:alternate`   |                                Other languages including in `themeConfig.locales`                                |
+|  `og:locale:alternate`   |                                 Other languages including in `siteData.locales`                                  |
 |      `twitter:card`      |                            `"summary_large_image"` (only available when image found)                             |
 |   `twitter:image:alt`    |                                  `page.title` (only available when image found)                                  |
 |     `article:author`     |                               `page.frontmatter.author` \|\| `themeConfig.author`                                |
@@ -100,17 +100,30 @@ If a page does fit into the "unpopular" genre like books, music, etc., you can h
 
 ### OGP
 
-You can use options `ogp` in `themeConfig.plugins.seo to pass in a function to modify the default OGP object to your needs and return it.
+You can use options `plugins.seo.ogp` in theme optoins. to pass in a function to modify the default OGP object to your needs and return it.
 
 ```ts
-function ogp<ExtendObject = Record<string, unknown>>(
-   /** OGP Object inferred by plugin */
- ogp: SeoContent,
+function ogp<
+  ExtraPageData extends Record<string | number | symbol, unknown> = Record<
+    never,
+    never
+  >,
+  ExtraPageFrontmatter extends Record<
+    string | number | symbol,
+    unknown
+  > = Record<string, unknown>,
+  ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
+    never,
+    never
+  >
+>(
+  /** OGP Object inferred by plugin */
+  ogp: SeoContent,
   /** Page Objext */
-  page: ExtendPage<ExtendObject>,
+  page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   /** VuePress App */
   app: App
-) => SeoContent;
+): SeoContent;
 ```
 
 For detailed parameter structure, see [Config][seo2-config].
@@ -128,14 +141,27 @@ For example, if you are using a third-party theme and set a `banner` in frontmat
 
 ### JSON-LD
 
-Like OGP, you can use `jsonLd` options in `themeConfig.plugins.seo` to pass in a function to modify the default JSON-LD object to your needs and return it.
+Like OGP, you can use `plugins.seo.jsonLd` options in theme options to pass in a function to modify the default JSON-LD object to your needs and return it.
 
 ```ts
-function jsonLd<ExtendObject = Record<string, unknown>>(
+function jsonLd<
+  ExtraPageData extends Record<string | number | symbol, unknown> = Record<
+    never,
+    never
+  >,
+  ExtraPageFrontmatter extends Record<
+    string | number | symbol,
+    unknown
+  > = Record<string, unknown>,
+  ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
+    never,
+    never
+  >
+>(
   /** JSON-LD Object inferred by plugin */
   jsonLD: ArticleJSONLD | null,
   /** Page Objext */
-  page: ExtendPage<ExtendObject>,
+  page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   /** VuePress App */
   app: App
 ): ArticleJSONLD | null;
@@ -149,7 +175,7 @@ Please note that the plugin does not generate JSON-LD for non-article pages, so 
 
 ## Canonical Link
 
-If you are deploying your content to different sites, or same content under different URLs, you may need to set `canonical` option in `themeConfig.plugins.seo` to provide a "Canonical Link" for your page. You can either set a string which will be append before page route link, or adding a custom function `(page: Page) => string | null` to return a canonical link if necessary.
+If you are deploying your content to different sites, or same content under different URLs, you may need to set `plugins.seo.canonical` in theme options to provide a "Canonical Link" for your page. You can either set a string which will be append before page route link, or adding a custom function `(page: Page) => string | null` to return a canonical link if necessary.
 
 ::: tip Example
 
@@ -160,25 +186,39 @@ If your sites are deploy under docs folder in `example.com`, but available in:
 - `http://www.example.com/docs/xxx`
 - `https://www.example.com/docs/xxx` (primary)
 
-To let search engine results always be the primary choise, you may need to set `canonical` to `https://www.example.com/docs/`, so that search engine will know that the fourth URl is prefered to be indexed.
+To let search engine results always be the primary choise, you may need to set `plugins.seo.canonical` to `https://www.example.com/docs/`, so that search engine will know that the fourth URl is prefered to be indexed.
 
 :::
 
 ### Customize head Tags
 
-Sometimes you may need to fit other protocols or provide the corresponding SEO tags in the format provided by other search engines. In this case, you can use the `customHead` option in `themeConfig.plugins.seo`, whose type is:
+Sometimes you may need to fit other protocols or provide the corresponding SEO tags in the format provided by other search engines. In this case, you can use the `plugins.seo.customHead` in theme options, whose type is:
 
 ```ts
-function customHead<ExtendObject = Record<string, unknown>>(
+function customHead<
+  ExtraPageData extends Record<string | number | symbol, unknown> = Record<
+    never,
+    never
+  >,
+  ExtraPageFrontmatter extends Record<
+    string | number | symbol,
+    unknown
+  > = Record<string, unknown>,
+  ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
+    never,
+    never
+  >
+>(
+  /** Head config */
   head: HeadConfig[],
   /** Page Objext */
-  page: ExtendPage<ExtendObject>,
+  page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   /** VuePress App */
   app: App
 ): void;
 ```
 
-You should modify the `head` array in this function directly
+You should modify the `head` array in this function directly.
 
 ## RDFa 1.1
 

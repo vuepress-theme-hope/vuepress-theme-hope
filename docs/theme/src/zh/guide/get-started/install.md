@@ -42,7 +42,7 @@ npm init vuepress-theme-hope@next [dir]
 
 ## 使用
 
-请在配置文件中导入并使用 `defineHopeConfig` 以使用 `vuepress-theme-hope`。
+请在配置文件中导入并使用 `hopeTheme` 以使用 `vuepress-theme-hope`。
 
 :::: code-group
 
@@ -50,10 +50,13 @@ npm init vuepress-theme-hope@next [dir]
 
 ```ts
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  // 此处放置配置
+export default defineUserConfig({
+  theme: hopeTheme({
+    // 此处放置主题配置
+  }),
 });
 ```
 
@@ -63,11 +66,13 @@ export default defineHopeConfig({
 
 ```js
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  // 此处放置配置
-});
+module.exports = {
+  theme: hopeTheme({
+    // 此处放置主题配置
+  }),
+};
 ```
 
 :::

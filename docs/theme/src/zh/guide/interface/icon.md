@@ -18,7 +18,7 @@ tag:
 
 ::: info
 
-图标 class 的前缀默认为空，你很可能需要按照自己的选择通过主题配置中的 `iconPrefix` 选项来更改它。
+图标 class 的前缀默认为空，你很可能需要按照自己的选择通过主题选项中的 `iconPrefix` 选项来更改它。
 
 :::
 
@@ -49,7 +49,7 @@ tag:
 1. 使用 GitHub 或微博登录 Iconfont。
 1. 在网站上方找到 “资源管理 → 我的项目”，点击右上角的 “新建项目” 图标。
 1. 设置可以辨识的项目名称
-1. `FontClass/Symbol 前缀` 填入 `icon-`(你也可以根据自己喜好填写，但需要将此值设置额外前缀 `iconfont` 并设置到 `themeConfig.iconPrefix`)
+1. `FontClass/Symbol 前缀` 填入 `icon-`(你也可以根据自己喜好填写，但需要将此值设置额外前缀 `iconfont` 并设置到在主题选项中的 `iconPrefix`)
 1. Font Family 请保持 `iconfont`
 
 ![新建项目](./assets/iconfont-new.png)
@@ -122,7 +122,7 @@ Font-awesome 当前版本为 6.0.0
 
 :::
 
-同时你需要将 `themeConfig.iconPrefix` 设置为 `"fas fa-"`。
+同时你需要在主题选项中将 `iconPrefix` 设置为 `"fas fa-"`。
 
 ### 使用
 

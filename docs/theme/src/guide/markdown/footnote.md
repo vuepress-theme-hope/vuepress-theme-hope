@@ -19,18 +19,19 @@ Let the Markdown file in your VuePress site support footnotes.
 
 ::: code-group-item TS
 
-```ts {7-9}
+```ts {8-10}
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     plugins: {
       mdEnhance: {
         footnote: true,
       },
     },
-  },
+  }),
 });
 ```
 
@@ -40,17 +41,17 @@ export default defineHopeConfig({
 
 ```js {7-9}
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     plugins: {
       mdEnhance: {
         footnote: true,
       },
     },
-  },
-});
+  }),
+};
 ```
 
 :::

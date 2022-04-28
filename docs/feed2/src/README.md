@@ -23,6 +23,14 @@ copyright: false
 
 :::: code-group
 
+::: code-group-item pnpm
+
+```bash
+pnpm add -D vuepress-plugin-feed2@next
+```
+
+:::
+
 ::: code-group-item yarn
 
 ```bash
@@ -49,11 +57,11 @@ npm i -D vuepress-plugin-feed2@next
 
 ```ts
 // .vuepress/config.ts
-import { feed } from "vuepress-plugin-feed2";
+import { feedPlugin } from "vuepress-plugin-feed2";
 
 export default {
   plugins: [
-    feed({
+    feedPlugin({
       // your options
     }),
   ],
@@ -66,11 +74,11 @@ export default {
 
 ```js
 // .vuepress/config.js
-const { feed } = require("vuepress-plugin-feed2");
+const { feedPlugin } = require("vuepress-plugin-feed2");
 
 module.exports = {
   plugins: [
-    feed({
+    feedPlugin({
       // your options
     }),
   ],

@@ -51,10 +51,10 @@ category:
 
 在 VuePress2 中，你在 `index.scss` 中通过 `@import` 导入网络 CSS 是无效的。你可能需要在 VuePress 配置的 `head` 选项中手动导入它。
 
-<!-- ```js 5-13}
-import { defineHopeConfig } from "vuepress-theme-hope";
+<!-- ```ts {5-13}
+import { defineUserConfig } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
+export default defineUserConfig({
   head: [
     [
       "link",
@@ -71,10 +71,14 @@ export default defineHopeConfig({
 });
 ``` -->
 
-```js {5-11}
-import { defineHopeConfig } from "vuepress-theme-hope";
+:::: code-group
 
-export default defineHopeConfig({
+::: code-group-item TS
+
+```ts {5-11}
+import { defineUserConfig } from "vuepress";
+
+export default defineUserConfig({
   head: [
     [
       "link",
@@ -88,6 +92,30 @@ export default defineHopeConfig({
   // ...
 });
 ```
+
+:::
+
+::: code-group-item HS
+
+```js {3-9}
+module.exports = {
+  head: [
+    [
+      "link",
+      {
+        rel: "stylesheet",
+        href: "//at.alicdn.com/t/font_2410206_mfj6e1vbwo.css",
+      },
+    ],
+  ],
+
+  // ...
+};
+```
+
+:::
+
+::::
 
 ::: info 原因
 

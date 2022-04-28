@@ -131,7 +131,7 @@ If you are not satisfied with the default popup, you can write your own componen
 
 ## Manifest Generation
 
-To ensure the installability of PWA, the site needs to generate a manifest file and declare a valid manifest file address [^manifest] through `link`.
+To ensure the installability of PWA, the site needs to generate a manifest file and declare a valid manifest file address [^manifest] through `<link>`.
 
 [^manifest]: **Manifest File**
 
@@ -160,7 +160,7 @@ If the following fields are not set, they will try to fallback to the following 
 | name                        | `siteConfig.title` \|\| `siteConfig.locales['/'].title` \|\| `"Site"`                                   |
 | short_name                  | `siteConfig.title` \|\| `siteConfig.locales['/'].title` \|\| `"Site"`                                   |
 | description                 | `siteConfig.description` \|\| `siteConfig.locales['/'].description` \|\| `"A site built with vuepress"` |
-| lang                        | `siteConfig.locales['/'].lang` \|\| `themeConfig.locales['/'].lang` \|\| `"en-US"`                      |
+| lang                        | `siteConfig.locales['/'].lang` \|\| `"en-US"`                                                           |
 | start_url                   | `siteConfig.base`                                                                                       |
 | scope                       | `siteConfig.base`                                                                                       |
 | display                     | `"standalone"`                                                                                          |

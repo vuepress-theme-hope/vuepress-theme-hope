@@ -18,7 +18,7 @@ tag:
 
 默认启用，显示在导航栏的外观选项卡中。
 
-如果你不需要这个功能，你可以在主题配置中将 `fullscreen` 设置为 `false`。
+如果你不需要这个功能，你可以在主题选项中将 `fullscreen` 设置为 `false`。
 
 ::: tip
 
@@ -30,15 +30,16 @@ tag:
 
 ::: code-group-item TS
 
-```ts {7}
+```ts {8}
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     // 默认启用
     fullscreen: false,
-  },
+  }),
 });
 ```
 
@@ -48,14 +49,14 @@ export default defineHopeConfig({
 
 ```js {7}
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     // 默认启用
     fullscreen: false,
-  },
-});
+  }),
+};
 ```
 
 :::
@@ -66,4 +67,4 @@ module.exports = defineHopeConfig({
 
 `vuepress-theme-hope` 添加了一个返回顶部控件，默认情况下将在下滑 300px 后显示。
 
-你可以在 `themeConfig` 将 `backToTop` 设置为 `false` 来禁用它，或者是设置为一个数字以更改默认的触发距离。
+你可以在主题选项中设置 `backToTop: false` 来禁用它，或者是设置为一个数字以更改默认的触发距离。

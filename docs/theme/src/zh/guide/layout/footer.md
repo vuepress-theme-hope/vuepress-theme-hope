@@ -15,13 +15,13 @@ tag:
 
 ## 全局配置
 
-在主题配置中，`footer` 字段用于全局配置页脚。你可以在 `themeConfig` 中设置 `footer` 和 `copyright` 全局设置默认的页脚内容与版权信息。
+在主题选项中，`footer` 字段用于全局配置页脚。你可以在主题选项中设置 `footer` 和 `copyright` 全局设置默认的页脚内容与版权信息。
 
-默认情况下页脚不会显示在页面中。如果希望每个页面都显示页脚，需要将 `themeConfig.displayFooter` 设置为 `true`。
+默认情况下页脚不会显示在页面中。如果希望每个页面都显示页脚，需要在主题选项中设置 `displayFooter: true`。
 
 ::: info 多语言配置支持
 
-你可以在 `themeConfig.locales` 中单独为每个语言设置页脚。
+你可以在主题选项中通过 `locales` 为每个语言分别设置页脚。
 
 :::
 
@@ -31,7 +31,7 @@ tag:
 
 ### footer
 
-- 当 `themeConfig.displayFooter` 为 `true` 时，你可以在 frontmatter 中将 `footer` 设置为 `false` 来禁用特定页面的页脚。
+- 当 `displayFooter: true` 时，你可以在 frontmatter 中将 `footer` 设置为 `false` 来禁用特定页面的页脚。
 
 - 当全局显示页脚未开启时，将 `footer` 设置为 `true` 会显示默认的页脚文字。
 
@@ -41,7 +41,7 @@ tag:
 
 `copyright` 字段用于设置特定页面的版权信息，它同样也支持 HTMLString (当你引用了文章且文章使用了特定许可的情况下很有用)。
 
-当然在 `themeConfig.displayFooter` 为 `true` 时，你也可以填入 `false` 来隐藏特定页面的版权信息。
+当然在 `displayFooter: true` 时，你也可以填入 `false` 来隐藏特定页面的版权信息。
 
 ## 例子
 

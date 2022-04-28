@@ -17,7 +17,7 @@ The following options control features provided by theme.
 
 The theme adds blog feature using [`vuepress-plugin-blog2`][blog2], and the feature is **disabled** by default.
 
-To enable blog plugin and use default options, you can set `themeConfig.plugins.blog` to `true`.
+To enable blog plugin and use default options, you can set `plugins.blog` to `true` in theme options.
 
 ::: warning
 
@@ -30,14 +30,14 @@ For details, see [Blog Feature Intro](../../guide/blog/intro.md).
 ### blog.name
 
 - Type: `string`
-- Default: `themeConfig.author`
+- Default: `author`
 
 Blogger name.
 
 ### blog.avatar
 
 - Type: `string`
-- Default: `themeConfig.logo`
+- Default: `logo`
 
 Blogger avatar.
 
@@ -162,7 +162,7 @@ Available values for `ArticleInfo`:
 
 ::: note
 
-You can only set this option directly under `themeConfig`, setting it in each loclae **has NO effect**.
+You can only set this option directly under theme options, setting it in each loclae **has NO effect**.
 
 :::
 

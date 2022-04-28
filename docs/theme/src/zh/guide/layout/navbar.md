@@ -15,7 +15,7 @@ tag:
 
 ## 导航栏链接
 
-你可以通过 `themeConfig.navbar` 配置导航栏链接，它接受一个数组。
+你可以在主题选项中通过 `navbar` 配置导航栏链接，它接受一个数组。
 
 ### 字符串格式
 
@@ -27,12 +27,13 @@ tag:
 
 ```ts
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     navbar: ["/zh/guide/README.md", "/zh/config/README.md", "/zh/faq.md"],
-  },
+  }),
 });
 ```
 
@@ -42,13 +43,13 @@ export default defineHopeConfig({
 
 ```js
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     navbar: ["/zh/guide/README.md", "/zh/config/README.md", "/zh/faq.md"],
-  },
-});
+  }),
+};
 ```
 
 :::
@@ -76,10 +77,11 @@ module.exports = defineHopeConfig({
 
 ```ts
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     navbar: [
       {
         text: "指南",
@@ -98,7 +100,7 @@ export default defineHopeConfig({
         activeMatch: "^/zh/faq",
       },
     ],
-  },
+  }),
 });
 ```
 
@@ -108,10 +110,10 @@ export default defineHopeConfig({
 
 ```js
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     navbar: [
       {
         text: "指南",
@@ -130,8 +132,8 @@ module.exports = defineHopeConfig({
         activeMatch: "^/zh/faq",
       },
     ],
-  },
-});
+  }),
+};
 ```
 
 :::
@@ -162,10 +164,11 @@ module.exports = defineHopeConfig({
 
 ```ts
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     navbar: [
       {
         text: "基础",
@@ -173,7 +176,7 @@ export default defineHopeConfig({
         children: ["/zh/basic/markdown.md", "/zh/basic/vuepress.md"],
       },
     ],
-  },
+  }),
 });
 ```
 
@@ -183,10 +186,10 @@ export default defineHopeConfig({
 
 ```js
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     navbar: [
       {
         text: "基础",
@@ -194,8 +197,8 @@ module.exports = defineHopeConfig({
         children: ["/zh/basic/markdown.md", "/zh/basic/vuepress.md"],
       },
     ],
-  },
-});
+  }),
+};
 ```
 
 :::
@@ -212,10 +215,11 @@ module.exports = defineHopeConfig({
 
 ```ts
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     navbar: [
       {
         text: "基础",
@@ -224,7 +228,7 @@ export default defineHopeConfig({
         children: ["markdown.md", "vuepress.md"],
       },
     ],
-  },
+  }),
 });
 ```
 
@@ -234,10 +238,10 @@ export default defineHopeConfig({
 
 ```js
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     navbar: [
       {
         text: "基础",
@@ -246,8 +250,8 @@ module.exports = defineHopeConfig({
         children: ["markdown.md", "vuepress.md"],
       },
     ],
-  },
-});
+  }),
+};
 ```
 
 :::
@@ -262,10 +266,11 @@ module.exports = defineHopeConfig({
 
 ```ts
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     navbar: [
       {
         text: "插件列表",
@@ -286,7 +291,7 @@ export default defineHopeConfig({
         ],
       },
     ],
-  },
+  }),
 });
 ```
 
@@ -296,10 +301,10 @@ export default defineHopeConfig({
 
 ```js
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     navbar: [
       {
         text: "插件列表",
@@ -320,8 +325,8 @@ module.exports = defineHopeConfig({
         ],
       },
     ],
-  },
-});
+  }),
+};
 ```
 
 :::
@@ -338,12 +343,13 @@ module.exports = defineHopeConfig({
 
 ```ts
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     navbar: false,
-  },
+  }),
 });
 ```
 
@@ -353,13 +359,13 @@ export default defineHopeConfig({
 
 ```js
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     navbar: false,
-  },
-});
+  }),
+};
 ```
 
 :::
@@ -376,7 +382,7 @@ navbar: false
 
 ## 网站图标
 
-你可以使用 `themeConfig.logo` 来配置站点的图标，请填入绝对路径。
+你可以在主题选项中使用 `logo` 来配置站点的图标，请填入绝对路径。
 
 ::: note 笔记
 
@@ -392,12 +398,13 @@ navbar: false
 
 ```ts
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     logo: "/logo.png",
-  },
+  }),
 });
 ```
 
@@ -407,13 +414,13 @@ export default defineHopeConfig({
 
 ```js
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     logo: "/logo.png",
-  },
-});
+  }),
+};
 ```
 
 :::
@@ -422,7 +429,7 @@ module.exports = defineHopeConfig({
 
 ::: tip
 
-你可以设置 `themeConfig.logoDark` 以在深色模式下显示另一个 Logo。
+你可以在主题选项中设置 `logoDark` 以在深色模式下显示另一个 Logo。
 
 :::
 
@@ -436,10 +443,11 @@ module.exports = defineHopeConfig({
 
 ```ts
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     locales: {
       "/": {
         logo: "/logo.svg",
@@ -454,7 +462,7 @@ export default defineHopeConfig({
         ],
       },
     },
-  },
+  }),
 });
 ```
 
@@ -464,10 +472,10 @@ export default defineHopeConfig({
 
 ```js
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     locales: {
       "/": {
         logo: "/logo.svg",
@@ -482,8 +490,8 @@ module.exports = defineHopeConfig({
         ],
       },
     },
-  },
-});
+  }),
+};
 ```
 
 :::
@@ -498,9 +506,9 @@ module.exports = defineHopeConfig({
 
 ## Git 仓库和编辑链接
 
-当你提供了 `themeConfig.repo` 选项，将会自动在每个页面的导航栏生成源文件仓库按钮。
+当你在主题选项中提供了 `repo` 选项，将会自动在每个页面的导航栏生成源文件仓库按钮。
 
-你可以通过 `themeConfig.repoDisplay` 控制是否显示仓库按钮。
+你可以在主题选项中通过 `repoDisplay` 控制是否显示仓库按钮。
 
 :::: code-group
 
@@ -508,24 +516,19 @@ module.exports = defineHopeConfig({
 
 ```ts
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     // 默认为 GitHub. 同时也可以是一个完整的 URL
     repo: "vuepress-theme-hope/vuepress-theme-hope",
-    // 自定义仓库链接文字。默认从 `themeConfig.repo` 中自动推断为
+    // 自定义仓库链接文字。默认从 `repo` 中自动推断为
     // "GitHub" / "GitLab" / "Gitee" / "Bitbucket" 其中之一，或是 "Source"。
     repoLabel: "GitHub",
     // 是否在导航栏内显示仓库链接，默认为 `true`
     repoDisplay: true,
-    // 文档所在仓库，默认同 `repo`
-    docsRepo: "vuepress-theme-hope/docs",
-    // 文档所在分支，默认为 `"main"`
-    docsBranch: "main",
-    // 文档路径，默认为 `""`
-    docsDir: "docs",
-  },
+  }),
 });
 ```
 
@@ -535,25 +538,19 @@ export default defineHopeConfig({
 
 ```js
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     // 默认为 GitHub. 同时也可以是一个完整的 URL
     repo: "vuepress-theme-hope/vuepress-theme-hope",
-    // 自定义仓库链接文字。默认从 `themeConfig.repo` 中自动推断为
+    // 自定义仓库链接文字。默认从 `repo` 中自动推断为
     // "GitHub" / "GitLab" / "Gitee" / "Bitbucket" 其中之一，或是 "Source"。
     repoLabel: "GitHub",
     // 是否在导航栏内显示仓库链接，默认为 `true`
     repoDisplay: true,
-    // 文档所在仓库，默认同 `repo`
-    docsRepo: "vuepress-theme-hope/docs",
-    // 文档所在分支，默认为 `"main"`
-    docsBranch: "main",
-    // 文档路径，默认为 `""`
-    docsDir: "docs",
-  },
-});
+  }),
+};
 ```
 
 :::
@@ -570,7 +567,7 @@ module.exports = defineHopeConfig({
 
 ## 相关助手与类型
 
-`vuepress-theme-hope` 将导航栏的类型导出为 `HopeThemeNavbarConfig`，同时，提供了一个 `defineNavbarConfig` Helper 函数。它们可以在 TS 和 JS 中提供导航栏配置的校验与自动补全。
+`vuepress-theme-hope` 将导航栏的类型导出为 `HopeThemeNavbarConfig`，同时，提供了一个 `navbar` Helper 函数。它们可以在 TS 和 JS 中提供导航栏配置的校验与自动补全。
 
 ::: tip
 
@@ -584,9 +581,9 @@ module.exports = defineHopeConfig({
 
 ```ts
 // .vuepress/navbar.ts
-import { defineNavbarConfig } from "vuepress-theme-hope";
+import { navbar } from "vuepress-theme-hope";
 
-export default defineNavbarConfig([
+export default navbar([
   /* 你的导航栏配置 */
 ]);
 ```
@@ -612,9 +609,9 @@ export default navbarConfig;
 
 ```js
 // .vuepress/navbar.js
-const { defineNavbarConfig } = require("vuepress-theme-hope");
+const { navbar } = require("vuepress-theme-hope");
 
-module.exports = defineNavbarConfig([
+module.exports = navbar([
   /* 你的导航栏配置 */
 ]);
 ```
@@ -638,9 +635,9 @@ module.exports = defineNavbarConfig([
 ::: code-group-item JS
 
 ```js
-const { defineNavbarConfig } = require("vuepress-theme-hope");
+const { navbar } = require("vuepress-theme-hope");
 
-module.exports = defineNavbarConfig([
+module.exports = navbar([
   "/zh/guide/",
   "/zh/config/",
   "/zh/faq/",
@@ -648,7 +645,7 @@ module.exports = defineNavbarConfig([
     text: "教程",
     icon: "guide",
     prefix: "/zh/cookbook/",
-    children: ["tutorial/", "markdown/", "vuepress/"],
+    children: ["tutorial/", "markdown/", "vuepress/", "advanced/"],
   },
   "/zh/migration/",
   {
@@ -689,6 +686,11 @@ module.exports = defineNavbarConfig([
             link: "https://vuepress-theme-hope.github.io/v2/copy-code/zh/",
           },
           {
+            text: "版权信息插件",
+            icon: "copyright",
+            link: "https://vuepress-theme-hope.github.io/v2/copyright/zh/",
+          },
+          {
             text: "Feed 插件",
             icon: "rss",
             link: "https://vuepress-theme-hope.github.io/v2/feed/zh/",
@@ -719,6 +721,11 @@ module.exports = defineNavbarConfig([
             link: "https://vuepress-theme-hope.github.io/v2/reading-time/zh/",
           },
           {
+            text: "重定向插件",
+            icon: "navigation",
+            link: "https://vuepress-theme-hope.github.io/v2/redirect/zh/",
+          },
+          {
             text: "Sass 调色板插件",
             icon: "palette",
             link: "https://vuepress-theme-hope.github.io/v2/sass-palette/zh/",
@@ -727,6 +734,11 @@ module.exports = defineNavbarConfig([
             text: "Seo 插件",
             icon: "strong",
             link: "https://vuepress-theme-hope.github.io/v2/seo/zh/",
+          },
+          {
+            text: "Sitemap 插件",
+            icon: "sitemap",
+            link: "https://vuepress-theme-hope.github.io/v2/sitemap/zh/",
           },
         ],
       },

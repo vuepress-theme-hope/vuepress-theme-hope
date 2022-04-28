@@ -22,7 +22,7 @@ Please **DO NOT USE** this encryption function for any sensitive and confidentia
 
 ## Local Encryption
 
-You can configure encryption options through the `config` field in `themeConfig.encrypt`.
+You can configure encryption options through the `encrypt.config` options in theme options.
 
 :::: code-group
 
@@ -30,10 +30,11 @@ You can configure encryption options through the `config` field in `themeConfig.
 
 ```ts
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     encrypt: {
       config: {
         // This will encrypt the entire guide directory, and both passwords are available
@@ -42,8 +43,8 @@ export default defineHopeConfig({
         "/config/page.html": "1234",
       },
     },
-  },
-});
+  }),
+};
 ```
 
 :::
@@ -52,10 +53,10 @@ export default defineHopeConfig({
 
 ```js
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     encrypt: {
       config: {
         // This will encrypt the entire guide directory, and both passwords are available
@@ -64,8 +65,8 @@ module.exports = defineHopeConfig({
         "/config/page.html": "1234",
       },
     },
-  },
-});
+  }),
+};
 ```
 
 :::
@@ -82,9 +83,9 @@ The salted hash value of the number `1234` and the string `"1234"` is different!
 
 ## Global encryption
 
-In some cases, you may want to encrypt the entire site, you can set `themeConfig.encrypt.status` to `global` to achieve it.
+In some cases, you may want to encrypt the entire site, you can set `encrypt.status: "global"` in theme options to do that.
 
-For global encryption, you can set one or more passwords in the format of string or string array in `themeConfig.encrypt.global`.
+For global encryption, you can set one or more passwords in the format of string or string array in `encrypt.global`.
 
 ::: tip
 

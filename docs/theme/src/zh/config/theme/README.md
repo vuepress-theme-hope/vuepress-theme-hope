@@ -26,38 +26,4 @@ tag:
 
 你可以查看 [本文档的配置][docs-config] 作为案例。
 
-## Helper 函数
-
-我们提供了 `themeConfig` Helper 函数，你可以引入它来提供自动补全和校验:
-
-:::: code-group
-
-::: code-group-item TS
-
-```ts
-// .vuepress/config.ts
-import { themeConfig } from "vuepress-theme-hope";
-
-export default themeConfig({
-  // 此处放置主题配置
-});
-```
-
-:::
-
-::: code-group-item JS
-
-```js
-// .vuepress/config.js
-const { themeConfig } = require("vuepress-theme-hope");
-
-module.exports = themeConfig({
-  // 此处放置主题配置
-});
-```
-
-:::
-
-::::
-
-[docs-config]: https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/docs/theme/src/.vuepress/themeConfig.ts
+[docs-config]: https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/docs/theme/src/.vuepress/theme.ts

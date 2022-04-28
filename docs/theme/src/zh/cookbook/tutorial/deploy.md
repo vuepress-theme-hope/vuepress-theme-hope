@@ -15,7 +15,7 @@ tag:
 
 ## 构建项目
 
-当你在本地完成项目的初步开发后，你就可以使用 `yarn docs:build` 命令构建网站。
+当你在本地完成项目的初步开发后，你就可以使用 `pnpm docs:build` 命令构建网站。
 
 如果你在使用模板，网站内容将会输出到 VuePress 项目的 `.vuepress/dist` 文件夹下。这些文件就是 VuePress 的最终输出结果。
 
@@ -58,22 +58,24 @@ jobs:
           # 如果你文档需要 Git 子模块，取消注释下一行
           # submodules: true
 
-      - uses: actions/cache@v3
-        id: node-modules
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
         with:
-          path: node_modules/
-          key: ${{ runner.os }}-node-modules-${{ hashFiles('yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-node-modules-
+          version: 6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: pnpm
 
       - name: Install Deps
-        if: steps.node-modules.outputs.cache-hit != 'true'
-        run: yarn install --frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: Build Docs
         env:
           NODE_OPTIONS: --max_old_space_size=8192
-        run: yarn run build:webpack
+        run: pnpm docs:build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4

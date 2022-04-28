@@ -10,7 +10,7 @@ dir:
 
 ::: info
 
-All the plugin settings are under `themeConfig.plugins`, and the option name is related with their names.
+All the plugin settings are under `plugins` field in theme options, and the option name is related with their names.
 
 :::
 

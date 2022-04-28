@@ -14,7 +14,7 @@ tag:
 
 `vuepress-plugin-pwa2` 插件默认禁用，提供渐进式网络应用程序支持。
 
-`vuepress-theme-hope` 将 `themeConfig.plugins.pwa` 作为插件选项传递给 `vuepress-plugin-pwa2` 插件。
+`vuepress-theme-hope` 将主题选项中的 `plugins.pwa` 作为插件选项传递给 `vuepress-plugin-pwa2` 插件。
 
 ::: tip 快速启用
 
@@ -51,7 +51,7 @@ tag:
 - name: `siteConfig.title` || `siteConfig.locales['/'].title` || `"Site"`
 - short_name: `siteConfig.title` || `siteConfig.locales['/'].title` || `"Site"`
 - description: `siteConfig.description` || `siteConfig.locales['/'].description` || `"A site built with vuepress"`
-- lang: `siteConfig.locales['/'].lang` || `themeConfig.locales['/'].lang` || `"en-US"`
+- lang: `siteConfig.locales['/'].lang` || `"en-US"`
 - start_url: `context.base`
 - scope: `context.base`
 

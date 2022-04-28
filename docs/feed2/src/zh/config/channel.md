@@ -31,7 +31,6 @@ icon: config
 - 类型: `string`
 - 默认值:
   - `siteConfig.lcoales['/'].locales`
-  - 如果上述未提供，回退到 `themeConfig.lcoales['/'].locales`
   - 如果上述未提供，回退到 `"en-US"`
 
 频道使用的语言
@@ -40,8 +39,7 @@ icon: config
 
 - 类型: `string`
 - 默认值:
-  - `themeConfig.footer.copyright` (页脚版权信息)
-  - 如果上述未提供，尝试读取 `themeConfig.author` 与 channel 选项中的 `author.name`， 回退到 `Copyright by $author`
+  - 尝试读取 channel 选项中的 `author.name` 生成 `Copyright by $author`
 - 建议自行设置: **是**
 
 频道版权信息
@@ -85,7 +83,6 @@ icon: config
 ## channel.author
 
 - 类型: `FeedAuthor`
-- 默认值: 尝试读取 `themeConfig.author` 生成 name 选项
 - 建议自行设置: **是**
 
 频道的作者。

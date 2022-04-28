@@ -16,7 +16,7 @@ The `vuepress-plugin-copyright2` plugin can append copyright infomation when use
 
 This plugin is disabled by default.
 
-`vuepress-theme-hope` passes `themeConfig.plugins.copyright` as plugin options to the `vuepress-plugin-copyright2` plugin.
+`vuepress-theme-hope` passes `plugins.copyright` in theme options as plugin options to `vuepress-plugin-copyright2` plugin.
 
 ## Plugin Options
 

@@ -11,23 +11,28 @@ category:
 
 ## 克隆并安装项目
 
-使用 Git 克隆项目到本地，并使用 `yarn` 进行依赖的安装。
+使用 Git 克隆项目到本地，并使用 `pnpm` 进行依赖的安装。
 
 ```sh
 git clone git@github.com:vuepress-theme-hope/vuepress-theme-hope.git
 
-yarn
+pnpm i
 ```
 
 ::: tip
 
-如果你并未安装 yarn，请使用 `npm i -g yarn` 安装它。
+如果你并未安装 pnpm，请使用下列命令安装它:
+
+```sh
+corepack enable
+corepack prepare pnpm@6.32.10 --activate
+```
 
 :::
 
 ## 项目文件结构
 
-本项目是一个 monorepo，使用 `lerna` 管理。
+本项目是一个 monorepo，使用 pnpm 管理。
 
 - docs: 放置各插件与主题的文档，每个子文件夹为一个项目
 - demo: 主题演示项目
@@ -84,22 +89,20 @@ yarn
 ├── README.md → 项目介绍
 ├── SECURITY.md → 安全政策文件
 │
-├── tsconfig.* → TypeScript 配置文件
-│
-└── yarn.lock → yarn 版本 lock 文件
+└── tsconfig.* → TypeScript 配置文件
 ```
 
 ## 文档修改
 
 你可以直接在 docs 文件夹内找到对应项目，并修改对应的 Markdown。
 
-确保 `yarn run lint` 与 `yarn run lint:md` 命令没有错误后，即可提交到 GitHub 发起 PR。
+确保 `pnpm lint` 与 `pnpm lint:md` 命令没有错误后，即可提交到 GitHub 发起 PR。
 
 ::: tip 预览文档
 
-由于文档使用的是本地主题和插件，因此您需要先通过 `yarn run build` 构建本地项目。
+由于文档使用的是本地主题和插件，因此您需要先通过 `pnpm build` 构建本地项目。
 
-之后在 `docs` 目录下的正确文档项目文件夹打开终端，运行 `yarn docs:vite-serve` (使用 vite) 或 `yarn docs:webpack-serve` (使用 webpack)。
+之后在 `docs` 目录下的正确文档项目文件夹打开终端，运行 `pnpm docs:vite-serve` (使用 vite) 或 `pnpm docs:webpack-serve` (使用 webpack)。
 
 :::
 
@@ -141,25 +144,25 @@ yarn
 
 ### 命令
 
-1. 构建项目: `yarn run build`
+1. 构建项目: `pnpm build`
 
-   它会执行 `yarn run build:copy` 和 `yarn run build:ts` 两个命令，对应前文的两种构建步骤。
+   它会执行 `pnpm build:copy` 和 `pnpm build:ts` 两个命令，对应前文的两种构建步骤。
 
-1. 开发项目: `yarn run dev`
+1. 开发项目: `pnpm dev`
 
-   它会执行 `yarn run dev:copy` 和 `yarn run dev:ts` 两个命令，执行并监听前文的两种构建步骤。
+   它会执行 `pnpm dev:copy` 和 `pnpm dev:ts` 两个命令，执行并监听前文的两种构建步骤。
 
-1. 格式化项目: `yarn run lint`
+1. 格式化项目: `pnpm lint`
 
-   它会执行 `yarn run lint:eslint` 和 `yarn run lint:prettier` 两个命令。
+   它会执行 `pnpm lint:eslint` 和 `pnpm lint:prettier` 两个命令。
 
-   如果你修改了 Markdown，你还需要运行 `yarn run lint:md` 命令。
+   如果你修改了 Markdown，你还需要运行 `pnpm lint:md` 命令。
 
 ::: warning
 
 请不要混用构建和开发命令，因为它们的构建方式完全不同。
 
-你可能需要执行 `yarn run clean` 命令来清除上一次的构建结果。
+你可能需要执行 `pnpm clean` 命令来清除上一次的构建结果。
 
 :::
 

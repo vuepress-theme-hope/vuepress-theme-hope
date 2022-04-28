@@ -21,6 +21,14 @@ copyright: false
 
 :::: code-group
 
+::: code-group-item pnpm
+
+```bash
+pnpm add -D vuepress-plugin-comment2@next
+```
+
+:::
+
 ::: code-group-item yarn
 
 ```bash
@@ -47,11 +55,11 @@ npm i -D vuepress-plugin-comment2@next
 
 ```ts
 // .vuepress/config.ts
-import { comment } from "vuepress-plugin-comment2";
+import { commentPlugin } from "vuepress-plugin-comment2";
 
 export default {
   plugins: [
-    comment({
+    commentPlugin({
       // 插件选项
     }),
   ],
@@ -64,11 +72,11 @@ export default {
 
 ```js
 // .vuepress/config.js
-const { comment } = require("vuepress-plugin-comment2");
+const { commentPlugin } = require("vuepress-plugin-comment2");
 
 module.exports = {
   plugins: [
-    comment({
+    commentPlugin({
       // 插件选项
     }),
   ],

@@ -30,7 +30,6 @@ A basic project structure is as follows:
 ├── .github (optional) → GitHub config file storage path
 │     └── workflow → GitHub workflow configuration
 │          └── docs-deploy.yml → Workflow for automatic deployment of documents
-│
 |
 ├── docs → project folder specified by you
 │    │
