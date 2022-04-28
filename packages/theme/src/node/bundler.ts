@@ -17,11 +17,11 @@ import type { WebpackBundlerOptions } from "@vuepress/bundler-webpack";
  * @param customElements tags recognized as custom element
  */
 export const checkTag = (app: App): void => {
-  const { bundler, bundlerConfig } = app.options;
+  const { bundler } = app.options;
 
   // for vite
-  if (bundler.endsWith("vite")) {
-    const viteBundlerConfig: ViteBundlerOptions = bundlerConfig;
+  if (bundler.name === "vite") {
+    const viteBundlerConfig: ViteBundlerOptions = (bundler as any).config;
 
     if (!viteBundlerConfig.vuePluginOptions)
       viteBundlerConfig.vuePluginOptions = {};
@@ -50,8 +50,8 @@ export const checkTag = (app: App): void => {
   }
 
   // for webpack
-  if (bundler.endsWith("webpack")) {
-    const webpackBundlerConfig: WebpackBundlerOptions = bundlerConfig;
+  if (bundler.name === "webpack") {
+    const webpackBundlerConfig: WebpackBundlerOptions = (bundler as any).config;
 
     if (!webpackBundlerConfig.vue) webpackBundlerConfig.vue = {};
     if (!webpackBundlerConfig.vue.compilerOptions)

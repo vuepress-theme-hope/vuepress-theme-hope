@@ -15,10 +15,10 @@ import { prepareCategory } from "./category";
 import { prepareType } from "./type";
 import { getPageMap, logger } from "./utils";
 
-import type { Plugin, PluginConfig } from "@vuepress/core";
+import type { PluginObject } from "@vuepress/core";
 import type { BlogOptions } from "../shared";
 
-export const blogPlugin: Plugin<BlogOptions> = (options) => {
+export const blogPlugin = (options: BlogOptions): PluginObject => {
   const {
     getInfo = (): Record<string, never> => ({}),
     filter = (page): boolean =>
@@ -157,7 +157,3 @@ export const blogPlugin: Plugin<BlogOptions> = (options) => {
     },
   };
 };
-
-export const blog = (
-  options: BlogOptions | false
-): PluginConfig<BlogOptions> => ["blog2", options];

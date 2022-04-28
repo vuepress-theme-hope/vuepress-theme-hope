@@ -677,6 +677,7 @@ importers:
       sass-loader: ^12.6.0
       three: 0.139.2
       vue: 3.2.33
+      vuepress-plugin-md-enhance: workspace:*
       vuepress-theme-hope: workspace:*
       vuepress-vite: 2.0.0-beta.41
       vuepress-webpack: 2.0.0-beta.41
@@ -690,6 +691,7 @@ importers:
       sass-loader: 12.6.0
       three: 0.139.2
       vue: 3.2.33
+      vuepress-plugin-md-enhance: link:../../packages/md-enhance
       vuepress-theme-hope: link:../../packages/theme
       vuepress-vite: 2.0.0-beta.41_sass-loader@12.6.0
       vuepress-webpack: 2.0.0-beta.41_sass-loader@12.6.0

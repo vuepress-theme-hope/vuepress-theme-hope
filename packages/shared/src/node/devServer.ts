@@ -25,11 +25,11 @@ export const useCustomDevServer = (
   getResponse: (request?: IncomingMessage) => Promise<string | Buffer>,
   errMsg = "The server encounted an error"
 ): void => {
-  const { base, bundler, bundlerConfig } = app.options;
+  const { base, bundler } = app.options;
 
   // for vite
-  if (app.env.isDev && bundler.endsWith("vite")) {
-    const viteBundlerConfig: ViteBundlerOptions = bundlerConfig;
+  if (app.env.isDev && bundler.name === "vite") {
+    const viteBundlerConfig: ViteBundlerOptions = (bundler as any).config;
     const handler: HandleFunction = (
       request: IncomingMessage,
       response: ServerResponse
@@ -59,8 +59,8 @@ export const useCustomDevServer = (
   }
 
   // for webpack
-  if (app.env.isDev && bundler.endsWith("webpack")) {
-    const webpackBundlerConfig: WebpackBundlerOptions = bundlerConfig;
+  if (app.env.isDev && bundler.name === "webpack") {
+    const webpackBundlerConfig: WebpackBundlerOptions = (bundler as any).config;
 
     const { devServerSetupMiddlewares } = webpackBundlerConfig;
 

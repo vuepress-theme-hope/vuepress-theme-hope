@@ -12,12 +12,11 @@ import type {
 } from "../shared";
 
 export const handleCrytoForWebpack = (app: App): void => {
-  const { bundler, bundlerConfig } = app.options;
+  const { bundler } = app.options;
 
   // for webpack
-  if (bundler.endsWith("webpack")) {
-    const webpackBundlerConfig: WebpackBundlerOptions =
-      bundlerConfig as WebpackBundlerOptions;
+  if (bundler.name === "webpack") {
+    const webpackBundlerConfig: WebpackBundlerOptions = (bundler as any).config;
     const { configureWebpack } = webpackBundlerConfig;
 
     webpackBundlerConfig.configureWebpack = (

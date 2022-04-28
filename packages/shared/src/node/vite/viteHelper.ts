@@ -10,8 +10,10 @@ export const addViteOptimizeDepsInclude = (
   app: App,
   module: string | string[]
 ): void => {
-  if (app.options.bundler.endsWith("vite")) {
-    const bundlerConfig: ViteBundlerOptions = app.options.bundlerConfig;
+  const { bundler } = app.options;
+
+  if (bundler.name === "vite") {
+    const bundlerConfig: ViteBundlerOptions = (bundler as any).config;
 
     bundlerConfig.viteOptions = mergeViteConfig(
       bundlerConfig.viteOptions as Record<string, unknown>,
@@ -37,8 +39,10 @@ export const addViteOptimizeDepsExclude = (
   app: App,
   module: string | string[]
 ): void => {
-  if (app.options.bundler.endsWith("vite")) {
-    const bundlerConfig: ViteBundlerOptions = app.options.bundlerConfig;
+  const { bundler } = app.options;
+
+  if (bundler.name === "vite") {
+    const bundlerConfig: ViteBundlerOptions = (bundler as any).config;
 
     bundlerConfig.viteOptions = mergeViteConfig(
       bundlerConfig.viteOptions as Record<string, unknown>,
@@ -64,8 +68,10 @@ export const addViteSsrExternal = (
   app: App,
   module: string | string[]
 ): void => {
-  if (app.options.bundler.endsWith("vite")) {
-    const bundlerConfig: ViteBundlerOptions = app.options.bundlerConfig;
+  const { bundler } = app.options;
+
+  if (bundler.name === "vite") {
+    const bundlerConfig: ViteBundlerOptions = (bundler as any).config;
 
     bundlerConfig.viteOptions = mergeViteConfig(
       bundlerConfig.viteOptions as Record<string, unknown>,
@@ -85,8 +91,10 @@ export const addViteSsrNoExternal = (
   app: App,
   module: string | string[]
 ): void => {
-  if (app.options.bundler.endsWith("vite")) {
-    const bundlerConfig: ViteBundlerOptions = app.options.bundlerConfig;
+  const { bundler } = app.options;
+
+  if (bundler.name === "vite") {
+    const bundlerConfig: ViteBundlerOptions = (bundler as any).config;
 
     bundlerConfig.viteOptions = mergeViteConfig(
       bundlerConfig.viteOptions as Record<string, unknown>,

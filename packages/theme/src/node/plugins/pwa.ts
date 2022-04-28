@@ -1,8 +1,10 @@
-import { pwa } from "vuepress-plugin-pwa2";
+import { pwaPlugin } from "vuepress-plugin-pwa2";
 
-import type { PluginConfig } from "@vuepress/core";
+import type { Plugin } from "@vuepress/core";
 import type { PWAOptions } from "vuepress-plugin-pwa2";
 
-export const resolvePWAPlugin = (
-  options?: PWAOptions | boolean
-): PluginConfig => pwa(options === true ? {} : options || false);
+export const getPWAPlugin = (options?: PWAOptions | boolean): Plugin | null => {
+  if (options === false) return null;
+
+  return pwaPlugin(typeof options === "object" ? options : {});
+};

@@ -1,5 +1,5 @@
 import { defineNavbarConfig } from "vuepress-theme-hope";
-import { version } from "../../../../../lerna.json";
+import { version } from "vuepress-theme-hope/package.json";
 
 export const zh = defineNavbarConfig([
   "/zh/",

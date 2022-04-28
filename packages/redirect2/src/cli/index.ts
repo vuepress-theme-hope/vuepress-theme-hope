@@ -4,8 +4,9 @@ import {
   allowTs,
   loadUserConfig,
   transformUserConfigToPlugin,
+  resolveAppConfig,
+  resolveCliAppConfig,
   resolveUserConfigConventionalPath,
-  resolveAppConfigFromCommandOptions,
 } from "@vuepress/cli";
 import { removeEndingSlash, removeLeadingSlash } from "@vuepress/shared";
 import { fs, logger, path } from "@vuepress/utils";
@@ -60,8 +61,8 @@ cli
       // allow ts files globally
       allowTs();
 
-      // resolve base app config
-      const cliAppConfig = resolveAppConfigFromCommandOptions(sourceDir, {});
+      // resolve app config from cli options
+      const cliAppConfig = resolveCliAppConfig(sourceDir, {});
 
       // resolve user config file
       const userConfigPath = resolveUserConfigConventionalPath(
@@ -70,12 +71,17 @@ cli
 
       const userConfig = await loadUserConfig(userConfigPath);
 
-      // create vuepress app
-      const app = createBuildApp({
-        // use cli options to override config file
-        ...userConfig,
-        ...cliAppConfig,
+      // resolve the final app config to use
+      const appConfig = resolveAppConfig({
+        defaultAppConfig: {},
+        cliAppConfig,
+        userConfig,
       });
+
+      if (appConfig === null) return;
+
+      // create vuepress app
+      const app = createBuildApp(appConfig);
 
       // use user-config plugin
       app.use(transformUserConfigToPlugin(app, userConfig));
