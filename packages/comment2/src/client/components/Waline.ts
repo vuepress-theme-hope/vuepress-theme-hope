@@ -1,13 +1,6 @@
 import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
 import { usePageFrontmatter, usePageLang, withBase } from "@vuepress/client";
-import {
-  computed,
-  defineComponent,
-  h,
-  onBeforeUnmount,
-  onMounted,
-  watch,
-} from "vue";
+import { computed, defineComponent, h, onMounted, watch } from "vue";
 import { useRoute } from "vue-router";
 import { enableWaline, walineLocales, walineOption } from "../define";
 import { Waline } from "@waline/client/dist/component";
@@ -29,7 +22,6 @@ export default defineComponent({
     const walineLocale = useLocaleConfig(walineLocales);
 
     let abort: () => void;
-    let stopHandler: () => void;
 
     const enableComment = computed(() => {
       if (!enableWaline) return false;
@@ -73,7 +65,7 @@ export default defineComponent({
     }));
 
     onMounted(() => {
-      stopHandler = watch(
+      watch(
         () => route.path,
         () => {
           abort?.();
@@ -88,10 +80,6 @@ export default defineComponent({
         },
         { immediate: true }
       );
-    });
-
-    onBeforeUnmount(() => {
-      stopHandler();
     });
 
     return (): VNode =>

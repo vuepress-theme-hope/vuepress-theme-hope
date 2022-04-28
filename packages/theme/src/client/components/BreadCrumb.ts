@@ -1,19 +1,11 @@
 import { resolveRouteWithRedirect } from "@mr-hope/vuepress-shared/lib/client";
 import { usePageFrontmatter, useRouteLocale } from "@vuepress/client";
-import {
-  computed,
-  defineComponent,
-  h,
-  onMounted,
-  onUnmounted,
-  watch,
-  ref,
-} from "vue";
+import { computed, defineComponent, h, onMounted, watch, ref } from "vue";
 import { RouterLink, useRoute, useRouter } from "vue-router";
 import { useIconPrefix, useThemeLocaleData } from "@theme-hope/composables";
 import { getAncestorLinks } from "@theme-hope/utils";
 
-import type { WatchStopHandle, VNode } from "vue";
+import type { VNode } from "vue";
 import type { HopeThemeNormalPageFrontmatter } from "../../shared";
 
 import "../styles/breadcrumb.scss";
@@ -78,15 +70,9 @@ export default defineComponent({
       if (breadcrumbConfig.length > 1) config.value = breadcrumbConfig;
     };
 
-    let stopHandler: WatchStopHandle;
-
     onMounted(() => {
       void getBreadCrumbConfig();
-      stopHandler = watch(() => route.path, getBreadCrumbConfig);
-    });
-
-    onUnmounted(() => {
-      stopHandler();
+      watch(() => route.path, getBreadCrumbConfig);
     });
 
     return (): VNode =>

@@ -5,7 +5,6 @@ import {
 } from "@vuepress/client";
 import { computed, onBeforeUnmount, onMounted, watchEffect } from "vue";
 
-import type { WatchStopHandle } from "vue";
 import type { CopyrightPluginFrontmatter } from "../shared";
 
 declare const COPYRIGHT_TRIGGER_WORDS: number;
@@ -13,10 +12,9 @@ declare const COPYRIGHT_DISABLE_COPY: boolean;
 declare const COPYRIGHT_DISABLE_SELECTION: boolean;
 declare const COPYRIGHT_GLOBAL: boolean;
 
-let app: HTMLDivElement;
-
 export default defineClientAppSetup(() => {
-  let stopHandler: WatchStopHandle;
+  let appElement: HTMLDivElement;
+
   const page = usePageData<{ copyright: string }>();
   const frontmatter = usePageFrontmatter<CopyrightPluginFrontmatter>();
 
@@ -98,20 +96,15 @@ export default defineClientAppSetup(() => {
 
   onMounted(() => {
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    app = document.querySelector<HTMLDivElement>("#app")!;
-    app.addEventListener("copy", onCopy);
+    appElement = document.querySelector<HTMLDivElement>("#app")!;
+    appElement.addEventListener("copy", onCopy);
 
-    stopHandler = watchEffect(() => {
-      app.style.userSelect = disableSelection.value ? "none" : "auto";
+    watchEffect(() => {
+      appElement.style.userSelect = disableSelection.value ? "none" : "auto";
     });
   });
 
   onBeforeUnmount(() => {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    // eslint-disable-next-line  @typescript-eslint/no-non-null-assertion
-    document.querySelector("#app")!.removeEventListener("copy", onCopy);
-
-    stopHandler();
+    appElement.removeEventListener("copy", onCopy);
   });
 });
