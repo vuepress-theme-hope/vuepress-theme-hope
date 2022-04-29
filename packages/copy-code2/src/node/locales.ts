@@ -46,4 +46,9 @@ export const copyCodeLocales: CopyCodeLocaleConfig = {
     copy: "Skopiowano pomyślnie 🎉",
     hint: "Skopiuj kod",
   },
+
+  "/fr/": {
+    copy: "Copié avec succès 🎉",
+    hint: "Copier le code",
+  },
 };
