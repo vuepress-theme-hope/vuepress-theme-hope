@@ -1,7 +1,7 @@
 import { brLocale } from "./br";
 import { deLocale } from "./de";
 import { enLocale } from "./en";
-import { frLocale} from "./fr";
+import { frLocale } from "./fr";
 import { ruLocale } from "./ru";
 import { ukLocale } from "./uk";
 import { viLocale } from "./vi";
