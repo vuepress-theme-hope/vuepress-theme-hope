@@ -123,7 +123,7 @@
     "lerna": "4.0.0",
     "lint-staged": "12.4.0",
     "markdownlint-cli": "0.31.1",
-    "npm-check-updates": "12.5.9",
+    "npm-check-updates": "12.5.10",
     "postcss": "8.4.12",
     "postcss-loader": "6.2.1",
     "prettier": "2.6.2",
