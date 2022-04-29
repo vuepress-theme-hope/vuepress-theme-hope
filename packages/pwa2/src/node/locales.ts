@@ -139,4 +139,20 @@ export const pwaLocales: PWALocaleConfig = {
     hint: "Znaleziono nową zawartość.",
     update: "Nowa zawartość jest dostępna.",
   },
+
+  "/fr/": {
+    install: "Installer",
+    iOSInstall:
+      "Appuyez sur le bouton partager puis 'Ajouter à l'écran d'accueil'",
+    cancel: "Annuler",
+    close: "Fermer",
+    prevImage: "Image précédente",
+    nextImage: "Image suivante",
+    desc: "Description",
+    feature: "Composants clés",
+    explain:
+      "Cette app peut être installée sur PC ou smartphone.  Cela permettra de rendre cette page web comme n'importe quelle autre application.  Vous la trouverez dans votre liste d'application et serez capable de la pin sur votre écran principal et divers menus.  L'application web installée sera capable d'interagir avec les autres applications et le système d'exploitation.",
+    hint: "New content found.",
+    update: "New content is available.",
+  },
 };
