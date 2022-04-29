@@ -70,9 +70,8 @@ interface ResolverObject {
 
 type AliasOptions = readonly Alias[] | { [find: string]: string };
 
-function isObject(value: unknown): value is Record<string, any> {
-  return Object.prototype.toString.call(value) === "[object Object]";
-}
+const isObject = (value: unknown): value is Record<string, any> =>
+  Object.prototype.toString.call(value) === "[object Object]";
 
 function normalizeSingleAlias({ find, replacement }: Alias): Alias {
   if (
@@ -87,8 +86,8 @@ function normalizeSingleAlias({ find, replacement }: Alias): Alias {
   return { find, replacement };
 }
 
-function normalizeAlias(o: AliasOptions): Alias[] {
-  return Array.isArray(o)
+const normalizeAlias = (o: AliasOptions): Alias[] =>
+  Array.isArray(o)
     ? o.map(normalizeSingleAlias)
     : Object.keys(o).map((find) =>
         normalizeSingleAlias({
@@ -97,17 +96,17 @@ function normalizeAlias(o: AliasOptions): Alias[] {
           replacement: (o as any)[find],
         })
       );
-}
 
-function mergeAlias(a: AliasOptions = [], b: AliasOptions = []): Alias[] {
-  return [...normalizeAlias(a), ...normalizeAlias(b)];
-}
+const mergeAlias = (a: AliasOptions = [], b: AliasOptions = []): Alias[] => [
+  ...normalizeAlias(a),
+  ...normalizeAlias(b),
+];
 
-function mergeConfigRecursively(
+const mergeConfigRecursively = (
   a: Record<string, any>,
   b: Record<string, any>,
   rootPath: string
-): Record<string, any> {
+): Record<string, any> => {
   const merged: Record<string, any> = { ...a };
 
   for (const key in b) {
@@ -151,12 +150,10 @@ function mergeConfigRecursively(
   }
 
   return merged;
-}
+};
 
-export function mergeViteConfig(
+export const mergeViteConfig = (
   a: Record<string, any>,
   b: Record<string, any>,
   isRoot = true
-): Record<string, any> {
-  return mergeConfigRecursively(a, b, isRoot ? "" : ".");
-}
+): Record<string, any> => mergeConfigRecursively(a, b, isRoot ? "" : ".");
