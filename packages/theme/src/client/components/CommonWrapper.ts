@@ -54,7 +54,7 @@ export default defineComponent({
 
       if (
         frontmatter.value.navbar === false ||
-        themeLocale.value.navbar == false
+        themeLocale.value.navbar === false
       )
         return false;
 
