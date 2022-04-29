@@ -41,7 +41,7 @@
     "@mr-hope/vuepress-shared": "2.0.0-beta.47",
     "@vuepress/client": "2.0.0-beta.38",
     "@vuepress/shared": "2.0.0-beta.38",
-    "@vuepress/utils": "2.0.0-beta.38",
+    "@vuepress/utils": "2.0.0-beta.41",
     "mitt": "^3.0.0",
     "register-service-worker": "^1.7.2",
     "vue": "^3.2.32",

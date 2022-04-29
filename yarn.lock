@@ -3413,7 +3413,7 @@
     "@vue/compiler-ssr" "3.2.33"
     "@vue/shared" "3.2.33"
 
-"@vue/shared@3.2.33", "@vue/shared@^3.2.31":
+"@vue/shared@3.2.33", "@vue/shared@^3.2.31", "@vue/shared@^3.2.33":
   version "3.2.33"
   resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.2.33.tgz#69a8c99ceb37c1b031d5cc4aec2ff1dc77e1161e"
   integrity sha512-UBc1Pg1T3yZ97vsA2ueER0F6GbJebLHYlEi4ou1H5YL4KWvMOOWwpYo9/QpWq93wxKG6Wo13IY74Hcn/f7c7Bg==
@@ -3684,6 +3684,13 @@
   dependencies:
     "@vue/shared" "^3.2.31"
 
+"@vuepress/shared@2.0.0-beta.41":
+  version "2.0.0-beta.41"
+  resolved "https://registry.yarnpkg.com/@vuepress/shared/-/shared-2.0.0-beta.41.tgz#da284d5f19fd89491ecfc2c2803cec3e1ac6d091"
+  integrity sha512-8EezR5iiuEt4BL9mftjgxqSCAASuPjyvA30Ftpf79C1d3C7GC/H/3bEymfh6jCUbKEOxVc+9DX4/znVRfvEkRw==
+  dependencies:
+    "@vue/shared" "^3.2.33"
+
 "@vuepress/theme-default@2.0.0-beta.38":
   version "2.0.0-beta.38"
   resolved "https://registry.yarnpkg.com/@vuepress/theme-default/-/theme-default-2.0.0-beta.38.tgz#63c05dce2bc6627ec78fc273c8f6003f1f928f8c"
@@ -3718,6 +3725,22 @@
     "@types/fs-extra" "^9.0.13"
     "@types/hash-sum" "^1.0.0"
     "@vuepress/shared" "2.0.0-beta.38"
+    chalk "^4.1.2"
+    debug "^4.3.4"
+    fs-extra "^10.0.1"
+    globby "^11.0.4"
+    hash-sum "^2.0.0"
+    ora "^5.4.1"
+    upath "^2.0.1"
+
+"@vuepress/utils@2.0.0-beta.41":
+  version "2.0.0-beta.41"
+  resolved "https://registry.yarnpkg.com/@vuepress/utils/-/utils-2.0.0-beta.41.tgz#83fbb0501f12526745cbdff18e1e46575e86d220"
+  integrity sha512-G63N/AJhgtfOnxzWdvbsHw2LgRPU+bns8p/sh6XKNIswDkleRN+tj85GtswaJXL/cDMnAkrA1h395nHs/6UBow==
+  dependencies:
+    "@types/debug" "^4.1.7"
+    "@types/fs-extra" "^9.0.13"
+    "@vuepress/shared" "2.0.0-beta.41"
     chalk "^4.1.2"
     debug "^4.3.4"
     fs-extra "^10.0.1"
