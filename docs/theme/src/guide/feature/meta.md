@@ -24,7 +24,7 @@ The theme will display last update time in the appropriate date format, along wi
 
 ::: tip
 
-The theme will use `dayjs` to automatically localize the text of last update time according to the current language.
+The theme will use `Date.toLocaleString(pageLang)` to automatically localize the text of last update time according to the current language.
 
 :::
 
