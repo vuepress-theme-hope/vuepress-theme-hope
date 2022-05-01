@@ -1,8 +1,4 @@
-import {
-  addViteOptimizeDepsInclude,
-  addViteSsrNoExternal,
-  addViteOptimizeDepsExclude,
-} from "@mr-hope/vuepress-shared";
+import { addViteOptimizeDepsInclude } from "@mr-hope/vuepress-shared";
 import { path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
@@ -33,14 +29,11 @@ export const lightgalleryPlugin =
         LIGHT_GALLERY_ZOOM: plugins.includes("zoom"),
       }),
 
-      onInitialized: (app): void => {
-        addViteOptimizeDepsInclude(app, [
+      extendsBundlerOptions: (config, app): void => {
+        addViteOptimizeDepsInclude(config, app, [
           "lightgallery",
           ...plugins.map((name) => `lightgallery/plugins/${name}`),
         ]);
-
-        addViteSsrNoExternal(app, "vuepress-plugin-lightgallery");
-        addViteOptimizeDepsExclude(app, "vuepress-plugin-lightgallery");
       },
 
       clientAppRootComponentFiles: path.resolve(

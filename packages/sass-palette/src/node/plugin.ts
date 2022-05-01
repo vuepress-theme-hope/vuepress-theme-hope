@@ -62,9 +62,11 @@ export const sassPalettePlugin =
           : {}),
       },
 
-      onInitialized: (): Promise<void> => {
-        injectConfigModule(app, id);
+      extendsBundlerOptions: (config, app): void => {
+        injectConfigModule(config, app, id);
+      },
 
+      onInitialized: (): Promise<void> => {
         return Promise.all([
           prepareLoadFile(app, id),
           prepareInjectFile(app, id),

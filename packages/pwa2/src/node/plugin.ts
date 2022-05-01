@@ -4,7 +4,6 @@ import {
   addViteSsrNoExternal,
   getLocales,
   useCustomDevServer,
-  addViteOptimizeDepsExclude,
 } from "@mr-hope/vuepress-shared";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import { pwaLocales } from "./locales";
@@ -43,17 +42,16 @@ export const pwaPlugin =
         SW_PATH: options.swPath || "service-worker.js",
       }),
 
-      onInitialized: (app): void => {
-        addViteOptimizeDepsInclude(app, ["mitt", "register-service-worker"]);
-
-        addViteSsrNoExternal(app, [
-          "@mr-hope/vuepress-shared",
+      extendsBundlerOptions: (config, app): void => {
+        addViteOptimizeDepsInclude(config, app, [
+          "mitt",
           "register-service-worker",
-          "vuepress-plugin-pwa2",
         ]);
-        addViteOptimizeDepsExclude(app, "vuepress-plugin-pwa2");
+
+        addViteSsrNoExternal(config, app, "register-service-worker");
 
         useCustomDevServer(
+          config,
           app,
           "/manifest.webmanifest",
           async () => JSON.stringify(await manifest),

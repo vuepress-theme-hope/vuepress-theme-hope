@@ -14,12 +14,14 @@ import type { IncomingMessage, ServerResponse } from "http";
 /**
  * Handle specific path when runing VuePress DevServe
  *
+ * @param config VuePress Bundler config
  * @param app VuePress Node App
  * @param path Path to be responsed
  * @param getResponse respond function
  * @param errMsg error msg
  */
 export const useCustomDevServer = (
+  config: unknown,
   app: App,
   path: string,
   getResponse: (request?: IncomingMessage) => Promise<string | Buffer>,
@@ -28,8 +30,8 @@ export const useCustomDevServer = (
   const { base, bundler } = app.options;
 
   // for vite
-  if (app.env.isDev && bundler.name === "vite") {
-    const viteBundlerConfig: ViteBundlerOptions = (bundler as any).config;
+  if (app.env.isDev && bundler.name.endsWith("vite")) {
+    const viteBundlerConfig = config as ViteBundlerOptions;
     const handler: HandleFunction = (
       request: IncomingMessage,
       response: ServerResponse
@@ -59,8 +61,8 @@ export const useCustomDevServer = (
   }
 
   // for webpack
-  if (app.env.isDev && bundler.name === "webpack") {
-    const webpackBundlerConfig: WebpackBundlerOptions = (bundler as any).config;
+  if (app.env.isDev && bundler.name.endsWith("webpack")) {
+    const webpackBundlerConfig = config as WebpackBundlerOptions;
 
     const { devServerSetupMiddlewares } = webpackBundlerConfig;
 

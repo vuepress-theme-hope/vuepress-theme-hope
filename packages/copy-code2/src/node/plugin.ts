@@ -1,8 +1,4 @@
-import {
-  addViteSsrNoExternal,
-  addViteOptimizeDepsExclude,
-  getLocales,
-} from "@mr-hope/vuepress-shared";
+import { getLocales } from "@mr-hope/vuepress-shared";
 import { path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import { copyCodeLocales } from "./locales";
@@ -27,14 +23,6 @@ export const copyCodePlugin =
           config: options.locales,
         }),
       }),
-
-      onInitialized: (app): void => {
-        addViteSsrNoExternal(app, [
-          "@mr-hope/vuepress-shared",
-          "vuepress-plugin-copy-code2",
-        ]);
-        addViteOptimizeDepsExclude(app, "vuepress-plugin-copy-code2");
-      },
 
       clientAppSetupFiles: path.resolve(__dirname, "../client/appSetup.js"),
     };

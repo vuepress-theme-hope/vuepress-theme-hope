@@ -38,15 +38,16 @@
   },
   "dependencies": {
     "@mr-hope/vuepress-shared": "workspace:*",
-    "@vuepress/client": "2.0.0-beta.41",
-    "@vuepress/utils": "2.0.0-beta.41",
+    "@vuepress/client": "2.0.0-beta.42",
+    "@vuepress/utils": "2.0.0-beta.42",
     "lightgallery": "^2.4.0",
     "vue": "^3.2.33",
     "vue-router": "^4.0.14",
     "vuepress-plugin-sass-palette": "workspace:*"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.41"
+    "@vuepress/core": "2.0.0-beta.42",
+    "rimraf": "3.0.2"
   },
   "peerDependencies": {
     "sass-loader": "^12.6.0"

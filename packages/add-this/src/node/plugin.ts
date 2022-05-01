@@ -1,7 +1,3 @@
-import {
-  addViteSsrNoExternal,
-  addViteOptimizeDepsExclude,
-} from "@mr-hope/vuepress-shared";
 import { path } from "@vuepress/utils";
 
 import type { PluginObject } from "@vuepress/core";
@@ -23,11 +19,6 @@ export const addThisPlugin = ({ pubid }: AddThisOptions): PluginObject => {
     name: "vuepress-plugin-add-this",
 
     define: () => ({ PUB_ID: pubid }),
-
-    onInitialized: (app): void => {
-      addViteSsrNoExternal(app, "vuepress-plugin-add-this");
-      addViteOptimizeDepsExclude(app, "vuepress-plugin-add-this");
-    },
 
     clientAppRootComponentFiles: path.resolve(
       __dirname,

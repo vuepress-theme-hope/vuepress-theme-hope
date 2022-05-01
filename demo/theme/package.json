@@ -13,17 +13,17 @@
     "demo:webpack-serve": "vuepress-webpack dev src"
   },
   "devDependencies": {
-    "@vuepress/cli": "2.0.0-beta.41",
-    "@vuepress/client": "2.0.0-beta.41",
-    "@vuepress/plugin-docsearch": "2.0.0-beta.41",
-    "@vuepress/plugin-pwa": "2.0.0-beta.41",
-    "@vuepress/plugin-pwa-popup": "2.0.0-beta.41",
-    "@vuepress/plugin-shiki": "2.0.0-beta.41",
+    "@vuepress/cli": "2.0.0-beta.42",
+    "@vuepress/client": "2.0.0-beta.42",
+    "@vuepress/plugin-docsearch": "2.0.0-beta.42",
+    "@vuepress/plugin-pwa": "2.0.0-beta.42",
+    "@vuepress/plugin-pwa-popup": "2.0.0-beta.42",
+    "@vuepress/plugin-shiki": "2.0.0-beta.42",
     "cross-env": "7.0.3",
     "sass-loader": "^12.6.0",
     "vue": "3.2.33",
     "vuepress-theme-hope": "workspace:*",
-    "vuepress-vite": "2.0.0-beta.41",
-    "vuepress-webpack": "2.0.0-beta.41"
+    "vuepress-vite": "2.0.0-beta.42",
+    "vuepress-webpack": "2.0.0-beta.42"
   }
 }

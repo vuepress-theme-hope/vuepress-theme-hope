@@ -37,14 +37,15 @@
   },
   "dependencies": {
     "@mr-hope/vuepress-shared": "workspace:*",
-    "@vuepress/utils": "2.0.0-beta.41",
+    "@vuepress/utils": "2.0.0-beta.42",
     "chokidar": "^3.5.3",
     "sass": "^1.51.0"
   },
   "devDependencies": {
-    "@vuepress/bundler-vite": "2.0.0-beta.41",
-    "@vuepress/bundler-webpack": "2.0.0-beta.41",
-    "@vuepress/core": "2.0.0-beta.41"
+    "@vuepress/bundler-vite": "2.0.0-beta.42",
+    "@vuepress/bundler-webpack": "2.0.0-beta.42",
+    "@vuepress/core": "2.0.0-beta.42",
+    "rimraf": "3.0.2"
   },
   "peerDependencies": {
     "sass-loader": "^12.6.0"

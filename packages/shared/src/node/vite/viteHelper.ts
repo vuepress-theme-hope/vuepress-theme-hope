@@ -7,13 +7,14 @@ import type { ViteBundlerOptions } from "@vuepress/bundler-vite";
  * Add modules to Vite `optimizeDeps.include` list
  */
 export const addViteOptimizeDepsInclude = (
+  config: unknown,
   app: App,
   module: string | string[]
 ): void => {
   const { bundler } = app.options;
 
-  if (bundler.name === "vite") {
-    const bundlerConfig: ViteBundlerOptions = (bundler as any).config;
+  if (bundler.name.endsWith("vite")) {
+    const bundlerConfig = config as ViteBundlerOptions;
 
     bundlerConfig.viteOptions = mergeViteConfig(
       bundlerConfig.viteOptions as Record<string, unknown>,
@@ -36,13 +37,14 @@ export const addViteOptimizeDepsInclude = (
  * Add modules to Vite `optimizeDeps.exclude` list
  */
 export const addViteOptimizeDepsExclude = (
+  config: unknown,
   app: App,
   module: string | string[]
 ): void => {
   const { bundler } = app.options;
 
-  if (bundler.name === "vite") {
-    const bundlerConfig: ViteBundlerOptions = (bundler as any).config;
+  if (bundler.name.endsWith("vite")) {
+    const bundlerConfig = config as ViteBundlerOptions;
 
     bundlerConfig.viteOptions = mergeViteConfig(
       bundlerConfig.viteOptions as Record<string, unknown>,
@@ -65,13 +67,14 @@ export const addViteOptimizeDepsExclude = (
  * Add modules to Vite `ssr.external` list
  */
 export const addViteSsrExternal = (
+  config: unknown,
   app: App,
   module: string | string[]
 ): void => {
   const { bundler } = app.options;
 
-  if (bundler.name === "vite") {
-    const bundlerConfig: ViteBundlerOptions = (bundler as any).config;
+  if (bundler.name.endsWith("vite")) {
+    const bundlerConfig = config as ViteBundlerOptions;
 
     bundlerConfig.viteOptions = mergeViteConfig(
       bundlerConfig.viteOptions as Record<string, unknown>,
@@ -88,13 +91,14 @@ export const addViteSsrExternal = (
  * Add modules to Vite `ssr.noExternal` list
  */
 export const addViteSsrNoExternal = (
+  config: unknown,
   app: App,
   module: string | string[]
 ): void => {
   const { bundler } = app.options;
 
-  if (bundler.name === "vite") {
-    const bundlerConfig: ViteBundlerOptions = (bundler as any).config;
+  if (bundler.name.endsWith("vite")) {
+    const bundlerConfig = config as ViteBundlerOptions;
 
     bundlerConfig.viteOptions = mergeViteConfig(
       bundlerConfig.viteOptions as Record<string, unknown>,

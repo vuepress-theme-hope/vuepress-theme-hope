@@ -46,6 +46,9 @@ export const hopeTheme =
         ),
       }),
 
+      extendsBundlerOptions: (config, app): void =>
+        updateBundlerConfig(config, app),
+
       extendsPage: (page) =>
         extendsPage(
           themeConfig,
@@ -53,8 +56,6 @@ export const hopeTheme =
           page as Page<HopeThemePageData>,
           app.env.isDev
         ),
-
-      onInitialized: (app): void => updateBundlerConfig(app),
 
       onPrepared: (): Promise<void> =>
         Promise.all([

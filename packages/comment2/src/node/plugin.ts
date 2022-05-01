@@ -1,7 +1,6 @@
 import {
   addCustomElement,
   addViteSsrExternal,
-  addViteSsrNoExternal,
   addViteOptimizeDepsExclude,
   addViteOptimizeDepsInclude,
   getLocales,
@@ -61,32 +60,30 @@ export const commentPlugin =
         WALINE_LOCALES: userWalineLocales,
       }),
 
-      onInitialized: (app): void => {
-        if (isGiscus) addCustomElement(app, "GiscusWidget");
-
-        addViteSsrNoExternal(app, [
-          "@mr-hope/vuepress-shared",
-          "vuepress-plugin-comment2",
-        ]);
-        addViteOptimizeDepsExclude(app, "vuepress-plugin-comment2");
+      extendsBundlerOptions: (config, app): void => {
+        if (isGiscus) addCustomElement(config, app, "GiscusWidget");
 
         if (isGiscus) {
-          addViteOptimizeDepsInclude(app, "giscus");
-          addViteSsrExternal(app, "giscus");
+          addViteOptimizeDepsInclude(config, app, "giscus");
+          addViteSsrExternal(config, app, "giscus");
         }
 
         if (isTwikoo) {
-          addViteOptimizeDepsInclude(app, "twikoo");
-          addViteSsrExternal(app, "twikoo");
+          addViteOptimizeDepsInclude(config, app, "twikoo");
+          addViteSsrExternal(config, app, "twikoo");
         }
 
         if (isWaline) {
-          addViteOptimizeDepsExclude(app, [
+          addViteOptimizeDepsInclude(config, app, [
+            "autosize",
+            "marked",
+            "hanabi",
+          ]);
+
+          addViteOptimizeDepsExclude(config, app, [
             "@waline/client/dist/component",
             "@waline/client/dist/pageview",
           ]);
-          addViteOptimizeDepsInclude(app, ["autosize", "marked", "hanabi"]);
-          addViteSsrNoExternal(app, "@waline/client");
         }
       },
 

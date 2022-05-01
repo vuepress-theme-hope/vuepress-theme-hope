@@ -1,9 +1,7 @@
 import {
   addCustomElement,
-  addViteOptimizeDepsExclude,
   addViteOptimizeDepsInclude,
   addViteSsrExternal,
-  addViteSsrNoExternal,
 } from "@mr-hope/vuepress-shared";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
@@ -96,6 +94,40 @@ export const mdEnhancePlugin =
             : {},
       }),
 
+      extendsBundlerOptions: (config, app): void => {
+        if (katexOptions.output !== "html")
+          addCustomElement(config, app, MATHML_TAGS);
+
+        if (chartEnable) {
+          addViteOptimizeDepsInclude(config, app, "chart.js/auto");
+          addViteSsrExternal(config, app, "chart.js");
+        }
+
+        if (flowchartEnable) {
+          addViteOptimizeDepsInclude(config, app, [
+            "flowchart.js",
+            "lodash.debounce",
+          ]);
+          addViteSsrExternal(config, app, "flowchart.js");
+        }
+
+        if (mermaidEnable) {
+          addViteOptimizeDepsInclude(config, app, "mermaid");
+          addViteSsrExternal(config, app, "mermaid");
+        }
+
+        if (presentationEnable) {
+          addViteOptimizeDepsInclude(config, app, [
+            "reveal.js/dist/reveal.esm.js",
+            "reveal.js/plugin/markdown/markdown.esm.js",
+            ...revealPlugins.map(
+              (plugin) => `reveal.js/plugin/${plugin}/${plugin}.esm.js`
+            ),
+          ]);
+          addViteSsrExternal(config, app, "reveal.js");
+        }
+      },
+
       extendsMarkdown: (markdownIt): void => {
         if (getStatus("lazyLoad")) markdownIt.use(lazyLoad);
         if (imageMarkEnable) markdownIt.use(imageMark);
@@ -129,40 +161,6 @@ export const mdEnhancePlugin =
       onInitialized: async (app): Promise<void> => {
         if (shouldCheckLinks)
           app.pages.forEach((page) => checkLinks(page, app));
-
-        if (katexOptions.output !== "html") addCustomElement(app, MATHML_TAGS);
-
-        addViteSsrNoExternal(app, [
-          "@mr-hope/vuepress-shared",
-          "vuepress-plugin-md-enhance",
-        ]);
-        addViteOptimizeDepsExclude(app, "vuepress-plugin-md-enhance");
-
-        if (chartEnable) {
-          addViteOptimizeDepsInclude(app, ["chart.js/auto"]);
-          addViteSsrExternal(app, "chart.js");
-        }
-
-        if (flowchartEnable) {
-          addViteOptimizeDepsInclude(app, ["flowchart.js", "lodash.debounce"]);
-          addViteSsrExternal(app, "flowchart.js");
-        }
-
-        if (mermaidEnable) {
-          addViteOptimizeDepsInclude(app, "mermaid");
-          addViteSsrExternal(app, "mermaid");
-        }
-
-        if (presentationEnable) {
-          addViteOptimizeDepsInclude(app, [
-            "reveal.js/dist/reveal.esm.js",
-            "reveal.js/plugin/markdown/markdown.esm.js",
-            ...revealPlugins.map(
-              (plugin) => `reveal.js/plugin/${plugin}/${plugin}.esm.js`
-            ),
-          ]);
-          addViteSsrExternal(app, "reveal.js");
-        }
 
         await Promise.all([
           prepareAppEnhanceFile(app, options),

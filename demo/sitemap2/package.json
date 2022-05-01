@@ -13,13 +13,13 @@
     "demo:webpack-serve": "vuepress-webpack dev src"
   },
   "devDependencies": {
-    "@vuepress/cli": "2.0.0-beta.41",
-    "@vuepress/client": "2.0.0-beta.41",
-    "@vuepress/theme-default": "2.0.0-beta.41",
+    "@vuepress/cli": "2.0.0-beta.42",
+    "@vuepress/client": "2.0.0-beta.42",
+    "@vuepress/theme-default": "2.0.0-beta.42",
     "sass-loader": "^12.6.0",
     "vue": "3.2.33",
     "vuepress-plugin-sitemap2": "workspace:*",
-    "vuepress-vite": "2.0.0-beta.41",
-    "vuepress-webpack": "2.0.0-beta.41"
+    "vuepress-vite": "2.0.0-beta.42",
+    "vuepress-webpack": "2.0.0-beta.42"
   }
 }

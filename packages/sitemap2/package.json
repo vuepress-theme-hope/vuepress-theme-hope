@@ -35,13 +35,14 @@
   },
   "dependencies": {
     "@mr-hope/vuepress-shared": "workspace:*",
-    "@vuepress/shared": "2.0.0-beta.41",
-    "@vuepress/utils": "2.0.0-beta.41",
+    "@vuepress/shared": "2.0.0-beta.42",
+    "@vuepress/utils": "2.0.0-beta.42",
     "sitemap": "^7.1.1"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.41",
-    "@vuepress/plugin-git": "2.0.0-beta.41"
+    "@vuepress/core": "2.0.0-beta.42",
+    "@vuepress/plugin-git": "2.0.0-beta.42",
+    "rimraf": "3.0.2"
   },
   "publishConfig": {
     "access": "public"

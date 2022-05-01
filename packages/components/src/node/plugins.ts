@@ -1,10 +1,4 @@
-import {
-  addViteSsrNoExternal,
-  addViteOptimizeDepsExclude,
-  addViteOptimizeDepsInclude,
-  getLocales,
-  noopModule,
-} from "@mr-hope/vuepress-shared";
+import { getLocales, noopModule } from "@mr-hope/vuepress-shared";
 import { path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import { backToTopLocales } from "./locales";
@@ -39,17 +33,6 @@ export const componentsPlugin =
           default: backToTopLocales,
           config: options.backToTopLocales,
         }),
-      },
-
-      onInitialized: (app): void => {
-        addViteSsrNoExternal(app, [
-          "@mr-hope/vuepress-shared",
-          "@mr-hope/vuepress-plugin-components",
-        ]);
-        addViteOptimizeDepsExclude(app, "@mr-hope/vuepress-plugin-components");
-
-        if (options.backToTop)
-          addViteOptimizeDepsInclude(app, "lodash.debounce");
       },
 
       clientAppEnhanceFiles: path.resolve(__dirname, "../client/appEnhance.js"),

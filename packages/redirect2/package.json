@@ -38,11 +38,14 @@
   },
   "dependencies": {
     "@mr-hope/vuepress-shared": "workspace:*",
-    "@vuepress/cli": "2.0.0-beta.41",
-    "@vuepress/core": "2.0.0-beta.41",
-    "@vuepress/shared": "2.0.0-beta.41",
-    "@vuepress/utils": "2.0.0-beta.41",
+    "@vuepress/cli": "2.0.0-beta.42",
+    "@vuepress/core": "2.0.0-beta.42",
+    "@vuepress/shared": "2.0.0-beta.42",
+    "@vuepress/utils": "2.0.0-beta.42",
     "cac": "^6.7.12"
+  },
+  "devDependencies": {
+    "rimraf": "3.0.2"
   },
   "publishConfig": {
     "access": "public"

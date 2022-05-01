@@ -1,8 +1,4 @@
 import {
-  addViteSsrNoExternal,
-  addViteOptimizeDepsExclude,
-} from "@mr-hope/vuepress-shared";
-import {
   preparePageComponent,
   preparePageData,
   preparePagesComponents,
@@ -46,12 +42,6 @@ export const blogPlugin = (options: BlogOptions): PluginObject => {
     },
 
     onInitialized: (app): Promise<void> => {
-      addViteSsrNoExternal(app, [
-        "@mr-hope/vuepress-shared",
-        "vuepress-plugin-blog2",
-      ]);
-      addViteOptimizeDepsExclude(app, "vuepress-plugin-blog2");
-
       const pageMap = getPageMap(filter, app);
 
       return Promise.all([
