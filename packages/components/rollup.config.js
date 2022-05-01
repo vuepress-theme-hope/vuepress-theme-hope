@@ -32,6 +32,7 @@ export default [
       "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
       "@vuepress/plugin-theme-data/lib/client",
+      "@vueuse/core",
       "ts-debounce",
       "vue",
       /\.scss$/,

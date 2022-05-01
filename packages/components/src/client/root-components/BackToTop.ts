@@ -1,16 +1,9 @@
 import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
+import { useEventListener } from "@vueuse/core";
 import { usePageFrontmatter } from "@vuepress/client";
 import { useThemeData } from "@vuepress/plugin-theme-data/lib/client";
 import { debounce } from "ts-debounce";
-import {
-  Transition,
-  computed,
-  defineComponent,
-  h,
-  onMounted,
-  ref,
-  onUnmounted,
-} from "vue";
+import { Transition, computed, defineComponent, h, onMounted, ref } from "vue";
 import { BacktoTopIcon } from "../components/icons";
 
 import "../styles/back-to-top.scss";
@@ -67,11 +60,7 @@ export default defineComponent({
 
     onMounted(() => {
       scrollTop.value = getScrollTop();
-      window.addEventListener("scroll", scrollHandler);
-    });
-
-    onUnmounted(() => {
-      window.removeEventListener("scroll", scrollHandler);
+      useEventListener("scroll", scrollHandler);
     });
 
     return (): VNode =>

@@ -985,6 +985,7 @@ importers:
       '@vuepress/core': 2.0.0-beta.41
       '@vuepress/plugin-theme-data': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
+      '@vueuse/core': ^8.3.1
       balloon-css: ^1.2.0
       ts-debounce: ^4.0.0
       vue: ^3.2.33
@@ -996,6 +997,7 @@ importers:
       '@vuepress/client': 2.0.0-beta.41
       '@vuepress/plugin-theme-data': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
+      '@vueuse/core': 8.3.1_vue@3.2.33
       balloon-css: 1.2.0
       ts-debounce: 4.0.0
       vue: 3.2.33
@@ -1033,12 +1035,14 @@ importers:
       '@vuepress/core': 2.0.0-beta.41
       '@vuepress/shared': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
+      '@vueuse/core': ^8.3.1
       vue: ^3.2.33
     dependencies:
       '@mr-hope/vuepress-shared': link:../shared
       '@vuepress/client': 2.0.0-beta.41
       '@vuepress/shared': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
+      '@vueuse/core': 8.3.1_vue@3.2.33
       vue: 3.2.33
     devDependencies:
       '@vuepress/core': 2.0.0-beta.41
@@ -1174,6 +1178,7 @@ importers:
       '@vuepress/core': 2.0.0-beta.41
       '@vuepress/shared': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
+      '@vueuse/core': ^8.3.1
       mitt: ^3.0.0
       register-service-worker: ^1.7.2
       vue: ^3.2.33
@@ -1185,6 +1190,7 @@ importers:
       '@vuepress/client': 2.0.0-beta.41
       '@vuepress/shared': 2.0.0-beta.41
       '@vuepress/utils': 2.0.0-beta.41
+      '@vueuse/core': 8.3.1_vue@3.2.33
       mitt: 3.0.0
       register-service-worker: 1.7.2
       vue: 3.2.33

@@ -1,6 +1,7 @@
 import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
+import { useEventListener } from "@vueuse/core";
 import { withBase } from "@vuepress/client";
-import { onBeforeMount, defineComponent, h, onMounted, ref } from "vue";
+import { defineComponent, h, onMounted, ref } from "vue";
 import { ArrowLeftIcon, ArrowRightIcon, CloseIcon } from "./icons";
 import { locales } from "../define";
 
@@ -12,9 +13,6 @@ interface InstallPromptEvent extends Event {
   prompt: () => void;
   readonly userChoice: Promise<{ outcome: "accepted" | "dismissed" }>;
 }
-
-let escapeHandler: (event: KeyboardEvent) => void;
-let installPromptHandler: (event: Event) => void;
 
 export default defineComponent({
   name: "PWAInstallModal",
@@ -111,34 +109,19 @@ export default defineComponent({
     onMounted(() => {
       // eslint-disable-next-line no-prototype-builtins
       if (window.hasOwnProperty("BeforeInstallPromptEvent")) {
-        installPromptHandler = (event): void => {
+        useEventListener(window, "beforeinstallprompt", (event) => {
           deferredprompt.value = event as InstallPromptEvent;
 
           emit("can-install", true);
           event.preventDefault();
-        };
 
-        // grab an install event
-        window.addEventListener("beforeinstallprompt", installPromptHandler);
+          useEventListener("keyup", (event): void => {
+            if (event.key === "Escape") emit("toggle", false);
+          });
+        });
 
         void getManifest();
-
-        escapeHandler = (event): void => {
-          if (event.key === "Escape") emit("toggle", false);
-        };
-
-        document.addEventListener("keyup", escapeHandler);
       }
-    });
-
-    onBeforeMount(() => {
-      // eslint-disable-next-line no-prototype-builtins
-      if (window.hasOwnProperty("BeforeInstallPromptEvent"))
-        document.removeEventListener(
-          "beforeinstallprompt",
-          installPromptHandler
-        );
-      document.removeEventListener("keyup", escapeHandler);
     });
 
     return (): VNode =>
