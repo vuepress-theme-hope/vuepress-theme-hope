@@ -40,4 +40,8 @@ export const walineLocales: WalineLocaleConfig = {
     placeholder:
       "Wpisz tutaj komentarz (wpisz adres e-mail, aby otrzymać powiadomienie e-mail, gdy otrzymasz odpowiedź)",
   },
+  "/sk/": {
+    placeholder:
+      "Napíš svoj komentár (vlož svoj e-mail taktiež, aby si bol notifikovaný o odpovediach)",
+  },
 };

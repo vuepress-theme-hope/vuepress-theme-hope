@@ -139,4 +139,19 @@ export const pwaLocales: PWALocaleConfig = {
     hint: "Znaleziono nową zawartość.",
     update: "Nowa zawartość jest dostępna.",
   },
+
+  "/sk/": {
+    install: "Insštalácia",
+    iOSInstall: "Klikni na tlačidlo zdielania a potom 'Daj na domovskú obrazovku'",
+    cancel: "Zrušiť",
+    close: "Zavrieť",
+    prevImage: "Prodošlí obrázok",
+    nextImage: "Ďalší obrázok",
+    desc: "Poznámka",
+    feature: "Kľúčové vlastnosti",
+    explain:
+      "Túto aplikáciu je možné nainštalovať na počítač alebo mobil.  Toto umožný sa správať aplikácii ako každej inej nainštalovanej aplikácii.  Nájdeš ju vo svojom liste aplikácii a budeš môcť ju pripnúť na domovskú stránku, štartovacieho menu alebo do panelu úloh.  Táto nainštalovaná webová aplikácia umžní tiež bezpečne komunikovať s ostatnými nainštalovanými aplikáciami a operačným systémom. ",
+    hint: "Nový obsah bol nájdený.",
+    update: "Nový obsah je dostupný.",
+  },
 };

@@ -25,4 +25,10 @@ export const copyrightLocales: CopyrightLocaleConfig = {
     license: "Licencja :license",
     link: ":link",
   },
+
+  "/sk/": {
+    author: "Autorské práva :author",
+    license: "Licencia :license",
+    link: ":link",
+  },
 };
