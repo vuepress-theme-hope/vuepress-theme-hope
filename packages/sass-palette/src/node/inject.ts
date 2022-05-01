@@ -41,15 +41,18 @@ export const injectConfigModule = (app: App, id: string): void => {
                 source: string,
                 file: string
               ): Promise<string> => {
-                if (typeof originalAdditionalData === "string")
-                  return `@use "@sass-palette/${id}-config";\n${originalAdditionalData}${source}`;
-                if (typeof originalAdditionalData === "function")
-                  return `@use "@sass-palette/${id}-config";\n${await originalAdditionalData(
-                    source,
-                    file
-                  )}`;
+                const originalContent =
+                  typeof originalAdditionalData === "string"
+                    ? `${originalAdditionalData}${source}`
+                    : typeof originalAdditionalData === "function"
+                    ? await originalAdditionalData(source, file)
+                    : source;
 
-                return `@use "@sass-palette/${id}-config";\n${source}`;
+                return originalContent.match(
+                  new RegExp(`@use\\s+["']@sass-palette\\/${id}-config["'];`)
+                )
+                  ? originalContent
+                  : `@use "@sass-palette/${id}-config";\n${originalContent}`;
               },
             },
           },
@@ -71,16 +74,18 @@ export const injectConfigModule = (app: App, id: string): void => {
       content: string,
       loaderContext: LoaderContext
     ): string => {
-      if (typeof additionalData === "string")
-        return `@use "@sass-palette/${id}-config";\n${additionalData}${content}`;
+      const originalContent =
+        typeof additionalData === "string"
+          ? `${additionalData}${content}`
+          : typeof additionalData === "function"
+          ? additionalData(content, loaderContext)
+          : content;
 
-      if (typeof additionalData === "function")
-        return `@use "@sass-palette/${id}-config";\n${additionalData(
-          content,
-          loaderContext
-        )}`;
-
-      return `@use "@sass-palette/${id}-config";\n${content}`;
+      return originalContent.match(
+        new RegExp(`@use\\s+["']@sass-palette\\/${id}-config["'];`)
+      )
+        ? originalContent
+        : `@use "@sass-palette/${id}-config";\n${originalContent}`;
     };
 
     webpackBundlerConfig.scss.additionalData = additionalDataHandler;
