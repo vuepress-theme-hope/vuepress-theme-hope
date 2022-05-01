@@ -1,6 +1,6 @@
 import type { HopeThemeLocaleData } from "../../shared";
 
-export const enLocale: HopeThemeLocaleData = {
+export const skLocale: HopeThemeLocaleData = {
   lang: "sk-SK",
 
   navbarLocales: {
