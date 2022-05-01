@@ -104,10 +104,7 @@ export const mdEnhancePlugin =
         }
 
         if (flowchartEnable) {
-          addViteOptimizeDepsInclude(config, app, [
-            "flowchart.js",
-            "lodash.debounce",
-          ]);
+          addViteOptimizeDepsInclude(config, app, "flowchart.js");
           addViteSsrExternal(config, app, "flowchart.js");
         }
 
