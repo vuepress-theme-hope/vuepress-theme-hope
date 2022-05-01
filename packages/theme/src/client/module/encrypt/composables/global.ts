@@ -1,11 +1,12 @@
+import { useStorage, useSessionStorage } from "@vueuse/core";
 import { compareSync } from "bcryptjs";
-import { computed, onMounted, ref } from "vue";
+import { computed } from "vue";
 
 import { useEncryptData } from "./utils";
 
 import type { ComputedRef } from "vue";
 
-const STORAGE_KEY = "vuepress-theme-hope-global-token";
+const STORAGE_KEY = "VUEPRESS_HOPE_GLOBAL_TOKEN";
 
 export interface GlobalEncrypt {
   isGlobalEncrypted: ComputedRef<boolean>;
@@ -13,38 +14,31 @@ export interface GlobalEncrypt {
 }
 
 export const useGlobalEcrypt = (): GlobalEncrypt => {
-  const options = useEncryptData();
+  const encryptData = useEncryptData();
 
-  const globalToken = ref("");
+  const localToken = useStorage(STORAGE_KEY, "");
+  const sessionToken = useSessionStorage(STORAGE_KEY, "");
 
   const isGlobalEncrypted = computed(() => {
-    if (options.value.global && options.value.admin) {
+    if (encryptData.value.global && encryptData.value.admin)
       // none of the token matches
       return (
-        !options.value.admin ||
-        [].some((hash) => compareSync(globalToken.value, hash))
+        (Boolean(localToken.value) &&
+          !encryptData.value.admin.some((hash) =>
+            compareSync(localToken.value, hash)
+          )) ||
+        (Boolean(sessionToken.value) &&
+          !encryptData.value.admin.some((hash) =>
+            compareSync(sessionToken.value, hash)
+          ))
       );
-    }
 
     return false;
   });
 
   const validateGlobalToken = (inputToken: string, keep = false): void => {
-    if (
-      // some of the token matches
-      (options.value.admin || []).some((hash) => compareSync(inputToken, hash))
-    ) {
-      globalToken.value = inputToken;
-      (keep ? localStorage : sessionStorage).setItem(STORAGE_KEY, inputToken);
-    }
+    (keep ? localToken : sessionToken).value = inputToken;
   };
-
-  onMounted(() => {
-    const token =
-      sessionStorage.getItem(STORAGE_KEY) || localStorage.getItem(STORAGE_KEY);
-
-    if (token) validateGlobalToken(token);
-  });
 
   return {
     isGlobalEncrypted,
