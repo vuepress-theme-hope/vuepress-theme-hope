@@ -18,7 +18,7 @@
     "docs:vite-build": "pnpm run --parallel -r docs:vite-build",
     "docs:webpack-build": "pnpm run --parallel -r docs:vite-build",
     "postinstall": "husky install",
-    "lint": "pnpm lint:prettier -- --write && pnpm lint:eslint -- --fix && pnpm lint:style -- --fix",
+    "lint": "pnpm lint:prettier --write && pnpm lint:eslint --fix && pnpm lint:style --fix",
     "lint:check": "pnpm lint:prettier && pnpm lint:eslint && pnpm lint:style",
     "lint:eslint": "eslint . --ext .js,.ts,.vue",
     "lint:md": "markdownlint **/*.md",
