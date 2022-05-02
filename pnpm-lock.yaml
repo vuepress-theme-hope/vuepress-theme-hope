@@ -1131,6 +1131,7 @@ importers:
       flowchart.js: ^1.17.1
       katex: ^0.15.3
       markdown-it: ^13.0.0
+      markdown-it-container: 3.0.0
       mermaid: ^9.0.1
       reveal.js: ^4.3.1
       rimraf: 3.0.2
@@ -1163,6 +1164,7 @@ importers:
       '@types/babel__core': 7.1.19
       '@vuepress/core': 2.0.0-beta.42
       '@vuepress/markdown': 2.0.0-beta.42
+      markdown-it-container: 3.0.0
       rimraf: 3.0.2
 
   packages/photo-swipe:
