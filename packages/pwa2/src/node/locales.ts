@@ -142,7 +142,8 @@ export const pwaLocales: PWALocaleConfig = {
 
   "/sk/": {
     install: "Insštalácia",
-    iOSInstall: "Klikni na tlačidlo zdielania a potom 'Daj na domovskú obrazovku'",
+    iOSInstall:
+      "Klikni na tlačidlo zdielania a potom 'Daj na domovskú obrazovku'",
     cancel: "Zrušiť",
     close: "Zavrieť",
     prevImage: "Prodošlí obrázok",
