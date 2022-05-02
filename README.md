@@ -30,7 +30,7 @@ We recommand you to contact using [issues](https://github.com/vuepress-theme-hop
 
 ## 联系
 
-我们建议你使用 [issues](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues) 和 [dicussions](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions) 联系，但也欢迎你加入我们的 [QQ 群](https://jq.qq.com/?_wv=1027&k=rATJyxGK) (群号: 1003437555)
+我们建议你使用 [issues](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues) 和 [discussions](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions) 联系，但也欢迎你加入我们的 [QQ 群](https://jq.qq.com/?_wv=1027&k=rATJyxGK) (群号: 1003437555)
 。
 
 ---
