@@ -3413,7 +3413,7 @@
     "@vue/compiler-ssr" "3.2.33"
     "@vue/shared" "3.2.33"
 
-"@vue/shared@3.2.33", "@vue/shared@^3.2.31":
+"@vue/shared@3.2.33", "@vue/shared@^3.2.31", "@vue/shared@^3.2.33":
   version "3.2.33"
   resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.2.33.tgz#69a8c99ceb37c1b031d5cc4aec2ff1dc77e1161e"
   integrity sha512-UBc1Pg1T3yZ97vsA2ueER0F6GbJebLHYlEi4ou1H5YL4KWvMOOWwpYo9/QpWq93wxKG6Wo13IY74Hcn/f7c7Bg==
@@ -3495,6 +3495,16 @@
     vue "^3.2.31"
     vue-router "^4.0.14"
 
+"@vuepress/client@2.0.0-beta.42":
+  version "2.0.0-beta.42"
+  resolved "https://registry.yarnpkg.com/@vuepress/client/-/client-2.0.0-beta.42.tgz#424fc63f6035e0379312db71022122acf809beb5"
+  integrity sha512-MIIuSppflcNzfVvwNTgxwgugrTHmXYmGbfGHtDwBRnMej6VHJ2shPGcwlUmj059FhGj3056zSIoF0kmo/PE5uQ==
+  dependencies:
+    "@vue/devtools-api" "^6.1.4"
+    "@vuepress/shared" "2.0.0-beta.42"
+    vue "^3.2.33"
+    vue-router "^4.0.14"
+
 "@vuepress/core@2.0.0-beta.38":
   version "2.0.0-beta.38"
   resolved "https://registry.yarnpkg.com/@vuepress/core/-/core-2.0.0-beta.38.tgz#6e2daa3b0f502dc74a7e942bbb1142bdb4ed4b10"
@@ -3507,6 +3517,19 @@
     gray-matter "^4.0.3"
     toml "^3.0.0"
 
+"@vuepress/core@2.0.0-beta.42":
+  version "2.0.0-beta.42"
+  resolved "https://registry.yarnpkg.com/@vuepress/core/-/core-2.0.0-beta.42.tgz#dee58224dd289daeeeb859ba098aa8a04ecf8502"
+  integrity sha512-xsYAqhFbHiJyntWNB5L+tzsLDkZxJR7OZ7V6rMbGoiQbFS22mkBlyLaHtucIppbKxVoq0xcSjti1PgmyKC7SgQ==
+  dependencies:
+    "@vuepress/client" "2.0.0-beta.42"
+    "@vuepress/markdown" "2.0.0-beta.42"
+    "@vuepress/shared" "2.0.0-beta.42"
+    "@vuepress/utils" "2.0.0-beta.42"
+    gray-matter "^4.0.3"
+    toml "^3.0.0"
+    vue "^3.2.33"
+
 "@vuepress/markdown@2.0.0-beta.38":
   version "2.0.0-beta.38"
   resolved "https://registry.yarnpkg.com/@vuepress/markdown/-/markdown-2.0.0-beta.38.tgz#def50e87ac00eec5b86bd06fa3b8e6a1c37167b6"
@@ -3516,6 +3539,19 @@
     "@vuepress/shared" "2.0.0-beta.38"
     "@vuepress/utils" "2.0.0-beta.38"
     markdown-it "^12.3.2"
+    markdown-it-anchor "^8.4.1"
+    markdown-it-emoji "^2.0.0"
+    mdurl "^1.0.1"
+
+"@vuepress/markdown@2.0.0-beta.42":
+  version "2.0.0-beta.42"
+  resolved "https://registry.yarnpkg.com/@vuepress/markdown/-/markdown-2.0.0-beta.42.tgz#c8cc2d655306a6549b2f2c040e9ea35e6ccf4589"
+  integrity sha512-N6A3Bu7UMR7HTWEthCtDPe3BRo1vqyVBFttgz5gClfuLHhr6vtfWFrQP105X9wQivtpXk0XMjmvR5s09EnhN6Q==
+  dependencies:
+    "@types/markdown-it" "^12.2.3"
+    "@vuepress/shared" "2.0.0-beta.42"
+    "@vuepress/utils" "2.0.0-beta.42"
+    markdown-it "^13.0.0"
     markdown-it-anchor "^8.4.1"
     markdown-it-emoji "^2.0.0"
     mdurl "^1.0.1"
@@ -3624,6 +3660,15 @@
     "@vuepress/utils" "2.0.0-beta.38"
     chokidar "^3.5.3"
 
+"@vuepress/plugin-palette@2.0.0-beta.42":
+  version "2.0.0-beta.42"
+  resolved "https://registry.yarnpkg.com/@vuepress/plugin-palette/-/plugin-palette-2.0.0-beta.42.tgz#776391a9935cc9c7a0fccc1507bcc697d2ff9221"
+  integrity sha512-EOyYctY14KPQqG+MBiNiuLo+2iZp+qqXFPTQZHXAjB+ovk94RIRgPue2jDmy0GcJVpgcuyuAYzddd5aKffUoQg==
+  dependencies:
+    "@vuepress/core" "2.0.0-beta.42"
+    "@vuepress/utils" "2.0.0-beta.42"
+    chokidar "^3.5.3"
+
 "@vuepress/plugin-prismjs@2.0.0-beta.38":
   version "2.0.0-beta.38"
   resolved "https://registry.yarnpkg.com/@vuepress/plugin-prismjs/-/plugin-prismjs-2.0.0-beta.38.tgz#a4ee05572870a13db97e2671c9fd72416cc7cda9"
@@ -3684,6 +3729,13 @@
   dependencies:
     "@vue/shared" "^3.2.31"
 
+"@vuepress/shared@2.0.0-beta.42":
+  version "2.0.0-beta.42"
+  resolved "https://registry.yarnpkg.com/@vuepress/shared/-/shared-2.0.0-beta.42.tgz#d2b25b0d147cef1e4ad9002426edb4338b0a9f0b"
+  integrity sha512-TBZ1LUdrlqP1b2WBJodZ5NsGSqzvXBzO0yEWosdiL4lqilZPJ4gJYYYLk2YyKFAvMU8v3SxnvN1fzCEM05VSYg==
+  dependencies:
+    "@vue/shared" "^3.2.33"
+
 "@vuepress/theme-default@2.0.0-beta.38":
   version "2.0.0-beta.38"
   resolved "https://registry.yarnpkg.com/@vuepress/theme-default/-/theme-default-2.0.0-beta.38.tgz#63c05dce2bc6627ec78fc273c8f6003f1f928f8c"
@@ -3718,6 +3770,22 @@
     "@types/fs-extra" "^9.0.13"
     "@types/hash-sum" "^1.0.0"
     "@vuepress/shared" "2.0.0-beta.38"
+    chalk "^4.1.2"
+    debug "^4.3.4"
+    fs-extra "^10.0.1"
+    globby "^11.0.4"
+    hash-sum "^2.0.0"
+    ora "^5.4.1"
+    upath "^2.0.1"
+
+"@vuepress/utils@2.0.0-beta.42":
+  version "2.0.0-beta.42"
+  resolved "https://registry.yarnpkg.com/@vuepress/utils/-/utils-2.0.0-beta.42.tgz#c40d3373bcbf23c9a02c22ec121309ace0617354"
+  integrity sha512-lmxoqCLs3GWGEdt0emBjoZ/lpfchuZQnG90LJqXstfwIr53eR33W/W9x51dkNdRqBdA6BVp4hS0j0FkpUthOEA==
+  dependencies:
+    "@types/debug" "^4.1.7"
+    "@types/fs-extra" "^9.0.13"
+    "@vuepress/shared" "2.0.0-beta.42"
     chalk "^4.1.2"
     debug "^4.3.4"
     fs-extra "^10.0.1"
@@ -6768,6 +6836,11 @@ entities@~2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/entities/-/entities-2.1.0.tgz#992d3129cf7df6870b96c57858c249a120f8b8b5"
   integrity sha512-hCx1oky9PFrJ611mf0ifBLBRW8lUUVRlFolb5gWRfIELabBlbp9xZvrqZLZAs+NxFnbfQoeGd8wDkygjg7U85w==
+
+entities@~3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/entities/-/entities-3.0.1.tgz#2b887ca62585e96db3903482d336c1006c3001d4"
+  integrity sha512-WiyBqoomrwMdFG1e0kqvASYfnlb0lp8M5o5Fw2OFq1hNZxxcNk8Ik0Xm7LxzBhuidnZB/UtBqVCgUz3kBOP51Q==
 
 env-paths@^2.2.0:
   version "2.2.1"
@@ -9900,6 +9973,13 @@ linkify-it@^3.0.1:
   dependencies:
     uc.micro "^1.0.1"
 
+linkify-it@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/linkify-it/-/linkify-it-4.0.0.tgz#4f2d16879adc637cdfe9056cbc02de30e88ffa32"
+  integrity sha512-QAxkXyzT/TXgwGyY4rTgC95Ex6/lZ5/lYTV9nug6eJt93BCBQGOE47D/g2+/m5J1MrVLr2ot97OXkBZ9bBpR4A==
+  dependencies:
+    uc.micro "^1.0.1"
+
 lint-staged@12.4.0:
   version "12.4.0"
   resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-12.4.0.tgz#1fb8c73ac7a1c670b87bd2c1bf1e302c866e77af"
@@ -10332,6 +10412,17 @@ markdown-it@12.3.2, markdown-it@^12.3.2:
     argparse "^2.0.1"
     entities "~2.1.0"
     linkify-it "^3.0.1"
+    mdurl "^1.0.1"
+    uc.micro "^1.0.5"
+
+markdown-it@^13.0.0:
+  version "13.0.0"
+  resolved "https://registry.yarnpkg.com/markdown-it/-/markdown-it-13.0.0.tgz#f0803ded286980dc9f35972dad159cc4e64848f6"
+  integrity sha512-WArlIpVFvVwb8t3wgJuOsbMLhNWlzuQM7H2qXmuUEnBtXRqKjLjwFUMbZOyJgHygVZSjvcLR4EcXcRilqMavrA==
+  dependencies:
+    argparse "^2.0.1"
+    entities "~3.0.1"
+    linkify-it "^4.0.0"
     mdurl "^1.0.1"
     uc.micro "^1.0.5"
 
