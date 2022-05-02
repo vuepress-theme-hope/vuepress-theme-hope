@@ -11,12 +11,12 @@ export default [
   }),
   ...rollupTypescript("client/index", {
     external: [
+      /^@temp/,
       "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
       "@vuepress/shared",
       "vue",
       "vue-router",
-      /^@temp/,
     ],
   }),
 ];

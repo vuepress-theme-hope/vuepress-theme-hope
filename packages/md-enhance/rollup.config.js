@@ -38,6 +38,7 @@ export default [
   ...rollupTypescript("client/components/FlowChart", {
     external: [
       "@mr-hope/vuepress-shared/lib/client",
+      "@vueuse/core",
       "flowchart.js",
       "ts-debounce",
       "vue",
@@ -56,10 +57,9 @@ export default [
   }),
   ...rollupTypescript("client/components/Presentation", {
     external: [
+      /^@temp/,
       "@mr-hope/vuepress-shared/lib/client",
-      "@temp/md-enhance/reveal-plugins",
       "@vuepress/client",
-      /^reveal\.js/,
       "vue",
       /\.scss$/,
       /\.css$/,
@@ -78,6 +78,6 @@ export default [
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/reveal/index", {
-    external: ["reveal.js"],
+    external: [/^reveal\.js/],
   }),
 ];
