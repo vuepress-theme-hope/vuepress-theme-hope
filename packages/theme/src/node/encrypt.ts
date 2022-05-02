@@ -91,7 +91,7 @@ Key ${key}’s value MUST be string or string[]. But it’s type is ${typeof tok
           }
 
           logger.error(
-            `[You config "themeConfig.encrypt.config", but your config is invalid. 
+            `You config "themeConfig.encrypt.config", but your config is invalid. 
         
         The value of key ${key} MUST be string or string[]. But not it’s ${typeof tokens}. Please fix it!`
           );
