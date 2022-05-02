@@ -15889,10 +15889,10 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
   integrity sha1-WuaBd/GS1EViadEIr6k/+HQ/T2Q=
 
-twikoo@^1.5.4:
-  version "1.5.4"
-  resolved "https://registry.yarnpkg.com/twikoo/-/twikoo-1.5.4.tgz#2e2b996b852f82a080cfe89b28b55444d89641b0"
-  integrity sha512-V+zFhK38xWd3hbkQcvi0mN37NXlppEJMjtESTGNFXWwPKWbl8+bKdiWaSZEymq7MdxFHY4Pu+Dbo0X6Ax+U5rQ==
+twikoo@^1.5.8:
+  version "1.5.8"
+  resolved "https://registry.yarnpkg.com/twikoo/-/twikoo-1.5.8.tgz#05a24aeeff501d5123f8f8f1dcd8ccd15b3051c8"
+  integrity sha512-Yz4BZfl9QG9ndrILC1las1/N0ZIgGmYPku14XICakoFmlXxB5K2Xurq+TypxijfkzugB5NzPY7eaIuBSLZAN/g==
 
 type-check@^0.4.0, type-check@~0.4.0:
   version "0.4.0"
