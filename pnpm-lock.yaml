@@ -1367,6 +1367,7 @@ importers:
       '@vuepress/shared': 2.0.0-beta.42
       '@vuepress/utils': 2.0.0-beta.42
       '@vueuse/core': ^8.3.1
+      balloon-css: ^1.2.0
       bcryptjs: ^2.4.3
       lodash.throttle: ^4.1.1
       rimraf: 3.0.2
@@ -1402,6 +1403,7 @@ importers:
       '@vuepress/shared': 2.0.0-beta.42
       '@vuepress/utils': 2.0.0-beta.42
       '@vueuse/core': 8.3.1_vue@3.2.33
+      balloon-css: 1.2.0
       bcryptjs: 2.4.3
       lodash.throttle: 4.1.1
       vue: 3.2.33

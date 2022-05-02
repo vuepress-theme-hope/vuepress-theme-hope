@@ -77,4 +77,7 @@ export default [
     ],
     dtsExternal: [/\.scss$/],
   }),
+  ...rollupTypescript("client/reveal/index", {
+    external: ["reveal.js"],
+  }),
 ];

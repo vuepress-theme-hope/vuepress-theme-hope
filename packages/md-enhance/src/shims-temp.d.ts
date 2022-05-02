@@ -1,5 +1,5 @@
-declare module "@temp/md-enhance/reveal-plugins" {
-  export const usePlugins: () => Promise<
+declare module "@temp/md-enhance/reveal" {
+  export const useReveal: () => Promise<
     typeof import("reveal.js/dist/reveal.esm.js")
   >[];
 }
