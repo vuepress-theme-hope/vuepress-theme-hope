@@ -40,7 +40,7 @@
     "@vuepress/client": "2.0.0-beta.38",
     "@vuepress/plugin-git": "2.0.0-beta.38",
     "@vuepress/plugin-theme-data": "2.0.0-beta.38",
-    "@vuepress/shared": "2.0.0-beta.38",
+    "@vuepress/shared": "2.0.0-beta.42",
     "chalk": "^4.1.2",
     "dayjs": "^1.11.1",
     "ora": "^5.4.1",
