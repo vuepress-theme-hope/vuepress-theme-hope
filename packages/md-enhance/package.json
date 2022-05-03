@@ -58,7 +58,7 @@
     "chart.js": "^3.7.1",
     "flowchart.js": "^1.17.1",
     "katex": "^0.15.3",
-    "markdown-it": "^13.0.0",
+    "markdown-it": "^13.0.1",
     "mermaid": "^9.0.1",
     "reveal.js": "^4.3.1",
     "ts-debounce": "^4.0.0",
