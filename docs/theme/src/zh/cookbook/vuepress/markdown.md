@@ -177,13 +177,14 @@ Emoji 扩展由 [markdown-it-emoji](https://github.com/markdown-it/markdown-it-e
 ````md
 ```ts {1,6-8}
 import type { UserConfig } from "@vuepress/cli";
+import { defaultTheme } from "@vuepress/theme-default";
 
 export const config: UserConfig = {
   title: "你好， VuePress",
 
-  themeConfig: {
+  theme: defaultTheme({
     logo: "https://vuejs.org/images/logo.png",
-  },
+  }),
 };
 ```
 ````
@@ -192,13 +193,14 @@ export const config: UserConfig = {
 
 ```ts {1,6-8}
 import type { UserConfig } from "@vuepress/cli";
+import { defaultTheme } from "@vuepress/theme-default";
 
 export const config: UserConfig = {
   title: "你好， VuePress",
 
-  themeConfig: {
+  theme: defaultTheme({
     logo: "https://vuejs.org/images/logo.png",
-  },
+  }),
 };
 ```
 

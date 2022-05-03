@@ -25,6 +25,14 @@ Let your images support preview, zoom, share, swipe view and download.
 
 :::: code-group
 
+::: code-group-item pnpm
+
+```bash
+pnpm add -D vuepress-plugin-photo-swipe@next
+```
+
+:::
+
 ::: code-group-item yarn
 
 ```bash
@@ -51,11 +59,11 @@ npm i -D vuepress-plugin-photo-swipe@next
 
 ```ts
 // .vuepress/config.ts
-import { photoSwipe } from "vuepress-plugin-photo-swipe";
+import { photoSwipePlugin } from "vuepress-plugin-photo-swipe";
 
 export default {
   plugins: [
-    photoSwipe({
+    photoSwipePlugin({
       // your options
     }),
   ],
@@ -68,11 +76,11 @@ export default {
 
 ```js
 // .vuepress/config.js
-const { photoSwipe } = require("vuepress-plugin-photo-swipe");
+const { photoSwipePlugin } = require("vuepress-plugin-photo-swipe");
 
 module.exports = {
   plugins: [
-    photoSwipe({
+    photoSwipePlugin({
       // your options
     }),
   ],

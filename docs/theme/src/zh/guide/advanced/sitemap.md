@@ -12,7 +12,7 @@ tag:
 
 插件会为你的网站自动生成 Sitemap，它会自动根据页面的 Git 的时间戳生成页面的最后更新时间，同时会根据站点的多语言配置声明页面的其他语言替代版本地址。
 
-如果你不需要这个插件，请在 `themeConfig.plugins` 中设置 `sitemap` 为 `false`。
+如果你不需要这个插件，请在主题选项中设置 `plugins.sitemap: false`。
 
 ## 控制 Sitemap 链接
 

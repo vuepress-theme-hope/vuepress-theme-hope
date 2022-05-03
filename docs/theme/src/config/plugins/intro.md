@@ -12,7 +12,7 @@ tag:
 
 `vuepress-theme-hope` bundles many VuePress plugins.
 
-- Some plugins are automatically enabled, you can disable them in `themeConfig` if you don’t need it;
+- Some plugins are automatically enabled, you can disable them in theme options if you don’t need them.
 - Some plugins are only enabled when you provide necessary options.
 
 ::: note
@@ -99,7 +99,7 @@ Here are some other plugins that are not enabled by default by the theme, you ca
 
 - [@vuepress/plugin-prismjs][prismjs]: Code highlighting plugin using Prism.js
 
-- [@vuepress/plugin-theme-data][theme-data]: Composition API plugin for themeConfig
+- [@vuepress/plugin-theme-data][theme-data]: Composition API plugin for theme data
 
 [add-this]: https://vuepress-theme-hope.github.io/v2/add-this/
 [blog2]: https://vuepress-theme-hope.github.io/v2/blog/

@@ -23,6 +23,14 @@ copyright: false
 
 :::: code-group
 
+::: code-group-item pnpm
+
+```bash
+pnpm add -D vuepress-plugin-lightgallery@next
+```
+
+:::
+
 ::: code-group-item yarn
 
 ```bash
@@ -49,11 +57,11 @@ npm i -D vuepress-plugin-lightgallery@next
 
 ```ts
 // .vuepress/config.ts
-import { lightgallery } from "vuepress-plugin-lightgallery";
+import { lightgalleryPlugin } from "vuepress-plugin-lightgallery";
 
 export default {
   plugins: [
-    lightgallery({
+    lightgalleryPlugin({
       // 插件选项
     }),
   ],
@@ -66,11 +74,11 @@ export default {
 
 ```js
 // .vuepress/config.js
-const { lightgallery } = require("vuepress-plugin-lightgallery");
+const { lightgalleryPlugin } = require("vuepress-plugin-lightgallery");
 
 module.exports = {
   plugins: [
-    lightgallery({
+    lightgalleryPlugin({
       // 插件选项
     }),
   ],

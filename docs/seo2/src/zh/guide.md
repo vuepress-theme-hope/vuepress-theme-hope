@@ -13,35 +13,35 @@ icon: guide
 
 ### 默认的 OGP 生成逻辑
 
-|         属性名称         |                                                   值                                                   |
-| :----------------------: | :----------------------------------------------------------------------------------------------------: |
-|         `og:url`         |                                    `themeConfig.hostname` + `path`                                     |
-|      `og:site_name`      |                                           `siteConfig.title`                                           |
-|        `og:title`        |                                              `page.title`                                              |
-|     `og:description`     |      `page.frontmatter.description` \|\| 自动生成 (当插件选项中的 `autoDescription` 为 `true` 时)      |
-|        `og:type`         |                                              `"article"`                                               |
-|        `og:image`        | `themeConfig.hostname` + `page.frontmatter.image` \|\| 页面的第一张图片\|\| 插件选项的 `fallbackImage` |
-|    `og:updated_time`     |                                         `page.git.updatedTime`                                         |
-|       `og:locale`        |                                              `page.lang`                                               |
-|  `og:locale:alternate`   |                                  `themeConfig.locales` 包含的其他语言                                  |
-|      `twitter:card`      |                                `"summary_large_image"` (仅在找到图片时)                                |
-|   `twitter:image:alt`    |                                     `page.title` (仅在找到图片时)                                      |
-|     `article:author`     |                          `page.frontmatter.author` \|\| `themeConfig.author`                           |
-|      `article:tag`       |                          `page.frontmatter.tags` \|\| `page.frontmatter.tag`                           |
-| `article:published_time` |                          `page.frontmatter.date` \|\| `page.createTimeStamp`                           |
-| `article:modified_time`  |                                         `page.git.updatedTime`                                         |
+|         属性名称         |                                                 值                                                 |
+| :----------------------: | :------------------------------------------------------------------------------------------------: |
+|         `og:url`         |                                    `options.hostname` + `path`                                     |
+|      `og:site_name`      |                                         `siteConfig.title`                                         |
+|        `og:title`        |                                            `page.title`                                            |
+|     `og:description`     |    `page.frontmatter.description` \|\| 自动生成 (当插件选项中的 `autoDescription` 为 `true` 时)    |
+|        `og:type`         |                                            `"article"`                                             |
+|        `og:image`        | `options.hostname` + `page.frontmatter.image` \|\| 页面的第一张图片\|\| 插件选项的 `fallbackImage` |
+|    `og:updated_time`     |                                       `page.git.updatedTime`                                       |
+|       `og:locale`        |                                            `page.lang`                                             |
+|  `og:locale:alternate`   |                                 `siteData.locales` 包含的其他语言                                  |
+|      `twitter:card`      |                              `"summary_large_image"` (仅在找到图片时)                              |
+|   `twitter:image:alt`    |                                   `page.title` (仅在找到图片时)                                    |
+|     `article:author`     |                          `page.frontmatter.author` \|\| `options.author`                           |
+|      `article:tag`       |                        `page.frontmatter.tags` \|\| `page.frontmatter.tag`                         |
+| `article:published_time` |                        `page.frontmatter.date` \|\| `page.createTimeStamp`                         |
+| `article:modified_time`  |                                       `page.git.updatedTime`                                       |
 
 ### 默认的 JSON-LD 生成逻辑
 
-|     属性名      |                                 值                                 |
-| :-------------: | :----------------------------------------------------------------: |
-|   `@context`    |                       `"https://schema.org"`                       |
-|     `@type`     |                          `"NewsArticle"`                           |
-|   `headline`    |                            `page.title`                            |
-|     `image`     | 页面中的图片\|\| `themeConfig.hostname` + `page.frontmatter.image` |
-| `datePublished` |        `page.frontmatter.date` \|\| `page.createTimeStamp`         |
-| `dateModified`  |                       `page.git.updatedTime`                       |
-|    `author`     |        `page.frontmatter.author` \|\| `themeConfig.author`         |
+|     属性名      |                               值                               |
+| :-------------: | :------------------------------------------------------------: |
+|   `@context`    |                     `"https://schema.org"`                     |
+|     `@type`     |                        `"NewsArticle"`                         |
+|   `headline`    |                          `page.title`                          |
+|     `image`     | 页面中的图片\|\| `options.hostname` + `page.frontmatter.image` |
+| `datePublished` |      `page.frontmatter.date` \|\| `page.createTimeStamp`       |
+| `dateModified`  |                     `page.git.updatedTime`                     |
+|    `author`     |        `page.frontmatter.author` \|\| `options.author`         |
 
 ## 直接添加 head 标签
 
@@ -81,11 +81,24 @@ head:
 你可以使用插件选项的 `ogp` 传入一个函数来按照你的需要修改默认 OGP 对象并返回。
 
 ```ts
-function ogp<ExtendObject = Record<string, unknown>>(
+function ogp<
+  ExtraPageData extends Record<string | number | symbol, unknown> = Record<
+    never,
+    never
+  >,
+  ExtraPageFrontmatter extends Record<
+    string | number | symbol,
+    unknown
+  > = Record<string, unknown>,
+  ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
+    never,
+    never
+  >
+>(
   /** 插件自动推断的 OGP 对象 */
   ogp: SeoContent,
   /** 页面对象 */
-  page: ExtendPage<ExtendObject>,
+  page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   /** VuePress App */
   app: App
 ): SeoContent;
@@ -109,11 +122,24 @@ function ogp<ExtendObject = Record<string, unknown>>(
 同 OGP，你可以使用插件选项的 `jsonLd` 传入一个函数来按照你的需要修改默认 JSON-LD 对象并返回。
 
 ```ts
-function jsonLd<ExtendObject = Record<string, unknown>>(
+function jsonLd<
+  ExtraPageData extends Record<string | number | symbol, unknown> = Record<
+    never,
+    never
+  >,
+  ExtraPageFrontmatter extends Record<
+    string | number | symbol,
+    unknown
+  > = Record<string, unknown>,
+  ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
+    never,
+    never
+  >
+>(
   /** 插件自动推断的 JSON-LD 对象 */
   jsonLD: ArticleJSONLD | null,
   /** 页面对象 */
-  page: ExtendPage<ExtendObject>,
+  page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   /** VuePress App */
   app: App
 ): ArticleJSONLD | null;
@@ -147,10 +173,23 @@ function jsonLd<ExtendObject = Record<string, unknown>>(
 有些时候你可能需要符合其他协议或按照其他搜索引擎提供的格式提供对应的 SEO 标签，此时你可以使用 `customHead` 选项，其类型为:
 
 ```ts
-function customHead<ExtendObject = Record<string, unknown>>(
+function customHead<
+  ExtraPageData extends Record<string | number | symbol, unknown> = Record<
+    never,
+    never
+  >,
+  ExtraPageFrontmatter extends Record<
+    string | number | symbol,
+    unknown
+  > = Record<string, unknown>,
+  ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
+    never,
+    never
+  >
+>(
   head: HeadConfig[],
   /** 页面对象 */
-  page: ExtendPage<ExtendObject>,
+  page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   /** VuePress App */
   app: App
 ): void;

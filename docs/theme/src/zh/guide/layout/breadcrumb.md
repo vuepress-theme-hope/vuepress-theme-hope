@@ -33,8 +33,8 @@ tag:
 
     以路径导航为例:
 
-    该功能默认全局启用，即 `themeConfig.breadcrumb` 默认为 `true`，同时你可以在特定页面的 front matter 中设置 `breadcrumb: false` 来局部禁用它。
+    该功能默认全局启用，即主题选项中 `breadcrumb` 默认为 `true`，同时你可以在特定页面的 front matter 中设置 `breadcrumb: false` 来局部禁用它。
 
-    当然你也可以将 `themeConfig.breadcrumb` 选项设置为 `false` 来全局禁用它，之在特定页面的 front Mmtter 中设置 `breadcrumb: true` 来局部启用它。
+    当然你也可以在主题选项中设置 `breadcrumb: false` 来全局禁用它，之在特定页面的 front Mmtter 中设置 `breadcrumb: true` 来局部启用它。
 
     :::

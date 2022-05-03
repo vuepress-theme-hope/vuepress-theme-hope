@@ -25,7 +25,7 @@ Toggle the button below to see effects.
 
 ## Options
 
-You can config darkmode through `themeConfig.darkmode`.
+You can config darkmode through `darkmode` in theme options.
 
 Available options:
 

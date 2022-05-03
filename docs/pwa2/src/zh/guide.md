@@ -136,7 +136,7 @@ VuePress 本质上是一个 SPA。这意味着你只需要缓存主页并从主�
 
 ## 清单文件生成
 
-为了保证 PWA 的可安装性，网站需要生成清单文件，并通过 `link` 声明有效的 manifest 清单文件地址[^manifest]。
+为了保证 PWA 的可安装性，网站需要生成清单文件，并通过 `<link>` 声明有效的 manifest 清单文件地址[^manifest]。
 
 [^manifest]: **清单文件**
 
@@ -165,7 +165,7 @@ VuePress 本质上是一个 SPA。这意味着你只需要缓存主页并从主�
 | name                        | `siteConfig.title` \|\| `siteConfig.locales['/'].title` \|\| `"Site"`                                   |
 | short_name                  | `siteConfig.title` \|\| `siteConfig.locales['/'].title` \|\| `"Site"`                                   |
 | description                 | `siteConfig.description` \|\| `siteConfig.locales['/'].description` \|\| `"A site built with vuepress"` |
-| lang                        | `siteConfig.locales['/'].lang` \|\| `themeConfig.locales['/'].lang` \|\| `"en-US"`                      |
+| lang                        | `siteConfig.locales['/'].lang` \|\| `"en-US"`                                                           |
 | start_url                   | `siteConfig.base`                                                                                       |
 | scope                       | `siteConfig.base`                                                                                       |
 | display                     | `"standalone"`                                                                                          |

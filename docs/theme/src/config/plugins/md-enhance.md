@@ -14,7 +14,7 @@ tag:
 
 The `vuepress-plugin-md-enhance` plugin is enabled by default and provides Markdown enhancements.
 
-`vuepress-theme-hope` passes `themeConfig.plugins.mdEnhance` as a plugin option to the `vuepress-plugin-md-enhance` plugin.
+`vuepress-theme-hope` passes `plugins.mdEnhance` in theme options as plugin options to `vuepress-plugin-md-enhance` plugin.
 
 ::: tip
 

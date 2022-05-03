@@ -23,9 +23,15 @@ tag:
 ```ts
 // .vuepress/config.ts
 import { path } from "@vuepress/utils";
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
+export default defineUserConfig({
+  theme: hopeTheme({
+    // 主题选项
+    // ...
+  }),
+
   alias: {
     // 你可以在这里将别名定向到自己的组件
     // 比如这里我们将主题的主页组件改为用户 .vuepress/components 下的 HomePage.vue
@@ -44,9 +50,14 @@ export default defineHopeConfig({
 ```js
 // .vuepress/config.js
 const { path } = require("@vuepress/utils");
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
+module.exports = {
+  theme: hopeTheme({
+    // 主题选项
+    // ...
+  }),
+
   alias: {
     // 你可以在这里将别名定向到自己的组件
     // 比如这里我们将主题的主页组件改为用户 .vuepress/components 下的 HomePage.vue
@@ -55,7 +66,7 @@ module.exports = defineHopeConfig({
       "./components/HomePage.vue"
     ),
   },
-});
+};
 ```
 
 :::
@@ -225,9 +236,15 @@ Components:
 ```ts
 // .vuepress/config.ts
 import { path } from "@vuepress/utils";
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
+export default defineUserConfig({
+  theme: hopeTheme({
+    // 主题选项
+    // ...
+  }),
+
   alias: {
     // 你可以在这里将别名定向到自己的组件
     // 比如这里我们将主题的主页组件改为用户 .vuepress/components 下的 HomePage.vue

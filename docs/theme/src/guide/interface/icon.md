@@ -18,7 +18,7 @@ You can use iconfont and fontawesome to add icons to your project.
 
 ::: note
 
-The prefix of the icon class is an empty string by default, you probably need to change it with `iconPrefix` options in themeConfig according to your choise.
+The prefix of the icon class is an empty string by default, you probably need to change it with `iconPrefix` options in theme options according to your choise.
 
 :::
 
@@ -49,7 +49,7 @@ First, you need to create a new project to set and manage your website’s icons
 1. Log in to Iconfont using GitHub or Weibo.
 1. Find "Resources → My Projects" at the top of the website, and click the "New Project" icon in the upper right corner.
 1. Set a recognizable project name
-1. Fill in `FontClass/Symbol prefix` with `icon-` (you can also fill in according to your preference, but you need to set this value to `themeConfig.iconPrefix` with an extra `iconfont` prefix)
+1. Fill in `FontClass/Symbol prefix` with `icon-` (you can also fill in according to your preference, but you need to set this value to `iconPrefix` in theme options with an extra `iconfont` prefix)
 1. Font Family please keep `iconfont`
 
 ![New Project](./assets/iconfont-new.png)
@@ -116,7 +116,7 @@ Font-awesome current version is 6.0.0
 
 :::
 
-And you need set `themeConfig.iconPrefix` to `"fas fa-"`.
+And you should set `iconPrefix` to `"fas fa-"`.
 
 ### Usage
 

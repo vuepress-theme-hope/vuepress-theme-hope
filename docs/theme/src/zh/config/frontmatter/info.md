@@ -47,7 +47,7 @@ type Author = string | string[] | AuthorInfo | AuthorInfo[];
 
 ::: tip
 
-在主题配置中指定默认作者时，可以设置 `false` 以防止显示默认作者。
+在主题选项中指定默认作者时，可以设置 `false` 以防止显示默认作者。
 
 :::
 

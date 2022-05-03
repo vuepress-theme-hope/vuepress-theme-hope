@@ -19,19 +19,20 @@ The theme adds tip, note, info, warning, danger and detail container.
 
 ::: code-group-item TS
 
-```ts {7-10}
+```ts {8-11}
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     plugins: {
       mdEnhance: {
         // this is the default option, so you can use it directly
         container: true,
       },
     },
-  },
+  }),
 });
 ```
 
@@ -41,18 +42,18 @@ export default defineHopeConfig({
 
 ```js {7-10}
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     plugins: {
       mdEnhance: {
         // this is the default option, so you can use it directly
         container: true,
       },
     },
-  },
-});
+  }),
+};
 ```
 
 :::

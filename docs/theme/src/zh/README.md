@@ -109,6 +109,14 @@ footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 
 :::: code-group
 
+::: code-group-item pnpm
+
+```bash
+pnpm create vuepress-theme-hope@next [dir]
+```
+
+:::
+
 <!-- ::: code-group-item yarn
 
 ```bash
@@ -135,10 +143,17 @@ npm init vuepress-theme-hope@next [dir]
 
 ```ts
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  // 此处放置配置
+export default defineUserConfig({
+  // 站点选项
+  // ...
+
+  theme: hopeTheme({
+    // 主题选项
+    // ...
+  }),
 });
 ```
 
@@ -148,11 +163,17 @@ export default defineHopeConfig({
 
 ```js
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  // 此处放置配置
-});
+module.exports = {
+  // 站点选项
+  // ...
+
+  theme: hopeTheme({
+    // 主题选项
+    // ...
+  }),
+};
 ```
 
 :::

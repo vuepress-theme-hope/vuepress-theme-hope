@@ -42,7 +42,7 @@ npm init vuepress-theme-hope@next [dir]
 
 ## Usage
 
-Please import and use `defineHopeConfig` in the config file to use `vuepress-theme-hope`.
+Please import and use `hopeTheme` to use `vuepress-theme-hope`.
 
 :::: code-group
 
@@ -50,10 +50,13 @@ Please import and use `defineHopeConfig` in the config file to use `vuepress-the
 
 ```ts
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  // your config here
+export default defineUserConfig({
+  theme: hopeTheme({
+    // your theme config here
+  }),
 });
 ```
 
@@ -63,11 +66,13 @@ export default defineHopeConfig({
 
 ```js
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  // your config here
-});
+module.exports = {
+  theme: hopeTheme({
+    // your theme config here
+  }),
+};
 ```
 
 :::

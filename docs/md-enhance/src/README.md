@@ -92,6 +92,14 @@ copyright: false
 
 :::: code-group
 
+::: code-group-item pnpm
+
+```bash
+pnpm add -D vuepress-plugin-md-enhance@next
+```
+
+:::
+
 ::: code-group-item yarn
 
 ```bash
@@ -118,11 +126,11 @@ npm i -D vuepress-plugin-md-enhance@next
 
 ```ts
 // .vuepress/config.ts
-import { mdEnhance } from "vuepress-plugin-md-enhance";
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
   plugins: [
-    mdEnhance({
+    mdEnhancePlugin({
       // your options
     }),
   ],
@@ -135,11 +143,11 @@ export default {
 
 ```js
 // .vuepress/config.js
-const { mdEnhance } = require("vuepress-plugin-md-enhance");
+const { mdEnhancePlugin } = require("vuepress-plugin-md-enhance");
 
 module.exports = {
   plugins: [
-    mdEnhance({
+    mdEnhancePlugin({
       // your options
     }),
   ],

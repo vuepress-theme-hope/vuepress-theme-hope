@@ -11,7 +11,7 @@ tag:
 
 The theme supports blog feature with`vuepress-plugin-blog2` by default, and it’s **disabled by default**.
 
-If you need blog functionality, you can set `themeConfig.plugins.blog` to `true` to enable blog functionality.
+If you need blog functionality, you can set `plugins.blog: true` in theme options to enable blog functionality.
 
 <!-- more -->
 
@@ -27,7 +27,7 @@ After enabling the blog function, the theme allows you to configure categories, 
 
 ## I18n Support
 
-The theme adds support for i18n in blog system. You can set differernt blog config for each language in `themeConfig.locales`.
+The theme adds support for i18n in blog system. You can set differernt blog config for each language using `locales` in theme options.
 
 When you have multiple languages, the article list, timeline, etc. under each language will remain independent.
 
@@ -35,10 +35,10 @@ When you have multiple languages, the article list, timeline, etc. under each la
 
 The theme provides a blog info sidebar. The sidebar will be displayed on the blog-related page (it will be displayed on the right side on the desktop, and retracted into the sidebar in mobile view)
 
-You can control the display behavior of the sidebar on non-blog related pages through `blog.sidebarDisplay` in themeConfig. Optional values are `"mobile" | "none" | "always"`. The default is `"mobile"`, that is, when you visit non-blog related pages in mobile view, you can also see it in the sidebar.
+You can control the display behavior of the sidebar on non-blog related pages through `blog.sidebarDisplay` in theme options. Optional values are `"mobile" | "none" | "always"`. The default is `"mobile"`, that is, when you visit non-blog related pages in mobile view, you can also see it in the sidebar.
 
 ## Pagination
 
 For the list of articles on all pages, we will display a pagination component at the bottom. You can use this component to quickly jump to the first page, the last page, and the two pages before and after. You can also enter a number to jump to the specified page.
 
-The default number of articles per page is `10`, you can set `blog.articlePerPage` in themeConfig to override it.
+The default number of articles per page is `10`, you can set `blog.articlePerPage` in theme options to override it.

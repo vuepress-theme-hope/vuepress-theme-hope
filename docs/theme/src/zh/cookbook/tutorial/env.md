@@ -77,24 +77,25 @@ Node.js 本身只会占据几十 M 的空间!
 
    :::
 
-## Yarn
+## Pnpm
 
-在你安装 Node.js 之后，请安装 Yarn V1 版本。
+在你安装 Node.js 之后，请安装 [pnpm](https://pnpm.io)。
 
 ::: tip
 
-我们推荐你使用 Yarn 管理你的项目，因为 VuePress 和 VuePress Theme Hope 都是通过 Yarn 来管理依赖的。
+我们推荐你使用 pnpm 管理你的项目，因为 VuePress 和 VuePress Theme Hope 都是通过 pnpm 来管理依赖的。
 
-Yarn 的一些功能可以保证你拥有正确的依赖。
+pnpm 的一些功能可以保证你拥有正确的依赖。
 
 :::
 
-### 安装 Yarn
+### 安装 Pnpm
 
-在终端中输入下列命令安装 Yarn:
+在终端中输入下列命令安装 pnpm:
 
 ```sh
-npm i -g yarn
+corepack enable
+corepack prepare pnpm@6.32.10 --activate
 ```
 
 ::: tip 在 Windows 上打开终端

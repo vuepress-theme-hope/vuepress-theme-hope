@@ -9,7 +9,7 @@ tag:
   - Layout
 ---
 
-The theme adds Breadcrumb support, you can config it using `breadcrumb` in Frontmatter and themeConfig <Badge text="Support page config" /> [^supportpageconfig], the default value is `true`.
+The theme adds Breadcrumb support, you can config it using `breadcrumb` in page frontmatter and theme options <Badge text="Support page config" /> [^supportpageconfig], the default value is `true`.
 
 Without any config, a Breadcrumb that matches the theme color is displayed at the top of the page content to help the reader understand the document structure.
 
@@ -35,8 +35,8 @@ Please remember to set a title for **HOME PAGE**!
 
     Take path navigation as an example:
 
-    This feature is enabled globally by default, that is, `themeConfig.breadcrumb` is `true` by default, and you can set `breadcrumb: false` in the Front Matter of a specific page to disable it locally.
+    This feature is enabled globally by default, that is, `breadcrumb` in theme options is `true` by default, and you can set `breadcrumb: false` in the Front Matter of a specific page to disable it locally.
 
-    Of course, you can also set the `themeConfig.breadcrumb` option to `false` to disable it globally, and set `breadcrumb: true` in the Front Matter of a specific page to enable it locally.
+    Of course, you can also set the `breadcrumb: false` in theme options to disable it globally, and set `breadcrumb: true` in the Front Matter of a specific page to enable it locally.
 
     :::
