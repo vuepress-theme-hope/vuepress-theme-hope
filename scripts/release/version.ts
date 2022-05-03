@@ -17,7 +17,7 @@ export const isPreRelease = (version: string): boolean =>
   Boolean(prerelease(version));
 
 export const getNpmTags = (version: string): string[] => {
-  if (isPreRelease(version)) return ["next", "alpha", "beta", "latest"];
+  if (isPreRelease(version)) return ["next", "alpha", "beta", "latest", "test"];
 
-  return ["latest", "beta", "alpha", "next"];
+  return ["latest", "beta", "alpha", "next", "test"];
 };
