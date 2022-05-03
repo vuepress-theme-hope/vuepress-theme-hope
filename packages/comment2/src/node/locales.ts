@@ -16,30 +16,42 @@ export const walineLocales: WalineLocaleConfig = {
     placeholder:
       "Write a comment here (Fill in the email address to receive an email notification when being replied)",
   },
+
   "/de/": {
     placeholder:
       "Schreibe ein Kommentar (Geben Sie die E-Mail-Adresse ein, um eine E-Mail-Benachrichtigung zu erhalten, wenn Sie geantwortet werden)",
   },
+
   "/vi/": {
     placeholder:
       "Để lại bình luận (Điền địa chỉ email để nhận email thông báo khi được trả lời)",
   },
+
   "/uk/": {
     placeholder:
       "Напишіть тут коментар (введіть адресу електронної пошти, щоб отримувати сповіщення електронною поштою, коли буде відповідь)",
   },
+
   "/ru/": {
     placeholder:
       "Напишите комментарий здесь (Введите адрес электронной почты, чтобы получить уведомление по электронной почте при ответе)",
   },
+
   "/br/": {
     placeholder:
       "Escreva um comentário aqui (preencha com o endereço de email para receber notificações quando tiver alguma resposta)",
   },
+
   "/pl/": {
     placeholder:
       "Wpisz tutaj komentarz (wpisz adres e-mail, aby otrzymać powiadomienie e-mail, gdy otrzymasz odpowiedź)",
   },
+
+  "/sk/": {
+    placeholder:
+      "Napíš svoj komentár (vlož svoj e-mail taktiež, aby si bol notifikovaný o odpovediach)",
+  },
+
   "/fr/": {
     placeholder:
       "Écrivez votre commentaire ici (Inscrivez votre email afin de recevoir une notification en cas de réponse)",

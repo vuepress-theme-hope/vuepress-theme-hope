@@ -82,6 +82,15 @@ export const markdownEnhanceLocales: MarkdownEnhanceLocaleConfig = {
     details: "Dane",
   },
 
+  "/sk/": {
+    info: "Info",
+    note: "Poznámka",
+    tip: "Tip",
+    warning: "Upozornenie",
+    danger: "Pozor",
+    details: "Podrobnosti",
+  },
+
   "/fr/": {
     info: "Info",
     note: "Note",
