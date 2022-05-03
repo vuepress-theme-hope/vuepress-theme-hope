@@ -36,12 +36,9 @@
     "strict": true,
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
-    // mininal node 12 support
-    "target": "es2019",
     // mininal node 14 support
-    // "target": "es2020",
+    "target": "es2020"
     // mininal node 16 support
     // "target": "es2021",
-    "types": ["jest", "node", "vite/client"]
   }
 }
