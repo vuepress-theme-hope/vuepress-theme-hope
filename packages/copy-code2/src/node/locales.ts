@@ -47,7 +47,6 @@ export const copyCodeLocales: CopyCodeLocaleConfig = {
     hint: "Skopiuj kod",
   },
 
-
   "/sk/": {
     copy: "Úspešne skopírované 🎉",
     hint: "Skopíruj kód",
