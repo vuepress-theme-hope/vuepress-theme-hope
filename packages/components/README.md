@@ -9,13 +9,12 @@ Components for vuepress-theme-hope.
 ## Install
 
 ```bash
-npm i @mr-hope/vuepress-plugin-components@next
-```
-
-or
-
-```bash
-yarn add @mr-hope/vuepress-plugin-components@next
+# pnpm
+pnpm add -D @mr-hope/vuepress-plugin-components@next
+# npm
+npm i -D @mr-hope/vuepress-plugin-components@next
+# yarn
+yarn add -D @mr-hope/vuepress-plugin-components@next
 ```
 
 ---
@@ -25,11 +24,10 @@ vuepress-theme-hope 的组件。
 ## 安装
 
 ```bash
-npm i @mr-hope/vuepress-plugin-components@next
-```
-
-或
-
-```bash
-yarn add @mr-hope/vuepress-plugin-components@next
+# pnpm
+pnpm add -D @mr-hope/vuepress-plugin-components@next
+# npm
+npm i -D @mr-hope/vuepress-plugin-components@next
+# yarn
+yarn add -D @mr-hope/vuepress-plugin-components@next
 ```

@@ -28,13 +28,12 @@ We will provide a new share plugin later in v2.
 ## Install
 
 ```bash
-npm i -D vuepress-plugin-add-this
-```
-
-Or
-
-```bash
-yarn add -D vuepress-plugin-add-this
+# pnpm
+pnpm add -D vuepress-plugin-add-this@next
+# npm
+npm i -D vuepress-plugin-add-this@next
+# yarn
+yarn add -D vuepress-plugin-add-this@next
 ```
 
 ---
@@ -54,11 +53,10 @@ yarn add -D vuepress-plugin-add-this
 ## 安装
 
 ```bash
-npm i -D vuepress-plugin-add-this
-```
-
-或
-
-```bash
-yarn add -D vuepress-plugin-add-this
+# pnpm
+pnpm add -D vuepress-plugin-add-this@next
+# npm
+npm i -D vuepress-plugin-add-this@next
+# yarn
+yarn add -D vuepress-plugin-add-this@next
 ```

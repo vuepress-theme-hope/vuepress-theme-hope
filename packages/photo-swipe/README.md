@@ -14,13 +14,12 @@
 ## Install
 
 ```bash
-npm i -D vuepress-plugin-photo-swipe
-```
-
-Or
-
-```bash
-yarn add -D vuepress-plugin-photo-swipe
+# pnpm
+pnpm add -D vuepress-plugin-photo-swipe@next
+# npm
+npm i -D vuepress-plugin-photo-swipe@next
+# yarn
+yarn add -D vuepress-plugin-photo-swipe@next
 ```
 
 ## Migrating from V1
@@ -34,13 +33,12 @@ yarn add -D vuepress-plugin-photo-swipe
 ## 安装
 
 ```bash
-npm i -D vuepress-plugin-photo-swipe
-```
-
-或
-
-```bash
-yarn add -D vuepress-plugin-photo-swipe
+# pnpm
+pnpm add -D vuepress-plugin-photo-swipe@next
+# npm
+npm i -D vuepress-plugin-photo-swipe@next
+# yarn
+yarn add -D vuepress-plugin-photo-swipe@next
 ```
 
 ## 从 V1 迁移
