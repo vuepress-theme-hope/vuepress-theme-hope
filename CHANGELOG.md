@@ -1,7 +1,27 @@
 # Change Log
 
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [2.0.0-beta.48](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.47...v2.0.0-beta.48) (2022-05-03)
+
+### Features
+
+- add I18n support for slovak ([#1757](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1757)) ([c6d0971](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c6d097126be91af841b3f3d0359addf5b2008af3))
+- **comment2:** improve client ([bcfd815](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/bcfd815e1be03c1d071587d54899ff73d087a167))
+- compatable with latest vuepress ([64ba9e3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/64ba9e3a9cc7819e2941d6636ae605f395635a5b))
+- **create:** support pnpm ([a768280](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a768280da7dda25379ee3f607fb13a10c8e3053d))
+- **sass-palette:** improve inject ([95eb3a9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/95eb3a986725a7498d948c6c407f6a3683984987))
+- **shared:** add detectPackageManager ([777a2bb](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/777a2bb380d5d78ab1de2794192d15693722d138))
+- update demo ([836f1e4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/836f1e42ca6b39f76ec01eb6f99e0b1ec1fa0cc5))
+
+### Bug Fixes
+
+- **blog2:** fix frontmatter option type ([48448aa](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/48448aa48899b8d98560d4d8416e17effe1e7abc))
+- **comment2:** stop bundling @walint/client ([18ba045](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/18ba045471dfdaf2f6fcf30cb412732e1bb15c65))
+- **shared:** log error msg only in debug mode ([de726a0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/de726a004c2d9f145a7f0e6952e2888f55eeaa2a))
+- **theme:** fix footnote in except ([d495d68](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d495d68b2223cae3025f074e3c5b8bfde23f7d13))
+- **theme:** fix globalEncrypt ([1401242](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1401242ed87ce6bc7f995b5ba0defbab27cb0d2d))
+- **theme:** fix logoDark ([1df15f0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1df15f043188764bd3dd0dad3d16961aea61be6b))
 
 # [2.0.0-beta.47](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.46...v2.0.0-beta.47) (2022-04-24)
 
