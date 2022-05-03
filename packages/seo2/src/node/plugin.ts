@@ -2,10 +2,10 @@ import { stripTags } from "@mr-hope/vuepress-shared";
 import { generateRobotsTxt, appendSEO } from "./seo";
 import { logger, md2text } from "./utils";
 
-import type { Plugin, PluginConfig } from "@vuepress/core";
+import type { PluginObject } from "@vuepress/core";
 import type { ExtendPage, SeoOptions } from "../shared";
 
-export const seoPlugin: Plugin<SeoOptions> = (options) => {
+export const seoPlugin = (options: SeoOptions): PluginObject => {
   if (!options.hostname) {
     logger.error("Option 'hostname' is required!");
 
@@ -21,14 +21,9 @@ export const seoPlugin: Plugin<SeoOptions> = (options) => {
         page.frontmatter.summary =
           stripTags(page.excerpt) || md2text(page.content).slice(0, 180) || "";
 
-      appendSEO(page, options as SeoOptions, app);
+      appendSEO(page, options, app);
     },
 
     onGenerated: (app): Promise<void> => generateRobotsTxt(app.dir),
   };
 };
-
-export const seo = (options: SeoOptions | false): PluginConfig<SeoOptions> => [
-  "seo2",
-  options,
-];

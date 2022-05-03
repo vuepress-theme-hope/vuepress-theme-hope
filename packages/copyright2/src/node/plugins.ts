@@ -3,11 +3,11 @@ import { removeEndingSlash, removeLeadingSlash } from "@vuepress/shared";
 import { path } from "@vuepress/utils";
 import { copyrightLocales } from "./locales";
 
-import type { Page, Plugin, PluginConfig } from "@vuepress/core";
+import type { Page, PluginFunction } from "@vuepress/core";
 import type { CopyrightOptions } from "../shared";
 
-export const copyrightPlugin: Plugin<CopyrightOptions> = (
-  {
+export const copyrightPlugin =
+  ({
     hostname,
     author = "",
     license = "",
@@ -16,62 +16,57 @@ export const copyrightPlugin: Plugin<CopyrightOptions> = (
     global = false,
     triggerWords = 100,
     locales,
-  },
-  app
-) => {
-  const currentlocales = getLocales({
-    app,
-    name: "copyright",
-    default: copyrightLocales,
-    config: locales,
-  });
+  }: CopyrightOptions): PluginFunction =>
+  (app) => {
+    const currentlocales = getLocales({
+      app,
+      name: "copyright",
+      default: copyrightLocales,
+      config: locales,
+    });
 
-  return {
-    name: "vuepress-plugin-copyright2",
+    return {
+      name: "vuepress-plugin-copyright2",
 
-    define: (): Record<string, unknown> => ({
-      COPYRIGHT_GLOBAL: global,
-      COPYRIGHT_DISABLE_COPY: disableCopy,
-      COPYRIGHT_DISABLE_SELECTION: disableSelection,
-      COPYRIGHT_TRIGGER_WORDS: triggerWords,
-    }),
+      define: (): Record<string, unknown> => ({
+        COPYRIGHT_GLOBAL: global,
+        COPYRIGHT_DISABLE_COPY: disableCopy,
+        COPYRIGHT_DISABLE_SELECTION: disableSelection,
+        COPYRIGHT_TRIGGER_WORDS: triggerWords,
+      }),
 
-    extendsPage: (page: Page<{ copyright: string }>, app): void => {
-      const { base } = app.options;
-      const locale = currentlocales[page.pathLocale];
+      extendsPage: (page: Page<{ copyright?: string }>, app): void => {
+        const { base } = app.options;
+        const locale = currentlocales[page.pathLocale];
 
-      const authorText = author
-        ? locale.author.replace(
-            ":author",
-            typeof author === "function" ? author(page) : author
-          )
-        : "";
+        const authorText = author
+          ? locale.author.replace(
+              ":author",
+              typeof author === "function" ? author(page) : author
+            )
+          : "";
 
-      const licenseText = license
-        ? locale.license.replace(
-            ":license",
-            typeof license === "function" ? license(page) : license
-          )
-        : "";
+        const licenseText = license
+          ? locale.license.replace(
+              ":license",
+              typeof license === "function" ? license(page) : license
+            )
+          : "";
 
-      const linkText = hostname
-        ? locale.link.replace(
-            ":link",
-            `${removeEndingSlash(hostname)}${base}${removeLeadingSlash(
-              page.path
-            )}`
-          )
-        : "";
+        const linkText = hostname
+          ? locale.link.replace(
+              ":link",
+              `${removeEndingSlash(hostname)}${base}${removeLeadingSlash(
+                page.path
+              )}`
+            )
+          : "";
 
-      page.data.copyright = [authorText, licenseText, linkText]
-        .filter((item) => item)
-        .join("\n");
-    },
+        page.data.copyright = [authorText, licenseText, linkText]
+          .filter((item) => item)
+          .join("\n");
+      },
 
-    clientAppSetupFiles: path.resolve(__dirname, "../client/appSetup.js"),
+      clientAppSetupFiles: path.resolve(__dirname, "../client/appSetup.js"),
+    };
   };
-};
-
-export const copyright = (
-  options: CopyrightOptions | false
-): PluginConfig<CopyrightOptions> => ["copyright2", options];

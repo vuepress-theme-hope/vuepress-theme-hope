@@ -5,8 +5,6 @@ export default [
     external: [
       "@mr-hope/vuepress-shared",
       "@vuepress/utils",
-      "lodash.debounce",
-      "vue",
       "vuepress-plugin-reading-time2",
       "vuepress-plugin-sass-palette",
     ],
@@ -34,7 +32,8 @@ export default [
       "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
       "@vuepress/plugin-theme-data/lib/client",
-      "lodash.debounce",
+      "@vueuse/core",
+      "ts-debounce",
       "vue",
       /\.scss$/,
     ],

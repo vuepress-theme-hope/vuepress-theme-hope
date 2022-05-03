@@ -14,22 +14,24 @@ import type { IncomingMessage, ServerResponse } from "http";
 /**
  * Handle specific path when runing VuePress DevServe
  *
+ * @param config VuePress Bundler config
  * @param app VuePress Node App
  * @param path Path to be responsed
  * @param getResponse respond function
  * @param errMsg error msg
  */
 export const useCustomDevServer = (
+  config: unknown,
   app: App,
   path: string,
   getResponse: (request?: IncomingMessage) => Promise<string | Buffer>,
   errMsg = "The server encounted an error"
 ): void => {
-  const { base, bundler, bundlerConfig } = app.options;
+  const { base, bundler } = app.options;
 
   // for vite
-  if (app.env.isDev && bundler.endsWith("vite")) {
-    const viteBundlerConfig: ViteBundlerOptions = bundlerConfig;
+  if (app.env.isDev && bundler.name.endsWith("vite")) {
+    const viteBundlerConfig = config as ViteBundlerOptions;
     const handler: HandleFunction = (
       request: IncomingMessage,
       response: ServerResponse
@@ -59,8 +61,8 @@ export const useCustomDevServer = (
   }
 
   // for webpack
-  if (app.env.isDev && bundler.endsWith("webpack")) {
-    const webpackBundlerConfig: WebpackBundlerOptions = bundlerConfig;
+  if (app.env.isDev && bundler.name.endsWith("webpack")) {
+    const webpackBundlerConfig = config as WebpackBundlerOptions;
 
     const { devServerSetupMiddlewares } = webpackBundlerConfig;
 

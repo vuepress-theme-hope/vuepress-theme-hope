@@ -1,18 +1,16 @@
-import type { PluginConfig } from "@vuepress/core";
-import type { ActiveHeaderLinksPluginOptions } from "@vuepress/plugin-active-header-links";
+import { activeHeaderLinksPlugin } from "@vuepress/plugin-active-header-links";
+import type { Plugin } from "@vuepress/core";
 
 /**
  * Resolve options for @vuepress/plugin-active-header-links
  */
-export const resolveActiveHeaderLinksPlugin = (
+export const getActiveHeaderLinksPlugin = (
   activeHeaderLinks?: boolean
-): PluginConfig => {
-  if (activeHeaderLinks === false) return ["", false];
+): Plugin | null => {
+  if (activeHeaderLinks === false) return null;
 
-  const options: ActiveHeaderLinksPluginOptions = {
+  return activeHeaderLinksPlugin({
     headerLinkSelector: ".sidebar-link, .toc-link",
     headerAnchorSelector: ".header-anchor",
-  };
-
-  return ["@vuepress/active-header-links", options];
+  });
 };

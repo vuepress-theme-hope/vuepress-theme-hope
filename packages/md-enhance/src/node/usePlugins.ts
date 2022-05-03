@@ -1,8 +1,8 @@
 import { getLocales } from "@mr-hope/vuepress-shared";
+import { containerPlugin } from "@vuepress/plugin-container";
 import { chartRender, codeDemoRender, getDetailsRender } from "./markdown-it";
 import { markdownEnhanceLocales } from "./locales";
 
-import type { ContainerPluginOptions } from "@vuepress/plugin-container";
 import type { App, LocaleConfig } from "@vuepress/core";
 import type { MarkdownContainerName, MarkdownEnhanceOptions } from "../shared";
 
@@ -39,59 +39,58 @@ export const usePlugins = (
     ];
 
     containers.forEach((type) =>
-      app.use("@vuepress/container", {
-        type,
-        locales: getContainterLocale(type),
-      } as ContainerPluginOptions)
+      app.use(containerPlugin({ type, locales: getContainterLocale(type) }))
     );
 
-    app.use("@vuepress/container", {
-      type: "details",
-      render: getDetailsRender(getContainterLocale("details")),
-    } as ContainerPluginOptions);
+    app.use(
+      containerPlugin({
+        type: "details",
+        render: getDetailsRender(getContainterLocale("details")),
+      })
+    );
   }
 
   if (markdownOptions.align || markdownOptions.enableAll)
     ["left", "center", "right", "justify"].forEach((type) =>
-      app.use("@vuepress/container", { type } as ContainerPluginOptions)
+      app.use(containerPlugin({ type }))
     );
 
   if (markdownOptions.codegroup || markdownOptions.enableAll) {
-    app.use("@vuepress/container", {
-      type: "code-group",
-      before: () => `<CodeGroup>\n`,
-      after: () => "</CodeGroup>\n",
-    });
+    app.use(
+      containerPlugin({
+        type: "code-group",
+        before: () => `<CodeGroup>\n`,
+        after: () => "</CodeGroup>\n",
+      })
+    );
 
-    app.use("@vuepress/container", {
-      type: "code-group-item",
-      before: (info: string): string => {
-        const isActive = info.split(":").pop() === "active";
+    app.use(
+      containerPlugin({
+        type: "code-group-item",
+        before: (info: string): string => {
+          const isActive = info.split(":").pop() === "active";
 
-        return `<CodeGroupItem title="${
-          isActive ? info.replace(/:active$/, "") : info
-        }"${isActive ? " active" : ""}>\n`;
-      },
-      after: () => "</CodeGroupItem>\n",
-    });
+          return `<CodeGroupItem title="${
+            isActive ? info.replace(/:active$/, "") : info
+          }"${isActive ? " active" : ""}>\n`;
+        },
+        after: () => "</CodeGroupItem>\n",
+      })
+    );
   }
 
   if (markdownOptions.chart || markdownOptions.enableAll)
-    app.use("@vuepress/container", {
-      type: "chart",
-      render: chartRender,
-    });
+    app.use(containerPlugin({ type: "chart", render: chartRender }));
 
   if (markdownOptions.demo || markdownOptions.enableAll)
-    app.use("@vuepress/container", {
-      type: "demo",
-      render: codeDemoRender,
-    });
+    app.use(containerPlugin({ type: "demo", render: codeDemoRender }));
 
   if (markdownOptions.vpre || markdownOptions.enableAll)
-    app.use("@vuepress/container", {
-      type: "v-pre",
-      before: () => `<div v-pre>\n`,
-      after: () => "</div>\n",
-    });
+    app.use(
+      containerPlugin({
+        type: "v-pre",
+        before: () => `<div v-pre>\n`,
+        after: () => "</div>\n",
+      })
+    );
 };

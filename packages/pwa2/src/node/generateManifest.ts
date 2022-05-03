@@ -50,7 +50,7 @@ export const getManifest = async (
   return finalManifest;
 };
 
-export const genManifest = async (
+export const generateManifest = async (
   app: App,
   manifest: Promise<ManifestOption>
 ): Promise<void> => {

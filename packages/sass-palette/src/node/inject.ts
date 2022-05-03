@@ -8,17 +8,22 @@ import type { LoaderContext } from "@vuepress/bundler-webpack/lib/types.webpack"
 /**
  * Use 'additionalData' to make `${id}-config` availe in scss
  *
+ * @param config VuePress Bundler config
  * @param app VuePress Node App
  * @param path Path to be responsed
  * @param getResponse respond function
  * @param errMsg error msg
  */
-export const injectConfigModule = (app: App, id: string): void => {
-  const { bundler, bundlerConfig } = app.options;
+export const injectConfigModule = (
+  config: unknown,
+  app: App,
+  id: string
+): void => {
+  const { bundler } = app.options;
 
   // for vite
-  if (bundler.endsWith("vite")) {
-    const viteBundlerConfig: ViteBundlerOptions = bundlerConfig;
+  if (bundler.name.endsWith("vite")) {
+    const viteBundlerConfig = config as ViteBundlerOptions;
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const originalAdditionalData:
@@ -62,9 +67,8 @@ export const injectConfigModule = (app: App, id: string): void => {
   }
 
   // for webpack
-  if (bundler.endsWith("webpack")) {
-    const webpackBundlerConfig: WebpackBundlerOptions = app.options
-      .bundlerConfig as WebpackBundlerOptions;
+  if (bundler.name.endsWith("webpack")) {
+    const webpackBundlerConfig = config as WebpackBundlerOptions;
 
     if (!webpackBundlerConfig.scss) webpackBundlerConfig.scss = {};
 
