@@ -5,8 +5,10 @@ export default [
     resolve: true,
     external: [
       "@vuepress/plugin-git",
+      "@vuepress/utils",
       "@vuepress/shared",
       "chalk",
+      "execa",
       "http",
       "ora",
       "vite",
