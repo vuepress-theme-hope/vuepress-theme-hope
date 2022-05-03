@@ -1,16 +1,17 @@
 import { defineUserConfig } from "@vuepress/cli";
-import type { DefaultThemeOptions } from "@vuepress/theme-default";
+import { defaultTheme } from "@vuepress/theme-default";
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 const BASE = process.env.BASE as "/" | `/${string}/`;
 
-export default defineUserConfig<DefaultThemeOptions>({
+export default defineUserConfig({
   base: BASE || "/",
 
   title: "Markdown Enhance Plugin",
 
   description: "Markdown Enhancement for VuePress",
 
-  themeConfig: {
+  theme: defaultTheme({
     logo: "/logo.svg",
 
     repo: "vuepress-theme-hope/vuepress-theme-hope/tree/main/demo/md-enhance/",
@@ -48,18 +49,15 @@ export default defineUserConfig<DefaultThemeOptions>({
         details: false,
       },
     },
-  },
+  }),
 
   plugins: [
-    [
-      "md-enhance",
-      {
-        enableAll: true,
-        codegroup: false,
-        presentation: {
-          plugins: ["highlight", "math", "search", "notes", "zoom"],
-        },
+    mdEnhancePlugin({
+      enableAll: true,
+      codegroup: false,
+      presentation: {
+        plugins: ["highlight", "math", "search", "notes", "zoom"],
       },
-    ],
+    }),
   ],
 });
