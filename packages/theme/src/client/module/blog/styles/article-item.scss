@@ -136,6 +136,15 @@
     .code-demo-wrapper {
       display: none;
     }
+
+    // footnote fix
+    .footnote-anchor {
+      display: none;
+    }
+
+    section .footnotes {
+      display: none;
+    }
   }
 
   .page-info {
