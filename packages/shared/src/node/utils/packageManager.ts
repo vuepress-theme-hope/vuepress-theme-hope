@@ -20,7 +20,9 @@ const isInstalled = (packageManager: PackageManager): boolean => {
 /**
  * Check if a global package manager is available
  */
-const hasGlobalInstallation = (packageManager: PackageManager): boolean => {
+export const hasGlobalInstallation = (
+  packageManager: PackageManager
+): boolean => {
   const key = `global:${packageManager}`;
 
   const status = globalCache.get(key);
@@ -36,7 +38,9 @@ const hasGlobalInstallation = (packageManager: PackageManager): boolean => {
   return false;
 };
 
-const getTypeofLockFile = (cwd: string): PackageManager | null => {
+export const getTypeofLockFile = (
+  cwd = process.cwd()
+): PackageManager | null => {
   const key = `local:${cwd}`;
 
   const status = localCache.get(key);

@@ -1,8 +1,8 @@
 import { mergeViteConfig } from "./mergeViteConfig";
+import { getTypeofLockFile, hasGlobalInstallation } from "../utils";
 
 import type { App } from "@vuepress/core";
 import type { ViteBundlerOptions } from "@vuepress/bundler-vite";
-import { detectPackageManager } from "../utils";
 
 /**
  * Add modules to Vite `optimizeDeps.include` list
@@ -13,27 +13,30 @@ export const addViteOptimizeDepsInclude = (
   module: string | string[]
 ): void => {
   const { bundler } = app.options;
-  const manager = detectPackageManager();
+  const isPnpmInstalled = hasGlobalInstallation("pnpm");
+  const lockFile = getTypeofLockFile();
 
-  if (manager === "yarn" || manager === "npm") {
-    if (bundler.name.endsWith("vite")) {
-      const bundlerConfig = config as ViteBundlerOptions;
+  if (
+    bundler.name.endsWith("vite") &&
+    !isPnpmInstalled &&
+    (lockFile === "yarn" || lockFile === "npm")
+  ) {
+    const bundlerConfig = config as ViteBundlerOptions;
 
-      bundlerConfig.viteOptions = mergeViteConfig(
-        bundlerConfig.viteOptions as Record<string, unknown>,
-        {
-          optimizeDeps: {
-            include: typeof module === "string" ? [module] : module,
-          },
-        }
-      );
+    bundlerConfig.viteOptions = mergeViteConfig(
+      bundlerConfig.viteOptions as Record<string, unknown>,
+      {
+        optimizeDeps: {
+          include: typeof module === "string" ? [module] : module,
+        },
+      }
+    );
 
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    bundlerConfig.viteOptions.optimizeDeps!.include = Array.from(
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      bundlerConfig.viteOptions.optimizeDeps!.include = Array.from(
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        new Set(bundlerConfig.viteOptions.optimizeDeps!.include)
-      );
-    }
+      new Set(bundlerConfig.viteOptions.optimizeDeps!.include)
+    );
   }
 };
 
