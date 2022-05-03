@@ -20,12 +20,13 @@ Let the Markdown file in your VuePress site support Subscript and Superscript.
 
 ::: code-group-item TS
 
-```ts {7-12}
+```ts {8-13}
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     plugins: {
       mdEnhance: {
         // Enable Subscript
@@ -34,7 +35,7 @@ export default defineHopeConfig({
         sup: true,
       },
     },
-  },
+  }),
 });
 ```
 
@@ -44,10 +45,10 @@ export default defineHopeConfig({
 
 ```js {7-12}
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     plugins: {
       mdEnhance: {
         // Enable Subscript
@@ -56,8 +57,8 @@ module.exports = defineHopeConfig({
         sup: true,
       },
     },
-  },
-});
+  }),
+};
 ```
 
 :::

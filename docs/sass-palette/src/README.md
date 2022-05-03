@@ -23,6 +23,14 @@ copyright: false
 
 :::: code-group
 
+::: code-group-item pnpm
+
+```bash
+pnpm add -D vuepress-plugin-sass-palette@next
+```
+
+:::
+
 ::: code-group-item yarn
 
 ```bash
@@ -52,17 +60,19 @@ You must invoke `useSassPalettePlugin` function during plugin initialization to 
 ```ts
 // Your plugin or theme entry
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
-import type { Plugin } from "@vuepress/core";
+import type { PluginFunction } from "@vuepress/core";
 
-const yourPlugin: Plugin = (options, app) => {
-  useSassPalettePlugin(app, {
-    // plugin options
-  });
+const yourPlugin =
+  (options): PluginFunction =>
+  (app) => {
+    useSassPalettePlugin(app, {
+      // plugin options
+    });
 
-  return {
-    // your plugin api
+    return {
+      // your plugin api
+    };
   };
-};
 
 export default yourPlugin;
 ```
@@ -75,7 +85,7 @@ export default yourPlugin;
 // Your plugin or theme entry
 const { useSassPalettePlugin } = require("vuepress-plugin-sass-palette");
 
-module.exports = (options, app) => {
+module.exports = (options) => (app) => {
   useSassPalettePlugin(app, {
     // plugin options
   });

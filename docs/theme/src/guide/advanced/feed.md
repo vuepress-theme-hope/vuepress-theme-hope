@@ -12,7 +12,7 @@ The theme adds feed suport using [`vuepress-plugin-feed2`][feed2].
 
 ::: info
 
-`vuepress-theme-hope` provides `feed` options in `themeConfig.plugins` as plugin options to `vuepress-plugin-feed2`.
+`vuepress-theme-hope` provides `plugins.feed` in theme options to `vuepress-plugin-feed2`.
 
 :::
 
@@ -34,7 +34,7 @@ Please use RSS if possible.
 
 :::
 
-Please set `atom`, `json` or `rss` to `true` in the `themeConfig.plugins.feed` according to the format you want to generate.
+Please set `plugins.feed.atom`, `plugins.feed.json` or `plugins.feed.rss` to `true` in theme options according to the format you want to generate.
 
 ::: tip
 
@@ -46,14 +46,14 @@ Considering that rare people stick to feed now, this plugin provides a minimal c
 
 ## Channel Settings
 
-You can customize the feed channel information by setting the `channel` option in `themeConfig.plugins.feed`.
+You can customize the feed channel information by setting the `plugins.feed.channel` in theme options.
 
 We recommend the following settings:
 
 - Convert the date of creating the feed to ISOString and write it into `channel.pubDate`
 - The update period of the content set in `channel.ttl` (unit: minutes)
-- Set copyright information via `channel.copyright`, or fallback to `themeConfig.copyright`
-- Set the channel author via `channel.author`, or set `themeConfig.author` to the author name.
+- Set copyright information via `channel.copyright`, or fallback to `copyright` in theme options
+- Set the channel author via `channel.author`, or fallback to `author` in theme options
 
 ::: tip Default channel settings
 
@@ -81,7 +81,7 @@ For detailed options and their default values, see [Configuration → Project Se
 
 ### Customize Feed Generation
 
-You can take full control of feed items generation by configuring the `getter` in the plugin options.
+You can take full control of feed items generation by configuring the `plugins.feed.getter`.
 
 For detailed options and their default values, see [Configuration → Feed Getter][feed2-getter].
 
@@ -89,7 +89,7 @@ For detailed options and their default values, see [Configuration → Feed Gette
 
 The plugin generates separate feeds for each language.
 
-You can provide different settings for different languages via `locales` in the plugin options.
+You can provide different settings for different languages via `plugins.feed.locales`.
 
 [feed2]: https://vuepress-theme-hope.github.io/v2/feed/
 [feed2-channel]: https://vuepress-theme-hope.github.io/v2/feed/config/channel.html

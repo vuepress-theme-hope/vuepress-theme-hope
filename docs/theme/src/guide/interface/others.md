@@ -18,7 +18,7 @@ For detailed info, please see [Config → Style Customize](../../config/style.md
 
 Enabled by default, it’s in outlook popup window in navbar.
 
-If you don’t need it, you can disable it by setting `fullscreen` to `false` in the themeConfig.
+If you don’t need it, you can disable it by setting `fullscreen: false` in the theme options.
 
 ::: tip
 
@@ -30,12 +30,13 @@ If the current browser does not support full screen, the full screen button is a
 
 ::: code-group-item TS
 
-```ts {7}
+```ts {8}
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     // Enable by default
     fullscreen: false,
   },
@@ -48,14 +49,14 @@ export default defineHopeConfig({
 
 ```js {7}
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     // Enable by default
     fullscreen: false,
-  },
-});
+  }),
+};
 ```
 
 :::
@@ -66,4 +67,4 @@ module.exports = defineHopeConfig({
 
 `vuepress-theme-hope` adds a back-to-top control which will display after scrolling down 300px by default.
 
-You can set `backToTop` to `false` in `themeConfig` to disable it, or set it to a number to change the default trigger distance.
+You can set `backToTop: false` in theme options to disable it, or set it to a number to change the default trigger distance.

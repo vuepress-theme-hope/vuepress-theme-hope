@@ -23,6 +23,14 @@ copyright: false
 
 :::: code-group
 
+::: code-group-item pnpm
+
+```bash
+pnpm add -D vuepress-plugin-sass-palette@next
+```
+
+:::
+
 ::: code-group-item yarn
 
 ```bash
@@ -52,17 +60,19 @@ npm i -D vuepress-plugin-sass-palette@next
 ```ts
 // 你的插件或主题入口
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
-import type { Plugin } from "@vuepress/core";
+import type { PluginFunction } from "@vuepress/core";
 
-const yourPlugin: Plugin = (options, app) => {
-  useSassPalettePlugin(app, {
-    // 插件选项
-  });
+const yourPlugin =
+  (options): PluginFunction =>
+  (app) => {
+    useSassPalettePlugin(app, {
+      // 插件选项
+    });
 
-  return {
-    // 你的插件 API
+    return {
+      // 你的插件 API
+    };
   };
-};
 
 export default yourPlugin;
 ```
@@ -75,7 +85,7 @@ export default yourPlugin;
 // 你的插件或主题入口
 const { useSassPalettePlugin } = require("vuepress-plugin-sass-palette");
 
-module.exports = (options, app) => {
+module.exports = (options) => (app) => {
   useSassPalettePlugin(app, {
     // 插件选项
   });

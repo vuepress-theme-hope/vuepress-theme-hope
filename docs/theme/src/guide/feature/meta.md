@@ -42,15 +42,15 @@ Since the `git` plugin has a serious performance impact, the theme will not enab
 
 ## Edit Link
 
-You can automatically generate edit links for each page by setting the following items in `themeConfig`:
+You can automatically generate edit links for each page by setting the following items in theme options:
 
-- `docsRepo`: docs repository link, same as `themeConfig.repo` by default
+- `docsRepo`: docs repository link, same as `repo` by default
 - `docsDir`: the directory of docs in the repository, defaults to root directory
 - `docsBranch`: docs branch, defaults to `"main"`
 
 ## Display Control
 
-To hide these items globally, set the corresponding items below to `false` in `themeConfig`. You can also enable/disable specific pages by setting these items in `YAML front matter`:
+To hide these items globally, set the corresponding items below to `false` in theme options. You can also enable/disable specific pages by setting these items in `YAML front matter`:
 
 - `lastUpdated`: whether to display last update time of the page
 - `contributors`: whether to show page contributors

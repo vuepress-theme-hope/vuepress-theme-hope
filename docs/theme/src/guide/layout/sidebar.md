@@ -15,7 +15,7 @@ The sidebar may contain a list of related documents, document titles, and blogge
 
 ## Sidebar Links
 
-You should use `themeConfig.sidebar` to control sidebar.
+You should use `sidebar` in theme options to control sidebar.
 
 ### String Format
 
@@ -27,13 +27,14 @@ Just like navbar, you can fill in an array of multiple file links as the basic c
 
 ```ts
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     sidebar: ["README.md", "guide/README.md", "config/README.md"],
-  },
-});
+  }),
+};
 ```
 
 :::
@@ -42,13 +43,13 @@ export default defineHopeConfig({
 
 ```js
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     sidebar: ["README.md", "guide/README.md", "config/README.md"],
-  },
-});
+  }),
+};
 ```
 
 :::
@@ -78,10 +79,11 @@ Just like navbar, if you are not satisfied with the page’s icon or feel that t
 
 ```ts
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     sidebar: [
       {
         text: "Guide",
@@ -100,7 +102,7 @@ export default defineHopeConfig({
         activeMatch: "^/zh/faq/",
       },
     ],
-  },
+  }),
 });
 ```
 
@@ -110,10 +112,10 @@ export default defineHopeConfig({
 
 ```js
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     sidebar: [
       {
         text: "Guide",
@@ -132,8 +134,8 @@ module.exports = defineHopeConfig({
         activeMatch: "^/zh/faq/",
       },
     ],
-  },
-});
+  }),
+};
 ```
 
 :::
@@ -164,10 +166,11 @@ You should use [object format](#object-format) and provide an additional `childr
 
 ```ts
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     sidebar: [
       {
         // required, title of group
@@ -196,7 +199,7 @@ export default defineHopeConfig({
         ],
       },
     ],
-  },
+  }),
 });
 ```
 
@@ -206,10 +209,10 @@ export default defineHopeConfig({
 
 ```js
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     sidebar: [
       {
         // required, title of group
@@ -238,8 +241,8 @@ module.exports = defineHopeConfig({
         ],
       },
     ],
-  },
-});
+  }),
+};
 ```
 
 :::
@@ -254,10 +257,11 @@ You can also nest Sidebar grouping:
 
 ```ts
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     sidebar: [
       {
         text: "Group",
@@ -280,7 +284,7 @@ export default defineHopeConfig({
         ],
       },
     ],
-  },
+  }),
 });
 ```
 
@@ -290,10 +294,10 @@ export default defineHopeConfig({
 
 ```js
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     sidebar: [
       {
         text: "Group",
@@ -316,8 +320,8 @@ module.exports = defineHopeConfig({
         ],
       },
     ],
-  },
-});
+  }),
+};
 ```
 
 :::
@@ -351,10 +355,11 @@ Then you can use the following config:
 
 ```ts
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     sidebar: [
       "/" /* / */,
       {
@@ -378,7 +383,7 @@ export default defineHopeConfig({
       "/contact" /* /contact.html */,
       "/about" /* /about.html */,
     ],
-  },
+  }),
 });
 ```
 
@@ -388,10 +393,10 @@ export default defineHopeConfig({
 
 ```js
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     sidebar: [
       "/" /* / */,
       {
@@ -415,8 +420,8 @@ module.exports = defineHopeConfig({
       "/contact" /* /contact.html */,
       "/about" /* /about.html */,
     ],
-  },
-});
+  }),
+};
 ```
 
 :::
@@ -452,10 +457,11 @@ You can define your sidebar for each section using below configuration:
 
 ```ts
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     sidebar: {
       "/foo/": [
         "" /* /foo/ */,
@@ -476,7 +482,7 @@ export default defineHopeConfig({
         "about" /* /about.html */,
       ],
     },
-  },
+  }),
 });
 ```
 
@@ -486,10 +492,10 @@ export default defineHopeConfig({
 
 ```js
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     sidebar: {
       "/foo/": [
         "" /* /foo/ */,
@@ -510,8 +516,8 @@ module.exports = defineHopeConfig({
         "about" /* /about.html */,
       ],
     },
-  },
-});
+  }),
+};
 ```
 
 :::
@@ -544,14 +550,15 @@ You can also enable it in all pages by using config:
 
 ::: code-group-item TS
 
-```ts {6}
+```ts {7}
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     sidebar: "heading",
-  },
+  }),
 });
 ```
 
@@ -561,13 +568,13 @@ export default defineHopeConfig({
 
 ```js {6}
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     sidebar: "heading",
-  },
-});
+  }),
+};
 ```
 
 :::
@@ -601,12 +608,13 @@ You can change the original config to:
 
 ::: code-group-item TS
 
-```ts {7,9}
+```ts {8,10}
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     sidebar: {
       "/foo/": "structure",
 
@@ -619,7 +627,7 @@ export default defineHopeConfig({
         "about" /* /about.html */,
       ],
     },
-  },
+  }),
 });
 ```
 
@@ -629,10 +637,10 @@ export default defineHopeConfig({
 
 ```js {7,9}
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     sidebar: {
       "/foo/": "structure",
 
@@ -645,8 +653,8 @@ module.exports = defineHopeConfig({
         "about" /* /about.html */,
       ],
     },
-  },
-});
+  }),
+};
 ```
 
 :::
@@ -732,7 +740,7 @@ Sidebar is disabled by default in home page.
 
 ## Header Links Depths
 
-The sidebar automatically displays links for headers in the current active page, nested under the link for the page itself. You can customize this behavior using `themeConfig.headerDepth`. The default depth(the max value) is `2`, which extracts both `h2` and `h3` headers. Setting it to `0` disables the header links.
+The sidebar automatically displays links for headers in the current active page, nested under the link for the page itself. You can customize this behavior using `headerDepth` in theme options. The default depth(the max value) is `2`, which extracts both `h2` and `h3` headers. Setting it to `0` disables the header links.
 
 A page can also override this value via frontmatter:
 
@@ -760,15 +768,16 @@ By default, the nested header links and the hash in the URL are updated as the u
 
 ```ts {8}
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     plugins: {
       // Default: true
       activeHeaderLinks: false,
     },
-  },
+  }),
 });
 ```
 
@@ -778,16 +787,16 @@ export default defineHopeConfig({
 
 ```js {8}
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     plugins: {
       // Default: true
       activeHeaderLinks: false,
     },
-  },
-});
+  }),
+};
 ```
 
 :::
@@ -796,7 +805,7 @@ module.exports = defineHopeConfig({
 
 ## Icon Support
 
-Icon support is enabled in the sidebar by default, and the icon of the page will be displayed before the link in the sidebar (by reading `icon` field in frontmatter). It can be disabled by setting `sidebarIcon` to `false` in `themeConfig`.
+Icon support is enabled in the sidebar by default, and the icon of the page will be displayed before the link in the sidebar (by reading `icon` field in frontmatter). It can be disabled by setting `sidebarIcon` to `false` in theme options.
 
 ## I18n Support
 
@@ -808,10 +817,11 @@ The theme’s navbar supports [I18n](https://v2.vuepress.vuejs.org/guide/i18n.ht
 
 ```ts
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     locales: {
       "/": {
         sidebar: [
@@ -824,7 +834,7 @@ export default defineHopeConfig({
         ],
       },
     },
-  },
+  }),
 });
 ```
 
@@ -834,10 +844,10 @@ export default defineHopeConfig({
 
 ```js
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     locales: {
       "/": {
         sidebar: [
@@ -850,8 +860,8 @@ module.exports = defineHopeConfig({
         ],
       },
     },
-  },
-});
+  }),
+};
 ```
 
 :::
@@ -860,11 +870,11 @@ module.exports = defineHopeConfig({
 
 ## Types and Helpers
 
-`vuepress-theme-hope` exports the type of sidebar as `HopeThemeSideConfig`, and provides a `defineSidebarConfig` helper function. They can provide validation and autocompletion of sidebar configuration in TS and JS.
+`vuepress-theme-hope` exports the type of sidebar as `HopeThemeSideConfig`, and provides a `sidebar` helper function. They can provide validation and autocompletion of sidebar configuration in TS and JS.
 
 ::: tip
 
-To deal with the situation when you split [multi-sidebar configuration](#multiple-sidebars) into multiple parts, we also provide `HopeThemeSidebarArrayConfig` `HopeThemeSidebarObjectConfig` type and `defineSidebarArrayConfig` and `defineSidebarObjectConfig` Helper function.
+To deal with the situation when you split [multi-sidebar configuration](#multiple-sidebars) into multiple parts, we also provide `HopeThemeSidebarArrayConfig` `HopeThemeSidebarObjectConfig` type and `arraySidebar` and `objectSidebar` Helper function.
 
 :::
 
@@ -874,9 +884,9 @@ To deal with the situation when you split [multi-sidebar configuration](#multipl
 
 ```ts {6}
 // .vuepress/sidebar.ts
-import { defineSidebarConfig } from "vuepress-theme-hope";
+import { sidebar } from "vuepress-theme-hope";
 
-export default defineSidebarConfig(/* Your sidebar configuration */);
+export default sidebar(/* Your sidebar configuration */);
 ```
 
 :::
@@ -900,9 +910,9 @@ export default sidebarConfig;
 
 ```js
 // .vuepress/sidebar.js
-const { defineSidebarConfig } = require("vuepress-theme-hope");
+const { sidebar } = require("vuepress-theme-hope");
 
-module.exports = defineSidebarConfig(/* Your sidebar configuration */);
+module.exports = sidebar(/* Your sidebar configuration */);
 ```
 
 :::
@@ -925,9 +935,9 @@ module.exports = defineSidebarConfig(/* Your sidebar configuration */);
 
 ```js
 // .vuepress/config.js
-const { defineSidebarConfig } = require("vuepress-theme-hope");
+const { sidebar } = require("vuepress-theme-hope");
 
-module.exports = defineSidebarConfig({
+module.exports = sidebar({
   "/": [
     "",
     {
@@ -980,138 +990,9 @@ module.exports = defineSidebarConfig({
     "contribution",
   ],
 
-  "/guide/": [
-    {
-      text: "Get Started",
-      icon: "creative",
-      prefix: "get-started/",
-      collapsable: true,
-      children: ["intro", "install", "markdown"],
-    },
-    {
-      text: "Interface",
-      icon: "palette",
-      prefix: "interface/",
-      collapsable: true,
-      children: [
-        "darkmode",
-        "theme-color",
-        "icon",
-        "code-theme",
-        "accessibility",
-        "pure",
-        "others",
-      ],
-    },
-    {
-      text: "Layout",
-      icon: "layout",
-      prefix: "layout/",
-      collapsable: true,
-      children: [
-        "navbar",
-        "sidebar",
-        "page",
-        "breadcrumb",
-        "footer",
-        "home",
-        "slides",
-      ],
-    },
-    {
-      text: "Markdown enhance",
-      icon: "markdown",
-      prefix: "markdown/",
-      collapsable: true,
-      children: [
-        "intro",
-        "container",
-        "components",
-        "code-group",
-        "align",
-        "sup-sub",
-        "footnote",
-        "mark",
-        "tasklist",
-        "tex",
-        "flowchart",
-        "mermaid",
-        "demo",
-        "presentation",
-        "others",
-        "external",
-      ],
-    },
-    {
-      text: "Features",
-      icon: "discover",
-      prefix: "feature/",
-      collapsable: true,
-      children: [
-        "page-info",
-        "comment",
-        "copy-code",
-        "photo-swipe",
-        "meta",
-        "search",
-        "copyright",
-        "encrypt",
-      ],
-    },
-    {
-      text: "Blog",
-      icon: "blog",
-      prefix: "blog/",
-      collapsable: true,
-      children: [
-        "intro",
-        "blogger",
-        "article",
-        "category-and-tags",
-        "timeline",
-        "home",
-      ],
-    },
-    {
-      text: "Advanced",
-      icon: "advance",
-      prefix: "advanced/",
-      collapsable: true,
-      children: ["pwa", "feed", "seo", "sitemap"],
-    },
-  ],
+  "/guide/": "structure",
 
-  "/config/": [
-    "intro",
-    "i18n",
-    {
-      text: "Theme Config",
-      icon: "config",
-      prefix: "theme/",
-      children: ["", "basic", "feature", "layout", "apperance", "i18n"],
-    },
-    {
-      text: "Plugin Config",
-      icon: "plugin",
-      prefix: "plugins/",
-      children: [
-        "intro",
-        "blog",
-        "comment",
-        "feed",
-        "md-enhance",
-        "pwa",
-        "others",
-      ],
-    },
-    {
-      text: "Frontmatter Config",
-      icon: "page",
-      prefix: "frontmatter/",
-      children: ["info", "layout", "plugins"],
-    },
-    "style",
-  ],
+  "/config/": "structure",
 
   "/cookbook/": [
     {
@@ -1142,7 +1023,7 @@ module.exports = defineSidebarConfig({
           link: "emoji/",
           prefix: "emoji/",
           collapsable: true,
-          children: ["people", "nature", "object", "place", "symbol"],
+          children: "structure",
         },
       ],
     },

@@ -14,7 +14,7 @@ You can configue page layout by setting the following frontmatter options.
 ## pageInfo
 
 - Type: `PageInfo[] | false`
-- Default value: value in themeConfig
+- Default value: value in theme options
 
 | Item            | Corresponding Content | Page frontmatter Value                  |
 | --------------- | --------------------- | --------------------------------------- |
@@ -31,7 +31,7 @@ Set whether to show page details on the current page
 ## pageview
 
 - Type: `boolean`
-- Default value: value in themeConfig
+- Default value: value in theme options
 
 Whether display page views.
 
@@ -44,14 +44,14 @@ The pageviews feature requires you to have a valid Waline Comment Service config
 ## breadcrumb
 
 - Type: `boolean`
-- Default value: value in themeConfig
+- Default value: value in theme options
 
 Whether path navigation is enabled on the current page.
 
 ## breadcrumbIcon
 
 - Type: `boolean`
-- Default value: value in themeConfig
+- Default value: value in theme options
 
 Whether path navigation icon is enabled on the current page.
 
@@ -77,28 +77,28 @@ The page’s sidebar heading rendering depth.
 ## comment
 
 - Type: `boolean`
-- Default value: value in themeConfig
+- Default value: value in theme options
 
 Whether to enable comments on the current page.
 
 ## lastUpdated
 
 - Type: `boolean`
-- Default value: value in themeConfig
+- Default value: value in theme options
 
 Whether display lastUpdated time.
 
 ## editLink
 
 - Type: `boolean`
-- Default value: value in themeConfig
+- Default value: value in theme options
 
 Whether to show edit link.
 
 ## contributors
 
 - Type: `boolean`
-- Default value: value in themeConfig
+- Default value: value in theme options
 
 Whether to show contributors.
 
@@ -146,7 +146,7 @@ For more details, please see [Page → Footer Support](../../guide/layout/footer
 ## copyright
 
 - Type: `string | false`
-- Default value: value in themeConfig
+- Default value: value in theme options
 
 Copyright information
 
@@ -162,7 +162,7 @@ Whether display the back to top button.
 ## toc
 
 - Type: `boolean`
-- Default value: value in themeConfig
+- Default value: value in theme options
 
 Whether display toc in desktop mode.
 

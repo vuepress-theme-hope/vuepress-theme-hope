@@ -12,7 +12,7 @@ tag:
 
 ## 介绍
 
-主题使用 `vuepress-plugin-comment2` 提供评论支持，并将 `themeConfig.plugin.comment` 作为选项传递给插件。
+主题使用 `vuepress-plugin-comment2` 提供评论支持，并将主题选项中的 `plugin.comment` 作为插件选项传递。
 
 `vuepress-plugin-comment2` 目前支持 3 种评论服务:
 

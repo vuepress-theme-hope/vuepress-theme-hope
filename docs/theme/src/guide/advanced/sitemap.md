@@ -12,11 +12,11 @@ tag:
 
 The plugin will automatically generate the last update time of the page based on the Git timestamp of the page, and will also declare the alternative version link of the page in other languages according to the locales config.
 
-If you don’t need this plugin, please set `sitemap` to `false` in `themeConfig.plugins`.
+If you don’t need this plugin, please set `plugins.sitemap` to `false` in theme options.
 
 ::: info
 
-`vuepress-theme-hope` provides `sitemap` options in `themeConfig.plugins` as plugin options to `vuepress-plugin-sitemap2`.
+`vuepress-theme-hope` passes `plugins.sitemap` in theme options as plugin options to `vuepress-plugin-sitemap2`.
 
 :::
 

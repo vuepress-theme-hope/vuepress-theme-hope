@@ -192,7 +192,7 @@ tag:
 ### docsRepo
 
 - 类型: `string`
-- 默认值: `themeConfig.repo`
+- 默认值: `repo`
 
 文档仓库
 

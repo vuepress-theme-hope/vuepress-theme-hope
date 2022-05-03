@@ -1,11 +1,9 @@
-import { defineThemeConfig } from "vuepress-theme-hope";
-import { enNavbarConfig, zhNavbarConfig } from "./navbar";
-import { enSidebarConfig, zhSidebarConfig } from "./sidebar";
+import { hopeTheme } from "vuepress-theme-hope";
 
 const hostname =
   process.env.HOSTNAME || "https://vuepress-theme-hope-v2.netlify.app";
 
-export default defineThemeConfig({
+export default hopeTheme({
   hostname,
 
   author: {
@@ -15,9 +13,9 @@ export default defineThemeConfig({
 
   iconPrefix: "iconfont icon-",
 
-  repo: "vuepress-theme-hope/vuepress-theme-hope/tree/main/packages/comment2/",
+  repo: "vuepress-theme-hope/vuepress-theme-hope/tree/main/packages/blog2/",
   docsRepo: "vuepress-theme-hope/vuepress-theme-hope",
-  docsDir: "docs/comment2/src",
+  docsDir: "docs/blog2/src",
 
   logo: "/logo.svg",
 
@@ -29,12 +27,12 @@ export default defineThemeConfig({
 
   locales: {
     "/": {
-      navbar: enNavbarConfig,
-      sidebar: enSidebarConfig,
+      navbar: ["/", "/guide", "/config", "/demo"],
+      sidebar: false,
     },
     "/zh/": {
-      navbar: zhNavbarConfig,
-      sidebar: zhSidebarConfig,
+      navbar: ["/zh/", "/zh/guide", "/zh/config", "/zh/demo"],
+      sidebar: false,
     },
   },
 
@@ -47,63 +45,16 @@ export default defineThemeConfig({
       categoryId: "DIC_kwDOG_Pt2M4COD69",
     },
 
-    docsearch: {
-      appId: "VXIEHELDL1",
-      apiKey: "595796f71b6ba14326719682c3738c0c",
-      indexName: "vuepress-theme-hope-v2",
-      locales: {
-        "/zh/": {
-          placeholder: "搜索文档",
-          translations: {
-            button: {
-              buttonText: "搜索文档",
-              buttonAriaLabel: "搜索文档",
-            },
-            modal: {
-              searchBox: {
-                resetButtonTitle: "清除查询条件",
-                resetButtonAriaLabel: "清除查询条件",
-                cancelButtonText: "取消",
-                cancelButtonAriaLabel: "取消",
-              },
-              startScreen: {
-                recentSearchesTitle: "搜索历史",
-                noRecentSearchesText: "没有搜索历史",
-                saveRecentSearchButtonTitle: "保存至搜索历史",
-                removeRecentSearchButtonTitle: "从搜索历史中移除",
-                favoriteSearchesTitle: "收藏",
-                removeFavoriteSearchButtonTitle: "从收藏中移除",
-              },
-              errorScreen: {
-                titleText: "无法获取结果",
-                helpText: "你可能需要检查你的网络连接",
-              },
-              footer: {
-                selectText: "选择",
-                navigateText: "切换",
-                closeText: "关闭",
-                searchByText: "搜索提供者",
-              },
-              noResultsScreen: {
-                noResultsText: "无法找到相关结果",
-                suggestedQueryText: "你可以尝试查询",
-                openIssueText: "你认为该查询应该有结果？",
-                openIssueLinkText: "点击反馈",
-              },
-            },
-          },
-        },
-      },
-    },
-
     mdEnhance: {
       codegroup: true,
+      mermaid: true,
     },
 
     pwa: {
-      favicon: "/comment/favicon.ico",
+      update: "hint",
+      favicon: "/favicon.ico",
       themeColor: "#46bd87",
-      cachePic: true,
+      appendBase: true,
       apple: {
         icon: "/assets/icon/apple-icon-152.png",
         statusBarColor: "black",
@@ -113,8 +64,8 @@ export default defineThemeConfig({
         color: "#ffffff",
       },
       manifest: {
-        name: "vuepress-plugin-comment2",
-        short_name: "comment plugin",
+        name: "vuepress-plugin-blog2",
+        short_name: "blog2 plugin",
         icons: [
           {
             src: "/assets/icon/chrome-mask-512.png",
@@ -143,7 +94,7 @@ export default defineThemeConfig({
           {
             name: "Guide",
             short_name: "Guide",
-            url: "/comment/guide/",
+            url: "/guide.html",
             icons: [
               {
                 src: "/assets/icon/guide-maskable.png",
@@ -162,7 +113,7 @@ export default defineThemeConfig({
           {
             name: "Config",
             short_name: "Config",
-            url: "/comment/config/",
+            url: "/config.html",
             icons: [
               {
                 src: "/assets/icon/config-maskable.png",
@@ -186,7 +137,7 @@ export default defineThemeConfig({
       canonical:
         hostname === "https://vuepress-theme-hope.github.io"
           ? null
-          : "https://vuepress-theme-hope.github.io/v2/comment/",
+          : "https://vuepress-theme-hope.github.io/v2/blog/",
     },
   },
 });

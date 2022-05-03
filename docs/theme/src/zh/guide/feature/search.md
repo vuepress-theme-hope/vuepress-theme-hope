@@ -8,7 +8,9 @@ tag:
   - 搜索
 ---
 
-主题对 [`@vuepress/search`][search] 和 [`@vuepress/docsearch`][docsearch] 提供了内置支持。
+主题对 [`@vuepress/search`][search] 和 [`@vuepress/docsearch`][docsearch] 提供了内置支持。你只需要添加并配置所需的搜索插件，你就能够在导航栏获得一个搜索框。
+
+要想使用搜索插件，你需要通过 [VuePress 配置文件](../../cookbook/vuepress/config.md) 的 `plugins` 选项应用它。
 
 ::: warning
 
@@ -20,13 +22,11 @@ tag:
 
 ## 使用 `@vuepress/search`
 
-你可以通过 `themeConfig.plugins.search` 传递插件选项。
-
 关于插件的可用选项，详见 [插件文档][search]。
 
 ### `@vuepress/search` 本地化翻译
 
-如果你正在提供中文文档，你可以将其设置到 `themeConfig.plugins.search.locales[对应路径]` 中。
+如果你正在提供中文文档，你可以将其设置到插件选项中的 `locales` 中。
 
 ::::: details 中文多语言配置
 
@@ -36,10 +36,11 @@ tag:
 
 ```ts
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     plugins: {
       search: {
         locales: {
@@ -49,7 +50,7 @@ export default defineHopeConfig({
         },
       },
     },
-  },
+  }),
 });
 ```
 
@@ -59,10 +60,10 @@ export default defineHopeConfig({
 
 ```js
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     plugins: {
       search: {
         locales: {
@@ -72,8 +73,8 @@ module.exports = defineHopeConfig({
         },
       },
     },
-  },
-});
+  }),
+};
 ```
 
 :::
@@ -81,8 +82,6 @@ module.exports = defineHopeConfig({
 :::::
 
 ## 使用 `@vuepress/docsearch`
-
-你可以通过 `themeConfig.plugins.docsearch` 传递插件选项。
 
 为了正常的使用插件，你需要正确传入 `apiKey`、`indexName` 和 `appId`，并按照下列要求正确设置 Algolia Crawler。
 
@@ -229,7 +228,7 @@ Crawler 配置中 `initialIndexSettings.YOUR_INDEX_NAME.attributesForFaceting` �
 
 ### `@vuepress/docsearch` 本地化翻译
 
-你可以通过 `themeConfig.plugins.docsearch.locales` 配置多语言。
+你可以通过插件选项中的 `locales` 配置多语言。
 
 ::::: details 中文多语言配置示例
 
@@ -239,10 +238,11 @@ Crawler 配置中 `initialIndexSettings.YOUR_INDEX_NAME.attributesForFaceting` �
 
 ```ts
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     plugins: {
       docsearch: {
         // ...
@@ -283,8 +283,8 @@ export default defineHopeConfig({
                 noResultsScreen: {
                   noResultsText: "无法找到相关结果",
                   suggestedQueryText: "你可以尝试查询",
-                  openIssueText: "你认为该查询应该有结果？",
-                  openIssueLinkText: "点击反馈",
+                  reportMissingResultsText: "你认为该查询应该有结果？",
+                  reportMissingResultsLinkText: "点击反馈",
                 },
               },
             },
@@ -292,7 +292,7 @@ export default defineHopeConfig({
         },
       },
     },
-  },
+  }),
 });
 ```
 
@@ -302,10 +302,10 @@ export default defineHopeConfig({
 
 ```js
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     plugins: {
       docsearch: {
         // ...
@@ -355,8 +355,8 @@ module.exports = defineHopeConfig({
         },
       },
     },
-  },
-});
+  }),
+};
 ```
 
 :::
@@ -364,14 +364,6 @@ module.exports = defineHopeConfig({
 ::::
 
 :::::
-
-## 补充说明
-
-::: note
-
-除了通过 themeConfig 传递选项外你也可以自行在 [VuePress 配置文件](../../cookbook/vuepress/config.md) 通过 `plugins` 调用对应插件。
-
-:::
 
 [docsearch]: https://v2.vuepress.vuejs.org/zh/reference/plugin/docsearch.html
 [search]: https://v2.vuepress.vuejs.org/zh/reference/plugin/search.html

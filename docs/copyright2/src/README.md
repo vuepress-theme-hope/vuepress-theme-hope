@@ -23,6 +23,14 @@ copyright: false
 
 :::: code-group
 
+::: code-group-item pnpm
+
+```bash
+pnpm add -D vuepress-plugin-copyright2@next
+```
+
+:::
+
 ::: code-group-item yarn
 
 ```bash
@@ -49,11 +57,11 @@ npm i -D vuepress-plugin-copyright2@next
 
 ```ts
 // .vuepress/config.ts
-import { copyright } from "vuepress-plugin-copyright2";
+import { copyrightPlugin } from "vuepress-plugin-copyright2";
 
 export default {
   plugins: [
-    copyright({
+    copyrightPlugin({
       // your options
     }),
   ],
@@ -66,11 +74,11 @@ export default {
 
 ```js
 // .vuepress/config.js
-const { copyright } = require("vuepress-plugin-copyright2");
+const { copyrightPlugin } = require("vuepress-plugin-copyright2");
 
 module.exports = {
   plugins: [
-    copyright({
+    copyrightPlugin({
       // your options
     }),
   ],

@@ -1,10 +1,10 @@
-import { defineThemeConfig } from "vuepress-theme-hope";
-import { version } from "../../../../lerna.json";
+import { hopeTheme } from "vuepress-theme-hope";
+import { version } from "vuepress-plugin-reading-time2/package.json";
 
 const hostname =
   process.env.HOSTNAME || "https://vuepress-theme-hope-v2.netlify.app";
 
-export default defineThemeConfig({
+export default hopeTheme({
   hostname,
 
   author: {
