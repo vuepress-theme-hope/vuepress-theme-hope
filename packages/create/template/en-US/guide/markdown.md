@@ -5,7 +5,7 @@ title: Markdown Enhance
 category:
   - Guide
 tag:
-  - markdown
+  - Markdown
 ---
 
 Every document page in VuePress is rendered by Markdown.
@@ -34,17 +34,19 @@ For these extensions, please read [Markdown extensions in VuePress](https://vuep
 
 ### Enable all
 
-You can set `themeconfig.plugins.htmlEnhance.enableAll` to enable all features of the [md-enhance](https://vuepress-theme-hope.github.io/v2/md-enhance/) plugin.
+You can set `plugins.mdEnhance.enableAll: true` in theme options to enable all features of the [md-enhance](https://vuepress-theme-hope.github.io/v2/md-enhance/) plugin.
 
-```js {3-5}
+```js
+const { hopeTheme } = require("vuepress-theme-hope");
+
 module.exports = {
-  themeConfig: {
+  theme: hopeTheme({
     plugins: {
       mdEnhance: {
         enableAll: true,
       },
     },
-  },
+  }),
 };
 ```
 
@@ -54,7 +56,7 @@ module.exports = {
 
 ::: v-pre
 
-Safely use {{ variable }} in markdown.
+Safely use {{ variable }} in Markdown.
 
 :::
 
@@ -97,7 +99,7 @@ A custom details container
 ```md
 ::: v-pre
 
-Safely use {{ variable }} in markdown.
+Safely use {{ variable }} in Markdown.
 
 :::
 
@@ -137,6 +139,14 @@ A custom details container
 ### CodeGroup
 
 :::: code-group
+
+::: code-group-item pnpm
+
+```bash
+pnpm add -D vuepress-theme-hope
+```
+
+:::
 
 ::: code-group-item yarn
 
