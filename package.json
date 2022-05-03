@@ -144,7 +144,7 @@
     "rollup-plugin-typescript2": "0.31.2",
     "rollup-plugin-vue": "6.0.0",
     "semver": "7.3.7",
-    "sort-package-json": "1.55.0",
+    "sort-package-json": "1.57.0",
     "stylelint": "14.7.1",
     "stylelint-config-prettier": "9.0.3",
     "stylelint-config-standard": "25.0.0",
