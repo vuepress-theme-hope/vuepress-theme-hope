@@ -16,7 +16,7 @@ Sometimes, you may not want some of your articles to be copied by others, or you
 
 ::: info
 
-`vuepress-theme-hope` provides `copyright` options in `themeConfig.plugins` as plugin options to `vuepress-plugin-copyright2`.
+`vuepress-theme-hope` passes `plugins.copyright` in theme options as plugin options to `vuepress-plugin-copyright2`.
 
 :::
 
@@ -28,9 +28,9 @@ Since half of the users use this theme to build documents, and document sites us
 
 ::: Enable Plugin
 
-To enable this plugin, you need to set `copyright` in `themeConfig.plugins` to `true` or an object.
+To enable this plugin, you need to set `plugins.copyright` in theme options to `true` or an object.
 
-Setting to `true` is equivalent to setting `{ global: true }`。
+Setting to `true` is equivalent to setting `{ global: true }`.
 
 :::
 

@@ -23,6 +23,14 @@ copyright: false
 
 :::: code-group
 
+::: code-group-item pnpm
+
+```bash
+pnpm add -D vuepress-plugin-seo2@next
+```
+
+:::
+
 ::: code-group-item yarn
 
 ```bash
@@ -49,11 +57,11 @@ npm i -D vuepress-plugin-seo2@next
 
 ```ts
 // .vuepress/config.ts
-import { seo } from "vuepress-plugin-seo2";
+import { seoPlugin } from "vuepress-plugin-seo2";
 
 export default {
   plugins: [
-    seo({
+    seoPlugin({
       // your options
     }),
   ],
@@ -66,11 +74,11 @@ export default {
 
 ```js
 // .vuepress/config.js
-const { seo } = require("vuepress-plugin-seo2");
+const { seoPlugin } = require("vuepress-plugin-seo2");
 
 module.exports = {
   plugins: [
-    seo({
+    seoPlugin({
       // your options
     }),
   ],

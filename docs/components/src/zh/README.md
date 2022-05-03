@@ -21,10 +21,18 @@ copyright: false
 
 :::: code-group
 
+::: code-group-item pnpm
+
+```bash
+pnpm add -D @mr-hope/vuepress-plugin-components@next
+```
+
+:::
+
 ::: code-group-item yarn
 
 ```bash
-yarn add -D @mr-hope/vuepress-plugin-components@next
+yarn add -D vuepress-plugin-add-this@next
 ```
 
 :::
@@ -47,11 +55,11 @@ npm i -D @mr-hope/vuepress-plugin-components@next
 
 ```ts
 // .vuepress/config.ts
-import { components } from "@mr-hope/vuepress-plugin-components";
+import { componentsPlugin } from "@mr-hope/vuepress-plugin-components";
 
 export default {
   plugins: [
-    components({
+    componentsPlugin({
       // 插件选项
     }),
   ],
@@ -64,11 +72,11 @@ export default {
 
 ```js
 // .vuepress/config.js
-const { components } = require("@mr-hope/vuepress-plugin-components");
+const { componentsPlugin } = require("@mr-hope/vuepress-plugin-components");
 
 module.exports = {
   plugins: [
-    components({
+    componentsPlugin({
       // 插件选项
     }),
   ],

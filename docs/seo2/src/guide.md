@@ -9,7 +9,7 @@ This plugin will make your site fully support [Open Content Protocol OGP](https:
 
 The plugin works out of the box. Without any config, it will extract information from the page content as much as possible to complete the necessary tags required by OGP and JSON-LD.
 
-By default, the plugin will read the SiteConfig, ThemeConfig and page frontmatter to automatically generate tags as much as possible. Such as site name, page title, page type, writing date, last update date, and article tags are all automatically generated.
+By default, the plugin will read the site config and page frontmatter to automatically generate tags as much as possible. Such as site name, page title, page type, writing date, last update date, and article tags are all automatically generated.
 
 The following are the `<meta>` tags and their values that will be injected into `<head>` by default:
 
@@ -17,35 +17,35 @@ The following are the `<meta>` tags and their values that will be injected into 
 
 The following are the `<meta>` tags and their value injected into `<head>` by default to satisfy OGP:
 
-|        Meta Name         |                                                      Value                                                       |
-| :----------------------: | :--------------------------------------------------------------------------------------------------------------: |
-|         `og:url`         |                                         `themeConfig.hostname` + `path`                                          |
-|      `og:site_name`      |                                                `siteConfig.title`                                                |
-|        `og:title`        |                                                   `page.title`                                                   |
-|     `og:description`     |     `page.frontmatter.description` \|\| auto generated (when `autoDescription` is `true` in plugin options)      |
-|        `og:type`         |                                                   `"article"`                                                    |
-|        `og:image`        | `themeConfig.hostname` + `page.frontmatter.image` \|\|first image in page \|\| `fallbackImage` in plugin options |
-|    `og:updated_time`     |                                              `page.git.updateTime`                                               |
-|       `og:locale`        |                                                   `page.lang`                                                    |
-|  `og:locale:alternate`   |                                Other languages including in `themeConfig.locales`                                |
-|      `twitter:card`      |                            `"summary_large_image"` (only available when image found)                             |
-|   `twitter:image:alt`    |                                  `page.title` (only available when image found)                                  |
-|     `article:author`     |                               `page.frontmatter.author` \|\| `themeConfig.author`                                |
-|      `article:tag`       |                               `page.frontmatter.tags` \|\| `page.frontmatter.tag`                                |
-| `article:published_time` |                               `page.frontmatter.date` \|\| `page.createTimeStamp`                                |
-| `article:modified_time`  |                                              `page.git.updatedTime`                                              |
+|        Meta Name         |                                                    Value                                                     |
+| :----------------------: | :----------------------------------------------------------------------------------------------------------: |
+|         `og:url`         |                                         `options.hostname` + `path`                                          |
+|      `og:site_name`      |                                              `siteConfig.title`                                              |
+|        `og:title`        |                                                 `page.title`                                                 |
+|     `og:description`     |   `page.frontmatter.description` \|\| auto generated (when `autoDescription` is `true` in plugin options)    |
+|        `og:type`         |                                                 `"article"`                                                  |
+|        `og:image`        | `options.hostname` + `page.frontmatter.image` \|\|first image in page \|\| `fallbackImage` in plugin options |
+|    `og:updated_time`     |                                            `page.git.updateTime`                                             |
+|       `og:locale`        |                                                 `page.lang`                                                  |
+|  `og:locale:alternate`   |                                    Other languages in `siteData.locales`                                     |
+|      `twitter:card`      |                          `"summary_large_image"` (only available when image found)                           |
+|   `twitter:image:alt`    |                                `page.title` (only available when image found)                                |
+|     `article:author`     |                               `page.frontmatter.author` \|\| `options.author`                                |
+|      `article:tag`       |                             `page.frontmatter.tags` \|\| `page.frontmatter.tag`                              |
+| `article:published_time` |                             `page.frontmatter.date` \|\| `page.createTimeStamp`                              |
+| `article:modified_time`  |                                            `page.git.updatedTime`                                            |
 
 ### Default JSON-LD Generation
 
-|  Property Name  |                                                   Value                                                   |
-| :-------------: | :-------------------------------------------------------------------------------------------------------: |
-|   `@context`    |                                          `"https://schema.org"`                                           |
-|     `@type`     |                                              `"NewsArticle"`                                              |
-|   `headline`    |                                               `page.title`                                                |
-|     `image`     | image in page \|\| `themeConfig.hostname` + `page.frontmatter.image` \|\| `siteFavIcon` in plugin options |
-| `datePublished` |                            `page.frontmatter.date` \|\| `page.createTimeStamp`                            |
-| `dateModified`  |                                          `page.git.updatedTime`                                           |
-|    `author`     |                            `page.frontmatter.author` \|\| `themeConfig.author`                            |
+|  Property Name  |                                                 Value                                                 |
+| :-------------: | :---------------------------------------------------------------------------------------------------: |
+|   `@context`    |                                        `"https://schema.org"`                                         |
+|     `@type`     |                                            `"NewsArticle"`                                            |
+|   `headline`    |                                             `page.title`                                              |
+|     `image`     | image in page \|\| `options.hostname` + `page.frontmatter.image` \|\| `siteFavIcon` in plugin options |
+| `datePublished` |                          `page.frontmatter.date` \|\| `page.createTimeStamp`                          |
+| `dateModified`  |                                        `page.git.updatedTime`                                         |
+|    `author`     |                            `page.frontmatter.author` \|\| `options.author`                            |
 
 ## Setting Tags Directly
 
@@ -84,14 +84,27 @@ If a page does fit into the "unpopular" genre like books, music, etc., you can h
 You can use the plugin options `ogp` to pass in a function to modify the default OGP object to your needs and return it.
 
 ```ts
-function ogp<ExtendObject = Record<string, unknown>>(
-   /** OGP Object inferred by plugin */
- ogp: SeoContent,
+function ogp<
+  ExtraPageData extends Record<string | number | symbol, unknown> = Record<
+    never,
+    never
+  >,
+  ExtraPageFrontmatter extends Record<
+    string | number | symbol,
+    unknown
+  > = Record<string, unknown>,
+  ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
+    never,
+    never
+  >
+>(
+  /** OGP Object inferred by plugin */
+  ogp: SeoContent,
   /** Page Objext */
-  page: ExtendPage<ExtendObject>,
+  page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   /** VuePress App */
   app: App
-) => SeoContent;
+): SeoContent;
 ```
 
 For detailed parameter structure, see [Config](./config.md).
@@ -112,11 +125,24 @@ For example, if you are using a third-party theme and set a `banner` in frontmat
 Like OGP, you can use the plugin options `jsonLd` to pass in a function to modify the default JSON-LD object to your needs and return it.
 
 ```ts
-function jsonLd<ExtendObject = Record<string, unknown>>(
+function jsonLd<
+  ExtraPageData extends Record<string | number | symbol, unknown> = Record<
+    never,
+    never
+  >,
+  ExtraPageFrontmatter extends Record<
+    string | number | symbol,
+    unknown
+  > = Record<string, unknown>,
+  ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
+    never,
+    never
+  >
+>(
   /** JSON-LD Object inferred by plugin */
   jsonLD: ArticleJSONLD | null,
   /** Page Objext */
-  page: ExtendPage<ExtendObject>,
+  page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   /** VuePress App */
   app: App
 ): ArticleJSONLD | null;
@@ -150,16 +176,30 @@ To let search engine results always be the primary choise, you may need to set `
 Sometimes you may need to fit other protocols or provide the corresponding SEO tags in the format provided by other search engines. In this case, you can use the `customHead` option, whose type is:
 
 ```ts
-function customHead<ExtendObject = Record<string, unknown>>(
+function customHead<
+  ExtraPageData extends Record<string | number | symbol, unknown> = Record<
+    never,
+    never
+  >,
+  ExtraPageFrontmatter extends Record<
+    string | number | symbol,
+    unknown
+  > = Record<string, unknown>,
+  ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
+    never,
+    never
+  >
+>(
+  /** Head tag config */
   head: HeadConfig[],
   /** Page Objext */
-  page: ExtendPage<ExtendObject>,
+  page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   /** VuePress App */
   app: App
 ): void;
 ```
 
-You should modify the `head` array in this function directly
+You should modify the `head` array in this function directly.
 
 ## SEO Introduction
 

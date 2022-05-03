@@ -23,6 +23,14 @@ copyright: false
 
 :::: code-group
 
+::: code-group-item pnpm
+
+```bash
+pnpm add -D vuepress-plugin-add-this@next
+```
+
+:::
+
 ::: code-group-item yarn
 
 ```bash
@@ -49,10 +57,10 @@ npm i -D vuepress-plugin-add-this@next
 
 ```ts
 // .vuepress/config.ts
-import { addThis } from "vuepress-plugin-add-this";
+import { addThisPlugin } from "vuepress-plugin-add-this";
 
 export default {
-  plugins: [addThis({ pubid: "你的 pubid" })],
+  plugins: [addThisPlugin({ pubid: "你的 pubid" })],
 };
 ```
 
@@ -62,10 +70,10 @@ export default {
 
 ```js
 // .vuepress/config.js
-const { addThis } = require("vuepress-plugin-add-this");
+const { addThis } = addThisPlugin("vuepress-plugin-add-this");
 
 module.exports = {
-  plugins: [addThis({ pubid: "你的 pubid" })],
+  plugins: [addThisPlugin({ pubid: "你的 pubid" })],
 };
 ```
 

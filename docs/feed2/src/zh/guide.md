@@ -40,7 +40,7 @@ Atom 和 JSON 是为了提供更多 Feed 软件的适配而提供的。
 - 将建立 Feed 的日期转换为 ISOString 写入到 `channel.pubDate` 中
 - 通过 `channel.ttl` 中设置内容的更新周期(单位: 分钟)
 - 通过 `channel.copyright` 设置版权信息
-- 通过 `channel.author` 设置频道作者，或设置 `themeConfig.author` 为作者名称。
+- 通过 `channel.author` 设置频道作者。
 
 ::: tip 默认频道设置
 

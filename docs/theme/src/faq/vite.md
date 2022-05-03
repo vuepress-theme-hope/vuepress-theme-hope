@@ -50,9 +50,9 @@ If you are using IconFont icons and can see the icons normally on the devServer,
 In VuePress2, importing web CSS via `@import` in `index.scss` has no effect. You may need to manually import it in the `head` option of your VuePress configuration.
 
 <!-- ```js 5-13}
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
 
-export default defineHopeConfig({
+export default defineUserConfig({
   head: [
     [
       "link",
@@ -69,10 +69,14 @@ export default defineHopeConfig({
 });
 ``` -->
 
-```js {5-11}
-import { defineHopeConfig } from "vuepress-theme-hope";
+:::: code-group
 
-export default defineHopeConfig({
+::: code-group-item TS
+
+```ts {5-11}
+import { defineUserConfig } from "vuepress";
+
+export default defineUserConfig({
   head: [
     [
       "link",
@@ -86,6 +90,30 @@ export default defineHopeConfig({
   // ...
 });
 ```
+
+:::
+
+::: code-group-item JS
+
+```js {3-9}
+module.exports = {
+  head: [
+    [
+      "link",
+      {
+        rel: "stylesheet",
+        href: "//at.alicdn.com/t/font_2410206_mfj6e1vbwo.css",
+      },
+    ],
+  ],
+
+  // ...
+};
+```
+
+:::
+
+::::
 
 ::: info Reason
 

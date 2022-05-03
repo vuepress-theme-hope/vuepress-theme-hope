@@ -23,6 +23,14 @@ copyright: false
 
 :::: code-group
 
+::: code-group-item pnpm
+
+```bash
+pnpm add -D vuepress-plugin-copy-code2@next
+```
+
+:::
+
 ::: code-group-item yarn
 
 ```bash
@@ -49,11 +57,11 @@ npm i -D vuepress-plugin-copy-code2@next
 
 ```ts
 // .vuepress/config.ts
-import { copyCode } from "vuepress-plugin-copy-code2";
+import { copyCodePlugin } from "vuepress-plugin-copy-code2";
 
 export default {
   plugins: [
-    copyCode({
+    copyCodePlugin({
       // 插件选项
     }),
   ],
@@ -66,11 +74,11 @@ export default {
 
 ```js
 // .vuepress/config.js
-const { copyCode } = require("vuepress-plugin-copy-code2");
+const { copyCodePlugin } = require("vuepress-plugin-copy-code2");
 
 module.exports = {
   plugins: [
-    copyCode({
+    copyCodePlugin({
       // 插件选项
     }),
   ],

@@ -33,7 +33,7 @@ If you are not familiar with TypeScript, you can also use a JavaScript config fi
 
 You need to set up a config object in the config file `.vuepress/config.ts` (or `.vuepress/config.js`) and export it.
 
-To get correct hints, importing `defineHopeConfig` from `vuepress-theme-hope` and wrapping the config object is recommanded:
+To get correct hints, importing `defineUserConfig` from `vuepress` and wrapping the config object is recommanded:
 
 :::: code-group
 
@@ -41,10 +41,10 @@ To get correct hints, importing `defineHopeConfig` from `vuepress-theme-hope` an
 
 ```ts{2,4,6}
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
 
-export default defineHopeConfig({
-   // put configuration here
+export default defineUserConfig({
+   // put your config here
 });
 ```
 
@@ -54,10 +54,10 @@ export default defineHopeConfig({
 
 ```js{2,4,6}
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { defineUserConfig } = require("vuepress");
 
-module.exports = defineHopeConfig({
-   // put configuration here
+module.exports = defineUserConfig({
+   // put your config here
 });
 ```
 
@@ -66,10 +66,6 @@ module.exports = defineHopeConfig({
 ::::
 
 ## Config Scope
-
-You may have noticed that there is a `themeConfig` config item in the VuePress config.
-
-Config items outside `themeConfig` belong to **Site Config** , while config items inside `themeConfig` belong to **Theme Config**.
 
 ### Site Config
 
@@ -85,7 +81,9 @@ You can go to [VuePress2 → Reference → Configuration](https://v2.vuepress.vu
 
 ### Theme Config
 
-Theme Config will be handled by VuePress Theme Hope. You can find all the theme config in [Config → Theme Config](../../config/README.md).
+Theme config is the object you pass to `hopeTheme` function, which will be handled by VuePress Theme Hope.
+
+You can find all the theme config in [Config → Theme Config](../../config/README.md).
 
 ::: tip Hints and Checks
 
@@ -112,7 +110,7 @@ If you are using an editor that supports TS/JS language features (such as VSCode
 
 ::: info Plugin Config
 
-VuePress Theme Hope bundles some plugins, you can pass plugin options through `themeConfig.plugins.PLUGIN_NAME`, see [Config → Theme Plugin](../../config/plugins/README.md) for more details.
+VuePress Theme Hope bundles some plugins, you can pass plugin options through `plugins.PLUGIN_NAME` in theme options, see [Config → Theme Plugin](../../config/plugins/README.md) for more details.
 
 If you want to use additional plugins, please import the plugin yourself and pass plugin options, see [VuePress → plugins](../vuepress/plugin.md) for details.
 
@@ -132,7 +130,7 @@ For more details, see [Config → Style](../../config/style.md).
 
 :::
 
-::: info Page COnfig
+::: info Page Config
 
 VuePress supports page scope config of specific page through YAML Frontmatter in Markdown files. For details, see [Project Content → Frontmatter](./content.md#frontmatter) in the previous chapter.
 

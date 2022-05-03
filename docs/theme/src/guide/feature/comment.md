@@ -12,7 +12,7 @@ tag:
 
 ::: info
 
-`vuepress-theme-hope` provides `comment` options in `themeConfig.plugins` as plugin options to `vuepress-plugin-comment2`.
+`vuepress-theme-hope` passes `plugins.comment` in theme options as plugin options to `vuepress-plugin-comment2`.
 
 :::
 
@@ -24,12 +24,13 @@ tag:
 
 ::: code-group-item TS
 
-```ts {7,10}
+```ts {8,13}
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     plugins: {
       comment: {
         type: "waline",
@@ -38,7 +39,7 @@ export default defineHopeConfig({
         serverURL: "...", // your serverURL
       },
     },
-  },
+  }),
 });
 ```
 
@@ -46,12 +47,12 @@ export default defineHopeConfig({
 
 ::: code-group-item JS
 
-```js {7,10}
-// .vuepress/themeConfig.js
-const { themeConfig } = require("vuepress-theme-hope");
+```js {7,12}
+// .vuepress/config.js
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = themeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     plugins: {
       comment: {
         type: "waline",
@@ -60,15 +61,15 @@ module.exports = themeConfig({
         serverURL: "...", // your serverURL
       },
     },
-  },
-});
+  }),
+};
 ```
 
 :::
 
 ::::
 
-Comment feature is enabled globally by default, the configuration key is `comment` in `themeConfig.plugins`.
+Comment feature is enabled globally by default, controlled by `plugins.comment.comment` options.
 
 ::: tip
 
@@ -133,7 +134,7 @@ After that, create a vercel app using the below button.
 
 Then input your new GitHub repo name and set `LEAN_ID`, `LEAN_KEY` and `LEAN_MASTER_KEY` environment variables in the "Environment Variables" column. `APP ID` is the value of `LEAN_ID`, and `APP Key` to `LEAN_KEY`, `Master Key` to `LEAN_MASTER_KEY`.
 
-Click `Deploy` button to deploy. It will show you deploy successfully after a minitues time. Then config the vercel link in your themeConfig:
+Click `Deploy` button to deploy. It will show you deploy successfully after a minitues time. Then config the vercel link in your theme options:
 
 :::: code-group
 
@@ -141,17 +142,18 @@ Click `Deploy` button to deploy. It will show you deploy successfully after a mi
 
 ```ts
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     plugins: {
       comment: {
         type: "waline",
         serverURL: "YOUR_SERVER_URL", // your server url
       },
     },
-  },
+  }),
 });
 ```
 
@@ -161,18 +163,18 @@ export default defineHopeConfig({
 
 ```js
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     plugins: {
       comment: {
         type: "waline",
         serverURL: "YOUR_SERVER_URL", // your server url
       },
     },
-  },
-});
+  }),
+};
 ```
 
 :::

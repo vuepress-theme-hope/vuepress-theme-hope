@@ -14,7 +14,7 @@ tag:
 
 `vuepress-theme-hope` 通过 `vuepress-plugin-feed2` 插件提供 Feed 生成支持。
 
-`vuepress-theme-hope` 将 `themeConfig.plugins.feed` 作为插件选项传递给 `vuepress-plugin-feed2` 插件。
+`vuepress-theme-hope` 将主题选项中的 `plugins.feed` 作为插件选项传递给 `vuepress-plugin-feed2` 插件。
 
 `vuepress-plugin-feed2` 插件可为你生成以下三种格式的 feed 文件:
 

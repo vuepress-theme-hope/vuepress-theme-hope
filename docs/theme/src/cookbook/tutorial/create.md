@@ -36,6 +36,10 @@ Please use file explorer to open that folder, then enter `cmd` in the address ba
 Execute the following command in terminal:
 
 ```sh
+pnpm create vuepress-theme-hope@next docs
+
+# Or
+
 npm create vuepress-theme-hope@next docs
 ```
 

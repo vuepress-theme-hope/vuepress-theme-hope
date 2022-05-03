@@ -21,7 +21,7 @@ You can config blogger avatar and name displayed through `blog.avatar` and `blog
 
 ::: note
 
-If you don’t set those options, they automatically fall back to the site logo (`themeConfig.logo`) and site name (`themeConfig.name`).
+If you don’t set those options, they automatically fall back to the site logo (`logo` in theme options) and site name.
 
 :::
 
@@ -87,10 +87,11 @@ You can also config your social media links with `blog.medias` option.
 ```ts
 // .vuepress/config.ts
 import { path } from "@vuepress/utils";
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  thene: hopeTheme({
     blog: {
       media: {
         // GitHub Icon is available
@@ -111,7 +112,7 @@ export default defineHopeConfig({
         ],
       },
     },
-  },
+  }),
 });
 ```
 
@@ -122,10 +123,10 @@ export default defineHopeConfig({
 ```js
 // .vuepress/config.js
 const { path } = require("@vuepress/utils");
-const { defineHopeConfig } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     blog: {
       media: {
         // GitHub Icon is available
@@ -146,8 +147,8 @@ module.exports = defineHopeConfig({
         ],
       },
     },
-  },
-});
+  }),
+};
 ```
 
 :::

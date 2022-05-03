@@ -23,6 +23,14 @@ copyrightText: false
 
 :::: code-group
 
+::: code-group-item pnpm
+
+```bash
+pnpm add -D vuepress-plugin-sitemap2@next
+```
+
+:::
+
 ::: code-group-item yarn
 
 ```bash
@@ -49,11 +57,11 @@ npm i -D vuepress-plugin-sitemap2@next
 
 ```ts
 // .vuepress/config.ts
-import { sitemap } from "vuepress-plugin-sitemap2";
+import { sitemapPlugin } from "vuepress-plugin-sitemap2";
 
 export default {
   plugins: [
-    sitemap({
+    sitemapPlugin({
       // 配置选项
     }),
   ],
@@ -66,11 +74,11 @@ export default {
 
 ```js
 // .vuepress/config.js
-const { sitemap } = require("vuepress-plugin-sitemap2");
+const { sitemapPlugin } = require("vuepress-plugin-sitemap2");
 
 module.exports = {
   plugins: [
-    sitemap({
+    sitemapPlugin({
       // 配置选项
     }),
   ],

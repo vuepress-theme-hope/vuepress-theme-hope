@@ -50,7 +50,7 @@ Move to `palette.scss`.
 
 - `$colorPicker` removed
 
-  Now you just need to set the theme color in `themeConfig`
+  Now you just need to set the theme color in theme options
 
 - `$codeBgColor`, `$darkCodeBgColor` removed, set `$code-light-theme` and `$code-dark-theme` in `config.scss` instead.
 

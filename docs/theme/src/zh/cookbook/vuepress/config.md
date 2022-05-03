@@ -22,47 +22,51 @@ tag:
 └─ package.json
 ```
 
-VuePress 站点必要的配置文件是 `.vuepress/config.js`，它应该导出一个 JavaScript 对象。如果你使用 TypeScript ，你可以将其替换为 `.vuepress/config.ts` ，以便让 VuePress 配置得到更好的类型提示。
+VuePress 站点的基本配置文件是 `.vuepress/config.js` ，但也同样支持 TypeScript 配置文件。你可以使用 `.vuepress/config.ts` 来得到更好的类型提示。
+
+一个基础的配置文件是这样的：
 
 :::: code-group
 
 ::: code-group JS
 
+::: code-group TS
+
+```ts
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default defineUserConfig({
+  // 站点配置
+  lang: "zh-CN",
+  title: "你好， VuePress ！",
+  description: "这是我的第一个 VuePress 站点",
+
+  // 主题
+  theme: hopeTheme({
+    // 主题配置
+    logo: "https://vuejs.org/images/logo.png",
+  }),
+});
+```
+
+:::
+
 ```js
+const { hopeTheme } = require("vuepress-theme-hope");
+
 module.exports = {
   // 站点配置
   lang: "zh-CN",
   title: "你好， VuePress ！",
   description: "这是我的第一个 VuePress 站点",
 
-  // 主题和它的配置
-  theme: "hope",
-  themeConfig: {
+  // 主题
+  theme: hopeTheme({
+    // 主题配置
     logo: "https://vuejs.org/images/logo.png",
-  },
+  }),
 };
-```
-
-:::
-
-::: code-group TS
-
-```ts
-import { defineUserConfig } from "vuepress";
-import type { HopeThemeOptions } from "vuepress-theme-hope";
-
-export default defineUserConfig<HopeThemeOptions>({
-  // 站点配置
-  lang: "en-US",
-  title: "Hello VuePress",
-  description: "Just playing around",
-
-  // 主题和它的配置
-  theme: "hope",
-  themeConfig: {
-    logo: "https://vuejs.org/images/logo.png",
-  },
-});
 ```
 
 :::
@@ -77,10 +81,6 @@ export default defineUserConfig<HopeThemeOptions>({
 
 ## 配置作用域
 
-你可能已经注意到了，在 VuePress 配置中有一项 `themeConfig` 配置项。
-
-在 `themeConfig` 外部的配置项属于 **站点配置** ，而在 `themeConfig` 内部的配置项则属于 **主题配置**。
-
 ### 站点配置
 
 站点配置的意思是，无论你使用什么主题，这些配置项都可以生效。
@@ -91,7 +91,7 @@ export default defineUserConfig<HopeThemeOptions>({
 
 主题配置将会被 VuePress 主题来处理，所以它取决于你使用的主题是什么。
 
-对于 `vuepress-theme-hope` 来说，你应该设置 `theme: "hope"`。
+对于 `vuepress-theme-hope` 来说，你应该导入 `hopeTheme` 并设置 设置 `theme: hopeTheme(options)`。
 
 ::: warning
 

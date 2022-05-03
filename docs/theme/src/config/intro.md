@@ -21,7 +21,7 @@ For the file structure of VuePress, see [VuePress Basics → File Structure](../
 In VuePress, there are three config concepts:
 
 - Site Config: this is the object you export directly in the config file
-- Theme Config: `themeConfig` object in the config file
+- Theme Config: options passed to `hopeTheme` function
 - Page Config: provided by Frontmatter at the top of the page based on YAML syntax
 
 ## Theme Usage
@@ -30,15 +30,19 @@ In VuePress, there are three config concepts:
 
 ::: code-group-item TS
 
-```ts {2,4,6,8,9}
+```ts
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
+export default defineUserConfig({
   // siteConfig here
-  themeConfig: {
+  // ...
+
+  theme: hopeTheme({
     // themeConfig here
-  },
+    // ...
+  }),
 });
 ```
 
@@ -46,15 +50,18 @@ export default defineHopeConfig({
 
 ::: code-group-item JS
 
-```js {2,4,6,8,9}
+```js
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
+module.exports = defineUserConfig({
   // siteConfig here
-  themeConfig: {
+  // ...
+
+  theme: hopeTheme({
     // themeConfig here
-  },
+    // ...
+  }),
 });
 ```
 

@@ -16,7 +16,9 @@ tag:
 
 ## 继承主题
 
-你需要为自己的主题创建一个入口文件，并设置 `extends: "vuepress-theme-hope"` 指定继承 `vuepress-theme-hope` 主题。
+你需要为自己的主题创建一个入口文件，并从 `vuepress-theme-hope` 中导入 `hopeTheme`。
+
+在你的入口文件中，设置 `extends: hopeTheme(options)` 声明继承 `vuepress-theme-hope` 主题。
 
 你自己新创建的主题的同名别名 (`alias`) 和 同名布局 (`layouts`) 的优先级高于被继承主题 `vuepress-theme-hope`，这意味着你可以通过 `alias` 覆盖 `vuepress-theme-hope` 主题的组件，并通过 `layouts` 覆盖或新增 `vuepress-theme-hope` 提供的布局。
 
@@ -27,10 +29,14 @@ tag:
 ```ts
 // .vuepress/theme/index.ts
 import { path } from "@vuepress/utils";
+import { hopeTheme } from "vuepress-theme-hope";
+import type { HopeThemeOptions } from "vuepress-theme-hope";
 
 export default {
   name: "vuepress-theme-local",
-  extends: "vuepress-theme-hope",
+
+  extends: hopeTheme(options),
+
   alias: {
     // 你可以在这里覆盖或新增别名
     // 比如这里我们将 vuepress-theme-hope 主页组件改为自己主题下的 components/HomePage.vue
@@ -39,6 +45,7 @@ export default {
       "./components/HomePage.vue"
     ),
   },
+
   layouts: {
     // 你可以在这里覆盖或新增布局
     // 比如这里我们将 vuepress-theme-hope 的默认布局改为自己主题下的 layouts/Layout.vue
@@ -56,10 +63,13 @@ export default {
 ```js
 // .vuepress/them/index.js
 const { path } = require("@vuepress/utils");
+const { hopeTheme } = require("vuepress-theme-hope");
 
 module.exports = {
   name: "vuepress-theme-local",
-  extends: "vuepress-theme-hope",
+
+  extends: hopeTheme(options),
+
   alias: {
     // 你可以在这里覆盖或新增别名
     // 比如这里我们将 vuepress-theme-hope 主页组件改为自己主题下的 components/HomePage.vue
@@ -68,6 +78,7 @@ module.exports = {
       "./components/HomePage.vue"
     ),
   },
+
   layouts: {
     // 你可以在这里覆盖或新增布局
     // 比如这里我们将 vuepress-theme-hope 的默认布局改为自己主题下的 layouts/Layout.vue
