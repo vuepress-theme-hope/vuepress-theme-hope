@@ -42,7 +42,7 @@
     "@vuepress/utils": "2.0.0-beta.38"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.38"
+    "@vuepress/core": "2.0.0-beta.43"
   },
   "publishConfig": {
     "access": "public"
