@@ -1,7 +1,7 @@
-import { defineHopeConfig } from "vuepress-theme-hope";
-import themeConfig from "./themeConfig";
+import { defineUserConfig } from "vuepress";
+import theme from "./theme";
 
-export default defineHopeConfig({
+export default defineUserConfig({
   lang: "zh-CN",
   title: "主题演示",
   description: "vuepress-theme-hope 的演示",
@@ -18,5 +18,5 @@ export default defineHopeConfig({
     ],
   ],
 
-  themeConfig,
+  theme,
 });
