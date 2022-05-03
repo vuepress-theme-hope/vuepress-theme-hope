@@ -50,7 +50,7 @@ tag:
 
 - `$colorPicker` 移除
 
-  现在你只需要在 `themeConfig` 中设置主题色
+  现在你只需要在主题选项中设置主题色
 
 - `$codeBgColor`, `$darkCodeBgColor` 移除，请在 `config.scss` 中配置 `$code-light-theme` 和 `$code-dark-theme`。
 

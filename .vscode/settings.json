@@ -1,5 +1,6 @@
 {
-  "jest.jestCommandLine": "yarn jest",
+  "jest.jestCommandLine": "pnpm jest",
+  "jest.autoRun": "off",
   "typescript.tsdk": "node_modules/typescript/lib",
   "yaml.schemas": {
     "https://json.schemastore.org/github-issue-config.json": "file:///c%3A/projects/vuepress-theme-hope/.github/ISSUE_TEMPLATE/config.yml",

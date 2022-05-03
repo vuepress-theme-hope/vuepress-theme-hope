@@ -1,4 +1,4 @@
-import chalk from "chalk";
+import { chalk } from "@vuepress/utils";
 
 import type { App } from "@vuepress/core";
 import type { ViteBundlerOptions } from "@vuepress/bundler-vite";
@@ -46,20 +46,22 @@ export const tagHint = (tag: string, isDebug = false): void => {
 /**
  * Add tags as customElement
  *
+ * @param config VuePress Bundler config
  * @param app VuePress Node App
  * @param customElements tags recognized as custom element
  */
 export const addCustomElement = (
+  config: unknown,
   app: App,
   customElement: string[] | string
 ): void => {
   const customElements =
     typeof customElement === "string" ? [customElement] : customElement;
-  const { bundler, bundlerConfig } = app.options;
+  const { bundler } = app.options;
 
   // for vite
-  if (bundler.endsWith("vite")) {
-    const viteBundlerConfig: ViteBundlerOptions = bundlerConfig;
+  if (bundler.name.endsWith("vite")) {
+    const viteBundlerConfig = config as ViteBundlerOptions;
 
     if (!viteBundlerConfig.vuePluginOptions)
       viteBundlerConfig.vuePluginOptions = {};
@@ -83,8 +85,8 @@ export const addCustomElement = (
   }
 
   // for webpack
-  if (bundler.endsWith("webpack")) {
-    const webpackBundlerConfig: WebpackBundlerOptions = bundlerConfig;
+  if (bundler.name.endsWith("webpack")) {
+    const webpackBundlerConfig = config as WebpackBundlerOptions;
 
     if (!webpackBundlerConfig.vue) webpackBundlerConfig.vue = {};
     if (!webpackBundlerConfig.vue.compilerOptions)

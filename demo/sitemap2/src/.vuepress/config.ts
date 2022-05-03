@@ -1,27 +1,25 @@
 import { defineUserConfig } from "@vuepress/cli";
-import type { DefaultThemeOptions } from "@vuepress/theme-default";
+import { defaultTheme } from "@vuepress/theme-default";
+import { sitemapPlugin } from "vuepress-plugin-sitemap2";
 
 const BASE = process.env.BASE as "/" | `/${string}/`;
 
-export default defineUserConfig<DefaultThemeOptions>({
+export default defineUserConfig({
   base: BASE || "/",
 
   title: "Sitemap",
 
   description: "VuePress2 Sitemap Plugin",
 
-  themeConfig: {
+  theme: defaultTheme({
     logo: "/logo.svg",
 
     repo: "vuepress-theme-hope/vuepress-theme-hope/tree/main/demo/sitemap2/",
-  },
+  }),
 
   plugins: [
-    [
-      "sitemap2",
-      {
-        hostname: "https://vuepress-theme-hope.github.io",
-      },
-    ],
+    sitemapPlugin({
+      hostname: "https://vuepress-theme-hope.github.io",
+    }),
   ],
 });

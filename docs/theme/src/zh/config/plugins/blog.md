@@ -14,7 +14,7 @@ tag:
 
 主题提供博客功能，默认情况下**不启用**。
 
-你可以将 `themeConfig.plugins.blog` 设置为 `true` 来启用博客功能。
+你可以在主题选项中设置 `plugins.blog: true` 来启用博客功能。
 
 有关说明，请参阅[博客介绍](../../guide/blog/intro.md)。
 

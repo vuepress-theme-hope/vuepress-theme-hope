@@ -35,6 +35,14 @@ icon: creative
 
 :::: code-group
 
+::: code-group-item pnpm
+
+```bash
+pnpm add -D vuepress-plugin-md-enhance@next
+```
+
+:::
+
 ::: code-group-item yarn
 
 ```bash

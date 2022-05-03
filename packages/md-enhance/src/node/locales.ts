@@ -90,4 +90,13 @@ export const markdownEnhanceLocales: MarkdownEnhanceLocaleConfig = {
     danger: "Pozor",
     details: "Podrobnosti",
   },
+
+  "/fr/": {
+    info: "Info",
+    note: "Note",
+    tip: "Conseil",
+    warning: "Note",
+    danger: "Avertissement",
+    details: "Details",
+  },
 };

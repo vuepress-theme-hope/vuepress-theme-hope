@@ -2,6 +2,7 @@
 import { createBaseApp } from "@vuepress/core";
 import { path } from "@vuepress/utils";
 import { getLocales } from "../../src/node/locales";
+import { emptyTheme } from "./__fixtures__/theme/empty";
 
 const defaultLocaleConfig = {
   "/en/": {
@@ -31,7 +32,8 @@ describe("generate locale", () => {
         "/jp/": { lang: "jp-JP" },
       },
       source: path.resolve(__dirname, "./__fixtures__/src"),
-      theme: path.resolve(__dirname, "./__fixtures__/theme/empty.js"),
+      bundler: {} as any,
+      theme: emptyTheme,
     });
 
     expect(getLocales({ app, default: defaultLocaleConfig })).toEqual({
@@ -58,7 +60,8 @@ describe("generate locale", () => {
         "/jp/": { lang: "jp-JP" },
       },
       source: path.resolve(__dirname, "./__fixtures__/src"),
-      theme: path.resolve(__dirname, "./__fixtures__/theme/empty.js"),
+      bundler: {} as any,
+      theme: emptyTheme,
     });
 
     const config = {
@@ -94,7 +97,8 @@ describe("generate locale", () => {
           "/unknown/": { lang: "unknown-Language" },
         },
         source: path.resolve(__dirname, "./__fixtures__/src"),
-        theme: path.resolve(__dirname, "./__fixtures__/theme/empty.js"),
+        bundler: {} as any,
+        theme: emptyTheme,
       });
 
       const locales = getLocales({ app, default: defaultLocaleConfig });
@@ -128,7 +132,8 @@ describe("generate locale", () => {
           "/unknown/": { lang: "unknown-Language" },
         },
         source: path.resolve(__dirname, "./__fixtures__/src"),
-        theme: path.resolve(__dirname, "./__fixtures__/theme/empty.js"),
+        bundler: {} as any,
+        theme: emptyTheme,
       });
 
       const locales = getLocales({ app, default: defaultLocaleConfig });
@@ -168,7 +173,8 @@ describe("generate locale", () => {
           "/test/": { lang: "test-Language" },
         },
         source: path.resolve(__dirname, "./__fixtures__/src"),
-        theme: path.resolve(__dirname, "./__fixtures__/theme/empty.js"),
+        bundler: {} as any,
+        theme: emptyTheme,
       });
 
       const locales = getLocales({ app, default: defaultLocaleConfig });
@@ -202,7 +208,8 @@ describe("generate locale", () => {
           "/unknown/": { lang: "unkown-Language" },
         },
         source: path.resolve(__dirname, "./__fixtures__/src"),
-        theme: path.resolve(__dirname, "./__fixtures__/theme/empty.js"),
+        bundler: {} as any,
+        theme: emptyTheme,
       });
 
       const config = {

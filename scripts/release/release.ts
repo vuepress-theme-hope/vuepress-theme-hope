@@ -1,22 +1,28 @@
-import execa = require("execa");
-import ora = require("ora");
-import { green, red } from "chalk";
-import { prompt } from "inquirer";
-import { ReleaseType, inc } from "semver";
-import { version as currentVersion } from "../../lerna.json";
-import { getNpmTags, getVersion, versions } from "./version";
-import { sync } from "./sync";
-import type { Answers } from "./version";
+import chalk from "chalk";
+import { execaCommand } from "execa";
+import ora from "ora";
+import inquirer from "inquirer";
+import semver from "semver";
+import pkg from "../../package.json";
+import { getNpmTags, getVersion, versions } from "./version.js";
+import { sync } from "./sync.js";
+
+import type { ReleaseType } from "semver";
+import type { Answers } from "./version.js";
+
+const { version: currentVersion } = pkg;
+const { prompt } = inquirer;
+const { inc } = semver;
 
 export const release = async (): Promise<void> => {
   const buildSpinner = ora("Building project").start();
 
-  await execa("yarn", ["run", "clean"]);
-  await execa("yarn", ["run", "build"]);
+  await execaCommand("pnpm clean");
+  await execaCommand("pnpm build");
 
   buildSpinner.succeed();
 
-  ora(`Current version: ${green(currentVersion)}`).info();
+  ora(`Current version: ${chalk.green(currentVersion)}`).info();
 
   const bumps: ReleaseType[] = [
     "prerelease",
@@ -69,23 +75,18 @@ export const release = async (): Promise<void> => {
   ]);
 
   if (confirm === "N") {
-    ora(red("Release canceled.")).fail();
+    ora(chalk.red("Release canceled.")).fail();
 
     return;
   }
 
-  const releaseArguments = [
-    "publish",
-    version,
-    "--dist-tag",
-    npmTag,
-    "--registry",
-    "https://registry.npmjs.org/",
-  ];
-
-  await execa(require.resolve("lerna/cli"), releaseArguments, {
+  // bump version
+  await execaCommand(`pnpm standard-version --release-as ${version}`, {
     stdio: "inherit",
   });
+
+  // release
+  await execaCommand("pnpm -r publish --tag next", { stdio: "inherit" });
 
   const npmmirrorSpinner = ora("Syncing npmmirror.com").start();
 

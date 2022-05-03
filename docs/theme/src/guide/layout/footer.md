@@ -15,25 +15,25 @@ tag:
 
 ## Global Config
 
-In the themeConfig, `footer` field is used to config footer globally. You can set `footer` and `copyright` in `themeConfig` to set the default footer content and copyright information globally.
+You can use `footer` and `copyright` options in theme options to set the default footer content and copyright information globally.
 
-The footer is not displayed on the page by default. To display the footer on every page, you need to set `themeConfig.displayFooter` to `true`.
+The footer is not displayed on the page by default. To display the footer on every page, you need to set `displayFooter: true` in theme options.
 
 ::: info I18n Locales
 
-You can set footers for each language individually in `themeConfig.locales`.
+You can set footers for each language individually under `locales` field in theme options.
 
 :::
 
 ## Page Config
 
-You can configure the `footer`, `copyright` fields in the frontmatter of the page to set footer content of a specific page.
+You can configure `footer` and `copyright` options in the frontmatter of the page to set footer content of a specific page.
 
 ### footer
 
-- When `themeConfig.displayFooter` is `true`, you can set `footer` to `false` in frontmatter to disable the footer of a specific page.
+- When setting `displayFooter: true` in theme options, you can set `footer: false` in frontmatter to disable footer in a specific page.
 
-- When the global display of footer is not enabled, setting `footer` to `true` will display the default footer text.
+- When the global display of footer is not enabled, setting `footer: true` means displaying the default footer.
 
 - If you fill in a string, it will be inserted into the footer as the content of the footer with `v-html` command, so you can fill in HTMLString.
 
@@ -41,7 +41,7 @@ You can configure the `footer`, `copyright` fields in the frontmatter of the pag
 
 The `copyright` field is used to set the copyright information of a specific page. It also supports HTMLString (useful when you cite an article and the article uses a specific license).
 
-When `themeConfig.displayFooter` is `true`, you can also fill in `false` to hide the copyright information of a specific page.
+When setting `displayFooter: true` in theme options, you can also set `copyright: false` to hide the copyright information in a specific page.
 
 ## Example
 

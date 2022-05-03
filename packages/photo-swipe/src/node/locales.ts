@@ -90,4 +90,13 @@ export const photoSwipeLocales: PhotoSwipeLocaleConfig = {
     arrowPrev: "Predošlí (šípka doľava)",
     arrowNext: "Nasledujúci (šípka doprava)",
   },
+
+  "/fr/": {
+    close: "Fermer",
+    download: "Télécharger l'image",
+    fullscreen: "Basculer en plein écran",
+    zoom: "Zoom avant/arrière",
+    arrowPrev: "Précédent (Flèche gauche)",
+    arrowNext: "Suivant (Flèche droite)",
+  },
 };

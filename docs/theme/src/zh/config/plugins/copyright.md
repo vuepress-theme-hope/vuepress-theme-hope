@@ -14,7 +14,7 @@ tag:
 
 `vuepress-plugin-copyright2` 插件默认禁用，能在用户复制站点内容时添加版权信息。此插件还可以禁用站点复制或选择。
 
-`vuepress-theme-hope` 将 `themeConfig.plugins.copyright` 作为插件选项传递给 `vuepress-plugin-copyright2` 插件。
+`vuepress-theme-hope` 将主题选项中的 `plugins.copyright` 作为插件选项传递给 `vuepress-plugin-copyright2` 插件。
 
 ## 插件选项
 

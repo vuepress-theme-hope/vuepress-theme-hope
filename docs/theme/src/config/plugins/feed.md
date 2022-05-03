@@ -14,7 +14,7 @@ tag:
 
 `vuepress-theme-hope` provides feed generation support via the `vuepress-plugin-feed2` plugin.
 
-`vuepress-theme-hope` passes `themeConfig.plugins.feed` as a plugin option to the `vuepress-plugin-feed2` plugin.
+`vuepress-theme-hope` passes `plugins.feed` in theme options as plugin options to `vuepress-plugin-feed2` plugin.
 
 The `vuepress-plugin-feed2` plugin can generate feed files in the following three formats for you:
 

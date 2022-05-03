@@ -11,23 +11,28 @@ We always welcome everyone to contribute! Here is a guide for you.
 
 ## Clone and Install Project
 
-Use Git to clone the project to the local, and use `yarn` to install dependencies.
+Use Git to clone the project to the local, and use `pnpm` to install dependencies.
 
 ```sh
 git clone git@github.com:vuepress-theme-hope/vuepress-theme-hope.git
 
-yarn
+pnpm i
 ```
 
 ::: tip
 
-If you have not installed yarn, please install it using `npm i -g yarn`.
+If you have not installed pnpm, please install it using the following command.
+
+```sh
+corepack enable
+corepack prepare pnpm@6.32.10 --activate
+```
 
 :::
 
 ## Project File Structure
 
-The project is a monorepo, managed by `lerna`.
+The project is a monorepo, managed by pnpm.
 
 - `docs`: place the documentation of each plugin and theme, each subdirectory is a project
 - `demo`: theme demo project
@@ -84,22 +89,20 @@ The project is a monorepo, managed by `lerna`.
 ├── README.md → project intro
 ├── SECURITY.md → Security Policy
 │
-├── tsconfig.* → TypeScript config file
-│
-└── yarn.lock → yarn version lock file
+└── tsconfig.* → TypeScript config file
 ```
 
 ## Document Modification
 
 You can find the corresponding project in the docs directory so you can modify the corresponding Markdown directly.
 
-After ensuring that the `yarn run lint` and `yarn run lint:md` commands emit no errors, you can commit to GitHub to open a PR.
+After ensuring that the `pnpm lint` and `pnpm lint:md` commands emit no errors, you can commit to GitHub to open a PR.
 
 ::: tip Preview Docs
 
-Since the docs are using local themes and plugins, you need to build the local project through `yarn run build` first.
+Since the docs are using local themes and plugins, you need to build the local project through `pnpm build` first.
 
-To start previewing, cd to the right project under `docs` directory, then run `yarn docs:vite-serve` (using vite) or `yarn docs:webpack-serve` (using webpack).
+To start previewing, cd to the right project under `docs` directory, then run `pnpm docs:vite-serve` (using vite) or `pnpm docs:webpack-serve` (using webpack).
 
 :::
 
@@ -141,25 +144,25 @@ For better performance, all plugins are packed and minified using rollup when th
 
 ### Command
 
-1. Build project: `yarn run build`
+1. Build project: `pnpm build`
 
-   It will execute the two commands `yarn run build:copy` and `yarn run build:ts`, corresponding to the two build steps.
+   It will execute the two commands `pnpm build:copy` and `pnpm build:ts`, corresponding to the two build steps.
 
-1. Develop project: `yarn run dev`
+1. Develop project: `pnpm dev`
 
-   It will execute the two commands `yarn run dev:copy` and `yarn run dev:ts`, and execute and watch the two build steps.
+   It will execute the two commands `pnpm dev:copy` and `pnpm dev:ts`, and execute and watch the two build steps.
 
-1. Format project: `yarn run lint`
+1. Format project: `pnpm lint`
 
-   It will execute the two commands `yarn run lint:eslint` and `yarn run lint:prettier`.
+   It will execute the two commands `pnpm lint:eslint` and `pnpm lint:prettier`.
 
-   If you modify Markdown, you also need to run the `yarn run lint:md` command.
+   If you modify Markdown, you also need to run the `pnpm lint:md` command.
 
 ::: warning
 
 Please do not mix build and dev commands as they compile in completely different ways.
 
-You may need to execute the `yarn run clean` command to clear the last build results.
+You may need to execute the `pnpm clean` command to clear the last build results.
 
 :::
 

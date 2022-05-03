@@ -1,23 +1,23 @@
 import { deepAssign } from "@mr-hope/vuepress-shared";
-import { feed } from "vuepress-plugin-feed2";
+import { feedPlugin } from "vuepress-plugin-feed2";
 
-import type { PluginConfig } from "@vuepress/core";
+import type { Plugin } from "@vuepress/core";
 import type { FeedOptions } from "vuepress-plugin-feed2";
 import type { HopeThemeConfig } from "../../shared";
 
-export const resolveFeedPlugin = (
+export const getFeedPlugin = (
   hostname: string,
   themeConfig: HopeThemeConfig,
   options?: Omit<FeedOptions, "hostname"> | false
-): PluginConfig => {
+): Plugin | null => {
   if (
     options === false ||
     // disable feed if no options for feed plugin
     !Object.keys(options || {}).length
   )
-    return ["", false];
+    return null;
 
-  return feed(
+  return feedPlugin(
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     deepAssign(

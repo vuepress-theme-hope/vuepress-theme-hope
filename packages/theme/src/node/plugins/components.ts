@@ -1,15 +1,13 @@
-import { components } from "@mr-hope/vuepress-plugin-components";
+import { componentsPlugin } from "@mr-hope/vuepress-plugin-components";
 
 import type { AvailableComponent } from "@mr-hope/vuepress-plugin-components";
-import type { PluginConfig } from "@vuepress/core";
+import type { Plugin } from "@vuepress/core";
 import type { HopeThemeOptions } from "../../shared";
 
-export const resolveComponentsPlugin = (
-  themeConfig: HopeThemeOptions
-): PluginConfig => {
+export const getComponentsPlugin = (themeConfig: HopeThemeOptions): Plugin => {
   const enabledComponents: AvailableComponent[] = ["Badge"];
 
-  return components({
+  return componentsPlugin({
     components: enabledComponents,
     backToTop: themeConfig.backToTop !== false,
     backToTopThreshold:

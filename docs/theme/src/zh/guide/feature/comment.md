@@ -12,7 +12,7 @@ tag:
 
 ::: info
 
-`vuepress-theme-hope` 将 `themeConfig.plugins` 中的 `comment` 选项作为插件选项提供给 `vuepress-plugin-comment2`。
+`vuepress-theme-hope` 将主题选项中的 `plugins.comment` 作为插件选项提供给 `vuepress-plugin-comment2`。
 
 :::
 
@@ -24,12 +24,13 @@ tag:
 
 ::: code-group-item TS
 
-```ts {7,10}
+```ts {8,11}
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     plugins: {
       comment: {
         type: "waline",
@@ -38,7 +39,7 @@ export default defineHopeConfig({
         serverURL: "...", // your serverURL
       },
     },
-  },
+  }),
 });
 ```
 
@@ -47,11 +48,10 @@ export default defineHopeConfig({
 ::: code-group-item JS
 
 ```js {7,10}
-// .vuepress/themeConfig.js
-const { themeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = themeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     plugins: {
       comment: {
         type: "waline",
@@ -60,15 +60,15 @@ module.exports = themeConfig({
         serverURL: "...", // your serverURL
       },
     },
-  },
-});
+  }),
+};
 ```
 
 :::
 
 ::::
 
-评论功能默认全局启用，配置项为 `themeConfig.plugins` 中的 `comment`。
+评论功能默认全局启用，通过主题选项中的 `plugins.comment.comment` 控制。
 
 ::: info
 
@@ -143,17 +143,18 @@ Giscus 是一个基于 GitHub Dicussion 的评论系统，启用简便。
 
 ```ts
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     plugins: {
       comment: {
         type: "waline",
         serverURL: "YOUR_SERVER_URL", // your server url
       },
     },
-  },
+  }),
 });
 ```
 
@@ -163,18 +164,18 @@ export default defineHopeConfig({
 
 ```js
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     plugins: {
       comment: {
         type: "waline",
         serverURL: "YOUR_SERVER_URL", // your server url
       },
     },
-  },
-});
+  }),
+};
 ```
 
 :::

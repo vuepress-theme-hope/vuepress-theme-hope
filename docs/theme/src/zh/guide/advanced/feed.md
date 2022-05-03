@@ -12,7 +12,7 @@ tag:
 
 ::: info
 
-`vuepress-theme-hope` 将 `themeConfig.plugins` 中的 `feed` 选项作为插件选项提供给 `vuepress-plugin-feed2`。
+`vuepress-theme-hope` 将主题选项中的 `plugins.feed` 选项作为插件选项提供给 `vuepress-plugin-feed2`。
 
 :::
 
@@ -34,7 +34,7 @@ Atom 和 JSON 是为了提供更多 Feed 软件的适配而提供的。
 
 :::
 
-请按照需要生成的格式，在 `themeConfig.plugins.feed` 中 设置 `atom`, `json` 或 `rss` 为 `true`。
+请按照需要生成的格式，在主题选项中设置 `plugins.feed.atom`, `jplugins.feed.son` 或 `plugins.feed.rss` 为 `true`。
 
 ::: tip
 
@@ -46,14 +46,14 @@ Atom 和 JSON 是为了提供更多 Feed 软件的适配而提供的。
 
 ## 频道设置
 
-你可以在 `themeConfig.plugins.feed` 中通过设置 `channel` 选项来自自定义 Feed 频道的各项信息。
+你可以在主题选项中通过设置 `plugins.feed.channel` 选项来自自定义 Feed 频道的各项信息。
 
 我们推荐进行如下设置:
 
 - 将建立 Feed 的日期转换为 ISOString 写入到 `channel.pubDate` 中
 - 通过 `channel.ttl` 中设置内容的更新周期(单位: 分钟)
-- 通过 `channel.copyright` 设置版权信息，或回退到 `themeConfig.copyright`
-- 通过 `channel.author` 设置频道作者，或设置 `themeConfig.author` 为作者名称。
+- 通过 `channel.copyright` 设置版权信息，或回退到主题选项中的 `copyright`
+- 通过 `channel.author` 设置频道作者，或回退到主题选项中的 `author`。
 
 ::: tip 默认频道设置
 

@@ -15,7 +15,7 @@ The following options control the appearance of the theme. You don’t need to p
 
 ::: warning
 
-These options are only valid when setting directly under the themeConfig, setting them in each language as no effect.
+These options are only valid when setting directly under the theme options, setting them in each language as no effect.
 
 :::
 

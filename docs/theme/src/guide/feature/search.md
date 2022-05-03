@@ -8,11 +8,13 @@ tag:
   - Search
 ---
 
-The theme adds built-in support for [`@vuepress/search`][search] and [`@vuepress/docsearch`][docsearch].
+The theme adds built-in support for [`@vuepress/search`][search] and [`@vuepress/docsearch`][docsearch]. Just install the plugin you want and config it, you will get a search box in navbar.
+
+To use search plugin, you need to apply it via `plugins` in the [VuePress config file](../../cookbook/vuepress/config.md).
 
 ::: warning
 
-To keep the theme simple, we will not add these two plugins as dependencies , so install the needed plugin yourself.
+To keep the theme simple, we will not add these two plugins as dependencies, so you need to install plugins yourself.
 
 :::
 
@@ -20,13 +22,9 @@ To keep the theme simple, we will not add these two plugins as dependencies , so
 
 ## use `@vuepress/search`
 
-You can pass plugin options via `themeConfig.plugins.search`.
-
 See [Plugin Docs][search] for the available options for search plugin.
 
 ## use `@vuepress/docsearch`
-
-You can pass plugin options via `themeConfig.plugins.docsearch`.
 
 To use the plugin properly, you need to pass in `apiKey`, `indexName` and `appId` correctly, and set up the Algolia Crawler correctly according to the following requirements.
 
@@ -172,14 +170,6 @@ new Crawler({
 :::
 
 See [Plugin Docs][docsearch] for the available options for docsearch plugin.
-
-## Additional Info
-
-::: note
-
-You can also call plugins via `plugins` in the [VuePress config file](../../cookbook/vuepress/config.md).
-
-:::
 
 [docsearch]: https://v2.vuepress.vuejs.org/reference/plugin/docsearch.html
 [search]: https://v2.vuepress.vuejs.org/reference/plugin/search.html

@@ -1,4 +1,5 @@
 import throttle from "lodash.throttle";
+import { useEventListener } from "@vueuse/core";
 import {
   Transition,
   computed,
@@ -126,18 +127,21 @@ export default defineComponent({
     let unregisterRouterHook: () => void;
     let lastDistance = 0;
 
-    const scrollHandler = throttle(() => {
-      const distance = getScrollTop();
+    useEventListener(
+      "scroll",
+      throttle(() => {
+        const distance = getScrollTop();
 
-      // scroll down
-      if (lastDistance < distance && distance > 58) {
-        if (!isMobileSidebarOpen.value) hideNavbar.value = true;
-      }
-      // scroll up
-      else hideNavbar.value = false;
+        // scroll down
+        if (lastDistance < distance && distance > 58) {
+          if (!isMobileSidebarOpen.value) hideNavbar.value = true;
+        }
+        // scroll up
+        else hideNavbar.value = false;
 
-      lastDistance = distance;
-    }, 300);
+        lastDistance = distance;
+      }, 300)
+    );
 
     watch(isMobile, (value) => {
       if (!value) toggleMobileSidebar(false);
@@ -147,13 +151,10 @@ export default defineComponent({
       unregisterRouterHook = router.afterEach((): void => {
         toggleMobileSidebar(false);
       });
-
-      window.addEventListener("scroll", scrollHandler);
     });
 
     onUnmounted(() => {
       unregisterRouterHook();
-      window.removeEventListener("scroll", scrollHandler);
     });
 
     return (): VNode =>

@@ -18,7 +18,7 @@ The topic provides you with a list of all articles under the path `/article/` by
 
 By default, the theme will only display the excerpt or description you specify in the article list.
 
-If you want the theme to automatically extract excerpts, set `autoExcerpt: true` in `themeConfig.plugins.blog`.
+If you want the theme to automatically extract excerpts, set `plugins.blog.autoExcerpt: true` in theme options.
 
 ## Article
 

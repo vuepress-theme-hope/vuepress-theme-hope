@@ -25,7 +25,7 @@ tag:
 
 ## 选项
 
-你可以通过 `themeConfig.darkmode` 来配置深色模式。
+你可以在主题选项中通过 `darkmode` 来配置深色模式。
 
 可选的值:
 

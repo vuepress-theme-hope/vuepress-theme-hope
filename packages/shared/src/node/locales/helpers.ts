@@ -29,21 +29,23 @@ ${
 };
 
 /** Get language from path */
-export const path2Lang = (path = ""): HopeLang => {
+export const path2Lang = (path = "", debug = false): HopeLang => {
   if (path in path2langConfig) return path2langConfig[path];
 
-  console.error(
-    `${path} isn’t assign with a lang, and will return 'en-US' instead.`
-  );
+  if (debug)
+    console.warn(
+      `${path} isn’t assign with a lang, and will return 'en-US' instead.`
+    );
 
   return "en-US";
 };
 
 /** Get path from language */
-export const lang2Path = (lang = ""): string => {
+export const lang2Path = (lang = "", debug = false): string => {
   if (lang in lang2PathConfig) return lang2PathConfig[lang as HopeLang];
 
-  console.error(`${lang} has no path config, and will return '/' instead.`);
+  if (debug)
+    console.warn(`${lang} has no path config, and will return '/' instead.`);
 
   return "/";
 };
@@ -71,7 +73,7 @@ export const getRootLang = (app: App): string => {
  * @returns infer language
  */
 export const getRootLangPath = (app: App): string =>
-  lang2Path(getRootLang(app));
+  lang2Path(getRootLang(app), app.env.isDebug);
 
 export const getLocalePaths = (app: App): string[] =>
   Array.from(new Set([...Object.keys(app.siteData.locales)]));
@@ -111,7 +113,9 @@ export const getLocales = <T>({
           localePath,
           deepAssign(
             {},
-            defaultLocalesConfig[localePath] || defaultLocalesConfig[rootPath],
+            defaultLocalesConfig[localePath] ||
+              defaultLocalesConfig[rootPath] ||
+              {},
             userLocalesConfig[localePath] || {}
           ),
         ];

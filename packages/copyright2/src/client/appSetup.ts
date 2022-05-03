@@ -3,7 +3,8 @@ import {
   usePageFrontmatter,
   usePageData,
 } from "@vuepress/client";
-import { computed, onBeforeUnmount, onMounted, watchEffect } from "vue";
+import { useEventListener } from "@vueuse/core";
+import { computed, onMounted, watchEffect } from "vue";
 
 import type { CopyrightPluginFrontmatter } from "../shared";
 
@@ -13,8 +14,6 @@ declare const COPYRIGHT_DISABLE_SELECTION: boolean;
 declare const COPYRIGHT_GLOBAL: boolean;
 
 export default defineClientAppSetup(() => {
-  let appElement: HTMLDivElement;
-
   const page = usePageData<{ copyright: string }>();
   const frontmatter = usePageFrontmatter<CopyrightPluginFrontmatter>();
 
@@ -96,15 +95,12 @@ export default defineClientAppSetup(() => {
 
   onMounted(() => {
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    appElement = document.querySelector<HTMLDivElement>("#app")!;
-    appElement.addEventListener("copy", onCopy);
+    const appElement = document.querySelector<HTMLDivElement>("#app")!;
+
+    useEventListener(appElement, "copy", onCopy);
 
     watchEffect(() => {
       appElement.style.userSelect = disableSelection.value ? "none" : "auto";
     });
-  });
-
-  onBeforeUnmount(() => {
-    appElement.removeEventListener("copy", onCopy);
   });
 });

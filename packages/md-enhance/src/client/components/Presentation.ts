@@ -1,4 +1,4 @@
-import { usePlugins } from "@temp/md-enhance/reveal-plugins";
+import { useReveal } from "@temp/md-enhance/reveal";
 import { defineComponent, h, onBeforeUnmount, onMounted, ref } from "vue";
 import { usePageFrontmatter } from "@vuepress/client";
 import { LoadingIcon } from "./icons";
@@ -57,14 +57,10 @@ export default defineComponent({
 
         const promises: [
           Promise<void>,
-          Promise<typeof import("reveal.js/dist/reveal.esm.js")>,
           ...Promise<typeof import("reveal.js/dist/reveal.esm.js")>[]
         ] = [
           new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
-          import(
-            /* webpackChunkName: "reveal" */ "reveal.js/dist/reveal.esm.js"
-          ),
-          ...usePlugins(),
+          ...useReveal(),
         ];
 
         void Promise.all(promises).then(([, revealJS, ...plugins]) => {

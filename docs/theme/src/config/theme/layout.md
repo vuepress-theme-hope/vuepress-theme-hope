@@ -192,7 +192,7 @@ The theme provide built-in support for GitHub, Gitlab, Gitee and Bitbucket.
 ### docsRepo
 
 - Type: `string`
-- Default: `themeConfig.repo`
+- Default: `repo`
 
 The repo of your docs
 

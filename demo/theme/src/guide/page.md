@@ -28,7 +28,7 @@ Content before `more` comment is regarded as page excerpt.
 
 <!-- more -->
 
-## Page information
+## Page Information
 
 You can set page information in Markdown’s Frontmatter.
 
@@ -40,7 +40,7 @@ You can set page information in Markdown’s Frontmatter.
 
 - Tags are "Page Config" and "Guide"
 
-## Page content
+## Page Content
 
 You are free to write your Markdown here.
 
@@ -56,7 +56,7 @@ The theme contains a custom badge:
 
 > A dark blue badge text badge at the end of line. <Badge text="Badge text" color="#242378" />
 
-## Page structure
+## Page Structure
 
 This page should contain:
 

@@ -28,10 +28,18 @@ interface ReadingTime {
 
 :::: code-group
 
+::: code-group-item pnpm
+
+```bash
+pnpm add -D vuepress-plugin-reading-time2@next@next
+```
+
+:::
+
 ::: code-group-item yarn
 
 ```bash
-yarn add -D vuepress-plugin-reading-time2
+yarn add -D vuepress-plugin-reading-time2@next
 ```
 
 :::
@@ -39,7 +47,7 @@ yarn add -D vuepress-plugin-reading-time2
 ::: code-group-item npm
 
 ```bash
-npm i -D vuepress-plugin-reading-time2
+npm i -D vuepress-plugin-reading-time2@next
 ```
 
 :::
@@ -54,14 +62,13 @@ npm i -D vuepress-plugin-reading-time2
 
 ```ts
 // .vuepress/config.ts
+import { readingTimePlugin } from "vuepress-plugin-reading-time2";
+
 export default {
   plugins: [
-    [
-      "@mr-hope/reading-time",
-      {
-        // 配置选项
-      },
-    ],
+    readingTimePlugin({
+      // 你的选项
+    }),
   ],
 };
 ```
@@ -72,14 +79,13 @@ export default {
 
 ```js
 // .vuepress/config.js
+const { readingTimePlugin } = require("vuepress-plugin-reading-time2");
+
 module.exports = {
   plugins: [
-    [
-      "@mr-hope/reading-time",
-      {
-        // 你的选项
-      },
-    ],
+    readingTimePlugin({
+      // 你的选项
+    }),
   ],
 };
 ```

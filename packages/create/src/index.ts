@@ -24,7 +24,7 @@ const version = require("../package.json").version as string;
 cli
   .command("[dir]", "Generate a new vuepress-theme-hope project")
   .usage(
-    "yarn create vuepress-theme-hope [dir] / npm init vuepress-theme-hope [dir]"
+    "pnpm create vuepress-theme-hope@next [dir] / npm init vuepress-theme-hope@next [dir]"
   )
   .example("docs")
   .action(async (dir: string) => {
@@ -220,7 +220,7 @@ cli
 cli.help(() => [
   {
     title:
-      "yarn create vuepress-theme-hope [dir] / npm init vuepress-theme-hope [dir]",
+      "pnpm create vuepress-theme-hope@next [dir] / npm init vuepress-theme-hope@next [dir]",
     body: "Create a vuepress-theme-hope template in [dir]",
   },
 ]);

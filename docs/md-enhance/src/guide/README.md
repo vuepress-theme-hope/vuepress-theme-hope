@@ -37,6 +37,14 @@ Please use the options below and enable ONLY the feature you want to use.
 
 :::: code-group
 
+::: code-group-item pnpm
+
+```bash
+pnpm add -D vuepress-plugin-md-enhance@next
+```
+
+:::
+
 ::: code-group-item yarn
 
 ```bash
