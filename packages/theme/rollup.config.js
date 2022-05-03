@@ -7,7 +7,6 @@ import rollupCopy from "rollup-plugin-copy";
 import dts from "rollup-plugin-dts";
 import vue from "rollup-plugin-vue";
 import { terser } from "rollup-plugin-terser";
-import styles from "rollup-plugin-styles";
 import shebangPlugin from "../../scripts/shebang";
 
 const isProduction = process.env.mode === "production";
@@ -17,7 +16,6 @@ const rollupBundleTypescript = (
   {
     external = [],
     dtsExternal = [],
-    useStyle = false,
     resolve = false,
     copy = [],
     tsconfig = {},
@@ -40,7 +38,6 @@ const rollupBundleTypescript = (
     plugins: [
       ...(shebang ? [shebangPlugin()] : []),
       typescript(tsconfig),
-      ...(useStyle ? [styles()] : []),
       ...(resolve ? [nodeResolve({ preferBuiltins: true }), commonjs()] : []),
       ...(isProduction ? [terser()] : []),
       ...(copy.length
@@ -81,7 +78,6 @@ const rollupBundleVue = (
     dts: enableDts = true,
     external = [],
     dtsExternal = [],
-    useStyle = false,
     resolve = false,
     copy = [],
     output = {},
@@ -114,7 +110,6 @@ const rollupBundleVue = (
             },
           },
         }),
-        ...(useStyle ? [styles()] : []),
         ...(resolve ? [nodeResolve({ preferBuiltins: true }), commonjs()] : []),
         ...(isProduction ? [terser()] : []),
         ...(copy.length

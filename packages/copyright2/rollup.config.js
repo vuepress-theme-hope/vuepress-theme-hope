@@ -10,6 +10,6 @@ export default [
     ],
   }),
   ...rollupTypescript("client/appSetup", {
-    external: ["@vuepress/client", "vue", /\.scss$/],
+    external: ["@vuepress/client", "@vueuse/core", "vue", /\.scss$/],
   }),
 ];

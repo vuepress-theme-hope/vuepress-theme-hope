@@ -1,12 +1,6 @@
-import {
-  computed,
-  defineComponent,
-  h,
-  onBeforeUnmount,
-  onMounted,
-  ref,
-} from "vue";
-import debounce from "lodash.debounce";
+import { useEventListener } from "@vueuse/core";
+import { computed, defineComponent, h, onMounted, ref } from "vue";
+import { debounce } from "ts-debounce";
 import { loadingSvgString } from "./icons";
 import presets from "../flowchart-preset";
 
@@ -31,7 +25,6 @@ export default defineComponent({
 
   setup(props) {
     let svg: Flowchart.Instance;
-    let resize: () => void;
     const element = ref<HTMLDivElement>();
 
     const loading = ref(true);
@@ -70,22 +63,18 @@ export default defineComponent({
         // draw svg to #id
         svg.drawSVG(props.id, { ...preset.value, scale: scale.value });
 
-        resize = debounce(() => {
-          const newScale = getScale(window.innerWidth);
+        useEventListener("resize", () => {
+          void debounce(() => {
+            const newScale = getScale(window.innerWidth);
 
-          if (scale.value !== newScale) {
-            scale.value = newScale;
+            if (scale.value !== newScale) {
+              scale.value = newScale;
 
-            svg.drawSVG(props.id, { ...preset.value, scale: newScale });
-          }
-        }, 100);
-
-        window.addEventListener("resize", resize);
+              svg.drawSVG(props.id, { ...preset.value, scale: newScale });
+            }
+          }, 100);
+        });
       });
-    });
-
-    onBeforeUnmount(() => {
-      window.removeEventListener("resize", resize);
     });
 
     return (): (VNode | null)[] => [

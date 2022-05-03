@@ -1,12 +1,15 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { createBaseApp } from "@vuepress/core";
+import {} from "@vuepress/bundler-vite";
 import { path } from "@vuepress/utils";
 import { getThemeConfig } from "../../src/node/themeConfig";
 import type { HopeThemeOptions } from "../../src/shared";
+import { emptyTheme } from "./__fixtures__/theme/empty";
 
 const app = createBaseApp({
+  bundler: {} as any,
   source: path.resolve(__dirname, "./__fixtures__/src"),
-  theme: path.resolve(__dirname, "./__fixtures__/theme/empty.js"),
+  theme: emptyTheme,
 });
 
 describe("should generate themeConfig correcly", () => {

@@ -18,7 +18,7 @@ export const useGitPlugin = (
     plugins.every((plugin) => plugin.name !== "@vuepress/plugin-git") &&
     options
   )
-    app.use(gitPlugin, options);
+    app.use(gitPlugin(options));
 };
 
 /**
