@@ -1,6 +1,4 @@
-import type { ThemeConfig } from "@vuepress/core";
-
-export interface BaseThemeConfig extends ThemeConfig {
+export interface BaseThemeConfig {
   /**
    * Theme locales config
    *

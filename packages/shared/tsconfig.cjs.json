@@ -1,7 +1,6 @@
 {
   "extends": "../../tsconfig.build.base.json",
   "compilerOptions": {
-    "types": ["node"],
     "module": "CommonJS",
     "rootDir": "./src",
     "outDir": "./lib"

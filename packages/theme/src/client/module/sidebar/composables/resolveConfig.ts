@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
 import { sidebarData } from "@temp/theme-hope/sidebar";
 import {
   usePageData,

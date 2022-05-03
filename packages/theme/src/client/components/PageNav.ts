@@ -1,6 +1,7 @@
 import { usePageFrontmatter } from "@vuepress/client";
 import { isPlainObject, isString } from "@vuepress/shared";
-import { computed, defineComponent, h, onMounted, onUnmounted } from "vue";
+import { useEventListener } from "@vueuse/core";
+import { computed, defineComponent, h } from "vue";
 import { useRoute } from "vue-router";
 
 import AutoLink from "@theme-hope/components/AutoLink";
@@ -95,7 +96,7 @@ export default defineComponent({
         : resolveFromSidebarItems(sidebarItems.value, route.path, 1);
     });
 
-    const keyboardListener = (event: KeyboardEvent): void => {
+    useEventListener("keydown", (event): void => {
       if (event.altKey) {
         if (event.key === "ArrowRight") {
           if (nextNavLink.value) {
@@ -109,14 +110,6 @@ export default defineComponent({
           }
         }
       }
-    };
-
-    onMounted(() => {
-      window.addEventListener("keydown", keyboardListener);
-    });
-
-    onUnmounted(() => {
-      window.removeEventListener("keydown", keyboardListener);
     });
 
     return (): VNode | null =>

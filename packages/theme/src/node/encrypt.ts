@@ -11,13 +11,12 @@ import type {
   HopeThemeEncryptOptions,
 } from "../shared";
 
-export const handleCrytoForWebpack = (app: App): void => {
-  const { bundler, bundlerConfig } = app.options;
+export const handleCrytoForWebpack = (config: unknown, app: App): void => {
+  const { bundler } = app.options;
 
   // for webpack
-  if (bundler.endsWith("webpack")) {
-    const webpackBundlerConfig: WebpackBundlerOptions =
-      bundlerConfig as WebpackBundlerOptions;
+  if (bundler.name.endsWith("webpack")) {
+    const webpackBundlerConfig = config as WebpackBundlerOptions;
     const { configureWebpack } = webpackBundlerConfig;
 
     webpackBundlerConfig.configureWebpack = (
