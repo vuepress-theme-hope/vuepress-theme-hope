@@ -16,18 +16,18 @@ footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 ### Install
 
 ```bash
-yarn add -D vuepress-plugin-pwa2@next
+pnpm add -D vuepress-plugin-pwa2@next
 ```
 
 ### Usage
 
 ```ts
 // .vuepress/config.ts
-import { pwa } from "vuepress-plugin-pwa2";
+import { pwaPlugin } from "vuepress-plugin-pwa2";
 
 export default {
   plugins: [
-    pwa({
+    pwaPlugin({
       // your options
     }),
   ],
