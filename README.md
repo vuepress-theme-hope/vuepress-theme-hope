@@ -26,11 +26,11 @@ A vuepress theme with tons of features✨ / 一个具有强大功能的 vuepress
 
 ## Contact
 
-We recommand you to contact using [issues](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues) and [dicussions](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions), but you are welcomed joining our [telegram group](https://t.me/vuepressthemehope).
+We recommand you to contact using [issues](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues) and [discussions](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions), but you are welcomed joining our [telegram group](https://t.me/vuepressthemehope).
 
 ## 联系
 
-我们建议你使用 [issues](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues) 和 [dicussions](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions) 联系，但也欢迎你加入我们的 [QQ 群](https://jq.qq.com/?_wv=1027&k=rATJyxGK) (群号: 1003437555)
+我们建议你使用 [issues](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues) 和 [discussions](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions) 联系，但也欢迎你加入我们的 [QQ 群](https://jq.qq.com/?_wv=1027&k=rATJyxGK) (群号: 1003437555)
 。
 
 ---
