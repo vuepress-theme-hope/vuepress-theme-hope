@@ -16,13 +16,12 @@ VuePress reading time plugin⏳ / VuePress 阅读时间插件 ⏳
 ## Install
 
 ```bash
-npm i -D vuepress-plugin-reading-time2
-```
-
-or
-
-```bash
-yarn add -D vuepress-plugin-reading-time2
+# pnpm
+pnpm add -D vuepress-plugin-reading-time2@next
+# npm
+npm i -D vuepress-plugin-reading-time2@next
+# yarn
+yarn add -D vuepress-plugin-reading-time2@next
 ```
 
 ## Migrating from V1
@@ -36,13 +35,12 @@ Renamed from `@mr-hope/vuepress-plugin-reading-time` to `vuepress-plugin-reading
 ## 安装
 
 ```bash
-npm i -D vuepress-plugin-reading-time2
-```
-
-或
-
-```bash
-yarn add -D vuepress-plugin-reading-time2
+# pnpm
+pnpm add -D vuepress-plugin-reading-time2@next
+# npm
+npm i -D vuepress-plugin-reading-time2@next
+# yarn
+yarn add -D vuepress-plugin-reading-time2@next
 ```
 
 ## 从 V1 迁移

@@ -12,13 +12,12 @@ Light Gallery plugin for VuePress🖼️ / VuePress 的 lightgallery 插件 🖼
 ## Install
 
 ```bash
-yarn add vuepress-plugin-lightgallery@next
-```
-
-Or
-
-```bash
-npm i vuepress-plugin-lightgallery@next
+# pnpm
+pnpm add -D vuepress-plugin-lightgallery@next
+# npm
+npm i -D vuepress-plugin-lightgallery@next
+# yarn
+yarn add -D vuepress-plugin-lightgallery@next
 ```
 
 ---
@@ -26,11 +25,10 @@ npm i vuepress-plugin-lightgallery@next
 ## 安装
 
 ```bash
-yarn add vuepress-plugin-lightgallery@next
-```
-
-或
-
-```bash
-npm i vuepress-plugin-lightgallery@next
+# pnpm
+pnpm add -D vuepress-plugin-lightgallery@next
+# npm
+npm i -D vuepress-plugin-lightgallery@next
+# yarn
+yarn add -D vuepress-plugin-lightgallery@next
 ```
