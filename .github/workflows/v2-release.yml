@@ -160,7 +160,7 @@ jobs:
         run: pnpm run build
 
       - name: Build Netlify Demo
-        run: pnpm workspace theme-demo demo:vite-build
+        run: pnpm --filter theme-demo demo:vite-build
 
       - name: Deploy to netlify
         uses: JamesIves/github-pages-deploy-action@v4
