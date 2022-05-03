@@ -11,6 +11,8 @@ export const lang2PathConfig = {
   "uk-UA": "/uk/",
   "pt-BR": "/br/",
   "pl-PL": "/pl/",
+  "fr-FR": "/fr/",
+  "sk-SK": "/sk/",
 };
 
 export const supportedLangs = Object.keys(lang2PathConfig);
