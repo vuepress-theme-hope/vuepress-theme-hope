@@ -1,8 +1,8 @@
-import { defineThemeConfig } from "vuepress-theme-hope";
-import navbar from "./navbar";
-import sidebar from "./sidebar";
+import { hopeTheme } from "vuepress-theme-hope";
+import * as navbar from "./navbar";
+import * as sidebar from "./sidebar";
 
-export default defineThemeConfig({
+export default hopeTheme({
   hostname: "https://vuepress-theme-hope-v2-demo.mrhope.site",
 
   author: {
@@ -18,21 +18,9 @@ export default defineThemeConfig({
 
   docsDir: "demo/src",
 
-  // navbar
-  navbar: navbar,
-
-  // sidebar
-  sidebar: sidebar,
-
-  footer: "Default footer",
-
-  displayFooter: true,
-
   pageInfo: ["Author", "Original", "Date", "Category", "Tag", "ReadingTime"],
 
   blog: {
-    description: "A FrontEnd programmer",
-    intro: "/intro.html",
     medias: {
       Baidu: "https://example.com",
       Bitbucket: "https://example.com",
@@ -66,9 +54,49 @@ export default defineThemeConfig({
     },
   },
 
+  locales: {
+    "/": {
+      // navbar
+      navbar: navbar.en,
+
+      // sidebar
+      sidebar: sidebar.en,
+
+      footer: "Default footer",
+
+      displayFooter: true,
+
+      blog: {
+        description: "A FrontEnd programmer",
+        intro: "/intro.html",
+      },
+    },
+
+    /**
+     * Chinese locale config
+     */
+    "/zh/": {
+      // navbar
+      navbar: navbar.zh,
+
+      // sidebar
+      sidebar: sidebar.zh,
+
+      footer: "默认页脚",
+
+      displayFooter: true,
+
+      blog: {
+        description: "一个前端开发者",
+        intro: "/zh/intro.html",
+      },
+    },
+  },
+
   encrypt: {
     config: {
       "/guide/encrypt.html": ["1234"],
+      "/zh/guide/encrypt.html": ["1234"],
     },
   },
 
