@@ -40,17 +40,17 @@
   },
   "dependencies": {
     "@mr-hope/vuepress-shared": "workspace:*",
-    "@vuepress/client": "2.0.0-beta.42",
-    "@vuepress/utils": "2.0.0-beta.42",
-    "@waline/client": "^2.0.7",
+    "@vuepress/client": "2.0.0-beta.43",
+    "@vuepress/utils": "2.0.0-beta.43",
+    "@waline/client": "^2.1.1",
     "giscus": "^1.0.3",
-    "twikoo": "^1.5.8",
+    "twikoo": "^1.5.9",
     "vue": "^3.2.33",
     "vue-router": "^4.0.14",
     "vuepress-plugin-sass-palette": "workspace:*"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.42",
+    "@vuepress/core": "2.0.0-beta.43",
     "rimraf": "3.0.2"
   },
   "peerDependencies": {

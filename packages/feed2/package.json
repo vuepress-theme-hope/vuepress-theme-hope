@@ -36,13 +36,13 @@
   },
   "dependencies": {
     "@mr-hope/vuepress-shared": "workspace:*",
-    "@vuepress/shared": "2.0.0-beta.42",
-    "@vuepress/utils": "2.0.0-beta.42",
+    "@vuepress/shared": "2.0.0-beta.43",
+    "@vuepress/utils": "2.0.0-beta.43",
     "xml-js": "^1.6.11"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.42",
-    "@vuepress/plugin-git": "2.0.0-beta.42",
+    "@vuepress/core": "2.0.0-beta.43",
+    "@vuepress/plugin-git": "2.0.0-beta.43",
     "rimraf": "3.0.2"
   },
   "publishConfig": {

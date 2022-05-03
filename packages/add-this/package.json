@@ -37,11 +37,11 @@
   },
   "dependencies": {
     "@mr-hope/vuepress-shared": "workspace:*",
-    "@vuepress/utils": "2.0.0-beta.42",
+    "@vuepress/utils": "2.0.0-beta.43",
     "vue": "^3.2.33"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.42",
+    "@vuepress/core": "2.0.0-beta.43",
     "rimraf": "3.0.2"
   }
 }
