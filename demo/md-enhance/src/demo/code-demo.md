@@ -336,7 +336,7 @@ export default class App extends React.Component {
 
 ::::
 
-::: demo A demo using language not supoprted by browsers
+::: demo A demo using language not supported by browsers
 
 ```md
 # Title

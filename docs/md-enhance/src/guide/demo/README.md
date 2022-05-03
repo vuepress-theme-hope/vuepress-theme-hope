@@ -121,7 +121,7 @@ Available CSS languages:
 
 ### Not Supported Language Demo
 
-::: demo A demo using language not supoprted by browsers
+::: demo A demo using language not supported by browsers
 
 ```md
 # Title
