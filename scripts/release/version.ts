@@ -1,4 +1,6 @@
-import { prerelease } from "semver";
+import semver from "semver";
+
+const { prerelease } = semver;
 
 export interface Answers {
   bump: string;

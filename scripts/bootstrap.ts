@@ -2,7 +2,8 @@ import { existsSync, writeFileSync, readdirSync } from "fs";
 import { join, resolve } from "path";
 import { version } from "../packages/theme/package.json";
 
-const packagesDir = resolve(__dirname, "../packages/");
+const packagesDir = resolve(process.cwd(), "packages");
+
 const files = readdirSync(packagesDir);
 
 files.forEach((pkgName) => {
