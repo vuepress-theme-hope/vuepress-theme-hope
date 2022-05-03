@@ -16,13 +16,12 @@ VuePress PWA plugin📦 / VuePress PWA 插件 📦
 ## Install
 
 ```bash
-npm i -D vuepress-plugin-pwa2
-```
-
-Or
-
-```bash
-yarn add -D vuepress-plugin-pwa2
+# pnpm
+pnpm add -D vuepress-plugin-pwa2@next
+# npm
+npm i -D vuepress-plugin-pwa2@next
+# yarn
+yarn add -D vuepress-plugin-pwa2@next
 ```
 
 ## Migrating from V1
@@ -36,13 +35,12 @@ Renamed from `@mr-hope/vuepress-plugin-pwa` to `vuepress-plugin-pwa2`. ⚠
 ## 安装
 
 ```bash
-npm i -D vuepress-plugin-pwa2
-```
-
-或
-
-```bash
-yarn add -D vuepress-plugin-pwa2
+# pnpm
+pnpm add -D vuepress-plugin-pwa2@next
+# npm
+npm i -D vuepress-plugin-pwa2@next
+# yarn
+yarn add -D vuepress-plugin-pwa2@next
 ```
 
 ## 从 V1 迁移

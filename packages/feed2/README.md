@@ -16,12 +16,11 @@ VuePress2 feed plugin 📡 / VuePress2 Feed 插件 📡
 ## Install
 
 ```bash
+# pnpm
+pnpm add -D vuepress-plugin-feed2@next
+# npm
 npm i -D vuepress-plugin-feed2@next
-```
-
-or
-
-```bash
+# yarn
 yarn add -D vuepress-plugin-feed2@next
 ```
 
@@ -38,11 +37,10 @@ Renamed from `@mr-hope/vuepress-feed` to `vuepress-plugin-feed2`. ⚠
 ## 安装
 
 ```bash
+# pnpm
+pnpm add -D vuepress-plugin-feed2@next
+# npm
 npm i -D vuepress-plugin-feed2@next
-```
-
-或
-
-```bash
+# yarn
 yarn add -D vuepress-plugin-feed2@next
 ```

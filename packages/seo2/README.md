@@ -16,13 +16,12 @@ VuePress SEO plugin🛠 / VuePress SEO 插件 🛠
 ## Install
 
 ```bash
-npm i -D vuepress-plugin-seo2
-```
-
-Or
-
-```bash
-yarn add -D vuepress-plugin-seo2
+# pnpm
+pnpm add -D vuepress-plugin-seo2@next
+# npm
+npm i -D vuepress-plugin-seo2@next
+# yarn
+yarn add -D vuepress-plugin-seo2@next
 ```
 
 ## Migrating from V1
@@ -42,13 +41,12 @@ Renamed from `@mr-hope/vuepress-plugin-seo` to `vuepress-plugin-seo2`. ⚠
 ## 安装
 
 ```bash
-npm i -D vuepress-plugin-seo2
-```
-
-或
-
-```bash
-yarn add -D vuepress-plugin-seo2
+# pnpm
+pnpm add -D vuepress-plugin-seo2@next
+# npm
+npm i -D vuepress-plugin-seo2@next
+# yarn
+yarn add -D vuepress-plugin-seo2@next
 ```
 
 ## 从 V1 迁移

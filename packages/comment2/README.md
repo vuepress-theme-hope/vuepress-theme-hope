@@ -16,23 +16,26 @@ VuePress2 comment plugin💬 / VuePress2 评论插件 💬
 ## Install
 
 ```bash
-npm i vuepress-plugin-comment2@next
-```
-
-Or
-
-```bash
+# pnpm
+pnpm add -D vuepress-plugin-comment2@next
+# npm
+npm i -D vuepress-plugin-comment2@next
+# yarn
 yarn add -D vuepress-plugin-comment2@next
 ```
 
 ## Feature
 
 - PageInfo components
-- Support Waline.
+- Support Giscus, Twikoo and Waline.
 
 ## Migrating from V1
 
 Renamed from `@mr-hope/vuepress-plugin-comment` to `vuepress-plugin-comment2`. ⚠
+
+- Giscus support ![new](https://img.shields.io/badge/-new-brightgreen)
+
+- Twikoo support ![new](https://img.shields.io/badge/-new-brightgreen)
 
 - Valine service is removed ![removed](https://img.shields.io/badge/-removed-red)
 
@@ -53,23 +56,26 @@ Renamed from `@mr-hope/vuepress-plugin-comment` to `vuepress-plugin-comment2`. �
 ## 安装
 
 ```bash
-npm i vuepress-plugin-comment2@next
-```
-
-或
-
-```bash
+# pnpm
+pnpm add -D vuepress-plugin-comment2@next
+# npm
+npm i -D vuepress-plugin-comment2@next
+# yarn
 yarn add -D vuepress-plugin-comment2@next
 ```
 
 ## 特性
 
 - 页面信息组件
-- 支持 Waline
+- 支持 Giscus, Twikoo 和 Waline
 
 ## 从 V1 迁移
 
 名称从 `@mr-hope/vuepress-plugin-comment` 改为 `vuepress-plugin-comment2`. ⚠
+
+- Giscus 支持 ![新增](https://img.shields.io/badge/-新增-brightgreen)
+
+- Twikoo 支持 ![新增](https://img.shields.io/badge/-新增-brightgreen)
 
 - Valine 服务已被移除 ![移除](https://img.shields.io/badge/-移除-red)
 
