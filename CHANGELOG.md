@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.49](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.48...v2.0.0-beta.49) (2022-05-03)
+
 ## [2.0.0-beta.48](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.47...v2.0.0-beta.48) (2022-05-03)
 
 ### Features
