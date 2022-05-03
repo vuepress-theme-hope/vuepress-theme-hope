@@ -1,9 +1,4 @@
-import {
-  addViteOptimizeDepsInclude,
-  addViteSsrNoExternal,
-  addViteOptimizeDepsExclude,
-  tagHint,
-} from "@mr-hope/vuepress-shared";
+import { addViteOptimizeDepsInclude, tagHint } from "@mr-hope/vuepress-shared";
 import { handleCrytoForWebpack } from "./encrypt";
 
 import type { App } from "@vuepress/core";
@@ -82,22 +77,6 @@ export const updateBundlerConfig = (config: unknown, app: App): void => {
     "bcryptjs",
     "lodash.throttle",
   ]);
-
-  if (app.env.isDev)
-    addViteOptimizeDepsInclude(config, app, [
-      "@mr-hope/vuepress-shared/lib/client",
-      "dayjs",
-      "dayjs/plugin/localizedFormat",
-      "dayjs/plugin/objectSupport",
-      "dayjs/plugin/timezone",
-      "dayjs/plugin/utc",
-    ]);
-
-  addViteSsrNoExternal(config, app, [
-    "@mr-hope/vuepress-shared",
-    "vuepress-theme-hope",
-  ]);
-  addViteOptimizeDepsExclude(config, app, "vuepress-theme-hope");
 
   checkTag(config, app);
   handleCrytoForWebpack(config, app);

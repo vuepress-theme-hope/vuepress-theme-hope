@@ -64,26 +64,26 @@ export const commentPlugin =
         if (isGiscus) addCustomElement(config, app, "GiscusWidget");
 
         if (isGiscus) {
-          addViteOptimizeDepsInclude(config, app, "giscus");
           addViteSsrExternal(config, app, "giscus");
         }
 
         if (isTwikoo) {
-          addViteOptimizeDepsInclude(config, app, "twikoo");
+          addViteOptimizeDepsInclude(
+            config,
+            app,
+            "vuepress-plugin-comment2 > twikoo"
+          );
           addViteSsrExternal(config, app, "twikoo");
         }
 
         if (isWaline) {
-          addViteOptimizeDepsInclude(config, app, [
-            "autosize",
-            "marked",
-            "hanabi",
-          ]);
+          addViteOptimizeDepsInclude(
+            config,
+            app,
+            "vuepress-plugin-comment2 > @waline/client > hanabi"
+          );
 
-          addViteOptimizeDepsExclude(config, app, [
-            "@waline/client/dist/component",
-            "@waline/client/dist/pageview",
-          ]);
+          addViteOptimizeDepsExclude(config, app, "@waline/client");
         }
       },
 

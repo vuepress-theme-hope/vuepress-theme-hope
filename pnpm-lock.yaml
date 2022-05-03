@@ -962,7 +962,7 @@ importers:
       '@vuepress/client': 2.0.0-beta.43
       '@vuepress/core': 2.0.0-beta.43
       '@vuepress/utils': 2.0.0-beta.43
-      '@waline/client': ^2.1.1
+      '@waline/client': ^2.1.2
       giscus: ^1.0.3
       rimraf: 3.0.2
       twikoo: ^1.5.9
@@ -973,7 +973,7 @@ importers:
       '@mr-hope/vuepress-shared': link:../shared
       '@vuepress/client': 2.0.0-beta.43
       '@vuepress/utils': 2.0.0-beta.43
-      '@waline/client': 2.1.1
+      '@waline/client': 2.1.2
       giscus: 1.0.3
       twikoo: 1.5.9
       vue: 3.2.33
@@ -4284,8 +4284,8 @@ packages:
       vue: 3.2.33
       vue-demi: 0.12.5_vue@3.2.33
 
-  /@waline/client/2.1.1:
-    resolution: {integrity: sha512-G2+9TIQYkhmdCq6TIbLoZICyvOO7Um4rMWVMyHebAnYuXQ1GOmVeJTlWJ6x4xg2rhIJBkTXoGZAIdOcYT2zLWQ==}
+  /@waline/client/2.1.2:
+    resolution: {integrity: sha512-sFPpG5vMRyPzt8PEABGs9cineTl5QwrTUXTeRpSRkkOmzUQG3D48vCGN8CVAWmC528gyK91dZ8sZ448DGBbaXQ==}
     engines: {node: '>=12.20.0'}
     dependencies:
       '@vueuse/core': 8.3.1_vue@3.2.33

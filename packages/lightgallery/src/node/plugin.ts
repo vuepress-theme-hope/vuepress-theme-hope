@@ -31,8 +31,11 @@ export const lightgalleryPlugin =
 
       extendsBundlerOptions: (config, app): void => {
         addViteOptimizeDepsInclude(config, app, [
-          "lightgallery",
-          ...plugins.map((name) => `lightgallery/plugins/${name}`),
+          "vuepress-plugin-lightgallery > lightgallery",
+          ...plugins.map(
+            (name) =>
+              `vuepress-plugin-lightgallery > lightgallery/plugins/${name}`
+          ),
         ]);
       },
 

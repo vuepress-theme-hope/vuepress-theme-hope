@@ -1,5 +1,6 @@
 import {
   addCustomElement,
+  addViteOptimizeDepsExclude,
   addViteOptimizeDepsInclude,
   addViteSsrExternal,
 } from "@mr-hope/vuepress-shared";
@@ -99,22 +100,33 @@ export const mdEnhancePlugin =
           addCustomElement(config, app, MATHML_TAGS);
 
         if (chartEnable) {
-          addViteOptimizeDepsInclude(config, app, "chart.js/auto");
+          addViteOptimizeDepsInclude(
+            config,
+            app,
+            "vuepress-plugin-md-enhance > chart.js/auto"
+          );
           addViteSsrExternal(config, app, "chart.js");
         }
 
         if (flowchartEnable) {
-          addViteOptimizeDepsInclude(config, app, "flowchart.js");
+          addViteOptimizeDepsInclude(config, app, [
+            "vuepress-plugin-md-enhance > flowchart.js",
+            "vuepress-plugin-md-enhance > ts-debounce",
+          ]);
           addViteSsrExternal(config, app, "flowchart.js");
         }
 
         if (mermaidEnable) {
-          addViteOptimizeDepsInclude(config, app, "mermaid");
+          addViteOptimizeDepsInclude(
+            config,
+            app,
+            "vuepress-plugin-md-enhance > mermaid"
+          );
           addViteSsrExternal(config, app, "mermaid");
         }
 
         if (presentationEnable) {
-          addViteOptimizeDepsInclude(config, app, [
+          addViteOptimizeDepsExclude(config, app, [
             "reveal.js/dist/reveal.esm.js",
             "reveal.js/plugin/markdown/markdown.esm.js",
             ...revealPlugins.map(
