@@ -45,7 +45,7 @@ export const pwaPlugin =
       extendsBundlerOptions: (config, app): void => {
         addViteOptimizeDepsInclude(config, app, [
           "vuepress-plugin-pwa2 > mitt",
-          "vuepress-plugin-pwa > register-service-worker",
+          "vuepress-plugin-pwa2 > register-service-worker",
         ]);
 
         addViteSsrNoExternal(config, app, "register-service-worker");
