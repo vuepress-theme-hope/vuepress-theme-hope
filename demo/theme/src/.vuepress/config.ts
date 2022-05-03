@@ -1,9 +1,9 @@
-import { defineHopeConfig } from "vuepress-theme-hope";
-import themeConfig from "./themeConfig";
+import { defineUserConfig } from "@vuepress/cli";
+import theme from "./theme";
 
 const base = (process.env.BASE as "/" | `/${string}/`) || "/";
 
-export default defineHopeConfig({
+export default defineUserConfig({
   base,
 
   dest: "./dist",
@@ -31,5 +31,5 @@ export default defineHopeConfig({
     },
   },
 
-  themeConfig,
+  theme,
 });

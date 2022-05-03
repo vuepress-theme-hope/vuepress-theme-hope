@@ -17,18 +17,18 @@ footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 ### Install
 
 ```bash
-yarn add -D vuepress-plugin-sitemap2@next
+pnpm add -D vuepress-plugin-sitemap2@next
 ```
 
 ### Usage
 
 ```ts
 // .vuepress/config.ts
-import { sitemap } from "vuepress-plugin-sitemap2";
+import { sitemapPlugin } from "vuepress-plugin-sitemap2";
 
 export default {
   plugins: [
-    sitemap({
+    sitemapPlugin({
       // your options
     }),
   ],

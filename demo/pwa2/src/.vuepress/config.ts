@@ -1,18 +1,19 @@
 import { defineUserConfig } from "@vuepress/cli";
-import type { DefaultThemeOptions } from "@vuepress/theme-default";
+import { defaultTheme } from "@vuepress/theme-default";
+import { pwaPlugin } from "vuepress-plugin-pwa2";
 
-export default defineUserConfig<DefaultThemeOptions>({
+export default defineUserConfig({
   base: "/",
 
   lang: "zh-CN",
   title: "PWA Plugin",
   description: "PWA Plugin for VuePress2",
 
-  themeConfig: {
+  theme: defaultTheme({
     logo: "/logo.svg",
 
     repo: "vuepress-theme-hope/vuepress-theme-hope/tree/main/demo/pwa2/",
-  },
+  }),
 
-  plugins: ["pwa2"],
+  plugins: [pwaPlugin()],
 });
