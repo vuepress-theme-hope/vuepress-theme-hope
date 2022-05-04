@@ -72,10 +72,7 @@ export const checkTag = (config: unknown, app: App): void => {
 };
 
 export const updateBundlerConfig = (config: unknown, app: App): void => {
-  addViteOptimizeDepsInclude({ app, config }, [
-    "@vueuse/core",
-    "lodash.throttle",
-  ]);
+  addViteOptimizeDepsInclude({ app, config }, "@vueuse/core");
 
   checkTag(config, app);
   handleCrytoForWebpack(config, app);

@@ -3,7 +3,7 @@ import {
   RenderDefault,
 } from "@mr-hope/vuepress-shared/lib/client";
 import { useEventListener } from "@vueuse/core";
-import throttle from "lodash.throttle";
+import { debounce } from "ts-debounce";
 import {
   Transition,
   computed,
@@ -128,21 +128,24 @@ export default defineComponent({
     let unregisterRouterHook: () => void;
     let lastDistance = 0;
 
-    useEventListener(
-      "scroll",
-      throttle(() => {
-        const distance = getScrollTop();
+    useEventListener("scroll", () => {
+      debounce(
+        () => {
+          const distance = getScrollTop();
 
-        // scroll down
-        if (lastDistance < distance && distance > 58) {
-          if (!isMobileSidebarOpen.value) hideNavbar.value = true;
-        }
-        // scroll up
-        else hideNavbar.value = false;
+          // scroll down
+          if (lastDistance < distance && distance > 58) {
+            if (!isMobileSidebarOpen.value) hideNavbar.value = true;
+          }
+          // scroll up
+          else hideNavbar.value = false;
 
-        lastDistance = distance;
-      }, 300)
-    );
+          lastDistance = distance;
+        },
+        300,
+        { isImmediate: true }
+      );
+    });
 
     watch(isMobile, (value) => {
       if (!value) toggleMobileSidebar(false);

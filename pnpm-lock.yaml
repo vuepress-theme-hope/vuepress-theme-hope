@@ -1379,7 +1379,6 @@ importers:
     specifiers:
       '@mr-hope/vuepress-plugin-components': workspace:*
       '@mr-hope/vuepress-shared': workspace:*
-      '@types/lodash.throttle': ^4.1.7
       '@vuepress/bundler-vite': 2.0.0-beta.43
       '@vuepress/bundler-webpack': 2.0.0-beta.43
       '@vuepress/cli': 2.0.0-beta.43
@@ -1398,8 +1397,8 @@ importers:
       '@vueuse/core': ^8.4.1
       balloon-css: ^1.2.0
       bcrypt-ts: ^1.0.0
-      lodash.throttle: ^4.1.1
       rimraf: 3.0.2
+      ts-debounce: ^4.0.0
       vue: ^3.2.33
       vue-router: ^4.0.15
       vuepress-plugin-blog2: workspace:*
@@ -1417,7 +1416,6 @@ importers:
     dependencies:
       '@mr-hope/vuepress-plugin-components': link:../components
       '@mr-hope/vuepress-shared': link:../shared
-      '@types/lodash.throttle': 4.1.7
       '@vuepress/cli': 2.0.0-beta.43
       '@vuepress/client': 2.0.0-beta.43
       '@vuepress/plugin-active-header-links': 2.0.0-beta.43
@@ -1433,7 +1431,7 @@ importers:
       '@vueuse/core': 8.4.1_vue@3.2.33
       balloon-css: 1.2.0
       bcrypt-ts: 1.0.0
-      lodash.throttle: 4.1.1
+      ts-debounce: 4.0.0
       vue: 3.2.33
       vue-router: 4.0.15_vue@3.2.33
       vuepress-plugin-blog2: link:../blog2
@@ -3554,16 +3552,6 @@ packages:
 
   /@types/linkify-it/3.0.2:
     resolution: {integrity: sha512-HZQYqbiFVWufzCwexrvh694SOim8z2d+xJl5UNamcvQFejLY/2YUtzXHYi3cHdI7PMlS8ejH2slRAOJQ32aNbA==}
-
-  /@types/lodash.throttle/4.1.7:
-    resolution: {integrity: sha512-znwGDpjCHQ4FpLLx19w4OXDqq8+OvREa05H89obtSyXyOFKL3dDjCslsmfBz0T2FU8dmf5Wx1QvogbINiGIu9g==}
-    dependencies:
-      '@types/lodash': 4.14.182
-    dev: false
-
-  /@types/lodash/4.14.182:
-    resolution: {integrity: sha512-/THyiqyQAP9AfARo4pF+aCGcyiQ94tX/Is2I7HofNRqoYLgN1PBoOWu2/zTA5zMxzP5EFutMtWtGAFRKUe961Q==}
-    dev: false
 
   /@types/markdown-it/12.2.3:
     resolution: {integrity: sha512-GKMHFfv3458yYy+v/N8gjufHO6MSZKCOXpZc5GXIWWy8uldwfmPn98vp81gZ5f9SVw8YYBctgfJ22a2d7AOMeQ==}
@@ -9528,10 +9516,6 @@ packages:
 
   /lodash.sortby/4.7.0:
     resolution: {integrity: sha1-7dFMgk4sycHgsKG0K7UhBRakJDg=}
-
-  /lodash.throttle/4.1.1:
-    resolution: {integrity: sha1-wj6RtxAkKscMN/HhzaknTMOb8vQ=}
-    dev: false
 
   /lodash.truncate/4.4.2:
     resolution: {integrity: sha1-WjUNoLERO4N+z//VgSy+WNbq4ZM=}

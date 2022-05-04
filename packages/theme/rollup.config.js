@@ -250,7 +250,7 @@ export default [
       "@vuepress/client",
       "@vuepress/plugin-external-link-icon/lib/client",
       "@vuepress/shared",
-      "lodash.throttle",
+      "ts-debounce",
       "vue",
       "vue-router",
       /\.scss$/,
