@@ -110,6 +110,7 @@ export const extendsPage = (
       // generated from markdown files
       Boolean(frontmatter.article !== false && filePathRelative);
 
+    const isEncrypted = Object.keys(config).some((key) => path.startsWith(key));
     const isSlide = isArticle && frontmatter.layout === "Slide";
 
     // save basic info to routeMeta
@@ -123,12 +124,13 @@ export const extendsPage = (
         ? "article"
         : "page",
       readingTime: page.data.readingTime,
-      excerpt:
-        page.excerpt ||
-        frontmatter.description ||
-        (typeof plugins.blog === "object" && plugins.blog.autoExcerpt
-          ? frontmatter.summary
-          : ""),
+      excerpt: isEncrypted
+        ? ""
+        : page.excerpt ||
+          frontmatter.description ||
+          (typeof plugins.blog === "object" && plugins.blog.autoExcerpt
+            ? frontmatter.summary
+            : ""),
     };
 
     // resolve author
@@ -159,7 +161,6 @@ export const extendsPage = (
       page.routeMeta.isOriginal = frontmatter.isOriginal;
 
     // resolve encrypted
-    if (Object.keys(config).some((key) => path.startsWith(key)))
-      page.routeMeta.isEncrypted = true;
+    if (isEncrypted) page.routeMeta.isEncrypted = true;
   }
 };
