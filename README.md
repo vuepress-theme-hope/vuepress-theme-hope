@@ -26,7 +26,7 @@ A vuepress theme with tons of features✨ / 一个具有强大功能的 vuepress
 
 ## Contact
 
-We recommand you to contact using [issues](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues) and [discussions](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions), but you are welcomed joining our [telegram group](https://t.me/vuepressthemehope).
+We recommend you to contact using [issues](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues) and [discussions](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions), but you are welcome to join our [telegram group!](https://t.me/vuepressthemehope).
 
 ## 联系
 
@@ -39,9 +39,9 @@ We recommand you to contact using [issues](https://github.com/vuepress-theme-hop
 
 Current branch is based on VuePress@v2, and it’s still in beta.
 
-This means that features and api are not solid, and there might be BREAKING CHANGES in future releases.
+This means that features and API are not solid, and there might be BREAKING CHANGES in future releases.
 
-Though the project has stable release of v1, and are held in [v1 branch](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/v1/), but we do not recommand you to keep using V1 in new projects. See [V1 end of support Annoucement](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions/1535) for more details.
+Though the project has stable release of V1, and are held in [V1 branch](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/v1/), but we do not recommend you to keep using V1 in new projects. See [V1 end of support Annoucement](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions/1535) for more details.
 
 ## 注意
 
@@ -49,7 +49,7 @@ Though the project has stable release of v1, and are held in [v1 branch](https:/
 
 这意味着功能和 API 尚未固定，在未来的更新中仍有概率出现破坏性更改。
 
-虽然该项目有 v1 的稳定版本，并且存放在 [v1 分支](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/v1/) 上，但我们不推荐你在新项目中继续使用 V1。 有关详细信息，请参阅 [V1 结束支持通告](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions/1535)。
+虽然该项目有 V1 的稳定版本，并且存放在 [V1 分支](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/v1/) 上，但我们不推荐你在新项目中继续使用 V1。 有关详细信息，请参阅 [V1 结束支持通告](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions/1535)。
 
 ---
 
@@ -59,14 +59,14 @@ V2 is coming come together with _VuePress2_, with the power of _Vite2_ / _Webpac
 
 V2 is a full rewrite including:
 
-- All the components are rewrite with _Composition API in Vue3_
-- All the styles are mirgate to _Sass_
+- All the components are rewritten with _Composition API in Vue3_
+- All the styles are migrated to _Sass_
 
 Also V2 has a better performance:🚀
 
 - DevServer cold start time reduced by **50%**
-- Built memory reduced by **65%**
-- Built time reduced by **30%**
+- Build memory usage reduced by **65%**
+- Build time reduced by **30%**
 - Output Size reduced by **25%**
 - Webpage performance up to **70%**
 
