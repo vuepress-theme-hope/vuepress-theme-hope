@@ -51,7 +51,7 @@ Path of favico.ico with absolute path.
 
 ::: warning
 
-We recommand you to set favicon for your site
+We recommend you to set favicon for your site
 
 :::
 
