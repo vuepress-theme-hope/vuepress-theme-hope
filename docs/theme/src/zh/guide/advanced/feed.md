@@ -34,7 +34,7 @@ Atom 和 JSON 是为了提供更多 Feed 软件的适配而提供的。
 
 :::
 
-请按照需要生成的格式，在主题选项中设置 `plugins.feed.atom`, `jplugins.feed.son` 或 `plugins.feed.rss` 为 `true`。
+请按照需要生成的格式，在主题选项中设置 `plugins.feed.atom`, `plugins.feed.json` 或 `plugins.feed.rss` 为 `true`。
 
 ::: tip
 
