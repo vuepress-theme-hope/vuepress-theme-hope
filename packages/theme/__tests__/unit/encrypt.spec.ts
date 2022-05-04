@@ -14,7 +14,7 @@ describe("Should resolve encrypt option corrctly", () => {
   it("should encrypt admin password", () => {
     const result1 = resolveEncrypt({ admin: adminSinglePassword });
 
-    expect(Object.keys(result1)).toEqual(["global", "admin"]);
+    expect(Object.keys(result1)).toEqual(["admin"]);
 
     expect(result1.admin!.length).toEqual(1);
 
@@ -24,7 +24,7 @@ describe("Should resolve encrypt option corrctly", () => {
 
     const result2 = resolveEncrypt({ admin: adminMutiplePassword });
 
-    expect(Object.keys(result2)).toEqual(["global", "admin"]);
+    expect(Object.keys(result2)).toEqual(["admin"]);
 
     expect(
       adminMutiplePassword.every((token, index) =>
@@ -36,7 +36,7 @@ describe("Should resolve encrypt option corrctly", () => {
   it("should encrypt config password", () => {
     const result1 = resolveEncrypt({ config: { "/": userSinglePassword } });
 
-    expect(Object.keys(result1)).toEqual(["global", "config"]);
+    expect(Object.keys(result1)).toEqual(["config"]);
     expect(Object.keys(result1.config!)).toEqual(["/"]);
 
     expect(result1.config!["/"].length).toEqual(1);
@@ -47,7 +47,7 @@ describe("Should resolve encrypt option corrctly", () => {
 
     const result2 = resolveEncrypt({ config: { "/": userMutiplePassword } });
 
-    expect(Object.keys(result2)).toEqual(["global", "config"]);
+    expect(Object.keys(result2)).toEqual(["config"]);
     expect(Object.keys(result2.config!)).toEqual(["/"]);
 
     expect(
@@ -59,7 +59,7 @@ describe("Should resolve encrypt option corrctly", () => {
 
   it("should remove incorrect password", () => {
     // @ts-expect-error
-    expect(resolveEncrypt({ admin: 1234 })).toEqual({ global: false });
+    expect(resolveEncrypt({ admin: 1234 })).toEqual({});
 
     // @ts-expect-error
     const result2 = resolveEncrypt({ admin: ["1234", 1234] });

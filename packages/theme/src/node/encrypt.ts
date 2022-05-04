@@ -38,9 +38,9 @@ export const handleCrytoForWebpack = (config: unknown, app: App): void => {
 export const resolveEncrypt = (
   encrypt: HopeThemeEncryptOptions
 ): HopeThemeEncryptConfig => {
-  const result: HopeThemeEncryptConfig = {
-    global: Boolean(encrypt.global),
-  };
+  const result: HopeThemeEncryptConfig = {};
+
+  if (encrypt.global) result.global = true;
 
   // handle global token
   if (encrypt.admin)

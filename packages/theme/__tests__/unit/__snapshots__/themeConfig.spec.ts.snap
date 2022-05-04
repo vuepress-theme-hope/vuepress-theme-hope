@@ -4,9 +4,7 @@ exports[`should generate themeConfig correcly Should contain basic properties 1`
 Object {
   "blog": Object {},
   "darkmode": "auto-switch",
-  "encrypt": Object {
-    "global": false,
-  },
+  "encrypt": Object {},
   "fullscreen": true,
   "iconPrefix": "",
   "locales": Object {
@@ -78,9 +76,7 @@ exports[`should generate themeConfig correcly Should handle single language 1`] 
 Object {
   "blog": Object {},
   "darkmode": "auto-switch",
-  "encrypt": Object {
-    "global": false,
-  },
+  "encrypt": Object {},
   "fullscreen": true,
   "iconPrefix": "",
   "locales": Object {
@@ -159,9 +155,7 @@ exports[`should generate themeConfig correcly locale should have higher property
 Object {
   "blog": Object {},
   "darkmode": "auto-switch",
-  "encrypt": Object {
-    "global": false,
-  },
+  "encrypt": Object {},
   "fullscreen": true,
   "iconPrefix": "",
   "locales": Object {
@@ -238,9 +232,7 @@ exports[`should generate themeConfig correcly root only option should not appear
 Object {
   "blog": Object {},
   "darkmode": "disable",
-  "encrypt": Object {
-    "global": false,
-  },
+  "encrypt": Object {},
   "fullscreen": true,
   "iconPrefix": "",
   "locales": Object {
@@ -312,9 +304,7 @@ exports[`should generate themeConfig correcly should fallback to root if locale 
 Object {
   "blog": Object {},
   "darkmode": "auto-switch",
-  "encrypt": Object {
-    "global": false,
-  },
+  "encrypt": Object {},
   "fullscreen": true,
   "iconPrefix": "",
   "locales": Object {

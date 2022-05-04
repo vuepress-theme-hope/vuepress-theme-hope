@@ -1,5 +1,9 @@
-import throttle from "lodash.throttle";
+import {
+  isComponentRegistered,
+  RenderDefault,
+} from "@mr-hope/vuepress-shared/lib/client";
 import { useEventListener } from "@vueuse/core";
+import throttle from "lodash.throttle";
 import {
   Transition,
   computed,
@@ -15,9 +19,7 @@ import { useRouter } from "vue-router";
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
 
 import PageFooter from "@theme-hope/components/PageFooter";
-import PasswordModal from "@theme-hope/module/encrypt/components/PasswordModal";
 import { useMobile, useThemeLocaleData } from "@theme-hope/composables";
-import { useGlobalEcrypt } from "@theme-hope/module/encrypt/composables";
 import { useSidebarItems } from "@theme-hope/module/sidebar/composables";
 
 import type { ComponentOptions, VNode } from "vue";
@@ -44,7 +46,6 @@ export default defineComponent({
     const page = usePageData();
     const frontmatter = usePageFrontmatter<HopeThemePageFrontmatter>();
     const themeLocale = useThemeLocaleData();
-    const { isGlobalEncrypted, validateGlobalToken } = useGlobalEcrypt();
     const isMobile = useMobile();
 
     // navbar
@@ -180,65 +181,68 @@ export default defineComponent({
           onTouchStart,
           onTouchEnd,
         },
-        isGlobalEncrypted.value
-          ? h(PasswordModal, { full: true, onVerify: validateGlobalToken })
-          : [
-              // navbar
-              enableNavbar.value
-                ? h(
-                    resolveComponent("Navbar") as ComponentOptions,
-                    { onToggleSidebar: () => toggleMobileSidebar() },
+        h(
+          isComponentRegistered("GloablEncrypt")
+            ? (resolveComponent("GloablEncrypt") as ComponentOptions)
+            : RenderDefault,
+          () => [
+            // navbar
+            enableNavbar.value
+              ? h(
+                  resolveComponent("Navbar") as ComponentOptions,
+                  { onToggleSidebar: () => toggleMobileSidebar() },
+                  {
+                    left: () => slots.navbarLeft?.(),
+                    center: () => slots.navbarCenter?.(),
+                    right: () => slots.navbarRight?.(),
+                    screenTop: () => slots.navScreenTop?.(),
+                    screenBottom: () => slots.navScreenBottom?.(),
+                  }
+                )
+              : null,
+            // sidebar mask
+            h(Transition, { name: "fade" }, () =>
+              isMobileSidebarOpen.value
+                ? h("div", {
+                    class: "sidebar-mask",
+                    onClick: () => toggleMobileSidebar(false),
+                  })
+                : null
+            ),
+            // toggle sidebar button
+            h(Transition, { name: "fade" }, () =>
+              isMobile.value
+                ? null
+                : h(
+                    "div",
                     {
-                      left: () => slots.navbarLeft?.(),
-                      center: () => slots.navbarCenter?.(),
-                      right: () => slots.navbarRight?.(),
-                      screenTop: () => slots.navScreenTop?.(),
-                      screenBottom: () => slots.navScreenBottom?.(),
-                    }
-                  )
-                : null,
-              // sidebar mask
-              h(Transition, { name: "fade" }, () =>
-                isMobileSidebarOpen.value
-                  ? h("div", {
-                      class: "sidebar-mask",
-                      onClick: () => toggleMobileSidebar(false),
+                      class: "toggle-sidebar-wrapper",
+                      onClick: () => toggleDesktopSidebar(),
+                    },
+                    h("span", {
+                      class: [
+                        "arrow",
+                        isDesktopSidebarOpen.value ? "left" : "right",
+                      ],
                     })
-                  : null
-              ),
-              // toggle sidebar button
-              h(Transition, { name: "fade" }, () =>
-                isMobile.value
-                  ? null
-                  : h(
-                      "div",
-                      {
-                        class: "toggle-sidebar-wrapper",
-                        onClick: () => toggleDesktopSidebar(),
-                      },
-                      h("span", {
-                        class: [
-                          "arrow",
-                          isDesktopSidebarOpen.value ? "left" : "right",
-                        ],
-                      })
-                    )
-              ),
-              // sidebar
-              h(
-                resolveComponent("Sidebar") as ComponentOptions,
-                {},
-                {
-                  ...(slots.sidebar
-                    ? { default: (): VNode[] | undefined => slots.sidebar?.() }
-                    : {}),
-                  top: () => slots.sidebarTop?.(),
-                  bottom: () => slots.sidebarBottom?.(),
-                }
-              ),
-              slots.default?.(),
-              h(PageFooter),
-            ]
+                  )
+            ),
+            // sidebar
+            h(
+              resolveComponent("Sidebar") as ComponentOptions,
+              {},
+              {
+                ...(slots.sidebar
+                  ? { default: (): VNode[] | undefined => slots.sidebar?.() }
+                  : {}),
+                top: () => slots.sidebarTop?.(),
+                bottom: () => slots.sidebarBottom?.(),
+              }
+            ),
+            slots.default?.(),
+            h(PageFooter),
+          ]
+        )
       );
   },
 });

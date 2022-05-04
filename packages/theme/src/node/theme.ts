@@ -79,6 +79,9 @@ export const hopeTheme =
         ...(enableBlog
           ? [path.resolve(__dirname, "../client/module/blog/appEnhance.js")]
           : []),
+        ...("encrypt" in themeOptions
+          ? [path.resolve(__dirname, "../client/module/encrypt/appEnhance.js")]
+          : []),
       ],
 
       clientAppSetupFiles: [
