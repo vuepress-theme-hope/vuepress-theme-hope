@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.50](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.49...v2.0.0-beta.50) (2022-05-04)
+
+### Features
+
+- **theme:** make encrypt treeshakable ([8c5b690](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8c5b69086607a6bddc03bd6a1d1b7ee676a9c812))
+
+### Bug Fixes
+
+- **theme:** do not extract excerpt for encrypted page, fix [#1788](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1788) ([a1afe2c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a1afe2cbfeefde87f9586ae7c40e045f09d25397))
+
 ## [2.0.0-beta.49](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.48...v2.0.0-beta.49) (2022-05-03)
 
 ## [2.0.0-beta.48](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.47...v2.0.0-beta.48) (2022-05-03)
