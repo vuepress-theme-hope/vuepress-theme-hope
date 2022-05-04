@@ -29,8 +29,8 @@ export const lightgalleryPlugin =
         LIGHT_GALLERY_ZOOM: plugins.includes("zoom"),
       }),
 
-      extendsBundlerOptions: (config, app): void => {
-        addViteOptimizeDepsInclude(config, app, [
+      extendsBundlerOptions: (config: unknown, app): void => {
+        addViteOptimizeDepsInclude({ app, config }, [
           "lightgallery",
           ...plugins.map((name) => `lightgallery/plugins/${name}`),
         ]);

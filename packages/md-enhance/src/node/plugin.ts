@@ -95,37 +95,37 @@ export const mdEnhancePlugin =
             : {},
       }),
 
-      extendsBundlerOptions: (config, app): void => {
+      extendsBundlerOptions: (config: unknown, app): void => {
         if (katexOptions.output !== "html")
-          addCustomElement(config, app, MATHML_TAGS);
+          addCustomElement({ app, config }, MATHML_TAGS);
 
         if (chartEnable) {
-          addViteOptimizeDepsInclude(config, app, "chart.js/auto");
-          addViteSsrExternal(config, app, "chart.js");
+          addViteOptimizeDepsInclude({ app, config }, "chart.js/auto");
+          addViteSsrExternal({ app, config }, "chart.js");
         }
 
         if (flowchartEnable) {
-          addViteOptimizeDepsInclude(config, app, [
+          addViteOptimizeDepsInclude({ app, config }, [
             "flowchart.js",
             "ts-debounce",
           ]);
-          addViteSsrExternal(config, app, "flowchart.js");
+          addViteSsrExternal({ app, config }, "flowchart.js");
         }
 
         if (mermaidEnable) {
-          addViteOptimizeDepsInclude(config, app, "mermaid");
-          addViteSsrExternal(config, app, "mermaid");
+          addViteOptimizeDepsInclude({ app, config }, "mermaid");
+          addViteSsrExternal({ app, config }, "mermaid");
         }
 
         if (presentationEnable) {
-          addViteOptimizeDepsExclude(config, app, [
+          addViteOptimizeDepsExclude({ app, config }, [
             "reveal.js/dist/reveal.esm.js",
             "reveal.js/plugin/markdown/markdown.esm.js",
             ...revealPlugins.map(
               (plugin) => `reveal.js/plugin/${plugin}/${plugin}.esm.js`
             ),
           ]);
-          addViteSsrExternal(config, app, "reveal.js");
+          addViteSsrExternal({ app, config }, "reveal.js");
         }
       },
 

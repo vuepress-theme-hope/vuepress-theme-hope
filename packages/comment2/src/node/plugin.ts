@@ -60,22 +60,21 @@ export const commentPlugin =
         WALINE_LOCALES: userWalineLocales,
       }),
 
-      extendsBundlerOptions: (config, app): void => {
-        if (isGiscus) addCustomElement(config, app, "GiscusWidget");
+      extendsBundlerOptions: (config: unknown, app): void => {
+        if (isGiscus) addCustomElement({ app, config }, "GiscusWidget");
 
         if (isGiscus) {
-          addViteSsrExternal(config, app, "giscus");
+          addViteSsrExternal({ app, config }, "giscus");
         }
 
         if (isTwikoo) {
-          addViteOptimizeDepsInclude(config, app, "twikoo");
-          addViteSsrExternal(config, app, "twikoo");
+          addViteOptimizeDepsInclude({ app, config }, "twikoo");
+          addViteSsrExternal({ app, config }, "twikoo");
         }
 
         if (isWaline) {
-          addViteOptimizeDepsInclude(config, app, "hanabi");
-
-          addViteOptimizeDepsExclude(config, app, "@waline/client");
+          addViteOptimizeDepsInclude({ app, config }, "autosize");
+          addViteOptimizeDepsExclude({ app, config }, "@waline/client");
         }
       },
 

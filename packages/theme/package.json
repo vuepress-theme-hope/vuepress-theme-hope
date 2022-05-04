@@ -43,7 +43,6 @@
   "dependencies": {
     "@mr-hope/vuepress-plugin-components": "workspace:*",
     "@mr-hope/vuepress-shared": "workspace:*",
-    "@types/bcryptjs": "^2.4.2",
     "@types/lodash.throttle": "^4.1.7",
     "@vuepress/cli": "2.0.0-beta.43",
     "@vuepress/client": "2.0.0-beta.43",
@@ -59,7 +58,7 @@
     "@vuepress/utils": "2.0.0-beta.43",
     "@vueuse/core": "^8.4.0",
     "balloon-css": "^1.2.0",
-    "bcryptjs": "^2.4.3",
+    "bcrypt-ts": "^1.0.0",
     "lodash.throttle": "^4.1.1",
     "vue": "^3.2.33",
     "vue-router": "^4.0.14",

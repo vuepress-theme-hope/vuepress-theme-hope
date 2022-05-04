@@ -42,13 +42,10 @@ export const pwaPlugin =
         SW_PATH: options.swPath || "service-worker.js",
       }),
 
-      extendsBundlerOptions: (config, app): void => {
-        addViteOptimizeDepsInclude(config, app, [
-          "mitt",
-          "register-service-worker",
-        ]);
+      extendsBundlerOptions: (config: unknown, app): void => {
+        addViteOptimizeDepsInclude({ app, config }, "register-service-worker");
 
-        addViteSsrNoExternal(config, app, "register-service-worker");
+        addViteSsrNoExternal({ app, config }, "register-service-worker");
 
         useCustomDevServer(
           config,

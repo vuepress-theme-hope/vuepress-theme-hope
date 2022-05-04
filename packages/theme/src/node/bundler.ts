@@ -72,9 +72,8 @@ export const checkTag = (config: unknown, app: App): void => {
 };
 
 export const updateBundlerConfig = (config: unknown, app: App): void => {
-  addViteOptimizeDepsInclude(config, app, [
+  addViteOptimizeDepsInclude({ app, config }, [
     "@vueuse/core",
-    "bcryptjs",
     "lodash.throttle",
   ]);
 

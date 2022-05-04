@@ -2,6 +2,7 @@
   "jest.jestCommandLine": "pnpm jest",
   "jest.autoRun": "off",
   "typescript.tsdk": "node_modules/typescript/lib",
+  "terminal.integrated.env.windows": {},
   "yaml.schemas": {
     "https://json.schemastore.org/github-issue-config.json": "file:///c%3A/projects/vuepress-theme-hope/.github/ISSUE_TEMPLATE/config.yml",
     "https://json.schemastore.org/github-workflow.json": "file:///c%3A/projects/vuepress-theme-hope/packages/create/template/deploy.yml"

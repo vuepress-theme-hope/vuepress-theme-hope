@@ -1,5 +1,5 @@
 import { logger } from "./utils";
-import { hashSync } from "bcryptjs";
+import { hashSync } from "bcrypt-ts";
 
 import type {
   WebpackBundlerOptions,

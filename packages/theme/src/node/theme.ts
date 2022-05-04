@@ -46,7 +46,7 @@ export const hopeTheme =
         ),
       }),
 
-      extendsBundlerOptions: (config, app): void =>
+      extendsBundlerOptions: (config: unknown, app): void =>
         updateBundlerConfig(config, app),
 
       extendsPage: (page) =>

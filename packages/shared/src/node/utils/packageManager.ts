@@ -1,6 +1,6 @@
-import { existsSync } from "fs";
-import { resolve } from "path";
 import { sync } from "execa";
+import { existsSync } from "fs";
+import { dirname, resolve } from "path";
 
 export type PackageManager = "npm" | "yarn" | "pnpm";
 
@@ -39,7 +39,8 @@ export const hasGlobalInstallation = (
 };
 
 export const getTypeofLockFile = (
-  cwd = process.cwd()
+  cwd = process.cwd(),
+  deep = true
 ): PackageManager | null => {
   const key = `local:${cwd}`;
 
@@ -65,11 +66,38 @@ export const getTypeofLockFile = (
     return "npm";
   }
 
+  let dir = cwd;
+
+  while (deep && dir !== dirname(dir)) {
+    dir = dirname(dir);
+
+    if (existsSync(resolve(dir, "pnpm-lock.yaml"))) {
+      localCache.set(key, "pnpm");
+
+      return "pnpm";
+    }
+
+    if (existsSync(resolve(dir, "yarn.lock"))) {
+      localCache.set(key, "yarn");
+
+      return "yarn";
+    }
+
+    if (existsSync(resolve(dir, "package-lock.json"))) {
+      localCache.set(key, "npm");
+
+      return "npm";
+    }
+  }
+
   return null;
 };
 
-export const detectPackageManager = (cwd = process.cwd()): PackageManager => {
-  const type = getTypeofLockFile(cwd);
+export const detectPackageManager = (
+  cwd = process.cwd(),
+  deep = true
+): PackageManager => {
+  const type = getTypeofLockFile(cwd, deep);
 
   return (
     type ||

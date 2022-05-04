@@ -97,9 +97,9 @@ export default defineUserConfig({
     ),
   },
 
-  extendsBundlerOptions: (config, app) => {
+  extendsBundlerOptions: (config: unknown, app): void => {
     if (app.env.isDev)
-      addViteOptimizeDepsInclude(config, app, [
+      addViteOptimizeDepsInclude({ app, config }, [
         "@mr-hope/vuepress-shared/lib/client",
         "dayjs",
         "dayjs/plugin/localizedFormat",
@@ -108,7 +108,7 @@ export default defineUserConfig({
         "dayjs/plugin/utc",
       ]);
 
-    addViteOptimizeDepsInclude(config, app, [
+    addViteOptimizeDepsInclude({ app, config }, [
       "three",
       "three/examples/jsm/controls/OrbitControls",
       "three/examples/jsm/loaders/STLLoader",

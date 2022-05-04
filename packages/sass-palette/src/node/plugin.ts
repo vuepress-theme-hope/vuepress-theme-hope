@@ -62,7 +62,7 @@ export const sassPalettePlugin =
           : {}),
       },
 
-      extendsBundlerOptions: (config, app): void => {
+      extendsBundlerOptions: (config: unknown, app): void => {
         injectConfigModule(config, app, id);
       },
 

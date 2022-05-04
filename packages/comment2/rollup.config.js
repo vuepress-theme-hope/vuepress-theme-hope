@@ -37,7 +37,6 @@ export default [
       "@waline/client/dist/component",
       "@waline/client/dist/pageview",
       "autosize",
-      "hanabi",
       "marked",
       "vue",
       "vue-router",

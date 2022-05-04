@@ -1,25 +1,29 @@
 import { mergeViteConfig } from "./mergeViteConfig";
-import { getTypeofLockFile, hasGlobalInstallation } from "../utils";
+import { detectPackageManager } from "../utils";
 
 import type { App } from "@vuepress/core";
 import type { ViteBundlerOptions } from "@vuepress/bundler-vite";
+
+export interface ViteCommonOptions {
+  app: App;
+  config: unknown;
+}
 
 /**
  * Add modules to Vite `optimizeDeps.include` list
  */
 export const addViteOptimizeDepsInclude = (
-  config: unknown,
-  app: App,
+  { app, config }: ViteCommonOptions,
   module: string | string[]
 ): void => {
   const { bundler } = app.options;
-  const isPnpmInstalled = hasGlobalInstallation("pnpm");
-  const lockFile = getTypeofLockFile();
+  const manager = detectPackageManager();
 
   if (
     bundler.name.endsWith("vite") &&
-    !isPnpmInstalled &&
-    (lockFile === "yarn" || lockFile === "npm")
+    ("OPTIMIZE_DEPS" in process.env
+      ? Boolean(process.env.OPTIMIZE_DEPS)
+      : manager !== "pnpm")
   ) {
     const bundlerConfig = config as ViteBundlerOptions;
 
@@ -44,8 +48,7 @@ export const addViteOptimizeDepsInclude = (
  * Add modules to Vite `optimizeDeps.exclude` list
  */
 export const addViteOptimizeDepsExclude = (
-  config: unknown,
-  app: App,
+  { app, config }: ViteCommonOptions,
   module: string | string[]
 ): void => {
   const { bundler } = app.options;
@@ -74,8 +77,7 @@ export const addViteOptimizeDepsExclude = (
  * Add modules to Vite `ssr.external` list
  */
 export const addViteSsrExternal = (
-  config: unknown,
-  app: App,
+  { app, config }: ViteCommonOptions,
   module: string | string[]
 ): void => {
   const { bundler } = app.options;
@@ -98,8 +100,7 @@ export const addViteSsrExternal = (
  * Add modules to Vite `ssr.noExternal` list
  */
 export const addViteSsrNoExternal = (
-  config: unknown,
-  app: App,
+  { app, config }: ViteCommonOptions,
   module: string | string[]
 ): void => {
   const { bundler } = app.options;

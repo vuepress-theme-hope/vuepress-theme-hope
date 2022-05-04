@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/naming-convention */
-import { compareSync } from "bcryptjs";
+import { compareSync } from "bcrypt-ts";
 import { resolveEncrypt } from "../../src/node/encrypt";
 
 const adminSinglePassword = "1234";

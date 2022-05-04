@@ -43,6 +43,11 @@ export const tagHint = (tag: string, isDebug = false): void => {
   }
 };
 
+export interface CustomElementCommonOptions {
+  app: App;
+  config: unknown;
+}
+
 /**
  * Add tags as customElement
  *
@@ -51,8 +56,7 @@ export const tagHint = (tag: string, isDebug = false): void => {
  * @param customElements tags recognized as custom element
  */
 export const addCustomElement = (
-  config: unknown,
-  app: App,
+  { app, config }: CustomElementCommonOptions,
   customElement: string[] | string
 ): void => {
   const customElements =
