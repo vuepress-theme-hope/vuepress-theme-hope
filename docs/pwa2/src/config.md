@@ -105,7 +105,7 @@ Max picture size which allows to cache, with KB unit
 
 Control logic when new content is found.
 
-- `"disabled"`: Do nothing even when new service worker is avaible. After new service work succeeds installing and starts waiting, it will control page and provide new content in next visit.
+- `"disabled"`: Do nothing even when new service worker is available. After new service work succeeds installing and starts waiting, it will control page and provide new content in next visit.
 
 - `"available"`: Only display update popup when the new service worker is available
 
@@ -123,7 +123,7 @@ Control logic when new content is found.
 
   ::: danger
 
-  Though this ensure users are visiting newest content, but this may affect visiting experiences.
+  Although this ensure users are viewing the latest content, it may affect viewing experiences.
 
   :::
 
