@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.51](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.50...v2.0.0-beta.51) (2022-05-05)
+
+### Bug Fixes
+
+- **create:** fix pnpm registry ([a851770](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a8517700d29900bd71c4666bd74f9088fe8c2f5a))
+- **theme:** add missing prismjs plugin ([faea4e5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/faea4e53d03bffa7ef4567c8ed8be4e193da68b7))
+- **theme:** fix `index: false` not working ([c40593d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c40593ddfa0616dde65d2cf5748a31d467efe4af))
+- **theme:** fix Slide Layout ([195d336](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/195d33674e4296f77b8d95390442763ac8cd7ce2))
+
 ## [2.0.0-beta.50](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.49...v2.0.0-beta.50) (2022-05-04)
 
 ### Features
