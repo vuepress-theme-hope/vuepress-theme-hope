@@ -1,5 +1,6 @@
 import { externalLinkIconPlugin } from "@vuepress/plugin-external-link-icon";
 import { nprogressPlugin } from "@vuepress/plugin-nprogress";
+import { prismjsPlugin } from "@vuepress/plugin-prismjs";
 import { themeDataPlugin } from "@vuepress/plugin-theme-data";
 import { getActiveHeaderLinksPlugin } from "./activeHeaderLinks";
 import { getBlogPlugin } from "./blog";
@@ -28,6 +29,7 @@ export const getPluginConfig = (
     getActiveHeaderLinksPlugin(plugins.activeHeaderLinks),
     plugins.externalLinkIcon === false ? null : externalLinkIconPlugin(),
     plugins.nprogress === false ? null : nprogressPlugin(),
+    plugins.prismjs === false ? null : prismjsPlugin(),
     themeDataPlugin({ themeData }),
     getBlogPlugin(themeData, plugins.blog),
     getCommentPlugin(plugins.comment),
