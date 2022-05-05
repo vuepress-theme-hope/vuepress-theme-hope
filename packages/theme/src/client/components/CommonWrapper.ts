@@ -128,7 +128,7 @@ export default defineComponent({
     let unregisterRouterHook: () => void;
     let lastDistance = 0;
 
-    useEventListener("scroll", () => {
+    useEventListener("scroll", () =>
       debounce(
         () => {
           const distance = getScrollTop();
@@ -144,8 +144,8 @@ export default defineComponent({
         },
         300,
         { isImmediate: true }
-      );
-    });
+      )()
+    );
 
     watch(isMobile, (value) => {
       if (!value) toggleMobileSidebar(false);

@@ -63,8 +63,8 @@ export default defineComponent({
         // draw svg to #id
         svg.drawSVG(props.id, { ...preset.value, scale: scale.value });
 
-        useEventListener("resize", () => {
-          void debounce(() => {
+        useEventListener("resize", () =>
+          debounce(() => {
             const newScale = getScale(window.innerWidth);
 
             if (scale.value !== newScale) {
@@ -72,8 +72,8 @@ export default defineComponent({
 
               svg.drawSVG(props.id, { ...preset.value, scale: newScale });
             }
-          }, 100);
-        });
+          }, 100)()
+        );
       });
     });
 

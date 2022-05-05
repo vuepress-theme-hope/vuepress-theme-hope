@@ -52,16 +52,15 @@ export default defineComponent({
       document.body.scrollTop ||
       0;
 
-    const scrollHandler = (): void => {
-      void debounce(() => {
-        scrollTop.value = getScrollTop();
-      }, 100);
-    };
+    const scrollHandler = debounce(() => {
+      scrollTop.value = getScrollTop();
+    }, 100);
 
     onMounted(() => {
       scrollTop.value = getScrollTop();
-      useEventListener("scroll", scrollHandler);
     });
+
+    useEventListener("scroll", () => scrollHandler());
 
     return (): VNode =>
       h(Transition, { name: "fade" }, () =>
