@@ -11,11 +11,11 @@
   },
   "scripts": {
     "docs:vite-build": "vuepress-vite build src",
-    "docs:vite-clean-serve": "vuepress-vite dev src --clean-cache",
-    "docs:vite-serve": "vuepress-vite dev src",
+    "docs:vite-clean-dev": "vuepress-vite dev src --clean-cache",
+    "docs:vite-dev": "vuepress-vite dev src",
     "docs:webpack-build": "vuepress-webpack build src",
-    "docs:webpack-clean-serve": "vuepress-webpack dev src --clean-cache",
-    "docs:webpack-serve": "vuepress-webpack dev src"
+    "docs:webpack-clean-dev": "vuepress-webpack dev src --clean-cache",
+    "docs:webpack-dev": "vuepress-webpack dev src"
   },
   "dependencies": {
     "@mr-hope/vuepress-shared": "workspace:*",
