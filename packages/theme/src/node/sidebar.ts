@@ -120,16 +120,13 @@ const getInfo = async (
                       "index" in dirInfo
                         ? (dirInfo.index as number | boolean)
                         : null,
-                    children: (dirInfo.link
+                    children: dirInfo.link
                       ? // filter README.md
                         result.filter(
                           (item) =>
                             item.type !== "file" || item.path !== "README.md"
                         )
-                      : result
-                    )
-                      // items with `index: false` should be dropped here
-                      .filter((item) => item.index !== false),
+                      : result,
                   };
                 }
 
@@ -176,32 +173,10 @@ const getInfo = async (
         return [];
       }
     )
-    .then((items) =>
-      // dir without README.md should be dropped here
-      (items.filter((item) => item !== null) as Info[])
-        // sort items
-        .sort((itemA: Info, itemB: Info) => {
-          // check README.md, it should be first one
-          if (itemA.type === "file" && itemA.path === "README.md") return -1;
-          if (itemB.type === "file" && itemB.path === "README.md") return 1;
-
-          if (itemA.index) {
-            // both item as valid index
-            if (itemB.index) return Number(itemA.index) - Number(itemB.index);
-
-            // itemB do not have index
-            return -1;
-          }
-          // itemA do not have index
-          else if (itemB.index) return 1;
-
-          // compare title
-          return (
-            itemA.type === "file" ? itemA.title : itemA.info.text
-          ).localeCompare(
-            itemB.type === "file" ? itemB.title : itemB.info.text
-          );
-        })
+    .then(
+      (items) =>
+        // dir without README.md should be dropped here
+        items.filter((item) => item !== null) as Info[]
     );
 
   return result;
@@ -210,14 +185,38 @@ const getInfo = async (
 const getSidebarItems = (
   infos: Info[]
 ): (HopeThemeSidebarGroupItem | string)[] =>
-  infos.map((info) => {
-    if (info.type === "file") return info.path;
+  infos
+    // items with `index: false` should be dropped here
+    .filter((item) => item.index !== false)
+    // sort items
+    .sort((itemA: Info, itemB: Info) => {
+      // check README.md, it should be first one
+      if (itemA.type === "file" && itemA.path === "README.md") return -1;
+      if (itemB.type === "file" && itemB.path === "README.md") return 1;
 
-    return {
-      ...info.info,
-      children: getSidebarItems(info.children),
-    };
-  });
+      if (itemA.index) {
+        // both item as valid index
+        if (itemB.index) return Number(itemA.index) - Number(itemB.index);
+
+        // itemB do not have index
+        return -1;
+      }
+      // itemA do not have index
+      else if (itemB.index) return 1;
+
+      // compare title
+      return (
+        itemA.type === "file" ? itemA.title : itemA.info.text
+      ).localeCompare(itemB.type === "file" ? itemB.title : itemB.info.text);
+    })
+    .map((info) => {
+      if (info.type === "file") return info.path;
+
+      return {
+        ...info.info,
+        children: getSidebarItems(info.children),
+      };
+    });
 
 const getGeneratePaths = (
   sidebarConfig: HopeThemeSidebarArrayConfig,
