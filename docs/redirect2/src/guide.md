@@ -7,9 +7,9 @@ This plugin can automatically handle redirects for your site.
 
 ## Control Page Redirection
 
-If you need to redirect an existing page to a new page, you can use the `redirect` option in Frontmatter to set the link to redirect to.
+If you change the address of an existing page, you can use the `redirectFrom` option in Frontmatter to redirect to the address of this page, which ensures that users are redirected to the new address when they visit the old link.
 
-You will be redirected to the new link when visiting that page.
+If you need to redirect an existing page to a new page, you can use the `redirectTo` option in Frontmatter to set the address to redirect to. This way the page will redirect to the new address when accessed.
 
 ## Redirect to Pages
 

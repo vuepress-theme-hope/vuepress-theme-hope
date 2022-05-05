@@ -21,7 +21,14 @@ icon: config
 
 ## Frontmatter 选项
 
-### redirect
+### redirectFrom
+
+- 类型: `string | string[]`
+- 必填: 否
+
+重定向到该页面的地址。
+
+### redirectTo
 
 - 类型: `string`
 - 必填: 否

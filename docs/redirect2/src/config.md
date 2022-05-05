@@ -21,7 +21,14 @@ Domain name to redirect to.
 
 ## Frontmatter options
 
-### redirect
+### redirectFrom
+
+- Type: `string | string[]`
+- Required: No
+
+The link which this page redirects from.
+
+### redirectTo
 
 - Type: `string`
 - Required: No

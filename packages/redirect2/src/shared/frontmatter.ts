@@ -1,3 +1,4 @@
 export interface RedirectPluginFrontmatterOption {
-  redirect?: string;
+  redirectFrom?: string | string[];
+  redirectTo?: string;
 }

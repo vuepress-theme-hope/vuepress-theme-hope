@@ -13,13 +13,13 @@ export const handleRedirect = (
 ): void => {
   const { base } = app.options;
 
-  const { redirect } = frontmatter;
+  const { redirectTo } = frontmatter;
 
-  if (redirect) {
+  if (redirectTo) {
     const redirectUrl = (
-      options.hostname && redirect.startsWith("/")
-        ? `${removeEndingSlash(options.hostname)}${base}${redirect}`
-        : redirect
+      options.hostname && redirectTo.startsWith("/")
+        ? `${removeEndingSlash(options.hostname)}${base}${redirectTo}`
+        : redirectTo
     )
       .replace(/\.md$/, ".html")
       .replace(/\/(README|index)\.html/, "/");
