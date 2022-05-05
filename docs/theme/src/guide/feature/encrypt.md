@@ -83,9 +83,9 @@ The salted hash value of the number `1234` and the string `"1234"` is different!
 
 ## Global encryption
 
-In some cases, you may want to encrypt the entire site, you can set `encrypt.status: "global"` in theme options to do that.
+In some cases, you may want to encrypt the entire site, you can set `encrypt.global: true` in theme options to do that.
 
-For global encryption, you can set one or more passwords in the format of string or string array in `encrypt.global`.
+For global encryption, you can set one or more passwords in the format of string or string array in `encrypt.admin`.
 
 ::: tip
 
