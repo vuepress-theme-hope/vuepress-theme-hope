@@ -1,20 +1,13 @@
-import { join } from "path";
+import { existsSync, readFileSync, writeFileSync } from "fs";
+import { prompt } from "inquirer";
+import { join, resolve } from "path";
 
 import { bin } from "./bin";
-import { checkForNextVersion } from "./checkVersion";
+import { copy, ensureDirExistSync } from "./file";
 
-import type { Lang } from "./i18n";
+import type { CreateI18n, Lang } from "./i18n";
 
-export const getScript = (dir: string): Record<string, string> => ({
-  // eslint-disable-next-line @typescript-eslint/naming-convention
-  "docs:build": `vuepress build ${dir}`,
-  // eslint-disable-next-line @typescript-eslint/naming-convention
-  "docs:clean-dev": `vuepress dev ${dir} --clean-cache`,
-  // eslint-disable-next-line @typescript-eslint/naming-convention
-  "docs:dev": `vuepress dev ${dir}`,
-});
-
-export const getWorkflowContent = (dir: string, lang: Lang): string =>
+const getWorkflowContent = (dir: string, lang: Lang): string =>
   `
 name: ${lang === "简体中文" ? "部署文档" : "Deploy Docs"}
 
@@ -83,26 +76,71 @@ ${
 
 `;
 
-export const getDevDependencies = async (): Promise<Record<string, string>> => {
-  const [vuepressClientVersion, vueVersion, vuepressVersion, themeVersion] =
-    await Promise.all([
-      checkForNextVersion("@vuepress/client"),
-      checkForNextVersion("vue"),
-      checkForNextVersion("vuepress"),
-      checkForNextVersion("vuepress-theme-hope"),
-    ]);
-
-  return {
-    "@vuepress/client": `^${vuepressClientVersion}`,
-    vue: `^${vueVersion}`,
-    vuepress: `^${vuepressVersion}`,
-    "vuepress-theme-hope": `^${themeVersion}`,
-  };
-};
-
-export const getGitIgnorePath = (dir: string): string => `
+const getGitIgnorePath = (dir: string): string => `
 node_modules/
 ${dir}/.vuepress/.cache/
 ${dir}/.vuepress/.temp/
 ${dir}/.vuepress/dist/
 `;
+
+export const generateTemplate = async (
+  dir: string,
+  lang: Lang,
+  message: CreateI18n
+): Promise<void> => {
+  const { i18n, workflow } = await prompt<{
+    i18n: boolean;
+    workflow: boolean;
+  }>([
+    {
+      name: "i18n",
+      type: "confirm",
+      message: message.i18nMessage,
+      default: false,
+    },
+    {
+      name: "workflow",
+      type: "confirm",
+      message: message.workflowMessage,
+      default: true,
+    },
+  ]);
+
+  console.log(message.template);
+
+  const templateFolder = i18n
+    ? "i18n"
+    : lang === "简体中文"
+    ? "zh-CN"
+    : "en-US";
+
+  copy(
+    resolve(__dirname, "../template", templateFolder),
+    resolve(process.cwd(), dir)
+  );
+
+  if (workflow) {
+    const workflowDir = resolve(process.cwd(), ".github/workflows");
+
+    ensureDirExistSync(workflowDir);
+
+    writeFileSync(
+      resolve(workflowDir, "deploy-docs.yml"),
+      getWorkflowContent(dir, lang),
+      { encoding: "utf-8" }
+    );
+  }
+
+  // update .gitignore
+  const gitignorePath = resolve(process.cwd(), ".gitignore");
+
+  const gitignoreContent = existsSync(gitignorePath)
+    ? readFileSync(gitignorePath, {
+        encoding: "utf-8",
+      })
+    : "";
+
+  writeFileSync(gitignorePath, `${gitignoreContent}${getGitIgnorePath(dir)}`, {
+    encoding: "utf-8",
+  });
+};

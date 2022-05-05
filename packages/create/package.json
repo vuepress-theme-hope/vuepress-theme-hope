@@ -35,11 +35,13 @@
     "dev": "pnpm dev:ts",
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
-  "devDependencies": {
-    "@types/inquirer": "^8.2.1",
+  "dependencies": {
     "cac": "^6.7.12",
     "execa": "^5.1.1",
-    "inquirer": "^8.2.4",
+    "inquirer": "^8.2.4"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^8.2.1",
     "rimraf": "3.0.2"
   }
 }
