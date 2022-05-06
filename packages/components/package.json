@@ -1,6 +1,6 @@
 {
   "name": "@mr-hope/vuepress-plugin-components",
-  "version": "2.0.0-beta.51",
+  "version": "2.0.0-beta.52",
   "description": "Components plugin for vuepress-theme-hope",
   "keywords": [
     "vuepress-plugin",

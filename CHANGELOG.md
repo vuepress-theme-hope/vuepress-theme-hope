@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.52](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.51...v2.0.0-beta.52) (2022-05-06)
+
+### Features
+
+- **redirect2:** add `redirectTo` and `redirectFrom` option ([2b99d0a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2b99d0a54292c5528eb5c44889836d3cf0acbcfe))
+
+### Bug Fixes
+
+- fix debounce ([0f31eb3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0f31eb39124db76e41f3c00cc7768080dd7bb807))
+- **theme:** fix homepage action button ([0aae1dc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0aae1dc188eb496c6324561252028fa5038ae7b6))
+
 ## [2.0.0-beta.51](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.50...v2.0.0-beta.51) (2022-05-05)
 
 ### Bug Fixes
