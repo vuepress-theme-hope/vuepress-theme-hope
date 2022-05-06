@@ -10,11 +10,11 @@ tag:
 
 通过内置 [vuepress-plugin-photo-swipe][photo-swipe], vuepress-theme-hope 会使页面正文内的图片在点击时进入浏览模式浏览。
 
-如果你不需要此功能，请在 `themeConfig.plugins` 中设置 `photoSwipe` 为 `false`。
+如果你不需要此功能，请在主题选项中设置 `plugins.photoSwipe: false`。
 
 ::: info
 
-`vuepress-theme-hope` 将 `themeConfig.plugins` 中的 `photoSwipe` 选项作为插件选项提供给 `vuepress-plugin-photo-swipe`。
+`vuepress-theme-hope` 将主题选项中的 `plugins.photoSwipe` 选项作为插件选项提供给 `vuepress-plugin-photo-swipe`。
 
 :::
 
@@ -40,7 +40,7 @@ tag:
 
 ## 自定义配置
 
-`themeConfig.plugin.photoSwipe` 会作为插件选项传入 [`vuepress-plugin-photo-swipe][photo-swipe]。 你可以查看 [插件文档][photo-swipe] 来来进行高级配置。
+`plugin.photoSwipe` 会作为插件选项传入 [`vuepress-plugin-photo-swipe][photo-swipe]。 你可以查看 [插件文档][photo-swipe] 来来进行高级配置。
 
 ## 演示
 

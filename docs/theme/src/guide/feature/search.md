@@ -14,7 +14,7 @@ To use search plugin, you need to apply it via `plugins` in the [VuePress config
 
 ::: warning
 
-To keep the theme simple, we will not add these two plugins as dependencies, so you need to install plugins yourself.
+The theme is just adding support for the above plugins, it does not bundle them. You need to install and apply them yourself.
 
 :::
 

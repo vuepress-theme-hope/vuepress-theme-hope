@@ -14,7 +14,7 @@ tag:
 
 ::: warning
 
-为了保持主题的简洁性，我们不会声明这两个插件的依赖，你需要手动安装需要的插件。
+主题只是添加了上述两个搜索插件的支持，而并没有捆绑它们，你需要自己安装和调用。
 
 :::
 
@@ -37,20 +37,20 @@ tag:
 ```ts
 // .vuepress/config.ts
 import { defineUserConfig } from "vuepress";
-import { hopeTheme } from "vuepress-theme-hope";
+import { searchPlugin } from "@vuepress/plugin-search";
 
 export default defineUserConfig({
-  theme: hopeTheme({
-    plugins: {
-      search: {
-        locales: {
-          "/zh/": {
-            placeholder: "搜索",
-          },
+  plugins: [
+    searchPlugin({
+      // ...
+
+      locales: {
+        "/zh/": {
+          placeholder: "搜索",
         },
       },
-    },
-  }),
+    }),
+  ],
 });
 ```
 
@@ -60,20 +60,20 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+const { searchPlugin } = require("@vuepress/plugin-search");
 
 module.exports = {
-  theme: hopeTheme({
-    plugins: {
-      search: {
-        locales: {
-          "/zh/": {
-            placeholder: "搜索",
-          },
+  plugins: [
+    searchPlugin({
+      // ...
+
+      locales: {
+        "/zh/": {
+          placeholder: "搜索",
         },
       },
-    },
-  }),
+    }),
+  ],
 };
 ```
 
@@ -239,60 +239,58 @@ Crawler 配置中 `initialIndexSettings.YOUR_INDEX_NAME.attributesForFaceting` �
 ```ts
 // .vuepress/config.ts
 import { defineUserConfig } from "vuepress";
-import { hopeTheme } from "vuepress-theme-hope";
+import { docsearchPlugin } from "@vuepress/plugin-docsearch";
 
 export default defineUserConfig({
-  theme: hopeTheme({
-    plugins: {
-      docsearch: {
-        // ...
+  plugins: [
+    docsearchPlugin({
+      // ...
 
-        locales: {
-          "/zh/": {
-            placeholder: "搜索文档",
-            translations: {
-              button: {
-                buttonText: "搜索文档",
-                buttonAriaLabel: "搜索文档",
+      locales: {
+        "/zh/": {
+          placeholder: "搜索文档",
+          translations: {
+            button: {
+              buttonText: "搜索文档",
+              buttonAriaLabel: "搜索文档",
+            },
+            modal: {
+              searchBox: {
+                resetButtonTitle: "清除查询条件",
+                resetButtonAriaLabel: "清除查询条件",
+                cancelButtonText: "取消",
+                cancelButtonAriaLabel: "取消",
               },
-              modal: {
-                searchBox: {
-                  resetButtonTitle: "清除查询条件",
-                  resetButtonAriaLabel: "清除查询条件",
-                  cancelButtonText: "取消",
-                  cancelButtonAriaLabel: "取消",
-                },
-                startScreen: {
-                  recentSearchesTitle: "搜索历史",
-                  noRecentSearchesText: "没有搜索历史",
-                  saveRecentSearchButtonTitle: "保存至搜索历史",
-                  removeRecentSearchButtonTitle: "从搜索历史中移除",
-                  favoriteSearchesTitle: "收藏",
-                  removeFavoriteSearchButtonTitle: "从收藏中移除",
-                },
-                errorScreen: {
-                  titleText: "无法获取结果",
-                  helpText: "你可能需要检查你的网络连接",
-                },
-                footer: {
-                  selectText: "选择",
-                  navigateText: "切换",
-                  closeText: "关闭",
-                  searchByText: "搜索提供者",
-                },
-                noResultsScreen: {
-                  noResultsText: "无法找到相关结果",
-                  suggestedQueryText: "你可以尝试查询",
-                  reportMissingResultsText: "你认为该查询应该有结果？",
-                  reportMissingResultsLinkText: "点击反馈",
-                },
+              startScreen: {
+                recentSearchesTitle: "搜索历史",
+                noRecentSearchesText: "没有搜索历史",
+                saveRecentSearchButtonTitle: "保存至搜索历史",
+                removeRecentSearchButtonTitle: "从搜索历史中移除",
+                favoriteSearchesTitle: "收藏",
+                removeFavoriteSearchButtonTitle: "从收藏中移除",
+              },
+              errorScreen: {
+                titleText: "无法获取结果",
+                helpText: "你可能需要检查你的网络连接",
+              },
+              footer: {
+                selectText: "选择",
+                navigateText: "切换",
+                closeText: "关闭",
+                searchByText: "搜索提供者",
+              },
+              noResultsScreen: {
+                noResultsText: "无法找到相关结果",
+                suggestedQueryText: "你可以尝试查询",
+                reportMissingResultsText: "你认为该查询应该有结果？",
+                reportMissingResultsLinkText: "点击反馈",
               },
             },
           },
         },
       },
-    },
-  }),
+    }),
+  ],
 });
 ```
 
@@ -302,60 +300,58 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+const { docsearchPlugin } = require("@vuepress/plugin-docsearch");
 
 module.exports = {
-  theme: hopeTheme({
-    plugins: {
-      docsearch: {
-        // ...
+  plugins: [
+    docsearchPlugin({
+      // ...
 
-        locales: {
-          "/zh/": {
-            placeholder: "搜索文档",
-            translations: {
-              button: {
-                buttonText: "搜索文档",
-                buttonAriaLabel: "搜索文档",
+      locales: {
+        "/zh/": {
+          placeholder: "搜索文档",
+          translations: {
+            button: {
+              buttonText: "搜索文档",
+              buttonAriaLabel: "搜索文档",
+            },
+            modal: {
+              searchBox: {
+                resetButtonTitle: "清除查询条件",
+                resetButtonAriaLabel: "清除查询条件",
+                cancelButtonText: "取消",
+                cancelButtonAriaLabel: "取消",
               },
-              modal: {
-                searchBox: {
-                  resetButtonTitle: "清除查询条件",
-                  resetButtonAriaLabel: "清除查询条件",
-                  cancelButtonText: "取消",
-                  cancelButtonAriaLabel: "取消",
-                },
-                startScreen: {
-                  recentSearchesTitle: "搜索历史",
-                  noRecentSearchesText: "没有搜索历史",
-                  saveRecentSearchButtonTitle: "保存至搜索历史",
-                  removeRecentSearchButtonTitle: "从搜索历史中移除",
-                  favoriteSearchesTitle: "收藏",
-                  removeFavoriteSearchButtonTitle: "从收藏中移除",
-                },
-                errorScreen: {
-                  titleText: "无法获取结果",
-                  helpText: "你可能需要检查你的网络连接",
-                },
-                footer: {
-                  selectText: "选择",
-                  navigateText: "切换",
-                  closeText: "关闭",
-                  searchByText: "搜索提供者",
-                },
-                noResultsScreen: {
-                  noResultsText: "无法找到相关结果",
-                  suggestedQueryText: "你可以尝试查询",
-                  openIssueText: "你认为该查询应该有结果？",
-                  openIssueLinkText: "点击反馈",
-                },
+              startScreen: {
+                recentSearchesTitle: "搜索历史",
+                noRecentSearchesText: "没有搜索历史",
+                saveRecentSearchButtonTitle: "保存至搜索历史",
+                removeRecentSearchButtonTitle: "从搜索历史中移除",
+                favoriteSearchesTitle: "收藏",
+                removeFavoriteSearchButtonTitle: "从收藏中移除",
+              },
+              errorScreen: {
+                titleText: "无法获取结果",
+                helpText: "你可能需要检查你的网络连接",
+              },
+              footer: {
+                selectText: "选择",
+                navigateText: "切换",
+                closeText: "关闭",
+                searchByText: "搜索提供者",
+              },
+              noResultsScreen: {
+                noResultsText: "无法找到相关结果",
+                suggestedQueryText: "你可以尝试查询",
+                openIssueText: "你认为该查询应该有结果？",
+                openIssueLinkText: "点击反馈",
               },
             },
           },
         },
       },
-    },
-  }),
+    }),
+  ],
 };
 ```
 
