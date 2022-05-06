@@ -83,7 +83,7 @@ Install Yarn by entering the following command in the terminal:
 
 ```sh
 corepack enable
-corepack prepare pnpm@6.32.10 --activate
+corepack prepare pnpm@7.0.0 --activate
 ```
 
 ::: tip Open Terminal on Windows

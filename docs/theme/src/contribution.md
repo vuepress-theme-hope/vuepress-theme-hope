@@ -25,7 +25,7 @@ If you have not installed pnpm, please install it using the following command.
 
 ```sh
 corepack enable
-corepack prepare pnpm@6.32.10 --activate
+corepack prepare pnpm@7.0.0 --activate
 ```
 
 :::
@@ -146,11 +146,11 @@ For better performance, all plugins are packed and minified using rollup when th
 
 1. Build project: `pnpm build`
 
-   It will execute the two commands `pnpm build:copy` and `pnpm build:ts`, corresponding to the two build steps.
+   It will use rollup to bundle source files and minify them, and output them to `lib` folder.
 
 1. Develop project: `pnpm dev`
 
-   It will execute the two commands `pnpm dev:copy` and `pnpm dev:ts`, and execute and watch the two build steps.
+   It will use `tsc` and `cpx` to compile ts file and move other files to output folder.
 
 1. Format project: `pnpm lint`
 
@@ -162,7 +162,7 @@ For better performance, all plugins are packed and minified using rollup when th
 
 Please do not mix build and dev commands as they compile in completely different ways.
 
-You may need to execute the `pnpm clean` command to clear the last build results.
+You may need to execute the `pnpm clean` command to clear previous build results.
 
 :::
 

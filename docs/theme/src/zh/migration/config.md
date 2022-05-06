@@ -168,6 +168,12 @@ tag:
 
 ## 插件变更
 
+### 新增
+
+- 新增 `plugins.blog` 控制博客地址
+- 新增 `plugins.nprogress` 控制加载进度条
+- 新增 `plugins.prismjs` 控制是否启用 Prism.js 高亮代码块
+
 ### 改动
 
 所有插件相关选项均被移至 `plugins` 下。
@@ -185,6 +191,10 @@ tag:
 - `feed` 移动至 `plugins.feed`
 
   主题不再默认输出三种格式的 Feed 文件，如果有需要，请自行配置插件请求需要格式。
+
+- `git` 移动至 `plugins.git`
+
+  主题现在使用官方插件 `@vuepress/plugin-git`，所以支持选项有变化。
 
 - `mdEnhance` 移动至 `plugins.mdEnhance`
 
@@ -224,10 +234,6 @@ tag:
 
 - `sitemap` 移动至 `plugins.sitemap`
 
-### 新增
-
-- 新增 `plugins.blog` 控制博客地址
-
 ### 移除
 
 - 移除 `activeHash`
@@ -245,10 +251,6 @@ tag:
 - 移除 `cleanUrl`
 
   主题不再提供此功能。
-
-- 移除 `git`
-
-  主题现在使用 `@vuepress/plugin-git` 官方插件。
 
 - 移除 `smoothScroll`
 

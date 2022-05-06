@@ -173,6 +173,8 @@ Since the theme no longer has a built-in search:
 ### Addition
 
 - Added `plugins.blog` to control blog links
+- Added `plugins.nprogress` to control nprogress
+- Added `plugins.prismjs` to control Prism.js
 
 ### Changes
 
@@ -191,6 +193,10 @@ Move all plugin related options under `plugins`.
 - move `feed` to `plugins.feed`
 
   The theme no longer outputs feed files in three formats by default. If necessary, please set options to output formats needed.
+
+- move `git` to `plugins.git`
+
+  The theme use official plugin `@vuepress/plugin-git` now.
 
 - move `mdEnhance` to `plugins.mdEnhance`
 

@@ -44,6 +44,37 @@ All notable changes to this project will be documented in this file. See [Conven
 - **theme:** fix globalEncrypt ([1401242](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1401242ed87ce6bc7f995b5ba0defbab27cb0d2d))
 - **theme:** fix logoDark ([1df15f0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1df15f043188764bd3dd0dad3d16961aea61be6b))
 
+### Breaking Changes
+
+To support pnpm, you should apply `vuepress-theme-hope` using new syntax:
+
+```diff
+- import { defineHopeConfig } from "vuepress-theme-hope";
++ import { defineUserConfig } from "vuepress";
++ import { hopeTheme } = from "vuepress-theme-hope";
+
+- export default defineHopeConfig({
+-   themeConfig: {
+-     // hope theme config
+-   },
++ export default defineUserConfig({
++   theme: hopeTheme({
++     // hope theme config
++   })
+    // other config
+  });
+```
+
+Besides providing `hopeTheme`, all `defineXXXConfig` exports are removed, `vuepress-theme-hope` now provides these new exports:
+
+- `navbar`
+- `sidebar`
+- `hopeTheme`
+- `arraySidebar`
+- `objectSidebar`
+
+Since `vuepress` drop support for the `babel` way, `search` and `docsearch` options in `themeConfig.plugins` are removed. You need to install and call the plugins via `plugins` option in config file.
+
 # [2.0.0-beta.47](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.46...v2.0.0-beta.47) (2022-04-24)
 
 ### Bug Fixes

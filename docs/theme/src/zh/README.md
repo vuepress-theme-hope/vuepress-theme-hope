@@ -13,6 +13,9 @@ actions:
   - text: 配置 🛠
     link: /zh/config/
 
+  - text: 在线案例 🪀
+    link: https://stackblitz.com/fork/vuepress-theme-hope
+
 features:
   - title: Markdown 增强
     icon: markdown

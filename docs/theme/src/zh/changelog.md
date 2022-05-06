@@ -8,4 +8,4 @@ headerDepth: 0
 
 <!-- more -->
 
-@[md{6-}](../../../../CHANGELOG.md)
+@[md{5-}](../../../../CHANGELOG.md)

@@ -8,4 +8,4 @@ This file contains all notable changes to `vuepress-theme-hope` and its plugins.
 
 <!-- more -->
 
-@[md{6-}](../../../CHANGELOG.md)
+@[md{5-}](../../../CHANGELOG.md)

@@ -25,7 +25,7 @@ pnpm i
 
 ```sh
 corepack enable
-corepack prepare pnpm@6.32.10 --activate
+corepack prepare pnpm@7.0.0 --activate
 ```
 
 :::
@@ -146,7 +146,7 @@ corepack prepare pnpm@6.32.10 --activate
 
 1. 构建项目: `pnpm build`
 
-   它会执行 `pnpm build:copy` 和 `pnpm build:ts` 两个命令，对应前文的两种构建步骤。
+   它会通过。
 
 1. 开发项目: `pnpm dev`
 

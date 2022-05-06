@@ -7,7 +7,7 @@ category:
 
 ## 在线案例
 
-- [stackblitz](https://stackblitz.com/edit/vuepress-theme-hope)
+- [stackblitz](https://stackblitz.com/fork/vuepress-theme-hope)
 
 ## 文档类
 

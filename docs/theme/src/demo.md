@@ -7,7 +7,7 @@ category:
 
 ## Living Demo
 
-- [stackblitz](https://stackblitz.com/edit/vuepress-theme-hope)
+- [stackblitz](https://stackblitz.com/fork/vuepress-theme-hope)
 
 ## Docs
 

@@ -13,6 +13,9 @@ actions:
   - text: Config 🛠
     link: /config/
 
+  - text: Online Demo 🪀
+    link: https://stackblitz.com/fork/vuepress-theme-hope
+
 features:
   - title: Markdown Enhance
     icon: markdown
