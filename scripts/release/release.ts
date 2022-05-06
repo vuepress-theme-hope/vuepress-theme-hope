@@ -12,13 +12,6 @@ const { version: currentVersion } = pkg;
 const { prompt } = inquirer;
 
 export const release = async (): Promise<void> => {
-  const buildSpinner = ora("Building project").start();
-
-  await execaCommand("pnpm clean");
-  await execaCommand("pnpm build");
-
-  buildSpinner.succeed();
-
   ora(`Current version: ${chalk.green(currentVersion)}`).info();
 
   const { npmTag } = await prompt<Answers>([
@@ -30,14 +23,6 @@ export const release = async (): Promise<void> => {
       choices: (answers: Answers): string[] => getNpmTags(getVersion(answers)),
     },
   ]);
-
-  // bump version, generate changelog, commit and push tags
-  await execaCommand(
-    `pnpm bumpp package.json demo/*/package.json docs/*/package.json packages/*/package.json --execute="pnpm standard-version --skip.bump --skip.commit --skip.tag && git add CHANGELOG.md" --commit "chore(release): publish v%s" --all --tag --push`,
-    {
-      stdio: "inherit",
-    }
-  );
 
   // release
   await execaCommand(`pnpm -r publish --tag ${npmTag}`, { stdio: "inherit" });
