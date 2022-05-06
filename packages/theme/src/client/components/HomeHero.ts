@@ -52,17 +52,9 @@ export default defineComponent({
       () => frontmatter.value.heroAlt || heroText.value || "hero"
     );
 
-    const actions = computed(() => {
-      if (!isArray(frontmatter.value.actions)) return [];
-
-      return frontmatter.value.actions.map(
-        ({ text, link, type = "primary" }) => ({
-          text,
-          link,
-          type,
-        })
-      );
-    });
+    const actions = computed(() =>
+      isArray(frontmatter.value.actions) ? frontmatter.value.actions : []
+    );
 
     return (): VNode =>
       h("header", { class: "hero" }, [
@@ -106,7 +98,7 @@ export default defineComponent({
                     { class: "actions" },
                     actions.value.map((action) =>
                       h(AutoLink, {
-                        class: ["action-button", action.type],
+                        class: ["action-button", action.type || "default"],
                         config: action,
                         externalLinkIcon: false,
                       })
