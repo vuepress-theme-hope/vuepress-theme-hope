@@ -7,8 +7,8 @@ export const getRedirectHTML = (redirectUrl: string): string => `<!DOCTYPE html>
   <link rel="canonical" href="${redirectUrl}">
   <title>Redirecting...</title>
   <script>
-    const anchor=window.location.hash.substr(1);
-    location.href=\`${redirectUrl}\${anchor?\`#\${anchor}\`:""}\`;
+    const anchor = window.location.hash.substr(1);
+    location.href = \`${redirectUrl}\${anchor?\`#\${anchor}\`:""}\`;
   </script>
 </head>
 <body>
