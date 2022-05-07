@@ -20,18 +20,22 @@ export const useGlobalEcrypt = (): GlobalEncrypt => {
   const sessionToken = useSessionStorage(STORAGE_KEY, "");
 
   const isGlobalEncrypted = computed(() => {
-    if (encryptData.value.global && encryptData.value.admin)
-      // none of the token matches
-      return (
-        (Boolean(localToken.value) &&
-          !encryptData.value.admin.some((hash) =>
-            compareSync(localToken.value, hash)
-          )) ||
-        (Boolean(sessionToken.value) &&
-          !encryptData.value.admin.some((hash) =>
-            compareSync(sessionToken.value, hash)
-          ))
-      );
+    // is globally encrypted
+    if (encryptData.value.global && encryptData.value.admin) {
+      if (localToken.value)
+        // none of the token matches
+        return encryptData.value.admin.every(
+          (hash) => !compareSync(localToken.value, hash)
+        );
+
+      if (sessionToken.value)
+        // none of the token matches
+        return encryptData.value.admin.every(
+          (hash) => !compareSync(sessionToken.value, hash)
+        );
+
+      return true;
+    }
 
     return false;
   });
