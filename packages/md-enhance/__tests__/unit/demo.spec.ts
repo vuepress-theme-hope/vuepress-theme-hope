@@ -1,3 +1,4 @@
+import { describe, it, expect } from "vitest";
 import MarkdownIt = require("markdown-it");
 import MarkdownContainer = require("markdown-it-container");
 import { codeDemoRender } from "../../src/node/markdown-it/codeDemo";

@@ -1,3 +1,4 @@
+import { describe, it, expect } from "vitest";
 import { path } from "@vuepress/utils";
 import MarkdownIt = require("markdown-it");
 import MarkdownContainer = require("markdown-it-container");

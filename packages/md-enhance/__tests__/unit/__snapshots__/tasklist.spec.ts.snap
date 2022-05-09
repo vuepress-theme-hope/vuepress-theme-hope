@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`Task list Should not render 1`] = `
+exports[`Task list > Should not render 1`] = `
 "<ul>
 <li>[ ]</li>
 <li>[  ] not a todo item 2</li>
@@ -11,7 +11,7 @@ exports[`Task list Should not render 1`] = `
 "
 `;
 
-exports[`Task list Should not render label 1`] = `
+exports[`Task list > Should not render label 1`] = `
 "<ul class=\\"task-list-container\\">
 <li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\"  disabled=\\"disabled\\"> unchecked item 1</li>
 <li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\"  disabled=\\"disabled\\"> unchecked item 2</li>
@@ -21,7 +21,7 @@ exports[`Task list Should not render label 1`] = `
 "
 `;
 
-exports[`Task list Should not render label after 1`] = `
+exports[`Task list > Should not render label after 1`] = `
 "<ul class=\\"task-list-container\\">
 <li class=\\"task-list-item\\"><label><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\"  disabled=\\"disabled\\"> unchecked item 1</label></li>
 <li class=\\"task-list-item\\"><label><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\"  disabled=\\"disabled\\"> unchecked item 2</label></li>
@@ -31,7 +31,7 @@ exports[`Task list Should not render label after 1`] = `
 "
 `;
 
-exports[`Task list Should render 1`] = `
+exports[`Task list > Should render 1`] = `
 "<ul class=\\"task-list-container\\">
 <li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\"  disabled=\\"disabled\\" id=\\"task-item-0\\"><label class=\\"task-list-item-label\\" for=\\"task-item-0\\"> unchecked item 1</label></li>
 <li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\"  disabled=\\"disabled\\" id=\\"task-item-1\\"><label class=\\"task-list-item-label\\" for=\\"task-item-1\\"> unchecked item 2</label></li>
@@ -41,7 +41,7 @@ exports[`Task list Should render 1`] = `
 "
 `;
 
-exports[`Task list Should render 2`] = `
+exports[`Task list > Should render 2`] = `
 "<ul class=\\"task-list-container\\">
 <li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\"  disabled=\\"disabled\\" id=\\"task-item-0\\"><label class=\\"task-list-item-label\\" for=\\"task-item-0\\"> unchecked todo item 1</label></li>
 <li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" checked=\\"checked\\" disabled=\\"disabled\\" id=\\"task-item-1\\"><label class=\\"task-list-item-label\\" for=\\"task-item-1\\"> todo item 2</label></li>
@@ -49,7 +49,7 @@ exports[`Task list Should render 2`] = `
 "
 `;
 
-exports[`Task list Should render nested list 1`] = `
+exports[`Task list > Should render nested list 1`] = `
 "<ol>
 <li>foo
 <ul class=\\"task-list-container\\">
@@ -65,7 +65,7 @@ exports[`Task list Should render nested list 1`] = `
 "
 `;
 
-exports[`Task list Should render nested list 2`] = `
+exports[`Task list > Should render nested list 2`] = `
 "<ul>
 <li>foo
 <ul class=\\"task-list-container\\">
@@ -79,7 +79,7 @@ exports[`Task list Should render nested list 2`] = `
 "
 `;
 
-exports[`Task list Should render ordered list 1`] = `
+exports[`Task list > Should render ordered list 1`] = `
 "<ol class=\\"task-list-container\\">
 <li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" checked=\\"checked\\" disabled=\\"disabled\\" id=\\"task-item-0\\"><label class=\\"task-list-item-label\\" for=\\"task-item-0\\"> checked ordered 1</label></li>
 <li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\"  disabled=\\"disabled\\" id=\\"task-item-1\\"><label class=\\"task-list-item-label\\" for=\\"task-item-1\\"> unchecked ordered 2</label></li>

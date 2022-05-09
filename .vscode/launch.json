@@ -1,15 +1,15 @@
 {
   "configurations": [
     {
-      "type": "node",
-      "name": "vscode-jest-tests",
+      "type": "pwa-node",
       "request": "launch",
-      "console": "integratedTerminal",
-      "internalConsoleOptions": "neverOpen",
-      "disableOptimisticBPs": true,
-      "cwd": "${workspaceFolder}",
-      "runtimeExecutable": "pnpm",
-      "args": ["jest", "--runInBand", "--watchAll=false"]
+      "name": "Debug Current Test File",
+      "autoAttachChildProcesses": true,
+      "skipFiles": ["<node_internals>/**", "**/node_modules/**"],
+      "program": "${workspaceRoot}/node_modules/vitest/vitest.mjs",
+      "args": ["run", "${relativeFile}"],
+      "smartStep": true,
+      "console": "integratedTerminal"
     }
   ]
 }

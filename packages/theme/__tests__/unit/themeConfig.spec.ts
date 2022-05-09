@@ -1,10 +1,12 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { createBaseApp } from "@vuepress/core";
-import {} from "@vuepress/bundler-vite";
 import { path } from "@vuepress/utils";
+import { describe, it, expect } from "vitest";
+
 import { getThemeConfig } from "../../src/node/themeConfig";
-import type { HopeThemeOptions } from "../../src/shared";
 import { emptyTheme } from "./__fixtures__/theme/empty";
+
+import type { HopeThemeOptions } from "../../src/shared";
 
 const app = createBaseApp({
   bundler: {} as any,

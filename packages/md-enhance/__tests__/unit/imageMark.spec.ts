@@ -1,3 +1,4 @@
+import { describe, it, expect } from "vitest";
 import MarkdownIt = require("markdown-it");
 import { imageMark } from "../../src/node/markdown-it/imageMark";
 

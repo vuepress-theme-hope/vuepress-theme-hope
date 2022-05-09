@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`demo Should resolve demo info 1`] = `
+exports[`demo > Should resolve demo info 1`] = `
 "
 <CodeDemo id=\\"code-demo-0fcf9dbc\\" title=\\"A%20normal%20demo\\" code=\\"%7B%22html%22%3A%22%3Ch1%3EMr.Hope%3C%2Fh1%3E%5Cn%3Cp%3EIs%20%3Cspan%20id%3D%5C%22very%5C%22%3Every%3C%2Fspan%3E%20handsome%3C%2Fp%3E%5Cn%22%2C%22js%22%3A%22document.querySelector(%5C%22%23very%5C%22).addEventListener(%5C%22click%5C%22%2C%20()%20%3D%3E%20%7B%5Cn%20%20alert(%5C%22Very%20handsome!%5C%22)%3B%5Cn%7D)%3B%5Cn%22%2C%22css%22%3A%22span%20%7B%5Cn%20%20color%3A%20red%3B%5Cn%7D%5Cn%22%7D\\">
 <pre><code class=\\"language-html\\">&lt;h1&gt;Mr.Hope&lt;/h1&gt;

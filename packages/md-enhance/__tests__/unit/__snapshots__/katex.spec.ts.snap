@@ -1,18 +1,18 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`block katex Shoud render 1`] = `
+exports[`block katex > Shoud render 1`] = `
 "<p class='katex-block'><span class=\\"katex-display\\"><span class=\\"katex\\"><span class=\\"katex-mathml\\"><math xmlns=\\"http://www.w3.org/1998/Math/MathML\\" display=\\"block\\"><semantics><mrow><mi>a</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding=\\"application/x-tex\\">a=1
 </annotation></semantics></math></span><span class=\\"katex-html\\" aria-hidden=\\"true\\"><span class=\\"base\\"><span class=\\"strut\\" style=\\"height:0.4306em;\\"></span><span class=\\"mord mathnormal\\">a</span><span class=\\"mspace\\" style=\\"margin-right:0.2778em;\\"></span><span class=\\"mrel\\">=</span><span class=\\"mspace\\" style=\\"margin-right:0.2778em;\\"></span></span><span class=\\"base\\"><span class=\\"strut\\" style=\\"height:0.6444em;\\"></span><span class=\\"mord\\">1</span></span></span></span></span></p>
 "
 `;
 
-exports[`block katex Shoud render 2`] = `
+exports[`block katex > Shoud render 2`] = `
 "<p class='katex-block'><span class=\\"katex-display\\"><span class=\\"katex\\"><span class=\\"katex-mathml\\"><math xmlns=\\"http://www.w3.org/1998/Math/MathML\\" display=\\"block\\"><semantics><mrow><mi>a</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding=\\"application/x-tex\\">a = 1
 </annotation></semantics></math></span><span class=\\"katex-html\\" aria-hidden=\\"true\\"><span class=\\"base\\"><span class=\\"strut\\" style=\\"height:0.4306em;\\"></span><span class=\\"mord mathnormal\\">a</span><span class=\\"mspace\\" style=\\"margin-right:0.2778em;\\"></span><span class=\\"mrel\\">=</span><span class=\\"mspace\\" style=\\"margin-right:0.2778em;\\"></span></span><span class=\\"base\\"><span class=\\"strut\\" style=\\"height:0.6444em;\\"></span><span class=\\"mord\\">1</span></span></span></span></span></p>
 "
 `;
 
-exports[`block katex Should not output warnings when content has line breaks 1`] = `
+exports[`block katex > Should not output warnings when content has line breaks 1`] = `
 "<p class='katex-block'><span class=\\"katex-display\\"><span class=\\"katex\\"><span class=\\"katex-mathml\\"><math xmlns=\\"http://www.w3.org/1998/Math/MathML\\" display=\\"block\\"><semantics><mtable rowspacing=\\"0.25em\\" columnalign=\\"right left right left\\" columnspacing=\\"0em\\"><mtr><mtd><mstyle scriptlevel=\\"0\\" displaystyle=\\"true\\"><mn>10</mn></mstyle></mtd><mtd><mstyle scriptlevel=\\"0\\" displaystyle=\\"true\\"><mrow><mrow></mrow><mi>x</mi><mo>+</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel=\\"0\\" displaystyle=\\"true\\"><mn>3</mn></mstyle></mtd><mtd><mstyle scriptlevel=\\"0\\" displaystyle=\\"true\\"><mrow><mrow></mrow><mi>y</mi><mo>=</mo><mn>2</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel=\\"0\\" displaystyle=\\"true\\"><mn>3</mn></mstyle></mtd><mtd><mstyle scriptlevel=\\"0\\" displaystyle=\\"true\\"><mrow><mrow></mrow><mi>x</mi><mo>+</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel=\\"0\\" displaystyle=\\"true\\"><mn>13</mn></mstyle></mtd><mtd><mstyle scriptlevel=\\"0\\" displaystyle=\\"true\\"><mrow><mrow></mrow><mi>y</mi><mo>=</mo><mn>4</mn></mrow></mstyle></mtd></mtr></mtable><annotation encoding=\\"application/x-tex\\">\\\\begin{alignedat}{2}
     10&amp;x+ &amp;3&amp;y = 2 \\\\\\\\
     3&amp;x+&amp;13&amp;y = 4
@@ -21,35 +21,35 @@ exports[`block katex Should not output warnings when content has line breaks 1`]
 "
 `;
 
-exports[`block katex Should not render error msg when content is wrong 1`] = `
+exports[`block katex > Should not render error msg when content is wrong 1`] = `
 "<p class='katex-block'><span class=\\"katex-display\\"><span class=\\"katex\\"><span class=\\"katex-mathml\\"><math xmlns=\\"http://www.w3.org/1998/Math/MathML\\" display=\\"block\\"><semantics><mrow><mstyle mathcolor=\\"#cc0000\\"><mtext>\\\\fra</mtext></mstyle><mi>a</mi><mi>b</mi></mrow><annotation encoding=\\"application/x-tex\\">\\\\fra{a}{b}
 </annotation></semantics></math></span><span class=\\"katex-html\\" aria-hidden=\\"true\\"><span class=\\"base\\"><span class=\\"strut\\" style=\\"height:1em;vertical-align:-0.25em;\\"></span><span class=\\"mord text\\" style=\\"color:#cc0000;\\"><span class=\\"mord\\" style=\\"color:#cc0000;\\">\\\\fra</span></span><span class=\\"mord\\"><span class=\\"mord mathnormal\\">a</span></span><span class=\\"mord\\"><span class=\\"mord mathnormal\\">b</span></span></span></span></span></span></p>
 "
 `;
 
-exports[`block katex Should not render error msg when content is wrong 2`] = `
+exports[`block katex > Should not render error msg when content is wrong 2`] = `
 "<p class='katex-block'><span class=\\"katex-display\\"><span class=\\"katex\\"><span class=\\"katex-mathml\\"><math xmlns=\\"http://www.w3.org/1998/Math/MathML\\" display=\\"block\\"><semantics><mrow><mstyle mathcolor=\\"#cc0000\\"><mtext>\\\\fra</mtext></mstyle><mi>a</mi><mi>b</mi></mrow><annotation encoding=\\"application/x-tex\\">\\\\fra{a}{b}
 </annotation></semantics></math></span><span class=\\"katex-html\\" aria-hidden=\\"true\\"><span class=\\"base\\"><span class=\\"strut\\" style=\\"height:1em;vertical-align:-0.25em;\\"></span><span class=\\"mord text\\" style=\\"color:#cc0000;\\"><span class=\\"mord\\" style=\\"color:#cc0000;\\">\\\\fra</span></span><span class=\\"mord\\"><span class=\\"mord mathnormal\\">a</span></span><span class=\\"mord\\"><span class=\\"mord mathnormal\\">b</span></span></span></span></span></span></p>
 "
 `;
 
-exports[`block katex Should render when having spaces 1`] = `
+exports[`block katex > Should render when having spaces 1`] = `
 "<p class='katex-block'><span class=\\"katex-display\\"><span class=\\"katex\\"><span class=\\"katex-mathml\\"><math xmlns=\\"http://www.w3.org/1998/Math/MathML\\" display=\\"block\\"><semantics><mrow><mi>a</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding=\\"application/x-tex\\">a = 1 
 </annotation></semantics></math></span><span class=\\"katex-html\\" aria-hidden=\\"true\\"><span class=\\"base\\"><span class=\\"strut\\" style=\\"height:0.4306em;\\"></span><span class=\\"mord mathnormal\\">a</span><span class=\\"mspace\\" style=\\"margin-right:0.2778em;\\"></span><span class=\\"mrel\\">=</span><span class=\\"mspace\\" style=\\"margin-right:0.2778em;\\"></span></span><span class=\\"base\\"><span class=\\"strut\\" style=\\"height:0.6444em;\\"></span><span class=\\"mord\\">1</span></span></span></span></span></p>
 "
 `;
 
-exports[`inline katex Shoud render 1`] = `
+exports[`inline katex > Shoud render 1`] = `
 "<p><span class=\\"katex\\"><span class=\\"katex-mathml\\"><math xmlns=\\"http://www.w3.org/1998/Math/MathML\\"><semantics><mrow><mi>a</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding=\\"application/x-tex\\">a=1</annotation></semantics></math></span><span class=\\"katex-html\\" aria-hidden=\\"true\\"><span class=\\"base\\"><span class=\\"strut\\" style=\\"height:0.4306em;\\"></span><span class=\\"mord mathnormal\\">a</span><span class=\\"mspace\\" style=\\"margin-right:0.2778em;\\"></span><span class=\\"mrel\\">=</span><span class=\\"mspace\\" style=\\"margin-right:0.2778em;\\"></span></span><span class=\\"base\\"><span class=\\"strut\\" style=\\"height:0.6444em;\\"></span><span class=\\"mord\\">1</span></span></span></span></p>
 "
 `;
 
-exports[`inline katex Should not render error msg when content is wrong 1`] = `
+exports[`inline katex > Should not render error msg when content is wrong 1`] = `
 "<p><span class=\\"katex\\"><span class=\\"katex-mathml\\"><math xmlns=\\"http://www.w3.org/1998/Math/MathML\\"><semantics><mrow><mstyle mathcolor=\\"#cc0000\\"><mtext>\\\\fra</mtext></mstyle><mi>a</mi><mi>b</mi></mrow><annotation encoding=\\"application/x-tex\\">\\\\fra{a}{b}</annotation></semantics></math></span><span class=\\"katex-html\\" aria-hidden=\\"true\\"><span class=\\"base\\"><span class=\\"strut\\" style=\\"height:1em;vertical-align:-0.25em;\\"></span><span class=\\"mord text\\" style=\\"color:#cc0000;\\"><span class=\\"mord\\" style=\\"color:#cc0000;\\">\\\\fra</span></span><span class=\\"mord\\"><span class=\\"mord mathnormal\\">a</span></span><span class=\\"mord\\"><span class=\\"mord mathnormal\\">b</span></span></span></span></span></p>
 "
 `;
 
-exports[`inline katex Should render when the first one is after a charater 1`] = `
+exports[`inline katex > Should render when the first one is after a charater 1`] = `
 "<p>The next<span class=\\"katex\\"><span class=\\"katex-mathml\\"><math xmlns=\\"http://www.w3.org/1998/Math/MathML\\"><semantics><mrow><mi>a</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding=\\"application/x-tex\\">a = 1</annotation></semantics></math></span><span class=\\"katex-html\\" aria-hidden=\\"true\\"><span class=\\"base\\"><span class=\\"strut\\" style=\\"height:0.4306em;\\"></span><span class=\\"mord mathnormal\\">a</span><span class=\\"mspace\\" style=\\"margin-right:0.2778em;\\"></span><span class=\\"mrel\\">=</span><span class=\\"mspace\\" style=\\"margin-right:0.2778em;\\"></span></span><span class=\\"base\\"><span class=\\"strut\\" style=\\"height:0.6444em;\\"></span><span class=\\"mord\\">1</span></span></span></span> won’t work</p>
 "
 `;
