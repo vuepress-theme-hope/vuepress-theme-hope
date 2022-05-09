@@ -28,7 +28,7 @@
     "axios": "0.27.2",
     "katex": "0.15.3",
     "sass-loader": "^12.6.0",
-    "three": "0.140.0",
+    "three": "0.140.1",
     "vue": "3.2.33",
     "vuepress-theme-hope": "workspace:*",
     "vuepress-vite": "2.0.0-beta.43",
