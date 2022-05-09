@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.53](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.52...v2.0.0-beta.53) (2022-05-09)
+
+### Bug Fixes
+
+- **theme:** fix global encrypt ([e121d84](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e121d84e01af453e2dec8756d73fe8f319042b90))
+
 ## [2.0.0-beta.52](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.51...v2.0.0-beta.52) (2022-05-06)
 
 ### Features
