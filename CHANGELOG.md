@@ -92,7 +92,7 @@ Besides providing `hopeTheme`, all `defineXXXConfig` exports are removed, `vuepr
 
 Since `vuepress` drop support for the `babel` way, `search` and `docsearch` options in `themeConfig.plugins` are removed. You need to install and call the plugins via `plugins` option in config file.
 
-# [2.0.0-beta.47](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.46...v2.0.0-beta.47) (2022-04-24)
+## [2.0.0-beta.47](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.46...v2.0.0-beta.47) (2022-04-24)
 
 ### Bug Fixes
 
@@ -102,13 +102,13 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 
 - improve Russian localization ([#1706](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1706)) ([427bc47](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/427bc4754a987d926c01274be5e8a32be6ff4688))
 
-# [2.0.0-beta.46](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.45...v2.0.0-beta.46) (2022-04-23)
+## [2.0.0-beta.46](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.45...v2.0.0-beta.46) (2022-04-23)
 
 ### Features
 
 - **comment2:** use @waline/client@v2 ([0fec752](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0fec7528a02eef1390d8927df3152d6552c62b68))
 
-# [2.0.0-beta.45](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.44...v2.0.0-beta.45) (2022-04-17)
+## [2.0.0-beta.45](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.44...v2.0.0-beta.45) (2022-04-17)
 
 ### Bug Fixes
 
@@ -118,17 +118,17 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 
 - add pl locale ([#1686](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1686)) ([f62f319](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f62f319d2d9af19b5760bb1210e7b6f40d8d1702))
 
-# [2.0.0-beta.44](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.43...v2.0.0-beta.44) (2022-04-16)
+## [2.0.0-beta.44](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.43...v2.0.0-beta.44) (2022-04-16)
 
 ### Bug Fixes
 
 - **create:** fix version command ([b4b284c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b4b284cdc3e9a448283b67a3c7844f060f0acbce))
 
-# [2.0.0-beta.43](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.42...v2.0.0-beta.43) (2022-04-16)
+## [2.0.0-beta.43](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.42...v2.0.0-beta.43) (2022-04-16)
 
 **Note:** Version bump only for package vuepress-theme-hope-root
 
-# [2.0.0-beta.42](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.41...v2.0.0-beta.42) (2022-04-16)
+## [2.0.0-beta.42](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.41...v2.0.0-beta.42) (2022-04-16)
 
 ### Bug Fixes
 
@@ -141,7 +141,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **redirect2:** make hostname optional ([2f7543d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2f7543d646a5ed96add969488f0b905f70c9b064))
 - **sitemap2:** improve lang infer ([4306758](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4306758d8ab942c041b937ee528789cad7e2bb3e))
 
-# [2.0.0-beta.41](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.40...v2.0.0-beta.41) (2022-04-15)
+## [2.0.0-beta.41](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.40...v2.0.0-beta.41) (2022-04-15)
 
 ### Bug Fixes
 
@@ -155,7 +155,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **theme:** add animation back ([bf8fedc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/bf8fedc850c236269c1d3eee10739f50860cec71))
 - **theme:** improve feed default options ([09c7769](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/09c7769315109103a7600ba5c3adf805cb248a03))
 
-# [2.0.0-beta.40](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.39...v2.0.0-beta.40) (2022-04-13)
+## [2.0.0-beta.40](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.39...v2.0.0-beta.40) (2022-04-13)
 
 ### Bug Fixes
 
@@ -167,7 +167,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **feed2:** add `customElements` option ([fa4f173](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fa4f17371658591992fc5f1700f00529ea279486))
 - **theme:** add customElements for feed2 ([1cb1c5d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1cb1c5d801ab2609e8ecf54535f1bfcbe0e9edf3))
 
-# [2.0.0-beta.39](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.38...v2.0.0-beta.39) (2022-04-12)
+## [2.0.0-beta.39](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.38...v2.0.0-beta.39) (2022-04-12)
 
 ### Bug Fixes
 
@@ -182,14 +182,14 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 
 - **theme:** update breakpoint variable name
 
-# [2.0.0-beta.38](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.37...v2.0.0-beta.38) (2022-04-11)
+## [2.0.0-beta.38](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.37...v2.0.0-beta.38) (2022-04-11)
 
 ### Bug Fixes
 
 - **seo2:** add missing deps ([5e10c43](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5e10c43c50fecd4da1f3c9a5ea248a1d52769cb1))
 - **seo2:** fix typos in canonical ([8d4951d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8d4951dfeda6d193abe0d4acb69cd106bdf77a54))
 
-# [2.0.0-beta.37](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.36...v2.0.0-beta.37) (2022-04-10)
+## [2.0.0-beta.37](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.36...v2.0.0-beta.37) (2022-04-10)
 
 ### Bug Fixes
 
@@ -202,7 +202,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **theme:** add slots for HomeHero ([da2ed1d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/da2ed1d7e9a69792adc184d48c652a42bcc9a913))
 - **theme:** remove external icon in home button ([fd344fd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fd344fdb75ff5fc7a3d5cdf2b3d0801a6562c56b))
 
-# [2.0.0-beta.36](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.35...v2.0.0-beta.36) (2022-04-05)
+## [2.0.0-beta.36](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.35...v2.0.0-beta.36) (2022-04-05)
 
 ### Bug Fixes
 
@@ -214,7 +214,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **blog2:** improve thrown error ([7be774a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7be774a71bfdbbe6b73b41cba68076cb50e29d59))
 - **theme:** add copyright plugin ([e4f78d7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e4f78d7db3063288883059795adde3db6c3c945f))
 
-# [2.0.0-beta.35](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.34...v2.0.0-beta.35) (2022-04-04)
+## [2.0.0-beta.35](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.34...v2.0.0-beta.35) (2022-04-04)
 
 ### Bug Fixes
 
@@ -225,14 +225,14 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 
 - **comment2:** use giscus v1 ([65c2eef](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/65c2eef9c59ad2b7d3f8adf10f9e1ac9eb29b798))
 
-# [2.0.0-beta.34](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.33...v2.0.0-beta.34) (2022-04-03)
+## [2.0.0-beta.34](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.33...v2.0.0-beta.34) (2022-04-03)
 
 ### Bug Fixes
 
 - **md-enhance:** improve mermaid rendering ([388db26](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/388db265d4136ea287b5bbaff51201a42a80e9b5))
 - **shared:** fix node bundle ([8a45476](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8a4547610335188ddd8ee94682532fb778f64701))
 
-# [2.0.0-beta.33](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.32...v2.0.0-beta.33) (2022-04-02)
+## [2.0.0-beta.33](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.32...v2.0.0-beta.33) (2022-04-02)
 
 ### Bug Fixes
 
@@ -244,7 +244,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **blog2:** improve logic and docs ([d39eb65](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d39eb656696ac854ab1e1a5084912661bb8e493f))
 - **create:** improve package manager detect ([e8d4859](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e8d4859d1ed83567447c90f4d0c650473bfd577a))
 
-# [2.0.0-beta.32](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.31...v2.0.0-beta.32) (2022-04-01)
+## [2.0.0-beta.32](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.31...v2.0.0-beta.32) (2022-04-01)
 
 ### Bug Fixes
 
@@ -255,7 +255,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **create:** update dir hint message ([4371886](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/43718869e7c461bf4242066e07b82c0ae86fe0d9))
 - **md-enhance:** compatable with react18 ([3a8124d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3a8124da41082928cdf0c60e394da5dc6c008505))
 
-# [2.0.0-beta.31](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.30...v2.0.0-beta.31) (2022-04-01)
+## [2.0.0-beta.31](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.30...v2.0.0-beta.31) (2022-04-01)
 
 ### Bug Fixes
 
@@ -266,7 +266,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **create:** improve flow ([d9d83b5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d9d83b5fb4223832dbbb154eca1c0b861bd4c7a5))
 - **photo-swipe:** add a11y for photoswipe ([3775b1e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3775b1e97590ad7c862a4780c38858a43670445a))
 
-# [2.0.0-beta.30](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.29...v2.0.0-beta.30) (2022-04-01)
+## [2.0.0-beta.30](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.29...v2.0.0-beta.30) (2022-04-01)
 
 ### Bug Fixes
 
@@ -278,7 +278,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **create:** retry 3 times when getting version ([4779436](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/47794365fd6efc44a531dba346ad9cd27ae151a4))
 - **photo-swipe:** use photo-swipe v5 ([ece5e32](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ece5e322a5e264e17638f67df347e995da603acc))
 
-# [2.0.0-beta.29](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.28...v2.0.0-beta.29) (2022-03-31)
+## [2.0.0-beta.29](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.28...v2.0.0-beta.29) (2022-03-31)
 
 ### Bug Fixes
 
@@ -290,7 +290,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **create:** add github workflow ([259ecf1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/259ecf12ed0f7e550e52ef7d9ac5106d28fbae20))
 - **create:** update template comment config ([522da8b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/522da8b0602234b7beea3ed1fdd4dff8530e692c))
 
-# [2.0.0-beta.28](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.27...v2.0.0-beta.28) (2022-03-29)
+## [2.0.0-beta.28](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.27...v2.0.0-beta.28) (2022-03-29)
 
 ### Bug Fixes
 
@@ -301,14 +301,14 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **theme:** fix SidebarLinks collapse, fix [#1608](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1608) ([955a6e1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/955a6e17ce4b814265fb8684a4c6a86f35025f4b))
 - **theme:** fix TOC headerDepth ([fe4e079](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fe4e0798ee73a3d8cb32aa0f4aa544b6c72b0321))
 
-# [2.0.0-beta.27](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.26...v2.0.0-beta.27) (2022-03-25)
+## [2.0.0-beta.27](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.26...v2.0.0-beta.27) (2022-03-25)
 
 ### Bug Fixes
 
 - **theme:** fix `darkmode: 'auto'` ([d426e12](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d426e126df0958e024902afa9d6725ac64750e2b))
 - **theme:** fix blog hero scrolldown ([5649612](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5649612ace36467c7000aafbd20379c0049177b8))
 
-# [2.0.0-beta.26](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.25...v2.0.0-beta.26) (2022-03-24)
+## [2.0.0-beta.26](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.25...v2.0.0-beta.26) (2022-03-24)
 
 ### Bug Fixes
 
@@ -322,7 +322,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 
 - **theme:** rename `headingDepth` to `headerDepth`
 
-# [2.0.0-beta.25](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.24...v2.0.0-beta.25) (2022-03-23)
+## [2.0.0-beta.25](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.24...v2.0.0-beta.25) (2022-03-23)
 
 ### Bug Fixes
 
@@ -332,14 +332,14 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 
 - **theme:** support html in home hero features ([c6b4f24](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c6b4f2485dbebc79e5acd55653e0d82ddcbd128a))
 
-# [2.0.0-beta.24](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.23...v2.0.0-beta.24) (2022-03-20)
+## [2.0.0-beta.24](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.23...v2.0.0-beta.24) (2022-03-20)
 
 ### Bug Fixes
 
 - **md-enhance:** compatible with webpack ([abe8618](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/abe8618fb8153ff51752bcd04a20aa5886007de2))
 - **theme:** fix smooth scroll ([8175017](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8175017cfda91bb512a9859ce2ae93217d169c87))
 
-# [2.0.0-beta.23](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.22...v2.0.0-beta.23) (2022-03-20)
+## [2.0.0-beta.23](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.22...v2.0.0-beta.23) (2022-03-20)
 
 ### Bug Fixes
 
@@ -355,7 +355,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 
 - **components:** add `component` option and remove component name
 
-# [2.0.0-beta.22](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.21...v2.0.0-beta.22) (2022-03-19)
+## [2.0.0-beta.22](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.21...v2.0.0-beta.22) (2022-03-19)
 
 ### Bug Fixes
 
@@ -369,14 +369,14 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 
 - use kabab-case variables in sass instead of camelCase
 
-# [2.0.0-beta.21](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.20...v2.0.0-beta.21) (2022-03-19)
+## [2.0.0-beta.21](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.20...v2.0.0-beta.21) (2022-03-19)
 
 ### Bug Fixes
 
 - **theme:** fix blog page padding ([b441ce0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b441ce087ca92006c5ce2c997038642972d10fa8))
 - **theme:** handle themeData correctly ([6e033ed](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6e033ed2af38a2302ac813ecb4134f7e0a1f80b8))
 
-# [2.0.0-beta.20](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.19...v2.0.0-beta.20) (2022-03-19)
+## [2.0.0-beta.20](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.19...v2.0.0-beta.20) (2022-03-19)
 
 ### Bug Fixes
 
@@ -387,13 +387,13 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 
 - **theme:** disable pageview when not available ([50829bc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/50829bcbc4b4907acface98ce8895bba3c15e323))
 
-# [2.0.0-beta.19](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.18...v2.0.0-beta.19) (2022-03-18)
+## [2.0.0-beta.19](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.18...v2.0.0-beta.19) (2022-03-18)
 
 ### Bug Fixes
 
 - **theme:** fix build issue when blog is not enabled ([0b7c6cd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0b7c6cdcdea1f7b49b1d52575b7e9ffa5d1050b8))
 
-# [2.0.0-beta.18](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.17...v2.0.0-beta.18) (2022-03-18)
+## [2.0.0-beta.18](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.17...v2.0.0-beta.18) (2022-03-18)
 
 ### Bug Fixes
 
@@ -405,7 +405,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **seo2:** improve generate logic, fix [#1591](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1591) ([aaec0ca](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/aaec0ca8a6cd296c89d24ce3a99d461462d0caa7))
 - **theme:** add sidebar toggle button ([81dd0ec](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/81dd0ec5e788d7451fe10e431ab4abbf2ea2ea9c))
 
-# [2.0.0-beta.17](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.16...v2.0.0-beta.17) (2022-03-17)
+## [2.0.0-beta.17](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.16...v2.0.0-beta.17) (2022-03-17)
 
 ### Bug Fixes
 
@@ -417,7 +417,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **md-enhance:** add loading icon ([94bfe88](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/94bfe8883978da4fa9f404d6b97293c249ef05e1))
 - **md-enhance:** rebuild code demo ([5eede6b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5eede6b4e8a9a71196bbfc201b3e5fa64c2f3ce0))
 
-# [2.0.0-beta.16](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.15...v2.0.0-beta.16) (2022-03-15)
+## [2.0.0-beta.16](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.15...v2.0.0-beta.16) (2022-03-15)
 
 ### Bug Fixes
 
@@ -427,7 +427,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 
 - **theme:** add sidebar structure data output in debug ([2d2771f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2d2771fafda8dbcb51c9707fb6bcee2a54a25dfd))
 
-# [2.0.0-beta.15](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.14...v2.0.0-beta.15) (2022-03-14)
+## [2.0.0-beta.15](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.14...v2.0.0-beta.15) (2022-03-14)
 
 ### Bug Fixes
 
@@ -444,27 +444,27 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 
 - unify `fullScreen` to `fullscreen`
 
-# [2.0.0-beta.14](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.13...v2.0.0-beta.14) (2022-03-13)
+## [2.0.0-beta.14](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.13...v2.0.0-beta.14) (2022-03-13)
 
 ### Features
 
 - **comment2:** add twikoo support ([8125bab](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8125babcd69ec40a4819d366a2c552b9a066f422))
 - **theme:** improve sidebar ([babc9b2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/babc9b2f59f641b7dfb31f87b55d86a09beec80b))
 
-# [2.0.0-beta.13](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.12...v2.0.0-beta.13) (2022-03-12)
+## [2.0.0-beta.13](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.12...v2.0.0-beta.13) (2022-03-12)
 
 ### Bug Fixes
 
 - **comment2:** wrap giscus with ClientOnly ([b380222](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b3802221f96bcb8d700b92387606b0d262547eef))
 - **theme:** fix blog hero slidedown button ([ebc5259](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ebc5259f1df70e5f0b48483f9218227075c8a9a9))
 
-# [2.0.0-beta.12](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.11...v2.0.0-beta.12) (2022-03-12)
+## [2.0.0-beta.12](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.11...v2.0.0-beta.12) (2022-03-12)
 
 ### Features
 
 - **md-enhance:** new `chart` optoin ([6742945](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6742945d802e21babb1f3b2b1dfc797c7bd17877))
 
-# [2.0.0-beta.11](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.10...v2.0.0-beta.11) (2022-03-12)
+## [2.0.0-beta.11](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.10...v2.0.0-beta.11) (2022-03-12)
 
 ### Bug Fixes
 
@@ -477,13 +477,13 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **theme:** improve blog hero scrolldown ([bd12131](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/bd12131895035a8cb2c01dd2966e123217522d10))
 - **theme:** support giscus ([9ef288c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9ef288c0d512b9cccf969aac7da4dc0d5fceb871))
 
-# [2.0.0-beta.10](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.9...v2.0.0-beta.10) (2022-03-11)
+## [2.0.0-beta.10](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.9...v2.0.0-beta.10) (2022-03-11)
 
 ### Features
 
 - support `"structure"` in sidebar ([7aa4c81](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7aa4c813c361920b4d1467e0b7381a674d5f33de))
 
-# [2.0.0-beta.9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.8...v2.0.0-beta.9) (2022-03-10)
+## [2.0.0-beta.9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.8...v2.0.0-beta.9) (2022-03-10)
 
 ### Bug Fixes
 
@@ -493,7 +493,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 
 - **theme:** add alt for project icon ([d181d97](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d181d974c7e53526f3c747977ad4bc8c024ce81a))
 
-# [2.0.0-beta.8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.7...v2.0.0-beta.8) (2022-03-10)
+## [2.0.0-beta.8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.7...v2.0.0-beta.8) (2022-03-10)
 
 ### Bug Fixes
 
@@ -507,7 +507,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **theme:** add tag check ([731b32d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/731b32d9f547a0bd6698c8cbb0ee92d28bf573ba))
 - **theme:** support different author in locales ([e577ba7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e577ba722d6d44e6616728b6b9964609384bf962))
 
-# [2.0.0-beta.7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.6...v2.0.0-beta.7) (2022-03-09)
+## [2.0.0-beta.7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.6...v2.0.0-beta.7) (2022-03-09)
 
 ### Bug Fixes
 
@@ -519,7 +519,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - generate color from hash ([6abcbf8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6abcbf8469dd2afecad36b4db3934ff66db110a0))
 - **theme:** allow false in SidebarGroupConfig ([e5572f0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e5572f0c808f808fa5dee10f63c052cb8070a033))
 
-# [2.0.0-beta.6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.5...v2.0.0-beta.6) (2022-03-08)
+## [2.0.0-beta.6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.5...v2.0.0-beta.6) (2022-03-08)
 
 ### Bug Fixes
 
@@ -529,14 +529,14 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 
 - **feed2:** change `count` default value ([9fd41dc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9fd41dc2ac3bc9ae4366f893c1671d35556bfe7b))
 
-# [2.0.0-beta.5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.4...v2.0.0-beta.5) (2022-03-07)
+## [2.0.0-beta.5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.4...v2.0.0-beta.5) (2022-03-07)
 
 ### Bug Fixes
 
 - fix dev command on windows ([a299f8c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a299f8c4e4cd54684d86d8769406f0fbcf3eda15))
 - **pwa2:** use force refresh ([fd268b2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fd268b22a8ab1b974f8cb324f14a418062af10a1))
 
-# [2.0.0-beta.4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.3...v2.0.0-beta.4) (2022-03-06)
+## [2.0.0-beta.4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.3...v2.0.0-beta.4) (2022-03-06)
 
 ### Features
 
@@ -544,7 +544,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **pwa2:** rebuild update logic ([cbe295c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cbe295c50ebf1227a38613482b03045b75d3cca1))
 - unify options ([e373504](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e373504485c396ad4e2e9cf4fc7e0f8f6210a0bf))
 
-# [2.0.0-beta.3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.2...v2.0.0-beta.3) (2022-03-05)
+## [2.0.0-beta.3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.2...v2.0.0-beta.3) (2022-03-05)
 
 ### Bug Fixes
 
@@ -555,7 +555,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 
 - **create:** remove pwa feature in template ([5574303](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5574303cffe5750945fe5cbaa659855eb539af01))
 
-# [2.0.0-beta.2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.1...v2.0.0-beta.2) (2022-03-04)
+## [2.0.0-beta.2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.1...v2.0.0-beta.2) (2022-03-04)
 
 ### Bug Fixes
 
@@ -563,7 +563,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **lightgallery:** fix lightgallery ([068ca73](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/068ca73e7015846bdf6fbcbc8dd4f4f3bfff3279))
 - **md-enhance:** do not throw new line warnings ([8ac66d6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8ac66d6c0ec1b5881580dc00254390c35284d01d))
 
-# [2.0.0-beta.1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.0...v2.0.0-beta.1) (2022-03-04)
+## [2.0.0-beta.1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.0...v2.0.0-beta.1) (2022-03-04)
 
 ### Bug Fixes
 
@@ -578,7 +578,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **theme:** update lightmode color ([076cf2d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/076cf2d5933f677a4971449a164c659e05afc721))
 - **theme:** update pure mode ([43d9774](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/43d97745bea1d1f9c26938b10b2dd6d5d746f1a9))
 
-# [2.0.0-beta.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.41...v2.0.0-beta.0) (2022-03-03)
+## [2.0.0-beta.0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.41...v2.0.0-beta.0) (2022-03-03)
 
 ### Bug Fixes
 
@@ -594,7 +594,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **theme:** support pure control in project panel ([b6c0086](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b6c00866d14ad4d86fe5df7f30f8b43fab4a6a6e))
 - **theme:** update syle ([a834fb4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a834fb4ad55baaf2e2f013cfdc6f5934c07bcda6))
 
-# [2.0.0-alpha.41](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.40...v2.0.0-alpha.41) (2022-03-02)
+## [2.0.0-alpha.41](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.40...v2.0.0-alpha.41) (2022-03-02)
 
 ### Bug Fixes
 
@@ -613,7 +613,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **theme:** optimize navbar links ([ff7f051](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ff7f0511ad0b8fe32752444eb24c8aa1d271e850))
 - **theme:** update sticky icon ([f200986](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f200986f2e5309bbfe687372f1b0d0fc0774f946))
 
-# [2.0.0-alpha.40](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.39...v2.0.0-alpha.40) (2022-03-02)
+## [2.0.0-alpha.40](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.39...v2.0.0-alpha.40) (2022-03-02)
 
 ### Bug Fixes
 
@@ -626,7 +626,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **theme:** add more code theme ([7649427](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/76494277ecabc375db799cd6afcee6c7c60dde9d))
 - **theme:** support code block theme ([5a644dd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5a644dd4a56e8009eb06c5a01dc22493a4c4c329))
 
-# [2.0.0-alpha.39](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.38...v2.0.0-alpha.39) (2022-03-01)
+## [2.0.0-alpha.39](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.38...v2.0.0-alpha.39) (2022-03-01)
 
 ### Bug Fixes
 
@@ -637,13 +637,13 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **components:** render with random colors ([88c26e5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/88c26e589035606926d40084b7e103d8e54c9777))
 - **pwa2:** use root lang as fallback in manifest ([04aa949](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/04aa94900b5735b8ad43af3ab3a3e483ea5bc53d))
 
-# [2.0.0-alpha.38](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.37...v2.0.0-alpha.38) (2022-02-28)
+## [2.0.0-alpha.38](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.37...v2.0.0-alpha.38) (2022-02-28)
 
 ### Features
 
 - **md-enhance:** destory reveal instance using Reveal.destory ([f24c854](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f24c854b524be2cd7f9f10df2cc46fadc5ed97b6))
 
-# [2.0.0-alpha.37](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.36...v2.0.0-alpha.37) (2022-02-28)
+## [2.0.0-alpha.37](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.36...v2.0.0-alpha.37) (2022-02-28)
 
 ### Bug Fixes
 
@@ -656,7 +656,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **theme:** improve style ([31258c9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/31258c92cfafae99ff49ae7a86bf706678cee713))
 - **theme:** rebuild project panel ([e0deca5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e0deca5dc29194004af14ae1d0dfef9ea757825e))
 
-# [2.0.0-alpha.36](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.35...v2.0.0-alpha.36) (2022-02-27)
+## [2.0.0-alpha.36](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.35...v2.0.0-alpha.36) (2022-02-27)
 
 ### Bug Fixes
 
@@ -667,7 +667,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **pwa2:** add appendBase option ([3a15da4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3a15da427e1b0046389440c58c02826baf3534a4))
 - **shared:** add `addViteSsrExternal` ([e1f5f33](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e1f5f33c8e024dfbe47ba0714179e61be1daa80d))
 
-# [2.0.0-alpha.35](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.34...v2.0.0-alpha.35) (2022-02-27)
+## [2.0.0-alpha.35](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.34...v2.0.0-alpha.35) (2022-02-27)
 
 ### Bug Fixes
 
@@ -687,7 +687,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **theme:** add slidedown button ([7324e37](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7324e3775293943fed373555a33fcd421978d006))
 - **theme:** improve sidebar state ([f31505d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f31505d4b60d05e61d5abe057985555664e14fd0))
 
-# [2.0.0-alpha.34](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.33...v2.0.0-alpha.34) (2022-02-24)
+## [2.0.0-alpha.34](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.33...v2.0.0-alpha.34) (2022-02-24)
 
 ### Bug Fixes
 
@@ -695,7 +695,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **theme:** fix timelinelist item hover ([67f1dcd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/67f1dcd26f87cc31b7390397079e8e2c6eae4c15))
 - **theme:** key timeline transition ([810102f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/810102f98ba19364d7bbf93f5669e8540a7a37ab))
 
-# [2.0.0-alpha.33](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.32...v2.0.0-alpha.33) (2022-02-22)
+## [2.0.0-alpha.33](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.32...v2.0.0-alpha.33) (2022-02-22)
 
 ### Bug Fixes
 
@@ -709,19 +709,19 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 
 - **theme:** disable pwa by default ([3f99aac](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3f99aac22dee4efc2bc67633ba6d6c45e52bf1fb))
 
-# [2.0.0-alpha.32](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.31...v2.0.0-alpha.32) (2022-02-20)
+## [2.0.0-alpha.32](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.31...v2.0.0-alpha.32) (2022-02-20)
 
 ### Bug Fixes
 
 - **theme:** fix socialMedia resolve ([d424d35](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d424d35d81afe2c4d898327b002e9b6c25b08c82))
 
-# [2.0.0-alpha.31](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.30...v2.0.0-alpha.31) (2022-02-20)
+## [2.0.0-alpha.31](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.30...v2.0.0-alpha.31) (2022-02-20)
 
 ### Features
 
 - update vite bundlerConfig ([b940a63](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b940a63d319381546de6d4aa7f5cc26dd1ce3cc5))
 
-# [2.0.0-alpha.30](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.29...v2.0.0-alpha.30) (2022-02-20)
+## [2.0.0-alpha.30](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.29...v2.0.0-alpha.30) (2022-02-20)
 
 ### Bug Fixes
 
@@ -738,13 +738,13 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **theme:** improve article item dom ([cf3b9de](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cf3b9de76bea41b2939abd6f26e0e447ed072447))
 - **theme:** make socialMedia treeshakable ([af42408](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/af4240808b865c309f3643d369634d46cf3ced7f))
 
-# [2.0.0-alpha.29](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.28...v2.0.0-alpha.29) (2022-02-19)
+## [2.0.0-alpha.29](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.28...v2.0.0-alpha.29) (2022-02-19)
 
 ### Bug Fixes
 
 - **create:** fix locale language ([23bcf44](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/23bcf44fadd6b63c4c4696a8b6a61d11efae0d6a))
 
-# [2.0.0-alpha.28](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.27...v2.0.0-alpha.28) (2022-02-19)
+## [2.0.0-alpha.28](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.27...v2.0.0-alpha.28) (2022-02-19)
 
 ### Bug Fixes
 
@@ -759,23 +759,23 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **create:** add i18n support ([4605db5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4605db5261b442281ce1f80c7cdc3af122b22c90))
 - **theme:** style updates ([afba602](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/afba602b301fc808ba6edb1d98234bc17ab4553e))
 
-# [2.0.0-alpha.27](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.26...v2.0.0-alpha.27) (2022-02-16)
+## [2.0.0-alpha.27](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.26...v2.0.0-alpha.27) (2022-02-16)
 
 ### Bug Fixes
 
 - **create:** fix template folder path ([3fcc980](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3fcc980865c14a74c54bc7950e93cadab3da2d00))
 
-# [2.0.0-alpha.26](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.25...v2.0.0-alpha.26) (2022-02-16)
+## [2.0.0-alpha.26](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.25...v2.0.0-alpha.26) (2022-02-16)
 
 **Note:** Version bump only for package vuepress-theme-hope-root
 
-# [2.0.0-alpha.25](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.24...v2.0.0-alpha.25) (2022-02-16)
+## [2.0.0-alpha.25](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.24...v2.0.0-alpha.25) (2022-02-16)
 
 ### Bug Fixes
 
 - **create:** fix command ([cc9cb54](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cc9cb54f5b274c2e186e50ec53353caa3d997d33))
 
-# [2.0.0-alpha.24](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.23...v2.0.0-alpha.24) (2022-02-16)
+## [2.0.0-alpha.24](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.23...v2.0.0-alpha.24) (2022-02-16)
 
 ### Bug Fixes
 
@@ -802,7 +802,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **theme:** support autoExcerpt ([04dbadb](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/04dbadb783a0bdef27aafa4bc558e4ecc629f987))
 - **theme:** support toc in frontmatter ([fb25719](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fb257194ccc75f8a734e1fc4361e91916e4956cc))
 
-# [2.0.0-alpha.23](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.22...v2.0.0-alpha.23) (2022-02-15)
+## [2.0.0-alpha.23](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.22...v2.0.0-alpha.23) (2022-02-15)
 
 ### Bug Fixes
 
@@ -813,7 +813,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **reading-time2:** update options ([e7b3a91](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e7b3a913802edcd20705c40c8fb5eddfd604612a))
 - **theme:** update navbarHeight ([ed7a816](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ed7a8160e355e8ebf657f8062fb2e0e8e43a1477))
 
-# [2.0.0-alpha.22](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.21...v2.0.0-alpha.22) (2022-02-15)
+## [2.0.0-alpha.22](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.21...v2.0.0-alpha.22) (2022-02-15)
 
 ### Bug Fixes
 
@@ -843,7 +843,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **theme:** update options ([4645187](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/46451875887d5cc1fc7166d10f6fce1e99c810d7))
 - **theme:** update types and anchor style ([0add43f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0add43f71e3292ee0041260fbeb8ef2be840b47e))
 
-# [2.0.0-alpha.21](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.20...v2.0.0-alpha.21) (2022-02-12)
+## [2.0.0-alpha.21](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.20...v2.0.0-alpha.21) (2022-02-12)
 
 ### Bug Fixes
 
@@ -856,13 +856,13 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **theme:** add dayjs to optimize deps ([f6c87a2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f6c87a2f735719b3efb1cdd2fdc603054f1df048))
 - **theme:** set `plugin.blog` default value to false ([f23b107](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f23b107468e4293f7afce8d29af2b385e2d6e45a))
 
-# [2.0.0-alpha.20](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.19...v2.0.0-alpha.20) (2022-02-12)
+## [2.0.0-alpha.20](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.19...v2.0.0-alpha.20) (2022-02-12)
 
 ### Features
 
 - **theme:** add slots for NormalPage and ProjectHome ([a96f33d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a96f33d6e7687b669097074de9a29c4f224768c1))
 
-# [2.0.0-alpha.19](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.18...v2.0.0-alpha.19) (2022-02-12)
+## [2.0.0-alpha.19](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.18...v2.0.0-alpha.19) (2022-02-12)
 
 ### Bug Fixes
 
@@ -871,7 +871,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **theme:** fix fullscreen button ([7c755b9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7c755b92ba1b0ab3df2ebddea228979d82c07aa9))
 - **theme:** fix themecolor not active ([0e1b12f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0e1b12f2fb993cfc6bf99b16e8bf5bc733093369))
 
-# [2.0.0-alpha.18](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.17...v2.0.0-alpha.18) (2022-02-11)
+## [2.0.0-alpha.18](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.17...v2.0.0-alpha.18) (2022-02-11)
 
 ### Bug Fixes
 
@@ -893,7 +893,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **sass-palette:** update style options and improve debug log ([dfa721a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/dfa721a588249ca8998b8247a8872573a41dd580))
 - **theme:** fix page shrink ([636c256](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/636c2566caf3cf47a75135b0edb7aaedc74d8a81))
 
-# [2.0.0-alpha.17](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.16...v2.0.0-alpha.17) (2022-02-10)
+## [2.0.0-alpha.17](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.16...v2.0.0-alpha.17) (2022-02-10)
 
 ### Bug Fixes
 
@@ -920,7 +920,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **theme:** update outlook panel ([452760d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/452760dcc24ad115a84bcaa0c57b24705ae85167))
 - update blog layout ([1a64724](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1a647247d8faab6c3b88b59a334e0abab73716d1))
 
-# [2.0.0-alpha.16](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.15...v2.0.0-alpha.16) (2022-02-09)
+## [2.0.0-alpha.16](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.15...v2.0.0-alpha.16) (2022-02-09)
 
 ### Bug Fixes
 
@@ -947,7 +947,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **theme:** add skip link component ([aae4e66](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/aae4e66f683406d3db7c7de8c1f07e777dabba39))
 - **theme:** update layout ([8c3a1d9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8c3a1d92f66c27138bff73c6a33e144c4579cabd))
 
-# [2.0.0-alpha.15](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.14...v2.0.0-alpha.15) (2022-02-08)
+## [2.0.0-alpha.15](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.14...v2.0.0-alpha.15) (2022-02-08)
 
 ### Bug Fixes
 
@@ -966,7 +966,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **theme:** update template ([5d4219b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5d4219b13a598a8e1a70ef1077c5b8c22d75d3ae))
 - update blog2 plugin and add docs ([8516d43](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8516d43115fa49b2c9ed12417b29662e521d05a0))
 
-# [2.0.0-alpha.14](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.13...v2.0.0-alpha.14) (2022-02-07)
+## [2.0.0-alpha.14](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.13...v2.0.0-alpha.14) (2022-02-07)
 
 ### Bug Fixes
 
@@ -976,7 +976,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 
 - **md-enhance:** add v-pre support ([a416fcf](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a416fcfe47327072183789a5fee7a4fd538e0963))
 
-# [2.0.0-alpha.13](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.12...v2.0.0-alpha.13) (2022-02-07)
+## [2.0.0-alpha.13](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.12...v2.0.0-alpha.13) (2022-02-07)
 
 ### Bug Fixes
 
@@ -999,11 +999,11 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **theme:** rename copyrightText ([da21a18](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/da21a1818ec8d8bbee4f5402be0966b156570c13))
 - **theme:** support prefix in navbar config ([fd8f0d8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fd8f0d844b44d5fbef8e7870f1ff970762dc1188))
 
-# [2.0.0-alpha.12](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.11...v2.0.0-alpha.12) (2022-02-06)
+## [2.0.0-alpha.12](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.11...v2.0.0-alpha.12) (2022-02-06)
 
 **Note:** Version bump only for package vuepress-theme-hope-root
 
-# [2.0.0-alpha.11](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.10...v2.0.0-alpha.11) (2022-02-06)
+## [2.0.0-alpha.11](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.10...v2.0.0-alpha.11) (2022-02-06)
 
 ### Bug Fixes
 
@@ -1014,7 +1014,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 
 - **theme:** add helpers ([03945c3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/03945c3ae2ad596e8879442240f8bc221cbc307b))
 
-# [2.0.0-alpha.10](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.9...v2.0.0-alpha.10) (2022-02-06)
+## [2.0.0-alpha.10](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.9...v2.0.0-alpha.10) (2022-02-06)
 
 ### Bug Fixes
 
@@ -1074,7 +1074,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **theme:** use logger ([2c204f2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2c204f2d01a22ec652660a4e7287118953cab69c))
 - update style variables ([d86f509](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d86f509353a3a1ab5bb79a754c7573c3d1c68c2f))
 
-# [2.0.0-alpha.9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.8...v2.0.0-alpha.9) (2022-01-27)
+## [2.0.0-alpha.9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.8...v2.0.0-alpha.9) (2022-01-27)
 
 ### Bug Fixes
 
@@ -1100,7 +1100,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **theme:** refine config ([3f501da](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3f501da281a0f94731f6c5b1838babecb7552f15))
 - update theme layout ([b1fe233](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b1fe233ecdd0c2b6c3515fe212c57720fe520e1c))
 
-# [2.0.0-alpha.8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.7...v2.0.0-alpha.8) (2022-01-27)
+## [2.0.0-alpha.8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.7...v2.0.0-alpha.8) (2022-01-27)
 
 ### Bug Fixes
 
@@ -1175,7 +1175,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - update navbar ([0c643ed](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0c643edc9f23ccb6d6db78e255cf809a914abaa2))
 - use ts in dev ([77cbf19](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/77cbf198b9d3fb00cee7cc74e19634a50d34c2f1))
 
-# [2.0.0-alpha.7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.6...v2.0.0-alpha.7) (2021-09-19)
+## [2.0.0-alpha.7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.6...v2.0.0-alpha.7) (2021-09-19)
 
 ### Bug Fixes
 
@@ -1190,7 +1190,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **md-enhance:** rebuild code-demo ([e7abb3a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e7abb3a0ac513dc8244da3a40c3fd8f8f32681b9))
 - **md-enhance:** update code demo ([4b8e598](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4b8e598fc838a1814c76c8c9e7c97a0685122b6e))
 
-# [2.0.0-alpha.6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.5...v2.0.0-alpha.6) (2021-08-07)
+## [2.0.0-alpha.6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.5...v2.0.0-alpha.6) (2021-08-07)
 
 ### Bug Fixes
 
@@ -1217,7 +1217,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **theme:** update layout ([be8dbbc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/be8dbbc4e4d92c54e7b057d7515d5c94ae23d556))
 - update layout ([3b131fb](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3b131fbe7674feaee3ee2092b1cb401d84b1e612))
 
-# [2.0.0-alpha.5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.4...v2.0.0-alpha.5) (2021-06-20)
+## [2.0.0-alpha.5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.4...v2.0.0-alpha.5) (2021-06-20)
 
 ### Bug Fixes
 
@@ -1229,7 +1229,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **theme:** update dropdown arrow ([51f1fe6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/51f1fe6e868c0516dbfeedf8827017a1392969ef))
 - **theme:** update navbar ([d8a90cd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d8a90cd868582292a3a795cc1424948f56045c6a))
 
-# [2.0.0-alpha.4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.3...v2.0.0-alpha.4) (2021-06-14)
+## [2.0.0-alpha.4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.3...v2.0.0-alpha.4) (2021-06-14)
 
 ### Bug Fixes
 
@@ -1240,7 +1240,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - add lightgallery plugin ([884d45c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/884d45cf98bf698738a5fea6977fbdb64c232b8e))
 - **comment2:** add meta tags for pageinfo ([f325305](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f325305bf0427a4d5b84398f2837c1b601cff60d))
 
-# [2.0.0-alpha.3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.2...v2.0.0-alpha.3) (2021-06-13)
+## [2.0.0-alpha.3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.2...v2.0.0-alpha.3) (2021-06-13)
 
 ### Bug Fixes
 
@@ -1262,7 +1262,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **shared:** add useCustomDevServer ([81b0421](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/81b0421585446d7b65599862c42dfbf543dc4bf7))
 - **theme:** add pwa plugin ([f45d1d2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f45d1d25d7bc23cae6028b90ca13e056170c4545))
 
-# [2.0.0-alpha.2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.1...v2.0.0-alpha.2) (2021-06-11)
+## [2.0.0-alpha.2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.1...v2.0.0-alpha.2) (2021-06-11)
 
 ### Bug Fixes
 
@@ -1289,7 +1289,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **theme:** update style ([5876d8f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5876d8ffc522b49f4c6c9a19da9f078d59584a3b))
 - update styles ([6c411a8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6c411a8757a26e319df19c8bf2669486c30d6005))
 
-# [2.0.0-alpha.1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.0...v2.0.0-alpha.1) (2021-06-09)
+## [2.0.0-alpha.1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-alpha.0...v2.0.0-alpha.1) (2021-06-09)
 
 ### Bug Fixes
 
@@ -1302,7 +1302,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **photo-swipe:** add delay options ([4013840](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4013840bd8009e8b594b60901ed83b7c4f33a551))
 - **theme:** update style ([6e2ce72](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6e2ce7273458982f13ad7776207f65e7aa780cbb))
 
-# 2.0.0-alpha.0 (2021-06-08)
+## 2.0.0-alpha.0 (2021-06-08)
 
 ### Bug Fixes
 
