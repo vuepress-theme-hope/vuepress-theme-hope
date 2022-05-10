@@ -83,7 +83,7 @@
     "eslint-plugin-prettier": "4.0.0",
     "eslint-plugin-vue": "8.7.1",
     "execa": "6.1.0",
-    "husky": "8.0.0",
+    "husky": "8.0.1",
     "inquirer": "8.2.4",
     "lint-staged": "12.4.1",
     "markdownlint-cli": "0.31.1",
