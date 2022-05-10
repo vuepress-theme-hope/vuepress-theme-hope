@@ -19,7 +19,7 @@ export const markdownEnhanceLocales: MarkdownEnhanceLocaleConfig = {
     details: "详情",
   },
 
-  "/tw/": {
+  "/zh-tw/": {
     info: "相關信息",
     note: "注",
     tip: "提示",

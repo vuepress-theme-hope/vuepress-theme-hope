@@ -19,7 +19,7 @@ export const photoSwipeLocales: PhotoSwipeLocaleConfig = {
     arrowNext: "下一个 (右箭头)",
   },
 
-  "/tw/": {
+  "/zh-tw/": {
     close: "關閉",
     download: "下載圖片",
     fullscreen: "切換全屏",

@@ -32,7 +32,7 @@ export const pwaLocales: PWALocaleConfig = {
     update: "新内容已就绪",
   },
 
-  "/tw/": {
+  "/zh-tw/": {
     install: "安裝",
     iOSInstall: "點擊分享按鈕然後點擊“添加到主畫面”",
     cancel: "取消",

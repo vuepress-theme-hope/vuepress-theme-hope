@@ -12,7 +12,7 @@ export const copyCodeLocales: CopyCodeLocaleConfig = {
     hint: "复制代码",
   },
 
-  "/tw/": {
+  "/zh-tw/": {
     copy: "複製成功 🎉",
     hint: "複製代碼",
   },

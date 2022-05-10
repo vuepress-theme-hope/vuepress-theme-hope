@@ -16,7 +16,7 @@ export const readingTimeLocales: ReadingTimeLocaleConfig = {
     time: "大约 $time 分钟",
   },
 
-  "/tw/": {
+  "/zh-tw/": {
     word: "約 $word 字",
     less1Minute: "小於 1 分鐘",
     time: "大约 $time 分鐘",
