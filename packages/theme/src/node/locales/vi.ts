@@ -55,7 +55,9 @@ export const viLocale: HopeThemeLocaleData = {
   },
 
   encryptLocales: {
-    title: "Xin vui lòng nhập mật khẩu",
+    title: "Page Encrypted",
+    placeholder: "Enter password",
+    remember: "Remember password",
     errorHint: "Vui lòng nhập đúng mật khẩu",
   },
 

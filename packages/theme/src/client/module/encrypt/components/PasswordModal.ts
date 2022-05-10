@@ -1,6 +1,7 @@
 import { usePageFrontmatter } from "@vuepress/client";
 import { computed, defineComponent, h, nextTick, ref } from "vue";
 
+import { LockIcon } from "./icons";
 import { useThemeLocaleData } from "@theme-hope/composables";
 
 import type { VNode } from "vue";
@@ -21,6 +22,7 @@ export default defineComponent({
     const themeLocale = useThemeLocaleData();
     const password = ref("");
     const hasTried = ref(false);
+    const remember = ref(false);
 
     const locale = computed(() => themeLocale.value.encryptLocales);
 
@@ -31,7 +33,7 @@ export default defineComponent({
       if (hintHandler) clearTimeout(hintHandler);
       hasTried.value = false;
 
-      emit("verify", password.value);
+      emit("verify", password.value, remember.value);
 
       void nextTick().then(() => {
         hasTried.value = true;
@@ -47,20 +49,23 @@ export default defineComponent({
         "div",
         {
           class: [
-            "password-modal",
+            "password-layer",
             { expand: props.full || frontmatter.value.home },
           ],
         },
-        [
+        h("div", { class: "password-modal" }, [
           h(
             "div",
             { class: ["hint", { tried: hasTried.value }] },
-            hasTried.value ? locale.value.errorHint : locale.value.title
+            hasTried.value
+              ? locale.value.errorHint
+              : h(LockIcon, { "aria-label": locale.value.title })
           ),
-          h("div", { class: "input" }, [
+          h("div", { class: "password" }, [
             h("input", {
               type: "password",
               value: password.value,
+              placeholder: locale.value.placeholder,
               onInput: ({ target }: InputEvent) => {
                 password.value = (target as HTMLInputElement).value;
               },
@@ -68,9 +73,17 @@ export default defineComponent({
                 if (key === "Enter") verify();
               },
             }),
-            h("button", { onClick: () => verify() }, "OK"),
           ]),
-        ]
+          h("div", { class: "remember-password" }, [
+            h("input", {
+              type: "checkbox",
+              value: remember.value,
+              onChange: () => (remember.value = !remember.value),
+            }),
+            h("span", locale.value.remember),
+          ]),
+          h("button", { class: "submit", onClick: () => verify() }, "OK"),
+        ])
       );
   },
 });

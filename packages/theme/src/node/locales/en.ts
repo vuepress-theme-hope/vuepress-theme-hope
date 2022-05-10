@@ -55,7 +55,9 @@ export const enLocale: HopeThemeLocaleData = {
   },
 
   encryptLocales: {
-    title: "Please enter password",
+    title: "Page Encrypted",
+    placeholder: "Enter password",
+    remember: "Remember password",
     errorHint: "Please enter the correct password!",
   },
 

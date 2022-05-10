@@ -55,8 +55,10 @@ export const zhLocale: HopeThemeLocaleData = {
   },
 
   encryptLocales: {
-    title: "请输入密码",
-    errorHint: "请输入正确密码",
+    title: "文章已加密",
+    placeholder: "输入密码",
+    remember: "记住密码",
+    errorHint: "请输入正确的密码",
   },
 
   routeLocales: {

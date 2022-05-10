@@ -55,7 +55,9 @@ export const brLocale: HopeThemeLocaleData = {
   },
 
   encryptLocales: {
-    title: "Por favor, entre a senha",
+    title: "Page Encrypted",
+    placeholder: "Entre a senha",
+    remember: "Remember password",
     errorHint: "Por favor, entre a senha correta!",
   },
 

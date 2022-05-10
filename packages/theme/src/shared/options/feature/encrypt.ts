@@ -4,6 +4,10 @@ export interface HopeThemeEncryptLocaleData {
    */
   title: string;
 
+  placeholder: string;
+
+  remember: string;
+
   /**
    * Passwrod error hint
    */

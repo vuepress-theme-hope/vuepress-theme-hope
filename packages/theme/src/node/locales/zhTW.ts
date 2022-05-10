@@ -55,7 +55,9 @@ export const zhTWLocale: HopeThemeLocaleData = {
   },
 
   encryptLocales: {
-    title: "請輸入密碼",
+    title: "頁面已加密",
+    placeholder: "輸入密碼",
+    remember: "記憶密碼",
     errorHint: "請輸入正確密碼",
   },
 

@@ -3,11 +3,11 @@ import { computed, defineComponent, h, toRef, unref } from "vue";
 import { RouterLink } from "vue-router";
 
 import {
-  LockIcon,
   SlideIcon,
   StickyIcon,
 } from "@theme-hope/module/blog/components/icons";
 import { useArticleInfo } from "@theme-hope/module/blog/composables";
+import { LockIcon } from "@theme-hope/module/encrypt/components/icons";
 import { usePathEncrypt } from "@theme-hope/module/encrypt/composables";
 
 import type { PropType, VNode } from "vue";

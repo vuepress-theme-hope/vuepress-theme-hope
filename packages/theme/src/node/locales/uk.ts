@@ -55,7 +55,9 @@ export const ukLocale: HopeThemeLocaleData = {
   },
 
   encryptLocales: {
-    title: "Будь ласка, введіть пароль",
+    title: "Page Encrypted",
+    placeholder: "Enter password",
+    remember: "Remember password",
     errorHint: "Будь ласка, введіть правильний пароль!",
   },
 

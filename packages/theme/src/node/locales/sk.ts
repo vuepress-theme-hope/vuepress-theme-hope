@@ -55,7 +55,9 @@ export const skLocale: HopeThemeLocaleData = {
   },
 
   encryptLocales: {
-    title: "Prosím, zadaj heslo",
+    title: "Page Encrypted",
+    placeholder: "Enter password",
+    remember: "Remember password",
     errorHint: "Prosím, zadaj správne heslo!",
   },
 
