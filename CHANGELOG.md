@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.54](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.53...v2.0.0-beta.54) (2022-05-10)
+
+### Features
+
+- **theme:** support remember password ([acbf0b7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/acbf0b715690f3b4a163b70ea934f15a2310b4e2))
+
+### Bug Fixes
+
+- fix zh-TW locales, fix [#1809](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1809) ([149cd61](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/149cd615d226173f31e3145ade5e0f2bc96e4024))
+- **md-enhance:** fix checkbox border on safari ([ffc80ed](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ffc80ed7eab94498e94d0a1beb67a6e5f45b0830))
+
 ## [2.0.0-beta.53](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.52...v2.0.0-beta.53) (2022-05-09)
 
 ### Bug Fixes
