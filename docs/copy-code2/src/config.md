@@ -6,7 +6,7 @@ icon: config
 ## selector
 
 - Type: `string | string[]`
-- Default: `".theme-default-content div[class*="language-"] pre"`
+- Default: `'.theme-default-content div[class*="language-"] pre'`
 
 Code block selector
 
