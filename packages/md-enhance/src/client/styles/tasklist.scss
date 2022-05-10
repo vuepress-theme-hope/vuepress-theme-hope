@@ -1,5 +1,6 @@
 input[type="checkbox"].task-list-item-checkbox {
   position: relative;
+  border: 0;
   cursor: pointer;
 
   &::after {
