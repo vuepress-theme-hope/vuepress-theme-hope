@@ -1,5 +1,5 @@
 import { usePageFrontmatter, usePageLang } from "@vuepress/client";
-import { computed, defineComponent, h, onMounted } from "vue";
+import { computed, defineComponent, h, onMounted, ref } from "vue";
 import { enableGiscus, giscusOption } from "../define";
 
 import type { VNode } from "vue";
@@ -38,6 +38,7 @@ export default defineComponent({
 
   setup(props) {
     const frontmatter = usePageFrontmatter<CommentPluginFrontmatter>();
+    const loaded = ref(false);
 
     const giscusLang = computed(() => {
       const lang = usePageLang().value as GiscusLang;
@@ -78,7 +79,9 @@ export default defineComponent({
     }));
 
     onMounted(() => {
-      import("giscus");
+      void import("giscus").then(() => {
+        loaded.value = true;
+      });
     });
 
     return (): VNode =>
@@ -93,7 +96,7 @@ export default defineComponent({
             display: enableComment.value ? "block" : "none",
           },
         },
-        h("giscus-widget", config.value)
+        loaded.value ? h("giscus-widget", config.value) : []
       );
   },
 });
