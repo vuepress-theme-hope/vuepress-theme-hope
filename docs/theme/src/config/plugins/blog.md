@@ -27,6 +27,15 @@ For instructions, please see [Blog Intro](../../guide/blog/intro.md).
 
 Whether to generate excerpt for every page.
 
+### filter
+
+- Type: `(page: Page) => boolean`
+- Default: `(page) => Boolean(page.filePathRelative) && !page.frontmatter.home`
+
+Page filter, determine whether a page should be included.
+
+By default, all the pages generated from Markdown files but not homepage will be included as articles.
+
 ### article
 
 - Type: `string`
