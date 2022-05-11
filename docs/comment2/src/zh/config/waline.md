@@ -12,8 +12,8 @@ Waline 的服务端地址。
 
 ## emoji
 
-- 类型: `(string | EmojiInfo)[]`
-- 默认值: `['https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo']`
+- 类型: `(string | WalineEmojiInfo)[] | false`
+- 默认值: `['//unpkg.com/@waline/emojis@1.0.1/weibo']`
 
 表情设置，详见 [自定义表情](../guide/client/emoji.md)
 
@@ -33,6 +33,8 @@ Waline 的服务端地址。
 - **Docusaurus**: 它会在 `<html>` 上通过设置 `data-theme="dark"` 开启暗黑模式，那么你需要将 `dark` 选项设置为 `'html[data-theme="dark"]'`。
 
 - **hexo-theme-fluid**: 它会在 `<html>` 上通过设置 `data-user-color-scheme="dark"` 开启暗黑模式。那么你需要将 `dark` 选项设置为 `'html[data-user-color-scheme="dark"]'`。
+
+- **vuepress-theme-hope**: 它会在 `<body>` 上添加`theme-dark` class 来开启暗黑模式。那么你需要将 `dark` 选项设置为 `body.theme-dark`。
 
 :::
 
@@ -81,92 +83,6 @@ Waline 的服务端地址。
 
 评论列表分页，每页条数。
 
-## imageUploader
-
-- 类型: `Function | false`
-- 必填: 否
-
-自定义图片上传方法，方便更好的存储图片。方法执行时会将图片对象传入。
-
-你可以设置为 `false` 以禁用图片上传功能，默认行为是将图片 Base 64 编码嵌入。
-
-## highlighter
-
-- 类型: `Highlighter | false`
-- 必填: 否
-
-**代码高亮**，默认使用 `hanabi`，你可以传入一个自己的代码高亮器。
-
-```ts
-(code: string, lang: string) => string
-
-// 或
-
-(
-  code: string,
-  lang: string,
-  callback?: (error: unknown | undefined, code?: string) => void
-) => void;
-```
-
-你可以设置为 `false` 以禁用代码高亮功能。
-
-## texRenderer
-
-- 类型: `(blockMode: boolean, tex: string) => string | false`
-- 必填: 否
-
-自定义数学公式的渲染方法，方便更好的预览数学公式。更多请参考 [KaTeX API](https://katex.org/docs/api.html#server-side-rendering-or-rendering-to-a-string) 或 [MathJax API](http://docs.mathjax.org/en/latest/web/typeset.html#converting-a-math-string-to-other-formats)。
-
-你可以设置为 `false` 以禁止预览数学公式。
-
-## walineLocales
-
-- Type: `WalineLocaleConfig`
-
-  ```ts
-  interface WalineLocaleData {
-    nick: string;
-    nickError: string;
-    mail: string;
-    mailError: string;
-    link: string;
-    optional: string;
-    placeholder: string;
-    sofa: string;
-    submit: string;
-    reply: string;
-    cancelReply: string;
-    comment: string;
-    refresh: string;
-    more: string;
-    preview: string;
-    emoji: string;
-    uploadImage: string;
-    seconds: string;
-    minutes: string;
-    hours: string;
-    days: string;
-    now: string;
-    uploading: string;
-    login: string;
-    logout: string;
-    admin: string;
-    sticky: string;
-    word: string;
-    wordHint: string;
-    anonymous: string;
-  }
-
-  interface WalineLocaleConfig {
-    [localePath: string]: WalineLocaleData;
-  }
-  ```
-
-- 必填: 否
-
-Waline 国际化配置。详见 [Waline 自定义语言](https://waline.js.org/guide/client/i18n.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E8%AF%AD%E8%A8%80)
-
 ## copyright
 
 - 类型: `boolean`
@@ -174,3 +90,9 @@ Waline 国际化配置。详见 [Waline 自定义语言](https://waline.js.org/g
 - 必填: 否
 
 是否显示页脚版权信息。
+
+::: tip
+
+我们希望你保持打开以支持 Waline。
+
+:::
