@@ -26,7 +26,7 @@ Sometimes, you may not want some of your articles to be copied by others, or you
 
 Since half of the users use this theme to build documents, and document sites usually do not need to add copyright information, this plugin is not enabled by default.
 
-::: Enable Plugin
+::: info
 
 To enable this plugin, you need to set `plugins.copyright` in theme options to `true` or an object.
 

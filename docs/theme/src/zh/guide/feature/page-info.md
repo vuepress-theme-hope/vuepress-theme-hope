@@ -8,7 +8,7 @@ tag:
   - 页面信息
 ---
 
-通过引入 [`@mr-hope/vuepress-plugin-components`][components]，`vuepress-theme-hope` 实现了文章信息展示。
+`vuepress-theme-hope` 实现了文章信息展示。
 
 <!-- more -->
 
@@ -91,5 +91,3 @@ date: 2020-01-01
 pageview: false
 ---
 ```
-
-[components]: https://vuepress-theme-hope.github.io/v2/components/zh/

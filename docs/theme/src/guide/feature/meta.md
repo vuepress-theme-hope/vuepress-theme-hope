@@ -34,9 +34,11 @@ Since the last update time is `git` based, you can only enable it in a `git` bas
 
 :::
 
-::: danger Not available in dev
+::: danger Not available in dev server
 
-Since the `git` plugin has a serious performance impact, the theme will not enable it in devServer. If you need it, please import the plugin yourself in config files, or add the `--debug` flag to run dev command.
+Since the `git` plugin has a serious performance impact, the theme will not enable it in dev server by default.
+
+If you need those info, please set `plugins.git: true` in theme options, or add the `--debug` flag to run dev command.
 
 :::
 

@@ -79,7 +79,7 @@ To support pnpm, you should apply `vuepress-theme-hope` using new syntax:
 ```diff
 - import { defineHopeConfig } from "vuepress-theme-hope";
 + import { defineUserConfig } from "vuepress";
-+ import { hopeTheme } = from "vuepress-theme-hope";
++ import { hopeTheme } from "vuepress-theme-hope";
 
 - export default defineHopeConfig({
 -   themeConfig: {
@@ -97,7 +97,6 @@ Besides providing `hopeTheme`, all `defineXXXConfig` exports are removed, `vuepr
 
 - `navbar`
 - `sidebar`
-- `hopeTheme`
 - `arraySidebar`
 - `objectSidebar`
 

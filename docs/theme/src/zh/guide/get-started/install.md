@@ -16,6 +16,14 @@ tag:
 
 :::: code-group
 
+::: code-group-item pnpm
+
+```bash
+pnpm create vuepress-theme-hope@next [dir]
+```
+
+:::
+
 <!-- ::: code-group-item yarn
 
 ```bash

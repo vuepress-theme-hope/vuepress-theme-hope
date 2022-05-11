@@ -95,7 +95,7 @@ pnpm 的一些功能可以保证你拥有正确的依赖。
 
 ```sh
 corepack enable
-corepack prepare pnpm@7.0.0 --activate
+corepack prepare pnpm@7.0.1 --activate
 ```
 
 ::: tip 在 Windows 上打开终端

@@ -16,6 +16,14 @@ Create a vuepress-theme-hope project in `[dir]` folder under the current project
 
 :::: code-group
 
+::: code-group-item pnpm
+
+```bash
+pnpm create vuepress-theme-hope@next [dir]
+```
+
+:::
+
 <!-- ::: code-group-item yarn
 
 ```bash

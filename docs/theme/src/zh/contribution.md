@@ -25,7 +25,7 @@ pnpm i
 
 ```sh
 corepack enable
-corepack prepare pnpm@7.0.0 --activate
+corepack prepare pnpm@7.0.1 --activate
 ```
 
 :::

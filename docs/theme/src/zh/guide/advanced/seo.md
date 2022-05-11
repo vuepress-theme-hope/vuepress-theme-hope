@@ -251,3 +251,6 @@ function customHead<
 ## 相关工具
 
 - [Google 富媒体结构测试工具](https://search.google.com/test/rich-results)
+
+[seo2]: https://vuepress-theme-hope.github.io/v2/seo/zh/
+[seo2-config]: https://vuepress-theme-hope.github.io/v2/seo/zh/config.html

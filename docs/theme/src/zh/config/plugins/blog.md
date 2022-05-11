@@ -27,6 +27,15 @@ tag:
 
 是否为每个页面生成摘录。
 
+### filter
+
+- 类型: `(page: Page) => boolean`
+- 默认: `(page) => Boolean(page.filePathRelative) && !page.frontmatter.home`
+
+页面过滤器，此函数用于鉴别页面是否作为文章。
+
+默认情况下，所有从 Markdown 源文件中生成的非主页页面，会被作为文章。
+
 ### article
 
 - 类型: `string`

@@ -8,7 +8,7 @@ tag:
   - Page Info
 ---
 
-By including [`@mr-hope/vuepress-plugin-components`][components], `vuepress-theme-hope` can display article information for you.
+`vuepress-theme-hope` can display article information for you.
 
 <!-- more -->
 
@@ -91,5 +91,3 @@ Example:
 pageview: false
 ---
 ```
-
-[components]: https://vuepress-theme-hope.github.io/v2/components/

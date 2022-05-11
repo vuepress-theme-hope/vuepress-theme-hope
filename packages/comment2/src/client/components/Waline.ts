@@ -56,8 +56,8 @@ export default defineComponent({
         ...(walineOption.locale || {}),
       },
       emoji: [
-        "https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/weibo",
-        "https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili",
+        "//unpkg.com/@waline/emojis@1.0.1/weibo",
+        "//unpkg.com/@waline/emojis@1.0.1/bilibili",
       ],
       dark: "html.dark",
       ...walineOption,
