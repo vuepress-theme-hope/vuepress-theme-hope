@@ -27,9 +27,11 @@ export const getSEOPlugin = (
 
     const localePath = path.replace(new RegExp(`^${pathLocale}`), "/");
 
-    return Object.keys(blogOptions).every(
-      (path) => !localePath.startsWith(path)
-    );
+    return Object.entries(blogOptions)
+      .filter<[string, string]>(
+        (item): item is [string, string] => typeof item[1] === "string"
+      )
+      .every(([, value]) => !localePath.startsWith(value));
   };
 
   const seoOptions: SeoOptions = {
