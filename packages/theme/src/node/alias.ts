@@ -49,6 +49,7 @@ export const resolveAlias = (isDebug = false): Record<string, string> => {
           ),
       ])
       .flat(),
+    ["crypto", path.resolve(__dirname, "./empty-chunk")],
   ]);
 
   if (isDebug) console.log("Theme alias config:", alias);

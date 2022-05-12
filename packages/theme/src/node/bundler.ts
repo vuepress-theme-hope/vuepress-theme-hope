@@ -1,5 +1,4 @@
 import { addViteOptimizeDepsInclude, tagHint } from "@mr-hope/vuepress-shared";
-import { handleCrytoForWebpack } from "./encrypt";
 
 import type { App } from "@vuepress/core";
 import type { ViteBundlerOptions } from "@vuepress/bundler-vite";
@@ -75,5 +74,4 @@ export const updateBundlerConfig = (config: unknown, app: App): void => {
   addViteOptimizeDepsInclude({ app, config }, "@vueuse/core");
 
   checkTag(config, app);
-  handleCrytoForWebpack(config, app);
 };

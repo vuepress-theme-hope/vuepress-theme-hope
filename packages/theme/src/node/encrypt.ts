@@ -2,38 +2,9 @@ import { logger } from "./utils";
 import { hashSync } from "bcrypt-ts";
 
 import type {
-  WebpackBundlerOptions,
-  WebpackConfiguration,
-} from "@vuepress/bundler-webpack";
-import type { App } from "@vuepress/core";
-import type {
   HopeThemeEncryptConfig,
   HopeThemeEncryptOptions,
 } from "../shared";
-
-export const handleCrytoForWebpack = (config: unknown, app: App): void => {
-  const { bundler } = app.options;
-
-  // for webpack
-  if (bundler.name.endsWith("webpack")) {
-    const webpackBundlerConfig = config as WebpackBundlerOptions;
-    const { configureWebpack } = webpackBundlerConfig;
-
-    webpackBundlerConfig.configureWebpack = (
-      config: WebpackConfiguration,
-      isServer: boolean,
-      isBuild: boolean
-    ): WebpackConfiguration | void => {
-      if (!config.resolve) config.resolve = {};
-
-      config.resolve.fallback = { crypto: false, ...config.resolve.fallback };
-
-      const result = configureWebpack?.(config, isServer, isBuild);
-
-      if (result) return result;
-    };
-  }
-};
 
 export const resolveEncrypt = (
   encrypt: HopeThemeEncryptOptions
