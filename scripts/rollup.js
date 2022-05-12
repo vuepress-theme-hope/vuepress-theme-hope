@@ -2,7 +2,7 @@ import commonjs from "@rollup/plugin-commonjs";
 import json from "@rollup/plugin-json";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
 import typescript from "@rollup/plugin-typescript";
-import rollupCopy from "rollup-plugin-copy";
+import copy from "rollup-plugin-copy";
 import dts from "rollup-plugin-dts";
 import { terser } from "rollup-plugin-terser";
 import shebang from "./shebang";
@@ -16,7 +16,7 @@ export const rollupTypescript = (
     external = [],
     dtsExternal = [],
     resolve = false,
-    copy = [],
+    copy: copyOptions = [],
     tsconfig = {},
     output = {},
     inlineDynamicImports = true,
@@ -40,10 +40,10 @@ export const rollupTypescript = (
       json(),
       ...(resolve ? [nodeResolve({ preferBuiltins: true }), commonjs()] : []),
       ...(isProduction ? [terser()] : []),
-      ...(copy.length
+      ...(copyOptions.length
         ? [
-            rollupCopy({
-              targets: copy.map((item) =>
+            copy({
+              targets: copyOptions.map((item) =>
                 typeof item === "string"
                   ? { src: `./src/${item}`, dest: `./lib/${item}` }
                   : { src: `./src/${item[0]}`, dest: `./lib/${item[1]}` }
