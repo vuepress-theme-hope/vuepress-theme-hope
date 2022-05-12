@@ -19,15 +19,13 @@ jobs:
         uses: pnpm/action-setup@v2
         with:
           version: 7
+          run_install: true
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 16
           cache: pnpm
-
-      - name: Install Deps
-        run: pnpm install --frozen-lockfile
 
       - name: Build project
         env:
@@ -83,15 +81,13 @@ jobs:
         uses: pnpm/action-setup@v2
         with:
           version: 7
+          run_install: true
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 16
           cache: pnpm
-
-      - name: Install Deps
-        run: pnpm install --frozen-lockfile
 
       - name: Build project
         env:
@@ -144,15 +140,13 @@ jobs:
         uses: pnpm/action-setup@v2
         with:
           version: 7
+          run_install: true
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 16
           cache: pnpm
-
-      - name: Install Deps
-        run: pnpm install --frozen-lockfile
 
       - name: Build project
         env:
@@ -216,15 +210,13 @@ jobs:
         uses: pnpm/action-setup@v2
         with:
           version: 7
+          run_install: true
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 16
           cache: pnpm
-
-      - name: Install Deps
-        run: pnpm install --frozen-lockfile
 
       - name: Build project
         env:
