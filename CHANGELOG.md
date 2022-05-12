@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.56](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.55...v2.0.0-beta.56) (2022-05-12)
+
+### Bug Fixes
+
+- **theme:** fix Breadcrumb seo ([efce132](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/efce13225417e1f716e33d840411798c2b7d3d95))
+- **theme:** fix crypto issues ([ac240ca](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ac240ca72a71e3fc5c58298cfda5977a36a8a217))
+
 ## [2.0.0-beta.55](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.54...v2.0.0-beta.55) (2022-05-12)
 
 ### Bug Fixes
