@@ -3,12 +3,15 @@
   "version": "2.0.0-beta.54",
   "description": "A comment plugin for vuepress",
   "keywords": [
+    "vuepress",
+    "vuepress2",
     "vuepress-plugin",
     "vuepress-blog",
+    "blog",
     "comment",
-    "valine",
-    "vssue",
-    "page-info"
+    "giscus",
+    "twikoo",
+    "waline"
   ],
   "homepage": "https://vuepress-theme-hope.github.io/v2/comment/",
   "bugs": {

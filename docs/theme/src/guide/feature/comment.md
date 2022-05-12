@@ -88,17 +88,6 @@ Currently you can choose from Giscus, Waline and Twikoo.
 
 :::
 
-<!-- You can choose from 2 comment service provider: Waline and Vssue.
-
-::: tip Comparison between services
-
-- Waline uses a backend server to support comment and pageview statistics, and you can comment without logging in to any account. It needs extra configuration on backend, and you can deploy on vercel for free.
-- Vssue uses the issue panel of the code platform repo and requires the user to login or register the corresponding platform account.
-
-If your site is for the general public rather than programmers, Waline is recommended.
-
-::: -->
-
 ## Giscus
 
 Giscus is a GitHub Dicussion based commenting system that is easy to start.

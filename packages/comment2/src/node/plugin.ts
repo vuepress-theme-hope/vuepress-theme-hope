@@ -35,11 +35,6 @@ export const commentPlugin =
 
     useSassPalettePlugin(app, { id: "hope" });
 
-    // TODO: Wait for Vssue to support vue3
-    // if (options.type === "vssue")
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    // app.use("@vssue/vuepress-plugin-vssue", options);
-
     return {
       name: "vuepress-plugin-comment2",
 

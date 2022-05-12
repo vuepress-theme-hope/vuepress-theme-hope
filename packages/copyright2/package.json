@@ -3,10 +3,10 @@
   "version": "2.0.0-beta.54",
   "description": "Copyright plugin for VuePress",
   "keywords": [
-    "vuepress-plugin",
     "vuepress",
-    "copyright",
-    "mr-hope"
+    "vuepress2",
+    "vuepress-plugin",
+    "copyright"
   ],
   "homepage": "https://github.com/vuepress-theme-hope/vuepress-theme-hope/packages/copyright#readme",
   "bugs": {

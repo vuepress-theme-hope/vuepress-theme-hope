@@ -87,17 +87,6 @@ module.exports = {
 
 :::
 
-<!-- 有两个服务: Waline 和 Vssue -->
-
-<!-- ::: tip 评论服务的比较
-
-- Waline 需要后端服务器以及额外的配置，支持页面访问量统计，无需登录账号即可评论。可以使用 Vercel。
-- Vssue 使用代码平台仓库的 issue 面板，需要用户登录或注册相应平台账号。
-
-如果你的站点面向大众而非程序员，推荐使用 Waline。
-
-::: -->
-
 ## Giscus
 
 Giscus 是一个基于 GitHub Dicussion 的评论系统，启用简便。

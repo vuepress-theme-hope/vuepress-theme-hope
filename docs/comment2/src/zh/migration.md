@@ -13,4 +13,4 @@ icon: change
 
 - Vssue 目前缺失 ![警告](https://img.shields.io/badge/-warning-yellow)
 
-  Vssue 是用 Vue2 编写的，作者 [meteorlxy](https://github.com/meteorlxy) 尚未使其与 VuePress2 兼容
+  Vssue 是用 Vue2 编写的，作者 [meteorlxy](https://github.com/meteorlxy) 尚未使其与 Vue3 兼容

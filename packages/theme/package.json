@@ -3,9 +3,11 @@
   "version": "2.0.0-beta.54",
   "description": "A light vuepress theme with tons of features",
   "keywords": [
-    "vuepress-theme",
     "vuepress",
+    "vuepress2",
     "theme",
+    "vuepress-theme",
+    "blog",
     "vuepress-blog",
     "vuepress-theme-blog"
   ],
