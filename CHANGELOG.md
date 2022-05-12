@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.55](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.54...v2.0.0-beta.55) (2022-05-12)
+
+### Bug Fixes
+
+- **comment2:** fix giscus darkmode, fix [#1656](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1656) ([149885c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/149885c75eda573365a5a0979dbabb418ccd3b34))
+- **theme:** fix seo plugin options ([69e6fec](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/69e6fec95d06593488286e07cfeb1add5fc344a1))
+
 ## [2.0.0-beta.54](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.53...v2.0.0-beta.54) (2022-05-10)
 
 ### Features
