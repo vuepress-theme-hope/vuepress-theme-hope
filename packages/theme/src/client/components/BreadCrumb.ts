@@ -94,26 +94,35 @@ export default defineComponent({
                     property: "itemListElement",
                     typeof: "ListItem",
                   },
-                  h(
-                    RouterLink,
-                    {
-                      to: item.path,
-                      property: "item",
-                      typeof: "WebPage",
-                    },
-                    () => [
-                      // icon
-                      iconEnable.value && item.icon
-                        ? h("i", {
-                            class: ["icon", `${iconPrefix.value}${item.icon}`],
-                          })
-                        : null,
-                      // text
-                      h("span", { property: "name" }, item.title || "Unknown"),
-                      // meta
-                      h("meta", { property: "position", content: index + 1 }),
-                    ]
-                  )
+                  [
+                    h(
+                      RouterLink,
+                      {
+                        to: item.path,
+                        property: "item",
+                        typeof: "WebPage",
+                      },
+                      () => [
+                        // icon
+                        iconEnable.value && item.icon
+                          ? h("i", {
+                              class: [
+                                "icon",
+                                `${iconPrefix.value}${item.icon}`,
+                              ],
+                            })
+                          : null,
+                        // text
+                        h(
+                          "span",
+                          { property: "name" },
+                          item.title || "Unknown"
+                        ),
+                      ]
+                    ),
+                    // meta
+                    h("meta", { property: "position", content: index + 1 }),
+                  ]
                 )
               )
             )
