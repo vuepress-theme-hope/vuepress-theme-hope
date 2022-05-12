@@ -3,6 +3,8 @@
   "version": "2.0.0-beta.54",
   "description": "Components plugin for vuepress-theme-hope",
   "keywords": [
+    "vuepress",
+    "vuepress2",
     "vuepress-plugin",
     "components"
   ],

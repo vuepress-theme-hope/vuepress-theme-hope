@@ -3,9 +3,9 @@
   "version": "2.0.0-beta.54",
   "description": "Shared files for vuepress-theme-hope",
   "keywords": [
-    "vuepress-theme-hope",
     "vuepress",
-    "mr-hope"
+    "vuepress2",
+    "utils"
   ],
   "homepage": "https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/v2/packages/shared#readme",
   "bugs": {

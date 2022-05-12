@@ -3,10 +3,10 @@
   "version": "2.0.0-beta.54",
   "description": "SEO plugin for vuepress",
   "keywords": [
+    "vuepress",
+    "vuepress2",
     "vuepress-plugin",
-    "seo",
-    "search",
-    "share"
+    "seo"
   ],
   "homepage": "https://vuepress-theme-hope.github.io/v2/seo/",
   "bugs": {

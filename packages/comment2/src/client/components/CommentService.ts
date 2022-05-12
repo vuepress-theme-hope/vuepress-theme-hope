@@ -1,5 +1,3 @@
-// TODO: Support vssue when it support vue3
-// import { usePageTitle } from "@mr-hope/vuepress-shared/lib/client";
 import { usePageFrontmatter } from "@vuepress/client";
 import { computed, defineComponent, h } from "vue";
 import Giscus from "@Giscus";
@@ -43,11 +41,6 @@ export default defineComponent({
         ? h(Twikoo, {
             style: { display: enable.value ? "block" : "none" },
           })
-        : // : type === "vssue"
-          // ? h(Vssue, {
-          //     title: usePageTitle().value,
-          //     style: { display: enable.value ? "block" : "none" },
-          //   })
-          null;
+        : null;
   },
 });

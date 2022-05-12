@@ -3,8 +3,10 @@
   "version": "2.0.0-beta.54",
   "description": "A common palette plugin for vuepress themes and plugins",
   "keywords": [
-    "vuepress-plugin",
     "vuepress",
+    "vuepress2",
+    "vuepress-plugin",
+    "sass",
     "palette"
   ],
   "homepage": "https://vuepress-theme-hope.github.io/v2/sass-palette/",

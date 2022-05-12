@@ -3,12 +3,13 @@
   "version": "2.0.0-beta.54",
   "description": "Photo Swipe plugin for vuepress",
   "keywords": [
-    "vuepress-plugin",
     "vuepress",
+    "vuepress2",
+    "vuepress-plugin",
     "photo-swipe",
+    "image",
     "preview",
-    "zoom",
-    "picture"
+    "zoom"
   ],
   "homepage": "https://vuepress-theme-hope.github.io/v2/photo-swipe/",
   "bugs": {

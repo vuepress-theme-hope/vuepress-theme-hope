@@ -3,10 +3,10 @@
   "version": "2.0.0-beta.54",
   "description": "Blog plugin for VuePress",
   "keywords": [
-    "vuepress-plugin",
     "vuepress",
-    "blog",
-    "mr-hope"
+    "vuepress2",
+    "vuepress-plugin",
+    "blog"
   ],
   "homepage": "https://vuepress-theme-hope.github.io/v2/blog/",
   "bugs": {

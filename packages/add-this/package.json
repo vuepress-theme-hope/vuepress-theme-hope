@@ -3,8 +3,9 @@
   "version": "2.0.0-beta.54",
   "description": "Add This plugin for vuepress",
   "keywords": [
-    "vuepress-plugin",
     "vuepress",
+    "vuepress2",
+    "vuepress-plugin",
     "add-this",
     "share"
   ],

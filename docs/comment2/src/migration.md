@@ -13,4 +13,4 @@ Renamed from `@mr-hope/vuepress-plugin-comment` to `vuepress-plugin-comment2`. â
 
 - Vssue is currently missing ![warning](https://img.shields.io/badge/-warning-yellow)
 
-  Vssue is written in Vue2, and the author [meteorlxy](https://github.com/meteorlxy) has not yet made it compatible with VuePress2 yet
+  Vssue is written in Vue2, and the author [meteorlxy](https://github.com/meteorlxy) has not yet made it compatible with Vue3 yet

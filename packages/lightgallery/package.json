@@ -3,10 +3,13 @@
   "version": "2.0.0-beta.54",
   "description": "Light Gallery plugin for VuePress",
   "keywords": [
-    "vuepress-plugin",
     "vuepress",
+    "vuepress2",
+    "vuepress-plugin",
     "lightgallery",
-    "mr-hope"
+    "image",
+    "preview",
+    "zoom"
   ],
   "homepage": "https://vuepress-theme-hope.github.io/v2/lightgallery/",
   "bugs": {
