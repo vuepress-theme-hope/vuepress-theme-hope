@@ -16,7 +16,8 @@ tag:
 
 <!-- more -->
 
-![首页截图](./assets/blog.png)
+![首页截图](./assets/blog-light.png#light)
+![首页截图](./assets/blog-dark.png#dark)
 
 ## Frontmatter 选项
 

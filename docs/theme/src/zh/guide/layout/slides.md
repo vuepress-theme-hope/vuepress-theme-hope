@@ -19,7 +19,8 @@ tag:
 
 [这里是一个展示了所有幻灯片功能的案例](https://vuepress-theme-hope.github.io/v2/md-enhance/zh/guide/presentation/demo.html).
 
-![幻灯片页截图](./assets/slides.png)
+![幻灯片页截图](./assets/slides-light.png#light)
+![幻灯片页截图](./assets/slides-dark.png#dark)
 
 ## 注意事项
 

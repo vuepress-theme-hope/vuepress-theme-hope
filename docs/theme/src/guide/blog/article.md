@@ -24,7 +24,8 @@ If you want the theme to automatically extract excerpts, set `plugins.blog.autoE
 
 All articles will be added to the article list by default and rendered under the path `/article/`.
 
-![Article list](./assets/article-list.png)
+![Article list](./assets/article-list-light.png#light)
+![Article list](./assets/article-list-dark.png#dark)
 
 If you don’t want the list to contain some specific articles, just set the `article` to `false` in the frontmatter of the article.
 

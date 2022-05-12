@@ -21,7 +21,7 @@ Also you can add your own styles in `.vuepress/styles/index.scss`.
 
 Responsive breakpoints:
 
-- `$pc`:
+- `$pc`
 - `$laptop`
 - `$pad`
 - `$tablet`

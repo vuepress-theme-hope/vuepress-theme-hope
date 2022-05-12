@@ -13,7 +13,8 @@ tag:
 
 <!-- more -->
 
-![博主信息](./assets/blogger-info.png)
+![博主信息](./assets/blogger-info-light.png#light)
+![博主信息](./assets/blogger-info-dark.png#dark)
 
 ## 头像和博主名称
 

@@ -16,7 +16,8 @@ You need to set `layout: Blog` and `home: true` in the frontmatter of homepage.
 
 <!-- more -->
 
-![Homepage screenshot](./assets/blog.png)
+![Homepage screenshot](./assets/blog=light.png#light)
+![Homepage screenshot](./assets/blog-dark.png#dark)
 
 ## Frontmatter Options
 

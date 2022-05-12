@@ -32,13 +32,8 @@ Page content...
 
 Then you can find it under the `/category/html` page.
 
-::: info Example
-
-![Category](./assets/category.png)
-
-- [Link](https://mrhope.site/category/javascript/)
-
-:::
+![Category](./assets/category-light.png#light)
+![Category](./assets/category-dark.png#dark)
 
 ## Tags
 
@@ -58,13 +53,8 @@ Page content...
 
 Then you can find it under the `/tag/html` and `/tag/web` pages.
 
-::: info Example
-
-![Tag](./assets/tag.png)
-
-- [Link](https://mrhope.site/tag/git/)
-
-:::
+![Tag](./assets/tag-light.png#light)
+![Tag](./assets/tag-dark.png#dark)
 
 ## View list
 

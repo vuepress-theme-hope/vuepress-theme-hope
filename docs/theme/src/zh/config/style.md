@@ -21,7 +21,7 @@ tag:
 
 响应式布局断点:
 
-- `$pc`:
+- `$pc`
 - `$laptop`
 - `$pad`
 - `$tablet`

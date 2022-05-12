@@ -25,7 +25,7 @@ If you have not installed pnpm, please install it using the following command.
 
 ```sh
 corepack enable
-corepack prepare pnpm@7.0.1 --activate
+corepack prepare pnpm@7.1.0 --activate
 ```
 
 :::
