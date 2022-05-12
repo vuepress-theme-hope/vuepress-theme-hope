@@ -24,6 +24,8 @@ A vuepress theme with tons of features✨ / 一个具有强大功能的 vuepress
 
 ## [English Docs](https://vuepress-theme-hope.github.io/v2/) / [中文文档](https://vuepress-theme-hope.github.io/v2/zh/)
 
+## [Online Demo / 在线案例](https://stackblitz.com/fork/vuepress-theme-hope)
+
 ## Contact
 
 We recommend you to contact using [issues](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues) and [discussions](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions), but you are welcome to join our [telegram group!](https://t.me/vuepressthemehope).
