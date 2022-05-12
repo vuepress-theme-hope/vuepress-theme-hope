@@ -3,24 +3,23 @@ import { execaCommand } from "execa";
 import ora from "ora";
 import inquirer from "inquirer";
 import pkg from "../../package.json";
-import { getNpmTags, getVersion } from "./version.js";
 import { sync } from "./sync.js";
-
-import type { Answers } from "./version.js";
 
 const { version: currentVersion } = pkg;
 const { prompt } = inquirer;
 
+const tags = ["next", "test", "alpha", "beta", "latest"];
+
 export const release = async (): Promise<void> => {
   ora(`Current version: ${chalk.green(currentVersion)}`).info();
 
-  const { npmTag } = await prompt<Answers>([
+  const { npmTag } = await prompt<{ npmTag: string }>([
     {
       name: "npmTag",
       message: "Input npm tag:",
       type: "list",
-      default: (answers: Answers): string => getNpmTags(getVersion(answers))[0],
-      choices: (answers: Answers): string[] => getNpmTags(getVersion(answers)),
+      default: tags[0],
+      choices: tags,
     },
   ]);
 
