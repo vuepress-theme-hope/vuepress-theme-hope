@@ -33,21 +33,21 @@ Whether display icons in navbar.
 
 ### logo <Badge text="Recommanded" />
 
-- Type: `string | null`
+- Type: `string`
 - Required: No
 
 Navbar logo, should be absolute path relative to `.vuepress/public` folder.
 
 ### logoDark
 
-- Type: `string | null`
+- Type: `string`
 - Required: No
 
 Navbar logo in darkmode, should be absolute path relative to `.vuepress/public` folder.
 
 ### repo
 
-- Type: `string | null`
+- Type: `string`
 - Required: No
 
 Repository link
@@ -61,7 +61,7 @@ Whether display repo link in navbar.
 
 ### repoLabel
 
-- Type: `string | null`
+- Type: `string`
 - Required: No
 
 Repository aria label of navbar.

@@ -30,7 +30,7 @@ Whether to display the icon and description of the home page.
 
 ### bgImage
 
-- Type: `string`
+- Type: `string | false`
 
 For the address of the background picture, you must fill in the absolute path. If not filled in, a default landscape picture will be automatically applied.
 

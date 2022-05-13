@@ -35,14 +35,14 @@ Page title, will be used in breadcrumb, seo, etc.
 
 ### heroText
 
-- Type: `string | null`
+- Type: `string | false`
 - Default: `"Hello"`
 
 Hero Title
 
 ### tagline
 
-- Type: `string | null`
+- Type: `string | false`
 - Default: `"Welcome to your VuePress site"`
 
 Short description in hero

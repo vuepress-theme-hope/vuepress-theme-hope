@@ -33,21 +33,21 @@ tag:
 
 ### logo <Badge text="建议配置" />
 
-- 类型: `string | null`
+- 类型: `string`
 - 必填: 否
 
 导航栏图标，应为基于 `.vuepress/public` 文件夹的绝对路径。
 
 ### logoDark
 
-- 类型: `string | null`
+- 类型: `string`
 - 必填: 否
 
 夜间模式下导航栏图标，应为基于 `.vuepress/public` 文件夹的绝对路径。
 
 ### repo
 
-- 类型: `string | null`
+- 类型: `string`
 - 必填: 否
 
 仓库配置，用于在导航栏中显示仓库链接。
@@ -61,7 +61,7 @@ tag:
 
 ### repoLabel
 
-- 类型: `string | null`
+- 类型: `string`
 - 必填: 否
 
 用于导航栏仓库按钮的无障碍标签。

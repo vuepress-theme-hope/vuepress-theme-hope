@@ -37,35 +37,35 @@ tag:
 
 ### heroText
 
-- 类型: `string | null`
+- 类型: `string | false`
 - 默认值: `"Hello"`
 
 主页标题
 
 ### tagline
 
-- 类型: `string | null`
+- 类型: `string | false`
 - 默认值: `"Welcome to your VuePress site"`
 
 附加文字描述
 
 ### heroImage
 
-- 类型: `string | null`
+- 类型: `string`
 - 必填: 否
 
 主页图标 (logo) 地址，需要填入绝对路径 (图片需要放入 `.vuepress/public` 文件夹)
 
 ### heroImageDark
 
-- 类型: `string | null`
+- 类型: `string`
 - 必填: 否
 
 深色模式下主页图标 (logo) 地址，需要填入绝对路径 (图片需要放入 `.vuepress/public` 文件夹)，默认同 `heroImage`。
 
 ### heroAlt
 
-- 类型: `string | null`
+- 类型: `string`
 - 必填: 否
 
 主页图标的替代文字

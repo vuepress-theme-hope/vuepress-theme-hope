@@ -21,13 +21,13 @@ export default defineComponent({
     const siteLocale = useSiteLocaleData();
 
     const heroText = computed(() => {
-      if (frontmatter.value.heroText === null) return null;
+      if (frontmatter.value.heroText === false) return false;
 
       return frontmatter.value.heroText || siteLocale.value.title || "Hello";
     });
 
     const tagline = computed(() => {
-      if (frontmatter.value.tagline === null) return null;
+      if (frontmatter.value.tagline === false) return false;
 
       return (
         frontmatter.value.tagline ||
@@ -81,14 +81,12 @@ export default defineComponent({
           h("div", { class: "hero-info" }, [
             heroText.value
               ? h(DropTransition, { appear: true, delay: 0.04 }, () =>
-                  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                  h("h1", { id: "main-title" }, heroText.value!)
+                  h("h1", { id: "main-title" }, heroText.value as string)
                 )
               : null,
             tagline.value
               ? h(DropTransition, { appear: true, delay: 0.08 }, () =>
-                  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                  h("p", { class: "description" }, tagline.value!)
+                  h("p", { class: "description" }, tagline.value as string)
                 )
               : null,
             actions.value.length
