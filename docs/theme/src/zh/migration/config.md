@@ -117,7 +117,9 @@ tag:
 
 ### 页面链接
 
-- 移除 `prevLinks` 和 `nextLinks`
+- `prevLinks` 重命名为 `prevLink`
+
+- `nextLinks` 重命名为 `nextLink`
 
 - `editLinks` 重命名为 `editLink`
 

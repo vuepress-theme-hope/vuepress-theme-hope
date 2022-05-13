@@ -28,13 +28,13 @@ import "../styles/page-nav.scss";
 const resolveFromFrontmatterConfig = (
   conf: unknown
 ): null | false | AutoLinkType => {
-  if (conf === false) return null;
+  if (conf === false) return false;
 
   if (isString(conf)) return useAutoLink(conf);
 
   if (isPlainObject<AutoLinkType>(conf)) return conf;
 
-  return false;
+  return null;
 };
 
 /**
@@ -83,17 +83,23 @@ export default defineComponent({
     const prevNavLink = computed(() => {
       const prevConfig = resolveFromFrontmatterConfig(frontmatter.value.prev);
 
-      return prevConfig !== false
-        ? prevConfig
-        : resolveFromSidebarItems(sidebarItems.value, route.path, -1);
+      return prevConfig === false
+        ? null
+        : prevConfig ||
+            (themeLocale.value.prevLink === false
+              ? null
+              : resolveFromSidebarItems(sidebarItems.value, route.path, -1));
     });
 
     const nextNavLink = computed(() => {
       const nextConfig = resolveFromFrontmatterConfig(frontmatter.value.next);
 
-      return nextConfig !== false
-        ? nextConfig
-        : resolveFromSidebarItems(sidebarItems.value, route.path, 1);
+      return nextConfig === false
+        ? null
+        : nextConfig ||
+            (themeLocale.value.nextLink === false
+              ? null
+              : resolveFromSidebarItems(sidebarItems.value, route.path, 1));
     });
 
     useEventListener("keydown", (event): void => {

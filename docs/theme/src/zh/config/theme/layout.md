@@ -127,6 +127,20 @@ tag:
 
 是否在路径导航显示图标。
 
+### prevLink
+
+- 类型: `boolean`
+- 默认值: `true`
+
+是否在页面底部显示上一篇链接。
+
+### nextLink
+
+- 类型: `boolean`
+- 默认值: `true`
+
+是否在页面底部显示下一篇链接。
+
 ## 标题
 
 ### titleIcon

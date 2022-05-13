@@ -119,7 +119,9 @@ Since the theme no longer has a built-in search:
 
 ### Page Link
 
-- remove `prevLinks` and `nextLinks`
+- rename `prevLinks` to `prevLink`
+
+- rename `nextLinks` to `nextLink`
 
 - rename `editLinks` to `editLink`
 

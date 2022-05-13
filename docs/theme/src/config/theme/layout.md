@@ -127,6 +127,20 @@ Whether enable route navigation globally.
 
 Whether show icons in route navigation
 
+### prevLink
+
+- Type: `boolean`
+- Default: `true`
+
+Whether show prevLink in bottom.
+
+### nextLink
+
+- Type: `boolean`
+- Default: `true`
+
+Whether show nextLink in bottom.
+
 ## Title
 
 ### titleIcon
