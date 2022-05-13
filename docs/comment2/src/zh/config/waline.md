@@ -15,7 +15,7 @@ Waline 的服务端地址。
 - 类型: `(string | WalineEmojiInfo)[] | false`
 - 默认值: `['//unpkg.com/@waline/emojis@1.0.1/weibo']`
 
-表情设置，详见 [自定义表情](../guide/client/emoji.md)
+表情设置，详见 [自定义表情](https://waline.js.org/guide/client/emoji.html)
 
 ## dark
 

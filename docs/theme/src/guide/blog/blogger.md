@@ -13,7 +13,8 @@ Themes allow you to display basic information about the blogger.
 
 <!-- more -->
 
-![Blogger info](./assets/blogger-info.png)
+![Blogger info](./assets/blogger-info-light.png#light)
+![Blogger info](./assets/blogger-info-dark.png#dark)
 
 ## Avatar and blogger name
 

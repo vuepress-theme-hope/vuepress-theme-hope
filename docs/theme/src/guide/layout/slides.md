@@ -19,7 +19,8 @@ You need to set `layout: Slide` in the frontmatter of the corresponding page to 
 
 [Here is a demo containing all the slide features](https://vuepress-theme-hope.github.io/v2/md-enhance/guide/presentation/demo.html).
 
-![Slide page screenshot](./assets/slides.png)
+![Slide page screenshot](./assets/slides-light.png#light)
+![Slide page screenshot](./assets/slides-dark.png#dark)
 
 ## Attention
 

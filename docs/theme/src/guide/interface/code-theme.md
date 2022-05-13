@@ -9,7 +9,7 @@ tag:
   - Code Themes
 ---
 
-`vuepress-theme-hope` allows you to globally configure code them themes separately for lightmode and darkmode.
+`vuepress-theme-hope` allows you to set code block themes for lightmode and darkmode globally.
 
 <!-- more -->
 
@@ -21,16 +21,16 @@ Due to output size consideration, we will not import all styles globally to supp
 
 ## How to Customize
 
-Set `$code-light-theme` and `$code-dark-theme` variables in `.vuepress/styles/config.scss` to config code themes used under lightmode and darkmode.
+You should configure following variables in `.vuepress/styles/config.scss` to set code themes.
 
-Their default values ​​are `"one-light"` and `"one-dark"`.
+- `$code-light-theme`: code theme used in light mode, default is `"one-light"`
+- `$code-dark-theme`: code theme used in dark mode, default is `"one-dark"`
 
 ## Available Themes
 
 ::: info Light themes
 
--ateliersulphurpool-light
-
+- ateliersulphurpool-light
 - coldark-cold
 - coy
 - duotone-light

@@ -22,7 +22,7 @@ tag:
 
 ### Markdown
 
-为 Markdown 添加了更多语法，丰富文档与博客写作
+为 Markdown 添加了更多语法，丰富文档与博客写作:
 
 - [自定义容器](markdown/container.md)
 - [代码组](markdown/code-group.md)

@@ -22,7 +22,7 @@ The theme largely inherits the config of `@vuepress/theme-default`, while adds a
 
 ### Markdown Enhance
 
-Added more syntax to Markdown, enriching documentation and blog writing
+Added more syntax to Markdown, enriching documentation and blog writing:
 
 - [Custom Container](markdown/container.md)
 - [CodeGroup](markdown/code-group.md)
@@ -36,7 +36,7 @@ Added more syntax to Markdown, enriching documentation and blog writing
 - [Subscript and Supercript](markdown/sup-sub.md)
 - [Code demo](markdown/demo.md)
 - [Presentation](markdown/presentation.md)
-- [Badge `<Badge />`](markdown/components.md#badge): Add color support
+- [`<Badge />`](markdown/components.md#badge): Add color support
 - [Customize Themes](interface/code-theme.md)
 
 ### Layout

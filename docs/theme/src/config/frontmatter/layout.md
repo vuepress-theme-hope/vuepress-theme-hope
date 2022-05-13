@@ -20,8 +20,8 @@ You can configue page layout by setting the following frontmatter options.
 | --------------- | --------------------- | --------------------------------------- |
 | `"Author"`      | Author                | `author`                                |
 | `"Date"`        | Writing Date          | `date`                                  |
-| `"category"`    | Category              | `category`                              |
-| `"tag"`         | Tags                  | `tag`                                   |
+| `"Category"`    | Category              | `category`                              |
+| `"Tag"`         | Tags                  | `tag`                                   |
 | `"ReadingTime"` | Expect reading time   | N/A (automatically generated)           |
 | `"Word"`        | Word count            | N/A (automatically generated)           |
 | `"PageView"`    | Visit Number          | `pageview` (only available with Waline) |

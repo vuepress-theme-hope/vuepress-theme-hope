@@ -32,13 +32,8 @@ category:
 
 你就可以在 `/category/html` 和 `/category/web` 页面下找到它。
 
-::: info 例子
-
-![Category](./assets/category.png)
-
-- [地址](https://mrhope.site/category/javascript/)
-
-:::
+![Category](./assets/category-light.png#light)
+![Category](./assets/category-dark.png#dark)
 
 ## 标签
 
@@ -58,13 +53,8 @@ tag:
 
 你就可以在 `/tag/html` 和 `/tag/web` 页面下找到它。
 
-::: info 例子
-
-![Tag](./assets/tag.png)
-
-- [地址](https://mrhope.site/tag/git/)
-
-:::
+![Tag](./assets/tag-light.png#light)
+![Tag](./assets/tag-dark.png#dark)
 
 ## 查看列表
 

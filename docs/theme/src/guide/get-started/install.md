@@ -44,7 +44,7 @@ npm init vuepress-theme-hope@next [dir]
 
 ::: note
 
-`[dir]` is a parameter here, place it with real folder names, such as `docs`, `src` or other name you like.
+`[dir]` is a parameter here, replace it with real folder names, such as `docs`, `src` or other name you like.
 
 :::
 

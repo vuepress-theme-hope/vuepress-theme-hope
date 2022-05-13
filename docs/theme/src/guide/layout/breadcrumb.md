@@ -21,7 +21,7 @@ You can also control the icon display of the path navigation using `breadcrumbIc
 
 To ensure Breadcrumb working well, the `README.md` file should be included in each folder.
 
-Otherwise, the path navigation will automatically ignore that level because the component can not generate titles and links from the corresponding level folder.
+Otherwise, the Breadcrumb will ignore that folder level because the component can not generate title and link.
 
 Please remember to set a title for **HOME PAGE**!
 
