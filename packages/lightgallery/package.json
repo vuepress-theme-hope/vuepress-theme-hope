@@ -50,7 +50,7 @@
   },
   "devDependencies": {
     "@vuepress/core": "2.0.0-beta.43",
-    "rimraf": "3.0.2"
+    "rimraf": "^3.0.2"
   },
   "peerDependencies": {
     "sass-loader": "^12.6.0"

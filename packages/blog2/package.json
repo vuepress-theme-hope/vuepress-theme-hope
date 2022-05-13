@@ -45,7 +45,7 @@
     "vue-router": "^4.0.15"
   },
   "devDependencies": {
-    "rimraf": "3.0.2"
+    "rimraf": "^3.0.2"
   },
   "publishConfig": {
     "access": "public"

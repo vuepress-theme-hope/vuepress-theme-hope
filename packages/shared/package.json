@@ -54,7 +54,7 @@
     "@vuepress/bundler-vite": "2.0.0-beta.43",
     "@vuepress/bundler-webpack": "2.0.0-beta.43",
     "@vuepress/core": "2.0.0-beta.43",
-    "rimraf": "3.0.2",
+    "rimraf": "^3.0.2",
     "vite": "~2.9.9"
   },
   "publishConfig": {

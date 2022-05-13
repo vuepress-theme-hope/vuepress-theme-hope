@@ -22,30 +22,6 @@ export const checkFrontmatter = (
 
   const { filePathRelative } = page;
 
-  // handle deprecated
-  const handleDeprecated = (deprecatedKey: string, key = ""): void => {
-    if (deprecatedKey in frontmatter) {
-      // show logger in dev mode
-      if (isDev)
-        logger.warn(
-          `"${deprecatedKey}" property in Page FrontMatter is deprecated${
-            key ? `, please use ${key} instead` : ""
-          }.${filePathRelative ? `\nFound in ${filePathRelative}` : ""}`
-        );
-
-      if (!(key in frontmatter)) {
-        frontmatter[key] = frontmatter[deprecatedKey];
-      }
-
-      delete frontmatter[deprecatedKey];
-    }
-  };
-
-  handleDeprecated("authors", "author");
-  handleDeprecated("tags", "tag");
-  handleDeprecated("categories", "category");
-  handleDeprecated("time", "date");
-
   // check date
   if ("date" in frontmatter && !(frontmatter.date instanceof Date)) {
     if (isDev)

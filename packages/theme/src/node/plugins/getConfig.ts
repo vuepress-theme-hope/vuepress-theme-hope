@@ -15,11 +15,10 @@ import { getPWAPlugin } from "./pwa";
 import { getSitemapPlugin } from "./sitemap";
 import { getSEOPlugin } from "./seo";
 
-import type { App, PluginConfig } from "@vuepress/core";
+import type { PluginConfig } from "@vuepress/core";
 import type { HopeThemeConfig, HopeThemePluginsOptions } from "../../shared";
 
 export const getPluginConfig = (
-  app: App,
   plugins: HopeThemePluginsOptions,
   themeData: HopeThemeConfig,
   hostname: string
@@ -43,8 +42,6 @@ export const getPluginConfig = (
     getPWAPlugin(plugins.pwa),
     getSitemapPlugin(hostname, plugins.sitemap),
   ].filter((item) => item !== null) as PluginConfig;
-
-  if (app.env.isDebug) console.log("Theme plugin options:", pluginConfig);
 
   return pluginConfig;
 };

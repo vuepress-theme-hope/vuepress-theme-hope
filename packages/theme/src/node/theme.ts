@@ -1,5 +1,6 @@
 import { path } from "@vuepress/utils";
 
+import { checkStyle, covertFrontmatter, covertThemeConfig } from "./migrate";
 import { updateBundlerConfig } from "./bundler";
 import { extendsPage } from "./extendsPage";
 import { getThemeConfig } from "./themeConfig";
@@ -14,14 +15,22 @@ import type { Page, ThemeFunction } from "@vuepress/core";
 import type { HopeThemeOptions, HopeThemePageData } from "../shared";
 
 export const hopeTheme =
-  ({
-    plugins = {},
-    hostname = "",
-    ...themeOptions
-  }: HopeThemeOptions): ThemeFunction =>
+  (
+    options: HopeThemeOptions,
+    // TODO: remove this option in stable release
+    legacy = false
+  ): ThemeFunction =>
   (app) => {
+    const {
+      plugins = {},
+      hostname = "",
+      ...themeOptions
+    } = legacy ? covertThemeConfig(options) : options;
+
     const enableBlog = Boolean(plugins.blog);
     const themeConfig = getThemeConfig(app, themeOptions, enableBlog);
+
+    if (legacy) checkStyle(app);
 
     usePlugin(app, plugins);
 
@@ -33,6 +42,8 @@ export const hopeTheme =
         `export const icons = ${JSON.stringify(icons)}`
       );
     }
+
+    if (app.env.isDebug) console.log("Theme plugin options:", plugins);
 
     return {
       name: "vuepress-theme-hope",
@@ -49,13 +60,20 @@ export const hopeTheme =
       extendsBundlerOptions: (config: unknown, app): void =>
         updateBundlerConfig(config, app),
 
-      extendsPage: (page) =>
+      extendsPage: (page): void => {
+        if (legacy)
+          page.frontmatter = covertFrontmatter(
+            page.frontmatter,
+            page.filePathRelative || ""
+          );
+
         extendsPage(
           themeConfig,
           plugins,
           page as Page<HopeThemePageData>,
           app.env.isDev
-        ),
+        );
+      },
 
       onPrepared: (): Promise<void> =>
         Promise.all([
@@ -63,7 +81,7 @@ export const hopeTheme =
           prepareThemeColorScss(app, themeConfig),
         ]).then(() => void 0),
 
-      plugins: getPluginConfig(app, plugins, themeConfig, hostname),
+      plugins: getPluginConfig(plugins, themeConfig, hostname),
 
       layouts: getLayoutConfig(app, plugins),
 
