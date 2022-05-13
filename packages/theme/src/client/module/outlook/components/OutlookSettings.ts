@@ -18,7 +18,7 @@ export default defineComponent({
     const enableDarkmode = computed(
       () =>
         themeData.value.darkmode !== "disable" &&
-        themeData.value.darkmode !== "force-dark"
+        themeData.value.darkmode !== "enable"
     );
 
     const enableThemeColor = computed(

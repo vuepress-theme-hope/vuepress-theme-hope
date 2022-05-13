@@ -55,19 +55,19 @@ export const setupDarkMode = (): void => {
   const isDarkMode = computed<boolean>(() => {
     const { darkmode } = themeData.value;
 
-    // disable dark mode
+    // disable darkmode
     return darkmode === "disable"
       ? false
-      : // force dark
-      darkmode === "force-dark"
+      : // force darkmode
+      darkmode === "enable"
       ? true
       : // auto
       darkmode === "auto"
       ? isDarkPreferred.value
-      : // switch
-      darkmode === "switch"
+      : // toggle
+      darkmode === "toggle"
       ? darkmodeStorage.value === "dark"
-      : // auto-switch
+      : // switch
         darkmodeStorage.value === "dark" ||
         (darkmodeStorage.value === "auto" && isDarkPreferred.value);
   });

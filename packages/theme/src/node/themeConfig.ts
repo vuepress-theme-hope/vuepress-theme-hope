@@ -31,7 +31,7 @@ const defaultRootOptions: HopeThemeRootConfig = {
   // appearance
   pure: false,
   iconPrefix: "",
-  darkmode: "auto-switch",
+  darkmode: "switch",
   themeColor: {
     red: "#e74c3c",
     blue: "#3498db",

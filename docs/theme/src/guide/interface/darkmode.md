@@ -29,10 +29,10 @@ You can config darkmode through `darkmode` in theme options.
 
 Available options:
 
-- `"auto-switch"`: "off | automatic | on" switch (default)
-- `"switch"`: "Close | Open" toggle switch
+- `"switch"`: switch between dark, light and auto (default)
+- `"toggle"`: toggle between lightmode and darkmode
 - `"auto"`: Automatically decide whether to apply dark mode based on user device’s color-scheme or current time
-- `"force-dark"`: only dark mode
+- `"enable"`: only dark mode
 - `"disable"`: disable dark mode
 
 <script setup lang="ts">

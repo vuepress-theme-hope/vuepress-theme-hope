@@ -20,7 +20,7 @@ export default defineComponent({
     const darkmode = computed(() => themeData.value.darkmode);
 
     const enable = computed(
-      () => darkmode.value === "auto-switch" || darkmode.value === "switch"
+      () => darkmode.value === "switch" || darkmode.value === "toggle"
     );
 
     return (): VNode | null =>

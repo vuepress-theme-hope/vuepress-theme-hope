@@ -134,7 +134,7 @@ Since the theme no longer has a built-in search:
   - If you use IconFont, you may need to set it to `iconfont icon-`
   - If you use FontAwesome, you may need to set it to `fa fa-`
 
-- add `"force-dark"` in `darkmode` option
+- add `"enable"` in `darkmode` option
 
 ### Blog Config
 

@@ -23,7 +23,7 @@ export default defineComponent({
     const darkmode = computed(() => themeData.value.darkmode);
 
     const toggleDarkMode = (): void => {
-      if (darkmode.value === "auto-switch") {
+      if (darkmode.value === "switch") {
         status.value = (
           { light: "dark", dark: "auto", auto: "light" } as Record<
             DarkmodeStatus,

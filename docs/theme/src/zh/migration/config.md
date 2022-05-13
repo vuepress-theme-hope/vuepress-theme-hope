@@ -132,7 +132,7 @@ tag:
   - 如果你使用 IconFont，你可能需要将其设置为 `iconfont icon-`
   - 如果你使用 FontAwesome，你可能需要将其设置为 `fa fa-`
 
-- `darkmode` 新增 `"force-dark"`，强制暗黑模式
+- `darkmode` 新增 `"enable"`，强制暗黑模式
 
 ### 博客配置
 
