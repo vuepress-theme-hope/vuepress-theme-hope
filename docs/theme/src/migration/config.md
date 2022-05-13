@@ -127,14 +127,18 @@ Since the theme no longer has a built-in search:
 
 ### Outlook
 
-- clear `iconPrefix` default value from `icon-`.
+- clear `iconPrefix` default value from `icon-`
 
   You now need to set this option according to icons you are using
 
   - If you use IconFont, you may need to set it to `iconfont icon-`
   - If you use FontAwesome, you may need to set it to `fa fa-`
 
-- add `"enable"` in `darkmode` option
+- update values of `darkmode` option
+
+  - add `"enable"`
+  - rename `"switch"` to `"toggle"`
+  - rename `"auto-switch"` to `"switch"`
 
 ### Blog Config
 

@@ -125,14 +125,18 @@ tag:
 
 ### 外观
 
-- `iconPrefix` 默认值由 `icon-` 清空。
+- `iconPrefix` 默认值由 `icon-` 清空
 
   你现在需要根据使用图标的 Font Class 自行配置
 
   - 如果你使用 IconFont，你可能需要将其设置为 `iconfont icon-`
   - 如果你使用 FontAwesome，你可能需要将其设置为 `fa fa-`
 
-- `darkmode` 新增 `"enable"`，强制暗黑模式
+- 更新 `darkmode` 选项的值
+
+  - 添加 `"enable"`
+  - 将 `"switch"` 重命名为 `"toggle"`
+  - 将 `"auto-switch"` 重命名为 `"switch"`
 
 ### 博客配置
 
