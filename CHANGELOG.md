@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.57](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.56...v2.0.0-beta.57) (2022-05-13)
+
+### ⚠ BREAKING CHANGES
+
+- **theme:** rename darkmode options: 'force-dark' renamed to 'disable', 'auto-switch' renamed
+  to 'switch' and 'switch' renamed to 'toggle'
+
+### Features
+
+- **theme:** add prevLink and nextLink option ([3597207](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/35972077067fc92564f97e049dcea99819d573df))
+- **theme:** support `bgImage: false` in blog home ([aae8c05](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/aae8c05672b5b55a5779977e8e79bfd0608f090c))
+- **theme:** update darkmode options ([f18b7e5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f18b7e5f300500eb6aa98df5033a3023d1b5217a))
+- **theme:** update migration ([0336d4d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0336d4dcb67a489a852872c3e3503668d376f654))
+
+### Bug Fixes
+
+- **comment2:** improve giscus discussion mapping ([397e5b4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/397e5b4eb10569efc8dffbe4a7762dea273b79dc))
+
 ## [2.0.0-beta.56](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.55...v2.0.0-beta.56) (2022-05-12)
 
 ### Bug Fixes
