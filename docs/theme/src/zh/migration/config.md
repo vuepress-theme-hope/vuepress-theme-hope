@@ -184,7 +184,9 @@ tag:
 
 所有插件相关选项均被移至 `plugins` 下。
 
-- `activeHeaderLinks` 移动至 `plugins.activeHeaderLinks`
+- `activeHash` 移动至 `plugins.activeHeaderLinks`
+
+  主题现在使用 `@vuepress/plugin-active-header-links` 官方插件。
 
 - `comment` 移动至 `plugins.comment`
 
@@ -241,10 +243,6 @@ tag:
 - `sitemap` 移动至 `plugins.sitemap`
 
 ### 移除
-
-- 移除 `activeHash`
-
-  主题现在使用 `@vuepress/plugin-active-header-links` 官方插件。
 
 - 移除 `addThis`
 

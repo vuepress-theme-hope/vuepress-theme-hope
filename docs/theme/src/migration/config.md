@@ -186,7 +186,9 @@ Since the theme no longer has a built-in search:
 
 Move all plugin related options under `plugins`.
 
-- move `activeHeaderLinks` to `plugins.activeHeaderLinks`
+- rename `activeHash` to `plugins.activeHeaderLinks`
+
+  The theme now uses official plugin `@vuepress/plugin-active-header-links`.
 
 - move `comment` moved to `plugins.comment`
 
@@ -243,10 +245,6 @@ Move all plugin related options under `plugins`.
 - move `sitemap` to `plugins.sitemap`
 
 ### Deletion
-
-- remove `activeHash`
-
-  The theme now uses official plugin `@vuepress/plugin-active-header-links`.
 
 - remove `addThis`
 
