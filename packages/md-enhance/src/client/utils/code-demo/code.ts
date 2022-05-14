@@ -167,9 +167,9 @@ export const getReactCode = (
           presets: ["es2015", "react"],
         })?.code || "";
 
-      return `window.ReactDOM.render(window.React.createElement(${wrapper(
+      return `window.ReactDOM.createRoot(document.firstElementChild).render(window.React.createElement(${wrapper(
         scriptStr
-      )}), document.firstElementChild)`;
+      )}))`;
     },
   };
 };
