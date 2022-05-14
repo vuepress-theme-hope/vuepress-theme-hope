@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.58](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.57...v2.0.0-beta.58) (2022-05-14)
+
+### Features
+
+- compatable with latest vp ([272b7a8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/272b7a8cc7c41c3ccafe7196428fbf69b121c427))
+- **md-enhance:** improve code demo ([76f4be2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/76f4be2e2791f3ffa8b4f0605ace192ccca6992d))
+- **md-enhance:** improve details container ([134c6dd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/134c6dd7dc75fc260b2a4ffae0114fd884d16b90))
+- **md-enhance:** improve flowchart outlook ([ddaf4ef](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ddaf4ef9b56606fba055fcc9bea896af445c7f1b))
+
+### Bug Fixes
+
+- **md-enhance:** fix tasklist ([6d302d6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6d302d6fad1510ee28f0b446d9495cecdd5ba97a))
+- **md-enhance:** fix tasklist checkbox ([b8c0d67](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b8c0d67e9de6a4818554703c0bc582387ff449ac))
+- **sass-palette:** fix typos in default layout.scss ([ec4c4e7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ec4c4e77773e8b80813168d43a49826d377e0436))
+- **theme:** fix navbar a11y, fix [#1755](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1755) ([2a65edf](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2a65edfa808f7623922bf5cfde1cb8e2b7fcb763))
+
 ## [2.0.0-beta.57](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.56...v2.0.0-beta.57) (2022-05-13)
 
 ### ⚠ BREAKING CHANGES
