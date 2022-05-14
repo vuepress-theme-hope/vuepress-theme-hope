@@ -8,7 +8,7 @@ export default [
       "vuepress-plugin-sass-palette",
     ],
   }),
-  ...rollupTypescript("client/appEnhance", {
+  ...rollupTypescript("client/config", {
     external: [
       "@Giscus",
       "@Twikoo",

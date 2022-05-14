@@ -4,7 +4,7 @@ import { usePageFrontmatter } from "@vuepress/client";
 import { useThemeData } from "@vuepress/plugin-theme-data/lib/client";
 import { debounce } from "ts-debounce";
 import { Transition, computed, defineComponent, h, onMounted, ref } from "vue";
-import { BacktoTopIcon } from "../components/icons";
+import { BacktoTopIcon } from "./icons";
 
 import "../styles/back-to-top.scss";
 

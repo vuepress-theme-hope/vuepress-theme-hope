@@ -21,17 +21,19 @@ You can automatically register components via the `@vuepress/plugin-register-com
 
 For details about how to use the plugin, see [Official Documentation](https://v2.vuepress.vuejs.org/reference/plugin/register-components.html).
 
-### Registrater via ClientAppEnhance
+### Registrater via ClientConfigFile
 
-You can create `.vuepress/clientAppEnhance.ts` and register components manually.
+You can create `.vuepress/client.ts` and register components manually.
 
 ```ts
-// .vuepress/clientAppEnhance.ts
-import { defineClientAppEnhance } from "@vuepress/client";
+// .vuepress/client.ts
+import { defineClientConfig } from "@vuepress/client";
 import MyComponent from "./MyComponent.vue";
 
-export default defineClientAppEnhance(({ app, router, siteData }) => {
-  app.component("MyComponent", MyComponent);
+export default defineClientConfig({
+  enhance: ({ app, router, siteData }) => {
+    app.component("MyComponent", MyComponent);
+  },
 });
 ```
 

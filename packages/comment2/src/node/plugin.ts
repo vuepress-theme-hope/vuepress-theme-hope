@@ -42,13 +42,11 @@ export const commentPlugin =
       name: "vuepress-plugin-comment2",
 
       alias: {
-        "@Giscus": isGiscus
+        "@CommentProvider": isGiscus
           ? path.resolve(__dirname, "../client/components/Giscus.js")
-          : noopModule,
-        "@Twikoo": isTwikoo
+          : isTwikoo
           ? path.resolve(__dirname, "../client/components/Twikoo.js")
-          : noopModule,
-        "@Waline": isWaline
+          : isWaline
           ? path.resolve(__dirname, "../client/components/Waline.js")
           : noopModule,
       },
@@ -76,6 +74,6 @@ export const commentPlugin =
         }
       },
 
-      clientAppEnhanceFiles: path.resolve(__dirname, "../client/appEnhance.js"),
+      clientConfigFile: path.resolve(__dirname, "../client/config.js"),
     };
   };

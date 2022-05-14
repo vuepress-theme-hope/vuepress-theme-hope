@@ -41,8 +41,8 @@
   },
   "dependencies": {
     "@mr-hope/vuepress-shared": "workspace:*",
-    "@vuepress/client": "2.0.0-beta.43",
-    "@vuepress/utils": "2.0.0-beta.43",
+    "@vuepress/client": "2.0.0-beta.45",
+    "@vuepress/utils": "2.0.0-beta.45",
     "@vueuse/core": "^8.4.2",
     "photoswipe": "^5.2.7",
     "vue": "^3.2.33",
@@ -50,7 +50,7 @@
     "vuepress-plugin-sass-palette": "workspace:*"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.43",
+    "@vuepress/core": "2.0.0-beta.45",
     "rimraf": "^3.0.2"
   },
   "peerDependencies": {

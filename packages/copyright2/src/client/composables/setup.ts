@@ -1,19 +1,15 @@
-import {
-  defineClientAppSetup,
-  usePageFrontmatter,
-  usePageData,
-} from "@vuepress/client";
+import { usePageFrontmatter, usePageData } from "@vuepress/client";
 import { useEventListener } from "@vueuse/core";
 import { computed, onMounted, watchEffect } from "vue";
 
-import type { CopyrightPluginFrontmatter } from "../shared";
+import type { CopyrightPluginFrontmatter } from "../../shared";
 
 declare const COPYRIGHT_TRIGGER_WORDS: number;
 declare const COPYRIGHT_DISABLE_COPY: boolean;
 declare const COPYRIGHT_DISABLE_SELECTION: boolean;
 declare const COPYRIGHT_GLOBAL: boolean;
 
-export default defineClientAppSetup(() => {
+export const setupCopyright = (): void => {
   const page = usePageData<{ copyright: string }>();
   const frontmatter = usePageFrontmatter<CopyrightPluginFrontmatter>();
 
@@ -103,4 +99,4 @@ export default defineClientAppSetup(() => {
       appElement.style.userSelect = disableSelection.value ? "none" : "auto";
     });
   });
-});
+};

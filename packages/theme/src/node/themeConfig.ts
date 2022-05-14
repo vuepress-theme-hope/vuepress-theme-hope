@@ -3,6 +3,7 @@ import { resolveEncrypt } from "./encrypt";
 import { themeLocalesData } from "./locales";
 
 import type { App } from "@vuepress/core";
+import type { ThemeStatus } from "./status";
 import {
   HopeThemeConfig,
   HopeThemeLocaleConfig,
@@ -61,7 +62,7 @@ const defaultLocaleOptions: HopeThemeLocaleOptions = {
 export const getThemeConfig = (
   app: App,
   themeOptions: HopeThemeOptions,
-  enableBlog = false
+  { enableBlog }: ThemeStatus
 ): HopeThemeConfig => {
   const themeData: HopeThemeConfig = {
     ...defaultRootOptions,

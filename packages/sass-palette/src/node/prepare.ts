@@ -2,16 +2,15 @@ import { getPath } from "./utils";
 
 import type { App } from "@vuepress/core";
 
-export const prepareClientAppEnhanceFile = (
-  app: App,
-  id: string
-): Promise<string> =>
+export const prepareConfigFile = (app: App, id: string): Promise<string> =>
   app.writeTemp(
     `sass-palette/load-${id}.js`,
-    `import "@sass-palette/${id}-inject";export default ()=>{};`
+    `import "@sass-palette/${id}-inject";
+
+export default {};`
   );
 
-export const prepareInjectFile = (app: App, id: string): Promise<string> =>
+export const prepareInjectSass = (app: App, id: string): Promise<string> =>
   app.writeTemp(
     `sass-palette/${id}-inject.scss`,
     `
@@ -62,7 +61,7 @@ export interface PrepareConfigOptions {
   userPalette: string;
 }
 
-export const prepareConfigFile = (
+export const prepareConfigSass = (
   app: App,
   {
     id,
@@ -91,7 +90,7 @@ export interface PreparePaletteOptions {
   userPalette: string;
 }
 
-export const preparePaletteFile = (
+export const preparePaletteSass = (
   app: App,
   { id, defaultPalette, generator, userPalette }: PreparePaletteOptions
 ): Promise<string> =>
@@ -109,7 +108,7 @@ export interface PrepareStyleOptions {
   userStyle: string | null;
 }
 
-export const prepareStyleFile = (
+export const prepareStyleSass = (
   app: App,
   { id, userStyle }: PrepareStyleOptions
 ): Promise<string | null> =>

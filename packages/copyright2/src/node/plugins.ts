@@ -72,6 +72,6 @@ export const copyrightPlugin =
           .join("\n");
       },
 
-      clientAppSetupFiles: path.resolve(__dirname, "../client/appSetup.js"),
+      clientConfigFile: path.resolve(__dirname, "../client/config.js"),
     };
   };

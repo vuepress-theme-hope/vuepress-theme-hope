@@ -135,14 +135,15 @@ const checkPluginOptions = (plugins: unknown): PluginConfig => {
 
         // check renamed options
         [
+          // v1
           ["ready", "onPrepared"],
           ["updated", "onWatched"],
           ["generated", "onGenerated"],
-          ["enhanceAppFiles", "clientAppEnhanceFiles"],
-          ["globalUIComponents", "clientAppRootComponentFiles"],
-          ["clientRootMixin", "clientAppSetupFiles"],
           ["extendMarkdown", "extendsMarkdown"],
           ["extendPageData", "extendsPage"],
+
+          // v2
+          ["templateSSR", "templateBuild"],
         ].forEach(([deprecatedOption, newOption]) => {
           if (deprecatedOption in item)
             logger.warn(
@@ -158,6 +159,7 @@ const checkPluginOptions = (plugins: unknown): PluginConfig => {
 
         // check removed options
         [
+          // v1
           "plugins",
           "chainMarkdown",
           "extendsCli",
@@ -167,6 +169,14 @@ const checkPluginOptions = (plugins: unknown): PluginConfig => {
           "afterDevServer",
           "additionalPages",
           "clientDynamicModules",
+          "enhanceAppFiles",
+          "globalUIComponents",
+          "clientRootMixin",
+
+          // v2
+          "clientAppEnhanceFiles",
+          "clientAppRootComponentFiles",
+          "clientAppSetupFiles",
         ].forEach((removedOption) => {
           if (removedOption in item)
             logger.error(
@@ -234,12 +244,10 @@ export const config = (userConfig: Record<string, unknown>): UserConfig => {
     ["ready", "onPrepared"],
     ["updated", "onWatched"],
     ["generated", "onGenerated"],
-    ["enhanceAppFiles", "clientAppEnhanceFiles"],
-    ["globalUIComponents", "clientAppRootComponentFiles"],
-    ["clientRootMixin", "clientAppSetupFiles"],
     ["extendMarkdown", "extendsMarkdown"],
     ["extendPageData", "extendsPage"],
     ["patterns", "pagePatterns"],
+    ["templateSSR", "templateBuild"],
   ].forEach(([deprecatedOption, newOption]) => {
     if (deprecatedOption in userConfig)
       logger.warn(
@@ -267,6 +275,9 @@ export const config = (userConfig: Record<string, unknown>): UserConfig => {
       "clientDynamicModules",
       'please use "app.writeTemp()" in "onPrepared" hook',
     ],
+    ["clientAppRootComponentFiles", 'please use "clientConfigFile" instead'],
+    ["clientAppSetupFiles", 'please use "clientConfigFile" instead'],
+    ["clientAppEnhanceFiles", 'please use "clientConfigFile" instead'],
   ].forEach(([removedOption, hint = ""]) => {
     if (removedOption in userConfig)
       logger.error(

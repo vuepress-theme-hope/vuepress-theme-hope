@@ -9,7 +9,7 @@ export default [
       "@vuepress/utils",
     ],
   }),
-  ...rollupTypescript("client/appSetup", {
+  ...rollupTypescript("client/config", {
     external: ["@vuepress/client", "@vueuse/core", "vue", /\.scss$/],
   }),
 ];

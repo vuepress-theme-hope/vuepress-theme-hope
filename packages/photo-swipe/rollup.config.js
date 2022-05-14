@@ -8,7 +8,7 @@ export default [
       "vuepress-plugin-sass-palette",
     ],
   }),
-  ...rollupTypescript("client/appSetup", {
+  ...rollupTypescript("client/config", {
     external: [
       "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",

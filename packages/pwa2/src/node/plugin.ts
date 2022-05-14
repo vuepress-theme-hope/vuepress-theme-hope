@@ -1,4 +1,3 @@
-import { path } from "@vuepress/utils";
 import {
   addViteOptimizeDepsInclude,
   addViteSsrNoExternal,
@@ -10,11 +9,12 @@ import { pwaLocales } from "./locales";
 import { injectLinkstoHead } from "./injectHead";
 import { getManifest, generateManifest } from "./generateManifest";
 import { generateServiceWorker } from "./generateServiceWorker";
+import { appendBase } from "./helper";
 import { logger } from "./utils";
+import { prepareConfigFile } from "./prepare";
 
 import type { PluginFunction } from "@vuepress/core";
 import type { PWAOptions } from "../shared";
-import { appendBase } from "./helper";
 
 export const pwaPlugin =
   (options: PWAOptions = {}): PluginFunction =>
@@ -64,35 +64,6 @@ export const pwaPlugin =
         await generateServiceWorker(app, options);
       },
 
-      clientAppRootComponentFiles: [
-        ...(options.update === "hint"
-          ? [
-              options.hintComponent ||
-                path.resolve(
-                  __dirname,
-                  "../client/global-components/SWHintPopup.js"
-                ),
-            ]
-          : []),
-        ...(options.update !== "disable" && options.update !== "force"
-          ? [
-              options.updateComponent ||
-                path.resolve(
-                  __dirname,
-                  "../client/global-components/SWUpdatePopup.js"
-                ),
-            ]
-          : []),
-        ...(options.showInstall !== false
-          ? [
-              path.resolve(
-                __dirname,
-                "../client/global-components/PWAInstall.js"
-              ),
-            ]
-          : []),
-      ],
-
-      clientAppSetupFiles: path.resolve(__dirname, "../client/appSetup.js"),
+      clientConfigFile: (app) => prepareConfigFile(app, options),
     };
   };

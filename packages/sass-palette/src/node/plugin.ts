@@ -4,11 +4,11 @@ import { watch } from "chokidar";
 import { injectConfigModule } from "./inject";
 import {
   prepareConfigFile,
-  prepareInjectFile,
-  prepareClientAppEnhanceFile,
-  preparePaletteFile,
-  prepareStyleFile,
-} from "./generate";
+  prepareInjectSass,
+  prepareConfigSass,
+  preparePaletteSass,
+  prepareStyleSass,
+} from "./prepare";
 import { logger } from "./utils";
 
 import type { PluginFunction } from "@vuepress/core";
@@ -75,9 +75,9 @@ export const sassPalettePlugin =
 
       onInitialized: (): Promise<void> => {
         return Promise.all([
-          prepareInjectFile(app, id),
+          prepareInjectSass(app, id),
 
-          prepareConfigFile(app, {
+          prepareConfigSass(app, {
             id,
             defaultConfig,
             defaultPalette,
@@ -86,14 +86,14 @@ export const sassPalettePlugin =
             userPalette,
           }),
 
-          preparePaletteFile(app, {
+          preparePaletteSass(app, {
             id,
             defaultPalette,
             generator,
             userPalette,
           }),
 
-          prepareStyleFile(app, { id, userStyle }),
+          prepareStyleSass(app, { id, userStyle }),
         ]).then(() => {
           if (app.env.isDebug) logger.info(`Style file for ${id} generated`);
         });
@@ -106,7 +106,7 @@ export const sassPalettePlugin =
         });
 
         const updateConfig = (): Promise<void> =>
-          prepareConfigFile(app, {
+          prepareConfigSass(app, {
             id,
             defaultConfig,
             defaultPalette,
@@ -133,7 +133,7 @@ export const sassPalettePlugin =
 
         const updatePalette = (): Promise<void> =>
           Promise.all([
-            prepareConfigFile(app, {
+            prepareConfigSass(app, {
               id,
               defaultConfig,
               defaultPalette,
@@ -142,7 +142,7 @@ export const sassPalettePlugin =
               userPalette,
             }),
 
-            preparePaletteFile(app, {
+            preparePaletteSass(app, {
               id,
               defaultPalette,
               generator,
@@ -168,7 +168,7 @@ export const sassPalettePlugin =
           });
 
           const updateStyle = (): Promise<void> =>
-            prepareStyleFile(app, { id, userStyle }).then(() => {
+            prepareStyleSass(app, { id, userStyle }).then(() => {
               if (app.env.isDebug) logger.info(`Style file for ${id} updated`);
             });
 
@@ -182,6 +182,6 @@ export const sassPalettePlugin =
         }
       },
 
-      clientAppEnhanceFiles: (app) => prepareClientAppEnhanceFile(app, id),
+      clientConfigFile: (app) => prepareConfigFile(app, id),
     };
   };

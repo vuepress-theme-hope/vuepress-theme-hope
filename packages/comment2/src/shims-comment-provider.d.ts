@@ -1,4 +1,4 @@
-declare module "*.vue" {
+declare module "@CommentProvider" {
   import type { ComponentOptions } from "vue";
 
   const component: ComponentOptions;

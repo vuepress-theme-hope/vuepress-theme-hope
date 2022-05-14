@@ -43,7 +43,7 @@ A basic project structure is as follows:
 │    │    │
 │    │    ├── config.{js,ts} (optional) → the entry file of the configuration file
 │    │    │
-│    │    └── clientAppEnhance.{js,ts} (optional) → client application enhancement file
+│    │    └── client.{js,ts} (optional) → client application file
 │    │
 │    ├── ... → Other project documentation
 │    │

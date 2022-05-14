@@ -2,6 +2,7 @@ import { getLocales, noopModule } from "@mr-hope/vuepress-shared";
 import { path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import { backToTopLocales } from "./locales";
+import { prepareConfigFile } from "./prepare";
 import { logger } from "./utils";
 
 import type { PluginFunction } from "@vuepress/core";
@@ -38,10 +39,6 @@ export const componentsPlugin =
         }),
       },
 
-      clientAppEnhanceFiles: path.resolve(__dirname, "../client/appEnhance.js"),
-
-      clientAppRootComponentFiles: options.backToTop
-        ? path.resolve(__dirname, "../client/root-components/BackToTop.js")
-        : undefined,
+      clientConfigFile: (app) => prepareConfigFile(app, options),
     };
   };

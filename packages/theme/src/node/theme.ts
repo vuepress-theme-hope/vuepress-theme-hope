@@ -1,15 +1,17 @@
 import { path } from "@vuepress/utils";
 
-import { checkStyle, covertFrontmatter, covertThemeConfig } from "./migrate";
+import { resolveAlias } from "./alias";
 import { updateBundlerConfig } from "./bundler";
 import { extendsPage } from "./extendsPage";
-import { getThemeConfig } from "./themeConfig";
+import { checkStyle, covertFrontmatter, covertThemeConfig } from "./migrate";
 import { getLayoutConfig } from "./layout";
 import { getPluginConfig, usePlugin } from "./plugins";
-import { checkSocialMediaIcons } from "./socialMedia";
+import { prepareConfigFile } from "./prepare";
 import { prepareSidebarData } from "./sidebar";
+import { checkSocialMediaIcons } from "./socialMedia";
+import { getStatus } from "./status";
+import { getThemeConfig } from "./themeConfig";
 import { prepareThemeColorScss } from "./themeColor";
-import { resolveAlias } from "./alias";
 
 import type { Page, ThemeFunction } from "@vuepress/core";
 import type { HopeThemeOptions, HopeThemePageData } from "../shared";
@@ -27,21 +29,13 @@ export const hopeTheme =
       ...themeOptions
     } = legacy ? covertThemeConfig(options) : options;
 
-    const enableBlog = Boolean(plugins.blog);
-    const themeConfig = getThemeConfig(app, themeOptions, enableBlog);
-
     if (legacy) checkStyle(app);
 
+    const status = getStatus(options);
+    const themeConfig = getThemeConfig(app, themeOptions, status);
+    const icons = status.enableBlog ? checkSocialMediaIcons(themeConfig) : {};
+
     usePlugin(app, plugins);
-
-    if (enableBlog) {
-      const icons = checkSocialMediaIcons(themeConfig);
-
-      void app.writeTemp(
-        `theme-hope/socialMedia.js`,
-        `export const icons = ${JSON.stringify(icons)}`
-      );
-    }
 
     if (app.env.isDebug) console.log("Theme plugin options:", plugins);
 
@@ -51,10 +45,8 @@ export const hopeTheme =
       alias: resolveAlias(app.env.isDebug),
 
       define: () => ({
-        ENABLE_BLOG: enableBlog,
-        ENABLE_VISITOR: Boolean(
-          plugins.comment && plugins.comment.type === "waline"
-        ),
+        ENABLE_BLOG: status.enableBlog,
+        ENABLE_VISITOR: status.enableVisitor,
       }),
 
       extendsBundlerOptions: (config: unknown, app): void =>
@@ -79,6 +71,10 @@ export const hopeTheme =
         Promise.all([
           prepareSidebarData(app, themeConfig),
           prepareThemeColorScss(app, themeConfig),
+          app.writeTemp(
+            `theme-hope/socialMedia.js`,
+            `export const icons = ${JSON.stringify(icons)}`
+          ),
         ]).then(() => void 0),
 
       plugins: getPluginConfig(plugins, themeConfig, hostname),
@@ -90,25 +86,7 @@ export const hopeTheme =
         "../../templates/index.build.html"
       ),
 
-      clientAppEnhanceFiles: [
-        path.resolve(__dirname, "../client/appEnhance.js"),
-        path.resolve(__dirname, "../client/module/navbar/appEnhance.js"),
-        path.resolve(__dirname, "../client/module/sidebar/appEnhance.js"),
-        ...(enableBlog
-          ? [path.resolve(__dirname, "../client/module/blog/appEnhance.js")]
-          : []),
-        ...("encrypt" in themeOptions
-          ? [path.resolve(__dirname, "../client/module/encrypt/appEnhance.js")]
-          : []),
-      ],
-
-      clientAppSetupFiles: [
-        ...(enableBlog
-          ? [path.resolve(__dirname, "../client/module/blog/appSetup.js")]
-          : []),
-        path.resolve(__dirname, "../client/module/outlook/appSetup.js"),
-        path.resolve(__dirname, "../client/module/sidebar/appSetup.js"),
-      ],
+      clientConfigFile: (app) => prepareConfigFile(app, status),
     };
   };
 

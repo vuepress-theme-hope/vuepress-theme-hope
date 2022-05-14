@@ -40,7 +40,7 @@
     "@mr-hope/vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.43",
+    "@vuepress/core": "2.0.0-beta.45",
     "rimraf": "^3.0.2"
   },
   "publishConfig": {

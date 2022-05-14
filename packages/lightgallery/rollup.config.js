@@ -9,7 +9,7 @@ export default [
       "vuepress-plugin-sass-palette",
     ],
   }),
-  ...rollupTypescript("client/root-components/LightGallery", {
+  ...rollupTypescript("client/config", {
     external: [
       "@vuepress/client",
       /^lightgallery/,
