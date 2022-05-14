@@ -43,7 +43,7 @@ app.component("LocalEncrypt", LocalEncrypt);
   }
 
   return app.writeTemp(
-    `theme-hope/client.js`,
+    `theme-hope/config.js`,
     `import { defineClientConfig } from "@vuepress/client";
 
 import CommonWrapper from "@theme-hope/components/CommonWrapper";
