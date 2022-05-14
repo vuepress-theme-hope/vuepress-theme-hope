@@ -163,12 +163,9 @@ export const mdEnhancePlugin =
         if (shouldCheckLinks)
           app.pages.forEach((page) => checkLinks(page, app));
 
-        await Promise.all([
-          prepareAppEnhanceFile(app, options),
-          prepareRevealPluginFile(app, revealPlugins),
-        ]);
+        await prepareRevealPluginFile(app, revealPlugins);
       },
 
-      clientAppEnhanceFiles: app.dir.temp(`md-enhance/appEnhance.js`),
+      clientAppEnhanceFiles: (app) => prepareAppEnhanceFile(app, options),
     };
   };

@@ -8,7 +8,7 @@ const CLIENT_FOLDER = ensureEndingSlash(path.resolve(__dirname, "../client"));
 export const prepareAppEnhanceFile = async (
   app: App,
   options: MarkdownEnhanceOptions
-): Promise<void> => {
+): Promise<string> => {
   let appEnhanceImport = "";
   let appEnhanceRegister = "";
 
@@ -69,7 +69,7 @@ export const prepareAppEnhanceFile = async (
   if (getStatus("tex"))
     appEnhanceImport += `import "${CLIENT_FOLDER}styles/tex.scss";\n`;
 
-  await app.writeTemp(
+  return app.writeTemp(
     `md-enhance/appEnhance.js`,
     `import { defineClientAppEnhance } from "@vuepress/client";
 ${appEnhanceImport}
