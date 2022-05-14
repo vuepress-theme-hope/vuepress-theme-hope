@@ -159,17 +159,18 @@ Whether to enable tasklist format support. You can pass an object to config task
 ```ts
 interface TaskListOptions {
   /**
+   * Whether disable checkbox
+   *
+   * @default true
+   */
+  disabled?: boolean;
+
+  /**
    * Whether use `<label>` to wrap text
    *
    * @default true
    */
   label?: boolean;
-  /**
-   * Whether place `<label>` after `<input>` or wrap `<input>`
-   *
-   * @default true
-   */
-  labelAfter?: boolean;
 }
 ```
 

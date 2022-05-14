@@ -71,16 +71,17 @@ Besides setting `tasklist: true` in the plugin options, you can also pass object
 ```ts
 interface TaskListOptions {
   /**
+   * Whether disable checkbox
+   *
+   * @default true
+   */
+  disabled?: boolean;
+
+  /**
    * Whether use `<label>` to wrap text
    *
    * @default true
    */
   label?: boolean;
-  /**
-   * Whether place `<label>` after `<input>` or wrap `<input>`
-   *
-   * @default true
-   */
-  labelAfter?: boolean;
 }
 ```

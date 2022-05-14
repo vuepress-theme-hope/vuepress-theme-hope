@@ -1,7 +1,8 @@
 /**
- * Forked from https://github.com/revin/markdown-it-task-lists/blob/master/index.js
+ * Forked from https://github.com/linsir/markdown-it-task-checkbox/blob/master/index.js
  *
  * Copyright (c) 2016, Revin Guillen
+ * Modified code Copyright (c) 2016, linsir, MIT License
  *
  * Permission to use, copy, modify, and/or distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
@@ -36,96 +37,73 @@ interface TaskListEnv {
 interface TaskListStateCore extends StateCore {
   env: TaskListEnv;
 }
-
-// leading whitespace in a list item is already trimmed off by markdown-it
+// The leading whitespace in a list item (token.content) is already trimmed off by markdown-it.
+// The regex below checks for '[ ] ' or '[x] ' or '[X] ' at the start of the string token.content,
+// where the space is either a normal space or a non-breaking space (character 160 = \u00A0).
 const startsWithTodoMarkdown = (token: Token): boolean =>
-  token.content.indexOf("[ ] ") === 0 ||
-  token.content.indexOf("[x] ") === 0 ||
-  token.content.indexOf("[X] ") === 0;
+  /^\[[xX \u00A0]\][ \u00A0]/.test(token.content);
 
-const isTaskListItem = (tokens: Token[], index: number): boolean => {
-  return (
-    isInlineToken(tokens[index]) &&
-    isParagraphToken(tokens[index - 1]) &&
-    isListItemToken(tokens[index - 2]) &&
-    startsWithTodoMarkdown(tokens[index])
-  );
-};
+const isTaskListItem = (tokens: Token[], index: number): boolean =>
+  isInlineToken(tokens[index]) &&
+  isParagraphToken(tokens[index - 1]) &&
+  isListItemToken(tokens[index - 2]) &&
+  startsWithTodoMarkdown(tokens[index]);
 
-const generateCheckbox = (token: Token): Token => {
-  const checkbox = new Token("html_inline", "", 0);
+const generateCheckbox = (token: Token, id: string, disabled = true): Token => {
+  const checkbox = new Token("checkbox_input", "input", 0);
 
-  checkbox.content = `<input type="checkbox" class="task-list-item-checkbox" ${
-    token.content.indexOf("[ ] ") === 0 ? "" : 'checked="checked"'
-  } disabled="disabled">`;
+  checkbox.attrs = [
+    ["type", "checkbox"],
+    ["class", "task-list-item-checkbox"],
+    ["id", id],
+  ];
+
+  // if token.content starts with '[x] ' or '[X] '
+  if (/^\[[xX]\][ \u00A0]/.test(token.content))
+    checkbox.attrs.push(["checked", "checked"]);
+
+  if (disabled) checkbox.attrs.push(["disabled", "disabled"]);
 
   return checkbox;
 };
 
-// these next two functions are kind of hacky; probably should really be a
-// true block-level token with .tag=='label'
-const beginLabel = (): Token => {
-  const token = new Token("html_inline", "", 0);
+const beginLabel = (id: string): Token => {
+  const label = new Token("label_open", "label", 1);
 
-  token.content = "<label>";
+  label.attrs = [
+    ["class", "task-list-item-label"],
+    ["for", id],
+  ];
 
-  return token;
+  return label;
 };
 
-const endLabel = (): Token => {
-  const token = new Token("html_inline", "", 0);
-
-  token.content = "</label>";
-
-  return token;
-};
-
-const afterLabel = (content: string, id: string): Token => {
-  const token = new Token("html_inline", "", 0);
-
-  token.content =
-    '<label class="task-list-item-label" for="' +
-    id +
-    '">' +
-    content +
-    "</label>";
-  token.attrs = [["for", id]];
-
-  return token;
-};
+const endLabel = (): Token => new Token("label_close", "label", -1);
 
 const todoify = (
   token: Token,
   state: TaskListStateCore,
   options: Required<TaskListOptions>
 ): void => {
+  const id = `task-item-${state.env.tasklists++}`;
+
   token.children = token.children || [];
 
-  // add checkbox input
-  token.children.unshift(generateCheckbox(token));
-
   // remove the checkbox syntax letter
-  token.children[1].content = token.children[1].content.slice(3);
-  token.content = token.content.slice(3);
+  token.children[0].content = token.children[0].content.slice(3);
 
-  if (options.label)
-    if (options.labelAfter) {
-      token.children.pop();
-
-      const id = `task-item-${state.env.tasklists++}`;
-
-      token.children[0].content =
-        token.children[0].content.slice(0, -1) + ' id="' + id + '">';
-      token.children.push(afterLabel(token.content, id));
-    } else {
-      token.children.unshift(beginLabel());
-      token.children.push(endLabel());
-    }
+  if (options.label) {
+    // add label
+    token.children.unshift(beginLabel(id));
+    token.children.push(endLabel());
+  }
+  // checkbox
+  token.children.unshift(generateCheckbox(token, id, options.disabled));
 };
 
 export const tasklist: PluginWithOptions<TaskListOptions> = (
   md,
-  { label = true, labelAfter = true } = {}
+  { disabled = true, label = true } = {}
 ) => {
   md.core.ruler.after(
     "inline",
@@ -137,7 +115,7 @@ export const tasklist: PluginWithOptions<TaskListOptions> = (
 
       for (let i = 2; i < tokens.length; i++) {
         if (isTaskListItem(tokens, i)) {
-          todoify(tokens[i], state, { label, labelAfter });
+          todoify(tokens[i], state, { disabled, label });
           setTokenAttr(tokens[i - 2], "class", "task-list-item");
           setTokenAttr(
             tokens[getParentTokenIndex(tokens, i - 2)],
