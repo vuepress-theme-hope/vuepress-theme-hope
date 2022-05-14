@@ -16,38 +16,37 @@ flowchart TB
   subgraph node [Node 侧]
     direction TB
     readConfig[读取你的配置]-->
-    node2[通过 filter 选项确定文章页面]-->
-    node3[通过 getInfo 选项从这些页面中按照你的要求提取文章信息]-->
-    node4[将提取的信息注入 routeMeta 中]
-    readConfig-->
-    resolve[依次处理你配置的分类与类别]
-    generatePage["生成页面，并注入相应 frontmatter 与应用布局"]
+    node2[通过 filter 选项\n确定文章页面]-->
+    node3[通过 getInfo 选项\n提取文章信息]-->
+    node4[将提取的信息\n注入 routeMeta 中]
+    readConfig
+    generatePage["生成页面\n注入 frontmatter 与布局"]
     writeTemp["将信息写入临时文件"]
 
     subgraph category [分类]
       direction TB
       loopCategory[遍历每个分类配置] --->
-      getCategory["根据 getter 选项获取每个页面的对应分类"] -->
-      mapCategory["建立 '分类名称 → 对应页面' 的映射"]-->
-      sortCategory["根据 sort 选项对每个分类的页面进行排序"]
+      getCategory["根据 getter 选项\n获取每个页面的对应分类"] -->
+      mapCategory["建立\n'分类名称 → 对应页面'\n映射"]-->
+      sortCategory["根据 sort 选项\n对每个分类的页面进行排序"]
       loopCategory -->
-      getCategoryPage["读取 path, layout, frontmatter, itemPath, itemLayout, itemFrontmatter 选项"]
+      getCategoryPage["读取\npath,\nlayout,\nfrontmatter,\nitemPath,\nitemLayout,\nitemFrontmatter\n选项"]
     end
 
-    resolve--->loopCategory
+    readConfig--->loopCategory
     getCategoryPage --> generatePage
     sortCategory --> writeTemp
 
     subgraph type [类别]
       direction TB
       loopType[遍历每个类别配置] --->
-      getTypePage["读取 path, layout, frontmatter 选项"]
+      getTypePage["读取\npath,\nlayout,\nfrontmatter\n选项"]
       loopType -->
-      filterType["根据 filter 选项对页面进行过滤获得所需类别"]-->
-      sortType["根据 sort 选项对页面进行排序"]
+      filterType["根据 filter 选项\n过滤页面"]-->
+      sortType["根据 sort 选项\n排序页面"]
     end
 
-    resolve-->loopType
+    readConfig-->loopType
     getTypePage --> generatePage
     sortType --> writeTemp
     end
@@ -64,7 +63,7 @@ flowchart TB
     getInfo["使用页面路径从 routeMeta 中获取页面信息"] -->
     return["整理信息后返回"]
     visit["访问博客对应页面"]-->
-    layout["对应页面使用相应布局，并在 frontmatter 中获取相关信息"]
+    layout["载入相应布局\n并在 frontmatter 中获取相关信息"]
   end
 
   config-->readConfig

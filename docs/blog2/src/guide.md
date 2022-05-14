@@ -16,38 +16,37 @@ flowchart TB
   subgraph node ["Node Side"]
     direction TB
     readConfig["Read Config"]-->
-    node2["Get article using 'filter' option"]-->
-    node3["Get article info using 'getInfo' option"]-->
+    node2["Get articles\nwith 'filter' option"]-->
+    node3["Get info\nwith 'getInfo' option"]-->
     node4["Write info to routeMeta"]
-    readConfig --->
-    resolve["Resolve 'category' and 'tag' options"]
-    generatePage["Generate page and item page with frontmatter and layout"]
+    readConfig
+    generatePage["Generate pages"]
     writeTemp["Write info to temp files"]
 
     subgraph category
       direction TB
       loopCategory["Loop each config"]-->
-      getCategory["Get category using 'getter' option"]-->
-      mapCategory["Build 'CategoryName → Pages' Map"]-->
-      sortCategory["Sort pages using 'sort' option"]
+      getCategory["Get category\nwith 'getter' option"]-->
+      mapCategory["Build\n'CategoryName → Pages'\nMap"]-->
+      sortCategory["Sort pages\nwith 'sort' option"]
       loopCategory-->
-      getCategoryPage["Get path, layout, frontmatter, itemPath, itemLayout, itemFrontmatter options"]
+      getCategoryPage["Get path,\nlayout,\nfrontmatter,\nitemPath,\nitemLayout,\nitemFrontmatter\noptions"]
       end
 
-    resolve-->loopCategory
+    readConfig-->loopCategory
     getCategoryPage--> generatePage
     sortCategory--> writeTemp
 
     subgraph type
       direction TB
       loopType[Loop each config]-->
-      getTypePage["Get path, layout, frontmatter options"]
+      getTypePage["Get\n'path',\n'layout',\n'frontmatter'\noptions"]
       loopType-->
-      filterType["Get pages fitting the type using 'filter' option"]-->
-      sortType["Sort pages using 'sort' option"]
+      filterType["Get pages\nwith 'filter' option"]-->
+      sortType["Sort pages\nwith 'sort' option"]
     end
 
-    resolve-->loopType
+    readConfig-->loopType
     getTypePage--> generatePage
     sortType--> writeTemp
     end
