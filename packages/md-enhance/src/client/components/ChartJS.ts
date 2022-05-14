@@ -1,5 +1,5 @@
 import { defineComponent, h, onMounted, ref } from "vue";
-import { loadingSvgString } from "./icons";
+import { LOADING_SVG } from "./icons";
 
 import type { ChartConfiguration } from "chart.js";
 import type { VNode } from "vue";
@@ -66,7 +66,7 @@ export default defineComponent({
       loading.value
         ? h("div", {
             class: ["chart-loading-wrapper"],
-            innerHTML: loadingSvgString,
+            innerHTML: LOADING_SVG,
           })
         : null,
       h(

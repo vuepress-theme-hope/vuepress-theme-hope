@@ -2,9 +2,9 @@
 @use "@mr-hope/vuepress-shared/styles/reset";
 
 .code-demo-wrapper {
-  margin-top: 10px;
+  margin: 10px 0;
   border: 1px solid var(--c-border, #eaecef);
-  border-radius: 4px;
+  border-radius: 8px;
   transition: all 0.2s;
 
   &:hover {
@@ -33,6 +33,85 @@
     max-height: 400px;
     padding: 20px;
     border-bottom: 1px solid var(--c-border, #eaecef);
+  }
+}
+
+.code-demo-header {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 8px 12px;
+
+  background-color: var(--c-bg-light, #f3f4f5);
+
+  text-align: left;
+
+  .toggle-button {
+    @include reset.button;
+    @include arrow.arrow;
+    position: relative;
+
+    margin: 8px 12px 8px 8px;
+    border-color: transparent;
+    border-radius: 50%;
+
+    background-color: var(--grey12);
+    outline: none;
+
+    font-size: 24px;
+
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--light-grey);
+    }
+  }
+
+  .title {
+    display: inline-block;
+    vertical-align: top;
+    flex: 1;
+
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 2.5rem;
+
+    &:first-child {
+      margin-left: 16px;
+    }
+  }
+
+  .codepen-button,
+  .jsfiddle-button {
+    @include reset.button;
+    position: relative;
+
+    box-sizing: content-box;
+
+    width: 1.25rem;
+    height: 1.25rem;
+    margin: 0 4px;
+    padding: 4px;
+    border-radius: 50%;
+
+    outline: none;
+
+    svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      fill: var(--grey12);
+    }
+
+    &:hover {
+      background-color: var(--grey12);
+
+      svg {
+        fill: var(--dark-grey);
+      }
+    }
   }
 }
 
@@ -87,108 +166,6 @@
         border-bottom-right-radius: 50% 20%;
       }
       // stylelint-enable selector-max-compound-selectors
-    }
-  }
-}
-
-.code-demo-footer {
-  position: relative;
-  text-align: left;
-
-  .toggle-button {
-    @include reset.button;
-    @include arrow.arrow;
-    position: relative;
-
-    margin: 8px;
-    border-color: transparent;
-
-    background-color: transparent;
-    outline: none;
-
-    font-size: 24px;
-
-    cursor: pointer;
-  }
-
-  .title {
-    display: inline-block;
-    vertical-align: top;
-    line-height: 40px;
-
-    &:first-child {
-      margin-left: 16px;
-    }
-  }
-
-  .code-demo-jsfiddle,
-  .code-demo-codepen {
-    float: right;
-    margin: 8px 4px;
-
-    &:hover {
-      opacity: 1;
-    }
-  }
-
-  .button {
-    @include reset.button;
-    position: relative;
-
-    margin: 0;
-    padding: 0;
-
-    color: #3eaf7c;
-    outline: none;
-
-    font-size: 14px;
-
-    &:hover {
-      &::before {
-        content: attr(data-tip);
-
-        position: absolute;
-        top: -28px;
-        left: 50%;
-        z-index: 100;
-
-        padding: 6px;
-        border-radius: 4px;
-
-        background-color: rgb(0 0 0 / 80%);
-        color: #eee;
-
-        font-size: 12px;
-        line-height: 1;
-        white-space: nowrap;
-
-        transform: translateX(-50%);
-      }
-
-      &::after {
-        content: "" !important;
-
-        position: absolute;
-        top: -5px;
-        left: 50%;
-
-        display: block;
-
-        border: 5px solid transparent;
-        border-top-color: rgb(0 0 0 / 80%);
-
-        transform: translateX(-50%);
-      }
-
-      svg {
-        fill: var(--c-brand, #3eaf7c);
-      }
-    }
-
-    svg {
-      width: 1.25rem;
-      height: 1.25rem;
-      fill: var(--grey12);
     }
   }
 }
