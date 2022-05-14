@@ -26,12 +26,12 @@ const getThemeVariables = (isDarkMode: boolean): Record<string, unknown> => {
     primaryBorderColor: isDarkMode ? "#389d70" : "#4abf8a",
     primaryTextColor: "#fff",
 
-    secondaryColor: "#f39c12",
+    secondaryColor: "#ffb500",
     secondaryBorderColor: isDarkMode ? "#fff" : "#000",
     secondaryTextColor: isDarkMode ? "#ddd" : "#333",
 
-    tertiaryColor: isDarkMode ? "#22182d" : "#eeeaf3",
-    tertiaryBorderColor: isDarkMode ? "#fff" : "#000",
+    tertiaryColor: isDarkMode ? "#282828" : "#efeef4",
+    tertiaryBorderColor: isDarkMode ? "#bbb" : "#242424",
     tertiaryTextColor: isDarkMode ? "#ddd" : "#333",
 
     // note

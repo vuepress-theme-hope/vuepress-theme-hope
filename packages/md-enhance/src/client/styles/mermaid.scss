@@ -22,4 +22,12 @@
       color: var(--c-brand, #3eaf7c);
     }
   }
+
+  .node rect,
+  .clusters rect,
+  rect.note,
+  .actor {
+    rx: 8;
+    ry: 8;
+  }
 }
