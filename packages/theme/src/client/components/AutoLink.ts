@@ -50,11 +50,7 @@ export default defineComponent({
     const linkTarget = computed(() =>
       hasNonHttpProtocal.value
         ? undefined
-        : config.value.target
-        ? config.value.target
-        : hasHttpProtocol.value
-        ? "_blank"
-        : undefined
+        : config.value.target || (hasHttpProtocol.value ? "_blank" : undefined)
     );
 
     // if the `target` attr is '_blank'
@@ -72,11 +68,8 @@ export default defineComponent({
     const anchorRel = computed(() =>
       hasNonHttpProtocal.value
         ? undefined
-        : config.value.rel
-        ? config.value.rel
-        : isBlankTarget.value
-        ? "noopener noreferrer"
-        : undefined
+        : config.value.rel ||
+          (isBlankTarget.value ? "noopener noreferrer" : undefined)
     );
 
     // resolve the `aria-label` attr
@@ -91,24 +84,23 @@ export default defineComponent({
 
       const localeKeys = Object.keys(site.value.locales);
 
-      // check all the locales
-      if (localeKeys.length)
-        return !localeKeys.some((key) => key === config.value.link);
-
-      // check root
-      return config.value.link !== "/";
+      return localeKeys.length
+        ? // check all the locales
+          localeKeys.every((key) => key !== config.value.link)
+        : // check root
+          config.value.link !== "/";
     });
 
     // if this link is active
     const isActive = computed(() =>
-      !renderRouterLink.value
-        ? false
-        : config.value.activeMatch
-        ? new RegExp(config.value.activeMatch).test(route.path)
-        : // if this link is active in subpath
-        !shouldBeActiveInSubpath.value
-        ? route.path === config.value.link
-        : route.path.startsWith(config.value.link)
+      renderRouterLink.value
+        ? config.value.activeMatch
+          ? new RegExp(config.value.activeMatch).test(route.path)
+          : // if this link is active in subpath
+          !shouldBeActiveInSubpath.value
+          ? route.path === config.value.link
+          : route.path.startsWith(config.value.link)
+        : false
     );
 
     const renderIcon = (item: AutoLink): VNode | null =>
@@ -128,7 +120,7 @@ export default defineComponent({
               ...attrs,
               // class needs to be merged manually
               class: ["nav-link", { active: isActive.value }, attrs.class],
-              onFocusOut: () => emit("focusout"),
+              onFocusout: () => emit("focusout"),
             },
             () =>
               slots.default?.() || [
@@ -147,9 +139,9 @@ export default defineComponent({
               ...attrs,
               // class needs to be merged manually
               class: ["nav-link", attrs.class],
-              onFocusOut: () => emit("focusout"),
+              onFocusout: () => emit("focusout"),
             },
-            [
+            slots.default?.() || [
               slots.before?.() || renderIcon(config.value),
               config.value.text,
               props.externalLinkIcon ? h(ExternalLinkIcon) : null,

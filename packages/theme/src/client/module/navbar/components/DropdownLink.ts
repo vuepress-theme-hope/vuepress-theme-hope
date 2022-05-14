@@ -56,9 +56,6 @@ export default defineComponent({
       if (isTriggerByTab) open.value = !open.value;
     };
 
-    const isLastItemOfArray = <T>(item: T, arr: T[]): boolean =>
-      arr[arr.length - 1] === item;
-
     return (): VNode =>
       h("div", { class: ["dropdown-wrapper", { open: open.value }] }, [
         h(
@@ -83,8 +80,10 @@ export default defineComponent({
             h(
               "ul",
               { class: "nav-dropdown" },
-              config.value.children.map((child) =>
-                h(
+              config.value.children.map((child, index) => {
+                const isLastChild = index === config.value.children.length - 1;
+
+                return h(
                   "li",
                   { class: "dropdown-item" },
                   "children" in child
@@ -97,11 +96,9 @@ export default defineComponent({
                                 config: child as AutoLinkType,
                                 onFocusout: () => {
                                   if (
-                                    isLastItemOfArray(
-                                      child,
-                                      config.value.children
-                                    ) &&
-                                    child.children.length === 0
+                                    // no children
+                                    child.children.length === 0 &&
+                                    isLastChild
                                   )
                                     open.value = false;
                                 },
@@ -111,22 +108,23 @@ export default defineComponent({
                         h(
                           "ul",
                           { class: "dropdown-subitem-wrapper" },
-                          child.children.map((grandchild) =>
+                          child.children.map((grandchild, grandIndex) =>
                             h(
                               "li",
                               { class: "dropdown-subitem" },
                               h(AutoLink, {
                                 config: grandchild,
                                 onFocusout: () => {
+                                  console.log(
+                                    "focusout",
+                                    grandIndex,
+                                    child.children.length,
+                                    isLastChild
+                                  );
                                   if (
-                                    isLastItemOfArray(
-                                      grandchild,
-                                      child.children
-                                    ) &&
-                                    isLastItemOfArray(
-                                      child,
-                                      config.value.children
-                                    )
+                                    // last item of grandchild
+                                    grandIndex === child.children.length - 1 &&
+                                    isLastChild
                                   )
                                     open.value = false;
                                 },
@@ -138,12 +136,11 @@ export default defineComponent({
                     : h(AutoLink, {
                         config: child,
                         onFocusout: () => {
-                          if (isLastItemOfArray(child, config.value.children))
-                            open.value = false;
+                          if (isLastChild) open.value = false;
                         },
                       })
-                )
-              )
+                );
+              })
             ),
           ]
         ),
