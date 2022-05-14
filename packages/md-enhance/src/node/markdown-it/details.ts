@@ -1,7 +1,7 @@
 import { ensureLeadingSlash, resolveLocalePath } from "@vuepress/shared";
 
 import type { LocaleConfig } from "@vuepress/core";
-import type Token from "markdown-it/lib/token";
+import type { default as Token } from "markdown-it/lib/token";
 import type { MarkdownItContainerRenderFunction } from "@vuepress/plugin-container";
 
 export const getDetailsRender =

@@ -1,6 +1,6 @@
 /* eslint-disable max-statements */
 import { hash } from "@vuepress/utils";
-import type Token from "markdown-it/lib/token";
+import type { default as Token } from "markdown-it/lib/token";
 
 export const chartRender = (tokens: Token[], index: number): string => {
   const { nesting, info } = tokens[index];

@@ -16,7 +16,7 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-import Token from "markdown-it/lib/token";
+import { default as Token } from "markdown-it/lib/token";
 import {
   getParentTokenIndex,
   isInlineToken,
@@ -26,7 +26,7 @@ import {
 } from "./utils";
 
 import type { PluginWithOptions } from "markdown-it";
-import type StateCore from "markdown-it/lib/rules_core/state_core";
+import type { default as StateCore } from "markdown-it/lib/rules_core/state_core";
 import type { TaskListOptions } from "../../shared";
 
 interface TaskListEnv {

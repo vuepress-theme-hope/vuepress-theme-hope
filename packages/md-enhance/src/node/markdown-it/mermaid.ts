@@ -1,7 +1,7 @@
 import { hash } from "@vuepress/utils";
 
 import type { PluginSimple } from "markdown-it";
-import type Renderer from "markdown-it/lib/renderer";
+import type { default as Renderer } from "markdown-it/lib/renderer";
 
 const mermaidRender: Renderer.RenderRule = (tokens, index) => {
   const token = tokens[index];

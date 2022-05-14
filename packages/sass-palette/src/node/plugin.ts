@@ -1,5 +1,5 @@
 import { path } from "@vuepress/utils";
-import chokidar from "chokidar";
+import { watch } from "chokidar";
 
 import { injectConfigModule } from "./inject";
 import {
@@ -94,7 +94,7 @@ export const sassPalettePlugin =
       },
 
       onWatched: (app, watchers): void => {
-        const configWatcher = chokidar.watch(userConfig, {
+        const configWatcher = watch(userConfig, {
           cwd: app.dir.source(),
           ignoreInitial: true,
         });
@@ -120,7 +120,7 @@ export const sassPalettePlugin =
 
         watchers.push(configWatcher);
 
-        const paletteWatcher = chokidar.watch(userPalette, {
+        const paletteWatcher = watch(userPalette, {
           cwd: app.dir.source(),
           ignoreInitial: true,
         });
@@ -156,7 +156,7 @@ export const sassPalettePlugin =
         watchers.push(paletteWatcher);
 
         if (userStyle) {
-          const styleWatcher = chokidar.watch(userStyle, {
+          const styleWatcher = watch(userStyle, {
             cwd: app.dir.source(),
             ignoreInitial: true,
           });

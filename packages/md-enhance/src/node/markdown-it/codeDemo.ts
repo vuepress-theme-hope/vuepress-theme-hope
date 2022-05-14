@@ -1,6 +1,6 @@
 import { hash } from "@vuepress/utils";
 
-import type Token from "markdown-it/lib/token";
+import type { default as Token } from "markdown-it/lib/token";
 import type { CodeDemoOptions } from "../../shared";
 
 export const codeDemoRender = (tokens: Token[], index: number): string => {

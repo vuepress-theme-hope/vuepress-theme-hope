@@ -1,5 +1,5 @@
-import chalk from "chalk";
-import ora from "ora";
+import { chalk } from "@vuepress/utils";
+import { default as ora } from "ora";
 
 /**
  * Shell Logger

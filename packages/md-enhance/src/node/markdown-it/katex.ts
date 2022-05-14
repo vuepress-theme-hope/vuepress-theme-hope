@@ -27,7 +27,7 @@
 import Katex from "katex";
 import { escapeHtml } from "./utils";
 
-import type StateInline from "markdown-it/lib/rules_inline/state_inline";
+import type { default as StateInline } from "markdown-it/lib/rules_inline/state_inline";
 import type { PluginWithOptions } from "markdown-it";
 import type { RuleInline } from "markdown-it/lib/parser_inline";
 import type { RuleBlock } from "markdown-it/lib/parser_block";

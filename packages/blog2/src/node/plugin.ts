@@ -5,7 +5,7 @@ import {
   preparePagesData,
   preparePagesRoutes,
 } from "@vuepress/core";
-import chokidar from "chokidar";
+import { watch } from "chokidar";
 
 import { prepareCategory } from "./category";
 import { prepareType } from "./type";
@@ -58,7 +58,7 @@ export const blogPlugin = (options: BlogOptions): PluginObject => {
 
     onWatched: (app, watchers): void => {
       if (options.hotReload) {
-        const pageDataWatcher = chokidar.watch("pages/**/*.js", {
+        const pageDataWatcher = watch("pages/**/*.js", {
           cwd: app.dir.temp(),
           ignoreInitial: true,
         });
