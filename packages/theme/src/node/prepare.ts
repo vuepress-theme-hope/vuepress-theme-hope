@@ -20,6 +20,7 @@ import BloggerInfo from "@theme-hope/module/blog/components/BloggerInfo";
 import BlogHome from "@theme-hope/module/blog/components/BlogHome";
 import BlogPage from "@theme-hope/module/blog/components/BlogPage";
 import { setupBlog } from "@theme-hope/module/blog/composables";
+import "${CLIENT_FOLDER}module/blog/styles/layout.scss";
 `;
 
     enhance += `
