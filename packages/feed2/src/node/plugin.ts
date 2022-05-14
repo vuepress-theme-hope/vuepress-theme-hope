@@ -1,34 +1,37 @@
+import { chalk } from "@vuepress/utils";
 import { checkOutput, ensureHostName, getFeedOptions } from "./options";
 import { injectLinkstoHead } from "./injectHead";
 import { FeedGenerator } from "./generator";
 import { logger } from "./utils";
 
-import type { PluginFunction } from "@vuepress/core";
+import type { PluginFunction, PluginObject } from "@vuepress/core";
 import type { FeedOptions } from "../shared";
 
 export const feedPlugin =
   (options: FeedOptions): PluginFunction =>
   (app) => {
-    if (!ensureHostName(options)) {
-      logger.error("Option 'hostname' is required!");
+    if (app.env.isDebug) logger.info(`Options: ${options.toString()}`);
 
-      return {
-        name: "vuepress-plugin-feed2",
-      };
+    const plugin: PluginObject = {
+      name: "vuepress-plugin-feed2",
+    };
+
+    if (!ensureHostName(options)) {
+      logger.error(`Option ${chalk.magenta("hostname")} is required!`);
+
+      return plugin;
     }
 
     if (!checkOutput(options)) {
       logger.info("No requested output, the plugin won’t start!");
 
-      return {
-        name: "vuepress-plugin-feed2",
-      };
+      return plugin;
     }
 
     const feedOptions = getFeedOptions(app, options);
 
     return {
-      name: "vuepress-plugin-feed2",
+      ...plugin,
 
       onPrepared: (app): void => injectLinkstoHead(app, feedOptions),
 

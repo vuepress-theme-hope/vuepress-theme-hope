@@ -9,6 +9,7 @@ import {
 import { path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import { walineLocales } from "./locales";
+import { logger } from "./utils";
 
 import type { CommentOptions } from "../shared";
 import type { PluginFunction } from "@vuepress/core";
@@ -17,6 +18,8 @@ import type { PluginFunction } from "@vuepress/core";
 export const commentPlugin =
   (options: CommentOptions): PluginFunction =>
   (app) => {
+    if (app.env.isDebug) logger.info(`Options: ${options.toString()}`);
+
     const isGiscus = options.type === "giscus";
     const isTwikoo = options.type === "twikoo";
     const isWaline = options.type === "waline";

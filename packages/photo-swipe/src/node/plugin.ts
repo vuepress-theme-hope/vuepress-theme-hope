@@ -2,6 +2,7 @@ import { getLocales } from "@mr-hope/vuepress-shared";
 import { path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import { photoSwipeLocales } from "./locales";
+import { logger } from "./utils";
 
 import type { PluginFunction } from "@vuepress/core";
 import type { PhotoSwipeOptions } from "../shared";
@@ -9,6 +10,8 @@ import type { PhotoSwipeOptions } from "../shared";
 export const photoSwipePlugin =
   (options: PhotoSwipeOptions = {}): PluginFunction =>
   (app) => {
+    if (app.env.isDebug) logger.info(`Options: ${options.toString()}`);
+
     useSassPalettePlugin(app, { id: "hope" });
 
     return {

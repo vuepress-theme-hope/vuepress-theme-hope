@@ -10,6 +10,7 @@ import { pwaLocales } from "./locales";
 import { injectLinkstoHead } from "./injectHead";
 import { getManifest, generateManifest } from "./generateManifest";
 import { generateServiceWorker } from "./generateServiceWorker";
+import { logger } from "./utils";
 
 import type { PluginFunction } from "@vuepress/core";
 import type { PWAOptions } from "../shared";
@@ -18,6 +19,8 @@ import { appendBase } from "./helper";
 export const pwaPlugin =
   (options: PWAOptions = {}): PluginFunction =>
   (app) => {
+    if (app.env.isDebug) logger.info(`Options: ${options.toString()}`);
+
     const { base } = app.options;
 
     if (options.appendBase) appendBase(base, options);

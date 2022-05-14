@@ -2,22 +2,27 @@ import { getLocales } from "@mr-hope/vuepress-shared";
 import { removeEndingSlash, removeLeadingSlash } from "@vuepress/shared";
 import { path } from "@vuepress/utils";
 import { copyrightLocales } from "./locales";
+import { logger } from "./utils";
 
 import type { Page, PluginFunction } from "@vuepress/core";
 import type { CopyrightOptions } from "../shared";
 
 export const copyrightPlugin =
-  ({
-    hostname,
-    author = "",
-    license = "",
-    disableCopy = false,
-    disableSelection = false,
-    global = false,
-    triggerWords = 100,
-    locales,
-  }: CopyrightOptions): PluginFunction =>
+  (options: CopyrightOptions): PluginFunction =>
   (app) => {
+    if (app.env.isDebug) logger.info(`Options: ${options.toString()}`);
+
+    const {
+      hostname,
+      author = "",
+      license = "",
+      disableCopy = false,
+      disableSelection = false,
+      global = false,
+      triggerWords = 100,
+      locales,
+    } = options;
+
     const currentlocales = getLocales({
       app,
       name: "copyright",

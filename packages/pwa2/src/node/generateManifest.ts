@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { getRootLang } from "@mr-hope/vuepress-shared";
 import { chalk, fs, path } from "@vuepress/utils";
-import { logger } from "./logger";
+import { logger } from "./utils";
 
 import type { App } from "@vuepress/core";
 import type { ManifestOption, PWAOptions } from "../shared";

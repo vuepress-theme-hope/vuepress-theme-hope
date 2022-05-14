@@ -1,6 +1,7 @@
 import { addViteOptimizeDepsInclude } from "@mr-hope/vuepress-shared";
 import { path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
+import { logger } from "./utils";
 
 import type { PluginFunction } from "@vuepress/core";
 import type { LightGalleryOptions } from "../shared";
@@ -8,6 +9,8 @@ import type { LightGalleryOptions } from "../shared";
 export const lightgalleryPlugin =
   (options: LightGalleryOptions = {}): PluginFunction =>
   (app) => {
+    if (app.env.isDebug) logger.info(`Options: ${options.toString()}`);
+
     const plugins = options.plugins || ["pager", "share", "zoom"];
 
     useSassPalettePlugin(app, { id: "hope" });

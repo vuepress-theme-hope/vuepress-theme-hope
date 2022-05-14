@@ -1,28 +1,35 @@
-import { path } from "@vuepress/utils";
+import { chalk, path } from "@vuepress/utils";
 
-import type { PluginObject } from "@vuepress/core";
+import type { Plugin, PluginObject } from "@vuepress/core";
 import type { AddThisOptions } from "../shared";
+import { logger } from "./utils";
 
 /**
  * `vuepress-plugin-add-this` Plugin
  */
-export const addThisPlugin = ({ pubid }: AddThisOptions): PluginObject => {
-  if (!pubid) {
-    console.error("[AddThis]: Please provide a pubid to let plugin work");
+export const addThisPlugin = ({ pubid }: AddThisOptions): Plugin => {
+  const plugin: PluginObject = {
+    name: "vuepress-plugin-add-this",
+  };
 
-    return {
-      name: "vuepress-plugin-add-this",
-    };
+  if (!pubid) {
+    logger.error(`Option ${chalk.magenta("pubid")} is required`);
+
+    return plugin;
   }
 
-  return {
-    name: "vuepress-plugin-add-this",
+  return (app) => {
+    if (app.env.isDebug) logger.info(`pubid: ${pubid}`);
 
-    define: () => ({ PUB_ID: pubid }),
+    return {
+      ...plugin,
 
-    clientAppRootComponentFiles: path.resolve(
-      __dirname,
-      "../client/root-components/AddThis.js"
-    ),
+      define: () => ({ PUB_ID: pubid }),
+
+      clientAppRootComponentFiles: path.resolve(
+        __dirname,
+        "../client/root-components/AddThis.js"
+      ),
+    };
   };
 };

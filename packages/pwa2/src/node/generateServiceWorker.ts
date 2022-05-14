@@ -1,6 +1,6 @@
 import { chalk, fs, path } from "@vuepress/utils";
 import { generateSW } from "workbox-build";
-import { logger } from "./logger";
+import { logger } from "./utils";
 
 import type {
   ManifestEntry,

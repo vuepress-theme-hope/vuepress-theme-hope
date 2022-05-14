@@ -2,6 +2,7 @@ import { getLocales, noopModule } from "@mr-hope/vuepress-shared";
 import { path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import { backToTopLocales } from "./locales";
+import { logger } from "./utils";
 
 import type { PluginFunction } from "@vuepress/core";
 import type { AvailableComponent, ComponentOptions } from "../shared";
@@ -11,6 +12,8 @@ const availableComponents: AvailableComponent[] = ["Badge"];
 export const componentsPlugin =
   (options: ComponentOptions): PluginFunction =>
   (app) => {
+    if (app.env.isDebug) logger.info(`Options: ${options.toString()}`);
+
     useSassPalettePlugin(app, { id: "hope" });
 
     return {

@@ -2,7 +2,10 @@ import { getPath } from "./utils";
 
 import type { App } from "@vuepress/core";
 
-export const prepareLoadFile = (app: App, id: string): Promise<string> =>
+export const prepareClientAppEnhanceFile = (
+  app: App,
+  id: string
+): Promise<string> =>
   app.writeTemp(
     `sass-palette/load-${id}.js`,
     `import "@sass-palette/${id}-inject";export default ()=>{};`

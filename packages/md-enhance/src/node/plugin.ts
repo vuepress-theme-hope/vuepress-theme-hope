@@ -5,6 +5,7 @@ import {
   addViteSsrExternal,
 } from "@mr-hope/vuepress-shared";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
+import { logger } from "./utils";
 
 import { checkLinks, getCheckLinksStatus } from "./checkLink";
 import {
@@ -33,6 +34,8 @@ import type { MarkdownEnhanceOptions } from "../shared";
 export const mdEnhancePlugin =
   (options: MarkdownEnhanceOptions): PluginFunction =>
   (app) => {
+    if (app.env.isDebug) logger.info(`Options: ${options.toString()}`);
+
     const getStatus = (
       key: keyof MarkdownEnhanceOptions,
       gfm = false

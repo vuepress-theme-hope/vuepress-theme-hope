@@ -5,7 +5,7 @@ import { injectConfigModule } from "./inject";
 import {
   prepareConfigFile,
   prepareInjectFile,
-  prepareLoadFile,
+  prepareClientAppEnhanceFile,
   preparePaletteFile,
   prepareStyleFile,
 } from "./generate";
@@ -15,19 +15,26 @@ import type { PluginFunction } from "@vuepress/core";
 import type { SassPaletteOptions } from "../shared";
 
 export const sassPalettePlugin =
-  ({
-    id = "hope",
-    config = `.vuepress/styles/${id}-config.scss`,
-    defaultConfig = path.resolve(__dirname, "../../styles/default/config.scss"),
-    palette = `.vuepress/styles/${id}-palette.scss`,
-    defaultPalette = path.resolve(
-      __dirname,
-      "../../styles/default/palette.scss"
-    ),
-    generator = path.resolve(__dirname, "../../styles/empty.scss"),
-    style = "",
-  }: SassPaletteOptions): PluginFunction =>
+  (options: SassPaletteOptions): PluginFunction =>
   (app) => {
+    if (app.env.isDebug) logger.info(`Options: ${options.toString()}`);
+
+    const {
+      id = "hope",
+      config = `.vuepress/styles/${id}-config.scss`,
+      defaultConfig = path.resolve(
+        __dirname,
+        "../../styles/default/config.scss"
+      ),
+      palette = `.vuepress/styles/${id}-palette.scss`,
+      defaultPalette = path.resolve(
+        __dirname,
+        "../../styles/default/palette.scss"
+      ),
+      generator = path.resolve(__dirname, "../../styles/empty.scss"),
+      style = "",
+    } = options;
+
     const userConfig = app.dir.source(config);
     const userPalette = app.dir.source(palette);
     const userStyle = style ? app.dir.source(style) : null;
@@ -68,7 +75,6 @@ export const sassPalettePlugin =
 
       onInitialized: (): Promise<void> => {
         return Promise.all([
-          prepareLoadFile(app, id),
           prepareInjectFile(app, id),
 
           prepareConfigFile(app, {
@@ -176,6 +182,6 @@ export const sassPalettePlugin =
         }
       },
 
-      clientAppEnhanceFiles: app.dir.temp(`sass-palette/load-${id}.js`),
+      clientAppEnhanceFiles: (app) => prepareClientAppEnhanceFile(app, id),
     };
   };
