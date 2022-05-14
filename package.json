@@ -57,7 +57,7 @@
     "@babel/core": "^7.17.10",
     "@babel/plugin-transform-modules-commonjs": "^7.17.9",
     "@babel/preset-env": "^7.17.10",
-    "@commitlint/cli": "^16.2.4",
+    "@commitlint/cli": "^16.3.0",
     "@commitlint/config-conventional": "^16.2.4",
     "@rollup/plugin-commonjs": "^22.0.0",
     "@rollup/plugin-json": "^4.1.0",
@@ -110,12 +110,10 @@
     "pnpm": ">=7"
   },
   "pnpm": {
-    "overides": {
-      "minimist": "^1.2.6"
-    },
     "peerDependencyRules": {
       "ignoreMissing": [
         "@algolia/client-search",
+        "@types/react",
         "eslint-plugin-import",
         "eslint-plugin-n",
         "eslint-plugin-promise",

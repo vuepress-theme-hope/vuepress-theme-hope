@@ -26,7 +26,7 @@ tag:
 │    │     │
 │    │     ├── config.{js,ts} (Optional) → Entry file of configuration
 │    │     │
-│    │     └── clientAppEnhance.{js,ts} (Optional) → App level enhancement
+│    │     └── client.{js,ts} (Optional) → Client App file
 │    │
 │    ├── ... → Other docs
 │    │

@@ -1,5 +1,5 @@
 import { withBase } from "@vuepress/client";
-import { computed, defineComponent, h, toRef, unref } from "vue";
+import { defineComponent, h, toRef, unref } from "vue";
 import { RouterLink } from "vue-router";
 
 import {
@@ -8,7 +8,6 @@ import {
 } from "@theme-hope/module/blog/components/icons";
 import { useArticleInfo } from "@theme-hope/module/blog/composables";
 import { LockIcon } from "@theme-hope/module/encrypt/components/icons";
-import { usePathEncrypt } from "@theme-hope/module/encrypt/composables";
 
 import type { PropType, VNode } from "vue";
 import type { ArticleInfo } from "../../../../shared";
@@ -29,9 +28,6 @@ export default defineComponent({
 
   setup(props) {
     const info = toRef(props, "info");
-    const { getPathEncryptStatus } = usePathEncrypt();
-
-    const isEncrypted = computed(() => getPathEncryptStatus(props.path));
 
     const { config, items } = useArticleInfo(info);
 
@@ -54,7 +50,7 @@ export default defineComponent({
                 to: props.path,
               },
               () => [
-                isEncrypted.value ? h(LockIcon) : null,
+                info.value.isEncrypted ? h(LockIcon) : null,
                 info.value.type === "slide" ? h(SlideIcon) : null,
                 h("span", { property: "headline" }, info.value.title),
                 info.value.cover

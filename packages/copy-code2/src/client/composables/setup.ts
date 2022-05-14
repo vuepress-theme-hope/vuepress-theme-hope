@@ -26,14 +26,10 @@
  */
 
 import { useLocaleConfig, Message } from "@mr-hope/vuepress-shared/lib/client";
-import { defineClientAppSetup } from "@vuepress/client";
 import { onMounted, watch } from "vue";
 import { useRoute } from "vue-router";
 
-import type { CopyCodeOptions, CopyCodeLocaleConfig } from "../shared";
-
-import "balloon-css/balloon.css";
-import "./styles/button.scss";
+import type { CopyCodeOptions, CopyCodeLocaleConfig } from "../../shared";
 
 declare const CODE_COPY_OPIONS: Required<CopyCodeOptions>;
 declare const CODE_COPY_LOCALES: CopyCodeLocaleConfig;
@@ -47,7 +43,7 @@ const isMobile = (): boolean =>
       )
     : false;
 
-export default defineClientAppSetup(() => {
+export const setupCopyCode = (): void => {
   const route = useRoute();
   const locale = useLocaleConfig(CODE_COPY_LOCALES);
 
@@ -146,4 +142,4 @@ export default defineClientAppSetup(() => {
       if (!isMobile() || options.showInMobile) genCopyButton();
     }
   );
-});
+};

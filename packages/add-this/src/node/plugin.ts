@@ -26,10 +26,7 @@ export const addThisPlugin = ({ pubid }: AddThisOptions): Plugin => {
 
       define: () => ({ PUB_ID: pubid }),
 
-      clientAppRootComponentFiles: path.resolve(
-        __dirname,
-        "../client/root-components/AddThis.js"
-      ),
+      clientConfigFile: path.resolve(__dirname, "../client/config.js"),
     };
   };
 };

@@ -23,7 +23,7 @@ import {
   sup,
   tasklist,
 } from "./markdown-it";
-import { prepareAppEnhanceFile, prepareRevealPluginFile } from "./prepare";
+import { prepareConfigFile, prepareRevealPluginFile } from "./prepare";
 import { usePlugins } from "./usePlugins";
 import { MATHML_TAGS } from "./utils";
 
@@ -169,6 +169,6 @@ export const mdEnhancePlugin =
         await prepareRevealPluginFile(app, revealPlugins);
       },
 
-      clientAppEnhanceFiles: (app) => prepareAppEnhanceFile(app, options),
+      clientConfigFile: (app) => prepareConfigFile(app, options),
     };
   };

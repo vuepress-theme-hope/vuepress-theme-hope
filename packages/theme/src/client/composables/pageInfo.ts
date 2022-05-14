@@ -111,10 +111,11 @@ export const usePageInfo = (): {
     tag: tag.value,
     isOriginal: frontmatter.value.isOriginal,
     readingTime: page.value.readingTime,
-    pageview:
-      "pageview" in frontmatter.value
+    pageview: ENABLE_VISITOR
+      ? "pageview" in frontmatter.value
         ? frontmatter.value.pageview
-        : ENABLE_VISITOR,
+        : true
+      : false,
   });
 
   const items = computed(() =>

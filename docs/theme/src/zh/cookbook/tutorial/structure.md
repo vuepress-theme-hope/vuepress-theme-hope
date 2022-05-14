@@ -43,7 +43,7 @@ VuePress 只控制 VuePress 项目文件夹中的文件，也就是上一章中�
 │    │    │
 │    │    ├── config.{js,ts} (可选的) → 配置文件的入口文件
 │    │    │
-│    │    └── clientAppEnhance.{js,ts} (可选的) → 客户端应用增强文件
+│    │    └── client.{js,ts} (可选的) → 客户端文件
 │    │
 │    ├── ... → 其他项目文档
 │    │

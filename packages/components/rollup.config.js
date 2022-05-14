@@ -8,26 +8,13 @@ export default [
       "vuepress-plugin-reading-time2",
       "vuepress-plugin-sass-palette",
     ],
-  }),
-  ...rollupTypescript("client/appEnhance", {
-    external: [
-      "@vuepress/client",
-      "@ArticleInfo",
-      "@Badge",
-      "@BreadCrumb",
-      "@FullScreen",
-      "@Pagination",
-      "@TOC",
-      /\.scss$/,
-    ],
-    dtsExternal: [/\.scss$/],
     copy: [["client/styles", "client"]],
   }),
   ...rollupTypescript("client/components/Badge", {
     external: ["vue", /\.scss$/],
     dtsExternal: [/\.scss$/],
   }),
-  ...rollupTypescript("client/root-components/BackToTop", {
+  ...rollupTypescript("client/components/BackToTop", {
     external: [
       "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",

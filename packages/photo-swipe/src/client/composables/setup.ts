@@ -1,14 +1,13 @@
 import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
-import { defineClientAppSetup } from "@vuepress/client";
 import { useFullscreen } from "@vueuse/core";
 import { onMounted, watch } from "vue";
 import { useRoute } from "vue-router";
-import { delay, imageSelector, locales, options } from "./define";
-import { getImages } from "./utils";
+import { delay, imageSelector, locales, options } from "../define";
+import { getImages } from "../utils";
 
 import "photoswipe/dist/photoswipe.css";
 
-export default defineClientAppSetup(() => {
+export const setupPhotoSwipe = (): void => {
   const { isSupported, toggle } = useFullscreen();
   const locale = useLocaleConfig(locales);
   const route = useRoute();
@@ -83,4 +82,4 @@ export default defineClientAppSetup(() => {
   );
 
   onMounted(() => initPhotoSwipe());
-});
+};

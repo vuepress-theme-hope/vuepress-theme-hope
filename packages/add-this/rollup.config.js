@@ -4,5 +4,5 @@ export default [
   ...rollupTypescript("node/index", {
     external: ["@mr-hope/vuepress-shared", "@vuepress/utils"],
   }),
-  ...rollupTypescript("client/root-components/AddThis", { external: ["vue"] }),
+  ...rollupTypescript("client/config", { external: ["vue"] }),
 ];

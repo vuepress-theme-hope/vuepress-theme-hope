@@ -42,6 +42,6 @@ export const photoSwipePlugin =
         PHOTO_SWIPE_OPTIONS: options.options || {},
       }),
 
-      clientAppSetupFiles: path.resolve(__dirname, "../client/appSetup.js"),
+      clientConfigFile: path.resolve(__dirname, "../client/config.js"),
     };
   };

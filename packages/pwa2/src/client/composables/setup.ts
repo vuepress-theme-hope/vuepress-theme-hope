@@ -1,14 +1,13 @@
-import { defineClientAppSetup } from "@vuepress/client";
 import mitt from "mitt";
 import { onMounted, provide } from "vue";
-import { pwaEventSymbol, useForceUpdate, useRegister } from "./composables";
-import type { PWAEvent } from "./composables";
+import { pwaEventSymbol, useForceUpdate, useRegister } from ".";
+import type { PWAEvent } from ".";
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 declare const __VUEPRESS_SSR__: boolean;
 declare const SW_FORCE_UPDATE: boolean;
 
-export default defineClientAppSetup(() => {
+export const setupPWA = (): void => {
   if (__VUEPRESS_SSR__) return;
 
   // create event emitter and provide it
@@ -34,4 +33,4 @@ export default defineClientAppSetup(() => {
       await useRegister(event);
     }
   });
-});
+};

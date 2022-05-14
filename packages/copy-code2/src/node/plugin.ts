@@ -27,6 +27,6 @@ export const copyCodePlugin =
         }),
       }),
 
-      clientAppSetupFiles: path.resolve(__dirname, "../client/appSetup.js"),
+      clientConfigFile: path.resolve(__dirname, "../client/config.js"),
     };
   };

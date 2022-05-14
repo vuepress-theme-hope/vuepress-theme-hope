@@ -10,13 +10,7 @@ export default [
       "vuepress-plugin-sass-palette",
     ],
   }),
-  ...rollupTypescript("client/appSetup", {
-    resolve: true,
-    external: ["@vuepress/client", "vue", /\.scss$/],
-    dtsExternal: [/\.scss$/],
-    copy: [["client/styles", "client"]],
-  }),
-  ...rollupTypescript("client/global-components/PWAInstall", {
+  ...rollupTypescript("client/components/PWAInstall", {
     resolve: true,
     external: [
       "@mr-hope/vuepress-shared/lib/client",
@@ -27,7 +21,7 @@ export default [
     ],
     dtsExternal: [/\.scss$/],
   }),
-  ...rollupTypescript("client/global-components/SWUpdatePopup", {
+  ...rollupTypescript("client/components/SWUpdatePopup", {
     external: [
       "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
@@ -37,7 +31,7 @@ export default [
     ],
     dtsExternal: [/\.scss$/],
   }),
-  ...rollupTypescript("client/global-components/SWHintPopup", {
+  ...rollupTypescript("client/components/SWHintPopup", {
     external: [
       "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
@@ -46,5 +40,11 @@ export default [
       /\.scss$/,
     ],
     dtsExternal: [/\.scss$/],
+  }),
+  ...rollupTypescript("client/composables/setup", {
+    resolve: true,
+    external: ["@vuepress/client", "vue", /\.scss$/],
+    dtsExternal: [/\.scss$/],
+    copy: [["client/styles", "client"]],
   }),
 ];

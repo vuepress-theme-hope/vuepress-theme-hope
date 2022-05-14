@@ -39,9 +39,6 @@ export const lightgalleryPlugin =
         ]);
       },
 
-      clientAppRootComponentFiles: path.resolve(
-        __dirname,
-        "../client/root-components/LightGallery.js"
-      ),
+      clientConfigFile: path.resolve(__dirname, "../client/config.js"),
     };
   };

@@ -1,16 +1,17 @@
 import { ensureEndingSlash } from "@vuepress/shared";
 import { path } from "@vuepress/utils";
+
 import type { App } from "@vuepress/core";
 import type { MarkdownEnhanceOptions, RevealPlugin } from "../shared";
 
 const CLIENT_FOLDER = ensureEndingSlash(path.resolve(__dirname, "../client"));
 
-export const prepareAppEnhanceFile = async (
+export const prepareConfigFile = async (
   app: App,
   options: MarkdownEnhanceOptions
 ): Promise<string> => {
-  let appEnhanceImport = "";
-  let appEnhanceRegister = "";
+  let configImport = "";
+  let enhance = "";
 
   const getStatus = (key: keyof MarkdownEnhanceOptions, gfm = false): boolean =>
     key in options
@@ -20,65 +21,67 @@ export const prepareAppEnhanceFile = async (
       : options.enableAll || false;
 
   if (getStatus("chart")) {
-    appEnhanceImport += `import ChartJS from "${CLIENT_FOLDER}components/ChartJS";\n`;
-    appEnhanceRegister += `app.component("ChartJS", ChartJS);\n`;
+    configImport += `import ChartJS from "${CLIENT_FOLDER}components/ChartJS";\n`;
+    enhance += `app.component("ChartJS", ChartJS);\n`;
   }
 
   if (getStatus("demo")) {
-    appEnhanceImport += `import CodeDemo from "${CLIENT_FOLDER}components/CodeDemo";\n`;
-    appEnhanceRegister += `app.component("CodeDemo", CodeDemo);\n`;
+    configImport += `import CodeDemo from "${CLIENT_FOLDER}components/CodeDemo";\n`;
+    enhance += `app.component("CodeDemo", CodeDemo);\n`;
   }
 
   if (getStatus("codegroup")) {
-    appEnhanceImport += `import CodeGroup from "${CLIENT_FOLDER}components/CodeGroup";\n`;
-    appEnhanceRegister += `app.component("CodeGroup", CodeGroup);\n`;
-    appEnhanceImport += `import CodeGroupItem from "${CLIENT_FOLDER}components/CodeGroupItem";\n`;
-    appEnhanceRegister += `app.component("CodeGroupItem", CodeGroupItem);\n`;
+    configImport += `import CodeGroup from "${CLIENT_FOLDER}components/CodeGroup";\n`;
+    enhance += `app.component("CodeGroup", CodeGroup);\n`;
+    configImport += `import CodeGroupItem from "${CLIENT_FOLDER}components/CodeGroupItem";\n`;
+    enhance += `app.component("CodeGroupItem", CodeGroupItem);\n`;
   }
 
   if (getStatus("flowchart")) {
-    appEnhanceImport += `import FlowChart from "${CLIENT_FOLDER}components/FlowChart";\n`;
-    appEnhanceRegister += `app.component("FlowChart", FlowChart);\n`;
+    configImport += `import FlowChart from "${CLIENT_FOLDER}components/FlowChart";\n`;
+    enhance += `app.component("FlowChart", FlowChart);\n`;
   }
 
   if (getStatus("mermaid")) {
-    appEnhanceImport += `import Mermaid from "${CLIENT_FOLDER}components/Mermaid";\n`;
-    appEnhanceRegister += `app.component("Mermaid", Mermaid);\n`;
+    configImport += `import Mermaid from "${CLIENT_FOLDER}components/Mermaid";\n`;
+    enhance += `app.component("Mermaid", Mermaid);\n`;
   }
 
   if (getStatus("presentation")) {
-    appEnhanceImport += `import Presentation from "${CLIENT_FOLDER}components/Presentation";\n`;
-    appEnhanceRegister += `app.component("Presentation", Presentation);\n`;
+    configImport += `import Presentation from "${CLIENT_FOLDER}components/Presentation";\n`;
+    enhance += `app.component("Presentation", Presentation);\n`;
   }
 
   if (getStatus("align"))
-    appEnhanceImport += `import "${CLIENT_FOLDER}styles/align.scss";\n`;
+    configImport += `import "${CLIENT_FOLDER}styles/align.scss";\n`;
 
   if (getStatus("container"))
-    appEnhanceImport += `import "${CLIENT_FOLDER}styles/container/index.scss";\n`;
+    configImport += `import "${CLIENT_FOLDER}styles/container/index.scss";\n`;
 
   if (getStatus("footnote"))
-    appEnhanceImport += `import "${CLIENT_FOLDER}styles/footnote.scss";\n`;
+    configImport += `import "${CLIENT_FOLDER}styles/footnote.scss";\n`;
 
   if (getStatus("imageMark"))
-    appEnhanceImport += `import "${CLIENT_FOLDER}styles/image-mark.scss";\n`;
+    configImport += `import "${CLIENT_FOLDER}styles/image-mark.scss";\n`;
 
   if (getStatus("tasklist"))
-    appEnhanceImport += `import "${CLIENT_FOLDER}styles/tasklist.scss";\n`;
+    configImport += `import "${CLIENT_FOLDER}styles/tasklist.scss";\n`;
 
   if (getStatus("tex"))
-    appEnhanceImport += `import "${CLIENT_FOLDER}styles/tex.scss";\n`;
+    configImport += `import "${CLIENT_FOLDER}styles/tex.scss";\n`;
 
   return app.writeTemp(
-    `md-enhance/appEnhance.js`,
-    `import { defineClientAppEnhance } from "@vuepress/client";
-${appEnhanceImport}
+    `md-enhance/config.js`,
+    `import { defineClientConfig } from "@vuepress/client";
+${configImport}
 
-export default defineClientAppEnhance(({ app }) => {
-${appEnhanceRegister
+export default defineClientConfig({
+  enhance: ({ app }) => {
+${enhance
   .split("\n")
-  .map((item) => `  ${item}`)
+  .map((item) => `    ${item}`)
   .join("\n")}
+  }
 });`
   );
 };
