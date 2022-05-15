@@ -23,9 +23,18 @@
     z-index: 100;
 
     @media (max-width: hope-config.$mobile) {
-      right: -2px;
-      border-top-right-radius: 50% 20%;
-      border-bottom-right-radius: 50% 20%;
+      right: 0;
+      bottom: 0;
+
+      width: 28px;
+      height: 28px;
+      border-radius: 50% 10% 0;
+
+      .icon-copy-code {
+        position: relative;
+        top: 2px;
+        left: 2px;
+      }
     }
   }
 
