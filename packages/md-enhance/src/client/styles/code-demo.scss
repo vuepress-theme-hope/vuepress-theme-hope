@@ -178,20 +178,99 @@
     }
 
     .copy-code-button {
-      right: 0;
-      bottom: 0;
+      right: 4px;
+      bottom: 6px;
 
       width: 28px;
       height: 28px;
-      border-radius: 50% 10% 0;
+
 
       // stylelint-disable selector-max-compound-selectors
       svg {
         position: relative;
-        top: 2px;
-        left: 2px;
+        top: 0px;
+        left: 0px;
       }
       // stylelint-enable selector-max-compound-selectors
     }
   }
 }
+
+
+
+/**
+ * --------------------------
+ *            base
+ * --------------------------
+ */
+
+
+.code-demo-wrapper {
+  .code-demo-header {
+    border-radius: 7px 7px 0 0;
+  }
+  .code-demo-container {
+    border-bottom: none;
+  }
+}
+
+
+/**
+ * --------------------------
+ *          custom
+ * --------------------------
+ */
+
+
+
+ /*
+.code-demo-wrapper {
+  :root {
+    --c-bg-light: #313334;
+  }
+  border: 1px solid #565d6bb6;
+  .code-demo-header {
+    background: #484c50;
+    color: #d1d1d1;
+  }
+  .toggle-button {
+    background-color: #777c7ffa;
+    &:hover {
+        background-color: rgba(247, 247, 247, 0.888);
+    }
+  }
+  .code-demo-jsfiddle,
+  .code-demo-codepen {
+    button[type="submit"] {
+      background-color: rgba(255, 255, 255, 0.5);
+      path {
+          fill: rgba(47, 47, 47, 0.8);
+      }
+      &:hover {
+          background-color: rgb(233, 233, 233)
+      }
+    }
+  }
+  .copy-code-button {
+    background: #373839a6;
+    transition: background 0.2s ease-in-out;
+    &:hover {
+        background: #339af0;
+    }
+  }
+}
+
+html.dark {
+  .code-demo-wrapper {
+    border: 1px solid #4b5468;
+  }
+  .code-demo-header {
+    .toggle-button {
+      background-color: #575b61f0;
+      &:hover {
+        background-color: rgba(57, 58, 60, 0.94);
+      }
+    }
+  }
+}
+*/
