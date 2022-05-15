@@ -32,7 +32,6 @@
 
     max-height: 400px;
     padding: 20px;
-    border-bottom: 1px solid var(--c-border, #eaecef);
   }
 }
 
@@ -44,7 +43,7 @@
   justify-content: space-between;
 
   padding: 8px 12px;
-
+  border-radius: 8px 8px 0 0;
   background-color: var(--c-bg-light, #f3f4f5);
 
   text-align: left;
@@ -178,15 +177,27 @@
       }
 
       .copy-code-button {
-        right: -2px;
-        bottom: -10px;
+        right: 4px;
+        bottom: 6px;
 
         width: 28px;
         height: 28px;
-        border-top-right-radius: 50% 20%;
-        border-bottom-right-radius: 50% 20%;
+        border-top-right-radius: 50% 50%;
+        border-bottom-right-radius: 50% 50%;
       }
       // stylelint-enable selector-max-compound-selectors
     }
   }
 }
+
+/*
+// Optional
+
+.code-demo-wrapper {
+    border: 1px solid #282c34;
+    .code-demo-header {
+        background: #484c50;
+        color: #f8f8f8;
+    }
+}
+*/
