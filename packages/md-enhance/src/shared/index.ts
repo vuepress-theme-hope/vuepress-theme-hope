@@ -1,5 +1,5 @@
-export * from "./code-demo";
-export * from "./image-mark";
+export * from "./codeDemo";
+export * from "./imageMark";
 export * from "./locales";
 export * from "./options";
 export * from "./presentation";

@@ -134,7 +134,11 @@ export const mdEnhancePlugin =
 
       extendsMarkdown: (markdownIt): void => {
         if (getStatus("lazyLoad")) markdownIt.use(lazyLoad);
-        if (imageMarkEnable) markdownIt.use(imageMark);
+        if (imageMarkEnable)
+          markdownIt.use(
+            imageMark,
+            typeof options.imageMark === "object" ? options.imageMark : {}
+          );
         if (getStatus("sup")) markdownIt.use(sup);
         if (getStatus("sub")) markdownIt.use(sub);
         if (footnoteEnable) markdownIt.use(footnote);

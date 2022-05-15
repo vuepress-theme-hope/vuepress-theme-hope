@@ -1,6 +1,7 @@
 import type { LocaleConfig } from "@vuepress/core";
 import type { KatexOptions } from "katex";
-import type { CodeDemoOptions } from "./code-demo";
+import type { CodeDemoOptions } from "./codeDemo";
+import type { ImageMarkOptions } from "./imageMark";
 import type { MarkdownEnhanceLocaleData } from "./locales";
 import type { PresentationOptions } from "./presentation";
 import type { TaskListOptions } from "./tasklist";
@@ -124,7 +125,7 @@ export interface MarkdownEnhanceOptions {
    *
    * @default false
    */
-  imageMark?: boolean;
+  imageMark?: ImageMarkOptions | boolean;
 
   /**
    * Whether to enable mark format support

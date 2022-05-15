@@ -5,7 +5,7 @@ export * from "./flowchart";
 export * from "./footnote";
 export * from "./imageMark";
 export * from "./katex";
-export * from "./lazy-load";
+export * from "./lazyLoad";
 export * from "./mark";
 export * from "./mdImport";
 export * from "./mermaid";
