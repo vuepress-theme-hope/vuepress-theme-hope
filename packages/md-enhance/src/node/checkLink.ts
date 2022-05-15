@@ -20,13 +20,9 @@ export const getCheckLinksStatus = (
         false;
 };
 
-// TODO: Rebuild this when https://github.com/vuepress/vuepress-next/pull/832 is merged
 export const checkLinks = (page: Page, app: App): void => {
   const path = page.filePathRelative || page.path;
-  const {
-    options: { base },
-    pages,
-  } = app;
+  const { pages } = app;
 
   const markdownLinks = page.links.filter(({ raw }) => raw.endsWith(".md"));
 
@@ -40,30 +36,16 @@ export const checkLinks = (page: Page, app: App): void => {
       ),
     ...markdownLinks
       // absolute markdown link starts with base
-      .filter(({ raw }) => raw.startsWith(base))
+      .filter(({ raw }) => raw.startsWith("/"))
       .filter(({ absolute }) =>
         // check whether the page exists
         pages.every(
           ({ filePathRelative }) =>
-            !filePathRelative || `${base}${filePathRelative}` !== absolute
+            !filePathRelative || `/${filePathRelative}` !== absolute
         )
       ),
   ].map(({ raw }) => raw);
 
-  // TODO: Remove this when https://github.com/vuepress/vuepress-next/pull/832 is merged
-  const nonStandardLinks = markdownLinks
-    // absolute markdown links not under base
-    .filter(({ raw }) => raw.startsWith(`/`) && !raw.startsWith(base))
-    .map(({ raw }) => raw);
-
   if (brokenLinks.length)
     logger.warn(`Broken links found in ${path}: ${brokenLinks.join(", ")}`);
-
-  // TODO: Remove this when https://github.com/vuepress/vuepress-next/pull/832 is merged
-  if (nonStandardLinks.length)
-    logger.warn(
-      `Markdown links outside project found in ${path}: ${brokenLinks.join(
-        ", "
-      )}`
-    );
 };

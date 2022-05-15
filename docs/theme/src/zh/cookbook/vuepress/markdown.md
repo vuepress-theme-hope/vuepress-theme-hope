@@ -64,8 +64,8 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
 
 <!-- 绝对路径 -->
 
-[指南](/v2/zh/guide/README.md)  
-[配置参考 > 多语言](/v2/zh/config/i18n.md)
+[指南](/zh/guide/README.md)  
+[配置参考 > 多语言](/zh/config/i18n.md)
 
 <!-- URL -->
 

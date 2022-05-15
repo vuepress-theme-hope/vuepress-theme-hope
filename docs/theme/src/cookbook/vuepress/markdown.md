@@ -95,8 +95,8 @@ Rendered as:
 - [Home](../../README.md)
 - [Contribution Guide](../../contribution.md)
 - [VuePress Config](./config.md)
-- [Guide](/v2/guide/README.md)
-- [Config > I18n](/v2/config/i18n.md)
+- [Guide](/guide/README.md)
+- [Config > I18n](/config/i18n.md)
 - [GitHub](https://github.com)
 
 Explanation:
