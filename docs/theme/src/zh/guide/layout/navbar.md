@@ -384,7 +384,7 @@ navbar: false
 
 你可以在主题选项中使用 `logo` 来配置站点的图标，请填入绝对路径。
 
-::: note 笔记
+::: note
 
 请填写绝对路径并将 logo 放在 `.vuepress/public` 文件夹中。
 

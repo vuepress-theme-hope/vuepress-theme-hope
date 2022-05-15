@@ -195,6 +195,8 @@ Miscellaneous:
 
 Components:
 
+- `@theme-hope/module/encrypt/components/GlobalEncrypt`: gloabl encrypt wrapper
+- `@theme-hope/module/encrypt/components/LocalEncrypt`: local encrypt wrapper
 - `@theme-hope/module/encrypt/components/PasswordModal`: password input box
 
 Miscellaneous:

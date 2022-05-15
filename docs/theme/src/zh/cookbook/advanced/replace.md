@@ -197,6 +197,8 @@ Components:
 
 组件:
 
+- `@theme-hope/module/encrypt/components/GlobalEncrypt`: 全局加密
+- `@theme-hope/module/encrypt/components/LocalEncrypt`: 本地加密
 - `@theme-hope/module/encrypt/components/PasswordModal`: 密码输入框
 
 杂项:
