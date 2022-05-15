@@ -76,7 +76,7 @@ export default defineComponent({
                 serverURL: walineOption.serverURL,
                 path: withBase(route.path),
               });
-            });
+            }, walineOption.delay || 500);
         },
         { immediate: true }
       );
