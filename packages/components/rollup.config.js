@@ -4,6 +4,7 @@ export default [
   ...rollupTypescript("node/index", {
     external: [
       "@mr-hope/vuepress-shared",
+      "@vuepress/shared",
       "@vuepress/utils",
       "vuepress-plugin-reading-time2",
       "vuepress-plugin-sass-palette",

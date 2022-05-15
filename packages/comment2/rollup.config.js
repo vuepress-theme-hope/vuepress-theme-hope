@@ -10,9 +10,7 @@ export default [
   }),
   ...rollupTypescript("client/config", {
     external: [
-      "@Giscus",
-      "@Twikoo",
-      "@Waline",
+      "@CommentProvider",
       "@mr-hope/vuepress-shared/lib/client",
       "@vuepress/client",
       "vue",

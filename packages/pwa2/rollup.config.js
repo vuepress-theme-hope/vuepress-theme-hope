@@ -43,7 +43,7 @@ export default [
   }),
   ...rollupTypescript("client/composables/setup", {
     resolve: true,
-    external: ["@vuepress/client", "vue", /\.scss$/],
+    external: ["@vuepress/client", "mitt", "vue", /\.scss$/],
     dtsExternal: [/\.scss$/],
     copy: [["client/styles", "client"]],
   }),
