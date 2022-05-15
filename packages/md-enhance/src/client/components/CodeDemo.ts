@@ -245,7 +245,7 @@ export default defineComponent({
 
         h("div", {
           ref: demoWrapper,
-          class: "demo-wrapper",
+          class: "code-demo-container",
           style: {
             display: isLegal.value && loaded.value ? "block" : "none",
           },
@@ -253,12 +253,12 @@ export default defineComponent({
 
         h(
           "div",
-          { class: "code-wrapper", style: { height: height.value } },
+          { class: "code-demo-code-wrapper", style: { height: height.value } },
           h(
             "div",
             {
               ref: codeContainer,
-              class: "code-container",
+              class: "code-demo-codes",
             },
             slots.default?.()
           )

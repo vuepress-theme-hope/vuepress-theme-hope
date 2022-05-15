@@ -24,16 +24,6 @@
     margin: 2.5em auto;
     color: var(--c-brand);
   }
-
-  .demo-wrapper {
-    position: relative;
-
-    overflow: auto;
-
-    max-height: 400px;
-    padding: 20px;
-    border-bottom: 1px solid var(--c-border, #eaecef);
-  }
 }
 
 .code-demo-header {
@@ -136,55 +126,70 @@
   }
 }
 
-.code-wrapper {
+.code-demo-container {
+  position: relative;
+
+  overflow: auto;
+
+  max-height: 400px;
+  padding: 20px;
+  border-bottom: 1px solid var(--c-border, #eaecef);
+}
+
+.code-demo-code-wrapper {
   overflow: hidden;
   transition: height 0.5s;
+}
 
-  .code-container {
-    > p {
-      margin: 0.75rem;
-    }
+.code-demo-codes {
+  > p {
+    margin: 0.75rem;
+  }
 
-    // stylelint-disable selector-max-compound-selectors
-    > div[class*="language-"] {
-      border-radius: 0;
+  > div[class*="language-"] {
+    border-radius: 0;
 
-      @media (max-width: hope-config.$mobile) {
-        margin: 0.8rem 0;
+    @media (max-width: hope-config.$mobile) {
+      margin: 0.8rem 0;
 
-        &.line-numbers-mode::after {
-          display: none;
-        }
-
-        .line-numbers-wrapper {
-          display: none;
-        }
-
-        pre[class*="language-"] {
-          padding: 1.25rem 1.25rem 1rem;
-        }
-      }
-
-      &:first-child pre {
-        margin-top: 0 !important;
-      }
-
-      &.language-json {
+      &.line-numbers-mode::after {
         display: none;
       }
 
-      &.line-numbers-mode::after {
-        border-radius: 0;
+      .line-numbers-wrapper {
+        display: none;
       }
 
-      .copy-code-button {
-        right: -2px;
-        bottom: -10px;
+      pre[class*="language-"] {
+        padding: 1.25rem 1.25rem 1rem;
+      }
+    }
 
-        width: 28px;
-        height: 28px;
-        border-top-right-radius: 50% 20%;
-        border-bottom-right-radius: 50% 20%;
+    &:first-child pre {
+      margin-top: 0 !important;
+    }
+
+    &.language-json {
+      display: none;
+    }
+
+    &.line-numbers-mode::after {
+      border-radius: 0;
+    }
+
+    .copy-code-button {
+      right: 0;
+      bottom: 0;
+
+      width: 28px;
+      height: 28px;
+      border-radius: 50% 10% 0;
+
+      // stylelint-disable selector-max-compound-selectors
+      svg {
+        position: relative;
+        top: 2px;
+        left: 2px;
       }
       // stylelint-enable selector-max-compound-selectors
     }
