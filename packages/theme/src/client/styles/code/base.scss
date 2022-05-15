@@ -165,23 +165,23 @@ div[class*="language-"] {
       color: var(--code-line-color);
 
       line-height: 1.4;
+      counter-reset: line-number;
       text-align: center;
 
       transition: color var(--color-transition);
-
-      br {
-        user-select: none;
-      }
     }
 
     .line-number {
       position: relative;
       z-index: 4;
-
-      font-size: 0.85em;
-      line-height: 0;
-
+      height: 1.4em;
       user-select: none;
+
+      &::before {
+        content: counter(line-number);
+        font-size: 0.85em;
+        counter-increment: line-number;
+      }
     }
   }
 
