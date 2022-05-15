@@ -113,4 +113,6 @@ export default defineUserConfig({
       "three/examples/jsm/loaders/STLLoader",
     ]);
   },
+
+  shouldPrefetch: false,
 });
