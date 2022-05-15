@@ -88,3 +88,9 @@ module.exports = {
 :::
 
 ::::
+
+::: tip
+
+如果你正在使用本插件，我们推荐在你的 VuePress 配置文件中设置 `shouldPrefetch: false`。
+
+:::

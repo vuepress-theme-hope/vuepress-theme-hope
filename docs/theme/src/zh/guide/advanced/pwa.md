@@ -20,6 +20,8 @@ tag:
 
 `vuepress-theme-hope` 将主题选项中的 `plugins.pwa` 作为插件选项提供给 `vuepress-plugin-pwa2`。
 
+如果你正在使用本插件，我们推荐在你的 VuePress 配置文件中设置 `shouldPrefetch: false`。
+
 :::
 
 <!-- more -->

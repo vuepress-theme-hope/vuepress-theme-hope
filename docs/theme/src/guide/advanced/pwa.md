@@ -20,7 +20,8 @@ The theme provides progressive web app support [^pwa-intro] via built-in [`vuepr
 
 `vuepress-theme-hope` passes `plugins.pwa` in theme options as plugin options to `vuepress-plugin-pwa2`.
 
-You can set `plugins.pwa: true` to enable the plugin with default options. <Badge text="Not recommanded" type="warning" />
+If you are using this plugin, we recommand you to set `shouldPrefetch: false` in your VuePress config file.
+
 :::
 
 <!-- more -->

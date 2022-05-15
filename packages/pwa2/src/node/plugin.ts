@@ -21,9 +21,14 @@ export const pwaPlugin =
   (app) => {
     if (app.env.isDebug) logger.info(`Options: ${options.toString()}`);
 
-    const { base } = app.options;
+    const { base, shouldPrefetch = true } = app.options;
 
     if (options.appendBase) appendBase(base, options);
+
+    if (shouldPrefetch === true)
+      logger.warn(
+        'The plugin will register service worker to handle assets, so we recommand you to set "shouldPrefetch: false" in VuePress config file.'
+      );
 
     const manifest = getManifest(app, options);
 
