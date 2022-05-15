@@ -38,7 +38,7 @@
     "build:copy": "cpx \"src/client/**/*.{css,scss,jpg,vue}\" lib/client",
     "build:ts": "tsc -b tsconfig.release.json",
     "clean": "rimraf ./lib ./*.tsbuildinfo",
-    "dev": "concurrently \"pnpm dev:copy\" \"pnpmdev:ts\"",
+    "dev": "concurrently \"pnpm dev:copy\" \"pnpm dev:ts\"",
     "dev:copy": "pnpm build:copy -w",
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
