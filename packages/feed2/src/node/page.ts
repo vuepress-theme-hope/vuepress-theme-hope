@@ -213,8 +213,7 @@ export class FeedPage {
     if (this.frontmatter.copyright) return this.frontmatter.copyright;
     const firstAuthor = this.author[0];
 
-    if (firstAuthor && firstAuthor.name)
-      return `Copyright by ${firstAuthor.name}`;
+    if (firstAuthor?.name) return `Copyright by ${firstAuthor.name}`;
 
     return undefined;
   }

@@ -1,6 +1,6 @@
 import { stripTags } from "@mr-hope/vuepress-shared";
 import { encodeCDATA, encodeXML, isUrl } from "@mr-hope/vuepress-shared";
-import * as convert from "xml-js";
+import { js2xml } from "xml-js";
 import { FEED_GENERATOR } from "../utils";
 
 import type { Feed } from "../feed";
@@ -199,7 +199,7 @@ export const renderRSS = (feed: Feed): string => {
     content.rss._attributes["xmlns:dc"] = "http://purl.org/dc/elements/1.1/";
   }
 
-  return convert.js2xml(content, {
+  return js2xml(content, {
     compact: true,
     ignoreComment: true,
     spaces: 2,
