@@ -5,8 +5,7 @@
 
   margin: 0.85rem 0 -0.85rem;
   padding: 0;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
+  border-radius: 6px 6px 0 0;
 
   background-color: var(--code-group-nav-bg-color, #3a404c);
   list-style: none;
@@ -28,8 +27,7 @@
   min-width: 3rem;
   margin: 0;
   padding: 6px 10px;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
+  border-radius: 6px 6px 0 0;
 
   background-color: transparent;
   color: var(--code-group-nav-text-color, #eee);
