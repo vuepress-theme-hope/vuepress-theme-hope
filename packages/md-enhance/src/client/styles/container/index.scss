@@ -56,7 +56,7 @@
   --danger-bg-color: #4b1113;
 
   // detail
-  --detail-bg-color: #353535;
+  --detail-bg-color: #333;
   --detail-text-color: #a8a8a8;
 }
 
@@ -257,8 +257,12 @@
 
     &::before {
       border-radius: 50%;
-      background: var(--grey12);
+      background: #ccc;
       transition: all var(--transform-transition);
+
+      #{hope-config.$dark-selector} & {
+        background: #555;
+      }
     }
 
     &::after {

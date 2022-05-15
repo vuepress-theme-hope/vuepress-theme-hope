@@ -58,15 +58,23 @@
     border-color: transparent;
     border-radius: 50%;
 
-    background-color: var(--grey12);
+    background-color: #eee;
     outline: none;
 
     font-size: 24px;
 
     cursor: pointer;
 
+    #{hope-config.$dark-selector} & {
+      background-color: #444;
+    }
+
     &:hover {
-      background-color: var(--light-grey);
+      background-color: #bbb;
+
+      #{hope-config.$dark-selector} & {
+        background-color: #666;
+      }
     }
   }
 
@@ -97,19 +105,32 @@
     padding: 4px;
     border-radius: 50%;
 
+    background-color: #eee;
     outline: none;
+
+    #{hope-config.$dark-selector} & {
+      background-color: #444;
+    }
 
     svg {
       width: 1.25rem;
       height: 1.25rem;
-      fill: var(--grey12);
+      fill: #666;
     }
 
     &:hover {
-      background-color: var(--grey12);
+      background-color: #bbb;
+
+      #{hope-config.$dark-selector} & {
+        background-color: #666;
+      }
 
       svg {
-        fill: var(--dark-grey);
+        fill: #333;
+
+        #{hope-config.$dark-selector} & {
+          fill: #000;
+        }
       }
     }
   }
