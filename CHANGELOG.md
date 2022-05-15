@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.60](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.59...v2.0.0-beta.60) (2022-05-15)
+
+### Features
+
+- **copy-code2:** improve copy button style on mobile ([67caa4a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/67caa4acbf9626362ae9045ed785d1ffa51de687))
+- **md-enhance:** improve copy-code button in code demo ([5ff4c6e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5ff4c6eb81c684b9e67c4ac743cfd3eed026c48c))
+- **md-enhance:** improve links check ([f777c34](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f777c345ce9a5df33329a99a739d0d623fc87dfc))
+- **pwa2:** add warnings about shouldPrefetch ([850d360](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/850d36090027aced823e0fd68baa7dc547a02968))
+- **theme:** update toc position ([93817d8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/93817d8fbaf75df4089d9eeb708990ff63c671a2))
+
+### Bug Fixes
+
+- **comment2:** apply delay for pageview ([227ef51](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/227ef51912c18a3d74cba5c36615ba50c94474fb))
+- **md-enhance:** support imageMark options ([17a7d5d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/17a7d5d4e37a9b43fb095763e235c3d2b5070e4c))
+
 ## [2.0.0-beta.59](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.58...v2.0.0-beta.59) (2022-05-15)
 
 ### Features
