@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.59](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.58...v2.0.0-beta.59) (2022-05-15)
+
+### Features
+
+- **md-enhance:** improve darkmode style ([bd1f849](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/bd1f849111142cd9dcbd37845a64d19a1f14e366))
+- **theme:** scroll to active sidebar and toc links ([445bc84](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/445bc84fc1d6a79d3e12303c2db1256a0bf6eb8b))
+
+### Bug Fixes
+
+- **md-enhance:** use react 18 api ([7008759](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7008759ff4adf88e174d38e1d74933dfd3338505))
+- **theme:** fix line numbers ([bd4a338](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/bd4a3386c406021de6052ac7becf27b2cdf7259a))
+
 ## [2.0.0-beta.58](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.57...v2.0.0-beta.58) (2022-05-14)
 
 ### Features
