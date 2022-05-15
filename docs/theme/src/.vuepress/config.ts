@@ -41,10 +41,6 @@ export default defineUserConfig({
     },
   },
 
-  define: () => ({
-    IS_NETLIFY: "NETLIFY" in process.env,
-  }),
-
   theme,
 
   plugins: [
@@ -106,6 +102,10 @@ export default defineUserConfig({
       "./components/HopeHero"
     ),
   },
+
+  define: () => ({
+    IS_NETLIFY: "NETLIFY" in process.env,
+  }),
 
   extendsBundlerOptions: (config: unknown, app): void => {
     if (app.env.isDev)

@@ -96,8 +96,8 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
 [首页](../../README.md)  
 [贡献指南](../../contribution.md)  
 [VuePress 配置](./config.md)
-[指南](/v2/zh/guide/README.md)  
-[配置参考 > 多语言](/v2/zh/config/i18n.md)
+[指南](/guide/README.md)  
+[配置参考 > 多语言](/config/i18n.md)
 [GitHub](https://github.com)
 
 解释:
