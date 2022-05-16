@@ -37,13 +37,19 @@ code {
     color var(--color-transition);
 
   #{hope-config.$dark-selector} & {
-    background: var(--grey12);
+    background: #333;
   }
 }
 
 blockquote {
-  border-color: var(--grey14);
-  color: var(--light-grey);
+  border-color: #eee;
+  color: #666;
+  transition: border-color var(--color-transition),
+    color var(--color-transition);
+
+  #{hope-config.$dark-selector} & {
+    border-color: #333;
+  }
 }
 
 // narrow mobile
