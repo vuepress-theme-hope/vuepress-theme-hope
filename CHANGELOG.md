@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.61](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.60...v2.0.0-beta.61) (2022-05-16)
+
+### Features
+
+- **md-enhance:** add css variable for code demo header ([f258dc0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f258dc05be005d8902605571fc3a2100ac1a968f))
+
+### Bug Fixes
+
+- **md-enhance:** fix code demo script inject ([98aa3d2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/98aa3d264f16637ded2628738c658bb18c475f7a))
+- **md-enhance:** fix gitGraph ([2cbf3be](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2cbf3be528cff0e796e61897fa85ce7d361cbdb4))
+- **theme:** fix blockquote color ([6922b0e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6922b0e30672f0c0cd84e2af3ab92d5057ef0552))
+
 ## [2.0.0-beta.60](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.59...v2.0.0-beta.60) (2022-05-15)
 
 ### Features
