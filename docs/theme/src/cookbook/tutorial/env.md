@@ -79,15 +79,9 @@ Some features of pnpm ensure that you have the correct dependencies.
 
 ### Install Pnpm
 
-Install Yarn by entering the following command in the terminal:
+Install pnpm by entering the following command in the terminal:
 
 ```sh
 corepack enable
 corepack prepare pnpm@7.1.0 --activate
 ```
-
-::: tip Open Terminal on Windows
-
-Please use the file manager to open the corresponding folder, then enter `cmd` in the address bar above and press Enter.
-
-:::

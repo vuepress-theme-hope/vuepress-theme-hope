@@ -351,7 +351,7 @@ module.exports = {
 
    ```ts
    // .vuepress/config.ts
-   import { docsearchPlugin } from "@vuepress/plugin-search";
+   import { docsearchPlugin } from "@vuepress/plugin-docsearch";
    import { defineUserConfig } from "vuepress";
 
    export default defineUserConfig({
@@ -370,7 +370,7 @@ module.exports = {
 
    ```js
    // .vuepress/config.js
-   const { docsearchPlugin } = require("@vuepress/plugin-search");
+   const { docsearchPlugin } = require("@vuepress/plugin-docsearch");
 
    module.exports = {
      plugins: [

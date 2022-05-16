@@ -107,7 +107,7 @@ See [Plugin Docs][search] for available options.
 
 :::
 
-## Use `@vuepress/docsearch`
+## Use `@vuepress/plugin-docsearch`
 
 1. You need to [submit the URL of your site](https://docsearch.algolia.com/apply/) to join the DocSearch program.
 
@@ -295,7 +295,7 @@ See [Plugin Docs][search] for available options.
 
    ```ts
    // .vuepress/config.ts
-   import { docsearchPlugin } from "@vuepress/plugin-search";
+   import { docsearchPlugin } from "@vuepress/plugin-docsearch";
    import { defineUserConfig } from "vuepress";
 
    export default defineUserConfig({
@@ -314,7 +314,7 @@ See [Plugin Docs][search] for available options.
 
    ```js
    // .vuepress/config.js
-   const { docsearchPlugin } = require("@vuepress/plugin-search");
+   const { docsearchPlugin } = require("@vuepress/plugin-docsearch");
 
    module.exports = {
      plugins: [

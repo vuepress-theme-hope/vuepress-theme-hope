@@ -97,9 +97,3 @@ pnpm 的一些功能可以保证你拥有正确的依赖。
 corepack enable
 corepack prepare pnpm@7.1.0 --activate
 ```
-
-::: tip 在 Windows 上打开终端
-
-请使用文件管理器打开对应文件夹，之后在上方的地址栏中输入 `cmd` 之后按下回车。
-
-:::
