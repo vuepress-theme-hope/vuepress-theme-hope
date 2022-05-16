@@ -25,7 +25,7 @@ tag:
 #### type
 
 - 类型: `"tip" | "warning" | "danger" | "info" | "note"`
-- 默认值: `"tip"`
+- 默认值: `"info"`
 
 徽章的类型
 

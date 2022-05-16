@@ -17,7 +17,7 @@ tag:
 
 具体介绍详见 [布局 → 导航栏](../../guide/layout/navbar.md)。
 
-### navbar <Badge text="建议配置" />
+### navbar <Badge text="建议配置" type="tip" />
 
 - 类型: `HopeThemeNavbarConfig | false`
 - 默认值: `false`
@@ -31,7 +31,7 @@ tag:
 
 是否在导航栏显示图标。
 
-### logo <Badge text="建议配置" />
+### logo <Badge text="建议配置" type="tip" />
 
 - 类型: `string`
 - 必填: 否
@@ -90,7 +90,7 @@ tag:
 
 关于配置指南，详见 [布局 → 侧边栏](../../guide/layout/sidebar.md)。
 
-### sidebar <Badge text="建议配置" />
+### sidebar <Badge text="建议配置" type="tip" />
 
 - 类型: `HopeThemeSidebarConfig | "structure" | "heading" | false`
 - 默认值: `"structure"`

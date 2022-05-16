@@ -581,7 +581,7 @@ module.exports = {
 
 ::::
 
-### Generate from File Structure <Badge text="New" />
+### Generate from File Structure <Badge text="New" type="tip" />
 
 You can replace the original "sidebarConfig array" with `"structure"` keyword in any of the above sidebar config. This will allow the theme to automatically read local files, then generate sidebar from file structure for you, to reduce your config workload.
 

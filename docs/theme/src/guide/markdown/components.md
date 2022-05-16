@@ -25,7 +25,7 @@ Text of the badge
 #### type
 
 - Type: `"tip" | "warning" | "danger" | "info" | "note"`
-- Default: `"tip"`
+- Default: `"info"`
 
 Badge types:
 

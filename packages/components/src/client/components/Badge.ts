@@ -14,7 +14,7 @@ export default defineComponent({
   name: "Badge",
 
   props: {
-    type: { type: String, default: "tip" },
+    type: { type: String, default: "info" },
     text: { type: String, default: "" },
     vertical: { type: String, default: "top" },
     color: { type: String, default: "" },
