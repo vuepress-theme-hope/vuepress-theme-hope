@@ -207,7 +207,7 @@
   display: block;
 
   margin: 1.6em 0;
-  padding: 1.6em;
+  padding: 1.5rem;
   border-radius: 0.5rem;
 
   background: var(--detail-bg-color);
@@ -233,14 +233,19 @@
 
   summary {
     position: relative;
-    padding-left: 1.5rem;
+
+    padding-left: 2.5rem;
+
     outline: none;
+    list-style: none;
+
     cursor: pointer;
 
+    // a deprecated prefix
     &::-webkit-details-marker,
     &::marker {
-      display: none;
       color: transparent;
+      font-size: 0;
     }
 
     &::before,
