@@ -8,7 +8,7 @@ const mermaidRender: Renderer.RenderRule = (tokens, index) => {
   const key = `mermaid-${hash(index)}`;
   const { content } = token;
 
-  return `<Mermaid id="${key}" data-code="${encodeURIComponent(
+  return `<Mermaid id="${key}" code="${encodeURIComponent(
     content
   )}"></Mermaid>`;
 };
@@ -19,7 +19,7 @@ const mermaidHackRender = (
   content: string,
   index: number
 ): string =>
-  `<Mermaid id="mermaid-${hash(index)}" data-code="${encodeURIComponent(
+  `<Mermaid id="mermaid-${hash(index)}" code="${encodeURIComponent(
     `${name}\n${content
       .split("\n")
       .map((line) => (line ? `  ${line}` : ""))
@@ -49,7 +49,7 @@ export const mermaid: PluginSimple = (md) => {
       return mermaidHackRender("gantt", content, index);
     if (info.trim() === "pie") return mermaidHackRender("pie", content, index);
     if (info.trim() === "git-graph")
-      return mermaidHackRender("git-graph", content, index);
+      return mermaidHackRender("gitGraph", content, index);
 
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     return fence!(...args);

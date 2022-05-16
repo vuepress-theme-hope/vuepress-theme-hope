@@ -28,8 +28,13 @@ ${demo}
 `);
 
     expect(renderResult).toMatch(
-      /<Mermaid id="mermaid.*?" data-code=".*?"><\/Mermaid>/
+      /<Mermaid id="mermaid.*?" code=".*?"><\/Mermaid>/
     );
+    expect(
+      /<Mermaid id="mermaid.*?" code="(.*?)"><\/Mermaid>/.exec(
+        renderResult
+      )?.[1]
+    ).toMatch(encodeURIComponent(demo));
     expect(renderResult).toMatchSnapshot();
   });
 
@@ -64,7 +69,7 @@ Alice->John: Yes... John, how are you?
 `);
 
     expect(renderResult).toMatch(
-      /<Mermaid id="mermaid.*?" data-code="sequenceDiagram.*?"><\/Mermaid>/
+      /<Mermaid id="mermaid.*?" code="sequenceDiagram.*?"><\/Mermaid>/
     );
     expect(renderResult).toMatchSnapshot();
   });
@@ -86,7 +91,7 @@ Square : +getMessages() List~string~
 `);
 
     expect(renderResult).toMatch(
-      /<Mermaid id="mermaid.*?" data-code="classDiagram.*?"><\/Mermaid>/
+      /<Mermaid id="mermaid.*?" code="classDiagram.*?"><\/Mermaid>/
     );
     expect(renderResult).toMatchSnapshot();
   });
@@ -113,7 +118,7 @@ state Active {
 `);
 
     expect(renderResult).toMatch(
-      /<Mermaid id="mermaid.*?" data-code="stateDiagram-v2.*?"><\/Mermaid>/
+      /<Mermaid id="mermaid.*?" code="stateDiagram-v2.*?"><\/Mermaid>/
     );
     expect(renderResult).toMatchSnapshot();
   });
@@ -137,7 +142,7 @@ PERSON {
 `);
 
     expect(renderResult).toMatch(
-      /<Mermaid id="mermaid.*?" data-code="erDiagram.*?"><\/Mermaid>/
+      /<Mermaid id="mermaid.*?" code="erDiagram.*?"><\/Mermaid>/
     );
     expect(renderResult).toMatchSnapshot();
   });
@@ -157,7 +162,7 @@ section Go home
 `);
 
     expect(renderResult).toMatch(
-      /<Mermaid id="mermaid.*?" data-code="journey.*?"><\/Mermaid>/
+      /<Mermaid id="mermaid.*?" code="journey.*?"><\/Mermaid>/
     );
     expect(renderResult).toMatchSnapshot();
   });
@@ -197,7 +202,7 @@ Add another diagram to demo page    :48h
 `);
 
     expect(renderResult).toMatch(
-      /<Mermaid id="mermaid.*?" data-code="gantt.*?"><\/Mermaid>/
+      /<Mermaid id="mermaid.*?" code="gantt.*?"><\/Mermaid>/
     );
     expect(renderResult).toMatchSnapshot();
   });
@@ -213,7 +218,7 @@ title What Voldemort doesn't have?
 `);
 
     expect(renderResult).toMatch(
-      /<Mermaid id="mermaid.*?" data-code="pie.*?"><\/Mermaid>/
+      /<Mermaid id="mermaid.*?" code="pie.*?"><\/Mermaid>/
     );
     expect(renderResult).toMatchSnapshot();
   });
@@ -231,7 +236,7 @@ commit
 `);
 
     expect(renderResult).toMatch(
-      /<Mermaid id="mermaid.*?" data-code="git-graph.*?"><\/Mermaid>/
+      /<Mermaid id="mermaid.*?" code="gitGraph.*?"><\/Mermaid>/
     );
     expect(renderResult).toMatchSnapshot();
   });

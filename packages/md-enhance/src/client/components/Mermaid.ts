@@ -77,6 +77,7 @@ export default defineComponent({
 
   props: {
     id: { type: String, required: true },
+    code: { type: String, required: true },
   },
 
   setup(props) {
@@ -87,7 +88,7 @@ export default defineComponent({
 
     onMounted(() => {
       const html = document.querySelector("html") as HTMLElement;
-      const code = decodeURIComponent(mermaidElement.value?.dataset.code || "");
+      const code = decodeURIComponent(props.code);
 
       const getDarkmodeStatus = (): boolean =>
         html.classList.contains("dark") ||
