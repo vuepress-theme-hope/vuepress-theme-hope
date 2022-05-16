@@ -1,7 +1,7 @@
 input[type="checkbox"].task-list-item-checkbox {
   position: relative;
   width: 0;
-  margin-right: 14px;
+  margin-right: 1.5em;
   cursor: pointer;
 
   &::after {
@@ -14,8 +14,8 @@ input[type="checkbox"].task-list-item-checkbox {
 
     box-sizing: border-box;
 
-    width: 14px;
-    height: 14px;
+    width: 1em;
+    height: 1em;
     padding-left: 0;
     border: 1px solid #ddd;
     border-radius: 2px;
@@ -48,14 +48,14 @@ input[type="checkbox"].task-list-item-checkbox {
       content: "";
 
       position: absolute;
-      top: 1px;
-      left: 5px;
+      top: 0.1em;
+      left: 0.4em;
       z-index: 1;
 
-      width: 3px;
-      height: 8px;
+      width: 0.2em;
+      height: 0.5em;
       border: solid var(--white);
-      border-width: 0 2px 2px 0;
+      border-width: 0 0.15em 0.15em 0;
 
       transform: rotate(45deg);
     }
