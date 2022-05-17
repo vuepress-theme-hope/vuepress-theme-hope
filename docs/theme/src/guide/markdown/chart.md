@@ -11,7 +11,7 @@ tag:
 
 Let the Markdown file support chart in your VuePress site.
 
-This plugin is using [chart.js](https://www.chartjs.org/docs/latest/) to support this feature.
+`vuepress-plugin-md-enhance` uses [chart.js](https://www.chartjs.org/docs/latest/) to support this feature.
 
 <!-- more -->
 

@@ -61,7 +61,7 @@ Please click the blue button on the left to complete the download.
 
 1. In the installation options, be sure to **select all** the following options:
 
-   Check **Add to directory context menu**, **Add to file context menu**, **Register code as a supported file editor**, **Add to path**.
+   Tick **Add to directory context menu**, **Add to file context menu**, **Register code as a supported file editor**, **Add to path**.
 
 1. After the initial startup of VS Code, if Git is not installed in advance, it may prompt that the Git software is not found, just ignore it.
 

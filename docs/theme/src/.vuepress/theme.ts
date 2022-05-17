@@ -27,6 +27,10 @@ export default hopeTheme({
 
   pageInfo: ["Category", "Tag", "ReadingTime"],
 
+  blog: {
+    name: "VuePress Theme Hope",
+  },
+
   locales: {
     "/": {
       navbar: enNavbarConfig,

@@ -60,7 +60,7 @@ module.exports = {
 
 ::::
 
-This plugin is using [reveal.js](https://revealjs.com/) to support this feature.
+`vuepress-plugin-md-enhance` uses [reveal.js](https://revealjs.com/) to support this feature.
 
 You can also pass an object for configuration.
 
