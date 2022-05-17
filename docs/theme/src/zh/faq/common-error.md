@@ -49,6 +49,14 @@ CloudFlare 的 Auto Minify 会错误的对 HTML 的空格和换行进行处理�
 
 :::: code-group
 
+::: code-group-item pnpm
+
+```bash
+pnpm add vuepress@next vuepress-theme-hope@next
+```
+
+:::
+
 ::: code-group-item yarn
 
 ```bash
@@ -71,10 +79,18 @@ npm i vuepress@next vuepress-theme-hope@next
 
 :::: code-group
 
+::: code-group-item pnpm
+
+```bash
+pnpm i && pnpm up
+```
+
+:::
+
 ::: code-group-item yarn
 
 ```bash
-yarn install && yarn upgrade
+yarn && yarn upgrade
 ```
 
 :::
@@ -82,7 +98,7 @@ yarn install && yarn upgrade
 ::: code-group-item npm
 
 ```bash
-npm install && npm update
+npm i && npm update
 ```
 
 :::

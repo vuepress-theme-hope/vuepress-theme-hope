@@ -13,6 +13,14 @@ You can update to the latest version by executing the following commands.
 
 :::: code-group
 
+::: code-group-item pnpm
+
+```bash
+pnpm add vuepress@next vuepress-theme-hope@next
+```
+
+:::
+
 ::: code-group-item yarn
 
 ```bash
@@ -47,10 +55,18 @@ Please run the following command to make sure your dependency tree is correct.
 
 :::: code-group
 
+::: code-group-item pnpm
+
+```bash
+pnpm i && pnpm up
+```
+
+:::
+
 ::: code-group-item yarn
 
 ```bash
-yarn install && yarn upgrade
+yarn && yarn upgrade
 ```
 
 :::
@@ -58,7 +74,7 @@ yarn install && yarn upgrade
 ::: code-group-item npm
 
 ```bash
-npm install && npm update
+npm i && npm update
 ```
 
 :::
