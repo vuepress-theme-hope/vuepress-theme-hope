@@ -45,7 +45,7 @@
     "@mr-hope/vuepress-shared": "workspace:*",
     "@vuepress/client": "2.0.0-beta.45",
     "@vuepress/utils": "2.0.0-beta.45",
-    "@waline/client": "^2.4.2",
+    "@waline/client": "^2.5.0",
     "giscus": "^1.0.4",
     "twikoo": "^1.5.10",
     "vue": "^3.2.33",
