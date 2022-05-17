@@ -1,6 +1,6 @@
 {
   "name": "lightgallery-demo",
-  "version": "2.0.0-beta.61",
+  "version": "2.0.0-beta.62",
   "private": true,
   "description": "Demo for vuepress-plugin-lightgallery",
   "license": "MIT",

@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.62](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.61...v2.0.0-beta.62) (2022-05-17)
+
+### ⚠ BREAKING CHANGES
+
+- **md-enhance:** remove mdImport option and add include option
+
+### Features
+
+- **components:** change Badge default type to info ([db823db](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/db823db2b369421eda1ad72980791d91936ccf7c))
+- **md-enhance:** improve detail style ([c08cfdd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c08cfddae81bf339ddedc62c6713716b4214689f))
+- **md-enhance:** improve tasklist checkbox ([889065c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/889065c6bf1151534943aaa89f3e9468d3f30218))
+- **md-enhance:** remove mdImport and add include ([88e6996](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/88e6996cdf6d59184ecd1483eb365339e4bcd939))
+- **theme:** improve line-numbers style ([9b032fa](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9b032fae81e32f8fbd02fa806bb06f2773bf5dc5))
+
 ## [2.0.0-beta.61](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.60...v2.0.0-beta.61) (2022-05-16)
 
 ### Features
