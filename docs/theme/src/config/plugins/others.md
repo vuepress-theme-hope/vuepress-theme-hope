@@ -69,7 +69,7 @@ Controls `vuepress-plugin-reading-time2`, providing word count for a page and ge
 
 ### readingTime.wordPerMinute
 
-- type: `number`
+- Type: `number`
 - Default: `300`
 
 Words read per minute.

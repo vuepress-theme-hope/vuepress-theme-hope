@@ -185,11 +185,11 @@ $$
 
 - [查看详情](tex.md)
 
-### Markdown 导入
+### 导入文件
 
-@[md{5,9}](./demo.snippet.md)
+@include(./demo.snippet.md{5,9})
 
-- [查看详情](md-import.md)
+- [查看详情](include.md)
 
 ### 代码演示
 

@@ -7,7 +7,7 @@ export * from "./imageMark";
 export * from "./katex";
 export * from "./lazyLoad";
 export * from "./mark";
-export * from "./mdImport";
+export * from "./include";
 export * from "./mermaid";
 export * from "./presentation";
 export * from "./sub";

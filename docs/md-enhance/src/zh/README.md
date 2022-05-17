@@ -69,10 +69,10 @@ features:
     details: Markdown 现在也可以支持 Tex 语法以显示公式
     link: /zh/guide/tex.html
 
-  - title: Markdown 片段支持
+  - title: 导入文件支持
     icon: markdown
     details: 将你的文档分文不同片段，并在 Markdown 中导入
-    link: /zh/guide/md-import.html
+    link: /zh/guide/include.html
 
   - title: 代码案例支持
     icon: discover

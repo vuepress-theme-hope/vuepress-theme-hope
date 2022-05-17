@@ -174,9 +174,28 @@ interface TaskListOptions {
 }
 ```
 
-## mdImport
+## include
 
-- 类型: `(path: string) => string | boolean`
+- 类型: `IncludeOptions | boolean`
+
+  ```ts
+  interface IncludeOptions {
+    /**
+     * 处理 include 文件路径
+     *
+     * @default (path) => path
+     */
+    getPath?: (path: string) => string;
+
+    /**
+     * 是否深度导入包含的 markdown 文件
+     *
+     * @default false
+     */
+    deep?: boolean;
+  }
+  ```
+
 - 默认值: `false`
 
 是否启用 Markdown 导入支持。你可以传入一个函数进行路径解析。

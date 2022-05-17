@@ -32,7 +32,7 @@ export default defineUserConfig({
         "/demo/footnote",
         "/demo/image-mark",
         "/demo/mark",
-        "/demo/md-import",
+        "/demo/include",
         "/demo/mermaid",
         "/demo/presentation",
         "/demo/sup-sub",

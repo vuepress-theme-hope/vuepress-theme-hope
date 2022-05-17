@@ -1,9 +1,9 @@
 ---
-title: Import Markdown
+title: Include Files
 icon: markdown
 ---
 
-Let the Markdown file in your VuePress site support importing other Markdown files.
+Let the Markdown file in your VuePress site support including other files.
 
 <!-- more -->
 
@@ -20,8 +20,8 @@ import { mdEnhance } from "vuepress-plugin-md-enhance";
 export default {
   plugins: [
     mdEnhance({
-      // Enable import Markdown
-      mdImport: true,
+      // Enable include files
+      include: true,
     }),
   ],
 };
@@ -38,8 +38,8 @@ const { mdEnhance } = require("vuepress-plugin-md-enhance");
 module.exports = {
   plugins: [
     mdEnhance({
-      // Enable import Markdown
-      mdImport: true,
+      // Enable include files
+      include: true,
     }),
   ],
 };
@@ -51,35 +51,47 @@ module.exports = {
 
 ## Syntax
 
-```md
-<!-- minimal syntax -->
+Use `@include(filename)` to include a file.
 
-@[md](../foo.md)
-```
+To partially import the file, you can specify the range of lines to be included:
 
-To partially import the file:
-
-```md
-<!-- partial import, from line 1 to line 10 -->
-
-@[md{1-10}](../foo.md)
-```
+- `@include(filename{start-end})`
+- `@include(filename{start-})`
+- `@include(filename{-end})`
 
 ## Demo
 
-@[md](./demo.snippet.md)
+`@include(./demo.snippet.md)`:
 
-@[md{5-9}](./demo.snippet.md)
+@include(./demo.snippet.md)
 
-```md
-@[md](./demo.snippet.md)
+`@include(./demo.snippet.md{5-9})`:
 
-@[md{5-9}](./demo.snippet.md)
-```
+@include(./demo.snippet.md{5-9})
 
 ## Advanced
 
-You can also pass a function to handle your file path. E.g.: you can use `@src` as an alias for your source directory.
+You can also set an object to customize include filepath and include behavior.
+
+```ts
+interface IncludeOptions {
+  /**
+   * handle include filePath
+   *
+   * @default (path) => path
+   */
+  getPath?: (path: string) => string;
+
+  /**
+   * Whether deep include files in included markdown files
+   *
+   * @default false
+   */
+  deep?: boolean;
+}
+```
+
+E.g.: you can use `@src` as an alias for your source directory.
 
 :::: code-group
 
@@ -94,11 +106,13 @@ export default {
   plugins: [
     mdEnhance({
       // Add `@src` alias support
-      mdImport: (file) => {
-        if (file.startsWith("@src"))
-          return file.replace("@src", path.resolve(__dirname, ".."));
+      include: {
+        getPath: (file) => {
+          if (file.startsWith("@src"))
+            return file.replace("@src", path.resolve(__dirname, ".."));
 
-        return file;
+          return file;
+        },
       },
     }),
   ],
@@ -118,11 +132,13 @@ module.exports = {
   plugins: [
     mdEnhance({
       // Add `@src` alias support
-      mdImport: (file) => {
-        if (file.startsWith("@src"))
-          return file.replace("@src", path.resolve(__dirname, ".."));
+      include: {
+        getPath: (file) => {
+          if (file.startsWith("@src"))
+            return file.replace("@src", path.resolve(__dirname, ".."));
 
-        return file;
+          return file;
+        },
       },
     }),
   ],
@@ -149,13 +165,7 @@ export default {
 
   plugins: [
     mdEnhance({
-      // Add
-      mdImport: (file) => {
-        if (file.startsWith("@src"))
-          return file.replace("@src", path.resolve(__dirname, ".."));
-
-        return file;
-      },
+      include: true,
     }),
   ],
 };
@@ -175,13 +185,7 @@ module.exports = {
 
   plugins: [
     mdEnhance({
-      // Enable import Markdown
-      mdImport: (file) => {
-        if (file.startsWith("@src"))
-          return file.replace("@src", path.resolve(__dirname, ".."));
-
-        return file;
-      },
+      include: true,
     }),
   ],
 };

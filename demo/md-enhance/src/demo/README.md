@@ -13,7 +13,7 @@ title: Get Started
 - [Footnote](footnote.md)
 - [Image Mark](image-mark.md)
 - [Mark](mark.md)
-- [Markdown Import](md-import.md)
+- [Include files](include.md)
 - [Mermaid](mermaid.md)
 - [Presentation](presentation.md)
 - [Subscript and Superscript](sup-sub.md)

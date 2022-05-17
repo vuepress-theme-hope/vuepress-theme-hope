@@ -187,11 +187,11 @@ $$
 
 - [View Detail](tex.md)
 
-### Markdown Import
+### Include files
 
-@[md{5,9}](./demo.snippet.md)
+@include(./demo.snippet.md{5,9})
 
-- [View Detail](md-import.md)
+- [View Detail](include.md)
 
 ### Code Demo
 

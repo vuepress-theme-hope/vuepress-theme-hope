@@ -88,6 +88,8 @@ export default defineUserConfig({
     }),
   ],
 
+  pagePatterns: ["**/*.md", "!*.snippet.md", "!.vuepress", "!node_modules"],
+
   alias: {
     "@KatexPlayground": path.resolve(__dirname, "./components/KatexPlayground"),
     "@theme-hope/components/HomeHero": path.resolve(

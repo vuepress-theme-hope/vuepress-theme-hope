@@ -183,9 +183,28 @@ Whether to enable $\TeX$ syntax support. You can pass an object to config $\KaTe
 
 Please see [Katex Docs](https://katex.org/docs/options.html) for available options.
 
-## mdImport
+## include
 
-- type: `(path: string) => string | boolean`
+- Type: `IncludeOptions | boolean`
+
+  ```ts
+  interface IncludeOptions {
+    /**
+     * handle include filePath
+     *
+     * @default (path) => path
+     */
+    getPath?: (path: string) => string;
+
+    /**
+     * Whether deep include files in included markdown files
+     *
+     * @default false
+     */
+    deep?: boolean;
+  }
+  ```
+
 - Default: `false`
 
 Whether to enable Markdown import support. You can pass in a function for path resolution.

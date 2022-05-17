@@ -1,9 +1,15 @@
 ---
-title: Import Markdown
+title: 导入文件
 icon: markdown
+index: 12
+category:
+  - Markdown
+tag:
+  - Markdown
+  - 导入文件
 ---
 
-让你的 VuePress 站点中的 Markdown 文件支持导入其他 Markdown 文件。
+让你的 VuePress 站点中的 Markdown 文件支持导入其他文件。
 
 <!-- 更多 -->
 
@@ -13,35 +19,38 @@ icon: markdown
 
 ::: code-group-item TS
 
-```ts {8}
+```ts {8-10}
 // .vuepress/config.ts
-import { mdEnhance } from "vuepress-plugin-md-enhance";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  plugins: [
-    mdEnhance({
-      // 启用 Markdown 导入
-      mdImport: true,
-    }),
-  ],
-};
+export default defineUserConfig({
+  theme: hopeTheme({
+    plugins: {
+      mdEnhance: {
+        include: true,
+      },
+    },
+  }),
+});
 ```
 
 :::
 
 ::: code-group-item JS
 
-```js {8}
+```js {7-9}
 // .vuepress/config.js
-const { mdEnhance } = require("vuepress-plugin-md-enhance");
+const { hopeTheme } = require("vuepress-theme-hope");
 
 module.exports = {
-  plugins: [
-    mdEnhance({
-      // 启用 Markdown 导入
-      mdImport: true,
-    }),
-  ],
+  theme: hopeTheme({
+    plugins: {
+      mdEnhance: {
+        include: true,
+      },
+    },
+  }),
 };
 ```
 
@@ -51,35 +60,47 @@ module.exports = {
 
 ## 语法
 
-```md
-<!-- 最简单的语法 -->
+使用 `@include(filename)` 导入文件。
 
-@[md](../foo.md)
-```
+如果要部分导入文件，你可以指定导入的行数
 
-如果要部分导入文件:
-
-```md
-<!-- 部分导入，从第 1 行到第 10 行 -->
-
-@[md{1-10}](../foo.md)
-```
+- `@include(filename{start-end})`
+- `@include(filename{start-})`
+- `@include(filename{-end})`
 
 ## 演示
 
-@[md](./demo.snippet.md)
+`@include(./demo.snippet.md)`:
 
-@[md{5-9}](./demo.snippet.md)
+@include(./demo.snippet.md)
 
-```md
-@[md](./demo.snippet.md)
+`@include(./demo.snippet.md{5-9})`:
 
-@[md{5-9}](./demo.snippet.md)
-```
+@include(./demo.snippet.md{5-9})
 
 ## 高级用法
 
-你还可以传递一个函数来处理你的文件路径。例如：你可以使用 `@src` 作为源文件夹的别名。
+您还可以设置一个对象来自定义包含文件路径和包含行为。
+
+```ts
+interface IncludeOptions {
+  /**
+   * 处理 include 文件路径
+   *
+   * @default (path) => path
+   */
+  getPath?: (path: string) => string;
+
+  /**
+   * 是否深度导入包含的 markdown 文件
+   *
+   * @default false
+   */
+  deep?: boolean;
+}
+```
+
+例如：你可以使用 `@src` 作为源文件夹的别名。
 
 :::: code-group
 
@@ -94,11 +115,13 @@ export default {
   plugins: [
     mdEnhance({
       // 添加 `@src` 别名支持
-      mdImport: (file) => {
-        if (file.startsWith("@src"))
-          return file.replace("@src", path.resolve(__dirname, ".."));
+      include: {
+        getPath: (file) => {
+          if (file.startsWith("@src"))
+            return file.replace("@src", path.resolve(__dirname, ".."));
 
-        return file;
+          return file;
+        },
       },
     }),
   ],
@@ -118,11 +141,13 @@ module.exports = {
   plugins: [
     mdEnhance({
       // 添加 `@src` 别名支持
-      mdImport: (file) => {
-        if (file.startsWith("@src"))
-          return file.replace("@src", path.resolve(__dirname, ".."));
+      include: {
+        getPath: (file) => {
+          if (file.startsWith("@src"))
+            return file.replace("@src", path.resolve(__dirname, ".."));
 
-        return file;
+          return file;
+        },
       },
     }),
   ],
@@ -149,13 +174,7 @@ export default {
 
   plugins: [
     mdEnhance({
-      // Add
-      mdImport: (file) => {
-        if (file.startsWith("@src"))
-          return file.replace("@src", path.resolve(__dirname, ".."));
-
-        return file;
-      },
+      include: true,
     }),
   ],
 };
@@ -175,13 +194,7 @@ module.exports = {
 
   plugins: [
     mdEnhance({
-      // Enable import Markdown
-      mdImport: (file) => {
-        if (file.startsWith("@src"))
-          return file.replace("@src", path.resolve(__dirname, ".."));
-
-        return file;
-      },
+      include: true,
     }),
   ],
 };

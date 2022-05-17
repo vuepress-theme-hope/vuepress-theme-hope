@@ -38,6 +38,8 @@ dir:
 
 - [Tex 语法](tex.md)
 
+- [文件导入](include.md)
+
 - [代码演示](demo.md)
 
 - [幻灯片](presentation.md)

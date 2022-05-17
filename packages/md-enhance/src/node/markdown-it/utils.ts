@@ -1,6 +1,9 @@
 import type { default as StateBlock } from "markdown-it/lib/rules_block/state_block";
 import type { default as Token } from "markdown-it/lib/token";
 
+// https://spec.commonmark.org/0.29/#line-ending
+export const NEWLINES_RE = /\r\n?|\n/g;
+
 export const UNESCAPE_RE = /\\([ \\!"#$%&'()*+,./:;<=>?@[\]^_`{|}~-])/gu;
 
 export const setTokenAttr = (

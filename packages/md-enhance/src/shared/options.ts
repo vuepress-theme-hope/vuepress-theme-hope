@@ -2,6 +2,7 @@ import type { LocaleConfig } from "@vuepress/core";
 import type { KatexOptions } from "katex";
 import type { CodeDemoOptions } from "./codeDemo";
 import type { ImageMarkOptions } from "./imageMark";
+import type { IncludeOptions } from "./include";
 import type { MarkdownEnhanceLocaleData } from "./locales";
 import type { PresentationOptions } from "./presentation";
 import type { TaskListOptions } from "./tasklist";
@@ -146,13 +147,13 @@ export interface MarkdownEnhanceOptions {
   tasklist?: TaskListOptions | boolean;
 
   /**
-   * Whether to enable markdown import syntax support\
+   * Whether to enable include syntax support
    *
-   * 是否启用 Markdown 导入语法支持
+   * 是否启用导入语法支持
    *
    * @default false
    */
-  mdImport?: (path: string) => string | boolean;
+  include?: IncludeOptions;
 
   /**
    * Whether to enable TeX syntax support

@@ -14,10 +14,6 @@ Besides Markdown syntaxes VuePress itself adds, `vuepress-theme-hope` enables mo
 
 - [Built-in Markdown extension](../../cookbook/vuepress/markdown.md)
 
-## New Components
-
-- [`<Badge />`](components.md#badge)
-
 ## New Syntax
 
 - [Custom Container](container.md)
@@ -42,9 +38,13 @@ Besides Markdown syntaxes VuePress itself adds, `vuepress-theme-hope` enables mo
 
 - [Tex](tex.md)
 
+- [Include Files](include.md)
+
 - [Code demo](demo.md)
 
 - [Presentation](presentation.md)
+
+- [Components](components.md)
 
 - [Others](others.md)
 
