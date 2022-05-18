@@ -3,35 +3,40 @@ import { hash } from "@vuepress/utils";
 import type { default as Token } from "markdown-it/lib/token";
 import type { CodeDemoOptions } from "../../shared";
 
-export const codeDemoRender = (tokens: Token[], index: number): string => {
-  const { nesting, info } = tokens[index];
-  const type = /\[(.*)\]/u.exec(info);
-  const title = /^ demo\s*(?:\[.*?\])?\s*(.*)\s*$/u.exec(info);
+const getRender =
+  (demoType: string) =>
+  (tokens: Token[], index: number): string => {
+    const { nesting, info } = tokens[index];
+    const title = info.trimStart().slice(demoType.length).trim();
 
-  if (nesting === -1) return `</CodeDemo>`;
+    if (nesting === -1) return `</CodeDemo>`;
 
-  let config = "";
-  const code: Record<string, string> = {};
+    let config = "";
+    const code: Record<string, string> = {};
 
-  for (let i = index; i < tokens.length; i++) {
-    const { type, content, info } = tokens[i];
+    for (let i = index; i < tokens.length; i++) {
+      const { type, content, info } = tokens[i];
 
-    if (type === "container_demo_close") break;
-    if (!content) continue;
-    if (type === "fence") {
-      if (info === "json") config = encodeURIComponent(content);
-      else code[info] = content;
+      if (type === `container_${demoType}_close`) break;
+      if (!content) continue;
+      if (type === "fence") {
+        if (info === "json") config = encodeURIComponent(content);
+        else code[info] = content;
+      }
     }
-  }
 
-  return `
-<CodeDemo id="code-demo-${hash(code)}"${
-    type ? ` type="${encodeURIComponent(type[1])}"` : ""
-  }${title ? ` title="${encodeURIComponent(title[1])}"` : ""}${
-    config ? ` config="${config}"` : ""
-  } code="${encodeURIComponent(JSON.stringify(code))}">
+    return `
+<CodeDemo id="code-demo-${hash(code)}" type="${demoType.split("-")[0]}"${
+      title ? ` title="${encodeURIComponent(title)}"` : ""
+    }${config ? ` config="${config}"` : ""} code="${encodeURIComponent(
+      JSON.stringify(code)
+    )}">
 `;
-};
+  };
+
+export const normalDemoRender = getRender("normal-demo");
+export const vueDemoRender = getRender("vue-demo");
+export const reactDemoRender = getRender("react-demo");
 
 export const codeDemoDefaultSetting: CodeDemoOptions = {
   useBabel: false,

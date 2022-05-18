@@ -4,7 +4,7 @@ title: Code Demo
 
 ## Demo
 
-::: demo Demo
+::: normal-demo Demo
 
 ```html
 <h1>VuePress Theme Hope</h1>
@@ -28,7 +28,7 @@ span {
 :::: details Code
 
 ````md
-::: demo Demo
+::: normal-demo Demo
 
 ```html
 <h1>VuePress Theme Hope</h1>
@@ -50,7 +50,7 @@ span {
 :::
 ````
 
-::: demo [vue] A Vue Composition Demo
+::: vue-demo A Vue Composition Demo
 
 ```vue
 <template>
@@ -90,7 +90,7 @@ export default {
 :::: details Code
 
 ````md
-::: demo [vue] A Vue Composition Demo
+::: vue-demo A Vue Composition Demo
 
 ```vue
 <template>
@@ -130,7 +130,7 @@ export default {
 
 ::::
 
-::: demo [vue] A Vue Option Demo
+::: vue-demo A Vue Option Demo
 
 ```vue
 <template>
@@ -162,7 +162,7 @@ export default {
 :::: details Code
 
 ````md
-::: demo [vue] A Vue Option Demo
+::: vue-demo A Vue Option Demo
 
 ```vue
 <template>
@@ -194,7 +194,7 @@ export default {
 
 ::::
 
-::: demo [react] A function-based React Demo
+::: react-demo A function-based React Demo
 
 ```js
 const { useState } = React;
@@ -228,7 +228,7 @@ export default () => {
 :::: details Code
 
 ````md
-::: demo [react] A function-based React Demo
+::: react-demo A function-based React Demo
 
 ```js
 const { useState } = React;
@@ -262,7 +262,7 @@ export default () => {
 
 ::::
 
-::: demo [react] A class-based React Demo
+::: react-demo A class-based React Demo
 
 ```js
 export default class App extends React.Component {
@@ -299,7 +299,7 @@ export default class App extends React.Component {
 :::: details Code
 
 ````md
-::: demo [react] A class-based React Demo
+::: react-demo A class-based React Demo
 
 ```js
 export default class App extends React.Component {
@@ -336,7 +336,7 @@ export default class App extends React.Component {
 
 ::::
 
-::: demo A demo using language not supported by browsers
+::: normal-demo A demo using language not supported by browsers
 
 ```md
 # Title
@@ -365,7 +365,7 @@ h1 {
 :::: details Code
 
 ````md
-::: demo A normal demo
+::: normal-demo A normal demo
 
 ```md
 # Title

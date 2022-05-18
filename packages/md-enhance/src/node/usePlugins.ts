@@ -1,6 +1,12 @@
 import { getLocales } from "@mr-hope/vuepress-shared";
 import { containerPlugin } from "@vuepress/plugin-container";
-import { chartRender, codeDemoRender, getDetailsRender } from "./markdown-it";
+import {
+  chartRender,
+  normalDemoRender,
+  getDetailsRender,
+  vueDemoRender,
+  reactDemoRender,
+} from "./markdown-it";
 import { markdownEnhanceLocales } from "./locales";
 
 import type { App, LocaleConfig } from "@vuepress/core";
@@ -82,8 +88,11 @@ export const usePlugins = (
   if (markdownOptions.chart || markdownOptions.enableAll)
     app.use(containerPlugin({ type: "chart", render: chartRender }));
 
-  if (markdownOptions.demo || markdownOptions.enableAll)
-    app.use(containerPlugin({ type: "demo", render: codeDemoRender }));
+  if (markdownOptions.demo || markdownOptions.enableAll) {
+    app.use(containerPlugin({ type: "normal-demo", render: normalDemoRender }));
+    app.use(containerPlugin({ type: "vue-demo", render: vueDemoRender }));
+    app.use(containerPlugin({ type: "react-demo", render: reactDemoRender }));
+  }
 
   if (markdownOptions.vpre || markdownOptions.enableAll)
     app.use(
