@@ -1,6 +1,6 @@
 {
   "name": "blog2-demo",
-  "version": "2.0.0-beta.62",
+  "version": "2.0.0-beta.63",
   "private": true,
   "description": "Demo for vuepress-plugin-blog2",
   "license": "MIT",
