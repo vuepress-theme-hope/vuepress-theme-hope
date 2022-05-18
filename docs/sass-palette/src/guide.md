@@ -195,7 +195,7 @@ Only colors (or color map), length and strings are allowed in palette. Any other
 
 :::: note Why only allow color and length besides strings
 
-In common stations, you probably only want to make calculations with color and length. So it’s quite safe to drop other type support, because any other value you want can be converted to string.
+In common situations, you probably only want to make calculations with color and length. So it’s quite safe to drop other type support, because any other value you want can be converted to string.
 
 ::: details Example
 
