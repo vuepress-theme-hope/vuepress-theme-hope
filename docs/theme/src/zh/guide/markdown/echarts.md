@@ -21,35 +21,38 @@ tag:
 
 ::: code-group-item TS
 
-```ts {8}
+```ts {8-10}
 // .vuepress/config.ts
-import { mdEnhance } from "vuepress-plugin-md-enhance";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  plugins: [
-    mdEnhance({
-      // 启用 ECharts 图表
-      echarts: true,
-    }),
-  ],
-};
+export default defineUserConfig({
+  theme: hopeTheme({
+    plugins: {
+      mdEnhance: {
+        echarts: true,
+      },
+    },
+  }),
+});
 ```
 
 :::
 
 ::: code-group-item JS
 
-```js {8}
+```js {7-9}
 // .vuepress/config.js
-const { mdEnhance } = require("vuepress-plugin-md-enhance");
+const { hopeTheme } = require("vuepress-theme-hope");
 
 module.exports = {
-  plugins: [
-    mdEnhance({
-      // 启用 ECharts 图表
-      echarts: true,
-    }),
-  ],
+  theme: hopeTheme({
+    plugins: {
+      mdEnhance: {
+        echarts: true,
+      },
+    },
+  }),
 };
 ```
 

@@ -11,7 +11,7 @@ tag:
 
 Let the Markdown file support chart in your VuePress site.
 
-This plugin is using [echarts](https://echarts.apache.org/en/index.html) to support this feature.
+`vuepress-plugin-md-enhance` uses [ECharts](https://echarts.apache.org/en/index.html) to support this feature.
 
 <!-- more -->
 
@@ -21,35 +21,38 @@ This plugin is using [echarts](https://echarts.apache.org/en/index.html) to supp
 
 ::: code-group-item TS
 
-```ts {8}
+```ts {8-10}
 // .vuepress/config.ts
-import { mdEnhance } from "vuepress-plugin-md-enhance";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  plugins: [
-    mdEnhance({
-      // Enable echarts
-      echarts: true,
-    }),
-  ],
-};
+export default defineUserConfig({
+  theme: hopeTheme({
+    plugins: {
+      mdEnhance: {
+        echarts: true,
+      },
+    },
+  }),
+});
 ```
 
 :::
 
 ::: code-group-item JS
 
-```js {8}
+```js {7-9}
 // .vuepress/config.js
-const { mdEnhance } = require("vuepress-plugin-md-enhance");
+const { hopeTheme } = require("vuepress-theme-hope");
 
 module.exports = {
-  plugins: [
-    mdEnhance({
-      // Enable echarts
-      echarts: true,
-    }),
-  ],
+  theme: hopeTheme({
+    plugins: {
+      mdEnhance: {
+        echarts: true,
+      },
+    },
+  }),
 };
 ```
 
