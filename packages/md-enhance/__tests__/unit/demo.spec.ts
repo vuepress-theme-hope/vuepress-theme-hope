@@ -1,20 +1,23 @@
 import { describe, it, expect } from "vitest";
 import MarkdownIt = require("markdown-it");
 import MarkdownContainer = require("markdown-it-container");
-import { codeDemoRender } from "../../src/node/markdown-it/codeDemo";
+import {
+  normalDemoRender,
+  vueDemoRender,
+  reactDemoRender,
+} from "../../src/node/markdown-it/codeDemo";
 
 describe("demo", () => {
-  const markdownIt = MarkdownIt({ linkify: true }).use(
-    MarkdownContainer,
-    "demo",
-    { render: codeDemoRender }
-  );
+  const markdownIt = MarkdownIt({ linkify: true })
+    .use(MarkdownContainer, "normal-demo", { render: normalDemoRender })
+    .use(MarkdownContainer, "vue-demo", { render: vueDemoRender })
+    .use(MarkdownContainer, "react-demo", { render: reactDemoRender });
 
   it("Should resolve demo info", () => {
     expect(
       markdownIt.render(
         `
-::: demo A normal demo
+::: normal-demo A normal demo
 
 \`\`\`html
 <h1>Mr.Hope</h1>
@@ -35,7 +38,7 @@ span {
 
 :::
 
-::: demo [react] A react demo
+::: react-demo A react demo
 
 \`\`\`js
 export default class App extends React.Component {
@@ -61,7 +64,7 @@ export default class App extends React.Component {
 
 :::
 
-::: demo [vue] A vue demo
+::: vue-demo A vue demo
 
 \`\`\`vue
 <template>
@@ -83,7 +86,7 @@ export default {
 
 :::
 
-::: demo A normal demo
+::: normal-demo A normal demo
 
 \`\`\`md
 # Title

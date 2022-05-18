@@ -181,7 +181,7 @@ $$
 
 ### 代码演示
 
-::: demo 一个普通 Demo
+::: normal-demo 一个普通 Demo
 
 ```html
 <h1>VuePress Theme Hope</h1>

@@ -292,7 +292,7 @@ $$
 
 ### Code Demo
 
-::: demo A normal demo
+::: normal-demo A normal demo
 
 ```html
 <h1>VuePress Theme Hope</h1>
