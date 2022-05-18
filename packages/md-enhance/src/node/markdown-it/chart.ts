@@ -1,6 +1,6 @@
 /* eslint-disable max-statements */
 import { hash } from "@vuepress/utils";
-import type { default as Token } from "markdown-it/lib/token";
+import { default as Token } from "markdown-it/lib/token";
 
 export const chartRender = (tokens: Token[], index: number): string => {
   const { nesting, info } = tokens[index];
@@ -20,9 +20,15 @@ export const chartRender = (tokens: Token[], index: number): string => {
     const { type, content, info } = tokens[i];
 
     if (type === "container_chart_close") break;
+
     if (!content) continue;
     if (type === "fence" && (info === "json" || info === "js"))
       config = encodeURIComponent(content);
+
+    // set to an unexisit token type
+    tokens[i].type = "chart_empty";
+    // hide token
+    tokens[i].hidden = true;
   }
 
   return `<ChartJS title="${title}" id="${key}" config="${config}">`;
