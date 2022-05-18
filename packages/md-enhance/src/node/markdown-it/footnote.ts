@@ -75,7 +75,7 @@ interface FootNoteStateCore extends StateCore {
 }
 
 const getIDSuffix = (tokens: FootNoteToken[], index: number): string =>
-  // add suffix when mutiple id was found
+  // add suffix when multiple id was found
   tokens[index].meta.subId > 0 ? `:${tokens[index].meta.subId}` : "";
 
 const renderFootnoteAnchorName: Renderer.RenderRule = (

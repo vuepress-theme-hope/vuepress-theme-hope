@@ -30,7 +30,7 @@ You should enable presentation feature in `vuepress-plugin-md-enhance` by settin
 
 :::
 
-::: warning No mutiple slides
+::: warning No multiple slides
 
 You should only include a single slide syntax on this page to avoid rendering problems.
 

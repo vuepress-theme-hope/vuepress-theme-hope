@@ -68,7 +68,7 @@ You should use the following syntax:
 ```html
 <!-- ↑ use available ones -->
 <!-- your code here -->
-<!-- you can have mutiple code block, but each language must appear only once. -->
+<!-- you can have multiple code block, but each language must appear only once. -->
 ```
 
 ```json

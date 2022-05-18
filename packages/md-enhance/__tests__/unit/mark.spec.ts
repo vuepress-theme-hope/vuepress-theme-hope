@@ -27,7 +27,7 @@ describe("mark", () => {
     );
   });
 
-  it("Should handle mutiple '='", () => {
+  it("Should handle multiple '='", () => {
     expect(markdownIt.render(`x ===foo===`)).toEqual(
       "<p>x =<mark>foo</mark>=</p>\n"
     );

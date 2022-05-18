@@ -128,8 +128,8 @@ See [Plugin Docs][search] for available options.
      rateLimit: 8,
      startUrls: [
        // These are urls which algolia start to craw
-       // If your site is divided in to mutiple parts,
-       // you may want to set mutiple entry links
+       // If your site is divided in to multiple parts,
+       // you may want to set multiple entry links
        "https://YOUR_WEBSITE_URL/",
      ],
      sitemaps: [
@@ -147,7 +147,7 @@ See [Plugin Docs][search] for available options.
      // Crawler schedule, set it according to your docs update frequency
      schedule: "at 02:00 every 1 day",
      actions: [
-       // you may have mutiple actions, especially when you are deploying mutiple docs under one domain
+       // you may have multiple actions, especially when you are deploying multiple docs under one domain
        {
          // name the index with name you like
          indexName: "YOUR_INDEX_NAME",

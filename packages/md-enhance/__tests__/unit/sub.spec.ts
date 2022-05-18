@@ -27,7 +27,7 @@ describe("subscript", () => {
     );
   });
 
-  it("Should handle mutiple '\\'", () => {
+  it("Should handle multiple '\\'", () => {
     expect(markdownIt.render(`~foo\\\\\\\\\\ bar~`)).toEqual(
       "<p><sub>foo\\\\ bar</sub></p>\n"
     );

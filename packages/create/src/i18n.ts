@@ -73,7 +73,7 @@ export const i18n: Record<Lang, CreateI18n> = {
       'The brackets in "[dir]" means it is an argument, you should replace it with folder name you want to use! E.g.: "src", "docs"\nFor example: "npm init vuepress-theme-hope@next docs"',
     descriptionMessage: "Your project description",
     licenseMessage: "Your project lincense",
-    i18nMessage: "Does the project need mutiple languages?",
+    i18nMessage: "Does the project need multiple languages?",
     workflowMessage:
       "Do you need a GitHub workflow to deploy docs on GitHub pages?",
   },

@@ -497,7 +497,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Bug Fixes
 
-- **components:** allow mutiple $page ([1f9b8f7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1f9b8f731d0d47c407774cec0d586df3bcb2de20))
+- **components:** allow multiple $page ([1f9b8f7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1f9b8f731d0d47c407774cec0d586df3bcb2de20))
 - **components:** improve a11y ([cc506bc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cc506bc9651843dddbdd49fa4db39051350a52c9))
 - style fixes ([c9430f5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c9430f59f8a384e8fd90bc68a23307950fdea56d))
 

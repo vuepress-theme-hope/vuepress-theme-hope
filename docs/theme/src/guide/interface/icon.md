@@ -9,7 +9,7 @@ tag:
   - Interface
 ---
 
-The entire theme adds FontClass format icon support in mutiple places.
+The entire theme adds FontClass format icon support in multiple places.
 
 You can use iconfont and fontawesome to add icons to your project.
 
@@ -26,7 +26,7 @@ The prefix of the icon class is an empty string by default, you probably need to
 
 ## Setting Icons
 
-After importing icons and setting `iconPrefix` as below, you can use icon in mutiple places.
+After importing icons and setting `iconPrefix` as below, you can use icon in multiple places.
 
 - Page: set `icon` in frontmatter
 
