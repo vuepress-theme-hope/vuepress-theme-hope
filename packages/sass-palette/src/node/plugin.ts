@@ -42,7 +42,7 @@ export const sassPalettePlugin =
     return {
       name: `vuepress-plugin-sass-palette`,
 
-      mutiple: true,
+      multiple: true,
 
       id,
 
