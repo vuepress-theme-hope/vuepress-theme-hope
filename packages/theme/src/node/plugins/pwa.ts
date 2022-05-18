@@ -4,7 +4,7 @@ import type { Plugin } from "@vuepress/core";
 import type { PWAOptions } from "vuepress-plugin-pwa2";
 
 export const getPWAPlugin = (options?: PWAOptions | boolean): Plugin | null => {
-  if (options === false) return null;
+  if (!options) return null;
 
   return pwaPlugin(typeof options === "object" ? options : {});
 };
