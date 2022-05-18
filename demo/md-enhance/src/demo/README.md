@@ -6,6 +6,7 @@ title: Get Started
 
 - [Custom Align](align.md)
 - [Chart](chart.md)
+- [EChars](echarts.md)
 - [Code Demo](code-demo.md)
 - [Code Group](code-group.md)
 - [Container](container.md)

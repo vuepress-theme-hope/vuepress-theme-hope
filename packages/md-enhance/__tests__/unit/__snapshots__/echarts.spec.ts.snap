@@ -1,0 +1,21 @@
+// Vitest Snapshot v1
+
+exports[`echarts > Should resolve echarts info 1`] = `
+"<ECharts title=\\"A line chart\\" id=\\"echarts-1a96284a\\" config=\\"%7B%0A%20%20'xAxis'%3A%20%7B%0A%20%20%20%20'type'%3A%20'category'%2C%0A%20%20%20%20'data'%3A%20%5B'Mon'%2C%20'Tue'%2C%20'Wed'%2C%20'Thu'%2C%20'Fri'%2C%20'Sat'%2C%20'Sun'%5D%0A%20%20%7D%2C%0A%20%20'yAxis'%3A%20%7B%0A%20%20%20%20'type'%3A%20'value'%0A%20%20%7D%2C%0A%20%20'series'%3A%20%5B%0A%20%20%20%20%7B%0A%20%20%20%20%20%20'data'%3A%20%5B150%2C%20230%2C%20224%2C%20218%2C%20135%2C%20147%2C%20260%5D%2C%0A%20%20%20%20%20%20'type'%3A%20'line'%0A%20%20%20%20%7D%0A%20%20%5D%0A%7D%0A\\"><pre><code class=\\"language-json\\">{
+  'xAxis': {
+    'type': 'category',
+    'data': ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  },
+  'yAxis': {
+    'type': 'value'
+  },
+  'series': [
+    {
+      'data': [150, 230, 224, 218, 135, 147, 260],
+      'type': 'line'
+    }
+  ]
+}
+</code></pre>
+</ECharts>"
+`;

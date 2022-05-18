@@ -25,6 +25,7 @@ export default defineUserConfig({
       "/demo/": [
         "/demo/align",
         "/demo/chart",
+        "/demo/echarts",
         "/demo/code-demo",
         "/demo/code-group",
         "/demo/container",

@@ -47,6 +47,7 @@ export const mdEnhancePlugin =
         : options.enableAll || false;
 
     const chartEnable = getStatus("chart");
+    const echartsEnable = getStatus("echarts");
     const flowchartEnable = getStatus("flowchart");
     const footnoteEnable = getStatus("footnote", true);
     const imageMarkEnable = getStatus("imageMark", true);
@@ -105,6 +106,11 @@ export const mdEnhancePlugin =
         if (chartEnable) {
           addViteOptimizeDepsInclude({ app, config }, "chart.js/auto");
           addViteSsrExternal({ app, config }, "chart.js");
+        }
+
+        if (echartsEnable) {
+          addViteOptimizeDepsInclude({ app, config }, "echarts");
+          addViteSsrExternal({ app, config }, "echarts");
         }
 
         if (flowchartEnable) {

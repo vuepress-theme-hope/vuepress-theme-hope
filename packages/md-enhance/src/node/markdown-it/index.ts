@@ -1,6 +1,7 @@
 export * from "./chart";
 export * from "./codeDemo";
 export * from "./details";
+export * from "./echarts";
 export * from "./flowchart";
 export * from "./footnote";
 export * from "./imageMark";
