@@ -20,7 +20,7 @@ The theme provides progressive web app support [^pwa-intro] via built-in [`vuepr
 
 `vuepress-theme-hope` passes `plugins.pwa` in theme options as plugin options to `vuepress-plugin-pwa2`.
 
-If you are using this plugin, we recommand you to set `shouldPrefetch: false` in your VuePress config file.
+If you are using this plugin, we recommend you to set `shouldPrefetch: false` in your VuePress config file.
 
 :::
 
@@ -44,7 +44,7 @@ Service Worker [^service-worker] (SW for short) is mainly used to cache and prox
 
     1. Every time the user reopens the site, the Service Worker will request to the link when it was registered. If a new version of Service Woker is detected, it will update itself and start caching the list of resources registered in the new Service Worker . After the content update is successfully obtained, the Service Worker will trigger the `update` event. The user can be notified through this event, for example, a pop-up window will be displayed in the lower right corner, prompting the user that new content is available and allowing the user to trigger an update.
 
-This plugin will automatically register Service Woker through `workbox-build`. To better control what the Service Worker can pre-cache, the plugin provides the following configurations.
+This plugin will automatically register Service Worker through `workbox-build`. To better control what the Service Worker can pre-cache, the plugin provides the following configurations.
 
 ::: tip
 
@@ -92,7 +92,7 @@ We recognize images by file extension. Any files ending with `.png`, `.jpg`, `.j
 
 ### HTML Cache
 
-If you have small sites, and would like to make docusment fully offline available, you can set `plugins.pwa.cacheHTML` to `true` to cache all HTML files.
+If you have small sites, and would like to make document fully offline available, you can set `plugins.pwa.cacheHTML` to `true` to cache all HTML files.
 
 ::: tip Why only home and 404 page been cached by default?
 

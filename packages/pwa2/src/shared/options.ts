@@ -7,7 +7,7 @@ interface ApplePWAOptions {
   /**
    * Path of icon used on apple devices
    *
-   * Recommand 152×152 size
+   * Recommend 152×152 size
    *
    * 苹果上使用的图标路径
    *
@@ -36,7 +36,7 @@ interface MicrosoftPWAOptions {
   /**
    * Microsoft tile image
    *
-   * 144×144 transperent recommanded
+   * 144×144 transparent recommended
    *
    * 微软磁贴图片
    *
@@ -148,7 +148,7 @@ export interface PWAOptions {
   /**
    * Update logic
    *
-   * - `"disabled"`: Do nothing even when new service worker is avaible. After new service work succeeds installing and starts waiting, it will control page and provide new content in next visit.
+   * - `"disabled"`: Do nothing even when new service worker is available. After new service work succeeds installing and starts waiting, it will control page and provide new content in next visit.
    * - `"available"`: Only display update popup when the new service worker is available
    * - `"hint"`: Display a hint to let user choose to refresh immediately. This is helpful when you want users to see new docs immediately.
    * - `"force"`: unregister current service worker immediately then refresh to get new content. **This may affect visiting experiences**！
@@ -160,7 +160,7 @@ export interface PWAOptions {
    * - `"hint"`: 显示更新内容可用提示，并允许用户立即刷新。当新的 SW 成功注册后，将转为更新内容就绪弹窗。当你希望用户立即查看新文档时，这很有帮助。
    * - `"force"`: 立即注销当前 Service Worker 然后刷新以获取新内容。**这可能会影响访问体验**!
    */
-  update?: "availble" | "hint" | "force" | "disable";
+  update?: "available" | "hint" | "force" | "disable";
 
   /**
    * A custom component to replace the default hint popup component.

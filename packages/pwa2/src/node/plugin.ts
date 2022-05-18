@@ -27,7 +27,7 @@ export const pwaPlugin =
 
     if (shouldPrefetch === true)
       logger.warn(
-        'The plugin will register service worker to handle assets, so we recommand you to set "shouldPrefetch: false" in VuePress config file.'
+        'The plugin will register service worker to handle assets, so we recommend you to set "shouldPrefetch: false" in VuePress config file.'
       );
 
     const manifest = getManifest(app, options);

@@ -91,6 +91,6 @@ module.exports = {
 
 ::: tip
 
-If you are using this plugin, we recommand you to set `shouldPrefetch: false` in your VuePress config file.
+If you are using this plugin, we recommend you to set `shouldPrefetch: false` in your VuePress config file.
 
 :::
