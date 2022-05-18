@@ -4,7 +4,12 @@ import type { default as Token } from "markdown-it/lib/token";
 
 export const chartRender = (tokens: Token[], index: number): string => {
   const { nesting, info } = tokens[index];
-  const title = /^ chart\s*(.*)\s*$/u.exec(info);
+  const title = info
+    .trimStart()
+    // 'chart' length
+    .slice(5)
+    .trim();
+
   const key = `chart-${hash(index)}`;
 
   if (nesting === -1) return `</ChartJS>`;
@@ -16,9 +21,9 @@ export const chartRender = (tokens: Token[], index: number): string => {
 
     if (type === "container_chart_close") break;
     if (!content) continue;
-    if ((type === "fence" && info === "json") || info === "js")
+    if (type === "fence" && (info === "json" || info === "js"))
       config = encodeURIComponent(content);
   }
 
-  return `<ChartJS title="${title?.[1] || ""}" id="${key}" config="${config}">`;
+  return `<ChartJS title="${title}" id="${key}" config="${config}">`;
 };
