@@ -1,5 +1,5 @@
 import { hash } from "@vuepress/utils";
-import type Token from "markdown-it/lib/token";
+import { default as Token } from "markdown-it/lib/token";
 
 export const echartsRender = (tokens: Token[], index: number): string => {
   const { nesting, info } = tokens[index];
@@ -18,9 +18,16 @@ export const echartsRender = (tokens: Token[], index: number): string => {
     const { type, content, info } = tokens[i];
 
     if (type === "container_echarts_close") break;
+
     if (!content) continue;
+
     if (type === "fence" && (info === "json" || info === "js"))
       config = encodeURIComponent(content);
+
+    // set to an unexisit token type
+    tokens[i].type = "echarts_empty";
+    // hide token
+    tokens[i].hidden = true;
   }
 
   return `<ECharts title="${title}" id="${key}" config="${config}">`;
