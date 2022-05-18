@@ -178,6 +178,15 @@ export interface MarkdownEnhanceOptions {
   chart?: boolean;
 
   /**
+   * Whether to enable echarts support
+   *
+   * 是否启用 echarts 图表支持
+   *
+   * @default false
+   */
+  echarts?: boolean;
+
+  /**
    * Whether to enable flowchart support
    *
    * 是否启用 flowchart 流程图支持

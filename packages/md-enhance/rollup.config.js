@@ -23,6 +23,15 @@ export default [
     ],
     dtsExternal: [/\.scss$/],
   }),
+  ...rollupTypescript("client/components/ECharts", {
+    external: [
+      "@mr-hope/vuepress-shared/lib/client",
+      "echarts",
+      "vue",
+      /\.scss$/,
+    ],
+    dtsExternal: [/\.scss$/],
+  }),
   ...rollupTypescript("client/components/CodeDemo", {
     external: [
       "@mr-hope/vuepress-shared/lib/client",

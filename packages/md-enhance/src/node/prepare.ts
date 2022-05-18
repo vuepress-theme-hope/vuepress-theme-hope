@@ -25,6 +25,11 @@ export const prepareConfigFile = async (
     enhance += `app.component("ChartJS", ChartJS);\n`;
   }
 
+  if (getStatus("echarts")) {
+    configImport += `import ECharts from "${CLIENT_FOLDER}components/ECharts";\n`;
+    enhance += `app.component("ECharts", ECharts);\n`;
+  }
+
   if (getStatus("demo")) {
     configImport += `import CodeDemo from "${CLIENT_FOLDER}components/CodeDemo";\n`;
     enhance += `app.component("CodeDemo", CodeDemo);\n`;

@@ -2,6 +2,7 @@ import { getLocales } from "@mr-hope/vuepress-shared";
 import { containerPlugin } from "@vuepress/plugin-container";
 import {
   chartRender,
+  echartsRender,
   normalDemoRender,
   getDetailsRender,
   vueDemoRender,
@@ -87,6 +88,9 @@ export const usePlugins = (
 
   if (markdownOptions.chart || markdownOptions.enableAll)
     app.use(containerPlugin({ type: "chart", render: chartRender }));
+
+  if (markdownOptions.echarts || markdownOptions.enableAll)
+    app.use(containerPlugin({ type: "echarts", render: echartsRender }));
 
   if (markdownOptions.demo || markdownOptions.enableAll) {
     app.use(containerPlugin({ type: "normal-demo", render: normalDemoRender }));
