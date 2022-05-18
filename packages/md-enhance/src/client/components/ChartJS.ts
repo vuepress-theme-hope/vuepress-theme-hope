@@ -2,38 +2,34 @@ import { defineComponent, h, onMounted, ref } from "vue";
 import { LOADING_SVG } from "./icons";
 
 import type { ChartConfiguration } from "chart.js";
-import type { VNode } from "vue";
+import type { PropType, VNode } from "vue";
 
 import "../styles/chart.scss";
 
 declare const MARKDOWN_ENHANCE_DELAY: number;
 
-const parseChartConfig = (str: string): ChartConfiguration =>
-  JSON.parse(str, (_key, value) => {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-    if (typeof value !== "string" || value.length < 8) return value;
+const parseChartConfig = (
+  config: string,
+  type: "js" | "json"
+): ChartConfiguration => {
+  if (type === "json") return JSON.parse(config) as ChartConfiguration;
 
-    const prefix = value.substring(0, 8);
+  const exports = {};
+  const module = { exports };
 
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-    if (prefix === "function") return eval(`(${value})`);
+  eval(config);
 
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-    if (prefix === "_PxEgEr_") return eval(value.slice(8));
-
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-    if (prefix === "_NuFrRa_") return eval(value.slice(8));
-
-    return value;
-  }) as ChartConfiguration;
+  return module.exports as ChartConfiguration;
+};
 
 export default defineComponent({
   name: "ChartJS",
 
   props: {
-    title: { type: String, default: "" },
     config: { type: String, required: true },
     id: { type: String, required: true },
+    title: { type: String, default: "" },
+    type: { type: String as PropType<"js" | "json">, default: "json" },
   },
 
   setup(props) {
@@ -50,7 +46,10 @@ export default defineComponent({
       ]).then(([{ default: Chart }]) => {
         Chart.defaults.maintainAspectRatio = false;
 
-        const data = parseChartConfig(decodeURIComponent(props.config));
+        const data = parseChartConfig(
+          decodeURIComponent(props.config),
+          props.type
+        );
         const ctx = chartCanvasElement.value?.getContext(
           "2d"
         ) as CanvasRenderingContext2D;
@@ -62,7 +61,9 @@ export default defineComponent({
     });
 
     return (): (VNode | null)[] => [
-      props.title ? h("div", { class: "chart-title" }, props.title) : null,
+      props.title
+        ? h("div", { class: "chart-title" }, decodeURIComponent(props.title))
+        : null,
       loading.value
         ? h("div", {
             class: ["chart-loading-wrapper"],

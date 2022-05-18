@@ -74,6 +74,8 @@ module.exports = {
 :::
 ````
 
+我们也支持 `js` 和 `javascript` 的代码块，你应当将导出对象赋值给 `module.exports`。
+
 ## 案例
 
 ### 块状图

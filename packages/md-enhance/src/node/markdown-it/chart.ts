@@ -14,7 +14,8 @@ export const chartRender = (tokens: Token[], index: number): string => {
 
   if (nesting === -1) return `</ChartJS>`;
 
-  let config = "";
+  let config = "{}";
+  let configType = "";
 
   for (let i = index; i < tokens.length; i++) {
     const { type, content, info } = tokens[i];
@@ -22,8 +23,15 @@ export const chartRender = (tokens: Token[], index: number): string => {
     if (type === "container_chart_close") break;
 
     if (!content) continue;
-    if (type === "fence" && (info === "json" || info === "js"))
-      config = encodeURIComponent(content);
+    if (type === "fence") {
+      if (info === "json") {
+        config = encodeURIComponent(content);
+        configType = "json";
+      } else if (info === "js" || info === "javascript") {
+        config = encodeURIComponent(content);
+        configType = "js";
+      }
+    }
 
     // set to an unexisit token type
     tokens[i].type = "chart_empty";
@@ -31,5 +39,7 @@ export const chartRender = (tokens: Token[], index: number): string => {
     tokens[i].hidden = true;
   }
 
-  return `<ChartJS title="${title}" id="${key}" config="${config}">`;
+  return `<ChartJS id="${key}" config="${config}" ${
+    title ? `title="${encodeURIComponent(title)}" ` : ""
+  }type="${configType}">`;
 };

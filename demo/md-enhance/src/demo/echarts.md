@@ -56,6 +56,106 @@ title: ECharts
 
 ::::
 
+::: echarts A line chart
+
+```js
+module.exports = {
+  xAxis: {
+    type: "category",
+    data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+  },
+  yAxis: {
+    type: "value",
+  },
+  series: [
+    {
+      data: [150, 230, 224, 218, 135, 147, 260],
+      type: "line",
+    },
+  ],
+};
+```
+
+:::
+
+:::: details Code
+
+````md
+::: echarts A line chart
+
+```js
+module.exports = {
+  xAxis: {
+    type: "category",
+    data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+  },
+  yAxis: {
+    type: "value",
+  },
+  series: [
+    {
+      data: [150, 230, 224, 218, 135, 147, 260],
+      type: "line",
+    },
+  ],
+};
+```
+
+:::
+````
+
+::::
+
+::: echarts A line chart
+
+```javascript
+module.exports = {
+  xAxis: {
+    type: "category",
+    data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+  },
+  yAxis: {
+    type: "value",
+  },
+  series: [
+    {
+      data: [150, 230, 224, 218, 135, 147, 260],
+      type: "line",
+    },
+  ],
+};
+```
+
+:::
+
+:::: details Code
+
+````md
+::: echarts A line chart
+
+```javascript
+module.exports = {
+  xAxis: {
+    type: "category",
+    data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+  },
+  yAxis: {
+    type: "value",
+  },
+  series: [
+    {
+      data: [150, 230, 224, 218, 135, 147, 260],
+      type: "line",
+    },
+  ],
+};
+```
+
+:::
+````
+
+::::
+
 ### Bar Chart
 
 ::: echarts A bar chart

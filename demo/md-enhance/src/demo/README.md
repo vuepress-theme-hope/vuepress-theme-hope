@@ -10,7 +10,7 @@ title: Get Started
 - [Code Demo](code-demo.md)
 - [Code Group](code-group.md)
 - [Container](container.md)
-- [Flowchar](flowchart.md)
+- [Flowchart](flowchart.md)
 - [Footnote](footnote.md)
 - [Image Mark](image-mark.md)
 - [Mark](mark.md)

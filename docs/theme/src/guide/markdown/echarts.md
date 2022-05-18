@@ -67,12 +67,14 @@ module.exports = {
 
 ```json
 {
-  // Your chart config here.
+  // Your echarts config here.
 }
 ```
 
 :::
 ````
+
+`js` and `javascript` code block is also supported, and you are expected to assign your export object to `module.exports`.
 
 ## Demo
 

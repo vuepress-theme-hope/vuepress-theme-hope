@@ -10,7 +10,7 @@ import { LOADING_SVG } from "./icons";
 
 import { EChartsType } from "echarts";
 import type { EChartsOption } from "echarts/types/dist/shared";
-import type { VNode } from "vue";
+import type { PropType, VNode } from "vue";
 
 import "../styles/echarts.scss";
 
@@ -18,32 +18,28 @@ import { useDebounceFn, useResizeObserver } from "@vueuse/core";
 
 declare const MARKDOWN_ENHANCE_DELAY: number;
 
-const parseEChartsConfig = (str: string): EChartsOption =>
-  JSON.parse(str, (_key, value) => {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-    if (typeof value !== "string" || value.length < 8) return value;
+const parseEChartsConfig = (
+  config: string,
+  type: "js" | "json"
+): EChartsOption => {
+  if (type === "json") return JSON.parse(config) as EChartsOption;
 
-    const prefix = value.substring(0, 8);
+  const exports = {};
+  const module = { exports };
 
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-    if (prefix === "function") return eval(`(${value})`);
+  eval(config);
 
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-    if (prefix === "_PxEgEr_") return eval(value.slice(8));
-
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-    if (prefix === "_NuFrRa_") return eval(value.slice(8));
-
-    return value;
-  }) as EChartsOption;
+  return module.exports as EChartsOption;
+};
 
 export default defineComponent({
   name: "MdECharts",
 
   props: {
-    title: { type: String, default: "" },
     config: { type: String, required: true },
     id: { type: String, required: true },
+    title: { type: String, default: "" },
+    type: { type: String as PropType<"js" | "json">, default: "json" },
   },
 
   setup(props) {
@@ -62,7 +58,10 @@ export default defineComponent({
         // delay
         new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
       ]).then(([echarts]) => {
-        const options = parseEChartsConfig(decodeURIComponent(props.config));
+        const options = parseEChartsConfig(
+          decodeURIComponent(props.config),
+          props.type
+        );
 
         chart.value = markRaw(
           echarts.init(echartsWrapper.value as HTMLElement)
@@ -84,7 +83,9 @@ export default defineComponent({
     });
 
     return (): (VNode | null)[] => [
-      props.title ? h("div", { class: "echarts-title" }, props.title) : null,
+      props.title
+        ? h("div", { class: "echarts-title" }, decodeURIComponent(props.title))
+        : null,
       loading.value
         ? h("div", {
             class: ["echarts-loading-wrapper"],

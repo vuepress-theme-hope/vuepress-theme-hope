@@ -65,6 +65,8 @@ module.exports = {
 :::
 ````
 
+`js` and `javascript` code block is also supported, and you are expected to assign your export object to `module.exports`.
+
 ## Demo
 
 ### Bar Chart

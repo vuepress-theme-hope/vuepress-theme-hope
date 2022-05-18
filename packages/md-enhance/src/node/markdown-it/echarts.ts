@@ -8,11 +8,13 @@ export const echartsRender = (tokens: Token[], index: number): string => {
     // 'echarts' length
     .slice(7)
     .trim();
+
   const key = `echarts-${hash(index)}`;
 
   if (nesting === -1) return `</ECharts>`;
 
-  let config = "";
+  let config = "{}";
+  let configType = "";
 
   for (let i = index; i < tokens.length; i++) {
     const { type, content, info } = tokens[i];
@@ -20,9 +22,15 @@ export const echartsRender = (tokens: Token[], index: number): string => {
     if (type === "container_echarts_close") break;
 
     if (!content) continue;
-
-    if (type === "fence" && (info === "json" || info === "js"))
-      config = encodeURIComponent(content);
+    if (type === "fence") {
+      if (info === "json") {
+        config = encodeURIComponent(content);
+        configType = "json";
+      } else if (info === "js" || info === "javascript") {
+        config = encodeURIComponent(content);
+        configType = "js";
+      }
+    }
 
     // set to an unexisit token type
     tokens[i].type = "echarts_empty";
@@ -30,5 +38,7 @@ export const echartsRender = (tokens: Token[], index: number): string => {
     tokens[i].hidden = true;
   }
 
-  return `<ECharts title="${title}" id="${key}" config="${config}">`;
+  return `<ECharts id="${key}" config="${config}" ${
+    title ? `title="${encodeURIComponent(title)}" ` : ""
+  }type="${configType}">`;
 };
