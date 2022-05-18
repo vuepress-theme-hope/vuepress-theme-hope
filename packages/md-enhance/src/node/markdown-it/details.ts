@@ -13,9 +13,8 @@ export const getDetailsRender =
   (tokens: Token[], index, _options, env): string => {
     const token = tokens[index];
 
+    // `before` tag
     if (token.nesting === 1) {
-      // `before` tag
-
       // resolve info (title)
       let info = token.info
         .trim()
@@ -25,8 +24,8 @@ export const getDetailsRender =
         )
         .trim();
 
+      // get locale
       if (!info && locales) {
-        // locale
         const { filePathRelative } = env;
         const relativePath = ensureLeadingSlash(filePathRelative ?? "");
 
