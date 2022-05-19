@@ -9,7 +9,7 @@ category:
 
 If you are facing error like this, you are probably using non-standard tags in your project.
 
-There are tags like `<center>` or `<font>`, which is in HTML1.0 spec, but marked as unrecommanded since HTML4.0 released in 1999, then removed in HTML5 release in 2008. So Vue is not allowing you to use them by default. You should probably remove them and use standard HTML5 tag.
+There are tags like `<center>` or `<font>`, which is in HTML1.0 spec, but marked as unrecommended since HTML4.0 released in 1999, then removed in HTML5 release in 2008. So Vue is not allowing you to use them by default. You should probably remove them and use standard HTML5 tag.
 
 To remove them, run theme with `--debug` flag, and you will get warning logs telling you tags that probably not be recognized.
 

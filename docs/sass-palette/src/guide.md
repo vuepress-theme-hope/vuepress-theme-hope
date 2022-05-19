@@ -7,23 +7,23 @@ This plugin is basically facing plugins and theme development.
 
 ## ID
 
-To get started, you should understand that this plugin is designed to take across plugins and theme (unlike the officail one only for theme).
+To get started, you should understand that this plugin is designed to take across plugins and theme (unlike the official one only for theme).
 
 We are providing `id` option to do that, and using this plugin (by calling `useSassPalette`) with same ID won’t have any side effects. Also, all the alias and module names have an ID prefix.
 
-This will allows you to:
+This will allow you to:
 
-- Share same style system accoss your plugins (or themes) using same ID without any side effects.
+- Share same style system across your plugins (or themes) using same ID without any side effects.
 
   This means you can use same style variables across your plugins (or themes) to get your style unify.
 
   ::: tip Example
 
-  `vuepress-theme-hope` and all its plugins are invoking this plugin with same ID `hope`, so that all the color variables, breakpoints and other style configuation can be done at same file and be unified across theme and plugins.
+  `vuepress-theme-hope` and all its plugins are invoking this plugin with same ID `hope`, so that all the color variables, breakpoints and other style configuration can be done at same file and be unified across theme and plugins.
 
   :::
 
-- With different ID, plugins and theme won’t affect others. We recommand you to set the `id` variable with your plugin name.
+- With different ID, plugins and theme won’t affect others. We recommend you to set the `id` variable with your plugin name.
 
   With the default settings, users will set your plugin style under `.vuepress/styles` directory with Sass files starting with your ID prefix. And you can access the variables you need with `${id}-config`.
 
@@ -41,7 +41,7 @@ We have three style concept here: config, palette and generator.
 
 Config file is used for Sass variable only. It holds Sass variables which can be used in other files later.
 
-You can specific a file (probably in `.vuepress/styles/` directory) as user config file. So you can get the module containing every variables later in Sass files. Also, you are able to provide a default config files where you can place fallback values for variables with `!default`.
+You can specify a file (probably in `.vuepress/styles/` directory) as user config file. So you can get the module containing every variable later in Sass files. Also, you are able to provide a default config files where you can place fallback values for variables with `!default`.
 
 ::: details An example
 
@@ -81,7 +81,7 @@ You can get the following variables in the plugin Sass files:
 
 ### Limitations
 
-We are using `additionalData` options to let `${id}-config` module aviable in your styles, but this has some limitations.
+We are using `additionalData` options to let `${id}-config` module available in your styles, but this has some limitations.
 
 `additionalData` only works on Scss entry, so `${id}-config` is available only in :
 
@@ -100,15 +100,15 @@ If the Scss file is not imported directly, but is imported through `@use` or `@i
 
   Your plugin will work with default theme, and users are allowed to change this selector in config file if they are using a third-party theme with different dark selector.
 
-- If you are developing a theme, you may set `$dark-selector` in default config files with your darkmode selector without `!default`, so that users cannot overide it.
+- If you are developing a theme, you may set `$dark-selector` in default config files with your darkmode selector without `!default`, so that users cannot override it.
 
 :::
 
 ## Palette
 
-Palette files are used for CSS varaible injection, where each variable will be injected in to root with kebab-name of variable name.
+Palette files are used for CSS variable injection, where each variable will be injected in to root with kebab-name of variable name.
 
-You can specific a file (probably in `.vuepress/styles/` directory) as user palette file, and the default filename is `${id}-palette.scss`. Also, you are able to provide a default palette files where you can place fallback values for variables with `!default`.
+You can specify a file (probably in `.vuepress/styles/` directory) as user palette file, and the default filename is `${id}-palette.scss`. Also, you are able to provide a default palette files where you can place fallback values for variables with `!default`.
 
 ::: details An example
 
@@ -136,7 +136,7 @@ $colorA: blue !default;
 $colorB: green !default;
 ```
 
-Then the below CSS variables will be availe under root selector:
+Then the below CSS variables will be available under root selector:
 
 ```scss
 :root {
@@ -195,7 +195,7 @@ Only colors (or color map), length and strings are allowed in palette. Any other
 
 :::: note Why only allow color and length besides strings
 
-In common sitations, you probably only want to make calculations with color and length. So it’s quite safe to drop other type support, because any other value you want can be converted to string.
+In common situations, you probably only want to make calculations with color and length. So it’s quite safe to drop other type support, because any other value you want can be converted to string.
 
 ::: details Example
 
@@ -219,7 +219,7 @@ $moveTransition: "width 0.3s ease";
 
 ::: tip Available in config module
 
-Same as config file, any variables in palette will be injected into `${id}-config` module, just in case you wanna use them in Sass files.
+Same as config file, any variables in palette will be injected into `${id}-config` module, just in case you want to use them in Sass files.
 
 :::
 
@@ -227,13 +227,13 @@ Same as config file, any variables in palette will be injected into `${id}-confi
 
 We are exposing internal functions which `vuepress-plugin-sass-palette` uses, as a helper module.
 
-You can use this helper with `@sass-palette/helper` alia and call its function to achieve simliar features yourself.
+You can use this helper with `@sass-palette/helper` alia and call its function to achieve similar features yourself.
 
 ## Generator
 
 Generator file is facing developers to generate derivative values with config or palette file variables.
 
-Generator variables will be also injected as CSS variables like palette, and also they are availe in config module.
+Generator variables will be also injected as CSS variables like palette, and also they are available in config module.
 
 ::: details Example
 
@@ -275,5 +275,5 @@ Available alias are:
 
 - config: `@sass-palette/${id}-config` (based on `id`)
 - palette: `@sass-palette/${id}-palette` (based on `id`)
-- style: `@sass-palette/${id}-style` (only avaible when `style` option is set)
+- style: `@sass-palette/${id}-style` (only available when `style` option is set)
 - helper: `@sass-palette/helper`

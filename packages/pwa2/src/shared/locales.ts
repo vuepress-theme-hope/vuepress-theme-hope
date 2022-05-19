@@ -72,7 +72,7 @@ export interface PWALocaleData {
   hint: string;
 
   /**
-   * Update avaible text
+   * Update available text
    *
    * 更新可用文字
    */
