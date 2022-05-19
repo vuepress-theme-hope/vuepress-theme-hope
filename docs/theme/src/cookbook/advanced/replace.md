@@ -83,6 +83,7 @@ Components:
 - `@theme-hope/components/HomeFeatures`: homepage features
 - `@theme-hope/components/HomeHero`: homepage logo and introduction
 - `@theme-hope/components/HomePage`: home page
+- `@theme-hope/components/Icon`: icon
 - `@theme-hope/components/MarkdownContent`: Markdown content
 - `@theme-hope/components/NormalPage`: normal page
 - `@theme-hope/components/PageFooter`: page footer
