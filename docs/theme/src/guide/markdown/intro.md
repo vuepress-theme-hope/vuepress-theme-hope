@@ -33,9 +33,9 @@ Don’t worry about the size of your site. If you don’t enable related feature
 
 You can set `plugins.mdEnhance.enableAll` to enable all features of the [md-enhance][md-enhance] plugin.
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts {8-10}
 // .vuepress/config.ts
@@ -53,9 +53,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js {7-9}
 // .vuepress/config.js
@@ -73,8 +71,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ::: danger
 

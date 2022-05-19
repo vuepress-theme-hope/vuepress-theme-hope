@@ -24,9 +24,9 @@ Please **DO NOT USE** this encryption function for any sensitive and confidentia
 
 You can configure encryption options through the `encrypt.config` options in theme options.
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts
 // .vuepress/config.ts
@@ -47,9 +47,7 @@ export default defineUserConfig({
 };
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js
 // .vuepress/config.js
@@ -70,8 +68,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ::: warning
 

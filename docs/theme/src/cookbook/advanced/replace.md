@@ -16,9 +16,9 @@ The theme imports components through `alias`, so you can use it to replace any c
 
 You need to replace the component alias used in the theme with `alias` option in your own VuePress config file.
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts
 // .vuepress/config.ts
@@ -42,9 +42,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js
 // .vuepress/config.js
@@ -68,8 +66,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 Here are list of aliases.
 
@@ -230,9 +226,9 @@ Some components provide slots, in this case, you can directly import the origina
 
 For example, if your site has strong social attributes, and you want to display a comment box on the homepage, you can display it like this:
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item config.ts
+@codetab config.ts
 
 ```ts
 // .vuepress/config.ts
@@ -256,9 +252,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item HomePage.vue
+@codetab HomePage.vue
 
 ```vue
 <template>
@@ -275,8 +269,6 @@ import HopeHomePage from "vuepress-theme-hope/lib/client/components/HomePage";
 ```
 
 :::
-
-::::
 
 Components that provide slots are as follows:
 

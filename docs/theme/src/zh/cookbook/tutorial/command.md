@@ -50,30 +50,24 @@ tag:
 
 如果你需要升级主题和 VuePress 版本，请执行以下命令:
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item pnpm
+@codetab pnpm
 
 ```bash
 pnpm add vuepress@next vuepress-theme-hope@next && pnpm i && pnpm up
 ```
 
-:::
-
-::: code-group-item yarn
+@codetab yarn
 
 ```bash
 yarn add vuepress@next vuepress-theme-hope@next && yarn install && yarn upgrade
 ```
 
-:::
-
-::: code-group-item npm
+@codetab npm
 
 ```bash
 npm i vuepress@next vuepress-theme-hope@next && npm install && npm update
 ```
 
 :::
-
-::::

@@ -33,27 +33,23 @@ Please use the options below and enable ONLY the feature you want to use.
 
 ## New Feature
 
-### CodeGroup
+### Code Tabs
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item pnpm
+@codetab pnpm
 
 ```bash
 pnpm add -D vuepress-plugin-md-enhance@next
 ```
 
-:::
-
-::: code-group-item yarn
+@codetab yarn
 
 ```bash
 yarn add -D vuepress-plugin-md-enhance@next
 ```
 
-:::
-
-::: code-group-item npm:active
+@codetab npm:active
 
 ```bash
 npm i -D vuepress-plugin-md-enhance@next
@@ -61,9 +57,7 @@ npm i -D vuepress-plugin-md-enhance@next
 
 :::
 
-::::
-
-- [View Detail](code-group.md)
+- [View Detail](code-tabs.md)
 
 ### Superscript and Subscript
 

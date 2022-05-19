@@ -15,9 +15,9 @@ The theme adds tip, note, info, warning, danger and detail container.
 
 ## Config
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts {8-11}
 // .vuepress/config.ts
@@ -36,9 +36,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js {7-10}
 // .vuepress/config.js
@@ -57,8 +55,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ## Demo
 

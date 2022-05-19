@@ -26,9 +26,9 @@ In VuePress, there are three config concepts:
 
 ## Theme Usage
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts
 // .vuepress/config.ts
@@ -46,9 +46,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js
 // .vuepress/config.js
@@ -66,5 +64,3 @@ module.exports = defineUserConfig({
 ```
 
 :::
-
-::::

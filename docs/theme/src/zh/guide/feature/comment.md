@@ -20,9 +20,9 @@ tag:
 
 ## 启用 <Badge text="支持页面配置" />
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts {8,11}
 // .vuepress/config.ts
@@ -43,9 +43,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js {7,10}
 const { hopeTheme } = require("vuepress-theme-hope");
@@ -65,8 +63,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 评论功能默认全局启用，通过主题选项中的 `plugins.comment.comment` 控制。
 
@@ -126,9 +122,9 @@ Giscus 是一个基于 GitHub Discussion 的评论系统，启用简便。
 
 设置好环境变量后，点击 `Deploy` 部署，一两分钟即可部署完成。之后在主题设置中设置 vercel 地址:
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts
 // .vuepress/config.ts
@@ -147,9 +143,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js
 // .vuepress/config.js
@@ -168,8 +162,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 Waline 评论的其他配置将在 [Waline 配置][comment2-waline-config] 中列出。
 

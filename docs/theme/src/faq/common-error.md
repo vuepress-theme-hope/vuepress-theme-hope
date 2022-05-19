@@ -47,25 +47,21 @@ Such errors are usually caused by incorrectly containing multiple versions of `@
 
 Make sure you are using the latest `vuepress` and `vuepress-theme-hope` versions:
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item pnpm
+@codetab pnpm
 
 ```bash
 pnpm add vuepress@next vuepress-theme-hope@next
 ```
 
-:::
-
-::: code-group-item yarn
+@codetab yarn
 
 ```bash
 yarn add vuepress@next vuepress-theme-hope@next
 ```
 
-:::
-
-::: code-group-item npm
+@codetab npm
 
 ```bash
 npm i vuepress@next vuepress-theme-hope@next
@@ -73,37 +69,29 @@ npm i vuepress@next vuepress-theme-hope@next
 
 :::
 
-::::
-
 Also, upgrade dependencies to ensure your project only contains a single version of the relevant package:
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item pnpm
+@codetab pnpm
 
 ```bash
 pnpm i && pnpm up
 ```
 
-:::
-
-::: code-group-item yarn
+@codetab yarn
 
 ```bash
 yarn && yarn upgrade
 ```
 
-:::
-
-::: code-group-item npm
+@codetab npm
 
 ```bash
 npm i && npm update
 ```
 
 :::
-
-::::
 
 ## Some page settings are invalid
 

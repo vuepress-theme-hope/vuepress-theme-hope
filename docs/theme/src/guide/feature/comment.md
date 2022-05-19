@@ -20,9 +20,9 @@ tag:
 
 ## Enable <Badge text="Support page config" />
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts {8,13}
 // .vuepress/config.ts
@@ -43,9 +43,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js {7,12}
 // .vuepress/config.js
@@ -66,8 +64,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 Comment feature is enabled globally by default, controlled by `plugins.comment.comment` options.
 
@@ -125,9 +121,9 @@ Then input your new GitHub repo name and set `LEAN_ID`, `LEAN_KEY` and `LEAN_MAS
 
 Click `Deploy` button to deploy. It will show you deploy successfully after a minitues time. Then config the vercel link in your theme options:
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts
 // .vuepress/config.ts
@@ -146,9 +142,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js
 // .vuepress/config.js
@@ -167,8 +161,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ::: tip
 

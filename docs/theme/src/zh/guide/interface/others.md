@@ -26,9 +26,9 @@ tag:
 
 :::
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts {8}
 // .vuepress/config.ts
@@ -43,9 +43,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js {7}
 // .vuepress/config.js
@@ -60,8 +58,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ## 返回顶部按钮
 

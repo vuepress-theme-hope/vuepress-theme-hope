@@ -105,12 +105,12 @@ Whether to enable link check.
 
 Whether to enable v-pre wrapper.
 
-### codegroup
+### codetabs
 
 - Type: `boolean`
 - Default: `false`
 
-Whether to enable codegroup.
+Whether to enable codetabs.
 
 ### align
 

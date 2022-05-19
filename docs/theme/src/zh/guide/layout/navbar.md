@@ -21,9 +21,9 @@ tag:
 
 配置导航栏最简单的方式，是依次填入需要展示的页面文件的路径，这样导航栏的文字、图标和链接会自动通过对应文件生成。
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts
 // .vuepress/config.ts
@@ -37,9 +37,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js
 // .vuepress/config.js
@@ -53,8 +51,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ::: tip
 
@@ -71,9 +67,9 @@ module.exports = {
 - `icon`: 项目图标 (可选)
 - `activeMatch`: 项目激活匹配 (可选)，支持正则字符串。
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts
 // .vuepress/config.ts
@@ -104,9 +100,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js
 // .vuepress/config.js
@@ -137,8 +131,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ::: tip activeMatch 的高级用法
 
@@ -158,9 +150,9 @@ module.exports = {
 
 你需要设置对象式导航栏配置项，并提供额外的 `children` 选项设置链接列表:
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts
 // .vuepress/config.ts
@@ -180,9 +172,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js
 // .vuepress/config.js
@@ -202,16 +192,14 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 由于大多数情况下，导航栏的分组项目都属于同一类别，会放在同一个子目录下，它们具有相同的路径前缀。
 
 为了简化配置，你可以添加 `prefix` 字段为分组的每一个子链接添加一个前缀:
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts
 // .vuepress/config.ts
@@ -232,9 +220,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js
 // .vuepress/config.js
@@ -255,14 +241,12 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 此外，你还可以通过嵌套的 `children` 来在下拉列表中设置分组:
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts
 // .vuepress/config.ts
@@ -295,9 +279,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js
 // .vuepress/config.js
@@ -330,16 +312,14 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ## 禁用导航栏
 
 你可以设置 `navbar: false` 来禁用所有页面的导航栏:
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts
 // .vuepress/config.ts
@@ -353,9 +333,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js
 // .vuepress/config.js
@@ -369,8 +347,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 你也可以通过 `YAML front matter` 来禁用某个指定页面的导航栏:
 
@@ -392,9 +368,9 @@ navbar: false
 
 配置图标后，图标将移动设备上取代先前的站点名称显示在导航栏上。
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts
 // .vuepress/config.ts
@@ -408,9 +384,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js
 // .vuepress/config.js
@@ -424,8 +398,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ::: tip
 
@@ -437,9 +409,9 @@ module.exports = {
 
 主题的导航栏支持 [多语言](https://v2.vuepress.vuejs.org/zh/guide/i18n.html)，所以你可以为每个语言单独设置上面提到的导航栏选项:
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts
 // .vuepress/config.ts
@@ -466,9 +438,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js
 // .vuepress/config.js
@@ -495,8 +465,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ## 搜索框
 
@@ -510,9 +478,9 @@ module.exports = {
 
 你可以在主题选项中通过 `repoDisplay` 控制是否显示仓库按钮。
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts
 // .vuepress/config.ts
@@ -532,9 +500,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js
 // .vuepress/config.js
@@ -554,8 +520,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ## 外观弹窗
 
@@ -575,9 +539,9 @@ module.exports = {
 
 :::
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS Helper
+@codetab TS Helper
 
 ```ts
 // .vuepress/navbar.ts
@@ -588,9 +552,7 @@ export default navbar([
 ]);
 ```
 
-:::
-
-::: code-group-item TS 类型
+@codetab TS 类型
 
 ```ts
 // .vuepress/navbar.ts
@@ -603,9 +565,7 @@ const navbarConfig: HopeThemeNavbarConfig = [
 export default navbarConfig;
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js
 // .vuepress/navbar.js
@@ -618,21 +578,17 @@ module.exports = navbar([
 
 :::
 
-::::
-
 ## 例子
 
-::::: details 本文档的导航栏配置
+:::: details 本文档的导航栏配置
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 @[code](../../../.vuepress/navbar/zh.ts)
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js
 const { navbar } = require("vuepress-theme-hope");
@@ -750,8 +706,6 @@ module.exports = navbar([
 :::
 
 ::::
-
-:::::
 
 [plugin-search]: https://v2.vuepress.vuejs.org/zh/reference/plugin/search.html
 [plugin-docsearch]: https://v2.vuepress.vuejs.org/zh/reference/plugin/docsearch.html

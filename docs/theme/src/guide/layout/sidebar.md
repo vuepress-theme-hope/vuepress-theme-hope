@@ -21,9 +21,9 @@ You should use `sidebar` in theme options to control sidebar.
 
 Just like navbar, you can fill in an array of multiple file links as the basic configuration of the sidebar:
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts
 // .vuepress/config.ts
@@ -37,9 +37,7 @@ export default defineUserConfig({
 };
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js
 // .vuepress/config.js
@@ -53,8 +51,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 Each item of the array will be rendered as a sidebar item.
 
@@ -73,9 +69,9 @@ Just like navbar, if you are not satisfied with the page’s icon or feel that t
 - `icon`: item icon (optional)
 - `activeMatch`: item active math (optional), support regexp strings
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts
 // .vuepress/config.ts
@@ -106,9 +102,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js
 // .vuepress/config.js
@@ -139,8 +133,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ::: tip Advanced usage of activeMatch
 
@@ -160,9 +152,9 @@ If you need a sidebar that displays a nested structure, you can group similar li
 
 You should use [object format](#object-format) and provide an additional `children` option to set the list of links. Like navbar, you can use `prefix` in the sidebar to add a default path prefix to each link in the group, and the sidebar additionally supports setting `collapsable: true` to make the menu group collapsible.
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts
 // .vuepress/config.ts
@@ -203,9 +195,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js
 // .vuepress/config.js
@@ -246,14 +236,12 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 You can also nest Sidebar grouping:
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts
 // .vuepress/config.ts
@@ -288,9 +276,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js
 // .vuepress/config.js
@@ -325,8 +311,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 You may want to use it with `prefix` to restore the structure of the document easily.
 
@@ -349,9 +333,9 @@ For example, suppose you have a following directory structure:
 
 Then you can use the following config:
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts
 // .vuepress/config.ts
@@ -387,9 +371,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js
 // .vuepress/config.js
@@ -425,8 +407,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ### Multiple Sidebars
 
@@ -451,9 +431,9 @@ For example, if you have the following structure:
 
 You can define your sidebar for each section using below configuration:
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts
 // .vuepress/config.ts
@@ -486,9 +466,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js
 // .vuepress/config.js
@@ -522,8 +500,6 @@ module.exports = {
 
 :::
 
-::::
-
 ::: warning
 
 You need to pay special attention to the order of object key declaration. Generally speaking, you should put the more precise path first, because VuePress will traverse the key names of the sidebar configuration to find the matching configuration. Once a key name is successfully matched with the current path, it will display the corresponding sidebar configuration.
@@ -546,9 +522,9 @@ sidebar: heading
 
 You can also enable it in all pages by using config:
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts {7}
 // .vuepress/config.ts
@@ -562,9 +538,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js {6}
 // .vuepress/config.js
@@ -578,8 +552,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ### Generate from File Structure <Badge text="New" type="tip" />
 
@@ -604,9 +576,9 @@ For example, for the following example mentioned earlier in [multiple sidebars](
 
 You can change the original config to:
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts {8,10}
 // .vuepress/config.ts
@@ -631,9 +603,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js {7,9}
 // .vuepress/config.js
@@ -658,8 +628,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 In the above modification, since the original sidebar array is all files under the relevant path, you can easily replace it with the `"structure"` keyword.
 
@@ -762,9 +730,9 @@ Since the default value of [markdown.extractHeaders.level](https://v2.vuepress.v
 
 By default, the nested header links and the hash in the URL are updated as the user scrolls to view the different sections of the page. This behavior can be disabled with the following theme config:
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts {8}
 // .vuepress/config.ts
@@ -781,9 +749,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js {8}
 // .vuepress/config.js
@@ -801,8 +767,6 @@ module.exports = {
 
 :::
 
-::::
-
 ## Icon Support
 
 Icon support is enabled in the sidebar by default, and the icon of the page will be displayed before the link in the sidebar (by reading `icon` field in frontmatter). It can be disabled by setting `sidebarIcon` to `false` in theme options.
@@ -811,9 +775,9 @@ Icon support is enabled in the sidebar by default, and the icon of the page will
 
 The theme’s navbar supports [I18n](https://v2.vuepress.vuejs.org/guide/i18n.html), so you can set sidebar individually in each language:
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts
 // .vuepress/config.ts
@@ -838,9 +802,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js
 // .vuepress/config.js
@@ -866,8 +828,6 @@ module.exports = {
 
 :::
 
-::::
-
 ## Types and Helpers
 
 `vuepress-theme-hope` exports the type of sidebar as `HopeThemeSideConfig`, and provides a `sidebar` helper function. They can provide validation and autocompletion of sidebar configuration in TS and JS.
@@ -878,9 +838,9 @@ To deal with the situation when you split [multi-sidebar configuration](#multipl
 
 :::
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS Helper
+@codetab TS Helper
 
 ```ts {6}
 // .vuepress/sidebar.ts
@@ -889,9 +849,7 @@ import { sidebar } from "vuepress-theme-hope";
 export default sidebar(/* Your sidebar configuration */);
 ```
 
-:::
-
-::: code-group-item TS Types
+@codetab TS Types
 
 ```ts {4}
 // .vuepress/navbar.ts
@@ -904,9 +862,7 @@ const sidebarConfig: HopeThemeSidebarConfig = [
 export default sidebarConfig;
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js
 // .vuepress/sidebar.js
@@ -917,21 +873,17 @@ module.exports = sidebar(/* Your sidebar configuration */);
 
 :::
 
-::::
-
 ## Demo
 
-::::: details Configuration of this documentation
+:::: details Configuration of this documentation
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 @[code](../../.vuepress/sidebar/en.ts)
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js
 // .vuepress/config.js
@@ -1048,5 +1000,3 @@ module.exports = sidebar({
 :::
 
 ::::
-
-:::::

@@ -14,33 +14,21 @@ tag:
 
 Create a vuepress-theme-hope project in `[dir]` folder under the current project:
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item pnpm
+@codetab pnpm
 
 ```bash
 pnpm create vuepress-theme-hope@next [dir]
 ```
 
-:::
-
-<!-- ::: code-group-item yarn
-
-```bash
-yarn create vuepress-theme-hope [dir]
-```
-
-::: -->
-
-::: code-group-item npm
+@codetab npm
 
 ```bash
 npm init vuepress-theme-hope@next [dir]
 ```
 
 :::
-
-::::
 
 ::: note
 
@@ -52,9 +40,9 @@ npm init vuepress-theme-hope@next [dir]
 
 Please import and use `hopeTheme` to use `vuepress-theme-hope`.
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts
 // .vuepress/config.ts
@@ -68,9 +56,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js
 // .vuepress/config.js
@@ -84,8 +70,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 You can view [Config of this site][docs-config] as an example.
 

@@ -1,5 +1,6 @@
 export * from "./chart";
 export * from "./codeDemo";
+export * from "./codeTabs";
 export * from "./container";
 export * from "./details";
 export * from "./echarts";

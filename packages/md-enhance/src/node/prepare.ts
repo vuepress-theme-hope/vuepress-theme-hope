@@ -35,11 +35,9 @@ export const prepareConfigFile = async (
     enhance += `app.component("CodeDemo", CodeDemo);\n`;
   }
 
-  if (getStatus("codegroup")) {
-    configImport += `import CodeGroup from "${CLIENT_FOLDER}components/CodeGroup";\n`;
-    enhance += `app.component("CodeGroup", CodeGroup);\n`;
-    configImport += `import CodeGroupItem from "${CLIENT_FOLDER}components/CodeGroupItem";\n`;
-    enhance += `app.component("CodeGroupItem", CodeGroupItem);\n`;
+  if (getStatus("codetabs")) {
+    configImport += `import CodeTabs from "${CLIENT_FOLDER}components/CodeTabs";\n`;
+    enhance += `app.component("CodeTabs", CodeTabs);\n`;
   }
 
   if (getStatus("flowchart")) {

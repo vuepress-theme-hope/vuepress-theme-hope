@@ -21,9 +21,9 @@ tag:
 
 同导航栏，你可以填入一个包含多个文件链接的数组，作为侧边栏基本的配置:
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts
 // .vuepress/config.ts
@@ -37,9 +37,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js
 // .vuepress/config.js
@@ -53,8 +51,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 数组的每一项会自动提取对应文件的图标与标题，渲染为一个侧边栏项目。
 
@@ -73,9 +69,9 @@ module.exports = {
 - `icon`: 项目图标 (可选)
 - `activeMatch`: 项目激活匹配 (可选)，支持正则字符串。
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts
 // .vuepress/config.ts
@@ -106,9 +102,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js
 // .vuepress/config.js
@@ -139,8 +133,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ::: tip activeMatch 的高级用法
 
@@ -160,9 +152,9 @@ module.exports = {
 
 你需要使用 [对象格式](#对象格式) ，并提供额外的 `children` 选项设置链接列表。和导航栏一样，你可以在侧边栏中使用 `prefix` 来为组内的每个链接添加默认的路径前缀，并且侧边栏额外支持设置 `collapsable: true` 来使菜单分组可折叠。
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts
 // .vuepress/config.ts
@@ -204,9 +196,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js
 const { hopeTheme } = require("vuepress-theme-hope");
@@ -248,13 +238,11 @@ module.exports = {
 
 :::
 
-::::
-
 侧边栏分组也可以进行嵌套:
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts
 // .vuepress/config.ts
@@ -289,9 +277,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js
 // .vuepress/config.js
@@ -327,8 +313,6 @@ module.exports = {
 
 :::
 
-::::
-
 通常情况下，你可能希望搭配 `prefix` 使用来快速还原文档的结构。
 
 比如，将你的页面文件为下述的目录结构:
@@ -350,9 +334,9 @@ module.exports = {
 
 你就可以进行以下配置:
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts
 // .vuepress/config.ts
@@ -388,9 +372,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js
 // .vuepress/config.js
@@ -426,8 +408,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ### 多个侧边栏
 
@@ -452,9 +432,9 @@ module.exports = {
 
 你就可以遵循以下的侧边栏配置，来为不同路径显示不同的分组:
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts
 // .vuepress/config.ts
@@ -487,9 +467,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js
 // .vuepress/config.js
@@ -523,8 +501,6 @@ module.exports = {
 
 :::
 
-::::
-
 ## 自动生成侧边栏
 
 ### 通过标题自动生成
@@ -539,9 +515,9 @@ sidebar: heading
 
 你也可以通过配置来在所有页面中启用它:
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts {67
 // .vuepress/config.ts
@@ -555,9 +531,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js {6}
 // .vuepress/config.js
@@ -571,8 +545,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ### 通过文件结构自动生成 <Badge text="新增" type="tip" />
 
@@ -597,9 +569,9 @@ module.exports = {
 
 你可以将原来的配置改为:
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts {8,10}
 // .vuepress/config.ts
@@ -624,9 +596,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js {7,9}
 // .vuepress/config.js
@@ -651,8 +621,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 在上述的修改中，由于原侧边栏数组即为相关路径下的全部文件，你可以轻松将其替换为 `"structure"` 关键词。
 
@@ -757,9 +725,9 @@ headerDepth: 2
 
 这个功能是通过插件 `@vuepress/plugin-active-header-links` 实现的，并可以通过以下的配置来禁用:
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts {9}
 // .vuepress/config.ts
@@ -776,9 +744,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js {8}
 // .vuepress/config.js
@@ -796,8 +762,6 @@ module.exports = {
 
 :::
 
-::::
-
 ## 图标支持
 
 侧边栏默认启用图标支持，将在侧边栏的链接前显示页面的图标。你可以在主题选项中将 `sidebarIcon` 设置为 `false` 来禁用它。
@@ -806,9 +770,9 @@ module.exports = {
 
 主题的侧边栏支持 [多语言](https://v2.vuepress.vuejs.org/zh/guide/i18n.html)，所以你可以为每个语言单独设置侧边栏:
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts
 // .vuepress/config.ts
@@ -833,9 +797,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js
 // .vuepress/config.js
@@ -861,8 +823,6 @@ module.exports = {
 
 :::
 
-::::
-
 ## 相关助手与类型
 
 `vuepress-theme-hope` 将侧边栏的类型导出为 `HopeThemeSideConfig`，同时，提供了一个 `sidebar` Helper 函数。它们可以在 TS 和 JS 中提供侧边栏配置的校验与自动补全。
@@ -873,9 +833,9 @@ module.exports = {
 
 :::
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS Helper
+@codetab TS Helper
 
 ```ts {4}
 // .vuepress/sidebar.ts
@@ -884,9 +844,7 @@ import { sidebar } from "vuepress-theme-hope";
 export default sidebar(/* 你的侧边栏配置 */);
 ```
 
-:::
-
-::: code-group-item TS 类型
+@codetab TS 类型
 
 ```ts {4}
 // .vuepress/navbar.ts
@@ -899,9 +857,7 @@ const sidebarConfig: HopeThemeSidebarConfig = [
 export default sidebarConfig;
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js
 // .vuepress/sidebar.js
@@ -912,21 +868,17 @@ module.exports = sidebar(/* 你的侧边栏配置 */);
 
 :::
 
-::::
-
 ## 例子
 
-::::: details 本文档的侧边栏配置
+:::: details 本文档的侧边栏配置
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 @[code](../../../.vuepress/sidebar/zh.ts)
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js
 // .vuepress/config.js
@@ -1043,5 +995,3 @@ module.exports = sidebar({
 :::
 
 ::::
-
-:::::

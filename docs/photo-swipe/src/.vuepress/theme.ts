@@ -80,7 +80,7 @@ export default hopeTheme({
     },
 
     mdEnhance: {
-      codegroup: true,
+      codetabs: true,
     },
 
     pwa: {

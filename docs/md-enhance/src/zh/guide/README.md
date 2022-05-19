@@ -33,25 +33,21 @@ icon: creative
 
 ### 代码块
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item pnpm
+@codetab pnpm
 
 ```bash
 pnpm add -D vuepress-plugin-md-enhance@next
 ```
 
-:::
-
-::: code-group-item yarn
+@codetab yarn
 
 ```bash
 yarn add -D vuepress-plugin-md-enhance@next
 ```
 
-:::
-
-::: code-group-item npm:active
+@codetab:active npm
 
 ```bash
 npm i -D vuepress-plugin-md-enhance@next
@@ -59,9 +55,7 @@ npm i -D vuepress-plugin-md-enhance@next
 
 :::
 
-::::
-
-- [查看详情](code-group.md)
+- [查看详情](code-tabs.md)
 
 ### 自定义对齐
 

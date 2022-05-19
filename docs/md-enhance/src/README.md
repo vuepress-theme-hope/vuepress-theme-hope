@@ -19,10 +19,10 @@ features:
     details: Decorate Markdown content with styles
     link: /guide/container.html
 
-  - title: CodeGroup
+  - title: Code Tabs
     icon: code
     details: Group similar codes with tabs
-    link: /guide/code-group.html
+    link: /guide/code-tabs.html
 
   - title: Custom Align
     icon: align
@@ -90,25 +90,21 @@ copyright: false
 
 ### Install
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item pnpm
+@codetab pnpm
 
 ```bash
 pnpm add -D vuepress-plugin-md-enhance@next
 ```
 
-:::
-
-::: code-group-item yarn
+@codetab yarn
 
 ```bash
 yarn add -D vuepress-plugin-md-enhance@next
 ```
 
-:::
-
-::: code-group-item npm
+@codetab npm
 
 ```bash
 npm i -D vuepress-plugin-md-enhance@next
@@ -116,13 +112,11 @@ npm i -D vuepress-plugin-md-enhance@next
 
 :::
 
-::::
-
 ### Usage
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts
 // .vuepress/config.ts
@@ -137,9 +131,7 @@ export default {
 };
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js
 // .vuepress/config.js
@@ -155,8 +147,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ## Migrating from V1
 

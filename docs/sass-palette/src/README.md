@@ -21,25 +21,21 @@ copyright: false
 
 ### Install
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item pnpm
+@codetab pnpm
 
 ```bash
 pnpm add -D vuepress-plugin-sass-palette@next
 ```
 
-:::
-
-::: code-group-item yarn
+@codetab yarn
 
 ```bash
 yarn add -D vuepress-plugin-sass-palette@next
 ```
 
-:::
-
-::: code-group-item npm
+@codetab npm
 
 ```bash
 npm i -D vuepress-plugin-sass-palette@next
@@ -47,15 +43,13 @@ npm i -D vuepress-plugin-sass-palette@next
 
 :::
 
-::::
-
 ### Usage
 
 You must invoke `useSassPalettePlugin` function during plugin initialization to use this plugin.
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts
 // Your plugin or theme entry
@@ -77,9 +71,7 @@ const yourPlugin =
 export default yourPlugin;
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js
 // Your plugin or theme entry
@@ -97,5 +89,3 @@ module.exports = (options) => (app) => {
 ```
 
 :::
-
-::::

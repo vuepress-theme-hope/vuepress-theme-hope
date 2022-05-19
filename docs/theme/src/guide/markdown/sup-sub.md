@@ -16,9 +16,9 @@ Let the Markdown file in your VuePress site support Subscript and Superscript.
 
 ## Config
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts {8-13}
 // .vuepress/config.ts
@@ -39,9 +39,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js {7-12}
 // .vuepress/config.js
@@ -62,8 +60,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ## Syntax
 

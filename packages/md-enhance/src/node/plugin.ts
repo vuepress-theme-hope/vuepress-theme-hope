@@ -11,6 +11,7 @@ import { checkLinks, getCheckLinksStatus } from "./checkLink";
 import {
   CODE_DEMO_DEFAULT_SETTING,
   chart,
+  codeTabs,
   container,
   echarts,
   flowchart,
@@ -152,6 +153,8 @@ export const mdEnhancePlugin =
             imageMark,
             typeof options.imageMark === "object" ? options.imageMark : {}
           );
+
+        if (getStatus("codetabs")) markdownIt.use(codeTabs);
 
         if (getStatus("sup")) markdownIt.use(sup);
         if (getStatus("sub")) markdownIt.use(sub);

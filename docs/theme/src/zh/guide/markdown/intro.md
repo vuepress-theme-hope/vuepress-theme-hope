@@ -33,9 +33,9 @@ VuePress 自带的 GitHub 风格的表格，Emoji、TOC、代码行号、特定�
 
 你可以在主题选项中设置 `plugins.mdEnhance.enableAll: true` 启用 [md-enhance][md-enhance] 插件的所有功能。
 
-:::: code-group
+::: code-tabs
 
-::: code-group TS
+::: code-tabs TS
 
 ```js {8-10}
 // .vuepress/config.ts
@@ -53,7 +53,7 @@ export default defineUserConfig({
 };
 ```
 
-::: code-group-item JS
+@codetab JS
 
 ```js {7-9}
 // .vuepress/config.js
@@ -71,8 +71,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ::: danger
 

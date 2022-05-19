@@ -13,9 +13,9 @@ After user press the copy button, a success hint will display on the screen. The
 
 ## Demo
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts
 // .vuepress/config.ts
@@ -30,9 +30,7 @@ export default {
 };
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js
 // .vuepress/config.js
@@ -48,5 +46,3 @@ module.exports = {
 ```
 
 :::
-
-::::

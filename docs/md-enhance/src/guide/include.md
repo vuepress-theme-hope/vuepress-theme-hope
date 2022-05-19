@@ -9,9 +9,9 @@ Let the Markdown file in your VuePress site support including other files.
 
 ## Config
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts {8}
 // .vuepress/config.ts
@@ -27,9 +27,7 @@ export default {
 };
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js {8}
 // .vuepress/config.js
@@ -46,8 +44,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ## Syntax
 
@@ -93,9 +89,9 @@ interface IncludeOptions {
 
 E.g.: you can use `@src` as an alias for your source directory.
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts {8}
 // .vuepress/config.ts
@@ -119,9 +115,7 @@ export default {
 };
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js {8}
 // .vuepress/config.js
@@ -146,14 +140,12 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 Also, to place your Markdown files directly besides your actual files, but don’t want them rendered as pages, you can set `pagePatterns` options in VuePress config. See [pagePatterns](https://v2.vuepress.vuejs.org/reference/config.html#pagepatterns) for more details.
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts {8}
 // .vuepress/config.ts
@@ -171,9 +163,7 @@ export default {
 };
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js {8}
 // .vuepress/config.js
@@ -192,5 +182,3 @@ module.exports = {
 ```
 
 :::
-
-::::

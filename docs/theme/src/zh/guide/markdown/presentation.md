@@ -19,9 +19,9 @@ tag:
 
 ## 配置
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts {8-10}
 // .vuepress/config.ts
@@ -39,9 +39,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js {7-9}
 // .vuepress/config.js
@@ -59,8 +57,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 你也可以传入一个对象以进行更详细的配置。
 

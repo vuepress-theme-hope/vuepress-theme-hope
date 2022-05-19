@@ -8,9 +8,9 @@ tag:
   - Theme Config
 ---
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```diff
   // .vuepress/config.ts
@@ -32,9 +32,7 @@ tag:
   });
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```diff
 // .vuepress/config.js
@@ -57,8 +55,6 @@ tag:
 ```
 
 :::
-
-::::
 
 ## Theme Usage
 
@@ -208,7 +204,7 @@ Move all plugin related options under `plugins`.
 
 - move `mdEnhance` to `plugins.mdEnhance`
 
-  - change default value of `plugins.mdEnhance.codegroup` from `true` to `false`
+  - rename `mdEnhance.codegroup` to `plugins.mdEnhance.codetabs`, and change default value from `false` to `true`
 
   - change default value of `plugins.mdEnhance.lazyLoad` from `true` to `false`
 

@@ -11,33 +11,27 @@ Please make sure you are using the latest `vuepress` and `vuepress-theme-hope` V
 
 You can update to the latest version by executing the following commands.
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item pnpm
+@codetab pnpm
 
 ```bash
 pnpm add vuepress@next vuepress-theme-hope@next
 ```
 
-:::
-
-::: code-group-item yarn
+@codetab yarn
 
 ```bash
 yarn add vuepress@next vuepress-theme-hope@next
 ```
 
-:::
-
-::: code-group-item npm
+@codetab npm
 
 ```bash
 npm i vuepress@next vuepress-theme-hope@next
 ```
 
 :::
-
-::::
 
 ## Ensure Node version
 
@@ -53,33 +47,27 @@ For VuePress to work correctly, there should only be one version of `@vuepress/x
 
 Please run the following command to make sure your dependency tree is correct.
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item pnpm
+@codetab pnpm
 
 ```bash
 pnpm i && pnpm up
 ```
 
-:::
-
-::: code-group-item yarn
+@codetab yarn
 
 ```bash
 yarn && yarn upgrade
 ```
 
-:::
-
-::: code-group-item npm
+@codetab npm
 
 ```bash
 npm i && npm update
 ```
 
 :::
-
-::::
 
 ::: tip npm version
 

@@ -79,11 +79,11 @@ You can also config your social media links with `blog.medias` option.
 
 :::
 
-::::: details Example
+:::: details Example
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts
 // .vuepress/config.ts
@@ -117,9 +117,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js
 // .vuepress/config.js
@@ -155,5 +153,3 @@ module.exports = {
 :::
 
 ::::
-
-:::::

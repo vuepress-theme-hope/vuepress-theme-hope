@@ -8,9 +8,9 @@ tag:
   - 主题配置
 ---
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```diff
   // .vuepress/config.ts
@@ -32,9 +32,7 @@ tag:
   });
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```diff
 // .vuepress/config.js
@@ -57,8 +55,6 @@ tag:
 ```
 
 :::
-
-::::
 
 ## 主题使用
 
@@ -206,7 +202,7 @@ tag:
 
 - `mdEnhance` 移动至 `plugins.mdEnhance`
 
-  - `plugins.mdEnhance.codegroup` 的主题默认值由 `true` 改为 `false`
+  - `mdEnhance.codegroup` 重命名为 `plugins.mdEnhance.codetabs`，同时默认值由 `true` 改为 `false`
 
   - `plugins.mdEnhance.lazyLoad` 默认值由 `true` 改为 `false`
 

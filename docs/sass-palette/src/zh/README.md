@@ -21,25 +21,21 @@ copyright: false
 
 ### 安装
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item pnpm
+@codetab pnpm
 
 ```bash
 pnpm add -D vuepress-plugin-sass-palette@next
 ```
 
-:::
-
-::: code-group-item yarn
+@codetab yarn
 
 ```bash
 yarn add -D vuepress-plugin-sass-palette@next
 ```
 
-:::
-
-::: code-group-item npm
+@codetab npm
 
 ```bash
 npm i -D vuepress-plugin-sass-palette@next
@@ -47,15 +43,13 @@ npm i -D vuepress-plugin-sass-palette@next
 
 :::
 
-::::
-
 ### 使用
 
 你必须在插件初始化期间调用 `useSassPalettePlugin` 函数来使用此插件。。
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts
 // 你的插件或主题入口
@@ -77,9 +71,7 @@ const yourPlugin =
 export default yourPlugin;
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js
 // 你的插件或主题入口
@@ -97,5 +89,3 @@ module.exports = (options) => (app) => {
 ```
 
 :::
-
-::::

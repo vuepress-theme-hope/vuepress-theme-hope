@@ -9,9 +9,9 @@ icon: superscript
 
 ## 配置
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts {8,10}
 // .vuepress/config.ts
@@ -29,9 +29,7 @@ export default {
 };
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js {8,10}
 // .vuepress/config.js
@@ -50,8 +48,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ## 语法
 

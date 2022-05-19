@@ -66,13 +66,13 @@ export interface MarkdownEnhanceOptions {
   vpre?: boolean;
 
   /**
-   * Whether to enable codegroup.
+   * Whether to enable codetabs.
    *
    * 是否启用代码组。
    *
    * @default false
    */
-  codegroup?: boolean;
+  codetabs?: boolean;
 
   /**
    * Whether to enable align support

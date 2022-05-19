@@ -10,7 +10,7 @@ export const enSidebarConfig = sidebar({
       children: [
         "",
         "container",
-        "code-group",
+        "code-tabs",
         "sup-sub",
         "align",
         "footnote",
@@ -47,7 +47,7 @@ export const enSidebarConfig = sidebar({
   "/guide/": [
     "",
     "container",
-    "code-group",
+    "code-tabs",
     "sup-sub",
     "align",
     "footnote",
@@ -86,7 +86,7 @@ export const zhSidebarConfig = sidebar({
       children: [
         "",
         "container",
-        "code-group",
+        "code-tabs",
         "sup-sub",
         "align",
         "footnote",
@@ -122,7 +122,7 @@ export const zhSidebarConfig = sidebar({
   "/zh/guide/": [
     "",
     "container",
-    "code-group",
+    "code-tabs",
     "sup-sub",
     "align",
     "footnote",

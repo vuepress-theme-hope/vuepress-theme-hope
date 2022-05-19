@@ -60,7 +60,7 @@ export default hopeTheme({
 
   plugins: {
     mdEnhance: {
-      codegroup: true,
+      codetabs: true,
     },
 
     pwa: {

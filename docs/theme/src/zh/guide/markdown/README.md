@@ -20,7 +20,7 @@ dir:
 
 - [自定义容器](container.md)
 
-- [代码块分组](code-group.md)
+- [代码块分组](code-tabs.md)
 
 - [脚注](footnote.md)
 

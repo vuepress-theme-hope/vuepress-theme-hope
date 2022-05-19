@@ -15,9 +15,9 @@ Let the Markdown file support flow chart in your VuePress site
 
 ## Config
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts {8-10}
 // .vuepress/config.ts
@@ -35,9 +35,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js {7-9}
 // .vuepress/config.js
@@ -55,8 +53,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ## Syntax
 

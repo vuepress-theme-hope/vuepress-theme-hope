@@ -49,28 +49,4 @@ export const usePlugins = (
       })
     );
   }
-
-  if (markdownOptions.codegroup || markdownOptions.enableAll) {
-    app.use(
-      containerPlugin({
-        type: "code-group",
-        before: () => `<CodeGroup>\n`,
-        after: () => "</CodeGroup>\n",
-      })
-    );
-
-    app.use(
-      containerPlugin({
-        type: "code-group-item",
-        before: (info: string): string => {
-          const isActive = info.split(":").pop() === "active";
-
-          return `<CodeGroupItem title="${
-            isActive ? info.replace(/:active$/, "") : info
-          }"${isActive ? " active" : ""}>\n`;
-        },
-        after: () => "</CodeGroupItem>\n",
-      })
-    );
-  }
 };

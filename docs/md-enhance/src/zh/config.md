@@ -84,7 +84,7 @@ icon: config
 
 是否启用 v-pre 容器。
 
-## codegroup
+## codetabs
 
 - 类型: `boolean`
 - 默认值: `false`

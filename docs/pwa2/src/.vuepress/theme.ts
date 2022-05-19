@@ -77,7 +77,7 @@ export default hopeTheme({
     },
 
     mdEnhance: {
-      codegroup: true,
+      codetabs: true,
       container: true,
       footnote: true,
     },

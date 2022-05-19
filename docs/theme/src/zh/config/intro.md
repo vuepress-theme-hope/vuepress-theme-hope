@@ -26,9 +26,9 @@ VuePress 主要通过目录下的 `.vuepress/` 文件夹存放配置和需要的
 
 ## 使用主题
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts
 // .vuepress/config.ts
@@ -46,9 +46,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js
 // .vuepress/config.js
@@ -66,5 +64,3 @@ module.exports = {
 ```
 
 :::
-
-::::

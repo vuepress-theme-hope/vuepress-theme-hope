@@ -35,9 +35,9 @@ You need to set up a config object in the config file `.vuepress/config.ts` (or 
 
 To get correct hints, importing `defineUserConfig` from `vuepress` and wrapping the config object is recommended:
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item TS
+@codetab TS
 
 ```ts{2,4,6}
 // .vuepress/config.ts
@@ -48,9 +48,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@codetab JS
 
 ```js{2,4,6}
 // .vuepress/config.js
@@ -62,8 +60,6 @@ module.exports = defineUserConfig({
 ```
 
 :::
-
-::::
 
 ## Config Scope
 

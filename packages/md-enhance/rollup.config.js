@@ -41,11 +41,7 @@ export default [
     ],
     dtsExternal: [/\.scss$/],
   }),
-  ...rollupTypescript("client/components/CodeGroup", {
-    external: ["vue", /\.scss$/],
-    dtsExternal: [/\.scss$/],
-  }),
-  ...rollupTypescript("client/components/CodeGroupItem", {
+  ...rollupTypescript("client/components/CodeTabs", {
     external: ["vue", /\.scss$/],
     dtsExternal: [/\.scss$/],
   }),

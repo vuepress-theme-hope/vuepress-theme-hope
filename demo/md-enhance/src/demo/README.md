@@ -8,7 +8,7 @@ title: Get Started
 - [Chart](chart.md)
 - [ECharts](echarts.md)
 - [Code Demo](code-demo.md)
-- [Code Group](code-group.md)
+- [Code Tabs](code-tabs.md)
 - [Container](container.md)
 - [Flowchart](flowchart.md)
 - [Footnote](footnote.md)

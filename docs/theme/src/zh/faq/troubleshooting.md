@@ -11,33 +11,27 @@ category:
 
 你可以通过执行下列命令来更新到最新版本。
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item pnpm
+@codetab pnpm
 
 ```bash
 pnpm add vuepress@next vuepress-theme-hope@next
 ```
 
-:::
-
-::: code-group-item yarn
+@codetab yarn
 
 ```bash
 yarn add vuepress@next vuepress-theme-hope@next
 ```
 
-:::
-
-::: code-group-item npm
+@codetab npm
 
 ```bash
 npm i vuepress@next vuepress-theme-hope@next
 ```
 
 :::
-
-::::
 
 ## 确认 Node 版本
 
@@ -53,33 +47,27 @@ npm i vuepress@next vuepress-theme-hope@next
 
 请运行以下命令确保你的依赖树没有问题。
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item pnpm
+@codetab pnpm
 
 ```bash
 pnpm i && pnpm up
 ```
 
-:::
-
-::: code-group-item yarn
+@codetab yarn
 
 ```bash
 yarn && yarn upgrade
 ```
 
-:::
-
-::: code-group-item npm
+@codetab npm
 
 ```bash
 npm i && npm update
 ```
 
 :::
-
-::::
 
 ::: tip npm 版本
 
