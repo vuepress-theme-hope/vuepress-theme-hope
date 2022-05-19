@@ -93,7 +93,7 @@ Whether show the "full screen" button.
 
 - Type: `boolean | number`
 - Default: `true`
-- Details: [Interface → Back to top buton](../../guide/interface/others.md#back-to-top-button)
+- Details: [Interface → Back to top button](../../guide/interface/others.md#back-to-top-button)
 
 Whether show back to top button.
 

@@ -28,6 +28,6 @@ All the plugin settings are under `plugins` field in theme options, and the opti
 
 - [Search](search.md)
 
-- [Copyright Infomation](copyright.md)
+- [Copyright Information](copyright.md)
 
 - [Article Encryption](encrypt.md)

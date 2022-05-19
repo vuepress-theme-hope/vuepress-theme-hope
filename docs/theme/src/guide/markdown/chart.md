@@ -232,7 +232,7 @@ module.exports = {
 {
   "type": "line",
   "data": {
-    "labels": ["January", "Feburary", "March", "Apirl", "May", "June", "July"],
+    "labels": ["January", "Feburary", "March", "April", "May", "June", "July"],
     "datasets": [
       {
         "label": "My First Dataset",
@@ -257,7 +257,7 @@ module.exports = {
 {
   "type": "line",
   "data": {
-    "labels": ["January", "Feburary", "March", "Apirl", "May", "June", "July"],
+    "labels": ["January", "Feburary", "March", "April", "May", "June", "July"],
     "datasets": [
       {
         "label": "My First Dataset",

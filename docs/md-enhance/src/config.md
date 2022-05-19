@@ -16,7 +16,7 @@ Whether to enable all features.
 
 Please use this option ONLY for playing or testing.
 
-As time grows,`vupress-plugin-md-enhance` is becoming more powerful. It’s adding more syntax to Markdown parser and more code to output.
+As time grows,`vuepress-plugin-md-enhance` is becoming more powerful. It’s adding more syntax to Markdown parser and more code to output.
 
 Enabling features you don’t need will increase dev and build time. (`markdown-it` has to check for extra syntaxs)
 
@@ -59,7 +59,7 @@ Whether to enable custom container including
 
 ::: warning
 
-The last 4 items conflict with default theme and will overide it’s style.
+The last 4 items conflict with default theme and will override it’s style.
 
 :::
 

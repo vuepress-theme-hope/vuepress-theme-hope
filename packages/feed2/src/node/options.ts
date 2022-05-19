@@ -71,7 +71,7 @@ export const getFeedOptions = (
         ...options,
         ...options.locales?.[localePath],
 
-        // make sure hostname is not been overided
+        // make sure hostname is not been overrided
         hostname: options.hostname,
       } as ResolvedFeedOptions,
     ])

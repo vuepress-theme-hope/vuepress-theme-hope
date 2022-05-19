@@ -150,7 +150,7 @@ module.exports = {
 - `/path/a/`
 - `/path/b/`
 
-But you may have multiple folders with files under `/path/`. To avoid multiple dropown items been actived under route starting with `/path/a/` or `/path/b/`, you can set `activeMatch` option for the first item with `^/path/(?:(?!a/|b/).*)?$`.
+But you may have multiple folders with files under `/path/`. To avoid multiple dropown items been activated under route starting with `/path/a/` or `/path/b/`, you can set `activeMatch` option for the first item with `^/path/(?:(?!a/|b/).*)?$`.
 
 :::
 
@@ -673,7 +673,7 @@ During the automatic generation from the structure, you can control whether file
 
 ::: tip
 
-`README.md` is an exception, as long as you don’t disable it from the sidebar via `index: false` or make it as group link, it will allways be the first item after sorting.
+`README.md` is an exception, as long as you don’t disable it from the sidebar via `index: false` or make it as group link, it will always be the first item after sorting.
 
 :::
 

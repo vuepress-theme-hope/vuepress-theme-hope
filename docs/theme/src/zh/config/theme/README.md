@@ -18,7 +18,7 @@ tag:
 
 - [主题布局配置](layout.md)
 
-- [主题外观配置](apperance.md)
+- [主题外观配置](appearance.md)
 
 - [主题多语言配置](i18n.md)
 

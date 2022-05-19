@@ -24,7 +24,7 @@ tag:
 
 ::: tip
 
-它应该包含完整协议 (如: `https://exmaple.com`)。
+它应该包含完整协议 (如: `https://example.com`)。
 
 :::
 

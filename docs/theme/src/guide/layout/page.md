@@ -43,7 +43,7 @@ Please see [Breadcrumb](breadcrumb.md).
 
 In desktop mode, a list of article headers will automatically be displayed on the right side of the screen. (They will be placed in the sidebar on mobile devices)
 
-If you don’t want to display the title list on the right in desktop mode, please set `toc: false` in theme optoins.
+If you don’t want to display the title list on the right in desktop mode, please set `toc: false` in theme options.
 
 You can also set it through `toc` in page frontmatter.
 
@@ -78,7 +78,7 @@ layout: SpecialLayout
 ---
 ```
 
-This will render `SpecialLayout` layout registed in VuePress for the given page.
+This will render `SpecialLayout` layout registered in VuePress for the given page.
 
 ::: note
 

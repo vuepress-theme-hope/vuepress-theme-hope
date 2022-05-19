@@ -9,7 +9,7 @@ import type { ManifestRelatedApps } from "../../shared";
 import "../styles/modal.scss";
 
 interface ModernNavigator extends Navigator {
-  // Unstandard Api
+  // Nonstandard Api
   getInstalledRelatedApps: () => Promise<ManifestRelatedApps[]>;
 }
 

@@ -88,7 +88,7 @@ The plugin support three types:
 
 You can use different language in your demo block.
 
-When you set language which can not run on browers, since the plugin is not able to resolve them, so demo display will be disabled. The plugin will only show the code and provide you a button to open it in CodePen.
+When you set language which can not run on browsers, since the plugin is not able to resolve them, so demo display will be disabled. The plugin will only show the code and provide you a button to open it in CodePen.
 
 Available HTML languages:
 

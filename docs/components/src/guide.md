@@ -14,4 +14,4 @@ Back-to-top Button
 
 ## Badge
 
-A badge which allows you to diy it’s color.
+A badge which allows you to customize it’s color.

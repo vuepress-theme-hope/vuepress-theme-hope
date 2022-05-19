@@ -28,7 +28,7 @@ Please enable the plugin by setting `atom`, `json` or `rss` to `true` in the plu
 
 Atom and JSON are provided to provide more adaptations for Feed software.
 
-If possible, use RSS as first choise.
+If possible, use RSS as first choice.
 
 :::
 
@@ -153,7 +153,7 @@ Feed generation controller.
 
 ::: tip
 
-The plugin is providing a resonable getter by default, if you want full control of feed generating, you can set this field.
+The plugin is providing a reasonable getter by default, if you want full control of feed generating, you can set this field.
 
 :::
 

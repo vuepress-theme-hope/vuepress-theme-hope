@@ -46,7 +46,7 @@ To terminate the development server, please click on the terminal and press `Ctr
 
 :::
 
-## Update Verion
+## Update Version
 
 If you need to upgrade your theme and VuePress version, execute the following command:
 

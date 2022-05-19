@@ -27,7 +27,7 @@ After enabling the blog function, the theme allows you to configure categories, 
 
 ## I18n Support
 
-The theme adds support for i18n in blog system. You can set differernt blog config for each language using `locales` in theme options.
+The theme adds support for i18n in blog system. You can set different blog config for each language using `locales` in theme options.
 
 When you have multiple languages, the article list, timeline, etc. under each language will remain independent.
 

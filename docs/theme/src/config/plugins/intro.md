@@ -55,7 +55,7 @@ For example:
 
 - [vuepress-plugin-copy-code2][copy-code2]: Provides one-click copy code block function.
 
-- [vuepress-plugin-copyright2][copyright2]: Append copyright infomation when copying or diable copy and selection.
+- [vuepress-plugin-copyright2][copyright2]: Append copyright information when copying or diable copy and selection.
 
 - [vuepress-plugin-feed2][feed2]: Feed support
 

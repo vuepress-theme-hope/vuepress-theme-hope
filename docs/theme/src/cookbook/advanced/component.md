@@ -15,13 +15,13 @@ This tutorial will guide you on how to use Vue components and Vue syntax in your
 
 ## Import Vue Components Globally
 
-### Register Components via `@vuepress/plugin-register-components`
+### Register via `@vuepress/plugin-register-components`
 
 You can automatically register components via the `@vuepress/plugin-register-components` plugin.
 
 For details about how to use the plugin, see [Official Documentation](https://v2.vuepress.vuejs.org/reference/plugin/register-components.html).
 
-### Registrater via ClientConfigFile
+### Register via ClientConfigFile
 
 You can create `.vuepress/client.ts` and register components manually.
 

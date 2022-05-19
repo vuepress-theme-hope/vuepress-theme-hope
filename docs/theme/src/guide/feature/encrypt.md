@@ -89,6 +89,6 @@ For global encryption, you can set one or more passwords in the format of string
 
 ::: tip
 
-The consideration of multiple passwords is separation of permissions。 This allow you to depreacte or update some of the global passwords in future deployments, so that some users with certain password will lose access.
+The consideration of multiple passwords is separation of permissions。 This allow you to deprecate or update some of the global passwords in future deployments, so that some users with certain password will lose access.
 
 :::

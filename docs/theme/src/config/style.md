@@ -151,7 +151,7 @@ Transition:
 // update navbar height on mobile
 $navbar-mobile-height: 3.5rem;
 
-// Overide default font
+// Override default font
 $font-family: 'Georgia, -apple-system, "Nimbus Roman No9 L", "PingFang SC", "Hiragino Sans GB", sans-serif';
 ```
 
@@ -167,7 +167,7 @@ $font-family: 'Georgia, -apple-system, "Nimbus Roman No9 L", "PingFang SC", "Hir
 
 Everything filling in this will be parsed to standard CSS and then injected after theme and plugins styles.
 
-So you can add new styles or overide styles here:
+So you can add new styles or override styles here:
 
 ::: details Demo
 

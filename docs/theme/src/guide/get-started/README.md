@@ -8,8 +8,8 @@ dir:
 
 ## Catalog
 
-- [Theme intro](intro.md)
+- [Theme Intro](intro.md)
 
-- [Install and usage](install.md)
+- [Installation and Usage](install.md)
 
 - [Markdown Intro](markdown.md)

@@ -118,7 +118,7 @@ export interface SeoOptions {
      */
     ogp: SeoContent,
     /**
-     * Page Objext
+     * Page Object
      *
      * 页面对象
      */
@@ -153,7 +153,7 @@ export interface SeoOptions {
      */
     jsonLD: ArticleJSONLD | null,
     /**
-     * Page Objext
+     * Page Object
      *
      * 页面对象
      */
@@ -188,7 +188,7 @@ export interface SeoOptions {
      */
     head: HeadConfig[],
     /**
-     * Page Objext
+     * Page Object
      *
      * 页面对象
      */

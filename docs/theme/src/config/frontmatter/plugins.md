@@ -149,7 +149,7 @@ You should make sure this is globally unique.
 - Type: `"always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never"`
 - Default: `"daily"`
 
-Page default update frequency. This will overide [changefreq](#changefreq) in Plugin Options.
+Page default update frequency. This will override [changefreq](#changefreq) in Plugin Options.
 
 ### sitemap.exclude
 

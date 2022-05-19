@@ -55,7 +55,7 @@ You need to use `code-group` container outside, and place only `code-group-item`
 
 You need to set title for each `code-group-item` container, and place one code block in each `code-group-item` container.
 
-If you want some item be actived by default, you can append a `:active` suffix at the end of title.
+If you want some item be activated by default, you can append a `:active` suffix at the end of title.
 
 ## Demo
 

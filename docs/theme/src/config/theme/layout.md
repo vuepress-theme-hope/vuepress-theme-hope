@@ -195,7 +195,7 @@ Whether to show "Edit this page" or not.
 
 - Type: `string`
 
-Pattern of edit link. While `:repo` `:branch` `:path` wil be automatically replaced by `docsRepo` `docsBranch` and `docsDir + filePath`。
+Pattern of edit link. While `:repo` `:branch` `:path` will be automatically replaced by `docsRepo` `docsBranch` and `docsDir + filePath`。
 
 ::: note
 

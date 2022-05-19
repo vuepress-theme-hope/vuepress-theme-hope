@@ -93,4 +93,4 @@ module.exports = {
 
 We provide a new `pure` option to add a small button besides language text.
 
-Set this option if you think the default style is too fance.
+Set this option if you think the default style is too fancy.

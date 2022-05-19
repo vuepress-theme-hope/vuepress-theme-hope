@@ -21,7 +21,7 @@ You can set `enableAll: true` in plugin options to enable all features of this p
 
 Please use this option ONLY for playing or testing.
 
-As time grows, `vupress-plugin-md-enhance` is becoming more powerful. It’s adding lots of syntax to Markdown parser and more code to output.
+As time grows, `vuepress-plugin-md-enhance` is becoming more powerful. It’s adding lots of syntax to Markdown parser and more code to output.
 
 Enabling features you don’t need will increase dev and build time. (`markdown-it` has to check extra syntax)
 

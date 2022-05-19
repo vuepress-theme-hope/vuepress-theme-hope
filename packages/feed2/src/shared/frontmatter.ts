@@ -33,7 +33,7 @@ export interface FeedFrontmatterOption {
   category?: FeedCategory[] | FeedCategory;
 
   /**
-   * @desciption guid should be unique gloably
+   * @description guid should be unique gloably
    */
   guid?: string;
 }

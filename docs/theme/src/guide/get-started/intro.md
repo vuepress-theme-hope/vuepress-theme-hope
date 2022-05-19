@@ -73,9 +73,9 @@ In short, anyone can enjoy the convenience of Markdown’s enhanced syntax.
 
   Rebuild mobile navbar
 
-  simplfied [Navbar](../layout/navbar.md) and [Sidebar](../layout/sidebar.md) config, add support for icons and path prefixes.
+  simplified [Navbar](../layout/navbar.md) and [Sidebar](../layout/sidebar.md) config, add support for icons and path prefixes.
 
-- Layout: addes [breadcrumb](../layout/breadcrumb.md) and [footer](../layout/footer.md) support.
+- Layout: adds [breadcrumb](../layout/breadcrumb.md) and [footer](../layout/footer.md) support.
 
 - [Homepage](../layout/home.md): New outlook, features support icons and links.
 

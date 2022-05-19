@@ -89,7 +89,7 @@ features:
 
   - title: Feed support
     icon: rss
-    details: Generate feed to allow users to subcribe it
+    details: Generate feed to allow users to subscribe it
     link: /guide/advanced/feed.html
 
   - title: PWA support

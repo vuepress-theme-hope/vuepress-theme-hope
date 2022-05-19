@@ -127,11 +127,11 @@ The structure of each project is as follows:
   └── shared → Shared files between node and client
 ```
 
-Since the client-side uses ES Module (import/export) and the Node.js side uses commonjs (require/exports), the code in the node and client directorys cannot be cross-referenced.
+Since the client-side uses ES Module (import/export) and the Node.js side uses commonjs (require/exports), the code in the node and client directories cannot be cross-referenced.
 
 - `client` directory stores the client code, compiled in esm format
 - `node` directory stores the Node.js code, compiled in cjs format
-- `shared` directory basically stores TypeScript types, and is compiled in cjs format. It can be referenced by the client and node directorys.
+- `shared` directory basically stores TypeScript types, and is compiled in cjs format. It can be referenced by the client and node directories.
 
 For better performance, all plugins are packed and minified using rollup when they are published.
 

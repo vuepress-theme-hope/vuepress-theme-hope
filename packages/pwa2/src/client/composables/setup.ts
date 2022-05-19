@@ -19,7 +19,7 @@ export const setupPWA = (): void => {
     if (process.env.NODE_ENV === "production") {
       let refreshing = false;
 
-      // only listen controllerchange event when a serviceWorker is actived
+      // only listen controllerchange event when a serviceWorker is active
       if (navigator.serviceWorker.controller)
         navigator.serviceWorker.addEventListener("controllerchange", () => {
           if (refreshing) return;

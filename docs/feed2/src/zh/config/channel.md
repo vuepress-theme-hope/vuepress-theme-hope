@@ -19,7 +19,7 @@ icon: config
 
 频道地址
 
-## channel.desciption
+## channel.description
 
 - 类型: `string`
 - 默认值: `SiteConfig.description`
@@ -102,7 +102,7 @@ interface FeedAuthor {
    *
    * 正方形，最好不小于 128×128，透明背景
    */
-  avator?: string;
+  avatar?: string;
 }
 ```
 

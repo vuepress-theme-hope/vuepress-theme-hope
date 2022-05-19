@@ -25,9 +25,9 @@ Service Worker [^service-worker] (简称 SW) 主要用于获取并托管网站�
 
     1. 每当你想要通过浏览器发起访问请求后，Service Worker 将会查看其是否存在与自身缓存列表中，若存在则直接返回缓存好的结果，否则调用自身的 fetch 方法进行获取。你可以通过自定义 fetch 方法，来完全控制网页内资源获取请求的结果，比如在离线时提供一个 fallback 的网页。
 
-    1. 每次用户重新打开网站时，Service Worker 会向自身注册时的地址发出校验命令，如果检测到新版本的 Service Woker，则会更新自身，并开始缓存注册在新 Service Worker 中的资源列表。成功获取内容更新后，Service Worker 将会触发 `update` 事件。可以通过此事件提示用户，比如将在右下角显示一个弹出窗口，提示用户新内容可用并允许用户触发更新。
+    1. 每次用户重新打开网站时，Service Worker 会向自身注册时的地址发出校验命令，如果检测到新版本的 Service Worker，则会更新自身，并开始缓存注册在新 Service Worker 中的资源列表。成功获取内容更新后，Service Worker 将会触发 `update` 事件。可以通过此事件提示用户，比如将在右下角显示一个弹出窗口，提示用户新内容可用并允许用户触发更新。
 
-本插件会自动通过 `workbox-build` 注册 Service Woker。为了更好地控制 Service Worker 可以预缓存的内容，插件提供了下列设置。
+本插件会自动通过 `workbox-build` 注册 Service Worker。为了更好地控制 Service Worker 可以预缓存的内容，插件提供了下列设置。
 
 ::: tip
 
@@ -49,7 +49,7 @@ Service Worker [^service-worker] (简称 SW) 主要用于获取并托管网站�
 
     ::: note
 
-    从 Chrome 93 起 Service Woker 必须含有有效的控制离线请求的 fetch 事件，才符合可安装性标准。
+    从 Chrome 93 起 Service Worker 必须含有有效的控制离线请求的 fetch 事件，才符合可安装性标准。
 
     但是插件目前并没有默认包含相关处理逻辑，所以在 Chrome 93 或更高版本的安卓设备上，网站不会弹出安装提示。
 

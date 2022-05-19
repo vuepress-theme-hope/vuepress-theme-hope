@@ -76,7 +76,7 @@ Words read per minute.
 
 ::: info
 
-For more plugin configs, see [reading-time2 plugin docs][reading-time].
+For more plugin options, see [reading-time2 plugin docs][reading-time].
 
 :::
 

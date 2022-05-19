@@ -23,11 +23,11 @@ In order to make component styles binding with component, we split the styles ac
 
 - `@vuepress/theme-default` is placing all the styles together at `styles` folder and importing them entirly, so that `sass` will only need to compile once and vite only need to send 1 extra web request. That’s why it’s fast.
 
-  But this will let style unbinded with components, and they will be injected anyway. So that when you overide a component or a layout, you have to overide old styles to build styles you want.
+  But this will let style unbinded with components, and they will be injected anyway. So that when you override a component or a layout, you have to override old styles to build styles you want.
 
-- `vuepress-theme-hope` is binding styles with components, but that means `sass` has to compile styles for each component, and vite need to send an extra request for each components. Due to `vuepress-theme-hope` has 2× to 6× components (depending on whether you enable blog featues or not) comparing with `@vupress/theme-default`, it will take extra time of `2.4s - 4s` for that.
+- `vuepress-theme-hope` is binding styles with components, but that means `sass` has to compile styles for each component, and vite need to send an extra request for each components. Due to `vuepress-theme-hope` has 2× to 6× components (depending on whether you enable blog featues or not) comparing with `@vuepress/theme-default`, it will take extra time of `2.4s - 4s` for that.
 
-  But, you can easily overide a component together with it’s styles in this way.
+  But, you can easily override a component together with it’s styles in this way.
 
 So, due to the above reasons, `vuepress-theme-hope` will have an average of 4× code and 10× requests comparing with `@vuepress/theme-default`, so the time increasing from `2s` to `10s` is reasonable and expected.
 
@@ -39,7 +39,7 @@ Don't worry, the above extra overhead mainly exists in code boot. Due to the lar
 
 - These extra overheads do not affect HMR, so when editing the Markdown file, the page's HMR response can still remain at the 100 ms level.
 
-- Unused code twill be removed during the build phase with well design, so the production environment usually only adds addtional 200 KB - 500 KB size in JS entry comparing the default theme and about 100 ms of extra script execution time, so the online impact is very small.
+- Unused code twill be removed during the build phase with well design, so the production environment usually only adds additional 200 KB - 500 KB size in JS entry comparing the default theme and about 100 ms of extra script execution time, so the online impact is very small.
 
 :::
 

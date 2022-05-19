@@ -44,7 +44,7 @@ The output filename, relative to output directory.
 - Type: `"always" | "hourly" | "daily" | "weekly" |"monthly" | "yearly" | "never"`
 - Default value: `"daily"`
 
-Page default update frequency, will be overide by [sitemap.changefreq](#sitemap-changefreq) in Frontmatter.
+Page default update frequency, will be override by [sitemap.changefreq](#sitemap-changefreq) in Frontmatter.
 
 ### priority
 
@@ -69,7 +69,7 @@ Last modify time getter. By default, the plugin will use the timestamp generated
 - Type: `"always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never"`
 - Default: `"daily"`
 
-Page default update frequency. This will overide [changefreq](#changefreq) in Plugin Options.
+Page default update frequency. This will override [changefreq](#changefreq) in Plugin Options.
 
 ### sitemap.exclude
 

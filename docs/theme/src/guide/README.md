@@ -131,7 +131,7 @@ The theme includes the following plugins, you can use them in other themes or di
 
 - [vuepress-plugin-copy-code2][copy-code2]: Provide copy button for code blocks
 
-- [vuepress-plugin-copyright2][copyright2]: Append copyright infomation when copying or diable copy and selection.
+- [vuepress-plugin-copyright2][copyright2]: Append copyright information when copying or diable copy and selection.
 
 - [vuepress-plugin-feed2][feed2]: Feed support
 

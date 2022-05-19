@@ -24,7 +24,7 @@ tag:
 
 - [Theme Layout Config](theme/layout.md)
 
-- [Theme Appearance Config](theme/apperance.md)
+- [Theme Appearance Config](theme/appearance.md)
 
 ## Plugins Config
 
@@ -42,7 +42,7 @@ tag:
 
 ## Frontmatter Config
 
-- [Infomation Frontmatter Config](frontmatter/info.md)
+- [Information Frontmatter Config](frontmatter/info.md)
 
 - [Layout Frontmatter Config](frontmatter/layout.md)
 

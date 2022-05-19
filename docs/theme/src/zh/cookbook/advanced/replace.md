@@ -289,7 +289,7 @@ import HopeHomePage from "vuepress-theme-hope/lib/client/components/HomePage";
 - `CommonWrapper`: `default`, `navbarLeft`, `navbarCenter`, `navbarRight`, `navScreenTop`, `navScreenBottom`, `sidebar`, `sidebarTop`, `sidebarBottom`
 - `HomeHero`: `heroImage`, `heroInfo`
 - `HomePage`: `top`, `center`, `bottom`
-- `NormalPage`: `top`, `contentBefore`, `contentAfter`, `botom`
+- `NormalPage`: `top`, `contentBefore`, `contentAfter`, `bottom`
 
 **导航栏**:
 

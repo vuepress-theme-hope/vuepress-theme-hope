@@ -9,7 +9,7 @@ tag:
   - Info
 ---
 
-You can set infomation for page with the following frontmatter options.
+You can set information for page with the following frontmatter options.
 
 ## title
 

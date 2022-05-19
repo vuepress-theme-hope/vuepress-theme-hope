@@ -18,7 +18,7 @@ You can use iconfont and fontawesome to add icons to your project.
 
 ::: note
 
-The prefix of the icon class is an empty string by default, you probably need to change it with `iconPrefix` options in theme options according to your choise.
+The prefix of the icon class is an empty string by default, you probably need to change it with `iconPrefix` options in theme options according to your choice.
 
 :::
 

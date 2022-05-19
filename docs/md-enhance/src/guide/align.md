@@ -1,5 +1,5 @@
 ---
-title: Custom alignment
+title: Alignment
 icon: align
 ---
 

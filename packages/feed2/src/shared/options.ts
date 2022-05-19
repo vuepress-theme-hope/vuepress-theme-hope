@@ -143,7 +143,7 @@ export interface BaseFeedOptions {
   /**
    * Feed generation controller
    *
-   * @description The plugin is providing a resonable getter by default, if you want full control of feed generating, you can set this field.
+   * @description The plugin is providing a reasonable getter by default, if you want full control of feed generating, you can set this field.
    *
    * Feed 生成控制器
    *

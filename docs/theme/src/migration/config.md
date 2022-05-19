@@ -107,7 +107,7 @@ tag:
 
 - add `activeMatch` to control route activation
 
-So both configs are unified as `text`, `icon`, `prefix`, `link`, `children`, `activeMatch`.
+So both are unified as `text`, `icon`, `prefix`, `link`, `children`, `activeMatch`.
 
 ### Search
 

@@ -286,7 +286,7 @@ Components that provide slots are as follows:
 - `CommonWrapper`: `default`, `navbarLeft`, `navbarCenter`, `navbarRight`, `navScreenTop`, `navScreenBottom`, `sidebar`, `sidebarTop`, `sidebarBottom`
 - `HomeHero`: `heroImage`, `heroInfo`
 - `HomePage`: `top`, `center`, `bottom`
-- `NormalPage`: `top`, `contentBefore`, `contentAfter`, `botom`
+- `NormalPage`: `top`, `contentBefore`, `contentAfter`, `bottom`
 
 **Navigation Bar**:
 

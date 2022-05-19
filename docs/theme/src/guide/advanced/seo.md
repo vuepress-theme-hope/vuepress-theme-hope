@@ -44,14 +44,14 @@ The following are the `<meta>` tags and their value injected into `<head>` by de
 |     `og:description`     |     `page.frontmatter.description` \|\| auto generated (when `autoDescription` is `true` in plugin options)      |
 |        `og:type`         |                                                   `"article"`                                                    |
 |        `og:image`        | `themeConfig.hostname` + `page.frontmatter.image` \|\|first image in page \|\| `fallbackImage` in plugin options |
-|    `og:updated_time`     |                                              `page.git.updateTime`                                               |
+|    `og:updated_time`     |                                              `page.git.updatedTime`                                              |
 |       `og:locale`        |                                                   `page.lang`                                                    |
 |  `og:locale:alternate`   |                                 Other languages including in `siteData.locales`                                  |
 |      `twitter:card`      |                            `"summary_large_image"` (only available when image found)                             |
 |   `twitter:image:alt`    |                                  `page.title` (only available when image found)                                  |
 |     `article:author`     |                               `page.frontmatter.author` \|\| `themeConfig.author`                                |
 |      `article:tag`       |                               `page.frontmatter.tags` \|\| `page.frontmatter.tag`                                |
-| `article:published_time` |                               `page.frontmatter.date` \|\| `page.createTimeStamp`                                |
+| `article:published_time` |                               `page.frontmatter.date` \|\| `page.git.createdTime`                                |
 | `article:modified_time`  |                                              `page.git.updatedTime`                                              |
 
 ### Default JSON-LD Generation
@@ -62,7 +62,7 @@ The following are the `<meta>` tags and their value injected into `<head>` by de
 |     `@type`     |                                              `"NewsArticle"`                                              |
 |   `headline`    |                                               `page.title`                                                |
 |     `image`     | image in page \|\| `themeConfig.hostname` + `page.frontmatter.image` \|\| `siteFavIcon` in plugin options |
-| `datePublished` |                            `page.frontmatter.date` \|\| `page.createTimeStamp`                            |
+| `datePublished` |                            `page.frontmatter.date` \|\| `page.git.createdTime`                            |
 | `dateModified`  |                                          `page.git.updatedTime`                                           |
 |    `author`     |                            `page.frontmatter.author` \|\| `themeConfig.author`                            |
 
@@ -100,7 +100,7 @@ If a page does fit into the "unpopular" genre like books, music, etc., you can h
 
 ### OGP
 
-You can use options `plugins.seo.ogp` in theme optoins. to pass in a function to modify the default OGP object to your needs and return it.
+You can use options `plugins.seo.ogp` in theme options. to pass in a function to modify the default OGP object to your needs and return it.
 
 ```ts
 function ogp<
@@ -119,7 +119,7 @@ function ogp<
 >(
   /** OGP Object inferred by plugin */
   ogp: SeoContent,
-  /** Page Objext */
+  /** Page Object */
   page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   /** VuePress App */
   app: App
@@ -160,7 +160,7 @@ function jsonLd<
 >(
   /** JSON-LD Object inferred by plugin */
   jsonLD: ArticleJSONLD | null,
-  /** Page Objext */
+  /** Page Object */
   page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   /** VuePress App */
   app: App
@@ -186,7 +186,7 @@ If your sites are deploy under docs folder in `example.com`, but available in:
 - `http://www.example.com/docs/xxx`
 - `https://www.example.com/docs/xxx` (primary)
 
-To let search engine results always be the primary choise, you may need to set `plugins.seo.canonical` to `https://www.example.com/docs/`, so that search engine will know that the fourth URl is prefered to be indexed.
+To let search engine results always be the primary choice, you may need to set `plugins.seo.canonical` to `https://www.example.com/docs/`, so that search engine will know that the fourth URl is prefered to be indexed.
 
 :::
 
@@ -211,7 +211,7 @@ function customHead<
 >(
   /** Head config */
   head: HeadConfig[],
-  /** Page Objext */
+  /** Page Object */
   page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   /** VuePress App */
   app: App

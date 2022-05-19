@@ -148,7 +148,7 @@ module.exports = {
 - `/path/a/`
 - `/path/b/`
 
-But you may have multiple folders with files under `/path/`. To avoid multiple dropown items been actived under route starting with `/path/a/` or `/path/b/`, you can set `activeMatch` option for the first item with `^/path/(?:(?!a/|b/).*)?$`.
+But you may have multiple folders with files under `/path/`. To avoid multiple dropown items been activated under route starting with `/path/a/` or `/path/b/`, you can set `activeMatch` option for the first item with `^/path/(?:(?!a/|b/).*)?$`.
 
 :::
 

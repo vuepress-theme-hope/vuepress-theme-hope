@@ -52,7 +52,7 @@ export interface PageInfoProps {
   date?: DateInfoType | null;
 
   /**
-   * Whether the aricle is orginal
+   * Whether the aricle is original
    *
    * 文章是否原创
    */

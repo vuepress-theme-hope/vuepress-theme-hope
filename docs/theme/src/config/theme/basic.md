@@ -26,7 +26,7 @@ Domain which the site will be deployed to.
 
 ::: tip
 
-It should contain full protocol (eg: `https://exmaple.com`).
+It should contain full protocol (eg: `https://example.com`).
 
 :::
 
