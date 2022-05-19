@@ -27,4 +27,11 @@ export default [
     ],
     dtsExternal: [/\.scss$/],
   }),
+  ...rollupTypescript("client/components/CodePen", {
+    external: ["@vueuse/core", "vue"],
+  }),
+  ...rollupTypescript("client/components/PDF", {
+    external: ["vue", /\.scss$/],
+    dtsExternal: [/\.scss$/],
+  }),
 ];

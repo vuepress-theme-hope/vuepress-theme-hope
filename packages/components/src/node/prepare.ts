@@ -2,9 +2,11 @@ import { ensureEndingSlash } from "@vuepress/shared";
 import { path } from "@vuepress/utils";
 
 import type { App } from "@vuepress/core";
-import type { ComponentOptions } from "../shared";
+import type { AvailableComponent, ComponentOptions } from "../shared";
 
 const CLIENT_FOLDER = ensureEndingSlash(path.resolve(__dirname, "../client"));
+
+const availableComponents: AvailableComponent[] = ["Badge", "CodePen", "PDF"];
 
 export const prepareConfigFile = (
   app: App,
@@ -15,14 +17,14 @@ export const prepareConfigFile = (
   let rootComponents = "";
 
   options.components.forEach((item) => {
-    configImport += `import ${item} from "${CLIENT_FOLDER}components/${item}";\n`;
-
-    enhance += `app.component("${item}", ${item});\n`;
+    if (availableComponents.includes(item)) {
+      configImport += `import ${item} from "${CLIENT_FOLDER}components/${item}";\n`;
+      enhance += `app.component("${item}", ${item});\n`;
+    }
   });
 
   if (options.backToTop) {
     configImport += `import BackToTop from "${CLIENT_FOLDER}components/BackToTop";\n`;
-
     rootComponents += `BackToTop,\n`;
   }
 

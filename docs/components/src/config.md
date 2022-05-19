@@ -11,7 +11,7 @@ icon: config
 Whether register articleInfo component
 
 ```ts
-type AvailableComponent = "Badge";
+type AvailableComponent = "Badge" | "CodePen" | "PDF";
 ```
 
 ## backToTop

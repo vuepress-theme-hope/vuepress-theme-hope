@@ -11,7 +11,7 @@ icon: config
 需要被注册的组件
 
 ```ts
-type AvailableComponent = "Badge";
+type AvailableComponent = "Badge" | "CodePen" | "PDF";
 ```
 
 ## backToTop
