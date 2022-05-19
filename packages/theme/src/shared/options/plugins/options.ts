@@ -1,3 +1,4 @@
+import type { AvailableComponent } from "@mr-hope/vuepress-plugin-components";
 import type { GitPluginOptions } from "@vuepress/plugin-git";
 import type { CommentOptions } from "vuepress-plugin-comment2";
 import type { CopyCodeOptions } from "vuepress-plugin-copy-code2";
@@ -28,6 +29,19 @@ export interface HopeThemePluginsOptions {
    * @default false
    */
   blog?: HopeThemeBlogPluginOptions | boolean;
+
+  /**
+   * Components enabled
+   *
+   * @see https://vuepress-theme-hope.github.io/v2/components/config.html
+   *
+   * 需要启用的插件
+   *
+   * @see https://vuepress-theme-hope.github.io/v2/zh/components/config.html
+   *
+   * @default ['Badge']
+   */
+  components?: AvailableComponent[];
 
   /**
    * Comment plugin options

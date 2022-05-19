@@ -45,6 +45,8 @@ export default hopeTheme({
   plugins: {
     blog: true,
 
+    components: ["Badge", "CodePen", "PDF"],
+
     comment: {
       type: "giscus",
       repo: "vuepress-theme-hope/giscus-discussions",

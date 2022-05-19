@@ -9,6 +9,16 @@ tag:
   - Theme Config
 ---
 
+## components
+
+Register some component which can be used in Markdown files, available components are:
+
+- Badge
+- CodePen
+- PDF
+
+You can set `plugin.components` with an array of components you want, by default it will be `["Badge"]`.
+
 ## copyCode <Badge text="enabled by default" />
 
 Controls `vuepress-plugin-copy-code2`, providing a code copy button.

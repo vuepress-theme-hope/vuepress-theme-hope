@@ -24,7 +24,7 @@ export const getPluginConfig = (
   hostname: string
 ): PluginConfig => {
   const pluginConfig = [
-    getComponentsPlugin(themeData),
+    getComponentsPlugin(themeData, plugins.components),
     getActiveHeaderLinksPlugin(plugins.activeHeaderLinks),
     plugins.externalLinkIcon === false ? null : externalLinkIconPlugin(),
     plugins.nprogress === false ? null : nprogressPlugin(),
