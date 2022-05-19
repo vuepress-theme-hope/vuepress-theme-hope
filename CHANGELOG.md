@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.64](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.63...v2.0.0-beta.64) (2022-05-19)
+
+### Features
+
+- **components:** add CodePen and PDF component ([1e4ebf7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1e4ebf7ac860d265fc88bd1ca86dfffa7c829477))
+- **theme:** rebuild structure sidebar ([9d8b3a0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9d8b3a03f1f822f8853f31c030929f1208f7db0b))
+- **theme:** support setting components ([306d276](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/306d276ed8a323d118af931596042b4798bbc282))
+
+### Bug Fixes
+
+- correct some typos ([#1842](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1842)) ([f852ce6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f852ce6b19dd86f6e53d3b1d7ba6a724bd4eceaa))
+- **theme:** fix broken Icon ([0168bd0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0168bd0501f7e0f0a4180c13e570f77a1a18cc5b))
+- **theme:** fix TOC scroll issue ([31213ae](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/31213aeca3f949e3af85287d78c537271ae56656))
+
 ## [2.0.0-beta.63](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.62...v2.0.0-beta.63) (2022-05-18)
 
 ### ⚠ BREAKING CHANGES
