@@ -3,7 +3,7 @@ import { isArray, isLinkExternal, isLinkHttp } from "@vuepress/shared";
 import { computed, defineComponent, h } from "vue";
 import { RouterLink } from "vue-router";
 
-import { useIconPrefix } from "@theme-hope/composables";
+import ThemeIcon from "@theme-hope/components/Icon";
 
 import type { VNode } from "vue";
 import type { HopeThemeProjectHomePageFrontmatter } from "../../shared";
@@ -12,7 +12,6 @@ export default defineComponent({
   name: "HomeFeatures",
 
   setup() {
-    const iconPrefix = useIconPrefix();
     const frontmatter =
       usePageFrontmatter<HopeThemeProjectHomePageFrontmatter>();
 
@@ -29,9 +28,7 @@ export default defineComponent({
         : icon.startsWith("/")
         ? h("img", { class: "icon", src: withBase(icon) })
         : icon
-        ? h("span", {
-            class: ["icon", `${iconPrefix.value}${icon}`],
-          })
+        ? h(ThemeIcon, { icon })
         : null;
     };
 

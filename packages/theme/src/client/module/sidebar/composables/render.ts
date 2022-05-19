@@ -2,7 +2,7 @@ import { h } from "vue";
 import { useRoute } from "vue-router";
 
 import AutoLink from "@theme-hope/components/AutoLink";
-import { useIconPrefix } from "@theme-hope/composables";
+import ThemeIcon from "@theme-hope/components/Icon";
 import { isActiveSidebarItem } from "@theme-hope/module/sidebar/utils";
 
 import type { VNode } from "vue";
@@ -11,13 +11,6 @@ import type {
   ResolvedHopeThemeSidebarHeaderItem,
   AutoLink as AutoLinkType,
 } from "../../../../shared";
-
-export const renderIcon = (icon?: string): VNode | null =>
-  icon
-    ? h("i", {
-        class: ["icon", `${useIconPrefix().value}${icon}`],
-      })
-    : null;
 
 export const renderItem = (
   config: ResolvedSidebarItem,
@@ -30,7 +23,7 @@ export const renderItem = (
         config: config as AutoLinkType,
       })
     : // if the item only has text, render it as `<p>`
-      h("p", props, [renderIcon(config.icon), config.text]);
+      h("p", props, [h(ThemeIcon, { icon: config.icon }), config.text]);
 
 export const renderChildren = (
   children: ResolvedHopeThemeSidebarHeaderItem[]

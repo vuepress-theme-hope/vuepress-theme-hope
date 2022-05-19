@@ -1,6 +1,7 @@
 import { usePageFrontmatter, withBase } from "@vuepress/client";
 import { defineComponent, h, resolveComponent } from "vue";
 
+import ThemeIcon from "@theme-hope/components/Icon";
 import {
   ArticleIcon,
   BookIcon,
@@ -8,7 +9,7 @@ import {
   LinkIcon,
   ProjectIcon,
 } from "@theme-hope/module/blog/components/icons";
-import { useIconPrefix, useNavigate, usePure } from "@theme-hope/composables";
+import { useNavigate, usePure } from "@theme-hope/composables";
 
 import type { VNode } from "vue";
 import type { HopeThemeBlogHomePageFrontmatter } from "../../../../shared";
@@ -30,7 +31,6 @@ export default defineComponent({
 
   setup() {
     const frontmatter = usePageFrontmatter<HopeThemeBlogHomePageFrontmatter>();
-    const iconPrefix = useIconPrefix();
     const pure = usePure();
     const navigate = useNavigate();
 
@@ -48,7 +48,7 @@ export default defineComponent({
         return h("img", { src: withBase(icon), alt, class: "image" });
 
       // render as icon font
-      return h("span", { class: ["icon", `${iconPrefix.value}${icon}`] });
+      return h(ThemeIcon, { icon });
     };
 
     return (): VNode | null =>

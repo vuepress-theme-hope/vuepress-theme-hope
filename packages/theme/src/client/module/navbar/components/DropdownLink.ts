@@ -2,7 +2,7 @@ import { computed, defineComponent, h, ref, toRef, watch } from "vue";
 import { useRoute } from "vue-router";
 
 import AutoLink from "@theme-hope/components/AutoLink";
-import { useIconPrefix } from "@theme-hope/composables";
+import ThemeIcon from "@theme-hope/components/Icon";
 
 import type { PropType, VNode } from "vue";
 import type {
@@ -26,7 +26,6 @@ export default defineComponent({
 
   setup(props, { slots }) {
     const route = useRoute();
-    const iconPrefix = useIconPrefix();
     const config = toRef(props, "config");
 
     const dropdownAriaLabel = computed(
@@ -69,11 +68,7 @@ export default defineComponent({
           [
             slots.title?.() ||
               h("span", { class: "title" }, [
-                config.value.icon
-                  ? h("i", {
-                      class: `icon ${iconPrefix.value}${config.value.icon}`,
-                    })
-                  : null,
+                h(ThemeIcon, { icon: config.value.icon }),
                 props.config.text,
               ]),
             h("span", { class: "arrow" }),

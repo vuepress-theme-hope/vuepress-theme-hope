@@ -5,9 +5,9 @@ import { computed, defineComponent, h } from "vue";
 import { useRoute } from "vue-router";
 
 import AutoLink from "@theme-hope/components/AutoLink";
+import ThemeIcon from "@theme-hope/components/Icon";
 import {
   useAutoLink,
-  useIconPrefix,
   useNavigate,
   useThemeLocaleData,
 } from "@theme-hope/composables";
@@ -74,7 +74,6 @@ export default defineComponent({
 
   setup() {
     const themeLocale = useThemeLocaleData();
-    const iconPrefix = useIconPrefix();
     const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();
     const sidebarItems = useSidebarItems();
     const route = useRoute();
@@ -131,11 +130,9 @@ export default defineComponent({
                       themeLocale.value.metaLocales.prev,
                     ]),
                     h("div", { class: "link" }, [
-                      prevNavLink.value?.icon
-                        ? h("i", {
-                            class: `icon ${iconPrefix.value}${prevNavLink.value.icon}`,
-                          })
-                        : null,
+                      h(ThemeIcon, {
+                        icon: prevNavLink.value?.icon,
+                      }),
                       prevNavLink.value?.text,
                     ]),
                   ]
@@ -152,11 +149,9 @@ export default defineComponent({
                     ]),
                     h("div", { class: "link" }, [
                       nextNavLink.value?.text,
-                      nextNavLink.value?.icon
-                        ? h("i", {
-                            class: `icon ${iconPrefix.value}${nextNavLink.value.icon}`,
-                          })
-                        : null,
+                      h(ThemeIcon, {
+                        icon: nextNavLink.value?.icon,
+                      }),
                     ]),
                   ]
                 )
