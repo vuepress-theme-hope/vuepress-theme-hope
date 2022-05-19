@@ -1,29 +1,25 @@
-import { defineComponent, h } from "vue";
-import type { VNode } from "vue";
+import { h } from "vue";
 
-export default defineComponent({
-  name: "CodeGroupItem",
+import type { FunctionalComponent, VNode } from "vue";
 
-  props: {
-    title: {
-      type: String,
-      required: true,
+export interface CodeGroupItemProps {
+  title: string;
+  active?: boolean;
+}
+
+const CodeGroupItem: FunctionalComponent<CodeGroupItemProps> = (
+  { active = false },
+  { slots }
+): VNode =>
+  h(
+    "div",
+    {
+      class: ["code-group-item", { active }],
+      "aria-selected": active,
     },
-    active: {
-      type: Boolean,
-      default: false,
-    },
-  },
+    slots.default?.()
+  );
 
-  setup(props, { slots }) {
-    return (): VNode =>
-      h(
-        "div",
-        {
-          class: ["code-group-item", { active: props.active }],
-          "aria-selected": props.active,
-        },
-        slots.default?.()
-      );
-  },
-});
+CodeGroupItem.displayName = "CodeGroupItem";
+
+export default CodeGroupItem;
