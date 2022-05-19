@@ -1,13 +1,6 @@
 import { getLocales } from "@mr-hope/vuepress-shared";
 import { containerPlugin } from "@vuepress/plugin-container";
-import {
-  chartRender,
-  echartsRender,
-  normalDemoRender,
-  getDetailsRender,
-  vueDemoRender,
-  reactDemoRender,
-} from "./markdown-it";
+import { getDetailsRender } from "./markdown-it";
 import { markdownEnhanceLocales } from "./locales";
 
 import type { App, LocaleConfig } from "@vuepress/core";
@@ -57,11 +50,6 @@ export const usePlugins = (
     );
   }
 
-  if (markdownOptions.align || markdownOptions.enableAll)
-    ["left", "center", "right", "justify"].forEach((type) =>
-      app.use(containerPlugin({ type }))
-    );
-
   if (markdownOptions.codegroup || markdownOptions.enableAll) {
     app.use(
       containerPlugin({
@@ -85,25 +73,4 @@ export const usePlugins = (
       })
     );
   }
-
-  if (markdownOptions.chart || markdownOptions.enableAll)
-    app.use(containerPlugin({ type: "chart", render: chartRender }));
-
-  if (markdownOptions.echarts || markdownOptions.enableAll)
-    app.use(containerPlugin({ type: "echarts", render: echartsRender }));
-
-  if (markdownOptions.demo || markdownOptions.enableAll) {
-    app.use(containerPlugin({ type: "normal-demo", render: normalDemoRender }));
-    app.use(containerPlugin({ type: "vue-demo", render: vueDemoRender }));
-    app.use(containerPlugin({ type: "react-demo", render: reactDemoRender }));
-  }
-
-  if (markdownOptions.vpre || markdownOptions.enableAll)
-    app.use(
-      containerPlugin({
-        type: "v-pre",
-        before: () => `<div v-pre>\n`,
-        after: () => "</div>\n",
-      })
-    );
 };

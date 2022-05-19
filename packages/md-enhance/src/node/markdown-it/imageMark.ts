@@ -1,7 +1,3 @@
-/***************************************************
- * Created by nanyuantingfeng on 2020/3/1 10:10. *
- ***************************************************/
-
 import type { default as MarkdownIt } from "markdown-it";
 import type { PluginWithOptions } from "markdown-it";
 

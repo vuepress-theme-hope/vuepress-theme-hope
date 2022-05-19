@@ -1,5 +1,6 @@
 export * from "./chart";
 export * from "./codeDemo";
+export * from "./container";
 export * from "./details";
 export * from "./echarts";
 export * from "./flowchart";
@@ -14,3 +15,4 @@ export * from "./presentation";
 export * from "./sub";
 export * from "./sup";
 export * from "./tasklist";
+export * from "./vPre";

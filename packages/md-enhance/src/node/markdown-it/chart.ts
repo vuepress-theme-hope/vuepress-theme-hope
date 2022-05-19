@@ -1,45 +1,52 @@
-/* eslint-disable max-statements */
 import { hash } from "@vuepress/utils";
-import { default as Token } from "markdown-it/lib/token";
 
-export const chartRender = (tokens: Token[], index: number): string => {
-  const { nesting, info } = tokens[index];
-  const title = info
-    .trimStart()
-    // 'chart' length
-    .slice(5)
-    .trim();
+import { container } from "./container";
 
-  const key = `chart-${hash(index)}`;
+import type { PluginSimple } from "markdown-it";
 
-  if (nesting === -1) return `</ChartJS>`;
+export const chart: PluginSimple = (md) => {
+  container(md, {
+    name: "chart",
+    render: (tokens, index) => {
+      const { nesting, info } = tokens[index];
+      const title = info
+        .trimStart()
+        // 'chart' length
+        .slice(5)
+        .trim();
 
-  let config = "{}";
-  let configType = "";
+      const key = `chart-${hash(index)}`;
 
-  for (let i = index; i < tokens.length; i++) {
-    const { type, content, info } = tokens[i];
+      if (nesting === -1) return `</ChartJS>`;
 
-    if (type === "container_chart_close") break;
+      let config = "{}";
+      let configType = "";
 
-    if (!content) continue;
-    if (type === "fence") {
-      if (info === "json") {
-        config = encodeURIComponent(content);
-        configType = "json";
-      } else if (info === "js" || info === "javascript") {
-        config = encodeURIComponent(content);
-        configType = "js";
+      for (let i = index; i < tokens.length; i++) {
+        const { type, content, info } = tokens[i];
+
+        if (type === "container_chart_close") break;
+
+        if (!content) continue;
+        if (type === "fence") {
+          if (info === "json") {
+            config = encodeURIComponent(content);
+            configType = "json";
+          } else if (info === "js" || info === "javascript") {
+            config = encodeURIComponent(content);
+            configType = "js";
+          }
+        }
+
+        // set to an unexisit token type
+        tokens[i].type = "chart_empty";
+        // hide token
+        tokens[i].hidden = true;
       }
-    }
 
-    // set to an unexisit token type
-    tokens[i].type = "chart_empty";
-    // hide token
-    tokens[i].hidden = true;
-  }
-
-  return `<ChartJS id="${key}" config="${config}" ${
-    title ? `title="${encodeURIComponent(title)}" ` : ""
-  }type="${configType}">`;
+      return `<ChartJS id="${key}" config="${config}" ${
+        title ? `title="${encodeURIComponent(title)}" ` : ""
+      }type="${configType}">`;
+    },
+  });
 };
