@@ -41,7 +41,7 @@ npm i vuepress@next vuepress-theme-hope@next
 
 ## 确认 Node 版本
 
-`vuepress-theme-hope` 仅支持 LTS 版本的 Node.js，也就是目前来说，只有最新的 v12, v14, v16 版本收到支持。
+`vuepress-theme-hope` 仅支持 LTS 版本的 Node.js，也就是目前来说，只有最新的 v14, v16 版本收到支持。
 
 你可以通过 `node -v` 查看它的版本，如果版本号第一位不满足要求，请 [下载并安装 LTS 版本的 Node.js](../cookbook/tutorial/env.md#nodejs)。
 

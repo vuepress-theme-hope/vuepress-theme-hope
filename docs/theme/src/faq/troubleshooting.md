@@ -41,7 +41,7 @@ npm i vuepress@next vuepress-theme-hope@next
 
 ## Ensure Node version
 
-`vuepress-theme-hope` only supports LTS version of Node.js, that is, currently, only the latest v12, v14, v16 versions are supported.
+`vuepress-theme-hope` only supports LTS version of Node.js, that is, currently, only the latest v14, v16 versions are supported.
 
 You can check its version with `node -v`. If the first digit of the version number does not meet the requirements, please [download and install the LTS version of Node.js](../cookbook/tutorial/env.md#nodejs).
 
