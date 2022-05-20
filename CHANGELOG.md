@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.65](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.64...v2.0.0-beta.65) (2022-05-20)
+
+### Features
+
+- **components:** add Tab component ([07909b4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/07909b429628c9d26cc0661abd894aa0b71b932a))
+- **md-enhance:** add container ([a8e60c0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a8e60c0101637a74194a9a609cb3a2879c7b232f))
+- **md-enhance:** rebuild codegroup ([63d0973](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/63d09732b624507bef4b45293e42c0a118fdee08))
+
+### Bug Fixes
+
+- **components:** fix Tab style on mobile ([6b95837](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6b958379135d192618d3217af8adec9feee9e898))
+
 ## [2.0.0-beta.64](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.63...v2.0.0-beta.64) (2022-05-19)
 
 ### Features

@@ -1,6 +1,6 @@
 {
   "name": "redirect2-demo",
-  "version": "2.0.0-beta.64",
+  "version": "2.0.0-beta.65",
   "private": true,
   "description": "Demo for vuepress-plugin-redirect2",
   "license": "MIT",
