@@ -1,6 +1,6 @@
 <!-- markdownlint-disable -->
 <p align="center">
-  <img width="240" src="https://vuepress-theme.mrhope.site/logo.svg" style="text-align: center;"/>
+  <img width="240" src="https://vuepress-theme.mrhope.site/logo.svg" style="text-align: center;">
 </p>
 <h1 align="center">vuepress-plugin-reading-time2</h1>
 <h4 align="center">VuePress reading time plugin⏳ / VuePress 阅读时间插件⏳</h4>

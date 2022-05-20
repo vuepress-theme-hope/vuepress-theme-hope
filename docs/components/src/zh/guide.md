@@ -36,11 +36,11 @@ icon: creative
 
 徽章的类型
 
-- <Badge text="tip" 类型="tip" vertical="middle" />
-- <Badge text="warning" 类型="warning" vertical="middle" />
-- <Badge text="danger" 类型="danger" vertical="middle" />
-- <Badge text="info" 类型="info" vertical="middle" />
-- <Badge text="note" 类型="note" vertical="middle" />
+- <Badge text="tip" type="tip" vertical="middle" />
+- <Badge text="warning" type="warning" vertical="middle" />
+- <Badge text="danger" type="danger" vertical="middle" />
+- <Badge text="info" type="info" vertical="middle" />
+- <Badge text="note" type="note" vertical="middle" />
 
 #### color
 
@@ -61,10 +61,10 @@ icon: creative
 你可以在 Markdown 中使用这个组件来为标题或链接添加一些状态:
 
 ```md
-徽章测试 <Badge text="Building" 类型="warning"/> <Badge text="MrHope" color="grey" />
+徽章测试 <Badge text="Building" type="warning" /> <Badge text="MrHope" color="grey" />
 ```
 
-徽章测试 <Badge text="Building" 类型="warning"/> <Badge text="MrHope" color="grey" />
+徽章测试 <Badge text="Building" type="warning" /> <Badge text="MrHope" color="grey" />
 
 ## CodePen
 
