@@ -47,8 +47,8 @@
     "@vuepress/utils": "2.0.0-beta.45",
     "@waline/client": "^2.5.0",
     "giscus": "^1.0.4",
-    "twikoo": "^1.5.10",
-    "vue": "^3.2.33",
+    "twikoo": "^1.5.11",
+    "vue": "^3.2.35",
     "vue-router": "^4.0.15",
     "vuepress-plugin-sass-palette": "workspace:*"
   },
