@@ -16,6 +16,12 @@
   margin: 1.5rem 0;
   border: 2px solid var(--c-border);
   border-radius: 8px;
+
+  @media (max-width: hope-config.$mobile) {
+    margin-right: -1.5rem;
+    margin-left: -1.5rem;
+    border-radius: 0;
+  }
 }
 
 .tab-list-nav {
@@ -31,8 +37,6 @@
   transition: background-color var(--color-transition, 0.3s);
 
   @media (max-width: hope-config.$mobile) {
-    margin-right: -1.5rem;
-    margin-left: -1.5rem;
     border-radius: 0;
   }
 }
