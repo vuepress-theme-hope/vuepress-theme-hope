@@ -28,7 +28,7 @@ If the current browser does not support full screen, the full screen button is a
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts {8}
 // .vuepress/config.ts
@@ -43,7 +43,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js {7}
 // .vuepress/config.js

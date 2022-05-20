@@ -37,7 +37,7 @@ VuePress 使用项目文件夹下的 `.vuepress` 文件夹存放配置，所有 
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -48,7 +48,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/config.js

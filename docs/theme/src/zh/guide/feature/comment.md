@@ -22,7 +22,7 @@ tag:
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts {8,11}
 // .vuepress/config.ts
@@ -43,7 +43,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js {7,10}
 const { hopeTheme } = require("vuepress-theme-hope");
@@ -124,7 +124,7 @@ Giscus 是一个基于 GitHub Discussion 的评论系统，启用简便。
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -143,7 +143,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/config.js

@@ -23,19 +23,19 @@ copyright: false
 
 ::: code-tabs
 
-@codetab pnpm
+@tab pnpm
 
 ```bash
 pnpm add -D vuepress-plugin-sass-palette@next
 ```
 
-@codetab yarn
+@tab yarn
 
 ```bash
 yarn add -D vuepress-plugin-sass-palette@next
 ```
 
-@codetab npm
+@tab npm
 
 ```bash
 npm i -D vuepress-plugin-sass-palette@next
@@ -49,7 +49,7 @@ npm i -D vuepress-plugin-sass-palette@next
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // 你的插件或主题入口
@@ -71,7 +71,7 @@ const yourPlugin =
 export default yourPlugin;
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // 你的插件或主题入口

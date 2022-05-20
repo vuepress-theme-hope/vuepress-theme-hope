@@ -11,7 +11,7 @@ The plugin adds tip, note, info, warning, danger and detail container.
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts {8}
 // .vuepress/config.ts
@@ -27,7 +27,7 @@ export default {
 };
 ```
 
-@codetab JS
+@tab JS
 
 ```js {8}
 // .vuepress/config.js

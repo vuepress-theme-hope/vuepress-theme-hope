@@ -15,7 +15,7 @@ After user press the copy button, a success hint will display on the screen. The
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -30,7 +30,7 @@ export default {
 };
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/config.js

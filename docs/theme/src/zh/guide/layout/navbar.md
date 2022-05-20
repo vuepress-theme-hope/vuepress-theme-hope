@@ -23,7 +23,7 @@ tag:
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -37,7 +37,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -69,7 +69,7 @@ module.exports = {
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -100,7 +100,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -152,7 +152,7 @@ module.exports = {
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -172,7 +172,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -199,7 +199,7 @@ module.exports = {
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -220,7 +220,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -246,7 +246,7 @@ module.exports = {
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -279,7 +279,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -319,7 +319,7 @@ module.exports = {
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -333,7 +333,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -370,7 +370,7 @@ navbar: false
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -384,7 +384,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -411,7 +411,7 @@ module.exports = {
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -438,7 +438,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -480,7 +480,7 @@ module.exports = {
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -500,7 +500,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -541,7 +541,7 @@ module.exports = {
 
 ::: code-tabs
 
-@codetab TS Helper
+@tab TS Helper
 
 ```ts
 // .vuepress/navbar.ts
@@ -552,7 +552,7 @@ export default navbar([
 ]);
 ```
 
-@codetab TS 类型
+@tab TS 类型
 
 ```ts
 // .vuepress/navbar.ts
@@ -565,7 +565,7 @@ const navbarConfig: HopeThemeNavbarConfig = [
 export default navbarConfig;
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/navbar.js
@@ -584,11 +584,11 @@ module.exports = navbar([
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 @[code](../../../.vuepress/navbar/zh.ts)
 
-@codetab JS
+@tab JS
 
 ```js
 const { navbar } = require("vuepress-theme-hope");

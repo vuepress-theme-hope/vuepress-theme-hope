@@ -15,7 +15,7 @@ icon: creative
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -30,7 +30,7 @@ export default {
 };
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/config.js

@@ -23,7 +23,7 @@ The easiest way to configure the navbar is to fill in the paths of the page file
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -37,7 +37,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -69,7 +69,7 @@ If you are not satisfied with the page’s icon or feel that the page title is t
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -100,7 +100,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -152,7 +152,7 @@ You need use object format and provide the additional `children` option to nest 
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -172,7 +172,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -199,7 +199,7 @@ To simplify the configuration, you can add the `prefix` field to add a prefix to
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -220,7 +220,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -246,7 +246,7 @@ You can also have sub groups inside a dropdown by having nested `children`:
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -281,7 +281,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -323,7 +323,7 @@ To disable the navbar globally, set `navbar: false` in theme options:
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -337,7 +337,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -374,7 +374,7 @@ Please fill in an absolute path and place the logo in `.vuepress/public` folder.
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -388,7 +388,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -415,7 +415,7 @@ The theme’s navbar supports [I18n](https://v2.vuepress.vuejs.org/guide/i18n.ht
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -442,7 +442,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -484,7 +484,7 @@ You can control whether showing the repository button via `repoDisplay` in theme
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -504,7 +504,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -545,7 +545,7 @@ They mainly deal with scenarios when you split your VuePress configuration into 
 
 ::: code-tabs
 
-@codetab TS Helper
+@tab TS Helper
 
 ```ts
 // .vuepress/navbar.ts
@@ -556,7 +556,7 @@ export default navbar([
 ]);
 ```
 
-@codetab TS Type
+@tab TS Type
 
 ```ts
 // .vuepress/navbar.ts
@@ -569,7 +569,7 @@ const navbarConfig: HopeThemeNavbarConfig = [
 export default navbarConfig;
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/navbar.js
@@ -588,11 +588,11 @@ module.exports = navbar([
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 @[code](../../.vuepress/navbar/en.ts)
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/navbar.js

@@ -53,7 +53,7 @@ export default defineUserConfig({
 };
 ```
 
-@codetab JS
+@tab JS
 
 ```js {7-9}
 // .vuepress/config.js

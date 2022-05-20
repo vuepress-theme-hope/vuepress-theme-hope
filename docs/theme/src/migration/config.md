@@ -10,7 +10,7 @@ tag:
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```diff
   // .vuepress/config.ts
@@ -32,7 +32,7 @@ tag:
   });
 ```
 
-@codetab JS
+@tab JS
 
 ```diff
 // .vuepress/config.js

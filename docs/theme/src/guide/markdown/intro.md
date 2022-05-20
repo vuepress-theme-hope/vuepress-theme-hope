@@ -35,7 +35,7 @@ You can set `plugins.mdEnhance.enableAll` to enable all features of the [md-enha
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts {8-10}
 // .vuepress/config.ts
@@ -53,7 +53,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js {7-9}
 // .vuepress/config.js

@@ -138,19 +138,19 @@ const a = 1;
 
 ::: code-tabs
 
-@codetab pnpm
+@tab pnpm
 
 ```bash
 pnpm add -D vuepress-theme-hope
 ```
 
-@codetab yarn
+@tab yarn
 
 ```bash
 yarn add -D vuepress-theme-hope
 ```
 
-@codetab npm:active
+@tab npm:active
 
 ```bash
 npm i -D vuepress-theme-hope

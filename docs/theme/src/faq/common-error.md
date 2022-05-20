@@ -49,19 +49,19 @@ Make sure you are using the latest `vuepress` and `vuepress-theme-hope` versions
 
 ::: code-tabs
 
-@codetab pnpm
+@tab pnpm
 
 ```bash
 pnpm add vuepress@next vuepress-theme-hope@next
 ```
 
-@codetab yarn
+@tab yarn
 
 ```bash
 yarn add vuepress@next vuepress-theme-hope@next
 ```
 
-@codetab npm
+@tab npm
 
 ```bash
 npm i vuepress@next vuepress-theme-hope@next
@@ -73,19 +73,19 @@ Also, upgrade dependencies to ensure your project only contains a single version
 
 ::: code-tabs
 
-@codetab pnpm
+@tab pnpm
 
 ```bash
 pnpm i && pnpm up
 ```
 
-@codetab yarn
+@tab yarn
 
 ```bash
 yarn && yarn upgrade
 ```
 
-@codetab npm
+@tab npm
 
 ```bash
 npm i && npm update

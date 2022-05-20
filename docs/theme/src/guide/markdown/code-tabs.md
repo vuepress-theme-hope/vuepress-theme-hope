@@ -17,7 +17,7 @@ The theme provides you you code tabs support.
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts {8-10}
 // .vuepress/config.ts
@@ -35,7 +35,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js {7-9}
 // .vuepress/config.js
@@ -56,13 +56,13 @@ module.exports = {
 
 ## Usage
 
-You need to use `code-tabs` container, inside it, place `@codetab` marker with code fence.
+You need to use `code-tabs` container, inside it, place `@tab` marker with code fence.
 
 If you want a tab be activated by default, you can append a `:active` suffix at the end of marker.
 
 ::: note
 
-Only code fence after `@codetab` marker is allowed inside code tabs, other markdown content will be ignored.
+Only code fence after `@tab` marker is allowed inside code tabs, other markdown content will be ignored.
 
 :::
 
@@ -70,19 +70,19 @@ Only code fence after `@codetab` marker is allowed inside code tabs, other markd
 
 ::: code-tabs
 
-@codetab pnpm
+@tab pnpm
 
 ```bash
 pnpm add -D vuepress-theme-hope@next
 ```
 
-@codetab yarn
+@tab yarn
 
 ```bash
 yarn add -D vuepress-theme-hope@next
 ```
 
-@codetab:active npm
+@tab:active npm
 
 ```bash
 npm i -D vuepress-theme-hope@next
@@ -93,19 +93,19 @@ npm i -D vuepress-theme-hope@next
 ````md
 ::: code-tabs
 
-@codetab pnpm
+@tab pnpm
 
 ```bash
 pnpm add -D vuepress-theme-hope@next
 ```
 
-@codetab yarn
+@tab yarn
 
 ```bash
 yarn add -D vuepress-theme-hope@next
 ```
 
-@codetab:active npm
+@tab:active npm
 
 ```bash
 npm i -D vuepress-theme-hope@next

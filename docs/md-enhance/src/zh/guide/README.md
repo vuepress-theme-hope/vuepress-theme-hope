@@ -35,19 +35,19 @@ icon: creative
 
 ::: code-tabs
 
-@codetab pnpm
+@tab pnpm
 
 ```bash
 pnpm add -D vuepress-plugin-md-enhance@next
 ```
 
-@codetab yarn
+@tab yarn
 
 ```bash
 yarn add -D vuepress-plugin-md-enhance@next
 ```
 
-@codetab:active npm
+@tab:active npm
 
 ```bash
 npm i -D vuepress-plugin-md-enhance@next

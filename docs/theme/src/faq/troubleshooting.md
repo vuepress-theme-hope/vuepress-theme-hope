@@ -13,19 +13,19 @@ You can update to the latest version by executing the following commands.
 
 ::: code-tabs
 
-@codetab pnpm
+@tab pnpm
 
 ```bash
 pnpm add vuepress@next vuepress-theme-hope@next
 ```
 
-@codetab yarn
+@tab yarn
 
 ```bash
 yarn add vuepress@next vuepress-theme-hope@next
 ```
 
-@codetab npm
+@tab npm
 
 ```bash
 npm i vuepress@next vuepress-theme-hope@next
@@ -49,19 +49,19 @@ Please run the following command to make sure your dependency tree is correct.
 
 ::: code-tabs
 
-@codetab pnpm
+@tab pnpm
 
 ```bash
 pnpm i && pnpm up
 ```
 
-@codetab yarn
+@tab yarn
 
 ```bash
 yarn && yarn upgrade
 ```
 
-@codetab npm
+@tab npm
 
 ```bash
 npm i && npm update

@@ -10,7 +10,7 @@ describe("code tabs", () => {
       markdownIt.render(`
 ::: code-tabs
 
-@codetab js
+@tab js
 
 \`\`\`js
 const a = 1;
@@ -23,7 +23,7 @@ const a = 1;
     expect(
       markdownIt.render(`
 ::: code-tabs
-@codetab js
+@tab js
 \`\`\`js
 const a = 1;
 \`\`\`
@@ -37,13 +37,13 @@ const a = 1;
       markdownIt.render(`
 ::: code-tabs
 
-@codetab js
+@tab js
 
 \`\`\`js
 const a = 1;
 \`\`\`
 
-@codetab ts
+@tab ts
 
 \`\`\`ts
 const a = 1;
@@ -56,11 +56,11 @@ const a = 1;
     expect(
       markdownIt.render(`
 ::: code-tabs
-@codetab js
+@tab js
 \`\`\`js
 const a = 1;
 \`\`\`
-@codetab ts
+@tab ts
 \`\`\`ts
 const a = 1;
 \`\`\`
@@ -74,7 +74,7 @@ const a = 1;
       markdownIt.render(`
 ::: code-tabs
 
-@codetab:active js
+@tab:active js
 
 \`\`\`js
 const a = 1;
@@ -87,7 +87,7 @@ const a = 1;
     expect(
       markdownIt.render(`
 ::: code-tabs
-@codetab:active js
+@tab:active js
 \`\`\`js
 const a = 1;
 \`\`\`
@@ -99,13 +99,13 @@ const a = 1;
       markdownIt.render(`
 ::: code-tabs
 
-@codetab js
+@tab js
 
 \`\`\`js
 const a = 1;
 \`\`\`
 
-@codetab:active ts
+@tab:active ts
 
 \`\`\`ts
 const a = 1;
@@ -118,11 +118,11 @@ const a = 1;
     expect(
       markdownIt.render(`
 ::: code-tabs
-@codetab js
+@tab js
 \`\`\`js
 const a = 1;
 \`\`\`
-@codetab:active ts
+@tab:active ts
 \`\`\`ts
 const a = 1;
 \`\`\`
@@ -140,7 +140,7 @@ const a = 1;
 const a = 1;
 \`\`\`
 
-@codetab:active js
+@tab:active js
 
 \`\`\`js
 const a = 1;
@@ -160,7 +160,7 @@ const a = 1;
 \`\`\`coffee
 const a = 1;
 \`\`\`
-@codetab:active js
+@tab:active js
 \`\`\`js
 const a = 1;
 \`\`\`
@@ -175,7 +175,7 @@ const a = 1;
       markdownIt.render(`
 ::: code-tabs
 
-@codetab js
+@tab js
 
 A text
 
@@ -185,7 +185,7 @@ const a = 1;
 
 Another text
 
-@codetab:active ts
+@tab:active ts
 
 Another text again
 
@@ -202,13 +202,13 @@ Another text again
     expect(
       markdownIt.render(`
 ::: code-tabs
-@codetab js
+@tab js
 A text
 \`\`\`js
 const a = 1;
 \`\`\`
 Another text
-@codetab:active ts
+@tab:active ts
 Another text again
 \`\`\`ts
 const a = 1;

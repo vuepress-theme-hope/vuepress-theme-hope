@@ -37,13 +37,13 @@ Frontmatter 是 VuePress 中很重要的一个概念，如果你不了解它，�
 
 ::: code-tabs
 
-@codetab yarn
+@tab yarn
 
 ```bash
 yarn add -D vuepress-theme-hope
 ```
 
-@codetab:active npm
+@tab:active npm
 
 ```bash
 npm i -D vuepress-theme-hope

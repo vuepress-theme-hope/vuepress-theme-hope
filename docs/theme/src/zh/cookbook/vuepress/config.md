@@ -28,7 +28,7 @@ VuePress 站点的基本配置文件是 `.vuepress/config.js` ，但也同样支
 
 ::: code-tabs
 
-@codetab JS
+@tab JS
 
 ```ts
 import { defineUserConfig } from "vuepress";
@@ -48,7 +48,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 const { hopeTheme } = require("vuepress-theme-hope");

@@ -2,7 +2,7 @@ import type { PluginSimple } from "markdown-it";
 import type { RuleBlock } from "markdown-it/lib/parser_block";
 
 export const codeTabs: PluginSimple = (md) => {
-  const CODETAB_MARKER = `@codetab`;
+  const CODETAB_MARKER = `@tab`;
 
   const codeTabsRule: RuleBlock = (state, startLine, endLine, silent) => {
     let start = state.bMarks[startLine] + state.tShift[startLine];

@@ -71,7 +71,7 @@ export default defineUserConfig({
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts {5-11}
 import { defineUserConfig } from "vuepress";
@@ -91,7 +91,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js {3-9}
 module.exports = {

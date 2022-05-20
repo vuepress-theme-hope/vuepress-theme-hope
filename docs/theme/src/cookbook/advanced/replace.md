@@ -18,7 +18,7 @@ You need to replace the component alias used in the theme with `alias` option in
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -42,7 +42,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -228,7 +228,7 @@ For example, if your site has strong social attributes, and you want to display 
 
 ::: code-tabs
 
-@codetab config.ts
+@tab config.ts
 
 ```ts
 // .vuepress/config.ts
@@ -252,7 +252,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab HomePage.vue
+@tab HomePage.vue
 
 ```vue
 <template>

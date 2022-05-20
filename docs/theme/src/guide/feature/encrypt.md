@@ -26,7 +26,7 @@ You can configure encryption options through the `encrypt.config` options in the
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -47,7 +47,7 @@ export default defineUserConfig({
 };
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/config.js

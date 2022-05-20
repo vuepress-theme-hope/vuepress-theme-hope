@@ -23,7 +23,7 @@ Just like navbar, you can fill in an array of multiple file links as the basic c
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -37,7 +37,7 @@ export default defineUserConfig({
 };
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -71,7 +71,7 @@ Just like navbar, if you are not satisfied with the page’s icon or feel that t
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -102,7 +102,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -154,7 +154,7 @@ You should use [object format](#object-format) and provide an additional `childr
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -195,7 +195,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -241,7 +241,7 @@ You can also nest Sidebar grouping:
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -276,7 +276,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -335,7 +335,7 @@ Then you can use the following config:
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -371,7 +371,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -433,7 +433,7 @@ You can define your sidebar for each section using below configuration:
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -466,7 +466,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -524,7 +524,7 @@ You can also enable it in all pages by using config:
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts {7}
 // .vuepress/config.ts
@@ -538,7 +538,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js {6}
 // .vuepress/config.js
@@ -578,7 +578,7 @@ You can change the original config to:
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts {8,10}
 // .vuepress/config.ts
@@ -603,7 +603,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js {7,9}
 // .vuepress/config.js
@@ -732,7 +732,7 @@ By default, the nested header links and the hash in the URL are updated as the u
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts {8}
 // .vuepress/config.ts
@@ -749,7 +749,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js {8}
 // .vuepress/config.js
@@ -777,7 +777,7 @@ The theme’s navbar supports [I18n](https://v2.vuepress.vuejs.org/guide/i18n.ht
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -802,7 +802,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -840,7 +840,7 @@ To deal with the situation when you split [multi-sidebar configuration](#multipl
 
 ::: code-tabs
 
-@codetab TS Helper
+@tab TS Helper
 
 ```ts {6}
 // .vuepress/sidebar.ts
@@ -849,7 +849,7 @@ import { sidebar } from "vuepress-theme-hope";
 export default sidebar(/* Your sidebar configuration */);
 ```
 
-@codetab TS Types
+@tab TS Types
 
 ```ts {4}
 // .vuepress/navbar.ts
@@ -862,7 +862,7 @@ const sidebarConfig: HopeThemeSidebarConfig = [
 export default sidebarConfig;
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/sidebar.js
@@ -879,11 +879,11 @@ module.exports = sidebar(/* Your sidebar configuration */);
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 @[code](../../.vuepress/sidebar/en.ts)
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/config.js

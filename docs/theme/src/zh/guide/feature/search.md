@@ -34,19 +34,19 @@ tag:
 
    ::: code-tabs
 
-   @codetab pnpm
+   @tab pnpm
 
    ```bash
    pnpm add -D @vuepress/plugin-search@next
    ```
 
-   @codetab yarn
+   @tab yarn
 
    ```bash
    yarn add -D @vuepress/plugin-search@next
    ```
 
-   @codetab npm
+   @tab npm
 
    ```bash
    npm i -D @vuepress/plugin-search@next
@@ -58,7 +58,7 @@ tag:
 
    ::: code-tabs
 
-   @codetab TS
+   @tab TS
 
    ```ts
    // .vuepress/config.ts
@@ -74,7 +74,7 @@ tag:
    });
    ```
 
-   @codetab JS
+   @tab JS
 
    ```js
    // .vuepress/config.js
@@ -105,7 +105,7 @@ tag:
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -127,7 +127,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -305,19 +305,19 @@ module.exports = {
 
    ::: code-tabs
 
-   @codetab pnpm
+   @tab pnpm
 
    ```bash
    pnpm add -D @vuepress/plugin-docsearch@next
    ```
 
-   @codetab yarn
+   @tab yarn
 
    ```bash
    yarn add -D @vuepress/plugin-docsearch@next
    ```
 
-   @codetab npm
+   @tab npm
 
    ```bash
    npm i -D @vuepress/plugin-docsearch@next
@@ -329,7 +329,7 @@ module.exports = {
 
    ::: code-tabs
 
-   @codetab TS
+   @tab TS
 
    ```ts
    // .vuepress/config.ts
@@ -346,7 +346,7 @@ module.exports = {
    });
    ```
 
-   @codetab JS
+   @tab JS
 
    ```js
    // .vuepress/config.js
@@ -378,7 +378,7 @@ module.exports = {
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -438,7 +438,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/config.js

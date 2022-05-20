@@ -23,7 +23,7 @@ tag:
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -37,7 +37,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -71,7 +71,7 @@ module.exports = {
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -102,7 +102,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -154,7 +154,7 @@ module.exports = {
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -196,7 +196,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 const { hopeTheme } = require("vuepress-theme-hope");
@@ -242,7 +242,7 @@ module.exports = {
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -277,7 +277,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -336,7 +336,7 @@ module.exports = {
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -372,7 +372,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -434,7 +434,7 @@ module.exports = {
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -467,7 +467,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -517,7 +517,7 @@ sidebar: heading
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts {67
 // .vuepress/config.ts
@@ -531,7 +531,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js {6}
 // .vuepress/config.js
@@ -571,7 +571,7 @@ module.exports = {
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts {8,10}
 // .vuepress/config.ts
@@ -596,7 +596,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js {7,9}
 // .vuepress/config.js
@@ -727,7 +727,7 @@ headerDepth: 2
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts {9}
 // .vuepress/config.ts
@@ -744,7 +744,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js {8}
 // .vuepress/config.js
@@ -772,7 +772,7 @@ module.exports = {
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -797,7 +797,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -835,7 +835,7 @@ module.exports = {
 
 ::: code-tabs
 
-@codetab TS Helper
+@tab TS Helper
 
 ```ts {4}
 // .vuepress/sidebar.ts
@@ -844,7 +844,7 @@ import { sidebar } from "vuepress-theme-hope";
 export default sidebar(/* 你的侧边栏配置 */);
 ```
 
-@codetab TS 类型
+@tab TS 类型
 
 ```ts {4}
 // .vuepress/navbar.ts
@@ -857,7 +857,7 @@ const sidebarConfig: HopeThemeSidebarConfig = [
 export default sidebarConfig;
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/sidebar.js
@@ -874,11 +874,11 @@ module.exports = sidebar(/* 你的侧边栏配置 */);
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 @[code](../../../.vuepress/sidebar/zh.ts)
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/config.js

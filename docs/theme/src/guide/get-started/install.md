@@ -16,13 +16,13 @@ Create a vuepress-theme-hope project in `[dir]` folder under the current project
 
 ::: code-tabs
 
-@codetab pnpm
+@tab pnpm
 
 ```bash
 pnpm create vuepress-theme-hope@next [dir]
 ```
 
-@codetab npm
+@tab npm
 
 ```bash
 npm init vuepress-theme-hope@next [dir]
@@ -42,7 +42,7 @@ Please import and use `hopeTheme` to use `vuepress-theme-hope`.
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -56,7 +56,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/config.js

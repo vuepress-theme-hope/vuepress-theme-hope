@@ -49,19 +49,19 @@ CloudFlare 的 Auto Minify 会错误的对 HTML 的空格和换行进行处理�
 
 ::: code-tabs
 
-@codetab pnpm
+@tab pnpm
 
 ```bash
 pnpm add vuepress@next vuepress-theme-hope@next
 ```
 
-@codetab yarn
+@tab yarn
 
 ```bash
 yarn add vuepress@next vuepress-theme-hope@next
 ```
 
-@codetab npm
+@tab npm
 
 ```bash
 npm i vuepress@next vuepress-theme-hope@next
@@ -73,19 +73,19 @@ npm i vuepress@next vuepress-theme-hope@next
 
 ::: code-tabs
 
-@codetab pnpm
+@tab pnpm
 
 ```bash
 pnpm i && pnpm up
 ```
 
-@codetab yarn
+@tab yarn
 
 ```bash
 yarn && yarn upgrade
 ```
 
-@codetab npm
+@tab npm
 
 ```bash
 npm i && npm update

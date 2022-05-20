@@ -37,7 +37,7 @@ To get correct hints, importing `defineUserConfig` from `vuepress` and wrapping 
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts{2,4,6}
 // .vuepress/config.ts
@@ -48,7 +48,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js{2,4,6}
 // .vuepress/config.js

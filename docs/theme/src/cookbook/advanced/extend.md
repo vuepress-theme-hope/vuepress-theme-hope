@@ -22,7 +22,7 @@ The aliases of the same name (`alias`) and layouts (`layouts`) of your own newly
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // .vuepress/theme/index.ts
@@ -54,7 +54,7 @@ export const localTheme = (options: HopeThemeOptions) => ({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/them/index.js

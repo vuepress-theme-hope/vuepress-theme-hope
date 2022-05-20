@@ -34,19 +34,19 @@ The theme can ONLY apply plugins it bundles, so `plugins` field in theme options
 
    ::: code-tabs
 
-   @codetab pnpm
+   @tab pnpm
 
    ```bash
    pnpm add -D @vuepress/plugin-search@next
    ```
 
-   @codetab yarn
+   @tab yarn
 
    ```bash
    yarn add -D @vuepress/plugin-search@next
    ```
 
-   @codetab npm
+   @tab npm
 
    ```bash
    npm i -D @vuepress/plugin-search@next
@@ -58,7 +58,7 @@ The theme can ONLY apply plugins it bundles, so `plugins` field in theme options
 
    ::: code-tabs
 
-   @codetab TS
+   @tab TS
 
    ```ts
    // .vuepress/config.ts
@@ -74,7 +74,7 @@ The theme can ONLY apply plugins it bundles, so `plugins` field in theme options
    });
    ```
 
-   @codetab JS
+   @tab JS
 
    ```js
    // .vuepress/config.js
@@ -251,19 +251,19 @@ See [Plugin Docs][search] for available options.
 
    ::: code-tabs
 
-   @codetab pnpm
+   @tab pnpm
 
    ```bash
    pnpm add -D @vuepress/plugin-docsearch@next
    ```
 
-   @codetab yarn
+   @tab yarn
 
    ```bash
    yarn add -D @vuepress/plugin-docsearch@next
    ```
 
-   @codetab npm
+   @tab npm
 
    ```bash
    npm i -D @vuepress/plugin-docsearch@next
@@ -275,7 +275,7 @@ See [Plugin Docs][search] for available options.
 
    ::: code-tabs
 
-   @codetab TS
+   @tab TS
 
    ```ts
    // .vuepress/config.ts
@@ -292,7 +292,7 @@ See [Plugin Docs][search] for available options.
    });
    ```
 
-   @codetab JS
+   @tab JS
 
    ```js
    // .vuepress/config.js

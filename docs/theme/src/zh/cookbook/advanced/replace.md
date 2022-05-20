@@ -18,7 +18,7 @@ tag:
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -43,7 +43,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -230,7 +230,7 @@ Components:
 
 ::: code-tabs
 
-@codetab config.ts
+@tab config.ts
 
 ```ts
 // .vuepress/config.ts
@@ -255,7 +255,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab HomePage.vue
+@tab HomePage.vue
 
 ```vue
 <template>

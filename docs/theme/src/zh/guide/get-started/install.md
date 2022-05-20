@@ -16,13 +16,13 @@ tag:
 
 ::: code-tabs
 
-@codetab pnpm
+@tab pnpm
 
 ```bash
 pnpm create vuepress-theme-hope@next [dir]
 ```
 
-@codetab npm
+@tab npm
 
 ```bash
 npm init vuepress-theme-hope@next [dir]
@@ -42,7 +42,7 @@ npm init vuepress-theme-hope@next [dir]
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -56,7 +56,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/config.js

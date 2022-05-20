@@ -92,19 +92,19 @@ copyright: false
 
 ::: code-tabs
 
-@codetab pnpm
+@tab pnpm
 
 ```bash
 pnpm add -D vuepress-plugin-md-enhance@next
 ```
 
-@codetab yarn
+@tab yarn
 
 ```bash
 yarn add -D vuepress-plugin-md-enhance@next
 ```
 
-@codetab npm
+@tab npm
 
 ```bash
 npm i -D vuepress-plugin-md-enhance@next
@@ -116,7 +116,7 @@ npm i -D vuepress-plugin-md-enhance@next
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -131,7 +131,7 @@ export default {
 };
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/config.js

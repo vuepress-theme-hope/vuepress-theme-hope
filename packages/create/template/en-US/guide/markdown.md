@@ -140,19 +140,19 @@ A custom details container
 
 ::: code-tabs
 
-@codetab pnpm
+@tab pnpm
 
 ```bash
 pnpm add -D vuepress-theme-hope
 ```
 
-@codetab yarn
+@tab yarn
 
 ```bash
 yarn add -D vuepress-theme-hope
 ```
 
-@codetab:active npm
+@tab:active npm
 
 ```bash
 npm i -D vuepress-theme-hope

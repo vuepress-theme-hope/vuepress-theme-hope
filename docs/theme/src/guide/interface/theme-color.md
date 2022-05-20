@@ -33,7 +33,7 @@ You need to set `themeColor` with `{ colorname1: colorvalue, colorname2: colorva
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts {7-12}
 // .vuepress/config.ts
@@ -52,7 +52,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js {6-11}
 // .vuepress/config.js

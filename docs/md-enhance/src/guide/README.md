@@ -37,19 +37,19 @@ Please use the options below and enable ONLY the feature you want to use.
 
 ::: code-tabs
 
-@codetab pnpm
+@tab pnpm
 
 ```bash
 pnpm add -D vuepress-plugin-md-enhance@next
 ```
 
-@codetab yarn
+@tab yarn
 
 ```bash
 yarn add -D vuepress-plugin-md-enhance@next
 ```
 
-@codetab npm:active
+@tab npm:active
 
 ```bash
 npm i -D vuepress-plugin-md-enhance@next

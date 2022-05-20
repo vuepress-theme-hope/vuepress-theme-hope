@@ -28,7 +28,7 @@ A basic config file looks like this:
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 import { defineUserConfig } from "vuepress";
@@ -47,7 +47,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 const { hopeTheme } = require("vuepress-theme-hope");

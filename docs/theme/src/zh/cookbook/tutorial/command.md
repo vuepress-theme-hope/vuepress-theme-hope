@@ -52,19 +52,19 @@ tag:
 
 ::: code-tabs
 
-@codetab pnpm
+@tab pnpm
 
 ```bash
 pnpm add vuepress@next vuepress-theme-hope@next && pnpm i && pnpm up
 ```
 
-@codetab yarn
+@tab yarn
 
 ```bash
 yarn add vuepress@next vuepress-theme-hope@next && yarn install && yarn upgrade
 ```
 
-@codetab npm
+@tab npm
 
 ```bash
 npm i vuepress@next vuepress-theme-hope@next && npm install && npm update

@@ -17,7 +17,7 @@ Let the Markdown file in your VuePress site support including other files.
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts {8-10}
 // .vuepress/config.ts
@@ -35,7 +35,7 @@ export default defineUserConfig({
 });
 ```
 
-@codetab JS
+@tab JS
 
 ```js {7-9}
 // .vuepress/config.js
@@ -100,7 +100,7 @@ E.g.: you can use `@src` as an alias for your source directory.
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts {8}
 // .vuepress/config.ts
@@ -124,7 +124,7 @@ export default {
 };
 ```
 
-@codetab JS
+@tab JS
 
 ```js {8}
 // .vuepress/config.js
@@ -154,7 +154,7 @@ Also, to place your Markdown files directly besides your actual files, but donâ€
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts {8}
 // .vuepress/config.ts
@@ -172,7 +172,7 @@ export default {
 };
 ```
 
-@codetab JS
+@tab JS
 
 ```js {8}
 // .vuepress/config.js

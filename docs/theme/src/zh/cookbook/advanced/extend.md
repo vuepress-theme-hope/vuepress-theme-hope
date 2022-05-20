@@ -24,7 +24,7 @@ tag:
 
 ::: code-tabs
 
-@codetab TS
+@tab TS
 
 ```ts
 // .vuepress/theme/index.ts
@@ -56,7 +56,7 @@ export default {
 };
 ```
 
-@codetab JS
+@tab JS
 
 ```js
 // .vuepress/them/index.js

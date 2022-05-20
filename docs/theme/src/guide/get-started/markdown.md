@@ -37,13 +37,13 @@ For these extended syntax, please see [Built-in Markdown Features](../../cookboo
 
 ::: code-tabs
 
-@codetab yarn
+@tab yarn
 
 ```bash
 yarn add -D vuepress-theme-hope
 ```
 
-@codetab:active npm
+@tab:active npm
 
 ```bash
 npm i -D vuepress-theme-hope
