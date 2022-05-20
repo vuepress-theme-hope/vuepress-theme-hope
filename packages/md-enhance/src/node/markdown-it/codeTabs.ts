@@ -277,7 +277,7 @@ export const codeTabs: PluginSimple = (md) => {
 
     return `<CodeTabs :active="${activeIndex}" :data='${JSON.stringify(
       codeTabsData
-    )}'>\n`;
+    ).replace(/'/g, "&#39")}'>\n`;
   };
 
   md.renderer.rules.code_tabs_close = (): string => "</CodeTabs>\n";
