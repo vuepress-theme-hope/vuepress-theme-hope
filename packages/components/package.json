@@ -45,7 +45,7 @@
     "@vueuse/core": "^8.5.0",
     "balloon-css": "^1.2.0",
     "ts-debounce": "^4.0.0",
-    "vue": "^3.2.33",
+    "vue": "^3.2.34",
     "vue-router": "^4.0.15",
     "vuepress-plugin-reading-time2": "workspace:*",
     "vuepress-plugin-sass-palette": "workspace:*"

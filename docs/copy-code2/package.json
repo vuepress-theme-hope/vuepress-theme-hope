@@ -26,7 +26,7 @@
     "@vuepress/utils": "2.0.0-beta.45",
     "sass-loader": "^12.6.0",
     "three": "^0.140.2",
-    "vue": "^3.2.33",
+    "vue": "^3.2.34",
     "vuepress-plugin-copy-code2": "workspace:*",
     "vuepress-theme-hope": "workspace:*",
     "vuepress-vite": "2.0.0-beta.45",

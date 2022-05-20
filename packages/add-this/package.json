@@ -40,7 +40,7 @@
     "@mr-hope/vuepress-shared": "workspace:*",
     "@vuepress/client": "2.0.0-beta.45",
     "@vuepress/utils": "2.0.0-beta.45",
-    "vue": "^3.2.33"
+    "vue": "^3.2.34"
   },
   "devDependencies": {
     "@vuepress/core": "2.0.0-beta.45",
