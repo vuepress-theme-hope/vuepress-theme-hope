@@ -69,7 +69,7 @@ export default hopeTheme({
   },
 
   plugins: {
-    components: ["Badge", "CodePen", "PDF"],
+    components: ["Badge", "CodePen", "PDF", "Tab"],
 
     comment: {
       type: "giscus",

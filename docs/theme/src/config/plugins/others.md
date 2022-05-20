@@ -16,6 +16,7 @@ Register some component which can be used in Markdown files, available component
 - Badge
 - CodePen
 - PDF
+- Tab
 
 You can set `plugin.components` with an array of components you want, by default it will be `["Badge"]`.
 

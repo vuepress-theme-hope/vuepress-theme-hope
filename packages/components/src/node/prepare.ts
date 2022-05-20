@@ -6,7 +6,12 @@ import type { AvailableComponent, ComponentOptions } from "../shared";
 
 const CLIENT_FOLDER = ensureEndingSlash(path.resolve(__dirname, "../client"));
 
-const availableComponents: AvailableComponent[] = ["Badge", "CodePen", "PDF"];
+const availableComponents: AvailableComponent[] = [
+  "Badge",
+  "CodePen",
+  "PDF",
+  "Tab",
+];
 
 export const prepareConfigFile = (
   app: App,
@@ -17,7 +22,10 @@ export const prepareConfigFile = (
   let rootComponents = "";
 
   options.components.forEach((item) => {
-    if (availableComponents.includes(item)) {
+    if (item === "Tab") {
+      configImport += `import { Tab, Tabs } from "${CLIENT_FOLDER}components/Tab";\n`;
+      enhance += `app.component("Tab", Tab);\napp.component("Tabs", Tabs);\n`;
+    } else if (availableComponents.includes(item)) {
       configImport += `import ${item} from "${CLIENT_FOLDER}components/${item}";\n`;
       enhance += `app.component("${item}", ${item});\n`;
     }

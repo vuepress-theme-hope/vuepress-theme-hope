@@ -1,7 +1,7 @@
 import type { LocaleConfig } from "@vuepress/core";
 import type { BackToTopLocaleData } from "./locales";
 
-export type AvailableComponent = "Badge" | "CodePen" | "PDF";
+export type AvailableComponent = "Badge" | "CodePen" | "PDF" | "Tab";
 
 export interface ComponentOptions {
   /**

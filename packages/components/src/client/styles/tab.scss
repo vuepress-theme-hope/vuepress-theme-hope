@@ -1,0 +1,121 @@
+@use "@mr-hope/vuepress-shared/styles/reset";
+
+:root {
+  --tab-bg-color: var(--c-bg);
+  --tab-nav-text-color: var(--c-text);
+  --tab-nav-bg-color: #e0e0e0;
+  --tab-nav-hover-color: #eee;
+}
+
+#{hope-config.$dark-selector} {
+  --tab-nav-bg-color: #34343f;
+  --tab-nav-hover-color: #2d2d38;
+}
+
+.tab-list {
+  margin: 1.5rem 0;
+  border: 2px solid var(--c-border);
+  border-radius: 8px;
+}
+
+.tab-list-nav {
+  display: flex;
+
+  margin: 0;
+  padding: 0;
+  border-radius: 8px 8px 0 0;
+
+  background-color: var(--tab-nav-bg-color);
+  list-style: none;
+
+  transition: background-color var(--color-transition, 0.3s);
+
+  @media (max-width: hope-config.$mobile) {
+    margin-right: -1.5rem;
+    margin-left: -1.5rem;
+    border-radius: 0;
+  }
+}
+
+.tab-list-nav-item {
+  @include reset.button;
+
+  position: relative;
+
+  min-width: 4rem;
+  margin: 0;
+  padding: 0.5em 1em;
+  border-radius: 8px 8px 0 0;
+
+  background-color: transparent;
+  color: var(--tab-nav-text-color);
+
+  font-weight: 600;
+  font-size: 0.85em;
+  line-height: 1.75;
+
+  cursor: pointer;
+
+  transition: background-color var(--color-transition, 0.3s),
+    color var(--color-transition, 0.3s);
+
+  &:hover {
+    background-color: var(--tab-nav-hover-color);
+  }
+
+  &::before,
+  &::after {
+    content: " ";
+
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+
+    width: 8px;
+    height: 8px;
+  }
+
+  &::before {
+    right: 100%;
+  }
+
+  &::after {
+    left: 100%;
+  }
+
+  &.active {
+    background-color: var(--tab-bg-color);
+
+    &::before {
+      background: radial-gradient(
+        16px at left top,
+        transparent 50%,
+        var(--tab-bg-color) 50%
+      );
+    }
+
+    &::after {
+      background: radial-gradient(
+        16px at right top,
+        transparent 50%,
+        var(--tab-bg-color) 50%
+      );
+    }
+  }
+
+  &:first-child {
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.tab-item {
+  display: none;
+  padding: 1rem 0.75rem;
+  background: var(--tab-bg-color);
+
+  &.active {
+    display: block;
+  }
+}

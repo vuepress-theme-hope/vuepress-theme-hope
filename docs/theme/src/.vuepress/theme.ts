@@ -45,7 +45,7 @@ export default hopeTheme({
   plugins: {
     blog: true,
 
-    components: ["Badge", "CodePen", "PDF"],
+    components: ["Badge", "CodePen", "PDF", "Tab"],
 
     comment: {
       type: "giscus",
