@@ -70,7 +70,7 @@
     "vuepress-plugin-sass-palette": "workspace:*"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.9",
+    "@babel/core": "^7.18.0",
     "@types/babel__core": "^7.1.19",
     "@vuepress/core": "2.0.0-beta.45",
     "@vuepress/markdown": "2.0.0-beta.45",
