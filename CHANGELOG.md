@@ -10,7 +10,7 @@ All notable changes to this project will be documented in this file. See [Conven
 
 ### Features
 
-- **md-enhance:** change `[@codetab](https://github.com/codetab)` to `[@tab](https://github.com/tab)` ([9cdd7c8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9cdd7c8a34931ddf25d508f933789edf03839536))
+- **md-enhance:** change `@codetab` to `@tab` ([9cdd7c8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9cdd7c8a34931ddf25d508f933789edf03839536))
 
 ## [2.0.0-beta.65](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.64...v2.0.0-beta.65) (2022-05-20)
 
@@ -47,13 +47,13 @@ All notable changes to this project will be documented in this file. See [Conven
   ````md
   ::: code-tabs
 
-  @codetab pnpm
+  @tab pnpm
 
   ```bash
   pnpm create vuepress-theme-hope@next [dir]
   ```
 
-  @codetab:active npm
+  @tab:active npm
 
   ```bash
   npm init vuepress-theme-hope@next [dir]
