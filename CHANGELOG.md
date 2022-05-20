@@ -4,6 +4,56 @@ All notable changes to this project will be documented in this file. See [Conven
 
 ## [2.0.0-beta.65](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.64...v2.0.0-beta.65) (2022-05-20)
 
+### ⚠ BREAKING CHANGES
+
+- **md-enhance:** codegroup is replaced by codetabs
+
+  Before:
+
+  ````md
+  :::: code-group
+
+  ::: code-group-item pnpm
+
+  ```bash
+  pnpm create vuepress-theme-hope@next [dir]
+  ```
+
+  :::
+
+  ::: code-group-item npm:active
+
+  ```bash
+  npm init vuepress-theme-hope@next [dir]
+  ```
+
+  :::
+
+  ::::
+  ````
+
+  After:
+
+  ````md
+  ::: code-tabs
+
+  @codetab pnpm
+
+  ```bash
+  pnpm create vuepress-theme-hope@next [dir]
+  ```
+
+  @codetab:active npm
+
+  ```bash
+  npm init vuepress-theme-hope@next [dir]
+  ```
+
+  :::
+  ````
+
+  This change avoids nesting containers and makes it easier to read and write.
+
 ### Features
 
 - **components:** add Tab component ([07909b4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/07909b429628c9d26cc0661abd894aa0b71b932a))
