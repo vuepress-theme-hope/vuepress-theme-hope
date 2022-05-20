@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.66](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.65...v2.0.0-beta.66) (2022-05-20)
+
+### ⚠ BREAKING CHANGES
+
+- **md-enhance:** change `@codetab` to `@tab`, shorten keywords according to user feedback
+
+### Features
+
+- **md-enhance:** change `[@codetab](https://github.com/codetab)` to `[@tab](https://github.com/tab)` ([9cdd7c8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9cdd7c8a34931ddf25d508f933789edf03839536))
+
 ## [2.0.0-beta.65](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.64...v2.0.0-beta.65) (2022-05-20)
 
 ### ⚠ BREAKING CHANGES
