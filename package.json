@@ -69,7 +69,7 @@
     "@rollup/plugin-typescript": "^8.3.2",
     "@textlint-rule/textlint-rule-no-unmatched-pair": "^1.0.8",
     "@types/inquirer": "^8.2.1",
-    "@types/node": "^17.0.34",
+    "@types/node": "^17.0.35",
     "@typescript-eslint/eslint-plugin": "^5.25.0",
     "@typescript-eslint/parser": "^5.25.0",
     "@vue/eslint-config-typescript": "^10.0.0",
