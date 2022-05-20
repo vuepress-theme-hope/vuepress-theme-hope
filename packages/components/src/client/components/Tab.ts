@@ -1,3 +1,4 @@
+import { ClientOnly } from "@vuepress/client";
 import { useStorage } from "@vueuse/core";
 import { defineComponent, h, onBeforeUpdate, ref, watch } from "vue";
 import type { FunctionalComponent, VNode } from "vue";
@@ -147,35 +148,37 @@ export const Tabs = defineComponent({
             componentProps.value || componentProps.title;
       });
 
-      return h("div", { class: "tab-list" }, [
-        h(
-          "div",
-          { class: "tab-list-nav" },
-          tabs.map((vnode, index) => {
-            const isActive = index === activeIndex.value;
+      return h(ClientOnly, () =>
+        h("div", { class: "tab-list" }, [
+          h(
+            "div",
+            { class: "tab-list-nav" },
+            tabs.map((vnode, index) => {
+              const isActive = index === activeIndex.value;
 
-            return h(
-              "button",
-              {
-                ref: (element) => {
-                  if (element)
-                    tabRefs.value[index] = element as HTMLUListElement;
+              return h(
+                "button",
+                {
+                  ref: (element) => {
+                    if (element)
+                      tabRefs.value[index] = element as HTMLUListElement;
+                  },
+                  class: ["tab-list-nav-item", { active: isActive }],
+                  "aria-pressed": isActive,
+                  "aria-expanded": isActive,
+                  onClick: () => {
+                    activeIndex.value = index;
+                  },
+                  onKeydown: (event: KeyboardEvent) =>
+                    keyboardHandler(event, index),
                 },
-                class: ["tab-list-nav-item", { active: isActive }],
-                "aria-pressed": isActive,
-                "aria-expanded": isActive,
-                onClick: () => {
-                  activeIndex.value = index;
-                },
-                onKeydown: (event: KeyboardEvent) =>
-                  keyboardHandler(event, index),
-              },
-              vnode.props.title
-            );
-          })
-        ),
-        tabs,
-      ]);
+                vnode.props.title
+              );
+            })
+          ),
+          tabs,
+        ])
+      );
     };
   },
 });

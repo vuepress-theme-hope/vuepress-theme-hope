@@ -35,7 +35,7 @@ export default [
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/Tab", {
-    external: ["@vueuse/core", "vue", /\.scss$/],
+    external: ["@vuepress/client", "@vueuse/core", "vue", /\.scss$/],
     dtsExternal: [/\.scss$/],
   }),
 ];

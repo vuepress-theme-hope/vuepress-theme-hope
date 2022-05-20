@@ -1,3 +1,4 @@
+import { ClientOnly } from "@vuepress/client";
 import { useStorage } from "@vueuse/core";
 import { defineComponent, h, ref, watch } from "vue";
 import type { PropType, VNode } from "vue";
@@ -89,45 +90,47 @@ export default defineComponent({
     );
 
     return (): VNode | null => {
-      return props.data.length
-        ? h("div", { class: "code-tabs" }, [
-            h(
-              "div",
-              { class: "code-tabs-nav" },
-              props.data.map(({ title }, index) => {
+      return h(ClientOnly, () =>
+        props.data.length
+          ? h("div", { class: "code-tabs" }, [
+              h(
+                "div",
+                { class: "code-tabs-nav" },
+                props.data.map(({ title }, index) => {
+                  const isActive = index === activeIndex.value;
+
+                  return h(
+                    "button",
+                    {
+                      ref: (element) => {
+                        if (element)
+                          tabRefs.value[index] = element as HTMLUListElement;
+                      },
+                      class: ["code-tabs-nav-tab", { active: isActive }],
+                      "aria-pressed": isActive,
+                      "aria-expanded": isActive,
+                      onClick: () => {
+                        activeIndex.value = index;
+                      },
+                      onKeydown: (event: KeyboardEvent) =>
+                        keyboardHandler(event, index),
+                    },
+                    title
+                  );
+                })
+              ),
+              props.data.map(({ code }, index) => {
                 const isActive = index === activeIndex.value;
 
-                return h(
-                  "button",
-                  {
-                    ref: (element) => {
-                      if (element)
-                        tabRefs.value[index] = element as HTMLUListElement;
-                    },
-                    class: ["code-tabs-nav-tab", { active: isActive }],
-                    "aria-pressed": isActive,
-                    "aria-expanded": isActive,
-                    onClick: () => {
-                      activeIndex.value = index;
-                    },
-                    onKeydown: (event: KeyboardEvent) =>
-                      keyboardHandler(event, index),
-                  },
-                  title
-                );
-              })
-            ),
-            props.data.map(({ code }, index) => {
-              const isActive = index === activeIndex.value;
-
-              return h("div", {
-                class: ["code-tab", { active: isActive }],
-                "aria-selected": isActive,
-                innerHTML: code,
-              });
-            }),
-          ])
-        : null;
+                return h("div", {
+                  class: ["code-tab", { active: isActive }],
+                  "aria-selected": isActive,
+                  innerHTML: code,
+                });
+              }),
+            ])
+          : null
+      );
     };
   },
 });

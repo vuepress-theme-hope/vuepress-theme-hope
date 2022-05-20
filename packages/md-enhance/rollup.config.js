@@ -42,7 +42,7 @@ export default [
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/CodeTabs", {
-    external: ["vue", /\.scss$/],
+    external: ["@vuepress/client", "@vueuse/core", "vue", /\.scss$/],
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/FlowChart", {
