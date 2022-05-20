@@ -110,12 +110,6 @@ export default defineComponent({
                               h(AutoLink, {
                                 config: grandchild,
                                 onFocusout: () => {
-                                  console.log(
-                                    "focusout",
-                                    grandIndex,
-                                    child.children.length,
-                                    isLastChild
-                                  );
                                   if (
                                     // last item of grandchild
                                     grandIndex === child.children.length - 1 &&
