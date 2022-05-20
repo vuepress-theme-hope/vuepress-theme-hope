@@ -49,7 +49,7 @@ pnpm add -D vuepress-plugin-md-enhance@next
 yarn add -D vuepress-plugin-md-enhance@next
 ```
 
-@tab npm:active
+@tab:active npm
 
 ```bash
 npm i -D vuepress-plugin-md-enhance@next

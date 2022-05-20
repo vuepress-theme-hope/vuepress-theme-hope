@@ -152,7 +152,7 @@ pnpm add -D vuepress-theme-hope
 yarn add -D vuepress-theme-hope
 ```
 
-@tab npm:active
+@tab:active npm
 
 ```bash
 npm i -D vuepress-theme-hope
