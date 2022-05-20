@@ -69,6 +69,55 @@ const a = 1;
     ).toMatchSnapshot();
   });
 
+  it("shoud support id", () => {
+    expect(
+      markdownIt.render(`
+::: code-tabs#event
+
+@tab js
+
+\`\`\`js
+const a = 1;
+\`\`\`
+
+:::
+    `)
+    ).toMatchSnapshot();
+
+    expect(
+      markdownIt.render(`
+::: code-tabs#event-id
+@tab js
+\`\`\`js
+const a = 1;
+\`\`\`
+:::
+    `)
+    ).toMatchSnapshot();
+
+    expect(
+      markdownIt.render(`
+::: code-tabs#id with space
+@tab js
+\`\`\`js
+const a = 1;
+\`\`\`
+:::
+    `)
+    ).toMatchSnapshot();
+
+    expect(
+      markdownIt.render(`
+::: code-tabs # id starts and having space in the end
+@tab js
+\`\`\`js
+const a = 1;
+\`\`\`
+:::
+    `)
+    ).toMatchSnapshot();
+  });
+
   it("shoud support active", () => {
     expect(
       markdownIt.render(`

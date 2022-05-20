@@ -1,14 +1,19 @@
-import { defineComponent, h, ref } from "vue";
+import { useStorage } from "@vueuse/core";
+import { defineComponent, h, ref, watch } from "vue";
 import type { PropType, VNode } from "vue";
 
 import "../styles/code-tabs.scss";
+
+const codeTabStore = useStorage<Record<string, string>>(
+  "VUEPRESS_CODE_TAB_STORE",
+  {}
+);
 
 export default defineComponent({
   name: "CodeTabs",
 
   props: {
     active: { type: Number, default: 0 },
-    // active: { type: Number, required: true },
     data: {
       type: Array as PropType<
         {
@@ -16,17 +21,29 @@ export default defineComponent({
           title: string;
         }[]
       >,
-      default: () => [],
+      required: true,
     },
-    // data: { type: Array as PropType<CodeData[]>, required: true },
+    codeId: {
+      type: String,
+      default: "",
+    },
   },
 
   setup(props) {
+    const getInitialIndex = (): number => {
+      if (props.codeId) {
+        const valueIndex = props.data.findIndex(
+          ({ title }) => codeTabStore.value[props.codeId] === title
+        );
+
+        if (valueIndex !== -1) return valueIndex;
+      }
+
+      return props.active;
+    };
+
     // index of current active item
-    const activeIndex = ref(
-      // initialized by props
-      props.active
-    );
+    const activeIndex = ref(getInitialIndex());
 
     // refs of the tab buttons
     const tabRefs = ref<HTMLUListElement[]>([]);
@@ -55,7 +72,21 @@ export default defineComponent({
         event.preventDefault();
         activatePrev();
       }
+
+      if (props.codeId)
+        codeTabStore.value[props.codeId] = props.data[activeIndex.value].title;
     };
+
+    watch(
+      () => codeTabStore.value[props.codeId],
+      (newValue, oldValue) => {
+        if (props.codeId && newValue !== oldValue) {
+          const index = props.data.findIndex(({ title }) => title === newValue);
+
+          if (index !== -1) activeIndex.value = index;
+        }
+      }
+    );
 
     return (): VNode | null => {
       return props.data.length

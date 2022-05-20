@@ -27,7 +27,9 @@ export const codeTabs: PluginSimple = (md) => {
     const markup = state.src.slice(start, pos);
     const params = state.src.slice(pos, max);
 
-    if (params.trim() !== "code-tabs") return false;
+    const [name, id = ""] = params.split("#", 2);
+
+    if (name.trim() !== "code-tabs") return false;
 
     // Since start is found, we can report success here in validation mode
     if (silent) return true;
@@ -91,7 +93,8 @@ export const codeTabs: PluginSimple = (md) => {
 
     openToken.markup = markup;
     openToken.block = true;
-    openToken.info = params;
+    openToken.info = name;
+    openToken.meta = { id: id.trim() };
     openToken.map = [startLine, nextLine - (autoClosed ? 1 : 0)];
 
     state.md.block.tokenize(
@@ -227,10 +230,13 @@ export const codeTabs: PluginSimple = (md) => {
     env,
     self
   ): string => {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    const { meta } = tokens[index];
+
     let inCodeTab = false;
     let foundFence = false;
     let codeTabIndex = -1;
-    let activeIndex = 0;
+    let activeIndex = -1;
     let title = "";
     const codeTabsData: { code: string; title: string }[] = [];
 
@@ -275,9 +281,13 @@ export const codeTabs: PluginSimple = (md) => {
       }
     }
 
-    return `<CodeTabs :active="${activeIndex}" :data='${JSON.stringify(
-      codeTabsData
-    ).replace(/'/g, "&#39")}'>\n`;
+    return `<CodeTabs :data='${
+      // single quote will break @vue/compiler-sfc
+      JSON.stringify(codeTabsData).replace(/'/g, "&#39")
+    }'${activeIndex !== -1 ? ` :active="${activeIndex}"` : ""}${
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      meta.id ? ` code-id="${meta.id as string}"` : ""
+    }>\n`;
   };
 
   md.renderer.rules.code_tabs_close = (): string => "</CodeTabs>\n";
