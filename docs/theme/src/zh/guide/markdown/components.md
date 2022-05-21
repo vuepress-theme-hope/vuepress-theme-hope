@@ -9,25 +9,24 @@ tag:
   - 组件
 ---
 
+通过使用`@mr-hope/vuepress-plugin-components`，你可以在你的 Markdown 文件中导入和使用一些组件。
+
+可用组件：
+
+- Badge
+- CodePen
+- FontIcon
+- PDF
+
+默认情况下，`<Badge />` 和 `<CodePen />` 是启用的。
+
+要启用组件，您应该使用组件名称数组设置 `plugin.components`。
+
+<!-- 更多 -->
+
 ## Badge
 
 支持自定义颜色的徽章。
-
-### Badge 属性
-
-#### text
-
-- 类型: `string`
-- 必填: 是
-
-徽章的文字
-
-#### 类型
-
-- 类型: `"tip" | "warning" | "danger" | "info" | "note"`
-- 默认值: `"info"`
-
-徽章的类型
 
 - <Badge text="tip" type="tip" vertical="middle" />
 - <Badge text="warning" type="warning" vertical="middle" />
@@ -35,132 +34,95 @@ tag:
 - <Badge text="info" type="info" vertical="middle" />
 - <Badge text="note" type="note" vertical="middle" />
 
-#### color
-
-- 类型: `string`
-- 必填: 否
-
-徽章的颜色，填入在 CSS 中合法的颜色值。
-
-#### vertical
-
-- 类型: `"top" | "middle"`
-- 默认值: `"top"`
-
-徽章的垂直方向的位置
-
-### Badge 使用
-
-你可以在 Markdown 中使用这个组件来为标题或链接添加一些状态:
-
-```md
-徽章测试 <Badge text="Building" type="warning" /> <Badge text="MrHope" color="grey" />
-```
-
-徽章测试 <Badge text="Building" type="warning" /> <Badge text="MrHope" color="grey" />
+有关可用属性，请参阅 [Badge][badge] 页面。
 
 ## CodePen
 
-CodePen 演示组件。
+一个允许您嵌入 CodePen 演示的组件。
 
-### CodePen 属性
+一个使用用户和 Slug Hash 的案例:
 
-#### link
-
-- 类型: `string`
-- 必填: 否
-
-CodePen 项目链接。
-
-#### user
-
-- 类型: `string`
-- 必填: 如果未设置 `link`，则是
-
-CodePen 用户。
-
-#### slugHash
-
-- 类型: `string`
-- 必填: 如果未设置 `link`，则是
-
-CodePen 项目 slug hash。
-
-#### title
-
-- 类型: `string`
-- 必填: 否
-
-CodePen 项目标题。
-
-#### height
-
-- 类型: `numbr`
-- 默认值: `380`
-
-以 px 为单位的编辑器高度。
-
-#### theme
-
-- 类型: `"默认值" | "light" | "dark"`
-- 默认值: `"默认值"`
-
-编辑器主题。
-
-#### defaultTab
-
-- 类型: `string[]`
-- 默认值: `["result"]`
-
-编辑器默认打开的选项卡。
-
-### CodePen 用法
-
-您可以在 Markdown 中使用它来添加嵌入演示:
+<CodePen
+  user="kowlor"
+  slug-hash="ZYYQoy"
+  title="Solar System animation - Pure CSS"
+  :default-tab="['css','result']"
+/>
 
 ```md
-<CodePen user="kowlor" slug-hash="ZYYQoy" title="Solar System animation - Pure CSS" :default-tab="['css','result']" />
+<CodePen
+  user="kowlor"
+  slug-hash="ZYYQoy"
+  title="Solar System animation - Pure CSS"
+  :default-tab="['css','result']"
+/>
 ```
 
-<CodePen user="kowlor" slug-hash="ZYYQoy" title="Solar System animation - Pure CSS" :default-tab="['css','result']" />
+一个使用链接的案例:
+
+<CodePen
+  link="https://codepen.io/kowlor/pen/ZYYQoy"
+  title="Solar System animation - Pure CSS"
+  :default-tab="['css','result']"
+/>
+
+```md
+<CodePen
+  link="https://codepen.io/kowlor/pen/ZYYQoy"
+  title="Solar System animation - Pure CSS"
+  :default-tab="['css','result']"
+/>
+```
+
+有关可用属性，请参阅 [CodePen][codepen] 页面。
+
+## FontIcon
+
+允许您显示字体图标的组件。
+
+- 主页图标: <FontIcon icon="home" />
+
+- 一个大红 Markdown 图标: <FontIcon icon="markdown" color="red" size="32" />
+
+```md
+- 主页图标: <FontIcon icon="home" />
+
+- 一个大红 Markdown 图标: <FontIcon icon="markdown" color="red" size="32" />
+```
+
+有关可用属性，请参阅 [FontIcon][fonticon] 页面。
 
 ## PDF
 
-PDF 预览组件
+PDF 浏览器组件。
 
-### PDF Props
+默认 PDF 阅读器:
 
-#### url
+<PDF url="/sample.pdf" />
 
-- 类型: `string`
-- 必填: 是
+```md
+<PDF url="/sample.pdf" />
+```
 
-PDF 链接，**不支持**相对路径。
+禁用工具栏:
 
-#### height
+<PDF url="/sample.pdf" :toolbar="false" />
 
-- 类型: `string | number`
-- 必填: 是
+```md
+<PDF url="/sample.pdf" :toolbar="false" />
+```
 
-PDF 预览器的高度
+初始页面为第二页:
 
-#### page
+<PDF url="/sample.pdf" :page="2" />
 
-- 类型: `number`
-- 默认值: `1`
+```md
+<PDF url="/sample.pdf" :page="2" />
+```
 
-PDF 文档的初始页面
+有关可用属性，请参阅 [PDF][pdf] 页面。
 
-#### toolbar
-
-- 类型: `boolean`
-- 默认值: `true`
-
-是否显示工具栏
-
-#### zoom
-
-- 类型: `number`
-- 默认值: `100`
-
-PDF 文档的初始缩放比例
+[badge]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/badge.html
+[codepen]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/codepen.html
+[fonticon]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/fonticon.html
+[pdf]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/pdf.html

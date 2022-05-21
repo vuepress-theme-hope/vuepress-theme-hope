@@ -2,7 +2,7 @@
 title: PDF
 ---
 
-PDF preview component.
+PDF viewer component.
 
 You can use this component to embe a PDF viewer.
 

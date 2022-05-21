@@ -9,25 +9,24 @@ tag:
   - Markdown
 ---
 
+By using `@mr-hope/vuepress-plugin-components`, you can import and use some components in your Markdown files.
+
+Available components:
+
+- Badge
+- CodePen
+- FontIcon
+- PDF
+
+By default, `<Badge />` and `<CodePen />` is enabled.
+
+To enable components, you should set `plugin.components` with an array of components name.
+
+<!-- more -->
+
 ## Badge
 
-A badge which allows you to customize it’s color.
-
-### Badge Props
-
-#### text
-
-- Type: `string`
-- Required: Yes
-
-Text of the badge
-
-#### type
-
-- Type: `"tip" | "warning" | "danger" | "info" | "note"`
-- Default: `"info"`
-
-Badge types:
+A badge component.
 
 - <Badge text="tip" type="tip" vertical="middle" />
 - <Badge text="warning" type="warning" vertical="middle" />
@@ -35,132 +34,95 @@ Badge types:
 - <Badge text="info" type="info" vertical="middle" />
 - <Badge text="note" type="note" vertical="middle" />
 
-#### color
-
-- Type: `string`
-- Required: No
-
-Badge color, please fill in CSS color strings
-
-#### vertical
-
-- Type: `"top" | "middle"`
-- Default: `"top"`
-
-Vertical position of the badge
-
-### Badge Usage
-
-You can use it in Markdown to add some status for titles or links:
-
-```md
-Badge Test <Badge text="Building" type="warning" /> <Badge text="MrHope" color="grey" />
-```
-
-Badge Test <Badge text="Building" type="warning" /> <Badge text="MrHope" color="grey" />
+See [Badge][badge] page for available props.
 
 ## CodePen
 
-CodePen demo component.
+A component which allows you to embed CodePen demo.
 
-### CodePen Props
+A demo with user and slug hash:
 
-#### link
-
-- Type: `string`
-- Required: No
-
-CodePen project link.
-
-#### user
-
-- Type: `string`
-- Required: Yes if `link` not set
-
-CodePen user.
-
-#### slugHash
-
-- Type: `string`
-- Required: Yes if `link` not set
-
-CodePen project slug hash.
-
-#### title
-
-- Type: `string`
-- Required: No
-
-CodePen project title.
-
-#### height
-
-- Type: `number`
-- Default: `380`
-
-Editor height in px.
-
-#### theme
-
-- Type: `"default" | "light" | "dark"`
-- Default: `"default"`
-
-Editor theme
-
-#### defaultTab
-
-- Type: `string[]`
-- Default: `["result"]`
-
-Default opened editor tab.
-
-### CodePen Usage
-
-You can use it in Markdown to add a embed demo:
+<CodePen
+  user="kowlor"
+  slug-hash="ZYYQoy"
+  title="Solar System animation - Pure CSS"
+  :default-tab="['css','result']"
+/>
 
 ```md
-<CodePen user="kowlor" slug-hash="ZYYQoy" title="Solar System animation - Pure CSS" :default-tab="['css','result']" />
+<CodePen
+  user="kowlor"
+  slug-hash="ZYYQoy"
+  title="Solar System animation - Pure CSS"
+  :default-tab="['css','result']"
+/>
 ```
 
-<CodePen user="kowlor" slug-hash="ZYYQoy" title="Solar System animation - Pure CSS" :default-tab="['css','result']" />
+A demo with link:
+
+<CodePen
+  link="https://codepen.io/kowlor/pen/ZYYQoy"
+  title="Solar System animation - Pure CSS"
+  :default-tab="['css','result']"
+/>
+
+```md
+<CodePen
+  link="https://codepen.io/kowlor/pen/ZYYQoy"
+  title="Solar System animation - Pure CSS"
+  :default-tab="['css','result']"
+/>
+```
+
+See [CodePen][codepen] page for available props.
+
+## FontIcon
+
+Component which allows you to display font icons.
+
+- Home icon: <FontIcon icon="home" />
+
+- A big and red markdown icon: <FontIcon icon="markdown" color="red" size="32" />
+
+```md
+- Home icon: <FontIcon icon="home" />
+
+- A big and red markdown icon: <FontIcon icon="markdown" color="red" size="32" />
+```
+
+See [FontIcon][fonticon] page for available props.
 
 ## PDF
 
-PDF preview component
+PDF viewer component.
 
-### PDF Props
+Default PDF viewer:
 
-#### url
+<PDF url="/sample.pdf" />
 
-- Type: `string`
-- Required: Yes
+```md
+<PDF url="/sample.pdf" />
+```
 
-PDF document link, relative path is NOT supported.
+PDF viewer without toolbar:
 
-#### height
+<PDF url="/sample.pdf" :toolbar="false" />
 
-- Type: `string | number`
-- Required: Yes
+```md
+<PDF url="/sample.pdf" :toolbar="false" />
+```
 
-Height of PDF previewer.
+PDF viewer with initial page 2:
 
-#### page
+<PDF url="/sample.pdf" :page="2" />
 
-- Type: `number`
-- Default: `1`
+```md
+<PDF url="/sample.pdf" :page="2" />
+```
 
-Initial page of pdf document.
+See [PDF][pdf] page for available props.
 
-#### toolbar
-
-- Type: `boolean`
-- Default: `true`
-
-Whether display toolbar.
-
-#### zoom
-
-- Type: `number`
-- Default: `100`
-
-Initial zoom level of pdf document.
+[badge]: https://vuepress-theme-hope.github.io/v2/components/guide/badge.html
+[codepen]: https://vuepress-theme-hope.github.io/v2/components/guide/codepen.html
+[fonticon]: https://vuepress-theme-hope.github.io/v2/components/guide/fonticon.html
+[pdf]: https://vuepress-theme-hope.github.io/v2/components/guide/pdf.html
