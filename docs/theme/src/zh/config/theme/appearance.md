@@ -21,8 +21,9 @@ tag:
 
 ## pure <Badge text="仅限 Root" type="warning" />
 
-- Type: `boolean`
-- Default: `false`
+- 类型: `boolean`
+- 默认值: `false`
+- 详情: [界面 → 纯净模式](../../guide/interface/pure.md)
 
 是否开启纯净模式。
 
@@ -85,14 +86,14 @@ tag:
 
 - 类型: `boolean`
 - 默认值: `true`
-- 详情: [界面 → FullScreen](../../guide/interface/others.md#全屏按钮)
+- 详情: [界面 → 全屏按钮](../../guide/interface/others.md#全屏按钮)
 
-Whether show the "full screen" button.
+是否显示全屏按钮牛
 
 ## backToTop <Badge text="仅限 Root" type="warning" />
 
-- Type: `boolean | number`
-- Default: `true`
+- 类型: `boolean | number`
+- 默认值: `true`
 
 是否显示返回顶部按钮。
 
@@ -100,8 +101,8 @@ Whether show the "full screen" button.
 
 ## mobileBreakPoint <Badge text="仅限 Root" type="warning" />
 
-- Type: `number`
-- Default: `719`
+- 类型: `number`
+- 默认值: `719`
 
 切换桌面布局和移动布局的窗口宽度，单位像素。
 

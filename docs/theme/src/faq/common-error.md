@@ -39,7 +39,7 @@ Also you can check these:
 
 If you see `xxx isn’t assign with a lang, and will return 'en-US' instead.` while the dev process is starting up, please check whether you set lang for every language.
 
-Even if you only have one language, you still need to [set your root language](config/i18n.md#setting-root-lang).
+Even if you only have one language, you still need to [set language](../config/i18n.md#setting-language).
 
 ## `useXXX() is called without provider`
 

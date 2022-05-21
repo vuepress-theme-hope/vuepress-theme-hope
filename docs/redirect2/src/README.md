@@ -5,7 +5,7 @@ icon: home
 heroImage: /logo.svg
 heroText: vuepress-plugin-redirect2
 tagline: Redirect Plugin for VuePress2
-action:
+actions:
   - text: Guide 💡
     link: /guide.html
     type: primary

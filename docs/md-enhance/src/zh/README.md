@@ -76,7 +76,7 @@ features:
 
   - title: 导入文件支持
     icon: markdown
-    details: 将你的文档分文不同片段，并在 Markdown 中导入
+    details: 将你的文档分段，并在 Markdown 中导入
     link: /zh/guide/include.html
 
   - title: 代码案例支持

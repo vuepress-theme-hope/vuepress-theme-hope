@@ -31,27 +31,116 @@ tag:
 ## author
 
 - 类型: `Author`
+
+  ```ts
+  type AuthorInfo = { name: string; url?: string };
+
+  type Author = string | string[] | AuthorInfo | AuthorInfo[];
+  ```
+
 - 必填: 否
-
-```ts
-type AuthorInfo = { name: string; url?: string };
-
-type Author = string | string[] | AuthorInfo | AuthorInfo[];
-```
 
 文章显示的默认作者
 
 ## navbar
 
-导航栏配置
+- 类型: `HopeThemeNavbarConfig`
 
-具体配置，请见 [布局 → 导航栏](../../guide/layout/navbar.md)
+  ```ts
+  interface TextItem {
+    text: string;
+    icon?: string;
+    ariaLabel?: string;
+  }
+
+  interface AutoLink extends TextItem {
+    link: string;
+    rel?: string;
+    target?: string;
+    activeMatch?: string;
+  }
+
+  interface HopeThemeNavGroup<T> extends TextItem {
+    prefix?: string;
+    link?: string;
+    children: T[];
+  }
+
+  type HopeThemeNavbarItem = AutoLink;
+  type HopeThemeNavbarGroup = HopeThemeNavGroup<
+    HopeThemeNavbarGroup | HopeThemeNavbarItem | string
+  >;
+  type HopeThemeNavbarConfig = (
+    | HopeThemeNavbarItem
+    | HopeThemeNavbarGroup
+    | string
+  )[];
+  ```
+
+- 详情: [布局 → 导航栏](../../guide/layout/navbar.md)
+
+导航栏配置
 
 ## sidebar
 
-侧边栏
+- 类型: `HopeThemeSidebarConfig`
 
-具体配置，请见 [布局 → 侧边栏](../../guide/layout/sidebar.md)
+  ```ts
+  interface TextItem {
+    text: string;
+    icon?: string;
+    ariaLabel?: string;
+  }
+
+  interface AutoLink extends TextItem {
+    link: string;
+    rel?: string;
+    target?: string;
+    activeMatch?: string;
+  }
+
+  type HopeThemeSidebarPageItem = AutoLink;
+
+  interface HopeThemeSidebarGroupItem extends TextItem {
+    prefix?: string;
+    link?: string;
+    collapsable?: boolean;
+    children: (
+      | HopeThemeSidebarPageItem
+      | HopeThemeSidebarGroupItem
+      | HopeThemeSidebarStructureItem
+      | string
+    )[];
+  }
+
+  interface HopeThemeSidebarStructureItem extends TextItem {
+    prefix: string;
+    link?: string;
+    collapsable?: boolean;
+    children: "structure";
+  }
+
+  type HopeThemeSidebarItem =
+    | HopeThemeSidebarPageItem
+    | HopeThemeSidebarGroupItem
+    | HopeThemeSidebarStructureItem
+    | string;
+
+  type HopeThemeSidebarArrayConfig = HopeThemeSidebarItem[];
+
+  type HopeThemeSidebarObjectConfig = Record<
+    string,
+    HopeThemeSidebarArrayConfig | "structure" | false
+  >;
+
+  type HopeThemeSidebarConfig =
+    | HopeThemeSidebarArrayConfig
+    | HopeThemeSidebarObjectConfig;
+  ```
+
+- 详情: [布局 → 侧边栏](../../guide/layout/sidebar.md)
+
+侧边栏配置
 
 ## locales
 

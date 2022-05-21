@@ -23,6 +23,7 @@ These options are only valid when setting directly under the theme options, sett
 
 - Type: `boolean`
 - Default: `false`
+- Details: [Interface → Pure mode](../../guide/interface/pure.md)
 
 Whether enable pure mode.
 

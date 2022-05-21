@@ -39,7 +39,7 @@ CloudFlare 的 Auto Minify 会错误的对 HTML 的空格和换行进行处理�
 
 如果你在开发进程启动时看到 `xxx is not assign with a lang, and will return 'en-US'.`，请检查是否为每种语言设置了语言。
 
-即使你只有一种语言，你仍然需要 [设置你的根目录语言](config/i18n.md#设置根目录语言)。
+即使你只有一种语言，你仍然需要 [设置你的根目录语言](../config/i18n.md#设置语言)。
 
 ## `useXXX() is called without provider`
 

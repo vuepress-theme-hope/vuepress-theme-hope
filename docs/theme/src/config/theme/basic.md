@@ -33,27 +33,116 @@ It should contain full protocol (eg: `https://example.com`).
 ## author
 
 - Type: `Author`
+
+  ```ts
+  type AuthorInfo = { name: string; url?: string };
+
+  type Author = string | string[] | AuthorInfo | AuthorInfo[];
+  ```
+
 - Required: No
-
-```ts
-type AuthorInfo = { name: string; url?: string };
-
-type Author = string | string[] | AuthorInfo | AuthorInfo[];
-```
 
 Global default author.
 
 ## navbar
 
-Navbar config
+- Type: `HopeThemeNavbarConfig`
 
-For details, see [Layout → Navbar](../../guide/layout/navbar.md)
+  ```ts
+  interface TextItem {
+    text: string;
+    icon?: string;
+    ariaLabel?: string;
+  }
+
+  interface AutoLink extends TextItem {
+    link: string;
+    rel?: string;
+    target?: string;
+    activeMatch?: string;
+  }
+
+  interface HopeThemeNavGroup<T> extends TextItem {
+    prefix?: string;
+    link?: string;
+    children: T[];
+  }
+
+  type HopeThemeNavbarItem = AutoLink;
+  type HopeThemeNavbarGroup = HopeThemeNavGroup<
+    HopeThemeNavbarGroup | HopeThemeNavbarItem | string
+  >;
+  type HopeThemeNavbarConfig = (
+    | HopeThemeNavbarItem
+    | HopeThemeNavbarGroup
+    | string
+  )[];
+  ```
+
+- Details: [Layout → Navbar](../../guide/layout/navbar.md)
+
+Navbar config
 
 ## sidebar
 
-Sidebar config
+- Type: `HopeThemeSidebarConfig`
 
-For details, see [Layout → Sidebar](../../guide/layout/sidebar.md)
+  ```ts
+  interface TextItem {
+    text: string;
+    icon?: string;
+    ariaLabel?: string;
+  }
+
+  interface AutoLink extends TextItem {
+    link: string;
+    rel?: string;
+    target?: string;
+    activeMatch?: string;
+  }
+
+  type HopeThemeSidebarPageItem = AutoLink;
+
+  interface HopeThemeSidebarGroupItem extends TextItem {
+    prefix?: string;
+    link?: string;
+    collapsable?: boolean;
+    children: (
+      | HopeThemeSidebarPageItem
+      | HopeThemeSidebarGroupItem
+      | HopeThemeSidebarStructureItem
+      | string
+    )[];
+  }
+
+  interface HopeThemeSidebarStructureItem extends TextItem {
+    prefix: string;
+    link?: string;
+    collapsable?: boolean;
+    children: "structure";
+  }
+
+  type HopeThemeSidebarItem =
+    | HopeThemeSidebarPageItem
+    | HopeThemeSidebarGroupItem
+    | HopeThemeSidebarStructureItem
+    | string;
+
+  type HopeThemeSidebarArrayConfig = HopeThemeSidebarItem[];
+
+  type HopeThemeSidebarObjectConfig = Record<
+    string,
+    HopeThemeSidebarArrayConfig | "structure" | false
+  >;
+
+  type HopeThemeSidebarConfig =
+    | HopeThemeSidebarArrayConfig
+    | HopeThemeSidebarObjectConfig;
+  ```
+
+- Details: [Layout → Sidebar](../../guide/layout/sidebar.md)
+
+Sidebar config
 
 ## locales
 

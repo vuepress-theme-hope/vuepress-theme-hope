@@ -79,7 +79,7 @@ module.exports = {
 
 ::: tip
 
-JSON 块是可选的，可用的配置详见 [配置](../config.md#demo)。
+JSON 块是可选的，可用的配置详见 [配置](../../config/plugins/md-enhance.md#demo)。
 
 :::
 

@@ -10,7 +10,7 @@ tag:
 
 `vuepress-theme-hope` provides SEO enhancements via built-in [`vuepress-plugin-seo2`][seo2].
 
-To make the plugin work better, you may need to check the [page config](../../config/page.md#information) and configure them properly.
+To make the plugin work better, you may need to check the [page config](../../config/frontmatter/info.md) and configure them properly.
 
 ::: info
 

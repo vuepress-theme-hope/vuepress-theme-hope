@@ -5,7 +5,7 @@ icon: home
 heroImage: /logo.svg
 heroText: vuepress-plugin-redirect2
 tagline: VuePress2 的重定向插件
-action:
+actions:
   - text: 快速上手 💡
     link: /zh/guide.html
     type: primary

@@ -5,7 +5,7 @@ icon: home
 heroImage: /logo.svg
 heroText: vuepress-plugin-sitemap2
 tagline: Sitemap generation for VuePress2
-action:
+actions:
   - text: Guide 💡
     link: /guide.html
     type: primary

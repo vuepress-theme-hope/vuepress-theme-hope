@@ -5,7 +5,7 @@ icon: home
 heroImage: /logo.svg
 heroText: vuepress-plugin-sitemap2
 tagline: VuePress2 的 Sitemap 生成
-action:
+actions:
   - text: 快速上手 💡
     link: /zh/guide.html
     type: primary
