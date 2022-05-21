@@ -45,7 +45,20 @@ export default hopeTheme({
         },
       ],
 
-      sidebar: false,
+      sidebar: [
+        "/",
+        {
+          text: "Components",
+          children: [
+            "/guide/backtotop",
+            "/guide/badge",
+            "/guide/codepen",
+            "/guide/fonticon",
+            "/guide/pdf",
+          ],
+        },
+        "/config",
+      ],
     },
 
     "/zh/": {
@@ -65,7 +78,20 @@ export default hopeTheme({
         },
       ],
 
-      sidebar: false,
+      sidebar: [
+        "/zh/",
+        {
+          text: "组件",
+          children: [
+            "/zh/guide/backtotop",
+            "/zh/guide/badge",
+            "/zh/guide/codepen",
+            "/zh/guide/fonticon",
+            "/zh/guide/pdf",
+          ],
+        },
+        "/zh/config",
+      ],
     },
   },
 

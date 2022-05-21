@@ -7,7 +7,7 @@ heroText: "@mr-hope/vuepress-plugin-components"
 tagline: 组件库插件
 actions:
   - text: 快速上手 💡
-    link: /zh/guide.html
+    link: /zh/guide/
     type: primary
 
   - text: 配置 🛠
