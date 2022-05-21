@@ -23,15 +23,6 @@ export default [
     ],
     dtsExternal: [/\.scss$/],
   }),
-  ...rollupTypescript("client/components/ECharts", {
-    external: [
-      "@mr-hope/vuepress-shared/lib/client",
-      "echarts",
-      "vue",
-      /\.scss$/,
-    ],
-    dtsExternal: [/\.scss$/],
-  }),
   ...rollupTypescript("client/components/CodeDemo", {
     external: [
       "@mr-hope/vuepress-shared/lib/client",
@@ -51,6 +42,15 @@ export default [
       "@vueuse/core",
       "flowchart.js",
       "ts-debounce",
+      "vue",
+      /\.scss$/,
+    ],
+    dtsExternal: [/\.scss$/],
+  }),
+  ...rollupTypescript("client/components/ECharts", {
+    external: [
+      "@mr-hope/vuepress-shared/lib/client",
+      "echarts",
       "vue",
       /\.scss$/,
     ],
@@ -85,6 +85,10 @@ export default [
       "vue-router",
       /\.scss$/,
     ],
+    dtsExternal: [/\.scss$/],
+  }),
+  ...rollupTypescript("client/components/Tabs", {
+    external: ["@vuepress/client", "@vueuse/core", "vue", /\.scss$/],
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/reveal/index", {
