@@ -12,6 +12,6 @@ module.exports = {
   prompt: {
     customScopesAlign: "top",
     allowCustomIssuePrefixs: false,
-    allowEmptyIssuePrefixs: false
-  }
+    allowEmptyIssuePrefixs: false,
+  },
 };
