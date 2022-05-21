@@ -173,7 +173,7 @@ export const mdEnhancePlugin =
           ]);
         if (getStatus("align")) {
           ["left", "center", "right", "justify"].forEach((name) =>
-            markdownIt.use((md) => container(md, { name }))
+            markdownIt.use((md) => container(md, { name: `align-${name}` }))
           );
         }
         if (chartEnable) markdownIt.use(chart);
