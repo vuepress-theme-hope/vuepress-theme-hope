@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.67](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.66...v2.0.0-beta.67) (2022-05-21)
+
+### Features
+
+- **components:** change default height of CodePen ([008a98e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/008a98e4c92ed02045ee8e829793251dfb9d76dc))
+- **components:** extract Icon component ([024b890](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/024b890dd242b3401be20900d7a390a5c53e87c0))
+- **components:** support size prop in FontIcon ([b4c0653](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b4c06533be63c8492f755eea2f453ffc9e3c488b))
+- **md-enhance:** add event id support for codetabs ([e61275f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e61275f4aa6cefb357a26094be34e56bc9d39ac6))
+- **md-enhance:** rebuild code tabs and support tabid ([48bca69](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/48bca69fdb2a5868997fca6ed1d7403ca2ec2241))
+
+### Bug Fixes
+
+- **components:** fix PDF component with base ([bd91c8a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/bd91c8aa617bcfdce752d22b227ebd5cd1aa9130))
+- **components:** remove default color value for FontIcon ([f31a97f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f31a97faf39a42cc95486514af29ef47c152af03))
+- **md-enhance:** fix align feature ([ffdab48](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ffdab487c7a5f9156795443d76e93f4f5ffcff6b))
+- **md-enhance:** fix CodeTab parsing issue when code containing `'` ([e51eac9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e51eac902ca7b928ea5b191192091a0ccae95b36))
+- **md-enhance:** fix link check ending with anchor ([e99e807](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e99e807d0af6e23e669525d10e30465a8d03fb65))
+- wrap tabs component with ClientOnly ([a40028a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a40028ae46fb2fe3bbce4cf362582b06f6bebc22))
+
 ## [2.0.0-beta.66](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.65...v2.0.0-beta.66) (2022-05-20)
 
 ### ⚠ BREAKING CHANGES

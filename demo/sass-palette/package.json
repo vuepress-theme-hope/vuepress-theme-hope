@@ -1,6 +1,6 @@
 {
   "name": "sass-palette-demo",
-  "version": "2.0.0-beta.66",
+  "version": "2.0.0-beta.67",
   "private": true,
   "description": "Demo for vuepress-plugin-sass-palette",
   "license": "MIT",
