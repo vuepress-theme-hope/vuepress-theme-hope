@@ -30,6 +30,10 @@ export default [
   ...rollupTypescript("client/components/CodePen", {
     external: ["@vueuse/core", "vue"],
   }),
+  ...rollupTypescript("client/components/FontIcon", {
+    external: ["vue", /\.scss$/],
+    dtsExternal: [/\.scss$/],
+  }),
   ...rollupTypescript("client/components/PDF", {
     external: ["vue", /\.scss$/],
     dtsExternal: [/\.scss$/],
