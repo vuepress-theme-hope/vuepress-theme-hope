@@ -25,6 +25,7 @@ export const componentsPlugin =
           default: backToTopLocales,
           config: options.backToTopLocales,
         }),
+        ICON_PREFIX: options.fontIconPrefix || "",
       },
 
       clientConfigFile: (app) => prepareConfigFile(app, options),

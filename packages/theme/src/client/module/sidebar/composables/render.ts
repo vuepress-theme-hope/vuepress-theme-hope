@@ -1,8 +1,7 @@
-import { h } from "vue";
+import { h, resolveComponent } from "vue";
 import { useRoute } from "vue-router";
 
 import AutoLink from "@theme-hope/components/AutoLink";
-import ThemeIcon from "@theme-hope/components/Icon";
 import { isActiveSidebarItem } from "@theme-hope/module/sidebar/utils";
 
 import type { VNode } from "vue";
@@ -23,7 +22,10 @@ export const renderItem = (
         config: config as AutoLinkType,
       })
     : // if the item only has text, render it as `<p>`
-      h("p", props, [h(ThemeIcon, { icon: config.icon }), config.text]);
+      h("p", props, [
+        h(resolveComponent("FontIcon"), { icon: config.icon }),
+        config.text,
+      ]);
 
 export const renderChildren = (
   children: ResolvedHopeThemeSidebarHeaderItem[]

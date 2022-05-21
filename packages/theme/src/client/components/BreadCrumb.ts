@@ -1,9 +1,16 @@
 import { resolveRouteWithRedirect } from "@mr-hope/vuepress-shared/lib/client";
 import { usePageFrontmatter, useRouteLocale } from "@vuepress/client";
-import { computed, defineComponent, h, onMounted, watch, ref } from "vue";
+import {
+  computed,
+  defineComponent,
+  h,
+  onMounted,
+  watch,
+  ref,
+  resolveComponent,
+} from "vue";
 import { RouterLink, useRoute, useRouter } from "vue-router";
 
-import ThemeIcon from "@theme-hope/components/Icon";
 import { useThemeLocaleData } from "@theme-hope/composables";
 import { getAncestorLinks } from "@theme-hope/utils";
 
@@ -106,7 +113,7 @@ export default defineComponent({
                       () => [
                         // icon
                         iconEnable.value
-                          ? h(ThemeIcon, { icon: item.icon })
+                          ? h(resolveComponent("FontIcon"), { icon: item.icon })
                           : null,
                         // text
                         h(

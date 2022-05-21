@@ -16,6 +16,7 @@ const rootAllowConfig = [
   "blog",
   "encrypt",
   "pure",
+  "iconAssets",
   "iconPrefix",
   "darkmode",
   "themeColor",
@@ -31,6 +32,7 @@ const defaultRootOptions: HopeThemeRootConfig = {
 
   // appearance
   pure: false,
+  iconAssets: "",
   iconPrefix: "",
   darkmode: "switch",
   themeColor: {

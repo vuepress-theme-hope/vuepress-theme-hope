@@ -1,7 +1,6 @@
-import { computed, defineComponent, h } from "vue";
+import { computed, defineComponent, h, resolveComponent } from "vue";
 import { RouterLink, useRoute } from "vue-router";
 
-import ThemeIcon from "@theme-hope/components/Icon";
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import SidebarLinks from "@theme-hope/module/sidebar/components/SidebarLinks";
 import { isActiveSidebarItem } from "@theme-hope/module/sidebar/utils";
@@ -59,7 +58,7 @@ export default defineComponent({
             },
             [
               // icon
-              h(ThemeIcon, { icon }),
+              h(resolveComponent("FontIcon"), { icon }),
               // title
               link
                 ? h(RouterLink, { to: link, class: "title" }, () => text)

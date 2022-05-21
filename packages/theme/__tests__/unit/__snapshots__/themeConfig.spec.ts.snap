@@ -6,6 +6,7 @@ exports[`should generate themeConfig correcly > Should contain basic properties 
   "darkmode": "switch",
   "encrypt": {},
   "fullscreen": true,
+  "iconAssets": "",
   "iconPrefix": "",
   "locales": {
     "/": {
@@ -80,6 +81,7 @@ exports[`should generate themeConfig correcly > Should handle single language 1`
   "darkmode": "switch",
   "encrypt": {},
   "fullscreen": true,
+  "iconAssets": "",
   "iconPrefix": "",
   "locales": {
     "/": {
@@ -161,6 +163,7 @@ exports[`should generate themeConfig correcly > locale should have higher proper
   "darkmode": "switch",
   "encrypt": {},
   "fullscreen": true,
+  "iconAssets": "",
   "iconPrefix": "",
   "locales": {
     "/": {
@@ -240,6 +243,7 @@ exports[`should generate themeConfig correcly > root only option should not appe
   "darkmode": "disable",
   "encrypt": {},
   "fullscreen": true,
+  "iconAssets": "",
   "iconPrefix": "",
   "locales": {
     "/": {
@@ -314,6 +318,7 @@ exports[`should generate themeConfig correcly > should fallback to root if local
   "darkmode": "switch",
   "encrypt": {},
   "fullscreen": true,
+  "iconAssets": "",
   "iconPrefix": "",
   "locales": {
     "/": {

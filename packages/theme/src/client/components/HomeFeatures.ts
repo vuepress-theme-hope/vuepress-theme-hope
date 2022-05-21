@@ -1,9 +1,7 @@
 import { usePageFrontmatter, withBase } from "@vuepress/client";
 import { isArray, isLinkExternal, isLinkHttp } from "@vuepress/shared";
-import { computed, defineComponent, h } from "vue";
+import { computed, defineComponent, h, resolveComponent } from "vue";
 import { RouterLink } from "vue-router";
-
-import ThemeIcon from "@theme-hope/components/Icon";
 
 import type { VNode } from "vue";
 import type { HopeThemeProjectHomePageFrontmatter } from "../../shared";
@@ -28,7 +26,7 @@ export default defineComponent({
         : icon.startsWith("/")
         ? h("img", { class: "icon", src: withBase(icon) })
         : icon
-        ? h(ThemeIcon, { icon })
+        ? h(resolveComponent("FontIcon"), { icon })
         : null;
     };
 

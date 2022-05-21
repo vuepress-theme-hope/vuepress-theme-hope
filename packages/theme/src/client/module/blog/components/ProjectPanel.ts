@@ -1,7 +1,6 @@
 import { usePageFrontmatter, withBase } from "@vuepress/client";
 import { defineComponent, h, resolveComponent } from "vue";
 
-import ThemeIcon from "@theme-hope/components/Icon";
 import {
   ArticleIcon,
   BookIcon,
@@ -48,7 +47,7 @@ export default defineComponent({
         return h("img", { src: withBase(icon), alt, class: "image" });
 
       // render as icon font
-      return h(ThemeIcon, { icon });
+      return h(resolveComponent("FontIcon"), { icon });
     };
 
     return (): VNode | null =>

@@ -38,4 +38,7 @@ export default [
     external: ["@vuepress/client", "@vueuse/core", "vue", /\.scss$/],
     dtsExternal: [/\.scss$/],
   }),
+  ...rollupTypescript("client/composables/index", {
+    external: ["@vueuse/core"],
+  }),
 ];

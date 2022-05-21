@@ -1,7 +1,6 @@
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
-import { defineComponent, h, unref } from "vue";
+import { defineComponent, h, resolveComponent, unref } from "vue";
 
-import ThemeIcon from "@theme-hope/components/Icon";
 import PageInfo from "@theme-hope/module/info/components/PageInfo";
 import { usePageInfo, useThemeLocaleData } from "@theme-hope/composables";
 
@@ -23,7 +22,7 @@ export default defineComponent({
       h("div", { class: "page-title" }, [
         h("h1", [
           themeLocale.value.titleIcon !== false
-            ? h(ThemeIcon, { icon: frontmatter.value.icon })
+            ? h(resolveComponent("FontIcon"), { icon: frontmatter.value.icon })
             : null,
           page.value.title,
         ]),

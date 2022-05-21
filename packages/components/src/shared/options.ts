@@ -1,7 +1,12 @@
 import type { LocaleConfig } from "@vuepress/core";
 import type { BackToTopLocaleData } from "./locales";
 
-export type AvailableComponent = "Badge" | "CodePen" | "PDF" | "Tab";
+export type AvailableComponent =
+  | "Badge"
+  | "CodePen"
+  | "FontIcon"
+  | "PDF"
+  | "Tab";
 
 export interface ComponentOptions {
   /**
@@ -37,4 +42,22 @@ export interface ComponentOptions {
    * 返回顶部按钮国际化配置
    */
   backToTopLocales?: LocaleConfig<BackToTopLocaleData>;
+
+  /**
+   * Link of font icon asset
+   *
+   * 字体图标资源链接
+   *
+   * @description `'iconfont'` and `'font-awesome'` keywords are supported
+   */
+  fontIconAssets?: string;
+
+  /**
+   * Class prefix of font icon
+   *
+   * 字体图标的 Class 前缀
+   *
+   * @default ''
+   */
+  fontIconPrefix?: string;
 }

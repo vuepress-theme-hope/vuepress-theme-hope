@@ -6,11 +6,16 @@ import type { HopeThemeOptions } from "../../shared";
 
 export const getComponentsPlugin = (
   themeConfig: HopeThemeOptions,
-  options: AvailableComponent[] = ["Badge"]
+  options: AvailableComponent[] = ["Badge", "FontIcon"]
 ): Plugin =>
   componentsPlugin({
-    components: options,
+    // FontIcon component is used by theme so we MUST enable it
+    components: options.includes("FontIcon")
+      ? options
+      : ["FontIcon", ...options],
     backToTop: themeConfig.backToTop !== false,
     backToTopThreshold:
       typeof themeConfig.backToTop === "number" ? themeConfig.backToTop : 300,
+    fontIconAssets: themeConfig.iconAssets,
+    fontIconPrefix: themeConfig.iconPrefix,
   });

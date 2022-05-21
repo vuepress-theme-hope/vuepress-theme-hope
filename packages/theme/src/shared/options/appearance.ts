@@ -58,9 +58,18 @@ export interface HopeThemeAppearanceOptions {
   pure?: boolean;
 
   /**
-   * Font class Icon prefix
+   * Link of font icon asset
    *
-   * Font class 图标前缀
+   * 字体图标资源链接
+   *
+   * @description `'iconfont'` and `'font-awesome'` keywords are supported
+   */
+  iconAssets?: string;
+
+  /**
+   * Font Icon class prefix
+   *
+   * 字体图标 class 前缀
    *
    * @default ''
    */
