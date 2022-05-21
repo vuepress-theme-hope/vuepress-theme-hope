@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.68](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.67...v2.0.0-beta.68) (2022-05-21)
+
+### Bug Fixes
+
+- **md-enhance:** fix align ([cae09f4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cae09f4c88f19907dcf9078e946c0548b5366ec1))
+
 ## [2.0.0-beta.67](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.66...v2.0.0-beta.67) (2022-05-21)
 
 ### Features
