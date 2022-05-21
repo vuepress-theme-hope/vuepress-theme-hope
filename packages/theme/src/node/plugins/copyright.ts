@@ -8,9 +8,9 @@ import type {
 } from "../../shared";
 
 export const getCopyrightPlugin = (
-  hostname: string,
   themeConfig: HopeThemeConfig,
-  options?: Partial<CopyrightOptions> | true
+  options?: Partial<CopyrightOptions> | true,
+  hostname?: string
 ): Plugin | null => {
   if (!options) return null;
 

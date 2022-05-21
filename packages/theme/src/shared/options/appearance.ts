@@ -58,24 +58,6 @@ export interface HopeThemeAppearanceOptions {
   pure?: boolean;
 
   /**
-   * Link of font icon asset
-   *
-   * 字体图标资源链接
-   *
-   * @description `'iconfont'` and `'font-awesome'` keywords are supported
-   */
-  iconAssets?: string;
-
-  /**
-   * Font Icon class prefix
-   *
-   * 字体图标 class 前缀
-   *
-   * @default ''
-   */
-  iconPrefix?: string;
-
-  /**
    * Dark mode support options:
    *
    * - `"switch"`: switch between dark, light and auto (default)

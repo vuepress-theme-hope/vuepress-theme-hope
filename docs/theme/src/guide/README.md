@@ -98,8 +98,6 @@ Layout Optimization:
 
 ### Blog
 
-- [Social follow button and page social sharing][add-this]
-
 - [Article list with sticky support, and summary autogeneration](blog/intro.md)
 
 - [Cateory and tag list](blog/category-and-tags.md)
@@ -156,13 +154,10 @@ The theme includes the following plugins, you can use them in other themes or di
 
 Here are some other plugins that are not enabled by default by the theme, you can enable them according to your own needs.
 
-- [vuepress-plugin-add-this][add-this]: Provide sociel share and follow function using AddThis
-
 - [vuepress-plugin-lightgallery][lightgallery]: Photo preview plugin based on lightgallery
 
 :::
 
-[add-this]: https://vuepress-theme-hope.github.io/v2/add-this/
 [blog2]: https://vuepress-theme-hope.github.io/v2/blog/
 [comment2]: https://vuepress-theme-hope.github.io/v2/comment/
 [components]: https://vuepress-theme-hope.github.io/v2/components/

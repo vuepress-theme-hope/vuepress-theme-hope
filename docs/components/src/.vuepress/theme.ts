@@ -12,6 +12,7 @@ export default hopeTheme({
     url: "https://mrhope.site",
   },
 
+  addThis: "ra-5f829c59e6c6bc9a",
   iconAssets: "//at.alicdn.com/t/font_2410206_h4r1xw8ppng.css",
   iconPrefix: "iconfont icon-",
 
@@ -49,12 +50,14 @@ export default hopeTheme({
         "/",
         {
           text: "Components",
+          prefix: "/guide/",
           children: [
-            "/guide/backtotop",
-            "/guide/badge",
-            "/guide/codepen",
-            "/guide/fonticon",
-            "/guide/pdf",
+            "addthis",
+            "backtotop",
+            "badge",
+            "codepen",
+            "fonticon",
+            "pdf",
           ],
         },
         "/config",
@@ -82,12 +85,14 @@ export default hopeTheme({
         "/zh/",
         {
           text: "组件",
+          prefix: "/zh/guide/",
           children: [
-            "/zh/guide/backtotop",
-            "/zh/guide/badge",
-            "/zh/guide/codepen",
-            "/zh/guide/fonticon",
-            "/zh/guide/pdf",
+            "addthis",
+            "backtotop",
+            "badge",
+            "codepen",
+            "fonticon",
+            "pdf",
           ],
         },
         "/zh/config",

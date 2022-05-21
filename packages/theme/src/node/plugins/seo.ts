@@ -2,13 +2,12 @@ import { seoPlugin } from "vuepress-plugin-seo2";
 import { getBlogOptions } from "./blog";
 
 import type { Page, Plugin } from "@vuepress/core";
-import type { SeoOptions } from "vuepress-plugin-seo2";
 import type { HopeThemeConfig, HopeThemePluginsOptions } from "../../shared";
 
 export const getSEOPlugin = (
-  hostname: string,
   themeConfig: HopeThemeConfig,
-  { blog, seo }: HopeThemePluginsOptions
+  { blog, seo }: HopeThemePluginsOptions,
+  hostname = ""
 ): Plugin | null => {
   if (seo === false) return null;
 
@@ -34,12 +33,10 @@ export const getSEOPlugin = (
       .every(([, value]) => !localePath.startsWith(value));
   };
 
-  const seoOptions: SeoOptions = {
+  return seoPlugin({
     hostname,
     author: themeConfig.author,
     isArticle,
     ...(seo || {}),
-  };
-
-  return seoPlugin(seoOptions);
+  });
 };

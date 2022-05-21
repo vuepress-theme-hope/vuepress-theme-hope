@@ -242,10 +242,6 @@ Move all plugin related options under `plugins`.
 
 ### Deletion
 
-- remove `addThis`
-
-  `vuepress-plugin-add-this` V2 was marked as deprecated when migrating and the theme no longer bundles it by default.
-
 - remove `chunkRename`
 
   The theme no longer provides this functionality.

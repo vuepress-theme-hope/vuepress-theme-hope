@@ -240,10 +240,6 @@ tag:
 
 ### 移除
 
-- 移除 `addThis`
-
-  `vuepress-plugin-add-this` V2 迁移时已标为废弃，主题不再默认捆绑。
-
 - 移除 `chunkRename`
 
   主题不再提供此功能。

@@ -14,6 +14,13 @@ icon: config
 type AvailableComponent = "Badge" | "CodePen" | "FontIcon" | "PDF";
 ```
 
+## addThis
+
+- 类型: `string | false`
+- 默认: `false`
+
+AddThis 的公开 ID。
+
 ## backToTop
 
 - 类型: `boolean | number`

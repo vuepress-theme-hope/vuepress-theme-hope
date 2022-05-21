@@ -24,11 +24,6 @@ export const zhNavbarConfig = navbar([
         icon: "plugin",
         children: [
           {
-            text: "AddThis 插件",
-            icon: "share",
-            link: "https://vuepress-theme-hope.github.io/v2/add-this/zh/",
-          },
-          {
             text: "博客插件",
             icon: "blog",
             link: "https://vuepress-theme-hope.github.io/v2/blog/zh/",

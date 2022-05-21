@@ -25,7 +25,11 @@ export const hopeTheme =
   (app) => {
     const {
       plugins = {},
-      hostname = "",
+      hostname,
+      iconAssets,
+      iconPrefix,
+      addThis,
+      backToTop,
       ...themeOptions
     } = legacy ? covertThemeConfig(options) : options;
 
@@ -77,7 +81,13 @@ export const hopeTheme =
           ),
         ]).then(() => void 0),
 
-      plugins: getPluginConfig(plugins, themeConfig, hostname),
+      plugins: getPluginConfig(plugins, themeConfig, {
+        addThis,
+        backToTop,
+        hostname,
+        iconAssets,
+        iconPrefix,
+      }),
 
       layouts: getLayoutConfig(app, plugins),
 

@@ -3,7 +3,9 @@ title: 指南
 icon: creative
 ---
 
-此插件注册 2 个组件和一个全局组件:
+此插件注册 4 个组件和 2 个全局组件:
+
+- [AddThis](addthis.md) (全局组件)
 
 - [BackToTop](backtotop.md) (全局组件)
 
