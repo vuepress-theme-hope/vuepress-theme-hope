@@ -202,7 +202,97 @@ tag:
 
 - `mdEnhance` 移动至 `plugins.mdEnhance`
 
-  - `mdEnhance.codegroup` 重命名为 `plugins.mdEnhance.codetabs`，同时默认值由 `true` 改为 `false`
+  - Markdown 链接检查
+
+    该插件现在检查你的 Markdown 链接，并在检测到损坏的链接时警告你。
+
+    你可以通过 `plugins.mdEnhance.linkCheck` 选项控制此行为
+
+  - 图像标记支持
+
+    通过 `plugins.mdEnhance.imageMark` 使用 `#light` 和 `#dark` 后缀标记图像以在日间模式或夜间模式下显示它们。
+
+  - `v-pre` 支持
+
+    VuePress 2 从 `@vuepress/core` 中删除了以下容器支持，因此添加了此选项
+
+    ```md
+    ::: v-pre
+
+    一些 {{vue 语法}}。
+
+    :::
+    ```
+
+  - Chart.js 支持
+
+    新增 `plugins.mdEnhance.chart` 选项提供 [chart.js](https://www.chartjs.org/docs/latest/) 支持
+
+    ````md
+    ::: chart 标题
+
+    ```json
+    {
+      // chart.js 配置
+    }
+    ```
+
+    :::
+
+    ::: chart 标题
+
+    ```js
+    module.exports = {
+      // chart.js 配置
+    };
+    ```
+
+    :::
+    ````
+
+  - ECharts 支持
+
+    新增 `plugins.mdEnhance.echarts` 选项提供 [ECharts](https://echarts.apache.org/en/index.html) 支持。
+
+    ````md
+    ::: echarts 标题
+
+    ```json
+    {
+      // echarts 配置
+    }
+    ```
+
+    :::
+
+    ::: echarts 标题
+
+    ```js
+    module.exports = {
+      // echarts 配置
+    };
+    ```
+
+    :::
+    ````
+
+  - 包含文件支持
+
+    新增 `plugins.mdEnhance.include` 选项使用 `@include()` 将其他文件内容导入到 markdown 中。
+
+    使用 `@include(filename)` 导入文件。
+
+    如果要部分导入文件，你可以指定导入的行数
+
+    - `@include(filename{start-end})`
+    - `@include(filename{start-})`
+    - `@include(filename{-end})`
+
+  - 选项卡支持
+
+    新增 `plugins.mdEnhance.tabs` 选项通过 `tabs` 容器创建选项卡。
+
+  - `mdEnhance.codegroup` 重命名为 `plugins.mdEnhance.codetabs`
 
   - `plugins.mdEnhance.lazyLoad` 默认值由 `true` 改为 `false`
 

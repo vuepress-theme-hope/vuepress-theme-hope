@@ -204,7 +204,85 @@ Move all plugin related options under `plugins`.
 
 - move `mdEnhance` to `plugins.mdEnhance`
 
-  - rename `mdEnhance.codegroup` to `plugins.mdEnhance.codetabs`, and change default value from `false` to `true`
+  - markdown link check
+
+    The plugin now check your markdown links and warn you when broken links are detected.
+
+    You can control this behavior with `plugins.mdEnhance.linkCheck` option
+
+  - image mark support
+
+    Use `#light` and `#dark` suffix to mark images to display them in light mode or dark mode via `plugins.mdEnhance.imageMark` option
+
+  - Chart.js support
+
+    Adds [chart.js](https://www.chartjs.org/docs/latest/) support via `plugins.mdEnhance.chart` option
+
+    ````md
+    ::: chart Title
+
+    ```json
+    {
+      // chart.js config
+    }
+    ```
+
+    :::
+
+    ::: chart Title
+
+    ```js
+    module.exports = {
+      // chart.js config
+    };
+    ```
+
+    :::
+    ````
+
+  - ECharts support
+
+    Adds [ECharts](https://echarts.apache.org/en/index.html) support via `plugins.mdEnhance.echarts` option
+
+    ````md
+    ::: echarts Title
+
+    ```json
+    {
+      // chart.js config
+    }
+    ```
+
+    :::
+
+    ::: echarts Title
+
+    ```js
+    module.exports = {
+      // chart.js config
+    };
+    ```
+
+    :::
+    ````
+
+  - content include support
+
+    use `@include()` to include other file content in markdown via `plugins.mdEnhance.include` options.
+
+    Use `@include(filename)` to include a file.
+
+    To partially import the file, you can specify the range of lines to be included:
+
+    - `@include(filename{start-end})`
+    - `@include(filename{start-})`
+    - `@include(filename{-end})`
+
+  - tabs support
+
+    Use `tabs` container to create tabs via `plugins.mdEnhance.tabs` option.
+
+  - rename `mdEnhance.codegroup` to `plugins.mdEnhance.codetabs`
 
   - change default value of `plugins.mdEnhance.lazyLoad` from `true` to `false`
 
