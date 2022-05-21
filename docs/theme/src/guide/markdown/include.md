@@ -15,7 +15,7 @@ Let the Markdown file in your VuePress site support including other files.
 
 ## Config
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 
@@ -98,7 +98,7 @@ interface IncludeOptions {
 
 E.g.: you can use `@src` as an alias for your source directory.
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 
@@ -152,7 +152,7 @@ module.exports = {
 
 Also, to place your Markdown files directly besides your actual files, but don’t want them rendered as pages, you can set `pagePatterns` options in VuePress config. See [pagePatterns](https://v2.vuepress.vuejs.org/reference/config.html#pagepatterns) for more details.
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

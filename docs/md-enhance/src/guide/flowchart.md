@@ -11,7 +11,7 @@ This plugin is using [flowchart.js](https://github.com/adrai/flowchart.js) to su
 
 ## Config
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

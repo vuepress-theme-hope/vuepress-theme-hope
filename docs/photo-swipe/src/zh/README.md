@@ -23,7 +23,7 @@ copyright: false
 
 ### 安装
 
-::: code-tabs
+::: code-tabs#shell
 
 @tab pnpm
 
@@ -47,7 +47,7 @@ npm i -D vuepress-plugin-photo-swipe@next
 
 ### 使用
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

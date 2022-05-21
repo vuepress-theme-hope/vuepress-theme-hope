@@ -26,7 +26,7 @@ interface ReadingTime {
 
 ### Install
 
-::: code-tabs
+::: code-tabs#shell
 
 @tab pnpm
 
@@ -50,7 +50,7 @@ npm i -D vuepress-plugin-reading-time2@next
 
 ### Usage
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

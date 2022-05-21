@@ -23,7 +23,7 @@ Let your images support preview, zoom, share, swipe view and download.
 
 ### Install
 
-::: code-tabs
+::: code-tabs#shell
 
 @tab pnpm
 
@@ -47,7 +47,7 @@ npm i -D vuepress-plugin-photo-swipe@next
 
 ### Usage
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

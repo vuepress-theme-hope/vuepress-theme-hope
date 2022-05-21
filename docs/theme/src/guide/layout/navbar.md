@@ -21,7 +21,7 @@ You can add links to the navbar via `navbar` options, it accepts an array.
 
 The easiest way to configure the navbar is to fill in the paths of the page files to be displayed in turn, so that the text, icons and links of the item will be automatically generated from the corresponding files.
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 
@@ -67,7 +67,7 @@ If you are not satisfied with the page’s icon or feel that the page title is t
 - `icon`: item icon (optional)
 - `activeMatch`: item active math (optional), support regexp strings
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 
@@ -150,7 +150,7 @@ To display more links, you can group similar links into a dropdown list.
 
 You need use object format and provide the additional `children` option to nest links:
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 
@@ -197,7 +197,7 @@ In most cases, the grouped items in the navbar belong to the same category and w
 
 To simplify the configuration, you can add the `prefix` field to add a prefix to each sub-link in the group:
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 
@@ -244,7 +244,7 @@ module.exports = {
 
 You can also have sub groups inside a dropdown by having nested `children`:
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 
@@ -321,7 +321,7 @@ module.exports = {
 
 To disable the navbar globally, set `navbar: false` in theme options:
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 
@@ -372,7 +372,7 @@ Please fill in an absolute path and place the logo in `.vuepress/public` folder.
 
 :::
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 
@@ -413,7 +413,7 @@ You can set `logoDark` to display another logo in dark mode.
 
 The theme’s navbar supports [I18n](https://v2.vuepress.vuejs.org/guide/i18n.html), so you can set navbar options mentioned above individually in each language:
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 
@@ -482,7 +482,7 @@ A repo button will appear in navbar if you set `repo` in theme options.
 
 You can control whether showing the repository button via `repoDisplay` in theme options.
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 
@@ -543,7 +543,7 @@ They mainly deal with scenarios when you split your VuePress configuration into 
 
 :::
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS Helper
 
@@ -586,7 +586,7 @@ module.exports = navbar([
 
 :::: details Configuration of this documentation
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

@@ -13,7 +13,7 @@ icon: creative
 
 ## 演示
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

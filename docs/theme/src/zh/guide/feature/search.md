@@ -32,7 +32,7 @@ tag:
 
 1. 安装 `@vuepress/plugin-search`
 
-   ::: code-tabs
+   ::: code-tabs#shell
 
    @tab pnpm
 
@@ -56,7 +56,7 @@ tag:
 
 1. 从 `@vuepress/plugin-search` 导入 `searchPlugin` 并将其应用至 `config.{ts,js}` 下的 `plugins` 选项.
 
-   ::: code-tabs
+   ::: code-tabs#language
 
    @tab TS
 
@@ -103,7 +103,7 @@ tag:
 
 :::: details 中文多语言配置
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 
@@ -303,7 +303,7 @@ module.exports = {
 
 1. 安装 `@vuepress/plugin-docsearch`
 
-   ::: code-tabs
+   ::: code-tabs#shell
 
    @tab pnpm
 
@@ -327,7 +327,7 @@ module.exports = {
 
 1. 从 `@vuepress/plugin-docsearch` 导入 `docsearchPlugin`，并在 `config.{ts,js}` 中的 `plugins` 应用。
 
-   ::: code-tabs
+   ::: code-tabs#language
 
    @tab TS
 
@@ -376,7 +376,7 @@ module.exports = {
 
 :::: details 中文多语言配置示例
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

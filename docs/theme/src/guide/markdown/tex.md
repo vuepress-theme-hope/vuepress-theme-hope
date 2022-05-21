@@ -15,7 +15,7 @@ Let the Markdown file in your VuePress site support the $\TeX$ syntax.
 
 ## Config
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

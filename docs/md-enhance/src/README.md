@@ -95,7 +95,7 @@ copyright: false
 
 ### Install
 
-::: code-tabs
+::: code-tabs#shell
 
 @tab pnpm
 
@@ -119,7 +119,7 @@ npm i -D vuepress-plugin-md-enhance@next
 
 ### Usage
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

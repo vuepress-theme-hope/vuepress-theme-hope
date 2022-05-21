@@ -20,7 +20,7 @@ tag:
 
 ## Enable <Badge text="Support page config" />
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 
@@ -121,7 +121,7 @@ Then input your new GitHub repo name and set `LEAN_ID`, `LEAN_KEY` and `LEAN_MAS
 
 Click `Deploy` button to deploy. It will show you deploy successfully after a minitues time. Then config the vercel link in your theme options:
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

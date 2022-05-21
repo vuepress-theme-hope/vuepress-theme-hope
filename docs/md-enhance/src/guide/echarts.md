@@ -11,7 +11,7 @@ This plugin is using [echarts](https://echarts.apache.org/en/index.html) to supp
 
 ## Config
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

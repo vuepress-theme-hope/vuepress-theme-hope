@@ -35,7 +35,7 @@ You need to set up a config object in the config file `.vuepress/config.ts` (or 
 
 To get correct hints, importing `defineUserConfig` from `vuepress` and wrapping the config object is recommended:
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

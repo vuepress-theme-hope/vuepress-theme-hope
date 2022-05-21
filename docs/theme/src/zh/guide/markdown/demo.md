@@ -15,7 +15,7 @@ tag:
 
 ## 配置
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

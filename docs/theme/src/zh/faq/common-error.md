@@ -47,7 +47,7 @@ CloudFlare 的 Auto Minify 会错误的对 HTML 的空格和换行进行处理�
 
 请确保你正在使用最新的 `vuepress` 和 `vuepress-theme-hope` 版本:
 
-::: code-tabs
+::: code-tabs#shell
 
 @tab pnpm
 
@@ -71,7 +71,7 @@ npm i vuepress@next vuepress-theme-hope@next
 
 同时，升级依赖以确保你的项目只包含单个版本的相关包:
 
-::: code-tabs
+::: code-tabs#shell
 
 @tab pnpm
 

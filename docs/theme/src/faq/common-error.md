@@ -47,7 +47,7 @@ Such errors are usually caused by incorrectly containing multiple versions of `@
 
 Make sure you are using the latest `vuepress` and `vuepress-theme-hope` versions:
 
-::: code-tabs
+::: code-tabs#shell
 
 @tab pnpm
 
@@ -71,7 +71,7 @@ npm i vuepress@next vuepress-theme-hope@next
 
 Also, upgrade dependencies to ensure your project only contains a single version of the relevant package:
 
-::: code-tabs
+::: code-tabs#shell
 
 @tab pnpm
 

@@ -13,7 +13,7 @@ After user press the copy button, a success hint will display on the screen. The
 
 ## Demo
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

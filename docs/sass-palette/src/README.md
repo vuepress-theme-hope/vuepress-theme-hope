@@ -21,7 +21,7 @@ copyright: false
 
 ### Install
 
-::: code-tabs
+::: code-tabs#shell
 
 @tab pnpm
 
@@ -47,7 +47,7 @@ npm i -D vuepress-plugin-sass-palette@next
 
 You must invoke `useSassPalettePlugin` function during plugin initialization to use this plugin.
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

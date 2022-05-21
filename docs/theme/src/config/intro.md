@@ -26,7 +26,7 @@ In VuePress, there are three config concepts:
 
 ## Theme Usage
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

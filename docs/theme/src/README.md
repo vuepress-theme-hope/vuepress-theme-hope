@@ -110,7 +110,7 @@ footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 
 Create a vuepress-theme-hope project in `[dir]` directory under the current project:
 
-::: code-tabs
+::: code-tabs#shell
 
 @tab pnpm
 
@@ -128,7 +128,7 @@ npm init vuepress-theme-hope@next [dir]
 
 ## 🚀Usage
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

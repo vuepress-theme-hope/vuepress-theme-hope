@@ -16,7 +16,7 @@ Let the Markdown file in your VuePress site support Subscript and Superscript.
 
 ## Config
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

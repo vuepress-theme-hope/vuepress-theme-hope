@@ -81,7 +81,7 @@ You can also config your social media links with `blog.medias` option.
 
 :::: details Example
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

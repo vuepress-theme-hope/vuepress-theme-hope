@@ -35,7 +35,7 @@ VuePress 使用项目文件夹下的 `.vuepress` 文件夹存放配置，所有 
 
 为了能够得到正确的提示，我们建议从 `vuepress` 导入 `defineUserConfig` 并包裹配置对象:
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

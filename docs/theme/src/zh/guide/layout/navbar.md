@@ -21,7 +21,7 @@ tag:
 
 配置导航栏最简单的方式，是依次填入需要展示的页面文件的路径，这样导航栏的文字、图标和链接会自动通过对应文件生成。
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 
@@ -67,7 +67,7 @@ module.exports = {
 - `icon`: 项目图标 (可选)
 - `activeMatch`: 项目激活匹配 (可选)，支持正则字符串。
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 
@@ -150,7 +150,7 @@ module.exports = {
 
 你需要设置对象式导航栏配置项，并提供额外的 `children` 选项设置链接列表:
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 
@@ -197,7 +197,7 @@ module.exports = {
 
 为了简化配置，你可以添加 `prefix` 字段为分组的每一个子链接添加一个前缀:
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 
@@ -244,7 +244,7 @@ module.exports = {
 
 此外，你还可以通过嵌套的 `children` 来在下拉列表中设置分组:
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 
@@ -317,7 +317,7 @@ module.exports = {
 
 你可以设置 `navbar: false` 来禁用所有页面的导航栏:
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 
@@ -368,7 +368,7 @@ navbar: false
 
 配置图标后，图标将移动设备上取代先前的站点名称显示在导航栏上。
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 
@@ -409,7 +409,7 @@ module.exports = {
 
 主题的导航栏支持 [多语言](https://v2.vuepress.vuejs.org/zh/guide/i18n.html)，所以你可以为每个语言单独设置上面提到的导航栏选项:
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 
@@ -478,7 +478,7 @@ module.exports = {
 
 你可以在主题选项中通过 `repoDisplay` 控制是否显示仓库按钮。
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 
@@ -539,7 +539,7 @@ module.exports = {
 
 :::
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS Helper
 
@@ -582,7 +582,7 @@ module.exports = navbar([
 
 :::: details 本文档的导航栏配置
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

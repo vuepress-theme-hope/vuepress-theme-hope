@@ -26,7 +26,7 @@ If the current browser does not support full screen, the full screen button is a
 
 :::
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

@@ -26,7 +26,7 @@ tag:
 
 :::
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

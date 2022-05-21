@@ -15,7 +15,7 @@ Let you insert code demos in your Markdown file.
 
 ## Config
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

@@ -31,7 +31,7 @@ You need to set `themeColor` with `{ colorname1: colorvalue, colorname2: colorva
 
 :::: details Example
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

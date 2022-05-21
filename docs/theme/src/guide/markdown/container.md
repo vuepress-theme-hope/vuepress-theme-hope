@@ -15,7 +15,7 @@ The theme adds tip, note, info, warning, danger and detail container.
 
 ## Config
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

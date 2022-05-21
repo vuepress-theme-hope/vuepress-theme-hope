@@ -71,7 +71,7 @@ export default defineUserConfig({
 });
 ``` -->
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

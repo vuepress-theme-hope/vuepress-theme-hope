@@ -8,7 +8,7 @@ tag:
   - 主题配置
 ---
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

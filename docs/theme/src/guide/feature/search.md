@@ -32,7 +32,7 @@ The theme can ONLY apply plugins it bundles, so `plugins` field in theme options
 
 1. Install `@vuepress/plugin-search`
 
-   ::: code-tabs
+   ::: code-tabs#shell
 
    @tab pnpm
 
@@ -56,7 +56,7 @@ The theme can ONLY apply plugins it bundles, so `plugins` field in theme options
 
 1. Import `searchPlugin` from `@vuepress/plugin-search` and apply it in `plugins` under `config.{ts,js}`.
 
-   ::: code-tabs
+   ::: code-tabs#language
 
    @tab TS
 
@@ -249,7 +249,7 @@ See [Plugin Docs][search] for available options.
 
 1. Install `@vuepress/plugin-docsearch`
 
-   ::: code-tabs
+   ::: code-tabs#shell
 
    @tab pnpm
 
@@ -273,7 +273,7 @@ See [Plugin Docs][search] for available options.
 
 1. Import `docsearchPlugin` from `@vuepress/plugin-docsearch` and apply it in `plugins` under `config.{ts,js}`.
 
-   ::: code-tabs
+   ::: code-tabs#language
 
    @tab TS
 

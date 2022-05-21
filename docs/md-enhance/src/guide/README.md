@@ -55,7 +55,7 @@ Orange
 
 ### Code Tabs
 
-::: code-tabs
+::: code-tabs#shell
 
 @tab pnpm
 

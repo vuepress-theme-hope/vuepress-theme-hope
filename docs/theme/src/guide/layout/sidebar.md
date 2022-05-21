@@ -21,7 +21,7 @@ You should use `sidebar` in theme options to control sidebar.
 
 Just like navbar, you can fill in an array of multiple file links as the basic configuration of the sidebar:
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 
@@ -69,7 +69,7 @@ Just like navbar, if you are not satisfied with the page’s icon or feel that t
 - `icon`: item icon (optional)
 - `activeMatch`: item active math (optional), support regexp strings
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 
@@ -152,7 +152,7 @@ If you need a sidebar that displays a nested structure, you can group similar li
 
 You should use [object format](#object-format) and provide an additional `children` option to set the list of links. Like navbar, you can use `prefix` in the sidebar to add a default path prefix to each link in the group, and the sidebar additionally supports setting `collapsable: true` to make the menu group collapsible.
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 
@@ -239,7 +239,7 @@ module.exports = {
 
 You can also nest Sidebar grouping:
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 
@@ -333,7 +333,7 @@ For example, suppose you have a following directory structure:
 
 Then you can use the following config:
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 
@@ -431,7 +431,7 @@ For example, if you have the following structure:
 
 You can define your sidebar for each section using below configuration:
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 
@@ -522,7 +522,7 @@ sidebar: heading
 
 You can also enable it in all pages by using config:
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 
@@ -576,7 +576,7 @@ For example, for the following example mentioned earlier in [multiple sidebars](
 
 You can change the original config to:
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 
@@ -730,7 +730,7 @@ Since the default value of [markdown.extractHeaders.level](https://v2.vuepress.v
 
 By default, the nested header links and the hash in the URL are updated as the user scrolls to view the different sections of the page. This behavior can be disabled with the following theme config:
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 
@@ -775,7 +775,7 @@ Icon support is enabled in the sidebar by default, and the icon of the page will
 
 The theme’s navbar supports [I18n](https://v2.vuepress.vuejs.org/guide/i18n.html), so you can set sidebar individually in each language:
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 
@@ -838,7 +838,7 @@ To deal with the situation when you split [multi-sidebar configuration](#multipl
 
 :::
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS Helper
 
@@ -877,7 +877,7 @@ module.exports = sidebar(/* Your sidebar configuration */);
 
 :::: details Configuration of this documentation
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

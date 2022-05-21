@@ -33,7 +33,7 @@ Don’t worry about the size of your site. If you don’t enable related feature
 
 You can set `plugins.mdEnhance.enableAll` to enable all features of the [md-enhance][md-enhance] plugin.
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

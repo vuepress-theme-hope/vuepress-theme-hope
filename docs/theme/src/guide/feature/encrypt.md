@@ -24,7 +24,7 @@ Please **DO NOT USE** this encryption function for any sensitive and confidentia
 
 You can configure encryption options through the `encrypt.config` options in theme options.
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

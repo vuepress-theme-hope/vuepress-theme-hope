@@ -19,7 +19,7 @@ copyright: false
 
 ## Install
 
-::: code-tabs
+::: code-tabs#shell
 
 @tab pnpm
 
@@ -43,7 +43,7 @@ npm i -D @mr-hope/vuepress-plugin-components@next
 
 ### Usage
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

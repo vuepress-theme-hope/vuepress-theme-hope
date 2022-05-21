@@ -21,7 +21,7 @@ To customize your paragraph alignment.
 
 ## Config
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

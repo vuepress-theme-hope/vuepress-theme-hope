@@ -16,7 +16,7 @@ tag:
 
 你需要在自己的 VuePress 配置文件通过 `alias` 替换主题中使用的组件别名。
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

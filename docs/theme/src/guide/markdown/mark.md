@@ -15,7 +15,7 @@ Make Markdown files in your VuePress site support markup.
 
 ## Config
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

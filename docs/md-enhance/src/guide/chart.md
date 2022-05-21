@@ -11,7 +11,7 @@ This plugin is using [chart.js](https://www.chartjs.org/docs/latest/) to support
 
 ## Config
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

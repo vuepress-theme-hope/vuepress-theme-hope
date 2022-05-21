@@ -50,7 +50,7 @@ tag:
 
 如果你需要升级主题和 VuePress 版本，请执行以下命令:
 
-::: code-tabs
+::: code-tabs#shell
 
 @tab pnpm
 

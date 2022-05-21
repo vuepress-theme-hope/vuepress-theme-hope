@@ -14,7 +14,7 @@ tag:
 
 Create a vuepress-theme-hope project in `[dir]` folder under the current project:
 
-::: code-tabs
+::: code-tabs#shell
 
 @tab pnpm
 
@@ -40,7 +40,7 @@ npm init vuepress-theme-hope@next [dir]
 
 Please import and use `hopeTheme` to use `vuepress-theme-hope`.
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

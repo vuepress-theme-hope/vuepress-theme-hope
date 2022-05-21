@@ -17,7 +17,7 @@ Let the Markdown file support chart in your VuePress site.
 
 ## Config
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

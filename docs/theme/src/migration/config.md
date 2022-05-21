@@ -8,7 +8,7 @@ tag:
   - Theme Config
 ---
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

@@ -14,7 +14,7 @@ tag:
 
 在当前项目的 `[dir]` 文件夹内创建 vuepress-theme-hope 项目:
 
-::: code-tabs
+::: code-tabs#shell
 
 @tab pnpm
 
@@ -40,7 +40,7 @@ npm init vuepress-theme-hope@next [dir]
 
 请在配置文件中导入并使用 `hopeTheme` 以使用 `vuepress-theme-hope`。
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

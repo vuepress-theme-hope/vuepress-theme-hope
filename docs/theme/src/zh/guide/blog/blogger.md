@@ -83,7 +83,7 @@ tag:
 
 :::: details 例子
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

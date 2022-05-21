@@ -15,7 +15,7 @@ Let the Markdown file in your VuePress site support task list.
 
 ## Config
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

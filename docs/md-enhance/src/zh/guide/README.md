@@ -53,7 +53,7 @@ Orange
 
 ### 代码块
 
-::: code-tabs
+::: code-tabs#shell
 
 @tab pnpm
 

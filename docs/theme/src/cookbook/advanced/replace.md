@@ -16,7 +16,7 @@ The theme imports components through `alias`, so you can use it to replace any c
 
 You need to replace the component alias used in the theme with `alias` option in your own VuePress config file.
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

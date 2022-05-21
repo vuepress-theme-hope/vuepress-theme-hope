@@ -21,7 +21,7 @@ tag:
 
 同导航栏，你可以填入一个包含多个文件链接的数组，作为侧边栏基本的配置:
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 
@@ -69,7 +69,7 @@ module.exports = {
 - `icon`: 项目图标 (可选)
 - `activeMatch`: 项目激活匹配 (可选)，支持正则字符串。
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 
@@ -152,7 +152,7 @@ module.exports = {
 
 你需要使用 [对象格式](#对象格式) ，并提供额外的 `children` 选项设置链接列表。和导航栏一样，你可以在侧边栏中使用 `prefix` 来为组内的每个链接添加默认的路径前缀，并且侧边栏额外支持设置 `collapsable: true` 来使菜单分组可折叠。
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 
@@ -240,7 +240,7 @@ module.exports = {
 
 侧边栏分组也可以进行嵌套:
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 
@@ -334,7 +334,7 @@ module.exports = {
 
 你就可以进行以下配置:
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 
@@ -432,7 +432,7 @@ module.exports = {
 
 你就可以遵循以下的侧边栏配置，来为不同路径显示不同的分组:
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 
@@ -515,7 +515,7 @@ sidebar: heading
 
 你也可以通过配置来在所有页面中启用它:
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 
@@ -569,7 +569,7 @@ module.exports = {
 
 你可以将原来的配置改为:
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 
@@ -725,7 +725,7 @@ headerDepth: 2
 
 这个功能是通过插件 `@vuepress/plugin-active-header-links` 实现的，并可以通过以下的配置来禁用:
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 
@@ -770,7 +770,7 @@ module.exports = {
 
 主题的侧边栏支持 [多语言](https://v2.vuepress.vuejs.org/zh/guide/i18n.html)，所以你可以为每个语言单独设置侧边栏:
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 
@@ -833,7 +833,7 @@ module.exports = {
 
 :::
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS Helper
 
@@ -872,7 +872,7 @@ module.exports = sidebar(/* 你的侧边栏配置 */);
 
 :::: details 本文档的侧边栏配置
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

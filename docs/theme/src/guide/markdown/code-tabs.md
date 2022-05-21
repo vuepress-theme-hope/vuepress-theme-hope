@@ -15,7 +15,7 @@ The theme provides you you code tabs support.
 
 ## Config
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

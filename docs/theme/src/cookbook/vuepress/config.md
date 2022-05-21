@@ -26,7 +26,7 @@ The essential file for configuring a VuePress site is `.vuepress/config.js`, whi
 
 A basic config file looks like this:
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

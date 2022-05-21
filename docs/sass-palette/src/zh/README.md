@@ -21,7 +21,7 @@ copyright: false
 
 ### 安装
 
-::: code-tabs
+::: code-tabs#shell
 
 @tab pnpm
 
@@ -47,7 +47,7 @@ npm i -D vuepress-plugin-sass-palette@next
 
 你必须在插件初始化期间调用 `useSassPalettePlugin` 函数来使用此插件。。
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

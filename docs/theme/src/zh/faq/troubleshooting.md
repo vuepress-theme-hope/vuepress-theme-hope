@@ -11,7 +11,7 @@ category:
 
 你可以通过执行下列命令来更新到最新版本。
 
-::: code-tabs
+::: code-tabs#shell
 
 @tab pnpm
 
@@ -47,7 +47,7 @@ npm i vuepress@next vuepress-theme-hope@next
 
 请运行以下命令确保你的依赖树没有问题。
 
-::: code-tabs
+::: code-tabs#shell
 
 @tab pnpm
 

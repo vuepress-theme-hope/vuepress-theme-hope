@@ -11,7 +11,7 @@ Please make sure you are using the latest `vuepress` and `vuepress-theme-hope` V
 
 You can update to the latest version by executing the following commands.
 
-::: code-tabs
+::: code-tabs#shell
 
 @tab pnpm
 
@@ -47,7 +47,7 @@ For VuePress to work correctly, there should only be one version of `@vuepress/x
 
 Please run the following command to make sure your dependency tree is correct.
 
-::: code-tabs
+::: code-tabs#shell
 
 @tab pnpm
 

@@ -9,7 +9,7 @@ Let the Markdown file support [mermaid](https://mermaid-js.github.io/mermaid/#/)
 
 ## Config
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

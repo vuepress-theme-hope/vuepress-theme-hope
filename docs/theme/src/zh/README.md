@@ -110,7 +110,7 @@ footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 
 在当前项目的 `[dir]` 文件夹内创建 vuepress-theme-hope 项目:
 
-::: code-tabs
+::: code-tabs#shell
 
 @tab pnpm
 
@@ -128,7 +128,7 @@ npm init vuepress-theme-hope@next [dir]
 
 ## 🚀 使用
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 

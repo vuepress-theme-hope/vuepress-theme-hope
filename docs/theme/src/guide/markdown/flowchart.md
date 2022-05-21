@@ -15,7 +15,7 @@ Let the Markdown file support flow chart in your VuePress site
 
 ## Config
 
-::: code-tabs
+::: code-tabs#language
 
 @tab TS
 
