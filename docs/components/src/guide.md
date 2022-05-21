@@ -105,7 +105,7 @@ CodePen project title.
 #### height
 
 - Type: `number`
-- Default: `265`
+- Default: `380`
 
 Editor height in px.
 

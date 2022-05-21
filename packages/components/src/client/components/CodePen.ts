@@ -11,7 +11,7 @@ export default defineComponent({
     user: { type: String, default: "" },
     slugHash: { type: String, default: "" },
     title: { type: String, default: "" },
-    height: { type: Number, default: 265 },
+    height: { type: Number, default: 380 },
     theme: {
       type: String as PropType<"default" | "light" | "dark">,
       default: "default",
