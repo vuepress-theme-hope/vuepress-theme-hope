@@ -13,9 +13,10 @@ export const getComponentsPlugin = (
     components: options.includes("FontIcon")
       ? options
       : ["FontIcon", ...options],
-    backToTop: themeConfig.backToTop !== false,
-    backToTopThreshold:
-      typeof themeConfig.backToTop === "number" ? themeConfig.backToTop : 300,
+    backToTop:
+      typeof themeConfig.backToTop === "number"
+        ? themeConfig.backToTop
+        : themeConfig.backToTop !== false,
     fontIconAssets: themeConfig.iconAssets,
     fontIconPrefix: themeConfig.iconPrefix,
   });
