@@ -11,22 +11,15 @@ icon: config
 需要被注册的组件
 
 ```ts
-type AvailableComponent = "Badge" | "CodePen" | "PDF";
+type AvailableComponent = "Badge" | "CodePen" | "FontIcon" | "PDF";
 ```
 
 ## backToTop
 
-- 类型: `boolean`
+- 类型: `boolean | number`
 - 默认: `false`
 
-是否启用返回顶部按钮
-
-## backToTopThreshold
-
-- 类型: `number`
-- 默认: `300`
-
-返回顶部按钮触发距离 (单位：像素)
+是否启用返回顶部按钮，当设置为数字时，会被作为返回顶部按钮触发距离 (单位：像素)，默认为 300。
 
 ## backToTopLocales
 
