@@ -35,7 +35,7 @@ export default [
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/PDF", {
-    external: ["vue", /\.scss$/],
+    external: ["@vuepress/client", "vue", /\.scss$/],
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/composables/index", {

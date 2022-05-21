@@ -1,3 +1,4 @@
+import { withBase } from "@vuepress/client";
 import { h } from "vue";
 
 import type { FunctionalComponent } from "vue";
@@ -28,7 +29,9 @@ const PDF: FunctionalComponent<PDFProps> = ({
 }) =>
   h("iframe", {
     class: "pdf-iframe",
-    src: `${url}#page=${page}&toolbar=${toolbar ? 1 : 0}&zoom=${zoom}`,
+    src: `${withBase(url)}#page=${page}&toolbar=${
+      toolbar ? 1 : 0
+    }&zoom=${zoom}`,
     style: {
       width: "100%",
       "border-radius": "8px",
