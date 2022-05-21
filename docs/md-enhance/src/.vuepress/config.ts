@@ -78,7 +78,7 @@ export default defineUserConfig({
     }),
   ],
 
-  pagePatterns: ["**/*.md", "!*.snippet.md", "!.vuepress", "!node_modules"],
+  pagePatterns: ["**/*.md", "!**/*.snippet.md", "!.vuepress", "!node_modules"],
 
   alias: {
     "@KatexPlayground": path.resolve(__dirname, "./components/KatexPlayground"),

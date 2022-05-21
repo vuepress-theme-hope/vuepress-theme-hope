@@ -12,7 +12,6 @@ const availableComponents: AvailableComponent[] = [
   "CodePen",
   "FontIcon",
   "PDF",
-  "Tab",
 ];
 
 const getIconLink = (
@@ -27,7 +26,7 @@ const getIconLink = (
   if (iconLink === "iconfont")
     return {
       type: "style",
-      content: `@import url("//at.alicdn.com/t/font_2410206_mfj6e1vbwo.css");`,
+      content: `@import url("//at.alicdn.com/t/font_2410206_h4r1xw8ppng.css");`,
     };
 
   const actualLink = iconLink.match(/^(?:https?:)?\/\//g)
@@ -61,10 +60,7 @@ export const prepareConfigFile = (
   let rootComponents = "";
 
   options.components.forEach((item) => {
-    if (item === "Tab") {
-      configImport += `import { Tab, Tabs } from "${CLIENT_FOLDER}components/Tab";\n`;
-      enhance += `app.component("Tab", Tab);\napp.component("Tabs", Tabs);\n`;
-    } else if (availableComponents.includes(item)) {
+    if (availableComponents.includes(item)) {
       configImport += `import ${item} from "${CLIENT_FOLDER}components/${item}";\n`;
       enhance += `app.component("${item}", ${item});\n`;
     }

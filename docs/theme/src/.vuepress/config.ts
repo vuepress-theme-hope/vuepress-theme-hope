@@ -87,7 +87,7 @@ export default defineUserConfig({
     }),
   ],
 
-  pagePatterns: ["**/*.md", "!*.snippet.md", "!.vuepress", "!node_modules"],
+  pagePatterns: ["**/*.md", "!**/*.snippet.md", "!.vuepress", "!node_modules"],
 
   alias: {
     "@IconDisplay": path.resolve(__dirname, "./components/IconDisplay"),

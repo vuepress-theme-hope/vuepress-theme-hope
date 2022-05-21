@@ -19,6 +19,11 @@ features:
     details: Decorate Markdown content with styles
     link: /guide/container.html
 
+  - title: Tabs
+    icon: tab
+    details: Group similar content with tabs and switch them together
+    link: /guide/tabs.html
+
   - title: Code Tabs
     icon: code
     details: Group similar codes with tabs

@@ -1,7 +1,7 @@
 ---
 title: Code Tabs
 icon: code
-index: 3
+index: 4
 category:
   - Markdown
 tag:
@@ -56,19 +56,15 @@ module.exports = {
 
 ## Usage
 
-You need to use `code-tabs` container, inside it, place `@tab` marker with code fence.
-
-If you want a tab be activated by default, you can append a `:active` suffix at the end of marker.
-
-::: note
+This is the same as tabs function, but it's special built for code blocks.
 
 Only code fence after `@tab` marker is allowed inside code tabs, other markdown content will be ignored.
 
-:::
-
 ## Demo
 
-::: code-tabs
+Install VuePress Theme Hope:
+
+::: code-tabs#shell
 
 @tab pnpm
 
@@ -90,8 +86,36 @@ npm i -D vuepress-theme-hope@next
 
 :::
 
+Install VuePress Plugin Markdown Enhance:
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D vuepress-plugin-md-enhance@next
+```
+
+@tab yarn
+
+```bash
+yarn add -D vuepress-plugin-md-enhance@next
+```
+
+@tab:active npm
+
+```bash
+npm i -D vuepress-plugin-md-enhance@next
+```
+
+:::
+
+:::: details Code
+
 ````md
-::: code-tabs
+Install VuePress Theme Hope:
+
+::: code-tabs#shell
 
 @tab pnpm
 
@@ -109,7 +133,33 @@ yarn add -D vuepress-theme-hope@next
 
 ```bash
 npm i -D vuepress-theme-hope@next
+```
+
+:::
+
+Install VuePress Plugin Markdown Enhance:
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D vuepress-plugin-md-enhance@next
+```
+
+@tab yarn
+
+```bash
+yarn add -D vuepress-plugin-md-enhance@next
+```
+
+@tab:active npm
+
+```bash
+npm i -D vuepress-plugin-md-enhance@next
 ```
 
 :::
 ````
+
+::::

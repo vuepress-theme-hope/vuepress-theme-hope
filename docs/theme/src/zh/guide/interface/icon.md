@@ -81,7 +81,7 @@ tag:
      "link",
      {
        rel: "stylesheet",
-       href: "//at.alicdn.com/t/font_2410206_mfj6e1vbwo.css",
+       href: "//at.alicdn.com/t/font_2410206_h4r1xw8ppng.css",
      },
    ];
    ```
@@ -134,10 +134,10 @@ Font-awesome 当前版本为 6.0.0
 ## Iconfont 精选图标
 
 ```html
-<link rel="stylesheet" href="//at.alicdn.com/t/font_2410206_mfj6e1vbwo.css" />
+<link rel="stylesheet" href="//at.alicdn.com/t/font_2410206_h4r1xw8ppng.css" />
 ```
 
-<IconDisplay link="//at.alicdn.com/t/font_2410206_mfj6e1vbwo.css" />
+<IconDisplay link="//at.alicdn.com/t/font_2410206_h4r1xw8ppng.css" />
 
 <script setup lang="ts">
 import IconDisplay from '@IconDisplay';

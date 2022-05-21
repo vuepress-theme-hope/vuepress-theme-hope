@@ -84,6 +84,13 @@ icon: config
 
 是否启用 v-pre 容器。
 
+## tabs
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否启用选项卡。
+
 ## codetabs
 
 - 类型: `boolean`

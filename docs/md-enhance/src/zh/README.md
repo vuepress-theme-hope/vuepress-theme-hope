@@ -19,6 +19,11 @@ features:
     details: 用样式装饰 Markdown 内容
     link: /zh/guide/container.html
 
+  - title: 选项卡
+    icon: tab
+    details: 使用选项卡对相似内容进行分组
+    link: /zh/guide/tabs.html
+
   - title: 代码组
     icon: code
     details: 使用选项卡对相似代码进行分组

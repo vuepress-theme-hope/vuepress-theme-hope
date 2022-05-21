@@ -66,6 +66,15 @@ export interface MarkdownEnhanceOptions {
   vpre?: boolean;
 
   /**
+   * Whether to enable tabs.
+   *
+   * 是否启用标签页分组。
+   *
+   * @default false
+   */
+  tabs?: boolean;
+
+  /**
    * Whether to enable codetabs.
    *
    * 是否启用代码组。

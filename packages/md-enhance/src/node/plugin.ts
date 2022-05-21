@@ -27,6 +27,7 @@ import {
   reactDemo,
   sub,
   sup,
+  tabs,
   tasklist,
   vPre,
   vueDemo,
@@ -155,6 +156,7 @@ export const mdEnhancePlugin =
           );
 
         if (getStatus("codetabs")) markdownIt.use(codeTabs);
+        if (getStatus("tabs")) markdownIt.use(tabs);
 
         if (getStatus("sup")) markdownIt.use(sup);
         if (getStatus("sub")) markdownIt.use(sub);

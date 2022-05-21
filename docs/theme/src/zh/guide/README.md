@@ -25,6 +25,7 @@ tag:
 为 Markdown 添加了更多语法，丰富文档与博客写作:
 
 - [自定义容器](markdown/container.md)
+- [选项卡](markdown/tabs.md)
 - [代码组](markdown/code-tabs.md)
 - [Tex 支持](markdown/tex.md)
 - [自定义对齐](markdown/align.md)

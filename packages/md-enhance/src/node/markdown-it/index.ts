@@ -15,5 +15,6 @@ export * from "./mermaid";
 export * from "./presentation";
 export * from "./sub";
 export * from "./sup";
+export * from "./tabs";
 export * from "./tasklist";
 export * from "./vPre";

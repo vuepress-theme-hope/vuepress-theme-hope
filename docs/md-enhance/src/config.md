@@ -84,6 +84,13 @@ Whether to enable link check.
 
 Whether to enable v-pre wrapper.
 
+## tabs
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to enable tabs.
+
 ## codetabs
 
 - Type: `boolean`

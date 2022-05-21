@@ -12,7 +12,7 @@ export default hopeTheme({
     url: "https://mrhope.site",
   },
 
-  iconAssets: "//at.alicdn.com/t/font_2410206_mfj6e1vbwo.css",
+  iconAssets: "//at.alicdn.com/t/font_2410206_h4r1xw8ppng.css",
   iconPrefix: "iconfont icon-",
 
   repo: "vuepress-theme-hope/vuepress-theme-hope/tree/main/packages/components/",
@@ -70,7 +70,7 @@ export default hopeTheme({
   },
 
   plugins: {
-    components: ["Badge", "CodePen", "PDF", "Tab"],
+    components: ["Badge", "CodePen", "PDF"],
 
     comment: {
       type: "giscus",

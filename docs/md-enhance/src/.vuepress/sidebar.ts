@@ -10,6 +10,7 @@ export const enSidebarConfig = sidebar({
       children: [
         "",
         "container",
+        "tabs",
         "code-tabs",
         "sup-sub",
         "align",
@@ -86,6 +87,7 @@ export const zhSidebarConfig = sidebar({
       children: [
         "",
         "container",
+        "tabs",
         "code-tabs",
         "sup-sub",
         "align",

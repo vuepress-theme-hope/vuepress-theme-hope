@@ -18,5 +18,6 @@ title: Get Started
 - [Mermaid](mermaid.md)
 - [Presentation](presentation.md)
 - [Subscript and Superscript](sup-sub.md)
+- [Tabs](tabs.md)
 - [Tasklist](tasklist.md)
 - [Tex](tex.md)

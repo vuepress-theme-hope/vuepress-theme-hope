@@ -1,14 +1,14 @@
 import { describe, it, expect } from "vitest";
 import MarkdownIt = require("markdown-it");
-import { codeTabs } from "../../src/node/markdown-it/codeTabs";
+import { tabs } from "../../src/node/markdown-it/tabs";
 
-const markdownIt = MarkdownIt({ linkify: true }).use(codeTabs);
+const markdownIt = MarkdownIt({ linkify: true }).use(tabs);
 
-describe("code tabs", () => {
+describe("tabs", () => {
   it("shoud render single block", () => {
     expect(
       markdownIt.render(`
-::: code-tabs
+::: tabs
 
 @tab js
 
@@ -22,7 +22,7 @@ const a = 1;
 
     expect(
       markdownIt.render(`
-::: code-tabs
+::: tabs
 @tab js
 \`\`\`js
 const a = 1;
@@ -35,7 +35,7 @@ const a = 1;
   it("shoud render mutiple block", () => {
     expect(
       markdownIt.render(`
-::: code-tabs
+::: tabs
 
 @tab js
 
@@ -55,7 +55,7 @@ const a = 1;
 
     expect(
       markdownIt.render(`
-::: code-tabs
+::: tabs
 @tab js
 \`\`\`js
 const a = 1;
@@ -72,7 +72,7 @@ const a = 1;
   it("shoud support id", () => {
     expect(
       markdownIt.render(`
-::: code-tabs#event
+::: tabs#event
 
 @tab js
 
@@ -86,7 +86,7 @@ const a = 1;
 
     expect(
       markdownIt.render(`
-::: code-tabs#event-id
+::: tabs#event-id
 @tab js
 \`\`\`js
 const a = 1;
@@ -97,7 +97,7 @@ const a = 1;
 
     expect(
       markdownIt.render(`
-::: code-tabs#id with space
+::: tabs#id with space
 @tab js
 \`\`\`js
 const a = 1;
@@ -108,7 +108,7 @@ const a = 1;
 
     expect(
       markdownIt.render(`
-::: code-tabs # id starts and having space in the end
+::: tabs # id starts and having space in the end
 @tab js
 \`\`\`js
 const a = 1;
@@ -121,7 +121,7 @@ const a = 1;
   it("shoud support active", () => {
     expect(
       markdownIt.render(`
-::: code-tabs
+::: tabs
 
 @tab:active js
 
@@ -135,7 +135,7 @@ const a = 1;
 
     expect(
       markdownIt.render(`
-::: code-tabs
+::: tabs
 @tab:active js
 \`\`\`js
 const a = 1;
@@ -146,7 +146,7 @@ const a = 1;
 
     expect(
       markdownIt.render(`
-::: code-tabs
+::: tabs
 
 @tab js
 
@@ -166,74 +166,12 @@ const a = 1;
 
     expect(
       markdownIt.render(`
-::: code-tabs
+::: tabs
 @tab js
 \`\`\`js
 const a = 1;
 \`\`\`
 @tab:active ts
-\`\`\`ts
-const a = 1;
-\`\`\`
-:::
-    `)
-    ).toMatchSnapshot();
-  });
-
-  it("shoud support value", () => {
-    expect(
-      markdownIt.render(`
-::: code-tabs
-
-@tab js#javascript
-
-\`\`\`js
-const a = 1;
-\`\`\`
-
-:::
-    `)
-    ).toMatchSnapshot();
-
-    expect(
-      markdownIt.render(`
-::: code-tabs
-@tab:active js#javascript
-\`\`\`js
-const a = 1;
-\`\`\`
-:::
-    `)
-    ).toMatchSnapshot();
-
-    expect(
-      markdownIt.render(`
-::: code-tabs
-
-@tab js#js
-
-\`\`\`js
-const a = 1;
-\`\`\`
-
-@tab:active ts #typescript
-
-\`\`\`ts
-const a = 1;
-\`\`\`
-
-:::
-    `)
-    ).toMatchSnapshot();
-
-    expect(
-      markdownIt.render(`
-::: code-tabs
-@tab js # javascript
-\`\`\`js
-const a = 1;
-\`\`\`
-@tab:active ts #typescript
 \`\`\`ts
 const a = 1;
 \`\`\`
@@ -245,7 +183,7 @@ const a = 1;
   it("should ignore other items", () => {
     expect(
       markdownIt.render(`
-::: code-tabs
+::: tabs
 
 \`\`\`coffee
 const a = 1;
@@ -267,7 +205,7 @@ const a = 1;
 
     expect(
       markdownIt.render(`
-::: code-tabs
+::: tabs
 \`\`\`coffee
 const a = 1;
 \`\`\`
@@ -284,7 +222,7 @@ const a = 1;
 
     expect(
       markdownIt.render(`
-::: code-tabs
+::: tabs
 
 @tab js
 
@@ -312,7 +250,7 @@ Another text again
 
     expect(
       markdownIt.render(`
-::: code-tabs
+::: tabs
 @tab js
 A text
 \`\`\`js

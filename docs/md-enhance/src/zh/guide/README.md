@@ -31,6 +31,26 @@ icon: creative
 
 ## 新增的更多语法
 
+### 选项卡
+
+::: tabs#fruit
+
+@tab apple
+
+Apple
+
+@tab banana
+
+Banana
+
+@tab orange
+
+Orange
+
+:::
+
+- [查看详情](tabs.md)
+
 ### 代码块
 
 ::: code-tabs

@@ -1,7 +1,7 @@
 ---
 title: 上下角标
 icon: superscript
-index: 6
+index: 7
 category:
   - Markdown
 tag:

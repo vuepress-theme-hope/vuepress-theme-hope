@@ -67,6 +67,11 @@ export const prepareConfigFile = async (
   if (getStatus("imageMark"))
     configImport += `import "${CLIENT_FOLDER}styles/image-mark.scss";\n`;
 
+  if (getStatus("tabs")) {
+    configImport += `import Tabs from "${CLIENT_FOLDER}components/Tabs";\n`;
+    enhance += `app.component("Tabs", Tabs);\n`;
+  }
+
   if (getStatus("tasklist"))
     configImport += `import "${CLIENT_FOLDER}styles/tasklist.scss";\n`;
 

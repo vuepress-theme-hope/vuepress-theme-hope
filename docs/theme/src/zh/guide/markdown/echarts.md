@@ -1,7 +1,7 @@
 ---
 title: ECharts
 icon: rank
-index: 10
+index: 11
 category:
   - Markdown
 tag:

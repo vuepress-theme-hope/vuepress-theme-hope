@@ -1,7 +1,7 @@
 ---
 title: 组件
 icon: plugin
-index: 16
+index: 17
 category:
   - Markdown
 tag:
@@ -107,7 +107,7 @@ CodePen 项目标题。
 
 编辑器主题。
 
-#### 默认值 Tab
+#### defaultTab
 
 - 类型: `string[]`
 - 默认值: `["result"]`
@@ -119,10 +119,10 @@ CodePen 项目标题。
 您可以在 Markdown 中使用它来添加嵌入演示:
 
 ```md
-<CodePen user="kowlor" slug-hash="ZYYQoy" title="Solar System animation - Pure CSS" :默认值-tab="['css','result']" />
+<CodePen user="kowlor" slug-hash="ZYYQoy" title="Solar System animation - Pure CSS" :default-tab="['css','result']" />
 ```
 
-<CodePen user="kowlor" slug-hash="ZYYQoy" title="Solar System animation - Pure CSS" :默认值-tab="['css','result']" />
+<CodePen user="kowlor" slug-hash="ZYYQoy" title="Solar System animation - Pure CSS" :default-tab="['css','result']" />
 
 ## PDF
 
@@ -164,129 +164,3 @@ PDF 文档的初始页面
 - 默认值: `100`
 
 PDF 文档的初始缩放比例
-
-## Tab
-
-选项卡组件，由 `<Tabs>` 和 `<Tab>` 组成。
-
-::: tip
-
-对于具有相同 `tab-id` 的选项卡组，选项卡会一起进行切换。
-
-:::
-
-### Tabs Props
-
-#### tabId
-
-- 类型: `string`
-- 必填: 否
-
-选项卡组的事件 ID。
-
-### Tab Props
-
-#### title
-
-- 类型: `string`
-- 必填: 是
-
-选项卡的标题
-
-#### label
-
-- 类型: `string`
-- 默认值: `title`
-
-选项卡的标签名称，用于 A11y。
-
-#### value
-
-- 类型: `string`
-- 默认值: `title`
-
-选项卡对应的值
-
-### Tab 用法
-
-您可以在 Markdown 中使用它来添加选项卡
-
-```md
-一个水果列表:
-
-<Tabs tab-id="fruit">
-  <Tab title="apple" value="apple">
-  Apple
-  </Tab>
-  <Tab title="banana" value="banana">
-  banana
-  </Tab>
-</Tabs>
-
-另一个水果列表:
-
-<Tabs tab-id="fruit">
-  <Tab title="apple" >
-  Apple
-  </Tab>
-  <Tab title="banana" >
-  banana
-  </Tab>
-  <Tab title="orange" >
-  orange
-  </Tab>
-</Tabs>
-
-一个没有 ID 的水果列表:
-
-<Tabs>
-  <Tab title="apple">
-  Apple
-  </Tab>
-  <Tab title="banana">
-  banana
-  </Tab>
-  <Tab title="orange" >
-  orange
-  </Tab>
-</Tabs>
-```
-
-一个水果列表:
-
-<Tabs tab-id="fruit">
-  <Tab title="apple" value="apple">
-  Apple
-  </Tab>
-  <Tab title="banana" value="banana">
-  banana
-  </Tab>
-</Tabs>
-
-另一个水果列表:
-
-<Tabs tab-id="fruit">
-  <Tab title="apple" >
-  Apple
-  </Tab>
-  <Tab title="banana" >
-  banana
-  </Tab>
-  <Tab title="orange" >
-  orange
-  </Tab>
-</Tabs>
-
-一个没有 ID 的水果列表:
-
-<Tabs>
-  <Tab title="apple">
-  Apple
-  </Tab>
-  <Tab title="banana">
-  banana
-  </Tab>
-  <Tab title="orange" >
-  orange
-  </Tab>
-</Tabs>

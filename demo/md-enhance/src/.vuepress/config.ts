@@ -37,6 +37,7 @@ export default defineUserConfig({
         "/demo/mermaid",
         "/demo/presentation",
         "/demo/sup-sub",
+        "/demo/tabs",
         "/demo/tasklist",
         "/demo/tex",
       ],

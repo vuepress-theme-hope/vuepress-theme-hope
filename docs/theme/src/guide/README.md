@@ -25,6 +25,7 @@ The theme largely inherits the config of `@vuepress/theme-default`, while adds a
 Added more syntax to Markdown, enriching documentation and blog writing:
 
 - [Custom Container](markdown/container.md)
+- [Tabs](markdown/tabs.md)
 - [Code Tabs](markdown/code-tabs.md)
 - [Tex Support](markdown/tex.md)
 - [Custom alignment](markdown/align.md)

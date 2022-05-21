@@ -1,19 +1,21 @@
 import { ClientOnly } from "@vuepress/client";
 import { useStorage } from "@vueuse/core";
 import { defineComponent, h, ref, watch } from "vue";
-
 import type { PropType, VNode } from "vue";
-import type { TabProps } from "./Tabs";
 
-import "../styles/code-tabs.scss";
+import "../styles/tabs.scss";
 
-const codeTabStore = useStorage<Record<string, string>>(
-  "VUEPRESS_CODE_TAB_STORE",
-  {}
-);
+export interface TabProps extends Record<string, unknown> {
+  title: string;
+  value?: string;
+  content: string;
+}
+
+const tabStore = useStorage<Record<string, string>>("VUEPRESS_TAB_STORE", {});
 
 export default defineComponent({
-  name: "CodeTabs",
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: "Tabs",
 
   props: {
     active: { type: Number, default: 0 },
@@ -31,8 +33,7 @@ export default defineComponent({
     const getInitialIndex = (): number => {
       if (props.tabId) {
         const valueIndex = props.data.findIndex(
-          ({ title, value = title }) =>
-            codeTabStore.value[props.tabId] === value
+          ({ title, value = title }) => tabStore.value[props.tabId] === value
         );
 
         if (valueIndex !== -1) return valueIndex;
@@ -52,7 +53,7 @@ export default defineComponent({
       if (props.tabId) {
         const { title, value = title } = props.data[activeIndex.value];
 
-        codeTabStore.value[props.tabId] = value;
+        tabStore.value[props.tabId] = value;
       }
     };
 
@@ -81,15 +82,11 @@ export default defineComponent({
         activatePrev();
       }
 
-      if (props.tabId) {
-        const { title, value = title } = props.data[activeIndex.value];
-
-        codeTabStore.value[props.tabId] = value;
-      }
+      updateStore();
     };
 
     watch(
-      () => codeTabStore.value[props.tabId],
+      () => tabStore.value[props.tabId],
       (newValue, oldValue) => {
         if (props.tabId && newValue !== oldValue) {
           const index = props.data.findIndex(
@@ -103,46 +100,44 @@ export default defineComponent({
 
     return (): VNode | null => {
       return h(ClientOnly, () =>
-        props.data.length
-          ? h("div", { class: "code-tabs" }, [
-              h(
-                "div",
-                { class: "code-tabs-nav" },
-                props.data.map(({ title }, index) => {
-                  const isActive = index === activeIndex.value;
+        h("div", { class: "tab-list" }, [
+          h(
+            "div",
+            { class: "tab-list-nav" },
+            props.data.map(({ title }, index) => {
+              const isActive = index === activeIndex.value;
 
-                  return h(
-                    "button",
-                    {
-                      ref: (element) => {
-                        if (element)
-                          tabRefs.value[index] = element as HTMLUListElement;
-                      },
-                      class: ["code-tabs-nav-tab", { active: isActive }],
-                      "aria-pressed": isActive,
-                      "aria-expanded": isActive,
-                      onClick: () => {
-                        activeIndex.value = index;
-                        updateStore();
-                      },
-                      onKeydown: (event: KeyboardEvent) =>
-                        keyboardHandler(event, index),
-                    },
-                    title
-                  );
-                })
-              ),
-              props.data.map(({ content }, index) => {
-                const isActive = index === activeIndex.value;
+              return h(
+                "button",
+                {
+                  ref: (element) => {
+                    if (element)
+                      tabRefs.value[index] = element as HTMLUListElement;
+                  },
+                  class: ["tab-list-nav-item", { active: isActive }],
+                  "aria-pressed": isActive,
+                  "aria-expanded": isActive,
+                  onClick: () => {
+                    activeIndex.value = index;
+                    updateStore();
+                  },
+                  onKeydown: (event: KeyboardEvent) =>
+                    keyboardHandler(event, index),
+                },
+                title
+              );
+            })
+          ),
+          props.data.map(({ content }, index) => {
+            const isActive = index === activeIndex.value;
 
-                return h("div", {
-                  class: ["code-tab", { active: isActive }],
-                  "aria-selected": isActive,
-                  innerHTML: content,
-                });
-              }),
-            ])
-          : null
+            return h("div", {
+              class: ["tab-item", { active: isActive }],
+              "aria-selected": isActive,
+              innerHTML: content,
+            });
+          }),
+        ])
       );
     };
   },

@@ -16,7 +16,6 @@ tag:
 - Badge
 - CodePen
 - PDF
-- Tab
 
 您可以将 `plugin.components` 设置为需要的组件数组，默认情况下为 `["Badge"]`。
 

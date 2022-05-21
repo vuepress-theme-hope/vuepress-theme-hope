@@ -33,6 +33,26 @@ Please use the options below and enable ONLY the feature you want to use.
 
 ## New Feature
 
+### Tabs
+
+::: tabs#fruit
+
+@tab apple
+
+Apple
+
+@tab banana
+
+Banana
+
+@tab orange
+
+Orange
+
+:::
+
+- [View Detail](tabs.md)
+
 ### Code Tabs
 
 ::: code-tabs

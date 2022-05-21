@@ -81,7 +81,7 @@ On the project page, you can edit the icons in the project, including adjustment
      "link",
      {
        rel: "stylesheet",
-       href: "//at.alicdn.com/t/font_2410206_mfj6e1vbwo.css",
+       href: "//at.alicdn.com/t/font_2410206_h4r1xw8ppng.css",
      },
    ];
    ```
@@ -128,10 +128,10 @@ Please follow [fontawesome document](https://fontawesome.com/).
 ## Featured Icons
 
 ```html
-<link rel="stylesheet" href="//at.alicdn.com/t/font_2410206_mfj6e1vbwo.css" />
+<link rel="stylesheet" href="//at.alicdn.com/t/font_2410206_h4r1xw8ppng.css" />
 ```
 
-<IconDisplay link="//at.alicdn.com/t/font_2410206_mfj6e1vbwo.css" />
+<IconDisplay link="//at.alicdn.com/t/font_2410206_h4r1xw8ppng.css" />
 
 <script setup lang="ts">
 import IconDisplay from '@IconDisplay';
