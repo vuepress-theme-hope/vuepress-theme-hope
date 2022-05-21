@@ -13,14 +13,21 @@ You can set information for page with the following frontmatter options.
 
 ## title
 
-- Type: `string | boolean`
+- Type: `string`
 - Required: No
 
 Current page’s title. Markdown’s first h1 by default.
 
+## shortTitle
+
+- Type: `string`
+- Required: No
+
+Current page’s short title. Will be used as in navbar, sidebar and breadcrumb.
+
 ## description
 
-- Type: `string | boolean`
+- Type: `string`
 - Required: No
 
 Current page’s description.
