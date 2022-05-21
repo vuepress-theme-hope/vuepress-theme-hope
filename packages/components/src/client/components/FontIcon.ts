@@ -9,14 +9,11 @@ export interface FontIconProps {
   color?: string;
 }
 
-const FontIcon: FunctionalComponent<FontIconProps> = ({
-  icon = "",
-  color = "inherit",
-}) =>
+const FontIcon: FunctionalComponent<FontIconProps> = ({ icon = "", color }) =>
   icon
     ? h("span", {
         class: ["icon", `${ICON_PREFIX}${icon}`],
-        style: { color },
+        ...(color ? { style: { color } } : {}),
       })
     : null;
 
