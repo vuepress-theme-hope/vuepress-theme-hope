@@ -942,12 +942,14 @@ importers:
       '@vuepress/client': 2.0.0-beta.45
       '@vuepress/core': 2.0.0-beta.45
       '@vuepress/utils': 2.0.0-beta.45
+      '@vueuse/core': ^8.5.0
       rimraf: ^3.0.2
       vue: ^3.2.35
     dependencies:
       '@mr-hope/vuepress-shared': link:../shared
       '@vuepress/client': 2.0.0-beta.45
       '@vuepress/utils': 2.0.0-beta.45
+      '@vueuse/core': 8.5.0_vue@3.2.35
       vue: 3.2.35
     devDependencies:
       '@vuepress/core': 2.0.0-beta.45

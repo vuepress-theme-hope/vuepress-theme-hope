@@ -1,6 +1,10 @@
 import { defineClientConfig } from "@vuepress/client";
-import AddThis from "./components/AddThis";
+import { useScriptTag } from "@vueuse/core";
+
+declare const PUB_ID: string;
 
 export default defineClientConfig({
-  rootComponents: [AddThis],
+  setup() {
+    useScriptTag(`//s7.addthis.com/js/300/addthis_widget.js#pubid=${PUB_ID}`);
+  },
 });
