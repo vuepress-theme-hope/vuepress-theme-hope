@@ -5,18 +5,22 @@ import type { Plugin } from "@vuepress/core";
 import type { HopeThemeOptions } from "../../shared";
 
 export const getComponentsPlugin = (
-  themeConfig: HopeThemeOptions,
-  options: AvailableComponent[] = ["Badge", "FontIcon"]
+  components: AvailableComponent[] = ["Badge", "FontIcon"],
+  options: Pick<
+    HopeThemeOptions,
+    "addThis" | "backToTop" | "hostname" | "iconAssets" | "iconPrefix"
+  >
 ): Plugin =>
   componentsPlugin({
     // FontIcon component is used by theme so we MUST enable it
-    components: options.includes("FontIcon")
-      ? options
-      : ["FontIcon", ...options],
+    components: components.includes("FontIcon")
+      ? components
+      : ["FontIcon", ...components],
+    addThis: options.addThis,
     backToTop:
-      typeof themeConfig.backToTop === "number"
-        ? themeConfig.backToTop
-        : themeConfig.backToTop !== false,
-    fontIconAssets: themeConfig.iconAssets,
-    fontIconPrefix: themeConfig.iconPrefix,
+      typeof options.backToTop === "number"
+        ? options.backToTop
+        : options.backToTop !== false,
+    fontIconAssets: options.iconAssets,
+    fontIconPrefix: options.iconPrefix,
   });

@@ -16,15 +16,22 @@ import { getSitemapPlugin } from "./sitemap";
 import { getSEOPlugin } from "./seo";
 
 import type { PluginConfig } from "@vuepress/core";
-import type { HopeThemeConfig, HopeThemePluginsOptions } from "../../shared";
+import type {
+  HopeThemeConfig,
+  HopeThemeOptions,
+  HopeThemePluginsOptions,
+} from "../../shared";
 
 export const getPluginConfig = (
   plugins: HopeThemePluginsOptions,
   themeData: HopeThemeConfig,
-  hostname: string
+  options: Pick<
+    HopeThemeOptions,
+    "addThis" | "backToTop" | "hostname" | "iconAssets" | "iconPrefix"
+  >
 ): PluginConfig => {
   const pluginConfig = [
-    getComponentsPlugin(themeData, plugins.components),
+    getComponentsPlugin(plugins.components, options),
     getActiveHeaderLinksPlugin(plugins.activeHeaderLinks),
     plugins.externalLinkIcon === false ? null : externalLinkIconPlugin(),
     plugins.nprogress === false ? null : nprogressPlugin(),
@@ -33,14 +40,14 @@ export const getPluginConfig = (
     getBlogPlugin(themeData, plugins.blog),
     getCommentPlugin(plugins.comment),
     getCopyCodePlugin(themeData, plugins.copyCode),
-    getCopyrightPlugin(hostname, themeData, plugins.copyright),
+    getCopyrightPlugin(themeData, plugins.copyright, options.hostname),
     // seo should work before feed
-    getSEOPlugin(hostname, themeData, plugins),
-    getFeedPlugin(hostname, themeData, plugins.feed),
+    getSEOPlugin(themeData, plugins, options.hostname),
+    getFeedPlugin(themeData, plugins.feed, options.hostname),
     getMdEnhancePlugin(plugins.mdEnhance),
     getPhotoSwipePlugin(plugins.photoSwipe),
     getPWAPlugin(plugins.pwa),
-    getSitemapPlugin(hostname, plugins.sitemap),
+    getSitemapPlugin(plugins.sitemap, options.hostname),
   ].filter((item) => item !== null) as PluginConfig;
 
   return pluginConfig;

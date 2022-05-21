@@ -30,7 +30,7 @@ pnpm add -D @mr-hope/vuepress-plugin-components@next
 @tab yarn
 
 ```bash
-yarn add -D vuepress-plugin-add-this@next
+yarn add -D @mr-hope/vuepress-plugin-components@next
 ```
 
 @tab npm

@@ -58,6 +58,7 @@ export const prepareConfigFile = (
   let enhance = "";
   let setup = "";
   let rootComponents = "";
+  let isUseScriptTagImported = false;
 
   options.components.forEach((item) => {
     if (availableComponents.includes(item)) {
@@ -73,11 +74,20 @@ export const prepareConfigFile = (
         const composableName =
           type === "script" ? "useScriptTag" : "useStyleTag";
 
+        if (type === "script") isUseScriptTagImported = true;
+
         configImport += `import { ${composableName} } from "${CLIENT_FOLDER}composables";\n`;
         setup += `${composableName}(\`${content}\`);\n`;
       }
     }
   });
+
+  if (typeof options.addThis === "string") {
+    if (!isUseScriptTagImported)
+      configImport += `import { useScriptTag } from "${CLIENT_FOLDER}composables";\n`;
+
+    setup += `useScriptTag(\`//s7.addthis.com/js/300/addthis_widget.js#pubid=${options.addThis}\`);\n`;
+  }
 
   if (options.backToTop) {
     configImport += `import BackToTop from "${CLIENT_FOLDER}components/BackToTop";\n`;

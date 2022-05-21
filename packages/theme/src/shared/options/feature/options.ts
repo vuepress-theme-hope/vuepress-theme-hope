@@ -34,6 +34,13 @@ export interface HopeThemeFeatureLocaleConfig {
 
 export interface HopeThemeFeatureOptions {
   /**
+   * Add This 的公开 ID
+   *
+   * Public ID for add this
+   */
+  addThis?: string;
+
+  /**
    * Encrypt config
    *
    * 加密配置

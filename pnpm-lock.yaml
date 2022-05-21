@@ -106,26 +106,6 @@ importers:
       typescript: 4.6.4
       vitest: 0.12.8_c8@7.11.3
 
-  demo/add-this:
-    specifiers:
-      '@vuepress/cli': 2.0.0-beta.45
-      '@vuepress/client': 2.0.0-beta.45
-      '@vuepress/theme-default': 2.0.0-beta.45
-      sass-loader: ^12.6.0
-      vue: ^3.2.35
-      vuepress-plugin-add-this: workspace:*
-      vuepress-vite: 2.0.0-beta.45
-      vuepress-webpack: 2.0.0-beta.45
-    devDependencies:
-      '@vuepress/cli': 2.0.0-beta.45
-      '@vuepress/client': 2.0.0-beta.45
-      '@vuepress/theme-default': 2.0.0-beta.45_sass-loader@12.6.0
-      sass-loader: 12.6.0
-      vue: 3.2.35
-      vuepress-plugin-add-this: link:../../packages/add-this
-      vuepress-vite: 2.0.0-beta.45_kaspaqhueqknk2uxnvr2ctagsq
-      vuepress-webpack: 2.0.0-beta.45_hk7mqmrkl45ek3o24cu65nluiu
-
   demo/blog2:
     specifiers:
       '@vuepress/cli': 2.0.0-beta.45
@@ -422,36 +402,6 @@ importers:
       cross-env: 7.0.3
       sass-loader: 12.6.0
       vue: 3.2.35
-      vuepress-theme-hope: link:../../packages/theme
-      vuepress-vite: 2.0.0-beta.45_kaspaqhueqknk2uxnvr2ctagsq
-      vuepress-webpack: 2.0.0-beta.45_hk7mqmrkl45ek3o24cu65nluiu
-
-  docs/add-this:
-    specifiers:
-      '@mr-hope/vuepress-shared': workspace:*
-      '@types/three': ^0.140.0
-      '@vuepress/cli': 2.0.0-beta.45
-      '@vuepress/client': 2.0.0-beta.45
-      '@vuepress/plugin-docsearch': 2.0.0-beta.45
-      '@vuepress/utils': 2.0.0-beta.45
-      sass-loader: ^12.6.0
-      three: ^0.140.2
-      vue: ^3.2.35
-      vuepress-plugin-add-this: workspace:*
-      vuepress-theme-hope: workspace:*
-      vuepress-vite: 2.0.0-beta.45
-      vuepress-webpack: 2.0.0-beta.45
-    dependencies:
-      '@mr-hope/vuepress-shared': link:../../packages/shared
-      '@types/three': 0.140.0
-      '@vuepress/cli': 2.0.0-beta.45
-      '@vuepress/client': 2.0.0-beta.45
-      '@vuepress/plugin-docsearch': 2.0.0-beta.45
-      '@vuepress/utils': 2.0.0-beta.45
-      sass-loader: 12.6.0
-      three: 0.140.2
-      vue: 3.2.35
-      vuepress-plugin-add-this: link:../../packages/add-this
       vuepress-theme-hope: link:../../packages/theme
       vuepress-vite: 2.0.0-beta.45_kaspaqhueqknk2uxnvr2ctagsq
       vuepress-webpack: 2.0.0-beta.45_hk7mqmrkl45ek3o24cu65nluiu
@@ -935,25 +885,6 @@ importers:
       vuepress-theme-hope: link:../../packages/theme
       vuepress-vite: 2.0.0-beta.45_kaspaqhueqknk2uxnvr2ctagsq
       vuepress-webpack: 2.0.0-beta.45_hk7mqmrkl45ek3o24cu65nluiu
-
-  packages/add-this:
-    specifiers:
-      '@mr-hope/vuepress-shared': workspace:*
-      '@vuepress/client': 2.0.0-beta.45
-      '@vuepress/core': 2.0.0-beta.45
-      '@vuepress/utils': 2.0.0-beta.45
-      '@vueuse/core': ^8.5.0
-      rimraf: ^3.0.2
-      vue: ^3.2.35
-    dependencies:
-      '@mr-hope/vuepress-shared': link:../shared
-      '@vuepress/client': 2.0.0-beta.45
-      '@vuepress/utils': 2.0.0-beta.45
-      '@vueuse/core': 8.5.0_vue@3.2.35
-      vue: 3.2.35
-    devDependencies:
-      '@vuepress/core': 2.0.0-beta.45
-      rimraf: 3.0.2
 
   packages/blog2:
     specifiers:

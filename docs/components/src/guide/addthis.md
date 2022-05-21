@@ -1,5 +1,5 @@
 ---
-title: Guide
+title: AddThis
 icon: creative
 ---
 
@@ -18,3 +18,5 @@ If you already registered, ahead to [AddThis login page](https://www.addthis.com
 Go to [Tools page](https://www.addthis.com/dashboard#gallery/) then add and configure tools which you need.
 
 After you finished, enter the [Get The Code Page](https://www.addthis.com/dashboard#get-the-code/) to get your pubid from the code.
+
+Set `addThis` option with `pubid` you get.

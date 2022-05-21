@@ -6,9 +6,9 @@ import type { FeedOptions } from "vuepress-plugin-feed2";
 import type { HopeThemeConfig } from "../../shared";
 
 export const getFeedPlugin = (
-  hostname: string,
   themeConfig: HopeThemeConfig,
-  options?: Omit<FeedOptions, "hostname"> | false
+  options?: Omit<FeedOptions, "hostname"> | false,
+  hostname?: string
 ): Plugin | null => {
   if (
     options === false ||

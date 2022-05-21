@@ -79,8 +79,6 @@ For example:
 
 Here are some other plugins that are not enabled by default by the theme, you can enable them according to your own needs.
 
-- [vuepress-plugin-add-this][add-this]: Share plugin based on AddThis
-
 - [vuepress-plugin-lightgallery][lightgallery]: Image preview plugin based on lightgallery
 
 :::
@@ -101,7 +99,6 @@ Here are some other plugins that are not enabled by default by the theme, you ca
 
 - [@vuepress/plugin-theme-data][theme-data]: Composition API plugin for theme data
 
-[add-this]: https://vuepress-theme-hope.github.io/v2/add-this/
 [blog2]: https://vuepress-theme-hope.github.io/v2/blog/
 [comment2]: https://vuepress-theme-hope.github.io/v2/comment/
 [components]: https://vuepress-theme-hope.github.io/v2/components/

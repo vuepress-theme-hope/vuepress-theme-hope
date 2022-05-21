@@ -1,7 +1,7 @@
 {
-  "name": "vuepress-plugin-add-this",
-  "short_name": "add-this",
-  "description": "Add this plugin for VuePress",
+  "name": "vuepress-plugin-pwa2",
+  "short_name": "pwa2",
+  "description": "PWA plugin for VuePress",
   "lang": "zh-CN",
   "orientation": "portrait-primary",
   "icons": [

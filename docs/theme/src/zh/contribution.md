@@ -46,7 +46,6 @@ corepack prepare pnpm@7.1.0 --activate
 ├── demo → 主题演示项目
 │
 ├── docs → 文档目录
-│ ├── add-this → add-this 插件文档
 │ ├── blog → blog2 插件文档
 │ ├── comment → comment2 插件文档
 │ ├── components → @mr-hope/components 插件文档
@@ -62,7 +61,6 @@ corepack prepare pnpm@7.1.0 --activate
 │ └── theme → 主题文档
 │
 ├── packages → 项目源代码
-│ ├── add-this → add-this 插件
 │ ├── blog2 → blog2 插件
 │ ├── comment2 → comment2 插件
 │ ├── components → @mr-hope/components 插件

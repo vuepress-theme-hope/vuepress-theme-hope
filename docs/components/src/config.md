@@ -14,6 +14,13 @@ Whether register articleInfo component
 type AvailableComponent = "Badge" | "CodePen" | "FontIcon" | "PDF";
 ```
 
+## addThis
+
+- Type: `string | false`
+- Default: `false`
+
+Public ID of addThis.
+
 ## backToTop
 
 - Type: `boolean | number`

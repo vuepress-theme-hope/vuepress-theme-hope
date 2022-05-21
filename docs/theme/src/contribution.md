@@ -46,7 +46,6 @@ The project is a monorepo, managed by pnpm.
 ├── demo → Theme demo project
 │
 ├── docs → document directory
-│ ├── add-this → add-this plugin document
 │ ├── blog → blog2 plugin document
 │ ├── comment → comment2 plugin document
 │ ├── components → @mr-hope/components plugin document
@@ -62,7 +61,6 @@ The project is a monorepo, managed by pnpm.
 │ └── theme → theme document
 │
 ├── packages → project source code
-│ ├── add-this → add-this plugin
 │ ├── blog2 → blog2 plugin
 │ ├── comment2 → comment2 plugin
 │ ├── components → @mr-hope/components plugin
