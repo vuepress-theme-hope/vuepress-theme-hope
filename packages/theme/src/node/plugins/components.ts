@@ -21,6 +21,6 @@ export const getComponentsPlugin = (
       typeof options.backToTop === "number"
         ? options.backToTop
         : options.backToTop !== false,
-    fontIconAssets: options.iconAssets,
-    fontIconPrefix: options.iconPrefix,
+    iconAssets: options.iconAssets,
+    iconPrefix: options.iconPrefix,
   });

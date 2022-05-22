@@ -66,8 +66,8 @@ export const prepareConfigFile = (
       enhance += `app.component("${item}", ${item});\n`;
     }
 
-    if (item === "FontIcon" && options.fontIconAssets) {
-      const result = getIconLink(options.fontIconAssets);
+    if (item === "FontIcon" && options.iconAssets) {
+      const result = getIconLink(options.iconAssets);
 
       if (result) {
         const { type, content } = result;

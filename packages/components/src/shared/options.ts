@@ -50,7 +50,7 @@ export interface ComponentOptions {
    *
    * @description `'iconfont'` and `'font-awesome'` keywords are supported
    */
-  fontIconAssets?: string;
+  iconAssets?: string;
 
   /**
    * Class prefix of font icon
@@ -59,5 +59,5 @@ export interface ComponentOptions {
    *
    * @default ''
    */
-  fontIconPrefix?: string;
+  iconPrefix?: string;
 }

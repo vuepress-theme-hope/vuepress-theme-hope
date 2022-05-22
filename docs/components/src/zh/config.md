@@ -48,3 +48,17 @@ AddThis 的公开 ID。
 - 必填: 否
 
 返回顶部按钮国际化配置。
+
+## iconAssets
+
+- 类型: `string`
+- 必填: 否
+
+字体图标资源链接，支持 `'iconfont'` 和 `'font-awesome'` 关键字。
+
+## iconPrefix
+
+- 类型: `string`
+- 默认值: `''`
+
+字体图标的 Class 前缀

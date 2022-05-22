@@ -48,3 +48,17 @@ Whether enabling backToTop button. When setting a number, it will be used as Bac
 - Required: No
 
 Locales config for BackToTop button.
+
+## iconAssets
+
+- Type: `string`
+- Required: No
+
+Link of font icon asset, `'iconfont'` and `'font-awesome'` keywords are supported.
+
+## iconPrefix
+
+- Type: `string`
+- Default: `''`
+
+Class prefix of font icon
