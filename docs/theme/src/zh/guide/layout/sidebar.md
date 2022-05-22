@@ -876,7 +876,9 @@ module.exports = sidebar(/* 你的侧边栏配置 */);
 
 @tab TS
 
-@[code](../../../.vuepress/sidebar/zh.ts)
+```ts
+@include(../../../.vuepress/sidebar/zh.ts)
+```
 
 @tab JS
 
