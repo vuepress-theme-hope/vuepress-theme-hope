@@ -1,5 +1,6 @@
-import { IconBase } from "@mr-hope/vuepress-shared/lib/client";
 import { h } from "vue";
+import { IconBase } from "vuepress-shared/lib/client";
+
 import type { FunctionalComponent } from "vue";
 
 export const ArrowLeftIcon: FunctionalComponent = () =>

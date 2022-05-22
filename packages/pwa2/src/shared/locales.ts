@@ -1,4 +1,4 @@
-import type { ConvertLocaleConfig } from "@mr-hope/vuepress-shared";
+import type { ConvertLocaleConfig } from "vuepress-shared";
 
 export interface PWALocaleData {
   /**

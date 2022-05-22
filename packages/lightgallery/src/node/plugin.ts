@@ -1,6 +1,7 @@
-import { addViteOptimizeDepsInclude } from "@mr-hope/vuepress-shared";
 import { path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
+import { addViteOptimizeDepsInclude } from "vuepress-shared";
+
 import { logger } from "./utils";
 
 import type { PluginFunction } from "@vuepress/core";

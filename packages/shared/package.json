@@ -1,5 +1,5 @@
 {
-  "name": "@mr-hope/vuepress-shared",
+  "name": "vuepress-shared",
   "version": "2.0.0-beta.68",
   "description": "Shared files for vuepress-theme-hope",
   "keywords": [

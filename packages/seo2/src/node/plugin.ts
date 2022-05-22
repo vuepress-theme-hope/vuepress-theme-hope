@@ -1,5 +1,6 @@
-import { stripTags } from "@mr-hope/vuepress-shared";
 import { chalk } from "@vuepress/utils";
+import { stripTags } from "vuepress-shared";
+
 import { generateRobotsTxt, appendSEO } from "./seo";
 import { logger, md2text } from "./utils";
 

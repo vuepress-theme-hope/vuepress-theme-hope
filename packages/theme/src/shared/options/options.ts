@@ -1,5 +1,5 @@
-import type { Author } from "@mr-hope/vuepress-shared";
 import type { ThemeData } from "@vuepress/plugin-theme-data";
+import type { Author } from "vuepress-shared";
 import type {
   HopeThemeAppearanceConfig,
   HopeThemeAppearanceOptions,

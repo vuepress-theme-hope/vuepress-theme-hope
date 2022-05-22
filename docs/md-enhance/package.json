@@ -18,7 +18,6 @@
     "docs:webpack-dev": "vuepress-webpack dev src"
   },
   "dependencies": {
-    "@mr-hope/vuepress-shared": "workspace:*",
     "@types/katex": "^0.14.0",
     "@types/three": "^0.140.0",
     "@vuepress/cli": "2.0.0-beta.45",
@@ -30,6 +29,7 @@
     "three": "^0.140.2",
     "vue": "^3.2.35",
     "vuepress-plugin-md-enhance": "workspace:*",
+    "vuepress-shared": "workspace:*",
     "vuepress-theme-hope": "workspace:*",
     "vuepress-vite": "2.0.0-beta.45",
     "vuepress-webpack": "2.0.0-beta.45"

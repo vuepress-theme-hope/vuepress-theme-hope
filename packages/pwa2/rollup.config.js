@@ -3,7 +3,7 @@ import { rollupTypescript } from "../../scripts/rollup";
 export default [
   ...rollupTypescript("node/index", {
     external: [
-      "@mr-hope/vuepress-shared",
+      "vuepress-shared",
       "@vuepress/shared",
       "@vuepress/utils",
       "workbox-build",
@@ -13,7 +13,7 @@ export default [
   ...rollupTypescript("client/components/PWAInstall", {
     resolve: true,
     external: [
-      "@mr-hope/vuepress-shared/lib/client",
+      "vuepress-shared/lib/client",
       "@vuepress/client",
       "@vueuse/core",
       "vue",
@@ -23,7 +23,7 @@ export default [
   }),
   ...rollupTypescript("client/components/SWUpdatePopup", {
     external: [
-      "@mr-hope/vuepress-shared/lib/client",
+      "vuepress-shared/lib/client",
       "@vuepress/client",
       "register-service-worker",
       "vue",
@@ -33,7 +33,7 @@ export default [
   }),
   ...rollupTypescript("client/components/SWHintPopup", {
     external: [
-      "@mr-hope/vuepress-shared/lib/client",
+      "vuepress-shared/lib/client",
       "@vuepress/client",
       "register-service-worker",
       "vue",

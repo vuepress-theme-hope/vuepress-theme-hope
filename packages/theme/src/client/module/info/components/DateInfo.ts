@@ -3,8 +3,8 @@ import { defineComponent, h } from "vue";
 import { CalendarIcon } from "@theme-hope/module/info/components/icons";
 import { useMetaLocale } from "@theme-hope/module/info/composables";
 
-import type { DateInfo } from "@mr-hope/vuepress-shared";
 import type { PropType, VNode } from "vue";
+import type { DateInfo } from "vuepress-shared";
 
 export default defineComponent({
   name: "DateInfo",

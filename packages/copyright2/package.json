@@ -37,12 +37,12 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@mr-hope/vuepress-shared": "workspace:*",
     "@vuepress/client": "2.0.0-beta.45",
     "@vuepress/shared": "2.0.0-beta.45",
     "@vuepress/utils": "2.0.0-beta.45",
     "@vueuse/core": "^8.5.0",
-    "vue": "^3.2.35"
+    "vue": "^3.2.35",
+    "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
     "@vuepress/core": "2.0.0-beta.45",

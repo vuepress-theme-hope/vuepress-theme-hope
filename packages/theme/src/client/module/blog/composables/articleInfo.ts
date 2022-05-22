@@ -1,19 +1,20 @@
+import { usePageLang } from "@vuepress/client";
+import { computed, reactive, Ref } from "vue";
 import {
   getAuthor,
   getCategory,
   getDate,
   getTag,
-} from "@mr-hope/vuepress-shared/lib/client";
-import { usePageLang } from "@vuepress/client";
-import { computed, reactive, Ref } from "vue";
+} from "vuepress-shared/lib/client";
+
 import { useCategoryMap } from "./categoryMap";
 import { useBlogOptions } from "./options";
 import { useTagMap } from "./tagMap";
 
 import { useThemeLocaleData } from "@theme-hope/composables";
 
-import type { AuthorInfo, DateInfo } from "@mr-hope/vuepress-shared";
 import type { ComputedRef } from "vue";
+import type { AuthorInfo, DateInfo } from "vuepress-shared";
 import type { PageInfoProps } from "@theme-hope/module/info/components/PageInfo";
 import type {
   ArticleInfo,

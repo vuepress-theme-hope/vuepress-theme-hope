@@ -1,6 +1,6 @@
-import { getAuthor } from "@mr-hope/vuepress-shared/lib/client";
 import { useSiteLocaleData, withBase } from "@vuepress/client";
 import { computed, defineComponent, h } from "vue";
+import { getAuthor } from "vuepress-shared/lib/client";
 
 import SocialMedia from "@theme-hope/module/blog/components/SocialMedia";
 import { useNavigate, useThemeLocaleData } from "@theme-hope/composables";

@@ -3,7 +3,7 @@ import { rollupTypescript } from "../../scripts/rollup";
 export default [
   ...rollupTypescript("node/index", {
     external: [
-      "@mr-hope/vuepress-shared",
+      "vuepress-shared",
       "@vuepress/core",
       "@vuepress/shared",
       "chokidar",
@@ -12,7 +12,7 @@ export default [
   ...rollupTypescript("client/index", {
     external: [
       /^@temp/,
-      "@mr-hope/vuepress-shared/lib/client",
+      "vuepress-shared/lib/client",
       "@vuepress/client",
       "@vuepress/shared",
       "vue",

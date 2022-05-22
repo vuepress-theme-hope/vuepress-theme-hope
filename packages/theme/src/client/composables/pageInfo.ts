@@ -1,11 +1,12 @@
+import { usePageData, usePageFrontmatter, usePageLang } from "@vuepress/client";
+import { computed, inject, reactive } from "vue";
 import {
   getAuthor,
   getCategory,
   getDate,
   getTag,
-} from "@mr-hope/vuepress-shared/lib/client";
-import { usePageData, usePageFrontmatter, usePageLang } from "@vuepress/client";
-import { computed, inject, reactive } from "vue";
+} from "vuepress-shared/lib/client";
+
 import { useThemeLocaleData } from "./themeData";
 
 import type {
@@ -13,7 +14,7 @@ import type {
   BasePageFrontMatter,
   DateInfo,
   DateOptions,
-} from "@mr-hope/vuepress-shared";
+} from "vuepress-shared";
 import type { GitData } from "@vuepress/plugin-git";
 import type { ComputedRef } from "vue";
 import type { ReadingTime } from "vuepress-plugin-reading-time2";

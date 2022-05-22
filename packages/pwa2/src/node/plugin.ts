@@ -1,17 +1,18 @@
+import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   addViteOptimizeDepsInclude,
   addViteSsrNoExternal,
   getLocales,
   useCustomDevServer,
-} from "@mr-hope/vuepress-shared";
-import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
-import { pwaLocales } from "./locales";
-import { injectLinkstoHead } from "./injectHead";
+} from "vuepress-shared";
+
 import { getManifest, generateManifest } from "./generateManifest";
 import { generateServiceWorker } from "./generateServiceWorker";
 import { appendBase } from "./helper";
-import { logger } from "./utils";
+import { injectLinkstoHead } from "./injectHead";
+import { pwaLocales } from "./locales";
 import { prepareConfigFile } from "./prepare";
+import { logger } from "./utils";
 
 import type { PluginFunction } from "@vuepress/core";
 import type { PWAOptions } from "../shared";

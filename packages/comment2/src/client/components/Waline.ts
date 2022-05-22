@@ -1,10 +1,11 @@
-import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
 import { usePageFrontmatter, usePageLang, withBase } from "@vuepress/client";
-import { computed, defineComponent, h, onMounted, watch } from "vue";
-import { useRoute } from "vue-router";
-import { enableWaline, walineLocales, walineOption } from "../define";
 import { Waline } from "@waline/client/dist/component";
 import { pageviewCount } from "@waline/client/dist/pageview";
+import { computed, defineComponent, h, onMounted, watch } from "vue";
+import { useRoute } from "vue-router";
+import { useLocaleConfig } from "vuepress-shared/lib/client";
+
+import { enableWaline, walineLocales, walineOption } from "../define";
 
 import type { VNode } from "vue";
 import type { CommentPluginFrontmatter } from "../../shared";

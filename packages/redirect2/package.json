@@ -39,12 +39,12 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@mr-hope/vuepress-shared": "workspace:*",
     "@vuepress/cli": "2.0.0-beta.45",
     "@vuepress/core": "2.0.0-beta.45",
     "@vuepress/shared": "2.0.0-beta.45",
     "@vuepress/utils": "2.0.0-beta.45",
-    "cac": "^6.7.12"
+    "cac": "^6.7.12",
+    "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
     "rimraf": "^3.0.2"

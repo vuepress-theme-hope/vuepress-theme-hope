@@ -1,7 +1,7 @@
-import { addViteOptimizeDepsInclude } from "@mr-hope/vuepress-shared";
 import { defineUserConfig } from "@vuepress/cli";
 import { docsearchPlugin } from "@vuepress/plugin-docsearch";
 import { path } from "@vuepress/utils";
+import { addViteOptimizeDepsInclude } from "vuepress-shared";
 import theme from "./theme";
 
 const base = (process.env.BASE || "/") as "/" | `/${string}/`;
@@ -88,12 +88,12 @@ export default defineUserConfig({
   extendsBundlerOptions: (config: unknown, app): void => {
     if (app.env.isDev)
       addViteOptimizeDepsInclude({ app, config }, [
-        "@mr-hope/vuepress-shared/lib/client",
         "dayjs",
         "dayjs/plugin/localizedFormat",
         "dayjs/plugin/objectSupport",
         "dayjs/plugin/timezone",
         "dayjs/plugin/utc",
+        "vuepress-shared/lib/client",
       ]);
 
     addViteOptimizeDepsInclude({ app, config }, [

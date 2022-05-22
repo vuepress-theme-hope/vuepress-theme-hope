@@ -1,5 +1,6 @@
-import { getAuthor } from "@mr-hope/vuepress-shared";
 import { copyrightPlugin } from "vuepress-plugin-copyright2";
+import { getAuthor } from "vuepress-shared";
+
 import type { Page, Plugin } from "@vuepress/core";
 import type { CopyrightOptions } from "vuepress-plugin-copyright2";
 import type {

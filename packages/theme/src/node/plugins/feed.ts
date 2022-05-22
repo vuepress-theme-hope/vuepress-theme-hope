@@ -1,5 +1,5 @@
-import { deepAssign } from "@mr-hope/vuepress-shared";
 import { feedPlugin } from "vuepress-plugin-feed2";
+import { deepAssign } from "vuepress-shared";
 
 import type { Plugin } from "@vuepress/core";
 import type { FeedOptions } from "vuepress-plugin-feed2";

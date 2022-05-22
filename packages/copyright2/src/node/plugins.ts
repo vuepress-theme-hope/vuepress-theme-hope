@@ -1,6 +1,7 @@
-import { getLocales } from "@mr-hope/vuepress-shared";
 import { removeEndingSlash, removeLeadingSlash } from "@vuepress/shared";
 import { path } from "@vuepress/utils";
+import { getLocales } from "vuepress-shared";
+
 import { copyrightLocales } from "./locales";
 import { logger } from "./utils";
 

@@ -1,4 +1,3 @@
-import { resolveRouteWithRedirect } from "@mr-hope/vuepress-shared/lib/client";
 import { usePageFrontmatter, useRouteLocale } from "@vuepress/client";
 import {
   computed,
@@ -10,6 +9,7 @@ import {
   resolveComponent,
 } from "vue";
 import { RouterLink, useRoute, useRouter } from "vue-router";
+import { resolveRouteWithRedirect } from "vuepress-shared/lib/client";
 
 import { useThemeLocaleData } from "@theme-hope/composables";
 import { getAncestorLinks } from "@theme-hope/utils";

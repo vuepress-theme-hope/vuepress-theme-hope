@@ -1,5 +1,6 @@
-import { getLocales } from "@mr-hope/vuepress-shared";
 import { containerPlugin } from "@vuepress/plugin-container";
+import { getLocales } from "vuepress-shared";
+
 import { getDetailsRender } from "./markdown-it";
 import { markdownEnhanceLocales } from "./locales";
 

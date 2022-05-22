@@ -36,13 +36,13 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@mr-hope/vuepress-shared": "workspace:*",
     "@vuepress/client": "2.0.0-beta.45",
     "@vuepress/core": "2.0.0-beta.45",
     "@vuepress/shared": "2.0.0-beta.45",
     "chokidar": "^3.5.3",
     "vue": "^3.2.35",
-    "vue-router": "^4.0.15"
+    "vue-router": "^4.0.15",
+    "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
     "rimraf": "^3.0.2"

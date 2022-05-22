@@ -1,3 +1,3 @@
-import { Logger } from "@mr-hope/vuepress-shared";
+import { Logger } from "vuepress-shared";
 
 export const logger = new Logger("vuepress-plugin-redirect2");

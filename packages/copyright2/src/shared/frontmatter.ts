@@ -1,4 +1,4 @@
-import type { BasePageFrontMatter } from "@mr-hope/vuepress-shared";
+import type { BasePageFrontMatter } from "vuepress-shared";
 import type { CopyrightOptions } from "./options";
 
 export interface CopyrightPluginFrontmatter extends BasePageFrontMatter {

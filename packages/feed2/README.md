@@ -24,14 +24,6 @@ npm i -D vuepress-plugin-feed2@next
 yarn add -D vuepress-plugin-feed2@next
 ```
 
-## Migrating from V1
-
-Renamed from `@mr-hope/vuepress-feed` to `vuepress-plugin-feed2`. ⚠
-
-- [x] Muti categories support ![new](https://img.shields.io/badge/-new-brightgreen)
-
-- [x] Better log output ![improve](https://img.shields.io/badge/-improved-blue)
-
 ---
 
 ## 安装

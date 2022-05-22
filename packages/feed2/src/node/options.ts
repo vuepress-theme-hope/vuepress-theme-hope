@@ -1,5 +1,6 @@
-import { deepAssign } from "@mr-hope/vuepress-shared";
 import { removeEndingSlash, removeLeadingSlash } from "@vuepress/shared";
+import { deepAssign } from "vuepress-shared";
+
 import { compareDate, resolveUrl } from "./utils";
 
 import type { App, Page } from "@vuepress/core";

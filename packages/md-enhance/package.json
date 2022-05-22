@@ -47,7 +47,6 @@
   },
   "dependencies": {
     "@babel/core": "*",
-    "@mr-hope/vuepress-shared": "workspace:*",
     "@types/katex": "^0.14.0",
     "@types/markdown-it": "^12.2.3",
     "@types/mermaid": "^8.2.9",
@@ -67,7 +66,8 @@
     "ts-debounce": "^4.0.0",
     "vue": "^3.2.35",
     "vue-router": "^4.0.15",
-    "vuepress-plugin-sass-palette": "workspace:*"
+    "vuepress-plugin-sass-palette": "workspace:*",
+    "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
     "@babel/core": "^7.17.9",

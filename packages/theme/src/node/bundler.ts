@@ -1,4 +1,4 @@
-import { addViteOptimizeDepsInclude, tagHint } from "@mr-hope/vuepress-shared";
+import { addViteOptimizeDepsInclude, tagHint } from "vuepress-shared";
 
 import type { App } from "@vuepress/core";
 import type { ViteBundlerOptions } from "@vuepress/bundler-vite";

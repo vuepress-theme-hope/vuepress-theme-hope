@@ -1,4 +1,4 @@
-import { Logger } from "@mr-hope/vuepress-shared";
+import { Logger } from "vuepress-shared";
 
 import type { App, Page } from "@vuepress/core";
 import type { PageMap } from "../shared";

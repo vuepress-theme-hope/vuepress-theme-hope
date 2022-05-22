@@ -1,6 +1,6 @@
-import type { Author, BasePageFrontMatter } from "@mr-hope/vuepress-shared";
 import type { App, HeadConfig, Page, PageFrontmatter } from "@vuepress/core";
 import type { GitData } from "@vuepress/plugin-git";
+import type { Author, BasePageFrontMatter } from "vuepress-shared";
 import type { ArticleJSONLD } from "./json-ld";
 import type { SeoContent } from "./ogp";
 

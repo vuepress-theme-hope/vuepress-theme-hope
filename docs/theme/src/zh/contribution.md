@@ -48,7 +48,7 @@ corepack prepare pnpm@7.1.0 --activate
 ├── docs → 文档目录
 │ ├── blog → blog2 插件文档
 │ ├── comment → comment2 插件文档
-│ ├── components → @mr-hope/components 插件文档
+│ ├── components → components 插件文档
 │ ├── copy-code → copy-code2 插件文档
 │ ├── feed → feed2 插件文档
 │ ├── lightgallery → lightgallery 插件文档
@@ -63,7 +63,7 @@ corepack prepare pnpm@7.1.0 --activate
 ├── packages → 项目源代码
 │ ├── blog2 → blog2 插件
 │ ├── comment2 → comment2 插件
-│ ├── components → @mr-hope/components 插件
+│ ├── components → components 插件
 │ ├── copy-code2 → copy-code2 插件
 │ ├── create → create-vuepress-theme-hope 助手
 │ ├── feed2 → feed2 插件

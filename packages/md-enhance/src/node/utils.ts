@@ -1,4 +1,4 @@
-import { Logger } from "@mr-hope/vuepress-shared";
+import { Logger } from "vuepress-shared";
 
 export const MATHML_TAGS = [
   "math",

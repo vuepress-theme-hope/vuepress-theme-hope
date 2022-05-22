@@ -38,13 +38,13 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@mr-hope/vuepress-shared": "workspace:*",
     "@vuepress/client": "2.0.0-beta.45",
     "@vuepress/utils": "2.0.0-beta.45",
     "balloon-css": "^1.2.0",
     "vue": "^3.2.35",
     "vue-router": "^4.0.15",
-    "vuepress-plugin-sass-palette": "workspace:*"
+    "vuepress-plugin-sass-palette": "workspace:*",
+    "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
     "@vuepress/core": "2.0.0-beta.45",

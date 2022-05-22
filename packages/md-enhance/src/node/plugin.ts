@@ -1,10 +1,11 @@
+import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   addCustomElement,
   addViteOptimizeDepsExclude,
   addViteOptimizeDepsInclude,
   addViteSsrExternal,
-} from "@mr-hope/vuepress-shared";
-import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
+} from "vuepress-shared";
+
 import { logger } from "./utils";
 
 import { checkLinks, getCheckLinksStatus } from "./checkLink";

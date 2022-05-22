@@ -43,7 +43,6 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@mr-hope/vuepress-shared": "workspace:*",
     "@vuepress/cli": "2.0.0-beta.45",
     "@vuepress/client": "2.0.0-beta.45",
     "@vuepress/core": "2.0.0-beta.45",
@@ -75,7 +74,8 @@
     "vuepress-plugin-reading-time2": "workspace:*",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-plugin-seo2": "workspace:*",
-    "vuepress-plugin-sitemap2": "workspace:*"
+    "vuepress-plugin-sitemap2": "workspace:*",
+    "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
     "@vuepress/bundler-vite": "2.0.0-beta.45",

@@ -1,7 +1,7 @@
-import { isActiveLink } from "@mr-hope/vuepress-shared/lib/client";
 import { usePageData } from "@vuepress/client";
 import { defineComponent, h, onMounted, watch, ref } from "vue";
 import { RouterLink, useRoute } from "vue-router";
+import { isActiveLink } from "vuepress-shared/lib/client";
 
 import { useMetaLocale } from "@theme-hope/module/info/composables";
 

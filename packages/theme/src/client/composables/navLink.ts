@@ -1,5 +1,5 @@
-import { resolveRouteWithRedirect } from "@mr-hope/vuepress-shared/lib/client";
 import { useRouter } from "vue-router";
+import { resolveRouteWithRedirect } from "vuepress-shared/lib/client";
 
 import type { AutoLink } from "../../shared";
 
