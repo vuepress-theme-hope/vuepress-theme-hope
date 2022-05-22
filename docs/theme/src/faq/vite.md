@@ -60,7 +60,7 @@ export default defineUserConfig({
         rel: "preload",
         as: "style",
         onload: 'this.onload=null;this.rel="stylesheet"',
-        href: "//at.alicdn.com/t/font_2410206_h4r1xw8ppng.css",
+        href: "//at.alicdn.com/t/font_2410206_a0xb9hku9iu.css",
       },
     ],
   ],
@@ -82,7 +82,7 @@ export default defineUserConfig({
       "link",
       {
         rel: "stylesheet",
-        href: "//at.alicdn.com/t/font_2410206_h4r1xw8ppng.css",
+        href: "//at.alicdn.com/t/font_2410206_a0xb9hku9iu.css",
       },
     ],
   ],
@@ -100,7 +100,7 @@ module.exports = {
       "link",
       {
         rel: "stylesheet",
-        href: "//at.alicdn.com/t/font_2410206_h4r1xw8ppng.css",
+        href: "//at.alicdn.com/t/font_2410206_a0xb9hku9iu.css",
       },
     ],
   ],

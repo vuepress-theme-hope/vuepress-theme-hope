@@ -48,6 +48,7 @@ export const enSidebarConfig = sidebar({
   "/guide/": [
     "",
     "container",
+    "tabs",
     "code-tabs",
     "sup-sub",
     "align",
@@ -124,6 +125,7 @@ export const zhSidebarConfig = sidebar({
   "/zh/guide/": [
     "",
     "container",
+    "tabs",
     "code-tabs",
     "sup-sub",
     "align",
