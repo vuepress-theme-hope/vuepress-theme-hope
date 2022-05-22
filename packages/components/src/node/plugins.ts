@@ -3,7 +3,7 @@ import { getLocales } from "vuepress-shared";
 
 import { backToTopLocales } from "./locales";
 import { prepareConfigFile } from "./prepare";
-import { logger } from "./utils";
+import { getIconPrefix, logger } from "./utils";
 
 import type { PluginFunction } from "@vuepress/core";
 import type { ComponentOptions } from "../shared";
@@ -27,7 +27,10 @@ export const componentsPlugin =
           default: backToTopLocales,
           config: options.backToTopLocales,
         }),
-        ICON_PREFIX: options.iconPrefix || "",
+        ICON_PREFIX:
+          typeof options.iconPrefix === "string"
+            ? options.iconPrefix
+            : getIconPrefix(options.iconAssets),
       },
 
       clientConfigFile: (app) => prepareConfigFile(app, options),
