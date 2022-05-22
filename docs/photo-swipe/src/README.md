@@ -80,3 +80,7 @@ module.exports = {
 ```
 
 :::
+
+## Migrating from V1
+
+For details, see [Migration Guide](./migration.md).

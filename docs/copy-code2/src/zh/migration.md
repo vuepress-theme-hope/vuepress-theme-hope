@@ -1,5 +1,5 @@
 ---
-title: 迁移指南
+title: 迁移至 V2
 icon: change
 ---
 

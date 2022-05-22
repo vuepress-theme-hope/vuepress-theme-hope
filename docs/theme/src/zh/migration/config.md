@@ -182,33 +182,65 @@ tag:
 
 - `activeHash` 移动至 `plugins.activeHeaderLinks`
 
-  主题现在使用 `@vuepress/plugin-active-header-links` 官方插件。
+  主题现在使用 `@vuepress/plugin-active-header-links` 官方插件。 ![警告](https://img.shields.io/badge/-warning-yellow)
 
 - `comment` 移动至 `plugins.comment`
+
+  - 添加 `twikoo` 和 `giscus` 评论服务的支持 ![新增](https://img.shields.io/badge/-New-brightgreen)
+
+  - Vssue 目前缺失 ![警告](https://img.shields.io/badge/-warning-yellow)
+
+    Vssue 是用 Vue2 编写的，作者 [meteorlxy](https://github.com/meteorlxy) 尚未使其与 Vue3 兼容
+
+  - Valine 服务被移除 ![移除](https://img.shields.io/badge/-removed-red)
+
+    Valine 缺乏维护，并且它可能会泄露你的隐私。你应该改用 [Waline](https://waline.js.org)。
 
 - `copyCode` 移动至 `plugins.copyCode`
 
 - `copyright` 移动至 `plugins.copyright`
 
-  插件默认禁用
+  插件默认禁用 ![警告](https://img.shields.io/badge/-warning-yellow)
 
 - `feed` 移动至 `plugins.feed`
 
-  主题不再默认输出三种格式的 Feed 文件，如果有需要，请自行配置插件请求需要格式。
+  - 支持通过 `plugins.feed.customElements` 选项移除自定义组件和元素 ![新增](https://img.shields.io/badge/-新增-brightgreen)
+
+  - 通过 `plugins.feed.getter` 选项完全自定义 Feed 生成 ![新增](https://img.shields.io/badge/-新增-brightgreen)
+
+  - 多分类支持 ![新增](https://img.shields.io/badge/-新增-brightgreen)
+
+  - 所有的输出选项从插件选项中的 `ouput` 选项移出到根选项下，并进行了重命名。
+
+    - `feed.output.atom.enable` 重命名为 `plugins.feed.atom` ![警告](https://img.shields.io/badge/-warning-yellow)
+
+    - `feed.output.json.enable.` 重命名为 `plugins.feed.json` ![警告](https://img.shields.io/badge/-warning-yellow)
+
+    - `feed.output.rss.enable` 重命名为 `plugins.feed.rss` ![警告](https://img.shields.io/badge/-warning-yellow)
+
+    - `feed.output.atom.path.` 重命名为 `plugins.feed.atomOutputFilename` ![警告](https://img.shields.io/badge/-warning-yellow)
+
+    - `feed.output.json.path.` 重命名为 `plugins.feed.jsonOutputFilename` ![警告](https://img.shields.io/badge/-warning-yellow)
+
+    - `feed.output.rss.path` 重命名为 `plugins.feed.rssOutputFilename` ![警告](https://img.shields.io/badge/-warning-yellow)
+
+  - `plugins.feed.atom`, `plugins.feed.json` 和 `plugins.feed.rss` 现在默认为 `false` ![警告](https://img.shields.io/badge/-warning-yellow)
+
+    主题不再默认输出三种格式的 Feed 文件，你需要手动启用以输出需要的格式。
 
 - `git` 移动至 `plugins.git`
 
-  主题现在使用官方插件 `@vuepress/plugin-git`，所以支持选项有变化。
+  主题现在使用官方插件 `@vuepress/plugin-git`，所以支持选项有变化。 ![警告](https://img.shields.io/badge/-warning-yellow)
 
 - `mdEnhance` 移动至 `plugins.mdEnhance`
 
-  - Markdown 链接检查
+  - Markdown 链接检查 ![新增](https://img.shields.io/badge/-新增-brightgreen)
 
     该插件现在检查你的 Markdown 链接，并在检测到损坏的链接时警告你。
 
     你可以通过 `plugins.mdEnhance.linkCheck` 选项控制此行为
 
-  - 图像标记支持
+  - 图像标记支持 ![新增](https://img.shields.io/badge/-新增-brightgreen)
 
     通过 `plugins.mdEnhance.imageMark` 使用 `#light` 和 `#dark` 后缀标记图像以在日间模式或夜间模式下显示它们。
 
@@ -224,7 +256,7 @@ tag:
     :::
     ```
 
-  - Chart.js 支持
+  - Chart.js 支持 ![新增](https://img.shields.io/badge/-新增-brightgreen)
 
     新增 `plugins.mdEnhance.chart` 选项提供 [chart.js](https://www.chartjs.org/docs/latest/) 支持
 
@@ -250,7 +282,7 @@ tag:
     :::
     ````
 
-  - ECharts 支持
+  - ECharts 支持 ![新增](https://img.shields.io/badge/-新增-brightgreen)
 
     新增 `plugins.mdEnhance.echarts` 选项提供 [ECharts](https://echarts.apache.org/en/index.html) 支持。
 
@@ -276,7 +308,7 @@ tag:
     :::
     ````
 
-  - 包含文件支持
+  - 包含文件支持 ![新增](https://img.shields.io/badge/-新增-brightgreen)
 
     新增 `plugins.mdEnhance.include` 选项使用 `@include()` 将其他文件内容导入到 markdown 中。
 
@@ -288,19 +320,15 @@ tag:
     - `@include(filename{start-})`
     - `@include(filename{-end})`
 
-  - 选项卡支持
+  - 选项卡支持 ![新增](https://img.shields.io/badge/-新增-brightgreen)
 
     新增 `plugins.mdEnhance.tabs` 选项通过 `tabs` 容器创建选项卡。
 
-  - `mdEnhance.codegroup` 重命名为 `plugins.mdEnhance.codetabs`
-
-  - `plugins.mdEnhance.lazyLoad` 默认值由 `true` 改为 `false`
-
-  - 新增 `plugins.mdEnhance.gfm`
+  - `plugins.mdEnhance.gfm` ![新增](https://img.shields.io/badge/-新增-brightgreen)
 
     一键支持 GFM
 
-  - 新增 `plugins.mdEnhance.vpre`
+  - `plugins.mdEnhance.vpre` ![新增](https://img.shields.io/badge/-新增-brightgreen)
 
     VuePress2 不再内置下列语法。
 
@@ -310,11 +338,15 @@ tag:
     :::
     ```
 
-  - 移除 `plugins.mdEnhance.lineNumbers`
+  - `mdEnhance.codegroup` 重命名为 `plugins.mdEnhance.codetabs` ![警告](https://img.shields.io/badge/-warning-yellow)
+
+  - `plugins.mdEnhance.lazyLoad` 默认值由 `true` 改为 `false` ![警告](https://img.shields.io/badge/-warning-yellow)
+
+  - 移除 `plugins.mdEnhance.lineNumbers` ![移除](https://img.shields.io/badge/-removed-red)
 
     VuePress2 支持单独对代码块配置行号
 
-  - 移除 `plugins.mdEnhance.imageFix`
+  - 移除 `plugins.mdEnhance.imageFix` ![移除](https://img.shields.io/badge/-removed-red)
 
     图片相关问题已在 V2 中得到修正
 
@@ -322,11 +354,63 @@ tag:
 
 - `pwa` 移动至 `plugins.pwa`
 
+  - `plugins.pwa.update` ![新增](https://img.shields.io/badge/-新增-brightgreen): 控制 SW 的更新逻辑
+
+    - `"disabled"`: 即使有新的 service worker 也不做任何事情，新的 service work 开始等待后，会在用户下次访问时接管页面，让用户获得新内容。
+
+    - `"available"`: 仅当新的 service worker 可用时才显示更新弹出窗口
+
+    - `"hint"`: 显示更新内容可用提示，并允许用户立即刷新。当新的 SW 成功注册后，将转为更新内容就绪弹窗。
+
+      当你希望用户立即查看新文档时，这很有帮助。
+
+    - `"force"`: 立即注销当前 Service Worker 然后刷新以获取新内容
+
+  - `plugins.pwa.appendBase` ![新增](https://img.shields.io/badge/-新增-brightgreen): 自动向 `manifest` 选项插入 `base`
+
+  - `plugins.pwa.hintComponent` ![新增](https://img.shields.io/badge/-新增-brightgreen): 检测到新内容的提示组件
+
+  - shouldPrefetch 提示 ![新增](https://img.shields.io/badge/-新增-brightgreen): 现在插件将检查配置文件中的 `shouldPrefetch` 选项并警告您禁用它。
+
+  - `plugins.pwa.cacheHTML` 默认值由 `true` 改为 `false` ![警告](https://img.shields.io/badge/-warning-yellow)
+
+    这能有效降低 SW 更新时间
+
+  - `pwa.popupComponent` 重命名为 `plugins.pwa.updateComponent` ![警告](https://img.shields.io/badge/-warning-yellow)
+
+    这是因为我们新增了一个提示弹窗，所以需要避免名称混淆
+
 - `readingTime` 移动至 `plugins.readingTime`
 
 - `seo` 移动至 `plugins.seo`
 
+  - JSON-LD 支持 ![新增](https://img.shields.io/badge/-新增-brightgreen)
+
+    该插件现在可以为您生成 JSON-LD 脚本标签，并提供一个选项 `plugins.seo.jsonLd` 让您自定义 JSON-LD 属性。
+
+  - 自动描述生成 ![新增](https://img.shields.io/badge/-新增-brightgreen)
+
+    该插件可以通过 `plugins.seo.autoDescription` 选项自动为您生成描述
+
+  - 规范链接 ![新增](https://img.shields.io/badge/-新增-brightgreen)
+
+    您可以通过 `plugins.seo.canonicalLink` 选项设置规范链接。当您的文档部署在多个地方时，它很有用。
+
+  - `seo.customMeta` 重命名为 `plugins.seo.customHead` ![警告](https://img.shields.io/badge/-warning-yellow)
+
+    现在您可以编辑所有 `<head>` 标签，而不是仅 `<meta>` 标签。
+
 - `sitemap` 移动至 `plugins.sitemap`
+
+  - `plugins.sitemap.priority` ![新增](https://img.shields.io/badge/-新增-brightgreen): 设置优先级的默认值
+
+  - `sitemap.urls` 重命名为 `plugins.sitemap.extraUrls` ![警告](https://img.shields.io/badge/-warning-yellow)
+
+  - `sitemap.exclude` 重命名为 `plugins.sitemap.excludeUrls` ![警告](https://img.shields.io/badge/-warning-yellow)
+
+  - `sitemap.outFile` 重命名为 `plugins.sitemap.sitemapFilename` ![警告](https://img.shields.io/badge/-warning-yellow)
+
+  - `sitemap.modifyTimeGetter` 重命名为 `plugins.sitemap.modifyTimeGetter` ![警告](https://img.shields.io/badge/-warning-yellow)
 
 ### 移除
 

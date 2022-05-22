@@ -1,5 +1,5 @@
 ---
-title: Migration Guide
+title: V2 Migration
 icon: change
 ---
 

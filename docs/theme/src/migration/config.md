@@ -184,37 +184,69 @@ Move all plugin related options under `plugins`.
 
 - rename `activeHash` to `plugins.activeHeaderLinks`
 
-  The theme now uses official plugin `@vuepress/plugin-active-header-links`.
+  The theme now uses official plugin `@vuepress/plugin-active-header-links`. ![warning](https://img.shields.io/badge/-warning-yellow)
 
 - move `comment` moved to `plugins.comment`
+
+  - Adds support for `twikoo` and `giscus` ![New](https://img.shields.io/badge/-New-brightgreen)
+
+  - Vssue is currently missing ![warning](https://img.shields.io/badge/-warning-yellow)
+
+    Vssue is written in Vue2, and the author [meteorlxy](https://github.com/meteorlxy) has not yet made it compatible with Vue3 yet
+
+  - Valine service is removed ![removed](https://img.shields.io/badge/-removed-red)
+
+    Valine is lack of maintenance and can leak your privacy. You should use [Waline](https://waline.js.org) instead.
 
 - move `copyCode` to `plugins.copyCode`
 
 - move `copyright` to `plugins.copyright`
 
-  The plugin is disabled by default now.
+  The plugin is disabled by default now. ![warning](https://img.shields.io/badge/-warning-yellow)
 
 - move `feed` to `plugins.feed`
 
-  The theme no longer outputs feed files in three formats by default. If necessary, please set options to output formats needed.
+  - Supports removing custom components and elements through `plugins.feed.customElements` options ![NEW](https://img.shields.io/badge/-new-brightgreen)
+
+  - Customize feed generation via `plugins.feed.getter` option ![NEW](https://img.shields.io/badge/-new-brightgreen)
+
+  - Multi-category support ![New](https://img.shields.io/badge/-new-brightgreen)
+
+  - Move all output options from `plugins.feed.ouput` option to plugin option root and rename them.
+
+    - `feed.output.atom.enable` renamed to `plugins.feed.atom` ![changed](https://img.shields.io/badge/-changed-yellow)
+
+    - `feed.output.json.enable.` renamed to `plugins.feed.json` ![changed](https://img.shields.io/badge/-changed-yellow)
+
+    - `feed.output.rss.enable` renamed to `plugins.feed.rss` ![changed](https://img.shields.io/badge/-changed-yellow)
+
+    - `feed.output.atom.path.` renamed to `plugins.feed.atomOutputFilename` ![changed](https://img.shields.io/badge/-changed-yellow)
+
+    - `feed.output.json.path.` renamed to `plugins.feed.jsonOutputFilename` ![changed](https://img.shields.io/badge/-changed-yellow)
+
+    - `feed.output.rss.path` renamed to `plugins.feed.rssOutputFilename`
+
+    - `plugins.feed.atom`, `plugins.feed.json` and `plugins.feed.rss` is `false` by default ![warning](https://img.shields.io/badge/-warning-yellow)
+
+      The theme no longer outputs feed files in three formats by default. If necessary, please set options to output formats needed.
 
 - move `git` to `plugins.git`
 
-  The theme use official plugin `@vuepress/plugin-git` now.
+  The theme use official plugin `@vuepress/plugin-git` now. ![warning](https://img.shields.io/badge/-warning-yellow)
 
 - move `mdEnhance` to `plugins.mdEnhance`
 
-  - markdown link check
+  - markdown link check ![New](https://img.shields.io/badge/-New-brightgreen)
 
     The plugin now check your markdown links and warn you when broken links are detected.
 
     You can control this behavior with `plugins.mdEnhance.linkCheck` option
 
-  - image mark support
+  - image mark support ![New](https://img.shields.io/badge/-New-brightgreen)
 
     Use `#light` and `#dark` suffix to mark images to display them in light mode or dark mode via `plugins.mdEnhance.imageMark` option
 
-  - Chart.js support
+  - Chart.js support ![New](https://img.shields.io/badge/-New-brightgreen)
 
     Adds [chart.js](https://www.chartjs.org/docs/latest/) support via `plugins.mdEnhance.chart` option
 
@@ -240,7 +272,7 @@ Move all plugin related options under `plugins`.
     :::
     ````
 
-  - ECharts support
+  - ECharts support ![New](https://img.shields.io/badge/-New-brightgreen)
 
     Adds [ECharts](https://echarts.apache.org/en/index.html) support via `plugins.mdEnhance.echarts` option
 
@@ -266,7 +298,7 @@ Move all plugin related options under `plugins`.
     :::
     ````
 
-  - content include support
+  - content include support ![New](https://img.shields.io/badge/-New-brightgreen)
 
     use `@include()` to include other file content in markdown via `plugins.mdEnhance.include` options.
 
@@ -278,19 +310,15 @@ Move all plugin related options under `plugins`.
     - `@include(filename{start-})`
     - `@include(filename{-end})`
 
-  - tabs support
+  - tabs support ![New](https://img.shields.io/badge/-New-brightgreen)
 
     Use `tabs` container to create tabs via `plugins.mdEnhance.tabs` option.
 
-  - rename `mdEnhance.codegroup` to `plugins.mdEnhance.codetabs`
-
-  - change default value of `plugins.mdEnhance.lazyLoad` from `true` to `false`
-
-  - add `plugins.mdEnhance.gfm`
+  - add `plugins.mdEnhance.gfm` ![New](https://img.shields.io/badge/-New-brightgreen)
 
     Control supporting gfm
 
-  - add `plugins.mdEnhance.vpre`
+  - add `plugins.mdEnhance.vpre` ![New](https://img.shields.io/badge/-New-brightgreen)
 
     The following syntax is no longer built into VuePress2.
 
@@ -300,11 +328,15 @@ Move all plugin related options under `plugins`.
     :::
     ```
 
-  - remove `plugins.mdEnhance.lineNumbers`
+  - rename `mdEnhance.codegroup` to `plugins.mdEnhance.codetabs` ![changed](https://img.shields.io/badge/-changed-yellow)
+
+  - change default value of `plugins.mdEnhance.lazyLoad` from `true` to `false` ![changed](https://img.shields.io/badge/-changed-yellow)
+
+  - remove `plugins.mdEnhance.lineNumbers` ![removed](https://img.shields.io/badge/-removed-red)
 
     VuePress2 supports line numbers config for code blocks individually
 
-  - remove `plugins.mdEnhance.imageFix`
+  - remove `plugins.mdEnhance.imageFix` ![removed](https://img.shields.io/badge/-removed-red)
 
     Image related issues have been fixed in V2
 
@@ -312,11 +344,62 @@ Move all plugin related options under `plugins`.
 
 - move `pwa` to `plugins.pwa`
 
+  - `plugins.pwa.update` ![New](https://img.shields.io/badge/-New-brightgreen): control the update logic of SW
+
+    - `"disabled"`: Do nothing even when new service worker is available. After new service work succeeds installing and starts waiting, it will control page and provide new content in next visit.
+
+    - `"available"`: Only display update popup when the new service worker is available
+
+    - `"hint"`: Display a hint to let user choose to refresh immediately
+
+    - `"force"`: unregister current service worker immediately then refresh to get new content
+
+  - `plugins.pwa.appendBase` ![New](https://img.shields.io/badge/-New-brightgreen): automatically insert `base` to the `manifest` option
+
+  - `plugins.pwa.hintComponent` ![New](https://img.shields.io/badge/-New-brightgreen): Hint component for detecting new content
+
+  - shouldPrefetch hint ![New](https://img.shields.io/badge/-New-brightgreen): Now the plugin will check `shouldPrefetch` option in config file and warn you to disable it.
+
+  - `plugins.pwa.cacheHTML` default value changed from `true` to `false` ![changed](https://img.shields.io/badge/-changed-yellow)
+
+    This can effectively reduce the SW update time
+
+  - `pwa.popupComponent` renamed to `plugins.pwa.updateComponent` ![changed](https://img.shields.io/badge/-changed-yellow)
+
+    This is because we added a new prompt popup window, so we need to avoid name confusion
+
 - move `readingTime` to `plugins.readingTime`
 
 - move `seo` to `plugins.seo`
 
+  - JSON-LD support ![New](https://img.shields.io/badge/-New-brightgreen)
+
+    The plugin now can generate JSON-LD script tags for you, and is providing an option `plugin.seo.jsonLd` to let you customize the JSON-LD properties.
+
+  - Description generation ![New](https://img.shields.io/badge/-New-brightgreen)
+
+    The plugin can generate a descrption for you automatically via `plugin.seo.autoDescription` options
+
+  - Canonical link ![New](https://img.shields.io/badge/-New-brightgreen)
+
+    You can set canonical link via `plugin.seo.canonicalLink` option. It's useful when your docs
+
+  - `seo.customMeta` renamed to `plugin.seo.customHead` ![changed](https://img.shields.io/badge/-changed-yellow)
+
+    Now you can edit all head tags intead of only meta in V1.
+    are deployed in several places.
+
 - move `sitemap` to `plugins.sitemap`
+
+  - `plugin.sitemap.priority` ![New](https://img.shields.io/badge/-New-brightgreen): setting default value for priority
+
+  - `sitemap.urls` renamed to `plugin.sitemap.extraUrls` ![changed](https://img.shields.io/badge/-changed-yellow)
+
+  - `sitemap.exclude` renamed to `plugin.sitemap.excludeUrls` ![changed](https://img.shields.io/badge/-changed-yellow)
+
+  - `sitemap.outFile` renamed to `plugin.sitemap.sitemapFilename` ![changed](https://img.shields.io/badge/-changed-yellow)
+
+  - `sitemap.modifyTimeGetter` renamed to `plugin.sitemap.modifyTimeGetter` ![changed](https://img.shields.io/badge/-changed-yellow)
 
 ### Deletion
 

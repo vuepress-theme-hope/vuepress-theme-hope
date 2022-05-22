@@ -59,7 +59,7 @@ export default hopeTheme({
           icon: "note",
           children: [
             {
-              text: "V1 Docs",
+              text: "V1 文档",
               link: "https://vuepress-theme-hope.github.io/v1/sitemap/zh/",
             },
           ],
