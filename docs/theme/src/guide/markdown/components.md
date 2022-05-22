@@ -9,7 +9,7 @@ tag:
   - Markdown
 ---
 
-By using `@mr-hope/vuepress-plugin-components`, you can import and use some components in your Markdown files.
+By using `vuepress-plugin-components`, you can import and use some components in your Markdown files.
 
 Available components:
 

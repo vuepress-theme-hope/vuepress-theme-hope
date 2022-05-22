@@ -299,12 +299,12 @@ export default [
   rollupTypescript("node/index", {
     external: [
       "@mr-hope/vuepress-shared",
-      "@mr-hope/vuepress-plugin-components",
       "@vuepress/cli",
       "@vuepress/utils",
       "bcrypt-ts",
       "vuepress-plugin-blog2",
       "vuepress-plugin-comment2",
+      "vuepress-plugin-components",
       "vuepress-plugin-copy-code2",
       "vuepress-plugin-feed2",
       "vuepress-plugin-md-enhance",

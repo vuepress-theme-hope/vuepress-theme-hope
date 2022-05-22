@@ -1,5 +1,5 @@
 import { hopeTheme } from "vuepress-theme-hope";
-import { version } from "@mr-hope/vuepress-plugin-components/package.json";
+import { version } from "vuepress-plugin-components/package.json";
 
 const hostname =
   process.env.HOSTNAME || "https://vuepress-theme-hope-v2.netlify.app";
@@ -129,7 +129,7 @@ export default hopeTheme({
         color: "#ffffff",
       },
       manifest: {
-        name: "@mr-hope/vuepress-plugin-components",
+        name: "vuepress-plugin-components",
         short_name: "components plugin",
         icons: [
           {

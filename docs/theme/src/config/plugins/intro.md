@@ -51,7 +51,7 @@ For example:
 
 - [vuepress-plugin-comment2][comment2]: Provides comment and pageview function
 
-- [@mr-hope/vuepress-plugin-components][components]: Provides some plugins out of the box
+- [vuepress-plugin-components][components]: Provides some plugins out of the box
 
 - [vuepress-plugin-copy-code2][copy-code2]: Provides one-click copy code block function.
 

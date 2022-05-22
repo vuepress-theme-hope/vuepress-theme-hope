@@ -3,7 +3,7 @@ home: true
 title: Home
 icon: home
 heroImage: /logo.svg
-heroText: "@mr-hope/vuepress-plugin-components"
+heroText: vuepress-plugin-components
 tagline: Components lib plugin for VuePress2
 actions:
   - text: Get Started 💡
@@ -24,19 +24,19 @@ copyright: false
 @tab pnpm
 
 ```bash
-pnpm add -D @mr-hope/vuepress-plugin-components@next
+pnpm add -D vuepress-plugin-components@next
 ```
 
 @tab yarn
 
 ```bash
-yarn add -D @mr-hope/vuepress-plugin-components@next
+yarn add -D vuepress-plugin-components@next
 ```
 
 @tab npm
 
 ```bash
-npm i -D @mr-hope/vuepress-plugin-components@next
+npm i -D vuepress-plugin-components@next
 ```
 
 :::
@@ -49,7 +49,7 @@ npm i -D @mr-hope/vuepress-plugin-components@next
 
 ```ts
 // .vuepress/config.ts
-import { componentsPlugin } from "@mr-hope/vuepress-plugin-components";
+import { componentsPlugin } from "vuepress-plugin-components";
 
 export default {
   plugins: [
@@ -64,7 +64,7 @@ export default {
 
 ```js
 // .vuepress/config.js
-const { componentsPlugin } = require("@mr-hope/vuepress-plugin-components");
+const { componentsPlugin } = require("vuepress-plugin-components");
 
 module.exports = {
   plugins: [

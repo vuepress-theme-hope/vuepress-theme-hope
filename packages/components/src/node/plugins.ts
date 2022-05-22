@@ -15,7 +15,7 @@ export const componentsPlugin =
     useSassPalettePlugin(app, { id: "hope" });
 
     return {
-      name: "@mr-hope/vuepress-plugin-components",
+      name: "vuepress-plugin-components",
 
       define: {
         BACK_TO_TOP_THRESHOLD:

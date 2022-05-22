@@ -9,7 +9,7 @@ tag:
   - 组件
 ---
 
-通过使用`@mr-hope/vuepress-plugin-components`，你可以在你的 Markdown 文件中导入和使用一些组件。
+通过使用`vuepress-plugin-components`，你可以在你的 Markdown 文件中导入和使用一些组件。
 
 可用组件：
 

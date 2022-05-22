@@ -126,7 +126,7 @@ The theme includes the following plugins, you can use them in other themes or di
 
 - [vuepress-plugin-comment2][comment2]: Comment and pageviews
 
-- [@mr-hope/vuepress-plugin-components][components]: Provide some out of box plugins
+- [vuepress-plugin-components][components]: Provide some out of box plugins
 
 - [vuepress-plugin-copy-code2][copy-code2]: Provide copy button for code blocks
 

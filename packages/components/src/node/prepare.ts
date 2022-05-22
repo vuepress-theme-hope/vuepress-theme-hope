@@ -95,7 +95,7 @@ export const prepareConfigFile = (
   }
 
   return app.writeTemp(
-    `mr-hope-components/config.js`,
+    `components/config.js`,
     `import { defineClientConfig } from "@vuepress/client";
 ${configImport}
 

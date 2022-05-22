@@ -43,7 +43,6 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@mr-hope/vuepress-plugin-components": "workspace:*",
     "@mr-hope/vuepress-shared": "workspace:*",
     "@vuepress/cli": "2.0.0-beta.45",
     "@vuepress/client": "2.0.0-beta.45",
@@ -66,6 +65,7 @@
     "vue-router": "^4.0.15",
     "vuepress-plugin-blog2": "workspace:*",
     "vuepress-plugin-comment2": "workspace:*",
+    "vuepress-plugin-components": "workspace:*",
     "vuepress-plugin-copy-code2": "workspace:*",
     "vuepress-plugin-copyright2": "workspace:*",
     "vuepress-plugin-feed2": "workspace:*",

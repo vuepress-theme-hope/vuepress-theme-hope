@@ -51,7 +51,7 @@ tag:
 
 - [vuepress-plugin-comment2][comment2]: 提供评论与浏览量功能
 
-- [@mr-hope/vuepress-plugin-components][components]: 提供一些开箱即用的插件
+- [vuepress-plugin-components][components]: 提供一些开箱即用的插件
 
 - [vuepress-plugin-copy-code2][copy-code2]: 提供一键复制代码块功能。
 

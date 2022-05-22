@@ -1,6 +1,6 @@
-import { componentsPlugin } from "@mr-hope/vuepress-plugin-components";
+import { componentsPlugin } from "vuepress-plugin-components";
 
-import type { AvailableComponent } from "@mr-hope/vuepress-plugin-components";
+import type { AvailableComponent } from "vuepress-plugin-components";
 import type { Plugin } from "@vuepress/core";
 import type { HopeThemeOptions } from "../../shared";
 
