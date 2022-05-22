@@ -19,34 +19,13 @@ These options are only valid when setting directly under the theme options, sett
 
 :::
 
-## pure <Badge text="Root only" type="warning" />
-
-- Type: `boolean`
-- Default: `false`
-- Details: [Interface → Pure mode](../../guide/interface/pure.md)
-
-Whether enable pure mode.
-
-::: tip
-
-Enabling this will disable some of the fancy styles.
-
-Useful when you want to provide "A pure document site".
-
-:::
-
-## iconPrefix <Badge text="Root only" type="warning" />
+## iconAssets <Badge text="Root only" type="warning" />
 
 - Type: `string`
-- Default: ``
+- Required: No
 - Details: [Interface → Icon](../../guide/interface/icon.md)
 
-Prefix of icon FontClass.
-
-You probably need to set this option:
-
-- Using [iconfont](../../guide/interface/icon.md#iconfont): `iconfont icon-`
-- Using [fontawesome](../../guide/interface/icon.md#fontawesome): `fa fa-`
+Link of font icon asset, `'iconfont'` and `'font-awesome'` keywords are supported.
 
 ## darkmode <Badge text="Enabled by default" /> <Badge text="Root only" type="warning" />
 
@@ -112,3 +91,27 @@ Window width switching mobile view and desktop view in pixels
 You should keep this option same value with `$tablet` in `.vuepress/config.scss`
 
 :::
+
+## pure <Badge text="Root only" type="warning" />
+
+- Type: `boolean`
+- Default: `false`
+- Details: [Interface → Pure mode](../../guide/interface/pure.md)
+
+Whether enable pure mode.
+
+::: tip
+
+Enabling this will disable some of the fancy styles.
+
+Useful when you want to provide "A pure document site".
+
+:::
+
+## iconPrefix <Badge text="Root only" type="warning" />
+
+- Type: `string`
+- Default: Inffered from iconAssets
+- Details: [Interface → Icon](../../guide/interface/icon.md)
+
+Prefix of icon FontClass， usually, it can be automatically set by the theme.

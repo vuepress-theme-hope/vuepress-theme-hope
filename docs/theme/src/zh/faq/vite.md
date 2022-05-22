@@ -45,11 +45,9 @@ category:
 
 :::
 
-## 导入 Iconfont 图标无效
+## `@import` 语法无效
 
-如果你在使用 IconFont 图标，并可以在开发服务器正常看到图标，而在部署环境失效，你可能需要检查图标的导入方式。
-
-在 VuePress2 中，你在 `index.scss` 中通过 `@import` 导入网络 CSS 是无效的。你可能需要在 VuePress 配置的 `head` 选项中手动导入它。
+在 VuePress2 中，你在 `index.scss` 中通过 `@import` 导入网络 CSS 是无效的。你可能需要在 VuePress 配置的 `head` 选项中手动导入它们。
 
 <!-- ```ts {5-13}
 import { defineUserConfig } from "vuepress-theme-hope";
@@ -84,7 +82,7 @@ export default defineUserConfig({
       "link",
       {
         rel: "stylesheet",
-        href: "//at.alicdn.com/t/font_2410206_a0xb9hku9iu.css",
+        href: "YOUR_CSS_URL",
       },
     ],
   ],
@@ -102,7 +100,7 @@ module.exports = {
       "link",
       {
         rel: "stylesheet",
-        href: "//at.alicdn.com/t/font_2410206_a0xb9hku9iu.css",
+        href: "YOUR_CSS_URL",
       },
     ],
   ],

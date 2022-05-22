@@ -19,34 +19,13 @@ tag:
 
 :::
 
-## pure <Badge text="仅限 Root" type="warning" />
-
-- 类型: `boolean`
-- 默认值: `false`
-- 详情: [界面 → 纯净模式](../../guide/interface/pure.md)
-
-是否开启纯净模式。
-
-::: tip
-
-启用此功能将禁用一些花哨的样式。
-
-当你想提供“纯文档站点”时很有用。
-
-:::
-
-## iconPrefix <Badge text="仅限 Root" type="warning" />
+## iconAssets <Badge text="仅限 Root" type="warning" />
 
 - 类型: `string`
-- 默认值: `"icon-"`
+- 必填: 否
 - 详情: [界面 → 图标](../../guide/interface/icon.md)
 
-设置图标的 FontClass 前缀。
-
-你可能需要设置此选项：
-
-- 使用 [iconfont](../../guide/interface/icon.md#iconfont): `iconfont icon-`
-- 使用 [fontawesome](../../guide/interface/icon.md#fontawesome): `fa fa-`
+字体图标资源链接，支持 `'iconfont'` 和 `'font-awesome'` 关键字。
 
 ## darkmode <Badge text="默认启用" /> <Badge text="仅限 Root" type="warning" />
 
@@ -111,3 +90,27 @@ tag:
 你需要将此选项和 `.vuepress/config.scss` 中的 `$tablet` 保持一致。
 
 :::
+
+## pure <Badge text="仅限 Root" type="warning" />
+
+- 类型: `boolean`
+- 默认值: `false`
+- 详情: [界面 → 纯净模式](../../guide/interface/pure.md)
+
+是否开启纯净模式。
+
+::: tip
+
+启用此功能将禁用一些花哨的样式。
+
+当你想提供“纯文档站点”时很有用。
+
+:::
+
+## iconPrefix <Badge text="仅限 Root" type="warning" />
+
+- 类型: `string`
+- 默认值: 尝试从 iconAssets 推断
+- 详情: [界面 → 图标](../../guide/interface/icon.md)
+
+通常情况下，它可以识别 iconAssets 并自动设置，如果识别失败，你可以手动设置图标的 FontClass 前缀。

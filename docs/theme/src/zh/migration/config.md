@@ -123,12 +123,9 @@ tag:
 
 ### 外观
 
-- `iconPrefix` 默认值由 `icon-` 清空
+- 新增 `iconAssets` 选项
 
-  你现在需要根据使用图标的 Font Class 自行配置
-
-  - 如果你使用 IconFont，你可能需要将其设置为 `iconfont icon-`
-  - 如果你使用 FontAwesome，你可能需要将其设置为 `fa fa-`
+- `iconPrefix` 默认值从 `iconAssets` 推断
 
 - 更新 `darkmode` 选项的值
 

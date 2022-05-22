@@ -14,7 +14,6 @@ export default hopeTheme({
   },
 
   iconAssets: "//at.alicdn.com/t/font_2410206_a0xb9hku9iu.css",
-  iconPrefix: "iconfont icon-",
 
   repo: "vuepress-theme-hope/vuepress-theme-hope",
 

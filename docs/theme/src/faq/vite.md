@@ -43,9 +43,7 @@ Don't worry, the above extra overhead mainly exists in code boot. Due to the lar
 
 :::
 
-## Importing Iconfont icons does not work
-
-If you are using IconFont icons and can see the icons normally on the devServer, but not in the deploy env, you may need to check how the icons are imported.
+## `@import()` in CSS does not work
 
 In VuePress2, importing web CSS via `@import` in `index.scss` has no effect. You may need to manually import it in the `head` option of your VuePress configuration.
 
@@ -82,7 +80,7 @@ export default defineUserConfig({
       "link",
       {
         rel: "stylesheet",
-        href: "//at.alicdn.com/t/font_2410206_a0xb9hku9iu.css",
+        href: "YOUR_CSS_URL",
       },
     ],
   ],
@@ -100,7 +98,7 @@ module.exports = {
       "link",
       {
         rel: "stylesheet",
-        href: "//at.alicdn.com/t/font_2410206_a0xb9hku9iu.css",
+        href: "YOUR_CSS_URL",
       },
     ],
   ],

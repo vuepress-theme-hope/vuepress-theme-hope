@@ -125,12 +125,9 @@ Since the theme no longer has a built-in search:
 
 ### Outlook
 
-- clear `iconPrefix` default value from `icon-`
+- Add `iconAssets` option
 
-  You now need to set this option according to icons you are using
-
-  - If you use IconFont, you may need to set it to `iconfont icon-`
-  - If you use FontAwesome, you may need to set it to `fa fa-`
+- `iconPrefix` default value now infers from `iconAssets`
 
 - update values of `darkmode` option
 

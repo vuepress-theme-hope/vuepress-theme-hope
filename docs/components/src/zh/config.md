@@ -59,6 +59,6 @@ AddThis 的公开 ID。
 ## iconPrefix
 
 - 类型: `string`
-- 默认值: `''`
+- 默认值: 尝试从 iconAssets 推断
 
 字体图标的 Class 前缀
