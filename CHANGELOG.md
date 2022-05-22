@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.70](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.69...v2.0.0-beta.70) (2022-05-22)
+
+### Features
+
+- **md-enhance:** add logger for include ([4f45928](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4f4592810a1f4308eb4e32cdc3a7793755304976))
+
+### Bug Fixes
+
+- **md-enhance:** fix extra empty lines by include ([b2c623f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b2c623feb00ddc8fd4f38d391911096ba8dbf36e))
+- **theme:** fix $isDarkmode ([952141a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/952141ac2f0f17a3e392c2b2768ec5e185e47edd))
+- **theme:** fix structure sidebar and add tests ([8b0cc70](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8b0cc70d4af291fb474d55b289177d14eae33f43))
+
 ## [2.0.0-beta.69](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.68...v2.0.0-beta.69) (2022-05-22)
 
 ### ⚠ BREAKING CHANGES
