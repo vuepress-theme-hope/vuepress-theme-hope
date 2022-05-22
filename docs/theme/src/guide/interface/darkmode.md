@@ -38,3 +38,7 @@ Available options:
 <script setup lang="ts">
 import AppearanceSwitch from '@theme-hope/module/outlook/components/AppearanceSwitch'
 </script>
+
+## Global Vairables
+
+`$isDarkmode` is avaiable in all markdown files.

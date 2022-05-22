@@ -38,3 +38,7 @@ tag:
 <script setup lang="ts">
 import AppearanceSwitch from '@theme-hope/module/outlook/components/AppearanceSwitch'
 </script>
+
+## 全局变量
+
+`$isDarkmode` 在所有 Mrkdown 文件中都可用。

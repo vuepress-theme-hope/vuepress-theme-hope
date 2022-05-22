@@ -47,6 +47,7 @@ A demo with user and slug hash:
   slug-hash="ZYYQoy"
   title="Solar System animation - Pure CSS"
   :default-tab="['css','result']"
+  :theme="$isDarkmode? 'dark': 'light'"
 />
 
 ```md
@@ -55,6 +56,7 @@ A demo with user and slug hash:
   slug-hash="ZYYQoy"
   title="Solar System animation - Pure CSS"
   :default-tab="['css','result']"
+  :theme="$isDarkmode? 'dark': 'light'"
 />
 ```
 
@@ -64,6 +66,7 @@ A demo with link:
   link="https://codepen.io/kowlor/pen/ZYYQoy"
   title="Solar System animation - Pure CSS"
   :default-tab="['css','result']"
+  :theme="$isDarkmode? 'dark': 'light'"
 />
 
 ```md
@@ -71,6 +74,7 @@ A demo with link:
   link="https://codepen.io/kowlor/pen/ZYYQoy"
   title="Solar System animation - Pure CSS"
   :default-tab="['css','result']"
+  :theme="$isDarkmode? 'dark': 'light'"
 />
 ```
 

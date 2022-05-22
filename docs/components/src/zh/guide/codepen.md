@@ -68,6 +68,7 @@ CodePen 项目标题。
   slug-hash="ZYYQoy"
   title="Solar System animation - Pure CSS"
   :default-tab="['css','result']"
+  :theme="$isDarkmode? 'dark': 'light'"
 />
 
 ```md
@@ -76,6 +77,7 @@ CodePen 项目标题。
   slug-hash="ZYYQoy"
   title="Solar System animation - Pure CSS"
   :default-tab="['css','result']"
+  :theme="$isDarkmode? 'dark': 'light'"
 />
 ```
 
@@ -85,6 +87,7 @@ CodePen 项目标题。
   link="https://codepen.io/kowlor/pen/ZYYQoy"
   title="Solar System animation - Pure CSS"
   :default-tab="['css','result']"
+  :theme="$isDarkmode? 'dark': 'light'"
 />
 
 ```md
@@ -92,5 +95,6 @@ CodePen 项目标题。
   link="https://codepen.io/kowlor/pen/ZYYQoy"
   title="Solar System animation - Pure CSS"
   :default-tab="['css','result']"
+  :theme="$isDarkmode? 'dark': 'light'"
 />
 ```
