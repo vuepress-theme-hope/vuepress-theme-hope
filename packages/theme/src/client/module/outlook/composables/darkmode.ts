@@ -87,9 +87,10 @@ export const setupDarkMode = (): void => {
   updateDarkModeAttr(isDarkMode);
 
   // provide global helpers
-  Object.defineProperties(app.config.globalProperties, {
-    $isDarkMode: { get: () => isDarkMode.value },
-  });
+  if (!("$isDarkMode" in app.config.globalProperties))
+    Object.defineProperties(app.config.globalProperties, {
+      $isDarkMode: { get: () => isDarkMode.value },
+    });
 };
 
 declare module "vue" {
