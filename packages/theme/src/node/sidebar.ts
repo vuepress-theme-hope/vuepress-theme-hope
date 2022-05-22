@@ -6,6 +6,7 @@ import type { App } from "@vuepress/core";
 import type {
   HopeThemeConfig,
   HopeThemeSidebarArrayConfig,
+  HopeThemeSidebarConfig,
   HopeThemeSidebarGroupItem,
 } from "../shared";
 
@@ -38,8 +39,11 @@ const getInfo = (app: App, rootDir: string, base = ""): Info[] => {
       app.pages
         .filter(
           ({ filePathRelative, pathLocale }) =>
+            // generated from file
             filePathRelative &&
+            // inside dir
             filePathRelative.startsWith(dir) &&
+            // filter only currect level
             filePathRelative
               .slice(dir.length)
               .match(/^[^/]*(?:\/README.md)?$/) &&
@@ -50,15 +54,24 @@ const getInfo = (app: App, rootDir: string, base = ""): Info[] => {
               : true)
         )
         .map((page) => {
-          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-          const filename = path.relative(dir, page.filePathRelative!);
+          const filename = path.relative(
+            dir,
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+            page.filePathRelative!
+          );
 
           // continue to read nest dir
           if (filename?.endsWith("/README.md")) {
+            const filePath = path.relative(
+              rootDir,
+              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+              page.filePathRelative!
+            );
+            const base = filePath.replace(/README\.md$/, "");
             const dirname = filename.replace(/README\.md$/, "");
 
             // get result
-            const result = getInfo(app, rootDir, dirname);
+            const result = getInfo(app, rootDir, base);
 
             // get dir information
             const dirInfo = (page.frontmatter.dir || {}) as {
@@ -88,7 +101,7 @@ const getInfo = (app: App, rootDir: string, base = ""): Info[] => {
                     ? // filter README.md
                       result.filter(
                         (item) =>
-                          item.type !== "file" || item.path !== "README.md"
+                          !(item.type === "file" && item.path === "README.md")
                       )
                     : result,
                 }
@@ -167,10 +180,10 @@ const getGeneratePaths = (
   return result;
 };
 
-export const prepareSidebarData = async (
+export const getSidebarData = (
   app: App,
   themeConfig: HopeThemeConfig
-): Promise<void> => {
+): HopeThemeSidebarConfig => {
   const generatePaths: string[] = [];
 
   // exact generate sidebar paths
@@ -199,6 +212,15 @@ export const prepareSidebarData = async (
     logger.info(
       `Sidebar structure data:${JSON.stringify(sidebarData, null, 2)}`
     );
+
+  return sidebarData;
+};
+
+export const prepareSidebarData = async (
+  app: App,
+  themeConfig: HopeThemeConfig
+): Promise<void> => {
+  const sidebarData = getSidebarData(app, themeConfig);
 
   await app.writeTemp(
     "theme-hope/sidebar.js",
