@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.69](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.68...v2.0.0-beta.69) (2022-05-22)
+
+### ⚠ BREAKING CHANGES
+
+- remove add-this plugin
+- **components:** remove backToTopThreshold, backToTop now accepts a number
+
+### Features
+
+- **add-this:** rebuild plugin ([b82c31f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b82c31ff8b7acdf00565cdb19b1033fa66466ea9))
+- **components:** remove backToTopThreshold ([b34cbbd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b34cbbd0933a1a9c14e9cab489530603fd198d4a))
+- **components:** update option name ([b51bfe7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b51bfe7a986c67fd06089799c3f630be861e6c49))
+- remove add-this plugin ([5cc7a87](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5cc7a876212c712428dbf5b0286623a119b19d46))
+- rename components package ([aab9ed2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/aab9ed2deae002ff2cf3b236808914787318713e))
+- rename share package ([ad3a915](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ad3a915e77d47ae04e95f1798b276a14410c9290))
+- **theme:** add global variable `$isDarkmode` ([c540cb6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c540cb69d4da17842073e398b448a3512365a6e0))
+
+### Bug Fixes
+
+- **theme:** improve line number ([e40bdbf](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e40bdbfff98a238e1ef72f38445e9337fd19b1b4))
+
 ## [2.0.0-beta.68](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.67...v2.0.0-beta.68) (2022-05-21)
 
 ### Bug Fixes
