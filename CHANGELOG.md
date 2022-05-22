@@ -8,6 +8,8 @@ All notable changes to this project will be documented in this file. See [Conven
 
 - remove add-this plugin
 - **components:** remove backToTopThreshold, backToTop now accepts a number
+- rename `@mr-hope/vuepress-plugin-components` to `vuepress-plugin-components`
+- rename `@mr-hope/vuepress-shared` to `vuepress-shared`
 
 ### Features
 
