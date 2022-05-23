@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.71](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.70...v2.0.0-beta.71) (2022-05-23)
+
+### Features
+
+- add I18n spanish language ([#1872](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1872)) ([ce05089](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ce0508998e5ca84cff7b72745b9d16078055d89d))
+- **components:** support iconPrefix infer ([e22265f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e22265fa561ae11c08888aec58a963ec4fbb4ffa))
+
 ## [2.0.0-beta.70](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.69...v2.0.0-beta.70) (2022-05-22)
 
 ### Features
