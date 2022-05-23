@@ -1,6 +1,6 @@
 {
   "name": "md-enhance-demo",
-  "version": "2.0.0-beta.63",
+  "version": "2.0.0-beta.71",
   "private": true,
   "description": "Demo for vuepress-plugin-md-enhance",
   "license": "MIT",
@@ -17,8 +17,8 @@
     "@vuepress/cli": "2.0.0-beta.45",
     "@vuepress/client": "2.0.0-beta.45",
     "@vuepress/theme-default": "2.0.0-beta.45",
-    "sass-loader": "^12.6.0",
-    "vue": "^3.2.33",
+    "sass-loader": "12.6.0",
+    "vue": "3.2.36",
     "vuepress-plugin-md-enhance": "workspace:*",
     "vuepress-vite": "2.0.0-beta.45",
     "vuepress-webpack": "2.0.0-beta.45"

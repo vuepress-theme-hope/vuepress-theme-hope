@@ -1,14 +1,12 @@
-import { getLocales, noopModule } from "@mr-hope/vuepress-shared";
-import { path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
+import { getLocales } from "vuepress-shared";
+
 import { backToTopLocales } from "./locales";
 import { prepareConfigFile } from "./prepare";
-import { logger } from "./utils";
+import { getIconPrefix, logger } from "./utils";
 
 import type { PluginFunction } from "@vuepress/core";
-import type { AvailableComponent, ComponentOptions } from "../shared";
-
-const availableComponents: AvailableComponent[] = ["Badge"];
+import type { ComponentOptions } from "../shared";
 
 export const componentsPlugin =
   (options: ComponentOptions): PluginFunction =>
@@ -18,25 +16,21 @@ export const componentsPlugin =
     useSassPalettePlugin(app, { id: "hope" });
 
     return {
-      name: "@mr-hope/vuepress-plugin-components",
-
-      alias: Object.fromEntries(
-        availableComponents.map((item) => [
-          `@${item}`,
-          options.components?.includes(item)
-            ? path.resolve(__dirname, `../client/components/${item}.js`)
-            : noopModule,
-        ])
-      ),
+      name: "vuepress-plugin-components",
 
       define: {
-        BACK_TO_TOP_THRESHOLD: options.backToTopThreshold || 300,
+        BACK_TO_TOP_THRESHOLD:
+          typeof options.backToTop === "number" ? options.backToTop : 300,
         BACK_TO_TOP_LOCALES: getLocales({
           app,
           name: "backToTop",
           default: backToTopLocales,
           config: options.backToTopLocales,
         }),
+        ICON_PREFIX:
+          typeof options.iconPrefix === "string"
+            ? options.iconPrefix
+            : getIconPrefix(options.iconAssets),
       },
 
       clientConfigFile: (app) => prepareConfigFile(app, options),

@@ -16,9 +16,9 @@ The theme imports components through `alias`, so you can use it to replace any c
 
 You need to replace the component alias used in the theme with `alias` option in your own VuePress config file.
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -42,9 +42,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -69,8 +67,6 @@ module.exports = {
 
 :::
 
-::::
-
 Here are list of aliases.
 
 ::: details Theme components alias
@@ -83,6 +79,7 @@ Components:
 - `@theme-hope/components/HomeFeatures`: homepage features
 - `@theme-hope/components/HomeHero`: homepage logo and introduction
 - `@theme-hope/components/HomePage`: home page
+- `@theme-hope/components/Icon`: icon
 - `@theme-hope/components/MarkdownContent`: Markdown content
 - `@theme-hope/components/NormalPage`: normal page
 - `@theme-hope/components/PageFooter`: page footer
@@ -229,9 +226,9 @@ Some components provide slots, in this case, you can directly import the origina
 
 For example, if your site has strong social attributes, and you want to display a comment box on the homepage, you can display it like this:
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item config.ts
+@tab config.ts
 
 ```ts
 // .vuepress/config.ts
@@ -255,9 +252,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item HomePage.vue
+@tab HomePage.vue
 
 ```vue
 <template>
@@ -275,8 +270,6 @@ import HopeHomePage from "vuepress-theme-hope/lib/client/components/HomePage";
 
 :::
 
-::::
-
 Components that provide slots are as follows:
 
 **theme**:
@@ -285,7 +278,7 @@ Components that provide slots are as follows:
 - `CommonWrapper`: `default`, `navbarLeft`, `navbarCenter`, `navbarRight`, `navScreenTop`, `navScreenBottom`, `sidebar`, `sidebarTop`, `sidebarBottom`
 - `HomeHero`: `heroImage`, `heroInfo`
 - `HomePage`: `top`, `center`, `bottom`
-- `NormalPage`: `top`, `contentBefore`, `contentAfter`, `botom`
+- `NormalPage`: `top`, `contentBefore`, `contentAfter`, `bottom`
 
 **Navigation Bar**:
 

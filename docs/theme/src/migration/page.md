@@ -74,6 +74,100 @@ tag:
 
   Footer no longer displays media links.
 
+## Markdown
+
+- Code demo syntax changed
+
+  Before:
+
+  ```md
+  ::: demo Title
+
+  <!-- demo content -->
+
+  :::
+
+  ::: demo [vue] Title
+
+  <!-- demo content -->
+
+  :::
+
+  ::: demo [react] Title
+
+  <!-- demo content -->
+
+  :::
+  ```
+
+  After:
+
+  ```md
+  ::: normal-demo Title
+
+  <!-- demo content -->
+
+  :::
+
+  ::: vue-demo Title
+
+  <!-- demo content -->
+
+  :::
+
+  ::: react-demo Title
+
+  <!-- demo content -->
+
+  :::
+  ```
+
+- Code Group changed to code tab
+
+  Before:
+
+  ````md
+  :::: code-group
+
+  ::: code-group-item pnpm
+
+  ```bash
+  pnpm create vuepress-theme-hope@next [dir]
+  ```
+
+  :::
+
+  ::: code-group-item npm:active
+
+  ```bash
+  npm init vuepress-theme-hope@next [dir]
+  ```
+
+  :::
+
+  ::::
+  ````
+
+  After:
+
+  ````md
+  ::: code-tabs
+
+  @tab pnpm
+
+  ```bash
+  pnpm create vuepress-theme-hope@next [dir]
+  ```
+
+  @tab:active npm
+
+  ```bash
+  npm init vuepress-theme-hope@next [dir]
+  ```
+
+  :::
+  ````
+
 ## Layout
 
 ### Project HomePage

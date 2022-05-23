@@ -1,10 +1,8 @@
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
-import { defineComponent, h, unref } from "vue";
-
-import { useIconPrefix, useThemeLocaleData } from "@theme-hope/composables";
+import { defineComponent, h, resolveComponent, unref } from "vue";
 
 import PageInfo from "@theme-hope/module/info/components/PageInfo";
-import { usePageInfo } from "@theme-hope/composables";
+import { usePageInfo, useThemeLocaleData } from "@theme-hope/composables";
 
 import type { VNode } from "vue";
 import type { HopeThemeNormalPageFrontmatter } from "../../shared";
@@ -18,16 +16,13 @@ export default defineComponent({
     const page = usePageData();
     const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();
     const themeLocale = useThemeLocaleData();
-    const iconPrefix = useIconPrefix();
     const { config, items } = usePageInfo();
 
     return (): VNode =>
       h("div", { class: "page-title" }, [
         h("h1", [
-          themeLocale.value.titleIcon !== false && frontmatter.value.icon
-            ? h("i", {
-                class: ["icon", `${iconPrefix.value}${frontmatter.value.icon}`],
-              })
+          themeLocale.value.titleIcon !== false
+            ? h(resolveComponent("FontIcon"), { icon: frontmatter.value.icon })
             : null,
           page.value.title,
         ]),

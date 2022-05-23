@@ -11,7 +11,7 @@ icon: more
 
 ## v-pre
 
-由于 VuePress2 已经在 `@vuepress/core` 中移除了 V1 的 v-pre 容器，插件提供了一个选项支持它。也就是你可以在下面的容器中使用任何 Mustacle 语法。
+由于 VuePress2 已经在 `@vuepress/core` 中移除了 V1 的 v-pre 容器，插件提供了一个选项支持它。也就是你可以在下面的容器中使用任何 Mustache 语法。
 
 ```md
 ::: v-pre

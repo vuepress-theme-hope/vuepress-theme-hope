@@ -33,11 +33,11 @@ If you are not familiar with TypeScript, you can also use a JavaScript config fi
 
 You need to set up a config object in the config file `.vuepress/config.ts` (or `.vuepress/config.js`) and export it.
 
-To get correct hints, importing `defineUserConfig` from `vuepress` and wrapping the config object is recommanded:
+To get correct hints, importing `defineUserConfig` from `vuepress` and wrapping the config object is recommended:
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts{2,4,6}
 // .vuepress/config.ts
@@ -48,9 +48,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js{2,4,6}
 // .vuepress/config.js
@@ -62,8 +60,6 @@ module.exports = defineUserConfig({
 ```
 
 :::
-
-::::
 
 ## Config Scope
 
@@ -99,7 +95,7 @@ If you are using an editor that supports TS/JS language features (such as VSCode
   ![Error message](./assets/vscode-error-light.png#light)
   ![Error message](./assets/vscode-error-dark.png#dark)
 
-- You can get autocompletion while inputing:
+- You can get autocompletion while inputting:
 
   ![autocomplete](./assets/vscode-autocomplete-light.png#light)
   ![Autocomplete](./assets/vscode-autocomplete-dark.png#dark)

@@ -1,10 +1,8 @@
-import { computed, defineComponent, h, toRef } from "vue";
+import { computed, defineComponent, h, resolveComponent, toRef } from "vue";
 import { RouterLink, useRoute } from "vue-router";
 import { useSiteData } from "@vuepress/client";
 import { ExternalLinkIcon } from "@vuepress/plugin-external-link-icon/lib/client";
 import { isLinkHttp, isLinkMailto, isLinkTel } from "@vuepress/shared";
-
-import { useIconPrefix } from "@theme-hope/composables";
 
 import type { PropType, VNode } from "vue";
 import type { AutoLink } from "../../shared";
@@ -34,7 +32,6 @@ export default defineComponent({
   setup(props, { attrs, emit, slots }) {
     const route = useRoute();
     const site = useSiteData();
-    const iconPrefix = useIconPrefix();
 
     const config = toRef(props, "config");
 
@@ -103,19 +100,14 @@ export default defineComponent({
         : false
     );
 
-    const renderIcon = (item: AutoLink): VNode | null =>
-      item.icon
-        ? h("i", {
-            class: `icon ${iconPrefix.value}${item.icon}`,
-          })
-        : null;
+    return (): VNode => {
+      const { text, icon, link } = config.value;
 
-    return (): VNode =>
-      renderRouterLink.value
+      return renderRouterLink.value
         ? h(
             RouterLink,
             {
-              to: config.value.link,
+              to: link,
               "aria-label": linkAriaLabel.value,
               ...attrs,
               // class needs to be merged manually
@@ -124,15 +116,15 @@ export default defineComponent({
             },
             () =>
               slots.default?.() || [
-                slots.before?.() || renderIcon(config.value),
-                config.value.text,
+                slots.before?.() || h(resolveComponent("FontIcon"), { icon }),
+                text,
                 slots.after?.(),
               ]
           )
         : h(
             "a",
             {
-              href: config.value.link,
+              href: link,
               rel: anchorRel.value,
               target: linkTarget.value,
               "aria-label": linkAriaLabel.value,
@@ -142,11 +134,12 @@ export default defineComponent({
               onFocusout: () => emit("focusout"),
             },
             slots.default?.() || [
-              slots.before?.() || renderIcon(config.value),
-              config.value.text,
+              slots.before?.() || h(resolveComponent("FontIcon"), { icon }),
+              text,
               props.externalLinkIcon ? h(ExternalLinkIcon) : null,
               slots.after?.(),
             ]
           );
+    };
   },
 });

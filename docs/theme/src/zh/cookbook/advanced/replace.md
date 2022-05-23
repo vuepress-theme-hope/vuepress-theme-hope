@@ -16,9 +16,9 @@ tag:
 
 你需要在自己的 VuePress 配置文件通过 `alias` 替换主题中使用的组件别名。
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -43,9 +43,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -71,8 +69,6 @@ module.exports = {
 
 :::
 
-::::
-
 可以支持的别名如下。
 
 ::: details 主题组件别名
@@ -85,6 +81,7 @@ module.exports = {
 - `@theme-hope/components/HomeFeatures`: 主页特性
 - `@theme-hope/components/HomeHero`: 主页 Logo 及介绍
 - `@theme-hope/components/HomePage`: 主页
+- `@theme-hope/components/Icon`: 图标
 - `@theme-hope/components/MarkdownContent`: Markdown 内容
 - `@theme-hope/components/NormalPage`: 常规页面
 - `@theme-hope/components/PageFooter`: 页脚
@@ -231,9 +228,9 @@ Components:
 
 比如你的网站社交属性很强，你希望在主页也显示评论框的话，你可以这样引入:
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item config.ts
+@tab config.ts
 
 ```ts
 // .vuepress/config.ts
@@ -258,9 +255,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item HomePage.vue
+@tab HomePage.vue
 
 ```vue
 <template>
@@ -278,8 +273,6 @@ import HopeHomePage from "vuepress-theme-hope/lib/client/components/HomePage";
 
 :::
 
-::::
-
 提供插槽的组件如下:
 
 **主题**:
@@ -288,7 +281,7 @@ import HopeHomePage from "vuepress-theme-hope/lib/client/components/HomePage";
 - `CommonWrapper`: `default`, `navbarLeft`, `navbarCenter`, `navbarRight`, `navScreenTop`, `navScreenBottom`, `sidebar`, `sidebarTop`, `sidebarBottom`
 - `HomeHero`: `heroImage`, `heroInfo`
 - `HomePage`: `top`, `center`, `bottom`
-- `NormalPage`: `top`, `contentBefore`, `contentAfter`, `botom`
+- `NormalPage`: `top`, `contentBefore`, `contentAfter`, `bottom`
 
 **导航栏**:
 

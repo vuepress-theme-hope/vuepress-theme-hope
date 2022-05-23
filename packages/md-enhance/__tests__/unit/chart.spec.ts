@@ -1,14 +1,9 @@
 import { describe, it, expect } from "vitest";
 import MarkdownIt = require("markdown-it");
-import MarkdownContainer = require("markdown-it-container");
-import { chartRender } from "../../src/node/markdown-it/chart";
+import { chart } from "../../src/node/markdown-it/chart";
 
 describe("chart", () => {
-  const markdownIt = MarkdownIt({ linkify: true }).use(
-    MarkdownContainer,
-    "chart",
-    { render: chartRender }
-  );
+  const markdownIt = MarkdownIt({ linkify: true }).use(chart);
 
   it("Should resolve chart info with json block", () => {
     const result = markdownIt.render(

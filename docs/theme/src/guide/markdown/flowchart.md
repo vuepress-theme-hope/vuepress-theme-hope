@@ -1,7 +1,7 @@
 ---
 title: Flowchart
 icon: tree
-index: 11
+index: 12
 category:
   - Markdown
 tag:
@@ -15,9 +15,9 @@ Let the Markdown file support flow chart in your VuePress site
 
 ## Config
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts {8-10}
 // .vuepress/config.ts
@@ -35,9 +35,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js {7-9}
 // .vuepress/config.js
@@ -55,8 +53,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ## Syntax
 

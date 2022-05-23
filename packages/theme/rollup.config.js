@@ -160,7 +160,7 @@ export default [
       "@theme-hope/utils",
       "@theme-hope/components/transitions/DropTransition.vue",
       "@theme-hope/module/blog/components/icons/EmptyIcon.vue",
-      "@mr-hope/vuepress-shared/lib/client",
+      "vuepress-shared/lib/client",
       "@vuepress/client",
       "vue",
       "vue-router",
@@ -175,7 +175,7 @@ export default [
     external: [
       "@theme-hope/composables",
       "@theme-hope/utils",
-      "@mr-hope/vuepress-shared/lib/client",
+      "vuepress-shared/lib/client",
       "@vuepress/client",
       "vuepress-plugin-blog2/lib/client",
       /\.scss$/,
@@ -188,7 +188,7 @@ export default [
     external: [
       "@theme-hope/composables",
       "@theme-hope/utils",
-      "@mr-hope/vuepress-shared/lib/client",
+      "vuepress-shared/lib/client",
       "@vueuse/core",
       "@vuepress/client",
       "@vuepress/plugin-external-link-icon/lib/client",
@@ -211,7 +211,7 @@ export default [
       "@theme-hope/components/transitions/DropTransition.vue",
       "@theme-hope/composables",
       "@theme-hope/utils",
-      "@mr-hope/vuepress-shared/lib/client",
+      "vuepress-shared/lib/client",
       "@vuepress/client",
       "@vuepress/plugin-external-link-icon/lib/client",
       "@vuepress/shared",
@@ -226,7 +226,7 @@ export default [
     external: [
       "@theme-hope/composables",
       "@theme-hope/utils",
-      "@mr-hope/vuepress-shared/lib/client",
+      "vuepress-shared/lib/client",
       "@vuepress/client",
       "@vuepress/plugin-external-link-icon/lib/client",
       "@vuepress/shared",
@@ -246,7 +246,7 @@ export default [
       "@theme-hope/components/transitions/DropTransition.vue",
       "@theme-hope/composables",
       "@theme-hope/utils",
-      "@mr-hope/vuepress-shared/lib/client",
+      "vuepress-shared/lib/client",
       "@vuepress/client",
       "@vuepress/plugin-external-link-icon/lib/client",
       "@vuepress/shared",
@@ -261,7 +261,7 @@ export default [
   rollupBundleTypescript("composables/index", {
     external: [
       "@theme-hope/utils",
-      "@mr-hope/vuepress-shared/lib/client",
+      "vuepress-shared/lib/client",
       "@vuepress/client",
       "@vuepress/plugin-theme-data/lib/client",
       "vue",
@@ -287,7 +287,7 @@ export default [
   rollupBundleVue("layouts/404.ts", {
     external: [
       "@theme-hope/composables",
-      "@mr-hope/vuepress-shared/lib/client",
+      "vuepress-shared/lib/client",
       "@vuepress/client",
       "vue",
       "vue-router",
@@ -298,13 +298,13 @@ export default [
 
   rollupTypescript("node/index", {
     external: [
-      "@mr-hope/vuepress-shared",
-      "@mr-hope/vuepress-plugin-components",
+      "vuepress-shared",
       "@vuepress/cli",
       "@vuepress/utils",
       "bcrypt-ts",
       "vuepress-plugin-blog2",
       "vuepress-plugin-comment2",
+      "vuepress-plugin-components",
       "vuepress-plugin-copy-code2",
       "vuepress-plugin-feed2",
       "vuepress-plugin-md-enhance",

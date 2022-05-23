@@ -26,9 +26,9 @@ If the current browser does not support full screen, the full screen button is a
 
 :::
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts {8}
 // .vuepress/config.ts
@@ -43,9 +43,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js {7}
 // .vuepress/config.js
@@ -60,8 +58,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ## Back to top button
 

@@ -1,14 +1,14 @@
-import { deepAssign } from "@mr-hope/vuepress-shared";
 import { feedPlugin } from "vuepress-plugin-feed2";
+import { deepAssign } from "vuepress-shared";
 
 import type { Plugin } from "@vuepress/core";
 import type { FeedOptions } from "vuepress-plugin-feed2";
 import type { HopeThemeConfig } from "../../shared";
 
 export const getFeedPlugin = (
-  hostname: string,
   themeConfig: HopeThemeConfig,
-  options?: Omit<FeedOptions, "hostname"> | false
+  options?: Omit<FeedOptions, "hostname"> | false,
+  hostname?: string
 ): Plugin | null => {
   if (
     options === false ||
@@ -35,8 +35,7 @@ export const getFeedPlugin = (
           "Badge",
           "ChartJS",
           "CodeDemo",
-          "CodeGroup",
-          "CodeGroupItem",
+          "CodeTabs",
           "FlowChart",
           "Mermaid",
           "Presentation",

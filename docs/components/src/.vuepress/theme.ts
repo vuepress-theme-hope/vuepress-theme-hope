@@ -1,5 +1,5 @@
 import { hopeTheme } from "vuepress-theme-hope";
-import { version } from "@mr-hope/vuepress-plugin-components/package.json";
+import { version } from "vuepress-plugin-components/package.json";
 
 const hostname =
   process.env.HOSTNAME || "https://vuepress-theme-hope-v2.netlify.app";
@@ -12,7 +12,8 @@ export default hopeTheme({
     url: "https://mrhope.site",
   },
 
-  iconPrefix: "iconfont icon-",
+  addThis: "ra-5f829c59e6c6bc9a",
+  iconAssets: "//at.alicdn.com/t/font_2410206_a0xb9hku9iu.css",
 
   repo: "vuepress-theme-hope/vuepress-theme-hope/tree/main/packages/components/",
   docsRepo: "vuepress-theme-hope/vuepress-theme-hope",
@@ -44,7 +45,22 @@ export default hopeTheme({
         },
       ],
 
-      sidebar: false,
+      sidebar: [
+        "/",
+        {
+          text: "Components",
+          prefix: "/guide/",
+          children: [
+            "addthis",
+            "backtotop",
+            "badge",
+            "codepen",
+            "fonticon",
+            "pdf",
+          ],
+        },
+        "/config",
+      ],
     },
 
     "/zh/": {
@@ -64,11 +80,28 @@ export default hopeTheme({
         },
       ],
 
-      sidebar: false,
+      sidebar: [
+        "/zh/",
+        {
+          text: "组件",
+          prefix: "/zh/guide/",
+          children: [
+            "addthis",
+            "backtotop",
+            "badge",
+            "codepen",
+            "fonticon",
+            "pdf",
+          ],
+        },
+        "/zh/config",
+      ],
     },
   },
 
   plugins: {
+    components: ["Badge", "CodePen", "PDF"],
+
     comment: {
       type: "giscus",
       repo: "vuepress-theme-hope/giscus-discussions",
@@ -78,7 +111,7 @@ export default hopeTheme({
     },
 
     mdEnhance: {
-      codegroup: true,
+      codetabs: true,
     },
 
     pwa: {
@@ -95,7 +128,7 @@ export default hopeTheme({
         color: "#ffffff",
       },
       manifest: {
-        name: "@mr-hope/vuepress-plugin-components",
+        name: "vuepress-plugin-components",
         short_name: "components plugin",
         icons: [
           {

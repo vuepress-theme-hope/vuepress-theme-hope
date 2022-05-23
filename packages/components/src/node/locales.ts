@@ -36,4 +36,16 @@ export const backToTopLocales: BackToTopLocaleConfig = {
   "/pl/": {
     backToTop: "Wróć na górę",
   },
+
+  "/sk/": {
+    backToTop: "Back to top",
+  },
+
+  "/fr/": {
+    backToTop: "Back to top",
+  },
+
+  "/es/": {
+    backToTop: "Volver arriba",
+  },
 };

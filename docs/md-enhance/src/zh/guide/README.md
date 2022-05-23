@@ -19,7 +19,7 @@ icon: creative
 
 ::: danger
 
-请仅将此选项用于体验或测试。随着时间的增长，`vupress-plugin-md-enhance` 变得越来越强大。它为 Markdown 解析器添加了更多语法，并输出了更多代码。
+请仅将此选项用于体验或测试。随着时间的增长，`vuepress-plugin-md-enhance` 变得越来越强大。它为 Markdown 解析器添加了更多语法，并输出了更多代码。
 
 启用不需要的功能将增加开发和构建时间。 (`markdown-it` 必须检查额外的语法)
 
@@ -31,27 +31,43 @@ icon: creative
 
 ## 新增的更多语法
 
+### 选项卡
+
+::: tabs#fruit
+
+@tab apple
+
+Apple
+
+@tab banana
+
+Banana
+
+@tab orange
+
+Orange
+
+:::
+
+- [查看详情](tabs.md)
+
 ### 代码块
 
-:::: code-group
+::: code-tabs#shell
 
-::: code-group-item pnpm
+@tab pnpm
 
 ```bash
 pnpm add -D vuepress-plugin-md-enhance@next
 ```
 
-:::
-
-::: code-group-item yarn
+@tab yarn
 
 ```bash
 yarn add -D vuepress-plugin-md-enhance@next
 ```
 
-:::
-
-::: code-group-item npm:active
+@tab:active npm
 
 ```bash
 npm i -D vuepress-plugin-md-enhance@next
@@ -59,9 +75,7 @@ npm i -D vuepress-plugin-md-enhance@next
 
 :::
 
-::::
-
-- [查看详情](code-group.md)
+- [查看详情](code-tabs.md)
 
 ### 自定义对齐
 

@@ -1,0 +1,121 @@
+// Vitest Snapshot v1
+
+exports[`code tabs > shoud render mutiple block 1`] = `
+"<CodeTabs :data='[{\\"title\\":\\"js\\",\\"content\\":\\"<pre><code class=\\\\\\"language-js\\\\\\">const a = 1;\\\\n</code></pre>\\\\n\\"},{\\"title\\":\\"ts\\",\\"content\\":\\"<pre><code class=\\\\\\"language-ts\\\\\\">const a = 1;\\\\n</code></pre>\\\\n\\"}]'>
+</CodeTabs>
+"
+`;
+
+exports[`code tabs > shoud render mutiple block 2`] = `
+"<CodeTabs :data='[{\\"title\\":\\"js\\",\\"content\\":\\"<pre><code class=\\\\\\"language-js\\\\\\">const a = 1;\\\\n</code></pre>\\\\n\\"},{\\"title\\":\\"ts\\",\\"content\\":\\"<pre><code class=\\\\\\"language-ts\\\\\\">const a = 1;\\\\n</code></pre>\\\\n\\"}]'>
+</CodeTabs>
+"
+`;
+
+exports[`code tabs > shoud render single block 1`] = `
+"<CodeTabs :data='[{\\"title\\":\\"js\\",\\"content\\":\\"<pre><code class=\\\\\\"language-js\\\\\\">const a = 1;\\\\n</code></pre>\\\\n\\"}]'>
+</CodeTabs>
+"
+`;
+
+exports[`code tabs > shoud render single block 2`] = `
+"<CodeTabs :data='[{\\"title\\":\\"js\\",\\"content\\":\\"<pre><code class=\\\\\\"language-js\\\\\\">const a = 1;\\\\n</code></pre>\\\\n\\"}]'>
+</CodeTabs>
+"
+`;
+
+exports[`code tabs > shoud support active 1`] = `
+"<CodeTabs :data='[{\\"title\\":\\"js\\",\\"content\\":\\"<pre><code class=\\\\\\"language-js\\\\\\">const a = 1;\\\\n</code></pre>\\\\n\\"}]' :active=\\"0\\">
+</CodeTabs>
+"
+`;
+
+exports[`code tabs > shoud support active 2`] = `
+"<CodeTabs :data='[{\\"title\\":\\"js\\",\\"content\\":\\"<pre><code class=\\\\\\"language-js\\\\\\">const a = 1;\\\\n</code></pre>\\\\n\\"}]' :active=\\"0\\">
+</CodeTabs>
+"
+`;
+
+exports[`code tabs > shoud support active 3`] = `
+"<CodeTabs :data='[{\\"title\\":\\"js\\",\\"content\\":\\"<pre><code class=\\\\\\"language-js\\\\\\">const a = 1;\\\\n</code></pre>\\\\n\\"},{\\"title\\":\\"ts\\",\\"content\\":\\"<pre><code class=\\\\\\"language-ts\\\\\\">const a = 1;\\\\n</code></pre>\\\\n\\"}]' :active=\\"1\\">
+</CodeTabs>
+"
+`;
+
+exports[`code tabs > shoud support active 4`] = `
+"<CodeTabs :data='[{\\"title\\":\\"js\\",\\"content\\":\\"<pre><code class=\\\\\\"language-js\\\\\\">const a = 1;\\\\n</code></pre>\\\\n\\"},{\\"title\\":\\"ts\\",\\"content\\":\\"<pre><code class=\\\\\\"language-ts\\\\\\">const a = 1;\\\\n</code></pre>\\\\n\\"}]' :active=\\"1\\">
+</CodeTabs>
+"
+`;
+
+exports[`code tabs > shoud support id 1`] = `
+"<CodeTabs :data='[{\\"title\\":\\"js\\",\\"content\\":\\"<pre><code class=\\\\\\"language-js\\\\\\">const a = 1;\\\\n</code></pre>\\\\n\\"}]' tab-id=\\"event\\">
+</CodeTabs>
+"
+`;
+
+exports[`code tabs > shoud support id 2`] = `
+"<CodeTabs :data='[{\\"title\\":\\"js\\",\\"content\\":\\"<pre><code class=\\\\\\"language-js\\\\\\">const a = 1;\\\\n</code></pre>\\\\n\\"}]' tab-id=\\"event-id\\">
+</CodeTabs>
+"
+`;
+
+exports[`code tabs > shoud support id 3`] = `
+"<CodeTabs :data='[{\\"title\\":\\"js\\",\\"content\\":\\"<pre><code class=\\\\\\"language-js\\\\\\">const a = 1;\\\\n</code></pre>\\\\n\\"}]' tab-id=\\"id with space\\">
+</CodeTabs>
+"
+`;
+
+exports[`code tabs > shoud support id 4`] = `
+"<CodeTabs :data='[{\\"title\\":\\"js\\",\\"content\\":\\"<pre><code class=\\\\\\"language-js\\\\\\">const a = 1;\\\\n</code></pre>\\\\n\\"}]' tab-id=\\"id starts and having space in the end\\">
+</CodeTabs>
+"
+`;
+
+exports[`code tabs > shoud support value 1`] = `
+"<CodeTabs :data='[{\\"title\\":\\"js\\",\\"content\\":\\"<pre><code class=\\\\\\"language-js\\\\\\">const a = 1;\\\\n</code></pre>\\\\n\\",\\"value\\":\\"javascript\\"}]'>
+</CodeTabs>
+"
+`;
+
+exports[`code tabs > shoud support value 2`] = `
+"<CodeTabs :data='[{\\"title\\":\\"js\\",\\"content\\":\\"<pre><code class=\\\\\\"language-js\\\\\\">const a = 1;\\\\n</code></pre>\\\\n\\",\\"value\\":\\"javascript\\"}]' :active=\\"0\\">
+</CodeTabs>
+"
+`;
+
+exports[`code tabs > shoud support value 3`] = `
+"<CodeTabs :data='[{\\"title\\":\\"js\\",\\"content\\":\\"<pre><code class=\\\\\\"language-js\\\\\\">const a = 1;\\\\n</code></pre>\\\\n\\",\\"value\\":\\"js\\"},{\\"title\\":\\"ts\\",\\"content\\":\\"<pre><code class=\\\\\\"language-ts\\\\\\">const a = 1;\\\\n</code></pre>\\\\n\\",\\"value\\":\\"typescript\\"}]' :active=\\"1\\">
+</CodeTabs>
+"
+`;
+
+exports[`code tabs > shoud support value 4`] = `
+"<CodeTabs :data='[{\\"title\\":\\"js\\",\\"content\\":\\"<pre><code class=\\\\\\"language-js\\\\\\">const a = 1;\\\\n</code></pre>\\\\n\\",\\"value\\":\\"javascript\\"},{\\"title\\":\\"ts\\",\\"content\\":\\"<pre><code class=\\\\\\"language-ts\\\\\\">const a = 1;\\\\n</code></pre>\\\\n\\",\\"value\\":\\"typescript\\"}]' :active=\\"1\\">
+</CodeTabs>
+"
+`;
+
+exports[`code tabs > should ignore other items 1`] = `
+"<CodeTabs :data='[{\\"title\\":\\"js\\",\\"content\\":\\"<pre><code class=\\\\\\"language-js\\\\\\">const a = 1;\\\\n</code></pre>\\\\n\\"}]' :active=\\"0\\">
+</CodeTabs>
+"
+`;
+
+exports[`code tabs > should ignore other items 2`] = `
+"<CodeTabs :data='[{\\"title\\":\\"js\\",\\"content\\":\\"<pre><code class=\\\\\\"language-js\\\\\\">const a = 1;\\\\n</code></pre>\\\\n\\"}]' :active=\\"0\\">
+</CodeTabs>
+"
+`;
+
+exports[`code tabs > should ignore other items 3`] = `
+"<CodeTabs :data='[{\\"title\\":\\"js\\",\\"content\\":\\"<pre><code class=\\\\\\"language-js\\\\\\">const a = 1;\\\\n</code></pre>\\\\n\\"},{\\"title\\":\\"ts\\",\\"content\\":\\"<pre><code class=\\\\\\"language-ts\\\\\\">const a = 1;\\\\n</code></pre>\\\\n\\"}]' :active=\\"1\\">
+</CodeTabs>
+"
+`;
+
+exports[`code tabs > should ignore other items 4`] = `
+"<CodeTabs :data='[{\\"title\\":\\"js\\",\\"content\\":\\"<pre><code class=\\\\\\"language-js\\\\\\">const a = 1;\\\\n</code></pre>\\\\n\\"},{\\"title\\":\\"ts\\",\\"content\\":\\"<pre><code class=\\\\\\"language-ts\\\\\\">const a = 1;\\\\n</code></pre>\\\\n\\"}]' :active=\\"1\\">
+</CodeTabs>
+"
+`;

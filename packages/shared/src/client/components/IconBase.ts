@@ -1,35 +1,29 @@
-import { defineComponent, h } from "vue";
-import type { VNode } from "vue";
+import { h } from "vue";
+
+import type { FunctionalComponent } from "vue";
+
+export interface IconBaseProps {
+  name?: string;
+  color?: string;
+}
 
 /**
  * Icon Base Component
  */
-export const IconBase = defineComponent({
-  name: "IconBase",
-
-  props: {
-    name: {
-      type: String,
-      default: "",
+export const IconBase: FunctionalComponent<IconBaseProps> = (
+  { name = "", color = "currentColor" },
+  { slots }
+) =>
+  h(
+    "svg",
+    {
+      xmlns: "http://www.w3.org/2000/svg",
+      class: ["icon", `${name}-icon`],
+      viewBox: "0 0 1024 1024",
+      fill: color,
+      "aria-label": `${name} icon`,
     },
-    color: {
-      type: String,
-      default: "currentColor",
-    },
-  },
+    slots.default?.()
+  );
 
-  setup:
-    (props, { slots }) =>
-    (): VNode =>
-      h(
-        "svg",
-        {
-          xmlns: "http://www.w3.org/2000/svg",
-          class: ["icon", `${props.name}-icon`],
-          viewBox: "0 0 1024 1024",
-          fill: props.color,
-          "aria-label": `${props.name} icon`,
-        },
-        slots.default?.()
-      ),
-});
+IconBase.displayName = "IconBase";

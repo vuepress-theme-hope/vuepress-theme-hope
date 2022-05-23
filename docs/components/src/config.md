@@ -11,22 +11,22 @@ icon: config
 Whether register articleInfo component
 
 ```ts
-type AvailableComponent = "Badge";
+type AvailableComponent = "Badge" | "CodePen" | "FontIcon" | "PDF";
 ```
+
+## addThis
+
+- Type: `string | false`
+- Default: `false`
+
+Public ID of addThis.
 
 ## backToTop
 
-- Type: `boolean`
+- Type: `boolean | number`
 - Default: `false`
 
-Whether enabling backToTop button
-
-## backToTopThreshold
-
-- Type: `number`
-- Default: `300`
-
-BackToTop button threshold distance (in pixels)
+Whether enabling backToTop button. When setting a number, it will be used as BackToTop button threshold distance (in pixels), default is 300.
 
 ## backToTopLocales
 
@@ -48,3 +48,17 @@ BackToTop button threshold distance (in pixels)
 - Required: No
 
 Locales config for BackToTop button.
+
+## iconAssets
+
+- Type: `string`
+- Required: No
+
+Link of font icon asset, `'iconfont'` and `'font-awesome'` keywords are supported.
+
+## iconPrefix
+
+- Type: `string`
+- Default: Inffered from iconAssets
+
+Class prefix of font icon

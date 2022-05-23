@@ -57,7 +57,7 @@ export interface BlogCategoryOptions {
   /**
    * Path pattern of page to be registered
    *
-   * @description `:key` will be replaced by the "slugify" result of the orginal key
+   * @description `:key` will be replaced by the "slugify" result of the original key
    *
    * 待注册的页面路径图案
    *
@@ -86,7 +86,7 @@ export interface BlogCategoryOptions {
   /**
    * Item page path pattern or custom function to be registered
    *
-   * @description When filling in a string, `:key` and `:name` will be replaced by the "slugify" result of the orginal key and name
+   * @description When filling in a string, `:key` and `:name` will be replaced by the "slugify" result of the original key and name
    *
    * 待注册的项目页面路径图案或自定义函数
    *

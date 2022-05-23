@@ -32,25 +32,21 @@ tag:
 
 1. 安装 `@vuepress/plugin-search`
 
-   :::: code-group
+   ::: code-tabs#shell
 
-   ::: code-group-item pnpm
+   @tab pnpm
 
    ```bash
    pnpm add -D @vuepress/plugin-search@next
    ```
 
-   :::
-
-   ::: code-group-item yarn
+   @tab yarn
 
    ```bash
    yarn add -D @vuepress/plugin-search@next
    ```
 
-   :::
-
-   ::: code-group-item npm
+   @tab npm
 
    ```bash
    npm i -D @vuepress/plugin-search@next
@@ -58,13 +54,11 @@ tag:
 
    :::
 
-   ::::
-
 1. 从 `@vuepress/plugin-search` 导入 `searchPlugin` 并将其应用至 `config.{ts,js}` 下的 `plugins` 选项.
 
-   :::: code-group
+   ::: code-tabs#language
 
-   ::: code-group-item TS
+   @tab TS
 
    ```ts
    // .vuepress/config.ts
@@ -80,9 +74,7 @@ tag:
    });
    ```
 
-   :::
-
-   ::: code-group-item JS
+   @tab JS
 
    ```js
    // .vuepress/config.js
@@ -99,8 +91,6 @@ tag:
 
    :::
 
-   ::::
-
 ::: info 更多
 
 关于搜索插件的可用选项，详见 [插件文档][search]。
@@ -111,11 +101,11 @@ tag:
 
 如果你正在提供中文文档，你可以将其设置到插件选项中的 `locales` 中。
 
-::::: details 中文多语言配置
+:::: details 中文多语言配置
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -137,9 +127,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -162,7 +150,7 @@ module.exports = {
 
 :::
 
-:::::
+::::
 
 ## 使用 `@vuepress/plugin-docsearch`
 
@@ -315,25 +303,21 @@ module.exports = {
 
 1. 安装 `@vuepress/plugin-docsearch`
 
-   :::: code-group
+   ::: code-tabs#shell
 
-   ::: code-group-item pnpm
+   @tab pnpm
 
    ```bash
    pnpm add -D @vuepress/plugin-docsearch@next
    ```
 
-   :::
-
-   ::: code-group-item yarn
+   @tab yarn
 
    ```bash
    yarn add -D @vuepress/plugin-docsearch@next
    ```
 
-   :::
-
-   ::: code-group-item npm
+   @tab npm
 
    ```bash
    npm i -D @vuepress/plugin-docsearch@next
@@ -341,13 +325,11 @@ module.exports = {
 
    :::
 
-   ::::
-
 1. 从 `@vuepress/plugin-docsearch` 导入 `docsearchPlugin`，并在 `config.{ts,js}` 中的 `plugins` 应用。
 
-   :::: code-group
+   ::: code-tabs#language
 
-   ::: code-group-item TS
+   @tab TS
 
    ```ts
    // .vuepress/config.ts
@@ -364,9 +346,7 @@ module.exports = {
    });
    ```
 
-   :::
-
-   ::: code-group-item JS
+   @tab JS
 
    ```js
    // .vuepress/config.js
@@ -384,8 +364,6 @@ module.exports = {
 
    :::
 
-   ::::
-
 ::: info 更多
 
 关于 DocSearch 搜索插件的可用选项，详见 [插件文档][docsearch]。
@@ -396,11 +374,11 @@ module.exports = {
 
 你可以通过插件选项中的 `locales` 配置多语言。
 
-::::: details 中文多语言配置示例
+:::: details 中文多语言配置示例
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -460,9 +438,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -524,8 +500,6 @@ module.exports = {
 :::
 
 ::::
-
-:::::
 
 [docsearch]: https://v2.vuepress.vuejs.org/zh/reference/plugin/docsearch.html
 [search]: https://v2.vuepress.vuejs.org/zh/reference/plugin/search.html

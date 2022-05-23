@@ -1,5 +1,5 @@
-import type { Author } from "@mr-hope/vuepress-shared";
 import type { LocaleData } from "@vuepress/shared";
+import type { Author } from "vuepress-shared";
 import type { HopeThemeAppearanceLocaleData } from "./appearance";
 import type {
   HopeThemeFeatureLocaleConfig,

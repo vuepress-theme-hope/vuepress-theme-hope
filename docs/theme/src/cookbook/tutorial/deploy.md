@@ -23,7 +23,7 @@ You can deploy the contents of this folder to your website's server. The easiest
 
 ## Deploy to GitHub Pages
 
-If you're using theme template and you choose to create GitHub workflow during setup, the only thing you need to do is set the correct base option.
+If you're using theme template and you choose to create GitHub workflow during setup, the only thing you need to do is set the correct [base option](https://v2.vuepress.vuejs.org/reference/config.html#base).
 
 - If you are going to publish to `https://<USERNAME>.github.io/`, you must upload the entire project to the `https://github.com/<USERNAME>/<USERNAME>.github.io` repository . You don't need to make any changes in this case, since base defaults to `"/"`.
 

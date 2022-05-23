@@ -1,6 +1,6 @@
-import type { Author, BasePageFrontMatter } from "@mr-hope/vuepress-shared";
 import type { App, HeadConfig, Page, PageFrontmatter } from "@vuepress/core";
 import type { GitData } from "@vuepress/plugin-git";
+import type { Author, BasePageFrontMatter } from "vuepress-shared";
 import type { ArticleJSONLD } from "./json-ld";
 import type { SeoContent } from "./ogp";
 
@@ -118,7 +118,7 @@ export interface SeoOptions {
      */
     ogp: SeoContent,
     /**
-     * Page Objext
+     * Page Object
      *
      * 页面对象
      */
@@ -153,7 +153,7 @@ export interface SeoOptions {
      */
     jsonLD: ArticleJSONLD | null,
     /**
-     * Page Objext
+     * Page Object
      *
      * 页面对象
      */
@@ -188,7 +188,7 @@ export interface SeoOptions {
      */
     head: HeadConfig[],
     /**
-     * Page Objext
+     * Page Object
      *
      * 页面对象
      */

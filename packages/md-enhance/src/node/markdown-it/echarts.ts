@@ -1,44 +1,53 @@
 import { hash } from "@vuepress/utils";
-import { default as Token } from "markdown-it/lib/token";
 
-export const echartsRender = (tokens: Token[], index: number): string => {
-  const { nesting, info } = tokens[index];
-  const title = info
-    .trimStart()
-    // 'echarts' length
-    .slice(7)
-    .trim();
+import { container } from "./container";
 
-  const key = `echarts-${hash(index)}`;
+import type { PluginSimple } from "markdown-it";
 
-  if (nesting === -1) return `</ECharts>`;
+export const echarts: PluginSimple = (md) => {
+  container(md, {
+    name: "echarts",
 
-  let config = "{}";
-  let configType = "";
+    render: (tokens, index) => {
+      const { nesting, info } = tokens[index];
+      const title = info
+        .trimStart()
+        // 'echarts' length
+        .slice(7)
+        .trim();
 
-  for (let i = index; i < tokens.length; i++) {
-    const { type, content, info } = tokens[i];
+      const key = `echarts-${hash(index)}`;
 
-    if (type === "container_echarts_close") break;
+      if (nesting === -1) return `</ECharts>`;
 
-    if (!content) continue;
-    if (type === "fence") {
-      if (info === "json") {
-        config = encodeURIComponent(content);
-        configType = "json";
-      } else if (info === "js" || info === "javascript") {
-        config = encodeURIComponent(content);
-        configType = "js";
+      let config = "{}";
+      let configType = "";
+
+      for (let i = index; i < tokens.length; i++) {
+        const { type, content, info } = tokens[i];
+
+        if (type === "container_echarts_close") break;
+
+        if (!content) continue;
+        if (type === "fence") {
+          if (info === "json") {
+            config = encodeURIComponent(content);
+            configType = "json";
+          } else if (info === "js" || info === "javascript") {
+            config = encodeURIComponent(content);
+            configType = "js";
+          }
+        }
+
+        // set to an unexisit token type
+        tokens[i].type = "echarts_empty";
+        // hide token
+        tokens[i].hidden = true;
       }
-    }
 
-    // set to an unexisit token type
-    tokens[i].type = "echarts_empty";
-    // hide token
-    tokens[i].hidden = true;
-  }
-
-  return `<ECharts id="${key}" config="${config}" ${
-    title ? `title="${encodeURIComponent(title)}" ` : ""
-  }type="${configType}">`;
+      return `<ECharts id="${key}" config="${config}" ${
+        title ? `title="${encodeURIComponent(title)}" ` : ""
+      }type="${configType}">`;
+    },
+  });
 };

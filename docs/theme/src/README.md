@@ -89,7 +89,7 @@ features:
 
   - title: Feed support
     icon: rss
-    details: Generate feed to allow users to subcribe it
+    details: Generate feed to allow users to subscribe it
     link: /guide/advanced/feed.html
 
   - title: PWA support
@@ -110,25 +110,15 @@ footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 
 Create a vuepress-theme-hope project in `[dir]` directory under the current project:
 
-:::: code-group
+::: code-tabs#shell
 
-::: code-group-item pnpm
+@tab pnpm
 
 ```bash
 pnpm create vuepress-theme-hope@next [dir]
 ```
 
-:::
-
-<!-- ::: code-group-item yarn
-
-```bash
-yarn create vuepress-theme-hope [dir]
-```
-
-::: -->
-
-::: code-group-item npm
+@tab npm
 
 ```bash
 npm init vuepress-theme-hope@next [dir]
@@ -136,13 +126,11 @@ npm init vuepress-theme-hope@next [dir]
 
 :::
 
-::::
-
 ## 🚀Usage
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -156,9 +144,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -172,8 +158,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ## Step by Step Tutorial
 

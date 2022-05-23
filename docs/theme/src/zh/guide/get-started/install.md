@@ -14,33 +14,21 @@ tag:
 
 在当前项目的 `[dir]` 文件夹内创建 vuepress-theme-hope 项目:
 
-:::: code-group
+::: code-tabs#shell
 
-::: code-group-item pnpm
+@tab pnpm
 
 ```bash
 pnpm create vuepress-theme-hope@next [dir]
 ```
 
-:::
-
-<!-- ::: code-group-item yarn
-
-```bash
-yarn create vuepress-theme-hope [dir]
-```
-
-::: -->
-
-::: code-group-item npm
+@tab npm
 
 ```bash
 npm init vuepress-theme-hope@next [dir]
 ```
 
 :::
-
-::::
 
 ::: note
 
@@ -52,9 +40,9 @@ npm init vuepress-theme-hope@next [dir]
 
 请在配置文件中导入并使用 `hopeTheme` 以使用 `vuepress-theme-hope`。
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -68,9 +56,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -84,8 +70,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 你可以查看 [本文档配置][docs-config] 作为一个配置参考。
 

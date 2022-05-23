@@ -9,9 +9,9 @@ icon: check
 
 ## 配置
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts {8}
 // .vuepress/config.ts
@@ -27,9 +27,7 @@ export default {
 };
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js {8}
 // .vuepress/config.js
@@ -46,8 +44,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ## 语法
 

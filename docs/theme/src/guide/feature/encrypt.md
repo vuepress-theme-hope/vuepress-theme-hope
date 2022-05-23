@@ -24,9 +24,9 @@ Please **DO NOT USE** this encryption function for any sensitive and confidentia
 
 You can configure encryption options through the `encrypt.config` options in theme options.
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -47,9 +47,7 @@ export default defineUserConfig({
 };
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -71,8 +69,6 @@ module.exports = {
 
 :::
 
-::::
-
 ::: warning
 
 Note that you can only use passwords in string format.
@@ -89,6 +85,6 @@ For global encryption, you can set one or more passwords in the format of string
 
 ::: tip
 
-The consideration of multiple passwords is separation of permissions。 This allow you to depreacte or update some of the global passwords in future deployments, so that some users with certain password will lose access.
+The consideration of multiple passwords is separation of permissions。 This allow you to deprecate or update some of the global passwords in future deployments, so that some users with certain password will lose access.
 
 :::

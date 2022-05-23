@@ -21,9 +21,9 @@ You can add links to the navbar via `navbar` options, it accepts an array.
 
 The easiest way to configure the navbar is to fill in the paths of the page files to be displayed in turn, so that the text, icons and links of the item will be automatically generated from the corresponding files.
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -37,9 +37,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -53,8 +51,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ::: tip
 
@@ -71,9 +67,9 @@ If you are not satisfied with the page’s icon or feel that the page title is t
 - `icon`: item icon (optional)
 - `activeMatch`: item active math (optional), support regexp strings
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -104,9 +100,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -137,8 +131,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ::: tip Advanced usage of activeMatch
 
@@ -148,7 +140,7 @@ module.exports = {
 - `/path/a/`
 - `/path/b/`
 
-But you may have multiple folders with files under `/path/`. To avoid multiple dropown items been actived under route starting with `/path/a/` or `/path/b/`, you can set `activeMatch` option for the first item with `^/path/(?:(?!a/|b/).*)?$`.
+But you may have multiple folders with files under `/path/`. To avoid multiple dropown items been activated under route starting with `/path/a/` or `/path/b/`, you can set `activeMatch` option for the first item with `^/path/(?:(?!a/|b/).*)?$`.
 
 :::
 
@@ -158,9 +150,9 @@ To display more links, you can group similar links into a dropdown list.
 
 You need use object format and provide the additional `children` option to nest links:
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -180,9 +172,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -202,16 +192,14 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 In most cases, the grouped items in the navbar belong to the same category and will be placed in the same subdirectory, and they have the same path prefix.
 
 To simplify the configuration, you can add the `prefix` field to add a prefix to each sub-link in the group:
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -232,9 +220,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -255,14 +241,12 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 You can also have sub groups inside a dropdown by having nested `children`:
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -297,9 +281,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -334,16 +316,14 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ## Disable Navbar
 
 To disable the navbar globally, set `navbar: false` in theme options:
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -357,9 +337,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -373,8 +351,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 You can disable the navbar for a specific page via `YAML front matter`:
 
@@ -396,9 +372,9 @@ Please fill in an absolute path and place the logo in `.vuepress/public` folder.
 
 :::
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -412,9 +388,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -428,8 +402,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ::: tip
 
@@ -441,9 +413,9 @@ You can set `logoDark` to display another logo in dark mode.
 
 The theme’s navbar supports [I18n](https://v2.vuepress.vuejs.org/guide/i18n.html), so you can set navbar options mentioned above individually in each language:
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -470,9 +442,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -499,8 +469,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ## Search Box
 
@@ -514,9 +482,9 @@ A repo button will appear in navbar if you set `repo` in theme options.
 
 You can control whether showing the repository button via `repoDisplay` in theme options.
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -536,9 +504,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -558,8 +524,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ## Outlook Popup
 
@@ -579,9 +543,9 @@ They mainly deal with scenarios when you split your VuePress configuration into 
 
 :::
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS Helper
+@tab TS Helper
 
 ```ts
 // .vuepress/navbar.ts
@@ -592,9 +556,7 @@ export default navbar([
 ]);
 ```
 
-:::
-
-::: code-group-item TS Type
+@tab TS Type
 
 ```ts
 // .vuepress/navbar.ts
@@ -607,9 +569,7 @@ const navbarConfig: HopeThemeNavbarConfig = [
 export default navbarConfig;
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // .vuepress/navbar.js
@@ -622,21 +582,19 @@ module.exports = navbar([
 
 :::
 
-::::
-
 ## Demo
 
-::::: details Configuration of this documentation
+:::: details Configuration of this documentation
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
-@[code](../../.vuepress/navbar/en.ts)
+```ts
+@include(../../.vuepress/navbar/en.ts)
+```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // .vuepress/navbar.js
@@ -664,11 +622,6 @@ module.exports = navbar([
         text: "Plugins",
         icon: "plugin",
         children: [
-          {
-            text: "AddThis Plugin",
-            icon: "share",
-            link: "https://vuepress-theme-hope.github.io/v2/add-this/",
-          },
           {
             text: "Blog Plugin",
             icon: "blog",
@@ -754,8 +707,6 @@ module.exports = navbar([
 :::
 
 ::::
-
-:::::
 
 [plugin-search]: https://v2.vuepress.vuejs.org/reference/plugin/search.html
 [plugin-docsearch]: https://v2.vuepress.vuejs.org/reference/plugin/docsearch.html

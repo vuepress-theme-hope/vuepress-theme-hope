@@ -1,7 +1,8 @@
-import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
 import { useFullscreen } from "@vueuse/core";
 import { onMounted, watch } from "vue";
 import { useRoute } from "vue-router";
+import { useLocaleConfig } from "vuepress-shared/lib/client";
+
 import { delay, imageSelector, locales, options } from "../define";
 import { getImages } from "../utils";
 

@@ -21,7 +21,7 @@ In preview mode, you can:
 ::: tip
 
 - Besides clicking "×" in the upper right corner to exit the preview mode, scrolling up and down more than a certain distance will also exit preview mode.
-- On cellphones, or using the PC trackpad, you can use pan and zoom gestures to pan and zoom in the preview mode.
+- On mobile devices, or using the PC trackpad, you can use pan and zoom gestures to pan and zoom in the preview mode.
 
 :::
 

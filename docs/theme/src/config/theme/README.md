@@ -18,7 +18,7 @@ tag:
 
 - [Theme Layout Config](layout.md)
 
-- [Theme Appearance Config](apperance.md)
+- [Theme Appearance Config](appearance.md)
 
 - [Theme I18n Config](i18n.md)
 

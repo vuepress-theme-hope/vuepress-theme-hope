@@ -12,7 +12,7 @@ export default hopeTheme({
     url: "https://mrhope.site",
   },
 
-  iconPrefix: "iconfont icon-",
+  iconAssets: "//at.alicdn.com/t/font_2410206_a0xb9hku9iu.css",
 
   repo: "vuepress-theme-hope/vuepress-theme-hope/tree/main/packages/sitemap2/",
   docsRepo: "vuepress-theme-hope/vuepress-theme-hope",
@@ -58,7 +58,7 @@ export default hopeTheme({
           icon: "note",
           children: [
             {
-              text: "V1 Docs",
+              text: "V1 文档",
               link: "https://vuepress-theme-hope.github.io/v1/sitemap/zh/",
             },
           ],
@@ -79,7 +79,7 @@ export default hopeTheme({
     },
 
     mdEnhance: {
-      codegroup: true,
+      codetabs: true,
     },
 
     pwa: {

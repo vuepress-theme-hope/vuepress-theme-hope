@@ -39,7 +39,7 @@ export interface MarkdownEnhanceOptions {
    * - danger
    * - details
    *
-   * ⚠ The last 4 items conflict with default theme and will overide it’s style.
+   * ⚠ The last 4 items conflict with default theme and will override it’s style.
    *
    * 是否启用自定义容器
    *
@@ -66,13 +66,22 @@ export interface MarkdownEnhanceOptions {
   vpre?: boolean;
 
   /**
-   * Whether to enable codegroup.
+   * Whether to enable tabs.
+   *
+   * 是否启用标签页分组。
+   *
+   * @default false
+   */
+  tabs?: boolean;
+
+  /**
+   * Whether to enable codetabs.
    *
    * 是否启用代码组。
    *
    * @default false
    */
-  codegroup?: boolean;
+  codetabs?: boolean;
 
   /**
    * Whether to enable align support

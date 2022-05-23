@@ -1,7 +1,7 @@
 import type { LocaleConfig } from "@vuepress/core";
 import type { BackToTopLocaleData } from "./locales";
 
-export type AvailableComponent = "Badge";
+export type AvailableComponent = "Badge" | "CodePen" | "FontIcon" | "PDF";
 
 export interface ComponentOptions {
   /**
@@ -14,22 +14,27 @@ export interface ComponentOptions {
   components: AvailableComponent[];
 
   /**
-   * Whether enabling backToTop button
+   * Add This 的公开 ID
    *
-   * 是否启用返回顶部按钮
+   * Public ID for add this
    *
    * @default false
    */
-  backToTop?: boolean;
+  addThis?: string | false;
 
   /**
-   * backToTop button threshold distance (in pixels)
+   * Whether enabling backToTop button
    *
-   * 返回顶部按钮触发距离 (单位：像素)
    *
-   * @default 300
+   * @description When setting a number, it will be used as backToTop button threshold distance (in pixels)
+   *
+   * 是否启用返回顶部按钮
+   *
+   * @description 当设置为数字时，将会作为返回顶部按钮距离阈值（单位: 像素）
+   *
+   * @default false
    */
-  backToTopThreshold?: number;
+  backToTop?: number | boolean;
 
   /**
    * backToTop button Locales config
@@ -37,4 +42,22 @@ export interface ComponentOptions {
    * 返回顶部按钮国际化配置
    */
   backToTopLocales?: LocaleConfig<BackToTopLocaleData>;
+
+  /**
+   * Link of font icon asset
+   *
+   * 字体图标资源链接
+   *
+   * @description `'iconfont'` and `'font-awesome'` keywords are supported
+   */
+  iconAssets?: string;
+
+  /**
+   * Class prefix of font icon
+   *
+   * 字体图标的 Class 前缀
+   *
+   * @default ''
+   */
+  iconPrefix?: string;
 }

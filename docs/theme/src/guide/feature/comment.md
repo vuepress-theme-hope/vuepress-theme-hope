@@ -20,9 +20,9 @@ tag:
 
 ## Enable <Badge text="Support page config" />
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts {8,13}
 // .vuepress/config.ts
@@ -43,9 +43,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js {7,12}
 // .vuepress/config.js
@@ -66,8 +64,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 Comment feature is enabled globally by default, controlled by `plugins.comment.comment` options.
 
@@ -90,11 +86,11 @@ Currently you can choose from Giscus, Waline and Twikoo.
 
 ## Giscus
 
-Giscus is a GitHub Dicussion based commenting system that is easy to start.
+Giscus is a GitHub Discussion based commenting system that is easy to start.
 
 ### Preparation
 
-1. You need to create a public repository and open dicussion as a place to store comments
+1. You need to create a public repository and open discussion as a place to store comments
 1. You need to install the [Giscus App](https://github.com/apps/giscus) to have permission to access the corresponding repository.
 
 After completing the above steps, please go to the [Giscus page](https://giscus.app) to get your settings. You just need to fill in the repository and Discussion categories, then scroll to the "Enable giscus" section at the bottom of the page and copy the `data-repo`, `data-repo-id`, `data-category` and `data-category-id` four items as they are required.
@@ -125,9 +121,9 @@ Then input your new GitHub repo name and set `LEAN_ID`, `LEAN_KEY` and `LEAN_MAS
 
 Click `Deploy` button to deploy. It will show you deploy successfully after a minitues time. Then config the vercel link in your theme options:
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -146,9 +142,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -167,8 +161,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ::: tip
 

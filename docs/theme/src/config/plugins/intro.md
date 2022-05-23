@@ -51,11 +51,11 @@ For example:
 
 - [vuepress-plugin-comment2][comment2]: Provides comment and pageview function
 
-- [@mr-hope/vuepress-plugin-components][components]: Provides some plugins out of the box
+- [vuepress-plugin-components][components]: Provides some plugins out of the box
 
 - [vuepress-plugin-copy-code2][copy-code2]: Provides one-click copy code block function.
 
-- [vuepress-plugin-copyright2][copyright2]: Append copyright infomation when copying or diable copy and selection.
+- [vuepress-plugin-copyright2][copyright2]: Append copyright information when copying or diable copy and selection.
 
 - [vuepress-plugin-feed2][feed2]: Feed support
 
@@ -79,8 +79,6 @@ For example:
 
 Here are some other plugins that are not enabled by default by the theme, you can enable them according to your own needs.
 
-- [vuepress-plugin-add-this][add-this]: Share plugin based on AddThis
-
 - [vuepress-plugin-lightgallery][lightgallery]: Image preview plugin based on lightgallery
 
 :::
@@ -101,7 +99,6 @@ Here are some other plugins that are not enabled by default by the theme, you ca
 
 - [@vuepress/plugin-theme-data][theme-data]: Composition API plugin for theme data
 
-[add-this]: https://vuepress-theme-hope.github.io/v2/add-this/
 [blog2]: https://vuepress-theme-hope.github.io/v2/blog/
 [comment2]: https://vuepress-theme-hope.github.io/v2/comment/
 [components]: https://vuepress-theme-hope.github.io/v2/components/

@@ -1,4 +1,4 @@
-import { getLocales } from "@mr-hope/vuepress-shared";
+import { getLocales } from "vuepress-shared";
 import { resolveEncrypt } from "./encrypt";
 import { themeLocalesData } from "./locales";
 
@@ -16,11 +16,9 @@ const rootAllowConfig = [
   "blog",
   "encrypt",
   "pure",
-  "iconPrefix",
   "darkmode",
   "themeColor",
   "fullscreen",
-  "backToTop",
   "mobileBreakPoint",
 ];
 
@@ -31,7 +29,6 @@ const defaultRootOptions: HopeThemeRootConfig = {
 
   // appearance
   pure: false,
-  iconPrefix: "",
   darkmode: "switch",
   themeColor: {
     red: "#e74c3c",

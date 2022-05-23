@@ -1,5 +1,5 @@
-import { getCategory, getTag } from "@mr-hope/vuepress-shared";
 import { logger } from "@vuepress/utils";
+import { getCategory, getTag } from "vuepress-shared";
 
 import type { Page } from "@vuepress/core";
 import type {

@@ -1,4 +1,4 @@
-import { isActiveLink } from "@mr-hope/vuepress-shared/lib/client";
+import { isActiveLink } from "vuepress-shared/lib/client";
 
 import type { RouteLocationNormalizedLoaded } from "vue-router";
 import type { ResolvedSidebarItem } from "../../../../shared";

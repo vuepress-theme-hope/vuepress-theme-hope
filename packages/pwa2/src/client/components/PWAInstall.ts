@@ -1,5 +1,6 @@
-import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
 import { computed, defineComponent, h, onMounted, ref } from "vue";
+import { useLocaleConfig } from "vuepress-shared/lib/client";
+
 import PWAInstallModal from "./PWAInstallModal";
 import { locales } from "../define";
 
@@ -9,7 +10,7 @@ import type { ManifestRelatedApps } from "../../shared";
 import "../styles/modal.scss";
 
 interface ModernNavigator extends Navigator {
-  // Unstandard Api
+  // Nonstandard Api
   getInstalledRelatedApps: () => Promise<ManifestRelatedApps[]>;
 }
 

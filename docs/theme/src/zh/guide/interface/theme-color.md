@@ -29,11 +29,11 @@ tag:
 
 你需要按照 `{ 颜色名1: 颜色值, 颜色名2: 颜色值, ... }` 的格式在主题选项中配置 `themeColor`:
 
-::::: details 例子
+:::: details 例子
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts {7-12}
 // .vuepress/config.ts
@@ -52,9 +52,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js {6-11}
 // .vuepress/config.js
@@ -75,8 +73,6 @@ module.exports = {
 :::
 
 ::::
-
-:::::
 
 <script setup lang="ts">
 import { computed } from 'vue';

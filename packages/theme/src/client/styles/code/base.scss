@@ -169,6 +169,9 @@ div[class*="language-"] {
       text-align: center;
 
       transition: color var(--color-transition);
+
+      // This is a hacky fix to align line number with code line
+      transform: translateY(1px);
     }
 
     .line-number {

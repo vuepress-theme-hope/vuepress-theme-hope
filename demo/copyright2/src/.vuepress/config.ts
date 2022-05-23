@@ -8,7 +8,7 @@ export default defineUserConfig({
   base: BASE || "/",
 
   title: "Copyright",
-  description: "Append copyright infomation when copying",
+  description: "Append copyright information when copying",
 
   theme: defaultTheme({
     logo: "/logo.svg",

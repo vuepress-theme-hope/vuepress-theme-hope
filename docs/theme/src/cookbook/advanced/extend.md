@@ -20,9 +20,9 @@ In your entry file, set `extends: hopeTheme(options)` to extend the `vuepress-th
 
 The aliases of the same name (`alias`) and layouts (`layouts`) of your own newly created theme has higher priority over the extended theme `vuepress-theme-hope`, which means that you can override `vuepress-theme-hope` components via `alias` and add or override layout provided by `vuepress-theme-hope` via `layouts`.
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts
 // .vuepress/theme/index.ts
@@ -54,9 +54,7 @@ export const localTheme = (options: HopeThemeOptions) => ({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // .vuepress/them/index.js
@@ -88,5 +86,3 @@ module.exports = (options) => ({
 ```
 
 :::
-
-::::

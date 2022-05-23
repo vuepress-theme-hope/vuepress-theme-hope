@@ -160,6 +160,8 @@ Available values for `ArticleInfo`:
 
 ## Encrypt Config <Badge text="Root only" type="warning" />
 
+For details, see [Encrypt Intro](../../guide/feature/encrypt.md).
+
 ::: note
 
 You can only set this option directly under theme options, setting it in each loclae **has NO effect**.

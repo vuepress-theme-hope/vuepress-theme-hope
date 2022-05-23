@@ -16,7 +16,7 @@ You can configure category and tags for articles through frontmatter to make the
 
 ## Category Settings
 
-Just add categroy array to `category` in page frontmatter, the article will be automatically rendered in the list of the`/category/<category name>/` category page.
+Just add category array to `category` in page frontmatter, the article will be automatically rendered in the list of the`/category/<category name>/` category page.
 
 For example, add this to a certain page:
 

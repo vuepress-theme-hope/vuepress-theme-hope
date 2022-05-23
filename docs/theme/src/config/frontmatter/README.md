@@ -13,7 +13,7 @@ tag:
 
 ## Catalog
 
-- [Infomation Frontmatter Config](info.md)
+- [Information Frontmatter Config](info.md)
 
 - [Layout Frontmatter Config](layout.md)
 

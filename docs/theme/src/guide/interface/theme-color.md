@@ -29,11 +29,11 @@ You can disable it by setting `themeColor: false` in theme options.
 
 You need to set `themeColor` with `{ colorname1: colorvalue, colorname2: colorvalue, ... }` format:
 
-::::: details Example
+:::: details Example
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts {7-12}
 // .vuepress/config.ts
@@ -52,9 +52,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js {6-11}
 // .vuepress/config.js
@@ -75,8 +73,6 @@ module.exports = {
 :::
 
 ::::
-
-:::::
 
 <script setup lang="ts">
 import { computed } from 'vue';

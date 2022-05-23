@@ -25,7 +25,8 @@ The theme largely inherits the config of `@vuepress/theme-default`, while adds a
 Added more syntax to Markdown, enriching documentation and blog writing:
 
 - [Custom Container](markdown/container.md)
-- [CodeGroup](markdown/code-group.md)
+- [Tabs](markdown/tabs.md)
+- [Code Tabs](markdown/code-tabs.md)
 - [Tex Support](markdown/tex.md)
 - [Custom alignment](markdown/align.md)
 - [Chart](markdown/chart.md)
@@ -36,7 +37,7 @@ Added more syntax to Markdown, enriching documentation and blog writing:
 - [Subscript and Supercript](markdown/sup-sub.md)
 - [Code demo](markdown/demo.md)
 - [Presentation](markdown/presentation.md)
-- [`<Badge />`](markdown/components.md#badge): Add color support
+- [Components out of box](markdown/components.md)
 - [Customize Themes](interface/code-theme.md)
 
 ### Layout
@@ -97,8 +98,6 @@ Layout Optimization:
 
 ### Blog
 
-- [Social follow button and page social sharing][add-this]
-
 - [Article list with sticky support, and summary autogeneration](blog/intro.md)
 
 - [Cateory and tag list](blog/category-and-tags.md)
@@ -127,11 +126,11 @@ The theme includes the following plugins, you can use them in other themes or di
 
 - [vuepress-plugin-comment2][comment2]: Comment and pageviews
 
-- [@mr-hope/vuepress-plugin-components][components]: Provide some out of box plugins
+- [vuepress-plugin-components][components]: Provide some out of box plugins
 
 - [vuepress-plugin-copy-code2][copy-code2]: Provide copy button for code blocks
 
-- [vuepress-plugin-copyright2][copyright2]: Append copyright infomation when copying or diable copy and selection.
+- [vuepress-plugin-copyright2][copyright2]: Append copyright information when copying or diable copy and selection.
 
 - [vuepress-plugin-feed2][feed2]: Feed support
 
@@ -155,13 +154,10 @@ The theme includes the following plugins, you can use them in other themes or di
 
 Here are some other plugins that are not enabled by default by the theme, you can enable them according to your own needs.
 
-- [vuepress-plugin-add-this][add-this]: Provide sociel share and follow function using AddThis
-
 - [vuepress-plugin-lightgallery][lightgallery]: Photo preview plugin based on lightgallery
 
 :::
 
-[add-this]: https://vuepress-theme-hope.github.io/v2/add-this/
 [blog2]: https://vuepress-theme-hope.github.io/v2/blog/
 [comment2]: https://vuepress-theme-hope.github.io/v2/comment/
 [components]: https://vuepress-theme-hope.github.io/v2/components/

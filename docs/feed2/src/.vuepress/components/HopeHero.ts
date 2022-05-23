@@ -1,13 +1,12 @@
-import { defineComponent, h } from "vue";
-import type { VNode } from "vue";
+import { h } from "vue";
+import type { FunctionalComponent, VNode } from "vue";
 
 import HomeHero from "vuepress-theme-hope/lib/client/components/HomeHero";
 import HopeLogo from "./HopeLogo";
 
-export default defineComponent({
-  name: "HopeHero",
+const HopeHero: FunctionalComponent = (): VNode =>
+  h(HomeHero, {}, { heroImage: () => h(HopeLogo) });
 
-  setup() {
-    return (): VNode => h(HomeHero, {}, { heroImage: () => h(HopeLogo) });
-  },
-});
+HopeHero.displayName = "HopeHero";
+
+export default HopeHero;

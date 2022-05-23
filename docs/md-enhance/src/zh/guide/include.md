@@ -9,9 +9,9 @@ icon: markdown
 
 ## 配置
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts {8}
 // .vuepress/config.ts
@@ -27,9 +27,7 @@ export default {
 };
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js {8}
 // .vuepress/config.js
@@ -46,8 +44,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ## 语法
 
@@ -93,9 +89,9 @@ interface IncludeOptions {
 
 例如：你可以使用 `@src` 作为源文件夹的别名。
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts {8}
 // .vuepress/config.ts
@@ -119,9 +115,7 @@ export default {
 };
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js {8}
 // .vuepress/config.js
@@ -146,14 +140,12 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 此外，如果你想将 Markdown 文件直接放在实际文件旁边，但不希望它们呈现为页面，你可以在 VuePress 配置中设置 `pagePatterns` 选项。有关详细信息，请参阅 [pagePatterns](https://v2.vuepress.vuejs.org/zh/reference/config.html#pagepatterns)。
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts {8}
 // .vuepress/config.ts
@@ -171,9 +163,7 @@ export default {
 };
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js {8}
 // .vuepress/config.js
@@ -192,5 +182,3 @@ module.exports = {
 ```
 
 :::
-
-::::

@@ -29,7 +29,11 @@ export const handleInclude = (
   if (!path.isAbsolute(filePath)) {
     // if the importPath is relative path, we need to resolve it
     // according to the markdown filePath
-    if (!cwd) return "Error when resolving path";
+    if (!cwd) {
+      console.error(`Include: Error when resolving path: ${filePath}`);
+
+      return "\nError when resolving path\n";
+    }
 
     realPath = path.resolve(cwd, filePath);
   }
@@ -37,7 +41,11 @@ export const handleInclude = (
   includedFiles.push(realPath);
 
   // check file existence
-  if (!fs.existsSync(realPath)) return "File not found";
+  if (!fs.existsSync(realPath)) {
+    console.error(`Include: ${realPath} not found`);
+
+    return "\nFile not found\n";
+  }
 
   // read file content
   const fileContent = fs.readFileSync(realPath).toString();
@@ -76,18 +84,16 @@ export const resolveInclude = (
             { cwd, includedFiles }
           );
 
-          return `\n${
-            options.deep && actualPath.endsWith(".md")
-              ? resolveInclude(content, options, {
-                  cwd: path.isAbsolute(actualPath)
-                    ? path.dirname(actualPath)
-                    : cwd
-                    ? path.resolve(cwd, path.dirname(actualPath))
-                    : null,
-                  includedFiles,
-                })
-              : content
-          }\n`;
+          return options.deep && actualPath.endsWith(".md")
+            ? resolveInclude(content, options, {
+                cwd: path.isAbsolute(actualPath)
+                  ? path.dirname(actualPath)
+                  : cwd
+                  ? path.resolve(cwd, path.dirname(actualPath))
+                  : null,
+                includedFiles,
+              })
+            : content;
         }
       }
 

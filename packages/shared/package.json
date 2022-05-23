@@ -1,6 +1,6 @@
 {
-  "name": "@mr-hope/vuepress-shared",
-  "version": "2.0.0-beta.63",
+  "name": "vuepress-shared",
+  "version": "2.0.0-beta.71",
   "description": "Shared files for vuepress-theme-hope",
   "keywords": [
     "vuepress",
@@ -46,16 +46,16 @@
     "dayjs": "^1.11.2",
     "execa": "^5.1.1",
     "ora": "^5.4.1",
-    "vue": "^3.2.33",
+    "vue": "^3.2.36",
     "vue-router": "^4.0.15"
   },
   "devDependencies": {
-    "@types/connect": "^3.4.35",
+    "@types/connect": "3.4.35",
     "@vuepress/bundler-vite": "2.0.0-beta.45",
     "@vuepress/bundler-webpack": "2.0.0-beta.45",
     "@vuepress/core": "2.0.0-beta.45",
-    "rimraf": "^3.0.2",
-    "vite": "~2.9.9"
+    "rimraf": "3.0.2",
+    "vite": "2.9.9"
   },
   "publishConfig": {
     "access": "public"

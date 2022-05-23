@@ -1,7 +1,7 @@
 ---
 title: 组件
 icon: plugin
-index: 16
+index: 17
 category:
   - Markdown
 tag:
@@ -9,25 +9,24 @@ tag:
   - 组件
 ---
 
+通过使用`vuepress-plugin-components`，你可以在你的 Markdown 文件中导入和使用一些组件。
+
+可用组件：
+
+- Badge
+- CodePen
+- FontIcon
+- PDF
+
+默认情况下，`<Badge />` 和 `<CodePen />` 是启用的。
+
+要启用组件，您应该使用组件名称数组设置 `plugin.components`。
+
+<!-- 更多 -->
+
 ## Badge
 
-在 Markdown 中可用的徽章。
-
-### Badge 属性
-
-#### text
-
-- 类型: `string`
-- 必填: 是
-
-徽章的文字
-
-#### type
-
-- 类型: `"tip" | "warning" | "danger" | "info" | "note"`
-- 默认值: `"info"`
-
-徽章的类型
+支持自定义颜色的徽章。
 
 - <Badge text="tip" type="tip" vertical="middle" />
 - <Badge text="warning" type="warning" vertical="middle" />
@@ -35,24 +34,99 @@ tag:
 - <Badge text="info" type="info" vertical="middle" />
 - <Badge text="note" type="note" vertical="middle" />
 
-#### color
+有关可用属性，请参阅 [Badge][badge] 页面。
 
-- 类型: `string`
-- 必填: 否
+## CodePen
 
-徽章的颜色，填入在 CSS 中合法的颜色值。
+一个允许您嵌入 CodePen 演示的组件。
 
-#### vertical
+一个使用用户和 Slug Hash 的案例:
 
-- 类型: `"top" | "middle"`
-- 默认值: `"top"`
-
-徽章的垂直方向的位置
-
-### Badge 使用
-
-你可以在 Markdown 中使用这个组件来为标题或链接添加一些状态:
+<CodePen
+  user="kowlor"
+  slug-hash="ZYYQoy"
+  title="Solar System animation - Pure CSS"
+  :default-tab="['css','result']"
+  :theme="$isDarkmode? 'dark': 'light'"
+/>
 
 ```md
-### Badge <Badge text="Building" type="warning"/> <Badge text="MrHope" color="grey" />
+<CodePen
+  user="kowlor"
+  slug-hash="ZYYQoy"
+  title="Solar System animation - Pure CSS"
+  :default-tab="['css','result']"
+  :theme="$isDarkmode? 'dark': 'light'"
+/>
 ```
+
+一个使用链接的案例:
+
+<CodePen
+  link="https://codepen.io/kowlor/pen/ZYYQoy"
+  title="Solar System animation - Pure CSS"
+  :default-tab="['css','result']"
+  :theme="$isDarkmode? 'dark': 'light'"
+/>
+
+```md
+<CodePen
+  link="https://codepen.io/kowlor/pen/ZYYQoy"
+  title="Solar System animation - Pure CSS"
+  :default-tab="['css','result']"
+  :theme="$isDarkmode? 'dark': 'light'"
+/>
+```
+
+有关可用属性，请参阅 [CodePen][codepen] 页面。
+
+## FontIcon
+
+允许您显示字体图标的组件。
+
+- 主页图标: <FontIcon icon="home" />
+
+- 一个大红 Markdown 图标: <FontIcon icon="markdown" color="red" size="32" />
+
+```md
+- 主页图标: <FontIcon icon="home" />
+
+- 一个大红 Markdown 图标: <FontIcon icon="markdown" color="red" size="32" />
+```
+
+有关可用属性，请参阅 [FontIcon][fonticon] 页面。
+
+## PDF
+
+PDF 浏览器组件。
+
+默认 PDF 阅读器:
+
+<PDF url="/sample.pdf" />
+
+```md
+<PDF url="/sample.pdf" />
+```
+
+禁用工具栏:
+
+<PDF url="/sample.pdf" :toolbar="false" />
+
+```md
+<PDF url="/sample.pdf" :toolbar="false" />
+```
+
+初始页面为第二页:
+
+<PDF url="/sample.pdf" :page="2" />
+
+```md
+<PDF url="/sample.pdf" :page="2" />
+```
+
+有关可用属性，请参阅 [PDF][pdf] 页面。
+
+[badge]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/badge.html
+[codepen]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/codepen.html
+[fonticon]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/fonticon.html
+[pdf]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/pdf.html

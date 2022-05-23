@@ -262,7 +262,7 @@ Options passed to `workbox-build`, for details, see [Workbox documentation](http
     hint: string;
 
     /**
-     * Update avaible text
+     * Update available text
      */
     update: string;
   }

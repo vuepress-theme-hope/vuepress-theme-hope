@@ -18,37 +18,18 @@ $headings: (2, 3, 4, 5, 6);
   }
 }
 
-#toc-list {
+#toc {
   position: absolute;
   left: calc(100% + 1rem);
 
   display: none;
 
-  overflow-y: auto;
-
   min-width: 10rem;
   max-width: 15rem;
-  max-height: 80vh;
 
   @media (min-width: hope-config.$pc) {
     .has-toc & {
       display: block;
-    }
-  }
-
-  &::-webkit-scrollbar-track-piece {
-    background: transparent;
-  }
-
-  &::-webkit-scrollbar {
-    width: 3px;
-  }
-
-  &::-webkit-scrollbar-thumb:vertical {
-    background: #ddd;
-
-    #{hope-config.$dark-selector} & {
-      background: #333;
     }
   }
 
@@ -61,13 +42,33 @@ $headings: (2, 3, 4, 5, 6);
   .toc-wrapper {
     position: relative;
 
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
 
+    max-height: 75vh;
     margin: 0 0.5rem;
     padding-left: 8px;
 
     text-overflow: ellipsis;
     white-space: nowrap;
+
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar-track-piece {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar {
+      width: 3px;
+    }
+
+    &::-webkit-scrollbar-thumb:vertical {
+      background: #ddd;
+
+      #{hope-config.$dark-selector} & {
+        background: #333;
+      }
+    }
 
     &::before {
       content: " ";
@@ -85,10 +86,10 @@ $headings: (2, 3, 4, 5, 6);
   }
 
   .toc-list {
-    // overide ul default margin
+    // override ul default margin
     margin: 0;
 
-    // overide ul default padding
+    // override ul default padding
     padding: 0;
   }
 

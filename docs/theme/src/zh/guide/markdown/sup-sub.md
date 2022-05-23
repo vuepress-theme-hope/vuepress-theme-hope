@@ -1,7 +1,7 @@
 ---
 title: 上下角标
 icon: superscript
-index: 6
+index: 7
 category:
   - Markdown
 tag:
@@ -15,9 +15,9 @@ tag:
 
 ## 配置
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts {8-13}
 // .vuepress/config.ts
@@ -38,9 +38,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js {7-12}
 // .vuepress/config.js
@@ -61,8 +59,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ## 语法
 

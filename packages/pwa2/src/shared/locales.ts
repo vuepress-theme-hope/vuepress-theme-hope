@@ -1,4 +1,4 @@
-import type { ConvertLocaleConfig } from "@mr-hope/vuepress-shared";
+import type { ConvertLocaleConfig } from "vuepress-shared";
 
 export interface PWALocaleData {
   /**
@@ -72,7 +72,7 @@ export interface PWALocaleData {
   hint: string;
 
   /**
-   * Update avaible text
+   * Update available text
    *
    * 更新可用文字
    */

@@ -16,24 +16,20 @@ tag:
 - 对于国内用户，推荐使用 iconfont
 - 对于海外用户，推荐使用 fontawesome
 
-::: info
-
-图标 class 的前缀默认为空，你很可能需要按照自己的选择通过主题选项中的 `iconPrefix` 选项来更改它。
-
-:::
-
 <!-- more -->
 
 ## 设置图标
 
-按照下方说明导入图标并设置 `iconPrefix` 后，你可以在多个地方使用图标。
+你可以在多个地方使用图标。
 
 - 页面: 在 frontmatter 中设置 `icon`
 
   此图标将用于路径导航、页面标题、导航栏生成项、侧边栏生成项、页面导航等。
 
 - 导航栏: 在 NavbarItemConfig 中设置 `icon` 选项
+
 - 侧边栏: 在 SidebarItemConfig 中设置 `icon` 选项
+
 - 主页: 在功能项中设置 `icon` 选项
 
 ## Iconfont
@@ -49,7 +45,7 @@ tag:
 1. 使用 GitHub 或微博登录 Iconfont。
 1. 在网站上方找到 “资源管理 → 我的项目”，点击右上角的 “新建项目” 图标。
 1. 设置可以辨识的项目名称
-1. `FontClass/Symbol 前缀` 填入 `icon-`(你也可以根据自己喜好填写，但需要将此值设置额外前缀 `iconfont` 并设置到在主题选项中的 `iconPrefix`)
+1. `FontClass/Symbol 前缀` 填入 `icon-` (你也可以根据自己喜好填写，但需要将此值设置额外前缀 `iconfont` 并设置到在主题选项中的 `iconPrefix`)
 1. Font Family 请保持 `iconfont`
 
 ![新建项目](./assets/iconfont-new.png)
@@ -74,21 +70,11 @@ tag:
 
    ![添加入库](./assets/iconfont-generate.png)
 
-1. 在 VuePress 配置的 `head` 选项中引入 CSS:
-
-   ```js
-   [
-     "link",
-     {
-       rel: "stylesheet",
-       href: "//at.alicdn.com/t/font_2410206_mfj6e1vbwo.css",
-     },
-   ];
-   ```
+1. 将 css 地址设置到主题选项的 `iconAssets` 中。
 
 ::: tip
 
-如果你日后添加了新的图标，请重新生成新的 CSS 地址并在 `head` 选项中替换。
+如果你日后添加了新的图标，请重新生成新的 CSS 地址并替换 `iconAssets`。
 
 :::
 
@@ -98,31 +84,44 @@ tag:
 
 ### 导入
 
-你可以在站点配置中的 `head` 添加:
+你需要在主题选项中设置 `iconAssets: "fontawesome"`。
 
-```js
-[
-  "script",
-  {
-    src: "https://kit.fontawesome.com/ca37c296c5.js",
-    crossorigin: "anonymous",
-  },
-];
+::: code-tabs#language
+
+@tab TS
+
+```ts
+// .vuepress/config.ts
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default defineUserConfig({
+  theme: hopeTheme({
+    iconAssets: "fontawesome",
+  }),
+});
 ```
 
-或者在 `.vuepress/styles` 的 `index.scss` 的顶部添加:
+@tab JS
 
-```scss
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/regular.min.css");
+```js {7-9}
+// .vuepress/config.js
+const { hopeTheme } = require("vuepress-theme-hope");
+
+module.exports = {
+  theme: hopeTheme({
+    iconAssets: "fontawesome",
+  }),
+};
 ```
-
-::: note
-
-Font-awesome 当前版本为 6.0.0
 
 :::
 
-同时你需要在主题选项中将 `iconPrefix` 设置为 `"fas fa-"`。
+::: note
+
+Font-awesome 当前版本为 V6。
+
+:::
 
 ### 使用
 
@@ -133,11 +132,40 @@ Font-awesome 当前版本为 6.0.0
 
 ## Iconfont 精选图标
 
-```html
-<link rel="stylesheet" href="//at.alicdn.com/t/font_2410206_mfj6e1vbwo.css" />
+你可以直接将 `iconAssets` 设置为 `"iconfont"` 使用下列 IconFont 精选图标:
+
+::: code-tabs#language
+
+@tab TS
+
+```ts
+// .vuepress/config.ts
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default defineUserConfig({
+  theme: hopeTheme({
+    iconAssets: "iconfont",
+  }),
+});
 ```
 
-<IconDisplay link="//at.alicdn.com/t/font_2410206_mfj6e1vbwo.css" />
+@tab JS
+
+```js {7-9}
+// .vuepress/config.js
+const { hopeTheme } = require("vuepress-theme-hope");
+
+module.exports = {
+  theme: hopeTheme({
+    iconAssets: "iconfont",
+  }),
+};
+```
+
+:::
+
+<IconDisplay link="//at.alicdn.com/t/font_2410206_a0xb9hku9iu.css" />
 
 <script setup lang="ts">
 import IconDisplay from '@IconDisplay';

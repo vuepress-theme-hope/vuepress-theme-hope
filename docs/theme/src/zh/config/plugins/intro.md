@@ -51,7 +51,7 @@ tag:
 
 - [vuepress-plugin-comment2][comment2]: 提供评论与浏览量功能
 
-- [@mr-hope/vuepress-plugin-components][components]: 提供一些开箱即用的插件
+- [vuepress-plugin-components][components]: 提供一些开箱即用的插件
 
 - [vuepress-plugin-copy-code2][copy-code2]: 提供一键复制代码块功能。
 
@@ -79,8 +79,6 @@ tag:
 
 这里还有一些其他没有被主题默认启用的插件，你可以根据自己的需求自行启用。
 
-- [vuepress-plugin-add-this][add-this]: 基于 AddThis 的分享插件
-
 - [vuepress-plugin-lightgallery][lightgallery]: 基于 lightgallery 图片浏览插件
 
 :::
@@ -101,7 +99,6 @@ tag:
 
 - [@vuepress/plugin-theme-data][theme-data]: 主题配置的 Composition API 插件
 
-[add-this]: https://vuepress-theme-hope.github.io/v2/add-this/zh/
 [blog2]: https://vuepress-theme-hope.github.io/v2/blog/zh/
 [comment2]: https://vuepress-theme-hope.github.io/v2/comment/zh/
 [components]: https://vuepress-theme-hope.github.io/v2/components/zh/

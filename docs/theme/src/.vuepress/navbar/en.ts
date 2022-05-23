@@ -23,11 +23,6 @@ export const enNavbarConfig = navbar([
         icon: "plugin",
         children: [
           {
-            text: "AddThis Plugin",
-            icon: "share",
-            link: "https://vuepress-theme-hope.github.io/v2/add-this/",
-          },
-          {
             text: "Blog Plugin",
             icon: "blog",
             link: "https://vuepress-theme-hope.github.io/v2/blog/",

@@ -54,10 +54,6 @@ const DROPPED_THEME_OPTIONS: [string, string?, string?][] = [
     "Due to scalability consideration, V2 no longer supports this.",
   ],
   [
-    "addThis",
-    'The theme no longer bundles addThis plugin. if you need this plugin, you should install and use "vuepress-plugin-add-this".',
-  ],
-  [
     "chunkRename",
     "Since it's hard to implement such feature on vite, we no longer support this plugin in V2.",
   ],

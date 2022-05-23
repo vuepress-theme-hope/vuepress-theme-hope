@@ -25,7 +25,7 @@ Welcome to Waline. In just a few steps, you can enable Waline to provide comment
 
 1. Click the blue button above, it will redirect you to vercel to deploy with waline template.
 
-1. If you haven’t logined, we recommend you to sign in with GitHub.
+1. If you haven’t logged in, we recommend you to sign in with GitHub.
 
 1. Input your Vercel project name then click `Create`.
 

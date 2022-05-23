@@ -1,16 +1,26 @@
-import { componentsPlugin } from "@mr-hope/vuepress-plugin-components";
+import { componentsPlugin } from "vuepress-plugin-components";
 
-import type { AvailableComponent } from "@mr-hope/vuepress-plugin-components";
+import type { AvailableComponent } from "vuepress-plugin-components";
 import type { Plugin } from "@vuepress/core";
 import type { HopeThemeOptions } from "../../shared";
 
-export const getComponentsPlugin = (themeConfig: HopeThemeOptions): Plugin => {
-  const enabledComponents: AvailableComponent[] = ["Badge"];
-
-  return componentsPlugin({
-    components: enabledComponents,
-    backToTop: themeConfig.backToTop !== false,
-    backToTopThreshold:
-      typeof themeConfig.backToTop === "number" ? themeConfig.backToTop : 300,
+export const getComponentsPlugin = (
+  components: AvailableComponent[] = ["Badge", "FontIcon"],
+  options: Pick<
+    HopeThemeOptions,
+    "addThis" | "backToTop" | "hostname" | "iconAssets" | "iconPrefix"
+  >
+): Plugin =>
+  componentsPlugin({
+    // FontIcon component is used by theme so we MUST enable it
+    components: components.includes("FontIcon")
+      ? components
+      : ["FontIcon", ...components],
+    addThis: options.addThis,
+    backToTop:
+      typeof options.backToTop === "number"
+        ? options.backToTop
+        : options.backToTop !== false,
+    iconAssets: options.iconAssets,
+    iconPrefix: options.iconPrefix,
   });
-};

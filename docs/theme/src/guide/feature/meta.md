@@ -20,7 +20,7 @@ The theme also provides navigation buttons for previous and next pages depending
 
 The plugin will automatically generate the page creation time and last update time from the UNIX timestamp (ms) of the last `git` commit of the page file, and generate contributors based on the commit record.
 
-The theme will display last update time in the appropriate date format, along with all page contributors at the botom of the page.
+The theme will display last update time in the appropriate date format, along with all page contributors at the bottom of the page.
 
 ::: tip
 

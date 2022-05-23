@@ -10,7 +10,7 @@ tag:
 
 `vuepress-theme-hope` 通过内置 [`vuepress-plugin-seo2`][seo2] 为提供 SEO 增强功能。
 
-为了使插件能够更好的工作，你可能需要查看一下 [页面配置](../../config/page.md#信息类) 并合理的配置它们。
+为了使插件能够更好的工作，你可能需要查看一下 [页面配置](../../config/frontmatter/info.md) 并合理的配置它们。
 
 ::: info
 
@@ -47,7 +47,7 @@ tag:
 |   `twitter:image:alt`    |                                     `page.title` (仅在找到图片时)                                      |
 |     `article:author`     |                          `page.frontmatter.author` \|\| `themeConfig.author`                           |
 |      `article:tag`       |                          `page.frontmatter.tags` \|\| `page.frontmatter.tag`                           |
-| `article:published_time` |                          `page.frontmatter.date` \|\| `page.createTimeStamp`                           |
+| `article:published_time` |                          `page.frontmatter.date` \|\| `page.git.createdTime`                           |
 | `article:modified_time`  |                                         `page.git.updatedTime`                                         |
 
 ### 默认的 JSON-LD 生成逻辑
@@ -58,7 +58,7 @@ tag:
 |     `@type`     |                          `"NewsArticle"`                           |
 |   `headline`    |                            `page.title`                            |
 |     `image`     | 页面中的图片\|\| `themeConfig.hostname` + `page.frontmatter.image` |
-| `datePublished` |        `page.frontmatter.date` \|\| `page.createTimeStamp`         |
+| `datePublished` |        `page.frontmatter.date` \|\| `page.git.createdTime`         |
 | `dateModified`  |                       `page.git.updatedTime`                       |
 |    `author`     |        `page.frontmatter.author` \|\| `themeConfig.author`         |
 

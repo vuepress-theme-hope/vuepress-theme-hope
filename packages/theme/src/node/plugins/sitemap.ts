@@ -4,8 +4,8 @@ import type { Plugin } from "@vuepress/core";
 import type { SitemapOptions } from "vuepress-plugin-sitemap2";
 
 export const getSitemapPlugin = (
-  hostname: string,
-  options?: Omit<SitemapOptions, "hostname"> | false
+  options?: Omit<SitemapOptions, "hostname"> | false,
+  hostname?: string
 ): Plugin | null => {
   if (options === false) return null;
 

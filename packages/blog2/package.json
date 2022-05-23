@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-blog2",
-  "version": "2.0.0-beta.63",
+  "version": "2.0.0-beta.71",
   "description": "Blog plugin for VuePress",
   "keywords": [
     "vuepress",
@@ -36,16 +36,16 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@mr-hope/vuepress-shared": "workspace:*",
     "@vuepress/client": "2.0.0-beta.45",
     "@vuepress/core": "2.0.0-beta.45",
     "@vuepress/shared": "2.0.0-beta.45",
     "chokidar": "^3.5.3",
-    "vue": "^3.2.33",
-    "vue-router": "^4.0.15"
+    "vue": "^3.2.36",
+    "vue-router": "^4.0.15",
+    "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "rimraf": "^3.0.2"
+    "rimraf": "3.0.2"
   },
   "publishConfig": {
     "access": "public"

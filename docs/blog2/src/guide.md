@@ -186,7 +186,7 @@ export default {
 };
 ```
 
-Also, you may want to star some of your aricles, and display them to visitors. When you are setting `star: true` in frontmatter to mark them, you probably need a configuation like this to display them in `/star/` path with `StarList` layout:
+Also, you may want to star some of your articles, and display them to visitors. When you are setting `star: true` in frontmatter to mark them, you probably need a configuation like this to display them in `/star/` path with `StarList` layout:
 
 ```ts
 // theme

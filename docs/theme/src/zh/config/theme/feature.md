@@ -162,6 +162,8 @@ tag:
 
 ## 加密配置 <Badge text="仅限 Root" type="warning" />
 
+有关详细信息，请参阅 [加密功能介绍](../../guide/feature/encrypt.md)。
+
 ::: note
 
 你只能在主题选项下直接设置此选项，在各语言中分别配置**没有任何效果**。

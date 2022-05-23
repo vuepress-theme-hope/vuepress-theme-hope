@@ -1,15 +1,20 @@
+import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   addCustomElement,
   addViteOptimizeDepsExclude,
   addViteOptimizeDepsInclude,
   addViteSsrExternal,
-} from "@mr-hope/vuepress-shared";
-import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
+} from "vuepress-shared";
+
 import { logger } from "./utils";
 
 import { checkLinks, getCheckLinksStatus } from "./checkLink";
 import {
-  codeDemoDefaultSetting,
+  CODE_DEMO_DEFAULT_SETTING,
+  chart,
+  codeTabs,
+  container,
+  echarts,
   flowchart,
   footnote,
   imageMark,
@@ -18,10 +23,15 @@ import {
   lazyLoad,
   mark,
   mermaid,
+  normalDemo,
   presentation,
+  reactDemo,
   sub,
   sup,
+  tabs,
   tasklist,
+  vPre,
+  vueDemo,
 } from "./markdown-it";
 import { prepareConfigFile, prepareRevealPluginFile } from "./prepare";
 import { usePlugins } from "./usePlugins";
@@ -87,7 +97,7 @@ export const mdEnhancePlugin =
       define: (): Record<string, unknown> => ({
         MARKDOWN_ENHANCE_DELAY: options.delay || 500,
         CODE_DEMO_OPTIONS: {
-          ...codeDemoDefaultSetting,
+          ...CODE_DEMO_DEFAULT_SETTING,
           ...(typeof options.demo === "object" ? options.demo : {}),
         },
         MERMAID_OPTIONS:
@@ -145,6 +155,10 @@ export const mdEnhancePlugin =
             imageMark,
             typeof options.imageMark === "object" ? options.imageMark : {}
           );
+
+        if (getStatus("codetabs")) markdownIt.use(codeTabs);
+        if (getStatus("tabs")) markdownIt.use(tabs);
+
         if (getStatus("sup")) markdownIt.use(sup);
         if (getStatus("sub")) markdownIt.use(sub);
         if (footnoteEnable) markdownIt.use(footnote);
@@ -158,9 +172,27 @@ export const mdEnhancePlugin =
           markdownIt.use(include, [
             typeof options.include === "function" ? options.include : undefined,
           ]);
+        if (getStatus("align")) {
+          ["left", "center", "right", "justify"].forEach((name) =>
+            markdownIt.use((md) =>
+              container(md, {
+                name,
+                openRender: () => `<div class="align-${name}">`,
+              })
+            )
+          );
+        }
+        if (chartEnable) markdownIt.use(chart);
+        if (echartsEnable) markdownIt.use(echarts);
+        if (getStatus("demo")) {
+          markdownIt.use(normalDemo);
+          markdownIt.use(vueDemo);
+          markdownIt.use(reactDemo);
+        }
         if (mermaidEnable) markdownIt.use(mermaid);
         if (texEnable) markdownIt.use(katex, katexOptions);
         if (presentationEnable) markdownIt.use(presentation);
+        if (getStatus("vpre")) markdownIt.use(vPre);
       },
 
       extendsPage: (page, app): void => {

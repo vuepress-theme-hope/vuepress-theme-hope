@@ -17,7 +17,7 @@ The following options control theme layout.
 
 For related guide, please see [Layout → Navbar](../../guide/layout/navbar.md).
 
-### navbar <Badge text="Recommanded" type="tip" />
+### navbar <Badge text="Recommended" type="tip" />
 
 - Type: `HopeThemeNavbarConfig | false`
 - Default: `false`
@@ -31,7 +31,7 @@ Navbar config
 
 Whether display icons in navbar.
 
-### logo <Badge text="Recommanded" type="tip" />
+### logo <Badge text="Recommended" type="tip" />
 
 - Type: `string`
 - Required: No
@@ -90,7 +90,7 @@ Whether hide site title on mobile.
 
 For guide, see [Layout → Sidebar](../../guide/layout/sidebar.md).
 
-### sidebar <Badge text="Recommanded" type="tip" />
+### sidebar <Badge text="Recommended" type="tip" />
 
 - Type: `HopeThemeSidebarConfig | "structure" | "heading" | false`
 - Default: `"structure"`
@@ -195,7 +195,7 @@ Whether to show "Edit this page" or not.
 
 - Type: `string`
 
-Pattern of edit link. While `:repo` `:branch` `:path` wil be automatically replaced by `docsRepo` `docsBranch` and `docsDir + filePath`。
+Pattern of edit link. While `:repo` `:branch` `:path` will be automatically replaced by `docsRepo` `docsBranch` and `docsDir + filePath`。
 
 ::: note
 

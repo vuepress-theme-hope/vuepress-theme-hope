@@ -20,9 +20,9 @@ tag:
 
 ## 启用 <Badge text="支持页面配置" />
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts {8,11}
 // .vuepress/config.ts
@@ -43,9 +43,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js {7,10}
 const { hopeTheme } = require("vuepress-theme-hope");
@@ -65,8 +63,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 评论功能默认全局启用，通过主题选项中的 `plugins.comment.comment` 控制。
 
@@ -89,7 +85,7 @@ module.exports = {
 
 ## Giscus
 
-Giscus 是一个基于 GitHub Dicussion 的评论系统，启用简便。
+Giscus 是一个基于 GitHub Discussion 的评论系统，启用简便。
 
 <!-- more -->
 
@@ -98,7 +94,7 @@ Giscus 是一个基于 GitHub Dicussion 的评论系统，启用简便。
 1. 你需要创建一个公开仓库，并开启评论区，以作为评论存放的地点
 1. 你需要安装 [Giscus App](https://github.com/apps/giscus)，使其有权限访问对应仓库。
 
-在完成以上步骤后，请前往 [Giscus 页面](https://giscus.app/zh-CN) 获得你的设置。你只需要填写仓库和 Dicussion 分类，之后滚动到页面下部的 “启用 giscus” 部分，复制 `data-repo`, `data-repo-id`, `data-category` 和 `data-category-id` 四项，因为它们是必须的。
+在完成以上步骤后，请前往 [Giscus 页面](https://giscus.app/zh-CN) 获得你的设置。你只需要填写仓库和 Discussion 分类，之后滚动到页面下部的 “启用 giscus” 部分，复制 `data-repo`, `data-repo-id`, `data-category` 和 `data-category-id` 四项，因为它们是必须的。
 
 ### 配置
 
@@ -126,9 +122,9 @@ Giscus 是一个基于 GitHub Dicussion 的评论系统，启用简便。
 
 设置好环境变量后，点击 `Deploy` 部署，一两分钟即可部署完成。之后在主题设置中设置 vercel 地址:
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -147,9 +143,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -168,8 +162,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 Waline 评论的其他配置将在 [Waline 配置][comment2-waline-config] 中列出。
 

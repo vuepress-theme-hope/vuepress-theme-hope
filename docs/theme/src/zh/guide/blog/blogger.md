@@ -81,11 +81,11 @@ tag:
 
 :::
 
-::::: details 例子
+:::: details 例子
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -119,9 +119,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -157,5 +155,3 @@ module.exports = {
 :::
 
 ::::
-
-:::::

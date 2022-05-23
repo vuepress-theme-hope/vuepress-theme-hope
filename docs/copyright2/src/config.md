@@ -17,14 +17,14 @@ Deploy hostname
 - Type: `string | ((page: Page) => string)`
 - Required: No
 
-Author Infomation
+Author Information
 
 ### license
 
 - Type: `string | ((page: Page) => string)`
 - Required: No
 
-License Infomation
+License Information
 
 ### triggerWords
 

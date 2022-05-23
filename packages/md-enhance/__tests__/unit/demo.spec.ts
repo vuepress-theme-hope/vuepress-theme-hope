@@ -1,17 +1,16 @@
 import { describe, it, expect } from "vitest";
 import MarkdownIt = require("markdown-it");
-import MarkdownContainer = require("markdown-it-container");
 import {
-  normalDemoRender,
-  vueDemoRender,
-  reactDemoRender,
+  normalDemo,
+  vueDemo,
+  reactDemo,
 } from "../../src/node/markdown-it/codeDemo";
 
 describe("demo", () => {
   const markdownIt = MarkdownIt({ linkify: true })
-    .use(MarkdownContainer, "normal-demo", { render: normalDemoRender })
-    .use(MarkdownContainer, "vue-demo", { render: vueDemoRender })
-    .use(MarkdownContainer, "react-demo", { render: reactDemoRender });
+    .use(normalDemo)
+    .use(vueDemo)
+    .use(reactDemo);
 
   it("Should resolve demo info", () => {
     expect(
@@ -111,8 +110,7 @@ h1 {
 \`\`\`
 
 :::
-`,
-        {}
+`
       )
     ).toMatchSnapshot();
   });

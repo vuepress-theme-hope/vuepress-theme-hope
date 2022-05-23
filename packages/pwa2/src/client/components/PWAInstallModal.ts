@@ -1,7 +1,8 @@
-import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
 import { useEventListener } from "@vueuse/core";
 import { withBase } from "@vuepress/client";
 import { defineComponent, h, onMounted, ref } from "vue";
+import { useLocaleConfig } from "vuepress-shared/lib/client";
+
 import { ArrowLeftIcon, ArrowRightIcon, CloseIcon } from "./icons";
 import { locales } from "../define";
 

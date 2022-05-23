@@ -1,5 +1,5 @@
-import { Logger, isAbsoluteUrl, isUrl } from "@mr-hope/vuepress-shared";
 import { removeEndingSlash, removeLeadingSlash } from "@vuepress/shared";
+import { Logger, isAbsoluteUrl, isUrl } from "vuepress-shared";
 
 import type { App, SiteLocaleConfig } from "@vuepress/core";
 import type { ExtendPage, SeoOptions } from "../shared";

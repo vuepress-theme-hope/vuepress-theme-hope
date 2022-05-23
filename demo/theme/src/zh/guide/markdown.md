@@ -136,25 +136,21 @@ const a = 1;
 
 ### 代码块
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item pnpm
+@tab pnpm
 
 ```bash
 pnpm add -D vuepress-theme-hope
 ```
 
-:::
-
-::: code-group-item yarn
+@tab yarn
 
 ```bash
 yarn add -D vuepress-theme-hope
 ```
 
-:::
-
-::: code-group-item npm:active
+@tab:active npm
 
 ```bash
 npm i -D vuepress-theme-hope
@@ -162,9 +158,7 @@ npm i -D vuepress-theme-hope
 
 :::
 
-::::
-
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/code-group.html)
+- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/code-tabs.html)
 
 ### 自定义对齐
 

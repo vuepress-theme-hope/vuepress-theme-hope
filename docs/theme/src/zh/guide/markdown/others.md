@@ -1,7 +1,7 @@
 ---
 title: 其他
 icon: more
-index: 18
+index: 19
 category:
   - Markdown
 tag:
@@ -28,7 +28,7 @@ tag:
 
 由于 VuePress2 已经在 `@vuepress/core` 中移除了 V1 的 v-pre 容器，插件提供了一个选项 `v-pre` 支持它。
 
-换言之当设置 `v-pre: true` 时，你可以在下面的容器中使用任何 Mustacle 语法。
+换言之当设置 `plugins.mdEnhance.v-pre: true` 时，你可以在下面的容器中使用任何 Mustache 语法。
 
 ```md
 ::: v-pre

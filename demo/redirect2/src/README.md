@@ -5,7 +5,7 @@ icon: home
 heroImage: /logo.svg
 heroText: vuepress-plugin-redirect2
 tagline: Redirect plugin for VuePress2
-action:
+actions:
   - text: Docs
     link: https://vuepress-theme-hope.github.io/v2/redirect/
 

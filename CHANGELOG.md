@@ -2,6 +2,159 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.71](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.70...v2.0.0-beta.71) (2022-05-23)
+
+### Features
+
+- add I18n spanish language ([#1872](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1872)) ([ce05089](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ce0508998e5ca84cff7b72745b9d16078055d89d))
+- **components:** support iconPrefix infer ([e22265f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e22265fa561ae11c08888aec58a963ec4fbb4ffa))
+
+## [2.0.0-beta.70](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.69...v2.0.0-beta.70) (2022-05-22)
+
+### Features
+
+- **md-enhance:** add logger for include ([4f45928](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4f4592810a1f4308eb4e32cdc3a7793755304976))
+
+### Bug Fixes
+
+- **md-enhance:** fix extra empty lines by include ([b2c623f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b2c623feb00ddc8fd4f38d391911096ba8dbf36e))
+- **theme:** fix $isDarkmode ([952141a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/952141ac2f0f17a3e392c2b2768ec5e185e47edd))
+- **theme:** fix structure sidebar and add tests ([8b0cc70](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8b0cc70d4af291fb474d55b289177d14eae33f43))
+
+## [2.0.0-beta.69](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.68...v2.0.0-beta.69) (2022-05-22)
+
+### ⚠ BREAKING CHANGES
+
+- remove add-this plugin
+- **components:** remove backToTopThreshold, backToTop now accepts a number
+- rename `@mr-hope/vuepress-plugin-components` to `vuepress-plugin-components`
+- rename `@mr-hope/vuepress-shared` to `vuepress-shared`
+
+### Features
+
+- **add-this:** rebuild plugin ([b82c31f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b82c31ff8b7acdf00565cdb19b1033fa66466ea9))
+- **components:** remove backToTopThreshold ([b34cbbd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b34cbbd0933a1a9c14e9cab489530603fd198d4a))
+- **components:** update option name ([b51bfe7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b51bfe7a986c67fd06089799c3f630be861e6c49))
+- remove add-this plugin ([5cc7a87](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5cc7a876212c712428dbf5b0286623a119b19d46))
+- rename components package ([aab9ed2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/aab9ed2deae002ff2cf3b236808914787318713e))
+- rename share package ([ad3a915](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ad3a915e77d47ae04e95f1798b276a14410c9290))
+- **theme:** add global variable `$isDarkmode` ([c540cb6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c540cb69d4da17842073e398b448a3512365a6e0))
+
+### Bug Fixes
+
+- **theme:** improve line number ([e40bdbf](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e40bdbfff98a238e1ef72f38445e9337fd19b1b4))
+
+## [2.0.0-beta.68](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.67...v2.0.0-beta.68) (2022-05-21)
+
+### Bug Fixes
+
+- **md-enhance:** fix align ([cae09f4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cae09f4c88f19907dcf9078e946c0548b5366ec1))
+
+## [2.0.0-beta.67](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.66...v2.0.0-beta.67) (2022-05-21)
+
+### Features
+
+- **components:** change default height of CodePen ([008a98e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/008a98e4c92ed02045ee8e829793251dfb9d76dc))
+- **components:** extract Icon component ([024b890](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/024b890dd242b3401be20900d7a390a5c53e87c0))
+- **components:** support size prop in FontIcon ([b4c0653](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b4c06533be63c8492f755eea2f453ffc9e3c488b))
+- **md-enhance:** add event id support for codetabs ([e61275f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e61275f4aa6cefb357a26094be34e56bc9d39ac6))
+- **md-enhance:** rebuild code tabs and support tabid ([48bca69](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/48bca69fdb2a5868997fca6ed1d7403ca2ec2241))
+
+### Bug Fixes
+
+- **components:** fix PDF component with base ([bd91c8a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/bd91c8aa617bcfdce752d22b227ebd5cd1aa9130))
+- **components:** remove default color value for FontIcon ([f31a97f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f31a97faf39a42cc95486514af29ef47c152af03))
+- **md-enhance:** fix align feature ([ffdab48](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ffdab487c7a5f9156795443d76e93f4f5ffcff6b))
+- **md-enhance:** fix CodeTab parsing issue when code containing `'` ([e51eac9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e51eac902ca7b928ea5b191192091a0ccae95b36))
+- **md-enhance:** fix link check ending with anchor ([e99e807](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e99e807d0af6e23e669525d10e30465a8d03fb65))
+- wrap tabs component with ClientOnly ([a40028a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a40028ae46fb2fe3bbce4cf362582b06f6bebc22))
+
+## [2.0.0-beta.66](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.65...v2.0.0-beta.66) (2022-05-20)
+
+### ⚠ BREAKING CHANGES
+
+- **md-enhance:** change `@codetab` to `@tab`, shorten keywords according to user feedback
+
+### Features
+
+- **md-enhance:** change `@codetab` to `@tab` ([9cdd7c8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9cdd7c8a34931ddf25d508f933789edf03839536))
+
+## [2.0.0-beta.65](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.64...v2.0.0-beta.65) (2022-05-20)
+
+### ⚠ BREAKING CHANGES
+
+- **md-enhance:** codegroup is replaced by codetabs
+
+  Before:
+
+  ````md
+  :::: code-group
+
+  ::: code-group-item pnpm
+
+  ```bash
+  pnpm create vuepress-theme-hope@next [dir]
+  ```
+
+  :::
+
+  ::: code-group-item npm:active
+
+  ```bash
+  npm init vuepress-theme-hope@next [dir]
+  ```
+
+  :::
+
+  ::::
+  ````
+
+  After:
+
+  ````md
+  ::: code-tabs
+
+  @tab pnpm
+
+  ```bash
+  pnpm create vuepress-theme-hope@next [dir]
+  ```
+
+  @tab:active npm
+
+  ```bash
+  npm init vuepress-theme-hope@next [dir]
+  ```
+
+  :::
+  ````
+
+  This change avoids nesting containers and makes it easier to read and write.
+
+### Features
+
+- **components:** add Tab component ([07909b4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/07909b429628c9d26cc0661abd894aa0b71b932a))
+- **md-enhance:** add container ([a8e60c0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a8e60c0101637a74194a9a609cb3a2879c7b232f))
+- **md-enhance:** rebuild codegroup ([63d0973](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/63d09732b624507bef4b45293e42c0a118fdee08))
+
+### Bug Fixes
+
+- **components:** fix Tab style on mobile ([6b95837](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6b958379135d192618d3217af8adec9feee9e898))
+
+## [2.0.0-beta.64](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.63...v2.0.0-beta.64) (2022-05-19)
+
+### Features
+
+- **components:** add CodePen and PDF component ([1e4ebf7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1e4ebf7ac860d265fc88bd1ca86dfffa7c829477))
+- **theme:** rebuild structure sidebar ([9d8b3a0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9d8b3a03f1f822f8853f31c030929f1208f7db0b))
+- **theme:** support setting components ([306d276](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/306d276ed8a323d118af931596042b4798bbc282))
+
+### Bug Fixes
+
+- correct some typos ([#1842](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1842)) ([f852ce6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f852ce6b19dd86f6e53d3b1d7ba6a724bd4eceaa))
+- **theme:** fix broken Icon ([0168bd0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0168bd0501f7e0f0a4180c13e570f77a1a18cc5b))
+- **theme:** fix TOC scroll issue ([31213ae](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/31213aeca3f949e3af85287d78c537271ae56656))
+
 ## [2.0.0-beta.63](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.62...v2.0.0-beta.63) (2022-05-18)
 
 ### ⚠ BREAKING CHANGES

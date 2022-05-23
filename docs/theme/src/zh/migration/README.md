@@ -7,6 +7,10 @@ icon: change
 
 <!-- more -->
 
+## 更新到 V2 的理由
+
+V2 带来了很大的性能提升与很多新功能，详见 [V2 亮点](./highlight.md)。
+
 ## 升级到 V1 最新版
 
 升级到最新版 V1 是迁移的第一步。在升级到最新版 V1 的过程中，你可以查看 [V1 变更日志](https://vuepress-theme-hope.github.io/v1/zh/changelog.html) 来适配 V1 中进行的变更。

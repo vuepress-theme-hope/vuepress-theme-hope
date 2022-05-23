@@ -22,9 +22,9 @@ tag:
 
 你自己新创建的主题的同名别名 (`alias`) 和 同名布局 (`layouts`) 的优先级高于被继承主题 `vuepress-theme-hope`，这意味着你可以通过 `alias` 覆盖 `vuepress-theme-hope` 主题的组件，并通过 `layouts` 覆盖或新增 `vuepress-theme-hope` 提供的布局。
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts
 // .vuepress/theme/index.ts
@@ -56,9 +56,7 @@ export default {
 };
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // .vuepress/them/index.js
@@ -90,5 +88,3 @@ module.exports = {
 ```
 
 :::
-
-::::

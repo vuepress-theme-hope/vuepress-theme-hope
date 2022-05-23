@@ -5,7 +5,7 @@ icon: home
 heroImage: /logo.svg
 heroText: vuepress-plugin-sitemap2
 tagline: VuePress2 的 Sitemap 生成
-action:
+actions:
   - text: 快速上手 💡
     link: /zh/guide.html
     type: primary
@@ -21,25 +21,21 @@ copyrightText: false
 
 ### 安装
 
-:::: code-group
+::: code-tabs#shell
 
-::: code-group-item pnpm
+@tab pnpm
 
 ```bash
 pnpm add -D vuepress-plugin-sitemap2@next
 ```
 
-:::
-
-::: code-group-item yarn
+@tab yarn
 
 ```bash
 yarn add -D vuepress-plugin-sitemap2@next
 ```
 
-:::
-
-::: code-group-item npm
+@tab npm
 
 ```bash
 npm i -D vuepress-plugin-sitemap2@next
@@ -47,13 +43,11 @@ npm i -D vuepress-plugin-sitemap2@next
 
 :::
 
-::::
-
 ### 使用
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -68,9 +62,7 @@ export default {
 };
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -87,4 +79,6 @@ module.exports = {
 
 :::
 
-::::
+## 从 V1 迁移
+
+详见 [迁移指南](./migration.md)。

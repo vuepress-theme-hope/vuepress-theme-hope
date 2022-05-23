@@ -1,12 +1,7 @@
-import {
-  getAuthor,
-  getCategory,
-  isAbsoluteUrl,
-  isUrl,
-} from "@mr-hope/vuepress-shared";
+import { getAuthor, getCategory, isAbsoluteUrl, isUrl } from "vuepress-shared";
 import { getImageMineType, resolveHTML, resolveUrl } from "./utils";
 
-import type { AuthorInfo } from "@mr-hope/vuepress-shared";
+import type { AuthorInfo } from "vuepress-shared";
 import type { App, Page, PageFrontmatter } from "@vuepress/core";
 import type { GitData } from "@vuepress/plugin-git";
 import type { Feed } from "./feed";

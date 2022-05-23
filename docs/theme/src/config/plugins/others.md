@@ -9,6 +9,17 @@ tag:
   - Theme Config
 ---
 
+## components
+
+Register some component which can be used in Markdown files, available components are:
+
+- Badge
+- CodePen
+- FontIcon
+- PDF
+
+You can set `plugin.components` with an array of components you want, by default it will be `["Badge"]`.
+
 ## copyCode <Badge text="enabled by default" />
 
 Controls `vuepress-plugin-copy-code2`, providing a code copy button.
@@ -76,7 +87,7 @@ Words read per minute.
 
 ::: info
 
-For more plugin configs, see [reading-time2 plugin docs][reading-time].
+For more plugin options, see [reading-time2 plugin docs][reading-time].
 
 :::
 

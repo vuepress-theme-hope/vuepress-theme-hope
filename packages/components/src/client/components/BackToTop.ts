@@ -1,9 +1,9 @@
-import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
 import { useEventListener } from "@vueuse/core";
 import { usePageFrontmatter } from "@vuepress/client";
 import { useThemeData } from "@vuepress/plugin-theme-data/lib/client";
 import { debounce } from "ts-debounce";
 import { Transition, computed, defineComponent, h, onMounted, ref } from "vue";
+import { useLocaleConfig } from "vuepress-shared/lib/client";
 import { BacktoTopIcon } from "./icons";
 
 import "../styles/back-to-top.scss";

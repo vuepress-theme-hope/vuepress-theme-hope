@@ -1,5 +1,4 @@
-import { stripTags } from "@mr-hope/vuepress-shared";
-import { encodeCDATA, encodeXML, isUrl } from "@mr-hope/vuepress-shared";
+import { encodeCDATA, encodeXML, isUrl, stripTags } from "vuepress-shared";
 import { js2xml } from "xml-js";
 import { FEED_GENERATOR } from "../utils";
 

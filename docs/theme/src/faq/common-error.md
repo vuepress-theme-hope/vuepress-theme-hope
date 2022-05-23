@@ -9,7 +9,7 @@ category:
 
 If you are facing error like this, you are probably using non-standard tags in your project.
 
-There are tags like `<center>` or `<font>`, which is in HTML1.0 spec, but marked as unrecommanded since HTML4.0 released in 1999, then removed in HTML5 release in 2008. So Vue is not allowing you to use them by default. You should probably remove them and use standard HTML5 tag.
+There are tags like `<center>` or `<font>`, which is in HTML1.0 spec, but marked as unrecommended since HTML4.0 released in 1999, then removed in HTML5 release in 2008. So Vue is not allowing you to use them by default. You should probably remove them and use standard HTML5 tag.
 
 To remove them, run theme with `--debug` flag, and you will get warning logs telling you tags that probably not be recognized.
 
@@ -39,7 +39,7 @@ Also you can check these:
 
 If you see `xxx isn’t assign with a lang, and will return 'en-US' instead.` while the dev process is starting up, please check whether you set lang for every language.
 
-Even if you only have one language, you still need to [set your root language](config/i18n.md#setting-root-lang).
+Even if you only have one language, you still need to [set language](../config/i18n.md#setting-language).
 
 ## `useXXX() is called without provider`
 
@@ -47,25 +47,21 @@ Such errors are usually caused by incorrectly containing multiple versions of `@
 
 Make sure you are using the latest `vuepress` and `vuepress-theme-hope` versions:
 
-:::: code-group
+::: code-tabs#shell
 
-::: code-group-item pnpm
+@tab pnpm
 
 ```bash
 pnpm add vuepress@next vuepress-theme-hope@next
 ```
 
-:::
-
-::: code-group-item yarn
+@tab yarn
 
 ```bash
 yarn add vuepress@next vuepress-theme-hope@next
 ```
 
-:::
-
-::: code-group-item npm
+@tab npm
 
 ```bash
 npm i vuepress@next vuepress-theme-hope@next
@@ -73,37 +69,29 @@ npm i vuepress@next vuepress-theme-hope@next
 
 :::
 
-::::
-
 Also, upgrade dependencies to ensure your project only contains a single version of the relevant package:
 
-:::: code-group
+::: code-tabs#shell
 
-::: code-group-item pnpm
+@tab pnpm
 
 ```bash
 pnpm i && pnpm up
 ```
 
-:::
-
-::: code-group-item yarn
+@tab yarn
 
 ```bash
 yarn && yarn upgrade
 ```
 
-:::
-
-::: code-group-item npm
+@tab npm
 
 ```bash
 npm i && npm update
 ```
 
 :::
-
-::::
 
 ## Some page settings are invalid
 

@@ -26,9 +26,9 @@ tag:
 
 字段的键名是路径，值支持填入一个或多个数组格式的密码。
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -49,9 +49,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -72,8 +70,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ::: warning
 

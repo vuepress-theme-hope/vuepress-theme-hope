@@ -1,7 +1,7 @@
 ---
 title: External import
 icon: link
-index: 17
+index: 18
 cateogry:
   - Markdown
 tag:
@@ -80,35 +80,3 @@ Output:
 <iframe :src="$withBase('/markmap/demo.html')" width="100%" height="400" frameborder="0" scrolling="No" leftmargin="0" topmargin="0" />
 
 <!-- markdownlint-restore -->
-
-## CodePen
-
-You can use [CodePen](https://codepen.io/) to create code demo and embed them.
-
-```html
-<iframe
-  height="265"
-  style="width: 100%;"
-  scrolling="no"
-  title="Solar System animation - Pure CSS"
-  src="https://codepen.io/kowlor/embed/ZYYQoy?height=265&theme-id=light&default-tab=css,result"
-  frameborder="no"
-  loading="lazy"
-  allowtransparency="true"
-  allowfullscreen="true"
->
-  See the Pen
-  <a href="https://codepen.io/kowlor/pen/ZYYQoy"
-    >Solar System animation - Pure CSS</a
-  >
-  by Malik Dellidj (<a href="https://codepen.io/kowlor">@kowlor</a>) on
-  <a href="https://codepen.io">CodePen</a>.
-</iframe>
-```
-
-<!-- markdownlint-disable MD033 -->
-
-<iframe height="265" style="width: 100%;" scrolling="no" title="Solar System animation - Pure CSS" src="https://codepen.io/kowlor/embed/ZYYQoy?height=265&theme-id=light&default-tab=css,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href='https://codepen.io/kowlor/pen/ZYYQoy'>Solar System animation - Pure CSS</a> by Malik Dellidj
-  (<a href='https://codepen.io/kowlor'>@kowlor</a>) on <a href='https://codepen.io'>CodePen</a>.
-</iframe>

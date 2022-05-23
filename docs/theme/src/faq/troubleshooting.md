@@ -11,25 +11,21 @@ Please make sure you are using the latest `vuepress` and `vuepress-theme-hope` V
 
 You can update to the latest version by executing the following commands.
 
-:::: code-group
+::: code-tabs#shell
 
-::: code-group-item pnpm
+@tab pnpm
 
 ```bash
 pnpm add vuepress@next vuepress-theme-hope@next
 ```
 
-:::
-
-::: code-group-item yarn
+@tab yarn
 
 ```bash
 yarn add vuepress@next vuepress-theme-hope@next
 ```
 
-:::
-
-::: code-group-item npm
+@tab npm
 
 ```bash
 npm i vuepress@next vuepress-theme-hope@next
@@ -37,11 +33,9 @@ npm i vuepress@next vuepress-theme-hope@next
 
 :::
 
-::::
-
 ## Ensure Node version
 
-`vuepress-theme-hope` only supports LTS version of Node.js, that is, currently, only the latest v12, v14, v16 versions are supported.
+`vuepress-theme-hope` only supports LTS version of Node.js, that is, currently, only the latest v14, v16 versions are supported.
 
 You can check its version with `node -v`. If the first digit of the version number does not meet the requirements, please [download and install the LTS version of Node.js](../cookbook/tutorial/env.md#nodejs).
 
@@ -53,33 +47,27 @@ For VuePress to work correctly, there should only be one version of `@vuepress/x
 
 Please run the following command to make sure your dependency tree is correct.
 
-:::: code-group
+::: code-tabs#shell
 
-::: code-group-item pnpm
+@tab pnpm
 
 ```bash
 pnpm i && pnpm up
 ```
 
-:::
-
-::: code-group-item yarn
+@tab yarn
 
 ```bash
 yarn && yarn upgrade
 ```
 
-:::
-
-::: code-group-item npm
+@tab npm
 
 ```bash
 npm i && npm update
 ```
 
 :::
-
-::::
 
 ::: tip npm version
 

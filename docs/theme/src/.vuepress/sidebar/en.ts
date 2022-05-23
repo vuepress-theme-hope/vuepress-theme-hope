@@ -40,7 +40,7 @@ export const enSidebarConfig = sidebar({
       text: "Migration",
       icon: "change",
       prefix: "migration/",
-      children: ["config", "page", "style"],
+      children: ["highlight", "config", "page", "style"],
     },
     {
       text: "FAQ",

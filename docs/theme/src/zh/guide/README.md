@@ -25,7 +25,8 @@ tag:
 为 Markdown 添加了更多语法，丰富文档与博客写作:
 
 - [自定义容器](markdown/container.md)
-- [代码组](markdown/code-group.md)
+- [选项卡](markdown/tabs.md)
+- [代码组](markdown/code-tabs.md)
 - [Tex 支持](markdown/tex.md)
 - [自定义对齐](markdown/align.md)
 - [图表](markdown/chart.md)
@@ -36,7 +37,7 @@ tag:
 - [上下角标](markdown/sup-sub.md)
 - [代码演示](markdown/demo.md)
 - [幻灯片](markdown/presentation.md)
-- [徽章 `<Badge />`](markdown/components.md#badge) 在官方基础上增加了颜色支持
+- [开箱即用的组件](markdown/components.md)
 - [自定义主题](interface/code-theme.md)
 
 ### 布局
@@ -125,7 +126,7 @@ tag:
 
 - [vuepress-plugin-comment2][comment2]: 评论与浏览量功能
 
-- [@mr-hope/vuepress-plugin-components][components]: 提供一些开箱即用的插件
+- [vuepress-plugin-components][components]: 提供一些开箱即用的插件
 
 - [vuepress-plugin-copy-code2][copy-code2]: 提供一键复制代码块功能。
 
@@ -153,13 +154,10 @@ tag:
 
 这里还有一些其他没有被主题默认启用的插件，你可以根据自己的需求自行启用。
 
-- [vuepress-plugin-add-this][add-this]: 基于 AddThis 的分享插件
-
 - [vuepress-plugin-lightgallery][lightgallery]: 基于 lightgallery 图片浏览插件
 
 :::
 
-[add-this]: https://vuepress-theme-hope.github.io/v2/add-this/zh/
 [blog2]: https://vuepress-theme-hope.github.io/v2/blog/zh/
 [comment2]: https://vuepress-theme-hope.github.io/v2/comment/zh/
 [components]: https://vuepress-theme-hope.github.io/v2/components/zh/

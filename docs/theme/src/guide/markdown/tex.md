@@ -1,7 +1,7 @@
 ---
 title: Tex
 icon: tex
-index: 8
+index: 9
 category:
   - Markdown
 tag:
@@ -15,9 +15,9 @@ Let the Markdown file in your VuePress site support the $\TeX$ syntax.
 
 ## Config
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts {8-10}
 // .vuepress/config.ts
@@ -35,9 +35,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js {7-9}
 // .vuepress/config.js
@@ -55,8 +53,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ## Grammar
 

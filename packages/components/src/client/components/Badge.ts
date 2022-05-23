@@ -1,42 +1,32 @@
-import { computed, defineComponent, h } from "vue";
-import type { VNode } from "vue";
+import { h } from "vue";
+
+import type { FunctionalComponent } from "vue";
 
 import "../styles/badge.scss";
 
-interface ElementOption {
-  class: string[];
-  style: Record<string, string>;
-  "data-color"?: string;
+export interface BadgeProps {
+  type?: string;
+  text?: string;
+  vertical?: "top" | "middle" | "baseline" | "bottom";
+  color?: string;
 }
 
-export default defineComponent({
-  // eslint-disable-next-line vue/multi-word-component-names
-  name: "Badge",
+const Badge: FunctionalComponent<BadgeProps> = (
+  { type = "info", text = "", vertical = "top", color },
+  { slots }
+) =>
+  h(
+    "span",
+    {
+      class: ["badge", type, { diy: color }],
+      style: {
+        verticalAlign: vertical,
+        ...(color ? { backgroundColor: color } : {}),
+      },
+    },
+    text || slots.default?.()
+  );
 
-  props: {
-    type: { type: String, default: "info" },
-    text: { type: String, default: "" },
-    vertical: { type: String, default: "top" },
-    color: { type: String, default: "" },
-  },
+Badge.displayName = "Badge";
 
-  setup(props, { slots }) {
-    const options = computed<ElementOption>(() => {
-      const result: ElementOption = {
-        class: ["badge", props.type],
-        style: { verticalAlign: props.vertical },
-      };
-
-      if (props.color) {
-        result.class.push("diy");
-        result.style.backgroundColor = props.color;
-        result["data-color"] = props.color;
-      }
-
-      return result;
-    });
-
-    return (): VNode =>
-      h("span", options.value, props.text || slots.default?.());
-  },
-});
+export default Badge;

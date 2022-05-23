@@ -3,7 +3,7 @@ title: Channel Config
 icon: config
 ---
 
-The channel option is used to config the feed channel. The configurable options and default value are as follows:
+The channel option is used to config the feed channel.
 
 ## channel.title
 
@@ -19,7 +19,7 @@ Channel title
 
 Channel address
 
-## channel.desciption
+## channel.description
 
 - Type: `string`
 - Default: `SiteConfig.description`
@@ -54,7 +54,7 @@ Channel copyright information
 - Default: time when the plugin is called each time
 - Recommended to set manually: **Yes**
 
-Publish date of the Channe
+Publish date of the Channel
 
 ## channel.lastUpdated
 
@@ -106,7 +106,7 @@ interface FeedAuthor {
    *
    * Square, preferably not less than 128×128 with transparent background
    */
-  avator?: string;
+  avatar?: string;
 }
 ```
 

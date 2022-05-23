@@ -33,9 +33,9 @@ Don’t worry about the size of your site. If you don’t enable related feature
 
 You can set `plugins.mdEnhance.enableAll` to enable all features of the [md-enhance][md-enhance] plugin.
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts {8-10}
 // .vuepress/config.ts
@@ -53,9 +53,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js {7-9}
 // .vuepress/config.js
@@ -74,13 +72,11 @@ module.exports = {
 
 :::
 
-::::
-
 ::: danger
 
 Please use this option ONLY for playing or testing.
 
-As time grows, `vupress-plugin-md-enhance` is becoming more powerful. It’s adding lots of syntax to Markdown parser and more code to output.
+As time grows, `vuepress-plugin-md-enhance` is becoming more powerful. It’s adding lots of syntax to Markdown parser and more code to output.
 
 Enabling features you don’t need will increase dev and build time. (`markdown-it` has to check extra syntax)
 

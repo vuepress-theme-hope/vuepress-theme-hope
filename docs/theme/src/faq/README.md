@@ -44,10 +44,10 @@ Please only start discussions about the VuePress Theme Hope and plugins written 
 - If you ran into some issues, please [open a discussion](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions/new) on GitHub with:
 
   - full log running `vuepress dev [docs-dir] --debug`
-  - error screenshot in brower console (if there are errors)
+  - error screenshot in browser console (if there are errors)
   - if your problem is related to display, please also provide related screenshots.
 
-- If there is somthing you don’t know how to solve, welcome to [open a dicussion](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions/new). Questions are always welcome, no matter **they are simple or not**. You only need to make sure three points:
+- If there is something you don’t know how to solve, welcome to [open a discussion](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions/new). Questions are always welcome, no matter **they are simple or not**. You only need to make sure three points:
 
   1. You have tried searching related docs through search box.
 
@@ -55,12 +55,12 @@ Please only start discussions about the VuePress Theme Hope and plugins written 
 
      - If you don’t know how to configure something, please describe what you want, and what you search or what section are you expecting to see the guidelines (so that we can improve our docs).
 
-  1. You are not asking question unrelated to VuePress or asking for a "tecnical support".
+  1. You are not asking question unrelated to VuePress or asking for a "technical support".
 
-     For customization, we only support "how can you customize something (in which way)". "How to customize something" (what you should write in your own codes) is NOT SUPPORTED. Unless you are donating this project, please do not inisit asking help for that part.
+     For customization, we only support "how can you customize something (in which way)". "How to customize something" (what you should write in your own codes) is NOT SUPPORTED. Unless you are donating this project, please do not insist asking help for that part.
 
      Mr.Hope is a postgraduate student majored in theoretical physics, and really busy. He is not expecting to "be a doc provider" or "teach you how to write code".
 
-## Socail Group
+## Social Group
 
 - [Telegram Group](https://t.me/vuepressthemehope)

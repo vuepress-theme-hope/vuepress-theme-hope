@@ -19,25 +19,21 @@ copyright: false
 
 ## 安装
 
-:::: code-group
+::: code-tabs#shell
 
-::: code-group-item pnpm
+@tab pnpm
 
 ```bash
 pnpm add -D vuepress-plugin-comment2@next
 ```
 
-:::
-
-::: code-group-item yarn
+@tab yarn
 
 ```bash
 yarn add -D vuepress-plugin-comment2@next
 ```
 
-:::
-
-::: code-group-item npm
+@tab npm
 
 ```bash
 npm i -D vuepress-plugin-comment2@next
@@ -45,13 +41,11 @@ npm i -D vuepress-plugin-comment2@next
 
 :::
 
-::::
-
 ## 使用
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -66,9 +60,7 @@ export default {
 };
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -84,8 +76,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ## 从 V1 迁移
 

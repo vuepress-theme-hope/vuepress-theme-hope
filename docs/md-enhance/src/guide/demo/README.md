@@ -9,9 +9,9 @@ Let you insert code demos in your Markdown file.
 
 ## Config
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts {8}
 // .vuepress/config.ts
@@ -27,9 +27,7 @@ export default {
 };
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js {8}
 // .vuepress/config.js
@@ -46,8 +44,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ## Syntax
 
@@ -88,7 +84,7 @@ The plugin support three types:
 
 You can use different language in your demo block.
 
-When you set language which can not run on browers, since the plugin is not able to resolve them, so demo display will be disabled. The plugin will only show the code and provide you a button to open it in CodePen.
+When you set language which can not run on browsers, since the plugin is not able to resolve them, so demo display will be disabled. The plugin will only show the code and provide you a button to open it in CodePen.
 
 Available HTML languages:
 

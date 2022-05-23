@@ -16,24 +16,20 @@ You can use iconfont and fontawesome to add icons to your project.
 - For china users, iconfont is recommended
 - For overseas users, fontawesome is recommended
 
-::: note
-
-The prefix of the icon class is an empty string by default, you probably need to change it with `iconPrefix` options in theme options according to your choise.
-
-:::
-
 <!-- more -->
 
 ## Setting Icons
 
-After importing icons and setting `iconPrefix` as below, you can use icon in multiple places.
+You can use icon in multiple places.
 
 - Page: set `icon` in frontmatter
 
   This icon will be used in breadcrumb, page title, navbar generated item, sidebar generated item, page nav, etc.
 
 - Navbar: set `icon` option in NavbarItemConfig
+
 - Sidebar: set `icon` option in SidebarItemConfig
+
 - HomePage: set `icon` option in feature item
 
 ## Iconfont
@@ -74,21 +70,11 @@ On the project page, you can edit the icons in the project, including adjustment
 
    ![Add to library](./assets/iconfont-generate.png)
 
-1. Add the link to `head` options in siteConfig to import it. E.g:
-
-   ```js
-   [
-     "link",
-     {
-       rel: "stylesheet",
-       href: "//at.alicdn.com/t/font_2410206_mfj6e1vbwo.css",
-     },
-   ];
-   ```
+1. Set the css link to `iconAssets` in theme options.
 
 ::: tip
 
-If you add a new icon in the future, please regenerate the new CSS address and overwrite the old CSS address in head option.
+If you add a new icon in the future, please regenerate the new CSS address and set it to `iconAssets` in theme options.
 
 :::
 
@@ -98,25 +84,44 @@ This theme has built-in Fontawesome support.
 
 ### Import
 
-You can add the following item in `head`:
+You need to set `iconAssets: "fontawesome"` in theme options.
 
-```js
-[
-  "script",
-  {
-    src: "https://kit.fontawesome.com/ca37c296c5.js",
-    crossorigin: "anonymous",
-  },
-];
+::: code-tabs#language
+
+@tab TS
+
+```ts
+// .vuepress/config.ts
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default defineUserConfig({
+  theme: hopeTheme({
+    iconAssets: "fontawesome",
+  }),
+});
 ```
 
-::: note
+@tab JS
 
-Font-awesome current version is 6.0.0
+```js {7-9}
+// .vuepress/config.js
+const { hopeTheme } = require("vuepress-theme-hope");
+
+module.exports = {
+  theme: hopeTheme({
+    iconAssets: "fontawesome",
+  }),
+};
+```
 
 :::
 
-And you should set `iconPrefix` to `"fas fa-"`.
+::: note
+
+Font-awesome current version is V6
+
+:::
 
 ### Usage
 
@@ -125,13 +130,42 @@ Please follow [fontawesome document](https://fontawesome.com/).
 - [Usage Instructions](https://fontawesome.com/docs/web/add-icons/how-to)
 - [Icon List](https://fontawesome.com/icons)
 
-## Featured Icons
+## IconFont Featured Icons
 
-```html
-<link rel="stylesheet" href="//at.alicdn.com/t/font_2410206_mfj6e1vbwo.css" />
+You can set `iconAssets` to `"iconfont"` to use the following IconFont featured icons:
+
+::: code-tabs#language
+
+@tab TS
+
+```ts
+// .vuepress/config.ts
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default defineUserConfig({
+  theme: hopeTheme({
+    iconAssets: "iconfont",
+  }),
+});
 ```
 
-<IconDisplay link="//at.alicdn.com/t/font_2410206_mfj6e1vbwo.css" />
+@tab JS
+
+```js {7-9}
+// .vuepress/config.js
+const { hopeTheme } = require("vuepress-theme-hope");
+
+module.exports = {
+  theme: hopeTheme({
+    iconAssets: "iconfont",
+  }),
+};
+```
+
+:::
+
+<IconDisplay link="//at.alicdn.com/t/font_2410206_a0xb9hku9iu.css" />
 
 <script setup lang="ts">
 import IconDisplay from '@IconDisplay';

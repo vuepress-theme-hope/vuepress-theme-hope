@@ -3,8 +3,8 @@ import { defineComponent, h } from "vue";
 import { AuthorIcon } from "@theme-hope/module/info/components/icons";
 import { useMetaLocale } from "@theme-hope/module/info/composables";
 
-import type { AuthorInfo } from "@mr-hope/vuepress-shared";
 import type { PropType, VNode } from "vue";
+import type { AuthorInfo } from "vuepress-shared";
 
 export default defineComponent({
   name: "AuthorInfo",

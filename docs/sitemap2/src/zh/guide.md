@@ -67,7 +67,7 @@ Sitemaps 是站点管理员向搜索引擎爬虫公布站点可被抓取页面�
 
 ::: warning 同步配置 robots.txt
 
-由于 Sitemap 面向搜索引擎，配合此插件使用时，你最好保证你在 `.vuepress/public` 文件夹下放置了有效的 `rotbot.txt`，以允许搜索引擎收录。一个最简单的 robots.txt 如下 (允许所有搜索引擎访问所有路径)
+由于 Sitemap 面向搜索引擎，配合此插件使用时，你最好保证你在 `.vuepress/public` 文件夹下放置了有效的 `robot.txt`，以允许搜索引擎收录。一个最简单的 robots.txt 如下 (允许所有搜索引擎访问所有路径)
 
 ```txt
 User-agent: *

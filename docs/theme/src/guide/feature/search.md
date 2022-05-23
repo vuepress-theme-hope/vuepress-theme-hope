@@ -32,25 +32,21 @@ The theme can ONLY apply plugins it bundles, so `plugins` field in theme options
 
 1. Install `@vuepress/plugin-search`
 
-   :::: code-group
+   ::: code-tabs#shell
 
-   ::: code-group-item pnpm
+   @tab pnpm
 
    ```bash
    pnpm add -D @vuepress/plugin-search@next
    ```
 
-   :::
-
-   ::: code-group-item yarn
+   @tab yarn
 
    ```bash
    yarn add -D @vuepress/plugin-search@next
    ```
 
-   :::
-
-   ::: code-group-item npm
+   @tab npm
 
    ```bash
    npm i -D @vuepress/plugin-search@next
@@ -58,13 +54,11 @@ The theme can ONLY apply plugins it bundles, so `plugins` field in theme options
 
    :::
 
-   ::::
-
 1. Import `searchPlugin` from `@vuepress/plugin-search` and apply it in `plugins` under `config.{ts,js}`.
 
-   :::: code-group
+   ::: code-tabs#language
 
-   ::: code-group-item TS
+   @tab TS
 
    ```ts
    // .vuepress/config.ts
@@ -80,9 +74,7 @@ The theme can ONLY apply plugins it bundles, so `plugins` field in theme options
    });
    ```
 
-   :::
-
-   ::: code-group-item JS
+   @tab JS
 
    ```js
    // .vuepress/config.js
@@ -98,8 +90,6 @@ The theme can ONLY apply plugins it bundles, so `plugins` field in theme options
    ```
 
    :::
-
-   ::::
 
 ::: info More
 
@@ -259,25 +249,21 @@ See [Plugin Docs][search] for available options.
 
 1. Install `@vuepress/plugin-docsearch`
 
-   :::: code-group
+   ::: code-tabs#shell
 
-   ::: code-group-item pnpm
+   @tab pnpm
 
    ```bash
    pnpm add -D @vuepress/plugin-docsearch@next
    ```
 
-   :::
-
-   ::: code-group-item yarn
+   @tab yarn
 
    ```bash
    yarn add -D @vuepress/plugin-docsearch@next
    ```
 
-   :::
-
-   ::: code-group-item npm
+   @tab npm
 
    ```bash
    npm i -D @vuepress/plugin-docsearch@next
@@ -285,13 +271,11 @@ See [Plugin Docs][search] for available options.
 
    :::
 
-   ::::
-
 1. Import `docsearchPlugin` from `@vuepress/plugin-docsearch` and apply it in `plugins` under `config.{ts,js}`.
 
-   :::: code-group
+   ::: code-tabs#language
 
-   ::: code-group-item TS
+   @tab TS
 
    ```ts
    // .vuepress/config.ts
@@ -308,9 +292,7 @@ See [Plugin Docs][search] for available options.
    });
    ```
 
-   :::
-
-   ::: code-group-item JS
+   @tab JS
 
    ```js
    // .vuepress/config.js
@@ -327,8 +309,6 @@ See [Plugin Docs][search] for available options.
    ```
 
    :::
-
-   ::::
 
 ::: info More
 

@@ -11,7 +11,7 @@ export default hopeTheme({
     url: "https://mrhope.site",
   },
 
-  iconPrefix: "iconfont icon-",
+  iconAssets: "//at.alicdn.com/t/font_2410206_a0xb9hku9iu.css",
 
   repo: "vuepress-theme-hope/vuepress-theme-hope/tree/main/packages/redirect2/",
   docsRepo: "vuepress-theme-hope/vuepress-theme-hope",
@@ -48,7 +48,7 @@ export default hopeTheme({
     },
 
     mdEnhance: {
-      codegroup: true,
+      codetabs: true,
     },
 
     pwa: {

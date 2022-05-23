@@ -26,9 +26,9 @@ The essential file for configuring a VuePress site is `.vuepress/config.js`, whi
 
 A basic config file looks like this:
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group TS
+@tab TS
 
 ```ts
 import { defineUserConfig } from "vuepress";
@@ -47,9 +47,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group JS
+@tab JS
 
 ```js
 const { hopeTheme } = require("vuepress-theme-hope");
@@ -68,8 +66,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ::: tip
 

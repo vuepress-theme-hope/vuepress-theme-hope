@@ -39,7 +39,7 @@ CloudFlare 的 Auto Minify 会错误的对 HTML 的空格和换行进行处理�
 
 如果你在开发进程启动时看到 `xxx is not assign with a lang, and will return 'en-US'.`，请检查是否为每种语言设置了语言。
 
-即使你只有一种语言，你仍然需要 [设置你的根目录语言](config/i18n.md#设置根目录语言)。
+即使你只有一种语言，你仍然需要 [设置你的根目录语言](../config/i18n.md#设置语言)。
 
 ## `useXXX() is called without provider`
 
@@ -47,25 +47,21 @@ CloudFlare 的 Auto Minify 会错误的对 HTML 的空格和换行进行处理�
 
 请确保你正在使用最新的 `vuepress` 和 `vuepress-theme-hope` 版本:
 
-:::: code-group
+::: code-tabs#shell
 
-::: code-group-item pnpm
+@tab pnpm
 
 ```bash
 pnpm add vuepress@next vuepress-theme-hope@next
 ```
 
-:::
-
-::: code-group-item yarn
+@tab yarn
 
 ```bash
 yarn add vuepress@next vuepress-theme-hope@next
 ```
 
-:::
-
-::: code-group-item npm
+@tab npm
 
 ```bash
 npm i vuepress@next vuepress-theme-hope@next
@@ -73,37 +69,29 @@ npm i vuepress@next vuepress-theme-hope@next
 
 :::
 
-::::
-
 同时，升级依赖以确保你的项目只包含单个版本的相关包:
 
-:::: code-group
+::: code-tabs#shell
 
-::: code-group-item pnpm
+@tab pnpm
 
 ```bash
 pnpm i && pnpm up
 ```
 
-:::
-
-::: code-group-item yarn
+@tab yarn
 
 ```bash
 yarn && yarn upgrade
 ```
 
-:::
-
-::: code-group-item npm
+@tab npm
 
 ```bash
 npm i && npm update
 ```
 
 :::
-
-::::
 
 ## 部分页面设置无效
 

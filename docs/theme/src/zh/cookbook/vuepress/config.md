@@ -26,11 +26,9 @@ VuePress 站点的基本配置文件是 `.vuepress/config.js` ，但也同样支
 
 一个基础的配置文件是这样的：
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group JS
-
-::: code-group TS
+@tab TS
 
 ```ts
 import { defineUserConfig } from "vuepress";
@@ -50,7 +48,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
+@tab JS
 
 ```js
 const { hopeTheme } = require("vuepress-theme-hope");
@@ -70,8 +68,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ::: tip
 

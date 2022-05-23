@@ -1,7 +1,7 @@
 ---
 title: 代码演示
 icon: discover
-index: 14
+index: 15
 category:
   - Markdown
 tag:
@@ -15,9 +15,9 @@ tag:
 
 ## 配置
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts {8-10}
 // .vuepress/config.ts
@@ -35,9 +35,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js {7-9}
 // .vuepress/config.js
@@ -55,8 +53,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ## 语法
 
@@ -83,7 +79,7 @@ module.exports = {
 
 ::: tip
 
-JSON 块是可选的，可用的配置详见 [配置](../config.md#demo)。
+JSON 块是可选的，可用的配置详见 [配置](../../config/plugins/md-enhance.md#demo)。
 
 :::
 

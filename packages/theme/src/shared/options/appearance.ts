@@ -58,15 +58,6 @@ export interface HopeThemeAppearanceOptions {
   pure?: boolean;
 
   /**
-   * Font class Icon prefix
-   *
-   * Font class 图标前缀
-   *
-   * @default ''
-   */
-  iconPrefix?: string;
-
-  /**
    * Dark mode support options:
    *
    * - `"switch"`: switch between dark, light and auto (default)

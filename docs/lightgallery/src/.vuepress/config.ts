@@ -1,4 +1,4 @@
-import { addViteOptimizeDepsInclude } from "@mr-hope/vuepress-shared";
+import { addViteOptimizeDepsInclude } from "vuepress-shared";
 import { defineUserConfig } from "@vuepress/cli";
 import { docsearchPlugin } from "@vuepress/plugin-docsearch";
 import { lightgalleryPlugin } from "vuepress-plugin-lightgallery";
@@ -11,16 +11,6 @@ export default defineUserConfig({
   base: `${base}lightgallery/`,
 
   dest: "./dist",
-
-  head: [
-    [
-      "link",
-      {
-        rel: "stylesheet",
-        href: "//at.alicdn.com/t/font_2410206_mfj6e1vbwo.css",
-      },
-    ],
-  ],
 
   locales: {
     "/": {
@@ -99,12 +89,12 @@ export default defineUserConfig({
   extendsBundlerOptions: (config: unknown, app): void => {
     if (app.env.isDev)
       addViteOptimizeDepsInclude({ app, config }, [
-        "@mr-hope/vuepress-shared/lib/client",
         "dayjs",
         "dayjs/plugin/localizedFormat",
         "dayjs/plugin/objectSupport",
         "dayjs/plugin/timezone",
         "dayjs/plugin/utc",
+        "vuepress-shared/lib/client",
       ]);
 
     addViteOptimizeDepsInclude({ app, config }, [

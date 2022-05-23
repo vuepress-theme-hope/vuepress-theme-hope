@@ -27,7 +27,7 @@ export default defineUserConfig({
         "/demo/chart",
         "/demo/echarts",
         "/demo/code-demo",
-        "/demo/code-group",
+        "/demo/code-tabs",
         "/demo/container",
         "/demo/flowchart",
         "/demo/footnote",
@@ -37,6 +37,7 @@ export default defineUserConfig({
         "/demo/mermaid",
         "/demo/presentation",
         "/demo/sup-sub",
+        "/demo/tabs",
         "/demo/tasklist",
         "/demo/tex",
       ],
@@ -55,7 +56,6 @@ export default defineUserConfig({
   plugins: [
     mdEnhancePlugin({
       enableAll: true,
-      codegroup: false,
       presentation: {
         plugins: ["highlight", "math", "search", "notes", "zoom"],
       },

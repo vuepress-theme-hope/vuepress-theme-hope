@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { getRootLang } from "@mr-hope/vuepress-shared";
 import { chalk, fs, path } from "@vuepress/utils";
+import { getRootLang } from "vuepress-shared";
+
 import { logger } from "./utils";
 
 import type { App } from "@vuepress/core";

@@ -25,7 +25,7 @@ icon: react
 
 ::: warning Attention
 
-- Babel must be loaded when using react to parse JSX, this is done by the plugin automaticaly
+- Babel must be loaded when using react to parse JSX, this is done by the plugin automatically
 - You must export your component through `export default`
 - We use "ShadowDOM" to make style isolation, and we already replace `document` with `shadowRoot`. To access the page document, please visit `window.document`.
 

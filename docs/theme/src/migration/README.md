@@ -7,6 +7,10 @@ This guide helps you migrate from V1 to V2.
 
 <!-- more -->
 
+## Reasons to update to V2
+
+V2 brings great performance improvements and many new features, see [V2 Highlights](./highlight.md) for details.
+
 ## Upgrade to the latest version of V1
 
 Upgrading to the latest version V1 is the first step in the migration. During the upgrade to the latest version V1, you can check the [V1 Changelog](https://vuepress-theme-hope.github.io/v1/changelog.html) to adapt the changes made in V1.
@@ -15,7 +19,7 @@ Upgrading to the latest version V1 is the first step in the migration. During th
 
 Now, in most cases you should be able to update `vuepress` and `vuepress-theme-hope` to latest v2 version, and run your v1 project directly.
 
-The migration helper automatically converts your v1 config to v2 config, and gives you hints about deprecated options it converted and not-supported options it dropped. Also frontmatter of all pages will be coverted from v1 syntax to v2.
+The migration helper automatically converts your v1 config to v2 config, and gives you hints about deprecated options it converted and not-supported options it dropped. Also frontmatter of all pages will be converted from v1 syntax to v2.
 
 All you need to do is:
 

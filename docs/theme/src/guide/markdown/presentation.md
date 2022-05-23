@@ -1,7 +1,7 @@
 ---
 title: Presentation
 icon: slides
-index: 15
+index: 16
 category:
   - Markdown
 tag:
@@ -17,9 +17,9 @@ Let the Markdown file in your VuePress site support presentation.
 
 ## Config
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts {8-10}
 // .vuepress/config.ts
@@ -37,9 +37,7 @@ export default defineUserConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js {7-9}
 // .vuepress/config.js
@@ -57,8 +55,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 `vuepress-plugin-md-enhance` uses [reveal.js](https://revealjs.com/) to support this feature.
 

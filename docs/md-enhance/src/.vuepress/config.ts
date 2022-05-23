@@ -1,7 +1,7 @@
-import { addViteOptimizeDepsInclude } from "@mr-hope/vuepress-shared";
 import { defineUserConfig } from "@vuepress/cli";
 import { docsearchPlugin } from "@vuepress/plugin-docsearch";
 import { path } from "@vuepress/utils";
+import { addViteOptimizeDepsInclude } from "vuepress-shared";
 import theme from "./theme";
 
 const base = (process.env.BASE || "/") as "/" | `/${string}/`;
@@ -10,16 +10,6 @@ export default defineUserConfig({
   base: `${base}md-enhance/`,
 
   dest: "./dist",
-
-  head: [
-    [
-      "link",
-      {
-        rel: "stylesheet",
-        href: "//at.alicdn.com/t/font_2410206_mfj6e1vbwo.css",
-      },
-    ],
-  ],
 
   locales: {
     "/": {
@@ -88,7 +78,7 @@ export default defineUserConfig({
     }),
   ],
 
-  pagePatterns: ["**/*.md", "!*.snippet.md", "!.vuepress", "!node_modules"],
+  pagePatterns: ["**/*.md", "!**/*.snippet.md", "!.vuepress", "!node_modules"],
 
   alias: {
     "@KatexPlayground": path.resolve(__dirname, "./components/KatexPlayground"),
@@ -101,12 +91,12 @@ export default defineUserConfig({
   extendsBundlerOptions: (config: unknown, app): void => {
     if (app.env.isDev)
       addViteOptimizeDepsInclude({ app, config }, [
-        "@mr-hope/vuepress-shared/lib/client",
         "dayjs",
         "dayjs/plugin/localizedFormat",
         "dayjs/plugin/objectSupport",
         "dayjs/plugin/timezone",
         "dayjs/plugin/utc",
+        "vuepress-shared/lib/client",
       ]);
 
     addViteOptimizeDepsInclude({ app, config }, [

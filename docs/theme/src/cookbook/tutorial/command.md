@@ -46,34 +46,28 @@ To terminate the development server, please click on the terminal and press `Ctr
 
 :::
 
-## Update Verion
+## Update Version
 
 If you need to upgrade your theme and VuePress version, execute the following command:
 
-:::: code-group
+::: code-tabs#shell
 
-::: code-group-item pnpm
+@tab pnpm
 
 ```bash
 pnpm add vuepress@next vuepress-theme-hope@next && pnpm i && pnpm up
 ```
 
-:::
-
-::: code-group-item yarn
+@tab yarn
 
 ```bash
 yarn add vuepress@next vuepress-theme-hope@next && yarn install && yarn upgrade
 ```
 
-:::
-
-::: code-group-item npm
+@tab npm
 
 ```bash
 npm i vuepress@next vuepress-theme-hope@next && npm install && npm update
 ```
 
 :::
-
-::::

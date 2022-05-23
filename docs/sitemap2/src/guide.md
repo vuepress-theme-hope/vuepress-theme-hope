@@ -67,7 +67,7 @@ Sitemaps is a protocol for site administrators to publish pages that can be craw
 
 ::: warning Together with robots.txt
 
-Sitemap is basically used by search engines, when using this plugin, you’d better ensure that you have a valid `rotbot.txt` in the `.vuepress/public` directory to allow search engines spiders to visit your site. A simplest robots.txt is as follows (allow all search engines to access all paths)
+Sitemap is basically used by search engines, when using this plugin, you’d better ensure that you have a valid `robot.txt` in the `.vuepress/public` directory to allow search engines spiders to visit your site. A simplest robots.txt is as follows (allow all search engines to access all paths)
 
 ```txt
 User-agent: *

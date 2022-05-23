@@ -40,7 +40,7 @@ export const zhSidebarConfig = sidebar({
       text: "迁移",
       icon: "change",
       prefix: "migration/",
-      children: ["config", "page", "style"],
+      children: ["highlight", "config", "page", "style"],
     },
     {
       text: "常见问题",

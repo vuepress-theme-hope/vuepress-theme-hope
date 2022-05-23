@@ -3,11 +3,11 @@ home: true
 title: Home
 icon: home
 heroImage: /logo.svg
-heroText: "@mr-hope/vuepress-plugin-components"
+heroText: vuepress-plugin-components
 tagline: Components lib plugin for VuePress2
 actions:
   - text: Get Started 💡
-    link: /guide.html
+    link: /guide/
     type: primary
 
   - text: Config 🛠
@@ -19,43 +19,37 @@ copyright: false
 
 ## Install
 
-:::: code-group
+::: code-tabs#shell
 
-::: code-group-item pnpm
+@tab pnpm
 
 ```bash
-pnpm add -D @mr-hope/vuepress-plugin-components@next
+pnpm add -D vuepress-plugin-components@next
+```
+
+@tab yarn
+
+```bash
+yarn add -D vuepress-plugin-components@next
+```
+
+@tab npm
+
+```bash
+npm i -D vuepress-plugin-components@next
 ```
 
 :::
-
-::: code-group-item yarn
-
-```bash
-yarn add -D vuepress-plugin-add-this@next
-```
-
-:::
-
-::: code-group-item npm
-
-```bash
-npm i -D @mr-hope/vuepress-plugin-components@next
-```
-
-:::
-
-::::
 
 ### Usage
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
-import { componentsPlugin } from "@mr-hope/vuepress-plugin-components";
+import { componentsPlugin } from "vuepress-plugin-components";
 
 export default {
   plugins: [
@@ -66,13 +60,11 @@ export default {
 };
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // .vuepress/config.js
-const { componentsPlugin } = require("@mr-hope/vuepress-plugin-components");
+const { componentsPlugin } = require("vuepress-plugin-components");
 
 module.exports = {
   plugins: [
@@ -84,5 +76,3 @@ module.exports = {
 ```
 
 :::
-
-::::

@@ -56,16 +56,16 @@ cli
      * Open dev server
      */
 
-    const { choise } = await prompt<{ choise: boolean }>([
+    const { choice } = await prompt<{ choice: boolean }>([
       {
-        name: "choise",
+        name: "choice",
         type: "confirm",
         message: message.devServerAsk,
         default: true,
       },
     ]);
 
-    if (choise) {
+    if (choice) {
       console.log(message.devServer);
 
       await execa(bin, ["run", "docs:dev"], {

@@ -1,6 +1,7 @@
-import { getLocales } from "@mr-hope/vuepress-shared";
 import { path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
+import { getLocales } from "vuepress-shared";
+
 import { photoSwipeLocales } from "./locales";
 import { logger } from "./utils";
 

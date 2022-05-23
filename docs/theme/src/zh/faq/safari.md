@@ -1,6 +1,6 @@
 ---
 title: Safari 常见问题
-icon: apple
+icon: safari
 category:
   - FAQ
 ---

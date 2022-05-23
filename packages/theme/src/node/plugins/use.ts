@@ -1,7 +1,7 @@
-import { useGitPlugin } from "@mr-hope/vuepress-shared";
 import { path } from "@vuepress/utils";
 import { useReadingTimePlugin } from "vuepress-plugin-reading-time2";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
+import { useGitPlugin } from "vuepress-shared";
 
 import type { App } from "@vuepress/core";
 import type { HopeThemePluginsOptions } from "../../shared";

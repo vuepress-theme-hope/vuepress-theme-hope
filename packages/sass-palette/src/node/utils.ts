@@ -1,4 +1,4 @@
-import { Logger } from "@mr-hope/vuepress-shared";
+import { Logger } from "vuepress-shared";
 import { fs, path } from "@vuepress/utils";
 
 export const emptyFile = path.resolve(__dirname, "../../styles/empty.scss");

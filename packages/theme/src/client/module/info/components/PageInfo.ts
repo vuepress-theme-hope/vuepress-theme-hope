@@ -11,12 +11,12 @@ import TagInfo from "@theme-hope/module/info/components/TagInfo";
 import OriginalInfo from "@theme-hope/module/info/components/OriginalMark";
 import WordInfo from "@theme-hope/module/info/components/WordInfo";
 
+import type { PropType, VNode } from "vue";
+import type { ReadingTime } from "vuepress-plugin-reading-time2";
 import type {
   AuthorInfo as AuthorInfoType,
   DateInfo as DateInfoType,
-} from "@mr-hope/vuepress-shared";
-import type { PropType, VNode } from "vue";
-import type { ReadingTime } from "vuepress-plugin-reading-time2";
+} from "vuepress-shared";
 import type { PageCategory, PageTag, PageInfo } from "../../../../shared";
 
 import "balloon-css/balloon.css";
@@ -52,7 +52,7 @@ export interface PageInfoProps {
   date?: DateInfoType | null;
 
   /**
-   * Whether the aricle is orginal
+   * Whether the aricle is original
    *
    * 文章是否原创
    */

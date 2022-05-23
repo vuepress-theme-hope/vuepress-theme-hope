@@ -1,8 +1,5 @@
-import {
-  isComponentRegistered,
-  RenderDefault,
-} from "@mr-hope/vuepress-shared/lib/client";
 import { useEventListener } from "@vueuse/core";
+import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import { debounce } from "ts-debounce";
 import {
   Transition,
@@ -16,7 +13,10 @@ import {
   watch,
 } from "vue";
 import { useRouter } from "vue-router";
-import { usePageData, usePageFrontmatter } from "@vuepress/client";
+import {
+  isComponentRegistered,
+  RenderDefault,
+} from "vuepress-shared/lib/client";
 
 import PageFooter from "@theme-hope/components/PageFooter";
 import { useMobile, useThemeLocaleData } from "@theme-hope/composables";

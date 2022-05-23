@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-md-enhance",
-  "version": "2.0.0-beta.63",
+  "version": "2.0.0-beta.71",
   "description": "Markdown enhancement plugin for vuepress",
   "keywords": [
     "vuepress",
@@ -47,7 +47,6 @@
   },
   "dependencies": {
     "@babel/core": "*",
-    "@mr-hope/vuepress-shared": "workspace:*",
     "@types/katex": "^0.14.0",
     "@types/markdown-it": "^12.2.3",
     "@types/mermaid": "^8.2.9",
@@ -60,22 +59,23 @@
     "chart.js": "^3.7.1",
     "echarts": "^5.3.2",
     "flowchart.js": "^1.17.1",
-    "katex": "^0.15.3",
+    "katex": "^0.15.6",
     "markdown-it": "^13.0.1",
     "mermaid": "^9.1.1",
     "reveal.js": "^4.3.1",
     "ts-debounce": "^4.0.0",
-    "vue": "^3.2.33",
+    "vue": "^3.2.36",
     "vue-router": "^4.0.15",
-    "vuepress-plugin-sass-palette": "workspace:*"
+    "vuepress-plugin-sass-palette": "workspace:*",
+    "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.9",
-    "@types/babel__core": "^7.1.19",
+    "@babel/core": "7.18.0",
+    "@types/babel__core": "7.1.19",
     "@vuepress/core": "2.0.0-beta.45",
     "@vuepress/markdown": "2.0.0-beta.45",
-    "markdown-it-container": "^3.0.0",
-    "rimraf": "^3.0.2"
+    "markdown-it-container": "3.0.0",
+    "rimraf": "3.0.2"
   },
   "peerDependencies": {
     "sass-loader": "^12.6.0"

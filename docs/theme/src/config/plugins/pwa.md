@@ -18,7 +18,7 @@ The `vuepress-plugin-pwa2` plugin provides progressive web app support.
 
 ::: tip Quick Enable
 
-To simplely enable this feature, you can set `pwa: true`. <Badge text="Quick Enable Not recommanded" type="warning" />
+To simply enable this feature, you can set `pwa: true`. <Badge text="Quick Enable Not recommended" type="warning" />
 
 :::
 
@@ -46,7 +46,7 @@ You can fill with an object which will be parsed to manifest.webmanifest.
 
 ::: tip
 
-Some options have their fallback if you donot set them.
+Some options have their fallback if you do not set them.
 
 - name: `siteConfig.title` || `siteConfig.locales['/'].title` || `"Site"`
 - short_name: `siteConfig.title` || `siteConfig.locales['/'].title` || `"Site"`
@@ -78,7 +78,7 @@ Path of favico.ico with absolute path.
 
 ::: warning
 
-We recommand you to set favicon for your site
+We recommend you to set favicon for your site
 
 :::
 
@@ -132,7 +132,7 @@ Max picture size which allows to cache, with KB unit
 
 Control logic when new content is found.
 
-- `"disabled"`: Do nothing even when new service worker is avaible. After new service work succeeds installing and starts waiting, it will control page and provide new content in next visit.
+- `"disabled"`: Do nothing even when new service worker is available. After new service work succeeds installing and starts waiting, it will control page and provide new content in next visit.
 
 - `"available"`: Only display update popup when the new service worker is available
 
@@ -142,7 +142,7 @@ Control logic when new content is found.
 
   ::: note
 
-  If users choose to refresh, the current service worker will be unregister, and request will start coming to web. Later the new service worker will start installing and control current page after installed.
+  If users choose to refresh, the current service worker will be unregistered, and request will start coming to web. Later the new service worker will start installing and control current page after installed.
 
   :::
 
@@ -150,7 +150,7 @@ Control logic when new content is found.
 
   ::: danger
 
-  Though this ensure users are visiting newest content, but this may affect visiting experiences.
+  Though this ensures users are visiting the newest content, but this may affect visiting experiences.
 
   :::
 
@@ -289,7 +289,7 @@ Options passed to `workbox-build`, for details, see [Workbox documentation](http
     hint: string;
 
     /**
-     * Update avaible text
+     * Update available text
      */
     update: string;
   }

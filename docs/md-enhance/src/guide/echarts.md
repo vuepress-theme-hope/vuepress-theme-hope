@@ -11,9 +11,9 @@ This plugin is using [echarts](https://echarts.apache.org/en/index.html) to supp
 
 ## Config
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts {8}
 // .vuepress/config.ts
@@ -29,9 +29,7 @@ export default {
 };
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js {8}
 // .vuepress/config.js
@@ -48,8 +46,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ## Syntax
 

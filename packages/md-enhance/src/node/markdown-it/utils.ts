@@ -1,5 +1,5 @@
-import type { default as StateBlock } from "markdown-it/lib/rules_block/state_block";
 import type { default as Token } from "markdown-it/lib/token";
+import type { RuleBlock } from "markdown-it/lib/parser_block";
 
 // https://spec.commonmark.org/0.29/#line-ending
 export const NEWLINES_RE = /\r\n?|\n/g;
@@ -50,24 +50,11 @@ export interface UMLOptions {
   close: string;
 }
 
-export const generateUML = (
-  options: UMLOptions
-): ((
-  state: StateBlock,
-  startLine: number,
-  endLine: number,
-  silent: boolean
-) => boolean) => {
+export const generateUML = (options: UMLOptions): RuleBlock => {
   const OPEN_MARKER = `@${options.open}`;
   const CLOSE_MARKER = `@${options.close}`;
 
-  return (
-    state: StateBlock,
-    startLine: number,
-    endLine: number,
-    silent: boolean
-  ): boolean => {
-    let nextLine;
+  const umlRule: RuleBlock = (state, startLine, endLine, silent) => {
     let i;
     let autoClosed = false;
     let start = state.bMarks[startLine] + state.tShift[startLine];
@@ -89,15 +76,16 @@ export const generateUML = (
     // Since start is found, we can report success here in validation mode
     if (silent) return true;
 
-    // Search for the end of the block
-    for (nextLine = startLine; ; nextLine += 1) {
-      if (nextLine >= endLine)
-        /*
-         * unclosed block should be autoclosed by end of document.
-         * also block seems to be autoclosed by end of parent
-         */
-        break;
+    let nextLine = startLine;
 
+    // Search for the end of the block
+    while (
+      /*
+       * unclosed block should be autoclosed by end of document.
+       * also block seems to be autoclosed by end of parent
+       */
+      nextLine < endLine
+    ) {
       start = state.bMarks[nextLine] + state.tShift[nextLine];
       max = state.eMarks[nextLine];
 
@@ -133,6 +121,8 @@ export const generateUML = (
           break;
         }
       }
+
+      nextLine += 1;
     }
 
     const contents = state.src
@@ -152,4 +142,6 @@ export const generateUML = (
 
     return true;
   };
+
+  return umlRule;
 };

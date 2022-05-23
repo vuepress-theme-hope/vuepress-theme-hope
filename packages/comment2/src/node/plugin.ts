@@ -1,3 +1,5 @@
+import { path } from "@vuepress/utils";
+import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   addCustomElement,
   addViteSsrExternal,
@@ -5,9 +7,8 @@ import {
   addViteOptimizeDepsInclude,
   getLocales,
   noopModule,
-} from "@mr-hope/vuepress-shared";
-import { path } from "@vuepress/utils";
-import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
+} from "vuepress-shared";
+
 import { walineLocales } from "./locales";
 import { logger } from "./utils";
 

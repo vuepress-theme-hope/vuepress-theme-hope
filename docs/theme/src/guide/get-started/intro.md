@@ -57,9 +57,9 @@ The theme provides a lot of extended syntax support for Markdown, allowing you t
 
 - To store some knowledge notes, the theme provides [Custom container](../markdown/container.md), [Mark](../markdown/mark.md), [Badge](../markdown/components.md)、Task list](../markdown/tasklist.md) and [Tex](../markdown/tex.md) support.
 
-- If you are a programmer and need to show a lot of codes and demos, this theme provides light and dark themes for code blocks, [code group](../markdown/code-group.md) and the ["one-click copy" button](../feature/copy-code.md). At the same time, we also provide the [Code Demo](../markdown/demo.md) function, which is convenient for you to show your own Vue, React components or other demos.
+- If you are a programmer and need to show a lot of codes and demos, this theme provides light and dark themes for code blocks, [code tabs](../markdown/code-tabs.md) and the ["one-click copy" button](../feature/copy-code.md). At the same time, we also provide the [Code Demo](../markdown/demo.md) function, which is convenient for you to show your own Vue, React components or other demos.
 
-- If you are providing product documentation and presentation, the theme provides [slide](../markdown/presentation.md), [chart](../markdown/chart.md), [flowchart](../markdown/flowchart.md), [mermaid diagram](../markdown/mermaid.md) functions.
+- If you are providing product documentation and presentation, the theme provides [tabs](../markdown/tabs.md), [slide](../markdown/presentation.md), [chart](../markdown/chart.md), [flowchart](../markdown/flowchart.md), [mermaid diagram](../markdown/mermaid.md) functions.
 
 In short, anyone can enjoy the convenience of Markdown’s enhanced syntax.
 
@@ -73,9 +73,9 @@ In short, anyone can enjoy the convenience of Markdown’s enhanced syntax.
 
   Rebuild mobile navbar
 
-  simplfied [Navbar](../layout/navbar.md) and [Sidebar](../layout/sidebar.md) config, add support for icons and path prefixes.
+  simplified [Navbar](../layout/navbar.md) and [Sidebar](../layout/sidebar.md) config, add support for icons and path prefixes.
 
-- Layout: addes [breadcrumb](../layout/breadcrumb.md) and [footer](../layout/footer.md) support.
+- Layout: adds [breadcrumb](../layout/breadcrumb.md) and [footer](../layout/footer.md) support.
 
 - [Homepage](../layout/home.md): New outlook, features support icons and links.
 

@@ -1,6 +1,6 @@
 {
   "name": "pwa-docs",
-  "version": "2.0.0-beta.63",
+  "version": "2.0.0-beta.71",
   "private": true,
   "description": "Docs for vuepress-plugin-pwa2",
   "license": "MIT",
@@ -18,16 +18,16 @@
     "docs:webpack-dev": "vuepress-webpack dev src"
   },
   "dependencies": {
-    "@mr-hope/vuepress-shared": "workspace:*",
-    "@types/three": "^0.140.0",
+    "@types/three": "0.140.0",
     "@vuepress/cli": "2.0.0-beta.45",
     "@vuepress/client": "2.0.0-beta.45",
     "@vuepress/plugin-docsearch": "2.0.0-beta.45",
     "@vuepress/utils": "2.0.0-beta.45",
-    "sass-loader": "^12.6.0",
-    "three": "^0.140.2",
-    "vue": "^3.2.33",
+    "sass-loader": "12.6.0",
+    "three": "0.140.2",
+    "vue": "3.2.36",
     "vuepress-plugin-pwa2": "workspace:*",
+    "vuepress-shared": "workspace:*",
     "vuepress-theme-hope": "workspace:*",
     "vuepress-vite": "2.0.0-beta.45",
     "vuepress-webpack": "2.0.0-beta.45"

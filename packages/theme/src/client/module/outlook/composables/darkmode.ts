@@ -1,5 +1,13 @@
 import { usePreferredDark, useStorage } from "@vueuse/core";
-import { computed, inject, onMounted, onUnmounted, provide, watch } from "vue";
+import {
+  computed,
+  getCurrentInstance,
+  inject,
+  onMounted,
+  onUnmounted,
+  provide,
+  watch,
+} from "vue";
 import { useThemeData } from "@theme-hope/composables";
 
 import type { InjectionKey, Ref, WritableComputedRef } from "vue";
@@ -45,6 +53,8 @@ export const updateDarkModeAttr = (isDarkMode: DarkModeRef): void => {
 };
 
 export const setupDarkMode = (): void => {
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  const { app } = getCurrentInstance()!.appContext;
   const themeData = useThemeData();
   const isDarkPreferred = usePreferredDark();
   const darkmodeStorage = useStorage<DarkmodeStatus>(
@@ -75,4 +85,16 @@ export const setupDarkMode = (): void => {
   provide(darkModeSymbol, { isDarkMode, status: darkmodeStorage });
 
   updateDarkModeAttr(isDarkMode);
+
+  // provide global helpers
+  if (!("$isDarkMode" in app.config.globalProperties))
+    Object.defineProperties(app.config.globalProperties, {
+      $isDarkMode: { get: () => isDarkMode.value },
+    });
 };
+
+declare module "vue" {
+  export interface ComponentCustomProperties {
+    $isDarkmode: boolean;
+  }
+}

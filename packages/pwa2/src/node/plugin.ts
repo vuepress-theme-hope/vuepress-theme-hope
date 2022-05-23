@@ -1,17 +1,18 @@
+import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   addViteOptimizeDepsInclude,
   addViteSsrNoExternal,
   getLocales,
   useCustomDevServer,
-} from "@mr-hope/vuepress-shared";
-import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
-import { pwaLocales } from "./locales";
-import { injectLinkstoHead } from "./injectHead";
+} from "vuepress-shared";
+
 import { getManifest, generateManifest } from "./generateManifest";
 import { generateServiceWorker } from "./generateServiceWorker";
 import { appendBase } from "./helper";
-import { logger } from "./utils";
+import { injectLinkstoHead } from "./injectHead";
+import { pwaLocales } from "./locales";
 import { prepareConfigFile } from "./prepare";
+import { logger } from "./utils";
 
 import type { PluginFunction } from "@vuepress/core";
 import type { PWAOptions } from "../shared";
@@ -27,7 +28,7 @@ export const pwaPlugin =
 
     if (shouldPrefetch === true)
       logger.warn(
-        'The plugin will register service worker to handle assets, so we recommand you to set "shouldPrefetch: false" in VuePress config file.'
+        'The plugin will register service worker to handle assets, so we recommend you to set "shouldPrefetch: false" in VuePress config file.'
       );
 
     const manifest = getManifest(app, options);

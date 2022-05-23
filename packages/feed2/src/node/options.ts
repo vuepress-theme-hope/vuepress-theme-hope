@@ -1,5 +1,6 @@
-import { deepAssign } from "@mr-hope/vuepress-shared";
 import { removeEndingSlash, removeLeadingSlash } from "@vuepress/shared";
+import { deepAssign } from "vuepress-shared";
+
 import { compareDate, resolveUrl } from "./utils";
 
 import type { App, Page } from "@vuepress/core";
@@ -71,7 +72,7 @@ export const getFeedOptions = (
         ...options,
         ...options.locales?.[localePath],
 
-        // make sure hostname is not been overided
+        // make sure hostname is not been overrided
         hostname: options.hostname,
       } as ResolvedFeedOptions,
     ])

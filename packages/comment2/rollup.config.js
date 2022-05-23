@@ -3,7 +3,7 @@ import { rollupTypescript } from "../../scripts/rollup";
 export default [
   ...rollupTypescript("node/index", {
     external: [
-      "@mr-hope/vuepress-shared",
+      "vuepress-shared",
       "@vuepress/utils",
       "vuepress-plugin-sass-palette",
     ],
@@ -11,7 +11,7 @@ export default [
   ...rollupTypescript("client/config", {
     external: [
       "@CommentProvider",
-      "@mr-hope/vuepress-shared/lib/client",
+      "vuepress-shared/lib/client",
       "@vuepress/client",
       "vue",
       "vue-router",
@@ -30,7 +30,7 @@ export default [
   }),
   ...rollupTypescript("client/components/Waline", {
     external: [
-      "@mr-hope/vuepress-shared/lib/client",
+      "vuepress-shared/lib/client",
       "@vuepress/client",
       "@waline/client/dist/component",
       "@waline/client/dist/pageview",

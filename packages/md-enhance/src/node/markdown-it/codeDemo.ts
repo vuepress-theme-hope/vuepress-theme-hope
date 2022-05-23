@@ -1,44 +1,12 @@
 import { hash } from "@vuepress/utils";
 
+import { container } from "./container";
+
+import type { PluginSimple } from "markdown-it";
 import type { default as Token } from "markdown-it/lib/token";
 import type { CodeDemoOptions } from "../../shared";
 
-const getRender =
-  (demoType: string) =>
-  (tokens: Token[], index: number): string => {
-    const { nesting, info } = tokens[index];
-    const title = info.trimStart().slice(demoType.length).trim();
-
-    if (nesting === -1) return `</CodeDemo>`;
-
-    let config = "";
-    const code: Record<string, string> = {};
-
-    for (let i = index; i < tokens.length; i++) {
-      const { type, content, info } = tokens[i];
-
-      if (type === `container_${demoType}_close`) break;
-      if (!content) continue;
-      if (type === "fence") {
-        if (info === "json") config = encodeURIComponent(content);
-        else code[info] = content;
-      }
-    }
-
-    return `
-<CodeDemo id="code-demo-${hash(code)}" type="${demoType.split("-")[0]}"${
-      title ? ` title="${encodeURIComponent(title)}"` : ""
-    }${config ? ` config="${config}"` : ""} code="${encodeURIComponent(
-      JSON.stringify(code)
-    )}">
-`;
-  };
-
-export const normalDemoRender = getRender("normal-demo");
-export const vueDemoRender = getRender("vue-demo");
-export const reactDemoRender = getRender("react-demo");
-
-export const codeDemoDefaultSetting: CodeDemoOptions = {
+export const CODE_DEMO_DEFAULT_SETTING: CodeDemoOptions = {
   useBabel: false,
   jsLib: [],
   cssLib: [],
@@ -49,3 +17,44 @@ export const codeDemoDefaultSetting: CodeDemoOptions = {
   react: "https://unpkg.com/react/umd/react.production.min.js",
   reactDOM: "https://unpkg.com/react-dom/umd/react-dom.production.min.js",
 };
+
+const getPlugin =
+  (name: string): PluginSimple =>
+  (md) =>
+    container(md, {
+      name,
+      render: (tokens: Token[], index: number): string => {
+        const { nesting, info } = tokens[index];
+        const title = info.trimStart().slice(name.length).trim();
+
+        if (nesting === -1) return `</CodeDemo>`;
+
+        let config = "";
+        const code: Record<string, string> = {};
+
+        for (let i = index; i < tokens.length; i++) {
+          const { type, content, info } = tokens[i];
+
+          if (type === `container_${name}_close`) break;
+          if (!content) continue;
+          if (type === "fence") {
+            if (info === "json") config = encodeURIComponent(content);
+            else code[info] = content;
+          }
+        }
+
+        return `
+<CodeDemo id="code-demo-${hash(code)}" type="${name.split("-")[0]}"${
+          title ? ` title="${encodeURIComponent(title)}"` : ""
+        }${config ? ` config="${config}"` : ""} code="${encodeURIComponent(
+          JSON.stringify(code)
+        )}">
+`;
+      },
+    });
+
+export const normalDemo: PluginSimple = getPlugin("normal-demo");
+
+export const vueDemo: PluginSimple = getPlugin("vue-demo");
+
+export const reactDemo: PluginSimple = getPlugin("react-demo");

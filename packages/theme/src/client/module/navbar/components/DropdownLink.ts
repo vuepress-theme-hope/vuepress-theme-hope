@@ -1,8 +1,15 @@
-import { computed, defineComponent, h, ref, toRef, watch } from "vue";
+import {
+  computed,
+  defineComponent,
+  h,
+  ref,
+  resolveComponent,
+  toRef,
+  watch,
+} from "vue";
 import { useRoute } from "vue-router";
 
 import AutoLink from "@theme-hope/components/AutoLink";
-import { useIconPrefix } from "@theme-hope/composables";
 
 import type { PropType, VNode } from "vue";
 import type {
@@ -26,7 +33,6 @@ export default defineComponent({
 
   setup(props, { slots }) {
     const route = useRoute();
-    const iconPrefix = useIconPrefix();
     const config = toRef(props, "config");
 
     const dropdownAriaLabel = computed(
@@ -69,11 +75,7 @@ export default defineComponent({
           [
             slots.title?.() ||
               h("span", { class: "title" }, [
-                config.value.icon
-                  ? h("i", {
-                      class: `icon ${iconPrefix.value}${config.value.icon}`,
-                    })
-                  : null,
+                h(resolveComponent("FontIcon"), { icon: config.value.icon }),
                 props.config.text,
               ]),
             h("span", { class: "arrow" }),
@@ -115,12 +117,6 @@ export default defineComponent({
                               h(AutoLink, {
                                 config: grandchild,
                                 onFocusout: () => {
-                                  console.log(
-                                    "focusout",
-                                    grandIndex,
-                                    child.children.length,
-                                    isLastChild
-                                  );
                                   if (
                                     // last item of grandchild
                                     grandIndex === child.children.length - 1 &&

@@ -43,7 +43,7 @@ Whether to enable all features.
 
 Please use this option ONLY for playing or testing.
 
-As time grows,`vupress-plugin-md-enhance` is becoming more powerful. It’s adding more syntax to Markdown parser and more code to output.
+As time grows,`vuepress-plugin-md-enhance` is becoming more powerful. It’s adding more syntax to Markdown parser and more code to output.
 
 Enabling features you don’t need will increase dev and build time. (`markdown-it` has to check for extra syntaxs)
 
@@ -105,12 +105,19 @@ Whether to enable link check.
 
 Whether to enable v-pre wrapper.
 
-### codegroup
+### tabs
 
 - Type: `boolean`
 - Default: `false`
 
-Whether to enable codegroup.
+Whether to enable tabs.
+
+### codetabs
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to enable codetabs.
 
 ### align
 

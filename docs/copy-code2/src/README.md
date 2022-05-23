@@ -21,25 +21,21 @@ copyright: false
 
 ### Install
 
-:::: code-group
+::: code-tabs#shell
 
-::: code-group-item pnpm
+@tab pnpm
 
 ```bash
 pnpm add -D vuepress-plugin-copy-code2@next
 ```
 
-:::
-
-::: code-group-item yarn
+@tab yarn
 
 ```bash
 yarn add -D vuepress-plugin-copy-code2@next
 ```
 
-:::
-
-::: code-group-item npm
+@tab npm
 
 ```bash
 npm i -D vuepress-plugin-copy-code2@next
@@ -47,13 +43,11 @@ npm i -D vuepress-plugin-copy-code2@next
 
 :::
 
-::::
-
 ### Usage
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -68,9 +62,7 @@ export default {
 };
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -87,10 +79,6 @@ module.exports = {
 
 :::
 
-::::
-
 ## Migrating from V1
 
-We provide a new `pure` option to add a small button besides language text.
-
-Set this option if you think the default style is too fance.
+See [Migration Guide](./migration.md).

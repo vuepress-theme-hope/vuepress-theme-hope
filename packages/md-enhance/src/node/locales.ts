@@ -99,4 +99,13 @@ export const markdownEnhanceLocales: MarkdownEnhanceLocaleConfig = {
     danger: "Avertissement",
     details: "Details",
   },
+
+  "/es/": {
+    info: "Información",
+    note: "Nota",
+    tip: "Consejos",
+    warning: "Aviso",
+    danger: "Advertencia",
+    details: "Detalles",
+  },
 };

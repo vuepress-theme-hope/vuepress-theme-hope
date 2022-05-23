@@ -25,9 +25,9 @@
  * © 2019 GitHub, Inc.
  */
 
-import { useLocaleConfig, Message } from "@mr-hope/vuepress-shared/lib/client";
 import { onMounted, watch } from "vue";
 import { useRoute } from "vue-router";
+import { Message, useLocaleConfig } from "vuepress-shared/lib/client";
 
 import type { CopyCodeOptions, CopyCodeLocaleConfig } from "../../shared";
 
