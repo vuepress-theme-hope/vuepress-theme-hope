@@ -44,7 +44,7 @@
   "devDependencies": {
     "@vuepress/core": "2.0.0-beta.45",
     "@vuepress/plugin-git": "2.0.0-beta.45",
-    "rimraf": "^3.0.2"
+    "rimraf": "3.0.2"
   },
   "publishConfig": {
     "access": "public"

@@ -38,12 +38,12 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "cac": "^6.7.12",
-    "execa": "^5.1.1",
-    "inquirer": "^8.2.4"
+    "cac": "6.7.12",
+    "execa": "5.1.1",
+    "inquirer": "8.2.4"
   },
   "devDependencies": {
-    "@types/inquirer": "^8.2.1",
-    "rimraf": "^3.0.2"
+    "@types/inquirer": "8.2.1",
+    "rimraf": "3.0.2"
   }
 }

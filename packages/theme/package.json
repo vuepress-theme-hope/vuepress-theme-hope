@@ -81,7 +81,7 @@
     "@vuepress/bundler-vite": "2.0.0-beta.45",
     "@vuepress/bundler-webpack": "2.0.0-beta.45",
     "@vuepress/markdown": "2.0.0-beta.45",
-    "rimraf": "^3.0.2"
+    "rimraf": "3.0.2"
   },
   "peerDependencies": {
     "sass-loader": "^12.6.0"

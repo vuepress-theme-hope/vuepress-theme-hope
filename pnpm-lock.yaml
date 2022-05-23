@@ -4,56 +4,56 @@ importers:
 
   .:
     specifiers:
-      '@babel/core': ^7.18.0
-      '@babel/plugin-transform-modules-commonjs': ^7.18.0
-      '@babel/preset-env': ^7.18.0
-      '@commitlint/cli': ^17.0.0
-      '@commitlint/config-conventional': ^17.0.0
-      '@rollup/plugin-commonjs': ^22.0.0
-      '@rollup/plugin-json': ^4.1.0
-      '@rollup/plugin-node-resolve': ^13.3.0
-      '@rollup/plugin-typescript': ^8.3.2
-      '@textlint-rule/textlint-rule-no-unmatched-pair': ^1.0.8
-      '@types/inquirer': ^8.2.1
-      '@types/node': ^17.0.35
-      '@typescript-eslint/eslint-plugin': ^5.25.0
-      '@typescript-eslint/parser': ^5.25.0
-      '@vue/eslint-config-typescript': ^10.0.0
-      bumpp: ^7.1.1
-      c8: ^7.11.3
-      chalk: ^5.0.1
-      commitizen: ^4.2.4
-      concurrently: ^7.2.1
-      cpx2: ^4.2.0
-      cross-env: ^7.0.3
-      cz-git: ^1.3.2
-      eslint: ^8.16.0
-      eslint-config-prettier: ^8.5.0
-      eslint-plugin-prettier: ^4.0.0
-      eslint-plugin-vue: ^8.7.1
-      execa: ^6.1.0
-      husky: ^8.0.1
-      inquirer: ^8.2.4
-      lint-staged: ^12.4.1
-      markdownlint-cli: ^0.31.1
-      npm-check-updates: ^13.0.3
-      ora: ^6.1.0
-      prettier: ^2.6.2
-      rollup: ^2.74.1
-      rollup-plugin-copy: ^3.4.0
-      rollup-plugin-dts: ^4.2.1
-      rollup-plugin-terser: ^7.0.2
-      sort-package-json: ^1.57.0
-      standard-version: ^9.5.0
-      stylelint: ^14.8.3
-      stylelint-config-prettier: ^9.0.3
-      stylelint-config-standard: ^25.0.0
-      stylelint-config-standard-scss: ^3.0.0
-      stylelint-order: ^5.0.0
-      ts-node: ^10.8.0
-      tslib: ^2.4.0
-      typescript: ^4.6.4
-      vitest: ^0.12.9
+      '@babel/core': 7.18.0
+      '@babel/plugin-transform-modules-commonjs': 7.18.0
+      '@babel/preset-env': 7.18.0
+      '@commitlint/cli': 17.0.0
+      '@commitlint/config-conventional': 17.0.0
+      '@rollup/plugin-commonjs': 22.0.0
+      '@rollup/plugin-json': 4.1.0
+      '@rollup/plugin-node-resolve': 13.3.0
+      '@rollup/plugin-typescript': 8.3.2
+      '@textlint-rule/textlint-rule-no-unmatched-pair': 1.0.8
+      '@types/inquirer': 8.2.1
+      '@types/node': 17.0.35
+      '@typescript-eslint/eslint-plugin': 5.25.0
+      '@typescript-eslint/parser': 5.25.0
+      '@vue/eslint-config-typescript': 10.0.0
+      bumpp: 7.1.1
+      c8: 7.11.3
+      chalk: 5.0.1
+      commitizen: 4.2.4
+      concurrently: 7.2.1
+      cpx2: 4.2.0
+      cross-env: 7.0.3
+      cz-git: 1.3.2
+      eslint: 8.16.0
+      eslint-config-prettier: 8.5.0
+      eslint-plugin-prettier: 4.0.0
+      eslint-plugin-vue: 8.7.1
+      execa: 6.1.0
+      husky: 8.0.1
+      inquirer: 8.2.4
+      lint-staged: 12.4.1
+      markdownlint-cli: 0.31.1
+      npm-check-updates: 13.0.3
+      ora: 6.1.0
+      prettier: 2.6.2
+      rollup: 2.74.1
+      rollup-plugin-copy: 3.4.0
+      rollup-plugin-dts: 4.2.1
+      rollup-plugin-terser: 7.0.2
+      sort-package-json: 1.57.0
+      standard-version: 9.5.0
+      stylelint: 14.8.3
+      stylelint-config-prettier: 9.0.3
+      stylelint-config-standard: 25.0.0
+      stylelint-config-standard-scss: 3.0.0
+      stylelint-order: 5.0.0
+      ts-node: 10.8.0
+      tslib: 2.4.0
+      typescript: 4.6.4
+      vitest: 0.12.9
     devDependencies:
       '@babel/core': 7.18.0
       '@babel/plugin-transform-modules-commonjs': 7.18.0_@babel+core@7.18.0
@@ -113,9 +113,9 @@ importers:
       '@vuepress/core': 2.0.0-beta.45
       '@vuepress/theme-default': 2.0.0-beta.45
       '@vuepress/utils': 2.0.0-beta.45
-      sass-loader: ^12.6.0
-      vue: ^3.2.36
-      vue-router: ^4.0.15
+      sass-loader: 12.6.0
+      vue: 3.2.36
+      vue-router: 4.0.15
       vuepress-plugin-blog2: workspace:*
       vuepress-vite: 2.0.0-beta.45
       vuepress-webpack: 2.0.0-beta.45
@@ -139,8 +139,8 @@ importers:
       '@vuepress/core': 2.0.0-beta.45
       '@vuepress/theme-default': 2.0.0-beta.45
       '@vuepress/utils': 2.0.0-beta.45
-      sass-loader: ^12.6.0
-      vue: ^3.2.36
+      sass-loader: 12.6.0
+      vue: 3.2.36
       vuepress-plugin-comment2: workspace:*
       vuepress-vite: 2.0.0-beta.45
       vuepress-webpack: 2.0.0-beta.45
@@ -161,8 +161,8 @@ importers:
       '@vuepress/cli': 2.0.0-beta.45
       '@vuepress/client': 2.0.0-beta.45
       '@vuepress/theme-default': 2.0.0-beta.45
-      sass-loader: ^12.6.0
-      vue: ^3.2.36
+      sass-loader: 12.6.0
+      vue: 3.2.36
       vuepress-plugin-copy-code2: workspace:*
       vuepress-vite: 2.0.0-beta.45
       vuepress-webpack: 2.0.0-beta.45
@@ -182,8 +182,8 @@ importers:
       '@vuepress/client': 2.0.0-beta.45
       '@vuepress/theme-default': 2.0.0-beta.45
       '@vuepress/utils': 2.0.0-beta.45
-      sass-loader: ^12.6.0
-      vue: ^3.2.36
+      sass-loader: 12.6.0
+      vue: 3.2.36
       vuepress-plugin-copyright2: workspace:*
       vuepress-vite: 2.0.0-beta.45
       vuepress-webpack: 2.0.0-beta.45
@@ -203,8 +203,8 @@ importers:
       '@vuepress/cli': 2.0.0-beta.45
       '@vuepress/client': 2.0.0-beta.45
       '@vuepress/theme-default': 2.0.0-beta.45
-      sass-loader: ^12.6.0
-      vue: ^3.2.36
+      sass-loader: 12.6.0
+      vue: 3.2.36
       vuepress-plugin-feed2: workspace:*
       vuepress-vite: 2.0.0-beta.45
       vuepress-webpack: 2.0.0-beta.45
@@ -223,8 +223,8 @@ importers:
       '@vuepress/cli': 2.0.0-beta.45
       '@vuepress/client': 2.0.0-beta.45
       '@vuepress/theme-default': 2.0.0-beta.45
-      sass-loader: ^12.6.0
-      vue: ^3.2.36
+      sass-loader: 12.6.0
+      vue: 3.2.36
       vuepress-plugin-lightgallery: workspace:*
       vuepress-vite: 2.0.0-beta.45
       vuepress-webpack: 2.0.0-beta.45
@@ -243,8 +243,8 @@ importers:
       '@vuepress/cli': 2.0.0-beta.45
       '@vuepress/client': 2.0.0-beta.45
       '@vuepress/theme-default': 2.0.0-beta.45
-      sass-loader: ^12.6.0
-      vue: ^3.2.36
+      sass-loader: 12.6.0
+      vue: 3.2.36
       vuepress-plugin-md-enhance: workspace:*
       vuepress-vite: 2.0.0-beta.45
       vuepress-webpack: 2.0.0-beta.45
@@ -263,8 +263,8 @@ importers:
       '@vuepress/cli': 2.0.0-beta.45
       '@vuepress/client': 2.0.0-beta.45
       '@vuepress/theme-default': 2.0.0-beta.45
-      sass-loader: ^12.6.0
-      vue: ^3.2.36
+      sass-loader: 12.6.0
+      vue: 3.2.36
       vuepress-plugin-photo-swipe: workspace:*
       vuepress-vite: 2.0.0-beta.45
       vuepress-webpack: 2.0.0-beta.45
@@ -283,8 +283,8 @@ importers:
       '@vuepress/cli': 2.0.0-beta.45
       '@vuepress/client': 2.0.0-beta.45
       '@vuepress/theme-default': 2.0.0-beta.45
-      sass-loader: ^12.6.0
-      vue: ^3.2.36
+      sass-loader: 12.6.0
+      vue: 3.2.36
       vuepress-plugin-pwa2: workspace:*
       vuepress-vite: 2.0.0-beta.45
       vuepress-webpack: 2.0.0-beta.45
@@ -303,8 +303,8 @@ importers:
       '@vuepress/cli': 2.0.0-beta.45
       '@vuepress/client': 2.0.0-beta.45
       '@vuepress/theme-default': 2.0.0-beta.45
-      sass-loader: ^12.6.0
-      vue: ^3.2.36
+      sass-loader: 12.6.0
+      vue: 3.2.36
       vuepress-plugin-redirect2: workspace:*
       vuepress-vite: 2.0.0-beta.45
       vuepress-webpack: 2.0.0-beta.45
@@ -323,8 +323,8 @@ importers:
       '@vuepress/cli': 2.0.0-beta.45
       '@vuepress/client': 2.0.0-beta.45
       '@vuepress/theme-default': 2.0.0-beta.45
-      sass-loader: ^12.6.0
-      vue: ^3.2.36
+      sass-loader: 12.6.0
+      vue: 3.2.36
       vuepress-plugin-sass-palette: workspace:*
       vuepress-vite: 2.0.0-beta.45
       vuepress-webpack: 2.0.0-beta.45
@@ -343,8 +343,8 @@ importers:
       '@vuepress/cli': 2.0.0-beta.45
       '@vuepress/client': 2.0.0-beta.45
       '@vuepress/theme-default': 2.0.0-beta.45
-      sass-loader: ^12.6.0
-      vue: ^3.2.36
+      sass-loader: 12.6.0
+      vue: 3.2.36
       vuepress-plugin-seo2: workspace:*
       vuepress-vite: 2.0.0-beta.45
       vuepress-webpack: 2.0.0-beta.45
@@ -363,8 +363,8 @@ importers:
       '@vuepress/cli': 2.0.0-beta.45
       '@vuepress/client': 2.0.0-beta.45
       '@vuepress/theme-default': 2.0.0-beta.45
-      sass-loader: ^12.6.0
-      vue: ^3.2.36
+      sass-loader: 12.6.0
+      vue: 3.2.36
       vuepress-plugin-sitemap2: workspace:*
       vuepress-vite: 2.0.0-beta.45
       vuepress-webpack: 2.0.0-beta.45
@@ -386,9 +386,9 @@ importers:
       '@vuepress/plugin-pwa': 2.0.0-beta.45
       '@vuepress/plugin-pwa-popup': 2.0.0-beta.45
       '@vuepress/plugin-shiki': 2.0.0-beta.45
-      cross-env: ^7.0.3
-      sass-loader: ^12.6.0
-      vue: ^3.2.36
+      cross-env: 7.0.3
+      sass-loader: 12.6.0
+      vue: 3.2.36
       vuepress-theme-hope: workspace:*
       vuepress-vite: 2.0.0-beta.45
       vuepress-webpack: 2.0.0-beta.45
@@ -408,14 +408,14 @@ importers:
 
   docs/blog2:
     specifiers:
-      '@types/three': ^0.140.0
+      '@types/three': 0.140.0
       '@vuepress/cli': 2.0.0-beta.45
       '@vuepress/client': 2.0.0-beta.45
       '@vuepress/plugin-docsearch': 2.0.0-beta.45
       '@vuepress/utils': 2.0.0-beta.45
-      sass-loader: ^12.6.0
-      three: ^0.140.2
-      vue: ^3.2.36
+      sass-loader: 12.6.0
+      three: 0.140.2
+      vue: 3.2.36
       vuepress-shared: workspace:*
       vuepress-theme-hope: workspace:*
       vuepress-vite: 2.0.0-beta.45
@@ -436,14 +436,14 @@ importers:
 
   docs/comment2:
     specifiers:
-      '@types/three': ^0.140.0
+      '@types/three': 0.140.0
       '@vuepress/cli': 2.0.0-beta.45
       '@vuepress/client': 2.0.0-beta.45
       '@vuepress/plugin-docsearch': 2.0.0-beta.45
       '@vuepress/utils': 2.0.0-beta.45
-      sass-loader: ^12.6.0
-      three: ^0.140.2
-      vue: ^3.2.36
+      sass-loader: 12.6.0
+      three: 0.140.2
+      vue: 3.2.36
       vuepress-plugin-comment2: workspace:*
       vuepress-shared: workspace:*
       vuepress-theme-hope: workspace:*
@@ -470,9 +470,9 @@ importers:
       '@vuepress/client': 2.0.0-beta.45
       '@vuepress/plugin-docsearch': 2.0.0-beta.45
       '@vuepress/utils': 2.0.0-beta.45
-      sass-loader: ^12.6.0
-      three: ^0.140.2
-      vue: ^3.2.36
+      sass-loader: 12.6.0
+      three: 0.140.2
+      vue: 3.2.36
       vuepress-plugin-components: workspace:*
       vuepress-shared: workspace:*
       vuepress-theme-hope: workspace:*
@@ -494,14 +494,14 @@ importers:
 
   docs/copy-code2:
     specifiers:
-      '@types/three': ^0.140.0
+      '@types/three': 0.140.0
       '@vuepress/cli': 2.0.0-beta.45
       '@vuepress/client': 2.0.0-beta.45
       '@vuepress/plugin-docsearch': 2.0.0-beta.45
       '@vuepress/utils': 2.0.0-beta.45
-      sass-loader: ^12.6.0
-      three: ^0.140.2
-      vue: ^3.2.36
+      sass-loader: 12.6.0
+      three: 0.140.2
+      vue: 3.2.36
       vuepress-plugin-copy-code2: workspace:*
       vuepress-shared: workspace:*
       vuepress-theme-hope: workspace:*
@@ -524,14 +524,14 @@ importers:
 
   docs/copyright2:
     specifiers:
-      '@types/three': ^0.140.0
+      '@types/three': 0.140.0
       '@vuepress/cli': 2.0.0-beta.45
       '@vuepress/client': 2.0.0-beta.45
       '@vuepress/plugin-docsearch': 2.0.0-beta.45
       '@vuepress/utils': 2.0.0-beta.45
-      sass-loader: ^12.6.0
-      three: ^0.140.2
-      vue: ^3.2.36
+      sass-loader: 12.6.0
+      three: 0.140.2
+      vue: 3.2.36
       vuepress-shared: workspace:*
       vuepress-theme-hope: workspace:*
       vuepress-vite: 2.0.0-beta.45
@@ -552,14 +552,14 @@ importers:
 
   docs/feed2:
     specifiers:
-      '@types/three': ^0.140.0
+      '@types/three': 0.140.0
       '@vuepress/cli': 2.0.0-beta.45
       '@vuepress/client': 2.0.0-beta.45
       '@vuepress/plugin-docsearch': 2.0.0-beta.45
       '@vuepress/utils': 2.0.0-beta.45
-      sass-loader: ^12.6.0
-      three: ^0.140.2
-      vue: ^3.2.36
+      sass-loader: 12.6.0
+      three: 0.140.2
+      vue: 3.2.36
       vuepress-plugin-feed2: workspace:*
       vuepress-shared: workspace:*
       vuepress-theme-hope: workspace:*
@@ -582,14 +582,14 @@ importers:
 
   docs/lightgallery:
     specifiers:
-      '@types/three': ^0.140.0
+      '@types/three': 0.140.0
       '@vuepress/cli': 2.0.0-beta.45
       '@vuepress/client': 2.0.0-beta.45
       '@vuepress/plugin-docsearch': 2.0.0-beta.45
       '@vuepress/utils': 2.0.0-beta.45
-      sass-loader: ^12.6.0
-      three: ^0.140.2
-      vue: ^3.2.36
+      sass-loader: 12.6.0
+      three: 0.140.2
+      vue: 3.2.36
       vuepress-plugin-lightgallery: workspace:*
       vuepress-shared: workspace:*
       vuepress-theme-hope: workspace:*
@@ -612,16 +612,16 @@ importers:
 
   docs/md-enhance:
     specifiers:
-      '@types/katex': ^0.14.0
-      '@types/three': ^0.140.0
+      '@types/katex': 0.14.0
+      '@types/three': 0.140.0
       '@vuepress/cli': 2.0.0-beta.45
       '@vuepress/client': 2.0.0-beta.45
       '@vuepress/plugin-docsearch': 2.0.0-beta.45
       '@vuepress/utils': 2.0.0-beta.45
-      katex: ^0.15.6
-      sass-loader: ^12.6.0
-      three: ^0.140.2
-      vue: ^3.2.36
+      katex: 0.15.6
+      sass-loader: 12.6.0
+      three: 0.140.2
+      vue: 3.2.36
       vuepress-plugin-md-enhance: workspace:*
       vuepress-shared: workspace:*
       vuepress-theme-hope: workspace:*
@@ -646,14 +646,14 @@ importers:
 
   docs/photo-swipe:
     specifiers:
-      '@types/three': ^0.140.0
+      '@types/three': 0.140.0
       '@vuepress/cli': 2.0.0-beta.45
       '@vuepress/client': 2.0.0-beta.45
       '@vuepress/plugin-docsearch': 2.0.0-beta.45
       '@vuepress/utils': 2.0.0-beta.45
-      sass-loader: ^12.6.0
-      three: ^0.140.2
-      vue: ^3.2.36
+      sass-loader: 12.6.0
+      three: 0.140.2
+      vue: 3.2.36
       vuepress-plugin-photo-swipe: workspace:*
       vuepress-shared: workspace:*
       vuepress-theme-hope: workspace:*
@@ -676,14 +676,14 @@ importers:
 
   docs/pwa2:
     specifiers:
-      '@types/three': ^0.140.0
+      '@types/three': 0.140.0
       '@vuepress/cli': 2.0.0-beta.45
       '@vuepress/client': 2.0.0-beta.45
       '@vuepress/plugin-docsearch': 2.0.0-beta.45
       '@vuepress/utils': 2.0.0-beta.45
-      sass-loader: ^12.6.0
-      three: ^0.140.2
-      vue: ^3.2.36
+      sass-loader: 12.6.0
+      three: 0.140.2
+      vue: 3.2.36
       vuepress-plugin-pwa2: workspace:*
       vuepress-shared: workspace:*
       vuepress-theme-hope: workspace:*
@@ -706,14 +706,14 @@ importers:
 
   docs/reading-time2:
     specifiers:
-      '@types/three': ^0.140.0
+      '@types/three': 0.140.0
       '@vuepress/cli': 2.0.0-beta.45
       '@vuepress/client': 2.0.0-beta.45
       '@vuepress/plugin-docsearch': 2.0.0-beta.45
       '@vuepress/utils': 2.0.0-beta.45
-      sass-loader: ^12.6.0
-      three: ^0.140.2
-      vue: ^3.2.36
+      sass-loader: 12.6.0
+      three: 0.140.2
+      vue: 3.2.36
       vuepress-plugin-reading-time2: workspace:*
       vuepress-shared: workspace:*
       vuepress-theme-hope: workspace:*
@@ -736,14 +736,14 @@ importers:
 
   docs/redirect2:
     specifiers:
-      '@types/three': ^0.140.0
+      '@types/three': 0.140.0
       '@vuepress/cli': 2.0.0-beta.45
       '@vuepress/client': 2.0.0-beta.45
       '@vuepress/plugin-docsearch': 2.0.0-beta.45
       '@vuepress/utils': 2.0.0-beta.45
-      sass-loader: ^12.6.0
-      three: ^0.140.2
-      vue: ^3.2.36
+      sass-loader: 12.6.0
+      three: 0.140.2
+      vue: 3.2.36
       vuepress-shared: workspace:*
       vuepress-theme-hope: workspace:*
       vuepress-vite: 2.0.0-beta.45
@@ -764,14 +764,14 @@ importers:
 
   docs/sass-palette:
     specifiers:
-      '@types/three': ^0.140.0
+      '@types/three': 0.140.0
       '@vuepress/cli': 2.0.0-beta.45
       '@vuepress/client': 2.0.0-beta.45
       '@vuepress/plugin-docsearch': 2.0.0-beta.45
       '@vuepress/utils': 2.0.0-beta.45
-      sass-loader: ^12.6.0
-      three: ^0.140.2
-      vue: ^3.2.36
+      sass-loader: 12.6.0
+      three: 0.140.2
+      vue: 3.2.36
       vuepress-shared: workspace:*
       vuepress-theme-hope: workspace:*
       vuepress-vite: 2.0.0-beta.45
@@ -792,14 +792,14 @@ importers:
 
   docs/seo2:
     specifiers:
-      '@types/three': ^0.140.0
+      '@types/three': 0.140.0
       '@vuepress/cli': 2.0.0-beta.45
       '@vuepress/client': 2.0.0-beta.45
       '@vuepress/plugin-docsearch': 2.0.0-beta.45
       '@vuepress/utils': 2.0.0-beta.45
-      sass-loader: ^12.6.0
-      three: ^0.140.2
-      vue: ^3.2.36
+      sass-loader: 12.6.0
+      three: 0.140.2
+      vue: 3.2.36
       vuepress-plugin-seo2: workspace:*
       vuepress-shared: workspace:*
       vuepress-theme-hope: workspace:*
@@ -822,14 +822,14 @@ importers:
 
   docs/sitemap2:
     specifiers:
-      '@types/three': ^0.140.0
+      '@types/three': 0.140.0
       '@vuepress/cli': 2.0.0-beta.45
       '@vuepress/client': 2.0.0-beta.45
       '@vuepress/plugin-docsearch': 2.0.0-beta.45
       '@vuepress/utils': 2.0.0-beta.45
-      sass-loader: ^12.6.0
-      three: ^0.140.2
-      vue: ^3.2.36
+      sass-loader: 12.6.0
+      three: 0.140.2
+      vue: 3.2.36
       vuepress-plugin-sitemap2: workspace:*
       vuepress-shared: workspace:*
       vuepress-theme-hope: workspace:*
@@ -852,17 +852,17 @@ importers:
 
   docs/theme:
     specifiers:
-      '@types/katex': ^0.14.0
-      '@types/three': ^0.140.0
+      '@types/katex': 0.14.0
+      '@types/three': 0.140.0
       '@vuepress/cli': 2.0.0-beta.45
       '@vuepress/client': 2.0.0-beta.45
       '@vuepress/plugin-docsearch': 2.0.0-beta.45
       '@vuepress/utils': 2.0.0-beta.45
-      axios: ^0.27.2
-      katex: ^0.15.6
-      sass-loader: ^12.6.0
-      three: ^0.140.2
-      vue: ^3.2.36
+      axios: 0.27.2
+      katex: 0.15.6
+      sass-loader: 12.6.0
+      three: 0.140.2
+      vue: 3.2.36
       vuepress-shared: workspace:*
       vuepress-theme-hope: workspace:*
       vuepress-vite: 2.0.0-beta.45
@@ -890,7 +890,7 @@ importers:
       '@vuepress/core': 2.0.0-beta.45
       '@vuepress/shared': 2.0.0-beta.45
       chokidar: ^3.5.3
-      rimraf: ^3.0.2
+      rimraf: 3.0.2
       vue: ^3.2.36
       vue-router: ^4.0.15
       vuepress-shared: workspace:*
@@ -912,7 +912,7 @@ importers:
       '@vuepress/utils': 2.0.0-beta.45
       '@waline/client': ^2.5.1
       giscus: ^1.0.5
-      rimraf: ^3.0.2
+      rimraf: 3.0.2
       twikoo: ^1.5.11
       vue: ^3.2.36
       vue-router: ^4.0.15
@@ -941,7 +941,7 @@ importers:
       '@vuepress/utils': 2.0.0-beta.45
       '@vueuse/core': ^8.5.0
       balloon-css: ^1.2.0
-      rimraf: ^3.0.2
+      rimraf: 3.0.2
       ts-debounce: ^4.0.0
       vue: ^3.2.36
       vue-router: ^4.0.15
@@ -971,7 +971,7 @@ importers:
       '@vuepress/core': 2.0.0-beta.45
       '@vuepress/utils': 2.0.0-beta.45
       balloon-css: ^1.2.0
-      rimraf: ^3.0.2
+      rimraf: 3.0.2
       vue: ^3.2.36
       vue-router: ^4.0.15
       vuepress-plugin-sass-palette: workspace:*
@@ -995,7 +995,7 @@ importers:
       '@vuepress/shared': 2.0.0-beta.45
       '@vuepress/utils': 2.0.0-beta.45
       '@vueuse/core': ^8.5.0
-      rimraf: ^3.0.2
+      rimraf: 3.0.2
       vue: ^3.2.36
       vuepress-shared: workspace:*
     dependencies:
@@ -1011,11 +1011,11 @@ importers:
 
   packages/create:
     specifiers:
-      '@types/inquirer': ^8.2.1
-      cac: ^6.7.12
-      execa: ^5.1.1
-      inquirer: ^8.2.4
-      rimraf: ^3.0.2
+      '@types/inquirer': 8.2.1
+      cac: 6.7.12
+      execa: 5.1.1
+      inquirer: 8.2.4
+      rimraf: 3.0.2
     dependencies:
       cac: 6.7.12
       execa: 5.1.1
@@ -1030,7 +1030,7 @@ importers:
       '@vuepress/plugin-git': 2.0.0-beta.45
       '@vuepress/shared': 2.0.0-beta.45
       '@vuepress/utils': 2.0.0-beta.45
-      rimraf: ^3.0.2
+      rimraf: 3.0.2
       vuepress-shared: workspace:*
       xml-js: ^1.6.11
     dependencies:
@@ -1049,7 +1049,7 @@ importers:
       '@vuepress/core': 2.0.0-beta.45
       '@vuepress/utils': 2.0.0-beta.45
       lightgallery: ^2.4.0
-      rimraf: ^3.0.2
+      rimraf: 3.0.2
       vue: ^3.2.36
       vue-router: ^4.0.15
       vuepress-plugin-sass-palette: workspace:*
@@ -1069,7 +1069,7 @@ importers:
   packages/md-enhance:
     specifiers:
       '@babel/core': '*'
-      '@types/babel__core': ^7.1.19
+      '@types/babel__core': 7.1.19
       '@types/katex': ^0.14.0
       '@types/markdown-it': ^12.2.3
       '@types/mermaid': ^8.2.9
@@ -1086,10 +1086,10 @@ importers:
       flowchart.js: ^1.17.1
       katex: ^0.15.6
       markdown-it: ^13.0.1
-      markdown-it-container: ^3.0.0
+      markdown-it-container: 3.0.0
       mermaid: ^9.1.1
       reveal.js: ^4.3.1
-      rimraf: ^3.0.2
+      rimraf: 3.0.2
       ts-debounce: ^4.0.0
       vue: ^3.2.36
       vue-router: ^4.0.15
@@ -1132,7 +1132,7 @@ importers:
       '@vuepress/utils': 2.0.0-beta.45
       '@vueuse/core': ^8.5.0
       photoswipe: ^5.2.7
-      rimraf: ^3.0.2
+      rimraf: 3.0.2
       vue: ^3.2.36
       vue-router: ^4.0.15
       vuepress-plugin-sass-palette: workspace:*
@@ -1159,7 +1159,7 @@ importers:
       '@vueuse/core': ^8.5.0
       mitt: ^3.0.0
       register-service-worker: ^1.7.2
-      rimraf: ^3.0.2
+      rimraf: 3.0.2
       vue: ^3.2.36
       vue-router: ^4.0.15
       vuepress-plugin-sass-palette: workspace:*
@@ -1184,7 +1184,7 @@ importers:
   packages/reading-time2:
     specifiers:
       '@vuepress/core': 2.0.0-beta.45
-      rimraf: ^3.0.2
+      rimraf: 3.0.2
       vuepress-shared: workspace:*
     dependencies:
       vuepress-shared: link:../shared
@@ -1199,7 +1199,7 @@ importers:
       '@vuepress/shared': 2.0.0-beta.45
       '@vuepress/utils': 2.0.0-beta.45
       cac: ^6.7.12
-      rimraf: ^3.0.2
+      rimraf: 3.0.2
       vuepress-shared: workspace:*
     dependencies:
       '@vuepress/cli': 2.0.0-beta.45
@@ -1218,7 +1218,7 @@ importers:
       '@vuepress/core': 2.0.0-beta.45
       '@vuepress/utils': 2.0.0-beta.45
       chokidar: ^3.5.3
-      rimraf: ^3.0.2
+      rimraf: 3.0.2
       sass: ^1.52.1
       vuepress-shared: workspace:*
     dependencies:
@@ -1238,7 +1238,7 @@ importers:
       '@vuepress/plugin-git': 2.0.0-beta.45
       '@vuepress/shared': 2.0.0-beta.45
       '@vuepress/utils': 2.0.0-beta.45
-      rimraf: ^3.0.2
+      rimraf: 3.0.2
       vuepress-shared: workspace:*
     dependencies:
       '@vuepress/shared': 2.0.0-beta.45
@@ -1251,7 +1251,7 @@ importers:
 
   packages/shared:
     specifiers:
-      '@types/connect': ^3.4.35
+      '@types/connect': 3.4.35
       '@vuepress/bundler-vite': 2.0.0-beta.45
       '@vuepress/bundler-webpack': 2.0.0-beta.45
       '@vuepress/client': 2.0.0-beta.45
@@ -1264,8 +1264,8 @@ importers:
       dayjs: ^1.11.2
       execa: ^5.1.1
       ora: ^5.4.1
-      rimraf: ^3.0.2
-      vite: ~2.9.9
+      rimraf: 3.0.2
+      vite: 2.9.9
       vue: ^3.2.36
       vue-router: ^4.0.15
     dependencies:
@@ -1294,7 +1294,7 @@ importers:
       '@vuepress/plugin-git': 2.0.0-beta.45
       '@vuepress/shared': 2.0.0-beta.45
       '@vuepress/utils': 2.0.0-beta.45
-      rimraf: ^3.0.2
+      rimraf: 3.0.2
       sitemap: ^7.1.1
       vuepress-shared: workspace:*
     dependencies:
@@ -1328,7 +1328,7 @@ importers:
       '@vueuse/core': ^8.5.0
       balloon-css: ^1.2.0
       bcrypt-ts: ^1.0.0
-      rimraf: ^3.0.2
+      rimraf: 3.0.2
       ts-debounce: ^4.0.0
       vue: ^3.2.36
       vue-router: ^4.0.15

@@ -47,7 +47,7 @@
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "rimraf": "^3.0.2"
+    "rimraf": "3.0.2"
   },
   "publishConfig": {
     "access": "public"
