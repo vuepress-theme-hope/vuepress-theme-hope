@@ -3,7 +3,8 @@ import MarkdownIt = require("markdown-it");
 import { sup } from "../../src/node/markdown-it/sup";
 
 describe("superscript", () => {
-  const markdownIt = MarkdownIt({ linkify: true }).use(sup);
+  const supOpt = { MUST: { attr: [["class", "badge tip"]], text: "MUST!!" } };
+  const markdownIt = MarkdownIt({ linkify: true }).use(sup, supOpt);
 
   it("Shoud render", () => {
     expect(markdownIt.render(`^test^`)).toEqual("<p><sup>test</sup></p>\n");
@@ -50,5 +51,11 @@ describe("superscript", () => {
     expect(markdownIt.render(`*^f`)).toEqual("<p>*^f</p>\n");
 
     expect(markdownIt.render(`b*^`)).toEqual("<p>b*^</p>\n");
+  });
+
+  it("Should render MUST!!", () => {
+    expect(markdownIt.render(`^MUST^`)).toEqual(
+      '<p><sup class="badge tip">MUST!!</sup></p>\n'
+    );
   });
 });

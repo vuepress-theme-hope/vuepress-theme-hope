@@ -6,6 +6,7 @@ import type { IncludeOptions } from "./include";
 import type { MarkdownEnhanceLocaleData } from "./locales";
 import type { PresentationOptions } from "./presentation";
 import type { TaskListOptions } from "./tasklist";
+import type { SupOptions } from "./sup";
 
 /**
  * md-enhance plugin configuration
@@ -99,7 +100,7 @@ export interface MarkdownEnhanceOptions {
    *
    * @default false
    */
-  sup?: boolean;
+  sup?: boolean | SupOptions;
 
   /**
    * Whether to enable subscript format support

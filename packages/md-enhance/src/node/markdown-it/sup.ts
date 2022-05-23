@@ -27,8 +27,9 @@
 
 import { UNESCAPE_RE } from "./utils";
 
-import type { PluginSimple } from "markdown-it";
+import type { PluginWithOptions } from "markdown-it";
 import type { RuleInline } from "markdown-it/lib/parser_inline";
+import { SupOptions } from "../../shared/sup";
 
 const superscriptRender: RuleInline = (state, silent) => {
   let found;
@@ -87,6 +88,24 @@ const superscriptRender: RuleInline = (state, silent) => {
   return true;
 };
 
-export const sup: PluginSimple = (md) => {
+export const sup: PluginWithOptions<SupOptions> = (md, opt) => {
   md.inline.ruler.after("emphasis", "sup", superscriptRender);
+
+  if (opt) {
+    md.renderer.rules.sup_open = (tokens, idx, options, _, self): string => {
+      const txt = tokens[idx + 1];
+      const rep = opt[txt.content];
+
+      if (rep) {
+        for (const ar of rep.attr) {
+          tokens[idx].attrPush(ar);
+        }
+        if (rep.text) {
+          txt.content = rep.text;
+        }
+      }
+
+      return self.renderToken(tokens, idx, options);
+    };
+  }
 };
