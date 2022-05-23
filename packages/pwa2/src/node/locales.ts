@@ -171,4 +171,20 @@ export const pwaLocales: PWALocaleConfig = {
     hint: "New content found.",
     update: "New content is available.",
   },
+
+  "/es/": {
+    install: "Instalar",
+    iOSInstall:
+      "Toque el botón compartir y luego 'Agregar a la pantalla de inicio'",
+    cancel: "Cancelar",
+    close: "Cerrar",
+    prevImage: "Imagen anterior",
+    nextImage: "Imagen siguiente",
+    desc: "Descripción",
+    feature: "Características clave",
+    explain:
+      "Esta aplicación se puede instalar en su PC o dispositivo móvil. Esto permitirá que esta aplicación web se vea y se comporte como cualquier otra aplicación instalada. Lo encontrará en su lista de aplicaciones y podrá fijarlo a su pantalla de inicio, menús de inicio o barras de tareas. Esta aplicación web instalada también podrá interactuar de manera segura con otras aplicaciones y su sistema operativo.",
+    hint: "Nuevo contenido encontrado.",
+    update: "Hay nuevo contenido disponible.",
+  },
 };

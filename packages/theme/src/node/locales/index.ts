@@ -1,6 +1,7 @@
 import { brLocale } from "./br";
 import { deLocale } from "./de";
 import { enLocale } from "./en";
+import { esLocale } from "./es";
 import { frLocale } from "./fr";
 import { ruLocale } from "./ru";
 import { skLocale } from "./sk";
@@ -31,4 +32,6 @@ export const themeLocalesData: Record<string, HopeThemeLocaleData> = {
   "/sk/": skLocale,
 
   "/fr/": frLocale,
+
+  "/es/": esLocale,
 };

@@ -56,4 +56,9 @@ export const walineLocales: WalineLocaleConfig = {
     placeholder:
       "Écrivez votre commentaire ici (Inscrivez votre email afin de recevoir une notification en cas de réponse)",
   },
+
+  "/es/": {
+    placeholder:
+      "Escriba un comentario aquí (Ingrese su correo electrónico para recibir una notificación en caso de respuesta)",
+  },
 };

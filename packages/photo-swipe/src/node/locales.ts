@@ -99,4 +99,13 @@ export const photoSwipeLocales: PhotoSwipeLocaleConfig = {
     arrowPrev: "Précédent (Flèche gauche)",
     arrowNext: "Suivant (Flèche droite)",
   },
+
+  "/es/": {
+    close: "Cerrar",
+    download: "Descargar imagen",
+    fullscreen: "Cambiar a pantalla completa",
+    zoom: "Acercar/Alejar",
+    arrowPrev: "Anterior (Flecha izquierda)",
+    arrowNext: "Siguiente (Flecha derecha)",
+  },
 };
