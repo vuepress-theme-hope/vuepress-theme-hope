@@ -21,7 +21,7 @@
     "@vuepress/plugin-pwa-popup": "2.0.0-beta.45",
     "@vuepress/plugin-shiki": "2.0.0-beta.45",
     "cross-env": "7.0.3",
-    "sass-loader": "12.6.0",
+    "sass-loader": "13.0.0",
     "vue": "3.2.36",
     "vuepress-theme-hope": "workspace:*",
     "vuepress-vite": "2.0.0-beta.45",

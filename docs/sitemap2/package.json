@@ -23,7 +23,7 @@
     "@vuepress/client": "2.0.0-beta.45",
     "@vuepress/plugin-docsearch": "2.0.0-beta.45",
     "@vuepress/utils": "2.0.0-beta.45",
-    "sass-loader": "12.6.0",
+    "sass-loader": "13.0.0",
     "three": "0.140.2",
     "vue": "3.2.36",
     "vuepress-plugin-sitemap2": "workspace:*",
