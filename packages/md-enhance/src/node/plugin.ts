@@ -149,6 +149,7 @@ export const mdEnhancePlugin =
       },
 
       extendsMarkdown: (markdownIt): void => {
+        if (getStatus("gfm")) markdownIt.options.linkify = true;
         if (getStatus("lazyLoad")) markdownIt.use(lazyLoad);
         if (imageMarkEnable)
           markdownIt.use(
