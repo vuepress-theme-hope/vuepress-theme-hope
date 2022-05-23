@@ -77,7 +77,9 @@ export const prepareConfigFile = (
         if (type === "script") isUseScriptTagImported = true;
 
         configImport += `import { ${composableName} } from "${CLIENT_FOLDER}composables";\n`;
-        setup += `${composableName}(\`${content}\`);\n`;
+        setup += `${composableName}(\`${content}\`${
+          type === "style" ? ', { id: "icon" }' : ""
+        });\n`;
       }
     }
   });
