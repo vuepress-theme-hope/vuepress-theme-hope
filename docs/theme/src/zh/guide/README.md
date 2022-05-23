@@ -37,7 +37,7 @@ tag:
 - [上下角标](markdown/sup-sub.md)
 - [代码演示](markdown/demo.md)
 - [幻灯片](markdown/presentation.md)
-- [徽章 `<Badge />`](markdown/components.md#badge) 在官方基础上增加了颜色支持
+- [开箱即用的组件](markdown/components.md)
 - [自定义主题](interface/code-theme.md)
 
 ### 布局

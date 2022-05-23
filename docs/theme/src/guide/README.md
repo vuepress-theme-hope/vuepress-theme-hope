@@ -37,7 +37,7 @@ Added more syntax to Markdown, enriching documentation and blog writing:
 - [Subscript and Supercript](markdown/sup-sub.md)
 - [Code demo](markdown/demo.md)
 - [Presentation](markdown/presentation.md)
-- [`<Badge />`](markdown/components.md#badge): Add color support
+- [Components out of box](markdown/components.md)
 - [Customize Themes](interface/code-theme.md)
 
 ### Layout
