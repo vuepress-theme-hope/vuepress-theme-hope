@@ -70,12 +70,12 @@
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.9",
-    "@types/babel__core": "^7.1.19",
+    "@babel/core": "7.18.0",
+    "@types/babel__core": "7.1.19",
     "@vuepress/core": "2.0.0-beta.45",
     "@vuepress/markdown": "2.0.0-beta.45",
-    "markdown-it-container": "^3.0.0",
-    "rimraf": "^3.0.2"
+    "markdown-it-container": "3.0.0",
+    "rimraf": "3.0.2"
   },
   "peerDependencies": {
     "sass-loader": "^12.6.0"
