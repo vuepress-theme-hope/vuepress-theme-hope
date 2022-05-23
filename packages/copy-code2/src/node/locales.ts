@@ -56,4 +56,9 @@ export const copyCodeLocales: CopyCodeLocaleConfig = {
     copy: "Copié avec succès",
     hint: "Copier le code",
   },
+
+  "/es/": {
+    copy: "Copiado con éxito",
+    hint: "Copiar código",
+  },
 };
