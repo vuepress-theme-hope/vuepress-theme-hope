@@ -2,9 +2,11 @@ import { ensureEndingSlash } from "@vuepress/shared";
 import { path } from "@vuepress/utils";
 
 import type { App } from "@vuepress/core";
-import type { ThemeStatus } from "./status";
+import type { ThemeStatus } from "../status";
 
-const CLIENT_FOLDER = ensureEndingSlash(path.resolve(__dirname, "../client"));
+const CLIENT_FOLDER = ensureEndingSlash(
+  path.resolve(__dirname, "../../client")
+);
 
 export const prepareConfigFile = (
   app: App,

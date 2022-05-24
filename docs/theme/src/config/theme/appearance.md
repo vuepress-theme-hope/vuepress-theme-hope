@@ -1,7 +1,7 @@
 ---
 title: Theme Appearance Options
 icon: config
-index: 5
+order: 5
 category:
   - Config
 tag:

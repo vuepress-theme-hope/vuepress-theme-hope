@@ -1,7 +1,7 @@
 ---
 title: 代码块分组
 icon: code
-index: 4
+order: 4
 category:
   - Markdown
 tag:

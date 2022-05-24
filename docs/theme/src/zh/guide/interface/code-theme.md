@@ -1,7 +1,7 @@
 ---
 title: 代码主题
 icon: style
-index: 4
+order: 4
 category:
   - 界面
 tag:

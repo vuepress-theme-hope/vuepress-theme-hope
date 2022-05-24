@@ -1,7 +1,7 @@
 ---
 title: 分类与标签
 icon: tag
-index: 4
+order: 4
 category:
   - 博客
 tag:

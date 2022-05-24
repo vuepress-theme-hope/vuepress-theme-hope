@@ -1,7 +1,7 @@
 ---
 title: 组件
 icon: plugin
-index: 17
+order: 17
 category:
   - Markdown
 tag:

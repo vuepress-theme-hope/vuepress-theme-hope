@@ -1,7 +1,7 @@
 ---
 title: 代码演示
 icon: discover
-index: 15
+order: 15
 category:
   - Markdown
 tag:

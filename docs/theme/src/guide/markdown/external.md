@@ -1,7 +1,7 @@
 ---
 title: External import
 icon: link
-index: 18
+order: 18
 cateogry:
   - Markdown
 tag:

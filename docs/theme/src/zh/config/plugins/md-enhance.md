@@ -1,7 +1,7 @@
 ---
 title: MdEnhance 插件配置
 icon: markdown
-index: 6
+order: 6
 category:
   - 配置
 tag:

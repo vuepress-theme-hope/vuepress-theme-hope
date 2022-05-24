@@ -1,7 +1,7 @@
 ---
 title: 安装/使用
 icon: install
-index: 2
+order: 2
 category:
   - 快速上手
 tag:

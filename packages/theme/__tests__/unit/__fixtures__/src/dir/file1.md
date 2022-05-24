@@ -1,6 +1,6 @@
 ---
-title: File1
-index: 2
+title: File 1
+order: -1
 ---
 
 Content

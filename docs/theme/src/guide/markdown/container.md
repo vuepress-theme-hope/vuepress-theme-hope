@@ -1,7 +1,7 @@
 ---
 title: Custom container
 icon: customize
-index: 2
+order: 2
 category:
   - Markdown
 tag:

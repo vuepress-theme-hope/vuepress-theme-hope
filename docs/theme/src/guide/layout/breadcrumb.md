@@ -1,7 +1,7 @@
 ---
 title: Path Navigation
 icon: navigation
-index: 3
+order: 3
 category:
   - Layout
 tag:

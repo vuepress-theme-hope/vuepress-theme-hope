@@ -3,7 +3,7 @@ title: 布局
 icon: layout
 index: false
 dir:
-  index: 4
+  order: 4
 ---
 
 ## 目录

@@ -3,7 +3,7 @@ title: Interface
 icon: palette
 index: false
 dir:
-  index: 2
+  order: 2
 ---
 
 ## Catalog

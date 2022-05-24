@@ -1,7 +1,7 @@
 ---
 title: 信息 Frontmatter 配置
 icon: config
-index: 1
+order: 1
 category:
   - 配置
 tag:

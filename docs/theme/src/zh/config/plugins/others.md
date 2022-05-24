@@ -1,7 +1,7 @@
 ---
 title: 其他插件选项
 icon: more
-index: 8
+order: 8
 category:
   - 配置
 tag:

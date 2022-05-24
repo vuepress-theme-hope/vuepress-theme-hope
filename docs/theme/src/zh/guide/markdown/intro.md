@@ -1,7 +1,7 @@
 ---
 title: 启用 Markdown 增强
 icon: enable
-index: 1
+order: 1
 category:
   - Markdown
 tag:

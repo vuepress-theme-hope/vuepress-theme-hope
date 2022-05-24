@@ -1,7 +1,7 @@
 ---
 title: 外部引入
 icon: link
-index: 18
+order: 18
 cateogry:
   - Markdown
 tag:

@@ -1,7 +1,7 @@
 ---
 title: Plugin Frontmatter Config
 icon: config
-index: 3
+order: 3
 category:
   - Config
 tag:

@@ -1,7 +1,7 @@
 ---
 title: Custom alignment
 icon: align
-index: 7
+order: 7
 category:
   - Markdown
 tag:

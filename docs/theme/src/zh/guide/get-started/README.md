@@ -3,7 +3,7 @@ title: 快速上手
 icon: creative
 index: false
 dir:
-  index: 1
+  order: 1
 ---
 
 ## 目录

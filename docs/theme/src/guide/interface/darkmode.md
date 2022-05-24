@@ -1,7 +1,7 @@
 ---
 title: Darkmode
 icon: contrast
-index: 1
+order: 1
 category:
   - Interface
 tag:

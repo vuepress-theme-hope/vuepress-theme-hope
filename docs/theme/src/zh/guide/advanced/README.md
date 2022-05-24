@@ -3,7 +3,7 @@ title: 高级
 icon: advance
 index: false
 dir:
-  index: 7
+  order: 7
 category:
   - 高级
 tag:

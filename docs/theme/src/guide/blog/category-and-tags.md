@@ -1,7 +1,7 @@
 ---
 title: Category and tags
 icon: tag
-index: 4
+order: 4
 category:
   - Blog
 tag:

@@ -1,7 +1,7 @@
 ---
 title: Theme Feature Options
 icon: config
-index: 3
+order: 3
 category:
   - Config
 tag:

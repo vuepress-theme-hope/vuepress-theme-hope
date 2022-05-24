@@ -1,7 +1,7 @@
 ---
 title: 深色模式
 icon: contrast
-index: 1
+order: 1
 category:
   - 界面
 tag:

@@ -12,13 +12,22 @@ export interface HopeThemeNormalPageFrontmatter
   home?: false;
 
   /**
-   * Page index
+   * Whether index current page
    *
-   * 页面序号
+   * 是否索引此页面
    *
    * @default true
    */
-  index?: number | boolean;
+  index?: boolean;
+
+  /**
+   * Page order in sidebar
+   *
+   * 页面在侧边栏的顺序
+   *
+   * @default 0
+   */
+  order?: number | false;
 
   /**
    * Dir config
@@ -77,13 +86,22 @@ export interface HopeThemeNormalPageFrontmatter
     link?: boolean;
 
     /**
-     * Dir index
+     * Whether index current dir
      *
-     * 目录序号
+     * 是否索引此目录
      *
      * @default true
      */
-    index?: number | boolean;
+    index?: boolean;
+
+    /**
+     * Dir order in sidebar
+     *
+     * 目录在侧边栏中的顺序
+     *
+     * @default 0
+     */
+    order?: number | false;
   };
 
   /**

@@ -1,7 +1,7 @@
 ---
 title: Pure Mode
 icon: leaf
-index: 7
+order: 7
 ---
 
 If your site is a documentation-only site and you prefer a clean style, you can enable pure mode by setting `pure: true` in theme options.

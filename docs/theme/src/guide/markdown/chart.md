@@ -1,7 +1,7 @@
 ---
 title: Chart
 icon: rank
-index: 10
+order: 10
 category:
   - Markdown
 tag:

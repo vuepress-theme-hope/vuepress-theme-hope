@@ -1,7 +1,7 @@
 ---
 title: Task list
 icon: check
-index: 6
+order: 6
 category:
   - Markdown
 tag:

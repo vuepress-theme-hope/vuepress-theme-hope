@@ -1,7 +1,7 @@
 ---
 title: 博客首页
 icon: home
-index: 6
+order: 6
 category:
   - 博客
 tag:

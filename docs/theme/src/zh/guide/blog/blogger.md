@@ -1,7 +1,7 @@
 ---
 title: 博主信息
 icon: blog
-index: 2
+order: 2
 category:
   - 博客
 tag:

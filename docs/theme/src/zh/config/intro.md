@@ -1,7 +1,7 @@
 ---
 title: 配置介绍
 icon: config
-index: 1
+order: 1
 category:
   - 配置
 tag:

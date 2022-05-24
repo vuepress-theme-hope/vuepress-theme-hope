@@ -1,7 +1,7 @@
 ---
 title: Theme Basic Options
 icon: config
-index: 2
+order: 2
 category:
   - Config
 tag:

@@ -1,7 +1,7 @@
 ---
 title: Feed 插件配置
 icon: rss
-index: 5
+order: 5
 category:
   - 配置
 tag:

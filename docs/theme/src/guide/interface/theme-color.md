@@ -1,7 +1,7 @@
 ---
 title: Theme Color
 icon: palette
-index: 2
+order: 2
 category:
   - Interface
 tag:

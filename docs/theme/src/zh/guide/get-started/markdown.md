@@ -1,7 +1,7 @@
 ---
 title: Markdown
 icon: markdown
-index: 3
+order: 3
 category:
   - 快速上手
 tag:
