@@ -156,6 +156,26 @@ importers:
       vuepress-vite: 2.0.0-beta.45_kbyddfdhnjocqnfjxymhwyzbfi
       vuepress-webpack: 2.0.0-beta.45_aabworq65havjr2ctrw5kbxwnu
 
+  demo/components:
+    specifiers:
+      '@vuepress/cli': 2.0.0-beta.45
+      '@vuepress/client': 2.0.0-beta.45
+      '@vuepress/theme-default': 2.0.0-beta.45
+      sass-loader: 12.6.0
+      vue: 3.2.36
+      vuepress-plugin-components: workspace:*
+      vuepress-vite: 2.0.0-beta.45
+      vuepress-webpack: 2.0.0-beta.45
+    devDependencies:
+      '@vuepress/cli': 2.0.0-beta.45
+      '@vuepress/client': 2.0.0-beta.45
+      '@vuepress/theme-default': 2.0.0-beta.45_sass-loader@12.6.0
+      sass-loader: 12.6.0
+      vue: 3.2.36
+      vuepress-plugin-components: link:../../packages/components
+      vuepress-vite: 2.0.0-beta.45_kbyddfdhnjocqnfjxymhwyzbfi
+      vuepress-webpack: 2.0.0-beta.45_aabworq65havjr2ctrw5kbxwnu
+
   demo/copy-code2:
     specifiers:
       '@vuepress/cli': 2.0.0-beta.45
