@@ -29,7 +29,7 @@ const resolveFromFrontmatterConfig = (
 ): null | false | AutoLinkType => {
   if (conf === false) return false;
 
-  if (isString(conf)) return useAutoLink(conf);
+  if (isString(conf)) return useAutoLink(conf, true);
 
   if (isPlainObject<AutoLinkType>(conf)) return conf;
 

@@ -10,7 +10,7 @@ import type { AutoLink } from "../../shared";
  * - Input: '/README.md'
  * - Output: { text: 'Home', link: '/' }
  */
-export const useAutoLink = (item: string, preferFull = true): AutoLink => {
+export const useAutoLink = (item: string, preferFull = false): AutoLink => {
   const router = useRouter();
   const resolved = resolveRouteWithRedirect(router, encodeURI(item));
 
