@@ -10,6 +10,8 @@ export const isActiveSidebarItem = (
 ): boolean => {
   if (isActiveLink(route, item.link)) return true;
 
+  if ("prefix" in item && isActiveLink(route, item.prefix)) return true;
+
   if (item.children && !exact)
     return item.children.some((child) => isActiveSidebarItem(route, child));
 

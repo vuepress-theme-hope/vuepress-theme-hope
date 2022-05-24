@@ -171,6 +171,16 @@ const getGeneratePaths = (
 ): string[] => {
   const result: string[] = [];
 
+  if (!Array.isArray(sidebarConfig)) {
+    logger.error(
+      `Expecting array, but getting invalid sidebar config${
+        prefix ? ` under ${prefix}` : ""
+      } with: ${JSON.stringify(sidebarConfig)}`
+    );
+
+    return result;
+  }
+
   sidebarConfig.forEach((item) => {
     // it’s a sidebar group config
     if (typeof item === "object" && "children" in item) {
