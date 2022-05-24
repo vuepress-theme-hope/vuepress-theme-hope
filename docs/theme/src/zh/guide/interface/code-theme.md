@@ -67,7 +67,7 @@ tag:
 - shades-of-purple
 - solarized-dark-atom
 - tomorrow
-- vsc-dark
+- vsc-dark-plus
 - xonokai
 - z-touch
 
