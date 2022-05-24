@@ -52,6 +52,17 @@ Editor height in px.
 
 Editor theme
 
+### status
+
+- Type: `"autoload" | "preview" | "clicktorun"`
+- Default: `"preview"`
+
+CodePen embed demo status.
+
+- `"autoload"`: The demo will be loaded when the page is loaded.
+- `"preview"`: The code of demo will be loaded and a preview button will be shown.
+- `"clicktorun"`: The demo will only be loaded after user clicks the "Run Code" button.
+
 ### defaultTab
 
 - Type: `string[]`
@@ -63,13 +74,7 @@ Default opened editor tab.
 
 A demo with user and slug hash:
 
-<CodePen
-  user="kowlor"
-  slug-hash="ZYYQoy"
-  title="Solar System animation - Pure CSS"
-  :default-tab="['css','result']"
-  :theme="$isDarkmode? 'dark': 'light'"
-/>
+<CodePen user="kowlor" slug-hash="ZYYQoy" title="Solar System animation - Pure CSS" :default-tab="['css','result']" :theme="$isDarkMode? 'dark': 'light'" />
 
 ```md
 <CodePen
@@ -77,24 +82,33 @@ A demo with user and slug hash:
   slug-hash="ZYYQoy"
   title="Solar System animation - Pure CSS"
   :default-tab="['css','result']"
-  :theme="$isDarkmode? 'dark': 'light'"
+  :theme="$isDarkMode? 'dark': 'light'"
 />
 ```
 
 A demo with link:
 
-<CodePen
-  link="https://codepen.io/kowlor/pen/ZYYQoy"
-  title="Solar System animation - Pure CSS"
-  :default-tab="['css','result']"
-  :theme="$isDarkmode? 'dark': 'light'"
-/>
+<CodePen link="https://codepen.io/kowlor/pen/ZYYQoy" title="Solar System animation - Pure CSS" :default-tab="['css','result']" :theme="$isDarkMode? 'dark': 'light'" />
 
 ```md
 <CodePen
   link="https://codepen.io/kowlor/pen/ZYYQoy"
   title="Solar System animation - Pure CSS"
   :default-tab="['css','result']"
-  :theme="$isDarkmode? 'dark': 'light'"
+  :theme="$isDarkMode? 'dark': 'light'"
+/>
+```
+
+A click to run demo:
+
+<CodePen link="https://codepen.io/keginaring/pen/XWZazwW" title="Solar System animation - Pure CSS" status="clicktorun" :theme="$isDarkMode? 'dark': 'light'" />
+
+```md
+<CodePen
+  link="https://codepen.io/kowlor/pen/ZYYQoy"
+  title="Envelope w/ Hearts"
+  status="clicktorun"
+  :default-tab="['css','result']"
+  :theme="$isDarkMode? 'dark': 'light'"
 />
 ```

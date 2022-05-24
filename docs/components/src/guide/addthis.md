@@ -1,6 +1,5 @@
 ---
 title: AddThis
-icon: creative
 ---
 
 ## Register

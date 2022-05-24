@@ -28,7 +28,8 @@ export default [
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/CodePen", {
-    external: ["@vueuse/core", "vue"],
+    external: ["@vueuse/core", "vue", /\.scss$/],
+    dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/FontIcon", {
     external: ["vue", /\.scss$/],

@@ -1,0 +1,31 @@
+.codepen-wrapper {
+  margin: 1rem auto;
+  padding: 1rem;
+  border: 1px solid var(--c-border, #eaecef);
+  text-align: center;
+
+  .codepen-button {
+    display: block;
+
+    margin: 16px auto;
+    padding: 8px 16px;
+    border: 1px solid var(--c-brand, #3eaf7c);
+    border-radius: 4px;
+
+    background-color: transparent;
+    color: var(--c-brand, #3eaf7c);
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--c-brand-light, #4abf8a);
+      color: var(--c-bg, #fff);
+    }
+  }
+}
+
+iframe[src*="codepen.io"] {
+  border-radius: 8px;
+}

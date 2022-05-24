@@ -41,4 +41,4 @@ import AppearanceSwitch from '@theme-hope/module/outlook/components/AppearanceSw
 
 ## Global Vairables
 
-`$isDarkmode` is avaiable in all markdown files.
+`$isDarkMode` is avaiable in all markdown files.
