@@ -10,10 +10,26 @@ export const isActiveSidebarItem = (
 ): boolean => {
   if (isActiveLink(route, item.link)) return true;
 
-  if ("prefix" in item && isActiveLink(route, item.prefix)) return true;
-
   if (item.children && !exact)
     return item.children.some((child) => isActiveSidebarItem(route, child));
+
+  return false;
+};
+
+export const isMatchedSidebarItem = (
+  route: RouteLocationNormalizedLoaded,
+  item: ResolvedSidebarItem
+): boolean => {
+  if (item.type === "group")
+    return item.children.some((child) => {
+      if (child.type === "group")
+        return (
+          isMatchedSidebarItem(route, child) ||
+          ("prefix" in child && isActiveLink(route, child.prefix))
+        );
+
+      return child.type === "page" && isActiveSidebarItem(route, child, true);
+    });
 
   return false;
 };
