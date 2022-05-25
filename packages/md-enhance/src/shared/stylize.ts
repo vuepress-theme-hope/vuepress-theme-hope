@@ -8,7 +8,7 @@
  * @since 2022-05-25
  * @see {@link http://github.com/trydofor | trydofor}
  */
-import { MarkdownEnv } from "@vuepress/markdown";
+import type { MarkdownEnv } from "@vuepress/markdown";
 
 export type StylizeOption = Record<
   /**
