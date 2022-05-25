@@ -32,6 +32,7 @@ import {
   tasklist,
   vPre,
   vueDemo,
+  stylize,
 } from "./markdown-it";
 import { prepareConfigFile, prepareRevealPluginFile } from "./prepare";
 import { usePlugins } from "./usePlugins";
@@ -194,6 +195,7 @@ export const mdEnhancePlugin =
         if (texEnable) markdownIt.use(katex, katexOptions);
         if (presentationEnable) markdownIt.use(presentation);
         if (getStatus("vpre")) markdownIt.use(vPre);
+        if (getStatus("stylize")) markdownIt.use(stylize, options.stylize);
       },
 
       extendsPage: (page, app): void => {
