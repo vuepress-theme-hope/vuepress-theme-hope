@@ -41,7 +41,7 @@ importers:
       prettier: 2.6.2
       rollup: 2.74.1
       rollup-plugin-copy: 3.4.0
-      rollup-plugin-dts: 4.2.1
+      rollup-plugin-dts: 4.2.2
       rollup-plugin-terser: 7.0.2
       sort-package-json: 1.57.0
       standard-version: 9.5.0
@@ -92,7 +92,7 @@ importers:
       prettier: 2.6.2
       rollup: 2.74.1
       rollup-plugin-copy: 3.4.0
-      rollup-plugin-dts: 4.2.1_durm56y4qsrp7annnznb67puce
+      rollup-plugin-dts: 4.2.2_durm56y4qsrp7annnznb67puce
       rollup-plugin-terser: 7.0.2_rollup@2.74.1
       sort-package-json: 1.57.0
       standard-version: 9.5.0
@@ -11165,12 +11165,12 @@ packages:
       is-plain-object: 3.0.1
     dev: true
 
-  /rollup-plugin-dts/4.2.1_durm56y4qsrp7annnznb67puce:
-    resolution: {integrity: sha512-eaxQZNUJ5iQcxNGlpJ1CUgG4OSVqWjDZ3nNSWBIoGrpcote2aNphSe1RJOaSYkb8dwn3o+rYm1vvld/5z3EGSQ==}
+  /rollup-plugin-dts/4.2.2_durm56y4qsrp7annnznb67puce:
+    resolution: {integrity: sha512-A3g6Rogyko/PXeKoUlkjxkP++8UDVpgA7C+Tdl77Xj4fgEaIjPSnxRmR53EzvoYy97VMVwLAOcWJudaVAuxneQ==}
     engines: {node: '>=v12.22.11'}
     peerDependencies:
-      rollup: ^2.70
-      typescript: ^4.6
+      rollup: ^2.55
+      typescript: ^4.1
     dependencies:
       magic-string: 0.26.2
       rollup: 2.74.1
