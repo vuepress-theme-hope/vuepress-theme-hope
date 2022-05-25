@@ -29,7 +29,7 @@ export default defineUserConfig({
   plugins: [
     componentsPlugin({
       addThis: "ra-5f829c59e6c6bc9a",
-      components: ["Badge", "CodePen", "FontIcon", "PDF"],
+      components: ["Badge", "CodePen", "FontIcon", "PDF", "StackBlitz"],
       iconAssets: "//at.alicdn.com/t/font_2410206_a0xb9hku9iu.css",
     }),
   ],

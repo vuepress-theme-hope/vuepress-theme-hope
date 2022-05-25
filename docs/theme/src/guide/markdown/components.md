@@ -129,7 +129,26 @@ PDF viewer with initial page 2:
 
 See [PDF][pdf] page for available props.
 
+## StackBlitz
+
+Embed StackBlitz demo in markdown files.
+
+<StackBlitz id="vuepress-theme-hope" />
+
+```md
+<StackBlitz id="vuepress-theme-hope" />
+```
+
+<StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hidedevtools />
+
+```md
+<StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hidedevtools />
+```
+
+See [StackBlitz][stackblitz] page for available props.
+
 [badge]: https://vuepress-theme-hope.github.io/v2/components/guide/badge.html
 [codepen]: https://vuepress-theme-hope.github.io/v2/components/guide/codepen.html
 [fonticon]: https://vuepress-theme-hope.github.io/v2/components/guide/fonticon.html
 [pdf]: https://vuepress-theme-hope.github.io/v2/components/guide/pdf.html
+[stackblitz]: https://vuepress-theme-hope.github.io/v2/components/guide/stackblitz.html

@@ -128,7 +128,26 @@ PDF 浏览器组件。
 
 有关可用属性，请参阅 [PDF][pdf] 页面。
 
+## StackBlitz
+
+在 Markdown 文件中嵌入 StackBlitz 演示。
+
+<StackBlitz id="vuepress-theme-hope" />
+
+```md
+<StackBlitz id="vuepress-theme-hope" />
+```
+
+<StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hidedevtools />
+
+```md
+<StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hidedevtools />
+```
+
+有关可用属性，请参阅 [StackBlitz][stackblitz] 页面。
+
 [badge]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/badge.html
 [codepen]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/codepen.html
 [fonticon]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/fonticon.html
 [pdf]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/pdf.html
+[stackblitz]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/stackblitz.html

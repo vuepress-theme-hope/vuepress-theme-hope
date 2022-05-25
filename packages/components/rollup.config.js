@@ -39,6 +39,9 @@ export default [
     external: ["@vuepress/client", "vue", /\.scss$/],
     dtsExternal: [/\.scss$/],
   }),
+  ...rollupTypescript("client/components/StackBlitz", {
+    external: ["vue"],
+  }),
   ...rollupTypescript("client/composables/index", {
     external: ["@vueuse/core"],
   }),

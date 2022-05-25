@@ -26,3 +26,5 @@ This plugin register 4 components and 2 global component:
 - [FontIcon](fonticon.md)
 
 - [PDF](pdf.md)
+
+- [StackBlitz](stackblitz.md)
