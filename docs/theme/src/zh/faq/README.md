@@ -47,7 +47,7 @@ category:
   - 打开开发服务器网页控制台，并提供相关错误截图 (如果有)
   - 如果你的问题与显示有关，请同时提供网页相关截图。
 
-- 如果有你遇到了使用问题不知道如何结局，我们也欢迎你在 GitHub 上 [新开一个讨论](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions/new)。问题总是受欢迎的，无论**它们是否简单**。你只需要确保三点:
+- 如果有你遇到了使用问题但不知道如何解决，我们也欢迎你在 GitHub 上 [新开一个讨论](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions/new)。问题总是受欢迎的，无论**它们是否简单**。你只需要确保三点:
 
   1. 你已经尝试过搜索相关文档。
 

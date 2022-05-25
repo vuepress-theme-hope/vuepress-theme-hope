@@ -71,7 +71,7 @@ export interface HopeThemeBlogPluginOptions
    *
    * @default '/slide/'
    */
-  slides?: string;
+  slide?: string;
 
   /**
    * Path of star article list

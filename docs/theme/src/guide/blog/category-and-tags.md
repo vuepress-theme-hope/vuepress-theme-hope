@@ -37,9 +37,9 @@ Then you can find it under the `/category/html` page.
 
 ## Tags
 
-Just add the `tags` array to the frontmatter of the page, and set the tag to which one or more articles belong, and the article will be automatically rendered in the list of the `/tag/<tag name>/` tag page.
+Just set `tag` option in page frontmatter , and set value to one or more tags, then the article will be automatically rendered in the list of the `/tag/<tag name>/` tag page.
 
-For example, add this in a certain page:
+For example, after adding this in frontmatter:
 
 ```md
 ---

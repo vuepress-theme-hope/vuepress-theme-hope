@@ -114,9 +114,11 @@ By default, the title will be used as value of tab, but you can override it usin
 :::
 ```
 
-:::: info Events
+:::: info Switching together and persisting choise
 
 If you want to make some tab groups switch together, you can use same tab id to bind them. Here is an exmple:
+
+Also, your choise with that tab id will be stored and persisted.
 
 Choose a package manager:
 
