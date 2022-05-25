@@ -21,6 +21,6 @@ The default paths provided by the blog are as follows, if they conflict with you
 | `tag`          | Tag map page                  | `/tag/`            |
 | `tagItem`      | list of specific tags         | `/tag/:name/`      |
 | `encrypted`    | List of encrypted articles    | `/encrypted/`      |
-| `slides`       | List of slides                | `/encrypted/`      |
-| `star`         | List of starred articles      | `/encrypted/`      |
+| `slide`        | List of slides                | `/slides/`         |
+| `star`         | List of starred articles      | `/star/`           |
 | `timeline`     | Timeline list                 | `/timeline/`       |

@@ -211,13 +211,13 @@ tag:
 
     - `feed.output.atom.enable` 重命名为 `plugins.feed.atom` ![警告](https://img.shields.io/badge/-warning-yellow)
 
-    - `feed.output.json.enable.` 重命名为 `plugins.feed.json` ![警告](https://img.shields.io/badge/-warning-yellow)
+    - `feed.output.json.enable` 重命名为 `plugins.feed.json` ![警告](https://img.shields.io/badge/-warning-yellow)
 
     - `feed.output.rss.enable` 重命名为 `plugins.feed.rss` ![警告](https://img.shields.io/badge/-warning-yellow)
 
-    - `feed.output.atom.path.` 重命名为 `plugins.feed.atomOutputFilename` ![警告](https://img.shields.io/badge/-warning-yellow)
+    - `feed.output.atom.path` 重命名为 `plugins.feed.atomOutputFilename` ![警告](https://img.shields.io/badge/-warning-yellow)
 
-    - `feed.output.json.path.` 重命名为 `plugins.feed.jsonOutputFilename` ![警告](https://img.shields.io/badge/-warning-yellow)
+    - `feed.output.json.path` 重命名为 `plugins.feed.jsonOutputFilename` ![警告](https://img.shields.io/badge/-warning-yellow)
 
     - `feed.output.rss.path` 重命名为 `plugins.feed.rssOutputFilename` ![警告](https://img.shields.io/badge/-warning-yellow)
 
@@ -240,18 +240,6 @@ tag:
   - 图像标记支持 ![新增](https://img.shields.io/badge/-新增-brightgreen)
 
     通过 `plugins.mdEnhance.imageMark` 使用 `#light` 和 `#dark` 后缀标记图像以在日间模式或夜间模式下显示它们。
-
-  - `v-pre` 支持
-
-    VuePress 2 从 `@vuepress/core` 中删除了以下容器支持，因此添加了此选项
-
-    ```md
-    ::: v-pre
-
-    一些 {{vue 语法}}。
-
-    :::
-    ```
 
   - Chart.js 支持 ![新增](https://img.shields.io/badge/-新增-brightgreen)
 
@@ -327,10 +315,12 @@ tag:
 
   - `plugins.mdEnhance.vpre` ![新增](https://img.shields.io/badge/-新增-brightgreen)
 
-    VuePress2 不再内置下列语法。
+    VuePress 2 从 `@vuepress/core` 中删除了以下容器支持，因此添加了此选项
 
     ```md
     ::: v-pre
+
+    一些 {{vue 语法}}。
 
     :::
     ```

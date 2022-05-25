@@ -78,10 +78,10 @@ Tag list route path. `:name` will be replaced by tag name.
 
 Encrypted articles list route path.
 
-### slides
+### slide
 
 - Type: `string`
-- Default: `/slides/`
+- Default: `/slide/`
 
 Slides list route path.
 

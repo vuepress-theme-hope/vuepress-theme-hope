@@ -74,14 +74,14 @@ tag:
 ### encrypted
 
 - 类型: `string`
-- 默认值: `/encrypt/`
+- 默认值: `/encrypted/`
 
 加密文章列表路由路径。
 
-### slides
+### slide
 
 - 类型: `string`
-- 默认值: `/slides/`
+- 默认值: `/slide/`
 
 幻灯片列表路由路径。
 
