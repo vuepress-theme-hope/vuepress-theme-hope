@@ -6,7 +6,7 @@ import type { IncludeOptions } from "./include";
 import type { MarkdownEnhanceLocaleData } from "./locales";
 import type { PresentationOptions } from "./presentation";
 import type { TaskListOptions } from "./tasklist";
-import { StylizeOption } from './stylize';
+import { StylizeOption } from "./stylize";
 
 /**
  * md-enhance plugin configuration
@@ -261,5 +261,10 @@ export interface MarkdownEnhanceOptions {
    */
   locales?: LocaleConfig<MarkdownEnhanceLocaleData>;
 
+  /**
+   * Keyword enhancement
+   *
+   * 关键词显示增强选项
+   */
   stylize?: StylizeOption;
 }

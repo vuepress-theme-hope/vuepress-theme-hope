@@ -66,4 +66,40 @@ describe("subscript", () => {
       '<p><strong>SHOULD</strong>/<strong class="badge tip">MUST</strong></p>\n'
     );
   });
+
+  it("Should render LINEs with MUST", () => {
+    expect(
+      markdownIt.render(
+        "**MUST** at the begining of the line\n\n" +
+          "__MUST__ at the begining of the line\n\n" +
+          "At the end of the line *MUST*\n\n" +
+          "At the end of the line _MUST_\n\n" +
+          "Some content with **MUST** and some words.\n\n" +
+          "Some content with __MUST__ and some words.\n\n"
+      )
+    ).toEqual(
+      '<p><strong class="badge tip">MUST</strong> at the begining of the line</p>\n' +
+        '<p><strong class="badge tip">MUST</strong> at the begining of the line</p>\n' +
+        '<p>At the end of the line <em class="badge tip">MUST</em></p>\n' +
+        '<p>At the end of the line <em class="badge tip">MUST</em></p>\n' +
+        '<p>Some content with <strong class="badge tip">MUST</strong> and some words.</p>\n' +
+        '<p>Some content with <strong class="badge tip">MUST</strong> and some words.</p>\n'
+    );
+  });
+
+  it("Should render Complex with SHOULD", () => {
+    expect(
+      markdownIt.render(
+        "`**MUST**` in inline code should be rendered as is.\n\n" +
+          "Other syntax like _italic_ and **bold** should work with **MUST**\n\n" +
+          "A invalid syntax like_MUST_ should not be parsed.\n\n" +
+          "Other word not matching keywords like **MUS** and **MUSTS** should not be parsed.\n\n"
+      )
+    ).toEqual(
+      "<p><code>**MUST**</code> in inline code should be rendered as is.</p>\n" +
+        '<p>Other syntax like <em>italic</em> and <strong>bold</strong> should work with <strong class="badge tip">MUST</strong></p>\n' +
+        "<p>A invalid syntax like_MUST_ should not be parsed.</p>\n" +
+        "<p>Other word not matching keywords like <strong>MUS</strong> and <strong>MUSTS</strong> should not be parsed.</p>\n"
+    );
+  });
 });

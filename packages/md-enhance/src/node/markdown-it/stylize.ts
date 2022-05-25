@@ -1,8 +1,8 @@
 /**
- * 对<tag>text</tag>形式的token组合(inline)，进行显示增强：
- * ①对tag增加属性（如class样式）②对text进行替换（如Emoji后缀）。
- * 其主要目的是使特定词汇具在render后，变得更醒目或生动。
- * 可以通过front matter设置 noStylize:[t1,t2]禁用t1和t2的增强。
+ * 对 <tag>text</tag> 形式的 token 组合（inline），进行显示增强：
+ * ①对 tag 增加属性（如 class 样式）②对 text 进行替换（如 Emoji 后缀）。
+ * 其主要目的是使特定词汇具在 render 后，变得更醒目或生动。
+ * 可以通过 front matter 设置 noStylize:[t1,t2] 禁用 t1 和 t2 的增强。
  * 注意，所有配置项都区分大小写。
  *
  * @author trydofor
@@ -10,17 +10,17 @@
  * @see https://markdown-it.github.io
  */
 
-import * as Token from "markdown-it/lib/token";
-import { PluginWithOptions } from "markdown-it";
-import { StylizeOption } from "../../shared";
-import { MarkdownEnv } from "@vuepress/markdown";
+import type { default as Token } from "markdown-it/lib/token";
+import type { PluginWithOptions } from "markdown-it";
+import type { StylizeOption } from "../../shared";
+import type { MarkdownEnv } from "@vuepress/markdown";
 
-function scan(
+const scanTokens = (
   tokens: Token[],
   skips: string[],
   options: StylizeOption,
   env: MarkdownEnv
-): void {
+): void => {
   for (let i = 0, len = tokens.length - 2; i < len; i++) {
     const txt = tokens[i + 1];
 
@@ -70,19 +70,19 @@ function scan(
       txt.content = repl;
     }
   }
-}
+};
 
-export const stylize: PluginWithOptions<StylizeOption> = (md, options) => {
-  if (options == null || Object.keys(options).length == 0) return;
+export const stylize: PluginWithOptions<StylizeOption> = (md, options = {}) => {
+  if (Object.keys(options).length == 0) return;
 
-  md.core.ruler.push("stylize-tag", (state) => {
+  md.core.ruler.push("stylize_tag", (state) => {
     const env = state.env as MarkdownEnv;
     const matter = env.frontmatter?.noStylize;
     const skips = (Array.isArray(matter) ? matter : []) as string[];
 
     for (const token of state.tokens) {
       if (token.type === "inline") {
-        scan(token.children || [], skips, options, env);
+        scanTokens(token.children || [], skips, options, env);
       }
     }
   });

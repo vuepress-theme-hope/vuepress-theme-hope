@@ -402,3 +402,43 @@ CodePen 编辑器显示情况，第一位代表 HTML ，第二位代表 JS，第
 Markdown 增强插件的国际化配置。
 
 [md-enhance-config]: https://vuepress-theme-hope.github.io/v2/md-enhance/zh/config.html
+
+### stylize
+
+- 类型: `StylizeOption`
+
+```ts
+type StylizeOption = Record<
+  /**
+   * 增强的关键词，`token.content` 暂不提供正则功能。
+   * 默认全局增强，看通过 frontmatter 的noStylize单篇禁用关键词。
+   */
+  string,
+  {
+    /**
+     * 所在标签，token.tag，如['strong','sup']。
+     */
+    tag: string[];
+
+    /**
+     * 标签属性，[attr, value]的数组（二维），如 `[['class':'badge tip']]`。
+     * class 和 style 属性会 join ，其他属性则覆盖。
+     */
+    attr?: [string, string][];
+
+    /**
+     * `truthy`时，替换原 token.content
+     */
+    text?: string | ((str: string, env: MarkdownEnv) => string);
+  }
+>;
+```
+
+配置示例，对`**MUST**`和`^MUST^`增加样式，对`**NOT**`追加🚫
+
+```ts
+{
+  MUST: { tag: ['strong', 'sup'], attr: [['class', 'badge info']] },
+  NOT: { tag: ['strong'], text: 'NOT🚫' },
+}
+```

@@ -164,3 +164,13 @@ Whether exclude the page from sitemap
 - Default: `0.5`
 
 Page priority, range from `0` to `1`.
+
+## stylize 插件
+
+disable KEYWORD's stylize enhancement in the markdown。
+
+### noStylize
+
+- Type: `string[]`
+
+the KEYWORD are case-sensitive.
