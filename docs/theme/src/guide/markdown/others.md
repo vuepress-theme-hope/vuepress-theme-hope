@@ -61,23 +61,3 @@ If your docs both serve on documentation site and directly on GitHub, we provide
 Custom container is enabled by default in `@vuepress/theme-default` and `vuepress-theme-hope`, but not available in GitHub Markdown preview.
 
 :::
-
-## Stylize
-
-Display enhancements for tokens in the form of `<tag>text</tag>`:
-
-```ts
-{
-  MUST: { tag: ['strong', 'sup'], attr: [['class', 'badge info']] },
-  NOT: { tag: ['strong'], text: 'NOT🚫' },
-}
-```
-
-- add attributes to `tag` (such as class). `^MUST^` to <Badge text="MUST" type="tip">
-- replace `text` (such as Emoji suffix), `**NOT**` to **NOT🚫**
-
-Its main purpose is to make some KEYWORD more vivid after render.
-set `noStylize:[k1,k2]` in MD's frontmatter can
-disable `k1` and `k2` enhancements in this MD.
-
-Note: all configuration items are case-sensitive.
