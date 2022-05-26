@@ -51,7 +51,7 @@
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.45",
+    "@vuepress/core": "2.0.0-beta.46",
     "rimraf": "3.0.2"
   },
   "peerDependencies": {
