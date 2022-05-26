@@ -219,52 +219,5 @@ const a = 1;
 :::
     `)
     ).toMatchSnapshot();
-
-    expect(
-      markdownIt.render(`
-::: tabs
-
-@tab js
-
-A text
-
-\`\`\`js
-const a = 1;
-\`\`\`
-
-Another text
-
-@tab:active ts
-
-Another text again
-
-\`\`\`ts
-const a = 1;
-\`\`\`
-
-Another text again
-
-:::
-    `)
-    ).toMatchSnapshot();
-
-    expect(
-      markdownIt.render(`
-::: tabs
-@tab js
-A text
-\`\`\`js
-const a = 1;
-\`\`\`
-Another text
-@tab:active ts
-Another text again
-\`\`\`ts
-const a = 1;
-\`\`\`
-Another text again
-:::
-    `)
-    ).toMatchSnapshot();
   });
 });

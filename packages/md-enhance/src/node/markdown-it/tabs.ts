@@ -6,7 +6,6 @@ import type { default as Token } from "markdown-it/lib/token";
 export interface BaseTabData {
   title: string;
   value?: string;
-  content: string;
 }
 
 export interface TabOptions {
@@ -26,42 +25,7 @@ export const tabs: PluginWithOptions<TabOptions> = (
   { name, component, getter } = {
     name: "tabs",
     component: "Tabs",
-    getter: (
-      tokens: Token[],
-      index: number,
-      options: Options,
-      env: unknown,
-      self: Renderer
-    ): { content: string }[] => {
-      const tabData: { content: string }[] = [];
-      let tokenPos = -1;
-
-      for (let i = index; i < tokens.length; i++) {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-        const { block, type } = tokens[i];
-
-        if (block) {
-          // tabs ends
-          if (type === "tabs_tabs_close") break;
-
-          // tab start
-          if (type === "tab_open") {
-            tokenPos = i;
-            continue;
-          }
-
-          // tab end
-          if (type === "tab_close") {
-            tabData.push({
-              content: self.render(tokens.slice(tokenPos, i), options, env),
-            });
-            continue;
-          }
-        }
-      }
-
-      return tabData;
-    },
+    getter: () => [],
   }
 ) => {
   const CODETAB_MARKER = `@tab`;
@@ -251,14 +215,17 @@ export const tabs: PluginWithOptions<TabOptions> = (
     // this will prevent lazy continuations from ever going past our end marker
     state.lineMax = nextLine;
 
-    const openToken = state.push("tab_open", "tab-item", 1);
+    const openToken = state.push("tab_open", "template", 1);
 
     const [title, id] = info.replace(/^:active/, "").split("#", 2);
 
     openToken.block = true;
-    openToken.hidden = true;
     openToken.markup = markup;
     openToken.info = title.trim();
+    openToken.attrPush([
+      `#${(id || title).trim()}`,
+      "{ title, value, isActive }",
+    ]);
     openToken.meta = {
       active: info.includes(":active"),
     };
@@ -268,10 +235,9 @@ export const tabs: PluginWithOptions<TabOptions> = (
 
     state.md.block.tokenize(state, startLine + 1, nextLine);
 
-    const closeToken = state.push("tab_close", "tab-item", -1);
+    const closeToken = state.push("tab_close", "template", -1);
 
     closeToken.block = true;
-    closeToken.hidden = true;
     closeToken.markup = "";
 
     state.parentType = oldParent;
@@ -306,6 +272,7 @@ export const tabs: PluginWithOptions<TabOptions> = (
     const basicData: BaseTabData[] = [];
     const customData = getter(tokens, index, options, env, self);
     let activeIndex = -1;
+    let isTabstart = false;
 
     for (let i = index; i < tokens.length; i++) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
@@ -313,6 +280,7 @@ export const tabs: PluginWithOptions<TabOptions> = (
 
       if (block) {
         if (type === `${name}_tabs_close`) break;
+        if (type === `${name}_tabs_open`) continue;
 
         if (type === "tab_open") {
           // code tab is active
@@ -320,18 +288,19 @@ export const tabs: PluginWithOptions<TabOptions> = (
           if (meta.active) activeIndex = basicData.length;
           basicData.push({
             title: info,
-            content: "",
             // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
             ...(meta.value ? { value: meta.value as string } : {}),
           });
+          isTabstart = true;
           continue;
         }
 
         if (type === "tab_close") continue;
 
-        // hide tokens
-        tokens[i].type = `${name}_tabs_empty`;
-        tokens[i].hidden = true;
+        if (!isTabstart) {
+          tokens[i].type = `${name}_tabs_empty`;
+          tokens[i].hidden = true;
+        }
       }
     }
 

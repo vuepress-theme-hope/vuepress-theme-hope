@@ -27,7 +27,7 @@ export default defineComponent({
     },
   },
 
-  setup(props) {
+  setup(props, { slots }) {
     const getInitialIndex = (): number => {
       if (props.tabId) {
         const valueIndex = props.data.findIndex(
@@ -101,8 +101,8 @@ export default defineComponent({
       }
     );
 
-    return (): VNode | null => {
-      return h(ClientOnly, () =>
+    return (): VNode | null =>
+      h(ClientOnly, () =>
         props.data.length
           ? h("div", { class: "code-tabs" }, [
               h(
@@ -132,18 +132,20 @@ export default defineComponent({
                   );
                 })
               ),
-              props.data.map(({ content }, index) => {
+              props.data.map(({ title, value = title }, index) => {
                 const isActive = index === activeIndex.value;
 
-                return h("div", {
-                  class: ["code-tab", { active: isActive }],
-                  "aria-selected": isActive,
-                  innerHTML: content,
-                });
+                return h(
+                  "div",
+                  {
+                    class: ["code-tab", { active: isActive }],
+                    "aria-selected": isActive,
+                  },
+                  slots[value]?.({ title, value, isActive })
+                );
               }),
             ])
           : null
       );
-    };
   },
 });
