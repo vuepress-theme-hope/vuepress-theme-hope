@@ -76,7 +76,7 @@ module.exports = {
 
 ## 高级用法
 
-您还可以设置一个对象来自定义包含文件路径和包含行为。
+你还可以设置一个对象来自定义包含文件路径和包含行为。
 
 ```ts
 interface IncludeOptions {
@@ -96,7 +96,7 @@ interface IncludeOptions {
 }
 ```
 
-例如：你可以使用 `@src` 作为源文件夹的别名。
+例如: 你可以使用 `@src` 作为源文件夹的别名。
 
 ::: code-tabs#language
 

@@ -77,7 +77,7 @@ module.exports = defineUserConfig({
 
 ### 主题配置
 
-主题配置是您传递给 `hopeTheme` 函数的对象，它将由 VuePress Theme Hope 处理。
+主题配置是你传递给 `hopeTheme` 函数的对象，它将由 VuePress Theme Hope 处理。
 
 你可以在 [配置 → 主题配置](../../config/README.md) 中找到全部的主题配置。
 

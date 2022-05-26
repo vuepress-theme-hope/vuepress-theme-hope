@@ -58,9 +58,9 @@ module.exports = {
 
 ## 用法
 
-您需要将选项卡包装在 `tabs` 容器中。
+你需要将选项卡包装在 `tabs` 容器中。
 
-您可以在 `tabs` 容器中添加一个 id 后缀，该后缀将用作选项卡 id。 所有具有相同 id 的选项卡将共享相同的切换事件。
+你可以在 `tabs` 容器中添加一个 id 后缀，该后缀将用作选项卡 id。 所有具有相同 id 的选项卡将共享相同的切换事件。
 
 ```md
 ::: tabs#fruit
@@ -74,7 +74,7 @@ module.exports = {
 
 在这个容器内，你应该使用 `@tab` 标记来标记和分隔选项卡内容。
 
-在 `@tab` 标记后，您可以添加文本 `:active` 默认激活选项卡，之后的文本将被解析为选项卡标题。
+在 `@tab` 标记后，你可以添加文本 `:active` 默认激活选项卡，之后的文本将被解析为选项卡标题。
 
 ```md
 ::: tabs
@@ -96,7 +96,7 @@ module.exports = {
 :::
 ```
 
-默认情况下，标题将用作选项卡的值，但您可以使用 id 后缀覆盖它。
+默认情况下，标题将用作选项卡的值，但你可以使用 id 后缀覆盖它。
 
 ```md
 ::: tabs
@@ -134,13 +134,13 @@ npm 应该与 Node.js 被一同安装。
 
 @tab pnpm
 
-如果您使用的是 Node.js v16+，您可以使用 corepack 来启用 pnpm:
+如果你使用的是 Node.js v16+，你可以使用 corepack 来启用 pnpm:
 
 ```bash
 corepack prepare pnpm@7.1.0 --activated
 ```
 
-否则，您可以使用 npm 安装它:
+否则，你可以使用 npm 安装它:
 
 ```bash
 npm i -g pnpm

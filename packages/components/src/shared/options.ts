@@ -35,7 +35,7 @@ export interface ComponentOptions {
    *
    * 是否启用返回顶部按钮
    *
-   * @description 当设置为数字时，将会作为返回顶部按钮距离阈值（单位: 像素）
+   * @description 当设置为数字时，将会作为返回顶部按钮距离阈值 (单位: 像素)
    *
    * @default false
    */

@@ -17,7 +17,7 @@ tag:
 
 社区用户创建了很多插件，并将它们发布到了 [NPM](https://www.npmjs.com/search?q=keywords:vuepress-plugin) 上。 VuePress 团队也在 [@vuepress](https://www.npmjs.com/search?q=%40vuepress%20keywords%3Aplugin) Scope 下维护了一些官方插件。查看插件本身的文档可以获取更详细的指引。
 
-一般而言，你需要将插件放入到 [plugins](https://v2.vuepress.vuejs.org/zh/reference/config.html#plugins) 配置项中来使用它。举例来说，你可以使用 [@vuepress/plugin-google-analytics](https://v2.vuepress.vuejs.org/zh/reference/plugin/google-analytics.html) 来使用 Google Analytics ：
+一般而言，你需要将插件放入到 [plugins](https://v2.vuepress.vuejs.org/zh/reference/config.html#plugins) 配置项中来使用它。举例来说，你可以使用 [@vuepress/plugin-google-analytics](https://v2.vuepress.vuejs.org/zh/reference/plugin/google-analytics.html) 来使用 Google Analytics :
 
 ```js
 const { googleAnalyticsPlugin } = require("@vuepress/plugin-google-analytics");
@@ -45,7 +45,7 @@ module.exports = {
 
 推荐你直接将 [配置文件](./config.md#配置文件) 作为插件使用，因为 [几乎所有的插件 API 都可以在配置文件中使用](https://v2.vuepress.vuejs.org/zh/reference/config.html#插件-api)，这在绝大多数场景下都更为方便。
 
-但是如果你在配置文件中要做的事情太多了，你可以考虑将它们提取到单独的插件中，然后在你的配置文件中使用它们：
+但是如果你在配置文件中要做的事情太多了，你可以考虑将它们提取到单独的插件中，然后在你的配置文件中使用它们:
 
 ```js
 const myPlugin = require("./path/to/my-plugin.js");

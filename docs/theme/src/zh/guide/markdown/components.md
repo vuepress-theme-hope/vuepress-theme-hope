@@ -11,7 +11,7 @@ tag:
 
 通过使用`vuepress-plugin-components`，你可以在你的 Markdown 文件中导入和使用一些组件。
 
-可用组件：
+可用组件:
 
 - Badge
 - CodePen
@@ -20,7 +20,7 @@ tag:
 
 默认情况下，`<Badge />` 和 `<CodePen />` 是启用的。
 
-要启用组件，您应该使用组件名称数组设置 `plugin.components`。
+要启用组件，你应该使用组件名称数组设置 `plugin.components`。
 
 <!-- 更多 -->
 
@@ -38,7 +38,7 @@ tag:
 
 ## CodePen
 
-一个允许您嵌入 CodePen 演示的组件。
+一个允许你嵌入 CodePen 演示的组件。
 
 一个使用用户和 Slug Hash 的案例:
 
@@ -84,7 +84,7 @@ tag:
 
 ## FontIcon
 
-允许您显示字体图标的组件。
+允许你显示字体图标的组件。
 
 - 主页图标: <FontIcon icon="home" />
 

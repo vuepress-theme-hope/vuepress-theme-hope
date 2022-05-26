@@ -61,7 +61,7 @@ Frontmatter 是 VuePress 中很重要的一个概念，它用于承载 Markdown 
 
 :::
 
-Frontmatter 必须在 Markdown 文件的顶部，并且被包裹在一对三短划线中间。下面是一个基本的示例：
+Frontmatter 必须在 Markdown 文件的顶部，并且被包裹在一对三短划线中间。下面是一个基本的示例:
 
 ```md
 ---

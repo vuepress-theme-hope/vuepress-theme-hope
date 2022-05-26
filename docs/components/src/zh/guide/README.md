@@ -7,9 +7,9 @@ icon: creative
 
 这个插件完全支持 tree-shaking。
 
-这意味着您可以自由选择您喜欢的任何组件，并不捆绑其他组件。
+这意味着你可以自由选择你喜欢的任何组件，并不捆绑其他组件。
 
-例如，如果您使用 `{ backToTop: true }` 调用此插件，则仅注入 `<BackToTop />` 组件。
+例如，如果你使用 `{ backToTop: true }` 调用此插件，则仅注入 `<BackToTop />` 组件。
 
 :::
 
