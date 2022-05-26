@@ -267,7 +267,7 @@ $$
 
 - [View Detail](presentation/README.md)
 
-## Stylize
+### Stylize
 
 Setting this to a invliad stytax <span style="color:red">doesn't</span> have any effect.
 

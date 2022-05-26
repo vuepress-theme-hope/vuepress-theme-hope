@@ -15,6 +15,8 @@ Create inline snippet by stylize inline tokens including changing tags, adding a
 
 ## Config
 
+::: code-tabs#language
+
 @tab TS
 
 ```ts

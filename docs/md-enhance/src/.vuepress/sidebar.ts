@@ -37,6 +37,7 @@ export const enSidebarConfig = sidebar({
           collapsable: true,
           children: ["", "demo", "themes"],
         },
+        "stylize",
         "others",
       ],
     },
@@ -75,6 +76,8 @@ export const enSidebarConfig = sidebar({
       collapsable: true,
       children: ["", "demo", "themes"],
     },
+    "stylize",
+    "others",
   ],
 });
 
@@ -115,6 +118,8 @@ export const zhSidebarConfig = sidebar({
           collapsable: true,
           children: ["", "demo", "themes"],
         },
+        "stylize",
+        "others",
       ],
     },
     "config",
@@ -152,6 +157,7 @@ export const zhSidebarConfig = sidebar({
       collapsable: true,
       children: ["", "demo", "themes"],
     },
+    "stylize",
     "others",
   ],
 });
