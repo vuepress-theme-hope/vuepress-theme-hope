@@ -39,10 +39,10 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@vuepress/cli": "2.0.0-beta.45",
-    "@vuepress/core": "2.0.0-beta.45",
-    "@vuepress/shared": "2.0.0-beta.45",
-    "@vuepress/utils": "2.0.0-beta.45",
+    "@vuepress/cli": "2.0.0-beta.46",
+    "@vuepress/core": "2.0.0-beta.46",
+    "@vuepress/shared": "2.0.0-beta.46",
+    "@vuepress/utils": "2.0.0-beta.46",
     "cac": "^6.7.12",
     "vuepress-shared": "workspace:*"
   },
