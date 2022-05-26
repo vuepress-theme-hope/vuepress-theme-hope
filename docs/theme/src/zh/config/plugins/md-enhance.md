@@ -225,6 +225,52 @@ interface TaskListOptions {
 
 是否启用 [Mermaid](https://mermaid-js.github.io/mermaid/#/) 支持。
 
+### stylize
+
+- 类型: `StylizeOptions | false`
+
+  ```ts
+  interface StylizeResult {
+    /**
+     * 渲染的标签名称
+     */
+    tag: string;
+
+    /**
+     * 属性设置
+     */
+    attrs: Record<string, string>;
+
+    /**
+     * 标签内容
+     */
+    content: string;
+  }
+
+  interface StylizeItem {
+    /**
+     * 字符匹配
+     */
+    matcher: string | RegExp;
+
+    /**
+     * 内容替换
+     */
+    replacer: (options: {
+      tag: string;
+      content: string;
+      attrs: Record<string, string>;
+      env?: MarkdownEnv;
+    }) => StylizeResult | void;
+  }
+
+  type StylizeOptions = StylizeItem[];
+  ```
+
+- 默认值: `false`
+
+对行内语法进行样式化以创建代码片段
+
 ### demo
 
 - 类型: `CodeDemoGlobalOptions | boolean`
@@ -402,43 +448,3 @@ CodePen 编辑器显示情况，第一位代表 HTML ，第二位代表 JS，第
 Markdown 增强插件的国际化配置。
 
 [md-enhance-config]: https://vuepress-theme-hope.github.io/v2/md-enhance/zh/config.html
-
-### stylize
-
-- 类型: `StylizeOption`
-
-```ts
-type StylizeOption = Record<
-  /**
-   * 增强的关键词，`token.content` 暂不提供正则功能。
-   * 默认全局增强，看通过 frontmatter 的noStylize单篇禁用关键词。
-   */
-  string,
-  {
-    /**
-     * 所在标签，token.tag，如['strong','sup']。
-     */
-    tag: string[];
-
-    /**
-     * 标签属性，[attr, value]的数组（二维），如 `[['class':'badge tip']]`。
-     * class 和 style 属性会 join ，其他属性则覆盖。
-     */
-    attr?: [string, string][];
-
-    /**
-     * `truthy`时，替换原 token.content
-     */
-    text?: string | ((str: string, env: MarkdownEnv) => string);
-  }
->;
-```
-
-配置示例，对`**MUST**`和`^MUST^`增加样式，对`**NOT**`追加🚫
-
-```ts
-{
-  MUST: { tag: ['strong', 'sup'], attr: [['class', 'badge info']] },
-  NOT: { tag: ['strong'], text: 'NOT🚫' },
-}
-```

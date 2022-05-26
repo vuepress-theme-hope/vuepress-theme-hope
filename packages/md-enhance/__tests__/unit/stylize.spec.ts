@@ -1,30 +1,46 @@
 import { describe, expect, it } from "vitest";
 import MarkdownIt = require("markdown-it");
 import { stylize } from "../../src/node/markdown-it";
-import { StylizeOption } from "../../src/shared";
+import type { StylizeOptions, StylizeResult } from "../../src/shared";
 
-describe("subscript", () => {
-  const options: StylizeOption = {
-    MUST: {
-      tag: ["strong", "em"],
-      attr: [
-        ["class", "badge"],
-        ["class", "tip"],
-      ],
+describe("stylize", () => {
+  const options: StylizeOptions = [
+    {
+      matcher: "MUST",
+      replacer: ({ tag, attrs, content }): StylizeResult => {
+        if (tag === "strong" || tag === "em")
+          return {
+            tag,
+            attrs: { ...attrs, class: "badge tip" },
+            content,
+          };
+      },
     },
-    SHOULD: {
-      tag: ["strong"],
-      attr: [["title", "should"]],
+    {
+      matcher: "SHOULD",
+      replacer: ({ tag, attrs, content }): StylizeResult => {
+        if (tag === "strong")
+          return {
+            tag,
+            attrs: { ...attrs, title: "should" },
+            content,
+          };
+      },
     },
-    MAY: {
-      tag: ["em"],
-      text: "MAY:)",
+    {
+      matcher: "MAY",
+      replacer: ({ tag, attrs }): StylizeResult => {
+        if (tag === "em") return { tag, attrs, content: "MAY:)" };
+      },
     },
-    NOT: {
-      tag: ["em"],
-      text: (str) => "MUST_" + str,
+    {
+      matcher: "NOT",
+      replacer: ({ tag, attrs, content }): StylizeResult => {
+        if (tag === "em") return { tag, attrs, content: `MUST_${content}` };
+      },
     },
-  };
+  ];
+
   const markdownIt = MarkdownIt({ linkify: true }).use(stylize, options);
 
   it("Should render MUST", () => {

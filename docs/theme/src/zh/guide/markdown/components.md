@@ -1,7 +1,7 @@
 ---
 title: 组件
 icon: plugin
-order: 17
+order: 18
 category:
   - Markdown
 tag:
@@ -17,6 +17,7 @@ tag:
 - CodePen
 - FontIcon
 - PDF
+- StackBlitz
 
 默认情况下，`<Badge />` 和 `<CodePen />` 是启用的。
 

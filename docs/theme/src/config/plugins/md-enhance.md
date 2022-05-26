@@ -225,6 +225,52 @@ Whether to enable flowchart support
 
 Whether to enable [Mermaid](https://mermaid-js.github.io/mermaid/#/) support.
 
+### stylize
+
+- Type: `StylizeOptions | false`
+
+  ```ts
+  interface StylizeResult {
+    /**
+     * Tag name
+     */
+    tag: string;
+
+    /**
+     * Attributes settings
+     */
+    attrs: Record<string, string>;
+
+    /**
+     * Tag content
+     */
+    content: string;
+  }
+
+  interface StylizeItem {
+    /**
+     * Inline token matcher
+     */
+    matcher: string | RegExp;
+
+    /**
+     * Content Replacer
+     */
+    replacer: (options: {
+      tag: string;
+      content: string;
+      attrs: Record<string, string>;
+      env?: MarkdownEnv;
+    }) => StylizeResult | void;
+  }
+
+  type StylizeOptions = StylizeItem[];
+  ```
+
+- Default: `false`
+
+Stylize inline tokens to create snippet you want.
+
 ### demo
 
 - Type: `CodeDemoGlobalOptions | boolean`
@@ -395,42 +441,3 @@ If the theme you are using has a switching animation, it is recommended to confi
 Locales config for Markdown Enhance Plugin.
 
 [md-enhance-config]: https://vuepress-theme-hope.github.io/v2/md-enhance/config.html
-
-### stylize
-
-- Type: `StylizeOption`
-
-```ts
-type StylizeOption = Record<
-  /**
-   * `keyword` to be enhanced. `token.content`, do not support REGEXP at this time.
-   * global enhancement by default, use `frontmatter.noStylize` to disable temporarily.
-   */
-  string,
-  {
-    /**
-     * `tags` that `keyword` is in. `token.tag`, eg: ['strong','sup']
-     */
-    tag: string[];
-
-    /**
-     * `attrs` enhanced to the tag. Array of `[attr, value]` (2-dimension), eg: `[['class':'badge tip']]`
-     * Note: `class` and `style` are `join` by `0x20`, others attr will replace the old by the new.
-     */
-    attr?: [string, string][];
-
-    /**
-     * replace `token.content` if text/text() is `truthy`
-     */
-    text?: string | ((str: string, env: MarkdownEnv) => string);
-  }
->;
-```
-
-Example，`**MUST**` and `^MUST^` with `class` attrs，`**NOT**` to `**NOT🚫**`
-
-```ts
-{
-  MUST: { tag: ['strong', 'sup'], attr: [['class', 'badge info']] },
-  NOT: { tag: ['strong'], text: 'NOT🚫' },
-}

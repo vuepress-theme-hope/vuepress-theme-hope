@@ -1,89 +1,80 @@
 /**
- * 对 <tag>text</tag> 形式的 token 组合（inline），进行显示增强：
- * ①对 tag 增加属性（如 class 样式）②对 text 进行替换（如 Emoji 后缀）。
- * 其主要目的是使特定词汇具在 render 后，变得更醒目或生动。
- * 可以通过 front matter 设置 noStylize:[t1,t2] 禁用 t1 和 t2 的增强。
- * 注意，所有配置项都区分大小写。
+ * 覆盖 inline rule, 包括
  *
- * @author trydofor
- * @since 2022-05-20
- * @see https://markdown-it.github.io
+ * - 对渲染标签增加属性
+ * - 对文本进行替换
  */
 
-import type { default as Token } from "markdown-it/lib/token";
-import type { PluginWithOptions } from "markdown-it";
-import type { StylizeOption } from "../../shared";
 import type { MarkdownEnv } from "@vuepress/markdown";
+import { PageFrontmatter } from "@vuepress/shared";
+import type { PluginWithOptions } from "markdown-it";
+import type { default as Token } from "markdown-it/lib/token";
+import type { StylizeOptions } from "../../shared";
+
+export interface StylizeFrontmatter {
+  /**
+   * Content to be skipped in this page
+   */
+  noStylize?: string[];
+}
+
+export interface StylizeMarkdownEnv extends MarkdownEnv {
+  frontmatter: PageFrontmatter<StylizeFrontmatter>;
+}
 
 const scanTokens = (
   tokens: Token[],
-  skips: string[],
-  options: StylizeOption,
-  env: MarkdownEnv
+  options: StylizeOptions,
+  skipContents: string[] = []
 ): void => {
-  for (let i = 0, len = tokens.length - 2; i < len; i++) {
-    const txt = tokens[i + 1];
+  for (let index = 1, len = tokens.length; index < len - 1; index++) {
+    const token = tokens[index];
+    const { content, type } = token;
 
-    if (txt.type !== "text") continue;
+    // skip currect token
+    if (type !== "text" || skipContents.includes(content)) continue;
 
-    const kw = txt.content;
-
-    if (skips.includes(kw)) {
-      // front matter contains
-      continue;
-    }
-
-    const tagOpen = tokens[i];
-    const tagClose = tokens[i + 2];
-    const opt = options[kw];
+    const config = options.find(({ matcher }) =>
+      typeof matcher === "string" ? matcher === content : matcher.test(content)
+    );
+    const tokenPrev = tokens[index - 1];
+    const tokenNext = tokens[index + 1];
 
     if (
-      opt != null &&
-      opt.tag.includes(tagOpen.tag) &&
-      tagOpen.type.endsWith("_open") &&
-      tagOpen.tag === tagClose.tag &&
-      tagClose.type.endsWith("_close")
+      config &&
+      tokenPrev.tag === tokenNext.tag &&
+      tokenPrev.nesting === 1 &&
+      tokenNext.nesting === -1
     ) {
-      i += 2; // deal and skip
-    } else {
-      continue;
-    }
+      const result = config.replacer({
+        tag: tokenPrev.tag,
+        content: token.content,
+        attrs: Object.fromEntries(tokenPrev.attrs || []),
+      });
 
-    if (opt.attr) {
-      for (const ar of opt.attr) {
-        if (ar[0] === "class" || ar[0] === "style") {
-          tagOpen.attrJoin(ar[0], ar[1]);
-        } else {
-          tagOpen.attrSet(ar[0], ar[1]);
-        }
+      if (result) {
+        tokenPrev.tag = tokenNext.tag = result.tag;
+        tokenPrev.attrs = Object.entries(result.attrs);
+        token.content = result.content;
       }
-    }
 
-    const repl =
-      typeof opt.text === "function"
-        ? opt.text(kw, env)
-        : typeof opt.text === "string"
-        ? opt.text
-        : "";
-
-    if (repl) {
-      txt.content = repl;
+      // skip 2 tokens
+      index += 2;
     }
   }
 };
 
-export const stylize: PluginWithOptions<StylizeOption> = (md, options = {}) => {
+export const stylize: PluginWithOptions<StylizeOptions> = (
+  md,
+  options = []
+) => {
   if (Object.keys(options).length == 0) return;
 
-  md.core.ruler.push("stylize_tag", (state) => {
-    const env = state.env as MarkdownEnv;
-    const matter = env.frontmatter?.noStylize;
-    const skips = (Array.isArray(matter) ? matter : []) as string[];
+  md.core.ruler.push("stylize_tag", ({ env, tokens }) => {
+    const { noStylize } = (env as StylizeMarkdownEnv).frontmatter || {};
 
-    for (const token of state.tokens) {
-      if (token.type === "inline") {
-        scanTokens(token.children || [], skips, options, env);
-      }
-    }
+    tokens.forEach(({ type, children }) => {
+      if (type === "inline") scanTokens(children || [], options, noStylize);
+    });
   });
 };

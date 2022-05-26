@@ -28,11 +28,15 @@ dir:
 
 - [任务列表](tasklist.md)
 
+- [自定义对齐](align.md)
+
 - [上下角标](sup-sub.md)
 
 - [标记](mark.md)
 
 - [图表](chart.md)
+
+- [Echarts](echarts.md)
 
 - [流程图](flowchart.md)
 
@@ -45,6 +49,8 @@ dir:
 - [代码演示](demo.md)
 
 - [幻灯片](presentation.md)
+
+- [样式化](stylize.md)
 
 - [组件](components.md)
 
