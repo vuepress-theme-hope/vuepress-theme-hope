@@ -225,6 +225,52 @@ interface TaskListOptions {
 
 是否启用 [Mermaid](https://mermaid-js.github.io/mermaid/#/) 支持。
 
+### stylize
+
+- 类型: `StylizeOptions | false`
+
+  ```ts
+  interface StylizeResult {
+    /**
+     * 渲染的标签名称
+     */
+    tag: string;
+
+    /**
+     * 属性设置
+     */
+    attrs: Record<string, string>;
+
+    /**
+     * 标签内容
+     */
+    content: string;
+  }
+
+  interface StylizeItem {
+    /**
+     * 字符匹配
+     */
+    matcher: string | RegExp;
+
+    /**
+     * 内容替换
+     */
+    replacer: (options: {
+      tag: string;
+      content: string;
+      attrs: Record<string, string>;
+      env?: MarkdownEnv;
+    }) => StylizeResult | void;
+  }
+
+  type StylizeOptions = StylizeItem[];
+  ```
+
+- 默认值: `false`
+
+对行内语法进行样式化以创建代码片段
+
 ### demo
 
 - 类型: `CodeDemoGlobalOptions | boolean`

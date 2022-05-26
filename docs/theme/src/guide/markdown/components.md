@@ -1,7 +1,7 @@
 ---
 title: Components
 icon: plugin
-order: 17
+order: 18
 category:
   - Markdown
 tag:
@@ -17,6 +17,7 @@ Available components:
 - CodePen
 - FontIcon
 - PDF
+- StackBlitz
 
 By default, `<Badge />` and `<CodePen />` is enabled.
 
