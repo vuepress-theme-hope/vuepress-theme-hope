@@ -1,6 +1,6 @@
 import { defineComponent, h } from "vue";
 
-import type { PropType } from "vue";
+import type { VNode, PropType } from "vue";
 
 export default defineComponent({
   name: "StackBlitz",
@@ -24,12 +24,18 @@ export default defineComponent({
     /**
      * The default file to have open in the editor
      */
-    file: String,
+    file: {
+      type: String,
+      default: "",
+    },
 
     /**
      * The initial URL path the preview should open
      */
-    initialpath: String,
+    initialpath: {
+      type: String,
+      default: "",
+    },
 
     /**
      * Force embed view regardless of screen size
@@ -72,7 +78,7 @@ export default defineComponent({
   },
 
   setup(props) {
-    return () =>
+    return (): VNode =>
       h("iframe", {
         class: "stack-blitz-iframe",
         src: `https://stackblitz.com/edit/${props.id}?embed=${
