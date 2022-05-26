@@ -141,7 +141,7 @@ export default defineComponent({
                     class: ["code-tab", { active: isActive }],
                     "aria-selected": isActive,
                   },
-                  slots[value]?.({ title, value, isActive })
+                  slots[`tab${index}`]?.({ title, value, isActive })
                 );
               }),
             ])

@@ -222,10 +222,6 @@ export const tabs: PluginWithOptions<TabOptions> = (
     openToken.block = true;
     openToken.markup = markup;
     openToken.info = title.trim();
-    openToken.attrPush([
-      `#${(id || title).trim()}`,
-      "{ title, value, isActive }",
-    ]);
     openToken.meta = {
       active: info.includes(":active"),
     };
@@ -286,12 +282,19 @@ export const tabs: PluginWithOptions<TabOptions> = (
           // code tab is active
           // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
           if (meta.active) activeIndex = basicData.length;
+
+          tokens[i].attrPush([
+            `#tab${basicData.length}`,
+            "{ title, value, isActive }",
+          ]);
+
+          isTabstart = true;
           basicData.push({
             title: info,
             // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
             ...(meta.value ? { value: meta.value as string } : {}),
           });
-          isTabstart = true;
+
           continue;
         }
 

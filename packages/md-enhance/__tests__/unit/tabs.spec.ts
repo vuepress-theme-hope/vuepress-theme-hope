@@ -69,7 +69,7 @@ const a = 1;
     ).toMatchSnapshot();
   });
 
-  it("shoud support id", () => {
+  it("shoud support tabs id", () => {
     expect(
       markdownIt.render(`
 ::: tabs#event
