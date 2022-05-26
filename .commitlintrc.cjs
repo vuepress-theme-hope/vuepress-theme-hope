@@ -1,7 +1,16 @@
+const { execSync } = require('child_process')
 const fs = require("fs");
 const path = require("path");
 
 const packages = fs.readdirSync(path.resolve(__dirname, "packages"));
+
+const scopeComplete = execSync("git status --porcelain || true")
+  .toString()
+  .trim()
+  .split("\n")
+  .find((r) => ~r.indexOf("M  packages"))
+  ?.replace(/\//g, "%%")
+  ?.match(/packages%%((\w|-)*)/)?.[1];
 
 /** @type {import('cz-git').UserConfig} */
 module.exports = {
@@ -10,7 +19,8 @@ module.exports = {
     "scope-enum": [2, "always", ["demo", "release", ...packages]],
   },
   prompt: {
-    customScopesAlign: "top",
+    defaultScope: scopeComplete,
+    customScopesAlign: !scopeComplete ? "top" : "bottom",
     allowCustomIssuePrefixs: false,
     allowEmptyIssuePrefixs: false,
   },
