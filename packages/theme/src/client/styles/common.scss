@@ -2,6 +2,15 @@
 @use "vuepress-shared/styles/wrapper";
 
 .theme-container {
+  @media (min-width: (hope-config.$tablet + 1px)) {
+    &:not(.sidebar-open) {
+      .sidebar {
+        box-shadow: 2px 0 8px var(--card-shadow);
+        transform: translateX(0);
+      }
+    }
+  }
+
   .page {
     // leave space for navbar
     padding-top: var(--navbar-height);
@@ -80,20 +89,14 @@
     }
   }
 
-  &:not(.sidebar-open) {
-    @media (min-width: (hope-config.$tablet + 1px)) {
-      .page {
-        // spaces for toggle button
-        padding-left: 2rem;
-      }
-
-      .sidebar {
-        transform: translateX(-100%);
-      }
+  &.sidebar-collapsed {
+    .page {
+      // spaces for toggle button
+      padding-left: 2rem;
     }
 
     .sidebar {
-      box-shadow: none;
+      transform: translateX(-100%);
     }
 
     .toggle-sidebar-wrapper {
