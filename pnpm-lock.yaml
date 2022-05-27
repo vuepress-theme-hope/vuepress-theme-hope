@@ -1073,6 +1073,7 @@ importers:
       '@types/katex': ^0.14.0
       '@types/markdown-it': ^12.2.3
       '@types/mermaid': ^8.2.9
+      '@vue/repl': ^1.2.4
       '@vuepress/client': 2.0.0-beta.45
       '@vuepress/core': 2.0.0-beta.45
       '@vuepress/markdown': 2.0.0-beta.45
@@ -1100,6 +1101,7 @@ importers:
       '@types/katex': 0.14.0
       '@types/markdown-it': 12.2.3
       '@types/mermaid': 8.2.9
+      '@vue/repl': 1.2.4_vue@3.2.36
       '@vuepress/client': 2.0.0-beta.45
       '@vuepress/plugin-container': 2.0.0-beta.45
       '@vuepress/shared': 2.0.0-beta.45
@@ -3530,6 +3532,14 @@ packages:
     resolution: {integrity: sha512-c2qvopo0crh9A4GXi2/2kfGYMxsJW4tVILrqRPydVGZHhq0fnzy6qmclWOhBFckEhmyxmpHpdJtIRYGeKcuhnA==}
     dependencies:
       '@vue/shared': 3.2.36
+
+  /@vue/repl/1.2.4_vue@3.2.36:
+    resolution: {integrity: sha512-qmM4eIFQoz85gmHzBzcDwL0Tq3o1SBtT/HXvq6z6Co42AruKQFqle6LHo/XV9DJA+sPxHAQyBkuMXmokQ4vGsg==}
+    peerDependencies:
+      vue: ^3.2.13
+    dependencies:
+      vue: 3.2.36
+    dev: false
 
   /@vue/runtime-core/3.2.36:
     resolution: {integrity: sha512-PTWBD+Lub+1U3/KhbCExrfxyS14hstLX+cBboxVHaz+kXoiDLNDEYAovPtxeTutbqtClIXtft+wcGdC+FUQ9qQ==}

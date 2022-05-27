@@ -37,6 +37,7 @@ export const enSidebarConfig = sidebar({
           collapsable: true,
           children: ["", "demo", "themes"],
         },
+        "playground",
         "others",
       ],
     },
@@ -75,6 +76,7 @@ export const enSidebarConfig = sidebar({
       collapsable: true,
       children: ["", "demo", "themes"],
     },
+    "playground",
   ],
 });
 

@@ -79,4 +79,8 @@ export default [
   ...rollupTypescript("client/reveal/index", {
     external: [/^reveal\.js/],
   }),
+  ...rollupTypescript("client/components/playground/index", {
+    external: ["@vuepress/client", "@vue/repl", "vue", /\.scss$/],
+    dtsExternal: [/\.scss$/],
+  }),
 ];

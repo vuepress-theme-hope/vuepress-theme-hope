@@ -32,10 +32,15 @@ import {
   tasklist,
   vPre,
   vueDemo,
+  playground,
+  playFile,
+  playImports,
+  playSettings,
 } from "./markdown-it";
 import { prepareConfigFile, prepareRevealPluginFile } from "./prepare";
 import { usePlugins } from "./usePlugins";
 import { MATHML_TAGS } from "./utils";
+import { PLAYGROUND_DEFAULT_SETTING } from "../shared";
 
 import type { PluginFunction } from "@vuepress/core";
 import type { KatexOptions } from "katex";
@@ -65,6 +70,7 @@ export const mdEnhancePlugin =
     const mermaidEnable = getStatus("mermaid");
     const presentationEnable = getStatus("presentation");
     const texEnable = getStatus("tex");
+    const playgroundEnable = getStatus("playground");
 
     const shouldCheckLinks = getCheckLinksStatus(app, options);
 
@@ -107,6 +113,10 @@ export const mdEnhancePlugin =
           typeof options.presentation.revealConfig === "object"
             ? options.presentation.revealConfig
             : {},
+        PLAYGROUND_OPTIONS: {
+          ...PLAYGROUND_DEFAULT_SETTING,
+          ...(typeof options.playground === "object" ? options.playground : {}),
+        },
       }),
 
       extendsBundlerOptions: (config: unknown, app): void => {
@@ -145,6 +155,11 @@ export const mdEnhancePlugin =
             ),
           ]);
           addViteSsrExternal({ app, config }, "reveal.js");
+        }
+
+        if (playgroundEnable) {
+          addViteOptimizeDepsInclude({ app, config }, "@vue/repl");
+          addViteSsrExternal({ app, config }, "@vue/repl");
         }
       },
 
@@ -194,6 +209,12 @@ export const mdEnhancePlugin =
         if (texEnable) markdownIt.use(katex, katexOptions);
         if (presentationEnable) markdownIt.use(presentation);
         if (getStatus("vpre")) markdownIt.use(vPre);
+        if (playgroundEnable) {
+          markdownIt.use(playground());
+          markdownIt.use(playFile);
+          markdownIt.use(playImports);
+          markdownIt.use(playSettings);
+        }
       },
 
       extendsPage: (page, app): void => {
