@@ -54,7 +54,7 @@
     "rimraf": "3.0.2"
   },
   "peerDependencies": {
-    "sass-loader": "^12.6.0"
+    "sass-loader": "^12.6.0 || ^13.0.0"
   },
   "peerDependenciesMeta": {
     "sass-loader": {
