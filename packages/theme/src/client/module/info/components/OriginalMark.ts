@@ -8,7 +8,7 @@ export default defineComponent({
   name: "OriginalMark",
 
   props: {
-    isOriginal: { type: Boolean, default: false },
+    isOriginal: Boolean,
   },
 
   setup(props) {

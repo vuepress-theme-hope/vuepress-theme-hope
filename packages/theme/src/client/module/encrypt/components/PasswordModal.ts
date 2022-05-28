@@ -12,7 +12,7 @@ export default defineComponent({
   name: "PasswordModal",
 
   props: {
-    full: { type: Boolean, default: false },
+    full: Boolean,
   },
 
   emits: ["verify"],

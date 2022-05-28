@@ -17,10 +17,7 @@ export default defineComponent({
       type: Object as PropType<AutoLink>,
       required: true,
     },
-    exact: {
-      type: Boolean,
-      default: false,
-    },
+    exact: Boolean,
     externalLinkIcon: {
       type: Boolean,
       default: true,

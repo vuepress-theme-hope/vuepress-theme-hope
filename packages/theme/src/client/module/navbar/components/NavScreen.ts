@@ -22,10 +22,7 @@ export default defineComponent({
   name: "NavScreen",
 
   props: {
-    active: {
-      type: Boolean,
-      default: false,
-    },
+    active: Boolean,
   },
 
   emits: ["close"],

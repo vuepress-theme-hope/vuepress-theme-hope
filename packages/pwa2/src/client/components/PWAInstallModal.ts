@@ -25,10 +25,7 @@ export default defineComponent({
   },
 
   props: {
-    useHint: {
-      type: Boolean,
-      default: false,
-    },
+    useHint: Boolean,
   },
 
   emits: ["can-install", "hint", "toggle"],
