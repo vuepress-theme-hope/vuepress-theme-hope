@@ -25,6 +25,8 @@ $theme-color: #f00;
 
 你需要按照 `{ 颜色名1: 颜色值, 颜色名2: 颜色值, ... }` 的格式在主题选项中配置 `themeColor`:
 
+第一个颜色为上方设置的默认主题色。
+
 :::: details 例子
 
 ::: code-tabs#language

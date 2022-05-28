@@ -25,6 +25,8 @@ $theme-color: #f00;
 
 You need to set `themeColor` with `{ colorname1: colorvalue, colorname2: colorvalue, ... }` format:
 
+The first color is the default theme color above.
+
 :::: details Example
 
 ::: code-tabs#language

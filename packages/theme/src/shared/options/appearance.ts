@@ -83,7 +83,7 @@ export interface HopeThemeAppearanceOptions {
    *
    * 主题色选项配置
    *
-   * @default { blue: '#2196f3', red: '#f26d6d', green: '#3eaf7c', orange: '#fb9b5f' }
+   * @default false
    */
   themeColor?: Record<string, string> | false;
 
@@ -92,7 +92,7 @@ export interface HopeThemeAppearanceOptions {
    *
    * 全屏按钮
    *
-   * @default true
+   * @default false
    */
   fullscreen?: boolean;
 }
