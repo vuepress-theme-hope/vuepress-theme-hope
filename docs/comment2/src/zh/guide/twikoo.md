@@ -46,7 +46,7 @@ icon: comment
 1. 进入[环境-登录授权](https://console.cloud.tencent.com/tcb/env/login)，启用“匿名登录”
 1. 进入[环境-安全配置](https://console.cloud.tencent.com/tcb/env/safety)，将网站域名添加到“WEB 安全域名”
 1. 进入[环境-云函数](https://console.cloud.tencent.com/tcb/scf/index)，点击“新建云函数”
-1. 函数名称请填写：`twikoo`，创建方式请选择：`空白函数`，运行环境请选择：`Nodejs 10.15`，函数内存请选择：`128MB`，点击“下一步”
+1. 函数名称请填写 `twikoo`，创建方式请选择 `空白函数`，运行环境请选择 `Nodejs 10.15`，函数内存请选择 `128MB`，点击“下一步”
 1. 清空输入框中的示例代码，复制以下代码、粘贴到“函数代码”输入框中，点击“确定”
 
    ```js
@@ -86,7 +86,7 @@ icon: comment
 
    > 如果你没有安装 Git，也可以从 [Release](https://github.com/imaegoo/twikoo/releases) 页面下载最新的 Source code
    >
-   > 如果你所在的地区访问 GitHub 速度慢，也可以尝试另一个仓库地址：[https://imaegoo.coding.net/public/twikoo/twikoo/git](https://imaegoo.coding.net/public/twikoo/twikoo/git)
+   > 如果你所在的地区访问 GitHub 速度慢，也可以尝试另一个仓库地址: [https://imaegoo.coding.net/public/twikoo/twikoo/git](https://imaegoo.coding.net/public/twikoo/twikoo/git)
 
 1. 安装依赖项
 

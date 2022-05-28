@@ -32,6 +32,7 @@ import {
   tasklist,
   vPre,
   vueDemo,
+  stylize,
   playground,
   playFile,
   playImports,
@@ -209,6 +210,7 @@ export const mdEnhancePlugin =
         if (texEnable) markdownIt.use(katex, katexOptions);
         if (presentationEnable) markdownIt.use(presentation);
         if (getStatus("vpre")) markdownIt.use(vPre);
+        if (getStatus("stylize")) markdownIt.use(stylize, options.stylize);
         if (playgroundEnable) {
           markdownIt.use(playground());
           markdownIt.use(playFile);

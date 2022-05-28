@@ -1,7 +1,7 @@
 ---
 title: 流程图
 icon: tree
-index: 12
+order: 12
 category:
   - Markdown
 tag:

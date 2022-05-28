@@ -3,7 +3,7 @@ title: Plugin Config
 icon: config
 index: false
 dir:
-  index: 4
+  order: 4
 ---
 
 ## Catalog

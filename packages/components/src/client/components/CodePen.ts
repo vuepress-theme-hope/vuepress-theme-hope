@@ -1,7 +1,16 @@
 import { useScriptTag } from "@vueuse/core";
-import { computed, defineComponent, h } from "vue";
+import { computed, defineComponent, onMounted, h } from "vue";
 
 import type { PropType, VNode } from "vue";
+
+import "../styles/code-pen.scss";
+
+declare global {
+  interface Window {
+    // eslint-disable-next-line @typescript-eslint/naming-convention
+    __CPEmbed: (selector: string) => void;
+  }
+}
 
 export default defineComponent({
   name: "CodePen",
@@ -19,6 +28,10 @@ export default defineComponent({
     defaultTab: {
       type: Array as PropType<string[]>,
       default: () => ["result"],
+    },
+    status: {
+      type: String as PropType<"autoload" | "preview" | "clicktorun">,
+      default: "preview",
     },
   },
 
@@ -44,20 +57,44 @@ export default defineComponent({
 
     useScriptTag("https://static.codepen.io/assets/embed/ei.js");
 
+    onMounted(() => {
+      if (props.status !== "clicktorun") {
+        const intervalID = setInterval(() => {
+          if (window.__CPEmbed) {
+            window.__CPEmbed(`.codepen-${slugHash.value}`);
+            clearInterval(intervalID);
+          }
+        }, 500);
+      }
+    });
+
     return (): VNode =>
       h(
-        "p",
+        "div",
         {
-          class: "codepen",
+          class: ["codepen-wrapper", `codepen-${slugHash.value}`],
           "data-height": props.height,
           "data-theme-id": props.theme,
           "data-user": user.value,
           "data-slug-hash": slugHash.value,
           "data-default-tab": props.defaultTab.join(","),
           "data-pen-title": props.title,
+          "data-preview": props.status === "preview",
           user: props.user,
         },
         [
+          props.status === "clicktorun"
+            ? h(
+                "button",
+                {
+                  class: "codepen-button",
+                  onClick: () => {
+                    window.__CPEmbed(`.codepen-${slugHash.value}`);
+                  },
+                },
+                "Run Code"
+              )
+            : null,
           h("span", [
             "See the Pen ",
             h("a", { href: props.link }, [props.title]),

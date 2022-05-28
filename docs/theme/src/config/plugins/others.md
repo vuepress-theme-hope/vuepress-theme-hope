@@ -1,7 +1,7 @@
 ---
 title: Other Plugin Config
 icon: more
-index: 8
+order: 8
 category:
   - Config
 tag:

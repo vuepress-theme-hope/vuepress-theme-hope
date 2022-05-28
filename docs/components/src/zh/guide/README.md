@@ -3,6 +3,16 @@ title: 指南
 icon: creative
 ---
 
+::: info Tree Shakable
+
+这个插件完全支持 tree-shaking。
+
+这意味着你可以自由选择你喜欢的任何组件，并不捆绑其他组件。
+
+例如，如果你使用 `{ backToTop: true }` 调用此插件，则仅注入 `<BackToTop />` 组件。
+
+:::
+
 此插件注册 4 个组件和 2 个全局组件:
 
 - [AddThis](addthis.md) (全局组件)
@@ -16,3 +26,5 @@ icon: creative
 - [FontIcon](fonticon.md)
 
 - [PDF](pdf.md)
+
+- [StackBlitz](stackblitz.md)

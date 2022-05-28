@@ -1,0 +1,31 @@
+name: issue-labeled
+
+on:
+  issues:
+    types:
+      - labeled
+
+jobs:
+  issue-invalid:
+    name: close invalid issue
+    if: github.event.label.name == 'invalid'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions-cool/issues-helper@v3
+        with:
+          actions: close-issue, create-comment
+          token: ${{ secrets.GITHUB_TOKEN }}
+          body: |
+            Hello @${{ github.event.issue.user.login }}. This issue is marked as `invalid` and closed. Please make sure you are reporting an issue and following the issue template.
+
+  issue-need-reproduction:
+    name: need reproduction
+    if: github.event.label.name == 'need reproduction'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions-cool/issues-helper@v3
+        with:
+          actions: create-comment
+          token: ${{ secrets.GITHUB_TOKEN }}
+          body: |
+            Hello @${{ github.event.issue.user.login }}. Please provide a [minimal reproduction](https://stackoverflow.com/help/minimal-reproducible-example) using a GitHub repository or [vuepress-theme-hope.github.io/v2-new](https://vuepress-theme-hope.github.io/v2-new). Issues marked with `need reproduction` will be closed if they have no activity within 3 days.

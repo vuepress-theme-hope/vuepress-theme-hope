@@ -1,7 +1,7 @@
 ---
 title: 幻灯片
 icon: slides
-index: 16
+order: 16
 category:
   - Markdown
 tag:

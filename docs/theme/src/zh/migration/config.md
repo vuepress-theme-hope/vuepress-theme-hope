@@ -211,13 +211,13 @@ tag:
 
     - `feed.output.atom.enable` 重命名为 `plugins.feed.atom` ![警告](https://img.shields.io/badge/-warning-yellow)
 
-    - `feed.output.json.enable.` 重命名为 `plugins.feed.json` ![警告](https://img.shields.io/badge/-warning-yellow)
+    - `feed.output.json.enable` 重命名为 `plugins.feed.json` ![警告](https://img.shields.io/badge/-warning-yellow)
 
     - `feed.output.rss.enable` 重命名为 `plugins.feed.rss` ![警告](https://img.shields.io/badge/-warning-yellow)
 
-    - `feed.output.atom.path.` 重命名为 `plugins.feed.atomOutputFilename` ![警告](https://img.shields.io/badge/-warning-yellow)
+    - `feed.output.atom.path` 重命名为 `plugins.feed.atomOutputFilename` ![警告](https://img.shields.io/badge/-warning-yellow)
 
-    - `feed.output.json.path.` 重命名为 `plugins.feed.jsonOutputFilename` ![警告](https://img.shields.io/badge/-warning-yellow)
+    - `feed.output.json.path` 重命名为 `plugins.feed.jsonOutputFilename` ![警告](https://img.shields.io/badge/-warning-yellow)
 
     - `feed.output.rss.path` 重命名为 `plugins.feed.rssOutputFilename` ![警告](https://img.shields.io/badge/-warning-yellow)
 
@@ -240,18 +240,6 @@ tag:
   - 图像标记支持 ![新增](https://img.shields.io/badge/-新增-brightgreen)
 
     通过 `plugins.mdEnhance.imageMark` 使用 `#light` 和 `#dark` 后缀标记图像以在日间模式或夜间模式下显示它们。
-
-  - `v-pre` 支持
-
-    VuePress 2 从 `@vuepress/core` 中删除了以下容器支持，因此添加了此选项
-
-    ```md
-    ::: v-pre
-
-    一些 {{vue 语法}}。
-
-    :::
-    ```
 
   - Chart.js 支持 ![新增](https://img.shields.io/badge/-新增-brightgreen)
 
@@ -327,10 +315,12 @@ tag:
 
   - `plugins.mdEnhance.vpre` ![新增](https://img.shields.io/badge/-新增-brightgreen)
 
-    VuePress2 不再内置下列语法。
+    VuePress 2 从 `@vuepress/core` 中删除了以下容器支持，因此添加了此选项
 
     ```md
     ::: v-pre
+
+    一些 {{vue 语法}}。
 
     :::
     ```
@@ -367,7 +357,7 @@ tag:
 
   - `plugins.pwa.hintComponent` ![新增](https://img.shields.io/badge/-新增-brightgreen): 检测到新内容的提示组件
 
-  - shouldPrefetch 提示 ![新增](https://img.shields.io/badge/-新增-brightgreen): 现在插件将检查配置文件中的 `shouldPrefetch` 选项并警告您禁用它。
+  - shouldPrefetch 提示 ![新增](https://img.shields.io/badge/-新增-brightgreen): 现在插件将检查配置文件中的 `shouldPrefetch` 选项并警告你禁用它。
 
   - `plugins.pwa.cacheHTML` 默认值由 `true` 改为 `false` ![警告](https://img.shields.io/badge/-warning-yellow)
 
@@ -383,19 +373,19 @@ tag:
 
   - JSON-LD 支持 ![新增](https://img.shields.io/badge/-新增-brightgreen)
 
-    该插件现在可以为您生成 JSON-LD 脚本标签，并提供一个选项 `plugins.seo.jsonLd` 让您自定义 JSON-LD 属性。
+    该插件现在可以为你生成 JSON-LD 脚本标签，并提供一个选项 `plugins.seo.jsonLd` 让你自定义 JSON-LD 属性。
 
   - 自动描述生成 ![新增](https://img.shields.io/badge/-新增-brightgreen)
 
-    该插件可以通过 `plugins.seo.autoDescription` 选项自动为您生成描述
+    该插件可以通过 `plugins.seo.autoDescription` 选项自动为你生成描述
 
   - 规范链接 ![新增](https://img.shields.io/badge/-新增-brightgreen)
 
-    您可以通过 `plugins.seo.canonicalLink` 选项设置规范链接。当您的文档部署在多个地方时，它很有用。
+    你可以通过 `plugins.seo.canonicalLink` 选项设置规范链接。当你的文档部署在多个地方时，它很有用。
 
   - `seo.customMeta` 重命名为 `plugins.seo.customHead` ![警告](https://img.shields.io/badge/-warning-yellow)
 
-    现在您可以编辑所有 `<head>` 标签，而不是仅 `<meta>` 标签。
+    现在你可以编辑所有 `<head>` 标签，而不是仅 `<meta>` 标签。
 
 - `sitemap` 移动至 `plugins.sitemap`
 

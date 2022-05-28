@@ -1,7 +1,7 @@
 ---
 title: MdEnhance Plugin Config
 icon: markdown
-index: 6
+order: 6
 category:
   - Config
 tag:
@@ -224,6 +224,52 @@ Whether to enable flowchart support
 - Default: `false`
 
 Whether to enable [Mermaid](https://mermaid-js.github.io/mermaid/#/) support.
+
+### stylize
+
+- Type: `StylizeOptions | false`
+
+  ```ts
+  interface StylizeResult {
+    /**
+     * Tag name
+     */
+    tag: string;
+
+    /**
+     * Attributes settings
+     */
+    attrs: Record<string, string>;
+
+    /**
+     * Tag content
+     */
+    content: string;
+  }
+
+  interface StylizeItem {
+    /**
+     * Inline token matcher
+     */
+    matcher: string | RegExp;
+
+    /**
+     * Content Replacer
+     */
+    replacer: (options: {
+      tag: string;
+      content: string;
+      attrs: Record<string, string>;
+      env?: MarkdownEnv;
+    }) => StylizeResult | void;
+  }
+
+  type StylizeOptions = StylizeItem[];
+  ```
+
+- Default: `false`
+
+Stylize inline tokens to create snippet you want.
 
 ### demo
 

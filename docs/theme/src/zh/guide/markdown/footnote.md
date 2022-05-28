@@ -1,7 +1,7 @@
 ---
 title: 脚注
 icon: footnote
-index: 5
+order: 5
 category:
   - Markdown
 tag:

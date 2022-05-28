@@ -1,7 +1,7 @@
 ---
 title: 插件 Frontmatter 配置
 icon: config
-index: 3
+order: 3
 category:
   - 配置
 tag:

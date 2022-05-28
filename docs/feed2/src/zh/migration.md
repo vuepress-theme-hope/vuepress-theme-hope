@@ -11,13 +11,13 @@ icon: change
 
   - `output.atom.enable` 重命名为 `atom`
 
-  - `output.json.enable.` 重命名为 `json`
+  - `output.json.enable` 重命名为 `json`
 
   - `output.rss.enable` 重命名为 `rss`
 
-  - `output.atom.path.` 重命名为 `atomOutputFilename`
+  - `output.atom.path` 重命名为 `atomOutputFilename`
 
-  - `output.json.path.` 重命名为 `jsonOutputFilename`
+  - `output.json.path` 重命名为 `jsonOutputFilename`
 
   - `output.rss.path` 重命名为 `rssOutputFilename`
 

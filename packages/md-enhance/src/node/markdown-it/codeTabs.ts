@@ -5,7 +5,7 @@ export const codeTabs: PluginSimple = (md) => {
   tabs(md, {
     name: "code-tabs",
     component: "CodeTabs",
-    getter: (tokens, index, options, env, self) => {
+    getter: (tokens, index) => {
       let inCodeTab = false;
       let foundFence = false;
       const codeTabsData: { content: string }[] = [];
@@ -33,11 +33,11 @@ export const codeTabs: PluginSimple = (md) => {
 
           if (inCodeTab && type === "fence" && !foundFence) {
             foundFence = true;
-            codeTabsData.push({
-              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-              content: self.rules.fence!(tokens, i, options, env, self),
-            });
+            continue;
           }
+
+          tokens[i].type = "code_tab_empty";
+          tokens[i].hidden = true;
         }
       }
 

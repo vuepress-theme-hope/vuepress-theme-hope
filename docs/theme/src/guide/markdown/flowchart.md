@@ -1,7 +1,7 @@
 ---
 title: Flowchart
 icon: tree
-index: 12
+order: 12
 category:
   - Markdown
 tag:

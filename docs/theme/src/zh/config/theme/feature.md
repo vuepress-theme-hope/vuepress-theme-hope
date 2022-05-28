@@ -1,7 +1,7 @@
 ---
 title: 主题功能选项
 icon: config
-index: 2
+order: 2
 category:
   - 配置
 tag:

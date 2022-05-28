@@ -1,7 +1,7 @@
 ---
 title: Tex
 icon: tex
-index: 9
+order: 9
 category:
   - Markdown
 tag:

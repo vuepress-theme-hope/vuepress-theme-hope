@@ -1,7 +1,7 @@
 ---
 title: 深色模式
 icon: contrast
-index: 1
+order: 1
 category:
   - 界面
 tag:
@@ -41,4 +41,4 @@ import AppearanceSwitch from '@theme-hope/module/outlook/components/AppearanceSw
 
 ## 全局变量
 
-`$isDarkmode` 在所有 Mrkdown 文件中都可用。
+`$isDarkMode` 在所有 Mrkdown 文件中都可用。

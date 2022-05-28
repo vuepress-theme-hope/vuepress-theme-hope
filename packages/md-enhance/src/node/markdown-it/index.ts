@@ -18,4 +18,5 @@ export * from "./sup";
 export * from "./tabs";
 export * from "./tasklist";
 export * from "./vPre";
+export * from "./stylize";
 export * from "./playground";

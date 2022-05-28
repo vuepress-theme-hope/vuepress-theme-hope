@@ -1,7 +1,7 @@
 ---
 title: Layout Frontmatter Config
 icon: config
-index: 2
+order: 2
 category:
   - Config
 tag:

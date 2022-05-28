@@ -52,6 +52,29 @@
     transform: scaleY(0);
   }
 
+  .nav-link {
+    position: relative;
+
+    display: block;
+
+    padding-left: 0.5rem;
+
+    font-weight: 400;
+    line-height: 2;
+
+    &:hover {
+      color: var(--theme-color);
+    }
+
+    &.active {
+      color: var(--theme-color);
+    }
+
+    .icon {
+      font-size: 1em;
+    }
+  }
+
   .dropdown-item {
     color: inherit;
     line-height: 1.7rem;
@@ -84,28 +107,5 @@
   .dropdown-subitem {
     padding-left: 0.5rem;
     font-size: 0.9em;
-  }
-
-  .nav-link {
-    position: relative;
-
-    display: block;
-
-    padding-left: 0.5rem;
-
-    font-weight: 400;
-    line-height: 2;
-
-    &:hover {
-      color: var(--theme-color);
-    }
-
-    &.active {
-      color: var(--theme-color);
-    }
-
-    .icon {
-      font-size: 1em;
-    }
   }
 }

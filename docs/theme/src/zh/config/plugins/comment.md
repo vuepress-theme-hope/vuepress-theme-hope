@@ -1,7 +1,7 @@
 ---
 title: 评论插件配置
 icon: comment
-index: 3
+order: 3
 category:
   - 配置
 tag:

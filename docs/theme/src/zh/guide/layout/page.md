@@ -1,7 +1,7 @@
 ---
 title: 页面
 icon: page
-index: 5
+order: 5
 category:
   - 布局
 tag:
