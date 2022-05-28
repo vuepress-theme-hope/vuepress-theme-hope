@@ -9,23 +9,19 @@ tag:
   - Theme Color
 ---
 
-This is an out-of-the-box feature that offers five theme color "red, blue, green, orange and purple" besides your theme color. You can also use your own theme color list.
+The theme allows you to customize theme color and even provide a picker.
 
 <!-- more -->
 
-## Try it
+## Setting Default Theme Color
 
-<!-- markdownlint-disable-->
+You should set the default theme color of your site in `.vuepress/palette.scss`:
 
-<ThemeColorPicker :themeColor="themeColor" />
+```scss
+$theme-color: #f00;
+```
 
-<!-- markdownlint-restore -->
-
-## Disable
-
-You can disable it by setting `themeColor: false` in theme options.
-
-## Customize ThemeColor
+## Theme Color Picker
 
 You need to set `themeColor` with `{ colorname1: colorvalue, colorname2: colorvalue, ... }` format:
 
@@ -73,6 +69,14 @@ module.exports = {
 :::
 
 ::::
+
+### Try it
+
+<!-- markdownlint-disable-->
+
+<ThemeColorPicker :themeColor="themeColor" />
+
+<!-- markdownlint-restore -->
 
 <script setup lang="ts">
 import { computed } from 'vue';

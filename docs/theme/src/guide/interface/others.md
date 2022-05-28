@@ -16,9 +16,7 @@ For detailed info, please see [Config → Style Customize](../../config/style.md
 
 ## Fullscreen Button
 
-Enabled by default, it’s in outlook popup window in navbar.
-
-If you don’t need it, you can disable it by setting `fullscreen: false` in the theme options.
+If you need it, you can enable it by setting `fullscreen: true` in the theme options.
 
 ::: tip
 
@@ -30,29 +28,27 @@ If the current browser does not support full screen, the full screen button is a
 
 @tab TS
 
-```ts {8}
+```ts
 // .vuepress/config.ts
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default defineUserConfig({
   theme: hopeTheme({
-    // Enable by default
-    fullscreen: false,
-  },
+    fullscreen: true,
+  }),
 });
 ```
 
 @tab JS
 
-```js {7}
+```js
 // .vuepress/config.js
 const { hopeTheme } = require("vuepress-theme-hope");
 
 module.exports = {
   theme: hopeTheme({
-    // Enable by default
-    fullscreen: false,
+    fullscreen: true,
   }),
 };
 ```
