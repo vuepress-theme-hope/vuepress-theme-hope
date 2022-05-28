@@ -213,13 +213,13 @@ Move all plugin related options under `plugins`.
 
     - `feed.output.atom.enable` renamed to `plugins.feed.atom` ![changed](https://img.shields.io/badge/-changed-yellow)
 
-    - `feed.output.json.enable.` renamed to `plugins.feed.json` ![changed](https://img.shields.io/badge/-changed-yellow)
+    - `feed.output.json.enable` renamed to `plugins.feed.json` ![changed](https://img.shields.io/badge/-changed-yellow)
 
     - `feed.output.rss.enable` renamed to `plugins.feed.rss` ![changed](https://img.shields.io/badge/-changed-yellow)
 
-    - `feed.output.atom.path.` renamed to `plugins.feed.atomOutputFilename` ![changed](https://img.shields.io/badge/-changed-yellow)
+    - `feed.output.atom.path` renamed to `plugins.feed.atomOutputFilename` ![changed](https://img.shields.io/badge/-changed-yellow)
 
-    - `feed.output.json.path.` renamed to `plugins.feed.jsonOutputFilename` ![changed](https://img.shields.io/badge/-changed-yellow)
+    - `feed.output.json.path` renamed to `plugins.feed.jsonOutputFilename` ![changed](https://img.shields.io/badge/-changed-yellow)
 
     - `feed.output.rss.path` renamed to `plugins.feed.rssOutputFilename`
 
@@ -317,7 +317,7 @@ Move all plugin related options under `plugins`.
 
   - add `plugins.mdEnhance.vpre` ![New](https://img.shields.io/badge/-New-brightgreen)
 
-    The following syntax is no longer built into VuePress2.
+    The following syntax is no longer built into VuePress2, so we add this option.
 
     ```md
     ::: v-pre

@@ -55,9 +55,24 @@ $selection-color: #fff;
 
 // some overrides after theme template use
 .reveal[theme="blood"] {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 700;
+  }
+
   p {
     font-weight: 300;
     text-shadow: 1px 1px $coal;
+
+    code {
+      display: inline-block;
+      border-radius: 7px;
+      background: $code-background;
+    }
   }
 
   section.has-light-background {
@@ -68,24 +83,5 @@ $selection-color: #fff;
     h4 {
       text-shadow: none;
     }
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-weight: 700;
-  }
-
-  p code {
-    display: inline-block;
-    border-radius: 7px;
-    background: $code-background;
-  }
-
-  small code {
-    vertical-align: baseline;
   }
 }

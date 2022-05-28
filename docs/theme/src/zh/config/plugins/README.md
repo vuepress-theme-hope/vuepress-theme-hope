@@ -3,7 +3,7 @@ title: 插件配置
 icon: config
 index: false
 dir:
-  index: 4
+  order: 4
 ---
 
 ## 目录

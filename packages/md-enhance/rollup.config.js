@@ -31,6 +31,10 @@ export default [
     external: ["@vuepress/client", "@vueuse/core", "vue", /\.scss$/],
     dtsExternal: [/\.scss$/],
   }),
+  ...rollupTypescript("client/components/ECharts", {
+    external: ["vuepress-shared/lib/client", "echarts", "vue", /\.scss$/],
+    dtsExternal: [/\.scss$/],
+  }),
   ...rollupTypescript("client/components/FlowChart", {
     external: [
       "vuepress-shared/lib/client",
@@ -40,10 +44,6 @@ export default [
       "vue",
       /\.scss$/,
     ],
-    dtsExternal: [/\.scss$/],
-  }),
-  ...rollupTypescript("client/components/ECharts", {
-    external: ["vuepress-shared/lib/client", "echarts", "vue", /\.scss$/],
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/Mermaid", {
@@ -61,6 +61,10 @@ export default [
     ],
     dtsExternal: [/\.scss$/, /\.css$/],
   }),
+  ...rollupTypescript("client/components/Tabs", {
+    external: ["@vuepress/client", "@vueuse/core", "vue", /\.scss$/],
+    dtsExternal: [/\.scss$/],
+  }),
   ...rollupTypescript("client/SlidePage", {
     external: [
       "vuepress-shared/lib/client",
@@ -70,10 +74,6 @@ export default [
       "vue-router",
       /\.scss$/,
     ],
-    dtsExternal: [/\.scss$/],
-  }),
-  ...rollupTypescript("client/components/Tabs", {
-    external: ["@vuepress/client", "@vueuse/core", "vue", /\.scss$/],
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/reveal/index", {

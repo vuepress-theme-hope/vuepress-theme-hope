@@ -3,7 +3,7 @@ title: Markdown 增强
 icon: markdown
 index: false
 dir:
-  index: 3
+  order: 3
 ---
 
 除了 VuePress 本身新增了一些 Markdown 语法外，`vuepress-theme-hope` 通过 [vuepress-plugin-md-enhance][md-enhance]，在 Markdown 中启用了更多的语法与新功能。
@@ -28,11 +28,15 @@ dir:
 
 - [任务列表](tasklist.md)
 
+- [自定义对齐](align.md)
+
 - [上下角标](sup-sub.md)
 
 - [标记](mark.md)
 
 - [图表](chart.md)
+
+- [Echarts](echarts.md)
 
 - [流程图](flowchart.md)
 
@@ -45,6 +49,8 @@ dir:
 - [代码演示](demo.md)
 
 - [幻灯片](presentation.md)
+
+- [样式化](stylize.md)
 
 - [组件](components.md)
 

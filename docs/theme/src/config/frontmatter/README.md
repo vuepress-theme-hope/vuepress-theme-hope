@@ -3,7 +3,7 @@ title: Frontmatter Config
 icon: config
 index: false
 dir:
-  index: 5
+  order: 5
 category:
   - Config
 tag:

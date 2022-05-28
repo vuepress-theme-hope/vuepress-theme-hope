@@ -52,6 +52,17 @@ CodePen 项目标题。
 
 编辑器主题。
 
+### status
+
+- : `"autoload" | "preview" | "clicktorun"`
+- 默认值: `"preview"`
+
+CodePen 嵌入演示状态。
+
+- `"autoload"`: 页面加载时会加载 demo。
+- `"preview"`: 演示的代码会被加载并显示预览按钮。
+- `"clicktorun"`: 只有在用户单击“运行代码”按钮后才会加载演示。
+
 ### defaultTab
 
 - 类型: `string[]`
@@ -63,13 +74,7 @@ CodePen 项目标题。
 
 一个使用用户和 Slug Hash 的案例:
 
-<CodePen
-  user="kowlor"
-  slug-hash="ZYYQoy"
-  title="Solar System animation - Pure CSS"
-  :default-tab="['css','result']"
-  :theme="$isDarkmode? 'dark': 'light'"
-/>
+<CodePen user="kowlor" slug-hash="ZYYQoy" title="Solar System animation - Pure CSS" :default-tab="['css','result']" :theme="$isDarkMode? 'dark': 'light'" />
 
 ```md
 <CodePen
@@ -77,24 +82,32 @@ CodePen 项目标题。
   slug-hash="ZYYQoy"
   title="Solar System animation - Pure CSS"
   :default-tab="['css','result']"
-  :theme="$isDarkmode? 'dark': 'light'"
+  :theme="$isDarkMode? 'dark': 'light'"
 />
 ```
 
 一个使用链接的案例:
 
-<CodePen
-  link="https://codepen.io/kowlor/pen/ZYYQoy"
-  title="Solar System animation - Pure CSS"
-  :default-tab="['css','result']"
-  :theme="$isDarkmode? 'dark': 'light'"
-/>
+<CodePen link="https://codepen.io/kowlor/pen/ZYYQoy" title="Solar System animation - Pure CSS" :default-tab="['css','result']" :theme="$isDarkMode? 'dark': 'light'" />
 
 ```md
 <CodePen
   link="https://codepen.io/kowlor/pen/ZYYQoy"
   title="Solar System animation - Pure CSS"
   :default-tab="['css','result']"
-  :theme="$isDarkmode? 'dark': 'light'"
+  :theme="$isDarkMode? 'dark': 'light'"
+/>
+```
+
+一个加载运行的案例:
+
+<CodePen link="https://codepen.io/keginaring/pen/XWZazwW" title="Solar System animation - Pure CSS" status="clicktorun" :theme="$isDarkMode? 'dark': 'light'" />
+
+```md
+<CodePen
+  link="https://codepen.io/kowlor/pen/ZYYQoy"
+  title="Envelope w/ Hearts"
+  status="clicktorun"
+  :theme="$isDarkMode? 'dark': 'light'"
 />
 ```

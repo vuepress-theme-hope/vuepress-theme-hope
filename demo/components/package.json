@@ -1,0 +1,26 @@
+{
+  "name": "components-demo",
+  "version": "2.0.0-beta.72",
+  "private": true,
+  "description": "Demo for vuepress-plugin-components",
+  "license": "MIT",
+  "author": "Mr.Hope",
+  "scripts": {
+    "demo:vite-build": "vuepress-vite build src",
+    "demo:vite-clean-dev": "vuepress-vite dev src --clean-cache",
+    "demo:vite-dev": "vuepress-vite dev src",
+    "demo:webpack-build": "vuepress-webpack build src",
+    "demo:webpack-clean-dev": "vuepress-webpack dev src --clean-cache",
+    "demo:webpack-dev": "vuepress-webpack dev src"
+  },
+  "devDependencies": {
+    "@vuepress/cli": "2.0.0-beta.46",
+    "@vuepress/client": "2.0.0-beta.46",
+    "@vuepress/theme-default": "2.0.0-beta.46",
+    "sass-loader": "13.0.0",
+    "vue": "3.2.36",
+    "vuepress-plugin-components": "workspace:*",
+    "vuepress-vite": "2.0.0-beta.46",
+    "vuepress-webpack": "2.0.0-beta.46"
+  }
+}

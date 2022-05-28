@@ -1,7 +1,7 @@
 ---
 title: Comment Plugin Config
 icon: comment
-index: 3
+order: 3
 category:
   - Config
 tag:

@@ -1,7 +1,7 @@
 ---
 title: 其他插件选项
 icon: more
-index: 8
+order: 8
 category:
   - 配置
 tag:
@@ -11,14 +11,14 @@ tag:
 
 ## components
 
-注册一些可以在 Markdown 文件中使用的组件，可用的组件有：
+注册一些可以在 Markdown 文件中使用的组件，可用的组件有:
 
 - Badge
 - CodePen
 - FontIcon
 - PDF
 
-您可以将 `plugin.components` 设置为需要的组件数组，默认情况下为 `["Badge"]`。
+你可以将 `plugin.components` 设置为需要的组件数组，默认情况下为 `["Badge"]`。
 
 ## copyCode <Badge text="默认启用" />
 

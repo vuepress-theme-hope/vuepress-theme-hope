@@ -6,8 +6,11 @@ import { extendsPage } from "./extendsPage";
 import { checkStyle, covertFrontmatter, covertThemeConfig } from "./migrate";
 import { getLayoutConfig } from "./layout";
 import { getPluginConfig, usePlugin } from "./plugins";
-import { prepareConfigFile } from "./prepare";
-import { prepareSidebarData } from "./sidebar";
+import {
+  prepareConfigFile,
+  prepareSidebarData,
+  prepareSocialMediaIcons,
+} from "./prepare";
 import { checkSocialMediaIcons } from "./socialMedia";
 import { getStatus } from "./status";
 import { getThemeConfig } from "./themeConfig";
@@ -75,10 +78,7 @@ export const hopeTheme =
         Promise.all([
           prepareSidebarData(app, themeConfig),
           prepareThemeColorScss(app, themeConfig),
-          app.writeTemp(
-            `theme-hope/socialMedia.js`,
-            `export const icons = ${JSON.stringify(icons)}`
-          ),
+          prepareSocialMediaIcons(app, icons),
         ]).then(() => void 0),
 
       plugins: getPluginConfig(plugins, themeConfig, {

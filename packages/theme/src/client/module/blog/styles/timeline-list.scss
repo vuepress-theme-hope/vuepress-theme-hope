@@ -94,34 +94,6 @@
     padding-left: 0 !important;
   }
 
-  .timeline-item {
-    position: relative;
-
-    display: flex;
-
-    padding: 12px 0 4px;
-    border-bottom: 1px dashed var(--border-color);
-
-    list-style: none;
-
-    &:hover {
-      .timeline-date {
-        color: var(--theme-color);
-
-        // stylelint-disable max-nesting-depth
-        &::before {
-          border-color: var(--dot-color);
-          background: var(--theme-color);
-        }
-        // stylelint-enable max-nesting-depth
-      }
-
-      .timeline-title {
-        color: var(--theme-color);
-      }
-    }
-  }
-
   .timeline-date {
     display: inline-block;
     vertical-align: bottom;
@@ -154,5 +126,33 @@
     font-size: 14px;
     line-height: 32px;
     cursor: pointer;
+  }
+
+  .timeline-item {
+    position: relative;
+
+    display: flex;
+
+    padding: 12px 0 4px;
+    border-bottom: 1px dashed var(--border-color);
+
+    list-style: none;
+
+    &:hover {
+      .timeline-date {
+        color: var(--theme-color);
+
+        // stylelint-disable max-nesting-depth
+        &::before {
+          border-color: var(--dot-color);
+          background: var(--theme-color);
+        }
+        // stylelint-enable max-nesting-depth
+      }
+
+      .timeline-title {
+        color: var(--theme-color);
+      }
+    }
   }
 }

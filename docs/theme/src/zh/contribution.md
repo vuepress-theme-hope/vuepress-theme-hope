@@ -25,7 +25,7 @@ pnpm i
 
 ```sh
 corepack enable
-corepack prepare pnpm@7.1.0 --activate
+corepack prepare pnpm@7.1.6 --activate
 ```
 
 :::
@@ -98,7 +98,7 @@ corepack prepare pnpm@7.1.0 --activate
 
 ::: tip 预览文档
 
-由于文档使用的是本地主题和插件，因此您需要先通过 `pnpm build` 构建本地项目。
+由于文档使用的是本地主题和插件，因此你需要先通过 `pnpm build` 构建本地项目。
 
 之后在 `docs` 目录下的正确文档项目文件夹打开终端，运行 `pnpm docs:vite-dev` (使用 vite) 或 `pnpm docs:webpack-dev` (使用 webpack)。
 

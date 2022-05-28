@@ -93,6 +93,29 @@ $headings: (2, 3, 4, 5, 6);
     padding: 0;
   }
 
+  .toc-link {
+    position: relative;
+
+    display: block;
+
+    overflow: hidden;
+
+    max-width: 100%;
+
+    color: var(--light-grey);
+
+    line-height: inherit;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    @each $heading in $headings {
+      &.level#{$heading} {
+        padding-left: ($heading * 8 - 16) * 1px;
+        font-size: (16 - $heading) * 1px;
+      }
+    }
+  }
+
   .toc-item {
     position: relative;
 
@@ -133,29 +156,6 @@ $headings: (2, 3, 4, 5, 6);
 
       &::before {
         background: var(--theme-color);
-      }
-    }
-  }
-
-  .toc-link {
-    position: relative;
-
-    display: block;
-
-    overflow: hidden;
-
-    max-width: 100%;
-
-    color: var(--light-grey);
-
-    line-height: inherit;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-
-    @each $heading in $headings {
-      &.level#{$heading} {
-        padding-left: ($heading * 8 - 16) * 1px;
-        font-size: (16 - $heading) * 1px;
       }
     }
   }

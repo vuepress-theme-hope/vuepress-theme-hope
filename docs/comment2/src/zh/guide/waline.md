@@ -43,7 +43,7 @@ icon: waline
 
    ![创建项目](./assets/vercel-1.png)
 
-1. 此时会让你创建 Team 账号，这里选择 `Skip` 即可：
+1. 此时会让你创建 Team 账号，这里选择 `Skip` 即可:
 
    ![skip team](./assets/vercel-2.png)
 

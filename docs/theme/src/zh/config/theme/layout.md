@@ -1,7 +1,7 @@
 ---
 title: 主题布局选项
 icon: config
-index: 3
+order: 3
 category:
   - 配置
 tag:

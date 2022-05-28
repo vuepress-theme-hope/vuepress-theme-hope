@@ -82,14 +82,14 @@ export default defineComponent({
     });
 
     const isMobileSidebarOpen = ref(false);
-    const isDesktopSidebarOpen = ref(true);
+    const isDesktopSidebarCollapsed = ref(false);
     const toggleMobileSidebar = (value?: boolean): void => {
       isMobileSidebarOpen.value =
         typeof value === "boolean" ? value : !isMobileSidebarOpen.value;
     };
     const toggleDesktopSidebar = (value?: boolean): void => {
-      isDesktopSidebarOpen.value =
-        typeof value === "boolean" ? value : !isDesktopSidebarOpen.value;
+      isDesktopSidebarCollapsed.value =
+        typeof value === "boolean" ? value : !isDesktopSidebarCollapsed.value;
     };
 
     const touchStart = { x: 0, y: 0 };
@@ -175,9 +175,9 @@ export default defineComponent({
                 !(slots.sidebar || slots.sidebarTop || slots.sidebarBottom),
               "has-toc": enableToc.value,
               "hide-navbar": hideNavbar.value,
-              "sidebar-open": isMobile.value
-                ? isMobileSidebarOpen.value
-                : isDesktopSidebarOpen.value,
+              "sidebar-collapsed":
+                !isMobile.value && isDesktopSidebarCollapsed.value,
+              "sidebar-open": isMobile.value && isMobileSidebarOpen.value,
             },
             frontmatter.value.containerClass || "",
           ],
@@ -225,7 +225,7 @@ export default defineComponent({
                     h("span", {
                       class: [
                         "arrow",
-                        isDesktopSidebarOpen.value ? "left" : "right",
+                        isDesktopSidebarCollapsed.value ? "right" : "left",
                       ],
                     })
                   )

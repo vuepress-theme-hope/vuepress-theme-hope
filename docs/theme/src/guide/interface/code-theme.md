@@ -1,11 +1,11 @@
 ---
 title: Code Themes
 icon: style
-index: 4
+order: 4
 category:
-  - interface
+  - Interface
 tag:
-  - interface
+  - Interface
   - Code Themes
 ---
 
@@ -67,7 +67,7 @@ You should configure following variables in `.vuepress/styles/config.scss` to se
 - shades-of-purple
 - solarized-dark-atom
 - tomorrow
-- vsc-dark
+- vsc-dark-plus
 - xonokai
 - z-touch
 

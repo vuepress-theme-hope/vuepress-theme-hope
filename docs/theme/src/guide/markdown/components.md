@@ -1,7 +1,7 @@
 ---
 title: Components
 icon: plugin
-index: 17
+order: 18
 category:
   - Markdown
 tag:
@@ -17,6 +17,7 @@ Available components:
 - CodePen
 - FontIcon
 - PDF
+- StackBlitz
 
 By default, `<Badge />` and `<CodePen />` is enabled.
 
@@ -42,13 +43,7 @@ A component which allows you to embed CodePen demo.
 
 A demo with user and slug hash:
 
-<CodePen
-  user="kowlor"
-  slug-hash="ZYYQoy"
-  title="Solar System animation - Pure CSS"
-  :default-tab="['css','result']"
-  :theme="$isDarkmode? 'dark': 'light'"
-/>
+<CodePen user="kowlor" slug-hash="ZYYQoy" title="Solar System animation - Pure CSS" :default-tab="['css','result']" :theme="$isDarkMode? 'dark': 'light'" />
 
 ```md
 <CodePen
@@ -56,25 +51,34 @@ A demo with user and slug hash:
   slug-hash="ZYYQoy"
   title="Solar System animation - Pure CSS"
   :default-tab="['css','result']"
-  :theme="$isDarkmode? 'dark': 'light'"
+  :theme="$isDarkMode? 'dark': 'light'"
 />
 ```
 
 A demo with link:
 
-<CodePen
-  link="https://codepen.io/kowlor/pen/ZYYQoy"
-  title="Solar System animation - Pure CSS"
-  :default-tab="['css','result']"
-  :theme="$isDarkmode? 'dark': 'light'"
-/>
+<CodePen link="https://codepen.io/kowlor/pen/ZYYQoy" title="Solar System animation - Pure CSS" :default-tab="['css','result']" :theme="$isDarkMode? 'dark': 'light'" />
 
 ```md
 <CodePen
   link="https://codepen.io/kowlor/pen/ZYYQoy"
   title="Solar System animation - Pure CSS"
   :default-tab="['css','result']"
-  :theme="$isDarkmode? 'dark': 'light'"
+  :theme="$isDarkMode? 'dark': 'light'"
+/>
+```
+
+A click to run demo:
+
+<CodePen link="https://codepen.io/keginaring/pen/XWZazwW" title="Solar System animation - Pure CSS" status="clicktorun" :theme="$isDarkMode? 'dark': 'light'" />
+
+```md
+<CodePen
+  link="https://codepen.io/kowlor/pen/ZYYQoy"
+  title="Envelope w/ Hearts"
+  status="clicktorun"
+  :default-tab="['css','result']"
+  :theme="$isDarkMode? 'dark': 'light'"
 />
 ```
 
@@ -126,7 +130,26 @@ PDF viewer with initial page 2:
 
 See [PDF][pdf] page for available props.
 
+## StackBlitz
+
+Embed StackBlitz demo in markdown files.
+
+<StackBlitz id="vuepress-theme-hope" />
+
+```md
+<StackBlitz id="vuepress-theme-hope" />
+```
+
+<StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hidedevtools />
+
+```md
+<StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hidedevtools />
+```
+
+See [StackBlitz][stackblitz] page for available props.
+
 [badge]: https://vuepress-theme-hope.github.io/v2/components/guide/badge.html
 [codepen]: https://vuepress-theme-hope.github.io/v2/components/guide/codepen.html
 [fonticon]: https://vuepress-theme-hope.github.io/v2/components/guide/fonticon.html
 [pdf]: https://vuepress-theme-hope.github.io/v2/components/guide/pdf.html
+[stackblitz]: https://vuepress-theme-hope.github.io/v2/components/guide/stackblitz.html

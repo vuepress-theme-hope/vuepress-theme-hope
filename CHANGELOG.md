@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.72](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.71...v2.0.0-beta.72) (2022-05-26)
+
+### Features
+
+- **components:** add StackBlitz component ([f732eb2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f732eb2de023f14165b48e0508cceecb278fc905))
+- **components:** improve CodePen ([55cc9fa](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/55cc9faa6955f2477c34cfe4168745d31aa95951))
+- **md-enhance:** add stylize option ([#1895](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1895)) ([57c57dd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/57c57dd68e4737294a647094a1fc8ba5a7f488b0))
+- **md-enhance:** improve tabs, close [#1878](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1878) ([4f68526](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4f685262f24be821ea80fa4bc1852091c0705188))
+- **theme:** improve sidebar match ([c18c9d5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c18c9d5d8fc84f87ad97380c9ff7b564f8382506))
+- **theme:** improve ssr layout, close [#1858](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1858) ([492cc67](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/492cc6795b5e9b861c1890a1c0a4750a179b68d1))
+- **theme:** improve structure sidebar ([fbec48e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fbec48ebc2227def1865c6406e2b3615fe871ebd))
+- **theme:** rebuild structure sidebar sort ([9856d35](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9856d35d297e9fcaf87a4f8a06ad15beb339444d))
+
+### Bug Fixes
+
+- **md-enhance:** align autolink behavior in gfm ([14b5f0b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/14b5f0b4a34d8d83e860e8ba559f1bdd792c8dab))
+- **md-enhance:** fix slot name ([7002829](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7002829094a104a2b4bec4e777ad57594b18172a))
+- **theme:** fix shortTitle ([df9efe1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/df9efe174cbacce87d8b4898363967d718efbf87))
+
 ## [2.0.0-beta.71](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.70...v2.0.0-beta.71) (2022-05-23)
 
 ### Features

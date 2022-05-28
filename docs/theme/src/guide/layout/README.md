@@ -2,7 +2,7 @@
 title: Layout
 icon: layout
 dir:
-  index: 4
+  order: 4
 ---
 
 ## Catalog

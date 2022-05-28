@@ -1,7 +1,7 @@
 ---
 title: 主题色
 icon: palette
-index: 2
+order: 2
 category:
   - 界面
 tag:
@@ -9,23 +9,19 @@ tag:
   - 主题色
 ---
 
-这是一个开箱即用的功能，除了你的主题色之外，还提供 “红、蓝、绿、橙、紫” 五种颜色主题。你也可以定制自己的主题色选择列表。
+主题允许您自定义主题颜色，甚至提供选择器。
 
 <!-- more -->
 
-## 尝试
+## 设置默认主题色
 
-<!-- markdownlint-disable-->
+您应该在 `.vuepress/palette.scss` 中设置站点的默认主题颜色：
 
-<ThemeColorPicker :themeColor="themeColor" />
+```scss
+$theme-color: #f00;
+```
 
-<!-- markdownlint-restore -->
-
-## 禁用功能
-
-你可以在主题选中设置 `themeColor: false` 来禁用它。
-
-## 自定义主题色
+## 主题色选择器
 
 你需要按照 `{ 颜色名1: 颜色值, 颜色名2: 颜色值, ... }` 的格式在主题选项中配置 `themeColor`:
 
@@ -73,6 +69,14 @@ module.exports = {
 :::
 
 ::::
+
+### 尝试
+
+<!-- markdownlint-disable-->
+
+<ThemeColorPicker :themeColor="themeColor" />
+
+<!-- markdownlint-restore -->
 
 <script setup lang="ts">
 import { computed } from 'vue';

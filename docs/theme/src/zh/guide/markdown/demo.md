@@ -1,7 +1,7 @@
 ---
 title: 代码演示
 icon: discover
-index: 15
+order: 15
 category:
   - Markdown
 tag:
@@ -56,7 +56,7 @@ module.exports = {
 
 ## 语法
 
-请使用以下语法：
+请使用以下语法:
 
 ````md
 ::: [类型]-demo 可选的标题文字
@@ -83,7 +83,7 @@ JSON 块是可选的，可用的配置详见 [配置](../../config/plugins/md-en
 
 :::
 
-该插件支持三种类型：
+该插件支持三种类型:
 
 - normal (默认)
 - vue

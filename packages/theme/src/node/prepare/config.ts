@@ -2,9 +2,11 @@ import { ensureEndingSlash } from "@vuepress/shared";
 import { path } from "@vuepress/utils";
 
 import type { App } from "@vuepress/core";
-import type { ThemeStatus } from "./status";
+import type { ThemeStatus } from "../status";
 
-const CLIENT_FOLDER = ensureEndingSlash(path.resolve(__dirname, "../client"));
+const CLIENT_FOLDER = ensureEndingSlash(
+  path.resolve(__dirname, "../../client")
+);
 
 export const prepareConfigFile = (
   app: App,
@@ -54,7 +56,7 @@ import Navbar from "@theme-hope/module/navbar/components/Navbar";
 import Sidebar from "@theme-hope/module/sidebar/components/Sidebar";
 
 import { useScrollPromise } from "@theme-hope/composables";
-import { setupDarkMode } from "@theme-hope/module/outlook/composables";
+import { injectDarkMode, setupDarkMode } from "@theme-hope/module/outlook/composables";
 import { setupSidebarItems } from "@theme-hope/module/sidebar/composables";
 
 import "${CLIENT_FOLDER}styles/index.scss";
@@ -70,6 +72,9 @@ export default defineClientConfig({
 
       return scrollBehavior(...args);
     };
+
+    // inject global properties
+    injectDarkMode(app);
 
     // register to inject styles
     app.component("CommonWrapper", CommonWrapper);

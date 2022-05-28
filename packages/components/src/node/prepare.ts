@@ -12,6 +12,7 @@ const availableComponents: AvailableComponent[] = [
   "CodePen",
   "FontIcon",
   "PDF",
+  "StackBlitz",
 ];
 
 const getIconLink = (

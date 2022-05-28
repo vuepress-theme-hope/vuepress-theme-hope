@@ -3,7 +3,7 @@ title: 界面
 icon: palette
 index: false
 dir:
-  index: 2
+  order: 2
 ---
 
 ## 目录

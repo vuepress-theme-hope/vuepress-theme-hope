@@ -1,7 +1,7 @@
 ---
 title: 组件
 icon: plugin
-index: 17
+order: 18
 category:
   - Markdown
 tag:
@@ -11,16 +11,17 @@ tag:
 
 通过使用`vuepress-plugin-components`，你可以在你的 Markdown 文件中导入和使用一些组件。
 
-可用组件：
+可用组件:
 
 - Badge
 - CodePen
 - FontIcon
 - PDF
+- StackBlitz
 
 默认情况下，`<Badge />` 和 `<CodePen />` 是启用的。
 
-要启用组件，您应该使用组件名称数组设置 `plugin.components`。
+要启用组件，你应该使用组件名称数组设置 `plugin.components`。
 
 <!-- 更多 -->
 
@@ -38,17 +39,11 @@ tag:
 
 ## CodePen
 
-一个允许您嵌入 CodePen 演示的组件。
+一个允许你嵌入 CodePen 演示的组件。
 
 一个使用用户和 Slug Hash 的案例:
 
-<CodePen
-  user="kowlor"
-  slug-hash="ZYYQoy"
-  title="Solar System animation - Pure CSS"
-  :default-tab="['css','result']"
-  :theme="$isDarkmode? 'dark': 'light'"
-/>
+<CodePen user="kowlor" slug-hash="ZYYQoy" title="Solar System animation - Pure CSS" :default-tab="['css','result']" :theme="$isDarkMode? 'dark': 'light'" />
 
 ```md
 <CodePen
@@ -56,25 +51,33 @@ tag:
   slug-hash="ZYYQoy"
   title="Solar System animation - Pure CSS"
   :default-tab="['css','result']"
-  :theme="$isDarkmode? 'dark': 'light'"
+  :theme="$isDarkMode? 'dark': 'light'"
 />
 ```
 
 一个使用链接的案例:
 
-<CodePen
-  link="https://codepen.io/kowlor/pen/ZYYQoy"
-  title="Solar System animation - Pure CSS"
-  :default-tab="['css','result']"
-  :theme="$isDarkmode? 'dark': 'light'"
-/>
+<CodePen link="https://codepen.io/kowlor/pen/ZYYQoy" title="Solar System animation - Pure CSS" :default-tab="['css','result']" :theme="$isDarkMode? 'dark': 'light'" />
 
 ```md
 <CodePen
   link="https://codepen.io/kowlor/pen/ZYYQoy"
   title="Solar System animation - Pure CSS"
   :default-tab="['css','result']"
-  :theme="$isDarkmode? 'dark': 'light'"
+  :theme="$isDarkMode? 'dark': 'light'"
+/>
+```
+
+一个加载运行的案例:
+
+<CodePen link="https://codepen.io/keginaring/pen/XWZazwW" title="Solar System animation - Pure CSS" status="clicktorun" :theme="$isDarkMode? 'dark': 'light'" />
+
+```md
+<CodePen
+  link="https://codepen.io/kowlor/pen/ZYYQoy"
+  title="Envelope w/ Hearts"
+  status="clicktorun"
+  :theme="$isDarkMode? 'dark': 'light'"
 />
 ```
 
@@ -82,7 +85,7 @@ tag:
 
 ## FontIcon
 
-允许您显示字体图标的组件。
+允许你显示字体图标的组件。
 
 - 主页图标: <FontIcon icon="home" />
 
@@ -126,7 +129,26 @@ PDF 浏览器组件。
 
 有关可用属性，请参阅 [PDF][pdf] 页面。
 
+## StackBlitz
+
+在 Markdown 文件中嵌入 StackBlitz 演示。
+
+<StackBlitz id="vuepress-theme-hope" />
+
+```md
+<StackBlitz id="vuepress-theme-hope" />
+```
+
+<StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hidedevtools />
+
+```md
+<StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hidedevtools />
+```
+
+有关可用属性，请参阅 [StackBlitz][stackblitz] 页面。
+
 [badge]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/badge.html
 [codepen]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/codepen.html
 [fonticon]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/fonticon.html
 [pdf]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/pdf.html
+[stackblitz]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/stackblitz.html

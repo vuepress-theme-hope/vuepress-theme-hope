@@ -3,7 +3,7 @@ title: V2 亮点
 icon: hot
 ---
 
-我们强烈建议您切换到 V2 版本，因为 V2 版本提供了以下改进。
+我们强烈建议你切换到 V2 版本，因为 V2 版本提供了以下改进。
 
 <!-- more -->
 
@@ -11,12 +11,12 @@ icon: hot
 
 V2 由 _VuePress2_ 提供支持，使用 _Vite2_ / _Webpack5_ 和 _Vue3_。
 
-V2 完全重写，包括：
+V2 完全重写，包括:
 
 - 所有组件都用 Vue3 中的 _Composition API_ 重写
 - 所有样式都迁移到 _Sass_
 
-V2 也有更好的表现：🚀
+V2 也有更好的表现: 🚀
 
 - DevServer 冷启动时间减少了 **50%**
 - 构建内存使用量减少了 **65%**
@@ -34,7 +34,7 @@ Vue 3 使用 Proxy 来提供响应式并支持全新的组合 API。基于 Proxy
 
 VuePress v2 是使用 TypeScript 开发的，因此它现在提供了更好的 TS 支持。
 
-VuePress@v2 也将 bundler 与 core 解耦。 VuePress v2 添加了 Webpack 和 Vite 打包器的支持。现在 Vite 是默认的打包器，而您仍然可以选择使用 Webpack。你可以在开发模式下使用 Vite 以获得更好的开发体验，在构建模式下使用 Webpack 以获得更好的浏览器兼容性。
+VuePress@v2 也将 bundler 与 core 解耦。 VuePress v2 添加了 Webpack 和 Vite 打包器的支持。现在 Vite 是默认的打包器，而你仍然可以选择使用 Webpack。你可以在开发模式下使用 Vite 以获得更好的开发体验，在构建模式下使用 Webpack 以获得更好的浏览器兼容性。
 
 VuePress@v2 比 VuePress@v1 灵活得多，它删除了 siteData 和 siteData.pages，这大大提高了可扩展性 (特别是在具有大量页面的大型网站上)。与 V1 相比，它的性能得分更高，加载时间更少，网页性能更高。
 
@@ -42,7 +42,7 @@ VuePress@v2 比 VuePress@v1 灵活得多，它删除了 siteData 和 siteData.pa
 
 VuePressThemeHope@v2 使用组合 API 重写，其样式系统从 stylus 迁移到 sass。
 
-通过使用 composition api 重写主题和插件，在捆绑时通过 treeshaking 几乎可以删除所有您禁用的功能，以便您轻松获得更小的尺寸。
+通过使用 composition api 重写主题和插件，在捆绑时通过 treeshaking 几乎可以删除所有你禁用的功能，以便你轻松获得更小的尺寸。
 
 此外，我们正在向 VuePressThemeHope@v2 添加新功能。
 
@@ -52,7 +52,7 @@ VuePressThemeHope@v2 使用组合 API 重写，其样式系统从 stylus 迁移�
 
 - 现在整个博客功能都 treeshakable，并且默认禁用。
 
-  要启用它，您需要将 `plugins.blog` 设置为 `true`。
+  要启用它，你需要将 `plugins.blog` 设置为 `true`。
 
 - 社交媒体图标支持 treeshakable，并且可以 [自定义图标](../guide/blog/blogger.md)
 
@@ -77,7 +77,7 @@ VuePressThemeHope@v2 使用组合 API 重写，其样式系统从 stylus 迁移�
 #### Feed
 
 - 不再默认生成 feed
-- 提供 `getter` 选项让您完全自定义 feed 生成。
+- 提供 `getter` 选项让你完全自定义 feed 生成。
 
 #### PhotoSwipe
 
@@ -95,7 +95,7 @@ VuePressThemeHope@v2 使用组合 API 重写，其样式系统从 stylus 迁移�
 
 - 添加 JSON-LD 支持
 
-- 您现在也可以在 V2 中注入任何头部标签。
+- 你现在也可以在 V2 中注入任何头部标签。
 
 ### 布局
 
@@ -105,7 +105,7 @@ VuePressThemeHope@v2 使用组合 API 重写，其样式系统从 stylus 迁移�
 
 #### 代码块主题
 
-现在您可以在深色模式和浅色模式下为代码块 [设置不同的主题](../guide/interface/code-theme.md)。
+现在你可以在深色模式和浅色模式下为代码块 [设置不同的主题](../guide/interface/code-theme.md)。
 
 #### 主页
 
@@ -133,7 +133,7 @@ VuePressThemeHope@v2 使用组合 API 重写，其样式系统从 stylus 迁移�
 
 ### Markdown
 
-添加了以下新功能：
+添加了以下新功能:
 
 - [图像标记](../guide/markdown/others.md#image-mark)
 

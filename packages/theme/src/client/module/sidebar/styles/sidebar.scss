@@ -12,7 +12,6 @@
   margin: 0;
 
   background: var(--sidebar-bg-color);
-  box-shadow: 2px 0 4px var(--card-shadow);
 
   font-size: 16px;
 
@@ -30,10 +29,6 @@
     font-size: 15px;
   }
 
-  &.hide-icon .icon {
-    display: none !important;
-  }
-
   a {
     display: inline-block;
     color: var(--text-color);
@@ -42,6 +37,10 @@
 
   .icon {
     margin-right: 0.25em;
+  }
+
+  &.hide-icon .icon {
+    display: none !important;
   }
 
   .blogger-info.mobile {

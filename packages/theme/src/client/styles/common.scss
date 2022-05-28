@@ -1,7 +1,46 @@
 @use "vuepress-shared/styles/arrow";
 @use "vuepress-shared/styles/wrapper";
 
+.toggle-sidebar-wrapper {
+  position: fixed;
+  top: calc(var(--navbar-height));
+  bottom: 0;
+  left: calc(var(--sidebar-width));
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 2rem;
+
+  transition: left var(--transform-transition);
+
+  @media (max-width: hope-config.$pad) {
+    top: calc(var(--navbar-mobile-height));
+    left: calc(var(--sidebar-mobile-width));
+  }
+
+  &:hover {
+    background-color: rgb(127 127 127 / 5%);
+    cursor: pointer;
+  }
+
+  .arrow {
+    @include arrow.arrow;
+  }
+}
+
 .theme-container {
+  @media (min-width: (hope-config.$tablet + 1px)) {
+    &:not(.sidebar-open) {
+      .sidebar {
+        box-shadow: 2px 0 8px var(--card-shadow);
+        transform: translateX(0);
+      }
+    }
+  }
+
   .page {
     // leave space for navbar
     padding-top: var(--navbar-height);
@@ -80,20 +119,14 @@
     }
   }
 
-  &:not(.sidebar-open) {
-    @media (min-width: (hope-config.$tablet + 1px)) {
-      .page {
-        // spaces for toggle button
-        padding-left: 2rem;
-      }
-
-      .sidebar {
-        transform: translateX(-100%);
-      }
+  &.sidebar-collapsed {
+    .page {
+      // spaces for toggle button
+      padding-left: 2rem;
     }
 
     .sidebar {
-      box-shadow: none;
+      transform: translateX(-100%);
     }
 
     .toggle-sidebar-wrapper {
@@ -108,36 +141,6 @@
         padding-right: 16rem;
       }
     }
-  }
-}
-
-.toggle-sidebar-wrapper {
-  position: fixed;
-  top: calc(var(--navbar-height));
-  bottom: 0;
-  left: calc(var(--sidebar-width));
-  z-index: 100;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 2rem;
-
-  transition: left var(--transform-transition);
-
-  @media (max-width: hope-config.$pad) {
-    top: calc(var(--navbar-mobile-height));
-    left: calc(var(--sidebar-mobile-width));
-  }
-
-  &:hover {
-    background-color: rgb(127 127 127 / 5%);
-    cursor: pointer;
-  }
-
-  .arrow {
-    @include arrow.arrow;
   }
 }
 

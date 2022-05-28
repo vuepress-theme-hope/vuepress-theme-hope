@@ -3,7 +3,7 @@ title: Features
 icon: discover
 index: false
 dir:
-  index: 5
+  order: 5
 ---
 
 `vuepress-theme-hope` introduces lots of great features. Most of the functions are separated into plugins, which means if you like them, you can use them in other VuePress themes or `@vuepress/theme-default`.

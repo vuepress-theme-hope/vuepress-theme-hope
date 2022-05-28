@@ -30,7 +30,7 @@ The optional values and corresponding contents of the entry are as follows:
 | `"Date"`        | Writing Date           | `time`                                |
 | `"Original"`    | Whether is original    | `isOriginal`                          |
 | `"Category"`    | Category               | `category`                            |
-| `"Tag"`         | tags                   | `tags`                                |
+| `"Tag"`         | Tag                    | `tag`                                 |
 | `"ReadingTime"` | Estimated reading time | N/A (automatically generated)         |
 | `"Word"`        | Word count             | N/A (automatically generated)         |
 | `"PageView"`    | Visits                 | `pageview` (only available in Waline) |

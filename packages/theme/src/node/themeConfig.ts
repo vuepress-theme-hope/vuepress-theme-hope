@@ -30,14 +30,8 @@ const defaultRootOptions: HopeThemeRootConfig = {
   // appearance
   pure: false,
   darkmode: "switch",
-  themeColor: {
-    red: "#e74c3c",
-    blue: "#3498db",
-    green: "#3eaf7c",
-    orange: "#f39c12",
-    purple: "#8e44ad",
-  },
-  fullscreen: true,
+  themeColor: false,
+  fullscreen: false,
 };
 
 const defaultLocaleOptions: HopeThemeLocaleOptions = {

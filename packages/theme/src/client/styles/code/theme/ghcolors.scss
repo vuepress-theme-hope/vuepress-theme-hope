@@ -61,20 +61,17 @@ pre[class*="language-"] {
 
 .token.atrule,
 .token.keyword,
-.token.attr-name,
-.language-autohotkey .token.selector {
+.token.attr-name {
   color: #00a4db;
 }
 
 .token.function,
-.token.deleted,
-.language-autohotkey .token.tag {
+.token.deleted {
   color: #9a050f;
 }
 
 .token.tag,
-.token.selector,
-.language-autohotkey .token.keyword {
+.token.selector {
   color: #00009f;
 }
 
@@ -86,4 +83,18 @@ pre[class*="language-"] {
 
 .token.italic {
   font-style: italic;
+}
+
+.language-autohotkey {
+  .token.selector {
+    color: #00a4db;
+  }
+
+  .token.tag {
+    color: #9a050f;
+  }
+
+  .token.keyword {
+    color: #00009f;
+  }
 }

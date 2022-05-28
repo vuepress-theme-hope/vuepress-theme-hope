@@ -21,7 +21,7 @@ icon: change
 
 - `hintComponent`: 检测到新内容的提示组件
 
-- shouldPrefetch 提示: 现在插件将检查配置文件中的 `shouldPrefetch` 选项并警告您禁用它。
+- shouldPrefetch 提示: 现在插件将检查配置文件中的 `shouldPrefetch` 选项并警告你禁用它。
 
 ## 选项变更
 

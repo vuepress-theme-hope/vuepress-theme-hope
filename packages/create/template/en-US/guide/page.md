@@ -1,6 +1,6 @@
 ---
 # This control sidebar index
-index: 1
+order: 1
 # This is the icon of the page
 icon: page
 # This is the title of the article

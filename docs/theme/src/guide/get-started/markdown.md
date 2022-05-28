@@ -1,7 +1,7 @@
 ---
 title: Markdown
 icon: markdown
-index: 3
+order: 3
 category:
   - Get Started
 tag:
@@ -234,3 +234,9 @@ $$
 @slideend
 
 - [View Detail](../markdown/presentation.md)
+
+### Stylize
+
+Setting this to a invalid stytax <span style="color:red">doesn't</span> have any effect.
+
+- [View Detail](../markdown/stylize.md)

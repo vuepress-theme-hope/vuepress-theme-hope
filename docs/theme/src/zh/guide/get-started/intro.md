@@ -1,7 +1,7 @@
 ---
 title: 主题介绍
 icon: info
-index: 1
+order: 1
 category:
   - 快速上手
 tag:

@@ -8,7 +8,6 @@ import "../styles/tabs.scss";
 export interface TabProps extends Record<string, unknown> {
   title: string;
   value?: string;
-  content: string;
 }
 
 const tabStore = useStorage<Record<string, string>>("VUEPRESS_TAB_STORE", {});
@@ -29,7 +28,7 @@ export default defineComponent({
     },
   },
 
-  setup(props) {
+  setup(props, { slots }) {
     const getInitialIndex = (): number => {
       if (props.tabId) {
         const valueIndex = props.data.findIndex(
@@ -98,8 +97,8 @@ export default defineComponent({
       }
     );
 
-    return (): VNode | null => {
-      return h(ClientOnly, () =>
+    return (): VNode | null =>
+      h(ClientOnly, () =>
         h("div", { class: "tab-list" }, [
           h(
             "div",
@@ -128,17 +127,19 @@ export default defineComponent({
               );
             })
           ),
-          props.data.map(({ content }, index) => {
+          props.data.map(({ title, value = title }, index) => {
             const isActive = index === activeIndex.value;
 
-            return h("div", {
-              class: ["tab-item", { active: isActive }],
-              "aria-selected": isActive,
-              innerHTML: content,
-            });
+            return h(
+              "div",
+              {
+                class: ["tab-item", { active: isActive }],
+                "aria-selected": isActive,
+              },
+              slots[`tab${index}`]?.({ title, value, isActive })
+            );
           }),
         ])
       );
-    };
   },
 });

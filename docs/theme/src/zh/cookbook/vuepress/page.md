@@ -15,7 +15,7 @@ VuePress 是以 Markdown 为中心的。你项目中的每一个 Markdown 文件
 
 默认情况下，页面的路由路径是根据你的 Markdown 文件的相对路径决定的。
 
-假设这是你的 Markdown 文件所处的目录结构：
+假设这是你的 Markdown 文件所处的目录结构:
 
 ```
 └─ docs
@@ -26,7 +26,7 @@ VuePress 是以 Markdown 为中心的。你项目中的每一个 Markdown 文件
    └─ README.md
 ```
 
-将 `docs` 目录作为你的 [sourceDir](https://v2.vuepress.vuejs.org/zh/reference/cli.md) ，例如你在运行 `vuepress dev docs` 命令。此时，你的 Markdown 文件对应的路由路径为：
+将 `docs` 目录作为你的 [sourceDir](https://v2.vuepress.vuejs.org/zh/reference/cli.md) ，例如你在运行 `vuepress dev docs` 命令。此时，你的 Markdown 文件对应的路由路径为:
 
 | 相对路径           | 路由路径             |
 | ------------------ | -------------------- |
@@ -37,7 +37,7 @@ VuePress 是以 Markdown 为中心的。你项目中的每一个 Markdown 文件
 
 ## Frontmatter
 
-Markdown 文件可以包含一个 [YAML](https://yaml.org/) Frontmatter 。Frontmatter 必须在 Markdown 文件的顶部，并且被包裹在一对三短划线中间。下面是一个基本的示例：
+Markdown 文件可以包含一个 [YAML](https://yaml.org/) Frontmatter 。Frontmatter 必须在 Markdown 文件的顶部，并且被包裹在一对三短划线中间。下面是一个基本的示例:
 
 ```md
 ---

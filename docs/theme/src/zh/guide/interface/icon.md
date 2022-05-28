@@ -1,7 +1,7 @@
 ---
 title: 图标支持
 icon: discover
-index: 3
+order: 3
 category:
   - 界面
 tag:
