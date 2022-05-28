@@ -11,13 +11,13 @@ Name changed from `@mr-hope/vuepress-feed` to `vuepress-plugin-feed2`. ⚠
 
   - `output.atom.enable` renamed to `atom`
 
-  - `output.json.enable.` renamed to `json`
+  - `output.json.enable` renamed to `json`
 
   - `output.rss.enable` renamed to `rss`
 
-  - `output.atom.path.` renamed to `atomOutputFilename`
+  - `output.atom.path` renamed to `atomOutputFilename`
 
-  - `output.json.path.` renamed to `jsonOutputFilename`
+  - `output.json.path` renamed to `jsonOutputFilename`
 
   - `output.rss.path` renamed to `rssOutputFilename`
 

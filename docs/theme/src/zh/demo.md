@@ -43,11 +43,6 @@ category:
 - [网站链接][mrhope]
 - [源码地址](https://github.com/Mister-Hope/Mister-Hope.github.io)
 
-### CoulsonZero 个人文档中心
-
-- [网站链接][coulsonzero]
-- [源码地址](https://github.com/coulsonzero/docs)
-
 ## 更多
 
 - 随时随地添加你的博客或文档到此

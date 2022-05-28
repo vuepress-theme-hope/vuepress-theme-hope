@@ -1,0 +1,26 @@
+@use "vuepress-shared/styles/reset";
+
+.pdf-preview {
+  position: relative;
+}
+
+.pdf-open-button {
+  @include reset.button;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  padding: 8px;
+  border-radius: 8px;
+
+  background-color: var(--c-bg);
+
+  &:hover {
+    background-color: var(--c-bg-light);
+  }
+}
+
+.pdf-iframe {
+  width: 100%;
+  border-radius: 8px;
+}

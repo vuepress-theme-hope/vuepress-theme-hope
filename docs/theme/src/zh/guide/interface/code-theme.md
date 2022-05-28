@@ -1,7 +1,7 @@
 ---
 title: 代码主题
 icon: style
-index: 4
+order: 4
 category:
   - 界面
 tag:
@@ -67,7 +67,7 @@ tag:
 - shades-of-purple
 - solarized-dark-atom
 - tomorrow
-- vsc-dark
+- vsc-dark-plus
 - xonokai
 - z-touch
 

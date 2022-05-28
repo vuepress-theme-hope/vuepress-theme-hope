@@ -1,7 +1,7 @@
 ---
 title: Theme Layout Options
 icon: config
-index: 4
+order: 4
 category:
   - Config
 tag:

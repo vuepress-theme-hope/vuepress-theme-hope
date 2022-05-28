@@ -11,7 +11,12 @@ icon: config
 Whether register articleInfo component
 
 ```ts
-type AvailableComponent = "Badge" | "CodePen" | "FontIcon" | "PDF";
+type AvailableComponent =
+  | "Badge"
+  | "CodePen"
+  | "FontIcon"
+  | "PDF"
+  | "StackBlitz";
 ```
 
 ## addThis

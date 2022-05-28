@@ -1,7 +1,7 @@
 ---
 title: Article List
 icon: article
-index: 3
+order: 3
 category:
   - Blog
 tag:

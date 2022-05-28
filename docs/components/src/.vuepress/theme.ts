@@ -57,6 +57,7 @@ export default hopeTheme({
             "codepen",
             "fonticon",
             "pdf",
+            "stackblitz",
           ],
         },
         "/config",
@@ -92,6 +93,7 @@ export default hopeTheme({
             "codepen",
             "fonticon",
             "pdf",
+            "stackblitz",
           ],
         },
         "/zh/config",
@@ -100,7 +102,7 @@ export default hopeTheme({
   },
 
   plugins: {
-    components: ["Badge", "CodePen", "PDF"],
+    components: ["Badge", "CodePen", "PDF", "StackBlitz"],
 
     comment: {
       type: "giscus",

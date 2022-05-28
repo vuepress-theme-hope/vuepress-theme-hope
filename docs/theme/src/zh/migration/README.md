@@ -17,11 +17,11 @@ V2 带来了很大的性能提升与很多新功能，详见 [V2 亮点](./highl
 
 ## 开始从 V1 迁移
 
-在大多数情况下，您应该能够将 `vuepress` 和 `vuepress-theme-hope` 更新到最新的 v2 版本，并直接运行 v1 项目。
+在大多数情况下，你应该能够将 `vuepress` 和 `vuepress-theme-hope` 更新到最新的 v2 版本，并直接运行 v1 项目。
 
-迁移助手会自动将您的 v1 配置转换为 v2 配置，并提示您它转换的已弃用选项和删除的不支持选项。此外，所有页面的 Frontmatter 将从 v1 语法转换为 v2。
+迁移助手会自动将你的 v1 配置转换为 v2 配置，并提示你它转换的已弃用选项和删除的不支持选项。此外，所有页面的 Frontmatter 将从 v1 语法转换为 v2。
 
-您需要做的就是：
+你需要做的就是:
 
 1. 安装 `vuepress@next` 和 `vuepress-theme-hope@next`;
 
@@ -31,7 +31,7 @@ V2 带来了很大的性能提升与很多新功能，详见 [V2 亮点](./highl
 
 1. 根据日志更改配置文件。
 
-   如果您开始导入 `hopeTheme` 并在迁移期间调用它，则应通过 `hopeTheme(themeOptions, true)` 调用它，因为第二个参数表示在 V1 旧模式下运行。
+   如果你开始导入 `hopeTheme` 并在迁移期间调用它，则应通过 `hopeTheme(themeOptions, true)` 调用它，因为第二个参数表示在 V1 旧模式下运行。
 
 1. 在`.vuepress/styles`下，将你的 `index.styl` 转换为 `index.scss`，将 `palette.styl` 转换为 `palette.scss` 和`config.scss` ，因为 v2 样式系统基于 SCSS.
 

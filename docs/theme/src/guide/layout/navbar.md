@@ -1,7 +1,7 @@
 ---
 title: NavBar
 icon: navbar
-index: 1
+order: 1
 category:
   - Layout
 tag:

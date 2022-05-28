@@ -1,7 +1,7 @@
 ---
 title: 博客功能介绍
 icon: blog
-index: 1
+order: 1
 category:
   - 博客
 tag:

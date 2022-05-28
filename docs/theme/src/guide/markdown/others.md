@@ -1,7 +1,7 @@
 ---
 title: Others
 icon: more
-index: 19
+order: 19
 category:
   - Markdown
 tag:

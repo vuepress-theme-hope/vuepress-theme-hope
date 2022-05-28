@@ -1,5 +1,5 @@
 ---
-index: 3
+order: 3
 title: Component disabled
 icon: config
 category:

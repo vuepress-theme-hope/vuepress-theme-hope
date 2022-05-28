@@ -27,6 +27,22 @@
     margin-right: 0.25em;
   }
 
+  a {
+    display: inline-block;
+    padding: 0 0.5em;
+    line-height: 2;
+
+    &::before {
+      position: relative;
+      bottom: 0.125rem;
+      margin-right: 0.25em;
+    }
+
+    &:hover {
+      color: var(--theme-color);
+    }
+  }
+
   ol {
     margin: 0;
     padding-left: 0;
@@ -54,21 +70,5 @@
   li + li::before {
     content: "/";
     color: var(--light-grey);
-  }
-
-  a {
-    display: inline-block;
-    padding: 0 0.5em;
-    line-height: 2;
-
-    &::before {
-      position: relative;
-      bottom: 0.125rem;
-      margin-right: 0.25em;
-    }
-
-    &:hover {
-      color: var(--theme-color);
-    }
   }
 }

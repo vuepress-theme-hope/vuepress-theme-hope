@@ -21,10 +21,6 @@ a {
   color: var(--theme-color);
 }
 
-p a code {
-  color: var(--theme-color);
-}
-
 kbd {
   border-color: var(--grey14);
   background: var(--bg-color-light);
@@ -39,6 +35,10 @@ code {
   #{hope-config.$dark-selector} & {
     background: #333;
   }
+
+  p a & {
+    color: var(--theme-color);
+  }
 }
 
 blockquote {
@@ -52,9 +52,9 @@ blockquote {
   }
 }
 
-// narrow mobile
-@media (max-width: hope-config.$mobile) {
-  h1 {
+h1 {
+  // narrow mobile
+  @media (max-width: hope-config.$mobile) {
     font-size: 1.9rem;
   }
 }

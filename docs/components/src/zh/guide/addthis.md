@@ -1,6 +1,5 @@
 ---
 title: AddThis
-icon: share
 ---
 
 ## 注册

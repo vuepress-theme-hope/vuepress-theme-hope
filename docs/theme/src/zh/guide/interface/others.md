@@ -1,7 +1,7 @@
 ---
 title: 其他界面功能
 icon: others
-index: 5
+order: 5
 category:
   - 界面
 tag:
@@ -16,9 +16,7 @@ tag:
 
 ## 全屏按钮
 
-默认启用，显示在导航栏的外观选项卡中。
-
-如果你不需要这个功能，你可以在主题选项中将 `fullscreen` 设置为 `false`。
+如果你需要这个功能，你可以在主题选项中设置 `fullscreen: true`。
 
 ::: tip
 
@@ -30,15 +28,14 @@ tag:
 
 @tab TS
 
-```ts {8}
+```ts
 // .vuepress/config.ts
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default defineUserConfig({
   theme: hopeTheme({
-    // 默认启用
-    fullscreen: false,
+    fullscreen: true,
   }),
 });
 ```
@@ -51,8 +48,7 @@ const { hopeTheme } = require("vuepress-theme-hope");
 
 module.exports = {
   theme: hopeTheme({
-    // 默认启用
-    fullscreen: false,
+    fullscreen: true,
   }),
 };
 ```

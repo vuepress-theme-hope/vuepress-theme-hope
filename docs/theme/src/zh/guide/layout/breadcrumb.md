@@ -1,7 +1,7 @@
 ---
 title: 路径导航
 icon: navigation
-index: 3
+order: 3
 category:
   - 布局
 tag:

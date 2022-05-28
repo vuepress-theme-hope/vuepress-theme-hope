@@ -2,7 +2,7 @@ import { createBaseApp } from "@vuepress/core";
 import { path } from "@vuepress/utils";
 import { describe, it, expect } from "vitest";
 
-import { getSidebarData } from "../../src/node/sidebar";
+import { getSidebarData } from "../../src/node/prepare";
 import { getStatus } from "../../src/node/status";
 import { getThemeConfig } from "../../src/node/themeConfig";
 import { HopeThemeOptions } from "../../src/shared";

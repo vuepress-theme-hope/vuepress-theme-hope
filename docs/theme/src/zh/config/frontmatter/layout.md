@@ -1,7 +1,7 @@
 ---
 title: 布局 Frontmatter 配置
 icon: config
-index: 2
+order: 2
 category:
   - 配置
 tag:

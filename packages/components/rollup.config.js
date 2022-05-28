@@ -28,7 +28,8 @@ export default [
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/CodePen", {
-    external: ["@vueuse/core", "vue"],
+    external: ["@vueuse/core", "vue", /\.scss$/],
+    dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/FontIcon", {
     external: ["vue", /\.scss$/],
@@ -37,6 +38,9 @@ export default [
   ...rollupTypescript("client/components/PDF", {
     external: ["@vuepress/client", "vue", /\.scss$/],
     dtsExternal: [/\.scss$/],
+  }),
+  ...rollupTypescript("client/components/StackBlitz", {
+    external: ["vue"],
   }),
   ...rollupTypescript("client/composables/index", {
     external: ["@vueuse/core"],

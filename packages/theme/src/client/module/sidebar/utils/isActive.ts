@@ -15,3 +15,21 @@ export const isActiveSidebarItem = (
 
   return false;
 };
+
+export const isMatchedSidebarItem = (
+  route: RouteLocationNormalizedLoaded,
+  item: ResolvedSidebarItem
+): boolean => {
+  if (item.type === "group")
+    return item.children.some((child) => {
+      if (child.type === "group")
+        return (
+          isMatchedSidebarItem(route, child) ||
+          ("prefix" in child && isActiveLink(route, child.prefix))
+        );
+
+      return child.type === "page" && isActiveSidebarItem(route, child, true);
+    });
+
+  return false;
+};

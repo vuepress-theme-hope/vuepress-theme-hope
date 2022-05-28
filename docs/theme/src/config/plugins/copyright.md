@@ -1,7 +1,7 @@
 ---
 title: Copyright Plugin Config
 icon: copyright
-index: 4
+order: 4
 category:
   - Config
 tag:

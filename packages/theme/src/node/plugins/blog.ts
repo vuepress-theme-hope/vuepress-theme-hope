@@ -18,7 +18,7 @@ const defaultOptions: HopeThemeBlogPluginOptions = {
   tag: "/tag/",
   tagItem: "/tag/:name/",
   encrypted: "/encrypted/",
-  slides: "/slides/",
+  slide: "/slide/",
   star: "/star/",
   timeline: "/timeline/",
 };
@@ -183,7 +183,7 @@ export const getBlogPlugin = (
           HopeThemeNormalPageFrontmatter,
           { routeMeta: ArticleInfo }
         >) => routeMeta.type === "slide",
-        path: blogOptions.slides,
+        path: blogOptions.slide,
         layout: "Blog",
         frontmatter: (localePath) => ({
           title: themeData.locales[localePath].blogLocales.slides,

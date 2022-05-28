@@ -1,7 +1,7 @@
 ---
 title: Info Frontmatter Config
 icon: config
-index: 1
+order: 1
 category:
   - Config
 tag:

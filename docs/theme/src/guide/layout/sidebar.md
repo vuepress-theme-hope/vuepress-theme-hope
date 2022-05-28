@@ -1,7 +1,7 @@
 ---
 title: Sidebar
 icon: sidebar
-index: 2
+order: 2
 category:
   - Layout
 tag:
@@ -635,9 +635,29 @@ If you use the structure to generate a folder with other folders nested under it
 
 #### Advanced Control
 
-During the automatic generation from the structure, you can control whether files in the same folder are included and how they are sorted through the `index` option in the page Frontmatter.
+During the automatic generation from structure, you can control whether files in the same folder are included through the `index` option in the page Frontmatter, and control how they are sorted through `order`.
 
-`index` option supports boolean values ​​and numbers, when set to `false` it means you don’t want the page to be indexed by the sidebar. When set to a positive integer, item with smaller value will appear first.
+When you don't want the page to be included in the sidebar, you need to set `index: false` in Frontmatter.
+
+By default, the sidebar will be sorted according to the current language according to the title text of the file name. You can control how they are sorted by `order`. When you set a positive number, they will appear at the front of the group, the smaller the more forward, when you set a negative number, it will appear at the back of the group, and the larger the more backward:
+
+- page -> order: 1
+- page -> order: 2
+- page -> order: 3
+- ...
+- pages with positive `order` will be sorted by `order` here
+- ...
+- page without `order` option -> title: Axxx
+- ...
+- pages without `order` option will be sorted by title here
+- ...
+- page without `order` option -> title: Zxxx
+- ...
+- pages with negative `order` will be sorted by `order` here
+- ...
+- page -> order: -3
+- page -> order: -2
+- page -> order: -1
 
 ::: tip
 

@@ -3,7 +3,7 @@ title: Advanced
 icon: advance
 index: false
 dir:
-  index: 7
+  order: 7
 category:
   - Advanced
 tag:
