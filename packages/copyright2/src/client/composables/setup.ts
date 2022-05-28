@@ -90,7 +90,6 @@ export const setupCopyright = (): void => {
   };
 
   onMounted(() => {
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const appElement = document.querySelector<HTMLDivElement>("#app")!;
 
     useEventListener(appElement, "copy", onCopy);

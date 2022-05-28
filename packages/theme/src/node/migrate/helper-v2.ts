@@ -87,8 +87,8 @@ export const defineHopeConfig = (
   );
 
   // check themeConfig
-  if ("themeConfig" in config && typeof config.themeConfig === "object") {
-    config.theme = hopeTheme(config.themeConfig as HopeThemeOptions, true);
+  if ("themeConfig" in config && typeof config["themeConfig"] === "object") {
+    config.theme = hopeTheme(config["themeConfig"] as HopeThemeOptions, true);
 
     logger.warn(
       '"themeConfig" is deprecated, please import "hopeTheme" from vuepress-theme-hope and use "theme : hopeTheme(themeConfig)" instead.'

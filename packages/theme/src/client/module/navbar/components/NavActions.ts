@@ -22,7 +22,7 @@ export default defineComponent({
   setup(props, { emit, slots }) {
     return (): VNode | null =>
       h("div", { class: "nav-actions-wrapper" }, [
-        slots.before?.(),
+        slots["before"]?.(),
         h("div", { class: "nav-item" }, h(LanguageDropdown)),
         h(RepoLink),
         h(OutlookButton),
@@ -35,7 +35,7 @@ export default defineComponent({
           active: props.showScreen,
           onToggle: () => emit("toggleScreen"),
         }),
-        slots.after?.(),
+        slots["after"]?.(),
       ]);
   },
 });

@@ -64,7 +64,6 @@ export default defineComponent({
                     "aria-label": locale.value.intro,
                     "data-balloon-pos": "down",
                     role: "navigation",
-                    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                     onClick: () => navigate(intro.value!),
                   }
                 : {}),

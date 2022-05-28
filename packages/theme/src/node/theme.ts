@@ -81,13 +81,19 @@ export const hopeTheme =
           prepareSocialMediaIcons(app, icons),
         ]).then(() => void 0),
 
-      plugins: getPluginConfig(plugins, themeConfig, {
-        addThis,
-        backToTop,
-        hostname,
-        iconAssets,
-        iconPrefix,
-      }),
+      plugins: getPluginConfig(
+        plugins,
+        themeConfig,
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        {
+          addThis,
+          backToTop,
+          hostname,
+          iconAssets,
+          iconPrefix,
+        }
+      ),
 
       layouts: getLayoutConfig(app, plugins),
 

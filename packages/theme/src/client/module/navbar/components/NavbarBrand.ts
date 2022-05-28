@@ -51,7 +51,7 @@ export default defineComponent({
               siteBrandTitle.value
             )
           : null,
-        slots.default?.(),
+        slots["default"]?.(),
       ]);
   },
 });

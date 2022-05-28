@@ -237,8 +237,8 @@ export const katex: PluginWithOptions<KatexOptions> = (
     alt: ["paragraph", "reference", "blockquote", "list"],
   });
 
-  md.renderer.rules.inlineTex = (tokens, index): string =>
+  md.renderer.rules["inlineTex"] = (tokens, index): string =>
     katexInline(tokens[index].content, options);
-  md.renderer.rules.blockTex = (tokens, index): string =>
+  md.renderer.rules["blockTex"] = (tokens, index): string =>
     `${katexBlock(tokens[index].content, options)}\n`;
 };

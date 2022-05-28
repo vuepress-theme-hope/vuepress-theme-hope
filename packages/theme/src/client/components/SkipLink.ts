@@ -20,7 +20,6 @@ export default defineComponent({
 
     watch(
       () => route.path,
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       () => backToTop.value!.focus()
     );
 

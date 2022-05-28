@@ -66,7 +66,10 @@ export default defineComponent({
             ? h("div", { class: "excerpt", innerHTML: info.value.excerpt })
             : null,
           h("hr", { class: "hr" }),
-          h(PageInfo, { config: unref(config), items: items.value }),
+          h(PageInfo, {
+            config: unref(config),
+            ...(items.value ? { items: items.value } : {}),
+          }),
         ]
       );
   },

@@ -71,7 +71,9 @@ export const useBlogType = <
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 if (import.meta.webpackHot || import.meta.hot) {
-  __VUE_HMR_RUNTIME__.updateBlogType = (map: Record<string, TypeMap>): void => {
+  __VUE_HMR_RUNTIME__["updateBlogType"] = (
+    map: Record<string, TypeMap>
+  ): void => {
     blogTypeMap.value = map;
   };
 }

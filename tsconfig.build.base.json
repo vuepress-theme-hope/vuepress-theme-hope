@@ -1,44 +1,58 @@
 {
   "compilerOptions": {
-    "allowJs": false,
+    // types
     "allowSyntheticDefaultImports": true,
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
-    "alwaysStrict": false,
+    "exactOptionalPropertyTypes": true,
+    "noFallthroughCasesInSwitch": true,
+    "strict": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+
+    // Modules
     "baseUrl": "./",
-    "checkJs": false,
-    "composite": true,
-    "declaration": true,
-    "diagnostics": false,
-    "downlevelIteration": false,
-    "experimentalDecorators": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "importHelpers": true,
-    "inlineSourceMap": false,
-    "inlineSources": false,
-    "lib": ["es2021"],
-    "listEmittedFiles": false,
-    "module": "es2015",
+    "module": "es2020",
     "moduleResolution": "node",
+    "resolveJsonModule": true,
+
+    // Emit
+    "declaration": true,
+    "downlevelIteration": false,
+    "importHelpers": true,
+    "importsNotUsedAsValues": "remove",
     "newLine": "lf",
     "noEmitOnError": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitAny": true,
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "noUnusedParameters": true,
-    "pretty": true,
-    "resolveJsonModule": true,
     "removeComments": false,
-    "skipLibCheck": true,
+    "inlineSources": false,
+    "inlineSourceMap": false,
     "sourceMap": true,
-    "strict": true,
-    "strictNullChecks": true,
-    "strictPropertyInitialization": true,
+
+    // JavaScript
+    "allowJs": false,
+    "checkJs": false,
+
+    // Interop Constraints
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+
+    // lib
+    "lib": ["es2021"],
     // mininal node 14 support
-    "target": "es2020"
+    "target": "es2020",
     // mininal node 16 support
     // "target": "es2021",
+
+    // Compiler Diagnostics
+    "composite": true,
+    "diagnostics": false,
+    "listEmittedFiles": false,
+
+    "skipLibCheck": true,
+    "pretty": true
   }
 }

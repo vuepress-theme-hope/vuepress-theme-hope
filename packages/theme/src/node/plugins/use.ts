@@ -21,7 +21,7 @@ export const usePlugin = (app: App, plugins: HopeThemePluginsOptions): void => {
     );
 
   useReadingTimePlugin(app, {
-    wordPerMinute: plugins.readingTime?.wordPerMinute,
+    wordPerMinute: plugins.readingTime?.wordPerMinute || 300,
   });
 
   useSassPalettePlugin(app, {

@@ -145,7 +145,7 @@ export default defineComponent({
             h("div", { class: "logo" }, [
               manifest.value.icons
                 ? h("img", {
-                    src: manifest.value.icons[0].src,
+                    src: manifest.value.icons[0]?.src,
                     alt: "App Logo",
                   })
                 : null,

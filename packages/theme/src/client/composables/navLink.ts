@@ -12,14 +12,14 @@ import type { AutoLink } from "../../shared";
  */
 export const useAutoLink = (item: string, preferFull = false): AutoLink => {
   const router = useRouter();
-  const resolved = resolveRouteWithRedirect(router, encodeURI(item));
+  const { fullPath, meta, name } = resolveRouteWithRedirect(
+    router,
+    encodeURI(item)
+  );
 
   return {
-    icon: resolved.meta.icon,
-    text:
-      !preferFull && resolved.meta.shortTitle
-        ? resolved.meta.shortTitle
-        : resolved.meta.title || item,
-    link: resolved.name === "404" ? item : resolved.fullPath,
+    text: !preferFull && meta.shortTitle ? meta.shortTitle : meta.title || item,
+    link: name === "404" ? item : fullPath,
+    ...(meta.icon ? { icon: meta.icon } : {}),
   };
 };

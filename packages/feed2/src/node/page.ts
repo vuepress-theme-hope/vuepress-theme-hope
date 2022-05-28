@@ -243,17 +243,17 @@ export class FeedPage {
     return {
       title,
       link,
-      description,
-      author,
-      category,
-      enclosure,
       guid,
-      pubDate,
       lastUpdated,
       content,
-      image,
       contributor,
-      copyright,
+      ...(description ? { description } : {}),
+      ...(author ? { author } : {}),
+      ...(category ? { category } : {}),
+      ...(enclosure ? { enclosure } : {}),
+      ...(pubDate ? { pubDate } : {}),
+      ...(image ? { image } : {}),
+      ...(copyright ? { copyright } : {}),
     };
   }
 }

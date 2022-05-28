@@ -17,16 +17,15 @@ export const flowchart: PluginSimple = (md) => {
   const fence = md.renderer.rules.fence;
 
   md.renderer.rules.fence = (...args): string => {
-    const [tokens, idx] = args;
-    const { info } = tokens[idx];
+    const [tokens, index] = args;
+    const { info } = tokens[index];
     const realInfo = info.split(" ", 2)[0];
 
     if (realInfo === "flow" || realInfo === "flowchart")
-      return flowchartRender(tokens, idx);
+      return flowchartRender(tokens, index);
 
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     return fence!(...args);
   };
 
-  md.renderer.rules.flowchart = flowchartRender;
+  md.renderer.rules["flowchart"] = flowchartRender;
 };

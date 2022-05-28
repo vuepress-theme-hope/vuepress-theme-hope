@@ -16,10 +16,11 @@ export const appendBasetoManifest = (
   if (manifest.shortcuts)
     manifest.shortcuts = manifest.shortcuts.map((shortcut) => ({
       ...shortcut,
-      icons: shortcut.icons?.map((icon) => ({
-        ...icon,
-        src: appendBaseHelper(base, icon.src),
-      })),
+      icons:
+        shortcut.icons?.map((icon) => ({
+          ...icon,
+          src: appendBaseHelper(base, icon.src),
+        })) || [],
       url: appendBaseHelper(base, shortcut.url),
     }));
 

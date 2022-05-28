@@ -31,7 +31,8 @@ export const injectConfigModule = (
       | ((source: string, file: string) => string | Promise<string>)
       | undefined =
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      viteBundlerConfig.viteOptions?.css?.preprocessorOptions?.scss
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      viteBundlerConfig.viteOptions?.css?.preprocessorOptions?.["scss"]
         .additionalData;
 
     // eslint-disable-next-line

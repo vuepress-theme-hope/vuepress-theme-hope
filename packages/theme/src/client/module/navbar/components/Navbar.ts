@@ -65,7 +65,7 @@ export default defineComponent({
               emit("toggle-sidebar");
             },
           }),
-          h(NavbarBrand, { ref: siteBrand }, () => slots.left?.()),
+          h(NavbarBrand, { ref: siteBrand }, () => slots["left"]?.()),
           h(NavbarLinks, {
             style: linksWrapperStyle.value,
           }),
@@ -78,8 +78,8 @@ export default defineComponent({
               },
             },
             {
-              before: () => slots.center?.(),
-              after: () => slots.right?.(),
+              before: () => slots["center"]?.(),
+              after: () => slots["right"]?.(),
             }
           ),
         ]
@@ -93,8 +93,8 @@ export default defineComponent({
           },
         },
         {
-          before: () => slots.screenTop?.(),
-          after: () => slots.screenBottom?.(),
+          before: () => slots["screenTop"]?.(),
+          after: () => slots["screenBottom"]?.(),
         }
       ),
     ];

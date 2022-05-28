@@ -29,12 +29,12 @@ export interface FeedItemOption {
   /**
    * Email address of the author of the item.
    */
-  author?: FeedAuthor[] | FeedAuthor;
+  author?: FeedAuthor[];
 
   /**
    * Includes the item in one or more categories.
    */
-  category?: FeedCategory[] | FeedCategory;
+  category?: FeedCategory[];
 
   /**
    * Indicates when the item was published.
@@ -50,7 +50,7 @@ export interface FeedItemOption {
   /**
    * Item content
    */
-  content?: string;
+  content: string;
 
   /**
    * URL of a page for comments relating to the item.

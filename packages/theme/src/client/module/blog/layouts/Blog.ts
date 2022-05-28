@@ -27,7 +27,7 @@ export default defineComponent({
         { sidebar: false },
         {
           default: () =>
-            frontmatter.value.home
+            frontmatter.value["home"]
               ? h(BlogHome)
               : h(
                   "main",

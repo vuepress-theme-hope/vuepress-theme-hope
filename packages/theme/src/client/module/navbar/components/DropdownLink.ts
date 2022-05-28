@@ -73,7 +73,7 @@ export default defineComponent({
             onClick: handleDropdown,
           },
           [
-            slots.title?.() ||
+            slots["title"]?.() ||
               h("span", { class: "title" }, [
                 h(resolveComponent("FontIcon"), { icon: config.value.icon }),
                 props.config.text,

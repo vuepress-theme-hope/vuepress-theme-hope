@@ -14,6 +14,6 @@ export default defineComponent({
     return (): VNode | null =>
       isGlobalEncrypted.value
         ? h(PasswordModal, { full: true, onVerify: validateGlobalToken })
-        : ((slots.default?.() || null) as VNode | null);
+        : ((slots["default"]?.() || null) as VNode | null);
   },
 });

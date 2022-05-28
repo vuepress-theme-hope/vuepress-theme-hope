@@ -75,10 +75,10 @@ export default defineComponent({
                 "div",
                 { id: "nav-screen" },
                 h("div", { class: "container" }, [
-                  slots.before?.(),
+                  slots["before"]?.(),
                   h(NavScreenLinks),
                   h("div", { class: "outlook-wrapper" }, h(OutlookSettings)),
-                  slots.after?.(),
+                  slots["after"]?.(),
                 ])
               )
             : null

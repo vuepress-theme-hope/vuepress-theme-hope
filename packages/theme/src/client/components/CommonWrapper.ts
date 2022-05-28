@@ -172,7 +172,11 @@ export default defineComponent({
               "no-navbar": !enableNavbar.value,
               "no-sidebar":
                 !enableSidebar.value &&
-                !(slots.sidebar || slots.sidebarTop || slots.sidebarBottom),
+                !(
+                  slots["sidebar"] ||
+                  slots["sidebarTop"] ||
+                  slots["sidebarBottom"]
+                ),
               "has-toc": enableToc.value,
               "hide-navbar": hideNavbar.value,
               "sidebar-collapsed":
@@ -195,11 +199,11 @@ export default defineComponent({
                   resolveComponent("Navbar") as ComponentOptions,
                   { onToggleSidebar: () => toggleMobileSidebar() },
                   {
-                    left: () => slots.navbarLeft?.(),
-                    center: () => slots.navbarCenter?.(),
-                    right: () => slots.navbarRight?.(),
-                    screenTop: () => slots.navScreenTop?.(),
-                    screenBottom: () => slots.navScreenBottom?.(),
+                    left: () => slots["navbarLeft"]?.(),
+                    center: () => slots["navbarCenter"]?.(),
+                    right: () => slots["navbarRight"]?.(),
+                    screenTop: () => slots["navScreenTop"]?.(),
+                    screenBottom: () => slots["navScreenBottom"]?.(),
                   }
                 )
               : null,
@@ -235,14 +239,14 @@ export default defineComponent({
               resolveComponent("Sidebar") as ComponentOptions,
               {},
               {
-                ...(slots.sidebar
-                  ? { default: (): VNode[] | undefined => slots.sidebar?.() }
+                ...(slots["sidebar"]
+                  ? { default: (): VNode[] | undefined => slots["sidebar"]?.() }
                   : {}),
-                top: () => slots.sidebarTop?.(),
-                bottom: () => slots.sidebarBottom?.(),
+                top: () => slots["sidebarTop"]?.(),
+                bottom: () => slots["sidebarBottom"]?.(),
               }
             ),
-            slots.default?.(),
+            slots["default"]?.(),
             h(PageFooter),
           ]
         )

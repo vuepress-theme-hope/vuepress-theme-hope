@@ -56,7 +56,7 @@ export interface PageInfoProps {
    *
    * 文章是否原创
    */
-  isOriginal?: boolean | null;
+  isOriginal?: boolean;
 
   /**
    * Whether enable pageview
@@ -74,7 +74,7 @@ export interface PageInfoProps {
    *
    * 阅读时间
    */
-  readingTime?: ReadingTime;
+  readingTime?: ReadingTime | null;
 }
 
 export default defineComponent({

@@ -134,7 +134,7 @@ export default defineComponent({
       h(
         "div",
         { ref: container, class: "lightgallery-vuepress" },
-        slots.default?.()
+        slots["default"]?.()
       );
   },
 });

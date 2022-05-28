@@ -74,14 +74,14 @@ const generatePageMap = (
 
   pages.forEach((page) => {
     const frontmatterOptions: SitemapFrontmatterOption =
-      (page.frontmatter.sitemap as SitemapFrontmatterOption) || {};
+      (page.frontmatter["sitemap"] as SitemapFrontmatterOption) || {};
 
     const metaRobotTags = (page.frontmatter.head || []).find(
-      (head) => head[1].name === "robots"
+      (head) => head[1]["name"] === "robots"
     );
 
     const excludePage = metaRobotTags
-      ? ((metaRobotTags[1].content as string) || "")
+      ? ((metaRobotTags[1]["content"] as string) || "")
           .split(/,/u)
           .map((content) => content.trim())
           .includes("noindex")
@@ -159,7 +159,7 @@ export const generateSiteMap = async (
       new Promise<void>((resolve) => {
         const sitemap = new SitemapStream({
           hostname,
-          xmlns,
+          ...(xmlns ? { xmlns } : {}),
         });
         const pagesMap = generatePageMap(app, options);
         const sitemapXMLPath = dir.dest(sitemapFilename);

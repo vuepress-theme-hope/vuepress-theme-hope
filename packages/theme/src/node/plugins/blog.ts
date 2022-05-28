@@ -92,8 +92,8 @@ export const getBlogPlugin = (
       blogOptions.filter ||
       (({ frontmatter, filePathRelative, routeMeta }): boolean =>
         Boolean(filePathRelative) &&
-        frontmatter.home !== true &&
-        routeMeta.type !== "page"),
+        frontmatter["home"] !== true &&
+        routeMeta["type"] !== "page"),
 
     category: [
       {
@@ -226,7 +226,7 @@ export const getBlogPlugin = (
           { git: GitData },
           HopeThemeNormalPageFrontmatter,
           { routeMeta: ArticleInfo }
-        >) => "date" in routeMeta && frontmatter.timeline !== false,
+        >) => "date" in routeMeta && frontmatter["timeline"] !== false,
         path: blogOptions.timeline,
         layout: "Blog",
         frontmatter: (localePath) => ({

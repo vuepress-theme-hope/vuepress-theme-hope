@@ -24,7 +24,6 @@ export const addOGP = (head: HeadConfig[], content: SeoContent): void => {
   for (const property in content)
     switch (property) {
       case "article:tag":
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         (content as ArticleSeoContent)["article:tag"]!.forEach((tag: string) =>
           appendMetatoHead(head, { name: "article:tag", content: tag })
         );

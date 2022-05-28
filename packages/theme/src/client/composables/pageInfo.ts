@@ -110,7 +110,7 @@ export const usePageInfo = (): {
     category: category.value,
     date: date.value,
     tag: tag.value,
-    isOriginal: frontmatter.value.isOriginal,
+    isOriginal: frontmatter.value.isOriginal || false,
     readingTime: page.value.readingTime,
     pageview: ENABLE_VISITOR
       ? "pageview" in frontmatter.value

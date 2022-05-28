@@ -43,7 +43,7 @@ export default defineComponent({
           onAfterEnter: unsetStyle,
           onBeforeLeave: setStyle,
         },
-        () => slots.default?.()
+        () => slots["default"]?.()
       );
   },
 });

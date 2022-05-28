@@ -36,7 +36,7 @@ export default defineComponent({
 
     /** Whether to display button */
     const show = computed<boolean>(() => {
-      const globalEnable = themeData.value.backToTop !== false;
+      const globalEnable = themeData.value["backToTop"] !== false;
       const pageEnable = pageFrontmatter.value.backToTop;
 
       return (

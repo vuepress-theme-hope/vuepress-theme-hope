@@ -16,6 +16,7 @@ export const injectLinkstoHead = (
   if (localePaths.length === 1) {
     const { atomOutputFilename, jsonOutputFilename, rssOutputFilename } =
       getFilename(options["/"]);
+    const { atom, json, rss, hostname } = options["/"];
 
     const getHeadItem = (
       name: string,
@@ -27,7 +28,7 @@ export const injectLinkstoHead = (
         {
           rel: "alternate",
           type,
-          href: resolveUrl(options["/"].hostname, base, fileName),
+          href: resolveUrl(hostname, base, fileName),
           title: `${
             siteData.title || siteData.locales["/"]?.title || ""
           } ${name} Feed`,
@@ -39,19 +40,19 @@ export const injectLinkstoHead = (
     if (!siteData.head) siteData.head = [];
 
     // add atom link
-    if (options.atom)
+    if (atom)
       siteData.head.push(
         getHeadItem("Atom", atomOutputFilename, "application/atom+xml")
       );
 
     // add json link
-    if (options.json)
+    if (json)
       siteData.head.push(
         getHeadItem("JSON", jsonOutputFilename, "application/json")
       );
 
     // add rss link
-    if (options.rss)
+    if (rss)
       siteData.head.push(
         getHeadItem("RSS", rssOutputFilename, "application/rss+xml")
       );
@@ -60,7 +61,7 @@ export const injectLinkstoHead = (
   else
     app.pages.forEach((page) => {
       const { pathLocale } = page;
-      const localeOptions = options[pathLocale];
+      const localeOptions = options[pathLocale]!;
 
       if (localePaths.includes(pathLocale)) {
         const { atomOutputFilename, jsonOutputFilename, rssOutputFilename } =

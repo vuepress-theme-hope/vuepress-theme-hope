@@ -58,7 +58,7 @@ export default defineComponent({
 
     return (): VNode =>
       h("header", { class: "hero" }, [
-        slots.heroImage?.() ||
+        slots["heroImage"]?.() ||
           h(DropTransition, { appear: true, type: "group" }, () => [
             heroImage.value
               ? h("img", {
@@ -77,7 +77,7 @@ export default defineComponent({
                 })
               : null,
           ]),
-        slots.heroInfo?.() ||
+        slots["heroInfo"]?.() ||
           h("div", { class: "hero-info" }, [
             heroText.value
               ? h(DropTransition, { appear: true, delay: 0.04 }, () =>

@@ -13,18 +13,18 @@ export interface DateOptions {
 }
 
 export interface DateDetail {
-  year: number;
-  month: number;
-  day: number;
-  hour: number;
-  minute: number;
-  second: number;
+  year?: number | undefined;
+  month?: number | undefined;
+  day?: number | undefined;
+  hour?: number | undefined;
+  minute?: number | undefined;
+  second?: number | undefined;
 }
 
 export interface DateInfo {
   display: string;
   value: Date | undefined;
-  detail: Partial<DateDetail>;
+  detail: DateDetail;
 }
 
 const getLang = (lang = "en"): string => {

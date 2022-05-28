@@ -111,14 +111,15 @@ export default defineComponent({
               "aria-label": linkAriaLabel.value,
               ...attrs,
               // class needs to be merged manually
-              class: ["nav-link", { active: isActive.value }, attrs.class],
+              class: ["nav-link", { active: isActive.value }, attrs["class"]],
               onFocusout: () => emit("focusout"),
             },
             () =>
-              slots.default?.() || [
-                slots.before?.() || h(resolveComponent("FontIcon"), { icon }),
+              slots["default"]?.() || [
+                slots["before"]?.() ||
+                  h(resolveComponent("FontIcon"), { icon }),
                 text,
-                slots.after?.(),
+                slots["after"]?.(),
               ]
           )
         : h(
@@ -130,14 +131,14 @@ export default defineComponent({
               "aria-label": linkAriaLabel.value,
               ...attrs,
               // class needs to be merged manually
-              class: ["nav-link", attrs.class],
+              class: ["nav-link", attrs["class"]],
               onFocusout: () => emit("focusout"),
             },
-            slots.default?.() || [
-              slots.before?.() || h(resolveComponent("FontIcon"), { icon }),
+            slots["default"]?.() || [
+              slots["before"]?.() || h(resolveComponent("FontIcon"), { icon }),
               text,
               props.externalLinkIcon ? h(ExternalLinkIcon) : null,
-              slots.after?.(),
+              slots["after"]?.(),
             ]
           );
     };

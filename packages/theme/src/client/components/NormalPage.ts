@@ -45,19 +45,20 @@ export default defineComponent({
             ? (resolveComponent("LocalEncrypt") as ComponentOptions)
             : RenderDefault,
           () => [
-            slots.top?.(),
+            slots["top"]?.(),
             h(BreadCrumb),
             h(PageTitle),
             tocEnable.value
               ? h(TOC, {
                   headerDepth:
                     frontmatter.value.headerDepth ??
-                    themeLocale.value.headerDepth,
+                    themeLocale.value.headerDepth ??
+                    2,
                 })
               : null,
-            slots.contentBefore?.(),
+            slots["contentBefore"]?.(),
             h(MarkdownContent),
-            slots.contentAfter?.(),
+            slots["contentAfter"]?.(),
             h(PageMeta),
             h(PageNav),
             isComponentRegistered("CommentService")
@@ -65,7 +66,7 @@ export default defineComponent({
                   darkmode: isDarkMode.value,
                 })
               : null,
-            slots.bottom?.(),
+            slots["bottom"]?.(),
           ]
         )
       );
