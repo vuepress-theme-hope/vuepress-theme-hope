@@ -117,7 +117,7 @@ module.exports = {
 
 :::
 
-Another example is you want a to set all the emphsis `n't` words to red color, so that `Setting this to a invliad stytax *doesn't* have any effect.` becomes: "Setting this to a invliad stytax <span style="color:red">doesn't</span> have any effect."
+Another example is you want a to set all the emphsis `n't` words to red color, so that `Setting this to a invalid stytax *doesn't* have any effect.` becomes: "Setting this to a invalid stytax <span style="color:red">doesn't</span> have any effect."
 
 ::: code-tabs#language
 
