@@ -8,6 +8,8 @@
  * Copied from https://github.com/PrismJS/prism-themes/blob/master/themes/prism-coldark-dark.css
  */
 
+// stylelint-disable no-descending-specificity
+
 @use "helper";
 
 #app {
@@ -126,38 +128,40 @@ pre[class*="language-"] {
   cursor: help;
 }
 
-.language-markdown .token.title,
-.language-markdown .token.title .token.punctuation {
-  color: #6cb8e6;
-  font-weight: bold;
-}
+.language-markdown {
+  .token.title,
+  .token.title .token.punctuation {
+    color: #6cb8e6;
+    font-weight: bold;
+  }
 
-.language-markdown .token.blockquote.punctuation {
-  color: #f4adf4;
-}
+  .token.code {
+    color: #6cc;
+  }
 
-.language-markdown .token.code {
-  color: #6cc;
-}
+  .token.url-link {
+    color: #e6d37a;
+  }
 
-.language-markdown .token.hr.punctuation {
-  color: #6cb8e6;
-}
+  .token.table-header {
+    color: #e3eaf2;
+  }
 
-.language-markdown .token.url .token.content {
-  color: #91d076;
-}
+  .token.blockquote.punctuation {
+    color: #f4adf4;
+  }
 
-.language-markdown .token.url-link {
-  color: #e6d37a;
-}
+  .token.hr.punctuation {
+    color: #6cb8e6;
+  }
 
-.language-markdown .token.list.punctuation {
-  color: #f4adf4;
-}
+  .token.list.punctuation {
+    color: #f4adf4;
+  }
 
-.language-markdown .token.table-header {
-  color: #e3eaf2;
+  .token.url .token.content {
+    color: #91d076;
+  }
 }
 
 .language-json .token.operator {

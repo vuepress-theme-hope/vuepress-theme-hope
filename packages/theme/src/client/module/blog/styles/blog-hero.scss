@@ -23,22 +23,6 @@
     margin: 0 0 1rem;
   }
 
-  &.fullscreen {
-    height: calc(100vh - var(--navbar-height)) !important;
-
-    @media (max-width: hope-config.$pad) {
-      height: calc(100vh - var(--navbar-mobile-height)) !important;
-    }
-
-    .mask {
-      background-position-y: top !important;
-    }
-
-    .slide-down-button {
-      display: block;
-    }
-  }
-
   .mask {
     position: absolute;
     top: 0;
@@ -136,6 +120,22 @@
       &:nth-child(2) {
         color: rgb(255 255 255 / 50%);
       }
+    }
+  }
+
+  &.fullscreen {
+    height: calc(100vh - var(--navbar-height)) !important;
+
+    @media (max-width: hope-config.$pad) {
+      height: calc(100vh - var(--navbar-mobile-height)) !important;
+    }
+
+    .mask {
+      background-position-y: top !important;
+    }
+
+    .slide-down-button {
+      display: block;
     }
   }
 }

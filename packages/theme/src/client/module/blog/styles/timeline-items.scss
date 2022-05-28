@@ -116,43 +116,6 @@
     padding-left: 0 !important;
   }
 
-  .timeline-item {
-    position: relative;
-
-    // make sure it won’t be covered by year heading
-    z-index: 3;
-
-    display: flex;
-
-    // make sure dot is aligned
-    padding: 30px 0 10px;
-    border-bottom: 1px dashed var(--border-color);
-
-    list-style: none;
-
-    &:hover {
-      cursor: pointer;
-
-      .timeline-date {
-        font-size: 16px;
-        transition: font-size 0.3s ease-out;
-
-        // stylelint-disable max-nesting-depth
-        &::before {
-          border-color: var(--theme-color);
-          background-color: var(--bg-color-active);
-        }
-        // stylelint-enable max-nesting-depth
-      }
-
-      .timeline-title {
-        color: var(--theme-color);
-        font-size: 18px;
-        transition: font-size 0.3s ease-out;
-      }
-    }
-  }
-
   .timeline-date {
     position: absolute;
     right: calc(100% + 24px);
@@ -191,5 +154,42 @@
 
     font-size: 16px;
     line-height: 30px;
+  }
+
+  .timeline-item {
+    position: relative;
+
+    // make sure it won’t be covered by year heading
+    z-index: 3;
+
+    display: flex;
+
+    // make sure dot is aligned
+    padding: 30px 0 10px;
+    border-bottom: 1px dashed var(--border-color);
+
+    list-style: none;
+
+    &:hover {
+      cursor: pointer;
+
+      .timeline-date {
+        font-size: 16px;
+        transition: font-size 0.3s ease-out;
+
+        // stylelint-disable max-nesting-depth
+        &::before {
+          border-color: var(--theme-color);
+          background-color: var(--bg-color-active);
+        }
+        // stylelint-enable max-nesting-depth
+      }
+
+      .timeline-title {
+        color: var(--theme-color);
+        font-size: 18px;
+        transition: font-size 0.3s ease-out;
+      }
+    }
   }
 }

@@ -18,6 +18,12 @@
     display: none;
   }
 
+  .container {
+    max-width: 320px;
+    margin: 0 auto;
+    padding: 2rem 0 4rem;
+  }
+
   &.fade-enter-active,
   &.fade-leave-active {
     transition: opacity 0.25s;
@@ -34,12 +40,6 @@
     .container {
       transform: translateY(-8px);
     }
-  }
-
-  .container {
-    max-width: 320px;
-    margin: 0 auto;
-    padding: 2rem 0 4rem;
   }
 
   .outlook-wrapper {

@@ -10,8 +10,6 @@ rules:
   at-rule-disallowed-list:
     - debug
 
-  at-rule-no-unknown: null
-
   at-rule-no-vendor-prefix: true
 
   block-no-empty: true
@@ -46,8 +44,6 @@ rules:
 
   function-comma-space-after: always-single-line
 
-  function-no-unknown: null
-
   function-url-quotes: always
 
   length-zero-no-unit: true
@@ -64,10 +60,6 @@ rules:
   media-feature-name-no-vendor-prefix: true
 
   media-feature-parentheses-space-inside: never
-
-  no-descending-specificity: null
-
-  no-invalid-position-at-import-rule: null
 
   no-missing-end-of-source-newline: true
 

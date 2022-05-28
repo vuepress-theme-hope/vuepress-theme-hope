@@ -7,16 +7,6 @@
   padding: 6px;
   color: var(--dark-grey);
 
-  &:hover,
-  &.open {
-    .outlook-dropdown {
-      z-index: 2;
-      opacity: 1;
-      visibility: visible;
-      transform: scale(1);
-    }
-  }
-
   .icon {
     vertical-align: middle;
     width: 1.25rem;
@@ -53,5 +43,13 @@
   > *:not(:last-child) {
     padding-bottom: 0.5rem;
     border-bottom: 1px solid var(--grey14);
+  }
+
+  .outlook-button:hover &,
+  .outlook-button.open & {
+    z-index: 2;
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
   }
 }
