@@ -14,7 +14,7 @@ dir:
 
 - [Markdown 增强介绍](intro.md)
 
-- [内置 Markdown 扩展](../../cookbook/vuepress/markdown.md)。
+- [内置 Markdown 扩展](../../cookbook/vuepress/markdown.md)
 
 ## 新语法
 
