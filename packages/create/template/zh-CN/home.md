@@ -7,11 +7,11 @@ heroText: 项目名称
 tagline: 你可以在这里放置或是整个项目的描述。
 actions:
   - text: 使用指南 💡
-    link: /guide/
+    link: /zh/guide/
+    type: primary
 
   - text: 博客主页 🏠
-    link: /
-    type: secondary
+    link: /zh/
 
 features:
   - title: Markdown 增强
