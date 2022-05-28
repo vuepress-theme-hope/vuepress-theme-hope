@@ -1,4 +1,6 @@
-import throttle from "lodash.throttle";
+import { useEventListener } from "@vueuse/core";
+import { usePageData, usePageFrontmatter } from "@vuepress/client";
+import { debounce } from "ts-debounce";
 import {
   Transition,
   computed,
@@ -11,12 +13,13 @@ import {
   watch,
 } from "vue";
 import { useRouter } from "vue-router";
-import { usePageData, usePageFrontmatter } from "@vuepress/client";
+import {
+  isComponentRegistered,
+  RenderDefault,
+} from "vuepress-shared/lib/client";
 
 import PageFooter from "@theme-hope/components/PageFooter";
-import PasswordModal from "@theme-hope/module/encrypt/components/PasswordModal";
 import { useMobile, useThemeLocaleData } from "@theme-hope/composables";
-import { useGlobalEcrypt } from "@theme-hope/module/encrypt/composables";
 import { useSidebarItems } from "@theme-hope/module/sidebar/composables";
 
 import type { ComponentOptions, VNode } from "vue";
@@ -43,7 +46,6 @@ export default defineComponent({
     const page = usePageData();
     const frontmatter = usePageFrontmatter<HopeThemePageFrontmatter>();
     const themeLocale = useThemeLocaleData();
-    const { isGlobalEncrypted, validateGlobalToken } = useGlobalEcrypt();
     const isMobile = useMobile();
 
     // navbar
@@ -54,7 +56,7 @@ export default defineComponent({
 
       if (
         frontmatter.value.navbar === false ||
-        themeLocale.value.navbar == false
+        themeLocale.value.navbar === false
       )
         return false;
 
@@ -126,18 +128,24 @@ export default defineComponent({
     let unregisterRouterHook: () => void;
     let lastDistance = 0;
 
-    const scrollHandler = throttle(() => {
-      const distance = getScrollTop();
+    useEventListener("scroll", () =>
+      debounce(
+        () => {
+          const distance = getScrollTop();
 
-      // scroll down
-      if (lastDistance < distance && distance > 58) {
-        if (!isMobileSidebarOpen.value) hideNavbar.value = true;
-      }
-      // scroll up
-      else hideNavbar.value = false;
+          // scroll down
+          if (lastDistance < distance && distance > 58) {
+            if (!isMobileSidebarOpen.value) hideNavbar.value = true;
+          }
+          // scroll up
+          else hideNavbar.value = false;
 
-      lastDistance = distance;
-    }, 300);
+          lastDistance = distance;
+        },
+        300,
+        { isImmediate: true }
+      )()
+    );
 
     watch(isMobile, (value) => {
       if (!value) toggleMobileSidebar(false);
@@ -147,13 +155,10 @@ export default defineComponent({
       unregisterRouterHook = router.afterEach((): void => {
         toggleMobileSidebar(false);
       });
-
-      window.addEventListener("scroll", scrollHandler);
     });
 
     onUnmounted(() => {
       unregisterRouterHook();
-      window.removeEventListener("scroll", scrollHandler);
     });
 
     return (): VNode =>
@@ -179,65 +184,68 @@ export default defineComponent({
           onTouchStart,
           onTouchEnd,
         },
-        isGlobalEncrypted.value
-          ? h(PasswordModal, { full: true, onVerify: validateGlobalToken })
-          : [
-              // navbar
-              enableNavbar.value
-                ? h(
-                    resolveComponent("Navbar") as ComponentOptions,
-                    { onToggleSidebar: () => toggleMobileSidebar() },
+        h(
+          isComponentRegistered("GloablEncrypt")
+            ? (resolveComponent("GloablEncrypt") as ComponentOptions)
+            : RenderDefault,
+          () => [
+            // navbar
+            enableNavbar.value
+              ? h(
+                  resolveComponent("Navbar") as ComponentOptions,
+                  { onToggleSidebar: () => toggleMobileSidebar() },
+                  {
+                    left: () => slots.navbarLeft?.(),
+                    center: () => slots.navbarCenter?.(),
+                    right: () => slots.navbarRight?.(),
+                    screenTop: () => slots.navScreenTop?.(),
+                    screenBottom: () => slots.navScreenBottom?.(),
+                  }
+                )
+              : null,
+            // sidebar mask
+            h(Transition, { name: "fade" }, () =>
+              isMobileSidebarOpen.value
+                ? h("div", {
+                    class: "sidebar-mask",
+                    onClick: () => toggleMobileSidebar(false),
+                  })
+                : null
+            ),
+            // toggle sidebar button
+            h(Transition, { name: "fade" }, () =>
+              isMobile.value
+                ? null
+                : h(
+                    "div",
                     {
-                      left: () => slots.navbarLeft?.(),
-                      center: () => slots.navbarCenter?.(),
-                      right: () => slots.navbarRight?.(),
-                      screenTop: () => slots.navScreenTop?.(),
-                      screenBottom: () => slots.navScreenBottom?.(),
-                    }
-                  )
-                : null,
-              // sidebar mask
-              h(Transition, { name: "fade" }, () =>
-                isMobileSidebarOpen.value
-                  ? h("div", {
-                      class: "sidebar-mask",
-                      onClick: () => toggleMobileSidebar(false),
+                      class: "toggle-sidebar-wrapper",
+                      onClick: () => toggleDesktopSidebar(),
+                    },
+                    h("span", {
+                      class: [
+                        "arrow",
+                        isDesktopSidebarOpen.value ? "left" : "right",
+                      ],
                     })
-                  : null
-              ),
-              // toggle sidebar button
-              h(Transition, { name: "fade" }, () =>
-                isMobile.value
-                  ? null
-                  : h(
-                      "div",
-                      {
-                        class: "toggle-sidebar-wrapper",
-                        onClick: () => toggleDesktopSidebar(),
-                      },
-                      h("span", {
-                        class: [
-                          "arrow",
-                          isDesktopSidebarOpen.value ? "left" : "right",
-                        ],
-                      })
-                    )
-              ),
-              // sidebar
-              h(
-                resolveComponent("Sidebar") as ComponentOptions,
-                {},
-                {
-                  ...(slots.sidebar
-                    ? { default: (): VNode[] | undefined => slots.sidebar?.() }
-                    : {}),
-                  top: () => slots.sidebarTop?.(),
-                  bottom: () => slots.sidebarBottom?.(),
-                }
-              ),
-              slots.default?.(),
-              h(PageFooter),
-            ]
+                  )
+            ),
+            // sidebar
+            h(
+              resolveComponent("Sidebar") as ComponentOptions,
+              {},
+              {
+                ...(slots.sidebar
+                  ? { default: (): VNode[] | undefined => slots.sidebar?.() }
+                  : {}),
+                top: () => slots.sidebarTop?.(),
+                bottom: () => slots.sidebarBottom?.(),
+              }
+            ),
+            slots.default?.(),
+            h(PageFooter),
+          ]
+        )
       );
   },
 });

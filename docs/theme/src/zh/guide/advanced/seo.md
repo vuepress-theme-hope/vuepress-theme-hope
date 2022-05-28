@@ -10,17 +10,17 @@ tag:
 
 `vuepress-theme-hope` 通过内置 [`vuepress-plugin-seo2`][seo2] 为提供 SEO 增强功能。
 
-为了使插件能够更好的工作，你可能需要查看一下 [页面配置](../../config/page.md#信息类) 并合理的配置它们。
+为了使插件能够更好的工作，你可能需要查看一下 [页面配置](../../config/frontmatter/info.md) 并合理的配置它们。
 
 ::: info
 
-`vuepress-theme-hope` 将 `themeConfig.plugins` 中的 `seo` 选项作为插件选项提供给 `vuepress-plugin-seo2`。
+`vuepress-theme-hope` 将主题选项中的 `plugins.seo` 作为插件选项提供给 `vuepress-plugin-seo2`。
 
 :::
 
 插件会通过向网站 `<head>` 注入标签，让你的网站完全支持 [开放内容协议 OGP](https://ogp.me/) 和 [JSON-LD 1.1](https://www.w3.org/TR/json-ld-api/)，以全面增强站点的搜索引擎优化性。
 
-如果不需要这个插件，请设置 `themeConfig.plugins.seo` 为 `false`。
+如果不需要这个插件，请设置在主题选项中设置 `plugins.seo: false`。
 
 <!-- more -->
 
@@ -47,7 +47,7 @@ tag:
 |   `twitter:image:alt`    |                                     `page.title` (仅在找到图片时)                                      |
 |     `article:author`     |                          `page.frontmatter.author` \|\| `themeConfig.author`                           |
 |      `article:tag`       |                          `page.frontmatter.tags` \|\| `page.frontmatter.tag`                           |
-| `article:published_time` |                          `page.frontmatter.date` \|\| `page.createTimeStamp`                           |
+| `article:published_time` |                          `page.frontmatter.date` \|\| `page.git.createdTime`                           |
 | `article:modified_time`  |                                         `page.git.updatedTime`                                         |
 
 ### 默认的 JSON-LD 生成逻辑
@@ -58,7 +58,7 @@ tag:
 |     `@type`     |                          `"NewsArticle"`                           |
 |   `headline`    |                            `page.title`                            |
 |     `image`     | 页面中的图片\|\| `themeConfig.hostname` + `page.frontmatter.image` |
-| `datePublished` |        `page.frontmatter.date` \|\| `page.createTimeStamp`         |
+| `datePublished` |        `page.frontmatter.date` \|\| `page.git.createdTime`         |
 | `dateModified`  |                       `page.git.updatedTime`                       |
 |    `author`     |        `page.frontmatter.author` \|\| `themeConfig.author`         |
 
@@ -97,14 +97,27 @@ head:
 
 ### OGP
 
-你可以在 `themeConfig.plugins.seo` 中通过 `ogp` 传入一个函数来按照你的需要修改默认 OGP 对象并返回。
+你可以在主题选项中通过 `plugins.seo.ogp` 传入一个函数来按照你的需要修改默认 OGP 对象并返回。
 
 ```ts
-function ogp<ExtendObject = Record<string, unknown>>(
+function ogp<
+  ExtraPageData extends Record<string | number | symbol, unknown> = Record<
+    never,
+    never
+  >,
+  ExtraPageFrontmatter extends Record<
+    string | number | symbol,
+    unknown
+  > = Record<string, unknown>,
+  ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
+    never,
+    never
+  >
+>(
   /** 插件自动推断的 OGP 对象 */
   ogp: SeoContent,
   /** 页面对象 */
-  page: ExtendPage<ExtendObject>,
+  page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   /** VuePress App */
   app: App
 ): SeoContent;
@@ -125,14 +138,27 @@ function ogp<ExtendObject = Record<string, unknown>>(
 
 ### JSON-LD
 
-同 OGP，你可以在 `themeConfig.plugins.seo` 中通过 `jsonLd` 传入一个函数来按照你的需要修改默认 JSON-LD 对象并返回。
+同 OGP，你可以在主题选项中通过 `plugins.seo.jsonLd` 传入一个函数来按照你的需要修改默认 JSON-LD 对象并返回。
 
 ```ts
-function jsonLd<ExtendObject = Record<string, unknown>>(
+function jsonLd<
+  ExtraPageData extends Record<string | number | symbol, unknown> = Record<
+    never,
+    never
+  >,
+  ExtraPageFrontmatter extends Record<
+    string | number | symbol,
+    unknown
+  > = Record<string, unknown>,
+  ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
+    never,
+    never
+  >
+>(
   /** 插件自动推断的 JSON-LD 对象 */
   jsonLD: ArticleJSONLD | null,
   /** 页面对象 */
-  page: ExtendPage<ExtendObject>,
+  page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   /** VuePress App */
   app: App
 ): ArticleJSONLD | null;
@@ -146,30 +172,43 @@ function jsonLd<ExtendObject = Record<string, unknown>>(
 
 ## 规范链接
 
-如果您将内容部署到不同的站点，或不同 URL 下的相同内容，您可能需要在 `themeConfig.plugins.seo` 中设置 `canonical` 选项为您的页面提供 “规范链接”。 您可以设置一个字符串，这样它会附加在页面路由链接之前，或者添加一个自定义函数 `(page: Page) => string | 如有必要，null` 返回规范链接。
+如果你将内容部署到不同的站点，或不同 URL 下的相同内容，你可能需要在主题选项中通过 `plugins.seo.canonical` 选项为你的页面提供 “规范链接”。 你可以设置一个字符串，这样它会附加在页面路由链接之前，或者添加一个自定义函数 `(page: Page) => string | 如有必要，null` 返回规范链接。
 
 ::: tip 例子
 
-如果您的站点部署在 `example.com` 的 docs 文件夹下，但同时在下列网址中可用:
+如果你的站点部署在 `example.com` 的 docs 文件夹下，但同时在下列网址中可用:
 
 - `http://example.com/docs/xxx`
 - `https://example.com/docs/xxx`
 - `http://www.example.com/docs/xxx`
 - `https://www.example.com/docs/xxx` (首选)
 
-要让搜索引擎结果始终是首选，您可能需要将 `canonical` 设置为 `https://www.example.com/docs/`，以便搜索引擎知道首选第四个 URL 作为索引结果。
+要让搜索引擎结果始终是首选，你可能需要将 `canonical` 设置为 `https://www.example.com/docs/`，以便搜索引擎知道首选第四个 URL 作为索引结果。
 
 :::
 
 ### 自定义 head 标签
 
-有些时候你可能需要符合其他协议或按照其他搜索引擎提供的格式提供对应的 SEO 标签，此时你可以在 `themeConfig.plugins.seo` 中使用 `customHead` 选项，其类型为:
+有些时候你可能需要符合其他协议或按照其他搜索引擎提供的格式提供对应的 SEO 标签，此时你可以在主题选项中通过 `plugins.seo.customHead` 选项自定义 head 标签，其类型为:
 
 ```ts
-function customHead<ExtendObject = Record<string, unknown>>(
+function customHead<
+  ExtraPageData extends Record<string | number | symbol, unknown> = Record<
+    never,
+    never
+  >,
+  ExtraPageFrontmatter extends Record<
+    string | number | symbol,
+    unknown
+  > = Record<string, unknown>,
+  ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
+    never,
+    never
+  >
+>(
   head: HeadConfig[],
   /** 页面对象 */
-  page: ExtendPage<ExtendObject>,
+  page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
   /** VuePress App */
   app: App
 ): void;
@@ -212,3 +251,6 @@ function customHead<ExtendObject = Record<string, unknown>>(
 ## 相关工具
 
 - [Google 富媒体结构测试工具](https://search.google.com/test/rich-results)
+
+[seo2]: https://vuepress-theme-hope.github.io/v2/seo/zh/
+[seo2-config]: https://vuepress-theme-hope.github.io/v2/seo/zh/config.html

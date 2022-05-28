@@ -1,6 +1,7 @@
 ---
 title: 时间线
 icon: time
+index: 5
 category:
   - 博客
 tag:
@@ -10,7 +11,8 @@ tag:
 
 你可以通过 `/timeline/` 访问时间页面，在页面中，你可以按照时间倒序查看所有的文章列表。
 
-![时间线列表](./assets/timeline.png)
+![时间线列表](./assets/timeline-light.png#light)
+![时间线列表](./assets/timeline-dark.png#dark)
 
 ## 排除文章
 
@@ -18,7 +20,7 @@ tag:
 
 ## 配置时间线顶部文字
 
-我们允许你定制时间线的顶部文字，你可以通过 `themeConfig.blog.timeline` 配置它。
+我们允许你定制时间线的顶部文字，你可以在主题选项中通过 `blog.timeline` 配置它。
 
 ## 侧边栏
 

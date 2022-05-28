@@ -1,6 +1,7 @@
 ---
 title: Blog homepage
 icon: home
+index: 6
 category:
   - Blog
 tag:
@@ -15,7 +16,8 @@ You need to set `layout: Blog` and `home: true` in the frontmatter of homepage.
 
 <!-- more -->
 
-![Homepage screenshot](./assets/blog.png)
+![Homepage screenshot](./assets/blog-light.png#light)
+![Homepage screenshot](./assets/blog-dark.png#dark)
 
 ## Frontmatter Options
 
@@ -28,7 +30,7 @@ Whether to display the icon and description of the home page.
 
 ### bgImage
 
-- Type: `string`
+- Type: `string | false`
 
 For the address of the background picture, you must fill in the absolute path. If not filled in, a default landscape picture will be automatically applied.
 
@@ -60,6 +62,6 @@ Whether Hero is full screen displayed
 - `name`: required, project name
 - `link`: required, project link, fill in an external path or absolute path
 - `desc`: project description
-- `icon`: Icon, you can fill in full path or absolute path image link, also icon FontClass is suppported
+- `icon`: Icon, you can fill in full path or absolute path image link, also icon FontClass is supported
 
   We provide these icons as built-in support either: `"link"`, `"project"`, `"book"`, `"article"`, `"friend"`。

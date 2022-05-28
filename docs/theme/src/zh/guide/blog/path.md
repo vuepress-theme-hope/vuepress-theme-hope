@@ -1,6 +1,7 @@
 ---
 title: 博客页面路径
 icon: link
+index: 7
 category:
   - 博客
 tag:
@@ -8,7 +9,7 @@ tag:
   - 路径
 ---
 
-你可以通过 `themeConfig.plugins.blog` 控制博客中各页面路径。
+你可以在主题选项中通过 `plugins.blog` 控制博客中各页面路径。
 
 博客提供的默认路径如下，如果它们与你的已有路径发生冲突，并且你不想调整自己的路径，你可以对它们进行修改。
 

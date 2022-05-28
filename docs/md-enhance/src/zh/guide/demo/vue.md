@@ -6,7 +6,7 @@ icon: vue
 ## 格式
 
 ````md
-::: demo [vue] 可选的标题文字
+::: vue-demo 可选的标题文字
 
 ```vue
 <!-- ↑ 你也可以使用 html -->
@@ -40,7 +40,7 @@ export default {
 
 ## 演示
 
-::: demo [vue] 一个 Vue Composition 演示
+::: vue-demo 一个 Vue Composition 演示
 
 ```vue
 <template>
@@ -80,7 +80,7 @@ export default {
 :::: details Code
 
 ````md
-::: demo [vue] 一个 Vue Composition 演示
+::: vue-demo 一个 Vue Composition 演示
 
 ```vue
 <template>
@@ -120,7 +120,7 @@ export default {
 
 ::::
 
-::: demo [vue] 一个 Vue Option 演示
+::: vue-demo 一个 Vue Option 演示
 
 ```vue
 <template>
@@ -152,7 +152,7 @@ export default {
 :::: details Code
 
 ````md
-::: demo [vue] 一个 Vue Option 演示
+::: vue-demo 一个 Vue Option 演示
 
 ```vue
 <template>

@@ -1,5 +1,5 @@
-import type { ArticleInfo } from "@mr-hope/vuepress-plugin-components";
 import type { HopeThemePageFrontmatter } from "./base";
+import type { PageInfo } from "../info";
 import type { AutoLink } from "../utils";
 
 export interface HopeThemeNormalPageFrontmatter
@@ -87,6 +87,13 @@ export interface HopeThemeNormalPageFrontmatter
   };
 
   /**
+   * A short title used in navbar, sidebar and breadcrumb
+   *
+   * 用于导航栏，侧边栏和路径导航的短标题
+   */
+  shortTitle?: string;
+
+  /**
    * Page Heading depth
    *
    * 页面标题深度
@@ -136,7 +143,7 @@ export interface HopeThemeNormalPageFrontmatter
    *
    * @default ["Author", "Visitor", "Time", "Category", "Tag", "ReadTime"]
    */
-  pageInfo?: ArticleInfo[] | false;
+  pageInfo?: PageInfo[] | false;
 
   /**
    * Whether enable breadcrumb

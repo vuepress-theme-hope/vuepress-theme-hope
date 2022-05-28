@@ -3,7 +3,7 @@ title: Guide
 icon: creative
 ---
 
-With `vuepress-plugin-blog2`, you can easily bring blog feature into your themes.
+With `vuepress-plugin-blog2`, you can easily bring blog feature into your theme.
 
 ## How it works
 
@@ -16,38 +16,37 @@ flowchart TB
   subgraph node ["Node Side"]
     direction TB
     readConfig["Read Config"]-->
-    node2["Get article using 'filter' option"]-->
-    node3["Get article info using 'getInfo' option"]-->
+    node2["Get articles\nwith 'filter' option"]-->
+    node3["Get info\nwith 'getInfo' option"]-->
     node4["Write info to routeMeta"]
-    readConfig --->
-    resolve["Resolve 'category' and 'tag' options"]
-    generatePage["Generate page and item page with frontmatter and layout"]
+    readConfig
+    generatePage["Generate pages"]
     writeTemp["Write info to temp files"]
 
     subgraph category
       direction TB
       loopCategory["Loop each config"]-->
-      getCategory["Get category using 'getter' option"]-->
-      mapCategory["Build 'CategoryName → Pages' Map"]-->
-      sortCategory["Sort pages using 'sort' option"]
+      getCategory["Get category\nwith 'getter' option"]-->
+      mapCategory["Build\n'CategoryName → Pages'\nMap"]-->
+      sortCategory["Sort pages\nwith 'sort' option"]
       loopCategory-->
-      getCategoryPage["Get path, layout, frontmatter, itemPath, itemLayout, itemFrontmatter options"]
+      getCategoryPage["Get path,\nlayout,\nfrontmatter,\nitemPath,\nitemLayout,\nitemFrontmatter\noptions"]
       end
 
-    resolve-->loopCategory
+    readConfig-->loopCategory
     getCategoryPage--> generatePage
     sortCategory--> writeTemp
 
     subgraph type
       direction TB
       loopType[Loop each config]-->
-      getTypePage["Get path, layout, frontmatter options"]
+      getTypePage["Get\n'path',\n'layout',\n'frontmatter'\noptions"]
       loopType-->
-      filterType["Get pages fitting the type using 'filter' option"]-->
-      sortType["Sort pages using 'sort' option"]
+      filterType["Get pages\nwith 'filter' option"]-->
+      sortType["Sort pages\nwith 'sort' option"]
     end
 
-    resolve-->loopType
+    readConfig-->loopType
     getTypePage--> generatePage
     sortType--> writeTemp
     end
@@ -73,21 +72,25 @@ flowchart TB
   generatePage-->visit
 ```
 
-The flowchart above may help you understand how the plugin works and it's design goal.
+The flowchart above may help you understand its design goal and how the plugin works.
 
-## Collecting Articles and Generating Info
+## Collecting Articles
 
-To get started, the plugins will pick those pages which need to be treated as articles. This is only the first step to drop those pages you don’t want.
+The plugin filter all the pages using `filter` options, so that it will drop pages you don’t want.
 
 ::: note
 
-By default, all the pages generated from Markdown files apart from homepage are included as articles.
+By default, all the pages generated from Markdown files but not homepage are included as articles.
 
 :::
 
-You may need to set option `filter` to fully customize pages to collect. The `filter` accepts a function with the shape `(page: Page) => boolean`.
+You can fully customize pages to collect through option `filter`, which accepts a function `(page: Page) => boolean`.
 
-Then, you should set `getInfo` option with a function accepting `Page` as argument and returning a object containing the info you want. So later, you can get these info through Composition API.
+## Gathering Info
+
+You should set `getInfo` option with a function accepting `Page` as argument and returning a object containing the info you want.
+
+The plugin will collect all the info you want and write them to `routeMeta` field of each page, so you will be able to get these information through Composition API later.
 
 ::: details Demo
 
@@ -103,7 +106,7 @@ export default {
           // drop those pages which is NOT generated from file
           if (!filePathRelative) return false;
 
-          // drop those pages in `archives` folder
+          // drop those pages in `archives` directory
           if (filePathRelative.startsWith("archives/")) return false;
 
           // drop those pages which do not use default layout
@@ -139,21 +142,21 @@ Basically, you would want 2 types of collection in your blog:
 
 - Category:
 
-  "Category" is grouping articles with their tags (or categories).
+  "Category" means grouping articles with their labels.
 
   For example, each article may have their "categories" and "tags".
 
 - Type:
 
-  "Type" is filtering aricles with different conditions.
+  "Type" means identifying articles with conditions.
 
-  For example, you may have diary, notes in your posts. And when a post has a writing date information with it, it can be called as a "timeline item".
+  For example, you may want to describe some of your articles as diary.
 
 After understanding description of these 2 types, you can set `category` and `type` options, each accepts an array, and each element represents a configuation.
 
 Let’s start with 2 examples here.
 
-Imagine you want to set tags for each articles, and you are setting them in `frontmatter.tag`. You want a tag mapping page in `/tag/` with `TagMap` layout , and group each tag list with tagName in `/tag/tagName` with `TagList` layout, you probably need a configuation like this:
+Imagine you are setting tags for each articles witlh `tag` field in page frontmatter. You want a tag mapping page in `/tag/` with `TagMap` layout , and group each tag list with tagName in `/tag/tagName` with `TagList` layout, you probably need a configuation like this:
 
 ```ts
 // theme
@@ -183,7 +186,7 @@ export default {
 };
 ```
 
-Also, you may want to star some of your aricles, and display them to visitors. When you are setting `star: true` in frontmatter to mark them, you probably need a configuation like this to display them in `/star/` path with `StarList` layout:
+Also, you may want to star some of your articles, and display them to visitors. When you are setting `star: true` in frontmatter to mark them, you probably need a configuation like this to display them in `/star/` path with `StarList` layout:
 
 ```ts
 // theme

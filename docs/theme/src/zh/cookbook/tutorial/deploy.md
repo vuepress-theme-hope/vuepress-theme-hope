@@ -15,7 +15,7 @@ tag:
 
 ## 构建项目
 
-当你在本地完成项目的初步开发后，你就可以使用 `yarn docs:build` 命令构建网站。
+当你在本地完成项目的初步开发后，你就可以使用 `pnpm docs:build` 命令构建网站。
 
 如果你在使用模板，网站内容将会输出到 VuePress 项目的 `.vuepress/dist` 文件夹下。这些文件就是 VuePress 的最终输出结果。
 
@@ -23,7 +23,7 @@ tag:
 
 ## 部署到 GitHub Pages
 
-如果你在使用模板，且在创建过程中选择了创建自动部署文档的 GitHub 工作流，那么你唯一要做的就是设置正确的 base 选项。
+如果你在使用模板，且在创建过程中选择了创建自动部署文档的 GitHub 工作流，那么你唯一要做的就是设置正确的 [base 选项](https://v2.vuepress.vuejs.org/zh/reference/config.html#base)。
 
 - 如果你准备发布到 `https://<USERNAME>.github.io/`，你必须将整个项目上传至 `https://github.com/<USERNAME>/<USERNAME>.github.io` 仓库。在这种情况下你无需进行任何更改，因为 base 默认就是 `"/"`。
 
@@ -58,22 +58,22 @@ jobs:
           # 如果你文档需要 Git 子模块，取消注释下一行
           # submodules: true
 
-      - uses: actions/cache@v3
-        id: node-modules
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
         with:
-          path: node_modules/
-          key: ${{ runner.os }}-node-modules-${{ hashFiles('yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-node-modules-
+          version: 7
+          run_install: true
 
-      - name: Install Deps
-        if: steps.node-modules.outputs.cache-hit != 'true'
-        run: yarn install --frozen-lockfile
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: pnpm
 
       - name: Build Docs
         env:
           NODE_OPTIONS: --max_old_space_size=8192
-        run: yarn run build:webpack
+        run: pnpm docs:build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
@@ -94,3 +94,9 @@ jobs:
 ## 其他部署方式
 
 关于其他部署方式，请参阅 [VuePress → 部署](https://v2.vuepress.vuejs.org/zh/guide/deployment.html)。
+
+::: tip Gitee
+
+如果你在使用码云，你需要注意码云的特殊仓库是 `https://gitee.com/<USERNAME>/<USERNAME>`。如果你推送到这个仓库，你的文档将会发布在 `https://<USERNAME>.gitee.io` 上。
+
+:::

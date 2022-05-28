@@ -1,6 +1,7 @@
 ---
 title: Copyright Plugin Config
 icon: copyright
+index: 4
 category:
   - Config
 tag:
@@ -11,11 +12,11 @@ tag:
 
 ## Intro
 
-The `vuepress-plugin-copyright2` plugin can append copyright infomation when users copy content from your site. Also, you can disable site copy or selection with this plugin.
+The `vuepress-plugin-copyright2` plugin can append copyright information when users copy content from your site. Also, you can disable site copy or selection with this plugin.
 
 This plugin is disabled by default.
 
-`vuepress-theme-hope` passes `themeConfig.plugins.copyright` as plugin options to the `vuepress-plugin-copyright2` plugin.
+`vuepress-theme-hope` passes `plugins.copyright` in theme options as plugin options to `vuepress-plugin-copyright2` plugin.
 
 ## Plugin Options
 
@@ -31,14 +32,14 @@ Deploy hostname
 - Type: `string | ((page: Page) => string)`
 - Required: No
 
-Author Infomation
+Author Information
 
 ### license
 
 - Type: `string | ((page: Page) => string)`
 - Required: No
 
-License Infomation
+License Information
 
 ### triggerWords
 
@@ -70,7 +71,7 @@ Disable selection
 
 ### locales
 
-- Type: `CopyrightLocaleData`
+- Type: `CopyrightLocaleConfig`
 
   ```ts
   interface CopyrightLocaleData {
@@ -94,6 +95,10 @@ Disable selection
      * @description `:url` will be replaced by current page link
      */
     link: string;
+  }
+
+  interface CopyrightLocaleConfig {
+    [localePath: string]: CopyrightLocaleData;
   }
   ```
 

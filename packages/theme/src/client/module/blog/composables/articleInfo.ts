@@ -1,25 +1,27 @@
+import { usePageLang } from "@vuepress/client";
+import { computed, reactive, Ref } from "vue";
 import {
   getAuthor,
   getCategory,
   getDate,
   getTag,
-} from "@mr-hope/vuepress-shared/lib/client";
-import { usePageLang } from "@vuepress/client";
-import { computed, reactive, Ref } from "vue";
+} from "vuepress-shared/lib/client";
+
 import { useCategoryMap } from "./categoryMap";
 import { useBlogOptions } from "./options";
 import { useTagMap } from "./tagMap";
 
-import { usePure, useThemeLocaleData } from "@theme-hope/composables";
+import { useThemeLocaleData } from "@theme-hope/composables";
 
+import type { ComputedRef } from "vue";
+import type { AuthorInfo, DateInfo } from "vuepress-shared";
+import type { PageInfoProps } from "@theme-hope/module/info/components/PageInfo";
 import type {
-  ArticleCategory,
-  ArticleInfoProps,
-  ArticleTag,
-} from "@mr-hope/vuepress-plugin-components";
-import type { AuthorInfo, DateInfo } from "@mr-hope/vuepress-shared";
-import type { ComputedRef, UnwrapNestedRefs } from "vue";
-import type { ArticleInfo } from "../../../../shared";
+  ArticleInfo,
+  PageCategory,
+  PageInfo,
+  PageTag,
+} from "../../../../shared";
 
 export type AuthorRef = ComputedRef<AuthorInfo[]>;
 
@@ -36,7 +38,7 @@ export const useArticleAuthor = (info: Ref<ArticleInfo>): AuthorRef => {
   });
 };
 
-export type CategoryRef = ComputedRef<ArticleCategory[]>;
+export type CategoryRef = ComputedRef<PageCategory[]>;
 
 export const useArticleCategory = (info: Ref<ArticleInfo>): CategoryRef => {
   const categoryMap = useCategoryMap();
@@ -49,7 +51,7 @@ export const useArticleCategory = (info: Ref<ArticleInfo>): CategoryRef => {
   );
 };
 
-export type TagRef = ComputedRef<ArticleTag[]>;
+export type TagRef = ComputedRef<PageTag[]>;
 
 export const useArticleTag = (info: Ref<ArticleInfo>): TagRef => {
   const tagMap = useTagMap();
@@ -76,31 +78,26 @@ export const useArticleDate = (info: Ref<ArticleInfo>): DateRef => {
 
 export const useArticleInfo = (
   info: Ref<ArticleInfo>
-): UnwrapNestedRefs<ArticleInfoProps> => {
+): {
+  config: PageInfoProps;
+  items: ComputedRef<PageInfo[] | false | undefined>;
+} => {
   const blogOptions = useBlogOptions();
   const author = useArticleAuthor(info);
   const category = useArticleCategory(info);
   const tag = useArticleTag(info);
   const date = useArticleDate(info);
-  const pure = usePure();
 
-  return reactive<ArticleInfoProps>({
-    config: blogOptions.value.articleInfo || [
-      "Author",
-      "Original",
-      "Date",
-      "PageView",
-      "Category",
-      "Tag",
-      "ReadingTime",
-    ],
+  const config = reactive<PageInfoProps>({
     author: author.value,
     category: category.value,
     date: date.value,
     tag: tag.value,
     isOriginal: info.value.isOriginal,
     readingTime: info.value.readingTime,
-    color: !pure.value,
-    hint: !pure.value,
   });
+
+  const items = computed(() => blogOptions.value.articleInfo);
+
+  return { config, items };
 };

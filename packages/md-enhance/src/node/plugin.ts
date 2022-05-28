@@ -1,203 +1,215 @@
+import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   addCustomElement,
   addViteOptimizeDepsExclude,
   addViteOptimizeDepsInclude,
   addViteSsrExternal,
-  addViteSsrNoExternal,
-  noopModule,
-} from "@mr-hope/vuepress-shared";
-import { path } from "@vuepress/utils";
-import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
+} from "vuepress-shared";
+
+import { logger } from "./utils";
+
+import { checkLinks, getCheckLinksStatus } from "./checkLink";
 import {
-  codeDemoDefaultSetting,
+  CODE_DEMO_DEFAULT_SETTING,
+  chart,
+  codeTabs,
+  container,
+  echarts,
   flowchart,
   footnote,
   imageMark,
-  mdImport,
+  include,
   katex,
   lazyLoad,
   mark,
   mermaid,
+  normalDemo,
   presentation,
+  reactDemo,
   sub,
   sup,
+  tabs,
   tasklist,
+  vPre,
+  vueDemo,
 } from "./markdown-it";
+import { prepareConfigFile, prepareRevealPluginFile } from "./prepare";
 import { usePlugins } from "./usePlugins";
 import { MATHML_TAGS } from "./utils";
 
-import type { Plugin, PluginConfig } from "@vuepress/core";
+import type { PluginFunction } from "@vuepress/core";
 import type { KatexOptions } from "katex";
 import type { MarkdownEnhanceOptions } from "../shared";
 
-export const mdEnhancePlugin: Plugin<MarkdownEnhanceOptions> = (
-  options,
-  app
-) => {
-  const getStatus = (key: keyof MarkdownEnhanceOptions, gfm = false): boolean =>
-    key in options
-      ? Boolean(options[key])
-      : gfm && "gfm" in options
-      ? Boolean(options.gfm)
-      : options.enableAll || false;
+export const mdEnhancePlugin =
+  (options: MarkdownEnhanceOptions): PluginFunction =>
+  (app) => {
+    if (app.env.isDebug) logger.info(`Options: ${options.toString()}`);
 
-  const alignEnable = getStatus("align");
-  const chartEnable = getStatus("chart");
-  const containerEnable = getStatus("container");
-  const codegroupEnable = getStatus("codegroup");
-  const demoEnable = getStatus("demo");
-  const flowchartEnable = getStatus("flowchart");
-  const footnoteEnable = getStatus("footnote", true);
-  const imageMarkEnable = getStatus("imageMark", true);
-  const tasklistEnable = getStatus("tasklist", true);
-  const mermaidEnable = getStatus("mermaid");
-  const presentationEnable = getStatus("presentation");
-  const texEnable = getStatus("tex");
+    const getStatus = (
+      key: keyof MarkdownEnhanceOptions,
+      gfm = false
+    ): boolean =>
+      key in options
+        ? Boolean(options[key])
+        : gfm && "gfm" in options
+        ? Boolean(options.gfm)
+        : options.enableAll || false;
 
-  const katexOptions: KatexOptions = {
-    macros: {
-      // support more symbols
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      "\\liiiint": "\\int\\!\\!\\!\\iiint",
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      "\\iiiint": "\\int\\!\\!\\!\\!\\iiint",
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      "\\idotsint": "\\int\\!\\cdots\\!\\int",
-    },
-    ...(typeof options.tex === "object" ? options.tex : {}),
-  };
+    const chartEnable = getStatus("chart");
+    const echartsEnable = getStatus("echarts");
+    const flowchartEnable = getStatus("flowchart");
+    const footnoteEnable = getStatus("footnote", true);
+    const imageMarkEnable = getStatus("imageMark", true);
+    const tasklistEnable = getStatus("tasklist", true);
+    const mermaidEnable = getStatus("mermaid");
+    const presentationEnable = getStatus("presentation");
+    const texEnable = getStatus("tex");
 
-  const revealPlugins =
-    typeof options.presentation === "object" &&
-    Array.isArray(options.presentation.plugins)
-      ? options.presentation.plugins
-      : [];
+    const shouldCheckLinks = getCheckLinksStatus(app, options);
 
-  useSassPalettePlugin(app, { id: "hope" });
-
-  usePlugins(app, options);
-
-  return {
-    name: "vuepress-plugin-md-enhance",
-
-    alias: {
-      "@ChartJS": chartEnable
-        ? path.resolve(__dirname, "../client/components/ChartJS.js")
-        : noopModule,
-      "@CodeDemo": demoEnable
-        ? path.resolve(__dirname, "../client/components/CodeDemo.js")
-        : noopModule,
-      "@CodeGroup": codegroupEnable
-        ? path.resolve(__dirname, "../client/components/CodeGroup.js")
-        : noopModule,
-      "@CodeGroupItem": codegroupEnable
-        ? path.resolve(__dirname, "../client/components/CodeGroupItem.js")
-        : noopModule,
-      "@FlowChart": flowchartEnable
-        ? path.resolve(__dirname, "../client/components/FlowChart.js")
-        : noopModule,
-      "@Mermaid": mermaidEnable
-        ? path.resolve(__dirname, "../client/components/Mermaid.js")
-        : noopModule,
-      "@Presentation": presentationEnable
-        ? path.resolve(__dirname, "../client/components/Presentation.js")
-        : noopModule,
-    },
-
-    define: (): Record<string, unknown> => ({
-      MARKDOWN_ENHANCE_ALIGN: alignEnable,
-      MARKDOWN_ENHANCE_CONTAINER: containerEnable,
-      MARKDOWN_ENHANCE_DEMO: demoEnable,
-      MARKDOWN_ENHANCE_DELAY: options.delay || 500,
-      MARKDOWN_ENHANCE_FOOTNOTE: footnoteEnable,
-      MARKDOWN_ENHANCE_IMAGE_MARK: imageMarkEnable,
-      MARKDOWN_ENHANCE_TASKLIST: tasklistEnable,
-      MARKDOWN_ENHANCE_TEX: texEnable,
-      CODE_DEMO_OPTIONS: {
-        ...codeDemoDefaultSetting,
-        ...(typeof options.demo === "object" ? options.demo : {}),
+    const katexOptions: KatexOptions = {
+      macros: {
+        // support more symbols
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        "\\liiiint": "\\int\\!\\!\\!\\iiint",
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        "\\iiiint": "\\int\\!\\!\\!\\!\\iiint",
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        "\\idotsint": "\\int\\!\\cdots\\!\\int",
       },
-      MERMAID_OPTIONS:
-        typeof options.mermaid === "object" ? options.mermaid : {},
-      REVEAL_CONFIG:
-        typeof options.presentation === "object" &&
-        typeof options.presentation.revealConfig === "object"
-          ? options.presentation.revealConfig
-          : {},
-      REVEAL_PLUGIN_HIGHLIGHT: revealPlugins.includes("highlight"),
-      REVEAL_PLUGIN_MATH: revealPlugins.includes("math"),
-      REVEAL_PLUGIN_NOTES: revealPlugins.includes("notes"),
-      REVEAL_PLUGIN_SEARCH: revealPlugins.includes("search"),
-      REVEAL_PLUGIN_ZOOM: revealPlugins.includes("zoom"),
-    }),
+      ...(typeof options.tex === "object" ? options.tex : {}),
+    };
 
-    extendsMarkdown: (markdownIt): void => {
-      if (getStatus("lazyLoad")) markdownIt.use(lazyLoad);
-      if (imageMarkEnable) markdownIt.use(imageMark);
-      if (getStatus("sup")) markdownIt.use(sup);
-      if (getStatus("sub")) markdownIt.use(sub);
-      if (footnoteEnable) markdownIt.use(footnote);
-      if (flowchartEnable) markdownIt.use(flowchart);
-      if (getStatus("mark")) markdownIt.use(mark);
-      if (tasklistEnable)
-        markdownIt.use(tasklist, [
-          typeof options.tasklist === "object" ? options.tasklist : {},
-        ]);
-      if (getStatus("mdImport"))
-        markdownIt.use(mdImport, [
-          typeof options.mdImport === "function" ? options.mdImport : undefined,
-        ]);
-      if (mermaidEnable) markdownIt.use(mermaid);
-      if (texEnable) markdownIt.use(katex, katexOptions);
-      if (presentationEnable) markdownIt.use(presentation);
-    },
+    const revealPlugins =
+      typeof options.presentation === "object" &&
+      Array.isArray(options.presentation.plugins)
+        ? options.presentation.plugins
+        : [];
 
-    onInitialized: (app): void => {
-      if (katexOptions.output !== "html") addCustomElement(app, MATHML_TAGS);
+    useSassPalettePlugin(app, { id: "hope" });
 
-      addViteSsrNoExternal(app, [
-        "@mr-hope/vuepress-shared",
-        "vuepress-plugin-md-enhance",
-      ]);
-      addViteOptimizeDepsExclude(app, "vuepress-plugin-md-enhance");
+    usePlugins(app, options);
 
-      if (chartEnable) {
-        addViteOptimizeDepsInclude(app, ["chart.js/auto"]);
-        addViteSsrExternal(app, "chart.js");
-      }
+    return {
+      name: "vuepress-plugin-md-enhance",
 
-      if (flowchartEnable) {
-        addViteOptimizeDepsInclude(app, ["flowchart.js", "lodash.debounce"]);
-        addViteSsrExternal(app, "flowchart.js");
-      }
+      define: (): Record<string, unknown> => ({
+        MARKDOWN_ENHANCE_DELAY: options.delay || 500,
+        CODE_DEMO_OPTIONS: {
+          ...CODE_DEMO_DEFAULT_SETTING,
+          ...(typeof options.demo === "object" ? options.demo : {}),
+        },
+        MERMAID_OPTIONS:
+          typeof options.mermaid === "object" ? options.mermaid : {},
+        REVEAL_CONFIG:
+          typeof options.presentation === "object" &&
+          typeof options.presentation.revealConfig === "object"
+            ? options.presentation.revealConfig
+            : {},
+      }),
 
-      if (mermaidEnable) {
-        addViteOptimizeDepsInclude(app, "mermaid");
-        addViteSsrExternal(app, "mermaid");
-      }
+      extendsBundlerOptions: (config: unknown, app): void => {
+        if (katexOptions.output !== "html")
+          addCustomElement({ app, config }, MATHML_TAGS);
 
-      if (presentationEnable) {
-        addViteOptimizeDepsInclude(app, [
-          "reveal.js/dist/reveal.esm.js",
-          "reveal.js/plugin/markdown/markdown.esm.js",
-          ...revealPlugins.map(
-            (plugin) => `reveal.js/plugin/${plugin}/${plugin}.esm.js`
-          ),
-        ]);
-        addViteSsrExternal(app, "reveal.js");
-      }
-    },
+        if (chartEnable) {
+          addViteOptimizeDepsInclude({ app, config }, "chart.js/auto");
+          addViteSsrExternal({ app, config }, "chart.js");
+        }
 
-    clientAppEnhanceFiles: path.resolve(__dirname, "../client/appEnhance.js"),
+        if (echartsEnable) {
+          addViteOptimizeDepsInclude({ app, config }, "echarts");
+          addViteSsrExternal({ app, config }, "echarts");
+        }
 
-    // ...(demoEnable
-    //   ? {
-    //       clientAppSetupFiles: path.resolve(__dirname, "../client/appSetup.js"),
-    //     }
-    //   : {}),
+        if (flowchartEnable) {
+          addViteOptimizeDepsInclude({ app, config }, [
+            "flowchart.js",
+            "ts-debounce",
+          ]);
+          addViteSsrExternal({ app, config }, "flowchart.js");
+        }
+
+        if (mermaidEnable) {
+          addViteOptimizeDepsInclude({ app, config }, "mermaid");
+          addViteSsrExternal({ app, config }, "mermaid");
+        }
+
+        if (presentationEnable) {
+          addViteOptimizeDepsExclude({ app, config }, [
+            "reveal.js/dist/reveal.esm.js",
+            "reveal.js/plugin/markdown/markdown.esm.js",
+            ...revealPlugins.map(
+              (plugin) => `reveal.js/plugin/${plugin}/${plugin}.esm.js`
+            ),
+          ]);
+          addViteSsrExternal({ app, config }, "reveal.js");
+        }
+      },
+
+      extendsMarkdown: (markdownIt): void => {
+        if (getStatus("gfm")) markdownIt.options.linkify = true;
+        if (getStatus("lazyLoad")) markdownIt.use(lazyLoad);
+        if (imageMarkEnable)
+          markdownIt.use(
+            imageMark,
+            typeof options.imageMark === "object" ? options.imageMark : {}
+          );
+
+        if (getStatus("codetabs")) markdownIt.use(codeTabs);
+        if (getStatus("tabs")) markdownIt.use(tabs);
+
+        if (getStatus("sup")) markdownIt.use(sup);
+        if (getStatus("sub")) markdownIt.use(sub);
+        if (footnoteEnable) markdownIt.use(footnote);
+        if (flowchartEnable) markdownIt.use(flowchart);
+        if (getStatus("mark")) markdownIt.use(mark);
+        if (tasklistEnable)
+          markdownIt.use(tasklist, [
+            typeof options.tasklist === "object" ? options.tasklist : {},
+          ]);
+        if (getStatus("include"))
+          markdownIt.use(include, [
+            typeof options.include === "function" ? options.include : undefined,
+          ]);
+        if (getStatus("align")) {
+          ["left", "center", "right", "justify"].forEach((name) =>
+            markdownIt.use((md) =>
+              container(md, {
+                name,
+                openRender: () => `<div class="align-${name}">`,
+              })
+            )
+          );
+        }
+        if (chartEnable) markdownIt.use(chart);
+        if (echartsEnable) markdownIt.use(echarts);
+        if (getStatus("demo")) {
+          markdownIt.use(normalDemo);
+          markdownIt.use(vueDemo);
+          markdownIt.use(reactDemo);
+        }
+        if (mermaidEnable) markdownIt.use(mermaid);
+        if (texEnable) markdownIt.use(katex, katexOptions);
+        if (presentationEnable) markdownIt.use(presentation);
+        if (getStatus("vpre")) markdownIt.use(vPre);
+      },
+
+      extendsPage: (page, app): void => {
+        // app already initailzed
+        if (shouldCheckLinks && app.pages) {
+          checkLinks(page, app);
+        }
+      },
+
+      onInitialized: async (app): Promise<void> => {
+        if (shouldCheckLinks)
+          app.pages.forEach((page) => checkLinks(page, app));
+
+        await prepareRevealPluginFile(app, revealPlugins);
+      },
+
+      clientConfigFile: (app) => prepareConfigFile(app, options),
+    };
   };
-};
-
-export const mdEnhance = (
-  options: MarkdownEnhanceOptions | false
-): PluginConfig<MarkdownEnhanceOptions> => ["md-enhance", options];

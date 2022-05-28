@@ -1,9 +1,10 @@
 import { lang2PathConfig, path2langConfig, supportedLangs } from "./config";
+import { Logger } from "../logger";
 import { deepAssign } from "../utils";
 
-import type { App, AppOptions, LocaleConfig } from "@vuepress/core";
+import type { App, LocaleConfig } from "@vuepress/core";
 import type { HopeLang } from "./types";
-import type { BaseThemeConfig, ConvertLocaleConfig } from "../../shared";
+import type { ConvertLocaleConfig } from "../../shared";
 
 const reportStatus: Record<string, boolean> = {};
 
@@ -28,21 +29,23 @@ ${
 };
 
 /** Get language from path */
-export const path2Lang = (path = ""): HopeLang => {
+export const path2Lang = (path = "", debug = false): HopeLang => {
   if (path in path2langConfig) return path2langConfig[path];
 
-  console.error(
-    `${path} isn’t assign with a lang, and will return 'en-US' instead.`
-  );
+  if (debug)
+    console.warn(
+      `${path} isn’t assign with a lang, and will return 'en-US' instead.`
+    );
 
   return "en-US";
 };
 
 /** Get path from language */
-export const lang2Path = (lang = ""): string => {
+export const lang2Path = (lang = "", debug = false): string => {
   if (lang in lang2PathConfig) return lang2PathConfig[lang as HopeLang];
 
-  console.error(`${lang} has no path config, and will return '/' instead.`);
+  if (debug)
+    console.warn(`${lang} has no path config, and will return '/' instead.`);
 
   return "/";
 };
@@ -70,17 +73,17 @@ export const getRootLang = (app: App): string => {
  * @returns infer language
  */
 export const getRootLangPath = (app: App): string =>
-  lang2Path(getRootLang(app));
+  lang2Path(getRootLang(app), app.env.isDebug);
 
 export const getLocalePaths = (app: App): string[] =>
-  Array.from(
-    new Set([
-      ...Object.keys(app.siteData.locales),
-      ...Object.keys(
-        (app.options as AppOptions<BaseThemeConfig>).themeConfig.locales || {}
-      ),
-    ])
-  );
+  Array.from(new Set([...Object.keys(app.siteData.locales)]));
+
+export interface GetLocalesOptions<T> {
+  app: App;
+  default: ConvertLocaleConfig<T>;
+  config?: LocaleConfig<T> | undefined;
+  name?: string;
+}
 
 /**
  * Get final locale config to passed to client
@@ -90,28 +93,39 @@ export const getLocalePaths = (app: App): string[] =>
  * @param userLocalesConfig user locale config
  * @returns final locale config
  */
-export const getLocales = <T>(
-  app: App,
-  defaultLocalesConfig: ConvertLocaleConfig<T>,
-  userLocalesConfig: LocaleConfig<T> = {}
-): ConvertLocaleConfig<T> => {
+export const getLocales = <T>({
+  app,
+  name,
+  default: defaultLocalesConfig,
+  config: userLocalesConfig = {},
+}: GetLocalesOptions<T>): ConvertLocaleConfig<T> => {
   const rootPath = getRootLangPath(app);
+  const logger = new Logger(name);
 
   return Object.fromEntries([
-    ...getLocalePaths(app).map<[string, T]>((localePath) => [
-      localePath,
-      deepAssign(
-        {},
-        userLocalesConfig[localePath] || {},
-        defaultLocalesConfig[localePath]
-      ),
-    ]),
+    ...getLocalePaths(app)
+      .filter((localePath) => localePath !== "/")
+      .map<[string, T]>((localePath) => {
+        if (!defaultLocalesConfig[localePath])
+          logger.warn(`Locale ${localePath} is missing it's i18n config`);
+
+        return [
+          localePath,
+          deepAssign(
+            {},
+            defaultLocalesConfig[localePath] ||
+              defaultLocalesConfig[rootPath] ||
+              {},
+            userLocalesConfig[localePath] || {}
+          ),
+        ];
+      }),
     [
       "/",
       deepAssign(
         {},
-        userLocalesConfig["/"] || userLocalesConfig[rootPath] || {},
-        defaultLocalesConfig[rootPath]
+        defaultLocalesConfig[rootPath],
+        userLocalesConfig["/"] || userLocalesConfig[rootPath] || {}
       ),
     ],
   ]);

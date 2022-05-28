@@ -11,9 +11,9 @@ icon: rank
 
 ## 配置
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts {8}
 // .vuepress/config.ts
@@ -29,9 +29,7 @@ export default {
 };
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js {8}
 // .vuepress/config.js
@@ -49,8 +47,6 @@ module.exports = {
 
 :::
 
-::::
-
 ## 格式
 
 ````md
@@ -64,6 +60,8 @@ module.exports = {
 
 :::
 ````
+
+我们也支持 `js` 和 `javascript` 的代码块，你应当将导出对象赋值给 `module.exports`。
 
 ## 案例
 

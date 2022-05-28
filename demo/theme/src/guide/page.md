@@ -28,7 +28,7 @@ Content before `more` comment is regarded as page excerpt.
 
 <!-- more -->
 
-## Page information
+## Page Information
 
 You can set page information in Markdown’s Frontmatter.
 
@@ -40,15 +40,15 @@ You can set page information in Markdown’s Frontmatter.
 
 - Tags are "Page Config" and "Guide"
 
-## Page content
+## Page Content
 
 You are free to write your Markdown here.
 
 ::: tip
 
-- Please use the relative link `./` for pictures in the Markdown folder.
+- Please use the relative link `./` for pictures in source directory.
 
-- For pictures in `.vuepress/public` folder, please use absolute link `/` for reference
+- For pictures in `.vuepress/public` directory, please use absolute link `/` for reference
 
 :::
 
@@ -56,7 +56,7 @@ The theme contains a custom badge:
 
 > A dark blue badge text badge at the end of line. <Badge text="Badge text" color="#242378" />
 
-## Page structure
+## Page Structure
 
 This page should contain:
 

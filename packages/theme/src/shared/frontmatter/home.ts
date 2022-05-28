@@ -19,8 +19,8 @@ export interface HopeThemeProjectHomePageFrontmatter
   heroImage?: string;
   heroImageDark?: string;
   heroAlt?: string;
-  heroText?: string | null;
-  tagline?: string | null;
+  heroText?: string | false;
+  tagline?: string | false;
 
   actions?: HopeThemeHomeActionOptions[];
   features?: HopeThemeHomeFeatureOptions[];

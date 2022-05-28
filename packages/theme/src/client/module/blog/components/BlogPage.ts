@@ -84,7 +84,7 @@ export default defineComponent({
         h(DropTransition, () =>
           componentName.value ? h(resolveComponent(componentName.value)) : null
         ),
-        h(DropTransition, { delay: 0.24 }, () =>
+        h(DropTransition, { appear: true, delay: 0.24 }, () =>
           frontmatter.value.blog?.key === "timeline"
             ? h(TimelineItems)
             : h(ArticleList, { key: route.path, items: items.value })

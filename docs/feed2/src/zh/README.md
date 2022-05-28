@@ -21,17 +21,21 @@ copyright: false
 
 ### 安装
 
-:::: code-group
+::: code-tabs#shell
 
-::: code-group-item yarn
+@tab pnpm
+
+```bash
+pnpm add -D vuepress-plugin-feed2@next
+```
+
+@tab yarn
 
 ```bash
 yarn add -D vuepress-plugin-feed2@next
 ```
 
-:::
-
-::: code-group-item npm
+@tab npm
 
 ```bash
 npm i -D vuepress-plugin-feed2@next
@@ -39,38 +43,34 @@ npm i -D vuepress-plugin-feed2@next
 
 :::
 
-::::
-
 ### 使用
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
-import { feed } from "vuepress-plugin-feed2";
+import { feedPlugin } from "vuepress-plugin-feed2";
 
 export default {
   plugins: [
-    feed({
+    feedPlugin({
       // 插件选项
     }),
   ],
 };
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // .vuepress/config.js
-const { feed } = require("vuepress-plugin-feed2");
+const { feedPlugin } = require("vuepress-plugin-feed2");
 
 module.exports = {
   plugins: [
-    feed({
+    feedPlugin({
       // 插件选项
     }),
   ],
@@ -78,8 +78,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ## 从 V1 迁移
 

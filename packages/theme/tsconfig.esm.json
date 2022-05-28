@@ -8,8 +8,7 @@
     "outDir": "./lib",
     "paths": {
       "@theme-hope/*": ["./src/client/*"]
-    },
-    "types": ["@vuepress/client/types"]
+    }
   },
   "include": ["./src/client", "./src/shared", "./src/*.d.ts"]
 }

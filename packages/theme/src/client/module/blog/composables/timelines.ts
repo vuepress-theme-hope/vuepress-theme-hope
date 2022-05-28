@@ -1,6 +1,6 @@
-import { getDate } from "@mr-hope/vuepress-shared/lib/client";
 import { computed, inject, provide } from "vue";
 import { useBlogType } from "vuepress-plugin-blog2/lib/client";
+import { getDate } from "vuepress-shared/lib/client";
 
 import type { ComputedRef, InjectionKey } from "vue";
 import type { Article } from "vuepress-plugin-blog2";

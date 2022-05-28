@@ -32,7 +32,7 @@
 
     transition: background-color 0.3s, color 0.3s;
 
-    @media (max-width: hope-config.$mobileS) {
+    @media (max-width: hope-config.$mobile) {
       font-size: 0.9rem;
     }
 

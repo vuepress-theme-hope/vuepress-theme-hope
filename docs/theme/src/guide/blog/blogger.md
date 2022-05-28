@@ -1,6 +1,7 @@
 ---
 title: Blogger Info
 icon: blog
+index: 2
 category:
   - Blog
 tag:
@@ -12,7 +13,8 @@ Themes allow you to display basic information about the blogger.
 
 <!-- more -->
 
-![Blogger info](./assets/blogger-info.png)
+![Blogger info](./assets/blogger-info-light.png#light)
+![Blogger info](./assets/blogger-info-dark.png#dark)
 
 ## Avatar and blogger name
 
@@ -20,7 +22,7 @@ You can config blogger avatar and name displayed through `blog.avatar` and `blog
 
 ::: note
 
-If you don’t set those options, they automatically fall back to the site logo (`themeConfig.logo`) and site name (`themeConfig.name`).
+If you don’t set those options, they automatically fall back to the site logo (`logo` in theme options) and site name.
 
 :::
 
@@ -77,19 +79,20 @@ You can also config your social media links with `blog.medias` option.
 
 :::
 
-::::: details Example
+:::: details Example
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
-```ts {2,4,6}
+```ts
 // .vuepress/config.ts
 import { path } from "@vuepress/utils";
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  thene: hopeTheme({
     blog: {
       media: {
         // GitHub Icon is available
@@ -110,21 +113,19 @@ export default defineHopeConfig({
         ],
       },
     },
-  },
+  }),
 });
 ```
 
-:::
+@tab JS
 
-::: code-group-item JS
-
-```js {2,4,6}
+```js
 // .vuepress/config.js
 const { path } = require("@vuepress/utils");
-const { defineHopeConfig } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     blog: {
       media: {
         // GitHub Icon is available
@@ -145,12 +146,10 @@ module.exports = defineHopeConfig({
         ],
       },
     },
-  },
-});
+  }),
+};
 ```
 
 :::
 
 ::::
-
-:::::

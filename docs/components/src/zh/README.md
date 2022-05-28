@@ -3,7 +3,7 @@ home: true
 title: 主页
 icon: home
 heroImage: /logo.svg
-heroText: "@mr-hope/vuepress-plugin-components"
+heroText: vuepress-plugin-components
 tagline: 组件库插件
 actions:
   - text: 快速上手 💡
@@ -19,56 +19,56 @@ copyright: false
 
 ## 安装
 
-:::: code-group
+::: code-tabs#shell
 
-::: code-group-item yarn
+@tab pnpm
 
 ```bash
-yarn add -D @mr-hope/vuepress-plugin-components@next
+pnpm add -D vuepress-plugin-components@next
+```
+
+@tab yarn
+
+```bash
+yarn add -D vuepress-plugin-components@next
+```
+
+@tab npm
+
+```bash
+npm i -D vuepress-plugin-components@next
 ```
 
 :::
-
-::: code-group-item npm
-
-```bash
-npm i -D @mr-hope/vuepress-plugin-components@next
-```
-
-:::
-
-::::
 
 ## 使用
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
-import { components } from "@mr-hope/vuepress-plugin-components";
+import { componentsPlugin } from "vuepress-plugin-components";
 
 export default {
   plugins: [
-    components({
+    componentsPlugin({
       // 插件选项
     }),
   ],
 };
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // .vuepress/config.js
-const { components } = require("@mr-hope/vuepress-plugin-components");
+const { componentsPlugin } = require("vuepress-plugin-components");
 
 module.exports = {
   plugins: [
-    components({
+    componentsPlugin({
       // 插件选项
     }),
   ],
@@ -76,5 +76,3 @@ module.exports = {
 ```
 
 :::
-
-::::

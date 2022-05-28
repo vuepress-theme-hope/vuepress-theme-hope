@@ -14,6 +14,8 @@ coverage/
 # Dist files
 packages/*/lib/
 
-
 # Rollup cache
 .rollup.cache/
+
+# pnpm lock file
+pnpm-lock.yaml

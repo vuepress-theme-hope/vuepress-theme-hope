@@ -1,3 +1,4 @@
+import { describe, it, expect } from "vitest";
 import { injectLinkstoHead } from "../../src/node/injectHead";
 
 import type { HeadConfig } from "@vuepress/core";

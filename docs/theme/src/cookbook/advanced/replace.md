@@ -16,16 +16,21 @@ The theme imports components through `alias`, so you can use it to replace any c
 
 You need to replace the component alias used in the theme with `alias` option in your own VuePress config file.
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
 import { path } from "@vuepress/utils";
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
+export default defineUserConfig({
+  theme: hopeTheme({
+    // your theme config here
+  }),
+
   alias: {
     // Here you can redirect aliases to your own components
     // For example, here we change the theme’s home page component to HomePage.vue under user .vuepress/components
@@ -37,16 +42,18 @@ export default defineHopeConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // .vuepress/config.js
 const { path } = require("@vuepress/utils");
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
+module.exports = {
+  theme: hopeTheme({
+    // your theme config here
+  }),
+
   alias: {
     // Here you can redirect aliases to your own components
     // For example, here we change the theme’s home page component to HomePage.vue under user .vuepress/components
@@ -55,12 +62,10 @@ module.exports = defineHopeConfig({
       "./components/HomePage.vue"
     ),
   },
-});
+};
 ```
 
 :::
-
-::::
 
 Here are list of aliases.
 
@@ -69,14 +74,15 @@ Here are list of aliases.
 Components:
 
 - `@theme-hope/components/AutoLink`: basic link
+- `@theme-hope/components/BreadCrumb`: breacrumb
 - `@theme-hope/components/CommonWrapper`: basic layout integration
 - `@theme-hope/components/HomeFeatures`: homepage features
 - `@theme-hope/components/HomeHero`: homepage logo and introduction
 - `@theme-hope/components/HomePage`: home page
+- `@theme-hope/components/Icon`: icon
 - `@theme-hope/components/MarkdownContent`: Markdown content
 - `@theme-hope/components/NormalPage`: normal page
 - `@theme-hope/components/PageFooter`: page footer
-- `@theme-hope/components/PageMeta`: page meta information
 - `@theme-hope/components/PageNav`: page navigation
 - `@theme-hope/components/PageTitle`: page title
 - `@theme-hope/components/SkipLink`: skip to main content
@@ -130,6 +136,30 @@ Miscellaneous:
 
 :::
 
+::: details Info module component alias
+
+Components:
+
+- `@theme-hope/module/info/components/AuthorInfo`: author information
+- `@theme-hope/module/info/components/CategoryInfo`: category information
+- `@theme-hope/module/info/components/DateInfo`: date information
+- `@theme-hope/module/info/components/OriginalMark`: original mark
+- `@theme-hope/module/info/components/PageInfo`: page information
+- `@theme-hope/module/info/components/PageMeta`: page meta information
+- `@theme-hope/module/info/components/PageViewInfo`: page views information
+- `@theme-hope/module/info/components/ReadingTimeInfo`: reading time information
+- `@theme-hope/module/info/components/TagInfo`: tag information
+- `@theme-hope/module/info/components/TOC`: table of contents
+- `@theme-hope/module/info/components/WordInfo`: word information
+
+Miscellaneous:
+
+- `@theme-hope/module/blog/components/icons`: info icons
+- `@theme-hope/module/blog/composables`: info Composables API
+- `@theme-hope/module/blog/utils`: info utility functions
+
+:::
+
 ::: details Blog module component alias
 
 Components:
@@ -144,6 +174,7 @@ Components:
 - `@theme-hope/module/blog/components/CategoryList`: Category list
 - `@theme-hope/module/blog/components/InfoList`: blog info list
 - `@theme-hope/module/blog/components/InfoPanel`: blog info panel
+- `@theme-hope/module/blog/components/Pagination`: pagination
 - `@theme-hope/module/blog/components/ProjectPanel`: blog homepage project panel
 - `@theme-hope/module/blog/components/SocialMedia`: social media links
 - `@theme-hope/module/blog/components/TagList`: tag list
@@ -161,6 +192,8 @@ Miscellaneous:
 
 Components:
 
+- `@theme-hope/module/encrypt/components/GlobalEncrypt`: gloabl encrypt wrapper
+- `@theme-hope/module/encrypt/components/LocalEncrypt`: local encrypt wrapper
 - `@theme-hope/module/encrypt/components/PasswordModal`: password input box
 
 Miscellaneous:
@@ -178,7 +211,7 @@ Miscellaneous:
 - `@theme-hope/module/outlook/components/OutlookSettings`: appearance settings
 - `@theme-hope/module/outlook/components/ThemeColor`: theme color
 - `@theme-hope/module/outlook/components/ThemeColorPicker`: theme color picker
-- `@theme-hope/module/outlook/components/ToggleFullScreen`: fullscreen toggle button
+- `@theme-hope/module/outlook/components/ToggleFullScreenButton`: fullscreen toggle button
 
 Miscellaneous:
 
@@ -193,16 +226,21 @@ Some components provide slots, in this case, you can directly import the origina
 
 For example, if your site has strong social attributes, and you want to display a comment box on the homepage, you can display it like this:
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item config.ts
+@tab config.ts
 
 ```ts
 // .vuepress/config.ts
 import { path } from "@vuepress/utils";
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
+export default defineUserConfig({
+  theme: hopeTheme({
+    // your theme config here
+  }),
+
   alias: {
     // Here you can direct aliases to your own components
     // For example, here we change the theme’s home page component to HomePage.vue under user .vuepress/components
@@ -214,9 +252,7 @@ export default defineHopeConfig({
 });
 ```
 
-:::
-
-::: code-group-item HomePage.vue
+@tab HomePage.vue
 
 ```vue
 <template>
@@ -234,8 +270,6 @@ import HopeHomePage from "vuepress-theme-hope/lib/client/components/HomePage";
 
 :::
 
-::::
-
 Components that provide slots are as follows:
 
 **theme**:
@@ -244,7 +278,7 @@ Components that provide slots are as follows:
 - `CommonWrapper`: `default`, `navbarLeft`, `navbarCenter`, `navbarRight`, `navScreenTop`, `navScreenBottom`, `sidebar`, `sidebarTop`, `sidebarBottom`
 - `HomeHero`: `heroImage`, `heroInfo`
 - `HomePage`: `top`, `center`, `bottom`
-- `NormalPage`: `top`, `contentBefore`, `contentAfter`, `botom`
+- `NormalPage`: `top`, `contentBefore`, `contentAfter`, `bottom`
 
 **Navigation Bar**:
 

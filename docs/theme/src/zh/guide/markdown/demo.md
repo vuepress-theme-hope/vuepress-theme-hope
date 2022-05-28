@@ -1,6 +1,7 @@
 ---
 title: 代码演示
 icon: discover
+index: 15
 category:
   - Markdown
 tag:
@@ -14,54 +15,51 @@ tag:
 
 ## 配置
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
-```ts {7-9}
+```ts {8-10}
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     plugins: {
       mdEnhance: {
         demo: true,
       },
     },
-  },
+  }),
 });
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js {7-9}
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     plugins: {
       mdEnhance: {
         demo: true,
       },
     },
-  },
-});
+  }),
+};
 ```
 
 :::
-
-::::
 
 ## 语法
 
 请使用以下语法：
 
 ````md
-::: demo [类型] 可选的标题文字
+::: [类型]-demo 可选的标题文字
 
 ```html
 <!-- ↑ 使用可用的语言 -->
@@ -81,7 +79,7 @@ module.exports = defineHopeConfig({
 
 ::: tip
 
-JSON 块是可选的，可用的配置详见 [配置](../config.md#demo)。
+JSON 块是可选的，可用的配置详见 [配置](../../config/plugins/md-enhance.md#demo)。
 
 :::
 
@@ -96,7 +94,7 @@ JSON 块是可选的，可用的配置详见 [配置](../config.md#demo)。
 写法:
 
 ````md
-::: demo 可选的标题文字
+::: normal-demo 可选的标题文字
 
 ```html
 <!-- html code -->
@@ -130,7 +128,7 @@ JSON 块是可选的，可用的配置详见 [配置](../config.md#demo)。
 语法:
 
 ````md
-::: demo [vue] 可选的标题文字
+::: vue-demo 可选的标题文字
 
 ```vue
 <!-- ↑ 你也可以使用 html -->
@@ -159,7 +157,7 @@ export default {
 语法:
 
 ````md
-::: demo [react] 可选的标题文字
+::: react-demo 可选的标题文字
 
 ```js
 export default class App extends React.Component {
@@ -215,7 +213,7 @@ export default class App extends React.Component {
 
 ## 演示
 
-::: demo Demo 演示
+::: normal-demo Demo 演示
 
 ```html
 <h1>VuePress Theme Hope</h1>
@@ -239,7 +237,7 @@ span {
 :::: details 代码
 
 ````md
-::: demo Demo 演示
+::: normal-demo Demo 演示
 
 ```html
 <h1>VuePress Theme Hope</h1>
@@ -263,7 +261,7 @@ span {
 
 ::::
 
-::: demo [react] 一个函数式 React Demo
+::: react-demo 一个函数式 React Demo
 
 ```js
 const { useState } = React;
@@ -297,7 +295,7 @@ export default () => {
 :::: details 代码
 
 ````md
-::: demo [react] 一个函数式 React Demo
+::: react-demo 一个函数式 React Demo
 
 ```js
 const { useState } = React;
@@ -331,7 +329,7 @@ export default () => {
 
 ::::
 
-::: demo [react] 一个类式 React Demo
+::: react-demo 一个类式 React Demo
 
 ```js
 export default class App extends React.Component {
@@ -368,7 +366,7 @@ export default class App extends React.Component {
 :::: details 代码
 
 ````md
-::: demo [react] 一个类式 React Demo
+::: react-demo 一个类式 React Demo
 
 ```js
 export default class App extends React.Component {
@@ -405,7 +403,7 @@ export default class App extends React.Component {
 
 ::::
 
-::: demo [vue] 一个 Vue Composition 演示
+::: vue-demo 一个 Vue Composition 演示
 
 ```vue
 <template>
@@ -445,7 +443,7 @@ export default {
 :::: details Code
 
 ````md
-::: demo [vue] 一个 Vue Composition 演示
+::: vue-demo 一个 Vue Composition 演示
 
 ```vue
 <template>
@@ -485,7 +483,7 @@ export default {
 
 ::::
 
-::: demo [vue] 一个 Vue Option 演示
+::: vue-demo 一个 Vue Option 演示
 
 ```vue
 <template>
@@ -517,7 +515,7 @@ export default {
 :::: details Code
 
 ````md
-::: demo [vue] 一个 Vue Option 演示
+::: vue-demo 一个 Vue Option 演示
 
 ```vue
 <template>
@@ -549,7 +547,7 @@ export default {
 
 ::::
 
-::: demo 一个使用浏览器不支持解析语言 Demo
+::: normal-demo 一个使用浏览器不支持解析语言 Demo
 
 ```md
 # 标题
@@ -578,7 +576,7 @@ h1 {
 :::: details 代码
 
 ````md
-::: demo 一个使用浏览器不支持解析语言 Demo
+::: normal-demo 一个使用浏览器不支持解析语言 Demo
 
 ```md
 # 标题

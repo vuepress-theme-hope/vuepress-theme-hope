@@ -6,7 +6,7 @@ icon: react
 ## Syntax
 
 ````md
-::: demo [react] Optional title text
+::: react-demo Optional title text
 
 ```js
 // your script, exporting your react component through `export default`
@@ -25,7 +25,7 @@ icon: react
 
 ::: warning Attention
 
-- Babel must be loaded when using react to parse JSX, this is done by the plugin automaticaly
+- Babel must be loaded when using react to parse JSX, this is done by the plugin automatically
 - You must export your component through `export default`
 - We use "ShadowDOM" to make style isolation, and we already replace `document` with `shadowRoot`. To access the page document, please visit `window.document`.
 
@@ -33,7 +33,7 @@ icon: react
 
 ## Demo
 
-::: demo [react] A function-based React Demo
+::: react-demo A function-based React Demo
 
 ```js
 const { useState } = React;
@@ -67,7 +67,7 @@ export default () => {
 :::: details Code
 
 ````md
-::: demo [react] A function-based React Demo
+::: react-demo A function-based React Demo
 
 ```js
 const { useState } = React;
@@ -101,7 +101,7 @@ export default () => {
 
 ::::
 
-::: demo [react] A class-based React Demo
+::: react-demo A class-based React Demo
 
 ```js
 export default class App extends React.Component {
@@ -138,7 +138,7 @@ export default class App extends React.Component {
 :::: details Code
 
 ````md
-::: demo [react] A class-based React Demo
+::: react-demo A class-based React Demo
 
 ```js
 export default class App extends React.Component {

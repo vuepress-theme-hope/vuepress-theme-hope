@@ -1,3 +1,4 @@
+import { describe, it, expect } from "vitest";
 import MarkdownIt = require("markdown-it");
 import { mermaid } from "../../src/node/markdown-it/mermaid";
 
@@ -27,8 +28,13 @@ ${demo}
 `);
 
     expect(renderResult).toMatch(
-      /<MermaidChart id="mermaid.*?" data-code=".*?"><\/MermaidChart>/
+      /<Mermaid id="mermaid.*?" code=".*?"><\/Mermaid>/
     );
+    expect(
+      /<Mermaid id="mermaid.*?" code="(.*?)"><\/Mermaid>/.exec(
+        renderResult
+      )?.[1]
+    ).toMatch(encodeURIComponent(demo));
     expect(renderResult).toMatchSnapshot();
   });
 
@@ -63,7 +69,7 @@ Alice->John: Yes... John, how are you?
 `);
 
     expect(renderResult).toMatch(
-      /<MermaidChart id="mermaid.*?" data-code="sequenceDiagram.*?"><\/MermaidChart>/
+      /<Mermaid id="mermaid.*?" code="sequenceDiagram.*?"><\/Mermaid>/
     );
     expect(renderResult).toMatchSnapshot();
   });
@@ -85,7 +91,7 @@ Square : +getMessages() List~string~
 `);
 
     expect(renderResult).toMatch(
-      /<MermaidChart id="mermaid.*?" data-code="classDiagram.*?"><\/MermaidChart>/
+      /<Mermaid id="mermaid.*?" code="classDiagram.*?"><\/Mermaid>/
     );
     expect(renderResult).toMatchSnapshot();
   });
@@ -112,7 +118,7 @@ state Active {
 `);
 
     expect(renderResult).toMatch(
-      /<MermaidChart id="mermaid.*?" data-code="stateDiagram-v2.*?"><\/MermaidChart>/
+      /<Mermaid id="mermaid.*?" code="stateDiagram-v2.*?"><\/Mermaid>/
     );
     expect(renderResult).toMatchSnapshot();
   });
@@ -136,7 +142,7 @@ PERSON {
 `);
 
     expect(renderResult).toMatch(
-      /<MermaidChart id="mermaid.*?" data-code="erDiagram.*?"><\/MermaidChart>/
+      /<Mermaid id="mermaid.*?" code="erDiagram.*?"><\/Mermaid>/
     );
     expect(renderResult).toMatchSnapshot();
   });
@@ -156,7 +162,7 @@ section Go home
 `);
 
     expect(renderResult).toMatch(
-      /<MermaidChart id="mermaid.*?" data-code="journey.*?"><\/MermaidChart>/
+      /<Mermaid id="mermaid.*?" code="journey.*?"><\/Mermaid>/
     );
     expect(renderResult).toMatchSnapshot();
   });
@@ -196,7 +202,7 @@ Add another diagram to demo page    :48h
 `);
 
     expect(renderResult).toMatch(
-      /<MermaidChart id="mermaid.*?" data-code="gantt.*?"><\/MermaidChart>/
+      /<Mermaid id="mermaid.*?" code="gantt.*?"><\/Mermaid>/
     );
     expect(renderResult).toMatchSnapshot();
   });
@@ -212,7 +218,7 @@ title What Voldemort doesn't have?
 `);
 
     expect(renderResult).toMatch(
-      /<MermaidChart id="mermaid.*?" data-code="pie.*?"><\/MermaidChart>/
+      /<Mermaid id="mermaid.*?" code="pie.*?"><\/Mermaid>/
     );
     expect(renderResult).toMatchSnapshot();
   });
@@ -230,7 +236,7 @@ commit
 `);
 
     expect(renderResult).toMatch(
-      /<MermaidChart id="mermaid.*?" data-code="git-graph.*?"><\/MermaidChart>/
+      /<Mermaid id="mermaid.*?" code="gitGraph.*?"><\/Mermaid>/
     );
     expect(renderResult).toMatchSnapshot();
   });

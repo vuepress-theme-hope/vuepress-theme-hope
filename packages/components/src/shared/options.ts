@@ -1,18 +1,7 @@
 import type { LocaleConfig } from "@vuepress/core";
-import type {
-  ArticleInfoLocaleData,
-  BackToTopLocaleData,
-  PaginationLocaleData,
-  TOCLocaleData,
-} from "./locales";
+import type { BackToTopLocaleData } from "./locales";
 
-export type AvailableComponent =
-  | "ArticleInfo"
-  | "BreadCrumb"
-  | "Badge"
-  | "FullScreen"
-  | "Pagination"
-  | "TOC";
+export type AvailableComponent = "Badge" | "CodePen" | "FontIcon" | "PDF";
 
 export interface ComponentOptions {
   /**
@@ -25,29 +14,27 @@ export interface ComponentOptions {
   components: AvailableComponent[];
 
   /**
-   * Whether enabling backToTop button
+   * Add This 的公开 ID
    *
-   * 是否启用返回顶部按钮
+   * Public ID for add this
    *
    * @default false
    */
-  backToTop?: boolean;
+  addThis?: string | false;
 
   /**
-   * backToTop button threshold distance (in pixels)
+   * Whether enabling backToTop button
    *
-   * 返回顶部按钮触发距离 (单位：像素)
    *
-   * @default 300
+   * @description When setting a number, it will be used as backToTop button threshold distance (in pixels)
+   *
+   * 是否启用返回顶部按钮
+   *
+   * @description 当设置为数字时，将会作为返回顶部按钮距离阈值（单位: 像素）
+   *
+   * @default false
    */
-  backToTopThreshold?: number;
-
-  /**
-   * Locales config for articleInfo
-   *
-   * 文章信息的国际化配置
-   */
-  articleInfoLocales?: LocaleConfig<ArticleInfoLocaleData>;
+  backToTop?: number | boolean;
 
   /**
    * backToTop button Locales config
@@ -57,16 +44,20 @@ export interface ComponentOptions {
   backToTopLocales?: LocaleConfig<BackToTopLocaleData>;
 
   /**
-   * Locales config for TOC
+   * Link of font icon asset
    *
-   * 标题列表的国际化配置
+   * 字体图标资源链接
+   *
+   * @description `'iconfont'` and `'font-awesome'` keywords are supported
    */
-  tocLocales?: LocaleConfig<TOCLocaleData>;
+  iconAssets?: string;
 
   /**
-   * Locales config for pagination
+   * Class prefix of font icon
    *
-   * 分页的国际化配置
+   * 字体图标的 Class 前缀
+   *
+   * @default ''
    */
-  paginationLocales?: LocaleConfig<PaginationLocaleData>;
+  iconPrefix?: string;
 }

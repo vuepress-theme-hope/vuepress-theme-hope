@@ -17,7 +17,7 @@ export const getLayoutConfig = (
     plugins.mdEnhance &&
     (plugins.mdEnhance.enableAll || plugins.mdEnhance.presentation)
   )
-    layoutConfig.Slide = "vuepress-plugin-md-enhance/lib/client/SlidePage.js";
+    layoutConfig.Slide = path.resolve(__dirname, "../client/layouts/Slide.js");
 
   if (plugins.blog)
     layoutConfig.Blog = path.resolve(

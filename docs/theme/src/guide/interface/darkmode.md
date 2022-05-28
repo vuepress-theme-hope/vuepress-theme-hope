@@ -1,6 +1,7 @@
 ---
 title: Darkmode
 icon: contrast
+index: 1
 category:
   - Interface
 tag:
@@ -24,16 +25,20 @@ Toggle the button below to see effects.
 
 ## Options
 
-You can config darkmode through `themeConfig.darkmode`.
+You can config darkmode through `darkmode` in theme options.
 
 Available options:
 
-- `"auto-switch"`: "off | automatic | on" switch (default)
-- `"switch"`: "Close | Open" toggle switch
+- `"switch"`: switch between dark, light and auto (default)
+- `"toggle"`: toggle between lightmode and darkmode
 - `"auto"`: Automatically decide whether to apply dark mode based on user device’s color-scheme or current time
-- `"force-dark"`: only dark mode
+- `"enable"`: only dark mode
 - `"disable"`: disable dark mode
 
 <script setup lang="ts">
 import AppearanceSwitch from '@theme-hope/module/outlook/components/AppearanceSwitch'
 </script>
+
+## Global Vairables
+
+`$isDarkmode` is avaiable in all markdown files.

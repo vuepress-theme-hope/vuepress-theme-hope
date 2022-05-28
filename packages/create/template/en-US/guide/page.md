@@ -46,9 +46,9 @@ You are free to write your Markdown here.
 
 ::: tip
 
-- Please use the relative link `./` for pictures in the Markdown folder.
+- Please use the relative link `./` for pictures in source directory.
 
-- For pictures in `.vuepress/public` folder, please use absolute link `/` for reference
+- For pictures in `.vuepress/public` directory, please use absolute link `/` for reference
 
 :::
 

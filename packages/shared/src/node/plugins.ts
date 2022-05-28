@@ -8,11 +8,17 @@ import type { GitPluginOptions } from "@vuepress/plugin-git";
  *
  * @description Should be invoke on node site
  */
-export const useGitPlugin = (app: App, options: GitPluginOptions): void => {
+export const useGitPlugin = (
+  app: App,
+  options: GitPluginOptions | false
+): void => {
   const plugins = app.pluginApi.plugins;
 
-  if (plugins.every((plugin) => plugin.name !== "@vuepress/plugin-git"))
-    app.use(gitPlugin, options);
+  if (
+    plugins.every((plugin) => plugin.name !== "@vuepress/plugin-git") &&
+    options
+  )
+    app.use(gitPlugin(options));
 };
 
 /**

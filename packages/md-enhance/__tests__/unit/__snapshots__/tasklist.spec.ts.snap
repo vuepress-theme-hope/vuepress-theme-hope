@@ -1,6 +1,30 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`Task list Should not render 1`] = `
+exports[`Task list > Should increse id 1`] = `
+"<ul class=\\"task-list-container\\">
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-0\\" disabled=\\"disabled\\"> unchecked item 1</li>
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-1\\" disabled=\\"disabled\\"> unchecked item 2</li>
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-2\\" disabled=\\"disabled\\"> unchecked item 3</li>
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-3\\" checked=\\"checked\\" disabled=\\"disabled\\"> checked item 4</li>
+</ul>
+<p>Some content</p>
+<ul class=\\"task-list-container\\">
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-4\\" disabled=\\"disabled\\"> unchecked item 1</li>
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-5\\" disabled=\\"disabled\\"> unchecked item 2</li>
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-6\\" disabled=\\"disabled\\"> unchecked item 3</li>
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-7\\" checked=\\"checked\\" disabled=\\"disabled\\"> checked item 4
+<ul class=\\"task-list-container\\">
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-8\\" disabled=\\"disabled\\"> unchecked item 1</li>
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-9\\" disabled=\\"disabled\\"> unchecked item 2</li>
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-10\\" disabled=\\"disabled\\"> unchecked item 3</li>
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-11\\" checked=\\"checked\\" disabled=\\"disabled\\"> checked item 4</li>
+</ul>
+</li>
+</ul>
+"
+`;
+
+exports[`Task list > Should not render 1`] = `
 "<ul>
 <li>[ ]</li>
 <li>[  ] not a todo item 2</li>
@@ -11,52 +35,42 @@ exports[`Task list Should not render 1`] = `
 "
 `;
 
-exports[`Task list Should not render label 1`] = `
+exports[`Task list > Should not render label 1`] = `
 "<ul class=\\"task-list-container\\">
-<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\"  disabled=\\"disabled\\"> unchecked item 1</li>
-<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\"  disabled=\\"disabled\\"> unchecked item 2</li>
-<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\"  disabled=\\"disabled\\"> unchecked item 3</li>
-<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" checked=\\"checked\\" disabled=\\"disabled\\"> checked item 4</li>
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-0\\" disabled=\\"disabled\\"> unchecked item 1</li>
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-1\\" disabled=\\"disabled\\"> unchecked item 2</li>
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-2\\" disabled=\\"disabled\\"> unchecked item 3</li>
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-3\\" checked=\\"checked\\" disabled=\\"disabled\\"> checked item 4</li>
 </ul>
 "
 `;
 
-exports[`Task list Should not render label after 1`] = `
+exports[`Task list > Should render 1`] = `
 "<ul class=\\"task-list-container\\">
-<li class=\\"task-list-item\\"><label><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\"  disabled=\\"disabled\\"> unchecked item 1</label></li>
-<li class=\\"task-list-item\\"><label><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\"  disabled=\\"disabled\\"> unchecked item 2</label></li>
-<li class=\\"task-list-item\\"><label><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\"  disabled=\\"disabled\\"> unchecked item 3</label></li>
-<li class=\\"task-list-item\\"><label><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" checked=\\"checked\\" disabled=\\"disabled\\"> checked item 4</label></li>
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-0\\" disabled=\\"disabled\\"><label class=\\"task-list-item-label\\" for=\\"task-item-0\\"> unchecked item 1</label></li>
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-1\\" disabled=\\"disabled\\"><label class=\\"task-list-item-label\\" for=\\"task-item-1\\"> unchecked item 2</label></li>
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-2\\" disabled=\\"disabled\\"><label class=\\"task-list-item-label\\" for=\\"task-item-2\\"> unchecked item 3</label></li>
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-3\\" checked=\\"checked\\" disabled=\\"disabled\\"><label class=\\"task-list-item-label\\" for=\\"task-item-3\\"> checked item 4</label></li>
 </ul>
 "
 `;
 
-exports[`Task list Should render 1`] = `
+exports[`Task list > Should render 2`] = `
 "<ul class=\\"task-list-container\\">
-<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\"  disabled=\\"disabled\\" id=\\"task-item-0\\"><label class=\\"task-list-item-label\\" for=\\"task-item-0\\"> unchecked item 1</label></li>
-<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\"  disabled=\\"disabled\\" id=\\"task-item-1\\"><label class=\\"task-list-item-label\\" for=\\"task-item-1\\"> unchecked item 2</label></li>
-<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\"  disabled=\\"disabled\\" id=\\"task-item-2\\"><label class=\\"task-list-item-label\\" for=\\"task-item-2\\"> unchecked item 3</label></li>
-<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" checked=\\"checked\\" disabled=\\"disabled\\" id=\\"task-item-3\\"><label class=\\"task-list-item-label\\" for=\\"task-item-3\\"> checked item 4</label></li>
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-0\\" disabled=\\"disabled\\"><label class=\\"task-list-item-label\\" for=\\"task-item-0\\"> unchecked todo item 1</label></li>
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-1\\" checked=\\"checked\\" disabled=\\"disabled\\"><label class=\\"task-list-item-label\\" for=\\"task-item-1\\"> todo item 2</label></li>
 </ul>
 "
 `;
 
-exports[`Task list Should render 2`] = `
-"<ul class=\\"task-list-container\\">
-<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\"  disabled=\\"disabled\\" id=\\"task-item-0\\"><label class=\\"task-list-item-label\\" for=\\"task-item-0\\"> unchecked todo item 1</label></li>
-<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" checked=\\"checked\\" disabled=\\"disabled\\" id=\\"task-item-1\\"><label class=\\"task-list-item-label\\" for=\\"task-item-1\\"> todo item 2</label></li>
-</ul>
-"
-`;
-
-exports[`Task list Should render nested list 1`] = `
+exports[`Task list > Should render nested list 1`] = `
 "<ol>
 <li>foo
 <ul class=\\"task-list-container\\">
-<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\"  disabled=\\"disabled\\" id=\\"task-item-0\\"><label class=\\"task-list-item-label\\" for=\\"task-item-0\\"> nested unchecked item 1</label></li>
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-0\\" disabled=\\"disabled\\"><label class=\\"task-list-item-label\\" for=\\"task-item-0\\"> nested unchecked item 1</label></li>
 <li>not a todo item 2</li>
 <li>not a todo item 3</li>
-<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" checked=\\"checked\\" disabled=\\"disabled\\" id=\\"task-item-1\\"><label class=\\"task-list-item-label\\" for=\\"task-item-1\\"> nested checked item 4</label></li>
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-1\\" checked=\\"checked\\" disabled=\\"disabled\\"><label class=\\"task-list-item-label\\" for=\\"task-item-1\\"> nested checked item 4</label></li>
 </ul>
 </li>
 <li>bar</li>
@@ -65,26 +79,36 @@ exports[`Task list Should render nested list 1`] = `
 "
 `;
 
-exports[`Task list Should render nested list 2`] = `
+exports[`Task list > Should render nested list 2`] = `
 "<ul>
 <li>foo
 <ul class=\\"task-list-container\\">
-<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\"  disabled=\\"disabled\\" id=\\"task-item-0\\"><label class=\\"task-list-item-label\\" for=\\"task-item-0\\"> nested unchecked item 1</label></li>
-<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\"  disabled=\\"disabled\\" id=\\"task-item-1\\"><label class=\\"task-list-item-label\\" for=\\"task-item-1\\"> nested unchecked item 2</label></li>
-<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" checked=\\"checked\\" disabled=\\"disabled\\" id=\\"task-item-2\\"><label class=\\"task-list-item-label\\" for=\\"task-item-2\\"> nested checked item 3</label></li>
-<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" checked=\\"checked\\" disabled=\\"disabled\\" id=\\"task-item-3\\"><label class=\\"task-list-item-label\\" for=\\"task-item-3\\"> nested checked item 4</label></li>
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-0\\" disabled=\\"disabled\\"><label class=\\"task-list-item-label\\" for=\\"task-item-0\\"> nested unchecked item 1</label></li>
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-1\\" disabled=\\"disabled\\"><label class=\\"task-list-item-label\\" for=\\"task-item-1\\"> nested unchecked item 2</label></li>
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-2\\" checked=\\"checked\\" disabled=\\"disabled\\"><label class=\\"task-list-item-label\\" for=\\"task-item-2\\"> nested checked item 3</label></li>
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-3\\" checked=\\"checked\\" disabled=\\"disabled\\"><label class=\\"task-list-item-label\\" for=\\"task-item-3\\"> nested checked item 4</label></li>
 </ul>
 </li>
 </ul>
 "
 `;
 
-exports[`Task list Should render ordered list 1`] = `
+exports[`Task list > Should render ordered list 1`] = `
 "<ol class=\\"task-list-container\\">
-<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" checked=\\"checked\\" disabled=\\"disabled\\" id=\\"task-item-0\\"><label class=\\"task-list-item-label\\" for=\\"task-item-0\\"> checked ordered 1</label></li>
-<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\"  disabled=\\"disabled\\" id=\\"task-item-1\\"><label class=\\"task-list-item-label\\" for=\\"task-item-1\\"> unchecked ordered 2</label></li>
-<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" checked=\\"checked\\" disabled=\\"disabled\\" id=\\"task-item-2\\"><label class=\\"task-list-item-label\\" for=\\"task-item-2\\"> checked ordered 3</label></li>
-<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\"  disabled=\\"disabled\\" id=\\"task-item-3\\"><label class=\\"task-list-item-label\\" for=\\"task-item-3\\"> unchecked ordered 4</label></li>
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-0\\" checked=\\"checked\\" disabled=\\"disabled\\"><label class=\\"task-list-item-label\\" for=\\"task-item-0\\"> checked ordered 1</label></li>
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-1\\" disabled=\\"disabled\\"><label class=\\"task-list-item-label\\" for=\\"task-item-1\\"> unchecked ordered 2</label></li>
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-2\\" checked=\\"checked\\" disabled=\\"disabled\\"><label class=\\"task-list-item-label\\" for=\\"task-item-2\\"> checked ordered 3</label></li>
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-3\\" disabled=\\"disabled\\"><label class=\\"task-list-item-label\\" for=\\"task-item-3\\"> unchecked ordered 4</label></li>
 </ol>
+"
+`;
+
+exports[`Task list > Should render with items containing other markdown syntax 1`] = `
+"<ul class=\\"task-list-container\\">
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-0\\" disabled=\\"disabled\\"> unchecked <a href=\\"https://example.com\\">link</a></li>
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-1\\" disabled=\\"disabled\\"> unchecked <strong>item 2</strong></li>
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-2\\" disabled=\\"disabled\\"> <em>unchecked</em> item 3</li>
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-3\\" checked=\\"checked\\" disabled=\\"disabled\\"> <s>checked item 4</s></li>
+</ul>
 "
 `;

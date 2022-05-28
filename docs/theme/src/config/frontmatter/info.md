@@ -1,6 +1,7 @@
 ---
 title: Info Frontmatter Config
 icon: config
+index: 1
 category:
   - Config
 tag:
@@ -8,18 +9,25 @@ tag:
   - Info
 ---
 
-You can set infomation for page with the following frontmatter options.
+You can set information for page with the following frontmatter options.
 
 ## title
 
-- Type: `string | boolean`
+- Type: `string`
 - Required: No
 
 Current page’s title. Markdown’s first h1 by default.
 
+## shortTitle
+
+- Type: `string`
+- Required: No
+
+Current page’s short title. Will be used as in navbar, sidebar and breadcrumb.
+
 ## description
 
-- Type: `string | boolean`
+- Type: `string`
 - Required: No
 
 Current page’s description.
@@ -46,7 +54,7 @@ Show the author of the current page. If you don’t fill it, you will fall back 
 
 ::: tip
 
-When setting default author in themeConfig, you can set `false` to prevent showing the default author.
+When setting default author in theme options, you can set `false` to prevent showing the default author.
 
 :::
 

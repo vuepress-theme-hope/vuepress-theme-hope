@@ -1,6 +1,7 @@
 ---
 title: Feed 插件配置
 icon: rss
+index: 5
 category:
   - 配置
 tag:
@@ -13,7 +14,7 @@ tag:
 
 `vuepress-theme-hope` 通过 `vuepress-plugin-feed2` 插件提供 Feed 生成支持。
 
-`vuepress-theme-hope` 将 `themeConfig.plugins.feed` 作为插件选项传递给 `vuepress-plugin-feed2` 插件。
+`vuepress-theme-hope` 将主题选项中的 `plugins.feed` 作为插件选项传递给 `vuepress-plugin-feed2` 插件。
 
 `vuepress-plugin-feed2` 插件可为你生成以下三种格式的 feed 文件:
 
@@ -80,6 +81,13 @@ Atom 和 JSON 是为了提供更多 Feed 软件的适配而提供的。
 设置 feed 的最大项目数量。在所有页面排序好后，插件会截取前 count 个项目。
 
 如果你的站点文章很多，你应该考虑设置这个选项以减少 feed 文件大小。
+
+### customElements
+
+- 类型: `string[]`
+- 默认值: `["ExternalLinkIcon"]`
+
+应在 Feed 中删除的自定义元素或组件。
 
 ### filter
 

@@ -1,0 +1,69 @@
+@use "vuepress-shared/styles/wrapper";
+
+.page-meta {
+  @include wrapper.horizontal-wrapper;
+  overflow: auto;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+
+  .meta-item {
+    margin-top: 0.5rem;
+
+    .label {
+      font-weight: 500;
+
+      &:not(a) {
+        color: var(--text-color-lighter);
+      }
+    }
+
+    .info {
+      color: var(--dark-grey);
+      font-weight: 400;
+    }
+  }
+
+  .edit-link {
+    display: inline-block;
+    margin-right: 0.25rem;
+    font-size: 14px;
+
+    @media (max-width: hope-config.$tablet) {
+      margin-bottom: 8px;
+    }
+
+    .icon {
+      position: relative;
+      bottom: -0.125em;
+
+      width: 1em;
+      height: 1em;
+      margin-right: 0.25em;
+    }
+  }
+
+  .update-time {
+    float: right;
+    font-size: 14px;
+
+    @media (max-width: hope-config.$tablet) {
+      float: none;
+      font-size: 13px;
+      text-align: left;
+    }
+
+    &:first-child {
+      float: left;
+    }
+  }
+
+  .contributors {
+    font-size: 14px;
+    text-align: right;
+
+    @media (max-width: hope-config.$tablet) {
+      font-size: 13px;
+      text-align: left;
+    }
+  }
+}

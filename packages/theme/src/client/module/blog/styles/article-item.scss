@@ -13,7 +13,7 @@
 
   text-align: left;
 
-  @media (max-width: hope-config.$mobileS) {
+  @media (max-width: hope-config.$mobile) {
     border-radius: 0;
   }
 
@@ -136,9 +136,18 @@
     .code-demo-wrapper {
       display: none;
     }
+
+    // footnote fix
+    .footnote-anchor {
+      display: none;
+    }
+
+    section.footnotes {
+      display: none;
+    }
   }
 
-  .article-info {
+  .page-info {
     > span {
       display: flex;
       flex-shrink: 0;

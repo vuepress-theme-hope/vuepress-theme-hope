@@ -1,10 +1,12 @@
-import { fs, path } from "@vuepress/utils";
+import { removeLeadingSlash } from "@vuepress/shared";
+import { path } from "@vuepress/utils";
 import { logger } from "./utils";
 
 import type { App } from "@vuepress/core";
 import type {
   HopeThemeConfig,
   HopeThemeSidebarArrayConfig,
+  HopeThemeSidebarConfig,
   HopeThemeSidebarGroupItem,
 } from "../shared";
 
@@ -29,181 +31,121 @@ interface DirInfo {
 
 type Info = FileInfo | DirInfo;
 
-const getInfo = async (
-  app: App,
-  rootDir: string,
-  base = ""
-): Promise<Info[]> => {
-  const { pages } = app;
-  const dirFullPath = app.dir.source(rootDir, base);
+const getInfo = (app: App, rootDir: string, base = ""): Info[] => {
+  const dir = `${rootDir}${base}`;
 
-  const result = await fs
-    // reading dirPath
-    .readdir(dirFullPath)
-    .then(
-      (items) =>
-        Promise.all(
-          items
-            .filter((item) => {
-              // scanning root dir, so we should filter the following
-              if (rootDir === "" && base === "")
-                return (
-                  // .vuepress folder
-                  item !== ".vuepress" &&
-                  // other locales folder
-                  !Object.keys(app.siteData.locales).includes(`/${item}/`)
-                );
+  return (
+    (
+      app.pages
+        .filter(
+          ({ filePathRelative, pathLocale }) =>
+            // generated from file
+            filePathRelative &&
+            // inside dir
+            filePathRelative.startsWith(dir) &&
+            // filter only currect level
+            filePathRelative
+              .slice(dir.length)
+              .match(/^[^/]*(?:\/README.md)?$/) &&
+            // scanning root dir
+            (dir === ""
+              ? // filter other locales
+                pathLocale === "/"
+              : true)
+        )
+        .map((page) => {
+          const filename = path.relative(
+            dir,
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+            page.filePathRelative!
+          );
 
-              return true;
-            })
-            .map(async (filename) => {
-              const fileRelativePath = path.join(base, filename);
-              const fileFullPath = path.join(dirFullPath, filename);
-
-              return fs.stat(fileFullPath).then(async (stat) => {
-                // continue to read nest dir
-                if (stat.isDirectory()) {
-                  // get result
-                  const result = await getInfo(app, rootDir, fileRelativePath);
-
-                  // dir not including README.md
-                  if (
-                    !result.some(
-                      (subDirFilePath) =>
-                        subDirFilePath.type === "file" &&
-                        subDirFilePath.path === "README.md"
-                    )
-                  ) {
-                    if (app.env.isDebug)
-                      logger.warn(
-                        `README.md not found in ${path.join(
-                          rootDir,
-                          fileRelativePath
-                        )}`
-                      );
-
-                    return null;
-                  }
-
-                  // get page
-                  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                  const page = pages.find(
-                    (page) =>
-                      page.filePathRelative ===
-                      path.join(rootDir, fileRelativePath, "README.md")
-                  )!;
-
-                  // get dir information
-                  const dirInfo = (page.frontmatter.dir || {}) as {
-                    text?: string;
-                    icon?: string;
-                    collapsable?: boolean;
-                    link?: boolean;
-                    index?: number | boolean;
-                  };
-
-                  return {
-                    type: "dir",
-                    // generate information
-                    info: {
-                      text: dirInfo.text || page.title,
-                      icon:
-                        dirInfo.icon ||
-                        (page.frontmatter.icon as string | undefined),
-                      collapsable:
-                        "collapsable" in dirInfo ? dirInfo.collapsable : true,
-                      ...(dirInfo.link ? { link: page.path } : {}),
-                      prefix: `${filename}/`,
-                    },
-                    index:
-                      "index" in dirInfo
-                        ? (dirInfo.index as number | boolean)
-                        : null,
-                    children: (dirInfo.link
-                      ? // filter README.md
-                        result.filter(
-                          (item) =>
-                            item.type !== "file" || item.path !== "README.md"
-                        )
-                      : result
-                    )
-                      // items with `index: false` should be dropped here
-                      .filter((item) => item.index !== false),
-                  };
-                }
-
-                // it’s a markdown
-                if (filename.endsWith(".md")) {
-                  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                  const page = pages.find(
-                    (page) =>
-                      page.filePathRelative ===
-                      path.join(rootDir, fileRelativePath)
-                  )!;
-
-                  return {
-                    type: "file",
-                    path: filename,
-                    title: page.title,
-                    index:
-                      "index" in page.frontmatter
-                        ? (page.frontmatter.index as boolean | number)
-                        : null,
-                  };
-                }
-
-                // it’s probably an unrelated file
-                return null;
-              });
-            })
-        ),
-      (err: NodeJS.ErrnoException) => {
-        if (err.code === "ENOENT") {
-          logger.warn(
-            `${path.join(
+          // continue to read nest dir
+          if (filename?.endsWith("/README.md")) {
+            const filePath = path.relative(
               rootDir,
-              base
-            )} does not exists, you probably have a wrong config.`
-          );
+              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+              page.filePathRelative!
+            );
+            const base = filePath.replace(/README\.md$/, "");
+            const dirname = filename.replace(/README\.md$/, "");
 
-          return [];
-        }
+            // get result
+            const result = getInfo(app, rootDir, base);
 
-        logger.warn(`Reading ${path.join(rootDir, base)} failed with err:`);
-        console.error(err);
+            // get dir information
+            const dirInfo = (page.frontmatter.dir || {}) as {
+              text?: string;
+              icon?: string;
+              collapsable?: boolean;
+              link?: boolean;
+              index?: number | boolean;
+            };
 
-        return [];
-      }
-    )
-    .then((items) =>
-      // dir without README.md should be dropped here
-      (items.filter((item) => item !== null) as Info[])
-        // sort items
-        .sort((itemA: Info, itemB: Info) => {
-          // check README.md, it should be first one
-          if (itemA.type === "file" && itemA.path === "README.md") return -1;
-          if (itemB.type === "file" && itemB.path === "README.md") return 1;
-
-          if (itemA.index) {
-            // both item as valid index
-            if (itemB.index) return Number(itemA.index) - Number(itemB.index);
-
-            // itemB do not have index
-            return -1;
+            return dirInfo.index !== false
+              ? {
+                  type: "dir",
+                  // generate information
+                  info: {
+                    text: dirInfo.text || page.title,
+                    icon:
+                      dirInfo.icon ||
+                      (page.frontmatter.icon as string | undefined),
+                    collapsable:
+                      "collapsable" in dirInfo ? dirInfo.collapsable : true,
+                    ...(dirInfo.link ? { link: page.path } : {}),
+                    prefix: dirname,
+                  },
+                  index: dirInfo.index || true,
+                  children: dirInfo.link
+                    ? // filter README.md
+                      result.filter(
+                        (item) =>
+                          !(item.type === "file" && item.path === "README.md")
+                      )
+                    : result,
+                }
+              : null;
           }
-          // itemA do not have index
-          else if (itemB.index) return 1;
 
-          // compare title
-          return (
-            itemA.type === "file" ? itemA.title : itemA.info.text
-          ).localeCompare(
-            itemB.type === "file" ? itemB.title : itemB.info.text
-          );
+          // it’s a markdown
+          return page.frontmatter.index !== false
+            ? {
+                type: "file",
+                path: filename,
+                title: page.title,
+                index:
+                  "index" in page.frontmatter
+                    ? (page.frontmatter.index as boolean | number)
+                    : null,
+              }
+            : null;
         })
-    );
+        // dir without README.md should be dropped here
+        .filter((item) => item !== null) as Info[]
+    )
+      // sort items
+      .sort((itemA: Info, itemB: Info) => {
+        // check README.md, it should be first one
+        if (itemA.type === "file" && itemA.path === "README.md") return -1;
+        if (itemB.type === "file" && itemB.path === "README.md") return 1;
 
-  return result;
+        if (itemA.index) {
+          // both item as valid index
+          if (itemB.index) return Number(itemA.index) - Number(itemB.index);
+
+          // itemB do not have index
+          return -1;
+        }
+        // itemA do not have index
+        else if (itemB.index) return 1;
+
+        // compare title
+        return (
+          itemA.type === "file" ? itemA.title : itemA.info.text
+        ).localeCompare(itemB.type === "file" ? itemB.title : itemB.info.text);
+      })
+  );
 };
 
 const getSidebarItems = (
@@ -238,10 +180,10 @@ const getGeneratePaths = (
   return result;
 };
 
-export const prepareSidebarData = async (
+export const getSidebarData = (
   app: App,
   themeConfig: HopeThemeConfig
-): Promise<void> => {
+): HopeThemeSidebarConfig => {
   const generatePaths: string[] = [];
 
   // exact generate sidebar paths
@@ -259,21 +201,26 @@ export const prepareSidebarData = async (
     else if (sidebar === "structure") generatePaths.push(localePath);
   });
 
-  const sidebarData: Record<string, (HopeThemeSidebarGroupItem | string)[]> =
-    {};
-
-  await Promise.all(
-    generatePaths.map(async (path) => {
-      sidebarData[path] = getSidebarItems(
-        await getInfo(app, path.replace(/^\//, ""))
-      );
-    })
+  const sidebarData = Object.fromEntries(
+    generatePaths.map((path) => [
+      path,
+      getSidebarItems(getInfo(app, removeLeadingSlash(path))),
+    ])
   );
 
   if (app.env.isDebug)
     logger.info(
-      `Structure SidebarData:${JSON.stringify(sidebarData, null, 2)}`
+      `Sidebar structure data:${JSON.stringify(sidebarData, null, 2)}`
     );
+
+  return sidebarData;
+};
+
+export const prepareSidebarData = async (
+  app: App,
+  themeConfig: HopeThemeConfig
+): Promise<void> => {
+  const sidebarData = getSidebarData(app, themeConfig);
 
   await app.writeTemp(
     "theme-hope/sidebar.js",

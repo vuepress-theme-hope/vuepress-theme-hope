@@ -14,7 +14,7 @@
     padding-top: var(--navbar-mobile-height);
   }
 
-  @media (max-width: hope-config.$mobileS) {
+  @media (max-width: hope-config.$mobile) {
     padding-right: 1.5rem;
     padding-left: 1.5rem;
   }
@@ -39,12 +39,12 @@
         margin: 3rem auto 1.5rem;
       }
 
-      @media (max-width: hope-config.$mobile) {
+      @media (max-width: hope-config.$tablet) {
         max-height: 240px;
         margin: 2rem auto 1.2rem;
       }
 
-      @media (max-width: hope-config.$mobileS) {
+      @media (max-width: hope-config.$mobile) {
         max-height: 210px;
         margin: 1.5rem auto 1rem;
       }
@@ -75,11 +75,11 @@
         margin: 1.8rem 0;
       }
 
-      @media (max-width: hope-config.$mobile) {
+      @media (max-width: hope-config.$tablet) {
         margin: 1.5rem auto;
       }
 
-      @media (max-width: hope-config.$mobileS) {
+      @media (max-width: hope-config.$mobile) {
         margin: 1.2rem auto;
       }
     }
@@ -88,11 +88,11 @@
       font-size: 3.6rem;
       font-family: var(--font-family-fancy);
 
-      @media (max-width: hope-config.$mobile) {
+      @media (max-width: hope-config.$tablet) {
         font-size: 2.5rem;
       }
 
-      @media (max-width: hope-config.$mobileS) {
+      @media (max-width: hope-config.$mobile) {
         font-size: 2rem;
       }
     }
@@ -106,11 +106,11 @@
       font-family: var(--font-family-fancy);
       line-height: 1.3;
 
-      @media (max-width: hope-config.$mobile) {
+      @media (max-width: hope-config.$tablet) {
         font-size: 1.4rem;
       }
 
-      @media (max-width: hope-config.$mobileS) {
+      @media (max-width: hope-config.$mobile) {
         font-size: 1.2rem;
       }
     }
@@ -132,12 +132,12 @@
       transition: background-color var(--color-transition),
         color var(--color-transition);
 
-      @media (max-width: hope-config.$mobile) {
+      @media (max-width: hope-config.$tablet) {
         padding: 0.8rem 1.2rem;
         font-size: 1.1rem;
       }
 
-      @media (max-width: hope-config.$mobileS) {
+      @media (max-width: hope-config.$mobile) {
         font-size: 1rem;
       }
 
@@ -175,7 +175,7 @@
 
     transition: border-color var(--color-transition);
 
-    @media (max-width: hope-config.$mobileS) {
+    @media (max-width: hope-config.$mobile) {
       margin: 0 -1.5rem;
     }
   }
@@ -195,7 +195,7 @@
 
     transition: transform 0.3s, box-shadow 0.3s;
 
-    @media (min-width: hope-config.$wide) {
+    @media (min-width: hope-config.$pc) {
       flex-basis: calc(25% - 4rem);
     }
 
@@ -203,11 +203,11 @@
       flex-basis: calc(50% - 4rem);
     }
 
-    @media (max-width: hope-config.$mobile) {
+    @media (max-width: hope-config.$tablet) {
       font-size: 0.95rem;
     }
 
-    @media (max-width: hope-config.$mobileS) {
+    @media (max-width: hope-config.$mobile) {
       flex-basis: calc(100%);
       margin: 0.5rem 0;
       border-radius: 0;
@@ -239,7 +239,7 @@
       font-weight: bold;
       font-size: 1.25rem;
 
-      @media (max-width: hope-config.$mobileS) {
+      @media (max-width: hope-config.$mobile) {
         font-size: 1.2rem;
       }
     }

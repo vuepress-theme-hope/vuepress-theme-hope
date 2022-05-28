@@ -6,7 +6,7 @@ icon: vue
 ## Syntax
 
 ````md
-::: demo [vue] Optional title text
+::: vue-demo Optional title text
 
 ```vue
 <!-- ↑ You can also use `html` -->
@@ -40,7 +40,7 @@ export default {
 
 ## Demo
 
-::: demo [vue] A Vue Composition Demo
+::: vue-demo A Vue Composition Demo
 
 ```vue
 <template>
@@ -80,7 +80,7 @@ export default {
 :::: details Code
 
 ````md
-::: demo [vue] A Vue Composition Demo
+::: vue-demo A Vue Composition Demo
 
 ```vue
 <template>
@@ -120,7 +120,7 @@ export default {
 
 ::::
 
-::: demo [vue] A Vue Option Demo
+::: vue-demo A Vue Option Demo
 
 ```vue
 <template>
@@ -152,7 +152,7 @@ export default {
 :::: details Code
 
 ````md
-::: demo [vue] A Vue Option Demo
+::: vue-demo A Vue Option Demo
 
 ```vue
 <template>

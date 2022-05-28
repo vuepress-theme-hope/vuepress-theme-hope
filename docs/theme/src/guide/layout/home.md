@@ -1,6 +1,7 @@
 ---
 title: Home Page
 icon: home
+index: 6
 category:
   - Layout
 tag:
@@ -12,7 +13,8 @@ tag:
 
 To use it, set `home: true` in page frontmatter. Any extra content after the `YAML front matter` will be parsed as normal Markdown and rendered after the features section.
 
-![Screenshot](./assets/home.png)
+![Screenshot](./assets/home-light.png#light)
+![Screenshot](./assets/home-dark.png#dark)
 
 <!-- more -->
 
@@ -33,14 +35,14 @@ Page title, will be used in breadcrumb, seo, etc.
 
 ### heroText
 
-- Type: `string | null`
+- Type: `string | false`
 - Default: `"Hello"`
 
 Hero Title
 
 ### tagline
 
-- Type: `string | null`
+- Type: `string | false`
 - Default: `"Welcome to your VuePress site"`
 
 Short description in hero
@@ -157,7 +159,7 @@ features:
 
   - title: Feed support
     icon: rss
-    details: Generate feed to allow users to subcribe it
+    details: Generate feed to allow users to subscribe it
     link: /guide/feature/feed/
 
   - title: PWA support

@@ -3,9 +3,15 @@ title: Others
 icon: more
 ---
 
+## Link check
+
+`vuepress-plugin-md-enhance` check your markdown links in dev mode by default.
+
+You can customize this feature through `linkCheck` in plugin options, and you can choose from `'always'`, `'never'`, `'dev'` and `'build'`.
+
 ## v-pre
 
-Since VuePress2 has removed V1’s v-pre container in core, the plugin provides an option to support it. That is, you can use any Mustacle syntax in the container below.
+Since VuePress2 has removed V1’s v-pre container in core, the plugin provides an option to support it. That is, you can use any Mustache syntax in the container below.
 
 ```md
 ::: v-pre

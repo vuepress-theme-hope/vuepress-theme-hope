@@ -1,8 +1,9 @@
-import { getLocales } from "@mr-hope/vuepress-shared";
+import { getLocales } from "vuepress-shared";
 import { resolveEncrypt } from "./encrypt";
 import { themeLocalesData } from "./locales";
 
 import type { App } from "@vuepress/core";
+import type { ThemeStatus } from "./status";
 import {
   HopeThemeConfig,
   HopeThemeLocaleConfig,
@@ -15,11 +16,9 @@ const rootAllowConfig = [
   "blog",
   "encrypt",
   "pure",
-  "iconPrefix",
   "darkmode",
   "themeColor",
   "fullscreen",
-  "backToTop",
   "mobileBreakPoint",
 ];
 
@@ -30,8 +29,7 @@ const defaultRootOptions: HopeThemeRootConfig = {
 
   // appearance
   pure: false,
-  iconPrefix: "",
-  darkmode: "auto-switch",
+  darkmode: "switch",
   themeColor: {
     red: "#e74c3c",
     blue: "#3498db",
@@ -60,7 +58,8 @@ const defaultLocaleOptions: HopeThemeLocaleOptions = {
  */
 export const getThemeConfig = (
   app: App,
-  themeOptions: HopeThemeOptions
+  themeOptions: HopeThemeOptions,
+  { enableBlog }: ThemeStatus
 ): HopeThemeConfig => {
   const themeData: HopeThemeConfig = {
     ...defaultRootOptions,
@@ -71,11 +70,25 @@ export const getThemeConfig = (
     ),
     locales:
       // assign locale data to `themeConfig`
-      getLocales(
+      getLocales({
         app,
-        themeLocalesData,
+        name: "vuepress-theme-hope",
+        default: Object.fromEntries(
+          Object.entries(themeLocalesData).map(([locale, config]) => {
+            if (!enableBlog) {
+              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+              // @ts-ignore
+              delete config.blogLocales;
+              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+              // @ts-ignore
+              delete config.paginationLocales;
+            }
+
+            return [locale, config];
+          })
+        ),
         // extract localeConfig
-        Object.fromEntries(
+        config: Object.fromEntries(
           [
             ["/", {}] as [string, HopeThemeLocaleOptions],
             ...Object.entries(themeOptions.locales || {}),
@@ -97,8 +110,8 @@ export const getThemeConfig = (
               } as HopeThemeLocaleConfig,
             ]
           )
-        )
-      ) as HopeThemeLocaleConfig,
+        ),
+      }) as HopeThemeLocaleConfig,
   };
 
   // handle encrypt options

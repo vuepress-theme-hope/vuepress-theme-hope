@@ -6,7 +6,7 @@ icon: react
 ## 格式
 
 ````md
-::: demo [react] 可选的标题文字
+::: react-demo 可选的标题文字
 
 ```js
 // 放置脚本，并通过 `export default` 导出你的 react 组件
@@ -33,7 +33,7 @@ icon: react
 
 ## 演示
 
-::: demo [react] 一个函数式 React Demo
+::: react-demo 一个函数式 React Demo
 
 ```js
 const { useState } = React;
@@ -67,7 +67,7 @@ export default () => {
 :::: details 代码
 
 ````md
-::: demo [react] 一个函数式 React Demo
+::: react-demo 一个函数式 React Demo
 
 ```js
 const { useState } = React;
@@ -101,7 +101,7 @@ export default () => {
 
 ::::
 
-::: demo [react] 一个类式 React Demo
+::: react-demo 一个类式 React Demo
 
 ```js
 export default class App extends React.Component {
@@ -138,7 +138,7 @@ export default class App extends React.Component {
 :::: details 代码
 
 ````md
-::: demo [react] 一个类式 React Demo
+::: react-demo 一个类式 React Demo
 
 ```js
 export default class App extends React.Component {

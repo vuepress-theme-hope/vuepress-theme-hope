@@ -73,32 +73,27 @@ Node.js 本身只会占据几十 M 的空间!
 
    ::: tip
 
-   当您安装 VS Code 并第一次打开的时候，VS Code 会自动检测当前系统语言并在右下角推荐您安装对应语言的扩展，点击按钮即可自动安装。
+   当你安装 VS Code 并第一次打开的时候，VS Code 会自动检测当前系统语言并在右下角推荐你安装对应语言的扩展，点击按钮即可自动安装。
 
    :::
 
-## Yarn
+## Pnpm
 
-在你安装 Node.js 之后，请安装 Yarn V1 版本。
+在你安装 Node.js 之后，请安装 [pnpm](https://pnpm.io)。
 
 ::: tip
 
-我们推荐你使用 Yarn 管理你的项目，因为 VuePress 和 VuePress Theme Hope 都是通过 Yarn 来管理依赖的。
+我们推荐你使用 pnpm 管理你的项目，因为 VuePress 和 VuePress Theme Hope 都是通过 pnpm 来管理依赖的。
 
-Yarn 的一些功能可以保证你拥有正确的依赖。
+pnpm 的一些功能可以保证你拥有正确的依赖。
 
 :::
 
-### 安装 Yarn
+### 安装 Pnpm
 
-在终端中输入下列命令安装 Yarn:
+在终端中输入下列命令安装 pnpm:
 
 ```sh
-npm i -g yarn
+corepack enable
+corepack prepare pnpm@7.1.0 --activate
 ```
-
-::: tip 在 Windows 上打开终端
-
-请使用文件管理器打开对应文件夹，之后在上方的地址栏中输入 `cmd` 之后按下回车。
-
-:::

@@ -21,17 +21,17 @@ tag:
 
 移动至 `config.scss`。
 
-- `$MQWide` 重命名为 `$wide`
-- `$MQNormal` 重命名为 `$desktop`
+- `$MQWide` 重命名为 `$pc`
+- `$MQNormal` 重命名为 `$laptop`
 - `$MQNarrow` 重命名为 `$pad`
-- `$MQMobile` 重命名为 `$mobile`
-- `$MQMobileNarrow` 重命名为 `$mobileS`
+- `$MQMobile` 重命名为 `$tablet`
+- `$MQMobileNarrow` 重命名为 `$mobile`
 
 ### 布局
 
 移动至 `palette.scss`。
 
-- `$mobileSidebarWidth` 重命名为 `$sidebar-mobile-width`
+- `$mobileidebarWidth` 重命名为 `$sidebar-mobile-width`
 - `$lineNumbersWrapperWidth` 重命名为 `$line-numbers-width`
 
 ### 颜色
@@ -50,7 +50,7 @@ tag:
 
 - `$colorPicker` 移除
 
-  现在你只需要在 `themeConfig` 中设置主题色
+  现在你只需要在主题选项中设置主题色
 
 - `$codeBgColor`, `$darkCodeBgColor` 移除，请在 `config.scss` 中配置 `$code-light-theme` 和 `$code-dark-theme`。
 

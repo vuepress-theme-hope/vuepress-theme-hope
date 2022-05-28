@@ -6,7 +6,7 @@ icon: code
 ## 格式
 
 ````md
-::: demo 可选的标题文字
+::: normal-demo 可选的标题文字
 
 ```html
 <!-- html code -->
@@ -43,7 +43,7 @@ icon: code
 
 ## 例子
 
-::: demo Demo 演示
+::: normal-demo Demo 演示
 
 ```html
 <h1>VuePress Theme Hope</h1>
@@ -67,7 +67,7 @@ span {
 :::: details 代码
 
 ````md
-::: demo Demo 演示
+::: normal-demo Demo 演示
 
 ```html
 <h1>VuePress Theme Hope</h1>

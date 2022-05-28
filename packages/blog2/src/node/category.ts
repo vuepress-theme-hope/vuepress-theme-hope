@@ -1,5 +1,6 @@
 import { createPage } from "@vuepress/core";
-import { logger, removeLeadingSlash } from "./utils";
+import { removeLeadingSlash } from "@vuepress/shared";
+import { logger } from "./utils";
 
 import type { App, Page } from "@vuepress/core";
 import type { BlogOptions, CategoryMap, PageMap } from "../shared";

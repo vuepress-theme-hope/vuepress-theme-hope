@@ -1,21 +1,16 @@
-import { useLocaleConfig } from "@mr-hope/vuepress-shared/lib/client";
-import { usePageFrontmatter, usePageLang } from "@vuepress/client";
-import {
-  computed,
-  defineComponent,
-  h,
-  nextTick,
-  onBeforeUnmount,
-  onMounted,
-  watch,
-} from "vue";
+import { usePageFrontmatter, usePageLang, withBase } from "@vuepress/client";
+import { Waline } from "@waline/client/dist/component";
+import { pageviewCount } from "@waline/client/dist/pageview";
+import { computed, defineComponent, h, onMounted, watch } from "vue";
 import { useRoute } from "vue-router";
+import { useLocaleConfig } from "vuepress-shared/lib/client";
+
 import { enableWaline, walineLocales, walineOption } from "../define";
 
-import type { WalineInstance } from "@waline/client";
 import type { VNode } from "vue";
 import type { CommentPluginFrontmatter } from "../../shared";
 
+import "@waline/client/dist/waline.css";
 import "../styles/waline.scss";
 
 export default defineComponent({
@@ -27,8 +22,7 @@ export default defineComponent({
     const lang = usePageLang();
     const walineLocale = useLocaleConfig(walineLocales);
 
-    let id: number;
-    let waline: WalineInstance | null = null;
+    let abort: () => void;
 
     const enableComment = computed(() => {
       if (!enableWaline) return false;
@@ -45,7 +39,7 @@ export default defineComponent({
 
     const enablePageViews = computed(() => {
       if (!enableWaline) return false;
-      const pluginConfig = walineOption.pageviews !== false;
+      const pluginConfig = walineOption.pageview !== false;
       const pageConfig = frontmatter.value.pageview;
 
       return (
@@ -56,67 +50,47 @@ export default defineComponent({
       );
     });
 
-    const updateWaline = (): void => {
-      const timeID = (id = new Date().getTime());
-
-      if (waline)
-        setTimeout(() => {
-          if (timeID === id)
-            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-            waline!.update({
-              lang: lang.value === "zh-CN" ? "zh-CN" : "en",
-              locale: {
-                ...walineLocale.value,
-                ...(walineOption.locale || {}),
-              },
-            });
-        }, walineOption.delay);
-      else
-        void Promise.all([
-          import("@waline/client"),
-          new Promise<void>((resolve) => {
-            setTimeout(resolve, walineOption.delay);
-          }),
-        ]).then(([{ default: Waline }]) => {
-          if (timeID === id)
-            waline = Waline({
-              lang: lang.value === "zh-CN" ? "zh-CN" : "en",
-              locale: {
-                ...walineLocale.value,
-                ...(walineOption.locale || {}),
-              },
-              emoji: [
-                "https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/weibo",
-                "https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili",
-              ],
-              dark: "html.dark",
-              ...walineOption,
-              el: "#waline-comment",
-              visitor: enablePageViews.value,
-            }) as WalineInstance;
-        });
-    };
+    const walineProps = computed(() => ({
+      lang: lang.value === "zh-CN" ? "zh-CN" : "en",
+      locale: {
+        ...walineLocale.value,
+        ...(walineOption.locale || {}),
+      },
+      emoji: [
+        "//unpkg.com/@waline/emojis@1.0.1/weibo",
+        "//unpkg.com/@waline/emojis@1.0.1/bilibili",
+      ],
+      dark: "html.dark",
+      ...walineOption,
+      path: withBase(route.path),
+    }));
 
     onMounted(() => {
-      if (enableWaline) updateWaline();
-    });
+      watch(
+        () => route.path,
+        () => {
+          abort?.();
 
-    onBeforeUnmount(() => {
-      if (waline) waline.destroy();
+          if (enablePageViews.value)
+            setTimeout(() => {
+              abort = pageviewCount({
+                serverURL: walineOption.serverURL,
+                path: withBase(route.path),
+              });
+            }, walineOption.delay || 500);
+        },
+        { immediate: true }
+      );
     });
-
-    watch(
-      () => route.path,
-      () =>
-        // Refresh comment when navigating to a new page
-        nextTick().then(() => updateWaline())
-    );
 
     return (): VNode =>
-      h("div", {
-        class: "waline-wrapper",
-        style: { display: enableComment.value ? "block" : "none" },
-        innerHTML: '<div id="waline-comment" />',
-      });
+      h(
+        "div",
+        {
+          class: "waline-wrapper",
+          style: { display: enableComment.value ? "block" : "none" },
+        },
+        enableWaline ? h(Waline, walineProps.value) : []
+      );
   },
 });

@@ -1,4 +1,4 @@
-import { Logger } from "@mr-hope/vuepress-shared";
+import { Logger } from "vuepress-shared";
 
 import type { App, Page } from "@vuepress/core";
 import type { PageMap } from "../shared";
@@ -27,6 +27,3 @@ export const getPageMap = (
 
   return pageMap;
 };
-
-export const removeLeadingSlash = (path: string): string =>
-  path.replace(/^\//, "");

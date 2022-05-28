@@ -18,16 +18,17 @@ The theme provides progressive web app support [^pwa-intro] via built-in [`vuepr
 
 ::: info
 
-`vuepress-theme-hope` provides the `pwa` options in `themeConfig.plugins` as plugin options to `vuepress-plugin-pwa2`.
+`vuepress-theme-hope` passes `plugins.pwa` in theme options as plugin options to `vuepress-plugin-pwa2`.
 
-You can set `pwa: true` to enable the plugin with default options. <Badge text="Not recommanded" type="warning" />
+If you are using this plugin, we recommend you to set `shouldPrefetch: false` in your VuePress config file.
+
 :::
 
 <!-- more -->
 
 ## Direct Enable <Badge text="Not recommended" type="warning" />
 
-You can set `themeConfig.plugins.pwa` to `true` to let theme automatically generate the necessary config and enable plugins quickly. However, we recommend you to manually set some options by following the instructions below.
+You can set `plugins.pwa` to `true` in theme options to let theme automatically generate the necessary config and enable plugins quickly. However, we recommend you to manually set some options by following the instructions below.
 
 ## Intro
 
@@ -41,13 +42,13 @@ Service Worker [^service-worker] (SW for short) is mainly used to cache and prox
 
     1. Whenever you want to initiate an access request through the browser, the Service Worker will check whether it exists in its own cache list, if it exists, it will directly return the cached result, otherwise it will call its own fetch method to get it. You can use a custom fetch method to fully control the result of the request for resources in the web page, such as providing a fallback web page when offline.
 
-    1. Every time the user reopens the site, the Service Worker will request to the link when it was registered. If a new version of Service Woker is detected, it will update itself and start caching the list of resources registered in the new Service Worker . After the content update is successfully obtained, the Service Worker will trigger the `update` event. The user can be notified through this event, for example, a pop-up window will be displayed in the lower right corner, prompting the user that new content is available and allowing the user to trigger an update.
+    1. Every time the user reopens the site, the Service Worker will request to the link when it was registered. If a new version of Service Worker is detected, it will update itself and start caching the list of resources registered in the new Service Worker . After the content update is successfully obtained, the Service Worker will trigger the `update` event. The user can be notified through this event, for example, a pop-up window will be displayed in the lower right corner, prompting the user that new content is available and allowing the user to trigger an update.
 
-This plugin will automatically register Service Woker through `workbox-build`. To better control what the Service Worker can pre-cache, the plugin provides the following configurations.
+This plugin will automatically register Service Worker through `workbox-build`. To better control what the Service Worker can pre-cache, the plugin provides the following configurations.
 
 ::: tip
 
-If you are an advanced user, you can also set `generateSwConfig` in `themeConfig.plugins.pwa` directly to pass options to `workbox-build`.
+If you are an advanced user, you can also set `plugins.pwa.generateSwConfig` in theme options directly to pass options to `workbox-build`.
 
 :::
 
@@ -65,7 +66,7 @@ Based on the requirement of installable [^installable], the plugin provides rela
 
     ::: note
 
-    Starting from Chrome 93, Service Woker must contain effective fetch events to control offline requests.
+    Starting from Chrome 93, Service Worker must contain effective fetch events to control offline requests.
 
     However, currently the plugin does not contain relevant processing logic by default, so on Android devices with Chrome 93 or later, the site will not pop up an installation prompt.
 
@@ -79,7 +80,7 @@ At the same time, the plugin will cache font files: `**/*.{woff,woff2,eot,ttf,ot
 
 ### Image Cache
 
-You can cache site pictures by setting the `cachePic` option in `themeConfig.plugins.pwa` to `true`.
+You can cache site pictures by setting the `plugins.pwa.cachePic` option to `true`.
 
 If your site is not large and the pictures are mostly critical descriptions, and hope to be displayed in offline mode, please set this option to `true`.
 
@@ -91,7 +92,7 @@ We recognize images by file extension. Any files ending with `.png`, `.jpg`, `.j
 
 ### HTML Cache
 
-If you have small sites, and would like to make docusment fully offline available, you can set `cacheHTML` to `true` in `themeConfig.plugins.pwa` to cache all HTML files.
+If you have small sites, and would like to make document fully offline available, you can set `plugins.pwa.cacheHTML` to `true` to cache all HTML files.
 
 ::: tip Why only home and 404 page been cached by default?
 
@@ -111,11 +112,11 @@ But this also has the disadvantage. If the user enters the site directly from a 
 
 To prevent large files from being included in the pre-cache list, any files larger than 2MB or pictures larger than 1MB will be deleted.
 
-You can customize the maximum file size of the cache (unit: KB) with the `maxSize` option in `themeConfig.plugins.pwa`, or change the size limit of the picture (unit: KB) with `maxPicSize` in `themeConfig.plugins.pwa`.
+You can customize the maximum file size of the cache (unit: KB) with the `plugins.pwa.maxSize` option, or change the size limit of the picture (unit: KB) with `plugins.pwa.maxPicSize`.
 
 ## Update Control
 
-We provide the `update` option in `themeConfig.plugins.pwa` to control how users receive updates.
+We provide the `plugins.pwa.update` option to control how users receive updates.
 
 The default value of the `update` option is `"available"`, which means that when new content available, the new SW will be installed silently in the background, and a pop-up window will prompt the user that the new content is ready after SW finish installing. Users can choose whether to refresh immediately to view new content.
 
@@ -131,7 +132,7 @@ When new content is detected (new SW detected), an update prompt popup will appe
 
 ::: tip custom popup
 
-If you are not satisfied with the default popup, you can write your own component. You need to register your own popup component globally and pass the name of the component to the `hintComponent` option in `themeConfig.plugins.pwa`.
+If you are not satisfied with the default popup, you can write your own component. You need to register your own popup component globally and pass the name of the component to the `plugins.pwa.hintComponent` option .
 
 :::
 
@@ -141,13 +142,13 @@ When the new content is ready (the new SW installed successfully and started wai
 
 ::: tip custom popup
 
-If you are not satisfied with the default popup, you can write your own component. You need to register your popup component globally and pass the name of the component to the `updateComponent` option in `themeConfig.plugins.pwa`.
+If you are not satisfied with the default popup, you can write your own component. You need to register your popup component globally and pass the name of the component to the `plugins.pwa.updateComponent` option.
 
 :::
 
 ## Manifest Generation
 
-To ensure the installability of PWA, the site needs to generate a manifest file and declare a valid manifest file address [^manifest] through `link`.
+To ensure the installability of PWA, the site needs to generate a manifest file and declare a valid manifest file address [^manifest] through `<link>`.
 
 [^manifest]: **Manifest File**
 
@@ -176,7 +177,7 @@ If the following fields are not set, they will try to fallback to the following 
 | name                        | `siteConfig.title` \|\| `siteConfig.locales['/'].title` \|\| `"Site"`                                   |
 | short_name                  | `siteConfig.title` \|\| `siteConfig.locales['/'].title` \|\| `"Site"`                                   |
 | description                 | `siteConfig.description` \|\| `siteConfig.locales['/'].description` \|\| `"A site built with vuepress"` |
-| lang                        | `siteConfig.locales['/'].lang` \|\| `themeConfig.locales['/'].lang` \|\| `"en-US"`                      |
+| lang                        | `siteConfig.locales['/'].lang` \|\| `"en-US"`                                                           |
 | start_url                   | `siteConfig.base`                                                                                       |
 | scope                       | `siteConfig.base`                                                                                       |
 | display                     | `"standalone"`                                                                                          |
@@ -189,25 +190,25 @@ For complete configuration items, please see [Manifest Type Definition File](htt
 
 ### Manual Config
 
-You can manually specify the contents of the manifest in the `manifest` option in `themeConfig.plugins.pwa`.
+You can manually specify the contents of the manifest with `plugins.pwa.manifest` in theme options.
 
 ::: tip Priority
 
-`manifest` option in `themeConfig.plugins.pwa` has the highest priority, followed by manifest files that may exist in the `public` folder.
+`plugins.pwa.manifest` option in theme option has the highest priority, followed by manifest files that may exist in the `public` folder.
 
 :::
 
-**You should at least set a valid icon through `manifest.icons` in `themeConfig.plugins.pwa` or other icon related options in the PWA plugin.**
+**You should at least set a valid icon through `manifest.icons` in `plugins.pwa` or other icon related options in the PWA plugin.**
 
 ::: warning
 
 The installability [^installable] specification requires at least one valid icon to be declared in the manifest.
 
-So if you do not configure `manifest.icons` in `themeConfig.plugins.pwa`, visitors can only enjoy the offline accessibility brought by the Service Worker cache, while cannot install your site as a PWA.
+So if you do not configure `manifest.icons` in `plugins.pwa`, visitors can only enjoy the offline accessibility brought by the Service Worker cache, while cannot install your site as a PWA.
 
 Besides the plugin does not process anything in the manifest by default, but outputs them as-is. This means that if you plan to deploy to a subdirectory, you should append the URL prefix to manifest Urls yourself.
 
-But, if everything you need is all under base folder, you can set `appendBase: true` in `themeConfig.plugins.pwa` to let the plugin append `base` to any Urls in
+But, if everything you need is all under base folder, you can set `appendBase: true` in `plugins.pwa` to let the plugin append `base` to any links in it.
 
 :::
 

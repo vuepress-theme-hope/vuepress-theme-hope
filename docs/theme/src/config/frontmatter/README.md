@@ -1,6 +1,9 @@
 ---
 title: Frontmatter Config
 icon: config
+index: false
+dir:
+  index: 5
 category:
   - Config
 tag:
@@ -10,7 +13,7 @@ tag:
 
 ## Catalog
 
-- [Infomation Frontmatter Config](info.md)
+- [Information Frontmatter Config](info.md)
 
 - [Layout Frontmatter Config](layout.md)
 

@@ -15,51 +15,40 @@ With the help of [Plugin API](https://v2.vuepress.vuejs.org/reference/plugin-api
 
 Community users have created lots of plugins and published them to [NPM](https://www.npmjs.com/search?q=keywords:vuepress-plugin). VuePress team also maintains some official plugins under the [@vuepress](https://www.npmjs.com/search?q=%40vuepress%20keywords%3Aplugin) scope. You should check the plugin’s own documentation for detailed guide.
 
-In general, you need to specify the name of the plugin to use in [plugins](https://v2.vuepress.vuejs.org/reference/config.md#plugins) option:
+In general, you need to include the plugin in the [plugins](https://v2.vuepress.vuejs.org/reference/config.html#plugins) option to use it. For example, use the [@vuepress/plugin-google-analytics](https://v2.vuepress.vuejs.org/reference/plugin/google-analytics.html) to integrate Google Analytics:
 
 ```js
+const { googleAnalyticsPlugin } = require("@vuepress/plugin-google-analytics");
+
 module.exports = {
   plugins: [
-    "foo",
-    [
-      "bar",
-      {
-        /* options */
-      },
-    ],
+    googleAnalyticsPlugin({
+      id: "G-XXXXXXXXXX",
+    }),
   ],
 };
 ```
 
-You can use either plugin name or its shorthand:
-
-| Plugin Name                | Shorthand          |
-| -------------------------- | ------------------ |
-| `vuepress-plugin-foo`      | `foo`              |
-| `@org/vuepress-plugin-bar` | `@org/bar`         |
-| `@vuepress/plugin-foobar`  | `@vuepress/foobar` |
-
 ::: tip
 Most plugins can only be used once. If the same plugin is used multiple times, only the last one will take effect.
 
-However, some plugins can be used multiple times (e.g. [@vuepress/plugin-container](https://v2.vuepress.vuejs.org/reference/plugin/container.md)), and you should check the documentation of the plugin itself for detailed guide.
+However, some plugins can be used multiple times (e.g. [@vuepress/plugin-container](https://v2.vuepress.vuejs.org/reference/plugin/container.html)), and you should check the documentation of the plugin itself for detailed guide.
 :::
 
 ## Local Plugin
 
 To use your own plugin but don’t want to publish it, you can create a local plugin.
 
-It is recommended to use the [Config File](./config.md#config-file) directly as a plugin, because [almost all of the Plugin APIs are available](https://v2.vuepress.vuejs.org/reference/config.md#plugin-api), which would be more convenient in most cases.
+It is recommended to use the [Config File](./config.md#config-file) directly as a plugin, because [almost all of the Plugin APIs are available](https://v2.vuepress.vuejs.org/reference/config.html#plugin-api), which would be more convenient in most cases.
 
-But if you have too many things to do in your config file, it’s better to extract them into separate plugins, and use them by setting the absolute path to them or requiring them:
+But if you have too many things to do in your config file, you can consider to extract them into separate plugins, and use them in your config file:
 
 ```js
+const myPlugin = require("./path/to/my-plugin.js");
+
 module.exports = {
-  plugins: [
-    path.resolve(__dirname, "./path/to/your-plugin.js"),
-    require("./another-plugin"),
-  ],
+  plugins: [myPlugin()],
 };
 ```
 
-You can refer to [Advanced > Writing a Plugin](https://v2.vuepress.vuejs.org/advanced/plugin.md) for how to write your own plugin.
+You can refer to [Advanced > Writing a Plugin](https://v2.vuepress.vuejs.org/advanced/plugin.html) for how to write your own plugin.

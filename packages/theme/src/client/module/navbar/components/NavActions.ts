@@ -1,5 +1,5 @@
-import { isComponentRegistered } from "@mr-hope/vuepress-shared/lib/client";
 import { defineComponent, h, resolveComponent } from "vue";
+import { isComponentRegistered } from "vuepress-shared/lib/client";
 
 import LanguageDropdown from "@theme-hope/module/navbar/components/LanguageDropdown";
 import RepoLink from "@theme-hope/module/navbar/components/RepoLink";

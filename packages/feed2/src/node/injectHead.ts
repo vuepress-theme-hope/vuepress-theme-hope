@@ -56,7 +56,7 @@ export const injectLinkstoHead = (
         getHeadItem("RSS", rssOutputFilename, "application/rss+xml")
       );
   }
-  // there are mutiple languages, so we should append to page
+  // there are multiple languages, so we should append to page
   else
     app.pages.forEach((page) => {
       const { pathLocale } = page;

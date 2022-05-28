@@ -1,6 +1,7 @@
 ---
 title: 文章列表
 icon: article
+index: 3
 category:
   - 博客
 tag:
@@ -19,13 +20,14 @@ tag:
 
 主题默认情况下只会在文章列表中展示你指定的摘要或描述。
 
-如果你想要让主题自动提取摘要，请在 `themeConfig.plugins.blog` 中设置 `autoExcerpt: true`。
+如果你想要让主题自动提取摘要，请在主题选项中设置 `plugins.blog.autoExcerpt: true`。
 
 ## 文章
 
 所有文章都会默认被添加到文章列表中渲染在 `/article/` 路径下。
 
-![文章列表](./assets/article-list.png)
+![文章列表](./assets/article-list-light.png#light)
+![文章列表](./assets/article-list-dark.png#dark)
 
 如果你不希望该列表包含一些特定的文章，只需在文章的 frontmatter 中将 `article` 设置为 `false`。
 

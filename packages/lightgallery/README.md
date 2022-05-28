@@ -1,6 +1,6 @@
 <!-- markdownlint-disable -->
 <p align="center">
-  <img width="240" src="https://vuepress-theme-hope.github.io/v2/logo.svg" style="text-align: center;"/>
+  <img width="240" src="https://vuepress-theme-hope.github.io/v2/logo.svg" style="text-align: center;">
 </p>
 <h1 align="center">vuepress-plugin-lightgallery</h1>
 <h4 align="center">VuePress 图片预览插件🖼️ / VuePress photo preview plugin🖼️</h4>
@@ -12,13 +12,12 @@ Light Gallery plugin for VuePress🖼️ / VuePress 的 lightgallery 插件 🖼
 ## Install
 
 ```bash
-yarn add vuepress-plugin-lightgallery@next
-```
-
-Or
-
-```bash
-npm i vuepress-plugin-lightgallery@next
+# pnpm
+pnpm add -D vuepress-plugin-lightgallery@next
+# npm
+npm i -D vuepress-plugin-lightgallery@next
+# yarn
+yarn add -D vuepress-plugin-lightgallery@next
 ```
 
 ---
@@ -26,11 +25,10 @@ npm i vuepress-plugin-lightgallery@next
 ## 安装
 
 ```bash
-yarn add vuepress-plugin-lightgallery@next
-```
-
-或
-
-```bash
-npm i vuepress-plugin-lightgallery@next
+# pnpm
+pnpm add -D vuepress-plugin-lightgallery@next
+# npm
+npm i -D vuepress-plugin-lightgallery@next
+# yarn
+yarn add -D vuepress-plugin-lightgallery@next
 ```

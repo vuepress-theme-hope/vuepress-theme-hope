@@ -32,7 +32,7 @@ export const pwaLocales: PWALocaleConfig = {
     update: "新内容已就绪",
   },
 
-  "/tw/": {
+  "/zh-tw/": {
     install: "安裝",
     iOSInstall: "點擊分享按鈕然後點擊“添加到主畫面”",
     cancel: "取消",
@@ -96,15 +96,15 @@ export const pwaLocales: PWALocaleConfig = {
   "/ru/": {
     install: "Установить",
     iOSInstall:
-      "Нажмите кнопку «Поделиться», а затем «Добавить на главный экран».",
+      "Нажмите кнопку «Поделиться», а затем «Добавить на главный экран»",
     cancel: "Отменить",
     close: "Закрыть",
     prevImage: "Предыдущее изображение",
     nextImage: "Следующее изображение",
     desc: "Описание",
-    feature: "Ключевые характеристики",
+    feature: "Основные функции",
     explain:
-      "Это приложение может быть установлено на вашем компьютере или мобильном устройстве.  Это позволит веб-приложению выглядеть и вести себя как любое другое установленное приложение.  Вы найдете его в списках приложений и сможете закрепить его на домашнем экране, в меню Пуск или на панели задач.  Установленное веб-приложение также сможет безопасно взаимодействовать с другими приложениями и операционной системой. ",
+      "Это приложение может быть установлено на вашем компьютере или мобильном устройстве.  Это позволит веб-приложению выглядеть и вести себя как любое другое установленное приложение.  Вы найдете его в списках приложений и сможете закрепить его на домашнем экране, в меню пуск или на панели задач.  Установленное веб-приложение также сможет безопасно взаимодействовать с другими приложениями и операционной системой. ",
     hint: "Найден новый контент",
     update: "Доступен новый контент.",
   },
@@ -122,5 +122,69 @@ export const pwaLocales: PWALocaleConfig = {
       "Esta aplicação web pode ser instalada no seu PC ou dispositivo móvel. Isso fará com que ela se pareça e se comporte como qualquer outra aplicação.  Você a encontrará na lista de apps e poderá adicionar seu ícone à tela de entrada, menus ou barras de tarefa.  Uma vez instalada, esta aplicação web também poderá interagir com outras aplicações ou com o próprio sistema operacional. ",
     hint: "Novo conteúdo encontrado",
     update: "Novo conteúdo está disponível.",
+  },
+
+  "/pl/": {
+    install: "Zainstaluj",
+    iOSInstall:
+      "Stuknij przycisk udostępniania, a następnie „Dodaj do ekranu głównego”",
+    cancel: "Anuluj",
+    close: "Zamknij",
+    prevImage: "Poprzedni obrazek",
+    nextImage: "Następny obrazek",
+    desc: "Opis",
+    feature: "Kluczowe cechy",
+    explain:
+      "Tę aplikację można zainstalować na komputerze lub urządzeniu mobilnym. Dzięki temu ta aplikacja internetowa będzie wyglądać i zachowywać się jak każda inna zainstalowana aplikacja. Znajdziesz ją na listach aplikacji i będziesz mógł przypiąć go do ekranu głównego, menu startowego lub pasków zadań. Ta zainstalowana aplikacja internetowa będzie również mogła bezpiecznie komunikować się z innymi aplikacjami i systemem operacyjnym.",
+    hint: "Znaleziono nową zawartość.",
+    update: "Nowa zawartość jest dostępna.",
+  },
+
+  "/sk/": {
+    install: "Insštalácia",
+    iOSInstall:
+      "Klikni na tlačidlo zdielania a potom 'Daj na domovskú obrazovku'",
+    cancel: "Zrušiť",
+    close: "Zavrieť",
+    prevImage: "Prodošlí obrázok",
+    nextImage: "Ďalší obrázok",
+    desc: "Poznámka",
+    feature: "Kľúčové vlastnosti",
+    explain:
+      "Túto aplikáciu je možné nainštalovať na počítač alebo mobil.  Toto umožný sa správať aplikácii ako každej inej nainštalovanej aplikácii.  Nájdeš ju vo svojom liste aplikácii a budeš môcť ju pripnúť na domovskú stránku, štartovacieho menu alebo do panelu úloh.  Táto nainštalovaná webová aplikácia umžní tiež bezpečne komunikovať s ostatnými nainštalovanými aplikáciami a operačným systémom. ",
+    hint: "Nový obsah bol nájdený.",
+    update: "Nový obsah je dostupný.",
+  },
+
+  "/fr/": {
+    install: "Installer",
+    iOSInstall:
+      "Appuyez sur le bouton partager puis 'Ajouter à l'écran d'accueil'",
+    cancel: "Annuler",
+    close: "Fermer",
+    prevImage: "Image précédente",
+    nextImage: "Image suivante",
+    desc: "Description",
+    feature: "Composants clés",
+    explain:
+      "Cette app peut être installée sur PC ou smartphone.  Cela permettra de rendre cette page web comme n'importe quelle autre application.  Vous la trouverez dans votre liste d'application et serez capable de la pin sur votre écran principal et divers menus.  L'application web installée sera capable d'interagir avec les autres applications et le système d'exploitation.",
+    hint: "New content found.",
+    update: "New content is available.",
+  },
+
+  "/es/": {
+    install: "Instalar",
+    iOSInstall:
+      "Toque el botón compartir y luego 'Agregar a la pantalla de inicio'",
+    cancel: "Cancelar",
+    close: "Cerrar",
+    prevImage: "Imagen anterior",
+    nextImage: "Imagen siguiente",
+    desc: "Descripción",
+    feature: "Características clave",
+    explain:
+      "Esta aplicación se puede instalar en su PC o dispositivo móvil. Esto permitirá que esta aplicación web se vea y se comporte como cualquier otra aplicación instalada. Lo encontrará en su lista de aplicaciones y podrá fijarlo a su pantalla de inicio, menús de inicio o barras de tareas. Esta aplicación web instalada también podrá interactuar de manera segura con otras aplicaciones y su sistema operativo.",
+    hint: "Nuevo contenido encontrado.",
+    update: "Hay nuevo contenido disponible.",
   },
 };

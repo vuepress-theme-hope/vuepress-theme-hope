@@ -1,4 +1,4 @@
-import { computed, defineComponent, h, resolveComponent } from "vue";
+import { computed, defineComponent, h } from "vue";
 import { RouterLink } from "vue-router";
 
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
@@ -7,6 +7,7 @@ import {
   useBlogOptions,
   useTimelines,
 } from "@theme-hope/module/blog/composables";
+import TOC from "@theme-hope/module/info/components/TOC";
 
 import type { VNode } from "vue";
 
@@ -41,7 +42,7 @@ export default defineComponent({
         { class: "timeline-wrapper" },
         h("ul", { class: "timeline-content" }, [
           h(DropTransition, () => h("li", { class: "motto" }, hint.value)),
-          h(resolveComponent("TOC"), { items: items.value }),
+          h(TOC, { items: items.value }),
           ...timelines.value.config.map(({ year, items }, index) =>
             h(
               DropTransition,

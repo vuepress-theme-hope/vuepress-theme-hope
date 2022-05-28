@@ -1,10 +1,4 @@
-import {
-  addViteOptimizeDepsInclude,
-  addViteSsrNoExternal,
-  addViteOptimizeDepsExclude,
-  tagHint,
-} from "@mr-hope/vuepress-shared";
-import { handleCrytoForWebpack } from "./encrypt";
+import { addViteOptimizeDepsInclude, tagHint } from "vuepress-shared";
 
 import type { App } from "@vuepress/core";
 import type { ViteBundlerOptions } from "@vuepress/bundler-vite";
@@ -13,15 +7,16 @@ import type { WebpackBundlerOptions } from "@vuepress/bundler-webpack";
 /**
  * Add tags as customElement
  *
+ * @param config VuePress Bundler config
  * @param app VuePress Node App
  * @param customElements tags recognized as custom element
  */
-export const checkTag = (app: App): void => {
-  const { bundler, bundlerConfig } = app.options;
+export const checkTag = (config: unknown, app: App): void => {
+  const { bundler } = app.options;
 
   // for vite
-  if (bundler.endsWith("vite")) {
-    const viteBundlerConfig: ViteBundlerOptions = bundlerConfig;
+  if (bundler.name.endsWith("vite")) {
+    const viteBundlerConfig = config as ViteBundlerOptions;
 
     if (!viteBundlerConfig.vuePluginOptions)
       viteBundlerConfig.vuePluginOptions = {};
@@ -50,8 +45,8 @@ export const checkTag = (app: App): void => {
   }
 
   // for webpack
-  if (bundler.endsWith("webpack")) {
-    const webpackBundlerConfig: WebpackBundlerOptions = bundlerConfig;
+  if (bundler.name.endsWith("webpack")) {
+    const webpackBundlerConfig = config as WebpackBundlerOptions;
 
     if (!webpackBundlerConfig.vue) webpackBundlerConfig.vue = {};
     if (!webpackBundlerConfig.vue.compilerOptions)
@@ -75,29 +70,8 @@ export const checkTag = (app: App): void => {
   }
 };
 
-export const updateBundlerConfig = (app: App): void => {
-  addViteOptimizeDepsInclude(app, [
-    "@vueuse/core",
-    "bcryptjs",
-    "lodash.throttle",
-  ]);
+export const updateBundlerConfig = (config: unknown, app: App): void => {
+  addViteOptimizeDepsInclude({ app, config }, "@vueuse/core");
 
-  if (app.env.isDev)
-    addViteOptimizeDepsInclude(app, [
-      "@mr-hope/vuepress-shared/lib/client",
-      "dayjs",
-      "dayjs/plugin/localizedFormat",
-      "dayjs/plugin/objectSupport",
-      "dayjs/plugin/timezone",
-      "dayjs/plugin/utc",
-    ]);
-
-  addViteSsrNoExternal(app, [
-    "@mr-hope/vuepress-shared",
-    "vuepress-theme-hope",
-  ]);
-  addViteOptimizeDepsExclude(app, "vuepress-theme-hope");
-
-  checkTag(app);
-  handleCrytoForWebpack(app);
+  checkTag(config, app);
 };

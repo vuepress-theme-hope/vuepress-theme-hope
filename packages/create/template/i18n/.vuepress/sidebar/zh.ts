@@ -1,6 +1,6 @@
-import { defineSidebarConfig } from "vuepress-theme-hope";
+import { sidebar } from "vuepress-theme-hope";
 
-export const zh = defineSidebarConfig({
+export const zh = sidebar({
   "/zh/": [
     "",
     "home",

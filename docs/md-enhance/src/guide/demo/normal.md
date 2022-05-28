@@ -6,7 +6,7 @@ icon: code
 ## Syntax
 
 ````md
-::: demo Optional title text
+::: normal-demo Optional title text
 
 ```html
 <!-- html code -->
@@ -43,7 +43,7 @@ icon: code
 
 ## Demo
 
-::: demo Demo
+::: normal-demo Demo
 
 ```html
 <h1>VuePress Theme Hope</h1>
@@ -67,7 +67,7 @@ span {
 :::: details Code
 
 ````md
-::: demo Demo
+::: normal-demo Demo
 
 ```html
 <h1>VuePress Theme Hope</h1>

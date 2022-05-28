@@ -25,9 +25,9 @@ Service Worker [^service-worker] (SW for short) is mainly used to cache and prox
 
     1. Whenever you want to initiate an access request through the browser, the Service Worker will check whether it exists in its own cache list, if it exists, it will directly return the cached result, otherwise it will call its own fetch method to get it. You can use a custom fetch method to fully control the result of the request for resources in the web page, such as providing a fallback web page when offline.
 
-    1. Every time the user reopens the site, the Service Worker will request to the link when it was registered. If a new version of Service Woker is detected, it will update itself and start caching the list of resources registered in the new Service Worker . After the content update is successfully obtained, the Service Worker will trigger the `update` event. The user can be notified through this event, for example, a pop-up window will be displayed in the lower right corner, prompting the user that new content is available and allowing the user to trigger an update.
+    1. Every time the user reopens the site, the Service Worker will request to the link when it was registered. If a new version of Service Worker is detected, it will update itself and start caching the list of resources registered in the new Service Worker . After the content update is successfully obtained, the Service Worker will trigger the `update` event. The user can be notified through this event, for example, a pop-up window will be displayed in the lower right corner, prompting the user that new content is available and allowing the user to trigger an update.
 
-This plugin will automatically register Service Woker through `workbox-build`. To better control what the Service Worker can pre-cache, the plugin provides the following configurations.
+This plugin will automatically register Service Worker through `workbox-build`. To better control what the Service Worker can pre-cache, the plugin provides the following configurations.
 
 ::: tip
 
@@ -49,7 +49,7 @@ Based on the requirement of installable [^installable], the plugin provides rela
 
     ::: note
 
-    Starting from Chrome 93, Service Woker must contain effective fetch events to control offline requests.
+    Starting from Chrome 93, Service Worker must contain effective fetch events to control offline requests.
 
     However, currently the plugin does not contain relevant processing logic by default, so on Android devices with Chrome 93 or later, the site will not pop up an installation prompt.
 
@@ -131,7 +131,7 @@ If you are not satisfied with the default popup, you can write your own componen
 
 ## Manifest Generation
 
-To ensure the installability of PWA, the site needs to generate a manifest file and declare a valid manifest file address [^manifest] through `link`.
+To ensure the installability of PWA, the site needs to generate a manifest file and declare a valid manifest file address [^manifest] through `<link>`.
 
 [^manifest]: **Manifest File**
 
@@ -160,7 +160,7 @@ If the following fields are not set, they will try to fallback to the following 
 | name                        | `siteConfig.title` \|\| `siteConfig.locales['/'].title` \|\| `"Site"`                                   |
 | short_name                  | `siteConfig.title` \|\| `siteConfig.locales['/'].title` \|\| `"Site"`                                   |
 | description                 | `siteConfig.description` \|\| `siteConfig.locales['/'].description` \|\| `"A site built with vuepress"` |
-| lang                        | `siteConfig.locales['/'].lang` \|\| `themeConfig.locales['/'].lang` \|\| `"en-US"`                      |
+| lang                        | `siteConfig.locales['/'].lang` \|\| `"en-US"`                                                           |
 | start_url                   | `siteConfig.base`                                                                                       |
 | scope                       | `siteConfig.base`                                                                                       |
 | display                     | `"standalone"`                                                                                          |
@@ -177,7 +177,7 @@ You can manually specify the contents of the manifest in the `manifest` option.
 
 ::: tip Priority
 
-`manifest` option has the highest priority, followed by manifest files that may exist in the `public` folder.
+`manifest` option has the highest priority, followed by manifest files that may exist in the `public` directory.
 
 :::
 
@@ -191,7 +191,7 @@ So if you do not configure `manifest.icons`, visitors can only enjoy the offline
 
 Besides the plugin does not process anything in the manifest by default, but outputs them as-is. This means that if you plan to deploy to a subdirectory, you should append the URL prefix to manifest Urls yourself.
 
-But, if everything you need is all under base folder, you can set `appendBase: true` in plugin options to let the plugin append `base` to any Urls in
+If everything you need is all under `base` directory, you can set `appendBase: true` in plugin options to let the plugin append `base` to any links in manifest.
 
 :::
 

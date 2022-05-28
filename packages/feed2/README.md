@@ -1,6 +1,6 @@
 <!-- markdownlint-disable -->
 <p align="center">
-  <img width="240" src="https://vuepress-theme-hope.github.io/v2/logo.svg" style="text-align: center;"/>
+  <img width="240" src="https://vuepress-theme-hope.github.io/v2/logo.svg" style="text-align: center;">
 </p>
 <h1 align="center">vuepress-plugin-feed2</h1>
 <h4 align="center">VuePress2 feed plugin 📡 / VuePress2 Feed 插件 📡</h4>
@@ -16,33 +16,23 @@ VuePress2 feed plugin 📡 / VuePress2 Feed 插件 📡
 ## Install
 
 ```bash
+# pnpm
+pnpm add -D vuepress-plugin-feed2@next
+# npm
 npm i -D vuepress-plugin-feed2@next
-```
-
-or
-
-```bash
+# yarn
 yarn add -D vuepress-plugin-feed2@next
 ```
-
-## Migrating from V1
-
-Renamed from `@mr-hope/vuepress-feed` to `vuepress-plugin-feed2`. ⚠
-
-- [x] Muti categories support ![new](https://img.shields.io/badge/-new-brightgreen)
-
-- [x] Better log output ![improve](https://img.shields.io/badge/-improved-blue)
 
 ---
 
 ## 安装
 
 ```bash
+# pnpm
+pnpm add -D vuepress-plugin-feed2@next
+# npm
 npm i -D vuepress-plugin-feed2@next
-```
-
-或
-
-```bash
+# yarn
 yarn add -D vuepress-plugin-feed2@next
 ```

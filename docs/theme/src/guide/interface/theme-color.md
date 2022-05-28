@@ -1,6 +1,7 @@
 ---
 title: Theme Color
 icon: palette
+index: 2
 category:
   - Interface
 tag:
@@ -22,59 +23,56 @@ This is an out-of-the-box feature that offers five theme color "red, blue, green
 
 ## Disable
 
-You can disable it by setting the theme field’s `themeConfig.themeColor` to `false`.
+You can disable it by setting `themeColor: false` in theme options.
 
 ## Customize ThemeColor
 
-You need to configure `themeConfig.themeColor` in the format `{ colorname1: colorvalue, colorname2: colorvalue, ... }`:
+You need to set `themeColor` with `{ colorname1: colorvalue, colorname2: colorvalue, ... }` format:
 
-::::: details Example
+:::: details Example
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
-```ts {6-11}
+```ts {7-12}
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     themeColor: {
       blue: "#2196f3",
       red: "#f26d6d",
       green: "#3eaf7c",
       orange: "#fb9b5f",
     },
-  },
+  }),
 });
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js {6-11}
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     themeColor: {
       blue: "#2196f3",
       red: "#f26d6d",
       green: "#3eaf7c",
       orange: "#fb9b5f",
     },
-  },
-});
+  }),
+};
 ```
 
 :::
 
 ::::
-
-:::::
 
 <script setup lang="ts">
 import { computed } from 'vue';

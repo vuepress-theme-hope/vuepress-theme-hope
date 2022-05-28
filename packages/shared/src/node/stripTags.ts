@@ -76,19 +76,19 @@ export class InTagNameState implements State {
       return "";
     }
 
-    if (character == TAG_START) {
+    if (character === TAG_START) {
       this.nameBuffer += ENCODED_TAG_START;
 
       return "";
     }
 
-    if (character == TAG_END) {
+    if (character === TAG_END) {
       transition(new InPlaintextState());
 
       return "";
     }
 
-    if (character == "-" && this.nameBuffer == "!-") {
+    if (character === "-" && this.nameBuffer === "!-") {
       transition(new InCommentState());
 
       return "";
@@ -111,13 +111,13 @@ export class InTagState<T extends TagMode> implements State {
     character: string,
     transition: InTagStateTransitionFunction<T>
   ): string {
-    if (character == TAG_END) transition(new InPlaintextState());
+    if (character === TAG_END) transition(new InPlaintextState());
     else if (isQuote(character))
       transition(new InQuotedStringInTagState(this.mode, character));
 
-    if (this.mode == TagMode.disallowed) return "";
+    if (this.mode === TagMode.disallowed) return "";
 
-    if (character == TAG_START) return ENCODED_TAG_START;
+    if (character === TAG_START) return ENCODED_TAG_START;
 
     return character;
   }
@@ -137,12 +137,13 @@ export class InQuotedStringInTagState<T extends TagMode> implements State {
     character: string,
     transition: InQuotedStringInTagStateTransitionFunction<T>
   ): string {
-    if (character == this.quoteCharacter) transition(new InTagState(this.mode));
+    if (character === this.quoteCharacter)
+      transition(new InTagState(this.mode));
 
-    if (this.mode == TagMode.disallowed) return "";
+    if (this.mode === TagMode.disallowed) return "";
 
-    if (character == TAG_START) return ENCODED_TAG_START;
-    if (character == TAG_END) return ENCODED_TAG_END;
+    if (character === TAG_START) return ENCODED_TAG_START;
+    if (character === TAG_END) return ENCODED_TAG_END;
 
     return character;
   }
@@ -157,9 +158,9 @@ export class InCommentState implements State {
     character: string,
     transition: InCommentStateTransitionFunction
   ): string {
-    if (character == ">" && this.consecutiveHyphens >= 2)
+    if (character === ">" && this.consecutiveHyphens >= 2)
       transition(new InPlaintextState());
-    else if (character == "-") this.consecutiveHyphens++;
+    else if (character === "-") this.consecutiveHyphens++;
     else this.consecutiveHyphens = 0;
 
     return "";

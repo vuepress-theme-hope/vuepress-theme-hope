@@ -16,16 +16,22 @@ tag:
 
 你需要在自己的 VuePress 配置文件通过 `alias` 替换主题中使用的组件别名。
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
 import { path } from "@vuepress/utils";
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
+export default defineUserConfig({
+  theme: hopeTheme({
+    // 主题选项
+    // ...
+  }),
+
   alias: {
     // 你可以在这里将别名定向到自己的组件
     // 比如这里我们将主题的主页组件改为用户 .vuepress/components 下的 HomePage.vue
@@ -37,16 +43,19 @@ export default defineHopeConfig({
 });
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // .vuepress/config.js
 const { path } = require("@vuepress/utils");
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
+module.exports = {
+  theme: hopeTheme({
+    // 主题选项
+    // ...
+  }),
+
   alias: {
     // 你可以在这里将别名定向到自己的组件
     // 比如这里我们将主题的主页组件改为用户 .vuepress/components 下的 HomePage.vue
@@ -55,12 +64,10 @@ module.exports = defineHopeConfig({
       "./components/HomePage.vue"
     ),
   },
-});
+};
 ```
 
 :::
-
-::::
 
 可以支持的别名如下。
 
@@ -69,14 +76,15 @@ module.exports = defineHopeConfig({
 组件:
 
 - `@theme-hope/components/AutoLink`: 基础链接
+- `@theme-hope/components/BreadCrumb`: 路径导航
 - `@theme-hope/components/CommonWrapper`: 基本布局整合
 - `@theme-hope/components/HomeFeatures`: 主页特性
 - `@theme-hope/components/HomeHero`: 主页 Logo 及介绍
 - `@theme-hope/components/HomePage`: 主页
+- `@theme-hope/components/Icon`: 图标
 - `@theme-hope/components/MarkdownContent`: Markdown 内容
 - `@theme-hope/components/NormalPage`: 常规页面
 - `@theme-hope/components/PageFooter`: 页脚
-- `@theme-hope/components/PageMeta`: 页面元信息
 - `@theme-hope/components/PageNav`: 页面导航
 - `@theme-hope/components/PageTitle`: 页面标题
 - `@theme-hope/components/SkipLink`: 跳转到主内容
@@ -130,6 +138,30 @@ module.exports = defineHopeConfig({
 
 :::
 
+::: details 信息组件别名
+
+Components:
+
+- `@theme-hope/module/info/components/AuthorInfo`: 作者信息
+- `@theme-hope/module/info/components/CategoryInfo`: 分类信息
+- `@theme-hope/module/info/components/DateInfo`: 写作日期信息
+- `@theme-hope/module/info/components/OriginalMark`: 原创标识
+- `@theme-hope/module/info/components/PageInfo`: 页面信息
+- `@theme-hope/module/info/components/PageMeta`: 页面元数据 information
+- `@theme-hope/module/info/components/PageViewInfo`: 浏览量信息 information
+- `@theme-hope/module/info/components/ReadingTimeInfo`: 阅读时间信息 time information
+- `@theme-hope/module/info/components/TagInfo`: 标签信息
+- `@theme-hope/module/info/components/TOC`: 内容列表
+- `@theme-hope/module/info/components/WordInfo`: 字数信息
+
+杂项:
+
+- `@theme-hope/module/blog/components/icons`: 信息图标
+- `@theme-hope/module/blog/composables`: 信息可组合 API
+- `@theme-hope/module/blog/utils`: 信息通用函数
+
+:::
+
 ::: details 博客组件别名
 
 组件:
@@ -144,6 +176,7 @@ module.exports = defineHopeConfig({
 - `@theme-hope/module/blog/components/CategoryList`: 分类列表
 - `@theme-hope/module/blog/components/InfoList`: 博客信息列表
 - `@theme-hope/module/blog/components/InfoPanel`: 博客信息面板
+- `@theme-hope/module/blog/components/Pagination`: 分页组件
 - `@theme-hope/module/blog/components/ProjectPanel`: 博客主页项目面板
 - `@theme-hope/module/blog/components/SocialMedia`: 社交媒体链接
 - `@theme-hope/module/blog/components/TagList`: 标签列表
@@ -161,6 +194,8 @@ module.exports = defineHopeConfig({
 
 组件:
 
+- `@theme-hope/module/encrypt/components/GlobalEncrypt`: 全局加密
+- `@theme-hope/module/encrypt/components/LocalEncrypt`: 本地加密
 - `@theme-hope/module/encrypt/components/PasswordModal`: 密码输入框
 
 杂项:
@@ -178,7 +213,7 @@ module.exports = defineHopeConfig({
 - `@theme-hope/module/outlook/components/OutlookSettings`: 外观设置
 - `@theme-hope/module/outlook/components/ThemeColor`: 主题色
 - `@theme-hope/module/outlook/components/ThemeColorPicker`: 主题色选择器
-- `@theme-hope/module/outlook/components/ToggleFullScreen`: 全屏切换
+- `@theme-hope/module/outlook/components/ToggleFullScreenButton`: 全屏切换按钮
 
 杂项:
 
@@ -193,16 +228,22 @@ module.exports = defineHopeConfig({
 
 比如你的网站社交属性很强，你希望在主页也显示评论框的话，你可以这样引入:
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item config.ts
+@tab config.ts
 
 ```ts
 // .vuepress/config.ts
 import { path } from "@vuepress/utils";
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
+export default defineUserConfig({
+  theme: hopeTheme({
+    // 主题选项
+    // ...
+  }),
+
   alias: {
     // 你可以在这里将别名定向到自己的组件
     // 比如这里我们将主题的主页组件改为用户 .vuepress/components 下的 HomePage.vue
@@ -214,9 +255,7 @@ export default defineHopeConfig({
 });
 ```
 
-:::
-
-::: code-group-item HomePage.vue
+@tab HomePage.vue
 
 ```vue
 <template>
@@ -234,8 +273,6 @@ import HopeHomePage from "vuepress-theme-hope/lib/client/components/HomePage";
 
 :::
 
-::::
-
 提供插槽的组件如下:
 
 **主题**:
@@ -244,7 +281,7 @@ import HopeHomePage from "vuepress-theme-hope/lib/client/components/HomePage";
 - `CommonWrapper`: `default`, `navbarLeft`, `navbarCenter`, `navbarRight`, `navScreenTop`, `navScreenBottom`, `sidebar`, `sidebarTop`, `sidebarBottom`
 - `HomeHero`: `heroImage`, `heroInfo`
 - `HomePage`: `top`, `center`, `bottom`
-- `NormalPage`: `top`, `contentBefore`, `contentAfter`, `botom`
+- `NormalPage`: `top`, `contentBefore`, `contentAfter`, `bottom`
 
 **导航栏**:
 

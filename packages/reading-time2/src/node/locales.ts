@@ -16,7 +16,7 @@ export const readingTimeLocales: ReadingTimeLocaleConfig = {
     time: "大约 $time 分钟",
   },
 
-  "/tw/": {
+  "/zh-tw/": {
     word: "約 $word 字",
     less1Minute: "小於 1 分鐘",
     time: "大约 $time 分鐘",
@@ -41,14 +41,38 @@ export const readingTimeLocales: ReadingTimeLocaleConfig = {
   },
 
   "/ru/": {
-    word: "Про $word слова",
+    word: "Около $word слов",
     less1Minute: "Меньше 1 минуты",
-    time: "Приблизительно $time минут",
+    time: "Около $time мин",
   },
 
   "/br/": {
     word: "Por volta de $word palavras",
     less1Minute: "Menos de 1 minuto",
     time: "Por volta de $time min",
+  },
+
+  "/pl/": {
+    word: "Około $word słów",
+    less1Minute: "Mniej niż 1 minuta",
+    time: "Około $time minut",
+  },
+
+  "/sk/": {
+    word: "Okolo $word slov",
+    less1Minute: "Menej ako 1 minúta",
+    time: "Okolo $time minút",
+  },
+
+  "/fr/": {
+    word: "Environ $word mots",
+    less1Minute: "Moins de 1 minute",
+    time: "Environ $time min",
+  },
+
+  "/es/": {
+    word: "Alrededor de $word palabras",
+    less1Minute: "Menos de 1 minuto",
+    time: "Alrededor de $time min",
   },
 };

@@ -1,91 +1,30 @@
-import execa = require("execa");
-import ora = require("ora");
-import { green, red } from "chalk";
-import { prompt } from "inquirer";
-import { ReleaseType, inc } from "semver";
-import { version as currentVersion } from "../../lerna.json";
-import { getNpmTags, getVersion, versions } from "./version";
-import { sync } from "./sync";
-import type { Answers } from "./version";
+import chalk from "chalk";
+import { execaCommand } from "execa";
+import ora from "ora";
+import inquirer from "inquirer";
+import pkg from "../../package.json";
+import { sync } from "./sync.js";
+
+const { version: currentVersion } = pkg;
+const { prompt } = inquirer;
+
+const tags = ["next", "test", "alpha", "beta", "latest"];
 
 export const release = async (): Promise<void> => {
-  const buildSpinner = ora("Building project").start();
+  ora(`Current version: ${chalk.green(currentVersion)}`).info();
 
-  await execa("yarn", ["run", "clean"]);
-  await execa("yarn", ["run", "build"]);
-
-  buildSpinner.succeed();
-
-  ora(`Current version: ${green(currentVersion)}`).info();
-
-  const bumps: ReleaseType[] = [
-    "prerelease",
-    "patch",
-    "minor",
-    "major",
-    "premajor",
-  ];
-
-  bumps.forEach((bump) => {
-    versions[bump] = inc(currentVersion, bump) as string;
-  });
-
-  const bumpChoices = bumps.map((bump) => ({
-    name: `${bump} (${versions[bump]})`,
-    value: bump,
-  }));
-
-  const { bump, customVersion, npmTag } = await prompt<Answers>([
-    {
-      name: "bump",
-      message: "Select release type:",
-      type: "list",
-      choices: [...bumpChoices, { name: "custom", value: "custom" }],
-    },
-    {
-      name: "customVersion",
-      message: "Input version:",
-      type: "input",
-      when: (answers): boolean => answers.bump === "custom",
-    },
+  const { npmTag } = await prompt<{ npmTag: string }>([
     {
       name: "npmTag",
       message: "Input npm tag:",
       type: "list",
-      default: (answers: Answers): string => getNpmTags(getVersion(answers))[0],
-      choices: (answers: Answers): string[] => getNpmTags(getVersion(answers)),
+      default: tags[0],
+      choices: tags,
     },
   ]);
 
-  const version = customVersion || versions[bump];
-
-  const { confirm } = await prompt<{ confirm: "Y" | "N" }>([
-    {
-      name: "confirm",
-      message: `Confirm releasing ${version} (${npmTag})?`,
-      type: "list",
-      choices: ["N", "Y"],
-    },
-  ]);
-
-  if (confirm === "N") {
-    ora(red("Release canceled.")).fail();
-
-    return;
-  }
-
-  const releaseArguments = [
-    "publish",
-    version,
-    "--dist-tag",
-    npmTag,
-    "--registry",
-    "https://registry.npmjs.org/",
-  ];
-
-  await execa(require.resolve("lerna/cli"), releaseArguments, {
-    stdio: "inherit",
-  });
+  // release
+  await execaCommand(`pnpm -r publish --tag ${npmTag}`, { stdio: "inherit" });
 
   const npmmirrorSpinner = ora("Syncing npmmirror.com").start();
 

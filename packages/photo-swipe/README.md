@@ -1,6 +1,6 @@
 <!-- markdownlint-disable -->
 <p align="center">
-  <img width="240" src="https://vuepress-theme-hope.github.io/v2/logo.svg" style="text-align: center;"/>
+  <img width="240" src="https://vuepress-theme-hope.github.io/v2/logo.svg" style="text-align: center;">
 </p>
 <h1 align="center">vuepress-plugin-photo-swipe</h1>
 <h4 align="center">VuePress photo preview plugin🖼️ / VuePress图片预览插件🖼️</h4>
@@ -14,13 +14,12 @@
 ## Install
 
 ```bash
-npm i -D vuepress-plugin-photo-swipe
-```
-
-Or
-
-```bash
-yarn add -D vuepress-plugin-photo-swipe
+# pnpm
+pnpm add -D vuepress-plugin-photo-swipe@next
+# npm
+npm i -D vuepress-plugin-photo-swipe@next
+# yarn
+yarn add -D vuepress-plugin-photo-swipe@next
 ```
 
 ## Migrating from V1
@@ -34,13 +33,12 @@ yarn add -D vuepress-plugin-photo-swipe
 ## 安装
 
 ```bash
-npm i -D vuepress-plugin-photo-swipe
-```
-
-或
-
-```bash
-yarn add -D vuepress-plugin-photo-swipe
+# pnpm
+pnpm add -D vuepress-plugin-photo-swipe@next
+# npm
+npm i -D vuepress-plugin-photo-swipe@next
+# yarn
+yarn add -D vuepress-plugin-photo-swipe@next
 ```
 
 ## 从 V1 迁移

@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "vue.volar",
+    "mrmlnc.vscode-scss",
+    "redhat.vscode-yaml",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "davidanson.vscode-markdownlint",
+    "stylelint.vscode-stylelint",
+    "bierner.markdown-yaml-preamble"
+  ]
+}

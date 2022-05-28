@@ -10,7 +10,7 @@ export interface CopyrightOptions {
   hostname?: string;
 
   /**
-   * Author Infomation
+   * Author Information
    *
    * 作者信息
    */
@@ -34,7 +34,7 @@ export interface CopyrightOptions {
       ) => string);
 
   /**
-   * License Infomation
+   * License Information
    *
    * 协议信息
    */

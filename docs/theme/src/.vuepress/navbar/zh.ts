@@ -1,6 +1,6 @@
-import { defineNavbarConfig } from "vuepress-theme-hope";
+import { navbar } from "vuepress-theme-hope";
 
-export const zhNavbarConfig = defineNavbarConfig([
+export const zhNavbarConfig = navbar([
   "/zh/guide/",
   "/zh/config/",
   "/zh/faq/",
@@ -23,11 +23,6 @@ export const zhNavbarConfig = defineNavbarConfig([
         text: "插件",
         icon: "plugin",
         children: [
-          {
-            text: "AddThis 插件",
-            icon: "share",
-            link: "https://vuepress-theme-hope.github.io/v2/add-this/zh/",
-          },
           {
             text: "博客插件",
             icon: "blog",
@@ -84,6 +79,11 @@ export const zhNavbarConfig = defineNavbarConfig([
             link: "https://vuepress-theme-hope.github.io/v2/reading-time/zh/",
           },
           {
+            text: "重定向插件",
+            icon: "navigation",
+            link: "https://vuepress-theme-hope.github.io/v2/redirect/zh/",
+          },
+          {
             text: "Sass 调色板插件",
             icon: "palette",
             link: "https://vuepress-theme-hope.github.io/v2/sass-palette/zh/",
@@ -92,6 +92,11 @@ export const zhNavbarConfig = defineNavbarConfig([
             text: "Seo 插件",
             icon: "strong",
             link: "https://vuepress-theme-hope.github.io/v2/seo/zh/",
+          },
+          {
+            text: "Sitemap 插件",
+            icon: "sitemap",
+            link: "https://vuepress-theme-hope.github.io/v2/sitemap/zh/",
           },
         ],
       },

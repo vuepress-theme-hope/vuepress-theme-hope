@@ -30,7 +30,6 @@ A basic project structure is as follows:
 ├── .github (optional) → GitHub config file storage path
 │     └── workflow → GitHub workflow configuration
 │          └── docs-deploy.yml → Workflow for automatic deployment of documents
-│
 |
 ├── docs → project folder specified by you
 │    │
@@ -44,7 +43,7 @@ A basic project structure is as follows:
 │    │    │
 │    │    ├── config.{js,ts} (optional) → the entry file of the configuration file
 │    │    │
-│    │    └── clientAppEnhance.{js,ts} (optional) → client application enhancement file
+│    │    └── client.{js,ts} (optional) → client application file
 │    │
 │    ├── ... → Other project documentation
 │    │

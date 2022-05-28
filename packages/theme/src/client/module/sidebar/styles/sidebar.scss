@@ -47,14 +47,14 @@
   .blogger-info.mobile {
     display: none;
 
-    @media (max-width: hope-config.$mobile) {
+    @media (max-width: hope-config.$tablet) {
       display: block;
     }
 
     + hr {
       display: none;
 
-      @media (max-width: hope-config.$mobile) {
+      @media (max-width: hope-config.$tablet) {
         display: block;
         margin-top: 16px;
       }

@@ -12,7 +12,7 @@ tag:
 
 ::: info
 
-`vuepress-theme-hope` 将 `themeConfig.plugins` 中的 `comment` 选项作为插件选项提供给 `vuepress-plugin-comment2`。
+`vuepress-theme-hope` 将主题选项中的 `plugins.comment` 作为插件选项提供给 `vuepress-plugin-comment2`。
 
 :::
 
@@ -20,16 +20,17 @@ tag:
 
 ## 启用 <Badge text="支持页面配置" />
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
-```ts {7,10}
+```ts {8,11}
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     plugins: {
       comment: {
         type: "waline",
@@ -38,20 +39,17 @@ export default defineHopeConfig({
         serverURL: "...", // your serverURL
       },
     },
-  },
+  }),
 });
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js {7,10}
-// .vuepress/themeConfig.js
-const { themeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = themeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     plugins: {
       comment: {
         type: "waline",
@@ -60,15 +58,13 @@ module.exports = themeConfig({
         serverURL: "...", // your serverURL
       },
     },
-  },
-});
+  }),
+};
 ```
 
 :::
 
-::::
-
-评论功能默认全局启用，配置项为 `themeConfig.plugins.comment` 中的 `comment`。
+评论功能默认全局启用，通过主题选项中的 `plugins.comment.comment` 控制。
 
 ::: info
 
@@ -87,20 +83,9 @@ module.exports = themeConfig({
 
 :::
 
-<!-- 有两个服务: Waline 和 Vssue -->
-
-<!-- ::: tip 评论服务的比较
-
-- Waline 需要后端服务器以及额外的配置，支持页面访问量统计，无需登录账号即可评论。可以使用 Vercel。
-- Vssue 使用代码平台仓库的 issue 面板，需要用户登录或注册相应平台账号。
-
-如果你的站点面向大众而非程序员，推荐使用 Waline。
-
-::: -->
-
 ## Giscus
 
-Giscus 是一个基于 GitHub Dicussion 的评论系统，启用简便。
+Giscus 是一个基于 GitHub Discussion 的评论系统，启用简便。
 
 <!-- more -->
 
@@ -109,7 +94,7 @@ Giscus 是一个基于 GitHub Dicussion 的评论系统，启用简便。
 1. 你需要创建一个公开仓库，并开启评论区，以作为评论存放的地点
 1. 你需要安装 [Giscus App](https://github.com/apps/giscus)，使其有权限访问对应仓库。
 
-在完成以上步骤后，请前往 [Giscus 页面](https://giscus.app/zh-CN) 获得你的设置。你只需要填写仓库和 Dicussion 分类，之后滚动到页面下部的 “启用 giscus” 部分，复制 `data-repo`, `data-repo-id`, `data-category` 和 `data-category-id` 四项，因为它们是必须的。
+在完成以上步骤后，请前往 [Giscus 页面](https://giscus.app/zh-CN) 获得你的设置。你只需要填写仓库和 Discussion 分类，之后滚动到页面下部的 “启用 giscus” 部分，复制 `data-repo`, `data-repo-id`, `data-category` 和 `data-category-id` 四项，因为它们是必须的。
 
 ### 配置
 
@@ -137,49 +122,46 @@ Giscus 是一个基于 GitHub Dicussion 的评论系统，启用简便。
 
 设置好环境变量后，点击 `Deploy` 部署，一两分钟即可部署完成。之后在主题设置中设置 vercel 地址:
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     plugins: {
       comment: {
         type: "waline",
         serverURL: "YOUR_SERVER_URL", // your server url
       },
     },
-  },
+  }),
 });
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     plugins: {
       comment: {
         type: "waline",
         serverURL: "YOUR_SERVER_URL", // your server url
       },
     },
-  },
-});
+  }),
+};
 ```
 
 :::
-
-::::
 
 Waline 评论的其他配置将在 [Waline 配置][comment2-waline-config] 中列出。
 

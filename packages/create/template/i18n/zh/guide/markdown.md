@@ -5,7 +5,7 @@ title: Markdown 增强
 category:
   - 使用指南
 tag:
-  - markdown
+  - Markdown
 ---
 
 VuePress 的每个文档页面都是由 Markdown 渲染而成。所以你需要通过在相应路径创建编写 Markdown 建立你的文档或博客页面。
@@ -32,17 +32,19 @@ Frontmatter 是 VuePress 中很重要的一个概念，如果你不了解它，�
 
 ### 一键启用
 
-你可以设置 `themeconfig.plugins.htmlEnhance.enableAll` 启用 [md-enhance](https://vuepress-theme-hope.github.io/v2/md-enhance) 插件的所有功能。
+你可以设置在主题选项中设置 `plugins.mdEnhance.enableAll: true` 启用 [md-enhance](https://vuepress-theme-hope.github.io/v2/md-enhance) 插件的所有功能。
 
-```js {3-5}
+```js
+const { hopeTheme } = require("vuepress-theme-hope");
+
 module.exports = {
-  themeConfig: {
+  theme: hopeTheme({
     plugins: {
       mdEnhance: {
         enableAll: true,
       },
     },
-  },
+  }),
 };
 ```
 
@@ -134,17 +136,21 @@ const a = 1;
 
 ### 代码块
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item yarn
+@tab pnpm
+
+```bash
+pnpm add -D vuepress-theme-hope
+```
+
+@tab yarn
 
 ```bash
 yarn add -D vuepress-theme-hope
 ```
 
-:::
-
-::: code-group-item npm:active
+@tab:active npm
 
 ```bash
 npm i -D vuepress-theme-hope
@@ -152,9 +158,7 @@ npm i -D vuepress-theme-hope
 
 :::
 
-::::
-
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/code-group.html)
+- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/code-tabs.html)
 
 ### 自定义对齐
 
@@ -280,7 +284,7 @@ $$
 
 ### 代码演示
 
-::: demo 一个普通 Demo
+::: normal-demo 一个普通 Demo
 
 ```html
 <h1>VuePress Theme Hope</h1>

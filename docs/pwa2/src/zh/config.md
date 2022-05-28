@@ -24,7 +24,7 @@ icon: config
 - name: `siteConfig.title` || `siteConfig.locales['/'].title` || `"Site"`
 - short_name: `siteConfig.title` || `siteConfig.locales['/'].title` || `"Site"`
 - description: `siteConfig.description` || `siteConfig.locales['/'].description` || `"A site built with vuepress"`
-- lang: `siteConfig.locales['/'].lang` || `themeConfig.locales['/'].lang` || `"en-US"`
+- lang: `siteConfig.locales['/'].lang` || `"en-US"`
 - start_url: `context.base`
 - scope: `context.base`
 

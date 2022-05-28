@@ -3,7 +3,16 @@ import { rollupTypescript } from "../../scripts/rollup";
 export default [
   ...rollupTypescript("node/index", {
     resolve: true,
-    external: ["@vuepress/plugin-git", "chalk", "http", "ora", "vite"],
+    external: [
+      "@vuepress/plugin-git",
+      "@vuepress/utils",
+      "@vuepress/shared",
+      "chalk",
+      "execa",
+      "http",
+      "ora",
+      "vite",
+    ],
     dtsExternal: ["http"],
   }),
   ...rollupTypescript("client/index", {

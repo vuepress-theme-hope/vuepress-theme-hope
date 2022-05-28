@@ -1,6 +1,6 @@
-import type { Author, BasePageFrontMatter } from "@mr-hope/vuepress-shared";
 import type { App, HeadConfig, Page, PageFrontmatter } from "@vuepress/core";
 import type { GitData } from "@vuepress/plugin-git";
+import type { Author, BasePageFrontMatter } from "vuepress-shared";
 import type { ArticleJSONLD } from "./json-ld";
 import type { SeoContent } from "./ogp";
 
@@ -111,8 +111,19 @@ export interface SeoOptions {
       never
     >
   >(
+    /**
+     * OGP Object inferred by plugin
+     *
+     * 由插件推断出的 OGP 对象
+     */
     ogp: SeoContent,
+    /**
+     * Page Object
+     *
+     * 页面对象
+     */
     page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+    /** VuePress App */
     app: App
   ) => SeoContent;
 
@@ -135,8 +146,19 @@ export interface SeoOptions {
       never
     >
   >(
+    /**
+     * JSON-LD Object inferred by plugin
+     *
+     * 由插件推断出的 JSON-LD 对象
+     */
     jsonLD: ArticleJSONLD | null,
+    /**
+     * Page Object
+     *
+     * 页面对象
+     */
     page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+    /** VuePress App */
     app: App
   ) => ArticleJSONLD | null;
 
@@ -159,8 +181,19 @@ export interface SeoOptions {
       never
     >
   >(
+    /**
+     * Head tag config
+     *
+     * head 标签配置
+     */
     head: HeadConfig[],
+    /**
+     * Page Object
+     *
+     * 页面对象
+     */
     page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
+    /** VuePress App */
     app: App
   ) => void;
 

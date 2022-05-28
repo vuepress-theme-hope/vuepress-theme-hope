@@ -1,6 +1,7 @@
 ---
 title: 信息 Frontmatter 配置
 icon: config
+index: 1
 category:
   - 配置
 tag:
@@ -16,6 +17,13 @@ tag:
 - 必填: 否
 
 当前页面内容标题，默认为 Markdown 文件中的第一个 h1 标签内容。
+
+## shortTitle
+
+- Type: `string`
+- Required: No
+
+当前页面的短标题，会在导航栏、侧边栏和路径导航中作为首选。
 
 ## description
 
@@ -46,7 +54,7 @@ type Author = string | string[] | AuthorInfo | AuthorInfo[];
 
 ::: tip
 
-在主题配置中指定默认作者时，可以设置 `false` 以防止显示默认作者。
+在主题选项中指定默认作者时，可以设置 `false` 以防止显示默认作者。
 
 :::
 

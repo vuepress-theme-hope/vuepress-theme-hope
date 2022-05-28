@@ -1,6 +1,9 @@
 ---
 title: 布局
 icon: layout
+index: false
+dir:
+  index: 4
 ---
 
 ## 目录
@@ -9,11 +12,11 @@ icon: layout
 
 - [侧边栏](sidebar.md)
 
+- [路径导航](breadcrumb.md)
+
+- [页脚](footer.md)
+
 - [页面](page.md)
-
-  - [路径导航](breadcrumb.md)
-
-  - [页脚](footer.md)
 
 - [主页](home.md)
 

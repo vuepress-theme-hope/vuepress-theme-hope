@@ -57,6 +57,8 @@ export default defineComponent({
           ref: navbar,
         },
         [
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-ignore
           h(ToggleSidebarButton, {
             onToggle: () => {
               if (showScreen.value) showScreen.value = false;

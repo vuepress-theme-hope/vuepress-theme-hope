@@ -1,19 +1,25 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { createBaseApp } from "@vuepress/core";
 import { path } from "@vuepress/utils";
+import { describe, it, expect } from "vitest";
+
+import { getStatus } from "../../src/node/status";
 import { getThemeConfig } from "../../src/node/themeConfig";
+import { emptyTheme } from "./__fixtures__/theme/empty";
+
 import type { HopeThemeOptions } from "../../src/shared";
 
 const app = createBaseApp({
+  bundler: {} as any,
   source: path.resolve(__dirname, "./__fixtures__/src"),
-  theme: path.resolve(__dirname, "./__fixtures__/theme/empty.js"),
+  theme: emptyTheme,
 });
 
 describe("should generate themeConfig correcly", () => {
   it("Should contain basic properties", () => {
     const themeConfig = {};
 
-    expect(getThemeConfig(app, themeConfig)).toMatchSnapshot();
+    expect(getThemeConfig(app, themeConfig, getStatus({}))).toMatchSnapshot();
   });
 
   it("Should handle single language", () => {
@@ -22,7 +28,7 @@ describe("should generate themeConfig correcly", () => {
       sidebar: ["/", "/about"],
     };
 
-    expect(getThemeConfig(app, themeConfig)).toMatchSnapshot();
+    expect(getThemeConfig(app, themeConfig, getStatus({}))).toMatchSnapshot();
   });
 
   it("locale should have higher property", () => {
@@ -39,7 +45,7 @@ describe("should generate themeConfig correcly", () => {
       },
     };
 
-    expect(getThemeConfig(app, themeConfig)).toMatchSnapshot();
+    expect(getThemeConfig(app, themeConfig, getStatus({}))).toMatchSnapshot();
   });
 
   it("should fallback to root if locale config is missing", () => {
@@ -54,7 +60,7 @@ describe("should generate themeConfig correcly", () => {
       },
     };
 
-    expect(getThemeConfig(app, themeConfig)).toMatchSnapshot();
+    expect(getThemeConfig(app, themeConfig, getStatus({}))).toMatchSnapshot();
   });
 
   it("root only option should not appear in locales", () => {
@@ -64,6 +70,6 @@ describe("should generate themeConfig correcly", () => {
       encrypt: {},
     };
 
-    expect(getThemeConfig(app, themeConfig)).toMatchSnapshot();
+    expect(getThemeConfig(app, themeConfig, getStatus({}))).toMatchSnapshot();
   });
 });

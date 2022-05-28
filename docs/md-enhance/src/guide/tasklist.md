@@ -9,9 +9,9 @@ Let the Markdown file in your VuePress site support task list.
 
 ## Config
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts {8}
 // .vuepress/config.ts
@@ -27,9 +27,7 @@ export default {
 };
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js {8}
 // .vuepress/config.js
@@ -46,8 +44,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ## Syntax
 
@@ -71,16 +67,17 @@ Besides setting `tasklist: true` in the plugin options, you can also pass object
 ```ts
 interface TaskListOptions {
   /**
+   * Whether disable checkbox
+   *
+   * @default true
+   */
+  disabled?: boolean;
+
+  /**
    * Whether use `<label>` to wrap text
    *
    * @default true
    */
   label?: boolean;
-  /**
-   * Whether place `<label>` after `<input>` or wrap `<input>`
-   *
-   * @default true
-   */
-  labelAfter?: boolean;
 }
 ```

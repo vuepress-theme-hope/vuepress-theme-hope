@@ -1,4 +1,5 @@
-import { onMounted, onUnmounted, ref } from "vue";
+import { useEventListener } from "@vueuse/core";
+import { onMounted, ref } from "vue";
 import { useThemeData } from "./themeData";
 
 import type { Ref } from "vue";
@@ -14,13 +15,8 @@ export const useMobile = (): Ref<boolean> => {
 
   onMounted(() => {
     mobileHandler();
-    window.addEventListener("orientationchange", mobileHandler, false);
-    window.addEventListener("resize", mobileHandler, false);
-  });
-
-  onUnmounted(() => {
-    window.removeEventListener("orientationchange", mobileHandler, false);
-    window.removeEventListener("resize", mobileHandler, false);
+    useEventListener("resize", mobileHandler, false);
+    useEventListener("orientationchange", mobileHandler, false);
   });
 
   return isMobile;

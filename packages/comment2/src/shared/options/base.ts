@@ -1,4 +1,4 @@
-import type { Author } from "@mr-hope/vuepress-shared";
+import type { Author } from "vuepress-shared";
 
 export interface BaseCommentOptions {
   /**

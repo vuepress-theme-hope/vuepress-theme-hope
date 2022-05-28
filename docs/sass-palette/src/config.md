@@ -8,7 +8,7 @@ icon: config
 - Type: `string`
 - Required: Yes
 
-Identifier for palette, used to avoid duplicate registion.
+Identifier for palette, used to avoid duplicate registration.
 
 ## config
 
@@ -47,7 +47,7 @@ User palette file path, relative to source dir.
 
 ::: tip
 
-This is the file where user control injected CSS varbiale. All the variable will be converted in to kebab-case and injected.
+This is the file where user control injected CSS variables. All the variables will be converted in to kebab-case and injected.
 
 The default filename is starting with ID above.
 

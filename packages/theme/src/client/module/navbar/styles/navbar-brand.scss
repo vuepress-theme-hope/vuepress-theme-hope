@@ -28,7 +28,7 @@
     color: var(--text-color);
     font-size: 1.25rem;
 
-    @media (max-width: hope-config.$mobile) {
+    @media (max-width: hope-config.$tablet) {
       overflow: hidden;
       width: calc(100vw - 9.4rem);
       text-overflow: ellipsis;

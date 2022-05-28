@@ -1,6 +1,6 @@
 <!-- markdownlint-disable -->
 <p align="center">
-  <img width="240" src="https://vuepress-theme-hope.github.io/v2/logo.svg" style="text-align: center;"/>
+  <img width="240" src="https://vuepress-theme-hope.github.io/v2/logo.svg" style="text-align: center;">
 </p>
 <h1 align="center">vuepress-plugin-blog2</h1>
 <h4 align="center">VuePress2 Blog plugin📝 / VuePress2 Blog 插件📝</h4>
@@ -16,13 +16,12 @@ VuePress2 Blog plugin📝 / VuePress2 Blog 插件 📝
 ## Install
 
 ```bash
-yarn add vuepress-plugin-blog2@next
-```
-
-Or
-
-```bash
-npm i vuepress-plugin-blog2@next
+# pnpm
+pnpm add -D vuepress-plugin-blog2@next
+# npm
+npm i -D vuepress-plugin-blog2@next
+# yarn
+yarn add -D vuepress-plugin-blog2@next
 ```
 
 ---
@@ -30,11 +29,10 @@ npm i vuepress-plugin-blog2@next
 ## 安装
 
 ```bash
-yarn add vuepress-plugin-blog2@next
-```
-
-或
-
-```bash
-npm i vuepress-plugin-blog2@next
+# pnpm
+pnpm add -D vuepress-plugin-blog2@next
+# npm
+npm i -D vuepress-plugin-blog2@next
+# yarn
+yarn add -D vuepress-plugin-blog2@next
 ```

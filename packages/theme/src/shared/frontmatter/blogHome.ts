@@ -22,13 +22,9 @@ export interface HopeThemeBlogHomePageFrontmatter
   heroImage?: string;
   heroImageStyle?: Record<string, string>;
   heroAlt?: string;
-  heroText?: string | null;
-  /**
-   * @default true
-   */
-  showTitle?: boolean;
-  bgImage?: string;
+  heroText?: string | false;
+  bgImage?: string | false;
   bgImageStyle?: Record<string, string>;
-  tagline?: string | null;
+  tagline?: string;
   projects: HopeThemeBlogHomeProjectOptions[];
 }

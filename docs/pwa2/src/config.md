@@ -24,7 +24,7 @@ Some options have their fallback if you donot set them.
 - name: `siteConfig.title` || `siteConfig.locales['/'].title` || `"Site"`
 - short_name: `siteConfig.title` || `siteConfig.locales['/'].title` || `"Site"`
 - description: `siteConfig.description` || `siteConfig.locales['/'].description` || `"A site built with vuepress"`
-- lang: `siteConfig.locales['/'].lang` || `themeConfig.locales['/'].lang` || `"en-US"`
+- lang: `siteConfig.locales['/'].lang` || `"en-US"`
 - start_url: `context.base`
 - scope: `context.base`
 
@@ -51,7 +51,7 @@ Path of favico.ico with absolute path.
 
 ::: warning
 
-We recommand you to set favicon for your site
+We recommend you to set favicon for your site
 
 :::
 
@@ -105,7 +105,7 @@ Max picture size which allows to cache, with KB unit
 
 Control logic when new content is found.
 
-- `"disabled"`: Do nothing even when new service worker is avaible. After new service work succeeds installing and starts waiting, it will control page and provide new content in next visit.
+- `"disabled"`: Do nothing even when new service worker is available. After new service work succeeds installing and starts waiting, it will control page and provide new content in next visit.
 
 - `"available"`: Only display update popup when the new service worker is available
 
@@ -123,7 +123,7 @@ Control logic when new content is found.
 
   ::: danger
 
-  Though this ensure users are visiting newest content, but this may affect visiting experiences.
+  Although this ensure users are viewing the latest content, it may affect viewing experiences.
 
   :::
 
@@ -262,7 +262,7 @@ Options passed to `workbox-build`, for details, see [Workbox documentation](http
     hint: string;
 
     /**
-     * Update avaible text
+     * Update available text
      */
     update: string;
   }

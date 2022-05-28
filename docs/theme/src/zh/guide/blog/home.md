@@ -1,6 +1,7 @@
 ---
 title: 博客首页
 icon: home
+index: 6
 category:
   - 博客
 tag:
@@ -15,7 +16,8 @@ tag:
 
 <!-- more -->
 
-![首页截图](./assets/blog.png)
+![首页截图](./assets/blog-light.png#light)
+![首页截图](./assets/blog-dark.png#dark)
 
 ## Frontmatter 选项
 
@@ -28,7 +30,7 @@ tag:
 
 ### bgImage
 
-- 类型: `string`
+- 类型: `string | false`
 
 背景图片的地址，需填写绝对路径。如果不填写，会自动应用一张默认的风景图片。
 

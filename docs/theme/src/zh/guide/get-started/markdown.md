@@ -1,6 +1,7 @@
 ---
 title: Markdown
 icon: markdown
+index: 3
 category:
   - 快速上手
 tag:
@@ -34,17 +35,15 @@ Frontmatter 是 VuePress 中很重要的一个概念，如果你不了解它，�
 
 ### 代码块
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item yarn
+@tab yarn
 
 ```bash
 yarn add -D vuepress-theme-hope
 ```
 
-:::
-
-::: code-group-item npm:active
+@tab:active npm
 
 ```bash
 npm i -D vuepress-theme-hope
@@ -52,9 +51,7 @@ npm i -D vuepress-theme-hope
 
 :::
 
-::::
-
-- [查看详情](../markdown/code-group.md)
+- [查看详情](../markdown/code-tabs.md)
 
 ### 自定义对齐
 
@@ -180,7 +177,7 @@ $$
 
 ### 代码演示
 
-::: demo 一个普通 Demo
+::: normal-demo 一个普通 Demo
 
 ```html
 <h1>VuePress Theme Hope</h1>

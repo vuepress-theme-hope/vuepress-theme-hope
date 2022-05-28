@@ -9,9 +9,9 @@ icon: discover
 
 ## 配置
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts {8}
 // .vuepress/config.ts
@@ -27,9 +27,7 @@ export default {
 };
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js {8}
 // .vuepress/config.js
@@ -47,14 +45,12 @@ module.exports = {
 
 :::
 
-::::
-
 ## 语法
 
 请使用以下语法：
 
 ````md
-::: demo [类型] 可选的标题文字
+::: [类型]-demo 可选的标题文字
 
 ```html
 <!-- ↑ 使用可用的语言 -->
@@ -121,7 +117,7 @@ JSON 块是可选的，可用的配置详见 [配置](../../config.md#demo)。
 
 ### 不支持的语言演示
 
-::: demo 一个使用浏览器不支持解析语言 Demo
+::: normal-demo 一个使用浏览器不支持解析语言 Demo
 
 ```md
 # 标题
@@ -150,7 +146,7 @@ h1 {
 :::: details 代码
 
 ````md
-::: demo 一个使用浏览器不支持解析语言 Demo
+::: normal-demo 一个使用浏览器不支持解析语言 Demo
 
 ```md
 # 标题

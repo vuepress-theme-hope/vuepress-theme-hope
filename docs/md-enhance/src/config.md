@@ -16,7 +16,7 @@ Whether to enable all features.
 
 Please use this option ONLY for playing or testing.
 
-As time grows,`vupress-plugin-md-enhance` is becoming more powerful. It’s adding more syntax to Markdown parser and more code to output.
+As time grows,`vuepress-plugin-md-enhance` is becoming more powerful. It’s adding more syntax to Markdown parser and more code to output.
 
 Enabling features you don’t need will increase dev and build time. (`markdown-it` has to check for extra syntaxs)
 
@@ -59,7 +59,21 @@ Whether to enable custom container including
 
 ::: warning
 
-The last 4 items conflict with default theme and will overide it’s style.
+The last 4 items conflict with default theme and will override it’s style.
+
+:::
+
+## linkCheck
+
+- Type: `"always" | "dev" | "build" | "never" | boolean`
+- Default: `"dev"`
+
+Whether to enable link check.
+
+::: note
+
+- `true` equals to `'always'`
+- `false` equals to `'never'`
 
 :::
 
@@ -70,12 +84,19 @@ The last 4 items conflict with default theme and will overide it’s style.
 
 Whether to enable v-pre wrapper.
 
-## codegroup
+## tabs
 
 - Type: `boolean`
 - Default: `false`
 
-Whether to enable codegroup.
+Whether to enable tabs.
+
+## codetabs
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to enable codetabs.
 
 ## align
 
@@ -145,17 +166,18 @@ Whether to enable tasklist format support. You can pass an object to config task
 ```ts
 interface TaskListOptions {
   /**
+   * Whether disable checkbox
+   *
+   * @default true
+   */
+  disabled?: boolean;
+
+  /**
    * Whether use `<label>` to wrap text
    *
    * @default true
    */
   label?: boolean;
-  /**
-   * Whether place `<label>` after `<input>` or wrap `<input>`
-   *
-   * @default true
-   */
-  labelAfter?: boolean;
 }
 ```
 
@@ -168,9 +190,28 @@ Whether to enable $\TeX$ syntax support. You can pass an object to config $\KaTe
 
 Please see [Katex Docs](https://katex.org/docs/options.html) for available options.
 
-## mdImport
+## include
 
-- type: `(path: string) => string | boolean`
+- Type: `IncludeOptions | boolean`
+
+  ```ts
+  interface IncludeOptions {
+    /**
+     * handle include filePath
+     *
+     * @default (path) => path
+     */
+    getPath?: (path: string) => string;
+
+    /**
+     * Whether deep include files in included markdown files
+     *
+     * @default false
+     */
+    deep?: boolean;
+  }
+  ```
+
 - Default: `false`
 
 Whether to enable Markdown import support. You can pass in a function for path resolution.
@@ -253,7 +294,7 @@ CodePen editor status
 
 ### others
 
-The following are the library links used by the third-party code demo service. Unless your environment cannot visit jsdelivr or the speed is slow, you probably don’t need to override the default values.
+The following are the library links used by the third-party code demo service. Unless your environment cannot visit unpkg or the speed is slow, you probably don’t need to override the default values.
 
 #### demo.babel
 

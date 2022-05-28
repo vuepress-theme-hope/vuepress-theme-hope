@@ -1,6 +1,7 @@
 ---
 title: 主题功能选项
 icon: config
+index: 2
 category:
   - 配置
 tag:
@@ -16,7 +17,7 @@ tag:
 
 主题通过使用 [`vuepress-plugin-blog2`][blog2] 提供博客功能，且该功能默认**禁用**。
 
-要启用博客插件并使用默认选项，你可以将 `themeConfig.plugins.blog` 设置为 `true`。
+要启用博客插件并使用默认选项，你可以在主题选项中设置 `plugins.blog: true`。
 
 ::: warning
 
@@ -29,14 +30,14 @@ tag:
 ### blog.name
 
 - 类型: `string`
-- 默认值: `themeConfig.author`
+- 默认值: `author`
 
 博主姓名。
 
 ### blog.avatar
 
 - 类型: `string`
-- 默认值: `themeConfig.logo`
+- 默认值: `logo`
 
 博主头像。
 
@@ -161,9 +162,11 @@ tag:
 
 ## 加密配置 <Badge text="仅限 Root" type="warning" />
 
+有关详细信息，请参阅 [加密功能介绍](../../guide/feature/encrypt.md)。
+
 ::: note
 
-你只能在 `themeConfig` 下直接设置此选项，在各语言中分别配置**没有任何效果**。
+你只能在主题选项下直接设置此选项，在各语言中分别配置**没有任何效果**。
 
 :::
 

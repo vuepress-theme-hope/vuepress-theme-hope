@@ -1,10 +1,8 @@
-import { computed, defineComponent, h, toRef } from "vue";
+import { computed, defineComponent, h, resolveComponent, toRef } from "vue";
 import { RouterLink, useRoute } from "vue-router";
 import { useSiteData } from "@vuepress/client";
 import { ExternalLinkIcon } from "@vuepress/plugin-external-link-icon/lib/client";
 import { isLinkHttp, isLinkMailto, isLinkTel } from "@vuepress/shared";
-
-import { useIconPrefix } from "@theme-hope/composables";
 
 import type { PropType, VNode } from "vue";
 import type { AutoLink } from "../../shared";
@@ -34,7 +32,6 @@ export default defineComponent({
   setup(props, { attrs, emit, slots }) {
     const route = useRoute();
     const site = useSiteData();
-    const iconPrefix = useIconPrefix();
 
     const config = toRef(props, "config");
 
@@ -50,11 +47,7 @@ export default defineComponent({
     const linkTarget = computed(() =>
       hasNonHttpProtocal.value
         ? undefined
-        : config.value.target
-        ? config.value.target
-        : hasHttpProtocol.value
-        ? "_blank"
-        : undefined
+        : config.value.target || (hasHttpProtocol.value ? "_blank" : undefined)
     );
 
     // if the `target` attr is '_blank'
@@ -72,11 +65,8 @@ export default defineComponent({
     const anchorRel = computed(() =>
       hasNonHttpProtocal.value
         ? undefined
-        : config.value.rel
-        ? config.value.rel
-        : isBlankTarget.value
-        ? "noopener noreferrer"
-        : undefined
+        : config.value.rel ||
+          (isBlankTarget.value ? "noopener noreferrer" : undefined)
     );
 
     // resolve the `aria-label` attr
@@ -91,70 +81,65 @@ export default defineComponent({
 
       const localeKeys = Object.keys(site.value.locales);
 
-      // check all the locales
-      if (localeKeys.length)
-        return !localeKeys.some((key) => key === config.value.link);
-
-      // check root
-      return config.value.link !== "/";
+      return localeKeys.length
+        ? // check all the locales
+          localeKeys.every((key) => key !== config.value.link)
+        : // check root
+          config.value.link !== "/";
     });
 
     // if this link is active
     const isActive = computed(() =>
-      !renderRouterLink.value
-        ? false
-        : config.value.activeMatch
-        ? new RegExp(config.value.activeMatch).test(route.path)
-        : // if this link is active in subpath
-        !shouldBeActiveInSubpath.value
-        ? route.path === config.value.link
-        : route.path.startsWith(config.value.link)
+      renderRouterLink.value
+        ? config.value.activeMatch
+          ? new RegExp(config.value.activeMatch).test(route.path)
+          : // if this link is active in subpath
+          !shouldBeActiveInSubpath.value
+          ? route.path === config.value.link
+          : route.path.startsWith(config.value.link)
+        : false
     );
 
-    const renderIcon = (item: AutoLink): VNode | null =>
-      item.icon
-        ? h("i", {
-            class: `icon ${iconPrefix.value}${item.icon}`,
-          })
-        : null;
+    return (): VNode => {
+      const { text, icon, link } = config.value;
 
-    return (): VNode =>
-      renderRouterLink.value
+      return renderRouterLink.value
         ? h(
             RouterLink,
             {
-              to: config.value.link,
-              ariaLabel: linkAriaLabel.value,
+              to: link,
+              "aria-label": linkAriaLabel.value,
               ...attrs,
               // class needs to be merged manually
               class: ["nav-link", { active: isActive.value }, attrs.class],
-              onFocusOut: () => emit("focusout"),
+              onFocusout: () => emit("focusout"),
             },
             () =>
               slots.default?.() || [
-                slots.before?.() || renderIcon(config.value),
-                config.value.text,
+                slots.before?.() || h(resolveComponent("FontIcon"), { icon }),
+                text,
                 slots.after?.(),
               ]
           )
         : h(
             "a",
             {
-              href: config.value.link,
+              href: link,
               rel: anchorRel.value,
               target: linkTarget.value,
-              ariaLabel: linkAriaLabel.value,
+              "aria-label": linkAriaLabel.value,
               ...attrs,
               // class needs to be merged manually
               class: ["nav-link", attrs.class],
-              onFocusOut: () => emit("focusout"),
+              onFocusout: () => emit("focusout"),
             },
-            [
-              slots.before?.() || renderIcon(config.value),
-              config.value.text,
+            slots.default?.() || [
+              slots.before?.() || h(resolveComponent("FontIcon"), { icon }),
+              text,
               props.externalLinkIcon ? h(ExternalLinkIcon) : null,
               slots.after?.(),
             ]
           );
+    };
   },
 });

@@ -8,7 +8,7 @@ tag:
   - Page Info
 ---
 
-By including [`@mr-hope/vuepress-plugin-components`][components], `vuepress-theme-hope` can display article information for you.
+`vuepress-theme-hope` can display article information for you.
 
 <!-- more -->
 
@@ -78,7 +78,7 @@ See [blog section](../blog/category-and-tags.md) for details
 
 ### Reading Time
 
-The default statistic method is 300 words per minute. You can override it by setting `themeConfig.plugins.readingTime.wordPerMinute`. This option does not support individual configuration on the page.
+The default statistic method is 300 words per minute. You can override it by setting `plugins.readingTime.wordPerMinute` in theme options. This option does not support individual configuration on the page.
 
 ### View Count <Badge text="Support page config" />
 
@@ -91,5 +91,3 @@ Example:
 pageview: false
 ---
 ```
-
-[components]: https://vuepress-theme-hope.github.io/v2/components/

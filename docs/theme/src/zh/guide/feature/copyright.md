@@ -16,7 +16,7 @@ copy:
 
 ::: info
 
-`vuepress-theme-hope` 将 `themeConfig.plugins` 中的 `copyright` 选项作为插件选项提供给 `vuepress-plugin-copyright2`。
+`vuepress-theme-hope` 将主题选项中的 `plugins.copyright` 作为插件选项提供给 `vuepress-plugin-copyright2`。
 
 :::
 
@@ -28,7 +28,7 @@ copy:
 
 ::: info 启用插件
 
-要想启用本插件，你需要在 `themeConfig.plugins` 中设置 `copyright` 为 `true` 或是一个对象 (空对象也是可以的) 才能启用它。
+要想启用本插件，你需要在主题选项中将 `plugins.copyright` 设置为 `true` 或是一个对象 (空对象也是可以的) 才能启用它。
 
 设置为 `true` 等同于设置 `{ global: true }`。
 
@@ -41,12 +41,12 @@ copy:
 
 ## 禁用复制和选择
 
-- 如果你不希望用户复制你的整个站点或特定页面文字，你可以在 `themeConfig.plugins.copyright` 或在页面 frontmatter 中设置 `disableCopy` 来禁用复制，后者具有更高优先级。
-- 如果你不希望用户选择你的整个站点或特定页面文字，你可以在 `themeConfig.plugins.copyright`或在页面 frontmatter 中设置 `disableSelection` 来禁用选择，后者具有更高优先级。
+- 如果你不希望用户复制你的整个站点或特定页面文字，你可以在主题选项中的 `plugins.copyright` 或在页面 frontmatter 中设置 `disableCopy` 来禁用复制，后者具有更高优先级。
+- 如果你不希望用户选择你的整个站点或特定页面文字，你可以在主题选项中的 `plugins.copyright` 或在页面 frontmatter 中设置 `disableSelection` 来禁用选择，后者具有更高优先级。
 
 ## 版权信息获取
 
-你可以通过插件的 `author` 和 `license` 选项设置作者和协议信息。如果文档的不同部分拥有不同的作者和协议，你可以传入一个使用当前页面对象作为参数的函数 `(page: Page) => string` 返回相应信息。
+你可以在主题选项中通过 `plugins.copyright.author` 和 `plugins.copyright.license` 选项设置作者和协议信息。如果文档的不同部分拥有不同的作者和协议，你可以传入一个使用当前页面对象作为参数的函数 `(page: Page) => string` 返回相应信息。
 
 ## 演示
 

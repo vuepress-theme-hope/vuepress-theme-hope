@@ -20,8 +20,8 @@ export const presentation: PluginSimple = (md) => {
     const key = `presentation-${hash(index)}`;
     const { content, info } = token;
 
-    return `<PresentationViewer id="${key}" data-code="${encodeURIComponent(
+    return `<Presentation id="${key}" data-code="${encodeURIComponent(
       content
-    )}" theme="${info.trim() || "auto"}"></PresentationViewer>`;
+    )}" theme="${info.trim() || "auto"}"></Presentation>`;
   };
 };

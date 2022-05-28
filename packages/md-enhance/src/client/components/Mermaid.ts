@@ -26,12 +26,12 @@ const getThemeVariables = (isDarkMode: boolean): Record<string, unknown> => {
     primaryBorderColor: isDarkMode ? "#389d70" : "#4abf8a",
     primaryTextColor: "#fff",
 
-    secondaryColor: "#f39c12",
+    secondaryColor: "#ffb500",
     secondaryBorderColor: isDarkMode ? "#fff" : "#000",
     secondaryTextColor: isDarkMode ? "#ddd" : "#333",
 
-    tertiaryColor: isDarkMode ? "#22182d" : "#eeeaf3",
-    tertiaryBorderColor: isDarkMode ? "#fff" : "#000",
+    tertiaryColor: isDarkMode ? "#282828" : "#efeef4",
+    tertiaryBorderColor: isDarkMode ? "#bbb" : "#242424",
     tertiaryTextColor: isDarkMode ? "#ddd" : "#333",
 
     // note
@@ -72,10 +72,12 @@ const getThemeVariables = (isDarkMode: boolean): Record<string, unknown> => {
 };
 
 export default defineComponent({
-  name: "MermaidChart",
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: "Mermaid",
 
   props: {
     id: { type: String, required: true },
+    code: { type: String, required: true },
   },
 
   setup(props) {
@@ -86,7 +88,7 @@ export default defineComponent({
 
     onMounted(() => {
       const html = document.querySelector("html") as HTMLElement;
-      const code = decodeURIComponent(mermaidElement.value?.dataset.code || "");
+      const code = decodeURIComponent(props.code);
 
       const getDarkmodeStatus = (): boolean =>
         html.classList.contains("dark") ||

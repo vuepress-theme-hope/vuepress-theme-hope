@@ -64,8 +64,8 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
 
 <!-- 绝对路径 -->
 
-[指南](/v2/zh/guide/README.md)  
-[配置参考 > 多语言](/v2/zh/config/i18n.md)
+[指南](/zh/guide/README.md)  
+[配置参考 > 多语言](/zh/config/i18n.md)
 
 <!-- URL -->
 
@@ -96,8 +96,8 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
 [首页](../../README.md)  
 [贡献指南](../../contribution.md)  
 [VuePress 配置](./config.md)
-[指南](/v2/zh/guide/README.md)  
-[配置参考 > 多语言](/v2/zh/config/i18n.md)
+[指南](/guide/README.md)  
+[配置参考 > 多语言](/config/i18n.md)
 [GitHub](https://github.com)
 
 解释:
@@ -177,13 +177,14 @@ Emoji 扩展由 [markdown-it-emoji](https://github.com/markdown-it/markdown-it-e
 ````md
 ```ts {1,6-8}
 import type { UserConfig } from "@vuepress/cli";
+import { defaultTheme } from "@vuepress/theme-default";
 
 export const config: UserConfig = {
   title: "你好， VuePress",
 
-  themeConfig: {
+  theme: defaultTheme({
     logo: "https://vuejs.org/images/logo.png",
-  },
+  }),
 };
 ```
 ````
@@ -192,13 +193,14 @@ export const config: UserConfig = {
 
 ```ts {1,6-8}
 import type { UserConfig } from "@vuepress/cli";
+import { defaultTheme } from "@vuepress/theme-default";
 
 export const config: UserConfig = {
   title: "你好， VuePress",
 
-  themeConfig: {
+  theme: defaultTheme({
     logo: "https://vuejs.org/images/logo.png",
-  },
+  }),
 };
 ```
 

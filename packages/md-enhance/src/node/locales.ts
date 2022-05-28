@@ -19,7 +19,7 @@ export const markdownEnhanceLocales: MarkdownEnhanceLocaleConfig = {
     details: "详情",
   },
 
-  "/tw/": {
+  "/zh-tw/": {
     info: "相關信息",
     note: "注",
     tip: "提示",
@@ -56,12 +56,12 @@ export const markdownEnhanceLocales: MarkdownEnhanceLocaleConfig = {
   },
 
   "/ru/": {
-    info: "Информация",
-    note: "Note",
-    tip: "Подсказки",
+    info: "Инфо",
+    note: "Заметка",
+    tip: "Совет",
     warning: "Примечание",
     danger: "Предупреждение",
-    details: "Деталь",
+    details: "Подробности",
   },
 
   "/br/": {
@@ -71,5 +71,41 @@ export const markdownEnhanceLocales: MarkdownEnhanceLocaleConfig = {
     warning: "Avisos",
     danger: "Cuidado",
     details: "Detalhe",
+  },
+
+  "/pl/": {
+    info: "Info",
+    note: "Notatka",
+    tip: "Porady",
+    warning: "Notatka",
+    danger: "Ostrzeżenie",
+    details: "Dane",
+  },
+
+  "/sk/": {
+    info: "Info",
+    note: "Poznámka",
+    tip: "Tip",
+    warning: "Upozornenie",
+    danger: "Pozor",
+    details: "Podrobnosti",
+  },
+
+  "/fr/": {
+    info: "Info",
+    note: "Note",
+    tip: "Conseil",
+    warning: "Note",
+    danger: "Avertissement",
+    details: "Details",
+  },
+
+  "/es/": {
+    info: "Información",
+    note: "Nota",
+    tip: "Consejos",
+    warning: "Aviso",
+    danger: "Advertencia",
+    details: "Detalles",
   },
 };

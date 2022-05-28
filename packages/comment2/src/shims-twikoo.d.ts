@@ -139,11 +139,3 @@ declare module "twikoo" {
 
   export default init;
 }
-
-declare module "@Twikoo" {
-  import type { ComponentOptions } from "vue";
-
-  const component: ComponentOptions;
-
-  export default component;
-}

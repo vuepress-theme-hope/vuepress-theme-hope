@@ -1,6 +1,8 @@
 import type { LocaleConfig } from "@vuepress/core";
 import type { KatexOptions } from "katex";
-import type { CodeDemoOptions } from "./code-demo";
+import type { CodeDemoOptions } from "./codeDemo";
+import type { ImageMarkOptions } from "./imageMark";
+import type { IncludeOptions } from "./include";
 import type { MarkdownEnhanceLocaleData } from "./locales";
 import type { PresentationOptions } from "./presentation";
 import type { TaskListOptions } from "./tasklist";
@@ -9,6 +11,15 @@ import type { TaskListOptions } from "./tasklist";
  * md-enhance plugin configuration
  */
 export interface MarkdownEnhanceOptions {
+  /**
+   * Whether check dead links in markdown
+   *
+   * @description `true` equals to `'always'`, `false` equals to `'never'`
+   *
+   * @default 'dev'
+   */
+  linkCheck?: "always" | "dev" | "build" | "never" | boolean;
+
   /**
    * Whether enable standard GFM support
    *
@@ -28,7 +39,7 @@ export interface MarkdownEnhanceOptions {
    * - danger
    * - details
    *
-   * ⚠ The last 4 items conflict with default theme and will overide it’s style.
+   * ⚠ The last 4 items conflict with default theme and will override it’s style.
    *
    * 是否启用自定义容器
    *
@@ -55,13 +66,22 @@ export interface MarkdownEnhanceOptions {
   vpre?: boolean;
 
   /**
-   * Whether to enable codegroup.
+   * Whether to enable tabs.
+   *
+   * 是否启用标签页分组。
+   *
+   * @default false
+   */
+  tabs?: boolean;
+
+  /**
+   * Whether to enable codetabs.
    *
    * 是否启用代码组。
    *
    * @default false
    */
-  codegroup?: boolean;
+  codetabs?: boolean;
 
   /**
    * Whether to enable align support
@@ -115,7 +135,7 @@ export interface MarkdownEnhanceOptions {
    *
    * @default false
    */
-  imageMark?: boolean;
+  imageMark?: ImageMarkOptions | boolean;
 
   /**
    * Whether to enable mark format support
@@ -136,13 +156,13 @@ export interface MarkdownEnhanceOptions {
   tasklist?: TaskListOptions | boolean;
 
   /**
-   * Whether to enable markdown import syntax support\
+   * Whether to enable include syntax support
    *
-   * 是否启用 Markdown 导入语法支持
+   * 是否启用导入语法支持
    *
    * @default false
    */
-  mdImport?: (path: string) => string | boolean;
+  include?: IncludeOptions;
 
   /**
    * Whether to enable TeX syntax support
@@ -165,6 +185,15 @@ export interface MarkdownEnhanceOptions {
    * @default false
    */
   chart?: boolean;
+
+  /**
+   * Whether to enable echarts support
+   *
+   * 是否启用 echarts 图表支持
+   *
+   * @default false
+   */
+  echarts?: boolean;
 
   /**
    * Whether to enable flowchart support

@@ -9,9 +9,9 @@ icon: check
 
 ## 配置
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts {8}
 // .vuepress/config.ts
@@ -27,9 +27,7 @@ export default {
 };
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js {8}
 // .vuepress/config.js
@@ -46,8 +44,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ## 语法
 
@@ -71,16 +67,17 @@ module.exports = {
 ```ts
 interface TaskListOptions {
   /**
+   * 是否禁用 checkbox
+   *
+   * @default true
+   */
+  disabled?: boolean;
+
+  /**
    * 是否使用 `<label>` 来包裹文字
    *
    * @default true
    */
   label?: boolean;
-  /**
-   * 是否将 `<label>` 放置在 `<input>` 后还是包裹住 `<input>`
-   *
-   * @default true
-   */
-  labelAfter?: boolean;
 }
 ```

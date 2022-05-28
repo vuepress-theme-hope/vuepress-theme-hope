@@ -1,6 +1,12 @@
 ---
 title: Chart
 icon: rank
+index: 10
+category:
+  - Markdown
+tag:
+  - 图表
+  - Markdown
 ---
 
 让你 VuePress 站点中的 Markdown 文件支持图表。
@@ -11,47 +17,44 @@ icon: rank
 
 ## 配置
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
-```ts {7-9}
+```ts {8-10}
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     plugins: {
       mdEnhance: {
         chart: true,
       },
     },
-  },
+  }),
 });
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js {7-9}
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     plugins: {
       mdEnhance: {
         chart: true,
       },
     },
-  },
-});
+  }),
+};
 ```
 
 :::
-
-::::
 
 ## 格式
 
@@ -66,6 +69,8 @@ module.exports = defineHopeConfig({
 
 :::
 ````
+
+我们也支持 `js` 和 `javascript` 的代码块，你应当将导出对象赋值给 `module.exports`。
 
 ## 案例
 

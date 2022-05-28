@@ -16,7 +16,7 @@ icon: config
 
 请仅将此选项用于体验或测试。
 
-随着时间的增长，`vupress-plugin-md-enhance` 变得越来越强大。它为 Markdown 解析器添加了更多语法，并输出了更多代码。
+随着时间的增长，`vuepress-plugin-md-enhance` 变得越来越强大。它为 Markdown 解析器添加了更多语法，并输出了更多代码。
 
 启用不需要的功能将增加开发和构建时间。 (`markdown-it` 必须检查额外的语法)
 
@@ -63,6 +63,20 @@ icon: config
 
 :::
 
+## linkCheck
+
+- 类型: `"always" | "dev" | "build" | "never" | boolean`
+- 默认值: `"dev"`
+
+是否启用链接检查。
+
+::: note
+
+- `true` 等同于 `'always'`
+- `false` 等同于 `'never'`
+
+:::
+
 ## vpre
 
 - 类型: `boolean`
@@ -70,7 +84,14 @@ icon: config
 
 是否启用 v-pre 容器。
 
-## codegroup
+## tabs
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否启用选项卡。
+
+## codetabs
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -145,23 +166,43 @@ interface ImageMarkOptions {
 ```ts
 interface TaskListOptions {
   /**
+   * 是否禁用 checkbox
+   *
+   * @default true
+   */
+  disabled?: boolean;
+
+  /**
    * 是否使用 `<label>` 来包裹文字
    *
    * @default true
    */
   label?: boolean;
-  /**
-   * 是否将 `<label>` 放置在 `<input>` 后还是包裹住 `<input>`
-   *
-   * @default true
-   */
-  labelAfter?: boolean;
 }
 ```
 
-## mdImport
+## include
 
-- 类型: `(path: string) => string | boolean`
+- 类型: `IncludeOptions | boolean`
+
+  ```ts
+  interface IncludeOptions {
+    /**
+     * 处理 include 文件路径
+     *
+     * @default (path) => path
+     */
+    getPath?: (path: string) => string;
+
+    /**
+     * 是否深度导入包含的 markdown 文件
+     *
+     * @default false
+     */
+    deep?: boolean;
+  }
+  ```
+
 - 默认值: `false`
 
 是否启用 Markdown 导入支持。你可以传入一个函数进行路径解析。
@@ -260,7 +301,7 @@ CodePen 编辑器显示情况，第一位代表 HTML ，第二位代表 JS，第
 
 ### 其他
 
-以下是第三方代码演示使用的库地址，除非你的环境无法访问 jsdelivr 或访问缓慢，否则无需覆盖默认设置。
+以下是第三方代码演示使用的库地址，除非你的环境无法访问 unpkg 或访问缓慢，否则无需覆盖默认设置。
 
 #### demo.babel
 

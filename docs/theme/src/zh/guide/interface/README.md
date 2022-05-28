@@ -1,6 +1,9 @@
 ---
 title: 界面
 icon: palette
+index: false
+dir:
+  index: 2
 ---
 
 ## 目录

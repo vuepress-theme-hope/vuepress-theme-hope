@@ -1,7 +1,7 @@
-import { defineNavbarConfig } from "vuepress-theme-hope";
-import { version } from "../../../../lerna.json";
+import { navbar } from "vuepress-theme-hope";
+import { version } from "vuepress-plugin-comment2/package.json";
 
-export const enNavbarConfig = defineNavbarConfig([
+export const enNavbarConfig = navbar([
   "/",
   {
     text: "Guide",
@@ -38,7 +38,7 @@ export const enNavbarConfig = defineNavbarConfig([
     ],
   },
 ]);
-export const zhNavbarConfig = defineNavbarConfig([
+export const zhNavbarConfig = navbar([
   "/zh/",
   {
     text: "指南",

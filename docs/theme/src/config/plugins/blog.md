@@ -1,6 +1,7 @@
 ---
 title: Blog Plugin Config
 icon: blog
+index: 2
 category:
   - Config
 tag:
@@ -13,7 +14,7 @@ tag:
 
 The theme provides blog feature, and it’s **not** enabled by default.
 
-You can enable blogging by setting `themeConfig.plugins.blog` to `true`.
+You can enable blog feature by setting `plugins.blog` to `true` in theme options.
 
 For instructions, please see [Blog Intro](../../guide/blog/intro.md).
 
@@ -25,6 +26,15 @@ For instructions, please see [Blog Intro](../../guide/blog/intro.md).
 - Default: `false`
 
 Whether to generate excerpt for every page.
+
+### filter
+
+- Type: `(page: Page) => boolean`
+- Default: `(page) => Boolean(page.filePathRelative) && !page.frontmatter.home`
+
+Page filter, determine whether a page should be included.
+
+By default, all the pages generated from Markdown files but not homepage will be included as articles.
 
 ### article
 

@@ -14,7 +14,7 @@ You need to build your document or blog page by creating and writing Markdown in
 
 <!-- more -->
 
-## Markdown introduction
+## Markdown Introduction
 
 If you are a new learner and don’t know how to write Markdown, please read [Markdown Intro](https://vuepress-theme-hope.github.io/v2/basic/markdown/README.html) and [Markdown Demo](https://vuepress-theme-hope.github.io/v2/basic/markdown/demo.html).
 
@@ -24,27 +24,29 @@ Frontmatter is a important concept in VuePress. If you don’t know it, you need
 
 :::
 
-## VuePress enhance
+## VuePress Enhancement
 
 To enrich document writing, VuePress has extended Markdown syntax.
 
 For these extensions, please read [Markdown extensions in VuePress](https://vuepress-theme-hope.github.io/v2/basic/vuepress/markdown.html).
 
-## Theme enhance
+## Theme Enhancement
 
 ### Enable all
 
-You can set `themeconfig.plugins.htmlEnhance.enableAll` to enable all features of the [md-enhance](https://vuepress-theme-hope.github.io/v2/md-enhance/) plugin.
+You can set `plugins.mdEnhance.enableAll: true` in theme options to enable all features of the [md-enhance](https://vuepress-theme-hope.github.io/v2/md-enhance/) plugin.
 
-```js {3-5}
+```js
+const { hopeTheme } = require("vuepress-theme-hope");
+
 module.exports = {
-  themeConfig: {
+  theme: hopeTheme({
     plugins: {
       mdEnhance: {
         enableAll: true,
       },
     },
-  },
+  }),
 };
 ```
 
@@ -134,19 +136,23 @@ A custom details container
 
 ::::
 
-### CodeGroup
+### Code Tabs
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item yarn
+@tab pnpm
+
+```bash
+pnpm add -D vuepress-theme-hope
+```
+
+@tab yarn
 
 ```bash
 yarn add -D vuepress-theme-hope
 ```
 
-:::
-
-::: code-group-item npm:active
+@tab:active npm
 
 ```bash
 npm i -D vuepress-theme-hope
@@ -154,9 +160,7 @@ npm i -D vuepress-theme-hope
 
 :::
 
-::::
-
-- [View Detail](https://vuepress-theme-hope.github.io/v2/guide/markdown/code-group.html)
+- [View Detail](https://vuepress-theme-hope.github.io/v2/guide/markdown/code-tabs.html)
 
 ### Superscript and Subscript
 
@@ -282,7 +286,7 @@ $$
 
 ### Code Demo
 
-::: demo A normal demo
+::: normal-demo A normal demo
 
 ```html
 <h1>VuePress Theme Hope</h1>

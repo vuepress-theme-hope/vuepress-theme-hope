@@ -1,6 +1,7 @@
 ---
 title: 首页
 icon: home
+index: 6
 category:
   - 布局
 tag:
@@ -12,7 +13,8 @@ tag:
 
 如果想要使用它，请在 frontmatter 中设置 `home: true`。任何 frontmatter 之后的内容将会以普通的 Markdown 被渲染，并插入到主页渲染内容的底部。
 
-![首页截图](./assets/home.png)
+![首页截图](./assets/home-light.png#light)
+![首页截图](./assets/home-dark.png#dark)
 
 <!-- more -->
 
@@ -35,35 +37,35 @@ tag:
 
 ### heroText
 
-- 类型: `string | null`
+- 类型: `string | false`
 - 默认值: `"Hello"`
 
 主页标题
 
 ### tagline
 
-- 类型: `string | null`
+- 类型: `string | false`
 - 默认值: `"Welcome to your VuePress site"`
 
 附加文字描述
 
 ### heroImage
 
-- 类型: `string | null`
+- 类型: `string`
 - 必填: 否
 
 主页图标 (logo) 地址，需要填入绝对路径 (图片需要放入 `.vuepress/public` 文件夹)
 
 ### heroImageDark
 
-- 类型: `string | null`
+- 类型: `string`
 - 必填: 否
 
 深色模式下主页图标 (logo) 地址，需要填入绝对路径 (图片需要放入 `.vuepress/public` 文件夹)，默认同 `heroImage`。
 
 ### heroAlt
 
-- 类型: `string | null`
+- 类型: `string`
 - 必填: 否
 
 主页图标的替代文字

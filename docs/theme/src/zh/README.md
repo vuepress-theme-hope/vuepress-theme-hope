@@ -13,6 +13,9 @@ actions:
   - text: 配置 🛠
     link: /zh/config/
 
+  - text: 在线案例 🪀
+    link: https://stackblitz.com/fork/vuepress-theme-hope
+
 features:
   - title: Markdown 增强
     icon: markdown
@@ -107,17 +110,15 @@ footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 
 在当前项目的 `[dir]` 文件夹内创建 vuepress-theme-hope 项目:
 
-:::: code-group
+::: code-tabs#shell
 
-<!-- ::: code-group-item yarn
+@tab pnpm
 
 ```bash
-yarn create vuepress-theme-hope [dir]
+pnpm create vuepress-theme-hope@next [dir]
 ```
 
-::: -->
-
-::: code-group-item npm
+@tab npm
 
 ```bash
 npm init vuepress-theme-hope@next [dir]
@@ -125,39 +126,46 @@ npm init vuepress-theme-hope@next [dir]
 
 :::
 
-::::
-
 ## 🚀 使用
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
-```ts {2,4,6}
+```ts
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  // 此处放置配置
+export default defineUserConfig({
+  // 站点选项
+  // ...
+
+  theme: hopeTheme({
+    // 主题选项
+    // ...
+  }),
 });
 ```
 
-:::
+@tab JS
 
-::: code-group-item JS
-
-```js {2,4,6}
+```js
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  // 此处放置配置
-});
+module.exports = {
+  // 站点选项
+  // ...
+
+  theme: hopeTheme({
+    // 主题选项
+    // ...
+  }),
+};
 ```
 
 :::
-
-::::
 
 ## 使用教程
 
@@ -169,7 +177,7 @@ module.exports = defineHopeConfig({
 
 <!-- markdownlint-disable -->
 
-<a v-if="isNetlify === false" href="https://www.netlify.com" target="_blank">
+<a v-if="isNetlify" href="https://www.netlify.com" target="_blank">
 
 ![通过 Netlify 部署](https://www.netlify.com/img/global/badges/netlify-light.svg#light)
 ![通过 Netlify 部署](https://www.netlify.com/img/global/badges/netlify-dark.svg#dark)

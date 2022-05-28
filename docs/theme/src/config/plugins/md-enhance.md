@@ -1,6 +1,7 @@
 ---
 title: MdEnhance Plugin Config
 icon: markdown
+index: 6
 category:
   - Config
 tag:
@@ -13,7 +14,7 @@ tag:
 
 The `vuepress-plugin-md-enhance` plugin is enabled by default and provides Markdown enhancements.
 
-`vuepress-theme-hope` passes `themeConfig.plugins.mdEnhance` as a plugin option to the `vuepress-plugin-md-enhance` plugin.
+`vuepress-theme-hope` passes `plugins.mdEnhance` in theme options as plugin options to `vuepress-plugin-md-enhance` plugin.
 
 ::: tip
 
@@ -42,7 +43,7 @@ Whether to enable all features.
 
 Please use this option ONLY for playing or testing.
 
-As time grows,`vupress-plugin-md-enhance` is becoming more powerful. It’s adding more syntax to Markdown parser and more code to output.
+As time grows,`vuepress-plugin-md-enhance` is becoming more powerful. It’s adding more syntax to Markdown parser and more code to output.
 
 Enabling features you don’t need will increase dev and build time. (`markdown-it` has to check for extra syntaxs)
 
@@ -83,6 +84,20 @@ Whether to enable custom container including
 - danger
 - details
 
+### linkCheck
+
+- Type: `"always" | "dev" | "build" | "never" | boolean`
+- Default: `"dev"`
+
+Whether to enable link check.
+
+::: note
+
+- `true` equals to `'always'`
+- `false` equals to `'never'`
+
+:::
+
 ### vpre
 
 - Type: `boolean`
@@ -90,12 +105,19 @@ Whether to enable custom container including
 
 Whether to enable v-pre wrapper.
 
-### codegroup
+### tabs
 
 - Type: `boolean`
 - Default: `false`
 
-Whether to enable codegroup.
+Whether to enable tabs.
+
+### codetabs
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to enable codetabs.
 
 ### align
 
@@ -165,17 +187,18 @@ Whether to enable tasklist format support. You can pass an object to config task
 ```ts
 interface TaskListOptions {
   /**
+   * Whether disable checkbox
+   *
+   * @default true
+   */
+  disabled?: boolean;
+
+  /**
    * Whether use `<label>` to wrap text
    *
    * @default true
    */
   label?: boolean;
-  /**
-   * Whether place `<label>` after `<input>` or wrap `<input>`
-   *
-   * @default true
-   */
-  labelAfter?: boolean;
 }
 ```
 
@@ -259,7 +282,7 @@ CodePen editor status
 
 #### others
 
-The following are the library links used by the third-party code demo service. Unless your environment cannot visit jsdelivr or the speed is slow, you probably don’t need to override the default values.
+The following are the library links used by the third-party code demo service. Unless your environment cannot visit unpkg or the speed is slow, you probably don’t need to override the default values.
 
 ##### demo.babel
 

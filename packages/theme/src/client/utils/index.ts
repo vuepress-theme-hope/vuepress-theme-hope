@@ -1,2 +1,2 @@
-export * from "./resolveEditLink";
+export * from "./getAncestorLinks";
 export * from "./resolveRepoType";

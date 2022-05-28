@@ -1,6 +1,7 @@
 ---
 title: 代码主题
 icon: style
+index: 4
 category:
   - 界面
 tag:
@@ -8,7 +9,7 @@ tag:
   - 代码主题
 ---
 
-`vuepress-theme-hope` 允许你全局为日间模式和夜间模式分别配置代码颜色主题。
+`vuepress-theme-hope` 允许你全局为代码块在日间模式和夜间模式下配置不同主题。
 
 <!-- more -->
 
@@ -20,9 +21,10 @@ tag:
 
 ## 设置方式
 
-请在 `.vuepress/styles/config.scss` 中通过设置 `$code-light-theme` 和 `$code-dark-theme` 变量，来分别配置浅色和深色模式下使用的代码主题。
+请在 `.vuepress/styles/config.scss` 中设置以下变量来控制代码块主题。
 
-它们的默认值分别为 `"one-light"` 和 `"one-dark"`。
+- `$code-light-theme`: 浅色模式下代码主题，默认为 `"one-light"`
+- `$code-dark-theme`: 深色模式下代码主题，默认为 `"one-dark"`
 
 ## 可用的主题
 

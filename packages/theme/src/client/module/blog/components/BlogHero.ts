@@ -6,7 +6,7 @@ import {
 import { computed, defineComponent, h, ref } from "vue";
 
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
-import defaultHeroImagePath from "../assets/hero.jpg";
+import defaultHeroBgImagePath from "../assets/hero.jpg";
 
 import type { VNode } from "vue";
 import type { HopeThemeBlogHomePageFrontmatter } from "../../../../shared";
@@ -32,7 +32,7 @@ export default defineComponent({
       const defaultStyle = {
         maxHeight: "180px",
         margin:
-          frontmatter.value.showTitle === false
+          frontmatter.value.heroText === false
             ? "6rem auto 1.5rem"
             : "1rem auto",
       };
@@ -46,7 +46,7 @@ export default defineComponent({
     const bgImage = computed(() =>
       frontmatter.value.bgImage
         ? withBase(frontmatter.value.bgImage)
-        : defaultHeroImagePath
+        : frontmatter.value.bgImage ?? defaultHeroBgImagePath
     );
 
     const bgImageStyle = computed(() => {
@@ -72,14 +72,16 @@ export default defineComponent({
               style: bgImageStyle.value,
             },
             [
-              h("div", {
-                class: "mask",
-                style: {
-                  background: `url(${bgImage.value}) center/cover no-repeat`,
-                },
-              }),
+              bgImage.value
+                ? h("div", {
+                    class: "mask",
+                    style: {
+                      background: `url(${bgImage.value}) center/cover no-repeat`,
+                    },
+                  })
+                : null,
               slots.heroImage?.() ||
-                h(DropTransition, { delay: 0.04 }, () =>
+                h(DropTransition, { appear: true, delay: 0.04 }, () =>
                   heroImage.value
                     ? h("img", {
                         class: "hero-image",
@@ -89,13 +91,12 @@ export default defineComponent({
                       })
                     : null
                 ),
-              slots.heroImage?.(),
-              h(DropTransition, { delay: 0.08 }, () =>
-                frontmatter.value.showTitle !== false
+              h(DropTransition, { appear: true, delay: 0.08 }, () =>
+                frontmatter.value.heroText !== false
                   ? h("h1", frontmatter.value.heroText || title.value)
                   : null
               ),
-              h(DropTransition, { delay: 0.12 }, () =>
+              h(DropTransition, { appear: true, delay: 0.12 }, () =>
                 frontmatter.value.tagline
                   ? h("p", {
                       class: "description",

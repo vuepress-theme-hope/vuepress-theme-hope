@@ -1,6 +1,7 @@
 ---
 title: Markdown
 icon: markdown
+index: 3
 category:
   - Get Started
 tag:
@@ -32,19 +33,17 @@ For these extended syntax, please see [Built-in Markdown Features](../../cookboo
 
 ## Theme Enhancement
 
-### CodeGroup
+### Code Tabs
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item yarn
+@tab yarn
 
 ```bash
 yarn add -D vuepress-theme-hope
 ```
 
-:::
-
-::: code-group-item npm:active
+@tab:active npm
 
 ```bash
 npm i -D vuepress-theme-hope
@@ -52,9 +51,7 @@ npm i -D vuepress-theme-hope
 
 :::
 
-::::
-
-- [View Detail](../markdown/code-group.md)
+- [View Detail](../markdown/code-tabs.md)
 
 ### Superscript and Subscript
 
@@ -180,7 +177,7 @@ $$
 
 ### Code Demo
 
-::: demo A normal demo
+::: normal-demo A normal demo
 
 ```html
 <h1>VuePress Theme Hope</h1>

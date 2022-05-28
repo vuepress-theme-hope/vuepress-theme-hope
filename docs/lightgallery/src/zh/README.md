@@ -21,17 +21,21 @@ copyright: false
 
 ### 安装
 
-:::: code-group
+::: code-tabs#shell
 
-::: code-group-item yarn
+@tab pnpm
+
+```bash
+pnpm add -D vuepress-plugin-lightgallery@next
+```
+
+@tab yarn
 
 ```bash
 yarn add -D vuepress-plugin-lightgallery@next
 ```
 
-:::
-
-::: code-group-item npm
+@tab npm
 
 ```bash
 npm i -D vuepress-plugin-lightgallery@next
@@ -39,38 +43,34 @@ npm i -D vuepress-plugin-lightgallery@next
 
 :::
 
-::::
-
 ### 使用
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
-import { lightgallery } from "vuepress-plugin-lightgallery";
+import { lightgalleryPlugin } from "vuepress-plugin-lightgallery";
 
 export default {
   plugins: [
-    lightgallery({
+    lightgalleryPlugin({
       // 插件选项
     }),
   ],
 };
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // .vuepress/config.js
-const { lightgallery } = require("vuepress-plugin-lightgallery");
+const { lightgalleryPlugin } = require("vuepress-plugin-lightgallery");
 
 module.exports = {
   plugins: [
-    lightgallery({
+    lightgalleryPlugin({
       // 插件选项
     }),
   ],
@@ -78,8 +78,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ::: danger 许可证限制
 

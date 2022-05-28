@@ -1,6 +1,6 @@
-import { defineSidebarConfig } from "vuepress-theme-hope";
+import { sidebar } from "vuepress-theme-hope";
 
-export const enSidebarConfig = defineSidebarConfig({
+export const enSidebarConfig = sidebar({
   "/": [
     "",
     {
@@ -10,14 +10,16 @@ export const enSidebarConfig = defineSidebarConfig({
       children: [
         "",
         "container",
-        "code-group",
+        "tabs",
+        "code-tabs",
         "sup-sub",
         "align",
         "footnote",
         "mark",
         "tasklist",
-        "md-import",
+        "include",
         "chart",
+        "echarts",
         "flowchart",
         "mermaid",
         "tex",
@@ -46,14 +48,16 @@ export const enSidebarConfig = defineSidebarConfig({
   "/guide/": [
     "",
     "container",
-    "code-group",
+    "tabs",
+    "code-tabs",
     "sup-sub",
     "align",
     "footnote",
     "mark",
     "tasklist",
-    "md-import",
+    "include",
     "chart",
+    "echarts",
     "flowchart",
     "mermaid",
     "tex",
@@ -74,7 +78,7 @@ export const enSidebarConfig = defineSidebarConfig({
   ],
 });
 
-export const zhSidebarConfig = defineSidebarConfig({
+export const zhSidebarConfig = sidebar({
   "/zh/": [
     "",
     {
@@ -84,14 +88,16 @@ export const zhSidebarConfig = defineSidebarConfig({
       children: [
         "",
         "container",
-        "code-group",
+        "tabs",
+        "code-tabs",
         "sup-sub",
         "align",
         "footnote",
         "mark",
         "tasklist",
-        "md-import",
+        "include",
         "chart",
+        "echarts",
         "flowchart",
         "mermaid",
         "tex",
@@ -119,14 +125,16 @@ export const zhSidebarConfig = defineSidebarConfig({
   "/zh/guide/": [
     "",
     "container",
-    "code-group",
+    "tabs",
+    "code-tabs",
     "sup-sub",
     "align",
     "footnote",
     "mark",
     "tasklist",
-    "md-import",
+    "include",
     "chart",
+    "echarts",
     "flowchart",
     "mermaid",
     "tex",

@@ -27,7 +27,7 @@ category:
 
   但这会让样式与组件解除绑定，无论如何它们都会被注入。因此，当你覆盖组件或布局时，你必须覆盖旧样式来构建你想要的样式。
 
-- `vuepress-theme-hope` 为组件绑定样式，但这意味着 `sass` 必须为每个组件编译样式，并且 vite 需要为每个组件发送一个额外的样式请求。由于 `vuepress-theme-hope` 与 `@vupress/theme-default` 相比有 2 到 6 倍的组件 (取决于你是否启用博客功能) ，因此需要 `2.4s - 4s` 的额外的时间请求这些样式。
+- `vuepress-theme-hope` 为组件绑定样式，但这意味着 `sass` 必须为每个组件编译样式，并且 vite 需要为每个组件发送一个额外的样式请求。由于 `vuepress-theme-hope` 与 `@vuepress/theme-default` 相比有 2 到 6 倍的组件 (取决于你是否启用博客功能) ，因此需要 `2.4s - 4s` 的额外的时间请求这些样式。
 
   但是，你可以通过这种方式轻松地覆盖组件及其样式。
 
@@ -45,16 +45,14 @@ category:
 
 :::
 
-## 导入 Iconfont 图标无效
+## `@import` 语法无效
 
-如果你在使用 IconFont 图标，并可以在开发服务器正常看到图标，而在部署环境失效，你可能需要检查图标的导入方式。
+在 VuePress2 中，你在 `index.scss` 中通过 `@import` 导入网络 CSS 是无效的。你可能需要在 VuePress 配置的 `head` 选项中手动导入它们。
 
-在 VuePress2 中，你在 `index.scss` 中通过 `@import` 导入网络 CSS 是无效的。你可能需要在 VuePress 配置的 `head` 选项中手动导入它。
+<!-- ```ts {5-13}
+import { defineUserConfig } from "vuepress-theme-hope";
 
-<!-- ```js 5-13}
-import { defineHopeConfig } from "vuepress-theme-hope";
-
-export default defineHopeConfig({
+export default defineUserConfig({
   head: [
     [
       "link",
@@ -62,7 +60,7 @@ export default defineHopeConfig({
         rel: "preload",
         as: "style",
         onload: 'this.onload=null;this.rel="stylesheet"',
-        href: "//at.alicdn.com/t/font_2410206_mfj6e1vbwo.css",
+        href: "//at.alicdn.com/t/font_2410206_a0xb9hku9iu.css",
       },
     ],
   ],
@@ -71,16 +69,20 @@ export default defineHopeConfig({
 });
 ``` -->
 
-```js {5-11}
-import { defineHopeConfig } from "vuepress-theme-hope";
+::: code-tabs#language
 
-export default defineHopeConfig({
+@tab TS
+
+```ts {5-11}
+import { defineUserConfig } from "vuepress";
+
+export default defineUserConfig({
   head: [
     [
       "link",
       {
         rel: "stylesheet",
-        href: "//at.alicdn.com/t/font_2410206_mfj6e1vbwo.css",
+        href: "YOUR_CSS_URL",
       },
     ],
   ],
@@ -88,6 +90,26 @@ export default defineHopeConfig({
   // ...
 });
 ```
+
+@tab HS
+
+```js {3-9}
+module.exports = {
+  head: [
+    [
+      "link",
+      {
+        rel: "stylesheet",
+        href: "YOUR_CSS_URL",
+      },
+    ],
+  ],
+
+  // ...
+};
+```
+
+:::
 
 ::: info 原因
 

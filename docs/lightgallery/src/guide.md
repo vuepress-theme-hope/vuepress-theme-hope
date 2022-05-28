@@ -9,7 +9,7 @@ This plugin will use lightgallery make the pictures in the body of the page ente
 
 ::: danger LICENSE RESTRICTIONS
 
-Please note that although this plugin release under MIT license, we are currently making this possiable with a built-in [organization license of lightgallery](https://www.lightgalleryjs.com/license/) of VuePress Theme Hope, and we would like to admit you are a member of our organiztion if you are using it for non-commercial usage.
+Please note that although this plugin release under MIT license, we are currently making this possible with a built-in [organization license of lightgallery](https://www.lightgalleryjs.com/license/) of VuePress Theme Hope, and we would like to admit you are a member of our organization if you are using it for non-commercial usage.
 
 The organization license has no limit for you under non-commercial usage as it supports unlimited developers and unlimited products. You are safe to publish your docs or project with this plugin under ANY License.
 

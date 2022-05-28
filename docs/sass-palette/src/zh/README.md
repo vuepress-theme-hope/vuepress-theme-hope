@@ -21,17 +21,21 @@ copyright: false
 
 ### 安装
 
-:::: code-group
+::: code-tabs#shell
 
-::: code-group-item yarn
+@tab pnpm
+
+```bash
+pnpm add -D vuepress-plugin-sass-palette@next
+```
+
+@tab yarn
 
 ```bash
 yarn add -D vuepress-plugin-sass-palette@next
 ```
 
-:::
-
-::: code-group-item npm
+@tab npm
 
 ```bash
 npm i -D vuepress-plugin-sass-palette@next
@@ -39,43 +43,41 @@ npm i -D vuepress-plugin-sass-palette@next
 
 :::
 
-::::
-
 ### 使用
 
 你必须在插件初始化期间调用 `useSassPalettePlugin` 函数来使用此插件。。
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts
 // 你的插件或主题入口
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
-import type { Plugin } from "@vuepress/core";
+import type { PluginFunction } from "@vuepress/core";
 
-const yourPlugin: Plugin = (options, app) => {
-  useSassPalettePlugin(app, {
-    // 插件选项
-  });
+const yourPlugin =
+  (options): PluginFunction =>
+  (app) => {
+    useSassPalettePlugin(app, {
+      // 插件选项
+    });
 
-  return {
-    // 你的插件 API
+    return {
+      // 你的插件 API
+    };
   };
-};
 
 export default yourPlugin;
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // 你的插件或主题入口
 const { useSassPalettePlugin } = require("vuepress-plugin-sass-palette");
 
-module.exports = (options, app) => {
+module.exports = (options) => (app) => {
   useSassPalettePlugin(app, {
     // 插件选项
   });
@@ -87,5 +89,3 @@ module.exports = (options, app) => {
 ```
 
 :::
-
-::::

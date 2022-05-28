@@ -3,13 +3,13 @@ import { rollupTypescript } from "../../scripts/rollup";
 export default [
   ...rollupTypescript("node/index", {
     external: [
-      "@mr-hope/vuepress-shared",
+      "vuepress-shared",
       "@vuepress/utils",
       "vue",
       "vuepress-plugin-sass-palette",
     ],
   }),
-  ...rollupTypescript("client/root-components/LightGallery", {
+  ...rollupTypescript("client/config", {
     external: [
       "@vuepress/client",
       /^lightgallery/,

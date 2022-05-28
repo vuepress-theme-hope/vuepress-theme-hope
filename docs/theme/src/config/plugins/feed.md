@@ -1,6 +1,7 @@
 ---
 title: Feed Plugin Config
 icon: rss
+index: 5
 category:
   - Config
 tag:
@@ -13,7 +14,7 @@ tag:
 
 `vuepress-theme-hope` provides feed generation support via the `vuepress-plugin-feed2` plugin.
 
-`vuepress-theme-hope` passes `themeConfig.plugins.feed` as a plugin option to the `vuepress-plugin-feed2` plugin.
+`vuepress-theme-hope` passes `plugins.feed` in theme options as plugin options to `vuepress-plugin-feed2` plugin.
 
 The `vuepress-plugin-feed2` plugin can generate feed files in the following three formats for you:
 
@@ -27,7 +28,7 @@ Please enable the plugin by setting `atom`, `json` or `rss` to `true` in the plu
 
 Atom and JSON are provided to provide more adaptations for Feed software.
 
-If possible, use RSS as first choise.
+If possible, use RSS as first choice.
 
 :::
 
@@ -81,6 +82,13 @@ Set the maximum number of items in the feed. After all pages are sorted, the fir
 
 If your site has a lot of articles, you may consider this option to reduce feed file size.
 
+### customElements
+
+- Type: `string[]`
+- Default: `["ExternalLinkIcon"]`
+
+Custom element or component which should be removed in feed.
+
 ### filter
 
 - Type: `(page: Page)=> boolean`
@@ -123,21 +131,21 @@ For available options, please see [Config → Channel][feed-config-channel]
 - Type: `string`
 - Default: `atom.xml`
 
-Atom syntax output filename, relative to dest folder
+Atom syntax output filename, relative to output directory.
 
 ### jsonOutputFilename
 
 - Type: `string`
 - Default: `feed.json`
 
-JSON syntax output filename, relative to dest folder
+JSON syntax output filename, relative to output directory.
 
 ### rssOutputFilename
 
 - Type: `string`
 - Default: `rss.xml`
 
-RSS syntax output filename, relative to dest folder.
+RSS syntax output filename, relative to output directory.
 
 ### getter
 
@@ -145,7 +153,7 @@ Feed generation controller.
 
 ::: tip
 
-The plugin is providing a resonable getter by default, if you want full control of feed generating, you can set this field.
+The plugin is providing a reasonable getter by default, if you want full control of feed generating, you can set this field.
 
 :::
 

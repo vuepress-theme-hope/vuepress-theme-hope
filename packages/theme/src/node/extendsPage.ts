@@ -1,5 +1,5 @@
-import { getCategory, getTag } from "@mr-hope/vuepress-shared";
 import { logger } from "@vuepress/utils";
+import { getCategory, getTag } from "vuepress-shared";
 
 import type { Page } from "@vuepress/core";
 import type {
@@ -21,30 +21,6 @@ export const checkFrontmatter = (
     | HopeThemeNormalPageFrontmatter;
 
   const { filePathRelative } = page;
-
-  // handle deprecated
-  const handleDeprecated = (deprecatedKey: string, key = ""): void => {
-    if (deprecatedKey in frontmatter) {
-      // show logger in dev mode
-      if (isDev)
-        logger.warn(
-          `"${deprecatedKey}" property in Page FrontMatter is deprecated${
-            key ? `, please use ${key} instead` : ""
-          }.${filePathRelative ? `\nFound in ${filePathRelative}` : ""}`
-        );
-
-      if (!(key in frontmatter)) {
-        frontmatter[key] = frontmatter[deprecatedKey];
-      }
-
-      delete frontmatter[deprecatedKey];
-    }
-  };
-
-  handleDeprecated("authors", "author");
-  handleDeprecated("tags", "tag");
-  handleDeprecated("categories", "category");
-  handleDeprecated("time", "date");
 
   // check date
   if ("date" in frontmatter && !(frontmatter.date instanceof Date)) {
@@ -99,6 +75,10 @@ export const extendsPage = (
     icon: frontmatter.icon,
   };
 
+  // resolve shortTitle
+  if ("shortTitle" in frontmatter)
+    page.routeMeta.shortTitle = frontmatter.shortTitle;
+
   if (plugins.blog) {
     const isArticle =
       // declaring this is an article
@@ -106,6 +86,7 @@ export const extendsPage = (
       // generated from markdown files
       Boolean(frontmatter.article !== false && filePathRelative);
 
+    const isEncrypted = Object.keys(config).some((key) => path.startsWith(key));
     const isSlide = isArticle && frontmatter.layout === "Slide";
 
     // save basic info to routeMeta
@@ -119,12 +100,13 @@ export const extendsPage = (
         ? "article"
         : "page",
       readingTime: page.data.readingTime,
-      excerpt:
-        page.excerpt ||
-        frontmatter.description ||
-        (typeof plugins.blog === "object" && plugins.blog.autoExcerpt
-          ? frontmatter.summary
-          : ""),
+      excerpt: isEncrypted
+        ? ""
+        : page.excerpt ||
+          frontmatter.description ||
+          (typeof plugins.blog === "object" && plugins.blog.autoExcerpt
+            ? frontmatter.summary
+            : ""),
     };
 
     // resolve author
@@ -155,7 +137,6 @@ export const extendsPage = (
       page.routeMeta.isOriginal = frontmatter.isOriginal;
 
     // resolve encrypted
-    if (Object.keys(config).some((key) => path.startsWith(key)))
-      page.routeMeta.isEncrypted = true;
+    if (isEncrypted) page.routeMeta.isEncrypted = true;
   }
 };

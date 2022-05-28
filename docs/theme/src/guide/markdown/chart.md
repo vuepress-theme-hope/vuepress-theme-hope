@@ -1,6 +1,7 @@
 ---
 title: Chart
 icon: rank
+index: 10
 category:
   - Markdown
 tag:
@@ -10,53 +11,50 @@ tag:
 
 Let the Markdown file support chart in your VuePress site.
 
-This plugin is using [chart.js](https://www.chartjs.org/docs/latest/) to support this feature.
+`vuepress-plugin-md-enhance` uses [chart.js](https://www.chartjs.org/docs/latest/) to support this feature.
 
 <!-- more -->
 
 ## Config
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
-```ts {7-9}
+```ts {8-10}
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     plugins: {
       mdEnhance: {
         chart: true,
       },
     },
-  },
+  }),
 });
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js {7-9}
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     plugins: {
       mdEnhance: {
         chart: true,
       },
     },
-  },
-});
+  }),
+};
 ```
 
 :::
-
-::::
 
 ## Syntax
 
@@ -71,6 +69,8 @@ module.exports = defineHopeConfig({
 
 :::
 ````
+
+`js` and `javascript` code block is also supported, and you are expected to assign your export object to `module.exports`.
 
 ## Demo
 
@@ -228,7 +228,7 @@ module.exports = defineHopeConfig({
 {
   "type": "line",
   "data": {
-    "labels": ["January", "Feburary", "March", "Apirl", "May", "June", "July"],
+    "labels": ["January", "Feburary", "March", "April", "May", "June", "July"],
     "datasets": [
       {
         "label": "My First Dataset",
@@ -253,7 +253,7 @@ module.exports = defineHopeConfig({
 {
   "type": "line",
   "data": {
-    "labels": ["January", "Feburary", "March", "Apirl", "May", "June", "July"],
+    "labels": ["January", "Feburary", "March", "April", "May", "June", "July"],
     "datasets": [
       {
         "label": "My First Dataset",

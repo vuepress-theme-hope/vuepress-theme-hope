@@ -1,8 +1,8 @@
 {
   "name": "components-docs",
-  "version": "2.0.0-beta.38",
+  "version": "2.0.0-beta.71",
   "private": true,
-  "description": "Docs for @mr-hope/vuepress-plugin-components",
+  "description": "Docs for vuepress-plugin-components",
   "license": "MIT",
   "author": {
     "name": "Mr.Hope",
@@ -11,18 +11,24 @@
   },
   "scripts": {
     "docs:vite-build": "vuepress-vite build src",
-    "docs:vite-clean-serve": "vuepress-vite dev src --clean-cache",
-    "docs:vite-serve": "vuepress-vite dev src",
+    "docs:vite-clean-dev": "vuepress-vite dev src --clean-cache",
+    "docs:vite-dev": "vuepress-vite dev src",
     "docs:webpack-build": "vuepress-webpack build src",
-    "docs:webpack-clean-serve": "vuepress-webpack dev src --clean-cache",
-    "docs:webpack-serve": "vuepress-webpack dev src"
+    "docs:webpack-clean-dev": "vuepress-webpack dev src --clean-cache",
+    "docs:webpack-dev": "vuepress-webpack dev src"
   },
   "dependencies": {
-    "@types/three": "0.139.0",
-    "@vuepress/plugin-docsearch": "2.0.0-beta.38",
-    "three": "0.139.2",
-    "vuepress-theme-hope": "2.0.0-beta.38",
-    "vuepress-vite": "2.0.0-beta.39",
-    "vuepress-webpack": "2.0.0-beta.38"
+    "@vuepress/cli": "2.0.0-beta.45",
+    "@vuepress/client": "2.0.0-beta.45",
+    "@vuepress/plugin-docsearch": "2.0.0-beta.45",
+    "@vuepress/utils": "2.0.0-beta.45",
+    "sass-loader": "12.6.0",
+    "three": "0.140.2",
+    "vue": "3.2.36",
+    "vuepress-plugin-components": "workspace:*",
+    "vuepress-shared": "workspace:*",
+    "vuepress-theme-hope": "workspace:*",
+    "vuepress-vite": "2.0.0-beta.45",
+    "vuepress-webpack": "2.0.0-beta.45"
   }
 }

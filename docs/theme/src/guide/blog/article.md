@@ -1,6 +1,7 @@
 ---
 title: Article List
 icon: article
+index: 3
 category:
   - Blog
 tag:
@@ -17,13 +18,14 @@ The topic provides you with a list of all articles under the path `/article/` by
 
 By default, the theme will only display the excerpt or description you specify in the article list.
 
-If you want the theme to automatically extract excerpts, set `autoExcerpt: true` in `themeConfig.plugins.blog`.
+If you want the theme to automatically extract excerpts, set `plugins.blog.autoExcerpt: true` in theme options.
 
 ## Article
 
 All articles will be added to the article list by default and rendered under the path `/article/`.
 
-![Article list](./assets/article-list.png)
+![Article list](./assets/article-list-light.png#light)
+![Article list](./assets/article-list-dark.png#dark)
 
 If you don’t want the list to contain some specific articles, just set the `article` to `false` in the frontmatter of the article.
 

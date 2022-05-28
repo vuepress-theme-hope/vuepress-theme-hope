@@ -22,7 +22,7 @@
 }
 
 .hide-in-mobile {
-  @media (max-width: hope-config.$mobile) {
+  @media (max-width: hope-config.$tablet) {
     display: none !important;
   }
 }

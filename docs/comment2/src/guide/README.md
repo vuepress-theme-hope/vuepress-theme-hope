@@ -3,7 +3,7 @@ title: Guide
 icon: creative
 ---
 
-This plugin register `<CommentService />` comonent globally.
+This plugin register `<CommentService />` component globally.
 
 We recommended you to insert the comment component (`<CommentService />`) after the `<PageNav />` component.
 

@@ -1,19 +1,22 @@
+import { describe, it, expect } from "vitest";
 import MarkdownIt = require("markdown-it");
-import MarkdownContainer = require("markdown-it-container");
-import { codeDemoRender } from "../../src/node/markdown-it/code-demo";
+import {
+  normalDemo,
+  vueDemo,
+  reactDemo,
+} from "../../src/node/markdown-it/codeDemo";
 
 describe("demo", () => {
-  const markdownIt = MarkdownIt({ linkify: true }).use(
-    MarkdownContainer,
-    "demo",
-    { render: codeDemoRender }
-  );
+  const markdownIt = MarkdownIt({ linkify: true })
+    .use(normalDemo)
+    .use(vueDemo)
+    .use(reactDemo);
 
   it("Should resolve demo info", () => {
     expect(
       markdownIt.render(
         `
-::: demo A normal demo
+::: normal-demo A normal demo
 
 \`\`\`html
 <h1>Mr.Hope</h1>
@@ -34,7 +37,7 @@ span {
 
 :::
 
-::: demo [react] A react demo
+::: react-demo A react demo
 
 \`\`\`js
 export default class App extends React.Component {
@@ -60,7 +63,7 @@ export default class App extends React.Component {
 
 :::
 
-::: demo [vue] A vue demo
+::: vue-demo A vue demo
 
 \`\`\`vue
 <template>
@@ -82,7 +85,7 @@ export default {
 
 :::
 
-::: demo A normal demo
+::: normal-demo A normal demo
 
 \`\`\`md
 # Title
@@ -107,8 +110,7 @@ h1 {
 \`\`\`
 
 :::
-`,
-        {}
+`
       )
     ).toMatchSnapshot();
   });

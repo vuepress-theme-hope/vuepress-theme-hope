@@ -1,6 +1,7 @@
 ---
 title: Category and tags
 icon: tag
+index: 4
 category:
   - Blog
 tag:
@@ -15,7 +16,7 @@ You can configure category and tags for articles through frontmatter to make the
 
 ## Category Settings
 
-Just add categroy to `category` in page frontmatter, the article will be automatically rendered in the list of the`/category/<category name>/` category page.
+Just add category array to `category` in page frontmatter, the article will be automatically rendered in the list of the`/category/<category name>/` category page.
 
 For example, add this to a certain page:
 
@@ -23,20 +24,16 @@ For example, add this to a certain page:
 ---
 category:
   - HTML
+  - Web
 ---
 
 Page content...
 ```
 
-Then you can find it under the `/category/HTML` page.
+Then you can find it under the `/category/html` page.
 
-::: info Example
-
-![Category](./assets/category.png)
-
-- [Link](https://mrhope.site/category/JavaScript/)
-
-:::
+![Category](./assets/category-light.png#light)
+![Category](./assets/category-dark.png#dark)
 
 ## Tags
 
@@ -54,15 +51,10 @@ tag:
 Page content...
 ```
 
-Then you can find it under the `/tag/HTML` and `/tag/Web` pages.
+Then you can find it under the `/tag/html` and `/tag/web` pages.
 
-::: info Example
-
-![Tag](./assets/tag.png)
-
-- [Link](https://mrhope.site/tag/Vuex/)
-
-:::
+![Tag](./assets/tag-light.png#light)
+![Tag](./assets/tag-dark.png#dark)
 
 ## View list
 

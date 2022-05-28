@@ -1,6 +1,7 @@
 ---
 title: 博主信息
 icon: blog
+index: 2
 category:
   - 博客
 tag:
@@ -12,7 +13,8 @@ tag:
 
 <!-- more -->
 
-![博主信息](./assets/blogger-info.png)
+![博主信息](./assets/blogger-info-light.png#light)
+![博主信息](./assets/blogger-info-dark.png#dark)
 
 ## 头像和博主名称
 
@@ -20,7 +22,7 @@ tag:
 
 ::: note
 
-如果你没有填写它们，它们会自动回退到站点 Logo (`themeConfig.logo`) 和 站点名称 (`themeConfig.name`)。
+如果你没有填写它们，它们会自动回退到站点 Logo (主题选项中的 `logo`) 和 站点名称。
 
 :::
 
@@ -79,19 +81,20 @@ tag:
 
 :::
 
-::::: details 例子
+:::: details 例子
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
-```ts {2,4,6}
+```ts
 // .vuepress/config.ts
 import { path } from "@vuepress/utils";
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     blog: {
       media: {
         // GitHub 已经内置了图标
@@ -112,21 +115,19 @@ export default defineHopeConfig({
         ],
       },
     },
-  },
+  }),
 });
 ```
 
-:::
+@tab JS
 
-::: code-group-item JS
-
-```js {2,4,6}
+```js
 // .vuepress/config.js
 const { path } = require("@vuepress/utils");
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     blog: {
       media: {
         // GitHub 已经内置了图标
@@ -147,12 +148,10 @@ module.exports = defineHopeConfig({
         ],
       },
     },
-  },
-});
+  }),
+};
 ```
 
 :::
 
 ::::
-
-:::::

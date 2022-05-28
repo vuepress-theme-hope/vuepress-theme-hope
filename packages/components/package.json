@@ -1,8 +1,10 @@
 {
-  "name": "@mr-hope/vuepress-plugin-components",
-  "version": "2.0.0-beta.38",
-  "description": "Components plugin for vuepress-theme-hope",
+  "name": "vuepress-plugin-components",
+  "version": "2.0.0-beta.71",
+  "description": "Components collection plugin for VuePress2",
   "keywords": [
+    "vuepress",
+    "vuepress2",
     "vuepress-plugin",
     "components"
   ],
@@ -30,26 +32,35 @@
   "scripts": {
     "build": "rollup -c",
     "clean": "rimraf ./lib ./*.tsbuildinfo",
-    "dev": "concurrently \"yarn dev:copy\" \"yarn dev:ts\"",
+    "dev": "concurrently \"pnpm dev:copy\" \"pnpm dev:ts\"",
     "dev:copy": "cpx \"src/client/**/*.{vue,scss}\" lib/client -w",
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@mr-hope/vuepress-shared": "2.0.0-beta.38",
-    "@types/lodash.debounce": "^4.0.6",
-    "@vuepress/client": "2.0.0-beta.38",
-    "@vuepress/plugin-theme-data": "2.0.0-beta.38",
-    "@vuepress/utils": "2.0.0-beta.38",
-    "@vueuse/core": "^8.2.5",
+    "@vuepress/client": "2.0.0-beta.45",
+    "@vuepress/plugin-theme-data": "2.0.0-beta.45",
+    "@vuepress/shared": "2.0.0-beta.45",
+    "@vuepress/utils": "2.0.0-beta.45",
+    "@vueuse/core": "^8.5.0",
     "balloon-css": "^1.2.0",
-    "lodash.debounce": "^4.0.8",
-    "vue": "^3.2.31",
-    "vue-router": "^4.0.14",
-    "vuepress-plugin-reading-time2": "2.0.0-beta.38",
-    "vuepress-plugin-sass-palette": "2.0.0-beta.38"
+    "ts-debounce": "^4.0.0",
+    "vue": "^3.2.36",
+    "vue-router": "^4.0.15",
+    "vuepress-plugin-reading-time2": "workspace:*",
+    "vuepress-plugin-sass-palette": "workspace:*",
+    "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.38"
+    "@vuepress/core": "2.0.0-beta.45",
+    "rimraf": "3.0.2"
+  },
+  "peerDependencies": {
+    "sass-loader": "^12.6.0"
+  },
+  "peerDependenciesMeta": {
+    "sass-loader": {
+      "optional": true
+    }
   },
   "publishConfig": {
     "access": "public"

@@ -1,37 +1,33 @@
-import { defineComponent, h } from "vue";
+import { h } from "vue";
 
-import type { VNode } from "vue";
+import type { FunctionalComponent, VNode } from "vue";
 
 import "../styles/toggle-navbar-button.scss";
 
-export default defineComponent({
-  name: "ToggleNavbarButton",
+export interface ToggleNavbarButtonProps {
+  active?: boolean;
+}
 
-  props: {
-    active: {
-      type: Boolean,
-      default: false,
+const ToggleNavbarButton: FunctionalComponent<
+  ToggleNavbarButtonProps,
+  { toggle: () => void }
+> = ({ active = false }, { emit }): VNode =>
+  h(
+    "button",
+    {
+      class: ["toggle-navbar-button", { "is-active": active }],
+      "aria-label": "Toggle Navbar",
+      "aria-expanded": active,
+      "aria-controls": "nav-screen",
+      onClick: () => emit("toggle"),
     },
-  },
+    h("span", { class: "button-container" }, [
+      h("span", { class: "button-top" }),
+      h("span", { class: "button-middle" }),
+      h("span", { class: "button-bottom" }),
+    ])
+  );
 
-  emits: ["toggle"],
+ToggleNavbarButton.displayName = "ToggleNavbarButton";
 
-  setup(props, { emit }) {
-    return (): VNode =>
-      h(
-        "button",
-        {
-          class: ["toggle-navbar-button", { "is-active": props.active }],
-          "aria-label": "Toggle Navbar",
-          "aria-expanded": props.active,
-          "aria-controls": "nav-screen",
-          onClick: () => emit("toggle"),
-        },
-        h("span", { class: "button-container" }, [
-          h("span", { class: "button-top" }),
-          h("span", { class: "button-middle" }),
-          h("span", { class: "button-bottom" }),
-        ])
-      );
-  },
-});
+export default ToggleNavbarButton;

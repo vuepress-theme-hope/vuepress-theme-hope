@@ -17,14 +17,14 @@ Deploy hostname
 - Type: `string | ((page: Page) => string)`
 - Required: No
 
-Author Infomation
+Author Information
 
 ### license
 
 - Type: `string | ((page: Page) => string)`
 - Required: No
 
-License Infomation
+License Information
 
 ### triggerWords
 
@@ -56,7 +56,7 @@ Disable selection
 
 ### locales
 
-- Type: `CopyrightLocaleData`
+- Type: `CopyrightLocaleConfig`
 
   ```ts
   interface CopyrightLocaleData {
@@ -80,6 +80,10 @@ Disable selection
      * @description `:url` will be replaced by current page link
      */
     link: string;
+  }
+
+  interface CopyrightLocaleConfig {
+    [localePath: string]: CopyrightLocaleData;
   }
   ```
 

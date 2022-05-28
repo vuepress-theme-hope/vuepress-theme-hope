@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { getDate, getAuthor } from "@mr-hope/vuepress-shared";
 import { removeEndingSlash } from "@vuepress/shared";
+import { getDate, getAuthor } from "vuepress-shared";
+
 import { getCover, getImages, getLocales, resolveUrl } from "./utils";
 
 import type { App } from "@vuepress/core";

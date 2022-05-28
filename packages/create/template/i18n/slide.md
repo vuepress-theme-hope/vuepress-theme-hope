@@ -134,7 +134,7 @@ $$
 
 You can use all kinds of markup in slides.
 
-⚠**Note**: Table, hr and other unstandard Markdown syntax is not supported.
+⚠**Note**: Table, hr and other nonstandard Markdown syntax is not supported.
 
 ---
 

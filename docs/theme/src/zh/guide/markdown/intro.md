@@ -1,6 +1,7 @@
 ---
 title: 启用 Markdown 增强
 icon: enable
+index: 1
 category:
   - Markdown
 tag:
@@ -20,7 +21,7 @@ VuePress 自带的 GitHub 风格的表格，Emoji、TOC、代码行号、特定�
 
 ## 启用 Markdown 增强
 
-`.vuepress/config.js` 中的 `themeconfig.plugin.mdEnhance` 会传递给插件作为插件选项。所以你也可以直接阅读 [插件文档][md-enhance] 查看用法。
+主题选项中的 `plugin.mdEnhance` 会传递给 `vuepress-plugin-md-enhance` 作为插件选项。所以你也可以直接阅读 [插件文档][md-enhance] 查看用法。
 
 ::: tip
 
@@ -30,17 +31,46 @@ VuePress 自带的 GitHub 风格的表格，Emoji、TOC、代码行号、特定�
 
 ### 一键启用
 
-你可以设置 `themeconfig.plugins.mdEnhance.enableAll` 启用 [md-enhance][md-enhance] 插件的所有功能。
+你可以在主题选项中设置 `plugins.mdEnhance.enableAll: true` 启用 [md-enhance][md-enhance] 插件的所有功能。
 
-```js {3-5}
-module.exports = {
-  themeConfig: {
-    mdEnhance: {
-      enableAll: true,
+::: code-tabs#language
+
+@tab TS
+
+```js {8-10}
+// .vuepress/config.ts
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default defineUserConfig({
+  theme: hopeTheme({
+    plugins: {
+      mdEnhance: {
+        enableAll: true,
+      },
     },
-  },
+  }),
 };
 ```
+
+@tab JS
+
+```js {7-9}
+// .vuepress/config.js
+const { hopeTheme } = require("vuepress-theme-hope");
+
+module.exports = {
+  theme: hopeTheme({
+    plugins: {
+      mdEnhance: {
+        mermaid: true,
+      },
+    },
+  }),
+};
+```
+
+:::
 
 ::: danger
 

@@ -16,7 +16,7 @@ footer: MIT Licensed | Copyright © 2021-present Mr.Hope
 ### 安装
 
 ```bash
-yarn add -D vuepress-plugin-sass-palette@next
+pnpm add -D vuepress-plugin-sass-palette@next
 ```
 
 ### Usage
@@ -24,17 +24,19 @@ yarn add -D vuepress-plugin-sass-palette@next
 ```ts
 // Your plugin or theme entry
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
-import type { Plugin } from "@vuepress/core";
+import type { PluginFunction } from "@vuepress/core";
 
-const yourPlugin: Plugin = (options, app) => {
-  useSassPalettePlugin(app, {
-    // plugin options
-  });
+const yourPlugin =
+  (options): PluginFunction =>
+  (app) => {
+    useSassPalettePlugin(app, {
+      // plugin options
+    });
 
-  return {
-    // your plugin api
+    return {
+      // your plugin api
+    };
   };
-};
 
 export default yourPlugin;
 ```

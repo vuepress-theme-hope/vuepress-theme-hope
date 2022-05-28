@@ -1,6 +1,7 @@
 ---
 title: MdEnhance 插件配置
 icon: markdown
+index: 6
 category:
   - 配置
 tag:
@@ -13,7 +14,7 @@ tag:
 
 `vuepress-plugin-md-enhance` 插件默认启用，提供 Markdown 增强功能。
 
-`vuepress-theme-hope` 将 `themeConfig.plugins.mdEnhance` 作为插件选项传递给 `vuepress-plugin-md-enhance` 插件。
+`vuepress-theme-hope` 将主题选项中的 `plugins.mdEnhance` 作为插件选项传递给 `vuepress-plugin-md-enhance` 插件。
 
 ::: tip
 
@@ -42,7 +43,7 @@ tag:
 
 请仅将此选项用于体验或测试。
 
-随着时间的增长，`vupress-plugin-md-enhance` 变得越来越强大。它为 Markdown 解析器添加了更多语法，并输出了更多代码。
+随着时间的增长，`vuepress-plugin-md-enhance` 变得越来越强大。它为 Markdown 解析器添加了更多语法，并输出了更多代码。
 
 启用不需要的功能将增加开发和构建时间。 (`markdown-it` 必须检查额外的语法)
 
@@ -83,6 +84,20 @@ tag:
 - danger
 - details
 
+### linkCheck
+
+- 类型: `"always" | "dev" | "build" | "never" | boolean`
+- 默认值: `"dev"`
+
+是否启用链接检查。
+
+::: note
+
+- `true` 等同于 `'always'`
+- `false` 等同于 `'never'`
+
+:::
+
 ### vpre
 
 - 类型: `boolean`
@@ -90,7 +105,14 @@ tag:
 
 是否启用 v-pre 容器。
 
-### codegroup
+### tabs
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否启用选项卡。
+
+### codetabs
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -165,17 +187,18 @@ interface ImageMarkOptions {
 ```ts
 interface TaskListOptions {
   /**
+   * 是否禁用 checkbox
+   *
+   * @default true
+   */
+  disabled?: boolean;
+
+  /**
    * 是否使用 `<label>` 来包裹文字
    *
    * @default true
    */
   label?: boolean;
-  /**
-   * 是否将 `<label>` 放置在 `<input>` 后还是包裹住 `<input>`
-   *
-   * @default true
-   */
-  labelAfter?: boolean;
 }
 ```
 
@@ -266,7 +289,7 @@ CodePen 编辑器显示情况，第一位代表 HTML ，第二位代表 JS，第
 
 #### 其他
 
-以下是第三方代码演示使用的库地址，除非你的环境无法访问 jsdelivr 或访问缓慢，否则无需覆盖默认设置。
+以下是第三方代码演示使用的库地址，除非你的环境无法访问 unpkg 或访问缓慢，否则无需覆盖默认设置。
 
 ##### demo.babel
 

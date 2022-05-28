@@ -21,17 +21,21 @@ copyright: false
 
 ### 安装
 
-:::: code-group
+::: code-tabs#shell
 
-::: code-group-item yarn
+@tab pnpm
+
+```bash
+pnpm add -D vuepress-plugin-blog2@next
+```
+
+@tab yarn
 
 ```bash
 yarn add -D vuepress-plugin-blog2@next
 ```
 
-:::
-
-::: code-group-item npm
+@tab npm
 
 ```bash
 npm i -D vuepress-plugin-blog2@next
@@ -39,38 +43,34 @@ npm i -D vuepress-plugin-blog2@next
 
 :::
 
-::::
-
 ### 使用
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
-import { blog } from "vuepress-plugin-blog2";
+import { blogPlugin } from "vuepress-plugin-blog2";
 
 export default {
   plugins: [
-    blog({
+    blogPlugin({
       //插件选项
     }),
   ],
 };
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // .vuepress/config.js
-const { blog } = require("vuepress-plugin-blog2");
+const { blogPlugin } = require("vuepress-plugin-blog2");
 
 module.exports = {
   plugins: [
-    blog({
+    blogPlugin({
       //插件选项
     }),
   ],
@@ -78,8 +78,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ## 从 V1 迁移
 

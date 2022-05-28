@@ -65,8 +65,8 @@ Raw Markdown:
 
 <!-- absolute path -->
 
-[Guide](/v2/guide/README.md)  
-[Config > I18n](/v2/config/i18n.md)
+[Guide](/guide/README.md)  
+[Config > I18n](/config/i18n.md)
 
 <!-- URL -->
 
@@ -92,12 +92,12 @@ Converted to:
 
 Rendered as:
 
-[Home](../../README.md)  
-[Contribution Guide](../../contribution.md)  
-[VuePress Config](./config.md)
-[Guide](/v2/guide/README.md)  
-[Config > I18n](/v2/config/i18n.md)  
-[GitHub](https://github.com)
+- [Home](../../README.md)
+- [Contribution Guide](../../contribution.md)
+- [VuePress Config](./config.md)
+- [Guide](/guide/README.md)
+- [Config > I18n](/config/i18n.md)
+- [GitHub](https://github.com)
 
 Explanation:
 
@@ -176,14 +176,19 @@ Input:
 ````md
 ```ts {1,6-8}
 import type { UserConfig } from "@vuepress/cli";
+import { defaultTheme } from "@vuepress/theme-default";
 
 export const config: UserConfig = {
   title: "Hello, VuePress",
 
-  themeConfig: {
+  theme: defaultTheme({
     logo: "https://vuejs.org/images/logo.png",
-  },
+  }),
 };
+```
+
+```
+
 ```
 ````
 
@@ -191,13 +196,14 @@ Output:
 
 ```ts {1,6-8}
 import type { UserConfig } from "@vuepress/cli";
+import { defaultTheme } from "@vuepress/theme-default";
 
 export const config: UserConfig = {
   title: "Hello, VuePress",
 
-  themeConfig: {
+  theme: defaultTheme({
     logo: "https://vuejs.org/images/logo.png",
-  },
+  }),
 };
 ```
 

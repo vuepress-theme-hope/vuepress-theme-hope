@@ -1,6 +1,6 @@
-import { getAuthor } from "@mr-hope/vuepress-shared/lib/client";
 import { useSiteLocaleData, withBase } from "@vuepress/client";
 import { computed, defineComponent, h } from "vue";
+import { getAuthor } from "vuepress-shared/lib/client";
 
 import SocialMedia from "@theme-hope/module/blog/components/SocialMedia";
 import { useNavigate, useThemeLocaleData } from "@theme-hope/composables";
@@ -61,7 +61,7 @@ export default defineComponent({
               ...(intro.value
                 ? {
                     style: { cursor: "pointer" },
-                    ariaLabel: locale.value.intro,
+                    "aria-label": locale.value.intro,
                     "data-balloon-pos": "down",
                     role: "navigation",
                     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion

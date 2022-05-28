@@ -1,4 +1,4 @@
-import { release } from "./release";
+import { release } from "./release.js";
 
 release().catch((err) => {
   console.error(err);

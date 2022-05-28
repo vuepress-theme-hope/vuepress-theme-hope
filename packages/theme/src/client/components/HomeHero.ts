@@ -21,13 +21,13 @@ export default defineComponent({
     const siteLocale = useSiteLocaleData();
 
     const heroText = computed(() => {
-      if (frontmatter.value.heroText === null) return null;
+      if (frontmatter.value.heroText === false) return false;
 
       return frontmatter.value.heroText || siteLocale.value.title || "Hello";
     });
 
     const tagline = computed(() => {
-      if (frontmatter.value.tagline === null) return null;
+      if (frontmatter.value.tagline === false) return false;
 
       return (
         frontmatter.value.tagline ||
@@ -52,22 +52,14 @@ export default defineComponent({
       () => frontmatter.value.heroAlt || heroText.value || "hero"
     );
 
-    const actions = computed(() => {
-      if (!isArray(frontmatter.value.actions)) return [];
-
-      return frontmatter.value.actions.map(
-        ({ text, link, type = "primary" }) => ({
-          text,
-          link,
-          type,
-        })
-      );
-    });
+    const actions = computed(() =>
+      isArray(frontmatter.value.actions) ? frontmatter.value.actions : []
+    );
 
     return (): VNode =>
       h("header", { class: "hero" }, [
         slots.heroImage?.() ||
-          h(DropTransition, { type: "group" }, () => [
+          h(DropTransition, { appear: true, type: "group" }, () => [
             heroImage.value
               ? h("img", {
                   key: "light",
@@ -88,25 +80,23 @@ export default defineComponent({
         slots.heroInfo?.() ||
           h("div", { class: "hero-info" }, [
             heroText.value
-              ? h(DropTransition, { delay: 0.04 }, () =>
-                  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                  h("h1", { id: "main-title" }, heroText.value!)
+              ? h(DropTransition, { appear: true, delay: 0.04 }, () =>
+                  h("h1", { id: "main-title" }, heroText.value as string)
                 )
               : null,
             tagline.value
-              ? h(DropTransition, { delay: 0.08 }, () =>
-                  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                  h("p", { class: "description" }, tagline.value!)
+              ? h(DropTransition, { appear: true, delay: 0.08 }, () =>
+                  h("p", { class: "description" }, tagline.value as string)
                 )
               : null,
             actions.value.length
-              ? h(DropTransition, { delay: 0.12 }, () =>
+              ? h(DropTransition, { appear: true, delay: 0.12 }, () =>
                   h(
                     "p",
                     { class: "actions" },
                     actions.value.map((action) =>
                       h(AutoLink, {
-                        class: ["action-button", action.type],
+                        class: ["action-button", action.type || "default"],
                         config: action,
                         externalLinkIcon: false,
                       })

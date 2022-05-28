@@ -1,24 +1,23 @@
-import { defineComponent, h } from "vue";
+import { h } from "vue";
 
-import type { VNode } from "vue";
+import type { FunctionalComponent, VNode } from "vue";
 
 import "../styles/toggle-sidebar-button.scss";
 
-export default defineComponent({
-  name: "ToggleSidebarButton",
+const ToggleSidebarButton: FunctionalComponent<
+  Record<string, never>,
+  { toggle: () => void }
+> = (_, { emit }): VNode =>
+  h(
+    "button",
+    {
+      class: "toggle-sidebar-button",
+      title: "Toggle Sidebar",
+      onClick: () => emit("toggle"),
+    },
+    h("span", { class: "icon" })
+  );
 
-  emits: ["toggle"],
+ToggleSidebarButton.displayName = "ToggleSidebarButton";
 
-  setup(_props, { emit }) {
-    return (): VNode =>
-      h(
-        "button",
-        {
-          class: "toggle-sidebar-button",
-          title: "Toggle Sidebar",
-          onClick: () => emit("toggle"),
-        },
-        h("span", { class: "icon" })
-      );
-  },
-});
+export default ToggleSidebarButton;

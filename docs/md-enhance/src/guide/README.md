@@ -21,7 +21,7 @@ You can set `enableAll: true` in plugin options to enable all features of this p
 
 Please use this option ONLY for playing or testing.
 
-As time grows, `vupress-plugin-md-enhance` is becoming more powerful. It’s adding lots of syntax to Markdown parser and more code to output.
+As time grows, `vuepress-plugin-md-enhance` is becoming more powerful. It’s adding lots of syntax to Markdown parser and more code to output.
 
 Enabling features you don’t need will increase dev and build time. (`markdown-it` has to check extra syntax)
 
@@ -33,19 +33,43 @@ Please use the options below and enable ONLY the feature you want to use.
 
 ## New Feature
 
-### CodeGroup
+### Tabs
 
-:::: code-group
+::: tabs#fruit
 
-::: code-group-item yarn
+@tab apple
+
+Apple
+
+@tab banana
+
+Banana
+
+@tab orange
+
+Orange
+
+:::
+
+- [View Detail](tabs.md)
+
+### Code Tabs
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D vuepress-plugin-md-enhance@next
+```
+
+@tab yarn
 
 ```bash
 yarn add -D vuepress-plugin-md-enhance@next
 ```
 
-:::
-
-::: code-group-item npm:active
+@tab:active npm
 
 ```bash
 npm i -D vuepress-plugin-md-enhance@next
@@ -53,9 +77,7 @@ npm i -D vuepress-plugin-md-enhance@next
 
 :::
 
-::::
-
-- [View Detail](code-group.md)
+- [View Detail](code-tabs.md)
 
 ### Superscript and Subscript
 
@@ -179,15 +201,15 @@ $$
 
 - [View Detail](tex.md)
 
-### Markdown Import
+### Include files
 
-@[md{5,9}](./demo.snippet.md)
+@include(./demo.snippet.md{5,9})
 
-- [View Detail](md-import.md)
+- [View Detail](include.md)
 
 ### Code Demo
 
-::: demo A normal demo
+::: normal-demo A normal demo
 
 ```html
 <h1>VuePress Theme Hope</h1>

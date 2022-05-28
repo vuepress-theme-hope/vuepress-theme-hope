@@ -15,7 +15,7 @@ This tutorial guides you on how to deploy a VuePress project.
 
 ## Build Project
 
-Once you completed the starter stage development of the project locally, you can build the website using the `yarn docs:build` command.
+Once you completed the starter stage development of the project locally, you can build the website using the `pnpm docs:build` command.
 
 If you are using theme template, the website content will be output to the `.vuepress/dist` under VuePress project folder These files are the final output of VuePress.
 
@@ -23,7 +23,7 @@ You can deploy the contents of this folder to your website's server. The easiest
 
 ## Deploy to GitHub Pages
 
-If you're using theme template and you choose to create GitHub workflow during setup, the only thing you need to do is set the correct base option.
+If you're using theme template and you choose to create GitHub workflow during setup, the only thing you need to do is set the correct [base option](https://v2.vuepress.vuejs.org/reference/config.html#base).
 
 - If you are going to publish to `https://<USERNAME>.github.io/`, you must upload the entire project to the `https://github.com/<USERNAME>/<USERNAME>.github.io` repository . You don't need to make any changes in this case, since base defaults to `"/"`.
 
@@ -58,22 +58,22 @@ jobs:
           # if your docs needs submodules, uncomment the following line
           # submodules: true
 
-      - uses: actions/cache@v3
-        id: node-modules
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
         with:
-          path: node_modules/
-          key: ${{ runner.os }}-node-modules-${{ hashFiles('yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-node-modules-
+          version: 7
+          run_install: true
 
-      - name: Install Deps
-        if: steps.node-modules.outputs.cache-hit != 'true'
-        run: yarn install --frozen-lockfile
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: pnpm
 
       - name: Build Docs
         env:
           NODE_OPTIONS: --max_old_space_size=8192
-        run: yarn run build:webpack
+        run: pnpm docs:build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4

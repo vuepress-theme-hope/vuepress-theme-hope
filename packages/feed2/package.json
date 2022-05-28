@@ -1,10 +1,11 @@
 {
   "name": "vuepress-plugin-feed2",
-  "version": "2.0.0-beta.38",
+  "version": "2.0.0-beta.71",
   "description": "Feed plugin for vuepress-theme-hope",
   "keywords": [
-    "vuepress-plugin",
     "vuepress",
+    "vuepress2",
+    "vuepress-plugin",
     "feed"
   ],
   "homepage": "https://vuepress-theme-hope.github.io/v2/feed/",
@@ -14,7 +15,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vuepress-theme-hope/vuepress-theme-hope.git",
-    "directory": "packages/feed"
+    "directory": "packages/feed2"
   },
   "license": "MIT",
   "author": {
@@ -31,16 +32,19 @@
   "scripts": {
     "build": "rollup -c",
     "clean": "rimraf ./lib ./*.tsbuildinfo",
-    "dev": "yarn dev:ts",
+    "dev": "pnpm dev:ts",
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@mr-hope/vuepress-shared": "2.0.0-beta.38",
-    "@vuepress/utils": "2.0.0-beta.38",
+    "@vuepress/shared": "2.0.0-beta.45",
+    "@vuepress/utils": "2.0.0-beta.45",
+    "vuepress-shared": "workspace:*",
     "xml-js": "^1.6.11"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.38"
+    "@vuepress/core": "2.0.0-beta.45",
+    "@vuepress/plugin-git": "2.0.0-beta.45",
+    "rimraf": "3.0.2"
   },
   "publishConfig": {
     "access": "public"

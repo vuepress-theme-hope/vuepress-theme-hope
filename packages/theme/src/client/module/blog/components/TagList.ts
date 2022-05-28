@@ -1,7 +1,7 @@
-import { generateIndexfromHash } from "@mr-hope/vuepress-shared/lib/client";
 import { usePageFrontmatter } from "@vuepress/client";
 import { computed, defineComponent, h } from "vue";
 import { RouterLink } from "vue-router";
+import { generateIndexfromHash } from "vuepress-shared/lib/client";
 
 import { useTagMap } from "@theme-hope/module/blog/composables";
 

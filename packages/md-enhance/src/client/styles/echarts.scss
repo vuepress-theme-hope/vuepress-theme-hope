@@ -1,0 +1,32 @@
+.echarts-title {
+  margin: 0.5rem auto;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: center;
+}
+
+.echarts-loading-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--grey15);
+
+  .loading-icon {
+    width: 4em;
+    height: 4em;
+    margin: 2.5em auto;
+    color: var(--c-brand);
+  }
+}
+
+.echarts-wrapper {
+  min-height: 360px;
+  padding: 0.6em 0.4em;
+  text-align: center;
+  transition: all 1s;
+
+  @media (max-width: hope-config.$tablet) {
+    margin: 0 -1rem;
+    padding: 0.6em 0;
+  }
+}

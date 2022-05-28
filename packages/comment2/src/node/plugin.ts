@@ -1,88 +1,81 @@
+import { path } from "@vuepress/utils";
+import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   addCustomElement,
   addViteSsrExternal,
-  addViteSsrNoExternal,
   addViteOptimizeDepsExclude,
   addViteOptimizeDepsInclude,
   getLocales,
   noopModule,
-} from "@mr-hope/vuepress-shared";
-import { path } from "@vuepress/utils";
-import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
+} from "vuepress-shared";
+
 import { walineLocales } from "./locales";
+import { logger } from "./utils";
 
 import type { CommentOptions } from "../shared";
-import type { Plugin, PluginConfig } from "@vuepress/core";
+import type { PluginFunction } from "@vuepress/core";
 
 /** Comment Plugin */
-export const commentPlugin: Plugin<CommentOptions> = (options, app) => {
-  const isGiscus = options.type === "giscus";
-  const isTwikoo = options.type === "twikoo";
-  const isWaline = options.type === "waline";
+export const commentPlugin =
+  (options: CommentOptions): PluginFunction =>
+  (app) => {
+    if (app.env.isDebug) logger.info(`Options: ${options.toString()}`);
 
-  const userWalineLocales = isWaline
-    ? getLocales(app, walineLocales, options.walineLocales)
-    : {};
+    const isGiscus = options.type === "giscus";
+    const isTwikoo = options.type === "twikoo";
+    const isWaline = options.type === "waline";
 
-  // remove locales so that they won’t be injected in client twice
-  if ("walineLocales" in options) delete options.walineLocales;
+    const userWalineLocales = isWaline
+      ? getLocales({
+          app,
+          name: "waline",
+          default: walineLocales,
+          config: options.walineLocales,
+        })
+      : {};
 
-  useSassPalettePlugin(app, { id: "hope" });
+    // remove locales so that they won’t be injected in client twice
+    if ("walineLocales" in options) delete options.walineLocales;
 
-  // TODO: Wait for Vssue to support vue3
-  // if (options.type === "vssue")
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  // app.use("@vssue/vuepress-plugin-vssue", options);
+    useSassPalettePlugin(app, { id: "hope" });
 
-  return {
-    name: "vuepress-plugin-comment2",
+    return {
+      name: "vuepress-plugin-comment2",
 
-    alias: {
-      "@Giscus": isGiscus
-        ? path.resolve(__dirname, "../client/components/Giscus.js")
-        : noopModule,
-      "@Twikoo": isTwikoo
-        ? path.resolve(__dirname, "../client/components/Twikoo.js")
-        : noopModule,
-      "@Waline": isWaline
-        ? path.resolve(__dirname, "../client/components/Waline.js")
-        : noopModule,
-    },
+      alias: {
+        "@CommentProvider": isGiscus
+          ? path.resolve(__dirname, "../client/components/Giscus.js")
+          : isTwikoo
+          ? path.resolve(__dirname, "../client/components/Twikoo.js")
+          : isWaline
+          ? path.resolve(__dirname, "../client/components/Waline.js")
+          : noopModule,
+      },
 
-    define: () => ({
-      COMMENT_OPTIONS: options,
-      WALINE_LOCALES: userWalineLocales,
-    }),
+      define: () => ({
+        COMMENT_OPTIONS: options,
+        WALINE_LOCALES: userWalineLocales,
+      }),
 
-    onInitialized: (app): void => {
-      if (isGiscus) addCustomElement(app, ["GiscusWidget"]);
+      extendsBundlerOptions: (config: unknown, app): void => {
+        if (isGiscus) addCustomElement({ app, config }, "GiscusWidget");
 
-      addViteSsrNoExternal(app, [
-        "@mr-hope/vuepress-shared",
-        "vuepress-plugin-comment2",
-      ]);
-      addViteOptimizeDepsExclude(app, "vuepress-plugin-comment2");
+        if (isGiscus) {
+          addViteSsrExternal({ app, config }, "giscus");
+        }
 
-      if (isGiscus) {
-        addViteOptimizeDepsInclude(app, "giscus");
-        addViteSsrExternal(app, "giscus");
-      }
+        if (isTwikoo) {
+          addViteOptimizeDepsInclude({ app, config }, "twikoo");
+          addViteSsrExternal({ app, config }, "twikoo");
+        }
 
-      if (isTwikoo) {
-        addViteOptimizeDepsInclude(app, "twikoo");
-        addViteSsrExternal(app, "twikoo");
-      }
+        if (isWaline) {
+          addCustomElement({ app, config }, "masonry-wall");
+          addViteOptimizeDepsInclude({ app, config }, "autosize");
+          addViteOptimizeDepsExclude({ app, config }, "@waline/client");
+        }
+      },
 
-      if (isWaline) {
-        addViteOptimizeDepsInclude(app, "@waline/client");
-        addViteSsrExternal(app, "@waline/client");
-      }
-    },
-
-    clientAppEnhanceFiles: path.resolve(__dirname, "../client/appEnhance.js"),
+      clientConfigFile: path.resolve(__dirname, "../client/config.js"),
+    };
   };
-};
-
-export const comment = (
-  options: CommentOptions | false
-): PluginConfig<CommentOptions> => ["comment2", options];

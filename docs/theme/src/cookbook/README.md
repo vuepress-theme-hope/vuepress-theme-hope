@@ -36,6 +36,6 @@ Here is a step by step tutorial for newcomers:
 
 - [Customize Style](advanced/style.md)
 
-- [Replacing Component](advanced/customize.md)
+- [Replacing Component](advanced/replace.md)
 
 - [Theme Extending](advanced/extend.md)

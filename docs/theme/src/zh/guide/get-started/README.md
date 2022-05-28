@@ -1,6 +1,9 @@
 ---
 title: 快速上手
 icon: creative
+index: false
+dir:
+  index: 1
 ---
 
 ## 目录

@@ -1,47 +1,17 @@
 import { logger } from "./utils";
-import { hashSync } from "bcryptjs";
+import { hashSync } from "bcrypt-ts";
 
-import type {
-  WebpackBundlerOptions,
-  WebpackConfiguration,
-} from "@vuepress/bundler-webpack";
-import type { App } from "@vuepress/core";
 import type {
   HopeThemeEncryptConfig,
   HopeThemeEncryptOptions,
 } from "../shared";
 
-export const handleCrytoForWebpack = (app: App): void => {
-  const { bundler, bundlerConfig } = app.options;
-
-  // for webpack
-  if (bundler.endsWith("webpack")) {
-    const webpackBundlerConfig: WebpackBundlerOptions =
-      bundlerConfig as WebpackBundlerOptions;
-    const { configureWebpack } = webpackBundlerConfig;
-
-    webpackBundlerConfig.configureWebpack = (
-      config: WebpackConfiguration,
-      isServer: boolean,
-      isBuild: boolean
-    ): WebpackConfiguration | void => {
-      if (!config.resolve) config.resolve = {};
-
-      config.resolve.fallback = { crypto: false, ...config.resolve.fallback };
-
-      const result = configureWebpack?.(config, isServer, isBuild);
-
-      if (result) return result;
-    };
-  }
-};
-
 export const resolveEncrypt = (
   encrypt: HopeThemeEncryptOptions
 ): HopeThemeEncryptConfig => {
-  const result: HopeThemeEncryptConfig = {
-    global: Boolean(encrypt.global),
-  };
+  const result: HopeThemeEncryptConfig = {};
+
+  if (encrypt.global) result.global = true;
 
   // handle global token
   if (encrypt.admin)
@@ -91,7 +61,7 @@ Key ${key}’s value MUST be string or string[]. But it’s type is ${typeof tok
           }
 
           logger.error(
-            `[You config "themeConfig.encrypt.config", but your config is invalid. 
+            `You config "themeConfig.encrypt.config", but your config is invalid. 
         
         The value of key ${key} MUST be string or string[]. But not it’s ${typeof tokens}. Please fix it!`
           );

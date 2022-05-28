@@ -17,18 +17,18 @@ footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 ### 安装
 
 ```bash
-yarn add -D vuepress-plugin-feed2@next
+pnpm add -D vuepress-plugin-feed2@next
 ```
 
 ### 使用
 
 ```ts
 // .vuepress/config.ts
-import { feed } from "vuepress-plugin-feed2";
+import { feedPlugin } from "vuepress-plugin-feed2";
 
 export default {
   plugins: [
-    feed({
+    feedPlugin({
       // 插件选项
     }),
   ],

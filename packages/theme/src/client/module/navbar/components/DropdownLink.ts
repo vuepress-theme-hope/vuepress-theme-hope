@@ -1,8 +1,15 @@
-import { computed, defineComponent, h, ref, toRef, watch } from "vue";
+import {
+  computed,
+  defineComponent,
+  h,
+  ref,
+  resolveComponent,
+  toRef,
+  watch,
+} from "vue";
 import { useRoute } from "vue-router";
 
 import AutoLink from "@theme-hope/components/AutoLink";
-import { useIconPrefix } from "@theme-hope/composables";
 
 import type { PropType, VNode } from "vue";
 import type {
@@ -26,7 +33,6 @@ export default defineComponent({
 
   setup(props, { slots }) {
     const route = useRoute();
-    const iconPrefix = useIconPrefix();
     const config = toRef(props, "config");
 
     const dropdownAriaLabel = computed(
@@ -56,9 +62,6 @@ export default defineComponent({
       if (isTriggerByTab) open.value = !open.value;
     };
 
-    const isLastItemOfArray = <T>(item: T, arr: T[]): boolean =>
-      arr[arr.length - 1] === item;
-
     return (): VNode =>
       h("div", { class: ["dropdown-wrapper", { open: open.value }] }, [
         h(
@@ -66,25 +69,23 @@ export default defineComponent({
           {
             class: "dropdown-title",
             type: "button",
-            ariaLabel: dropdownAriaLabel.value,
+            "aria-label": dropdownAriaLabel.value,
             onClick: handleDropdown,
           },
           [
             slots.title?.() ||
               h("span", { class: "title" }, [
-                config.value.icon
-                  ? h("i", {
-                      class: `icon ${iconPrefix.value}${config.value.icon}`,
-                    })
-                  : null,
+                h(resolveComponent("FontIcon"), { icon: config.value.icon }),
                 props.config.text,
               ]),
             h("span", { class: "arrow" }),
             h(
               "ul",
               { class: "nav-dropdown" },
-              config.value.children.map((child) =>
-                h(
+              config.value.children.map((child, index) => {
+                const isLastChild = index === config.value.children.length - 1;
+
+                return h(
                   "li",
                   { class: "dropdown-item" },
                   "children" in child
@@ -97,11 +98,9 @@ export default defineComponent({
                                 config: child as AutoLinkType,
                                 onFocusout: () => {
                                   if (
-                                    isLastItemOfArray(
-                                      child,
-                                      config.value.children
-                                    ) &&
-                                    child.children.length === 0
+                                    // no children
+                                    child.children.length === 0 &&
+                                    isLastChild
                                   )
                                     open.value = false;
                                 },
@@ -111,7 +110,7 @@ export default defineComponent({
                         h(
                           "ul",
                           { class: "dropdown-subitem-wrapper" },
-                          child.children.map((grandchild) =>
+                          child.children.map((grandchild, grandIndex) =>
                             h(
                               "li",
                               { class: "dropdown-subitem" },
@@ -119,14 +118,9 @@ export default defineComponent({
                                 config: grandchild,
                                 onFocusout: () => {
                                   if (
-                                    isLastItemOfArray(
-                                      grandchild,
-                                      child.children
-                                    ) &&
-                                    isLastItemOfArray(
-                                      child,
-                                      config.value.children
-                                    )
+                                    // last item of grandchild
+                                    grandIndex === child.children.length - 1 &&
+                                    isLastChild
                                   )
                                     open.value = false;
                                 },
@@ -138,12 +132,11 @@ export default defineComponent({
                     : h(AutoLink, {
                         config: child,
                         onFocusout: () => {
-                          if (isLastItemOfArray(child, config.value.children))
-                            open.value = false;
+                          if (isLastChild) open.value = false;
                         },
                       })
-                )
-              )
+                );
+              })
             ),
           ]
         ),

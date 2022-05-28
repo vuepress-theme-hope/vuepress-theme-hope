@@ -49,13 +49,9 @@ export const injectLinkstoHead = (
     }
   }
 
-  setLink(
-    "manifest",
-    `${base.replace(/^\/?/u, "/").replace(/\/?$/u, "/")}manifest.webmanifest`,
-    {
-      crossorigin: "use-credentials",
-    }
-  );
+  setLink("manifest", `${base}manifest.webmanifest`, {
+    crossorigin: "use-credentials",
+  });
   setMeta("theme-color", options.themeColor || "#46bd87");
 
   if (

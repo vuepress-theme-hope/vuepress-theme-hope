@@ -25,7 +25,7 @@
   text-align: center;
   transition: all 1s;
 
-  @media (max-width: hope-config.$mobile) {
+  @media (max-width: hope-config.$tablet) {
     margin: 0 -1rem;
     padding: 0.6em 0;
   }

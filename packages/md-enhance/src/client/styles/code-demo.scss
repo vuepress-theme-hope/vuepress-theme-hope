@@ -1,10 +1,18 @@
-@use "@mr-hope/vuepress-shared/styles/arrow";
-@use "@mr-hope/vuepress-shared/styles/reset";
+@use "vuepress-shared/styles/arrow";
+@use "vuepress-shared/styles/reset";
+
+:root {
+  --code-demo-header-bg-color: #eee;
+}
+
+#{hope-config.$dark-selector} {
+  --code-demo-header-bg-color: #333;
+}
 
 .code-demo-wrapper {
-  margin-top: 10px;
+  margin: 10px 0;
   border: 1px solid var(--c-border, #eaecef);
-  border-radius: 4px;
+  border-radius: 8px;
   transition: all 0.2s;
 
   &:hover {
@@ -24,75 +32,20 @@
     margin: 2.5em auto;
     color: var(--c-brand);
   }
-
-  .demo-wrapper {
-    position: relative;
-
-    overflow: auto;
-
-    max-height: 400px;
-    padding: 20px;
-    border-bottom: 1px solid var(--c-border, #eaecef);
-  }
 }
 
-.code-wrapper {
-  overflow: hidden;
-  transition: height 0.5s;
-
-  .code-container {
-    > p {
-      margin: 0.75rem;
-    }
-
-    // stylelint-disable selector-max-compound-selectors
-    > div[class*="language-"] {
-      border-radius: 0;
-
-      @media (max-width: hope-config.$mobileS) {
-        margin: 0.8rem 0;
-
-        &.line-numbers-mode::after {
-          display: none;
-        }
-
-        .line-numbers-wrapper {
-          display: none;
-        }
-
-        pre[class*="language-"] {
-          padding: 1.25rem 1.25rem 1rem;
-        }
-      }
-
-      &:first-child pre {
-        margin-top: 0 !important;
-      }
-
-      &.language-json {
-        display: none;
-      }
-
-      &.line-numbers-mode::after {
-        border-radius: 0;
-      }
-
-      .copy-code-button {
-        right: -2px;
-        bottom: -10px;
-
-        width: 28px;
-        height: 28px;
-        border-top-right-radius: 50% 20%;
-        border-bottom-right-radius: 50% 20%;
-      }
-      // stylelint-enable selector-max-compound-selectors
-    }
-  }
-}
-
-.code-demo-footer {
+.code-demo-header {
   position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 8px 12px;
+  border-radius: 8px 8px 0 0;
+
+  background-color: var(--code-demo-header-bg-color);
+
   text-align: left;
 
   .toggle-button {
@@ -100,95 +53,158 @@
     @include arrow.arrow;
     position: relative;
 
-    margin: 8px;
+    margin: 8px 12px 8px 8px;
     border-color: transparent;
+    border-radius: 50%;
 
-    background-color: transparent;
+    background-color: #ccc;
     outline: none;
 
     font-size: 24px;
 
     cursor: pointer;
+
+    #{hope-config.$dark-selector} & {
+      background-color: #555;
+    }
+
+    &:hover {
+      background-color: #aaa;
+
+      #{hope-config.$dark-selector} & {
+        background-color: #777;
+      }
+    }
   }
 
   .title {
     display: inline-block;
     vertical-align: top;
-    line-height: 40px;
+    flex: 1;
+
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 2.5rem;
 
     &:first-child {
       margin-left: 16px;
     }
   }
 
-  .code-demo-jsfiddle,
-  .code-demo-codepen {
-    float: right;
-    margin: 8px 4px;
-
-    &:hover {
-      opacity: 1;
-    }
-  }
-
-  .button {
+  .codepen-button,
+  .jsfiddle-button {
     @include reset.button;
     position: relative;
 
-    margin: 0;
-    padding: 0;
+    box-sizing: content-box;
 
-    color: #3eaf7c;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin: 0 4px;
+    padding: 4px;
+    border-radius: 50%;
+
+    background-color: #ccc;
     outline: none;
 
-    font-size: 14px;
-
-    &:hover {
-      &::before {
-        content: attr(data-tip);
-
-        position: absolute;
-        top: -28px;
-        left: 50%;
-        z-index: 100;
-
-        padding: 6px;
-        border-radius: 4px;
-
-        background-color: rgb(0 0 0 / 80%);
-        color: #eee;
-
-        font-size: 12px;
-        line-height: 1;
-        white-space: nowrap;
-
-        transform: translateX(-50%);
-      }
-
-      &::after {
-        content: "" !important;
-
-        position: absolute;
-        top: -5px;
-        left: 50%;
-
-        display: block;
-
-        border: 5px solid transparent;
-        border-top-color: rgb(0 0 0 / 80%);
-
-        transform: translateX(-50%);
-      }
-
-      svg {
-        fill: var(--c-brand, #3eaf7c);
-      }
+    #{hope-config.$dark-selector} & {
+      background-color: #555;
     }
 
     svg {
       width: 1.25rem;
       height: 1.25rem;
-      fill: var(--grey12);
+      fill: #777;
+
+      #{hope-config.$dark-selector} & {
+        fill: #aaa;
+      }
+    }
+
+    &:hover {
+      background-color: #aaa;
+
+      #{hope-config.$dark-selector} & {
+        background-color: #777;
+      }
+
+      svg {
+        fill: #333;
+
+        #{hope-config.$dark-selector} & {
+          fill: #fff;
+        }
+      }
+    }
+  }
+}
+
+.code-demo-container {
+  position: relative;
+
+  overflow: auto;
+
+  max-height: 400px;
+  padding: 20px;
+  border-bottom: 1px solid var(--c-border, #eaecef);
+}
+
+.code-demo-code-wrapper {
+  overflow: hidden;
+  transition: height 0.5s;
+}
+
+.code-demo-codes {
+  > p {
+    margin: 0.75rem;
+  }
+
+  > div[class*="language-"] {
+    border-radius: 0;
+
+    @media (max-width: hope-config.$mobile) {
+      margin: 0.8rem 0;
+
+      &.line-numbers-mode::after {
+        display: none;
+      }
+
+      .line-numbers-wrapper {
+        display: none;
+      }
+
+      pre[class*="language-"] {
+        padding: 1.25rem 1.25rem 1rem;
+      }
+    }
+
+    &:first-child pre {
+      margin-top: 0 !important;
+    }
+
+    &.language-json {
+      display: none;
+    }
+
+    &.line-numbers-mode::after {
+      border-radius: 0;
+    }
+
+    .copy-code-button {
+      right: 0;
+      bottom: 0;
+
+      width: 28px;
+      height: 28px;
+      border-radius: 50% 10% 0;
+
+      // stylelint-disable selector-max-compound-selectors
+      svg {
+        position: relative;
+        top: 1px;
+        left: 1px;
+      }
+      // stylelint-enable selector-max-compound-selectors
     }
   }
 }

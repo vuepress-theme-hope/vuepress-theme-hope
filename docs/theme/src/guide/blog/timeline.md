@@ -1,6 +1,7 @@
 ---
 title: Timeline
 icon: time
+index: 5
 category:
   - Blog
 tag:
@@ -18,7 +19,7 @@ By default, all articles which has a writing date will be displayed in timeline.
 
 ## Set Timeline title
 
-We allow you to customize the top text of the timeline, you can configure it through `themeConfig.blog.timeline`.
+We allow you to customize the top text of the timeline, you can configure it through `blog.timeline` in theme options.
 
 ## Sidebar
 

@@ -15,7 +15,7 @@
   transition: border-top-color var(--color-transition),
     background var(--color-transition);
 
-  @media (min-width: hope-config.$mobile) {
+  @media (min-width: hope-config.$tablet) {
     padding-left: calc(var(--sidebar-width) + 2rem);
 
     .no-sidebar & {
@@ -24,7 +24,7 @@
   }
 
   > div {
-    @media (max-width: hope-config.$mobileS) {
+    @media (max-width: hope-config.$mobile) {
       width: 100%;
     }
   }

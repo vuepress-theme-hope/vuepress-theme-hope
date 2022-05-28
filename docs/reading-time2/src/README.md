@@ -26,56 +26,56 @@ interface ReadingTime {
 
 ### Install
 
-:::: code-group
+::: code-tabs#shell
 
-::: code-group-item yarn
+@tab pnpm
 
 ```bash
-yarn add -D vuepress-plugin-reading-time2
+pnpm add -D vuepress-plugin-reading-time2@next
+```
+
+@tab yarn
+
+```bash
+yarn add -D vuepress-plugin-reading-time2@next
+```
+
+@tab npm
+
+```bash
+npm i -D vuepress-plugin-reading-time2@next
 ```
 
 :::
-
-::: code-group-item npm
-
-```bash
-npm i -D vuepress-plugin-reading-time2
-```
-
-:::
-
-::::
 
 ### Usage
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
-import { readingTime } from "vuepress-plugin-reading-time2";
+import { readingTimePlugin } from "vuepress-plugin-reading-time2";
 
 export default {
   plugins: [
-    readingTime({
+    readingTimePlugin({
       // your options
     }),
   ],
 };
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // .vuepress/config.js
-const { readingTime } = require("vuepress-plugin-reading-time2");
+const { readingTimePlugin } = require("vuepress-plugin-reading-time2");
 
 module.exports = {
   plugins: [
-    readingTime({
+    readingTimePlugin({
       // your options
     }),
   ],
@@ -83,8 +83,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ## Plugin Options
 

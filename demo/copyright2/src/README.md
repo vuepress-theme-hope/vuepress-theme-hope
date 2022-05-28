@@ -3,7 +3,7 @@ home: true
 title: Home
 heroImage: /logo.svg
 heroText: vuepress-plugin-copyright2
-tagline: Append copyright infomation when copying
+tagline: Append copyright information when copying
 actions:
   - text: Docs
     link: https://vuepress-theme-hope.github.io/v2/copyright/

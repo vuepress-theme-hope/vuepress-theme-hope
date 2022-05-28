@@ -74,6 +74,100 @@ tag:
 
   页脚不再展示媒体链接。
 
+## Markdown
+
+- 代码演示语法变更
+
+  旧语法:
+
+  ```md
+  ::: demo Title
+
+  <!-- demo content -->
+
+  :::
+
+  ::: demo [vue] Title
+
+  <!-- demo content -->
+
+  :::
+
+  ::: demo [react] Title
+
+  <!-- demo content -->
+
+  :::
+  ```
+
+  新语法:
+
+  ```md
+  ::: normal-demo Title
+
+  <!-- demo content -->
+
+  :::
+
+  ::: vue-demo Title
+
+  <!-- demo content -->
+
+  :::
+
+  ::: react-demo Title
+
+  <!-- demo content -->
+
+  :::
+  ```
+
+- 代码组语法变更
+
+  旧语法:
+
+  ````md
+  :::: code-group
+
+  ::: code-group-item pnpm
+
+  ```bash
+  pnpm create vuepress-theme-hope@next [dir]
+  ```
+
+  :::
+
+  ::: code-group-item npm:active
+
+  ```bash
+  npm init vuepress-theme-hope@next [dir]
+  ```
+
+  :::
+
+  ::::
+  ````
+
+  新语法:
+
+  ````md
+  ::: code-tabs
+
+  @tab pnpm
+
+  ```bash
+  pnpm create vuepress-theme-hope@next [dir]
+  ```
+
+  @tab:active npm
+
+  ```bash
+  npm init vuepress-theme-hope@next [dir]
+  ```
+
+  :::
+  ````
+
 ## 布局
 
 ### 项目主页

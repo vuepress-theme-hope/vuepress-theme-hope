@@ -19,10 +19,15 @@ features:
     details: Decorate Markdown content with styles
     link: /guide/container.html
 
-  - title: CodeGroup
+  - title: Tabs
+    icon: tab
+    details: Group similar content with tabs and switch them together
+    link: /guide/tabs.html
+
+  - title: Code Tabs
     icon: code
     details: Group similar codes with tabs
-    link: /guide/code-group.html
+    link: /guide/code-tabs.html
 
   - title: Custom Align
     icon: align
@@ -69,10 +74,10 @@ features:
     details: Markdown now have Tex Support so you can write your formula
     link: /guide/tex.html
 
-  - title: Markdown snippet Support
+  - title: Include snippet Support
     icon: markdown
-    details: split your docs with different parts and improt them in Markdown
-    link: /guide/md-import.html
+    details: split your docs with different parts and import them in Markdown
+    link: /guide/include.html
 
   - title: Code Demo Support
     icon: discover
@@ -90,17 +95,21 @@ copyright: false
 
 ### Install
 
-:::: code-group
+::: code-tabs#shell
 
-::: code-group-item yarn
+@tab pnpm
+
+```bash
+pnpm add -D vuepress-plugin-md-enhance@next
+```
+
+@tab yarn
 
 ```bash
 yarn add -D vuepress-plugin-md-enhance@next
 ```
 
-:::
-
-::: code-group-item npm
+@tab npm
 
 ```bash
 npm i -D vuepress-plugin-md-enhance@next
@@ -108,38 +117,34 @@ npm i -D vuepress-plugin-md-enhance@next
 
 :::
 
-::::
-
 ### Usage
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
-import { mdEnhance } from "vuepress-plugin-md-enhance";
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
   plugins: [
-    mdEnhance({
+    mdEnhancePlugin({
       // your options
     }),
   ],
 };
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // .vuepress/config.js
-const { mdEnhance } = require("vuepress-plugin-md-enhance");
+const { mdEnhancePlugin } = require("vuepress-plugin-md-enhance");
 
 module.exports = {
   plugins: [
-    mdEnhance({
+    mdEnhancePlugin({
       // your options
     }),
   ],
@@ -147,8 +152,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ## Migrating from V1
 

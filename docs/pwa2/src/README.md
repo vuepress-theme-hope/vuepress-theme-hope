@@ -21,17 +21,21 @@ copyright: false
 
 ### Install
 
-:::: code-group
+::: code-tabs#shell
 
-::: code-group-item yarn
+@tab pnpm
+
+```bash
+pnpm add -D vuepress-plugin-pwa2@next
+```
+
+@tab yarn
 
 ```bash
 yarn add -D vuepress-plugin-pwa2@next
 ```
 
-:::
-
-::: code-group-item npm
+@tab npm
 
 ```bash
 npm i -D vuepress-plugin-pwa2@next
@@ -39,38 +43,34 @@ npm i -D vuepress-plugin-pwa2@next
 
 :::
 
-::::
-
 ### Usage
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
-import { pwa } from "vuepress-plugin-pwa2";
+import { pwaPlugin } from "vuepress-plugin-pwa2";
 
 export default {
   plugins: [
-    pwa({
+    pwaPlugin({
       // your options
     }),
   ],
 };
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // .vuepress/config.js
-const { pwa } = require("vuepress-plugin-pwa2");
+const { pwaPlugin } = require("vuepress-plugin-pwa2");
 
 module.exports = {
   plugins: [
-    pwa({
+    pwaPlugin({
       // your options
     }),
   ],
@@ -79,4 +79,8 @@ module.exports = {
 
 :::
 
-::::
+::: tip
+
+If you are using this plugin, we recommend you to set `shouldPrefetch: false` in your VuePress config file.
+
+:::

@@ -12,7 +12,7 @@ tag:
 
 ::: info
 
-`vuepress-theme-hope` provides `comment` options in `themeConfig.plugins` as plugin options to `vuepress-plugin-comment2`.
+`vuepress-theme-hope` passes `plugins.comment` in theme options as plugin options to `vuepress-plugin-comment2`.
 
 :::
 
@@ -20,16 +20,17 @@ tag:
 
 ## Enable <Badge text="Support page config" />
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
-```ts {7,10}
+```ts {8,13}
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     plugins: {
       comment: {
         type: "waline",
@@ -38,20 +39,18 @@ export default defineHopeConfig({
         serverURL: "...", // your serverURL
       },
     },
-  },
+  }),
 });
 ```
 
-:::
+@tab JS
 
-::: code-group-item JS
+```js {7,12}
+// .vuepress/config.js
+const { hopeTheme } = require("vuepress-theme-hope");
 
-```js {7,10}
-// .vuepress/themeConfig.js
-const { themeConfig } = require("vuepress-theme-hope");
-
-module.exports = themeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     plugins: {
       comment: {
         type: "waline",
@@ -60,15 +59,13 @@ module.exports = themeConfig({
         serverURL: "...", // your serverURL
       },
     },
-  },
-});
+  }),
+};
 ```
 
 :::
 
-::::
-
-Comment feature is enabled globally by default, the configuration key is `comment` in `themeConfig.plugins.comment`.
+Comment feature is enabled globally by default, controlled by `plugins.comment.comment` options.
 
 ::: tip
 
@@ -87,24 +84,13 @@ Currently you can choose from Giscus, Waline and Twikoo.
 
 :::
 
-<!-- You can choose from 2 comment service provider: Waline and Vssue.
-
-::: tip Comparison between services
-
-- Waline uses a backend server to support comment and pageview statistics, and you can comment without logging in to any account. It needs extra configuration on backend, and you can deploy on vercel for free.
-- Vssue uses the issue panel of the code platform repo and requires the user to login or register the corresponding platform account.
-
-If your site is for the general public rather than programmers, Waline is recommended.
-
-::: -->
-
 ## Giscus
 
-Giscus is a GitHub Dicussion based commenting system that is easy to start.
+Giscus is a GitHub Discussion based commenting system that is easy to start.
 
 ### Preparation
 
-1. You need to create a public repository and open dicussion as a place to store comments
+1. You need to create a public repository and open discussion as a place to store comments
 1. You need to install the [Giscus App](https://github.com/apps/giscus) to have permission to access the corresponding repository.
 
 After completing the above steps, please go to the [Giscus page](https://giscus.app) to get your settings. You just need to fill in the repository and Discussion categories, then scroll to the "Enable giscus" section at the bottom of the page and copy the `data-repo`, `data-repo-id`, `data-category` and `data-category-id` four items as they are required.
@@ -133,51 +119,48 @@ After that, create a vercel app using the below button.
 
 Then input your new GitHub repo name and set `LEAN_ID`, `LEAN_KEY` and `LEAN_MASTER_KEY` environment variables in the "Environment Variables" column. `APP ID` is the value of `LEAN_ID`, and `APP Key` to `LEAN_KEY`, `Master Key` to `LEAN_MASTER_KEY`.
 
-Click `Deploy` button to deploy. It will show you deploy successfully after a minitues time. Then config the vercel link in your themeConfig:
+Click `Deploy` button to deploy. It will show you deploy successfully after a minitues time. Then config the vercel link in your theme options:
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     plugins: {
       comment: {
         type: "waline",
         serverURL: "YOUR_SERVER_URL", // your server url
       },
     },
-  },
+  }),
 });
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     plugins: {
       comment: {
         type: "waline",
         serverURL: "YOUR_SERVER_URL", // your server url
       },
     },
-  },
-});
+  }),
+};
 ```
 
 :::
-
-::::
 
 ::: tip
 

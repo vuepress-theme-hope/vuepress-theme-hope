@@ -19,10 +19,15 @@ features:
     details: 用样式装饰 Markdown 内容
     link: /zh/guide/container.html
 
+  - title: 选项卡
+    icon: tab
+    details: 使用选项卡对相似内容进行分组
+    link: /zh/guide/tabs.html
+
   - title: 代码组
     icon: code
     details: 使用选项卡对相似代码进行分组
-    link: /zh/guide/code-group.html
+    link: /zh/guide/code-tabs.html
 
   - title: 自定义对齐支持
     icon: align
@@ -69,10 +74,10 @@ features:
     details: Markdown 现在也可以支持 Tex 语法以显示公式
     link: /zh/guide/tex.html
 
-  - title: Markdown 片段支持
+  - title: 导入文件支持
     icon: markdown
-    details: 将你的文档分文不同片段，并在 Markdown 中导入
-    link: /zh/guide/md-import.html
+    details: 将你的文档分段，并在 Markdown 中导入
+    link: /zh/guide/include.html
 
   - title: 代码案例支持
     icon: discover
@@ -92,17 +97,21 @@ copyright: false
 
 ### 安装
 
-:::: code-group
+::: code-tabs#shell
 
-::: code-group-item yarn
+@tab pnpm
+
+```bash
+pnpm add -D vuepress-plugin-md-enhance@next
+```
+
+@tab yarn
 
 ```bash
 yarn add -D vuepress-plugin-md-enhance@next
 ```
 
-:::
-
-::: code-group-item npm
+@tab npm
 
 ```bash
 npm i -D vuepress-plugin-md-enhance@next
@@ -110,38 +119,34 @@ npm i -D vuepress-plugin-md-enhance@next
 
 :::
 
-::::
-
 ### 使用
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
-import { mdEnhance } from "vuepress-plugin-md-enhance";
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
   plugins: [
-    mdEnhance({
+    mdEnhancePlugin({
       // 你的选项
     }),
   ],
 };
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // .vuepress/config.js
-const { mdEnhance } = require("vuepress-plugin-md-enhance");
+const { mdEnhancePlugin } = require("vuepress-plugin-md-enhance");
 
 module.exports = {
   plugins: [
-    mdEnhance({
+    mdEnhancePlugin({
       // 你的选项
     }),
   ],
@@ -149,8 +154,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ## 从 V1 迁移
 

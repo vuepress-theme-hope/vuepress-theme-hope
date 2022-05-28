@@ -61,32 +61,27 @@ Please click the blue button on the left to complete the download.
 
 1. In the installation options, be sure to **select all** the following options:
 
-   Check **Add to directory context menu**, **Add to file context menu**, **Register code as a supported file editor**, **Add to path**.
+   Tick **Add to directory context menu**, **Add to file context menu**, **Register code as a supported file editor**, **Add to path**.
 
 1. After the initial startup of VS Code, if Git is not installed in advance, it may prompt that the Git software is not found, just ignore it.
 
-## Yarn
+## Pnpm
 
-After you install Node.js, please install Yarn V1 version.
+After you install Node.js, please install [pnpm](https://pnpm.io).
 
 ::: tip
 
-We recommend that you use Yarn to manage your project, because VuePress and VuePress Theme Hope both use Yarn to manage dependencies.
+We recommend that you use pnpm to manage your project, because VuePress and VuePress Theme Hope both use pnpm to manage dependencies.
 
-Some features of Yarn ensure that you have the correct dependencies.
+Some features of pnpm ensure that you have the correct dependencies.
 
 :::
 
-### Install Yarn
+### Install Pnpm
 
-Install Yarn by entering the following command in the terminal:
+Install pnpm by entering the following command in the terminal:
 
 ```sh
-npm i -g yarn
+corepack enable
+corepack prepare pnpm@7.1.0 --activate
 ```
-
-::: tip Open Terminal on Windows
-
-Please use the file manager to open the corresponding folder, then enter `cmd` in the address bar above and press Enter.
-
-:::

@@ -1,6 +1,7 @@
 ---
 title: 版权信息插件配置
 icon: copyright
+index: 4
 category:
   - 配置
 tag:
@@ -13,7 +14,7 @@ tag:
 
 `vuepress-plugin-copyright2` 插件默认禁用，能在用户复制站点内容时添加版权信息。此插件还可以禁用站点复制或选择。
 
-`vuepress-theme-hope` 将 `themeConfig.plugins.copyright` 作为插件选项传递给 `vuepress-plugin-copyright2` 插件。
+`vuepress-theme-hope` 将主题选项中的 `plugins.copyright` 作为插件选项传递给 `vuepress-plugin-copyright2` 插件。
 
 ## 插件选项
 
@@ -68,7 +69,7 @@ tag:
 
 ### locales
 
-- 类型: `CopyrightLocaleData`
+- 类型: `CopyrightLocaleConfig`
 
   ```ts
   interface CopyrightLocaleData {
@@ -92,6 +93,10 @@ tag:
      * @description `:url` 会替换为当前页面链接
      */
     link: string;
+  }
+
+  interface CopyrightLocaleConfig {
+    [localePath: string]: CopyrightLocaleData;
   }
   ```
 

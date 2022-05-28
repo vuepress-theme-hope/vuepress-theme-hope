@@ -23,17 +23,21 @@ copyright: false
 
 ### 安装
 
-:::: code-group
+::: code-tabs#shell
 
-::: code-group-item yarn
+@tab pnpm
+
+```bash
+pnpm add -D vuepress-plugin-photo-swipe@next
+```
+
+@tab yarn
 
 ```bash
 yarn add -D vuepress-plugin-photo-swipe@next
 ```
 
-:::
-
-::: code-group-item npm
+@tab npm
 
 ```bash
 npm i -D vuepress-plugin-photo-swipe@next
@@ -41,38 +45,34 @@ npm i -D vuepress-plugin-photo-swipe@next
 
 :::
 
-::::
-
 ### 使用
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
-import { photoSwipe } from "vuepress-plugin-photo-swipe";
+import { photoSwipePlugin } from "vuepress-plugin-photo-swipe";
 
 export default {
   plugins: [
-    photoSwipe({
+    photoSwipePlugin({
       // 你的选项
     }),
   ],
 };
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // .vuepress/config.js
-const { photoSwipe } = require("vuepress-plugin-photo-swipe");
+const { photoSwipePlugin } = require("vuepress-plugin-photo-swipe");
 
 module.exports = {
   plugins: [
-    photoSwipe({
+    photoSwipePlugin({
       // 你的选项
     }),
   ],
@@ -81,4 +81,6 @@ module.exports = {
 
 :::
 
-::::
+## 从 V1 迁移
+
+详见 [迁移指南](./migration.md)。

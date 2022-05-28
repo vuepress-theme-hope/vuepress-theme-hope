@@ -18,7 +18,9 @@ tag:
 
 ::: info
 
-`vuepress-theme-hope` 将 `themeConfig.plugins` 中的 `pwa` 选项作为插件选项提供给 `vuepress-plugin-pwa2`。
+`vuepress-theme-hope` 将主题选项中的 `plugins.pwa` 作为插件选项提供给 `vuepress-plugin-pwa2`。
+
+如果你正在使用本插件，我们推荐在你的 VuePress 配置文件中设置 `shouldPrefetch: false`。
 
 :::
 
@@ -26,7 +28,7 @@ tag:
 
 ## 快速启用 <Badge text="不推荐" type="warning" />
 
-你可以将 `themeConfig.plugins.pwa` 设置为 `true` 来让主题自动生成必要配置并快速启用插件。但我们推荐你按照下方说明对部分选项进行手动配置。
+你可以在主题选项中设置 `plugins.pwa: true` 来让主题自动生成必要配置并快速启用插件。但我们推荐你按照下方说明对部分选项进行手动配置。
 
 ## 介绍
 
@@ -40,13 +42,13 @@ Service Worker [^service-worker] (简称 SW) 主要用于获取并托管网站�
 
     1. 每当你想要通过浏览器发起访问请求后，Service Worker 将会查看其是否存在与自身缓存列表中，若存在则直接返回缓存好的结果，否则调用自身的 fetch 方法进行获取。你可以通过自定义 fetch 方法，来完全控制网页内资源获取请求的结果，比如在离线时提供一个 fallback 的网页。
 
-    1. 每次用户重新打开网站时，Service Worker 会向自身注册时的地址发出校验命令，如果检测到新版本的 Service Woker，则会更新自身，并开始缓存注册在新 Service Worker 中的资源列表。成功获取内容更新后，Service Worker 将会触发 `update` 事件。可以通过此事件提示用户，比如将在右下角显示一个弹出窗口，提示用户新内容可用并允许用户触发更新。
+    1. 每次用户重新打开网站时，Service Worker 会向自身注册时的地址发出校验命令，如果检测到新版本的 Service Worker，则会更新自身，并开始缓存注册在新 Service Worker 中的资源列表。成功获取内容更新后，Service Worker 将会触发 `update` 事件。可以通过此事件提示用户，比如将在右下角显示一个弹出窗口，提示用户新内容可用并允许用户触发更新。
 
-本插件会自动通过 `workbox-build` 注册 Service Woker。为了更好地控制 Service Worker 可以预缓存的内容，插件提供了下列设置。
+本插件会自动通过 `workbox-build` 注册 Service Worker。为了更好地控制 Service Worker 可以预缓存的内容，插件提供了下列设置。
 
 ::: tip
 
-如果你是一个高级用户，你可以直接在 `themeConfig.plugins.pwa` 中设置 `generateSwConfig` 来将选项传递给 `workbox-build`。
+如果你是一个高级用户，你可以直接在主题选项中设置 `plugins.pwa.generateSwConfig` 来将选项传递给 `workbox-build`。
 
 :::
 
@@ -64,7 +66,7 @@ Service Worker [^service-worker] (简称 SW) 主要用于获取并托管网站�
 
     ::: note
 
-    从 Chrome 93 起 Service Woker 必须含有有效的控制离线请求的 fetch 事件，才符合可安装性标准。
+    从 Chrome 93 起 Service Worker 必须含有有效的控制离线请求的 fetch 事件，才符合可安装性标准。
 
     但是插件目前并没有默认包含相关处理逻辑，所以在 Chrome 93 或更高版本的安卓设备上，网站不会弹出安装提示。
 
@@ -78,7 +80,7 @@ Service Worker [^service-worker] (简称 SW) 主要用于获取并托管网站�
 
 ### 图片缓存
 
-你可以在 `themeConfig.plugins.pwa` 中通过设置 `cachePic` 选项为 `true` 来缓存站点图片。
+你可以在主题选项中设置 `plugins.pwa.cachePic: true` 来缓存站点图片。
 
 如果你的站点体积不大，且配图大多为关键性说明，希望可以在离线模式下显示，建议将此项设置为 `true`。
 
@@ -90,7 +92,7 @@ Service Worker [^service-worker] (简称 SW) 主要用于获取并托管网站�
 
 ### HTML 缓存
 
-当你网站体积不大，并且希望文档完全离线可用时，你可以在 `themeConfig.plugins.pwa` 中通过设置 `cacheHTML` 为 `true` 来缓存所有 HTML 页面。
+当你网站体积不大，并且希望文档完全离线可用时，你可以在主题选项中设置 `plugins.pwa.cacheHTML: true` 来缓存所有 HTML 页面。
 
 ::: tip 为什么默认不缓存非主页和 404 页面
 
@@ -115,11 +117,11 @@ VuePress 本质上是一个 SPA。这意味着你只需要缓存主页并从主�
 
 为了防止在预缓存列表中包含大文件，任何大于 2MB 的文件或大于 1MB 的图片都将被删除。
 
-你可以在 `themeConfig.plugins.pwa` 中通过 `maxSize` 选项自定义缓存的最大文件大小 (单位 KB)，或通过 `maxPicSize` 来更改图片的大小限制 (单位: KB)。
+你可以在主题选项中通过 `plugins.pwa.maxSize` 选项自定义缓存的最大文件大小 (单位 KB)，或通过 `plugins.pwa.maxPicSize` 来更改图片的大小限制 (单位: KB)。
 
 ## 更新控制
 
-我们在 `themeConfig.plugins.pwa` 中提供 `update` 选项控制用户如何接收更新。
+我们在主题选项中提供 `plugins.pwa.update` 选项控制用户如何接收更新。
 
 `update` 选项的默认值是 `"available"`，这意味着当网站内容更新后，新的 SW 会在后台静默安装，并在安装结束后弹窗提示用户新内容就绪。用户可以自主选择是否立即刷新查看新内容。
 
@@ -135,7 +137,7 @@ VuePress 本质上是一个 SPA。这意味着你只需要缓存主页并从主�
 
 ::: tip 自定义弹窗
 
-如果你对默认的弹窗不满意，你可以自行编写组件更换。你需要全局注册自己的弹窗组件，并将组件的名称传递给 `themeConfig.plugins.pwa.hintComponent` 选项。
+如果你对默认的弹窗不满意，你可以自行编写组件更换。你需要全局注册自己的弹窗组件，并将组件的名称传递给主题选项中的 `plugins.pwa.hintComponent` 选项。
 
 :::
 
@@ -145,13 +147,13 @@ VuePress 本质上是一个 SPA。这意味着你只需要缓存主页并从主�
 
 ::: tip 自定义弹窗
 
-如果你对默认的弹窗不满意，你可以自行编写组件更换。你需要全局注册自己的弹窗组件，并将组件的名称传递给 `themeConfig.plugins.pwa.updateComponent` 选项。
+如果你对默认的弹窗不满意，你可以自行编写组件更换。你需要全局注册自己的弹窗组件，并将组件的名称传递给主题选项中的 `plugins.pwa.updateComponent` 选项。
 
 :::
 
 ## 清单文件生成
 
-为了保证 PWA 的可安装性，网站需要生成清单文件，并通过 `link` 声明有效的 manifest 清单文件地址[^manifest]。
+为了保证 PWA 的可安装性，网站需要生成清单文件，并通过 `<link>` 声明有效的 manifest 清单文件地址[^manifest]。
 
 [^manifest]: **清单文件**
 
@@ -180,7 +182,7 @@ VuePress 本质上是一个 SPA。这意味着你只需要缓存主页并从主�
 | name                        | `siteConfig.title` \|\| `siteConfig.locales['/'].title` \|\| `"Site"`                                   |
 | short_name                  | `siteConfig.title` \|\| `siteConfig.locales['/'].title` \|\| `"Site"`                                   |
 | description                 | `siteConfig.description` \|\| `siteConfig.locales['/'].description` \|\| `"A site built with vuepress"` |
-| lang                        | `siteConfig.locales['/'].lang` \|\| `themeConfig.locales['/'].lang` \|\| `"en-US"`                      |
+| lang                        | `siteConfig.locales['/'].lang` \|\| `"en-US"`                                                           |
 | start_url                   | `siteConfig.base`                                                                                       |
 | scope                       | `siteConfig.base`                                                                                       |
 | display                     | `"standalone"`                                                                                          |
@@ -193,7 +195,7 @@ VuePress 本质上是一个 SPA。这意味着你只需要缓存主页并从主�
 
 ### 手动配置
 
-你可以在 `themeConfig.plugins.pwa` 中通过 `manifest` 选项中手动指定 manifest 的各项内容。
+你可以在主题选项中通过 `plugins.pwa.manifest` 手动指定 manifest 的各项内容。
 
 ::: tip 优先级
 
@@ -207,11 +209,11 @@ VuePress 本质上是一个 SPA。这意味着你只需要缓存主页并从主�
 
 可安装性[^installable]规范要求 manifest 中至少声明一个有效的图标。
 
-所以如果你不在 `themeConfig.plugins.pwa` 中配置 `manifest.icons`，访问者只能享受到 Service Worker 缓存带来的离线可访问性，而并不能作为 PWA 进行安装。
+所以如果你不在 `plugins.pwa` 中配置 `manifest.icons`，访问者只能享受到 Service Worker 缓存带来的离线可访问性，而并不能作为 PWA 进行安装。
 
 此外，该插件默认不处理清单中的任何内容，而是按原样输出。 这意味着，如果你计划部署到子目录，则应自行将 URL 前缀附加到自己的清单 Urls 中。
 
-但是，如果你需要的所有东西都在 base 文件夹下，你可以在 `themeConfig.plugins.pwa` 中设置 `appendBase: true` 让插件将 `base` 自动附加到任何地址。
+但是，如果你需要的所有东西都在 base 文件夹下，你可以在 `plugins.pwa` 中设置 `appendBase: true` 让插件将 `base` 自动附加到任何地址。
 
 :::
 

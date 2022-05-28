@@ -19,7 +19,7 @@ export const photoSwipeLocales: PhotoSwipeLocaleConfig = {
     arrowNext: "下一个 (右箭头)",
   },
 
-  "/tw/": {
+  "/zh-tw/": {
     close: "關閉",
     download: "下載圖片",
     fullscreen: "切換全屏",
@@ -61,7 +61,7 @@ export const photoSwipeLocales: PhotoSwipeLocaleConfig = {
     fullscreen: "Переключиться на полный экран",
     zoom: "Увеличить/Уменьшить",
     arrowPrev: "Предыдущая (Стрелка влево)",
-    arrowNext: "Далее (стрелка вправо)",
+    arrowNext: "Следующая (Стрелка вправо)",
   },
 
   "/br/": {
@@ -71,5 +71,41 @@ export const photoSwipeLocales: PhotoSwipeLocaleConfig = {
     zoom: "Aproximar mais/menos",
     arrowPrev: "Anterior (Seta Esquerda)",
     arrowNext: "Próximo (Seta Direita)",
+  },
+
+  "/pl/": {
+    close: "Zamknij",
+    download: "Pobierz obraz",
+    fullscreen: "Przełącz na pełny ekran",
+    zoom: "Powiększ/pomniejsz",
+    arrowPrev: "Poprzedni (strzałka w lewo)",
+    arrowNext: "Następny (strzałka w prawo)",
+  },
+
+  "/sk/": {
+    close: "Zatvor",
+    download: "Stiahni obrázok",
+    fullscreen: "Prepni na celú obrazovku",
+    zoom: "Priblíž/Oddial",
+    arrowPrev: "Predošlí (šípka doľava)",
+    arrowNext: "Nasledujúci (šípka doprava)",
+  },
+
+  "/fr/": {
+    close: "Fermer",
+    download: "Télécharger l'image",
+    fullscreen: "Basculer en plein écran",
+    zoom: "Zoom avant/arrière",
+    arrowPrev: "Précédent (Flèche gauche)",
+    arrowNext: "Suivant (Flèche droite)",
+  },
+
+  "/es/": {
+    close: "Cerrar",
+    download: "Descargar imagen",
+    fullscreen: "Cambiar a pantalla completa",
+    zoom: "Acercar/Alejar",
+    arrowPrev: "Anterior (Flecha izquierda)",
+    arrowNext: "Siguiente (Flecha derecha)",
   },
 };

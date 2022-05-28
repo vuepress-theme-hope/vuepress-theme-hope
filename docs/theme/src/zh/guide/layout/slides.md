@@ -1,6 +1,7 @@
 ---
 title: 幻灯片
 icon: slides
+index: 7
 category:
   - 布局
 tag:
@@ -18,13 +19,14 @@ tag:
 
 [这里是一个展示了所有幻灯片功能的案例](https://vuepress-theme-hope.github.io/v2/md-enhance/zh/guide/presentation/demo.html).
 
-![幻灯片页截图](./assets/slides.png)
+![幻灯片页截图](./assets/slides-light.png#light)
+![幻灯片页截图](./assets/slides-dark.png#dark)
 
 ## 注意事项
 
 ::: warning 启用功能
 
-你应该通过设置 `themeConfig.plugins.mdEnhance.enableAll` 或 `themeConfig.plugins.mdEnhance.presentation` 在 `vuepress-plugin-md-enhance` 中启用幻灯片功能，否则幻灯片无法正确加载。
+你应该在主题选项中通过设置 `plugins.mdEnhance.presentation` 或 `plugins.mdEnhance.enableAll` 在 `vuepress-plugin-md-enhance` 中启用幻灯片功能，否则幻灯片无法被正确渲染。
 
 :::
 

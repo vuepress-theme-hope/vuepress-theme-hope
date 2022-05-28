@@ -1,6 +1,7 @@
 ---
 title: Code Demo
 icon: discover
+index: 15
 category:
   - Markdown
 tag:
@@ -14,59 +15,56 @@ Let you insert code demos in your Markdown file.
 
 ## Config
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
-```ts {7-9}
+```ts {8-10}
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     plugins: {
       mdEnhance: {
         demo: true,
       },
     },
-  },
+  }),
 });
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js {7-9}
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     plugins: {
       mdEnhance: {
         demo: true,
       },
     },
-  },
-});
+  }),
+};
 ```
 
 :::
-
-::::
 
 ## Syntax
 
 You should use the following syntax:
 
 ````md
-::: demo [type] Optional title text
+::: [type]-demo Optional title text
 
 ```html
 <!-- ↑ use available ones -->
 <!-- your code here -->
-<!-- you can have mutiple code block, but each language must appear only once. -->
+<!-- you can have multiple code block, but each language must appear only once. -->
 ```
 
 ```json
@@ -96,7 +94,7 @@ The plugin support three types:
 Syntax:
 
 ````md
-::: demo Optional title text
+::: normal-demo Optional title text
 
 ```html
 <!-- html code -->
@@ -130,7 +128,7 @@ Syntax:
 Syntax:
 
 ````md
-::: demo [vue] Optional title text
+::: vue-demo Optional title text
 
 ```vue
 <!-- ↑ you can also use html-->
@@ -159,7 +157,7 @@ export default {
 Syntax:
 
 ````md
-::: demo [react] Optional title text
+::: react-demo Optional title text
 
 ```js
 export default class App extends React.Component {
@@ -182,7 +180,7 @@ export default class App extends React.Component {
 
 You can use different language in your demo block.
 
-When you set language which can not run on browers, since the plugin is not able to resolve them, so demo display will be disabled. The plugin will only show the code and provide you a button to open it in CodePen.
+When you set language which can not run on browsers, since the plugin is not able to resolve them, so demo display will be disabled. The plugin will only show the code and provide you a button to open it in CodePen.
 
 Available HTML languages:
 
@@ -215,7 +213,7 @@ Available CSS languages:
 
 ## Demo
 
-::: demo Demo
+::: normal-demo Demo
 
 ```html
 <h1>VuePress Theme Hope</h1>
@@ -239,7 +237,7 @@ span {
 :::: details Code
 
 ````md
-::: demo Demo
+::: normal-demo Demo
 
 ```html
 <h1>VuePress Theme Hope</h1>
@@ -261,7 +259,7 @@ span {
 :::
 ````
 
-::: demo [react] A function-based React Demo
+::: react-demo A function-based React Demo
 
 ```js
 const { useState } = React;
@@ -295,7 +293,7 @@ export default () => {
 :::: details Code
 
 ````md
-::: demo [react] A function-based React Demo
+::: react-demo A function-based React Demo
 
 ```js
 const { useState } = React;
@@ -329,7 +327,7 @@ export default () => {
 
 ::::
 
-::: demo [react] A class-based React Demo
+::: react-demo A class-based React Demo
 
 ```js
 export default class App extends React.Component {
@@ -366,7 +364,7 @@ export default class App extends React.Component {
 :::: details Code
 
 ````md
-::: demo [react] A class-based React Demo
+::: react-demo A class-based React Demo
 
 ```js
 export default class App extends React.Component {
@@ -403,7 +401,7 @@ export default class App extends React.Component {
 
 ::::
 
-::: demo [vue] A Vue Composition Demo
+::: vue-demo A Vue Composition Demo
 
 ```vue
 <template>
@@ -443,7 +441,7 @@ export default {
 :::: details Code
 
 ````md
-::: demo [vue] A Vue Composition Demo
+::: vue-demo A Vue Composition Demo
 
 ```vue
 <template>
@@ -483,7 +481,7 @@ export default {
 
 ::::
 
-::: demo [vue] A Vue Option Demo
+::: vue-demo A Vue Option Demo
 
 ```vue
 <template>
@@ -515,7 +513,7 @@ export default {
 :::: details Code
 
 ````md
-::: demo [vue] A Vue Option Demo
+::: vue-demo A Vue Option Demo
 
 ```vue
 <template>
@@ -547,7 +545,7 @@ export default {
 
 ::::
 
-::: demo A demo using language not supoprted by browsers
+::: normal-demo A demo using language not supported by browsers
 
 ```md
 # Title
@@ -576,7 +574,7 @@ h1 {
 :::: details Code
 
 ````md
-::: demo A normal demo
+::: normal-demo A normal demo
 
 ```md
 # Title

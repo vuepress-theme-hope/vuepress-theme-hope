@@ -9,9 +9,9 @@ Let the Markdown file in your VuePress site support the $\TeX$ syntax.
 
 ## Config
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts {8}
 // .vuepress/config.ts
@@ -27,9 +27,7 @@ export default {
 };
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js {8}
 // .vuepress/config.js
@@ -46,8 +44,6 @@ module.exports = {
 ```
 
 :::
-
-::::
 
 ## Grammar
 
@@ -200,7 +196,7 @@ $$\iint_1^2 x^2\; \iiint_1^2 x^2\; \iiiint_1^2 x^2\; \idotsint_1^2 x^2$$
 
 - Superscript, use `^` to achieve
 - Subscript, use `_` to achieve
-- By default, superscript and subscript only apply to the next character. To work with mutiple consecutive characters, please enclose these characters in curly brackets `{}`.
+- By default, superscript and subscript only apply to the next character. To work with multiple consecutive characters, please enclose these characters in curly brackets `{}`.
 
 #### Demo
 

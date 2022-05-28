@@ -1,4 +1,4 @@
-import type { BasePageFrontMatter } from "@mr-hope/vuepress-shared";
+import type { BasePageFrontMatter } from "vuepress-shared";
 
 export interface HopeThemePageFrontmatter extends BasePageFrontMatter {
   /**

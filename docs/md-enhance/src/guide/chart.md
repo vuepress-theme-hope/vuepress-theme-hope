@@ -11,9 +11,9 @@ This plugin is using [chart.js](https://www.chartjs.org/docs/latest/) to support
 
 ## Config
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts {8}
 // .vuepress/config.ts
@@ -29,9 +29,7 @@ export default {
 };
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js {8}
 // .vuepress/config.js
@@ -49,8 +47,6 @@ module.exports = {
 
 :::
 
-::::
-
 ## Syntax
 
 ````md
@@ -64,6 +60,8 @@ module.exports = {
 
 :::
 ````
+
+`js` and `javascript` code block is also supported, and you are expected to assign your export object to `module.exports`.
 
 ## Demo
 
@@ -221,7 +219,7 @@ module.exports = {
 {
   "type": "line",
   "data": {
-    "labels": ["January", "Feburary", "March", "Apirl", "May", "June", "July"],
+    "labels": ["January", "Feburary", "March", "April", "May", "June", "July"],
     "datasets": [
       {
         "label": "My First Dataset",
@@ -246,7 +244,7 @@ module.exports = {
 {
   "type": "line",
   "data": {
-    "labels": ["January", "Feburary", "March", "Apirl", "May", "June", "July"],
+    "labels": ["January", "Feburary", "March", "April", "May", "June", "July"],
     "datasets": [
       {
         "label": "My First Dataset",

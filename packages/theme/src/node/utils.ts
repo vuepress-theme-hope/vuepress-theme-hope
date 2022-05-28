@@ -1,5 +1,5 @@
-import { Logger } from "@mr-hope/vuepress-shared";
 import { fs, path } from "@vuepress/utils";
+import { Logger } from "vuepress-shared";
 
 export const logger = new Logger("vuepress-theme-hope");
 

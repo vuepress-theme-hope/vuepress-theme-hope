@@ -1,4 +1,4 @@
-@use "@mr-hope/vuepress-shared/styles/reset";
+@use "vuepress-shared/styles/reset";
 
 .toggle-navbar-button {
   @include reset.button;
@@ -11,7 +11,7 @@
 
   padding: 6px;
 
-  @media screen and (max-width: hope-config.$mobile) {
+  @media screen and (max-width: hope-config.$tablet) {
     display: flex;
   }
 

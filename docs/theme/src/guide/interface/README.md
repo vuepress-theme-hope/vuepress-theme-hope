@@ -1,6 +1,9 @@
 ---
 title: Interface
 icon: palette
+index: false
+dir:
+  index: 2
 ---
 
 ## Catalog

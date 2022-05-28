@@ -1,6 +1,7 @@
 ---
 title: 配置
 icon: config
+index: false
 category:
   - 配置
 tag:
@@ -23,7 +24,7 @@ tag:
 
 - [主题布局配置](theme/layout.md)
 
-- [主题外观配置](theme/apperance.md)
+- [主题外观配置](theme/appearance.md)
 
 ## 插件配置
 

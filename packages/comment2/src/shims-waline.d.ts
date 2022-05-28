@@ -1,7 +1,7 @@
-declare module "@Waline" {
+declare module "@waline/client/dist/component" {
   import type { ComponentOptions } from "vue";
 
-  const component: ComponentOptions;
+  export const Waline: ComponentOptions;
 
-  export default component;
+  export const version: string;
 }

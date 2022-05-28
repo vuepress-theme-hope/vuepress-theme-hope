@@ -1,12 +1,7 @@
-import {
-  getAuthor,
-  getCategory,
-  isAbsoluteUrl,
-  isUrl,
-} from "@mr-hope/vuepress-shared";
+import { getAuthor, getCategory, isAbsoluteUrl, isUrl } from "vuepress-shared";
 import { getImageMineType, resolveHTML, resolveUrl } from "./utils";
 
-import type { AuthorInfo } from "@mr-hope/vuepress-shared";
+import type { AuthorInfo } from "vuepress-shared";
 import type { App, Page, PageFrontmatter } from "@vuepress/core";
 import type { GitData } from "@vuepress/plugin-git";
 import type { Feed } from "./feed";
@@ -65,7 +60,10 @@ export class FeedPage {
     if (this.frontmatter.description) return this.frontmatter.description;
 
     if (this.page.excerpt)
-      return `html:${resolveHTML(this.app.markdown.render(this.page.excerpt))}`;
+      return `html:${resolveHTML(
+        this.app.markdown.render(this.page.excerpt),
+        this.options.customElements
+      )}`;
 
     return undefined;
   }
@@ -151,7 +149,7 @@ export class FeedPage {
 
     if (this.pageFeedOptions.content) return this.pageFeedOptions.content;
 
-    return resolveHTML(this.page.contentRendered);
+    return resolveHTML(this.page.contentRendered, this.options.customElements);
   }
 
   get image(): string | undefined {
@@ -210,8 +208,7 @@ export class FeedPage {
     if (this.frontmatter.copyright) return this.frontmatter.copyright;
     const firstAuthor = this.author[0];
 
-    if (firstAuthor && firstAuthor.name)
-      return `Copyright by ${firstAuthor.name}`;
+    if (firstAuthor?.name) return `Copyright by ${firstAuthor.name}`;
 
     return undefined;
   }

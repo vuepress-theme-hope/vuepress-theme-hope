@@ -34,14 +34,40 @@ If you are using the VuePress Theme Hope template, you can find the following th
 
 This means you can use:
 
-- `yarn docs:dev` starts the development server
-- `yarn docs:build` builds the project and outputs
-- `yarn docs:clean-dev` to clear cache and start development server
+- `pnpm docs:dev` starts the development server
+- `pnpm docs:build` builds the project and outputs
+- `pnpm docs:clean-dev` to clear cache and start development server
 
 :::
 
 ::: info Terminate DevServer
 
 To terminate the development server, please click on the terminal and press `Ctrl + C` twice.
+
+:::
+
+## Update Version
+
+If you need to upgrade your theme and VuePress version, execute the following command:
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add vuepress@next vuepress-theme-hope@next && pnpm i && pnpm up
+```
+
+@tab yarn
+
+```bash
+yarn add vuepress@next vuepress-theme-hope@next && yarn install && yarn upgrade
+```
+
+@tab npm
+
+```bash
+npm i vuepress@next vuepress-theme-hope@next && npm install && npm update
+```
 
 :::

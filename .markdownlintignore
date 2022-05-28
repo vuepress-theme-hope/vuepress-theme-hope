@@ -1,6 +1,6 @@
 **/node_modules/**
+**/__tests__/**
 CHANGELOG.md
 
 # markdown import demo
 demo.snippet.md
-mdImport.md

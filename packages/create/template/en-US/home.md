@@ -61,7 +61,7 @@ features:
 
   - title: Article Encryption
     icon: lock
-    details: Encrypt you article based on path and folders, so that only the one you want could see them
+    details: Encrypt you articles based on page links, so that only the one you want could see them
     link: https://vuepress-theme-hope.github.io/v2/guide/feature/encrypt.html
 
   - title: Copy button
@@ -86,7 +86,7 @@ features:
 
   - title: Feed support
     icon: rss
-    details: Generate feed to allow users to subcribe it
+    details: Generate feed to allow users to subscribe it
     link: https://vuepress-theme-hope.github.io/v2/guide/advanced/feed.html
 
   - title: PWA support

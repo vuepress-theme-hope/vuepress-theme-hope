@@ -16,7 +16,7 @@ export const useReadingTimePlugin = (
   if (
     plugins.every((plugin) => plugin.name !== "vuepress-plugin-reading-time2")
   )
-    app.use(readingTimePlugin, options);
+    app.use(readingTimePlugin(options));
 };
 
 /**

@@ -4,8 +4,7 @@
     "lib": ["dom", "es2020"],
     "module": "ES2020",
     "rootDir": "./src",
-    "outDir": "./lib",
-    "types": ["@vuepress/client/types"]
+    "outDir": "./lib"
   },
   "include": ["./src/client", "./src/shared"]
 }

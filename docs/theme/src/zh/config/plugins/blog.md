@@ -1,6 +1,7 @@
 ---
 title: 博客配置
 icon: blog
+index: 2
 category:
   - 配置
 tag:
@@ -13,7 +14,7 @@ tag:
 
 主题提供博客功能，默认情况下**不启用**。
 
-你可以将 `themeConfig.plugins.blog` 设置为 `true` 来启用博客功能。
+你可以在主题选项中设置 `plugins.blog: true` 来启用博客功能。
 
 有关说明，请参阅[博客介绍](../../guide/blog/intro.md)。
 
@@ -25,6 +26,15 @@ tag:
 - 默认值: `false`
 
 是否为每个页面生成摘录。
+
+### filter
+
+- 类型: `(page: Page) => boolean`
+- 默认: `(page) => Boolean(page.filePathRelative) && !page.frontmatter.home`
+
+页面过滤器，此函数用于鉴别页面是否作为文章。
+
+默认情况下，所有从 Markdown 源文件中生成的非主页页面，会被作为文章。
 
 ### article
 

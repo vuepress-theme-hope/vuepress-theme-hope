@@ -22,52 +22,50 @@ Without any configuration, the VuePress site is pretty minimal. To customize you
 └─ package.json
 ```
 
-The essential file for configuring a VuePress site is `.vuepress/config.js`, which should export a JavaScript object. If you are using TypeScript, you can use `.vuepress/config.ts` instead to get better types hint for VuePress Config.
+The essential file for configuring a VuePress site is `.vuepress/config.js`, while TypeScript config file is also supported. You can use `.vuepress/config.ts` instead to get better types hint for VuePress Config.
 
-:::: code-group
+A basic config file looks like this:
 
-::: code-group JS
+::: code-tabs#language
+
+@tab TS
+
+```ts
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default defineUserConfig({
+  // site config
+  lang: "en-US",
+  title: "Hello VuePress",
+  description: "Just playing around",
+
+  // theme
+  theme: hopeTheme({
+    // theme config
+  }),
+});
+```
+
+@tab JS
 
 ```js
+const { hopeTheme } = require("vuepress-theme-hope");
+
 module.exports = {
   // site config
   lang: "en-US",
   title: "Hello, VuePress!",
   description: "This is my first VuePress site",
 
-  // theme and its config
-  theme: "hope",
-  themeConfig: {
-    logo: "https://vuejs.org/images/logo.png",
-  },
+  // theme
+  theme: hopeTheme({
+    // theme config
+  }),
 };
 ```
 
 :::
-
-::: code-group TS
-
-```ts
-import { defineUserConfig } from "vuepress";
-import type { DefaultThemeOptions } from "vuepress";
-
-export default defineUserConfig<DefaultThemeOptions>({
-  // site config
-  lang: "en-US",
-  title: "Hello VuePress",
-  description: "Just playing around",
-
-  // theme and its config
-  theme: "hope",
-  themeConfig: {
-    logo: "https://vuejs.org/images/logo.png",
-  },
-});
-```
-
-:::
-
-::::
 
 ::: tip
 
@@ -76,10 +74,6 @@ Check out the [Config Reference](https://v2.vuepress.vuejs.org/reference/config.
 :::
 
 ## Config Scopes
-
-You may have noticed that there is a `themeConfig` option in VuePress config.
-
-Options outside `themeConfig` are **Site Config**, while options inside `themeConfig` are **Theme Config**.
 
 ### Site Config
 
@@ -91,7 +85,7 @@ As we know, every site should have its own `lang`, `title`, `description`, etc. 
 
 Theme config will be processed by VuePress theme, so it depends on the theme you are using.
 
-To use `vuepress-theme-hope`, you should set `theme: "hope"`.
+To use `vuepress-theme-hope`, you should import `hopeTheme` from it, passing in your theme options and call it, then assign it to `theme` option.
 
 ::: warning
 

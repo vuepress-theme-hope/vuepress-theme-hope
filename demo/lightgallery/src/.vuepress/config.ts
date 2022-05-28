@@ -1,15 +1,16 @@
 import { defineUserConfig } from "@vuepress/cli";
-import type { DefaultThemeOptions } from "@vuepress/theme-default";
+import { defaultTheme } from "@vuepress/theme-default";
+import { lightgalleryPlugin } from "vuepress-plugin-lightgallery";
 
 const BASE = process.env.BASE as "/" | `/${string}/`;
 
-export default defineUserConfig<DefaultThemeOptions>({
+export default defineUserConfig({
   base: BASE || "/",
 
   title: "Lightgallery",
   description: "Image preview plugin for VuePress2",
 
-  themeConfig: {
+  theme: defaultTheme({
     logo: "/logo.svg",
 
     repo: "vuepress-theme-hope/vuepress-theme-hope/tree/main/demo/lightgallery/",
@@ -22,7 +23,7 @@ export default defineUserConfig<DefaultThemeOptions>({
     themePlugins: {
       mediumZoom: false,
     },
-  },
+  }),
 
-  plugins: ["lightgallery"],
+  plugins: [lightgalleryPlugin()],
 });

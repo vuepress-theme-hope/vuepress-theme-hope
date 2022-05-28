@@ -1,6 +1,6 @@
-# @mr-hope/vuepress-plugin-components
+# vuepress-plugin-components
 
-[![Version](https://img.shields.io/npm/v/@mr-hope/vuepress-plugin-components/next.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/@mr-hope/vuepress-plugin-components.svg?style=flat-square&logo=npm) ![Size](https://img.shields.io/bundlephobia/min/@mr-hope/vuepress-plugin-components?style=flat-square&logo=npm)](https://www.npmjs.com/package/@mr-hope/vuepress-plugin-components)
+[![Version](https://img.shields.io/npm/v/vuepress-plugin-components/next.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/vuepress-plugin-components.svg?style=flat-square&logo=npm) ![Size](https://img.shields.io/bundlephobia/min/vuepress-plugin-components?style=flat-square&logo=npm)](https://www.npmjs.com/package/vuepress-plugin-components)
 
 Components for vuepress-theme-hope.
 
@@ -9,13 +9,12 @@ Components for vuepress-theme-hope.
 ## Install
 
 ```bash
-npm i @mr-hope/vuepress-plugin-components@next
-```
-
-or
-
-```bash
-yarn add @mr-hope/vuepress-plugin-components@next
+# pnpm
+pnpm add -D vuepress-plugin-components@next
+# npm
+npm i -D vuepress-plugin-components@next
+# yarn
+yarn add -D vuepress-plugin-components@next
 ```
 
 ---
@@ -25,11 +24,10 @@ vuepress-theme-hope 的组件。
 ## 安装
 
 ```bash
-npm i @mr-hope/vuepress-plugin-components@next
-```
-
-或
-
-```bash
-yarn add @mr-hope/vuepress-plugin-components@next
+# pnpm
+pnpm add -D vuepress-plugin-components@next
+# npm
+npm i -D vuepress-plugin-components@next
+# yarn
+yarn add -D vuepress-plugin-components@next
 ```

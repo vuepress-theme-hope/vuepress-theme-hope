@@ -1,4 +1,4 @@
-@use "@mr-hope/vuepress-shared/styles/normalize";
+@use "vuepress-shared/styles/normalize";
 @use "@sass-palette/hope-config";
 @use "fonts/crimson.css";
 
@@ -37,17 +37,23 @@ code {
     color var(--color-transition);
 
   #{hope-config.$dark-selector} & {
-    background: var(--grey12);
+    background: #333;
   }
 }
 
 blockquote {
-  border-color: var(--grey14);
-  color: var(--light-grey);
+  border-color: #eee;
+  color: #666;
+  transition: border-color var(--color-transition),
+    color var(--color-transition);
+
+  #{hope-config.$dark-selector} & {
+    border-color: #333;
+  }
 }
 
 // narrow mobile
-@media (max-width: hope-config.$mobileS) {
+@media (max-width: hope-config.$mobile) {
   h1 {
     font-size: 1.9rem;
   }

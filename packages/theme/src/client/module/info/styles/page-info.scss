@@ -1,0 +1,77 @@
+@use "vuepress-shared/styles/wrapper";
+
+.page-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: stretch;
+  align-items: center;
+  justify-content: flex-start;
+
+  color: var(--dark-grey);
+
+  font-size: 14px;
+
+  > span {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+
+    margin-right: 0.5em;
+
+    line-height: 2;
+
+    @media (min-width: hope-config.$pc) {
+      font-size: 1.1em;
+    }
+
+    @media (max-width: hope-config.$mobile) {
+      margin-right: 0.3em;
+      font-size: 0.875em;
+    }
+  }
+
+  .origin {
+    position: relative;
+
+    display: inline-block;
+    vertical-align: middle;
+
+    overflow: hidden;
+
+    margin: 0 0.5em;
+    padding: 0 0.5em;
+    border: 0.5px solid var(--dark-grey);
+    border-radius: 0.75em;
+
+    background: var(--bg-color);
+
+    font-size: 0.75em;
+    line-height: 1.5;
+  }
+
+  .icon {
+    position: relative;
+
+    display: inline-block;
+    vertical-align: middle;
+
+    width: 1em;
+    height: 1em;
+    margin-right: 0.25em;
+  }
+
+  a {
+    color: inherit;
+
+    &:hover,
+    &:active {
+      color: var(--theme-color);
+    }
+  }
+
+  .author-item {
+    display: inline-block;
+    margin: 0 4px;
+    font-weight: normal;
+  }
+}

@@ -123,7 +123,7 @@ div[class*="language-"] {
       transition: border-color var(--color-transition);
 
       // edited
-      @media (max-width: hope-config.$mobileS) {
+      @media (max-width: hope-config.$mobile) {
         border-radius: 0;
       }
     }
@@ -151,7 +151,7 @@ div[class*="language-"] {
 
       // theme-default
       margin-left: var(--line-numbers-width);
-      padding-left: 1rem;
+      padding-left: 0.5rem;
     }
 
     .line-numbers {
@@ -165,23 +165,26 @@ div[class*="language-"] {
       color: var(--code-line-color);
 
       line-height: 1.4;
+      counter-reset: line-number;
       text-align: center;
 
       transition: color var(--color-transition);
 
-      br {
-        user-select: none;
-      }
+      // This is a hacky fix to align line number with code line
+      transform: translateY(1px);
     }
 
     .line-number {
       position: relative;
       z-index: 4;
-
-      font-size: 0.85em;
-      line-height: 0;
-
+      height: 1.4em;
       user-select: none;
+
+      &::before {
+        content: counter(line-number);
+        font-size: 0.85em;
+        counter-increment: line-number;
+      }
     }
   }
 
@@ -201,7 +204,7 @@ div[class*="language-"] {
 }
 
 // narrow mobile
-@media (max-width: hope-config.$mobileS) {
+@media (max-width: hope-config.$mobile) {
   #{hope-config.$content-class} {
     div[class*="language-"] {
       margin: 0.85rem -1.5rem;

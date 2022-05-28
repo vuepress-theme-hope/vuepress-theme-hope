@@ -1,4 +1,3 @@
-/* eslint-disable max-statements */
 import { hash } from "@vuepress/utils";
 import type { PluginSimple } from "markdown-it";
 import type Token from "markdown-it/lib/token";
@@ -20,7 +19,7 @@ export const flowchart: PluginSimple = (md) => {
   md.renderer.rules.fence = (...args): string => {
     const [tokens, idx] = args;
     const { info } = tokens[idx];
-    const realInfo = info.trim().split(":")[0];
+    const realInfo = info.split(" ", 2)[0];
 
     if (realInfo === "flow" || realInfo === "flowchart")
       return flowchartRender(tokens, idx);

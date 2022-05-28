@@ -34,9 +34,9 @@ tag:
 
 这意味着你可以使用:
 
-- `yarn docs:dev` 启动开发服务器
-- `yarn docs:build` 构建项目并输出
-- `yarn docs:clean-dev` 清除缓存并启动开发服务器
+- `pnpm docs:dev` 启动开发服务器
+- `pnpm docs:build` 构建项目并输出
+- `pnpm docs:clean-dev` 清除缓存并启动开发服务器
 
 :::
 
@@ -50,22 +50,24 @@ tag:
 
 如果你需要升级主题和 VuePress 版本，请执行以下命令:
 
-:::: code-group
+::: code-tabs#shell
 
-::: code-group-item yarn
+@tab pnpm
+
+```bash
+pnpm add vuepress@next vuepress-theme-hope@next && pnpm i && pnpm up
+```
+
+@tab yarn
 
 ```bash
 yarn add vuepress@next vuepress-theme-hope@next && yarn install && yarn upgrade
 ```
 
-:::
-
-::: code-group-item npm
+@tab npm
 
 ```bash
 npm i vuepress@next vuepress-theme-hope@next && npm install && npm update
 ```
 
 :::
-
-::::

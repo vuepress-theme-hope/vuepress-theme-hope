@@ -17,18 +17,18 @@ footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 ### Install
 
 ```bash
-yarn add -D vuepress-plugin-feed2@next
+pnpm add -D vuepress-plugin-feed2@next
 ```
 
 ### Usage
 
 ```ts
 // .vuepress/config.ts
-import { feed } from "vuepress-plugin-feed2";
+import { feedPlugin } from "vuepress-plugin-feed2";
 
 export default {
   plugins: [
-    feed({
+    feedPlugin({
       // your options
     }),
   ],

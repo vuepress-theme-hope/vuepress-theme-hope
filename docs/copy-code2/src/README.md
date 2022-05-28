@@ -21,17 +21,21 @@ copyright: false
 
 ### Install
 
-:::: code-group
+::: code-tabs#shell
 
-::: code-group-item yarn
+@tab pnpm
+
+```bash
+pnpm add -D vuepress-plugin-copy-code2@next
+```
+
+@tab yarn
 
 ```bash
 yarn add -D vuepress-plugin-copy-code2@next
 ```
 
-:::
-
-::: code-group-item npm
+@tab npm
 
 ```bash
 npm i -D vuepress-plugin-copy-code2@next
@@ -39,38 +43,34 @@ npm i -D vuepress-plugin-copy-code2@next
 
 :::
 
-::::
-
 ### Usage
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
-import { copyCode } from "vuepress-plugin-copy-code2";
+import { copyCodePlugin } from "vuepress-plugin-copy-code2";
 
 export default {
   plugins: [
-    copyCode({
+    copyCodePlugin({
       // your options
     }),
   ],
 };
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // .vuepress/config.js
-const { copyCode } = require("vuepress-plugin-copy-code2");
+const { copyCodePlugin } = require("vuepress-plugin-copy-code2");
 
 module.exports = {
   plugins: [
-    copyCode({
+    copyCodePlugin({
       // your options
     }),
   ],
@@ -79,8 +79,6 @@ module.exports = {
 
 :::
 
-::::
-
 ## Migrating from V1
 
-You probably don’t need to change anything.
+See [Migration Guide](./migration.md).

@@ -21,17 +21,21 @@ copyright: false
 
 ### 安装
 
-:::: code-group
+::: code-tabs#shell
 
-::: code-group-item yarn
+@tab pnpm
+
+```bash
+pnpm add -D vuepress-plugin-seo2@next
+```
+
+@tab yarn
 
 ```bash
 yarn add -D vuepress-plugin-seo2@next
 ```
 
-:::
-
-::: code-group-item npm
+@tab npm
 
 ```bash
 npm i -D vuepress-plugin-seo2@next
@@ -39,38 +43,34 @@ npm i -D vuepress-plugin-seo2@next
 
 :::
 
-::::
-
 ### 使用
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
-import { seo } from "vuepress-plugin-seo2";
+import { seoPlugin } from "vuepress-plugin-seo2";
 
 export default {
   plugins: [
-    seo({
+    seoPlugin({
       // 你的选项
     }),
   ],
 };
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // .vuepress/config.js
-const { seo } = require("vuepress-plugin-seo2");
+const { seoPlugin } = require("vuepress-plugin-seo2");
 
 module.exports = {
   plugins: [
-    seo({
+    seoPlugin({
       // 你的选项
     }),
   ],
@@ -79,4 +79,6 @@ module.exports = {
 
 :::
 
-::::
+## 从 V1 迁移
+
+详见 [迁移指南](./migration.md)。

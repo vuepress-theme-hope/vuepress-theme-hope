@@ -1,5 +1,7 @@
-import { chalk, fs, logger, withSpinner } from "@vuepress/utils";
+import { removeEndingSlash, removeLeadingSlash } from "@vuepress/shared";
+import { chalk, fs, withSpinner } from "@vuepress/utils";
 import { SitemapStream } from "sitemap";
+import { logger } from "./utils";
 
 import type { App, Page } from "@vuepress/core";
 import type { GitData } from "@vuepress/plugin-git";
@@ -101,18 +103,15 @@ const generatePageMap = (
             !locales[localePrefix].lang &&
             !reportedLocales.includes(localePrefix)
           ) {
-            logger.warn(
-              `[sitemap2] 'lang' option for ${localePrefix} is missing`
-            );
+            logger.warn(`'lang' option for ${localePrefix} is missing`);
             reportedLocales.push(localePrefix);
           }
         });
 
       links = relatedLocales.map((localePrefix) => ({
-        lang: locales[localePrefix].lang || "en",
-        url: `${base.replace(/\/$/, "")}${defaultPath.replace(
-          /^\//u,
-          localePrefix
+        lang: locales[localePrefix]?.lang || "en",
+        url: `${base}${removeLeadingSlash(
+          defaultPath.replace(/^\//u, localePrefix)
         )}`,
       }));
     }
@@ -126,7 +125,13 @@ const generatePageMap = (
 
     // log sitemap info in debug mode
     if (app.env.isDebug) {
-      logger.info(`[sitemap2] sitemap option for ${page.path}`, sitemapInfo);
+      logger.info(
+        `sitemap option for ${page.path}: ${JSON.stringify(
+          sitemapInfo,
+          null,
+          2
+        )}`
+      );
     }
 
     pagesMap.set(page.path, sitemapInfo);
@@ -140,9 +145,9 @@ export const generateSiteMap = async (
   options: SitemapOptions
 ): Promise<void> => {
   const { extraUrls = [], xmlNameSpace: xmlns } = options;
-  const hostname = options.hostname.replace(/\/$/u, "");
+  const hostname = removeEndingSlash(options.hostname);
   const sitemapFilename = options.sitemapFilename
-    ? options.sitemapFilename.replace(/^\//u, "")
+    ? removeLeadingSlash(options.sitemapFilename)
     : "sitemap.xml";
   const {
     dir,
@@ -164,13 +169,13 @@ export const generateSiteMap = async (
 
         pagesMap.forEach((page, path) =>
           sitemap.write({
-            url: `${base}${path.replace(/^\//u, "")}`,
+            url: `${base}${removeLeadingSlash(path)}`,
             ...page,
           })
         );
 
         extraUrls.forEach((item) =>
-          sitemap.write({ url: `${base}${item.replace(/^\//u, "")}` })
+          sitemap.write({ url: `${base}${removeLeadingSlash(item)}` })
         );
         sitemap.end(() => {
           resolve();

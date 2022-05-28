@@ -1,5 +1,5 @@
-import type { Author } from "@mr-hope/vuepress-shared";
 import type { ThemeData } from "@vuepress/plugin-theme-data";
+import type { Author } from "vuepress-shared";
 import type {
   HopeThemeAppearanceConfig,
   HopeThemeAppearanceOptions,
@@ -12,10 +12,7 @@ import type { HopeThemeLayoutOptions } from "./layout";
 import type { HopeThemeLocaleConfig, HopeThemeLocaleOptions } from "./locales";
 import type { HopeThemePluginsOptions } from "./plugins";
 
-export interface HopeThemeRootOptions
-  extends HopeThemeAppearanceOptions,
-    HopeThemeFeatureOptions,
-    HopeThemeLayoutOptions {
+export interface HopeThemeRootInfoOptions {
   /**
    * Global default author
    *
@@ -29,26 +26,35 @@ export interface HopeThemeRootOptions
    * 网站部署域名
    */
   hostname?: string;
-}
-
-export interface HopeThemeRootConfig
-  extends HopeThemeAppearanceConfig,
-    HopeThemeFeatureConfig,
-    HopeThemeLayoutOptions {
-  /**
-   * Global default author
-   *
-   * 全局默认作者
-   */
-  author?: Author;
 
   /**
-   * domain which to be deployed to
+   * Link of font icon asset
    *
-   * 网站部署域名
+   * 字体图标资源链接
+   *
+   * @description `'iconfont'` and `'font-awesome'` keywords are supported
    */
-  hostname?: string;
+  iconAssets?: string;
+
+  /**
+   * Font Icon class prefix
+   *
+   * 字体图标 class 前缀
+   *
+   * @default ''
+   */
+  iconPrefix?: string;
 }
+
+export type HopeThemeRootOptions = HopeThemeAppearanceOptions &
+  HopeThemeFeatureOptions &
+  HopeThemeLayoutOptions &
+  HopeThemeRootInfoOptions;
+
+export type HopeThemeRootConfig = HopeThemeAppearanceConfig &
+  HopeThemeFeatureConfig &
+  HopeThemeLayoutOptions &
+  HopeThemeRootInfoOptions;
 
 export interface HopeThemeOptions
   extends HopeThemeRootOptions,

@@ -1,6 +1,8 @@
 ---
 title: Layout
 icon: layout
+dir:
+  index: 4
 ---
 
 ## Catalog
@@ -8,6 +10,8 @@ icon: layout
 - [Navigation Bar](navbar.md)
 
 - [Sidebar](sidebar.md)
+
+- [Breadcrumb](breadcrumb.md)
 
 - [Footer](footer.md)
 

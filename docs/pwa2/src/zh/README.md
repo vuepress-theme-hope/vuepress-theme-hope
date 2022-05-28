@@ -21,17 +21,21 @@ copyright: false
 
 ### 安装
 
-:::: code-group
+::: code-tabs#shell
 
-::: code-group-item yarn
+@tab pnpm
+
+```bash
+pnpm add -D vuepress-plugin-pwa2@next
+```
+
+@tab yarn
 
 ```bash
 yarn add -D vuepress-plugin-pwa2@next
 ```
 
-:::
-
-::: code-group-item npm
+@tab npm
 
 ```bash
 npm i -D vuepress-plugin-pwa2@next
@@ -39,38 +43,34 @@ npm i -D vuepress-plugin-pwa2@next
 
 :::
 
-::::
-
 ### 使用
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
-import { pwa } from "vuepress-plugin-pwa2";
+import { pwaPlugin } from "vuepress-plugin-pwa2";
 
 export default {
   plugins: [
-    pwa({
+    pwaPlugin({
       // 你的选项
     }),
   ],
 };
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // .vuepress/config.js
-const { pwa } = require("vuepress-plugin-pwa2");
+const { pwaPlugin } = require("vuepress-plugin-pwa2");
 
 module.exports = {
   plugins: [
-    pwa({
+    pwaPlugin({
       // 你的选项
     }),
   ],
@@ -79,4 +79,8 @@ module.exports = {
 
 :::
 
-::::
+::: tip
+
+如果你正在使用本插件，我们推荐在你的 VuePress 配置文件中设置 `shouldPrefetch: false`。
+
+:::

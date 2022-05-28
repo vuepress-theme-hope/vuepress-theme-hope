@@ -19,18 +19,18 @@ footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 ### Install
 
 ```bash
-yarn add -D vuepress-plugin-md-enhance@next
+pnpm add -D vuepress-plugin-md-enhance@next
 ```
 
 ### Usage
 
 ```ts
 // .vuepress/config.ts
-import { mdEnhance } from "vuepress-plugin-md-enhance";
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
   plugins: [
-    mdEnhance({
+    mdEnhancePlugin({
       // your options
     }),
   ],

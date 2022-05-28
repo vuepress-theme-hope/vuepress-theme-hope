@@ -1,6 +1,7 @@
 ---
 title: Slide
 icon: slides
+index: 7
 category:
   - Layout
 tag:
@@ -18,17 +19,18 @@ You need to set `layout: Slide` in the frontmatter of the corresponding page to 
 
 [Here is a demo containing all the slide features](https://vuepress-theme-hope.github.io/v2/md-enhance/guide/presentation/demo.html).
 
-![Slide page screenshot](./assets/slides.png)
+![Slide page screenshot](./assets/slides-light.png#light)
+![Slide page screenshot](./assets/slides-dark.png#dark)
 
 ## Attention
 
 ::: warning Enable presentation
 
-You should enable presentation feature in `vuepress-plugin-md-enhance` by setting `themeConfig.plugins.mdEnhance.enableAll` or `themeConfig.plugins.mdEnhance.presentation`, or the layout won’t render correctly.
+You should enable presentation feature in `vuepress-plugin-md-enhance` by setting `plugins.mdEnhance.presentation` or `plugins.mdEnhance.enableAll` in theme options, otherwise the layout won’t be rendered correctly.
 
 :::
 
-::: warning No mutiple slides
+::: warning No multiple slides
 
 You should only include a single slide syntax on this page to avoid rendering problems.
 

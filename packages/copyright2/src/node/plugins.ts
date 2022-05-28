@@ -1,72 +1,78 @@
-import { getLocales } from "@mr-hope/vuepress-shared";
 import { removeEndingSlash, removeLeadingSlash } from "@vuepress/shared";
 import { path } from "@vuepress/utils";
-import { copyrightLocales } from "./locales";
+import { getLocales } from "vuepress-shared";
 
-import type { Page, Plugin, PluginConfig } from "@vuepress/core";
+import { copyrightLocales } from "./locales";
+import { logger } from "./utils";
+
+import type { Page, PluginFunction } from "@vuepress/core";
 import type { CopyrightOptions } from "../shared";
 
-export const copyrightPlugin: Plugin<CopyrightOptions> = (
-  {
-    hostname,
-    author = "",
-    license = "",
-    disableCopy = false,
-    disableSelection = false,
-    global = false,
-    triggerWords = 100,
-    locales,
-  },
-  app
-) => {
-  const currentlocales = getLocales(app, copyrightLocales, locales);
-  const { base } = app.options;
+export const copyrightPlugin =
+  (options: CopyrightOptions): PluginFunction =>
+  (app) => {
+    if (app.env.isDebug) logger.info(`Options: ${options.toString()}`);
 
-  return {
-    name: "vuepress-plugin-copyright2",
+    const {
+      hostname,
+      author = "",
+      license = "",
+      disableCopy = false,
+      disableSelection = false,
+      global = false,
+      triggerWords = 100,
+      locales,
+    } = options;
 
-    define: (): Record<string, unknown> => ({
-      COPYRIGHT_GLOBAL: global,
-      COPYRIGHT_DISABLE_COPY: disableCopy,
-      COPYRIGHT_DISABLE_SELECTION: disableSelection,
-      COPYRIGHT_TRIGGER_WORDS: triggerWords,
-    }),
+    const currentlocales = getLocales({
+      app,
+      name: "copyright",
+      default: copyrightLocales,
+      config: locales,
+    });
 
-    extendsPage: (page: Page<{ copyright: string }>): void => {
-      const locale = currentlocales[page.pathLocale];
+    return {
+      name: "vuepress-plugin-copyright2",
 
-      const authorText = author
-        ? locale.author.replace(
-            ":author",
-            typeof author === "function" ? author(page) : author
-          )
-        : "";
+      define: (): Record<string, unknown> => ({
+        COPYRIGHT_GLOBAL: global,
+        COPYRIGHT_DISABLE_COPY: disableCopy,
+        COPYRIGHT_DISABLE_SELECTION: disableSelection,
+        COPYRIGHT_TRIGGER_WORDS: triggerWords,
+      }),
 
-      const licenseText = license
-        ? locale.license.replace(
-            ":license",
-            typeof license === "function" ? license(page) : license
-          )
-        : "";
+      extendsPage: (page: Page<{ copyright?: string }>, app): void => {
+        const { base } = app.options;
+        const locale = currentlocales[page.pathLocale];
 
-      const linkText = hostname
-        ? locale.link.replace(
-            ":link",
-            `${removeEndingSlash(hostname)}${base}${removeLeadingSlash(
-              page.path
-            )}`
-          )
-        : "";
+        const authorText = author
+          ? locale.author.replace(
+              ":author",
+              typeof author === "function" ? author(page) : author
+            )
+          : "";
 
-      page.data.copyright = [authorText, licenseText, linkText]
-        .filter((item) => item)
-        .join("\n");
-    },
+        const licenseText = license
+          ? locale.license.replace(
+              ":license",
+              typeof license === "function" ? license(page) : license
+            )
+          : "";
 
-    clientAppSetupFiles: path.resolve(__dirname, "../client/appSetup.js"),
+        const linkText = hostname
+          ? locale.link.replace(
+              ":link",
+              `${removeEndingSlash(hostname)}${base}${removeLeadingSlash(
+                page.path
+              )}`
+            )
+          : "";
+
+        page.data.copyright = [authorText, licenseText, linkText]
+          .filter((item) => item)
+          .join("\n");
+      },
+
+      clientConfigFile: path.resolve(__dirname, "../client/config.js"),
+    };
   };
-};
-
-export const copyright = (
-  options: CopyrightOptions | false
-): PluginConfig<CopyrightOptions> => ["copyright2", options];

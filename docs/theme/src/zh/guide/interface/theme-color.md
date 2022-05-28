@@ -1,6 +1,7 @@
 ---
 title: 主题色
 icon: palette
+index: 2
 category:
   - 界面
 tag:
@@ -22,59 +23,56 @@ tag:
 
 ## 禁用功能
 
-你可以将 `themeConfig` 的 `themeColor` 设置为 `false` 来禁用它。
+你可以在主题选中设置 `themeColor: false` 来禁用它。
 
 ## 自定义主题色
 
-你需要按照 `{ 颜色名1: 颜色值, 颜色名2: 颜色值, ... }` 的格式来配置 `themeConfig.themeColor`:
+你需要按照 `{ 颜色名1: 颜色值, 颜色名2: 颜色值, ... }` 的格式在主题选项中配置 `themeColor`:
 
-::::: details 例子
+:::: details 例子
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
-```ts {6-11}
+```ts {7-12}
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     themeColor: {
       blue: "#2196f3",
       red: "#f26d6d",
       green: "#3eaf7c",
       orange: "#fb9b5f",
     },
-  },
+  }),
 });
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js {6-11}
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     themeColor: {
       blue: "#2196f3",
       red: "#f26d6d",
       green: "#3eaf7c",
       orange: "#fb9b5f",
     },
-  },
-});
+  }),
+};
 ```
 
 :::
 
 ::::
-
-:::::
 
 <script setup lang="ts">
 import { computed } from 'vue';

@@ -4,7 +4,7 @@
   transition: padding var(--transform-transition);
 
   // page should at least one screen length
-  @media (max-width: hope-config.$mobile) {
+  @media (max-width: hope-config.$tablet) {
     min-height: 100vh;
   }
 }

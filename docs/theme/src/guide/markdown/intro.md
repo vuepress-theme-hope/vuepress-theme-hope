@@ -1,6 +1,7 @@
 ---
 title: Enable Enhance
 icon: enable
+index: 1
 category:
   - Markdown
 tag:
@@ -20,7 +21,7 @@ For detailed syntax, please see [Built-in Markdown Enhance](../../cookbook/vuepr
 
 ## Enable Markdown Enhancement
 
-`themeconfig.plugin.mdEnhance` in `.vuepress/config.js` will be passed to the plugin as a plugin option. Visit [plugin documentation][md-enhance] to see the usage.
+`plugin.mdEnhance` in theme options will be passed to the plugin as a plugin option. Visit [plugin documentation][md-enhance] to see the usage.
 
 ::: tip
 
@@ -30,55 +31,52 @@ Don’t worry about the size of your site. If you don’t enable related feature
 
 ## Enable All
 
-You can set `themeconfig.plugins.mdEnhance.enableAll` to enable all features of the [md-enhance][md-enhance] plugin.
+You can set `plugins.mdEnhance.enableAll` to enable all features of the [md-enhance][md-enhance] plugin.
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
-```ts {7-9}
+```ts {8-10}
 // .vuepress/config.ts
-import { defineHopeConfig } from "vuepress-theme-hope";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default defineHopeConfig({
-  themeConfig: {
+export default defineUserConfig({
+  theme: hopeTheme({
     plugins: {
       mdEnhance: {
         enableAll: true,
       },
     },
-  },
+  }),
 });
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js {7-9}
 // .vuepress/config.js
-const { defineHopeConfig } = require("vuepress-theme-hope");
+const { hopeTheme } = require("vuepress-theme-hope");
 
-module.exports = defineHopeConfig({
-  themeConfig: {
+module.exports = {
+  theme: hopeTheme({
     plugins: {
       mdEnhance: {
         enableAll: true,
       },
     },
-  },
-});
+  }),
+};
 ```
 
 :::
-
-::::
 
 ::: danger
 
 Please use this option ONLY for playing or testing.
 
-As time grows, `vupress-plugin-md-enhance` is becoming more powerful. It’s adding lots of syntax to Markdown parser and more code to output.
+As time grows, `vuepress-plugin-md-enhance` is becoming more powerful. It’s adding lots of syntax to Markdown parser and more code to output.
 
 Enabling features you don’t need will increase dev and build time. (`markdown-it` has to check extra syntax)
 

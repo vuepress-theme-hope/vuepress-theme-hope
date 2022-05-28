@@ -1,12 +1,12 @@
 import { usePageFrontmatter } from "@vuepress/client";
 import { isPlainObject, isString } from "@vuepress/shared";
-import { computed, defineComponent, h, onMounted, onUnmounted } from "vue";
+import { useEventListener } from "@vueuse/core";
+import { computed, defineComponent, h, resolveComponent } from "vue";
 import { useRoute } from "vue-router";
 
 import AutoLink from "@theme-hope/components/AutoLink";
 import {
   useAutoLink,
-  useIconPrefix,
   useNavigate,
   useThemeLocaleData,
 } from "@theme-hope/composables";
@@ -27,13 +27,13 @@ import "../styles/page-nav.scss";
 const resolveFromFrontmatterConfig = (
   conf: unknown
 ): null | false | AutoLinkType => {
-  if (conf === false) return null;
+  if (conf === false) return false;
 
   if (isString(conf)) return useAutoLink(conf);
 
   if (isPlainObject<AutoLinkType>(conf)) return conf;
 
-  return false;
+  return null;
 };
 
 /**
@@ -73,7 +73,6 @@ export default defineComponent({
 
   setup() {
     const themeLocale = useThemeLocaleData();
-    const iconPrefix = useIconPrefix();
     const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();
     const sidebarItems = useSidebarItems();
     const route = useRoute();
@@ -82,20 +81,26 @@ export default defineComponent({
     const prevNavLink = computed(() => {
       const prevConfig = resolveFromFrontmatterConfig(frontmatter.value.prev);
 
-      return prevConfig !== false
-        ? prevConfig
-        : resolveFromSidebarItems(sidebarItems.value, route.path, -1);
+      return prevConfig === false
+        ? null
+        : prevConfig ||
+            (themeLocale.value.prevLink === false
+              ? null
+              : resolveFromSidebarItems(sidebarItems.value, route.path, -1));
     });
 
     const nextNavLink = computed(() => {
       const nextConfig = resolveFromFrontmatterConfig(frontmatter.value.next);
 
-      return nextConfig !== false
-        ? nextConfig
-        : resolveFromSidebarItems(sidebarItems.value, route.path, 1);
+      return nextConfig === false
+        ? null
+        : nextConfig ||
+            (themeLocale.value.nextLink === false
+              ? null
+              : resolveFromSidebarItems(sidebarItems.value, route.path, 1));
     });
 
-    const keyboardListener = (event: KeyboardEvent): void => {
+    useEventListener("keydown", (event): void => {
       if (event.altKey) {
         if (event.key === "ArrowRight") {
           if (nextNavLink.value) {
@@ -109,14 +114,6 @@ export default defineComponent({
           }
         }
       }
-    };
-
-    onMounted(() => {
-      window.addEventListener("keydown", keyboardListener);
-    });
-
-    onUnmounted(() => {
-      window.removeEventListener("keydown", keyboardListener);
     });
 
     return (): VNode | null =>
@@ -132,11 +129,9 @@ export default defineComponent({
                       themeLocale.value.metaLocales.prev,
                     ]),
                     h("div", { class: "link" }, [
-                      prevNavLink.value?.icon
-                        ? h("i", {
-                            class: `icon ${iconPrefix.value}${prevNavLink.value.icon}`,
-                          })
-                        : null,
+                      h(resolveComponent("FontIcon"), {
+                        icon: prevNavLink.value?.icon,
+                      }),
                       prevNavLink.value?.text,
                     ]),
                   ]
@@ -153,11 +148,9 @@ export default defineComponent({
                     ]),
                     h("div", { class: "link" }, [
                       nextNavLink.value?.text,
-                      nextNavLink.value?.icon
-                        ? h("i", {
-                            class: `icon ${iconPrefix.value}${nextNavLink.value.icon}`,
-                          })
-                        : null,
+                      h(resolveComponent("FontIcon"), {
+                        icon: nextNavLink.value?.icon,
+                      }),
                     ]),
                   ]
                 )

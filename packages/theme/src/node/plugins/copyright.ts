@@ -1,20 +1,21 @@
-import { getAuthor } from "@mr-hope/vuepress-shared";
-import { copyright } from "vuepress-plugin-copyright2";
-import type { Page, PluginConfig } from "@vuepress/core";
+import { copyrightPlugin } from "vuepress-plugin-copyright2";
+import { getAuthor } from "vuepress-shared";
+
+import type { Page, Plugin } from "@vuepress/core";
 import type { CopyrightOptions } from "vuepress-plugin-copyright2";
 import type {
   HopeThemeConfig,
   HopeThemeNormalPageFrontmatter,
 } from "../../shared";
 
-export const resolveCopyrightPlugin = (
-  hostname: string,
+export const getCopyrightPlugin = (
   themeConfig: HopeThemeConfig,
-  options?: Partial<CopyrightOptions> | true
-): PluginConfig => {
-  if (!options) return ["", false];
+  options?: Partial<CopyrightOptions> | true,
+  hostname?: string
+): Plugin | null => {
+  if (!options) return null;
 
-  return copyright({
+  return copyrightPlugin({
     hostname,
     author: (
       page: Page<Record<string, never>, HopeThemeNormalPageFrontmatter>

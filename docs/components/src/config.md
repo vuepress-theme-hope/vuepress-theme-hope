@@ -11,84 +11,22 @@ icon: config
 Whether register articleInfo component
 
 ```ts
-type AvailableComponent =
-  | "ArticleInfo"
-  | "BreadCrumb"
-  | "Badge"
-  | "FullScreen"
-  | "Pagination"
-  | "TOC";
+type AvailableComponent = "Badge" | "CodePen" | "FontIcon" | "PDF";
 ```
+
+## addThis
+
+- Type: `string | false`
+- Default: `false`
+
+Public ID of addThis.
 
 ## backToTop
 
-- Type: `boolean`
+- Type: `boolean | number`
 - Default: `false`
 
-Whether enabling backToTop button
-
-## backToTopThreshold
-
-- Type: `number`
-- Default: `300`
-
-BackToTop button threshold distance (in pixels)
-
-## articleInfoLocales
-
-- Type: `ArticleInfoLocaleConfig`
-
-  ```ts
-  interface ArticleInfoLocaleData {
-    /**
-     * Author label text
-     */
-    author: string;
-
-    /**
-     * Writing date label text
-     */
-    date: string;
-
-    /**
-     * Label text marked as original
-     */
-    origin: string;
-
-    /**
-     * Page views label text
-     */
-    views: string;
-
-    /**
-     * Tag label text
-     */
-    tag: string;
-
-    /**
-     * Category label text
-     */
-    category: string;
-
-    /**
-     * Expect reading time label text
-     */
-    readingTime: string;
-
-    /**
-     * Words label Text
-     */
-    words: string;
-  }
-
-  interface ArticleInfoLocaleConfig {
-    [localePath: string]: ArticleInfoLocaleData;
-  }
-  ```
-
-- Required: No
-
-Locales config for article information.
+Whether enabling backToTop button. When setting a number, it will be used as BackToTop button threshold distance (in pixels), default is 300.
 
 ## backToTopLocales
 
@@ -111,43 +49,16 @@ Locales config for article information.
 
 Locales config for BackToTop button.
 
-## paginationLocales
+## iconAssets
 
-- Type: `PaginationLocaleConfig`
-
-  ```ts
-  interface PaginationLocaleData {
-    /**
-     * Previous page button label text
-     */
-    prev: string;
-
-    /**
-     * Next page button label text
-     */
-    next: string;
-
-    /**
-     * Navigation hint label text
-     */
-    navigate: string;
-
-    /**
-     * Navigation button label text
-     */
-    button: string;
-
-    /**
-     * Error text when invalid page number, `$page` will be replaced by total page number automatically
-     */
-    errorText: string;
-  }
-
-  interface PaginationLocaleConfig {
-    [localePath: string]: PaginationLocaleData;
-  }
-  ```
-
+- Type: `string`
 - Required: No
 
-Locales config for pagination.
+Link of font icon asset, `'iconfont'` and `'font-awesome'` keywords are supported.
+
+## iconPrefix
+
+- Type: `string`
+- Default: Inffered from iconAssets
+
+Class prefix of font icon

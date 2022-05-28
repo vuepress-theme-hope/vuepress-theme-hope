@@ -1,6 +1,7 @@
 ---
 title: 主题布局选项
 icon: config
+index: 3
 category:
   - 配置
 tag:
@@ -16,7 +17,7 @@ tag:
 
 具体介绍详见 [布局 → 导航栏](../../guide/layout/navbar.md)。
 
-### navbar <Badge text="建议配置" />
+### navbar <Badge text="建议配置" type="tip" />
 
 - 类型: `HopeThemeNavbarConfig | false`
 - 默认值: `false`
@@ -30,23 +31,23 @@ tag:
 
 是否在导航栏显示图标。
 
-### logo <Badge text="建议配置" />
+### logo <Badge text="建议配置" type="tip" />
 
-- 类型: `string | null`
+- 类型: `string`
 - 必填: 否
 
 导航栏图标，应为基于 `.vuepress/public` 文件夹的绝对路径。
 
 ### logoDark
 
-- 类型: `string | null`
+- 类型: `string`
 - 必填: 否
 
 夜间模式下导航栏图标，应为基于 `.vuepress/public` 文件夹的绝对路径。
 
 ### repo
 
-- 类型: `string | null`
+- 类型: `string`
 - 必填: 否
 
 仓库配置，用于在导航栏中显示仓库链接。
@@ -60,7 +61,7 @@ tag:
 
 ### repoLabel
 
-- 类型: `string | null`
+- 类型: `string`
 - 必填: 否
 
 用于导航栏仓库按钮的无障碍标签。
@@ -89,7 +90,7 @@ tag:
 
 关于配置指南，详见 [布局 → 侧边栏](../../guide/layout/sidebar.md)。
 
-### sidebar <Badge text="建议配置" />
+### sidebar <Badge text="建议配置" type="tip" />
 
 - 类型: `HopeThemeSidebarConfig | "structure" | "heading" | false`
 - 默认值: `"structure"`
@@ -125,6 +126,20 @@ tag:
 - 默认值: `true`
 
 是否在路径导航显示图标。
+
+### prevLink
+
+- 类型: `boolean`
+- 默认值: `true`
+
+是否在页面底部显示上一篇链接。
+
+### nextLink
+
+- 类型: `boolean`
+- 默认值: `true`
+
+是否在页面底部显示下一篇链接。
 
 ## 标题
 
@@ -191,7 +206,7 @@ tag:
 ### docsRepo
 
 - 类型: `string`
-- 默认值: `themeConfig.repo`
+- 默认值: `repo`
 
 文档仓库
 

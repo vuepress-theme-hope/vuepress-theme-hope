@@ -1,6 +1,6 @@
-import { blog } from "vuepress-plugin-blog2";
+import { blogPlugin } from "vuepress-plugin-blog2";
 
-import type { Page, PluginConfig } from "@vuepress/core";
+import type { Page, Plugin } from "@vuepress/core";
 import type { GitData } from "@vuepress/plugin-git";
 import type { BlogOptions } from "vuepress-plugin-blog2";
 import type {
@@ -74,18 +74,18 @@ export const getTitleLocales = (
     ])
   );
 
-export const resolveBlogPlugin = (
+export const getBlogPlugin = (
   themeData: HopeThemeConfig,
   options?: HopeThemeBlogPluginOptions | boolean
-): PluginConfig => {
-  if (!options) return ["", false];
+): Plugin | null => {
+  if (!options) return null;
 
   const blogOptions = {
     ...defaultOptions,
     ...(typeof options === "object" ? options : {}),
   };
 
-  return blog({
+  return blogPlugin({
     metaScope: "",
 
     filter:

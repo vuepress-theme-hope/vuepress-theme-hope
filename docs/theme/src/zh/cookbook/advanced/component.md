@@ -21,17 +21,19 @@ tag:
 
 插件的使用方法详见 [官方文档](https://v2.vuepress.vuejs.org/zh/reference/plugin/register-components.html)。
 
-### 通过 clientAppEnhance 注册
+### 通过 ClientConfigFile 注册
 
-你可以通过创建 `.vuepress/clientAppEnhance.ts` 手动注册组件。
+你可以通过创建 `.vuepress/client.ts` 手动注册组件。
 
 ```ts
-// .vuepress/clientAppEnhance.ts
-import { defineClientAppEnhance } from "@vuepress/client";
+// .vuepress/client.ts
+import { defineClientConfig } from "@vuepress/client";
 import MyComponent from "./MyComponent.vue";
 
-export default defineClientAppEnhance(({ app, router, siteData }) => {
-  app.component("MyComponent", MyComponent);
+export default defineClientConfig({
+  enhance: ({ app, router, siteData }) => {
+    app.component("MyComponent", MyComponent);
+  },
 });
 ```
 

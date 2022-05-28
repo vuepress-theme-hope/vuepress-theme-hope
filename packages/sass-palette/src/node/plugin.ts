@@ -1,128 +1,83 @@
 import { path } from "@vuepress/utils";
-import chokidar from "chokidar";
+import { watch } from "chokidar";
 
 import { injectConfigModule } from "./inject";
 import {
   prepareConfigFile,
-  prepareInjectFile,
-  prepareLoadFile,
-  preparePaletteFile,
-  prepareStyleFile,
-} from "./generate";
+  prepareInjectSass,
+  prepareConfigSass,
+  preparePaletteSass,
+  prepareStyleSass,
+} from "./prepare";
 import { logger } from "./utils";
 
-import type { Plugin, PluginConfig } from "@vuepress/core";
+import type { PluginFunction } from "@vuepress/core";
 import type { SassPaletteOptions } from "../shared";
 
-export const sassPalettePlugin: Plugin<SassPaletteOptions> = (
-  {
-    id = "hope",
-    config = `.vuepress/styles/${id}-config.scss`,
-    defaultConfig = path.resolve(__dirname, "../../styles/default/config.scss"),
-    palette = `.vuepress/styles/${id}-palette.scss`,
-    defaultPalette = path.resolve(
-      __dirname,
-      "../../styles/default/palette.scss"
-    ),
-    generator = path.resolve(__dirname, "../../styles/empty.scss"),
-    style = null,
-  },
-  app
-) => {
-  const userConfig = app.dir.source(config);
-  const userPalette = app.dir.source(palette);
-  const userStyle = style ? app.dir.source(style) : null;
+export const sassPalettePlugin =
+  (options: SassPaletteOptions): PluginFunction =>
+  (app) => {
+    if (app.env.isDebug) logger.info(`Options: ${options.toString()}`);
 
-  return {
-    name: `vuepress-plugin-sass-palette?${id}`,
-
-    alias: {
-      [`@sass-palette/helper`]: path.resolve(
+    const {
+      id = "hope",
+      config = `.vuepress/styles/${id}-config.scss`,
+      defaultConfig = path.resolve(
         __dirname,
-        "../../styles/helper.scss"
+        "../../styles/default/config.scss"
       ),
-      [`@sass-palette/${id}-config`]: app.dir.temp(
-        `sass-palette/${id}-config.scss`
+      palette = `.vuepress/styles/${id}-palette.scss`,
+      defaultPalette = path.resolve(
+        __dirname,
+        "../../styles/default/palette.scss"
       ),
-      [`@sass-palette/${id}-inject`]: app.dir.temp(
-        `sass-palette/${id}-inject.scss`
-      ),
-      [`@sass-palette/${id}-palette`]: app.dir.temp(
-        `sass-palette/${id}-palette.scss`
-      ),
-      ...(style
-        ? {
-            [`@sass-palette/${id}-style`]: app.dir.temp(
-              `sass-palette/${id}-style.scss`
-            ),
-          }
-        : {}),
-    },
+      generator = path.resolve(__dirname, "../../styles/empty.scss"),
+      style = "",
+    } = options;
 
-    onInitialized: (): Promise<void> => {
-      injectConfigModule(app, id);
+    const userConfig = app.dir.source(config);
+    const userPalette = app.dir.source(palette);
+    const userStyle = style ? app.dir.source(style) : null;
 
-      return Promise.all([
-        prepareLoadFile(app, id),
-        prepareInjectFile(app, id),
+    return {
+      name: `vuepress-plugin-sass-palette`,
 
-        prepareConfigFile(app, {
-          id,
-          defaultConfig,
-          defaultPalette,
-          generator,
-          userConfig,
-          userPalette,
-        }),
+      multiple: true,
 
-        preparePaletteFile(app, {
-          id,
-          defaultPalette,
-          generator,
-          userPalette,
-        }),
+      id,
 
-        prepareStyleFile(app, { id, userStyle }),
-      ]).then(() => {
-        if (app.env.isDebug) logger.info(`Style file for ${id} generated`);
-      });
-    },
+      alias: {
+        [`@sass-palette/helper`]: path.resolve(
+          __dirname,
+          "../../styles/helper.scss"
+        ),
+        [`@sass-palette/${id}-config`]: app.dir.temp(
+          `sass-palette/${id}-config.scss`
+        ),
+        [`@sass-palette/${id}-inject`]: app.dir.temp(
+          `sass-palette/${id}-inject.scss`
+        ),
+        [`@sass-palette/${id}-palette`]: app.dir.temp(
+          `sass-palette/${id}-palette.scss`
+        ),
+        ...(style
+          ? {
+              [`@sass-palette/${id}-style`]: app.dir.temp(
+                `sass-palette/${id}-style.scss`
+              ),
+            }
+          : {}),
+      },
 
-    onWatched: (app, watchers): void => {
-      const configWatcher = chokidar.watch(userConfig, {
-        cwd: app.dir.source(),
-        ignoreInitial: true,
-      });
+      extendsBundlerOptions: (config: unknown, app): void => {
+        injectConfigModule(config, app, id);
+      },
 
-      const updateConfig = (): Promise<void> =>
-        prepareConfigFile(app, {
-          id,
-          defaultConfig,
-          defaultPalette,
-          generator,
-          userConfig,
-          userPalette,
-        }).then(() => {
-          if (app.env.isDebug) logger.info(`Style file for ${id} updated`);
-        });
+      onInitialized: (): Promise<void> => {
+        return Promise.all([
+          prepareInjectSass(app, id),
 
-      configWatcher.on("add", () => {
-        void updateConfig();
-      });
-      configWatcher.on("unlink", () => {
-        void updateConfig();
-      });
-
-      watchers.push(configWatcher);
-
-      const paletteWatcher = chokidar.watch(userPalette, {
-        cwd: app.dir.source(),
-        ignoreInitial: true,
-      });
-
-      const updatePalette = (): Promise<void> =>
-        Promise.all([
-          prepareConfigFile(app, {
+          prepareConfigSass(app, {
             id,
             defaultConfig,
             defaultPalette,
@@ -131,50 +86,102 @@ export const sassPalettePlugin: Plugin<SassPaletteOptions> = (
             userPalette,
           }),
 
-          preparePaletteFile(app, {
+          preparePaletteSass(app, {
             id,
             defaultPalette,
             generator,
             userPalette,
           }),
+
+          prepareStyleSass(app, { id, userStyle }),
         ]).then(() => {
-          if (app.env.isDebug) logger.info(`Style file for ${id} updated`);
+          if (app.env.isDebug) logger.info(`Style file for ${id} generated`);
         });
+      },
 
-      paletteWatcher.on("add", () => {
-        void updatePalette();
-      });
-      paletteWatcher.on("unlink", () => {
-        void updatePalette();
-      });
-
-      watchers.push(paletteWatcher);
-
-      if (userStyle) {
-        const styleWatcher = chokidar.watch(userStyle, {
+      onWatched: (app, watchers): void => {
+        const configWatcher = watch(userConfig, {
           cwd: app.dir.source(),
           ignoreInitial: true,
         });
 
-        const updateStyle = (): Promise<void> =>
-          prepareStyleFile(app, { id, userStyle }).then(() => {
+        const updateConfig = (): Promise<void> =>
+          prepareConfigSass(app, {
+            id,
+            defaultConfig,
+            defaultPalette,
+            generator,
+            userConfig,
+            userPalette,
+          }).then(() => {
             if (app.env.isDebug) logger.info(`Style file for ${id} updated`);
           });
 
-        styleWatcher.on("add", () => {
-          void updateStyle();
+        configWatcher.on("add", () => {
+          void updateConfig();
         });
-        styleWatcher.on("unlink", () => {
-          void updateStyle();
+        configWatcher.on("unlink", () => {
+          void updateConfig();
         });
-        watchers.push(styleWatcher);
-      }
-    },
 
-    clientAppEnhanceFiles: app.dir.temp(`sass-palette/load-${id}.js`),
+        watchers.push(configWatcher);
+
+        const paletteWatcher = watch(userPalette, {
+          cwd: app.dir.source(),
+          ignoreInitial: true,
+        });
+
+        const updatePalette = (): Promise<void> =>
+          Promise.all([
+            prepareConfigSass(app, {
+              id,
+              defaultConfig,
+              defaultPalette,
+              generator,
+              userConfig,
+              userPalette,
+            }),
+
+            preparePaletteSass(app, {
+              id,
+              defaultPalette,
+              generator,
+              userPalette,
+            }),
+          ]).then(() => {
+            if (app.env.isDebug) logger.info(`Style file for ${id} updated`);
+          });
+
+        paletteWatcher.on("add", () => {
+          void updatePalette();
+        });
+        paletteWatcher.on("unlink", () => {
+          void updatePalette();
+        });
+
+        watchers.push(paletteWatcher);
+
+        if (userStyle) {
+          const styleWatcher = watch(userStyle, {
+            cwd: app.dir.source(),
+            ignoreInitial: true,
+          });
+
+          const updateStyle = (): Promise<void> =>
+            prepareStyleSass(app, { id, userStyle }).then(() => {
+              if (app.env.isDebug) logger.info(`Style file for ${id} updated`);
+            });
+
+          styleWatcher.on("add", () => {
+            void updateStyle();
+          });
+          styleWatcher.on("unlink", () => {
+            void updateStyle();
+          });
+          watchers.push(styleWatcher);
+        }
+      },
+
+      clientConfigFile: (app) => prepareConfigFile(app, id),
+    };
   };
-};
-
-export const sassPalette = (
-  options: SassPaletteOptions | false
-): PluginConfig<SassPaletteOptions> => ["sass-palette", options];

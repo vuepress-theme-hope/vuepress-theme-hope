@@ -30,9 +30,11 @@ export default defineComponent({
         [
           slots.top?.(),
           h(HomeHero),
-          h(DropTransition, { delay: 0.16 }, () => h(HomeFeatures)),
+          h(DropTransition, { appear: true, delay: 0.16 }, () =>
+            h(HomeFeatures)
+          ),
           slots.center?.(),
-          h(DropTransition, { delay: 0.24 }, () =>
+          h(DropTransition, { appear: true, delay: 0.24 }, () =>
             h(MarkdownContent, { custom: true })
           ),
           slots.bottom?.(),

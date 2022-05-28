@@ -40,7 +40,7 @@ We recommend the following settings:
 - Convert the date of creating the feed to ISOString and write it into `channel.pubDate`
 - The update period of the content set in `channel.ttl` (unit: minutes)
 - Set copyright information via `channel.copyright`
-- Set the channel author via `channel.author`, or set `themeConfig.author` to the author name.
+- Set the channel author via `channel.author`.
 
 ::: tip Default channel settings
 

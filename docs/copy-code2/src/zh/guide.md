@@ -13,9 +13,9 @@ icon: creative
 
 ## 演示
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
@@ -30,9 +30,7 @@ export default {
 };
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // .vuepress/config.js
@@ -48,5 +46,3 @@ module.exports = {
 ```
 
 :::
-
-::::

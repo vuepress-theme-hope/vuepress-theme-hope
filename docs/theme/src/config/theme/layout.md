@@ -1,6 +1,7 @@
 ---
 title: Theme Layout Options
 icon: config
+index: 4
 category:
   - Config
 tag:
@@ -16,7 +17,7 @@ The following options control theme layout.
 
 For related guide, please see [Layout → Navbar](../../guide/layout/navbar.md).
 
-### navbar <Badge text="Recommanded" />
+### navbar <Badge text="Recommended" type="tip" />
 
 - Type: `HopeThemeNavbarConfig | false`
 - Default: `false`
@@ -30,23 +31,23 @@ Navbar config
 
 Whether display icons in navbar.
 
-### logo <Badge text="Recommanded" />
+### logo <Badge text="Recommended" type="tip" />
 
-- Type: `string | null`
+- Type: `string`
 - Required: No
 
 Navbar logo, should be absolute path relative to `.vuepress/public` folder.
 
 ### logoDark
 
-- Type: `string | null`
+- Type: `string`
 - Required: No
 
 Navbar logo in darkmode, should be absolute path relative to `.vuepress/public` folder.
 
 ### repo
 
-- Type: `string | null`
+- Type: `string`
 - Required: No
 
 Repository link
@@ -60,7 +61,7 @@ Whether display repo link in navbar.
 
 ### repoLabel
 
-- Type: `string | null`
+- Type: `string`
 - Required: No
 
 Repository aria label of navbar.
@@ -89,7 +90,7 @@ Whether hide site title on mobile.
 
 For guide, see [Layout → Sidebar](../../guide/layout/sidebar.md).
 
-### sidebar <Badge text="Recommanded" />
+### sidebar <Badge text="Recommended" type="tip" />
 
 - Type: `HopeThemeSidebarConfig | "structure" | "heading" | false`
 - Default: `"structure"`
@@ -125,6 +126,20 @@ Whether enable route navigation globally.
 - Default: `true`
 
 Whether show icons in route navigation
+
+### prevLink
+
+- Type: `boolean`
+- Default: `true`
+
+Whether show prevLink in bottom.
+
+### nextLink
+
+- Type: `boolean`
+- Default: `true`
+
+Whether show nextLink in bottom.
 
 ## Title
 
@@ -180,7 +195,7 @@ Whether to show "Edit this page" or not.
 
 - Type: `string`
 
-Pattern of edit link. While `:repo` `:branch` `:path` wil be automatically replaced by `docsRepo` `docsBranch` and `docsDir + filePath`。
+Pattern of edit link. While `:repo` `:branch` `:path` will be automatically replaced by `docsRepo` `docsBranch` and `docsDir + filePath`。
 
 ::: note
 
@@ -191,7 +206,7 @@ The theme provide built-in support for GitHub, Gitlab, Gitee and Bitbucket.
 ### docsRepo
 
 - Type: `string`
-- Default: `themeConfig.repo`
+- Default: `repo`
 
 The repo of your docs
 

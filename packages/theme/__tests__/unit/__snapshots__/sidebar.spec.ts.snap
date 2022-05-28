@@ -1,0 +1,175 @@
+// Vitest Snapshot v1
+
+exports[`should generate sidebarData correcly > Should resolve structure in dir 1`] = `
+{
+  "/dir/": [
+    "README.md",
+    "file2.md",
+    "file1.md",
+    "file4.md",
+  ],
+  "/link/": [
+    "README.md",
+    "file2.md",
+    "file1.md",
+    "file4.md",
+  ],
+  "/nested-dir/": [
+    "README.md",
+    "file2.md",
+    {
+      "children": [
+        "README.md",
+        "file2.md",
+        {
+          "children": [
+            "README.md",
+            "file2.md",
+            "file1.md",
+            "file4.md",
+          ],
+          "collapsable": true,
+          "icon": "dir-icon",
+          "prefix": "nested-dir2/",
+          "text": "Dir2",
+        },
+        "file1.md",
+        "file4.md",
+      ],
+      "collapsable": true,
+      "icon": "dir-icon",
+      "prefix": "nested-dir1/",
+      "text": "Dir1",
+    },
+    "file1.md",
+    "file4.md",
+  ],
+  "/nested-dir/nested-dir1/": [
+    "README.md",
+    "file2.md",
+    {
+      "children": [
+        "README.md",
+        "file2.md",
+        "file1.md",
+        "file4.md",
+      ],
+      "collapsable": true,
+      "icon": "dir-icon",
+      "prefix": "nested-dir2/",
+      "text": "Dir2",
+    },
+    "file1.md",
+    "file4.md",
+  ],
+  "/options/": [
+    "README.md",
+    "file2.md",
+    "file1.md",
+    "file4.md",
+  ],
+}
+`;
+
+exports[`should generate sidebarData correcly > Should resolve structure in group options 1`] = `
+{
+  "/nested-dir/nested-dir1/": [
+    "README.md",
+    "file2.md",
+    {
+      "children": [
+        "README.md",
+        "file2.md",
+        "file1.md",
+        "file4.md",
+      ],
+      "collapsable": true,
+      "icon": "dir-icon",
+      "prefix": "nested-dir2/",
+      "text": "Dir2",
+    },
+    "file1.md",
+    "file4.md",
+  ],
+}
+`;
+
+exports[`should generate sidebarData correcly > Should resolve structure in root 1`] = `
+{
+  "/": [
+    "README.md",
+    {
+      "children": [
+        "README.md",
+        "file2.md",
+        "file1.md",
+        "file4.md",
+      ],
+      "collapsable": true,
+      "icon": "dir-icon",
+      "prefix": "dir/",
+      "text": "Dir",
+    },
+    {
+      "children": [
+        "file2.md",
+        "file1.md",
+        "file4.md",
+      ],
+      "collapsable": true,
+      "icon": "my-icon",
+      "link": "/link/",
+      "prefix": "link/",
+      "text": "Dir with link",
+    },
+    {
+      "children": [
+        "README.md",
+        "file2.md",
+        {
+          "children": [
+            "README.md",
+            "file2.md",
+            {
+              "children": [
+                "README.md",
+                "file2.md",
+                "file1.md",
+                "file4.md",
+              ],
+              "collapsable": true,
+              "icon": "dir-icon",
+              "prefix": "nested-dir2/",
+              "text": "Dir2",
+            },
+            "file1.md",
+            "file4.md",
+          ],
+          "collapsable": true,
+          "icon": "dir-icon",
+          "prefix": "nested-dir1/",
+          "text": "Dir1",
+        },
+        "file1.md",
+        "file4.md",
+      ],
+      "collapsable": true,
+      "icon": "dir-icon",
+      "prefix": "nested-dir/",
+      "text": "Dir",
+    },
+    {
+      "children": [
+        "README.md",
+        "file2.md",
+        "file1.md",
+        "file4.md",
+      ],
+      "collapsable": true,
+      "icon": "my-icon",
+      "prefix": "options/",
+      "text": "Dir with options",
+    },
+  ],
+}
+`;

@@ -10,6 +10,10 @@ export const lang2PathConfig = {
   "ru-RU": "/ru/",
   "uk-UA": "/uk/",
   "pt-BR": "/br/",
+  "pl-PL": "/pl/",
+  "fr-FR": "/fr/",
+  "sk-SK": "/sk/",
+  "es-ES": "/es/",
 };
 
 export const supportedLangs = Object.keys(lang2PathConfig);

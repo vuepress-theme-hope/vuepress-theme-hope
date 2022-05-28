@@ -48,7 +48,7 @@ export interface HopeThemeNavbarLocaleOptions {
    *
    * 应为基于 `.vuepress/public` 文件夹的绝对路径
    */
-  logo?: string | null;
+  logo?: string;
 
   /**
    * Navbar logo under darkmode
@@ -59,14 +59,14 @@ export interface HopeThemeNavbarLocaleOptions {
    *
    * 应为基于 `.vuepress/public` 文件夹的绝对路径
    */
-  logoDark?: string | null;
+  logoDark?: string;
 
   /**
    * Repository link
    *
    * 仓库链接
    */
-  repo?: string | null;
+  repo?: string;
 
   /**
    * Whether display repo link in navbar.
@@ -82,7 +82,7 @@ export interface HopeThemeNavbarLocaleOptions {
    *
    * 导航栏仓库按钮的无障碍标签
    */
-  repoLabel?: string | null;
+  repoLabel?: string;
 
   /**
    * Whether show icon in navbar

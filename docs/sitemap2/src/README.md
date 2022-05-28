@@ -5,7 +5,7 @@ icon: home
 heroImage: /logo.svg
 heroText: vuepress-plugin-sitemap2
 tagline: Sitemap generation for VuePress2
-action:
+actions:
   - text: Guide 💡
     link: /guide.html
     type: primary
@@ -21,17 +21,21 @@ copyrightText: false
 
 ### Install
 
-:::: code-group
+::: code-tabs#shell
 
-::: code-group-item yarn
+@tab pnpm
+
+```bash
+pnpm add -D vuepress-plugin-sitemap2@next
+```
+
+@tab yarn
 
 ```bash
 yarn add -D vuepress-plugin-sitemap2@next
 ```
 
-:::
-
-::: code-group-item npm
+@tab npm
 
 ```bash
 npm i -D vuepress-plugin-sitemap2@next
@@ -39,38 +43,34 @@ npm i -D vuepress-plugin-sitemap2@next
 
 :::
 
-::::
-
 ### Usage
 
-:::: code-group
+::: code-tabs#language
 
-::: code-group-item TS
+@tab TS
 
 ```ts
 // .vuepress/config.ts
-import { sitemap } from "vuepress-plugin-sitemap2";
+import { sitemapPlugin } from "vuepress-plugin-sitemap2";
 
 export default {
   plugins: [
-    sitemap({
+    sitemapPlugin({
       // your options
     }),
   ],
 };
 ```
 
-:::
-
-::: code-group-item JS
+@tab JS
 
 ```js
 // .vuepress/config.js
-const { sitemap } = require("vuepress-plugin-sitemap2");
+const { sitemapPlugin } = require("vuepress-plugin-sitemap2");
 
 module.exports = {
   plugins: [
-    sitemap({
+    sitemapPlugin({
       // your options
     }),
   ],
@@ -79,4 +79,6 @@ module.exports = {
 
 :::
 
-::::
+## Migrating from V1
+
+For details, see [Migration Guide](./migration.md).

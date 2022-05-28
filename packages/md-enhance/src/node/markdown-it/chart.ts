@@ -1,24 +1,52 @@
-/* eslint-disable max-statements */
 import { hash } from "@vuepress/utils";
-import type Token from "markdown-it/lib/token";
 
-export const chartRender = (tokens: Token[], index: number): string => {
-  const { nesting, info } = tokens[index];
-  const title = /^ chart\s*(.*)\s*$/u.exec(info);
-  const key = `chart-${hash(index)}`;
+import { container } from "./container";
 
-  if (nesting === -1) return `</ChartJS>`;
+import type { PluginSimple } from "markdown-it";
 
-  let config = "";
+export const chart: PluginSimple = (md) => {
+  container(md, {
+    name: "chart",
+    render: (tokens, index) => {
+      const { nesting, info } = tokens[index];
+      const title = info
+        .trimStart()
+        // 'chart' length
+        .slice(5)
+        .trim();
 
-  for (let i = index; i < tokens.length; i++) {
-    const { type, content, info } = tokens[i];
+      const key = `chart-${hash(index)}`;
 
-    if (type === "container_chart_close") break;
-    if (!content) continue;
-    if ((type === "fence" && info === "json") || info === "js")
-      config = encodeURIComponent(content);
-  }
+      if (nesting === -1) return `</ChartJS>`;
 
-  return `<ChartJS title="${title?.[1] || ""}" id="${key}" config="${config}">`;
+      let config = "{}";
+      let configType = "";
+
+      for (let i = index; i < tokens.length; i++) {
+        const { type, content, info } = tokens[i];
+
+        if (type === "container_chart_close") break;
+
+        if (!content) continue;
+        if (type === "fence") {
+          if (info === "json") {
+            config = encodeURIComponent(content);
+            configType = "json";
+          } else if (info === "js" || info === "javascript") {
+            config = encodeURIComponent(content);
+            configType = "js";
+          }
+        }
+
+        // set to an unexisit token type
+        tokens[i].type = "chart_empty";
+        // hide token
+        tokens[i].hidden = true;
+      }
+
+      return `<ChartJS id="${key}" config="${config}" ${
+        title ? `title="${encodeURIComponent(title)}" ` : ""
+      }type="${configType}">`;
+    },
+  });
 };

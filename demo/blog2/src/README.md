@@ -16,18 +16,18 @@ footer: MIT Licensed | Copyright © 2021-present Mr.Hope
 ### Install
 
 ```bash
-yarn add -D vuepress-plugin-blog2@next
+pnpm add -D vuepress-plugin-blog2@next
 ```
 
 ### Usage
 
 ```ts
 // .vuepress/config.ts
-import { blog } from "vuepress-plugin-blog2";
+import { blogPlugin } from "vuepress-plugin-blog2";
 
 export default {
   plugins: [
-    blog({
+    blogPlugin({
       // your options
     }),
   ],

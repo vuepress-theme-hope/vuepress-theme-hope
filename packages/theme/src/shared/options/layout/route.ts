@@ -14,7 +14,7 @@ export interface HopeThemeRouteLocaleData {
   back: string;
 
   /**
-   * sr-only message in `<OutboundLink>`
+   * sr-only message in `<ExternalLinkIcon>`
    */
-  openInNewWindow?: string;
+  openInNewWindow: string;
 }
