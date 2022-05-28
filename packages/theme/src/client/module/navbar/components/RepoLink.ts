@@ -11,6 +11,8 @@ import { useNavbarRepo } from "@theme-hope/module/navbar/composables";
 
 import type { VNode } from "vue";
 
+import "../styles/repo-link.scss";
+
 export default defineComponent({
   name: "RepoLink",
 

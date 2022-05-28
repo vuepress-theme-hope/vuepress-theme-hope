@@ -22,18 +22,6 @@ export default defineComponent({
     const isMobile = useMobile();
     const showScreen = ref(false);
 
-    const navbar = ref<HTMLElement>();
-    const siteBrand = ref<HTMLElement>();
-
-    const linksWrapperMaxWidth = ref(0);
-    const linksWrapperStyle = computed(() => {
-      if (!linksWrapperMaxWidth.value) return {};
-
-      return {
-        "max-width": `${linksWrapperMaxWidth.value}px`,
-      };
-    });
-
     const autoHide = computed(() => {
       const { navbarAutoHide } = themeLocale.value;
 
@@ -54,7 +42,6 @@ export default defineComponent({
               "hide-icon": !themeLocale.value.navbarIcon,
             },
           ],
-          ref: navbar,
         },
         [
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -65,10 +52,8 @@ export default defineComponent({
               emit("toggle-sidebar");
             },
           }),
-          h(NavbarBrand, { ref: siteBrand }, () => slots["left"]?.()),
-          h(NavbarLinks, {
-            style: linksWrapperStyle.value,
-          }),
+          h(NavbarBrand, () => slots["left"]?.()),
+          h(NavbarLinks),
           h(
             NavActions,
             {

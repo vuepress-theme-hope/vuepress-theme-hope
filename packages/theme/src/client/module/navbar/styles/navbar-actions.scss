@@ -15,21 +15,4 @@
       margin-right: 0 !important;
     }
   }
-
-  .repo-link {
-    display: inline-block;
-
-    margin: auto;
-    padding: 6px;
-
-    color: var(--dark-grey);
-
-    // fix icon position
-    line-height: 1;
-
-    &:hover,
-    &:active {
-      color: var(--theme-color);
-    }
-  }
 }
