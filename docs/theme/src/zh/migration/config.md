@@ -85,7 +85,9 @@ tag:
 
 - `navAutoHide` 重命名为 `navbarAutoHide`
 
-- 新增 `navbarIcon` 选项
+- 新增 `navbarIcon` 选项控制导航栏图标
+
+- 新增 `navbarLayout` 选项控制导航栏布局
 
 由于主题不再内置搜索:
 
@@ -132,6 +134,8 @@ tag:
   - 添加 `"enable"`
   - 将 `"switch"` 重命名为 `"toggle"`
   - 将 `"auto-switch"` 重命名为 `"switch"`
+
+- 默认禁用 `themeColor` 与 `fullscreen`
 
 ### 博客配置
 

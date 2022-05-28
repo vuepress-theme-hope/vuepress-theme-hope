@@ -533,6 +533,60 @@ The following three functions are provided:
 - [Dark Mode](../interface/darkmode.md)
 - [FullScreen button](../interface/others.md#fullscreen-button)
 
+## Layout config
+
+`vuepress-theme-hope` allows you to customize navbar layout. You can add components in `left`, `center` and `right` keys under `navbarLayout` options.
+
+Available components:
+
+- Brand: Site Brand
+- Links: Navbar links
+- Language: Language Switcher
+- Search: Search Box
+- Outlook: Outlook Popup
+- Repo: Project Repo
+
+By default, we are using the following options:
+
+::: code-tabs#language
+
+@tab TS
+
+```ts
+// .vuepress/config.ts
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default defineUserConfig({
+  theme: hopeTheme({
+    navbarLayout: {
+      left: ["Brand"],
+      center: ["Links"],
+      right: ["Language", "Repo", "Outlook", "Search"],
+    },
+  }),
+});
+```
+
+@tab JS
+
+```js
+// .vuepress/config.js
+const { hopeTheme } = require("vuepress-theme-hope");
+
+module.exports = {
+  theme: hopeTheme({
+    navbarLayout: {
+      left: ["Brand"],
+      center: ["Links"],
+      right: ["Language", "Repo", "Outlook", "Search"],
+    },
+  }),
+};
+```
+
+:::
+
 ## Types and Helpers
 
 `vuepress-theme-hope` exports the type of navbar as `HopeThemeNavbarConfig`, and provides a `navbar` helper function. They can provide validation and autocompletion of navbar configuration in TS and JS.

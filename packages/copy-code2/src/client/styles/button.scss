@@ -20,7 +20,7 @@
     position: absolute;
     right: -14px;
     bottom: -14px;
-    z-index: 100;
+    z-index: 5;
 
     @media (max-width: hope-config.$mobile) {
       right: 0;
@@ -64,7 +64,7 @@
     position: absolute;
     top: 0;
     right: 3em;
-    z-index: 100;
+    z-index: 5;
   }
 
   .icon-copy-code {
