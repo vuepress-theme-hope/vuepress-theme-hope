@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.74](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.73...v2.0.0-beta.74) (2022-05-28)
+
+### Bug Fixes
+
+- **theme:** fix MarkdownContent wrapper ([3befda5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3befda5f3bb1de666c5836c81dcba6a130c3a873))
+- **theme:** fix option types ([b890a25](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b890a25166ec34da437a1f4d554669b4661b6cc1))
+
 ## [2.0.0-beta.73](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.72...v2.0.0-beta.73) (2022-05-28)
 
 ### ⚠ BREAKING CHANGES
