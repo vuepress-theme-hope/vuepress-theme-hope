@@ -3,9 +3,9 @@ title: Code Themes
 icon: style
 order: 4
 category:
-  - interface
+  - Interface
 tag:
-  - interface
+  - Interface
   - Code Themes
 ---
 

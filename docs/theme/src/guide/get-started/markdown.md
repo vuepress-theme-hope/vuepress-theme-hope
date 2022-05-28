@@ -237,6 +237,6 @@ $$
 
 ### Stylize
 
-Setting this to a invliad stytax <span style="color:red">doesn't</span> have any effect.
+Setting this to a invalid stytax <span style="color:red">doesn't</span> have any effect.
 
 - [View Detail](../markdown/stylize.md)
