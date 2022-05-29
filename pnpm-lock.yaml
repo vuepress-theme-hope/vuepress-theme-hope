@@ -53,7 +53,7 @@ importers:
       ts-node: 10.8.0
       tslib: 2.4.0
       typescript: 4.7.2
-      vitest: 0.12.9
+      vitest: 0.13.0
     devDependencies:
       '@babel/core': 7.18.2
       '@babel/plugin-transform-modules-commonjs': 7.18.2_@babel+core@7.18.2
@@ -104,7 +104,7 @@ importers:
       ts-node: 10.8.0_smgpfffxrhk5i4ijhe3532b4hq
       tslib: 2.4.0
       typescript: 4.7.2
-      vitest: 0.12.9_c8@7.11.3
+      vitest: 0.13.0_c8@7.11.3
 
   demo/blog2:
     specifiers:
@@ -7165,7 +7165,7 @@ packages:
     dev: true
 
   /get-func-name/2.0.0:
-    resolution: {integrity: sha1-6td0q+5y4gQJQzoGY2YCPdaIekE=}
+    resolution: {integrity: sha512-Hm0ixYtaSZ/V7C8FJrtZIuBBI+iSgL+1Aq82zSu8VQNB4S3Gk8e7Qs3VwBDJAhmRZcFqkl3tQu36g/Foh5I5ig==}
     dev: true
 
   /get-intrinsic/1.1.1:
@@ -11699,8 +11699,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitest/0.12.9_c8@7.11.3:
-    resolution: {integrity: sha512-1NtyUANS72Qw5PwYvoztk067NX4fSiis2xQxhByOWS33eL2er/yupHyLxlBCOkF2ANe0dLFRvT1GVb+nczL5aw==}
+  /vitest/0.13.0_c8@7.11.3:
+    resolution: {integrity: sha512-vuYt3+G25MMnANgyMHHG3VK86C9K/VFi/8uH5myQ2v660W4WArv99ElakPlVFxxSXXM1jqQPiPj2ht35Bod9LQ==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
     peerDependencies:
