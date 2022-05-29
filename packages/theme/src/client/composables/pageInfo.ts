@@ -95,7 +95,7 @@ export const usePageDate = (): ComputedRef<DateInfo | null> => {
 
 export const usePageInfo = (): {
   config: PageInfoProps;
-  items: ComputedRef<PageInfo[] | false | undefined>;
+  items: ComputedRef<PageInfo[] | false | null>;
 } => {
   const themeLocale = useThemeLocaleData();
   const page = usePageData<{ readingTime: ReadingTime }>();
@@ -120,9 +120,11 @@ export const usePageInfo = (): {
   });
 
   const items = computed(() =>
-    frontmatter.value.pageInfo === false
-      ? false
-      : frontmatter.value.pageInfo || themeLocale.value.pageInfo
+    "pageInfo" in frontmatter.value
+      ? frontmatter.value.pageInfo
+      : "pageInfo" in themeLocale.value
+      ? themeLocale.value.pageInfo
+      : null
   );
 
   return { config, items };

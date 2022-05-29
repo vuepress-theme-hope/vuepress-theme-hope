@@ -28,7 +28,7 @@ export default defineComponent({
         ]),
         h(PageInfo, {
           config: unref(config),
-          ...(items.value ? { items: items.value } : {}),
+          ...(items.value === null ? {} : { items: items.value }),
         }),
         h("hr"),
       ]);

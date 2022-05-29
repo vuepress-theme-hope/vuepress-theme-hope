@@ -36,17 +36,13 @@ export default defineComponent({
     });
 
     const copyright = computed(() =>
-      frontmatter.value.copyright === false
-        ? false
-        : frontmatter.value.copyright ||
-          (themeLocale.value.copyright === false
-            ? false
-            : themeLocale.value.copyright ||
-              (author.value.length
-                ? `Copyright © ${new Date().getFullYear()} ${
-                    author.value[0].name
-                  }`
-                : ""))
+      "copyright" in frontmatter.value
+        ? frontmatter.value.copyright
+        : "copyright" in themeLocale.value
+        ? themeLocale.value.copyright
+        : author.value.length
+        ? `Copyright © ${new Date().getFullYear()} ${author.value[0].name}`
+        : false
     );
 
     return (): VNode | null =>
