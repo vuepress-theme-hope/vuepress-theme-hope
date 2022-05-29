@@ -1,5 +1,4 @@
-import { computed, defineComponent, h, onMounted, PropType } from "vue";
-import { useThemeData } from "@theme-hope/composables";
+import { defineComponent, h, onMounted, PropType } from "vue";
 
 import type { VNode } from "vue";
 
@@ -11,40 +10,30 @@ export default defineComponent({
   props: {
     themeColor: {
       type: Object as PropType<Record<string, string>>,
-      default: () => ({}),
+      required: true,
     },
   },
 
   setup(props) {
-    const themeData = useThemeData();
-
-    const themeColor = computed(() => {
-      const { themeColor } = themeData.value;
-
-      return themeColor === false ? null : themeColor;
-    });
-
     const setThemeColor = (theme = ""): void => {
-      if (themeColor.value) {
-        const classes = document.documentElement.classList;
-        const themes = Object.keys(themeColor.value).map(
-          (color) => `theme-${color}`
-        );
+      const classes = document.documentElement.classList;
+      const themes = Object.keys(props.themeColor).map(
+        (color) => `theme-${color}`
+      );
 
-        if (!theme) {
-          localStorage.removeItem("theme");
-          classes.remove(...themes);
+      if (!theme) {
+        localStorage.removeItem("theme");
+        classes.remove(...themes);
 
-          return;
-        }
-
-        classes.remove(
-          ...themes.filter((themeclass) => themeclass !== `theme-${theme}`)
-        );
-
-        classes.add(`theme-${theme}`);
-        localStorage.setItem("theme", theme);
+        return;
       }
+
+      classes.remove(
+        ...themes.filter((themeclass) => themeclass !== `theme-${theme}`)
+      );
+
+      classes.add(`theme-${theme}`);
+      localStorage.setItem("theme", theme);
     };
 
     onMounted(() => {
