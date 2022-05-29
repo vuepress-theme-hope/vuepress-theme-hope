@@ -1,5 +1,5 @@
 import { usePreferredDark, useStorage } from "@vueuse/core";
-import { computed, inject, onMounted, onUnmounted, watch } from "vue";
+import { computed, inject, onMounted, watch } from "vue";
 import { useThemeData } from "@theme-hope/composables";
 
 import type { App, InjectionKey, Ref, WritableComputedRef } from "vue";
@@ -78,8 +78,6 @@ export const setupDarkMode = (): void => {
   onMounted(() => {
     watch(isDarkMode, updateDOM, { immediate: true });
   });
-
-  onUnmounted(() => updateDOM());
 };
 
 declare module "vue" {
