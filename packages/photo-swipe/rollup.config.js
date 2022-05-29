@@ -10,12 +10,12 @@ export default [
   }),
   ...rollupTypescript("client/config", {
     external: [
-      "vuepress-shared/lib/client",
       "@vuepress/client",
       "@vueuse/core",
       "photoswipe",
       "vue",
       "vue-router",
+      "vuepress-shared/lib/client",
       /\.css$/,
     ],
     dtsExternal: [/\.css$/],

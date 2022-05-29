@@ -12,11 +12,11 @@ export default [
   ...rollupTypescript("client/index", {
     external: [
       /^@temp/,
-      "vuepress-shared/lib/client",
       "@vuepress/client",
       "@vuepress/shared",
       "vue",
       "vue-router",
+      "vuepress-shared/lib/client",
     ],
   }),
 ];

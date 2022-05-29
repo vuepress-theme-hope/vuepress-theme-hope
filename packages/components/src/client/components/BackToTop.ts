@@ -1,7 +1,6 @@
-import { useEventListener } from "@vueuse/core";
+import { useEventListener, useDebounceFn } from "@vueuse/core";
 import { usePageFrontmatter } from "@vuepress/client";
 import { useThemeData } from "@vuepress/plugin-theme-data/lib/client";
-import { debounce } from "ts-debounce";
 import { Transition, computed, defineComponent, h, onMounted, ref } from "vue";
 import { useLocaleConfig } from "vuepress-shared/lib/client";
 import { BacktoTopIcon } from "./icons";
@@ -52,15 +51,15 @@ export default defineComponent({
       document.body.scrollTop ||
       0;
 
-    const scrollHandler = debounce(() => {
-      scrollTop.value = getScrollTop();
-    }, 100);
-
     onMounted(() => {
       scrollTop.value = getScrollTop();
     });
 
-    useEventListener("scroll", () => scrollHandler());
+    useEventListener("scroll", () =>
+      useDebounceFn(() => {
+        scrollTop.value = getScrollTop();
+      }, 100)
+    );
 
     return (): VNode =>
       h(Transition, { name: "fade" }, () =>

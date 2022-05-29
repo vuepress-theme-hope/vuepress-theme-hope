@@ -962,7 +962,6 @@ importers:
       '@vueuse/core': ^8.5.0
       balloon-css: ^1.2.0
       rimraf: 3.0.2
-      ts-debounce: ^4.0.0
       vue: ^3.2.36
       vue-router: ^4.0.15
       vuepress-plugin-reading-time2: workspace:*
@@ -975,7 +974,6 @@ importers:
       '@vuepress/utils': 2.0.0-beta.46
       '@vueuse/core': 8.5.0_vue@3.2.36
       balloon-css: 1.2.0
-      ts-debounce: 4.0.0
       vue: 3.2.36
       vue-router: 4.0.15_vue@3.2.36
       vuepress-plugin-reading-time2: link:../reading-time2
@@ -1110,7 +1108,6 @@ importers:
       mermaid: ^9.1.1
       reveal.js: ^4.3.1
       rimraf: 3.0.2
-      ts-debounce: ^4.0.0
       vue: ^3.2.36
       vue-router: ^4.0.15
       vuepress-plugin-sass-palette: workspace:*
@@ -1133,7 +1130,6 @@ importers:
       markdown-it: 13.0.1
       mermaid: 9.1.1
       reveal.js: 4.3.1
-      ts-debounce: 4.0.0
       vue: 3.2.36
       vue-router: 4.0.15_vue@3.2.36
       vuepress-plugin-sass-palette: link:../sass-palette
@@ -1349,7 +1345,6 @@ importers:
       balloon-css: ^1.2.0
       bcrypt-ts: ^1.0.0
       rimraf: 3.0.2
-      ts-debounce: ^4.0.0
       vue: ^3.2.36
       vue-router: ^4.0.15
       vuepress-plugin-blog2: workspace:*
@@ -1383,7 +1378,6 @@ importers:
       '@vueuse/core': 8.5.0_vue@3.2.36
       balloon-css: 1.2.0
       bcrypt-ts: 1.0.0
-      ts-debounce: 4.0.0
       vue: 3.2.36
       vue-router: 4.0.15_vue@3.2.36
       vuepress-plugin-blog2: link:../blog2

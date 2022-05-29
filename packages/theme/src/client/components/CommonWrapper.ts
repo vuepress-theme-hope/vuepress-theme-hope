@@ -1,6 +1,5 @@
-import { useEventListener } from "@vueuse/core";
+import { useEventListener, useThrottleFn } from "@vueuse/core";
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
-import { debounce } from "ts-debounce";
 import {
   Transition,
   computed,
@@ -128,23 +127,20 @@ export default defineComponent({
     let unregisterRouterHook: () => void;
     let lastDistance = 0;
 
-    useEventListener("scroll", () =>
-      debounce(
-        () => {
-          const distance = getScrollTop();
+    useEventListener(
+      "scroll",
+      useThrottleFn(() => {
+        const distance = getScrollTop();
 
-          // scroll down
-          if (lastDistance < distance && distance > 58) {
-            if (!isMobileSidebarOpen.value) hideNavbar.value = true;
-          }
-          // scroll up
-          else hideNavbar.value = false;
+        // scroll down
+        if (lastDistance < distance && distance > 58) {
+          if (!isMobileSidebarOpen.value) hideNavbar.value = true;
+        }
+        // scroll up
+        else hideNavbar.value = false;
 
-          lastDistance = distance;
-        },
-        300,
-        { isImmediate: true }
-      )()
+        lastDistance = distance;
+      }, 300)
     );
 
     watch(isMobile, (value) => {
