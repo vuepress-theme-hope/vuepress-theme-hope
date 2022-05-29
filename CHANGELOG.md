@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.75](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.74...v2.0.0-beta.75) (2022-05-29)
+
+### Bug Fixes
+
+- fix broken config, fix [#1914](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1914) ([0b158c1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0b158c17f542969e7e8bb25b5e4c0ece8ce1dc7c))
+- **lightgallery:** fix lightgallery plugin ([6a54314](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6a54314ebcc842695b0bef95477163381a1ea74a))
+- **theme:** fix slot name ([393ffe5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/393ffe55c71224e02d097b38beaf4f1a1f463f58))
+
 ## [2.0.0-beta.74](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.73...v2.0.0-beta.74) (2022-05-28)
 
 ### Bug Fixes
