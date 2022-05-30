@@ -7,17 +7,14 @@ import type { PluginSimple } from "markdown-it";
 export const chart: PluginSimple = (md) => {
   container(md, {
     name: "chart",
-    render: (tokens, index) => {
-      const { nesting, info } = tokens[index];
-      const title = info
+    openRender: (tokens, index) => {
+      const title = tokens[index].info
         .trimStart()
         // 'chart' length
         .slice(5)
         .trim();
 
       const key = `chart-${hash(index)}`;
-
-      if (nesting === -1) return `</ChartJS>`;
 
       let config = "{}";
       let configType = "";
@@ -48,5 +45,6 @@ export const chart: PluginSimple = (md) => {
         title ? `title="${encodeURIComponent(title)}" ` : ""
       }type="${configType}">`;
     },
+    closeRender: () => `</ChartJS>`,
   });
 };

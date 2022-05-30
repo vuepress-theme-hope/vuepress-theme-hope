@@ -55,9 +55,6 @@ export const prepareConfigFile = async (
     enhance += `app.component("Presentation", Presentation);\n`;
   }
 
-  if (getStatus("align"))
-    configImport += `import "${CLIENT_FOLDER}styles/align.scss";\n`;
-
   if (getStatus("container"))
     configImport += `import "${CLIENT_FOLDER}styles/container/index.scss";\n`;
 

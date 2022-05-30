@@ -6,10 +6,8 @@ describe("container", () => {
   it("renderer", () => {
     const markdownIt = MarkdownIt({ linkify: true }).use(container, {
       name: "spoiler",
-      render: (tokens, idx) =>
-        tokens[idx].nesting === 1
-          ? "<details><summary>click me</summary>\n"
-          : "</details>\n",
+      openRender: () => "<details><summary>click me</summary>\n",
+      closeRender: () => "</details>\n",
     });
 
     expect(markdownIt.render("::: spoiler\n*content*\n:::\n")).toBe(
