@@ -233,6 +233,13 @@ export interface MarkdownEnhanceOptions {
   presentation?: PresentationOptions | boolean;
 
   /**
+   * Keyword enhancement
+   *
+   * 关键词显示增强选项
+   */
+  stylize?: StylizeOptions;
+
+  /**
    * Whether to enable all features.
    *
    * 是否启用全部增强语法
@@ -260,11 +267,4 @@ export interface MarkdownEnhanceOptions {
    * 国际化配置选项
    */
   locales?: LocaleConfig<MarkdownEnhanceLocaleData>;
-
-  /**
-   * Keyword enhancement
-   *
-   * 关键词显示增强选项
-   */
-  stylize?: StylizeOptions;
 }

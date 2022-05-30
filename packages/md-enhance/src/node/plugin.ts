@@ -26,13 +26,13 @@ import {
   normalDemo,
   presentation,
   reactDemo,
+  stylize,
   sub,
   sup,
   tabs,
   tasklist,
   vPre,
   vueDemo,
-  stylize,
 } from "./markdown-it";
 import { prepareConfigFile, prepareRevealPluginFile } from "./prepare";
 import { usePlugins } from "./usePlugins";
