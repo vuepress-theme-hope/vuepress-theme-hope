@@ -9,6 +9,7 @@ import {
 import { logger } from "./utils";
 
 import { checkLinks, getCheckLinksStatus } from "./checkLink";
+import { covertOptions, legacyCodeDemo, legacyCodeGroup } from "./compact";
 import {
   CODE_DEMO_DEFAULT_SETTING,
   align,
@@ -43,8 +44,16 @@ import type { KatexOptions } from "katex";
 import type { MarkdownEnhanceOptions } from "../shared";
 
 export const mdEnhancePlugin =
-  (options: MarkdownEnhanceOptions): PluginFunction =>
+  (
+    options: MarkdownEnhanceOptions = { gfm: true },
+    legacy = false
+  ): PluginFunction =>
   (app) => {
+    // TODO: Remove it in v2 stable
+    if (legacy)
+      covertOptions(
+        options as MarkdownEnhanceOptions & Record<string, unknown>
+      );
     if (app.env.isDebug) logger.info(`Options: ${options.toString()}`);
 
     const getStatus = (
@@ -157,7 +166,11 @@ export const mdEnhancePlugin =
             typeof options.imageMark === "object" ? options.imageMark : {}
           );
 
-        if (getStatus("codetabs")) md.use(codeTabs);
+        if (getStatus("codetabs")) {
+          md.use(codeTabs);
+          // TODO: Remove it in v2 stable
+          if (legacy) md.use(legacyCodeGroup);
+        }
         if (getStatus("tabs")) md.use(tabs);
 
         if (getStatus("sup")) md.use(sup);
@@ -180,11 +193,18 @@ export const mdEnhancePlugin =
           md.use(normalDemo);
           md.use(vueDemo);
           md.use(reactDemo);
+          // TODO: Remove it in v2 stable
+          if (legacy) md.use(legacyCodeDemo);
         }
         if (mermaidEnable) md.use(mermaid);
         if (texEnable) md.use(katex, katexOptions);
         if (presentationEnable) md.use(presentation);
-        if (getStatus("vpre")) md.use(vPre);
+        if (
+          getStatus("vpre") ||
+          // TODO: Remove it in v2 stable
+          legacy
+        )
+          md.use(vPre);
         if (getStatus("stylize")) md.use(stylize, options.stylize);
       },
 
@@ -202,6 +222,6 @@ export const mdEnhancePlugin =
         await prepareRevealPluginFile(app, revealPlugins);
       },
 
-      clientConfigFile: (app) => prepareConfigFile(app, options),
+      clientConfigFile: (app) => prepareConfigFile(app, options, legacy),
     };
   };

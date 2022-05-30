@@ -92,7 +92,8 @@ export const hopeTheme =
           hostname,
           iconAssets,
           iconPrefix,
-        }
+        },
+        legacy
       ),
 
       layouts: getLayoutConfig(app, plugins),

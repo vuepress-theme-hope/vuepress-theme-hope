@@ -3,6 +3,10 @@ title: V2 Migration
 icon: change
 ---
 
+## Legacy Mode
+
+You can pass the second argument `true` to enable legacy mode when calling `mdEnhancePlugin`, and the plugin will try to run with V1 behavior.
+
 ## New Features
 
 - markdown link check
