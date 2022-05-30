@@ -1,6 +1,6 @@
 import { hash } from "@vuepress/utils";
 import type { PluginSimple } from "markdown-it";
-import type Token from "markdown-it/lib/token";
+import type { default as Token } from "markdown-it/lib/token";
 
 const flowchartRender = (tokens: Token[], idx: number): string => {
   const token = tokens[idx];

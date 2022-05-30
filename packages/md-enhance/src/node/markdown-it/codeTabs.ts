@@ -1,6 +1,7 @@
 import { tabs } from "./tabs";
 
 import type { PluginSimple } from "markdown-it";
+
 export const codeTabs: PluginSimple = (md) => {
   tabs(md, {
     name: "code-tabs",

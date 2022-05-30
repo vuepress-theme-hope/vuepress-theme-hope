@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import MarkdownIt = require("markdown-it");
+import MarkdownIt from "markdown-it";
 import { chart } from "../../src/node/markdown-it/chart";
 
 describe("chart", () => {

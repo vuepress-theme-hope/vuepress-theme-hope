@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import MarkdownIt = require("markdown-it");
+import MarkdownIt from "markdown-it";
 import { stylize } from "../../src/node/markdown-it";
 import type { StylizeOptions, StylizeResult } from "../../src/shared";
 
@@ -7,7 +7,7 @@ describe("stylize", () => {
   const options: StylizeOptions = [
     {
       matcher: "MUST",
-      replacer: ({ tag, attrs, content }): StylizeResult => {
+      replacer: ({ tag, attrs, content }): StylizeResult | void => {
         if (tag === "strong" || tag === "em")
           return {
             tag,
@@ -18,7 +18,7 @@ describe("stylize", () => {
     },
     {
       matcher: "SHOULD",
-      replacer: ({ tag, attrs, content }): StylizeResult => {
+      replacer: ({ tag, attrs, content }): StylizeResult | void => {
         if (tag === "strong")
           return {
             tag,
@@ -29,13 +29,13 @@ describe("stylize", () => {
     },
     {
       matcher: "MAY",
-      replacer: ({ tag, attrs }): StylizeResult => {
+      replacer: ({ tag, attrs }): StylizeResult | void => {
         if (tag === "em") return { tag, attrs, content: "MAY:)" };
       },
     },
     {
       matcher: "NOT",
-      replacer: ({ tag, attrs, content }): StylizeResult => {
+      replacer: ({ tag, attrs, content }): StylizeResult | void => {
         if (tag === "em") return { tag, attrs, content: `MUST_${content}` };
       },
     },

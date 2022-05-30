@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import MarkdownIt = require("markdown-it");
+import MarkdownIt from "markdown-it";
 import { lazyLoad } from "../../src/node/markdown-it/lazyLoad";
 
 describe("lazyLoad", () => {
