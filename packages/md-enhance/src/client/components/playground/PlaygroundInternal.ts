@@ -54,7 +54,7 @@ export default defineComponent({
       showCompileOutput: playgroundInternalOptions.showCompileOutput || false,
       showImportMap: playgroundInternalOptions.showImportMap || true,
       clearConsole: playgroundInternalOptions.clearConsole || false,
-      sfcOptions: playgroundInternalOptions.sfcOptions,
+      sfcOptions: playgroundInternalOptions.sfcOptions || {},
       layout: playgroundInternalOptions.layout || "vertical",
       ssr: playgroundInternalOptions.ssr || false,
     });
