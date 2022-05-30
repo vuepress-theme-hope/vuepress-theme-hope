@@ -29,7 +29,10 @@ export const prepareCategory = (
   const {
     category = [],
     slugify = (name: string): string =>
-      name.replace(/[ _]/g, "-").toLowerCase(),
+      name
+        .replace(/[ _]/g, "-")
+        .replace(/[:?*|\\/<>]/g, "")
+        .toLowerCase(),
   } = options;
 
   return Promise.all(
