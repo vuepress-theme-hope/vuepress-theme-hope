@@ -23,11 +23,11 @@ export default defineComponent({
   setup(props) {
     const playgroundContainer = ref<HTMLElement | null>(null);
 
-    const showCode = ref(false);
     const loading = ref<boolean>(true);
 
     const playgroundOptions = parsePlaygroundSettings(props.settings);
     const playgroundInternalOptions = playgroundOptions.internal || {};
+    const showCode = ref(playgroundInternalOptions.showCode || false);
 
     const { encoded } = usePlaygroundExternal(
       props.config,
@@ -81,7 +81,7 @@ export default defineComponent({
         "div",
         {
           ref: playgroundContainer,
-          class: "playground-container",
+          class: "playground-container internal",
           id: props.id,
         },
         [
@@ -100,7 +100,7 @@ export default defineComponent({
                 : null,
               h("div", { class: "op-btns" }, [
                 h("a", {
-                  class: "op-btn",
+                  class: "op-btn code",
                   href: "javascript:;",
                   innerHTML: CODE_SVG,
                   onclick: () => toggleCode(),

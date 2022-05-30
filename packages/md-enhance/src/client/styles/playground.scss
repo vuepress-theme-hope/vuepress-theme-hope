@@ -7,6 +7,17 @@
   border-color: var(--code-border-color);
   border-radius: 6px;
 
+  // stylelint-disable max-nesting-depth
+  @media (max-width: hope-config.$tablet) {
+    &.internal {
+      .op-btns {
+        .op-btn.code {
+          display: none;
+        }
+      }
+    }
+  }
+
   .op-btns {
     display: flex;
     align-items: center;
@@ -33,6 +44,7 @@
     }
     // stylelint-enable selector-max-compound-selectors
   }
+  // stylelint-enable max-nesting-depth
 
   .title-container {
     display: flex;
@@ -107,30 +119,66 @@
   .repl-container {
     height: auto !important;
 
-    @media (max-width: hope-config.$mobile) {
-      .right {
-        display: block;
+    @media (max-width: hope-config.$tablet) {
+      &.show-code {
+        .vue-repl {
+          .split-pane.show-output {
+            .left {
+              display: none !important;
+            }
+          }
+
+          .split-pane:not(.show-output) {
+            .left {
+              display: block !important;
+            }
+          }
+        }
+      }
+
+      &.hide-code {
+        .vue-repl {
+          .split-pane.show-output {
+            .left {
+              display: none !important;
+            }
+          }
+
+          .split-pane:not(.show-output) {
+            .left {
+              display: block !important;
+            }
+          }
+        }
       }
     }
 
     .vue-repl {
-      .toggler {
-        display: none;
+      .split-pane {
+        .left {
+          .editor-container {
+            height: 100% !important;
+          }
+        }
       }
     }
 
     &.show-code {
       .vue-repl {
-        .left {
-          display: block !important;
+        .split-pane {
+          .left {
+            display: block !important;
+          }
         }
       }
     }
 
     &.hide-code {
       .vue-repl {
-        .left {
-          display: none !important;
+        .split-pane {
+          .left {
+            display: none !important;
+          }
         }
       }
     }
