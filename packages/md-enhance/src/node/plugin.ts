@@ -135,10 +135,7 @@ export const mdEnhancePlugin =
         }
 
         if (flowchartEnable) {
-          addViteOptimizeDepsInclude({ app, config }, [
-            "flowchart.js",
-            "ts-debounce",
-          ]);
+          addViteOptimizeDepsInclude({ app, config }, "flowchart.js");
           addViteSsrExternal({ app, config }, "flowchart.js");
         }
 

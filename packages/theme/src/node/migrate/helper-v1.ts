@@ -63,9 +63,9 @@ const checkMarkdownOptions = (
     options.code = options.code ?? {};
 
     if (typeof options.code === "object")
-      options.code.lineNumbers = options.lineNumbers as boolean;
+      options.code.lineNumbers = options["lineNumbers"] as boolean;
 
-    delete options.lineNumbers;
+    delete options["lineNumbers"];
   }
 
   // slugify
@@ -74,14 +74,14 @@ const checkMarkdownOptions = (
       '"markdown.slugify" is no longger supported in VuePress2.\nIf you want to change the slugify function anyway, set the following options separately:\n· markdown.anchor.slugify\n· markdown.toc.slugify\n· markdown.extractHeaders.slugify'
     );
 
-    delete options.slugify;
+    delete options["slugify"];
   }
 
   // pageSuffix
   if ("pageSuffix" in options) {
     logger.error('"markdown.pageSuffix" is no longger supported in VuePress2.');
 
-    delete options.pageSuffix;
+    delete options["pageSuffix"];
   }
 
   // externalLinks
@@ -90,7 +90,7 @@ const checkMarkdownOptions = (
       '"markdown.externalLinks" is no longger supported in VuePress2, please use "markdown.links.externalAttrs" instead.'
     );
 
-    delete options.externalLinks;
+    delete options["externalLinks"];
   }
 
   // plugins
@@ -99,7 +99,7 @@ const checkMarkdownOptions = (
       '"markdown.plugins" is no longger supported in VuePress2, please use "extendsMarkdown" hook instead.'
     );
 
-    delete options.plugins;
+    delete options["plugins"];
   }
 };
 
@@ -231,13 +231,13 @@ export const checkBundlerOptions = (config: Record<string, unknown>): void => {
  */
 export const config = (userConfig: Record<string, unknown>): UserConfig => {
   checkMarkdownOptions(
-    userConfig.markdown as
+    userConfig["markdown"] as
       | (MarkdownOptions & Record<string, unknown>)
       | undefined
   );
   checkBundlerOptions(userConfig);
 
-  userConfig.plugins = checkPluginOptions(userConfig.plugins);
+  userConfig["plugins"] = checkPluginOptions(userConfig["plugins"]);
 
   // check renamed options
   [
@@ -296,7 +296,7 @@ export const config = (userConfig: Record<string, unknown>): UserConfig => {
       '"extraWatchFiles" options is removed in VuePress2, you should use "onWatched" hook.'
     );
 
-    delete userConfig.extraWatchFiles;
+    delete userConfig["extraWatchFiles"];
   }
 
   return defineHopeConfig(userConfig);

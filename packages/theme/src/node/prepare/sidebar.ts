@@ -58,19 +58,11 @@ const getInfo = (app: App, rootDir: string, base = ""): Info[] => {
           (
             page: Page<Record<never, never>, HopeThemeNormalPageFrontmatter>
           ) => {
-            const filename = path.relative(
-              dir,
-              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-              page.filePathRelative!
-            );
+            const filename = path.relative(dir, page.filePathRelative!);
 
             // continue to read nest dir
             if (filename?.endsWith("/README.md")) {
-              const filePath = path.relative(
-                rootDir,
-                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                page.filePathRelative!
-              );
+              const filePath = path.relative(rootDir, page.filePathRelative!);
               const base = filePath.replace(/README\.md$/, "");
               const dirname = filename.replace(/README\.md$/, "");
 

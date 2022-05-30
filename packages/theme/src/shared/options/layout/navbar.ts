@@ -1,5 +1,19 @@
 import type { HopeThemeNavbarConfig } from "../../navbar";
 
+export type HopeThemeNavbarComponent =
+  | "Brand"
+  | "Links"
+  | "Language"
+  | "Search"
+  | "Outlook"
+  | "Repo";
+
+export interface HopeNavbarLayoutOptions {
+  left: HopeThemeNavbarComponent[];
+  center: HopeThemeNavbarComponent[];
+  right: HopeThemeNavbarComponent[];
+}
+
 export interface HopeThemeNavbarLocaleData {
   /**
    * Navbar language selection config
@@ -101,6 +115,15 @@ export interface HopeThemeNavbarLocaleOptions {
    * @default 'mobile'
    */
   navbarAutoHide?: "always" | "mobile" | "none";
+
+  /**
+   * Navbar layout config
+   *
+   * 导航栏布局设置
+   *
+   * @default { left: ["Brand"], center: ["Links"], right: ["Language", "Repo", "Outlook", "Search"] }
+   */
+  navbarLayout?: HopeNavbarLayoutOptions;
 
   /**
    * Whether hide site title on mobile

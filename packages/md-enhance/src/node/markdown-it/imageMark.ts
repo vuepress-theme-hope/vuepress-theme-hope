@@ -10,7 +10,6 @@ export const imageMark: PluginWithOptions<ImageMarkOptions> = (
     dark = ["gh-dark-mode-only", "dark"],
   } = {}
 ): void => {
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const originalImageRender = md.renderer.rules.image!;
 
   md.renderer.rules.image = (tokens, idx, options, env, self): string => {

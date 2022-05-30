@@ -15,11 +15,11 @@ icon: markdown
 
 ```ts {8}
 // .vuepress/config.ts
-import { mdEnhance } from "vuepress-plugin-md-enhance";
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
   plugins: [
-    mdEnhance({
+    mdEnhancePlugin({
       // 启用导入支持
       include: true,
     }),
@@ -31,11 +31,11 @@ export default {
 
 ```js {8}
 // .vuepress/config.js
-const { mdEnhance } = require("vuepress-plugin-md-enhance");
+const { mdEnhancePlugin } = require("vuepress-plugin-md-enhance");
 
 module.exports = {
   plugins: [
-    mdEnhance({
+    mdEnhancePlugin({
       // 启用导入支持
       include: true,
     }),
@@ -96,11 +96,11 @@ interface IncludeOptions {
 ```ts {8}
 // .vuepress/config.ts
 import { path } from "@vuepress/utils";
-import { mdEnhance } from "vuepress-plugin-md-enhance";
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
   plugins: [
-    mdEnhance({
+    mdEnhancePlugin({
       // 添加 `@src` 别名支持
       include: {
         getPath: (file) => {
@@ -120,11 +120,11 @@ export default {
 ```js {8}
 // .vuepress/config.js
 const { path } = require("@vuepress/utils");
-const { mdEnhance } = require("vuepress-plugin-md-enhance");
+const { mdEnhancePlugin } = require("vuepress-plugin-md-enhance");
 
 module.exports = {
   plugins: [
-    mdEnhance({
+    mdEnhancePlugin({
       // 添加 `@src` 别名支持
       include: {
         getPath: (file) => {
@@ -150,13 +150,13 @@ module.exports = {
 ```ts {8}
 // .vuepress/config.ts
 import { path } from "@vuepress/utils";
-import { mdEnhance } from "vuepress-plugin-md-enhance";
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
   pagePatterns: ["**/*.md", "!*.snippet.md", "!.vuepress", "!node_modules"],
 
   plugins: [
-    mdEnhance({
+    mdEnhancePlugin({
       include: true,
     }),
   ],
@@ -168,13 +168,13 @@ export default {
 ```js {8}
 // .vuepress/config.js
 const { path } = require("@vuepress/utils");
-const { mdEnhance } = require("vuepress-plugin-md-enhance");
+const { mdEnhancePlugin } = require("vuepress-plugin-md-enhance");
 
 module.exports = {
   pagePatterns: ["**/*.md", "!*.snippet.md", "!.vuepress", "!node_modules"],
 
   plugins: [
-    mdEnhance({
+    mdEnhancePlugin({
       include: true,
     }),
   ],

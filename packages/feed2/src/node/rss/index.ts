@@ -148,17 +148,13 @@ export const renderRSS = (feed: Feed): string => {
     /**
      * Item Author
      */
-    if (Array.isArray(entry.author)) {
+    if (entry.author) {
       const author = entry.author.find((author) => author.email && author.name);
 
       if (author)
         item.author = {
           _text: `${author.email as string} (${author.name as string})`,
         };
-    } else if (typeof entry.author === "object") {
-      const { name, email } = entry.author;
-
-      if (email && name) item.author = { _text: `${email} (${name})` };
     }
 
     /**
@@ -166,12 +162,10 @@ export const renderRSS = (feed: Feed): string => {
      *
      * @see https://validator.w3.org/feed/docs/rss2.html#ltcategorygtSubelementOfLtitemgt
      */
-    if (Array.isArray(entry.category)) {
+    if (entry.category)
       item.category = entry.category
         .filter((category) => category.name)
         .map((category) => genCategory(category));
-    } else if (typeof entry.category === "object" && entry.category.name)
-      item.category = [genCategory(entry.category)];
 
     if (entry.comments) item.comments = { _text: encodeXML(entry.link) };
 

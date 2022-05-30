@@ -31,6 +31,30 @@ Navbar config
 
 Whether display icons in navbar.
 
+### navbarLayout
+
+- Type: `HopeNavbarLayoutOptions`
+
+  ```ts
+  type HopeThemeNavbarComponent =
+    | "Brand"
+    | "Links"
+    | "Language"
+    | "Search"
+    | "Outlook"
+    | "Repo";
+
+  interface HopeNavbarLayoutOptions {
+    left: HopeThemeNavbarComponent[];
+    center: HopeThemeNavbarComponent[];
+    right: HopeThemeNavbarComponent[];
+  }
+  ```
+
+- Default: `{ left: ["Brand"], center: ["Links"], right: ["Language", "Repo", "Outlook", "Search"] }`
+
+Customize navbar layout.
+
 ### logo <Badge text="Recommended" type="tip" />
 
 - Type: `string`

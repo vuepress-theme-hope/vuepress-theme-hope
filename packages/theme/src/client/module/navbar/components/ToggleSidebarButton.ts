@@ -20,4 +20,6 @@ const ToggleSidebarButton: FunctionalComponent<
 
 ToggleSidebarButton.displayName = "ToggleSidebarButton";
 
+ToggleSidebarButton.emits = ["toggle"];
+
 export default ToggleSidebarButton;

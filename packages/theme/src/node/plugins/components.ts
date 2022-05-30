@@ -16,11 +16,11 @@ export const getComponentsPlugin = (
     components: components.includes("FontIcon")
       ? components
       : ["FontIcon", ...components],
-    addThis: options.addThis,
     backToTop:
       typeof options.backToTop === "number"
         ? options.backToTop
         : options.backToTop !== false,
-    iconAssets: options.iconAssets,
-    iconPrefix: options.iconPrefix,
+    ...(options.addThis ? { addThis: options.addThis } : {}),
+    ...(options.iconAssets ? { iconAssets: options.iconAssets } : {}),
+    ...(options.iconPrefix ? { iconPrefix: options.iconPrefix } : {}),
   });

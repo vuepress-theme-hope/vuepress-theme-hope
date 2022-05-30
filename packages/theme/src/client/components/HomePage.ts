@@ -28,16 +28,16 @@ export default defineComponent({
             frontmatter.value.heroText === null ? undefined : "main-title",
         },
         [
-          slots.top?.(),
+          slots["top"]?.(),
           h(HomeHero),
           h(DropTransition, { appear: true, delay: 0.16 }, () =>
             h(HomeFeatures)
           ),
-          slots.center?.(),
+          slots["center"]?.(),
           h(DropTransition, { appear: true, delay: 0.24 }, () =>
             h(MarkdownContent, { custom: true })
           ),
-          slots.bottom?.(),
+          slots["bottom"]?.(),
         ]
       );
   },

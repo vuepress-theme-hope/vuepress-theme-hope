@@ -17,10 +17,13 @@ export const getLayoutConfig = (
     plugins.mdEnhance &&
     (plugins.mdEnhance.enableAll || plugins.mdEnhance.presentation)
   )
-    layoutConfig.Slide = path.resolve(__dirname, "../client/layouts/Slide.js");
+    layoutConfig["Slide"] = path.resolve(
+      __dirname,
+      "../client/layouts/Slide.js"
+    );
 
   if (plugins.blog)
-    layoutConfig.Blog = path.resolve(
+    layoutConfig["Blog"] = path.resolve(
       __dirname,
       "../client/module/blog/layouts/Blog.js"
     );

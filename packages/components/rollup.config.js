@@ -17,12 +17,11 @@ export default [
   }),
   ...rollupTypescript("client/components/BackToTop", {
     external: [
-      "vuepress-shared/lib/client",
       "@vuepress/client",
       "@vuepress/plugin-theme-data/lib/client",
       "@vueuse/core",
-      "ts-debounce",
       "vue",
+      "vuepress-shared/lib/client",
       /\.scss$/,
     ],
     dtsExternal: [/\.scss$/],
@@ -36,7 +35,13 @@ export default [
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/PDF", {
-    external: ["@vuepress/client", "vue", /\.scss$/],
+    external: [
+      "@vuepress/client",
+      "@vuepress/shared",
+      "vue",
+      "vuepress-shared/lib/client",
+      /\.scss$/,
+    ],
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/StackBlitz", {

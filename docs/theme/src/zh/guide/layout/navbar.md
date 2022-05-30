@@ -529,6 +529,60 @@ module.exports = {
 - [深色模式](../interface/darkmode.md)
 - [全屏按钮](../interface/others.md#全屏按钮)
 
+## 布局配置
+
+主题允许您自定义导航栏布局。 您可以在 `navbarLayout` 选项下的 `left`、`center` 和 `right` 键中添加组件。
+
+可用组件:
+
+- Brand: 站点品牌
+- Links: 导航栏链接
+- Language: 语言切换菜单
+- Search: 搜索框
+- Outlook: 外观弹窗
+- Repo: 项目仓库
+
+默认情况下，我们使用以下选项:
+
+::: code-tabs#language
+
+@tab TS
+
+```ts
+// .vuepress/config.ts
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default defineUserConfig({
+  theme: hopeTheme({
+    navbarLayout: {
+      left: ["Brand"],
+      center: ["Links"],
+      right: ["Language", "Repo", "Outlook", "Search"],
+    },
+  }),
+});
+```
+
+@tab JS
+
+```js
+// .vuepress/config.js
+const { hopeTheme } = require("vuepress-theme-hope");
+
+module.exports = {
+  theme: hopeTheme({
+    navbarLayout: {
+      left: ["Brand"],
+      center: ["Links"],
+      right: ["Language", "Repo", "Outlook", "Search"],
+    },
+  }),
+};
+```
+
+:::
+
 ## 相关助手与类型
 
 `vuepress-theme-hope` 将导航栏的类型导出为 `HopeThemeNavbarConfig`，同时，提供了一个 `navbar` Helper 函数。它们可以在 TS 和 JS 中提供导航栏配置的校验与自动补全。

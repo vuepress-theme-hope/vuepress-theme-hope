@@ -15,11 +15,11 @@ icon: superscript
 
 ```ts {8,10}
 // .vuepress/config.ts
-import { mdEnhance } from "vuepress-plugin-md-enhance";
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
   plugins: [
-    mdEnhance({
+    mdEnhancePlugin({
       // 启用下角标功能
       sub: true,
       // 启用上角标
@@ -33,11 +33,11 @@ export default {
 
 ```js {8,10}
 // .vuepress/config.js
-const { mdEnhance } = require("vuepress-plugin-md-enhance");
+const { mdEnhancePlugin } = require("vuepress-plugin-md-enhance");
 
 module.exports = {
   plugins: [
-    mdEnhance({
+    mdEnhancePlugin({
       // 启用下角标功能
       sub: true,
       // 启用上角标

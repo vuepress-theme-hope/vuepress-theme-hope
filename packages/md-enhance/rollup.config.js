@@ -15,14 +15,14 @@ export default [
     copy: [["client/styles", "client"]],
   }),
   ...rollupTypescript("client/components/ChartJS", {
-    external: ["vuepress-shared/lib/client", "chart.js/auto", "vue", /\.scss$/],
+    external: ["chart.js/auto", "vue", "vuepress-shared/lib/client", /\.scss$/],
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/CodeDemo", {
     external: [
-      "vuepress-shared/lib/client",
       "balloon-css/balloon.css",
       "vue",
+      "vuepress-shared/lib/client",
       /\.scss$/,
     ],
     dtsExternal: [/\.scss$/],
@@ -32,30 +32,35 @@ export default [
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/ECharts", {
-    external: ["vuepress-shared/lib/client", "echarts", "vue", /\.scss$/],
+    external: [
+      "@vueuse/core",
+      "echarts",
+      "vue",
+      "vuepress-shared/lib/client",
+      /\.scss$/,
+    ],
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/FlowChart", {
     external: [
-      "vuepress-shared/lib/client",
       "@vueuse/core",
       "flowchart.js",
-      "ts-debounce",
       "vue",
+      "vuepress-shared/lib/client",
       /\.scss$/,
     ],
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/Mermaid", {
-    external: ["vuepress-shared/lib/client", "mermaid", "vue", /\.scss$/],
+    external: ["mermaid", "vue", "vuepress-shared/lib/client", /\.scss$/],
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/Presentation", {
     external: [
       /^@temp/,
-      "vuepress-shared/lib/client",
       "@vuepress/client",
       "vue",
+      "vuepress-shared/lib/client",
       /\.scss$/,
       /\.css$/,
     ],
@@ -67,11 +72,11 @@ export default [
   }),
   ...rollupTypescript("client/SlidePage", {
     external: [
-      "vuepress-shared/lib/client",
       "@vuepress/client",
       "@vueuse/core",
       "vue",
       "vue-router",
+      "vuepress-shared/lib/client",
       /\.scss$/,
     ],
     dtsExternal: [/\.scss$/],

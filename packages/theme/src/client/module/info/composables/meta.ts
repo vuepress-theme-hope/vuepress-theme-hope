@@ -27,7 +27,7 @@ export const useEditLink = (): ComputedRef<null | AutoLink> => {
       docsBranch = "main",
       docsDir = "",
       editLink,
-      editLinkPattern,
+      editLinkPattern = "",
     } = themeLocale.value;
 
     const showEditLink = frontmatter.value.editLink ?? editLink ?? true;

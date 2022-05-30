@@ -15,7 +15,7 @@ export const presentation: PluginSimple = (md) => {
     { alt: ["paragraph", "reference", "blockquote", "list"] }
   );
 
-  md.renderer.rules.presentation = (tokens, index): string => {
+  md.renderer.rules["presentation"] = (tokens, index): string => {
     const token = tokens[index];
     const key = `presentation-${hash(index)}`;
     const { content, info } = token;

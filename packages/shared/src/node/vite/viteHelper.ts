@@ -22,7 +22,7 @@ export const addViteOptimizeDepsInclude = (
   if (
     bundler.name.endsWith("vite") &&
     ("OPTIMIZE_DEPS" in process.env
-      ? Boolean(process.env.OPTIMIZE_DEPS)
+      ? Boolean(process.env["OPTIMIZE_DEPS"])
       : manager !== "pnpm")
   ) {
     const bundlerConfig = config as ViteBundlerOptions;
@@ -36,9 +36,7 @@ export const addViteOptimizeDepsInclude = (
       }
     );
 
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     bundlerConfig.viteOptions.optimizeDeps!.include = Array.from(
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       new Set(bundlerConfig.viteOptions.optimizeDeps!.include)
     );
   }
@@ -65,9 +63,7 @@ export const addViteOptimizeDepsExclude = (
       }
     );
 
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     bundlerConfig.viteOptions.optimizeDeps!.exclude = Array.from(
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       new Set(bundlerConfig.viteOptions.optimizeDeps!.exclude)
     );
   }

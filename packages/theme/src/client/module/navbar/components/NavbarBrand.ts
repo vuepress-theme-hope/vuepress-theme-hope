@@ -9,7 +9,7 @@ import "../styles/navbar-brand.scss";
 export default defineComponent({
   name: "NavbarBrand",
 
-  setup(_, { slots }) {
+  setup() {
     const routeLocale = useRouteLocale();
     const siteLocale = useSiteLocaleData();
     const themeLocale = useThemeLocaleData();
@@ -29,7 +29,7 @@ export default defineComponent({
     );
 
     return (): VNode =>
-      h(RouterLink, { to: siteBrandLink.value, class: "home-link" }, () => [
+      h(RouterLink, { to: siteBrandLink.value, class: "brand" }, () => [
         siteBrandLogo.value
           ? h("img", {
               class: ["logo", { light: Boolean(siteBrandLogoDark.value) }],
@@ -51,7 +51,6 @@ export default defineComponent({
               siteBrandTitle.value
             )
           : null,
-        slots.default?.(),
       ]);
   },
 });

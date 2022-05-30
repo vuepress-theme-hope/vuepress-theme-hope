@@ -49,7 +49,7 @@ export default defineComponent({
     onMounted(() => {
       if (presentationElement.value) {
         code.value = decodeURIComponent(
-          presentationContainer.value?.dataset.code || ""
+          presentationContainer.value?.dataset["code"] || ""
         );
 
         presentationElement.value.setAttribute("id", props.id);

@@ -11,7 +11,6 @@ export const codeTabs: PluginSimple = (md) => {
       const codeTabsData: { content: string }[] = [];
 
       for (let i = index; i < tokens.length; i++) {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         const { block, type } = tokens[i];
 
         if (block) {

@@ -59,12 +59,12 @@ export const covertFrontmatter = (
       }`
     );
 
-    frontmatter.head = [
-      ...((frontmatter.head as unknown[]) || []),
-      (frontmatter.meta as unknown[]).map((item) => ["meta", item]),
+    frontmatter["head"] = [
+      ...((frontmatter["head"] as unknown[]) || []),
+      (frontmatter["meta"] as unknown[]).map((item) => ["meta", item]),
     ];
 
-    delete frontmatter.meta;
+    delete frontmatter["meta"];
   }
 
   if ("canonicalUrl" in frontmatter) {
@@ -74,16 +74,16 @@ export const covertFrontmatter = (
       }`
     );
 
-    frontmatter.head = [
-      ...((frontmatter.head as unknown[]) || []),
-      ["link", { rel: "canonical", href: frontmatter.canonicalUrl }],
+    frontmatter["head"] = [
+      ...((frontmatter["head"] as unknown[]) || []),
+      ["link", { rel: "canonical", href: frontmatter["canonicalUrl"] }],
     ];
 
-    delete frontmatter.canonicalUrl;
+    delete frontmatter["canonicalUrl"];
   }
 
   // check homepage
-  if (frontmatter.home === true && !("layout" in frontmatter)) {
+  if (frontmatter["home"] === true && !("layout" in frontmatter)) {
     DEPRECATED_HOME_FRONTMATTER_OPTIONS.forEach(
       ([deprecatedOption, newOption]) =>
         deprecatedLogger({

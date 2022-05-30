@@ -85,7 +85,9 @@ tag:
 
 - rename `navAutoHide`to `navbarAutoHide`
 
-- added `navbarIcon` option
+- added `navbarIcon` option to control navbar icon display
+
+- added `navbarLayout` option to control navbar layout
 
 ### Sidebar
 
@@ -134,6 +136,8 @@ Since the theme no longer has a built-in search:
   - add `"enable"`
   - rename `"switch"` to `"toggle"`
   - rename `"auto-switch"` to `"switch"`
+
+- `themeColor` and `fullscreen` is disabled by default
 
 ### Blog Config
 

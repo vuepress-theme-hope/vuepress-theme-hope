@@ -2,6 +2,37 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.75](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.74...v2.0.0-beta.75) (2022-05-29)
+
+### Bug Fixes
+
+- fix broken config, fix [#1914](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1914) ([0b158c1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0b158c17f542969e7e8bb25b5e4c0ece8ce1dc7c))
+- **lightgallery:** fix lightgallery plugin ([6a54314](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6a54314ebcc842695b0bef95477163381a1ea74a))
+- **theme:** fix slot name ([393ffe5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/393ffe55c71224e02d097b38beaf4f1a1f463f58))
+
+## [2.0.0-beta.74](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.73...v2.0.0-beta.74) (2022-05-28)
+
+### Bug Fixes
+
+- **theme:** fix MarkdownContent wrapper ([3befda5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3befda5f3bb1de666c5836c81dcba6a130c3a873))
+- **theme:** fix option types ([b890a25](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b890a25166ec34da437a1f4d554669b4661b6cc1))
+
+## [2.0.0-beta.73](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.72...v2.0.0-beta.73) (2022-05-28)
+
+### ⚠ BREAKING CHANGES
+
+- **theme:** disable themeColor and fullscreen by default
+
+### Features
+
+- **components:** improve pdf component, close [#1863](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1863) ([b3fb739](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b3fb739fa9bfd865f170b0fc2e5260c6c53ee65d))
+- **theme:** disable themeColor and fullscreen by default ([3fe2f9e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3fe2f9e503ad1fa8e814450b5cae5adf91b582eb))
+- **theme:** improve styles and support layout config for navbar ([636ccce](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/636ccce09395d9f92499416c77f5f0608e8af737))
+
+### Bug Fixes
+
+- **theme:** fix language dropdown on mobile ([cb9881c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cb9881c3fe9808f32c1c07b826aa50d90d484620))
+
 ## [2.0.0-beta.72](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.71...v2.0.0-beta.72) (2022-05-26)
 
 ### Features

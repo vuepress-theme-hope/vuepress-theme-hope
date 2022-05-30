@@ -1,13 +1,12 @@
-import { useEventListener } from "@vueuse/core";
+import { useEventListener, useThrottleFn } from "@vueuse/core";
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
-import { debounce } from "ts-debounce";
 import {
   Transition,
   computed,
   defineComponent,
   h,
+  onBeforeMount,
   onMounted,
-  onUnmounted,
   ref,
   resolveComponent,
   watch,
@@ -128,23 +127,20 @@ export default defineComponent({
     let unregisterRouterHook: () => void;
     let lastDistance = 0;
 
-    useEventListener("scroll", () =>
-      debounce(
-        () => {
-          const distance = getScrollTop();
+    useEventListener(
+      "scroll",
+      useThrottleFn(() => {
+        const distance = getScrollTop();
 
-          // scroll down
-          if (lastDistance < distance && distance > 58) {
-            if (!isMobileSidebarOpen.value) hideNavbar.value = true;
-          }
-          // scroll up
-          else hideNavbar.value = false;
+        // scroll down
+        if (lastDistance < distance && distance > 58) {
+          if (!isMobileSidebarOpen.value) hideNavbar.value = true;
+        }
+        // scroll up
+        else hideNavbar.value = false;
 
-          lastDistance = distance;
-        },
-        300,
-        { isImmediate: true }
-      )()
+        lastDistance = distance;
+      }, 300)
     );
 
     watch(isMobile, (value) => {
@@ -157,7 +153,7 @@ export default defineComponent({
       });
     });
 
-    onUnmounted(() => {
+    onBeforeMount(() => {
       unregisterRouterHook();
     });
 
@@ -172,7 +168,11 @@ export default defineComponent({
               "no-navbar": !enableNavbar.value,
               "no-sidebar":
                 !enableSidebar.value &&
-                !(slots.sidebar || slots.sidebarTop || slots.sidebarBottom),
+                !(
+                  slots["sidebar"] ||
+                  slots["sidebarTop"] ||
+                  slots["sidebarBottom"]
+                ),
               "has-toc": enableToc.value,
               "hide-navbar": hideNavbar.value,
               "sidebar-collapsed":
@@ -195,11 +195,14 @@ export default defineComponent({
                   resolveComponent("Navbar") as ComponentOptions,
                   { onToggleSidebar: () => toggleMobileSidebar() },
                   {
-                    left: () => slots.navbarLeft?.(),
-                    center: () => slots.navbarCenter?.(),
-                    right: () => slots.navbarRight?.(),
-                    screenTop: () => slots.navScreenTop?.(),
-                    screenBottom: () => slots.navScreenBottom?.(),
+                    leftStart: () => slots["navbarLeftStart"]?.(),
+                    leftEnd: () => slots["navbarLeftEnd"]?.(),
+                    centerStart: () => slots["navbarCenterStart"]?.(),
+                    centerEnd: () => slots["navbarCenterEnd"]?.(),
+                    rightStart: () => slots["navbarRightStart"]?.(),
+                    rightEnd: () => slots["navbarRightEnd"]?.(),
+                    screenTop: () => slots["navScreenTop"]?.(),
+                    screenBottom: () => slots["navScreenBottom"]?.(),
                   }
                 )
               : null,
@@ -235,14 +238,14 @@ export default defineComponent({
               resolveComponent("Sidebar") as ComponentOptions,
               {},
               {
-                ...(slots.sidebar
-                  ? { default: (): VNode[] | undefined => slots.sidebar?.() }
+                ...(slots["sidebar"]
+                  ? { default: (): VNode[] | undefined => slots["sidebar"]?.() }
                   : {}),
-                top: () => slots.sidebarTop?.(),
-                bottom: () => slots.sidebarBottom?.(),
+                top: () => slots["sidebarTop"]?.(),
+                bottom: () => slots["sidebarBottom"]?.(),
               }
             ),
-            slots.default?.(),
+            slots["default"]?.(),
             h(PageFooter),
           ]
         )

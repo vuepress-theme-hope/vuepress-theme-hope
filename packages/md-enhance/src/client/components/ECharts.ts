@@ -1,20 +1,11 @@
-import {
-  defineComponent,
-  h,
-  onMounted,
-  onBeforeUnmount,
-  ref,
-  markRaw,
-} from "vue";
+import { useDebounceFn, useEventListener } from "@vueuse/core";
+import { defineComponent, h, onMounted, onBeforeUnmount, ref } from "vue";
 import { LOADING_SVG } from "./icons";
 
-import { EChartsType } from "echarts";
-import type { EChartsOption } from "echarts/types/dist/shared";
+import type { EChartsType, EChartsOption } from "echarts";
 import type { PropType, VNode } from "vue";
 
 import "../styles/echarts.scss";
-
-import { useDebounceFn, useResizeObserver } from "@vueuse/core";
 
 declare const MARKDOWN_ENHANCE_DELAY: number;
 
@@ -44,13 +35,9 @@ export default defineComponent({
 
   setup(props) {
     const echartsWrapper = ref<HTMLElement | null>(null);
-    const chart = ref<EChartsType | null>(null);
+    let chart: EChartsType;
 
     const loading = ref(true);
-
-    const resizeChart = useDebounceFn(() => {
-      chart.value?.resize();
-    }, 10);
 
     onMounted(() => {
       void Promise.all([
@@ -63,23 +50,22 @@ export default defineComponent({
           props.type
         );
 
-        chart.value = markRaw(
-          echarts.init(echartsWrapper.value as HTMLElement)
-        );
-        chart.value.showLoading();
-        chart.value.setOption(options);
-        chart.value.hideLoading();
+        chart = echarts.init(echartsWrapper.value as HTMLElement);
+        chart.showLoading();
+        chart.setOption(options);
+        chart.hideLoading();
 
         loading.value = false;
       });
 
-      useResizeObserver(echartsWrapper, () => {
-        resizeChart();
-      });
+      useEventListener(
+        "resize",
+        useDebounceFn(() => chart?.resize(), 100)
+      );
     });
 
     onBeforeUnmount(() => {
-      chart.value?.dispose();
+      chart?.dispose();
     });
 
     return (): (VNode | null)[] => [

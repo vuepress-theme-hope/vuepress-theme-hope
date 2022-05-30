@@ -105,11 +105,11 @@ E.g.: you can use `@src` as an alias for your source directory.
 ```ts {8}
 // .vuepress/config.ts
 import { path } from "@vuepress/utils";
-import { mdEnhance } from "vuepress-plugin-md-enhance";
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
   plugins: [
-    mdEnhance({
+    mdEnhancePlugin({
       // Add `@src` alias support
       include: {
         getPath: (file) => {
@@ -129,11 +129,11 @@ export default {
 ```js {8}
 // .vuepress/config.js
 const { path } = require("@vuepress/utils");
-const { mdEnhance } = require("vuepress-plugin-md-enhance");
+const { mdEnhancePlugin } = require("vuepress-plugin-md-enhance");
 
 module.exports = {
   plugins: [
-    mdEnhance({
+    mdEnhancePlugin({
       // Add `@src` alias support
       include: {
         getPath: (file) => {
@@ -159,13 +159,13 @@ Also, to place your Markdown files directly besides your actual files, but donâ€
 ```ts {8}
 // .vuepress/config.ts
 import { path } from "@vuepress/utils";
-import { mdEnhance } from "vuepress-plugin-md-enhance";
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
   pagePatterns: ["**/*.md", "!*.snippet.md", "!.vuepress", "!node_modules"],
 
   plugins: [
-    mdEnhance({
+    mdEnhancePlugin({
       include: true,
     }),
   ],
@@ -177,13 +177,13 @@ export default {
 ```js {8}
 // .vuepress/config.js
 const { path } = require("@vuepress/utils");
-const { mdEnhance } = require("vuepress-plugin-md-enhance");
+const { mdEnhancePlugin } = require("vuepress-plugin-md-enhance");
 
 module.exports = {
   pagePatterns: ["**/*.md", "!*.snippet.md", "!.vuepress", "!node_modules"],
 
   plugins: [
-    mdEnhance({
+    mdEnhancePlugin({
       include: true,
     }),
   ],
