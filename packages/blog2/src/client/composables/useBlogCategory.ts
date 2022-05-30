@@ -82,7 +82,7 @@ export const useBlogCategory = <
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 if (import.meta.webpackHot || import.meta.hot) {
-  __VUE_HMR_RUNTIME__.updateBlogCategory = (
+  __VUE_HMR_RUNTIME__["updateBlogCategory"] = (
     map: Record<string, CategoryMap>
   ): void => {
     blogCategoryMap.value = map;

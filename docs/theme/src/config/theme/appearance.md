@@ -47,24 +47,18 @@ If you don’t need this feature, set `darkmode: "disable"` to disable it.
 
 :::
 
-## themeColor <Badge text="Enabled by default" /> <Badge text="Root only" type="warning" />
+## themeColor <Badge text="Root only" type="warning" />
 
-- Type: `Record<string, string>`
-- Default: `{ blue: '#2196f3', red: '#f26d6d', green: '#3eaf7c', orange: '#fb9b5f' }`
+- Type: `Record<string, string> | false`
+- Default: `false`
 - Details: [Interface → ThemeColor](../../guide/interface/theme-color.md)
 
 Theme color configuration.
 
-::: note
-
-If you don’t need this feature, set `themeColor: false` to disable it.
-
-:::
-
 ## fullscreen <Badge text="Root only" type="warning" />
 
 - Type: `boolean`
-- Default: `true`
+- Default: `false`
 - Details: [Interface → FullScreen](../../guide/interface/others.md#fullscreen-button)
 
 Whether show the "full screen" button.

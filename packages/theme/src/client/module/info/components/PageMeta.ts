@@ -52,7 +52,6 @@ export default defineComponent({
                   { class: "contributor", title: `email: ${email}` },
                   name
                 ),
-                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                 index !== contributors.value!.length - 1 ? "," : "",
               ]),
             ])

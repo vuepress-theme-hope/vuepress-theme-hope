@@ -20,7 +20,7 @@ export const blogPlugin =
     const {
       getInfo = (): Record<string, never> => ({}),
       filter = (page): boolean =>
-        Boolean(page.filePathRelative) && !page.frontmatter.home,
+        Boolean(page.filePathRelative) && !page.frontmatter["home"],
       metaScope = "_blog",
     } = options;
 
@@ -98,12 +98,10 @@ export const blogPlugin =
                   pagestoBeAdded.map(async (pageKey) => {
                     await preparePageComponent(
                       app,
-                      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                       app.pages.find(({ key }) => key === pageKey)!
                     );
                     await preparePageData(
                       app,
-                      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                       app.pages.find(({ key }) => key === pageKey)!
                     );
                   })

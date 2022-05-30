@@ -80,7 +80,7 @@ export default defineComponent({
                     },
                   })
                 : null,
-              slots.heroImage?.() ||
+              slots["heroImage"]?.() ||
                 h(DropTransition, { appear: true, delay: 0.04 }, () =>
                   heroImage.value
                     ? h("img", {
@@ -111,7 +111,6 @@ export default defineComponent({
                       class: "slide-down-button",
                       onClick: () => {
                         window.scrollTo({
-                          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                           top: hero.value!.clientHeight,
                           behavior: "smooth",
                         });

@@ -16,10 +16,7 @@ export default defineComponent({
       default: false,
     },
 
-    pure: {
-      type: Boolean,
-      default: false,
-    },
+    pure: Boolean,
   },
 
   setup(props) {

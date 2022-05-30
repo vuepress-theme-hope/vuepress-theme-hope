@@ -50,7 +50,7 @@ export default defineComponent({
         Transition,
         { name: "popup" },
         () =>
-          slots.default?.({
+          slots["default"]?.({
             enabled: enabled.value,
             uninstall,
           }) ||

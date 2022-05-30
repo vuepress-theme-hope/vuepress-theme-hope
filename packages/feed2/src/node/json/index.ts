@@ -65,19 +65,16 @@ export const renderJSON = (feed: Feed): string => {
       feedItem.date_modified = item.lastUpdated.toISOString();
 
     // author
-    if (Array.isArray(item.author)) {
+    if (Array.isArray(item.author))
       feedItem.authors = item.author
         .filter((author) => author.name)
         .map((author) => formatAuthor(author));
-    } else if (typeof item.author === "object")
-      feedItem.authors = [formatAuthor(item.author)];
 
     // tags
-    if (Array.isArray(item.category))
+    if (item.category)
       feedItem.tags = item.category
         .filter((category) => category.name)
         .map((category) => category.name);
-    else if (item.category) feedItem.tags = [item.category.name];
 
     return feedItem;
   });

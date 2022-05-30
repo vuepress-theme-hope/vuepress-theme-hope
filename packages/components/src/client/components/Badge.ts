@@ -24,7 +24,7 @@ const Badge: FunctionalComponent<BadgeProps> = (
         ...(color ? { backgroundColor: color } : {}),
       },
     },
-    text || slots.default?.()
+    text || slots["default"]?.()
   );
 
 Badge.displayName = "Badge";

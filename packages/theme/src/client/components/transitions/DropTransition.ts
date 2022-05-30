@@ -14,7 +14,7 @@ export default defineComponent({
     type: { type: String as PropType<"single" | "group">, default: "single" },
     delay: { type: Number, default: 0 },
     duration: { type: Number, default: 0.25 },
-    appear: { type: Boolean, default: false },
+    appear: Boolean,
   },
 
   setup(props, { slots }) {
@@ -43,7 +43,7 @@ export default defineComponent({
           onAfterEnter: unsetStyle,
           onBeforeLeave: setStyle,
         },
-        () => slots.default?.()
+        () => slots["default"]?.()
       );
   },
 });

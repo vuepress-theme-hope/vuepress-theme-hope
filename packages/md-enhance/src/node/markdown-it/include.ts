@@ -9,7 +9,7 @@ import type { IncludeOptions } from "../../shared";
 export interface ImportFileInfo {
   filePath: string;
   lineStart: number;
-  lineEnd?: number;
+  lineEnd: number | undefined;
 }
 
 export interface IncludeInfo {

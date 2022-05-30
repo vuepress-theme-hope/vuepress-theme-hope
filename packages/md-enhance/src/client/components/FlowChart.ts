@@ -1,6 +1,5 @@
-import { useEventListener } from "@vueuse/core";
+import { useEventListener, useDebounceFn } from "@vueuse/core";
 import { computed, defineComponent, h, onMounted, ref } from "vue";
-import { debounce } from "ts-debounce";
 import { LOADING_SVG } from "./icons";
 import presets from "../flowchart-preset";
 
@@ -63,8 +62,9 @@ export default defineComponent({
         // draw svg to #id
         svg.drawSVG(props.id, { ...preset.value, scale: scale.value });
 
-        useEventListener("resize", () =>
-          debounce(() => {
+        useEventListener(
+          "resize",
+          useDebounceFn(() => {
             const newScale = getScale(window.innerWidth);
 
             if (scale.value !== newScale) {
@@ -72,7 +72,7 @@ export default defineComponent({
 
               svg.drawSVG(props.id, { ...preset.value, scale: newScale });
             }
-          }, 100)()
+          }, 100)
         );
       });
     });

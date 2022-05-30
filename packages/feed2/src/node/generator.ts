@@ -32,12 +32,13 @@ export class FeedGenerator {
     const feed = this.feedMap[localePath];
     const localeOption = this.options[localePath];
     const {
+      count: feedCount = 100,
       filter = ({ frontmatter, filePathRelative }: Page): boolean =>
         !(
-          frontmatter.home ||
+          frontmatter["home"] ||
           !filePathRelative ||
-          frontmatter.article === false ||
-          frontmatter.feed === false
+          frontmatter["article"] === false ||
+          frontmatter["feed"] === false
         ),
       sorter = (
         pageA: Page<{ git?: GitData }, Record<string, never>>,
@@ -58,7 +59,7 @@ export class FeedGenerator {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       .sort(sorter)
-      .slice(0, localeOption.count || 100);
+      .slice(0, feedCount);
 
     let count = 0;
 

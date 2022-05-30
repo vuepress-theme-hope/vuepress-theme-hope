@@ -13,30 +13,30 @@ export default [
   ...rollupTypescript("client/components/PWAInstall", {
     resolve: true,
     external: [
-      "vuepress-shared/lib/client",
       "@vuepress/client",
       "@vueuse/core",
       "vue",
+      "vuepress-shared/lib/client",
       /\.scss$/,
     ],
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/SWUpdatePopup", {
     external: [
-      "vuepress-shared/lib/client",
       "@vuepress/client",
       "register-service-worker",
       "vue",
+      "vuepress-shared/lib/client",
       /\.scss$/,
     ],
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/SWHintPopup", {
     external: [
-      "vuepress-shared/lib/client",
       "@vuepress/client",
       "register-service-worker",
       "vue",
+      "vuepress-shared/lib/client",
       /\.scss$/,
     ],
     dtsExternal: [/\.scss$/],

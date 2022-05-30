@@ -51,9 +51,8 @@ export const mermaid: PluginSimple = (md) => {
     if (info.trim() === "git-graph")
       return mermaidHackRender("gitGraph", content, index);
 
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     return fence!(...args);
   };
 
-  md.renderer.rules.mermaid = mermaidRender;
+  md.renderer.rules["mermaid"] = mermaidRender;
 };

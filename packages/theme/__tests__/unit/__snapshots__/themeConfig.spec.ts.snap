@@ -5,7 +5,7 @@ exports[`should generate themeConfig correcly > Should contain basic properties 
   "blog": {},
   "darkmode": "switch",
   "encrypt": {},
-  "fullscreen": true,
+  "fullscreen": false,
   "locales": {
     "/": {
       "blog": {},
@@ -63,13 +63,7 @@ exports[`should generate themeConfig correcly > Should contain basic properties 
     },
   },
   "pure": false,
-  "themeColor": {
-    "blue": "#3498db",
-    "green": "#3eaf7c",
-    "orange": "#f39c12",
-    "purple": "#8e44ad",
-    "red": "#e74c3c",
-  },
+  "themeColor": false,
 }
 `;
 
@@ -78,7 +72,7 @@ exports[`should generate themeConfig correcly > Should handle single language 1`
   "blog": {},
   "darkmode": "switch",
   "encrypt": {},
-  "fullscreen": true,
+  "fullscreen": false,
   "locales": {
     "/": {
       "blog": {},
@@ -143,13 +137,7 @@ exports[`should generate themeConfig correcly > Should handle single language 1`
     },
   },
   "pure": false,
-  "themeColor": {
-    "blue": "#3498db",
-    "green": "#3eaf7c",
-    "orange": "#f39c12",
-    "purple": "#8e44ad",
-    "red": "#e74c3c",
-  },
+  "themeColor": false,
 }
 `;
 
@@ -158,7 +146,7 @@ exports[`should generate themeConfig correcly > locale should have higher proper
   "blog": {},
   "darkmode": "switch",
   "encrypt": {},
-  "fullscreen": true,
+  "fullscreen": false,
   "locales": {
     "/": {
       "blog": {},
@@ -221,13 +209,7 @@ exports[`should generate themeConfig correcly > locale should have higher proper
     },
   },
   "pure": false,
-  "themeColor": {
-    "blue": "#3498db",
-    "green": "#3eaf7c",
-    "orange": "#f39c12",
-    "purple": "#8e44ad",
-    "red": "#e74c3c",
-  },
+  "themeColor": false,
 }
 `;
 
@@ -236,7 +218,7 @@ exports[`should generate themeConfig correcly > root only option should not appe
   "blog": {},
   "darkmode": "disable",
   "encrypt": {},
-  "fullscreen": true,
+  "fullscreen": false,
   "locales": {
     "/": {
       "blog": {},
@@ -294,13 +276,7 @@ exports[`should generate themeConfig correcly > root only option should not appe
     },
   },
   "pure": true,
-  "themeColor": {
-    "blue": "#3498db",
-    "green": "#3eaf7c",
-    "orange": "#f39c12",
-    "purple": "#8e44ad",
-    "red": "#e74c3c",
-  },
+  "themeColor": false,
 }
 `;
 
@@ -309,7 +285,7 @@ exports[`should generate themeConfig correcly > should fallback to root if local
   "blog": {},
   "darkmode": "switch",
   "encrypt": {},
-  "fullscreen": true,
+  "fullscreen": false,
   "locales": {
     "/": {
       "blog": {},
@@ -371,12 +347,6 @@ exports[`should generate themeConfig correcly > should fallback to root if local
     },
   },
   "pure": false,
-  "themeColor": {
-    "blue": "#3498db",
-    "green": "#3eaf7c",
-    "orange": "#f39c12",
-    "purple": "#8e44ad",
-    "red": "#e74c3c",
-  },
+  "themeColor": false,
 }
 `;

@@ -237,7 +237,7 @@ export interface FeedGetter {
     >
   >(
     page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
-  ) => string | undefined;
+  ) => string | null;
 
   /**
    * Item content getter
@@ -307,7 +307,7 @@ export interface FeedGetter {
     >
   >(
     page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
-  ) => FeedCategory[] | undefined;
+  ) => FeedCategory[] | null;
 
   /**
    * Item enclosure getter
@@ -329,7 +329,7 @@ export interface FeedGetter {
     >
   >(
     page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
-  ) => FeedEnclosure | undefined;
+  ) => FeedEnclosure | null;
 
   /**
    * Item publish date getter
@@ -351,7 +351,7 @@ export interface FeedGetter {
     >
   >(
     page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
-  ) => Date | undefined;
+  ) => Date | null;
 
   /**
    * Item last update date getter
@@ -439,5 +439,5 @@ export interface FeedGetter {
     >
   >(
     page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
-  ) => string | undefined;
+  ) => string | null;
 }

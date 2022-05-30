@@ -87,7 +87,6 @@ export default defineComponent({
 
             // get the top and height of the toc
             const { top: tocTop, height: tocHeight } =
-              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
               toc.value.getBoundingClientRect();
             // get the top and height of the active toc item
             const { top: activeTocItemTop, height: activeTocItemHeight } =

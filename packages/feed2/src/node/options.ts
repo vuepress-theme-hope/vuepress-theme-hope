@@ -52,10 +52,10 @@ export const getFeedOptions = (
         // default values
         filter: ({ frontmatter, filePathRelative }: Page): boolean =>
           !(
-            frontmatter.home ||
+            frontmatter["home"] ||
             !filePathRelative ||
-            frontmatter.article === false ||
-            frontmatter.feed === false
+            frontmatter["article"] === false ||
+            frontmatter["feed"] === false
           ),
         sorter: (
           pageA: Page<{ git?: GitData }, Record<string, never>>,

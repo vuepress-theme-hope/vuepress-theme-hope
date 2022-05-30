@@ -1,14 +1,3 @@
-import {
-  compareDate,
-  getAuthor,
-  getCategory,
-  getDate,
-  getTag,
-  isAbsoluteUrl,
-  isUrl,
-  timeTransformer,
-} from "../shared";
-
 export * from "./components";
 export * from "./composables";
 export * from "./utils";
@@ -21,4 +10,4 @@ export {
   isAbsoluteUrl,
   isUrl,
   timeTransformer,
-};
+} from "../shared";

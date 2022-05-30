@@ -12,7 +12,7 @@ export default defineComponent({
   name: "PasswordModal",
 
   props: {
-    full: { type: Boolean, default: false },
+    full: Boolean,
   },
 
   emits: ["verify"],
@@ -50,7 +50,7 @@ export default defineComponent({
         {
           class: [
             "password-layer",
-            { expand: props.full || frontmatter.value.home },
+            { expand: props.full || frontmatter.value["home"] },
           ],
         },
         h("div", { class: "password-modal" }, [

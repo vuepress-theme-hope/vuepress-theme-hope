@@ -5,9 +5,12 @@ import type { FunctionalComponent, VNode } from "vue";
 
 const MarkdownContent: FunctionalComponent<{ custom?: boolean }> = ({
   custom,
-}): VNode =>
-  h("div", { class: ["theme-hope-content", { custom }] }, h(Content));
+}): VNode => h(Content, { class: ["theme-hope-content", { custom }] });
 
 MarkdownContent.displayName = "MarkdownContent";
+
+MarkdownContent.props = {
+  custom: Boolean,
+};
 
 export default MarkdownContent;

@@ -12,10 +12,7 @@ export default defineClientConfig({
       name: "CommentService",
 
       props: {
-        darkmode: {
-          type: Boolean,
-          default: false,
-        },
+        darkmode: Boolean,
       },
 
       setup(props) {

@@ -47,24 +47,18 @@ tag:
 
 :::
 
-## themeColor <Badge text="默认启用" /> <Badge text="仅限 Root" type="warning" />
+## themeColor <Badge text="仅限 Root" type="warning" />
 
-- 类型: `Record<string, string>`
-- 默认值: `{ blue: '#2196f3', red: '#f26d6d', green: '#3eaf7c', orange: '#fb9b5f' }`
+- 类型: `Record<string, string> | false`
+- 默认值: `false`
 - 详情: [界面 → 主题色](../../guide/interface/theme-color.md)
 
 主题色选项配置。
 
-::: note
-
-如果你不需要这项功能，请设置 `themeColor: false` 将其禁用。
-
-:::
-
 ## fullscreen
 
 - 类型: `boolean`
-- 默认值: `true`
+- 默认值: `false`
 - 详情: [界面 → 全屏按钮](../../guide/interface/others.md#全屏按钮)
 
 是否显示全屏按钮牛

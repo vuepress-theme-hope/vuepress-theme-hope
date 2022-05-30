@@ -46,9 +46,10 @@ export default defineComponent({
 
       const query = { ...route.query };
 
-      if (query.page === page.toString() || (page === 1 && !query.page)) return;
-      if (page === 1) delete query.page;
-      else query.page = page.toString();
+      if (query["page"] === page.toString() || (page === 1 && !query["page"]))
+        return;
+      if (page === 1) delete query["page"];
+      else query["page"] = page.toString();
 
       void router.push({ path: route.path, query });
     };

@@ -31,6 +31,30 @@ tag:
 
 是否在导航栏显示图标。
 
+### navbarLayout
+
+- 类型: `HopeNavbarLayoutOptions`
+
+  ```ts
+  type HopeThemeNavbarComponent =
+    | "Brand"
+    | "Links"
+    | "Language"
+    | "Search"
+    | "Outlook"
+    | "Repo";
+
+  interface HopeNavbarLayoutOptions {
+    left: HopeThemeNavbarComponent[];
+    center: HopeThemeNavbarComponent[];
+    right: HopeThemeNavbarComponent[];
+  }
+  ```
+
+- 默认值: `{ left: ["Brand"], center: ["Links"], right: ["Language", "Repo", "Outlook", "Search"] }`
+
+自定义导航栏布局
+
 ### logo <Badge text="建议配置" type="tip" />
 
 - 类型: `string`

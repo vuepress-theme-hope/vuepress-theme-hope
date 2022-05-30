@@ -7,7 +7,7 @@
   top: 0;
   right: 0;
   left: 0;
-  z-index: 300;
+  z-index: 175;
 
   display: flex;
   align-items: center;
@@ -58,6 +58,26 @@
     .icon {
       margin-right: 0.25em;
       font-size: 1em;
+    }
+  }
+}
+
+.navbar-left,
+.navbar-right,
+.navbar-center {
+  display: flex;
+  align-items: center;
+
+  > * {
+    position: relative;
+    margin: 0 0.25rem !important;
+
+    &:first-child {
+      margin-left: 0 !important;
+    }
+
+    &:last-child {
+      margin-right: 0 !important;
     }
   }
 }

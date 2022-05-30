@@ -57,24 +57,21 @@ export const checkSocialMediaIcons = (
   Object.entries(themeConfig.blog?.medias || {}).forEach(([key, value]) => {
     const result = checkIcon(key, value);
 
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     if (result) themeConfig.blog.medias![key] = result;
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     else delete themeConfig.blog.medias![key];
   });
 
-  for (const locales in themeConfig.locales || {}) {
-    Object.entries(themeConfig.locales?.[locales].blog?.medias || {}).forEach(
-      ([key, value]) => {
-        const result = checkIcon(key, value);
+  if (themeConfig.locales)
+    Object.entries(themeConfig.locales).forEach(([, localeConfig]) => {
+      Object.entries(localeConfig.blog?.medias || {}).forEach(
+        ([key, value]) => {
+          const result = checkIcon(key, value);
 
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        if (result) themeConfig.locales[locales].blog.medias![key] = result;
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        else delete themeConfig.locales[locales].blog.medias![key];
-      }
-    );
-  }
+          if (result) localeConfig.blog.medias![key] = result;
+          else delete localeConfig.blog.medias![key];
+        }
+      );
+    });
 
   return icons;
 };

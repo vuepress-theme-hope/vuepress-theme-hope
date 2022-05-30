@@ -16,7 +16,7 @@ export const setupPWA = (): void => {
   provide(pwaEventSymbol, event);
 
   onMounted(async () => {
-    if (process.env.NODE_ENV === "production") {
+    if (process.env["NODE_ENV"] === "production") {
       let refreshing = false;
 
       // only listen controllerchange event when a serviceWorker is active

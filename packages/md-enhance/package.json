@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-md-enhance",
-  "version": "2.0.0-beta.72",
+  "version": "2.0.0-beta.75",
   "description": "Markdown enhancement plugin for vuepress",
   "keywords": [
     "vuepress",
@@ -63,7 +63,6 @@
     "markdown-it": "^13.0.1",
     "mermaid": "^9.1.1",
     "reveal.js": "^4.3.1",
-    "ts-debounce": "^4.0.0",
     "vue": "^3.2.36",
     "vue-router": "^4.0.15",
     "vuepress-plugin-sass-palette": "workspace:*",

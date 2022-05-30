@@ -22,7 +22,7 @@ export const getSEOPlugin = (
     pathLocale,
     path,
   }: Page): boolean => {
-    if (!filePathRelative || frontmatter.home) return false;
+    if (!filePathRelative || frontmatter["home"]) return false;
 
     const localePath = path.replace(new RegExp(`^${pathLocale}`), "/");
 
@@ -35,7 +35,7 @@ export const getSEOPlugin = (
 
   return seoPlugin({
     hostname,
-    author: themeConfig.author,
+    ...(themeConfig.author ? { author: themeConfig.author } : {}),
     isArticle,
     ...(seo || {}),
   });

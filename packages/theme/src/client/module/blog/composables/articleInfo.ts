@@ -93,8 +93,8 @@ export const useArticleInfo = (
     category: category.value,
     date: date.value,
     tag: tag.value,
-    isOriginal: info.value.isOriginal,
-    readingTime: info.value.readingTime,
+    isOriginal: info.value.isOriginal || false,
+    readingTime: info.value.readingTime || null,
   });
 
   const items = computed(() => blogOptions.value.articleInfo);

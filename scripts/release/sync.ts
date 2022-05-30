@@ -10,7 +10,7 @@ export const sync = (): Promise<void[]> => {
     return import(`../../packages/${packageName}/package.json`).then(
       (content: Record<string, unknown>) =>
         new Promise<void>((resolve) => {
-          get(`https://npmmirror.com/sync/${content.name as string}`).on(
+          get(`https://npmmirror.com/sync/${content["name"] as string}`).on(
             "finish",
             () => resolve()
           );

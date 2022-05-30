@@ -14,6 +14,6 @@ export default defineComponent({
     return (): VNode | null =>
       isEncrypted.value
         ? h(PasswordModal, { full: true, onVerify: validateToken })
-        : ((slots.default?.() || null) as VNode | null);
+        : ((slots["default"]?.() || null) as VNode | null);
   },
 });

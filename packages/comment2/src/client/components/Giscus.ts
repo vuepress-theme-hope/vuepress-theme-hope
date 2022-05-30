@@ -31,10 +31,7 @@ export default defineComponent({
   name: "GiscusComment",
 
   props: {
-    darkmode: {
-      type: Boolean,
-      default: false,
-    },
+    darkmode: Boolean,
   },
 
   setup(props) {

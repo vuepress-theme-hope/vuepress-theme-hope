@@ -32,7 +32,6 @@ export default defineComponent({
 
           // get the top and height of the sidebar
           const { top: sidebarTop, height: sidebarHeight } =
-            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
             sidebar.value!.getBoundingClientRect();
           // get the top and height of the active sidebar item
           const { top: activeSidebarItemTop, height: activeSidebarItemHeight } =
@@ -61,9 +60,10 @@ export default defineComponent({
           ref: sidebar,
         },
         [
-          slots.top?.(),
-          slots.default?.() || h(SidebarLinks, { config: sidebarItems.value }),
-          slots.bottom?.(),
+          slots["top"]?.(),
+          slots["default"]?.() ||
+            h(SidebarLinks, { config: sidebarItems.value }),
+          slots["bottom"]?.(),
         ]
       );
   },

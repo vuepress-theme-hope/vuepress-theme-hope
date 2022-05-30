@@ -1,6 +1,6 @@
 {
   "name": "seo2-demo",
-  "version": "2.0.0-beta.72",
+  "version": "2.0.0-beta.75",
   "private": true,
   "description": "Demo for vuepress-plugin-seo2",
   "license": "MIT",

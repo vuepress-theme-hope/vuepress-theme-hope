@@ -77,7 +77,7 @@ export const extendsPage = (
 
   // resolve shortTitle
   if ("shortTitle" in frontmatter)
-    page.routeMeta.shortTitle = frontmatter.shortTitle;
+    page.routeMeta["shortTitle"] = frontmatter.shortTitle;
 
   if (plugins.blog) {
     const isArticle =
@@ -110,33 +110,34 @@ export const extendsPage = (
     };
 
     // resolve author
-    if ("author" in frontmatter) page.routeMeta.author = frontmatter.author;
+    if ("author" in frontmatter) page.routeMeta["author"] = frontmatter.author;
 
     // resolve date
-    if ("date" in frontmatter) page.routeMeta.date = frontmatter.date;
-    else if (createdTime) page.routeMeta.date = new Date(createdTime);
+    if ("date" in frontmatter) page.routeMeta["date"] = frontmatter.date;
+    else if (createdTime) page.routeMeta["date"] = new Date(createdTime);
 
     if ("category" in frontmatter)
       // resolve category
-      page.routeMeta.category = frontmatter.category;
+      // resolve category
+      page.routeMeta["category"] = frontmatter.category;
 
     // resolve tag
-    if ("tag" in frontmatter) page.routeMeta.tag = frontmatter.tag;
+    if ("tag" in frontmatter) page.routeMeta["tag"] = frontmatter.tag;
 
     // resolve sticky
-    if ("sticky" in frontmatter) page.routeMeta.sticky = frontmatter.sticky;
+    if ("sticky" in frontmatter) page.routeMeta["sticky"] = frontmatter.sticky;
 
     // resolve star
-    if ("star" in frontmatter) page.routeMeta.star = frontmatter.star;
+    if ("star" in frontmatter) page.routeMeta["star"] = frontmatter.star;
 
     // resolve image
-    if ("cover" in frontmatter) page.routeMeta.image = frontmatter.cover;
+    if ("cover" in frontmatter) page.routeMeta["image"] = frontmatter.cover;
 
     // resolve isOriginal
     if ("isOriginal" in frontmatter)
-      page.routeMeta.isOriginal = frontmatter.isOriginal;
+      page.routeMeta["isOriginal"] = frontmatter.isOriginal;
 
     // resolve encrypted
-    if (isEncrypted) page.routeMeta.isEncrypted = true;
+    if (isEncrypted) page.routeMeta["isEncrypted"] = true;
   }
 };

@@ -72,23 +72,23 @@ const handleBlogOptions = (blogOptions: Record<string, unknown>): void => {
     logger.warn(
       '"blog.links" options is deprecated, please use "blog.medias" instead'
     );
-    blogOptions.medias = blogOptions.links;
-    delete blogOptions.links;
+    blogOptions["medias"] = blogOptions["links"];
+    delete blogOptions["links"];
   }
 
   if ("perPage" in blogOptions) {
     logger.warn(
       '"blog.perPage" options is deprecated, please use "blog.articlePerPage" instead'
     );
-    blogOptions.articlePerPage = blogOptions.perPage;
-    delete blogOptions.perPage;
+    blogOptions["articlePerPage"] = blogOptions["perPage"];
+    delete blogOptions["perPage"];
   }
 
   if ("autoExcerpt" in blogOptions) {
     logger.error(
       '"blog.autoExcerpt" options is no longer supported, please use "plugins.blog.autoExcerpt" instead'
     );
-    delete blogOptions.autoExcerpt;
+    delete blogOptions["autoExcerpt"];
   }
 };
 
@@ -99,8 +99,8 @@ export const covertThemeConfig = (
   themeOptions: Record<string, unknown>
 ): HopeThemeOptions => {
   // ensure plugins
-  const plugins = (themeOptions.plugins =
-    (themeOptions.plugins as Record<string, unknown>) || {});
+  const plugins = (themeOptions["plugins"] =
+    (themeOptions["plugins"] as Record<string, unknown>) || {});
 
   DEPRECATED_THEME_OPTIONS.forEach(([deprecatedOption, newOption]) =>
     deprecatedLogger({
@@ -112,27 +112,27 @@ export const covertThemeConfig = (
   );
   DROPPED_THEME_OPTIONS.forEach((item) => droppedLogger(themeOptions, ...item));
 
-  if (Array.isArray(themeOptions.navbar))
-    themeOptions.navbar = covertNavbarConfig(themeOptions.navbar);
+  if (Array.isArray(themeOptions["navbar"]))
+    themeOptions["navbar"] = covertNavbarConfig(themeOptions["navbar"]);
 
-  if (typeof themeOptions.sidebar === "object")
-    themeOptions.sidebar = convertSidebarConfig(themeOptions.sidebar);
+  if (typeof themeOptions["sidebar"] === "object")
+    themeOptions["sidebar"] = convertSidebarConfig(themeOptions["sidebar"]);
 
-  if (typeof themeOptions.blog === "object" && themeOptions.blog) {
-    handleBlogOptions(themeOptions.blog as Record<string, unknown>);
-    if (!plugins.blog) plugins.blog = true;
+  if (typeof themeOptions["blog"] === "object" && themeOptions["blog"]) {
+    handleBlogOptions(themeOptions["blog"] as Record<string, unknown>);
+    if (!plugins["blog"]) plugins["blog"] = true;
   }
 
   // handle encrypt
-  if (typeof themeOptions.encrypt === "object" && themeOptions.encrypt) {
-    const encrypt = themeOptions.ecrypt as Record<string, unknown>;
+  if (typeof themeOptions["encrypt"] === "object" && themeOptions["encrypt"]) {
+    const encrypt = themeOptions["ecrypt"] as Record<string, unknown>;
 
-    if ("global" in encrypt && typeof encrypt.global !== "boolean") {
+    if ("global" in encrypt && typeof encrypt["global"] !== "boolean") {
       logger.warn(
         'Setting admin password with "encrypt.global" in V1 is deprecated in V2, please use "encrypt.admin" instead.'
       );
 
-      encrypt.admin = encrypt.global;
+      encrypt["admin"] = encrypt["global"];
     }
 
     if ("status" in encrypt) {
@@ -140,14 +140,16 @@ export const covertThemeConfig = (
         '"encrypt.status" is deprecated, please use "encrypt.global" instead.'
       );
 
-      encrypt.gloabl = encrypt.status === "global";
-      delete encrypt.status;
+      encrypt["gloabl"] = encrypt["status"] === "global";
+      delete encrypt["status"];
     }
   }
 
-  if ("locales" in themeOptions && typeof themeOptions.locales === "object") {
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    Object.values(themeOptions.locales!).forEach(
+  if (
+    "locales" in themeOptions &&
+    typeof themeOptions["locales"] === "object"
+  ) {
+    Object.values(themeOptions["locales"]!).forEach(
       (value: Record<string, unknown>) => {
         DEPRECATED_THEME_OPTIONS.forEach(([deprecatedOption, newOption]) =>
           deprecatedLogger({
@@ -159,15 +161,15 @@ export const covertThemeConfig = (
         );
         DROPPED_THEME_OPTIONS.forEach((item) => droppedLogger(value, ...item));
 
-        if (Array.isArray(value.navbar))
-          value.navbar = covertNavbarConfig(value.navbar);
+        if (Array.isArray(value["navbar"]))
+          value["navbar"] = covertNavbarConfig(value["navbar"]);
 
-        if (typeof value.sidebar === "object")
-          value.sidebar = convertSidebarConfig(value.sidebar);
+        if (typeof value["sidebar"] === "object")
+          value["sidebar"] = convertSidebarConfig(value["sidebar"]);
 
-        if (typeof value.blog === "object" && value.blog) {
-          handleBlogOptions(value.blog as Record<string, unknown>);
-          if (!plugins.blog) plugins.blog = true;
+        if (typeof value["blog"] === "object" && value["blog"]) {
+          handleBlogOptions(value["blog"] as Record<string, unknown>);
+          if (!plugins["blog"]) plugins["blog"] = true;
         }
       }
     );

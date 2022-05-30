@@ -19,7 +19,7 @@ export const getOGP = (
 ): SeoContent => {
   const {
     isArticle = (page): boolean =>
-      Boolean(page.filePathRelative && !page.frontmatter.home),
+      Boolean(page.filePathRelative && !page.frontmatter["home"]),
   } = options;
   const {
     options: { base },
@@ -109,7 +109,7 @@ export const getJSONLD = (
 ): ArticleJSONLD | null => {
   const {
     isArticle = (page): boolean =>
-      Boolean(page.filePathRelative && !page.frontmatter.home),
+      Boolean(page.filePathRelative && !page.frontmatter["home"]),
   } = options;
 
   const {

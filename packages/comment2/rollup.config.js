@@ -11,10 +11,10 @@ export default [
   ...rollupTypescript("client/config", {
     external: [
       "@CommentProvider",
-      "vuepress-shared/lib/client",
       "@vuepress/client",
       "vue",
       "vue-router",
+      "vuepress-shared/lib/client",
       /\.scss$/,
     ],
     dtsExternal: [/\.scss$/],
@@ -30,7 +30,6 @@ export default [
   }),
   ...rollupTypescript("client/components/Waline", {
     external: [
-      "vuepress-shared/lib/client",
       "@vuepress/client",
       "@waline/client/dist/component",
       "@waline/client/dist/pageview",
@@ -38,6 +37,7 @@ export default [
       "marked",
       "vue",
       "vue-router",
+      "vuepress-shared/lib/client",
       /\.s?css$/,
     ],
     dtsExternal: [/\.s?css$/],
