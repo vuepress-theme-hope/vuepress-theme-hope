@@ -1,6 +1,8 @@
 import { defineComponent, h } from "vue";
 import type { VNode } from "vue";
 
+import { ClientOnly } from "@vuepress/client";
+
 import PlaygroundExternal from "./PlaygroundExternal";
 import PlaygroundInternal from "./PlaygroundInternal";
 import PlayFile from "./PlayFile";
@@ -18,6 +20,8 @@ export default defineComponent({
     PlayFile,
     PlayImports,
     PlaySettings,
+    PlaygroundExternal,
+    PlaygroundInternal,
   },
 
   props: {
@@ -34,25 +38,27 @@ export default defineComponent({
     const encodedKey = encodeURIComponent(IMPORT_MAP_KEY);
 
     return (): (VNode | null)[] => [
-      mode === "internal"
-        ? h(PlaygroundInternal, {
-            id: props.id,
-            title: props.title,
-            settings: props.settings,
-            config: props.config.replace(
-              encodedKey,
-              settings.internal?.defaultImportsMap || ""
-            ),
-          })
-        : h(PlaygroundExternal, {
-            id: props.id,
-            title: props.title,
-            settings: props.settings,
-            config: props.config.replace(
-              encodedKey,
-              settings.external?.defaultImportsMap || ""
-            ),
-          }),
+      h(ClientOnly, null, [
+        mode === "internal"
+          ? h(PlaygroundInternal, {
+              id: props.id,
+              title: props.title,
+              settings: props.settings,
+              config: props.config.replace(
+                encodedKey,
+                settings.internal?.defaultImportsMap || ""
+              ),
+            })
+          : h(PlaygroundExternal, {
+              id: props.id,
+              title: props.title,
+              settings: props.settings,
+              config: props.config.replace(
+                encodedKey,
+                settings.external?.defaultImportsMap || ""
+              ),
+            }),
+      ]),
     ];
   },
 });
