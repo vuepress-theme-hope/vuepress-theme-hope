@@ -695,11 +695,18 @@ interface SidebarDirInfo {
   link?: boolean;
 
   /**
-   * 目录序号
+   * 是否索引此目录
    *
    * @default true
    */
-  index?: number | boolean;
+  index?: boolean;
+
+  /**
+   * 目录在侧边栏中的顺序
+   *
+   * @default 0
+   */
+  order?: number | false;
 }
 ```
 
