@@ -34,7 +34,7 @@ importers:
       execa: 6.1.0
       husky: 8.0.1
       inquirer: 8.2.4
-      lint-staged: 12.4.3
+      lint-staged: 12.5.0
       markdownlint-cli: 0.31.1
       npm-check-updates: 13.0.3
       ora: 6.1.0
@@ -85,7 +85,7 @@ importers:
       execa: 6.1.0
       husky: 8.0.1
       inquirer: 8.2.4
-      lint-staged: 12.4.3
+      lint-staged: 12.5.0
       markdownlint-cli: 0.31.1
       npm-check-updates: 13.0.3
       ora: 6.1.0
@@ -8403,8 +8403,8 @@ packages:
     dependencies:
       uc.micro: 1.0.6
 
-  /lint-staged/12.4.3:
-    resolution: {integrity: sha512-eH6SKOmdm/ZwCRMTZAmM3q3dPkpq6vco/BfrOw8iGun4Xs/thYegPD/MLIwKO+iPkzibkLJuQcRhRLXKvaKreg==}
+  /lint-staged/12.5.0:
+    resolution: {integrity: sha512-BKLUjWDsKquV/JuIcoQW4MSAI3ggwEImF1+sB4zaKvyVx1wBk3FsG7UK9bpnmBTN1pm7EH2BBcMwINJzCRv12g==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     hasBin: true
     dependencies:
