@@ -2,9 +2,7 @@ import { droppedLogger } from "./utils";
 
 import type { FeedOptions } from "../../shared";
 
-/**
- * @deprecated
- */
+/** @deprecated */
 export const covertOptions = (
   options: FeedOptions & Record<string, unknown>
 ): void => {
