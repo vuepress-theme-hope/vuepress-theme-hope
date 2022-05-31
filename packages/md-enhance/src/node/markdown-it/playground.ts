@@ -15,8 +15,8 @@ export const playground =
   (md) =>
     container(md, {
       name: "playground",
-      render: (tokens: Token[], index: number): string => {
-        const { nesting, info } = tokens[index];
+      openRender: (tokens: Token[], index: number): string => {
+        const { info } = tokens[index];
         const title = info
           .trimStart()
           // 'playground' length
@@ -25,8 +25,6 @@ export const playground =
 
         const hashKey = `${index}-${title}`;
         const key = `playground-${hash(hashKey)}`;
-
-        if (nesting === -1) return `</Playground>`;
 
         const codeConfigs: PlaygroundFiles = {};
         let settings: string | null = null;
@@ -102,6 +100,7 @@ export const playground =
       config="${config}"
       >`;
       },
+      closeRender: () => `</Playground>`,
     });
 
 const getPlugin =
@@ -109,11 +108,9 @@ const getPlugin =
   (md) =>
     container(md, {
       name,
-      render: (tokens: Token[], index: number): string => {
-        const { nesting, info } = tokens[index];
+      openRender: (tokens: Token[], index: number): string => {
+        const { info } = tokens[index];
         const title = info.trimStart().slice(name.length).trim();
-
-        if (nesting === -1) return `</${component}>`;
 
         let config = "";
         let lang = "";
@@ -141,6 +138,7 @@ const getPlugin =
           config ? ` config="${config}"` : ""
         } ${lang ? ` lang="${lang}"` : ""}>`;
       },
+      closeRender: () => `</${component}>`,
     });
 
 export const playFile: PluginSimple = getPlugin("file", "PlayFile");

@@ -272,3 +272,9 @@ $$
 Setting this to a invalid stytax <span style="color:red">doesn't</span> have any effect.
 
 - [View Detail](stylize.md)
+
+### Playground
+
+You can insert Vue playground in Markdown files directly.
+
+- [View Detail](playground.md)
