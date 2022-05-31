@@ -32,11 +32,15 @@ import type { default as Renderer, RenderRule } from "markdown-it/lib/renderer";
 import type { RuleBlock } from "markdown-it/lib/parser_block";
 
 export interface MarkdownItContainerOptions {
+  /** container name */
   name: string;
+  /** container marker */
   marker?: string;
+  /** validate whether this should be regarded as a container */
   validate?: (params: string, markup: string) => boolean;
-  render?: RenderRule;
+  /** open tag render function */
   openRender?: RenderRule;
+  /** close tag render function */
   closeRender?: RenderRule;
 }
 
@@ -47,7 +51,7 @@ export const container: PluginWithOptions<MarkdownItContainerOptions> = (
     marker = ":",
     validate = (params: string): boolean =>
       params.trim().split(" ", 2)[0] === name,
-    render = (
+    openRender = (
       tokens: Token[],
       index: number,
       options: Options,
@@ -55,12 +59,17 @@ export const container: PluginWithOptions<MarkdownItContainerOptions> = (
       slf: Renderer
     ): string => {
       // add a class to the opening tag
-      if (tokens[index].nesting === 1) tokens[index].attrJoin("class", name);
+      tokens[index].attrJoin("class", name);
 
       return slf.renderToken(tokens, index, options);
     },
-    openRender,
-    closeRender,
+    closeRender = (
+      tokens: Token[],
+      index: number,
+      options: Options,
+      _env: MarkdownEnv,
+      slf: Renderer
+    ): string => slf.renderToken(tokens, index, options),
   } = { name: "" }
 ) => {
   const MIN_MARKER_NUM = 3;
@@ -177,6 +186,6 @@ export const container: PluginWithOptions<MarkdownItContainerOptions> = (
   md.block.ruler.before("fence", `container_${name}`, container, {
     alt: ["paragraph", "reference", "blockquote", "list"],
   });
-  md.renderer.rules[`container_${name}_open`] = openRender || render;
-  md.renderer.rules[`container_${name}_close`] = closeRender || render;
+  md.renderer.rules[`container_${name}_open`] = openRender;
+  md.renderer.rules[`container_${name}_close`] = closeRender;
 };

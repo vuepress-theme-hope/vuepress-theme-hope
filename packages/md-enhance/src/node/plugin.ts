@@ -9,11 +9,12 @@ import {
 import { logger } from "./utils";
 
 import { checkLinks, getCheckLinksStatus } from "./checkLink";
+import { covertOptions, legacyCodeDemo, legacyCodeGroup } from "./compact";
 import {
   CODE_DEMO_DEFAULT_SETTING,
+  align,
   chart,
   codeTabs,
-  container,
   echarts,
   flowchart,
   footnote,
@@ -26,13 +27,13 @@ import {
   normalDemo,
   presentation,
   reactDemo,
+  stylize,
   sub,
   sup,
   tabs,
   tasklist,
   vPre,
   vueDemo,
-  stylize,
 } from "./markdown-it";
 import { prepareConfigFile, prepareRevealPluginFile } from "./prepare";
 import { usePlugins } from "./usePlugins";
@@ -43,8 +44,16 @@ import type { KatexOptions } from "katex";
 import type { MarkdownEnhanceOptions } from "../shared";
 
 export const mdEnhancePlugin =
-  (options: MarkdownEnhanceOptions): PluginFunction =>
+  (
+    options: MarkdownEnhanceOptions = { gfm: true },
+    legacy = false
+  ): PluginFunction =>
   (app) => {
+    // TODO: Remove it in v2 stable
+    if (legacy)
+      covertOptions(
+        options as MarkdownEnhanceOptions & Record<string, unknown>
+      );
     if (app.env.isDebug) logger.info(`Options: ${options.toString()}`);
 
     const getStatus = (
@@ -146,53 +155,57 @@ export const mdEnhancePlugin =
         }
       },
 
-      extendsMarkdown: (markdownIt): void => {
-        if (getStatus("gfm")) markdownIt.options.linkify = true;
-        if (getStatus("lazyLoad")) markdownIt.use(lazyLoad);
+      extendsMarkdown: (md): void => {
+        if (getStatus("gfm")) md.options.linkify = true;
+
+        if (getStatus("align")) md.use(align);
+        if (getStatus("lazyLoad")) md.use(lazyLoad);
         if (imageMarkEnable)
-          markdownIt.use(
+          md.use(
             imageMark,
             typeof options.imageMark === "object" ? options.imageMark : {}
           );
 
-        if (getStatus("codetabs")) markdownIt.use(codeTabs);
-        if (getStatus("tabs")) markdownIt.use(tabs);
+        if (getStatus("codetabs")) {
+          md.use(codeTabs);
+          // TODO: Remove it in v2 stable
+          if (legacy) md.use(legacyCodeGroup);
+        }
+        if (getStatus("tabs")) md.use(tabs);
 
-        if (getStatus("sup")) markdownIt.use(sup);
-        if (getStatus("sub")) markdownIt.use(sub);
-        if (footnoteEnable) markdownIt.use(footnote);
-        if (flowchartEnable) markdownIt.use(flowchart);
-        if (getStatus("mark")) markdownIt.use(mark);
+        if (getStatus("sup")) md.use(sup);
+        if (getStatus("sub")) md.use(sub);
+        if (footnoteEnable) md.use(footnote);
+        if (flowchartEnable) md.use(flowchart);
+        if (getStatus("mark")) md.use(mark);
         if (tasklistEnable)
-          markdownIt.use(tasklist, [
+          md.use(tasklist, [
             typeof options.tasklist === "object" ? options.tasklist : {},
           ]);
         if (getStatus("include"))
-          markdownIt.use(include, [
+          md.use(include, [
             typeof options.include === "function" ? options.include : undefined,
           ]);
-        if (getStatus("align")) {
-          ["left", "center", "right", "justify"].forEach((name) =>
-            markdownIt.use((md) =>
-              container(md, {
-                name,
-                openRender: () => `<div class="align-${name}">`,
-              })
-            )
-          );
-        }
-        if (chartEnable) markdownIt.use(chart);
-        if (echartsEnable) markdownIt.use(echarts);
+
+        if (chartEnable) md.use(chart);
+        if (echartsEnable) md.use(echarts);
         if (getStatus("demo")) {
-          markdownIt.use(normalDemo);
-          markdownIt.use(vueDemo);
-          markdownIt.use(reactDemo);
+          md.use(normalDemo);
+          md.use(vueDemo);
+          md.use(reactDemo);
+          // TODO: Remove it in v2 stable
+          if (legacy) md.use(legacyCodeDemo);
         }
-        if (mermaidEnable) markdownIt.use(mermaid);
-        if (texEnable) markdownIt.use(katex, katexOptions);
-        if (presentationEnable) markdownIt.use(presentation);
-        if (getStatus("vpre")) markdownIt.use(vPre);
-        if (getStatus("stylize")) markdownIt.use(stylize, options.stylize);
+        if (mermaidEnable) md.use(mermaid);
+        if (texEnable) md.use(katex, katexOptions);
+        if (presentationEnable) md.use(presentation);
+        if (
+          getStatus("vpre") ||
+          // TODO: Remove it in v2 stable
+          legacy
+        )
+          md.use(vPre);
+        if (getStatus("stylize")) md.use(stylize, options.stylize);
       },
 
       extendsPage: (page, app): void => {
@@ -209,6 +222,6 @@ export const mdEnhancePlugin =
         await prepareRevealPluginFile(app, revealPlugins);
       },
 
-      clientConfigFile: (app) => prepareConfigFile(app, options),
+      clientConfigFile: (app) => prepareConfigFile(app, options, legacy),
     };
   };

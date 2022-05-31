@@ -8,7 +8,8 @@ const CLIENT_FOLDER = ensureEndingSlash(path.resolve(__dirname, "../client"));
 
 export const prepareConfigFile = async (
   app: App,
-  options: MarkdownEnhanceOptions
+  options: MarkdownEnhanceOptions,
+  legacy = false
 ): Promise<string> => {
   let configImport = "";
   let enhance = "";
@@ -38,6 +39,13 @@ export const prepareConfigFile = async (
   if (getStatus("codetabs")) {
     configImport += `import CodeTabs from "${CLIENT_FOLDER}components/CodeTabs";\n`;
     enhance += `app.component("CodeTabs", CodeTabs);\n`;
+
+    // TODO: Remove it in v2 stable
+    if (legacy) {
+      configImport += `import { CodeGroup, CodeGroupItem } from "${CLIENT_FOLDER}compact";\n`;
+      enhance += `app.component("CodeGroup", CodeGroup);\n`;
+      enhance += `app.component("CodeGroupItem", CodeGroupItem);\n`;
+    }
   }
 
   if (getStatus("flowchart")) {
@@ -54,9 +62,6 @@ export const prepareConfigFile = async (
     configImport += `import Presentation from "${CLIENT_FOLDER}components/Presentation";\n`;
     enhance += `app.component("Presentation", Presentation);\n`;
   }
-
-  if (getStatus("align"))
-    configImport += `import "${CLIENT_FOLDER}styles/align.scss";\n`;
 
   if (getStatus("container"))
     configImport += `import "${CLIENT_FOLDER}styles/container/index.scss";\n`;

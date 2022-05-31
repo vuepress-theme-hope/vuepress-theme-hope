@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { path } from "@vuepress/utils";
-import MarkdownIt = require("markdown-it");
-import MarkdownContainer = require("markdown-it-container");
+import MarkdownIt from "markdown-it";
+import MarkdownContainer from "markdown-it-container";
 import { include } from "../../src/node/markdown-it/include";
 
 import type { MarkdownEnv } from "@vuepress/markdown";

@@ -1,12 +1,5 @@
-/**
- * 覆盖 inline rule, 包括
- *
- * - 对渲染标签增加属性
- * - 对文本进行替换
- */
-
 import type { MarkdownEnv } from "@vuepress/markdown";
-import { PageFrontmatter } from "@vuepress/shared";
+import type { PageFrontmatter } from "@vuepress/shared";
 import type { PluginWithOptions } from "markdown-it";
 import type { default as Token } from "markdown-it/lib/token";
 import type { StylizeOptions } from "../../shared";

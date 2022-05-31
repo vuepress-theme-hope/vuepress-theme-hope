@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from "vitest";
-import MarkdownIt = require("markdown-it");
+import MarkdownIt from "markdown-it";
 import { katex } from "../../src/node/markdown-it/katex";
 
 const markdownIt = MarkdownIt({ linkify: true }).use(katex);

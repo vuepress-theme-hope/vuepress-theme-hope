@@ -1,5 +1,12 @@
 import lightGallery from "lightgallery";
-import { defineComponent, h, onBeforeMount, onMounted, ref, watch } from "vue";
+import {
+  defineComponent,
+  h,
+  onBeforeUnmount,
+  onMounted,
+  ref,
+  watch,
+} from "vue";
 import { useRoute } from "vue-router";
 
 import type { LightGallery } from "lightgallery/lightgallery";
@@ -128,7 +135,7 @@ export default defineComponent({
 
     onMounted(() => initLightGallery());
 
-    onBeforeMount(() => instance?.destroy());
+    onBeforeUnmount(() => instance?.destroy());
 
     return (): VNode =>
       h(

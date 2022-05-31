@@ -1,0 +1,47 @@
+// Vitest Snapshot v1
+
+exports[`flowchart > Shoud not render 1`] = `
+"<p>st=&gt;start: Start|past:&gt;<a href=\\"http://www.google.com\\">http://www.google.com</a>[blank]
+e=&gt;end: End|future:&gt;<a href=\\"http://www.google.com\\">http://www.google.com</a>
+op1=&gt;operation: My Operation|past
+op2=&gt;operation: Stuff|current
+sub1=&gt;subroutine: My Subroutine|invalid
+cond=&gt;condition: Yes
+or No?|approved:&gt;<a href=\\"http://www.google.com\\">http://www.google.com</a>
+c2=&gt;condition: Good idea|rejected
+io=&gt;inputoutput: catch something...|future</p>
+<p>st-&gt;op1(right)-&gt;cond
+cond(yes, right)-&gt;c2
+cond(no)-&gt;sub1(left)-&gt;op1
+c2(yes)-&gt;io-&gt;e
+c2(no)-&gt;op2-&gt;e</p>
+"
+`;
+
+exports[`flowchart > Shoud not render 2`] = `
+"<pre><code class=\\"language-md\\">st=&gt;start: Start|past:&gt;http://www.google.com[blank]
+e=&gt;end: End|future:&gt;http://www.google.com
+op1=&gt;operation: My Operation|past
+op2=&gt;operation: Stuff|current
+sub1=&gt;subroutine: My Subroutine|invalid
+cond=&gt;condition: Yes
+or No?|approved:&gt;http://www.google.com
+c2=&gt;condition: Good idea|rejected
+io=&gt;inputoutput: catch something...|future
+
+st-&gt;op1(right)-&gt;cond
+cond(yes, right)-&gt;c2
+cond(no)-&gt;sub1(left)-&gt;op1
+c2(yes)-&gt;io-&gt;e
+c2(no)-&gt;op2-&gt;e
+</code></pre>
+"
+`;
+
+exports[`flowchart > Should handle preset 1`] = `"<FlowChart id=\\"flowchart-1a96284a\\" code=\\"st%3D%3Estart%3A%20Start%7Cpast%3A%3Ehttp%3A%2F%2Fwww.google.com%5Bblank%5D%0Ae%3D%3Eend%3A%20End%7Cfuture%3A%3Ehttp%3A%2F%2Fwww.google.com%0Aop1%3D%3Eoperation%3A%20My%20Operation%7Cpast%0Aop2%3D%3Eoperation%3A%20Stuff%7Ccurrent%0Asub1%3D%3Esubroutine%3A%20My%20Subroutine%7Cinvalid%0Acond%3D%3Econdition%3A%20Yes%0Aor%20No%3F%7Capproved%3A%3Ehttp%3A%2F%2Fwww.google.com%0Ac2%3D%3Econdition%3A%20Good%20idea%7Crejected%0Aio%3D%3Einputoutput%3A%20catch%20something...%7Cfuture%0A%0Ast-%3Eop1(right)-%3Econd%0Acond(yes%2C%20right)-%3Ec2%0Acond(no)-%3Esub1(left)-%3Eop1%0Ac2(yes)-%3Eio-%3Ee%0Ac2(no)-%3Eop2-%3Ee%0A\\" preset=\\"ant\\"></FlowChart>"`;
+
+exports[`flowchart > Should handle preset 2`] = `"<FlowChart id=\\"flowchart-1a96284a\\" code=\\"st%3D%3Estart%3A%20Start%7Cpast%3A%3Ehttp%3A%2F%2Fwww.google.com%5Bblank%5D%0Ae%3D%3Eend%3A%20End%7Cfuture%3A%3Ehttp%3A%2F%2Fwww.google.com%0Aop1%3D%3Eoperation%3A%20My%20Operation%7Cpast%0Aop2%3D%3Eoperation%3A%20Stuff%7Ccurrent%0Asub1%3D%3Esubroutine%3A%20My%20Subroutine%7Cinvalid%0Acond%3D%3Econdition%3A%20Yes%0Aor%20No%3F%7Capproved%3A%3Ehttp%3A%2F%2Fwww.google.com%0Ac2%3D%3Econdition%3A%20Good%20idea%7Crejected%0Aio%3D%3Einputoutput%3A%20catch%20something...%7Cfuture%0A%0Ast-%3Eop1(right)-%3Econd%0Acond(yes%2C%20right)-%3Ec2%0Acond(no)-%3Esub1(left)-%3Eop1%0Ac2(yes)-%3Eio-%3Ee%0Ac2(no)-%3Eop2-%3Ee%0A\\" preset=\\"ant\\"></FlowChart>"`;
+
+exports[`flowchart > Should render \`\`\`flow 1`] = `"<FlowChart id=\\"flowchart-1a96284a\\" code=\\"st%3D%3Estart%3A%20Start%7Cpast%3A%3Ehttp%3A%2F%2Fwww.google.com%5Bblank%5D%0Ae%3D%3Eend%3A%20End%7Cfuture%3A%3Ehttp%3A%2F%2Fwww.google.com%0Aop1%3D%3Eoperation%3A%20My%20Operation%7Cpast%0Aop2%3D%3Eoperation%3A%20Stuff%7Ccurrent%0Asub1%3D%3Esubroutine%3A%20My%20Subroutine%7Cinvalid%0Acond%3D%3Econdition%3A%20Yes%0Aor%20No%3F%7Capproved%3A%3Ehttp%3A%2F%2Fwww.google.com%0Ac2%3D%3Econdition%3A%20Good%20idea%7Crejected%0Aio%3D%3Einputoutput%3A%20catch%20something...%7Cfuture%0A%0Ast-%3Eop1(right)-%3Econd%0Acond(yes%2C%20right)-%3Ec2%0Acond(no)-%3Esub1(left)-%3Eop1%0Ac2(yes)-%3Eio-%3Ee%0Ac2(no)-%3Eop2-%3Ee%0A\\" preset=\\"vue\\"></FlowChart>"`;
+
+exports[`flowchart > Should render \`\`\`flowchart 1`] = `"<FlowChart id=\\"flowchart-1a96284a\\" code=\\"st%3D%3Estart%3A%20Start%7Cpast%3A%3Ehttp%3A%2F%2Fwww.google.com%5Bblank%5D%0Ae%3D%3Eend%3A%20End%7Cfuture%3A%3Ehttp%3A%2F%2Fwww.google.com%0Aop1%3D%3Eoperation%3A%20My%20Operation%7Cpast%0Aop2%3D%3Eoperation%3A%20Stuff%7Ccurrent%0Asub1%3D%3Esubroutine%3A%20My%20Subroutine%7Cinvalid%0Acond%3D%3Econdition%3A%20Yes%0Aor%20No%3F%7Capproved%3A%3Ehttp%3A%2F%2Fwww.google.com%0Ac2%3D%3Econdition%3A%20Good%20idea%7Crejected%0Aio%3D%3Einputoutput%3A%20catch%20something...%7Cfuture%0A%0Ast-%3Eop1(right)-%3Econd%0Acond(yes%2C%20right)-%3Ec2%0Acond(no)-%3Esub1(left)-%3Eop1%0Ac2(yes)-%3Eio-%3Ee%0Ac2(no)-%3Eop2-%3Ee%0A\\" preset=\\"vue\\"></FlowChart>"`;

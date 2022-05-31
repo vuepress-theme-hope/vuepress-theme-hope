@@ -3,7 +3,7 @@ import { path } from "@vuepress/utils";
 import { resolveAlias } from "./alias";
 import { updateBundlerConfig } from "./bundler";
 import { extendsPage } from "./extendsPage";
-import { checkStyle, covertFrontmatter, covertThemeConfig } from "./migrate";
+import { checkStyle, covertFrontmatter, covertThemeConfig } from "./compact";
 import { getLayoutConfig } from "./layout";
 import { getPluginConfig, usePlugin } from "./plugins";
 import {
@@ -92,7 +92,8 @@ export const hopeTheme =
           hostname,
           iconAssets,
           iconPrefix,
-        }
+        },
+        legacy
       ),
 
       layouts: getLayoutConfig(app, plugins),

@@ -38,7 +38,7 @@ Blog type config, see [Blog Type Config](#blog-type-config)
 ### slugify
 
 - Type: `(name: string) => string`
-- Default: `(name) => name.replace(/ _/g, '-').toLowerCase()`
+- Default: `(name) => name.replace(/ _/g, '-').replace(/[:?*|\\/<>]/g, "").toLowerCase()`
 
 Slugify function, used to convert key name which they are register in routes.
 
