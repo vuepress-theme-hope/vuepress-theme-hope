@@ -428,7 +428,7 @@ importers:
 
   docs/blog2:
     specifiers:
-      '@types/three': 0.140.0
+      '@types/three': 0.141.0
       '@vuepress/cli': 2.0.0-beta.46
       '@vuepress/client': 2.0.0-beta.46
       '@vuepress/plugin-docsearch': 2.0.0-beta.46
@@ -441,7 +441,7 @@ importers:
       vuepress-vite: 2.0.0-beta.46
       vuepress-webpack: 2.0.0-beta.46
     dependencies:
-      '@types/three': 0.140.0
+      '@types/three': 0.141.0
       '@vuepress/cli': 2.0.0-beta.46
       '@vuepress/client': 2.0.0-beta.46
       '@vuepress/plugin-docsearch': 2.0.0-beta.46
@@ -456,7 +456,7 @@ importers:
 
   docs/comment2:
     specifiers:
-      '@types/three': 0.140.0
+      '@types/three': 0.141.0
       '@vuepress/cli': 2.0.0-beta.46
       '@vuepress/client': 2.0.0-beta.46
       '@vuepress/plugin-docsearch': 2.0.0-beta.46
@@ -470,7 +470,7 @@ importers:
       vuepress-vite: 2.0.0-beta.46
       vuepress-webpack: 2.0.0-beta.46
     dependencies:
-      '@types/three': 0.140.0
+      '@types/three': 0.141.0
       '@vuepress/cli': 2.0.0-beta.46
       '@vuepress/client': 2.0.0-beta.46
       '@vuepress/plugin-docsearch': 2.0.0-beta.46
@@ -514,7 +514,7 @@ importers:
 
   docs/copy-code2:
     specifiers:
-      '@types/three': 0.140.0
+      '@types/three': 0.141.0
       '@vuepress/cli': 2.0.0-beta.46
       '@vuepress/client': 2.0.0-beta.46
       '@vuepress/plugin-docsearch': 2.0.0-beta.46
@@ -528,7 +528,7 @@ importers:
       vuepress-vite: 2.0.0-beta.46
       vuepress-webpack: 2.0.0-beta.46
     dependencies:
-      '@types/three': 0.140.0
+      '@types/three': 0.141.0
       '@vuepress/cli': 2.0.0-beta.46
       '@vuepress/client': 2.0.0-beta.46
       '@vuepress/plugin-docsearch': 2.0.0-beta.46
@@ -544,7 +544,7 @@ importers:
 
   docs/copyright2:
     specifiers:
-      '@types/three': 0.140.0
+      '@types/three': 0.141.0
       '@vuepress/cli': 2.0.0-beta.46
       '@vuepress/client': 2.0.0-beta.46
       '@vuepress/plugin-docsearch': 2.0.0-beta.46
@@ -557,7 +557,7 @@ importers:
       vuepress-vite: 2.0.0-beta.46
       vuepress-webpack: 2.0.0-beta.46
     dependencies:
-      '@types/three': 0.140.0
+      '@types/three': 0.141.0
       '@vuepress/cli': 2.0.0-beta.46
       '@vuepress/client': 2.0.0-beta.46
       '@vuepress/plugin-docsearch': 2.0.0-beta.46
@@ -572,7 +572,7 @@ importers:
 
   docs/feed2:
     specifiers:
-      '@types/three': 0.140.0
+      '@types/three': 0.141.0
       '@vuepress/cli': 2.0.0-beta.46
       '@vuepress/client': 2.0.0-beta.46
       '@vuepress/plugin-docsearch': 2.0.0-beta.46
@@ -586,7 +586,7 @@ importers:
       vuepress-vite: 2.0.0-beta.46
       vuepress-webpack: 2.0.0-beta.46
     dependencies:
-      '@types/three': 0.140.0
+      '@types/three': 0.141.0
       '@vuepress/cli': 2.0.0-beta.46
       '@vuepress/client': 2.0.0-beta.46
       '@vuepress/plugin-docsearch': 2.0.0-beta.46
@@ -602,7 +602,7 @@ importers:
 
   docs/lightgallery:
     specifiers:
-      '@types/three': 0.140.0
+      '@types/three': 0.141.0
       '@vuepress/cli': 2.0.0-beta.46
       '@vuepress/client': 2.0.0-beta.46
       '@vuepress/plugin-docsearch': 2.0.0-beta.46
@@ -616,7 +616,7 @@ importers:
       vuepress-vite: 2.0.0-beta.46
       vuepress-webpack: 2.0.0-beta.46
     dependencies:
-      '@types/three': 0.140.0
+      '@types/three': 0.141.0
       '@vuepress/cli': 2.0.0-beta.46
       '@vuepress/client': 2.0.0-beta.46
       '@vuepress/plugin-docsearch': 2.0.0-beta.46
@@ -633,7 +633,7 @@ importers:
   docs/md-enhance:
     specifiers:
       '@types/katex': 0.14.0
-      '@types/three': 0.140.0
+      '@types/three': 0.141.0
       '@vuepress/cli': 2.0.0-beta.46
       '@vuepress/client': 2.0.0-beta.46
       '@vuepress/plugin-docsearch': 2.0.0-beta.46
@@ -649,7 +649,7 @@ importers:
       vuepress-webpack: 2.0.0-beta.46
     dependencies:
       '@types/katex': 0.14.0
-      '@types/three': 0.140.0
+      '@types/three': 0.141.0
       '@vuepress/cli': 2.0.0-beta.46
       '@vuepress/client': 2.0.0-beta.46
       '@vuepress/plugin-docsearch': 2.0.0-beta.46
@@ -666,7 +666,7 @@ importers:
 
   docs/photo-swipe:
     specifiers:
-      '@types/three': 0.140.0
+      '@types/three': 0.141.0
       '@vuepress/cli': 2.0.0-beta.46
       '@vuepress/client': 2.0.0-beta.46
       '@vuepress/plugin-docsearch': 2.0.0-beta.46
@@ -680,7 +680,7 @@ importers:
       vuepress-vite: 2.0.0-beta.46
       vuepress-webpack: 2.0.0-beta.46
     dependencies:
-      '@types/three': 0.140.0
+      '@types/three': 0.141.0
       '@vuepress/cli': 2.0.0-beta.46
       '@vuepress/client': 2.0.0-beta.46
       '@vuepress/plugin-docsearch': 2.0.0-beta.46
@@ -696,7 +696,7 @@ importers:
 
   docs/pwa2:
     specifiers:
-      '@types/three': 0.140.0
+      '@types/three': 0.141.0
       '@vuepress/cli': 2.0.0-beta.46
       '@vuepress/client': 2.0.0-beta.46
       '@vuepress/plugin-docsearch': 2.0.0-beta.46
@@ -710,7 +710,7 @@ importers:
       vuepress-vite: 2.0.0-beta.46
       vuepress-webpack: 2.0.0-beta.46
     dependencies:
-      '@types/three': 0.140.0
+      '@types/three': 0.141.0
       '@vuepress/cli': 2.0.0-beta.46
       '@vuepress/client': 2.0.0-beta.46
       '@vuepress/plugin-docsearch': 2.0.0-beta.46
@@ -726,7 +726,7 @@ importers:
 
   docs/reading-time2:
     specifiers:
-      '@types/three': 0.140.0
+      '@types/three': 0.141.0
       '@vuepress/cli': 2.0.0-beta.46
       '@vuepress/client': 2.0.0-beta.46
       '@vuepress/plugin-docsearch': 2.0.0-beta.46
@@ -740,7 +740,7 @@ importers:
       vuepress-vite: 2.0.0-beta.46
       vuepress-webpack: 2.0.0-beta.46
     dependencies:
-      '@types/three': 0.140.0
+      '@types/three': 0.141.0
       '@vuepress/cli': 2.0.0-beta.46
       '@vuepress/client': 2.0.0-beta.46
       '@vuepress/plugin-docsearch': 2.0.0-beta.46
@@ -756,7 +756,7 @@ importers:
 
   docs/redirect2:
     specifiers:
-      '@types/three': 0.140.0
+      '@types/three': 0.141.0
       '@vuepress/cli': 2.0.0-beta.46
       '@vuepress/client': 2.0.0-beta.46
       '@vuepress/plugin-docsearch': 2.0.0-beta.46
@@ -769,7 +769,7 @@ importers:
       vuepress-vite: 2.0.0-beta.46
       vuepress-webpack: 2.0.0-beta.46
     dependencies:
-      '@types/three': 0.140.0
+      '@types/three': 0.141.0
       '@vuepress/cli': 2.0.0-beta.46
       '@vuepress/client': 2.0.0-beta.46
       '@vuepress/plugin-docsearch': 2.0.0-beta.46
@@ -784,7 +784,7 @@ importers:
 
   docs/sass-palette:
     specifiers:
-      '@types/three': 0.140.0
+      '@types/three': 0.141.0
       '@vuepress/cli': 2.0.0-beta.46
       '@vuepress/client': 2.0.0-beta.46
       '@vuepress/plugin-docsearch': 2.0.0-beta.46
@@ -797,7 +797,7 @@ importers:
       vuepress-vite: 2.0.0-beta.46
       vuepress-webpack: 2.0.0-beta.46
     dependencies:
-      '@types/three': 0.140.0
+      '@types/three': 0.141.0
       '@vuepress/cli': 2.0.0-beta.46
       '@vuepress/client': 2.0.0-beta.46
       '@vuepress/plugin-docsearch': 2.0.0-beta.46
@@ -812,7 +812,7 @@ importers:
 
   docs/seo2:
     specifiers:
-      '@types/three': 0.140.0
+      '@types/three': 0.141.0
       '@vuepress/cli': 2.0.0-beta.46
       '@vuepress/client': 2.0.0-beta.46
       '@vuepress/plugin-docsearch': 2.0.0-beta.46
@@ -826,7 +826,7 @@ importers:
       vuepress-vite: 2.0.0-beta.46
       vuepress-webpack: 2.0.0-beta.46
     dependencies:
-      '@types/three': 0.140.0
+      '@types/three': 0.141.0
       '@vuepress/cli': 2.0.0-beta.46
       '@vuepress/client': 2.0.0-beta.46
       '@vuepress/plugin-docsearch': 2.0.0-beta.46
@@ -842,7 +842,7 @@ importers:
 
   docs/sitemap2:
     specifiers:
-      '@types/three': 0.140.0
+      '@types/three': 0.141.0
       '@vuepress/cli': 2.0.0-beta.46
       '@vuepress/client': 2.0.0-beta.46
       '@vuepress/plugin-docsearch': 2.0.0-beta.46
@@ -856,7 +856,7 @@ importers:
       vuepress-vite: 2.0.0-beta.46
       vuepress-webpack: 2.0.0-beta.46
     dependencies:
-      '@types/three': 0.140.0
+      '@types/three': 0.141.0
       '@vuepress/cli': 2.0.0-beta.46
       '@vuepress/client': 2.0.0-beta.46
       '@vuepress/plugin-docsearch': 2.0.0-beta.46
@@ -873,7 +873,7 @@ importers:
   docs/theme:
     specifiers:
       '@types/katex': 0.14.0
-      '@types/three': 0.140.0
+      '@types/three': 0.141.0
       '@vuepress/cli': 2.0.0-beta.46
       '@vuepress/client': 2.0.0-beta.46
       '@vuepress/plugin-docsearch': 2.0.0-beta.46
@@ -889,7 +889,7 @@ importers:
       vuepress-webpack: 2.0.0-beta.46
     dependencies:
       '@types/katex': 0.14.0
-      '@types/three': 0.140.0
+      '@types/three': 0.141.0
       '@vuepress/cli': 2.0.0-beta.46
       '@vuepress/client': 2.0.0-beta.46
       '@vuepress/plugin-docsearch': 2.0.0-beta.46
@@ -3350,8 +3350,10 @@ packages:
     dependencies:
       '@types/node': 17.0.36
 
-  /@types/three/0.140.0:
-    resolution: {integrity: sha512-YPJLSIY6uKUOp1k6BZYDq5GtEIdhfeK04UCbc9IPAVbdn/RNjkfrbnyd7smrsNkJhc0IFASLpd3AAYgwqgXKVQ==}
+  /@types/three/0.141.0:
+    resolution: {integrity: sha512-OJdKDgTPVBUgc+s74DYoy4aLznbFFC38Xm4ElmU1YwGNgR7GGFVvFCX7lpVgOsT6S1zSJtGdajTsOYE8/xY9nA==}
+    dependencies:
+      '@types/webxr': 0.4.0
     dev: false
 
   /@types/through/0.0.30:
@@ -3365,6 +3367,10 @@ packages:
 
   /@types/webpack-env/1.17.0:
     resolution: {integrity: sha512-eHSaNYEyxRA5IAG0Ym/yCyf86niZUIF/TpWKofQI/CVfh5HsMEUyfE2kwFxha4ow0s5g0LfISQxpDKjbRDrizw==}
+
+  /@types/webxr/0.4.0:
+    resolution: {integrity: sha512-LQvrACV3Pj17GpkwHwXuTd733gfY+D7b9mKdrTmLdO7vo7P/o6209Qqtk63y/FCv/lspdmi0pWz6Qe/ull9kQg==}
+    dev: false
 
   /@types/ws/8.5.3:
     resolution: {integrity: sha512-6YOoWjruKj1uLf3INHH7D3qTXwFfEsg1kf3c0uDdSBJwfa/llkwIjrAGV7j7mVgGNbzTQ3HiHKKDXl6bJPD97w==}
