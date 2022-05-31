@@ -270,3 +270,9 @@ $$
 设置它<span style="color:red">没有</span>任何效果，请<span style="color:red">不要</span>这样使用
 
 - [查看详情](stylize.md)
+
+### Playground
+
+你可以直接在 Markdown 中插入 Vue playground。
+
+- [View Detail](playground.md)

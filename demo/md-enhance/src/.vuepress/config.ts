@@ -40,6 +40,7 @@ export default defineUserConfig({
         "/demo/tabs",
         "/demo/tasklist",
         "/demo/tex",
+        "/demo/playground",
       ],
     },
 

@@ -7,6 +7,7 @@ import type { MarkdownEnhanceLocaleData } from "./locales";
 import type { PresentationOptions } from "./presentation";
 import type { TaskListOptions } from "./tasklist";
 import type { StylizeOptions } from "./stylize";
+import type { PlaygroundOptions } from "./playground";
 
 /**
  * md-enhance plugin configuration
@@ -232,12 +233,21 @@ export interface MarkdownEnhanceOptions {
    */
   presentation?: PresentationOptions | boolean;
 
-  /**
+  /*
    * Keyword enhancement
    *
    * 关键词显示增强选项
    */
   stylize?: StylizeOptions;
+
+  /**
+   * Whether to enable playground support
+   *
+   * 是否启用 playground 支持
+   *
+   * @default false
+   */
+  playground?: PlaygroundOptions | boolean;
 
   /**
    * Whether to enable all features.

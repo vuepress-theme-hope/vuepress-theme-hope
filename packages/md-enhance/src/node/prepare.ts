@@ -77,6 +77,11 @@ export const prepareConfigFile = async (
     enhance += `app.component("Tabs", Tabs);\n`;
   }
 
+  if (getStatus("playground")) {
+    configImport += `import Playground from "${CLIENT_FOLDER}components/playground";\n`;
+    enhance += `app.component("Playground", Playground);\n`;
+  }
+
   if (getStatus("tasklist"))
     configImport += `import "${CLIENT_FOLDER}styles/tasklist.scss";\n`;
 
