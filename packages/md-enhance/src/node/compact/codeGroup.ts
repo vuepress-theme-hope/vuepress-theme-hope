@@ -4,9 +4,7 @@ import { logger } from "../utils";
 import type { MarkdownEnv } from "@vuepress/markdown";
 import type { PluginSimple } from "markdown-it";
 
-/**
- * @deprecated
- */
+/** @deprecated */
 export const legacyCodeGroup: PluginSimple = (md) => {
   md.use(container, {
     name: "code-group",

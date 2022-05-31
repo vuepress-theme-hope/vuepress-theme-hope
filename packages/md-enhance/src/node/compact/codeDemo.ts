@@ -4,9 +4,7 @@ import { container } from "../markdown-it";
 import type { PluginSimple } from "markdown-it";
 import type { default as Token } from "markdown-it/lib/token";
 
-/**
- * @deprecated
- */
+/** @deprecated */
 export const legacyCodeDemo: PluginSimple = (md) => {
   md.use(container, {
     name: "demo",
