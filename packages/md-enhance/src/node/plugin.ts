@@ -47,6 +47,7 @@ import { PLAYGROUND_DEFAULT_SETTING } from "../shared";
 import type { PluginFunction } from "@vuepress/core";
 import type { KatexOptions } from "katex";
 import type { MarkdownEnhanceOptions } from "../shared";
+import { legacyFlowchart } from "./compact/flowchart";
 
 export const mdEnhancePlugin =
   (
@@ -191,7 +192,11 @@ export const mdEnhancePlugin =
         if (getStatus("sup")) md.use(sup);
         if (getStatus("sub")) md.use(sub);
         if (footnoteEnable) md.use(footnote);
-        if (flowchartEnable) md.use(flowchart);
+        if (flowchartEnable) {
+          md.use(flowchart);
+          // TODO: Remove it in v2 stable
+          md.use(legacyFlowchart);
+        }
         if (getStatus("mark")) md.use(mark);
         if (tasklistEnable)
           md.use(tasklist, [
