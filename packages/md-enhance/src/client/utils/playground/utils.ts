@@ -22,7 +22,7 @@ export const DEFAULT_PLAYGROUND_SETTINGS: PlaygroundOptions = {
   internal: {
     defaultImportsMap: "import-map.json",
     autoResize: true,
-    showCode: true,
+    showCode: false,
     showCompileOutput: false,
     showImportMap: true,
     clearConsole: false,
