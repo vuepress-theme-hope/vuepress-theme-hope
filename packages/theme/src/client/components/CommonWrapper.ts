@@ -5,7 +5,7 @@ import {
   computed,
   defineComponent,
   h,
-  onBeforeMount,
+  onBeforeUnmount,
   onMounted,
   ref,
   resolveComponent,
@@ -153,7 +153,7 @@ export default defineComponent({
       });
     });
 
-    onBeforeMount(() => {
+    onBeforeUnmount(() => {
       unregisterRouterHook();
     });
 

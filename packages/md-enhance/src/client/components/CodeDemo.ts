@@ -49,10 +49,9 @@ export default defineComponent({
 
   setup(props, { slots }) {
     const isExpanded = ref(false);
-    // const codeWrapper = ref<HTMLDivElement | null>(null);
     const demoWrapper = ref<HTMLDivElement | null>(null);
     const codeContainer = ref<HTMLDivElement | null>(null);
-    const height = ref("0px");
+    const height = ref("0");
     const loaded = ref(false);
 
     const config = computed(
@@ -149,7 +148,7 @@ export default defineComponent({
             ? h(
                 "form",
                 {
-                  className: "code-demo-jsfiddle",
+                  class: "code-demo-jsfiddle",
                   target: "_blank",
                   action: "https://jsfiddle.net/api/post/library/pure/",
                   method: "post",
@@ -181,7 +180,7 @@ export default defineComponent({
                   }),
                   h("button", {
                     type: "submit",
-                    className: "jsfiddle-button",
+                    class: "jsfiddle-button",
                     innerHTML: JSFIDDLE_SVG,
                     "aria-label": "JSFiddle",
                     "data-balloon-pos": "up",
@@ -194,7 +193,7 @@ export default defineComponent({
             ? h(
                 "form",
                 {
-                  className: "code-demo-codepen",
+                  class: "code-demo-codepen",
                   target: "_blank",
                   action: "https://codepen.io/pen/define",
                   method: "post",
@@ -232,7 +231,7 @@ export default defineComponent({
                   h("button", {
                     type: "submit",
                     innerHTML: CODEPEN_SVG,
-                    className: "codepen-button",
+                    class: "codepen-button",
                     "aria-label": "Codepen",
                     "data-balloon-pos": "up",
                   }),

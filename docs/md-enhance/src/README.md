@@ -156,3 +156,21 @@ module.exports = {
 ## Migrating from V1
 
 For details, see [Migration Guide](./migration.md).
+
+## Advanced
+
+This plugin exports the following markdown-it plugin, and you can use them in other projects.
+
+- align
+- container
+- footnote
+- imageMark
+- include
+- katex
+- lazyload
+- mark
+- stylize
+- sub
+- sup
+- tasklist
+- uml

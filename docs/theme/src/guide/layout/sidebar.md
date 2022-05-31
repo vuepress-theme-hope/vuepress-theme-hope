@@ -700,13 +700,19 @@ interface SidebarDirInfo {
    */
 
   link?: boolean;
-
   /**
-   * Dir index
+   * Whether index current dir
    *
    * @default true
    */
-  index?: number | boolean;
+  index?: boolean;
+
+  /**
+   * Dir order in sidebar
+   *
+   * @default 0
+   */
+  order?: number | false;
 }
 ```
 

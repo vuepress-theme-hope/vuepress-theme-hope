@@ -1,0 +1,21 @@
+// Vitest Snapshot v1
+
+exports[`uml > shoud keep content as is 1`] = `
+"<div class=\\"uml\\" title=\\"\\">
+Text with **bold** and \`code\`.
+</div>"
+`;
+
+exports[`uml > shoud render with options 1`] = `
+"<Test class=\\"test\\" title=\\"\\">
+abc
+
+def
+</Test>"
+`;
+
+exports[`uml > shoud render without options 1`] = `
+"<div class=\\"uml\\" title=\\"\\">
+abc
+</div>"
+`;

@@ -6,6 +6,7 @@ import {
   useCustomDevServer,
 } from "vuepress-shared";
 
+import { covertOptions } from "./compact";
 import { getManifest, generateManifest } from "./generateManifest";
 import { generateServiceWorker } from "./generateServiceWorker";
 import { appendBase } from "./helper";
@@ -18,8 +19,10 @@ import type { PluginFunction } from "@vuepress/core";
 import type { PWAOptions } from "../shared";
 
 export const pwaPlugin =
-  (options: PWAOptions = {}): PluginFunction =>
+  (options: PWAOptions = {}, legacy = false): PluginFunction =>
   (app) => {
+    // TODO: Remove it in v2 stable
+    if (legacy) covertOptions(options as PWAOptions & Record<string, unknown>);
     if (app.env.isDebug) logger.info(`Options: ${options.toString()}`);
 
     const { base, shouldPrefetch = true } = app.options;

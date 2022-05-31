@@ -8,17 +8,14 @@ export const echarts: PluginSimple = (md) => {
   container(md, {
     name: "echarts",
 
-    render: (tokens, index) => {
-      const { nesting, info } = tokens[index];
-      const title = info
+    openRender: (tokens, index) => {
+      const title = tokens[index].info
         .trimStart()
         // 'echarts' length
         .slice(7)
         .trim();
 
       const key = `echarts-${hash(index)}`;
-
-      if (nesting === -1) return `</ECharts>`;
 
       let config = "{}";
       let configType = "";
@@ -49,5 +46,6 @@ export const echarts: PluginSimple = (md) => {
         title ? `title="${encodeURIComponent(title)}" ` : ""
       }type="${configType}">`;
     },
+    closeRender: () => `</ECharts>`,
   });
 };

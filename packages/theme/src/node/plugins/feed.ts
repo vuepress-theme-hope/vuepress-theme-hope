@@ -8,7 +8,8 @@ import type { HopeThemeConfig } from "../../shared";
 export const getFeedPlugin = (
   themeConfig: HopeThemeConfig,
   options?: Omit<FeedOptions, "hostname"> | false,
-  hostname?: string
+  hostname?: string,
+  legacy = false
 ): Plugin | null => {
   if (
     options === false ||
@@ -42,6 +43,7 @@ export const getFeedPlugin = (
         ],
       },
       options || {}
-    )
+    ),
+    legacy
   );
 };

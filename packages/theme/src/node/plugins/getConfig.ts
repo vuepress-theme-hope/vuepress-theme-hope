@@ -28,7 +28,8 @@ export const getPluginConfig = (
   options: Pick<
     HopeThemeOptions,
     "addThis" | "backToTop" | "hostname" | "iconAssets" | "iconPrefix"
-  >
+  >,
+  legacy = false
 ): PluginConfig => {
   const pluginConfig = [
     getComponentsPlugin(plugins.components, options),
@@ -43,10 +44,10 @@ export const getPluginConfig = (
     getCopyrightPlugin(themeData, plugins.copyright, options.hostname),
     // seo should work before feed
     getSEOPlugin(themeData, plugins, options.hostname),
-    getFeedPlugin(themeData, plugins.feed, options.hostname),
-    getMdEnhancePlugin(plugins.mdEnhance),
+    getFeedPlugin(themeData, plugins.feed, options.hostname, legacy),
+    getMdEnhancePlugin(plugins.mdEnhance, legacy),
     getPhotoSwipePlugin(plugins.photoSwipe),
-    getPWAPlugin(plugins.pwa),
+    getPWAPlugin(plugins.pwa, legacy),
     getSitemapPlugin(plugins.sitemap, options.hostname),
   ].filter((item) => item !== null) as PluginConfig;
 

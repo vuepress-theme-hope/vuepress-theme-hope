@@ -158,3 +158,21 @@ module.exports = {
 ## 从 V1 迁移
 
 详见 [迁移指南](./migration.md)。
+
+## 高级用法
+
+这个插件导出了以下 markdown-it 插件，你可以在其他项目中使用它们。
+
+- align
+- container
+- footnote
+- imageMark
+- include
+- katex
+- lazyload
+- mark
+- stylize
+- sub
+- sup
+- tasklist
+- uml

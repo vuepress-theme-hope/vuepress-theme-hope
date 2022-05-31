@@ -14,6 +14,11 @@ export default [
     ],
     copy: [["client/styles", "client"]],
   }),
+  ...rollupTypescript("client/compact/index", {
+    external: ["vue", /\.scss$/],
+    dtsExternal: [/\.scss$/],
+    copy: [["compact/styles", "compact"]],
+  }),
   ...rollupTypescript("client/components/ChartJS", {
     external: ["chart.js/auto", "vue", "vuepress-shared/lib/client", /\.scss$/],
     dtsExternal: [/\.scss$/],

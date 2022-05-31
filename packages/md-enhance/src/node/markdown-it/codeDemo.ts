@@ -23,11 +23,8 @@ const getPlugin =
   (md) =>
     container(md, {
       name,
-      render: (tokens: Token[], index: number): string => {
-        const { nesting, info } = tokens[index];
-        const title = info.trimStart().slice(name.length).trim();
-
-        if (nesting === -1) return `</CodeDemo>`;
+      openRender: (tokens: Token[], index: number): string => {
+        const title = tokens[index].info.trimStart().slice(name.length).trim();
 
         let config = "";
         const code: Record<string, string> = {};
@@ -51,6 +48,7 @@ const getPlugin =
         )}">
 `;
       },
+      closeRender: () => `</CodeDemo>`,
     });
 
 export const normalDemo: PluginSimple = getPlugin("normal-demo");

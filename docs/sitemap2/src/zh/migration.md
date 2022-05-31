@@ -15,4 +15,4 @@ icon: change
 
 - `outFile` 重命名为 `sitemapFilename`
 
-- `modifyTimeGetter` 重命名为 `modifyTimeGetter`
+- `dateFormatter` 重命名为 `modifyTimeGetter`

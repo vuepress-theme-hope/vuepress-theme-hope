@@ -1,3 +1,4 @@
+export * from "./align";
 export * from "./chart";
 export * from "./codeDemo";
 export * from "./codeTabs";
@@ -19,4 +20,5 @@ export * from "./tabs";
 export * from "./tasklist";
 export * from "./vPre";
 export * from "./stylize";
+export * from "./uml";
 export * from "./playground";

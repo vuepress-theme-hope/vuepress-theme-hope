@@ -17,7 +17,7 @@ import {
   defineSidebarArrayConfig,
   defineSidebarConfig,
   defineSidebarObjectConfig,
-} from "./migrate";
+} from "./compact";
 
 export {
   config,

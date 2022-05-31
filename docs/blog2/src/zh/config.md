@@ -38,7 +38,7 @@ icon: config
 ### slugify
 
 - 类型: `(name: string) => string`
-- 默认: `(name) => name.replace(/ _/g, '-').toLowerCase()`
+- 默认: `(name) => name.replace(/ _/g, '-').replace(/[:?*|\\/<>]/g, "").toLowerCase()`
 
 Slugify 函数，用于转换 key 在路由中注册的形式。
 

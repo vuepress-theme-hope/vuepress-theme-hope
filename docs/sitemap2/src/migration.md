@@ -15,4 +15,4 @@ icon: change
 
 - `outFile` renamed to `sitemapFilename`
 
-- `modifyTimeGetter` renamed to `modifyTimeGetter`
+- `dateFormatter` renamed to `modifyTimeGetter`
