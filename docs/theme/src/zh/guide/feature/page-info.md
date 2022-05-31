@@ -30,10 +30,10 @@ tag:
 | `"Date"`        | 写作日期     | date                    | N/A                     |
 | `"Original"`    | 是否原创     | isOriginal              | N/A                     |
 | `"Category"`    | 分类         | category                | N/A                     |
-| `"Tag"`         | 标签         | tags                    | N/A                     |
+| `"Tag"`         | 标签         | tag                     | N/A                     |
 | `"ReadingTime"` | 预计阅读时间 | N/A(自动生成)           | N/A                     |
 | `"Word"`        | 字数         | N/A(自动生成)           | N/A                     |
-| `"PageView"`    | 访问量       | visitor(仅 Waline 可用) | plugins.comment.visitor |
+| `"PageView"`    | 访问量       | pageview (仅 Waline 可用)  | N/A                     |
 
 默认会显示 “作者，访问量，写作日期，分类，标签，预计阅读时间”。
 
