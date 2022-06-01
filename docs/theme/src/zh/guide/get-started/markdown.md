@@ -33,6 +33,26 @@ Frontmatter 是 VuePress 中很重要的一个概念，如果你不了解它，�
 
 ## 主题扩展
 
+### 选项卡
+
+::: tabs#fruit
+
+@tab apple
+
+Apple
+
+@tab banana
+
+Banana
+
+@tab orange
+
+Orange
+
+:::
+
+- [查看详情](../markdown/tabs.md)
+
 ### 代码块
 
 ::: code-tabs
@@ -96,6 +116,12 @@ npm i -D vuepress-theme-hope
 
 - [查看详情](../markdown/tasklist.md)
 
+### 图片增强
+
+支持设置颜色模式和大小
+
+- [查看详情](../markdown/image.md)
+
 ### 图表
 
 ::: chart 一个散点图案例
@@ -131,6 +157,32 @@ npm i -D vuepress-theme-hope
 :::
 
 - [查看详情](../markdown/chart.md)
+
+## Echarts
+
+::: echarts 一个折线图案例
+
+```json
+{
+  "xAxis": {
+    "type": "category",
+    "data": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+  },
+  "yAxis": {
+    "type": "value"
+  },
+  "series": [
+    {
+      "data": [150, 230, 224, 218, 135, 147, 260],
+      "type": "line"
+    }
+  ]
+}
+```
+
+:::
+
+- [查看详情](../markdown/echarts.md)
 
 ### 流程图
 
@@ -174,6 +226,12 @@ $$
 $$
 
 - [查看详情](../markdown/tex.md)
+
+### 导入文件
+
+@include(./demo.snippet.md{5,9})
+
+- [查看详情](../markdown/include.md)
 
 ### 代码演示
 

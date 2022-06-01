@@ -1,7 +1,6 @@
 ---
 title: Stylize
 icon: style
-order: 17
 category:
   - Markdown
 tag:

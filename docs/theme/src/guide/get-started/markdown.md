@@ -33,6 +33,26 @@ For these extended syntax, please see [Built-in Markdown Features](../../cookboo
 
 ## Theme Enhancement
 
+### Tabs
+
+::: tabs#fruit
+
+@tab apple
+
+Apple
+
+@tab banana
+
+Banana
+
+@tab orange
+
+Orange
+
+:::
+
+- [View Detail](../markdown/tabs.md)
+
 ### Code Tabs
 
 ::: code-tabs
@@ -96,6 +116,12 @@ You can mark ==important words== .
 
 - [View Detail](../markdown/tasklist.md)
 
+### Image Enhancement
+
+Support setting color scheme and size
+
+- [View Detail](../markdown/image.md)
+
 ### Chart
 
 ::: chart A Scatter Chart
@@ -131,6 +157,32 @@ You can mark ==important words== .
 :::
 
 - [View Detail](../markdown/chart.md)
+
+## Echarts
+
+::: echarts A line chart
+
+```json
+{
+  "xAxis": {
+    "type": "category",
+    "data": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+  },
+  "yAxis": {
+    "type": "value"
+  },
+  "series": [
+    {
+      "data": [150, 230, 224, 218, 135, 147, 260],
+      "type": "line"
+    }
+  ]
+}
+```
+
+:::
+
+- [View Detail](../markdown/echarts.md)
 
 ### Flowchart
 
@@ -174,6 +226,12 @@ $$
 $$
 
 - [View Detail](../markdown/tex.md)
+
+### Include files
+
+@include(./demo.snippet.md{5,9})
+
+- [View Detail](../markdown/include.md)
 
 ### Code Demo
 

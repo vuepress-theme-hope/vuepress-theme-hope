@@ -28,6 +28,8 @@ dir:
 
 - [任务列表](tasklist.md)
 
+- [图片增强](image.md)
+
 - [自定义对齐](align.md)
 
 - [上下角标](sup-sub.md)

@@ -1,7 +1,6 @@
 ---
 title: Code Demo
 icon: discover
-order: 15
 category:
   - Markdown
 tag:

@@ -1,8 +1,6 @@
 ---
 title: 样式化
 icon: style
-order: 17
-category:
   - Markdown
 tag:
   - 样式化

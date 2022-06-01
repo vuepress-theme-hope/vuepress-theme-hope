@@ -1,8 +1,6 @@
 ---
 title: 导入文件
 icon: markdown
-order: 14
-category:
   - Markdown
 tag:
   - Markdown

@@ -29,6 +29,7 @@ Added more syntax to Markdown, enriching documentation and blog writing:
 - [Code Tabs](markdown/code-tabs.md)
 - [Footnote](markdown/footnote.md)
 - [Task list](markdown/tasklist.md)
+- [Image Enahancement](markdown/image.md)
 - [Custom alignment](markdown/align.md)
 - [Subscript and Supercript](markdown/sup-sub.md)
 - [Mark](markdown/mark.md)

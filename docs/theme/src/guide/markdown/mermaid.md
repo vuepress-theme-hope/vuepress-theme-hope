@@ -1,7 +1,6 @@
 ---
 title: Mermaid
 icon: diagram
-order: 13
 category:
   - Markdown
 tag:

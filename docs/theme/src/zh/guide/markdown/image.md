@@ -1,6 +1,11 @@
 ---
 title: 图片
 icon: pic
+category:
+  - Markdown
+tag:
+  - Markdown
+  - 图片
 ---
 
 改进 Markdown 中的图像语法以支持颜色方案和大小。
@@ -13,37 +18,42 @@ icon: pic
 
 @tab TS
 
-```ts {7-10}
+```ts {9-12}
 // .vuepress/config.ts
-import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  plugins: [
-    mdEnhancePlugin({
-      // 启用图片标记
-      imageMark: true,
-      // 启用图片大小
-      imageSize: true,
-    }),
-  ],
-};
+export default defineUserConfig({
+  theme: hopeTheme({
+    plugins: {
+      mdEnhance: {
+        // 启用图片标记
+        imageMark: true,
+        // 启用图片大小
+        imageSize: true,
+      },
+    },
+  }),
+});
 ```
 
 @tab JS
 
-```js {7-10}
-// .vuepress/config.js
-const { mdEnhancePlugin } = require("vuepress-plugin-md-enhance");
+```js {9-12}
+/// .vuepress/config.js
+const { hopeTheme } = require("vuepress-theme-hope");
 
 module.exports = {
-  plugins: [
-    mdEnhancePlugin({
-      // 启用图片标记
-      imageMark: true,
-      // 启用图片大小
-      imageSize: true,
-    }),
-  ],
+  theme: hopeTheme({
+    plugins: {
+      mdEnhance: {
+        // 启用图片标记
+        imageMark: true,
+        // 启用图片大小
+        imageSize: true,
+      },
+    },
+  }),
 };
 ```
 
@@ -53,7 +63,7 @@ module.exports = {
 
 GFM 支持通过 ID 标记图片，使得图片只在特定的模式显示。我们同时支持 GitHub 的标记与简易标记 `#light` 和 `#dark`。
 
-你可以通过 `imageMark` 选项控制它。
+你可以通过主题选项中的 `plugins.mdEnhance.imageMark` 选项控制它。
 
 ```md
 ![GitHub Light](/assets/icon/github-light.png#gh-dark-mode-only)
@@ -90,7 +100,7 @@ interface ImageMarkOptions {
 
 ## 图片尺寸
 
-当你在插件选项中设置 `imageSize: true` 时，可以使用 `=widthxheight` 指定图像大小。
+当你在主题选项中设置 `plugin.mdEhance.imageSize: true` 时，可以使用 `=widthxheight` 指定图像大小。
 
 ```md
 ![Alt](/example.png =200x300)
