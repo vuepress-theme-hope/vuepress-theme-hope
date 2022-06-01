@@ -3,17 +3,17 @@ import MarkdownIt from "markdown-it";
 
 import {
   playground,
-  playFile,
-  playImports,
-  playSettings,
+  playgroundFile,
+  playgroundImports,
+  playgroundSettings,
 } from "../../src/node/markdown-it/playground";
 
 describe("playground", () => {
   const markdownIt = MarkdownIt({ linkify: true })
     .use(playground())
-    .use(playFile)
-    .use(playImports)
-    .use(playSettings);
+    .use(playgroundFile)
+    .use(playgroundImports)
+    .use(playgroundSettings);
 
   it("Should resolve playground info", () => {
     expect(
