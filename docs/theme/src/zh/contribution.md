@@ -144,15 +144,17 @@ corepack prepare pnpm@7.1.6 --activate
 
 1. 构建项目: `pnpm build`
 
-   它会通过。
+   - 使用 rollup 打包并压缩代码，并输出到 `lib` 文件夹
+   - 使用 `rollup-plugin-copy` 复制其他文件到 `lib` 文件夹
 
 1. 开发项目: `pnpm dev`
 
-   它会执行 `pnpm dev:copy` 和 `pnpm dev:ts` 两个命令，执行并监听前文的两种构建步骤。
+   - 使用 `tsc` 编译 TypeScript 文件到 `lib` 文件夹
+   - Use `cpx` 复制其他文件到 `lib` 文件夹
 
 1. 格式化项目: `pnpm lint`
 
-   它会执行 `pnpm lint:eslint` 和 `pnpm lint:prettier` 两个命令。
+   它将使用 prettier、eslint 和 stylelint 格式化项目。
 
    如果你修改了 Markdown，你还需要运行 `pnpm lint:md` 命令。
 
@@ -166,13 +168,13 @@ corepack prepare pnpm@7.1.6 --activate
 
 ## 提交
 
-项目使用 `husky` 与 `lint-staged` 添加了额外的 Git Hooks 进行验证:
+项目使用 `husky` 添加了额外的 Git Hooks 进行验证:
 
-- 在 `precommit` 阶段使用 `lint-staged` 配合对应 Linter 对改动的代码进行检验
+- 在 `precommit` 阶段我们使用 `lint-staged` 配合对应 Linter 对改动的代码进行检验
 
   这意味着你需要保证你的代码按照项目要求进行格式化，可以通过 Linter。
 
-- 在 `commit-msg` 阶段使用 `commitlint` 对提交备注进行校验。
+- 在 `commit-msg` 阶段我们使用 `commitlint` 对提交备注进行校验。
 
   这意味着你需要保证你的提交注释符合语义化提交 (Semantic)
 

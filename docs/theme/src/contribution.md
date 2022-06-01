@@ -144,15 +144,17 @@ For better performance, all plugins are packed and minified using rollup when th
 
 1. Build project: `pnpm build`
 
-   It will use rollup to bundle source files and minify them, and output them to `lib` folder.
+   - Use rollup to bundle source files and minify them, and output results to `lib` folder
+   - Use `rollup-plugin-copy` to copy other files to `lib` folder
 
 1. Develop project: `pnpm dev`
 
-   It will use `tsc` and `cpx` to compile ts file and move other files to output folder.
+   - Use `tsc` to compile ts file to `lib` folder
+   - Use `cpx` to copy other files to `lib` folder
 
 1. Format project: `pnpm lint`
 
-   It will execute the two commands `pnpm lint:eslint` and `pnpm lint:prettier`.
+   It will format the project using prettier, eslint and stylelint.
 
    If you modify Markdown, you also need to run the `pnpm lint:md` command.
 
@@ -166,13 +168,13 @@ You may need to execute the `pnpm clean` command to clear previous build results
 
 ## Commit
 
-The project uses `husky` and `lint-staged` to add Git Hooks for verification:
+The project uses `husky` to add Git Hooks for verification:
 
-- In `precommit` stage: use `lint-staged` to check the changed code with the corresponding Linter
+- In `precommit` stage: we use `lint-staged` to check the changed code with the corresponding Linter
 
   This means that you need to ensure that your code is formatted by the project requirements and can pass Linter tests.
 
-- In `commit-msg` stage: use `commitlint` to verify the commit comment.
+- In `commit-msg` stage: we use `commitlint` to verify the commit comment.
 
   This means that you need to ensure that your commit comments comply with Semantic
 
