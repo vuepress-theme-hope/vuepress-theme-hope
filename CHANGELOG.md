@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file. See [Conven
 
 ## [2.0.0-beta.76](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.75...v2.0.0-beta.76) (2022-06-01)
 
+### ⚠ BREAKING CHANGES
+
+- `vuepress-plugin-redirect2` renamed to `vuepress-plugin-redirect`
+
 ### Features
 
 - add legacy mode for plugins ([c6980b5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c6980b5046642357f98816119c2fa3089d29edc5))
