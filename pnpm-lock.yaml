@@ -34,7 +34,7 @@ importers:
       execa: 6.1.0
       husky: 8.0.1
       inquirer: 8.2.4
-      lint-staged: 12.5.0
+      lint-staged: 13.0.0
       markdownlint-cli: 0.31.1
       npm-check-updates: 13.0.3
       ora: 6.1.0
@@ -85,7 +85,7 @@ importers:
       execa: 6.1.0
       husky: 8.0.1
       inquirer: 8.2.4
-      lint-staged: 12.5.0
+      lint-staged: 13.0.0
       markdownlint-cli: 0.31.1
       npm-check-updates: 13.0.3
       ora: 6.1.0
@@ -6019,19 +6019,6 @@ packages:
     dependencies:
       ms: 2.1.2
 
-  /debug/4.3.4_supports-color@9.2.2:
-    resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}
-    engines: {node: '>=6.0'}
-    peerDependencies:
-      supports-color: '*'
-    peerDependenciesMeta:
-      supports-color:
-        optional: true
-    dependencies:
-      ms: 2.1.2
-      supports-color: 9.2.2
-    dev: true
-
   /decamelize-keys/1.1.0:
     resolution: {integrity: sha512-ocLWuYzRPoS9bfiSdDd3cxvrzovVMZnRDVEzAs+hWIVXGDbHxWMECij2OBuyB/An0FFW/nLuq6Kv1i/YC5Qfzg==}
     engines: {node: '>=0.10.0'}
@@ -8418,16 +8405,16 @@ packages:
     dependencies:
       uc.micro: 1.0.6
 
-  /lint-staged/12.5.0:
-    resolution: {integrity: sha512-BKLUjWDsKquV/JuIcoQW4MSAI3ggwEImF1+sB4zaKvyVx1wBk3FsG7UK9bpnmBTN1pm7EH2BBcMwINJzCRv12g==}
-    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+  /lint-staged/13.0.0:
+    resolution: {integrity: sha512-vWban5utFt78VZohbosUxNIa46KKJ+KOQTDWTQ8oSl1DLEEVl9zhUtaQbiiydAmx+h2wKJK2d0+iMaRmknuWRQ==}
+    engines: {node: ^14.13.1 || >=16.0.0}
     hasBin: true
     dependencies:
       cli-truncate: 3.1.0
       colorette: 2.0.16
       commander: 9.3.0
-      debug: 4.3.4_supports-color@9.2.2
-      execa: 5.1.1
+      debug: 4.3.4
+      execa: 6.1.0
       lilconfig: 2.0.5
       listr2: 4.0.5
       micromatch: 4.0.5
@@ -8435,10 +8422,10 @@ packages:
       object-inspect: 1.12.2
       pidtree: 0.5.0
       string-argv: 0.3.1
-      supports-color: 9.2.2
-      yaml: 1.10.2
+      yaml: 2.1.1
     transitivePeerDependencies:
       - enquirer
+      - supports-color
     dev: true
 
   /listr2/4.0.5:
@@ -11157,11 +11144,6 @@ packages:
     dependencies:
       has-flag: 4.0.0
 
-  /supports-color/9.2.2:
-    resolution: {integrity: sha512-XC6g/Kgux+rJXmwokjm9ECpD6k/smUoS5LKlUCcsYr4IY3rW0XyAympon2RmxGrlnZURMpg5T18gWDP9CsHXFA==}
-    engines: {node: '>=12'}
-    dev: true
-
   /supports-hyperlinks/2.2.0:
     resolution: {integrity: sha512-6sXEzV5+I5j8Bmq9/vUphGRM/RJNT9SCURJLjwfOg51heRtguGWDzcaBlgAzKhQa0EVNpPEKzQuBwZ8S8WaCeQ==}
     engines: {node: '>=8'}
@@ -12312,6 +12294,11 @@ packages:
 
   /yaml/2.1.0:
     resolution: {integrity: sha512-OuAINfTsoJrY5H7CBWnKZhX6nZciXBydrMtTHr1dC4nP40X5jyTIVlogZHxSlVZM8zSgXRfgZGsaHF4+pV+JRw==}
+    engines: {node: '>= 14'}
+    dev: true
+
+  /yaml/2.1.1:
+    resolution: {integrity: sha512-o96x3OPo8GjWeSLF+wOAbrPfhFOGY0W00GNaxCDv+9hkcDJEnev1yh8S7pgHF0ik6zc8sQLuL8hjHjJULZp8bw==}
     engines: {node: '>= 14'}
     dev: true
 
