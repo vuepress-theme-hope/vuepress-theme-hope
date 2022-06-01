@@ -70,7 +70,6 @@ export const commentPlugin =
         }
 
         if (isWaline) {
-          addCustomElement({ app, config }, "masonry-wall");
           addViteOptimizeDepsInclude({ app, config }, "autosize");
           addViteOptimizeDepsExclude({ app, config }, "@waline/client");
         }
