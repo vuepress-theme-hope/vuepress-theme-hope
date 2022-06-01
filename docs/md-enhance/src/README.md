@@ -54,6 +54,11 @@ features:
     details: Use tasklist in Markdown
     link: /guide/tasklist.html
 
+  - title: image syntax
+    icon: pic
+    details: improve syntax to specify size and color scheme
+    link: /guide/image.html
+
   - title: Chart Support
     icon: rank
     details: Display charts in Markdown

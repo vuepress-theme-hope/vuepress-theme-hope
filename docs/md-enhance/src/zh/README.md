@@ -54,6 +54,11 @@ features:
     details: 在 Markdown 中使用任务列表
     link: /zh/guide/tasklist.html
 
+  - title: 图片语法
+    icon: pic
+    details: 使用改进的语法指定图片大小与颜色模式
+    link: /zh/guide/image.html
+
   - title: 图表支持
     icon: rank
     details: 在 Markdown 中展示图表

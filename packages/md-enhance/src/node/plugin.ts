@@ -19,6 +19,7 @@ import {
   flowchart,
   footnote,
   imageMark,
+  imageSize,
   include,
   katex,
   lazyLoad,
@@ -166,6 +167,7 @@ export const mdEnhancePlugin =
             imageMark,
             typeof options.imageMark === "object" ? options.imageMark : {}
           );
+        if (getStatus("imageSize")) md.use(imageSize);
 
         if (getStatus("codetabs")) {
           md.use(codeTabs);

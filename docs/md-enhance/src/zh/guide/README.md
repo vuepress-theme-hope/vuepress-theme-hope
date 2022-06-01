@@ -120,6 +120,12 @@ npm i -D vuepress-plugin-md-enhance@next
 
 - [查看详情](tasklist.md)
 
+### 图片增强
+
+支持设置颜色模式和大小
+
+- [查看详情](image.md)
+
 ### 图表
 
 ::: chart 一个散点图案例
@@ -155,6 +161,32 @@ npm i -D vuepress-plugin-md-enhance@next
 :::
 
 - [查看详情](chart.md)
+
+## Echarts
+
+::: echarts 一个折线图案例
+
+```json
+{
+  "xAxis": {
+    "type": "category",
+    "data": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+  },
+  "yAxis": {
+    "type": "value"
+  },
+  "series": [
+    {
+      "data": [150, 230, 224, 218, 135, 147, 260],
+      "type": "line"
+    }
+  ]
+}
+```
+
+:::
+
+- [查看详情](echarts.md)
 
 ### 流程图
 

@@ -122,6 +122,12 @@ You can mark ==important words== .
 
 - [View Detail](tasklist.md)
 
+### Image Enhancement
+
+Support setting color scheme and size
+
+- [View Detail](image.md)
+
 ### Chart
 
 ::: chart A Scatter Chart
@@ -157,6 +163,32 @@ You can mark ==important words== .
 :::
 
 - [View Detail](chart.md)
+
+## Echarts
+
+::: echarts A line chart
+
+```json
+{
+  "xAxis": {
+    "type": "category",
+    "data": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+  },
+  "yAxis": {
+    "type": "value"
+  },
+  "series": [
+    {
+      "data": [150, 230, 224, 218, 135, 147, 260],
+      "type": "line"
+    }
+  ]
+}
+```
+
+:::
+
+- [View Detail](echarts.md)
 
 ### Flowchart
 

@@ -139,6 +139,15 @@ export interface MarkdownEnhanceOptions {
   imageMark?: ImageMarkOptions | boolean;
 
   /**
+   * Whether to enable image size mark support
+   *
+   * 是否启用图片大小标记支持。
+   *
+   * @default false
+   */
+  imageSize?: ImageMarkOptions | boolean;
+
+  /**
    * Whether to enable mark format support
    *
    * 是否启用标注支持。
