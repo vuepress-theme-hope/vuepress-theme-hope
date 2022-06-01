@@ -35,6 +35,7 @@ import {
   vPre,
   vueDemo,
 } from "./markdown-it";
+import { legacyFlowchart } from "./compact";
 import { prepareConfigFile, prepareRevealPluginFile } from "./prepare";
 import { usePlugins } from "./usePlugins";
 import { MATHML_TAGS } from "./utils";
@@ -42,7 +43,6 @@ import { MATHML_TAGS } from "./utils";
 import type { PluginFunction } from "@vuepress/core";
 import type { KatexOptions } from "katex";
 import type { MarkdownEnhanceOptions } from "../shared";
-import { legacyFlowchart } from "./compact/flowchart";
 
 export const mdEnhancePlugin =
   (
