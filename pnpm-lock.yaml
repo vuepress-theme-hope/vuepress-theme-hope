@@ -4,16 +4,12 @@ importers:
 
   .:
     specifiers:
-      '@babel/core': 7.18.2
-      '@babel/plugin-transform-modules-commonjs': 7.18.2
-      '@babel/preset-env': 7.18.2
       '@commitlint/cli': 17.0.2
       '@commitlint/config-conventional': 17.0.2
       '@rollup/plugin-commonjs': 22.0.0
       '@rollup/plugin-json': 4.1.0
       '@rollup/plugin-node-resolve': 13.3.0
       '@rollup/plugin-typescript': 8.3.2
-      '@textlint-rule/textlint-rule-no-unmatched-pair': 1.0.8
       '@types/inquirer': 8.2.1
       '@types/node': 17.0.35
       '@typescript-eslint/eslint-plugin': 5.26.0
@@ -55,16 +51,12 @@ importers:
       typescript: 4.7.2
       vitest: 0.13.1
     devDependencies:
-      '@babel/core': 7.18.2
-      '@babel/plugin-transform-modules-commonjs': 7.18.2_@babel+core@7.18.2
-      '@babel/preset-env': 7.18.2_@babel+core@7.18.2
       '@commitlint/cli': 17.0.2
       '@commitlint/config-conventional': 17.0.2
       '@rollup/plugin-commonjs': 22.0.0_rollup@2.75.4
       '@rollup/plugin-json': 4.1.0_rollup@2.75.4
       '@rollup/plugin-node-resolve': 13.3.0_rollup@2.75.4
       '@rollup/plugin-typescript': 8.3.2_a2xpdkfyiu2hqx4t4ni57qpbv4
-      '@textlint-rule/textlint-rule-no-unmatched-pair': 1.0.8
       '@types/inquirer': 8.2.1
       '@types/node': 17.0.35
       '@typescript-eslint/eslint-plugin': 5.26.0_hzuh7e2up357pvq3mkokjvu2lq
@@ -3079,17 +3071,6 @@ packages:
       defer-to-connect: 1.1.3
     dev: true
 
-  /@textlint-rule/textlint-rule-no-unmatched-pair/1.0.8:
-    resolution: {integrity: sha512-C+ejNcHFKWGQ9aoMnk7jL815iUXg4soIdK/gpN2wJWiwbtThw6mglIhvI+5qkFoUNCYjmWZbN0I3F4YUgoAHaw==}
-    dependencies:
-      sentence-splitter: 3.2.2
-      textlint-rule-helper: 2.0.1
-    dev: true
-
-  /@textlint/ast-node-types/4.4.3:
-    resolution: {integrity: sha512-qi2jjgO6Tn3KNPGnm6B7p6QTEPvY95NFsIAaJuwbulur8iJUEenp1OnoUfiDaC/g2WPPEFkcfXpmnu8XEMFo2A==}
-    dev: true
-
   /@tootallnate/once/1.1.2:
     resolution: {integrity: sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw==}
     engines: {node: '>= 6'}
@@ -4515,10 +4496,6 @@ packages:
 
   /boolbase/1.0.0:
     resolution: {integrity: sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==}
-
-  /boundary/1.0.1:
-    resolution: {integrity: sha512-AaLhxHwYVh55iOTJncV3DE5o7RakEUSSj64XXEWRTiIhlp7aDI8qR0vY/k8Uw0Z234VjZi/iG/WxfrvqYPUCww==}
-    dev: true
 
   /boxen/5.1.2:
     resolution: {integrity: sha512-9gYgQKXx+1nP8mP7CzFyaUARhg7D3n1dF/FnErWmu9l6JvGpNUN278h0aSb+QjoiKSWG+iZ3uHrcqk0qrY9RQQ==}
@@ -9329,10 +9306,6 @@ packages:
       has-symbols: 1.0.3
       object-keys: 1.1.1
 
-  /object_values/0.1.2:
-    resolution: {integrity: sha512-tZgUiKLraVH+4OAedBYrr4/K6KmAQw2RPNd1AuNdhLsuz5WP3VB7WuiKBWbOcjeqqAjus2ChIIWC8dSfmg7ReA==}
-    dev: true
-
   /obuf/1.1.2:
     resolution: {integrity: sha512-PX1wu0AmAdPqOL1mWhqmlOd8kOIZQwGZw6rh7uby9fTc5lhaOWFLX3I6R1hrF9k3zUY40e6igsLGkDXK92LJNg==}
 
@@ -10484,16 +10457,6 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /sentence-splitter/3.2.2:
-    resolution: {integrity: sha512-hMvaodgK9Fay928uiQoTMEWjXpCERdKD2uKo7BbSyP+uWTo+wHiRjN+ZShyI99rW0VuoV4Cuw8FUmaRcnpN7Ug==}
-    hasBin: true
-    dependencies:
-      '@textlint/ast-node-types': 4.4.3
-      concat-stream: 2.0.0
-      object_values: 0.1.2
-      structured-source: 3.0.2
-    dev: true
-
   /serialize-javascript/4.0.0:
     resolution: {integrity: sha512-GaNA54380uFefWghODBWEGisLZFj00nS5ACs6yHa9nLqlLpVLO8ChDGeKRjZnV4Nh4n0Qi7nhYZD/9fCPzEqkw==}
     dependencies:
@@ -10971,12 +10934,6 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /structured-source/3.0.2:
-    resolution: {integrity: sha1-3YAkJeD1PcSm56yjdSkBoczaevU=}
-    dependencies:
-      boundary: 1.0.1
-    dev: true
-
   /style-loader/3.3.1_webpack@5.72.1:
     resolution: {integrity: sha512-GPcQ+LDJbrcxHORTRes6Jy2sfvK2kS6hpSfI/fXhPt+spVzxF6LJ1dHLN9zIGmVaaP044YKaIatFaufENRiDoQ==}
     engines: {node: '>= 12.13.0'}
@@ -11251,12 +11208,6 @@ packages:
 
   /text-table/0.2.0:
     resolution: {integrity: sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=}
-    dev: true
-
-  /textlint-rule-helper/2.0.1:
-    resolution: {integrity: sha512-QNGSOemLVxm1b0qnH5VpRY8uyHgfx/8M+St8wSy/d6mZh0abd+KAvhQSuO8cxmVeRKr/LRkhAB3+0QU5LKhLGw==}
-    dependencies:
-      unist-util-visit: 1.4.1
     dev: true
 
   /three/0.141.0:
@@ -11548,22 +11499,6 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       crypto-random-string: 2.0.0
-
-  /unist-util-is/3.0.0:
-    resolution: {integrity: sha512-sVZZX3+kspVNmLWBPAB6r+7D9ZgAFPNWm66f7YNb420RlQSbn+n8rG8dGZSkrER7ZIXGQYNm5pqC3v3HopH24A==}
-    dev: true
-
-  /unist-util-visit-parents/2.1.2:
-    resolution: {integrity: sha512-DyN5vD4NE3aSeB+PXYNKxzGsfocxp6asDc2XXE3b0ekO2BaRUpBicbbUygfSvYfUz1IkmjFR1YF7dPklraMZ2g==}
-    dependencies:
-      unist-util-is: 3.0.0
-    dev: true
-
-  /unist-util-visit/1.4.1:
-    resolution: {integrity: sha512-AvGNk7Bb//EmJZyhtRUnNMEpId/AZ5Ph/KUpTI09WHQuDZHKovQ1oEv3mfmKpWKtoMzyMC4GLBm1Zy5k12fjIw==}
-    dependencies:
-      unist-util-visit-parents: 2.1.2
-    dev: true
 
   /universalify/0.1.2:
     resolution: {integrity: sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==}
