@@ -13,9 +13,9 @@ export default hopeTheme({
 
   iconAssets: "//at.alicdn.com/t/font_2410206_a0xb9hku9iu.css",
 
-  repo: "vuepress-theme-hope/vuepress-theme-hope/tree/main/packages/redirect2/",
+  repo: "vuepress-theme-hope/vuepress-theme-hope/tree/main/packages/redirect/",
   docsRepo: "vuepress-theme-hope/vuepress-theme-hope",
-  docsDir: "docs/redirect2/src",
+  docsDir: "docs/redirect/src",
 
   logo: "/logo.svg",
 
@@ -66,7 +66,7 @@ export default hopeTheme({
         color: "#ffffff",
       },
       manifest: {
-        name: "vuepress-plugin-redirect2",
+        name: "vuepress-plugin-redirect",
         short_name: "Redirect Plugin",
         icons: [
           {

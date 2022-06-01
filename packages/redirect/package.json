@@ -1,5 +1,5 @@
 {
-  "name": "vuepress-plugin-redirect2",
+  "name": "vuepress-plugin-redirect",
   "version": "2.0.0-beta.75",
   "description": "Redirect plugin for vuepress",
   "keywords": [
@@ -15,7 +15,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vuepress-theme-hope/vuepress-theme-hope.git",
-    "directory": "packages/redirect2"
+    "directory": "packages/redirect"
   },
   "license": "MIT",
   "author": {

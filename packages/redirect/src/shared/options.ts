@@ -10,7 +10,7 @@ export interface RedirectOptions {
    *
    * @description 如果链接以 `/` 开头，则会在前面添加 hostname 和 base
    */
-  config: Record<string, string> | ((app: App) => Record<string, string>);
+  config?: Record<string, string> | ((app: App) => Record<string, string>);
 
   /**
    * domain which to be redirected to

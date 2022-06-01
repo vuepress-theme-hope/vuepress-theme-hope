@@ -1,6 +1,6 @@
 import { defineUserConfig } from "@vuepress/cli";
 import { defaultTheme } from "@vuepress/theme-default";
-import { redirectPlugin } from "vuepress-plugin-redirect2";
+import { redirectPlugin } from "vuepress-plugin-redirect";
 
 const BASE = process.env.BASE as "/" | `/${string}/`;
 
@@ -14,7 +14,7 @@ export default defineUserConfig({
   theme: defaultTheme({
     logo: "/logo.svg",
 
-    repo: "vuepress-theme-hope/vuepress-theme-hope/tree/main/demo/redirect2/",
+    repo: "vuepress-theme-hope/vuepress-theme-hope/tree/main/demo/redirect/",
   }),
 
   plugins: [

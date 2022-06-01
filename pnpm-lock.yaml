@@ -318,14 +318,14 @@ importers:
       vuepress-vite: 2.0.0-beta.46_wrojwgcxrmlznugsmqtgiwey2y
       vuepress-webpack: 2.0.0-beta.46_dekevhi47xuze7uz3322zaypg4
 
-  demo/redirect2:
+  demo/redirect:
     specifiers:
       '@vuepress/cli': 2.0.0-beta.46
       '@vuepress/client': 2.0.0-beta.46
       '@vuepress/theme-default': 2.0.0-beta.46
       sass-loader: 13.0.0
       vue: 3.2.36
-      vuepress-plugin-redirect2: workspace:*
+      vuepress-plugin-redirect: workspace:*
       vuepress-vite: 2.0.0-beta.46
       vuepress-webpack: 2.0.0-beta.46
     devDependencies:
@@ -334,7 +334,7 @@ importers:
       '@vuepress/theme-default': 2.0.0-beta.46_sass-loader@13.0.0
       sass-loader: 13.0.0
       vue: 3.2.36
-      vuepress-plugin-redirect2: link:../../packages/redirect2
+      vuepress-plugin-redirect: link:../../packages/redirect
       vuepress-vite: 2.0.0-beta.46_wrojwgcxrmlznugsmqtgiwey2y
       vuepress-webpack: 2.0.0-beta.46_dekevhi47xuze7uz3322zaypg4
 
@@ -754,7 +754,7 @@ importers:
       vuepress-vite: 2.0.0-beta.46_wrojwgcxrmlznugsmqtgiwey2y
       vuepress-webpack: 2.0.0-beta.46_dekevhi47xuze7uz3322zaypg4
 
-  docs/redirect2:
+  docs/redirect:
     specifiers:
       '@types/three': 0.141.0
       '@vuepress/cli': 2.0.0-beta.46
@@ -1208,7 +1208,7 @@ importers:
       '@vuepress/core': 2.0.0-beta.46
       rimraf: 3.0.2
 
-  packages/redirect2:
+  packages/redirect:
     specifiers:
       '@vuepress/cli': 2.0.0-beta.46
       '@vuepress/core': 2.0.0-beta.46
@@ -3621,7 +3621,7 @@ packages:
       autoprefixer: 10.4.7_postcss@8.4.14
       connect-history-api-fallback: 1.6.0
       postcss: 8.4.14
-      rollup: 2.75.1
+      rollup: 2.75.4
       vite: 2.9.9
       vue: 3.2.36
       vue-router: 4.0.15_vue@3.2.36
@@ -3642,7 +3642,7 @@ packages:
       autoprefixer: 10.4.7_postcss@8.4.14
       connect-history-api-fallback: 1.6.0
       postcss: 8.4.14
-      rollup: 2.75.1
+      rollup: 2.75.4
       vite: 2.9.9_sass@1.52.1
       vue: 3.2.36
       vue-router: 4.0.15_vue@3.2.36
@@ -7590,7 +7590,7 @@ packages:
     dev: true
 
   /hpack.js/2.1.6:
-    resolution: {integrity: sha1-h3dMCUnlE/QuhFdbPEVoH63ioLI=}
+    resolution: {integrity: sha512-zJxVehUdMGIKsRaNt7apO2Gqp0BdqW5yaiGHXXmbpvxgBYVZnAql+BJb4RO5ad2MgpbZKn5G6nMnegrH1FcNYQ==}
     dependencies:
       inherits: 2.0.4
       obuf: 1.1.2
@@ -7651,10 +7651,10 @@ packages:
     dev: true
 
   /http-deceiver/1.2.7:
-    resolution: {integrity: sha1-+nFolEq5pRnTN8sL7HKE3D5yPYc=}
+    resolution: {integrity: sha512-LmpOGxTfbpgtGVxJrj5k7asXHCgNZp5nLfp+hWc8QQRqtb7fUy6kRY3BO1h9ddF6yIPYUARgxGOwB42DnxIaNw==}
 
   /http-errors/1.6.3:
-    resolution: {integrity: sha1-i1VoC7S+KDoLW/TqLjhYC+HZMg0=}
+    resolution: {integrity: sha512-lks+lVC8dgGyh97jxvxeYTWQFvh4uw4yC12gVl63Cg30sjPX4wuGcdkICVXDAESr6OJGjqGA8Iz5mkeN6zlD7A==}
     engines: {node: '>= 0.6'}
     dependencies:
       depd: 1.1.2
@@ -7837,7 +7837,7 @@ packages:
       wrappy: 1.0.2
 
   /inherits/2.0.3:
-    resolution: {integrity: sha1-Yzwsg+PaQqUC9SRmAiSA9CCCYd4=}
+    resolution: {integrity: sha512-x00IRNXNy63jwGkJmzPigoySHbaqpNuzKbBOmzK+g2OdZpQ9w+sxCN+VSB3ja7IAge2OP2qpfxTjeNcyjmW1uw==}
 
   /inherits/2.0.4:
     resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
@@ -7971,7 +7971,7 @@ packages:
     hasBin: true
 
   /is-extendable/0.1.1:
-    resolution: {integrity: sha1-YrEQ4omkcUGOPsNqYX1HLjAd/Ik=}
+    resolution: {integrity: sha512-5BMULNob1vgFX6EjQw5izWDxrecWK9AM72rugNr0TFldMOi0fj6Jk+zeKIt0xGj4cEfQIJth4w3OKWOJ4f+AFw==}
     engines: {node: '>=0.10.0'}
 
   /is-extglob/2.1.1:
@@ -8178,13 +8178,13 @@ packages:
     dev: true
 
   /isarray/1.0.0:
-    resolution: {integrity: sha1-u5NdSFgsuhaMBoNJV6VKPgcSTxE=}
+    resolution: {integrity: sha512-VLghIWNM6ELQzo7zwmcg0NmTVyWKYjvIeM83yjp0wRDTmUnrM678fQbcKBo6n2CJEF0szoG//ytg+TKla89ALQ==}
 
   /isexe/2.0.0:
     resolution: {integrity: sha1-6PvzdNxVb/iUehDcsFctYz8s+hA=}
 
   /isobject/3.0.1:
-    resolution: {integrity: sha1-TkMekrEalzFjaqH5yNHMvP2reN8=}
+    resolution: {integrity: sha512-WhB9zCku7EGTj/HQQRz5aUQEUeoQZH2bWcltRErOpymJ4boYE6wL9Tbr23krRPSZ+C5zqNSrSw+Cc7sZZ4b7vg==}
     engines: {node: '>=0.10.0'}
 
   /istanbul-lib-coverage/3.2.0:
@@ -8882,7 +8882,7 @@ packages:
     dev: false
 
   /methods/1.1.2:
-    resolution: {integrity: sha1-VSmk1nZUE07cxSZmVoNbD4Ua/O4=}
+    resolution: {integrity: sha512-iclAHeNqNm68zFtnZ0e+1L2yUIdvzNoauKU4WBA3VvH/vPFieF7qfRlwUZU+DA9P9bPXIS90ulxoUoCH23sV2w==}
     engines: {node: '>= 0.6'}
 
   /micromatch/4.0.5:
@@ -9076,7 +9076,7 @@ packages:
     dev: false
 
   /ms/2.0.0:
-    resolution: {integrity: sha1-VgiurfwAvmwpAd9fmGF4jeDVl8g=}
+    resolution: {integrity: sha512-Tpp60P6IUJDTuOq/5Z8cdskzJujfwqfOTkrwIwj7IRISpnkJnT6SyJ4PCPnGMoFjC9ddhal5KVIYtAt97ix05A==}
 
   /ms/2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
@@ -9189,7 +9189,7 @@ packages:
     engines: {node: '>=0.10.0'}
 
   /normalize-range/0.1.2:
-    resolution: {integrity: sha1-LRDAa9/TEuqXd2laTShDlFa3WUI=}
+    resolution: {integrity: sha512-bdok/XvKII3nUpklnV6P2hxtMNrCboOjAcyBuQnWEhO665FwrSNRxU+AqpsyvO6LgGYPspN+lu5CLtw4jPRKNA==}
     engines: {node: '>=0.10.0'}
 
   /normalize-url/4.5.1:
@@ -10331,7 +10331,6 @@ packages:
     hasBin: true
     optionalDependencies:
       fsevents: 2.3.2
-    dev: true
 
   /run-async/2.4.1:
     resolution: {integrity: sha512-tvVnVv01b8c1RrA6Ep7JkStj85Guv/YrMcwqYQnwjsAS2cTmmPGBBjAjpCW7RrSodNSoE2/qg9O4bceNvUuDgQ==}

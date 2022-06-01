@@ -14,7 +14,7 @@ export const redirectPlugin =
     if (app.env.isDebug) logger.info(`Options: ${options.toString()}`);
 
     return {
-      name: "vuepress-plugin-redirect2",
+      name: "vuepress-plugin-redirect",
 
       extendsPage: (page, app) =>
         handleRedirect(

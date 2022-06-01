@@ -146,7 +146,7 @@ The theme includes the following plugins, you can use them in other themes or di
 
 - [vuepress-plugin-reading-time2][reading-time2]: Expect reading time and words count
 
-- [vuepress-plugin-redirect2][redirect2]: Redirect pages
+- [vuepress-plugin-redirect][redirect]: Redirect pages
 
 - [vuepress-plugin-sass-palette][sass-palette]: Sass style plugin for all plugins and themes
 
@@ -173,7 +173,7 @@ Here are some other plugins that are not enabled by default by the theme, you ca
 [photo-swipe]: https://vuepress-theme-hope.github.io/v2/photo-swipe/
 [pwa2]: https://vuepress-theme-hope.github.io/v2/pwa/
 [reading-time2]: https://vuepress-theme-hope.github.io/v2/reading-time/
-[redirect2]: https://vuepress-theme-hope.github.io/v2/redirect/
+[redirect]: https://vuepress-theme-hope.github.io/v2/redirect/
 [sass-palette]: https://vuepress-theme-hope.github.io/v2/sass-palette/
 [seo2]: https://vuepress-theme-hope.github.io/v2/seo/
 [sitemap2]: https://vuepress-theme-hope.github.io/v2/sitemap/

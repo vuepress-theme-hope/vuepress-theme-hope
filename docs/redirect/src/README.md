@@ -3,7 +3,7 @@ home: true
 title: Home
 icon: home
 heroImage: /logo.svg
-heroText: vuepress-plugin-redirect2
+heroText: vuepress-plugin-redirect
 tagline: Redirect Plugin for VuePress2
 actions:
   - text: Guide 💡
@@ -26,19 +26,19 @@ copyrightText: false
 @tab pnpm
 
 ```bash
-pnpm add -D vuepress-plugin-redirect2@next
+pnpm add -D vuepress-plugin-redirect@next
 ```
 
 @tab yarn
 
 ```bash
-yarn add -D vuepress-plugin-redirect2@next
+yarn add -D vuepress-plugin-redirect@next
 ```
 
 @tab npm
 
 ```bash
-npm i -D vuepress-plugin-redirect2@next
+npm i -D vuepress-plugin-redirect@next
 ```
 
 :::
@@ -51,7 +51,7 @@ npm i -D vuepress-plugin-redirect2@next
 
 ```ts
 // .vuepress/config.ts
-import { redirectPlugin } from "vuepress-plugin-redirect2";
+import { redirectPlugin } from "vuepress-plugin-redirect";
 
 export default {
   plugins: [
@@ -66,7 +66,7 @@ export default {
 
 ```js
 // .vuepress/config.js
-const { redirectPlugin } = require("vuepress-plugin-redirect2");
+const { redirectPlugin } = require("vuepress-plugin-redirect");
 
 module.exports = {
   plugins: [

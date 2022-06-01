@@ -347,7 +347,7 @@ All notable changes to this project will be documented in this file. See [Conven
 
 ### Features
 
-- **redirect2:** add `redirectTo` and `redirectFrom` option ([2b99d0a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2b99d0a54292c5528eb5c44889836d3cf0acbcfe))
+- **redirect:** add `redirectTo` and `redirectFrom` option ([2b99d0a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2b99d0a54292c5528eb5c44889836d3cf0acbcfe))
 
 ### Bug Fixes
 
@@ -467,12 +467,12 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 ### Bug Fixes
 
 - **create:** fix package.json path ([df25e7a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/df25e7a6a2d253e10bf10a51ab3b9a53fbaa15da))
-- **redirect2:** ensure parent folder, (fix [#1683](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1683)) ([8664537](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8664537d3c74e6abccae5a5ed3a5e9b0aae1aec6))
+- **redirect:** ensure parent folder, (fix [#1683](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1683)) ([8664537](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8664537d3c74e6abccae5a5ed3a5e9b0aae1aec6))
 
 ### Features
 
 - **md-enhance:** add `linkCheck` option ([904c047](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/904c0471cc81bd90b32b34c015b4902eafa2777b))
-- **redirect2:** make hostname optional ([2f7543d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2f7543d646a5ed96add969488f0b905f70c9b064))
+- **redirect:** make hostname optional ([2f7543d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2f7543d646a5ed96add969488f0b905f70c9b064))
 - **sitemap2:** improve lang infer ([4306758](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4306758d8ab942c041b937ee528789cad7e2bb3e))
 
 ## [2.0.0-beta.41](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.40...v2.0.0-beta.41) (2022-04-15)
@@ -484,8 +484,8 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 
 ### Features
 
-- **redirect2:** add helper cli ([5ac15ed](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5ac15edb39a2803c4a07a00d88298ed79b48262a))
-- **redirect2:** add meta tags (close [#1664](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1664)) ([46bf5d6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/46bf5d604f3d2f755e4339267529430023efb757))
+- **redirect:** add helper cli ([5ac15ed](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5ac15edb39a2803c4a07a00d88298ed79b48262a))
+- **redirect:** add meta tags (close [#1664](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1664)) ([46bf5d6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/46bf5d604f3d2f755e4339267529430023efb757))
 - **theme:** add animation back ([bf8fedc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/bf8fedc850c236269c1d3eee10739f50860cec71))
 - **theme:** improve feed default options ([09c7769](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/09c7769315109103a7600ba5c3adf805cb248a03))
 
@@ -497,7 +497,7 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 
 ### Features
 
-- add redirect2 plugin, close [#1664](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1664) ([2eaa7ed](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2eaa7ed2714f0eb856463d903e9c30b8edecb3c9))
+- add redirect plugin, close [#1664](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1664) ([2eaa7ed](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2eaa7ed2714f0eb856463d903e9c30b8edecb3c9))
 - **feed2:** add `customElements` option ([fa4f173](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fa4f17371658591992fc5f1700f00529ea279486))
 - **theme:** add customElements for feed2 ([1cb1c5d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1cb1c5d801ab2609e8ecf54535f1bfcbe0e9edf3))
 
