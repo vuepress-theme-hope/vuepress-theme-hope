@@ -9,7 +9,7 @@ import type {
 } from "../shared";
 
 export const redirectPlugin =
-  (options: RedirectOptions): PluginFunction =>
+  (options: RedirectOptions = {}): PluginFunction =>
   (app) => {
     if (app.env.isDebug) logger.info(`Options: ${options.toString()}`);
 

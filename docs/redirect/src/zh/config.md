@@ -8,7 +8,7 @@ icon: config
 ### config
 
 - 类型: `Record<string, string> | ((app: App) => Record<string, string>)`
-- 必填: 是
+- 必填: 否
 
 重定向映射。
 

@@ -8,7 +8,7 @@ icon: config
 ### config
 
 - Type: `Record<string, string> | ((app: App) => Record<string, string>)`
-- Required: Yes
+- Required: No
 
 Redirect map.
 
