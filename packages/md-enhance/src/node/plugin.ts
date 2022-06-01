@@ -227,7 +227,7 @@ export const mdEnhancePlugin =
           md.use(vPre);
         if (getStatus("stylize")) md.use(stylize, options.stylize);
         if (playgroundEnable) {
-          md.use(playground());
+          md.use(playground);
           md.use(playgroundFile);
           md.use(playgroundImports);
           md.use(playgroundSettings);
