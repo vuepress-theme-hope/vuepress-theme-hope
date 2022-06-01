@@ -11,20 +11,20 @@ export const imageMark: PluginWithOptions<ImageMarkOptions> = (
 ): void => {
   const originalImageRender = md.renderer.rules.image!;
 
-  md.renderer.rules.image = (tokens, idx, options, env, self): string => {
-    const token = tokens[idx];
-    const src = token.attrGet("src") || "";
+  md.renderer.rules.image = (tokens, index, options, env, self): string => {
+    const token = tokens[index];
+    const src = token.attrGet("src");
 
-    if (light.some((item) => src.endsWith(`#${item}`))) {
-      token.attrSet("data-mode", "lightmode-only");
-      token.attrSet("src", src.replace(/#.*?$/, ""));
+    if (src) {
+      if (light.some((item) => src.endsWith(`#${item}`))) {
+        token.attrSet("data-mode", "lightmode-only");
+        token.attrSet("src", src.replace(/#.*?$/, ""));
+      } else if (dark.some((item) => src.endsWith(`#${item}`))) {
+        token.attrSet("data-mode", "darkmode-only");
+        token.attrSet("src", src.replace(/#.*?$/, ""));
+      }
     }
 
-    if (dark.some((item) => src.endsWith(`#${item}`))) {
-      token.attrSet("data-mode", "darkmode-only");
-      token.attrSet("src", src.replace(/#.*?$/, ""));
-    }
-
-    return originalImageRender(tokens, idx, options, env, self);
+    return originalImageRender(tokens, index, options, env, self);
   };
 };
