@@ -7,7 +7,6 @@ export default [
       "@vuepress/plugin-git",
       "@vuepress/utils",
       "@vuepress/shared",
-      "chalk",
       "execa",
       "http",
       "ora",
@@ -20,7 +19,6 @@ export default [
     external: [
       "@vuepress/client",
       "@vuepress/plugin-theme-data/lib/client",
-      "chalk",
       "ora",
       "vue",
       "vue-router",
