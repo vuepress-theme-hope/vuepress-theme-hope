@@ -1,3 +1,58 @@
+@use "vuepress-shared/styles/reset";
+
+:root {
+  --playground-header-bg-color: #eee;
+}
+
+#{hope-config.$dark-selector} {
+  --playground-header-bg-color: #333;
+}
+
+// vue-repl dark mode
+
+/**
+ * copied from https://github.com/vuejs/repl/blob/main/src/Repl.vue
+ */
+#{hope-config.$dark-selector} .vue-repl {
+  --bg: #1a1a1a;
+  --bg-soft: #242424;
+  --border: #383838;
+  --text-light: #aaa;
+  --color-branding: #42d392;
+  --color-branding-dark: #89ddff;
+
+  .import-map-wrapper {
+    background: linear-gradient(
+      90deg,
+      rgb(26 26 26 / 0%) 0%,
+      rgb(26 26 26 / 100%) 25%
+    ) !important;
+  }
+
+  /**
+  * copied from https://github.com/vuejs/repl/blob/main/src/codemirror/codemirror.css
+  */
+  // stylelint-disable selector-class-pattern
+  .CodeMirror {
+    --symbols: #89ddff;
+    --base: #a6accd;
+    --comment: #6d6d6d;
+    --keyword: #89ddff;
+    --string: #c3e88d;
+    --variable: #82aaff;
+    --number: #f78c6c;
+    --tags: #f07178;
+    --brackets: var(--symbols);
+    --property: #f07178;
+    --attribute: #c792ea;
+    --cursor: #fff;
+    --selected-bg: rgb(255 255 255 / 10%);
+    --selected-bg-non-focus: rgb(255 255 255 / 15%);
+    // stylelint-enable selector-class-pattern
+    color: var(--symbols);
+  }
+}
+
 .playground-container {
   overflow: hidden;
 
@@ -33,14 +88,12 @@
         fill: #777;
       }
 
-      // stylelint-disable max-nesting-depth
       &:hover {
         .icon {
           transition: transform 0.15s cubic-bezier(0.2, 0, 0.13, 2);
           transform: scale(1.2);
         }
       }
-      // stylelint-enable max-nesting-depth
     }
     // stylelint-enable selector-max-compound-selectors
   }
@@ -54,7 +107,7 @@
     border-bottom: 1px solid;
     border-bottom-color: var(--code-border-color);
 
-    background-color: var(--code-demo-header-bg-color, #eee);
+    background-color: var(--playground-header-bg-color, #eee);
 
     font-weight: 500;
 
@@ -73,7 +126,7 @@
     position: relative;
     overflow: hidden;
     height: 300px;
-    background-color: var(--bg-color);
+    background-color: var(--c-bg);
 
     .preview-loading-wrapper {
       position: absolute;
