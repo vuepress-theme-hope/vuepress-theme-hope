@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.76](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.75...v2.0.0-beta.76) (2022-06-01)
+
+### Features
+
+- add legacy mode for plugins ([c6980b5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c6980b5046642357f98816119c2fa3089d29edc5))
+- improve locales ([812bb17](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/812bb176ff592a061e8d75b5fc527189a1c93672))
+- **md-enhance:** add compact for old flowchart syntax ([9d6d28e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9d6d28e125ed03a1b3cfbd27bd77e5a156ca972a))
+- **md-enhance:** add imageSize option, close [#1929](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1929) ([d48cc56](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d48cc56f0910b6d90f6bff5529c70088075e55b0))
+- **md-enhance:** extract plugins ([6b27b99](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6b27b99b4208b39eddc1f2d1514d0fe24a1d58bd))
+- **redirect:** make options optional ([0b0cee9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0b0cee939edb8e86e4fbaa4cb0c396ccb28ea5cf))
+- rename redirect2 to redirect ([6bb2579](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6bb2579e410b9bd88336eba13a3ce6e0cf6127a5))
+
+### Bug Fixes
+
+- **blog2:** improve default slugify function, close [#1922](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1922) ([9cc856e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9cc856e68eb3b72b736c6241e742f9f48e7a97ea))
+- **deps:** update dependency @types/three to v0.141.0 ([#1908](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1908)) ([514688a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/514688afdcabb4a3a36ab70360548d8ad70d9a19))
+- fix mis-usage of lifecycle ([2771356](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2771356bd1e59ac5e993b9e77f0bce1e01ed2624))
+- **md-enhance:** fix flowchart preset ([63854e3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/63854e30ad827797fa4d80fe063b3123862f2601))
+
+### Performance Improvements
+
+- **md-enhance:** improve imageMark performance ([68bd24b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/68bd24bd3b5731f2929fbdcf0c720d97b6313079))
+
 ## [2.0.0-beta.75](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.74...v2.0.0-beta.75) (2022-05-29)
 
 ### Bug Fixes
