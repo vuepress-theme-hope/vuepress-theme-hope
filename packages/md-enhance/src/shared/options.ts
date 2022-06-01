@@ -233,7 +233,7 @@ export interface MarkdownEnhanceOptions {
    */
   presentation?: PresentationOptions | boolean;
 
-  /*
+  /**
    * Keyword enhancement
    *
    * 关键词显示增强选项

@@ -422,17 +422,17 @@ interface PlaygroundOptions {
   /**
    * 外置模式配置
    */
-  external?: PlaygroundExternalOptions;
+  external?: ExternalPlaygroundOptions;
   /**
    * 内置式配置
    */
-  internal?: PlaygroundInternalOptions;
+  internal?: InternalPlaygroundOptions;
 }
 
 /**
  * 外置模式配置
  */
-interface PlaygroundExternalOptions {
+interface ExternalPlaygroundOptions {
   /**
    * playground 基础地址
    */
@@ -443,7 +443,7 @@ interface PlaygroundExternalOptions {
    */
   defaultImportsMap?: string;
   /**
-   * other options, which will be passed as query strings.
+   * 其他配置，这些会被作为查询字符串传过去。
    */
   options?: Record<string, string>;
 }
@@ -452,7 +452,7 @@ interface PlaygroundExternalOptions {
  * Playground 内置模式配置
  * 详情请查看 `@vue/repl` 。
  */
-interface PlaygroundInternalOptions {
+interface InternalPlaygroundOptions {
   /**
    * 指定默认的 Vue 运行时。
    * 默认使用 unpkg.com CDN 。

@@ -415,17 +415,17 @@ interface PlaygroundOptions {
   /**
    * external options
    */
-  external?: PlaygroundExternalOptions;
+  external?: ExternalPlaygroundOptions;
   /**
    * internal options
    */
-  internal?: PlaygroundInternalOptions;
+  internal?: InternalPlaygroundOptions;
 }
 
 /**
  * Playground external options
  */
-interface PlaygroundExternalOptions {
+interface ExternalPlaygroundOptions {
   /**
    * playground base url
    */
@@ -445,7 +445,7 @@ interface PlaygroundExternalOptions {
  * Playground internal options.
  * Please see `@vue/repl` for more details.
  */
-interface PlaygroundInternalOptions {
+interface InternalPlaygroundOptions {
   /**
    * specify the default URL to import Vue runtime from in the sandbox
    * default is the CDN link from unpkg.com.

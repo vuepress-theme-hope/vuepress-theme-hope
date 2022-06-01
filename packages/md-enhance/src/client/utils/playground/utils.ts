@@ -1,11 +1,11 @@
 // import { deepAssign } from "vuepress-shared";
 import { deepAssign } from "./assign";
 
-import {
+import { IMPORT_MAP_KEY, importKey } from "../../../shared/playground";
+
+import type {
   PlaygroundOptions,
   PlaygroundFiles,
-  IMPORT_MAP_KEY,
-  importKey,
 } from "../../../shared/playground";
 
 declare const PLAYGROUND_OPTIONS: PlaygroundOptions;
@@ -35,6 +35,9 @@ export const APP_PLAYGROUND_SETTINGS: PlaygroundOptions = deepAssign(
   playgroundOptions || {}
 );
 
+/**
+ * copied from https://github.com/vuejs/repl/blob/main/src/utils.ts
+ */
 export function utoa(data: string): string {
   return btoa(unescape(encodeURIComponent(data)));
 }

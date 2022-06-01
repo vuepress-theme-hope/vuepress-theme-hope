@@ -1,10 +1,10 @@
 import Playground from "./Playground";
 
 export * from "./Playground";
-export * from "./PlaygroundExternal";
-export * from "./PlaygroundInternal";
-export * from "./PlayFile";
-export * from "./PlayImports";
-export * from "./PlaySettings";
+export * from "./ExternalPlayground";
+export * from "./InternalPlayground";
+export * from "./PlaygroundFile";
+export * from "./PlaygroundImports";
+export * from "./PlaygroundSettings";
 
 export default Playground;

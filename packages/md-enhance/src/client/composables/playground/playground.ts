@@ -1,6 +1,6 @@
 import {
   PlaygroundFiles,
-  PlaygroundExternalOptions,
+  ExternalPlaygroundOptions,
 } from "../../../shared/playground";
 import { utoa } from "../../utils/playground";
 
@@ -8,9 +8,9 @@ interface SourceConfig {
   [key: string]: string | undefined;
 }
 
-export const usePlaygroundExternal = (
+export const useExternalPlayground = (
   config: string,
-  options: PlaygroundExternalOptions
+  options: ExternalPlaygroundOptions
 ) => {
   const configObj = JSON.parse(decodeURIComponent(config)) as PlaygroundFiles;
 

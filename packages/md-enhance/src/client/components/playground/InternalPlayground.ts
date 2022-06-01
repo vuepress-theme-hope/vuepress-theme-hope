@@ -7,40 +7,32 @@ import { ReplStore, Repl } from "@vue/repl";
 import "@vue/repl/style.css";
 import "../../styles/playground.scss";
 import { LOADING_SVG, CODE_SVG } from "../icons";
-import { usePlaygroundExternal } from "../../composables/playground";
+import { useExternalPlayground } from "../../composables/playground";
 import { parsePlaygroundSettings } from "../../utils/playground";
 
 export default defineComponent({
-  name: "PlaygroundInternal",
+  name: "InternalPlayground",
 
   props: {
-    title: { type: String, default: "" },
-    config: { type: String, required: true },
-    settings: { type: String, default: "{}" },
     id: { type: String, required: true },
+    config: { type: String, required: true },
+    title: { type: String, default: "" },
+    settings: { type: String, default: "{}" },
   },
 
   setup(props) {
     const playgroundContainer = ref<HTMLElement | null>(null);
 
-    const loading = ref<boolean>(true);
+    const loading = ref(true);
 
     const playgroundOptions = parsePlaygroundSettings(props.settings);
     const playgroundInternalOptions = playgroundOptions.internal || {};
     const showCode = ref(playgroundInternalOptions.showCode || false);
 
-    const { encoded } = usePlaygroundExternal(
+    const { encoded } = useExternalPlayground(
       props.config,
       playgroundOptions.external || {}
     );
-
-    const toggleCode = () => {
-      showCode.value = !showCode.value;
-    };
-
-    const hideLoading = () => {
-      loading.value = false;
-    };
 
     const replStore = ref<ReplStore>(
       new ReplStore({
@@ -73,7 +65,7 @@ export default defineComponent({
 
     onMounted(async () => {
       await setupRepl();
-      hideLoading();
+      loading.value = false;
     });
 
     return (): (VNode | null)[] => [
@@ -103,7 +95,7 @@ export default defineComponent({
                   class: "op-btn code",
                   href: "javascript:;",
                   innerHTML: CODE_SVG,
-                  onclick: () => toggleCode(),
+                  onclick: () => (showCode.value = !showCode.value),
                 }),
               ]),
             ]

@@ -141,6 +141,12 @@ const getPlugin =
       closeRender: () => `</${component}>`,
     });
 
-export const playFile: PluginSimple = getPlugin("file", "PlayFile");
-export const playSettings: PluginSimple = getPlugin("settings", "PlaySettings");
-export const playImports: PluginSimple = getPlugin("imports", "PlayImports");
+export const playFile: PluginSimple = getPlugin("file", "PlaygroundFile");
+export const playSettings: PluginSimple = getPlugin(
+  "settings",
+  "PlaygroundSettings"
+);
+export const playImports: PluginSimple = getPlugin(
+  "imports",
+  "PlaygroundImports"
+);

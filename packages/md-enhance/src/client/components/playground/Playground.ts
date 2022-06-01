@@ -1,14 +1,10 @@
 import { defineComponent, h } from "vue";
-import type { VNode } from "vue";
-
 import { ClientOnly } from "@vuepress/client";
 
-import PlaygroundExternal from "./PlaygroundExternal";
-import PlaygroundInternal from "./PlaygroundInternal";
-import PlayFile from "./PlayFile";
-import PlayImports from "./PlayImports";
-import PlaySettings from "./PlaySettings";
+import type { VNode } from "vue";
 
+import ExternalPlayground from "./ExternalPlayground";
+import InternalPlayground from "./InternalPlayground";
 import { parsePlaygroundSettings } from "../../utils/playground";
 import { IMPORT_MAP_KEY } from "../../../shared/playground";
 
@@ -16,19 +12,11 @@ export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names
   name: "Playground",
 
-  components: {
-    PlayFile,
-    PlayImports,
-    PlaySettings,
-    PlaygroundExternal,
-    PlaygroundInternal,
-  },
-
   props: {
     id: { type: String, required: true },
     title: { type: String, default: "" },
-    config: { type: String, default: null },
-    settings: { type: String, default: null },
+    config: { type: String, default: "{}" },
+    settings: { type: String, default: "{}" },
   },
 
   setup(props) {
@@ -39,25 +27,15 @@ export default defineComponent({
 
     return (): (VNode | null)[] => [
       h(ClientOnly, null, [
-        mode === "internal"
-          ? h(PlaygroundInternal, {
-              id: props.id,
-              title: props.title,
-              settings: props.settings,
-              config: props.config.replace(
-                encodedKey,
-                settings.internal?.defaultImportsMap || ""
-              ),
-            })
-          : h(PlaygroundExternal, {
-              id: props.id,
-              title: props.title,
-              settings: props.settings,
-              config: props.config.replace(
-                encodedKey,
-                settings.external?.defaultImportsMap || ""
-              ),
-            }),
+        h(mode === "internal" ? InternalPlayground : ExternalPlayground, {
+          id: props.id,
+          title: props.title,
+          settings: props.settings,
+          config: props.config.replace(
+            encodedKey,
+            settings.internal?.defaultImportsMap || ""
+          ),
+        }),
       ]),
     ];
   },
