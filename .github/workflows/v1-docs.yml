@@ -14,63 +14,43 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-node@v3
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
         with:
-          node-version: "16"
+          version: 7
+          run_install: true
 
-      - name: restore lerna
-        uses: actions/cache@v3
-        id: lerna-cache
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          path: |
-            node_modules
-            **/node_modules
-          key: ${{ runner.os }}-lerna-${{ hashFiles('yarn.lock') }}
-
-      - name: Get yarn cache directory path
-        if: steps.lerna-cache.outputs.cache-hit != 'true'
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - name: yarn-cache
-        if: steps.lerna-cache.outputs.cache-hit != 'true'
-        uses: actions/cache@v3
-        id: yarn-cache
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-
-      - name: Install Deps
-        if: steps.lerna-cache.outputs.cache-hit != 'true'
-        run: yarn install --frozen-lockfile
+          node-version: 16
+          cache: pnpm
 
       - name: Build project
-        run: yarn run build
+        run: pnpm run build
 
       - name: Build Docs
         env:
           BASE: /v1/
           HOSTNAME: https://vuepress-theme-hope.github.io/
-        run: yarn run docs:build
+        run: pnpm run docs:build
 
       - name: Combine output
         run: |
-          yarn cpx "docs/theme/dist/**" dist
-          yarn cpx "docs/active-hash/dist/**" dist/active-hash
-          yarn cpx "docs/add-this/dist/**" dist/add-this
-          yarn cpx "docs/comment/dist/**" dist/comment
-          yarn cpx "docs/components/dist/**" dist/components
-          yarn cpx "docs/copy-code/dist/**" dist/copy-code
-          yarn cpx "docs/feed/dist/**" dist/feed
-          yarn cpx "docs/git/dist/**" dist/git
-          yarn cpx "docs/md-enhance/dist/**" dist/md-enhance
-          yarn cpx "docs/photo-swipe/dist/**" dist/photo-swipe
-          yarn cpx "docs/pwa/dist/**" dist/pwa
-          yarn cpx "docs/reading-time/dist/**" dist/reading-time
-          yarn cpx "docs/seo/dist/**" dist/seo
-          yarn cpx "docs/sitemap/dist/**" dist/sitemap
+          pnpm cpx "docs/theme/dist/**" dist
+          pnpm cpx "docs/active-hash/dist/**" dist/active-hash
+          pnpm cpx "docs/add-this/dist/**" dist/add-this
+          pnpm cpx "docs/comment/dist/**" dist/comment
+          pnpm cpx "docs/components/dist/**" dist/components
+          pnpm cpx "docs/copy-code/dist/**" dist/copy-code
+          pnpm cpx "docs/feed/dist/**" dist/feed
+          pnpm cpx "docs/git/dist/**" dist/git
+          pnpm cpx "docs/md-enhance/dist/**" dist/md-enhance
+          pnpm cpx "docs/photo-swipe/dist/**" dist/photo-swipe
+          pnpm cpx "docs/pwa/dist/**" dist/pwa
+          pnpm cpx "docs/reading-time/dist/**" dist/reading-time
+          pnpm cpx "docs/seo/dist/**" dist/seo
+          pnpm cpx "docs/sitemap/dist/**" dist/sitemap
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4

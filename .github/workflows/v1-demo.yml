@@ -12,47 +12,27 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - uses: actions/setup-node@v3
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
         with:
-          node-version: "16"
+          version: 7
+          run_install: true
 
-      - name: restore lerna
-        uses: actions/cache@v3
-        id: lerna-cache
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          path: |
-            node_modules
-            **/node_modules
-          key: ${{ runner.os }}-lerna-${{ hashFiles('yarn.lock') }}
-
-      - name: Get yarn cache directory path
-        if: steps.lerna-cache.outputs.cache-hit != 'true'
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - name: yarn-cache
-        if: steps.lerna-cache.outputs.cache-hit != 'true'
-        uses: actions/cache@v3
-        id: yarn-cache
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-
-      - name: Install Deps
-        if: steps.lerna-cache.outputs.cache-hit != 'true'
-        run: yarn install --frozen-lockfile
+          node-version: 16
+          cache: pnpm
 
       - name: Build project
-        run: yarn run build
+        run: pnpm run build
 
       - name: Build GitHub Pages Demo
         env:
           BASE: /v1-demo/
           HOSTNAME: https://vuepress-theme-hope.github.io/
         run: |
-          yarn run demo:build
+          pnpm run demo:build
 
       - name: Deploy to gh pages
         uses: JamesIves/github-pages-deploy-action@v4
@@ -65,7 +45,7 @@ jobs:
 
       - name: Build Netlify Demo
         run: |
-          yarn run demo:build
+          pnpm run demo:build
 
       - name: Deploy to netlify
         uses: JamesIves/github-pages-deploy-action@v4
@@ -81,7 +61,7 @@ jobs:
           BASE: /v1-demo/
           HOSTNAME: https://vuepress-theme-hope.gitee.io/
         run: |
-          yarn run demo:build
+          pnpm run demo:build
 
       - name: Deploy to gitee
         uses: JamesIves/github-pages-deploy-action@v4
