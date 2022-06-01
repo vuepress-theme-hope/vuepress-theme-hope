@@ -1,8 +1,10 @@
-import { sync } from "execa";
+import { execaCommandSync } from "execa";
 
 const isPnpmInstalled = (): boolean => {
   try {
-    return sync("pnpm --version", { stdio: "ignore" }).exitCode === 0;
+    return (
+      execaCommandSync("pnpm --version", { stdio: "ignore" }).exitCode === 0
+    );
   } catch (e) {
     return false;
   }
@@ -10,7 +12,9 @@ const isPnpmInstalled = (): boolean => {
 
 const isYarnInstalled = (): boolean => {
   try {
-    return sync("yarn --version", { stdio: "ignore" }).exitCode === 0;
+    return (
+      execaCommandSync("yarn --version", { stdio: "ignore" }).exitCode === 0
+    );
   } catch (e) {
     return false;
   }

@@ -24,6 +24,7 @@
     "email": "mister-hope@outlook.com",
     "url": "https://mrhope.site"
   },
+  "type": "module",
   "bin": {
     "create-vuepress-theme-hope": "./lib/index.js"
   },
@@ -38,9 +39,9 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "cac": "6.7.12",
-    "execa": "5.1.1",
-    "inquirer": "8.2.4"
+    "cac": "^6.7.12",
+    "execa": "^6.0.0",
+    "inquirer": "^8.2.4"
   },
   "devDependencies": {
     "@types/inquirer": "8.2.1",

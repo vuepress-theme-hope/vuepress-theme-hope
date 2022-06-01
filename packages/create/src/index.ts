@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { cac } from "cac";
-import execa from "execa";
+import { execaCommand, execaCommandSync } from "execa";
 import { prompt } from "inquirer";
 
 import { bin } from "./bin";
@@ -44,9 +44,8 @@ cli
     console.log(message.install);
     console.warn(message.wait);
 
-    execa.sync(
-      bin,
-      ["install", ...(bin === "pnpm" ? [] : ["--registry", registry])],
+    execaCommandSync(
+      `${bin} install ${bin === "pnpm" ? "" : `--registry ${registry}`}`,
       { stdout: "inherit" }
     );
 
@@ -68,7 +67,7 @@ cli
     if (choice) {
       console.log(message.devServer);
 
-      await execa(bin, ["run", "docs:dev"], {
+      await execaCommand(`${bin} run docs:dev`, {
         stdout: "inherit",
       });
     } else console.log(message.hint);

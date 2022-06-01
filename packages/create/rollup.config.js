@@ -5,6 +5,7 @@ export default rollupTypescript("index", {
   resolve: true,
   external: ["cac", "execa", "inquirer"],
   output: {
+    format: "esm",
     sourcemap: false,
   },
   preserveShebang: true,
