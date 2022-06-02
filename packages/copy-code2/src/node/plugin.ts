@@ -15,17 +15,21 @@ export const copyCodePlugin =
 
     useSassPalettePlugin(app, { id: "hope" });
 
+    const userCopyCodeLocales = getLocales({
+      app,
+      name: "copy-code",
+      default: copyCodeLocales,
+      config: options.locales,
+    });
+
+    delete options.locales;
+
     return {
       name: "vuepress-plugin-copy-code2",
 
       define: (): Record<string, unknown> => ({
         CODE_COPY_OPIONS: options,
-        CODE_COPY_LOCALES: getLocales({
-          app,
-          name: "copy-code",
-          default: copyCodeLocales,
-          config: options.locales,
-        }),
+        CODE_COPY_LOCALES: userCopyCodeLocales,
       }),
 
       clientConfigFile: path.resolve(__dirname, "../client/config.js"),
