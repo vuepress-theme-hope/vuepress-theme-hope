@@ -1,4 +1,4 @@
-name: Deploy V2 Docs and demos
+name: Deploy Docs and Demos
 
 on:
   push:

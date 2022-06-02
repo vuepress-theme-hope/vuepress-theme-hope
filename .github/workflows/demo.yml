@@ -1,4 +1,4 @@
-name: Deploy V2 Theme Demo
+name: Deploy Theme Demo
 
 on:
   push:

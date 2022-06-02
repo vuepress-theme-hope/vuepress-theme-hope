@@ -11,10 +11,10 @@ body:
       label: Checklist
       description: Make sure that you follow these statements.
       options:
-        - label: I am using the **latest version**
+        - label: I am using the **latest v2 version**
           required: true
 
-        - label: I have searched FAQ ([V1 Docs](https://vuepress-theme-hope.github.io/v1/FAQ/) | [V2 Docs](https://vuepress-theme-hope.github.io/v2/faq.html))
+        - label: I have searched [FAQ](https://vuepress-theme-hope.github.io/v2/faq.html)
           required: true
 
   - type: input
@@ -24,18 +24,6 @@ body:
       description: Which package are you reporting
       value: vuepress-theme-hope
       placeholder: package name
-    validations:
-      required: true
-
-  - type: dropdown
-    id: version
-    attributes:
-      label: Version
-      description: What version of theme or plugins are you using?
-      multiple: false
-      options:
-        - v1
-        - v2
     validations:
       required: true
 
