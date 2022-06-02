@@ -24,16 +24,16 @@ To keep it globally disabled, please set `pageInfo` to `false` in the plugin opt
 
 The optional values and corresponding contents of the entry are as follows:
 
-| Entry           | Corresponding content  | page frontmatter value                |
-| --------------- | ---------------------- | ------------------------------------- |
-| `"Author"`      | author                 | `author`                              |
-| `"Date"`        | Writing Date           | `time`                                |
-| `"Original"`    | Whether is original    | `isOriginal`                          |
-| `"Category"`    | Category               | `category`                            |
-| `"Tag"`         | Tag                    | `tag`                                 |
-| `"ReadingTime"` | Estimated reading time | N/A (automatically generated)         |
-| `"Word"`        | Word count             | N/A (automatically generated)         |
-| `"PageView"`    | Visits                 | `pageview` (only available in Waline) |
+| Entry           | Corresponding content  | page frontmatter value                | Theme Options              |
+| --------------- | ---------------------- | ------------------------------------- | -------------------------- |
+| `"Author"`      | author                 | `author`                              | `author`                   |
+| `"Date"`        | Writing Date           | `time`                                | N/A                        |
+| `"Original"`    | Whether is original    | `isOriginal`                          | N/A                        |
+| `"Category"`    | Category               | `category`                            | N/A                        |
+| `"Tag"`         | Tag                    | `tag`                                 | N/A                        |
+| `"ReadingTime"` | Estimated reading time | N/A (automatically generated)         | N/A                        |
+| `"Word"`        | Word count             | N/A (automatically generated)         | N/A                        |
+| `"PageView"`    | Pageviews              | `pageview` (only available in Waline) | `plugins.comment.pageview` |
 
 By default it will display "Author, Visit Number, Writing Date, Category, Tags, Expect Reading Time".
 

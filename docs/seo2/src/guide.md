@@ -3,7 +3,7 @@ title: Guide
 icon: guide
 ---
 
-This plugin will make your site fully support [Open Content Protocol OGP](https://ogp.me/) and [JSON-LD 1.1](https://www.w3.org/TR/json-ld-api/) to fully enhance the SEO of the site.
+This plugin will make your site fully support [Open Content Protocol OGP](https://ogp.me/) and [JSON-LD 1.1](https://www.w3.org/TR/json-ld-api/) to enhance the SEO of the site.
 
 ## Out of Box
 

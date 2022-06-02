@@ -18,7 +18,7 @@ To make the plugin work better, you may need to check the [page config](../../co
 
 :::
 
-The plugin will make your site fully support [Open Content Protocol OGP](https://ogp.me/) and [JSON-LD 1.1](https://www.w3.org/TR/json-ld-api/) to fully enhance the SEO of the site.
+The plugin will make your site fully support [Open Content Protocol OGP](https://ogp.me/) and [JSON-LD 1.1](https://www.w3.org/TR/json-ld-api/) to enhance the SEO of the site.
 
 If you don’t need this plugin, please set `plugins.seo` to `false` in theme options.
 
