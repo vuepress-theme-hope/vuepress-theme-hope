@@ -37,7 +37,7 @@ export const checkOutput = (options: Partial<FeedOptions>): boolean =>
   Boolean(options.atom || options.json || options.rss);
 
 export const getFeedOptions = (
-  app: App,
+  { siteData }: App,
   options: FeedOptions
 ): ResolvedFeedOptionsMap =>
   Object.fromEntries(
@@ -45,7 +45,7 @@ export const getFeedOptions = (
       // root locale must exists
       // eslint-disable-next-line @typescript-eslint/naming-convention
       "/": {},
-      ...app.siteData.locales,
+      ...siteData.locales,
     }).map((localePath) => [
       localePath,
       {
@@ -83,23 +83,20 @@ export const getFeedChannelOption = (
   options: FeedOptions,
   localePath = ""
 ): FeedChannelOption => {
-  const { hostname, icon, image } = options;
   const { base } = app.options;
+  const { title, description, lang, locales } = app.siteData;
+  const { hostname, icon, image } = options;
   const author = options.channel?.author?.name;
 
   const defaultChannelOpion: FeedChannelOption = {
-    title:
-      app.siteData.locales[localePath]?.title ||
-      app.siteData.title ||
-      app.siteData.locales["/"]?.title ||
-      "",
+    title: locales[localePath]?.title || title || locales["/"]?.title || "",
     link: resolveUrl(hostname, base, localePath),
     description:
-      app.siteData.locales[localePath]?.description ||
-      app.siteData.description ||
-      app.siteData.locales["/"]?.description ||
+      locales[localePath]?.description ||
+      description ||
+      locales["/"]?.description ||
       "",
-    language: app.siteData.locales[localePath]?.lang || app.siteData.lang,
+    language: locales[localePath]?.lang || lang,
     copyright: author ? `Copyright by ${author}` : "",
     pubDate: new Date(),
     lastUpdated: new Date(),
@@ -130,8 +127,10 @@ export const getFilename = (
   }`,
 });
 
-export const getFeedLinks = (app: App, options: FeedOptions): FeedLinks => {
-  const { base } = app.options;
+export const getFeedLinks = (
+  { options: { base } }: App,
+  options: FeedOptions
+): FeedLinks => {
   const { hostname } = options;
   const { atomOutputFilename, jsonOutputFilename, rssOutputFilename } =
     getFilename(options);
