@@ -41,6 +41,7 @@ export const generateServiceWorker = async (
   logger.load("Generating service worker");
 
   const { dest } = app.dir;
+  const { title, locales } = app.siteData;
   const swDest = dest("service-worker.js");
   const destDir = path.relative(process.cwd(), dest());
 
@@ -54,7 +55,7 @@ export const generateServiceWorker = async (
   await generateSW({
     swDest,
     globDirectory: destDir,
-    cacheId: app.siteData.title || app.siteData.locales["/"]?.title || "hope",
+    cacheId: title || locales["/"]?.title || "hope",
     globPatterns,
     cleanupOutdatedCaches: true,
     clientsClaim: true,

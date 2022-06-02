@@ -159,6 +159,8 @@ export interface PWAOptions {
    * - `"available"`: 仅当新的 service worker 可用时才显示更新弹出窗口
    * - `"hint"`: 显示更新内容可用提示，并允许用户立即刷新。当新的 SW 成功注册后，将转为更新内容就绪弹窗。当你希望用户立即查看新文档时，这很有帮助。
    * - `"force"`: 立即注销当前 Service Worker 然后刷新以获取新内容。**这可能会影响访问体验**!
+   *
+   * @default "available"
    */
   update?: "available" | "hint" | "force" | "disable";
 

@@ -20,8 +20,6 @@ export default defineComponent({
     const reload = (): void => {
       if (registration.value) {
         useSkipWaiting(registration.value);
-        window.location.reload();
-
         registration.value = null;
       }
     };
@@ -30,9 +28,7 @@ export default defineComponent({
       const event = usePWAEvent();
 
       event.on("updated", (reg) => {
-        if (reg) {
-          registration.value = reg;
-        }
+        if (reg) registration.value = reg;
       });
     });
 
