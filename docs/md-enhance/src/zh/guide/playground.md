@@ -122,9 +122,9 @@ module.exports = {
 
 #### 基础用法
 
-:::: playground 基础用法
+::: playground 基础用法
 
-::: file App.vue
+@file App.vue
 
 ```vue
 <script setup>
@@ -140,14 +140,13 @@ const msg = ref("Hello World!");
 ```
 
 :::
-::::
 
-::::: details 代码
+:::: details 代码
 
 ````md
-:::: playground 基础用法
+::: playground 基础用法
 
-::: file App.vue
+@file App.vue
 
 ```vue
 <script setup>
@@ -163,10 +162,9 @@ const msg = ref("Hello World!");
 ```
 
 :::
-::::
 ````
 
-:::::
+::::
 
 #### 高级用法
 
@@ -176,8 +174,8 @@ const msg = ref("Hello World!");
 - 使用你自己的 import map
 - 应用额外的配置到你的 playground
 
-:::: playground 高级用法
-::: file App.vue
+::: playground 高级用法
+@file App.vue
 
 ```vue
 <script setup>
@@ -195,7 +193,7 @@ const msg = ref("Hello Playground!");
 </template>
 ```
 
-::: file Comp.vue
+@file Comp.vue
 
 ```vue
 <template>
@@ -212,8 +210,7 @@ const msg = ref("Hello Playground!");
 </template>
 ```
 
-:::
-::: imports user-imports.json
+@imports user-imports.json
 
 ```json
 {
@@ -223,8 +220,7 @@ const msg = ref("Hello Playground!");
 }
 ```
 
-:::
-::: settings
+@settings
 
 ```json
 {
@@ -239,13 +235,12 @@ const msg = ref("Hello Playground!");
 ```
 
 :::
-::::
 
-::::: details 代码
+:::: details 代码
 
 ````md
-:::: playground 高级用法
-::: file App.vue
+::: playground 高级用法
+@file App.vue
 
 ```vue
 <script setup>
@@ -263,7 +258,7 @@ const msg = ref("Hello Playground!");
 </template>
 ```
 
-::: file Comp.vue
+@file Comp.vue
 
 ```vue
 <template>
@@ -280,8 +275,7 @@ const msg = ref("Hello Playground!");
 </template>
 ```
 
-:::
-::: imports user-imports.json
+@imports user-imports.json
 
 ```json
 {
@@ -291,8 +285,7 @@ const msg = ref("Hello Playground!");
 }
 ```
 
-:::
-::: settings
+@settings
 
 ```json
 {
@@ -307,17 +300,16 @@ const msg = ref("Hello Playground!");
 ```
 
 :::
-::::
 ````
 
-:::::
+::::
 
 ### 内置模式
 
 #### 基础用法
 
-:::: playground 基础用法
-::: file App.vue
+::: playground 基础用法
+@file App.vue
 
 ```vue
 <script setup>
@@ -332,8 +324,7 @@ const msg = ref("Hello Playground!");
 </template>
 ```
 
-:::
-::: settings
+@settings
 
 ```json
 {
@@ -342,13 +333,12 @@ const msg = ref("Hello Playground!");
 ```
 
 :::
-::::
 
-::::: details 代码
+:::: details 代码
 
 ````md
-:::: playground 基础用法
-::: file App.vue
+::: playground 基础用法
+@file App.vue
 
 ```vue
 <script setup>
@@ -363,8 +353,7 @@ const msg = ref("Hello Playground!");
 </template>
 ```
 
-:::
-::: settings
+@settings
 
 ```json
 {
@@ -373,17 +362,19 @@ const msg = ref("Hello Playground!");
 ```
 
 :::
-::::
 ````
 
-:::::
+::::
 
 #### 高级用法
 
 显示 playground 的 `JS`, `CSS`, `SSR` 面板，并显示代码编辑器。
 
-:::: playground 高级用法
-::: file App.vue
+Playground 的 `key` 是自动产生的。它是基于标题计算的。
+你也可以自己指定它，使用 `playground#customId` 形式。
+
+::: playground#customId 高级用法
+@file App.vue
 
 ```vue
 <script setup>
@@ -398,8 +389,7 @@ const msg = ref("Hello Playground!");
 </template>
 ```
 
-:::
-::: settings
+@settings
 
 ```json
 {
@@ -412,13 +402,12 @@ const msg = ref("Hello Playground!");
 ```
 
 :::
-::::
 
-::::: details 代码
+:::: details 代码
 
 ````md
-:::: playground 高级用法
-::: file App.vue
+::: playground#customId 高级用法
+@file App.vue
 
 ```vue
 <script setup>
@@ -433,8 +422,7 @@ const msg = ref("Hello Playground!");
 </template>
 ```
 
-:::
-::: settings
+@settings
 
 ```json
 {
@@ -447,7 +435,6 @@ const msg = ref("Hello Playground!");
 ```
 
 :::
-::::
 ````
 
-:::::
+::::

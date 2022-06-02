@@ -122,9 +122,9 @@ We can use `external` and `internal` mode.
 
 #### Basic usage
 
-:::: playground Basic usage
+::: playground Basic usage
 
-::: file App.vue
+@file App.vue
 
 ```vue
 <script setup>
@@ -140,14 +140,13 @@ const msg = ref("Hello World!");
 ```
 
 :::
-::::
 
-::::: details Code
+:::: details Code
 
 ````md
-:::: playground Basic usage
+::: playground Basic usage
 
-::: file App.vue
+@file App.vue
 
 ```vue
 <script setup>
@@ -163,10 +162,9 @@ const msg = ref("Hello World!");
 ```
 
 :::
-::::
 ````
 
-:::::
+::::
 
 #### Advanced usage
 
@@ -176,8 +174,8 @@ This example shows you how to customize your playground.
 - Use your own import map
 - Apply extra options to your playground
 
-:::: playground Advanced usage
-::: file App.vue
+::: playground Advanced usage
+@file App.vue
 
 ```vue
 <script setup>
@@ -195,7 +193,7 @@ const msg = ref("Hello Playground!");
 </template>
 ```
 
-::: file Comp.vue
+@file Comp.vue
 
 ```vue
 <template>
@@ -212,8 +210,7 @@ const msg = ref("Hello Playground!");
 </template>
 ```
 
-:::
-::: imports user-imports.json
+@imports user-imports.json
 
 ```json
 {
@@ -223,8 +220,7 @@ const msg = ref("Hello Playground!");
 }
 ```
 
-:::
-::: settings
+@settings
 
 ```json
 {
@@ -239,13 +235,12 @@ const msg = ref("Hello Playground!");
 ```
 
 :::
-::::
 
-::::: details Code
+:::: details Code
 
 ````md
-:::: playground Advanced usage
-::: file App.vue
+::: playground Advanced usage
+@file App.vue
 
 ```vue
 <script setup>
@@ -263,7 +258,7 @@ const msg = ref("Hello Playground!");
 </template>
 ```
 
-::: file Comp.vue
+@file Comp.vue
 
 ```vue
 <template>
@@ -280,8 +275,7 @@ const msg = ref("Hello Playground!");
 </template>
 ```
 
-:::
-::: imports user-imports.json
+@imports user-imports.json
 
 ```json
 {
@@ -291,8 +285,7 @@ const msg = ref("Hello Playground!");
 }
 ```
 
-:::
-::: settings
+@settings
 
 ```json
 {
@@ -307,17 +300,16 @@ const msg = ref("Hello Playground!");
 ```
 
 :::
-::::
 ````
 
-:::::
+::::
 
 ### Internal mode
 
 #### Basic usage
 
-:::: playground Basic usage
-::: file App.vue
+::: playground Basic usage
+@file App.vue
 
 ```vue
 <script setup>
@@ -332,8 +324,7 @@ const msg = ref("Hello Playground!");
 </template>
 ```
 
-:::
-::: settings
+@settings
 
 ```json
 {
@@ -342,13 +333,12 @@ const msg = ref("Hello Playground!");
 ```
 
 :::
-::::
 
-::::: details Code
+:::: details Code
 
 ````md
-:::: playground Basic usage
-::: file App.vue
+::: playground Basic usage
+@file App.vue
 
 ```vue
 <script setup>
@@ -363,8 +353,7 @@ const msg = ref("Hello Playground!");
 </template>
 ```
 
-:::
-::: settings
+@settings
 
 ```json
 {
@@ -373,17 +362,19 @@ const msg = ref("Hello Playground!");
 ```
 
 :::
-::::
 ````
 
-:::::
+::::
 
 #### Advanced usage
 
 Display the playground, show `JS`, `CSS`, `SSR` panel, and show the code editor.
 
-:::: playground Advanced usage
-::: file App.vue
+The playground's `key` is automaticlly generated. And it's calculated based on the title.
+You can also specify it yourself by using `playground#customId`.
+
+::: playground#customId Advanced usage
+@file App.vue
 
 ```vue
 <script setup>
@@ -398,8 +389,7 @@ const msg = ref("Hello Playground!");
 </template>
 ```
 
-:::
-::: settings
+@settings
 
 ```json
 {
@@ -412,13 +402,12 @@ const msg = ref("Hello Playground!");
 ```
 
 :::
-::::
 
-::::: details Code
+:::: details Code
 
 ````md
-:::: playground Advanced usage
-::: file App.vue
+::: playground#customId Advanced usage
+@file App.vue
 
 ```vue
 <script setup>
@@ -433,8 +422,7 @@ const msg = ref("Hello Playground!");
 </template>
 ```
 
-:::
-::: settings
+@settings
 
 ```json
 {
@@ -447,7 +435,6 @@ const msg = ref("Hello Playground!");
 ```
 
 :::
-::::
 ````
 
-:::::
+::::

@@ -26,9 +26,6 @@ import {
   mermaid,
   normalDemo,
   playground,
-  playgroundFile,
-  playgroundImports,
-  playgroundSettings,
   presentation,
   reactDemo,
   stylize,
@@ -228,9 +225,6 @@ export const mdEnhancePlugin =
         if (getStatus("stylize")) md.use(stylize, options.stylize);
         if (playgroundEnable) {
           md.use(playground);
-          md.use(playgroundFile);
-          md.use(playgroundImports);
-          md.use(playgroundSettings);
         }
       },
 

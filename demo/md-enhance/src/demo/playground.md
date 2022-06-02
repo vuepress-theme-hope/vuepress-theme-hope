@@ -8,9 +8,9 @@ title: Playground Demo
 
 #### Customize imports
 
-:::: playground Playground demo
+::: playground Playground demo
 
-::: file App.vue
+@file App.vue
 
 ```vue
 <script setup>
@@ -28,8 +28,7 @@ const msg = ref("Hello World!");
 </template>
 ```
 
-:::
-::: file Comp.vue
+@file Comp.vue
 
 ```vue
 <template>
@@ -37,8 +36,7 @@ const msg = ref("Hello World!");
 </template>
 ```
 
-:::
-::: imports
+@imports
 
 ```json
 {
@@ -53,9 +51,9 @@ const msg = ref("Hello World!");
 
 #### Customize imports map file
 
-:::: playground Playground demo2
+::: playground Playground demo2
 
-::: file App.vue
+@file App.vue
 
 ```vue
 <script setup>
@@ -70,8 +68,7 @@ const msg = ref("Hello World!");
 </template>
 ```
 
-:::
-::: file Comp.vue
+@file Comp.vue
 
 ```vue
 <template>
@@ -79,8 +76,7 @@ const msg = ref("Hello World!");
 </template>
 ```
 
-:::
-::: imports import_map.json
+@imports import_map.json
 
 ```json
 {
@@ -90,8 +86,7 @@ const msg = ref("Hello World!");
 }
 ```
 
-:::
-::: settings
+@settings
 
 ```json
 {
@@ -103,13 +98,12 @@ const msg = ref("Hello World!");
 ```
 
 :::
-::::
 
 #### Customize settings
 
-:::: playground Playground demo3
+::: playground Playground demo3
 
-::: file App.vue
+@file App.vue
 
 ```vue
 <script setup>
@@ -124,8 +118,7 @@ const msg = ref("Hello Playground!");
 </template>
 ```
 
-:::
-::: imports user-imports.json
+@imports user-imports.json
 
 ```json
 {
@@ -135,8 +128,7 @@ const msg = ref("Hello Playground!");
 }
 ```
 
-:::
-::: settings
+@settings
 
 ```json
 {
@@ -151,13 +143,12 @@ const msg = ref("Hello Playground!");
 ```
 
 :::
-::::
 
 ### Internal mode
 
-:::: playground Internal mode
+::: playground Internal mode
 
-::: file App.vue
+@file App.vue
 
 ```vue
 <script setup>
@@ -172,8 +163,7 @@ const msg = ref("Hello Playground!");
 </template>
 ```
 
-:::
-::: settings
+@settings
 
 ```json
 {
@@ -182,11 +172,10 @@ const msg = ref("Hello Playground!");
 ```
 
 :::
-::::
 
-:::: playground Internal mode2 - show compile outpu
+::: playground Internal mode2 - show compile outpu
 
-::: file App.vue
+@file App.vue
 
 ```vue
 <script setup>
@@ -201,8 +190,7 @@ const msg = ref("Hello Playground!");
 </template>
 ```
 
-:::
-::: settings
+@settings
 
 ```json
 {
@@ -214,4 +202,3 @@ const msg = ref("Hello Playground!");
 ```
 
 :::
-::::
