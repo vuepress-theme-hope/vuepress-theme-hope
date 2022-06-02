@@ -7,7 +7,8 @@ import type { HopeThemeConfig, HopeThemePluginsOptions } from "../../shared";
 export const getSEOPlugin = (
   themeConfig: HopeThemeConfig,
   { blog, seo }: HopeThemePluginsOptions,
-  hostname = ""
+  hostname = "",
+  legacy = false
 ): Plugin | null => {
   if (seo === false) return null;
 
@@ -33,10 +34,13 @@ export const getSEOPlugin = (
       .every(([, value]) => !localePath.startsWith(value));
   };
 
-  return seoPlugin({
-    hostname,
-    ...(themeConfig.author ? { author: themeConfig.author } : {}),
-    isArticle,
-    ...(seo || {}),
-  });
+  return seoPlugin(
+    {
+      hostname,
+      ...(themeConfig.author ? { author: themeConfig.author } : {}),
+      isArticle,
+      ...(seo || {}),
+    },
+    legacy
+  );
 };
