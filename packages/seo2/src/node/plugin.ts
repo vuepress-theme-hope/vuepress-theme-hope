@@ -1,7 +1,7 @@
 import { chalk } from "@vuepress/utils";
 import { stripTags } from "vuepress-shared";
 
-import { generateRobotsTxt, appendSEO } from "./seo";
+import { appendSEO, generateRobotsTxt } from "./seo";
 import { logger, md2text } from "./utils";
 
 import type { Plugin, PluginFunction } from "@vuepress/core";

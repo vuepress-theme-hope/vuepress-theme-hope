@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { fs } from "@vuepress/utils";
+import { getCanonicalLink, getJSONLD, getOGP } from "./info";
 import { addOGP, appendCanonical, appendJSONLD } from "./inject";
 import { logger } from "./utils";
 
 import type { App, AppDir } from "@vuepress/core";
 import type { ExtendPage, SeoOptions } from "../shared";
-import { getCanonicalLink, getJSONLD, getOGP } from "./info";
 
 export const appendSEO = (
   page: ExtendPage,
