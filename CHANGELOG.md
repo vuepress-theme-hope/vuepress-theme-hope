@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.77](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.76...v2.0.0-beta.77) (2022-06-03)
+
+### ⚠ BREAKING CHANGES
+
+- **comment2:** rename type to provider
+
+### Features
+
+- **comment2:** rename type to provider ([28410bc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/28410bc4ae370e009cdae6276f39596c1d106faa))
+- **create:** output esm ([b1188ed](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b1188ede433746aef136a9588b0abee4e98cd323))
+- **seo2:** add legacy option ([30efc55](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/30efc55a7cb5f79944a2d2f11c781740922c8a05))
+- **sitemap2:** add legacy option ([a9d413d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a9d413d8be32ab737f815e87213acdd680f3d0dd))
+- **theme:** support legacy in sitemap and seo ([617f6dc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/617f6dc0957edaefd047b5bf72bf8474adf02283))
+
+### Bug Fixes
+
+- **components:** fix BackToTop button ([764aad7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/764aad76a92193317b458466453e3cbf3fc4ae5b))
+- **md-enhance:** fix issues when mermaid takes long time to render ([e62d304](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e62d3044b747da9954c87cfdee2790da4fbf8a53))
+- **theme:** fix style ([cfd0dc1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cfd0dc14e75b9db1ec6f83d2c2c24ffa12578d94))
+
 ## [2.0.0-beta.76](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.75...v2.0.0-beta.76) (2022-06-01)
 
 ### ⚠ BREAKING CHANGES
