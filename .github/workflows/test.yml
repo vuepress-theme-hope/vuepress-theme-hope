@@ -81,6 +81,7 @@ jobs:
       - name: Linter test
         run: |
           pnpm run lint:check
+          pnpm run lint:md
 
       - name: Unit test
         env:
