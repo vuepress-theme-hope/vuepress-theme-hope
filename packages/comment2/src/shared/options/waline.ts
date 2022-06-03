@@ -1,10 +1,11 @@
 import type { LocaleConfig } from "@vuepress/core";
 import type { WalineInitOptions, WalineLocale } from "@waline/client";
+import type { ConvertLocaleConfig } from "vuepress-shared";
 import type { BaseCommentOptions } from "./base";
 
 export type WalineLocaleData = Partial<WalineLocale>;
 
-export type WalineLocaleConfig = LocaleConfig<WalineLocaleData>;
+export type WalineLocaleConfig = ConvertLocaleConfig<WalineLocaleData>;
 
 export interface WalineOptions
   extends BaseCommentOptions,
