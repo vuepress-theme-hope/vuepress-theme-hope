@@ -1,7 +1,7 @@
 import type { BaseCommentOptions } from "./base";
 
 export interface GiscusOptions extends BaseCommentOptions {
-  type: "giscus";
+  provider: "Giscus";
 
   /**
    * The name of repository to store discussions.

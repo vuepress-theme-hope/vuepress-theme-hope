@@ -21,7 +21,7 @@ export const getStatus = (themeOptions: HopeThemeOptions): ThemeStatus => {
         (plugins.mdEnhance.enableAll || plugins.mdEnhance.presentation)
     ),
     enableVisitor: Boolean(
-      plugins.comment && plugins.comment.type === "waline"
+      plugins.comment && plugins.comment.provider === "Waline"
     ),
   };
 };

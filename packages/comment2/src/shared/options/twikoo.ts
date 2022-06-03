@@ -19,5 +19,5 @@ export interface TwikooInitOptions {
 }
 
 export interface TwikooOptions extends BaseCommentOptions, TwikooInitOptions {
-  type: "twikoo";
+  provider: "Twikoo";
 }

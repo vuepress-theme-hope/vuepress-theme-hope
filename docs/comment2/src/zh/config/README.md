@@ -5,8 +5,8 @@ icon: config
 
 ## type
 
-- 类型: `"giscus" | "twikoo" | "waline" | "none"`
-- 默认: `"none"`
+- 类型: `"Giscus" | "Twikoo" | "Waline" | "None"`
+- 默认: `"None"`
 
 评论服务提供者。
 

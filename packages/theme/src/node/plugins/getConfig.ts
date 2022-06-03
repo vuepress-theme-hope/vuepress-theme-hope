@@ -39,7 +39,7 @@ export const getPluginConfig = (
     plugins.prismjs === false ? null : prismjsPlugin(),
     themeDataPlugin({ themeData }),
     getBlogPlugin(themeData, plugins.blog),
-    getCommentPlugin(plugins.comment),
+    getCommentPlugin(plugins.comment, legacy),
     getCopyCodePlugin(themeData, plugins.copyCode),
     getCopyrightPlugin(themeData, plugins.copyright, options.hostname),
     // seo should work before feed

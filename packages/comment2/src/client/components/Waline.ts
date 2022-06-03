@@ -5,13 +5,25 @@ import { computed, defineComponent, h, onMounted, watch } from "vue";
 import { useRoute } from "vue-router";
 import { useLocaleConfig } from "vuepress-shared/lib/client";
 
-import { enableWaline, walineLocales, walineOption } from "../define";
-
 import type { VNode } from "vue";
-import type { CommentPluginFrontmatter } from "../../shared";
+import type {
+  CommentPluginFrontmatter,
+  WalineLocaleConfig,
+  WalineOptions,
+} from "../../shared";
 
 import "@waline/client/dist/waline.css";
 import "../styles/waline.scss";
+
+declare const COMMENT_OPTIONS: WalineOptions;
+
+declare const WALINE_LOCALES: WalineLocaleConfig;
+
+export const walineOption = COMMENT_OPTIONS;
+
+export const enableWaline = Boolean(walineOption.serverURL);
+
+export const walineLocales = WALINE_LOCALES;
 
 export default defineComponent({
   name: "WalineComment",
