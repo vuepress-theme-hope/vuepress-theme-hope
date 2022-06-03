@@ -55,7 +55,8 @@ export default defineComponent({
       scrollTop.value = getScrollTop();
     });
 
-    useEventListener("scroll", () =>
+    useEventListener(
+      "scroll",
       useDebounceFn(() => {
         scrollTop.value = getScrollTop();
       }, 100)
