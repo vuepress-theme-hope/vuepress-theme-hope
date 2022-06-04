@@ -40,7 +40,7 @@
   },
   "dependencies": {
     "cac": "^6.7.12",
-    "execa": "^6.0.0",
+    "execa": "^6.1.0",
     "inquirer": "^8.2.4"
   },
   "devDependencies": {
