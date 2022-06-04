@@ -67,6 +67,9 @@ const DROPPED_THEME_OPTIONS: [string, string?, string?][] = [
   ],
 ];
 
+/**
+ * @deprecated You should use V2 standard options and avoid using it
+ */
 const handleBlogOptions = (blogOptions: Record<string, unknown>): void => {
   if ("links" in blogOptions) {
     logger.warn(
@@ -95,6 +98,45 @@ const handleBlogOptions = (blogOptions: Record<string, unknown>): void => {
 /**
  * @deprecated You should use V2 standard options and avoid using it
  */
+const handleFooterOptions = (options: Record<string, unknown>): void => {
+  if (typeof options["footer"] === "object" && options["footer"]) {
+    const footer = options["footer"];
+
+    if ("copyright" in footer) {
+      logger.warn(
+        '"footer.copyright" options is deprecated, please use "copyright" instead'
+      );
+
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      options["copyright"] === footer["copyright"];
+    }
+
+    if ("display" in footer) {
+      logger.warn(
+        '"footer.display" options is deprecated, please use "displayFooter" instead'
+      );
+
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      options["displayFooter"] === footer["display"];
+    }
+
+    if ("content" in footer) {
+      logger.warn(
+        '"footer.content" options is deprecated, please use "footer" instead'
+      );
+
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      options["footer"] === footer["content"];
+    } else delete options["footer"];
+  }
+};
+
+/**
+ * @deprecated You should use V2 standard options and avoid using it
+ */
 export const covertThemeConfig = (
   themeOptions: Record<string, unknown>
 ): HopeThemeOptions => {
@@ -112,12 +154,18 @@ export const covertThemeConfig = (
   );
   DROPPED_THEME_OPTIONS.forEach((item) => droppedLogger(themeOptions, ...item));
 
-  if (Array.isArray(themeOptions["navbar"]))
+  // handle navbar
+  if ("navbar" in themeOptions)
     themeOptions["navbar"] = covertNavbarConfig(themeOptions["navbar"]);
 
-  if (typeof themeOptions["sidebar"] === "object")
+  // handle sidebar
+  if ("sidebar" in themeOptions)
     themeOptions["sidebar"] = convertSidebarConfig(themeOptions["sidebar"]);
 
+  // handle footer
+  handleFooterOptions(themeOptions);
+
+  // handle blog
   if (typeof themeOptions["blog"] === "object" && themeOptions["blog"]) {
     handleBlogOptions(themeOptions["blog"] as Record<string, unknown>);
     if (!plugins["blog"]) plugins["blog"] = true;
@@ -150,25 +198,35 @@ export const covertThemeConfig = (
     typeof themeOptions["locales"] === "object"
   ) {
     Object.values(themeOptions["locales"]!).forEach(
-      (value: Record<string, unknown>) => {
+      (localeConfig: Record<string, unknown>) => {
         DEPRECATED_THEME_OPTIONS.forEach(([deprecatedOption, newOption]) =>
           deprecatedLogger({
-            options: value,
+            options: localeConfig,
             deprecatedOption,
             newOption,
             scope: "themeConfig.locales",
           })
         );
-        DROPPED_THEME_OPTIONS.forEach((item) => droppedLogger(value, ...item));
+        DROPPED_THEME_OPTIONS.forEach((item) =>
+          droppedLogger(localeConfig, ...item)
+        );
 
-        if (Array.isArray(value["navbar"]))
-          value["navbar"] = covertNavbarConfig(value["navbar"]);
+        // handle navbar
+        if ("navbar" in localeConfig)
+          localeConfig["navbar"] = covertNavbarConfig(localeConfig["navbar"]);
 
-        if (typeof value["sidebar"] === "object")
-          value["sidebar"] = convertSidebarConfig(value["sidebar"]);
+        // handle sidebar
+        if ("sidebar" in localeConfig)
+          localeConfig["sidebar"] = convertSidebarConfig(
+            localeConfig["sidebar"]
+          );
 
-        if (typeof value["blog"] === "object" && value["blog"]) {
-          handleBlogOptions(value["blog"] as Record<string, unknown>);
+        // handle footer
+        handleFooterOptions(localeConfig);
+
+        // handle blog
+        if (typeof localeConfig["blog"] === "object" && localeConfig["blog"]) {
+          handleBlogOptions(localeConfig["blog"] as Record<string, unknown>);
           if (!plugins["blog"]) plugins["blog"] = true;
         }
       }

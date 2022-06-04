@@ -40,10 +40,13 @@ const handleNavbarConfig = (config: unknown[]): HopeThemeNavbarConfig =>
 /**
  * @deprecated You should use V2 standard navbar config and avoid using it
  */
-export const covertNavbarConfig = (config: unknown): HopeThemeNavbarConfig => {
+export const covertNavbarConfig = (
+  config: unknown
+): HopeThemeNavbarConfig | false => {
+  if (config === false) return false;
   if (Array.isArray(config)) return handleNavbarConfig(config);
 
   logger.error('"navbar" config should be an array');
 
-  return [];
+  return false;
 };
