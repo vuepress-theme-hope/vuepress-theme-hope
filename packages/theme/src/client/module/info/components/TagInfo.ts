@@ -6,7 +6,7 @@ import { TagIcon } from "@theme-hope/module/info/components/icons";
 import { useMetaLocale } from "@theme-hope/module/info/composables";
 
 import type { PropType, VNode } from "vue";
-import type { PageTag } from "../../../../shared";
+import type { PageTag } from "@theme-hope/module/info/utils";
 
 import "../styles/tag.scss";
 

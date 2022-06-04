@@ -6,7 +6,7 @@ import { CategoryIcon } from "@theme-hope/module/info/components/icons";
 import { useMetaLocale } from "@theme-hope/module/info/composables";
 
 import type { PropType, VNode } from "vue";
-import type { PageCategory } from "../../../../shared";
+import type { PageCategory } from "@theme-hope/module/info/utils";
 
 import "../styles/category.scss";
 

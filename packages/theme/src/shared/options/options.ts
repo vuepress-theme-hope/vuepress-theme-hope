@@ -3,6 +3,7 @@ import type { Author } from "vuepress-shared";
 import type {
   HopeThemeAppearanceConfig,
   HopeThemeAppearanceOptions,
+  HopeThemeAppearanceRootOptions,
 } from "./appearance";
 import type {
   HopeThemeFeatureConfig,
@@ -26,29 +27,12 @@ export interface HopeThemeRootInfoOptions {
    * 网站部署域名
    */
   hostname?: string;
-
-  /**
-   * Link of font icon asset
-   *
-   * 字体图标资源链接
-   *
-   * @description `'iconfont'` and `'font-awesome'` keywords are supported
-   */
-  iconAssets?: string;
-
-  /**
-   * Font Icon class prefix
-   *
-   * 字体图标 class 前缀
-   *
-   * @default ''
-   */
-  iconPrefix?: string;
 }
 
 export type HopeThemeRootOptions = HopeThemeAppearanceOptions &
   HopeThemeFeatureOptions &
   HopeThemeLayoutOptions &
+  HopeThemeAppearanceRootOptions &
   HopeThemeRootInfoOptions;
 
 export type HopeThemeRootConfig = HopeThemeAppearanceConfig &

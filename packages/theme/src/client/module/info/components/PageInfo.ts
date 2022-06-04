@@ -17,7 +17,8 @@ import type {
   AuthorInfo as AuthorInfoType,
   DateInfo as DateInfoType,
 } from "vuepress-shared";
-import type { PageCategory, PageTag, PageInfo } from "../../../../shared";
+import type { PageCategory, PageTag } from "@theme-hope/module/info/utils";
+import type { PageInfo } from "../../../../shared";
 
 import "balloon-css/balloon.css";
 import "../styles/page-info.scss";

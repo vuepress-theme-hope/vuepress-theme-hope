@@ -97,4 +97,24 @@ export interface HopeThemeAppearanceOptions {
   fullscreen?: boolean;
 }
 
+export interface HopeThemeAppearanceRootOptions {
+  /**
+   * Link of font icon asset
+   *
+   * 字体图标资源链接
+   *
+   * @description `'iconfont'` and `'font-awesome'` keywords are supported
+   */
+  iconAssets?: string;
+
+  /**
+   * Font Icon class prefix
+   *
+   * 字体图标 class 前缀
+   *
+   * @default ''
+   */
+  iconPrefix?: string;
+}
+
 export type HopeThemeAppearanceConfig = Required<HopeThemeAppearanceOptions>;

@@ -20,12 +20,8 @@ import type { ComputedRef } from "vue";
 import type { ReadingTime } from "vuepress-plugin-reading-time2";
 import type { CategoryMapRef } from "@theme-hope/module/blog/composables";
 import type { PageInfoProps } from "@theme-hope/module/info/components/PageInfo";
-import type {
-  HopeThemeNormalPageFrontmatter,
-  PageCategory,
-  PageInfo,
-  PageTag,
-} from "../../shared";
+import type { PageCategory, PageTag } from "@theme-hope/module/info/utils";
+import type { HopeThemeNormalPageFrontmatter, PageInfo } from "../../shared";
 
 declare const ENABLE_BLOG: boolean;
 declare const ENABLE_VISITOR: boolean;

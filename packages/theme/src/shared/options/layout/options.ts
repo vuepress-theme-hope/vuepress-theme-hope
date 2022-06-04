@@ -1,4 +1,5 @@
 import type { HopeThemeFooterLocaleOptions } from "./footer";
+import type { HopeThemeDocsLocaleOptions } from "./info";
 import type {
   HopeThemeMetaLocateData,
   HopeThemeMetaLocaleOptions,
@@ -24,6 +25,7 @@ export interface HopeThemeLayoutLocaleData {
 export interface HopeThemeLayoutLocaleOptions
   extends HopeThemeNavbarLocaleOptions,
     HopeThemeSidebarLocaleOptions,
+    HopeThemeDocsLocaleOptions,
     HopeThemeMetaLocaleOptions,
     HopeThemeFooterLocaleOptions {
   /**

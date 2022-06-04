@@ -16,12 +16,8 @@ import { useThemeLocaleData } from "@theme-hope/composables";
 import type { ComputedRef } from "vue";
 import type { AuthorInfo, DateInfo } from "vuepress-shared";
 import type { PageInfoProps } from "@theme-hope/module/info/components/PageInfo";
-import type {
-  ArticleInfo,
-  PageCategory,
-  PageInfo,
-  PageTag,
-} from "../../../../shared";
+import type { PageCategory, PageTag } from "@theme-hope/module/info/utils";
+import type { ArticleInfo, PageInfo } from "../../../../shared";
 
 export type AuthorRef = ComputedRef<AuthorInfo[]>;
 
