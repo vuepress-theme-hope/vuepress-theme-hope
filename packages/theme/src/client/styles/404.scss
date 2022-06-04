@@ -8,10 +8,6 @@
 
   text-align: center;
 
-  @media (max-width: hope-config.$pad) {
-    padding-top: calc(var(--navbar-mobile-height) + 1rem);
-  }
-
   .page-404-icon {
     max-width: 600px;
     margin: 0 1.5rem;

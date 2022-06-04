@@ -3,9 +3,9 @@
 
 .toggle-sidebar-wrapper {
   position: fixed;
-  top: calc(var(--navbar-height));
+  top: var(--navbar-height);
   bottom: 0;
-  left: calc(var(--sidebar-width));
+  left: var(--sidebar-width);
   z-index: 100;
 
   display: flex;
@@ -15,11 +15,6 @@
   font-size: 2rem;
 
   transition: left var(--transform-transition);
-
-  @media (max-width: hope-config.$pad) {
-    top: calc(var(--navbar-mobile-height));
-    left: calc(var(--sidebar-mobile-width));
-  }
 
   &:hover {
     background-color: rgb(127 127 127 / 5%);
@@ -48,12 +43,6 @@
     // leave space for sidebar
     padding-left: calc(var(--sidebar-width) + 2rem);
 
-    // change sidebar width
-    @media (max-width: hope-config.$pad) {
-      padding-top: var(--navbar-mobile-height);
-      padding-left: calc(var(--sidebar-mobile-width) + 2rem);
-    }
-
     // do not leave space for sidebar on wide mobile
     @media (max-width: hope-config.$tablet) {
       padding-left: 0;
@@ -62,10 +51,6 @@
 
   .sidebar {
     top: var(--navbar-height);
-
-    @media (max-width: hope-config.$pad) {
-      top: var(--navbar-mobile-height);
-    }
   }
 
   &.no-navbar {

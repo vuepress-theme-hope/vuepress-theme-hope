@@ -20,10 +20,6 @@
 
     transition: all 0.3s;
 
-    @media (max-width: hope-config.$pad) {
-      top: calc(var(--navbar-mobile-height) + 0.75rem);
-    }
-
     @media (max-width: hope-config.$tablet) {
       display: none;
     }

@@ -9,11 +9,6 @@
   margin: 0 auto;
   padding: var(--navbar-height) 2rem 0;
 
-  @media (max-width: hope-config.$pad) {
-    min-height: calc(100vh - var(--navbar-mobile-height));
-    padding-top: var(--navbar-mobile-height);
-  }
-
   @media (max-width: hope-config.$mobile) {
     padding-right: 1.5rem;
     padding-left: 1.5rem;
