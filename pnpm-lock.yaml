@@ -32,7 +32,7 @@ importers:
       inquirer: 8.2.4
       lint-staged: 13.0.0
       markdownlint-cli: 0.31.1
-      npm-check-updates: 13.0.4
+      npm-check-updates: 13.1.1
       ora: 6.1.0
       prettier: 2.6.2
       rollup: 2.75.5
@@ -79,7 +79,7 @@ importers:
       inquirer: 8.2.4
       lint-staged: 13.0.0
       markdownlint-cli: 0.31.1
-      npm-check-updates: 13.0.4
+      npm-check-updates: 13.1.1
       ora: 6.1.0
       prettier: 2.6.2
       rollup: 2.75.5
@@ -3489,7 +3489,7 @@ packages:
       vite: ^2.5.10
       vue: ^3.2.25
     dependencies:
-      vite: 2.9.9
+      vite: 2.9.9_sass@1.52.1
       vue: 3.2.36
 
   /@vue/compiler-core/3.2.36:
@@ -9161,8 +9161,8 @@ packages:
       npm-normalize-package-bin: 1.0.1
     dev: true
 
-  /npm-check-updates/13.0.4:
-    resolution: {integrity: sha512-f9xzzSMNsVCXvHAECBU4qloLUKSLRQ3a4sDU0F/b6CnzDAC+NE6obqb4Q2KpO1coQwK6FPQ+UReHZ+iXBTN6bw==}
+  /npm-check-updates/13.1.1:
+    resolution: {integrity: sha512-f4gLbUJJh5qvkNvrSG3b05y3ZvyZ4Sl3Uk95DSyCjIWwpwmAwzU9dMCA/Gg2AmIKqkH4ml6X9kxcZsu+tAd94g==}
     engines: {node: '>=14'}
     hasBin: true
     dependencies:
@@ -9786,7 +9786,7 @@ packages:
     dev: true
 
   /prepend-http/2.0.0:
-    resolution: {integrity: sha1-6SQ0v6XqjBn0HN/UAddBo8gZ2Jc=}
+    resolution: {integrity: sha512-ravE6m9Atw9Z/jjttRUZ+clIXogdghyZAuWJ3qEzjT+jI/dL1ifAqhZeC5VHzQp1MSt1+jxKkFNemj/iO7tVUA==}
     engines: {node: '>=4'}
     dev: true
 
@@ -9831,7 +9831,7 @@ packages:
     dev: true
 
   /promise-inflight/1.0.1:
-    resolution: {integrity: sha1-mEcocL8igTL8vdhoEputEsPAKeM=}
+    resolution: {integrity: sha512-6zWPyEOFaQBJYcGMHBKTKJ3u6TBsnMFOIZSa6ce1e/ZrrsOlnHRHbabMjLiBYKp+n44X9eUI6VUPaukCXHuG4g==}
     peerDependencies:
       bluebird: '*'
     peerDependenciesMeta:
@@ -11651,7 +11651,6 @@ packages:
       sass: 1.52.1
     optionalDependencies:
       fsevents: 2.3.2
-    dev: true
 
   /vitest/0.13.1_c8@7.11.3:
     resolution: {integrity: sha512-CfSBf7YFw/i8HumSUQRtZKs0aV91DC9WU8nAgIJAlawKHaFuPHQohDwOTPIFgrxySiuFYUa0Yohf9gDFfBwjxA==}
