@@ -46,7 +46,7 @@ importers:
       stylelint-config-standard: 25.0.0
       stylelint-config-standard-scss: 4.0.0
       stylelint-order: 5.0.0
-      ts-node: 10.8.0
+      ts-node: 10.8.1
       tslib: 2.4.0
       typescript: 4.7.2
       vitest: 0.13.1
@@ -93,7 +93,7 @@ importers:
       stylelint-config-standard: 25.0.0_stylelint@14.8.5
       stylelint-config-standard-scss: 4.0.0_stylelint@14.8.5
       stylelint-order: 5.0.0_stylelint@14.8.5
-      ts-node: 10.8.0_smgpfffxrhk5i4ijhe3532b4hq
+      ts-node: 10.8.1_smgpfffxrhk5i4ijhe3532b4hq
       tslib: 2.4.0
       typescript: 4.7.2
       vitest: 0.13.1_c8@7.11.3
@@ -5318,7 +5318,7 @@ packages:
     dependencies:
       '@types/node': 17.0.36
       cosmiconfig: 7.0.1
-      ts-node: 10.8.0_w6gfxie3xfwntbz3mwbbvycbdq
+      ts-node: 10.8.1_w6gfxie3xfwntbz3mwbbvycbdq
       typescript: 4.7.2
     transitivePeerDependencies:
       - '@swc/core'
@@ -11287,8 +11287,8 @@ packages:
   /ts-debounce/4.0.0:
     resolution: {integrity: sha512-+1iDGY6NmOGidq7i7xZGA4cm8DAa6fqdYcvO5Z6yBevH++Bdo9Qt/mN0TzHUgcCcKv1gmh9+W5dHqz8pMWbCbg==}
 
-  /ts-node/10.8.0_smgpfffxrhk5i4ijhe3532b4hq:
-    resolution: {integrity: sha512-/fNd5Qh+zTt8Vt1KbYZjRHCE9sI5i7nqfD/dzBBRDeVXZXS6kToW6R7tTU6Nd4XavFs0mAVCg29Q//ML7WsZYA==}
+  /ts-node/10.8.1_smgpfffxrhk5i4ijhe3532b4hq:
+    resolution: {integrity: sha512-Wwsnao4DQoJsN034wePSg5nZiw4YKXf56mPIAeD6wVmiv+RytNSWqc2f3fKvcUoV+Yn2+yocD71VOfQHbmVX4g==}
     hasBin: true
     peerDependencies:
       '@swc/core': '>=1.2.50'
@@ -11318,8 +11318,8 @@ packages:
       yn: 3.1.1
     dev: true
 
-  /ts-node/10.8.0_w6gfxie3xfwntbz3mwbbvycbdq:
-    resolution: {integrity: sha512-/fNd5Qh+zTt8Vt1KbYZjRHCE9sI5i7nqfD/dzBBRDeVXZXS6kToW6R7tTU6Nd4XavFs0mAVCg29Q//ML7WsZYA==}
+  /ts-node/10.8.1_w6gfxie3xfwntbz3mwbbvycbdq:
+    resolution: {integrity: sha512-Wwsnao4DQoJsN034wePSg5nZiw4YKXf56mPIAeD6wVmiv+RytNSWqc2f3fKvcUoV+Yn2+yocD71VOfQHbmVX4g==}
     hasBin: true
     peerDependencies:
       '@swc/core': '>=1.2.50'
