@@ -35,7 +35,7 @@ export const getDetailsRender =
         info = localeData.defaultInfo || "Details";
       }
 
-      return `<details class="custom-block details"><summary>${
+      return `<details class="custom-container details"><summary>${
         info || "Details"
       }</summary>\n`;
     }
