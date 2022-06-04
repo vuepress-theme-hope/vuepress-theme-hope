@@ -1,6 +1,6 @@
 import { readingTimePlugin } from "./plugin";
 
-export * from "./reading-time";
+export * from "./readingTime";
 export * from "./plugin";
 export * from "./use";
 export * from "../shared";

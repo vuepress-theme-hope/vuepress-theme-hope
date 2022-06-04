@@ -1,7 +1,7 @@
 import { getLocales } from "vuepress-shared";
 
 import { readingTimeLocales } from "./locales";
-import { getReadingTime } from "./reading-time";
+import { getReadingTime } from "./readingTime";
 import { logger } from "./utils";
 
 import type { Page, PluginFunction } from "@vuepress/core";
