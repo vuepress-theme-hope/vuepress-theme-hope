@@ -1,5 +1,5 @@
 import { existsSync, readFileSync, writeFileSync } from "fs";
-import { prompt } from "inquirer";
+import inquirer from "inquirer";
 import { join, resolve } from "path";
 
 import { bin } from "./bin";
@@ -89,7 +89,7 @@ export const generateTemplate = async (
   lang: Lang,
   message: CreateI18n
 ): Promise<void> => {
-  const { i18n, workflow } = await prompt<{
+  const { i18n, workflow } = await inquirer.prompt<{
     i18n: boolean;
     workflow: boolean;
   }>([

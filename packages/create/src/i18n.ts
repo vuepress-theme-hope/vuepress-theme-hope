@@ -1,4 +1,4 @@
-import { prompt } from "inquirer";
+import inquirer from "inquirer";
 
 import { bin } from "./bin";
 
@@ -85,7 +85,7 @@ interface LanguageResult {
 }
 
 export const getLanguage = async (): Promise<LanguageResult> => {
-  const { language } = await prompt<{ language: Lang }>([
+  const { language } = await inquirer.prompt<{ language: Lang }>([
     {
       name: "language",
       type: "list",
