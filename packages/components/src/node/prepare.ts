@@ -79,7 +79,7 @@ export const prepareConfigFile = (
 
         configImport += `import { ${composableName} } from "${CLIENT_FOLDER}composables";\n`;
         setup += `${composableName}(\`${content}\`${
-          type === "style" ? ', { id: "icon" }' : ""
+          type === "style" ? ', { id: "icon-assets" }' : ""
         });\n`;
       }
     }
