@@ -322,7 +322,7 @@ Support setting color scheme and size
 
 - [View Detail](../markdown/echarts.md)
 
-### Flowchart
+#### Flowchart
 
 ```flow
 cond=>condition: Process?
@@ -335,7 +335,7 @@ cond(no)->e
 
 - [View Detail](../markdown/flowchart.md)
 
-### Mermaid
+#### Mermaid
 
 ```mermaid
 flowchart TB
@@ -356,7 +356,7 @@ flowchart TB
 
 - [View Detail](../markdown/mermaid.md)
 
-### Tex
+#### Tex
 
 $$
 \frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right)
@@ -365,13 +365,13 @@ $$
 
 - [View Detail](../markdown/tex.md)
 
-### Include files
+#### Include files
 
 @include(../markdown/demo.snippet.md{5,9})
 
 - [View Detail](../markdown/include.md)
 
-### Code Demo
+#### Code Demo
 
 ::: normal-demo A normal demo
 
@@ -396,7 +396,17 @@ span {
 
 - [View Detail](../markdown/demo.md)
 
-### Presentation
+#### Stylize
+
+<!-- markdownlint-disable MD033 -->
+
+Setting this to a invalid stytax <span style="color:red">doesn't</span> have any effect.
+
+- [View Detail](../markdown/stylize.md)
+
+<!-- markdownlint-enable MD033 -->
+
+#### Presentation
 
 @slidestart
 
@@ -430,13 +440,5 @@ $$
 @slideend
 
 - [View Detail](../markdown/presentation.md)
-
-### Stylize
-
-<!-- markdownlint-disable MD033 -->
-
-Setting this to a invalid stytax <span style="color:red">doesn't</span> have any effect.
-
-- [View Detail](../markdown/stylize.md)
 
 [md-enhance]: https://vuepress-theme-hope.github.io/v2/md-enhance/

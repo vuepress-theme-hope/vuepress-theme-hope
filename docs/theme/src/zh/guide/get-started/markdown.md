@@ -396,6 +396,16 @@ span {
 
 - [查看详情](../markdown/demo.md)
 
+#### 样式化
+
+<!-- markdownlint-disable MD033 -->
+
+设置它<span style="color:red">没有</span>任何效果，请<span style="color:red">不要</span>这样使用
+
+- [查看详情](../markdown/stylize.md)
+
+<!-- markdownlint-enable MD033 -->
+
 #### 幻灯片
 
 @slidestart
@@ -430,12 +440,6 @@ $$
 @slideend
 
 - [查看详情](../markdown/presentation.md)
-
-#### 样式化
-
-<!-- markdownlint-disable MD033 -->
-
-设置它<span style="color:red">没有</span>任何效果，请<span style="color:red">不要</span>这样使用
 
 - [查看详情](../markdown/stylize.md)
 

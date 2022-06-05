@@ -264,6 +264,16 @@ span {
 
 - [View Detail](demo/README.md)
 
+#### Stylize
+
+<!-- markdownlint-disable MD033 -->
+
+Setting this to a invalid stytax <span style="color:red">doesn't</span> have any effect.
+
+- [View Detail](stylize.md)
+
+<!-- markdownlint-enable MD033 -->
+
 ### Presentation
 
 @slidestart
@@ -298,11 +308,3 @@ $$
 @slideend
 
 - [View Detail](presentation/README.md)
-
-### Stylize
-
-<!-- markdownlint-disable MD033 -->
-
-Setting this to a invalid stytax <span style="color:red">doesn't</span> have any effect.
-
-- [View Detail](stylize.md)

@@ -12,7 +12,7 @@ export const feedPlugin =
   (options: FeedOptions, legacy = false): PluginFunction =>
   (app) => {
     // TODO: Remove this in v2 stable
-    if (legacy) covertOptions(options as FeedOptions & Record<string, any>);
+    if (legacy) covertOptions(options as FeedOptions & Record<string, unknown>);
     if (app.env.isDebug) logger.info(`Options: ${options.toString()}`);
 
     const plugin: PluginObject = {
