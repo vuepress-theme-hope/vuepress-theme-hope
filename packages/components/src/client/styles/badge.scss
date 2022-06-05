@@ -20,8 +20,8 @@
   font-size: 14px;
   line-height: 18px;
 
-  transition: background-color var(--color-transition, 0.3s),
-    color var(--color-transition, 0.3s);
+  transition: background-color var(--color-transition, 0.3s ease),
+    color var(--color-transition, 0.3s ease);
 
   // compatible with toc
   .table-of-contents & {

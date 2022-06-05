@@ -10,7 +10,7 @@
   background-color: var(--code-tabs-nav-bg-color, #3a404c);
   list-style: none;
 
-  transition: background-color var(--color-transition, 0.3s);
+  transition: background-color var(--color-transition, 0.3s ease);
 
   @media (max-width: hope-config.$mobile) {
     margin-right: -1.5rem;
@@ -38,8 +38,8 @@
 
   cursor: pointer;
 
-  transition: background-color var(--color-transition, 0.3s),
-    color var(--color-transition, 0.3s);
+  transition: background-color var(--color-transition, 0.3s ease),
+    color var(--color-transition, 0.3s ease);
 
   &:hover {
     background-color: var(--code-tabs-nav-hover-color, #434a57);
