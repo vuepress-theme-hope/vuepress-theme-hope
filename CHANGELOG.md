@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.79](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.78...v2.0.0-beta.79) (2022-06-05)
+
+### Features
+
+- **create:** improve git related process ([a8b58e0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a8b58e050f30837739596d2264a1533378caa131))
+
+### Bug Fixes
+
+- **create:** fix \_\_dirname issue ([7bdbbd2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7bdbbd2a26b170e9dd9ee593df3eaeb1a25dd3f0))
+
 ## [2.0.0-beta.78](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.77...v2.0.0-beta.78) (2022-06-05)
 
 ### Features
