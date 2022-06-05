@@ -1,7 +1,7 @@
 ---
-order: 3
-title: Component disabled
+title: Disabling layout and features
 icon: config
+order: 3
 category:
   - Guide
 tag:
@@ -23,11 +23,11 @@ footer: false
 backtotop: false
 ---
 
-You can disable some functions on the page by setting the Frontmatter of the page.
+You can disable some function and layout on the page by setting the Frontmatter of the page.
 
 <!-- more -->
 
-These should be disabled on this page:
+This page is an demo that disables the following features:
 
 - Navbar
 - Sidebar

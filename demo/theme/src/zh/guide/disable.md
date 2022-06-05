@@ -1,7 +1,7 @@
 ---
-order: 3
-title: 组件禁用
+title: 布局与功能禁用
 icon: config
+order: 3
 category:
   - 使用指南
 tag:
@@ -23,11 +23,11 @@ footer: false
 backtotop: false
 ---
 
-你可以通过设置页面的 Frontmatter，在页面禁用一些功能。
+你可以通过设置页面的 Frontmatter，在页面禁用功能与布局。
 
 <!-- more -->
 
-本页面应当禁用了:
+本页面就是一个示例，禁用了如下功能:
 
 - 导航栏
 - 侧边栏

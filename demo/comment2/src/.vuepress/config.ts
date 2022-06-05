@@ -22,9 +22,9 @@ export default defineUserConfig({
   plugins: [
     commentPlugin({
       /**
-       * Using giscus
+       * Using Giscus
        */
-      type: "giscus",
+      provider: "Giscus",
       repo: "vuepress-theme-hope/giscus-discussions",
       repoId: "R_kgDOG_Pt2A",
       category: "Announcements",
@@ -33,13 +33,13 @@ export default defineUserConfig({
       /**
        * Using twikoo
        */
-      // type: "twikoo",
+      // provider: "Twikoo",
       // envId: "https://twikoo.ccknbc.vercel.app",
 
       /**
        * Using Waline
        */
-      // type: "waline",
+      // provider: "Waline",
       // serverURL: "https://vuepress-theme-hope-comment.vercel.app",
     }),
   ],

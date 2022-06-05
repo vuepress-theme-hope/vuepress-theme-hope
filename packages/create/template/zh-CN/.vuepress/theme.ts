@@ -82,24 +82,24 @@ export default hopeTheme({
     // 为了避免打扰主题开发者以及消耗他的资源，请不要在你的正式环境中直接使用下列配置!!!!!
     comment: {
       /**
-       * Using giscus
+       * Using Giscus
        */
-      type: "giscus",
+      provider: "Giscus",
       repo: "vuepress-theme-hope/giscus-discussions",
       repoId: "R_kgDOG_Pt2A",
       category: "Announcements",
       categoryId: "DIC_kwDOG_Pt2M4COD69",
 
       /**
-       * Using twikoo
+       * Using Twikoo
        */
-      // type: "twikoo",
+      // provider: "Twikoo",
       // envId: "https://twikoo.ccknbc.vercel.app",
 
       /**
        * Using Waline
        */
-      // type: "waline",
+      // provider: "Waline",
       // serverURL: "https://vuepress-theme-hope-comment.vercel.app",
     },
 

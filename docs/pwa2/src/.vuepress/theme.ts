@@ -69,7 +69,7 @@ export default hopeTheme({
 
   plugins: {
     comment: {
-      type: "giscus",
+      provider: "Giscus",
       repo: "vuepress-theme-hope/giscus-discussions",
       repoId: "R_kgDOG_Pt2A",
       category: "Announcements",
