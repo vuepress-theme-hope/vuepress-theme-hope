@@ -1,6 +1,13 @@
 import { existsSync, readFileSync, writeFileSync } from "fs";
 import inquirer from "inquirer";
-import { join, resolve } from "path";
+import { dirname, join, resolve } from "path";
+import { fileURLToPath } from "url";
+
+// eslint-disable-next-line @typescript-eslint/naming-convention
+const __filename = fileURLToPath(import.meta.url);
+
+// eslint-disable-next-line @typescript-eslint/naming-convention
+const __dirname = dirname(__filename);
 
 import { bin } from "./bin";
 import { copy, ensureDirExistSync } from "./file";
