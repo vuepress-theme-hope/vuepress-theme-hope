@@ -109,7 +109,7 @@ const handleFooterOptions = (options: Record<string, unknown>): void => {
 
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
-      options["copyright"] === footer["copyright"];
+      options["copyright"] = footer["copyright"];
     }
 
     if ("display" in footer) {
@@ -119,7 +119,7 @@ const handleFooterOptions = (options: Record<string, unknown>): void => {
 
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
-      options["displayFooter"] === footer["display"];
+      options["displayFooter"] = footer["display"];
     }
 
     if ("content" in footer) {
@@ -129,7 +129,7 @@ const handleFooterOptions = (options: Record<string, unknown>): void => {
 
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
-      options["footer"] === footer["content"];
+      options["footer"] = footer["content"];
     } else delete options["footer"];
   }
 };
