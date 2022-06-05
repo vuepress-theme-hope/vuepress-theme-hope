@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.78](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.77...v2.0.0-beta.78) (2022-06-05)
+
+### Features
+
+- **theme:** add compact code for V1 footer option ([8b5d3f2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8b5d3f2f1ca9f5a20f618a34afd9e8d098ce556b))
+- **theme:** update styles ([885155a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/885155a0f2bd67858b98ea1e2fced937417aba68))
+
+### Bug Fixes
+
+- **create:** fix commonjs import ([be96c71](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/be96c714cbe9fe5f87296c57e946344882fd5555))
+- fix css variable typos ([1fa76af](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1fa76af43a1a96601c54cc199e628426e1a6cac1))
+- **md-enhance:** fix CodeGroup ([7b2d3d8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7b2d3d89a7248526cd153668aca8da24339e0c82))
+- **reading-time2:** add support for Cyrillic, fix [#1952](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1952) ([dc98971](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/dc9897135f01e705ffefd3b3306102b8b9c406fb))
+- **theme:** fix typos ([766b0b7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/766b0b78e6436941d0b5a273e535d39e59d99d24))
+- **theme:** fix typos in style ([25019f6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/25019f6ebd14e9a309a013d683e30cb922ee4a87))
+
 ## [2.0.0-beta.77](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.76...v2.0.0-beta.77) (2022-06-03)
 
 ### ⚠ BREAKING CHANGES
