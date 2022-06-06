@@ -36,6 +36,11 @@ category:
 - [网站链接][fast-request]
 - [源码地址](https://github.com/dromara/fast-request)
 
+### 中国科大夏令营指南与答疑汇总
+
+- [网站链接][ustc]
+- [源码地址](https://github.com/666hsy/USTC-Summer-Camp-Guide)
+
 ## 博客
 
 ### Mr.Hope 的个人博客
@@ -55,3 +60,4 @@ category:
 [fast-request]: https://dromara.org/fast-request/
 [mrhope]: https://mrhope.site
 [coulsonzero]: https://docs.coulsonzero.top/
+[ustc]: https://ustc.gleamoe.com/

@@ -29,7 +29,7 @@ tag:
 ![文章列表](./assets/article-list-light.png#light)
 ![文章列表](./assets/article-list-dark.png#dark)
 
-如果你不希望该列表包含一些特定的文章，只需在文章的 frontmatter 中将 `article` 设置为 `false`。
+如果你不希望该列表包含一些特定的文章，只需在文章的 frontmatter 中将 `article` 设置为 `false`，或者你也可以通过主题选项中的 `plugins.blog.filter` 自定义哪些页面是文章。
 
 如果你希望在文章列表中置顶特定文章，只需在文章的 frontmatter 中将 `sticky` 设置为 `true`。
 

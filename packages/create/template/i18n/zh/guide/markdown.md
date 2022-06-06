@@ -352,7 +352,7 @@ $$
 
 #### 导入文件
 
-@include(./README.md{11,17})
+@include(./README.md{11-17})
 
 - [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/include.html)
 

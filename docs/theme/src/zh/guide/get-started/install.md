@@ -73,4 +73,4 @@ module.exports = {
 
 你可以查看 [本文档配置][docs-config] 作为一个配置参考。
 
-[docs-config]: https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/v1/docs/theme/src/.vuepress/config.ts
+[docs-config]: https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/docs/theme/src/.vuepress/config.ts
