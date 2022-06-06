@@ -18,7 +18,8 @@
   @media (min-width: hope-config.$tablet) {
     padding-left: calc(var(--sidebar-width) + 2rem);
 
-    .no-sidebar & {
+    .no-sidebar &,
+    .sidebar-collapsed & {
       padding-left: 2rem;
     }
   }
