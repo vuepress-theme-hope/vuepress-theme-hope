@@ -13,6 +13,8 @@ const DEPRECATED_FRONTMATTER_OPTIONS: [string, string][] = [
   ["copyrightText", "copyright"],
   ["anchorDisplay", "toc"],
   ["updateTime", "lastUpdated"],
+  ["contributor", "contributors"],
+  ["editLinks", "editLink"],
 ];
 
 const DEPRECATED_HOME_FRONTMATTER_OPTIONS: [string, string][] = [

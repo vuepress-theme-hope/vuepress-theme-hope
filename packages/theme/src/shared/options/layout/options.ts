@@ -14,9 +14,7 @@ import type { PageInfo } from "../../info";
 
 export interface HopeThemeLayoutLocaleData {
   navbarLocales: HopeThemeNavbarLocaleData;
-  /**
-   * Page locate config
-   */
+
   metaLocales: HopeThemeMetaLocateData;
 
   routeLocales: HopeThemeRouteLocaleData;
