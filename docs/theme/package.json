@@ -28,7 +28,7 @@
     "katex": "0.15.6",
     "sass-loader": "13.0.0",
     "three": "0.141.0",
-    "vue": "3.2.36",
+    "vue": "3.2.37",
     "vuepress-shared": "workspace:*",
     "vuepress-theme-hope": "workspace:*",
     "vuepress-vite": "2.0.0-beta.46",
