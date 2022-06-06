@@ -94,7 +94,11 @@ export const usePageInfo = (): {
   items: ComputedRef<PageInfo[] | false | null>;
 } => {
   const themeLocale = useThemeLocaleData();
-  const page = usePageData<{ readingTime: ReadingTime }>();
+  const page = usePageData<{
+    git?: GitData;
+    localizedDate: string;
+    readingTime: ReadingTime;
+  }>();
   const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();
   const author = usePageAuthor();
   const category = usePageCategory();
@@ -105,6 +109,7 @@ export const usePageInfo = (): {
     author: author.value,
     category: category.value,
     date: date.value,
+    localizedDate: page.value.localizedDate,
     tag: tag.value,
     isOriginal: frontmatter.value.isOriginal || false,
     readingTime: page.value.readingTime,

@@ -47,7 +47,7 @@ export const pwaLocales: PWALocaleConfig = {
     update: "新内容已就绪",
   },
 
-  "/de/": {
+  "/de-at/": {
     install: "Installieren",
     iOSInstall: "Drucke den Share-Button und dan 'zu Homescreen hinzufügen'",
     cancel: "Abbrechen",

@@ -1,4 +1,11 @@
-import { dayjs } from "./dayjs";
+import { default as dayjs } from "dayjs";
+import { default as objectSupport } from "dayjs/plugin/objectSupport";
+import { default as timezone } from "dayjs/plugin/timezone";
+import { default as utc } from "dayjs/plugin/utc";
+
+dayjs.extend(objectSupport);
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
 export interface DateOptions {
   /**
@@ -22,53 +29,15 @@ export interface DateDetail {
 }
 
 export interface DateInfo {
-  display: string;
   value: Date | undefined;
-  detail: DateDetail;
+  info: DateDetail;
+  type: "date" | "time" | "full";
 }
-
-const getLang = (lang = "en"): string => {
-  const langcode = lang.toLowerCase();
-
-  if (langcode === "zh" || langcode === "zh-cn") return "zh";
-
-  if (langcode === "en-us" || langcode === "en-uk" || langcode === "en")
-    return "en";
-
-  console.warn(`${lang} locale missing in config`);
-
-  return "en";
-};
-
-export const timeTransformer = (
-  date: Date,
-  options: DateOptions = {}
-): string => {
-  const { lang, timezone, type } = options;
-
-  dayjs.locale(getLang(lang));
-
-  const dateText = timezone
-    ? dayjs(date).tz(timezone).format("LL")
-    : dayjs(date).format("LL");
-
-  const timeText = timezone
-    ? dayjs(date).tz(timezone).format("HH:mm")
-    : dayjs(date).format("HH:mm");
-
-  return type === "date"
-    ? dateText
-    : type === "time"
-    ? timeText
-    : `${dateText} ${timeText}`;
-};
 
 export const getDate = (
   date: string | Date | undefined,
-  options: DateOptions = {}
+  timezone?: string
 ): DateInfo | null => {
-  const { timezone } = options;
-
   if (date) {
     const time = dayjs(date instanceof Date ? date : date.trim());
 
@@ -86,17 +55,14 @@ export const getDate = (
       const value = currentTime.toDate();
 
       return {
-        display: timeTransformer(value, {
-          type: isDate ? "date" : "full",
-          ...options,
-        }),
         value,
-        detail: {
+        info: {
           year,
           month,
           day,
           ...(isDate ? {} : { hour, minute, second }),
         },
+        type: isDate ? "date" : "full",
       };
     }
 
@@ -136,16 +102,13 @@ export const getDate = (
       const value = dayjs({ ...detail, month: detail.month - 1 }).toDate();
 
       return {
-        display: timeTransformer(value, {
-          type: isDate ? "date" : isTime ? "time" : "full",
-          ...options,
-        }),
         value: isTime ? undefined : value,
-        detail: isDate
+        info: isDate
           ? { year: detail.year, month: detail.month, day: detail.day }
           : isTime
           ? { hour: detail.hour, minute: detail.minute, second: detail.second }
           : detail,
+        type: isTime ? "time" : isDate ? "date" : "full",
       };
     }
   }

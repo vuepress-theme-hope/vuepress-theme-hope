@@ -53,6 +53,13 @@ export interface PageInfoProps {
   date?: DateInfoType | null;
 
   /**
+   * Writing Date
+   *
+   * 写作日期
+   */
+  localizedDate?: string;
+
+  /**
    * Whether the article is original
    *
    * 文章是否原创

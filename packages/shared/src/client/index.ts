@@ -9,5 +9,4 @@ export {
   getTag,
   isAbsoluteUrl,
   isUrl,
-  timeTransformer,
 } from "../shared";

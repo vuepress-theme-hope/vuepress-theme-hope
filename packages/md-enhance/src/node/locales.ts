@@ -28,7 +28,7 @@ export const markdownEnhanceLocales: MarkdownEnhanceLocaleConfig = {
     details: "詳情",
   },
 
-  "/de/": {
+  "/de-at/": {
     info: "Information",
     note: "Note",
     tip: "Tips",

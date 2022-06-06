@@ -19,7 +19,7 @@ export const themeLocalesData: Record<string, HopeThemeLocaleData> = {
 
   "/zh-tw/": zhTWLocale,
 
-  "/de/": deLocale,
+  "/de-at/": deLocale,
 
   "/vi/": viLocale,
 
