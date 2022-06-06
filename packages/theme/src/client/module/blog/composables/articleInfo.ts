@@ -1,4 +1,3 @@
-import { usePageLang } from "@vuepress/client";
 import { computed, reactive, Ref } from "vue";
 import {
   getAuthor,
@@ -62,15 +61,12 @@ export const useArticleTag = (info: Ref<ArticleInfo>): TagRef => {
 
 export type DateRef = ComputedRef<DateInfo | null>;
 
-export const useArticleDate = (info: Ref<ArticleInfo>): DateRef => {
-  const pageLang = usePageLang();
-
-  return computed(() => {
+export const useArticleDate = (info: Ref<ArticleInfo>): DateRef =>
+  computed(() => {
     const { date } = info.value;
 
-    return date ? getDate(date, { lang: pageLang.value, type: "date" }) : null;
+    return date ? getDate(date) : null;
   });
-};
 
 export const useArticleInfo = (
   info: Ref<ArticleInfo>
