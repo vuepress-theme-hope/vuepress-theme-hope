@@ -44,8 +44,7 @@ export const setupTimelines = (): void => {
 
     // filter before sort
     timelines.value.items.forEach(({ info, path }) => {
-      const { year, month, day } =
-        getDate(info.date, { type: "date" })?.info || {};
+      const { year, month, day } = getDate(info.date)?.info || {};
 
       if (year && month && day) {
         if (!timelineItems[0] || timelineItems[0].year !== year)

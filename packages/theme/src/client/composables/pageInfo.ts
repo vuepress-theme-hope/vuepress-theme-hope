@@ -1,4 +1,4 @@
-import { usePageData, usePageFrontmatter, usePageLang } from "@vuepress/client";
+import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import { computed, inject, reactive } from "vue";
 import {
   getAuthor,
@@ -13,7 +13,6 @@ import type {
   AuthorInfo,
   BasePageFrontMatter,
   DateInfo,
-  DateOptions,
 } from "vuepress-shared";
 import type { GitData } from "@vuepress/plugin-git";
 import type { ComputedRef } from "vue";
@@ -73,17 +72,15 @@ export const usePageTag = (): ComputedRef<PageTag[]> => {
 export const usePageDate = (): ComputedRef<DateInfo | null> => {
   const frontmatter = usePageFrontmatter<BasePageFrontMatter>();
   const page = usePageData<{ git?: GitData }>();
-  const pageLang = usePageLang();
 
   return computed(() => {
     const { date } = frontmatter.value;
-    const options: DateOptions = { lang: pageLang.value, type: "date" };
 
-    if (date) return getDate(date, options);
+    if (date) return getDate(date);
 
     const { createdTime } = page.value.git || {};
 
-    if (createdTime) return getDate(new Date(createdTime), options);
+    if (createdTime) return getDate(new Date(createdTime));
 
     return null;
   });
