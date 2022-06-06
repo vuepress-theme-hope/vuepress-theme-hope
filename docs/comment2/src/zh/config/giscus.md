@@ -3,6 +3,11 @@ title: Giscus 选项
 icon: github
 ---
 
+## provider
+
+- 类型: `string`
+- 必填: 是，值为 `Giscus`
+
 ## repo
 
 - 类型: `string`
