@@ -22,7 +22,7 @@
     "@vuepress/plugin-shiki": "2.0.0-beta.46",
     "cross-env": "7.0.3",
     "sass-loader": "13.0.0",
-    "vue": "3.2.36",
+    "vue": "3.2.37",
     "vuepress-theme-hope": "workspace:*",
     "vuepress-vite": "2.0.0-beta.46",
     "vuepress-webpack": "2.0.0-beta.46"

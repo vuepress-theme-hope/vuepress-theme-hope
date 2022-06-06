@@ -19,7 +19,7 @@
     "@vuepress/theme-default": "2.0.0-beta.46",
     "@vuepress/utils": "2.0.0-beta.46",
     "sass-loader": "13.0.0",
-    "vue": "3.2.36",
+    "vue": "3.2.37",
     "vuepress-plugin-copyright2": "workspace:*",
     "vuepress-vite": "2.0.0-beta.46",
     "vuepress-webpack": "2.0.0-beta.46"

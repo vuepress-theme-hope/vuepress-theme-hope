@@ -59,7 +59,7 @@
     "@vueuse/core": "^8.6.0",
     "balloon-css": "^1.2.0",
     "bcrypt-ts": "^1.0.0",
-    "vue": "^3.2.36",
+    "vue": "^3.2.37",
     "vue-router": "^4.0.15",
     "vuepress-plugin-blog2": "workspace:*",
     "vuepress-plugin-comment2": "workspace:*",
