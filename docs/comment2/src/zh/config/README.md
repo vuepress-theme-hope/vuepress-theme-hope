@@ -3,7 +3,7 @@ title: 插件选项
 icon: config
 ---
 
-## type
+## provider
 
 - 类型: `"Giscus" | "Twikoo" | "Waline" | "None"`
 - 默认: `"None"`
