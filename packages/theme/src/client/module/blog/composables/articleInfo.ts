@@ -88,6 +88,7 @@ export const useArticleInfo = (
     author: author.value,
     category: category.value,
     date: date.value,
+    localizedDate: info.value.localizedDate || "",
     tag: tag.value,
     isOriginal: info.value.isOriginal || false,
     readingTime: info.value.readingTime || null,

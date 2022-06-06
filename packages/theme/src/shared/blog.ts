@@ -43,6 +43,11 @@ export interface ArticleInfo extends Record<string, unknown> {
   date?: Date;
 
   /**
+   * writing date info in currect language
+   */
+  localizedDate?: string;
+
+  /**
    * article category
    */
   category?: string[];
