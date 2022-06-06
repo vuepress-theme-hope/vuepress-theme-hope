@@ -47,8 +47,8 @@
     "@waline/client": "^2.5.1",
     "giscus": "^1.0.5",
     "twikoo": "^1.5.11",
-    "vue": "^3.2.36",
-    "vue-router": "^4.0.15",
+    "vue": "^3.2.37",
+    "vue-router": "^4.0.16",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*"
   },
