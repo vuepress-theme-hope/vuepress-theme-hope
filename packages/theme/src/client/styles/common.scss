@@ -8,6 +8,7 @@
   left: var(--sidebar-width);
   z-index: 100;
 
+  display: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,6 +16,10 @@
   font-size: 2rem;
 
   transition: left var(--transform-transition);
+
+  @media (min-width: hope-config.$tablet) {
+    display: block;
+  }
 
   &:hover {
     background-color: rgb(127 127 127 / 5%);
