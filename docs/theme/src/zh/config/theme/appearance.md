@@ -61,7 +61,7 @@ tag:
 - 默认值: `false`
 - 详情: [界面 → 全屏按钮](../../guide/interface/others.md#全屏按钮)
 
-是否显示全屏按钮牛
+是否显示全屏按钮。
 
 ## backToTop <Badge text="仅限 Root" type="warning" />
 
