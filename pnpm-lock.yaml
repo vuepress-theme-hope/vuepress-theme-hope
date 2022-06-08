@@ -630,7 +630,7 @@ importers:
       '@vuepress/client': 2.0.0-beta.46
       '@vuepress/plugin-docsearch': 2.0.0-beta.46
       '@vuepress/utils': 2.0.0-beta.46
-      katex: 0.15.6
+      katex: 0.16.0
       sass-loader: 13.0.0
       three: 0.141.0
       vue: 3.2.37
@@ -646,7 +646,7 @@ importers:
       '@vuepress/client': 2.0.0-beta.46
       '@vuepress/plugin-docsearch': 2.0.0-beta.46
       '@vuepress/utils': 2.0.0-beta.46
-      katex: 0.15.6
+      katex: 0.16.0
       sass-loader: 13.0.0
       three: 0.141.0
       vue: 3.2.37
@@ -871,7 +871,7 @@ importers:
       '@vuepress/plugin-docsearch': 2.0.0-beta.46
       '@vuepress/utils': 2.0.0-beta.46
       axios: 0.27.2
-      katex: 0.15.6
+      katex: 0.16.0
       sass-loader: 13.0.0
       three: 0.141.0
       vue: 3.2.37
@@ -887,7 +887,7 @@ importers:
       '@vuepress/plugin-docsearch': 2.0.0-beta.46
       '@vuepress/utils': 2.0.0-beta.46
       axios: 0.27.2
-      katex: 0.15.6
+      katex: 0.16.0
       sass-loader: 13.0.0
       three: 0.141.0
       vue: 3.2.37
@@ -1094,7 +1094,7 @@ importers:
       chart.js: ^3.8.0
       echarts: ^5.3.2
       flowchart.js: ^1.17.1
-      katex: ^0.15.6
+      katex: ^0.16.0
       markdown-it: ^13.0.1
       markdown-it-container: 3.0.0
       mermaid: ^9.1.1
@@ -1118,7 +1118,7 @@ importers:
       chart.js: 3.8.0
       echarts: 5.3.2
       flowchart.js: 1.17.1
-      katex: 0.15.6
+      katex: 0.16.0
       markdown-it: 13.0.1
       mermaid: 9.1.1
       reveal.js: 4.3.1
@@ -8306,8 +8306,8 @@ packages:
     resolution: {integrity: sha512-PNYZIdMjVIvVgDSYKTT63Y+KZ6IZvGRNNWcxwD+GNnUz1MKPfv30J8ueCjdwcN0nDx2SlshgyB7Oy0epAzVRRg==}
     engines: {node: '>=0.10.0'}
 
-  /katex/0.15.6:
-    resolution: {integrity: sha512-UpzJy4yrnqnhXvRPhjEuLA4lcPn6eRngixW7Q3TJErjg3Aw2PuLFBzTkdUb89UtumxjhHTqL3a5GDGETMSwgJA==}
+  /katex/0.16.0:
+    resolution: {integrity: sha512-wPRB4iUPysfH97wTgG5/tRLYxmKVq6Q4jRAWRVOUxXB1dsiv4cvcNjqabHkrOvJHM1Bpk3WrgmllSO1vIvP24w==}
     hasBin: true
     dependencies:
       commander: 8.3.0
