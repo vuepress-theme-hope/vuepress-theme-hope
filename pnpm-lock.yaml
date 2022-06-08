@@ -1272,7 +1272,7 @@ importers:
       execa: ^5.1.1
       ora: ^5.4.1
       rimraf: 3.0.2
-      vite: 2.9.9
+      vite: 2.9.10
       vue: ^3.2.37
       vue-router: ^4.0.15
     dependencies:
@@ -1292,7 +1292,7 @@ importers:
       '@vuepress/bundler-webpack': 2.0.0-beta.46
       '@vuepress/core': 2.0.0-beta.46
       rimraf: 3.0.2
-      vite: 2.9.9
+      vite: 2.9.10
 
   packages/sitemap2:
     specifiers:
@@ -3488,14 +3488,14 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: true
 
-  /@vitejs/plugin-vue/2.3.3_vite@2.9.9+vue@3.2.37:
+  /@vitejs/plugin-vue/2.3.3_vite@2.9.10+vue@3.2.37:
     resolution: {integrity: sha512-SmQLDyhz+6lGJhPELsBdzXGc+AcaT8stgkbiTFGpXPe8Tl1tJaBw1A6pxDqDuRsVkD8uscrkx3hA7QDOoKYtyw==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       vite: ^2.5.10
       vue: ^3.2.25
     dependencies:
-      vite: 2.9.9
+      vite: 2.9.10
       vue: 3.2.37
 
   /@vue/compiler-core/3.2.37:
@@ -3598,7 +3598,7 @@ packages:
   /@vuepress/bundler-vite/2.0.0-beta.46:
     resolution: {integrity: sha512-lS0DKLiWzPHRVLOEViExKrApEYX661LsDf/lNFu5du1iqmNSNi3BvZbXUHnupzM8h02uOSa/VP6jzawWINqkYg==}
     dependencies:
-      '@vitejs/plugin-vue': 2.3.3_vite@2.9.9+vue@3.2.37
+      '@vitejs/plugin-vue': 2.3.3_vite@2.9.10+vue@3.2.37
       '@vuepress/client': 2.0.0-beta.46
       '@vuepress/core': 2.0.0-beta.46
       '@vuepress/shared': 2.0.0-beta.46
@@ -3607,7 +3607,7 @@ packages:
       connect-history-api-fallback: 1.6.0
       postcss: 8.4.14
       rollup: 2.75.5
-      vite: 2.9.9
+      vite: 2.9.10
       vue: 3.2.37
       vue-router: 4.0.15_vue@3.2.37
     transitivePeerDependencies:
@@ -3619,7 +3619,7 @@ packages:
   /@vuepress/bundler-vite/2.0.0-beta.46_sass@1.52.2:
     resolution: {integrity: sha512-lS0DKLiWzPHRVLOEViExKrApEYX661LsDf/lNFu5du1iqmNSNi3BvZbXUHnupzM8h02uOSa/VP6jzawWINqkYg==}
     dependencies:
-      '@vitejs/plugin-vue': 2.3.3_vite@2.9.9+vue@3.2.37
+      '@vitejs/plugin-vue': 2.3.3_vite@2.9.10+vue@3.2.37
       '@vuepress/client': 2.0.0-beta.46
       '@vuepress/core': 2.0.0-beta.46
       '@vuepress/shared': 2.0.0-beta.46
@@ -3628,7 +3628,7 @@ packages:
       connect-history-api-fallback: 1.6.0
       postcss: 8.4.14
       rollup: 2.75.5
-      vite: 2.9.9_sass@1.52.2
+      vite: 2.9.10_sass@1.52.2
       vue: 3.2.37
       vue-router: 4.0.15_vue@3.2.37
     transitivePeerDependencies:
@@ -11584,8 +11584,8 @@ packages:
     resolution: {integrity: sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=}
     engines: {node: '>= 0.8'}
 
-  /vite/2.9.9:
-    resolution: {integrity: sha512-ffaam+NgHfbEmfw/Vuh6BHKKlI/XIAhxE5QSS7gFLIngxg171mg1P3a4LSRME0z2ZU1ScxoKzphkipcYwSD5Ew==}
+  /vite/2.9.10:
+    resolution: {integrity: sha512-TwZRuSMYjpTurLqXspct+HZE7ONiW9d+wSWgvADGxhDPPyoIcNywY+RX4ng+QpK30DCa1l/oZgi2PLZDibhzbQ==}
     engines: {node: '>=12.2.0'}
     hasBin: true
     peerDependencies:
@@ -11607,8 +11607,8 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
 
-  /vite/2.9.9_sass@1.52.2:
-    resolution: {integrity: sha512-ffaam+NgHfbEmfw/Vuh6BHKKlI/XIAhxE5QSS7gFLIngxg171mg1P3a4LSRME0z2ZU1ScxoKzphkipcYwSD5Ew==}
+  /vite/2.9.10_sass@1.52.2:
+    resolution: {integrity: sha512-TwZRuSMYjpTurLqXspct+HZE7ONiW9d+wSWgvADGxhDPPyoIcNywY+RX4ng+QpK30DCa1l/oZgi2PLZDibhzbQ==}
     engines: {node: '>=12.2.0'}
     hasBin: true
     peerDependencies:
@@ -11628,6 +11628,30 @@ packages:
       resolve: 1.22.0
       rollup: 2.75.5
       sass: 1.52.2
+    optionalDependencies:
+      fsevents: 2.3.2
+    dev: true
+
+  /vite/2.9.9:
+    resolution: {integrity: sha512-ffaam+NgHfbEmfw/Vuh6BHKKlI/XIAhxE5QSS7gFLIngxg171mg1P3a4LSRME0z2ZU1ScxoKzphkipcYwSD5Ew==}
+    engines: {node: '>=12.2.0'}
+    hasBin: true
+    peerDependencies:
+      less: '*'
+      sass: '*'
+      stylus: '*'
+    peerDependenciesMeta:
+      less:
+        optional: true
+      sass:
+        optional: true
+      stylus:
+        optional: true
+    dependencies:
+      esbuild: 0.14.42
+      postcss: 8.4.14
+      resolve: 1.22.0
+      rollup: 2.75.5
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
