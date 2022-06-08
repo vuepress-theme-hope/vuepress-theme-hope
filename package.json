@@ -98,7 +98,7 @@
     "standard-version": "9.5.0",
     "stylelint": "14.8.5",
     "stylelint-config-prettier": "9.0.3",
-    "stylelint-config-standard": "25.0.0",
+    "stylelint-config-standard": "26.0.0",
     "stylelint-config-standard-scss": "4.0.0",
     "stylelint-order": "5.0.0",
     "ts-node": "10.8.1",
