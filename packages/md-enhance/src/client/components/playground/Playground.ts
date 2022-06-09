@@ -25,16 +25,18 @@ export default defineComponent({
 
     const encodedKey = encodeURIComponent(IMPORT_MAP_KEY);
 
+    const defaultImportsMap =
+      mode === "internal"
+        ? settings.internal?.defaultImportsMap
+        : settings.external?.defaultImportsMap;
+
     return (): (VNode | null)[] => [
       h(ClientOnly, null, [
         h(mode === "internal" ? InternalPlayground : ExternalPlayground, {
           id: props.id,
           title: props.title,
           settings: props.settings,
-          config: props.config.replace(
-            encodedKey,
-            settings.internal?.defaultImportsMap || ""
-          ),
+          config: props.config.replace(encodedKey, defaultImportsMap || ""),
         }),
       ]),
     ];

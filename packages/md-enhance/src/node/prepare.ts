@@ -78,7 +78,8 @@ export const prepareConfigFile = async (
   }
 
   if (getStatus("playground")) {
-    configImport += `import Playground from "${CLIENT_FOLDER}components/playground";\n`;
+    // configImport += `import Playground from "${CLIENT_FOLDER}components/playground";\n`;
+    configImport += `const Playground = defineAsyncComponent(() => import("${CLIENT_FOLDER}components/playground"));\n`;
     enhance += `app.component("Playground", Playground);\n`;
   }
 
@@ -91,6 +92,7 @@ export const prepareConfigFile = async (
   return app.writeTemp(
     `md-enhance/config.js`,
     `import { defineClientConfig } from "@vuepress/client";
+    import { defineAsyncComponent } from "vue";
 ${configImport}
 
 export default defineClientConfig({
