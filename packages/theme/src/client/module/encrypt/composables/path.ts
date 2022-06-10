@@ -28,7 +28,7 @@ export const usePathEncrypt = (): PathEncrypt => {
   const getPathMatchedKeys = (path: string): string[] =>
     typeof encryptData.value.config === "object"
       ? Object.keys(encryptData.value.config)
-          .filter((key) => path.startsWith(key))
+          .filter((key) => decodeURI(path).startsWith(key))
           .sort((a, b) => b.length - a.length)
       : [];
 
