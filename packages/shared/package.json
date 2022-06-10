@@ -46,7 +46,7 @@
     "execa": "^5.1.1",
     "ora": "^5.4.1",
     "vue": "^3.2.37",
-    "vue-router": "^4.0.15"
+    "vue-router": "^4.0.16"
   },
   "devDependencies": {
     "@types/connect": "3.4.35",

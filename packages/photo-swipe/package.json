@@ -45,7 +45,7 @@
     "@vueuse/core": "^8.6.0",
     "photoswipe": "^5.2.7",
     "vue": "^3.2.37",
-    "vue-router": "^4.0.15",
+    "vue-router": "^4.0.16",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*"
   },
