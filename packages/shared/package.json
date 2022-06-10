@@ -54,7 +54,7 @@
     "@vuepress/bundler-webpack": "2.0.0-beta.46",
     "@vuepress/core": "2.0.0-beta.46",
     "rimraf": "3.0.2",
-    "vite": "2.9.11"
+    "vite": "2.9.12"
   },
   "publishConfig": {
     "access": "public"
