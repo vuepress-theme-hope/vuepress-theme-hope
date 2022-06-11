@@ -3,7 +3,7 @@ home: true
 title: Home
 heroImage: /logo.svg
 heroText: vuepress-plugin-components
-tagline: Code Copy plugin for VuePress2
+tagline: Useful components in markdown for VuePress2
 actions:
   - text: Docs
     link: https://vuepress-theme-hope.github.io/v2/components/

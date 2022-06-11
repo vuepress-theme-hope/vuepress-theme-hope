@@ -16,7 +16,8 @@ type AvailableComponent =
   | "CodePen"
   | "FontIcon"
   | "PDF"
-  | "StackBlitz";
+  | "StackBlitz"
+  | "YouTube";
 ```
 
 ## addThis

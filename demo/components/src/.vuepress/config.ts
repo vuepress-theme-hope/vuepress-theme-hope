@@ -23,6 +23,8 @@ export default defineUserConfig({
       "/demo/codepen",
       "/demo/fonticon",
       "/demo/pdf",
+      "/demo/stackblitz",
+      "/demo/youtube",
     ],
 
     themePlugins: {
@@ -34,7 +36,14 @@ export default defineUserConfig({
     componentsPlugin({
       addThis: "ra-5f829c59e6c6bc9a",
       backToTop: true,
-      components: ["Badge", "CodePen", "FontIcon", "PDF", "StackBlitz"],
+      components: [
+        "Badge",
+        "CodePen",
+        "FontIcon",
+        "PDF",
+        "StackBlitz",
+        "YouTube",
+      ],
       iconAssets: "iconfont",
     }),
   ],

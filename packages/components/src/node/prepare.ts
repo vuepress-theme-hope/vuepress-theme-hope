@@ -13,6 +13,7 @@ const availableComponents: AvailableComponent[] = [
   "FontIcon",
   "PDF",
   "StackBlitz",
+  "YouTube",
 ];
 
 const getIconLink = (
@@ -87,6 +88,7 @@ export const prepareConfigFile = (
   });
 
   if (typeof options.addThis === "string") {
+    shouldImportUseScriptTag = true;
     setup += `useScriptTag(\`//s7.addthis.com/js/300/addthis_widget.js#pubid=${options.addThis}\`);\n`;
   }
 
