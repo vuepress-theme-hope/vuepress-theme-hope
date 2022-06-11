@@ -53,7 +53,7 @@ export default hopeTheme({
   plugins: {
     blog: true,
 
-    components: ["Badge", "CodePen", "PDF", "StackBlitz"],
+    components: ["Badge", "CodePen", "PDF", "StackBlitz", "YouTube"],
 
     comment: {
       provider: "Giscus",
@@ -172,11 +172,9 @@ export default hopeTheme({
       },
     },
 
-    seo: {
-      canonical:
-        hostname === "https://vuepress-theme-hope.github.io"
-          ? null
-          : "https://vuepress-theme-hope.github.io/v2/",
-    },
+    seo:
+      hostname === "https://vuepress-theme-hope.github.io"
+        ? {}
+        : { canonical: "https://vuepress-theme-hope.github.io/v2/v2/" },
   },
 });
