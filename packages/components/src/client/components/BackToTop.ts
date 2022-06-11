@@ -1,6 +1,5 @@
 import { useEventListener, useDebounceFn } from "@vueuse/core";
 import { usePageFrontmatter } from "@vuepress/client";
-import { useThemeData } from "@vuepress/plugin-theme-data/lib/client";
 import { Transition, computed, defineComponent, h, onMounted, ref } from "vue";
 import { useLocaleConfig } from "vuepress-shared/lib/client";
 import { BacktoTopIcon } from "./icons";
@@ -21,28 +20,17 @@ export default defineComponent({
 
   setup(props) {
     const pageFrontmatter = usePageFrontmatter<{ backToTop?: boolean }>();
-    const themeData = useThemeData();
     const locale = useLocaleConfig(BACK_TO_TOP_LOCALES);
 
     /** Scroll distance */
     const scrollTop = ref(0);
 
-    const thresholdDistance = computed<number>(() => {
-      const { backToTop } = themeData.value;
-
-      return typeof backToTop === "number" ? backToTop : props.threshold;
-    });
-
     /** Whether to display button */
-    const show = computed<boolean>(() => {
-      const globalEnable = themeData.value["backToTop"] !== false;
-      const pageEnable = pageFrontmatter.value.backToTop;
-
-      return (
-        (pageEnable || (globalEnable && pageEnable !== false)) &&
-        scrollTop.value > thresholdDistance.value
-      );
-    });
+    const show = computed<boolean>(
+      () =>
+        pageFrontmatter.value.backToTop !== false &&
+        scrollTop.value > props.threshold
+    );
 
     // Get scroll distance
     const getScrollTop = (): number =>

@@ -59,7 +59,9 @@ export const prepareConfigFile = (
   let enhance = "";
   let setup = "";
   let rootComponents = "";
-  let isUseScriptTagImported = false;
+  let shouldImportH = false;
+  let shouldImportUseScriptTag = false;
+  let shouldImportUseStyleTag = false;
 
   options.components.forEach((item) => {
     if (availableComponents.includes(item)) {
@@ -72,34 +74,43 @@ export const prepareConfigFile = (
 
       if (result) {
         const { type, content } = result;
-        const composableName =
-          type === "script" ? "useScriptTag" : "useStyleTag";
 
-        if (type === "script") isUseScriptTagImported = true;
-
-        configImport += `import { ${composableName} } from "${CLIENT_FOLDER}composables";\n`;
-        setup += `${composableName}(\`${content}\`${
-          type === "style" ? ', { id: "icon-assets" }' : ""
-        });\n`;
+        if (type === "script") {
+          shouldImportUseScriptTag = true;
+          setup += `useScriptTag(\`${content}\`);\n`;
+        } else {
+          shouldImportUseStyleTag = true;
+          setup += `useStyleTag(\`${content}\`, { id: "icon-assets" });\n`;
+        }
       }
     }
   });
 
   if (typeof options.addThis === "string") {
-    if (!isUseScriptTagImported)
-      configImport += `import { useScriptTag } from "${CLIENT_FOLDER}composables";\n`;
-
     setup += `useScriptTag(\`//s7.addthis.com/js/300/addthis_widget.js#pubid=${options.addThis}\`);\n`;
   }
 
   if (options.backToTop) {
+    shouldImportH = true;
     configImport += `import BackToTop from "${CLIENT_FOLDER}components/BackToTop";\n`;
-    rootComponents += `BackToTop,\n`;
+    rootComponents += `() => h(BackToTop, { threshold: ${
+      typeof options.backToTop === "number" ? options.backToTop : 300
+    } }),\n`;
   }
 
   return app.writeTemp(
     `components/config.js`,
-    `import { defineClientConfig } from "@vuepress/client";
+    `${
+      shouldImportUseScriptTag
+        ? `import { useScriptTag } from "${CLIENT_FOLDER}composables";\n`
+        : ""
+    }${
+      shouldImportUseStyleTag
+        ? `import { useStyleTag } from "${CLIENT_FOLDER}composables";\n`
+        : ""
+    }${
+      shouldImportH ? `import { h } from "vue";\n` : ""
+    }import { defineClientConfig } from "@vuepress/client";
 ${configImport}
 
 export default defineClientConfig({
