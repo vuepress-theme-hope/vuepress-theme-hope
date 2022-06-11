@@ -12,6 +12,9 @@ import type { VNode } from "vue";
 
 import "../styles/pdf.scss";
 
+// eslint-disable-next-line @typescript-eslint/naming-convention
+declare const __VUEPRESS_SSR__: boolean;
+
 export default defineComponent({
   name: "PDF",
 
@@ -68,7 +71,7 @@ export default defineComponent({
       const link = withBase(props.url);
 
       const fullLink = `${
-        isLinkHttp(link) ? "" : window?.location.host || ""
+        isLinkHttp(link) || __VUEPRESS_SSR__ ? "" : window?.location.host || ""
       }${link}`;
 
       return h("div", { class: "pdf-preview" }, [
