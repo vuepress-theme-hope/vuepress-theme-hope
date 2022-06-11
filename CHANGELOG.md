@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.80](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.79...v2.0.0-beta.80) (2022-06-11)
+
+### Features
+
+- rebuild date ([5917c08](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5917c08b0ebe27f4603119ea46bd2123389ce495))
+- **theme:** improve compact ([ebe49a4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ebe49a45527659c353e87d0956cf8acc9cf2ef8f))
+
+### Bug Fixes
+
+- **components:** fix backtotop threshold ([dead7f8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/dead7f81eb1021f4a02a4927e30e44c418bb9b59))
+- **theme:** fix encrypt not working with cjk path ([23c4239](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/23c42398af2b835e0001a61b9dfa368c1520ee74))
+- **theme:** fix footer padding-left. fix [#1955](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1955) ([02b9c42](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/02b9c42d0028e522311bc8f8de2a9d6d96abbde7))
+- **theme:** fix getDate ([e22a76b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e22a76b865156f98249ec3ed43ab3219b3e8e775))
+- **theme:** fix toggle-sidebar button in ssr ([c085e85](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c085e8509f14fd2a2c922dda5df39636d1a0d444))
+- **theme:** fix types ([cc1c3d9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cc1c3d9e2415bc539a12c89bc75850e83ac1d2d1))
+- **theme:** remove upstream fix ([6dd18b4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6dd18b401a5a9f4399fd9b98561e211c6b6b9163))
+
 ## [2.0.0-beta.79](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.78...v2.0.0-beta.79) (2022-06-05)
 
 ### Features
