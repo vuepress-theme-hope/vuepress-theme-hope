@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.81](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.80...v2.0.0-beta.81) (2022-06-11)
+
+### Features
+
+- **components:** add YouTube component ([22c535e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/22c535ef27340c4dd5d0a3e5db65b32818caa973))
+- **pwa2:** improve logging ([47cc864](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/47cc8649619aed7593283f7b1e4f2fa4578ffa11))
+- **theme:** add $isMobile global ([faaba79](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/faaba799debf5ed77769198a42af5f2b385eecaf))
+
+### Bug Fixes
+
+- **components:** prevent to access window in SSR ([142fb6c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/142fb6c1433a22bbe095b17490c1f88b6574cd9e))
+- **theme:** fix date localization ([474dd96](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/474dd968fcba91870353bd603d4bf65853e69669))
+
 ## [2.0.0-beta.80](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.79...v2.0.0-beta.80) (2022-06-11)
 
 ### Features
