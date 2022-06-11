@@ -75,7 +75,7 @@ export const extendsPage = (
   page.data.filePathRelative = filePathRelative;
 
   // inject localized date
-  injectLocalizedDate(page, { type: "date" });
+  injectLocalizedDate(page);
 
   // save basic info to routeMeta
   page.routeMeta = {
@@ -129,6 +129,7 @@ export const extendsPage = (
         page.routeMeta["date"] = frontmatter.date;
 
         page.routeMeta["localizedDate"] = timeTransformer(date, {
+          lang: page.lang,
           type: "date",
         });
       }

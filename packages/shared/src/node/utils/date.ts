@@ -30,17 +30,24 @@ export const timeTransformer = (
 
 export const injectLocalizedDate = (
   page: Page<{ localizedDate?: string | null } & Partial<GitPluginPageData>>,
-  options: DateOptions
+  timezone?: string
 ): void => {
   if (!page.data.localizedDate) {
     if (page.frontmatter.date) {
-      const date = getDate(page.frontmatter.date, options.timezone)?.value;
+      const date = getDate(page.frontmatter.date, timezone)?.value;
 
-      if (date) page.data.localizedDate = timeTransformer(date, options);
+      if (date)
+        page.data.localizedDate = timeTransformer(date, {
+          lang: page.lang,
+          type: "date",
+        });
     } else if (page.data.git?.createdTime)
       page.data.localizedDate = timeTransformer(
         new Date(page.data.git?.createdTime),
-        options
+        {
+          lang: page.lang,
+          type: "date",
+        }
       );
   }
 };
