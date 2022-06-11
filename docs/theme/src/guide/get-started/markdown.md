@@ -367,7 +367,7 @@ $$
 
 #### Include files
 
-@include(../markdown/demo.snippet.md{5,9})
+@include(../markdown/demo.snippet.md{5-9})
 
 - [View Detail](../markdown/include.md)
 
