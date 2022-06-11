@@ -20,10 +20,10 @@
   "dependencies": {
     "@types/katex": "0.14.0",
     "@types/three": "0.141.0",
-    "@vuepress/cli": "2.0.0-beta.46",
-    "@vuepress/client": "2.0.0-beta.46",
-    "@vuepress/plugin-docsearch": "2.0.0-beta.46",
-    "@vuepress/utils": "2.0.0-beta.46",
+    "@vuepress/cli": "2.0.0-beta.47",
+    "@vuepress/client": "2.0.0-beta.47",
+    "@vuepress/plugin-docsearch": "2.0.0-beta.47",
+    "@vuepress/utils": "2.0.0-beta.47",
     "axios": "0.27.2",
     "katex": "0.16.0",
     "sass-loader": "13.0.0",
@@ -31,7 +31,7 @@
     "vue": "3.2.37",
     "vuepress-shared": "workspace:*",
     "vuepress-theme-hope": "workspace:*",
-    "vuepress-vite": "2.0.0-beta.46",
-    "vuepress-webpack": "2.0.0-beta.46"
+    "vuepress-vite": "2.0.0-beta.47",
+    "vuepress-webpack": "2.0.0-beta.47"
   }
 }
