@@ -1336,7 +1336,7 @@ importers:
       bcrypt-ts: ^1.0.0
       rimraf: 3.0.2
       vue: ^3.2.37
-      vue-router: ^4.1.0-c113369
+      vue-router: ^4.0.16
       vuepress-plugin-blog2: workspace:*
       vuepress-plugin-comment2: workspace:*
       vuepress-plugin-components: workspace:*
@@ -1369,7 +1369,7 @@ importers:
       balloon-css: 1.2.0
       bcrypt-ts: 1.0.0
       vue: 3.2.37
-      vue-router: 4.1.0-c113369_vue@3.2.37
+      vue-router: 4.0.16_vue@3.2.37
       vuepress-plugin-blog2: link:../blog2
       vuepress-plugin-comment2: link:../comment2
       vuepress-plugin-components: link:../components
@@ -11721,15 +11721,6 @@ packages:
     dependencies:
       '@vue/devtools-api': 6.1.4
       vue: 3.2.37
-
-  /vue-router/4.1.0-c113369_vue@3.2.37:
-    resolution: {integrity: sha512-IC8AKw8FDiT4ZpAcoCAFm493n9IcPvP1lBekTMju0QiR9AFNJU6l5sceh8gEHK5tHDAbJk9AVJM8Ocijf9tp8A==}
-    peerDependencies:
-      vue: ^3.2.0
-    dependencies:
-      '@vue/devtools-api': 6.1.4
-      vue: 3.2.37
-    dev: false
 
   /vue/3.2.37:
     resolution: {integrity: sha512-bOKEZxrm8Eh+fveCqS1/NkG/n6aMidsI6hahas7pa0w/l7jkbssJVsRhVDs07IdDq7h9KHswZOgItnwJAgtVtQ==}
