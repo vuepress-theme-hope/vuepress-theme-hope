@@ -32,6 +32,42 @@ interface DirInfo {
 
 type Info = FileInfo | DirInfo;
 
+export const orderSort = (
+  orderA: number | null,
+  orderB: number | null
+): number => {
+  // itemA order is absent
+  if (orderA === null) {
+    // both item do not have orders
+    if (orderB === null)
+      // compare title
+      return 0;
+
+    // itemA order is absent while itemB order is present
+    return orderB;
+  }
+
+  // itemA order is present while itemB order is absent
+  if (orderB === null) return -orderA;
+
+  // now we are sure both order exisit
+
+  // itemA order is positive
+  if (orderA > 0) {
+    // both order are negative
+    if (orderB > 0) return orderA - orderB;
+
+    // orderA is positive while orderB is negative
+    return -1;
+  }
+
+  // both order are negative
+  if (orderB < 0) return orderA - orderB;
+
+  // orderA is negative while orderB is positive
+  return 1;
+};
+
 const getInfo = (app: App, rootDir: string, base = ""): Info[] => {
   const dir = `${rootDir}${base}`;
 
@@ -122,37 +158,17 @@ const getInfo = (app: App, rootDir: string, base = ""): Info[] => {
         if (itemA.type === "file" && itemA.path === "README.md") return -1;
         if (itemB.type === "file" && itemB.path === "README.md") return 1;
 
-        // itemA order is absent
-        if (itemA.order === null) {
-          // itemB order is absent
-          if (itemB.order === null)
-            // compare title
-            return (
-              itemA.type === "file" ? itemA.title : itemA.info.text
-            ).localeCompare(
-              itemB.type === "file" ? itemB.title : itemB.info.text
-            );
+        const sortResult = orderSort(itemA.order, itemB.order);
 
-          // itemB order is present
-          return itemB.order;
-        }
+        if (sortResult === 0)
+          // compare title
+          return (
+            itemA.type === "file" ? itemA.title : itemA.info.text
+          ).localeCompare(
+            itemB.type === "file" ? itemB.title : itemB.info.text
+          );
 
-        // itemB order is absent
-        if (itemB.order === null) return itemA.order;
-
-        // now we are sure both order exisit
-
-        // itemA order is positive
-        if (itemA.order > 0) {
-          if (itemB.order > 0) return itemA.order - itemB.order;
-
-          return -1;
-        }
-
-        // both order are negative
-        if (itemB.order < 0) return itemA.order - itemB.order;
-
-        return 1;
+        return sortResult;
       })
   );
 };
