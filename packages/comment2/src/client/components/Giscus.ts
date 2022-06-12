@@ -106,7 +106,9 @@ export default defineComponent({
             display: enableComment.value ? "block" : "none",
           },
         },
-        loaded.value ? h("giscus-widget", config.value) : "Loading..."
+        loaded.value
+          ? h("giscus-widget", config.value)
+          : h("div", { style: "text-align:center" }, "Loading...")
       );
   },
 });
