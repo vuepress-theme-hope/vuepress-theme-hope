@@ -38,8 +38,8 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@vuepress/client": "2.0.0-beta.47",
-    "@vuepress/utils": "2.0.0-beta.47",
+    "@vuepress/client": "2.0.0-beta.48",
+    "@vuepress/utils": "2.0.0-beta.48",
     "balloon-css": "^1.2.0",
     "vue": "^3.2.37",
     "vue-router": "^4.0.16",
@@ -47,7 +47,7 @@
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.47",
+    "@vuepress/core": "2.0.0-beta.48",
     "rimraf": "3.0.2"
   },
   "peerDependencies": {
