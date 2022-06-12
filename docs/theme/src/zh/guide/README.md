@@ -29,7 +29,7 @@ tag:
 - [代码组](markdown/code-tabs.md)
 - [脚注](markdown/footnote.md)
 - [任务列表](markdown/tasklist.md)
-- [图片增强](image.md)
+- [图片增强](markdown/image.md)
 - [自定义对齐](markdown/align.md)
 - [上下角标](markdown/sup-sub.md)
 - [标记](markdown/mark.md)
