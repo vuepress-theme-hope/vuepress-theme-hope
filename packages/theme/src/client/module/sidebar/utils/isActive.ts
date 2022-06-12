@@ -21,15 +21,14 @@ export const isMatchedSidebarItem = (
   item: ResolvedSidebarItem
 ): boolean => {
   if (item.type === "group")
-    return item.children.some((child) => {
-      if (child.type === "group")
-        return (
-          isMatchedSidebarItem(route, child) ||
-          ("prefix" in child && isActiveLink(route, child.prefix))
-        );
+    return (
+      item.children.some((child) => {
+        if (child.type === "group") return isMatchedSidebarItem(route, child);
 
-      return child.type === "page" && isActiveSidebarItem(route, child, true);
-    });
+        return child.type === "page" && isActiveSidebarItem(route, child, true);
+      }) ||
+      ("prefix" in item && isActiveLink(route, item.prefix))
+    );
 
   return false;
 };
