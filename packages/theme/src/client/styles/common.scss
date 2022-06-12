@@ -9,7 +9,6 @@
   z-index: 100;
 
   display: none;
-  display: flex;
   align-items: center;
   justify-content: center;
 
@@ -18,7 +17,7 @@
   transition: left var(--transform-transition);
 
   @media (min-width: hope-config.$tablet) {
-    display: block;
+    display: flex;
   }
 
   &:hover {
