@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.82](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.81...v2.0.0-beta.82) (2022-06-12)
+
+### Features
+
+- **comment2:** improve Giscus loading placeholder ([5862880](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/586288051f88b7d68306762af85580c422a6242f))
+
+### Bug Fixes
+
+- **md-enhance:** fix link check with markdown links with params ([3aabfab](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3aabfab5a74f871ea8523d6f98d30ef02b9e6a31))
+- **theme:** fix sidebar order ([01d5b75](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/01d5b75ca059810cf2a426edca0b1811e0196615))
+- **theme:** fix sidebar readme match ([b1b5492](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b1b5492bfc9b2966dcf7469e31631dac074caa64))
+- **theme:** fix toggle-sidebar arrow ([490391d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/490391d05720ad4708bb2a5962b2f916696e534b))
+
 ## [2.0.0-beta.81](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.80...v2.0.0-beta.81) (2022-06-11)
 
 ### Features
