@@ -38,7 +38,7 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@vuepress/client": "2.0.0-beta.47",
+    "@vuepress/client": "2.0.0-beta.48",
     "@vuepress/utils": "2.0.0-beta.47",
     "balloon-css": "^1.2.0",
     "vue": "^3.2.37",
