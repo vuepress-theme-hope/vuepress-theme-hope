@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@types/three": "0.141.0",
-    "@vuepress/cli": "2.0.0-beta.47",
+    "@vuepress/cli": "2.0.0-beta.48",
     "@vuepress/client": "2.0.0-beta.47",
     "@vuepress/plugin-docsearch": "2.0.0-beta.47",
     "@vuepress/utils": "2.0.0-beta.47",

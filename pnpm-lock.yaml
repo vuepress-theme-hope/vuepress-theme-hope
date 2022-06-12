@@ -100,7 +100,7 @@ importers:
 
   demo/blog2:
     specifiers:
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/core': 2.0.0-beta.47
       '@vuepress/theme-default': 2.0.0-beta.47
@@ -112,7 +112,7 @@ importers:
       vuepress-vite: 2.0.0-beta.47
       vuepress-webpack: 2.0.0-beta.47
     devDependencies:
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/core': 2.0.0-beta.47
       '@vuepress/theme-default': 2.0.0-beta.47_sass-loader@13.0.0
@@ -126,7 +126,7 @@ importers:
 
   demo/comment2:
     specifiers:
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/core': 2.0.0-beta.47
       '@vuepress/theme-default': 2.0.0-beta.47
@@ -137,7 +137,7 @@ importers:
       vuepress-vite: 2.0.0-beta.47
       vuepress-webpack: 2.0.0-beta.47
     devDependencies:
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/core': 2.0.0-beta.47
       '@vuepress/theme-default': 2.0.0-beta.47_sass-loader@13.0.0
@@ -150,7 +150,7 @@ importers:
 
   demo/components:
     specifiers:
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/theme-default': 2.0.0-beta.47
       sass-loader: 13.0.0
@@ -159,7 +159,7 @@ importers:
       vuepress-vite: 2.0.0-beta.47
       vuepress-webpack: 2.0.0-beta.47
     devDependencies:
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/theme-default': 2.0.0-beta.47_sass-loader@13.0.0
       sass-loader: 13.0.0
@@ -170,7 +170,7 @@ importers:
 
   demo/copy-code2:
     specifiers:
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/theme-default': 2.0.0-beta.47
       sass-loader: 13.0.0
@@ -179,7 +179,7 @@ importers:
       vuepress-vite: 2.0.0-beta.47
       vuepress-webpack: 2.0.0-beta.47
     devDependencies:
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/theme-default': 2.0.0-beta.47_sass-loader@13.0.0
       sass-loader: 13.0.0
@@ -190,7 +190,7 @@ importers:
 
   demo/copyright2:
     specifiers:
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/theme-default': 2.0.0-beta.47
       '@vuepress/utils': 2.0.0-beta.47
@@ -200,7 +200,7 @@ importers:
       vuepress-vite: 2.0.0-beta.47
       vuepress-webpack: 2.0.0-beta.47
     devDependencies:
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/theme-default': 2.0.0-beta.47_sass-loader@13.0.0
       '@vuepress/utils': 2.0.0-beta.47
@@ -212,7 +212,7 @@ importers:
 
   demo/feed2:
     specifiers:
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/theme-default': 2.0.0-beta.47
       sass-loader: 13.0.0
@@ -221,7 +221,7 @@ importers:
       vuepress-vite: 2.0.0-beta.47
       vuepress-webpack: 2.0.0-beta.47
     devDependencies:
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/theme-default': 2.0.0-beta.47_sass-loader@13.0.0
       sass-loader: 13.0.0
@@ -232,7 +232,7 @@ importers:
 
   demo/lightgallery:
     specifiers:
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/theme-default': 2.0.0-beta.47
       sass-loader: 13.0.0
@@ -241,7 +241,7 @@ importers:
       vuepress-vite: 2.0.0-beta.47
       vuepress-webpack: 2.0.0-beta.47
     devDependencies:
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/theme-default': 2.0.0-beta.47_sass-loader@13.0.0
       sass-loader: 13.0.0
@@ -252,7 +252,7 @@ importers:
 
   demo/md-enhance:
     specifiers:
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/theme-default': 2.0.0-beta.47
       sass-loader: 13.0.0
@@ -261,7 +261,7 @@ importers:
       vuepress-vite: 2.0.0-beta.47
       vuepress-webpack: 2.0.0-beta.47
     devDependencies:
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/theme-default': 2.0.0-beta.47_sass-loader@13.0.0
       sass-loader: 13.0.0
@@ -272,7 +272,7 @@ importers:
 
   demo/photo-swipe:
     specifiers:
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/theme-default': 2.0.0-beta.47
       sass-loader: 13.0.0
@@ -281,7 +281,7 @@ importers:
       vuepress-vite: 2.0.0-beta.47
       vuepress-webpack: 2.0.0-beta.47
     devDependencies:
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/theme-default': 2.0.0-beta.47_sass-loader@13.0.0
       sass-loader: 13.0.0
@@ -292,7 +292,7 @@ importers:
 
   demo/pwa2:
     specifiers:
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/theme-default': 2.0.0-beta.47
       sass-loader: 13.0.0
@@ -301,7 +301,7 @@ importers:
       vuepress-vite: 2.0.0-beta.47
       vuepress-webpack: 2.0.0-beta.47
     devDependencies:
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/theme-default': 2.0.0-beta.47_sass-loader@13.0.0
       sass-loader: 13.0.0
@@ -312,7 +312,7 @@ importers:
 
   demo/redirect:
     specifiers:
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/theme-default': 2.0.0-beta.47
       sass-loader: 13.0.0
@@ -321,7 +321,7 @@ importers:
       vuepress-vite: 2.0.0-beta.47
       vuepress-webpack: 2.0.0-beta.47
     devDependencies:
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/theme-default': 2.0.0-beta.47_sass-loader@13.0.0
       sass-loader: 13.0.0
@@ -332,7 +332,7 @@ importers:
 
   demo/sass-palette:
     specifiers:
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/theme-default': 2.0.0-beta.47
       sass-loader: 13.0.0
@@ -341,7 +341,7 @@ importers:
       vuepress-vite: 2.0.0-beta.47
       vuepress-webpack: 2.0.0-beta.47
     devDependencies:
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/theme-default': 2.0.0-beta.47_sass-loader@13.0.0
       sass-loader: 13.0.0
@@ -352,7 +352,7 @@ importers:
 
   demo/seo2:
     specifiers:
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/theme-default': 2.0.0-beta.47
       sass-loader: 13.0.0
@@ -361,7 +361,7 @@ importers:
       vuepress-vite: 2.0.0-beta.47
       vuepress-webpack: 2.0.0-beta.47
     devDependencies:
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/theme-default': 2.0.0-beta.47_sass-loader@13.0.0
       sass-loader: 13.0.0
@@ -372,7 +372,7 @@ importers:
 
   demo/sitemap2:
     specifiers:
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/theme-default': 2.0.0-beta.47
       sass-loader: 13.0.0
@@ -381,7 +381,7 @@ importers:
       vuepress-vite: 2.0.0-beta.47
       vuepress-webpack: 2.0.0-beta.47
     devDependencies:
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/theme-default': 2.0.0-beta.47_sass-loader@13.0.0
       sass-loader: 13.0.0
@@ -392,7 +392,7 @@ importers:
 
   demo/theme:
     specifiers:
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/plugin-docsearch': 2.0.0-beta.47
       '@vuepress/plugin-pwa': 2.0.0-beta.47
@@ -405,7 +405,7 @@ importers:
       vuepress-vite: 2.0.0-beta.47
       vuepress-webpack: 2.0.0-beta.47
     devDependencies:
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/plugin-docsearch': 2.0.0-beta.47
       '@vuepress/plugin-pwa': 2.0.0-beta.47
@@ -421,7 +421,7 @@ importers:
   docs/blog2:
     specifiers:
       '@types/three': 0.141.0
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/plugin-docsearch': 2.0.0-beta.47
       '@vuepress/utils': 2.0.0-beta.47
@@ -434,7 +434,7 @@ importers:
       vuepress-webpack: 2.0.0-beta.47
     dependencies:
       '@types/three': 0.141.0
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/plugin-docsearch': 2.0.0-beta.47
       '@vuepress/utils': 2.0.0-beta.47
@@ -449,7 +449,7 @@ importers:
   docs/comment2:
     specifiers:
       '@types/three': 0.141.0
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/plugin-docsearch': 2.0.0-beta.47
       '@vuepress/utils': 2.0.0-beta.47
@@ -463,7 +463,7 @@ importers:
       vuepress-webpack: 2.0.0-beta.47
     dependencies:
       '@types/three': 0.141.0
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/plugin-docsearch': 2.0.0-beta.47
       '@vuepress/utils': 2.0.0-beta.47
@@ -478,7 +478,7 @@ importers:
 
   docs/components:
     specifiers:
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/plugin-docsearch': 2.0.0-beta.47
       '@vuepress/utils': 2.0.0-beta.47
@@ -491,7 +491,7 @@ importers:
       vuepress-vite: 2.0.0-beta.47
       vuepress-webpack: 2.0.0-beta.47
     dependencies:
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/plugin-docsearch': 2.0.0-beta.47
       '@vuepress/utils': 2.0.0-beta.47
@@ -507,7 +507,7 @@ importers:
   docs/copy-code2:
     specifiers:
       '@types/three': 0.141.0
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/plugin-docsearch': 2.0.0-beta.47
       '@vuepress/utils': 2.0.0-beta.47
@@ -521,7 +521,7 @@ importers:
       vuepress-webpack: 2.0.0-beta.47
     dependencies:
       '@types/three': 0.141.0
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/plugin-docsearch': 2.0.0-beta.47
       '@vuepress/utils': 2.0.0-beta.47
@@ -537,7 +537,7 @@ importers:
   docs/copyright2:
     specifiers:
       '@types/three': 0.141.0
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/plugin-docsearch': 2.0.0-beta.47
       '@vuepress/utils': 2.0.0-beta.47
@@ -550,7 +550,7 @@ importers:
       vuepress-webpack: 2.0.0-beta.47
     dependencies:
       '@types/three': 0.141.0
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/plugin-docsearch': 2.0.0-beta.47
       '@vuepress/utils': 2.0.0-beta.47
@@ -565,7 +565,7 @@ importers:
   docs/feed2:
     specifiers:
       '@types/three': 0.141.0
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/plugin-docsearch': 2.0.0-beta.47
       '@vuepress/utils': 2.0.0-beta.47
@@ -579,7 +579,7 @@ importers:
       vuepress-webpack: 2.0.0-beta.47
     dependencies:
       '@types/three': 0.141.0
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/plugin-docsearch': 2.0.0-beta.47
       '@vuepress/utils': 2.0.0-beta.47
@@ -595,7 +595,7 @@ importers:
   docs/lightgallery:
     specifiers:
       '@types/three': 0.141.0
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/plugin-docsearch': 2.0.0-beta.47
       '@vuepress/utils': 2.0.0-beta.47
@@ -609,7 +609,7 @@ importers:
       vuepress-webpack: 2.0.0-beta.47
     dependencies:
       '@types/three': 0.141.0
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/plugin-docsearch': 2.0.0-beta.47
       '@vuepress/utils': 2.0.0-beta.47
@@ -626,7 +626,7 @@ importers:
     specifiers:
       '@types/katex': 0.14.0
       '@types/three': 0.141.0
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/plugin-docsearch': 2.0.0-beta.47
       '@vuepress/utils': 2.0.0-beta.47
@@ -642,7 +642,7 @@ importers:
     dependencies:
       '@types/katex': 0.14.0
       '@types/three': 0.141.0
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/plugin-docsearch': 2.0.0-beta.47
       '@vuepress/utils': 2.0.0-beta.47
@@ -659,7 +659,7 @@ importers:
   docs/photo-swipe:
     specifiers:
       '@types/three': 0.141.0
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/plugin-docsearch': 2.0.0-beta.47
       '@vuepress/utils': 2.0.0-beta.47
@@ -673,7 +673,7 @@ importers:
       vuepress-webpack: 2.0.0-beta.47
     dependencies:
       '@types/three': 0.141.0
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/plugin-docsearch': 2.0.0-beta.47
       '@vuepress/utils': 2.0.0-beta.47
@@ -689,7 +689,7 @@ importers:
   docs/pwa2:
     specifiers:
       '@types/three': 0.141.0
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/plugin-docsearch': 2.0.0-beta.47
       '@vuepress/utils': 2.0.0-beta.47
@@ -703,7 +703,7 @@ importers:
       vuepress-webpack: 2.0.0-beta.47
     dependencies:
       '@types/three': 0.141.0
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/plugin-docsearch': 2.0.0-beta.47
       '@vuepress/utils': 2.0.0-beta.47
@@ -719,7 +719,7 @@ importers:
   docs/reading-time2:
     specifiers:
       '@types/three': 0.141.0
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/plugin-docsearch': 2.0.0-beta.47
       '@vuepress/utils': 2.0.0-beta.47
@@ -733,7 +733,7 @@ importers:
       vuepress-webpack: 2.0.0-beta.47
     dependencies:
       '@types/three': 0.141.0
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/plugin-docsearch': 2.0.0-beta.47
       '@vuepress/utils': 2.0.0-beta.47
@@ -749,7 +749,7 @@ importers:
   docs/redirect:
     specifiers:
       '@types/three': 0.141.0
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/plugin-docsearch': 2.0.0-beta.47
       '@vuepress/utils': 2.0.0-beta.47
@@ -762,7 +762,7 @@ importers:
       vuepress-webpack: 2.0.0-beta.47
     dependencies:
       '@types/three': 0.141.0
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/plugin-docsearch': 2.0.0-beta.47
       '@vuepress/utils': 2.0.0-beta.47
@@ -777,7 +777,7 @@ importers:
   docs/sass-palette:
     specifiers:
       '@types/three': 0.141.0
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/plugin-docsearch': 2.0.0-beta.47
       '@vuepress/utils': 2.0.0-beta.47
@@ -790,7 +790,7 @@ importers:
       vuepress-webpack: 2.0.0-beta.47
     dependencies:
       '@types/three': 0.141.0
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/plugin-docsearch': 2.0.0-beta.47
       '@vuepress/utils': 2.0.0-beta.47
@@ -805,7 +805,7 @@ importers:
   docs/seo2:
     specifiers:
       '@types/three': 0.141.0
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/plugin-docsearch': 2.0.0-beta.47
       '@vuepress/utils': 2.0.0-beta.47
@@ -819,7 +819,7 @@ importers:
       vuepress-webpack: 2.0.0-beta.47
     dependencies:
       '@types/three': 0.141.0
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/plugin-docsearch': 2.0.0-beta.47
       '@vuepress/utils': 2.0.0-beta.47
@@ -835,7 +835,7 @@ importers:
   docs/sitemap2:
     specifiers:
       '@types/three': 0.141.0
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/plugin-docsearch': 2.0.0-beta.47
       '@vuepress/utils': 2.0.0-beta.47
@@ -849,7 +849,7 @@ importers:
       vuepress-webpack: 2.0.0-beta.47
     dependencies:
       '@types/three': 0.141.0
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/plugin-docsearch': 2.0.0-beta.47
       '@vuepress/utils': 2.0.0-beta.47
@@ -866,7 +866,7 @@ importers:
     specifiers:
       '@types/katex': 0.14.0
       '@types/three': 0.141.0
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/plugin-docsearch': 2.0.0-beta.47
       '@vuepress/utils': 2.0.0-beta.47
@@ -882,7 +882,7 @@ importers:
     dependencies:
       '@types/katex': 0.14.0
       '@types/three': 0.141.0
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/plugin-docsearch': 2.0.0-beta.47
       '@vuepress/utils': 2.0.0-beta.47
@@ -1202,7 +1202,7 @@ importers:
 
   packages/redirect:
     specifiers:
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/core': 2.0.0-beta.47
       '@vuepress/shared': 2.0.0-beta.47
       '@vuepress/utils': 2.0.0-beta.47
@@ -1210,7 +1210,7 @@ importers:
       rimraf: 3.0.2
       vuepress-shared: workspace:*
     dependencies:
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/core': 2.0.0-beta.47
       '@vuepress/shared': 2.0.0-beta.47
       '@vuepress/utils': 2.0.0-beta.47
@@ -1317,7 +1317,7 @@ importers:
     specifiers:
       '@vuepress/bundler-vite': 2.0.0-beta.47
       '@vuepress/bundler-webpack': 2.0.0-beta.47
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/core': 2.0.0-beta.47
       '@vuepress/markdown': 2.0.0-beta.47
@@ -1352,7 +1352,7 @@ importers:
       vuepress-plugin-sitemap2: workspace:*
       vuepress-shared: workspace:*
     dependencies:
-      '@vuepress/cli': 2.0.0-beta.47
+      '@vuepress/cli': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/core': 2.0.0-beta.47
       '@vuepress/plugin-active-header-links': 2.0.0-beta.47
@@ -3693,11 +3693,33 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
+  /@vuepress/cli/2.0.0-beta.48:
+    resolution: {integrity: sha512-nsLTNyQqKpwZXNrP0rJnDfvoBHm0KtdgLUIq5mfib9DTMic0ziaBUlfUvavcz18ovg3MwtLSUQbSjIsQskdaIw==}
+    hasBin: true
+    dependencies:
+      '@vuepress/core': 2.0.0-beta.48
+      '@vuepress/shared': 2.0.0-beta.48
+      '@vuepress/utils': 2.0.0-beta.48
+      cac: 6.7.12
+      chokidar: 3.5.3
+      envinfo: 7.8.1
+      esbuild: 0.14.43
+    transitivePeerDependencies:
+      - supports-color
+
   /@vuepress/client/2.0.0-beta.47:
     resolution: {integrity: sha512-GkNACDlkYm6r2vONPYws4CfEQ5x3yjDAGfmoRURQEjliJorW65BKAR+wgEnr4khC8uaR6CQV4dyrw9nplyvsZw==}
     dependencies:
       '@vue/devtools-api': 6.1.4
       '@vuepress/shared': 2.0.0-beta.47
+      vue: 3.2.37
+      vue-router: 4.0.16_vue@3.2.37
+
+  /@vuepress/client/2.0.0-beta.48:
+    resolution: {integrity: sha512-XqTmoNqgJuO5IpiEQl3xZOFVZ/oXxCk5LNg+432/4hOTz92VdzOn1KNIQFmWxZaQ6s+8v6BimqRi0ZxMCwQ+Pg==}
+    dependencies:
+      '@vue/devtools-api': 6.1.4
+      '@vuepress/shared': 2.0.0-beta.48
       vue: 3.2.37
       vue-router: 4.0.16_vue@3.2.37
 
@@ -3714,12 +3736,38 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
+  /@vuepress/core/2.0.0-beta.48:
+    resolution: {integrity: sha512-J9fge3oV5amAkx2g8TOPp8EpHyFgm6jy/FbCkYIGCBkKiERn91iz5aGCgoUF4O8AToLekbKpLwdZtNKF+wxAew==}
+    dependencies:
+      '@vuepress/client': 2.0.0-beta.48
+      '@vuepress/markdown': 2.0.0-beta.48
+      '@vuepress/shared': 2.0.0-beta.48
+      '@vuepress/utils': 2.0.0-beta.48
+      gray-matter: 4.0.3
+      toml: 3.0.0
+      vue: 3.2.37
+    transitivePeerDependencies:
+      - supports-color
+
   /@vuepress/markdown/2.0.0-beta.47:
     resolution: {integrity: sha512-OdFvXThh1Q1Z9cM/kjUT+MkhiPfhpEwwur5wAtYvq7VtJYdjUiwz0uzPGG5Rrj4H7isxT3u3w8itVC5k8Dt9eQ==}
     dependencies:
       '@types/markdown-it': 12.2.3
       '@vuepress/shared': 2.0.0-beta.47
       '@vuepress/utils': 2.0.0-beta.47
+      markdown-it: 13.0.1
+      markdown-it-anchor: 8.6.4_ea7kj7wzjkld5jo2noyjqxi764
+      markdown-it-emoji: 2.0.2
+      mdurl: 1.0.1
+    transitivePeerDependencies:
+      - supports-color
+
+  /@vuepress/markdown/2.0.0-beta.48:
+    resolution: {integrity: sha512-gbrVAgJRsQ5hxJM7yyoNv5NbtlgxW/YVyfhFG28aac5gyQ6p3WTOJjpH//F1H431gDVqXS+q+Umhb/vH2QWalg==}
+    dependencies:
+      '@types/markdown-it': 12.2.3
+      '@vuepress/shared': 2.0.0-beta.48
+      '@vuepress/utils': 2.0.0-beta.48
       markdown-it: 13.0.1
       markdown-it-anchor: 8.6.4_ea7kj7wzjkld5jo2noyjqxi764
       markdown-it-emoji: 2.0.2
@@ -3897,6 +3945,11 @@ packages:
     dependencies:
       '@vue/shared': 3.2.37
 
+  /@vuepress/shared/2.0.0-beta.48:
+    resolution: {integrity: sha512-0i3lklFroOAtaHWfCjyvwBe8u5Jl668C/aMe9MWrsQI2qv40LiExgm82nNxc3tD2hoKKVpIxRvWaKXbJI1VXjg==}
+    dependencies:
+      '@vue/shared': 3.2.37
+
   /@vuepress/theme-default/2.0.0-beta.47_sass-loader@13.0.0:
     resolution: {integrity: sha512-maIxX2uISkRki1ZcoljDAq0cq0ov9dRvh/7G5MsswYK6vfC4bNKkjBoR1F6MBN6hI4434/2kyXcmH3rSGMMgww==}
     peerDependencies:
@@ -3934,6 +3987,22 @@ packages:
       '@types/debug': 4.1.7
       '@types/fs-extra': 9.0.13
       '@vuepress/shared': 2.0.0-beta.47
+      chalk: 4.1.2
+      debug: 4.3.4
+      fs-extra: 10.1.0
+      globby: 11.1.0
+      hash-sum: 2.0.0
+      ora: 5.4.1
+      upath: 2.0.1
+    transitivePeerDependencies:
+      - supports-color
+
+  /@vuepress/utils/2.0.0-beta.48:
+    resolution: {integrity: sha512-Y0e3j0SHkPHMWnNlZZOcdN3G4zhdTIs63Ywy4IULFsrpKAihRIUcSe4Yry6lCJyYCCS/gebwc1fQYAmPuNkijg==}
+    dependencies:
+      '@types/debug': 4.1.7
+      '@types/fs-extra': 9.0.13
+      '@vuepress/shared': 2.0.0-beta.48
       chalk: 4.1.2
       debug: 4.3.4
       fs-extra: 10.1.0

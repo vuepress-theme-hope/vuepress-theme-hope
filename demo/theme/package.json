@@ -14,7 +14,7 @@
     "demo:webpack-dev": "vuepress-webpack dev src"
   },
   "devDependencies": {
-    "@vuepress/cli": "2.0.0-beta.47",
+    "@vuepress/cli": "2.0.0-beta.48",
     "@vuepress/client": "2.0.0-beta.47",
     "@vuepress/plugin-docsearch": "2.0.0-beta.47",
     "@vuepress/plugin-pwa": "2.0.0-beta.47",
