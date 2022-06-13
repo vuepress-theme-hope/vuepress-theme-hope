@@ -69,7 +69,7 @@ icon: config
 ## generator
 
 - 类型: `string`
-- 必填: No
+- 必填: 否
 
 自定义的生成器，用于生成调色板配置的衍生值。
 

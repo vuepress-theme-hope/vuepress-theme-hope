@@ -6,19 +6,29 @@ icon: config
 ## components
 
 - 类型: `AvailableComponent[]`
+
+  ```ts
+  type AvailableComponent =
+    | "Badge"
+    | "CodePen"
+    | "FontIcon"
+    | "PDF"
+    | "StackBlitz"
+    | "YouTube";
+  ```
+
 - 默认: `[]`
 
-需要被注册的组件
+需要被注册的组件。
 
-```ts
-type AvailableComponent =
-  | "Badge"
-  | "CodePen"
-  | "FontIcon"
-  | "PDF"
-  | "StackBlitz"
-  | "YouTube";
-```
+可接受的组件名称为:
+
+- `"Badge"`
+- `"CodePen"`
+- `"FontIcon"`
+- `"PDF"`
+- `"StackBlitz"`
+- `"YouTube"`
 
 ## addThis
 

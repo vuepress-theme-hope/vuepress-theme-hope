@@ -11,12 +11,14 @@ tag:
 
 ## components
 
-Register some component which can be used in Markdown files, available components are:
+Register components which can be used in Markdown files, available component names are:
 
-- Badge
-- CodePen
-- FontIcon
-- PDF
+- `"Badge"`
+- `"CodePen"`
+- `"FontIcon"`
+- `"PDF"`
+- `"StackBlitz"`
+- `"YouTube"`
 
 You can set `plugin.components` with an array of components you want, by default it will be `["Badge"]`.
 
