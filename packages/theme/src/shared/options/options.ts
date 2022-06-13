@@ -1,15 +1,14 @@
 import type { ThemeData } from "@vuepress/plugin-theme-data";
 import type { Author } from "vuepress-shared";
 import type {
-  HopeThemeAppearanceConfig,
-  HopeThemeAppearanceOptions,
+  HopeThemeAppearanceRootConfig,
   HopeThemeAppearanceRootOptions,
 } from "./appearance";
 import type {
-  HopeThemeFeatureConfig,
-  HopeThemeFeatureOptions,
+  HopeThemeFeatureRootConfig,
+  HopeThemeFeatureRootOptions,
 } from "./feature";
-import type { HopeThemeLayoutOptions } from "./layout";
+import type { HopeThemeLayoutRootOptions } from "./layout";
 import type { HopeThemeLocaleConfig, HopeThemeLocaleOptions } from "./locales";
 import type { HopeThemePluginsOptions } from "./plugins";
 
@@ -29,15 +28,14 @@ export interface HopeThemeRootInfoOptions {
   hostname?: string;
 }
 
-export type HopeThemeRootOptions = HopeThemeAppearanceOptions &
-  HopeThemeFeatureOptions &
-  HopeThemeLayoutOptions &
-  HopeThemeAppearanceRootOptions &
+export type HopeThemeRootOptions = HopeThemeAppearanceRootOptions &
+  HopeThemeFeatureRootOptions &
+  HopeThemeLayoutRootOptions &
   HopeThemeRootInfoOptions;
 
-export type HopeThemeRootConfig = HopeThemeAppearanceConfig &
-  HopeThemeFeatureConfig &
-  HopeThemeLayoutOptions &
+export type HopeThemeRootConfig = HopeThemeAppearanceRootConfig &
+  HopeThemeFeatureRootConfig &
+  HopeThemeLayoutRootOptions &
   HopeThemeRootInfoOptions;
 
 export interface HopeThemeOptions

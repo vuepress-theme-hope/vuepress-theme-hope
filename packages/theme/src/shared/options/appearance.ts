@@ -1,4 +1,4 @@
-export type DarkmodeConfig =
+export type HopeThemeDarkmodeStatus =
   | "switch"
   | "auto"
   | "toggle"
@@ -47,7 +47,7 @@ export interface HopeThemeAppearanceLocaleData {
   };
 }
 
-export interface HopeThemeAppearanceOptions {
+export interface HopeThemeAppearanceRootOptions {
   /**
    * Whether enable pure mode
    *
@@ -76,7 +76,7 @@ export interface HopeThemeAppearanceOptions {
    *
    * @default 'auto-switch'
    */
-  darkmode?: DarkmodeConfig;
+  darkmode?: HopeThemeDarkmodeStatus;
 
   /**
    * Theme color configuration
@@ -95,9 +95,7 @@ export interface HopeThemeAppearanceOptions {
    * @default false
    */
   fullscreen?: boolean;
-}
 
-export interface HopeThemeAppearanceRootOptions {
   /**
    * Link of font icon asset
    *
@@ -117,4 +115,10 @@ export interface HopeThemeAppearanceRootOptions {
   iconPrefix?: string;
 }
 
-export type HopeThemeAppearanceConfig = Required<HopeThemeAppearanceOptions>;
+export type HopeThemeAppearanceRootConfig = HopeThemeAppearanceRootOptions &
+  Required<
+    Pick<
+      HopeThemeAppearanceRootOptions,
+      "darkmode" | "fullscreen" | "pure" | "themeColor"
+    >
+  >;

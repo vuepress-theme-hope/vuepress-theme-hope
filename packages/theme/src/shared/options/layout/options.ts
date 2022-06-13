@@ -103,8 +103,9 @@ export interface HopeThemeLayoutLocaleOptions
   prevLink?: boolean;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface HopeThemeLayoutOptions {
+export type HopeThemeLayoutLocaleConfig = HopeThemeLayoutLocaleOptions;
+
+export interface HopeThemeLayoutRootOptions {
   /**
    * Wether display back to top button
    *

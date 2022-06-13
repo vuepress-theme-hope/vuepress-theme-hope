@@ -32,7 +32,7 @@ export interface HopeThemeFeatureLocaleConfig {
   blog: HopeThemeBlogConfig;
 }
 
-export interface HopeThemeFeatureOptions {
+export interface HopeThemeFeatureRootOptions {
   /**
    * Add This 的公开 ID
    *
@@ -48,7 +48,8 @@ export interface HopeThemeFeatureOptions {
   encrypt?: HopeThemeEncryptOptions;
 }
 
-export interface HopeThemeFeatureConfig extends HopeThemeFeatureLocaleConfig {
+export interface HopeThemeFeatureRootConfig
+  extends HopeThemeFeatureLocaleConfig {
   /**
    * Encrypt config
    *
