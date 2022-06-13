@@ -54,6 +54,10 @@ const DROPPED_THEME_OPTIONS: [string, string?, string?][] = [
     "Due to scalability consideration, V2 no longer supports this.",
   ],
   [
+    "hideSiteTitleonMobile",
+    "Site title will be hide on mobile because there is no space for it.",
+  ],
+  [
     "chunkRename",
     "Since it's hard to implement such feature on vite, we no longer support this plugin in V2.",
   ],

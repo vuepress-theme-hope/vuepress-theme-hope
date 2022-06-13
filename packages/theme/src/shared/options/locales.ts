@@ -9,6 +9,7 @@ import type {
 import type { LocaleData2Option } from "./helpers";
 import type {
   HopeThemeLayoutLocaleData,
+  HopeThemeLayoutLocaleConfig,
   HopeThemeLayoutLocaleOptions,
 } from "./layout";
 
@@ -38,7 +39,7 @@ export type HopeThemeLocaleOptions =
 
 export type HopeThemeLocaleConfig = HopeThemeLocaleData &
   HopeThemeFeatureLocaleConfig &
-  HopeThemeLayoutLocaleOptions & {
+  HopeThemeLayoutLocaleConfig & {
     /**
      * Global default author
      *
