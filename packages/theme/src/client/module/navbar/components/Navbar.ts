@@ -53,7 +53,7 @@ export default defineComponent({
     return (): VNode[] => {
       const map: Record<HopeThemeNavbarComponent, VNode | null> = {
         Brand: h(NavbarBrand),
-        Language: h("div", { class: "nav-item" }, h(LanguageDropdown)),
+        Language: h(LanguageDropdown),
         Links: h(NavbarLinks),
         Repo: h(RepoLink),
         Outlook: h(OutlookButton),

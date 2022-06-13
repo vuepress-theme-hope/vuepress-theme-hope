@@ -79,3 +79,9 @@
     margin-left: 0;
   }
 }
+
+#docsearch-container {
+  @media (max-width: 750px) {
+    min-width: 36px !important;
+  }
+}
