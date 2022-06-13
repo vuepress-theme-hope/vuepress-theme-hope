@@ -15,19 +15,23 @@ export default defineComponent({
     return (): VNode | null =>
       dropdown.value
         ? h(
-            DropdownLink,
-            { class: "i18n-dropdown", config: dropdown.value },
-            {
-              title: () =>
-                h(I18nIcon, {
-                  "aria-label": dropdown.value?.ariaLabel,
-                  style: {
-                    width: "1rem",
-                    height: "1rem",
-                    verticalAlign: "middle",
-                  },
-                }),
-            }
+            "div",
+            { class: "nav-item" },
+            h(
+              DropdownLink,
+              { class: "i18n-dropdown", config: dropdown.value },
+              {
+                title: () =>
+                  h(I18nIcon, {
+                    "aria-label": dropdown.value?.ariaLabel,
+                    style: {
+                      width: "1rem",
+                      height: "1rem",
+                      verticalAlign: "middle",
+                    },
+                  }),
+              }
+            )
           )
         : null;
   },
