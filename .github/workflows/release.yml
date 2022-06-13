@@ -187,6 +187,7 @@ jobs:
         plugin-name:
           - blog2
           - comment2
+          - components
           - copy-code2
           - copyright2
           - feed2
