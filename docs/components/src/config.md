@@ -6,19 +6,29 @@ icon: config
 ## components
 
 - Type: `AvailableComponent[]`
+
+  ```ts
+  type AvailableComponent =
+    | "Badge"
+    | "CodePen"
+    | "FontIcon"
+    | "PDF"
+    | "StackBlitz"
+    | "YouTube";
+  ```
+
 - Default: `[]`
 
-Whether register articleInfo component
+Components to be registered.
 
-```ts
-type AvailableComponent =
-  | "Badge"
-  | "CodePen"
-  | "FontIcon"
-  | "PDF"
-  | "StackBlitz"
-  | "YouTube";
-```
+Available component names:
+
+- `"Badge"`
+- `"CodePen"`
+- `"FontIcon"`
+- `"PDF"`
+- `"StackBlitz"`
+- `"YouTube"`
 
 ## addThis
 

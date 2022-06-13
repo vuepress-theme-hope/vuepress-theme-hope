@@ -369,7 +369,12 @@ You can set it with an object, the object will be used to config reveal.js.
 
 ### presentation.plugins
 
-- Type: `string[]`
+- Type: `RevealPlugin[]`
+
+  ```ts
+  type RevealPlugin = "highlight" | "math" | "search" | "notes" | "zoom";
+  ```
+
 - Required: No
 
 Plugins you want to use on reveal.js.

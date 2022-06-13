@@ -376,8 +376,13 @@ CodePen 编辑器显示情况，第一位代表 HTML ，第二位代表 JS，第
 
 ### presentation.plugins
 
-- 类型: `string[]`
-- 必填: No
+- 类型: `RevealPlugin[]`
+
+  ```ts
+  type RevealPlugin = "highlight" | "math" | "search" | "notes" | "zoom";
+  ```
+
+- 必填: 否
 
 你想启用的 Reveal.js 插件
 
@@ -396,7 +401,7 @@ CodePen 编辑器显示情况，第一位代表 HTML ，第二位代表 JS，第
 ### presentation.revealConfig
 
 - 类型: `Partial<RevealOptions>`
-- 必填: No
+- 必填: 否
 
 你想要传递给 Reveal.js 的配置选项
 
