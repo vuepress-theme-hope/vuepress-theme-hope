@@ -1,8 +1,10 @@
 import { useRouteLocale, useSiteLocaleData, withBase } from "@vuepress/client";
-import { computed, defineComponent, h, VNode } from "vue";
+import { computed, defineComponent, h } from "vue";
 import { RouterLink } from "vue-router";
 
 import { useThemeLocaleData } from "@theme-hope/composables";
+
+import type { VNode } from "vue";
 
 import "../styles/navbar-brand.scss";
 
@@ -47,7 +49,7 @@ export default defineComponent({
         siteBrandTitle.value
           ? h(
               "span",
-              { class: ["site-name", { "hide-in-pad": siteBrandLogo }] },
+              { class: ["site-name", { "hide-in-pad": siteBrandLogo.value }] },
               siteBrandTitle.value
             )
           : null,
