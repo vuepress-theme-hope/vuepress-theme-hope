@@ -33,6 +33,7 @@ export default hopeTheme({
         "/",
         "/guide",
         "/config",
+        "/demo",
         {
           text: version,
           icon: "note",
@@ -69,6 +70,7 @@ export default hopeTheme({
         "/zh/",
         "/zh/guide",
         "/zh/config",
+        "/zh/demo",
         {
           text: version,
           icon: "note",
