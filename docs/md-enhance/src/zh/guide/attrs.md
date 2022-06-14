@@ -108,7 +108,7 @@ interface AttrsOptions {
 
 ## 案例
 
-包含 `行内代码`{.inline-code} 和 ![图片](/img.png){.image} 的文字，也支持 _强调_{.emphasis} 和 **加粗**{.bold}。
+包含 `行内代码`{.inline-code} 和 ![favicon](/favicon.ico){.image} 的文字，也支持 _强调_{.emphasis} 和 **加粗**{.bold}。
 
 | 表格 |
 | ---- |
@@ -131,7 +131,7 @@ interface AttrsOptions {
 块级元素 {.block}
 
 ```md
-包含 `行内代码`{.inline-code} 和 ![图片](/img.png){.image} 的文字，也支持 _强调_{.emphasis} 和 **加粗**{.bold}。
+包含 `行内代码`{.inline-code} 和 ![favicon](/favicon.ico){.image} 的文字，也支持 _强调_{.emphasis} 和 **加粗**{.bold}。
 
 | 表格 |
 | ---- |

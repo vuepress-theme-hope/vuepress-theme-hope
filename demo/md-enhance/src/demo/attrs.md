@@ -4,7 +4,7 @@ title: Attrs support
 
 ## Demo
 
-Text with `inline code`{.inline-code} and ![img](/img.png){.image}, also supporting _emphasis_{.emphasis} and **bold**{.bold}.
+Text with `inline code`{.inline-code} and ![favicon](/favicon.ico){.image}, also supporting _emphasis_{.emphasis} and **bold**{.bold}.
 
 | Table   |
 | ------- |
@@ -27,7 +27,7 @@ A line with break
 block content {.block}
 
 ```md
-Text with `inline code`{.inline-code} and ![img](/img.png){.image}, also supporting _emphasis_{.emphasis} and **bold**{.bold}.
+Text with `inline code`{.inline-code} and ![favicon](/favicon.ico){.image}, also supporting _emphasis_{.emphasis} and **bold**{.bold}.
 
 | Table   |
 | ------- |
