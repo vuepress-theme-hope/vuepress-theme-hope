@@ -27,7 +27,7 @@
 }
 
 .tab-list-nav {
-  display: flex;
+  overflow-x: auto;
 
   margin: 0;
   padding: 0;
@@ -35,6 +35,8 @@
 
   background-color: var(--tab-nav-bg-color);
   list-style: none;
+
+  white-space: nowrap;
 
   transition: background-color var(--color-transition, 0.3s ease);
 
