@@ -17,6 +17,19 @@ export interface DarkMode {
 
 export const darkModeSymbol: InjectionKey<DarkMode> = Symbol.for("darkMode");
 
+/**
+ * Inject dark mode global computed
+ */
+export const useDarkMode = (): DarkMode => {
+  const darkmode = inject(darkModeSymbol);
+
+  if (!darkmode) {
+    throw new Error("useDarkMode() is called without provider.");
+  }
+
+  return darkmode;
+};
+
 export const injectDarkMode = (app: App): void => {
   const themeData = useThemeData();
   const isDarkPreferred = usePreferredDark();
@@ -51,19 +64,6 @@ export const injectDarkMode = (app: App): void => {
   Object.defineProperties(app.config.globalProperties, {
     $isDarkMode: { get: () => isDarkMode.value },
   });
-};
-
-/**
- * Inject dark mode global computed
- */
-export const useDarkMode = (): DarkMode => {
-  const darkmode = inject(darkModeSymbol);
-
-  if (!darkmode) {
-    throw new Error("useDarkMode() is called without provider.");
-  }
-
-  return darkmode;
 };
 
 export const setupDarkMode = (): void => {
