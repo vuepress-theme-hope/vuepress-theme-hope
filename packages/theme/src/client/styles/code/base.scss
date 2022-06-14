@@ -206,7 +206,7 @@ div[class*="language-"] {
 // narrow mobile
 @media (max-width: hope-config.$mobile) {
   #{hope-config.$content-class} {
-    div[class*="language-"] {
+    > div[class*="language-"] {
       margin: 0.85rem -1.5rem;
       border-radius: 0;
     }

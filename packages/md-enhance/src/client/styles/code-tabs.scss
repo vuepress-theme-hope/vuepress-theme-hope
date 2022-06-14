@@ -102,5 +102,9 @@
   div[class*="language-"] {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+
+    @media (max-width: hope-config.$mobile) {
+      margin: 0.85rem -1.5rem;
+    }
   }
 }

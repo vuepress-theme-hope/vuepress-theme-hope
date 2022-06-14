@@ -108,11 +108,6 @@
     a {
       color: var(--c-brand, #3eaf7c);
     }
-
-    div[class*="language-"] {
-      margin-right: 0 !important;
-      margin-left: 0 !important;
-    }
   }
 
   &.info {
