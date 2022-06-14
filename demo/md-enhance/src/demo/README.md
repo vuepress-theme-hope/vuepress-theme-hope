@@ -5,6 +5,7 @@ title: Get Started
 ## Catalog
 
 - [Custom Align](align.md)
+- [Attrs](attrs.md)
 - [Chart](chart.md)
 - [ECharts](echarts.md)
 - [Code Demo](code-demo.md)

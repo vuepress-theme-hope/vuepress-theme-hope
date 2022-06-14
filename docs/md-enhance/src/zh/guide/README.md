@@ -93,6 +93,12 @@ npm i -D vuepress-plugin-md-enhance@next
 
 - [查看详情](align.md)
 
+### 属性支持
+
+一个有 id 的 **单词**{#word}。
+
+- [查看详情](attrs.md)
+
 ### 上下角标
 
 19^th^ H~2~O

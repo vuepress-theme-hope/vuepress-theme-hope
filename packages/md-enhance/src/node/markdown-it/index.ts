@@ -1,4 +1,5 @@
 export * from "./align";
+export * from "./attrs";
 export * from "./chart";
 export * from "./codeDemo";
 export * from "./codeTabs";

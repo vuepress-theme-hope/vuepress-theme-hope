@@ -31,6 +31,7 @@ Added more syntax to Markdown, enriching documentation and blog writing:
 - [Task list](markdown/tasklist.md)
 - [Image Enahancement](markdown/image.md)
 - [Custom alignment](markdown/align.md)
+- [Custom Attributes](markdown/attrs.md)
 - [Subscript and Supercript](markdown/sup-sub.md)
 - [Mark](markdown/mark.md)
 - [Chart](markdown/chart.md)

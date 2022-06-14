@@ -30,6 +30,8 @@ Besides Markdown syntaxes VuePress itself adds, `vuepress-theme-hope` enables mo
 
 - [Custom Alignment](align.md)
 
+- [Custom Attributes](attrs.md)
+
 - [Superscript and subscript](sup-sub.md)
 
 - [Mark](mark.md)

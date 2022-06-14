@@ -32,6 +32,8 @@ dir:
 
 - [自定义对齐](align.md)
 
+- [自定义属性](attrs.md)
+
 - [上下角标](sup-sub.md)
 
 - [标记](mark.md)

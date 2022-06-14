@@ -101,6 +101,12 @@ I am right align
 
 - [View Detail](align.md)
 
+### Attrs
+
+A **word**{#word} having id.
+
+- [View Detail](attrs.md)
+
 ### Footnote
 
 This text has footnote[^first].

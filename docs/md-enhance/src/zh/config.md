@@ -105,6 +105,41 @@ icon: config
 
 是否启用自定义对齐格式支持。
 
+## attrs
+
+- 类型: `AttrsOptions | boolean`
+
+  ```ts
+  interface AttrsOptions {
+    /**
+     * 左分隔符
+     *
+     * @default '{'
+     */
+    left?: string;
+
+    /**
+     * 右分隔符
+     *
+     * @default '}'
+     */
+    right?: string;
+
+    /**
+     * 允许的属性
+     *
+     * @description 设置空数组意味着允许所有属性
+     *
+     * @default []
+     */
+    allowed?: (string | RegExp)[];
+  }
+  ```
+
+- 默认值: `false`
+
+是否启用自定义属性支持。
+
 ## sup
 
 - 类型: `boolean`

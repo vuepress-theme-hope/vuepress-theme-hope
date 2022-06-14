@@ -227,6 +227,12 @@ npm i -D vuepress-theme-hope
 
 - [查看详情](../markdown/align.md)
 
+#### 属性支持
+
+一个有 id 的 **单词**{#word}。
+
+- [查看详情](../markdown/attrs.md)
+
 #### 上下角标
 
 19^th^ H~2~O

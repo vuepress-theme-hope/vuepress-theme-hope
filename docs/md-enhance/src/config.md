@@ -105,6 +105,41 @@ Whether to enable codetabs.
 
 Whether to enable custom align.
 
+## attrs
+
+- Type: `AttrsOptions | boolean`
+
+  ```ts
+  interface AttrsOptions {
+    /**
+     * left delimiter
+     *
+     * @default '{'
+     */
+    left?: string;
+
+    /**
+     * right delimiter
+     *
+     * @default '}'
+     */
+    right?: string;
+
+    /**
+     * allowed attributes
+     *
+     * @description An empty list means allowing all attribute
+     *
+     * @default []
+     */
+    allowed?: (string | RegExp)[];
+  }
+  ```
+
+- Default: `false`
+
+Whether to enable attribute cutomize support.
+
 ## sup
 
 - Type: `boolean`

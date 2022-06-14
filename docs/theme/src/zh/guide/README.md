@@ -31,6 +31,7 @@ tag:
 - [任务列表](markdown/tasklist.md)
 - [图片增强](markdown/image.md)
 - [自定义对齐](markdown/align.md)
+- [自定义属性](markdown/attrs.md)
 - [上下角标](markdown/sup-sub.md)
 - [标记](markdown/mark.md)
 - [图表](markdown/chart.md)

@@ -34,6 +34,11 @@ features:
     details: Let you decide to align paragraphs in the way you like
     link: /guide/align.html
 
+  - title: Attrs support
+    icon: code
+    details: Allow you to add attributes for markdown content
+    link: /guide/atts.html
+
   - title: Superscript and subscript support
     icon: superscript
     details: Your Markdown now suppport superscript and subscript

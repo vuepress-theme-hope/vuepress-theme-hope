@@ -13,6 +13,7 @@ import { covertOptions, legacyCodeDemo, legacyCodeGroup } from "./compact";
 import {
   CODE_DEMO_DEFAULT_SETTING,
   align,
+  attrs,
   chart,
   codeTabs,
   echarts,
@@ -160,6 +161,8 @@ export const mdEnhancePlugin =
       extendsMarkdown: (md): void => {
         // syntax
         if (getStatus("gfm")) md.options.linkify = true;
+        if (getStatus("attrs"))
+          md.use(attrs, typeof options.attrs === "object" ? options.attrs : {});
         if (getStatus("align")) md.use(align);
         if (getStatus("lazyLoad")) md.use(lazyLoad);
         if (imageMarkEnable)

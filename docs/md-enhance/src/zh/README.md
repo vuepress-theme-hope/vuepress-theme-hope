@@ -34,6 +34,11 @@ features:
     details: 让你在 Markdown 中对段落进行对齐
     link: /zh/guide/align.html
 
+  - title: 自定义属性支持
+    icon: code
+    details: 让你为 Markdown 元素添加属性
+    link: /zh/guide/attrs.html
+
   - title: 上下角标支持
     icon: superscript
     details: 你的 Markdown 现在将支持上下角标

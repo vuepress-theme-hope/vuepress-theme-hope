@@ -233,6 +233,12 @@ I am right align
 
 - [View Detail](../markdown/align.md)
 
+### Attrs
+
+A **word**{#word} having id.
+
+- [View Detail](../markdown/attrs.md)
+
 #### Footnote
 
 This text has footnote[^first].

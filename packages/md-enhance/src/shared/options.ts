@@ -1,5 +1,6 @@
 import type { LocaleConfig } from "@vuepress/core";
 import type { KatexOptions } from "katex";
+import type { AttrsOptions } from "./attrs";
 import type { CodeDemoOptions } from "./codeDemo";
 import type { ImageMarkOptions } from "./imageMark";
 import type { IncludeOptions } from "./include";
@@ -92,6 +93,15 @@ export interface MarkdownEnhanceOptions {
    * @default false
    */
   align?: boolean;
+
+  /**
+   * Whether to enable attr support
+   *
+   * 是否启用属性支持。
+   *
+   * @default false
+   */
+  attrs?: AttrsOptions | boolean;
 
   /**
    * Whether to enable superscript format support
