@@ -113,7 +113,7 @@
     }
 
     @media (max-width: hope-config.$mobile) {
-      overflow-y: scroll;
+      overflow-y: auto;
       max-height: 80%;
 
       &::-webkit-scrollbar {
@@ -307,7 +307,7 @@
     display: flex;
     flex-flow: column wrap;
 
-    overflow-x: scroll;
+    overflow-x: auto;
     -webkit-overflow-scrolling: touch;
 
     width: 22em;
