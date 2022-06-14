@@ -1,5 +1,9 @@
+import {
+  isLinkHttp,
+  removeEndingSlash,
+  removeLeadingSlash,
+} from "@vuepress/shared";
 import { Logger } from "vuepress-shared";
-import { removeLeadingSlash } from "@vuepress/shared";
 
 export const logger = new Logger("vuepress-plugin-feed2");
 
@@ -47,7 +51,11 @@ export const resolveHTML = (
     .replace(/<math[\s\S]*?\/math>/gu, "<i>Content not supported</i>");
 
 export const resolveUrl = (hostname: string, base = "", path = ""): string =>
-  `${hostname}${base}${removeLeadingSlash(path)}`;
+  `${
+    isLinkHttp(hostname)
+      ? removeEndingSlash(hostname)
+      : `https://${removeEndingSlash(hostname)}`
+  }${base}${removeLeadingSlash(path)}`;
 
 export const getImageMineType = (ext = ""): string =>
   `image/${

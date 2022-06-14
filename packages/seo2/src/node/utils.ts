@@ -1,4 +1,8 @@
-import { removeEndingSlash, removeLeadingSlash } from "@vuepress/shared";
+import {
+  isLinkHttp,
+  removeEndingSlash,
+  removeLeadingSlash,
+} from "@vuepress/shared";
 import { Logger, isAbsoluteUrl, isUrl } from "vuepress-shared";
 
 import type { App, SiteLocaleConfig } from "@vuepress/core";
@@ -62,9 +66,11 @@ export const resolveUrl = (
   base: string,
   url: string
 ): string =>
-  `${hostname.match(/https?:\/\//) ? "" : "https://"}${removeEndingSlash(
-    hostname
-  )}${base}${removeLeadingSlash(url)}`;
+  `${
+    isLinkHttp(hostname)
+      ? removeEndingSlash(hostname)
+      : `https://${removeEndingSlash(hostname)}`
+  }${base}${removeLeadingSlash(url)}`;
 
 export const stripTags = (content = ""): string =>
   content

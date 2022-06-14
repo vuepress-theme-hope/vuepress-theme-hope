@@ -1,4 +1,8 @@
-import { removeEndingSlash, removeLeadingSlash } from "@vuepress/shared";
+import {
+  isLinkHttp,
+  removeEndingSlash,
+  removeLeadingSlash,
+} from "@vuepress/shared";
 import { fs, path, withSpinner } from "@vuepress/utils";
 import { getRedirectHTML } from "../shared";
 
@@ -35,7 +39,11 @@ export const generateHTML = async (
       .flat()
   );
 
-  const hostname = options.hostname ? removeEndingSlash(options.hostname) : "";
+  const hostname = options.hostname
+    ? isLinkHttp(options.hostname)
+      ? removeEndingSlash(options.hostname)
+      : `https://${removeEndingSlash(options.hostname)}`
+    : "";
 
   await withSpinner("Generating redirect files")(() =>
     Promise.all(

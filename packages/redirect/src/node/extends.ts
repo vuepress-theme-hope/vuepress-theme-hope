@@ -1,4 +1,4 @@
-import { removeEndingSlash } from "@vuepress/shared";
+import { isLinkHttp, removeEndingSlash } from "@vuepress/shared";
 
 import type { App, Page } from "@vuepress/core";
 import type {
@@ -18,7 +18,11 @@ export const handleRedirect = (
   if (redirectTo) {
     const redirectUrl = (
       options.hostname && redirectTo.startsWith("/")
-        ? `${removeEndingSlash(options.hostname)}${base}${redirectTo}`
+        ? `${
+            isLinkHttp(options.hostname)
+              ? removeEndingSlash(options.hostname)
+              : `https://${removeEndingSlash(options.hostname)}`
+          }${base}${redirectTo}`
         : redirectTo
     )
       .replace(/\.md$/, ".html")

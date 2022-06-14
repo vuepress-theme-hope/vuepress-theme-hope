@@ -1,4 +1,8 @@
-import { removeEndingSlash, removeLeadingSlash } from "@vuepress/shared";
+import {
+  isLinkHttp,
+  removeEndingSlash,
+  removeLeadingSlash,
+} from "@vuepress/shared";
 import { chalk, fs, withSpinner } from "@vuepress/utils";
 import { SitemapStream } from "sitemap";
 import { logger } from "./utils";
@@ -145,7 +149,9 @@ export const generateSiteMap = async (
   options: SitemapOptions
 ): Promise<void> => {
   const { extraUrls = [], xmlNameSpace: xmlns } = options;
-  const hostname = removeEndingSlash(options.hostname);
+  const hostname = isLinkHttp(options.hostname)
+    ? removeEndingSlash(options.hostname)
+    : `https://${removeEndingSlash(options.hostname)}`;
   const sitemapFilename = options.sitemapFilename
     ? removeLeadingSlash(options.sitemapFilename)
     : "sitemap.xml";

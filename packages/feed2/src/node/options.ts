@@ -1,4 +1,8 @@
-import { removeEndingSlash, removeLeadingSlash } from "@vuepress/shared";
+import {
+  isLinkHttp,
+  removeEndingSlash,
+  removeLeadingSlash,
+} from "@vuepress/shared";
 import { deepAssign } from "vuepress-shared";
 
 import { compareDate, resolveUrl } from "./utils";
@@ -19,7 +23,9 @@ export type ResolvedFeedOptionsMap = Record<string, ResolvedFeedOptions>;
 export const ensureHostName = (options: Partial<FeedOptions>): boolean => {
   // make sure hostname do not end with `/`
   if (options.hostname) {
-    options.hostname = removeEndingSlash(options.hostname);
+    options.hostname = isLinkHttp(options.hostname)
+      ? removeEndingSlash(options.hostname)
+      : `https://${removeEndingSlash(options.hostname)}`;
 
     return true;
   }
