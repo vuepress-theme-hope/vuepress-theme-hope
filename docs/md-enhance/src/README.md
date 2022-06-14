@@ -172,6 +172,7 @@ For details, see [Migration Guide](./migration.md).
 This plugin exports the following markdown-it plugin, and you can use them in other projects.
 
 - align
+- attrs
 - container
 - footnote
 - imageMark

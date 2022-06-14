@@ -174,6 +174,7 @@ module.exports = {
 这个插件导出了以下 markdown-it 插件，你可以在其他项目中使用它们。
 
 - align
+- attrs
 - container
 - footnote
 - imageMark
