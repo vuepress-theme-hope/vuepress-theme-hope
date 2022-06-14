@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.83](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.82...v2.0.0-beta.83) (2022-06-14)
+
+### Features
+
+- add demo for components ([4d303e7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4d303e7234def72ef78ba1923bf2d66f53a46733))
+- export locales ([80345e1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/80345e1076a7d9a628c384bcf4dd4257438237c6))
+- improve hostname ([7798361](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/77983610b97e66180c2dc7033ad1786df2c208da))
+- improve style ([58a32df](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/58a32df0f29361d1a218a59143d1b3686a0133cf))
+- **md-enhance:** add attrs option ([099d8a1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/099d8a147265d4e26fd4a91b37506505d5daa333))
+- **theme:** fix navbar ([4b0305c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4b0305ca3e4803a23563fdb9ebd771ea13fe1a07))
+
+### Bug Fixes
+
+- **md-enhance:** fix tabs, codetabs and code block in mobile ([9a8b74d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9a8b74d3619f0cd2a817e8031e0a7af091336e8a))
+- **md-enhance:** improve codetab and tab style ([b50744a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b50744aa807dd05fabde70558ec2fd73e34863f9))
+- **theme:** fix navbrand ([fb312fe](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fb312fe599ce314f80fa16c64ba1d76d8f349861))
+
+### Reverts
+
+- "feat(theme): add $isMobile global" ([c5e047a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c5e047a7082bfb71332ff0f4f2e4558b50473f9f))
+
 ## [2.0.0-beta.82](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.81...v2.0.0-beta.82) (2022-06-12)
 
 ### Features
