@@ -5,7 +5,7 @@ icon: config
 
 You can pass these options to the plugin:
 
-## enableAll
+## enableAll <Badge text="Demo only" type="danger" />
 
 - Type: `boolean`
 - Default: `false`
@@ -16,13 +16,11 @@ Whether to enable all features.
 
 Please use this option ONLY for playing or testing.
 
-As time grows,`vuepress-plugin-md-enhance` is becoming more powerful. It’s adding more syntax to Markdown parser and more code to output.
+The plugin is FULLY treeshakable, so you should use the options below and enable ONLY the feature you want to use.
 
 Enabling features you don’t need will increase dev and build time. (`markdown-it` has to check for extra syntaxs)
 
-Also, presentation feature will add a 700KB size chunk (mostly is `reveal.js`) to your output.
-
-Please use the options below and enable ONLY the feature you want to use.
+Also, some feature will add large chunks to your output (can up to 2MB).
 
 :::
 

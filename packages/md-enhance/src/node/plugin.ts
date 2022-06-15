@@ -59,6 +59,11 @@ export const mdEnhancePlugin =
       );
     if (app.env.isDebug) logger.info(`Options: ${options.toString()}`);
 
+    if (options.enableAll)
+      logger.error(
+        'Do not use "enableAll" option in production, this option is only built for demo!\nTo avoid including large chunks of some features, enable features you are using ONLY.'
+      );
+
     const getStatus = (
       key: keyof MarkdownEnhanceOptions,
       gfm = false

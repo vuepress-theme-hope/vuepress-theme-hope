@@ -259,7 +259,11 @@ export interface MarkdownEnhanceOptions {
   stylize?: StylizeOptions;
 
   /**
+   * @deprecated This option is for demo only, please enable options you need in production.
+   *
    * Whether to enable all features.
+   *
+   * @deprecated 此选项仅用于案例，请在生产环境中启用你需要的选项
    *
    * 是否启用全部增强语法
    *
