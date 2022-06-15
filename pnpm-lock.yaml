@@ -15,7 +15,7 @@ importers:
       '@typescript-eslint/eslint-plugin': 5.28.0
       '@typescript-eslint/parser': 5.28.0
       '@vue/eslint-config-typescript': 11.0.0
-      bumpp: 7.1.1
+      bumpp: 7.2.0
       c8: 7.11.3
       chalk: 5.0.1
       commitizen: 4.2.4
@@ -62,7 +62,7 @@ importers:
       '@typescript-eslint/eslint-plugin': 5.28.0_7yumg2qjgbp7maccqlfhx2vudu
       '@typescript-eslint/parser': 5.28.0_ud6rd4xtew5bv4yhvkvu24pzm4
       '@vue/eslint-config-typescript': 11.0.0_iey4pjh3yggxxwmtx4vlmerjxi
-      bumpp: 7.1.1
+      bumpp: 7.2.0
       c8: 7.11.3
       chalk: 5.0.1
       commitizen: 4.2.4
@@ -4571,8 +4571,8 @@ packages:
       semver: 7.3.7
     dev: true
 
-  /bumpp/7.1.1:
-    resolution: {integrity: sha512-pAGjraw9T4I4dnkiQHrKUVQb55dOM5Nj72SVtVlkjFjWjFtg0aSgipQuxDWZ0cqm8WoqtaiBPk+7jHfnZxr7lA==}
+  /bumpp/7.2.0:
+    resolution: {integrity: sha512-vQxdpWe7VzdpV4dVjpWoGwTDrKZn4eqKVmjIYUlDgrmjesXAqJnWhu+VFxazoE4pLs1q5NwDhgzK1xAFL0K+Jg==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
