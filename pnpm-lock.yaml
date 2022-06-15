@@ -19,7 +19,7 @@ importers:
       c8: 7.11.3
       chalk: 5.0.1
       commitizen: 4.2.4
-      concurrently: 7.2.1
+      concurrently: 7.2.2
       cpx2: 4.2.0
       cross-env: 7.0.3
       cz-git: 1.3.4
@@ -66,7 +66,7 @@ importers:
       c8: 7.11.3
       chalk: 5.0.1
       commitizen: 4.2.4
-      concurrently: 7.2.1
+      concurrently: 7.2.2
       cpx2: 4.2.0
       cross-env: 7.0.3
       cz-git: 1.3.4
@@ -5055,15 +5055,15 @@ packages:
       typedarray: 0.0.6
     dev: true
 
-  /concurrently/7.2.1:
-    resolution: {integrity: sha512-7cab/QyqipqghrVr9qZmoWbidu0nHsmxrpNqQ7r/67vfl1DWJElexehQnTH1p+87tDkihaAjM79xTZyBQh7HLw==}
+  /concurrently/7.2.2:
+    resolution: {integrity: sha512-DcQkI0ruil5BA/g7Xy3EWySGrFJovF5RYAYxwGvv9Jf9q9B1v3jPFP2tl6axExNf1qgF30kjoNYrangZ0ey4Aw==}
     engines: {node: ^12.20.0 || ^14.13.0 || >=16.0.0}
     hasBin: true
     dependencies:
       chalk: 4.1.2
       date-fns: 2.28.0
       lodash: 4.17.21
-      rxjs: 6.6.7
+      rxjs: 7.5.5
       shell-quote: 1.7.3
       spawn-command: 0.0.2-1
       supports-color: 8.1.1
