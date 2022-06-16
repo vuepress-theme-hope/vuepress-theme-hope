@@ -32,7 +32,7 @@ importers:
       inquirer: 8.2.4
       lint-staged: 13.0.1
       markdownlint-cli: 0.31.1
-      npm-check-updates: 13.1.5
+      npm-check-updates: 14.0.1
       ora: 6.1.0
       prettier: 2.7.0
       rollup: 2.75.6
@@ -79,7 +79,7 @@ importers:
       inquirer: 8.2.4
       lint-staged: 13.0.1
       markdownlint-cli: 0.31.1
-      npm-check-updates: 13.1.5
+      npm-check-updates: 14.0.1
       ora: 6.1.0
       prettier: 2.7.0
       rollup: 2.75.6
@@ -4940,7 +4940,7 @@ packages:
     resolution: {integrity: sha512-rHDY1i4V4JBCXHnHwaVyA202CKSj2kUrjI5cSJQbTdnFeI4ShV3e19Fe7EQfzL2tjSrvYyWugdGAtEc1lLvGDg==}
 
   /colors/1.0.3:
-    resolution: {integrity: sha1-BDP0TYCWgP3rYO0mDxsMJi6CpAs=}
+    resolution: {integrity: sha512-pFGrxThWcWQ2MsAz6RtgeWe4NK2kUE1WfsrvvlctdII745EW9I0yflqhe7++M5LEc7bV2c/9/5zc8sFcpL0Drw==}
     engines: {node: '>=0.1.90'}
     dev: true
 
@@ -8241,7 +8241,7 @@ packages:
     hasBin: true
 
   /json-buffer/3.0.0:
-    resolution: {integrity: sha1-Wx85evx11ne96Lz8Dkfh+aPZqJg=}
+    resolution: {integrity: sha512-CuUqjv0FUZIdXkHPI8MezCnFCdaTAacej1TZYulLoAg1h/PhwkdXFN4V/gzY4g+fMBCOV2xF+rp7t2XD2ns/NQ==}
     dev: true
 
   /json-parse-better-errors/1.0.2:
@@ -9170,8 +9170,8 @@ packages:
       npm-normalize-package-bin: 1.0.1
     dev: true
 
-  /npm-check-updates/13.1.5:
-    resolution: {integrity: sha512-vAVYlrrxJIPH/R5mxMzrNwP33hYflvk7oQqPjPOySCavCFwhXKmfK5sn/rogyebg7cLnECiDxsczGqvTOEBRAA==}
+  /npm-check-updates/14.0.1:
+    resolution: {integrity: sha512-CjHKxcJur/OiVc2GKBagUrzDsXL8JJC71rNVv2mC7eNA6w/ebe3POx9x46ay4p3woSxJOa7hYWNn1UwL7jgHug==}
     engines: {node: '>=14'}
     hasBin: true
     dependencies:
