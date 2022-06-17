@@ -89,7 +89,7 @@
     "markdownlint-cli": "0.31.1",
     "npm-check-updates": "14.0.1",
     "ora": "6.1.0",
-    "prettier": "2.7.0",
+    "prettier": "2.7.1",
     "rollup": "2.75.6",
     "rollup-plugin-copy": "3.4.0",
     "rollup-plugin-dts": "4.2.2",
