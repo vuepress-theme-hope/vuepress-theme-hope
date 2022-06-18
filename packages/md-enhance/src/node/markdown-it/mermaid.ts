@@ -50,6 +50,8 @@ export const mermaid: PluginSimple = (md) => {
     if (info.trim() === "pie") return mermaidHackRender("pie", content, index);
     if (info.trim() === "git-graph")
       return mermaidHackRender("gitGraph", content, index);
+    if (info.trim() === "c4c")
+      return mermaidHackRender("C4Context", content, index);
 
     return fence!(...args);
   };
