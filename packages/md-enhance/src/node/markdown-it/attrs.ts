@@ -1,3 +1,28 @@
+/**
+ * Forked and modified from https://github.com/arve0/markdown-it-attrs/
+ * The MIT License (MIT)
+ *
+ * Copyright (c) Arve Seljebu <arve.seljebu@gmail.com> (arve0.github.io)
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+
 import type { PluginWithOptions } from "markdown-it";
 import type Token from "markdown-it/lib/token";
 import type { RuleCore } from "markdown-it/lib/parser_core";
@@ -269,11 +294,20 @@ const patternsConfig = (options: Required<AttrsOptions>): Rule[] => [
     ],
     transform: (tokens, index): void => {
       const token = tokens[index];
+      let lineNumber = "";
+
+      const results = token.info.match(/{(?:[\d,-]+)}/);
+
+      if (results) {
+        token.info = token.info.replace(results[0], "");
+        lineNumber = results[0];
+      }
+
       const start = token.info.lastIndexOf(options.left);
       const attrs = getAttrs(token.info, start, options);
 
       addAttrs(attrs, token);
-      token.info = removeDelimiter(token.info, options);
+      token.info = `${lineNumber} ${removeDelimiter(token.info, options)}`;
     },
   },
 
