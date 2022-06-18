@@ -34,9 +34,7 @@ export default defineComponent({
         class: [
           "sidebar-link",
           `sidebar-${props.config.type}`,
-          {
-            active: isActiveSidebarItem(route, props.config, true),
-          },
+          { active: isActiveSidebarItem(route, props.config, true) },
         ],
         exact: true,
       }),

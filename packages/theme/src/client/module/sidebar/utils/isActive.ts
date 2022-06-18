@@ -8,6 +8,9 @@ export const isActiveSidebarItem = (
   item: ResolvedSidebarItem,
   exact = false
 ): boolean => {
+  if ("activeMatch" in item)
+    return new RegExp(item.activeMatch).test(route.path);
+
   if (isActiveLink(route, item.link)) return true;
 
   if (item.children && !exact)
