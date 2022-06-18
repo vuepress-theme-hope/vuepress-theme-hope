@@ -1,4 +1,5 @@
 import { describe, it, expect, vi } from "vitest";
+import { createMarkdown } from "@vuepress/markdown";
 import MarkdownIt from "markdown-it";
 import { attrs, getAttrs } from "../../src/node/markdown-it/attrs";
 
@@ -748,3 +749,10 @@ describeTestsWithOptions(
   },
   " with [[ ]] delimiters"
 );
+
+it("should not break code blocks line highlight", () => {
+  const markdownIt = createMarkdown().use(attrs);
+  const src = "```{1-3}\nfor i in range(10):\n```";
+
+  expect(markdownIt.render(src)).not.toContain("1-3");
+});
