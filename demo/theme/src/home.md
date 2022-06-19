@@ -22,7 +22,7 @@ features:
   - title: Slide page
     icon: slides
     details: Adding slide pages to display things you like
-    link: https://vuepress-theme-hope.github.io/v2/guide/layout/slides
+    link: https://vuepress-theme-hope.github.io/v2/guide/layout/slides.html
 
   - title: Layout enhancement
     icon: layout
