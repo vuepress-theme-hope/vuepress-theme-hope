@@ -11,42 +11,42 @@ tag:
 
 <!-- markdownlint-disable -->
 
-# First Heading
+# Heading 1
 
 <!-- markdownlint-restore -->
 
 ```md
-# First Heading
+# Heading 1
 ```
 
-## Second Heading
+## Heading 2
 
 ```md
-## Second Heading
+## Heading 2
 ```
 
-### Third Heading
+### Heading 3
 
 ```md
-### Third Heading
+### Heading 3
 ```
 
-#### Fourth Heading
+#### Heading 4
 
 ```md
-#### Fourth Heading
+#### Heading 4
 ```
 
-##### Fifth Heading
+##### Heading 5
 
 ```md
-##### Fifth Heading
+##### Heading 5
 ```
 
-###### Sixth Heading
+###### Heading 6
 
 ```md
-###### Sixth Heading
+###### Heading 6
 ```
 
 ## Text
