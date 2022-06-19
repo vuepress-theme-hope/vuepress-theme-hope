@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.84](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.83...v2.0.0-beta.84) (2022-06-19)
+
+### Features
+
+- **md-enhance:** mark enableAll as deprecated ([5498bfb](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5498bfb73ee8c7cf6d536a067f4d87dbf8b751cb))
+- **md-enhance:** support c4c in mermaid ([f540da8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f540da822dd41023a7f4825ff1f7c1a4b859e2e0))
+- **theme:** try to keep current hash across languages ([2b7c140](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2b7c140e35b0aa33ca04aa328c943c54046d5019))
+
+### Bug Fixes
+
+- **md-enhance:** compatable attrs with highlight lines ([dc1c9f3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/dc1c9f37bf17bb9c57543c45880bdc20bd3dcde9))
+- **theme:** fix sidebar activeMatch ([9748594](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9748594c3fdd254ae06dc93788e47c2d212dfc25))
+
 ## [2.0.0-beta.83](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.82...v2.0.0-beta.83) (2022-06-14)
 
 ### Features
