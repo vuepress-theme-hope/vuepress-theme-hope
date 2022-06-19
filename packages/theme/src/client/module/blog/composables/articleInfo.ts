@@ -1,4 +1,3 @@
-import { usePageLang } from "@vuepress/client";
 import { computed, reactive, Ref } from "vue";
 import {
   getAuthor,
@@ -16,12 +15,8 @@ import { useThemeLocaleData } from "@theme-hope/composables";
 import type { ComputedRef } from "vue";
 import type { AuthorInfo, DateInfo } from "vuepress-shared";
 import type { PageInfoProps } from "@theme-hope/module/info/components/PageInfo";
-import type {
-  ArticleInfo,
-  PageCategory,
-  PageInfo,
-  PageTag,
-} from "../../../../shared";
+import type { PageCategory, PageTag } from "@theme-hope/module/info/utils";
+import type { ArticleInfo, PageInfo } from "../../../../shared";
 
 export type AuthorRef = ComputedRef<AuthorInfo[]>;
 
@@ -66,15 +61,12 @@ export const useArticleTag = (info: Ref<ArticleInfo>): TagRef => {
 
 export type DateRef = ComputedRef<DateInfo | null>;
 
-export const useArticleDate = (info: Ref<ArticleInfo>): DateRef => {
-  const pageLang = usePageLang();
-
-  return computed(() => {
+export const useArticleDate = (info: Ref<ArticleInfo>): DateRef =>
+  computed(() => {
     const { date } = info.value;
 
-    return date ? getDate(date, { lang: pageLang.value, type: "date" }) : null;
+    return date ? getDate(date) : null;
   });
-};
 
 export const useArticleInfo = (
   info: Ref<ArticleInfo>
@@ -92,6 +84,7 @@ export const useArticleInfo = (
     author: author.value,
     category: category.value,
     date: date.value,
+    localizedDate: info.value.localizedDate || "",
     tag: tag.value,
     isOriginal: info.value.isOriginal || false,
     readingTime: info.value.readingTime || null,

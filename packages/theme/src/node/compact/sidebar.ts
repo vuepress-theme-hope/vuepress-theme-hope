@@ -54,7 +54,8 @@ const handleArraySidebarConfig = (
  */
 export const convertSidebarConfig = (
   config: unknown
-): HopeThemeSidebarConfig => {
+): HopeThemeSidebarConfig | false => {
+  if (config === false) return false;
   if (Array.isArray(config)) return handleArraySidebarConfig(config);
 
   if (typeof config === "object" && config)
@@ -77,5 +78,5 @@ export const convertSidebarConfig = (
 
   logger.error('"sidebar" config should be an array or object');
 
-  return [];
+  return false;
 };

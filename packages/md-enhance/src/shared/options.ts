@@ -1,5 +1,6 @@
 import type { LocaleConfig } from "@vuepress/core";
 import type { KatexOptions } from "katex";
+import type { AttrsOptions } from "./attrs";
 import type { CodeDemoOptions } from "./codeDemo";
 import type { ImageMarkOptions } from "./imageMark";
 import type { IncludeOptions } from "./include";
@@ -95,6 +96,15 @@ export interface MarkdownEnhanceOptions {
   align?: boolean;
 
   /**
+   * Whether to enable attr support
+   *
+   * 是否启用属性支持。
+   *
+   * @default false
+   */
+  attrs?: AttrsOptions | boolean;
+
+  /**
    * Whether to enable superscript format support
    *
    * 是否启用上角标格式支持。
@@ -138,6 +148,15 @@ export interface MarkdownEnhanceOptions {
    * @default false
    */
   imageMark?: ImageMarkOptions | boolean;
+
+  /**
+   * Whether to enable image size mark support
+   *
+   * 是否启用图片大小标记支持。
+   *
+   * @default false
+   */
+  imageSize?: ImageMarkOptions | boolean;
 
   /**
    * Whether to enable mark format support
@@ -250,7 +269,11 @@ export interface MarkdownEnhanceOptions {
   playground?: PlaygroundOptions | boolean;
 
   /**
+   * @deprecated This option is for demo only, please enable options you need in production.
+   *
    * Whether to enable all features.
+   *
+   * @deprecated 此选项仅用于案例，请在生产环境中启用你需要的选项
    *
    * 是否启用全部增强语法
    *

@@ -13,7 +13,7 @@ export default hopeTheme({
     url: "https://mrhope.site",
   },
 
-  iconAssets: "//at.alicdn.com/t/font_2410206_a0xb9hku9iu.css",
+  iconAssets: "iconfont",
 
   logo: "/logo.svg",
 
@@ -126,24 +126,24 @@ export default hopeTheme({
     // To avoid disturbing the theme developer and consuming his resources, please DO NOT use the following config directly in your production environment!!!!!
     comment: {
       /**
-       * Using giscus
+       * Using Giscus
        */
-      type: "giscus",
+      provider: "Giscus",
       repo: "vuepress-theme-hope/giscus-discussions",
       repoId: "R_kgDOG_Pt2A",
       category: "Announcements",
       categoryId: "DIC_kwDOG_Pt2M4COD69",
 
       /**
-       * Using twikoo
+       * Using Twikoo
        */
-      // type: "twikoo",
+      // provider: "Twikoo",
       // envId: "https://twikoo.ccknbc.vercel.app",
 
       /**
        * Using Waline
        */
-      // type: "waline",
+      // provider: "Waline",
       // serverURL: "https://vuepress-theme-hope-comment.vercel.app",
     },
 
@@ -216,11 +216,9 @@ export default hopeTheme({
       },
     },
 
-    seo: {
-      canonical:
-        hostname === "https://vuepress-theme-hope.github.io"
-          ? null
-          : "https://vuepress-theme-hope.github.io/v2-demo/",
-    },
+    seo:
+      hostname === "https://vuepress-theme-hope.github.io"
+        ? {}
+        : { canonical: "https://vuepress-theme-hope.github.io/v2/v2-demo/" },
   },
 });

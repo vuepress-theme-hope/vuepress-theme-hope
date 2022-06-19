@@ -22,7 +22,7 @@ features:
   - title: 幻灯片页面
     icon: slides
     details: 添加幻灯片页面以显示你喜欢的内容
-    link: https://vuepress-theme-hope.github.io/v2/zh/guide/layout/slides
+    link: https://vuepress-theme-hope.github.io/v2/zh/guide/layout/slides.html
 
   - title: 布局增强
     icon: layout
@@ -102,7 +102,7 @@ copyright: false
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 ---
 
-这是普通主页的案例。你可以在这里放置你的主体内容。
+这是项目主页的案例。你可以在这里放置你的主体内容。
 
 想要使用此布局，你需要在页面 front matter 中设置 `home: true`。
 

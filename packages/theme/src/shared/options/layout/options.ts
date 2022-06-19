@@ -1,4 +1,5 @@
 import type { HopeThemeFooterLocaleOptions } from "./footer";
+import type { HopeThemeDocsLocaleOptions } from "./info";
 import type {
   HopeThemeMetaLocateData,
   HopeThemeMetaLocaleOptions,
@@ -13,9 +14,7 @@ import type { PageInfo } from "../../info";
 
 export interface HopeThemeLayoutLocaleData {
   navbarLocales: HopeThemeNavbarLocaleData;
-  /**
-   * Page locate config
-   */
+
   metaLocales: HopeThemeMetaLocateData;
 
   routeLocales: HopeThemeRouteLocaleData;
@@ -24,6 +23,7 @@ export interface HopeThemeLayoutLocaleData {
 export interface HopeThemeLayoutLocaleOptions
   extends HopeThemeNavbarLocaleOptions,
     HopeThemeSidebarLocaleOptions,
+    HopeThemeDocsLocaleOptions,
     HopeThemeMetaLocaleOptions,
     HopeThemeFooterLocaleOptions {
   /**
@@ -103,8 +103,9 @@ export interface HopeThemeLayoutLocaleOptions
   prevLink?: boolean;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface HopeThemeLayoutOptions {
+export type HopeThemeLayoutLocaleConfig = HopeThemeLayoutLocaleOptions;
+
+export interface HopeThemeLayoutRootOptions {
   /**
    * Wether display back to top button
    *

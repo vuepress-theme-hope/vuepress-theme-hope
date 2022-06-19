@@ -1,8 +1,6 @@
 ---
 title: Chart
 icon: rank
-order: 10
-category:
   - Markdown
 tag:
   - 图表

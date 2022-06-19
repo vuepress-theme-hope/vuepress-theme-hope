@@ -28,7 +28,7 @@ export const photoSwipeLocales: PhotoSwipeLocaleConfig = {
     arrowNext: "下一個 (右箭頭)",
   },
 
-  "/de/": {
+  "/de-at/": {
     close: "Schließen",
     download: "Download",
     fullscreen: "Toggle fullscreen",

@@ -1,10 +1,13 @@
 import { defineClientConfig, usePageFrontmatter } from "@vuepress/client";
 import { computed, defineComponent, h } from "vue";
 import CommentProvider from "@CommentProvider";
-import { commentOptions } from "./define";
 
 import type { VNode } from "vue";
-import type { CommentPluginFrontmatter } from "../shared";
+import type { CommentOptions, CommentPluginFrontmatter } from "../shared";
+
+declare const COMMENT_OPTIONS: CommentOptions;
+
+const enableComment = COMMENT_OPTIONS;
 
 export default defineClientConfig({
   enhance: ({ app }) => {
@@ -21,8 +24,7 @@ export default defineClientConfig({
         const enabled = computed(() => {
           return (
             frontmatter.value.comment ||
-            (commentOptions.comment !== false &&
-              frontmatter.value.comment !== false)
+            (enableComment !== false && frontmatter.value.comment !== false)
           );
         });
 

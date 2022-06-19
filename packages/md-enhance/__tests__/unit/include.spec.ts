@@ -119,13 +119,34 @@ describe("include", () => {
       ]);
     });
 
-    it("should not resolve relative path if filePath is not provided", () => {
+    it("should resolve absolute path ", () => {
       const source = `\
 @include(/foo.md)
-@include(./bar.md)
+@include(${mdFixturePath})
 `;
       const expected = `\
 <p>File not found</p>
+<h2>Heading 2</h2>
+<p>Contents containing bolded text and some markdown enhance features:</p>
+<div class="tip">
+<p>Hey how are <strong>you</strong>? :smile:</p>
+</div>
+`;
+
+      const env: IncludeEnv = {
+        filePath: null,
+      };
+      const rendered = md.render(source, env);
+
+      expect(rendered).toEqual(expected);
+      expect(env.includedFiles).toEqual(["/foo.md", mdFixturePath]);
+    });
+
+    it("should not resolve relative path if filePath is not provided", () => {
+      const source = `\
+@include(./bar.md)
+`;
+      const expected = `\
 <p>Error when resolving path</p>
 `;
 
@@ -135,7 +156,7 @@ describe("include", () => {
       const rendered = md.render(source, env);
 
       expect(rendered).toEqual(expected);
-      expect(env.includedFiles).toEqual(["/foo.md"]);
+      expect(env.includedFiles).toEqual([]);
     });
 
     it("should handle import path correctly", () => {

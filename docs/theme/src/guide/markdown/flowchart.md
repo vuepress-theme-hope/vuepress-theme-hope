@@ -1,8 +1,6 @@
 ---
 title: Flowchart
 icon: tree
-order: 12
-category:
   - Markdown
 tag:
   - Flowchart

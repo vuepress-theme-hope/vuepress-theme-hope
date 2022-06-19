@@ -1,7 +1,7 @@
 ---
 title: 其他
 icon: more
-order: 19
+order: -2
 category:
   - Markdown
 tag:
@@ -37,29 +37,3 @@ tag:
 
 :::
 ```
-
-## Image Mark
-
-GFM 支持通过 ID 标记图片，使得图片只在特定的模式显示。我们同时支持 GitHub 的标记与简易标记 `#light` 和 `#dark`。
-
-你可以在主题选项中通过 `plugins.mdEnhance.imageMark` 选项控制它。
-
-```md
-![GitHub Light](/assets/icon/github-light.png#gh-dark-mode-only)
-![GitHub Dark](/assets/icon/github-dark.png#gh-light-mode-only)
-
-![GitHub Light](/assets/icon/github-light.png#dark)
-![GitHub Dark](/assets/icon/github-dark.png#light)
-```
-
-::: details 案例
-
-上述演示会渲染如下结果
-
-![GitHub Light](/assets/icon/github-light.png#gh-dark-mode-only)
-![GitHub Dark](/assets/icon/github-dark.png#gh-light-mode-only)
-
-![GitHub Light](/assets/icon/github-light.png#dark)
-![GitHub Dark](/assets/icon/github-dark.png#light)
-
-:::

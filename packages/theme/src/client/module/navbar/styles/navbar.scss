@@ -29,16 +29,6 @@
 
   backdrop-filter: saturate(150%) blur(12px);
 
-  @media (max-width: hope-config.$pad) {
-    --navbar-line-height: calc(
-      var(--navbar-mobile-height) - var(--navbar-mobile-vertical-padding) * 2
-    );
-
-    height: var(--navbar-mobile-height);
-    padding: var(--navbar-mobile-vertical-padding)
-      var(--navbar-mobile-horizontal-padding);
-  }
-
   .hide-navbar &.auto-hide {
     transform: translateY(-100%);
   }
@@ -88,8 +78,10 @@
   &.DocSearch-Button {
     margin-left: 0;
   }
+}
 
-  &.DocSearch-Container {
-    position: fixed !important;
+#docsearch-container {
+  @media (max-width: 750px) {
+    min-width: 36px !important;
   }
 }

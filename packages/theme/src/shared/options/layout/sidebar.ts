@@ -24,7 +24,7 @@ export interface HopeThemeSidebarLocaleOptions {
   sidebarIcon?: boolean;
 
   /**
-   * Sidebar heading depth
+   * Heading depth for sidebar and toc
    *
    * - Set to `0` to disable all levels
    * - Set to `1` to include `<h2>`

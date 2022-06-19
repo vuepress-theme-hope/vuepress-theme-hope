@@ -1,3 +1,4 @@
+import { usePageLang } from "@vuepress/client";
 import { defineComponent, h } from "vue";
 
 import { CalendarIcon } from "@theme-hope/module/info/components/icons";
@@ -15,10 +16,16 @@ export default defineComponent({
       default: null,
     },
 
+    localizedDate: {
+      type: String,
+      default: "",
+    },
+
     pure: Boolean,
   },
 
   setup(props) {
+    const lang = usePageLang();
     const metaLocale = useMetaLocale();
 
     return (): VNode | null =>
@@ -32,7 +39,11 @@ export default defineComponent({
             },
             [
               h(CalendarIcon),
-              h("span", props.date?.display),
+              h(
+                "span",
+                props.localizedDate ||
+                  props.date.value?.toLocaleDateString(lang.value)
+              ),
               h("meta", {
                 property: "datePublished",
                 // ISO Format Date string

@@ -59,7 +59,7 @@ export interface SeoOptions {
    *
    * 当找不到图片时的回退图片链接
    *
-   * @description 应为完整或绝对链接，你可以设置为战点图标
+   * @description 应为完整或绝对链接，你可以设置为站点图标
    */
   fallBackImage?: string;
 

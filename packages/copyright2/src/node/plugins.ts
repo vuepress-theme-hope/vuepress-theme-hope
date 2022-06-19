@@ -1,4 +1,8 @@
-import { removeEndingSlash, removeLeadingSlash } from "@vuepress/shared";
+import {
+  isLinkHttp,
+  removeEndingSlash,
+  removeLeadingSlash,
+} from "@vuepress/shared";
 import { path } from "@vuepress/utils";
 import { getLocales } from "vuepress-shared";
 
@@ -62,9 +66,11 @@ export const copyrightPlugin =
         const linkText = hostname
           ? locale.link.replace(
               ":link",
-              `${removeEndingSlash(hostname)}${base}${removeLeadingSlash(
-                page.path
-              )}`
+              `${
+                isLinkHttp(hostname)
+                  ? removeEndingSlash(hostname)
+                  : `https://${removeEndingSlash(hostname)}`
+              }${base}${removeLeadingSlash(page.path)}`
             )
           : "";
 

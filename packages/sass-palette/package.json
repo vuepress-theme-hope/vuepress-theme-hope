@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-sass-palette",
-  "version": "2.0.0-beta.75",
+  "version": "2.0.0-beta.84",
   "description": "A common palette plugin for vuepress themes and plugins",
   "keywords": [
     "vuepress",
@@ -38,15 +38,15 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@vuepress/utils": "2.0.0-beta.46",
+    "@vuepress/utils": "2.0.0-beta.48",
     "chokidar": "^3.5.3",
-    "sass": "^1.52.1",
+    "sass": "^1.52.3",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "@vuepress/bundler-vite": "2.0.0-beta.46",
-    "@vuepress/bundler-webpack": "2.0.0-beta.46",
-    "@vuepress/core": "2.0.0-beta.46",
+    "@vuepress/bundler-vite": "2.0.0-beta.48",
+    "@vuepress/bundler-webpack": "2.0.0-beta.48",
+    "@vuepress/core": "2.0.0-beta.48",
     "rimraf": "3.0.2"
   },
   "peerDependencies": {

@@ -66,7 +66,7 @@ export default defineComponent({
         : null,
       loading.value
         ? h("div", {
-            class: ["chart-loading-wrapper"],
+            class: "chart-loading-wrapper",
             innerHTML: LOADING_SVG,
           })
         : null,

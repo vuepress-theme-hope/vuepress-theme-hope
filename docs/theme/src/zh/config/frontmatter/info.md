@@ -80,7 +80,7 @@ type Author = string | string[] | AuthorInfo | AuthorInfo[];
 
 分类。
 
-## tags
+## tag
 
 - 类型: `string | string[]`
 - 必填: 否

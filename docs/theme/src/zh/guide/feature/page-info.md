@@ -24,16 +24,16 @@ tag:
 
 条目可选的值和对应内容如下:
 
-| 条目            | 对应内容     | 页面 frontmatter 值     | 主题设置的配置项        |
-| --------------- | ------------ | ----------------------- | ----------------------- |
-| `"Author"`      | 作者         | author                  | author                  |
-| `"Date"`        | 写作日期     | date                    | N/A                     |
-| `"Original"`    | 是否原创     | isOriginal              | N/A                     |
-| `"Category"`    | 分类         | category                | N/A                     |
-| `"Tag"`         | 标签         | tags                    | N/A                     |
-| `"ReadingTime"` | 预计阅读时间 | N/A(自动生成)           | N/A                     |
-| `"Word"`        | 字数         | N/A(自动生成)           | N/A                     |
-| `"PageView"`    | 访问量       | visitor(仅 Waline 可用) | plugins.comment.visitor |
+| 条目            | 对应内容     | 页面 frontmatter 值         | 主题设置的配置项           |
+| --------------- | ------------ | --------------------------- | -------------------------- |
+| `"Author"`      | 作者         | `author`                    | `author`                   |
+| `"Date"`        | 写作日期     | `date`                      | N/A                        |
+| `"Original"`    | 是否原创     | `isOriginal`                | N/A                        |
+| `"Category"`    | 分类         | `category`                  | N/A                        |
+| `"Tag"`         | 标签         | `tag`                       | N/A                        |
+| `"ReadingTime"` | 预计阅读时间 | N/A(自动生成)               | N/A                        |
+| `"Word"`        | 字数         | N/A(自动生成)               | N/A                        |
+| `"PageView"`    | 访问量       | `pageview` (仅 Waline 可用) | `plugins.comment.pageview` |
 
 默认会显示 “作者，访问量，写作日期，分类，标签，预计阅读时间”。
 

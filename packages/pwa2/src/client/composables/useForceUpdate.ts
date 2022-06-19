@@ -9,10 +9,6 @@ export const useForceUpdate = (event: PWAEvent): void => {
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         window.location.reload(true);
-      // unregister the service worker
-      // void useUnregister().then((isSuccess) => {
-      //   if (isSuccess) window.location.reload();
-      // });
     });
   });
 };

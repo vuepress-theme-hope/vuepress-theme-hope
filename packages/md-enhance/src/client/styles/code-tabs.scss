@@ -1,7 +1,7 @@
 @use "vuepress-shared/styles/reset";
 
 .code-tabs-nav {
-  display: flex;
+  overflow-x: auto;
 
   margin: 0.85rem 0 -0.85rem;
   padding: 0;
@@ -10,7 +10,9 @@
   background-color: var(--code-tabs-nav-bg-color, #3a404c);
   list-style: none;
 
-  transition: background-color var(--color-transition, 0.3s);
+  white-space: nowrap;
+
+  transition: background-color var(--color-transition, 0.3s ease);
 
   @media (max-width: hope-config.$mobile) {
     margin-right: -1.5rem;
@@ -38,8 +40,8 @@
 
   cursor: pointer;
 
-  transition: background-color var(--color-transition, 0.3s),
-    color var(--color-transition, 0.3s);
+  transition: background-color var(--color-transition, 0.3s ease),
+    color var(--color-transition, 0.3s ease);
 
   &:hover {
     background-color: var(--code-tabs-nav-hover-color, #434a57);
@@ -102,5 +104,9 @@
   div[class*="language-"] {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+
+    @media (max-width: hope-config.$mobile) {
+      margin: 0.85rem -1.5rem;
+    }
   }
 }

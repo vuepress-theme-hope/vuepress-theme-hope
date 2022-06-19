@@ -17,7 +17,7 @@ export const walineLocales: WalineLocaleConfig = {
       "Write a comment here (Fill in the email address to receive an email notification when being replied)",
   },
 
-  "/de/": {
+  "/de-at/": {
     placeholder:
       "Schreibe ein Kommentar (Geben Sie die E-Mail-Adresse ein, um eine E-Mail-Benachrichtigung zu erhalten, wenn Sie geantwortet werden)",
   },

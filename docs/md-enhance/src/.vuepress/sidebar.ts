@@ -1,4 +1,4 @@
-import { sidebar } from "vuepress-theme-hope";
+import { sidebar } from "docs-shared";
 
 export const enSidebarConfig = sidebar({
   "/": [
@@ -14,9 +14,11 @@ export const enSidebarConfig = sidebar({
         "code-tabs",
         "sup-sub",
         "align",
+        "attrs",
         "footnote",
         "mark",
         "tasklist",
+        "image",
         "include",
         "chart",
         "echarts",
@@ -54,9 +56,11 @@ export const enSidebarConfig = sidebar({
     "code-tabs",
     "sup-sub",
     "align",
+    "attrs",
     "footnote",
     "mark",
     "tasklist",
+    "image",
     "include",
     "chart",
     "echarts",
@@ -97,9 +101,11 @@ export const zhSidebarConfig = sidebar({
         "code-tabs",
         "sup-sub",
         "align",
+        "attrs",
         "footnote",
         "mark",
         "tasklist",
+        "image",
         "include",
         "chart",
         "echarts",
@@ -137,9 +143,11 @@ export const zhSidebarConfig = sidebar({
     "code-tabs",
     "sup-sub",
     "align",
+    "attrs",
     "footnote",
     "mark",
     "tasklist",
+    "image",
     "include",
     "chart",
     "echarts",

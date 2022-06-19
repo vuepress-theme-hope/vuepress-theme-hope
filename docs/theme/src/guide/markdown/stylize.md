@@ -1,7 +1,6 @@
 ---
 title: Stylize
 icon: style
-order: 17
 category:
   - Markdown
 tag:
@@ -131,7 +130,11 @@ module.exports = {
 
 :::
 
+<!-- markdownlint-disable MD033 -->
+
 Another example is you want a to set all the emphsis `n't` words to red color, so that `Setting this to a invalid stytax *doesn't* have any effect.` becomes: "Setting this to a invalid stytax <span style="color:red">doesn't</span> have any effect."
+
+<!-- markdownlint-enable MD033 -->
 
 ::: code-tabs#language
 

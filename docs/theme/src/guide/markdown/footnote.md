@@ -1,7 +1,6 @@
 ---
 title: Footnote
 icon: footnote
-order: 5
 category:
   - Markdown
 tag:

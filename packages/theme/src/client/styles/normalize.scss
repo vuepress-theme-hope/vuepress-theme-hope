@@ -75,7 +75,7 @@ tr {
   &:nth-child(2n) {
     background: var(--bg-color-light);
 
-    #{hope-config.$dark-selector} {
+    #{hope-config.$dark-selector} & {
       background: #252322;
     }
   }
@@ -84,8 +84,4 @@ tr {
 th,
 td {
   border-color: var(--grey14);
-
-  #{hope-config.$dark-selector} {
-    border-color: var(--grey14);
-  }
 }

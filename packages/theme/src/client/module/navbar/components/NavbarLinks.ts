@@ -20,7 +20,7 @@ export default defineComponent({
             ...navbarConfig.value.map((config) =>
               h(
                 "div",
-                { class: ["nav-item", "hide-in-mobile"] },
+                { class: "nav-item hide-in-mobile" },
                 "children" in config
                   ? h(DropdownLink, { config })
                   : h(AutoLink, { config })

@@ -78,7 +78,14 @@ export const getThemeConfig = (
               delete config.paginationLocales;
             }
 
-            return [locale, config];
+            return [
+              locale,
+              {
+                // default config
+                ...defaultLocaleOptions,
+                ...config,
+              } as HopeThemeLocaleConfig,
+            ];
           })
         ),
         // extract localeConfig
@@ -90,8 +97,6 @@ export const getThemeConfig = (
             ([localePath, localeConfig]) => [
               localePath,
               {
-                // defauilt config
-                ...defaultLocaleOptions,
                 // root config
                 ...Object.fromEntries(
                   Object.entries(themeOptions).filter(
@@ -105,7 +110,7 @@ export const getThemeConfig = (
             ]
           )
         ),
-      }) as HopeThemeLocaleConfig,
+      }),
   };
 
   // handle encrypt options

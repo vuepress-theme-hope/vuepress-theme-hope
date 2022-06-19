@@ -1,6 +1,6 @@
 import { existsSync, writeFileSync, readdirSync } from "fs";
 import { join, resolve } from "path";
-import { version } from "../packages/theme/package.json";
+import { version } from "../package.json";
 
 const packagesDir = resolve(process.cwd(), "packages");
 
@@ -28,7 +28,13 @@ files.forEach((pkgName) => {
         url: "git+https://github.com/vuepress-theme-hope/vuepress-theme-hope.git",
         directory: `packages/${pkgName}`,
       },
-      keywords: ["vuepress-plugin", "vuepress", pkgName, "mr-hope"],
+      keywords: [
+        "vuepress",
+        "vuepress2",
+        "vuepress-plugin",
+        pkgName,
+        "mr-hope",
+      ],
       author: {
         email: "mister-hope@outlook.com",
         name: "Mr.Hope",

@@ -34,6 +34,11 @@ features:
     details: Let you decide to align paragraphs in the way you like
     link: /guide/align.html
 
+  - title: Attrs support
+    icon: code
+    details: Allow you to add attributes for markdown content
+    link: /guide/atts.html
+
   - title: Superscript and subscript support
     icon: superscript
     details: Your Markdown now suppport superscript and subscript
@@ -53,6 +58,11 @@ features:
     icon: check
     details: Use tasklist in Markdown
     link: /guide/tasklist.html
+
+  - title: image syntax
+    icon: pic
+    details: improve syntax to specify size and color scheme
+    link: /guide/image.html
 
   - title: Chart Support
     icon: rank
@@ -167,6 +177,7 @@ For details, see [Migration Guide](./migration.md).
 This plugin exports the following markdown-it plugin, and you can use them in other projects.
 
 - align
+- attrs
 - container
 - footnote
 - imageMark

@@ -1,5 +1,5 @@
 .md-enhance-mermaid {
-  overflow-x: scroll;
+  overflow-x: auto;
   padding: 0.6em 0.4em;
   text-align: center;
   transition: all 1s;
@@ -13,7 +13,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--grey15);
+    background: var(--grey14);
 
     svg {
       width: 4em;

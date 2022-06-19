@@ -38,7 +38,7 @@
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity var(--color-transition, 0.3s);
+  transition: opacity var(--color-transition, 0.3s ease);
 }
 
 .fade-enter,

@@ -1,4 +1,4 @@
-import { navbar } from "vuepress-theme-hope";
+import { navbar } from "docs-shared";
 
 export const zhNavbarConfig = navbar([
   "/zh/guide/",

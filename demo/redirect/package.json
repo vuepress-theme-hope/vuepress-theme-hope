@@ -1,0 +1,26 @@
+{
+  "name": "redirect-demo",
+  "version": "2.0.0-beta.84",
+  "private": true,
+  "description": "Demo for vuepress-plugin-redirect",
+  "license": "MIT",
+  "author": "Mr.Hope",
+  "scripts": {
+    "demo:vite-build": "vuepress-vite build src",
+    "demo:vite-clean-dev": "vuepress-vite dev src --clean-cache",
+    "demo:vite-dev": "vuepress-vite dev src",
+    "demo:webpack-build": "vuepress-webpack build src",
+    "demo:webpack-clean-dev": "vuepress-webpack dev src --clean-cache",
+    "demo:webpack-dev": "vuepress-webpack dev src"
+  },
+  "devDependencies": {
+    "@vuepress/cli": "2.0.0-beta.48",
+    "@vuepress/client": "2.0.0-beta.48",
+    "@vuepress/theme-default": "2.0.0-beta.48",
+    "sass-loader": "13.0.0",
+    "vue": "3.2.37",
+    "vuepress-plugin-redirect": "workspace:*",
+    "vuepress-vite": "2.0.0-beta.48",
+    "vuepress-webpack": "2.0.0-beta.48"
+  }
+}

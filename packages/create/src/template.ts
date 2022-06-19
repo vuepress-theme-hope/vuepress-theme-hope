@@ -1,8 +1,16 @@
+import { execaCommandSync } from "execa";
 import { existsSync, readFileSync, writeFileSync } from "fs";
-import { prompt } from "inquirer";
-import { join, resolve } from "path";
+import inquirer from "inquirer";
+import { dirname, join, resolve } from "path";
+import { fileURLToPath } from "url";
 
-import { bin } from "./bin";
+// eslint-disable-next-line @typescript-eslint/naming-convention
+const __filename = fileURLToPath(import.meta.url);
+
+// eslint-disable-next-line @typescript-eslint/naming-convention
+const __dirname = dirname(__filename);
+
+import { bin, checkGitInstalled, checkGitRepo } from "./bin";
 import { copy, ensureDirExistSync } from "./file";
 
 import type { CreateI18n, Lang } from "./i18n";
@@ -84,12 +92,26 @@ ${dir}/.vuepress/.temp/
 ${dir}/.vuepress/dist/
 `;
 
+const updateGitIgnore = (dir: string): void => {
+  const gitignorePath = resolve(process.cwd(), ".gitignore");
+
+  const gitignoreContent = existsSync(gitignorePath)
+    ? readFileSync(gitignorePath, {
+        encoding: "utf-8",
+      })
+    : "";
+
+  writeFileSync(gitignorePath, `${gitignoreContent}${getGitIgnorePath(dir)}`, {
+    encoding: "utf-8",
+  });
+};
+
 export const generateTemplate = async (
   dir: string,
   lang: Lang,
   message: CreateI18n
 ): Promise<void> => {
-  const { i18n, workflow } = await prompt<{
+  const { i18n, workflow } = await inquirer.prompt<{
     i18n: boolean;
     workflow: boolean;
   }>([
@@ -132,16 +154,25 @@ export const generateTemplate = async (
     );
   }
 
-  // update .gitignore
-  const gitignorePath = resolve(process.cwd(), ".gitignore");
+  // git related
+  const isGitRepo = checkGitRepo();
 
-  const gitignoreContent = existsSync(gitignorePath)
-    ? readFileSync(gitignorePath, {
-        encoding: "utf-8",
-      })
-    : "";
+  if (isGitRepo) updateGitIgnore(dir);
+  else if (checkGitInstalled()) {
+    const { git } = await inquirer.prompt<{
+      git: boolean;
+    }>([
+      {
+        name: "git",
+        type: "confirm",
+        message: message.gitMessage,
+        default: true,
+      },
+    ]);
 
-  writeFileSync(gitignorePath, `${gitignoreContent}${getGitIgnorePath(dir)}`, {
-    encoding: "utf-8",
-  });
+    if (git) {
+      execaCommandSync("git init");
+      updateGitIgnore(dir);
+    }
+  }
 };

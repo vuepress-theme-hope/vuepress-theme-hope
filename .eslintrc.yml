@@ -10,6 +10,7 @@ extends:
   - plugin:prettier/recommended
 
 ignorePatterns:
+  - "!.vuepress/**"
   - "**/dist/**"
   - "**/node_modules/**"
   - ".cache/**"

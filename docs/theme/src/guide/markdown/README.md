@@ -26,7 +26,11 @@ Besides Markdown syntaxes VuePress itself adds, `vuepress-theme-hope` enables mo
 
 - [Task list](tasklist.md)
 
+- [Image Enhancement](image.md)
+
 - [Custom Alignment](align.md)
+
+- [Custom Attributes](attrs.md)
 
 - [Superscript and subscript](sup-sub.md)
 

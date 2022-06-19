@@ -1,4 +1,3 @@
-import type {} from "./navbar";
 import type { AutoLink, TextItem } from "./utils";
 
 export type HopeThemeSidebarPageItem = AutoLink;

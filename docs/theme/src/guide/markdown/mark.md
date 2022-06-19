@@ -1,7 +1,6 @@
 ---
 title: Markup
 icon: write
-order: 8
 category:
   - Markdown
 tag:

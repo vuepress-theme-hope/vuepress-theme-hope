@@ -1,4 +1,4 @@
-import { prompt } from "inquirer";
+import inquirer from "inquirer";
 
 import { bin } from "./bin";
 
@@ -23,6 +23,7 @@ export interface CreateI18n {
   descriptionMessage: string;
   licenseMessage: string;
   i18nMessage: string;
+  gitMessage: string;
   workflowMessage: string;
 }
 
@@ -48,6 +49,7 @@ export const i18n: Record<Lang, CreateI18n> = {
     descriptionMessage: "设置应用描述",
     licenseMessage: "设置协议",
     i18nMessage: "项目需要用到多语言么?",
+    gitMessage: "是否初始化 Git 仓库?",
     workflowMessage: "是否需要一个自动部署文档到 GitHub Pages 的工作流？",
   },
   // eslint-disable-next-line @typescript-eslint/naming-convention
@@ -74,6 +76,7 @@ export const i18n: Record<Lang, CreateI18n> = {
     descriptionMessage: "Your project description",
     licenseMessage: "Your project lincense",
     i18nMessage: "Does the project need multiple languages?",
+    gitMessage: "Initialize a git repository?",
     workflowMessage:
       "Do you need a GitHub workflow to deploy docs on GitHub pages?",
   },
@@ -85,7 +88,7 @@ interface LanguageResult {
 }
 
 export const getLanguage = async (): Promise<LanguageResult> => {
-  const { language } = await prompt<{ language: Lang }>([
+  const { language } = await inquirer.prompt<{ language: Lang }>([
     {
       name: "language",
       type: "list",

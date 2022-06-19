@@ -19,21 +19,179 @@ You should create and write Markdown files, so that VuePress can convert them to
 
 If you are a new comer and don’t know how to write Markdown, please read [Markdown Intro](../../cookbook/markdown/README.md) and [Markdown Demo](../../cookbook/markdown/demo.md).
 
-::: info Frontmatter
+## Markdown Config
+
+VuePress introduce configuration for each markdown page using Frontmatter.
+
+::: info
 
 Frontmatter is a important concept in VuePress. If you don’t know it, you need to read [Frontmatter Introduction](../../cookbook/vuepress/page.md#frontmatter).
 
 :::
 
-## VuePress Enhancement
+## Markdown Extension
+
+The Markdown content in VuePress will be parsed by [markdown-it](https://github.com/markdown-it/markdown-it), which supports [syntax extensions](https://github.com/markdown-it/markdown-it#syntax-extensions) via markdown-it plugins.
+
+### VuePress Enhancement
 
 To enrich document content, VuePress extends standard Markdown syntax.
 
 For these extended syntax, please see [Built-in Markdown Features](../../cookbook/vuepress/markdown.md).
 
-## Theme Enhancement
+### Theme Enhancement
 
-### Code Tabs
+By using [`vuepress-plugin-md-enhance`][md-enhance], the theme extends more Markdown syntax and provides richer writing functions.
+
+:::: tip Enable all
+
+You can set `plugins.mdEnhance.enableAll: true` in theme options to enable all features of the [md-enhance][md-enhance] plugin.
+
+::: code-tabs#language
+
+@tab TS
+
+```ts
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default {
+  theme: hopeTheme({
+    plugins: {
+      mdEnhance: {
+        enableAll: true,
+      },
+    },
+  }),
+};
+```
+
+@tab JS
+
+```js
+const { hopeTheme } = require("vuepress-theme-hope");
+
+module.exports = {
+  theme: hopeTheme({
+    plugins: {
+      mdEnhance: {
+        enableAll: true,
+      },
+    },
+  }),
+};
+```
+
+:::
+
+::::
+
+#### Custom Container
+
+::: v-pre
+
+Safely use {{ variable }} in Markdown.
+
+:::
+
+::: info Custom Title
+
+A custom information container with `code`, [link](#markdown).
+
+```js
+const a = 1;
+```
+
+:::
+
+::: tip Custom Title
+
+A custom tip container
+
+:::
+
+::: warning Custom Title
+
+A custom warning container
+
+:::
+
+::: danger Custom Title
+
+A custom danger container
+
+:::
+
+::: details Custom Title
+
+A custom details container
+
+:::
+
+:::: details Code
+
+```md
+::: v-pre
+
+Safely use {{ variable }} in Markdown.
+
+:::
+
+::: info Custom Title
+
+A custom information container
+
+:::
+
+::: tip Custom Title
+
+A custom tip container
+
+:::
+
+::: warning Custom Title
+
+A custom warning container
+
+:::
+
+::: danger Custom Title
+
+A custom danger container
+
+:::
+
+::: details Custom Title
+
+A custom details container
+
+:::
+```
+
+::::
+
+- [View Detail](../markdown/container.md)
+
+#### Tabs
+
+::: tabs#fruit
+
+@tab apple
+
+Apple
+
+@tab banana
+
+Banana
+
+@tab orange
+
+Orange
+
+:::
+
+- [View Detail](../markdown/tabs.md)
+
+#### Code Tabs
 
 ::: code-tabs
 
@@ -53,13 +211,13 @@ npm i -D vuepress-theme-hope
 
 - [View Detail](../markdown/code-tabs.md)
 
-### Superscript and Subscript
+#### Superscript and Subscript
 
 19^th^ H~2~O
 
 - [View Detail](../markdown/sup-sub.md)
 
-### Align
+#### Align
 
 ::: center
 
@@ -75,7 +233,13 @@ I am right align
 
 - [View Detail](../markdown/align.md)
 
-### Footnote
+### Attrs
+
+A **word**{#word} having id.
+
+- [View Detail](../markdown/attrs.md)
+
+#### Footnote
 
 This text has footnote[^first].
 
@@ -83,20 +247,26 @@ This text has footnote[^first].
 
 - [View Detail](../markdown/footnote.md)
 
-### Mark
+#### Mark
 
 You can mark ==important words== .
 
 - [View Detail](../markdown/mark.md)
 
-### Tasklist
+#### Tasklist
 
 - [x] Plan A
 - [ ] Plan B
 
 - [View Detail](../markdown/tasklist.md)
 
-### Chart
+#### Image Enhancement
+
+Support setting color scheme and size
+
+- [View Detail](../markdown/image.md)
+
+#### Chart
 
 ::: chart A Scatter Chart
 
@@ -132,7 +302,33 @@ You can mark ==important words== .
 
 - [View Detail](../markdown/chart.md)
 
-### Flowchart
+#### Echarts
+
+::: echarts A line chart
+
+```json
+{
+  "xAxis": {
+    "type": "category",
+    "data": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+  },
+  "yAxis": {
+    "type": "value"
+  },
+  "series": [
+    {
+      "data": [150, 230, 224, 218, 135, 147, 260],
+      "type": "line"
+    }
+  ]
+}
+```
+
+:::
+
+- [View Detail](../markdown/echarts.md)
+
+#### Flowchart
 
 ```flow
 cond=>condition: Process?
@@ -145,7 +341,7 @@ cond(no)->e
 
 - [View Detail](../markdown/flowchart.md)
 
-### Mermaid
+#### Mermaid
 
 ```mermaid
 flowchart TB
@@ -166,7 +362,7 @@ flowchart TB
 
 - [View Detail](../markdown/mermaid.md)
 
-### Tex
+#### Tex
 
 $$
 \frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right)
@@ -175,7 +371,13 @@ $$
 
 - [View Detail](../markdown/tex.md)
 
-### Code Demo
+#### Include files
+
+@include(../markdown/demo.snippet.md{5-9})
+
+- [View Detail](../markdown/include.md)
+
+#### Code Demo
 
 ::: normal-demo A normal demo
 
@@ -200,7 +402,17 @@ span {
 
 - [View Detail](../markdown/demo.md)
 
-### Presentation
+#### Stylize
+
+<!-- markdownlint-disable MD033 -->
+
+Setting this to a invalid stytax <span style="color:red">doesn't</span> have any effect.
+
+- [View Detail](../markdown/stylize.md)
+
+<!-- markdownlint-enable MD033 -->
+
+#### Presentation
 
 @slidestart
 
@@ -235,8 +447,4 @@ $$
 
 - [View Detail](../markdown/presentation.md)
 
-### Stylize
-
-Setting this to a invalid stytax <span style="color:red">doesn't</span> have any effect.
-
-- [View Detail](../markdown/stylize.md)
+[md-enhance]: https://vuepress-theme-hope.github.io/v2/md-enhance/

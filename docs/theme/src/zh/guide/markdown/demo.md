@@ -1,8 +1,6 @@
 ---
 title: 代码演示
 icon: discover
-order: 15
-category:
   - Markdown
 tag:
   - Markdown

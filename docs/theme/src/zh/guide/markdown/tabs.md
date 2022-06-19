@@ -1,7 +1,7 @@
 ---
 title: 选项卡
 icon: tab
-order: 3
+order: 2
 category:
   - Markdown
 tag:
@@ -137,7 +137,7 @@ npm 应该与 Node.js 被一同安装。
 如果你使用的是 Node.js v16+，你可以使用 corepack 来启用 pnpm:
 
 ```bash
-corepack prepare pnpm@7.1.6 --activated
+corepack prepare pnpm@7.2.1 --activated
 ```
 
 否则，你可以使用 npm 安装它:

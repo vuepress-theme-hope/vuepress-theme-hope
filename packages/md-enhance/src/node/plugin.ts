@@ -13,12 +13,14 @@ import { covertOptions, legacyCodeDemo, legacyCodeGroup } from "./compact";
 import {
   CODE_DEMO_DEFAULT_SETTING,
   align,
+  attrs,
   chart,
   codeTabs,
   echarts,
   flowchart,
   footnote,
   imageMark,
+  imageSize,
   include,
   katex,
   lazyLoad,
@@ -36,6 +38,7 @@ import {
   vPre,
   vueDemo,
 } from "./markdown-it";
+import { legacyFlowchart } from "./compact";
 import { prepareConfigFile, prepareRevealPluginFile } from "./prepare";
 import { usePlugins } from "./usePlugins";
 import { MATHML_TAGS } from "./utils";
@@ -44,7 +47,6 @@ import { PLAYGROUND_DEFAULT_SETTING } from "../shared";
 import type { PluginFunction } from "@vuepress/core";
 import type { KatexOptions } from "katex";
 import type { MarkdownEnhanceOptions } from "../shared";
-import { legacyFlowchart } from "./compact/flowchart";
 
 export const mdEnhancePlugin =
   (
@@ -58,6 +60,11 @@ export const mdEnhancePlugin =
         options as MarkdownEnhanceOptions & Record<string, unknown>
       );
     if (app.env.isDebug) logger.info(`Options: ${options.toString()}`);
+
+    if (options.enableAll)
+      logger.error(
+        'Do not use "enableAll" option in production, this option is only built for demo!\nTo avoid including large chunks of some features, enable features you are using ONLY.'
+      );
 
     const getStatus = (
       key: keyof MarkdownEnhanceOptions,
@@ -169,8 +176,10 @@ export const mdEnhancePlugin =
       },
 
       extendsMarkdown: (md): void => {
+        // syntax
         if (getStatus("gfm")) md.options.linkify = true;
-
+        if (getStatus("attrs"))
+          md.use(attrs, typeof options.attrs === "object" ? options.attrs : {});
         if (getStatus("align")) md.use(align);
         if (getStatus("lazyLoad")) md.use(lazyLoad);
         if (imageMarkEnable)
@@ -178,32 +187,42 @@ export const mdEnhancePlugin =
             imageMark,
             typeof options.imageMark === "object" ? options.imageMark : {}
           );
+        if (getStatus("imageSize")) md.use(imageSize);
+        if (getStatus("sup")) md.use(sup);
+        if (getStatus("sub")) md.use(sub);
+        if (footnoteEnable) md.use(footnote);
+        if (getStatus("mark")) md.use(mark);
+        if (tasklistEnable)
+          md.use(tasklist, [
+            typeof options.tasklist === "object" ? options.tasklist : {},
+          ]);
 
+        // addtional functions
+        if (
+          getStatus("vpre") ||
+          // TODO: Remove it in v2 stable
+          legacy
+        )
+          md.use(vPre);
+        if (texEnable) md.use(katex, katexOptions);
+        if (getStatus("include"))
+          md.use(include, [
+            typeof options.include === "function" ? options.include : undefined,
+          ]);
+        if (getStatus("stylize")) md.use(stylize, options.stylize);
+
+        // features
         if (getStatus("codetabs")) {
           md.use(codeTabs);
           // TODO: Remove it in v2 stable
           if (legacy) md.use(legacyCodeGroup);
         }
         if (getStatus("tabs")) md.use(tabs);
-
-        if (getStatus("sup")) md.use(sup);
-        if (getStatus("sub")) md.use(sub);
-        if (footnoteEnable) md.use(footnote);
         if (flowchartEnable) {
           md.use(flowchart);
           // TODO: Remove it in v2 stable
           md.use(legacyFlowchart);
         }
-        if (getStatus("mark")) md.use(mark);
-        if (tasklistEnable)
-          md.use(tasklist, [
-            typeof options.tasklist === "object" ? options.tasklist : {},
-          ]);
-        if (getStatus("include"))
-          md.use(include, [
-            typeof options.include === "function" ? options.include : undefined,
-          ]);
-
         if (chartEnable) md.use(chart);
         if (echartsEnable) md.use(echarts);
         if (getStatus("demo")) {
@@ -214,18 +233,8 @@ export const mdEnhancePlugin =
           if (legacy) md.use(legacyCodeDemo);
         }
         if (mermaidEnable) md.use(mermaid);
-        if (texEnable) md.use(katex, katexOptions);
         if (presentationEnable) md.use(presentation);
-        if (
-          getStatus("vpre") ||
-          // TODO: Remove it in v2 stable
-          legacy
-        )
-          md.use(vPre);
-        if (getStatus("stylize")) md.use(stylize, options.stylize);
-        if (playgroundEnable) {
-          md.use(playground);
-        }
+        if (playgroundEnable) md.use(playground);
       },
 
       extendsPage: (page, app): void => {

@@ -27,7 +27,7 @@ All articles will be added to the article list by default and rendered under the
 ![Article list](./assets/article-list-light.png#light)
 ![Article list](./assets/article-list-dark.png#dark)
 
-If you don’t want the list to contain some specific articles, just set the `article` to `false` in the frontmatter of the article.
+If you don’t want the list to contain some specific articles, just set the `article` to `false` in the frontmatter of the article, or you may customize it through `plugins.blog.filter` in theme options.
 
 To sticky a specific article in the article list, just set `sticky` to `true` in the frontmatter of the article.
 

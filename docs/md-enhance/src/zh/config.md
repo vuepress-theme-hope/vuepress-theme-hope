@@ -5,7 +5,7 @@ icon: config
 
 你可以设置以下插件选项来启用或禁用一些功能。
 
-## enableAll
+## enableAll <Badge text="仅限示例" type="danger" />
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -16,13 +16,11 @@ icon: config
 
 请仅将此选项用于体验或测试。
 
-随着时间的增长，`vuepress-plugin-md-enhance` 变得越来越强大。它为 Markdown 解析器添加了更多语法，并输出了更多代码。
+插件完全支持代码分割，所以你应该使用下方选项并**仅**启用你需要的功能。
 
 启用不需要的功能将增加开发和构建时间。 (`markdown-it` 必须检查额外的语法)
 
-同样，幻灯片演示功能将在输出中添加 700KB 大小的代码 (主要是 `reveal.js`)。
-
-因此，请使用下面的选项，仅启用需要的功能。
+同时，一些功能会输出体积较大的文件到输出结果。(可高达 2MB)
 
 :::
 
@@ -104,6 +102,41 @@ icon: config
 - 默认值: `false`
 
 是否启用自定义对齐格式支持。
+
+## attrs
+
+- 类型: `AttrsOptions | boolean`
+
+  ```ts
+  interface AttrsOptions {
+    /**
+     * 左分隔符
+     *
+     * @default '{'
+     */
+    left?: string;
+
+    /**
+     * 右分隔符
+     *
+     * @default '}'
+     */
+    right?: string;
+
+    /**
+     * 允许的属性
+     *
+     * @description 设置空数组意味着允许所有属性
+     *
+     * @default []
+     */
+    allowed?: (string | RegExp)[];
+  }
+  ```
+
+- 默认值: `false`
+
+是否启用自定义属性支持。
 
 ## sup
 
@@ -383,8 +416,13 @@ CodePen 编辑器显示情况，第一位代表 HTML ，第二位代表 JS，第
 
 ### presentation.plugins
 
-- 类型: `string[]`
-- 必填: No
+- 类型: `RevealPlugin[]`
+
+  ```ts
+  type RevealPlugin = "highlight" | "math" | "search" | "notes" | "zoom";
+  ```
+
+- 必填: 否
 
 你想启用的 Reveal.js 插件
 
@@ -403,7 +441,7 @@ CodePen 编辑器显示情况，第一位代表 HTML ，第二位代表 JS，第
 ### presentation.revealConfig
 
 - 类型: `Partial<RevealOptions>`
-- 必填: No
+- 必填: 否
 
 你想要传递给 Reveal.js 的配置选项
 

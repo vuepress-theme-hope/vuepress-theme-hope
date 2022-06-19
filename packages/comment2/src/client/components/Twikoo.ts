@@ -1,11 +1,16 @@
 import { usePageFrontmatter, usePageLang } from "@vuepress/client";
 import { computed, defineComponent, h, onMounted } from "vue";
-import { enableTwikoo, twikooOption } from "../define";
 
 import type { VNode } from "vue";
-import type { CommentPluginFrontmatter } from "../../shared";
+import type { CommentPluginFrontmatter, TwikooOptions } from "../../shared";
 
 import "../styles/twikoo.scss";
+
+declare const COMMENT_OPTIONS: TwikooOptions;
+
+const twikooOption = COMMENT_OPTIONS;
+
+const enableTwikoo = Boolean(twikooOption.envId);
 
 export default defineComponent({
   name: "TwikooComment",

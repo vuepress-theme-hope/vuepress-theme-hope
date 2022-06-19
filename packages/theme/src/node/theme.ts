@@ -34,7 +34,9 @@ export const hopeTheme =
       addThis,
       backToTop,
       ...themeOptions
-    } = legacy ? covertThemeConfig(options) : options;
+    } = legacy
+      ? covertThemeConfig(options as HopeThemeOptions & Record<string, unknown>)
+      : options;
 
     if (legacy) checkStyle(app);
 

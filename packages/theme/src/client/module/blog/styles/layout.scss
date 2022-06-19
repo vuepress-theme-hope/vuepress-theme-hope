@@ -13,10 +13,6 @@
 
     background: var(--bg-color-back);
 
-    @media (max-width: hope-config.$pad) {
-      padding-top: var(--navbar-mobile-height);
-    }
-
     @media (max-width: hope-config.$tablet) {
       padding-right: 1.5rem;
       padding-left: 1.5rem;

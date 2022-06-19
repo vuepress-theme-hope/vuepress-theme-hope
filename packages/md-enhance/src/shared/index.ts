@@ -1,3 +1,4 @@
+export * from "./attrs";
 export * from "./codeDemo";
 export * from "./imageMark";
 export * from "./include";

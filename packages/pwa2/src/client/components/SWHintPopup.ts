@@ -22,10 +22,6 @@ export default defineComponent({
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         window.location.reload(true);
-        // void useUnregister().then((isSuccess) => {
-        //   if (isSuccess) window.location.reload();
-        // });
-
         enabled.value = false;
       }
     };

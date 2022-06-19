@@ -13,7 +13,7 @@ export const backToTopLocales: BackToTopLocaleConfig = {
     backToTop: "返回頂部",
   },
 
-  "/de/": {
+  "/de-at/": {
     backToTop: "Zurück nach oben.",
   },
 

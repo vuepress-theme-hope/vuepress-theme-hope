@@ -47,14 +47,16 @@ export interface CopyCodeOptions {
   delay?: number;
 
   /**
-   * Locale config
-   */
-  locales?: LocaleConfig<CopyCodeLocaleData>;
-
-  /**
    * Whether use non-fancy styles
    *
    * 是否启用非华丽样式
    */
   pure?: boolean;
+
+  /**
+   * Locale config
+   *
+   * 国际化配置
+   */
+  locales?: LocaleConfig<CopyCodeLocaleData>;
 }

@@ -24,7 +24,7 @@ const parseEChartsConfig = (
 };
 
 export default defineComponent({
-  name: "MdECharts",
+  name: "ECharts",
 
   props: {
     config: { type: String, required: true },
@@ -74,7 +74,7 @@ export default defineComponent({
         : null,
       loading.value
         ? h("div", {
-            class: ["echarts-loading-wrapper"],
+            class: "echarts-loading-wrapper",
             innerHTML: LOADING_SVG,
           })
         : null,

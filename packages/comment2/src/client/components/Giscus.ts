@@ -1,13 +1,23 @@
 import { usePageFrontmatter, usePageLang, withBase } from "@vuepress/client";
 import { computed, defineComponent, h, onMounted, ref } from "vue";
 import { useRoute } from "vue-router";
-import { enableGiscus, giscusOption } from "../define";
 
 import type { VNode } from "vue";
 import type { GiscusLang, GiscusMapping, GiscusProps } from "../utils";
-import type { CommentPluginFrontmatter } from "../../shared";
+import type { CommentPluginFrontmatter, GiscusOptions } from "../../shared";
 
 import "../styles/giscus.scss";
+
+declare const COMMENT_OPTIONS: GiscusOptions;
+
+const giscusOption = COMMENT_OPTIONS;
+
+const enableGiscus = Boolean(
+  giscusOption.repo &&
+    giscusOption.repoId &&
+    giscusOption.category &&
+    giscusOption.categoryId
+);
 
 const SUPPORTED_LANGUAGES: GiscusLang[] = [
   "de",
@@ -96,7 +106,9 @@ export default defineComponent({
             display: enableComment.value ? "block" : "none",
           },
         },
-        loaded.value ? h("giscus-widget", config.value) : []
+        loaded.value
+          ? h("giscus-widget", config.value)
+          : h("div", { style: "text-align:center" }, "Loading...")
       );
   },
 });

@@ -1,17 +1,19 @@
 #!/usr/bin/env node
 import { cac } from "cac";
-import execa from "execa";
-import { prompt } from "inquirer";
+import { execaCommand, execaCommandSync } from "execa";
+import inquirer from "inquirer";
 
 import { bin } from "./bin";
 import { getLanguage } from "./i18n";
 import { createPackageJson } from "./packageJson";
 import { getRegistry } from "./registry";
 import { generateTemplate } from "./template";
+// eslint-disable-next-line
+// @ts-ignore
+import pkg from "../package.json";
 
 const cli = cac("vuepress-theme-hope");
-// eslint-disable-next-line
-const version = require("../package.json").version as string;
+const version = pkg.version;
 
 cli
   .command("[dir]", "Generate a new vuepress-theme-hope project")
@@ -44,9 +46,8 @@ cli
     console.log(message.install);
     console.warn(message.wait);
 
-    execa.sync(
-      bin,
-      ["install", ...(bin === "pnpm" ? [] : ["--registry", registry])],
+    execaCommandSync(
+      `${bin} install ${bin === "pnpm" ? "" : `--registry ${registry}`}`,
       { stdout: "inherit" }
     );
 
@@ -56,7 +57,7 @@ cli
      * Open dev server
      */
 
-    const { choice } = await prompt<{ choice: boolean }>([
+    const { choice } = await inquirer.prompt<{ choice: boolean }>([
       {
         name: "choice",
         type: "confirm",
@@ -68,7 +69,7 @@ cli
     if (choice) {
       console.log(message.devServer);
 
-      await execa(bin, ["run", "docs:dev"], {
+      await execaCommand(`${bin} run docs:dev`, {
         stdout: "inherit",
       });
     } else console.log(message.hint);

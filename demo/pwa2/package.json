@@ -1,6 +1,6 @@
 {
   "name": "pwa2-demo",
-  "version": "2.0.0-beta.75",
+  "version": "2.0.0-beta.84",
   "private": true,
   "description": "Demo for vuepress-plugin-pwa2",
   "license": "MIT",
@@ -14,13 +14,13 @@
     "demo:webpack-dev": "vuepress-webpack dev src"
   },
   "devDependencies": {
-    "@vuepress/cli": "2.0.0-beta.46",
-    "@vuepress/client": "2.0.0-beta.46",
-    "@vuepress/theme-default": "2.0.0-beta.46",
+    "@vuepress/cli": "2.0.0-beta.48",
+    "@vuepress/client": "2.0.0-beta.48",
+    "@vuepress/theme-default": "2.0.0-beta.48",
     "sass-loader": "13.0.0",
-    "vue": "3.2.36",
+    "vue": "3.2.37",
     "vuepress-plugin-pwa2": "workspace:*",
-    "vuepress-vite": "2.0.0-beta.46",
-    "vuepress-webpack": "2.0.0-beta.46"
+    "vuepress-vite": "2.0.0-beta.48",
+    "vuepress-webpack": "2.0.0-beta.48"
   }
 }

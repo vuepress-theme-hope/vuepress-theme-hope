@@ -82,10 +82,14 @@ layout: SpecialLayout
 
 ::: note
 
-主题只提供了 `Layout`，`404` 布局。同时:
+主题只提供了 `Layout`，`404` 布局。
+
+同时主题:
 
 - 在博客功能启用时提供 `Blog` 布局
 - 在幻灯片功能启用时提供 `Slide` 布局
+
+如果你想使用你自己的布局，详见 [继承主题](../../cookbook/advanced/extend.md)。
 
 :::
 

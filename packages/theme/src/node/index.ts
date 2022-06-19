@@ -38,6 +38,7 @@ export {
 
 export * from "./themeConfig";
 export * from "./helpers";
+export * from "./locales";
 export * from "./theme";
 export * from "../shared";
 

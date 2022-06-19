@@ -39,17 +39,10 @@
           text-align: left;
         }
       }
-
-      a:hover {
-        text-decoration: underline;
-      }
     }
 
-    // unknown container
-    p.demo {
-      padding: 1rem 1.5rem;
-      border: 1px solid #ddd;
-      border-radius: 4px;
+    a:hover {
+      text-decoration: underline;
     }
 
     img {
@@ -63,21 +56,6 @@
 
     img {
       max-width: 100%;
-    }
-  }
-
-  // md-enhance footnote fix
-  // footnote anchor position
-  .footnote-item {
-    @media (max-width: hope-config.$pad) {
-      margin-top: calc(0rem - var(--navbar-mobile-height));
-      padding-top: calc(var(--navbar-mobile-height) + 0.5rem);
-    }
-  }
-
-  .footnote-anchor {
-    @media (max-width: hope-config.$pad) {
-      top: calc(-0.5rem - var(--navbar-mobile-height, --navbar-height));
     }
   }
 }

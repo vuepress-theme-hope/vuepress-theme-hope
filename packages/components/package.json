@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-components",
-  "version": "2.0.0-beta.75",
+  "version": "2.0.0-beta.84",
   "description": "Components collection plugin for VuePress2",
   "keywords": [
     "vuepress",
@@ -37,20 +37,20 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@vuepress/client": "2.0.0-beta.46",
-    "@vuepress/plugin-theme-data": "2.0.0-beta.46",
-    "@vuepress/shared": "2.0.0-beta.46",
-    "@vuepress/utils": "2.0.0-beta.46",
-    "@vueuse/core": "^8.5.0",
+    "@vuepress/client": "2.0.0-beta.48",
+    "@vuepress/plugin-theme-data": "2.0.0-beta.48",
+    "@vuepress/shared": "2.0.0-beta.48",
+    "@vuepress/utils": "2.0.0-beta.48",
+    "@vueuse/core": "^8.7.4",
     "balloon-css": "^1.2.0",
-    "vue": "^3.2.36",
-    "vue-router": "^4.0.15",
+    "vue": "^3.2.37",
+    "vue-router": "^4.0.16",
     "vuepress-plugin-reading-time2": "workspace:*",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.46",
+    "@vuepress/core": "2.0.0-beta.48",
     "rimraf": "3.0.2"
   },
   "peerDependencies": {

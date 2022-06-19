@@ -48,7 +48,9 @@ export const themeConfig = (
     '"themeConfig" is deprecated, please import "hopeTheme" from vuepress-theme-hope and use "theme : hopeTheme(themeConfig)" instead.'
   );
 
-  return covertThemeConfig(themeConfig);
+  return covertThemeConfig(
+    themeConfig as HopeThemeOptions & Record<string, unknown>
+  );
 };
 
 const checkMarkdownOptions = (

@@ -6,7 +6,8 @@ export type AvailableComponent =
   | "CodePen"
   | "FontIcon"
   | "PDF"
-  | "StackBlitz";
+  | "StackBlitz"
+  | "YouTube";
 
 export interface ComponentOptions {
   /**

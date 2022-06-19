@@ -41,10 +41,11 @@ export const generateServiceWorker = async (
   logger.load("Generating service worker");
 
   const { dest } = app.dir;
+  const { title, locales } = app.siteData;
   const swDest = dest("service-worker.js");
   const destDir = path.relative(process.cwd(), dest());
 
-  const globPatterns = ["**/*.{js,css,svg}", "**/*.{woff,woff2,eot,ttf,otf}"];
+  const globPatterns = ["**/*.{js,css,svg,woff,woff2,eot,ttf,otf}"];
 
   if (options.cacheHTML) globPatterns.push("**/*.html");
   else globPatterns.push("./index.html", "./404.html");
@@ -54,7 +55,7 @@ export const generateServiceWorker = async (
   await generateSW({
     swDest,
     globDirectory: destDir,
-    cacheId: app.siteData.title || app.siteData.locales["/"]?.title || "hope",
+    cacheId: title || locales["/"]?.title || "hope",
     globPatterns,
     cleanupOutdatedCaches: true,
     clientsClaim: true,
@@ -71,7 +72,9 @@ export const generateServiceWorker = async (
     );
 
     if (warnings.length)
-      logger.warn(`${warnings.map((warning) => `  · ${warning}`).join("\n")}`);
+      logger.warn(
+        `\n${warnings.map((warning) => `  · ${warning}`).join("\n")}`
+      );
 
     if (size > 104857600)
       logger.error(

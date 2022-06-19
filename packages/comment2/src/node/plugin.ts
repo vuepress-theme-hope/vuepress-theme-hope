@@ -9,6 +9,7 @@ import {
   noopModule,
 } from "vuepress-shared";
 
+import { covertOptions } from "./compact";
 import { walineLocales } from "./locales";
 import { logger } from "./utils";
 
@@ -17,22 +18,28 @@ import type { PluginFunction } from "@vuepress/core";
 
 /** Comment Plugin */
 export const commentPlugin =
-  (options: CommentOptions): PluginFunction =>
+  (options: CommentOptions, legacy = false): PluginFunction =>
   (app) => {
+    // TODO: Remove this in V2
+    if (legacy)
+      covertOptions(options as CommentOptions & Record<string, unknown>);
     if (app.env.isDebug) logger.info(`Options: ${options.toString()}`);
 
-    const isGiscus = options.type === "giscus";
-    const isTwikoo = options.type === "twikoo";
-    const isWaline = options.type === "waline";
+    const provider =
+      options.provider &&
+      ["Giscus", "Waline", "Twikoo"].includes(options.provider)
+        ? options.provider
+        : "None";
 
-    const userWalineLocales = isWaline
-      ? getLocales({
-          app,
-          name: "waline",
-          default: walineLocales,
-          config: options.walineLocales,
-        })
-      : {};
+    const userWalineLocales =
+      options.provider === "Waline"
+        ? getLocales({
+            app,
+            name: "waline",
+            default: walineLocales,
+            config: options.walineLocales,
+          })
+        : {};
 
     // remove locales so that they won’t be injected in client twice
     if ("walineLocales" in options) delete options.walineLocales;
@@ -43,13 +50,10 @@ export const commentPlugin =
       name: "vuepress-plugin-comment2",
 
       alias: {
-        "@CommentProvider": isGiscus
-          ? path.resolve(__dirname, "../client/components/Giscus.js")
-          : isTwikoo
-          ? path.resolve(__dirname, "../client/components/Twikoo.js")
-          : isWaline
-          ? path.resolve(__dirname, "../client/components/Waline.js")
-          : noopModule,
+        "@CommentProvider":
+          provider === "None"
+            ? noopModule
+            : path.resolve(__dirname, `../client/components/${provider}.js`),
       },
 
       define: () => ({
@@ -58,21 +62,19 @@ export const commentPlugin =
       }),
 
       extendsBundlerOptions: (config: unknown, app): void => {
-        if (isGiscus) addCustomElement({ app, config }, "GiscusWidget");
-
-        if (isGiscus) {
+        if (provider === "Giscus") {
+          addCustomElement({ app, config }, "GiscusWidget");
           addViteSsrExternal({ app, config }, "giscus");
         }
 
-        if (isTwikoo) {
-          addViteOptimizeDepsInclude({ app, config }, "twikoo");
-          addViteSsrExternal({ app, config }, "twikoo");
-        }
-
-        if (isWaline) {
-          addCustomElement({ app, config }, "masonry-wall");
+        if (provider === "Waline") {
           addViteOptimizeDepsInclude({ app, config }, "autosize");
           addViteOptimizeDepsExclude({ app, config }, "@waline/client");
+        }
+
+        if (provider === "Twikoo") {
+          addViteOptimizeDepsInclude({ app, config }, "twikoo");
+          addViteSsrExternal({ app, config }, "twikoo");
         }
       },
 

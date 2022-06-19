@@ -3,10 +3,10 @@ title: 插件选项
 icon: config
 ---
 
-## type
+## provider
 
-- 类型: `"giscus" | "twikoo" | "waline" | "none"`
-- 默认: `"none"`
+- 类型: `"Giscus" | "Twikoo" | "Waline" | "None"`
+- 默认: `"None"`
 
 评论服务提供者。
 

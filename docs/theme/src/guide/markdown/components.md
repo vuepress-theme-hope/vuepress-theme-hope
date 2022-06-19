@@ -1,7 +1,6 @@
 ---
 title: Components
 icon: plugin
-order: 18
 category:
   - Markdown
 tag:
@@ -89,12 +88,10 @@ See [CodePen][codepen] page for available props.
 Component which allows you to display font icons.
 
 - Home icon: <FontIcon icon="home" />
-
 - A big and red markdown icon: <FontIcon icon="markdown" color="red" size="32" />
 
 ```md
 - Home icon: <FontIcon icon="home" />
-
 - A big and red markdown icon: <FontIcon icon="markdown" color="red" size="32" />
 ```
 
@@ -148,8 +145,33 @@ Embed StackBlitz demo in markdown files.
 
 See [StackBlitz][stackblitz] page for available props.
 
+## YouTube
+
+Embed YouTube video in markdown files.
+
+<YouTube id="0JJPfz5dg20" />
+
+```md
+<YouTube id="0JJPfz5dg20" />
+```
+
+<YouTube id="0JJPfz5dg20" disable-fullscreen />
+
+```md
+<YouTube id="0JJPfz5dg20" disable-fullscreen />
+```
+
+<YouTube list-type="playlist" list="PLJNLwTPak6dhCRzVelZIs2-DfBp01NX_1" />
+
+```md
+<YouTube list-type="playlist" list="PLJNLwTPak6dhCRzVelZIs2-DfBp01NX_1" />
+```
+
+See [YouTube][youtube] page for available props.
+
 [badge]: https://vuepress-theme-hope.github.io/v2/components/guide/badge.html
 [codepen]: https://vuepress-theme-hope.github.io/v2/components/guide/codepen.html
 [fonticon]: https://vuepress-theme-hope.github.io/v2/components/guide/fonticon.html
 [pdf]: https://vuepress-theme-hope.github.io/v2/components/guide/pdf.html
 [stackblitz]: https://vuepress-theme-hope.github.io/v2/components/guide/stackblitz.html
+[youtube]: https://vuepress-theme-hope.github.io/v2/components/guide/youtube.html

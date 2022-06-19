@@ -1,4 +1,4 @@
-import { navbar } from "vuepress-theme-hope";
+import { navbar } from "docs-shared";
 import { version } from "vuepress-plugin-md-enhance/package.json";
 
 export const enNavbarConfig = navbar([

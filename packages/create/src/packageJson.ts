@@ -1,5 +1,5 @@
 import { existsSync, writeFileSync, readFileSync } from "fs";
-import { prompt } from "inquirer";
+import inquirer from "inquirer";
 import { resolve } from "path";
 
 import { checkForNextVersion } from "./checkVersion";
@@ -70,7 +70,7 @@ export const createPackageJson = async (
       license: string;
     }
 
-    const result = await prompt<PackageJsonAnswer>([
+    const result = await inquirer.prompt<PackageJsonAnswer>([
       {
         name: "name",
         type: "input",

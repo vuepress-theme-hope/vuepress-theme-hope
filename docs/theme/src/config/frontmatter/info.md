@@ -80,7 +80,7 @@ Set the writing time of the current page.
 
 Set the category of the current page.
 
-## tags
+## tag
 
 - Type: `string | string []`
 - Required: No

@@ -1,5 +1,11 @@
 import { logger } from "@vuepress/utils";
-import { getCategory, getTag } from "vuepress-shared";
+import {
+  getCategory,
+  getDate,
+  getTag,
+  injectLocalizedDate,
+  timeTransformer,
+} from "vuepress-shared";
 
 import type { Page } from "@vuepress/core";
 import type {
@@ -68,6 +74,9 @@ export const extendsPage = (
   // save relative file path into page data to generate edit link
   page.data.filePathRelative = filePathRelative;
 
+  // inject localized date
+  injectLocalizedDate(page);
+
   // save basic info to routeMeta
   page.routeMeta = {
     ...page.routeMeta,
@@ -113,8 +122,18 @@ export const extendsPage = (
     if ("author" in frontmatter) page.routeMeta["author"] = frontmatter.author;
 
     // resolve date
-    if ("date" in frontmatter) page.routeMeta["date"] = frontmatter.date;
-    else if (createdTime) page.routeMeta["date"] = new Date(createdTime);
+    if ("date" in frontmatter) {
+      const date = getDate(page.frontmatter.date)?.value;
+
+      if (date) {
+        page.routeMeta["date"] = frontmatter.date;
+
+        page.routeMeta["localizedDate"] = timeTransformer(date, {
+          lang: page.lang,
+          type: "date",
+        });
+      }
+    } else if (createdTime) page.routeMeta["date"] = new Date(createdTime);
 
     if ("category" in frontmatter)
       // resolve category

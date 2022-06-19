@@ -1,4 +1,4 @@
-import { usePageData, usePageFrontmatter, usePageLang } from "@vuepress/client";
+import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import { computed, inject, reactive } from "vue";
 import {
   getAuthor,
@@ -13,19 +13,14 @@ import type {
   AuthorInfo,
   BasePageFrontMatter,
   DateInfo,
-  DateOptions,
 } from "vuepress-shared";
 import type { GitData } from "@vuepress/plugin-git";
 import type { ComputedRef } from "vue";
 import type { ReadingTime } from "vuepress-plugin-reading-time2";
 import type { CategoryMapRef } from "@theme-hope/module/blog/composables";
 import type { PageInfoProps } from "@theme-hope/module/info/components/PageInfo";
-import type {
-  HopeThemeNormalPageFrontmatter,
-  PageCategory,
-  PageInfo,
-  PageTag,
-} from "../../shared";
+import type { PageCategory, PageTag } from "@theme-hope/module/info/utils";
+import type { HopeThemeNormalPageFrontmatter, PageInfo } from "../../shared";
 
 declare const ENABLE_BLOG: boolean;
 declare const ENABLE_VISITOR: boolean;
@@ -77,17 +72,15 @@ export const usePageTag = (): ComputedRef<PageTag[]> => {
 export const usePageDate = (): ComputedRef<DateInfo | null> => {
   const frontmatter = usePageFrontmatter<BasePageFrontMatter>();
   const page = usePageData<{ git?: GitData }>();
-  const pageLang = usePageLang();
 
   return computed(() => {
     const { date } = frontmatter.value;
-    const options: DateOptions = { lang: pageLang.value, type: "date" };
 
-    if (date) return getDate(date, options);
+    if (date) return getDate(date);
 
     const { createdTime } = page.value.git || {};
 
-    if (createdTime) return getDate(new Date(createdTime), options);
+    if (createdTime) return getDate(new Date(createdTime));
 
     return null;
   });
@@ -98,7 +91,11 @@ export const usePageInfo = (): {
   items: ComputedRef<PageInfo[] | false | null>;
 } => {
   const themeLocale = useThemeLocaleData();
-  const page = usePageData<{ readingTime: ReadingTime }>();
+  const page = usePageData<{
+    git?: GitData;
+    localizedDate: string;
+    readingTime: ReadingTime;
+  }>();
   const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();
   const author = usePageAuthor();
   const category = usePageCategory();
@@ -109,6 +106,7 @@ export const usePageInfo = (): {
     author: author.value,
     category: category.value,
     date: date.value,
+    localizedDate: page.value.localizedDate,
     tag: tag.value,
     isOriginal: frontmatter.value.isOriginal || false,
     readingTime: page.value.readingTime,

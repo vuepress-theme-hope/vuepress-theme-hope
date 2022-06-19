@@ -1,17 +1,37 @@
-export interface PageCategory {
+export interface HopeThemeDocsLocaleOptions {
   /**
-   * Category name
+   * Pattern of edit link, we provide built-in support for GitHub, Gitlab, Gitee, Bitbucket
    *
-   * 分类名称
+   * 编辑链接的匹配，我们已经为 GitHub、Gitlab、Gitee 和 Bitbucket 提供了内置支持
+   *
+   * @example ':repo/edit/:branch/:path'
    */
-  name: string;
+  editLinkPattern?: string;
 
   /**
-   * Category path
+   * The repo of your docs
    *
-   * 分类路径
+   * 文档仓库
+   *
+   * @default themeConfig.repo
    */
-  path?: string;
+  docsRepo?: string;
+
+  /**
+   * The branch of your docs
+   *
+   * 文档所在分支
+   *
+   * @default 'main'
+   */
+  docsBranch?: string;
+
+  /**
+   * Docs dir location in repo
+   *
+   * 文档在仓库中的目录
+   *
+   * @default ''
+   */
+  docsDir?: string;
 }
-
-export type PageTag = PageCategory;

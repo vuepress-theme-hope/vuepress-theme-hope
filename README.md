@@ -18,9 +18,11 @@
 [![DeepScan grade](https://deepscan.io/api/teams/9792/projects/17544/branches/405512/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=9792&pid=17544&bid=405512)
 ![CodeQL](https://github.com/vuepress-theme-hope/vuepress-theme-hope/actions/workflows/codeql-analysis.yml/badge.svg)
 [![codecov](https://codecov.io/gh/vuepress-theme-hope/vuepress-theme-hope/branch/main/graph/badge.svg?token=TNYMbGlxQ9)](https://codecov.io/gh/vuepress-theme-hope/vuepress-theme-hope)
-![Test theme](https://github.com/vuepress-theme-hope/vuepress-theme-hope/actions/workflows/v2-test.yml/badge.svg)
+![Test theme](https://github.com/vuepress-theme-hope/vuepress-theme-hope/actions/workflows/test.yml/badge.svg)
 
 A vuepress theme with tons of features✨ / 一个具有强大功能的 vuepress 主题 ✨
+
+![Status](https://repobeats.axiom.co/api/embed/1164cd0962fe9e8ce7fd3785cb28c79adecf8a26.svg)
 
 ## [English Docs](https://vuepress-theme-hope.github.io/v2/) / [中文文档](https://vuepress-theme-hope.github.io/v2/zh/)
 
@@ -43,7 +45,7 @@ Current branch is based on VuePress@v2, and it’s still in beta.
 
 This means that features and API are not solid, and there might be BREAKING CHANGES in future releases.
 
-Though the project has stable release of V1, and are held in [V1 branch](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/v1/), but we do not recommend you to keep using V1 in new projects. See [V1 end of support Annoucement](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions/1535) for more details.
+Though the project has stable release of V1, and are held in [V1 Repo](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/), but we do not recommend you to keep using V1 in new projects. See [V1 end of support Annoucement](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions/1535) for more details.
 
 ## 注意
 
@@ -51,7 +53,7 @@ Though the project has stable release of V1, and are held in [V1 branch](https:/
 
 这意味着功能和 API 尚未固定，在未来的更新中仍有概率出现破坏性更改。
 
-虽然该项目有 V1 的稳定版本，并且存放在 [V1 分支](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/v1/) 上，但我们不推荐你在新项目中继续使用 V1。 有关详细信息，请参阅 [V1 结束支持通告](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions/1535)。
+虽然该项目有 V1 的稳定版本，并且存放在 [V1 仓库](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/) 中，但我们不推荐你在新项目中继续使用 V1。 有关详细信息，请参阅 [V1 结束支持通告](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions/1535)。
 
 ---
 

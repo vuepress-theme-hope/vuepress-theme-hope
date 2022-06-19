@@ -1,4 +1,5 @@
 export * from "./align";
+export * from "./attrs";
 export * from "./chart";
 export * from "./codeDemo";
 export * from "./codeTabs";
@@ -8,6 +9,7 @@ export * from "./echarts";
 export * from "./flowchart";
 export * from "./footnote";
 export * from "./imageMark";
+export * from "./imageSize";
 export * from "./katex";
 export * from "./lazyLoad";
 export * from "./mark";

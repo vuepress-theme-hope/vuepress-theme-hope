@@ -1,7 +1,6 @@
 ---
 title: 自定义对齐
 icon: align
-order: 7
 category:
   - Markdown
 tag:

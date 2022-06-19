@@ -34,6 +34,11 @@ features:
     details: 让你在 Markdown 中对段落进行对齐
     link: /zh/guide/align.html
 
+  - title: 自定义属性支持
+    icon: code
+    details: 让你为 Markdown 元素添加属性
+    link: /zh/guide/attrs.html
+
   - title: 上下角标支持
     icon: superscript
     details: 你的 Markdown 现在将支持上下角标
@@ -53,6 +58,11 @@ features:
     icon: check
     details: 在 Markdown 中使用任务列表
     link: /zh/guide/tasklist.html
+
+  - title: 图片语法
+    icon: pic
+    details: 使用改进的语法指定图片大小与颜色模式
+    link: /zh/guide/image.html
 
   - title: 图表支持
     icon: rank
@@ -169,6 +179,7 @@ module.exports = {
 这个插件导出了以下 markdown-it 插件，你可以在其他项目中使用它们。
 
 - align
+- attrs
 - container
 - footnote
 - imageMark

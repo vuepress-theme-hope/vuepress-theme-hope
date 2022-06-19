@@ -13,7 +13,7 @@ export default hopeTheme({
     url: "https://mrhope.site",
   },
 
-  iconAssets: "//at.alicdn.com/t/font_2410206_a0xb9hku9iu.css",
+  iconAssets: "iconfont",
 
   repo: "vuepress-theme-hope/vuepress-theme-hope",
 
@@ -53,10 +53,10 @@ export default hopeTheme({
   plugins: {
     blog: true,
 
-    components: ["Badge", "CodePen", "PDF", "StackBlitz"],
+    components: ["Badge", "CodePen", "PDF", "StackBlitz", "YouTube"],
 
     comment: {
-      type: "giscus",
+      provider: "Giscus",
       repo: "vuepress-theme-hope/giscus-discussions",
       repoId: "R_kgDOG_Pt2A",
       category: "Announcements",
@@ -172,11 +172,9 @@ export default hopeTheme({
       },
     },
 
-    seo: {
-      canonical:
-        hostname === "https://vuepress-theme-hope.github.io"
-          ? null
-          : "https://vuepress-theme-hope.github.io/v2/",
-    },
+    seo:
+      hostname === "https://vuepress-theme-hope.github.io"
+        ? {}
+        : { canonical: "https://vuepress-theme-hope.github.io/v2/" },
   },
 });

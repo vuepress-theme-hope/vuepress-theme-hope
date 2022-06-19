@@ -3,10 +3,10 @@ title: Options
 icon: config
 ---
 
-## type
+## provider
 
-- Type: `"giscus" | "twikoo" | "waline" | "none"`
-- Default: `"none"`
+- Type: `"Giscus" | "Twikoo" | "Waline" | "None"`
+- Default: `"None"`
 
 Comment service provider.
 

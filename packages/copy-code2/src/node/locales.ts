@@ -17,7 +17,7 @@ export const copyCodeLocales: CopyCodeLocaleConfig = {
     hint: "複製代碼",
   },
 
-  "/de/": {
+  "/de-at/": {
     copy: "Kopieren erfolgreich",
     hint: "Kopiere den Code.",
   },

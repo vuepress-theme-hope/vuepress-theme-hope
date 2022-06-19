@@ -19,8 +19,6 @@ export const componentsPlugin =
       name: "vuepress-plugin-components",
 
       define: {
-        BACK_TO_TOP_THRESHOLD:
-          typeof options.backToTop === "number" ? options.backToTop : 300,
         BACK_TO_TOP_LOCALES: getLocales({
           app,
           name: "backToTop",

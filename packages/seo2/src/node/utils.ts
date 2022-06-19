@@ -1,4 +1,8 @@
-import { removeEndingSlash, removeLeadingSlash } from "@vuepress/shared";
+import {
+  isLinkHttp,
+  removeEndingSlash,
+  removeLeadingSlash,
+} from "@vuepress/shared";
 import { Logger, isAbsoluteUrl, isUrl } from "vuepress-shared";
 
 import type { App, SiteLocaleConfig } from "@vuepress/core";
@@ -14,22 +18,20 @@ export const getLocales = (lang: string, locales: SiteLocaleConfig): string[] =>
     );
 
 export const getCover = (
-  page: ExtendPage,
-  options: SeoOptions,
-  app: App
+  { frontmatter }: ExtendPage,
+  { hostname }: SeoOptions,
+  { options: { base } }: App
 ): string | null => {
-  const { banner, cover } = page.frontmatter;
+  const { banner, cover } = frontmatter;
 
   if (banner) {
-    if (isAbsoluteUrl(banner))
-      return resolveUrl(options.hostname, app.options.base, banner);
+    if (isAbsoluteUrl(banner)) return resolveUrl(hostname, base, banner);
 
     if (isUrl(banner)) return banner;
   }
 
   if (cover) {
-    if (isAbsoluteUrl(cover))
-      return resolveUrl(options.hostname, app.options.base, cover);
+    if (isAbsoluteUrl(cover)) return resolveUrl(hostname, base, cover);
 
     if (isUrl(cover)) return cover;
   }
@@ -38,17 +40,16 @@ export const getCover = (
 };
 
 export const getImages = (
-  page: ExtendPage,
-  options: SeoOptions,
-  app: App
+  { content }: ExtendPage,
+  { hostname }: SeoOptions,
+  { options: { base } }: App
 ): string[] => {
-  const result = /!\[.*?\]\((.*?)\)/giu.exec(page.content);
+  const result = /!\[.*?\]\((.*?)\)/giu.exec(content);
 
   if (result) {
     return result
       .map(([, link]) => {
-        if (isAbsoluteUrl(link))
-          return resolveUrl(options.hostname, app.options.base, link);
+        if (isAbsoluteUrl(link)) return resolveUrl(hostname, base, link);
 
         if (isUrl(link)) return link;
 
@@ -65,9 +66,11 @@ export const resolveUrl = (
   base: string,
   url: string
 ): string =>
-  `${hostname.match(/https?:\/\//) ? "" : "https://"}${removeEndingSlash(
-    hostname
-  )}${base}${removeLeadingSlash(url)}`;
+  `${
+    isLinkHttp(hostname)
+      ? removeEndingSlash(hostname)
+      : `https://${removeEndingSlash(hostname)}`
+  }${base}${removeLeadingSlash(url)}`;
 
 export const stripTags = (content = ""): string =>
   content

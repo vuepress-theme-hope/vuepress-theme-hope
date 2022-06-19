@@ -4,13 +4,19 @@ import type { PluginObject } from "@vuepress/core";
 import type { CommentOptions } from "vuepress-plugin-comment2";
 
 export const getCommentPlugin = (
-  options?: Partial<CommentOptions> | false
+  options?: Partial<CommentOptions> | false,
+  legacy = false
 ): PluginObject | null => {
-  if (options === false || !options?.type) return null;
+  if (options === false || !options?.provider) return null;
 
-  return commentPlugin({
-    type: "disable",
-    ...(options?.type === "waline" ? { dark: 'html[data-theme="dark"]' } : {}),
-    ...(options || {}),
-  } as CommentOptions);
+  return commentPlugin(
+    {
+      provider: "None",
+      ...(options?.provider === "Waline"
+        ? { dark: 'html[data-theme="dark"]' }
+        : {}),
+      ...(options || {}),
+    } as CommentOptions,
+    legacy
+  );
 };

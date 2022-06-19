@@ -93,6 +93,12 @@ npm i -D vuepress-plugin-md-enhance@next
 
 - [查看详情](align.md)
 
+### 属性支持
+
+一个有 id 的 **单词**{#word}。
+
+- [查看详情](attrs.md)
+
 ### 上下角标
 
 19^th^ H~2~O
@@ -119,6 +125,12 @@ npm i -D vuepress-plugin-md-enhance@next
 - [ ] 计划 2
 
 - [查看详情](tasklist.md)
+
+### 图片增强
+
+支持设置颜色模式和大小
+
+- [查看详情](image.md)
 
 ### 图表
 
@@ -155,6 +167,32 @@ npm i -D vuepress-plugin-md-enhance@next
 :::
 
 - [查看详情](chart.md)
+
+## Echarts
+
+::: echarts 一个折线图案例
+
+```json
+{
+  "xAxis": {
+    "type": "category",
+    "data": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+  },
+  "yAxis": {
+    "type": "value"
+  },
+  "series": [
+    {
+      "data": [150, 230, 224, 218, 135, 147, 260],
+      "type": "line"
+    }
+  ]
+}
+```
+
+:::
+
+- [查看详情](echarts.md)
 
 ### 流程图
 
@@ -201,7 +239,7 @@ $$
 
 ### 导入文件
 
-@include(./demo.snippet.md{5,9})
+@include(./demo.snippet.md{5-9})
 
 - [查看详情](include.md)
 
@@ -229,6 +267,16 @@ span {
 :::
 
 - [查看详情](demo/README.md)
+
+### 样式化
+
+<!-- markdownlint-disable MD033 -->
+
+设置它<span style="color:red">没有</span>任何效果，请<span style="color:red">不要</span>这样使用
+
+- [查看详情](stylize.md)
+
+<!-- markdownlint-enable MD033 -->
 
 ### 幻灯片
 
@@ -275,4 +323,4 @@ $$
 
 你可以直接在 Markdown 中插入 Vue playground。
 
-- [View Detail](playground.md)
+- [查看详情](playground.md)

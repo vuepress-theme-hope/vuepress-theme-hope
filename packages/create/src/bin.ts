@@ -1,23 +1,47 @@
-import { sync } from "execa";
+import { execaCommandSync } from "execa";
 
-const isPnpmInstalled = (): boolean => {
+const checkPnpmInstalled = (): boolean => {
   try {
-    return sync("pnpm --version", { stdio: "ignore" }).exitCode === 0;
+    return (
+      execaCommandSync("pnpm --version", { stdio: "ignore" }).exitCode === 0
+    );
   } catch (e) {
     return false;
   }
 };
 
-const isYarnInstalled = (): boolean => {
+const checkYarnInstalled = (): boolean => {
   try {
-    return sync("yarn --version", { stdio: "ignore" }).exitCode === 0;
+    return (
+      execaCommandSync("yarn --version", { stdio: "ignore" }).exitCode === 0
+    );
   } catch (e) {
     return false;
   }
 };
 
-export const bin = isPnpmInstalled()
+export const checkGitRepo = (): boolean => {
+  try {
+    execaCommandSync("git log");
+
+    return true;
+  } catch {
+    return false;
+  }
+};
+
+export const checkGitInstalled = (): boolean => {
+  try {
+    execaCommandSync("git log");
+
+    return true;
+  } catch {
+    return false;
+  }
+};
+
+export const bin = checkPnpmInstalled()
   ? "pnpm"
-  : isYarnInstalled()
+  : checkYarnInstalled()
   ? "yarn"
   : "npm";

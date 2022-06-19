@@ -24,6 +24,7 @@ export default defineUserConfig({
     sidebar: {
       "/demo/": [
         "/demo/align",
+        "/demo/attrs",
         "/demo/chart",
         "/demo/echarts",
         "/demo/code-demo",

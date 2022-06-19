@@ -1,5 +1,5 @@
-import { sync } from "execa";
-import { prompt } from "inquirer";
+import { execaCommandSync } from "execa";
+import inquirer from "inquirer";
 
 import { bin } from "./bin";
 
@@ -12,13 +12,13 @@ export interface RegistryAnswer {
 const npmmirrorRegistry = "https://registry.npmmirror.com/";
 
 const getUserRegistry = (): string =>
-  sync(bin, ["config", "get", "registry"]).stdout;
+  execaCommandSync(`${bin} config get registry`).stdout;
 
 export const getRegistry = async (lang: Lang): Promise<string> => {
   const userRegistry = getUserRegistry();
 
   if (lang === "简体中文") {
-    const { registry } = await prompt<RegistryAnswer>([
+    const { registry } = await inquirer.prompt<RegistryAnswer>([
       {
         name: "registry",
         type: "list",

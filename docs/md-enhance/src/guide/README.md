@@ -101,6 +101,12 @@ I am right align
 
 - [View Detail](align.md)
 
+### Attrs
+
+A **word**{#word} having id.
+
+- [View Detail](attrs.md)
+
 ### Footnote
 
 This text has footnote[^first].
@@ -121,6 +127,12 @@ You can mark ==important words== .
 - [ ] Plan B
 
 - [View Detail](tasklist.md)
+
+### Image Enhancement
+
+Support setting color scheme and size
+
+- [View Detail](image.md)
 
 ### Chart
 
@@ -157,6 +169,32 @@ You can mark ==important words== .
 :::
 
 - [View Detail](chart.md)
+
+## Echarts
+
+::: echarts A line chart
+
+```json
+{
+  "xAxis": {
+    "type": "category",
+    "data": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+  },
+  "yAxis": {
+    "type": "value"
+  },
+  "series": [
+    {
+      "data": [150, 230, 224, 218, 135, 147, 260],
+      "type": "line"
+    }
+  ]
+}
+```
+
+:::
+
+- [View Detail](echarts.md)
 
 ### Flowchart
 
@@ -203,7 +241,7 @@ $$
 
 ### Include files
 
-@include(./demo.snippet.md{5,9})
+@include(./demo.snippet.md{5-9})
 
 - [View Detail](include.md)
 
@@ -231,6 +269,16 @@ span {
 :::
 
 - [View Detail](demo/README.md)
+
+#### Stylize
+
+<!-- markdownlint-disable MD033 -->
+
+Setting this to a invalid stytax <span style="color:red">doesn't</span> have any effect.
+
+- [View Detail](stylize.md)
+
+<!-- markdownlint-enable MD033 -->
 
 ### Presentation
 

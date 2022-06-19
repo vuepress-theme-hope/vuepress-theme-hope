@@ -18,14 +18,16 @@
   border-radius: 8px;
 
   @media (max-width: hope-config.$mobile) {
-    margin-right: -1.5rem;
-    margin-left: -1.5rem;
-    border-radius: 0;
+    #{hope-config.$content-class} > & {
+      margin-right: -1.5rem;
+      margin-left: -1.5rem;
+      border-radius: 0;
+    }
   }
 }
 
 .tab-list-nav {
-  display: flex;
+  overflow-x: auto;
 
   margin: 0;
   padding: 0;
@@ -34,7 +36,9 @@
   background-color: var(--tab-nav-bg-color);
   list-style: none;
 
-  transition: background-color var(--color-transition, 0.3s);
+  white-space: nowrap;
+
+  transition: background-color var(--color-transition, 0.3s ease);
 
   @media (max-width: hope-config.$mobile) {
     border-radius: 0;
@@ -60,8 +64,8 @@
 
   cursor: pointer;
 
-  transition: background-color var(--color-transition, 0.3s),
-    color var(--color-transition, 0.3s);
+  transition: background-color var(--color-transition, 0.3s ease),
+    color var(--color-transition, 0.3s ease);
 
   &:hover {
     background-color: var(--tab-nav-hover-color);

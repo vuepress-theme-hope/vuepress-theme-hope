@@ -84,7 +84,7 @@ export default defineComponent({
     const svgCode = ref("");
     const mermaidElement = ref<HTMLElement>();
     const isDarkmode = ref(false);
-    let observer: MutationObserver;
+    let observer: MutationObserver | null = null;
 
     onMounted(() => {
       const html = document.querySelector("html") as HTMLElement;
@@ -161,7 +161,7 @@ export default defineComponent({
     });
 
     onBeforeUnmount(() => {
-      observer.disconnect();
+      observer?.disconnect();
     });
 
     return (): VNode =>

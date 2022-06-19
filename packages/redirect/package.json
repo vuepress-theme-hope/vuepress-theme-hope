@@ -1,0 +1,55 @@
+{
+  "name": "vuepress-plugin-redirect",
+  "version": "2.0.0-beta.84",
+  "description": "Redirect plugin for vuepress",
+  "keywords": [
+    "vuepress",
+    "vuepress2",
+    "vuepress-plugin",
+    "redirect"
+  ],
+  "homepage": "https://vuepress-theme-hope.github.io/v2/redirect/",
+  "bugs": {
+    "url": "https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuepress-theme-hope/vuepress-theme-hope.git",
+    "directory": "packages/redirect"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Mr.Hope",
+    "email": "mister-hope@outlook.com",
+    "url": "https://mrhope.site"
+  },
+  "main": "lib/node/index.js",
+  "types": "lib/node/index.d.ts",
+  "bin": {
+    "vp-redirect": "./lib/cli/index.js"
+  },
+  "files": [
+    "lib",
+    "src"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "clean": "rimraf ./lib ./*.tsbuildinfo",
+    "dev": "pnpm dev:ts",
+    "dev:ts": "tsc -b tsconfig.build.json --watch"
+  },
+  "dependencies": {
+    "@vuepress/cli": "2.0.0-beta.48",
+    "@vuepress/core": "2.0.0-beta.48",
+    "@vuepress/shared": "2.0.0-beta.48",
+    "@vuepress/utils": "2.0.0-beta.48",
+    "cac": "^6.7.12",
+    "vuepress-shared": "workspace:*"
+  },
+  "devDependencies": {
+    "rimraf": "3.0.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

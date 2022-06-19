@@ -25,7 +25,7 @@ export const checkLinks = (page: Page, app: App): void => {
   const { pages } = app;
 
   const markdownLinks = page.links.filter(({ raw }) =>
-    raw.match(/\.md(?:#.*?)$/)
+    raw.match(/.md((?:\?|#).*)?$/)
   );
 
   const brokenLinks = [

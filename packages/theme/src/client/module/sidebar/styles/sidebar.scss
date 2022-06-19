@@ -25,7 +25,6 @@
   scrollbar-width: thin;
 
   @media (max-width: hope-config.$pad) {
-    width: var(--sidebar-mobile-width);
     font-size: 15px;
   }
 

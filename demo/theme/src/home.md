@@ -22,7 +22,7 @@ features:
   - title: Slide page
     icon: slides
     details: Adding slide pages to display things you like
-    link: https://vuepress-theme-hope.github.io/v2/guide/layout/slides
+    link: https://vuepress-theme-hope.github.io/v2/guide/layout/slides.html
 
   - title: Layout enhancement
     icon: layout
@@ -103,7 +103,7 @@ copyright: false
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 ---
 
-This is an example of a normal homepage. You can place your main content here.
+This is an example of a project homepage. You can place your main content here.
 
 To use this layout, you need to set `home: true` in the page front matter.
 

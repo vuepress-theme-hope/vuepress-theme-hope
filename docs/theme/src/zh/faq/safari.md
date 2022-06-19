@@ -7,7 +7,7 @@ category:
 
 ## 平滑滚动不生效
 
-我们使用 CSS 属性 `scroll-behavior: smooth` 来提供平滑滚动。它在全球有 77.16% 的支持率[^scroll-behavior-percent]
+我们使用 CSS 属性 `scroll-behavior: smooth` 来提供平滑滚动。它在全球有 87.66% 的支持率[^scroll-behavior-percent]
 
 [^scroll-behavior-percent]: 数据来自 [canIUse](https://caniuse.com/?search=scroll-behavior)。
 
