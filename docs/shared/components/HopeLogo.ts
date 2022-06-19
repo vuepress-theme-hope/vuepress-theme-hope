@@ -1,6 +1,7 @@
 import { usePageFrontmatter, withBase } from "@vuepress/client";
 import { defineComponent, h, onMounted, ref } from "vue";
 
+import type { Mesh } from "three";
 import type { VNode } from "vue";
 import type { HopeThemeProjectHomePageFrontmatter } from "vuepress-theme-hope";
 
@@ -34,7 +35,7 @@ export default defineComponent({
         };
         // Canvas
         const canvas =
-          document.querySelector<HTMLCanvasElement>("canvas#hero-logo");
+          document.querySelector<HTMLCanvasElement>("canvas#hero-logo")!;
         // Scene
         const scene = new THREE.Scene();
         const stlLoader = new STLLoader();
@@ -43,10 +44,10 @@ export default defineComponent({
           withBase("/assets/model/roughness.jpeg")
         );
         // Models
-        let logo1;
-        let logo2;
+        let logo1: Mesh;
+        let logo2: Mesh;
 
-        Promise.all([
+        void Promise.all([
           new Promise<void>((resolve) =>
             stlLoader.load(withBase("/assets/model/logo1.stl"), (geometry) => {
               const material = new THREE.MeshPhysicalMaterial({
@@ -58,6 +59,7 @@ export default defineComponent({
                 emissiveIntensity: 0.4,
                 reflectivity: 1,
               });
+
               logo1 = new THREE.Mesh(geometry, material);
               logo1.castShadow = true;
               logo1.receiveShadow = true;
@@ -80,6 +82,7 @@ export default defineComponent({
                 emissiveIntensity: 0.4,
                 reflectivity: 1,
               });
+
               logo2 = new THREE.Mesh(geometry, material);
               logo2.castShadow = true;
               logo2.receiveShadow = true;
@@ -97,12 +100,14 @@ export default defineComponent({
 
         // Lights
         const ambientLight = new THREE.AmbientLight(0xffffff, 2);
-        scene.add(ambientLight);
         const directionalLight = new THREE.DirectionalLight(0xffffff, 3);
-        directionalLight.position.set(3, 3, 3);
-        scene.add(directionalLight);
         const directionalLight2 = new THREE.DirectionalLight(0xffffff, 3);
+
+        directionalLight.position.set(3, 3, 3);
         directionalLight2.position.set(-3, -3, -3);
+
+        scene.add(ambientLight);
+        scene.add(directionalLight);
         scene.add(directionalLight2);
 
         // Base camera
@@ -112,6 +117,7 @@ export default defineComponent({
           1,
           2000
         );
+
         camera.position.set(0, 0, 20);
         scene.add(camera);
 
@@ -142,7 +148,7 @@ export default defineComponent({
         // Animations
         const clock = new THREE.Clock();
 
-        const tick = () => {
+        const tick = (): void => {
           const elapsedTime = clock.getElapsedTime();
 
           if (logo1 && logo2) {
@@ -157,14 +163,15 @@ export default defineComponent({
           // Call tick again on the next frame
           window.requestAnimationFrame(tick);
         };
+
         tick();
       })
     );
 
-    return (): VNode[] => [
+    return (): (VNode | null)[] => [
       !ready.value
         ? h("img", {
-            src: withBase(frontmatter.value.heroImage),
+            src: withBase(frontmatter.value.heroImage!),
             alt: "vuepress-theme-hope",
           })
         : null,

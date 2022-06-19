@@ -1,4 +1,4 @@
-import { sidebar } from "vuepress-theme-hope";
+import { sidebar } from "docs-shared";
 
 export const enSidebarConfig = sidebar({
   "/": [

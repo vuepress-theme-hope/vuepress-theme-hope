@@ -18,17 +18,11 @@
     "docs:webpack-dev": "vuepress-webpack dev src"
   },
   "dependencies": {
-    "@types/three": "0.141.0",
-    "@vuepress/cli": "2.0.0-beta.48",
     "@vuepress/client": "2.0.0-beta.48",
-    "@vuepress/plugin-docsearch": "2.0.0-beta.48",
-    "@vuepress/utils": "2.0.0-beta.48",
+    "docs-shared": "workspace:*",
     "sass-loader": "13.0.0",
-    "three": "0.141.0",
     "vue": "3.2.37",
     "vuepress-plugin-reading-time2": "workspace:*",
-    "vuepress-shared": "workspace:*",
-    "vuepress-theme-hope": "workspace:*",
     "vuepress-vite": "2.0.0-beta.48",
     "vuepress-webpack": "2.0.0-beta.48"
   }

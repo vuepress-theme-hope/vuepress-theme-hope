@@ -1,0 +1,26 @@
+{
+  "name": "docs-shared",
+  "version": "2.0.0-beta.83",
+  "private": true,
+  "description": "Shared files for docs",
+  "license": "MIT",
+  "author": {
+    "name": "Mr.Hope",
+    "email": "mister-hope@outlook.com",
+    "url": "https://mrhope.site"
+  },
+  "type": "module",
+  "main": "index.ts",
+  "dependencies": {
+    "@types/three": "0.141.0",
+    "@vuepress/cli": "2.0.0-beta.48",
+    "@vuepress/client": "2.0.0-beta.48",
+    "@vuepress/core": "2.0.0-beta.48",
+    "@vuepress/plugin-docsearch": "2.0.0-beta.48",
+    "@vuepress/utils": "2.0.0-beta.48",
+    "three": "0.141.0",
+    "vue": "3.2.37",
+    "vuepress-shared": "workspace:*",
+    "vuepress-theme-hope": "workspace:*"
+  }
+}
