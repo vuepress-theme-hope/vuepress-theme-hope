@@ -1,6 +1,6 @@
-import type { AvailableComponent } from "vuepress-plugin-components";
 import type { GitPluginOptions } from "@vuepress/plugin-git";
 import type { CommentOptions } from "vuepress-plugin-comment2";
+import type { AvailableComponent } from "vuepress-plugin-components";
 import type { CopyCodeOptions } from "vuepress-plugin-copy-code2";
 import type { CopyrightOptions } from "vuepress-plugin-copyright2";
 import type { FeedOptions } from "vuepress-plugin-feed2";
