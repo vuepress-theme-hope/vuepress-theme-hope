@@ -106,16 +106,22 @@ export const getLocales = <T>({
     ...getLocalePaths(app)
       .filter((localePath) => localePath !== "/")
       .map<[string, T]>((localePath) => {
-        if (!defaultLocalesConfig[localePath])
+        const defaultLocaleData =
+          defaultLocalesConfig[localePath] ||
+          (lang2Path(app.options.locales[localePath].lang) === "/"
+            ? null
+            : defaultLocalesConfig[
+                lang2Path(app.options.locales[localePath].lang)
+              ]);
+
+        if (!defaultLocaleData)
           logger.warn(`Locale ${localePath} is missing it's i18n config`);
 
         return [
           localePath,
           deepAssign(
             {},
-            defaultLocalesConfig[localePath] ||
-              defaultLocalesConfig[rootPath] ||
-              {},
+            defaultLocaleData || defaultLocalesConfig[rootPath] || {},
             userLocalesConfig[localePath] || {}
           ),
         ];
