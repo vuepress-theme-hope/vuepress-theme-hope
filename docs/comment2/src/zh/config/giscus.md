@@ -34,7 +34,7 @@ icon: github
 ## mapping
 
 - 类型: `string`
-- 默认值: `"pathname"`
+- 默认值: `"specific"`
 
 页面 ↔️ discussion 映射关系，详见 [Giscus 页面](https://giscus.app/zh-CN)。
 
