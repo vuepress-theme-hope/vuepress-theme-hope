@@ -87,7 +87,7 @@
     "inquirer": "9.0.0",
     "lint-staged": "13.0.2",
     "markdownlint-cli": "0.31.1",
-    "npm-check-updates": "14.0.1",
+    "npm-check-updates": "14.0.2",
     "ora": "6.1.0",
     "prettier": "2.7.1",
     "rollup": "2.75.7",
