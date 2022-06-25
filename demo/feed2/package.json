@@ -17,7 +17,7 @@
     "@vuepress/cli": "2.0.0-beta.48",
     "@vuepress/client": "2.0.0-beta.48",
     "@vuepress/theme-default": "2.0.0-beta.48",
-    "sass-loader": "13.0.0",
+    "sass-loader": "13.0.1",
     "vue": "3.2.37",
     "vuepress-plugin-feed2": "workspace:*",
     "vuepress-vite": "2.0.0-beta.48",

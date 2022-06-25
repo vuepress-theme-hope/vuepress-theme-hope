@@ -24,7 +24,7 @@
     "axios": "0.27.2",
     "docs-shared": "workspace:*",
     "katex": "0.16.0",
-    "sass-loader": "13.0.0",
+    "sass-loader": "13.0.1",
     "vue": "3.2.37",
     "vuepress-shared": "workspace:*",
     "vuepress-theme-hope": "workspace:*",
