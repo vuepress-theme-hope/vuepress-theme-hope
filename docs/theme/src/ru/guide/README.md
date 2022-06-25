@@ -1,5 +1,5 @@
 ---
-title: Guide
+title: Руководство
 icon: creative
 index: false
 category:
@@ -10,157 +10,157 @@ tag:
 
 ::: tip
 
-If you met a bug while using, you can open an issue [here](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues)
+Если вы столкнулись с ошибкой во время использования, вы можете открыть проблему [здесь](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues)
 
 :::
 
-## Theme Features✨
+## Возможности темы✨
 
-The theme largely inherits the config of `@vuepress/theme-default`, while adds a lot of functions and layout optimization on it.
+Тема во многом наследует конфиг `@vuepress/theme-default`, при этом добавляет в него множество функций и оптимизацию макета.
 
 <!-- more -->
 
-### Markdown Enhance
+### Улучшение разметки
 
-Added more syntax to Markdown, enriching documentation and blog writing:
+Добавлено больше синтаксиса в Markdown, что обогащает документацию и написание блогов:
 
-- [Custom Container](markdown/container.md)
-- [Tabs](markdown/tabs.md)
-- [Code Tabs](markdown/code-tabs.md)
-- [Footnote](markdown/footnote.md)
-- [Task list](markdown/tasklist.md)
-- [Image Enahancement](markdown/image.md)
-- [Custom alignment](markdown/align.md)
-- [Custom Attributes](markdown/attrs.md)
-- [Subscript and Supercript](markdown/sup-sub.md)
-- [Mark](markdown/mark.md)
-- [Chart](markdown/chart.md)
+- [Пользовательский контейнер](markdown/container.md)
+- [Вкладки](markdown/tabs.md)
+- [Вкладки кода](markdown/code-tabs.md)
+- [Сноска](markdown/footnote.md)
+- [Список задач](markdown/tasklist.md)
+- [Улучшение изображения](markdown/image.md)
+- [Пользовательское выравнивание](markdown/align.md)
+- [Пользовательские атрибуты](markdown/attrs.md)
+- [Подстрочный и Надстрочный индекс](markdown/sup-sub.md)
+- [Выделение](markdown/mark.md)
+- [Диаграмма](markdown/chart.md)
 - [ECharts](markdown/echarts.md)
 - [FlowChart](markdown/flowchart.md)
-- [Tex Support](markdown/tex.md)
-- [Mermaid Diagram](markdown/mermaid.md)
-- [File include](markdown/include.md)
-- [Code demo](markdown/demo.md)
-- [Presentation](markdown/presentation.md)
-- [Stylize](markdown/stylize.md)
-- [Components out of box](markdown/components.md)
-- [Customize Themes](interface/code-theme.md)
+- [Поддержка Tex](markdown/tex.md)
+- [Диаграмма Mermaid](markdown/mermaid.md)
+- [Включить файл](markdown/include.md)
+- [Демонстрация кода](markdown/demo.md)
+- [Презентация](markdown/presentation.md)
+- [Стилизация](markdown/stylize.md)
+- [Компоненты из коробки](markdown/components.md)
+- [Кастомизация темы](interface/code-theme.md)
 
-### Layout
+### Макет
 
-New in Page:
+Новое в странице:
 
-- [Path navigation](layout/breadcrumb.md)
+- [Путь навигации](layout/breadcrumb.md)
 
-- Add [TOC anchor](layout/page.md#heading-list) on the right side under the desktop width
+- Добавлен [якорь TOC](layout/page.md#heading-list) справа ниже ширины рабочего стола
 
-- [Custom footer](layout/footer.md)
+- [Пользовательский футер](layout/footer.md)
 
-Layout Optimization:
+Оптимизация макета:
 
-- Completely refactored mobile layout
-- Page navigation and page meta style improvements
-- [Default homepage optimization](layout/home.md):
+- Полностью переработана мобильная верстка
+- Улучшения навигации по страницам и метастиля страниц
+- [Оптимизация домашней страницы по умолчанию](layout/home.md):
 
-  - Features can have icons, links, and have a new outlook
-  - Widescreen layout optimization
+  - Функции могут иметь значки, ссылки и новый внешний вид
+  - Оптимизация широкоэкранного макета
 
-### Interface
+### Интерфейс
 
-- [Icon support](interface/icon.md)
+- [Поддержка иконок](interface/icon.md)
 
-- [Navbar](layout/navbar.md)
+- [Панель навигации](layout/navbar.md)
 
-- [Sidebar](layout/sidebar.md)
+- [Боковая панель](layout/sidebar.md)
 
-- [Theme colors](interface/theme-color.md): allowing you to switch dynamically during browsing
+- [Цвета темы](interface/tof main filesheme-color.md): позволяет динамически переключаться во время просмотра
 
-- [Dark mode](interface/darkmode.md): allowing you to switch manually or apply automatically according to device settings
+- [Темный режим](interface/darkmode.md): позволяет переключаться вручную или применять автоматически в соответствии с настройками устройства
 
-- [Full Screen Button](interface/others.md#fullscreen-button)
+- [Кнопка полного экрана](interface/others.md#fullscreen-button)
 
-- [Back to top button](interface/others.md#back-to-top-button)
+- [Кнопка «Вернуться к началу»](interface/others.md#back-to-top-button)
 
-### Page Enhance
+### Улучшение страницы
 
-- [One-click copy code](feature/copy-code.md)
+- [Копирование кода в один клик](feature/copy-code.md)
 
-- [Picture preview feature](feature/photo-swipe.md): supports zooming, dragging, sliding browsing, sharing and downloading
+- [Функция предварительного просмотра изображения](feature/photo-swipe.md): поддерживает масштабирование, перетаскивание, скользящий просмотр, совместное использование и загрузку
 
-- [Comment Service](feature/comment.md)
+- [Сервис комментариев](feature/comment.md)
 
-- [Page info](feature/page-info.md)
+- [Информация о странице](feature/page-info.md)
 
-  - Reading Counts
-  - Author and writing date
-  - Automatically generated word count and estimated reading time
-  - Tags and Categorys
+  - Количество чтений
+  - Автор и дата написания
+  - Автоматически сгенерированное количество слов и предполагаемое время чтения
+  - Теги и категории
 
-- [Copyright](feature/copyright.md)
+- [Авторское право](feature/copyright.md)
 
-- [Encryption](feature/encrypt.md)
+- [Шифрование](feature/encrypt.md)
 
-- [Search Support](feature/search.md)
+- [Поддержка поиска](feature/search.md)
 
-### Blog
+### Блог
 
-- [Article list with sticky support, and summary autogeneration](blog/intro.md)
+- [Список статей с прикрепленной поддержкой и автогенерацией резюме](blog/intro.md)
 
-- [Cateory and tag list](blog/category-and-tags.md)
+- [Список категорий и тегов](blog/category-and-tags.md)
 
-- [Timeline](blog/timeline.md)
+- [Временная шкала](blog/timeline.md)
 
-- [Star article](blog/article.md)
+- [Избранная статья](blog/article.md)
 
-- [New blog homepage layout](blog/home.md)
+- [Новый макет главной страницы](blog/home.md)
 
-### Advanced Features
+### Расширенные возможности
 
-- [PWA support](advanced/pwa.md)
+- [Поддержка PWA](advanced/pwa.md)
 
-- [Feed generation](advanced/feed.md)
+- [Генерация фида](advanced/feed.md)
 
-- [SEO enhancement](advanced/seo.md)
+- [SEO-улучшение](advanced/seo.md)
 
-- [Sitemap generation](advanced/sitemap.md)
+- [Генерация карты сайта](advanced/sitemap.md)
 
-## Build-in Plugins🧩
+## Встроенные плагины🧩
 
-The theme includes the following plugins, you can use them in other themes or directly.
+Тема включает в себя следующие плагины, вы можете использовать их в других темах или напрямую.
 
-- [vuepress-plugin-blog2][blog2]: Blog plugin for VuePress2
+- [vuepress-plugin-blog2][blog2]: Плагин блога для VuePress2
 
-- [vuepress-plugin-comment2][comment2]: Comment and pageviews
+- [vuepress-plugin-comment2][comment2]: Комментарии и просмотры страниц
 
-- [vuepress-plugin-components][components]: Provide some out of box plugins
+- [vuepress-plugin-components][components]: Предоставляет некоторые готовые плагины
 
-- [vuepress-plugin-copy-code2][copy-code2]: Provide copy button for code blocks
+- [vuepress-plugin-copy-code2][copy-code2]: Предоставляет кнопку копирования для блоков кода
 
-- [vuepress-plugin-copyright2][copyright2]: Append copyright information when copying or diable copy and selection.
+- [vuepress-plugin-copyright2][copyright2]: Добавляет информацию об авторских правах при копировании или отключении копирования и выбора
 
-- [vuepress-plugin-feed2][feed2]: Feed support
+- [vuepress-plugin-feed2][feed2]: Поддержка фидов
 
-- [vuepress-plugin-md-enhance][md-enhance]: Provide more Markdown syntax
+- [vuepress-plugin-md-enhance][md-enhance]: Предоставляет больше синтаксиса Markdown
 
-- [vuepress-plugin-photo-swipe][photo-swipe]: Make the site’s picture support click zoom
+- [vuepress-plugin-photo-swipe][photo-swipe]: Делает так, чтобы изображение на сайте поддерживало увеличение масштаба
 
-- [vuepress-plugin-pwa2][pwa2]: Enhanced PWA support
+- [vuepress-plugin-pwa2][pwa2]: Расширенная поддержка PWA
 
-- [vuepress-plugin-reading-time2][reading-time2]: Expect reading time and words count
+- [vuepress-plugin-reading-time2][reading-time2]: Ожидаемое время чтения и количество слов
 
-- [vuepress-plugin-redirect][redirect]: Redirect pages
+- [vuepress-plugin-redirect][redirect]: Редирект страниц
 
-- [vuepress-plugin-sass-palette][sass-palette]: Sass style plugin for all plugins and themes
+- [vuepress-plugin-sass-palette][sass-palette]: Плагин в стиле Sass для всех плагинов и тем
 
-- [vuepress-plugin-seo2][seo2]: SEO Enhancement Plugin
+- [vuepress-plugin-seo2][seo2]: Плагин для улучшения СЕО
 
-- [vuepress-plugin-sitemap2][sitemap2]: Sitemap plugin
+- [vuepress-plugin-sitemap2][sitemap2]: Плагин карты сайта
 
 ::: tip
 
-Here are some other plugins that are not enabled by default by the theme, you can enable them according to your own needs.
+Вот некоторые другие плагины, которые по умолчанию не включены в тему, вы можете включить их в соответствии со своими потребностями
 
-- [vuepress-plugin-lightgallery][lightgallery]: Photo preview plugin based on lightgallery
+- [vuepress-plugin-lightgallery][lightgallery]: Плагин предварительного просмотра фотографий на основе lightgallery
 
 :::
 
