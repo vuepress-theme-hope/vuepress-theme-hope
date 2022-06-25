@@ -908,7 +908,7 @@ module.exports = sidebar(/* Your sidebar configuration */);
 @tab TS
 
 ```ts
-@include(../../.vuepress/sidebar/en.ts)
+@include(../../../.vuepress/sidebar/ru.ts)
 ```
 
 @tab JS

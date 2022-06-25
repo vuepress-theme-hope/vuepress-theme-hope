@@ -17,98 +17,98 @@ actions:
     link: https://stackblitz.com/fork/vuepress-theme-hope
 
 features:
-  - title: Markdown Enhance
+  - title: Улучшение разметки
     icon: markdown
-    details: Add align, sup/sub script, footnote, tasklist, tex, flowchart, diagram, mark and presentation support in Markdown
+    details: Добавление выравнивания, надстрочного/подстрочного скрипта, сноски, списка задач, текста, блок-схемы, диаграммы, выделения и поддержка презентации в Markdown
     link: /guide/markdown/
 
-  - title: Slide page
+  - title: Слайд-страница
     icon: slides
-    details: Adding slide pages to display things you like
+    details: Добавление страниц слайдов для отображения того, что вам нравится
     link: /guide/layout/slides
 
-  - title: Layout enhancement
+  - title: Улучшение макета
     icon: layout
-    details: Adding breadcrumb, footer, improved navbar, improved page nav and etc.
+    details: Добавление хлебных крошек, нижнего колонтитула, улучшенной панели навигации, улучшенной навигации по страницам и т. д.
     link: /guide/layout/
 
-  - title: Pageviews and comments
+  - title: Просмотры страниц и комментарии
     icon: comment
-    details: Start pageview statistics and comment support with Waline
+    details: Запустите статистику просмотров страниц и поддержку комментариев с помощью Waline
     link: /guide/feature/comment.html
 
-  - title: Article information
+  - title: Информация о статье
     icon: info
-    details: Add author, writing date, reading time, word count and other information to your article
+    details: Добавление автора, даты написания, время чтения, количество слов и другой информации в свою статью
     link: /guide/feature/page-info.html
 
-  - title: Blog support
+  - title: Поддержка блога
     icon: blog
-    details: Listing your articles with their dates, tags and categories with some awesome layouts
+    details: Список ваших статей с их датами, тегами и категориями с некоторыми потрясающими макетами
     link: /guide/blog/
 
-  - title: Custom theme color
+  - title: Пользовательский цвет темы
     icon: palette
-    details: Supports custom theme colors and allows users to switch between preset theme colors
+    details: Поддержка пользовательских цветов темы и позволяет пользователям переключаться между предустановленными цветами темы
     link: /guide/interface/theme-color.html
 
-  - title: Dark Mode
+  - title: Темный режим
     icon: contrast
-    details: Switch between light and dark modes freely
+    details: Свободно переключайтесь между светлым и темным режимами
     link: /guide/interface/darkmode.html
 
-  - title: Full A11y support
+  - title: Полная поддержка A11y
     icon: support
-    details: Full support of accessibility in your site
+    details: Полная поддержка специальных возможностей на вашем сайте
     link: /guide/interface/accessibility.html
 
-  - title: Article Encryption
+  - title: Шифрование статьи
     icon: lock
-    details: Encrypt you articles based on page links, so that only the one you want could see them
+    details: Шифруйте свои статьи на основе ссылок на страницы, чтобы их мог видеть только тот, кому вы хотите
     link: /guide/feature/encrypt.html
 
-  - title: Copy button
+  - title: Кнопка копирования
     icon: copy
-    details: Copy codes with one click in code blocks
+    details: Копируйте коды одним кликом в блоках кодов
     link: /guide/feature/copy-code.html
 
-  - title: Image preview
+  - title: Предпросмотр изображения
     icon: pic
-    details: Support viewing, zooming, sharing your page images like a gallery
+    details: Поддержка просмотра, масштабирования, обмена изображениями на странице, например, в галерее
     link: /guide/feature/photo-swipe.html
 
-  - title: SEO enhancement
+  - title: СЕО-улучшения
     icon: config
-    details: Optimize pages for search engines
+    details: Оптимизация страниц для поисковых систем
     link: /guide/advanced/seo.html
 
-  - title: Sitemap
+  - title: Карта сайта
     icon: sitemap
-    details: Generate a Sitemap for your site
+    details: Создание карты сайта для своего сайта
     link: /guide/advanced/sitemap.html
 
-  - title: Feed support
+  - title: Поддержка каналов
     icon: rss
-    details: Generate feed to allow users to subscribe it
+    details: Создание фида, чтобы пользователи могли подписаться на него
     link: /guide/advanced/feed.html
 
-  - title: PWA support
+  - title: Поддержка PWA
     icon: mobile
-    details: Make your site more like an APP
+    details: Сделайте свой сайт больше похожим на APP
     link: /guide/advanced/pwa.html
 
-  - title: More new features
+  - title: Больше новых функций
     icon: more
-    details: Including icon support, fullscreen button, etc.
+    details: Включая поддержку иконок, полноэкранную кнопку и т. д.
     link: /guide/feature/
 
 copyright: false
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 ---
 
-## 🛠Install
+## 🛠Установка
 
-Create a vuepress-theme-hope project in `[dir]` directory under the current project:
+Создайте проект vuepress-theme-hope в каталоге `[dir]` внутри текущего проекта:
 
 ::: code-tabs#shell
 
@@ -126,7 +126,7 @@ npm init vuepress-theme-hope@next [dir]
 
 :::
 
-## 🚀Usage
+## 🚀Использование
 
 ::: code-tabs#language
 
@@ -159,11 +159,11 @@ module.exports = {
 
 :::
 
-## Step by Step Tutorial
+## Пошаговое руководство
 
-- [Tutorial](cookbook/tutorial/README.md)
+- [Учебное пособие](cookbook/tutorial/README.md)
 
-## Telegram Group
+## Группа в Телеграмм
 
 - [vuepressthemehope](https://t.me/vuepressthemehope)
 
@@ -171,8 +171,8 @@ module.exports = {
 
 <a v-if="isNetlify " href="https://www.netlify.com" target="_blank">
 
-![Deploys by Netlify](https://www.netlify.com/img/global/badges/netlify-light.svg#light)
-![Deploys by Netlify](https://www.netlify.com/img/global/badges/netlify-dark.svg#dark)
+![Деплой от Netlify](https://www.netlify.com/img/global/badges/netlify-light.svg#light)
+![Деплой от Netlify](https://www.netlify.com/img/global/badges/netlify-dark.svg#dark)
 
 </a>
 

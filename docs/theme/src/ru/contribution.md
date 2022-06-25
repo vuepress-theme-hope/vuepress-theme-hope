@@ -1,17 +1,17 @@
 ---
-title: Contribution Guide
+title: Руководство по вкладу
 icon: creative
 category:
   - FAQ
 ---
 
-We always welcome everyone to contribute! Here is a guide for you.
+Мы всегда рады каждому внести свой вклад! Вот руководство для вас.
 
 <!-- more -->
 
-## Clone and Install Project
+## Клонировать и установить проект
 
-Use Git to clone the project to the local, and use `pnpm` to install dependencies.
+Используйте Git для клонирования проекта на локальный сервер и используйте pnpm для установки зависимостей.
 
 ```sh
 git clone git@github.com:vuepress-theme-hope/vuepress-theme-hope.git
@@ -21,7 +21,7 @@ pnpm i
 
 ::: tip
 
-If you have not installed pnpm, please install it using the following command.
+Если вы не установили pnpm, установите его с помощью следующей команды.
 
 ```sh
 corepack enable
@@ -30,13 +30,13 @@ corepack prepare pnpm@7.2.1 --activate
 
 :::
 
-## Project File Structure
+## Структура файлов проекта
 
-The project is a monorepo, managed by pnpm.
+Проект представляет собой монорепозиторий, управляемый pnpm.
 
-- `docs`: place the documentation of each plugin and theme, each subdirectory is a project
-- `demo`: theme demo project
-- `packages`: place the code of each plugin and theme, each subdirectory is a project
+- `docs`: размещение документации каждого плагина и темы, каждый подкаталог является проектом
+- `demo`: демонстрационный проект темы
+- `packages`: размещение кода каждого плагина и темы, каждый подкаталог является проектом
 
 ```
 .
@@ -90,23 +90,23 @@ The project is a monorepo, managed by pnpm.
 └── tsconfig.* → TypeScript config file
 ```
 
-## Document Modification
+## Модификация документа
 
-You can find the corresponding project in the docs directory so you can modify the corresponding Markdown directly.
+Вы можете найти соответствующий проект в каталоге документации, чтобы вы могли напрямую изменить соответствующий Markdown.
 
-After ensuring that the `pnpm lint` and `pnpm lint:md` commands emit no errors, you can commit to GitHub to open a PR.
+Убедившись, что команды `pnpm lint` и `pnpm lint:md` не выдают ошибок, вы можете зафиксировать на GitHub открытие PR.
 
-::: tip Preview Docs
+::: tip Предпросмотр документации
 
-Since the docs are using local themes and plugins, you need to build the local project through `pnpm build` first.
+Поскольку в документации используются локальные темы и плагины, вам необходимо сначала собрать локальный проект с помощью `pnpm build`.
 
-To start previewing, cd to the right project under `docs` directory, then run `pnpm docs:vite-dev` (using vite) or `pnpm docs:webpack-dev` (using webpack).
+Чтобы начать предварительный просмотр, перейдите к нужному проекту в каталоге `docs`, затем запустите `pnpm docs:vite-dev` (используя vite) или `pnpm docs:webpack-dev` (используя webpack).
 
 :::
 
-## Project Modification
+## Модификация проекта
 
-The structure of each project is as follows:
+Структура каждого проекта следующая:
 
 ```
 .
@@ -125,63 +125,63 @@ The structure of each project is as follows:
   └── shared → Shared files between node and client
 ```
 
-Since the client-side uses ES Module (import/export) and the Node.js side uses commonjs (require/exports), the code in the node and client directories cannot be cross-referenced.
+Поскольку на стороне клиента используется модуль ES (import/export), а на стороне Node.js используются commonjs (require/exports), код в каталогах node и client не может иметь перекрестных ссылок.
 
-- `client` directory stores the client code, compiled in esm format
-- `node` directory stores the Node.js code, compiled in cjs format
-- `shared` directory basically stores TypeScript types, and is compiled in cjs format. It can be referenced by the client and node directories.
+- каталог `client` хранит клиентский код, скомпилированный в формате esm
+- каталог `node` хранит код Node.js, скомпилированный в формате cjs
+- каталог `shared` в основном хранит типы TypeScript и скомпилирован в формате cjs. На него могут ссылаться каталоги client и node.
 
-For better performance, all plugins are packed and minified using rollup when they are published.
+Для повышения производительности все плагины упаковываются и минимизируются с помощью накопительного пакета при их публикации.
 
-## Project Development
+## Разработка проекта
 
-### How to build
+### Как собрать
 
-- For better performance, all plugins are packed and minified using `rollup` when they are published.
-- Use `cpx` package to copy and watch files in other formats from the source file to the output directory.
+- Для лучшей производительности все плагины упаковываются и минимизируются с помощью `rollup` при их публикации.
+- Используйте пакет `cpx` для копирования и просмотра файлов других форматов из исходного файла в каталог вывода.
 
-### Command
+### Команда
 
-1. Build project: `pnpm build`
+1. Сборка проекта: `pnpm build`
 
-   - Use rollup to bundle source files and minify them, and output results to `lib` folder
-   - Use `rollup-plugin-copy` to copy other files to `lib` folder
+   - Используйте rollup пакет для объединения исходных файлов и их минимизации, а также вывод результатов в папку `lib`
+   - Используйте `rollup-plugin-copy`, чтобы скопировать другие файлы в папку `lib`
 
-1. Develop project: `pnpm dev`
+1. Разработка проекта: `pnpm dev`
 
-   - Use `tsc` to compile ts file to `lib` folder
-   - Use `cpx` to copy other files to `lib` folder
+   - Используйте `tsc` для компиляции файла ts в папку `lib`
+   - Используйте `cpx`, чтобы скопировать другие файлы в папку `lib`
 
-1. Format project: `pnpm lint`
+1. Форматирование проекта: `pnpm lint`
 
-   It will format the project using prettier, eslint and stylelint.
+   Он отформатирует проект, используя prettier, eslint и stylelint.
 
-   If you modify Markdown, you also need to run the `pnpm lint:md` command.
+   Если вы изменяете Markdown, вам также необходимо запустить команду `pnpm lint:md`.
 
 ::: warning
 
-Please do not mix build and dev commands as they compile in completely different ways.
+Пожалуйста, не смешивайте команды `build` и `dev`, так как они компилируются совершенно по-разному.
 
-You may need to execute the `pnpm clean` command to clear previous build results.
+Возможно, вам потребуется выполнить команду `pnpm clean`, чтобы очистить предыдущие результаты сборки.
 
 :::
 
-## Commit
+## Фиксация
 
-The project uses `husky` to add Git Hooks for verification:
+Проект использует `husky` для добавления Git Hooks для проверки:
 
-- In `precommit` stage: we use `lint-staged` to check the changed code with the corresponding Linter
+- На этапе `precommit`: мы используем `lint-staged` для проверки измененного кода с помощью соответствующего линтера
 
-  This means that you need to ensure that your code is formatted by the project requirements and can pass Linter tests.
+  Это означает, что вам нужно убедиться, что ваш код отформатирован в соответствии с требованиями проекта и может пройти ЛИНТЕР-тесты.
 
-- In `commit-msg` stage: we use `commitlint` to verify the commit comment.
+- На этапе `commit-msg`: мы используем `commitlint` для проверки комментария фиксации.
 
-  This means that you need to ensure that your commit comments comply with Semantic
+  Это означает, что вам необходимо убедиться, что ваши комментарии к фиксации соответствуют семантическим
 
 ::: tip
 
-If you cannot pass the above Git Hooks, you will not be able to complete `git commit`.
+Если вы не можете пройти указанные выше Git Hooks, вы не сможете выполнить `git commit`.
 
-If you have already contributed something, but cannot make a commit and don’t know how to fix it, you can add the `--no-verify` flag when committing to bypass Git Hooks.
+Если вы уже что-то внесли, но не можете сделать коммит и не знаете, как это исправить, вы можете добавить флаг `--no-verify` при коммите, чтобы обойти Git Hooks.
 
 :::

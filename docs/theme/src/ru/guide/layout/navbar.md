@@ -645,7 +645,7 @@ module.exports = navbar([
 @tab TS
 
 ```ts
-@include(../../.vuepress/navbar/en.ts)
+@include(../../../.vuepress/navbar/ru.ts)
 ```
 
 @tab JS

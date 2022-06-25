@@ -1,9 +1,9 @@
 ---
-title: Changelog
+title: Список изменений
 icon: time
 ---
 
-This file contains all notable changes to `vuepress-theme-hope` and its plugins.
+Этот файл содержит все заметные изменения в `vuepress-theme-hope` и его плагинах.
 
 <!-- more -->
 

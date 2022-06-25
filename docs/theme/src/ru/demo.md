@@ -1,41 +1,41 @@
 ---
-title: Demos
+title: Демоверсии
 icon: discover
 category:
   - Demo
 ---
 
-## Living Demo
+## Живая демонстрация
 
 - [stackblitz](https://stackblitz.com/fork/vuepress-theme-hope)
 
-## Docs
+## Документация
 
 ### Waline
 
-- [Link][waline]
-- [Source](https://github.com/walinejs/waline)
+- [Ссылка][waline]
+- [Исходный код](https://github.com/walinejs/waline)
 
 ### vuepress-theme-hope
 
-- [Link][vuepress-theme-hope]
-- [Source](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/main/docs/theme)
+- [Ссылка][vuepress-theme-hope]
+- [Исходный код](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/main/docs/theme)
 
 ### Fast Request
 
-- [Link][fast-request]
-- [Source](https://github.com/dromara/fast-request)
+- [Ссылка][fast-request]
+- [Исходный код](https://github.com/dromara/fast-request)
 
-## Blog
+## Блог
 
-### Mr.Hope’s Blog
+### Блог Mr.Hope
 
-- [Link](https://mrhope.site)
-- [Source](https://github.com/Mister-Hope/Mister-Hope.github.io)
+- [Ссылка](https://mrhope.site)
+- [Исходный код](https://github.com/Mister-Hope/Mister-Hope.github.io)
 
-## More
+## Еще
 
-- Feel free to add yours
+- Не стесняйтесь добавлять свои
 
 [vuepress-theme-hope]: https://vuepress-theme-hope.github.io/v2/
 [waline]: https://waline.js.org/en/
