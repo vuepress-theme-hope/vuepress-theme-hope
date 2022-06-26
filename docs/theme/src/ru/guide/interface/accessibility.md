@@ -3,20 +3,20 @@ title: A11y
 icon: support
 order: 6
 category:
-  - Interface
+  - Интерфейс
 tag:
   - A11y
-  - Interface
+  - Интерфейс
 ---
 
-"A11y" stands for "accessibility".
+"A11y" означает «доступность».
 
-The theme adds full support of accessibility.
+Тема добавляет полную поддержку специальных возможностей.
 
-- All page structures of the theme are processed semantically.
+- Все структуры страниц темы обработаны семантически.
 
-- All buttons and icons have their corresponding accessibility labels
+- Все кнопки и значки имеют соответствующие метки специальных возможностей.
 
-- All main interactive elements can be focused and interacted through the keyboard
+- Все основные интерактивные элементы можно сфокусировать и взаимодействовать с помощью клавиатуры
 
-This is our support for the visually impaired people around the world! :heart:
+Это наша поддержка слабовидящих людей во всем мире! :heart:

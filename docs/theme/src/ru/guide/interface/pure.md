@@ -1,9 +1,9 @@
 ---
-title: Pure Mode
+title: Чистый режим
 icon: leaf
 order: 7
 ---
 
-If your site is a documentation-only site and you prefer a clean style, you can enable pure mode by setting `pure: true` in theme options.
+Если ваш сайт предназначен только для документации и вы предпочитаете чистый стиль, вы можете включить чистый режим, установив `pure: true` в параметрах темы.
 
-In this mode, we disable some fancy animations and some colors and just provide functionality.
+В этом режиме мы отключаем некоторые причудливые анимации и некоторые цвета и просто обеспечиваем функциональность.

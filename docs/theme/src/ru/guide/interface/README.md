@@ -1,21 +1,21 @@
 ---
-title: Interface
+title: Интерфейс
 icon: palette
 index: false
 dir:
   order: 2
 ---
 
-## Catalog
+## Каталог
 
-- [Dark Mode](darkmode.md)
+- [Темный режим](darkmode.md)
 
-- [Theme Color](theme-color.md)
+- [Цвет темы](theme-color.md)
 
-- [Icon support](icon.md)
+- [Поддержка иконок](icon.md)
 
-- [Code Themes](code-theme.md)
+- [Темы кода](code-theme.md)
 
-- [Accessibility](accessibility.md)
+- [Доступность](accessibility.md)
 
-- [Other features](others.md)
+- [Другие функции](others.md)

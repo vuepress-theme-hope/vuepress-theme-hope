@@ -1,26 +1,26 @@
 ---
-title: Other features
+title: Другие функции
 icon: others
 order: 5
 category:
-  - Interface
+  - Интерфейс
 tag:
-  - Interface
+  - Интерфейс
 ---
 
-## Style Customization
+## Настройка стиля
 
-The theme allows you to set variables in `.vuepress/styles/config.scss` and `.vuepress/styles/palette.scss` to customize most of the colors, responsive breakpoints, page layout size and other parameters.
+Тема позволяет вам устанавливать переменные в `.vuepress/styles/config.scss` и `.vuepress/styles/palette.scss`, чтобы настроить большинство цветов, точки останова, размер макета страницы и другие параметры.
 
-For detailed info, please see [Config → Style Customize](../../config/style.md)
+Для получения подробной информации смотрите [Конфиг → Настройка стиля](../../config/style.md)
 
-## Fullscreen Button
+## Полноэкранная кнопка
 
-If you need it, you can enable it by setting `fullscreen: true` in the theme options.
+Если вам это нужно, вы можете включить его, установив `fullscreen: true` в настройках темы.
 
 ::: tip
 
-If the current browser does not support full screen, the full screen button is automatically hidden.
+Если текущий браузер не поддерживает полноэкранный режим, кнопка полноэкранного режима автоматически скрывается.
 
 :::
 
@@ -55,8 +55,8 @@ module.exports = {
 
 :::
 
-## Back to top button
+## Кнопка «Вернуться к началу»
 
-`vuepress-theme-hope` adds a back-to-top control which will display after scrolling down 300px by default.
+`vuepress-theme-hope` добавляет элемент управления back-to-top, который по умолчанию будет отображаться после прокрутки вниз на 300 пикселей.
 
-You can set `backToTop: false` in theme options to disable it, or set it to a number to change the default trigger distance.
+Вы можете установить `backToTop: false` в параметрах темы, чтобы отключить его, или установить его на число, чтобы изменить расстояние срабатывания по умолчанию.

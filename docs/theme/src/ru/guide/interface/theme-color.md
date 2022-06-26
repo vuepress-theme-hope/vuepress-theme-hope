@@ -1,31 +1,31 @@
 ---
-title: Theme Color
+title: Цвет темы
 icon: palette
 order: 2
 category:
-  - Interface
+  - Интерфейс
 tag:
-  - Interface
-  - Theme Color
+  - Интерфейс
+  - Цвет темы
 ---
 
-The theme allows you to customize theme color and even provide a picker.
+Тема позволяет вам настроить цвет темы и даже предоставить средство выбора.
 
 <!-- more -->
 
-## Setting Default Theme Color
+## Настройка цвета темы по умолчанию
 
-You should set the default theme color of your site in `.vuepress/styles/palette.scss`:
+Вы должны установить цвет темы вашего сайта по умолчанию в `.vuepress/styles/palette.scss`:
 
 ```scss
 $theme-color: #f00;
 ```
 
-## Theme Color Picker
+## Палитра цветов темы
 
-You need to set `themeColor` with `{ colorname1: colorvalue, colorname2: colorvalue, ... }` format:
+Вам нужно установить `themeColor` с форматом `{ colorname1: colorvalue, colorname2: colorvalue, ... }`:
 
-The first color is the default theme color above.
+Первый цвет — это цвет темы по умолчанию выше.
 
 :::: details Example
 
@@ -72,7 +72,7 @@ module.exports = {
 
 ::::
 
-### Try it
+### Попробуй это
 
 <!-- markdownlint-disable-->
 

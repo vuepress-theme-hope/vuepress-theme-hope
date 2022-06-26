@@ -1,90 +1,90 @@
 ---
-title: Icon support
+title: Поддержка иконок
 icon: discover
 order: 3
 category:
-  - Interface
+  - Интерфейс
 tag:
-  - Icon
-  - Interface
+  - Иконка
+  - Интерфейс
 ---
 
-The entire theme adds FontClass format icon support in multiple places.
+Вся тема добавляет поддержку иконок формата FontClass в нескольких местах.
 
-You can use iconfont and fontawesome to add icons to your project.
+Вы можете использовать iconfont и fontawesome для добавления иконок в свой проект.
 
-- For china users, iconfont is recommended
-- For overseas users, fontawesome is recommended
+- Для пользователей Китая рекомендуется iconfont
+- Для зарубежных пользователей рекомендуется fontawesome
 
 <!-- more -->
 
-## Setting Icons
+## Настройка иконок
 
-You can use icon in multiple places.
+Вы можете использовать иконку в нескольких местах.
 
-- Page: set `icon` in frontmatter
+- Страница: установить `icon` в frontmatter
 
-  This icon will be used in breadcrumb, page title, navbar generated item, sidebar generated item, page nav, etc.
+  Эта иконка будет использоваться в навигационной цепочке, заголовке страницы, сгенерированном элементе панели навигации, сгенерированном элементе боковой панели, навигации страницы и т. д.
 
-- Navbar: set `icon` option in NavbarItemConfig
+- Navbar: установите опцию `icon` в NavbarItemConfig
 
-- Sidebar: set `icon` option in SidebarItemConfig
+- Sidebar: установите опцию `icon` в SidebarItemConfig
 
-- HomePage: set `icon` option in feature item
+- HomePage: установите опцию `icon` в элементе функции
 
 ## Iconfont
 
-[Iconfont](https://iconfont.cn) is a vector icon management and communication platform created by Alimama MUX.
+[Iconfont](https://iconfont.cn) — это платформа для управления векторными иконками и коммуникации, созданная Alimama MUX.
 
-The designer uploads the icon to the Iconfont platform, and the user can customize the download of icons in a variety of formats. Users can also convert the icon into a font.
+Дизайнер загружает иконку на платформу Iconfont, а пользователь может настроить загрузку иконок в различных форматах. Пользователи также могут преобразовать иконку в шрифт.
 
-### How to use
+### Как использовать
 
-First, you need to create a new project to set and manage your website’s icons:
+Во-первых, вам нужно создать новый проект для установки и управления иконками вашего сайта:
 
-1. Log in to Iconfont using GitHub or Weibo.
-1. Find "Resources → My Projects" at the top of the website, and click the "New Project" icon in the upper right corner.
-1. Set a recognizable project name
-1. Fill in `FontClass/Symbol prefix` with `icon-` (you can also fill in according to your preference, but you need to set this value to `iconPrefix` in theme options with an extra `iconfont` prefix)
-1. Font Family please keep `iconfont`
+1. Войдите в Iconfont с помощью GitHub или Weibo.
+1. Найдите "Resources → My Projects" в верхней части веб-сайта и щелкните иконку "New Project" в правом верхнем углу.
+1. Установите узнаваемое название проекта
+1. Заполните `FontClass/Symbol prefix` с `icon-` (вы также можете заполнить в соответствии с вашими предпочтениями, но вам нужно установить это значение `iconPrefix` в настройках темы с дополнительным префиксом `iconfont`)
+1. Семейство шрифтов, пожалуйста, сохраните `iconfont`
 
-![New Project](./assets/iconfont-new.png)
+![Новый проект](./assets/iconfont-new.png)
 
-### Import Icon
+### Импорт иконки
 
-1. Search freely through iconfont to find the icon you want to use, and click the "Add to Library" button on the icon
+1. Свободно ищите через iconfont, чтобы найти иконку, которую вы хотите использовать, и нажмите кнопку "Add to Library" на иконке
 
-   ![Add to library](./assets/iconfont-add.png)
+   ![Добавить в библиотеку](./assets/iconfont-add.png)
 
-1. After searching for all the icons, click the "Add to Library" icon in the upper right corner, click "Add to Project" below and select the project you created then confirm.
+1. После поиска всех значков щелкните иконку "Add to Library" в правом верхнем углу, нажмите "Add to Project" ниже и выберите созданный проект, затем подтвердите.
 
-### Edit Icon
+### Редактирование иконки
 
-On the project page, you can edit the icons in the project, including adjustments with position, size, rotate, color, Unicode number and Font Class / Symbol.
+На странице проекта вы можете редактировать иконки в проекте, включая настройки положения, размера, поворота, цвета, номера Unicode и класса/символа шрифта.
 
-![Edit icon](./assets/iconfont-edit.png)
+![Редактирование иконки](./assets/iconfont-edit.png)
 
-### Generate Icon Files
+### Создание файлов иконок
 
-1. Please click the "Font Class" button above the project and click Generate.
+1. Нажмите кнопку "Font Class" над проектом и нажмите "Generate".
 
-   ![Add to library](./assets/iconfont-generate.png)
+   ![Создание иконки](./assets/iconfont-generate.png)
 
-1. Set the css link to `iconAssets` in theme options.
+1. Установите ссылку css на `iconAssets` в настройках темы.
 
 ::: tip
 
-If you add a new icon in the future, please regenerate the new CSS address and set it to `iconAssets` in theme options.
+Если вы добавите новую иконку в будущем, повторно создайте новый адрес CSS и установите для него значение `iconAssets` в параметрах темы.
 
 :::
 
 ## Fontawesome
 
-This theme has built-in Fontawesome support.
+Эта тема имеет встроенную поддержку Fontawesome.
 
-### Import
+### Импорт
 
-You need to set `iconAssets: "fontawesome"` in theme options.
+Вам нужно установить `iconAssets: "fontawesome"` в настройках темы.
 
 ::: code-tabs#language
 
@@ -119,20 +119,20 @@ module.exports = {
 
 ::: note
 
-Font-awesome current version is V6
+Текущая версия Font-awesome 6
 
 :::
 
-### Usage
+### Использование
 
-Please follow [fontawesome document](https://fontawesome.com/).
+Пожалуйста, следуйте [документации fontawesome](https://fontawesome.com/).
 
-- [Usage Instructions](https://fontawesome.com/docs/web/add-icons/how-to)
-- [Icon List](https://fontawesome.com/icons)
+- [Инструкции по использованию](https://fontawesome.com/docs/web/add-icons/how-to)
+- [Список иконок](https://fontawesome.com/icons)
 
-## IconFont Featured Icons
+## Избранные иконки IconFont
 
-You can set `iconAssets` to `"iconfont"` to use the following IconFont featured icons:
+Вы можете установить для `iconAssets` значение `"iconfont"`, чтобы использовать следующие избранные иконки IconFont:
 
 ::: code-tabs#language
 

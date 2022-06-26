@@ -1,21 +1,21 @@
 ---
-title: Darkmode
+title: Темный режим
 icon: contrast
 order: 1
 category:
-  - Interface
+  - Интерфейс
 tag:
-  - Darkmode
-  - Interface
+  - Темный режим
+  - Интерфейс
 ---
 
-In dark mode, the page uses a dark background to make you comfortable.
+В темном режиме страница использует темный фон, чтобы вам было удобно.
 
 <!-- more -->
 
-## Try it
+## Попробуй это
 
-Toggle the button below to see effects.
+Нажмите кнопку ниже, чтобы увидеть эффекты.
 
 <!-- markdownlint-disable-->
 
@@ -23,22 +23,22 @@ Toggle the button below to see effects.
 
 <!-- markdownlint-restore -->
 
-## Options
+## Опции
 
-You can config darkmode through `darkmode` in theme options.
+Вы можете настроить темный режим через `darkmode` в настройках темы.
 
-Available options:
+Доступные Варианты:
 
-- `"switch"`: switch between dark, light and auto (default)
-- `"toggle"`: toggle between lightmode and darkmode
-- `"auto"`: Automatically decide whether to apply dark mode based on user device’s color-scheme or current time
-- `"enable"`: only dark mode
-- `"disable"`: disable dark mode
+- `"switch"`: переключение между темным, светлым и автоматическим режимом (по умолчанию)
+- `"toggle"`: переключение между светлым и темным режимами
+- `"auto"`: автоматически решать, применять ли темный режим на основе цветовой схемы пользовательского устройства или текущего времени
+- `"enable"`: только темный режим
+- `"disable"`: отключить темный режим
 
 <script setup lang="ts">
 import AppearanceSwitch from '@theme-hope/module/outlook/components/AppearanceSwitch'
 </script>
 
-## Global Vairables
+## Глобальные переменные
 
-`$isDarkMode` is avaiable in all markdown files.
+`$isDarkMode` доступен во всех маркдаун файлах.
