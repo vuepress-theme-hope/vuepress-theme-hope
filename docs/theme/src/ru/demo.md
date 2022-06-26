@@ -2,7 +2,7 @@
 title: Демоверсии
 icon: discover
 category:
-  - Demo
+  - Демо
 ---
 
 ## Живая демонстрация

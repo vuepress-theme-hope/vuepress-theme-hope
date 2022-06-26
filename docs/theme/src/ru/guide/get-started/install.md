@@ -1,18 +1,18 @@
 ---
-title: Install / Usage
+title: Установка / Использование
 icon: install
 order: 2
 category:
-  - Get Started
+  - Начало работы
 tag:
-  - Get Started
-  - Install
-  - Usage
+  - Начало работы
+  - Установка
+  - Использование
 ---
 
-## Install
+## Установка
 
-Create a vuepress-theme-hope project in `[dir]` folder under the current project:
+Создайте проект vuepress-theme-hope в папке `[dir]` внутри текущего проекта:
 
 ::: code-tabs#shell
 
@@ -32,13 +32,13 @@ npm init vuepress-theme-hope@next [dir]
 
 ::: note
 
-`[dir]` is a parameter here, replace it with real folder names, such as `docs`, `src` or other name you like.
+`[dir]` здесь является параметром, замените его реальными именами папок, такими как `docs`, `src` или другим именем, которое вам нравится.
 
 :::
 
-## Usage
+## Использование
 
-Please import and use `hopeTheme` to use `vuepress-theme-hope`.
+Пожалуйста, импортируйте и используйте `hopeTheme`, чтобы использовать `vuepress-theme-hope`.
 
 ::: code-tabs#language
 
@@ -71,6 +71,6 @@ module.exports = {
 
 :::
 
-You can view [Config of this site][docs-config] as an example.
+Вы можете просмотреть [Конфигурацию этого сайта][docs-config] в качестве примера.
 
 [docs-config]: https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/docs/theme/src/.vuepress/config.ts

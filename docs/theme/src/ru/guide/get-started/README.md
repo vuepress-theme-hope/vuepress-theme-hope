@@ -1,15 +1,15 @@
 ---
-title: Get Started
+title: Начало работы
 icon: creative
 index: false
 dir:
   order: 1
 ---
 
-## Catalog
+## Справочник
 
-- [Theme Intro](intro.md)
+- [Вступление к теме](intro.md)
 
-- [Installation and Usage](install.md)
+- [Установка и использование](install.md)
 
-- [Markdown Intro](markdown.md)
+- [Введение в Markdown](markdown.md)

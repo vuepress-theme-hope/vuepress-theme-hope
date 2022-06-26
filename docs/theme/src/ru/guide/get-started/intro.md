@@ -1,109 +1,107 @@
 ---
-title: Theme intro
+title: Вступление к теме
 icon: info
 order: 1
 category:
-  - Get Started
+  - Начало работы
 tag:
-  - Get Started
-  - Intro
+  - Начало работы
+  - Вступление
 ---
 
-## Original intention
+## Первоначальное намерение
 
-The original intention of building this theme was to find that VuePress is just a pure static document generator. For example, it will not inject meta tags for SEO optimization, nor will it generate a Sitemap to help search engines index the content of the document.
+Первоначальная цель создания этой темы заключалась в том, чтобы обнаружить, что VuePress — это просто чистый генератор статических документов. Например, он не будет внедрять метатеги для SEO-оптимизации и не будет генерировать карту сайта, чтобы помочь поисковым системам индексировать содержимое документа.
 
-Though VuePress has extended Markdown syntax to a certain extent, it still lacks some commonly used functions, such as text alignment, mark, flowchart, formula, presentation, etc. At the same time, some features provided by the default theme are weak or missing, such as picture preview, dark mode, etc.
+Хотя VuePress в определенной степени расширил синтаксис Markdown, в нем по-прежнему отсутствуют некоторые часто используемые функции, такие как выравнивание текста, отметка, блок-схема, формула, презентация и т. д. В то же время некоторые функции, предоставляемые темой по умолчанию, слабы или отсутствуют. , такие как предварительный просмотр изображения, темный режим и т. д.
 
-In this case, the design of `vuepress-theme-hope` was born.
+В этом случае родился дизайн `vuepress-theme-hope`.
 
-This theme not only **greatly improve outlook** comparing to `@vuepress/theme-default`, but also **dedicates to provide a full range of enhancements for VuePress** with its plugins.
+Эта тема не только **значительно улучшает внешний вид** по сравнению с `@vuepress/theme-default`, но также **предназначена для предоставления полного спектра улучшений для VuePress** с помощью своих плагинов.
 
-::: warning This project is not only a theme
+::: warning Этот проект не только тема
 
-Although [vuepress-theme-hope/vuepress-theme-hope](https://github.com/vuepress-theme-hope/vuepress-theme-hope) itself marked as a theme repository, it also contains more than a dozen equally complete and powerful plugin. Each plugin is also powerful, can be used with the default theme or third-party themes.
+Хотя [vuepress-theme-hope/vuepress-theme-hope](https://github.com/vuepress-theme-hope/vuepress-theme-hope) сам по себе помечен как репозиторий тем, он также содержит более десятка одинаково полный и мощный плагин. Каждый плагин также является мощным, его можно использовать с темой по умолчанию или сторонними темами.
 
-Based on such a dozen plugins, Mr.Hope can confidently say that `vuepress-theme-hope` is "**A powerful theme with tons of features**". It can also be seen as the most versatile and comprehensive theme among all VuePress themes.
-
-:::
-
-## Design Goals
-
-::: info V1 Goal
-
-- Direction: All the functions are to enhance the document **content richness** and **shareable**.
-
-- Powerful and independent functions: The theme provides comprehensive details on functions and decompose them into independent plugins so users can use them in other themes.
-
-- Zero or simple configuration: All functions of this theme are designed to work under zero or simple configuration to reduce your migration or learning costs while directly enjoy their convenience.
+Основываясь на такой дюжине плагинов, Mr.Hope может с уверенностью сказать, что `vuepress-theme-hope` — это «**Мощная тема с множеством функций**». Его также можно рассматривать как наиболее универсальную и всеобъемлющую тему среди всех тем VuePress.
 
 :::
 
-Based on the goal V1 achieved, v2 is further carried out:
+## Цели дизайна
 
-- Improved outlook: The theme interface is not based on the layout and style of the default theme, but has been completely refactored.
+::: info Цель V1
 
-- Decoupling Features: With the help of Vue3’s composition API, the theme fully achieve "Tree-shaking" while remaining powerful.
+- Направление: все функции предназначены для улучшения документа **содержание** и **предоставление общего доступа**.
 
-  The theme will only run which features you need, without being slowed down by other features or affecting the build size.
+- Мощные и независимые функции: тема предоставляет подробные сведения о функциях и разбивает их на независимые плагины, чтобы пользователи могли использовать их в других темах.
 
-## Why Powerful
+- Нулевая или простая конфигурация: все функции этой темы предназначены для работы с нулевой или простой конфигурацией, чтобы сократить ваши затраты на миграцию или обучение, в то же время наслаждаясь их удобством.
 
-### Content Richness
+:::
 
-The theme provides a lot of extended syntax support for Markdown, allowing you to insert more content in the body.
+На основании достигнутой цели V1 далее осуществляется v2:
 
-- If you are a literature lover and want to place some essays, the theme provides [Custom Alignment](../markdown/align.md) and [footnote](../markdown/footnote.md).
+- Улучшенный внешний вид: интерфейс темы не основан на макете и стиле темы по умолчанию, а полностью переработан.
 
-- To store some knowledge notes, the theme provides [Custom container](../markdown/container.md), [Mark](../markdown/mark.md), [Badge](../markdown/components.md)、Task list](../markdown/tasklist.md) and [Tex](../markdown/tex.md) support.
+- Функции развязки: с помощью API композиции Vue3 тема полностью достигает «Tree-shaking», оставаясь при этом мощной.
 
-- If you are a programmer and need to show a lot of codes and demos, this theme provides light and dark themes for code blocks, [code tabs](../markdown/code-tabs.md) and the ["one-click copy" button](../feature/copy-code.md). At the same time, we also provide the [Code Demo](../markdown/demo.md) function, which is convenient for you to show your own Vue, React components or other demos.
+  Тема будет работать только с теми функциями, которые вам нужны, не замедляясь другими функциями и не влияя на размер сборки.
 
-- If you are providing product documentation and presentation, the theme provides [tabs](../markdown/tabs.md), [slide](../markdown/presentation.md), [chart](../markdown/chart.md), [flowchart](../markdown/flowchart.md), [mermaid diagram](../markdown/mermaid.md) functions.
+## Почему мощный
 
-In short, anyone can enjoy the convenience of Markdown’s enhanced syntax.
+### Богатство контента
 
-### Page UI
+Тема предоставляет расширенную поддержку синтаксиса для Markdown, позволяя вам вставлять больше контента в тело.
 
-- [Icon Support](../interface/icon.md)
+- Если вы любитель литературы и хотите разместить несколько эссе, в теме предусмотрено [Пользовательское выравнивание](../markdown/align.md) и [сноска](../markdown/footnote.md).
 
-- Page: [Page information](../feature/page-info.md), TOC and [picture preview function](../feature/photo-swipe.md).
+- Для хранения некоторых заметок тема предоставляет поддержку [Пользовательского контейнера](../markdown/container.md), [Выделения](../markdown/mark.md), [Значка](../markdown/components.md)、[Списока задач](../markdown/tasklist.md) и [Tex](../markdown/tex.md).
 
-- Site structure:
+- Если вы программист и вам нужно показать много кодов и демонстраций, эта тема предоставляет светлые и темные темы для блоков кода, [вкладки кода](../markdown/code-tabs.md) и [кнопка "скопировать в один клик"](../feature/copy-code.md). В то же время мы также предоставляем функцию [Демонстрация кода](../markdown/demo.md), которая удобна для вас, чтобы показать свои собственные компоненты Vue, React или другие демонстрации.
 
-  Rebuild mobile navbar
+- Если вы предоставляете документацию и презентацию продукта, тема предоставляет [вкладки](../markdown/tabs.md), [слайд](../markdown/presentation.md), [диаграмму](../markdown/chart.md), [блок-схема](../markdown/flowchart.md), [диаграмма mermaid](../markdown/mermaid.md) functions.
 
-  simplified [Navbar](../layout/navbar.md) and [Sidebar](../layout/sidebar.md) config, add support for icons and path prefixes.
+Короче говоря, каждый может насладиться удобством расширенного синтаксиса Markdown.
 
-- Layout: adds [breadcrumb](../layout/breadcrumb.md) and [footer](../layout/footer.md) support.
+### Пользовательский интерфейс страницы
 
-- [Homepage](../layout/home.md): New outlook, features support icons and links.
+- [Поддержка иконок](../interface/icon.md)
 
-- [Code Block Theme Customize](../interface/code-theme.md): Allows you to freely customize the code block style
+- Страница: [Информация о странице](../feature/page-info.md), оглавление и [функция предварительного просмотра изображения](../feature/photo-swipe.md).
 
-### Search Function
+- Структура сайта:
 
-The theme adds [built-in support for the official VuePress search plugin](../feature/search.md).
+  Перестроить мобильную панель навигации в упрощенной конфигурации [Навбар](../layout/navbar.md) и [Сайдбар](../layout/sidebar.md), добавить поддержку иконок и префиксов пути.
 
-### Full Blog Support
+- Макет: добавлена поддержка [breadcrumb](../layout/breadcrumb.md) и [footer](../layout/footer.md).
 
-The theme is containing full blog support, you can use the brand new [blog homepage](../blog/home.md).
+- [Домашняя страница](../layout/home.md): Новый внешний вид, значки поддержки функций и ссылки.
 
-- provides [categories, tags](../blog/category-and-tags.md), [timeline](../blog/timeline.md), [star articles](../blog/article.md) and other functions.
+- [Настройка темы блока кода](../interface/code-theme.md): Позволяет свободно настраивать стиль блока кода
 
-- Provides [Comment and PageViews](../feature/comment.md) feature to let you communicate with your visitors
+### Функция поиска
 
-- Provides [Feed](../advanced/feed.md) generation, so that others can subscribe your site.
+Тема добавляет [встроенную поддержку официального поискового плагина VuePress](../feature/search.md).
 
-### Search Engine Optimization
+### Полная поддержка блога
 
-- Provides [SEO Enhance](../advanced/seo.md), will automatically inject information to fully support OGP and JSON-LD protocols, and enhance search engine indexing.
+Тема содержит полную поддержку блога, вы можете использовать совершенно новую [домашнюю страницу блога](../blog/home.md).
 
-- Provides [Sitemap Generation](../advanced/sitemap.md)
+- Предоставляет [категории, теги](../blog/category-and-tags.md), [временную шкалу](../blog/timeline.md), [избранные статьи](../blog/article.md) и другие функции.
 
-- Provides [PWA](../advanced/pwa.md)
+- Предоставляет функцию [Комментарии и просмотры страниц](../feature/comment.md), чтобы вы могли общаться со своими посетителями
 
-### Othes
+- Обеспечивает генерацию [Feed](../advanced/feed.md), чтобы другие могли подписаться на ваш сайт.
 
-- Provide [Copyright Information Append](../feature/copyright.md) function, which can append copyright information when users copy content, or disable page copy and selection
-- Provide [article encryption](../feature/encrypt.md) function to protect private information
+### Поисковая оптимизация
+
+- Предоставляет [Улучшение СЕО](../advanced/seo.md), автоматически вводит информацию для полной поддержки протоколов OGP и JSON-LD и улучшает индексацию поисковыми системами.
+
+- Предоставляет [Создание карты сайта](../advanced/sitemap.md)
+
+- Предоставляет [PWA](../advanced/pwa.md)
+
+### Другие
+
+- Предоставляет функцию [Добавление информации об авторских правах](../feature/copyright.md), которая может добавлять информацию об авторских правах, когда пользователи копируют контент, или отключать копирование и выбор страницы
+- Предоставляет функцию [шифрование статей](../feature/encrypt.md) для защиты личной информации

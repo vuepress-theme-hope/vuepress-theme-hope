@@ -3,49 +3,49 @@ title: Markdown
 icon: markdown
 order: 3
 category:
-  - Get Started
+  - Начало работы
 tag:
-  - Get Started
+  - Начало работы
   - Markdown
 ---
 
-VuePress basically generate pages from Markdown files. So you can use it to generate documentation or blog sites easily.
+VuePress в основном генерирует страницы из файлов Markdown. Таким образом, вы можете легко использовать его для создания документации или блогов.
 
-You should create and write Markdown files, so that VuePress can convert them to different pages according to file structure.
+Вы должны создавать и записывать файлы Markdown, чтобы VuePress мог преобразовывать их на разные страницы в соответствии со структурой файла.
 
 <!-- more -->
 
-## Markdown Introduction
+## Введение в Markdown
 
-If you are a new comer and don’t know how to write Markdown, please read [Markdown Intro](../../cookbook/markdown/README.md) and [Markdown Demo](../../cookbook/markdown/demo.md).
+Если вы новичок и не знаете, как писать в Markdown, прочитайте [Введение в Markdown](../../cookbook/markdown/README.md) и [Демонстрация Markdown](../../cookbook/markdown/demo.md).
 
-## Markdown Config
+## Конфигурация Markdown
 
-VuePress introduce configuration for each markdown page using Frontmatter.
+VuePress вводит настройку для каждой страницы маркдауна с помощью Frontmatter.
 
 ::: info
 
-Frontmatter is a important concept in VuePress. If you don’t know it, you need to read [Frontmatter Introduction](../../cookbook/vuepress/page.md#frontmatter).
+Frontmatter — важная концепция в VuePress. Если вы этого не знаете, вам нужно прочитать [Введение в Frontmatter](../../cookbook/vuepress/page.md#frontmatter).
 
 :::
 
-## Markdown Extension
+## Расширение Markdown
 
-The Markdown content in VuePress will be parsed by [markdown-it](https://github.com/markdown-it/markdown-it), which supports [syntax extensions](https://github.com/markdown-it/markdown-it#syntax-extensions) via markdown-it plugins.
+Содержимое Markdown в VuePress будет анализироваться [markdown-it](https://github.com/markdown-it/markdown-it), который поддерживает [расширения синтаксиса](https://github.com/markdown-it/markdown-it#syntax-extensions) через плагины markdown-it.
 
-### VuePress Enhancement
+### Улучшение VuePress
 
-To enrich document content, VuePress extends standard Markdown syntax.
+Чтобы обогатить содержимое документа, VuePress расширяет стандартный синтаксис Markdown.
 
-For these extended syntax, please see [Built-in Markdown Features](../../cookbook/vuepress/markdown.md).
+Чтобы узнать об этом расширенном синтаксисе, смотрите [Встроенные функции Markdown](../../cookbook/vuepress/markdown.md).
 
-### Theme Enhancement
+### Улучшение темы
 
-By using [`vuepress-plugin-md-enhance`][md-enhance], the theme extends more Markdown syntax and provides richer writing functions.
+Используя [`vuepress-plugin-md-enhance`][md-enhance], тема расширяет синтаксис Markdown и предоставляет более богатые функции записи.
 
-:::: tip Enable all
+:::: tip Включить все
 
-You can set `plugins.mdEnhance.enableAll: true` in theme options to enable all features of the [md-enhance][md-enhance] plugin.
+Вы можете установить `plugins.mdEnhance.enableAll: true` в настройках темы, чтобы включить все функции плагина [md-enhance][md-enhance].
 
 ::: code-tabs#language
 
@@ -85,11 +85,11 @@ module.exports = {
 
 ::::
 
-#### Custom Container
+#### Пользовательский контейнер
 
 ::: v-pre
 
-Safely use {{ variable }} in Markdown.
+Безопасно используйте {{ variable }} в Markdown.
 
 :::
 
@@ -169,9 +169,9 @@ A custom details container
 
 ::::
 
-- [View Detail](../markdown/container.md)
+- [Посмотреть детали](../markdown/container.md)
 
-#### Tabs
+#### Вкладки
 
 ::: tabs#fruit
 
@@ -189,9 +189,9 @@ Orange
 
 :::
 
-- [View Detail](../markdown/tabs.md)
+- [Посмотреть детали](../markdown/tabs.md)
 
-#### Code Tabs
+#### Вкладки кода
 
 ::: code-tabs
 
@@ -209,15 +209,15 @@ npm i -D vuepress-theme-hope
 
 :::
 
-- [View Detail](../markdown/code-tabs.md)
+- [Посмотреть детали](../markdown/code-tabs.md)
 
-#### Superscript and Subscript
+#### Верхний индекс и нижний индекс
 
 19^th^ H~2~O
 
-- [View Detail](../markdown/sup-sub.md)
+- [Посмотреть детали](../markdown/sup-sub.md)
 
-#### Align
+#### Выравнивание
 
 ::: center
 
@@ -231,42 +231,42 @@ I am right align
 
 :::
 
-- [View Detail](../markdown/align.md)
+- [Посмотреть детали](../markdown/align.md)
 
-### Attrs
+### Атрибуты
 
 A **word**{#word} having id.
 
-- [View Detail](../markdown/attrs.md)
+- [Посмотреть детали](../markdown/attrs.md)
 
-#### Footnote
+#### Сноска
 
 This text has footnote[^first].
 
 [^first]: This is footnote content
 
-- [View Detail](../markdown/footnote.md)
+- [Посмотреть детали](../markdown/footnote.md)
 
-#### Mark
+#### Выделение
 
 You can mark ==important words== .
 
-- [View Detail](../markdown/mark.md)
+- [Посмотреть детали](../markdown/mark.md)
 
-#### Tasklist
+#### Список задач
 
 - [x] Plan A
 - [ ] Plan B
 
-- [View Detail](../markdown/tasklist.md)
+- [Посмотреть детали](../markdown/tasklist.md)
 
-#### Image Enhancement
+#### Улучшение изображения
 
 Support setting color scheme and size
 
-- [View Detail](../markdown/image.md)
+- [Посмотреть детали](../markdown/image.md)
 
-#### Chart
+#### Диаграмма
 
 ::: chart A Scatter Chart
 
@@ -300,7 +300,7 @@ Support setting color scheme and size
 
 :::
 
-- [View Detail](../markdown/chart.md)
+- [Посмотреть детали](../markdown/chart.md)
 
 #### Echarts
 
@@ -326,9 +326,9 @@ Support setting color scheme and size
 
 :::
 
-- [View Detail](../markdown/echarts.md)
+- [Посмотреть детали](../markdown/echarts.md)
 
-#### Flowchart
+#### Блок-схема
 
 ```flow
 cond=>condition: Process?
@@ -339,7 +339,7 @@ cond(yes)->process->e
 cond(no)->e
 ```
 
-- [View Detail](../markdown/flowchart.md)
+- [Посмотреть детали](../markdown/flowchart.md)
 
 #### Mermaid
 
@@ -360,7 +360,7 @@ flowchart TB
     two --> c2
 ```
 
-- [View Detail](../markdown/mermaid.md)
+- [Посмотреть детали](../markdown/mermaid.md)
 
 #### Tex
 
@@ -369,15 +369,15 @@ $$
 = \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^i r \cdots (r-i+1) (\log y)^{r-i}} {\omega^i} \right\}
 $$
 
-- [View Detail](../markdown/tex.md)
+- [Посмотреть детали](../markdown/tex.md)
 
-#### Include files
+#### Включение файлов
 
 @include(../markdown/demo.snippet.md{5-9})
 
-- [View Detail](../markdown/include.md)
+- [Посмотреть детали](../markdown/include.md)
 
-#### Code Demo
+#### Демонстрация кода
 
 ::: normal-demo A normal demo
 
@@ -400,19 +400,19 @@ span {
 
 :::
 
-- [View Detail](../markdown/demo.md)
+- [Посмотреть детали](../markdown/demo.md)
 
-#### Stylize
+#### Стилизация
 
 <!-- markdownlint-disable MD033 -->
 
 Setting this to a invalid stytax <span style="color:red">doesn't</span> have any effect.
 
-- [View Detail](../markdown/stylize.md)
+- [Посмотреть детали](../markdown/stylize.md)
 
 <!-- markdownlint-enable MD033 -->
 
-#### Presentation
+#### Презентация
 
 @slidestart
 
@@ -445,6 +445,6 @@ $$
 
 @slideend
 
-- [View Detail](../markdown/presentation.md)
+- [Посмотреть детали](../markdown/presentation.md)
 
 [md-enhance]: https://vuepress-theme-hope.github.io/v2/md-enhance/

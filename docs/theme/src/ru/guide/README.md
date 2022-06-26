@@ -3,9 +3,9 @@ title: Руководство
 icon: creative
 index: false
 category:
-  - Intro
+  - Вступление
 tag:
-  - Intro
+  - Вступление
 ---
 
 ::: tip
@@ -36,7 +36,7 @@ tag:
 - [Выделение](markdown/mark.md)
 - [Диаграмма](markdown/chart.md)
 - [ECharts](markdown/echarts.md)
-- [FlowChart](markdown/flowchart.md)
+- [Блок-схема](markdown/flowchart.md)
 - [Поддержка Tex](markdown/tex.md)
 - [Диаграмма Mermaid](markdown/mermaid.md)
 - [Включить файл](markdown/include.md)
