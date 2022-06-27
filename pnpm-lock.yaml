@@ -1114,7 +1114,7 @@ importers:
       execa: ^5.1.1
       ora: ^5.4.1
       rimraf: 3.0.2
-      vite: 2.9.12
+      vite: 2.9.13
       vue: ^3.2.37
       vue-router: ^4.0.16
     dependencies:
@@ -1134,7 +1134,7 @@ importers:
       '@vuepress/bundler-webpack': 2.0.0-beta.48
       '@vuepress/core': 2.0.0-beta.48
       rimraf: 3.0.2
-      vite: 2.9.12
+      vite: 2.9.13
 
   packages/sitemap2:
     specifiers:
@@ -3327,14 +3327,14 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: true
 
-  /@vitejs/plugin-vue/2.3.3_vite@2.9.12+vue@3.2.37:
+  /@vitejs/plugin-vue/2.3.3_vite@2.9.13+vue@3.2.37:
     resolution: {integrity: sha512-SmQLDyhz+6lGJhPELsBdzXGc+AcaT8stgkbiTFGpXPe8Tl1tJaBw1A6pxDqDuRsVkD8uscrkx3hA7QDOoKYtyw==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       vite: ^2.5.10
       vue: ^3.2.25
     dependencies:
-      vite: 2.9.12
+      vite: 2.9.13
       vue: 3.2.37
 
   /@vue/compiler-core/3.2.37:
@@ -3437,7 +3437,7 @@ packages:
   /@vuepress/bundler-vite/2.0.0-beta.48:
     resolution: {integrity: sha512-ORT1cY2ScBWVuN/oCa5z0GqkbpdDmy6Pf0oe3GdiPA/w0kUbKeUPrWGDGHINqrSyvN0h5GbmLbvw6jSeUr2gAQ==}
     dependencies:
-      '@vitejs/plugin-vue': 2.3.3_vite@2.9.12+vue@3.2.37
+      '@vitejs/plugin-vue': 2.3.3_vite@2.9.13+vue@3.2.37
       '@vuepress/client': 2.0.0-beta.48
       '@vuepress/core': 2.0.0-beta.48
       '@vuepress/shared': 2.0.0-beta.48
@@ -3446,7 +3446,7 @@ packages:
       connect-history-api-fallback: 1.6.0
       postcss: 8.4.14
       rollup: 2.75.6
-      vite: 2.9.12
+      vite: 2.9.13
       vue: 3.2.37
       vue-router: 4.0.16_vue@3.2.37
     transitivePeerDependencies:
@@ -3458,7 +3458,7 @@ packages:
   /@vuepress/bundler-vite/2.0.0-beta.48_sass@1.52.3:
     resolution: {integrity: sha512-ORT1cY2ScBWVuN/oCa5z0GqkbpdDmy6Pf0oe3GdiPA/w0kUbKeUPrWGDGHINqrSyvN0h5GbmLbvw6jSeUr2gAQ==}
     dependencies:
-      '@vitejs/plugin-vue': 2.3.3_vite@2.9.12+vue@3.2.37
+      '@vitejs/plugin-vue': 2.3.3_vite@2.9.13+vue@3.2.37
       '@vuepress/client': 2.0.0-beta.48
       '@vuepress/core': 2.0.0-beta.48
       '@vuepress/shared': 2.0.0-beta.48
@@ -3467,7 +3467,7 @@ packages:
       connect-history-api-fallback: 1.6.0
       postcss: 8.4.14
       rollup: 2.75.6
-      vite: 2.9.12_sass@1.52.3
+      vite: 2.9.13_sass@1.52.3
       vue: 3.2.37
       vue-router: 4.0.16_vue@3.2.37
     transitivePeerDependencies:
@@ -6411,7 +6411,7 @@ packages:
       webpack:
         optional: true
     dependencies:
-      esbuild: 0.14.43
+      esbuild: 0.14.47
       joycon: 3.1.1
       json5: 2.2.1
       loader-utils: 2.0.2
@@ -11596,9 +11596,33 @@ packages:
       rollup: 2.75.7
     optionalDependencies:
       fsevents: 2.3.2
+    dev: true
 
-  /vite/2.9.12_sass@1.52.3:
-    resolution: {integrity: sha512-suxC36dQo9Rq1qMB2qiRorNJtJAdxguu5TMvBHOc/F370KvqAe9t48vYp+/TbPKRNrMh/J55tOUmkuIqstZaew==}
+  /vite/2.9.13:
+    resolution: {integrity: sha512-AsOBAaT0AD7Mhe8DuK+/kE4aWYFMx/i0ZNi98hJclxb4e0OhQcZYUrvLjIaQ8e59Ui7txcvKMiJC1yftqpQoDw==}
+    engines: {node: '>=12.2.0'}
+    hasBin: true
+    peerDependencies:
+      less: '*'
+      sass: '*'
+      stylus: '*'
+    peerDependenciesMeta:
+      less:
+        optional: true
+      sass:
+        optional: true
+      stylus:
+        optional: true
+    dependencies:
+      esbuild: 0.14.47
+      postcss: 8.4.14
+      resolve: 1.22.1
+      rollup: 2.75.7
+    optionalDependencies:
+      fsevents: 2.3.2
+
+  /vite/2.9.13_sass@1.52.3:
+    resolution: {integrity: sha512-AsOBAaT0AD7Mhe8DuK+/kE4aWYFMx/i0ZNi98hJclxb4e0OhQcZYUrvLjIaQ8e59Ui7txcvKMiJC1yftqpQoDw==}
     engines: {node: '>=12.2.0'}
     hasBin: true
     peerDependencies:
