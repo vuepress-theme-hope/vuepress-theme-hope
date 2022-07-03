@@ -22,7 +22,7 @@ importers:
       concurrently: 7.2.2
       cpx2: 4.2.0
       cross-env: 7.0.3
-      cz-git: 1.3.7
+      cz-git: 1.3.9
       eslint: 8.18.0
       eslint-config-prettier: 8.5.0
       eslint-plugin-prettier: 4.2.1
@@ -69,7 +69,7 @@ importers:
       concurrently: 7.2.2
       cpx2: 4.2.0
       cross-env: 7.0.3
-      cz-git: 1.3.7
+      cz-git: 1.3.9
       eslint: 8.18.0
       eslint-config-prettier: 8.5.0_eslint@8.18.0
       eslint-plugin-prettier: 4.2.1_xu6ewijrtliw5q5lksq5uixwby
@@ -5359,8 +5359,8 @@ packages:
       - '@swc/wasm'
     dev: true
 
-  /cz-git/1.3.7:
-    resolution: {integrity: sha512-DNI2mOwb3QIEj/XBro0hlD1hg8+wZtZ+5rhUIKL4i93iFqTJe/qJTSV18roivBCnMDeFK4evfXKcBz3r4udLsA==}
+  /cz-git/1.3.9:
+    resolution: {integrity: sha512-S7XpI+XtJ/foh9MYB1pBB+YGsQyzhQpUzmNaN3Y17KeYf0EvRQt0OR7GVf3xZ5clLEdQh2nY5TjdGZ4ctXUTuA==}
     dev: true
 
   /d3-array/1.2.4:
