@@ -32,7 +32,7 @@ importers:
       inquirer: 9.0.0
       lint-staged: 13.0.3
       markdownlint-cli: 0.31.1
-      npm-check-updates: 15.0.5
+      npm-check-updates: 15.2.0
       ora: 6.1.0
       prettier: 2.7.1
       rollup: 2.75.7
@@ -79,7 +79,7 @@ importers:
       inquirer: 9.0.0
       lint-staged: 13.0.3
       markdownlint-cli: 0.31.1
-      npm-check-updates: 15.0.5
+      npm-check-updates: 15.2.0
       ora: 6.1.0
       prettier: 2.7.1
       rollup: 2.75.7
@@ -9219,8 +9219,8 @@ packages:
       npm-normalize-package-bin: 1.0.1
     dev: true
 
-  /npm-check-updates/15.0.5:
-    resolution: {integrity: sha512-LfO0IwdUQuFuRz/v4Z+XMkXzC1hOtmtM/TMU9YIg32EQcLqfIV8ixYWop1AM799SZKWEA53iUzwdu1wgWACbRg==}
+  /npm-check-updates/15.2.0:
+    resolution: {integrity: sha512-QcNQE3FyOsolWD1Nc+DRryffuBf68fXqVDvN5gBMk3BSaRQ+urZCTfm9By0VuPPA2vrDBRPVgYZB+8L9UN4Avw==}
     engines: {node: '>=14.14'}
     hasBin: true
     dependencies:
@@ -9242,7 +9242,7 @@ packages:
       pacote: 13.6.1
       parse-github-url: 1.0.2
       progress: 2.0.3
-      prompts-ncu: 2.5.0
+      prompts-ncu: 2.5.1
       rc-config-loader: 4.1.0
       remote-git-tags: 3.0.0
       rimraf: 3.0.2
@@ -9900,8 +9900,8 @@ packages:
       retry: 0.12.0
     dev: true
 
-  /prompts-ncu/2.5.0:
-    resolution: {integrity: sha512-a9WdInrG7zSlmfzDszmF3r8O4grZRI8+ChV0LtagHRT4dH7F+kxkrwFPGxeS83FZgAGBx3AXoLP+c4kGJb1P3w==}
+  /prompts-ncu/2.5.1:
+    resolution: {integrity: sha512-Hdd7GgV7b76Yh9FP9HL1D9xqtJCJdVPpiM2vDtuoc8W1KfweJe15gutFYmxkq83ViFaagFM8K0UcPCQ/tZq8bA==}
     engines: {node: '>= 6'}
     dependencies:
       kleur: 4.1.4
