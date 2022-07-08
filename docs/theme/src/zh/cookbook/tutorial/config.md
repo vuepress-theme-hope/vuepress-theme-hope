@@ -71,7 +71,7 @@ module.exports = defineUserConfig({
 
 ::: info 站点配置
 
-你可以前往前往 [VuePress2 → 参考 → 配置](https://v2.vuepress.vuejs.org/zh/reference/config.html) 查看所有 VuePress 配置。
+你可以前往 [VuePress2 → 参考 → 配置](https://v2.vuepress.vuejs.org/zh/reference/config.html) 查看所有 VuePress 配置。
 
 :::
 
