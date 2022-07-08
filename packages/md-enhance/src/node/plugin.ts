@@ -194,9 +194,10 @@ export const mdEnhancePlugin =
           md.use(vPre);
         if (texEnable) md.use(katex, katexOptions);
         if (getStatus("include"))
-          md.use(include, [
-            typeof options.include === "function" ? options.include : undefined,
-          ]);
+          md.use(
+            include,
+            typeof options.include === "object" ? options.include : {}
+          );
         if (getStatus("stylize")) md.use(stylize, options.stylize);
 
         // features
