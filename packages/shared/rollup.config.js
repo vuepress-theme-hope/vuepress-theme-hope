@@ -16,14 +16,7 @@ export default [
   }),
   ...rollupTypescript("client/index", {
     resolve: true,
-    external: [
-      "@vuepress/client",
-      "@vuepress/plugin-theme-data/lib/client",
-      "ora",
-      "vue",
-      "vue-router",
-      /\.scss$/,
-    ],
+    external: ["@vuepress/client", "ora", "vue", "vue-router", /\.scss$/],
     dtsExternal: [/\.scss$/],
     copy: [["client/styles", "client"]],
   }),

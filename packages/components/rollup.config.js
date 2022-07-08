@@ -18,7 +18,6 @@ export default [
   ...rollupTypescript("client/components/BackToTop", {
     external: [
       "@vuepress/client",
-      "@vuepress/plugin-theme-data/lib/client",
       "@vueuse/core",
       "vue",
       "vuepress-shared/lib/client",

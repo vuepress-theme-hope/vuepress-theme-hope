@@ -45,10 +45,10 @@
     "@vuepress/client": "2.0.0-beta.48",
     "@vuepress/utils": "2.0.0-beta.48",
     "@waline/client": "^2.6.1",
-    "giscus": "^1.0.5",
+    "giscus": "^1.0.6",
     "twikoo": "^1.5.11",
     "vue": "^3.2.37",
-    "vue-router": "^4.0.16",
+    "vue-router": "^4.1.1",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*"
   },

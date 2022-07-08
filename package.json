@@ -66,7 +66,7 @@
     "@rollup/plugin-node-resolve": "13.3.0",
     "@rollup/plugin-typescript": "8.3.3",
     "@types/inquirer": "8.2.1",
-    "@types/node": "18.0.0",
+    "@types/node": "18.0.3",
     "@typescript-eslint/eslint-plugin": "5.30.5",
     "@typescript-eslint/parser": "5.30.5",
     "@vue/eslint-config-typescript": "11.0.0",
@@ -87,10 +87,10 @@
     "inquirer": "9.0.0",
     "lint-staged": "13.0.3",
     "markdownlint-cli": "0.31.1",
-    "npm-check-updates": "15.2.0",
-    "ora": "6.1.0",
+    "npm-check-updates": "15.2.1",
+    "ora": "6.1.2",
     "prettier": "2.7.1",
-    "rollup": "2.75.7",
+    "rollup": "2.76.0",
     "rollup-plugin-copy": "3.4.0",
     "rollup-plugin-dts": "4.2.2",
     "rollup-plugin-terser": "7.0.2",
@@ -104,7 +104,7 @@
     "ts-node": "10.8.2",
     "tslib": "2.4.0",
     "typescript": "4.7.4",
-    "vitest": "0.17.0"
+    "vitest": "0.17.1"
   },
   "packageManager": "pnpm@7.5.0",
   "engines": {
