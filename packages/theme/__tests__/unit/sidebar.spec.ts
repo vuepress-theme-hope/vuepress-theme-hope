@@ -40,15 +40,7 @@ describe("should handle order", () => {
         { title: "2", order: null },
         { title: "3", order: 1 },
         { title: "4", order: null },
-      ].sort((itemA, itemB) => {
-        console.log(
-          itemA.order,
-          itemB.order,
-          orderSort(itemA.order, itemB.order)
-        );
-
-        return orderSort(itemA.order, itemB.order);
-      })
+      ].sort((itemA, itemB) => orderSort(itemA.order, itemB.order))
     ).toEqual([
       { title: "3", order: 1 },
       { title: "1", order: null },
@@ -62,15 +54,7 @@ describe("should handle order", () => {
         { title: "2", order: 1 },
         { title: "3", order: 1 },
         { title: "4", order: null },
-      ].sort((itemA, itemB) => {
-        console.log(
-          itemA.order,
-          itemB.order,
-          orderSort(itemA.order, itemB.order)
-        );
-
-        return orderSort(itemA.order, itemB.order);
-      })
+      ].sort((itemA, itemB) => orderSort(itemA.order, itemB.order))
     ).toEqual([
       { title: "2", order: 1 },
       { title: "3", order: 1 },
@@ -84,15 +68,7 @@ describe("should handle order", () => {
         { title: "2", order: 2 },
         { title: "3", order: 1 },
         { title: "4", order: null },
-      ].sort((itemA, itemB) => {
-        console.log(
-          itemA.order,
-          itemB.order,
-          orderSort(itemA.order, itemB.order)
-        );
-
-        return orderSort(itemA.order, itemB.order);
-      })
+      ].sort((itemA, itemB) => orderSort(itemA.order, itemB.order))
     ).toEqual([
       { title: "3", order: 1 },
       { title: "2", order: 2 },
@@ -106,15 +82,7 @@ describe("should handle order", () => {
         { title: "2", order: 3 },
         { title: "3", order: 2 },
         { title: "4", order: 1 },
-      ].sort((itemA, itemB) => {
-        console.log(
-          itemA.order,
-          itemB.order,
-          orderSort(itemA.order, itemB.order)
-        );
-
-        return orderSort(itemA.order, itemB.order);
-      })
+      ].sort((itemA, itemB) => orderSort(itemA.order, itemB.order))
     ).toEqual([
       { title: "4", order: 1 },
       { title: "3", order: 2 },
@@ -130,15 +98,7 @@ describe("should handle order", () => {
         { title: "2", order: null },
         { title: "3", order: -1 },
         { title: "4", order: null },
-      ].sort((itemA, itemB) => {
-        console.log(
-          itemA.order,
-          itemB.order,
-          orderSort(itemA.order, itemB.order)
-        );
-
-        return orderSort(itemA.order, itemB.order);
-      })
+      ].sort((itemA, itemB) => orderSort(itemA.order, itemB.order))
     ).toEqual([
       { title: "1", order: null },
       { title: "2", order: null },
@@ -152,15 +112,7 @@ describe("should handle order", () => {
         { title: "2", order: -1 },
         { title: "3", order: -1 },
         { title: "4", order: null },
-      ].sort((itemA, itemB) => {
-        console.log(
-          itemA.order,
-          itemB.order,
-          orderSort(itemA.order, itemB.order)
-        );
-
-        return orderSort(itemA.order, itemB.order);
-      })
+      ].sort((itemA, itemB) => orderSort(itemA.order, itemB.order))
     ).toEqual([
       { title: "1", order: null },
       { title: "4", order: null },
@@ -174,15 +126,7 @@ describe("should handle order", () => {
         { title: "2", order: -1 },
         { title: "3", order: -2 },
         { title: "4", order: null },
-      ].sort((itemA, itemB) => {
-        console.log(
-          itemA.order,
-          itemB.order,
-          orderSort(itemA.order, itemB.order)
-        );
-
-        return orderSort(itemA.order, itemB.order);
-      })
+      ].sort((itemA, itemB) => orderSort(itemA.order, itemB.order))
     ).toEqual([
       { title: "1", order: null },
       { title: "4", order: null },
@@ -196,15 +140,7 @@ describe("should handle order", () => {
         { title: "2", order: -2 },
         { title: "3", order: -3 },
         { title: "4", order: -4 },
-      ].sort((itemA, itemB) => {
-        console.log(
-          itemA.order,
-          itemB.order,
-          orderSort(itemA.order, itemB.order)
-        );
-
-        return orderSort(itemA.order, itemB.order);
-      })
+      ].sort((itemA, itemB) => orderSort(itemA.order, itemB.order))
     ).toEqual([
       { title: "4", order: -4 },
       { title: "3", order: -3 },
@@ -221,15 +157,7 @@ describe("should handle order", () => {
         { title: "3", order: -1 },
         { title: "4", order: 1 },
         { title: "5", order: null },
-      ].sort((itemA, itemB) => {
-        console.log(
-          itemA.order,
-          itemB.order,
-          orderSort(itemA.order, itemB.order)
-        );
-
-        return orderSort(itemA.order, itemB.order);
-      })
+      ].sort((itemA, itemB) => orderSort(itemA.order, itemB.order))
     ).toEqual([
       { title: "4", order: 1 },
       { title: "1", order: null },
