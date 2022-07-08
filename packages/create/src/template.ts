@@ -70,7 +70,9 @@ ${
       - name: ${lang === "简体中文" ? "构建文档" : "Build Docs"}
         env:
           NODE_OPTIONS: --max_old_space_size=4096
-        run: ${bin} run docs:build
+        run: |-
+          ${bin} run docs:build
+          > ${join(dir, ".vuepress/dist/.nojekyll").replace(/\\/g, "/")}
 
       - name: ${lang === "简体中文" ? "部署文档" : "Deploy Docs"}
         uses: JamesIves/github-pages-deploy-action@v4
