@@ -1109,7 +1109,7 @@ importers:
       '@vuepress/utils': 2.0.0-beta.48
       dayjs: ^1.11.3
       execa: ^5.1.1
-      ora: ^5.4.1
+      ora: ^6.0.0
       rimraf: 3.0.2
       vite: 2.9.14
       vue: ^3.2.37
@@ -1121,7 +1121,7 @@ importers:
       '@vuepress/utils': 2.0.0-beta.48
       dayjs: 1.11.3
       execa: 5.1.1
-      ora: 5.4.1
+      ora: 6.1.2
       vue: 3.2.37
       vue-router: 4.1.1_vue@3.2.37
     devDependencies:
