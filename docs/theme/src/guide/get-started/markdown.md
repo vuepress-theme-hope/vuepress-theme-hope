@@ -45,7 +45,7 @@ By using [`vuepress-plugin-md-enhance`][md-enhance], the theme extends more Mark
 
 :::: tip Enable all
 
-You can set `plugins.mdEnhance.enableAll: true` in theme options to enable all features of the [md-enhance][md-enhance] plugin.
+You can set `plugins.mdEnhance.enableAll: true` in theme options to enable all features of the [md-enhance][md-enhance] plugin to try them.
 
 ::: code-tabs#language
 
