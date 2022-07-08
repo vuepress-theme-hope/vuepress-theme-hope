@@ -2,6 +2,7 @@ import { describe, it, expect, vi } from "vitest";
 import { createMarkdown } from "@vuepress/markdown";
 import MarkdownIt from "markdown-it";
 import { attrs, getAttrs } from "../../src/node/markdown-it/attrs";
+import { katex } from "../../src/node/markdown-it/katex";
 
 import type { AttrsOptions } from "../../src/shared";
 
@@ -755,4 +756,12 @@ it("should not break code blocks line highlight", () => {
   const src = "```{1-3}\nfor i in range(10):\n```";
 
   expect(markdownIt.render(src)).not.toContain("1-3");
+});
+
+it("should work with katex plugin", () => {
+  const markdownIt = createMarkdown().use(attrs).use(katex);
+
+  expect(markdownIt.render("$a^{3}$")).toBe(
+    '<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>a</mi><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">a^{3}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span></span></p>\n'
+  );
 });
