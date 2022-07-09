@@ -63,33 +63,37 @@ export interface HopeThemeMetaLocateData {
   toc: string;
 
   /**
-   * Page nav - previous link
+   * Previous link
+   *
+   * 上一页
    */
   prev: string;
 
   /**
-   * Page nav - next link
+   * Next link
+   *
+   * 下一页
    */
   next: string;
 
   /**
-   * Page meta - last updated config
+   * Last updated Text
    *
-   * The text to replace the default "Last Updated"
+   * 最后更新时间
    */
   lastUpdated: string;
 
   /**
-   * Page meta - contributors config
+   * Contributors text
    *
-   * The text to replace the default "Contributors"
+   * 贡献者
    */
   contributors: string;
 
   /**
-   * Page meta - contributors config
+   * Edit link text
    *
-   * The text to replace the default "Edit this page"
+   * 编辑此页
    */
   editLink: string;
 }

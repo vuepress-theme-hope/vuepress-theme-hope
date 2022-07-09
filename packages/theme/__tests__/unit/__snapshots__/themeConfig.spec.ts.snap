@@ -11,9 +11,9 @@ exports[`should generate themeConfig correcly > Should contain basic properties 
       "blog": {},
       "encryptLocales": {
         "errorHint": "Please enter the correct password!",
+        "iconLabel": "Page Encrypted",
         "placeholder": "Enter password",
         "remember": "Remember password",
-        "title": "Page Encrypted",
       },
       "headerDepth": 2,
       "hideSiteNameonMobile": true,
@@ -39,7 +39,6 @@ exports[`should generate themeConfig correcly > Should contain basic properties 
       "navbarLocales": {
         "langName": "English",
         "selectLangAriaLabel": "Select language",
-        "selectLangText": "Language",
       },
       "outlookLocales": {
         "darkmode": "Theme Mode",
@@ -78,9 +77,9 @@ exports[`should generate themeConfig correcly > Should handle single language 1`
       "blog": {},
       "encryptLocales": {
         "errorHint": "Please enter the correct password!",
+        "iconLabel": "Page Encrypted",
         "placeholder": "Enter password",
         "remember": "Remember password",
-        "title": "Page Encrypted",
       },
       "headerDepth": 2,
       "hideSiteNameonMobile": true,
@@ -110,7 +109,6 @@ exports[`should generate themeConfig correcly > Should handle single language 1`
       "navbarLocales": {
         "langName": "English",
         "selectLangAriaLabel": "Select language",
-        "selectLangText": "Language",
       },
       "outlookLocales": {
         "darkmode": "Theme Mode",
@@ -152,9 +150,9 @@ exports[`should generate themeConfig correcly > locale should have higher proper
       "blog": {},
       "encryptLocales": {
         "errorHint": "Please enter the correct password!",
+        "iconLabel": "Page Encrypted",
         "placeholder": "Enter password",
         "remember": "Remember password",
-        "title": "Page Encrypted",
       },
       "headerDepth": 2,
       "hideSiteNameonMobile": true,
@@ -185,7 +183,6 @@ exports[`should generate themeConfig correcly > locale should have higher proper
       "navbarLocales": {
         "langName": "English",
         "selectLangAriaLabel": "Select language",
-        "selectLangText": "Language",
       },
       "outlookLocales": {
         "darkmode": "Theme Mode",
@@ -224,9 +221,9 @@ exports[`should generate themeConfig correcly > root only option should not appe
       "blog": {},
       "encryptLocales": {
         "errorHint": "Please enter the correct password!",
+        "iconLabel": "Page Encrypted",
         "placeholder": "Enter password",
         "remember": "Remember password",
-        "title": "Page Encrypted",
       },
       "headerDepth": 2,
       "hideSiteNameonMobile": true,
@@ -252,7 +249,6 @@ exports[`should generate themeConfig correcly > root only option should not appe
       "navbarLocales": {
         "langName": "English",
         "selectLangAriaLabel": "Select language",
-        "selectLangText": "Language",
       },
       "outlookLocales": {
         "darkmode": "Theme Mode",
@@ -291,9 +287,9 @@ exports[`should generate themeConfig correcly > should fallback to root if local
       "blog": {},
       "encryptLocales": {
         "errorHint": "Please enter the correct password!",
+        "iconLabel": "Page Encrypted",
         "placeholder": "Enter password",
         "remember": "Remember password",
-        "title": "Page Encrypted",
       },
       "headerDepth": 2,
       "hideSiteNameonMobile": true,
@@ -323,7 +319,6 @@ exports[`should generate themeConfig correcly > should fallback to root if local
       "navbarLocales": {
         "langName": "English",
         "selectLangAriaLabel": "Select language",
-        "selectLangText": "Language",
       },
       "outlookLocales": {
         "darkmode": "Theme Mode",

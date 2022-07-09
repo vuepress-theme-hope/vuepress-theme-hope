@@ -5,7 +5,6 @@ export const brLocale: HopeThemeLocaleData = {
 
   navbarLocales: {
     langName: "Português",
-    selectLangText: "Língua",
     selectLangAriaLabel: "Selecione a língua",
   },
 
@@ -55,7 +54,7 @@ export const brLocale: HopeThemeLocaleData = {
   },
 
   encryptLocales: {
-    title: "Page Encrypted",
+    iconLabel: "Page Encrypted",
     placeholder: "Entre a senha",
     remember: "Remember password",
     errorHint: "Por favor, entre a senha correta!",

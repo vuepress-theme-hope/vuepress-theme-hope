@@ -5,7 +5,6 @@ export const ukLocale: HopeThemeLocaleData = {
 
   navbarLocales: {
     langName: "Українська",
-    selectLangText: "Мова",
     selectLangAriaLabel: "Оберіть мову",
   },
 
@@ -55,7 +54,7 @@ export const ukLocale: HopeThemeLocaleData = {
   },
 
   encryptLocales: {
-    title: "Page Encrypted",
+    iconLabel: "Page Encrypted",
     placeholder: "Enter password",
     remember: "Remember password",
     errorHint: "Будь ласка, введіть правильний пароль!",
