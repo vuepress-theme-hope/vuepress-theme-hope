@@ -1,6 +1,6 @@
 {
   "name": "comment2-demo",
-  "version": "2.0.0-beta.84",
+  "version": "2.0.0-beta.85",
   "private": true,
   "description": "Demo for vuepress-plugin-comment2",
   "license": "MIT",
