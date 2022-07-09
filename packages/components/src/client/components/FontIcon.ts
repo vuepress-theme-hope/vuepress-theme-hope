@@ -18,10 +18,14 @@ const FontIcon: FunctionalComponent<FontIconProps> = ({
   icon
     ? h("span", {
         class: ["icon", `${ICON_PREFIX}${icon}`],
-        style: {
-          ...(color ? { color } : {}),
-          ...(size ? { "font-size": `${size}px` } : {}),
-        },
+        ...(color || size
+          ? {
+              style: {
+                ...(color ? { color } : {}),
+                ...(size ? { "font-size": `${size}px` } : {}),
+              },
+            }
+          : {}),
       })
     : null;
 
