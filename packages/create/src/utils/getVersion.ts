@@ -1,15 +1,16 @@
 import { get } from "https";
 
-import { bin } from "./bin";
+import type { PackageManager } from "./packageManager";
 
-export const checkForNextVersion = async (
+export const getNextVersion = async (
+  packageManager: PackageManager,
   packageName: string
 ): Promise<string> => {
   const getVersionInfo = (): Promise<string> =>
     new Promise((resolve, reject) => {
       get(
         `${
-          bin === "npm"
+          packageManager === "npm"
             ? "https://registry.npmjs.org"
             : "https://registry.yarnpkg.com"
         }/-/package/${packageName}/dist-tags`,

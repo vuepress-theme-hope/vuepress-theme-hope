@@ -3,11 +3,10 @@ import { cac } from "cac";
 import { execaCommand, execaCommandSync } from "execa";
 import inquirer from "inquirer";
 
-import { bin } from "./bin";
-import { getLanguage } from "./i18n";
+import { getLanguage, generateTemplate } from "./config";
 import { createPackageJson } from "./packageJson";
 import { getRegistry } from "./registry";
-import { generateTemplate } from "./template";
+import { getPackageManager } from "./utils";
 // eslint-disable-next-line
 // @ts-ignore
 import pkg from "../package.json";
@@ -27,33 +26,37 @@ cli
     // get language
     const { lang, message } = await getLanguage();
 
+    // get packageManager
+    const packageManager = await getPackageManager(message.packageManager);
+
     // check if the user is a noob and warn him 🤪
     if (dir.startsWith("[") && dir.endsWith("]"))
-      return console.log(message.dirError);
+      return console.log(message.dirError(packageManager));
 
     console.log(message.getVersion);
 
-    await createPackageJson(dir, message);
+    await createPackageJson(packageManager, dir, message);
 
-    await generateTemplate(dir, lang, message);
+    await generateTemplate(packageManager, dir, lang, message);
 
-    /**
+    /*
      * Install deps
      */
 
-    const registry = await getRegistry(lang);
+    const registry =
+      packageManager === "pnpm" ? "" : await getRegistry(packageManager, lang);
 
     console.log(message.install);
     console.warn(message.wait);
 
     execaCommandSync(
-      `${bin} install ${bin === "pnpm" ? "" : `--registry ${registry}`}`,
+      `${packageManager} install ${registry ? "" : `--registry ${registry}`}`,
       { stdout: "inherit" }
     );
 
     console.log(message.success);
 
-    /**
+    /*
      * Open dev server
      */
 
@@ -69,10 +72,10 @@ cli
     if (choice) {
       console.log(message.devServer);
 
-      await execaCommand(`${bin} run docs:dev`, {
+      await execaCommand(`${packageManager} run docs:dev`, {
         stdout: "inherit",
       });
-    } else console.log(message.hint);
+    } else console.log(message.hint(packageManager));
   });
 
 cli.help(() => [
