@@ -1,18 +1,18 @@
 ---
-title: Custom container
+title: Пользовательский контейнер
 icon: customize
 category:
   - Markdown
 tag:
-  - Container
+  - Контейнер
   - Markdown
 ---
 
-The theme adds tip, note, info, warning, danger and detail container.
+Тема добавляет подсказку, примечание, информацию, предупреждение, опасность и контейнер с подробностями.
 
 <!-- more -->
 
-## Config
+## Конфиг
 
 ::: code-tabs#language
 
@@ -55,35 +55,35 @@ module.exports = {
 
 :::
 
-## Demo
+## Демо
 
 ::: info
-Information container
+Контейнер с информацией
 :::
 
 ::: note
-Note container
+Контейнер с примечанием
 :::
 
 ::: tip
-Tip container
+Контейнер с советом
 :::
 
 ::: warning
-Warning container
+Контейнер с предупреждением
 :::
 
 ::: danger
-Dangerous container
+Контейнер с опасностью
 :::
 
 ::: details
-Details container
+Контейнер с деталями
 :::
 
-::: info Custom Title
+::: info Пользовательский заголовок
 
-A custom information container with `code`, [link](#markdown).
+Пользовательский информационный контейнер с `code`, [link](#markdown).
 
 ```js
 const a = 1;
@@ -91,19 +91,9 @@ const a = 1;
 
 :::
 
-::: note Custom Title
+::: note Пользовательский заголовок
 
-A custom note container with `code`, [link](#markdown).
-
-```js
-const a = 1;
-```
-
-:::
-
-::: tip Custom Title
-
-A custom tip container with `code`, [link](#markdown).
+Пользовательский контейнер для заметок с `code`, [link](#markdown).
 
 ```js
 const a = 1;
@@ -111,19 +101,9 @@ const a = 1;
 
 :::
 
-::: warning Custom Title
+::: tip Пользовательский заголовок
 
-A custom warning container with `code`, [link](#markdown).
-
-```js
-const a = 1;
-```
-
-:::
-
-::: danger Custom Title
-
-A custom danger container with `code`, [link](#markdown).
+Пользовательский контейнер подсказки с `code`, [link](#markdown).
 
 ```js
 const a = 1;
@@ -131,9 +111,9 @@ const a = 1;
 
 :::
 
-::: details Custom Title
+::: warning Пользовательский заголовок
 
-A custom details container with `code`, [link](#markdown).
+Пользовательский контейнер с предупреждением с `code`, [link](#markdown).
 
 ```js
 const a = 1;
@@ -141,58 +121,69 @@ const a = 1;
 
 :::
 
-::: info Custom info
+::: danger Пользовательский заголовок
+
+Пользовательский контейнер опасности с `code`, [link](#markdown).
+
+```js
+const a = 1;
+```
+
 :::
 
-::: note Custom note
+::: details Пользовательский заголовок
+
+Пользовательский контейнер с деталями с `code`, [link](#markdown).
+
+```js
+const a = 1;
+```
+
 :::
 
-::: tip Custom tip
+::: info Пользовательская информация
 :::
 
-::: warning Custom warning
+::: note Пользовательская заметка
 :::
 
-::: danger Custom danger
+::: tip Пользовательский совет
+:::
+
+::: warning Пользовательское предупреждение
+:::
+
+::: danger Пользовательская опасность
 :::
 
 ````md
 ::: info
-Information container
+Контейнер с информацией
 :::
 
 ::: note
-Note container
+Контейнер с примечанием
 :::
 
 ::: tip
-Tip container
+Контейнер с советом
 :::
 
 ::: warning
-Warning container
+Контейнер с предупреждением
 :::
 
 ::: danger
-Dangerous container
+Контейнер с опасностью
 :::
 
 ::: details
 Details container
 :::
 
-::: info Custom Title
+::: info Пользовательский заголовок
 
-A custom information container with `code`, [link](#markdown).
-
-```js
-const a = 1;
-```
-
-:::
-
-::: note Custom Title
-A custom note container with `code`, [link](#markdown).
+Пользовательский информационный контейнер с `code`, [link](#markdown).
 
 ```js
 const a = 1;
@@ -200,19 +191,8 @@ const a = 1;
 
 :::
 
-::: tip Custom Title
-
-A custom tip container with `code`, [link](#markdown).
-
-```js
-const a = 1;
-```
-
-:::
-
-::: warning Custom Title
-
-A custom warning container with `code`, [link](#markdown).
+::: note Пользовательский заголовок
+Пользовательский контейнер для заметок с `code`, [link](#markdown).
 
 ```js
 const a = 1;
@@ -220,19 +200,9 @@ const a = 1;
 
 :::
 
-::: danger Custom Title
+::: tip Пользовательский заголовок
 
-A custom danger container with `code`, [link](#markdown).
-
-```js
-const a = 1;
-```
-
-:::
-
-::: details Custom Title
-
-A custom details container with `code`, [link](#markdown).
+Пользовательский контейнер подсказки с `code`, [link](#markdown).
 
 ```js
 const a = 1;
@@ -240,18 +210,48 @@ const a = 1;
 
 :::
 
-::: info Custom info
+::: warning Пользовательский заголовок
+
+Пользовательский контейнер с предупреждением с `code`, [link](#markdown).
+
+```js
+const a = 1;
+```
+
 :::
 
-::: note Custom note
+::: danger Пользовательский заголовок
+
+Пользовательский контейнер опасности с `code`, [link](#markdown).
+
+```js
+const a = 1;
+```
+
 :::
 
-::: tip Custom tip
+::: details Пользовательский заголовок
+
+Пользовательский контейнер с деталями с `code`, [link](#markdown).
+
+```js
+const a = 1;
+```
+
 :::
 
-::: warning Custom warning
+::: info Пользовательская информация
 :::
 
-::: danger Custom danger
+::: note Пользовательская заметка
+:::
+
+::: tip Пользовательский совет
+:::
+
+::: warning Пользовательское предупреждение
+:::
+
+::: danger Пользовательская опасность
 :::
 ````

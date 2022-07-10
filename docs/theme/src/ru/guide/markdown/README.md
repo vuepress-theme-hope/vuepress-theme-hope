@@ -1,65 +1,65 @@
 ---
-title: Markdown Enhance
+title: Расширение Markdown
 icon: markdown
 index: false
 dir:
   order: 3
 ---
 
-Besides Markdown syntaxes VuePress itself adds, `vuepress-theme-hope` enables more syntax in Markdown via [vuepress-plugin-md-enhance][md-enhance] plugin.
+Помимо синтаксисов Markdown, добавленных самим VuePress, `vuepress-theme-hope` включает дополнительный синтаксис в Markdown с помощью плагина [vuepress-plugin-md-enhance][md-enhance].
 
 <!-- more -->
 
-## Built-in syntax
+## Встроенный синтаксис
 
-- [Built-in Markdown extension](../../cookbook/vuepress/markdown.md)
+- [Встроенное расширение Markdown](../../cookbook/vuepress/markdown.md)
 
-## New Syntax
+## Новый синтаксис
 
-- [Custom Container](container.md)
+- [Пользовательский контейнер](container.md)
 
-- [Tabs](tabs.md)
+- [Вкладки](tabs.md)
 
-- [Code Tabs](code-tabs.md)
+- [Вкладки кода](code-tabs.md)
 
-- [Footnote](footnote.md)
+- [Сноска](footnote.md)
 
-- [Task list](tasklist.md)
+- [Список заданий](tasklist.md)
 
-- [Image Enhancement](image.md)
+- [Улучшение изображения](image.md)
 
-- [Custom Alignment](align.md)
+- [Пользовательское выравнивание](align.md)
 
-- [Custom Attributes](attrs.md)
+- [Пользовательские атрибуты](attrs.md)
 
-- [Superscript and subscript](sup-sub.md)
+- [Верхний и нижний индексы](sup-sub.md)
 
-- [Mark](mark.md)
+- [Выделение](mark.md)
 
-- [Chart](chart.md)
+- [График](chart.md)
 
 - [Echarts](echarts.md)
 
 - [Flowchart](flowchart.md)
 
-- [Mermaid Diagram](mermaid.md)
+- [Диаграмма Mermaid](mermaid.md)
 
 - [Tex](tex.md)
 
-- [Include Files](include.md)
+- [Включение файлов](include.md)
 
-- [Code demo](demo.md)
+- [Демонстрация кода](demo.md)
 
-- [Presentation](presentation.md)
+- [Презентация](presentation.md)
 
-- [Stylize](stylize.md)
+- [Стилизация](stylize.md)
 
-- [Components](components.md)
+- [Компоненты](components.md)
 
-- [Others](others.md)
+- [Другие](others.md)
 
-## Others
+## Другие
 
-- [External Import](external.md)
+- [Внешний импорт](external.md)
 
 [md-enhance]: https://vuepress-theme-hope.github.io/v2/md-enhance/

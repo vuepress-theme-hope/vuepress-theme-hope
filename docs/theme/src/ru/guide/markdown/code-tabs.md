@@ -1,19 +1,19 @@
 ---
-title: Code Tabs
+title: Вкладки кода
 icon: code
 index: 3
 category:
   - Markdown
 tag:
-  - Code Tabs
+  - Вкладки кода
   - Markdown
 ---
 
-The theme provides you you code tabs support.
+Тема предоставляет вам поддержку вкладок кода.
 
 <!-- more -->
 
-## Config
+## Конфиг
 
 ::: code-tabs#language
 
@@ -54,15 +54,15 @@ module.exports = {
 
 :::
 
-## Usage
+## Использование
 
-This is the same as tabs function, but it's special built for code blocks.
+Это то же самое, что и функция вкладок, но она создана специально для блоков кода.
 
-Only code fence after `@tab` marker is allowed inside code tabs, other markdown content will be ignored.
+Внутри вкладок кода допускается только ограждение кода после маркера `@tab`, остальное содержимое уценки будет игнорироваться.
 
-## Demo
+## Демо
 
-Install VuePress Theme Hope:
+Установите тему VuePress Theme Hope:
 
 ::: code-tabs#shell
 
@@ -86,7 +86,7 @@ npm i -D vuepress-theme-hope@next
 
 :::
 
-Install VuePress Plugin Markdown Enhance:
+Установите плагин VuePress Markdown Enhance:
 
 ::: code-tabs#shell
 

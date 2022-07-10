@@ -1,18 +1,18 @@
 ---
-title: Stylize
+title: Стилизация
 icon: style
 category:
   - Markdown
 tag:
-  - Stylize
+  - Стилизация
   - Markdown
 ---
 
-Create inline snippet by stylize inline tokens including changing tags, adding attributes and modifying content.
+Создавайте встроенный фрагмент, стилизуя встроенные токены, включая изменение тегов, добавление атрибутов и изменение содержимого.
 
 <!-- more -->
 
-## Config
+## Конфиг
 
 ::: code-tabs#language
 
@@ -57,15 +57,15 @@ module.exports = {
 
 :::
 
-## Usage
+## Использование
 
-The `stylize` receives an array, where each element accepts 2 options:
+`stylize` получает массив, где каждый элемент принимает 2 варианта:
 
-- `matcher`: should be `string` or `RegExp`.
+- `matcher`: должно быть `string` или `RegExp`.
 
-- `replacer`: a function cutomizing the matched token
+- `replacer`: функция, обрезающая совпадающий токен
 
-For example, you can use the following cofig to transform `*Recommanded*` into a Badge `<Badge type="tip">Recommanded</Badge>`:
+Например, вы можете использовать следующую конфигурацию для преобразования `*Recommanded*` в значок `<Badge type="tip">Recommanded</Badge>`:
 
 ::: code-tabs#language
 
@@ -132,7 +132,7 @@ module.exports = {
 
 <!-- markdownlint-disable MD033 -->
 
-Another example is you want a to set all the emphsis `n't` words to red color, so that `Setting this to a invalid stytax *doesn't* have any effect.` becomes: "Setting this to a invalid stytax <span style="color:red">doesn't</span> have any effect."
+Другой пример: вы хотите, чтобы все слова с эмфисом `n't` были окрашены в красный цвет, так что `Setting this to a invalid stytax *doesn't* have any effect.` становится: "Установка недопустимого ститакса <span style="color:red">не имеет</span> никакого эффекта."
 
 <!-- markdownlint-enable MD033 -->
 
@@ -197,14 +197,14 @@ module.exports = {
 
 :::
 
-If you want to skip some words in some pages, you can set `noStylize` in page frontmatter with an array containing content you don't want to stylize.
+Если вы хотите пропустить некоторые слова на некоторых страницах, вы можете установить `noStylize` во вступительной части страницы с массивом содержимого, которое вы не хотите стилизовать.
 
-::: info Performance
+::: info Производительность
 
-To avoid preformance impact, you should try to avoid using RegExp for better performance unless you need it.
+Чтобы избежать влияния на производительность, вы должны стараться избегать использования RegExp для повышения производительности, если вам это не нужно.
 
-Also try to create snippets with RegExp having lower costs, e.g: RegExp starting with `^` and ending with `$`.
+Также попробуйте создать фрагменты с RegExp с меньшими затратами, например: RegExp начинается с `^` и заканчивается на `$`.
 
-For example, if you only want to match "SHOULD", "MUST" and "MAY", you should write `/^(?:SHOULD|M(?:UST|AY))$/u` instead of `/SHOULD|MUST|MAY/u`. The fist one will only match 2 time with "A loo...oong content" with 1000 characters, but will match nearly 3000 times with the second RegExp.
+Например, если вы хотите сопоставить только "SHOULD", "MUST" и "MAY", вы должны написать `/^(?:SHOULD|M(?:UST|AY))$/u` вместо `/SHOULD|MUST|MAY/u`. Первый совпадет только 2 раза с "A loo...oong content" с 1000 символов, но со вторым RegExp будет совпадать почти 3000 раз.
 
 :::

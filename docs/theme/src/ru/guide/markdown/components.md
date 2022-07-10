@@ -1,16 +1,16 @@
 ---
-title: Components
+title: Компоненты
 icon: plugin
 category:
   - Markdown
 tag:
-  - Components
+  - Компоненты
   - Markdown
 ---
 
-By using `vuepress-plugin-components`, you can import and use some components in your Markdown files.
+Используя `vuepress-plugin-components`, вы можете импортировать и использовать некоторые компоненты в ваших файлах Markdown.
 
-Available components:
+Доступные компоненты:
 
 - Badge
 - CodePen
@@ -18,15 +18,15 @@ Available components:
 - PDF
 - StackBlitz
 
-By default, `<Badge />` and `<CodePen />` is enabled.
+По умолчанию `<Badge />` и `<CodePen />` включены.
 
-To enable components, you should set `plugin.components` with an array of components name.
+Чтобы включить компоненты, вы должны установить `plugin.components` с массивом имен компонентов.
 
 <!-- more -->
 
-## Badge
+## Значок
 
-A badge component.
+Компонент значка.
 
 - <Badge text="tip" type="tip" vertical="middle" />
 - <Badge text="warning" type="warning" vertical="middle" />
@@ -34,13 +34,13 @@ A badge component.
 - <Badge text="info" type="info" vertical="middle" />
 - <Badge text="note" type="note" vertical="middle" />
 
-See [Badge][badge] page for available props.
+Доступные свойства смотрите на странице [Значок][badge].
 
 ## CodePen
 
-A component which allows you to embed CodePen demo.
+Компонент, который позволяет встраивать демо-версию CodePen.
 
-A demo with user and slug hash:
+Демонстрация с пользователем и слаг-хешем:
 
 <CodePen user="kowlor" slug-hash="ZYYQoy" title="Solar System animation - Pure CSS" :default-tab="['css','result']" :theme="$isDarkMode? 'dark': 'light'" />
 
@@ -54,7 +54,7 @@ A demo with user and slug hash:
 />
 ```
 
-A demo with link:
+Демо со ссылкой:
 
 <CodePen link="https://codepen.io/kowlor/pen/ZYYQoy" title="Solar System animation - Pure CSS" :default-tab="['css','result']" :theme="$isDarkMode? 'dark': 'light'" />
 
@@ -67,7 +67,7 @@ A demo with link:
 />
 ```
 
-A click to run demo:
+Нажмите, чтобы запустить демонстрацию:
 
 <CodePen link="https://codepen.io/keginaring/pen/XWZazwW" title="Solar System animation - Pure CSS" status="clicktorun" :theme="$isDarkMode? 'dark': 'light'" />
 
@@ -81,11 +81,11 @@ A click to run demo:
 />
 ```
 
-See [CodePen][codepen] page for available props.
+Доступные свойства смотрите на странице [CodePen][codepen].
 
 ## FontIcon
 
-Component which allows you to display font icons.
+Компонент, который позволяет отображать значки шрифтов.
 
 - Home icon: <FontIcon icon="home" />
 - A big and red markdown icon: <FontIcon icon="markdown" color="red" size="32" />
@@ -95,13 +95,13 @@ Component which allows you to display font icons.
 - A big and red markdown icon: <FontIcon icon="markdown" color="red" size="32" />
 ```
 
-See [FontIcon][fonticon] page for available props.
+Доступные свойства смотрите на странице [FontIcon][fonticon].
 
 ## PDF
 
-PDF viewer component.
+Компонент просмотра PDF.
 
-Default PDF viewer:
+Средство просмотра PDF по умолчанию:
 
 <PDF url="/sample.pdf" />
 
@@ -109,7 +109,7 @@ Default PDF viewer:
 <PDF url="/sample.pdf" />
 ```
 
-PDF viewer without toolbar:
+Просмотрщик PDF без панели инструментов:
 
 <PDF url="/sample.pdf" :toolbar="false" />
 
@@ -117,7 +117,7 @@ PDF viewer without toolbar:
 <PDF url="/sample.pdf" :toolbar="false" />
 ```
 
-PDF viewer with initial page 2:
+Просмотрщик PDF с начальной страницей 2:
 
 <PDF url="/sample.pdf" :page="2" />
 
@@ -125,11 +125,11 @@ PDF viewer with initial page 2:
 <PDF url="/sample.pdf" :page="2" />
 ```
 
-See [PDF][pdf] page for available props.
+Доступные свойства смотрите на странице [PDF][pdf].
 
 ## StackBlitz
 
-Embed StackBlitz demo in markdown files.
+Встраивайте демонстрацию StackBlitz в файлы разметки.
 
 <StackBlitz id="vuepress-theme-hope" />
 
@@ -143,11 +143,11 @@ Embed StackBlitz demo in markdown files.
 <StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hidedevtools />
 ```
 
-See [StackBlitz][stackblitz] page for available props.
+Доступные свойства смотрите на странице [StackBlitz][stackblitz].
 
 ## YouTube
 
-Embed YouTube video in markdown files.
+Встраивайте видео с YouTube в файлы разметки.
 
 <YouTube id="0JJPfz5dg20" />
 
@@ -167,7 +167,7 @@ Embed YouTube video in markdown files.
 <YouTube list-type="playlist" list="PLJNLwTPak6dhCRzVelZIs2-DfBp01NX_1" />
 ```
 
-See [YouTube][youtube] page for available props.
+Доступные свойства смотрите на странице [YouTube][youtube].
 
 [badge]: https://vuepress-theme-hope.github.io/v2/components/guide/badge.html
 [codepen]: https://vuepress-theme-hope.github.io/v2/components/guide/codepen.html

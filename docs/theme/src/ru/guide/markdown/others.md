@@ -1,5 +1,5 @@
 ---
-title: Others
+title: Другие
 icon: more
 order: -2
 category:
@@ -8,25 +8,25 @@ tag:
   - Markdown
 ---
 
-## Link check
+## Проверка ссылки
 
-The theme will check your markdown links in dev mode by default.
+По умолчанию тема проверит ваши уценочные ссылки в режиме разработки.
 
-You can customize this feature through `plugins.mdEnhance.linkCheck` in theme options, and you can choose from `'always'`, `'never'`, `'dev'` and `'build'`.
+Вы можете настроить эту функцию с помощью `plugins.mdEnhance.linkCheck` в настройках темы, и вы можете выбрать `'always'`, `'never'`, `'dev'` и `'build'`.
 
 ## GFM
 
-If your docs both serve on documentation site and directly on GitHub, we provide `plugins.mdEnhance.gfm` in theme options to align your Markdown behavior with GitHub.
+Если ваши документы размещены как на сайте документации, так и непосредственно на GitHub, мы предоставляем `plugins.mdEnhance.gfm` в параметрах темы, чтобы согласовать ваше поведение Markdown с GitHub.
 
 ::: note
 
-Custom container is enabled by default in `@vuepress/theme-default` and `vuepress-theme-hope`, but not available in GitHub Markdown preview.
+Пользовательский контейнер включен по умолчанию в `@vuepress/theme-default` и `vuepress-theme-hope`, но недоступен в предварительной версии GitHub Markdown.
 
 :::
 
 ## v-pre
 
-Since VuePress2 has removed V1’s v-pre container in core, the plugin provides an option to support it. That is, you can use any Mustache syntax in the container below.
+Поскольку VuePress2 удалил контейнер V1 v-pre из ядра, плагин предоставляет возможность его поддержки. То есть вы можете использовать любой синтаксис Mustache в контейнере ниже.
 
 ```md
 ::: v-pre

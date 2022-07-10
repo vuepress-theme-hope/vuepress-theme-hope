@@ -1,18 +1,18 @@
 ---
-title: Image
+title: Изображение
 icon: pic
 category:
   - Markdown
 tag:
   - Markdown
-  - Image
+  - Изображение
 ---
 
-Improve image syntax in Markdown to support color scheme and size.
+Улучшите синтаксис изображения в Markdown для поддержки цветовой схемы и размера.
 
 <!-- more -->
 
-## Config
+## Конфиг
 
 ::: code-tabs#language
 
@@ -59,11 +59,11 @@ module.exports = {
 
 :::
 
-## Image Mark
+## Маркировка изображения
 
-GFM supports marking pictures by ID suffix so that pictures are only displayed in a specific mode. We support both GitHub’s markup and the easy markup `#light` and `#dark`.
+GFM поддерживает маркировку изображений суффиксом идентификатора, чтобы изображения отображались только в определенном режиме. Мы поддерживаем как разметку GitHub, так и простую разметку `#light` и `#dark`.
 
-You can enable it by setting `plugins.mdEnhance.imageMark: true` in theme options.
+Вы можете включить его, установив `plugins.mdEnhance.imageMark: true` в опциях темы.
 
 ```md
 ![GitHub Light](/assets/icon/github-light.png#gh-dark-mode-only)
@@ -73,9 +73,9 @@ You can enable it by setting `plugins.mdEnhance.imageMark: true` in theme option
 ![GitHub Dark](/assets/icon/github-dark.png#light)
 ```
 
-::: details Case
+::: details Кейс
 
-The above demo will render the following result
+Приведенная выше демонстрация отобразит следующий результат
 
 ![GitHub Light](/assets/icon/github-light.png#gh-dark-mode-only)
 ![GitHub Dark](/assets/icon/github-dark.png#gh-light-mode-only)
@@ -85,9 +85,9 @@ The above demo will render the following result
 
 :::
 
-### Advanced
+### Расширенный
 
-You can pass an object to `imageMark` to config ID marks, available options are:
+Вы можете передать объект в `imageMark` для настройки идентификационных меток. Доступны следующие варианты:
 
 ```ts
 interface ImageMarkOptions {
@@ -98,9 +98,9 @@ interface ImageMarkOptions {
 }
 ```
 
-## Image Size
+## Размер изображения
 
-You can use `=widthxheight` to specify the image size when setting `plugins.mdEnhanceimageSize: true` in theme options.
+Вы можете использовать `=widthxheight`, чтобы указать размер изображения при установке `plugins.mdEnhanceimageSize: true` в параметрах темы.
 
 ```md
 ![Alt](/example.png =200x300)
@@ -109,7 +109,7 @@ You can use `=widthxheight` to specify the image size when setting `plugins.mdEn
 ![Alt](/example.bmp =x300)
 ```
 
-The above markdown will be parsed as:
+Приведенная выше разметка будет проанализирована как:
 
 ```html
 <img src="/example.png" width="200" height="300" />

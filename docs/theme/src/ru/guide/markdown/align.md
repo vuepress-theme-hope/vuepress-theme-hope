@@ -1,30 +1,30 @@
 ---
-title: Custom alignment
+title: Пользовательское выравнивание
 icon: align
 category:
   - Markdown
 tag:
-  - Align
+  - Выравнивание
   - Markdown
 ---
 
-By injecting configuration into vuepress-plugin-container, you can use
+Внедрив конфигурацию в vuepress-plugin-container, вы можете использовать
 
 ```md
 ::: center
-Paragraph to center
+Абзац в центре
 :::
 
 ::: right
-Right paragraph
+Абзац справа
 :::
 ```
 
-To customize your paragraph alignment.
+Чтобы настроить выравнивание абзаца.
 
 <!-- more -->
 
-## Config
+## Конфиг
 
 ::: code-tabs#language
 
@@ -65,7 +65,7 @@ module.exports = {
 
 :::
 
-## Demo
+## Демо
 
 :::: danger
 vuepress-theme-hope v2 is still in W.I.P, the API may have

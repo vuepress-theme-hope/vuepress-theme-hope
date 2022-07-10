@@ -1,18 +1,18 @@
 ---
-title: Attrs support
+title: Поддержка атрибутов
 icon: code
 category:
   - Markdown
 tag:
-  - Attributes
+  - Атрибуты
   - Markdown
 ---
 
-You can use custom syntax to add attrs for markdown content.
+Вы можете использовать собственный синтаксис, чтобы добавить атрибуты для разметки контента.
 
 <!-- more -->
 
-## Config
+## Конфиг
 
 ::: code-tabs#language
 
@@ -53,29 +53,29 @@ module.exports = {
 
 :::
 
-## Usage
+## Использование
 
-You can use `{attrs}` to add attrs to markdown content.
+Вы можете использовать `{attrs}`, чтобы добавить атрибуты к содержимому markdown.
 
-For example, if you want a heading2 "Hello World" with a id "say-hello-world", you can write:
+Например, если вам нужен heading2 "Привет Мир" с идентификатором "say-hello-world", вы можете написать:
 
 ```md
-## Hello World {#say-hello-world}
+## Привет Мир {#say-hello-world}
 ```
 
-If you want a image with class "full-width", you can write:
+Если вы хотите изображение с классом "full-width", вы можете написать:
 
 ```md
 ![img](link/to/image.png) {.full-width}
 ```
 
-Also, other attrs are supported, so:
+Также поддерживаются другие атрибуты, поэтому:
 
 ```md
 A paragraph with some text. {#p .a .b align=center customize-attr="content with spaces"}
 ```
 
-will be rendered into:
+будет преобразовано в:
 
 ```html
 <p id="p" class="a b" align="center" customize-attr="content with spaces">
@@ -83,9 +83,9 @@ will be rendered into:
 </p>
 ```
 
-## Advanced
+## Продвинутый
 
-You can pass options to `plugins.mdEnhance.attrs` to cutomize plugin behavior.
+Вы можете передать параметры в `plugins.mdEnhance.attrs`, чтобы настроить поведение плагина.
 
 ```ts
 interface AttrsOptions {
@@ -114,24 +114,24 @@ interface AttrsOptions {
 }
 ```
 
-## Demo
+## Демо
 
-Text with `inline code`{.inline-code} and ![favicon](/favicon.ico){.image}, also supporting _emphasis_{.emphasis} and **bold**{.bold}.
+Текст с `inline code`{.inline-code} и ![favicon](/favicon.ico){.image}, а также с поддержкой _emphasis_{.emphasis} и **bold**{.bold}.
 
-| Table   |
+| Таблица |
 | ------- |
-| content |
+| контент |
 
 {.table}
 
-- list item{.list-item}
+- пункт списка{.list-item}
 
-  - nested list item
+  - элемент вложенного списка
     {.nested}
 
 {.list}
 
-A line with break  
+Строка с разрывом  
 {.break}
 
 --- {.horizontal}
@@ -139,22 +139,22 @@ A line with break
 block content {.block}
 
 ```md
-Text with `inline code`{.inline-code} and ![favicon](/favicon.ico){.image}, also supporting _emphasis_{.emphasis} and **bold**{.bold}.
+Текст с `inline code`{.inline-code} и ![favicon](/favicon.ico){.image}, а также с поддержкой _emphasis_{.emphasis} и **bold**{.bold}.
 
-| Table   |
+| Таблица |
 | ------- |
-| content |
+| контент |
 
 {.table}
 
-- list item{.list-item}
+- пункт списка{.list-item}
 
-  - nested list item
+  - элемент вложенного списка
     {.nested}
 
 {.list}
 
-A line with break  
+Строка с разрывом  
 {.break}
 
 --- {.horizontal}

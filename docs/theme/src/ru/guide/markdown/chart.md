@@ -1,20 +1,20 @@
 ---
-title: Chart
+title: График
 icon: rank
 category:
   - Markdown
 tag:
-  - Chart
+  - График
   - Markdown
 ---
 
-Let the Markdown file support chart in your VuePress site.
+Разрешите диаграмму поддержки файлов Markdown на вашем сайте VuePress.
 
-`vuepress-plugin-md-enhance` uses [chart.js](https://www.chartjs.org/docs/latest/) to support this feature.
+`vuepress-plugin-md-enhance` использует [chart.js](https://www.chartjs.org/docs/latest/) для поддержки этой функции.
 
 <!-- more -->
 
-## Config
+## Конфиг
 
 ::: code-tabs#language
 
@@ -55,10 +55,10 @@ module.exports = {
 
 :::
 
-## Syntax
+## Синтаксис
 
 ````md
-::: chart Title
+::: chart Заголовок
 
 ```json
 {
@@ -69,59 +69,13 @@ module.exports = {
 :::
 ````
 
-`js` and `javascript` code block is also supported, and you are expected to assign your export object to `module.exports`.
+Блок кода `js` и `javascript` также поддерживается, и вы должны назначить свой объект экспорта в `module.exports`.
 
-## Demo
+## Демо
 
-### Bar Chart
+### Гистограмма
 
-::: chart A bar chart
-
-```json
-{
-  "type": "bar",
-  "data": {
-    "labels": ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-    "datasets": [
-      {
-        "label": "# of Votes",
-        "data": [12, 19, 3, 5, 2, 3],
-        "backgroundColor": [
-          "rgba(255, 99, 132, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
-          "rgba(75, 192, 192, 0.2)",
-          "rgba(153, 102, 255, 0.2)",
-          "rgba(255, 159, 64, 0.2)"
-        ],
-        "borderColor": [
-          "rgba(255, 99, 132, 1)",
-          "rgba(54, 162, 235, 1)",
-          "rgba(255, 206, 86, 1)",
-          "rgba(75, 192, 192, 1)",
-          "rgba(153, 102, 255, 1)",
-          "rgba(255, 159, 64, 1)"
-        ],
-        "borderWidth": 1
-      }
-    ]
-  },
-  "options": {
-    "scales": {
-      "y": {
-        "beginAtZero": true
-      }
-    }
-  }
-}
-```
-
-:::
-
-:::: details Code
-
-````md
-::: chart A bar chart
+::: chart Гистограмма
 
 ```json
 {
@@ -163,13 +117,59 @@ module.exports = {
 ```
 
 :::
+
+:::: details Код
+
+````md
+::: chart Гистограмма
+
+```json
+{
+  "type": "bar",
+  "data": {
+    "labels": ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+    "datasets": [
+      {
+        "label": "# of Votes",
+        "data": [12, 19, 3, 5, 2, 3],
+        "backgroundColor": [
+          "rgba(255, 99, 132, 0.2)",
+          "rgba(54, 162, 235, 0.2)",
+          "rgba(255, 206, 86, 0.2)",
+          "rgba(75, 192, 192, 0.2)",
+          "rgba(153, 102, 255, 0.2)",
+          "rgba(255, 159, 64, 0.2)"
+        ],
+        "borderColor": [
+          "rgba(255, 99, 132, 1)",
+          "rgba(54, 162, 235, 1)",
+          "rgba(255, 206, 86, 1)",
+          "rgba(75, 192, 192, 1)",
+          "rgba(153, 102, 255, 1)",
+          "rgba(255, 159, 64, 1)"
+        ],
+        "borderWidth": 1
+      }
+    ]
+  },
+  "options": {
+    "scales": {
+      "y": {
+        "beginAtZero": true
+      }
+    }
+  }
+}
+```
+
+:::
 ````
 
 ::::
 
-### Bubble Chart
+### Пузырьковая диаграмма
 
-::: chart A Bubble Chart
+::: chart Пузырьковая диаграмма
 
 ```json
 {
@@ -191,10 +191,10 @@ module.exports = {
 
 :::
 
-:::: details Code
+:::: details Код
 
 ````md
-::: chart A Bubble Chart
+::: chart Пузырьковая диаграмма
 
 ```json
 {
@@ -219,9 +219,9 @@ module.exports = {
 
 ::::
 
-### Line Chart
+### Линейный график
 
-::: chart A Line Chart
+::: chart Линейный график
 
 ```json
 {
@@ -243,10 +243,10 @@ module.exports = {
 
 :::
 
-:::: details Code
+:::: details Код
 
 ````md
-::: chart A Line Chart
+::: chart Линейный график
 
 ```json
 {
@@ -271,9 +271,9 @@ module.exports = {
 
 ::::
 
-### Polar Area Chart
+### Диаграмма полярных областей
 
-::: chart A Polar Area Chart
+::: chart Диаграмма полярных областей
 
 ```json
 {
@@ -299,10 +299,10 @@ module.exports = {
 
 :::
 
-:::: details Code
+:::: details Код
 
 ````md
-::: chart A Polar Area Chart
+::: chart Диаграмма полярных областей
 
 ```json
 {
@@ -331,9 +331,9 @@ module.exports = {
 
 ::::
 
-### Radar Chart
+### Радарная диаграмма
 
-::: chart A Radar Chart
+::: chart Радарная диаграмма
 
 ```json
 {
@@ -385,10 +385,10 @@ module.exports = {
 
 :::
 
-:::: details Code
+:::: details Код
 
 ````md
-::: chart A Radar Chart
+::: chart Радарная диаграмма
 
 ```json
 {
@@ -443,9 +443,9 @@ module.exports = {
 
 ::::
 
-### Scatter Chart
+### Точечная диаграмма
 
-::: chart A Scatter Chart
+::: chart Точечная диаграмма
 
 ```json
 {
@@ -477,10 +477,10 @@ module.exports = {
 
 :::
 
-:::: details Code
+:::: details Код
 
 ````md
-::: chart A Scatter Chart
+::: chart Точечная диаграмма
 
 ```json
 {
@@ -515,6 +515,6 @@ module.exports = {
 
 ::::
 
-## Docs
+## Документация
 
-For details, please see [Chart.js Docs](https://www.chartjs.org/docs/latest/).
+Подробности см. в [Документациях по Chart.js](https://www.chartjs.org/docs/latest/).

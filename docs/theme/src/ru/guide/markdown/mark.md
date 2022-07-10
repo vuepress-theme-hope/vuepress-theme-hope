@@ -1,18 +1,18 @@
 ---
-title: Markup
+title: Выделение
 icon: write
 category:
   - Markdown
 tag:
-  - Markup
+  - Выделение
   - Markdown
 ---
 
-Make Markdown files in your VuePress site support markup.
+Сделайте файлы Markdown на вашем сайте VuePress поддержкой разметки.
 
 <!-- more -->
 
-## Config
+## Конфиг
 
 ::: code-tabs#language
 
@@ -53,11 +53,11 @@ module.exports = {
 
 :::
 
-## Syntax
+## Синтаксис
 
-Use `== ==` to mark.
+Используйте `== ==` для выделения.
 
-## Demo
+## Демо
 
 VuePress Theme Hope is ==powerful==.
 

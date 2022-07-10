@@ -1,37 +1,37 @@
 ---
-title: Enable Enhance
+title: Включить улучшение
 icon: enable
 order: 1
 category:
   - Markdown
 tag:
-  - Intro
+  - Вступление
   - Markdown
 ---
 
-Besides Markdown syntaxes VuePress itself adds, `vuepress-theme-hope` enables more syntax in Markdown via [vuepress-plugin-md-enhance][md-enhance] plugin.
+Помимо синтаксисов Markdown, добавленных самим VuePress, `vuepress-theme-hope` включает дополнительный синтаксис в Markdown с помощью плагина [vuepress-plugin-md-enhance][md-enhance].
 
 <!-- more -->
 
-## Built-in Enhancements
+## Встроенные улучшения
 
-VuePress comes with GitHub-style tables, Emoji, TOC, code line numbers, specific line highlighting, etc. are all available out of the box.
+VuePress поставляется с таблицами в стиле GitHub, Emoji, TOC, номерами строк кода, выделением конкретных строк и т. д., которые доступны из коробки.
 
-For detailed syntax, please see [Built-in Markdown Enhance](../../cookbook/vuepress/markdown.md).
+Подробный синтаксис смотрите во [Встроенное улучшение Markdown](../../cookbook/vuepress/markdown.md).
 
-## Enable Markdown Enhancement
+## Включить улучшение разметки
 
-`plugin.mdEnhance` in theme options will be passed to the plugin as a plugin option. Visit [plugin documentation][md-enhance] to see the usage.
+`plugin.mdEnhance` в параметрах темы будет передан плагину как опция плагина. Посетите [документацию плагина][md-enhance], чтобы узнать об использовании.
 
 ::: tip
 
-Don’t worry about the size of your site. If you don’t enable related features, the final code won’t include code for these features.
+Не беспокойтесь о размере вашего сайта. Если вы не включите связанные функции, окончательный код не будет включать код для этих функций.
 
 :::
 
-## Enable All
+## Включить все
 
-You can set `plugins.mdEnhance.enableAll` to enable all features of the [md-enhance][md-enhance] plugin.
+Вы можете установить `plugins.mdEnhance.enableAll`, чтобы включить все функции плагина [md-enhance][md-enhance].
 
 ::: code-tabs#language
 
@@ -74,20 +74,20 @@ module.exports = {
 
 ::: danger
 
-Please use this option ONLY for playing or testing.
+Пожалуйста, используйте эту опцию ТОЛЬКО для игры или тестирования.
 
-As time grows, `vuepress-plugin-md-enhance` is becoming more powerful. It’s adding lots of syntax to Markdown parser and more code to output.
+Со временем `vuepress-plugin-md-enhance` становится все более мощным. Он добавляет много синтаксиса в парсер Markdown и больше кода для вывода.
 
-Enabling features you don’t need will increase dev and build time. (`markdown-it` has to check extra syntax)
+Включение функций, которые вам не нужны, увеличит время разработки и сборки. (`markdown-it` должен проверять дополнительный синтаксис)
 
-Also, presentation feature will add a 700KB size chunk (mostly is `reveal.js`) to your output.
+Кроме того, функция презентации добавит к вашему выводу фрагмент размером 700 КБ (в основном это `reveal.js`).
 
-Please enable ONLY the feature you want to use.
+Включите ТОЛЬКО ту функцию, которую хотите использовать.
 
 :::
 
-### Enable Specific Syntax
+### Включить определенный синтаксис
 
-Specific syntax configuration items can be found in the corresponding instruction page or [Theme Plugin Config](../../config/plugins/md-enhance.md).
+Конкретные элементы конфигурации синтаксиса можно найти на соответствующей странице инструкций или [Конфигурация плагина темы](../../config/plugins/md-enhance.md).
 
 [md-enhance]: https://vuepress-theme-hope.github.io/v2/md-enhance/

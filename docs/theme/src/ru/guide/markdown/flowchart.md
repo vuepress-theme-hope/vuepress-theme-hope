@@ -7,11 +7,11 @@ tag:
   - Markdown
 ---
 
-Let the Markdown file support flow chart in your VuePress site
+Пусть файл Markdown поддерживает блок-схему на вашем сайте VuePress.
 
 <!-- more -->
 
-## Config
+## Конфиг
 
 ::: code-tabs#language
 
@@ -52,7 +52,7 @@ module.exports = {
 
 :::
 
-## Syntax
+## Синтаксис
 
 ````md
 <!-- ↓ :preset is optional -->
@@ -64,13 +64,13 @@ module.exports = {
 ```
 ````
 
-Available presets for now:
+Доступные пресеты на данный момент:
 
-- `vue` (default)
+- `vue` (по умолчанию)
 - `ant`
 - `pie`
 
-## Demo
+## Демо
 
 ```flow
 st=>start: Start|past:>http://www.google.com[blank]
@@ -146,21 +146,21 @@ c2(no)->op2->e
 ```
 ````
 
-## Flowchart Intro
+## Введение в блок-схему
 
-### Node Types
+### Типы узлов
 
-Defines the shape that the node will take.
+Определяет форму, которую примет узел.
 
-### Start & End
+### Начало и Конец
 
-Used as the first node where flows start from.
-Default text is `Start`.
+Используется как первый узел, с которого начинаются потоки.
+Текст по умолчанию `Start`.
 
 - `[Variable]->start: [Text]`
 
-Used as the last node where a flow ends.
-Default text is `End`.
+Используется как последний узел, где заканчивается поток.
+Текст по умолчанию `End`.
 
 - `[Variable]->end: [Text]`
 
@@ -180,9 +180,9 @@ e=>end: End
 st->e
 ```
 
-### Operation
+### Операция
 
-Indicates that an operation needs to happen in the flow.
+Указывает, что в потоке должна быть выполнена операция.
 
 - `[Variable]->operation: [Text]`
 
@@ -202,9 +202,9 @@ e=>end: End
 process->e
 ```
 
-### Input / Output
+### Ввод / Вывод
 
-Indicates that IO happens in a flow.
+Указывает, что ввод-вывод происходит в потоке.
 
 - `[Variable]->inputoutput: [Text]`
 
@@ -224,9 +224,9 @@ e=>end: End
 process->e
 ```
 
-### Subroutine
+### Подпрограмма
 
-Indicates that a subroutine happens in the flow and that there should be another flowchart that documents this subroutine.
+Указывает, что в потоке происходит подпрограмма и что должна быть другая блок-схема, документирующая эту подпрограмму.
 
 - `[Variable]->subroutine: [Text]`
 
@@ -246,9 +246,9 @@ e=>end: End
 process->e
 ```
 
-### Condition
+### Условие
 
-Allows for a conditional or logical statement to direct the flow into one of two or more paths.
+Позволяет условному или логическому оператору направить поток по одному из двух или более путей.
 
 - `[Variable]->condition: [Text]`
 
@@ -275,9 +275,9 @@ cond(yes)->process->e
 cond(no)->e
 ```
 
-### Parallel
+### Параллельно
 
-Allows for multiple flows to happen simultaneously.
+Позволяет одновременно выполнять несколько потоков.
 
 - `[Variable]->parallel: [Text]`
 - `[Variable](path1, direction)->[Position]`
@@ -303,44 +303,44 @@ para(path1, bottom)->process->e
 para(path2)->e
 ```
 
-## Connections
+## Соединения
 
-Connections are defined in their own section below the node definitions.
+Соединения определяются в отдельном разделе под определениями узлов.
 
-The `->` operator specifies a connection from one node to another like `nodeVar1->nodeVar2->nodeVar3`.
+Оператор `->` указывает соединение от одного узла к другому, например `nodeVar1->nodeVar2->nodeVar3`.
 
-Not all nodes need to be specified in one string and can be separaged like so
+Не все узлы должны быть указаны в одной строке и могут быть разделены таким образом
 
 ```md
 nodeVar1->nodeVar2
 nodeVar2->nodeVar3
 ```
 
-Connection syntax is as follows:
+Синтаксис подключения следующий:
 
 `<node variable name>[(<specificaion1>[, <specification2])]-><node variable name>[[(<specificaion1>[, <specification2])]-><node variable name>]`
 
-Items in `[]` are optional.
+Элементы в `[]` являются необязательными.
 
-### Directions
+### Направления
 
-The following directions are available and define the direction the connection will leave the node from. If there are more than one specifiers, it is always the last. All nodes have a default direction making this an optional specification. `<direction>` will be used and one of the below list should be used in its place.
+Доступны следующие направления, которые определяют направление, из которого соединение выйдет из узла. Если имеется более одного спецификатора, он всегда будет последним. Все узлы имеют направление по умолчанию, поэтому это необязательная спецификация. Будет использоваться. `<direction>`, и вместо него следует использовать один из приведенных ниже списков.
 
 - `left`
 - `right`
 - `top`
 - `bottom`
 
-### Node Specific Specifiers by Type
+### Специфичные для узла спецификаторы по типу
 
-Each node variables has optional specifiers, like direction, and some have special specifiers depending on the node type that are defined below. Specifiers are added after the variable name in `()` and separated with `,` like `nodeVar(spec1, spec2)`.
+Каждая переменная узла имеет необязательные спецификаторы, такие как направление, а некоторые имеют специальные спецификаторы в зависимости от типа узла, которые определены ниже. Спецификаторы добавляются после имени переменной в `()` и разделяются символом `,`, например, `nodeVar(spec1, spec2)`.
 
 - **start**
   **operation**
   **inputoutput**
   **subroutine**
 
-  Optional direction
+  Дополнительное направление
 
   `startVar(<direction>)->nextNode`
 
@@ -352,9 +352,9 @@ Each node variables has optional specifiers, like direction, and some have speci
 
 - **condition**
 
-  Required logical specification of `yes` or `no`
+  Требуемая логическая спецификация `yes` или `no`
 
-  Optional direction
+  Дополнительное направление
 
   ```md
   conditionalVar(yes, <direction>)->nextNode1
@@ -363,9 +363,9 @@ Each node variables has optional specifiers, like direction, and some have speci
 
 - **parallel**
 
-  Required path specification of `path1`, `path2`, or `path3`
+  Требуемая спецификация пути `path1`, `path2`, или `path3`
 
-  Optional direction
+  Дополнительное направление
 
   ```md
   parallelVar(path1, <direction>)->nextNode1
@@ -373,24 +373,24 @@ Each node variables has optional specifiers, like direction, and some have speci
   parallelVar(path3, <direction>)->nextNode3
   ```
 
-### Links
+### Ссылки
 
-A external link can be added to a node with the `:>` operator.
+Внешняя ссылка может быть добавлена к узлу с помощью оператора `:>`.
 
-The `st` node is linked with `http://www.google.com` and will open a new tab because `[blank]` is at the end of the URL.
+Узел `st` связан с `http://www.google.com` и откроет новую вкладку, потому что `[blank]` находится в конце URL-адреса.
 
-The `e` node is linked with `http://www.yahoo.com` and will cause the page to navigate to that page instead of opening a new tab.
+Узел `e` связан с `http://www.yahoo.com` и заставит страницу перейти на эту страницу вместо открытия новой вкладки.
 
 ```md
 st=>start: Start:>http://www.google.com[blank]
 e=>end: End:>http://www.yahoo.com
 ```
 
-## Advice
+## Совет
 
-Symbols that should possibly not be used in the text: `=>` and `->` and `:>` and `|` and `@>` and `:$`
+Символы, которые, возможно, не следует использовать в тексте: `=>` и `->` и `:>` и `|` и `@>` и `:$`
 
-To emphasize a specific path in your flowchart, you can define it like this:
+Чтобы выделить конкретный путь в блок-схеме, вы можете определить его следующим образом:
 
 ```md
 st@>op1({"stroke":"Red"})@>cond({"stroke":"Red","stroke-width":6,"arrow-end":"classic-wide-long"})@>c2({"stroke":"Red"})@>op2({"stroke":"Red"})@>e({"stroke":"Red"})

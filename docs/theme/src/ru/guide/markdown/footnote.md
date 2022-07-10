@@ -1,18 +1,18 @@
 ---
-title: Footnote
+title: Сноска
 icon: footnote
 category:
   - Markdown
 tag:
-  - Footnote
+  - Сноска
   - Markdown
 ---
 
-Let the Markdown file in your VuePress site support footnotes.
+Пусть файл Markdown на вашем сайте VuePress поддерживает сноски.
 
 <!-- more -->
 
-## Config
+## Конфиг
 
 ::: code-tabs#language
 
@@ -53,42 +53,42 @@ module.exports = {
 
 :::
 
-## Syntax
+## Синтаксис
 
-- Use `[^Anchor text]` in Markdown to define a footnote
+- Используйте `[^Anchor text]` в Markdown, чтобы определить сноску
 
-- Use `[^Anchor text]: ...` to describe footnote content
+- Используйте `[^Anchor text]: ...` для описания содержимого сноски
 
-- If there are muti paragraph in footnote, the paragraph show be double indented
+- Если в сноске есть несколько абзацев, абзац должен быть с двойным отступом
 
-## Demo
+## Демо
 
-Footnote 1 link[^first].
+Сноска 1 ссылка[^first].
 
-Footnote 2 link[^second].
+Сноска 2 ссылка[^second].
 
-Inline footnote^[Text of inline footnote] definition.
+Встроенная сноска^[Текст встроенной сноски] определение.
 
-Duplicated footnote reference[^second].
+Дублированная ссылка на сноску[^second].
 
-[^first]: Footnote **can have markup**
+[^first]: Сноска **может иметь разметку**
 
-    and multiple paragraphs.
+    и несколько абзацев.
 
-[^second]: Footnote text.
+[^second]: Текст сноски.
 
 ```md
-Footnote 1 link[^first].
+Сноска 1 ссылка[^first].
 
-Footnote 2 link[^second].
+Сноска 2 ссылка[^second].
 
-Inline footnote^[Text of inline footnote] definition.
+Встроенная сноска^[Текст встроенной сноски] определение.
 
-Duplicated footnote reference[^second].
+Дублированная ссылка на сноску[^second].
 
-[^first]: Footnote **can have markup**
+[^first]: Сноска **может иметь разметку**
 
-    and multiple paragraphs.
+    и несколько абзацев.
 
-[^second]: Footnote text.
+[^second]: Текст сноски.
 ```

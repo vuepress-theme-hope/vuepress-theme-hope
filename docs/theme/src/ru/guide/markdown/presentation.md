@@ -1,20 +1,20 @@
 ---
-title: Presentation
+title: Презентация
 icon: slides
 category:
   - Markdown
 tag:
   - Markdown
-  - Slides
+  - Слайды
 ---
 
-Let the Markdown file in your VuePress site support presentation.
+Пусть файл Markdown на вашем сайте VuePress поддерживает презентацию.
 
 <!-- more -->
 
 <!--lint disable no-duplicate-headings-->
 
-## Config
+## Конфиг
 
 ::: code-tabs#language
 
@@ -55,15 +55,15 @@ module.exports = {
 
 :::
 
-`vuepress-plugin-md-enhance` uses [reveal.js](https://revealjs.com/) to support this feature.
+`vuepress-plugin-md-enhance` использует [reveal.js](https://revealjs.com/) для поддержки этой функции.
 
-You can also pass an object for configuration.
+Вы также можете передать объект для настройки.
 
-`presentation.plugins` receives an array of strings, allowing you to freely config whether to enable some preset plugins.
+`presentation.plugins` получает массив строк, что позволяет вам свободно настраивать, включать ли некоторые предустановленные плагины.
 
 ::: tip
 
-Acceptable plugins are:
+Приемлемые плагины:
 
 - `"highlight"`
 - `"math"`
@@ -73,14 +73,14 @@ Acceptable plugins are:
 
 :::
 
-You can also use `presentation.revealConfig` set configuration options passed to Reveal.js globally.
+Вы также можете использовать параметры конфигурации `presentation.revealConfig`, передаваемые в Reveal.js глобально.
 
-Reveal.js also provides [more plugins](https://github.com/hakimel/reveal.js/wiki/Plugins,-Tools-and-Hardware). If you need a specific plugin, please submit a [Feature Request](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/new?assignees=Mister-Hope&labels=enhancement&template=feature_request.md&title=%5BFeature+Request%5D) on GitHub.
+Reveal.js также предоставляет [больше плагинов](https://github.com/hakimel/reveal.js/wiki/Plugins,-Tools-and-Hardware). Если вам нужен конкретный плагин, отправьте [Запрос функции](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/new?assignees=Mister-Hope&labels=enhancement&template=feature_request.md&title=%5BFeature+Request%5D) на GitHub.
 
-## Syntax
+## Синтаксис
 
-- Use `---` to split slides
-- Use `--` to split the slides second time (vertical display)
+- Используйте `---` для разделения слайдов
+- Используйте `--`, чтобы разделить слайды во второй раз (вертикальное отображение)
 
 ```md
 @slidestart [theme]
@@ -98,9 +98,9 @@ Reveal.js also provides [more plugins](https://github.com/hakimel/reveal.js/wiki
 @slideend
 ```
 
-Theme available(replace `[theme]` with them):
+Доступная тема (замените `[theme]` на них):
 
-- `auto` (Default)
+- `auto` (По умолчанию)
 - `black`
 - `white`
 - `league`
@@ -113,26 +113,26 @@ Theme available(replace `[theme]` with them):
 - `blood`
 - `moon`
 
-For details, see [Themes demo][theme-demo].
+Для получения дополнительной информации смотрите [Демо темы][theme-demo].
 
-## Demo
+## Демо
 
 @slidestart
 
-## Slide 1
+## Слайд 1
 
-A paragraph with some text and a [link](https://mrhope.site)
-
----
-
-## Slide 2
-
-- Item 1
-- Item 2
+Абзац с текстом и [ссылка](https://mrhope.site)
 
 ---
 
-## Slide 3.1
+## Слайд 2
+
+- Элемент 1
+- Элемент 2
+
+---
+
+## Слайд 3.1
 
 ```js
 const a = 1;
@@ -140,7 +140,7 @@ const a = 1;
 
 --
 
-## Slide 3.2
+## Слайд 3.2
 
 $$
 J(\theta_0,\theta_1) = \sum_{i=0}
@@ -151,20 +151,20 @@ $$
 ````md
 @slidestart
 
-## Slide 1
+## Слайд 1
 
 A paragraph with some text and a [link](https://mrhope.site)
 
 ---
 
-## Slide 2
+## Слайд 2
 
-- Item 1
-- Item 2
+- Элемент 1
+- Элемент 2
 
 ---
 
-## Slide 3.1
+## Слайд 3.1
 
 ```js
 const a = 1;
@@ -172,7 +172,7 @@ const a = 1;
 
 --
 
-## Slide 3.2
+## Слайд 3.2
 
 $$
 J(\theta_0,\theta_1) = \sum_{i=0}
@@ -183,15 +183,15 @@ $$
 
 ::: info
 
-For detailed demo, please see [Presentation Demo][presentation-demo]
+Подробную демонстрацию смотрите в разделе [Демонстрационная презентация][presentation-demo]
 
 :::
 
-## Options
+## Опции
 
-You can set `reveal` to pass options to reveal.js per page in frontmatter, you can also set `presentation` in plugin options to set reveal.js globally.
+Вы можете установить `reveal` для передачи параметров в reveal.js для каждой страницы во фронтмейтере, вы также можете установить `presentation` в параметрах плагина, чтобы установить reveal.js глобально.
 
-For more options, see [reveal.js config](https://revealjs.com/config/). For more usage, see [reveal.js documatation](https://revealjs.com/)
+Дополнительные параметры смотрите в [конфигурации reveal.js](https://revealjs.com/config/). Дополнительные сведения об использовании смотрите в [документации reveal.js](https://revealjs.com/)
 
 [theme-demo]: https://vuepress-theme-hope.github.io/v2/md-enhance/guide/presentation/themes.html
 [presentation-demo]: https://vuepress-theme-hope.github.io/v2/md-enhance/guide/presentation/demo.html

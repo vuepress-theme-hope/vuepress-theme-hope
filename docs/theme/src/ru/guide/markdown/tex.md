@@ -8,11 +8,11 @@ tag:
   - TEX
 ---
 
-Let the Markdown file in your VuePress site support the $\TeX$ syntax.
+Пусть файл Markdown на вашем сайте VuePress поддерживает синтаксис $\TeX$.
 
 <!-- more -->
 
-## Config
+## Конфиг
 
 ::: code-tabs#language
 
@@ -53,11 +53,11 @@ module.exports = {
 
 :::
 
-## Grammar
+## Грамматика
 
-### Inline Syntax
+### Инлайновый синтаксис
 
-Use `$codes$`.
+Использование `$codes$`.
 
 ```md
 Euler’s identity $e^{i\pi}+1=0$ is a beautiful formula in $\mathbb{R}^2$.
@@ -65,9 +65,9 @@ Euler’s identity $e^{i\pi}+1=0$ is a beautiful formula in $\mathbb{R}^2$.
 
 Euler’s identity $e^{i\pi}+1=0$ is a beautiful formula in $\mathbb{R}^2$.
 
-### Block Syntax
+### Блочный синтаксис
 
-Use `$$codes$$`.
+Использование `$$codes$$`.
 
 ```md
 $$
@@ -81,7 +81,7 @@ $$
 = \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^ Ir \cdots (r-i+1) (\log y)^{ri}} {\omega^i} \right\}
 $$
 
-## Playground
+## Плейграунд
 
 <!-- markdownlint-disable -->
 
@@ -89,11 +89,11 @@ $$
 
 <!-- markdownlint-restore -->
 
-## Tutorial
+## Руководство
 
-### Operator
+### Оператор
 
-- Some operators can be entered directly in math mode; others need to be generated using control sequences:
+- Некоторые операторы можно вводить непосредственно в математическом режиме; другие должны быть сгенерированы с использованием управляющих последовательностей:
 
   - `+`: $+$
   - `-`: $-$
@@ -110,19 +110,19 @@ $$
   - `\equiv`: $\equiv$
   - `\quad`: $\quad$ (blank separator)
 
-- Radical: `\sqrt{xxx}` $\sqrt{xxx}$
+- Радикальный: `\sqrt{xxx}` $\sqrt{xxx}$
 
-- Fraction `\frac{aaa}{bbb}` $\frac{aaa}{bbb}$ (the first parameter is the numerator and the second is the denominator).
+- Дробь `\frac{aaa}{bbb}` $\frac{aaa}{bbb}$ (первый параметр - числитель, второй - знаменатель).
 
-- Lianjia: `\sum` $\sum$
+- Ляньцзя: `\sum` $\sum$
 
-- Tandem: `\prod` $\prod$
+- Тандем: `\prod` $\prod$
 
-- Limit: `\lim` $\lim$
+- Ограничение: `\lim` $\lim$
 
-- Points: `\int` $\int$
+- Точки: `\int` $\int$
 
-- Multiple points:
+- Мультиточки:
   - `\iint`: $\iint$
   - `\iiint`: $\iiint$
   - `\liiiint`: $\liiiint$ (Use `\iiiint` for block as normal)
@@ -130,15 +130,15 @@ $$
 
 ::: tip
 
-Large operators such as continuous addition, multiplication, limits, and integrals can use `\limits` and `\nolimits` to force explicitly specify compress these superscripts or not.
+Большие операторы, такие как непрерывное сложение, умножение, пределы и интегралы, могут использовать `\limits` и `\nolimits`, чтобы явно указать сжимать эти верхние индексы или нет.
 
-`\iiiint`($\liiiint$) is support by hack, so for inline display you should use `\liiiint`.
+`\iiiint`($\liiiint$) поддерживается хаком, поэтому для встроенного отображения вы должны использовать `\liiiint`.
 
-`\varoiint`, `\sqint`, `\sqiint`, `\ointctrclockwise`, `\ointclockwise`, `\varointclockwise`, `\varointctrclockwise`, `\fint`, `\landupint`, `\landdownint` are not supported currently.
+`\varoiint`, `\sqint`, `\sqiint`, `\ointctrclockwise`, `\ointclockwise`, `\varointclockwise`, `\varointctrclockwise`, `\fint`, `\landupint`, `\landdownint` в настоящее время не поддерживается.
 
 :::
 
-::: tip Case
+::: tip Кейс
 
 $\sqrt{x}$, $\frac{1}{2}$.
 
@@ -170,9 +170,9 @@ $$\iint_1^2 x^2\; \iiint_1^2 x^2\; \iiiint_1^2 x^2\; \idotsint_1^2 x^2$$
 
 :::
 
-### Symbol
+### Символ
 
-- English letters can be entered directly
+- Английские буквы можно вводить напрямую
 
   $a \quad b \quad c \quad x \quad y \quad z \quad A \quad B \quad C$
 
@@ -180,7 +180,7 @@ $$\iint_1^2 x^2\; \iiint_1^2 x^2\; \iiiint_1^2 x^2\; \idotsint_1^2 x^2$$
   $a \quad b \quad c \quad x \quad y \quad z \quad A \quad B \quad C$
   ```
 
-- Greek characters use `\characterName` to enter symbols, and output capital letters when the first letter is capitalized.
+- Греческие символы используют `\characterName` для ввода символов и выводят заглавные буквы, когда первая буква заглавная.
 
   $\alpha \quad \beta \quad \gamma \quad \Omega \quad \Delta \quad \Gamma$
 
@@ -188,7 +188,7 @@ $$\iint_1^2 x^2\; \iiint_1^2 x^2\; \iiiint_1^2 x^2\; \idotsint_1^2 x^2$$
   $\alpha \quad \beta \quad \gamma \quad \Omega \quad \Delta \quad \Gamma$
   ```
 
-- Other mathematical expressions can be used correspondingly
+- Соответственно могут использоваться и другие математические выражения
 
   $\log_{a}{b} \quad \partial x$
 
@@ -196,37 +196,37 @@ $$\iint_1^2 x^2\; \iiint_1^2 x^2\; \iiiint_1^2 x^2\; \idotsint_1^2 x^2$$
   $\log_{a}{b} \quad \partial x$
   ```
 
-### Superscript and Subscript
+### Верхний индекс и нижний индекс
 
-- Superscript, use `^` to achieve
-- Subscript, use `_` to achieve
-- By default, superscript and subscript only apply to the next character. To work with multiple consecutive characters, please enclose these characters in curly brackets `{}`.
+- Верхний индекс, используйте `^` для достижения
+- Нижний индекс, используйте `_` для достижения
+- По умолчанию верхний и нижний индексы применяются только к следующему символу. Чтобы работать с несколькими последовательными символами, заключите их в фигурные скобки `{}`.
 
-#### Demo
+#### Демо
 
-Einstein ’s $E=mc^2$.
+Эйнштейн $E=mc^2$.
 
 $2^{10} > 1000$
 
 ```md
-Einstein ’s $E=mc^2$.
+Эйнштейн $E=mc^2$.
 
 $2^{10} > 1000$
 ```
 
-### Delimiters (parentheses, etc.)
+### Разделители (круглые скобки и т.д.)
 
-Various parentheses are represented by commands such as `()`, `[]`, `\{\}`, `\langle\rangle`.
+Различные круглые скобки представлены такими командами, как `()`, `[]`, `\{\}`, `\langle\rangle`.
 
 ::: tip
 
-Note that curly braces are usually used to enter command and environment parameters, so they must be preceded by `\` in mathematical formulas.
+Обратите внимание, что фигурные скобки обычно используются для ввода параметров команды и среды, поэтому в математических формулах им должен предшествовать символ `\`.
 
-Because the application of `|` and `\|` in LaTeX is too casual, we recommend using `\lvert\rvert` and `\ lVert\rVert` instead.
+Поскольку применение `|` и `\|` в LaTeX слишком случайное, мы рекомендуем вместо этого использовать `\lvert\rvert` и `\ lVert\rVert`.
 
 :::
 
-To adjust the size of these delimiters, we recommend using `\big`, `\Big`, `\bigg`, `\Bigg` and a series of commands to adjust the size before the above brackets.
+Чтобы настроить размер этих разделителей, мы рекомендуем использовать `\big`, `\Big`, `\bigg`, `\Bigg`, а также серию команд для регулировки размера перед указанными выше скобками.
 
 $\Biggl(\biggl(\Bigl(\bigl((x)\bigr)\Bigr)\biggr)\Biggr)$
 $\Biggl[\biggl[\Bigl[\bigl[[x]\bigr]\Bigr]\biggr]\Biggr]$
@@ -250,13 +250,13 @@ $\Biggl\lVert\biggl\lVert\Bigl\lVert\bigl\lVert\lVert x
 \rVert\bigr\rVert\Bigr\rVert\biggr\rVert\Biggr\rVert$
 ```
 
-### Ellipsis
+### Многоточие
 
-The ellipsis is represented by commands such as `\dots`,`\cdots`, `\vdots`,`\ddots`.
+Многоточие представлено такими командами, как `\dots`,`\cdots`, `\vdots`,`\ddots`.
 
 ::: tip
 
-`\dots` and`\cdots` have different vertical positions. The former is generally used for subscripted sequences.
+`\dots` и `\cdots` имеют разное вертикальное положение. Первый обычно используется для последовательностей с индексами.
 
 :::
 
@@ -266,9 +266,9 @@ $x_1,x_2,\dots ,x_n \quad 1,2,\cdots ,n \quad \vdots\quad \ddots$
 $x_1,x_2,\dots ,x_n \quad 1,2,\cdots ,n \quad \vdots\quad \ddots$
 ```
 
-### Matrix
+### Матрица
 
-`pmatrix`, `bmatrix`, `Bmatrix`, `vmatrix`, `Vmatrix` and other environments can add various separators on both sides of the matrix.
+`pmatrix`, `bmatrix`, `Bmatrix`, `vmatrix`, `Vmatrix` и другие среды могут добавлять различные разделители с обеих сторон матрицы.
 
 $$
 \begin{pmatrix} a&b\\c&d \end{pmatrix} \quad
@@ -288,19 +288,19 @@ $$
 $$
 ```
 
-Using the `smallmatrix` environment, you can generate small matrices of inline formulas.
+Используя среду `smallmatrix`, вы можете генерировать небольшие матрицы встроенных формул.
 
-A small matix: $( \begin{smallmatrix} a&b\\c&d \end{smallmatrix} )$.
+Маленькая матрица: $( \begin{smallmatrix} a&b\\c&d \end{smallmatrix} )$.
 
 ```md
-A small matix: $( \begin{smallmatrix} a&b\\c&d \end{smallmatrix} )$.
+Маленькая матрица: $( \begin{smallmatrix} a&b\\c&d \end{smallmatrix} )$.
 ```
 
-### Multi-line Formula
+### Многострочная формула
 
 - **newline**
 
-  Use `\\` or `\newline` to wrap
+  Используйте `\\` или `\newline` для переноса
 
   $$
   x = a+b+c+{} \\
@@ -326,7 +326,7 @@ A small matix: $( \begin{smallmatrix} a&b\\c&d \end{smallmatrix} )$.
 
 - **Alignment**
 
-  You can use the `aligned` environment to achieve alignment, and`&`to identify fixed anchor points
+  Вы можете использовать среду выравнивания `aligned` для достижения выравнивания и определения фиксированных точек привязки.
 
   $$
   \begin{aligned}
@@ -358,9 +358,9 @@ A small matix: $( \begin{smallmatrix} a&b\\c&d \end{smallmatrix} )$.
   $$
   ```
 
-### Formula Group
+### Группа формул
 
-Formula groups that do not require alignment can use the `gather` environment.
+Группы формул, не требующие выравнивания, могут использовать среду `gather`.
 
 $$
 \begin{gathered}
@@ -378,7 +378,7 @@ x = y+z
 $$
 ```
 
-### Numbering
+### Нумерация
 
 $$
 \tag{1} x+y^{2x}
@@ -394,9 +394,9 @@ $\tag{1} x+y^{2x}$
 $\tag*{1} x+y^{2x}$
 ```
 
-### Segmented Functions
+### Сегментированные функции
 
-Use `case` environment
+Использовать среду `case`
 
 $$
 y= \begin{cases}
@@ -414,16 +414,16 @@ x,\quad x>0
 $$
 ```
 
-## Text
+## Текст
 
-To insert text in tex, you should use `\text{}` to wrap them.
+Чтобы вставить текст в tex, вы должны использовать `\text{}` для переноса их.
 
-## More
+## Еще
 
-For more symbols, pleasae check out
+Дополнительные символы смотрите
 
-- [$\KaTeX$ Support Features](https://katex.org/docs/supported.html)
-- [$\KaTeX$ Support List](https://katex.org/docs/support_table.html)
+- [Функции поддержки $\KaTeX$](https://katex.org/docs/supported.html)
+- [Список поддержки $\KaTeX$](https://katex.org/docs/support_table.html)
 
 <script setup lang="ts">
 import KatexPlayground from '@KatexPlayground';

@@ -1,18 +1,18 @@
 ---
-title: Code Demo
+title: Демонстрация кода
 icon: discover
 category:
   - Markdown
 tag:
-  - Code Demo
+  - Демонстрация кода
   - Markdown
 ---
 
-Let you insert code demos in your Markdown file.
+Позволяет вставлять демонстрации кода в файл Markdown.
 
 <!-- more -->
 
-## Config
+## Конфиг
 
 ::: code-tabs#language
 
@@ -53,12 +53,12 @@ module.exports = {
 
 :::
 
-## Syntax
+## Синтаксис
 
-You should use the following syntax:
+Вы должны использовать следующий синтаксис:
 
 ````md
-::: [type]-demo Optional title text
+::: [type]-demo Необязательный текст заголовка
 
 ```html
 <!-- ↑ use available ones -->
@@ -78,22 +78,22 @@ You should use the following syntax:
 
 ::: tip
 
-The json block is optional, for config please see [config](../../config/plugins/md-enhance.md#demo).
+Блок json является необязательным, для конфигурации смотрите [конфиг](../../config/plugins/md-enhance.md#demo).
 
 :::
 
-The plugin support three types:
+Плагин поддерживает три типа:
 
-- normal (default)
+- нормальный (по умолчанию)
 - vue
 - react
 
-### Normal
+### Нормальный
 
-Syntax:
+Синтаксис:
 
 ````md
-::: normal-demo Optional title text
+::: normal-demo Необязательный текст заголовка
 
 ```html
 <!-- html code -->
@@ -124,10 +124,10 @@ Syntax:
 
 ### Vue
 
-Syntax:
+Синтаксис:
 
 ````md
-::: vue-demo Optional title text
+::: vue-demo Необязательный текст заголовка
 
 ```vue
 <!-- ↑ you can also use html-->
@@ -153,10 +153,10 @@ export default {
 
 ### React
 
-Syntax:
+Синтаксис:
 
 ````md
-::: react-demo Optional title text
+::: react-demo Необязательный текст заголовка
 
 ```js
 export default class App extends React.Component {
@@ -175,42 +175,42 @@ export default class App extends React.Component {
 :::
 ````
 
-### Available Languages
+### Доступные языки
 
-You can use different language in your demo block.
+Вы можете использовать другой язык в своем демонстрационном блоке.
 
-When you set language which can not run on browsers, since the plugin is not able to resolve them, so demo display will be disabled. The plugin will only show the code and provide you a button to open it in CodePen.
+Когда вы устанавливаете язык, который не может работать в браузерах, так как плагин не может их разрешить, поэтому отображение демо будет отключено. Плагин покажет только код и предоставит вам кнопку, чтобы открыть его в CodePen.
 
-Available HTML languages:
+Доступные языки HTML:
 
-- `"html"` (default)
+- `"html"` (по умолчанию)
 - `"slim"`
 - `"haml"`
 - `"markdown"`
 
-> You can also use `md` in code block.
+> Вы также можете использовать `md` в блоке кода.
 
-Available JS languages:
+Доступные языки JS:
 
-- `"javascript"` (default)
+- `"javascript"` (по умолчанию)
 - `"coffeescript"`
 - `"babel"`
 - `"livescript"`
 - `"typescript"`
 
-> You can also use `js`, `ts`, `coffee` and `ls` in code block.
+> Вы также можете использовать `js`, `ts`, `coffee` и `ls` в блоке кода.
 
-Available CSS languages:
+Доступные языки CSS:
 
-- `"css"` (default)
+- `"css"` (по умолчанию)
 - `"less"`
 - `"scss"`
 - `"sass"`
 - `"stylus"`
 
-> You can also use `styl` in code block.
+> Вы также можете использовать `styl` в блоке кода.
 
-## Demo
+## Демо
 
 ::: normal-demo Demo
 
@@ -233,7 +233,7 @@ span {
 
 :::
 
-:::: details Code
+:::: details Код
 
 ````md
 ::: normal-demo Demo
@@ -258,7 +258,7 @@ span {
 :::
 ````
 
-::: react-demo A function-based React Demo
+::: react-demo Демонстрация React на основе функций
 
 ```js
 const { useState } = React;
@@ -289,10 +289,10 @@ export default () => {
 
 :::
 
-:::: details Code
+:::: details Код
 
 ````md
-::: react-demo A function-based React Demo
+::: react-demo Демонстрация React на основе функций
 
 ```js
 const { useState } = React;
@@ -326,7 +326,7 @@ export default () => {
 
 ::::
 
-::: react-demo A class-based React Demo
+::: react-demo Демонстрация React на основе классов
 
 ```js
 export default class App extends React.Component {
@@ -360,10 +360,10 @@ export default class App extends React.Component {
 
 :::
 
-:::: details Code
+:::: details Код
 
 ````md
-::: react-demo A class-based React Demo
+::: react-demo Демонстрация React на основе классов
 
 ```js
 export default class App extends React.Component {
@@ -400,7 +400,7 @@ export default class App extends React.Component {
 
 ::::
 
-::: vue-demo A Vue Composition Demo
+::: vue-demo Демонстрация композиции Vue
 
 ```vue
 <template>
@@ -437,10 +437,10 @@ export default {
 
 :::
 
-:::: details Code
+:::: details Код
 
 ````md
-::: vue-demo A Vue Composition Demo
+::: vue-demo Демонстрация композиции Vue
 
 ```vue
 <template>
@@ -480,7 +480,7 @@ export default {
 
 ::::
 
-::: vue-demo A Vue Option Demo
+::: vue-demo Демонстрация опции Vue
 
 ```vue
 <template>
@@ -509,10 +509,10 @@ export default {
 
 :::
 
-:::: details Code
+:::: details Код
 
 ````md
-::: vue-demo A Vue Option Demo
+::: vue-demo Демонстрация опции Vue
 
 ```vue
 <template>
@@ -544,12 +544,12 @@ export default {
 
 ::::
 
-::: normal-demo A demo using language not supported by browsers
+::: normal-demo Демонстрация с использованием языка, не поддерживаемого браузерами
 
 ```md
-# Title
+# Тайтл
 
-is very powerful!
+очень мощный!
 ```
 
 ```ts
@@ -570,15 +570,15 @@ h1 {
 
 :::
 
-:::: details Code
+:::: details Код
 
 ````md
-::: normal-demo A normal demo
+::: normal-demo Обычная демонстрация
 
 ```md
-# Title
+# Тайтл
 
-is very powerful!
+очень мощный!
 ```
 
 ```ts

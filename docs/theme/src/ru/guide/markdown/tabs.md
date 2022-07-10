@@ -1,19 +1,19 @@
 ---
-title: Tabs
+title: Вкладки
 icon: tab
 index: 2
 category:
   - Markdown
 tag:
   - Markdown
-  - Tabs
+  - Вкладки
 ---
 
-Let the Markdown file in your VuePress site support tabs.
+Пусть файл Markdown на вкладках поддержки вашего сайта VuePress.
 
 <!-- more -->
 
-## Config
+## Конфиг
 
 ::: code-tabs#language
 
@@ -54,11 +54,11 @@ module.exports = {
 
 :::
 
-## Usage
+## Использование
 
-You need to wrap your tabs in `tabs` container.
+Вам нужно обернуть вкладки в контейнер `tabs`.
 
-You can add an id suffix in `tabs` container, which will be used as tab id. All tabs with same id will share same switch event.
+Вы можете добавить суффикс идентификатора в контейнер `tabs`, который будет использоваться как ID вкладки. Все вкладки с одинаковым идентификатором будут иметь одно и то же событие переключения.
 
 ```md
 ::: tabs#fruit
@@ -70,9 +70,9 @@ You can add an id suffix in `tabs` container, which will be used as tab id. All 
 :::
 ```
 
-Inside this container, you should use `@tab` marker to mark and sperate tab contents.
+Внутри этого контейнера вы должны использовать маркер `@tab`, чтобы пометить и разделить содержимое вкладки.
 
-Behind `@tab` marker, you can add text `:active` to activate the tab by default, and the text will be resolved as tab title.
+За маркером `@tab` вы можете добавить текст `:active`, чтобы активировать вкладку по умолчанию, и текст будет разрешен как заголовок вкладки.
 
 ```md
 ::: tabs
@@ -94,7 +94,7 @@ Behind `@tab` marker, you can add text `:active` to activate the tab by default,
 :::
 ```
 
-By default, the title will be used as value of tab, but you can override it using id suffix.
+По умолчанию заголовок будет использоваться как значение вкладки, но вы можете переопределить его, используя суффикс идентификатора.
 
 ```md
 ::: tabs
@@ -114,29 +114,29 @@ By default, the title will be used as value of tab, but you can override it usin
 :::
 ```
 
-:::: info Switching together and persisting choise
+:::: info Переключение вместе и постоянный выбор
 
-If you want to make some tab groups switch together, you can use same tab id to bind them. Here is an exmple:
+Если вы хотите, чтобы некоторые группы вкладок переключались вместе, вы можете использовать один и тот же идентификатор вкладки для их привязки. Вот пример:
 
-Also, your choise with that tab id will be stored and persisted.
+Кроме того, ваш выбор с этим идентификатором вкладки будет сохранен и сохранен.
 
-Choose a package manager:
+Выберите менеджер пакетов:
 
 ::: tabs#shell
 
 @tab npm
 
-npm should be installed with Node.js.
+npm должен быть установлен вместе с Node.js.
 
 @tab pnpm
 
-If you are using Node.js v16+, you can use corepack to enable pnpm:
+Если вы используете Node.js v16+, вы можете использовать corepack для включения pnpm:
 
 ```bash
 corepack prepare pnpm@7.2.1 --activated
 ```
 
-Otherwise, you can install it with npm:
+В противном случае вы можете установить его с помощью npm:
 
 ```bash
 npm i -g pnpm
@@ -144,17 +144,17 @@ npm i -g pnpm
 
 :::
 
-Install `vuepress-plugin-md-enhance`:
+Установка `vuepress-plugin-md-enhance`:
 
 ::: tabs#shell
 
-@tab Using npm#npm
+@tab Использование npm#npm
 
 ```bash
 npm i -D vuepress-plugin-md-enhance@next
 ```
 
-@tab Using pnpm#pnpm
+@tab Использование pnpm#pnpm
 
 ```bash
 pnpm add -D vuepress-plugin-md-enhance@next
@@ -164,9 +164,9 @@ pnpm add -D vuepress-plugin-md-enhance@next
 
 ::::
 
-## Demo
+## Демо
 
-A tab of fruit:
+Вкладка фруктов:
 
 ::: tabs#fruit
 
@@ -194,7 +194,7 @@ Banana
 :::
 ```
 
-Another tab of fruit:
+Еще одна вкладка фруктов:
 
 ::: tabs#fruit
 
@@ -230,7 +230,7 @@ Orange
 :::
 ```
 
-A tab of fruit without id:
+Вкладка фруктов без id:
 
 ::: tabs
 

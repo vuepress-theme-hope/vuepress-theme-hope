@@ -4,15 +4,15 @@ icon: diagram
 category:
   - Markdown
 tag:
-  - Diagram
+  - Диаграмма
   - Markdown
 ---
 
-Let the Markdown file support [mermaid](https://mermaid-js.github.io/mermaid/#/) in your VuePress site.
+Пусть файл Markdown поддерживает [mermaid](https://mermaid-js.github.io/mermaid/#/) на вашем сайте VuePress.
 
 <!-- more -->
 
-## Config
+## Конфиг
 
 ::: code-tabs#language
 
@@ -53,7 +53,7 @@ module.exports = {
 
 :::
 
-## Syntax
+## Синтаксис
 
 ````md
 ```mermaid
@@ -63,13 +63,13 @@ module.exports = {
 ```
 ````
 
-## Usage
+## Использование
 
-Please see [mermaid](https://mermaid-js.github.io/mermaid/#/).
+Пожалуйста, смотрите [mermaid](https://mermaid-js.github.io/mermaid/#/).
 
-## Demo
+## Демо
 
-### Flowchart
+### Блок-схема
 
 ```mermaid
 flowchart TB
@@ -88,7 +88,7 @@ flowchart TB
     two --> c2
 ```
 
-::: details Code
+::: details Код
 
 ````md
 ```mermaid
@@ -111,7 +111,7 @@ flowchart TB
 
 :::
 
-### Sequence Diagram
+### Диаграмма последовательности
 
 ```sequence
 Alice ->> Bob: Hello Bob, how are you?
@@ -124,7 +124,7 @@ Bob-->Alice: Checking with John...
 Alice->John: Yes... John, how are you?
 ```
 
-::: details Code
+::: details Код
 
 ````md
 ```sequence
@@ -141,7 +141,7 @@ Alice->John: Yes... John, how are you?
 
 :::
 
-### Class Diagram
+### Диаграмма классов
 
 ```class
 class Square~Shape~{
@@ -156,7 +156,7 @@ Square : +setMessages(List~string~ messages)
 Square : +getMessages() List~string~
 ```
 
-::: details Code
+::: details Код
 
 ````md
 ```class
@@ -175,7 +175,7 @@ Square : +getMessages() List~string~
 
 :::
 
-### State Diagram
+### Диаграмма состояний
 
 ```state
 [*] --> Active
@@ -195,7 +195,7 @@ state Active {
 }
 ```
 
-::: details Code
+::: details Код
 
 ````md
 ```state
@@ -219,7 +219,7 @@ state Active {
 
 :::
 
-### Entity Relationship Diagrams
+### Диаграммы отношений сущностей
 
 ```er
 CAR ||--o{ NAMED-DRIVER : allows
@@ -236,7 +236,7 @@ PERSON {
 }
 ```
 
-::: details Code
+::: details Код
 
 ````md
 ```er
@@ -257,7 +257,7 @@ PERSON {
 
 :::
 
-### User Journey Diagram
+### Диаграмма пути пользователя
 
 ```journey
 title My working day
@@ -270,7 +270,7 @@ section Go home
   Sit down: 5: Me
 ```
 
-::: details Code
+::: details Код
 
 ````md
 ```journey
@@ -287,7 +287,7 @@ section Go home
 
 :::
 
-### Gantt diagrams
+### Диаграммы Ганта
 
 ```gantt
 dateFormat  YYYY-MM-DD
@@ -320,7 +320,7 @@ Add gantt diagram to demo page      :20h
 Add another diagram to demo page    :48h
 ```
 
-::: details Code
+::: details Код
 
 ````md
 ```gantt
@@ -357,7 +357,7 @@ Add another diagram to demo page    :48h
 
 :::
 
-### Pie Chart Diagrams
+### Диаграммы круговых диаграмм
 
 ```pie
 title What Voldemort doesn’t have?
@@ -366,7 +366,7 @@ title What Voldemort doesn’t have?
   "NOSE" : 45
 ```
 
-::: details Code
+::: details Код
 
 ````md
 ```pie
@@ -379,7 +379,7 @@ title What Voldemort doesn’t have?
 
 :::
 
-### Gitgraph Diagrams
+### Диаграммы Gitgraph
 
 ```git-graph
 commit
@@ -425,7 +425,7 @@ checkout develop
 merge release
 ```
 
-::: details Code
+::: details Код
 
 ```git-graph
 commit
@@ -473,7 +473,7 @@ merge release
 
 :::
 
-### C4C Diagrams
+### Диаграммы C4C
 
 ```c4c
 title System Context diagram for Internet Banking System
@@ -509,7 +509,7 @@ Rel(SystemAA, SystemC, "Sends e-mails", "SMTP")
 Rel(SystemC, customerA, "Sends e-mails to")
 ```
 
-::: details Code
+::: details Код
 
 ````md
 ```c4c
@@ -549,7 +549,7 @@ Rel(SystemC, customerA, "Sends e-mails to")
 
 :::
 
-### A Complex Example
+### Сложный пример
 
 ```mermaid
 graph TB
@@ -575,7 +575,7 @@ graph TB
      class di orange
 ```
 
-::: details Code
+::: details Код
 
 ````md
 ```mermaid

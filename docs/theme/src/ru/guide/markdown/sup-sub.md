@@ -1,19 +1,19 @@
 ---
-title: Superscript and Subscript
+title: Верхний и нижний индексы
 icon: superscript
 category:
   - Markdown
 tag:
   - Markdown
-  - Superscript
-  - Subscript
+  - Верхний индекс
+  - Нижний индекс
 ---
 
-Let the Markdown file in your VuePress site support Subscript and Superscript.
+Пусть файл Markdown на вашем сайте VuePress поддерживает нижний и верхний индексы.
 
 <!-- more -->
 
-## Config
+## Конфиг
 
 ::: code-tabs#language
 
@@ -60,12 +60,12 @@ module.exports = {
 
 :::
 
-## Syntax
+## Синтаксис
 
-- Use `^ ^` to mark the superscript.
-- Use `~ ~` to mark the subscript.
+- Используйте `^ ^`, чтобы отметить верхний индекс.
+- Используйте `~ ~`, чтобы отметить нижний индекс.
 
-## Demo
+## Демо
 
 - 19^th^
 - H~2~O

@@ -8,13 +8,13 @@ tag:
   - Markdown
 ---
 
-Let the Markdown file support chart in your VuePress site.
+Разрешите диаграмму поддержки файлов Markdown на вашем сайте VuePress.
 
-`vuepress-plugin-md-enhance` uses [ECharts](https://echarts.apache.org/en/index.html) to support this feature.
+`vuepress-plugin-md-enhance` использует [ECharts](https://echarts.apache.org/en/index.html) для поддержки этой функции.
 
 <!-- more -->
 
-## Config
+## Конфиг
 
 ::: code-tabs#language
 
@@ -55,7 +55,7 @@ module.exports = {
 
 :::
 
-## Syntax
+## Синтаксис
 
 ````md
 ::: echarts Title
@@ -69,13 +69,13 @@ module.exports = {
 :::
 ````
 
-`js` and `javascript` code block is also supported, and you are expected to assign your export object to `module.exports`.
+Блок кода `js` и `javascript` также поддерживается, и вы должны назначить свой объект экспорта в `module.exports`.
 
-## Demo
+## Демо
 
-### Line Chart
+### Линейный график
 
-::: echarts A line chart
+::: echarts Линейный график
 
 ```json
 {
@@ -97,10 +97,10 @@ module.exports = {
 
 :::
 
-:::: details Code
+:::: details Код
 
 ````md
-::: echarts A line chart
+::: echarts Линейный график
 
 ```json
 {
@@ -125,9 +125,9 @@ module.exports = {
 
 ::::
 
-### Bar Chart
+### Гистограмма
 
-::: echarts A bar chart
+::: echarts Гистограмма
 
 ```json
 {
@@ -153,10 +153,10 @@ module.exports = {
 
 :::
 
-:::: details Code
+:::: details Код
 
 ````md
-::: echarts A bar chart
+::: echarts Гистограмма
 
 ```json
 {
@@ -185,9 +185,9 @@ module.exports = {
 
 ::::
 
-### Pie Chart
+### Круговая диаграмма
 
-::: echarts A nightingale chart
+::: echarts Соловьиная диаграмма
 
 ```json
 {
@@ -263,10 +263,10 @@ module.exports = {
 
 :::
 
-:::: details Code
+:::: details Код
 
 ````md
-::: echarts A nightingale chart
+::: echarts Соловьиная диаграмма
 
 ```json
 {
@@ -345,9 +345,9 @@ module.exports = {
 
 ::::
 
-### Scatter Chart
+### Точечная диаграмма
 
-::: echarts A scatter chart
+::: echarts Точечная диаграмма
 
 ```json
 {
@@ -388,10 +388,10 @@ module.exports = {
 
 :::
 
-:::: details Code
+:::: details Код
 
 ````md
-::: echarts A scatter chart
+::: echarts Точечная диаграмма
 
 ```json
 {
@@ -435,6 +435,6 @@ module.exports = {
 
 ::::
 
-## Docs
+## Документация
 
-For details, please see [ECharts Docs](https://echarts.apache.org/handbook/en/get-started/).
+Для получения дополнительной информации смотрите [Документацию ECharts](https://echarts.apache.org/handbook/en/get-started/).

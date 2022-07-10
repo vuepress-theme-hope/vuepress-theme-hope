@@ -1,9 +1,9 @@
-## Heading 2
+## Заголовок 2
 
-Contents containing **bolded text** and some Markdown Enhance features:
+Контент, содержащий **жирный текст** и некоторые функции Markdown Enhance:
 
 ::: tip
 
-Hey how are **you**? :smile:
+Эй, как **ты**? :smile:
 
 :::

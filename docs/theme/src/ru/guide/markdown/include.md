@@ -1,18 +1,18 @@
 ---
-title: Include Files
+title: Включение файлов
 icon: markdown
 category:
   - Markdown
 tag:
-  - Code Demo
-  - Include Files
+  - Демонстрация кода
+  - Включение файлов
 ---
 
-Let the Markdown file in your VuePress site support including other files.
+Пусть файл Markdown на вашем сайте VuePress поддерживает, включая другие файлы.
 
 <!-- more -->
 
-## Config
+## Конфиг
 
 ::: code-tabs#language
 
@@ -53,17 +53,17 @@ module.exports = {
 
 :::
 
-## Syntax
+## Синтаксис
 
-Use `@include(filename)` to include a file.
+Используйте `@include(filename)`, чтобы включить файл.
 
-To partially import the file, you can specify the range of lines to be included:
+Чтобы частично импортировать файл, вы можете указать диапазон включаемых строк:
 
 - `@include(filename{start-end})`
 - `@include(filename{start-})`
 - `@include(filename{-end})`
 
-## Demo
+## Демо
 
 `@include(./demo.snippet.md)`:
 
@@ -73,9 +73,9 @@ To partially import the file, you can specify the range of lines to be included:
 
 @include(./demo.snippet.md{5-9})
 
-## Advanced
+## Продвинутый
 
-You can also set an object to customize include filepath and include behavior.
+Вы также можете настроить объект для настройки пути к включаемому файлу и поведения включения.
 
 ```ts
 interface IncludeOptions {
@@ -95,7 +95,7 @@ interface IncludeOptions {
 }
 ```
 
-E.g.: you can use `@src` as an alias for your source directory.
+Например: вы можете использовать `@src` в качестве псевдонима для вашего исходного каталога.
 
 ::: code-tabs#language
 
@@ -149,7 +149,7 @@ module.exports = {
 
 :::
 
-Also, to place your Markdown files directly besides your actual files, but don’t want them rendered as pages, you can set `pagePatterns` options in VuePress config. See [pagePatterns](https://v2.vuepress.vuejs.org/reference/config.html#pagepatterns) for more details.
+Кроме того, чтобы разместить ваши файлы Markdown непосредственно рядом с вашими реальными файлами, но не хотите, чтобы они отображались как страницы, вы можете установить параметры `pagePatterns` в конфигурации VuePress. Дополнительные сведения смотрите в [pagePatterns](https://v2.vuepress.vuejs.org/reference/config.html#pagepatterns).
 
 ::: code-tabs#language
 

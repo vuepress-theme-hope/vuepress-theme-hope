@@ -1,18 +1,18 @@
 ---
-title: Task list
+title: Список заданий
 icon: check
 category:
   - Markdown
 tag:
   - Markdown
-  - Task List
+  - Список заданий
 ---
 
-Let the Markdown file in your VuePress site support task list.
+Включите файл Markdown в список задач поддержки вашего сайта VuePress.
 
 <!-- more -->
 
-## Config
+## Конфиг
 
 ::: code-tabs#language
 
@@ -53,17 +53,17 @@ module.exports = {
 
 :::
 
-## Syntax
+## Синтаксис
 
-- Use `- [ ] some text` to render a unchecked task item.
-- Use `- [x] some text` to render a checked task item. (Capital `X` is also supported)
+- Используйте `- [ ] некоторый текст` для отображения неотмеченного элемента задачи.
+- Используйте `- [x] некоторый текст` для отображения отмеченного элемента задачи. (Заглавная `X` также поддерживается)
 
-## Demo
+## Демо
 
-- [ ] Plan A
-- [x] Plan B
+- [ ] План А
+- [x] План Б
 
 ```md
-- [ ] Plan A
-- [x] Plan B
+- [ ] План А
+- [x] План Б
 ```
