@@ -1,25 +1,25 @@
 ---
-title: NavBar
+title: Панель навигации
 icon: navbar
 order: 1
 category:
-  - Layout
+  - Макет
 tag:
-  - Layout
-  - Navbar
+  - Макет
+  - Панель навигации
 ---
 
-The Navbar may contain your site title, [Search Box](#search-box), [Navbar Links](#navbar-links), [I18n](https://v2.vuepress.vuejs.org/guide/i18n.html), [Repository Link](#git-repo-and-edit-links) and [outlook panel](#outlook-panel). They all depend on your configuration.
+Панель навигации может содержать название вашего сайта, [окно поиска](#search-box), [ссылки панели навигации](#navbar-links), [I18n](https://v2.vuepress.vuejs.org/guide/i18n.html), [Ссылка на репозиторий](#git-repo-and-edit-links) и [панель outlook](#outlook-panel). Все они зависят от вашей конфигурации.
 
 <!-- more -->
 
-## Navbar Links
+## Ссылки на панели навигации
 
-You can add links to the navbar via `navbar` options, it accepts an array.
+Вы можете добавить ссылки на панель навигации с помощью параметров `navbar`, она принимает массив.
 
-### String Format
+### Строковый формат
 
-The easiest way to configure the navbar is to fill in the paths of the page files to be displayed in turn, so that the text, icons and links of the item will be automatically generated from the corresponding files.
+Самый простой способ настроить навигационную панель — заполнить пути файлов страниц, которые будут отображаться по очереди, чтобы текст, значки и ссылки элемента автоматически генерировались из соответствующих файлов.
 
 ::: code-tabs#language
 
@@ -54,18 +54,18 @@ module.exports = {
 
 ::: tip
 
-You can omit the `.md` extension, and paths ending with `/` are inferred as `/README.md`.
+Вы можете опустить расширение `.md` а пути, оканчивающиеся на `/`, подразумеваются как `/README.md`.
 
 :::
 
-### Object Format
+### Формат объекта
 
-If you are not satisfied with the page’s icon or feel that the page title is too long, you can configure an object instead. Available configuration items are:
+Если вас не устраивает значок страницы или вы считаете, что заголовок страницы слишком длинный, вы можете вместо этого настроить объект. Доступные элементы конфигурации:
 
-- `text:`: item text
-- `link`: item link
-- `icon`: item icon (optional)
-- `activeMatch`: item active math (optional), support regexp strings
+- `text:`: элемент теста
+- `link`: элемент ссылка
+- `icon`: элемент иконка (опционально)
+- `activeMatch`: элемент активного совпадения(опционально), поддержка строк регулярных выражений
 
 ::: code-tabs#language
 
@@ -132,23 +132,23 @@ module.exports = {
 
 :::
 
-::: tip Advanced usage of activeMatch
+::: tip Расширенное использование activeMatch
 
-`activeMatch` gives you the ability to control whether the path is active, for example you may have the following dropdown:
+`activeMatch` дает вам возможность контролировать, активен ли путь, например, у вас может быть следующее раскрывающееся меню:
 
 - `/path/`
 - `/path/a/`
 - `/path/b/`
 
-But you may have multiple folders with files under `/path/`. To avoid multiple dropown items been activated under route starting with `/path/a/` or `/path/b/`, you can set `activeMatch` option for the first item with `^/path/(?:(?!a/|b/).*)?$`.
+Но у вас может быть несколько папок с файлами в папке `/path/`. Чтобы избежать активации нескольких выпадающих элементов в маршруте, начинающемся с `/path/a/` или `/path/b/`, вы можете установить опцию `activeMatch` для первого элемента с `^/path/(?:(?!a/|b/).*)?$`.
 
 :::
 
-### Dropdown List
+### Выпадающий список
 
-To display more links, you can group similar links into a dropdown list.
+Чтобы отобразить больше ссылок, вы можете сгруппировать похожие ссылки в раскрывающийся список.
 
-You need use object format and provide the additional `children` option to nest links:
+Вам нужно использовать формат объекта и предоставить дополнительную опцию `children` для вложения ссылок:
 
 ::: code-tabs#language
 
@@ -193,9 +193,9 @@ module.exports = {
 
 :::
 
-In most cases, the grouped items in the navbar belong to the same category and will be placed in the same subdirectory, and they have the same path prefix.
+В большинстве случаев сгруппированные элементы на панели навигации относятся к одной категории и будут помещены в один и тот же подкаталог, а также имеют одинаковый префикс пути.
 
-To simplify the configuration, you can add the `prefix` field to add a prefix to each sub-link in the group:
+Чтобы упростить настройку, вы можете добавить поле `prefix`, чтобы добавить префикс к каждой подссылке в группе:
 
 ::: code-tabs#language
 
@@ -242,7 +242,7 @@ module.exports = {
 
 :::
 
-You can also have sub groups inside a dropdown by having nested `children`:
+Вы также можете иметь подгруппы внутри выпадающего списка, вложив `children`:
 
 ::: code-tabs#language
 
@@ -317,9 +317,9 @@ module.exports = {
 
 :::
 
-## Disable Navbar
+## Отключить панель навигации
 
-To disable the navbar globally, set `navbar: false` in theme options:
+Чтобы отключить панель навигации глобально, установите `navbar: false` в параметрах темы:
 
 ::: code-tabs#language
 
@@ -352,7 +352,7 @@ module.exports = {
 
 :::
 
-You can disable the navbar for a specific page via `YAML front matter`:
+Вы можете отключить панель навигации для определенной страницы с помощью `YAML front matter`:
 
 ```md
 ---
@@ -360,15 +360,15 @@ navbar: false
 ---
 ```
 
-## Site Logo
+## Логотип сайта
 
-You can use `logo` options to set site logo displayed in navbar.
+Вы можете использовать опции `logo`, чтобы установить логотип сайта, отображаемый на панели навигации.
 
-The logo is displayed on the navbar instead of the previous site name on mobile.
+Логотип отображается на панели навигации вместо предыдущего названия сайта на мобильном устройстве.
 
 ::: note
 
-Please fill in an absolute path and place the logo in `.vuepress/public` folder.
+Укажите абсолютный путь и поместите логотип в папку `.vuepress/public`.
 
 :::
 
@@ -405,13 +405,13 @@ module.exports = {
 
 ::: tip
 
-You can set `logoDark` to display another logo in dark mode.
+Вы можете установить `logoDark` для отображения другого логотипа в темном режиме.
 
 :::
 
-## I18n Support
+## Поддержка I18n
 
-The theme’s navbar supports [I18n](https://v2.vuepress.vuejs.org/guide/i18n.html), so you can set navbar options mentioned above individually in each language:
+Навигационная панель темы поддерживает [I18n](https://v2.vuepress.vuejs.org/guide/i18n.html), поэтому вы можете установить упомянутые выше параметры навигационной панели индивидуально для каждого языка:
 
 ::: code-tabs#language
 
@@ -470,17 +470,17 @@ module.exports = {
 
 :::
 
-## Search Box
+## Окно поиска
 
-Like the default theme, `vuepress-theme-hope` brings built-in support for search plugins. You can enable the following plugins according to your own needs. The corresponding search box will automatically appear in the navbar.
+Как и тема по умолчанию, `vuepress-theme-hope` имеет встроенную поддержку поисковых плагинов. Вы можете включить следующие плагины в соответствии с вашими потребностями. Соответствующее окно поиска автоматически появится на панели навигации.
 
-For details, please see [Feature → Search](../feature/search.md).
+Подробнее смотрите [Функция → Поиск](../feature/search.md).
 
-## Git repository and Edit Links
+## Репозиторий Git и ссылки для редактирования
 
-A repo button will appear in navbar if you set `repo` in theme options.
+Кнопка репозитория появится на панели навигации, если вы установите `repo` в настройках темы.
 
-You can control whether showing the repository button via `repoDisplay` in theme options.
+Вы можете управлять отображением кнопки репозитория с помощью `repoDisplay` в настройках темы.
 
 ::: code-tabs#language
 
@@ -525,28 +525,28 @@ module.exports = {
 
 :::
 
-## Outlook Popup
+## Всплывающее окно Outlook
 
-The following three functions are provided:
+Предусмотрены следующие три функции:
 
-- [Theme color switch](../interface/theme-color.md)
-- [Dark Mode](../interface/darkmode.md)
-- [FullScreen button](../interface/others.md#fullscreen-button)
+- [Переключатель цвета темы](../interface/theme-color.md)
+- [Темный режим](../interface/darkmode.md)
+- [Кнопка полноэкранного режима](../interface/others.md#fullscreen-button)
 
-## Layout config
+## Конфигурация макета
 
-`vuepress-theme-hope` allows you to customize navbar layout. You can add components in `left`, `center` and `right` keys under `navbarLayout` options.
+`vuepress-theme-hope` позволяет настроить макет панели навигации. Вы можете добавлять компоненты в `left`, `center` и `right` клавиши в параметрах `navbarLayout`.
 
-Available components:
+Доступные компоненты:
 
-- Brand: Site Brand
-- Links: Navbar links
-- Language: Language Switcher
-- Search: Search Box
-- Outlook: Outlook Popup
-- Repo: Project Repo
+- Бренд: Бренд сайта
+- Ссылки: Ссылки на панель навигации
+- Язык: Переключатель языка
+- Поиск: Окно поиска
+- Outlook: Всплывающее окно Outlook
+- Репозиторий: Репозиторий проекта
 
-By default, we are using the following options:
+По умолчанию мы используем следующие параметры:
 
 ::: code-tabs#language
 
@@ -587,13 +587,13 @@ module.exports = {
 
 :::
 
-## Types and Helpers
+## Типы и Помощники
 
-`vuepress-theme-hope` exports the type of navbar as `HopeThemeNavbarConfig`, and provides a `navbar` helper function. They can provide validation and autocompletion of navbar configuration in TS and JS.
+`vuepress-theme-hope` экспортирует тип навигационной панели как `HopeThemeNavbarConfig` и предоставляет вспомогательную функцию `navbar`. Они могут обеспечивать проверку и автозаполнение конфигурации панели навигации в TS и JS.
 
 ::: tip
 
-They mainly deal with scenarios when you split your VuePress configuration into multiple parts.
+В основном они имеют дело со сценариями, когда вы разбиваете конфигурацию VuePress на несколько частей.
 
 :::
 
@@ -636,9 +636,9 @@ module.exports = navbar([
 
 :::
 
-## Demo
+## Демо
 
-:::: details Configuration of this documentation
+:::: details Конфигурация этой документации
 
 ::: code-tabs#language
 

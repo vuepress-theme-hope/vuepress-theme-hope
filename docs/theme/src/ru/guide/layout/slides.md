@@ -1,38 +1,38 @@
 ---
-title: Slide
+title: Слайд
 icon: slides
 order: 7
 category:
-  - Layout
+  - Макет
 tag:
-  - Layout
-  - Slides
+  - Макет
+  - Слайды
 ---
 
-`vuepress-theme-hope` allows you to add slides pages.
+`vuepress-theme-hope` позволяет добавлять страницы со слайдами.
 
-You need to set `layout: Slide` in the frontmatter of the corresponding page to enable the slides page.
+Вам нужно установить `layout: Slide` в frontmatter, чтобы активировать страницу со слайдами.
 
 <!-- more -->
 
-## Demo
+## Демо
 
-[Here is a demo containing all the slide features](https://vuepress-theme-hope.github.io/v2/md-enhance/guide/presentation/demo.html).
+[Вот демонстрация, содержащая все функции слайда](https://vuepress-theme-hope.github.io/v2/md-enhance/guide/presentation/demo.html).
 
-![Slide page screenshot](./assets/slides-light.png#light)
-![Slide page screenshot](./assets/slides-dark.png#dark)
+![Скриншот страницы слайда](./assets/slides-light.png#light)
+![Скриншот страницы слайда](./assets/slides-dark.png#dark)
 
-## Attention
+## Внимание
 
-::: warning Enable presentation
+::: warning Включить презентацию
 
-You should enable presentation feature in `vuepress-plugin-md-enhance` by setting `plugins.mdEnhance.presentation` or `plugins.mdEnhance.enableAll` in theme options, otherwise the layout won’t be rendered correctly.
+Вы должны включить функцию презентации в `vuepress-plugin-md-enhance`, установив `plugins.mdEnhance.presentation` или `plugins.mdEnhance.enableAll` в параметрах темы, иначе макет не будет отображаться правильно.
 
 :::
 
-::: warning No multiple slides
+::: warning Отсутствие мульти слайдов
 
-You should only include a single slide syntax on this page to avoid rendering problems.
+Вы должны включить только один синтаксис слайда на этой странице, чтобы избежать проблем с визуализацией.
 
 ```md
 @slidestart [your theme]

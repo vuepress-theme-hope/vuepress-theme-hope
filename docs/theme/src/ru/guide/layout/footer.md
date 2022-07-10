@@ -1,51 +1,51 @@
 ---
-title: Footer
+title: Футер
 icon: footer
 order: 4
 category:
-  - Layout
+  - Макет
 tag:
-  - Footer
-  - Layout
+  - Футер
+  - Макет
 ---
 
-`vuepress-theme-hope` provides footer feature for all pages <Badge text="Support page config" />.
+`vuepress-theme-hope` предоставляет функцию футера для всех страниц <Badge text="Конфигурация страницы поддержки" />.
 
 <!-- more -->
 
-## Global Config
+## Глобальный конфиг
 
-You can set the default footer content and copyright information globally using `footer` and `copyright` in theme options.
+Вы можете установить содержимое футера по умолчанию и информацию об авторских правах глобально, используя `footer` и `copyright` в параметрах темы.
 
-The footer is not displayed by default. To display the footer, you need to set `displayFooter: true` in theme options.
+Футер по умолчанию не отображается. Чтобы отобразить футер, вам нужно установить `displayFooter: true` в настройках темы.
 
-::: info Different Locales
+::: info Различные локали
 
-You can set footers for each language individually under `locales` field in theme options.
+Вы можете установить нижние колонтитулы для каждого языка отдельно в поле `locales` в настройках темы.
 
 :::
 
-## Page Config
+## Конфигурация страницы
 
-You can configure `footer` and `copyright` options in the frontmatter of the page to set footer content of a specific page.
+Вы можете настроить параметры `footer` и `copyright` во frontmatter страницы, чтобы установить содержимое футера для конкретной страницы.
 
 ### footer
 
-- When setting `displayFooter: true` in theme options, you can set `footer: false` in frontmatter to disable footer in a specific page.
+- При установке `displayFooter: true` в параметрах темы вы можете установить `footer: false` во frontmatter, чтобы отключить нижний колонтитул на определенной странице.
 
-- When the global display of footer is not enabled, setting `footer: true` means displaying the default footer.
+- Когда глобальное отображение футера не включено, установка `footer: true` означает отображение футера по умолчанию.
 
-- If you fill in a string, it will be inserted into the footer as content with `v-html` command, so you can fill in HTMLString.
+- Если вы заполните строку, она будет вставлена в нижний колонтитул как содержимое с помощью команды `v-html`, так что вы можете заполнить HTMLString.
 
 ### copyright
 
-The `copyright` field is used as copyright information of a specific page. It also supports HTMLString (useful when you cite an article and the article uses a specific license).
+Поле `copyright` используется как информация об авторских правах на определенную страницу. Он также поддерживает HTMLString (полезно, когда вы цитируете статью, и статья использует определенную лицензию).
 
-When setting `displayFooter: true` in theme options, you can also set `copyright: false` to hide the copyright information in a specific page.
+При установке `displayFooter: true` в параметрах темы вы также можете установить `copyright: false`, чтобы скрыть информацию об авторских правах на определенной странице.
 
-## Examples
+## Примеры
 
-- Display default footer text:
+- Отображать текст футера по умолчанию:
 
   ```md
   ---
@@ -53,16 +53,16 @@ When setting `displayFooter: true` in theme options, you can also set `copyright
   ---
   ```
 
-- Customize footer text without displaying copyright information:
+- Настройте текст футера без отображения информации об авторских правах:
 
   ```md
   ---
-  footer: This site is served by GitHub Pages
+  footer: Этот сайт обслуживается GitHub Pages
   copyright: false
   ---
   ```
 
-- Customize footer content and copyright information:
+- Настройте содержимое футера и информацию об авторских правах:
 
   ```md
   ---
@@ -71,7 +71,7 @@ When setting `displayFooter: true` in theme options, you can also set `copyright
   ---
   ```
 
-- When you set `displayFooter: true` in theme options, you can also disable it locally:
+- Когда вы устанавливаете `displayFooter: true` в настройках темы, вы также можете отключить его локально:
 
   ```md
   ---
@@ -79,7 +79,7 @@ When setting `displayFooter: true` in theme options, you can also set `copyright
   ---
   ```
 
-- To remove the default footer content while keeping copyright information displayed, please use an empty string.
+- Чтобы удалить содержимое нижнего колонтитула по умолчанию, сохранив при этом информацию об авторских правах, используйте пустую строку.
 
   ```md
   ---

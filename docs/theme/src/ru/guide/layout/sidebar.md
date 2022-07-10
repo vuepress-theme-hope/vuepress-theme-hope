@@ -1,25 +1,25 @@
 ---
-title: Sidebar
+title: Боковая панель
 icon: sidebar
 order: 2
 category:
-  - Layout
+  - Макет
 tag:
-  - Layout
-  - Sidebar
+  - Макет
+  - Боковая панель
 ---
 
-The sidebar may contain a list of related documents, document titles, and blogger information in blog mode.
+Боковая панель может содержать список связанных документов, заголовков документов и информацию о блоггерах в режиме блога.
 
 <!-- more -->
 
-## Sidebar Links
+## Ссылки на боковой панели
 
 You should use `sidebar` in theme options to control sidebar.
 
-### String Format
+### Строковый формат
 
-Just like navbar, you can fill in an array of multiple file links as the basic configuration of the sidebar:
+Как и в случае с навигационной панелью, вы можете заполнить массив из нескольких ссылок на файлы в качестве базовой конфигурации боковой панели:
 
 ::: code-tabs#language
 
@@ -52,22 +52,22 @@ module.exports = {
 
 :::
 
-Each item of the array will be rendered as a sidebar item.
+Каждый элемент массива будет отображаться как элемент боковой панели.
 
 ::: tip
 
-You can omit the `.md` extension, and paths ending with `/` are inferred as `/README.md`.
+Вы можете опустить расширение `.md`, а пути, оканчивающиеся на `/`, подразумеваются как `/README.md`.
 
 :::
 
-### Object Format
+### Формат объекта
 
-Just like navbar, if you are not satisfied with the page’s icon or feel that the page title is too long, you can configure an object instead. Available configuration items are:
+Как и в случае с навигационной панелью, если вас не устраивает значок страницы или вы считаете, что заголовок страницы слишком длинный, вы можете вместо этого настроить объект. Доступные элементы конфигурации:
 
-- `text:`: item text
-- `link`: item link
-- `icon`: item icon (optional)
-- `activeMatch`: item active math (optional), support regexp strings
+- `text:`: элемент теста
+- `link`: элемент ссылка
+- `icon`: элемент иконка (опционально)
+- `activeMatch`: элемент активного совпадения(опционально), поддержка строк регулярных выражений
 
 ::: code-tabs#language
 
@@ -134,23 +134,23 @@ module.exports = {
 
 :::
 
-::: tip Advanced usage of activeMatch
+::: tip Расширенное использование activeMatch
 
-`activeMatch` gives you the ability to control whether the path is active, for example you may have the following dropdown:
+`activeMatch` дает вам возможность контролировать, активен ли путь, например, у вас может быть следующее раскрывающееся меню:
 
 - `/path/`
 - `/path/a/`
 - `/path/b/`
 
-But you may have multiple folders with files under `/path/`. To avoid multiple dropown items been activated under route starting with `/path/a/` or `/path/b/`, you can set `activeMatch` option for the first item with `^/path/(?:(?!a/|b/).*)?$`.
+Но у вас может быть несколько папок с файлами в папке `/path/`. Чтобы избежать активации нескольких выпадающих элементов в маршруте, начинающемся с `/path/a/` или `/path/b/`, вы можете установить опцию `activeMatch` для первого элемента с `^/path/(?:(?!a/|b/).*)?$`.
 
 :::
 
-### Grouping and Nesting
+### Группировка и вложение
 
-If you need a sidebar that displays a nested structure, you can group similar links.
+Если вам нужна боковая панель, отображающая вложенную структуру, вы можете сгруппировать похожие ссылки.
 
-You should use [object format](#object-format) and provide an additional `children` option to set the list of links. Like navbar, you can use `prefix` in the sidebar to add a default path prefix to each link in the group, and the sidebar additionally supports setting `collapsable: true` to make the menu group collapsible.
+Вы должны использовать [формат объекта](#object-format) и предоставить дополнительную опцию `children` для установки списка ссылок. Как и в навигационной панели, вы можете использовать `prefix` на боковой панели, чтобы добавить префикс пути по умолчанию к каждой ссылке в группе, а боковая панель дополнительно поддерживает установку `collapsable: true`, чтобы сделать группу меню сворачиваемой.
 
 ::: code-tabs#language
 
@@ -237,7 +237,7 @@ module.exports = {
 
 :::
 
-You can also nest Sidebar grouping:
+Вы также можете вложить группировку боковой панели:
 
 ::: code-tabs#language
 
@@ -312,9 +312,9 @@ module.exports = {
 
 :::
 
-You may want to use it with `prefix` to restore the structure of the document easily.
+Вы можете использовать его с `prefix`, чтобы легко восстановить структуру документа.
 
-For example, suppose you have a following directory structure:
+Например, предположим, что у вас есть следующая структура каталогов:
 
 ```
 .
@@ -331,7 +331,7 @@ For example, suppose you have a following directory structure:
     └─ four.md
 ```
 
-Then you can use the following config:
+Затем вы можете использовать следующую конфигурацию:
 
 ::: code-tabs#language
 
@@ -408,11 +408,11 @@ module.exports = {
 
 :::
 
-### Multiple Sidebars
+### Несколько боковых панелей
 
-To display different sidebars for different page groups, set an object for the sidebar in the format of `path: config`.
+Чтобы отображать разные боковые панели для разных групп страниц, установите объект для боковой панели в формате `path: config`.
 
-For example, if you have the following structure:
+Например, если у вас есть следующая структура:
 
 ```
 .
@@ -429,7 +429,7 @@ For example, if you have the following structure:
     └─ four.md
 ```
 
-You can define your sidebar for each section using below configuration:
+Вы можете определить свою боковую панель для каждого раздела, используя следующую конфигурацию:
 
 ::: code-tabs#language
 
@@ -502,17 +502,17 @@ module.exports = {
 
 ::: warning
 
-You need to pay special attention to the order of object key declaration. Generally speaking, you should put the more precise path first, because VuePress will traverse the key names of the sidebar configuration to find the matching configuration. Once a key name is successfully matched with the current path, it will display the corresponding sidebar configuration.
+Особое внимание следует уделить порядку объявления ключа объекта. Вообще говоря, вы должны сначала указать более точный путь, потому что VuePress будет проходить ключевые имена конфигурации боковой панели, чтобы найти подходящую конфигурацию. После успешного сопоставления имени ключа с текущим путем будет отображаться соответствующая конфигурация боковой панели.
 
-In this case, the fallback sidebar must be defined last for this reason.
+В этом случае резервная боковая панель должна быть определена последней по этой причине.
 
 :::
 
-## Auto Sidebar
+## Автоматическая боковая панель
 
-### Generate from Headers
+### Генерировать из заголовков
 
-To automatically generate a sidebar that contains only the header links for the current page, you can use frontmatter on that page:
+Чтобы автоматически сгенерировать боковую панель, содержащую только ссылки заголовка для текущей страницы, вы можете использовать передний план на этой странице:
 
 ```md
 ---
@@ -520,7 +520,7 @@ sidebar: heading
 ---
 ```
 
-You can also enable it in all pages by using config:
+Вы также можете включить его на всех страницах с помощью конфигурации:
 
 ::: code-tabs#language
 
@@ -553,11 +553,11 @@ module.exports = {
 
 :::
 
-### Generate from File Structure <Badge text="New" type="tip" />
+### Создать из файловой структуры <Badge text="New" type="tip" />
 
-You can replace the original "sidebarConfig array" with `"structure"` keyword in any of the above sidebar config. This will allow the theme to automatically read local files, then generate sidebar from file structure for you, to reduce your config workload.
+Вы можете заменить исходный "sidebarConfig array" ключевым словом `"structure"` в любой из приведенных выше конфигураций боковой панели. Это позволит теме автоматически читать локальные файлы, а затем создавать для вас боковую панель из файловой структуры, чтобы уменьшить нагрузку на конфигурацию.
 
-For example, for the following example mentioned earlier in [multiple sidebars](#multiple-sidebars):
+Например, для следующего примера, упомянутого ранее в [мульти сайдбары](#multiple-sidebars):
 
 ```
 .
@@ -574,7 +574,7 @@ For example, for the following example mentioned earlier in [multiple sidebars](
     └─ four.md
 ```
 
-You can change the original config to:
+Вы можете изменить исходную конфигурацию на:
 
 ::: code-tabs#language
 
@@ -629,17 +629,17 @@ module.exports = {
 
 :::
 
-In the above modification, since the original sidebar array is all files under the relevant path, you can easily replace it with the `"structure"` keyword.
+В приведенной выше модификации, поскольку исходный массив боковой панели состоит из всех файлов по соответствующему пути, вы можете легко заменить его ключевым словом `"structure"`.
 
-If you use the structure to generate a folder with other folders nested under it and **the folder contains a `README.md` file**, the corresponding folder will be rendered as a group. So you can even be more aggressive, for example setting `sidebar: "structure"` to have your sidebars all auto-generated from the file structure.
+Если вы используете структуру для создания папки с другими папками, вложенными в нее, и **папка содержит файл `README.md`**, соответствующая папка будет отображаться как группа. Таким образом, вы можете быть даже более агрессивным, например, установив `sidebar: "structure"`, чтобы все ваши боковые панели автоматически генерировались из файловой структуры.
 
-#### Advanced Control
+#### Расширенный контроль
 
-During the automatic generation from structure, you can control whether files in the same folder are included through the `index` option in the page Frontmatter, and control how they are sorted through `order`.
+Во время автоматического создания из структуры вы можете контролировать, включаются ли файлы в одной и той же папке с помощью параметра `index` на странице Frontmatter, а также управлять их сортировкой с помощью `order`.
 
-When you don't want the page to be included in the sidebar, you need to set `index: false` in Frontmatter.
+Если вы не хотите, чтобы страница отображалась на боковой панели, вам нужно установить `index: false` во Frontmatter.
 
-By default, the sidebar will be sorted according to the current language according to the title text of the file name. You can control how they are sorted by `order`. When you set a positive number, they will appear at the front of the group, the smaller the more forward, when you set a negative number, it will appear at the back of the group, and the larger the more backward:
+По умолчанию боковая панель будет отсортирована в соответствии с текущим языком в соответствии с текстом заголовка имени файла. Вы можете контролировать, как они сортируются по `order`. Когда вы устанавливаете положительное число, они появляются впереди группы, чем меньше, тем дальше вперед, когда вы устанавливаете отрицательное число, они появляются позади группы, и чем больше, тем дальше:
 
 - page -> order: 1
 - page -> order: 2
@@ -661,11 +661,11 @@ By default, the sidebar will be sorted according to the current language accordi
 
 ::: tip
 
-`README.md` is an exception, as long as you don’t disable it from the sidebar via `index: false` or make it as group link, it will always be the first item after sorting.
+`README.md` является исключением, если вы не отключите его с боковой панели с помощью `index: false` или не сделаете его групповой ссылкой, он всегда будет первым элементом после сортировки.
 
 :::
 
-For nested folders, the grouping information is controlled by `README.md` under that folder. You can control the behavior of folder grouping through the `dir` option in Frontmatter. The relevant optional items are as follows:
+Для вложенных папок информация о группировке контролируется файлом `README.md` в этой папке. Вы можете контролировать поведение группировки папок с помощью параметра `dir` в Frontmatter. Соответствующие необязательные элементы следующие:
 
 ```ts
 interface SidebarDirInfo {
@@ -716,9 +716,9 @@ interface SidebarDirInfo {
 }
 ```
 
-### Disabling Sidebar
+### Отключение боковой панели
 
-You can disable the sidebar on a specific page with `YAML front matter`:
+Вы можете отключить боковую панель на определенной странице с помощью `YAML front matter`:
 
 ```md
 ---
@@ -728,15 +728,15 @@ sidebar: false
 
 ::: note
 
-Sidebar is disabled by default in home page.
+Боковая панель по умолчанию отключена на главной странице.
 
 :::
 
-## Header Links Depths
+## Глубина ссылок заголовков
 
-The sidebar automatically displays links for headers in the current active page, nested under the link for the page itself. You can customize this behavior using `headerDepth` in theme options. The default depth(the max value) is `2`, which extracts both `h2` and `h3` headers. Setting it to `0` disables the header links.
+Боковая панель автоматически отображает ссылки на заголовки на текущей активной странице, вложенные под ссылку на саму страницу. Вы можете настроить это поведение, используя `headerDepth` в настройках темы. Глубина по умолчанию (максимальное значение) равна `2`, при этом извлекаются заголовки `h2` и `h3`. Установка его на `0` отключает ссылки заголовков.
 
-A page can also override this value via frontmatter:
+Страница также может переопределить это значение через frontmatter:
 
 ```md
 ---
@@ -746,15 +746,15 @@ headerDepth: 2
 
 ::: note
 
-The valid maximum value depends on which levels of headers you have extracted via [markdown.extractHeaders.level](https://v2.vuepress.vuejs.org/reference/config.html#markdown-extractheaders).
+Допустимое максимальное значение зависит от того, какие уровни заголовков вы извлекли с помощью [markdown.extractHeaders.level](https://v2.vuepress.vuejs.org/reference/config.html#markdown-extractheaders).
 
-Since the default value of [markdown.extractHeaders.level](https://v2.vuepress.vuejs.org/reference/config.html#markdown-extractheaders) is `[2, 3]`, so The default maximum value for `headerDepth` is `2`.
+Поскольку значение по умолчанию [markdown.extractHeaders.level](https://v2.vuepress.vuejs.org/reference/config.html#markdown-extractheaders) равно `[2, 3]`, поэтому максимальное значение по умолчанию для `headerDepth` равно `2`.
 
 :::
 
-### Active Header Links
+### Активные ссылки в заголовке
 
-By default, the nested header links and the hash in the URL are updated as the user scrolls to view the different sections of the page. This behavior can be disabled with the following theme config:
+По умолчанию вложенные ссылки заголовков и хэш в URL-адресе обновляются по мере того, как пользователь прокручивает страницу для просмотра различных разделов. Это поведение можно отключить с помощью следующей конфигурации темы:
 
 ::: code-tabs#language
 
@@ -793,13 +793,13 @@ module.exports = {
 
 :::
 
-## Icon Support
+## Поддержка иконок
 
-Icon support is enabled in the sidebar by default, and the icon of the page will be displayed before the link in the sidebar (by reading `icon` field in frontmatter). It can be disabled by setting `sidebarIcon` to `false` in theme options.
+Поддержка иконок включена на боковой панели по умолчанию, и иконка страницы будет отображаться перед ссылкой на боковой панели (при чтении поля `icon` во вступительной части). Его можно отключить, установив для `sidebarIcon` значение `false` в настройках темы.
 
-## I18n Support
+## Поддержка I18n
 
-The theme’s navbar supports [I18n](https://v2.vuepress.vuejs.org/guide/i18n.html), so you can set sidebar individually in each language:
+Навигационная панель темы поддерживает [I18n](https://v2.vuepress.vuejs.org/guide/i18n.html), поэтому вы можете настроить боковую панель отдельно для каждого языка:
 
 ::: code-tabs#language
 
@@ -854,13 +854,13 @@ module.exports = {
 
 :::
 
-## Types and Helpers
+## Типы и Помощники
 
-`vuepress-theme-hope` exports the type of sidebar as `HopeThemeSideConfig`, and provides a `sidebar` helper function. They can provide validation and autocompletion of sidebar configuration in TS and JS.
+`vuepress-theme-hope` экспортирует тип боковой панели как `HopeThemeSideConfig` и предоставляет вспомогательную функцию `sidebar`. Они могут обеспечить проверку и автозаполнение конфигурации боковой панели в TS и JS.
 
 ::: tip
 
-To deal with the situation when you split [multi-sidebar configuration](#multiple-sidebars) into multiple parts, we also provide `HopeThemeSidebarArrayConfig` `HopeThemeSidebarObjectConfig` type and `arraySidebar` and `objectSidebar` Helper function.
+Чтобы справиться с ситуацией, когда вы разделяете [конфигурацию с несколькими боковыми панелями](#multiple-sidebars) на несколько частей, мы также предоставляем тип `HopeThemeSidebarArrayConfig` и `HopeThemeSidebarObjectConfig` и вспомогательную функцию `arraySidebar` и `objectSidebar`.
 
 :::
 
@@ -899,9 +899,9 @@ module.exports = sidebar(/* Your sidebar configuration */);
 
 :::
 
-## Demo
+## Демо
 
-:::: details Configuration of this documentation
+:::: details Конфигурация этой документации
 
 ::: code-tabs#language
 

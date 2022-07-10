@@ -1,26 +1,26 @@
 ---
-title: Layout
+title: Макет
 icon: layout
 dir:
   order: 4
 ---
 
-## Catalog
+## Каталог
 
-- [Navigation Bar](navbar.md)
+- [Панель навигации](navbar.md)
 
-- [Sidebar](sidebar.md)
+- [Боковая панель](sidebar.md)
 
-- [Breadcrumb](breadcrumb.md)
+- [Хлебные крошки](breadcrumb.md)
 
-- [Footer](footer.md)
+- [Футер](footer.md)
 
-- [Page](page.md)
+- [Страница](page.md)
 
-- [Home Page](home.md)
+- [Главная страница](home.md)
 
-- [Slides](slides.md)
+- [Слайды](slides.md)
 
-- Switch animation
+- Переключить анимацию
 
-  As the page switches, a gradual transition animation will be displayed. Improve document / blog texture.
+  При переключении страниц будет отображаться постепенная анимация перехода. Улучшить текстуру документации/блога.

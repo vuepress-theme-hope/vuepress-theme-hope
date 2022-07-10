@@ -1,21 +1,21 @@
 ---
-title: Page
+title: Страница
 icon: page
 order: 5
 category:
-  - Layout
+  - Макет
 tag:
-  - Page
-  - Layout
+  - Страница
+  - Макет
 ---
 
-## Icon Support
+## Поддержка иконок
 
-You can configure the `icon` field in the frontmatter of the page, and fill in the FontClass of the corresponding icon to bind the icon to the page.
+Вы можете настроить поле `icon` в шапке страницы и заполнить FontClass соответствующей иконки, чтобы связать иконку со страницей.
 
-This icon is used in navbar, sidebar, breadcrumb and page title.
+Эта иконка используется в навигационной панели, боковой панели, хлебных крошках и заголовке страницы.
 
-::: details Example
+::: details Пример
 
 ```md
 ---
@@ -27,35 +27,35 @@ icon: home
 
 ::: info
 
-For icon settings, please see [Icon Support](../interface/icon.md)
+Настройки иконок смотрите в [Поддержка иконок](../interface/icon.md)
 
 :::
 
-## Page Info Display
+## Отображение информации о странице
 
-Please see [Page Info Section](../feature/page-info.md)
+Смотрите раздел [Информация о странице](../feature/page-info.md)
 
-## Breadcrumb
+## Хлебные крошки
 
-Please see [Breadcrumb](breadcrumb.md).
+Пожалуйста, смотрите [Хлебные крошки](breadcrumb.md).
 
-## Header List
+## Список заголовков
 
-In desktop mode, a list of article headers will automatically be displayed on the right side of the screen. (They will be placed in the sidebar on mobile devices)
+В десктопном режиме список заголовков статей будет автоматически отображаться в правой части экрана. (Они будут размещены на боковой панели на мобильных устройствах)
 
-If you don’t want to display the title list on the right in desktop mode, please set `toc: false` in theme options.
+Если вы не хотите отображать список заголовков справа в режиме рабочего стола, установите `toc: false` в настройках темы.
 
-You can also set it through `toc` in page frontmatter.
+Вы также можете установить его через `toc` во frontmatter.
 
-## Contributors and Last Updated Time
+## Контрибьюторы и время последнего обновления
 
-Please see [Page Meta](../feature/meta.md).
+Пожалуйста, смотрите [Метастраницы](../feature/meta.md).
 
-## Prev / Next Links
+## Предыдущие / Следующие ссылки
 
 <!-- TODO: Improve it -->
 
-Prev and next links are automatically inferred based on the sidebar order of the active page. You can also explicitly overwrite or disable them globally with theme config or on specific pages using `Front matter`:
+Предыдущая и следующая ссылки автоматически выводятся на основе порядка боковой панели активной страницы. Вы также можете явно перезаписать или отключить их глобально с помощью конфигурации темы или на определенных страницах, используя `Front matter`:
 
 ```md
 ---
@@ -64,13 +64,13 @@ next: false
 ---
 ```
 
-## Comment
+## Комментарий
 
-Please see [Comment section](../feature/comment.md) for details.
+Пожалуйста, смотрите [раздел комментарий](../feature/comment.md) для деталей.
 
-## Customize Layout
+## Кастомизация макета
 
-By default the content of each `*.md` file is rendered in a `<div class="page">` container, along with the sidebar, auto-generated edit links and prev/next links. To use a fully custom component in place of the page, you can again specify the component to use using frontmatter:
+По умолчанию содержимое каждого файла `*.md` отображается в контейнере `<div class="page">`, вместе с боковой панелью, автоматически сгенерированными ссылками для редактирования и ссылками на предыдущую/следующую. Чтобы использовать полностью настраиваемый компонент вместо страницы, вы можете снова указать компонент для использования с помощью frontmatter:
 
 ```md
 ---
@@ -78,24 +78,24 @@ layout: SpecialLayout
 ---
 ```
 
-This will render `SpecialLayout` layout registered in VuePress for the given page.
+Это отобразит макет `SpecialLayout`, зарегистрированный в VuePress для данной страницы.
 
 ::: note
 
-The theme only provides `Layout`, `404` layout.
+Тема предоставляет только макет `Layout`, `404`.
 
-Also the theme:
+Также тема:
 
-- Provides a `Blog` layout when the blogging feature is enabled
-- Provides a `Slide` layout when the slideshow feature is enabled
+- Предоставляет макет `Blog`, когда функция ведения блога включена
+- Предоставляет макет `Slide`, когда функция слайд-шоу включена
 
-If you want to provide your own layout, please see [Theme Extending](../../cookbook/advanced/extend.md).
+Если вы хотите предоставить свой собственный макет, смотрите [Расширение темы](../../cookbook/advanced/extend.md).
 
 :::
 
-## Customize Container Class
+## Настроить класс контейнера
 
-By default, each page is rendered in a `div` with class `theme-container`. To apply some special styles to specific pages, you can additionally specify a class name by setting `containerClass` in frontmatter
+По умолчанию каждая страница отображается в `div` с классом `theme-container`. Чтобы применить некоторые специальные стили к конкретным страницам, вы можете дополнительно указать имя класса, установив `containerClass` в frontmatter
 
 ```md
 ---
@@ -103,4 +103,4 @@ containerClass: fancy-container
 ---
 ```
 
-This will render in `<div class="theme-container fancy-container" />` for the current page.
+Это будет отображаться в `<div class="theme-container fancy-container" />` для текущей страницы.

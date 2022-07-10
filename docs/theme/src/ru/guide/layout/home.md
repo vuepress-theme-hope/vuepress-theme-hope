@@ -1,99 +1,99 @@
 ---
-title: Home Page
+title: Главная страница
 icon: home
 order: 6
 category:
-  - Layout
+  - Макет
 tag:
-  - Home
-  - Layout
+  - Главная
+  - Макет
 ---
 
-`vuepress-theme-hope` improves the default home page.
+`vuepress-theme-hope` улучшает домашнюю страницу по умолчанию.
 
-To use it, set `home: true` in page frontmatter. Any extra content after the `YAML front matter` will be parsed as normal Markdown and rendered after the features section.
+Чтобы использовать его, установите `home: true` в frontmatter страницы. Любой дополнительный контент после `YAML front matter` будет проанализирован как обычный Markdown и отображен после раздела функций.
 
-![Screenshot](./assets/home-light.png#light)
-![Screenshot](./assets/home-dark.png#dark)
+![Скриншот](./assets/home-light.png#light)
+![Скриншот](./assets/home-dark.png#dark)
 
 <!-- more -->
 
-## Frontmatter Options
+## Опции Frontmatter
 
 ### home
 
-- Type: `boolean`
+- Тип: `boolean`
 
-Enable homepage style when setting to `true`
+Включить стиль домашней страницы при значении `true`
 
 ### title
 
-- Type: `string`
-- Required: No
+- Тип: `string`
+- Обязательно: Нет
 
-Page title, will be used in breadcrumb, seo, etc.
+Название страницы будет использоваться в хлебных крошках, SEO и т. д.
 
 ### heroText
 
-- Type: `string | false`
-- Default: `"Hello"`
+- Тип: `string | false`
+- По умолчанию: `"Hello"`
 
-Hero Title
+Титул героя
 
 ### tagline
 
-- Type: `string | false`
-- Default: `"Welcome to your VuePress site"`
+- Тип: `string | false`
+- По умолчанию: `"Welcome to your VuePress site"`
 
-Short description in hero
+Краткое описание в герое
 
 ### heroImage
 
-- Type: `string`
-- Required: No
+- Тип: `string`
+- Обязательно: Нет
 
-Home hero (logo) image address, need to fill in the absolute path (pictures need to be placed in the `.vuepress/public` folder)
+Адрес изображения главного героя (логотипа), необходимо указать абсолютный путь (изображения необходимо поместить в папку `.vuepress/public`)
 
 ### heroImageDark
 
-- Type: `string`
-- Required: No
+- Тип: `string`
+- Обязательно: Нет
 
-Darkmode Home hero (logo) image address, need to fill in the absolute path (pictures need to be placed in the `.vuepress/public` folder), will be the same as `heroImage` by default.
+Адрес изображения главного героя (логотипа) темного режима, необходимо указать абсолютный путь (изображения необходимо поместить в папку `.vuepress/public`), по умолчанию будет таким же, как и `heroImage`.
 
 ### heroAlt
 
-- Type: `string`
-- Required: No
+- Тип: `string`
+- Обязательно: Нет
 
-Home icon alt text
+Альтернативный текст иконки Home
 
 ### actions
 
-- Type: `ActionConfig | ActionConfig[]`
-- Required: No
+- Тип: `ActionConfig | ActionConfig[]`
+- Обязательно: Нет
 
-`ActionConfig` structure:
+Структура `ActionConfig`:
 
-- `text`: Button text
-- `link`: Button link
-- `type`: Button type (Only support `"primary"` and `"default"` (default))
+- `text`: Кнопка текстом
+- `link`: Кнопка ссылкой
+- `type`: Тип кнопки (Поддержка только `"primary"` и `"default"` (по умолчанию))
 
 ### features
 
-- Type: `Feature[]`
-- Required: No
+- Тип: `Feature[]`
+- Обязательно: Нет
 
-Structure of `Feature`:
+Структура `Feature`:
 
-- `title`: `string` title
-- `details` (optional): `string` details
-- `icon` (optional): `string` icon FontClass
-- `link` (optional): `string` link address
+- `title`: `string` тайтл
+- `details` (опционально): `string` детали
+- `icon` (опционально): `string` иконка FontClass
+- `link` (опционально): `string` адрес ссылки
 
-Feature description
+Описание функции
 
-## Demo
+## Демо
 
 ```md
 ---
@@ -106,7 +106,7 @@ tagline: A vuepress theme with tons of features✨
 actions:
   - text: Get Started 💡
     link: /guide/
-    type: primary
+    Тип: primary
 
   - text: Config 🛠
     link: /config/

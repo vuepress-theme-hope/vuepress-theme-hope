@@ -1,42 +1,42 @@
 ---
-title: Path Navigation
+title: Навигация по пути
 icon: navigation
 order: 3
 category:
-  - Layout
+  - Макет
 tag:
-  - Breadcrumb
-  - Layout
+  - Хлебные крошки
+  - Макет
 ---
 
-The theme adds Breadcrumb support, you can config it using `breadcrumb` in page frontmatter and theme options <Badge text="Support page config" /> [^supportpageconfig], the default value is `true`.
+Тема добавляет поддержку хлебных крошек, вы можете настроить ее с помощью `breadcrumb` во frontmatter страницы и в параметрах темы <Badge text="Поддержка конфигурации страницы" /> [^supportpageconfig], значение по умолчанию - `true`.
 
-Without any config, a Breadcrumb that matches the theme color is displayed at the top of the page content to help the reader understand the document structure.
+Без какой-либо конфигурации навигационная цепочка, соответствующая цвету темы, отображается в верхней части содержимого страницы, чтобы помочь читателю понять структуру документа.
 
 <!-- more -->
 
-You can also control the icon display of the path navigation using `breadcrumbIcon` field <Badge text="Support page config" />, the default value is `true`.
+Вы также можете управлять отображением значка навигации по пути, используя поле `breadcrumbIcon` <Badge text="Конфигурация страницы поддержки" />, значение по умолчанию - `true`.
 
-::: warning Notice
+::: warning Уведомление
 
-To ensure Breadcrumb working well, the `README.md` file should be included in each folder.
+Чтобы обеспечить правильную работу хлебных крошек, файл `README.md` должен быть включен в каждую папку.
 
-Otherwise, the Breadcrumb will ignore that folder level because the component can not generate title and link.
+В противном случае хлебные крошки будет игнорировать этот уровень папки, поскольку компонент не может создать заголовок и ссылку.
 
-Please remember to set a title for **HOME PAGE**!
+Не забудьте установить заголовок для **ДОМАШНЕЙ СТРАНИЦЫ**!
 
 :::
 
-[^supportpageconfig]: **Page config support**
+[^supportpageconfig]: **Поддержка конфигурации страницы**
 
-    **Support local configuration**<Badge text="Support page config" /> means that the theme allows the configuration of the page to override the global configuration.
+    **Поддержка локальной конфигурации**<Badge text="Поддержка конфигурации страницы" /> означает, что тема позволяет конфигурации страницы переопределять глобальную конфигурацию.
 
-    ::: details Example
+    ::: details Пример
 
-    Take path navigation as an example:
+    В качестве примера возьмем навигацию по пути:
 
-    This feature is enabled globally by default, that is, `breadcrumb` in theme options is `true` by default, and you can set `breadcrumb: false` in the Front Matter of a specific page to disable it locally.
+    Эта функция по умолчанию включена глобально, то есть для опции `breadcrumb` в параметрах темы по умолчанию установлено значение `true`, и вы можете установить `breadcrumb: false` в основной части конкретной страницы, чтобы отключить ее локально.
 
-    Of course, you can also set the `breadcrumb: false` in theme options to disable it globally, and set `breadcrumb: true` in the Front Matter of a specific page to enable it locally.
+    Конечно, вы также можете установить `breadcrumb: false` в параметрах темы, чтобы отключить ее глобально, и установить `breadcrumb: true` во вступительной части определенной страницы, чтобы включить ее локально.
 
     :::
