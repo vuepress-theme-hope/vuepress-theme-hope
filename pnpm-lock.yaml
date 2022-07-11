@@ -107,7 +107,7 @@ importers:
       '@vuepress/utils': 2.0.0-beta.48
       sass-loader: 13.0.2
       vue: 3.2.37
-      vue-router: 4.1.1
+      vue-router: 4.1.2
       vuepress-plugin-blog2: workspace:*
       vuepress-vite: 2.0.0-beta.48
       vuepress-webpack: 2.0.0-beta.48
@@ -119,7 +119,7 @@ importers:
       '@vuepress/utils': 2.0.0-beta.48
       sass-loader: 13.0.2
       vue: 3.2.37
-      vue-router: 4.1.1_vue@3.2.37
+      vue-router: 4.1.2_vue@3.2.37
       vuepress-plugin-blog2: link:../../packages/blog2
       vuepress-vite: 2.0.0-beta.48_nzjbaiisecqf2guxdwlvyxnaim
       vuepress-webpack: 2.0.0-beta.48_72jxqpz2jabx4k4xeicccoky2q
@@ -3807,7 +3807,7 @@ packages:
       sass: 1.53.0
       sass-loader: 13.0.2
       vue: 3.2.37
-      vue-router: 4.1.1_vue@3.2.37
+      vue-router: 4.1.2_vue@3.2.37
     transitivePeerDependencies:
       - '@vue/composition-api'
       - supports-color
@@ -11573,6 +11573,14 @@ packages:
 
   /vue-router/4.1.1_vue@3.2.37:
     resolution: {integrity: sha512-Wp1mEf2xCwT0ez7o9JvgpfBp9JGnVb+dPERzXDbugTatzJAJ60VWOhJKifQty85k+jOreoFHER4r5fu062PhPw==}
+    peerDependencies:
+      vue: ^3.2.0
+    dependencies:
+      '@vue/devtools-api': 6.2.0
+      vue: 3.2.37
+
+  /vue-router/4.1.2_vue@3.2.37:
+    resolution: {integrity: sha512-5BP1qXFncVRwgV/XnqzsKApdMjQPqWIpoUBdL1ynz8HyLxIX/UDAx7Ql2BjmA5CXT/p61JfZvkpiFWFpaqcfag==}
     peerDependencies:
       vue: ^3.2.0
     dependencies:
