@@ -1,40 +1,40 @@
 ---
-title: Sitemap
+title: Карта сайта
 icon: sitemap
 category:
-  - Advanced
+  - Продвинутые
 tag:
-  - Advanced
-  - Sitemap
+  - Продвинутые
+  - Карта сайта
 ---
 
-`vuepress-theme-hope` provide Sitemap generation by including [`vuepress-plugin-sitemap2`][sitemap2].
+`vuepress-theme-hope` обеспечивает создание карты сайта, включая [`vuepress-plugin-sitemap2`][sitemap2].
 
-The plugin will automatically generate the last update time of the page based on the Git timestamp of the page, and will also declare the alternative version link of the page in other languages according to the locales config.
+Плагин автоматически сгенерирует время последнего обновления страницы на основе временной метки Git страницы, а также объявит ссылку на альтернативную версию страницы на других языках в соответствии с конфигурацией локалей.
 
-If you don’t need this plugin, please set `plugins.sitemap` to `false` in theme options.
+Если вам не нужен этот плагин, установите для `plugins.sitemap` значение `false` в настройках темы.
 
 ::: info
 
-`vuepress-theme-hope` passes `plugins.sitemap` in theme options as plugin options to `vuepress-plugin-sitemap2`.
+`vuepress-theme-hope` передает `plugins.sitemap` в параметрах темы в качестве параметров плагина для `vuepress-plugin-sitemap2`.
 
 :::
 
-## Control Sitemap Link
+## Управление ссылкой на карту сайта
 
-By default, all site links except 404 page will be added to the Sitemap.
+По умолчанию все ссылки на сайты, кроме страницы 404, будут добавлены в файл Sitemap.
 
-To add other pages to the Sitemap outside of the VuePress project page, please turn them into an array and pass to `extraUrls`.
+Чтобы добавить другие страницы в файл Sitemap за пределами страницы проекта VuePress, превратите их в массив и передайте в `extraUrls`.
 
-If you don’t want certain pages to appear in the sitemap, you can turn them into an array and pass them to `excludeUrls`, or you can pass in a filter function though `filter` options. You can also set `sitemap.exclude` to `true` in page frontmatter.
+Если вы не хотите, чтобы определенные страницы отображались в карте сайта, вы можете преобразовать их в массив и передать в `excludeUrls`, или вы можете передать функцию фильтра через параметры `filter`. Вы также можете установить для `sitemap.exclude` значение `true` во frontmatter.
 
-You can also control the output link through the `sitemapFilename`. The default output directory is `sitemap.xml`.
+Вы также можете управлять выходной ссылкой через `sitemapFilename`. Выходной каталог по умолчанию — `sitemap.xml`.
 
-## Change Frequency
+## Изменить частоту
 
-The default update cycle of the page is `daily` (every day). To modify the entire page cycle, please set `changefreq`. You can also set `sitemap.changefreq` in the frontmatter of the page. Note that page has a higher priority.
+Цикл обновления страницы по умолчанию — `daily` (каждый день). Чтобы изменить весь цикл страницы, установите `changefreq`. Вы также можете установить `sitemap.changefreq` в frontmatter страницы. Обратите внимание, что страница имеет более высокий приоритет.
 
-The legal frequencies are:
+Допустимые частоты:
 
 - `"always"`
 - `"hourly"`
@@ -44,13 +44,13 @@ The legal frequencies are:
 - `"yearly"`
 - `"never"`
 
-::: info Sitemap Intro
+::: info Введение в карту сайта
 
-Sitemaps may be addressed to users or to software. Many sites have user-visible sitemaps which present a systematic view, typically hierarchical, of the site. These are intended to help visitors find specific pages, and can also be used by crawlers. Alphabetically organized site maps, sometimes called site indexes, are a different approach.
+Файлы Sitemap могут быть адресованы пользователям или программному обеспечению. Многие сайты имеют карты сайта, видимые пользователям, которые представляют собой систематизированное, обычно иерархическое представление сайта. Они предназначены для того, чтобы помочь посетителям найти определенные страницы, а также могут использоваться поисковыми роботами. Карты сайтов, организованные в алфавитном порядке, иногда называемые индексами сайтов, представляют собой другой подход.
 
-For use by search engines and other crawlers, there is a structured format, the XML Sitemap, which lists the pages in a site, their relative importance, and how often they are updated. This is pointed to from the robots.txt file and is typically called sitemap.xml .
+Для использования поисковыми системами и другими поисковыми роботами существует структурированный формат XML Sitemap, в котором перечислены страницы сайта, их относительная важность и частота их обновления. Это указывается в файле robots.txt и обычно называется sitemap.xml .
 
-Google introduced the Sitemaps protocol so web developers can publish lists of links from across their sites.
+Google представил протокол Sitemaps, чтобы веб-разработчики могли публиковать списки ссылок со своих сайтов.
 
 :::
 

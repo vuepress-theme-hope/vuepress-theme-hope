@@ -1,21 +1,21 @@
 ---
-title: Advanced
+title: Продвинутые
 icon: advance
 index: false
 dir:
   order: 7
 category:
-  - Advanced
+  - Продвинутые
 tag:
-  - Advanced
+  - Продвинутые
 ---
 
-## Catalog
+## Каталог
 
-- [PWA Support](pwa.md)
+- [Поддержка PWA](pwa.md)
 
-- [Feed Support](feed.md)
+- [Поддержка каналов](feed.md)
 
-- [SEO Enhance](seo.md)
+- [СЕО улучшение](seo.md)
 
-- [Sitemap Generation](sitemap.md)
+- [Генерация карты сайта](sitemap.md)

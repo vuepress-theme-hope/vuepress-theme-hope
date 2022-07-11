@@ -1,75 +1,76 @@
 ---
-title: SEO
+title: СЕО
 icon: config
 category:
-  - Advanced
+  - Продвинутые
 tag:
-  - Advanced
+  - Продвинутые
+  - СЕО
   - SEO
 ---
 
-`vuepress-theme-hope` provides SEO enhancements via built-in [`vuepress-plugin-seo2`][seo2].
+`vuepress-theme-hope` обеспечивает улучшения SEO с помощью встроенного [`vuepress-plugin-seo2`][seo2].
 
-To make the plugin work better, you may need to check the [page config](../../config/frontmatter/info.md) and configure them properly.
+Чтобы плагин работал лучше, вам может потребоваться проверить [конфигурацию страницы](../../config/frontmatter/info.md) и настроить их правильно.
 
 ::: info
 
-`vuepress-theme-hope` passes `plugins.seo` in theme options as plugin options to `vuepress-plugin-seo2`.
+`vuepress-theme-hope` передает `plugins.seo` в параметрах темы в качестве параметров плагина `vuepress-plugin-seo2`.
 
 :::
 
-The plugin will make your site fully support [Open Content Protocol OGP](https://ogp.me/) and [JSON-LD 1.1](https://www.w3.org/TR/json-ld-api/) to enhance the SEO of the site.
+Плагин сделает ваш сайт полностью поддерживающим [Open Content Protocol OGP](https://ogp.me/) и [JSON-LD 1.1](https://www.w3.org/TR/json-ld-api/) для улучшения SEO сайта.
 
-If you don’t need this plugin, please set `plugins.seo` to `false` in theme options.
+Если вам не нужен этот плагин, установите для `plugins.seo` значение `false` в настройках темы.
 
 <!-- more -->
 
-## Out of Box
+## Из коробки
 
-The plugin works out of the box. Without any config, it will extract information from the page content as much as possible to complete the necessary tags required by OGP and JSON-LD.
+Плагин работает из коробки. Без какой-либо конфигурации он будет максимально извлекать информацию из содержимого страницы, чтобы заполнить необходимые теги, требуемые OGP и JSON-LD.
 
-By default, the plugin will read the site config and page frontmatter to automatically generate tags as much as possible. Such as site name, page title, page type, writing date, last update date, and article tags are all automatically generated.
+По умолчанию плагин будет читать конфигурацию сайта и внешний вид страницы, чтобы максимально автоматически генерировать теги. Такие как имя сайта, заголовок страницы, тип страницы, дата написания, дата последнего обновления и теги статьи генерируются автоматически.
 
-The following are the `<meta>` tags and their values that will be injected into `<head>` by default:
+Ниже приведены теги `<meta>` и их значения, которые будут внедрены в `<head>` по умолчанию:
 
-### Default OGP Generation
+### Генерация OGP по умолчанию
 
-The following are the `<meta>` tags and their value injected into `<head>` by default to satisfy OGP:
+Ниже приведены теги `<meta>` и их значения, введенные в `<head>` по умолчанию для соответствия требованиям OGP:
 
-|        Meta Name         |                                                      Value                                                       |
-| :----------------------: | :--------------------------------------------------------------------------------------------------------------: |
-|         `og:url`         |                                         `themeConfig.hostname` + `path`                                          |
-|      `og:site_name`      |                                                `siteConfig.title`                                                |
-|        `og:title`        |                                                   `page.title`                                                   |
-|     `og:description`     |     `page.frontmatter.description` \|\| auto generated (when `autoDescription` is `true` in plugin options)      |
-|        `og:type`         |                                                   `"article"`                                                    |
-|        `og:image`        | `themeConfig.hostname` + `page.frontmatter.image` \|\|first image in page \|\| `fallbackImage` in plugin options |
-|    `og:updated_time`     |                                              `page.git.updatedTime`                                              |
-|       `og:locale`        |                                                   `page.lang`                                                    |
-|  `og:locale:alternate`   |                                 Other languages including in `siteData.locales`                                  |
-|      `twitter:card`      |                            `"summary_large_image"` (only available when image found)                             |
-|   `twitter:image:alt`    |                                  `page.title` (only available when image found)                                  |
-|     `article:author`     |                               `page.frontmatter.author` \|\| `themeConfig.author`                                |
-|      `article:tag`       |                               `page.frontmatter.tags` \|\| `page.frontmatter.tag`                                |
-| `article:published_time` |                               `page.frontmatter.date` \|\| `page.git.createdTime`                                |
-| `article:modified_time`  |                                              `page.git.updatedTime`                                              |
+|         Мета-имя         |                                                              Значение                                                               |
+| :----------------------: | :---------------------------------------------------------------------------------------------------------------------------------: |
+|         `og:url`         |                                                   `themeConfig.hostname` + `path`                                                   |
+|      `og:site_name`      |                                                         `siteConfig.title`                                                          |
+|        `og:title`        |                                                            `page.title`                                                             |
+|     `og:description`     | `page.frontmatter.description` \|\| генерируется автоматически (когда `autoDescription` имеет значение `true` в настройках плагина) |
+|        `og:type`         |                                                             `"article"`                                                             |
+|        `og:image`        |   `themeConfig.hostname` + `page.frontmatter.image` \|\|первое изображение на странице \|\| `fallbackImage` в настройках плагина    |
+|    `og:updated_time`     |                                                       `page.git.updatedTime`                                                        |
+|       `og:locale`        |                                                             `page.lang`                                                             |
+|  `og:locale:alternate`   |                                           Другие языки, в том числе в `siteData.locales`                                            |
+|      `twitter:card`      |                                 `"summary_large_image"` (доступно, только если изображение найдено)                                 |
+|   `twitter:image:alt`    |                                      `page.title` (доступно, только если изображение найдено)                                       |
+|     `article:author`     |                                         `page.frontmatter.author` \|\| `themeConfig.author`                                         |
+|      `article:tag`       |                                         `page.frontmatter.tags` \|\| `page.frontmatter.tag`                                         |
+| `article:published_time` |                                         `page.frontmatter.date` \|\| `page.git.createdTime`                                         |
+| `article:modified_time`  |                                                       `page.git.updatedTime`                                                        |
 
-### Default JSON-LD Generation
+### Генерация JSON-LD по умолчанию
 
-|  Property Name  |                                                   Value                                                   |
-| :-------------: | :-------------------------------------------------------------------------------------------------------: |
-|   `@context`    |                                          `"https://schema.org"`                                           |
-|     `@type`     |                                              `"NewsArticle"`                                              |
-|   `headline`    |                                               `page.title`                                                |
-|     `image`     | image in page \|\| `themeConfig.hostname` + `page.frontmatter.image` \|\| `siteFavIcon` in plugin options |
-| `datePublished` |                            `page.frontmatter.date` \|\| `page.git.createdTime`                            |
-| `dateModified`  |                                          `page.git.updatedTime`                                           |
-|    `author`     |                            `page.frontmatter.author` \|\| `themeConfig.author`                            |
+|  Имя свойства   |                                                        Значение                                                        |
+| :-------------: | :--------------------------------------------------------------------------------------------------------------------: |
+|   `@context`    |                                                 `"https://schema.org"`                                                 |
+|     `@type`     |                                                    `"NewsArticle"`                                                     |
+|   `headline`    |                                                      `page.title`                                                      |
+|     `image`     | изображение на странице \|\| `themeConfig.hostname` + `page.frontmatter.image` \|\| `siteFavIcon` в настройках плагина |
+| `datePublished` |                                  `page.frontmatter.date` \|\| `page.git.createdTime`                                   |
+| `dateModified`  |                                                 `page.git.updatedTime`                                                 |
+|    `author`     |                                  `page.frontmatter.author` \|\| `themeConfig.author`                                   |
 
-## Setting Tags Directly
+## Установка тегов напрямую
 
-You can configure the `head` option in the page’s frontmatter to add specific tags to the page `<head>` to enhance SEO.
-For example:
+Вы можете настроить параметр `head` в шапке страницы, чтобы добавить определенные теги на страницу `<head>` для улучшения SEO.
+Например:
 
 ```md
 ---
@@ -80,27 +81,27 @@ head:
 ---
 ```
 
-Will automatically inject `<meta name="keywords" content="SEO plugin" />`.
+Автоматически внедрит `<meta name="keywords" content="SEO plugin" />`.
 
-## Customize Generation
+## Настроить генерацию
 
-The plugin also gives you full control over the build logic.
+Плагин также дает вам полный контроль над логикой сборки.
 
-### Page Type
+### Тип страницы
 
-For most pages, there are basically only two types: articles and website, so the plugin provides the `isArticle` option to allow you to provide logic for identifying articles.
+Для большинства страниц есть в основном только два типа: статьи и веб-сайт, поэтому плагин предоставляет опцию `isArticle`, позволяющую вам предоставить логику для идентификации статей.
 
-The option accepts a function in the format `(page: Page) => boolean`, by default all non-home pages generated from Markdown files are treated as articles.
+Опция принимает функцию в формате `(page: Page) => boolean`, по умолчанию все не домашние страницы, сгенерированные из файлов Markdown, рассматриваются как статьи.
 
 ::: note
 
-If a page does fit into the "unpopular" genre like books, music, etc., you can handle them by setting the three options below.
+Если страница подходит к «непопулярным» жанрам, таким как книги, музыка и т. д., вы можете справиться с ними, установив три параметра ниже.
 
 :::
 
 ### OGP
 
-You can use options `plugins.seo.ogp` in theme options. to pass in a function to modify the default OGP object to your needs and return it.
+Вы можете использовать опции `plugins.seo.ogp` в настройках темы. передать функцию для изменения объекта OGP по умолчанию в соответствии с вашими потребностями и вернуть его.
 
 ```ts
 function ogp<
@@ -126,9 +127,9 @@ function ogp<
 ): SeoContent;
 ```
 
-For detailed parameter structure, see [Config][seo2-config].
+Подробную структуру параметров смотрите в [Конфиге][seo2-config].
 
-For example, if you are using a third-party theme and set a `banner` in frontmatter for each article according to the theme requirements, then you can pass in the following `ogp`:
+Например, если вы используете стороннюю тему и устанавливаете `banner` на главной странице для каждой статьи в соответствии с требованиями темы, вы можете передать следующий `ogp`:
 
 ```ts
 ({
@@ -141,7 +142,7 @@ For example, if you are using a third-party theme and set a `banner` in frontmat
 
 ### JSON-LD
 
-Like OGP, you can use `plugins.seo.jsonLd` options in theme options to pass in a function to modify the default JSON-LD object to your needs and return it.
+Как и в OGP, вы можете использовать параметры `plugins.seo.jsonLd` в параметрах темы, чтобы передать функцию для изменения объекта JSON-LD по умолчанию в соответствии с вашими потребностями и вернуть его.
 
 ```ts
 function jsonLd<
@@ -169,30 +170,30 @@ function jsonLd<
 
 ::: warning
 
-Please note that the plugin does not generate JSON-LD for non-article pages, so the first parameter of the function may be null.
+Обратите внимание, что плагин не генерирует JSON-LD для страниц, не являющихся статьями, поэтому первый параметр функции может быть нулевым.
 
 :::
 
-## Canonical Link
+## Каноническая ссылка
 
-If you are deploying your content to different sites, or same content under different URLs, you may need to set `plugins.seo.canonical` in theme options to provide a "Canonical Link" for your page. You can either set a string which will be append before page route link, or adding a custom function `(page: Page) => string | null` to return a canonical link if necessary.
+Если вы размещаете свой контент на разных сайтах или один и тот же контент по разным URL-адресам, вам может потребоваться установить `plugins.seo.canonical` в параметрах темы, чтобы предоставить «Каноническую ссылку» для вашей страницы. Вы можете либо установить строку, которая будет добавлена перед ссылкой маршрута страницы, либо добавить пользовательскую функцию `(page: Page) => string | null`, чтобы при необходимости вернуть каноническую ссылку.
 
-::: tip Example
+::: tip Пример
 
-If your sites are deploy under docs folder in `example.com`, but available in:
+Если ваши сайты развернуты в папке docs в `example.com`, но доступны в:
 
 - `http://example.com/docs/xxx`
 - `https://example.com/docs/xxx`
 - `http://www.example.com/docs/xxx`
 - `https://www.example.com/docs/xxx` (primary)
 
-To let search engine results always be the primary choice, you may need to set `plugins.seo.canonical` to `https://www.example.com/docs/`, so that search engine will know that the fourth URl is prefered to be indexed.
+Чтобы результаты поисковой системы всегда были приоритетными, вам может потребоваться установить для `plugins.seo.canonical` значение `https://www.example.com/docs/`, чтобы поисковая система знала, что четвертый URL-адрес желательно индексировать.
 
 :::
 
-### Customize head Tags
+### Настроить теги головы
 
-Sometimes you may need to fit other protocols or provide the corresponding SEO tags in the format provided by other search engines. In this case, you can use the `plugins.seo.customHead` in theme options, whose type is:
+Иногда вам может понадобиться использовать другие протоколы или предоставить соответствующие теги SEO в формате, предоставляемом другими поисковыми системами. В этом случае вы можете использовать `plugins.seo.customHead` в параметрах темы, тип которых:
 
 ```ts
 function customHead<
@@ -218,45 +219,45 @@ function customHead<
 ): void;
 ```
 
-You should modify the `head` array in this function directly.
+Вы должны изменить массив `head` в этой функции напрямую.
 
 ## RDFa 1.1
 
-The theme adds rich media structure support to most of the site structure by following [RDFa 1.1](https://www.w3.org/TR/rdfa-primer/).
+Тема добавляет поддержку мультимедийной структуры в большую часть структуры сайта, следуя [RDFa 1.1](https://www.w3.org/TR/rdfa-primer/).
 
 ::: tip
 
-You can use [Google Rich Media Structure Test Tool](https://search.google.com/test/rich-results) to test this site.
+Вы можете использовать [Инструмент тестирования мультимедийной структуры Google](https://search.google.com/test/rich-results) для тестирования этого сайта.
 
 :::
 
-## SEO Introduction
+## Введение в СЕО
 
-**S**earch **e**ngine **optimization** (SEO) is the process of improving the quality and quantity of site traffic to a site or a web page from search engines. SEO targets unpaid traffic (known as "natural" or "organic" results) rather than direct traffic or paid traffic. Unpaid traffic may originate from different kinds of searches, including image search, video search, academic search, news search, and industry-specific vertical search engines.
+**S**earch **e**ngine **optimization** (SEO) — это процесс улучшения качества и количества трафика на сайт или веб-страницу из поисковых систем. SEO нацелен на неоплачиваемый трафик (известный как «естественные» или «органические» результаты), а не на прямой или платный трафик. Неоплачиваемый трафик может исходить от различных видов поиска, включая поиск изображений, поиск видео, академический поиск, поиск новостей и отраслевые вертикальные поисковые системы.
 
-As an internet marketing strategy, SEO considers how search engines work, the computer-programmed algorithms that dictate search engine behavior, what people search for, the actual search terms or keywords typed into search engines, and which search engines are preferred by their targeted audience. SEO is performed because a site will receive more visitors from a search engine when sites rank higher on the search engine results page (SERP). These visitors can then potentially be converted into customers.
+Как стратегия интернет-маркетинга, SEO рассматривает, как работают поисковые системы, запрограммированные компьютером алгоритмы, которые определяют поведение поисковых систем, что ищут люди, фактические поисковые термины или ключевые слова, введенные в поисковые системы, и какие поисковые системы предпочитает их целевая аудитория. . SEO выполняется, потому что сайт будет получать больше посетителей из поисковой системы, когда сайты занимают более высокое место на странице результатов поисковой системы (SERP). Эти посетители потенциально могут быть преобразованы в клиентов.
 
-## Related Documents
+## Соответствующие документы
 
 - [Open Content Protocol OGP](https://ogp.me/) (**O**pen **G**raph **Pr**otocal)
 
-  SEO plugin perfectly supports this protocol and will automatically generate `<meta>` tags that conform to the protocol.
+  Плагин SEO отлично поддерживает этот протокол и автоматически генерирует теги `<meta>`, которые соответствуют протоколу.
 
 - [JSON-LD 1.1](https://www.w3.org/TR/json-ld-api/)
 
-  SEO will generate "NewsArticle" scheme for article pages.
+  SEO создаст схему "NewsArticle" для страниц статей.
 
 - [RDFa 1.1](https://www.w3.org/TR/rdfa-primer/)
 
-  `vuepress-theme-hope` support this
+  `vuepress-theme-hope` поддерживает это
 
 - [Schema.Org](https://schema.org/)
 
-  Schema definition site for structural markup
+  Сайт определения схемы для структурной разметки
 
-## Related Tools
+## Связанные инструменты
 
-- [Google Rich Media Structure Test Tool](https://search.google.com/test/rich-results)
+- [Инструмент тестирования мультимедийной структуры Google](https://search.google.com/test/rich-results)
 
 [seo2]: https://vuepress-theme-hope.github.io/v2/seo/
 [seo2-config]: https://vuepress-theme-hope.github.io/v2/seo/config.html

@@ -2,177 +2,177 @@
 title: PWA
 icon: setting
 category:
-  - Advanced
+  - Продвинутые
 tag:
-  - Advanced
+  - Продвинутые
   - PWA
 ---
 
-The theme provides progressive web app support [^pwa-intro] via built-in [`vuepress-plugin-pwa2`][pwa2], and it’s disabled by default.
+Тема обеспечивает прогрессивную поддержку веб-приложений [^pwa-intro] через встроенный [`vuepress-plugin-pwa2`][pwa2], и по умолчанию он отключен.
 
-[^pwa-intro]: **PWA introduction**
+[^pwa-intro]: **Введение в PWA**
 
-    PWA, full name Progressive Web app. PWA standard is stipulated by W3C.
+    PWA, полное название Progressive Web app. Стандарт PWA установлен W3C.
 
-    It allows sites to install the site as an App on supported platform through a browser that supports this feature.
+    Это позволяет сайтам устанавливать сайт как приложение на поддерживаемой платформе через браузер, поддерживающий эту функцию.
 
 ::: info
 
-`vuepress-theme-hope` passes `plugins.pwa` in theme options as plugin options to `vuepress-plugin-pwa2`.
+`vuepress-theme-hope` передает `plugins.pwa` в параметрах темы в качестве параметров плагина для `vuepress-plugin-pwa2`.
 
-If you are using this plugin, we recommend you to set `shouldPrefetch: false` in your VuePress config file.
+Если вы используете этот плагин, мы рекомендуем вам установить `shouldPrefetch: false` в файле конфигурации VuePress.
 
 :::
 
 <!-- more -->
 
-## Direct Enable <Badge text="Not recommended" type="warning" />
+## Прямое включение <Badge text="Не рекомендуется" type="warning" />
 
-You can set `plugins.pwa` to `true` in theme options to let theme automatically generate the necessary config and enable plugins quickly. However, we recommend you to manually set some options by following the instructions below.
+Вы можете установить для `plugins.pwa` значение `true` в параметрах темы, чтобы тема автоматически генерировала необходимую конфигурацию и быстро включала плагины. Однако мы рекомендуем вам вручную установить некоторые параметры, следуя приведенным ниже инструкциям.
 
-## Intro
+## Введение
 
-Service Worker [^service-worker] (SW for short) is mainly used to cache and proxy site content.
+Service Worker [^service-worker] (сокращенно SW) в основном используется для кэширования и проксирования контента сайта.
 
-[^service-worker]: **Service Worker Introduction**
+[^service-worker]: **Введение в Service Worker**
 
-    1. The Service Worker will get and cache all the files registered in it during the registration process.
+    1. Service Worker получит и кэширует все зарегистрированные в нем файлы в процессе регистрации.
 
-    1. After the registration complete, the Service Worker is activated, and starts to proxy and control all your requests.
+    1. После завершения регистрации Service Worker активируется и начинает проксировать и контролировать все ваши запросы.
 
-    1. Whenever you want to initiate an access request through the browser, the Service Worker will check whether it exists in its own cache list, if it exists, it will directly return the cached result, otherwise it will call its own fetch method to get it. You can use a custom fetch method to fully control the result of the request for resources in the web page, such as providing a fallback web page when offline.
+    1. Всякий раз, когда вы хотите инициировать запрос доступа через браузер, Service Worker проверит, существует ли он в своем собственном списке кеша, если он существует, он напрямую вернет кешированный результат, в противном случае он вызовет свой собственный метод fetch для получения Это. Вы можете использовать настраиваемый метод выборки, чтобы полностью контролировать результат запроса ресурсов на веб-странице, например предоставлять резервную веб-страницу в автономном режиме.
 
-    1. Every time the user reopens the site, the Service Worker will request to the link when it was registered. If a new version of Service Worker is detected, it will update itself and start caching the list of resources registered in the new Service Worker . After the content update is successfully obtained, the Service Worker will trigger the `update` event. The user can be notified through this event, for example, a pop-up window will be displayed in the lower right corner, prompting the user that new content is available and allowing the user to trigger an update.
+    1. Каждый раз, когда пользователь повторно открывает сайт, Service Worker будет запрашивать ссылку при его регистрации. Если будет обнаружена новая версия Service Worker, она обновится и начнет кэшировать список ресурсов, зарегистрированных в новом Service Worker. После того, как обновление содержимого будет успешно получено, Service Worker инициирует событие update. Пользователь может быть уведомлен через это событие, например, в правом нижнем углу будет отображаться всплывающее окно, сообщающее пользователю о наличии нового контента и позволяющее пользователю инициировать обновление.
 
-This plugin will automatically register Service Worker through `workbox-build`. To better control what the Service Worker can pre-cache, the plugin provides the following configurations.
+Этот плагин автоматически зарегистрирует Service Worker через `workbox-build`. Чтобы лучше контролировать то, что Service Worker может предварительно кэшировать, подключаемый модуль предоставляет следующие конфигурации.
 
 ::: tip
 
-If you are an advanced user, you can also set `plugins.pwa.generateSwConfig` in theme options directly to pass options to `workbox-build`.
+Если вы опытный пользователь, вы также можете установить `plugins.pwa.generateSwConfig` в параметрах темы напрямую, чтобы передать параметры в `workbox-build`.
 
 :::
 
-## Cache Control
+## Управление кешем
 
-Based on the requirement of installable [^installable], the plugin provides related options for cache control.
+В зависимости от требования installable [^installable], плагин предоставляет соответствующие параметры для управления кешем.
 
-[^installable]: **Installable**
+[^installable]: **Устанавливаемый**
 
-    To let the site be registered as a PWA, the site needs to successfully register a valid service worker by itself, and at the same time add a valid manifest file and declare it.
+    Чтобы сайт мог быть зарегистрирован как PWA, сайт должен сам успешно зарегистрировать действительный сервис-воркер и в то же время добавить действительный файл манифеста и объявить его.
 
-    Each platform or browser has requirements for the size of the Service Worker cache. When the file size of the Service Worker cache is too large, the site will be marked as not installable. For Safari, the threshold is 50 MB, a few browsers will set less or more values (30MB, 70MB, 80MB), and Chrome will mark the threshold at 100 MB.
+    У каждой платформы или браузера есть требования к размеру кэша Service Worker. Когда размер файла кеша Service Worker слишком велик, сайт будет помечен как не подлежащий установке. Для Safari порог составляет 50 МБ, некоторые браузеры будут устанавливать меньше или больше значений (30 МБ, 70 МБ, 80 МБ), а Chrome отметит порог в 100 МБ.
 
-    The manifest file should contain at least `name` (or `short_name`) `icons` `start_url`
+    Файл манифеста должен содержать как минимум `name` (или `short_name`) `icons` `start_url`
 
     ::: note
 
-    Starting from Chrome 93, Service Worker must contain effective fetch events to control offline requests.
+    Начиная с Chrome 93, Service Worker должен содержать эффективные события выборки для управления автономными запросами.
 
-    However, currently the plugin does not contain relevant processing logic by default, so on Android devices with Chrome 93 or later, the site will not pop up an installation prompt.
+    Однако в настоящее время плагин по умолчанию не содержит соответствующей логики обработки, поэтому на устройствах Android с Chrome 93 или более поздней версии сайт не будет отображать запрос на установку.
 
     :::
 
-### Default Cache
+### Кэш по умолчанию
 
-By default, the plugin will pre-cache all the `js` `css` and `svg`.And only homepage and 404 `html` are cached.
+По умолчанию плагин предварительно кэширует все файлы `js` `css` и `svg`. Кешируются только домашняя страница и 404 `html`.
 
-At the same time, the plugin will cache font files: `**/*.{woff,woff2,eot,ttf,otf}`.
+В то же время плагин будет кэшировать файлы шрифтов: `**/*.{woff,woff2,eot,ttf,otf}`.
 
-### Image Cache
+### Кэш изображений
 
-You can cache site pictures by setting the `plugins.pwa.cachePic` option to `true`.
+Вы можете кэшировать изображения сайта, установив для параметра `plugins.pwa.cachePic` значение `true`.
 
-If your site is not large and the pictures are mostly critical descriptions, and hope to be displayed in offline mode, please set this option to `true`.
+Если ваш сайт небольшой, а изображения в основном представляют собой критические описания и вы хотите, чтобы они отображались в автономном режиме, установите для этого параметра значение `true`.
 
-::: info Image recognition
+::: info Распознавание изображений
 
-We recognize images by file extension. Any files ending with `.png`, `.jpg`, `.jpeg`, `.gif`, `.bmp`, `.webp` will be regarded as images.
+Мы распознаем изображения по расширению файла. Любые файлы, оканчивающиеся на `.png`, `.jpg`, `.jpeg`, `.gif`, `.bmp`, `.webp` будут рассматриваться как изображения.
 
 :::
 
-### HTML Cache
+### HTML-кэш
 
-If you have small sites, and would like to make document fully offline available, you can set `plugins.pwa.cacheHTML` to `true` to cache all HTML files.
+Если у вас есть небольшие сайты и вы хотите сделать документ полностью доступным в автономном режиме, вы можете установить для `plugins.pwa.cacheHTML` значение `true`, чтобы кэшировать все HTML-файлы.
 
-::: tip Why only home and 404 page been cached by default?
+::: tip Почему по умолчанию кешируются только домашняя страница и страница 404?
 
-Though VuePress generates HTML files through SSR[^ssr] for all pages, these files are mainly used for SEO[^seo] and allow you to directly configure the backend without SPA[^spa] Visit any link.
+Хотя VuePress генерирует HTML-файлы через SSR[^ssr] для всех страниц, эти файлы в основном используются для SEO[^seo] и позволяют напрямую настраивать серверную часть без SPA[^spa]. Перейдите по любой ссылке.
 
 [^ssr]: **SSR**: **S**erver **S**ide **R**endering,
 [^seo]: **SEO**: **S**earch **E**ngine **O**ptimization.
-[^spa]: **SPA**: **S**ingle **P**age **A**pplication, most of them only have the homepage, and use history mode to handle routing instead of actually navigating between pages.
+[^spa]: **SPA**: **S**ingle **P**age **A**pplication, большинство из них имеют только домашнюю страницу и используют режим истории для обработки маршрутизации вместо фактического перехода между страницы.
 
-VuePress is essentially a SPA. This means that you only need to cache the home page and enter from the home page to access all pages normally. Therefore, not caching other HTML by default can effectively reduce the cache size (40% smaller in size) and speed up the SW update speed.
+VuePress — это, по сути, SPA. Это означает, что вам нужно только кэшировать домашнюю страницу и войти с домашней страницы, чтобы получить доступ ко всем страницам в обычном режиме. Следовательно, отсутствие кэширования других HTML по умолчанию может эффективно уменьшить размер кэша (на 40% меньше по размеру) и ускорить скорость обновления ПО.
 
-But this also has the disadvantage. If the user enters the site directly from a non-home page, the HTML file for the first page still needs to be loaded from the internet. Also, in offline environment, users can only enter through the homepage and then navigate to the corresponding page by themselves. If they directly access a link, an inaccessible prompt will appear.
-
-:::
-
-### Size Control
-
-To prevent large files from being included in the pre-cache list, any files larger than 2MB or pictures larger than 1MB will be deleted.
-
-You can customize the maximum file size of the cache (unit: KB) with the `plugins.pwa.maxSize` option, or change the size limit of the picture (unit: KB) with `plugins.pwa.maxPicSize`.
-
-## Update Control
-
-We provide the `plugins.pwa.update` option to control how users receive updates.
-
-The default value of the `update` option is `"available"`, which means that when new content available, the new SW will be installed silently in the background, and a pop-up window will prompt the user that the new content is ready after SW finish installing. Users can choose whether to refresh immediately to view new content.
-
-Under the default behavior, users will still read old content before the SW is ready and they will not be prompted. If your project is still in building stage and you want to alert the user that he may be reading outdated content, you can set this to `"hint"`. This allows users to be notified that new content has been published within seconds after visiting docs. But the negative effect of this is that if the user chooses to update before the new SW is ready, he will need to get all the resources of the page from the internet before the new SW installs and controls the page.
-
-If your docs are stable, or you’re hosting a blog and don’t care much about users receiving the latest version right away, you can set this to `"disabled"`, which means that the new SW will be installed completely silently in the background and start waiting, when the pages controlled by the old version SW are all closed, the new SW will start to take control and provide users with new content the next time users visit. This setting can prevent users from being disturbed by the pop-up window in the bottom right corner during the visit.
-
-To speed up user access under weak or no network conditions through SW, but also want users to always access new content, you can set this option to `"force"`. The behavior of this option is to unregister old SW as soon as a new SW is detected and refresh the page to ensure the user is browsing the latest content. But we strongly recommend not using this option unless necessary, as after a new SW is released, all users will experience unexpected sudden refresh within seconds after entering the site, and they will have to access the document over the internet and install the whole latest SW.
-
-### Update Prompt Popup
-
-When new content is detected (new SW detected), an update prompt popup will appear in the bottom right corner and allow the user to refresh and apply.
-
-::: tip custom popup
-
-If you are not satisfied with the default popup, you can write your own component. You need to register your own popup component globally and pass the name of the component to the `plugins.pwa.hintComponent` option .
+Но в этом есть и недостаток. Если пользователь входит на сайт непосредственно с не домашней страницы, файл HTML для первой страницы все равно необходимо загрузить из Интернета. Кроме того, в автономной среде пользователи могут заходить только через домашнюю страницу, а затем самостоятельно переходить на соответствующую страницу. Если они напрямую обращаются к ссылке, появится недоступная подсказка.
 
 :::
 
-### Update Ready Popup
+### Контроль размера
 
-When the new content is ready (the new SW installed successfully and started waiting), the update ready popup will appear in the bottom right corner and allow the user to refresh and apply.
+Чтобы предотвратить попадание больших файлов в список предварительного кэширования, все файлы размером более 2 МБ или изображения размером более 1 МБ будут удалены.
 
-::: tip custom popup
+Вы можете настроить максимальный размер файла кэша (единица измерения: КБ) с помощью параметра `plugins.pwa.maxSize` или изменить предельный размер изображения (единица измерения: КБ) с помощью `plugins.pwa.maxPicSize`.
 
-If you are not satisfied with the default popup, you can write your own component. You need to register your popup component globally and pass the name of the component to the `plugins.pwa.updateComponent` option.
+## Управление обновлениями
+
+Мы предоставляем опцию `plugins.pwa.update` , чтобы контролировать, как пользователи получают обновления.
+
+Значение по умолчанию для параметра `update` равно `"available"`, что означает, что при наличии нового контента новый SW будет автоматически установлено в фоновом режиме, а всплывающее окно предложит пользователю, что новый контент доступен. готово после завершения установки ПО. Пользователи могут выбрать, следует ли немедленно обновить страницу для просмотра нового контента.
+
+При поведении по умолчанию пользователи по-прежнему будут читать старый контент до того, как ПО будет готово, и им не будет предложено. Если ваш проект все еще находится на стадии разработки, и вы хотите предупредить пользователя о том, что он может читать устаревший контент, вы можете установить для этого параметра значение `"hint"`. Это позволяет пользователям получать уведомления о публикации нового контента в течение нескольких секунд после посещения документов. Но негативным эффектом этого является то, что если пользователь решит выполнить обновление до того, как новый SW будет готово, ему потребуется получить все ресурсы страницы из Интернета до того, как новый SW установит и будет управлять страницей.
+
+Если ваши документы стабильны или вы ведете блог и не слишком заботитесь о том, чтобы пользователи сразу же получали последнюю версию, вы можете установить для этого параметра значение `"disabled"`, что означает, что новый SW будет установлено полностью автоматически. в фоновом режиме и начать ждать, когда все страницы, контролируемые старой версией ПО, будут закрыты, новый SW начнет брать на себя управление и предоставлять пользователям новый контент при следующем посещении. Этот параметр может предотвратить отвлечение пользователей всплывающим окном в правом нижнем углу во время посещения.
+
+Чтобы ускорить доступ пользователей в условиях слабой сети или ее отсутствия через ПО, а также чтобы пользователи всегда получали доступ к новому контенту, вы можете установить для этой опции значение `"force"`. Действие этой опции заключается в отмене регистрации старого ПО при обнаружении новый SW и обновлении страницы, чтобы убедиться, что пользователь просматривает новейший контент. Но мы настоятельно рекомендуем не использовать эту опцию без необходимости, так как после выпуска новый SW все пользователи столкнутся с неожиданным внезапным обновлением в течение нескольких секунд после входа на сайт, и им придется получить доступ к документу через Интернет и установить все последнее SW.
+
+### Всплывающее окно с запросом на обновление
+
+При обнаружении нового контента (обнаружено новый SW), в правом нижнем углу появится всплывающее окно с запросом на обновление, которое позволит пользователю обновить и применить.
+
+::: tip пользовательское всплывающее окно
+
+Если вас не устраивает всплывающее окно по умолчанию, вы можете написать свой собственный компонент. Вам необходимо зарегистрировать свой собственный всплывающий компонент глобально и передать имя компонента в параметр `plugins.pwa.hintComponent`.
 
 :::
 
-## Manifest Generation
+### Обновить готовое всплывающее окно
 
-To ensure the installability of PWA, the site needs to generate a manifest file and declare a valid manifest file address [^manifest] through `<link>`.
+Когда новый контент будет готов (новый SW успешно установлен и начал ждать), в правом нижнем углу появится всплывающее окно готовности обновления, которое позволит пользователю обновить и применить.
 
-[^manifest]: **Manifest File**
+::: tip пользовательское всплывающее окно
 
-    The manifest file uses the JSON format and is responsible for declaring various information of the PWA, such as name, description, icon, and shortcut actions.
+Если вас не устраивает всплывающее окно по умолчанию, вы можете написать свой собственный компонент. Вам необходимо зарегистрировать свой всплывающий компонент глобально и передать имя компонента в параметр `plugins.pwa.updateComponent`.
 
-    In order for your site to be registered as a PWA, you need to meet the basic specifications of the manifest to make the browser consider the site as an installable PWA and allow users to install it.
+:::
+
+## Генерация манифеста
+
+Чтобы обеспечить возможность установки PWA, сайт должен сгенерировать файл манифеста и объявить действительный адрес файла манифеста [^manifest] через `<link>`.
+
+[^manifest]: **Файл манифеста**
+
+    Файл манифеста использует формат JSON и отвечает за объявление различной информации о PWA, такой как имя, описание, иконка и действия быстрого доступа.
+
+    Чтобы ваш сайт был зарегистрирован как PWA, вам необходимо соответствовать основным спецификациям манифеста, чтобы браузер рассматривал сайт как устанавливаемое PWA и разрешал пользователям устанавливать его.
 
     ::: info
 
-    For Manifest standards and specifications, please see [W3C Manifest](https://w3c.github.io/manifest/)
+    Стандарты и спецификации манифеста смотрите в [Манифесте W3C](https://w3c.github.io/manifest/)
 
     :::
 
-The plugin will automatically generate the Manifest file `manifest.webmanifest` for you in the output directory, and will also add the manifest address statement to each HTML `<head>`.
+Плагин автоматически сгенерирует для вас файл манифеста `manifest.webmanifest` в выходном каталоге, а также добавит оператор адреса манифеста в каждый HTML-код `<head>`.
 
-If you already have a `manifest.webmanifest` or `manifest.json` in `.vuepress/public`, the plugin will read and merge it into the final manifest.
+Если у вас уже есть файл `manifest.webmanifest` или `manifest.json` в `.vuepress/public`, плагин прочитает и объединит его с окончательным манифестом.
 
-### Automatic Generation
+### Автоматическая генерация
 
-The plugin will use the information from the VuePress plugin API and set the fallback for fields in manifest as much as possible. So you don’t need to set most of the manifest fields.
+Плагин будет использовать информацию из API-интерфейса плагина VuePress и максимально задавать запасной вариант для полей в манифесте. Таким образом, вам не нужно устанавливать большинство полей манифеста.
 
-If the following fields are not set, they will try to fallback to the following preset values in order.
+Если следующие поля не установлены, они попытаются вернуться к следующим предустановленным значениям по порядку.
 
-| Options                     | Default value                                                                                           |
+| Опции                       | Значение по умолчанию                                                                                   |
 | --------------------------- | ------------------------------------------------------------------------------------------------------- |
 | name                        | `siteConfig.title` \|\| `siteConfig.locales['/'].title` \|\| `"Site"`                                   |
 | short_name                  | `siteConfig.title` \|\| `siteConfig.locales['/'].title` \|\| `"Site"`                                   |
@@ -186,45 +186,45 @@ If the following fields are not set, they will try to fallback to the following 
 | orientation                 | `"portrait-primary"`                                                                                    |
 | prefer_related_applications | `false`                                                                                                 |
 
-For complete configuration items, please see [Manifest Type Definition File](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/pwa2/src/shared/manifest.ts).
+Для полных элементов конфигурации см. [Файл определения типа манифеста](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/pwa2/src/shared/manifest.ts).
 
-### Manual Config
+### Ручная настройка
 
-You can manually specify the contents of the manifest with `plugins.pwa.manifest` in theme options.
+Вы можете вручную указать содержимое манифеста с помощью `plugins.pwa.manifest` в параметрах темы.
 
-::: tip Priority
+::: tip Приоритет
 
-`plugins.pwa.manifest` option in theme option has the highest priority, followed by manifest files that may exist in the `public` folder.
+Опция `plugins.pwa.manifest` в теме имеет наивысший приоритет, за ней следуют файлы манифеста, которые могут находиться в папке `public`.
 
 :::
 
-**You should at least set a valid icon through `manifest.icons` in `plugins.pwa` or other icon related options in the PWA plugin.**
+**Вы должны, по крайней мере, установить действительный значок с помощью `manifest.icons` в `plugins.pwa` или других параметров, связанных со значком, в плагине PWA.**
 
 ::: warning
 
-The installability [^installable] specification requires at least one valid icon to be declared in the manifest.
+Спецификация возможности установки [^installable] требует, чтобы в манифесте был объявлен хотя бы одна действительная иконка.
 
-So if you do not configure `manifest.icons` in `plugins.pwa`, visitors can only enjoy the offline accessibility brought by the Service Worker cache, while cannot install your site as a PWA.
+Таким образом, если вы не настроите `manifest.icons` в `plugins.pwa`, посетители смогут пользоваться только автономным доступом, обеспечиваемым кешем Service Worker, но не смогут установить ваш сайт как PWA.
 
-Besides the plugin does not process anything in the manifest by default, but outputs them as-is. This means that if you plan to deploy to a subdirectory, you should append the URL prefix to manifest Urls yourself.
+Кроме того, плагин по умолчанию ничего не обрабатывает в манифесте, а выводит как есть. Это означает, что если вы планируете развертывание в подкаталоге, вы должны добавить префикс URL-адреса к URL-адресам манифеста самостоятельно.
 
-But, if everything you need is all under base folder, you can set `appendBase: true` in `plugins.pwa` to let the plugin append `base` to any links in it.
+Но если все, что вам нужно, находится в базовой папке, вы можете установить `appendBase: true` в `plugins.pwa`, чтобы плагин мог добавлять `base` к любым ссылкам в нем.
 
 :::
 
-## Other Options
+## Другие опции
 
-The plugin also provides other PWA-related options, such as Microsoft tile icon and color settings, Apple icon and so on.
+Плагин также предоставляет другие параметры, связанные с PWA, такие как значок плитки Microsoft и настройки цвета, значок Apple и так далее.
 
-You can set them as needed. For detailed options, please see [PWA config](../../config//plugins/pwa.md).
+Вы можете установить их по мере необходимости. Подробные параметры смотрите в [Конфиг PWA](../../config//plugins/pwa.md).
 
-## Further Reading
+## Дальнейшее чтение
 
-For more details, please see:
+Для получения более подробной информации смотрите:
 
-- [PWA plugin docs][pwa2]
+- [Документация по плагину PWA][pwa2]
 - [Google PWA](https://web.dev/progressive-web-apps/)
 - [MDN PWA](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)
-- [W3C Manifest Specification](https://w3c.github.io/manifest/)
+- [Спецификация манифеста W3C](https://w3c.github.io/manifest/)
 
 [pwa2]: https://vuepress-theme-hope.github.io/v2/pwa/
