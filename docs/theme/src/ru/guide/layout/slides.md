@@ -26,7 +26,7 @@ tag:
 
 ::: warning Включить презентацию
 
-Вы должны включить функцию презентации в `vuepress-plugin-md-enhance`, установив `plugins.mdEnhance.presentation` или `plugins.mdEnhance.enableAll` в параметрах темы, иначе макет не будет отображаться правильно.
+Вы должны включить функцию презентации в `vuepress-plugin-md-enhance`, установив `plugins.mdEnhance.presentation` в настройках темы, иначе макет не будет отображаться правильно.
 
 :::
 
