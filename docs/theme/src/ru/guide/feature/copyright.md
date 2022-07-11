@@ -1,59 +1,59 @@
 ---
-title: Copyright
+title: Информация об авторских правах
 icon: copyright
 category:
-  - Feature
+  - Функция
 tag:
-  - Copyright
-  - Feature
+  - Информация о копирайтах
+  - Функция
 copy:
   minLength: 40
 ---
 
-Sometimes, you may not want some of your articles to be copied by others, or you want others to automatically generate a piece of copyright information to the clipboard when copying.
+Иногда вы можете не хотеть, чтобы некоторые из ваших статей копировались другими, или вы хотите, чтобы другие автоматически генерировали часть информации об авторских правах в буфер обмена при копировании.
 
-`vuepress-theme-hope` use [vuepress-plugin-copyright2][copyright2] to provide related features.
+`vuepress-theme-hope` использует [vuepress-plugin-copyright2][copyright2] для предоставления связанных функций.
 
 ::: info
 
-`vuepress-theme-hope` passes `plugins.copyright` in theme options as plugin options to `vuepress-plugin-copyright2`.
+`vuepress-theme-hope` передает `plugins.copyright` в параметрах темы в качестве параметров плагина для `vuepress-plugin-copyright2`.
 
 :::
 
 <!-- more -->
 
-## Enable plugin
+## Включение плагина
 
-Since half of the users use this theme to build documents, and document sites usually do not need to add copyright information, this plugin is not enabled by default.
+Поскольку половина пользователей использует эту тему для создания документов, а сайтам документов обычно не нужно добавлять информацию об авторских правах, этот плагин по умолчанию не включен.
 
 ::: info
 
-To enable this plugin, you need to set `plugins.copyright` in theme options to `true` or an object.
+Чтобы включить этот плагин, вам нужно установить для `plugins.copyright` в настройках темы значение `true` или объект.
 
-Setting to `true` is equivalent to setting `{ global: true }`.
+Установка в `true` эквивалентна установке `{ global: true }`.
 
 :::
 
-- When the `global` option of the plugin is not `true`, the plugin is disabled globally, and you need to manually enable it by setting `copy: true` in page frontmatter.
-- Setting `global: true` makes it enabled globally, and allows setting `copy: false` in page frontmatter to disable it.
+- Когда опция `global` плагина не равна `true`, плагин отключен глобально, и вам нужно включить его вручную, установив `copy: true` в frontmatter.
+- Установка `global: true` делает его включенным глобально и позволяет установить `copy: false` во frontmatter страницы, чтобы отключить его.
 
-To avoid disturbing visitors, copyright information will be appended only when the length of content copied by the user is not less than `100`. If you want to change this trigger value, please set `triggerWords`, and this option supports being overrided via `copy.triggerWord` in page frontmatter.
+Чтобы не беспокоить посетителей, информация об авторских правах будет добавлена только в том случае, если длина контента, скопированного пользователем, не менее `100`. Если вы хотите изменить это значение триггера, установите `triggerWords`, и этот параметр поддерживает переопределение через `copy.triggerWord` в странице frontmatter.
 
-## Disable Copy and Selection
+## Отключить копирование и выделение
 
-- If you don't want users to copy your entire site or specific page text, you can disable copying in plugin options or page frontmatter by setting `disableCopy`, the latter has higher priority.
-- If you don't want users to select your entire site or specific page text, you can disable selection in plugin options or page frontmatter by setting `disableSelection`, the latter has higher priority.
+- Если вы не хотите, чтобы пользователи копировали весь ваш сайт или конкретный текст страницы, вы можете отключить копирование в настройках плагина или во внешнем виде страницы, установив frontmatter `disableCopy`, последнее имеет более высокий приоритет.
+- Если вы не хотите, чтобы пользователи выбирали весь ваш сайт или конкретный текст страницы, вы можете отключить выбор в настройках плагина или во внешнем виде страницы, установив `disableSelection`, последний имеет более высокий приоритет.
 
-## Copyright Information
+## Информация об авторских правах
 
-You can set author and license information via `author` and `license` in plugin options. If your site have different authors and license in different pages, you can pass in a function `(page: Page) => string` that takes the current page object as parameter and returns the corresponding information.
+Вы можете установить информацию об авторе и лицензии через `author` и `license` в настройках плагина. Если на вашем сайте разные авторы и лицензии на разных страницах, вы можете передать функцию `(page: Page) => string`, которая принимает объект текущей страницы в качестве параметра и возвращает соответствующую информацию.
 
-## Demo
+## Демо
 
-Please copy this text and paste it to any location to see the effect. Please copy this text and paste it to any location to see the effect. Please copy this text and paste it to any location to see the effect. Please copy this text and paste it to any location to see the effect. Please copy this text and paste it to any location to see the effect. Please copy this text and paste it to any location to see the effect. Please copy this text and paste it to any location to see the effect. Please copy this text and paste it to any location to see the effect. Please copy this text and paste it to any location to see the effect. Please copy this text and paste it to any location to see the effect.
+Пожалуйста, скопируйте этот текст и вставьте его в любое место, чтобы увидеть эффект. Пожалуйста, скопируйте этот текст и вставьте его в любое место, чтобы увидеть эффект. Пожалуйста, скопируйте этот текст и вставьте его в любое место, чтобы увидеть эффект. Пожалуйста, скопируйте этот текст и вставьте его в любое место, чтобы увидеть эффект. Пожалуйста, скопируйте этот текст и вставьте его в любое место, чтобы увидеть эффект. Пожалуйста, скопируйте этот текст и вставьте его в любое место, чтобы увидеть эффект. Пожалуйста, скопируйте этот текст и вставьте его в любое место, чтобы увидеть эффект. Пожалуйста, скопируйте этот текст и вставьте его в любое место, чтобы увидеть эффект. Пожалуйста, скопируйте этот текст и вставьте его в любое место, чтобы увидеть эффект. Пожалуйста, скопируйте этот текст и вставьте его в любое место, чтобы увидеть эффект.
 
-## More
+## Еще
 
-For plugin documatation, please visit [vuepress-plugin-copyright2 docs][copyright2].
+Для получения документации по плагину посетите [документации vuepress-plugin-copyright2][copyright2].
 
 [copyright2]: https://vuepress-theme-hope.github.io/v2/copyright/zh/

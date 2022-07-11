@@ -1,48 +1,48 @@
 ---
-title: Image Preview
+title: Превью изображения
 icon: preview
 category:
-  - Feature
+  - Функция
 tag:
-  - Feature
-  - Image Preview
+  - Функция
+  - Превью изображения
 ---
 
-By including [vuepress-plugin-photo-swipe][photo-swipe], vuepress-theme-hope will make the pictures in the body of the page enter the preview mode when clicked.
+Включив [vuepress-plugin-photo-swipe][photo-swipe], vuepress-theme-hope заставит изображения в теле страницы переходить в режим предварительного просмотра при нажатии.
 
-If you don’t need this feature, you can set `plugins.photoSwipe: false` in theme options to disable it.
+Если вам не нужна эта функция, вы можете установить `plugins.photoSwipe: false` в настройках темы, чтобы отключить ее.
 
 ::: info
 
-`vuepress-theme-hope` passes `plugins.photoSwipe` in theme options as plugin options to `vuepress-plugin-photo-swipe`.
+`vuepress-theme-hope` передает `plugins.photoSwipe` в параметрах темы в качестве параметров плагина для `vuepress-plugin-photo-swipe`.
 
 :::
 
 <!-- more -->
 
-## Browse Mode
+## Режим просмотра
 
-In preview mode, you can:
+В режиме предварительного просмотра вы можете:
 
-- Swipe left and right to preview other pictures on the page in order
-- View the description of the picture
-- Zoom in and zoom out the picture
-- View pictures in full screen
-- Download pictures
-- Share pictures
+- Проведите пальцем влево и вправо, чтобы просмотреть другие изображения на странице по порядку.
+- Посмотреть описание картинки
+- Увеличение и уменьшение изображения
+- Просмотр изображений в полноэкранном режиме
+- Скачать картинки
+- Делитесь фотографиями
 
 ::: tip
 
-- Besides clicking "×" in the upper right corner to exit the preview mode, scrolling up and down more than a certain distance will also exit preview mode
-- On mobile devices, or using the PC trackpad, you can use pan and zoom gestures to pan and zoom in the preview mode
+- Помимо нажатия "×" в правом верхнем углу для выхода из режима предварительного просмотра, прокрутка вверх и вниз более чем на определенное расстояние также приведет к выходу из режима предварительного просмотра
+- На мобильных устройствах или с помощью трекпада ПК вы можете использовать жесты панорамирования и масштабирования для панорамирования и масштабирования в режиме предварительного просмотра
 
 :::
 
-## Customize Config
+## Настроить конфигурацию
 
-You can check the [plugin documentation][photo-swipe] for advanced configuration.
+Вы можете проверить [документацию плагина][photo-swipe] ля расширенной настройки.
 
-## Demo
+## Демо
 
 <!-- markdownlint-disable -->
 

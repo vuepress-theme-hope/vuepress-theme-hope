@@ -1,36 +1,36 @@
 ---
-title: Search
+title: Поиск
 icon: search
 category:
-  - Feature
+  - Функция
 tag:
-  - Feature
-  - Search
+  - Функция
+  - Поиск
 ---
 
-The theme adds built-in support for [`@vuepress/plugin-search`][search] and [`@vuepress/plugin-docsearch`][docsearch]. Just install the plugin you want and config it, you will get a search box in navbar.
+В тему добавлена встроенная поддержка [`@vuepress/plugin-search`][search] и [`@vuepress/plugin-docsearch`][docsearch]. Просто установите нужный плагин и настройте его, и вы получите окно поиска на панели навигации.
 
-To use search plugin, you need to apply it via `plugins` in the [**VuePress config file**](../../cookbook/vuepress/config.md).
+Чтобы использовать поисковый плагин, вам нужно применить его через `plugins` в [**файле конфигурации VuePress**](../../cookbook/vuepress/config.md).
 
 ::: warning
 
-The theme is just adding support for the above plugins, it does not bundle them. You need to install and apply them yourself.
+Тема просто добавляет поддержку вышеуказанных плагинов, она не объединяет их. Вам нужно установить и применить их самостоятельно.
 
 :::
 
 ::: danger
 
-**DO NOT** use `plugins.search` in theme options.
+**НЕ** используйте `plugins.search` в настройках темы.
 
-The theme can ONLY apply plugins it bundles, so `plugins` field in theme options ONLY accepts CERTAIN plugin name.
+Тема может применять ТОЛЬКО плагины, которые входят в ее состав, поэтому поле `plugins` в параметрах темы принимает ТОЛЬКО ОПРЕДЕЛЕННОЕ имя плагина.
 
 :::
 
 <!-- more -->
 
-## Use `@vuepress/plugin-search`
+## Использование `@vuepress/plugin-search`
 
-1. Install `@vuepress/plugin-search`
+1. Установите `@vuepress/plugin-search`
 
    ::: code-tabs#shell
 
@@ -54,7 +54,7 @@ The theme can ONLY apply plugins it bundles, so `plugins` field in theme options
 
    :::
 
-1. Import `searchPlugin` from `@vuepress/plugin-search` and apply it in `plugins` under `config.{ts,js}`.
+1. Импортируйте `searchPlugin` из `@vuepress/plugin-search` и примените его в `plugins` под `config.{ts,js}`.
 
    ::: code-tabs#language
 
@@ -91,25 +91,25 @@ The theme can ONLY apply plugins it bundles, so `plugins` field in theme options
 
    :::
 
-::: info More
+::: info Более
 
-See [Plugin Docs][search] for available options.
+Доступные параметры смотрите в [Документации по плагинам][search].
 
 :::
 
-## Use `@vuepress/plugin-docsearch`
+## Используйте `@vuepress/plugin-docsearch`
 
-1. You need to [submit the URL of your site](https://docsearch.algolia.com/apply/) to join the DocSearch program.
+1. Вам необходимо [отправить URL-адрес вашего сайта](https://docsearch.algolia.com/apply/), чтобы присоединиться к программе DocSearch.
 
-   The DocSearch team will send [apiKey](#apikey) and [indexName](#indexname) to your email once the index is generated. Then you can configure this plugin to enable DocSearch in VuePress.
+   Команда DocSearch отправит [apiKey](#apikey) и [indexName](#indexname) на вашу электронную почту после создания индекса. Затем вы можете настроить этот плагин для включения DocSearch в VuePress.
 
-   Alternatively, you can [run your own crawler](https://docsearch.algolia.com/docs/run-your-own/) to generate the index, and then use your own [appId](#appId), [apiKey](#apikey) and [indexName](#indexname) to configure this plugin.
+   Кроме того, вы можете [запустить свой собственный поисковый робот](https://docsearch.algolia.com/docs/run-your-own/) для создания индекса, а затем использовать свой собственный [appId](#appId), [apiKey](#apikey) и [indexName](#indexname) для настройки этого плагина.
 
-1. Set up the Algolia Crawler correctly according to the following requirements. You should go to [Algolia Crawler](https://crawler.algolia.com/admin/crawlers/) to update your crawler config.
+1. Правильно настройте Algolia Crawler в соответствии со следующими требованиями. Вам следует перейти на [Algolia Crawler](https://crawler.algolia.com/admin/crawlers/), чтобы обновить конфигурацию вашего сканера.
 
-   ::: details Setting Crawler Config
+   ::: details Настройка конфигурации сканера
 
-   Here are config options and descriptions:
+   Вот параметры конфигурации и описания:
 
    ```js {35-51,60}
    new Crawler({
@@ -243,11 +243,11 @@ See [Plugin Docs][search] for available options.
 
    ::: warning
 
-   `initialIndexSettings.YOUR_INDEX_NAME.attributesForFaceting` field **must** contain `"lang"`, otherwise the plugin will not work properly.
+   Поле `initialIndexSettings.YOUR_INDEX_NAME.attributesForFaceting` **должно** содержать `"lang"`, иначе плагин не будет работать должным образом.
 
    :::
 
-1. Install `@vuepress/plugin-docsearch`
+1. Установите `@vuepress/plugin-docsearch`
 
    ::: code-tabs#shell
 
@@ -271,7 +271,7 @@ See [Plugin Docs][search] for available options.
 
    :::
 
-1. Import `docsearchPlugin` from `@vuepress/plugin-docsearch` and apply it in `plugins` under `config.{ts,js}`.
+1. Импортируйте `docsearchPlugin` из `@vuepress/plugin-docsearch` и примените его в `plugins` в `config.{ts,js}`.
 
    ::: code-tabs#language
 
@@ -310,9 +310,9 @@ See [Plugin Docs][search] for available options.
 
    :::
 
-::: info More
+::: info Еще
 
-See [Plugin Docs][docsearch] for how to use docsearch plugin and its available options.
+Смотрите [Документацию по подключаемым модулям][docsearch], чтобы узнать, как использовать подключаемый модуль docsearch и его доступные параметры.
 
 :::
 

@@ -1,61 +1,61 @@
 ---
-title: Page Meta
+title: Мета страницы
 icon: time
 category:
-  - Feature
+  - Функция
 tag:
-  - Feature
-  - Meta
+  - Функция
+  - Мета
 ---
 
-The theme displays last update time and contributors of the page via the [`@vuepress/plugin-git`][git] plugin, and provides support for an "edit this page" button.
+Тема отображает время последнего обновления и авторов страницы с помощью плагина [`@vuepress/plugin-git`][git], а также поддерживает кнопку «редактировать эту страницу».
 
-The theme also provides navigation buttons for previous and next pages depending on sidebar config.
+Тема также предоставляет кнопки навигации для перехода к предыдущей и следующей страницам в зависимости от конфигурации боковой панели.
 
 <!-- more -->
 
-## Git-based Information
+## Информация на основе Git
 
-`vuepress-theme-hope` uses the built-in [`@vuepress/plugin-git`][git] plugin to automatically generate page create time, last update time and contributors.
+`vuepress-theme-hope` использует встроенный плагин [`@vuepress/plugin-git`][git] для автоматического определения времени создания страницы, времени последнего обновления и участников.
 
-The plugin will automatically generate the page creation time and last update time from the UNIX timestamp (ms) of the last `git` commit of the page file, and generate contributors based on the commit record.
+Плагин будет автоматически генерировать время создания страницы и время последнего обновления из временной метки UNIX (мс) последней фиксации `git` файла подкачки, а также создавать участников на основе записи фиксации.
 
-The theme will display last update time in the appropriate date format, along with all page contributors at the bottom of the page.
+Тема будет отображать время последнего обновления в соответствующем формате даты, а также всех участников страницы внизу страницы.
 
 ::: tip
 
-The theme will use `Date.toLocaleString(pageLang)` to automatically localize the text of last update time according to the current language.
+Тема будет использовать `Date.toLocaleString(pageLang)` для автоматической локализации текста времени последнего обновления в соответствии с текущим языком.
 
 :::
 
-::: warning Usage Notes
+::: warning Примечания по использованию
 
-Since the last update time is `git` based, you can only enable it in a `git` based project. Also, since the timestamp used is from a git commit, it will only be displayed after the first commit on a given page, and will only be updated when subsequent commits change to that page.
-
-:::
-
-::: danger Not available in dev server
-
-Since the `git` plugin has a serious performance impact, the theme will not enable it in dev server by default.
-
-If you need those info, please set `plugins.git: true` in theme options, or add the `--debug` flag to run dev command.
+Поскольку время последнего обновления основано на `git`, вы можете включить его только в проекте на основе `git`. Кроме того, поскольку временная метка используется из коммита git, она будет отображаться только после первого коммита на данной странице и будет обновляться только при изменении последующих коммитов на эту страницу.
 
 :::
 
-## Edit Link
+::: danger Недоступно на сервере разработки
 
-You can automatically generate edit links for each page by setting the following items in theme options:
+Поскольку плагин `git` оказывает серьезное влияние на производительность, тема по умолчанию не включает его на сервере разработки.
 
-- `docsRepo`: docs repository link, same as `repo` by default
-- `docsDir`: the directory of docs in the repository, defaults to root directory
-- `docsBranch`: docs branch, defaults to `"main"`
+Если вам нужна эта информация, установите `plugins.git: true` в настройках темы или добавьте флаг `--debug` для запуска команды dev.
 
-## Display Control
+:::
 
-To hide these items globally, set the corresponding items below to `false` in theme options. You can also enable/disable specific pages by setting these items in `YAML front matter`:
+## Изменить ссылку
 
-- `lastUpdated`: whether to display last update time of the page
-- `contributors`: whether to show page contributors
-- `editLink`: whether to display "edit page" link
+Вы можете автоматически генерировать ссылки для редактирования для каждой страницы, установив следующие элементы в параметрах темы:
+
+- `docsRepo`: ссылка на репозиторий документации, такая же, как `repo` по умолчанию.
+- `docsDir`: каталог документации в репозитории, по умолчанию корневой каталог
+- `docsBranch`: ветка документации, по умолчанию `"main"`
+
+## Управление отображением
+
+Чтобы скрыть эти элементы глобально, установите для соответствующих элементов ниже значение `false` в параметрах темы. Вы также можете включить/отключить определенные страницы, установив эти элементы в `YAML front matter`:
+
+- `lastUpdated`: отображать ли время последнего обновления страницы
+- `contributors`: показывать ли участников страницы
+- `editLink`: отображать ли ссылку "edit page"
 
 [git]: https://v2.vuepress.vuejs.org/reference/plugin/git.html

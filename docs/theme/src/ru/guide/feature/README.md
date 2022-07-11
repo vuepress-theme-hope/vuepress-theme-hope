@@ -1,33 +1,33 @@
 ---
-title: Features
+title: Функции
 icon: discover
 index: false
 dir:
   order: 5
 ---
 
-`vuepress-theme-hope` introduces lots of great features. Most of the functions are separated into plugins, which means if you like them, you can use them in other VuePress themes or `@vuepress/theme-default`.
+`vuepress-theme-hope` представляет множество замечательных функций. Большинство функций разделены на плагины, что означает, что если они вам нравятся, вы можете использовать их в других темах VuePress или `@vuepress/theme-default`.
 
 ::: info
 
-All the plugin settings are under `plugins` field in theme options, and the option name is related with their names.
+Все настройки плагина находятся в поле `plugins` в настройках темы, а название опции связано с их именами.
 
 :::
 
-## Catalog
+## Каталог
 
-- [Page Information](page-info.md)
+- [Информация о странице](page-info.md)
 
-- [Comment function](comment.md)
+- [Функция комментариев](comment.md)
 
-- [One Click copy](copy-code.md)
+- [Копирование в один клик](copy-code.md)
 
-- [Picture preview](photo-swipe.md)
+- [Предварительный просмотр изображения](photo-swipe.md)
 
-- [Meta and navigation](meta.md)
+- [Мета и навигация](meta.md)
 
-- [Search](search.md)
+- [Поиск](search.md)
 
-- [Copyright Information](copyright.md)
+- [Информация об авторских правах](copyright.md)
 
-- [Article Encryption](encrypt.md)
+- [Шифрование статьи](encrypt.md)

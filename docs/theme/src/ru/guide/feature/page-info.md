@@ -1,45 +1,45 @@
 ---
-title: Page information
+title: Информация о странице
 icon: info
 category:
-  - Feature
+  - Функция
 tag:
-  - Feature
-  - Page Info
+  - Функция
+  - Информация о странице
 ---
 
-`vuepress-theme-hope` can display article information for you.
+`vuepress-theme-hope` может отображать для вас информацию о статье.
 
 <!-- more -->
 
-## Enable
+## Включить
 
-Page information display is enabled globally by default, while supports page config. You can disable it by setting `pageInfo: false` in frontmatter of a specific page.
+Отображение информации о странице включено глобально по умолчанию, в то время как поддерживается конфигурация страницы. Вы можете отключить его, установив `pageInfo: false` в начале страницы.
 
-To keep it globally disabled, please set `pageInfo` to `false` in the plugin options. Then you can set `pageInfo` in frontmatter of a specific page to enable it locally.
+Чтобы он был глобально отключен, установите для `pageInfo` значение `false` в настройках плагина. Затем вы можете установить `pageInfo` в начале конкретной страницы, чтобы включить ее локально.
 
-## Parameters <Badge text="Support page config" />
+## Параметры <Badge text="Конфигурация страницы поддержки" />
 
-`pageInfo` accepts an array of strings by default, filling in a group of items. The order of filling is the order in which the items are displayed.
+`pageInfo` по умолчанию принимает массив строк, заполняя группу элементов. Порядок заполнения – это порядок отображения элементов.
 
-The optional values and corresponding contents of the entry are as follows:
+Необязательные значения и соответствующее содержимое записи:
 
-| Entry           | Corresponding content  | page frontmatter value                | Theme Options              |
-| --------------- | ---------------------- | ------------------------------------- | -------------------------- |
-| `"Author"`      | author                 | `author`                              | `author`                   |
-| `"Date"`        | Writing Date           | `time`                                | N/A                        |
-| `"Original"`    | Whether is original    | `isOriginal`                          | N/A                        |
-| `"Category"`    | Category               | `category`                            | N/A                        |
-| `"Tag"`         | Tag                    | `tag`                                 | N/A                        |
-| `"ReadingTime"` | Estimated reading time | N/A (automatically generated)         | N/A                        |
-| `"Word"`        | Word count             | N/A (automatically generated)         | N/A                        |
-| `"PageView"`    | Pageviews              | `pageview` (only available in Waline) | `plugins.comment.pageview` |
+| Ввод            | Соответствующий контент  | значение главной страницы страницы    | Параметры темы             |
+| --------------- | ------------------------ | ------------------------------------- | -------------------------- |
+| `"Author"`      | Автор                    | `author`                              | `author`                   |
+| `"Date"`        | Дата написания           | `time`                                | Н/Д                        |
+| `"Original"`    | Является ли оригинальным | `isOriginal`                          | Н/Д                        |
+| `"Category"`    | Категория                | `category`                            | Н/Д                        |
+| `"Tag"`         | Тег                      | `tag`                                 | Н/Д                        |
+| `"ReadingTime"` | Расчетное время чтения   | Н/Д (сгенерировано автоматически)     | Н/Д                        |
+| `"Word"`        | Количество слов          | Н/Д (сгенерировано автоматически)     | Н/Д                        |
+| `"PageView"`    | Просмотры страниц        | `pageview` (доступно только в Waline) | `plugins.comment.pageview` |
 
-By default it will display "Author, Visit Number, Writing Date, Category, Tags, Expect Reading Time".
+По умолчанию будет отображаться "Автор, Номер визита, Дата написания, Категория, Теги, Ожидаемое время прочтения".
 
-### author <Badge text="Support page config" />
+### Автор <Badge text="Конфигурация страницы поддержки" />
 
-Example:
+Пример:
 
 ```md
 ---
@@ -47,11 +47,11 @@ author: Mr.Hope
 ---
 ```
 
-You can configure `author` in the plugin options to set the default author. And you can also configure `author` in frontmatter with a new value in the page to override the default author, or set it to `false` to cancel the author display.
+Вы можете настроить `author` в параметрах плагина, чтобы установить автора по умолчанию. И вы также можете настроить `author` во frontmatter с новым значением на странице, чтобы переопределить автора по умолчанию, или установить для него значение `false`, чтобы отменить отображение автора.
 
-Authors support `string[]`, `string`, `AuthorInfo` and `AuthorInfo[]`.
+Авторы поддерживают `string[]`, `string`, `AuthorInfo` и `AuthorInfo[]`.
 
-The format of AuthorInfo is as follows:
+Формат AuthorInfo следующий:
 
 ```ts
 interface AuthorInfo {
@@ -60,11 +60,11 @@ interface AuthorInfo {
 }
 ```
 
-### Writing Date
+### Дата написания
 
-We recommended to fill it with a standard date format. A standard format is in the form of `xxxx-xx-xx`, such as "April 1, 2020" should be written as `2020-04-01`.
+Мы рекомендуем заполнять его стандартным форматом даты. Стандартный формат имеет вид `xxxx-xx-xx`, например, "April 1, 2020" следует записывать как `2020-04-01`.
 
-Example:
+Пример:
 
 ```md
 ---
@@ -72,19 +72,19 @@ date: 2020-01-01
 ---
 ```
 
-### Category and Tags
+### Категория и Теги
 
-See [blog section](../blog/category-and-tags.md) for details
+Подробности смотрите в [разделе блога](../blog/category-and-tags.md)
 
-### Reading Time
+### Время чтения
 
-The default statistic method is 300 words per minute. You can override it by setting `plugins.readingTime.wordPerMinute` in theme options. This option does not support individual configuration on the page.
+Статистический метод по умолчанию — 300 слов в минуту. Вы можете переопределить его, установив `plugins.readingTime.wordPerMinute` в настройках темы. Этот параметр не поддерживает индивидуальную настройку на странице.
 
-### View Count <Badge text="Support page config" />
+### Количество просмотров <Badge text="Конфигурация страницы поддержки" />
 
-When using Waline as [Comment Service](comment.md), this function is enabled by default.
+При использовании Waline в качестве [Службы комментариев](comment.md), эта функция включена по умолчанию.
 
-Example:
+Пример:
 
 ```md
 ---

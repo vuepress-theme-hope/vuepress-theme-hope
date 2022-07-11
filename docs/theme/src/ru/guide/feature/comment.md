@@ -1,24 +1,24 @@
 ---
-title: Comment Service
+title: Сервис комментариев
 icon: comment
 category:
-  - Feature
+  - Функция
 tag:
-  - Comment
-  - Feature
+  - Комментарий
+  - Функция
 ---
 
-`vuepress-theme-hope` implements the comment feature with built-in [`vuepress-plugin-comment2`][comment2].
+`vuepress-theme-hope` реализует функцию комментариев со встроенным [`vuepress-plugin-comment2`][comment2].
 
 ::: info
 
-`vuepress-theme-hope` passes `plugins.comment` in theme options as plugin options to `vuepress-plugin-comment2`.
+`vuepress-theme-hope` передает `plugins.comment` в параметрах темы в качестве параметров плагина `vuepress-plugin-comment2`.
 
 :::
 
 <!-- more -->
 
-## Enable <Badge text="Support page config" />
+## Включить <Badge text="Конфигурация страницы поддержки" />
 
 ::: code-tabs#language
 
@@ -65,61 +65,61 @@ module.exports = {
 
 :::
 
-Comment feature is enabled globally by default, controlled by `plugins.comment.comment` options.
+Функция комментариев включена глобально по умолчанию и контролируется параметрами `plugins.comment.comment`.
 
 ::: tip
 
-For the complete config item of the plugin ,please see [plugin documentation][comment2].
+Полный элемент конфигурации плагина смотрите в [документации по плагину][comment2].
 
 :::
 
-## Comment Provider
+## Поставщик комментариев
 
-Currently you can choose from Giscus, Waline and Twikoo.
+В настоящее время вы можете выбирать из Giscus, Waline и Twikoo.
 
-::: tip Comment service selection
+::: tip Выбор службы комментариев
 
-- Giscus is recommended if your blog or documentation is primarily geared towards programmers.
-- If your blog or documentation is for the general public, Waline is recommended.
+- Giscus рекомендуется, если ваш блог или документация в первую очередь ориентированы на программистов.
+- Если ваш блог или документация предназначены для широкой публики, рекомендуется Waline.
 
 :::
 
 ## Giscus
 
-Giscus is a GitHub Discussion based commenting system that is easy to start.
+Giscus — это система комментариев на основе GitHub Discussion, которую легко запустить.
 
-### Preparation
+### Подготовка
 
-1. You need to create a public repository and open discussion as a place to store comments
-1. You need to install the [Giscus App](https://github.com/apps/giscus) to have permission to access the corresponding repository.
+1. Вам необходимо создать общедоступный репозиторий и открыть обсуждение как место для хранения комментариев.
+1. Вам необходимо установить [приложение Giscus](https://github.com/apps/giscus), чтобы иметь доступ к соответствующему репозиторию.
 
-After completing the above steps, please go to the [Giscus page](https://giscus.app) to get your settings. You just need to fill in the repository and Discussion categories, then scroll to the "Enable giscus" section at the bottom of the page and copy the `data-repo`, `data-repo-id`, `data-category` and `data-category-id` four items as they are required.
+После выполнения вышеуказанных шагов перейдите на [страницу Giscus](https://giscus.app), чтобы получить настройки. Вам просто нужно заполнить категории репозитория и обсуждения, затем прокрутить до раздела "Enable giscus" внизу страницы и скопировать `data-repo`, `data-repo-id`, `data-category` и `data-category-id` четыре элемента по мере необходимости.
 
-### Config
+### Конфиг
 
-Please pass `data-repo`, `data-repo-id`, `data-category` and `data-category-id` as plugin options as `repo`, `repoId`, `category` `categoryId`.
+Пожалуйста, передайте `data-repo`, `data-repo-id`, `data-category` и `data-category-id` в качестве параметров плагина как `repo`, `repoId`, `category` `categoryId`.
 
-::: info Darkmode
+::: info Темный режим
 
-To let Giscus use the correct theme, you need to pass a boolean value to `<CommentService />` via the `darkmode` property, indicating whether darkmode is currently enabled.
+Чтобы позволить Giscus использовать правильную тему, вам нужно передать логическое значение в `<CommentService />` через свойство `darkmode`, указывающее, включен ли темный режим в данный момент.
 
 :::
 
-For other options, see [Giscus Config][comment2-giscus-config].
+Другие параметры смотрите в [Конфиге Giscus][comment2-giscus-config].
 
 ## Waline
 
-### Get APP_ID and APP_Key
+### Получить APP_ID и APP_Key
 
-[Sign in](https://console.leancloud.app/login.html#/signin) or [sign up](https://console.leancloud.app/login.html#/signup) leancloud. Then create new application in Leancloud, and you will get APP ID / APP Key / APP Master Key.
+[Войти](https://console.leancloud.app/login.html#/signin) или [зарегистрироваться](https://console.leancloud.app/login.html#/signup) leancloud. Затем создайте новое приложение в Leancloud, и вы получите APP ID / APP Key / APP Master Key.
 
-After that, create a vercel app using the below button.
+После этого создайте приложение Vercel с помощью кнопки ниже.
 
 [![Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/lizheming/waline/tree/master/example)
 
-Then input your new GitHub repo name and set `LEAN_ID`, `LEAN_KEY` and `LEAN_MASTER_KEY` environment variables in the "Environment Variables" column. `APP ID` is the value of `LEAN_ID`, and `APP Key` to `LEAN_KEY`, `Master Key` to `LEAN_MASTER_KEY`.
+Затем введите имя нового репозитория GitHub и установите переменные среды `LEAN_ID`, `LEAN_KEY` и `LEAN_MASTER_KEY` в столбце "Environment Variables". `APP ID` — это значение `LEAN_ID`, а `APP Key` - это `LEAN_KEY`, `Master Key` - это `LEAN_MASTER_KEY`.
 
-Click `Deploy` button to deploy. It will show you deploy successfully after a minitues time. Then config the vercel link in your theme options:
+Нажмите кнопку `Deploy`, для деплоя. Это покажет, что вы успешно развернули через несколько минут. Затем настройте ссылку Vercel в настройках темы:
 
 ::: code-tabs#language
 
@@ -164,27 +164,27 @@ module.exports = {
 
 ::: tip
 
-Config will be listed on [Plugin Config][comment2-waline-config].
+Конфигурация будет указана в [Конфигурация плагина][comment2-waline-config].
 
-For more details, please see [Waline Docs](https://waline.js.org/en/)。
+Для получения более подробной информации смотрите [Документацию Waline Docs](https://waline.js.org/en/)。
 
 :::
 
 ## Twikoo
 
-### Vercel Deployment
+### Развертывание Vercel
 
-1. Apply for [MongoDB](https://www.mongodb.com/cloud/atlas/register) account
-1. Create a free MongoDB database, the recommended region is `AWS / N. Virginia (us-east-1)`
-1. Click CONNECT on the Clusters page, follow the steps to allow connections from all IP addresses ([Why?](https://vercel.com/support/articles/how-to-allowlist-deployment-ip-address)), create Database user, and record the database connection string, please change the `<password>` in the connection string to the database password
-1. Sign up for a [Vercel](https://vercel.com/signup) account
-1. Click the button below to deploy Twikoo to Vercel in one click
+1. Подать заявку на учетную запись [MongoDB](https://www.mongodb.com/cloud/atlas/register)
+1. Создайте бесплатную базу данных MongoDB, рекомендуемый регион `AWS / N. Virginia (us-east-1)`
+1. Нажмите ПОДКЛЮЧИТЬ на странице Кластеры, следуйте инструкциям, чтобы разрешить подключения со всех IP-адресов ([Почему?](https://vercel.com/support/articles/how-to-allowlist-deployment-ip-address)), создайте пользователя базы данных и запишите строку подключения к базе данных, измените `<password>` в строке подключения на пароль базы данных
+1. Зарегистрируйте учетную запись [Vercel](https://vercel.com/signup)
+1. Нажмите кнопку ниже, чтобы развернуть Twikoo на Vercel одним щелчком мыши
 
    [![Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/imaegoo/twikoo/tree/dev/src/vercel-min)
 
-1. Go to Settings - Environment Variables, add the environment variable `MONGODB_URI`, the value is the database connection string in step 3
-1. Go to Overview, click the link under Domains, if the environment configuration is correct, you can see the prompt "Twikoo cloud function is running normally"
-1. Vercel Domains (with `https://` prefix, for example `https://xxx.vercel.app`) is your environment ID
+1. Перейдите в Settings - Environment Variables, добавьте переменную среды `MONGODB_URI`, значением является строка подключения к базе данных на шаге 3.
+1. Перейдите в Overview, щелкните ссылку в разделе Domains, если конфигурация среды верна, вы увидите сообщение "Twikoo cloud function is running normally"
+1. Домены Vercel (с префиксом `https://`, например, `https://xxx.vercel.app`) – это идентификатор вашей среды
 
 [comment2]: https://vuepress-theme-hope.github.io/v2/comment/
 [comment2-giscus-config]: https://vuepress-theme-hope.github.io/v2/comment/config/giscus.html

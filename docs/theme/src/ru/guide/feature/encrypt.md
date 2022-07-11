@@ -1,28 +1,28 @@
 ---
-title: Encryption
+title: Шифрование
 icon: lock
 category:
-  - Feature
+  - Функция
 tag:
-  - Encrypt
-  - Feature
+  - Шифровать
+  - Функция
 ---
 
-The theme supports encryption of specific folders or specific paths, as well as global scope encryption.
+Тема поддерживает шифрование определенных папок или определенных путей, а также глобальное шифрование.
 
 ::: danger
 
-Note that because of the limitation of vuepress, the content of the article is only hidden before being decrypted, and visitors can still get the content of the article from the source code (from js).
+Обратите внимание, что из-за ограничения vuepress содержимое статьи скрывается только до расшифровки, и посетители все равно могут получить содержимое статьи из исходного кода (из js).
 
-Please **DO NOT USE** this encryption function for any sensitive and confidential articles and files, please bear the consequences of it.
+Пожалуйста, **НЕ ИСПОЛЬЗУЙТЕ** эту функцию шифрования для любых секретных и конфиденциальных статей и файлов, пожалуйста, примите на себя последствия этого.
 
 :::
 
 <!-- more -->
 
-## Local Encryption
+## Локальное шифрование
 
-You can configure encryption options through the `encrypt.config` options in theme options.
+Вы можете настроить параметры шифрования с помощью параметров `encrypt.config` в параметрах темы.
 
 ::: code-tabs#language
 
@@ -71,20 +71,20 @@ module.exports = {
 
 ::: warning
 
-Note that you can only use passwords in string format.
+Обратите внимание, что вы можете использовать пароли только в строковом формате.
 
-The salted hash value of the number `1234` and the string `"1234"` is different! While user can only enter the content in the string format through the input box.
+Соленое хэш-значение числа `1234` и строки `"1234"` отличается! В то время как пользователь может вводить содержимое только в строковом формате через поле ввода.
 
 :::
 
-## Global encryption
+## Глобальное шифрование
 
-In some cases, you may want to encrypt the entire site, you can set `encrypt.global: true` in theme options to do that.
+В некоторых случаях вы можете захотеть зашифровать весь сайт, для этого вы можете установить `encrypt.global: true` в настройках темы.
 
-For global encryption, you can set one or more passwords in the format of string or string array in `encrypt.admin`.
+Для глобального шифрования вы можете установить один или несколько паролей в формате строки или массива строк в `encrypt.admin`.
 
 ::: tip
 
-The consideration of multiple passwords is separation of permissions。 This allow you to deprecate or update some of the global passwords in future deployments, so that some users with certain password will lose access.
+Рассмотрение нескольких паролей — это разделение разрешений. Это позволяет вам отменить или обновить некоторые глобальные пароли в будущих развертываниях, чтобы некоторые пользователи с определенным паролем потеряли доступ.
 
 :::
