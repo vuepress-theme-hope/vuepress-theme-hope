@@ -1,26 +1,26 @@
 ---
-title: Blog Page Path
+title: Путь к странице блога
 icon: link
 order: 7
 category:
-  - Blog
+  - Блог
 tag:
-  - Blog
-  - Path
+  - Блог
+  - Путь
 ---
 
-You can control the path of each page in the blog through `plugins.blog` in theme options.
+Вы можете управлять путем каждой страницы в блоге через `plugins.blog` в настройках темы.
 
-The default paths provided by the blog are as follows, if they conflict with your existing paths, and you don’t want to adjust your own paths, you can modify them.
+Пути по умолчанию, предоставляемые блогом, следующие: если они конфликтуют с вашими существующими путями, и вы не хотите настраивать свои собственные пути, вы можете изменить их.
 
-| Options        | Description                   | Default Path       |
+| Опции          | Описание                      | Путь по умолчанию  |
 | -------------- | ----------------------------- | ------------------ |
-| `article`      | list of articles              | `/article/`        |
-| `category`     | Category map page             | `/category/`       |
-| `categoryItem` | A list of specific categories | `/category/:name/` |
-| `tag`          | Tag map page                  | `/tag/`            |
-| `tagItem`      | list of specific tags         | `/tag/:name/`      |
-| `encrypted`    | List of encrypted articles    | `/encrypted/`      |
-| `slide`        | List of slides                | `/slides/`         |
-| `star`         | List of starred articles      | `/star/`           |
-| `timeline`     | Timeline list                 | `/timeline/`       |
+| `article`      | Список статей                 | `/article/`        |
+| `category`     | Страница карты категорий      | `/category/`       |
+| `categoryItem` | Список определенных категорий | `/category/:name/` |
+| `tag`          | Страница карты тегов          | `/tag/`            |
+| `tagItem`      | список конкретных тегов       | `/tag/:name/`      |
+| `encrypted`    | Список зашифрованных статей   | `/encrypted/`      |
+| `slide`        | Список слайдов                | `/slides/`         |
+| `star`         | Список помеченных статей      | `/star/`           |
+| `timeline`     | Список временных шкал         | `/timeline/`       |

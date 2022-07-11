@@ -1,64 +1,64 @@
 ---
-title: Article List
+title: Список статей
 icon: article
 order: 3
 category:
-  - Blog
+  - Блог
 tag:
-  - Article
-  - Blog
-  - Encrypt
-  - Slide
-  - Star
+  - Статья
+  - Блог
+  - Шифрование
+  - Слайд
+  - Избранное
 ---
 
-The topic provides you with a list of all articles under the path `/article/` by default.
+Тема предоставляет вам список всех статей по пути `/article/` по умолчанию.
 
-## Auto Excerpt
+## Авто выдержка
 
-By default, the theme will only display the excerpt or description you specify in the article list.
+По умолчанию тема будет отображать только тот отрывок или описание, которое вы укажете в списке статей.
 
-If you want the theme to automatically extract excerpts, set `plugins.blog.autoExcerpt: true` in theme options.
+Если вы хотите, чтобы тема автоматически извлекала отрывки, установите `plugins.blog.autoExcerpt: true` в параметрах темы.
 
-## Article
+## Статья
 
-All articles will be added to the article list by default and rendered under the path `/article/`.
+Все статьи будут добавлены в список статей по умолчанию и отображены по пути `/article/`.
 
-![Article list](./assets/article-list-light.png#light)
-![Article list](./assets/article-list-dark.png#dark)
+![Список статей](./assets/article-list-light.png#light)
+![Список статей](./assets/article-list-dark.png#dark)
 
-If you don’t want the list to contain some specific articles, just set the `article` to `false` in the frontmatter of the article, or you may customize it through `plugins.blog.filter` in theme options.
+Если вы не хотите, чтобы список содержал какие-то конкретные статьи, просто установите для параметра `article` значение `false` в начале статьи или вы можете настроить его с помощью `plugins.blog.filter` в параметрах темы.
 
-To sticky a specific article in the article list, just set `sticky` to `true` in the frontmatter of the article.
+Чтобы прикрепить конкретную статью к списку статей, просто установите для параметра `sticky` значение `true` в frontmatter статьи.
 
-::: tip Order
+::: tip Порядок
 
-For sticky articles, you can set `sticky` with a number to set their order. Articles with large numbers will be listed first.
+Для липких статей вы можете установить `sticky` с числом, чтобы установить их порядок. Статьи с большими номерами будут перечислены первыми.
 
 :::
 
-## Star Articles
+## Звездные статьи
 
-You can star an article by setting `star` to `true` in frontmatter. After staring, users can view these articles on the `/star/` page.
+Вы можете пометить статью, установив для параметра `star` значение `true` в frontmatter. После просмотра пользователи могут просмотреть эти статьи на странице `/star/`.
 
-At the same time, any star articles will be displayed in the article column on the sidebar of the blog homepage.
+В то же время любые звездные статьи будут отображаться в столбце статей на боковой панели главной страницы блога.
 
 ::: info
 
-Our consideration for providing star options: Theme users may want to show visitors some high-quality articles, but do not want sticky articles to flood the homepage, resulting in visitors not being able to see the recently updated articles.
+Наше соображение по поводу предоставления звездочек: пользователи темы могут захотеть показать посетителям некоторые высококачественные статьи, но не хотят, чтобы прилепленные статьи переполняли главную страницу, в результате чего посетители не могли видеть недавно обновленные статьи.
 
 :::
 
-::: tip Order
+::: tip Порядок
 
-Similar to sticky articles, you can also set `star` to number to set their order. Articles with large numbers will be listed first.
+Как и в случае с прикрепленными статьями, вы также можете установить `star` на номер, чтобы установить их порядок. Статьи с большими номерами будут перечислены первыми.
 
 :::
 
-## Encryption and Slides
+## Шифрование и слайды
 
-The theme provides separate lists for the two special pages: encrypted article page and slide page. You can view them on the `/encrypt/` and `/slide/` pages.
+Тема предоставляет отдельные списки для двух специальных страниц: зашифрованной страницы статьи и страницы слайда. Вы можете просмотреть их на страницах `/encrypt/` и `/slide/`.
 
-At the same time, to help visitors distinguish between these two categories of pages, their categories will be clearly marked with icons in the article list.
+В то же время, чтобы помочь посетителям различать эти две категории страниц, их категории будут четко обозначены значками в списке статей.
 
-![Category Tips](./assets/icon-type.png)
+![Советы по категориям](./assets/icon-type.png)

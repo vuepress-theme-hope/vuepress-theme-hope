@@ -1,67 +1,67 @@
 ---
-title: Blog homepage
+title: Главная страница блога
 icon: home
 order: 6
 category:
-  - Blog
+  - Блог
 tag:
-  - Blog
-  - Home
-  - Layout
+  - Блог
+  - Главная
+  - Макет
 ---
 
-`vuepress-theme-hope` allows you to enable a blog-style homepage.
+`vuepress-theme-hope` позволяет вам включить домашнюю страницу в стиле блога.
 
-You need to set `layout: Blog` and `home: true` in the frontmatter of homepage.
+Вам нужно установить `layout: Blog` и `home: true` на главной странице frontmatter.
 
 <!-- more -->
 
-![Homepage screenshot](./assets/blog-light.png#light)
-![Homepage screenshot](./assets/blog-dark.png#dark)
+![Скриншот главной страницы](./assets/blog-light.png#light)
+![Скриншот главной страницы](./assets/blog-dark.png#dark)
 
-## Frontmatter Options
+## Frontmatter опции
 
 ### hero
 
-- Type: `boolean`
-- Default: `true`
+- Тип: `boolean`
+- По умолчанию: `true`
 
-Whether to display the icon and description of the home page.
+Отображать ли значок и описание домашней страницы.
 
 ### bgImage
 
-- Type: `string | false`
+- Тип: `string | false`
 
-For the address of the background picture, you must fill in the absolute path. If not filled in, a default landscape picture will be automatically applied.
+Для адреса фонового изображения необходимо указать абсолютный путь. Если не заполнить, будет автоматически применено пейзажное изображение по умолчанию.
 
 ### bgImageStyle
 
-- Type: `Record <string, string>`
+- Тип: `Record <string, string>`
 
-The CSS style of the background image.
+Стиль CSS фонового изображения.
 
 ### heroImageStyle
 
-- Type: `Record <string, string>`
+- Тип: `Record <string, string>`
 
-CSS style for home icon
+Стиль CSS для домашней иконки
 
 ### heroFullScreen
 
-- Type: `boolean`
-- Default: `false`
+- Тип: `boolean`
+- По умолчанию: `false`
 
-Whether Hero is full screen displayed
+Отображается ли герой в полноэкранном режиме
 
 ### projects
 
-- Type: `ProjectOption[]`
+- Тип: `ProjectOption[]`
 
-`ProjectOption` includes:
+`ProjectOption` включает:
 
-- `name`: required, project name
-- `link`: required, project link, fill in an external path or absolute path
-- `desc`: project description
-- `icon`: Icon, you can fill in full path or absolute path image link, also icon FontClass is supported
+- `name`: обязательно, имя проекта
+- `link`: обязательно, ссылка на проект, заполните внешний путь или абсолютный путь
+- `desc`: описание проекта
+- `icon`: иконка, вы можете указать полный или абсолютный путь ссылки на изображение, также поддерживается значок FontClass.
 
-  We provide these icons as built-in support either: `"link"`, `"project"`, `"book"`, `"article"`, `"friend"`。
+  Мы предоставляем эти значки в качестве встроенной поддержки: `"link"`, `"project"`, `"book"`, `"article"`, `"friend"`。

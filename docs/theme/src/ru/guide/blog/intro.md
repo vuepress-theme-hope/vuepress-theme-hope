@@ -1,44 +1,44 @@
 ---
-title: Blog Intro
+title: Введение в блог
 icon: blog
 order: 1
 category:
-  - Blog
+  - Блог
 tag:
-  - Blog
-  - Intro
+  - Блог
+  - Введение
 ---
 
-The theme supports blog feature with`vuepress-plugin-blog2` by default, and it’s **disabled by default**.
+Тема поддерживает функцию блога с `vuepress-plugin-blog2` по умолчанию, и по умолчанию она **отключена**.
 
-If you need blog functionality, you can set `plugins.blog: true` in theme options to enable blog functionality.
+Если вам нужна функциональность блога, вы можете установить `plugins.blog: true` в параметрах темы, чтобы включить функциональность блога.
 
 <!-- more -->
 
-## Intro
+## Введение
 
-After enabling the blog function, the theme allows you to configure categories, tags, whether it is an article, whether it appears in the timeline, stars, sticky and other functions through the frontmatter of the page.
+После включения функции блога тема позволяет настраивать категории, теги, будь то статья, появляется ли она на временной шкале, звездочки, липкие и другие функции через переднюю часть страницы.
 
-::: tip Demo
+::: tip Демо
 
-[Here is a demo](https://mrhope.site/en/) for you to preview blog sites built with `vuepress-theme-hope`.
+[Вот демонстрация](https://mrhope.site/en/) для предварительного просмотра блогов, созданных с помощью `vuepress-theme-hope`.
 
 :::
 
-## I18n Support
+## Поддержка I18n
 
-The theme adds support for i18n in blog system. You can set different blog config for each language using `locales` in theme options.
+Тема добавляет поддержку i18n в систему блогов. Вы можете установить разные настройки блога для каждого языка, используя `locales` в настройках темы.
 
-When you have multiple languages, the article list, timeline, etc. under each language will remain independent.
+Если у вас несколько языков, список статей, временная шкала и т. д. для каждого языка останутся независимыми.
 
-## Sidebar
+## Боковая панель
 
-The theme provides a blog info sidebar. The sidebar will be displayed on the blog-related page (it will be displayed on the right side on the desktop, and retracted into the sidebar in mobile view)
+Тема предоставляет боковую панель с информацией о блоге. Боковая панель будет отображаться на странице, связанной с блогом (она будет отображаться справа на рабочем столе и убираться в боковую панель в мобильном представлении).
 
-You can control the display behavior of the sidebar on non-blog related pages through `blog.sidebarDisplay` in theme options. Optional values are `"mobile" | "none" | "always"`. The default is `"mobile"`, that is, when you visit non-blog related pages in mobile view, you can also see it in the sidebar.
+Вы можете управлять поведением отображения боковой панели на страницах, не связанных с блогом, с помощью `blog.sidebarDisplay` в параметрах темы. Необязательные значения: `"mobile" | "none" | "always"`. По умолчанию используется `"mobile"`, то есть когда вы посещаете страницы, не связанные с блогом, в мобильном представлении, вы также можете увидеть его на боковой панели.
 
-## Pagination
+## Пагинация
 
-For the list of articles on all pages, we will display a pagination component at the bottom. You can use this component to quickly jump to the first page, the last page, and the two pages before and after. You can also enter a number to jump to the specified page.
+Для списка статей на всех страницах мы отобразим компонент пагинации внизу. Вы можете использовать этот компонент для быстрого перехода к первой странице, последней странице и двум страницам до и после. Вы также можете ввести номер для перехода на указанную страницу.
 
-The default number of articles per page is `10`, you can set `blog.articlePerPage` in theme options to override it.
+Количество статей на странице по умолчанию равно `10`, вы можете установить `blog.articlePerPage` в параметрах темы, чтобы переопределить это значение.

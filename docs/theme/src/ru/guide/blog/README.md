@@ -1,23 +1,23 @@
 ---
-title: Blog
+title: Блог
 icon: blog
 index: false
 dir:
   order: 6
 ---
 
-## Catalog
+## Каталог
 
-- [Blog Intro](intro.md)
+- [Введение в блог](intro.md)
 
-- [Blog Homepage](home.md)
+- [Домашняя страница блога](home.md)
 
-- [Blogger Intro](blogger.md)
+- [Информация о блогере](blogger.md)
 
-- [Article List](article.md)
+- [Список статей](article.md)
 
-- [Categories and Tags](category-and-tags.md)
+- [Категории и Теги](category-and-tags.md)
 
-- [Timeline](timeline.md)
+- [Временная шкала](timeline.md)
 
-- [Page Path](path.md)
+- [Путь к странице](path.md)

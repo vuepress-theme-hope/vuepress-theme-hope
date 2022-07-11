@@ -1,28 +1,28 @@
 ---
-title: Timeline
+title: Таймлайн
 icon: time
 order: 5
 category:
-  - Blog
+  - Блог
 tag:
-  - Blog
-  - Timeline
+  - Блог
+  - Таймлайн
 ---
 
-You can access the time page through `/timeline/`. On the page, you can view all the articles in time reverse order.
+Вы можете получить доступ к странице времени через `/timeline/`. На странице можно просмотреть все статьи в обратном по времени порядке.
 
-![Timeline Page](./assets/timeline.png)
+![Страница временной шкалы](./assets/timeline.png)
 
-## Excluding Articles
+## Исключение статей
 
-By default, all articles which has a writing date will be displayed in timeline. If you don’t want an article to be included, just set the `timeline` to `false` in the frontmatter of the article.
+По умолчанию все статьи, у которых есть дата написания, будут отображаться на таймлайне. Если вы не хотите, чтобы статья была включена, просто установите `timeline` на `false` в начале статьи frontmatter.
 
-## Set Timeline title
+## Установить заголовок временной шкалы
 
-We allow you to customize the top text of the timeline, you can configure it through `blog.timeline` in theme options.
+Мы позволяем вам настраивать верхний текст временной шкалы, вы можете настроить его через `blog.timeline` в настройках темы.
 
-## Sidebar
+## Боковая панель
 
-We have added a timeline tab in the sidebar of blog-related pages for users to quickly preview the timeline.
+Мы добавили вкладку временной шкалы на боковую панель страниц, связанных с блогом, чтобы пользователи могли быстро просмотреть временную шкалу.
 
-![Timeline Tab](./assets/timeline-tab.png)
+![Вкладка Таймлайна](./assets/timeline-tab.png)

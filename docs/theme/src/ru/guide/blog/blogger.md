@@ -1,51 +1,51 @@
 ---
-title: Blogger Info
+title: Информация о блогере
 icon: blog
 order: 2
 category:
-  - Blog
+  - Блог
 tag:
-  - Blog
-  - Blogger
+  - Блог
+  - Блогер
 ---
 
-Themes allow you to display basic information about the blogger.
+Темы позволяют отображать основную информацию о блогере.
 
 <!-- more -->
 
-![Blogger info](./assets/blogger-info-light.png#light)
-![Blogger info](./assets/blogger-info-dark.png#dark)
+![Информация о блогере](./assets/blogger-info-light.png#light)
+![Информация о блогере](./assets/blogger-info-dark.png#dark)
 
-## Avatar and blogger name
+## Аватарка и имя блогера
 
-You can config blogger avatar and name displayed through `blog.avatar` and `blog.name`.
+Вы можете настроить аватар и имя блоггера, отображаемые через `blog.avatar` и `blog.name`.
 
 ::: note
 
-If you don’t set those options, they automatically fall back to the site logo (`logo` in theme options) and site name.
+Если вы не установите эти параметры, они автоматически вернутся к логотипу сайта (`logo` в параметрах темы) и названию сайта.
 
 :::
 
 ::: tip
 
-If you want the avatar to be clipped with round shape, set `blog.roundAvatar: true`.
+Если вы хотите, чтобы аватар был круглой формы, установите `blog.roundAvatar: true`.
 
 :::
 
-## Motto, Social Media & Profile Link
+## Девиз, социальные сети и ссылка на профиль
 
-You can use `blog.description` to set your own introduction, motto or slogan.
+Вы можете использовать `blog.description`, чтобы установить собственное введение, девиз или слоган.
 
-You can also specify a personal introduction page link through `blog.intro`, so when users click on the avatar and name, they will be direct to that page.
+Вы также можете указать личную ссылку на страницу знакомства через `blog.intro`, поэтому, когда пользователи нажимают на аватар и имя, они будут напрямую переходить на эту страницу.
 
-You can also config your social media links with `blog.medias` option.
+Вы также можете настроить ссылки на социальные сети с помощью опции `blog.medias`.
 
-- If the social media icon is available below, you can set `MediaName: MediaLink` directly.
-- Otherwise, you should pass in a tuple `MediaName: [MediaLink , MediaSvgIconString or MediaSvgIconPath]`,
+- Если иконка социальной сети доступен ниже, вы можете напрямую установить `MediaName: MediaLink`.
+- В противном случае вы должны передать кортеж `MediaName: [MediaLink , MediaSvgIconString or MediaSvgIconPath]`,
 
-  The second element in the tuple must be a valid SVG string or a full path of a existing SVG file.
+  торой элемент кортежа должен быть допустимой строкой SVG или полным путем к существующему файлу SVG.
 
-::: tip Available social media:
+::: tip Доступные социальные сети:
 
 - `"Baidu"`
 - `"Bitbucket"`
@@ -79,7 +79,7 @@ You can also config your social media links with `blog.medias` option.
 
 :::
 
-:::: details Example
+:::: details Пример
 
 ::: code-tabs#language
 

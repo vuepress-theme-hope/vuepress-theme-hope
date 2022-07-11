@@ -1,24 +1,24 @@
 ---
-title: Category and tags
+title: Категории и Теги
 icon: tag
 order: 4
 category:
-  - Blog
+  - Блог
 tag:
-  - Blog
-  - Category
-  - Tag
+  - Блог
+  - Категория
+  - Тег
 ---
 
-You can configure category and tags for articles through frontmatter to make them appear in specific categories and tags pages.
+Вы можете настроить категорию и теги для статей через Frontmatter, чтобы они отображались на страницах определенных категорий и тегов.
 
 <!-- more -->
 
-## Category Settings
+## Настройки категории
 
-Just add category array to `category` in page frontmatter, the article will be automatically rendered in the list of the`/category/<category name>/` category page.
+Просто добавьте массив категорий в `category` в frontmatter, и статья будет автоматически отображена в списке `/category/<category name>/` страницы категорий.
 
-For example, add this to a certain page:
+Например, добавьте это на определенную страницу:
 
 ```md
 ---
@@ -27,19 +27,19 @@ category:
   - Web
 ---
 
-Page content...
+Содержание страницы...
 ```
 
-Then you can find it under the `/category/html` page.
+Затем вы можете найти его на странице `/category/html`.
 
-![Category](./assets/category-light.png#light)
-![Category](./assets/category-dark.png#dark)
+![Категория](./assets/category-light.png#light)
+![Категория](./assets/category-dark.png#dark)
 
-## Tags
+## Теги
 
-Just set `tag` option in page frontmatter , and set value to one or more tags, then the article will be automatically rendered in the list of the `/tag/<tag name>/` tag page.
+Просто установите параметр `tag` во frontmatter страницы и установите значение для одного или нескольких тегов, после чего статья будет автоматически отображаться в списке страницы тегов `/tag/<tag name>/`.
 
-For example, after adding this in frontmatter:
+Например, после добавления этого во frontmatter:
 
 ```md
 ---
@@ -48,20 +48,20 @@ tag:
   - Web
 ---
 
-Page content...
+Содержание страницы...
 ```
 
-Then you can find it under the `/tag/html` and `/tag/web` pages.
+Затем вы можете найти его на страницах `/tag/html` и `/tag/web`.
 
-![Tag](./assets/tag-light.png#light)
-![Tag](./assets/tag-dark.png#dark)
+![Тег](./assets/tag-light.png#light)
+![Тег](./assets/tag-dark.png#dark)
 
-## View list
+## Посмотреть список
 
-Besides directly accessing the corresponding link, the category and tag name will be displayed at the article information at the top of the article. You can click on it to navigate to the corresponding list to view the articles of the same category or tag.
+Помимо прямого доступа к соответствующей ссылке, категория и имя тега будут отображаться в информации о статье в верхней части статьи. Вы можете щелкнуть по нему, чтобы перейти к соответствующему списку для просмотра статей той же категории или тега.
 
-![Article Information](./assets/info.png)
+![Информация о статье](./assets/info.png)
 
-You can also select the category or tag tab in the sidebar of the blog homepage and select the corresponding item to enter the list.
+Вы также можете выбрать вкладку категории или тега на боковой панели главной страницы блога и выбрать соответствующий элемент, чтобы войти в список.
 
-![Sidebar Tab](./assets/sidebar.png)
+![Вкладка боковой панели](./assets/sidebar.png)
