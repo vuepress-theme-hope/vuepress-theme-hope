@@ -53,6 +53,34 @@ describe("generate locale", () => {
     });
   });
 
+  it("Detect known language with different path", () => {
+    const app = createBaseApp({
+      locales: {
+        "/": { lang: "zh-CN" },
+        "/en-us/": { lang: "en-US" },
+        "/jp-jp/": { lang: "jp-JP" },
+      },
+      source: path.resolve(__dirname, "./__fixtures__/src"),
+      bundler: {} as any,
+      theme: emptyTheme,
+    });
+
+    expect(getLocales({ app, default: defaultLocaleConfig })).toEqual({
+      "/": {
+        text: "中文",
+        fallback: "中文",
+      },
+      "/en-us/": {
+        text: "English",
+        fallback: "English",
+      },
+      "/jp-jp/": {
+        text: "日本",
+        fallback: "日本",
+      },
+    });
+  });
+
   it("use user config if exists", () => {
     const app = createBaseApp({
       locales: {

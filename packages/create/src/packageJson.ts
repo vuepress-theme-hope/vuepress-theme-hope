@@ -2,10 +2,10 @@ import { existsSync, writeFileSync, readFileSync } from "fs";
 import inquirer from "inquirer";
 import { resolve } from "path";
 
-import { checkForNextVersion } from "./checkVersion";
-import { deepAssign } from "./deepAssign";
+import { getNextVersion, PackageManager } from "./utils";
+import { deepAssign } from "./utils/deepAssign";
 
-import type { CreateI18n } from "./i18n";
+import type { CreateI18n } from "./config";
 
 const getScript = (dir: string): Record<string, string> => ({
   // eslint-disable-next-line @typescript-eslint/naming-convention
@@ -17,18 +17,20 @@ const getScript = (dir: string): Record<string, string> => ({
 });
 
 const getDevDependencies = async (
+  packageManager: PackageManager,
   deps: string[]
 ): Promise<Record<string, string>> =>
   Object.fromEntries(
     await Promise.all(
       deps.map<Promise<[string, string]>>(async (dep) => [
         dep,
-        `^${await checkForNextVersion(dep)}`,
+        `^${await getNextVersion(packageManager, dep)}`,
       ])
     )
   );
 
 export const createPackageJson = async (
+  packageManager: PackageManager,
   dir: string,
   message: CreateI18n
 ): Promise<void> => {
@@ -38,7 +40,7 @@ export const createPackageJson = async (
 
   const packageJsonPath = resolve(process.cwd(), "package.json");
   const scripts = getScript(dir);
-  const devDependencies = await getDevDependencies([
+  const devDependencies = await getDevDependencies(packageManager, [
     "@vuepress/client",
     "vue",
     "vuepress",

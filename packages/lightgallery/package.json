@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-lightgallery",
-  "version": "2.0.0-beta.84",
+  "version": "2.0.0-beta.85",
   "description": "Light Gallery plugin for VuePress",
   "keywords": [
     "vuepress",
@@ -44,7 +44,7 @@
     "@vuepress/utils": "2.0.0-beta.48",
     "lightgallery": "^2.5.0",
     "vue": "^3.2.37",
-    "vue-router": "^4.0.16",
+    "vue-router": "^4.1.1",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*"
   },

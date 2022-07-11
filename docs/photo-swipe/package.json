@@ -1,6 +1,6 @@
 {
   "name": "photo-swipe-docs",
-  "version": "2.0.0-beta.84",
+  "version": "2.0.0-beta.85",
   "private": true,
   "description": "Docs for vuepress-plugin-photo-swipe",
   "license": "MIT",
@@ -20,7 +20,7 @@
   "dependencies": {
     "@vuepress/client": "2.0.0-beta.48",
     "docs-shared": "workspace:*",
-    "sass-loader": "13.0.0",
+    "sass-loader": "13.0.2",
     "vue": "3.2.37",
     "vuepress-plugin-photo-swipe": "workspace:*",
     "vuepress-vite": "2.0.0-beta.48",

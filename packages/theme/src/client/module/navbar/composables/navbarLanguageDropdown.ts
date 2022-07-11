@@ -28,7 +28,7 @@ export const useNavbarLanguageDropdown =
       const { navbarLocales } = themeLocale.value;
 
       const languageDropdown: HopeThemeNavGroup<AutoLink> = {
-        text: navbarLocales?.selectLangText,
+        text: "",
         ariaLabel: navbarLocales?.selectLangAriaLabel,
         children: localePaths.map((targetLocalePath) => {
           // target locale config of this langauge link

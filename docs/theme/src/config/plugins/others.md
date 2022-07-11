@@ -15,7 +15,6 @@ Register components which can be used in Markdown files, available component nam
 
 - `"Badge"`
 - `"CodePen"`
-- `"FontIcon"`
 - `"PDF"`
 - `"StackBlitz"`
 - `"YouTube"`

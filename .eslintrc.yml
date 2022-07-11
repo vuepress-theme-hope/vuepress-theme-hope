@@ -188,9 +188,6 @@ overrides:
   - files:
       - "**/__tests__/**/*.spec.{j,t}s?(x)"
 
-    env:
-      jest: true
-
     rules:
       "@typescript-eslint/no-explicit-any":
         - off

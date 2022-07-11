@@ -182,7 +182,7 @@ export interface MarkdownEnhanceOptions {
    *
    * @default false
    */
-  include?: IncludeOptions;
+  include?: IncludeOptions | boolean;
 
   /**
    * Whether to enable TeX syntax support

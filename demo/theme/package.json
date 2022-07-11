@@ -1,6 +1,6 @@
 {
   "name": "theme-demo",
-  "version": "2.0.0-beta.84",
+  "version": "2.0.0-beta.85",
   "private": true,
   "description": "Demo for vuepress-theme-hope",
   "license": "MIT",
@@ -21,7 +21,7 @@
     "@vuepress/plugin-pwa-popup": "2.0.0-beta.48",
     "@vuepress/plugin-shiki": "2.0.0-beta.48",
     "cross-env": "7.0.3",
-    "sass-loader": "13.0.0",
+    "sass-loader": "13.0.2",
     "vue": "3.2.37",
     "vuepress-theme-hope": "workspace:*",
     "vuepress-vite": "2.0.0-beta.48",

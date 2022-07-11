@@ -129,7 +129,7 @@ const inlineTex: RuleInline = (state, silent) => {
   }
 
   if (!silent) {
-    token = state.push("inlineTex", "math", 0);
+    token = state.push("math_inline", "math", 0);
     token.markup = "$";
     token.content = state.src.slice(start, match);
   }
@@ -184,7 +184,7 @@ const blockTex: RuleBlock = (state, start, end, silent) => {
 
   state.line = next + 1;
 
-  const token = state.push("blockTex", "math", 0);
+  const token = state.push("math_block", "math", 0);
 
   token.block = true;
   token.content =
@@ -231,14 +231,13 @@ export const katex: PluginWithOptions<KatexOptions> = (
   md,
   options = { throwOnError: false }
 ) => {
-  md.inline.ruler.after("escape", "inlineTex", inlineTex);
-  // It’s a workaround here because types issue
-  md.block.ruler.after("blockquote", "blockTex", blockTex, {
+  md.inline.ruler.after("escape", "math_inline", inlineTex);
+  md.block.ruler.after("blockquote", "math_block", blockTex, {
     alt: ["paragraph", "reference", "blockquote", "list"],
   });
 
-  md.renderer.rules["inlineTex"] = (tokens, index): string =>
+  md.renderer.rules["math_inline"] = (tokens, index): string =>
     katexInline(tokens[index].content, options);
-  md.renderer.rules["blockTex"] = (tokens, index): string =>
+  md.renderer.rules["math_block"] = (tokens, index): string =>
     `${katexBlock(tokens[index].content, options)}\n`;
 };

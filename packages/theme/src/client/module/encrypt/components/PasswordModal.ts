@@ -59,7 +59,7 @@ export default defineComponent({
             { class: ["hint", { tried: hasTried.value }] },
             hasTried.value
               ? locale.value.errorHint
-              : h(LockIcon, { "aria-label": locale.value.title })
+              : h(LockIcon, { "aria-label": locale.value.iconLabel })
           ),
           h("div", { class: "password" }, [
             h("input", {

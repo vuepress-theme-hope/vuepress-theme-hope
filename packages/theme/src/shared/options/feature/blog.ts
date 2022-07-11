@@ -55,9 +55,13 @@ export interface HopeThemePaginationLocaleData {
   action: string;
 
   /**
-   * Error text when invalid page number, `$page` will be replaced by total page number automatically
+   * Error text when invalid page number
    *
-   * 页码错误文字，其中 `$page` 会自动替换为当前的总页数
+   * @description `$page` will be replaced by total page number automatically
+   *
+   * 页码错误文字
+   *
+   * @description 其中 `$page` 会自动替换为当前的总页数
    */
   errorText: string;
 }

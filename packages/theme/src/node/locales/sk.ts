@@ -5,7 +5,6 @@ export const skLocale: HopeThemeLocaleData = {
 
   navbarLocales: {
     langName: "Slovensky",
-    selectLangText: "Jazyk",
     selectLangAriaLabel: "Vyber si jazyk",
   },
 
@@ -55,7 +54,7 @@ export const skLocale: HopeThemeLocaleData = {
   },
 
   encryptLocales: {
-    title: "Page Encrypted",
+    iconLabel: "Page Encrypted",
     placeholder: "Enter password",
     remember: "Remember password",
     errorHint: "Prosím, zadaj správne heslo!",

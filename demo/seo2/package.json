@@ -1,6 +1,6 @@
 {
   "name": "seo2-demo",
-  "version": "2.0.0-beta.84",
+  "version": "2.0.0-beta.85",
   "private": true,
   "description": "Demo for vuepress-plugin-seo2",
   "license": "MIT",
@@ -17,7 +17,7 @@
     "@vuepress/cli": "2.0.0-beta.48",
     "@vuepress/client": "2.0.0-beta.48",
     "@vuepress/theme-default": "2.0.0-beta.48",
-    "sass-loader": "13.0.0",
+    "sass-loader": "13.0.2",
     "vue": "3.2.37",
     "vuepress-plugin-seo2": "workspace:*",
     "vuepress-vite": "2.0.0-beta.48",

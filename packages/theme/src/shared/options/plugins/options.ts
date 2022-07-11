@@ -1,6 +1,6 @@
-import type { AvailableComponent } from "vuepress-plugin-components";
 import type { GitPluginOptions } from "@vuepress/plugin-git";
 import type { CommentOptions } from "vuepress-plugin-comment2";
+import type { AvailableComponent } from "vuepress-plugin-components";
 import type { CopyCodeOptions } from "vuepress-plugin-copy-code2";
 import type { CopyrightOptions } from "vuepress-plugin-copyright2";
 import type { FeedOptions } from "vuepress-plugin-feed2";
@@ -33,15 +33,19 @@ export interface HopeThemePluginsOptions {
   /**
    * Components enabled
    *
+   * @description FontIcon is used internally, so it will be registed anyway.
+   *
    * @see https://vuepress-theme-hope.github.io/v2/components/config.html
    *
    * 需要启用的插件
+   *
+   * @description FontIcon 被内部使用，所以它无论如何都会被注册。
    *
    * @see https://vuepress-theme-hope.github.io/v2/zh/components/config.html
    *
    * @default ['Badge']
    */
-  components?: AvailableComponent[];
+  components?: Exclude<AvailableComponent, "FontIcon">[];
 
   /**
    * Comment plugin options

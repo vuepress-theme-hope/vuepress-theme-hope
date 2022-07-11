@@ -10,12 +10,21 @@ const __filename = fileURLToPath(import.meta.url);
 // eslint-disable-next-line @typescript-eslint/naming-convention
 const __dirname = dirname(__filename);
 
-import { bin, checkGitInstalled, checkGitRepo } from "./bin";
-import { copy, ensureDirExistSync } from "./file";
+import {
+  checkGitInstalled,
+  checkGitRepo,
+  copy,
+  ensureDirExistSync,
+} from "../utils";
 
 import type { CreateI18n, Lang } from "./i18n";
+import type { PackageManager } from "../utils";
 
-const getWorkflowContent = (dir: string, lang: Lang): string =>
+const getWorkflowContent = (
+  packageManager: PackageManager,
+  dir: string,
+  lang: Lang
+): string =>
   `
 name: ${lang === "简体中文" ? "部署文档" : "Deploy Docs"}
 
@@ -45,7 +54,7 @@ jobs:
           # submodules: true
 
 ${
-  bin === "pnpm"
+  packageManager === "pnpm"
     ? `
       - name: ${lang === "简体中文" ? "安装 pnpm" : "Install pnpm"}
         uses: pnpm/action-setup@v2
@@ -60,17 +69,21 @@ ${
         uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: ${bin}
+          cache: ${packageManager}
 
       - name: ${lang === "简体中文" ? "安装依赖" : "Install Deps"}
         run: ${
-          bin === "npm" ? "npm install" : `${bin} install --frozen-lockfile`
+          packageManager === "npm"
+            ? "npm install"
+            : `${packageManager} install --frozen-lockfile`
         }
 
       - name: ${lang === "简体中文" ? "构建文档" : "Build Docs"}
         env:
           NODE_OPTIONS: --max_old_space_size=4096
-        run: ${bin} run docs:build
+        run: |-
+          ${packageManager} run docs:build
+          > ${join(dir, ".vuepress/dist/.nojekyll").replace(/\\/g, "/")}
 
       - name: ${lang === "简体中文" ? "部署文档" : "Deploy Docs"}
         uses: JamesIves/github-pages-deploy-action@v4
@@ -107,6 +120,7 @@ const updateGitIgnore = (dir: string): void => {
 };
 
 export const generateTemplate = async (
+  packageManager: PackageManager,
   dir: string,
   lang: Lang,
   message: CreateI18n
@@ -149,7 +163,7 @@ export const generateTemplate = async (
 
     writeFileSync(
       resolve(workflowDir, "deploy-docs.yml"),
-      getWorkflowContent(dir, lang),
+      getWorkflowContent(packageManager, dir, lang),
       { encoding: "utf-8" }
     );
   }

@@ -77,6 +77,76 @@ tag:
 
 标题渲染深度。
 
+## index
+
+- 类型: `boolean`
+- 默认值: `true`
+
+Whether index current page in sidebar.
+
+## order
+
+- 类型: `number`
+
+Page order in sidebar.
+
+- By filling in a positive number, the page will appear in the front, while the smaller number comes to the front.
+- By filling in a negative number, the page will appear in the end, while the greater number comes to the front. (e.g. -1 is after -2)
+
+## dir
+
+用于 [结构侧边栏](../../guide/layout/sidebar.md) 的分组信息。
+
+### dir.text
+
+- 类型: `string`
+- 默认值: README.md 的标题
+
+分组标题。
+
+### dir.icon
+
+- 类型: `string`
+- 默认值: README.md 的图标
+
+分组图标。
+
+### dir.collapsable
+
+- 类型: `boolean`
+- 默认值: `true`
+
+分组是否可折叠。
+
+### dir.link
+
+- 类型: `boolean`
+- 默认值: `false`
+
+分组是否可点击
+
+::: note
+
+设置为 `true` 意味着将分组连接设置为 README.md 链接。
+
+:::
+
+### dir.index
+
+- 类型: `boolean`
+- 默认值: `true`
+
+是否索引当前目录
+
+## dir.order
+
+- 类型: `number`
+
+分组在侧边栏的顺序
+
+- 填写正数，页面会出现在最前，较小的数字会出现在前面。
+- 填写负数，页面会出现在最后，较大的数字会出现在前面。 (如 -1 在 -2 之后)
+
 ## comment
 
 - 类型: `boolean`

@@ -5,7 +5,6 @@ export const enLocale: HopeThemeLocaleData = {
 
   navbarLocales: {
     langName: "English",
-    selectLangText: "Language",
     selectLangAriaLabel: "Select language",
   },
 
@@ -55,7 +54,7 @@ export const enLocale: HopeThemeLocaleData = {
   },
 
   encryptLocales: {
-    title: "Page Encrypted",
+    iconLabel: "Page Encrypted",
     placeholder: "Enter password",
     remember: "Remember password",
     errorHint: "Please enter the correct password!",

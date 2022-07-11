@@ -2,7 +2,7 @@ import { withBase } from "@vuepress/client";
 import { isLinkHttp } from "@vuepress/shared";
 import { computed, defineComponent, h, onMounted, ref } from "vue";
 import {
-  checkIsChromeMobile,
+  checkIsMobile,
   checkIsiPad,
   checkIsiPhone,
   checkIsSafari,
@@ -37,8 +37,7 @@ export default defineComponent({
 
   setup(props) {
     const isChrome = ref(true);
-    const isChromeMobile = ref(false);
-    const isSafariMobile = ref(false);
+    const isMobile = ref(false);
 
     const hash = computed(
       () =>
@@ -55,7 +54,7 @@ export default defineComponent({
       const { userAgent } = navigator;
 
       // chrome mobile
-      if (checkIsChromeMobile(userAgent)) isChromeMobile.value = true;
+      if (checkIsMobile(userAgent)) isMobile.value = true;
       else if (
         checkIsSafari(userAgent) &&
         (checkIsiPad(userAgent) || checkIsiPhone(userAgent))
@@ -63,7 +62,7 @@ export default defineComponent({
         isChrome.value = false;
 
         if (checkIsiPad(userAgent) || checkIsiPhone(userAgent))
-          isSafariMobile.value = true;
+          isMobile.value = true;
       }
     });
 
@@ -77,11 +76,11 @@ export default defineComponent({
       return h("div", { class: "pdf-preview" }, [
         h("iframe", {
           class: "pdf-iframe",
-          src: isSafariMobile.value
+          src: isMobile.value
             ? `https://drive.google.com/viewerng/viewer?embedded=true&url=${encodeURI(
                 fullLink
               )}`
-            : `${withBase(props.url)}${isChromeMobile.value ? hash.value : ""}`,
+            : `${withBase(props.url)}${isChrome.value ? hash.value : ""}`,
           style: {
             width: "100%",
             height: height.value,

@@ -1,9 +1,8 @@
 import { execaCommandSync } from "execa";
 import inquirer from "inquirer";
 
-import { bin } from "./bin";
-
-import type { Lang } from "./i18n";
+import type { Lang } from "./config/i18n";
+import type { PackageManager } from "./utils";
 
 export interface RegistryAnswer {
   registry: "国内镜像源" | "当前源";
@@ -11,11 +10,14 @@ export interface RegistryAnswer {
 
 const npmmirrorRegistry = "https://registry.npmmirror.com/";
 
-const getUserRegistry = (): string =>
-  execaCommandSync(`${bin} config get registry`).stdout;
+const getUserRegistry = (packageManager: PackageManager): string =>
+  execaCommandSync(`${packageManager} config get registry`).stdout;
 
-export const getRegistry = async (lang: Lang): Promise<string> => {
-  const userRegistry = getUserRegistry();
+export const getRegistry = async (
+  packageManager: PackageManager,
+  lang: Lang
+): Promise<string> => {
+  const userRegistry = getUserRegistry(packageManager);
 
   if (lang === "简体中文") {
     const { registry } = await inquirer.prompt<RegistryAnswer>([

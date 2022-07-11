@@ -1,6 +1,6 @@
 {
   "name": "docs-shared",
-  "version": "2.0.0-beta.84",
+  "version": "2.0.0-beta.85",
   "private": true,
   "description": "Shared files for docs",
   "license": "MIT",
@@ -18,7 +18,7 @@
     "@vuepress/core": "2.0.0-beta.48",
     "@vuepress/plugin-docsearch": "2.0.0-beta.48",
     "@vuepress/utils": "2.0.0-beta.48",
-    "three": "0.141.0",
+    "three": "0.142.0",
     "vue": "3.2.37",
     "vuepress-shared": "workspace:*",
     "vuepress-theme-hope": "workspace:*"

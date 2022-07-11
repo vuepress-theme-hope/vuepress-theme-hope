@@ -13,10 +13,20 @@ import type { HopeThemeRouteLocaleData } from "./route";
 import type { PageInfo } from "../../info";
 
 export interface HopeThemeLayoutLocaleData {
+  /**
+   * Navbar related i18n config
+   */
   navbarLocales: HopeThemeNavbarLocaleData;
+
+  /**
+   * Meta related i18n config
+   */
 
   metaLocales: HopeThemeMetaLocateData;
 
+  /**
+   * Router related i18n config
+   */
   routeLocales: HopeThemeRouteLocaleData;
 }
 
@@ -122,7 +132,11 @@ export interface HopeThemeLayoutRootOptions {
   /**
    * Window width switching mobile view and desktop view in pixels.
    *
+   * @description This should be the same value with `$tablet` value in `config.scss`.
+   *
    * 切换桌面布局和移动布局的窗口宽度，单位像素。
+   *
+   * @description 该值应与 `config.scss` 中的 `$tablet` 值相同。
    *
    * @default 719
    */
