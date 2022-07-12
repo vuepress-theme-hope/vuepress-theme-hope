@@ -5,9 +5,9 @@
 <h1 align="center">vuepress-theme-hope</h1>
 <h4 align="center">Тема vuepress с множеством функций✨</h4>
 
-[![Author: Mr.Hope](https://img.shields.io/badge/author-Mr.Hope-blue.svg?style=for-the-badge)](https://mrhope.site)
-[![License](https://img.shields.io/npm/l/vuepress-theme-hope.svg?style=for-the-badge)](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/LICENSE)
-[![Open in Visual Studio Code](https://img.shields.io/badge/-open%20in%20vscode-blue?style=for-the-badge&logo=visualstudiocode)](https://open.vscode.dev/vuepress-theme-hope/vuepress-theme-hope)
+[![Автор: Mr.Hope](https://img.shields.io/badge/author-Mr.Hope-blue.svg?style=for-the-badge)](https://mrhope.site)
+[![Лицензия](https://img.shields.io/npm/l/vuepress-theme-hope.svg?style=for-the-badge)](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/LICENSE)
+[![Открыть в Visual Studio Code](https://img.shields.io/badge/-open%20in%20vscode-blue?style=for-the-badge&logo=visualstudiocode)](https://open.vscode.dev/vuepress-theme-hope/vuepress-theme-hope)
 
 ## [Русская документация](https://vuepress-theme-hope.github.io/v2/ru/)
 
