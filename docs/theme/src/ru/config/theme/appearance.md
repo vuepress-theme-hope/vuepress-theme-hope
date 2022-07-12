@@ -1,111 +1,111 @@
 ---
-title: Theme Appearance Options
+title: Опции внешнего вида темы
 icon: config
 order: 5
 category:
-  - Config
+  - Конфиг
 tag:
-  - Theme Config
-  - Appearance
+  - Конфиг темы
+  - Внешний вид
 ---
 
-The following options control the appearance of the theme. You don’t need to pay attention to them in most cases, they are only provided for a small amount of users with needs.
+Следующие параметры управляют внешним видом темы. В большинстве случаев на них не нужно обращать внимание, они предусмотрены лишь для небольшого количества пользователей с потребностями.
 
 <!-- more -->
 
 ::: warning
 
-These options are only valid when setting directly under the theme options, setting them in each language as no effect.
+Эти параметры действительны только при установке непосредственно под параметрами темы, установка их на каждом языке не влияет.
 
 :::
 
-## iconAssets <Badge text="Root only" type="warning" />
+## iconAssets <Badge text="Только root" type="warning" />
 
-- Type: `string`
-- Required: No
-- Details: [Interface → Icon](../../guide/interface/icon.md)
+- Тип: `string`
+- Обязательный: Нет
+- Детали: [Интерфейс → Иконка](../../guide/interface/icon.md)
 
-Link of font icon asset, `'iconfont'` and `'font-awesome'` keywords are supported.
+Поддерживается ссылка на актив значка шрифта, ключевые слова `'iconfont'` и `'font-awesome'`.
 
-## darkmode <Badge text="Enabled by default" /> <Badge text="Root only" type="warning" />
+## darkmode <Badge text="Включено по умолчанию" /> <Badge text="Только root" type="warning" />
 
-- Type: `"switch" | "toggle" | "auto" | "enable" | "disable"`
-- Default: `"switch"`
-- Details: [Interface → Darkmode](../../guide/interface/darkmode.md)
+- Тип: `"switch" | "toggle" | "auto" | "enable" | "disable"`
+- По умолчанию: `"switch"`
+- Детали: [Интерфейс → Темный режим](../../guide/interface/darkmode.md)
 
-Dark mode support options:
+Варианты поддержки темного режима:
 
-- `"switch"`: switch between dark, light and auto
-- `"toggle"`: toggle between lightmode and darkmode
-- `"auto"`: Automatically decide whether to apply dark mode based on user device’s color-scheme or current time
-- `"enable"`: only dark mode
-- `"disable"`: disable dark mode
+- `"switch"`: переключение между темным, светлым и авто
+- `"toggle"`: переключение между светлым и темным режимами
+- `"auto"`: автоматически решать, применять ли темный режим на основе цветовой схемы пользовательского устройства или текущего времени
+- `"enable"`: только темный режим
+- `"disable"`: отключить темный режим
 
 ::: note
 
-If you don’t need this feature, set `darkmode: "disable"` to disable it.
+Если вам не нужна эта функция, установите `darkmode: "disable"`, чтобы отключить ее.
 
 :::
 
-## themeColor <Badge text="Root only" type="warning" />
+## themeColor <Badge text="Только root" type="warning" />
 
-- Type: `Record<string, string> | false`
-- Default: `false`
-- Details: [Interface → ThemeColor](../../guide/interface/theme-color.md)
+- Тип: `Record<string, string> | false`
+- По умолчанию: `false`
+- Детали: [Интерфейс → Цвет темы](../../guide/interface/theme-color.md)
 
-Theme color configuration.
+Конфигурация цвета темы.
 
-## fullscreen <Badge text="Root only" type="warning" />
+## fullscreen <Badge text="Только root" type="warning" />
 
-- Type: `boolean`
-- Default: `false`
-- Details: [Interface → FullScreen](../../guide/interface/others.md#fullscreen-button)
+- Тип: `boolean`
+- По умолчанию: `false`
+- Детали: [Интерфейс → Кнопка «Полноэкранный режим»](../../guide/interface/others.md#fullscreen-button)
 
-Whether show the "full screen" button.
+Показывать ли кнопку «полноэкранный режим».
 
-## backToTop <Badge text="Root only" type="warning" />
+## backToTop <Badge text="Только root" type="warning" />
 
-- Type: `boolean | number`
-- Default: `true`
-- Details: [Interface → Back to top button](../../guide/interface/others.md#back-to-top-button)
+- Тип: `boolean | number`
+- По умолчанию: `true`
+- Детали: [Интерфейс → Кнопка «Наверх»](../../guide/interface/others.md#back-to-top-button)
 
-Whether show back to top button.
+Показывать ли кнопку «Вернуться к началу».
 
-The default trigger distance is 300px, which can be changed when you fill in the number. Filling in `false` disables the back to top button.
+Расстояние срабатывания по умолчанию составляет 300 пикселей, которое можно изменить, указав число. Заполнение `false` отключает кнопку «Наверх».
 
-## mobileBreakPoint <Badge text="Root only" type="warning" />
+## mobileBreakPoint <Badge text="Только root" type="warning" />
 
-- Type: `number`
-- Default: `719`
+- Тип: `number`
+- По умолчанию: `719`
 
-Window width switching mobile view and desktop view in pixels
+Ширина окна при переключении мобильного представления и представления рабочего стола в пикселях
 
 ::: warning
 
-You should keep this option same value with `$tablet` in `.vuepress/config.scss`
+Вы должны оставить для этой опции то же значение, что и для `$tablet` в `.vuepress/config.scss`
 
 :::
 
-## pure <Badge text="Root only" type="warning" />
+## pure <Badge text="Только root" type="warning" />
 
-- Type: `boolean`
-- Default: `false`
-- Details: [Interface → Pure mode](../../guide/interface/pure.md)
+- Тип: `boolean`
+- По умолчанию: `false`
+- Детали: [Интерфейс → Чистый режим](../../guide/interface/pure.md)
 
-Whether enable pure mode.
+Включить ли чистый режим.
 
 ::: tip
 
-Enabling this will disable some of the fancy styles.
+Включение этого отключит некоторые причудливые стили.
 
-Useful when you want to provide "A pure document site".
+Полезно, когда вы хотите предоставить «Сайт с чистой документацией».
 
 :::
 
-## iconPrefix <Badge text="Root only" type="warning" />
+## iconPrefix <Badge text="Только root" type="warning" />
 
-- Type: `string`
-- Default: Inffered from iconAssets
-- Details: [Interface → Icon](../../guide/interface/icon.md)
+- Тип: `string`
+- По умолчанию: Inffered from iconAssets
+- Детали: [Интерфейс → Иконка](../../guide/interface/icon.md)
 
-Prefix of icon FontClass， usually, it can be automatically set by the theme.
+Префикс значка FontClass， обычно он может быть автоматически установлен темой.

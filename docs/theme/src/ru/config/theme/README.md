@@ -1,29 +1,29 @@
 ---
-title: Theme Config
+title: Конфигурация темы
 icon: config
 order: 1
 dir:
   order: 3
 category:
-  - Config
+  - Конфиг
 tag:
-  - Theme Config
+  - Конфиг темы
 ---
 
-## Content
+## Содержание
 
-- [Theme Basic Config](basic.md)
+- [Базовая конфигурация темы](basic.md)
 
-- [Theme Feature Config](feature.md)
+- [Конфигурация функции темы](feature.md)
 
-- [Theme Layout Config](layout.md)
+- [Конфигурация макета темы](layout.md)
 
-- [Theme Appearance Config](appearance.md)
+- [Настройка внешнего вида темы](appearance.md)
 
-- [Theme I18n Config](i18n.md)
+- [Конфигурация мультиязыка темы](i18n.md)
 
-## Demo
+## Демо
 
-You can check [theme docs’ config][docs-config].
+Вы можете проверить [конфигурацию документации темы][docs-config].
 
 [docs-config]: https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/docs/theme/src/.vuepress/theme.ts

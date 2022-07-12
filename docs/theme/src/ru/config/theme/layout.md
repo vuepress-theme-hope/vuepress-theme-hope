@@ -1,39 +1,39 @@
 ---
-title: Theme Layout Options
+title: Опции макета темы
 icon: config
 order: 4
 category:
-  - Config
+  - Конфиг
 tag:
-  - Theme Config
-  - Layout
+  - Конфиг темы
+  - Макет
 ---
 
-The following options control theme layout.
+Следующие параметры управляют макетом темы.
 
 <!-- more  -->
 
-## Navbar Config
+## Конфигурация панели навигации
 
-For related guide, please see [Layout → Navbar](../../guide/layout/navbar.md).
+Соответствующее руководство смотрите в разделе [Макет → Панель навигации](../../guide/layout/navbar.md).
 
-### navbar <Badge text="Recommended" type="tip" />
+### navbar <Badge text="Рекомендуется" type="tip" />
 
-- Type: `HopeThemeNavbarConfig | false`
-- Default: `false`
+- Тип: `HopeThemeNavbarConfig | false`
+- По умолчанию: `false`
 
-Navbar config
+Конфигурация панели навигации
 
 ### navbarIcon
 
-- Type: `boolean`
-- Default: `true`
+- Тип: `boolean`
+- По умолчанию: `true`
 
-Whether display icons in navbar.
+Отображать ли иконки в навигационной панели.
 
 ### navbarLayout
 
-- Type: `HopeNavbarLayoutOptions`
+- Тип: `HopeNavbarLayoutOptions`
 
   ```ts
   type HopeThemeNavbarComponent =
@@ -51,238 +51,238 @@ Whether display icons in navbar.
   }
   ```
 
-- Default: `{ left: ["Brand"], center: ["Links"], right: ["Language", "Repo", "Outlook", "Search"] }`
+- По умолчанию: `{ left: ["Brand"], center: ["Links"], right: ["Language", "Repo", "Outlook", "Search"] }`
 
-Customize navbar layout.
+Настройте макет панели навигации.
 
-### logo <Badge text="Recommended" type="tip" />
+### logo <Badge text="Рекомендуется" type="tip" />
 
-- Type: `string`
-- Required: No
+- Тип: `string`
+- Обязательный: Нет
 
-Navbar logo, should be absolute path relative to `.vuepress/public` folder.
+Логотип панели навигации должен быть абсолютным путем относительно папки `.vuepress/public`.
 
 ### logoDark
 
-- Type: `string`
-- Required: No
+- Тип: `string`
+- Обязательный: Нет
 
-Navbar logo in darkmode, should be absolute path relative to `.vuepress/public` folder.
+Логотип Navbar в темном режиме должен быть абсолютным путем относительно папки `.vuepress/public`.
 
 ### repo
 
-- Type: `string`
-- Required: No
+- Тип: `string`
+- Обязательный: Нет
 
-Repository link
+Ссылка на репозиторий.
 
 ### repoDisplay
 
-- Type: `boolean`
-- Default: `true`
+- Тип: `boolean`
+- По умолчанию: `true`
 
-Whether display repo link in navbar.
+Отображать ли ссылку на репозиторий в панели навигации.
 
 ### repoLabel
 
-- Type: `string`
-- Required: No
+- Тип: `string`
+- Обязательный: Нет
 
-Repository aria label of navbar.
+Ярлык репозитория навигационной панели.
 
 ::: note
 
-The theme can recognize links of GitHub, Gitlab, Gitee and Bitbucket.
+Тема может распознавать ссылки GitHub, Gitlab, Gitee и Bitbucket.
 
 :::
 
 ### navbarAutoHide
 
-- Type: `"always" | "mobile" | "none"`
-- Default: `"mobile"`
+- Тип: `"always" | "mobile" | "none"`
+- По умолчанию: `"mobile"`
 
-Whether to hide navbar when scrolling down.
+Скрывать ли панель навигации при прокрутке вниз.
 
 ### hideSiteNameonMobile
 
-- Type: `boolean`
-- Default: `true`
+- Тип: `boolean`
+- По умолчанию: `true`
 
-Whether hide site title on mobile.
+Скрыть ли заголовок сайта на мобильном телефоне.
 
-## Sidebar Config
+## Конфигурация боковой панели
 
-For guide, see [Layout → Sidebar](../../guide/layout/sidebar.md).
+Руководство смотрите в разделе [Макет → Боковая панель](../../guide/layout/sidebar.md).
 
-### sidebar <Badge text="Recommended" type="tip" />
+### sidebar <Badge text="Рекомендуется" type="tip" />
 
-- Type: `HopeThemeSidebarConfig | "structure" | "heading" | false`
-- Default: `"structure"`
+- Тип: `HopeThemeSidebarConfig | "structure" | "heading" | false`
+- По умолчанию: `"structure"`
 
-Sidebar Config.
+Конфигурация боковой панели.
 
 ### sidebarIcon
 
-- Type: `boolean`
-- Default: `true`
+- Тип: `boolean`
+- По умолчанию: `true`
 
-Whether show icons in the sidebar
+Показывать ли значки на боковой панели.
 
 ### headerDepth
 
-- Type: `number`
-- Default: `2`
+- Тип: `number`
+- По умолчанию: `2`
 
-Nested headings depth in sidebar
+Глубина вложенных заголовков в боковой панели.
 
-## Route Navigation
+## Навигация по маршруту
 
 ### breadcrumb
 
-- Type: `boolean`
-- Default: `true`
+- Тип: `boolean`
+- По умолчанию: `true`
 
-Whether enable route navigation globally.
+Включить ли навигацию по маршруту глобально.
 
 ### breadcrumbIcon
 
-- Type: `boolean`
-- Default: `true`
+- Тип: `boolean`
+- По умолчанию: `true`
 
-Whether show icons in route navigation
+Показывать ли иконки в навигации по маршруту.
 
 ### prevLink
 
-- Type: `boolean`
-- Default: `true`
+- Тип: `boolean`
+- По умолчанию: `true`
 
-Whether show prevLink in bottom.
+Показывать ли предыдущую ссылку внизу.
 
 ### nextLink
 
-- Type: `boolean`
-- Default: `true`
+- Тип: `boolean`
+- По умолчанию: `true`
 
-Whether show nextLink in bottom.
+Показывать ли следующую ссылку внизу.
 
-## Title
+## Заголовок
 
 ### titleIcon
 
-- Type: `boolean`
-- Default: `true`
+- Тип: `boolean`
+- По умолчанию: `true`
 
-Whether display icon besides page title
+Отображать ли иконку помимо заголовка страницы.
 
 ### pageInfo
 
-- Type: `ArticleInfo[] | false`
-- Default: `["Author", "Original", "Date", "Category", "Tag", "ReadingTime"]`
+- Тип: `ArticleInfo[] | false`
+- По умолчанию: `["Author", "Original", "Date", "Category", "Tag", "ReadingTime"]`
 
-Article information. The order of the items decides the display order. Fill in `false` to disable it.
+Информация о статье. Порядок элементов определяет порядок отображения. Заполните `false`, чтобы отключить его.
 
-Available items in `ArticleInfo`:
+Доступные элементы в `ArticleInfo`:
 
-- `"Author"`: author
-- `"Date"`: writing date
-- `"Original"`: is original
-- `"Category"`: category
-- `"Tag"`: tags
-- `"ReadingTime"`: expect reading time
-- `"Word"`: word number for the article
-- `"PageView"`: pageviews
+- `"Author"`: автор
+- `"Date"`: дата написания
+- `"Original"`: является оригинальным
+- `"Category"`: категория
+- `"Tag"`: теги
+- `"ReadingTime"`: ожидаемое время чтения
+- `"Word"`: номер слова для статьи
+- `"PageView"`: просмотры страниц
 
-## Meta
+## Мета
 
 ### lastUpdated
 
-- Type: `boolean`
-- Default: `true`
+- Тип: `boolean`
+- По умолчанию: `true`
 
-Whether to show "Last Updated" or not.
+Показывать ли «Последнее обновление» или нет.
 
 ### contributors
 
-- Type: `boolean`
-- Default: `true`
+- Тип: `boolean`
+- По умолчанию: `true`
 
-Whether to show "Contributors" or not.
+Показывать ли «Контрибьюторы» или нет.
 
 ### editLink
 
-- Type: `boolean`
-- Default: `true`
+- Тип: `boolean`
+- По умолчанию: `true`
 
-Whether to show "Edit this page" or not.
+Показывать ли «Редактировать эту страницу» или нет.
 
 ### editLinkPattern
 
-- Type: `string`
+- Тип: `string`
 
-Pattern of edit link. While `:repo` `:branch` `:path` will be automatically replaced by `docsRepo` `docsBranch` and `docsDir + filePath`。
+Шаблон редактирования ссылки. В то время как `:repo` `:branch` `:path` будет автоматически заменен на `docsRepo` `docsBranch` и `docsDir + filePath`。
 
 ::: note
 
-The theme provide built-in support for GitHub, Gitlab, Gitee and Bitbucket.
+Тема обеспечивает встроенную поддержку GitHub, Gitlab, Gitee и Bitbucket.
 
 :::
 
 ### docsRepo
 
-- Type: `string`
-- Default: `repo`
+- Тип: `string`
+- По умолчанию: `repo`
 
-The repo of your docs
+Репозиторий вашей документации.
 
 ### docsBranch
 
-- Type: `string`
-- Default: `"main"`
+- Тип: `string`
+- По умолчанию: `"main"`
 
-The branch of your docs
+Ветка вашей документации.
 
 ### docsDir
 
-- Type: `string`
-- Default: `""`
+- Тип: `string`
+- По умолчанию: `""`
 
-Docs dir location in repo
+Расположение каталога документации в репозитории.
 
-## Footer
+## Футер
 
 ### footer
 
-- Type: `string`
-- Required: false
+- Тип: `string`
+- Обязательный: Нет
 
-The default content for the footer, can accept HTMLString.
+Содержимое нижнего колонтитула по умолчанию может принимать HTMLString.
 
 ### copyright
 
-- Type: `string | boolean`
-- Default: `"Copyright © <author>"`
+- Тип: `string | boolean`
+- По умолчанию: `"Copyright © <author>"`
 
-The default copyright info, set it to `false` to disable it by default.
+Информация об авторских правах по умолчанию, установите для нее значение `false`, чтобы отключить ее по умолчанию.
 
 ### displayFooter
 
-- Type: `boolean`
-- Default: `false`
+- Тип: `boolean`
+- По умолчанию: `false`
 
-Whether to display footer by default.
+Отображать ли нижний колонтитул по умолчанию.
 
-## Others
+## Другое
 
 ### home
 
-- Type: `string`
-- Default: Key of current locale
+- Тип: `string`
+- По умолчанию: Key of current locale
 
-Home path of current locale, used as the link of back-to-home and navbar logo.
+Домашний путь текущей локали, используемый в качестве ссылки для возврата домой и логотипа панели навигации.
 
 ### toc
 
-- Type: `boolean`
-- Default: `true`
+- Тип: `boolean`
+- По умолчанию: `true`
 
-Whether show toc list in desktop mode.
+Показывать ли toc list в режиме рабочего стола.

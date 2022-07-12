@@ -1,38 +1,38 @@
 ---
-title: Theme Basic Options
+title: Основные опции темы
 icon: config
 order: 2
 category:
-  - Config
+  - Конфиг
 tag:
-  - Basic
+  - Основы
   - ThemeConfig
 ---
 
 ::: danger
 
-These options are important and require you to configure them correctly.
+Эти параметры важны и требуют правильной настройки.
 
 :::
 
 <!-- more -->
 
-## hostname <Badge text="Root only" type="warning" />
+## hostname <Badge text="Только root" type="warning" />
 
-- Type: `string`
-- Required: Yes
+- Тип: `string`
+- Обязательный: Да
 
-Domain which the site will be deployed to.
+Домен, на который будет развернут сайт.
 
 ::: tip
 
-It should contain full protocol (eg: `https://example.com`).
+Он должен содержать полный протокол (например: `https://example.com`).
 
 :::
 
 ## author
 
-- Type: `Author`
+- Тип: `Author`
 
   ```ts
   type AuthorInfo = { name: string; url?: string };
@@ -40,13 +40,13 @@ It should contain full protocol (eg: `https://example.com`).
   type Author = string | string[] | AuthorInfo | AuthorInfo[];
   ```
 
-- Required: No
+- Обязательный: Нет
 
-Global default author.
+Глобальный автор по умолчанию.
 
 ## navbar
 
-- Type: `HopeThemeNavbarConfig`
+- Тип: `HopeThemeNavbarConfig`
 
   ```ts
   interface TextItem {
@@ -79,13 +79,13 @@ Global default author.
   )[];
   ```
 
-- Details: [Layout → Navbar](../../guide/layout/navbar.md)
+- Детали: [Макет → Панель навигации](../../guide/layout/navbar.md)
 
-Navbar config
+Конфигурация панели навигации
 
 ## sidebar
 
-- Type: `HopeThemeSidebarConfig`
+- Тип: `HopeThemeSidebarConfig`
 
   ```ts
   interface TextItem {
@@ -140,12 +140,12 @@ Navbar config
     | HopeThemeSidebarObjectConfig;
   ```
 
-- Details: [Layout → Sidebar](../../guide/layout/sidebar.md)
+- Детали: [Макет → Боковая панель](../../guide/layout/sidebar.md)
 
-Sidebar config
+Конфигурация боковой панели
 
 ## locales
 
-- Type: `Record<string, HopeThemeLocaleOptions>`
+- Тип: `Record<string, HopeThemeLocaleOptions>`
 
-I18n config of the theme, where you can set options for each language separately.
+I18n конфиг темы, где можно задать параметры для каждого языка отдельно.

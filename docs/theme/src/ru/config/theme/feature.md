@@ -1,81 +1,81 @@
 ---
-title: Theme Feature Options
+title: Опции функции темы
 icon: config
 order: 3
 category:
-  - Config
+  - Конфиг
 tag:
-  - Feature
-  - Theme Config
+  - Функция
+  - Конфиг темы
 ---
 
-The following options control features provided by theme.
+Следующие параметры управляют функциями, предоставляемыми темой.
 
 <!-- more -->
 
-## Blog Options
+## Параметры блога
 
-The theme adds blog feature using [`vuepress-plugin-blog2`][blog2], and the feature is **disabled** by default.
+Тема добавляет функцию блога с помощью [`vuepress-plugin-blog2`][blog2], и по умолчанию эта функция **отключена**.
 
-To enable blog plugin and use default options, you can set `plugins.blog` to `true` in theme options.
+Чтобы включить плагин блога и использовать параметры по умолчанию, вы можете установить для `plugins.blog` значение `true` в параметрах темы.
 
 ::: warning
 
-The following options will have NO effects unless you enable blog plugin.
+Следующие параметры не будут иметь никакого эффекта, если вы не включите плагин блога.
 
-For details, see [Blog Feature Intro](../../guide/blog/intro.md).
+Подробнее смотрите [Введение в функцию блога](../../guide/blog/intro.md).
 
 :::
 
 ### blog.name
 
-- Type: `string`
-- Default: `author`
+- Тип: `string`
+- По умолчанию: `author`
 
-Blogger name.
+Имя блогера.
 
 ### blog.avatar
 
-- Type: `string`
-- Default: `logo`
+- Тип: `string`
+- По умолчанию: `logo`
 
-Blogger avatar.
+Аватар блогера.
 
 ### blog.description
 
-- Type: `string`
-- Required: No
+- Тип: `string`
+- Обязательный: Нет
 
-Motto, slogan or a short description.
+Девиз, слоган или краткое описание.
 
 ### blog.intro
 
-- Type: `string`
-- Required: No
+- Тип: `string`
+- Обязательный: Нет
 
-Personal introduction address of the blogger.
+Личный адрес блогера.
 
 ::: note
 
-Visitors can click on the avatar or name in "Blogger Information" to enter the personal introduction page.
+Посетители могут щелкнуть аватар или имя в разделе «Информация о блогере», чтобы перейти на страницу личного знакомства.
 
 :::
 
 ### blog.medias
 
-- Type: `Record<string, string | [string, string]>`
-- Required: No
+- Тип: `Record<string, string | [string, string]>`
+- Обязательный: Нет
 
-Set social links.
+Установите социальные ссылки.
 
-- If the social media icon is available below, you can set `MediaName: MediaLink` directly.
-- Otherwise, you should pass in a tuple `MediaName: [MediaLink , MediaSvgIconString or MediaSvgIconPath]`,
+- Если значок социальной сети доступен ниже, вы можете напрямую установить `MediaName: MediaLink`.
+- В противном случае вы должны передать кортеж `MediaName: [MediaLink , MediaSvgIconString or MediaSvgIconPath]`,
 
-  The second element in the tuple must be a valid SVG string or a full path of a existing SVG file.
+  Второй элемент кортежа должен быть допустимой строкой SVG или полным путем к существующему файлу SVG.
 
-::: info Available Social Media
+::: info Доступные социальные сети
 
-The following social medias has built-in icons:
+Следующие социальные сети имеют встроенные иконки:
 
 - `"Baidu"`
 - `"Bitbucket"`
@@ -111,44 +111,44 @@ The following social medias has built-in icons:
 
 ### blog.roundAvatar
 
-- Type: `boolean`
-- Default: `false`
+- Тип: `boolean`
+- По умолчанию: `false`
 
-Whether cliping the avatar with round shape
+Обрезка аватара круглой формы
 
 ### blog.sidebarDisplay
 
-- Type: `"mobile" | "none" | "always"`
-- Default: `"mobile"`
+- Тип: `"mobile" | "none" | "always"`
+- По умолчанию: `"mobile"`
 
-Whether to show blogger information in the sidebar
+Показывать ли информацию о блоггерах на боковой панели
 
-- `"mobile"`: Show in sidebar in mobile view
-- `"always"`: Always show in the sidebar
-- `"none"`: Never show in the sidebar
+- `"mobile"`: Показывать на боковой панели в мобильной версии
+- `"always"`: Всегда показывать на боковой панели
+- `"none"`: Никогда не показывать на боковой панели
 
 ### blog.timeline
 
-- Type: `string`
-- Default: `"Yesterday once more"`
+- Тип: `string`
+- По умолчанию: `"Yesterday once more"`
 
-Text on the top of timeline page.
+Текст в верхней части страницы временной шкалы.
 
 ### blog.articlePerPage
 
-- Type: `number`
-- Default: `10`
+- Тип: `number`
+- По умолчанию: `10`
 
-Article number per page
+Номер статьи на странице
 
 ### blog.articleInfo
 
-- Type: `ArticleInfo[]`
-- Default: `["Author", "Original", "Date", "PageView", "Category", "Tag", "ReadingTime"]`
+- Тип: `ArticleInfo[]`
+- По умолчанию: `["Author", "Original", "Date", "PageView", "Category", "Tag", "ReadingTime"]`
 
-Article info displayed in article list
+Информация о статье отображается в списке статей
 
-Available values for `ArticleInfo`:
+Доступные значения для `ArticleInfo`:
 
 - `"Author"`
 - `"Category"`
@@ -158,36 +158,36 @@ Available values for `ArticleInfo`:
 - `"ReadingTime"`
 - `"Word"`
 
-## Encrypt Config <Badge text="Root only" type="warning" />
+## Зашифровать конфигурацию <Badge text="Только root" type="warning" />
 
-For details, see [Encrypt Intro](../../guide/feature/encrypt.md).
+Для получения дополнительной информации смотрите [Введение в шифрование](../../guide/feature/encrypt.md).
 
 ::: note
 
-You can only set this option directly under theme options, setting it in each loclae **has NO effect**.
+Вы можете установить этот параметр только непосредственно в параметрах темы, его установка в каждой локали **НИКАК не влияет**.
 
 :::
 
 ### encrypt.global
 
-- Type: `boolean`
-- Default: `false`
+- Тип: `boolean`
+- По умолчанию: `false`
 
-Whether to encrypt globally.
+Шифровать ли глобально.
 
 ### encrypt.admin
 
-- Type: `string | string []`
-- Required: No
+- Тип: `string | string []`
+- Обязательный: Нет
 
-Admin password with highest authority, you can set multiple by using array.
+Пароль администратора с наивысшими полномочиями, вы можете установить несколько с помощью массива.
 
 ### encrypt.config
 
-- Type: `Record <string, string | string []>`
-- Required: No
+- Тип: `Record <string, string | string []>`
+- Обязательный: Нет
 
-The encryption configuration is an object with a key name matching the path and a key-value corresponding to a password that accepts a string or an array of strings.
+Конфигурация шифрования — это объект с именем ключа, соответствующим пути, и значением ключа, соответствующим паролю, который принимает строку или массив строк.
 
 ::: details Example
 
