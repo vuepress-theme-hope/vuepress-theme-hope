@@ -38,15 +38,15 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@vuepress/utils": "2.0.0-beta.48",
+    "@vuepress/utils": "2.0.0-beta.49",
     "chokidar": "^3.5.3",
     "sass": "^1.53.0",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "@vuepress/bundler-vite": "2.0.0-beta.48",
-    "@vuepress/bundler-webpack": "2.0.0-beta.48",
-    "@vuepress/core": "2.0.0-beta.48",
+    "@vuepress/bundler-vite": "2.0.0-beta.49",
+    "@vuepress/bundler-webpack": "2.0.0-beta.49",
+    "@vuepress/core": "2.0.0-beta.49",
     "rimraf": "3.0.2"
   },
   "peerDependencies": {

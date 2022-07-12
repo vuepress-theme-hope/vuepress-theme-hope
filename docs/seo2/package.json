@@ -18,12 +18,12 @@
     "docs:webpack-dev": "vuepress-webpack dev src"
   },
   "dependencies": {
-    "@vuepress/client": "2.0.0-beta.48",
+    "@vuepress/client": "2.0.0-beta.49",
     "docs-shared": "workspace:*",
     "sass-loader": "13.0.2",
     "vue": "3.2.37",
     "vuepress-plugin-seo2": "workspace:*",
-    "vuepress-vite": "2.0.0-beta.48",
-    "vuepress-webpack": "2.0.0-beta.48"
+    "vuepress-vite": "2.0.0-beta.49",
+    "vuepress-webpack": "2.0.0-beta.49"
   }
 }

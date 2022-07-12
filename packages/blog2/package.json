@@ -36,12 +36,12 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@vuepress/client": "2.0.0-beta.48",
-    "@vuepress/core": "2.0.0-beta.48",
-    "@vuepress/shared": "2.0.0-beta.48",
+    "@vuepress/client": "2.0.0-beta.49",
+    "@vuepress/core": "2.0.0-beta.49",
+    "@vuepress/shared": "2.0.0-beta.49",
     "chokidar": "^3.5.3",
     "vue": "^3.2.37",
-    "vue-router": "^4.1.1",
+    "vue-router": "^4.1.2",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {

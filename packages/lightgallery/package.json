@@ -40,16 +40,16 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@vuepress/client": "2.0.0-beta.48",
-    "@vuepress/utils": "2.0.0-beta.48",
+    "@vuepress/client": "2.0.0-beta.49",
+    "@vuepress/utils": "2.0.0-beta.49",
     "lightgallery": "^2.5.0",
     "vue": "^3.2.37",
-    "vue-router": "^4.1.1",
+    "vue-router": "^4.1.2",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.48",
+    "@vuepress/core": "2.0.0-beta.49",
     "rimraf": "3.0.2"
   },
   "peerDependencies": {
