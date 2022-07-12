@@ -5,16 +5,16 @@ index: false
 dir:
   order: 5
 category:
-  - Config
+  - Конфиг
 tag:
-  - Config
+  - Конфиг
   - Frontmatter
 ---
 
-## Catalog
+## Содержание
 
-- [Information Frontmatter Config](info.md)
+- [Конфигурация информации Frontmatter](info.md)
 
-- [Layout Frontmatter Config](layout.md)
+- [Конфигурация макета Frontmatter](layout.md)
 
-- [Plugin Frontmatter Config](plugins.md)
+- [Конфигурация плагина Frontmatter](plugins.md)

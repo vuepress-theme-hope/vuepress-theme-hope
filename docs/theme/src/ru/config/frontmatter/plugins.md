@@ -1,66 +1,66 @@
 ---
-title: Plugin Frontmatter Config
+title: Конфиг плагина Frontmatter
 icon: config
 order: 3
 category:
-  - Config
+  - Конфиг
 tag:
   - Frontmatter
-  - Layout
+  - Плагин
 ---
 
-You can configure the following options in the frontmatter of the page to control plugin behavior.
+Вы можете настроить следующие параметры в frontmatter страницы, чтобы контролировать поведение плагина.
 
-## `copyright2` Plugin
+## Плагин `copyright2`
 
 ### copy.triggerWords
 
-- Type: `number`
-- Default: `100`
+- Тип: `number`
+- По умолчанию: `100`
 
-Min words triggering copyright append
+Минимальные слова, вызывающие добавление авторских прав.
 
 ### copy.disableCopy
 
-- Type: `boolean`
-- Default: `false`
+- Тип: `boolean`
+- По умолчанию: `false`
 
-Disable copy
+Отключить копирование.
 
 ### copy.disableSelection
 
-- Type: `boolean`
-- Default: `false`
+- Тип: `boolean`
+- По умолчанию: `false`
 
-Disable selection
+Отключить выбор.
 
-## `feed2` Plugin
+## Плагин `feed2`
 
 ### feed.title
 
-- Type: `string`
+- Тип: `string`
 
-The title of the feed item
+Название элемента фида
 
 ### feed.description
 
-- Type: `string`
+- Тип: `string`
 
-Description of the feed item
+Описание фида
 
 ### feed.content
 
-- Type: `string`
+- Тип: `string`
 
-The content of the feed item
+Содержимое фида
 
 ### feed.author
 
-- Type: `FeedAuthor[] | FeedAuthor`
+- Тип: `FeedAuthor[] | FeedAuthor`
 
-The author of the feed item
+Автор элемента фида
 
-::: details FeedAuthor format
+::: details Формат FeedAuthor
 
 ```ts
 interface FeedAuthor {
@@ -94,9 +94,9 @@ interface FeedAuthor {
 
 ### feed.contributor
 
-- Type: `FeedContributor[] | FeedContributor`
+- Тип: `FeedContributor[] | FeedContributor`
 
-Contributors to feed item
+Участники фида
 
 ::: details FeedContributor format
 
@@ -132,35 +132,35 @@ interface FeedContributor {
 
 ### feed.guid
 
-- Type: `string`
+- Тип: `string`
 
-The identifier of feed item, used to identify the feed item.
+Идентификатор элемента фида, используемый для идентификации элемента фида.
 
 ::: note
 
-You should make sure this is globally unique.
+Вы должны убедиться, что это глобально уникально.
 
 :::
 
-## `sitemap2` Plugin
+## Плагин `sitemap2`
 
 ### sitemap.changefreq
 
-- Type: `"always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never"`
-- Default: `"daily"`
+- Тип: `"always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never"`
+- По умолчанию: `"daily"`
 
-Page default update frequency. This will override [changefreq](#changefreq) in Plugin Options.
+Частота обновления страницы по умолчанию. Это переопределит [changefreq](#changefreq) в параметрах плагина.
 
 ### sitemap.exclude
 
-- Type: `boolean`
-- Default: `false`
+- Тип: `boolean`
+- По умолчанию: `false`
 
-Whether exclude the page from sitemap
+Исключить ли страницу из карты сайта
 
 ### sitemap.priority
 
-- Type: `number`
-- Default: `0.5`
+- Тип: `number`
+- По умолчанию: `0.5`
 
-Page priority, range from `0` to `1`.
+Приоритет страницы, диапазон от `0` до `1`.

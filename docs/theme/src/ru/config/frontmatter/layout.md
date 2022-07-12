@@ -1,110 +1,110 @@
 ---
-title: Layout Frontmatter Config
+title: Конфиг макета Frontmatter
 icon: config
 order: 2
 category:
-  - Config
+  - Конфиг
 tag:
   - Frontmatter
-  - Layout
+  - Макет
 ---
 
-You can configue page layout by setting the following frontmatter options.
+Вы можете настроить макет страницы, установив следующие параметры frontmatter.
 
 ## pageInfo
 
-- Type: `PageInfo[] | false`
-- Default value: value in theme options
+- Тип: `PageInfo[] | false`
+- Значение по умолчанию: значение в параметрах темы
 
-| Item            | Corresponding Content | Page frontmatter Value                  |
-| --------------- | --------------------- | --------------------------------------- |
-| `"Author"`      | Author                | `author`                                |
-| `"Date"`        | Writing Date          | `date`                                  |
-| `"Category"`    | Category              | `category`                              |
-| `"Tag"`         | Tags                  | `tag`                                   |
-| `"ReadingTime"` | Expect reading time   | N/A (automatically generated)           |
-| `"Word"`        | Word count            | N/A (automatically generated)           |
-| `"PageView"`    | Visit Number          | `pageview` (only available with Waline) |
+| Элемент         | Соответствующий контент | Значение страницы frontmatter         |
+| --------------- | ----------------------- | ------------------------------------- |
+| `"Author"`      | Автор                   | `author`                              |
+| `"Date"`        | Дата написания          | `date`                                |
+| `"Category"`    | Категория               | `category`                            |
+| `"Tag"`         | Теги                    | `tag`                                 |
+| `"ReadingTime"` | Ожидайте время чтения   | Н/Д (сгенерировано автоматически)     |
+| `"Word"`        | Количество слов         | Н/Д (сгенерировано автоматически)     |
+| `"PageView"`    | Номер визита            | `pageview` (доступно только с Waline) |
 
-Set whether to show page details on the current page
+Установите, отображать ли сведения о странице на текущей странице.
 
 ## pageview
 
-- Type: `boolean`
-- Default value: value in theme options
+- Тип: `boolean`
+- Значение по умолчанию: значение в параметрах темы
 
-Whether display page views.
+Отображаются ли просмотры страниц.
 
 ::: tip
 
-The pageviews feature requires you to have a valid Waline Comment Service config.
+Функция просмотров страниц требует, чтобы у вас была действующая конфигурация службы комментариев Waline.
 
 :::
 
 ## breadcrumb
 
-- Type: `boolean`
-- Default value: value in theme options
+- Тип: `boolean`
+- Значение по умолчанию: значение в параметрах темы
 
-Whether path navigation is enabled on the current page.
+Включена ли навигация по пути на текущей странице.
 
 ## breadcrumbIcon
 
-- Type: `boolean`
-- Default value: value in theme options
+- Тип: `boolean`
+- Значение по умолчанию: значение в параметрах темы
 
-Whether path navigation icon is enabled on the current page.
+Включена ли иконка навигации по пути на текущей странице.
 
 ## navbar
 
-- Type: `boolean`
+- Тип: `boolean`
 
-The navbar configuration of the page, filling in `false` will disable the navbar
+Конфигурация навигационной панели страницы, заполнение `false` отключит навигационную панель.
 
 ## sidebar
 
-- Type: `"heading" | false`
+- Тип: `"heading" | false`
 
-Page sidebar configuration options. Supports `"heading"` or `false`.
+Параметры конфигурации боковой панели страницы. Поддерживает `"heading"` или `false`.
 
 ## headerDepth
 
-- Type: `number`
-- Default: `2`
+- Тип: `number`
+- По умолчанию: `2`
 
-The page’s sidebar heading rendering depth.
+Глубина рендеринга заголовка боковой панели страницы.
 
 ## comment
 
-- Type: `boolean`
-- Default value: value in theme options
+- Тип: `boolean`
+- Значение по умолчанию: значение в параметрах темы
 
-Whether to enable comments on the current page.
+Включить ли комментарии на текущей странице.
 
 ## lastUpdated
 
-- Type: `boolean`
-- Default value: value in theme options
+- Тип: `boolean`
+- Значение по умолчанию: значение в параметрах темы
 
-Whether display lastUpdated time.
+Отображать ли время последнего обновления.
 
 ## editLink
 
-- Type: `boolean`
-- Default value: value in theme options
+- Тип: `boolean`
+- Значение по умолчанию: значение в параметрах темы
 
-Whether to show edit link.
+Показывать ли ссылку редактирования.
 
 ## contributors
 
-- Type: `boolean`
-- Default value: value in theme options
+- Тип: `boolean`
+- Значение по умолчанию: значение в параметрах темы
 
-Whether to show contributors.
+Показывать ли контрибьюторов.
 
 ## prev
 
-- Type: `AutoLink | string | false`
+- Тип: `AutoLink | string | false`
 
   ```ts
   interface AutoLink {
@@ -114,11 +114,11 @@ Whether to show contributors.
   }
   ```
 
-Previous article link.
+Ссылка на предыдущую статью.
 
 ## next
 
-- Type: `AutoLink |string | false`
+- Тип: `AutoLink |string | false`
 
   ```ts
   interface AutoLink {
@@ -128,54 +128,54 @@ Previous article link.
   }
   ```
 
-Next article link.
+Ссылка на следующую статью.
 
 ## footer
 
-- Type: `boolean | string | HTMLString`
-- Default value: the value configured globally
+- Тип: `boolean | string | HTMLString`
+- Значение по умолчанию: значение настроено глобально
 
-Footer content.
+Содержимое футера.
 
-- Set it to an empty string if you want an empty content
-- Set it to `false` to disable the footer
-- Set it to `true` to display the default footer
+- Установите его в пустую строку, если вы хотите пустой контент
+- Установите значение `false`, чтобы отключить нижний колонтитул.
+- Установите значение `true`, чтобы отобразить нижний колонтитул по умолчанию.
 
-For more details, please see [Page → Footer Support](../../guide/layout/footer.md).
+Подробнее смотрите [Страница → Поддержка футера](../../guide/layout/footer.md).
 
 ## copyright
 
-- Type: `string | false`
-- Default value: value in theme options
+- Тип: `string | false`
+- Значение по умолчанию: значение в параметрах темы
 
-Copyright information
+Информация об авторских правах
 
-For more details, please see [Page → Footer Support](../../guide/layout/footer.md).
+Подробнее смотрите [Страница → Поддержка футера](../../guide/layout/footer.md).
 
 ## backToTop
 
-- Type: `boolean`
-- Default value: true
+- Тип: `boolean`
+- Значение по умолчанию: true
 
-Whether display the back to top button.
+Отображать ли кнопку «Вернуться к началу».
 
 ## toc
 
-- Type: `boolean`
-- Default value: value in theme options
+- Тип: `boolean`
+- Значение по умолчанию: значение в параметрах темы
 
-Whether display toc in desktop mode.
+Отображать ли toc в режиме рабочего стола.
 
 ## containerClass
 
-- Type: `string`
-- Required: No
+- Тип: `string`
+- Обязательный: Нет
 
-Extra container class.
+Дополнительный контейнерный класс.
 
 ## layout
 
-- Type: `string`
-- Default: `"Layout"`
+- Тип: `string`
+- По умолчанию: `"Layout"`
 
-Page custom layout name.
+Имя пользовательского макета страницы.

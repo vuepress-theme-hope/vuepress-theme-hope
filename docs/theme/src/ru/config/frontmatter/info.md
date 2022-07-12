@@ -1,48 +1,48 @@
 ---
-title: Info Frontmatter Config
+title: Конфиг инфо Frontmatter
 icon: config
 order: 1
 category:
-  - Config
+  - Конфиг
 tag:
   - Frontmatter
-  - Info
+  - Инфо
 ---
 
-You can set information for page with the following frontmatter options.
+Вы можете установить информацию для страницы со следующими параметрами frontmatter.
 
 ## title
 
-- Type: `string`
-- Required: No
+- Тип: `string`
+- Обязательный: Нет
 
-Current page’s title. Markdown’s first h1 by default.
+Название текущей страницы. Первый h1 в Markdown по умолчанию.
 
 ## shortTitle
 
-- Type: `string`
-- Required: No
+- Тип: `string`
+- Обязательный: Нет
 
-Current page’s short title. Will be used as in navbar, sidebar and breadcrumb.
+Краткое название текущей страницы. Будет использоваться как в навигационной панели, боковой панели и хлебных крошках.
 
 ## description
 
-- Type: `string`
-- Required: No
+- Тип: `string`
+- Обязательный: Нет
 
-Current page’s description.
+Описание текущей страницы.
 
 ## icon
 
-- Type: `string`
-- Required: No
+- Тип: `string`
+- Обязательный: Нет
 
-FontClass of the current page icon (recommended).
+FontClass иконки текущей страницы (рекомендуется).
 
 ## author
 
-- Type: `Author | boolean`
-- Required: No
+- Тип: `Author | boolean`
+- Обязательный: Нет
 
 ```ts
 type AuthorInfo = { name: string; url?: string };
@@ -50,74 +50,74 @@ type AuthorInfo = { name: string; url?: string };
 type Author = string | string[] | AuthorInfo | AuthorInfo[];
 ```
 
-Show the author of the current page. If you don’t fill it, you will fall back to the default author.
+Показать автора текущей страницы. Если вы не заполните его, вы вернетесь к автору по умолчанию.
 
 ::: tip
 
-When setting default author in theme options, you can set `false` to prevent showing the default author.
+При настройке автора по умолчанию в параметрах темы вы можете установить `false`, чтобы запретить отображение автора по умолчанию.
 
 :::
 
 ## isOriginal
 
-- Type: `boolean`
-- Default: `false`
+- Тип: `boolean`
+- По умолчанию: `false`
 
-Whether the current article is original.
+Является ли текущая статья оригинальной.
 
 ## date
 
-- Type: `DateString`
-- Required: No
-- Format: `YYYY-MM-DD` or `YYYY/MM/DD hh:mm:ss`
+- Тип: `DateString`
+- Обязательный: Нет
+- Формат: `YYYY-MM-DD` или `YYYY/MM/DD hh:mm:ss`
 
-Set the writing time of the current page.
+Устанавливает время записи текущей страницы.
 
 ## category
 
-- Type: `string | string[]`
-- Required: No
+- Тип: `string | string[]`
+- Обязательный: Нет
 
-Set the category of the current page.
+Устанавливает категорию текущей страницы.
 
 ## tag
 
-- Type: `string | string []`
-- Required: No
+- Тип: `string | string []`
+- Обязательный: Нет
 
-Set the label of the current page.
+Устанавливает метку текущей страницы.
 
 ## sticky
 
-- Type: `boolean | number`
-- Default: `false`
+- Тип: `boolean | number`
+- По умолчанию: `false`
 
-Sets whether the current article is pinned in the list. When fill in with number, greater ones come before smaller ones.
+Устанавливает, будет ли текущая статья закреплена в списке. При заполнении числом большие идут перед меньшими.
 
 ## star
 
-- Type: `boolean | number`
-- Default: `false`
+- Тип: `boolean | number`
+- По умолчанию: `false`
 
-Sets whether the current article is pinned in the article list in blog theme. When fill in with number, greater ones come before smaller ones.
+Устанавливает, будет ли текущая статья закреплена в списке статей в теме блога. При заполнении числом большие идут перед меньшими.
 
 ## article
 
-- Type: `boolean`
-- Default: `true`
+- Тип: `boolean`
+- По умолчанию: `true`
 
-Whether to add the article to the article list.
+Добавлять ли статью в список статей.
 
 ## timeline
 
-- Type: `boolean`
-- Default: `true`
+- Тип: `boolean`
+- По умолчанию: `true`
 
-Whether to add the article to the timeline list.
+Добавлять ли статью в список временной шкалы.
 
 ## image
 
-- Type: `string`
-- Required: No
+- Тип: `string`
+- Обязательный: Нет
 
-Current page’s image，needs an absolute path.
+Изображение текущей страницы требует абсолютного пути.
