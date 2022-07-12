@@ -1,20 +1,20 @@
 ---
-title: Comment Plugin Config
+title: Конфиг плагина комментариев
 icon: comment
 order: 3
 category:
-  - Config
+  - Конфиг
 tag:
-  - Comment
-  - Plugin Config
-  - Theme Config
+  - Комментарий
+  - Конфигурация плагина
+  - Конфиг темы
 ---
 
-## Intro
+## Введение
 
-The theme provide comment support using `vuepress-plugin-comment2`, and it pass `plugin.comment` in theme options to the plugin.
+Тема обеспечивает поддержку комментариев с помощью `vuepress-plugin-comment2` и передает плагину `plugin.comment` в параметрах темы.
 
-`vuepress-plugin-comment2` currently supports 3 comment services:
+`vuepress-plugin-comment2` в настоящее время поддерживает 3 службы комментариев:
 
 - Giscus
 - Twikoo
@@ -22,12 +22,12 @@ The theme provide comment support using `vuepress-plugin-comment2`, and it pass 
 
 ::: note
 
-If you don’t need comment feature, ignore this option.
+Если вам не нужна функция комментариев, игнорируйте эту опцию.
 
 :::
 
-## Options
+## Опции
 
-For details of each comment service options, please refer to [vuepress-plugin-comment2 documentation][comment-config].
+Для получения подробной информации о каждом параметре сервиса комментариев обратитесь к [документации vuepress-plugin-comment2][comment-config].
 
 [comment-config]: https://vuepress-theme-hope.github.io/v2/comment/config/

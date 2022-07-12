@@ -3,77 +3,78 @@ title: MdEnhance Plugin Config
 icon: markdown
 order: 6
 category:
-  - Config
+  - Конфиг
 tag:
   - Markdown
-  - Plugin Config
-  - Theme Config
+  - Разметка
+  - Конфигурация плагина
+  - Конфиг темы
 ---
 
-## Introduction
+## Введение
 
-The `vuepress-plugin-md-enhance` plugin is enabled by default and provides Markdown enhancements.
+Плагин `vuepress-plugin-md-enhance` включен по умолчанию и предоставляет улучшения Markdown.
 
-`vuepress-theme-hope` passes `plugins.mdEnhance` in theme options as plugin options to `vuepress-plugin-md-enhance` plugin.
+`vuepress-theme-hope` передает `plugins.mdEnhance` в параметрах темы в качестве параметров плагина для плагина `vuepress-plugin-md-enhance`.
 
 ::: tip
 
-If you don’t need this feature, please set to `false`.
+Если вам не нужна эта функция, установите значение `false`.
 
 :::
 
 ::: info
 
-`vuepress-theme-hope` will set the `container` option to `true` by default.
+`vuepress-theme-hope` установит для параметра `container` значение `true` по умолчанию.
 
-See the [md-enhance documentation][md-enhance-config] for more details.
+Подробнее смотрите в [документации по md-enhance][md-enhance-config].
 
 :::
 
-## Plugin Options
+## Опции плагина
 
-### enableAll <Badge text="Demo only" type="danger" />
+### enableAll <Badge text="Только демо" type="danger" />
 
-- Type: `boolean`
-- Default: `false`
+- Тип: `boolean`
+- По умолчанию: `false`
 
-Whether to enable all features.
+Включить ли все функции.
 
 ::: danger
 
-Please use this option ONLY for playing or testing.
+Пожалуйста, используйте эту опцию ТОЛЬКО для игры или тестирования.
 
-The plugin is FULLY treeshakable, so you should use the options below and enable ONLY the feature you want to use.
+Плагин ПОЛНОСТЬЮ поддерживает древовидную структуру, поэтому вам следует использовать приведенные ниже параметры и включать ТОЛЬКО ту функцию, которую вы хотите использовать.
 
-Enabling features you don’t need will increase dev and build time. (`markdown-it` has to check for extra syntaxs)
+Включение функций, которые вам не нужны, увеличит время разработки и сборки. (`markdown-it` должен проверять наличие дополнительных синтаксисов)
 
-Also, some feature will add large chunks to your output (can up to 2MB).
+Кроме того, некоторые функции будут добавлять большие куски в ваш вывод (может достигать 2 МБ).
 
 :::
 
 ### gfm
 
-- Type: `boolean`
-- Default: `false`
+- Тип: `boolean`
+- По умолчанию: `false`
 
-Whether to support full GFM syntax.
+Поддерживать ли полный синтаксис GFM.
 
 ::: note
 
-For full GFM syntax, see [GFM](https://github.github.com/gfm/).
+Полный синтаксис GFM смотрите в [GFM](https://github.github.com/gfm/).
 
-We are not 100% supporting it to be honestly, we only supply it’s syntax inlucding tasklists, footnote and so on.
+Честно говоря, мы не поддерживаем его на 100%, мы предоставляем только его синтаксис, включая списки задач, сноски и так далее.
 
-Some of the behavior might be different, for example to allow Vue syntax, we are not disallowing `<script>` tags. But in most situation, the behavior should be same.
+Некоторое поведение может отличаться, например, чтобы разрешить синтаксис Vue, мы не запрещаем теги `<script>`. Но в большинстве ситуаций поведение должно быть таким же.
 
 :::
 
 ### container
 
-- Type: `boolean`
-- Default: `true`
+- Тип: `boolean`
+- По умолчанию: `true`
 
-Whether to enable custom container including
+Включить ли пользовательский контейнер, включая:
 
 - info
 - note
@@ -84,10 +85,10 @@ Whether to enable custom container including
 
 ### linkCheck
 
-- Type: `"always" | "dev" | "build" | "never" | boolean`
-- Default: `"dev"`
+- Тип: `"always" | "dev" | "build" | "never" | boolean`
+- По умолчанию: `"dev"`
 
-Whether to enable link check.
+Включить ли проверку ссылок.
 
 ::: note
 
@@ -98,73 +99,73 @@ Whether to enable link check.
 
 ### vpre
 
-- Type: `boolean`
-- Default: `false`
+- Тип: `boolean`
+- По умолчанию: `false`
 
-Whether to enable v-pre wrapper.
+Включить ли обертку v-pre.
 
 ### tabs
 
-- Type: `boolean`
-- Default: `false`
+- Тип: `boolean`
+- По умолчанию: `false`
 
-Whether to enable tabs.
+Включить ли вкладки.
 
 ### codetabs
 
-- Type: `boolean`
-- Default: `false`
+- Тип: `boolean`
+- По умолчанию: `false`
 
-Whether to enable codetabs.
+Включить ли кодовые таблицы.
 
 ### align
 
-- Type: `boolean`
-- Default: `false`
+- Тип: `boolean`
+- По умолчанию: `false`
 
-Whether to enable custom align.
+Включить ли пользовательское выравнивание.
 
 ### sup
 
-- Type: `boolean`
-- Default: `false`
+- Тип: `boolean`
+- По умолчанию: `false`
 
-Whether to enable the upper format support.
+Включить ли поддержку формата верхнего индекса.
 
 ### sub
 
-- Type: `boolean`
-- Default: `false`
+- Тип: `boolean`
+- По умолчанию: `false`
 
-Whether to enable the lower corner format support.
+Включить ли поддержку формата нижнего индекса.
 
 ### footnote
 
-- Type: `boolean`
-- Default: `false`
+- Тип: `boolean`
+- По умолчанию: `false`
 
-Whether to enable footnote format support.
+Включить ли поддержку формата сносок.
 
 ### lazyLoad
 
-- Type: `boolean`
-- Default: `false`
+- Тип: `boolean`
+- По умолчанию: `false`
 
-Whether to lazy load every images in page in native way.
+Следует ли лениво загружать все изображения на странице собственным способом.
 
 ### mark
 
-- Type: `boolean`
-- Default: `false`
+- Тип: `boolean`
+- По умолчанию: `false`
 
-Whether to enable mark support.
+Включить ли поддержку выделения.
 
 ### imageMark
 
-- Type: `ImageMarkOptions | boolean`
-- Default: `false`
+- Тип: `ImageMarkOptions | boolean`
+- По умолчанию: `false`
 
-Whether enable image mark support.
+Включить ли поддержку метки изображения.
 
 ```ts
 interface ImageMarkOptions {
@@ -177,10 +178,10 @@ interface ImageMarkOptions {
 
 ### tasklist
 
-- Type: `TaskListOptions | boolean`
-- Default: `false`
+- Тип: `TaskListOptions | boolean`
+- По умолчанию: `false`
 
-Whether to enable tasklist format support. You can pass an object to config task list.
+Включить ли поддержку формата списка задач. Вы можете передать объект в список задач конфигурации.
 
 ```ts
 interface TaskListOptions {
@@ -202,30 +203,30 @@ interface TaskListOptions {
 
 ### tex
 
-- Type: `KatexOptions | boolean`
-- Default: `false`
+- Тип: `KatexOptions | boolean`
+- По умолчанию: `false`
 
-Whether to enable $\TeX$ syntax support. You can pass an object to config $\KaTeX$.
+Включить ли поддержку синтаксиса $\TeX$. Вы можете передать объект в конфигурацию $\KaTeX$.
 
-Please see [Katex Docs](https://katex.org/docs/options.html) for available options.
+Доступные варианты смотрите в [Документации Katex](https://katex.org/docs/options.html).
 
 ### flowchart
 
-- Type: `boolean`
-- Default: `false`
+- Тип: `boolean`
+- По умолчанию: `false`
 
-Whether to enable flowchart support
+Включить ли поддержку блок-схем.
 
 ### mermaid
 
-- Type: `boolean`
-- Default: `false`
+- Тип: `boolean`
+- По умолчанию: `false`
 
-Whether to enable [Mermaid](https://mermaid-js.github.io/mermaid/#/) support.
+Включить ли поддержку [Mermaid](https://mermaid-js.github.io/mermaid/#/).
 
 ### stylize
 
-- Type: `StylizeOptions | false`
+- Тип: `StylizeOptions | false`
 
   ```ts
   interface StylizeResult {
@@ -265,107 +266,107 @@ Whether to enable [Mermaid](https://mermaid-js.github.io/mermaid/#/) support.
   type StylizeOptions = StylizeItem[];
   ```
 
-- Default: `false`
+- По умолчанию: `false`
 
-Stylize inline tokens to create snippet you want.
+Стилизуйте встроенные токены, чтобы создать нужный фрагмент.
 
 ### demo
 
-- Type: `CodeDemoGlobalOptions | boolean`
-- Default: `false`
+- Тип: `CodeDemoGlobalOptions | boolean`
+- По умолчанию: `false`
 
-Whether to enable code demo support.
+Включить ли поддержку демонстрации кода.
 
 #### demo.jsLib
 
-- Type: `string[]`
-- Required: No
+- Тип: `string[]`
+- Обязательный: Нет
 
-CodePen, JsFiddle requires an external JS library for dating.
+CodePen, JsFiddle требует внешней библиотеки JS для знакомств.
 
 #### demo.cssLib
 
-- Type: `string[]`
-- Required: No
+- Тип: `string[]`
+- Обязательный: Нет
 
-CodePen, JsFiddle need an external CSS library for dating.
+CodePen, JsFiddle нужна внешняя библиотека CSS для знакомств.
 
 ::: warning
 
-The above two options are only used by third-party code demo service, you need to import these libraries in `head`.
+Вышеупомянутые две опции используются только сторонним демонстрационным сервисом кода, вам необходимо импортировать эти библиотеки в `head`.
 
 :::
 
 #### demo.jsfiddle
 
-- Type: `boolean`
-- Default value: `true`
+- Тип: `boolean`
+- Значение по умолчанию: `true`
 
-Whether to display the JSFiddle button
+Отображать ли кнопку JSFiddle.
 
 #### demo.codepen
 
-- Type: `boolean`
-- Default value: `true`
+- Тип: `boolean`
+- Значение по умолчанию: `true`
 
-Whether to display the CodePen button
+Отображать ли кнопку CodePen.
 
 #### demo.codepenLayout
 
-- Type: `"top" | "left" | "correct"`
-- Default value: `"left"`
+- Тип: `"top" | "left" | "correct"`
+- Значение по умолчанию: `"left"`
 
-CodePen editor layout
+Макет редактора CodePen.
 
 #### demo.codepenEditors
 
-- Type: `string`
-- Default value: `"101"`
+- Тип: `string`
+- Значение по умолчанию: `"101"`
 
-CodePen editor status
+Статус редактора CodePen.
 
-#### others
+#### Другие
 
-The following are the library links used by the third-party code demo service. Unless your environment cannot visit unpkg or the speed is slow, you probably don’t need to override the default values.
+Ниже приведены ссылки на библиотеки, используемые сторонней демонстрационной службой кода. Если ваша среда не может посетить unpkg или скорость низкая, вам, вероятно, не нужно переопределять значения по умолчанию.
 
 ##### demo.babel
 
-Default value: `"https://unpkg.com/@babel/standalone/babel.min.js"`
+Значение по умолчанию: `"https://unpkg.com/@babel/standalone/babel.min.js"`
 
 ##### demo.vue
 
-Default value: `"https://unpkg.com/vue/dist/vue.global.prod.js"`
+Значение по умолчанию: `"https://unpkg.com/vue/dist/vue.global.prod.js"`
 
 ##### demo.react
 
-Default value: `"https://unpkg.com/react/umd/react.production.min.js"`
+Значение по умолчанию: `"https://unpkg.com/react/umd/react.production.min.js"`
 
 ##### demo.reactDOM
 
-Default value: `"https://unpkg.com/react-dom/umd/react-dom.production.min.js"`
+Значение по умолчанию: `"https://unpkg.com/react-dom/umd/react-dom.production.min.js"`
 
 ### presentation
 
-- Type: `PresentationOptions | boolean`
-- Default: `false`
+- Тип: `PresentationOptions | boolean`
+- По умолчанию: `false`
 
-Whether to enable presentation syntax support.
+Включить ли поддержку синтаксиса представления.
 
-You can set it with an object, the object will be used to config reveal.js.
+Вы можете установить его с помощью объекта, объект будет использоваться для настройки reveal.js.
 
 #### presentation.plugins
 
-- Type: `RevealPlugin[]`
+- Тип: `RevealPlugin[]`
 
   ```ts
   type RevealPlugin = "highlight" | "math" | "search" | "notes" | "zoom";
   ```
 
-- Required: No
+- Обязательный: Нет
 
-Plugins you want to use on reveal.js.
+Плагины, которые вы хотите использовать в reveal.js.
 
-Acceptable values are:
+Допустимые значения:
 
 - `"highlight"`
 - `"math"`
@@ -379,27 +380,27 @@ Acceptable values are:
 
 #### presentation.revealConfig
 
-- Type: `Partial<RevealOptions>`
-- Required: No
+- Тип: `Partial<RevealOptions>`
+- Обязательный: Нет
 
-Config which you want to pass to reveal.js.
+Конфиг, который вы хотите передать в reveal.js.
 
 ### delay
 
-- Type: `number`
-- Default: `500`
+- Тип: `number`
+- По умолчанию: `500`
 
-The delay of operating dom, in ms.
+Задержка срабатывания, в мс.
 
 ::: tip
 
-If the theme you are using has a switching animation, it is recommended to configure this option to `Switch animation duration + 200`.
+Если используемая вами тема имеет анимацию переключения, рекомендуется настроить этот параметр на `Switch animation duration + 200`.
 
 :::
 
 ### locales
 
-- Type: `MarkdownEnhanceLocaleConfig`
+- Тип: `MarkdownEnhanceLocaleConfig`
 
   ```ts
   interface MarkdownEnhanceLocaleData {
@@ -439,8 +440,8 @@ If the theme you are using has a switching animation, it is recommended to confi
   }
   ```
 
-- Required: No
+- Обязательный: Нет
 
-Locales config for Markdown Enhance Plugin.
+Конфигурация локалей для плагина Расширения Markdown.
 
 [md-enhance-config]: https://vuepress-theme-hope.github.io/v2/md-enhance/config.html

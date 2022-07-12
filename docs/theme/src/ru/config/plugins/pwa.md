@@ -1,52 +1,52 @@
 ---
-title: PWA Plugin Config
+title: Конфиг плагина PWA
 icon: app
 order: 7
 category:
-  - Config
+  - Конфиг
 tag:
   - PWA
-  - Plugin Config
-  - Theme Config
+  - Конфигурация плагина
+  - Конфиг темы
 ---
 
-## Intro
+## Введение
 
-The `vuepress-plugin-pwa2` plugin provides progressive web app support.
+Плагин `vuepress-plugin-pwa2` обеспечивает прогрессивную поддержку веб-приложений.
 
-`vuepress-theme-hope` passes `plugins.pwa` in theme options as plugin options to `vuepress-plugin-pwa2` plugin.
+`vuepress-theme-hope` передает `plugins.pwa` в параметрах темы в качестве параметров плагина для плагина `vuepress-plugin-pwa2`.
 
-::: tip Quick Enable
+::: tip Быстрое включение
 
-To simply enable this feature, you can set `pwa: true`. <Badge text="Quick Enable Not recommended" type="warning" />
+Чтобы просто включить эту функцию, вы можете установить `pwa: true`. <Badge text="Быстрое включение не рекомендуется" type="warning" />
 
 :::
 
 ::: info
 
-See the [pwa2 plugin documentation][pwa-config] for more details.
+Подробности смотрите в [документации плагина pwa2][pwa-config].
 
 :::
 
-## Plugin Options
+## Опции плагина
 
 ### showInstall
 
-- Type: `boolean`
-- Default: `true`
+- Тип: `boolean`
+- По умолчанию: `true`
 
-Whether display install button when Service Worker is first registered successfully.
+Отображать ли кнопку установки при первой успешной регистрации Service Worker.
 
 ### manifest
 
-- Type: `ManifestOption`
-- Required: No
+- Тип: `ManifestOption`
+- Обязательный: Нет
 
-You can fill with an object which will be parsed to manifest.webmanifest.
+Вы можете заполнить объект, который будет проанализирован в manifest.webmanifest.
 
 ::: tip
 
-Some options have their fallback if you do not set them.
+Некоторые параметры имеют запасной вариант, если вы их не установите.
 
 - name: `siteConfig.title` || `siteConfig.locales['/'].title` || `"Site"`
 - short_name: `siteConfig.title` || `siteConfig.locales['/'].title` || `"Site"`
@@ -63,22 +63,22 @@ Some options have their fallback if you do not set them.
 
 :::
 
-::: info More
+::: info Более
 
-For docs of Manifest, please see [W3C Manifest](https://w3c.github.io/manifest/)
+Документы по манифесту смотрите в [Манифесте W3C](https://w3c.github.io/manifest/)
 
 :::
 
 ### favicon
 
-- Type: `string`
-- Required: No
+- Тип: `string`
+- Обязательный: Нет
 
-Path of favico.ico with absolute path.
+Путь favico.ico с абсолютным путем.
 
 ::: warning
 
-We recommend you to set favicon for your site
+Мы рекомендуем вам установить favicon для вашего сайта
 
 :::
 
@@ -87,154 +87,154 @@ We recommend you to set favicon for your site
 - 类型: `string`
 - 默认值: `"#46bd87"`
 
-Theme Color, default is theme green
+Цвет темы, по умолчанию тема зеленая.
 
 ### maxSize
 
-- Type: `number`
-- Default: `2048`
+- Тип: `number`
+- По умолчанию: `2048`
 
-Max size which allows to cache, with KB unit
+Максимальный размер, который позволяет кэшировать, с единицей КБ
 
 ::: warning
 
-This option has the highest priority, and any files exceeding this value will be excluded.
+Этот параметр имеет наивысший приоритет, и любые файлы, превышающие это значение, будут исключены.
 
-So if you generate very large HTML or JS files, please consider increasing this value, otherwise your PWA may not work normally in offline mode.
+Поэтому, если вы создаете очень большие файлы HTML или JS, рассмотрите возможность увеличения этого значения, иначе ваше PWA может не работать нормально в автономном режиме.
 
 :::
 
 ### cacheHTML
 
-- Type: `boolean`
-- Default: `false`
+- Тип: `boolean`
+- По умолчанию: `false`
 
-Whether cache HTML files besides home page and 404 page.
+Кэшировать ли файлы HTML, кроме домашней страницы и страницы 404.
 
 ### cachePic
 
-- Type: `boolean`
-- Default: `false`
+- Тип: `boolean`
+- По умолчанию: `false`
 
-Whether cache pictures
+Кешировать ли картинки.
 
 ### maxPicSize
 
-- Type: `number`
-- Default: `1024`
+- Тип: `number`
+- По умолчанию: `1024`
 
-Max picture size which allows to cache, with KB unit
+Максимальный размер изображения, который позволяет кэшировать, с единицей КБ.
 
 ### update
 
-- Type: `"disabled" | "available" | "hint" | "force"`
-- Default: `"available"`
+- Тип: `"disabled" | "available" | "hint" | "force"`
+- По умолчанию: `"available"`
 
-Control logic when new content is found.
+Логика управления при обнаружении нового контента.
 
-- `"disabled"`: Do nothing even when new service worker is available. After new service work succeeds installing and starts waiting, it will control page and provide new content in next visit.
+- `"disabled"`: Ничего не делать, даже когда доступен новый service worker. После успешной установки новой службы и начала ожидания она будет контролировать страницу и предоставлять новый контент при следующем посещении
 
-- `"available"`: Only display update popup when the new service worker is available
+- `"available"`: Отображать всплывающее окно обновления только тогда, когда доступен новый service worker
 
-- `"hint"`: Display a hint to let user choose to refresh immediately
+- `"hint"`: Отображать подсказку, позволяющую пользователю выбрать немедленное обновление
 
-  This is helpful when you want users to see new docs immediately.
+  Это удобно, если вы хотите, чтобы пользователи сразу же увидели новые документации.
 
   ::: note
 
-  If users choose to refresh, the current service worker will be unregistered, and request will start coming to web. Later the new service worker will start installing and control current page after installed.
+  Если пользователи выберут обновление, текущий сервисный работник будет отменен, и запрос начнет поступать в сеть. Позже новый service worker начнет установку и будет контролировать текущую страницу после установки.
 
   :::
 
-- `"force"`: unregister current service worker immediately then refresh to get new content
+- `"force"`: немедленно отмените регистрацию текущего сервисного работника, затем обновите его, чтобы получить новый контент
 
   ::: danger
 
-  Though this ensures users are visiting the newest content, but this may affect visiting experiences.
+  Хотя это гарантирует, что пользователи посещают новейший контент, но это может повлиять на впечатления от посещения.
 
   :::
 
 ::: warning
 
-How docs are updated is controlled by a previous version, so the current option only effect next update from this version.
+То, как обновляются документы, контролируется предыдущей версией, поэтому текущий параметр влияет только на следующее обновление этой версии.
 
 :::
 
 ### apple
 
-Special settings for Apple
+Специальные настройки для Apple
 
-> If you don’t want to make detailed settings, you can safely ignore it; if you don’t want your site compatible with safari on apple, please set it to `false`.
+> Если не хотите производить детальные настройки, можете смело проигнорировать; если вы не хотите, чтобы ваш сайт был совместим с Safari на Apple, установите для него значение `false`.
 
 #### apple.icon
 
-- Type: `string`
-- Required: No
+- Тип: `string`
+- Обязательный: Нет
 
-Fill in the icon address used by Apple, the recommended size is 152×152
+Введите адрес иконки, используемый Apple, рекомендуемый размер 152×152.
 
 #### apple.statusBarColor
 
-- Type: `"black" | "white"`
-- Default: `"black"`
+- Тип: `"black" | "white"`
+- По умолчанию: `"black"`
 
-Apple’s status bar color
+Цвет строки состояния Apple
 
 #### apple.maskIcon
 
-- Type: `string`
-- Required: No
+- Тип: `string`
+- Обязательный: Нет
 
-Safari mask icon
+Иконка маски сафари.
 
 ### msTile
 
-Special settings for Microsoft tiles
+Специальные настройки для плиток Microsoft
 
-> If you don’t want to make detailed settings, you can safely ignore it; if you don’t want your site compatible with windows, please set it to `false`.
+> Если не хотите производить детальные настройки, можете смело проигнорировать; если вы не хотите, чтобы ваш сайт был совместим с Windows, установите для него значение `false`.
 
 #### msTile.image
 
-- Type: `string`
-- Required: No
+- Тип: `string`
+- Обязательный: Нет
 
-Tile icon
+Иконка плитки.
 
 #### msTile.color
 
-- Type: `string`
-- Default value: `themeColor`
+- Тип: `string`
+- Значение по умолчанию: `themeColor`
 
-The tile color will automatically fall back to themeColor if you don’t set it.
+Цвет плитки автоматически вернется к themeColor, если вы его не установите.
 
 ### hintComponent
 
-- Type: `string`
-- Default: `"SWHintPopup"`
+- Тип: `string`
+- По умолчанию: `"SWHintPopup"`
 
-You can fill in the custom hint popup component path.
+Вы можете указать путь к компоненту всплывающей подсказки.
 
 ### updateComponent
 
-- Type: `string`
-- Default: `"SWUpdatePopup"`
+- Тип: `string`
+- По умолчанию: `"SWUpdatePopup"`
 
-You can fill in the custom update popup component path.
+Вы можете заполнить собственный путь к компоненту всплывающего окна обновления.
 
 ### appendBase
 
-- Type: `boolean`
-- Default: `false`
+- Тип: `boolean`
+- По умолчанию: `false`
 
-Whether append base to all absolute links.
+Добавлять ли базу ко всем абсолютным ссылкам.
 
 ### generateSwConfig
 
-Options passed to `workbox-build`, for details, see [Workbox documentation](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-build#.generateSW)
+Параметры, переданные в `workbox-build`, подробнее смотрите в [документации Workbox](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-build#.generateSW)
 
 ### locales
 
-- Type: `PWALocaleConfig`
+- Тип: `PWALocaleConfig`
 
   ```ts
   interface PWALocaleData {
@@ -299,8 +299,8 @@ Options passed to `workbox-build`, for details, see [Workbox documentation](http
   }
   ```
 
-- Required: No
+- Обязательный: Нет
 
-Locales config for pwa plugin.
+Конфигурация локалей для плагина pwa.
 
 [pwa-config]: https://vuepress-theme-hope.github.io/v2/pwa/config.html

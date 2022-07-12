@@ -1,100 +1,100 @@
 ---
-title: Blog Plugin Config
+title: Конфиг плагина блога
 icon: blog
 order: 2
 category:
-  - Config
+  - Конфиг
 tag:
-  - Blog
-  - Plugin Config
-  - Theme Config
+  - Блог
+  - Конфигурация плагина
+  - Конфиг темы
 ---
 
-## Intro
+## Введение
 
-The theme provides blog feature, and it’s **not** enabled by default.
+Тема предоставляет функцию блога, и она **не** включена по умолчанию.
 
-You can enable blog feature by setting `plugins.blog` to `true` in theme options.
+Вы можете включить функцию блога, установив для `plugins.blog` значение `true` в настройках темы.
 
-For instructions, please see [Blog Intro](../../guide/blog/intro.md).
+Инструкции смотрите в [Введение в блог](../../guide/blog/intro.md).
 
-## Options
+## Опции
 
 ### autoExcerpt
 
-- Type: `boolean`
-- Default: `false`
+- Тип: `boolean`
+- По умолчанию: `false`
 
-Whether to generate excerpt for every page.
+Генерировать ли выдержку для каждой страницы.
 
 ### filter
 
-- Type: `(page: Page) => boolean`
-- Default: `(page) => Boolean(page.filePathRelative) && !page.frontmatter.home`
+- Тип: `(page: Page) => boolean`
+- По умолчанию: `(page) => Boolean(page.filePathRelative) && !page.frontmatter.home`
 
-Page filter, determine whether a page should be included.
+Фильтр страниц, определяющий, следует ли включать страницу.
 
-By default, all the pages generated from Markdown files but not homepage will be included as articles.
+По умолчанию все страницы, созданные из файлов Markdown, но не домашняя страница, будут включены в качестве статей.
 
 ### article
 
-- Type: `string`
-- Default: `/article/`
+- Тип: `string`
+- По умолчанию: `/article/`
 
-Article list route path.
+Путь маршрута списка статей.
 
 ### category
 
-- Type: `string`
-- Default: `/category/`
+- Тип: `string`
+- По умолчанию: `/category/`
 
-Category map route path.
+Путь маршрута карты категории.
 
 ### categoryItem
 
-- Type: `string`
-- Default: `/category/:name/`
+- Тип: `string`
+- По умолчанию: `/category/:name/`
 
-Category list route path. `:name` will be replaced by category name.
+Путь маршрута списка категорий. `:name` будет заменено именем категории.
 
 ### tag
 
-- Type: `string`
-- Default: `/tag/`
+- Тип: `string`
+- По умолчанию: `/tag/`
 
-Tag map route path.
+Отметьте путь маршрута карты.
 
 ### tagItem
 
-- Type: `string`
-- Default: `/tag/:name/`
+- Тип: `string`
+- По умолчанию: `/tag/:name/`
 
-Tag list route path. `:name` will be replaced by tag name.
+Путь маршрута списка тегов. `:name` будет заменено именем тега.
 
 ### encrypted
 
-- Type: `string`
-- Default: `/encrypted/`
+- Тип: `string`
+- По умолчанию: `/encrypted/`
 
-Encrypted articles list route path.
+Путь к списку зашифрованных статей.
 
 ### slide
 
-- Type: `string`
-- Default: `/slide/`
+- Тип: `string`
+- По умолчанию: `/slide/`
 
-Slides list route path.
+Путь маршрута списка слайдов.
 
 ### star
 
-- Type: `string`
-- Default: `/star/`
+- Тип: `string`
+- По умолчанию: `/star/`
 
-Star article list route path.
+Путь маршрута к списку звездных статей.
 
 ### timeline
 
-- Type: `string`
-- Default: `/timeline/`
+- Тип: `string`
+- По умолчанию: `/timeline/`
 
-Timeline list route path.
+Путь маршрута списка временной шкалы.

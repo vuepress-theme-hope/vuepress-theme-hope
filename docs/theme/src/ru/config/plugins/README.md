@@ -1,23 +1,23 @@
 ---
-title: Plugin Config
+title: Конфигурация плагина
 icon: config
 index: false
 dir:
   order: 4
 ---
 
-## Catalog
+## Содержание
 
-- [Theme plugins Intro](intro.md)
+- [Введение в плагины темы](intro.md)
 
-- [Blog plugin config](blog.md)
+- [Конфигурация плагина блога](blog.md)
 
-- [Copyright plugin config](copyright.md)
+- [Конфигурация плагина авторского права](copyright.md)
 
-- [Feed plugin config](feed.md)
+- [Конфигурация плагина фида](feed.md)
 
-- [MdEnhance plugin config](md-enhance.md)
+- [Конфигурация плагина](md-enhance.md)
 
-- [PWA plugin config](pwa.md)
+- [Конфигурация плагина PWA](pwa.md)
 
-- [Other plugins](others.md)
+- [Другие плагины](others.md)

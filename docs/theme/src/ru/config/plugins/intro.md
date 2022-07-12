@@ -1,103 +1,103 @@
 ---
-title: Plugin Intro
+title: Введение в плагины
 icon: info
 order: 1
 category:
-  - Config
+  - Конфиг
 tag:
-  - Intro
-  - Plugin Config
-  - Theme Config
+  - Введение
+  - Конфигурация плагина
+  - Конфиг темы
 ---
 
-`vuepress-theme-hope` bundles many VuePress plugins.
+`vuepress-theme-hope` объединяет множество плагинов VuePress.
 
-- Some plugins are automatically enabled, you can disable them in theme options if you don’t need them.
-- Some plugins are only enabled when you provide necessary options.
+- Некоторые плагины включаются автоматически, вы можете отключить их в настройках темы, если они вам не нужны.
+- Некоторые плагины включаются только тогда, когда вы указываете необходимые параметры.
 
 ::: note
 
-As a member of [VuePress Org](https://github.com/orgs/vuepress/people), Mr. Hope has developed many VuePress plugins.
+Как член [VuePress Org](https://github.com/orgs/vuepress/people), Mr. Hope разработал множество плагинов VuePress.
 
-All plugins called by `vuepress-theme-hope` are official plugins or plugins developed by Mr. Hope which hosted under the `vuepress-theme-hope` repository.
+Все плагины, называемые `vuepress-theme-hope`, являются официальными плагинами или плагинами, разработанными г-ном Хоупом, которые размещены в репозитории `vuepress-theme-hope`.
 
-- For the documentation of the official plugin, see [VuePress2 official website][vuepress]
-- All plugins developed by Mr.Hope have their own documentation and can be used with other themes.
+- Документацию по официальному плагину см. на [официальном сайте VuePress2][vuepress]
+- Все плагины, разработанные Mr.Hope, имеют собственную документацию и могут использоваться с другими темами.
 
 :::
 
 <!-- more -->
 
-## Plugin Options
+## Опции плагина
 
-The theme provides `plugins` option to pass options to plugins.
+Тема предоставляет опцию `plugins` для передачи параметров плагинам.
 
-::: info Plugin Options Name
+::: info Имя параметров плагина
 
-All key names in `plugins` option are the camelcase version of the plugin name, with the optional number `2` suffix removed.
+Все имена ключей в опции `plugins` представляют собой версию имени плагина в верблюжьем регистре, с удаленным необязательным суффиксом цифры `2`.
 
-For example:
+Например:
 
-- `vuepress-plugin-copy-code2` is controled by key name `copyCode`.
-- `vuepress-plugin-md-enhance2` is controled by key name `mdEnhance`.
+- `vuepress-plugin-copy-code2` управляется именем ключа `copyCode`.
+- `vuepress-plugin-md-enhance2` управляется именем ключа `mdEnhance`.
 
 :::
 
-## Plugin List
+## Список плагинов
 
-### Plugins provided by Mr.Hope
+### Плагины предоставлены Mr.Hope
 
-- [vuepress-plugin-blog2][blog2]: Blog plugin for VuePress2
+- [vuepress-plugin-blog2][blog2]: Плагин блога для VuePress2
 
-- [vuepress-plugin-comment2][comment2]: Provides comment and pageview function
+- [vuepress-plugin-comment2][comment2]: Обеспечивает функцию комментариев и просмотра страниц
 
-- [vuepress-plugin-components][components]: Provides some plugins out of the box
+- [vuepress-plugin-components][components]: Предоставляет некоторые плагины из коробки
 
-- [vuepress-plugin-copy-code2][copy-code2]: Provides one-click copy code block function.
+- [vuepress-plugin-copy-code2][copy-code2]: Обеспечивает функцию блокировки кода копирования одним щелчком мыши.
 
-- [vuepress-plugin-copyright2][copyright2]: Append copyright information when copying or diable copy and selection.
+- [vuepress-plugin-copyright2][copyright2]: Добавление информации об авторских правах при копировании или отключении копирования и выбора.
 
-- [vuepress-plugin-feed2][feed2]: Feed support
+- [vuepress-plugin-feed2][feed2]: Поддержка каналов
 
-- [vuepress-plugin-md-enhance][md-enhance]: Provides more Markdown syntax
+- [vuepress-plugin-md-enhance][md-enhance]: Предоставляет больше синтаксиса Markdown
 
-- [vuepress-plugin-photo-swipe][photo-swipe]: Image preview plugin based on photo-swipe
+- [vuepress-plugin-photo-swipe][photo-swipe]: Плагин предварительного просмотра изображений, основанный на фотопролистывании
 
-- [vuepress-plugin-pwa2][pwa2]: Enhanced PWA support
+- [vuepress-plugin-pwa2][pwa2]: Расширенная поддержка PWA
 
-- [vuepress-plugin-reading-time2][reading-time2]: Reading time and word count
+- [vuepress-plugin-reading-time2][reading-time2]: Время чтения и количество слов
 
-- [vuepress-plugin-redirect][redirect]: Redirect pages
+- [vuepress-plugin-redirect][redirect]: Перенаправления страницы
 
-- [vuepress-plugin-sass-palette][sass-palette]: Sass style plugin for all plugins and themes
+- [vuepress-plugin-sass-palette][sass-palette]: Плагин в стиле Sass для всех плагинов и тем
 
-- [vuepress-plugin-seo2][seo2]: SEO enhancement plugin
+- [vuepress-plugin-seo2][seo2]: Плагин для улучшения SEO
 
-- [vuepress-plugin-sitemap2][sitemap2]: Sitemap plugin
+- [vuepress-plugin-sitemap2][sitemap2]: Плагин карты сайта
 
 ::: tip
 
-Here are some other plugins that are not enabled by default by the theme, you can enable them according to your own needs.
+Вот некоторые другие плагины, которые по умолчанию не включены в тему, вы можете включить их в соответствии со своими потребностями.
 
-- [vuepress-plugin-lightgallery][lightgallery]: Image preview plugin based on lightgallery
+- [vuepress-plugin-lightgallery][lightgallery]: Плагин предварительного просмотра изображений на основе lightgallery
 
 :::
 
-### Official plugin
+### Официальный плагин
 
-- [@vuepress/plugin-active-header-links][active-header-links]: Automatically update route Hash
+- [@vuepress/plugin-active-header-links][active-header-links]: Автоматически обновлять хэш маршрута
 
-- [@vuepress/plugin-container][container]: custom container
+- [@vuepress/plugin-container][container]: Пользовательский контейнер
 
-- [@vuepress/external-link-icon][external-link-icon]: Add external link icon for external links in Markdown.
+- [@vuepress/external-link-icon][external-link-icon]: Добавить значок внешней ссылки для внешних ссылок в Markdown
 
-- [@vuepress/plugin-git][git]: Git-based info plugin
+- [@vuepress/plugin-git][git]: Информационный плагин на основе Git
 
-- [@vuepress/plugin-nprogress][nprogress]: progress bar
+- [@vuepress/plugin-nprogress][nprogress]: Индикатор
 
-- [@vuepress/plugin-prismjs][prismjs]: Code highlighting plugin using Prism.js
+- [@vuepress/plugin-prismjs][prismjs]: Плагин подсветки кода с использованием Prism.js
 
-- [@vuepress/plugin-theme-data][theme-data]: Composition API plugin for theme data
+- [@vuepress/plugin-theme-data][theme-data]: Плагин Composition API для данных темы
 
 [blog2]: https://vuepress-theme-hope.github.io/v2/blog/
 [comment2]: https://vuepress-theme-hope.github.io/v2/comment/

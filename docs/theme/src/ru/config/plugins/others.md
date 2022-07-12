@@ -1,17 +1,17 @@
 ---
-title: Other Plugin Config
+title: Конфиг других плагинов
 icon: more
 order: 8
 category:
-  - Config
+  - Конфиг
 tag:
-  - Plugin Config
-  - Theme Config
+  - Конфигурация плагина
+  - Конфиг темы
 ---
 
 ## components
 
-Register components which can be used in Markdown files, available component names are:
+Зарегистрируйте компоненты, которые можно использовать в файлах Markdown, доступные имена компонентов:
 
 - `"Badge"`
 - `"CodePen"`
@@ -20,100 +20,100 @@ Register components which can be used in Markdown files, available component nam
 - `"StackBlitz"`
 - `"YouTube"`
 
-You can set `plugin.components` with an array of components you want, by default it will be `["Badge"]`.
+Вы можете установить `plugin.components` с массивом компонентов, которые вы хотите, по умолчанию это будет `["Badge"]`.
 
-## copyCode <Badge text="enabled by default" />
+## copyCode <Badge text="включено по умолчанию" />
 
-Controls `vuepress-plugin-copy-code2`, providing a code copy button.
+Управляет `vuepress-plugin-copy-code2`, предоставляя кнопку копирования кода.
 
-By default, no config is required. If you don’t need this feature, please set to `false`.
+По умолчанию никаких настроек не требуется. Если вам не нужна эта функция, установите значение `false`.
 
 ::: info
 
-For plugin options, please refer to [copy-code2 plugin options][copy-code-config].
+Параметры плагина см. в разделе [параметры плагина copy-code2][copy-code-config].
 
 :::
 
 ## git <Badge text="enabled in production" />
 
-Controls `@vuepress/plugin-git` to provide file information via Git commit history.
+Управляет `@vuepress/plugin-git` для предоставления информации о файле через историю коммитов Git.
 
-By default, it is only enabled in build mode to improve development server performance. You can manually set a boolean to control the plugin state, or provide plugin options.
-
-::: info
-
-See [git plugin options][git-config] for plugin options.
-
-:::
-
-## nprogress <Badge text="enabled by default" />
-
-Controls `@vuepress/plugin-nprogress` and provides a progress bar when switching pages through nprogress.
-
-By default, the theme will enable this plugin, you can set `false` to disable it.
-
-## prismjs <Badge text="enabled by default" />
-
-Controls `@vuepress/plugin-prismjs` to provide code block highlighting via PrismJS.
-
-By default, the theme will enable this plugin, you can set `false` to disable it and highlight code blocks yourself.
+По умолчанию он включен только в режиме сборки для повышения производительности сервера разработки. Вы можете вручную установить логическое значение для управления состоянием плагина или указать параметры плагина.
 
 ::: info
 
-See [prismjs plugin options][prismjs-config] for plugin options.
+Смотрите [Параметры плагина git][git-config] для опций плагина.
 
 :::
 
-## photoSwipe <Badge text="enabled by default" />
+## nprogress <Badge text="включено по умолчанию" />
 
-Controls `vuepress-plugin-photo-swipe`, providing picture browsing function.
+Управляет `@vuepress/plugin-nprogress` и предоставляет индикатор выполнения при переключении страниц через nprogress.
 
-By default, no config is required. If you don’t need this feature, please set to `false`.
+По умолчанию тема включает этот плагин, вы можете установить `false`, чтобы отключить его.
+
+## prismjs <Badge text="включено по умолчанию" />
+
+Управляет `@vuepress/plugin-prismjs`, чтобы обеспечить подсветку блока кода через PrismJS.
+
+По умолчанию тема включает этот плагин, вы можете установить `false`, чтобы отключить его и самостоятельно выделять блоки кода.
 
 ::: info
 
-For plugin options, please refer to [photo-swipe plugin options][photo-swipe-config].
+Смотрите [Параметры плагина prismjs][prismjs-config] для опций плагина.
 
 :::
 
-## readingTime <Badge text="enabled by default" />
+## photoSwipe <Badge text="включено по умолчанию" />
 
-Controls `vuepress-plugin-reading-time2`, providing word count for a page and generate an estimated reading time.
+Управляет `vuepress-plugin-photo-swipe`, обеспечивая функцию просмотра изображений.
+
+По умолчанию никаких настроек не требуется. Если вам не нужна эта функция, установите значение `false`.
+
+::: info
+
+Параметры плагина смотрите в разделе [параметры плагина photo-swipe][photo-swipe-config].
+
+:::
+
+## readingTime <Badge text="включено по умолчанию" />
+
+Управляет `vuepress-plugin-reading-time2`, подсчитывая количество слов на странице и генерируя расчетное время чтения.
 
 ### readingTime.wordPerMinute
 
-- Type: `number`
-- Default: `300`
+- Тип: `number`
+- По умолчанию: `300`
 
-Words read per minute.
+Слов, прочитанных за минуту.
 
 ::: info
 
-For more plugin options, see [reading-time2 plugin docs][reading-time].
+Дополнительные параметры плагина смотрите в [документации плагина reading-time2][reading-time].
 
 :::
 
-## seo <Badge text="enabled by default" />
+## seo <Badge text="включено по умолчанию" />
 
-Controls `vuepress-plugin-seo2`, providing search engine enhancements.
+Управляет `vuepress-plugin-seo2`, обеспечивая улучшения поисковой системы.
 
-By default, no config is required. If you don’t need this feature, please set to `false`.
+По умолчанию никаких настроек не требуется. Если вам не нужна эта функция, установите значение `false`.
 
 ::: info
 
-For plugin config, see [seo2 plugin options][seo-config].
+Конфигурацию плагина см. в разделе [параметры плагина seo2][seo-config].
 
 :::
 
-## sitemap <Badge text="enabled by default" />
+## sitemap <Badge text="включено по умолчанию" />
 
-Controls `vuepress-plugin-seo2`, providing automatically Sitemap generation.
+Управляет `vuepress-plugin-seo2`, обеспечивая автоматическое создание карты сайта.
 
-By default, no config is required. If you don’t need this feature, please set to `false`.
+По умолчанию никаких настроек не требуется. Если вам не нужна эта функция, установите значение `false`.
 
 ::: info
 
-For plugin config, please refer to [sitemap2 plugin options][sitemap-config].
+Конфигурацию плагина смотрите в разделе [параметры плагина sitemap2][sitemap-config].
 
 :::
 

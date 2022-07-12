@@ -1,77 +1,77 @@
 ---
-title: Copyright Plugin Config
+title: Конфиг плагина авторского права
 icon: copyright
 order: 4
 category:
-  - Config
+  - Конфиг
 tag:
-  - Copyright
-  - Plugin Config
-  - Theme Config
+  - Авторские права
+  - Конфигурация плагина
+  - Конфиг темы
 ---
 
-## Intro
+## Введение
 
-The `vuepress-plugin-copyright2` plugin can append copyright information when users copy content from your site. Also, you can disable site copy or selection with this plugin.
+Плагин `vuepress-plugin-copyright2` может добавлять информацию об авторских правах, когда пользователи копируют контент с вашего сайта. Кроме того, вы можете отключить копирование или выбор сайта с помощью этого плагина.
 
-This plugin is disabled by default.
+Этот плагин по умолчанию отключен.
 
-`vuepress-theme-hope` passes `plugins.copyright` in theme options as plugin options to `vuepress-plugin-copyright2` plugin.
+`vuepress-theme-hope` передает `plugins.copyright` в параметрах темы в качестве параметров плагина для плагина `vuepress-plugin-copyright2`.
 
-## Plugin Options
+## Опции плагина
 
 ### hostname
 
-- Type: `string`
-- Required: No
+- Тип: `string`
+- Обязательный: Нет
 
-Deploy hostname
+Деплой hostname
 
 ### author
 
-- Type: `string | ((page: Page) => string)`
-- Required: No
+- Тип: `string | ((page: Page) => string)`
+- Обязательный: Нет
 
-Author Information
+Информация об авторе
 
 ### license
 
-- Type: `string | ((page: Page) => string)`
-- Required: No
+- Тип: `string | ((page: Page) => string)`
+- Обязательный: Нет
 
-License Information
+Информация о лицензии
 
 ### triggerWords
 
-- Type: `number`
-- Default: `100`
+- Тип: `number`
+- По умолчанию: `100`
 
-Min words triggering copyright append
+Минимальные слова, вызывающие добавление авторских прав
 
 ### global
 
-- Type: `boolean`
-- Default: `false`
+- Тип: `boolean`
+- По умолчанию: `false`
 
-Whether enabled globally
+Включено ли глобально
 
 ### disableCopy
 
-- Type: `boolean`
-- Default: `false`
+- Тип: `boolean`
+- По умолчанию: `false`
 
-Disable copy
+Отключить копирование
 
 ### disableSelection
 
-- Type: `boolean`
-- Default: `false`
+- Тип: `boolean`
+- По умолчанию: `false`
 
-Disable selection
+Отключить выбор
 
 ### locales
 
-- Type: `CopyrightLocaleConfig`
+- Тип: `CopyrightLocaleConfig`
 
   ```ts
   interface CopyrightLocaleData {
@@ -102,6 +102,6 @@ Disable selection
   }
   ```
 
-- Required: No
+- Обязательный: Нет
 
-Locale config for copyright plugin.
+Конфигурация локали для плагина авторских прав.
