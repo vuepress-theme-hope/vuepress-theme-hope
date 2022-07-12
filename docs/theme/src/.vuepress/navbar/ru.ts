@@ -16,9 +16,9 @@ export const ruNavbarConfig = navbar([
     icon: "info",
     prefix: "/ru/",
     children: [
-      "/changelog",
-      "/demo",
-      "/contribution",
+      "changelog",
+      "demo",
+      "contribution",
       {
         text: "Plugins",
         icon: "plugin",
