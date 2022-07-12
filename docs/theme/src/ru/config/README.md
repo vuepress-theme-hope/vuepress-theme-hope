@@ -1,32 +1,32 @@
 ---
-title: Config
+title: Конфиг
 icon: config
 index: false
 category:
-  - Config
+  - Конфиг
 tag:
-  - Config
+  - Конфиг
 ---
 
-## Config Intro
+## Введение в конфигурацию
 
-- [View Details](intro.md)
+- [Посмотреть детали](intro.md)
 
-## I18n Support
+## Поддержка I18n
 
-- [View Details](i18n.md)
+- [Посмотреть детали](i18n.md)
 
-## Theme Config
+## Конфиг темы
 
-- [Theme Basic Config](theme/basic.md)
+- [Базовая конфигурация темы](theme/basic.md)
 
-- [Theme Feature Config](theme/feature.md)
+- [Конфигурация функции темы](theme/feature.md)
 
-- [Theme Layout Config](theme/layout.md)
+- [Конфигурация макета темы](theme/layout.md)
 
-- [Theme Appearance Config](theme/appearance.md)
+- [Настройка внешнего вида темы](theme/appearance.md)
 
-## Plugins Config
+## Конфиг плагинов
 
 - [Theme Plugins Intro](plugins/intro.md)
 
@@ -40,7 +40,7 @@ tag:
 
 - [Other Plugins](plugins/others.md)
 
-## Frontmatter Config
+## Конфиг Frontmatter
 
 - [Information Frontmatter Config](frontmatter/info.md)
 
@@ -48,6 +48,6 @@ tag:
 
 - [Plugin Frontmatter Config](frontmatter/plugins.md)
 
-## Style Config
+## Конфиг стиля
 
-- [Style config](style.md)
+- [Конфиг стиля](style.md)

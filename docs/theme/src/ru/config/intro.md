@@ -1,30 +1,30 @@
 ---
-title: Config Intro
+title: Введение в конфиг
 icon: config
 order: 1
 category:
-  - Config
+  - Конфиг
 tag:
-  - Intro
+  - Введение
 ---
 
-## Config Concepts
+## Концепции конфигурации
 
-VuePress mainly stores config and required files through the `.vuepress/` folder in the directory.
+VuePress в основном хранит конфигурацию и необходимые файлы в папке `.vuepress/` в каталоге.
 
 ::: info
 
-For the file structure of VuePress, see [VuePress Basics → File Structure](../cookbook/vuepress/file.md).
+Файловую структуру VuePress см. в разделе [Основы VuePress → Структура файла](../cookbook/vuepress/file.md).
 
 :::
 
-In VuePress, there are three config concepts:
+В VuePress есть три концепции конфигурации:
 
-- Site Config: this is the object you export directly in the config file
-- Theme Config: options passed to `hopeTheme` function
-- Page Config: provided by Frontmatter at the top of the page based on YAML syntax
+- Конфигурация сайта: это объект, который вы экспортируете непосредственно в файл конфигурации
+- Конфиг темы: параметры, переданные в функцию `hopeTheme`
+- Конфигурация страницы: предоставляется Frontmatter в верхней части страницы на основе синтаксиса YAML
 
-## Theme Usage
+## Использование темы
 
 ::: code-tabs#language
 

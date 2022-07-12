@@ -1,25 +1,25 @@
 ---
-title: Style config
+title: Конфиг стиля
 icon: style
 order: 6
 category:
-  - Config
+  - Конфиг
 tag:
-  - Theme Config
-  - Style
+  - Конфиг темы
+  - Стиль
 ---
 
-You can change the theme’s styles in `.vuepress/styles` by setting variable values in the `config.scss` and `palette.scss` files.
+Вы можете изменить стили темы в `.vuepress/styles`, установив значения переменных в файлах `config.scss` и `palette.scss`.
 
-Also you can add your own styles in `.vuepress/styles/index.scss`.
+Также вы можете добавить свои собственные стили в `.vuepress/styles/index.scss`.
 
 <!-- more -->
 
 ## config.scss
 
-`config.scss` is used for pure variable config, the following are supported variables and default values.
+`config.scss` используется для чистой конфигурации переменных, ниже перечислены поддерживаемые переменные и значения по умолчанию.
 
-Responsive breakpoints:
+Отзывчивые контрольные точки:
 
 - `$pc`
 - `$laptop`
@@ -27,17 +27,17 @@ Responsive breakpoints:
 - `$tablet`
 - `$mobile`
 
-Code block:
+Блок кода:
 
-- `$code-light-theme`: code block theme in lightmode
-- `$code-dark-theme`: code block theme in darkmode
-- `$code-lang`: code block languages
+- `$code-light-theme`: тема блока кода в светлом режиме
+- `$code-dark-theme`: тема блока кода в темном режиме
+- `$code-lang`: языки блоков кода
 
-Content class: `$content-class`
+Класс контента: `$content-class`
 
-Color list: `$colors`
+Список цветов: `$colors`
 
-::: details Demo
+::: details Демо
 
 ```scss
 // modify code theme in lightmode
@@ -49,7 +49,7 @@ $pc: 1920px;
 
 :::
 
-::: details Default value
+::: details Значение по умолчанию
 
 @[code{7-}](../../../../packages/theme/templates/config.scss)
 
@@ -57,36 +57,36 @@ $pc: 1920px;
 
 ## palette.scss
 
-`palette.scss` is used for CSS variable injecting, the following are supported configurations and default values.
+`palette.scss` используется для вставки переменных CSS, ниже приведены поддерживаемые конфигурации и значения по умолчанию.
 
 ::: info
 
-All variables here (including your newly added variables) will be converted to kebab-case format and injected as CSS variables.
+Все переменные здесь (включая недавно добавленные переменные) будут преобразованы в формат kebab-case и введены как переменные CSS.
 
-For example `$theme-color` will be injected as `--theme-color`, and `$backgroundColor` will be injected as `--$background-color`.
+Например, `$theme-color` будет введено как `--theme-color`, а `$backgroundColor` будет введено как `--$background-color`.
 
 :::
 
-### Color Config
+### Конфигурация цвета
 
-For all colors, if they are the same in light mode and dark mode, you can set them directly; otherwise, please set a Sass variable of type Map to give the color values in light and dark modes respectively.
+Для всех цветов, если они одинаковы в светлом и темном режимах, вы можете установить их напрямую; в противном случае установите переменную Sass типа Map, чтобы задать значения цвета в светлом и темном режимах соответственно.
 
-Available color variables:
+Доступные цветовые переменные:
 
-- `$theme-color`: theme color
-- `$text-color`: text color
-- `$bg-color`: background color
-- `$bg-color-light`: lighter background color
-- `$bg-color-active`: background color using on active elements
-- `$bg-color-back`: background color using on mask or background elements
-- `$bg-color-float`: float background color using on floating elements
-- `$bg-color-blur`: background color using on blur elements
-- `$bg-color-float-blur`: background color using on floating blur elements
-- `$border-color`: border color
-- `$box-shadow`: shadow color using on elements
-- `$card-shadow`: shadow color using on cards
+- `$theme-color`: цвет темы
+- `$text-color`: цвет текста
+- `$bg-color`: цвет фона
+- `$bg-color-light`: более светлый цвет фона
+- `$bg-color-active`: цвет фона для активных элементов
+- `$bg-color-back`: цвет фона, используемый на маске или элементах фона
+- `$bg-color-float`: плавающий цвет фона, используемый для плавающих элементов
+- `$bg-color-blur`: цвет фона, используемый для элементов размытия
+- `$bg-color-float-blur`: цвет фона, используемый для плавающих элементов размытия
+- `$border-color`: цвет границы
+- `$box-shadow`: использование цвета тени для элементов
+- `$card-shadow`: использование цвета тени на картах
 
-::: details Demo
+::: details Демо
 
 ```scss
 // set theme color to red
@@ -101,51 +101,51 @@ $border-color: (
 
 :::
 
-::: details Default value
+::: details Значение по умолчанию
 
 @[code{4-60}](../../../../packages/theme/templates/color.scss)
 
 :::
 
-### Layout Config
+### Конфигурация макета
 
-Available layout variables:
+Доступные переменные макета:
 
-Navbar:
+Панель навигации:
 
-- `$navbar-height`: navbar height
-- `$navbar-horizontal-padding`: navbar horizontal padding
-- `$navbar-vertical-padding`: navbar vertical padding
-- `$navbar-mobile-height`: navbar height on mobile devices
-- `$navbar-mobile-horizontal-padding`: navbar horizontal padding on mobile
-- `$navbar-mobile-vertical-padding`: navbar vertical padding on mobile
+- `$navbar-height`: высота панели навигации
+- `$navbar-horizontal-padding`: горизонтальное заполнение навигационной панели
+- `$navbar-vertical-padding`: вертикальное заполнение навигационной панели
+- `$navbar-mobile-height`: высота панели навигации на мобильных устройствах
+- `$navbar-mobile-horizontal-padding`: горизонтальное заполнение панели навигации на мобильных устройствах
+- `$navbar-mobile-vertical-padding`: вертикальное заполнение панели навигации на мобильных устройствах
 
-Sidebar:
+Боковая панель:
 
-- `$sidebar-width`: sidebar width
-- `$sidebar-mobile-width`: sidebar width on mobile
+- `$sidebar-width`: ширина боковой панели
+- `$sidebar-mobile-width`: ширина боковой панели на мобильных устройствах
 
-Content:
+Содержание:
 
-- `$content-width`: width of main content
-- `$home-page-width`: width of homepage content
+- `$content-width`: ширина основного содержимого
+- `$home-page-width`: ширина содержимого главной страницы
 
-Fonts:
+Шрифты:
 
-- `$font-family`: font family used on normal text
-- `$font-family-fancy:` font family used on fancy elements
+- `$font-family`: семейство шрифтов, используемое для обычного текста
+- `$font-family-fancy:` семейство шрифтов, используемое в причудливых элементах
 
-Code:
+Код:
 
-- `$font-family-code`: font family used on code
-- `$line-numbers-width`: width of line number in code blocks
+- `$font-family-code`: семейство шрифтов, используемое в коде
+- `$line-numbers-width`: ширина номера строки в кодовых блоках
 
-Transition:
+Переход:
 
-- `$color-transition`: transition used on colors
-- `$transform-transition`: transition used on transform animation
+- `$color-transition`: переход, используемый для цветов
+- `$transform-transition`: переход, используемый при анимации преобразования
 
-::: details Demo
+::: details Демо
 
 ```scss
 // update navbar height on mobile
@@ -157,7 +157,7 @@ $font-family: 'Georgia, -apple-system, "Nimbus Roman No9 L", "PingFang SC", "Hir
 
 :::
 
-::: details Default value
+::: details Значение по умолчанию
 
 @[code](../../../../packages/theme/templates/layout.scss)
 
@@ -165,11 +165,11 @@ $font-family: 'Georgia, -apple-system, "Nimbus Roman No9 L", "PingFang SC", "Hir
 
 ## index.scss
 
-Everything filling in this will be parsed to standard CSS and then injected after theme and plugins styles.
+Все, что заполняет это, будет проанализировано до стандартного CSS, а затем вставлено после стилей темы и плагинов.
 
-So you can add new styles or override styles here:
+Таким образом, вы можете добавить новые стили или переопределить стили здесь:
 
-::: details Demo
+::: details Демо
 
 ```scss
 // make site name in navbar italic
