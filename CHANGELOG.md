@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.86](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.85...v2.0.0-beta.86) (2022-07-12)
+
+### Features
+
+- **components:** improve ssr result ([ed80183](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ed80183ddbcbde8c87bbedfa5b6c1039d018ad6f))
+
 ## [2.0.0-beta.85](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.84...v2.0.0-beta.85) (2022-07-09)
 
 ### Features
