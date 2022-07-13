@@ -5,62 +5,62 @@ category:
   - FAQ
 ---
 
-Frequency asked questions and corresponding solutions using the theme are included here.
+Сюда включены часто задаваемые вопросы и соответствующие решения с использованием темы.
 
-## Catalog
+## Каталог
 
-- [Troubleshooting](troubleshooting.md)
+- [Исправление проблем](troubleshooting.md)
 
-- [Common Errors](common-error.md)
+- [Распространенные ошибки](common-error.md)
 
-- [Vite Problems](vite.md)
+- [Проблемы с Vite](vite.md)
 
-- [Safari Problems](safari.md)
+- [Проблемы с Safari](safari.md)
 
-## Contact Us
+## Свяжитесь с нами
 
-Before contacting us, please make sure to check your project according to [Troubleshooting](troubleshooting.md).
+Прежде чем связаться с нами, обязательно проверьте свой проект в соответствии с [Устранение неполадок](troubleshooting.md).
 
-### Report a Problem
+### Сообщить о проблеме
 
-If you are sure there is an issue somewhere, please [open an issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/new/choose) on GitHub and point out the specifics of the issue.
+Если вы уверены, что где-то есть проблема, пожалуйста, [откройте issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/new/choose) на GitHub и укажите особенности вопроса.
 
-If necessary, provide a minimal reproduction Repo[^minimal-reproduction-repo] link.
+При необходимости предоставьте ссылку на репозиторий с минимальным воспроизведением [^minimal-reproduction-repo].
 
-[^minimal-reproduction-repo]: The basic idea of a minimal reproduction is to use the least amount of both code and config to trigger missing or wrong behavior. Having a minimal reproduction makes it easier for the developers to see where the bug or missing feature is, and to verify that the new code satisfies requirements.
+[^minimal-reproduction-repo]: Основная идея минимального воспроизведения состоит в том, чтобы использовать наименьшее количество кода и конфигурации для запуска отсутствующего или неправильного поведения. Наличие минимального воспроизведения облегчает разработчикам поиск ошибок или отсутствующих функций, а также проверку соответствия нового кода требованиям.
 
-## Getting Help
+## Получить помощь
 
-::: warning Theme and Plugins in repo only
+::: warning Тема и плагины только в репозитории
 
-- If you have questions about learning and using Vue, TypeScript, Sass, or you don't know how to write what you want, you may want to ask questions on the Vue forums, Stack Overflow, etc.
+- Если у вас есть вопросы об изучении и использовании Vue, TypeScript, Sass или вы не знаете, как писать то, что хотите, вы можете задать вопросы на форумах Vue, Stack Overflow и т. д.
 
-- If you have questions about VuePress, please [open a new discussion](https://github.com/vuepress/vuepress-next/discussions/new) in VuePress repo, as a member of the VuePress team, Mr.Hope will try to answer in his spare time.
+- Если у вас есть вопросы о VuePress, [откройте новое обсуждение](https://github.com/vuepress/vuepress-next/discussions/new) в репозитории VuePress, как член команды VuePress, Mr.Hope, постараюсь ответить в свободное время.
 
-Please only start discussions about the VuePress Theme Hope and plugins written by Mr.Hope in theme repository.
+Пожалуйста, начинайте обсуждение VuePress Theme Hope и плагинов, написанных Mr.Hope, только в репозитории тем.
 
 :::
 
-- If you ran into some issues, please [open a discussion](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions/new) on GitHub with:
+- Если вы столкнулись с некоторыми проблемами, [откройте обсуждение](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions/new) на GitHub с помощью:
 
-  - full log running `vuepress dev [docs-dir] --debug`
-  - error screenshot in browser console (if there are errors)
-  - if your problem is related to display, please also provide related screenshots.
+  - полный журнал работы `vuepress dev [docs-dir] --debug`
+  - скриншот ошибки в консоли браузера (если есть ошибки)
+  - если ваша проблема связана с отображением, также предоставьте соответствующие скриншоты.
 
-- If there is something you don’t know how to solve, welcome to [open a discussion](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions/new). Questions are always welcome, no matter **they are simple or not**. You only need to make sure three points:
+- Если есть что-то, что вы не знаете, как решить, добро пожаловать в [открытие обсуждения](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions/new). Вопросы всегда приветствуются, независимо от того, **просты они или нет**. Вам нужно только убедиться в трех пунктах:
 
-  1. You have tried searching related docs through search box.
+  1. Вы пытались выполнить поиск связанной документации с помощью окна поиска.
 
-  1. You are providing a detailed description in the discussion.
+  1. Вы предоставляете подробное описание в обсуждении.
 
-     - If you don’t know how to configure something, please describe what you want, and what you search or what section are you expecting to see the guidelines (so that we can improve our docs).
+     - Если вы не знаете, как что-то настроить, опишите, что вы хотите, что вы ищете или в каком разделе вы ожидаете увидеть рекомендации (чтобы мы могли улучшить нашу документацию).
 
-  1. You are not asking question unrelated to VuePress or asking for a "technical support".
+  1. Вы не задаете вопрос, не связанный с VuePress, или просите «техническую поддержку».
 
-     For customization, we only support "how can you customize something (in which way)". "How to customize something" (what you should write in your own codes) is NOT SUPPORTED. Unless you are donating this project, please do not insist asking help for that part.
+     Для настройки мы поддерживаем только «как вы можете настроить что-то (каким образом)». "Как что-то настроить" (что вы должны написать в своих собственных кодах) НЕ ПОДДЕРЖИВАЕТСЯ. Если вы не жертвуете этот проект, пожалуйста, не настаивайте на помощи в этой части.
 
-     Mr.Hope is a postgraduate student majored in theoretical physics, and really busy. He is not expecting to "be a doc provider" or "teach you how to write code".
+     Mr.Hope учится в аспирантуре по специальности теоретическая физика и очень занят. Он не собирается «быть поставщиком документации» или «учить вас писать код».
 
-## Social Group
+## Социальная группа
 
-- [Telegram Group](https://t.me/vuepressthemehope)
+- [Группа в Телеграмм](https://t.me/vuepressthemehope)

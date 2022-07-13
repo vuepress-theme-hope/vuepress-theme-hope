@@ -1,5 +1,5 @@
 ---
-title: Common Errors
+title: Распространенные ошибки
 icon: warn
 category:
   - FAQ
@@ -7,45 +7,45 @@ category:
 
 ## `TypeError: Invalid value used as weak map key`
 
-If you are facing error like this, you are probably using non-standard tags in your project.
+Если вы столкнулись с такой ошибкой, вероятно, вы используете нестандартные теги в своем проекте.
 
-There are tags like `<center>` or `<font>`, which is in HTML1.0 spec, but marked as unrecommended since HTML4.0 released in 1999, then removed in HTML5 release in 2008. So Vue is not allowing you to use them by default. You should probably remove them and use standard HTML5 tag.
+Существуют такие теги, как `<center>` или `<font>`, которые есть в спецификации HTML1.0, но помечены как нерекомендуемые с тех пор, как HTML4.0 был выпущен в 1999 году, а затем удален в выпуске HTML5 в 2008 году. Так что Vue не позволяет вам использовать их по умолчанию. Вероятно, вам следует удалить их и использовать стандартный тег HTML5.
 
-To remove them, run theme with `--debug` flag, and you will get warning logs telling you tags that probably not be recognized.
+Чтобы удалить их, запустите тему с флагом `--debug`, и вы получите журналы предупреждений, сообщающие вам о тегах, которые, вероятно, не распознаются.
 
-To use them anyway, check [here](https://v2.vuepress.vuejs.org/guide/markdown.html#non-standard-html-tags) to get a workaround.
+Чтобы использовать их в любом случае, проверьте [здесь](https://v2.vuepress.vuejs.org/guide/markdown.html#non-standard-html-tags), чтобы найти обходной путь.
 
 ## `Hydration completed but contains mismatches.`
 
-This error indicates that you have an SSR mismatch, and it should not be a problem with theme.
+Эта ошибка указывает на несоответствие SSR, и это не должно быть проблемой с темой.
 
-Please check if you are using CloudFlare related services first, if so, make sure you turn off static resource compression. Visit [dash.cloudflare.com](https://dash.cloudflare.com), go to Websites → `YOUR_DOMAIN` → Speed → Optimization, turn `JavaScript` and `HTML` off in `Auto Minify` options.
+Сначала проверьте, используете ли вы сервисы, связанные с CloudFlare, и если да, обязательно отключите статическое сжатие ресурсов. Посетите [dash.cloudflare.com](https://dash.cloudflare.com), перейдите в раздел Веб-сайты → `YOUR_DOMAIN` → Скорость → Оптимизация, отключите `JavaScript` и `HTML` в параметрах `Auto Minify`.
 
 ::: warning
 
-Auto Minify in CloudFlare incorrectly handle HTML spaces and line breaks, which can cause Vue triggering SSR mismatches during initialization.
+Auto Minify в CloudFlare неправильно обрабатывает пробелы HTML и разрывы строк, что может привести к тому, что Vue вызовет несоответствие SSR во время инициализации.
 
 :::
 
-Also you can check these:
+Также вы можете проверить это:
 
-- If you only encounter this problem on certain pages, please check whether the page has additional components you added.
+- Если вы столкнулись с этой проблемой только на определенных страницах, проверьте, есть ли на странице дополнительные компоненты, которые вы добавили.
 
-  If so, these components are likely to have different rendering results between SSR and the client. You can try to make their behavior consistent, or wrap your components with the `<ClientOnly />` component provided by `@vuepress/client`.
+  Если это так, эти компоненты, вероятно, будут иметь разные результаты рендеринга между SSR и клиентом. Вы можете попытаться сделать их поведение согласованным или обернуть свои компоненты компонентом `<ClientOnly />`, предоставляемым `@vuepress/client`.
 
-- If you have this problem in all pages, please also follow the previous step to check the components you added in the layout or global components.
+- Если у вас есть эта проблема на всех страницах, выполните предыдущий шаг, чтобы проверить компоненты, которые вы добавили в макет, или глобальные компоненты.
 
 ## `xxx isn’t assign with a lang, and will return 'en-US' instead.`
 
-If you see `xxx isn’t assign with a lang, and will return 'en-US' instead.` while the dev process is starting up, please check whether you set lang for every language.
+Если вы видите, что `xxx isn’t assign with a lang, and will return 'en-US' instead.` во время запуска процесса разработки проверьте, установили ли вы язык для каждого языка.
 
-Even if you only have one language, you still need to [set language](../config/i18n.md#setting-language).
+Даже если у вас только один язык, вам все равно нужно [установить язык](../config/i18n.md#setting-language).
 
 ## `useXXX() is called without provider`
 
-Such errors are usually caused by incorrectly containing multiple versions of `@vue/xxx`, `@vuepress/xxx`, `vue` or `vue-router` in the project.
+Такие ошибки обычно возникают из-за неправильного включения в проект нескольких версий `@vue/xxx`, `@vuepress/xxx`, `vue` или `vue-router`.
 
-Make sure you are using the latest `vuepress` and `vuepress-theme-hope` versions:
+Убедитесь, что вы используете последние версии `vuepress` и `vuepress-theme-hope`:
 
 ::: code-tabs#shell
 
@@ -69,7 +69,7 @@ npm i vuepress@next vuepress-theme-hope@next
 
 :::
 
-Also, upgrade dependencies to ensure your project only contains a single version of the relevant package:
+Кроме того, обновите зависимости, чтобы ваш проект содержал только одну версию соответствующего пакета:
 
 ::: code-tabs#shell
 
@@ -93,14 +93,14 @@ npm i && npm update
 
 :::
 
-## Some page settings are invalid
+## Некоторые настройки страницы недействительны
 
-You can first review the documentation to see if the setting **does not support page config**.
+Вы можете сначала просмотреть документацию, чтобы узнать, **не поддерживает ли параметр конфигурацию страницы**.
 
-**Support for page config** means that the theme allows the config of the page to override the global config of the same name (same function), but not all functions meet this setting.
+**Поддержка конфигурации страницы** означает, что тема позволяет конфигурации страницы переопределять глобальную конфигурацию с тем же именем (та же функция), но не все функции соответствуют этому параметру.
 
 ::: tip
 
-You should be aware that some features will not be loaded during the prepare stage when the global setting is disabled, so they cannot be enabled locally.
+Вы должны знать, что некоторые функции не будут загружены на этапе подготовки, когда глобальная настройка отключена, поэтому их нельзя включить локально.
 
 :::

@@ -1,15 +1,15 @@
 ---
-title: Troubleshooting
+title: Исправление проблем
 icon: check
 category:
   - FAQ
 ---
 
-## Ensure using latest version
+## Убедитесь, что используете последнюю версию
 
-Please make sure you are using the latest `vuepress` and `vuepress-theme-hope` V2 version, because some bugs you encountered may have been fixed in new versions.
+Пожалуйста, убедитесь, что вы используете последнюю версию 2 `vuepress` и `vuepress-theme-hope`, потому что некоторые ошибки, с которыми вы столкнулись, могли быть исправлены в новых версиях.
 
-You can update to the latest version by executing the following commands.
+Вы можете обновиться до последней версии, выполнив следующие команды.
 
 ::: code-tabs#shell
 
@@ -33,19 +33,19 @@ npm i vuepress@next vuepress-theme-hope@next
 
 :::
 
-## Ensure Node version
+## Убедитесь в версии Node
 
-`vuepress-theme-hope` only supports LTS version of Node.js, that is, currently, only the latest v14, v16 versions are supported.
+`vuepress-theme-hope` поддерживает только LTS-версию Node.js, то есть в настоящее время поддерживаются только последние версии v14, v16.
 
-You can check its version with `node -v`. If the first digit of the version number does not meet the requirements, please [download and install the LTS version of Node.js](../cookbook/tutorial/env.md#nodejs).
+Вы можете проверить его версию с помощью `node -v`. Если первая цифра номера версии не соответствует требованиям, [загрузите и установите LTS-версию Node.js](../cookbook/tutorial/env.md#nodejs).
 
-## Ensure having correct deps tree
+## Убедитесь, что у вас есть правильное дерево зависимостей
 
-In some cases, you may generate incorrect dependency tree after upgrading some dependencies, this is because both `vuepress` and `vue` consist of many packages named `@vuepress/xxx` and `@vue/xxx` constitute.
+В некоторых случаях вы можете сгенерировать неправильное дерево зависимостей после обновления некоторых зависимостей, потому что и `vuepress` и `vue` состоят из множества пакетов с именами `@vuepress/xxx` и `@vue/xxx`.
 
-For VuePress to work correctly, there should only be one version of `@vuepress/xxx` `@vue/xxx` `vue` and `vue-router` in the whole project. Multiple versions of a package can cause different parts of the application to use different instances of Vue and the corresponding package, resulting in errors like `useXXX() is called without provider`.
+Для правильной работы VuePress во всем проекте должна быть только одна версия `@vuepress/xxx`, `@vue/xxx`, `vue` и `vue-router`. Наличие нескольких версий пакета может привести к тому, что разные части приложения будут использовать разные экземпляры Vue и соответствующий пакет, что приведет к таким ошибкам, как `useXXX() is called without provider`.
 
-Please run the following command to make sure your dependency tree is correct.
+Выполните следующую команду, чтобы убедиться, что ваше дерево зависимостей правильное.
 
 ::: code-tabs#shell
 
@@ -69,14 +69,14 @@ npm i && npm update
 
 :::
 
-::: tip npm version
+::: tip версия npm
 
-If you're using npm, make sure you're using npm v8. You can get the npm version number by running the `npm -v` command.
+Если вы используете npm, убедитесь, что вы используете npm v8. Вы можете получить номер версии npm, выполнив команду `npm -v`.
 
-If the major version number is less than 8 (i.e. the version number is not `8.x.x`), please run the `npm i -g npm` command to update npm to v8 and rerun the above command.
+Если основной номер версии меньше 8 (т. е. номер версии не `8.x.x`), запустите команду `npm i -g npm`, чтобы обновить npm до v8, и повторите приведенную выше команду.
 
 :::
 
-## Ensure having correct config
+## Убедитесь, что у вас правильная конфигурация
 
-Please confirm that there are no errors in your config file (such as red wavy lines), if so, please modify the config file according to the prompts until you correctly configured VuePress and themes.
+Убедитесь, что в вашем файле конфигурации нет ошибок (например, красных волнистых линий), если это так, измените файл конфигурации в соответствии с подсказками, пока вы не настроите VuePress и темы правильно.

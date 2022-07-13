@@ -5,47 +5,47 @@ category:
   - FAQ
 ---
 
-## Slow in a cold boot with Vite
+## Медленная холодная загрузка с помощью Vite
 
-This is the expect behaviour. We are adding more features, which means we have 2× to 8× lines of code comparing with `@vuepress/theme-default` according to the functions you are using. So transpiling and sending the theme and plugins code to broswer is expected to increase from `0.8s - 2s` in `@vuepress/theme-default` to `3s - 10s` (range due to machine performance).
+Это ожидаемое поведение. Мы добавляем больше функций, что означает, что у нас есть от 2 до 8 строк кода по сравнению с `@vuepress/theme-default` в зависимости от используемых вами функций. Таким образом, ожидается, что транспиляция и отправка кода темы и плагинов в браузер увеличится с `0.8s - 2s` в `@vuepress/theme-default` до `3s - 10s` (диапазон зависит от производительности машины).
 
-::: info Tree-shaking burden
+::: info Бремя тряски деревьев
 
-In order to fully support Tree-shaking in functionality and styles, themes and plugins do additional work, including modularization, partial injection, generation of temp files, etc. These extra behaviors ensure that unused feature code is removed at build stage, but it also means that more logic needs to be performed and more fragmented files need to be loaded in development mode.
+Чтобы полностью поддерживать Tree-shaking в функциональности и стилях, темы и плагины выполняют дополнительную работу, включая модульность, частичное внедрение, создание временных файлов и т. д. Эти дополнительные функции обеспечивают удаление неиспользуемого кода функции на этапе сборки, но также означает, что необходимо выполнить больше логики и загрузить больше фрагментированных файлов в режиме разработки.
 
-Dude, you can't expect to have the full power of tree-shaking support and still be extremely fast when the development server starts up, they are contradictory.
-
-:::
-
-::: info style system
-
-In order to make component styles binding with component, we split the styles according to the component hierarchy and imported them in components, which greatly slowed down the speed.
-
-- `@vuepress/theme-default` is placing all the styles together at `styles` folder and importing them entirly, so that `sass` will only need to compile once and vite only need to send 1 extra web request. That’s why it’s fast.
-
-  But this will let style unbinded with components, and they will be injected anyway. So that when you override a component or a layout, you have to override old styles to build styles you want.
-
-- `vuepress-theme-hope` is binding styles with components, but that means `sass` has to compile styles for each component, and vite need to send an extra request for each components. Due to `vuepress-theme-hope` has 2× to 6× components (depending on whether you enable blog featues or not) comparing with `@vuepress/theme-default`, it will take extra time of `2.4s - 4s` for that.
-
-  But, you can easily override a component together with it’s styles in this way.
-
-So, due to the above reasons, `vuepress-theme-hope` will have an average of 4× code and 10× requests comparing with `@vuepress/theme-default`, so the time increasing from `2s` to `10s` is reasonable and expected.
+Чувак, ты не можешь рассчитывать на полную поддержку древовидной структуры и при этом быть очень быстрым при запуске сервера разработки, они противоречивы.
 
 :::
 
-::: tip No effect on HMR and online speed
+::: info система стилей
 
-Don't worry, the above extra overhead mainly exists in code boot. Due to the large size of the unoptimized code in the development environment, the corresponding time will also increase after refreshing.
+Чтобы стили компонентов были привязаны к компоненту, мы разделили стили по иерархии компонентов и импортировали их в компоненты, что сильно замедлило скорость.
 
-- These extra overheads do not affect HMR, so when editing the Markdown file, the page's HMR response can still remain at the 100 ms level.
+- `@vuepress/theme-default` помещает все стили вместе в папку `styles` и полностью их импортирует, так что `sass` нужно будет скомпилировать только один раз, а vite нужно будет отправить только 1 дополнительный веб-запрос. Вот почему это быстро.
 
-- Unused code twill be removed during the build phase with well design, so the production environment usually only adds additional 200 KB - 500 KB size in JS entry comparing the default theme and about 100 ms of extra script execution time, so the online impact is very small.
+  Но это позволит отвязать стиль от компонентов, и они все равно будут внедрены. Таким образом, когда вы переопределяете компонент или макет, вам нужно переопределять старые стили для создания нужных стилей.
+
+- `vuepress-theme-hope` связывает стили с компонентами, но это означает, что `sass` должен компилировать стили для каждого компонента, а vite должен отправлять дополнительный запрос для каждого компонента. Из-за того, что `vuepress-theme-hope` имеет от 2 до 6 компонентов (в зависимости от того, активируете ли вы функции блога или нет), по сравнению с `@vuepress/theme-default` это займет дополнительное время `2.4s - 4s` для этого.
+
+  Но таким образом вы можете легко переопределить компонент вместе с его стилями.
+
+Таким образом, по вышеуказанным причинам у `vuepress-theme-hope` будет в среднем в 4 раза больше кода и в 10 раз больше запросов по сравнению с `@vuepress/theme-default`, поэтому время увеличивается с `2s` до `10s` разумно и ожидаемо.
 
 :::
 
-## `@import()` in CSS does not work
+::: tip Не влияет на HMR и скорость онлайн
 
-In VuePress2, importing web CSS via `@import` in `index.scss` has no effect. You may need to manually import it in the `head` option of your VuePress configuration.
+Не волнуйтесь, вышеуказанные дополнительные накладные расходы в основном возникают при загрузке кода. Из-за большого размера неоптимизированного кода в среде разработки соответствующее время после обновления также увеличится.
+
+- Эти дополнительные накладные расходы не влияют на HMR, поэтому при редактировании файла Markdown ответ HMR страницы может оставаться на уровне 100 мс.
+
+- Неиспользуемый код будет удален на этапе сборки при проектировании скважины, поэтому производственная среда обычно добавляет только дополнительные 200–500 КБ размера в запись JS по сравнению с темой по умолчанию и около 100 мс дополнительного времени выполнения скрипта, поэтому влияние онлайн очень маленький.
+
+:::
+
+## `@import()` в CSS не работает
+
+В VuePress2 импорт веб-CSS через `@import` в `index.scss` не имеет никакого эффекта. Возможно, вам придется вручную импортировать его в параметр `head` вашей конфигурации VuePress.
 
 <!-- ```js 5-13}
 import { defineUserConfig } from "vuepress";
@@ -109,15 +109,15 @@ module.exports = {
 
 :::
 
-::: info Reason
+::: info Причина
 
-1. CSS imported via `@import` in Sass will be compiled into standard CSS `@import` syntax.
-1. The CSS `@import` syntax only works at the top of css file.
-1. To give user styles a higher priority, we will import user styles after theme and plugin styles.
-1. During vite builds VuePress2 app, all styles are compressed into a single CSS file.
+1. CSS, импортированный через `@import` в Sass, будет скомпилирован в стандартный синтаксис CSS `@import`.
+1. Синтаксис CSS `@import` работает только в верхней части файла css.
+1. Чтобы придать пользовательским стилям более высокий приоритет, мы будем импортировать пользовательские стили после стилей темы и плагинов.
+1. Во время сборки приложения VuePress2 все стили сжимаются в один файл CSS.
 
-The above results in the user’s CSS `@import` imports in Sass appearing in the middle of the final CSS file and thus invalid.
+Вышеприведенное приводит к тому, что пользовательский импорт CSS `@import` в Sass появляется в середине окончательного файла CSS и, следовательно, недействителен.
 
-The default theme also has the same problem, and this cannot be fixed on the theme side.
+Тема по умолчанию также имеет ту же проблему, и это не может быть исправлено на стороне темы.
 
 :::
