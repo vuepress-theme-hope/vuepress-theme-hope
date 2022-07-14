@@ -9,7 +9,7 @@ import {
   noopModule,
 } from "vuepress-shared";
 
-import { covertOptions } from "./compact";
+import { convertOptions } from "./compact";
 import { walineLocales } from "./locales";
 import { logger } from "./utils";
 
@@ -22,7 +22,7 @@ export const commentPlugin =
   (app) => {
     // TODO: Remove this in V2
     if (legacy)
-      covertOptions(options as CommentOptions & Record<string, unknown>);
+      convertOptions(options as CommentOptions & Record<string, unknown>);
     if (app.env.isDebug) logger.info(`Options: ${options.toString()}`);
 
     const provider =

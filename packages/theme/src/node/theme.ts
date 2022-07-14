@@ -3,7 +3,7 @@ import { path } from "@vuepress/utils";
 import { resolveAlias } from "./alias";
 import { updateBundlerConfig } from "./bundler";
 import { extendsPage } from "./extendsPage";
-import { checkStyle, covertFrontmatter, covertThemeConfig } from "./compact";
+import { checkStyle, convertFrontmatter, convertThemeConfig } from "./compact";
 import { getLayoutConfig } from "./layout";
 import { getPluginConfig, usePlugin } from "./plugins";
 import {
@@ -35,7 +35,9 @@ export const hopeTheme =
       backToTop,
       ...themeOptions
     } = legacy
-      ? covertThemeConfig(options as HopeThemeOptions & Record<string, unknown>)
+      ? convertThemeConfig(
+          options as HopeThemeOptions & Record<string, unknown>
+        )
       : options;
 
     if (legacy) checkStyle(app);
@@ -63,7 +65,7 @@ export const hopeTheme =
 
       extendsPage: (page): void => {
         if (legacy)
-          page.frontmatter = covertFrontmatter(
+          page.frontmatter = convertFrontmatter(
             page.frontmatter,
             page.filePathRelative || ""
           );

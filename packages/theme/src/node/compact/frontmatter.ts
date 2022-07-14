@@ -33,7 +33,7 @@ const DROPPED_FRONTMATTER_OPTIONS: [string, string][] = [
 /**
  * @deprecated You should use V2 standard frontmatters and avoid using it
  */
-export const covertFrontmatter = (
+export const convertFrontmatter = (
   frontmatter: Record<string, unknown>,
   filePathRelative = ""
 ): HopeThemePageFrontmatter & Record<string, unknown> => {

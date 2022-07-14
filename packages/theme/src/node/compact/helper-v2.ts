@@ -1,4 +1,4 @@
-import { covertThemeConfig } from "./theme";
+import { convertThemeConfig } from "./theme";
 import { hopeTheme } from "../theme";
 import { logger } from "../utils";
 
@@ -73,7 +73,7 @@ export const defineThemeConfig = (
     '"defineThemeConfig" is deprecated, please import "hopeTheme" from vuepress-theme-hope and use "theme : hopeTheme(themeConfig)" instead.'
   );
 
-  return covertThemeConfig(
+  return convertThemeConfig(
     themeConfig as HopeThemeOptions & Record<string, unknown>
   );
 };

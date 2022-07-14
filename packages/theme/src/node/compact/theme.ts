@@ -1,4 +1,4 @@
-import { covertNavbarConfig } from "./navbar";
+import { convertNavbarConfig } from "./navbar";
 import { convertSidebarConfig } from "./sidebar";
 import { droppedLogger, deprecatedLogger } from "./utils";
 import { logger } from "../utils";
@@ -141,7 +141,7 @@ const handleFooterOptions = (options: Record<string, unknown>): void => {
 /**
  * @deprecated You should use V2 standard options and avoid using it
  */
-export const covertThemeConfig = (
+export const convertThemeConfig = (
   themeOptions: Record<string, unknown>
 ): HopeThemeOptions => {
   // ensure plugins
@@ -160,7 +160,7 @@ export const covertThemeConfig = (
 
   // handle navbar
   if ("navbar" in themeOptions)
-    themeOptions["navbar"] = covertNavbarConfig(themeOptions["navbar"]);
+    themeOptions["navbar"] = convertNavbarConfig(themeOptions["navbar"]);
 
   // handle sidebar
   if ("sidebar" in themeOptions)
@@ -217,7 +217,7 @@ export const covertThemeConfig = (
 
         // handle navbar
         if ("navbar" in localeConfig)
-          localeConfig["navbar"] = covertNavbarConfig(localeConfig["navbar"]);
+          localeConfig["navbar"] = convertNavbarConfig(localeConfig["navbar"]);
 
         // handle sidebar
         if ("sidebar" in localeConfig)

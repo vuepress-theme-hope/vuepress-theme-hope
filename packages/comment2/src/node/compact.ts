@@ -1,7 +1,7 @@
 import type { CommentOptions } from "../shared";
 
 /** @deprecated */
-export const covertOptions = (
+export const convertOptions = (
   options: CommentOptions & Record<string, unknown>
 ): void => {
   if ("type" in options) {
@@ -13,7 +13,7 @@ export const covertOptions = (
     delete options["type"];
   }
 
-  // covert Waline options
+  // convert Waline options
   if (options.provider === "Waline") {
     [
       // valine

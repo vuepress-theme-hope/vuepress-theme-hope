@@ -3,7 +3,7 @@ import { droppedLogger } from "./utils";
 import type { FeedOptions } from "../../shared";
 
 /** @deprecated */
-export const covertOptions = (
+export const convertOptions = (
   options: FeedOptions & Record<string, unknown>
 ): void => {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment

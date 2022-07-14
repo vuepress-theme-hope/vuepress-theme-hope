@@ -40,7 +40,7 @@ const handleNavbarConfig = (config: unknown[]): HopeThemeNavbarConfig =>
 /**
  * @deprecated You should use V2 standard navbar config and avoid using it
  */
-export const covertNavbarConfig = (
+export const convertNavbarConfig = (
   config: unknown
 ): HopeThemeNavbarConfig | false => {
   if (config === false) return false;

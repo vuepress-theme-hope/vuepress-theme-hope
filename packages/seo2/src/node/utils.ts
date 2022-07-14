@@ -110,9 +110,9 @@ export const md2text = (content?: string): string =>
         .split("\n")
         .map((line) => line.trim())
         .join("\n")
-        // covert link breaks into spaces
+        // convert link breaks into spaces
         .replace(/(?:\r?\n)+/g, " ")
-        // covert 2 or more spaces into 1
+        // convert 2 or more spaces into 1
         .replace(/ +/g, " ")
         // trim
         .trim()
