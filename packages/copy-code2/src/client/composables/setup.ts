@@ -32,10 +32,10 @@ import { CHECK_ICON, COPY_BUTTON, PURE_COPY_BUTTON } from "../utils";
 
 import type { CopyCodeOptions, CopyCodeLocaleConfig } from "../../shared";
 
-declare const CODE_COPY_OPIONS: Required<CopyCodeOptions>;
+declare const CODE_COPY_OPTIONS: Required<CopyCodeOptions>;
 declare const CODE_COPY_LOCALES: CopyCodeLocaleConfig;
 
-const options = CODE_COPY_OPIONS;
+const options = CODE_COPY_OPTIONS;
 
 const isMobile = (): boolean =>
   navigator
@@ -84,7 +84,7 @@ export const setupCopyCode = (): void => {
   };
 
   const insertCopyButton = (codeBlockElement: HTMLElement): void => {
-    if (!codeBlockElement.hasAttribute("copy-code-registerd")) {
+    if (!codeBlockElement.hasAttribute("copy-code-registered")) {
       const copyElement = document.createElement("button");
 
       if (options.pure) {
@@ -107,7 +107,7 @@ export const setupCopyCode = (): void => {
           copyElement,
           codeBlockElement
         );
-      codeBlockElement.setAttribute("copy-code-registerd", "");
+      codeBlockElement.setAttribute("copy-code-registered", "");
     }
   };
 
