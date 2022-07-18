@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.87](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.86...v2.0.0-beta.87) (2022-07-18)
+
+### Features
+
+- **theme:** fix typos in apis ([fa36bac](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fa36bac680920980e76f3a2b7084658f9486eebf))
+
+### Bug Fixes
+
+- **seo2:** compatable with latest vp ([5b14c0a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5b14c0aaab6a1f41893d04c87479ebecc0657062))
+
 ## [2.0.0-beta.86](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.85...v2.0.0-beta.86) (2022-07-12)
 
 ### Features
