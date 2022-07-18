@@ -1086,11 +1086,13 @@ importers:
       '@vuepress/plugin-git': 2.0.0-beta.49
       '@vuepress/shared': 2.0.0-beta.49
       '@vuepress/utils': 2.0.0-beta.49
+      gray-matter: ^4.0.3
       rimraf: 3.0.2
       vuepress-shared: workspace:*
     dependencies:
       '@vuepress/shared': 2.0.0-beta.49
       '@vuepress/utils': 2.0.0-beta.49
+      gray-matter: 4.0.3
       vuepress-shared: link:../shared
     devDependencies:
       '@vuepress/core': 2.0.0-beta.49

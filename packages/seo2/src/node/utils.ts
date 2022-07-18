@@ -1,3 +1,4 @@
+import matter from "gray-matter";
 import {
   isLinkHttp,
   removeEndingSlash,
@@ -79,7 +80,7 @@ export const stripTags = (content = ""): string =>
 
 export const md2text = (content?: string): string =>
   content
-    ? stripTags(content)
+    ? stripTags(matter(content).content)
         // remove img
         .replace(/!\[(.*?)\]\(.*?\)/gm, "")
         // remove code blocks
