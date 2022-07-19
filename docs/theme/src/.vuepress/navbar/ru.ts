@@ -12,7 +12,7 @@ export const ruNavbarConfig = navbar([
   },
   "/ru/migration/",
   {
-    text: "Project",
+    text: "Проект",
     icon: "info",
     prefix: "/ru/",
     children: [

@@ -4,7 +4,7 @@ export const ruSidebarConfig = sidebar({
   "/ru/": [
     "",
     {
-      text: "Guide",
+      text: "Руководство",
       icon: "creative",
       prefix: "guide/",
       children: [
@@ -18,7 +18,7 @@ export const ruSidebarConfig = sidebar({
       ],
     },
     {
-      text: "Config",
+      text: "Конфиг",
       icon: "config",
       prefix: "config/",
       children: [
@@ -37,13 +37,13 @@ export const ruSidebarConfig = sidebar({
       children: ["tutorial/", "markdown/", "vuepress/", "advanced/"],
     },
     {
-      text: "Migration",
+      text: "Миграция",
       icon: "change",
       prefix: "migration/",
       children: ["highlight", "config", "page", "style"],
     },
     {
-      text: "FAQ",
+      text: "Часто задаваемые вопросы",
       icon: "question",
       prefix: "faq/",
       children: ["", "troubleshooting", "common-error", "vite", "safari"],

@@ -1,5 +1,5 @@
 ---
-title: V2 Highlights
+title: Основные моменты версии 2
 icon: hot
 ---
 
