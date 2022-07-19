@@ -3,138 +3,138 @@ title: V2 Highlights
 icon: hot
 ---
 
-We strongly recommend you to switch to V2 version, as V2 version provides the following improvements.
+Мы настоятельно рекомендуем вам перейти на версию V2, так как версия V2 содержит следующие улучшения.
 
 <!-- more -->
 
-## Overview
+## Обзор
 
-V2 is powered by _VuePress2_, using _Vite2_ / _Webpack5_ and _Vue3_.
+V2 работает на _VuePress2_ с использованием _Vite2_ / _Webpack5_ и _Vue3_.
 
-V2 is a full rewrite including:
+V2 полностью переписан, включая:
 
-- All the components are rewritten with _Composition API in Vue3_
-- All the styles are migrated to _Sass_
+- Все компоненты переписаны с помощью _Composition API в Vue3_
+- Все стили перенесены в _Sass_
 
-Also V2 has a better performance:🚀
+Также V2 имеет лучшую производительность:🚀
 
-- DevServer cold start time reduced by **50%**
-- Build memory usage reduced by **65%**
-- Build time reduced by **30%**
-- Output Size reduced by **25%**
-- Webpage performance up to **70%**
+- Время холодного запуска DevServer уменьшено на **50%**
+- Использование памяти сборки уменьшено на **65%**
+- Время сборки уменьшено на **30%**
+- Размер вывода уменьшен на **25%**
+- Производительность веб-страницы до **70%**
 
-## Vue3 Changes
+## Изменения Vue3
 
-Vue 3 uses proxy to provide reactivity and support the brandly new composition api. THe proxy-based reactivity is a lot faster than the old-style reactivity based on setter/getter.
+Vue 3 использует прокси для обеспечения реактивности и поддержки совершенно нового composition api. Реактивность на основе прокси намного быстрее, чем реактивность в старом стиле, основанная на setter/getter.
 
-Also, composition api is treeshaking friendly.
+Кроме того, composition api дружелюбен к деревьям.
 
-## VuePress2 Changes
+## Изменения VuePress2
 
-VuePress v2 is developed with TypeScript, so it provides better TS support now.
+VuePress v2 разработан с использованием TypeScript, поэтому теперь он обеспечивает лучшую поддержку TS.
 
-VuePress@v2 also decouple bundler with core. VuePress v2 add supports both Webpack and Vite as bundler. Now Vite is the default bundler, while you can still choose use Webpack. You can even use Vite in dev mode to get better development experience, and use Webpack in build mode to get better browser compatibility.
+VuePress@v2 также отделяет упаковщик от ядра. Добавление VuePress v2 поддерживает как Webpack, так и Vite в качестве сборщика. Теперь Vite является упаковщиком по умолчанию, хотя вы все еще можете использовать Webpack. Вы даже можете использовать Vite в режиме разработки, чтобы получить лучший опыт разработки, и использовать Webpack в режиме сборки, чтобы улучшить совместимость браузера.
 
-VuePress@v2 is a lot more flexible than VuePress@v1, it removes siteData and siteData.pages, which greatly increase scalability (specially on large sites with lots of pages). It has a higher score on lighthouse comparing with V1 with less loaded time and higher performance.
+VuePress@v2 намного более гибкий, чем VuePress@v1, он удаляет siteData и siteData.pages, что значительно увеличивает масштабируемость (особенно на больших сайтах с большим количеством страниц). Он имеет более высокий балл на маяке по сравнению с V1 с меньшим временем загрузки и более высокой производительностью.
 
-## VuePress Theme Hope Changes
+## Изменения VuePress Theme Hope
 
-VuePressThemeHope@v2 is rewriteen with composition API and it's style system is migrated from stylus to sass.
+VuePressThemeHope@v2 переписан с composition API, а его система стилей перенесена со стилуса на sass.
 
-By rewriting theme and plugins with composition api, almost feature you disabled can be removed by treeshaking when bundling, so that you can get a smaller size easily.
+Переписав тему и плагины с composition API, почти отключенная функция может быть удалена с помощью treeshaking при связывании, чтобы вы могли легко получить меньший размер.
 
-Also, we are adding new features to VuePressThemeHope@v2.
+Кроме того, мы добавляем новые функции в VuePressThemeHope@v2.
 
-### Features
+### Функции
 
-#### Blog
+#### Блог
 
-- Now the whole blog feature is treeshakable, and is disabled by default.
+- Теперь вся функция блога является древовидной и отключена по умолчанию.
 
-  To enable it, you need to set `plugins.blog` to `true`.
+  Чтобы включить его, вам нужно установить для `plugins.blog` значение `true`.
 
-- Social media icons is now treeshakable, and [icons can be customized](../guide/blog/blogger.md)
+- Иконки социальных сетей теперь можно изменять в дереве, и [иконки можно настраивать](../guide/blog/blogger.md)
 
-- Support [disabling the Hero section or background image of blog homepage](../guide/blog/home.md)
+- Поддержка [отключение раздела Hero или фонового изображения главной страницы блога](../guide/blog/home.md)
 
-- Support [customizing icons for projects](../guide/blog/home.md) in blog homepage
+- Поддержка [настройки иконок для проектов](../guide/blog/home.md)
 
-- Support [customizing blog page path](../guide/blog/path.md) now
+- Поддержка [настройка пути к странице блога](../guide/blog/path.md)
 
-#### Comment
+#### Комментарий
 
-Valine and Vssue are not longer supported.
+Valine и Vssue больше не поддерживаются.
 
-Instead, we add Giscus and Twikoo support besides Waline.
+Вместо этого мы добавляем поддержку Giscus и Twikoo помимо Waline.
 
-#### Encrypt
+#### Шифрование
 
-- Now encrypt feature is treeshaking friendly, and encrypt checking is only done when necesary.
+- Теперь функция шифрования удобна для встряхивания дерева, а проверка шифрования выполняется только при необходимости.
 
-- Password in frontmatter is removed
+- Пароль во frontmatter удален.
 
-#### Feed
+#### Фид
 
-- Feed is no longer generated by default
+- Фид больше не генерируется по умолчанию
 
-- Support `getter` option for you to fully customize feed generation.
+- Поддержка опции `getter`, чтобы вы могли полностью настроить генерацию фидов.
 
 #### PhotoSwipe
 
-We now use PhotoSwipe@v5, which is smaller in size.
+Теперь мы используем PhotoSwipe@v5, который меньше по размеру.
 
 #### PWA
 
-- Support update control
+- Поддержка контроля обновлений
 
-- Support base appending for manifest
+- Поддержка добавления базы для манифеста
 
 #### SEO
 
-- Add canoical link supopport
-- Add JSON-LD support
-- Support injecting any head tags in V2 now.
+- Добавлена поддержка каноничных ссылок
+- Добавлена поддержка JSON-LD
+- Теперь поддерживается внедрение любых тегов заголовка в версии 2.
 
-### Layout
+### Макет
 
-#### Pure Mode
+#### Чистый режим
 
-The theme now supports [pure mode](../guide/interface/pure.md) with less fancy styles.
+Тема теперь поддерживает [чистый режим](../guide/interface/pure.md) с менее причудливыми стилями.
 
-#### Code Block Theme
+#### Тема блока кода
 
-Now you can set [different themes for code blocks](../guide/interface/code-theme.md) in darkmode and lightmode.
+Теперь вы можете установить [разные темы для блоков кода](../guide/interface/code-theme.md) в темном и светлом режимах.
 
-#### Homepage
+#### Домашняя страница
 
-- Features now can have icons
+- Функции теперь могут иметь иконки
 
-#### Page
+#### Страница
 
-- Appearance update
+- Обновление внешнего вида
 
-- TOC rebuild, now TOC automatically scrolls to the active heading
+- Перестроено оглавление, теперь оглавление автоматически прокручивается до активного заголовка
 
-- Support `Badge`, `CodePen`, `FontIcon` and `PDF` components
+- Поддержка компонентов `Badge`, `CodePen`, `FontIcon` и `PDF`
 
-#### Navbar and Sidebar
+#### Панель навигации и боковая панель
 
-- Outlook updated
+- Перспектива обновлена
 
-- They now shares same config options
+- Теперь они имеют одинаковые параметры конфигурации
 
-- New `activeMatch` option controlling whether the item should be actived.
+- Новая опция `activeMatch`, определяющая, должен ли элемент быть активным.
 
-- New `"structure"` keyword support to [generate Sidebar from file structure](../guide/layout/sidebar.md#auto-sidebar)
+- Поддержка нового ключевого слова `"structure"` для [создания боковой панели из файловой структуры](../guide/layout/sidebar.md#auto-sidebar)
 
-- Sidebar now automatically opens and scrolls to the activated item.
+- Боковая панель теперь автоматически открывается и прокручивается до активированного элемента.
 
 ### Markdown
 
-The following new features are added:
+Добавлены следующие новые функции:
 
-- [Image Mark](../guide/markdown/others.md#image-mark)
+- [Метка изображения](../guide/markdown/others.md#image-mark)
 
 - [GFM](../guide/markdown/others.md#gfm)
 
@@ -142,8 +142,8 @@ The following new features are added:
 
 - [ECharts](../guide/markdown/echarts.md)
 
-- [File Include](../guide/markdown/include.md)
+- [Включение файла](../guide/markdown/include.md)
 
-- [Code Tabs](../guide/markdown/code-tabs.md)
+- [Вкладки кода](../guide/markdown/code-tabs.md)
 
-- [Tabs](../guide/markdown/tabs.md)
+- [Вкладки](../guide/markdown/tabs.md)

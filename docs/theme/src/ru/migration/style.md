@@ -1,63 +1,63 @@
 ---
-title: Style Migration Guide
+title: Руководство по миграции стилей
 icon: style
 category:
-  - Migration
+  - Миграция
 tag:
-  - Migration
-  - Style
+  - Миграция
+  - Стиль
 ---
 
-## Preprocessor Changes
+## Изменения препроцессора
 
-The entire style system was migrated from Stylus to Scss, which brought the following changes:
+Вся система стилей была перенесена из Stylus в Scss, что принесло следующие изменения:
 
-- `palette.styl` split into `config.scss` and `palette.scss`
-- `index.styl` changed to `index.scss`
+- `palette.styl` разделен на `config.scss` и `palette.scss`
+- `index.styl` изменен на `index.scss`
 
-## Style Changes
+## Изменения стиля
 
-### Responsive Layout Breakpoints
+### Контрольные точки адаптивного макета
 
-Move to `config.scss`.
+Перемещено в `config.scss`.
 
-- `$MQWide` renamed to `$pc`
-- `$MQNormal` renamed to `$laptop`
-- `$MQNarrow` renamed to `$pad`
-- `$MQMobile` renamed to `$tablet`
-- `$MQMobileNarrow` renamed to `$mobile`
+- `$MQWide` переименован в `$pc`
+- `$MQNormal` переименован в `$laptop`
+- `$MQNarrow` переименован в `$pad`
+- `$MQMobile` переименован в `$tablet`
+- `$MQMobileNarrow` переименован в `$mobile`
 
-### Layout
+### Макет
 
-Move to `palette.scss`.
+Перемещено в `palette.scss`.
 
-- `$mobileidebarWidth` renamed to `$sidebar-mobile-width`
-- `$lineNumbersWrapperWidth` renamed to `$line-numbers-width`
+- `$mobileidebarWidth` переименован в `$sidebar-mobile-width`
+- `$lineNumbersWrapperWidth` переименован в `$line-numbers-width`
 
-### Colors
+### Цвета
 
-Move to `palette.scss`.
+Перемещено в `palette.scss`.
 
-- `$accentColor` renamed to `$theme-color`
-- `$textColor`, `$darkTextColor` merged into `$text-color`
-- `$bgColor`, `$darkBgColor` merged into `$bg-color`
-- `$bgColorLight`, `$darkBgColorLight` merged into `$bg-color-light`
-- `$bgColorBlur`, `darkBgColorBlur` merged into `$bg-color-blur`
-- `$cardShadowColor`, `$darkCardShadowColor` merged into `$card-shadow`
-- `$boxShadowColor`, `$darkBoxShadowColor` merged into `$box-shadow`
+- `$accentColor` переименован в `$theme-color`
+- `$textColor`, `$darkTextColor` объединены в `$text-color`
+- `$bgColor`, `$darkBgColor` объединены в `$bg-color`
+- `$bgColorLight`, `$darkBgColorLight` объединены в `$bg-color-light`
+- `$bgColorBlur`, `darkBgColorBlur` объединены в `$bg-color-blur`
+- `$cardShadowColor`, `$darkCardShadowColor` объединены в `$card-shadow`
+- `$boxShadowColor`, `$darkBoxShadowColor` объединены в `$box-shadow`
 
-- `$arrowBgColor` removed
+- `$arrowBgColor` удалено
 
-- `$colorPicker` removed
+- `$colorPicker` удалено
 
-  Now you just need to set the theme color in theme options
+  Теперь вам просто нужно установить цвет темы в настройках темы
 
-- `$codeBgColor`, `$darkCodeBgColor` removed, set `$code-light-theme` and `$code-dark-theme` in `config.scss` instead.
+- `$codeBgColor`, `$darkCodeBgColor` удалены, вместо них установлены `$code-light-theme` и `$code-dark-theme` в `config.scss`.
 
-### Font
+### Шрифт
 
-- Added `$font-family`, `$font-family-fancy` and `$font-family-code`
+- Добавлено `$font-family`, `$font-family-fancy` и `$font-family-code`
 
-### Transition
+### Переход
 
-- Added `$color-transition` and `$transform-transition`
+- Добавлено `$color-transition` и `$transform-transition`

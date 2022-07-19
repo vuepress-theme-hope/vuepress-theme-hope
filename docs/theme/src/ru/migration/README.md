@@ -1,48 +1,48 @@
 ---
-title: V2 Migration
+title: Миграция версии 2
 icon: change
 ---
 
-This guide helps you migrate from V1 to V2.
+Это руководство поможет вам перейти с версии 1 на версию 2.
 
 <!-- more -->
 
-## Reasons to update to V2
+## Причины для обновления до версии 2
 
-V2 brings great performance improvements and many new features, see [V2 Highlights](./highlight.md) for details.
+В версии 2 значительно улучшена производительность и добавлено множество новых функций. Подробности смотрите в [Основные особенности версии 2](./highlight.md).
 
-## Upgrade to the latest version of V1
+## Обновите версию 1 до последней версии
 
-Upgrading to the latest version V1 is the first step in the migration. During the upgrade to the latest version V1, you can check the [V1 Changelog](https://vuepress-theme-hope.github.io/v1/changelog.html) to adapt the changes made in V1.
+Обновление до последней версии V1 — это первый шаг миграции. Во время обновления до последней версии V1 вы можете проверить [Журнал изменений V1](https://vuepress-theme-hope.github.io/v1/changelog.html), чтобы адаптировать изменения, внесенные в V1.
 
-## Start migrating from V1
+## Начать миграцию с версии 1
 
-Now, in most cases you should be able to update `vuepress` and `vuepress-theme-hope` to latest v2 version, and run your v1 project directly.
+Теперь в большинстве случаев вы сможете обновить `vuepress` и `vuepress-theme-hope` о последней версии v2 и запустить проект v1 напрямую.
 
-The migration helper automatically converts your v1 config to v2 config, and gives you hints about deprecated options it converted and not-supported options it dropped. Also frontmatter of all pages will be converted from v1 syntax to v2.
+Помощник по миграции автоматически преобразует вашу конфигурацию v1 в конфигурацию v2 и дает вам подсказки об устаревших параметрах, которые он преобразовал, и о неподдерживаемых параметрах, которые он удалил. Также передняя часть всех страниц будет преобразована из синтаксиса версии 1 в версию 2.
 
-All you need to do is:
+Все, что вам нужно сделать, это:
 
-1. Install `vuepress@next` and `vuepress-theme-hope@next`;
+1. Установите `vuepress@next` и `vuepress-theme-hope@next`;
 
-1. Try to start the project, and read the logs;
+1. Попробуйте запустить проект и прочитать логи;
 
-1. Change your page frontmatter one by one according to logs;
+1. Меняйте frontmatter вашей страницы по одному в соответствии с логами;
 
-1. Change your config file according to logs.
+1. Измените файл конфигурации в соответствии с логами.
 
-   If you start importing `hopeTheme` and call it during migration, you should call it with `hopeTheme(themeOptions, true)` as the second argument means running in V1 legacy mode.
+   Если вы начинаете импортировать `hopeTheme` и вызывать его во время миграции, вы должны вызывать его с `hopeTheme(themeOptions, true)`, так как второй аргумент означает работу в устаревшем режиме версии 1.
 
-1. Covert your `index.styl` to `index.scss`, and your `palette.styl` to `palette.scss` and `config.scss` under `.vuepress/styles` as v2 style system is built with SCSS.
+1. Превратите свой `index.styl` в `index.scss`, а `palette.styl` в `palette.scss` и `config.scss` в `.vuepress/styles`, поскольку система стилей v2 построена с помощью SCSS.
 
-1. Covert your components under `.vuepress/components` to Vue3 syntax, and register them using `@vuepress/plugin-register-components@next` plugin.
+1. Превратите свои компоненты под `.vuepress/components` в синтаксис Vue3 и зарегистрируйте их с помощью плагина `@vuepress/plugin-register-components@next`.
 
-1. After you successfully clear all hints, remove the second argument `true` in `hopeTheme`.
+1. После того, как вы успешно очистите все подсказки, удалите второй аргумент `true` в `hopeTheme`.
 
-## V2 Migration Guide
+## Руководство по переходу на версию 2
 
-The following pages list the changes between V1 and V2, respectively.
+На следующих страницах перечислены изменения между V1 и V2 соответственно.
 
-- [Config Migration Guide](config.md)
-- [Page Migration Guide](page.md)
-- [Style Migration Guide](style.md)
+- [Руководство по миграции конфигурации](config.md)
+- [Руководство по миграции страницы](page.md)
+- [Руководство по миграции стилей](style.md)

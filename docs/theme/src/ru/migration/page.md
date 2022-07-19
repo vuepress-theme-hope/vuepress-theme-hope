@@ -1,27 +1,27 @@
 ---
-title: Page Migration Guide
+title: Руководство по миграции страницы
 icon: page
 category:
-  - Migration
+  - Миграция
 tag:
-  - Migration
+  - Миграция
   - Frontmatter
-  - Page
+  - Страница
 ---
 
 ## Frontmatter
 
-### Obsolete
+### Устаревшее
 
-- mark `time` as deprecated, use `date` instead
+- помечено `time` как устаревшее, вместо этого использовать `date`
 
-- mark `categories` as deprecated, use `category` instead
+- помечено `categories` как устаревшее, вместо этого использовать `category`
 
-- mark `tags` as deprecated, use `tag` instead
+- помечено `tags` как устаревшее, вместо этого использовать `tag`
 
-### Changes
+### Изменения
 
-- change `author` type from `string | undefined` to `AuthorInfo[] | AuthorInfo | string[] | string | undefined`
+- изменен тип `author` с `string | undefined` на `AuthorInfo[] | AuthorInfo | string[] | string | undefined`
 
   ```ts
   interface AuthorInfo {
@@ -30,27 +30,27 @@ tag:
   }
   ```
 
-  This change allows you to add multiple authors and set up sites for them.
+  Это изменение позволяет вам добавлять нескольких авторов и настраивать для них сайты.
 
-- `date` only supports standard DateString mark with `-`
+- `date` поддерживает только стандартную метку DateString с `-`
 
-- change `category` type from `string | undefined` to `string[] | string | undefined`
+- изменен тип `category` с `string | undefined` на `string[] | string | undefined`
 
-  The theme supports multiple categories.
+  Тема поддерживает несколько категорий.
 
-- change `pageInfo` type from `PageInfo[] | false` to `ArticleInfo[] | false`.
+- изменен тип `pageInfo` с `PageInfo[] | false` на `ArticleInfo[] | false`.
 
-  Available values ​​change from `"author"`, `"time"`, `"category"`, `"tag"`, `"reading-time"`, `"word"`, `"visitor"` to `"Author"`, `"Date"`, `"Original"`, `"Category"`, `"Tag"`, `"ReadingTime"`, `"Word"`, `"Visitor"`
+  Доступные значения изменяются с `"author"`, `"time"`, `"category"`, `"tag"`, `"reading-time"`, `"word"`, `"visitor"` на `"Author"`, `"Date"`, `"Original"`, `"Category"`, `"Tag"`, `"ReadingTime"`, `"Word"`, `"Visitor"`
 
-- rename `sidebarDepth` to `headerDepth`
+- переименовано `sidebarDepth` в `headerDepth`
 
-- rename `copyrightText` to `copyright`
+- переименовано `copyrightText` в `copyright`
 
-- rename `anchorDisplay` to `toc`
+- переименовано `anchorDisplay` в `toc`
 
-- rename `updateTime` to `lastUpdated`
+- переименовано `updateTime` в `lastUpdated`
 
-- change `prev` and `next` types from `string | false` to `AutoLink | string | false`
+- изменены типы `prev` и `next` с `string | false` на `AutoLink | string | false`
 
   ```ts
   interface AutoLink {
@@ -60,25 +60,25 @@ tag:
   }
   ```
 
-### Deletion
+### Удаления
 
-- remove `password`
+- удалено `password`
 
-  For security reasons, V2 removes this method of encrypting the original text of the cipher.
+  Из соображений безопасности V2 убирает этот метод шифрования исходного текста шифра.
 
-- remove `copyright`
+- удалено `copyright`
 
-  Related plugin is not yet compatible with V2.
+  Связанный плагин еще не совместим с V2.
 
-- remove `mediaLink`
+- удалено `mediaLink`
 
-  Footer no longer displays media links.
+  Футер больше не отображает медиа-ссылки.
 
 ## Markdown
 
-- Code demo syntax changed
+- Изменен синтаксис демо-кода
 
-  Before:
+  До:
 
   ```md
   ::: demo Title
@@ -100,7 +100,7 @@ tag:
   :::
   ```
 
-  After:
+  После:
 
   ```md
   ::: normal-demo Title
@@ -122,9 +122,9 @@ tag:
   :::
   ```
 
-- Code Group changed to code tab
+- Группа кодов изменена на вкладку кода
 
-  Before:
+  До:
 
   ````md
   :::: code-group
@@ -148,7 +148,7 @@ tag:
   ::::
   ````
 
-  After:
+  После:
 
   ````md
   ::: code-tabs
@@ -168,12 +168,12 @@ tag:
   :::
   ````
 
-## Layout
+## Макет
 
-### Project HomePage
+### Домашняя страница проекта
 
-Project HomePage frontmatter options are change.
+Изменены параметры frontmatter главной страницы проекта.
 
-- rename `title` to `heroText`
-- rename `darkHeroImage` to `heroImageDark`
-- rename `action` to `actions`
+- переименовано `title` в `heroText`
+- переименовано `darkHeroImage` в `heroImageDark`
+- переименовано `action` в `actions`

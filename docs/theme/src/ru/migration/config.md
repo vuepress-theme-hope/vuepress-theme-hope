@@ -1,11 +1,11 @@
 ---
-title: Config Migration Guide
+title: Руководство по миграции конфигурации
 icon: config
 category:
-  - Migration
+  - Миграция
 tag:
-  - Migration
-  - Theme Config
+  - Миграция
+  - Конфиг темы
 ---
 
 ::: code-tabs#language
@@ -56,17 +56,17 @@ tag:
 
 :::
 
-## Theme Usage
+## Использование темы
 
-- rename `themeConfig` to `hopeTheme`
-- rename `navbarConfig` to `navbar`
-- rename `sidebarConfig` to `sidebar`
-- added `arraySidebar` and `objectSidebar` helpers
-- remove `config`
+- переименован `themeConfig` в `hopeTheme`
+- переименован `navbarConfig` в `navbar`
+- переименован `sidebarConfig` в `sidebar`
+- добавлены помощники `arraySidebar` и `objectSidebar`
+- удален `config`
 
-## Theme Options
+## Параметры темы
 
-- changed `author` type from `string | undefined` to `AuthorInfo[] | AuthorInfo | string[] | string | undefined`
+- изменен тип `author` с `string | undefined` на `AuthorInfo[] | AuthorInfo | string[] | string | undefined`
 
   ```ts
   interface AuthorInfo {
@@ -75,181 +75,181 @@ tag:
   }
   ```
 
-  This change allows you to add multiple authors and set sites for them.
+  Это изменение позволяет вам добавлять нескольких авторов и устанавливать для них сайты.
 
-### Navigation Bar
+### Панель навигации
 
-- unified `nav`, `navbar` to `navbar`
+- унифицирован `nav`, `navbar` в `navbar`
 
-- rename `darkLogo` to `logoDark`
+- переименован `darkLogo` в `logoDark`
 
-- rename `navAutoHide`to `navbarAutoHide`
+- переименован `navAutoHide`в `navbarAutoHide`
 
-- added `navbarIcon` option to control navbar icon display
+- добавлена опция `navbarIcon` для управления отображением иконки на панели навигации
 
-- added `navbarLayout` option to control navbar layout
+- добавлена опция `navbarLayout` для управления макетом панели навигации
 
-### Sidebar
+### Боковая панель
 
-- rename `sidebarDepth` to `headerDepth`
+- переименован `sidebarDepth` в `headerDepth`
 
-- remove `displayAllHeaders`
+- удален `displayAllHeaders`
 
-### Navbar Sidebar Config Unified
+### Конфигурация боковой панели навигации унифицирована
 
-- change `items` in navbar config to `children`
+- изменено `items` в конфигурации панели навигации на `children`
 
-- change `title` to `text` and `path` to `link` in sidebar configuration.
+- изменено `title` на `text` и `path` в `link` в конфигурации боковой панели.
 
-- V2 navbar supports setting the Markdown file path directly like the sidebar to automatically generate text, icons and links
+- Навигационная панель V2 поддерживает установку пути к файлу Markdown непосредственно, как боковую панель, для автоматического создания текста, иконок и ссылок
 
-- add `activeMatch` to control route activation
+- добавлен `activeMatch` для управления активацией маршрута
 
-So both are unified as `text`, `icon`, `prefix`, `link`, `children`, `activeMatch`.
+Таким образом, оба они объединены как `text`, `icon`, `prefix`, `link`, `children`, `activeMatch`.
 
-### Search
+### Поиск
 
-Since the theme no longer has a built-in search:
+Так как тема больше не имеет встроенного поиска:
 
-- remove `search`, `searchPlaceholder`, `searchMaxSuggestions`
+- удален `search`, `searchPlaceholder`, `searchMaxSuggestions`
 
-- remove `algolia`, `algoliaType`
+- удален `algolia`, `algoliaType`
 
-### Page Link
+### Ссылка на страницу
 
-- rename `prevLinks` to `prevLink`
+- переименован `prevLinks` в `prevLink`
 
-- rename `nextLinks` to `nextLink`
+- переименован `nextLinks` в `nextLink`
 
-- rename `editLinks` to `editLink`
+- переименован `editLinks` в `editLink`
 
-- rename `updateTime` to `lastUpdated`
+- переименован `updateTime` в `lastUpdated`
 
 ### Outlook
 
-- Add `iconAssets` option
+- добавлена опция `iconAssets`
 
-- `iconPrefix` default value now infers from `iconAssets`
+- значение по умолчанию `iconPrefix` теперь выводится из `iconAssets`
 
-- update values of `darkmode` option
+- обновлены значения параметра `darkmode`
 
-  - add `"enable"`
-  - rename `"switch"` to `"toggle"`
-  - rename `"auto-switch"` to `"switch"`
+  - добавлен `"enable"`
+  - переименован `"switch"` в `"toggle"`
+  - переименован `"auto-switch"` в `"switch"`
 
-- `themeColor` and `fullscreen` is disabled by default
+- `themeColor` и `fullscreen` отключены по умолчанию
 
-### Blog Config
+### Конфигурация блога
 
-- supports separate config in each language
+- поддержка отдельного конфига на каждом языке
 
-- add `blog.description` to set blogger description or motto
+- добавлен `blog.description`, чтобы установить описание блоггера или девиз
 
-- rename `blog.links` to `blog.medias`
+- переименован `blog.links` в `blog.medias`
 
-- change default value of `blog.roundAvatar` from `true` to `false`
+- изменить значение по умолчанию `blog.roundAvatar` с `true` на `false`
 
-- rename `blog.perPage` to `blog.articlePerPage`
+- переименован `blog.perPage` в `blog.articlePerPage`
 
-- move `blog.autoExcerpt` to `plugins.blog.autoExcerpt`, and change default value from `true` to `false`
+- перемещен `blog.autoExcerpt` в `plugins.blog.autoExcerpt` и измените значение по умолчанию с `true` на `false`
 
-### Encryption Config
+### Конфигурация шифрования
 
-- change `encrypt.status: "global" | "local"` (default `"local"`) to `encrypt.global: boolean` (default `false`)
+- изменен `encrypt.status: "global" | "local"` (по умолчанию `"local"`) на `encrypt.global: boolean` (по умолчанию `false`)
 
-- rename `encrypt.global` to `encrypt.admin`
+- переименован `encrypt.global` в `encrypt.admin`
 
-### custom layout
+### Пользовательский макет
 
-- remove `custom`
+- удален `custom`
 
-### Page Layout
+### Макет страницы
 
-- rename `anchorDisplay` to `toc`
+- переименован `anchorDisplay` в `toc`
 
-### Reading Speed
+### Скорость чтения
 
-- move `wordPerMinute` to `plugins.readingTime.wordPerMinute`
+- перемещен `wordPerMinute` в `plugins.readingTime.wordPerMinute`
 
-## Plugin Changes
+## Изменения плагина
 
-### Addition
+### Дополнение
 
-- Added `plugins.blog` to control blog links
-- Added `plugins.nprogress` to control nprogress
-- Added `plugins.prismjs` to control Prism.js
+- добавлен `plugins.blog` для управления ссылками на блоги
+- добавлен `plugins.nprogress` для управления nprogress
+- добавлен `plugins.prismjs` для управления Prism.js
 
-### Changes
+### Изменения
 
-Move all plugin related options under `plugins`.
+Переместите все параметры, связанные с плагинами, в раздел `plugins`.
 
-- rename `activeHash` to `plugins.activeHeaderLinks`
+- переименован `activeHash` в `plugins.activeHeaderLinks`
 
-  The theme now uses official plugin `@vuepress/plugin-active-header-links`. ![warning](https://img.shields.io/badge/-warning-yellow)
+  Тема теперь использует официальный плагин `@vuepress/plugin-active-header-links`. ![warning](https://img.shields.io/badge/-warning-yellow)
 
-- move `comment` moved to `plugins.comment`
+- перемещен `comment` в `plugins.comment`
 
-  - Adds support for `twikoo` and `giscus` ![New](https://img.shields.io/badge/-New-brightgreen)
+  - Добавлена поддержка `twikoo` и `giscus` ![New](https://img.shields.io/badge/-New-brightgreen)
 
-  - Vssue is currently missing ![warning](https://img.shields.io/badge/-warning-yellow)
+  - Vssue в настоящее время отсутствует ![warning](https://img.shields.io/badge/-warning-yellow)
 
-    Vssue is written in Vue2, and the author [meteorlxy](https://github.com/meteorlxy) has not yet made it compatible with Vue3 yet
+    Vssue написан на Vue2, и автор [meteorlxy](https://github.com/meteorlxy) еще не сделал его совместимым с Vue3
 
-  - Valine service is removed ![removed](https://img.shields.io/badge/-removed-red)
+  - Служба Valine удалена ![removed](https://img.shields.io/badge/-removed-red)
 
-    Valine is lack of maintenance and can leak your privacy. You should use [Waline](https://waline.js.org) instead.
+    Valine не требует обслуживания и может привести к утечке вашей конфиденциальности. Вместо этого вы должны использовать [Waline](https://waline.js.org).
 
-- move `copyCode` to `plugins.copyCode`
+- перемещен `copyCode` в `plugins.copyCode`
 
-- move `copyright` to `plugins.copyright`
+- перемещен `copyright` в `plugins.copyright`
 
-  The plugin is disabled by default now. ![warning](https://img.shields.io/badge/-warning-yellow)
+  Плагин сейчас отключен по умолчанию. ![warning](https://img.shields.io/badge/-warning-yellow)
 
-- move `feed` to `plugins.feed`
+- перемещен `feed` в `plugins.feed`
 
-  - Supports removing custom components and elements through `plugins.feed.customElements` options ![NEW](https://img.shields.io/badge/-new-brightgreen)
+  - Поддерживает удаление пользовательских компонентов и элементов с помощью параметров `plugins.feed.customElements` ![NEW](https://img.shields.io/badge/-new-brightgreen)
 
-  - Customize feed generation via `plugins.feed.getter` option ![NEW](https://img.shields.io/badge/-new-brightgreen)
+  - Настройте генерацию ленты с помощью опцию `plugins.feed.getter` ![NEW](https://img.shields.io/badge/-new-brightgreen)
 
-  - Multi-category support ![New](https://img.shields.io/badge/-new-brightgreen)
+  - Поддержка нескольких категорий ![New](https://img.shields.io/badge/-new-brightgreen)
 
-  - Move all output options from `plugins.feed.ouput` option to plugin option root and rename them.
+  - Переместите все параметры вывода из параметра `plugins.feed.ouput` в корневой каталог параметров плагина и переименуйте их.
 
-    - `feed.output.atom.enable` renamed to `plugins.feed.atom` ![changed](https://img.shields.io/badge/-changed-yellow)
+    - `feed.output.atom.enable` переименован `plugins.feed.atom` ![changed](https://img.shields.io/badge/-changed-yellow)
 
-    - `feed.output.json.enable` renamed to `plugins.feed.json` ![changed](https://img.shields.io/badge/-changed-yellow)
+    - `feed.output.json.enable` переименован `plugins.feed.json` ![changed](https://img.shields.io/badge/-changed-yellow)
 
-    - `feed.output.rss.enable` renamed to `plugins.feed.rss` ![changed](https://img.shields.io/badge/-changed-yellow)
+    - `feed.output.rss.enable` переименован `plugins.feed.rss` ![changed](https://img.shields.io/badge/-changed-yellow)
 
-    - `feed.output.atom.path` renamed to `plugins.feed.atomOutputFilename` ![changed](https://img.shields.io/badge/-changed-yellow)
+    - `feed.output.atom.path` переименован `plugins.feed.atomOutputFilename` ![changed](https://img.shields.io/badge/-changed-yellow)
 
-    - `feed.output.json.path` renamed to `plugins.feed.jsonOutputFilename` ![changed](https://img.shields.io/badge/-changed-yellow)
+    - `feed.output.json.path` переименован `plugins.feed.jsonOutputFilename` ![changed](https://img.shields.io/badge/-changed-yellow)
 
-    - `feed.output.rss.path` renamed to `plugins.feed.rssOutputFilename`
+    - `feed.output.rss.path` переименован `plugins.feed.rssOutputFilename`
 
-    - `plugins.feed.atom`, `plugins.feed.json` and `plugins.feed.rss` is `false` by default ![warning](https://img.shields.io/badge/-warning-yellow)
+    - `plugins.feed.atom`, `plugins.feed.json` и `plugins.feed.rss` по умолчанию имеют значение `false` ![warning](https://img.shields.io/badge/-warning-yellow)
 
-      The theme no longer outputs feed files in three formats by default. If necessary, please set options to output formats needed.
+      Тема больше не выводит файлы ленты в трех форматах по умолчанию. При необходимости установите параметры для необходимых выходных форматов.
 
-- move `git` to `plugins.git`
+- перемещен `git` в `plugins.git`
 
-  The theme use official plugin `@vuepress/plugin-git` now. ![warning](https://img.shields.io/badge/-warning-yellow)
+  Тема теперь использует официальный плагин `@vuepress/plugin-git`. ![warning](https://img.shields.io/badge/-warning-yellow)
 
-- move `mdEnhance` to `plugins.mdEnhance`
+- перемещен `mdEnhance` в `plugins.mdEnhance`
 
-  - markdown link check ![New](https://img.shields.io/badge/-New-brightgreen)
+  - проверка ссылок в разметке ![New](https://img.shields.io/badge/-New-brightgreen)
 
-    The plugin now check your markdown links and warn you when broken links are detected.
+    Плагин теперь проверяет ваши уцененные ссылки и предупреждает вас при обнаружении неработающих ссылок.
 
-    You can control this behavior with `plugins.mdEnhance.linkCheck` option
+    Вы можете контролировать это поведение с помощью опции `plugins.mdEnhance.linkCheck`
 
-  - image mark support ![New](https://img.shields.io/badge/-New-brightgreen)
+  - поддержка метки изображения ![New](https://img.shields.io/badge/-New-brightgreen)
 
-    Use `#light` and `#dark` suffix to mark images to display them in light mode or dark mode via `plugins.mdEnhance.imageMark` option
+    Используйте суффикс `#light` и `#dark`, чтобы пометить изображения, чтобы отображать их в светлом или темном режиме с помощью опции `plugins.mdEnhance.imageMark`
 
-  - Chart.js support ![New](https://img.shields.io/badge/-New-brightgreen)
+  - Поддержка chart.js ![New](https://img.shields.io/badge/-New-brightgreen)
 
-    Adds [chart.js](https://www.chartjs.org/docs/latest/) support via `plugins.mdEnhance.chart` option
+    Добавлена поддержка [chart.js](https://www.chartjs.org/docs/latest/) через опцию `plugins.mdEnhance.chart`
 
     ````md
     ::: chart Title
@@ -273,9 +273,9 @@ Move all plugin related options under `plugins`.
     :::
     ````
 
-  - ECharts support ![New](https://img.shields.io/badge/-New-brightgreen)
+  - Поддержка ECharts ![New](https://img.shields.io/badge/-New-brightgreen)
 
-    Adds [ECharts](https://echarts.apache.org/en/index.html) support via `plugins.mdEnhance.echarts` option
+    Добавлена поддержка [ECharts](https://echarts.apache.org/en/index.html) через опцию `plugins.mdEnhance.echarts`
 
     ````md
     ::: echarts Title
@@ -299,29 +299,29 @@ Move all plugin related options under `plugins`.
     :::
     ````
 
-  - content include support ![New](https://img.shields.io/badge/-New-brightgreen)
+  - контент включает поддержку ![New](https://img.shields.io/badge/-New-brightgreen)
 
-    use `@include()` to include other file content in markdown via `plugins.mdEnhance.include` options.
+    использует `@include()`, чтобы включить другое содержимое файла в уценку с помощью параметров `plugins.mdEnhance.include`.
 
-    Use `@include(filename)` to include a file.
+    Использует `@include(filename)`, чтобы включить файл.
 
-    To partially import the file, you can specify the range of lines to be included:
+    Чтобы частично импортировать файл, вы можете указать диапазон включаемых строк:
 
     - `@include(filename{start-end})`
     - `@include(filename{start-})`
     - `@include(filename{-end})`
 
-  - tabs support ![New](https://img.shields.io/badge/-New-brightgreen)
+  - поддержка вкладок ![New](https://img.shields.io/badge/-New-brightgreen)
 
-    Use `tabs` container to create tabs via `plugins.mdEnhance.tabs` option.
+    Использует контейнер `tabs` для создания вкладок через опцию `plugins.mdEnhance.tabs`.
 
-  - add `plugins.mdEnhance.gfm` ![New](https://img.shields.io/badge/-New-brightgreen)
+  - добавлен `plugins.mdEnhance.gfm` ![New](https://img.shields.io/badge/-New-brightgreen)
 
-    Control supporting gfm
+    Управление с поддержкой gfm
 
-  - add `plugins.mdEnhance.vpre` ![New](https://img.shields.io/badge/-New-brightgreen)
+  - добавлен `plugins.mdEnhance.vpre` ![New](https://img.shields.io/badge/-New-brightgreen)
 
-    The following syntax is no longer built into VuePress2, so we add this option.
+    Следующий синтаксис больше не встроен в VuePress2, поэтому мы добавляем эту опцию.
 
     ```md
     ::: v-pre
@@ -329,93 +329,93 @@ Move all plugin related options under `plugins`.
     :::
     ```
 
-  - rename `mdEnhance.codegroup` to `plugins.mdEnhance.codetabs` ![changed](https://img.shields.io/badge/-changed-yellow)
+  - переименован `mdEnhance.codegroup` в `plugins.mdEnhance.codetabs` ![changed](https://img.shields.io/badge/-changed-yellow)
 
-  - change default value of `plugins.mdEnhance.lazyLoad` from `true` to `false` ![changed](https://img.shields.io/badge/-changed-yellow)
+  - изменение значение по умолчанию `plugins.mdEnhance.lazyLoad` с `true` на `false` ![changed](https://img.shields.io/badge/-changed-yellow)
 
-  - remove `plugins.mdEnhance.lineNumbers` ![removed](https://img.shields.io/badge/-removed-red)
+  - удалено `plugins.mdEnhance.lineNumbers` ![removed](https://img.shields.io/badge/-removed-red)
 
-    VuePress2 supports line numbers config for code blocks individually
+    VuePress2 поддерживает настройку номеров строк для отдельных блоков кода
 
-  - remove `plugins.mdEnhance.imageFix` ![removed](https://img.shields.io/badge/-removed-red)
+  - удалено `plugins.mdEnhance.imageFix` ![removed](https://img.shields.io/badge/-removed-red)
 
-    Image related issues have been fixed in V2
+    Проблемы, связанные с изображением, были исправлены в версии 2
 
-- move `photoSwipe` to `plugins.photoSwipe`
+- перемещен `photoSwipe` в `plugins.photoSwipe`
 
-- move `pwa` to `plugins.pwa`
+- перемещен `pwa` в `plugins.pwa`
 
-  - `plugins.pwa.update` ![New](https://img.shields.io/badge/-New-brightgreen): control the update logic of SW
+  - `plugins.pwa.update` ![New](https://img.shields.io/badge/-New-brightgreen): управление логикой обновления SW
 
-    - `"disabled"`: Do nothing even when new service worker is available. After new service work succeeds installing and starts waiting, it will control page and provide new content in next visit.
+    - `"disabled"`: Ничего не делать, даже когда доступен новый service worker. После успешной установки новой службы и начала ожидания она будет контролировать страницу и предоставлять новый контент при следующем посещении.
 
-    - `"available"`: Only display update popup when the new service worker is available
+    - `"available"`: Отображать всплывающее окно обновления только тогда, когда доступен новый service worker
 
-    - `"hint"`: Display a hint to let user choose to refresh immediately
+    - `"hint"`: Отображать подсказку, позволяющую пользователю выбрать немедленное обновление
 
-    - `"force"`: unregister current service worker immediately then refresh to get new content
+    - `"force"`: Немедленно отменить регистрацию текущего сервисного работника, а затем обновить его, чтобы получить новый контент
 
-  - `plugins.pwa.appendBase` ![New](https://img.shields.io/badge/-New-brightgreen): automatically insert `base` to the `manifest` option
+  - `plugins.pwa.appendBase` ![New](https://img.shields.io/badge/-New-brightgreen): автоматически вставляет `base` в опцию `manifest`
 
-  - `plugins.pwa.hintComponent` ![New](https://img.shields.io/badge/-New-brightgreen): Hint component for detecting new content
+  - `plugins.pwa.hintComponent` ![New](https://img.shields.io/badge/-New-brightgreen): Компонент подсказки для обнаружения нового контента
 
-  - shouldPrefetch hint ![New](https://img.shields.io/badge/-New-brightgreen): Now the plugin will check `shouldPrefetch` option in config file and warn you to disable it.
+  - Подсказка shouldPrefetch ![New](https://img.shields.io/badge/-New-brightgreen): Теперь плагин будет проверять опцию `shouldPrefetch` в конфигурационном файле и предупреждать вас, чтобы вы отключили ее.
 
-  - `plugins.pwa.cacheHTML` default value changed from `true` to `false` ![changed](https://img.shields.io/badge/-changed-yellow)
+  - Значение по умолчанию `plugins.pwa.cacheHTML` изменено с `true` на `false` ![changed](https://img.shields.io/badge/-changed-yellow)
 
-    This can effectively reduce the SW update time
+    Это может эффективно сократить время обновления SW
 
-  - `pwa.popupComponent` renamed to `plugins.pwa.updateComponent` ![changed](https://img.shields.io/badge/-changed-yellow)
+  - `pwa.popupComponent` переименован в `plugins.pwa.updateComponent` ![changed](https://img.shields.io/badge/-changed-yellow)
 
-    This is because we added a new prompt popup window, so we need to avoid name confusion
+    Это связано с тем, что мы добавили новое всплывающее окно подсказки, поэтому нам нужно избежать путаницы в именах
 
-- move `readingTime` to `plugins.readingTime`
+- перемещен `readingTime` в `plugins.readingTime`
 
-- move `seo` to `plugins.seo`
+- перемещен `seo` в `plugins.seo`
 
-  - JSON-LD support ![New](https://img.shields.io/badge/-New-brightgreen)
+  - Поддержка JSON-LD ![New](https://img.shields.io/badge/-New-brightgreen)
 
-    The plugin now can generate JSON-LD script tags for you, and is providing an option `plugin.seo.jsonLd` to let you customize the JSON-LD properties.
+    Плагин теперь может генерировать для вас теги сценария JSON-LD и предоставляет опцию `plugin.seo.jsonLd`, позволяющую настраивать свойства JSON-LD.
 
-  - Description generation ![New](https://img.shields.io/badge/-New-brightgreen)
+  - Генерация описания ![New](https://img.shields.io/badge/-New-brightgreen)
 
-    The plugin can generate a descrption for you automatically via `plugin.seo.autoDescription` options
+    Плагин может автоматически генерировать описание для вас с помощью параметров `plugin.seo.autoDescription`
 
-  - Canonical link ![New](https://img.shields.io/badge/-New-brightgreen)
+  - Каноническая ссылка ![New](https://img.shields.io/badge/-New-brightgreen)
 
-    You can set canonical link via `plugin.seo.canonicalLink` option. It's useful when your docs
+    Вы можете установить каноническую ссылку с помощью опции `plugin.seo.canonicalLink`. Это полезно, когда ваша документация
 
-  - `seo.customMeta` renamed to `plugin.seo.customHead` ![changed](https://img.shields.io/badge/-changed-yellow)
+  - `seo.customMeta` переименован в `plugin.seo.customHead` ![changed](https://img.shields.io/badge/-changed-yellow)
 
-    Now you can edit all head tags intead of only meta in V1.
-    are deployed in several places.
+    Теперь вы можете редактировать все теги заголовка, а не только мета в версии 1.
+    развернуты в нескольких местах.
 
-- move `sitemap` to `plugins.sitemap`
+- перемещен `sitemap` в `plugins.sitemap`
 
-  - `plugin.sitemap.priority` ![New](https://img.shields.io/badge/-New-brightgreen): setting default value for priority
+  - `plugin.sitemap.priority` ![New](https://img.shields.io/badge/-New-brightgreen): установка значения по умолчанию для приоритета
 
-  - `sitemap.urls` renamed to `plugin.sitemap.extraUrls` ![changed](https://img.shields.io/badge/-changed-yellow)
+  - `sitemap.urls` переименован в `plugin.sitemap.extraUrls` ![changed](https://img.shields.io/badge/-changed-yellow)
 
-  - `sitemap.exclude` renamed to `plugin.sitemap.excludeUrls` ![changed](https://img.shields.io/badge/-changed-yellow)
+  - `sitemap.exclude` переименован в `plugin.sitemap.excludeUrls` ![changed](https://img.shields.io/badge/-changed-yellow)
 
-  - `sitemap.outFile` renamed to `plugin.sitemap.sitemapFilename` ![changed](https://img.shields.io/badge/-changed-yellow)
+  - `sitemap.outFile` переименован в `plugin.sitemap.sitemapFilename` ![changed](https://img.shields.io/badge/-changed-yellow)
 
-  - `sitemap.modifyTimeGetter` renamed to `plugin.sitemap.modifyTimeGetter` ![changed](https://img.shields.io/badge/-changed-yellow)
+  - `sitemap.modifyTimeGetter` переименован в `plugin.sitemap.modifyTimeGetter` ![changed](https://img.shields.io/badge/-changed-yellow)
 
-### Deletion
+### Удаление
 
-- remove `chunkRename`
+- удалено `chunkRename`
 
-  The theme no longer provides this functionality.
+  Тема больше не предоставляет эту функцию.
 
-- remove `cleanUrl`
+- удалено `cleanUrl`
 
-  The theme no longer provides this functionality.
+  Тема больше не предоставляет эту функцию.
 
-- remove `git`
+- удалено `git`
 
-  The theme now uses official plugin `@vuepress/plugin-git`.
+  Тема теперь использует официальный плагин `@vuepress/plugin-git`.
 
-- remove `smoothScroll`
+- удалено `smoothScroll`
 
-  The theme now provides smooth scrolling via CSS and no longer provides compatibility with older browsers.
+  Тема теперь обеспечивает плавную прокрутку с помощью CSS и больше не обеспечивает совместимость со старыми браузерами.
