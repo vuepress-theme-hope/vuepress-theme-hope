@@ -84,7 +84,7 @@
     "eslint-plugin-vue": "9.2.0",
     "execa": "6.1.0",
     "husky": "8.0.1",
-    "inquirer": "9.0.0",
+    "inquirer": "9.0.2",
     "lint-staged": "13.0.3",
     "markdownlint-cli": "0.31.1",
     "npm-check-updates": "15.2.6",
