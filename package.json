@@ -71,7 +71,7 @@
     "@typescript-eslint/parser": "5.30.7",
     "@vue/eslint-config-typescript": "11.0.0",
     "bumpp": "8.2.1",
-    "c8": "7.11.3",
+    "c8": "7.12.0",
     "chalk": "5.0.1",
     "commitizen": "4.2.4",
     "concurrently": "7.2.2",
