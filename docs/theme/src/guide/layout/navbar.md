@@ -9,7 +9,7 @@ tag:
   - Navbar
 ---
 
-The Navbar may contain your site title, [Search Box](#search-box), [Navbar Links](#navbar-links), [I18n](https://v2.vuepress.vuejs.org/guide/i18n.html), [Repository Link](#git-repo-and-edit-links) and [outlook panel](#outlook-panel). They all depend on your configuration.
+The Navbar may contain your site title, [Search Box](#search-box), [Navbar Links](#navbar-links), [I18n](https://v2.vuepress.vuejs.org/guide/i18n.html), [Repository Link](#git-repository-and-edit-links) and [Outlook Popup](#outlook-popup). They all depend on your configuration.
 
 <!-- more -->
 
@@ -476,7 +476,7 @@ Like the default theme, `vuepress-theme-hope` brings built-in support for search
 
 For details, please see [Feature → Search](../feature/search.md).
 
-## Git repository and Edit Links
+## Git Repository and Edit Links
 
 A repo button will appear in navbar if you set `repo` in theme options.
 
@@ -761,6 +761,3 @@ module.exports = navbar([
 :::
 
 ::::
-
-[plugin-search]: https://v2.vuepress.vuejs.org/reference/plugin/search.html
-[plugin-docsearch]: https://v2.vuepress.vuejs.org/reference/plugin/docsearch.html

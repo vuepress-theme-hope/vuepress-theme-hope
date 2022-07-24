@@ -87,7 +87,7 @@ Markdown 就会将它转为:
 AT&amp;T
 ```
 
-类似的状况也会发生在 `<` 符号上，因为 Markdown 支持 [行内 HTML](#行内-HTML) ，如果你是使用 `<` 符号作为 HTML 标签使用，那 Markdown 也不会对它做任何转换，但是如果你是写:
+类似的状况也会发生在 `<` 符号上，因为 Markdown 支持 [行内 HTML](#行内-html) ，如果你是使用 `<` 符号作为 HTML 标签使用，那 Markdown 也不会对它做任何转换，但是如果你是写:
 
 ```md
 4 < 5
@@ -836,5 +836,5 @@ Example: `:smile:` :smile:
 [4]: http://docutils.sourceforge.net/rst.html
 [5]: http://www.triptico.com/software/grutatxt.html
 [6]: http://ettext.taint.org/doc/
-[bq]: #blockquote
-[l]: #list
+[bq]: #blockquotes
+[l]: #列表

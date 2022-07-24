@@ -149,7 +149,7 @@ Feed 项目的标识符，用于标识 Feed 项目。
 - 类型: `"always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never"`
 - 默认值: `"daily"`
 
-页面默认更新频率。它会覆盖插件选项中的 [changefreq](#changefreq) 选项。
+页面默认更新频率。它会覆盖插件选项中的 changefreq 选项。
 
 ### sitemap.exclude
 
