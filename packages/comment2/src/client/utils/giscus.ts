@@ -54,6 +54,7 @@ export interface GiscusProps {
   term?: string | undefined;
   theme?: GiscusTheme | undefined;
   reactionsEnabled?: BooleanString | undefined;
+  strict?: BooleanString | undefined;
   emitMetadata?: BooleanString | undefined;
   inputPosition?: GiscusInputPosition | undefined;
   lang?: GiscusLang | undefined;
