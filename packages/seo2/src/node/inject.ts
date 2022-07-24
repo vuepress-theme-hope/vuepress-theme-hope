@@ -64,3 +64,12 @@ export const appendCanonical = (
 ): void => {
   if (url) head.push(["link", { rel: "canonical", href: url }]);
 };
+
+export const appendAlternate = (
+  head: HeadConfig[],
+  urls: { lang: string; path: string }[]
+): void => {
+  urls.forEach(({ lang, path }) => {
+    head.push(["link", { rel: "alternate", hreflang: lang, href: path }]);
+  });
+};

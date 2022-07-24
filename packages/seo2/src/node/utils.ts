@@ -11,11 +11,20 @@ import type { ExtendPage, SeoOptions } from "../shared";
 
 export const logger = new Logger("vuepress-plugin-seo2");
 
-export const getLocales = (lang: string, locales: SiteLocaleConfig): string[] =>
+export interface LocaleConfig {
+  localePath: string;
+  lang: string;
+}
+
+export const getLocales = (
+  lang: string,
+  locales: SiteLocaleConfig
+): LocaleConfig[] =>
   Object.entries(locales)
-    .map(([, value]) => value.lang)
+    .map(([localePath, value]) => ({ localePath, lang: value.lang }))
     .filter(
-      (item): item is string => typeof item === "string" && item !== lang
+      (item): item is LocaleConfig =>
+        typeof item.lang === "string" && item.lang !== lang
     );
 
 export const getCover = (

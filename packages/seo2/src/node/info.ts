@@ -80,7 +80,7 @@ export const getOGP = (
     "og:image": ogImage,
     "og:updated_time": modifiedTime,
     "og:locale": page.lang,
-    "og:locale:alternate": locales,
+    "og:locale:alternate": locales.map(({ lang }) => lang),
     ...(options.restrictions
       ? { "og:restrictions:age": options.restrictions }
       : {}),
@@ -160,4 +160,16 @@ export const getCanonicalLink = (
     return `${removeEndingSlash(options.canonical)}${page.path}`;
 
   return null;
+};
+
+export const getAlternateLinks = (
+  page: ExtendPage,
+  app: App
+): { lang: string; path: string }[] => {
+  const locales = getLocales(page.lang, app.siteData.locales);
+
+  return locales.map(({ lang, localePath }) => ({
+    lang,
+    path: `${localePath}${page.path.replace(page.pathLocale, "")}`,
+  }));
 };
