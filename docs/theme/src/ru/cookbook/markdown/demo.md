@@ -1,141 +1,141 @@
 ---
-title: Markdown DEMO
+title: ДЕМО Разметки
 icon: markdown
 category:
-  - Cookbook
-  - Markdown
+  - Учебник с примерами
+  - Разметка
 tag:
-  - Demo
-  - Markdown
+  - Демо
+  - Разметка
 ---
 
 <!-- markdownlint-disable -->
 
-# Heading 1
+# Заголовок 1
 
 <!-- markdownlint-restore -->
 
 ```md
-# Heading 1
+# Заголовок 1
 ```
 
-## Heading 2
+## Заголовок 2
 
 ```md
-## Heading 2
+## Заголовок 2
 ```
 
-### Heading 3
+### Заголовок 3
 
 ```md
-### Heading 3
+### Заголовок 3
 ```
 
-#### Heading 4
+#### Заголовок 4
 
 ```md
-#### Heading 4
+#### Заголовок 4
 ```
 
-##### Heading 5
+##### Заголовок 5
 
 ```md
-##### Heading 5
+##### Заголовок 5
 ```
 
-###### Heading 6
+###### Заголовок 6
 
 ```md
-###### Heading 6
+###### Заголовок 6
 ```
 
-## Text
+## Текст
 
-This sentence has **bold**、_italic_ and ~~delete~~ style text.
+Это предложение выделено **жирным**, _курсивом_ и ~~удаленный~~ текст.
 
 ```md
-This sentence has **bold**、_italic_ and ~~delete~~ style text.
+Это предложение выделено **жирным**, _курсивом_ и ~~удаленный~~ текст.
 ```
 
-## Paragraph
+## Параграф
 
-This is a paragraph.
+Это абзац.
 
-This is another paragraph.
+Это другой абзац.
 
 ```md
-This is a paragraph.
+Это абзац.
 
-This is another paragraph.
+Это другой абзац.
 ```
 
-## Line Break
+## Разрыв строки
 
-I would like to line break at  
-this point
+Я хотел бы сделать разрыв строки  
+в этой точке
 
 ```md
-I would like to line break at  
-this point
+Я хотел бы сделать разрыв строки  
+в этой точке
 ```
 
 ::: tip
 
-In codes above, two spaces are behind `at`.
+В приведенных выше кодах после `at` стоят два пробела.
 
 :::
 
-## Blockquotes
+## Цитаты
 
-> Blockquotes can also be nested...
+> Цитаты также могут быть вложенными...
 >
-> > ...by using greater-than signs right next to each other...
+> > ...используя знаки "больше" рядом друг с другом...
 > >
-> > > ...or with spaces between arrows.
+> > > ...или с пробелами между стрелками.
 
 ```md
-> Blockquotes can also be nested...
+> Цитаты также могут быть вложенными...
 >
-> > ...by using greater-than signs right next to each other...
+> > ...используя знаки "больше" рядом друг с другом...
 > >
-> > > ...or with spaces between arrows.
+> > > ...или с пробелами между стрелками.
 ```
 
-## List
+## Список
 
-### Unordered List
+### Ненумерованный список
 
-- Create a list by starting a line with `-`
-- Make sub-lists by indenting 2 spaces:
+- Создайте список, начав строку с `-`
+- Сделать подсписки, отступив 2 пробела:
 
-  - Marker character change forces new list start:
+  - Изменение символа маркера приводит к началу нового списка:
 
     - Ac tristique libero volutpat at
     - Facilisis in pretium nisl aliquet
     - Nulla volutpat aliquam velit  
       link break
 
-      New paragraph
+      Новый абзац
 
-- It’s easy!
+- Это просто!
 
 ```md
-- Create a list by starting a line with `-`
-- Sub-lists are made by indenting 2 spaces:
+- Создайте список, начав строку с `-`
+- Подсписки составляются с отступом в 2 пробела:
 
-  - Marker character change forces new list start:
+  - Изменение символа маркера приводит к началу нового списка:
 
     - Ac tristique libero volutpat at
     - Facilisis in pretium nisl aliquet
     - Nulla volutpat aliquam velit  
       link break
 
-      New paragraph
+      Новый абзац
 
-- Very easy!
+- Очень просто!
 ```
 
-### Ordered List
+### Упорядоченный список
 
 1. Lorem ipsum dolor sit amet
 1. Consectetur adipiscing elit  
@@ -151,7 +151,7 @@ In codes above, two spaces are behind `at`.
 1. Integer molestie lorem at massa
 ```
 
-## HR
+## Горизонтальная линия
 
 ---
 
@@ -159,53 +159,53 @@ In codes above, two spaces are behind `at`.
 ---
 ```
 
-## Link
+## Ссылка
 
-[Home page using absolute path](/)
+[Домашняя страница с использованием абсолютного пути](/)
 
-[Home page using relative path](../../README.md)
+[Домашняя страница с использованием относительного пути](../../README.md)
 
 ```md
-[Home page using absolute path](/)
+[Домашняя страница с использованием абсолютного пути](/)
 
-[Home page using relative path](../../README.md)
+[Домашняя страница с использованием относительного пути](../../README.md)
 ```
 
 ::: tip
 
-You can also use these in VuePress:
+Вы также можете использовать их в VuePress:
 
-- [Home page-Can route when editing Markdown file](../../README.md)
+- [Домашняя страница-может маршрутизироваться при редактировании файла Markdown](../../README.md)
 
-- [Home page using absolute path 2](/README.md)
+- [Домашняя страница с использованием абсолютного пути 2](/README.md)
 
-- [Visit in HTML](../../index.html)
+- [Посетите в HTML](../../index.html)
 
-To be able to jump to each other when editing the Markdown using the editor, you need to use the **relative path**, also you must place `README.md` in **every folder**.
+Чтобы иметь возможность переходить друг к другу при редактировании Markdown с помощью редактора, вам нужно использовать **относительный путь**, а также вы должны поместить `README.md` в **каждую папку**.
 
 代码:
 
 ```md
-- [Home page-Can route when editing Markdown file](../../README.md)
+- [Домашняя страница-может маршрутизироваться при редактировании файла Markdown](../../README.md)
 
-- [Home page using absolute path 2](/README.md)
+- [Домашняя страница с использованием абсолютного пути 2](/README.md)
 
-- [Visit in HTML](../../index.html)
+- [Посетите в HTML](../../index.html)
 ```
 
 :::
 
-## Image
+## Изображение
 
-![Logo](/logo.png)
+![Лого](/logo.png)
 
 ```md
-![Logo](/logo.png)
+![Лого](/logo.png)
 ```
 
-## Emoji
+## Эмодзи
 
-Classic:
+Классический:
 
 :wink: :cry: :laughing: :yum:
 
@@ -213,7 +213,7 @@ Classic:
 :wink: :cry: :laughing: :yum:
 ```
 
-Shortcuts:
+Ярлыки:
 
 8-) :) :\* :( :-) :-( ;)
 
@@ -223,67 +223,67 @@ Shortcuts:
 
 ::: tip
 
-For more see [emoji list](emoji/README.md)
+Подробнее смотрите [список смайликов](emoji/README.md)
 
 :::
 
-## Tables
+## Таблицы
 
-|           center           |                    right | left                    |
-| :------------------------: | -----------------------: | :---------------------- |
-| For center align use `:-:` | For right align use `-:` | For left align use `:-` |
-|             b              |                aaaaaaaaa | aaaa                    |
-|             c              |                     aaaa | a                       |
-
-```md
-|           center           |                    right | left                    |
-| :------------------------: | -----------------------: | :---------------------- |
-| For center align use `:-:` | For right align use `-:` | For left align use `:-` |
-|             b              |                aaaaaaaaa | aaaa                    |
-|             c              |                     aaaa | a                       |
-```
-
-## Codes
-
-Inline Code: `code`
+|                    центр                     |                                   справа | слева                                   |
+| :------------------------------------------: | ---------------------------------------: | :-------------------------------------- |
+| Для выравнивания по центру используйте `:-:` | Для выравнивания справа используйте `-:` | Для выравнивания слева используйте `:-` |
+|                      b                       |                                aaaaaaaaa | aaaa                                    |
+|                      c                       |                                     aaaa | a                                       |
 
 ```md
-Inline Code: `code`
+|                    центр                     |                                   справа | слева                                   |
+| :------------------------------------------: | ---------------------------------------: | :-------------------------------------- |
+| Для выравнивания по центру используйте `:-:` | Для выравнивания справа используйте `-:` | Для выравнивания слева используйте `:-` |
+|                      b                       |                                aaaaaaaaa | aaaa                                    |
+|                      c                       |                                     aaaa | a                                       |
 ```
 
-Indented code:
+## Коды
 
-```
-// Some comments
-line 1 of code
-line 2 of code
-line 3 of code
-```
+Инлайновый код: `code`
 
-```
-Indented code:
-
-    // Some comments
-    line 1 of code
-    line 2 of code
-    line 3 of code
+```md
+Инлайновый код: `code`
 ```
 
-Block code:
+Код с отступом:
 
 ```
-Sample text here...
+// Некоторые комментарии
+строка 1 из кода
+строка 2 из кода
+строка 3 из кода
+```
+
+```
+Код с отступом:
+
+    // Некоторые комментарии
+    строка 1 из кода
+    строка 2 из кода
+    строка 3 из кода
+```
+
+Блочный код:
+
+```
+Пример текста здесь...
 ```
 
 ````md
-Block code:
+Блочный код:
 
 ```
-Sample text here...
+Пример текста здесь...
 ```
 ````
 
-Syntax highlighting:
+Подсветка синтаксиса:
 
 ```js
 var foo = function (bar) {
@@ -294,7 +294,7 @@ console.log(foo(5));
 ```
 
 ````md
-Syntax highlighting:
+Подсветка синтаксиса:
 
 ```js
 var foo = function (bar) {

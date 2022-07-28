@@ -1,11 +1,11 @@
 ---
-title: Nature Emoji
+title: Эмодзи природа
 icon: emoji
 category:
-  - Cookbook
+  - Учебник с примерами
 tag:
-  - Markdown
-  - Emoji
+  - Разметка
+  - Эмодзи
 ---
 
 - :sunny: `:sunny:`

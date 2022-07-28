@@ -1,11 +1,11 @@
 ---
-title: Symbol Emoji
+title: Эмодзи символа
 icon: emoji
 category:
-  - Cookbook
+  - Учебник с примерами
 tag:
-  - Markdown
-  - Emoji
+  - Разметка
+  - Эмодзи
 ---
 
 - :one: `:one:`

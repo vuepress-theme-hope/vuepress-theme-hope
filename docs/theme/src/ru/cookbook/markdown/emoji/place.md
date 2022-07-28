@@ -1,11 +1,11 @@
 ---
-title: Place Emoji
+title: Эмодзи размещения
 icon: emoji
 category:
-  - Cookbook
+  - Учебник с примерами
 tag:
-  - Markdown
-  - Emoji
+  - Разметка
+  - Эмодзи
 ---
 
 - :house: `:house:`

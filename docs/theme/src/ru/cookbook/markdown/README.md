@@ -1,35 +1,35 @@
 ---
-title: Markdown Introduction
+title: Введение в Markdown
 icon: markdown
 category:
-  - Cookbook
-  - Markdown
+  - Учебник с примерами
+  - Разметка
 tag:
-  - Intro
-  - Markdown
+  - Вступление
+  - Разметка
 ---
 
-Markdown is a markup language that can be written using a plain text editor that allows plain text content to be formatted with simple markup syntax.
+Markdown — это язык разметки, который можно написать с помощью обычного текстового редактора, который позволяет форматировать текстовое содержимое с помощью простого синтаксиса разметки.
 
-Markdown has a series of derivative versions that extend Markdown’s functionality (such as tables, footnotes, embedded HTML, etc.). These features were not available in the original Markdown. They can convert Markdown into more formats, such as LaTeX, Docbook. . Markdown Extra, MultiMarkdown, Maruku, etc. are more famous in Markdown’s enhanced version. These derivative versions are either based on tools such as Pandoc; or based on sites such as GitHub and Wikipedia, which are syntactically compatible, but have some changes in syntax and rendering effects.
+У Markdown есть ряд производных версий, которые расширяют функциональность Markdown (такие как таблицы, сноски, встроенный HTML и т. д.). Эти функции не были доступны в оригинальной Markdown. Они могут конвертировать Markdown в другие форматы, такие как LaTeX, Docbook, Markdown Extra, MultiMarkdown, Maruku и т. д. более известны в расширенной версии Markdown. Эти производные версии либо основаны на таких инструментах, как Pandoc; или на основе таких сайтов, как GitHub и Wikipedia, которые синтаксически совместимы, но имеют некоторые изменения в синтаксисе и эффектах рендеринга.
 
-## Usage
+## Использование
 
-Markdown’s grammar is simple and straightforward, easy to learn, and features more powerful than plain text, so people use it to write blogs. WordPress, the world’s most popular blogging platform, and large CMSs such as Joomla and Drupal all support Markdown. The blog platforms that use the Markdown editor are Ghost and Typecho.
+Грамматика Markdown проста и понятна, ее легко освоить, и она обладает более мощными возможностями, чем обычный текст, поэтому люди используют ее для написания блогов. WordPress, самая популярная в мире платформа для ведения блогов, и крупные CMS, такие как Joomla и Drupal, поддерживают Markdown. Платформы блогов, использующие редактор Markdown, — это Ghost и Typecho.
 
-Used to write documentation and save it under the software’s directory under the filename "README.md". Because we have a god-level editor like RStudio, we can turn Markdown into a presentation PPT, Word product documentation, LaTex papers, and even a minimally usable prototype with little code. In the field of data science, Markdown has been widely used, greatly promoting the historical process of dynamic repeatability research.
+Используется для написания документации и сохранения ее в каталоге программного обеспечения под именем файла «README.md». Поскольку у нас есть редактор уровня бога, такой как RStudio, мы можем превратить Markdown в презентацию PPT, документацию по продукту Word, документы LaTex и даже минимально пригодный для использования прототип с небольшим количеством кода. В области науки о данных широко используется Markdown, что значительно способствует историческому процессу исследования динамической повторяемости.
 
-## ShortCut Key
+## Клавиша быстрого доступа
 
-| Display       | Code       | ShortCut Key   |
-| ------------- | ---------- | -------------- |
-| **Bold**      | `**text**` | Ctrl/⌘ + B     |
-| _Emphasize_   | `*text*`   | Ctrl/⌘ + I     |
-| `Inline Code` | \`code\`   | 选中后 `` ` `` |
+| Отображение   | Код         | Клавиша быстрого доступа |
+| ------------- | ----------- | ------------------------ |
+| **Bold**      | `**текст**` | Ctrl/⌘ + B               |
+| _Emphasize_   | `*текст*`   | Ctrl/⌘ + I               |
+| `Inline Code` | \`код\`     | 选中后 `` ` ``           |
 
-## Title
+## Заголовок
 
-The title shows the structure of the article. Insert 1-6 `#` at the beginning of the line, each adding a `#` indicates a more in-depth content, corresponding to the depth of the title by 1-6.
+Заголовок показывает структуру статьи. Вставьте 1-6 `#` в начале строки, каждое добавление `#` указывает на более глубокое содержание, соответствующее глубине заголовка на 1-6.
 
 - H1: `# Header 1`
 - H2: `## Header 2`
@@ -38,46 +38,46 @@ The title shows the structure of the article. Insert 1-6 `#` at the beginning of
 - H5: `##### Header 5`
 - H6: `###### Header 6`
 
-## Text Style
+## Стиль текста
 
-- Link: `[Title](URL)`
-- Bold: `**Bold**`
-- Italic:`*Italics*`
-- Delete:`~~Italics~~`
-- Paragraph: Space one link
-- Line break: enter two space at the end of the line
-- List: add `-` to become a list item
-- Blockquote: `> Blockquote Content`
-- HR: Enter `---` in a single line
+- Ссылка: `[Тайтл](URL-адрес)`
+- Жирный: `**Жирный**`
+- Курсив:`*Курсив*`
+- Удаленный:`~~Курсив~~`
+- Абзац: Пробел одна ссылка
+- Разрыв строки: Введите два пробела в конце строки
+- Список: добавьте `-`, чтобы стать элементом списка
+- Цитата: `> Содержимое цитаты`
+- HR: Введите `---` в одну строку
 
-## Link
+## Ссылка
 
 `[Title](URL)`
 
-Example: `[Baidu](https://baidu.com)`
+Пример: `[Baidu](https://baidu.com)`
 
-## Image
+## Изображение
 
 `![Alt](ImageLink)` 。
 
-E.g: `![This is a title](./assets/title.jpg)`.
+Например: `![This is a title](./assets/title.jpg)`.
 
-## Tables
+## Таблицы
 
-|           center           |                    right | left                    |
-| :------------------------: | -----------------------: | :---------------------- |
-| For center align use `:-:` | For right align use `-:` | For left align use `:-` |
-|             b              |                aaaaaaaaa | aaaa                    |
-|             c              |                     aaaa | a                       |
+|                    центр                     |                                   справа | слева                                   |
+| :------------------------------------------: | ---------------------------------------: | :-------------------------------------- |
+| Для выравнивания по центру используйте `:-:` | Для выравнивания справа используйте `-:` | Для выравнивания слева используйте `:-` |
+|                      b                       |                                aaaaaaaaa | aaaa                                    |
+|                      c                       |                                     aaaa | a                                       |
 
-## Emoji
+## Эмодзи
 
 `:emoji name:`
 
-Example: `:smile:`
+Пример: `:smile:`
 
-For full emoji list, see [Emoji List](emoji/README.md).
+Полный список эмодзи смотрите в [Список эмодзи](emoji/README.md).
 
-## Markdown Display
+## Отображение Markdown
 
-- [View Detail](demo.md)
+- [Посмотреть детали](demo.md)

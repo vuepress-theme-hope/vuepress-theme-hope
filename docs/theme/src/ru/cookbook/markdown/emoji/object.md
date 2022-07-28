@@ -1,11 +1,11 @@
 ---
-title: Object Emoji
+title: Эмодзи объект
 icon: emoji
 category:
-  - Cookbook
+  - Учебник с примерами
 tag:
-  - Markdown
-  - Emoji
+  - Разметка
+  - Эмодзи
 ---
 
 - :bamboo: `:bamboo:`

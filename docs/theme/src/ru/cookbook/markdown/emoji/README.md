@@ -1,24 +1,24 @@
 ---
-title: Emoji List
+title: Список эмодзи
 icon: emoji
 ---
 
-## People
+## Люди
 
-- [View Detail](people.md)
+- [Посмотреть детали](people.md)
 
-## Nature
+## Природа
 
-- [View Detail](nature.md)
+- [Посмотреть детали](nature.md)
 
-## Object
+## Объект
 
-- [View Detail](object.md)
+- [Посмотреть детали](object.md)
 
-## Location
+## Расположение
 
-- [View Detail](place.md)
+- [Посмотреть детали](place.md)
 
-## Synbol
+## Символ
 
-- [View Detail](symbol.md)
+- [Посмотреть детали](symbol.md)

@@ -1,11 +1,11 @@
 ---
-title: People Emoji
+title: Эмодзи люди
 icon: emoji
 category:
-  - Cookbook
+  - Учебник с примерами
 tag:
-  - Markdown
-  - Emoji
+  - Разметка
+  - Эмодзи
 ---
 
 - :smile: `:smile:`
