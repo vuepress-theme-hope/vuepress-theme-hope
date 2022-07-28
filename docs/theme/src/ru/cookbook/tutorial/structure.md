@@ -1,29 +1,29 @@
 ---
-title: Project Structure
+title: Структура проекта
 icon: tree
 category:
-  - Cookbook
-  - Tutorial
-  - Get Started
+  - Учебник с примерами
+  - Руководство
+  - Начало работы
 tag:
-  - Project Structure
+  - Структура проекта
 ---
 
-This tutorial will introduce VuePress project structure.
+В этом руководстве будет представлена структура проекта VuePress.
 
 <!-- more -->
 
-## VuePress project structure
+## Структура проекта VuePress
 
-VuePress only controls the files in the VuePress project folder, that is, the parameters in the previous chapter.Other files in project are not used by VuePress.
+VuePress управляет только файлами в папке проекта VuePress, то есть параметрами из предыдущей главы. Другие файлы в проекте не используются VuePress.
 
 ::: note
 
-If you used `docs` as instructed in the previous tutorial, then `docs` is your VuePress project folder.
+Если вы использовали `docs`, как указано в предыдущем уроке, `docs` — это папка вашего проекта VuePress.
 
 :::
 
-A basic project structure is as follows:
+Базовая структура проекта выглядит следующим образом:
 
 ```
 .

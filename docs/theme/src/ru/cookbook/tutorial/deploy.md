@@ -1,42 +1,42 @@
 ---
-title: Project Deployment
+title: Деплой проекта
 icon: launch
 category:
-  - Cookbook
-  - Tutorial
-  - Get Started
+  - Учебник с примерами
+  - Руководство
+  - Начало работы
 tag:
-  - Project Deployment
+  - Деплой проекта
 ---
 
-This tutorial guides you on how to deploy a VuePress project.
+В этом руководстве вы узнаете, как развернуть проект VuePress.
 
 <!-- more -->
 
-## Build Project
+## Сборка проекта
 
-Once you completed the starter stage development of the project locally, you can build the website using the `pnpm docs:build` command.
+После того, как вы завершили начальную стадию разработки проекта локально, вы можете создать веб-сайт с помощью команды `pnpm docs:build`.
 
-If you are using theme template, the website content will be output to the `.vuepress/dist` under VuePress project folder These files are the final output of VuePress.
+Если вы используете шаблон темы, содержимое веб-сайта будет выводиться в файл `.vuepress/dist` в папке проекта VuePress. Эти файлы являются конечным результатом VuePress.
 
-You can deploy the contents of this folder to your website's server. The easiest way to do this is to upload to GitHub and start GitHub Pages.
+Вы можете развернуть содержимое этой папки на сервере вашего сайта. Самый простой способ сделать это — загрузить на GitHub и запустить GitHub Pages.
 
-## Deploy to GitHub Pages
+## Деплой на GitHub Pages
 
-If you're using theme template and you choose to create GitHub workflow during setup, the only thing you need to do is set the correct [base option](https://v2.vuepress.vuejs.org/reference/config.html#base).
+Если вы используете шаблон темы и решили создать рабочий процесс GitHub во время установки, единственное, что вам нужно сделать, это установить правильный [базовый параметр](https://v2.vuepress.vuejs.org/reference/config.html#base).
 
-- If you are going to publish to `https://<USERNAME>.github.io/`, you must upload the entire project to the `https://github.com/<USERNAME>/<USERNAME>.github.io` repository . You don't need to make any changes in this case, since base defaults to `"/"`.
+- Если вы собираетесь публиковать на `https://<USERNAME>.github.io/`, вы должны загрузить весь проект на репозиторий `https://github.com/<USERNAME>/<USERNAME>.github.io` . В этом случае вам не нужно вносить какие-либо изменения, так как базовый по умолчанию равен `"/"`.
 
-- If your repository link is in a normal format like `https://github.com/<USERNAME>/<REPO>`, the website will be published to `https://<USERNAME>.github.io /<REPO>/` , so you need to set base to `"/<REPO>/"`.
+- Если ваша ссылка на репозиторий имеет обычный формат, например `https://github.com/<USERNAME>/<REPO>`, веб-сайт будет опубликован на `https://<USERNAME>.github.io /<REPO>/`, поэтому вам нужно установить базу на `"/<REPO>/"`.
 
 ::: details GitHub Workflow
 
-If you didn't choose to create a workflow when you were creating template, you can now create it manually:
+Если вы не выбрали создание рабочего процесса при создании шаблона, теперь вы можете создать его вручную:
 
-1. Create a `.github` folder in the project root folder
-1. Create a `workflows` folder under the `.github` folder
-1. Create `deploy-docs.yml` in the `workflows` folder
-1. Paste the following content into `deploy-docs.yml` and save it.
+1. Создайте папку `.github` в корневой папке проекта
+1. Создайте папку `workflows` в папке `.github`
+1. Создайте `deploy-docs.yml` в папке `workflows`
+1. Вставьте следующее содержимое в `deploy-docs.yml` и сохраните его.
 
 ```yml
 name: Deploy Docs
@@ -85,6 +85,6 @@ jobs:
 
 :::
 
-## Other deployment methods
+## Другие методы развертывания
 
-For other deployment methods, please refer to [VuePress → Deployment](https://v2.vuepress.vuejs.org/guide/deployment.html).
+Чтобы узнать о других методах развертывания, смотрите [VuePress → Развертывание](https://v2.vuepress.vuejs.org/guide/deployment.html).

@@ -1,28 +1,28 @@
 ---
-title: Step by Step Tutorial
+title: Пошаговое руководство
 icon: guide
 category:
-  - Cookbook
-  - Tutorial
-  - Get Started
+  - Учебник с примерами
+  - Руководство
+  - Начало работы
 ---
 
-This is a step by step tutorial for newcomers.
+Это пошаговое руководство для новичков.
 
 <!-- more -->
 
-## Tutorial Chapters
+## Главы руководства
 
-1. [Runtime Setup](env.md)
+1. [Настройка среды выполнения](env.md)
 
-1. [Create project](create.md)
+1. [Создание проекта](create.md)
 
-1. [Project command](command.md)
+1. [Команды проекта](command.md)
 
-1. [Project Content](content.md)
+1. [Контент проекта](content.md)
 
-1. [Project configuration](config.md)
+1. [Конфигурация проекта](config.md)
 
-1. [Project Structure](structure.md)
+1. [Структура проекта](structure.md)
 
-1. [Project Deployment](deploy.md)
+1. [Деплой проекта](deploy.md)

@@ -1,85 +1,85 @@
 ---
-title: Setting Environment
+title: Настройка среды
 icon: leaf
 category:
-  - Cookbook
-  - Tutorial
-  - Get Started
+  - Учебник с примерами
+  - Руководство
+  - Начало работы
 tag:
-  - Setting Environment
+  - Настройка среды
 ---
 
-This tutorial will guide you on how to set up a VuePress runtime environment.
+В этом руководстве вы узнаете, как настроить среду выполнения VuePress.
 
 ## Node.js
 
-[Node.js®](https://nodejs.org/en/) is a JavaScript runtime built on [Chrome's V8 JavaScript engine](https://v8.dev/).
+[Node.js®](https://nodejs.org/en/) — это среда выполнения JavaScript, построенная на [движке Chrome V8 JavaScript](https://v8.dev/).
 
-You need to download and install the latest long-term maintenance release on your computer.
+Вам необходимо загрузить и установить на свой компьютер последнюю долгосрочную отладочную версию.
 
-### Download Node.js LTS
+### Скачивание Node.js LTS
 
-[Download link](https://nodejs.org/en/).
+[Ссылка на скачивание](https://nodejs.org/en/).
 
 ::: note
 
-In the opened page, click the green button on the left to complete the download.
+На открывшейся странице нажмите зеленую кнопку слева, чтобы завершить загрузку.
 
 :::
 
-### Install Node.js LTS
+### Установка Node.js LTS
 
-During the installation process, keep all the default settings and go all the way to the next step.
+В процессе установки сохраните все настройки по умолчанию и перейдите к следующему шагу.
 
 ::: warning
 
-If you are a real novice, please do not change the default installation directory.
+Если вы настоящий новичок, пожалуйста, не меняйте каталог установки по умолчанию.
 
-Node.js itself will only take up a few dozen megabytes of space!
+Сам Node.js займет всего несколько десятков мегабайт!
 
 :::
 
-## Editor
+## Редактор
 
-You need an editor to edit your project, and we recommend using VSCode to write and run your VuePress projects.
+Вам нужен редактор для редактирования вашего проекта, и мы рекомендуем использовать VSCode для написания и запуска ваших проектов VuePress.
 
-### Download VSCode
+### Скачивание VSCode
 
-[Download link](https://code.visualstudio.com/)
+[Ссылка на скачивание](https://code.visualstudio.com/)
 
 ::: tip
 
-Please click the blue button on the left to complete the download.
+Пожалуйста, нажмите синюю кнопку слева, чтобы завершить загрузку.
 
 :::
 
-### Install VSCode
+### Устанвока VSCode
 
-1. Double-click the installation package to open
+1. Дважды щелкните пакет установки, чтобы открыть
 
-1. Agree to the User Agreement.
+1. Примите Пользовательское соглашение.
 
-1. In the installation options, be sure to **select all** the following options:
+1. В параметрах установки обязательно **выберите все** следующие параметры:
 
-   Tick **Add to directory context menu**, **Add to file context menu**, **Register code as a supported file editor**, **Add to path**.
+   Отметьте **Добавить в контекстное меню каталога**, **Добавить в контекстное меню файла**, **Зарегистрировать код в качестве поддерживаемого файлового редактора**, **Добавить в путь**.
 
-1. After the initial startup of VS Code, if Git is not installed in advance, it may prompt that the Git software is not found, just ignore it.
+1. После первоначального запуска VS Code, если Git не установлен заранее, может появиться сообщение о том, что программное обеспечение Git не найдено, просто игнорируйте его.
 
 ## Pnpm
 
-After you install Node.js, please install [pnpm](https://pnpm.io).
+После установки Node.js установите [pnpm](https://pnpm.io).
 
 ::: tip
 
-We recommend that you use pnpm to manage your project, because VuePress and VuePress Theme Hope both use pnpm to manage dependencies.
+Мы рекомендуем вам использовать pnpm для управления вашим проектом, потому что VuePress и VuePress Theme Hope используют pnpm для управления зависимостями.
 
-Some features of pnpm ensure that you have the correct dependencies.
+Некоторые функции pnpm гарантируют наличие правильных зависимостей.
 
 :::
 
-### Install Pnpm
+### Установка Pnpm
 
-Install pnpm by entering the following command in the terminal:
+Установите pnpm, введя в терминале следующую команду:
 
 ```sh
 corepack enable

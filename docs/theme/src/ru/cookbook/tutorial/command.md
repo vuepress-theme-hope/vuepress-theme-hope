@@ -1,26 +1,26 @@
 ---
-title: Project Command
+title: Команды проекта
 icon: command
 category:
-  - Cookbook
-  - Tutorial
-  - Get Started
+  - Учебник с примерами
+  - Руководство
+  - Начало работы
 tag:
-  - Project Command
+  - Команды проекта
 ---
 
-This tutorial introduces VuePress project commands.
+В этом руководстве представлены команды проекта VuePress.
 
 <!-- more -->
 
-## Common Commands
+## Общие команды
 
-- `vuepress dev [dir]` will start a development server to allow you to develop your VuePress site locally.
-- `vuepress build [dir]` will build your VuePress site into static files for your subsequent deployment.
+- `vuepress dev [dir]` запустит сервер разработки, чтобы вы могли локально разрабатывать свой сайт VuePress.
+- `vuepress build [dir]` соберет ваш сайт VuePress в статические файлы для последующего развертывания.
 
-::: info Using Template
+::: info Использование шаблона
 
-If you are using the VuePress Theme Hope template, you can find the following three commands in `package.json`:
+Если вы используете шаблон VuePress Theme Hope, вы можете найти следующие три команды в `package.json`:
 
 ```json
 {
@@ -32,23 +32,23 @@ If you are using the VuePress Theme Hope template, you can find the following th
 }
 ```
 
-This means you can use:
+Это означает, что вы можете использовать:
 
-- `pnpm docs:dev` starts the development server
-- `pnpm docs:build` builds the project and outputs
-- `pnpm docs:clean-dev` to clear cache and start development server
-
-:::
-
-::: info Terminate DevServer
-
-To terminate the development server, please click on the terminal and press `Ctrl + C` twice.
+- `pnpm docs:dev` запускает сервер разработки
+- `pnpm docs:build` собирает проект и выводит
+- `pnpm docs:clean-dev` для очистки кеша и запуска сервера разработки
 
 :::
 
-## Update Version
+::: info Завершить DevServer
 
-If you need to upgrade your theme and VuePress version, execute the following command:
+Чтобы завершить работу сервера разработки, нажмите в терминале дважды `Ctrl + C`.
+
+:::
+
+## Обновить версию
+
+Если вам нужно обновить тему и версию VuePress, выполните следующую команду:
 
 ::: code-tabs#shell
 

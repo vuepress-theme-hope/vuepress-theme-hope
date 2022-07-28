@@ -1,39 +1,39 @@
 ---
-title: Project Config
+title: Конфиг проекта
 icon: config
 category:
-  - Cookbook
-  - Tutorial
-  - Get Started
+  - Учебник с примерами
+  - Руководство
+  - Начало работы
 tag:
-  - Project Config
+  - Конфиг проекта
 ---
 
-This tutorial guides you on how to configure a VuePress project.
+В этом руководстве вы узнаете, как настроить проект VuePress.
 
 <!-- more -->
 
-## Configure VuePress
+## Конфигурация VuePress
 
-Without config files, a VuePress project can only achieve limited functionality by default, so to better customize your website, VuePress provides config files.
+Без файлов конфигурации проект VuePress по умолчанию может иметь только ограниченную функциональность, поэтому для лучшей настройки вашего веб-сайта VuePress предоставляет файлы конфигурации.
 
-VuePress uses `.vuepress` folder under the project folder to store configuration, and all VuePress related files will be placed here.
+VuePress использует папку `.vuepress` в папке проекта для хранения конфигурации, и все файлы, связанные с VuePress, будут размещены здесь.
 
-For a VuePress site, `.vuepress/config.ts` (or `.vuepress/config.js`) is the necessary config file.
+Для сайта VuePress необходимым файлом конфигурации является `.vuepress/config.ts` (или `.vuepress/config.js`).
 
-::: tip Use TS configuration file
+::: tip Использовать файл конфигурации TS
 
-We recommend you to use TypeScript config files for better type hinting, autocompletion and error checking.
+Мы рекомендуем вам использовать конфигурационные файлы TypeScript для лучшей подсказки типов, автозаполнения и проверки ошибок.
 
-If you are not familiar with TypeScript, you can also use a JavaScript config file, but it is better to use an editor such as VSCode that fully supports TS/JS features to avoid losing the type checking, autocompletion and option hints features mentioned below.
+Если вы не знакомы с TypeScript, вы также можете использовать файл конфигурации JavaScript, но лучше использовать редактор, такой как VSCode, который полностью поддерживает функции TS/JS, чтобы не потерять функции проверки типов, автодополнения и подсказок параметров, упомянутые ниже.
 
 :::
 
-## Config File
+## Файл конфигурации
 
-You need to set up a config object in the config file `.vuepress/config.ts` (or `.vuepress/config.js`) and export it.
+Вам нужно настроить объект конфигурации в файле конфигурации `.vuepress/config.ts` (или `.vuepress/config.js`) и экспортировать его.
 
-To get correct hints, importing `defineUserConfig` from `vuepress` and wrapping the config object is recommended:
+Чтобы получить правильные подсказки, рекомендуется импортировать `defineUserConfig` из `vuepress` и обернуть объект конфигурации:
 
 ::: code-tabs#language
 
@@ -61,73 +61,73 @@ module.exports = defineUserConfig({
 
 :::
 
-## Config Scope
+## Область конфигурации
 
-### Site Config
+### Конфигурация сайта
 
-Config items in the Site Config are directly read by VuePress, have nothing to do with the theme and can take effect in all themes.
+Элементы конфигурации в конфигурации сайта напрямую считываются VuePress, не имеют ничего общего с темой и могут действовать во всех темах.
 
-We know that every site should have its `lang`, `title` and `description` properties, so VuePress has built-in support for setting these properties.
+Мы знаем, что каждый сайт должен иметь свои свойства `lang`, `title` и`description`, поэтому VuePress имеет встроенную поддержку для установки этих свойств.
 
-::: info Site Config
+::: info Конфигурация сайта
 
-You can go to [VuePress2 → Reference → Configuration](https://v2.vuepress.vuejs.org/en/reference/config.html) to see all VuePress configuration.
-
-:::
-
-### Theme Config
-
-Theme config is the object you pass to `hopeTheme` function, which will be handled by VuePress Theme Hope.
-
-You can find all the theme config in [Config → Theme Config](../../config/README.md).
-
-::: tip Hints and Checks
-
-If you are using an editor that supports TS/JS language features (such as VSCode), you can easily get option hints and checks.
-
-- You can hover over an option to get hints:
-
-  ![option hint](./assets/vscode-hint-light.png#light)
-  ![option hint](./assets/vscode-hint-dark.png#dark)
-
-- If you enter wrong option name or invalid value, you will get error message:
-
-  ![Error message](./assets/vscode-error-light.png#light)
-  ![Error message](./assets/vscode-error-dark.png#dark)
-
-- You can get autocompletion while inputting:
-
-  ![autocomplete](./assets/vscode-autocomplete-light.png#light)
-  ![Autocomplete](./assets/vscode-autocomplete-dark.png#dark)
+Вы можете перейти к [VuePress2 → Справочник → Конфигурация](https://v2.vuepress.vuejs.org/en/reference/config.html), чтобы просмотреть всю конфигурацию VuePress.
 
 :::
 
-### More
+### Конфиг темы
 
-::: info Plugin Config
+Конфигурация темы — это объект, который вы передаете функции `hopeTheme`, который будет обрабатываться VuePress Theme Hope.
 
-VuePress Theme Hope bundles some plugins, you can pass plugin options through `plugins.PLUGIN_NAME` in theme options, see [Config → Theme Plugin](../../config/plugins/README.md) for more details.
+Вы можете найти все настройки темы в [Конфиг → Конфиг темы](../../config/README.md).
 
-If you want to use additional plugins, please import the plugin yourself and pass plugin options, see [VuePress → plugins](../vuepress/plugin.md) for details.
+::: tip Подсказки и проверки
+
+Если вы используете редактор, поддерживающий функции языка TS/JS (например, VSCode), вы можете легко получить подсказки и проверки параметров.
+
+- Вы можете навести курсор на опцию, чтобы получить подсказки:
+
+  ![подсказка варианта](./assets/vscode-hint-light.png#light)
+  ![подсказка варианта](./assets/vscode-hint-dark.png#dark)
+
+- Если вы введете неправильное имя опции или неверное значение, вы получите сообщение об ошибке:
+
+  ![Сообщение об ошибке](./assets/vscode-error-light.png#light)
+  ![Сообщение об ошибке](./assets/vscode-error-dark.png#dark)
+
+- Вы можете получить автодополнение при вводе:
+
+  ![Автозаполнение](./assets/vscode-autocomplete-light.png#light)
+  ![Автозаполнение](./assets/vscode-autocomplete-dark.png#dark)
 
 :::
 
-::: info Style Config
+### Еще
 
-VuePress Theme Hope is using `.vuepress/styles` folder to store style config like other themes.
+::: info Конфигурация плагина
 
-In this folder you can:
+VuePress Theme Hope объединяет некоторые плагины, вы можете передать параметры плагина через `plugins.PLUGIN_NAME` в настройках темы, смотрите [Конфиг → Плагин темы](../../config/plugins/README.md) для получения дополнительной информации.
 
-- Create `index.scss` to inject additional CSS styles
-- Create `config.scss` for styling config
-- Create `palette.scss` to set color and layout
-
-For more details, see [Config → Style](../../config/style.md).
+Если вы хотите использовать дополнительные плагины, импортируйте плагин самостоятельно и передайте параметры плагина, подробности смотрите в [VuePress → плагины](../vuepress/plugin.md).
 
 :::
 
-::: info Page Config
+::: info Конфигурация стиля
 
-VuePress supports page scope config of specific page through YAML Frontmatter in Markdown files. For details, see [Project Content → Frontmatter](./content.md#frontmatter) in the previous chapter.
+Тема VuePress Hope использует папку `.vuepress/styles` для хранения конфигурации стиля, как и другие темы.
+
+В этой папке вы можете:
+
+- Создайте `index.scss`, чтобы внедрить дополнительные стили CSS
+- Создайте `config.scss` для настройки стиля конфигурации
+- Создайте `palette.scss`, чтобы установить цвет и макет
+
+Подробнее смотрите [Конфиг → Стиль](../../config/style.md).
+
+:::
+
+::: info Конфиг страницы
+
+VuePress поддерживает настройку области действия конкретной страницы через YAML Frontmatter в файлах Markdown. Подробнее смотрите [Контент проекта → Frontmatter](./content.md#frontmatter) в предыдущей главе.
 
 :::

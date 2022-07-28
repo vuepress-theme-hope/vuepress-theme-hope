@@ -1,27 +1,27 @@
 ---
-title: Project Content
+title: Контент проекта
 icon: page
 category:
-  - Cookbook
-  - Tutorial
-  - Get Started
+  - Учебник с примерами
+  - Руководство
+  - Начало работы
 tag:
-  - Project Content
+  - Контент проекта
 ---
 
-This tutorial guides you on how to weite content in a VuePress project.
+В этом руководстве вы узнаете, как писать контент в проекте VuePress.
 
 <!-- more -->
 
-## Generating Pages
+## Создание страниц
 
-VuePress is markdown-centered. Each Markdown file inside your project is a standalone page.
+VuePress ориентирован на уценку. Каждый файл Markdown внутри вашего проекта представляет собой отдельную страницу.
 
-By default, the route path of a page is determined by the relative path of your Markdown file.
+По умолчанию путь маршрута страницы определяется относительным путем вашего файла Markdown.
 
-In the previous chapter, the `docs` directory was used as VuePress project folder. So if you have the following path structure:
+В предыдущей главе каталог `docs` использовался как папка проекта VuePress. Итак, если у вас есть следующая структура пути:
 
-Assuming this is the directory structure of your Markdown files:
+Предполагая, что это структура каталогов ваших файлов Markdown:
 
 ```
 └─ docs
@@ -35,9 +35,9 @@ Assuming this is the directory structure of your Markdown files:
    └─ README.md
 ```
 
-The route path of your Markdown files are:
+Путь маршрута ваших файлов Markdown:
 
-| Relative Path      | Route Path          |
+| Относительный путь | Путь маршрута       |
 | ------------------ | ------------------- |
 | `/README.md`       | `/`                 |
 | `/slide.md`        | `/slide.html`       |
@@ -47,17 +47,17 @@ The route path of your Markdown files are:
 
 ::: tip README.md
 
-`README.md` is a special case. In Markdown, by convention, it will be used as the home page of the folder where it is located. So when it is rendered as a web page, its corresponding path is the home page path `index.html` in the web page.
+`README.md` — это особый случай. В Markdown по соглашению он будет использоваться как домашняя страница папки, в которой он находится. Поэтому, когда он отображается как веб-страница, его соответствующий путь является путем домашней страницы `index.html` на веб-странице.
 
-This should be easy to understand.
+Это должно быть легко понять.
 
 :::
 
 ## Frontmatter
 
-Frontmatter is a very important concept in VuePress, it is used to carry config of Markdown files. Markdown files can contain a [YAML](https://yaml.org/) Frontmatter.
+Frontmatter — очень важная концепция в VuePress, она используется для переноса конфигурации файлов Markdown. Файлы Markdown могут содержать Frontmatter [YAML](https://yaml.org/).
 
-Frontmatter must be at the top of the Markdown file, surrounded by a pair of triple dashes. Here is a basic example:
+Frontmatter должен быть в верхней части файла Markdown, окруженный парой тройных дефисов. Вот простой пример:
 
 ```md
 ---
@@ -71,26 +71,26 @@ description: the description of the page
 ...
 ```
 
-You must have noticed that the fields in Frontmatter are very similar to VuePress config files. You can override the `lang`, `title`, `description` and other properties of the current page through Frontmatter. Therefore, you can think of Frontmatter as a page-level scope config, which usually has the highest priority, and the config only takes effect on the current page.
+Вы, должно быть, заметили, что поля в Frontmatter очень похожи на файлы конфигурации VuePress. Вы можете переопределить `lang`, `title`, `description` и другие свойства текущей страницы через Frontmatter. Таким образом, вы можете думать о Frontmatter как о конфигурации области на уровне страницы, которая обычно имеет наивысший приоритет, и конфигурация действует только на текущей странице.
 
 ## Markdown
 
-Each Markdown file will be processed by VuePress Theme Hope to render the content of the file as web content.
+Каждый файл Markdown будет обрабатываться VuePress Theme Hope для отображения содержимого файла как веб-контента.
 
-::: tip Markdown Syntax
+::: tip Синтаксис Markdown
 
-If you don't know Markdown yet, check out the [Markdown Tutorial](../markdown/README.md).
+Если вы еще не знакомы с Markdown, ознакомьтесь с [Учебником по Markdown](../markdown/README.md).
 
-In about fifteen minutes, you can learn how to write Markdown, remember to come back after reading it!
+Примерно через пятнадцать минут вы сможете научиться писать на Markdown, не забудьте вернуться после прочтения!
 
 :::
 
-You can try editing the Markdown file yourself to modify the content of the template. If you have started the development server, the modified results will be synced to the development server in real time.
+Вы можете попробовать отредактировать файл Markdown самостоятельно, чтобы изменить содержимое шаблона. Если вы запустили сервер разработки, измененные результаты будут синхронизированы с сервером разработки в режиме реального времени.
 
-::: info Markdown Extension
+::: info Расширение Markdown
 
-- VuePress itself extends some Markdown syntax. For details, see [VuePress → Markdown](../vuepress/markdown.md).
+- Сам VuePress расширяет некоторый синтаксис Markdown. Подробнее смотрите [VuePress → Markdown](../vuepress/markdown.md).
 
-- The theme additionally enables some syntax extensions via `vuepress-plugin-md-enhance`, see [Guide → Markdown](../../guide/get-started/markdown.md).
+- Тема дополнительно включает некоторые расширения синтаксиса через `vuepress-plugin-md-enhance`, смотрите [Руководство → Markdown](../../guide/get-started/markdown.md).
 
 :::
