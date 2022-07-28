@@ -25,7 +25,7 @@ These options are only valid when setting directly under the theme options, sett
 - Required: No
 - Details: [Interface → Icon](../../guide/interface/icon.md)
 
-Link of font icon asset, `'iconfont'` and `'font-awesome'` keywords are supported.
+Link of font icon asset, `'iconfont'` and `'fontawesome'` keywords are supported.
 
 ## darkmode <Badge text="Enabled by default" /> <Badge text="Root only" type="warning" />
 

@@ -2,7 +2,7 @@ import { deprecatedLogger, droppedLogger } from "./utils";
 import type { MarkdownEnhanceOptions } from "../../shared";
 
 /** @deprecated */
-export const covertOptions = (
+export const convertOptions = (
   options: MarkdownEnhanceOptions & Record<string, unknown>
 ): void => {
   deprecatedLogger({

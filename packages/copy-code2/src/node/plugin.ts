@@ -28,7 +28,7 @@ export const copyCodePlugin =
       name: "vuepress-plugin-copy-code2",
 
       define: (): Record<string, unknown> => ({
-        CODE_COPY_OPIONS: options,
+        CODE_COPY_OPTIONS: options,
         CODE_COPY_LOCALES: userCopyCodeLocales,
       }),
 

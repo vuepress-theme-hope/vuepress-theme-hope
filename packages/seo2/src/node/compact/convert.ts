@@ -2,7 +2,7 @@ import { droppedLogger } from "./utils";
 import type { SeoOptions } from "../../shared";
 
 /** @deprecated */
-export const covertOptions = (
+export const convertOptions = (
   options: SeoOptions & Record<string, unknown>
 ): void => {
   droppedLogger(options, "seo", "", "ogp");

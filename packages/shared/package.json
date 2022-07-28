@@ -1,6 +1,6 @@
 {
   "name": "vuepress-shared",
-  "version": "2.0.0-beta.86",
+  "version": "2.0.0-beta.87",
   "description": "Shared files for vuepress-theme-hope",
   "keywords": [
     "vuepress",
@@ -41,7 +41,7 @@
     "@vuepress/plugin-git": "2.0.0-beta.49",
     "@vuepress/shared": "2.0.0-beta.49",
     "@vuepress/utils": "2.0.0-beta.49",
-    "dayjs": "^1.11.3",
+    "dayjs": "^1.11.4",
     "execa": "^5.1.1",
     "ora": "^5.4.1",
     "vue": "^3.2.37",

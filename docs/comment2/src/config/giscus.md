@@ -34,9 +34,16 @@ The ID of the discussion category. Generate through [Giscus Page](https://giscus
 ## mapping
 
 - Type: `string`
-- Default: `"specific"`
+- Default: `"pathname"`
 
 Page - Discussion mapping. For details see [Giscus Page](https://giscus.app/)
+
+## strict
+
+- Type: `boolean`
+- Default: `true`
+
+Whether enable strict mapping or not
 
 ## reactionsEnabled
 

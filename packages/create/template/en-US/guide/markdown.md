@@ -94,7 +94,7 @@ Safely use {{ variable }} in Markdown.
 
 ::: info Custom Title
 
-A custom information container with `code`, [link](#markdown).
+A custom information container with `code`, [link](#custom-container).
 
 ```js
 const a = 1;

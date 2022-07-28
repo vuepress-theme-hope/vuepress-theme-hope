@@ -126,7 +126,7 @@ npm should be installed with Node.js.
 If you are using Node.js v16+, you can use corepack to enable pnpm:
 
 ```bash
-corepack prepare pnpm@7.2.1 --activated
+corepack prepare pnpm@7.6.0 --activated
 ```
 
 Otherwise, you can install it with npm:

@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-sass-palette",
-  "version": "2.0.0-beta.86",
+  "version": "2.0.0-beta.87",
   "description": "A common palette plugin for vuepress themes and plugins",
   "keywords": [
     "vuepress",
@@ -40,7 +40,7 @@
   "dependencies": {
     "@vuepress/utils": "2.0.0-beta.49",
     "chokidar": "^3.5.3",
-    "sass": "^1.53.0",
+    "sass": "^1.54.0",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {

@@ -2,7 +2,7 @@ import { deprecatedLogger } from "./utils";
 import type { SitemapOptions } from "../../shared";
 
 /** @deprecated */
-export const covertOptions = (
+export const convertOptions = (
   options: SitemapOptions & Record<string, unknown>
 ): void => {
   deprecatedLogger({

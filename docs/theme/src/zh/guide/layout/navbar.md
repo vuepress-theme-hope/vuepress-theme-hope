@@ -757,6 +757,3 @@ module.exports = navbar([
 :::
 
 ::::
-
-[plugin-search]: https://v2.vuepress.vuejs.org/zh/reference/plugin/search.html
-[plugin-docsearch]: https://v2.vuepress.vuejs.org/zh/reference/plugin/docsearch.html

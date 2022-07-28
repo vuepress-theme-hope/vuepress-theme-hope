@@ -1,7 +1,12 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { fs } from "@vuepress/utils";
-import { getCanonicalLink, getJSONLD, getOGP } from "./info";
-import { addOGP, appendCanonical, appendJSONLD } from "./inject";
+import { getAlternateLinks, getCanonicalLink, getJSONLD, getOGP } from "./info";
+import {
+  addOGP,
+  appendAlternate,
+  appendCanonical,
+  appendJSONLD,
+} from "./inject";
 import { logger } from "./utils";
 
 import type { App, AppDir } from "@vuepress/core";
@@ -26,10 +31,12 @@ export const appendSEO = (
     : null;
 
   const canonicalLink = getCanonicalLink(page, options);
+  const alternateLinks = getAlternateLinks(page, app);
 
   addOGP(head, ogpContent);
   appendJSONLD(head, jsonLDContent);
   appendCanonical(head, canonicalLink);
+  appendAlternate(head, alternateLinks);
 
   if (options.customHead) options.customHead(head, page, app);
 

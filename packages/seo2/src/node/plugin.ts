@@ -1,7 +1,7 @@
 import { chalk } from "@vuepress/utils";
 import { stripTags } from "vuepress-shared";
 
-import { covertOptions } from "./compact";
+import { convertOptions } from "./compact";
 import { appendSEO, generateRobotsTxt } from "./seo";
 import { logger, md2text } from "./utils";
 
@@ -12,7 +12,7 @@ export const seoPlugin =
   (options: SeoOptions, legacy = false): PluginFunction =>
   (app) => {
     // TODO: Remove it in v2 stable
-    if (legacy) covertOptions(options as SeoOptions & Record<string, unknown>);
+    if (legacy) convertOptions(options as SeoOptions & Record<string, unknown>);
     if (app.env.isDebug) logger.info(`Options: ${options.toString()}`);
 
     const plugin: Plugin = { name: "vuepress-plugin-seo2" };

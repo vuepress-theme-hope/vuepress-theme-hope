@@ -53,11 +53,9 @@ category:
 - 随时随地添加你的博客或文档到此
 
 [vuepress-theme-hope]: https://vuepress-theme-hope.github.io/v2/
-[hope-studio]: https://hope-studio.innenu.com
 [waline]: https://waline.js.org
 [java-guide]: https://javaguide.cn/
 [to-be-better-javaer]: https://tobebetterjavaer.com/
 [fast-request]: https://dromara.org/fast-request/
 [mrhope]: https://mrhope.site
-[coulsonzero]: https://docs.coulsonzero.top/
 [ustc]: https://ustc.gleamoe.com/

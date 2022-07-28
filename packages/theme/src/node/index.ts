@@ -1,10 +1,10 @@
 // TODO: remove in v2 stable version
 import {
   // v1
-  covertFrontmatter,
-  covertNavbarConfig,
+  convertFrontmatter,
+  convertNavbarConfig,
   convertSidebarConfig,
-  covertThemeConfig,
+  convertThemeConfig,
   config,
   navbarConfig,
   sidebarConfig,
@@ -24,10 +24,10 @@ export {
   navbarConfig,
   sidebarConfig,
   themeConfig,
-  covertFrontmatter,
-  covertNavbarConfig,
+  convertFrontmatter,
+  convertNavbarConfig,
   convertSidebarConfig,
-  covertThemeConfig,
+  convertThemeConfig,
   defineHopeConfig,
   defineThemeConfig,
   defineNavbarConfig,

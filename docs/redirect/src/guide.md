@@ -51,8 +51,8 @@ redirect({
   config: (app) =>
     Object.fromEntries(
       app.pages
-        .filter((page) => page.path.startsWith("/posts/"))
-        .map((page) => [page.path.replace(/^\/posts\//, "/post/"), page.path])
+        .filter(({ path }) => path.startsWith("/posts/"))
+        .map(({ path }) => [path.replace(/^\/posts\//, "/post/"), path])
     ),
 });
 ```
