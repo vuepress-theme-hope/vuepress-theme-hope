@@ -31,7 +31,7 @@ export const ruSidebarConfig = sidebar({
       ],
     },
     {
-      text: "Cookbook",
+      text: "Учебник с примерами",
       icon: "guide",
       prefix: "cookbook/",
       children: ["tutorial/", "markdown/", "vuepress/", "advanced/"],
@@ -59,7 +59,7 @@ export const ruSidebarConfig = sidebar({
 
   "/ru/cookbook/": [
     {
-      text: "Tutorial",
+      text: "Руководство",
       icon: "guide",
       prefix: "tutorial/",
       children: [
@@ -98,7 +98,7 @@ export const ruSidebarConfig = sidebar({
       children: ["", "page", "markdown", "file", "config", "plugin", "theme"],
     },
     {
-      text: "Advanced",
+      text: "Продвинутый",
       icon: "advance",
       prefix: "advanced/",
       collapsable: true,
