@@ -1,41 +1,41 @@
 ---
-title: Cookbook
+title: Учебник с примерами
 icon: guide
 article: false
 ---
 
-## Tutorial
+## Руководство
 
-Here is a step by step tutorial for newcomers:
+Вот пошаговая инструкция для новичков:
 
-1. [Runtime Setup](tutorial/env.md)
+1. [Настройка среды выполнения](tutorial/env.md)
 
-1. [Create project](tutorial/create.md)
+1. [Создание проекта](tutorial/create.md)
 
-1. [Project command](tutorial/command.md)
+1. [Команды проекта](tutorial/command.md)
 
-1. [Project Content](tutorial/content.md)
+1. [Контент проекта](tutorial/content.md)
 
-1. [Project configuration](tutorial/config.md)
+1. [Конфигурация проекта](tutorial/config.md)
 
-1. [Project Structure](tutorial/structure.md)
+1. [Структура проекта](tutorial/structure.md)
 
-1. [Project Deployment](tutorial/deploy.md)
+1. [Деплой проекта](tutorial/deploy.md)
 
-## How to write Markdown
+## Как писать Markdown
 
-- [Markdown Guide](markdown/README.md)
+- [Руководство по Markdown](markdown/README.md)
 
-## VuePress Introduction
+## Введение в VuePress
 
-- [VuePress Intro](vuepress/README.md)
+- [Введение в VuePress](vuepress/README.md)
 
-## Advanced Tutorial
+## Расширенное руководство
 
-- [Using Components](advanced/component.md)
+- [Использование компонентов](advanced/component.md)
 
-- [Customize Style](advanced/style.md)
+- [Кастомизация стиля](advanced/style.md)
 
-- [Replacing Component](advanced/replace.md)
+- [Замена компонента](advanced/replace.md)
 
-- [Theme Extending](advanced/extend.md)
+- [Расширение темы](advanced/extend.md)
