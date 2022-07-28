@@ -149,7 +149,7 @@ interface FeedContributor {
 - Тип: `"always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never"`
 - По умолчанию: `"daily"`
 
-Частота обновления страницы по умолчанию. Это переопределит [changefreq](#changefreq) в параметрах плагина.
+Частота обновления страницы по умолчанию. Это переопределит changefreq в параметрах плагина.
 
 ### sitemap.exclude
 

@@ -95,7 +95,7 @@ module.exports = {
 
 ::: info Custom Title
 
-A custom information container with `code`, [link](#markdown).
+Пользовательский информационный контейнер с `code`, [ссылка](#custom-container).
 
 ```js
 const a = 1;

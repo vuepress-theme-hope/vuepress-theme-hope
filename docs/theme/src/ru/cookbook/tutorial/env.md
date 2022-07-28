@@ -83,5 +83,5 @@ tag:
 
 ```sh
 corepack enable
-corepack prepare pnpm@7.2.1 --activate
+corepack prepare pnpm@7.6.0 --activate
 ```

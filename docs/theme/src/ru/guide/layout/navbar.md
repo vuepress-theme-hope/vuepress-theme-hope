@@ -9,7 +9,7 @@ tag:
   - Панель навигации
 ---
 
-Панель навигации может содержать название вашего сайта, [окно поиска](#search-box), [ссылки панели навигации](#navbar-links), [I18n](https://v2.vuepress.vuejs.org/guide/i18n.html), [Ссылка на репозиторий](#git-repo-and-edit-links) и [панель outlook](#outlook-panel). Все они зависят от вашей конфигурации.
+Панель навигации может содержать название вашего сайта, [окно поиска](#search-box), [ссылки панели навигации](#navbar-links), [I18n](https://v2.vuepress.vuejs.org/guide/i18n.html), [Ссылка на репозиторий](#git-repository-and-edit-links) и [Outlook Popup](#outlook-popup). Все они зависят от вашей конфигурации.
 
 <!-- more -->
 
@@ -761,6 +761,3 @@ module.exports = navbar([
 :::
 
 ::::
-
-[plugin-search]: https://v2.vuepress.vuejs.org/reference/plugin/search.html
-[plugin-docsearch]: https://v2.vuepress.vuejs.org/reference/plugin/docsearch.html

@@ -101,9 +101,9 @@ tag:
 
 1. Вам необходимо [отправить URL-адрес вашего сайта](https://docsearch.algolia.com/apply/), чтобы присоединиться к программе DocSearch.
 
-   Команда DocSearch отправит [apiKey](#apikey) и [indexName](#indexname) на вашу электронную почту после создания индекса. Затем вы можете настроить этот плагин для включения DocSearch в VuePress.
+   Команда DocSearch отправит apiKey и indexName на вашу электронную почту после создания индекса. Затем вы можете настроить этот плагин для включения DocSearch в VuePress.
 
-   Кроме того, вы можете [запустить свой собственный поисковый робот](https://docsearch.algolia.com/docs/run-your-own/) для создания индекса, а затем использовать свой собственный [appId](#appId), [apiKey](#apikey) и [indexName](#indexname) для настройки этого плагина.
+   Кроме того, вы можете [запустить свой собственный поисковый робот](https://docsearch.algolia.com/docs/run-your-own/) для создания индекса, а затем использовать свой собственный appId, apiKey и indexName для настройки этого плагина.
 
 1. Правильно настройте Algolia Crawler в соответствии со следующими требованиями. Вам следует перейти на [Algolia Crawler](https://crawler.algolia.com/admin/crawlers/), чтобы обновить конфигурацию вашего сканера.
 
