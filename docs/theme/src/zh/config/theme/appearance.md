@@ -25,7 +25,7 @@ tag:
 - 必填: 否
 - 详情: [界面 → 图标](../../guide/interface/icon.md)
 
-字体图标资源链接，支持 `'iconfont'` 和 `'font-awesome'` 关键字。
+字体图标资源链接，支持 `'iconfont'` 和 `'fontawesome'` 关键字。
 
 ## darkmode <Badge text="默认启用" /> <Badge text="仅限 Root" type="warning" />
 

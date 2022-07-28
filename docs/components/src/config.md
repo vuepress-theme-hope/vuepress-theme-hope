@@ -70,7 +70,7 @@ Locales config for BackToTop button.
 - Type: `string`
 - Required: No
 
-Link of font icon asset, `'iconfont'` and `'font-awesome'` keywords are supported.
+Link of font icon asset, `'iconfont'` and `'fontawesome'` keywords are supported.
 
 ## iconPrefix
 
