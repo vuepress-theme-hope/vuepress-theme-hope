@@ -1,15 +1,15 @@
 ---
-title: File Structure
+title: Структура файла
 icon: folder
 category:
-  - Cookbook
+  - Учебник с примерами
   - VuePress
 tag:
-  - File Structure
+  - Структура файла
   - VuePress
 ---
 
-## File Structure
+## Структура файла
 
 ```
 .

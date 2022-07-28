@@ -1,21 +1,21 @@
 ---
-title: VuePress Page
+title: Страница VuePress
 icon: page
 category:
-  - Cookbook
+  - Учебник с примерами
   - VuePress
 tag:
-  - Page
+  - Страница
   - VuePress
 ---
 
-VuePress is markdown-centered. Each Markdown file inside your project is a standalone page.
+VuePress ориентирован на уценку. Каждый файл Markdown внутри вашего проекта представляет собой отдельную страницу.
 
-## Routing
+## Роутинг
 
-By default, the route path of a page is determined by the relative path of your Markdown file.
+По умолчанию путь маршрута страницы определяется относительным путем вашего файла Markdown.
 
-Assuming this is the directory structure of your Markdown files:
+Предполагая, что это структура каталогов ваших файлов Markdown:
 
 ```
 └─ docs
@@ -26,9 +26,9 @@ Assuming this is the directory structure of your Markdown files:
    └─ README.md
 ```
 
-Take the `docs` directory as your [sourceDir](https://v2.vuepress.vuejs.org/reference/cli.md), e.g. you are running `vuepress dev docs` command. Then the route paths of your Markdown files would be:
+Возьмите каталог `docs` в качестве [исходного каталога](https://v2.vuepress.vuejs.org/reference/cli.md), например вы используете команду `vuepress dev docs`. Тогда пути маршрута ваших файлов Markdown будут такими:
 
-| Relative Path      | Route Path           |
+| Относительный путь | Путь маршрута        |
 | ------------------ | -------------------- |
 | `/README.md`       | `/`                  |
 | `/contributing.md` | `/contributing.html` |
@@ -37,7 +37,7 @@ Take the `docs` directory as your [sourceDir](https://v2.vuepress.vuejs.org/refe
 
 ## Frontmatter
 
-A Markdown file could contain a [YAML](https://yaml.org/) frontmatter. The frontmatter must be at the top of the Markdown file and must be wrapped with a couple of triple-dashed lines. Here is a basic example:
+Файл Markdown может содержать frontmatter [YAML](https://yaml.org/). Вступительная часть должна быть в верхней части файла Markdown и должна быть заключена в пару строк с тройным пунктиром. Вот простой пример:
 
 ```md
 ---
@@ -47,20 +47,20 @@ description: Description of this page
 ---
 ```
 
-You must have noticed that those fields are similar with the Site Config in Config File. You can override `lang`, `title`, `description`, etc., of current page via frontmatter. So you can take frontmatter as page scope config.
+Вы, должно быть, заметили, что эти поля аналогичны параметрам конфигурации сайта в файле конфигурации. Вы можете переопределить `lang`, `title`, `description`, и т. д. текущей страницы через frontmatter. Таким образом, вы можете использовать frontmatter в качестве конфигурации области страницы.
 
-Also, VuePress has built-in support for some frontmatter fields, and your theme may have its own special frontmatter, too.
+Кроме того, VuePress имеет встроенную поддержку некоторых полей frontmatter, и у вашей темы тоже может быть своя особая frontmatter.
 
 ::: tip
 
-Check out the [Frontmatter Reference](https://v2.vuepress.vuejs.org/reference/frontmatter.md) for a full list of VuePress built-in frontmatter.
+Ознакомьтесь со [Справочником Frontmatter](https://v2.vuepress.vuejs.org/reference/frontmatter.md) для получения полного списка встроенных интерфейсов VuePress.
 
-Check out the [Default Theme > Frontmatter Reference](https://v2.vuepress.vuejs.org/reference/default-theme/frontmatter.md) for the frontmatter of default theme.
+Ознакомьтесь с [Тема по умолчанию > Справочником Frontmatter](https://v2.vuepress.vuejs.org/reference/default-theme/frontmatter.md), чтобы узнать о теме по умолчанию.
 
 :::
 
-## Content
+## Контент
 
-The main content of your page is written in Markdown. VuePress will firstly transform your Markdown to HTML code, then treat the HTML code as `<template>` of Vue SFC.
+Основной контент вашей страницы написан в Markdown. VuePress сначала преобразует ваш Markdown в HTML-код, а затем обрабатывает HTML-код как `<template>` Vue SFC.
 
-With the power of [markdown-it](https://github.com/markdown-it/markdown-it) and Vue template syntax, the basic Markdown can be extended a lot. Next, check out the [Markdown](./markdown.md) guide for all the extensions of Markdown in VuePress.
+Благодаря возможностям [markdown-it](https://github.com/markdown-it/markdown-it) и синтаксису шаблонов Vue базовый Markdown можно значительно расширить. Затем ознакомьтесь с руководством [Markdown](./markdown.md) для всех расширений Markdown в VuePress.

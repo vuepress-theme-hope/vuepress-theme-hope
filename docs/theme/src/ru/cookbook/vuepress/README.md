@@ -1,43 +1,43 @@
 ---
-title: About VuePress
+title: О VuePress
 icon: vue
 category:
-  - Cookbook
+  - Учебник с примерами
   - VuePress
 tag:
-  - Intro
+  - Вступление
   - VuePress
 prev: ../markdown/demo.html
 ---
 
-VuePress is a markdown-centered static site generator. You can write your content (documentations, blogs, etc.) in [Markdown](https://en.wikipedia.org/wiki/Markdown), then VuePress will help you to generate a static site to host them.
+VuePress — это генератор статических сайтов, ориентированный на уценку. Вы можете написать свой контент (документацию, блоги и т. д.) в [Markdown](https://en.wikipedia.org/wiki/Markdown), тогда VuePress поможет вам создать статический сайт для их размещения.
 
 <!-- more -->
 
-## How It Works
+## Как это работает
 
-A VuePress site is in fact a single-page application (SPA) powered by [Vue](https://v3.vuejs.org/) and [Vue Router](https://next.router.vuejs.org).
+Сайт VuePress на самом деле представляет собой одностраничное приложение (SPA) на базе [Vue](https://v3.vuejs.org/) и [Vue Router](https://next.router.vuejs.org).
 
-Routes are generated according to the relative path of your Markdown files. Each Markdown file is compiled into HTML with [markdown-it](https://github.com/markdown-it/markdown-it) and then processed as the template of a Vue component. This allows you to directly use Vue inside your Markdown files and is great when you need to embed dynamic content.
+Маршруты генерируются в соответствии с относительным путем ваших файлов Markdown. Каждый файл Markdown компилируется в HTML с помощью [markdown-it](https://github.com/markdown-it/markdown-it), а затем обрабатывается как шаблон компонента Vue. Это позволяет вам напрямую использовать Vue внутри ваших файлов Markdown и отлично подходит, когда вам нужно встроить динамический контент.
 
-- During development, we start a normal dev-server, and serve the VuePress site as a normal SPA. If you’ve used Vue before, you will notice the familiar development experience when you are writing and developing with VuePress.
+- Во время разработки мы запускаем обычный dev-сервер, а сайт VuePress обслуживаем как обычный SPA. Если вы раньше использовали Vue, вы заметите знакомый опыт разработки при написании и разработке с помощью VuePress.
 
-- During build, we create a server-rendered version of the VuePress site and render the corresponding HTML by virtually visiting each route.
+- Во время сборки мы создаем серверную версию сайта VuePress и визуализируем соответствующий HTML, виртуально посещая каждый маршрут.
 
-## VuePress Intro
+## Вступление во VuePress
 
-- [Page](page.md)
+- [Страница](page.md)
 
-- [Markdown](markdown.md)
+- [Разметка](markdown.md)
 
-- [File Structure](file.md)
+- [Структура файла](file.md)
 
-- [Config File](config.md)
+- [Файл конфигурации](config.md)
 
-- [Plugins](plugin.md)
+- [Плагины](plugin.md)
 
-- [theme](theme.md)
+- [Тема](theme.md)
 
-## VuePress Official Docs
+## Официальные документация VuePress
 
 - [VuePress](https://v2.vuepress.vuejs.org/)

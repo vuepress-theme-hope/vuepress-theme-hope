@@ -1,17 +1,17 @@
 ---
-title: VuePress Config
+title: Конфиг VuePress
 icon: config
 category:
-  - Cookbook
+  - Учебник с примерами
   - VuePress
 tag:
-  - Config
+  - Конфиг
   - VuePress
 ---
 
-## Config File
+## Файл конфигурации
 
-Without any configuration, the VuePress site is pretty minimal. To customize your site, let’s first create a `.vuepress` directory inside your docs directory. This is where all VuePress-specific files will be placed. Your project structure is probably like this:
+Без какой-либо настройки сайт VuePress довольно минимален. Чтобы настроить ваш сайт, давайте сначала создадим каталог `.vuepress` внутри вашего каталога документов. Здесь будут размещены все файлы, относящиеся к VuePress. Структура вашего проекта, вероятно, выглядит так:
 
 ```
 ├─ docs
@@ -22,9 +22,9 @@ Without any configuration, the VuePress site is pretty minimal. To customize you
 └─ package.json
 ```
 
-The essential file for configuring a VuePress site is `.vuepress/config.js`, while TypeScript config file is also supported. You can use `.vuepress/config.ts` instead to get better types hint for VuePress Config.
+Важным файлом для настройки сайта VuePress является `.vuepress/config.js`, также поддерживается файл конфигурации TypeScript. Вместо этого вы можете использовать `.vuepress/config.ts`, чтобы получить лучшую подсказку типов для VuePress Config.
 
-A basic config file looks like this:
+Базовый конфигурационный файл выглядит так:
 
 ::: code-tabs#language
 
@@ -69,26 +69,26 @@ module.exports = {
 
 ::: tip
 
-Check out the [Config Reference](https://v2.vuepress.vuejs.org/reference/config.md) for a full list of VuePress config.
+Ознакомьтесь с [Справочником по конфигурации](https://v2.vuepress.vuejs.org/reference/config.md) для получения полного списка конфигурации VuePress.
 
 :::
 
-## Config Scopes
+## Области конфигурации
 
-### Site Config
+### Конфигурация сайта
 
-Site config means that, no matter what theme you are using, these configurations are always valid.
+Конфигурация сайта означает, что независимо от того, какую тему вы используете, эти конфигурации всегда действительны.
 
-As we know, every site should have its own `lang`, `title`, `description`, etc. Thus, VuePress has built-in support for those options.
+Как мы знаем, каждый сайт должен иметь свой собственный `lang`, `title`, `description`, и т. д. Таким образом, VuePress имеет встроенную поддержку этих параметров.
 
-### Theme Config
+### Конфигурация темы
 
-Theme config will be processed by VuePress theme, so it depends on the theme you are using.
+Конфигурация темы будет обрабатываться темой VuePress, поэтому это зависит от используемой вами темы.
 
-To use `vuepress-theme-hope`, you should import `hopeTheme` from it, passing in your theme options and call it, then assign it to `theme` option.
+Чтобы использовать `vuepress-theme-hope`, вы должны импортировать из него `hopeTheme`, передав параметры вашей темы и вызвать его, а затем назначить его параметру `theme`.
 
 ::: warning
 
-If you don’t specify the `theme` option of VuePress config, the default theme will be used.
+Если вы не укажете параметр `theme` в конфигурации VuePress, будет использоваться тема по умолчанию.
 
 :::

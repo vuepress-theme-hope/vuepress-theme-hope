@@ -1,23 +1,23 @@
 ---
-title: Theme Config
+title: Конфигурация темы
 icon: palette
 category:
-  - Cookbook
+  - Учебник с примерами
   - VuePress
 tag:
-  - Theme
+  - Тема
   - VuePress
 ---
 
-VuePress theme can provide layouts, styles and many other features for you, helping you to focus on writing Markdown content.
+Тема VuePress может предоставить вам макеты, стили и многие другие функции, помогая вам сосредоточиться на написании контента Markdown.
 
-## Default Theme
+## Тема по умолчанию
 
-VuePress has a default theme out of the box, which is applied to our documentation site you are currently browsing.
+VuePress имеет стандартную тему по умолчанию, которая применяется к нашему сайту документации, который вы сейчас просматриваете.
 
-If you don't specify the theme to use, the default theme will be used automatically.
+Если вы не укажете тему для использования, будет автоматически использоваться тема по умолчанию.
 
-To configure the default theme, you need to import and use it in your config file via the [theme](https://v2.vuepress.vuejs.org/reference/config.html#theme) option:
+Чтобы настроить тему по умолчанию, вам необходимо импортировать и использовать ее в файле конфигурации с помощью параметра [тема](https://v2.vuepress.vuejs.org/reference/config.html#theme):
 
 ```js
 const { defaultTheme } = require("vuepress");
@@ -35,14 +35,14 @@ module.exports = {
 };
 ```
 
-The default theme provides basic but useful features for documentation site, you can check out [Default Theme Config Reference](https://v2.vuepress.vuejs.org/reference/default-theme/config.html) for a full list of config.
+Тема по умолчанию предоставляет основные, но полезные функции для сайта документации, вы можете проверить [Справочник по настройке темы по умолчанию](https://v2.vuepress.vuejs.org/reference/default-theme/config.html) для получения полного списка конфиг.
 
-However, you might think it is not good enough. Or, you want to build a different type of site, for example, a blog, instead of a documentation. Then, you can try to use a community theme or create a local theme.
+Тем не менее, вы можете подумать, что это недостаточно хорошо. Или вы хотите создать сайт другого типа, например, блог, вместо документации. Затем вы можете попробовать использовать тему сообщества или создать локальную тему.
 
-## Community Theme
+## Тема сообщества
 
-Community users have created lots of theme and published them to [NPM](https://www.npmjs.com/search?q=keywords:vuepress-theme). You should check the theme's own documentation for detailed guide.
+Пользователи сообщества создали множество тем и опубликовали их в [NPM](https://www.npmjs.com/search?q=keywords:vuepress-theme). Вы должны проверить собственную документацию темы для подробного руководства.
 
-## Local Theme
+## Местная тема
 
-If you want to use your own custom theme but don't want to publish it, you can create a local theme. Refer to [Advanced > Writing a Theme](https://v2.vuepress.vuejs.org/advanced/theme.html) for how to write your own theme.
+Если вы хотите использовать свою собственную тему, но не хотите ее публиковать, вы можете создать локальную тему. Смотрите [Дополнительно > Написание темы](https://v2.vuepress.vuejs.org/advanced/theme.html), чтобы узнать, как написать собственную тему.

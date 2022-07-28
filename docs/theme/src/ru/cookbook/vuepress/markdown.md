@@ -1,46 +1,46 @@
 ---
-title: Builtin Markdown features
+title: Встроенные функции разметки
 icon: markdown
 category:
-  - Cookbook
+  - Учебник с примерами
   - VuePress
 tag:
-  - Markdown
+  - Разметка
   - VuePress
 ---
 
-Here are some enhance VuePress makes on Markdown syntax.
+Вот несколько улучшений, которые VuePress вносит в синтаксис Markdown.
 
-## Syntax Extensions
+## Расширения синтаксиса
 
-The Markdown content in VuePress will be parsed by [markdown-it](https://github.com/markdown-it/markdown-it), which supports [syntax extensions](https://github.com/markdown-it/markdown-it#syntax-extensions) via markdown-it plugins.
+Содержимое Markdown в VuePress будет анализироваться [markdown-it](https://github.com/markdown-it/markdown-it), который поддерживает [расширения синтаксиса](https://github.com/markdown-it/markdown-it#syntax-extensions) через плагины markdown-it.
 
-This section will introduce built-in Markdown syntax extensions of VuePress.
+В этом разделе будут представлены встроенные расширения синтаксиса Markdown для VuePress.
 
-You can also configure those built-in extensions, load more markdown-it plugins and implement your own extensions via [markdown](https://v2.vuepress.vuejs.org/reference/config.md#markdown) option and [extendsMarkdown](https://v2.vuepress.vuejs.org/reference/plugin-api.md#extendsmarkdown) option.
+Вы также можете настроить эти встроенные расширения, загрузить дополнительные плагины markdown-it и реализовать свои собственные расширения с помощью опции [markdown](https://v2.vuepress.vuejs.org/reference/config.md#markdown) и [extendsMarkdown](https://v2.vuepress.vuejs.org/reference/plugin-api.md#extendsmarkdown).
 
-### Embedded
+### Встроенный
 
-Embedded by markdown-it:
+Встроено в markdown-it:
 
-- [Tables](https://help.github.com/articles/organizing-information-with-tables/) (GFM)
-- [Strikethrough](https://help.github.com/articles/basic-writing-and-formatting-syntax/#styling-text) (GFM)
+- [Таблицы](https://help.github.com/articles/organizing-information-with-tables/) (GFM)
+- [Зачеркнутый](https://help.github.com/articles/basic-writing-and-formatting-syntax/#styling-text) (GFM)
 
-### Header Anchors
+### Якоря заголовка
 
-You might have noticed that, a `#` anchor is displayed when you hover the mouse on the headers of each section. By clicking the `#` anchor, you can jump to the section directly.
+Вы могли заметить, что при наведении курсора мыши на заголовки каждого раздела отображается якорь `#`. Нажав якорь `#`, вы можете перейти непосредственно к разделу.
 
 ::: tip
-This header anchors extension is supported by [markdown-it-anchor](https://github.com/valeriangalliat/markdown-it-anchor).
+Это расширение привязки заголовков поддерживается [markdown-it-anchor](https://github.com/valeriangalliat/markdown-it-anchor).
 
-Config reference: [markdown.anchor](https://v2.vuepress.vuejs.org/reference/config.md#markdown-anchor)
+Ссылка на конфигурацию: [markdown.anchor](https://v2.vuepress.vuejs.org/reference/config.md#markdown-anchor)
 :::
 
-### Links
+### Ссылки
 
-When using Markdown [link syntax](https://spec.commonmark.org/0.29/#link-reference-definitions), VuePress will implement some conversions for you.
+При использовании Markdown [синтаксис ссылки](https://spec.commonmark.org/0.29/#link-reference-definitions), VuePress реализует для вас некоторые преобразования.
 
-Take our documentation source files as an example:
+В качестве примера возьмем наши исходные файлы документации:
 
 ```
 └─ src
@@ -54,124 +54,124 @@ Take our documentation source files as an example:
    └─ README.md
 ```
 
-Raw Markdown:
+Необработанная разметка:
 
 ```md
 <!-- relative path -->
 
-[Home](../../README.md)  
-[Contribution Guide](../../contribution.md)  
-[VuePress Config](./config.md)
+[Главная](../../README.md)  
+[Руководство по вкладу](../../contribution.md)  
+[Конфиг VuePress](./config.md)
 
 <!-- absolute path -->
 
-[Guide](/guide/README.md)  
-[Config > I18n](/config/i18n.md)
+[Руководство](/guide/README.md)  
+[Конфиг > I18n](/config/i18n.md)
 
 <!-- URL -->
 
 [GitHub](https://github.com)
 ```
 
-Converted to:
+Конвертировано в:
 
 ```vue
 <template>
-  <RouterLink to="/v2/">Home</RouterLink>
-  <RouterLink to="/v2/contribution.html">Contribution Guide</RouterLink>
+  <RouterLink to="/v2/">Главная</RouterLink>
+  <RouterLink to="/v2/contribution.html">Руководство по вкладу</RouterLink>
   <RouterLink to="/v2/cookbook/vuepress/config.html"
-    >VuePress Config</RouterLink
+    >Конфиг VuePress</RouterLink
   >
-  <RouterLink to="/v2/guide/">Guide</RouterLink>
-  <RouterLink to="/v2/config/i18n.html">Config &gt; I18n</RouterLink>
+  <RouterLink to="/v2/guide/">Руководство</RouterLink>
+  <RouterLink to="/v2/config/i18n.html">Конфиг &gt; I18n</RouterLink>
   <a href="https://github.com" target="_blank" rel="noopener noreferrer"
     >GitHub</a
   >
 </template>
 ```
 
-Rendered as:
+Оформляется как:
 
-- [Home](../../README.md)
-- [Contribution Guide](../../contribution.md)
-- [VuePress Config](./config.md)
-- [Guide](/guide/README.md)
-- [Config > I18n](/config/i18n.md)
+- [Главная](../../README.md)
+- [Руководство по вкладу](../../contribution.md)
+- [Конфиг VuePress](./config.md)
+- [Руководство](/guide/README.md)
+- [Конфиг > I18n](/config/i18n.md)
 - [GitHub](https://github.com)
 
-Explanation:
+Объяснение:
 
-- Internal links will be converted to `<RouterLink>` for SPA navigation.
-- Internal links to `.md` files will be converted to the [page route path](./page.md#routing), and both absolute path and relative path are supported.
-- External links will get `target="_blank" rel="noopener noreferrer"` attrs.
+- Внутренние ссылки будут преобразованы в `<RouterLink>` для навигации по SPA.
+- Внутренние ссылки на файлы `.md` будут преобразованы в [путь маршрута страницы](./page.md#routing), поддерживаются как абсолютные, так и относительные пути.
+- Внешние ссылки получат атрибуты `target="_blank" rel="noopener noreferrer"`.
 
-Suggestion:
+Предложение:
 
-Try to use relative paths instead of absolute paths for internal links.
+Попробуйте использовать относительные пути вместо абсолютных для внутренних ссылок.
 
-- Relative paths are a valid links to the target files, and they can navigate correctly when browsing the source files in your editor or repository.
-- Relative paths are consistent in different locales, so you don’t need to change the locale path when translating your content.
-- When using absolute paths, if the [base](https://v2.vuepress.vuejs.org/reference/config.md#base) of your site is not `"/"`, you will need to prepend the `base` manually or use [base helper](https://v2.vuepress.vuejs.org/guide/assets.html#base-helper).
+- Относительные пути являются действительными ссылками на целевые файлы, и по ним можно правильно перемещаться при просмотре исходных файлов в вашем редакторе или репозитории.
+- Относительные пути согласованы в разных локалях, поэтому вам не нужно менять путь локали при переводе контента.
+- При использовании абсолютных путей, если [base](https://v2.vuepress.vuejs.org/reference/config.md#base) вашего сайта не `"/"`, вам нужно будет добавить `base` вручную или используйте [base хелпер](https://v2.vuepress.vuejs.org/guide/assets.html#base-helper).
 
 ::: tip
-This links extension is supported by our built-in plugin.
+Это расширение ссылок поддерживается нашим встроенным плагином.
 
-Config reference: [markdown.links](https://v2.vuepress.vuejs.org/reference/config.md#markdown-links)
+Ссылка на конфигурацию: [markdown.links](https://v2.vuepress.vuejs.org/reference/config.md#markdown-links)
 :::
 
-### Emoji
+### Эмодзи
 
-You can add emoji to your Markdown content by typing `:EMOJICODE:`.
+Вы можете добавить смайлики в свой контент Markdown, набрав `:EMOJICODE:`.
 
-For a full list of available emoji and codes, check out [emoji-cheat-sheet](https://github.com/ikatyang/emoji-cheat-sheet).
+Полный список доступных смайликов и кодов смотрите на [emoji-cheat-sheet](https://github.com/ikatyang/emoji-cheat-sheet).
 
-Input:
+Ввод:
 
 ```md
 VuePress 2 is out :tada: !
 ```
 
-Output:
+Вывод:
 
 VuePress 2 is out :tada: !
 
 ::: tip
-This emoji extension is supported by [markdown-it-emoji](https://github.com/markdown-it/markdown-it-emoji).
+Это расширение emoji поддерживается [markdown-it-emoji](https://github.com/markdown-it/markdown-it-emoji).
 
-Config reference: [markdown.emoji](https://v2.vuepress.vuejs.org/reference/config.md#markdown-emoji)
+Ссылка на конфигурацию: [markdown.emoji](https://v2.vuepress.vuejs.org/reference/config.md#markdown-emoji)
 :::
 
-### Table of Contents
+### Оглавление
 
-To put the table of contents (TOC) of your current page inside your Markdown content, you can use the `[[toc]]` syntax.
+Чтобы поместить оглавление (TOC) вашей текущей страницы в содержимое Markdown, вы можете использовать синтаксис `[[toc]]`.
 
-Input:
+Ввод:
 
 ```md
 [[toc]]
 ```
 
-Output:
+Вывод:
 
 [[toc]]
 
-The headers in TOC will link to the corresponding [header anchors](#header-anchors), so TOC won’t work well if you disable header anchors.
+Заголовки в оглавлении будут ссылаться на соответствующие [привязки заголовков](#header-anchors), поэтому оглавление не будет работать, если вы отключите привязки заголовков.
 
 ::: tip
-This toc extension is supported by our built-in plugin, which is forked and modified from [markdown-it-toc-done-right](https://github.com/nagaozen/markdown-it-toc-done-right).
+Это расширение toc поддерживается нашим встроенным плагином, который разветвлен и модифицирован из [markdown-it-toc-done-right](https://github.com/nagaozen/markdown-it-toc-done-right).
 
-Config reference: [markdown.toc](https://v2.vuepress.vuejs.org/reference/config.md#markdown-toc)
+Ссылка на конфигурацию: [markdown.toc](https://v2.vuepress.vuejs.org/reference/config.md#markdown-toc)
 :::
 
-### Code Blocks
+### Блоки кода
 
-Following code blocks extensions are implemented during Markdown parsing in Node side. That means, the code blocks won’t be processed in client-side.
+Следующие расширения блоков кода реализованы во время синтаксического анализа Markdown на стороне узла. Это означает, что блоки кода не будут обрабатываться на стороне клиента.
 
-#### Line Highlighting
+#### Подсветка линии
 
-You can highlight specified lines of your code blocks by adding line ranges mark in your fenced code blocks:
+Вы можете выделить определенные строки ваших блоков кода, добавив метку диапазонов строк в ваши огороженные блоки кода:
 
-Input:
+Ввод:
 
 ````md
 ```ts {1,6-8}
@@ -192,7 +192,7 @@ export const config: UserConfig = {
 ```
 ````
 
-Output:
+Вывод:
 
 ```ts {1,6-8}
 import type { UserConfig } from "@vuepress/cli";
@@ -207,25 +207,25 @@ export const config: UserConfig = {
 };
 ```
 
-Examples for line ranges mark:
+Примеры маркировки диапазонов строк:
 
-- Line ranges: `{5-8}`
-- Multiple single lines: `{4,7,9}`
-- Combined: `{4,7-13,16,23-27,40}`
+- Диапазоны строк: `{5-8}`
+- Несколько одиночных строк: `{4,7,9}`
+- Комбинированный: `{4,7-13,16,23-27,40}`
 
 ::: tip
-This line highlighting extension is supported by our built-in plugin, which is forked and modified from [markdown-it-highlight-lines](https://github.com/egoist/markdown-it-highlight-lines).
+Это расширение для выделения строк поддерживается нашим встроенным плагином, который является разветвленным и модифицированным из [markdown-it-highlight-lines](https://github.com/egoist/markdown-it-highlight-lines).
 
-Config reference: [markdown.code.highlightLines](https://v2.vuepress.vuejs.org/reference/config.md#markdown-code-highlightlines)
+Ссылка на конфигурацию: [markdown.code.highlightLines](https://v2.vuepress.vuejs.org/reference/config.md#markdown-code-highlightlines)
 :::
 
-#### Line Numbers
+#### Номера строк
 
-You must have noticed that the number of lines is displayed on the left side of code blocks. This is enabled by default and you can disable it in config.
+Вы, должно быть, заметили, что количество строк отображается слева от блоков кода. Это включено по умолчанию, и вы можете отключить его в конфигурации.
 
-You can add `:line-numbers` / `:no-line-numbers` mark in your fenced code blocks to override the value set in config.
+Вы можете добавить выделение `:line-numbers` / `:no-line-numbers` в ваши изолированные блоки кода, чтобы переопределить значение, установленное в конфиге.
 
-Input:
+Ввод:
 
 ````md
 ```ts
@@ -241,7 +241,7 @@ const line3 = 'This is line 3'
 ```
 ````
 
-Output:
+Вывод:
 
 ```ts
 // line-numbers is enabled by default
@@ -256,26 +256,26 @@ const line3 = 'This is line 3'
 ```
 
 ::: tip
-This line numbers extension is supported by our built-in plugin.
+Это расширение номеров строк поддерживается нашим встроенным плагином.
 
-Config reference: [markdown.code.lineNumbers](https://v2.vuepress.vuejs.org/reference/config.md#markdown-code-linenumbers)
+Ссылка на конфигурацию: [markdown.code.lineNumbers](https://v2.vuepress.vuejs.org/reference/config.md#markdown-code-linenumbers)
 :::
 
-#### Wrap with v-pre
+#### Обертка с помощью v-pre
 
-As [template syntax is allowed in Markdown](#template-syntax), it would also work in code blocks, too.
+Поскольку [синтаксис шаблона разрешен в Markdown](#template-syntax), он также будет работать в блоках кода.
 
-To avoid your code blocks being compiled by Vue, VuePress will add [v-pre](https://v3.vuejs.org/api/directives.html#v-pre) directive to your code blocks by default, which can be disabled in config.
+Чтобы Vue не компилировал ваши блоки кода, VuePress по умолчанию добавит директиву [v-pre](https://v3.vuejs.org/api/directives.html#v-pre) к вашим блокам кода, что может быть отключено в конфиге.
 
-You can add `:v-pre` / `:no-v-pre` mark in your fenced code blocks to override the value set in config.
+Вы можете добавить метку `:v-pre` / `:no-v-pre` в ваши изолированные блоки кода, чтобы переопределить значение, установленное в конфиге.
 
 ::: warning
-The template syntax characters, for example, the "Mustache" syntax (double curly braces) might be parsed by the syntax highlighter. Thus, as the following example, `:no-v-pre` might not work well in some languages.
+Символы синтаксиса шаблона, например синтаксис "Mustache" (двойные фигурные скобки), могут анализироваться средством подсветки синтаксиса. Таким образом, как показано в следующем примере, `:no-v-pre` может не работать на некоторых языках.
 
-To make Vue syntax work in those languages anyway, try to disable the default syntax highlighting and implement your own syntax highlighting in client-side.
+Чтобы синтаксис Vue все равно работал на этих языках, попробуйте отключить подсветку синтаксиса по умолчанию и реализовать собственную подсветку синтаксиса на стороне клиента.
 :::
 
-Input:
+Ввод:
 
 ````md
 ```md
@@ -295,7 +295,7 @@ const onePlusTwoPlusThree = {{ 1 + 2 + 3 }}
 ```
 ````
 
-Output:
+Вывод:
 
 ```md
 <!-- This will be kept as is -->
@@ -319,14 +319,14 @@ const onePlusTwoPlusThree = {{ 1 + 2 + 3 }}
 ```
 
 ::: tip
-This v-pre extension is supported by our built-in plugin.
+Это расширение v-pre поддерживается нашим встроенным плагином.
 
-Config reference: [markdown.code.vPre](https://v2.vuepress.vuejs.org/reference/config.md#markdown-vpre)
+Ссылка на конфигурацию: [markdown.code.vPre](https://v2.vuepress.vuejs.org/reference/config.md#markdown-vpre)
 :::
 
-### Import Code Blocks
+### Импорт блоков кода
 
-You can import code blocks from files with following syntax:
+Вы можете импортировать блоки кода из файлов со следующим синтаксисом:
 
 ```md
 <!-- minimal syntax -->
@@ -334,7 +334,7 @@ You can import code blocks from files with following syntax:
 @[code](../foo.js)
 ```
 
-To partially import the file:
+Чтобы частично импортировать файл:
 
 ```md
 <!-- partial import, from line 1 to line 10 -->
@@ -342,7 +342,7 @@ To partially import the file:
 @[code{1-10}](../foo.js)
 ```
 
-The code language is inferred from the file extension, while it is recommended to specify it explicitly:
+Язык кода выводится из расширения файла, при этом рекомендуется указывать его явно:
 
 ```md
 <!-- specify the code language -->
@@ -350,7 +350,7 @@ The code language is inferred from the file extension, while it is recommended t
 @[code js](../foo.js)
 ```
 
-In fact, the second part inside the `[]` will be treated as the mark of the code fence, so it supports all the syntax mentioned in the above [Code Blocks](#code-blocks) section:
+Фактически, вторая часть внутри `[]` будет рассматриваться как метка ограждения кода, поэтому она поддерживает весь синтаксис, упомянутый выше в разделе [Блоков кода](#code-blocks):
 
 ```md
 <!-- line highlighting -->
@@ -358,18 +358,18 @@ In fact, the second part inside the `[]` will be treated as the mark of the code
 @[code js{2,4-5}](../foo.js)
 ```
 
-Here is a complex example:
+Вот сложный пример:
 
-- import line 3 to line 10 of the `"../foo.js"` file
-- specify the language as `"js"`
-- highlight line 3 of the imported code, i.e. line 5 of the `"../foo.js"` file
-- disable line numbers
+- импортировать строку 3 в строку 10 файла `"../foo.js"`
+- укажите язык как `"js"`
+- выделить строку 3 импортированного кода, т.е. строку 5 файла `"../foo.js"`
+- отключить номера строк
 
 ```md
 @[code{3-10} js{3}:no-line-numbers](../foo.js)
 ```
 
-Notice that path aliases are not available in import code syntax. You can use following config to handle path alias yourself:
+Обратите внимание, что псевдонимы пути недоступны в синтаксисе кода импорта. Вы можете использовать следующую конфигурацию для самостоятельной обработки псевдонима пути:
 
 ```js
 module.exports = {
@@ -389,27 +389,27 @@ module.exports = {
 ```
 
 ::: tip
-This import code extension is supported by our built-in plugin.
+Это расширение кода импорта поддерживается нашим встроенным плагином.
 
-Config reference: [markdown.importCode](https://v2.vuepress.vuejs.org/reference/config.md#markdown-importcode)
+Ссылка на конфигурацию: [markdown.importCode](https://v2.vuepress.vuejs.org/reference/config.md#markdown-importcode)
 :::
 
-## Using Vue in Markdown
+## Использование Vue в Markdown
 
-This section will introduce some basic usage of Vue in Markdown.
+В этом разделе будут представлены некоторые основные принципы использования Vue в Markdown.
 
-Check out [Cookbook > Markdown and Vue SFC](https://v2.vuepress.vuejs.org/advanced/cookbook/markdown-and-vue-sfc.md) for more details.
+Ознакомьтесь с [Учебник с примерами > Markdown и Vue SFC](https://v2.vuepress.vuejs.org/advanced/cookbook/markdown-and-vue-sfc.md) для получения более подробной информации.
 
-### Template Syntax
+### Синтаксис шаблона
 
-As we know:
+Как мы знаем:
 
-- HTML is allowed in Markdown.
-- Vue template syntax is compatible with HTML.
+- HTML разрешен в Markdown.
+- Синтаксис шаблона Vue совместим с HTML.
 
-That means, [Vue template syntax](https://v3.vuejs.org/guide/template-syntax.html) is allowed in Markdown.
+Это означает, что [синтаксис шаблона Vue](https://v3.vuejs.org/guide/template-syntax.html) разрешен в Markdown.
 
-Input:
+Ввод:
 
 ```md
 One plus one equals: {{ 1 + 1 }}
@@ -417,7 +417,7 @@ One plus one equals: {{ 1 + 1 }}
 <span v-for="i in 3"> span: {{ i }} </span>
 ```
 
-Output:
+Вывод:
 
 One plus one equals: {{ 1 + 1 }}
 
@@ -427,37 +427,37 @@ One plus one equals: {{ 1 + 1 }}
 
 <!-- markdownlint-restore -->
 
-### Components
+### Компоненты
 
-You can use Vue components directly in Markdown.
+Вы можете использовать компоненты Vue непосредственно в Markdown.
 
-Input:
+Ввод:
 
 ```md
 This is default theme built-in `<Badge />` component <Badge text="demo" />
 ```
 
-Output:
+Вывод:
 
 This is default theme built-in `<Badge />` component <Badge text="demo" />
 
 ::: tip
 
-Check out the [Built-in Components](https://v2.vuepress.vuejs.org/reference/components.md) for a full list of built-in components.
+Ознакомьтесь со [Встроенными компонентами](https://v2.vuepress.vuejs.org/reference/components.md) для получения полного списка встроенных компонентов.
 
 :::
 
-## Cautions
+## Предостережения
 
-### Deprecated HTML Tags
+### Устаревшие теги HTML
 
-Deprecated HTML tags such as [\<center>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/center) and [\<font>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/font) are not allowed in VuePress Markdown by default.
+Устаревшие теги HTML, такие как [\<center>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/center) и [\<font>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/font) по умолчанию не разрешены в VuePress Markdown.
 
-Those tags would not be recognized as native HTML tags by Vue template compiler. Instead, Vue will try to resolve those tags as Vue components, and obviously these components usually don’t exist.
+Эти теги не будут распознаваться компилятором шаблонов Vue как собственные HTML-теги. Вместо этого Vue попытается разрешить эти теги как компоненты Vue, и, очевидно, эти компоненты обычно не существуют.
 
-You should try to avoid using deprecated HTML tags. However, to use those tags anyway, try either of the following workarounds:
+Вы должны стараться избегать использования устаревших тегов HTML. Однако, чтобы использовать эти теги в любом случае, попробуйте один из следующих обходных путей:
 
-- Adding a [v-pre](https://v3.vuejs.org/api/directives.html#v-pre) directive to skip the compilation of the element and its children. Notice that the template syntax would also be invalid.
-- Using [compilerOptions.isCustomElement](https://v3.vuejs.org/api/application-config.html#compileroptions) to tell Vue template compiler not try to resolve them as components.
-  - For `@bundler-webpack`, set [vue.compilerOptions](https://v2.vuepress.vuejs.org/reference/bundler/webpack.md#vue)
-  - For `@bundler-vite`, set [vuePluginOptions.template.compilerOptions](https://v2.vuepress.vuejs.org/reference/bundler/vite.md#vuepluginoptions)
+- Добавление директивы [v-pre](https://v3.vuejs.org/api/directives.html#v-pre) для пропуска компиляции элемента и его дочерних элементов. Обратите внимание, что синтаксис шаблона также будет недопустимым.
+- Использование [compilerOptions.isCustomElement](https://v3.vuejs.org/api/application-config.html#compileroptions), чтобы компилятор шаблонов Vue не пытался разрешать их как компоненты.
+  - Для `@bundler-webpack`, установите [vue.compilerOptions](https://v2.vuepress.vuejs.org/reference/bundler/webpack.md#vue)
+  - Для `@bundler-vite`, установите [vuePluginOptions.template.compilerOptions](https://v2.vuepress.vuejs.org/reference/bundler/vite.md#vuepluginoptions)

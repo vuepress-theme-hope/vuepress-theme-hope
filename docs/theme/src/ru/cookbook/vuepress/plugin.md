@@ -1,21 +1,21 @@
 ---
-title: Plugins
+title: Плагины
 icon: plugin
 category:
-  - Cookbook
+  - Учебник с примерами
   - VuePress
 tag:
-  - Plugin
+  - Плагин
   - VuePress
 ---
 
-With the help of [Plugin API](https://v2.vuepress.vuejs.org/reference/plugin-api.md), VuePress plugin can provide different features for you.
+С помощью [Plugin API](https://v2.vuepress.vuejs.org/reference/plugin-api.md), плагин VuePress может предоставить вам различные функции.
 
-## Community Plugin
+## Плагин сообщества
 
-Community users have created lots of plugins and published them to [NPM](https://www.npmjs.com/search?q=keywords:vuepress-plugin). VuePress team also maintains some official plugins under the [@vuepress](https://www.npmjs.com/search?q=%40vuepress%20keywords%3Aplugin) scope. You should check the plugin’s own documentation for detailed guide.
+Пользователи сообщества создали множество плагинов и опубликовали их в [NPM](https://www.npmjs.com/search?q=keywords:vuepress-plugin). Команда VuePress также поддерживает некоторые официальные плагины в рамках [@vuepress](https://www.npmjs.com/search?q=%40vuepress%20keywords%3Aplugin). Вы должны проверить собственную документацию плагина для подробного руководства.
 
-In general, you need to include the plugin in the [plugins](https://v2.vuepress.vuejs.org/reference/config.html#plugins) option to use it. For example, use the [@vuepress/plugin-google-analytics](https://v2.vuepress.vuejs.org/reference/plugin/google-analytics.html) to integrate Google Analytics:
+Как правило, вам необходимо включить плагин в параметр [плагинов](https://v2.vuepress.vuejs.org/reference/config.html#plugins), чтобы использовать его. Например, используйте [@vuepress/plugin-google-analytics](https://v2.vuepress.vuejs.org/reference/plugin/google-analytics.html) для интеграции Google Analytics:
 
 ```js
 const { googleAnalyticsPlugin } = require("@vuepress/plugin-google-analytics");
@@ -30,18 +30,18 @@ module.exports = {
 ```
 
 ::: tip
-Most plugins can only be used once. If the same plugin is used multiple times, only the last one will take effect.
+Большинство плагинов можно использовать только один раз. Если один и тот же плагин используется несколько раз, вступит в силу только последний из них.
 
-However, some plugins can be used multiple times (e.g. [@vuepress/plugin-container](https://v2.vuepress.vuejs.org/reference/plugin/container.html)), and you should check the documentation of the plugin itself for detailed guide.
+Однако некоторые подключаемые модули можно использовать несколько раз (например, [@vuepress/plugin-container](https://v2.vuepress.vuejs.org/reference/plugin/container.html)), и вам следует ознакомиться с документацией по сам плагин для подробного руководства.
 :::
 
-## Local Plugin
+## Локальный плагин
 
-To use your own plugin but don’t want to publish it, you can create a local plugin.
+Чтобы использовать свой собственный плагин, но не хотите его публиковать, вы можете создать локальный плагин.
 
-It is recommended to use the [Config File](./config.md#config-file) directly as a plugin, because [almost all of the Plugin APIs are available](https://v2.vuepress.vuejs.org/reference/config.html#plugin-api), which would be more convenient in most cases.
+Рекомендуется использовать [Файл конфигурации](./config.md#config-file) непосредственно в качестве подключаемого модуля, поскольку [доступны почти все API подключаемых модулей](https://v2.vuepress.vuejs.org/reference/config.html#plugin-api), что в большинстве случаев было бы удобнее.
 
-But if you have too many things to do in your config file, you can consider to extract them into separate plugins, and use them in your config file:
+Но если в вашем конфигурационном файле слишком много вещей, вы можете выделить их в отдельные плагины и использовать в своем конфигурационном файле:
 
 ```js
 const myPlugin = require("./path/to/my-plugin.js");
@@ -51,4 +51,4 @@ module.exports = {
 };
 ```
 
-You can refer to [Advanced > Writing a Plugin](https://v2.vuepress.vuejs.org/advanced/plugin.html) for how to write your own plugin.
+Вы можете обратиться к [Продвинутый > Написание плагина](https://v2.vuepress.vuejs.org/advanced/plugin.html), чтобы узнать, как написать свой собственный плагин.
