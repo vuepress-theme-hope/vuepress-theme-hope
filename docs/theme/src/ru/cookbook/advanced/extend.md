@@ -1,24 +1,24 @@
 ---
-title: Theme Extending
+title: Расширение темы
 icon: extend
 category:
-  - Advanced
+  - Продвинутый
 tag:
-  - Advanced
-  - Customize
+  - Продвинутый
+  - Кастомизация
 ---
 
-`vuepress-theme-hope` supports extending just like `@vuepress/theme-default`.
+`vuepress-theme-hope` поддерживает расширение так же, как `@vuepress/theme-default`.
 
-You can create your own theme based on `vuepress-theme-hope` and use it locally or publish it according to your needs.
+Вы можете создать свою собственную тему на основе `vuepress-theme-hope` и использовать ее локально или опубликовать в соответствии с вашими потребностями.
 
-## Theme extending
+## Расширение темы
 
-You need to create an entry file for your theme and import `hopeTheme` from `vuepress-theme-hope`.
+Вам нужно создать входной файл для вашей темы и импортировать `hopeTheme` из `vuepress-theme-hope`.
 
-In your entry file, set `extends: hopeTheme(options)` to extend the `vuepress-theme-hope` theme.
+В файле ввода установите `extends: hopeTheme(options)`, чтобы расширить тему `vuepress-theme-hope`.
 
-The aliases of the same name (`alias`) and layouts (`layouts`) of your own newly created theme has higher priority over the extended theme `vuepress-theme-hope`, which means that you can override `vuepress-theme-hope` components via `alias` and add or override layout provided by `vuepress-theme-hope` via `layouts`.
+Одноименные псевдонимы (`alias`) и макеты (`layouts`) вашей собственной только что созданной темы имеют более высокий приоритет по сравнению с расширенной темой `vuepress-theme-hope`, что означает, что вы можете переопределить `vuepress-theme-hope` компоненты через `alias` и добавить или переопределить макет, предоставленный `vuepress-theme-hope` через `layouts`.
 
 ::: code-tabs#language
 
@@ -36,8 +36,8 @@ export const localTheme = (options: HopeThemeOptions) => ({
   extends: hopeTheme(options),
 
   alias: {
-    // You can override or add aliases here
-    // For example, here we change the vuepress-theme-hope HomePage component to components/HomePage.vue under our own theme
+    // Вы можете переопределить или добавить псевдонимы здесь
+    // Например, здесь мы меняем компонент HomePage vuepress-theme-hope на component/HomePage.vue под нашей собственной темой
     "@theme-hope/components/HomePage": path.resolve(
       __dirname,
       "./components/HomePage.vue"
@@ -45,10 +45,10 @@ export const localTheme = (options: HopeThemeOptions) => ({
   },
 
   layouts: {
-    // You can override or add layouts here
-    // For example, here we change the default layout of vuepress-theme-hope to layouts/Layout.vue under our own theme
+    // Вы можете переопределить или добавить макеты здесь
+    // Например, здесь мы меняем макет по умолчанию vuepress-theme-hope на layouts/Layout.vue под нашу собственную тему
     Layout: path.resolve(__dirname, "layouts/Layout.vue"),
-    // Also we added a Changelog layout
+    // Также мы добавили макет списка изменений
     Changelog: path.resolve(__dirname, "layouts/Changelog.vue"),
   },
 });
@@ -67,8 +67,8 @@ module.exports = (options) => ({
   extends: hopeTheme(options),
 
   alias: {
-    // You can override or add aliases here
-    // For example, here we change the vuepress-theme-hope HomePage component to components/HomePage.vue under our own theme
+    // Вы можете переопределить или добавить псевдонимы здесь
+    // Например, здесь мы меняем компонент HomePage vuepress-theme-hope на component/HomePage.vue под нашей собственной темой
     "@theme-hope/components/HomePage": path.resolve(
       __dirname,
       "./components/HomePage.vue"
@@ -76,10 +76,10 @@ module.exports = (options) => ({
   },
 
   layouts: {
-    // You can override or add layouts here
-    // For example, here we change the default layout of vuepress-theme-hope to layouts/Layout.vue under our own theme
+    // Вы можете переопределить или добавить макеты здесь
+    // Например, здесь мы меняем макет по умолчанию vuepress-theme-hope на layouts/Layout.vue под нашу собственную тему
     Layout: path.resolve(__dirname, "layouts/Layout.vue"),
-    // Also we added a Changelog layout
+    // Также мы добавили макет списка изменений
     Changelog: path.resolve(__dirname, "layouts/Changelog.vue"),
   },
 });

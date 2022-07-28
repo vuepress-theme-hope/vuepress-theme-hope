@@ -1,47 +1,47 @@
 ---
-title: Style Customization
+title: Настройка стиля
 icon: style
 category:
-  - Cookbook
-  - Customize
+  - Учебник с примерами
+  - Кастомизация
 tag:
-  - Customize
-  - Style
+  - Кастомизация
+  - Стиль
 ---
 
-This article briefly describes how to customize theme styles.
+В этой статье кратко описывается, как настроить стили темы.
 
 <!-- more -->
 
-## How to Customize Styles
+## Как настроить стили
 
-You can create three files under `.vuepress/styles` folder in your own document for style customization.
+Вы можете создать три файла в папке `.vuepress/styles` в вашем собственном документе для настройки стиля.
 
-- `index.scss`: You can place your own styles via CSS or SCSS syntax to modify the appearance of the theme here.
+- `index.scss`: Вы можете разместить свои собственные стили с помощью синтаксиса CSS или SCSS, чтобы изменить внешний вид темы здесь.
 
-  These styles will be injected after theme and plugin styles.
+  Эти стили будут введены после стилей темы и плагина.
 
-- `config.scss`: You can set some style related variables here, including responsive breakpoints, container class names, code themes, etc.
+- `config.scss`: Здесь вы можете установить некоторые переменные, связанные со стилем, включая отзывчивые точки останова, имена классов контейнеров, темы кода и т. д.
 
-- `palette.scss`: You can set some color and layout related variables here, such as theme color, background color, navbar height, etc.
+- `palette.scss`: Здесь вы можете установить некоторые переменные, связанные с цветом и макетом, такие как цвет темы, цвет фона, высота панели навигации и т. д.
 
-For the complete config list supported by the above files, see [Config → Style](../../config/style.md).
+Полный список конфигураций, поддерживаемых указанными выше файлами, смотрите в [Конфиг → Стиль](../../config/style.md).
 
-## Common style Customization
+## Общий стиль
 
-### Modify Background Color
+### Изменение цвета фона
 
-Please configure the variables starting with `$bg-color` in `config.scss`, see [Configuration → Style](../config/style.md#color setting)
+Настройте переменные, начинающиеся с `$bg-color` в `config.scss`, смотрите [Конфигурация → Стиль](../config/style.md#color setting)
 
-### Modify Theme Font
+### Изменение шрифта темы
 
-If you prefer **serif**[^serif] to **sans-serif**[^sans-serif], you can modify the font yourself. Please set `$font-family` to value you want in `palette.scss`.
+Если вы предпочитаете **serif**[^serif] вместо **sans-serif**[^sans-serif], вы можете изменить шрифт самостоятельно. Пожалуйста, установите для `$font-family` желаемое значение в `palette.scss`.
 
-::: tip Best Practice
+::: tip Лучшая практика
 
-To let your site display well on different operating systems and devices with different fonts installed, you should set a fallback font [^fallback-font].
+Чтобы ваш сайт хорошо отображался в разных операционных системах и на устройствах с разными установленными шрифтами, вы должны установить резервный шрифт [^fallback-font].
 
-So we recommend using the following font set as your preferred serif style:
+Поэтому мы рекомендуем использовать следующий набор шрифтов в качестве предпочтительного стиля с засечками:
 
 ```scss
 $font-family: 'Georgia, -apple-system, "Nimbus Roman No9 L", sans-serif';
@@ -53,24 +53,24 @@ $font-family: 'Georgia, -apple-system, "Nimbus Roman No9 L", sans-serif';
 [^sans-serif]: <https://simple.wikipedia.org/wiki/Sans_serif>
 [^fallback-font]: <https://en.wikipedia.org/wiki/Fallback_font>
 
-### Modify Theme Layout
+### Изменение макета темы
 
-The theme allows you to freely config navbar, sidebar and footer, and you can also disable them if you don’t like them. Please see [Guide → Layout → Navbar](../../guide/layout/navbar.md), [Guide → Layout → Sidebar](../../guide/layout/sidebar.md) and [Guide → Layout→ Footer](../../guide/layout/footer.md) for full configuration instructions.
+Тема позволяет вам свободно настраивать панель навигации, боковую панель и нижний колонтитул, а также вы можете отключить их, если они вам не нравятся. Смотрите [Руководство → Макет → Навбар](../../guide/layout/navbar.md), [Руководство → Макет → Сайдбар](../../guide/layout/sidebar.md) и [Руководство → Макет футера](../../guide/layout/footer.md) для получения полных инструкций по настройке.
 
-The theme’s content layout also supports customization, if you don’t like some features that are enabled by default, you are free to disable them. For details, please search through the search function of the document.
+Макет содержимого темы также поддерживает настройку, если вам не нравятся некоторые функции, включенные по умолчанию, вы можете отключить их. Для получения подробной информации воспользуйтесь функцией поиска документа.
 
-### Modify Animation Speed
+### Изменение скорости анимации
 
-If you don’t like the animation speed of the theme and think they are too fast or too slow, you can set `$transform-transition` in `palette.scss` to change the animation duration and animation speed curve, the default value is `"0.3 ease"`.
+Если вам не нравится скорость анимации темы, и вы считаете, что она слишком быстрая или слишком медленная, вы можете установить `$transform-transition` в `palette.scss`, чтобы изменить продолжительность анимации и кривую скорости анимации, значение по умолчанию `"0.3 ease"`.
 
-### Modify Component Styles
+### Изменение стилей компонентов
 
-If you are not satisfied with the styling of some components and want to make some tweaks on them, you can override the theme’s default styles by adding CSS with `!important` in `index.scss`.
+Если вас не устраивает стиль некоторых компонентов и вы хотите внести в них некоторые изменения, вы можете переопределить стили темы по умолчанию, добавив CSS с `!important` в `index.scss`.
 
-If your changes involve modifying the component DOM (document structure), you may need to refer to the [Replace Theme Components](replace.md) section to customize the override of the component.
+Если ваши изменения связаны с изменением DOM компонента (структуры документа), вам может потребоваться обратиться к разделу [Заменить компоненты темы](replace.md), чтобы настроить переопределение компонента.
 
-### Add New Layout or Edit theme
+### Добавление нового макета или изменение темы
 
-To do some revamping of the whole theme, or want to add a new layout, you can extend the theme. The new theme can be stored locally in the project, or it can be republished as a new theme on npm.
+Чтобы изменить всю тему или добавить новый макет, вы можете расширить тему. Новую тему можно сохранить локально в проекте или опубликовать как новую тему в npm.
 
-For related content, see [Extending Theme](extend.md).
+Для связанного контента смотрите [Расширение темы](extend.md).

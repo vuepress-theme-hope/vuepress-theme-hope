@@ -1,20 +1,20 @@
 ---
-title: Replacing Theme Components
+title: Замена компонентов темы
 icon: customize
 category:
-  - Advanced
+  - Продвинутый
 tag:
-  - Advanced
-  - Customize
+  - Продвинутый
+  - Кастомизация
 ---
 
-The theme imports components through `alias`, so you can use it to replace any component of the theme.
+Тема импортирует компоненты через псевдоним `alias`, поэтому вы можете использовать его для замены любого компонента темы.
 
 <!-- more -->
 
-## Replace Components
+## Замена компонентов
 
-You need to replace the component alias used in the theme with `alias` option in your own VuePress config file.
+Вам необходимо заменить псевдоним компонента, используемый в теме, на опцию `alias` в вашем собственном файле конфигурации VuePress.
 
 ::: code-tabs#language
 
@@ -28,12 +28,12 @@ import { hopeTheme } from "vuepress-theme-hope";
 
 export default defineUserConfig({
   theme: hopeTheme({
-    // your theme config here
+    // конфиг вашей темы здесь
   }),
 
   alias: {
-    // Here you can redirect aliases to your own components
-    // For example, here we change the theme’s home page component to HomePage.vue under user .vuepress/components
+    // Здесь вы можете перенаправить псевдонимы на свои собственные компоненты
+    // Например, здесь мы меняем компонент домашней страницы темы на HomePage.vue под пользователем .vuepress/components
     "@theme-hope/components/HomePage": path.resolve(
       __dirname,
       "./components/HomePage.vue"
@@ -51,12 +51,12 @@ const { hopeTheme } = require("vuepress-theme-hope");
 
 module.exports = {
   theme: hopeTheme({
-    // your theme config here
+    // конфиг вашей темы здесь
   }),
 
   alias: {
-    // Here you can redirect aliases to your own components
-    // For example, here we change the theme’s home page component to HomePage.vue under user .vuepress/components
+    // Здесь вы можете перенаправить псевдонимы на свои собственные компоненты
+    // Например, здесь мы меняем компонент домашней страницы темы на HomePage.vue под пользователем .vuepress/components
     "@theme-hope/components/HomePage": path.resolve(
       __dirname,
       "./components/HomePage.vue"
@@ -67,164 +67,164 @@ module.exports = {
 
 :::
 
-Here are list of aliases.
+Вот список псевдонимов.
 
-::: details Theme components alias
+::: details Псевдоним компонентов темы
 
-Components:
+Компоненты:
 
-- `@theme-hope/components/AutoLink`: basic link
-- `@theme-hope/components/BreadCrumb`: breacrumb
-- `@theme-hope/components/CommonWrapper`: basic layout integration
-- `@theme-hope/components/HomeFeatures`: homepage features
-- `@theme-hope/components/HomeHero`: homepage logo and introduction
-- `@theme-hope/components/HomePage`: home page
-- `@theme-hope/components/Icon`: icon
-- `@theme-hope/components/MarkdownContent`: Markdown content
-- `@theme-hope/components/NormalPage`: normal page
-- `@theme-hope/components/PageFooter`: page footer
-- `@theme-hope/components/PageNav`: page navigation
-- `@theme-hope/components/PageTitle`: page title
-- `@theme-hope/components/SkipLink`: skip to main content
+- `@theme-hope/components/AutoLink`: основная ссылка
+- `@theme-hope/components/BreadCrumb`: хлебная крошка
+- `@theme-hope/components/CommonWrapper`: базовая интеграция макета
+- `@theme-hope/components/HomeFeatures`: функции главной страницы
+- `@theme-hope/components/HomeHero`: логотип главной страницы и введение
+- `@theme-hope/components/HomePage`: главная страница
+- `@theme-hope/components/Icon`: иконка
+- `@theme-hope/components/MarkdownContent`: контент разметки
+- `@theme-hope/components/NormalPage`: обычная страница
+- `@theme-hope/components/PageFooter`: футер страницы
+- `@theme-hope/components/PageNav`: навигация страницы
+- `@theme-hope/components/PageTitle`: заголовок страницы
+- `@theme-hope/components/SkipLink`: перейти к основному содержанию
 
-Miscellaneous:
+Разное:
 
-- `@theme-hope/components/icons`: theme icons
-- `@theme-hope/components/transitions`: theme transitions
-- `@theme-hope/composables`: theme Composition API
-- `@theme-hope/utils`: theme utility functions
-
-:::
-
-::: details Navbar component alias
-
-Components:
-
-- `@theme-hope/module/navbar/components/DropdownLink`: dropdown list
-- `@theme-hope/module/navbar/components/LanguageDropdown`: language dropdown
-- `@theme-hope/module/navbar/components/NavActions`: navbar functions
-- `@theme-hope/module/navbar/components/Navbar`: navbar
-- `@theme-hope/module/navbar/components/NavbarBrand`: navbar brand information
-- `@theme-hope/module/navbar/components/NavbarLinks`: navbar links
-- `@theme-hope/module/navbar/components/NavScreen`: navigation screen in mobile view
-- `@theme-hope/module/navbar/components/NavScreenDropdown`: mobile view navbar dropdown menu
-- `@theme-hope/module/navbar/components/NavScreenLinks`: mobile view navbar links
-- `@theme-hope/module/navbar/components/RepoLink`: repository link
-- `@theme-hope/module/navbar/components/ToggleNavbarButton`: navbar toggle button
-- `@theme-hope/module/navbar/components/ToggleSidebarButton`: sidebar toggle button
-
-Miscellaneous:
-
-- `@theme-hope/module/navbar/components/icons`: navbar icons
-- `@theme-hope/module/navbar/composables`: navbar Composition API
+- `@theme-hope/components/icons`: иконки темы
+- `@theme-hope/components/transitions`: переводы темы
+- `@theme-hope/composables`: Composition API темы
+- `@theme-hope/utils`: служебные функции темы
 
 :::
 
-::: details Sidebar component alias
+::: details Псевдоним компонента панели навигации
 
-Components:
+Компоненты:
 
-- `@theme-hope/module/sidebar/components/Sidebar`: sidebar
-- `@theme-hope/module/sidebar/components/SidebarChild`: sidebar link item
-- `@theme-hope/module/sidebar/components/SidebarGroup`: sidebar grouping links
-- `@theme-hope/module/sidebar/components/SidebarLinks`: sidebar links
+- `@theme-hope/module/navbar/components/DropdownLink`: выпадающий список
+- `@theme-hope/module/navbar/components/LanguageDropdown`: выпадающий список языков
+- `@theme-hope/module/navbar/components/NavActions`: функции панели навигации
+- `@theme-hope/module/navbar/components/Navbar`: панель навигации
+- `@theme-hope/module/navbar/components/NavbarBrand`: информация о бренде навигационной панели
+- `@theme-hope/module/navbar/components/NavbarLinks`: ссылки на панели навигации
+- `@theme-hope/module/navbar/components/NavScreen`: экран навигации в мобильном представлении
+- `@theme-hope/module/navbar/components/NavScreenDropdown`: выпадающее меню мобильной панели навигации
+- `@theme-hope/module/navbar/components/NavScreenLinks`: ссылки для мобильного просмотра на панели навигации
+- `@theme-hope/module/navbar/components/RepoLink`: ссылка на репозиторий
+- `@theme-hope/module/navbar/components/ToggleNavbarButton`: кнопка переключения панели навигации
+- `@theme-hope/module/navbar/components/ToggleSidebarButton`: кнопка переключения боковой панели
 
-Miscellaneous:
+Разное:
 
-- `@theme-hope/module/sidebar/composables`: sidebar Composition API
-- `@theme-hope/module/sidebar/utils`: sidebar utility functions
-
-:::
-
-::: details Info module component alias
-
-Components:
-
-- `@theme-hope/module/info/components/AuthorInfo`: author information
-- `@theme-hope/module/info/components/CategoryInfo`: category information
-- `@theme-hope/module/info/components/DateInfo`: date information
-- `@theme-hope/module/info/components/OriginalMark`: original mark
-- `@theme-hope/module/info/components/PageInfo`: page information
-- `@theme-hope/module/info/components/PageMeta`: page meta information
-- `@theme-hope/module/info/components/PageViewInfo`: page views information
-- `@theme-hope/module/info/components/ReadingTimeInfo`: reading time information
-- `@theme-hope/module/info/components/TagInfo`: tag information
-- `@theme-hope/module/info/components/TOC`: table of contents
-- `@theme-hope/module/info/components/WordInfo`: word information
-
-Miscellaneous:
-
-- `@theme-hope/module/blog/components/icons`: info icons
-- `@theme-hope/module/blog/composables`: info Composables API
-- `@theme-hope/module/blog/utils`: info utility functions
+- `@theme-hope/module/navbar/components/icons`: иконки панели навигации
+- `@theme-hope/module/navbar/composables`: Composition API панели навигации
 
 :::
 
-::: details Blog module component alias
+::: details Псевдоним компонента боковой панели
 
-Components:
+Компоненты:
 
-- `@theme-hope/module/blog/components/ArticleItem`: article item
-- `@theme-hope/module/blog/components/ArticleList`: article list
-- `@theme-hope/module/blog/components/ArticleType`: article type
-- `@theme-hope/module/blog/components/BloggerInfo`: blogger info
-- `@theme-hope/module/blog/components/BlogHero`: blog homepage logo and introduction
-- `@theme-hope/module/blog/components/BlogHome`: blog home page
-- `@theme-hope/module/blog/components/BlogPage`: normal blog page
-- `@theme-hope/module/blog/components/CategoryList`: Category list
-- `@theme-hope/module/blog/components/InfoList`: blog info list
-- `@theme-hope/module/blog/components/InfoPanel`: blog info panel
-- `@theme-hope/module/blog/components/Pagination`: pagination
-- `@theme-hope/module/blog/components/ProjectPanel`: blog homepage project panel
-- `@theme-hope/module/blog/components/SocialMedia`: social media links
-- `@theme-hope/module/blog/components/TagList`: tag list
-- `@theme-hope/module/blog/components/TimelineItems`: timeline items
-- `@theme-hope/module/blog/components/TimelineList`: timeline List
+- `@theme-hope/module/sidebar/components/Sidebar`: боковая панель
+- `@theme-hope/module/sidebar/components/SidebarChild`: элемент ссылки на боковой панели
+- `@theme-hope/module/sidebar/components/SidebarGroup`: группировка ссылок на боковой панели
+- `@theme-hope/module/sidebar/components/SidebarLinks`: ссылки на боковой панели
 
-Miscellaneous:
+Разное:
 
-- `@theme-hope/module/blog/components/icons`: blog icons
-- `@theme-hope/module/blog/composables`: blog Composables API
+- `@theme-hope/module/sidebar/composables`: Composition API боковой панели
+- `@theme-hope/module/sidebar/utils`: утилитарные функции боковой панели
 
 :::
 
-::: details Encryption module component alias
+::: details Псевдоним компонента информационного модуля
 
-Components:
+Компоненты:
 
-- `@theme-hope/module/encrypt/components/GlobalEncrypt`: gloabl encrypt wrapper
-- `@theme-hope/module/encrypt/components/LocalEncrypt`: local encrypt wrapper
-- `@theme-hope/module/encrypt/components/PasswordModal`: password input box
+- `@theme-hope/module/info/components/AuthorInfo`: информация об авторе
+- `@theme-hope/module/info/components/CategoryInfo`: информация о категории
+- `@theme-hope/module/info/components/DateInfo`: информация о дате
+- `@theme-hope/module/info/components/OriginalMark`: оригинальное выделение
+- `@theme-hope/module/info/components/PageInfo`: информация о странице
+- `@theme-hope/module/info/components/PageMeta`: метаинформация страницы
+- `@theme-hope/module/info/components/PageViewInfo`: информация о просмотрах страниц
+- `@theme-hope/module/info/components/ReadingTimeInfo`: информация о времени чтения
+- `@theme-hope/module/info/components/TagInfo`: информация тега
+- `@theme-hope/module/info/components/TOC`: оглавление
+- `@theme-hope/module/info/components/WordInfo`: информация о слове
 
-Miscellaneous:
+Разное:
 
-- `@theme-hope/module/encrypt/composables`: encryption Composition API
-- `@theme-hope/module/encrypt/utils`: encryption utility functions
-
-:::
-
-::: details Appearance module component alias
-
-- `@theme-hope/module/outlook/components/AppearanceMode`: theme mode
-- `@theme-hope/module/outlook/components/AppearanceSwitch`: theme appearance switch
-- `@theme-hope/module/outlook/components/OutlookButton`: appearance button
-- `@theme-hope/module/outlook/components/OutlookSettings`: appearance settings
-- `@theme-hope/module/outlook/components/ThemeColor`: theme color
-- `@theme-hope/module/outlook/components/ThemeColorPicker`: theme color picker
-- `@theme-hope/module/outlook/components/ToggleFullScreenButton`: fullscreen toggle button
-
-Miscellaneous:
-
-- `@theme-hope/module/outlook/components/icons`: appearance icons
-- `@theme-hope/module/outlook/composables`: appearance Composition API
+- `@theme-hope/module/blog/components/icons`: информация об иконках
+- `@theme-hope/module/blog/composables`: Composables API информации
+- `@theme-hope/module/blog/utils`: информационные служебные функции
 
 :::
 
-## Using Slots
+::: details Псевдоним компонента модуля блога
 
-Some components provide slots, in this case, you can directly import the original component when overriding the component, and pass in the content you need through the slot.
+Компоненты:
 
-For example, if your site has strong social attributes, and you want to display a comment box on the homepage, you can display it like this:
+- `@theme-hope/module/blog/components/ArticleItem`: элемент статьи
+- `@theme-hope/module/blog/components/ArticleList`: список статей
+- `@theme-hope/module/blog/components/ArticleType`: тип статьи
+- `@theme-hope/module/blog/components/BloggerInfo`: информация о блогере
+- `@theme-hope/module/blog/components/BlogHero`: логотип главной страницы блога и введение
+- `@theme-hope/module/blog/components/BlogHome`: домашняя страница блога
+- `@theme-hope/module/blog/components/BlogPage`: обычная страница блога
+- `@theme-hope/module/blog/components/CategoryList`: список категорий
+- `@theme-hope/module/blog/components/InfoList`: список информации о блоге
+- `@theme-hope/module/blog/components/InfoPanel`: информационная панель блога
+- `@theme-hope/module/blog/components/Pagination`: нумерация страниц
+- `@theme-hope/module/blog/components/ProjectPanel`: панель проекта на главной странице блога
+- `@theme-hope/module/blog/components/SocialMedia`: ссылки на социальные сети
+- `@theme-hope/module/blog/components/TagList`: список тегов
+- `@theme-hope/module/blog/components/TimelineItems`: элементы временной шкалы
+- `@theme-hope/module/blog/components/TimelineList`: список временной шкалы
+
+Разное:
+
+- `@theme-hope/module/blog/components/icons`: иконки блогов
+- `@theme-hope/module/blog/composables`: Composables API блога
+
+:::
+
+::: details Псевдоним компонента модуля шифрования
+
+Компоненты:
+
+- `@theme-hope/module/encrypt/components/GlobalEncrypt`: глобальная оболочка шифрования
+- `@theme-hope/module/encrypt/components/LocalEncrypt`: локальная оболочка шифрования
+- `@theme-hope/module/encrypt/components/PasswordModal`: поле ввода пароля
+
+Разное:
+
+- `@theme-hope/module/encrypt/composables`: Composition API шифрования
+- `@theme-hope/module/encrypt/utils`: функции утилиты шифрования
+
+:::
+
+::: details Псевдоним компонента модуля внешнего вида
+
+- `@theme-hope/module/outlook/components/AppearanceMode`: режим темы
+- `@theme-hope/module/outlook/components/AppearanceSwitch`: переключатель внешнего вида темы
+- `@theme-hope/module/outlook/components/OutlookButton`: кнопка появления
+- `@theme-hope/module/outlook/components/OutlookSettings`: настройки внешнего вида
+- `@theme-hope/module/outlook/components/ThemeColor`: цвет темы
+- `@theme-hope/module/outlook/components/ThemeColorPicker`: выбор цвета темы
+- `@theme-hope/module/outlook/components/ToggleFullScreenButton`: кнопка переключения в полноэкранный режим
+
+Разное:
+
+- `@theme-hope/module/outlook/components/icons`: иконки внешнего вида
+- `@theme-hope/module/outlook/composables`: Composition API внешнего вида
+
+:::
+
+## Использование слотов
+
+Некоторые компоненты предоставляют слоты, в этом случае вы можете напрямую импортировать исходный компонент при переопределении компонента и передавать нужный вам контент через слот.
+
+Например, если ваш сайт имеет сильные социальные атрибуты и вы хотите отобразить поле для комментариев на главной странице, вы можете отобразить его следующим образом:
 
 ::: code-tabs
 
@@ -238,12 +238,12 @@ import { hopeTheme } from "vuepress-theme-hope";
 
 export default defineUserConfig({
   theme: hopeTheme({
-    // your theme config here
+    // конфиг вашей темы здесь
   }),
 
   alias: {
-    // Here you can direct aliases to your own components
-    // For example, here we change the theme’s home page component to HomePage.vue under user .vuepress/components
+    // Здесь вы можете указать псевдонимы для ваших собственных компонентов
+    // Например, здесь мы меняем компонент домашней страницы темы на HomePage.vue под пользователем .vuepress/components
     "@theme-hope/components/HomePage": path.resolve(
       __dirname,
       "./components/HomePage.vue"
@@ -257,7 +257,7 @@ export default defineUserConfig({
 ```vue
 <template>
   <HopeHomePage>
-    <!-- Introduce comment component using bottom slot -->
+    <!-- Введите компонент комментария, используя нижний слот -->
     <template #bottom>
       <CommentService />
     </template>
@@ -270,9 +270,9 @@ import HopeHomePage from "vuepress-theme-hope/lib/client/components/HomePage";
 
 :::
 
-Components that provide slots are as follows:
+Компоненты, предоставляющие слоты, следующие:
 
-**theme**:
+**тема**:
 
 - `AutoLink`: `default`, `before`, `after`
 - `CommonWrapper`: `default`, `navbarLeftStart`, `navbarLeftEnd`, `navbarCenterStart`, `navbarCenterEnd`, `navbarRightStart`, `navbarRightEnd`, `navScreenTop`, `navScreenBottom`, `sidebar`, `sidebarTop`, `sidebarBottom`
@@ -280,7 +280,7 @@ Components that provide slots are as follows:
 - `HomePage`: `top`, `center`, `bottom`
 - `NormalPage`: `top`, `contentBefore`, `contentAfter`, `bottom`
 
-**Navigation Bar**:
+**Панель навигации**:
 
 - `DropdownLink`: `title`
 - `NavActions`: `before`, `after`
@@ -289,16 +289,16 @@ Components that provide slots are as follows:
 - `NavScreen`: `before`, `after`
 - `NavScreenDropdown`: `before`, `after`
 
-**Sidebar**:
+**Боковая панель**:
 
 - `Sidebar`: `top`, `default`, `bottom`
 
-**Blog**:
+**Блог**:
 
 - `BlogHero`: `heroImage`, `heroInfo`
 
 ::: tip
 
-For the corresponding location and function of each slot, please refer to [theme source code](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/main/packages/theme/src/client/).
+Соответствующее расположение и функции каждого слота смотрите в [исходном коде темы](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/main/packages/theme/src/client/).
 
 :::

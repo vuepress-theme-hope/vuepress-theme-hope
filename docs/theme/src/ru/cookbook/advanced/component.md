@@ -1,29 +1,29 @@
 ---
-title: Using Components
+title: Использование компонентов
 icon: plugin
 category:
-  - Tutorial
-  - Customize
+  - Руководство
+  - Кастомизация
 tag:
-  - Components
-  - Customize
+  - Компоненты
+  - Кастомизация
 ---
 
-This tutorial will guide you on how to use Vue components and Vue syntax in your VuePress project.
+В этом руководстве вы узнаете, как использовать компоненты Vue и синтаксис Vue в вашем проекте VuePress.
 
 <!-- more -->
 
-## Import Vue Components Globally
+## Импорт компонентов Vue глобально
 
-### Register via `@vuepress/plugin-register-components`
+### Регистрация через `@vuepress/plugin-register-components`
 
-You can automatically register components via the `@vuepress/plugin-register-components` plugin.
+Вы можете автоматически регистрировать компоненты с помощью плагина `@vuepress/plugin-register-components`.
 
-For details about how to use the plugin, see [Official Documentation](https://v2.vuepress.vuejs.org/reference/plugin/register-components.html).
+Подробнее об использовании плагина смотрите в [Официальной документации](https://v2.vuepress.vuejs.org/reference/plugin/register-components.html).
 
-### Register via ClientConfigFile
+### Регистрация через ClientConfigFile
 
-You can create `.vuepress/client.ts` and register components manually.
+Вы можете создать `.vuepress/client.ts` и зарегистрировать компоненты вручную.
 
 ```ts
 // .vuepress/client.ts
@@ -37,32 +37,32 @@ export default defineClientConfig({
 });
 ```
 
-## Using Vue syntax and components in Markdown
+## Использование синтаксиса и компонентов Vue в Markdown
 
-You can use Vue syntax directly in Markdown.
+Вы можете использовать синтаксис Vue непосредственно в Markdown.
 
 ::: info
 
-For the specific usage, see [VuePress → Markdown](../vuepress/markdown.md#Use -vue in -markdown-)
+Для конкретного использования смотрите [VuePress → Markdown](../vuepress/markdown.md#Use -vue in -markdown-)
 
 :::
 
-If you need to import Vue components in Markdown, please note that you cannot use relative paths to import, nor write multiple `<script>` blocks.
+Если вам нужно импортировать компоненты Vue в Markdown, обратите внимание, что вы не можете использовать относительные пути для импорта или писать несколько блоков `<script>`.
 
-::: info Markdown with Vue SFC
+::: info Markdown с Vue SFC
 
-Every Markdown file is first compiled to HTML and then converted to a Vue Single File Component (SFC). In other words, you can write Markdown files like Vue SFC:
+Каждый файл Markdown сначала компилируется в HTML, а затем преобразуется в компонент одного файла Vue (SFC). Другими словами, вы можете писать файлы Markdown, такие как Vue SFC:
 
-`<script>` and `<style>` tags are directly treated as tags in Vue SFC. In other words, they are promoted from the `<template>` tag to the top level of the SFC.
-All content other than `<script>` and `<style>` tags will be compiled to HTML and then treated as `<template>` tags in Vue SFC.
+Теги `<script>` и `<style>` напрямую обрабатываются как теги в Vue SFC. Другими словами, они продвигаются из тега `<template>` на верхний уровень SFC.
+Весь контент, кроме тегов `<script>` и `<style>`, будет скомпилирован в HTML, а затем обработан как теги `<template>` в Vue SFC.
 
-Since Vue single-file components can only contain one `<script>` tag, you should avoid using more than one `<script>` tag in VuePress Markdown.
+Поскольку однофайловые компоненты Vue могут содержать только один тег `<script>`, вам следует избегать использования более одного тега `<script>` в VuePress Markdown.
 
-In addition, since Markdown will be converted to Vue single-file components in the cache directory, any relative path import will be invalid in Vue SFC.
+Кроме того, поскольку Markdown будет преобразован в однофайловые компоненты Vue в каталоге кеша, любой импорт относительного пути будет недопустимым в Vue SFC.
 
 :::
 
-In order to import your own components correctly, you need to create aliases for them, you can do this with the `alias` option:
+Чтобы корректно импортировать собственные компоненты, вам необходимо создать для них псевдонимы, сделать это можно с помощью опции `alias`:
 
 ```ts
 // .vuepress/config.ts
@@ -83,7 +83,7 @@ import MyComponent from "@MyComponent";
 </script>
 ```
 
-It's a bit more complicated, but if the component is only used in one page, importing like this has advantages:
+Это немного сложнее, но если компонент используется только на одной странице, такой импорт имеет преимущества:
 
-- Global import means that the component code needs to be loaded when VuePress is initialized, that is, when visiting the first page
-- Importing in Markdown causes the component code to be included in the page code so that it will only be loaded when visiting the page
+- Глобальный импорт означает, что код компонента нужно загрузить при инициализации VuePress, то есть при посещении первой страницы
+- Импорт в Markdown приводит к включению кода компонента в код страницы, чтобы он загружался только при посещении страницы

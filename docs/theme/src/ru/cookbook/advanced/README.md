@@ -1,45 +1,45 @@
 ---
-title: Advanced
+title: Продвинутый
 icon: advance
 category:
-  - Cookbook
-  - Advanced
+  - Учебник с примерами
+  - Продвинутый
 tag:
-  - Advanced
+  - Продвинутый
 article: false
 ---
 
-Here are some advanced uses of `vuepress-theme-hope`.
+Вот несколько расширенных вариантов использования `vuepress-theme-hope`.
 
-To properly use them the way you want, you should understand of how VuePress works, know about VuePress Plugin API, or related concepts.
+Чтобы правильно использовать их так, как вы хотите, вы должны понимать, как работает VuePress, знать об API плагина VuePress или связанных с ним концепциях.
 
-If you are new to frontend, you can give up these features at your discretion.
+Если вы новичок в интерфейсе, вы можете отказаться от этих функций по своему усмотрению.
 
 ::: warning
 
-To be as friendly as possible to newcomers, we added concept introductions that are important in the corresponding chapters of the document as much as possible.
+Чтобы быть максимально дружелюбными к новичкам, мы максимально добавили важные понятия в соответствующие главы документа.
 
-If you are still confused what’s it or what’s it for after reading, we recommend you to learn through the internet or stop using those features.
+Если после прочтения вы все еще не понимаете, что это такое или для чего оно нужно, мы рекомендуем вам изучить его через Интернет или прекратить использование этих функций.
 
-We are happy to answer your questions about how to customize related content. Also, if you do want to implement XXX, but don’t know how, we are happy to give you advice on what you should learn to implement them.
+Мы будем рады ответить на ваши вопросы о том, как настроить связанный контент. Кроме того, если вы хотите внедрить XXX, но не знаете, как, мы будем рады дать вам совет о том, что вам следует изучить для их реализации.
 
-But please don’t ask such questions:
+Но, пожалуйста, не задавайте таких вопросов:
 
-- What is XXX?
-- What does XXX do, why do we need it?
-- Here is something I wrote, it’s throwing errors/ not working as I am expecting, how to fix it?
+- Что такое ХХХ?
+- Что делает XXX, зачем он нам нужен?
+- Вот что-то я написал, выдает ошибки/не работает, как я ожидаю, как это исправить?
 - ...
 
-We do not want to "describe all the concepts involved and their usage to you" and "teach you how to implement the features you want" in telegram group or discussion panel.
+Мы не хотим «описывать вам все задействованные концепции и их использование» и «учить вас, как реализовать нужные вам функции» в группе телеграмм или на дискуссионной панели.
 
 :::
 
-## Catalog
+## Каталог
 
-- [Using Components](component.md)
+- [Использование компонентов](component.md)
 
-- [Customize Style](style.md)
+- [Кастомизация стиля](style.md)
 
-- [Replacing Component](replace.md)
+- [Замена компонента](replace.md)
 
-- [Theme Extending](extend.md)
+- [Расширение темы](extend.md)
