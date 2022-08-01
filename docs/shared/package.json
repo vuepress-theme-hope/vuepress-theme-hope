@@ -12,13 +12,13 @@
   "type": "module",
   "main": "index.ts",
   "dependencies": {
-    "@types/three": "0.142.0",
+    "@types/three": "0.143.0",
     "@vuepress/cli": "2.0.0-beta.49",
     "@vuepress/client": "2.0.0-beta.49",
     "@vuepress/core": "2.0.0-beta.49",
     "@vuepress/plugin-docsearch": "2.0.0-beta.49",
     "@vuepress/utils": "2.0.0-beta.49",
-    "three": "0.142.0",
+    "three": "0.143.0",
     "vue": "3.2.37",
     "vuepress-shared": "workspace:*",
     "vuepress-theme-hope": "workspace:*"
