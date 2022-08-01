@@ -32,7 +32,7 @@ importers:
       inquirer: 9.0.2
       lint-staged: 13.0.3
       markdownlint-cli: 0.32.1
-      npm-check-updates: 16.0.4
+      npm-check-updates: 16.0.5
       ora: 6.1.2
       prettier: 2.7.1
       rollup: 2.77.2
@@ -79,7 +79,7 @@ importers:
       inquirer: 9.0.2
       lint-staged: 13.0.3
       markdownlint-cli: 0.32.1
-      npm-check-updates: 16.0.4
+      npm-check-updates: 16.0.5
       ora: 6.1.2
       prettier: 2.7.1
       rollup: 2.77.2
@@ -4874,7 +4874,7 @@ packages:
     resolution: {integrity: sha512-3tlv/dIP7FWvj3BsbHrGLJ6l/oKh1O3TcgBqMn+yyCagOxc23fyzDS6HypQbgxWbkpDnf52p1LuR4eWDQ/K9WQ==}
 
   /colors/1.0.3:
-    resolution: {integrity: sha1-BDP0TYCWgP3rYO0mDxsMJi6CpAs=}
+    resolution: {integrity: sha512-pFGrxThWcWQ2MsAz6RtgeWe4NK2kUE1WfsrvvlctdII745EW9I0yflqhe7++M5LEc7bV2c/9/5zc8sFcpL0Drw==}
     engines: {node: '>=0.1.90'}
     dev: true
 
@@ -9027,8 +9027,8 @@ packages:
       npm-normalize-package-bin: 1.0.1
     dev: true
 
-  /npm-check-updates/16.0.4:
-    resolution: {integrity: sha512-aHin9jGdg9NipAeGujsAECR26EKqLPFHBITWnN+wnCmt9jDbqcSRXcIduvxpSDI/GcHXIGxBGF4ZzHqDnFyEgg==}
+  /npm-check-updates/16.0.5:
+    resolution: {integrity: sha512-0qK6NTmgbq8y39xm4y1tKW5ghEGtWWyiUzSPSQEaqb9elqOfZogV4GQVvBYw3xJlt6igJVXgBUyjNqtPv/j7Yw==}
     engines: {node: '>=14.14'}
     hasBin: true
     dependencies:
