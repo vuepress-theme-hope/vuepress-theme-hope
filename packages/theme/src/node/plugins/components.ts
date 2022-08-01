@@ -22,5 +22,7 @@ export const getComponentsPlugin = (
         : options.backToTop !== false,
     ...(options.addThis ? { addThis: options.addThis } : {}),
     ...(options.iconAssets ? { iconAssets: options.iconAssets } : {}),
-    ...(options.iconPrefix ? { iconPrefix: options.iconPrefix } : {}),
+    ...(typeof options.iconPrefix === "string"
+      ? { iconPrefix: options.iconPrefix }
+      : {}),
   });
