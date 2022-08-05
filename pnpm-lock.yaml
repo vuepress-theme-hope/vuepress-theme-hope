@@ -10,7 +10,7 @@ importers:
       '@rollup/plugin-json': 4.1.0
       '@rollup/plugin-node-resolve': 13.3.0
       '@rollup/plugin-typescript': 8.3.4
-      '@types/inquirer': 8.2.1
+      '@types/inquirer': 9.0.0
       '@types/node': 18.6.3
       '@typescript-eslint/eslint-plugin': 5.32.0
       '@typescript-eslint/parser': 5.32.0
@@ -29,7 +29,7 @@ importers:
       eslint-plugin-vue: 9.3.0
       execa: 6.1.0
       husky: 8.0.1
-      inquirer: 9.0.2
+      inquirer: 9.1.0
       lint-staged: 13.0.3
       markdownlint-cli: 0.32.1
       npm-check-updates: 16.0.5
@@ -57,7 +57,7 @@ importers:
       '@rollup/plugin-json': 4.1.0_rollup@2.77.2
       '@rollup/plugin-node-resolve': 13.3.0_rollup@2.77.2
       '@rollup/plugin-typescript': 8.3.4_mad6iryzja5sfcvlsiy3osqulq
-      '@types/inquirer': 8.2.1
+      '@types/inquirer': 9.0.0
       '@types/node': 18.6.3
       '@typescript-eslint/eslint-plugin': 5.32.0_iosr3hrei2tubxveewluhu5lhy
       '@typescript-eslint/parser': 5.32.0_qugx7qdu5zevzvxaiqyxfiwquq
@@ -76,7 +76,7 @@ importers:
       eslint-plugin-vue: 9.3.0_eslint@8.21.0
       execa: 6.1.0
       husky: 8.0.1
-      inquirer: 9.0.2
+      inquirer: 9.1.0
       lint-staged: 13.0.3
       markdownlint-cli: 0.32.1
       npm-check-updates: 16.0.5
@@ -861,7 +861,7 @@ importers:
 
   packages/create:
     specifiers:
-      '@types/inquirer': 8.2.1
+      '@types/inquirer': 9.0.0
       cac: ^6.7.12
       execa: ^6.1.0
       inquirer: ^9.0.2
@@ -871,7 +871,7 @@ importers:
       execa: 6.1.0
       inquirer: 9.0.2
     devDependencies:
-      '@types/inquirer': 8.2.1
+      '@types/inquirer': 9.0.0
       rimraf: 3.0.2
 
   packages/feed2:
@@ -3162,8 +3162,8 @@ packages:
     dependencies:
       '@types/node': 18.6.3
 
-  /@types/inquirer/8.2.1:
-    resolution: {integrity: sha512-wKW3SKIUMmltbykg4I5JzCVzUhkuD9trD6efAmYgN2MrSntY0SMRQzEnD3mkyJ/rv9NLbTC7g3hKKE86YwEDLw==}
+  /@types/inquirer/9.0.0:
+    resolution: {integrity: sha512-4sncHTq3AWbLWZOs83DQlrKxhdehs2AW79Dp1amoGGc6B+oJal7fQJa/EO1Taa5CQLSywEMAgw2SFB1fZIX3PQ==}
     dependencies:
       '@types/through': 0.0.30
       rxjs: 7.5.6
@@ -7785,6 +7785,28 @@ packages:
       strip-ansi: 7.0.1
       through: 2.3.8
       wrap-ansi: 8.0.1
+    dev: false
+
+  /inquirer/9.1.0:
+    resolution: {integrity: sha512-eukdjrBljg9t55ZnvJjvGi1OyYEzVBFsO/8o5d2MV3mc28u3x4X2kS4eJ/+9U10KiREfPkEBSeCrU/S2G/uRtw==}
+    engines: {node: '>=12.0.0'}
+    dependencies:
+      ansi-escapes: 5.0.0
+      chalk: 5.0.1
+      cli-cursor: 4.0.0
+      cli-width: 4.0.0
+      external-editor: 3.1.0
+      figures: 4.0.1
+      lodash: 4.17.21
+      mute-stream: 0.0.8
+      ora: 6.1.2
+      run-async: 2.4.1
+      rxjs: 7.5.6
+      string-width: 5.1.2
+      strip-ansi: 7.0.1
+      through: 2.3.8
+      wrap-ansi: 8.0.1
+    dev: true
 
   /internal-slot/1.0.3:
     resolution: {integrity: sha512-O0DB1JC/sPyZl7cIo78n5dR7eUSwwpYPiXRhTzNxZVAMUuB8vlnRFyLxdrVToks6XPLVnFfbzaVd5WLjhgg+vA==}

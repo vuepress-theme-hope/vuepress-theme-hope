@@ -44,7 +44,7 @@
     "inquirer": "^9.0.2"
   },
   "devDependencies": {
-    "@types/inquirer": "8.2.1",
+    "@types/inquirer": "9.0.0",
     "rimraf": "3.0.2"
   }
 }
