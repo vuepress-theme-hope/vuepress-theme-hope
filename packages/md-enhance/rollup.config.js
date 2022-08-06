@@ -60,6 +60,10 @@ export default [
     external: ["mermaid", "vue", "vuepress-shared/lib/client", /\.scss$/],
     dtsExternal: [/\.scss$/],
   }),
+  ...rollupTypescript("client/components/Playground", {
+    external: ["@vuepress/client", "@vue/repl", "vue", /\.scss$/],
+    dtsExternal: [/\.scss$/],
+  }),
   ...rollupTypescript("client/components/Presentation", {
     external: [
       /^@temp/,
@@ -88,9 +92,5 @@ export default [
   }),
   ...rollupTypescript("client/reveal/index", {
     external: [/^reveal\.js/],
-  }),
-  ...rollupTypescript("client/components/playground/index", {
-    external: ["@vuepress/client", "@vue/repl", "vue", /\.scss$/],
-    dtsExternal: [/\.scss$/],
   }),
 ];
