@@ -2,7 +2,7 @@ import chalk from "chalk";
 import { execaCommand } from "execa";
 import ora from "ora";
 import inquirer from "inquirer";
-import pkg from "../package.json";
+import pkg from "../package.json" assert { type: "json" };
 
 const { version: currentVersion } = pkg;
 const { prompt } = inquirer;
