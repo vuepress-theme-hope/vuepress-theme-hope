@@ -1,12 +1,12 @@
-import { defineComponent, h } from "vue";
 import { ClientOnly } from "@vuepress/client";
-
-import type { VNode } from "vue";
+import { defineComponent, h } from "vue";
 
 import ExternalPlayground from "./ExternalPlayground";
 import InternalPlayground from "./InternalPlayground";
-import { parsePlaygroundSettings } from "../../utils/playground";
-import { IMPORT_MAP_KEY } from "../../../shared/playground";
+import { parsePlaygroundSettings } from "../../utils";
+import { IMPORT_MAP_KEY } from "../../../shared";
+
+import type { VNode } from "vue";
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names

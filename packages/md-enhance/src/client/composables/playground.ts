@@ -1,17 +1,19 @@
-import {
+import { utoa } from "../utils/playground";
+
+import type {
   PlaygroundFiles,
   ExternalPlaygroundOptions,
-} from "../../../shared/playground";
-import { utoa } from "../../utils/playground";
+} from "../../shared/playground";
 
-interface SourceConfig {
-  [key: string]: string | undefined;
-}
+type SourceConfig = Record<string, string | undefined>;
 
 export const useExternalPlayground = (
   config: string,
   options: ExternalPlaygroundOptions
-) => {
+): {
+  encoded: string;
+  link: string;
+} => {
   const configObj = JSON.parse(decodeURIComponent(config)) as PlaygroundFiles;
 
   const sourceConfig: SourceConfig = {};

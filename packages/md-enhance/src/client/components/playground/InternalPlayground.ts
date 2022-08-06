@@ -1,14 +1,15 @@
+import { ReplStore, Repl } from "@vue/repl";
 import { defineComponent, h, onMounted, ref, reactive } from "vue";
-import type { VNode } from "vue";
+
+import { LOADING_SVG, CODE_SVG } from "../icons";
+import { useExternalPlayground } from "../../composables";
+import { parsePlaygroundSettings } from "../../utils";
 
 import type { ReplProps } from "@vue/repl";
-import { ReplStore, Repl } from "@vue/repl";
+import type { VNode } from "vue";
 
 import "@vue/repl/style.css";
 import "../../styles/playground.scss";
-import { LOADING_SVG, CODE_SVG } from "../icons";
-import { useExternalPlayground } from "../../composables/playground";
-import { parsePlaygroundSettings } from "../../utils/playground";
 
 export default defineComponent({
   name: "InternalPlayground",
@@ -51,16 +52,13 @@ export default defineComponent({
       ssr: playgroundInternalOptions.ssr || false,
     });
 
-    const setupRepl = async () => {
-      if (!replProps.store) {
-        replProps.store = replStore.value;
-      }
+    const setupRepl = async (): Promise<void> => {
+      if (!replProps.store) replProps.store = replStore.value;
 
-      if (playgroundInternalOptions.vueVersion) {
+      if (playgroundInternalOptions.vueVersion)
         await replStore.value.setVueVersion(
           playgroundInternalOptions.vueVersion
         );
-      }
     };
 
     onMounted(async () => {

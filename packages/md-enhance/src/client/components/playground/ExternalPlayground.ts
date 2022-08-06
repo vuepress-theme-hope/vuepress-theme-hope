@@ -1,11 +1,12 @@
 import { defineComponent, h, ref } from "vue";
 
+import { LOADING_SVG, PLAY_SVG } from "../icons";
+import { useExternalPlayground } from "../../composables";
+import { parsePlaygroundSettings } from "../../utils";
+
 import type { VNode } from "vue";
 
 import "../../styles/playground.scss";
-import { LOADING_SVG, PLAY_SVG } from "../icons";
-import { useExternalPlayground } from "../../composables/playground";
-import { parsePlaygroundSettings } from "../../utils/playground";
 
 export default defineComponent({
   name: "ExternalPlayground",
@@ -39,49 +40,37 @@ export default defineComponent({
           id: props.id,
         },
         [
-          h(
-            "div",
-            {
-              class: "title-container",
-            },
-            [
-              props.title
-                ? h(
-                    "div",
-                    { class: "playground-title" },
-                    decodeURIComponent(props.title)
-                  )
-                : null,
-              h("div", { class: "op-btns" }, [
-                h("a", {
-                  class: "op-btn",
-                  href: link,
-                  target: "_blank",
-                  innerHTML: PLAY_SVG,
-                }),
-              ]),
-            ]
-          ),
-          h(
-            "div",
-            {
-              class: "preview-container",
-            },
-            [
-              loading.value
-                ? h("div", {
-                    class: ["preview-loading-wrapper"],
-                    innerHTML: LOADING_SVG,
-                  })
-                : null,
-              h("iframe", {
-                ref: iframe,
-                class: "iframe-preview",
-                src: link,
-                onload: () => (loading.value = false),
+          h("div", { class: "title-container" }, [
+            props.title
+              ? h(
+                  "div",
+                  { class: "playground-title" },
+                  decodeURIComponent(props.title)
+                )
+              : null,
+            h("div", { class: "op-btns" }, [
+              h("a", {
+                class: "op-btn",
+                href: link,
+                target: "_blank",
+                innerHTML: PLAY_SVG,
               }),
-            ]
-          ),
+            ]),
+          ]),
+          h("div", { class: "preview-container" }, [
+            loading.value
+              ? h("div", {
+                  class: ["preview-loading-wrapper"],
+                  innerHTML: LOADING_SVG,
+                })
+              : null,
+            h("iframe", {
+              ref: iframe,
+              class: "iframe-preview",
+              src: link,
+              onload: () => (loading.value = false),
+            }),
+          ]),
         ]
       ),
     ];

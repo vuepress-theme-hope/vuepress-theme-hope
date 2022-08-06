@@ -1,5 +1,4 @@
-// import { deepAssign } from "vuepress-shared";
-import { deepAssign } from "./assign";
+import { deepAssign } from "vuepress-shared/lib/client";
 
 import { IMPORT_MAP_KEY, importKey } from "../../../shared/playground";
 
@@ -48,18 +47,17 @@ export function parsePlaygroundConfig(
 ): PlaygroundFiles {
   let tmpConfig: string = config;
 
-  if (tmpConfig.includes(IMPORT_MAP_KEY)) {
+  if (tmpConfig.includes(IMPORT_MAP_KEY))
     tmpConfig = config.replace(IMPORT_MAP_KEY, defaultImportsMap || importKey);
-  }
-  const files = JSON.parse(decodeURIComponent(tmpConfig)) as PlaygroundFiles;
+
+  const files = <PlaygroundFiles>JSON.parse(decodeURIComponent(tmpConfig));
 
   return files;
 }
 
-export function parsePlaygroundSettings(settings: string): PlaygroundOptions {
-  const settingsObj = JSON.parse(
-    decodeURIComponent(settings)
-  ) as PlaygroundOptions;
-
-  return deepAssign({}, APP_PLAYGROUND_SETTINGS, settingsObj);
-}
+export const parsePlaygroundSettings = (settings: string): PlaygroundOptions =>
+  deepAssign(
+    {},
+    APP_PLAYGROUND_SETTINGS,
+    <PlaygroundOptions>JSON.parse(decodeURIComponent(settings))
+  );

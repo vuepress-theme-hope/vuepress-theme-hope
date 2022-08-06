@@ -3,6 +3,7 @@ export * from "./composables";
 export * from "./utils";
 export {
   compareDate,
+  deepAssign,
   getAuthor,
   getCategory,
   getDate,
