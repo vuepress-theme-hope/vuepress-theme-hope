@@ -1,15 +1,8 @@
-import {
-  computed,
-  defineComponent,
-  h,
-  ref,
-  resolveComponent,
-  toRef,
-  watch,
-} from "vue";
+import { computed, defineComponent, h, ref, toRef, watch } from "vue";
 import { useRoute } from "vue-router";
 
 import AutoLink from "@theme-hope/components/AutoLink";
+import Icon from "@theme-hope/components/Icon";
 
 import type { PropType, VNode } from "vue";
 import type {
@@ -64,7 +57,7 @@ export default defineComponent({
         },
         [
           h("span", { class: "title" }, [
-            h(resolveComponent("FontIcon"), { icon: config.value.icon }),
+            h(Icon, { icon: config.value.icon }),
             props.config.text,
           ]),
           h("span", { class: ["arrow", open.value ? "down" : "right"] }),

@@ -63,7 +63,7 @@ module.exports = {
   theme: hopeTheme({
     plugins: {
       mdEnhance: {
-        mermaid: true,
+        enableAll: true,
       },
     },
   }),

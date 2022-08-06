@@ -1,11 +1,9 @@
 import { computed, defineComponent, h } from "vue";
-import { usePageFrontmatter } from "@vuepress/client";
 import { icons } from "@temp/theme-hope/socialMedia";
 import { usePure } from "@theme-hope/composables";
 import { useBlogOptions } from "@theme-hope/module/blog/composables";
 
 import type { VNode } from "vue";
-import type { HopeThemeNormalPageFrontmatter } from "../../../../shared";
 
 import "../styles/social-media.scss";
 
@@ -13,15 +11,11 @@ export default defineComponent({
   name: "SocialMedia",
 
   setup() {
-    const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();
     const blogOptions = useBlogOptions();
     const isPure = usePure();
 
     const mediaLinks = computed(() => {
-      const { socialMedia } = frontmatter.value;
-
-      const config =
-        socialMedia === false ? false : blogOptions.value.medias || false;
+      const config = blogOptions.value.medias;
 
       if (config)
         return Object.entries(config).map(([media, url]) => ({

@@ -5,7 +5,6 @@ export const viLocale: HopeThemeLocaleData = {
 
   navbarLocales: {
     langName: "Ngôn ngữ",
-    selectLangText: "Tiếng Việt",
     selectLangAriaLabel: "Chọn ngôn ngữ",
   },
 
@@ -55,7 +54,7 @@ export const viLocale: HopeThemeLocaleData = {
   },
 
   encryptLocales: {
-    title: "Page Encrypted",
+    iconLabel: "Page Encrypted",
     placeholder: "Enter password",
     remember: "Remember password",
     errorHint: "Vui lòng nhập đúng mật khẩu",

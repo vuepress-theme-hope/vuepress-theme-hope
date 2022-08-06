@@ -76,7 +76,7 @@ The flowchart above may help you understand its design goal and how the plugin w
 
 ## Collecting Articles
 
-The plugin filter all the pages using `filter` options, so that it will drop pages you don’t want.
+The plugin filters all pages using `filter` option to drop pages you don’t want.
 
 ::: note
 

@@ -3,9 +3,15 @@
   <img width="240" src="https://vuepress-theme-hope.github.io/v2/logo.svg" style="text-align: center;">
 </p>
 <h1 align="center">vuepress-theme-hope</h1>
-<h4 align="center">A vuepress theme with tons of features✨ / 一个具有强大功能的 vuepress 主题✨</h4>
+<h4 align="center">A vuepress theme with tons of features✨</h4>
 
-[![Author: Mr.Hope](https://img.shields.io/badge/作者-Mr.Hope-blue.svg?style=for-the-badge)](https://mrhope.site)
+<h4 align="center">
+
+[中文简介](README-zh.md) | [Russian README](README-ru.md)
+
+</h4>
+
+[![Author: Mr.Hope](https://img.shields.io/badge/Author-Mr.Hope-blue.svg?style=for-the-badge)](https://mrhope.site)
 [![License](https://img.shields.io/npm/l/vuepress-theme-hope.svg?style=for-the-badge)](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/LICENSE)
 [![Open in Visual Studio Code](https://img.shields.io/badge/-open%20in%20vscode-blue?style=for-the-badge&logo=visualstudiocode)](https://open.vscode.dev/vuepress-theme-hope/vuepress-theme-hope)
 
@@ -20,24 +26,17 @@
 [![codecov](https://codecov.io/gh/vuepress-theme-hope/vuepress-theme-hope/branch/main/graph/badge.svg?token=TNYMbGlxQ9)](https://codecov.io/gh/vuepress-theme-hope/vuepress-theme-hope)
 ![Test theme](https://github.com/vuepress-theme-hope/vuepress-theme-hope/actions/workflows/test.yml/badge.svg)
 
-A vuepress theme with tons of features✨ / 一个具有强大功能的 vuepress 主题 ✨
+A vuepress theme with tons of features✨
 
 ![Status](https://repobeats.axiom.co/api/embed/1164cd0962fe9e8ce7fd3785cb28c79adecf8a26.svg)
 
-## [English Docs](https://vuepress-theme-hope.github.io/v2/) / [中文文档](https://vuepress-theme-hope.github.io/v2/zh/)
+## [English Docs](https://vuepress-theme-hope.github.io/v2/)
 
-## [Online Demo / 在线案例](https://stackblitz.com/fork/vuepress-theme-hope)
+## [Online Demo](https://stackblitz.com/fork/vuepress-theme-hope)
 
 ## Contact
 
 We recommend you to contact using [issues](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues) and [discussions](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions), but you are welcome to join our [telegram group!](https://t.me/vuepressthemehope).
-
-## 联系
-
-我们建议你使用 [issues](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues) 和 [discussions](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions) 联系，但也欢迎你加入我们的 [QQ 群](https://jq.qq.com/?_wv=1027&k=rATJyxGK) (群号: 1003437555)
-。
-
----
 
 ## Note
 
@@ -46,16 +45,6 @@ Current branch is based on VuePress@v2, and it’s still in beta.
 This means that features and API are not solid, and there might be BREAKING CHANGES in future releases.
 
 Though the project has stable release of V1, and are held in [V1 Repo](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/), but we do not recommend you to keep using V1 in new projects. See [V1 end of support Annoucement](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions/1535) for more details.
-
-## 注意
-
-当前分支基于 VuePress@v2，仍处于 Beta。
-
-这意味着功能和 API 尚未固定，在未来的更新中仍有概率出现破坏性更改。
-
-虽然该项目有 V1 的稳定版本，并且存放在 [V1 仓库](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/) 中，但我们不推荐你在新项目中继续使用 V1。 有关详细信息，请参阅 [V1 结束支持通告](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions/1535)。
-
----
 
 ## Details
 
@@ -73,20 +62,3 @@ Also V2 has a better performance:🚀
 - Build time reduced by **30%**
 - Output Size reduced by **25%**
 - Webpage performance up to **70%**
-
-## 详情
-
-V2 基于 _VuePress2_， 带有 _Vite2_ / _Webpack5_ 和 _Vue3_ 的强大功能。
-
-V2 完全重写，包括:
-
-- 所有组件都用 _Vue3 中的 Composition API_ 重写
-- 所有样式都迁移到 _Sass_
-
-V2 也有更好的性能 🚀:
-
-- DevServer 冷启动时间减少 **50%**
-- 构建内存减小 **65%**
-- 构建时间减少 **30%**
-- 输出大小降低 **25%**
-- 网页性能提高 **70%**

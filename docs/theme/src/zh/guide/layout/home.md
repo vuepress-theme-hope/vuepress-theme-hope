@@ -90,7 +90,7 @@ tag:
 
 - `title`: `string` 标题
 - `details`: `string` 详情
-- `icon`(可选): `string` 图标的 FontClass
+- `icon`(可选): `string` 可填入完整路径或绝对路径的图片链接，或 FontClass
 - `link`(可选): `string` 链接地址
 
 特性说明

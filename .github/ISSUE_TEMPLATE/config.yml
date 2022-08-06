@@ -4,6 +4,10 @@ contact_links:
     url: https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions/new
     about: Please ask questions in Discussion.
 
+  - name: Questions about v1 theme and plugins
+    url: https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/
+    about: Please ask questions in V1 repo.
+
   - name: Telegram Group
     url: https://t.me/vuepressthemehope
     about: Get in touch with us through telegram

@@ -15,7 +15,6 @@ tag:
 
 - `"Badge"`
 - `"CodePen"`
-- `"FontIcon"`
 - `"PDF"`
 - `"StackBlitz"`
 - `"YouTube"`

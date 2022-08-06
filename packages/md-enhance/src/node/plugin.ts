@@ -9,7 +9,7 @@ import {
 import { logger } from "./utils";
 
 import { checkLinks, getCheckLinksStatus } from "./checkLink";
-import { covertOptions, legacyCodeDemo, legacyCodeGroup } from "./compact";
+import { convertOptions, legacyCodeDemo, legacyCodeGroup } from "./compact";
 import {
   CODE_DEMO_DEFAULT_SETTING,
   align,
@@ -56,7 +56,7 @@ export const mdEnhancePlugin =
   (app) => {
     // TODO: Remove it in v2 stable
     if (legacy)
-      covertOptions(
+      convertOptions(
         options as MarkdownEnhanceOptions & Record<string, unknown>
       );
     if (app.env.isDebug) logger.info(`Options: ${options.toString()}`);
@@ -206,9 +206,10 @@ export const mdEnhancePlugin =
           md.use(vPre);
         if (texEnable) md.use(katex, katexOptions);
         if (getStatus("include"))
-          md.use(include, [
-            typeof options.include === "function" ? options.include : undefined,
-          ]);
+          md.use(
+            include,
+            typeof options.include === "object" ? options.include : {}
+          );
         if (getStatus("stylize")) md.use(stylize, options.stylize);
 
         // features

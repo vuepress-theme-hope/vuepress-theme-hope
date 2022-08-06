@@ -70,7 +70,7 @@ AddThis 的公开 ID。
 - 类型: `string`
 - 必填: 否
 
-字体图标资源链接，支持 `'iconfont'` 和 `'font-awesome'` 关键字。
+字体图标资源链接，支持 `'iconfont'` 和 `'fontawesome'` 关键字。
 
 ## iconPrefix
 

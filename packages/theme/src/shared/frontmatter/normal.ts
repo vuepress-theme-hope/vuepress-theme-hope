@@ -101,7 +101,7 @@ export interface HopeThemeNormalPageFrontmatter
      *
      * @default 0
      */
-    order?: number | false;
+    order?: number;
   };
 
   /**
@@ -190,13 +190,6 @@ export interface HopeThemeNormalPageFrontmatter
    * @default true
    */
   pageview?: boolean;
-
-  /**
-   * Whether display socialMedia
-   *
-   * 是否展示社交媒体
-   */
-  socialMedia?: boolean;
 
   /**
    * Whether this page is an article

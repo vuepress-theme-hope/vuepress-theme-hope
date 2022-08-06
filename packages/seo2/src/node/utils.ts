@@ -1,3 +1,4 @@
+import matter from "gray-matter";
 import {
   isLinkHttp,
   removeEndingSlash,
@@ -10,11 +11,20 @@ import type { ExtendPage, SeoOptions } from "../shared";
 
 export const logger = new Logger("vuepress-plugin-seo2");
 
-export const getLocales = (lang: string, locales: SiteLocaleConfig): string[] =>
+export interface LocaleConfig {
+  localePath: string;
+  lang: string;
+}
+
+export const getLocales = (
+  lang: string,
+  locales: SiteLocaleConfig
+): LocaleConfig[] =>
   Object.entries(locales)
-    .map(([, value]) => value.lang)
+    .map(([localePath, value]) => ({ localePath, lang: value.lang }))
     .filter(
-      (item): item is string => typeof item === "string" && item !== lang
+      (item): item is LocaleConfig =>
+        typeof item.lang === "string" && item.lang !== lang
     );
 
 export const getCover = (
@@ -79,7 +89,7 @@ export const stripTags = (content = ""): string =>
 
 export const md2text = (content?: string): string =>
   content
-    ? stripTags(content)
+    ? stripTags(matter(content).content)
         // remove img
         .replace(/!\[(.*?)\]\(.*?\)/gm, "")
         // remove code blocks
@@ -110,9 +120,9 @@ export const md2text = (content?: string): string =>
         .split("\n")
         .map((line) => line.trim())
         .join("\n")
-        // covert link breaks into spaces
+        // convert link breaks into spaces
         .replace(/(?:\r?\n)+/g, " ")
-        // covert 2 or more spaces into 1
+        // convert 2 or more spaces into 1
         .replace(/ +/g, " ")
         // trim
         .trim()

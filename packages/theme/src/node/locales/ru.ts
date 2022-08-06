@@ -5,7 +5,6 @@ export const ruLocale: HopeThemeLocaleData = {
 
   navbarLocales: {
     langName: "Русский",
-    selectLangText: "Язык",
     selectLangAriaLabel: "Выберите язык",
   },
 
@@ -55,9 +54,9 @@ export const ruLocale: HopeThemeLocaleData = {
   },
 
   encryptLocales: {
-    title: "Page Encrypted",
-    placeholder: "Enter password",
-    remember: "Remember password",
+    iconLabel: "Страница зашифрована",
+    placeholder: "Введите пароль",
+    remember: "Запомнить пароль",
     errorHint: "Пожалуйста, введите правильный пароль!",
   },
 

@@ -111,7 +111,7 @@ For other options, see [Giscus Config][comment2-giscus-config].
 
 ### Get APP_ID and APP_Key
 
-[Sign in](https://console.leancloud.app/login.html#/signin) or [sign up](https://console.leancloud.app/login.html#/signup) leancloud. Then create new application in Leancloud, and you will get APP ID / APP Key / APP Master Key.
+[Sign in](https://console.leancloud.app/login) or [sign up](https://console.leancloud.app/register) leancloud. Then create new application in Leancloud, and you will get APP ID / APP Key / APP Master Key.
 
 After that, create a vercel app using the below button.
 

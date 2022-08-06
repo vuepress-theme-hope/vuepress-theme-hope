@@ -5,9 +5,9 @@ import type { FunctionalComponent } from "vue";
 declare const ICON_PREFIX: string;
 
 export interface FontIconProps {
-  icon?: string;
-  color?: string;
-  size?: number;
+  icon?: string | undefined;
+  color?: string | undefined;
+  size?: number | undefined;
 }
 
 const FontIcon: FunctionalComponent<FontIconProps> = ({
@@ -18,10 +18,14 @@ const FontIcon: FunctionalComponent<FontIconProps> = ({
   icon
     ? h("span", {
         class: ["icon", `${ICON_PREFIX}${icon}`],
-        style: {
-          ...(color ? { color } : {}),
-          ...(size ? { "font-size": `${size}px` } : {}),
-        },
+        ...(color || size
+          ? {
+              style: {
+                ...(color ? { color } : {}),
+                ...(size ? { "font-size": `${size}px` } : {}),
+              },
+            }
+          : {}),
       })
     : null;
 

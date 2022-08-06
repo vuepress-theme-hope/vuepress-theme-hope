@@ -2,6 +2,43 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.87](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.86...v2.0.0-beta.87) (2022-07-18)
+
+### Features
+
+- **theme:** fix typos in apis ([fa36bac](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fa36bac680920980e76f3a2b7084658f9486eebf))
+
+### Bug Fixes
+
+- **seo2:** compatable with latest vp ([5b14c0a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5b14c0aaab6a1f41893d04c87479ebecc0657062))
+
+## [2.0.0-beta.86](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.85...v2.0.0-beta.86) (2022-07-12)
+
+### Features
+
+- **components:** improve ssr result ([ed80183](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ed80183ddbcbde8c87bbedfa5b6c1039d018ad6f))
+
+## [2.0.0-beta.85](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.84...v2.0.0-beta.85) (2022-07-09)
+
+### Features
+
+- **create:** add `.nojekyll` for gh workflow, close [#2040](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2040) ([8a8a3a3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8a8a3a3b7542549c22859a65aa29aa88cc68548e))
+- **create:** support package manager select, close [#2018](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2018) ([434e4df](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/434e4df7686ca202e4cd2da6587de047570755c8))
+- **shared:** improve locales generating ([fd582c9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fd582c99f2bc55f21c7aa82039efcb54ef828c05))
+- **theme:** add herlpers for plugins ([651e290](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/651e290020ec5384196c936202193503bdde232b))
+- **theme:** improve i18n config ([58e2a5d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/58e2a5d2d49964a02dab7479b81f052c430ec86f))
+- **theme:** improve options ([832e6b3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/832e6b376e5d8f79737c3947f7825c848fec4208))
+
+### Bug Fixes
+
+- **components:** fix PDF component ([99baa04](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/99baa04eeae779aa1b2ee23cb56bdb1943ed1f3a))
+- **deps:** update dependency sass-loader to v13.0.1 ([#2026](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2026)) ([730f74e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/730f74e9daa698b98d763b097bc95ef203819986))
+- **deps:** update dependency sass-loader to v13.0.2 ([#2033](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2033)) ([105d394](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/105d3942b8ba4f4715ce1e2115ab2c2e1e521c4d))
+- **deps:** update dependency three to v0.142.0 ([#2037](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2037)) ([0385ac7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0385ac743bfeeaa25a02af2ff5ed3f7c723e8783))
+- **md-enhance:** fix include options, fix [#2050](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2050) ([64e6a1b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/64e6a1b96d36806786822061a985bc00b4c04a0f))
+- **md-enhance:** fix tex conflict with attrs, fix [#2048](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2048) ([40bef97](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/40bef975b20f89212dc30f3f689e43039119fe33))
+- **theme:** fix frontmatter types ([d25093a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d25093a049ac43e6e7c3f90eb2b832ee3b99dcef))
+
 ## [2.0.0-beta.84](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.83...v2.0.0-beta.84) (2022-06-19)
 
 ### Features

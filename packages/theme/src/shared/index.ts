@@ -1,5 +1,6 @@
 export * from "./blog";
 export * from "./frontmatter";
+export * from "./helper";
 export * from "./info";
 export * from "./navbar";
 export * from "./options";

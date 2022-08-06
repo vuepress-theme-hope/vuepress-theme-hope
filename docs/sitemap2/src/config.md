@@ -44,7 +44,11 @@ The output filename, relative to output directory.
 - Type: `"always" | "hourly" | "daily" | "weekly" |"monthly" | "yearly" | "never"`
 - Default value: `"daily"`
 
+<!-- markdownlint-disable  MD051 -->
+
 Page default update frequency, will be override by [sitemap.changefreq](#sitemap-changefreq) in Frontmatter.
+
+<!-- markdownlint-enable  MD051 -->
 
 ### priority
 

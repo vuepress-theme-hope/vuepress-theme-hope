@@ -26,7 +26,7 @@ tag:
 
 ::: warning 启用功能
 
-你应该在主题选项中通过设置 `plugins.mdEnhance.presentation` 或 `plugins.mdEnhance.enableAll` 在 `vuepress-plugin-md-enhance` 中启用幻灯片功能，否则幻灯片无法被正确渲染。
+你应该在主题选项中通过设置 `plugins.mdEnhance.presentation` 在 `vuepress-plugin-md-enhance` 中启用幻灯片功能，否则幻灯片无法被正确渲染。
 
 :::
 

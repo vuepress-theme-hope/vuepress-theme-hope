@@ -1,15 +1,29 @@
 export interface HopeThemeEncryptLocaleData {
   /**
-   * Encrypt title
+   * Aria label for encrypt icon
+   *
+   * 加密图标的无障碍标签
    */
-  title: string;
+  iconLabel: string;
 
+  /**
+   * Password placeholder
+   *
+   * 密码输入框的默认占位符
+   */
   placeholder: string;
 
+  /**
+   * Whether remember password
+   *
+   * 是否记忆密码
+   */
   remember: string;
 
   /**
    * Passwrod error hint
+   *
+   * 密码错误提示
    */
   errorHint: string;
 }

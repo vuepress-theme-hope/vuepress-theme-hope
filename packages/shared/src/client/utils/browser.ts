@@ -1,5 +1,5 @@
-export const checkIsChromeMobile = (ua: string): boolean =>
-  /\b(?:crmo|crios)\/([\w.]+)/i.test(ua);
+export const checkIsMobile = (ua: string): boolean =>
+  /\b(?:Android|iPhone)/i.test(ua);
 
 export const checkIsChromeWebView = (ua: string): boolean =>
   / wv\).+(chrome)\/([\w.]+)/i.test(ua);

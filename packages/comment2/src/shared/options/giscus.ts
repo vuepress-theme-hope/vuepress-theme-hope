@@ -41,6 +41,15 @@ export interface GiscusOptions extends BaseCommentOptions {
   mapping?: string;
 
   /**
+   * Whether enable strict mapping
+   *
+   * 是否启用严格匹配
+   *
+   * @default true
+   */
+  strict?: boolean;
+
+  /**
    * Whether enable reactions or not
    *
    * 是否启用主帖子上的反应

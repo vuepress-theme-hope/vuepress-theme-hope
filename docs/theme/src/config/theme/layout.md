@@ -280,7 +280,7 @@ Whether to display footer by default.
 
 Home path of current locale, used as the link of back-to-home and navbar logo.
 
-### toc
+### toc {#toc-heading}
 
 - Type: `boolean`
 - Default: `true`

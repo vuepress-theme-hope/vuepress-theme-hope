@@ -44,7 +44,11 @@ icon: config
 - 类型: `"always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never"`
 - 默认值: `"daily"`
 
+<!-- markdownlint-disable  MD051 -->
+
 页面默认更新频率，会被 Frontmatter 中的 [changefreq](#sitemap-changefreq) 选项覆盖。
+
+<!-- markdownlint-enable  MD051 -->
 
 ### priority
 

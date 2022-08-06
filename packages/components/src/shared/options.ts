@@ -54,7 +54,7 @@ export interface ComponentOptions {
    *
    * 字体图标资源链接
    *
-   * @description `'iconfont'` and `'font-awesome'` keywords are supported
+   * @description `'iconfont'` and `'fontawesome'` keywords are supported
    */
   iconAssets?: string;
 

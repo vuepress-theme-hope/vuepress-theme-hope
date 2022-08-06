@@ -45,7 +45,7 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
 
 :::: tip 一键启用
 
-你可以设置在主题选项中设置 `plugins.mdEnhance.enableAll: true` 启用 [md-enhance][md-enhance] 插件的所有功能。
+你可以设置在主题选项中设置 `plugins.mdEnhance.enableAll: true` 启用 [md-enhance][md-enhance] 插件的所有功能以尝试他们。
 
 ::: code-tabs#language
 
@@ -95,7 +95,7 @@ module.exports = {
 
 ::: info 自定义标题
 
-信息容器，包含 `代码` 与 [链接](#markdown)。
+信息容器，包含 `代码` 与 [链接](#自定义容器)。
 
 ```js
 const a = 1;

@@ -38,6 +38,13 @@ icon: github
 
 页面 ↔️ discussion 映射关系，详见 [Giscus 页面](https://giscus.app/zh-CN)。
 
+## strict
+
+- 类型: `boolean`
+- 默认值: `true`
+
+是否启用严格匹配
+
 ## reactionsEnabled
 
 - 类型: `boolean`

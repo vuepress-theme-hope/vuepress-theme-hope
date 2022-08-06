@@ -5,7 +5,6 @@ export const zhTWLocale: HopeThemeLocaleData = {
 
   navbarLocales: {
     langName: "繁體中文",
-    selectLangText: "選擇語言",
     selectLangAriaLabel: "選擇語言",
   },
 
@@ -55,7 +54,7 @@ export const zhTWLocale: HopeThemeLocaleData = {
   },
 
   encryptLocales: {
-    title: "頁面已加密",
+    iconLabel: "頁面已加密",
     placeholder: "輸入密碼",
     remember: "記憶密碼",
     errorHint: "請輸入正確密碼",

@@ -88,7 +88,7 @@ Structure of `Feature`:
 
 - `title`: `string` title
 - `details` (optional): `string` details
-- `icon` (optional): `string` icon FontClass
+- `icon` (optional): `string` support absolute or full image links, or icon FontClass
 - `link` (optional): `string` link address
 
 Feature description

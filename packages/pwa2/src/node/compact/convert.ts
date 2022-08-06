@@ -2,7 +2,7 @@ import { deprecatedLogger } from "./utils";
 import type { PWAOptions } from "../../shared";
 
 /** @deprecated */
-export const covertOptions = (
+export const convertOptions = (
   options: PWAOptions & Record<string, unknown>
 ): void => {
   deprecatedLogger({

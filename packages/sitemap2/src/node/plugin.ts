@@ -1,5 +1,5 @@
 import { chalk } from "@vuepress/utils";
-import { covertOptions } from "./compact";
+import { convertOptions } from "./compact";
 import { generateSiteMap } from "./generateSitemap";
 import { logger } from "./utils";
 
@@ -11,7 +11,7 @@ export const sitemapPlugin =
   (app) => {
     // TODO: Remove it in v2 stable
     if (legacy)
-      covertOptions(options as SitemapOptions & Record<string, unknown>);
+      convertOptions(options as SitemapOptions & Record<string, unknown>);
     if (app.env.isDebug) logger.info(`Options: ${options.toString()}`);
 
     const plugin: PluginObject = {

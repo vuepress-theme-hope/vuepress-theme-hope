@@ -1,10 +1,11 @@
 import { usePageFrontmatter } from "@vuepress/client";
 import { isPlainObject, isString } from "@vuepress/shared";
 import { useEventListener } from "@vueuse/core";
-import { computed, defineComponent, h, resolveComponent } from "vue";
+import { computed, defineComponent, h } from "vue";
 import { useRoute } from "vue-router";
 
 import AutoLink from "@theme-hope/components/AutoLink";
+import Icon from "@theme-hope/components/Icon";
 import {
   useAutoLink,
   useNavigate,
@@ -129,7 +130,7 @@ export default defineComponent({
                       themeLocale.value.metaLocales.prev,
                     ]),
                     h("div", { class: "link" }, [
-                      h(resolveComponent("FontIcon"), {
+                      h(Icon, {
                         icon: prevNavLink.value?.icon,
                       }),
                       prevNavLink.value?.text,
@@ -148,7 +149,7 @@ export default defineComponent({
                     ]),
                     h("div", { class: "link" }, [
                       nextNavLink.value?.text,
-                      h(resolveComponent("FontIcon"), {
+                      h(Icon, {
                         icon: nextNavLink.value?.icon,
                       }),
                     ]),

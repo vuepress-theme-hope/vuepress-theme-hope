@@ -11,12 +11,18 @@ import type {
 } from "./encrypt";
 
 export interface HopeThemeFeatureLocaleData {
+  /**
+   * Blog related i18n config
+   */
   blogLocales: HopeThemeBlogLocaleData;
 
+  /**
+   * Pagination related i18n config
+   */
   paginationLocales: HopeThemePaginationLocaleData;
 
   /**
-   * Encrypt
+   * Encrypt related i18n config
    */
   encryptLocales: HopeThemeEncryptLocaleData;
 }

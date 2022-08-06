@@ -30,7 +30,7 @@ Details container
 
 ::: info Custom Title
 
-A custom information container with `code`, [link](#markdown).
+A custom information container with `code`, [link](#demo).
 
 ```js
 const a = 1;
@@ -40,7 +40,7 @@ const a = 1;
 
 ::: note Custom Title
 
-A custom note container with `code`, [link](#markdown).
+A custom note container with `code`, [link](#demo).
 
 ```js
 const a = 1;
@@ -50,7 +50,7 @@ const a = 1;
 
 ::: tip Custom Title
 
-A custom tip container with `code`, [link](#markdown).
+A custom tip container with `code`, [link](#demo).
 
 ```js
 const a = 1;
@@ -60,7 +60,7 @@ const a = 1;
 
 ::: warning Custom Title
 
-A custom warning container with `code`, [link](#markdown).
+A custom warning container with `code`, [link](#demo).
 
 ```js
 const a = 1;
@@ -70,7 +70,7 @@ const a = 1;
 
 ::: danger Custom Title
 
-A custom danger container with `code`, [link](#markdown).
+A custom danger container with `code`, [link](#demo).
 
 ```js
 const a = 1;
@@ -80,7 +80,7 @@ const a = 1;
 
 ::: details Custom Title
 
-A custom details container with `code`, [link](#markdown).
+A custom details container with `code`, [link](#demo).
 
 ```js
 const a = 1;
@@ -130,7 +130,7 @@ Details container
 
 ::: info Custom Title
 
-A custom information container with `code`, [link](#markdown).
+A custom information container with `code`, [link](#demo).
 
 ```js
 const a = 1;
@@ -139,7 +139,7 @@ const a = 1;
 :::
 
 ::: note Custom Title
-A custom note container with `code`, [link](#markdown).
+A custom note container with `code`, [link](#demo).
 
 ```js
 const a = 1;
@@ -149,7 +149,7 @@ const a = 1;
 
 ::: tip Custom Title
 
-A custom tip container with `code`, [link](#markdown).
+A custom tip container with `code`, [link](#demo).
 
 ```js
 const a = 1;
@@ -159,7 +159,7 @@ const a = 1;
 
 ::: warning Custom Title
 
-A custom warning container with `code`, [link](#markdown).
+A custom warning container with `code`, [link](#demo).
 
 ```js
 const a = 1;
@@ -169,7 +169,7 @@ const a = 1;
 
 ::: danger Custom Title
 
-A custom danger container with `code`, [link](#markdown).
+A custom danger container with `code`, [link](#demo).
 
 ```js
 const a = 1;
@@ -179,7 +179,7 @@ const a = 1;
 
 ::: details Custom Title
 
-A custom details container with `code`, [link](#markdown).
+A custom details container with `code`, [link](#demo).
 
 ```js
 const a = 1;

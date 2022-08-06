@@ -81,10 +81,11 @@ export default defineComponent({
       categoryId: giscusOption.categoryId,
       lang: giscusLang.value,
       theme: props.darkmode ? "dark" : "light",
-      mapping: (giscusOption.mapping || "specific") as GiscusMapping,
+      mapping: (giscusOption.mapping || "pathname") as GiscusMapping,
       term: withBase(route.path),
       inputPosition: giscusOption.inputPosition || "top",
       reactionsEnabled: giscusOption.reactionsEnabled !== false ? "1" : "0",
+      strict: giscusOption.strict !== false ? "1" : "0",
       emitMetadata: "0",
     }));
 

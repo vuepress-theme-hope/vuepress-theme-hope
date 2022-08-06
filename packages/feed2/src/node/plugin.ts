@@ -1,5 +1,5 @@
 import { chalk } from "@vuepress/utils";
-import { covertOptions } from "./compact";
+import { convertOptions } from "./compact";
 import { checkOutput, ensureHostName, getFeedOptions } from "./options";
 import { injectLinkstoHead } from "./injectHead";
 import { FeedGenerator } from "./generator";
@@ -12,7 +12,8 @@ export const feedPlugin =
   (options: FeedOptions, legacy = false): PluginFunction =>
   (app) => {
     // TODO: Remove this in v2 stable
-    if (legacy) covertOptions(options as FeedOptions & Record<string, unknown>);
+    if (legacy)
+      convertOptions(options as FeedOptions & Record<string, unknown>);
     if (app.env.isDebug) logger.info(`Options: ${options.toString()}`);
 
     const plugin: PluginObject = {
