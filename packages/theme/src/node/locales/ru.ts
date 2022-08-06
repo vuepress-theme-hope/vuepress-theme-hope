@@ -54,9 +54,9 @@ export const ruLocale: HopeThemeLocaleData = {
   },
 
   encryptLocales: {
-    iconLabel: "Page Encrypted",
-    placeholder: "Enter password",
-    remember: "Remember password",
+    iconLabel: "Страница зашифрована",
+    placeholder: "Введите пароль",
+    remember: "Запомнить пароль",
     errorHint: "Пожалуйста, введите правильный пароль!",
   },
 
