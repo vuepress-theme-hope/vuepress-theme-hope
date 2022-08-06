@@ -99,6 +99,11 @@ features:
     details: You can insert presentation in Markdown files directly
     link: /guide/presentation/
 
+  - title: Playground Support
+    icon: code
+    details: You can insert vue playground in Markdown files directly
+    link: /guide/playground.html
+
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 copyright: false
 ---

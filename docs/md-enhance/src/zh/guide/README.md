@@ -278,6 +278,12 @@ span {
 
 <!-- markdownlint-enable MD033 -->
 
+### 交互演示
+
+你可以直接在 Markdown 中插入 Vue playground。
+
+- [查看详情](playground.md)
+
 ### 幻灯片
 
 @slidestart

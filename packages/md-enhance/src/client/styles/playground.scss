@@ -1,0 +1,251 @@
+@use "vuepress-shared/styles/reset";
+
+:root {
+  --playground-header-bg-color: #eee;
+}
+
+#{hope-config.$dark-selector} {
+  --playground-header-bg-color: #333;
+}
+
+// vue-repl dark mode
+
+/**
+ * copied from https://github.com/vuejs/repl/blob/main/src/Repl.vue
+ */
+#{hope-config.$dark-selector} .vue-repl {
+  --bg: #1a1a1a;
+  --bg-soft: #242424;
+  --border: #383838;
+  --text-light: #aaa;
+  --color-branding: #42d392;
+  --color-branding-dark: #89ddff;
+
+  .import-map-wrapper {
+    background: linear-gradient(
+      90deg,
+      rgb(26 26 26 / 0%) 0%,
+      rgb(26 26 26 / 100%) 25%
+    ) !important;
+  }
+
+  /**
+  * copied from https://github.com/vuejs/repl/blob/main/src/codemirror/codemirror.css
+  */
+  // stylelint-disable selector-class-pattern
+  .CodeMirror {
+    --symbols: #89ddff;
+    --base: #a6accd;
+    --comment: #6d6d6d;
+    --keyword: #89ddff;
+    --string: #c3e88d;
+    --variable: #82aaff;
+    --number: #f78c6c;
+    --tags: #f07178;
+    --brackets: var(--symbols);
+    --property: #f07178;
+    --attribute: #c792ea;
+    --cursor: #fff;
+    --selected-bg: rgb(255 255 255 / 10%);
+    --selected-bg-non-focus: rgb(255 255 255 / 15%);
+    // stylelint-enable selector-class-pattern
+    color: var(--symbols);
+  }
+}
+
+.playground-container {
+  overflow: hidden;
+
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid;
+  border-color: var(--code-border-color);
+  border-radius: 6px;
+
+  // stylelint-disable max-nesting-depth
+  @media (max-width: hope-config.$tablet) {
+    &.internal {
+      .op-btns {
+        .op-btn.code {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .op-btns {
+    display: flex;
+    align-items: center;
+
+    // stylelint-disable selector-max-compound-selectors
+    .op-btn {
+      display: inline-flex;
+      margin-left: 10px;
+
+      .icon {
+        width: 1.5rem;
+        height: 1.5rem;
+        fill: #777;
+      }
+
+      &:hover {
+        .icon {
+          transition: transform 0.15s cubic-bezier(0.2, 0, 0.13, 2);
+          transform: scale(1.2);
+        }
+      }
+    }
+    // stylelint-enable selector-max-compound-selectors
+  }
+  // stylelint-enable max-nesting-depth
+
+  .title-container {
+    display: flex;
+    flex-flow: row wrap;
+
+    padding: 8px 10px;
+    border-bottom: 1px solid;
+    border-bottom-color: var(--code-border-color);
+
+    background-color: var(--playground-header-bg-color, #eee);
+
+    font-weight: 500;
+
+    .playground-title {
+      flex: 1;
+
+      overflow: hidden;
+
+      font-size: 1.25rem;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  .preview-container {
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+    background-color: var(--c-bg);
+
+    .preview-loading-wrapper {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 5;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: var(--grey15);
+
+      // stylelint-disable selector-max-compound-selectors
+      .loading-icon {
+        width: 4rem;
+        height: 4rem;
+      }
+      // stylelint-enable selector-max-compound-selectors
+    }
+
+    iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  }
+
+  .source-container {
+    display: none;
+
+    &.show {
+      display: block;
+    }
+  }
+
+  // internal styles
+  // stylelint-disable selector-max-compound-selectors
+  // stylelint-disable max-nesting-depth
+  .repl-container {
+    height: auto !important;
+
+    @media (max-width: hope-config.$tablet) {
+      &.show-code {
+        .vue-repl {
+          .split-pane.show-output {
+            .left {
+              display: none !important;
+            }
+          }
+
+          .split-pane:not(.show-output) {
+            .left {
+              display: block !important;
+            }
+          }
+        }
+      }
+
+      &.hide-code {
+        .vue-repl {
+          .split-pane.show-output {
+            .left {
+              display: none !important;
+            }
+          }
+
+          .split-pane:not(.show-output) {
+            .left {
+              display: block !important;
+            }
+          }
+        }
+      }
+    }
+
+    .vue-repl {
+      .split-pane {
+        .left {
+          .editor-container {
+            height: 100% !important;
+          }
+        }
+      }
+    }
+
+    &.show-code {
+      .vue-repl {
+        .split-pane {
+          .left {
+            display: block !important;
+          }
+        }
+      }
+    }
+
+    &.hide-code {
+      .vue-repl {
+        .split-pane {
+          .left {
+            display: none !important;
+          }
+        }
+      }
+    }
+
+    // reset .theme-hope-content pre
+    .theme-hope-content & {
+      pre,
+      pre[class*="language-"] {
+        margin: 0;
+        padding: 0;
+        border-radius: 0;
+      }
+    }
+  }
+  // stylelint-enable max-nesting-depth
+  // stylelint-enable selector-max-compound-selectors
+}

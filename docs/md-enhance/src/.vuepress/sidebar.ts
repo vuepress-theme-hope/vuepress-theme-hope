@@ -40,6 +40,7 @@ export const enSidebarConfig = sidebar({
           children: ["", "demo", "themes"],
         },
         "stylize",
+        "playground",
         "others",
       ],
     },
@@ -81,6 +82,7 @@ export const enSidebarConfig = sidebar({
       children: ["", "demo", "themes"],
     },
     "stylize",
+    "playground",
     "others",
   ],
 });
@@ -125,6 +127,7 @@ export const zhSidebarConfig = sidebar({
           children: ["", "demo", "themes"],
         },
         "stylize",
+        "playground",
         "others",
       ],
     },
@@ -166,6 +169,7 @@ export const zhSidebarConfig = sidebar({
       children: ["", "demo", "themes"],
     },
     "stylize",
+    "playground",
     "others",
   ],
 });

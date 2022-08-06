@@ -7,3 +7,4 @@ export * from "./options";
 export * from "./presentation";
 export * from "./tasklist";
 export * from "./stylize";
+export * from "./playground";

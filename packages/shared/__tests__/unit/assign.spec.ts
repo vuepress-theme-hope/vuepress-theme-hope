@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { describe, it, expect } from "vitest";
-import { deepAssign, deepAssignReverse } from "../../src/node/utils/assign";
+import { deepAssign, deepAssignReverse } from "../../src/shared/utils/assign";
 
 describe("deepassign", () => {
   it("simple assign", () => {

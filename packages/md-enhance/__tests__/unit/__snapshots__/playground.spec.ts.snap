@@ -1,0 +1,34 @@
+// Vitest Snapshot v1
+
+exports[`playground > Should resolve playground info 1`] = `
+"<Playground key=\\"playground-621e9435\\"
+        id=\\"playground-621e9435\\"
+        title=\\"Playground%20demo\\"
+        settings=\\"%7B%7D\\"
+        config=\\"%7B%22App.vue%22%3A%7B%22lang%22%3A%22vue%22%2C%22content%22%3A%22%3Cscript%20setup%3E%5Cnimport%20%7B%20ref%20%7D%20from%20'vue'%5Cnconst%20msg%20%3D%20ref('Hello%20World!')%5Cn%3C%2Fscript%3E%5Cn%3Ctemplate%3E%5Cn%20%20%3Ch1%3E%7B%7B%20msg%20%7D%7D%3C%2Fh1%3E%5Cn%20%20%3Cinput%20v-model%3D%5C%22msg%5C%22%20%2F%3E%5Cn%3C%2Ftemplate%3E%5Cn%22%7D%2C%22Comp.vue%22%3A%7B%22lang%22%3A%22vue%22%2C%22content%22%3A%22%3Ctemplate%3E%5Cn%20%20%3Cdiv%3EComp%3C%2Fdiv%3E%5Cn%3C%2Ftemplate%3E%5Cn%22%7D%2C%22%25IMPORT_MAP_KEY%25%22%3A%7B%22lang%22%3A%22json%22%2C%22content%22%3A%22%7B%5Cn%20%20%5C%22imports%5C%22%3A%20%7B%5Cn%20%20%20%20%5C%22vue%5C%22%3A%20%5C%22https%3A%2F%2Fsfc.vuejs.org%2Fvue.runtime.esm-browser.js%5C%22%5Cn%20%20%7D%5Cn%7D%5Cn%22%7D%7D\\"
+      >
+</Playground>
+"
+`;
+
+exports[`playground > Should resolve playground info with settings 1`] = `
+"<Playground key=\\"playground-3c981ac6\\"
+        id=\\"playground-3c981ac6\\"
+        title=\\"Playground%20demo2\\"
+        settings=\\"%7B%0A%20%20%22mode%22%3A%20%22external%22%2C%0A%20%20%22external%22%3A%20%7B%0A%20%20%20%20%22base%22%3A%20%22https%3A%2F%2Felement-plus.run%2F%22%0A%20%20%7D%0A%7D\\"
+        config=\\"%7B%22App.vue%22%3A%7B%22lang%22%3A%22vue%22%2C%22content%22%3A%22%3Cscript%20setup%3E%5Cnimport%20%7B%20ref%20%7D%20from%20'vue'%5Cnconst%20msg%20%3D%20ref('Hello%20World!')%5Cn%3C%2Fscript%3E%5Cn%3Ctemplate%3E%5Cn%20%20%3Ch1%3E%7B%7B%20msg%20%7D%7D%3C%2Fh1%3E%5Cn%20%20%3Cinput%20v-model%3D%5C%22msg%5C%22%20%2F%3E%5Cn%3C%2Ftemplate%3E%5Cn%22%7D%2C%22Comp.vue%22%3A%7B%22lang%22%3A%22vue%22%2C%22content%22%3A%22%3Ctemplate%3E%5Cn%20%20%3Cdiv%3EComp%3C%2Fdiv%3E%5Cn%3C%2Ftemplate%3E%5Cn%22%7D%7D\\"
+      >
+</Playground>
+"
+`;
+
+exports[`playground > Should resolve playground info with settings 2`] = `
+"<Playground key=\\"customId\\"
+        id=\\"customId\\"
+        title=\\"Playground%20demo2\\"
+        settings=\\"%7B%0A%20%20%22mode%22%3A%20%22external%22%2C%0A%20%20%22external%22%3A%20%7B%0A%20%20%20%20%22base%22%3A%20%22https%3A%2F%2Felement-plus.run%2F%22%0A%20%20%7D%0A%7D\\"
+        config=\\"%7B%22App.vue%22%3A%7B%22lang%22%3A%22vue%22%2C%22content%22%3A%22%3Cscript%20setup%3E%5Cnimport%20%7B%20ref%20%7D%20from%20'vue'%5Cnconst%20msg%20%3D%20ref('Hello%20World!')%5Cn%3C%2Fscript%3E%5Cn%3Ctemplate%3E%5Cn%20%20%3Ch1%3E%7B%7B%20msg%20%7D%7D%3C%2Fh1%3E%5Cn%20%20%3Cinput%20v-model%3D%5C%22msg%5C%22%20%2F%3E%5Cn%3C%2Ftemplate%3E%5Cn%22%7D%2C%22user-imports.json%22%3A%7B%22lang%22%3A%22json%22%2C%22content%22%3A%22%7B%5Cn%20%20%5C%22imports%5C%22%3A%20%7B%5Cn%20%20%20%20%5C%22vue%5C%22%3A%20%5C%22https%3A%2F%2Fsfc.vuejs.org%2Fvue.runtime.esm-browser.js%5C%22%5Cn%20%20%7D%5Cn%7D%5Cn%22%7D%7D\\"
+      >
+</Playground>
+"
+`;

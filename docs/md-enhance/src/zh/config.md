@@ -237,6 +237,13 @@ interface TaskListOptions {
 
 是否启用图表支持。
 
+## echarts
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否启用 ECharts 图表支持。
+
 ## flowchart
 
 - 类型: `boolean`
@@ -418,6 +425,103 @@ CodePen 编辑器显示情况，第一位代表 HTML ，第二位代表 JS，第
 - 必填: 否
 
 你想要传递给 Reveal.js 的配置选项
+
+## playground
+
+- 类型: `PlaygroundOptions | boolean`
+- 默认值: `false`
+
+是否启用 Playground 支持。
+
+```ts
+/** Playground 配置 */
+interface PlaygroundOptions {
+  /** 模式: [internal, external] */
+  mode?: PlaygroundMode;
+  /**
+   * 外置模式配置
+   */
+  external?: ExternalPlaygroundOptions;
+  /**
+   * 内置式配置
+   */
+  internal?: InternalPlaygroundOptions;
+}
+
+/**
+ * 外置模式配置
+ */
+interface ExternalPlaygroundOptions {
+  /**
+   * playground 基础地址
+   */
+  base?: string;
+  /**
+   * 默认 import map, 默认值: "imports-map.json".
+   * 你也可以使用自己的 import map，比如: "user-imports.json".
+   */
+  defaultImportsMap?: string;
+  /**
+   * 其他配置，这些会被作为查询字符串传过去。
+   */
+  options?: Record<string, string>;
+}
+
+/**
+ * Playground 内置模式配置
+ * 详情请查看 `@vue/repl` 。
+ */
+interface InternalPlaygroundOptions {
+  /**
+   * 指定默认的 Vue 运行时。
+   * 默认使用 unpkg.com CDN 。
+   */
+  defaultVueRuntimeURL?: string;
+  /**
+   * 指定 vue 版本
+   */
+  vueVersion?: string;
+  /**
+   * 默认 import map, 默认值: "imports-map.json".
+   * 你也可以使用自己的 import map，比如: "user-imports.json".
+   */
+  defaultImportsMap?: string;
+  /**
+   * 是否自动调整大小。
+   */
+  autoResize?: boolean;
+  /**
+   * 是否显示代码
+   */
+  showCode?: boolean;
+  /**
+   * 是否显示 js, css, ssr 面板
+   */
+  showCompileOutput?: boolean;
+  /**
+   * 是否显示 import map.
+   */
+  showImportMap?: boolean;
+  /**
+   * 是否清空控制台
+   */
+  clearConsole?: boolean;
+  /**
+   * 当设为 'vertical' 时，显示上下模式。
+   * 否则显示左右模式。
+   * 默认为 'vertical'.
+   */
+  layout?: string;
+  /**
+   * `vue/compiler-sfc`.配置项
+   */
+  sfcOptions?: SFCOptions;
+  /**
+   * 是否启用 SSR.
+   */
+  ssr?: boolean;
+}
+```
 
 ## delay
 

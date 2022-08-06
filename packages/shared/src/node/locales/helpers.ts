@@ -1,6 +1,6 @@
 import { lang2PathConfig, path2langConfig, supportedLangs } from "./config";
 import { Logger } from "../logger";
-import { deepAssign } from "../utils";
+import { deepAssign } from "../../shared";
 
 import type { App, LocaleConfig } from "@vuepress/core";
 import type { HopeLang } from "./types";
