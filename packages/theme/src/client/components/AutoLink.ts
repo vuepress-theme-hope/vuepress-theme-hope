@@ -1,8 +1,10 @@
-import { computed, defineComponent, h, resolveComponent, toRef } from "vue";
+import { computed, defineComponent, h, toRef } from "vue";
 import { RouterLink, useRoute } from "vue-router";
 import { useSiteData } from "@vuepress/client";
 import { ExternalLinkIcon } from "@vuepress/plugin-external-link-icon/lib/client";
 import { isLinkHttp, isLinkMailto, isLinkTel } from "@vuepress/shared";
+
+import Icon from "@theme-hope/components/Icon";
 
 import type { PropType, VNode } from "vue";
 import type { AutoLink } from "../../shared";
@@ -113,8 +115,7 @@ export default defineComponent({
             },
             () =>
               slots["default"]?.() || [
-                slots["before"]?.() ||
-                  h(resolveComponent("FontIcon"), { icon }),
+                slots["before"]?.() || h(Icon, { icon }),
                 text,
                 slots["after"]?.(),
               ]
@@ -132,7 +133,7 @@ export default defineComponent({
               onFocusout: () => emit("focusout"),
             },
             slots["default"]?.() || [
-              slots["before"]?.() || h(resolveComponent("FontIcon"), { icon }),
+              slots["before"]?.() || h(Icon, { icon }),
               text,
               props.externalLinkIcon ? h(ExternalLinkIcon) : null,
               slots["after"]?.(),

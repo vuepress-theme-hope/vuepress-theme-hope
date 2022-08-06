@@ -1,8 +1,9 @@
-import { usePageFrontmatter, withBase } from "@vuepress/client";
-import { isArray, isLinkExternal, isLinkHttp } from "@vuepress/shared";
-import { computed, defineComponent, h, resolveComponent } from "vue";
+import { usePageFrontmatter } from "@vuepress/client";
+import { isArray, isLinkExternal } from "@vuepress/shared";
+import { computed, defineComponent, h } from "vue";
 import { RouterLink } from "vue-router";
 
+import Icon from "@theme-hope/components/Icon";
 import type { VNode } from "vue";
 import type { HopeThemeProjectHomePageFrontmatter } from "../../shared";
 
@@ -20,16 +21,6 @@ export default defineComponent({
       return [];
     });
 
-    const getIcon = (icon = ""): VNode | null => {
-      return isLinkHttp(icon)
-        ? h("img", { class: "icon", src: icon })
-        : icon.startsWith("/")
-        ? h("img", { class: "icon", src: withBase(icon) })
-        : icon
-        ? h(resolveComponent("FontIcon"), { icon })
-        : null;
-    };
-
     return (): VNode | null =>
       features.value.length
         ? h(
@@ -37,7 +28,7 @@ export default defineComponent({
             { class: "features" },
             frontmatter.value.features?.map((feature) => {
               const children = [
-                getIcon(feature.icon),
+                h(Icon, feature.icon),
                 h("h2", { innerHTML: feature.title }),
                 h("p", { innerHTML: feature.details }),
               ];

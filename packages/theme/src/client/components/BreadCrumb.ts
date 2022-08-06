@@ -1,16 +1,9 @@
 import { usePageFrontmatter, useRouteLocale } from "@vuepress/client";
-import {
-  computed,
-  defineComponent,
-  h,
-  onMounted,
-  watch,
-  ref,
-  resolveComponent,
-} from "vue";
+import { computed, defineComponent, h, onMounted, watch, ref } from "vue";
 import { RouterLink, useRoute, useRouter } from "vue-router";
 import { resolveRouteWithRedirect } from "vuepress-shared/lib/client";
 
+import Icon from "@theme-hope/components/Icon";
 import { useThemeLocaleData } from "@theme-hope/composables";
 import { getAncestorLinks } from "@theme-hope/utils";
 
@@ -112,9 +105,7 @@ export default defineComponent({
                       },
                       () => [
                         // icon
-                        iconEnable.value
-                          ? h(resolveComponent("FontIcon"), { icon: item.icon })
-                          : null,
+                        iconEnable.value ? h(Icon, { icon: item.icon }) : null,
                         // text
                         h(
                           "span",
