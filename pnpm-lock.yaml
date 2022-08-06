@@ -930,7 +930,7 @@ importers:
       '@vuepress/plugin-container': 2.0.0-beta.49
       '@vuepress/shared': 2.0.0-beta.49
       '@vuepress/utils': 2.0.0-beta.49
-      '@vueuse/core': ^8.7.4
+      '@vueuse/core': ^9.0.0
       balloon-css: ^1.2.0
       chart.js: ^3.9.1
       echarts: ^5.3.3
@@ -955,7 +955,7 @@ importers:
       '@vuepress/plugin-container': 2.0.0-beta.49
       '@vuepress/shared': 2.0.0-beta.49
       '@vuepress/utils': 2.0.0-beta.49
-      '@vueuse/core': 8.9.4_vue@3.2.37
+      '@vueuse/core': 9.1.0_vue@3.2.37
       balloon-css: 1.2.0
       chart.js: 3.9.1
       echarts: 5.3.3
