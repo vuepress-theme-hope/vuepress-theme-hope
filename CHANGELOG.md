@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.88](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.87...v2.0.0-beta.88) (2022-08-06)
+
+### Features
+
+- add ru docs for theme ([#2064](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2064)) ([8eda702](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8eda702794d1c8b43362e63ced12d8638cd5631f))
+- **comment2:** support strict mapping for Giscus ([3dbfaef](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3dbfaef307e41e8024c5da87bb481f3a48accbc9))
+- **md-enhance:** add playground ([#1938](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1938)) ([1d7fa0d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1d7fa0d79e5454e85b0f2bd9d98760dd206f9cf0))
+- **seo2:** add support for alternate links ([2e6b90d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2e6b90ddacf625b77216918c33d5faaf03a905e5))
+- **theme:** support Icon component ([c833ba7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c833ba7dc7390116cf5c88ec06472c6990947cc2))
+- **theme:** translate new phrases ([#2105](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2105)) ([66b181b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/66b181ba4dea73c8c35268f247c2db7519a400fc))
+
+### Bug Fixes
+
+- **theme:** fix setting iconPrefix to empty string don't work, fix [#2093](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2093) ([b893494](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b893494a46be2e522bb9d60584c2033f1082d137))
+
 ## [2.0.0-beta.87](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.86...v2.0.0-beta.87) (2022-07-18)
 
 ### Features

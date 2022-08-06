@@ -1,6 +1,6 @@
 {
   "name": "sass-palette-docs",
-  "version": "2.0.0-beta.87",
+  "version": "2.0.0-beta.88",
   "private": true,
   "description": "Docs for vuepress-plugin-sass-palette",
   "license": "MIT",
