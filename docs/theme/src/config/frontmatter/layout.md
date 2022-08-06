@@ -229,7 +229,7 @@ For more details, please see [Page → Footer Support](../../guide/layout/footer
 
 Whether display the back to top button.
 
-## toc
+## toc {#toc-heading}
 
 - Type: `boolean`
 - Default value: value in theme options

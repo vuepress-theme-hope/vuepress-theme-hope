@@ -229,7 +229,7 @@ Page order in sidebar.
 
 设置是否显示返回顶部按钮
 
-## toc
+## toc {#toc-heading}
 
 - 类型: `boolean`
 - 默认值: 主题选项中的值
