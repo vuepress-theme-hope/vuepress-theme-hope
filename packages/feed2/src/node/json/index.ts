@@ -6,7 +6,7 @@ import type { FeedAuthor } from "../../shared";
 import type { JSONAuthor, JSONContent, JSONItem } from "./typings";
 
 const formatAuthor = (author: FeedAuthor): JSONAuthor => ({
-  name: author.name as string,
+  name: author.name!,
   ...(author.url ? { url: author.url } : {}),
   ...(author.avatar ? { avatar: author.avatar } : {}),
 });

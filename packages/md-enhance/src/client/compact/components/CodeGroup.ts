@@ -111,8 +111,7 @@ export const CodeGroup = defineComponent({
               "button",
               {
                 ref: (element) => {
-                  if (element)
-                    tabRefs.value[index] = element as HTMLUListElement;
+                  if (element) tabRefs.value[index] = <HTMLUListElement>element;
                 },
                 class: ["code-group-nav-tab", { active: isActive }],
                 "aria-pressed": isActive,
@@ -123,7 +122,7 @@ export const CodeGroup = defineComponent({
                 onKeydown: (event: KeyboardEvent) =>
                   keyboardHandler(event, index),
               },
-              vnode.props["title"] as string[]
+              <string[]>vnode.props["title"]
             );
           })
         ),

@@ -14,7 +14,7 @@ import "../styles/breadcrumb.scss";
 
 interface BreadCrumbConfig {
   title: string;
-  icon?: string;
+  icon?: string | undefined;
   path: string;
 }
 
@@ -61,7 +61,7 @@ export default defineComponent({
                 title: meta.shortTitle || meta.title,
                 icon: meta.icon,
                 path,
-              } as BreadCrumbConfig;
+              };
           }
 
           return null;

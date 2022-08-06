@@ -31,13 +31,13 @@ declare const LIGHT_GALLERY_ZOOM: boolean;
 const getImages = (images: HTMLImageElement[]): GalleryItem[] =>
   images.map(
     ({ alt, srcset, src }) =>
-      ({
+      <GalleryItem>{
         alt: alt,
         src: src,
         thumb: src || srcset,
         srcset: srcset,
         subHtml: alt,
-      } as GalleryItem)
+      }
   );
 
 export default defineComponent({
@@ -110,7 +110,7 @@ export default defineComponent({
             document.querySelectorAll<HTMLImageElement>(IMAGE_SELECTOR)
           );
 
-          instance = lightGallery(container.value as HTMLElement, {
+          instance = lightGallery(container.value!, {
             ...LIGHT_GALLERY_OPTIONS,
             dynamic: true,
             dynamicEl: getImages(images),

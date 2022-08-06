@@ -94,7 +94,7 @@ const parseImageSize = (
 };
 
 const imageSizeRule: RuleInline = (state, silent) => {
-  const env = state.env as ImageEnv;
+  const env = <ImageEnv>state.env;
   const oldPos = state.pos;
   const max = state.posMax;
 
@@ -244,10 +244,10 @@ const imageSizeRule: RuleInline = (state, silent) => {
 
     const token = state.push("image", "img", 0);
 
-    token.attrs = [
+    token.attrs = <[string, string][]>[
       ["src", href],
       ["alt", ""],
-    ] as [string, string][];
+    ];
     if (title) token.attrs.push(["title", title]);
     if (width !== "") token.attrs.push(["width", width]);
     if (height !== "") token.attrs.push(["height", height]);

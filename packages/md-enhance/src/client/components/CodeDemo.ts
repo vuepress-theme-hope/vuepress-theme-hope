@@ -56,15 +56,15 @@ export default defineComponent({
 
     const config = computed(
       () =>
-        JSON.parse(
-          decodeURIComponent(props.config || "{}")
-        ) as Partial<CodeDemoOptions>
+        <Partial<CodeDemoOptions>>(
+          JSON.parse(decodeURIComponent(props.config || "{}"))
+        )
     );
 
     const codeType = computed(() => {
-      const codeConfig = JSON.parse(
-        decodeURIComponent(props.code || "{}")
-      ) as Record<string, string>;
+      const codeConfig = <Record<string, string>>(
+        JSON.parse(decodeURIComponent(props.code || "{}"))
+      );
 
       return getCode(codeConfig);
     });

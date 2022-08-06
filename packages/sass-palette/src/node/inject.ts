@@ -23,7 +23,7 @@ export const injectConfigModule = (
 
   // for vite
   if (bundler.name.endsWith("vite")) {
-    const viteBundlerConfig = config as ViteBundlerOptions;
+    const viteBundlerConfig = <ViteBundlerOptions>config;
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const originalAdditionalData:
@@ -37,7 +37,7 @@ export const injectConfigModule = (
 
     // eslint-disable-next-line
     viteBundlerConfig.viteOptions = mergeViteConfig(
-      viteBundlerConfig.viteOptions as Record<string, unknown>,
+      viteBundlerConfig.viteOptions || {},
       {
         css: {
           preprocessorOptions: {
@@ -69,7 +69,7 @@ export const injectConfigModule = (
 
   // for webpack
   if (bundler.name.endsWith("webpack")) {
-    const webpackBundlerConfig = config as WebpackBundlerOptions;
+    const webpackBundlerConfig = <WebpackBundlerOptions>config;
 
     if (!webpackBundlerConfig.scss) webpackBundlerConfig.scss = {};
 

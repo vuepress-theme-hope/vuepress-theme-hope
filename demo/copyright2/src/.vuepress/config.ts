@@ -2,10 +2,10 @@ import { defineUserConfig } from "@vuepress/cli";
 import { defaultTheme } from "@vuepress/theme-default";
 import { copyrightPlugin } from "vuepress-plugin-copyright2";
 
-const BASE = process.env.BASE as "/" | `/${string}/`;
+const base = <"/" | `/${string}/`>process.env.BASE || "/";
 
 export default defineUserConfig({
-  base: BASE || "/",
+  base,
 
   title: "Copyright",
   description: "Append copyright information when copying",

@@ -28,7 +28,7 @@ export const generateHTML = async (
       : options.config || {};
 
   const redirectMap = Object.fromEntries(
-    (pages as Page<Record<string, never>, RedirectPluginFrontmatterOption>[])
+    (<Page<Record<string, never>, RedirectPluginFrontmatterOption>[]>pages)
       .map<[string, string][]>(({ frontmatter, path }) =>
         Array.isArray(frontmatter.redirectFrom)
           ? frontmatter.redirectFrom.map((from) => [from, path])

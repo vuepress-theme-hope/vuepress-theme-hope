@@ -23,7 +23,7 @@ export default defineComponent({
     return (): VNode[] => [
       h(SkipLink),
       h(
-        resolveComponent("CommonWrapper") as ComponentOptions,
+        <ComponentOptions>resolveComponent("CommonWrapper"),
         { sidebar: false },
         {
           default: () =>

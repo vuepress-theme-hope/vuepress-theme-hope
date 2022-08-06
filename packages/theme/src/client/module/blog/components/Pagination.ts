@@ -170,7 +170,7 @@ export default defineComponent({
                   id: "navigation-text",
                   value: input.value,
                   onInput: ({ target }: InputEvent) => {
-                    input.value = (target as HTMLInputElement).value;
+                    input.value = (<HTMLInputElement>target).value;
                   },
                   onKeydown: (event: KeyboardEvent) => {
                     if (event.key === "Enter") {

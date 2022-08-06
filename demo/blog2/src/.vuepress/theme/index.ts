@@ -37,7 +37,7 @@ export const blogTheme = (options: DefaultThemeOptions): Theme => ({
       category: [
         {
           key: "category",
-          getter: (page) => (page.frontmatter.category as string[]) || [],
+          getter: (page) => <string[]>page.frontmatter.category || [],
           layout: "Category",
           itemLayout: "Category",
           frontmatter: () => ({ title: "Categories", sidebar: false }),
@@ -48,7 +48,7 @@ export const blogTheme = (options: DefaultThemeOptions): Theme => ({
         },
         {
           key: "tag",
-          getter: (page) => (page.frontmatter.tag as string[]) || [],
+          getter: (page) => <string[]>page.frontmatter.tag || [],
           layout: "Tag",
           itemLayout: "Tag",
           frontmatter: () => ({ title: "Tags", sidebar: false }),

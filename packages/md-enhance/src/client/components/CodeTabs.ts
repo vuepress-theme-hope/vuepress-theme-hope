@@ -116,7 +116,7 @@ export default defineComponent({
                     {
                       ref: (element) => {
                         if (element)
-                          tabRefs.value[index] = element as HTMLUListElement;
+                          tabRefs.value[index] = <HTMLUListElement>element;
                       },
                       class: ["code-tabs-nav-tab", { active: isActive }],
                       "aria-pressed": isActive,

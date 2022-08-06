@@ -50,10 +50,12 @@ const generatePageMap = (
   const {
     changefreq,
     excludeUrls = ["/404.html"],
-    modifyTimeGetter = ((page: Page<{ git: GitData }>): string =>
-      page.data.git?.updatedTime
-        ? new Date(page.data.git.updatedTime).toISOString()
-        : "") as ModifyTimeGetter,
+    modifyTimeGetter = <ModifyTimeGetter>(
+      ((page: Page<{ git: GitData }>): string =>
+        page.data.git?.updatedTime
+          ? new Date(page.data.git.updatedTime).toISOString()
+          : "")
+    ),
   } = options;
 
   const {
@@ -78,14 +80,14 @@ const generatePageMap = (
 
   pages.forEach((page) => {
     const frontmatterOptions: SitemapFrontmatterOption =
-      (page.frontmatter["sitemap"] as SitemapFrontmatterOption) || {};
+      <SitemapFrontmatterOption>page.frontmatter["sitemap"] || {};
 
     const metaRobotTags = (page.frontmatter.head || []).find(
       (head) => head[1]["name"] === "robots"
     );
 
     const excludePage = metaRobotTags
-      ? ((metaRobotTags[1]["content"] as string) || "")
+      ? (<string>metaRobotTags[1]["content"] || "")
           .split(/,/u)
           .map((content) => content.trim())
           .includes("noindex")

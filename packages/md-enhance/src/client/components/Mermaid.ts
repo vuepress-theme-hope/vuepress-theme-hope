@@ -87,7 +87,7 @@ export default defineComponent({
     let observer: MutationObserver | null = null;
 
     onMounted(() => {
-      const html = document.querySelector("html") as HTMLElement;
+      const html = document.querySelector("html")!;
       const code = decodeURIComponent(props.code);
 
       const getDarkmodeStatus = (): boolean =>

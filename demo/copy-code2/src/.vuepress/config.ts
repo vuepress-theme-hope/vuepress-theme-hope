@@ -2,10 +2,10 @@ import { defineUserConfig } from "@vuepress/cli";
 import { defaultTheme } from "@vuepress/theme-default";
 import { copyCodePlugin } from "vuepress-plugin-copy-code2";
 
-const BASE = process.env.BASE as "/" | `/${string}/`;
+const base = <"/" | `/${string}/`>process.env.BASE || "/";
 
 export default defineUserConfig({
-  base: BASE || "/",
+  base,
 
   title: "Copy Code",
   description: "Copy code button for VuePress2",

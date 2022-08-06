@@ -2,10 +2,10 @@ import { defineUserConfig } from "@vuepress/cli";
 import { commentPlugin } from "vuepress-plugin-comment2";
 import { commentTheme } from "./theme";
 
-const BASE = process.env.BASE as "/" | `/${string}/`;
+const base = <"/" | `/${string}/`>process.env.BASE || "/";
 
 export default defineUserConfig({
-  base: BASE || "/",
+  base,
 
   title: "Comment Plugin",
   description: "Comment Plugin for VuePress2",

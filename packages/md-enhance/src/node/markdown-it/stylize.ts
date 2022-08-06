@@ -64,7 +64,7 @@ export const stylize: PluginWithOptions<StylizeOptions> = (
   if (Object.keys(options).length == 0) return;
 
   md.core.ruler.push("stylize_tag", ({ env, tokens }) => {
-    const { noStylize } = (env as StylizeMarkdownEnv).frontmatter || {};
+    const { noStylize } = (<StylizeMarkdownEnv>env).frontmatter || {};
 
     tokens.forEach(({ type, children }) => {
       if (type === "inline") scanTokens(children || [], options, noStylize);

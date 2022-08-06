@@ -1,5 +1,17 @@
 import type { BaseCommentOptions } from "./base";
 
+export type GiscusRepo = `${string}/${string}`;
+
+export type GiscusMapping =
+  | "url"
+  | "title"
+  | "og:title"
+  | "specific"
+  | "number"
+  | "pathname";
+
+export type GiscusInputPosition = "top" | "bottom";
+
 export interface GiscusOptions extends BaseCommentOptions {
   provider: "Giscus";
 
@@ -8,7 +20,7 @@ export interface GiscusOptions extends BaseCommentOptions {
    *
    * 存放评论的仓库
    */
-  repo: string;
+  repo: GiscusRepo;
 
   /**
    * The ID of repository to store discussions.
@@ -38,7 +50,7 @@ export interface GiscusOptions extends BaseCommentOptions {
    *
    * @default "pathname"
    */
-  mapping?: string;
+  mapping?: GiscusMapping;
 
   /**
    * Whether enable strict mapping
@@ -65,5 +77,5 @@ export interface GiscusOptions extends BaseCommentOptions {
    *
    * @default 'top'
    */
-  inputPosition?: "top" | "bottom";
+  inputPosition?: GiscusInputPosition;
 }

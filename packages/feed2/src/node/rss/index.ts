@@ -153,7 +153,7 @@ export const renderRSS = (feed: Feed): string => {
 
       if (author)
         item.author = {
-          _text: `${author.email as string} (${author.name as string})`,
+          _text: `${author.email!} (${author.name!})`,
         };
     }
 

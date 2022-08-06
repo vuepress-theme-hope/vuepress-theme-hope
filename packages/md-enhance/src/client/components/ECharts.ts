@@ -13,14 +13,14 @@ const parseEChartsConfig = (
   config: string,
   type: "js" | "json"
 ): EChartsOption => {
-  if (type === "json") return JSON.parse(config) as EChartsOption;
+  if (type === "json") return <EChartsOption>JSON.parse(config);
 
   const exports = {};
   const module = { exports };
 
   eval(config);
 
-  return module.exports as EChartsOption;
+  return <EChartsOption>module.exports;
 };
 
 export default defineComponent({
@@ -50,7 +50,7 @@ export default defineComponent({
           props.type
         );
 
-        chart = echarts.init(echartsWrapper.value as HTMLElement);
+        chart = echarts.init(echartsWrapper.value!);
         chart.showLoading();
         chart.setOption(options);
         chart.hideLoading();

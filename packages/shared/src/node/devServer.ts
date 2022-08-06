@@ -31,7 +31,7 @@ export const useCustomDevServer = (
 
   // for vite
   if (app.env.isDev && bundler.name.endsWith("vite")) {
-    const viteBundlerConfig = config as ViteBundlerOptions;
+    const viteBundlerConfig = <ViteBundlerOptions>config;
     const handler: HandleFunction = (
       request: IncomingMessage,
       response: ServerResponse
@@ -55,14 +55,14 @@ export const useCustomDevServer = (
     };
 
     viteBundlerConfig.viteOptions = mergeViteConfig(
-      viteBundlerConfig.viteOptions as Record<string, unknown>,
+      viteBundlerConfig.viteOptions || {},
       { plugins: [viteMockRequestPlugin] }
     );
   }
 
   // for webpack
   if (app.env.isDev && bundler.name.endsWith("webpack")) {
-    const webpackBundlerConfig = config as WebpackBundlerOptions;
+    const webpackBundlerConfig = <WebpackBundlerOptions>config;
 
     const { devServerSetupMiddlewares } = webpackBundlerConfig;
 

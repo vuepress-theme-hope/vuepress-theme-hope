@@ -79,7 +79,7 @@ export default defineComponent({
                     { class: "dropdown-subtitle" },
                     child.link
                       ? h(AutoLink, {
-                          config: child as AutoLinkType,
+                          config: <AutoLinkType>child,
                           onFocusout: () => {
                             if (
                               isLastItemOfArray(child, config.value.children) &&

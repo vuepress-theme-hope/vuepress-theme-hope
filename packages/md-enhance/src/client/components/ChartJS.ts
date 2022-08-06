@@ -12,14 +12,14 @@ const parseChartConfig = (
   config: string,
   type: "js" | "json"
 ): ChartConfiguration => {
-  if (type === "json") return JSON.parse(config) as ChartConfiguration;
+  if (type === "json") return <ChartConfiguration>JSON.parse(config);
 
   const exports = {};
   const module = { exports };
 
   eval(config);
 
-  return module.exports as ChartConfiguration;
+  return <ChartConfiguration>module.exports;
 };
 
 export default defineComponent({
@@ -50,9 +50,7 @@ export default defineComponent({
           decodeURIComponent(props.config),
           props.type
         );
-        const ctx = chartCanvasElement.value?.getContext(
-          "2d"
-        ) as CanvasRenderingContext2D;
+        const ctx = chartCanvasElement.value!.getContext("2d")!;
 
         new Chart(ctx, data);
 

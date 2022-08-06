@@ -10,13 +10,13 @@ export const getCommentPlugin = (
   if (options === false || !options?.provider) return null;
 
   return commentPlugin(
-    {
+    <CommentOptions>{
       provider: "None",
       ...(options?.provider === "Waline"
         ? { dark: 'html[data-theme="dark"]' }
         : {}),
       ...(options || {}),
-    } as CommentOptions,
+    },
     legacy
   );
 };

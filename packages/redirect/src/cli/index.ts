@@ -16,7 +16,7 @@ import { getRedirectHTML } from "../shared";
 
 const cli = cac("vp-redirect");
 // eslint-disable-next-line
-const version = require("../../package.json").version as string;
+const version = <string>require("../../package.json").version;
 
 cli
   .command(

@@ -64,10 +64,9 @@ export default defineComponent({
         ];
 
         void Promise.all(promises).then(([, revealJS, ...plugins]) => {
-          reveal = new revealJS.default(
-            presentationElement.value as HTMLElement,
-            { plugins: plugins.map((plugin) => plugin.default) }
-          );
+          reveal = new revealJS.default(presentationElement.value!, {
+            plugins: plugins.map((plugin) => plugin.default),
+          });
 
           void reveal
             .initialize({

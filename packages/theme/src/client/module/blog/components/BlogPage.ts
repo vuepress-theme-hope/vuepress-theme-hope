@@ -58,7 +58,7 @@ export default defineComponent({
 
     const items = computed(() => {
       const { name = "", key = "" } =
-        (frontmatter.value.blog as BlogCategoryFrontmatterOptions) || {};
+        <BlogCategoryFrontmatterOptions>frontmatter.value.blog || {};
 
       return key === "encrypted"
         ? encryptedArticles.value.items

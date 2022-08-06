@@ -1,10 +1,10 @@
 import { defineUserConfig } from "@vuepress/cli";
 import { blogTheme } from "./theme";
 
-const BASE = process.env.BASE as "/" | `/${string}/`;
+const base = <"/" | `/${string}/`>process.env.BASE || "/";
 
 export default defineUserConfig({
-  base: BASE || "/",
+  base,
 
   title: "Blog2",
   description: "Blog plugin for VuePress2",

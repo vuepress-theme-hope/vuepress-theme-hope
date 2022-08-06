@@ -15,7 +15,7 @@ export const getCopyrightPlugin = (
 ): Plugin | null => {
   if (!options) return null;
 
-  return copyrightPlugin({
+  return copyrightPlugin(<CopyrightOptions>{
     hostname,
     author: (
       page: Page<Record<string, never>, HopeThemeNormalPageFrontmatter>
@@ -24,5 +24,5 @@ export const getCopyrightPlugin = (
       getAuthor(themeConfig.author)?.[0]?.name ||
       "",
     ...(typeof options === "object" ? options : { global: true }),
-  } as CopyrightOptions);
+  });
 };

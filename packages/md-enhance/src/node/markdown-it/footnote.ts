@@ -366,9 +366,9 @@ const footnoteRef: RuleInline = (state: FootNoteStateInline, silent) => {
       state.env.footnotes.refs[`:${label}`] = footnoteId;
     } else footnoteId = state.env.footnotes.refs[`:${label}`];
 
-    footnoteSubId = state.env.footnotes.list[footnoteId].count as number;
+    footnoteSubId = state.env.footnotes.list[footnoteId].count!;
     state.env.footnotes.list[footnoteId].count =
-      (state.env.footnotes.list[footnoteId].count as number) + 1;
+      state.env.footnotes.list[footnoteId].count! + 1;
 
     token = state.push("footnoteRef", "", 0);
     token.meta = { id: footnoteId, subId: footnoteSubId, label };
@@ -431,14 +431,14 @@ const footnoteTail = (state: FootNoteStateCore): boolean => {
       tokens.push(token);
 
       token = new Token("inline", "", 0);
-      token.children = list[i].tokens as Token[];
-      token.content = list[i].content as string;
+      token.children = list[i].tokens!;
+      token.content = list[i].content!;
       tokens.push(token);
 
       token = new Token("paragraph_close", "p", -1);
       token.block = true;
       tokens.push(token);
-    } else if (list[i].label) tokens = refTokens[`:${list[i].label as string}`];
+    } else if (list[i].label) tokens = refTokens[`:${list[i].label!}`];
     else tokens = [];
 
     if (tokens) state.tokens = state.tokens.concat(tokens);
@@ -446,11 +446,7 @@ const footnoteTail = (state: FootNoteStateCore): boolean => {
       lastParagraph = state.tokens.pop() || null;
     else lastParagraph = null;
 
-    for (
-      let j = 0;
-      j < (Number(list[i].count) > 0 ? (list[i].count as number) : 1);
-      j++
-    ) {
+    for (let j = 0; j < (Number(list[i].count) > 0 ? list[i].count! : 1); j++) {
       token = new Token("footnoteAnchor", "", 0);
       token.meta = { id: i, subId: j, label: list[i].label };
       state.tokens.push(token);

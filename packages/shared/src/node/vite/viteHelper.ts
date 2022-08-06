@@ -25,10 +25,10 @@ export const addViteOptimizeDepsInclude = (
       ? Boolean(process.env["OPTIMIZE_DEPS"])
       : manager !== "pnpm")
   ) {
-    const bundlerConfig = config as ViteBundlerOptions;
+    const bundlerConfig = <ViteBundlerOptions>config;
 
     bundlerConfig.viteOptions = mergeViteConfig(
-      bundlerConfig.viteOptions as Record<string, unknown>,
+      bundlerConfig.viteOptions || {},
       {
         optimizeDeps: {
           include: typeof module === "string" ? [module] : module,
@@ -52,10 +52,10 @@ export const addViteOptimizeDepsExclude = (
   const { bundler } = app.options;
 
   if (bundler.name.endsWith("vite")) {
-    const bundlerConfig = config as ViteBundlerOptions;
+    const bundlerConfig = <ViteBundlerOptions>config;
 
     bundlerConfig.viteOptions = mergeViteConfig(
-      bundlerConfig.viteOptions as Record<string, unknown>,
+      bundlerConfig.viteOptions || {},
       {
         optimizeDeps: {
           exclude: typeof module === "string" ? [module] : module,
@@ -79,10 +79,10 @@ export const addViteSsrExternal = (
   const { bundler } = app.options;
 
   if (bundler.name.endsWith("vite")) {
-    const bundlerConfig = config as ViteBundlerOptions;
+    const bundlerConfig = <ViteBundlerOptions>config;
 
     bundlerConfig.viteOptions = mergeViteConfig(
-      bundlerConfig.viteOptions as Record<string, unknown>,
+      bundlerConfig.viteOptions || {},
       {
         ssr: {
           external: typeof module === "string" ? [module] : module,
@@ -102,10 +102,10 @@ export const addViteSsrNoExternal = (
   const { bundler } = app.options;
 
   if (bundler.name.endsWith("vite")) {
-    const bundlerConfig = config as ViteBundlerOptions;
+    const bundlerConfig = <ViteBundlerOptions>config;
 
     bundlerConfig.viteOptions = mergeViteConfig(
-      bundlerConfig.viteOptions as Record<string, unknown>,
+      bundlerConfig.viteOptions || {},
       {
         ssr: {
           noExternal: typeof module === "string" ? [module] : module,

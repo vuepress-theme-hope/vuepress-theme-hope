@@ -58,8 +58,8 @@ export const useBlogType = <
           path: finalRoute.path,
           info:
             BLOG_META_SCOPE === ""
-              ? (finalRoute.meta as T)
-              : (finalRoute.meta[BLOG_META_SCOPE] as T),
+              ? <T>finalRoute.meta
+              : <T>finalRoute.meta[BLOG_META_SCOPE],
         });
       }
     }

@@ -3,7 +3,7 @@ import { computed, defineComponent, h, onMounted, ref } from "vue";
 import { useRoute } from "vue-router";
 
 import type { VNode } from "vue";
-import type { GiscusLang, GiscusMapping, GiscusProps } from "../utils";
+import type { GiscusLang, GiscusProps } from "../utils";
 import type { CommentPluginFrontmatter, GiscusOptions } from "../../shared";
 
 import "../styles/giscus.scss";
@@ -75,13 +75,13 @@ export default defineComponent({
     });
 
     const config = computed<GiscusProps>(() => ({
-      repo: giscusOption.repo as `${string}/${string}`,
+      repo: giscusOption.repo,
       repoId: giscusOption.repoId,
       category: giscusOption.category,
       categoryId: giscusOption.categoryId,
       lang: giscusLang.value,
       theme: props.darkmode ? "dark" : "light",
-      mapping: (giscusOption.mapping || "pathname") as GiscusMapping,
+      mapping: giscusOption.mapping || "pathname",
       term: withBase(route.path),
       inputPosition: giscusOption.inputPosition || "top",
       reactionsEnabled: giscusOption.reactionsEnabled !== false ? "1" : "0",

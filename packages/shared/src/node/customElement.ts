@@ -65,7 +65,7 @@ export const addCustomElement = (
 
   // for vite
   if (bundler.name.endsWith("vite")) {
-    const viteBundlerConfig = config as ViteBundlerOptions;
+    const viteBundlerConfig = <ViteBundlerOptions>config;
 
     if (!viteBundlerConfig.vuePluginOptions)
       viteBundlerConfig.vuePluginOptions = {};
@@ -90,7 +90,7 @@ export const addCustomElement = (
 
   // for webpack
   if (bundler.name.endsWith("webpack")) {
-    const webpackBundlerConfig = config as WebpackBundlerOptions;
+    const webpackBundlerConfig = <WebpackBundlerOptions>config;
 
     if (!webpackBundlerConfig.vue) webpackBundlerConfig.vue = {};
     if (!webpackBundlerConfig.vue.compilerOptions)

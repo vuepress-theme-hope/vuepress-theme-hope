@@ -68,7 +68,7 @@ export class FeedGenerator {
       const item = new FeedPage(
         this.app,
         localeOption,
-        page as Page<{ git?: GitData }, FeedPluginFrontmatter>,
+        <Page<{ git?: GitData }, FeedPluginFrontmatter>>page,
         feed
       ).getFeedItem();
 

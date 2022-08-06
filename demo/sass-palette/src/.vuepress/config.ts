@@ -2,10 +2,10 @@ import { defineUserConfig } from "@vuepress/cli";
 import { defaultTheme } from "@vuepress/theme-default";
 import { sassPalettePlugin } from "vuepress-plugin-sass-palette";
 
-const BASE = process.env.BASE as "/" | `/${string}/`;
+const base = <"/" | `/${string}/`>process.env.BASE || "/";
 
 export default defineUserConfig({
-  base: BASE || "/",
+  base,
 
   title: "Palatte",
   description: "VuePress Palatte",

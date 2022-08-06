@@ -20,7 +20,7 @@ export const getCode = (code: Record<string, string>): CodeType => {
     isLegal: false,
   };
 
-  (["html", "js", "css"] as PreProcessorType[]).forEach((type) => {
+  (<PreProcessorType[]>["html", "js", "css"]).forEach((type) => {
     const match = languages.filter((language) =>
       preProcessorConfig[type].types.includes(language)
     );

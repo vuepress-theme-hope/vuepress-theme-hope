@@ -1,14 +1,10 @@
+import type {
+  GiscusInputPosition,
+  GiscusMapping,
+  GiscusRepo,
+} from "../../shared";
+
 type BooleanString = "0" | "1";
-
-export type GiscusRepo = `${string}/${string}`;
-
-export type GiscusMapping =
-  | "url"
-  | "title"
-  | "og:title"
-  | "specific"
-  | "number"
-  | "pathname";
 
 export type GiscusTheme =
   | "light"
@@ -21,8 +17,6 @@ export type GiscusTheme =
   | "transparent_dark"
   | "preferred_color_scheme"
   | `https://${string}`;
-
-export type GiscusInputPosition = "top" | "bottom";
 
 export type GiscusLang =
   | "de"

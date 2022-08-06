@@ -121,7 +121,7 @@ const postProcess = (
    *
    */
   while (loneMarkers.length) {
-    const i = loneMarkers.pop() as number;
+    const i = loneMarkers.pop()!;
     let j = i + 1;
 
     while (j < state.tokens.length && state.tokens[j].type === "mark_close")

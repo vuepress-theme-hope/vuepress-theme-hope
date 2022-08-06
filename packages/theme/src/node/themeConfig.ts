@@ -80,23 +80,23 @@ export const getThemeConfig = (
 
             return [
               locale,
-              {
+              <HopeThemeLocaleConfig>{
                 // default config
                 ...defaultLocaleOptions,
                 ...config,
-              } as HopeThemeLocaleConfig,
+              },
             ];
           })
         ),
         // extract localeConfig
         config: Object.fromEntries(
           [
-            ["/", {}] as [string, HopeThemeLocaleOptions],
+            <[string, HopeThemeLocaleOptions]>["/", {}],
             ...Object.entries(themeOptions.locales || {}),
           ].map<[string, HopeThemeLocaleConfig]>(
             ([localePath, localeConfig]) => [
               localePath,
-              {
+              <HopeThemeLocaleConfig>{
                 // root config
                 ...Object.fromEntries(
                   Object.entries(themeOptions).filter(
@@ -106,7 +106,7 @@ export const getThemeConfig = (
                 ),
                 // locale options
                 ...localeConfig,
-              } as HopeThemeLocaleConfig,
+              },
             ]
           )
         ),

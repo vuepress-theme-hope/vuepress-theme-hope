@@ -40,11 +40,11 @@ export default defineComponent({
       const manifestContent = localStorage.getItem("manifest");
 
       if (manifestContent)
-        manifest.value = JSON.parse(manifestContent) as ManifestOption;
+        manifest.value = <ManifestOption>JSON.parse(manifestContent);
       else
         try {
           const response = await fetch(withBase("manifest.webmanifest"));
-          const data = (await response.json()) as ManifestOption;
+          const data = <ManifestOption>await response.json();
 
           manifest.value = data;
           localStorage.setItem("manifest", JSON.stringify(data));
@@ -108,7 +108,7 @@ export default defineComponent({
       // eslint-disable-next-line no-prototype-builtins
       if (window.hasOwnProperty("BeforeInstallPromptEvent")) {
         useEventListener(window, "beforeinstallprompt", (event) => {
-          deferredprompt.value = event as InstallPromptEvent;
+          deferredprompt.value = <InstallPromptEvent>event;
 
           emit("can-install", true);
           event.preventDefault();

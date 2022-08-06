@@ -54,7 +54,7 @@ export const getFeedOptions = (
       ...siteData.locales,
     }).map((localePath) => [
       localePath,
-      {
+      <ResolvedFeedOptions>{
         // default values
         filter: ({ frontmatter, filePathRelative }: Page): boolean =>
           !(
@@ -80,7 +80,7 @@ export const getFeedOptions = (
 
         // make sure hostname is not been overrided
         hostname: options.hostname,
-      } as ResolvedFeedOptions,
+      },
     ])
   );
 

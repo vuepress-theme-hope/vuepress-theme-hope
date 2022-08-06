@@ -24,9 +24,12 @@ export const resolveNavbarItem = (
       ...(item.link && !isLinkExternal(item.link)
         ? useAutoLink(`${prefix}${item.link}`)
         : {}),
-      children: item.children.map((child) =>
-        resolveNavbarItem(child, `${prefix}${item.prefix || ""}`)
-      ) as (HopeThemeNavGroup<AutoLink> | AutoLink)[],
+      children: item.children.map(
+        (child) =>
+          resolveNavbarItem(child, `${prefix}${item.prefix || ""}`) as
+            | HopeThemeNavGroup<AutoLink>
+            | AutoLink
+      ),
     };
 
   return {

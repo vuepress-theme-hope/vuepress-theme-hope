@@ -104,10 +104,12 @@ export const resolveInclude = (
 export const createIncludeCoreRule =
   (options: Required<IncludeOptions>): RuleCore =>
   (state): void => {
-    const env = state.env as MarkdownEnv & {
-      /** Files included */
-      includedFiles?: string[];
-    };
+    const env = <
+      MarkdownEnv & {
+        /** Files included */
+        includedFiles?: string[];
+      }
+    >state.env;
     const includedFiles = env.includedFiles || (env.includedFiles = []);
 
     state.src = resolveInclude(state.src, options, {

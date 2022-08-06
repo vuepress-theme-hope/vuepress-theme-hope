@@ -11,8 +11,8 @@ export const injectLinkstoHead = (
 
   // Generate Hash for Head
   head.forEach((item) => {
-    if (item[0] === "meta") metaKeys.push(item[1]["name"] as string);
-    else if (item[0] === "link") linkKeys.push(item[1]["rel"] as string);
+    if (item[0] === "meta") metaKeys.push(<string>item[1]["name"]);
+    else if (item[0] === "link") linkKeys.push(<string>item[1]["rel"]);
   });
 
   let fallBackIcon = "";

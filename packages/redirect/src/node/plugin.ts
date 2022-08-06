@@ -18,7 +18,7 @@ export const redirectPlugin =
 
       extendsPage: (page, app) =>
         handleRedirect(
-          page as Page<Record<string, never>, RedirectPluginFrontmatterOption>,
+          <Page<Record<string, never>, RedirectPluginFrontmatterOption>>page,
           app,
           options
         ),

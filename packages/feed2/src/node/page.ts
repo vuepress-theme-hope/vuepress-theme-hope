@@ -83,7 +83,7 @@ export class FeedPage {
       : this.frontmatter.author
       ? getAuthor(this.frontmatter.author)
       : this.options.channel?.author
-      ? getAuthor(this.options.channel?.author as AuthorInfo)
+      ? getAuthor(<AuthorInfo>this.options.channel?.author)
       : [];
   }
 
@@ -109,7 +109,7 @@ export class FeedPage {
     if (this.image)
       return {
         url: this.image,
-        type: getImageMineType(this.image.split(".").pop() as string),
+        type: getImageMineType(this.image.split(".").pop()),
       };
 
     return null;

@@ -31,7 +31,7 @@ export const getOGP = (
       time,
       date = time,
       tag,
-      tags = tag as string[],
+      tags = <string[]>tag,
     },
     data: { git = {} },
   } = page;

@@ -14,10 +14,7 @@ export const getSitemapPlugin = (
   if (!Object.keys(options || {}).length && !hostname) return null;
 
   return sitemapPlugin(
-    {
-      hostname,
-      ...(options || {}),
-    } as SitemapOptions,
+    <SitemapOptions>{ hostname, ...(options || {}) },
     legacy
   );
 };

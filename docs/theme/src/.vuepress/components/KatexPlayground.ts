@@ -59,7 +59,7 @@ export default defineComponent({
           placeholder: "Input your tex here",
           value: input.value,
           onInput: ({ target }: InputEvent) => {
-            input.value = (target as HTMLInputElement).value;
+            input.value = (<HTMLInputElement>target).value;
           },
         }),
         h("h3", locales[routeLocale.value].output),

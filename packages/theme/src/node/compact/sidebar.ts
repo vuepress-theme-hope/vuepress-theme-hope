@@ -66,7 +66,7 @@ export const convertSidebarConfig = (
         if (Array.isArray(value)) return [key, handleArraySidebarConfig(value)];
 
         if (value === "structure" || value === false)
-          return [key, value as "structure" | false];
+          return [key, <"structure" | false>value];
 
         logger.error(
           '"sidebar" value should be an array, "structure" or false when setting as an object'

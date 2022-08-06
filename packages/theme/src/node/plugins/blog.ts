@@ -85,7 +85,7 @@ export const getBlogPlugin = (
     ...(typeof options === "object" ? options : {}),
   };
 
-  return blogPlugin({
+  return blogPlugin(<BlogOptions>{
     metaScope: "",
 
     filter:
@@ -234,5 +234,5 @@ export const getBlogPlugin = (
         }),
       },
     ],
-  } as BlogOptions);
+  });
 };

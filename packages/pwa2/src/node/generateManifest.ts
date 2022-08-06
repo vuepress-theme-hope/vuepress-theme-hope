@@ -19,13 +19,15 @@ export const getManifest = async (
 
   const optionManifest = options.manifest || {};
 
-  const userManifest = JSON.parse(
-    fs.existsSync(userManifestPath)
-      ? await fs.readFile(userManifestPath, "utf8")
-      : fs.existsSync(userManifestJSONPath)
-      ? await fs.readFile(userManifestJSONPath, "utf8")
-      : "{}"
-  ) as ManifestOption;
+  const userManifest = <ManifestOption>(
+    JSON.parse(
+      fs.existsSync(userManifestPath)
+        ? await fs.readFile(userManifestPath, "utf8")
+        : fs.existsSync(userManifestJSONPath)
+        ? await fs.readFile(userManifestJSONPath, "utf8")
+        : "{}"
+    )
+  );
 
   const finalManifest: ManifestOption = {
     name: siteData.title || siteData.locales["/"]?.title || "Site",

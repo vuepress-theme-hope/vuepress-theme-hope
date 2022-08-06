@@ -24,7 +24,7 @@ export const addOGP = (head: HeadConfig[], content: SeoContent): void => {
   for (const property in content)
     switch (property) {
       case "article:tag":
-        (content as ArticleSeoContent)["article:tag"]!.forEach((tag: string) =>
+        (<ArticleSeoContent>content)["article:tag"]!.forEach((tag: string) =>
           appendMetatoHead(head, { name: "article:tag", content: tag })
         );
         break;
@@ -38,10 +38,10 @@ export const addOGP = (head: HeadConfig[], content: SeoContent): void => {
         });
         break;
       default:
-        if (content[property as keyof SeoContent] as string)
+        if (<string>content[<keyof SeoContent>property])
           appendMetatoHead(head, {
             name: property,
-            content: content[property as keyof SeoContent] as string,
+            content: <string>content[<keyof SeoContent>property],
           });
     }
 };

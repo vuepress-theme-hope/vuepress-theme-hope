@@ -696,8 +696,7 @@ const test = (
     pos: null as number | null, // position of child
   };
 
-  const ii =
-    rule.shift !== undefined ? index + rule.shift : (rule.position as number);
+  const ii = rule.shift !== undefined ? index + rule.shift : rule.position!;
 
   // we should never shift to negative indexes (rolling around to back of array)
   if (rule.shift !== undefined && ii < 0) return res;
