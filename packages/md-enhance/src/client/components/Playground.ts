@@ -3,8 +3,8 @@ import { defineComponent, h } from "vue";
 
 import ExternalPlayground from "./ExternalPlayground";
 import InternalPlayground from "./InternalPlayground";
-import { parsePlaygroundSettings } from "../../utils";
-import { IMPORT_MAP_KEY } from "../../../shared";
+import { parsePlaygroundSettings } from "../utils";
+import { IMPORT_MAP_KEY } from "../../shared";
 
 import type { VNode } from "vue";
 

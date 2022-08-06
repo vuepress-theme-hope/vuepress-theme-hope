@@ -78,8 +78,7 @@ export const prepareConfigFile = async (
   }
 
   if (getStatus("playground")) {
-    // configImport += `import Playground from "${CLIENT_FOLDER}components/playground";\n`;
-    configImport += `const Playground = defineAsyncComponent(() => import("${CLIENT_FOLDER}components/playground"));\n`;
+    configImport += `const Playground = defineAsyncComponent(() => import("${CLIENT_FOLDER}components/Playground"));\n`;
     enhance += `app.component("Playground", Playground);\n`;
   }
 
