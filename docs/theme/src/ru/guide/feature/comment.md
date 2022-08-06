@@ -111,7 +111,7 @@ Giscus — это система комментариев на основе GitH
 
 ### Получить APP_ID и APP_Key
 
-[Войти](https://console.leancloud.app/login.html#/signin) или [зарегистрироваться](https://console.leancloud.app/login.html#/signup) leancloud. Затем создайте новое приложение в Leancloud, и вы получите APP ID / APP Key / APP Master Key.
+[Войти](https://console.leancloud.app/login) или [зарегистрироваться](https://console.leancloud.app/register) leancloud. Затем создайте новое приложение в Leancloud, и вы получите APP ID / APP Key / APP Master Key.
 
 После этого создайте приложение Vercel с помощью кнопки ниже.
 
