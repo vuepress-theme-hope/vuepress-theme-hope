@@ -6,7 +6,7 @@ import { parsePlaygroundSettings } from "../utils";
 
 import type { VNode } from "vue";
 
-import "../../styles/playground.scss";
+import "../styles/playground.scss";
 
 export default defineComponent({
   name: "ExternalPlayground",

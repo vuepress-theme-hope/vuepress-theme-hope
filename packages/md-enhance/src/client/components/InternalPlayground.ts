@@ -9,7 +9,7 @@ import type { ReplProps } from "@vue/repl";
 import type { VNode } from "vue";
 
 import "@vue/repl/style.css";
-import "../../styles/playground.scss";
+import "../styles/playground.scss";
 
 export default defineComponent({
   name: "InternalPlayground",
