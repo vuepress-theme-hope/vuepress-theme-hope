@@ -40,7 +40,7 @@
     "@vuepress/client": "2.0.0-beta.49",
     "@vuepress/shared": "2.0.0-beta.49",
     "@vuepress/utils": "2.0.0-beta.49",
-    "@vueuse/core": "^9.0.2",
+    "@vueuse/core": "^9.1.0",
     "balloon-css": "^1.2.0",
     "vue": "^3.2.37",
     "vue-router": "^4.1.3",
