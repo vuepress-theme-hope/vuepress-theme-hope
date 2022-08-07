@@ -99,9 +99,7 @@ export default defineComponent({
       enableComment.value
         ? h(
             "div",
-            {
-              class: "waline-wrapper",
-            },
+            { class: "waline-wrapper" },
             enableWaline ? h(Waline, walineProps.value) : []
           )
         : null;
