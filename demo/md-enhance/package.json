@@ -1,6 +1,6 @@
 {
   "name": "md-enhance-demo",
-  "version": "2.0.0-beta.88",
+  "version": "2.0.0-beta.89",
   "private": true,
   "description": "Demo for vuepress-plugin-md-enhance",
   "license": "MIT",

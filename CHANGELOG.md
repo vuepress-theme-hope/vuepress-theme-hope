@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.89](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.88...v2.0.0-beta.89) (2022-08-07)
+
+### Bug Fixes
+
+- **deps:** update dependency @vueuse/core to v9 ([#2086](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2086)) ([2d73f6c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2d73f6c793b9de51ec392ff04add2621b97fe148))
+- **theme:** home page icon ([#2109](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2109)) ([95ae9b1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/95ae9b17f71156ef2edce551686911fc3a51fc74))
+- **waline:** plugins.comment.comment not work ([#2108](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2108)) ([fdb3552](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fdb3552ad6ac36480ee31a15b4b4316018f17701))
+
 ## [2.0.0-beta.88](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.87...v2.0.0-beta.88) (2022-08-06)
 
 ### Features
