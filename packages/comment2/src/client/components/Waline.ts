@@ -95,14 +95,13 @@ export default defineComponent({
       );
     });
 
-    return (): VNode =>
-      h(
-        "div",
-        {
-          class: "waline-wrapper",
-          style: { display: enableComment.value ? "block" : "none" },
-        },
-        enableWaline ? h(Waline, walineProps.value) : []
-      );
+    return (): VNode | null =>
+      enableComment.value
+        ? h(
+            "div",
+            { class: "waline-wrapper" },
+            enableWaline ? h(Waline, walineProps.value) : []
+          )
+        : null;
   },
 });
