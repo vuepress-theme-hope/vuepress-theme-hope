@@ -1,4 +1,5 @@
 import { hash } from "@vuepress/utils";
+import { IMPORT_MAP_KEY } from "../../shared/playground";
 
 import type { Options, PluginWithOptions } from "markdown-it";
 import type { RuleBlock } from "markdown-it/lib/parser_block";
@@ -6,12 +7,12 @@ import type { default as Renderer } from "markdown-it/lib/renderer";
 import type { default as Token } from "markdown-it/lib/token";
 import type { PlaygroundOptions } from "../../shared";
 import type { PlaygroundFiles } from "../../shared/playground";
-import {
-  IMPORT_MAP_KEY,
-  PLAYGROUND_DEFAULT_SETTING,
-} from "../../shared/playground";
 
-const extensions = ["html", "js", "ts", "vue", "jsx", "tsx", "json"];
+const SUPPORTED_EXTENSIONS = ["html", "js", "ts", "vue", "jsx", "tsx", "json"];
+
+const DEFAULT_PLAYGROUND_SETTING: PlaygroundOptions = {
+  mode: "external",
+};
 
 export interface PlaygroundData {
   id?: string;
@@ -41,18 +42,17 @@ const VALID_MARKERS = ["file", "imports", "settings"];
 
 export const playground: PluginWithOptions<PlaygroundPluginOptions> = (
   md,
-  { name, component, playgroundOptions, getter } = {
+  { name, component, playgroundOptions = {}, getter } = {
     name: "playground",
     component: "Playground",
     getter: () => [],
-    playgroundOptions: {},
   }
 ) => {
-  const mode = playgroundOptions?.mode ?? PLAYGROUND_DEFAULT_SETTING.mode;
+  const mode = playgroundOptions.mode ?? DEFAULT_PLAYGROUND_SETTING.mode;
   const defaultImportsMap =
     mode === "internal"
-      ? playgroundOptions?.internal?.defaultImportsMap
-      : playgroundOptions?.external?.defaultImportsMap;
+      ? playgroundOptions.internal?.defaultImportsMap
+      : playgroundOptions.external?.defaultImportsMap;
 
   const playgroundRule: RuleBlock = (state, startLine, endLine, silent) => {
     let start = state.bMarks[startLine] + state.tShift[startLine];
@@ -302,7 +302,7 @@ export const playground: PluginWithOptions<PlaygroundPluginOptions> = (
     const key = `playground-${hash(hashKey)}`;
 
     const playgroundData: PlaygroundData = {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+      // eslint-disable-next-line
       id: meta.id ? meta.id : key,
       title: encodeURIComponent(info),
       files: {},
@@ -369,7 +369,11 @@ export const playground: PluginWithOptions<PlaygroundPluginOptions> = (
             playgroundData.settings = encodeURIComponent(settings);
           }
         } else {
-          if (type === "fence" && extensions.includes(info) && configKey) {
+          if (
+            type === "fence" &&
+            SUPPORTED_EXTENSIONS.includes(info) &&
+            configKey
+          ) {
             playgroundData.files![configKey] = {
               lang: info,
               content: content,

@@ -1,15 +1,14 @@
 import { deepAssign } from "vuepress-shared/lib/client";
 
-import { IMPORT_MAP_KEY, importKey } from "../../shared";
+import { IMPORT_MAP_KEY } from "../../shared";
 
 import type { PlaygroundOptions, PlaygroundFiles } from "../../shared";
 
 declare const PLAYGROUND_OPTIONS: PlaygroundOptions;
-// const PLAYGROUND_OPTIONS: PlaygroundOptions = {}; // for test
 
-export const playgroundOptions = PLAYGROUND_OPTIONS;
+const playgroundOptions = PLAYGROUND_OPTIONS;
 
-export const DEFAULT_PLAYGROUND_SETTINGS: PlaygroundOptions = {
+const DEFAULT_PLAYGROUND_SETTINGS: PlaygroundOptions = {
   mode: "external",
   external: {
     base: "https://sfc.vuejs.org/",
@@ -45,7 +44,10 @@ export function parsePlaygroundConfig(
   let tmpConfig: string = config;
 
   if (tmpConfig.includes(IMPORT_MAP_KEY))
-    tmpConfig = config.replace(IMPORT_MAP_KEY, defaultImportsMap || importKey);
+    tmpConfig = config.replace(
+      IMPORT_MAP_KEY,
+      defaultImportsMap || "import-map.json"
+    );
 
   const files = <PlaygroundFiles>JSON.parse(decodeURIComponent(tmpConfig));
 

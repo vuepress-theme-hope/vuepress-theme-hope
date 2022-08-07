@@ -9,7 +9,12 @@ import {
 import { logger } from "./utils";
 
 import { checkLinks, getCheckLinksStatus } from "./checkLink";
-import { convertOptions, legacyCodeDemo, legacyCodeGroup } from "./compact";
+import {
+  convertOptions,
+  legacyCodeDemo,
+  legacyCodeGroup,
+  legacyFlowchart,
+} from "./compact";
 import {
   CODE_DEMO_DEFAULT_SETTING,
   align,
@@ -38,11 +43,9 @@ import {
   vPre,
   vueDemo,
 } from "./markdown-it";
-import { legacyFlowchart } from "./compact";
 import { prepareConfigFile, prepareRevealPluginFile } from "./prepare";
 import { usePlugins } from "./usePlugins";
 import { MATHML_TAGS } from "./utils";
-import { PLAYGROUND_DEFAULT_SETTING } from "../shared";
 
 import type { PluginFunction } from "@vuepress/core";
 import type { KatexOptions } from "katex";
@@ -128,10 +131,8 @@ export const mdEnhancePlugin =
           typeof options.presentation.revealConfig === "object"
             ? options.presentation.revealConfig
             : {},
-        PLAYGROUND_OPTIONS: {
-          ...PLAYGROUND_DEFAULT_SETTING,
-          ...(typeof options.playground === "object" ? options.playground : {}),
-        },
+        PLAYGROUND_OPTIONS:
+          typeof options.playground === "object" ? options.playground : {},
       }),
 
       extendsBundlerOptions: (config: unknown, app): void => {

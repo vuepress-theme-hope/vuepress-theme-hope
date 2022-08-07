@@ -9,9 +9,11 @@ export type PlaygroundMode = "internal" | "external";
  */
 export interface PlaygroundOptions {
   /**
-   * mode: [internal, external]
+   * Playground mode
    *
-   * 模式: [internal, external]
+   * Playground 模式
+   *
+   * @default 'external'
    */
   mode?: PlaygroundMode;
 
@@ -169,15 +171,4 @@ export interface PlaygroundCodeConfig {
 
 export type PlaygroundFiles = Record<string, PlaygroundCodeConfig>;
 
-/**
- * default playground settings.
- *
- * Playground 默认配置
- */
-export const PLAYGROUND_DEFAULT_SETTING: PlaygroundOptions = {
-  mode: "external",
-};
-
-export const importKey = "import-map.json";
-export const userImportKey = "user-imports.json";
 export const IMPORT_MAP_KEY = "%IMPORT_MAP_KEY%";
