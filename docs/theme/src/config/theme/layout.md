@@ -128,6 +128,84 @@ Sidebar Config.
 
 Whether show icons in the sidebar
 
+### sidebarSorter <Badge text="Root Only" />
+
+- Type: `HopeThemeSidebarSorter`
+
+  ```ts
+  export interface HopeThemeSidebarFileInfo {
+    type: "file";
+
+    order: number | null;
+    frontmatter: HopeThemeNormalPageFrontmatter;
+    pageData: HopeThemePageData;
+
+    title: string;
+    path: string;
+  }
+
+  export interface HopeThemeSidebarDirInfo {
+    type: "dir";
+
+    order: number | null;
+
+    frontmatter: HopeThemeNormalPageFrontmatter;
+    pageData: HopeThemePageData;
+
+    info: {
+      prefix: string;
+      text: string;
+      icon?: string;
+      collapsable?: boolean;
+      link?: string;
+    };
+    children: HopeThemeSidebarInfo[];
+  }
+
+  export type HopeThemeSidebarInfo =
+    | HopeThemeSidebarFileInfo
+    | HopeThemeSidebarDirInfo;
+
+  export type HopeThemeSidebarSorterKeyWord =
+    | "readme"
+    | "order"
+    | "date"
+    | "date-desc"
+    | "filename"
+    | "file-number"
+    | "file-number-desc"
+    | "title"
+    | "title-number"
+    | "title-number-desc";
+
+  export type HopeThemeSidebarSorterFunction = (
+    infoA: HopeThemeSidebarInfo,
+    infoB: HopeThemeSidebarInfo
+  ) => number;
+  ```
+
+- Default: `["readme", "order", "title"]`
+
+Structure sidebar sorter.
+
+You can:
+
+- fill in a custom function
+- provide one or an array of sorter keywords
+
+Available keywords are:
+
+- `readme`: `README.md` or `readme.md` first
+- `order`: possitive order first with its value ascendingly, negative order last with its value descendingly
+- `date`: sort by date ascendingly
+- `date-desc`: sort by date descendingly
+- `title`: alphabetically sort by title
+- `title-number`: alphabetically sort according to title and ascendingly sort same titles with different number label
+- `title-number-desc`: alphabetically sort according to title and descendingly sort same titles with different number label
+- `filename`: alphabetically sort by filename
+- `file-number`: alphabetically sort according to filename and ascendingly sort same filenames with different number label
+- `file-number-desc`: alphabetically sort according to filename and descendingly sort same filenames with different number label
+
 ### headerDepth
 
 - Type: `number`

@@ -128,6 +128,84 @@ tag:
 
 是否在侧边栏显示图标。
 
+### sidebarSorter <Badge text="仅限 Root" />
+
+- 类型: `HopeThemeSidebarSorter`
+
+  ```ts
+  export interface HopeThemeSidebarFileInfo {
+    type: "file";
+
+    order: number | null;
+    frontmatter: HopeThemeNormalPageFrontmatter;
+    pageData: HopeThemePageData;
+
+    title: string;
+    path: string;
+  }
+
+  export interface HopeThemeSidebarDirInfo {
+    type: "dir";
+
+    order: number | null;
+
+    frontmatter: HopeThemeNormalPageFrontmatter;
+    pageData: HopeThemePageData;
+
+    info: {
+      prefix: string;
+      text: string;
+      icon?: string;
+      collapsable?: boolean;
+      link?: string;
+    };
+    children: HopeThemeSidebarInfo[];
+  }
+
+  export type HopeThemeSidebarInfo =
+    | HopeThemeSidebarFileInfo
+    | HopeThemeSidebarDirInfo;
+
+  export type HopeThemeSidebarSorterKeyWord =
+    | "readme"
+    | "order"
+    | "date"
+    | "date-desc"
+    | "filename"
+    | "file-number"
+    | "file-number-desc"
+    | "title"
+    | "title-number"
+    | "title-number-desc";
+
+  export type HopeThemeSidebarSorterFunction = (
+    infoA: HopeThemeSidebarInfo,
+    infoB: HopeThemeSidebarInfo
+  ) => number;
+  ```
+
+- 默认值: `["readme", "order", "title"]`
+
+结构侧边栏排序器。
+
+你可以:
+
+- 填写自定义函数
+- 提供一个或一组排序器关键字
+
+可用的关键字有:
+
+- `readme`: `README.md` 或 `readme.md` 在前
+- `order`: 正序在前并按其值升序排列，负序在后并按其值降序排列
+- `date`: 按日期升序排序
+- `date-desc`: 按日期降序排序
+- `title`: 按标题字母顺序排序
+- `title-number`: 根据标题的字母顺序排序，并以数字标签对相同的标题进行升序排序
+- `title-number-desc`: 按照标题的字母顺序排序，并以数字标签对相同的标题进行降序排序
+- `filename`: 按文件名字母顺序排序
+- `file-number`: 根据文件名的字母顺序排序，并以数字标签对相同的文件名进行升序排序
+- `file-number-desc`: 根据文件名的字母顺序排序，并以数字标签对相同的文件名进行降序排序
+
 ### headerDepth
 
 - 类型: `number`

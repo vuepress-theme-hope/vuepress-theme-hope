@@ -10,7 +10,64 @@ import type {
 } from "./navbar";
 import type { HopeThemeSidebarLocaleOptions } from "./sidebar";
 import type { HopeThemeRouteLocaleData } from "./route";
+import type { HopeThemeNormalPageFrontmatter } from "../../frontmatter";
 import type { PageInfo } from "../../info";
+import type { HopeThemePageData } from "../../page";
+
+export interface HopeThemeSidebarFileInfo {
+  type: "file";
+
+  order: number | null;
+  frontmatter: HopeThemeNormalPageFrontmatter;
+  pageData: HopeThemePageData;
+
+  title: string;
+  path: string;
+}
+
+export interface HopeThemeSidebarDirInfo {
+  type: "dir";
+
+  order: number | null;
+
+  frontmatter: HopeThemeNormalPageFrontmatter;
+  pageData: HopeThemePageData;
+
+  info: {
+    prefix: string;
+    text: string;
+    icon?: string;
+    collapsable?: boolean;
+    link?: string;
+  };
+  children: HopeThemeSidebarInfo[];
+}
+
+export type HopeThemeSidebarInfo =
+  | HopeThemeSidebarFileInfo
+  | HopeThemeSidebarDirInfo;
+
+export type HopeThemeSidebarSorterKeyWord =
+  | "readme"
+  | "order"
+  | "date"
+  | "date-desc"
+  | "filename"
+  | "file-number"
+  | "file-number-desc"
+  | "title"
+  | "title-number"
+  | "title-number-desc";
+
+export type HopeThemeSidebarSorterFunction = (
+  infoA: HopeThemeSidebarInfo,
+  infoB: HopeThemeSidebarInfo
+) => number;
+
+export type HopeThemeSidebarSorter =
+  | HopeThemeSidebarSorterFunction
+  | HopeThemeSidebarSorterKeyWord
+  | HopeThemeSidebarSorterKeyWord[];
 
 export interface HopeThemeLayoutLocaleData {
   /**
@@ -141,4 +198,13 @@ export interface HopeThemeLayoutRootOptions {
    * @default 719
    */
   mobileBreakPoint?: number;
+
+  /**
+   * Sorter of structure sidebar
+   *
+   * 结构化侧边栏排序器
+   *
+   * @default 'order'
+   */
+  sidebarSorter?: HopeThemeSidebarSorter;
 }

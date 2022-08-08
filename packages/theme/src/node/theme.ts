@@ -33,6 +33,7 @@ export const hopeTheme =
       iconPrefix,
       addThis,
       backToTop,
+      sidebarSorter,
       ...themeOptions
     } = legacy
       ? convertThemeConfig(
@@ -73,14 +74,14 @@ export const hopeTheme =
         extendsPage(
           themeConfig,
           plugins,
-          page as Page<HopeThemePageData>,
+          <Page<HopeThemePageData>>page,
           app.env.isDev
         );
       },
 
       onPrepared: (): Promise<void> =>
         Promise.all([
-          prepareSidebarData(app, themeConfig),
+          prepareSidebarData(app, themeConfig, sidebarSorter),
           prepareThemeColorScss(app, themeConfig),
           prepareSocialMediaIcons(app, icons),
         ]).then(() => void 0),
