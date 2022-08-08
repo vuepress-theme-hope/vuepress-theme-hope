@@ -107,8 +107,7 @@ const getInfo = (
       // sort items
       .sort((infoA, infoB) => {
         for (let i = 0; i < sidebarSorters.length; i++) {
-          const sorter = sidebarSorters[i];
-          const result = sorter(infoA, infoB);
+          const result = sidebarSorters[i](infoA, infoB);
 
           if (result !== 0) return result;
         }
@@ -201,7 +200,7 @@ export const getSidebarData = (
 export const prepareSidebarData = async (
   app: App,
   themeConfig: HopeThemeConfig,
-  sorter: HopeThemeSidebarSorter = "title"
+  sorter?: HopeThemeSidebarSorter
 ): Promise<void> => {
   const sidebarData = getSidebarData(app, themeConfig, sorter);
 
