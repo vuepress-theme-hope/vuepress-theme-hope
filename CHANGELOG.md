@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.90](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.89...v2.0.0-beta.90) (2022-08-08)
+
+### Features
+
+- **theme:** support sidebarSorter, close [#2002](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2002) ([3e9967b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3e9967bd6991fc38047a22309df075b509bc6a57))
+
+### Bug Fixes
+
+- **md-enhance:** fix attrs not working with line-highlight, fix [#2112](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2112) ([e38533b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e38533b0eea48b7d789da397924c18f6ca208994))
+
 ## [2.0.0-beta.89](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.88...v2.0.0-beta.89) (2022-08-07)
 
 ### Bug Fixes
