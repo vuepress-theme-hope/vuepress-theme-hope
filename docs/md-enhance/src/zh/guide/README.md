@@ -168,7 +168,7 @@ npm i -D vuepress-plugin-md-enhance@next
 
 - [查看详情](chart.md)
 
-## Echarts
+### Echarts
 
 ::: echarts 一个折线图案例
 

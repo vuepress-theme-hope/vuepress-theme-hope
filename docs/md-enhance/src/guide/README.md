@@ -166,7 +166,7 @@ Support setting color scheme and size
 
 - [View Detail](chart.md)
 
-## Echarts
+### Echarts
 
 ::: echarts A line chart
 
