@@ -307,7 +307,7 @@ const patternsConfig = (options: Required<AttrsOptions>): Rule[] => [
       const attrs = getAttrs(token.info, start, options);
 
       addAttrs(attrs, token);
-      token.info = `${lineNumber} ${removeDelimiter(token.info, options)}`;
+      token.info = `${removeDelimiter(token.info, options)} ${lineNumber}`;
     },
   },
 

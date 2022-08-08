@@ -753,9 +753,12 @@ describeTestsWithOptions(
 
 it("should not break code blocks line highlight", () => {
   const markdownIt = createMarkdown().use(attrs);
-  const src = "```{1-3}\nfor i in range(10):\n```";
+  const src1 = "```{1-3}\nfor i in range(10):\n```";
+  const src2 = "```py {1-3}\nfor i in range(10):\n```";
 
-  expect(markdownIt.render(src)).not.toContain("1-3");
+  expect(markdownIt.render(src1)).not.toContain("1-3");
+  expect(markdownIt.render(src2)).not.toContain("1-3");
+  expect(markdownIt.render(src2)).toContain("language-python");
 });
 
 it("should work with katex plugin", () => {
