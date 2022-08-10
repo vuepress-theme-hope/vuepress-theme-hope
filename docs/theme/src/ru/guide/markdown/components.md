@@ -85,7 +85,7 @@ tag:
 
 ## FontIcon
 
-Компонент, который позволяет отображать значки шрифтов.
+Компонент, который позволяет отображать иконки шрифтов.
 
 - Home icon: <FontIcon icon="home" />
 - A big and red markdown icon: <FontIcon icon="markdown" color="red" size="32" />

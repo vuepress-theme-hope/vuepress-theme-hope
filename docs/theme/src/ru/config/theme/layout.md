@@ -126,7 +126,76 @@ tag:
 - Тип: `boolean`
 - По умолчанию: `true`
 
-Показывать ли значки на боковой панели.
+Показывать ли иконки на боковой панели.
+
+### sidebarSorter <Badge text="Только root" />
+
+- Тип: `HopeThemeSidebarSorter`
+
+  ```ts
+  export interface HopeThemeSidebarFileInfo {
+    type: "file";
+    order: number | null;
+    frontmatter: HopeThemeNormalPageFrontmatter;
+    pageData: HopeThemePageData;
+    title: string;
+    path: string;
+  }
+  export interface HopeThemeSidebarDirInfo {
+    type: "dir";
+    order: number | null;
+    frontmatter: HopeThemeNormalPageFrontmatter;
+    pageData: HopeThemePageData;
+    info: {
+      prefix: string;
+      text: string;
+      icon?: string;
+      collapsable?: boolean;
+      link?: string;
+    };
+    children: HopeThemeSidebarInfo[];
+  }
+  export type HopeThemeSidebarInfo =
+    | HopeThemeSidebarFileInfo
+    | HopeThemeSidebarDirInfo;
+  export type HopeThemeSidebarSorterKeyWord =
+    | "readme"
+    | "order"
+    | "date"
+    | "date-desc"
+    | "filename"
+    | "file-number"
+    | "file-number-desc"
+    | "title"
+    | "title-number"
+    | "title-number-desc";
+  export type HopeThemeSidebarSorterFunction = (
+    infoA: HopeThemeSidebarInfo,
+    infoB: HopeThemeSidebarInfo
+  ) => number;
+  ```
+
+- По умолчанию: `["readme", "order", "title"]`
+
+Структура сортировки боковой панели.
+
+Вы можете:
+
+- заполнить пользовательскую функцию
+- предоставить одно или массив ключевых слов сортировщика
+
+Доступные ключевые слова:
+
+- `readme`: сначала `README.md` или `readme.md`
+- `order`: положительный порядок сначала с его значением по возрастанию, отрицательный порядок последним с его значением по убыванию
+- `date`: сортировка по дате по возрастанию
+- `date-desc`: сортировка по дате по убыванию
+- `title`: сортировка по названию в алфавитном порядке
+- `title-number`: сортировка по алфавиту по названию и сортировка по возрастанию тех же названий с разными номерными метками
+- `title-number-desc`: сортировка по алфавиту в соответствии с названием и сортировка по убыванию одинаковых названий с разными номерными метками
+- `filename`: сортировка по алфавиту по имени файла
+- `file-number`: сортировка по алфавиту по имени файла и сортировка по возрастанию одинаковых имен файлов с разными номерными метками
+- `file-number-desc`: сортировка по алфавиту по имени файла и сортировка по убыванию одинаковых имен файлов с разными числовыми метками
 
 ### headerDepth
 
