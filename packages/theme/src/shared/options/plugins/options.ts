@@ -101,7 +101,7 @@ export interface HopeThemePluginsOptions {
    *
    * @see https://v2.vuepress.vuejs.org/zh/reference/plugin/git.html#install
    */
-  git?: GitPluginOptions | false;
+  git?: GitPluginOptions | boolean;
 
   /**
    * md-enhance plugin options

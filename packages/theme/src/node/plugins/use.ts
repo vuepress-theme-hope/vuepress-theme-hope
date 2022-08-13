@@ -7,18 +7,27 @@ import type { App } from "@vuepress/core";
 import type { HopeThemePluginsOptions } from "../../shared";
 
 export const usePlugin = (app: App, plugins: HopeThemePluginsOptions): void => {
-  // only use git plugin in production or debug mode
-  if (app.env.isDebug || app.env.isBuild)
+  // respect git options
+  if ("git" in plugins)
     useGitPlugin(
       app,
       "git" in plugins
-        ? plugins.git || false
-        : {
-            createdTime: true,
-            contributors: true,
-            updatedTime: true,
-          }
+        ? plugins.git === true
+          ? {
+              createdTime: true,
+              contributors: true,
+              updatedTime: true,
+            }
+          : plugins.git
+        : {}
     );
+  // only use git plugin in production or debug mode
+  else if (app.env.isDebug || app.env.isBuild)
+    useGitPlugin(app, {
+      createdTime: true,
+      contributors: true,
+      updatedTime: true,
+    });
 
   useReadingTimePlugin(app, {
     wordPerMinute: plugins.readingTime?.wordPerMinute || 300,
