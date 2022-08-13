@@ -716,6 +716,25 @@ interface SidebarDirInfo {
 }
 ```
 
+#### Customize Sorter
+
+In addition to the above implementation, we also added a more powerful `sidebarSorter` option to the theme options. You can pass one or a series of built-in sorter names, or you can pass a soter function you need to sort sidebar items at the same level.
+
+Available keywords are:
+
+- `readme`: `README.md` or `readme.md` first
+- `order`: possitive order first with its value ascendingly, negative order last with its value descendingly
+- `date`: sort by date ascendingly
+- `date-desc`: sort by date descendingly
+- `title`: alphabetically sort by title
+- `title-number`: alphabetically sort according to title and ascendingly sort same titles with different number label
+- `title-number-desc`: alphabetically sort according to title and descendingly sort same titles with different number label
+- `filename`: alphabetically sort by filename
+- `file-number`: alphabetically sort according to filename and ascendingly sort same filenames with different number label
+- `file-number-desc`: alphabetically sort according to filename and descendingly sort same filenames with different number label
+
+Corresponding to the above advanced control, its default value is `["readme", "order", "title"]`
+
 ### Disabling Sidebar
 
 You can disable the sidebar on a specific page with `YAML front matter`:
