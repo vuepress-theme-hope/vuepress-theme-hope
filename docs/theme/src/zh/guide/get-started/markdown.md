@@ -412,6 +412,12 @@ span {
 
 <!-- markdownlint-enable MD033 -->
 
+#### 交互演示
+
+你可以直接在 Markdown 中插入 Vue 交互演示。
+
+- [查看详情](../markdown/playground.md)
+
 #### 幻灯片
 
 @slidestart

@@ -3,7 +3,7 @@ title: 交互演示
 icon: code
 ---
 
-插件为你带来了交互演示支持。
+让你 VuePress 站点中的 Markdown 文件支持代码交互。
 
 <!-- more -->
 
@@ -13,33 +13,38 @@ icon: code
 
 @tab TS
 
-```ts {8}
+```ts {8-11}
 // .vuepress/config.ts
-import { mdEnhance } from "vuepress-plugin-md-enhance";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
-  plugins: [
-    mdEnhance({
-      // 配置你的交互演示
-      playground: true, // 使用默认配置
-    }),
-  ],
+  theme: hopeTheme({
+    plugins: {
+      mdEnhance: {
+        // 配置你的交互演示
+        playground: true, // 使用默认配置
+      },
+    },
+  }),
 };
 ```
 
 @tab JS
 
-```js {8}
+```js {7-10}
 // .vuepress/config.js
-const { mdEnhance } = require("vuepress-plugin-md-enhance");
+const { hopeTheme } = require("vuepress-theme-hope");
 
 module.exports = {
-  plugins: [
-    mdEnhance({
-      // 配置你的交互演示
-      playground: true, // 使用默认配置
-    }),
-  ],
+  theme: hopeTheme({
+    plugins: {
+      mdEnhance: {
+        // 配置你的交互演示
+        playground: true, // 使用默认配置
+      },
+    },
+  }),
 };
 ```
 
@@ -51,59 +56,64 @@ module.exports = {
 
 @tab TS
 
-```ts {8-21}
+```ts {8-24}
 // .vuepress/config.ts
-import { mdEnhance } from "vuepress-plugin-md-enhance";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
-  plugins: [
-    mdEnhance({
-      // 配置你的 playground
-      playground: {
-        mode: "external", // 使用外置模式
-        external: {
-          base: "https://sfc.vuejs.org/", // 使用 vue sfc playground.
-          defaultImportsMap: "import-map.json",
-        },
-        internal: {
-          defaultImportsMap: "import-map.json",
-          showCode: false, // 不显示代码
-          showCompileOutput: false, // 不显示 js, css, ssr 面板
-          showImportMap: true, // 显示 import map
-          clearConsole: false, // 不清空控制台
+  theme: hopeTheme({
+    plugins: {
+      mdEnhance: {
+        // 配置你的 playground
+        playground: {
+          mode: "external", // 使用外置模式
+          external: {
+            base: "https://sfc.vuejs.org/", // 使用 vue sfc playground.
+            defaultImportsMap: "import-map.json",
+          },
+          internal: {
+            defaultImportsMap: "import-map.json",
+            showCode: false, // 不显示代码
+            showCompileOutput: false, // 不显示 js, css, ssr 面板
+            showImportMap: true, // 显示 import map
+            clearConsole: false, // 不清空控制台
+          },
         },
       },
-    }),
-  ],
+    },
+  }),
 };
 ```
 
 @tab JS
 
-```js {8-21}
+```js {7-23}
 // .vuepress/config.js
-const { mdEnhance } = require("vuepress-plugin-md-enhance");
+const { hopeTheme } = require("vuepress-theme-hope");
 
 module.exports = {
-  plugins: [
-    mdEnhance({
-      // 配置你的 playground
-      playground: {
-        mode: "external", // 使用外置模式
-        external: {
-          base: "https://sfc.vuejs.org/", // 使用 vue sfc playground.
-          defaultImportsMap: "import-map.json",
-        },
-        internal: {
-          defaultImportsMap: "import-map.json",
-          showCode: false, // 不显示代码
-          showCompileOutput: false, // 不显示 js, css, ssr 面板
-          showImportMap: true, // 显示 import map
-          clearConsole: false, // 不清空控制台
+  theme: hopeTheme({
+    plugins: {
+      mdEnhance: {
+        // 配置你的 playground
+        playground: {
+          mode: "external", // 使用外置模式
+          external: {
+            base: "https://sfc.vuejs.org/", // 使用 vue sfc playground.
+            defaultImportsMap: "import-map.json",
+          },
+          internal: {
+            defaultImportsMap: "import-map.json",
+            showCode: false, // 不显示代码
+            showCompileOutput: false, // 不显示 js, css, ssr 面板
+            showImportMap: true, // 显示 import map
+            clearConsole: false, // 不清空控制台
+          },
         },
       },
-    }),
-  ],
+    },
+  }),
 };
 ```
 

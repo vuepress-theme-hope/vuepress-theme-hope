@@ -1,128 +1,143 @@
 ---
-title: 交互演示
+title: Playground
 icon: code
+category:
+  - Markdown
+tag:
+  - Markdown
+  - Playground
 ---
 
-插件为你带来了交互演示支持。
+Let the Markdown file support Vue playground in your VuePress site.
 
 <!-- more -->
 
-## 配置
+## Config
 
 ::: code-tabs#config
 
 @tab TS
 
-```ts {8}
+```ts {8-11}
 // .vuepress/config.ts
-import { mdEnhance } from "vuepress-plugin-md-enhance";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
-  plugins: [
-    mdEnhance({
-      // 配置你的交互演示
-      playground: true, // 使用默认配置
-    }),
-  ],
+  theme: hopeTheme({
+    plugins: {
+      mdEnhance: {
+        // playground config here
+        playground: true, // use default settings
+      },
+    },
+  }),
 };
 ```
 
 @tab JS
 
-```js {8}
+```js {7-10}
 // .vuepress/config.js
-const { mdEnhance } = require("vuepress-plugin-md-enhance");
+const { hopeTheme } = require("vuepress-theme-hope");
 
 module.exports = {
-  plugins: [
-    mdEnhance({
-      // 配置你的交互演示
-      playground: true, // 使用默认配置
-    }),
-  ],
+  theme: hopeTheme({
+    plugins: {
+      mdEnhance: {
+        // playground config here
+        playground: true, // use default settings
+      },
+    },
+  }),
 };
 ```
 
 :::
 
-你也可以使用 `PlaygroundOptions` 自定义你的 playground 配置：
+You can also customize your playground config by using `PlaygroundOptions`:
 
 ::: code-tabs#config
 
 @tab TS
 
-```ts {8-21}
+```ts {8-24}
 // .vuepress/config.ts
-import { mdEnhance } from "vuepress-plugin-md-enhance";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
-  plugins: [
-    mdEnhance({
-      // 配置你的 playground
-      playground: {
-        mode: "external", // 使用外置模式
-        external: {
-          base: "https://sfc.vuejs.org/", // 使用 vue sfc playground.
-          defaultImportsMap: "import-map.json",
-        },
-        internal: {
-          defaultImportsMap: "import-map.json",
-          showCode: false, // 不显示代码
-          showCompileOutput: false, // 不显示 js, css, ssr 面板
-          showImportMap: true, // 显示 import map
-          clearConsole: false, // 不清空控制台
+  theme: hopeTheme({
+    plugins: {
+      mdEnhance: {
+        // playground config here
+        playground: {
+          mode: "external", // use external mode
+          external: {
+            base: "https://sfc.vuejs.org/", // use the vue sfc playground.
+            defaultImportsMap: "import-map.json",
+          },
+          internal: {
+            defaultImportsMap: "import-map.json",
+            showCode: false, // hide code
+            showCompileOutput: false, // hide js, css, ssr panel
+            showImportMap: true, // show import map
+            clearConsole: false, // do not clear console message
+          },
         },
       },
-    }),
-  ],
+    },
+  }),
 };
 ```
 
 @tab JS
 
-```js {8-21}
+```js {7-23}
 // .vuepress/config.js
-const { mdEnhance } = require("vuepress-plugin-md-enhance");
+const { hopeTheme } = require("vuepress-theme-hope");
 
 module.exports = {
-  plugins: [
-    mdEnhance({
-      // 配置你的 playground
-      playground: {
-        mode: "external", // 使用外置模式
-        external: {
-          base: "https://sfc.vuejs.org/", // 使用 vue sfc playground.
-          defaultImportsMap: "import-map.json",
-        },
-        internal: {
-          defaultImportsMap: "import-map.json",
-          showCode: false, // 不显示代码
-          showCompileOutput: false, // 不显示 js, css, ssr 面板
-          showImportMap: true, // 显示 import map
-          clearConsole: false, // 不清空控制台
+  theme: hopeTheme({
+    plugins: {
+      mdEnhance: {
+        // playground config here
+        playground: {
+          mode: "external", // use external mode
+          external: {
+            base: "https://sfc.vuejs.org/", // use the vue sfc playground.
+            defaultImportsMap: "import-map.json",
+          },
+          internal: {
+            defaultImportsMap: "import-map.json",
+            showCode: false, // hide code
+            showCompileOutput: false, // hide js, css, ssr panel
+            showImportMap: true, // show import map
+            clearConsole: false, // do not clear console message
+          },
         },
       },
-    }),
-  ],
+    },
+  }),
 };
 ```
 
 :::
 
-## 使用
+## Usage
 
-我们可以使用 `external` 和 `internal` 模式。
+We can use `external` and `internal` mode.
 
-- `external` 模式嵌入 `iframe` 来展示 playground。你也可以使用自己的在线 playground，外置 playground 会比较灵活。
-- `internal` 模式使用 `@vue/repl` 直接渲染代码。
+- `external` mode can embed an `iframe` to show the playground. You can also use your own online playground, which is more flexible.
+- `internal` mode can directly render the code by using the `@vue/repl`.
 
-## 案例
+## Demo
 
-### 外置模式
+### External mode
 
-#### 基础用法
+#### Basic usage
 
-::: playground 基础用法
+::: playground Basic usage
 
 @file App.vue
 
@@ -141,10 +156,10 @@ const msg = ref("Hello World!");
 
 :::
 
-:::: details 代码
+:::: details Code
 
 ````md
-::: playground 基础用法
+::: playground Basic usage
 
 @file App.vue
 
@@ -166,15 +181,15 @@ const msg = ref("Hello World!");
 
 ::::
 
-#### 高级用法
+#### Advanced usage
 
-本示例向你展示如何自定义你的 playground。
+This example shows you how to customize your playground.
 
-- 使用你自己的 playground
-- 使用你自己的 import map
-- 应用额外的配置到你的 playground
+- Use your own playground
+- Use your own import map
+- Apply extra options to your playground
 
-::: playground 高级用法
+::: playground Advanced usage
 @file App.vue
 
 ```vue
@@ -236,10 +251,10 @@ const msg = ref("Hello Playground!");
 
 :::
 
-:::: details 代码
+:::: details Code
 
 ````md
-::: playground 高级用法
+::: playground Advanced usage
 @file App.vue
 
 ```vue
@@ -304,11 +319,11 @@ const msg = ref("Hello Playground!");
 
 ::::
 
-### 内置模式
+### Internal mode
 
-#### 基础用法
+#### Basic usage
 
-::: playground 基础用法
+::: playground Basic usage
 @file App.vue
 
 ```vue
@@ -334,10 +349,10 @@ const msg = ref("Hello Playground!");
 
 :::
 
-:::: details 代码
+:::: details Code
 
 ````md
-::: playground 基础用法
+::: playground Basic usage
 @file App.vue
 
 ```vue
@@ -366,14 +381,14 @@ const msg = ref("Hello Playground!");
 
 ::::
 
-#### 高级用法
+#### Advanced usage
 
-显示 playground 的 `JS`, `CSS`, `SSR` 面板，并显示代码编辑器。
+Display the playground, show `JS`, `CSS`, `SSR` panel, and show the code editor.
 
-Playground 的 `key` 是自动产生的。它是基于标题计算的。
-你也可以自己指定它，使用 `playground#customId` 形式。
+The playground's `key` is automaticlly generated. And it's calculated based on the title.
+You can also specify it yourself by using `playground#customId`.
 
-::: playground#customId 高级用法
+::: playground#customId Advanced usage
 @file App.vue
 
 ```vue
@@ -403,10 +418,10 @@ const msg = ref("Hello Playground!");
 
 :::
 
-:::: details 代码
+:::: details Code
 
 ````md
-::: playground#customId 高级用法
+::: playground#customId Advanced usage
 @file App.vue
 
 ```vue

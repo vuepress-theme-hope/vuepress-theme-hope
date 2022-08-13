@@ -43,6 +43,7 @@ tag:
 - [代码演示](markdown/demo.md)
 - [幻灯片](markdown/presentation.md)
 - [样式化](markdown/stylize.md)
+- [交互演示](markdown/playground.md)
 - [开箱即用的组件](markdown/components.md)
 - [自定义主题](interface/code-theme.md)
 

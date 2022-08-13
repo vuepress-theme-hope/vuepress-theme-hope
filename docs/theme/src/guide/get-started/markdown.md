@@ -412,6 +412,12 @@ Setting this to a invalid stytax <span style="color:red">doesn't</span> have any
 
 <!-- markdownlint-enable MD033 -->
 
+#### Playground
+
+You can insert Vue playground in Markdown files directly.
+
+- [View Detail](../markdown/playground.md)
+
 #### Presentation
 
 @slidestart
