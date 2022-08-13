@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.91](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.90...v2.0.0-beta.91) (2022-08-13)
+
+### Bug Fixes
+
+- **theme:** fix git options, fix [#2117](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2117) ([4f6f2ad](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4f6f2ad3f3e104ccc97863dcbbf4e4620136d066))
+- **theme:** fix sidebar sorter default value ([3e4ca69](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3e4ca6942c4ebe2291494a890121f54f27180873))
+
 ## [2.0.0-beta.90](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.89...v2.0.0-beta.90) (2022-08-08)
 
 ### Features
