@@ -33,6 +33,18 @@ export interface ArticleInfo extends Record<string, unknown> {
   icon?: string;
 
   /**
+   * Whether this page should be indexed
+   *
+   * used in other functions, e.g.: sidebar and catalog
+   */
+  index?: boolean;
+
+  /**
+   * The order of this page in same directory
+   */
+  order?: number;
+
+  /**
    * Article author
    */
   author?: Author | false;

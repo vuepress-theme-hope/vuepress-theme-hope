@@ -1,0 +1,133 @@
+.title-tag {
+  display: inline-block;
+
+  margin-left: 0;
+  padding: 0 0.35rem;
+
+  // height 1.1rem
+  // line-height 1.1rem
+  border: 1px solid var(--theme-color);
+  border-radius: 0.2rem;
+
+  color: var(--theme-color);
+
+  font-size: 0.8rem;
+
+  transform: translate(0, -0.05rem);
+}
+
+dl,
+dd {
+  margin: 0;
+}
+
+.column-wrapper {
+  display: flex;
+  margin-top: 1rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+
+  img {
+    width: 80px;
+    height: 80px;
+    margin-right: 1rem;
+    border-radius: 2px;
+  }
+
+  .column-info {
+    .title {
+      font-size: 1.6rem;
+    }
+
+    .description {
+      margin: 0.5rem 0;
+      color: var(--text-color);
+      opacity: 0.8;
+    }
+  }
+}
+
+.catalogue-wrapper {
+  .catalogue-title {
+    margin: 2rem 0;
+    font-size: 1.45rem;
+  }
+
+  .catalogue-content {
+    dl {
+      margin-bottom: 1.8rem;
+
+      &.inline {
+        display: inline-block;
+        width: 50%;
+        margin-bottom: 1rem;
+
+        @media (max-width: config.$mobile) {
+          width: 100%;
+        }
+
+        a {
+          width: 100%;
+        }
+      }
+
+      &:not(.inline) {
+        dt {
+          margin-top: calc(0rem - var(--navbar-height));
+          padding-top: var(--navbar-height);
+        }
+      }
+
+      dt {
+        font-size: 1.1rem;
+
+        &:hover .header-anchor {
+          opacity: 1;
+        }
+      }
+
+      dd {
+        margin-top: 0.7rem;
+        margin-left: 1rem;
+      }
+
+      a:not(.header-anchor) {
+        display: inline-block;
+        width: 50%;
+        margin-bottom: 0.5rem;
+
+        @media (max-width: config.$mobile) {
+          width: 100%;
+        }
+
+        &:hover {
+          color: var(--theme-color);
+          text-decoration: none;
+        }
+      }
+
+      .sub-cat-wrap {
+        margin: 5px 0 8px;
+        font-size: 0.95rem;
+
+        & > a {
+          box-sizing: border-box;
+          padding-left: 1rem;
+        }
+
+        .sub-title {
+          margin-top: calc(0rem - var(--navbar-height));
+          margin-bottom: 6px;
+          padding-top: var(--navbar-height);
+          font-size: 1rem;
+        }
+
+        &:hover {
+          .header-anchor {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

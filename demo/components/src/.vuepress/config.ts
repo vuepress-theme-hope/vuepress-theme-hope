@@ -38,6 +38,7 @@ export default defineUserConfig({
       backToTop: true,
       components: [
         "Badge",
+        "Catalog",
         "CodePen",
         "FontIcon",
         "PDF",

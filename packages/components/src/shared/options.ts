@@ -3,6 +3,7 @@ import type { BackToTopLocaleData } from "./locales";
 
 export type AvailableComponent =
   | "Badge"
+  | "Catalog"
   | "CodePen"
   | "FontIcon"
   | "PDF"

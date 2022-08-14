@@ -11,6 +11,8 @@ actions:
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 ---
 
+<Catalog />
+
 ## Demo
 
 ```js

@@ -738,6 +738,23 @@ importers:
       vuepress-vite: 2.0.0-beta.49_shqtlpms4a2xjzzkrq47upba2u
       vuepress-webpack: 2.0.0-beta.49_vue@3.2.37
 
+  packages/auto-catelog:
+    specifiers:
+      '@vuepress/core': 2.0.0-beta.49
+      '@vuepress/utils': 2.0.0-beta.49
+      rimraf: 3.0.2
+      vue: ^3.2.37
+      vue-router: ^4.1.3
+      vuepress-shared: workspace:*
+    dependencies:
+      '@vuepress/core': 2.0.0-beta.49
+      '@vuepress/utils': 2.0.0-beta.49
+      vue: 3.2.37
+      vue-router: 4.1.3_vue@3.2.37
+      vuepress-shared: link:../shared
+    devDependencies:
+      rimraf: 3.0.2
+
   packages/blog2:
     specifiers:
       '@vuepress/client': 2.0.0-beta.49
