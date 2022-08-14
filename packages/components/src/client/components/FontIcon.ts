@@ -31,4 +31,10 @@ const FontIcon: FunctionalComponent<FontIconProps> = ({
 
 FontIcon.displayName = "FontIcon";
 
+FontIcon.props = {
+  icon: String,
+  color: String,
+  size: Number,
+};
+
 export default FontIcon;
