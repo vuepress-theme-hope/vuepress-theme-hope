@@ -96,6 +96,7 @@ const getInfo = (
                 type: "file",
                 path: filename,
                 title: page.frontmatter.shortTitle || page.title,
+                frontmatter: page.frontmatter,
                 order:
                   "order" in page.frontmatter ? page.frontmatter.order : null,
               }
