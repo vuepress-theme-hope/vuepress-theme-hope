@@ -49,7 +49,7 @@ importers:
       ts-node: 10.9.1
       tslib: 2.4.0
       typescript: 4.7.4
-      vitest: 0.21.1
+      vitest: 0.22.1
     devDependencies:
       '@commitlint/cli': 17.0.3
       '@commitlint/config-conventional': 17.0.3
@@ -96,7 +96,7 @@ importers:
       ts-node: 10.9.1_hn66opzbaneygq52jmwjxha6su
       tslib: 2.4.0
       typescript: 4.7.4
-      vitest: 0.21.1_c8@7.12.0
+      vitest: 0.22.1
 
   demo/blog2:
     specifiers:
@@ -11086,8 +11086,8 @@ packages:
     engines: {node: '>=14.0.0'}
     dev: true
 
-  /tinyspy/1.0.0:
-    resolution: {integrity: sha512-FI5B2QdODQYDRjfuLF+OrJ8bjWRMCXokQPcwKm0W3IzcbUmBNv536cQc7eXGoAuXphZwgx1DFbqImwzz08Fnhw==}
+  /tinyspy/1.0.2:
+    resolution: {integrity: sha512-bSGlgwLBYf7PnUsQ6WOc6SJ3pGOcd+d8AA6EUnLDDM0kWEstC1JIlSZA3UNliDXhd9ABoS7hiRBDCu+XP/sf1Q==}
     engines: {node: '>=14.0.0'}
     dev: true
 
@@ -11506,15 +11506,14 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitest/0.21.1_c8@7.12.0:
-    resolution: {integrity: sha512-WBIxuFmIDPuK47GO6Lu9eNeRMqHj/FWL3dk73OHH3eyPPWPiu+UB3QHLkLK2PEggCqJW4FaWoWg8R68S7p9+9Q==}
+  /vitest/0.22.1:
+    resolution: {integrity: sha512-+x28YTnSLth4KbXg7MCzoDAzPJlJex7YgiZbUh6YLp0/4PqVZ7q7/zyfdL0OaPtKTpNiQFPpMC8Y2MSzk8F7dw==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
     peerDependencies:
       '@edge-runtime/vm': '*'
       '@vitest/browser': '*'
       '@vitest/ui': '*'
-      c8: '*'
       happy-dom: '*'
       jsdom: '*'
     peerDependenciesMeta:
@@ -11524,8 +11523,6 @@ packages:
         optional: true
       '@vitest/ui':
         optional: true
-      c8:
-        optional: true
       happy-dom:
         optional: true
       jsdom:
@@ -11534,12 +11531,11 @@ packages:
       '@types/chai': 4.3.3
       '@types/chai-subset': 1.3.3
       '@types/node': 18.6.4
-      c8: 7.12.0
       chai: 4.3.6
       debug: 4.3.4
       local-pkg: 0.4.2
       tinypool: 0.2.4
-      tinyspy: 1.0.0
+      tinyspy: 1.0.2
       vite: 3.0.4
     transitivePeerDependencies:
       - less
