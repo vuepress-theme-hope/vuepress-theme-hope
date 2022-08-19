@@ -1115,7 +1115,7 @@ importers:
       execa: ^5.1.1
       ora: ^5.4.1
       rimraf: 3.0.2
-      vite: 2.9.15
+      vite: 3.0.9
       vue: ^3.2.37
       vue-router: ^4.1.3
     dependencies:
@@ -1134,7 +1134,7 @@ importers:
       '@vuepress/bundler-webpack': 2.0.0-beta.49
       '@vuepress/core': 2.0.0-beta.49
       rimraf: 3.0.2
-      vite: 2.9.15
+      vite: 3.0.9
 
   packages/sitemap2:
     specifiers:
@@ -11528,6 +11528,33 @@ packages:
       postcss: 8.4.16
       resolve: 1.22.1
       rollup: 2.78.1
+    optionalDependencies:
+      fsevents: 2.3.2
+    dev: true
+
+  /vite/3.0.9:
+    resolution: {integrity: sha512-waYABTM+G6DBTCpYAxvevpG50UOlZuynR0ckTK5PawNVt7ebX6X7wNXHaGIO6wYYFXSM7/WcuFuO2QzhBB6aMw==}
+    engines: {node: ^14.18.0 || >=16.0.0}
+    hasBin: true
+    peerDependencies:
+      less: '*'
+      sass: '*'
+      stylus: '*'
+      terser: ^5.4.0
+    peerDependenciesMeta:
+      less:
+        optional: true
+      sass:
+        optional: true
+      stylus:
+        optional: true
+      terser:
+        optional: true
+    dependencies:
+      esbuild: 0.14.53
+      postcss: 8.4.16
+      resolve: 1.22.1
+      rollup: 2.77.3
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
