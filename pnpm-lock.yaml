@@ -672,7 +672,7 @@ importers:
 
   docs/shared:
     specifiers:
-      '@types/three': 0.143.0
+      '@types/three': 0.143.1
       '@vuepress/cli': 2.0.0-beta.49
       '@vuepress/client': 2.0.0-beta.49
       '@vuepress/core': 2.0.0-beta.49
@@ -683,7 +683,7 @@ importers:
       vuepress-shared: workspace:*
       vuepress-theme-hope: workspace:*
     dependencies:
-      '@types/three': 0.143.0
+      '@types/three': 0.143.1
       '@vuepress/cli': 2.0.0-beta.49
       '@vuepress/client': 2.0.0-beta.49
       '@vuepress/core': 2.0.0-beta.49
@@ -3310,8 +3310,8 @@ packages:
     dependencies:
       '@types/node': 18.6.4
 
-  /@types/three/0.143.0:
-    resolution: {integrity: sha512-c5PonXOt8xk5q4ygmyjOX4Ec+FA7gwfdcMT/PveE9xrJs/0DDcf2lJkWrhEcmvx2ZefQCQBcogABnGqB0P4OsA==}
+  /@types/three/0.143.1:
+    resolution: {integrity: sha512-OzXb9Zx7gh0CrKiYnL/u+YeGJW0oDEmvL19vHq+sDmQ5V2Ibglf0I8Yoy/z4XPEv2YTFnYJs4imlEaupuBYRMA==}
     dependencies:
       '@types/webxr': 0.5.0
     dev: false
