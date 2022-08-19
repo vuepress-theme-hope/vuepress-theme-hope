@@ -864,9 +864,9 @@ importers:
   packages/create:
     specifiers:
       '@types/inquirer': 9.0.1
-      cac: ^6.7.12
-      execa: ^6.1.0
-      inquirer: ^9.1.0
+      cac: 6.7.12
+      execa: 6.1.0
+      inquirer: 9.1.0
       rimraf: 3.0.2
     dependencies:
       cac: 6.7.12
