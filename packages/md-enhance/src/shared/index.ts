@@ -1,5 +1,6 @@
 export * from "./attrs";
 export * from "./codeDemo";
+export * from "./hint";
 export * from "./imageMark";
 export * from "./include";
 export * from "./locales";

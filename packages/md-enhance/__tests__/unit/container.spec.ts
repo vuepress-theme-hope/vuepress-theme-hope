@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from "vitest";
 import MarkdownIt from "markdown-it";
-import { container } from "../../src/node/markdown-it/container";
+import { container } from "../../src/node/markdown-it";
 
 describe("container", () => {
   it("renderer", () => {

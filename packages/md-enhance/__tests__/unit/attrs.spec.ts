@@ -1,8 +1,8 @@
 import { describe, it, expect, vi } from "vitest";
 import { createMarkdown } from "@vuepress/markdown";
 import MarkdownIt from "markdown-it";
-import { attrs, getAttrs } from "../../src/node/markdown-it/attrs";
-import { katex } from "../../src/node/markdown-it/katex";
+import { attrs, katex } from "../../src/node/markdown-it";
+import { getAttrs } from "../../src/node/markdown-it/attrs";
 
 import type { AttrsOptions } from "../../src/shared";
 

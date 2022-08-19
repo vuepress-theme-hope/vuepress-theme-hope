@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import MarkdownIt from "markdown-it";
-import { uml } from "../../src/node/markdown-it/uml";
+import { uml } from "../../src/node/markdown-it";
 
 describe("uml", () => {
   it("shoud render without options", () => {

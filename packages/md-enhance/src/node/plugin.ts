@@ -4,11 +4,13 @@ import {
   addViteOptimizeDepsExclude,
   addViteOptimizeDepsInclude,
   addViteSsrExternal,
+  getLocales,
 } from "vuepress-shared";
 
 import { logger } from "./utils";
 
 import { checkLinks, getCheckLinksStatus } from "./checkLink";
+import { markdownEnhanceLocales } from "./locales";
 import {
   convertOptions,
   legacyCodeDemo,
@@ -24,6 +26,7 @@ import {
   echarts,
   flowchart,
   footnote,
+  hint,
   imageMark,
   imageSize,
   include,
@@ -44,7 +47,6 @@ import {
   vueDemo,
 } from "./markdown-it";
 import { prepareConfigFile, prepareRevealPluginFile } from "./prepare";
-import { usePlugins } from "./usePlugins";
 import { MATHML_TAGS } from "./utils";
 
 import type { PluginFunction } from "@vuepress/core";
@@ -79,6 +81,13 @@ export const mdEnhancePlugin =
         ? Boolean(options.gfm)
         : options.enableAll || false;
 
+    const locales = getLocales({
+      app,
+      name: "md-enhance",
+      default: markdownEnhanceLocales,
+      config: options.locales,
+    });
+
     const chartEnable = getStatus("chart");
     const echartsEnable = getStatus("echarts");
     const flowchartEnable = getStatus("flowchart");
@@ -112,8 +121,6 @@ export const mdEnhancePlugin =
         : [];
 
     useSassPalettePlugin(app, { id: "hope" });
-
-    usePlugins(app, options);
 
     return {
       name: "vuepress-plugin-md-enhance",
@@ -182,6 +189,7 @@ export const mdEnhancePlugin =
         if (getStatus("attrs"))
           md.use(attrs, typeof options.attrs === "object" ? options.attrs : {});
         if (getStatus("align")) md.use(align);
+        if (getStatus("container")) md.use(hint, locales);
         if (getStatus("lazyLoad")) md.use(lazyLoad);
         if (imageMarkEnable)
           md.use(

@@ -6,13 +6,13 @@ import type { PluginWithOptions } from "markdown-it";
 import type { RuleCore } from "markdown-it/lib/parser_core";
 import type { IncludeOptions } from "../../shared";
 
-export interface ImportFileInfo {
+interface ImportFileInfo {
   filePath: string;
   lineStart: number;
   lineEnd: number | undefined;
 }
 
-export interface IncludeInfo {
+interface IncludeInfo {
   cwd: string | null;
   includedFiles: string[];
 }

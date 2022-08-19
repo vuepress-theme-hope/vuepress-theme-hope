@@ -3,7 +3,7 @@ import type { RuleBlock } from "markdown-it/lib/parser_block";
 import type { default as Renderer } from "markdown-it/lib/renderer";
 import type { default as Token } from "markdown-it/lib/token";
 
-export interface BaseTabData {
+interface BaseTabData {
   title: string;
   value?: string;
 }

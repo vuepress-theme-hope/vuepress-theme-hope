@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import MarkdownIt from "markdown-it";
-import { imageMark } from "../../src/node/markdown-it/imageMark";
+import { imageMark } from "../../src/node/markdown-it";
 
 describe("Image Mark", () => {
   const markdownIt = MarkdownIt({ linkify: true }).use(imageMark);

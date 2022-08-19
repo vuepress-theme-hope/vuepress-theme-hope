@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import MarkdownIt from "markdown-it";
-import { presentation } from "../../src/node/markdown-it/presentation";
+import { presentation } from "../../src/node/markdown-it";
 
 const demo = `
 ## Slide 1

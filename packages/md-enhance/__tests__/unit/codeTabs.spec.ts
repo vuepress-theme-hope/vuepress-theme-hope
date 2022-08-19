@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import MarkdownIt from "markdown-it";
-import { codeTabs } from "../../src/node/markdown-it/codeTabs";
+import { codeTabs } from "../../src/node/markdown-it";
 
 const markdownIt = MarkdownIt({ linkify: true }).use(codeTabs);
 

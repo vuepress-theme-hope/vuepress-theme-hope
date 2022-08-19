@@ -1,13 +1,13 @@
 export * from "./align";
-export * from "./attrs";
+export { attrs } from "./attrs";
 export * from "./chart";
 export * from "./codeDemo";
 export * from "./codeTabs";
 export * from "./container";
-export * from "./details";
 export * from "./echarts";
 export * from "./flowchart";
 export * from "./footnote";
+export * from "./hint";
 export * from "./imageMark";
 export * from "./imageSize";
 export * from "./katex";

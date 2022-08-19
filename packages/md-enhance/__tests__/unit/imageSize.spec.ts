@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import MarkdownIt from "markdown-it";
-import { imageSize } from "../../src/node/markdown-it/imageSize";
+import { imageSize } from "../../src/node/markdown-it";
 
 describe("Image Size", () => {
   const markdownIt = MarkdownIt({ linkify: true }).use(imageSize);
