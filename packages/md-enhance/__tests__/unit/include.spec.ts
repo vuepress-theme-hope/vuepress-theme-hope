@@ -278,4 +278,116 @@ foo
       ]);
     });
   });
+
+  describe("the relative path of link/image", () => {
+    const mdFixturePathRelative = "./__fixtures__/relative/includeLink.md";
+    const mdFixturePath = path.resolve(__dirname, mdFixturePathRelative);
+    const mdFixtureDeepIncludeRelative = "./__fixtures__/deepIncludeLink.md";
+    const mdFixtureDeepIncludePath = path.resolve(
+      __dirname,
+      mdFixtureDeepIncludeRelative
+    );
+
+
+    it("should resolve the relative path of link/image in the include md file", () => {
+      const source = `\
+@include(${mdFixturePathRelative})
+`;
+
+      const expected = `\
+<p><img src="./__fixtures__/relative/a.jpg" alt="Image1">
+<a href="./__fixtures__/relative/a.md">Markdown</a></p>
+`;
+
+      const env: IncludeEnv = {
+        filePath: __filename,
+      };
+      const rendered = md.render(source, env);
+
+      expect(rendered).toEqual(expected);
+      expect(env.includedFiles).toEqual([mdFixturePath]);
+    });
+
+    it("should turn off resolve the relative path of link in the include md file", () => {
+      const source = `\
+@include(${mdFixturePathRelative})
+  `;
+
+      const expected = `<p><img src="./__fixtures__/relative/a.jpg" alt="Image1">
+<a href="./a.md">Markdown</a></p>
+`;
+
+      const env: IncludeEnv = {
+        filePath: __filename,
+      };
+      const mdWithOptions = MarkdownIt()
+      .use(include, { resolveLinkPath: false })
+      const rendered = mdWithOptions.render(source, env);
+
+      expect(rendered).toEqual(expected);
+      expect(env.includedFiles).toEqual([mdFixturePath]);
+    });
+
+    it("should turn off resolve the relative path of image in the include md file", () => {
+      const source = `\
+@include(${mdFixturePathRelative})
+  `;
+
+      const expected = `<p><img src="./a.jpg" alt="Image1">
+<a href="./__fixtures__/relative/a.md">Markdown</a></p>
+`;
+
+      const env: IncludeEnv = {
+        filePath: __filename,
+      };
+      const mdWithOptions = MarkdownIt()
+      .use(include, { resolveImagePath: false })
+      const rendered = mdWithOptions.render(source, env);
+
+      expect(rendered).toEqual(expected);
+      expect(env.includedFiles).toEqual([mdFixturePath]);
+    });
+
+    it("should turn off resolve the relative path of image/link in the include md file", () => {
+      const source = `\
+@include(${mdFixturePathRelative})
+  `;
+
+      const expected = `<p><img src="./a.jpg" alt="Image1">
+<a href="./a.md">Markdown</a></p>
+`;
+
+      const env: IncludeEnv = {
+        filePath: __filename,
+      };
+      const mdWithOptions = MarkdownIt()
+      .use(include, { resolveImagePath: false, resolveLinkPath: false })
+      const rendered = mdWithOptions.render(source, env);
+
+      expect(rendered).toEqual(expected);
+      expect(env.includedFiles).toEqual([mdFixturePath]);
+    });
+
+    it("should deeply resolve the relative path of link/image in the include md file", () => {
+      const source = `\
+@include(${mdFixtureDeepIncludeRelative})
+`;
+
+      const expected = `\
+<h3>Heading 3</h3>
+<p><img src="./__fixtures__/relative/a.jpg" alt="Image1">
+<a href="./__fixtures__/relative/a.md">Markdown</a></p>
+`;
+
+      const env: IncludeEnv = {
+        filePath: __filename,
+      };
+      const mdWithOptions = MarkdownIt()
+      .use(include, { deep: true })
+      const rendered = mdWithOptions.render(source, env);
+
+      expect(rendered).toEqual(expected);
+      expect(env.includedFiles).toEqual([mdFixtureDeepIncludePath, mdFixturePath]);
+    });
+  });
 });
