@@ -389,5 +389,27 @@ foo
       expect(rendered).toEqual(expected);
       expect(env.includedFiles).toEqual([mdFixtureDeepIncludePath, mdFixturePath]);
     });
+
+    it("should resolve the correct relative path of link/image after the include md file", () => {
+      const source = `\
+@include(${mdFixturePathRelative})
+[B](./b.md)
+`;
+
+      const expected = `\
+<p><img src="./__fixtures__/relative/a.jpg" alt="Image1">
+<a href="./__fixtures__/relative/a.md">Markdown</a></p>
+<p><a href="./b.md">B</a></p>
+`;
+
+      const env: IncludeEnv = {
+        filePath: __filename + '1',
+      };
+      const rendered = md.render(source, env);
+
+      expect(rendered).toEqual(expected);
+      expect(env.includedFiles).toEqual([mdFixturePath]);
+    });
+
   });
 });
