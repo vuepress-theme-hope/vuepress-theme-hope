@@ -78,7 +78,7 @@
     "concurrently": "7.3.0",
     "cpx2": "4.2.0",
     "cross-env": "7.0.3",
-    "cz-git": "1.3.10",
+    "cz-git": "1.3.11",
     "eslint": "8.22.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-prettier": "4.2.1",
