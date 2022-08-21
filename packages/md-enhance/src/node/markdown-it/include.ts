@@ -64,9 +64,6 @@ export const handleInclude = (
     result.unshift(`@include-push(${dirName})`);
     result.push("@include-pop()");
   }
-  // if (realPath.endsWith("includeLink.md")) {
-  //   console.log('TCL:: ~ file: include.ts ~ line 67 ~ include:', result);
-  // }
 
   return result
     .join("\n")
@@ -214,13 +211,13 @@ export const include: PluginWithOptions<IncludeOptions> = (
   if (resolveImagePath || resolveLinkPath) {
     md.block.ruler.before(
       "table",
-      "md_includePush",
+      "md_include_push",
       includePushRule,
       {alt: [ 'paragraph', 'reference', 'blockquote', 'list' ]},
     );
     md.block.ruler.before(
       "table",
-      "md_includePop",
+      "md_include_pop",
       includePopRule,
       {alt: [ 'paragraph', 'reference', 'blockquote', 'list' ]},
     );
