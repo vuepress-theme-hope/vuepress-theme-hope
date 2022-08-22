@@ -161,7 +161,10 @@ export const mdEnhancePlugin =
             { app, config },
             "flowchart.js/src/flowchart.parse"
           );
-          addViteSsrExternal({ app, config }, "flowchart.js");
+          addViteSsrExternal(
+            { app, config },
+            "flowchart.js/src/flowchart.parse"
+          );
         }
 
         if (mermaidEnable) {
