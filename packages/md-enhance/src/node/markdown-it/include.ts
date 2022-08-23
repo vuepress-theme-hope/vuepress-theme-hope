@@ -61,6 +61,7 @@ export const handleInclude = (
 
   if (resolvedPath && realPath.endsWith(".md")) {
     const dirName = path.dirname(realPath);
+
     result.unshift(`@include-push(${dirName})`);
     result.push("@include-pop()");
   }
