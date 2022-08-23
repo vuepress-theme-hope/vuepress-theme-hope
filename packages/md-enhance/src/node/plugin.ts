@@ -4,6 +4,7 @@ import {
   addViteOptimizeDepsExclude,
   addViteOptimizeDepsInclude,
   addViteSsrExternal,
+  deepAssign,
   getLocales,
 } from "vuepress-shared";
 
@@ -19,6 +20,7 @@ import {
 } from "./compact";
 import {
   CODE_DEMO_DEFAULT_SETTING,
+  DEFAULT_VUE_PLAYGROUND_OPTIONS,
   align,
   attrs,
   chart,
@@ -45,6 +47,7 @@ import {
   tasklist,
   vPre,
   vueDemo,
+  vuePlayground,
 } from "./markdown-it";
 import { prepareConfigFile, prepareRevealPluginFile } from "./prepare";
 import { MATHML_TAGS } from "./utils";
@@ -97,7 +100,7 @@ export const mdEnhancePlugin =
     const mermaidEnable = getStatus("mermaid");
     const presentationEnable = getStatus("presentation");
     const texEnable = getStatus("tex");
-    const playgroundEnable = getStatus("playground");
+    const vuePlaygroundEnable = getStatus("vuePlayground");
 
     const shouldCheckLinks = getCheckLinksStatus(app, options);
 
@@ -138,8 +141,14 @@ export const mdEnhancePlugin =
           typeof options.presentation.revealConfig === "object"
             ? options.presentation.revealConfig
             : {},
-        PLAYGROUND_OPTIONS:
-          typeof options.playground === "object" ? options.playground : {},
+        VUE_PLAYGROUND_OPTIONS:
+          typeof options.vuePlayground === "object"
+            ? deepAssign(
+                {},
+                DEFAULT_VUE_PLAYGROUND_OPTIONS,
+                options.vuePlayground
+              )
+            : DEFAULT_VUE_PLAYGROUND_OPTIONS,
       }),
 
       extendsBundlerOptions: (config: unknown, app): void => {
@@ -183,7 +192,7 @@ export const mdEnhancePlugin =
           addViteSsrExternal({ app, config }, "reveal.js");
         }
 
-        if (playgroundEnable) {
+        if (vuePlaygroundEnable) {
           addViteOptimizeDepsInclude({ app, config }, "@vue/repl");
           addViteSsrExternal({ app, config }, "@vue/repl");
         }
@@ -250,7 +259,9 @@ export const mdEnhancePlugin =
         }
         if (mermaidEnable) md.use(mermaid);
         if (presentationEnable) md.use(presentation);
-        if (playgroundEnable) md.use(playground);
+        if (typeof options.playground === "object")
+          md.use(playground, options.playground);
+        if (vuePlaygroundEnable) md.use(vuePlayground);
       },
 
       extendsPage: (page, app): void => {

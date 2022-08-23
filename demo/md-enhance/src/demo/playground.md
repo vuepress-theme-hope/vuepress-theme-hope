@@ -8,7 +8,7 @@ title: Playground Demo
 
 #### Customize imports
 
-::: playground Playground demo
+::: vue-external-playground Playground demo
 
 @file App.vue
 
@@ -47,61 +47,10 @@ const msg = ref("Hello World!");
 ```
 
 :::
-::::
-
-#### Customize imports map file
-
-::: playground Playground demo2
-
-@file App.vue
-
-```vue
-<script setup>
-import { ref } from "vue";
-
-const msg = ref("Hello World!");
-</script>
-
-<template>
-  <h1>{{ msg }}</h1>
-  <input v-model="msg" />
-</template>
-```
-
-@file Comp.vue
-
-```vue
-<template>
-  <div>Comp</div>
-</template>
-```
-
-@imports import_map.json
-
-```json
-{
-  "imports": {
-    "a": "b"
-  }
-}
-```
-
-@settings
-
-```json
-{
-  "mode": "external",
-  "external": {
-    "base": "https://element-plus.run/"
-  }
-}
-```
-
-:::
 
 #### Customize settings
 
-::: playground Playground demo3
+::: vue-external-playground Playground demo3
 
 @file App.vue
 
@@ -118,7 +67,7 @@ const msg = ref("Hello Playground!");
 </template>
 ```
 
-@imports user-imports.json
+@imports
 
 ```json
 {
@@ -132,13 +81,8 @@ const msg = ref("Hello Playground!");
 
 ```json
 {
-  "mode": "external",
-  "external": {
-    "base": "https://vue-sfc-playground.vercel.app/",
-    "options": {
-      "showOutput": "true"
-    }
-  }
+  "service": "https://vue-sfc-playground.vercel.app/",
+  "showOutput": true
 }
 ```
 
@@ -146,7 +90,7 @@ const msg = ref("Hello Playground!");
 
 ### Internal mode
 
-::: playground Internal mode
+::: vue-playground Internal mode
 
 @file App.vue
 
@@ -161,19 +105,11 @@ const msg = ref("Hello Playground!");
   <h1>{{ msg }}</h1>
   <input v-model="msg" />
 </template>
-```
-
-@settings
-
-```json
-{
-  "mode": "internal"
-}
 ```
 
 :::
 
-::: playground Internal mode2 - show compile outpu
+::: vue-playground Internal mode2 - show compile output
 
 @file App.vue
 
@@ -194,10 +130,7 @@ const msg = ref("Hello Playground!");
 
 ```json
 {
-  "mode": "internal",
-  "internal": {
-    "showCompileOutput": "true"
-  }
+  "showCompileOutput": true
 }
 ```
 

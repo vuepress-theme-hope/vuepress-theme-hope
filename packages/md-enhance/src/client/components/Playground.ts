@@ -1,43 +1,53 @@
-import { ClientOnly } from "@vuepress/client";
-import { defineComponent, h } from "vue";
+import { defineComponent, h, ref } from "vue";
 
-import ExternalPlayground from "./ExternalPlayground";
-import InternalPlayground from "./InternalPlayground";
-import { parsePlaygroundSettings } from "../utils";
-import { IMPORT_MAP_KEY } from "../../shared";
+import { LOADING_SVG, PLAY_SVG } from "./icons";
 
 import type { VNode } from "vue";
+
+import "../styles/playground.scss";
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names
   name: "Playground",
 
   props: {
-    id: { type: String, required: true },
     title: { type: String, default: "" },
-    config: { type: String, default: "{}" },
-    settings: { type: String, default: "{}" },
+    link: { type: String, required: true },
   },
 
   setup(props) {
-    const settings = parsePlaygroundSettings(props.settings);
-    const mode = settings.mode;
-
-    const encodedKey = encodeURIComponent(IMPORT_MAP_KEY);
-
-    const defaultImportsMap =
-      mode === "internal"
-        ? settings.internal?.defaultImportsMap
-        : settings.external?.defaultImportsMap;
+    const loading = ref(true);
 
     return (): (VNode | null)[] => [
-      h(ClientOnly, null, [
-        h(mode === "internal" ? InternalPlayground : ExternalPlayground, {
-          id: props.id,
-          title: props.title,
-          settings: props.settings,
-          config: props.config.replace(encodedKey, defaultImportsMap || ""),
-        }),
+      h("div", { class: "playground-wrapper" }, [
+        h("div", { class: "title-wrapper" }, [
+          props.title
+            ? h("div", { class: "title" }, decodeURIComponent(props.title))
+            : null,
+          h("div", { class: "actions" }, [
+            h("a", {
+              class: "action",
+              href: props.link,
+              target: "_blank",
+              innerHTML: PLAY_SVG,
+            }),
+          ]),
+        ]),
+        h("div", { class: "preview-container" }, [
+          loading.value
+            ? h("div", {
+                class: ["preview-loading-wrapper"],
+                innerHTML: LOADING_SVG,
+              })
+            : null,
+          h("iframe", {
+            class: "iframe-preview",
+            src: decodeURIComponent(props.link),
+            onload: () => {
+              loading.value = false;
+            },
+          }),
+        ]),
       ]),
     ];
   },

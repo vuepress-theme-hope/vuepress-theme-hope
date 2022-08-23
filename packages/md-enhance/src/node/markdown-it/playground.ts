@@ -1,60 +1,16 @@
 import { hash } from "@vuepress/utils";
-import { IMPORT_MAP_KEY } from "../../shared/playground";
 
-import type { Options, PluginWithOptions } from "markdown-it";
+import type { PluginWithOptions } from "markdown-it";
 import type { RuleBlock } from "markdown-it/lib/parser_block";
-import type { default as Renderer } from "markdown-it/lib/renderer";
-import type { default as Token } from "markdown-it/lib/token";
-import type { PlaygroundOptions } from "../../shared";
-import type { PlaygroundFiles } from "../../shared/playground";
-
-const SUPPORTED_EXTENSIONS = ["html", "js", "ts", "vue", "jsx", "tsx", "json"];
-
-const DEFAULT_PLAYGROUND_SETTING: PlaygroundOptions = {
-  mode: "external",
-};
-
-export interface PlaygroundData {
-  id?: string;
-  title?: string;
-  files?: PlaygroundFiles;
-  imports?: string;
-  settings?: string;
-  customData?: Record<string, unknown>[] | null;
-}
-
-export interface PlaygroundPluginOptions {
-  name: string;
-  component: string;
-  playgroundOptions?: PlaygroundOptions;
-  getter: (
-    tokens: Token[],
-    index: number,
-    options: Options,
-    env: unknown,
-    self: Renderer
-  ) => Record<string, unknown>[];
-}
+import type { PlaygroundData, PlaygroundOptions } from "../../shared";
 
 const AT_MARKER = `@`;
-
+const SUPPORTED_EXTENSIONS = ["html", "js", "ts", "vue", "jsx", "tsx", "json"];
 const VALID_MARKERS = ["file", "imports", "settings"];
 
-export const playground: PluginWithOptions<PlaygroundPluginOptions> = (
-  md,
-  { name, component, playgroundOptions = {}, getter } = {
-    name: "playground",
-    component: "Playground",
-    getter: () => [],
-  }
-) => {
-  const mode = playgroundOptions.mode ?? DEFAULT_PLAYGROUND_SETTING.mode;
-  const defaultImportsMap =
-    mode === "internal"
-      ? playgroundOptions.internal?.defaultImportsMap
-      : playgroundOptions.external?.defaultImportsMap;
-
-  const playgroundRule: RuleBlock = (state, startLine, endLine, silent) => {
+const getPlaygroundRule =
+  (name: string): RuleBlock =>
+  (state, startLine, endLine, silent) => {
     let start = state.bMarks[startLine] + state.tShift[startLine];
     let max = state.eMarks[startLine];
 
@@ -77,15 +33,9 @@ export const playground: PluginWithOptions<PlaygroundPluginOptions> = (
     const markup = state.src.slice(start, pos);
     const params = state.src.slice(pos, max);
 
-    const [containerName, id] = params
-      .trimStart()
-      .split(" ", 2)[0]
-      .split("#", 2);
+    const containerName = params.trimStart().split(" ", 2)[0];
 
-    const title = params
-      .trimStart()
-      .slice(name.length + (id ? id.length + 1 : 0))
-      .trim();
+    const title = params.trimStart().slice(name.length).trim();
 
     if (containerName.trim() !== name) return false;
 
@@ -147,12 +97,11 @@ export const playground: PluginWithOptions<PlaygroundPluginOptions> = (
     // this will prevent lazy continuations from ever going past our end marker
     state.lineMax = nextLine - (autoClosed ? 1 : 0);
 
-    const openToken = state.push(`${name}_open`, component, 1);
+    const openToken = state.push(`${name}_open`, "template", 1);
 
     openToken.markup = markup;
     openToken.block = true;
     openToken.info = title;
-    openToken.meta = { id: id?.trim() };
     openToken.map = [startLine, nextLine - (autoClosed ? 1 : 0)];
 
     state.md.block.tokenize(
@@ -161,7 +110,7 @@ export const playground: PluginWithOptions<PlaygroundPluginOptions> = (
       nextLine - (autoClosed ? 1 : 0)
     );
 
-    const closeToken = state.push(`${name}_close`, component, -1);
+    const closeToken = state.push(`${name}_close`, "template", -1);
 
     closeToken.markup = state.src.slice(start, pos);
     closeToken.block = true;
@@ -173,108 +122,124 @@ export const playground: PluginWithOptions<PlaygroundPluginOptions> = (
     return true;
   };
 
-  const atMarkerRule =
-    (markerName: string): RuleBlock =>
-    (state, startLine, endLine, silent) => {
-      let start = state.bMarks[startLine] + state.tShift[startLine];
-      let max = state.eMarks[startLine];
+const atMarkerRule =
+  (markerName: string): RuleBlock =>
+  (state, startLine, endLine, silent) => {
+    let start = state.bMarks[startLine] + state.tShift[startLine];
+    let max = state.eMarks[startLine];
 
-      const atMarker = `${AT_MARKER}${markerName}`;
+    const atMarker = `${AT_MARKER}${markerName}`;
 
-      /*
-       * Check out the first character quickly,
-       * this should filter out most of non-uml blocks
-       */
-      if (state.src.charAt(start) !== "@") return false;
+    /*
+     * Check out the first character quickly,
+     * this should filter out most of non-uml blocks
+     */
+    if (state.src.charAt(start) !== "@") return false;
 
-      let index;
+    let index;
 
-      // Check out the rest of the marker string
-      for (index = 0; index < atMarker.length; index++)
-        if (atMarker[index] !== state.src[start + index]) return false;
+    // Check out the rest of the marker string
+    for (index = 0; index < atMarker.length; index++)
+      if (atMarker[index] !== state.src[start + index]) return false;
 
-      const markup = state.src.slice(start, start + index);
-      const info = state.src.slice(start + index, max);
+    const markup = state.src.slice(start, start + index);
+    const info = state.src.slice(start + index, max);
 
-      // Since start is found, we can report success here in validation mode
-      if (silent) return true;
+    // Since start is found, we can report success here in validation mode
+    if (silent) return true;
 
-      let nextLine = startLine;
-      let autoClosed = false;
+    let nextLine = startLine;
+    let autoClosed = false;
 
-      // Search for the end of the block
-      while (
-        // unclosed block should be autoclosed by end of document.
-        // also block seems to be autoclosed by end of parent
-        nextLine < endLine
+    // Search for the end of the block
+    while (
+      // unclosed block should be autoclosed by end of document.
+      // also block seems to be autoclosed by end of parent
+      nextLine < endLine
+    ) {
+      nextLine += 1;
+      start = state.bMarks[nextLine] + state.tShift[nextLine];
+      max = state.eMarks[nextLine];
+
+      if (start < max && state.sCount[nextLine] < state.blkIndent)
+        // non-empty line with negative indent should stop the list:
+        // - ```
+        //  test
+        break;
+
+      if (
+        // match start
+        state.src[start] === AT_MARKER &&
+        // marker should not be indented with respect of opening fence
+        state.sCount[nextLine] <= state.sCount[startLine]
       ) {
-        nextLine += 1;
-        start = state.bMarks[nextLine] + state.tShift[nextLine];
-        max = state.eMarks[nextLine];
+        let openMakerMatched = true;
 
-        if (start < max && state.sCount[nextLine] < state.blkIndent)
-          // non-empty line with negative indent should stop the list:
-          // - ```
-          //  test
-          break;
-
-        if (
-          // match start
-          state.src[start] === AT_MARKER &&
-          // marker should not be indented with respect of opening fence
-          state.sCount[nextLine] <= state.sCount[startLine]
-        ) {
-          let openMakerMatched = true;
-
-          for (index = 0; index < atMarker.length; index++)
-            if (atMarker[index] !== state.src[start + index]) {
-              openMakerMatched = false;
-              break;
-            }
-
-          if (openMakerMatched) {
-            // found!
-            autoClosed = true;
-            nextLine -= 1;
+        for (index = 0; index < atMarker.length; index++)
+          if (atMarker[index] !== state.src[start + index]) {
+            openMakerMatched = false;
             break;
           }
+
+        if (openMakerMatched) {
+          // found!
+          autoClosed = true;
+          nextLine -= 1;
+          break;
         }
       }
+    }
 
-      const oldParent = state.parentType;
-      const oldLineMax = state.lineMax;
+    const oldParent = state.parentType;
+    const oldLineMax = state.lineMax;
 
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-expect-error
-      state.parentType = `${markerName}`;
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error
+    state.parentType = `${markerName}`;
 
-      // this will prevent lazy continuations from ever going past our end marker
-      state.lineMax = nextLine;
+    // this will prevent lazy continuations from ever going past our end marker
+    state.lineMax = nextLine;
 
-      const openToken = state.push(`${markerName}_open`, "template", 1);
+    const openToken = state.push(`${markerName}_open`, "template", 1);
 
-      openToken.block = true;
-      openToken.markup = markup;
-      openToken.info = info.trim();
+    openToken.block = true;
+    openToken.markup = markup;
+    openToken.info = info.trim();
 
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      openToken.map = [startLine, nextLine];
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    openToken.map = [startLine, nextLine];
 
-      state.md.block.tokenize(state, startLine + 1, nextLine);
+    state.md.block.tokenize(state, startLine + 1, nextLine);
 
-      const closeToken = state.push(`${markerName}_close`, "template", -1);
+    const closeToken = state.push(`${markerName}_close`, "template", -1);
 
-      closeToken.block = true;
-      closeToken.markup = "";
+    closeToken.block = true;
+    closeToken.markup = "";
 
-      state.parentType = oldParent;
-      state.lineMax = oldLineMax;
-      state.line = nextLine + (autoClosed ? 1 : 0);
+    state.parentType = oldParent;
+    state.lineMax = oldLineMax;
+    state.line = nextLine + (autoClosed ? 1 : 0);
 
-      return true;
-    };
+    return true;
+  };
 
-  md.block.ruler.before("fence", `${name}`, playgroundRule, {
+export const playground: PluginWithOptions<PlaygroundOptions> = (
+  md,
+  { name = "playground", openRender, closeRender } = {
+    name: "playground",
+    openRender: (playgroundData: PlaygroundData) =>
+      `<Playground key="${playgroundData.key}
+        title="${playgroundData.title || ""}"
+        files="${encodeURIComponent(JSON.stringify(playgroundData.files))}"
+        settings="${encodeURIComponent(
+          JSON.stringify(playgroundData.settings || {})
+        )}" 
+      >\n`,
+
+    closeRender: () => `</Playground>\n`,
+  }
+) => {
+  md.block.ruler.before("fence", `${name}`, getPlaygroundRule(name), {
     alt: ["paragraph", "reference", "blockquote", "list"],
   });
 
@@ -289,35 +254,20 @@ export const playground: PluginWithOptions<PlaygroundPluginOptions> = (
       });
   });
 
-  md.renderer.rules[`${name}_open`] = (
-    tokens,
-    index,
-    options,
-    env,
-    self
-  ): string => {
+  md.renderer.rules[`${name}_open`] = (tokens, index): string => {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    const { meta, info } = tokens[index];
-    const hashKey = `${index}-${info}`;
-    const key = `playground-${hash(hashKey)}`;
+    const { info } = tokens[index];
 
     const playgroundData: PlaygroundData = {
-      // eslint-disable-next-line
-      id: meta.id ? meta.id : key,
+      key: hash(`playground${index}-${info}`),
       title: encodeURIComponent(info),
       files: {},
-      customData: [],
     };
-    const customData = getter(tokens, index, options, env, self);
 
-    playgroundData.customData?.concat(customData);
-
-    let settings: string;
-    let configKey: string | null = null;
-    let isSettings = false;
+    let currentKey: string | null = null;
+    let foundSettings = false;
 
     for (let i = index; i < tokens.length; i++) {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       const { block, type, info, content } = tokens[i];
 
       if (block) {
@@ -325,74 +275,52 @@ export const playground: PluginWithOptions<PlaygroundPluginOptions> = (
         if (type === `${name}_open`) continue;
 
         if (type === "file_open") {
-          const fileName = info;
+          // File rule must contain a valid file name
+          if (!info) continue;
+          currentKey = info;
+        } else if (type === "imports_open")
+          currentKey = info || "import-map.json";
 
-          if (!fileName || fileName.length === 0) {
-            continue;
-          }
-          configKey = fileName;
-        }
-
-        if (type === "imports_open") {
-          const fileName = info;
-
-          if (fileName && fileName.length > 0) {
-            configKey = fileName;
-          } else {
-            configKey = defaultImportsMap || IMPORT_MAP_KEY;
-          }
-        }
-
-        if (type === "settings_open") {
-          isSettings = true;
-        }
+        if (type === "settings_open") foundSettings = true;
+        if (type === "settings_close") foundSettings = false;
 
         if (
           type === "file_close" ||
           type === "imports_close" ||
-          type === "settings_close"
+          type === "settings_close" ||
+          !content
         ) {
           tokens[i].type = `${name}_empty`;
           tokens[i].hidden = true;
           continue;
         }
 
-        if (!content) {
-          tokens[i].type = `${name}_empty`;
-          tokens[i].hidden = true;
+        // parse settings
+        if (foundSettings) {
+          if (type === "fence" && info === "json")
+            playgroundData.settings = JSON.parse(content.trim());
+
           continue;
         }
 
-        if (isSettings) {
-          if (type === "fence" && info === "json") {
-            settings = content.replace(/^\s+|\s+$/g, "").replace(/\/+$/, "");
-            playgroundData.settings = encodeURIComponent(settings);
-          }
-        } else {
-          if (
-            type === "fence" &&
-            SUPPORTED_EXTENSIONS.includes(info) &&
-            configKey
-          ) {
-            playgroundData.files![configKey] = {
-              lang: info,
-              content: content,
-            };
-          }
-        }
+        // add code block content
+        if (
+          type === "fence" &&
+          currentKey &&
+          SUPPORTED_EXTENSIONS.includes(info)
+        )
+          playgroundData.files[currentKey] = {
+            lang: info,
+            content: content,
+          };
 
         tokens[i].type = `${name}_empty`;
         tokens[i].hidden = true;
       }
     }
 
-    return `<${component} key="${playgroundData.id!}"
-        id="${playgroundData.id!}"
-        title="${playgroundData.title || ""}"
-        settings="${playgroundData.settings || encodeURIComponent("{}")}"
-        config="${encodeURIComponent(JSON.stringify(playgroundData.files!))}"
-      >\n`;
+    return openRender(playgroundData);
   };
 
-  md.renderer.rules[`${name}_close`] = (): string => `</${component}>\n`;
+  md.renderer.rules[`${name}_close`] = closeRender;
 };

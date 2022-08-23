@@ -78,9 +78,12 @@ export const prepareConfigFile = async (
   }
 
   if (getStatus("playground")) {
-    configImport += `const Playground = defineAsyncComponent(() => import("${CLIENT_FOLDER}components/Playground"));\n`;
+    configImport += `import Playground from "${CLIENT_FOLDER}components/Playground";\n`;
     enhance += `app.component("Playground", Playground);\n`;
   }
+
+  if (getStatus("vuePlayground"))
+    enhance += `const VuePlayground = defineAsyncComponent(() => import("${CLIENT_FOLDER}components/VuePlayground"));\napp.component("VuePlayground", VuePlayground);\n`;
 
   if (getStatus("tasklist"))
     configImport += `import "${CLIENT_FOLDER}styles/tasklist.scss";\n`;

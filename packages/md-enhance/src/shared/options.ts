@@ -9,6 +9,7 @@ import type { PresentationOptions } from "./presentation";
 import type { TaskListOptions } from "./tasklist";
 import type { StylizeOptions } from "./stylize";
 import type { PlaygroundOptions } from "./playground";
+import type { VuePlaygroundOptions } from "./vuePlayground";
 
 /**
  * md-enhance plugin configuration
@@ -263,10 +264,17 @@ export interface MarkdownEnhanceOptions {
    * Whether to enable playground support
    *
    * 是否启用 playground 支持
+   */
+  playground?: PlaygroundOptions;
+
+  /**
+   * Whether to enable vue playground support
+   *
+   * 是否启用 Vue Playground 支持
    *
    * @default false
    */
-  playground?: PlaygroundOptions | boolean;
+  vuePlayground?: VuePlaygroundOptions | boolean;
 
   /**
    * @deprecated This option is for demo only, please enable options you need in production.
