@@ -1,4 +1,4 @@
-import { path } from "@vuepress/utils";
+import { getDirname, path } from "@vuepress/utils";
 
 import { resolveAlias } from "./alias";
 import { updateBundlerConfig } from "./bundler";
@@ -18,6 +18,8 @@ import { prepareThemeColorScss } from "./themeColor";
 
 import type { Page, ThemeFunction } from "@vuepress/core";
 import type { HopeThemeOptions, HopeThemePageData } from "../shared";
+
+const __dirname = getDirname(import.meta.url);
 
 export const hopeTheme =
   (

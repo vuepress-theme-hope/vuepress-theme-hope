@@ -1,4 +1,6 @@
-import { fs, path } from "@vuepress/utils";
+import { fs, getDirname, path } from "@vuepress/utils";
+
+const __dirname = getDirname(import.meta.url);
 
 const getDirAlias = (dir: string): [string, string][] =>
   fs

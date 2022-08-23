@@ -1,10 +1,11 @@
 import { ensureEndingSlash } from "@vuepress/shared";
-import { path } from "@vuepress/utils";
+import { getDirname, path } from "@vuepress/utils";
 import { logger } from "./utils";
 
 import type { App } from "@vuepress/core";
 import type { AvailableComponent, ComponentOptions } from "../shared";
 
+const __dirname = getDirname(import.meta.url);
 const CLIENT_FOLDER = ensureEndingSlash(path.resolve(__dirname, "../client"));
 
 const availableComponents: AvailableComponent[] = [

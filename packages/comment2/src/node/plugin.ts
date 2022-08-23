@@ -1,4 +1,4 @@
-import { path } from "@vuepress/utils";
+import { getDirname, path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   addCustomElement,
@@ -15,6 +15,8 @@ import { logger } from "./utils";
 
 import type { CommentOptions } from "../shared";
 import type { PluginFunction } from "@vuepress/core";
+
+const __dirname = getDirname(import.meta.url);
 
 /** Comment Plugin */
 export const commentPlugin =

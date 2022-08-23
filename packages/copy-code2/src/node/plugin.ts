@@ -1,4 +1,4 @@
-import { path } from "@vuepress/utils";
+import { getDirname, path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import { getLocales } from "vuepress-shared";
 
@@ -7,6 +7,8 @@ import { logger } from "./utils";
 
 import type { PluginFunction } from "@vuepress/core";
 import type { CopyCodeOptions } from "../shared";
+
+const __dirname = getDirname(import.meta.url);
 
 export const copyCodePlugin =
   (options: CopyCodeOptions = {}): PluginFunction =>

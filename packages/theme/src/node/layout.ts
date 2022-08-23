@@ -1,7 +1,9 @@
-import { path } from "@vuepress/utils";
+import { getDirname, path } from "@vuepress/utils";
 
 import type { App } from "@vuepress/core";
 import type { HopeThemePluginsOptions } from "../shared";
+
+const __dirname = getDirname(import.meta.url);
 
 export const getLayoutConfig = (
   app: App,

@@ -1,9 +1,11 @@
 import { defaultTheme } from "@vuepress/theme-default";
-import { path } from "@vuepress/utils";
+import { getDirname, path } from "@vuepress/utils";
 import { blogPlugin } from "vuepress-plugin-blog2";
 
 import type { Theme } from "@vuepress/core";
 import type { DefaultThemeOptions } from "@vuepress/theme-default";
+
+const __dirname = getDirname(import.meta.url);
 
 export const blogTheme = (options: DefaultThemeOptions): Theme => ({
   name: "blog-theme",
