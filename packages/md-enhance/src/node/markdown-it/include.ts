@@ -66,9 +66,7 @@ export const handleInclude = (
     result.push("@include-pop()");
   }
 
-  return result
-    .join("\n")
-    .replace(/\n?$/, "\n");
+  return result.join("\n").replace(/\n?$/, "\n");
 };
 
 export const resolveInclude = (
@@ -86,7 +84,8 @@ export const resolveInclude = (
         if (match) {
           const [, includePath, lineStart, lineEnd] = match;
           const actualPath = options.getPath(includePath);
-          const resolvedPath = options.resolveImagePath || options.resolveLinkPath;
+          const resolvedPath =
+            options.resolveImagePath || options.resolveLinkPath;
 
           const content = handleInclude(
             {
@@ -134,75 +133,90 @@ export const createIncludeCoreRule =
 const SYNTAX_PUSH_RE = /^@include-push\(([^)]*?)\)$/;
 const SYNTAX_POP_RE = /^@include-pop\(\)$/;
 
-const includePushRule: RuleBlock = (state, startLine, _, silent): boolean  => {
-  // const env = <
-  // MarkdownEnv & {
-  //   /** included current paths */
-  //   includedPaths?: string[];
-  // }
-  // >state.env;
-
+const includePushRule: RuleBlock = (state, startLine, _, silent): boolean => {
   const pos = state.bMarks[startLine] + state.tShift[startLine];
   const max = state.eMarks[startLine];
   const content = state.src.slice(pos, max);
   let result: boolean = content.startsWith("@include-push");
+
   if (result) {
     // check if it’s matched the syntax
     const match = content.match(SYNTAX_PUSH_RE);
 
     if (match) {
-      if (silent) { return true; }
+      if (silent) return true;
+
       const [, includePath] = match;
-      state.line  = startLine + 1;
-      const token = state.push('vth_inc_push', '', 0);
-      token.map   = [ startLine, state.line ];
-      token.info  = includePath;
-      token.markup = 'incPush';
+
+      state.line = startLine + 1;
+      const token = state.push("vth_inc_push", "", 0);
+
+      token.map = [startLine, state.line];
+      token.info = includePath;
+      token.markup = "incPush";
     } else {
       result = false;
     }
   }
+
   return result;
-}
+};
 
 const includePopRule: RuleBlock = (state, startLine, _, silent): boolean => {
   const pos = state.bMarks[startLine] + state.tShift[startLine];
   const max = state.eMarks[startLine];
   const content = state.src.slice(pos, max);
   let result: boolean = content.startsWith("@include-pop");
+
   if (result) {
     const match = content.match(SYNTAX_POP_RE);
+
     if (match) {
-      if (silent) { return true; }
+      if (silent) return true;
+
       state.line = startLine + 1;
-      const token = state.push('vth_inc_pop', '', 0);
-      token.map   = [ startLine, state.line ];
-      token.markup = 'incPop';
-    } else {
-      result = false;
-    }
+
+      const token = state.push("vth_inc_pop", "", 0);
+
+      token.map = [startLine, state.line];
+      token.markup = "incPop";
+    } else result = false;
   }
+
   return result;
-}
+};
 
-const resolveRelatedLink = (attr: string, token: Token, filePath: string, includedPaths?: string[]):void => {
-  const url = token.attrs?.[token.attrIndex(attr)][1];
+const resolveRelatedLink = (
+  attr: string,
+  token: Token,
+  filePath: string,
+  includedPaths?: string[]
+): void => {
+  const attrIndex = token.attrIndex(attr);
+  const url = token.attrs?.[attrIndex][1];
 
-  if (url?.startsWith('.') && Array.isArray(includedPaths)) {
+  if (url?.startsWith(".") && Array.isArray(includedPaths)) {
     const { length } = includedPaths;
 
-    if (length ) {
-      const includeDir = path.relative(path.dirname(filePath), includedPaths[length-1]);
+    if (length) {
+      const includeDir = path.relative(
+        path.dirname(filePath),
+        includedPaths[length - 1]
+      );
 
-      token.attrs![aIndex][1] = `.${path.sep}${path.join(includeDir, url)}`;
+      token.attrs![attrIndex][1] = `.${path.sep}${path.join(includeDir, url)}`;
     }
   }
 };
 
 export const include: PluginWithOptions<IncludeOptions> = (
   md,
-  { getPath = (path: string): string => path, deep = false,
-    resolveLinkPath = true, resolveImagePath = true } = {}
+  {
+    getPath = (path: string): string => path,
+    deep = false,
+    resolveLinkPath = true,
+    resolveImagePath = true,
+  } = {}
 ): void => {
   // add md_import core rule
   md.core.ruler.after(
@@ -212,54 +226,76 @@ export const include: PluginWithOptions<IncludeOptions> = (
   );
 
   if (resolveImagePath || resolveLinkPath) {
-    md.block.ruler.before(
-      "table",
-      "md_include_push",
-      includePushRule,
-      {alt: [ 'paragraph', 'reference', 'blockquote', 'list' ]},
-    );
-    md.block.ruler.before(
-      "table",
-      "md_include_pop",
-      includePopRule,
-      {alt: [ 'paragraph', 'reference', 'blockquote', 'list' ]},
-    );
+    md.block.ruler.before("table", "md_include_push", includePushRule, {
+      alt: ["paragraph", "reference", "blockquote", "list"],
+    });
+    md.block.ruler.before("table", "md_include_pop", includePopRule, {
+      alt: ["paragraph", "reference", "blockquote", "list"],
+    });
 
-    md.renderer.rules["vth_inc_push"] = function (tokens, idx, _options, env, _self) {
+    md.renderer.rules["vth_inc_push"] = function (
+      tokens,
+      idx,
+      _options,
+      env,
+      _self
+    ) {
       const token = tokens[idx];
       const includedPaths = env.includedPaths || (env.includedPaths = []);
+
       includedPaths.push(token.info);
+
       return "";
     };
 
-    md.renderer.rules["vth_inc_pop"] = function (_tokens, _idx, _options, env, _self) {
+    md.renderer.rules["vth_inc_pop"] = function (
+      _tokens,
+      _idx,
+      _options,
+      env,
+      _self
+    ) {
       const includedPaths = env.includedPaths;
-      if (Array.isArray(includedPaths)) {
-        includedPaths.pop();
-      } else {
-        console.error(`Include: inc_pop failed, no inc_push op.`);
-      }
+
+      if (Array.isArray(includedPaths)) includedPaths.pop();
+      else console.error(`Include: inc_pop failed, no inc_push op.`);
+
       return "";
     };
 
     if (resolveImagePath) {
       const defaultRender = md.renderer.rules.image;
+
       md.renderer.rules.image = function (tokens, idx, options, env, self) {
         const token = tokens[idx];
-        resolveRelatedLink("src", token, env.filePath, env.includedPaths);
+
+        if (env.filePath)
+          resolveRelatedLink("src", token, env.filePath, env.includedPaths);
+
         // pass token to default renderer.
         return defaultRender!(tokens, idx, options, env, self);
       };
     }
 
     if (resolveLinkPath) {
-      const defaultRender = md.renderer.rules["link_open"]  || function(tokens, idx, options, _, self) {
-        return self.renderToken(tokens, idx, options);
-      };
+      const defaultRender =
+        md.renderer.rules["link_open"] ||
+        function (tokens, idx, options, _, self) {
+          return self.renderToken(tokens, idx, options);
+        };
 
-      md.renderer.rules["link_open"] = function (tokens, idx, options, env, self) {
+      md.renderer.rules["link_open"] = function (
+        tokens,
+        idx,
+        options,
+        env,
+        self
+      ) {
         const token = tokens[idx];
-        resolveRelatedLink("href", token, env.filePath, env.includedPaths);
+
+        if (env.filePath)
+          resolveRelatedLink("href", token, env.filePath, env.includedPaths);
+
         // pass token to default renderer.
         return defaultRender(tokens, idx, options, env, self);
       };

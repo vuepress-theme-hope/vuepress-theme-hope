@@ -288,7 +288,6 @@ foo
       mdFixtureDeepIncludeRelative
     );
 
-
     it("should resolve the relative path of link/image in the include md file", () => {
       const source = `\
 @include(${mdFixturePathRelative})
@@ -320,8 +319,9 @@ foo
       const env: IncludeEnv = {
         filePath: __filename,
       };
-      const mdWithOptions = MarkdownIt()
-      .use(include, { resolveLinkPath: false })
+      const mdWithOptions = MarkdownIt().use(include, {
+        resolveLinkPath: false,
+      });
       const rendered = mdWithOptions.render(source, env);
 
       expect(rendered).toEqual(expected);
@@ -340,8 +340,9 @@ foo
       const env: IncludeEnv = {
         filePath: __filename,
       };
-      const mdWithOptions = MarkdownIt()
-      .use(include, { resolveImagePath: false })
+      const mdWithOptions = MarkdownIt().use(include, {
+        resolveImagePath: false,
+      });
       const rendered = mdWithOptions.render(source, env);
 
       expect(rendered).toEqual(expected);
@@ -360,8 +361,10 @@ foo
       const env: IncludeEnv = {
         filePath: __filename,
       };
-      const mdWithOptions = MarkdownIt()
-      .use(include, { resolveImagePath: false, resolveLinkPath: false })
+      const mdWithOptions = MarkdownIt().use(include, {
+        resolveImagePath: false,
+        resolveLinkPath: false,
+      });
       const rendered = mdWithOptions.render(source, env);
 
       expect(rendered).toEqual(expected);
@@ -382,12 +385,14 @@ foo
       const env: IncludeEnv = {
         filePath: __filename,
       };
-      const mdWithOptions = MarkdownIt()
-      .use(include, { deep: true })
+      const mdWithOptions = MarkdownIt().use(include, { deep: true });
       const rendered = mdWithOptions.render(source, env);
 
       expect(rendered).toEqual(expected);
-      expect(env.includedFiles).toEqual([mdFixtureDeepIncludePath, mdFixturePath]);
+      expect(env.includedFiles).toEqual([
+        mdFixtureDeepIncludePath,
+        mdFixturePath,
+      ]);
     });
 
     it("should resolve the correct relative path of link/image after the include md file", () => {
@@ -403,13 +408,12 @@ foo
 `;
 
       const env: IncludeEnv = {
-        filePath: __filename + '1',
+        filePath: __filename + "1",
       };
       const rendered = md.render(source, env);
 
       expect(rendered).toEqual(expected);
       expect(env.includedFiles).toEqual([mdFixturePath]);
     });
-
   });
 });
