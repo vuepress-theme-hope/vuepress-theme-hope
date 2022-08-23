@@ -5,7 +5,7 @@ import {
   preparePagesData,
   preparePagesRoutes,
 } from "@vuepress/core";
-import { path } from "@vuepress/utils";
+import { getDirname, path } from "@vuepress/utils";
 import { watch } from "chokidar";
 
 import { prepareCategory } from "./category";
@@ -14,6 +14,8 @@ import { getPageMap, logger } from "./utils";
 
 import type { PluginFunction } from "@vuepress/core";
 import type { BlogOptions } from "../shared";
+
+const __dirname = getDirname(import.meta.url);
 
 export const blogPlugin =
   (options: BlogOptions): PluginFunction =>
