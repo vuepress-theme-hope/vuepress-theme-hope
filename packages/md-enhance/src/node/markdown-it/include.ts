@@ -185,14 +185,15 @@ const includePopRule: RuleBlock = (state, startLine, _, silent): boolean => {
 }
 
 const resolveRelatedLink = (attr: string, token: Token, filePath: string, includedPaths?: string[]):void => {
-  const aIndex = token.attrIndex(attr);
-  let url = token.attrs?.[aIndex][1];
-  if (url?.startsWith('.') && filePath) {
-    const len = Array.isArray(includedPaths) && includedPaths.length;
-    if (len) {
-      const includeDir = path.relative(path.dirname(filePath), includedPaths[len-1]);
-      url = "." + path.sep + path.join(includeDir, url);
-      token.attrs![aIndex][1] = url;
+  const url = token.attrs?.[token.attrIndex(attr)][1];
+
+  if (url?.startsWith('.') && Array.isArray(includedPaths)) {
+    const { length } = includedPaths;
+
+    if (length ) {
+      const includeDir = path.relative(path.dirname(filePath), includedPaths[length-1]);
+
+      token.attrs![aIndex][1] = `.${path.sep}${path.join(includeDir, url)}`;
     }
   }
 };
