@@ -125,7 +125,7 @@ overrides:
         - selector: default
           format:
             - camelCase
-          leadingUnderscore: allow
+          leadingUnderscore: allowSingleOrDouble
           trailingUnderscore: allow
 
         - selector:
@@ -134,7 +134,7 @@ overrides:
             - camelCase
             - PascalCase
             - UPPER_CASE
-          leadingUnderscore: allow
+          leadingUnderscore: allowSingleOrDouble
           trailingUnderscore: allow
 
         - selector:

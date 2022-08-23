@@ -147,6 +147,7 @@ export const mdEnhancePlugin =
         // FIXME:
         // this is a workaround for https://github.com/vitejs/vite/issues/7621
         // Remove this when issue is fixed
+        // eslint-disable-next-line @typescript-eslint/naming-convention
         "vuepress-plugin-md-enhance/lib/client/SlidePage": path.resolve(
           __dirname,
           "../client/SlidePage.js"

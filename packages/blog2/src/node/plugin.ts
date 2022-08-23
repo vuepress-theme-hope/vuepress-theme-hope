@@ -42,6 +42,7 @@ export const blogPlugin =
         // FIXME:
         // this is a workaround for https://github.com/vitejs/vite/issues/7621
         // Remove this when issue is fixed, also @vuepress/utils should be removed
+        // eslint-disable-next-line @typescript-eslint/naming-convention
         "vuepress-plugin-blog2/lib/client": path.resolve(
           __dirname,
           "../client/index.js"
