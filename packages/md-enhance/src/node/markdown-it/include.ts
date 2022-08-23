@@ -3,9 +3,9 @@ import { NEWLINES_RE } from "./utils";
 
 import type { MarkdownEnv } from "@vuepress/markdown";
 import type { PluginWithOptions } from "markdown-it";
+import type { RuleBlock } from "markdown-it/lib/parser_block";
 import type { RuleCore } from "markdown-it/lib/parser_core";
-import { RuleBlock } from "markdown-it/lib/parser_block";
-import Token from "markdown-it/lib/token";
+import type { default as Token } from "markdown-it/lib/token";
 import type { IncludeOptions } from "../../shared";
 
 interface ImportFileInfo {
@@ -18,6 +18,13 @@ interface IncludeInfo {
   cwd: string | null;
   includedFiles: string[];
   resolvedPath?: boolean;
+}
+
+interface IncludeEnv extends MarkdownEnv {
+  /** included current paths */
+  includedPaths?: string[];
+  /** included files */
+  includedFiles?: string[];
 }
 
 // regexp to match the import syntax
@@ -116,12 +123,7 @@ export const resolveInclude = (
 export const createIncludeCoreRule =
   (options: Required<IncludeOptions>): RuleCore =>
   (state): void => {
-    const env = <
-      MarkdownEnv & {
-        /** Files included */
-        includedFiles?: string[];
-      }
-    >state.env;
+    const env = <IncludeEnv>state.env;
     const includedFiles = env.includedFiles || (env.includedFiles = []);
 
     state.src = resolveInclude(state.src, options, {
@@ -149,7 +151,7 @@ const includePushRule: RuleBlock = (state, startLine, _, silent): boolean => {
       const [, includePath] = match;
 
       state.line = startLine + 1;
-      const token = state.push("vth_inc_push", "", 0);
+      const token = state.push("include_push", "", 0);
 
       token.map = [startLine, state.line];
       token.info = includePath;
@@ -176,7 +178,7 @@ const includePopRule: RuleBlock = (state, startLine, _, silent): boolean => {
 
       state.line = startLine + 1;
 
-      const token = state.push("vth_inc_pop", "", 0);
+      const token = state.push("include_pop", "", 0);
 
       token.map = [startLine, state.line];
       token.markup = "incPop";
@@ -233,13 +235,12 @@ export const include: PluginWithOptions<IncludeOptions> = (
       alt: ["paragraph", "reference", "blockquote", "list"],
     });
 
-    md.renderer.rules["vth_inc_push"] = function (
+    md.renderer.rules["include_push"] = (
       tokens,
       idx,
       _options,
-      env,
-      _self
-    ) {
+      env: IncludeEnv
+    ): string => {
       const token = tokens[idx];
       const includedPaths = env.includedPaths || (env.includedPaths = []);
 
@@ -248,49 +249,53 @@ export const include: PluginWithOptions<IncludeOptions> = (
       return "";
     };
 
-    md.renderer.rules["vth_inc_pop"] = function (
+    md.renderer.rules["include_pop"] = (
       _tokens,
       _idx,
       _options,
-      env,
-      _self
-    ) {
+      env: IncludeEnv
+    ): string => {
       const includedPaths = env.includedPaths;
 
       if (Array.isArray(includedPaths)) includedPaths.pop();
-      else console.error(`Include: inc_pop failed, no inc_push op.`);
+      else console.error(`Include: include_pop failed, no include_push.`);
 
       return "";
     };
 
     if (resolveImagePath) {
-      const defaultRender = md.renderer.rules.image;
+      const defaultRender = md.renderer.rules.image!;
 
-      md.renderer.rules.image = function (tokens, idx, options, env, self) {
+      md.renderer.rules.image = (
+        tokens,
+        idx,
+        options,
+        env: IncludeEnv,
+        self
+      ): string => {
         const token = tokens[idx];
 
         if (env.filePath)
           resolveRelatedLink("src", token, env.filePath, env.includedPaths);
 
         // pass token to default renderer.
-        return defaultRender!(tokens, idx, options, env, self);
+        return defaultRender(tokens, idx, options, env, self);
       };
     }
 
     if (resolveLinkPath) {
       const defaultRender =
         md.renderer.rules["link_open"] ||
-        function (tokens, idx, options, _, self) {
-          return self.renderToken(tokens, idx, options);
-        };
+        ((tokens, idx, options, _env, self): string =>
+          self.renderToken(tokens, idx, options));
 
-      md.renderer.rules["link_open"] = function (
+      md.renderer.rules["link_open"] = (
         tokens,
         idx,
         options,
-        env,
+        env: IncludeEnv,
         self
-      ) {
+      ): string => {
         const token = tokens[idx];
 
         if (env.filePath)
