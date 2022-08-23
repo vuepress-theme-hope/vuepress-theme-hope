@@ -5,6 +5,7 @@ import {
   preparePagesData,
   preparePagesRoutes,
 } from "@vuepress/core";
+import { path } from "@vuepress/utils";
 import { watch } from "chokidar";
 
 import { prepareCategory } from "./category";
@@ -34,6 +35,16 @@ export const blogPlugin =
       define: () => ({
         BLOG_META_SCOPE: metaScope,
       }),
+
+      alias: {
+        // FIXME:
+        // this is a workaround for https://github.com/vitejs/vite/issues/7621
+        // Remove this when issue is fixed, also @vuepress/utils should be removed
+        "vuepress-plugin-blog2/lib/client": path.resolve(
+          __dirname,
+          "../client/index.js"
+        ),
+      },
 
       extendsPage: (page): void => {
         if (filter(page))

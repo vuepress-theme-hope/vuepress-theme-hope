@@ -745,6 +745,7 @@ importers:
       '@vuepress/client': 2.0.0-beta.50
       '@vuepress/core': 2.0.0-beta.50
       '@vuepress/shared': 2.0.0-beta.50
+      '@vuepress/utils': 2.0.0-beta.50
       chokidar: ^3.5.3
       rimraf: 3.0.2
       vue: ^3.2.37
@@ -754,6 +755,7 @@ importers:
       '@vuepress/client': 2.0.0-beta.50
       '@vuepress/core': 2.0.0-beta.50
       '@vuepress/shared': 2.0.0-beta.50
+      '@vuepress/utils': 2.0.0-beta.50
       chokidar: 3.5.3
       vue: 3.2.37
       vue-router: 4.1.4_vue@3.2.37
