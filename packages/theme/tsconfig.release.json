@@ -1,8 +1,0 @@
-{
-  "extends": "../../tsconfig.build.base.json",
-  "references": [
-    { "path": "./tsconfig.esm.json" },
-    { "path": "./tsconfig.release.cjs.json" }
-  ],
-  "files": []
-}
