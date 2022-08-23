@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.build.base.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "lib": ["dom", "es2021"],
+    "rootDir": "./src",
+    "outDir": "./lib",
+    "paths": {
+      "@theme-hope/*": ["./src/client/*"]
+    }
+  },
+  "include": ["./src", "./src/*.d.ts"]
+}
