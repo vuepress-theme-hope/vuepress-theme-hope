@@ -36,7 +36,7 @@ const msg = ref("Hello World!");
 </template>
 ```
 
-@imports
+@import
 
 ```json
 {
@@ -67,7 +67,7 @@ const msg = ref("Hello Playground!");
 </template>
 ```
 
-@imports
+@import
 
 ```json
 {
@@ -77,7 +77,7 @@ const msg = ref("Hello Playground!");
 }
 ```
 
-@settings
+@setting
 
 ```json
 {
@@ -126,7 +126,7 @@ const msg = ref("Hello Playground!");
 </template>
 ```
 
-@settings
+@setting
 
 ```json
 {

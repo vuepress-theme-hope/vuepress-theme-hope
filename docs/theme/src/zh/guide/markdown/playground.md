@@ -220,7 +220,7 @@ const msg = ref("Hello Playground!");
 </template>
 ```
 
-@imports user-imports.json
+@import user-imports.json
 
 ```json
 {
@@ -230,7 +230,7 @@ const msg = ref("Hello Playground!");
 }
 ```
 
-@settings
+@setting
 
 ```json
 {
@@ -285,7 +285,7 @@ const msg = ref("Hello Playground!");
 </template>
 ```
 
-@imports user-imports.json
+@import user-imports.json
 
 ```json
 {
@@ -295,7 +295,7 @@ const msg = ref("Hello Playground!");
 }
 ```
 
-@settings
+@setting
 
 ```json
 {
@@ -334,7 +334,7 @@ const msg = ref("Hello Playground!");
 </template>
 ```
 
-@settings
+@setting
 
 ```json
 {
@@ -363,7 +363,7 @@ const msg = ref("Hello Playground!");
 </template>
 ```
 
-@settings
+@setting
 
 ```json
 {
@@ -399,7 +399,7 @@ const msg = ref("Hello Playground!");
 </template>
 ```
 
-@settings
+@setting
 
 ```json
 {
@@ -432,7 +432,7 @@ const msg = ref("Hello Playground!");
 </template>
 ```
 
-@settings
+@setting
 
 ```json
 {

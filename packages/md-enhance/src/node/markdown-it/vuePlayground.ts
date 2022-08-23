@@ -13,15 +13,23 @@ export const DEFAULT_VUE_PLAYGROUND_OPTIONS: VuePlaygroundOptions = {
   layout: "vertical",
   ssr: false,
 };
+const VUE_SUPPORTED_EXTENSIONS = [
+  "html",
+  "js",
+  "ts",
+  "vue",
+  "jsx",
+  "tsx",
+  "json",
+];
 
 const encodeFiles = (playgroundData: PlaygroundData): string =>
   Buffer.from(
     JSON.stringify(
       Object.fromEntries(
-        Object.entries(playgroundData.files).map(([key, config]) => [
-          key,
-          config.content,
-        ])
+        Object.entries(playgroundData.files)
+          .filter(([, { lang }]) => VUE_SUPPORTED_EXTENSIONS.includes(lang))
+          .map(([key, config]) => [key, config.content])
       )
     )
   ).toString("base64");

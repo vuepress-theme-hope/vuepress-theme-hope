@@ -4,13 +4,21 @@ import MarkdownIt from "markdown-it";
 import { playground } from "../../src/node/markdown-it";
 
 describe("playground", () => {
-  const markdownIt = MarkdownIt({ linkify: true }).use(playground);
+  const markdownIt = MarkdownIt({ linkify: true }).use(playground, {
+    name: "playground",
+    openRender: (data) => {
+      expect(data).toMatchSnapshot();
+
+      return "";
+    },
+    closeRender: () => "",
+  });
 
   it("Should resolve playground info", () => {
-    expect(
-      markdownIt.render(
-        `
+    markdownIt.render(
+      `
 ::: playground Playground demo
+
 @file App.vue
 \`\`\`vue
 <script setup>
@@ -22,13 +30,17 @@ const msg = ref('Hello World!')
   <input v-model="msg" />
 </template>
 \`\`\`
+
 @file Comp.vue
+
 \`\`\`vue
 <template>
   <div>Comp</div>
 </template>
 \`\`\`
-@imports
+
+@import
+
 \`\`\`json
 {
   "imports": {
@@ -38,17 +50,17 @@ const msg = ref('Hello World!')
 \`\`\`
 :::
 `,
-        {}
-      )
-    ).toMatchSnapshot();
+      {}
+    );
   });
 
   it("Should resolve playground info with settings", () => {
-    expect(
-      markdownIt.render(
-        `
+    markdownIt.render(
+      `
 ::: playground Playground demo2
+
 @file App.vue
+
 \`\`\`vue
 <script setup>
 import { ref } from 'vue'
@@ -59,34 +71,36 @@ const msg = ref('Hello World!')
   <input v-model="msg" />
 </template>
 \`\`\`
+
 @file Comp.vue
+
 \`\`\`vue
 <template>
   <div>Comp</div>
 </template>
 \`\`\`
-@settings
+
+@setting
+
 \`\`\`json
 {
-  "mode": "external",
-  "external": {
-    "base": "https://element-plus.run/"
-  }
+  "service": "https://element-plus.run/"
 }
 \`\`\`
+
 :::
 `,
-        {}
-      )
-    ).toMatchSnapshot();
+      {}
+    );
   });
 
   it("Should resolve playground info with settings", () => {
-    expect(
-      markdownIt.render(
-        `
-::: playground#customId Playground demo2
+    markdownIt.render(
+      `
+::: playground Playground demo2
+
 @file App.vue
+
 \`\`\`vue
 <script setup>
 import { ref } from 'vue'
@@ -97,7 +111,9 @@ const msg = ref('Hello World!')
   <input v-model="msg" />
 </template>
 \`\`\`
-@imports user-imports.json
+
+@import
+
 \`\`\`json
 {
   "imports": {
@@ -105,19 +121,18 @@ const msg = ref('Hello World!')
   }
 }
 \`\`\`
-@settings
+
+@setting
+
 \`\`\`json
 {
-  "mode": "external",
-  "external": {
-    "base": "https://element-plus.run/"
-  }
+  "service": "https://element-plus.run/"
 }
 \`\`\`
+
 :::
 `,
-        {}
-      )
-    ).toMatchSnapshot();
+      {}
+    );
   });
 });

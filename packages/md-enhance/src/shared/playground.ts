@@ -1,6 +1,6 @@
 export interface PlaygroundCodeConfig {
-  lang?: string;
-  content?: string;
+  lang: string;
+  content: string;
 }
 
 export interface PlaygroundData {

@@ -5,8 +5,7 @@ import type { RuleBlock } from "markdown-it/lib/parser_block";
 import type { PlaygroundData, PlaygroundOptions } from "../../shared";
 
 const AT_MARKER = `@`;
-const SUPPORTED_EXTENSIONS = ["html", "js", "ts", "vue", "jsx", "tsx", "json"];
-const VALID_MARKERS = ["file", "imports", "settings"];
+const VALID_MARKERS = ["file", "import", "setting"];
 
 const getPlaygroundRule =
   (name: string): RuleBlock =>
@@ -278,16 +277,16 @@ export const playground: PluginWithOptions<PlaygroundOptions> = (
           // File rule must contain a valid file name
           if (!info) continue;
           currentKey = info;
-        } else if (type === "imports_open")
+        } else if (type === "import_open")
           currentKey = info || "import-map.json";
 
-        if (type === "settings_open") foundSettings = true;
-        if (type === "settings_close") foundSettings = false;
+        if (type === "setting_open") foundSettings = true;
+        if (type === "setting_close") foundSettings = false;
 
         if (
           type === "file_close" ||
-          type === "imports_close" ||
-          type === "settings_close" ||
+          type === "import_close" ||
+          type === "setting_close" ||
           !content
         ) {
           tokens[i].type = `${name}_empty`;
@@ -304,11 +303,7 @@ export const playground: PluginWithOptions<PlaygroundOptions> = (
         }
 
         // add code block content
-        if (
-          type === "fence" &&
-          currentKey &&
-          SUPPORTED_EXTENSIONS.includes(info)
-        )
+        if (type === "fence" && currentKey)
           playgroundData.files[currentKey] = {
             lang: info,
             content: content,
