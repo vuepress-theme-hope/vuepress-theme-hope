@@ -2,8 +2,6 @@ import { path } from "@vuepress/utils";
 import { config } from "docs-shared";
 import theme from "./theme";
 
-const base = <"/" | `/${string}/`>process.env.BASE || "/";
-
 export default config(
   {
     base: `md-enhance`,

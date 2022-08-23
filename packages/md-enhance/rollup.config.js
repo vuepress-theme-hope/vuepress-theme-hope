@@ -49,7 +49,7 @@ export default [
   ...rollupTypescript("client/components/FlowChart", {
     external: [
       "@vueuse/core",
-      "flowchart.js",
+      "flowchart.js/src/flowchart.parse",
       "vue",
       "vuepress-shared/lib/client",
       /\.scss$/,
@@ -61,7 +61,13 @@ export default [
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/Playground", {
-    external: ["@vuepress/client", "@vue/repl", "vue", /\.scss$/],
+    external: [
+      "@vuepress/client",
+      "@vue/repl",
+      "vue",
+      "vuepress-shared/lib/client",
+      /\.scss$/,
+    ],
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/Presentation", {
