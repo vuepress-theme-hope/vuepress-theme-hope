@@ -1,16 +1,12 @@
 import { config } from "docs-shared";
 import theme from "./theme";
 
-const base = <"/" | `/${string}/`>process.env.BASE || "/";
-
 export default config(
   {
     base: `components`,
     indexName: "vuepress-theme-hope-components",
   },
   {
-    base: `${base}components/`,
-
     locales: {
       "/": {
         lang: "en-US",

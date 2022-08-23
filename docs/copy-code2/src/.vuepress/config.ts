@@ -1,7 +1,6 @@
 import { config } from "docs-shared";
 import theme from "./theme";
 
-const base = <"/" | `/${string}/`>process.env.BASE || "/";
 export default config(
   {
     base: `copy-code`,

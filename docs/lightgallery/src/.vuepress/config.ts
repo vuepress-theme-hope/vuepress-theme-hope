@@ -2,8 +2,6 @@ import { config } from "docs-shared";
 import { lightgalleryPlugin } from "vuepress-plugin-lightgallery";
 import theme from "./theme";
 
-const base = <"/" | `/${string}/`>process.env.BASE || "/";
-
 export default config(
   {
     base: `lightgallery`,

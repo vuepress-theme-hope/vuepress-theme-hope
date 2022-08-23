@@ -157,8 +157,14 @@ export const mdEnhancePlugin =
         }
 
         if (flowchartEnable) {
-          addViteOptimizeDepsInclude({ app, config }, "flowchart.js");
-          addViteSsrExternal({ app, config }, "flowchart.js");
+          addViteOptimizeDepsInclude(
+            { app, config },
+            "flowchart.js/src/flowchart.parse"
+          );
+          addViteSsrExternal(
+            { app, config },
+            "flowchart.js/src/flowchart.parse"
+          );
         }
 
         if (mermaidEnable) {

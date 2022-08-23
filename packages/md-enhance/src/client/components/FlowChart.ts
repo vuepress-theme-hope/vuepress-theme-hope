@@ -46,11 +46,13 @@ export default defineComponent({
 
     onMounted(() => {
       void Promise.all([
-        import(/* webpackChunkName: "flowchart" */ "flowchart.js"),
+        import(
+          /* webpackChunkName: "flowchart" */ "flowchart.js/src/flowchart.parse"
+        ),
         // delay
         new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
       ]).then(([flowchart]) => {
-        const { parse } = flowchart;
+        const { default: parse } = flowchart;
 
         svg = parse(decodeURIComponent(props.code));
 
