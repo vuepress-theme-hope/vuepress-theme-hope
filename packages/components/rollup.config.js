@@ -47,7 +47,7 @@ export default [
     external: ["vue"],
   }),
   ...rollupTypescript("client/components/YouTube", {
-    external: ["vue"],
+    external: ["@vuepress/client", "vue"],
   }),
   ...rollupTypescript("client/composables/index", {
     external: ["@vueuse/core"],
