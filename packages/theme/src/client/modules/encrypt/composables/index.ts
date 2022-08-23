@@ -1,3 +1,3 @@
-export * from "./global";
-export * from "./path";
-export * from "./utils";
+export * from "./global.js";
+export * from "./path.js";
+export * from "./utils.js";

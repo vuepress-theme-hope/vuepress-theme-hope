@@ -1,7 +1,7 @@
-import { photoSwipePlugin } from "./plugin";
+import { photoSwipePlugin } from "./plugin.js";
 
-export * from "./locales";
-export * from "./plugin";
-export * from "../shared";
+export * from "./locales.js";
+export * from "./plugin.js";
+export * from "../shared/index.js";
 
 export default photoSwipePlugin;

@@ -1,6 +1,6 @@
 import { defineUserConfig } from "@vuepress/cli";
 import { commentPlugin } from "vuepress-plugin-comment2";
-import { commentTheme } from "./theme";
+import { commentTheme } from "./theme.js";
 
 const base = <"/" | `/${string}/`>process.env.BASE || "/";
 

@@ -1,8 +1,8 @@
 import { defineComponent, h, ref } from "vue";
 
-import { LOADING_SVG, PLAY_SVG } from "./icons";
-import { useExternalPlayground } from "../composables";
-import { parsePlaygroundSettings } from "../utils";
+import { LOADING_SVG, PLAY_SVG } from "./icons.js";
+import { useExternalPlayground } from "../composables/index.js";
+import { parsePlaygroundSettings } from "../utils/index.js";
 
 import type { VNode } from "vue";
 

@@ -6,9 +6,9 @@ import {
   getTag,
 } from "vuepress-shared/lib/client";
 
-import { useCategoryMap } from "./categoryMap";
-import { useBlogOptions } from "./options";
-import { useTagMap } from "./tagMap";
+import { useCategoryMap } from "./categoryMap.js";
+import { useBlogOptions } from "./options.js";
+import { useTagMap } from "./tagMap.js";
 
 import { useThemeLocaleData } from "@theme-hope/composables";
 

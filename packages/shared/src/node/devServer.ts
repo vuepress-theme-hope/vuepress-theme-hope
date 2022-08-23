@@ -1,5 +1,5 @@
 import { removeEndingSlash, removeLeadingSlash } from "@vuepress/shared";
-import { mergeViteConfig } from "./vite";
+import { mergeViteConfig } from "./vite/index.js";
 
 import type { IncomingMessage, ServerResponse } from "node:http";
 import type { App } from "@vuepress/core";

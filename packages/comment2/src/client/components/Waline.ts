@@ -10,7 +10,7 @@ import type {
   CommentPluginFrontmatter,
   WalineLocaleConfig,
   WalineOptions,
-} from "../../shared";
+} from "../../shared/index.js";
 
 import "@waline/client/dist/waline.css";
 import "../styles/waline.scss";

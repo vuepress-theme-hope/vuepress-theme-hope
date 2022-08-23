@@ -1,6 +1,6 @@
 import { config } from "docs-shared";
 import { lightgalleryPlugin } from "vuepress-plugin-lightgallery";
-import theme from "./theme";
+import theme from "./theme.js";
 
 export default config(
   {

@@ -2,7 +2,7 @@ import { useRouteLocale } from "@vuepress/client";
 import { computed } from "vue";
 
 import type { ComputedRef } from "vue";
-import type { ConvertLocaleConfig } from "../../shared";
+import type { ConvertLocaleConfig } from "../../shared/index.js";
 
 /**
  * Get current locale config

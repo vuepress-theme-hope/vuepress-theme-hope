@@ -8,16 +8,16 @@ import {
   getLocales,
 } from "vuepress-shared";
 
-import { logger } from "./utils";
+import { logger } from "./utils.js";
 
-import { checkLinks, getCheckLinksStatus } from "./checkLink";
-import { markdownEnhanceLocales } from "./locales";
+import { checkLinks, getCheckLinksStatus } from "./checkLink.js";
 import {
   convertOptions,
   legacyCodeDemo,
   legacyCodeGroup,
   legacyFlowchart,
-} from "./compact";
+} from "./compact/index.js";
+import { markdownEnhanceLocales } from "./locales.js";
 import {
   CODE_DEMO_DEFAULT_SETTING,
   align,
@@ -46,13 +46,13 @@ import {
   tasklist,
   vPre,
   vueDemo,
-} from "./markdown-it";
-import { prepareConfigFile, prepareRevealPluginFile } from "./prepare";
-import { MATHML_TAGS } from "./utils";
+} from "./markdown-it/index.js";
+import { prepareConfigFile, prepareRevealPluginFile } from "./prepare.js";
+import { MATHML_TAGS } from "./utils.js";
 
 import type { PluginFunction } from "@vuepress/core";
 import type { KatexOptions } from "katex";
-import type { MarkdownEnhanceOptions } from "../shared";
+import type { MarkdownEnhanceOptions } from "../shared/index.js";
 
 export const mdEnhancePlugin =
   (

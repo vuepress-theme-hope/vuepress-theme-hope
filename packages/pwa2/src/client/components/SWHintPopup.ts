@@ -1,9 +1,9 @@
 import { Transition, defineComponent, h, onMounted, ref } from "vue";
 import { useLocaleConfig } from "vuepress-shared/lib/client";
 
-import { UpdateIcon } from "./icons";
-import { usePWAEvent } from "../composables";
-import { locales } from "../define";
+import { UpdateIcon } from "./icons.js";
+import { usePWAEvent } from "../composables/index.js";
+import { locales } from "../define.js";
 
 import type { VNode } from "vue";
 

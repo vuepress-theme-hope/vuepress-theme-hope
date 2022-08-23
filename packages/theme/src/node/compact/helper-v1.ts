@@ -1,7 +1,7 @@
-import { defineHopeConfig } from "./helper-v2";
-import { convertThemeConfig } from "./theme";
+import { defineHopeConfig } from "./helper-v2.js";
+import { convertThemeConfig } from "./theme.js";
 
-import { logger } from "../utils";
+import { logger } from "../utils/index.js";
 
 import type { Plugin, PluginConfig } from "@vuepress/core";
 import type { UserConfig } from "@vuepress/cli";

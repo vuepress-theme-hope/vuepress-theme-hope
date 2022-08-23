@@ -9,10 +9,10 @@ import {
 } from "vue";
 import { useRoute } from "vue-router";
 
-import type { LightGallery } from "lightgallery/lightgallery";
-import type { LightGallerySettings } from "lightgallery/lg-settings";
-import type { LgQuery } from "lightgallery/lgQuery";
-import type { GalleryItem } from "lightgallery/lg-utils";
+import type { LightGallery } from "lightgallery/lightgallery.js";
+import type { LightGallerySettings } from "lightgallery/lg-settings.js";
+import type { LgQuery } from "lightgallery/lgQuery.js";
+import type { GalleryItem } from "lightgallery/lg-utils.js";
 import type { VNode } from "vue";
 
 import "lightgallery/scss/lightgallery.scss";

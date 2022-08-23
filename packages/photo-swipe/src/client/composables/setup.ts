@@ -3,8 +3,8 @@ import { onMounted, watch } from "vue";
 import { useRoute } from "vue-router";
 import { useLocaleConfig } from "vuepress-shared/lib/client";
 
-import { delay, imageSelector, locales, options } from "../define";
-import { getImages } from "../utils";
+import { delay, imageSelector, locales, options } from "../define.js";
+import { getImages } from "../utils/index.js";
 
 import "photoswipe/dist/photoswipe.css";
 

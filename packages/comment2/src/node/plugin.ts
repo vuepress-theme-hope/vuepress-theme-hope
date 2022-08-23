@@ -9,11 +9,11 @@ import {
   noopModule,
 } from "vuepress-shared";
 
-import { convertOptions } from "./compact";
-import { walineLocales } from "./locales";
-import { logger } from "./utils";
+import { convertOptions } from "./compact.js";
+import { walineLocales } from "./locales.js";
+import { logger } from "./utils.js";
 
-import type { CommentOptions } from "../shared";
+import type { CommentOptions } from "../shared/index.js";
 import type { PluginFunction } from "@vuepress/core";
 
 const __dirname = getDirname(import.meta.url);

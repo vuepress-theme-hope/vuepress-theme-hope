@@ -1,4 +1,4 @@
-import type { AutoLink, TextItem } from "./utils";
+import type { AutoLink, TextItem } from "./utils.js";
 
 export type HopeThemeSidebarPageItem = AutoLink;
 

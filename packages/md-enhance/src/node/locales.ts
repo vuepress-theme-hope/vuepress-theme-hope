@@ -1,4 +1,4 @@
-import type { MarkdownEnhanceLocaleConfig } from "../shared";
+import type { MarkdownEnhanceLocaleConfig } from "../shared/index.js";
 
 export const markdownEnhanceLocales: MarkdownEnhanceLocaleConfig = {
   "/en/": {

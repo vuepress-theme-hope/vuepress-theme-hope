@@ -1,7 +1,7 @@
 import { usePageFrontmatter } from "@vuepress/client";
 import { computed, defineComponent, h, nextTick, ref } from "vue";
 
-import { LockIcon } from "./icons";
+import { LockIcon } from "./icons.js";
 import { useThemeLocaleData } from "@theme-hope/composables";
 
 import type { VNode } from "vue";

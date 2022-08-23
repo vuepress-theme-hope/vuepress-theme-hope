@@ -1,12 +1,12 @@
-import { renderAtom } from "./atom";
-import { renderJSON } from "./json";
-import { renderRSS } from "./rss";
+import { renderAtom } from "./atom/index.js";
+import { renderJSON } from "./json/index.js";
+import { renderRSS } from "./rss/index.js";
 
 import type {
   FeedContributor,
   FeedInitOptions,
   FeedItemOption,
-} from "../shared";
+} from "../shared/index.js";
 
 export class Feed {
   items: FeedItemOption[] = [];

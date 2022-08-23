@@ -3,7 +3,10 @@ import { computed, defineComponent, h } from "vue";
 import CommentProvider from "@CommentProvider";
 
 import type { VNode } from "vue";
-import type { CommentOptions, CommentPluginFrontmatter } from "../shared";
+import type {
+  CommentOptions,
+  CommentPluginFrontmatter,
+} from "../shared/index.js";
 
 declare const COMMENT_OPTIONS: CommentOptions;
 

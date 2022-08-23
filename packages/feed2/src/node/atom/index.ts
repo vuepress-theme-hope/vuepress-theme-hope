@@ -1,15 +1,15 @@
 import { encodeCDATA, encodeXML } from "vuepress-shared";
 import { js2xml } from "xml-js";
-import { FEED_GENERATOR } from "../utils";
+import { FEED_GENERATOR } from "../utils.js";
 
-import type { Feed } from "../feed";
-import type { FeedAuthor, FeedCategory } from "../../shared";
+import type { Feed } from "../feed.js";
+import type { FeedAuthor, FeedCategory } from "../../shared/index.js";
 import type {
   AtomAuthor,
   AtomCategory,
   AtomContent,
   AtomEntry,
-} from "./typings";
+} from "./typings.js";
 
 const genAuthororContributor = (author: FeedAuthor): AtomAuthor => {
   const { name = "Unknown", email, url } = author;

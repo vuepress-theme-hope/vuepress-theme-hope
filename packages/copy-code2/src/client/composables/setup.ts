@@ -28,9 +28,12 @@
 import { onMounted, watch } from "vue";
 import { useRoute } from "vue-router";
 import { Message, useLocaleConfig } from "vuepress-shared/lib/client";
-import { CHECK_ICON, COPY_BUTTON, PURE_COPY_BUTTON } from "../utils";
+import { CHECK_ICON, COPY_BUTTON, PURE_COPY_BUTTON } from "../utils/index.js";
 
-import type { CopyCodeOptions, CopyCodeLocaleConfig } from "../../shared";
+import type {
+  CopyCodeOptions,
+  CopyCodeLocaleConfig,
+} from "../../shared/index.js";
 
 declare const CODE_COPY_OPTIONS: Required<CopyCodeOptions>;
 declare const CODE_COPY_LOCALES: CopyCodeLocaleConfig;

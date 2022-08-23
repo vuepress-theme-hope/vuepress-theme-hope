@@ -1,9 +1,9 @@
 import { ClientOnly } from "@vuepress/client";
 import { defineComponent, h } from "vue";
 
-import ExternalPlayground from "./ExternalPlayground";
-import InternalPlayground from "./InternalPlayground";
-import { parsePlaygroundSettings } from "../utils";
+import ExternalPlayground from "./ExternalPlayground.js";
+import InternalPlayground from "./InternalPlayground.js";
+import { parsePlaygroundSettings } from "../utils/index.js";
 import { IMPORT_MAP_KEY } from "../../shared";
 
 import type { VNode } from "vue";

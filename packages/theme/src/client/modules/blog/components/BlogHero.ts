@@ -12,7 +12,7 @@ import type { VNode } from "vue";
 import type { HopeThemeBlogHomePageFrontmatter } from "../../../../shared";
 
 import "../styles/blog-hero.scss";
-import { SlideDownIcon } from "./icons";
+import { SlideDownIcon } from "./icons.js";
 
 export default defineComponent({
   name: "BlogHero",

@@ -7,7 +7,7 @@ import {
   getTag,
 } from "vuepress-shared/lib/client";
 
-import { useThemeLocaleData } from "./themeData";
+import { useThemeLocaleData } from "./themeData.js";
 
 import type {
   AuthorInfo,

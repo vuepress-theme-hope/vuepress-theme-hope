@@ -1,3 +1,3 @@
-export * from "./darkmodeIcon";
-export * from "./fullscreenIcon";
-export * from "./outlookIcon";
+export * from "./darkmodeIcon.js";
+export * from "./fullscreenIcon.js";
+export * from "./outlookIcon.js";

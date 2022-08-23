@@ -1,5 +1,5 @@
-import { droppedLogger, deprecatedLogger } from "./utils";
-import { logger } from "../utils";
+import { droppedLogger, deprecatedLogger } from "./utils.js";
+import { logger } from "../utils/index.js";
 
 import type {
   HopeThemeSidebarConfig,

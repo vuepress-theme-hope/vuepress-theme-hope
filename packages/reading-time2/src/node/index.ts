@@ -1,9 +1,9 @@
-import { readingTimePlugin } from "./plugin";
+import { readingTimePlugin } from "./plugin.js";
 
-export * from "./locales";
-export * from "./readingTime";
-export * from "./plugin";
-export * from "./use";
-export * from "../shared";
+export * from "./locales.js";
+export * from "./readingTime.js";
+export * from "./plugin.js";
+export * from "./use.js";
+export * from "../shared/index.js";
 
 export default readingTimePlugin;

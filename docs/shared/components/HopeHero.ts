@@ -2,7 +2,7 @@ import { h } from "vue";
 import type { FunctionalComponent, VNode } from "vue";
 
 import HomeHero from "vuepress-theme-hope/lib/client/components/HomeHero";
-import HopeLogo from "./HopeLogo";
+import HopeLogo from "./HopeLogo.js";
 
 const HopeHero: FunctionalComponent = (): VNode =>
   h(HomeHero, {}, { heroImage: () => h(HopeLogo) });

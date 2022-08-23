@@ -2,7 +2,7 @@ import { ensureEndingSlash } from "@vuepress/shared";
 import { getDirname, path } from "@vuepress/utils";
 
 import type { App } from "@vuepress/core";
-import type { ThemeStatus } from "../status";
+import type { ThemeStatus } from "../status/index.js";
 
 const __dirname = getDirname(import.meta.url);
 const CLIENT_FOLDER = ensureEndingSlash(

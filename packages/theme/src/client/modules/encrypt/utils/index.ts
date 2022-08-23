@@ -1,1 +1,1 @@
-export * from "./checkToken";
+export * from "./checkToken.js";

@@ -15,10 +15,10 @@ import {
   checkGitRepo,
   copy,
   ensureDirExistSync,
-} from "../utils";
+} from "../utils/index.js";
 
-import type { CreateI18n, Lang } from "./i18n";
-import type { PackageManager } from "../utils";
+import type { CreateI18n, Lang } from "./i18n.js";
+import type { PackageManager } from "../utils/index.js";
 
 const getWorkflowContent = (
   packageManager: PackageManager,

@@ -1,10 +1,10 @@
-import { lang2PathConfig, path2langConfig, supportedLangs } from "./config";
-import { Logger } from "../logger";
-import { deepAssign } from "../../shared";
+import { lang2PathConfig, path2langConfig, supportedLangs } from "./config.js";
+import { Logger } from "../logger.js";
+import { deepAssign } from "../../shared/index.js";
 
 import type { App, LocaleConfig } from "@vuepress/core";
-import type { HopeLang } from "./types";
-import type { ConvertLocaleConfig } from "../../shared";
+import type { HopeLang } from "./types.js";
+import type { ConvertLocaleConfig } from "../../shared/index.js";
 
 const reportStatus: Record<string, boolean> = {};
 

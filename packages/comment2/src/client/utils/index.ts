@@ -1,1 +1,1 @@
-export * from "./giscus";
+export * from "./giscus.js";

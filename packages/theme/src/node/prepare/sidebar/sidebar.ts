@@ -1,7 +1,7 @@
 import { removeLeadingSlash } from "@vuepress/shared";
 import { path } from "@vuepress/utils";
 
-import { getSorter } from "./sorter";
+import { getSorter } from "./sorter.js";
 import { logger } from "../../utils";
 
 import type { App, Page } from "@vuepress/core";

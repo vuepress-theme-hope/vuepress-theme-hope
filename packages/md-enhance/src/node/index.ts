@@ -1,8 +1,8 @@
-import { mdEnhancePlugin } from "./plugin";
+import { mdEnhancePlugin } from "./plugin.js";
 
-export * from "./markdown-it";
-export * from "./locales";
-export * from "./plugin";
-export * from "../shared";
+export * from "./markdown-it/index.js";
+export * from "./locales.js";
+export * from "./plugin.js";
+export * from "../shared/index.js";
 
 export default mdEnhancePlugin;

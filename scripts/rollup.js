@@ -5,7 +5,7 @@ import typescript from "@rollup/plugin-typescript";
 import copy from "rollup-plugin-copy";
 import dts from "rollup-plugin-dts";
 import { terser } from "rollup-plugin-terser";
-import shebang from "./shebang";
+import shebang from "./shebang.js";
 
 const isProduction = process.env.mode === "production";
 

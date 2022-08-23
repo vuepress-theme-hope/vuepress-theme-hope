@@ -8,12 +8,12 @@ import {
 import { getDirname, path } from "@vuepress/utils";
 import { watch } from "chokidar";
 
-import { prepareCategory } from "./category";
-import { prepareType } from "./type";
-import { getPageMap, logger } from "./utils";
+import { prepareCategory } from "./category.js";
+import { prepareType } from "./type.js";
+import { getPageMap, logger } from "./utils.js";
 
 import type { PluginFunction } from "@vuepress/core";
-import type { BlogOptions } from "../shared";
+import type { BlogOptions } from "../shared/index.js";
 
 const __dirname = getDirname(import.meta.url);
 

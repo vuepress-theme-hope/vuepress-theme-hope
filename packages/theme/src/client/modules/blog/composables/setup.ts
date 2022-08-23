@@ -1,10 +1,10 @@
-import { setupArticles } from "./articles";
-import { setupCategoryMap } from "./categoryMap";
-import { setupEncryptedArticles } from "./encryptedArticles";
-import { setupSlides } from "./slides";
-import { setupStars } from "./stars";
-import { setupTagMap } from "./tagMap";
-import { setupTimelines } from "./timelines";
+import { setupArticles } from "./articles.js";
+import { setupCategoryMap } from "./categoryMap.js";
+import { setupEncryptedArticles } from "./encryptedArticles.js";
+import { setupSlides } from "./slides.js";
+import { setupStars } from "./stars.js";
+import { setupTagMap } from "./tagMap.js";
+import { setupTimelines } from "./timelines.js";
 
 export const setupBlog = (): void => {
   setupArticles();

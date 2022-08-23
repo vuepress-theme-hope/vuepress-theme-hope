@@ -1,4 +1,4 @@
-import type { CopyCodeLocaleConfig } from "../shared";
+import type { CopyCodeLocaleConfig } from "../shared/index.js";
 
 /** Muti language config for copy code */
 export const copyCodeLocales: CopyCodeLocaleConfig = {

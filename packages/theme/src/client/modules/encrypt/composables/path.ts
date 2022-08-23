@@ -2,7 +2,7 @@ import { useStorage, useSessionStorage } from "@vueuse/core";
 import { computed } from "vue";
 import { useRoute } from "vue-router";
 
-import { useEncryptData } from "./utils";
+import { useEncryptData } from "./utils.js";
 import { checkToken } from "@theme-hope/modules/encrypt/utils";
 
 import type { ComputedRef } from "vue";

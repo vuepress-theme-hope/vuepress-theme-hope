@@ -1,9 +1,9 @@
-import { utoa } from "../utils/playground";
+import { utoa } from "../utils/playground.js";
 
 import type {
   PlaygroundFiles,
   ExternalPlaygroundOptions,
-} from "../../shared/playground";
+} from "../../shared/index.js";
 
 type SourceConfig = Record<string, string | undefined>;
 

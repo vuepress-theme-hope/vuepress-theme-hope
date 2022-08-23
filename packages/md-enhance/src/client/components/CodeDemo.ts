@@ -1,6 +1,6 @@
 import { computed, defineComponent, h, onMounted, ref } from "vue";
-import { CODEPEN_SVG, JSFIDDLE_SVG, LOADING_SVG } from "./icons";
-import { loadNormal, loadReact, loadVue } from "../composables";
+import { CODEPEN_SVG, JSFIDDLE_SVG, LOADING_SVG } from "./icons.js";
+import { loadNormal, loadReact, loadVue } from "../composables/index.js";
 import {
   injectCSS,
   injectScript,
@@ -8,10 +8,10 @@ import {
   getReactCode,
   getNormalCode,
   getVueCode,
-} from "../utils";
+} from "../utils/index.js";
 
 import type { PropType, VNode } from "vue";
-import type { CodeDemoOptions } from "../../shared";
+import type { CodeDemoOptions } from "../../shared/index.js";
 
 import "balloon-css/balloon.css";
 import "../styles/code-demo.scss";

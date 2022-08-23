@@ -1,5 +1,5 @@
 import { seoPlugin } from "vuepress-plugin-seo2";
-import { getBlogOptions } from "./blog";
+import { getBlogOptions } from "./blog.js";
 
 import type { Page, Plugin } from "@vuepress/core";
 import type { HopeThemeConfig, HopeThemePluginsOptions } from "../../shared";

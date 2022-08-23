@@ -1,7 +1,7 @@
 import { fs, getDirname, path } from "@vuepress/utils";
-import { logger } from "./utils";
+import { logger } from "./utils.js";
 
-import type { HopeThemeConfig } from "../shared";
+import type { HopeThemeConfig } from "../shared/index.js";
 
 const __dirname = getDirname(import.meta.url);
 

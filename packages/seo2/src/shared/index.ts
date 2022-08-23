@@ -1,3 +1,3 @@
-export * from "./json-ld";
-export * from "./options";
-export * from "./ogp";
+export * from "./json-ld.js";
+export * from "./options.js";
+export * from "./ogp.js";

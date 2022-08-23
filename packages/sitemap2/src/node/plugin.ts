@@ -1,10 +1,10 @@
 import { chalk } from "@vuepress/utils";
-import { convertOptions } from "./compact";
-import { generateSiteMap } from "./generateSitemap";
-import { logger } from "./utils";
+import { convertOptions } from "./compact/index.js";
+import { generateSiteMap } from "./generateSitemap.js";
+import { logger } from "./utils.js";
 
 import type { PluginObject, PluginFunction } from "@vuepress/core";
-import type { SitemapOptions } from "../shared";
+import type { SitemapOptions } from "../shared/index.js";
 
 export const sitemapPlugin =
   (options: SitemapOptions, legacy = false): PluginFunction =>

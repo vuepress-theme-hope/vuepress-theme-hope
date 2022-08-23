@@ -1,2 +1,2 @@
-export * from "./icons";
-export * from "./emptyIcon";
+export * from "./icons.js";
+export * from "./emptyIcon.js";

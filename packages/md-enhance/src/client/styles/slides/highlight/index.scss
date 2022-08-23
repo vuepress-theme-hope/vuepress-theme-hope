@@ -1,5 +1,5 @@
-@use "./light";
-@use "./dark";
+@use "./light.js";
+@use "./dark.js";
 
 .reveal pre {
   background: transparent;

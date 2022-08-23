@@ -1,5 +1,5 @@
-import { droppedLogger } from "./utils";
-import type { SeoOptions } from "../../shared";
+import { droppedLogger } from "./utils.js";
+import type { SeoOptions } from "../../shared/index.js";
 
 /** @deprecated */
 export const convertOptions = (

@@ -1,3 +1,3 @@
-export * from "./render";
-export * from "./setup";
-export * from "./utils";
+export * from "./render.js";
+export * from "./setup.js";
+export * from "./utils.js";

@@ -14,7 +14,7 @@ import {
 import { useRoute } from "vue-router";
 
 import { useAutoLink, useThemeLocaleData } from "@theme-hope/composables";
-import { resolvePrefix } from "./utils";
+import { resolvePrefix } from "./utils.js";
 
 import type { PageHeader } from "@vuepress/client";
 import type {

@@ -1,2 +1,2 @@
-export * from "./loadScript";
-export * from "./playground";
+export * from "./loadScript.js";
+export * from "./playground.js";

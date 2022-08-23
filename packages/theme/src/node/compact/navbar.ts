@@ -1,5 +1,5 @@
-import { deprecatedLogger } from "./utils";
-import { logger } from "../utils";
+import { deprecatedLogger } from "./utils.js";
+import { logger } from "../utils/index.js";
 
 import type {
   HopeThemeNavbarConfig,

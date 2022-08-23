@@ -14,7 +14,7 @@ import {
 import { getStatus } from "../../src/node/status";
 import { getThemeConfig } from "../../src/node/themeConfig";
 import { HopeThemeOptions } from "../../src/shared";
-import { sidebarTheme } from "./__fixtures__/theme/sidebar";
+import { sidebarTheme } from "./__fixtures__/theme/sidebar.js";
 
 const app = createBaseApp({
   bundler: {} as any,

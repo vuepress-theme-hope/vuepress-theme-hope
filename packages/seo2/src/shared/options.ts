@@ -1,8 +1,8 @@
 import type { App, HeadConfig, Page, PageFrontmatter } from "@vuepress/core";
 import type { GitData } from "@vuepress/plugin-git";
 import type { Author, BasePageFrontMatter } from "vuepress-shared";
-import type { ArticleJSONLD } from "./json-ld";
-import type { SeoContent } from "./ogp";
+import type { ArticleJSONLD } from "./json-ld.js";
+import type { SeoContent } from "./ogp.js";
 
 export type ExtendPage<
   ExtraPageData extends Record<string | number | symbol, unknown> & {

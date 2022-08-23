@@ -3,14 +3,17 @@ import type { Author } from "vuepress-shared";
 import type {
   HopeThemeAppearanceRootConfig,
   HopeThemeAppearanceRootOptions,
-} from "./appearance";
+} from "./appearance.js";
 import type {
   HopeThemeFeatureRootConfig,
   HopeThemeFeatureRootOptions,
-} from "./feature";
-import type { HopeThemeLayoutRootOptions } from "./layout";
-import type { HopeThemeLocaleConfig, HopeThemeLocaleOptions } from "./locales";
-import type { HopeThemePluginsOptions } from "./plugins";
+} from "./feature.js";
+import type { HopeThemeLayoutRootOptions } from "./layout.js";
+import type {
+  HopeThemeLocaleConfig,
+  HopeThemeLocaleOptions,
+} from "./locales.js";
+import type { HopeThemePluginsOptions } from "./plugins.js";
 
 export interface HopeThemeRootInfoOptions {
   /**

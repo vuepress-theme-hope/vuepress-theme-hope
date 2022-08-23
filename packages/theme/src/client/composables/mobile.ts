@@ -1,6 +1,6 @@
 import { useEventListener } from "@vueuse/core";
 import { onMounted, ref } from "vue";
-import { useThemeData } from "./themeData";
+import { useThemeData } from "./themeData.js";
 
 import type { Ref } from "vue";
 

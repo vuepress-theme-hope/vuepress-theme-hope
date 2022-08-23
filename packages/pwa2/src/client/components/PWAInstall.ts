@@ -1,11 +1,11 @@
 import { computed, defineComponent, h, onMounted, ref } from "vue";
 import { useLocaleConfig } from "vuepress-shared/lib/client";
 
-import PWAInstallModal from "./PWAInstallModal";
-import { locales } from "../define";
+import PWAInstallModal from "./PWAInstallModal.js";
+import { locales } from "../define.js";
 
 import type { VNode } from "vue";
-import type { ManifestRelatedApps } from "../../shared";
+import type { ManifestRelatedApps } from "../../shared/index.js";
 
 import "../styles/modal.scss";
 

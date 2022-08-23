@@ -1,8 +1,8 @@
 import { deepAssign } from "vuepress-shared/lib/client";
 
-import { IMPORT_MAP_KEY } from "../../shared";
+import { IMPORT_MAP_KEY } from "../../shared/index.js";
 
-import type { PlaygroundOptions, PlaygroundFiles } from "../../shared";
+import type { PlaygroundOptions, PlaygroundFiles } from "../../shared/index.js";
 
 declare const PLAYGROUND_OPTIONS: PlaygroundOptions;
 

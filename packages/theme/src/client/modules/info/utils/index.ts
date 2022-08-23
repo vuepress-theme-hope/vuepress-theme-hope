@@ -1,3 +1,3 @@
-export * from "./define";
-export * from "./editlink";
-export * from "./typings";
+export * from "./define.js";
+export * from "./editlink.js";
+export * from "./typings.js";

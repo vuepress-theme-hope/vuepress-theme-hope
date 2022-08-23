@@ -1,10 +1,10 @@
-import { logger } from "./utils";
+import { logger } from "./utils.js";
 import { hashSync } from "bcrypt-ts";
 
 import type {
   HopeThemeEncryptConfig,
   HopeThemeEncryptOptions,
-} from "../shared";
+} from "../shared/index.js";
 
 export const resolveEncrypt = (
   encrypt: HopeThemeEncryptOptions

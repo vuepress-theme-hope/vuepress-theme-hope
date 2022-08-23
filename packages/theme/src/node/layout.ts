@@ -1,7 +1,7 @@
 import { getDirname, path } from "@vuepress/utils";
 
 import type { App } from "@vuepress/core";
-import type { HopeThemePluginsOptions } from "../shared";
+import type { HopeThemePluginsOptions } from "../shared/index.js";
 
 const __dirname = getDirname(import.meta.url);
 

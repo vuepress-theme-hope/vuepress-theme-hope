@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import type { HopeLang } from "./types";
+import type { HopeLang } from "./types.js";
 
 export const lang2PathConfig = {
   "de-AT": "/de-at/",

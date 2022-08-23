@@ -1,6 +1,6 @@
-import { convertThemeConfig } from "./theme";
-import { hopeTheme } from "../theme";
-import { logger } from "../utils";
+import { convertThemeConfig } from "./theme.js";
+import { hopeTheme } from "../theme/index.js";
+import { logger } from "../utils/index.js";
 
 import type { UserConfig } from "@vuepress/cli";
 import type {

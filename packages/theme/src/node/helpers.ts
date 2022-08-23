@@ -15,7 +15,7 @@ import type {
   HopeThemeSidebarHelper,
   HopeThemeSidebarObjectHelper,
   HopeThemeSitemapPluginHelper,
-} from "../shared";
+} from "../shared/index.js";
 
 export const navbar: HopeThemeNavbarHelper = (navbarConfig) => navbarConfig;
 

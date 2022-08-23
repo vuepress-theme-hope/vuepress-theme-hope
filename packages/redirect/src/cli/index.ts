@@ -11,7 +11,7 @@ import { removeEndingSlash, removeLeadingSlash } from "@vuepress/shared";
 import { fs, logger, path } from "@vuepress/utils";
 import { cac } from "cac";
 
-import { getRedirectHTML } from "../shared";
+import { getRedirectHTML } from "../shared/index.js";
 
 const cli = cac("vp-redirect");
 // eslint-disable-next-line

@@ -6,11 +6,11 @@ import {
 import { getDirname, path } from "@vuepress/utils";
 import { getLocales } from "vuepress-shared";
 
-import { copyrightLocales } from "./locales";
-import { logger } from "./utils";
+import { copyrightLocales } from "./locales.js";
+import { logger } from "./utils.js";
 
 import type { Page, PluginFunction } from "@vuepress/core";
-import type { CopyrightOptions } from "../shared";
+import type { CopyrightOptions } from "../shared/index.js";
 
 const __dirname = getDirname(import.meta.url);
 

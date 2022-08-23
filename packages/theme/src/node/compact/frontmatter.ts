@@ -1,5 +1,5 @@
-import { deprecatedLogger, droppedLogger } from "./utils";
-import { logger } from "../utils";
+import { deprecatedLogger, droppedLogger } from "./utils.js";
+import { logger } from "../utils/index.js";
 
 import type { HopeThemePageFrontmatter } from "../../shared";
 

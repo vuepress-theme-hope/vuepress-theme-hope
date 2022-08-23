@@ -1,5 +1,5 @@
 import type { LocaleConfig } from "@vuepress/core";
-import type { ReadingTimeLocaleData } from "./locales";
+import type { ReadingTimeLocaleData } from "./locales.js";
 
 export interface ReadingTimeOptions {
   /**

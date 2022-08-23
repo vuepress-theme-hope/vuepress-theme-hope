@@ -1,2 +1,2 @@
-export * from "./getAncestorLinks";
-export * from "./resolveRepoType";
+export * from "./getAncestorLinks.js";
+export * from "./resolveRepoType.js";

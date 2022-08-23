@@ -1,12 +1,11 @@
 import { hash } from "@vuepress/utils";
-import { IMPORT_MAP_KEY } from "../../shared/playground";
+import { IMPORT_MAP_KEY } from "../../shared/index.js";
 
 import type { Options, PluginWithOptions } from "markdown-it";
-import type { RuleBlock } from "markdown-it/lib/parser_block";
-import type { default as Renderer } from "markdown-it/lib/renderer";
-import type { default as Token } from "markdown-it/lib/token";
-import type { PlaygroundOptions } from "../../shared";
-import type { PlaygroundFiles } from "../../shared/playground";
+import type { RuleBlock } from "markdown-it/lib/parser_block.js";
+import type { default as Renderer } from "markdown-it/lib/renderer.js";
+import type { default as Token } from "markdown-it/lib/token.js";
+import type { PlaygroundFiles, PlaygroundOptions } from "../../shared/index.js";
 
 const SUPPORTED_EXTENSIONS = ["html", "js", "ts", "vue", "jsx", "tsx", "json"];
 

@@ -9,7 +9,7 @@ import type {
   BlogCategoryData,
   BlogCategoryFrontmatterOptions,
   CategoryMap,
-} from "../../shared";
+} from "../../shared/index.js";
 
 // eslint-disable-next-line
 declare const __VUE_HMR_RUNTIME__: Record<string, any>;

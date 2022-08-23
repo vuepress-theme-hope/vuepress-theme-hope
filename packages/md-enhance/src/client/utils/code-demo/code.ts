@@ -1,9 +1,9 @@
-import { getConfig, preProcessorConfig } from "./utils";
+import { getConfig, preProcessorConfig } from "./utils.js";
 
 import type Babel from "@babel/core";
-import type { Code, CodeType } from "./typings";
-import type { PreProcessorType } from "./utils";
-import type { CodeDemoOptions } from "../../../shared";
+import type { Code, CodeType } from "./typings.js";
+import type { PreProcessorType } from "./utils.js";
+import type { CodeDemoOptions } from "../../../shared/index.js";
 
 declare global {
   interface Window {

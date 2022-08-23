@@ -1,7 +1,7 @@
-import { convertNavbarConfig } from "./navbar";
-import { convertSidebarConfig } from "./sidebar";
-import { droppedLogger, deprecatedLogger } from "./utils";
-import { logger } from "../utils";
+import { convertNavbarConfig } from "./navbar.js";
+import { convertSidebarConfig } from "./sidebar.js";
+import { droppedLogger, deprecatedLogger } from "./utils.js";
+import { logger } from "../utils/index.js";
 
 import type { HopeThemeOptions } from "../../shared";
 
