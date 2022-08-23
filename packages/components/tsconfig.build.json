@@ -5,7 +5,7 @@
     "rootDir": "./src",
     "outDir": "./lib"
   },
-  "include": ["./src/client", "./src/node", "./src/shared", "./src/*.d.ts"],
+  "include": ["./src", "./src/*.d.ts"],
   "references": [
     { "path": "../sass-palette/tsconfig.build.json" },
     { "path": "../shared/tsconfig.build.json" },

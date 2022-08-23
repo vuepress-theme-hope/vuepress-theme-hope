@@ -2,8 +2,17 @@ import { mergeViteConfig } from "vuepress-shared";
 
 import type { App } from "@vuepress/core";
 import type { ViteBundlerOptions } from "@vuepress/bundler-vite";
-import type { WebpackBundlerOptions } from "@vuepress/bundler-webpack";
-import type { LoaderContext } from "@vuepress/bundler-webpack/lib/types.webpack";
+import type {
+  LoaderOptions,
+  WebpackBundlerOptions,
+} from "@vuepress/bundler-webpack";
+
+type LoaderContext = Exclude<
+  LoaderOptions["additionalData"],
+  string | undefined
+> extends (content: string, loaderContext: infer T) => string
+  ? T
+  : never;
 
 /**
  * Use 'additionalData' to make `${id}-config` availe in scss

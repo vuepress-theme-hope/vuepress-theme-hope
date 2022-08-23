@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 import { createBuildApp } from "@vuepress/core";
 import {
-  allowTs,
   loadUserConfig,
   transformUserConfigToPlugin,
   resolveAppConfig,
@@ -58,9 +57,6 @@ cli
         process.env["NODE_ENV"] = "production";
       }
 
-      // allow ts files globally
-      allowTs();
-
       // resolve app config from cli options
       const cliAppConfig = resolveCliAppConfig(sourceDir, {});
 
@@ -69,7 +65,7 @@ cli
         cliAppConfig.source
       );
 
-      const userConfig = await loadUserConfig(userConfigPath);
+      const { userConfig } = await loadUserConfig(userConfigPath);
 
       // resolve the final app config to use
       const appConfig = resolveAppConfig({

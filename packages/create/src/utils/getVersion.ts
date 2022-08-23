@@ -1,4 +1,4 @@
-import { get } from "https";
+import { get } from "node:https";
 
 import type { PackageManager } from "./packageManager";
 

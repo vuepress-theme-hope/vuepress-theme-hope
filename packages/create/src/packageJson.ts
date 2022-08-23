@@ -1,6 +1,6 @@
-import { existsSync, writeFileSync, readFileSync } from "fs";
+import { existsSync, writeFileSync, readFileSync } from "node:fs";
+import { resolve } from "node:path";
 import inquirer from "inquirer";
-import { resolve } from "path";
 
 import { getNextVersion, PackageManager } from "./utils";
 import { deepAssign } from "./utils/deepAssign";

@@ -9,7 +9,7 @@
       "@theme-hope/*": ["./src/client/*"]
     }
   },
-  "include": ["./src/client", "./src/node", "./src/shared", "./src/*.d.ts"],
+  "include": ["./src", "./src/*.d.ts"],
   "references": [
     { "path": "../blog2/tsconfig.build.json" },
     { "path": "../comment2/tsconfig.build.json" },

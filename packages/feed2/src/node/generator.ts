@@ -1,5 +1,5 @@
 import { chalk, fs } from "@vuepress/utils";
-import { dirname } from "path";
+import { dirname } from "node:path";
 
 import { Feed } from "./feed";
 import { getFeedChannelOption, getFilename, getFeedLinks } from "./options";

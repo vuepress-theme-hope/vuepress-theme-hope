@@ -1,5 +1,5 @@
-import { existsSync, writeFileSync, readdirSync } from "fs";
-import { join, resolve } from "path";
+import { existsSync, writeFileSync, readdirSync } from "node:fs";
+import { join, resolve } from "node:path";
 import { version } from "../package.json";
 
 const packagesDir = resolve(process.cwd(), "packages");
