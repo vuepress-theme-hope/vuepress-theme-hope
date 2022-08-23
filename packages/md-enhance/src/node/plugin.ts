@@ -1,3 +1,4 @@
+import { path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   addCustomElement,
@@ -141,6 +142,16 @@ export const mdEnhancePlugin =
         PLAYGROUND_OPTIONS:
           typeof options.playground === "object" ? options.playground : {},
       }),
+
+      alias: {
+        // FIXME:
+        // this is a workaround for https://github.com/vitejs/vite/issues/7621
+        // Remove this when issue is fixed
+        "vuepress-plugin-md-enhance/lib/client/SlidePage": path.resolve(
+          __dirname,
+          "../client/SlidePage.js"
+        ),
+      },
 
       extendsBundlerOptions: (config: unknown, app): void => {
         if (katexOptions.output !== "html")
