@@ -184,7 +184,7 @@ const includePopRule: RuleBlock = (state, startLine, _, silent): boolean => {
   return result;
 }
 
-function resolveRelatedLink(attr: string, token: Token, filePath: string, includedPaths?: string[]) {
+const resolveRelatedLink = (attr: string, token: Token, filePath: string, includedPaths?: string[]):void => {
   const aIndex = token.attrIndex(attr);
   let url = token.attrs?.[aIndex][1];
   if (url?.startsWith('.') && filePath) {
@@ -195,7 +195,8 @@ function resolveRelatedLink(attr: string, token: Token, filePath: string, includ
       token.attrs![aIndex][1] = url;
     }
   }
-}
+};
+
 export const include: PluginWithOptions<IncludeOptions> = (
   md,
   { getPath = (path: string): string => path, deep = false,

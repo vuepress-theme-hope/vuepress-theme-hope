@@ -16,6 +16,7 @@ export interface IncludeOptions {
    * @default false
    */
   deep?: boolean;
+
   /**
    * Whether resolve the image related path in the included markdown file
    *
@@ -24,6 +25,7 @@ export interface IncludeOptions {
    * @default true
    */
   resolveImagePath?: boolean;
+
   /**
    * Whether resolve the related file link path in the included markdown file
    *
