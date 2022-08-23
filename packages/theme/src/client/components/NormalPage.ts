@@ -12,10 +12,10 @@ import PageTitle from "@theme-hope/components/PageTitle";
 
 import { useThemeLocaleData } from "@theme-hope/composables";
 
-import PageMeta from "@theme-hope/module/info/components/PageMeta";
-import TOC from "@theme-hope/module/info/components/TOC";
+import PageMeta from "@theme-hope/modules/info/components/PageMeta";
+import TOC from "@theme-hope/modules/info/components/TOC";
 
-import { useDarkMode } from "@theme-hope/module/outlook/composables";
+import { useDarkMode } from "@theme-hope/modules/outlook/composables";
 
 import type { ComponentOptions, VNode } from "vue";
 import type { HopeThemeNormalPageFrontmatter } from "../../shared";

@@ -17,9 +17,9 @@ import type {
 import type { GitData } from "@vuepress/plugin-git";
 import type { ComputedRef } from "vue";
 import type { ReadingTime } from "vuepress-plugin-reading-time2";
-import type { CategoryMapRef } from "@theme-hope/module/blog/composables";
-import type { PageInfoProps } from "@theme-hope/module/info/components/PageInfo";
-import type { PageCategory, PageTag } from "@theme-hope/module/info/utils";
+import type { CategoryMapRef } from "@theme-hope/modules/blog/composables";
+import type { PageInfoProps } from "@theme-hope/modules/info/components/PageInfo";
+import type { PageCategory, PageTag } from "@theme-hope/modules/info/utils";
 import type { HopeThemeNormalPageFrontmatter, PageInfo } from "../../shared";
 
 declare const ENABLE_BLOG: boolean;

@@ -19,10 +19,10 @@ export const prepareConfigFile = (
 
   if (enableBlog) {
     configImport += `
-import BloggerInfo from "@theme-hope/module/blog/components/BloggerInfo";
-import BlogHome from "@theme-hope/module/blog/components/BlogHome";
-import BlogPage from "@theme-hope/module/blog/components/BlogPage";
-import { setupBlog } from "@theme-hope/module/blog/composables";
+import BloggerInfo from "@theme-hope/modules/blog/components/BloggerInfo";
+import BlogHome from "@theme-hope/modules/blog/components/BlogHome";
+import BlogPage from "@theme-hope/modules/blog/components/BlogPage";
+import { setupBlog } from "@theme-hope/modules/blog/composables";
 import "${CLIENT_FOLDER}module/blog/styles/layout.scss";
 `;
 
@@ -37,8 +37,8 @@ app.component("BlogPage", BlogPage);
 
   if (enableEncrypt) {
     configImport += `
-import GloablEncrypt from "@theme-hope/module/encrypt/components/GloablEncrypt";
-import LocalEncrypt from "@theme-hope/module/encrypt/components/LocalEncrypt";
+import GloablEncrypt from "@theme-hope/modules/encrypt/components/GloablEncrypt";
+import LocalEncrypt from "@theme-hope/modules/encrypt/components/LocalEncrypt";
 `;
     enhance += `
 app.component("GloablEncrypt", GloablEncrypt);
@@ -53,12 +53,12 @@ app.component("LocalEncrypt", LocalEncrypt);
 import CommonWrapper from "@theme-hope/components/CommonWrapper";
 import HomePage from "@theme-hope/components/HomePage";
 import NormalPage from "@theme-hope/components/NormalPage";
-import Navbar from "@theme-hope/module/navbar/components/Navbar";
-import Sidebar from "@theme-hope/module/sidebar/components/Sidebar";
+import Navbar from "@theme-hope/modules/navbar/components/Navbar";
+import Sidebar from "@theme-hope/modules/sidebar/components/Sidebar";
 
 import { useScrollPromise } from "@theme-hope/composables";
-import { injectDarkMode, setupDarkMode } from "@theme-hope/module/outlook/composables";
-import { setupSidebarItems } from "@theme-hope/module/sidebar/composables";
+import { injectDarkMode, setupDarkMode } from "@theme-hope/modules/outlook/composables";
+import { setupSidebarItems } from "@theme-hope/modules/sidebar/composables";
 
 import "${CLIENT_FOLDER}styles/index.scss";
 

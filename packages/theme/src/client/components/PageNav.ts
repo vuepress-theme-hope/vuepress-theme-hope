@@ -11,7 +11,7 @@ import {
   useNavigate,
   useThemeLocaleData,
 } from "@theme-hope/composables";
-import { useSidebarItems } from "@theme-hope/module/sidebar/composables";
+import { useSidebarItems } from "@theme-hope/modules/sidebar/composables";
 
 import type { VNode } from "vue";
 import type {

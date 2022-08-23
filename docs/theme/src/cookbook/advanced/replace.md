@@ -100,23 +100,23 @@ Miscellaneous:
 
 Components:
 
-- `@theme-hope/module/navbar/components/DropdownLink`: dropdown list
-- `@theme-hope/module/navbar/components/LanguageDropdown`: language dropdown
-- `@theme-hope/module/navbar/components/NavActions`: navbar functions
-- `@theme-hope/module/navbar/components/Navbar`: navbar
-- `@theme-hope/module/navbar/components/NavbarBrand`: navbar brand information
-- `@theme-hope/module/navbar/components/NavbarLinks`: navbar links
-- `@theme-hope/module/navbar/components/NavScreen`: navigation screen in mobile view
-- `@theme-hope/module/navbar/components/NavScreenDropdown`: mobile view navbar dropdown menu
-- `@theme-hope/module/navbar/components/NavScreenLinks`: mobile view navbar links
-- `@theme-hope/module/navbar/components/RepoLink`: repository link
-- `@theme-hope/module/navbar/components/ToggleNavbarButton`: navbar toggle button
-- `@theme-hope/module/navbar/components/ToggleSidebarButton`: sidebar toggle button
+- `@theme-hope/modules/navbar/components/DropdownLink`: dropdown list
+- `@theme-hope/modules/navbar/components/LanguageDropdown`: language dropdown
+- `@theme-hope/modules/navbar/components/NavActions`: navbar functions
+- `@theme-hope/modules/navbar/components/Navbar`: navbar
+- `@theme-hope/modules/navbar/components/NavbarBrand`: navbar brand information
+- `@theme-hope/modules/navbar/components/NavbarLinks`: navbar links
+- `@theme-hope/modules/navbar/components/NavScreen`: navigation screen in mobile view
+- `@theme-hope/modules/navbar/components/NavScreenDropdown`: mobile view navbar dropdown menu
+- `@theme-hope/modules/navbar/components/NavScreenLinks`: mobile view navbar links
+- `@theme-hope/modules/navbar/components/RepoLink`: repository link
+- `@theme-hope/modules/navbar/components/ToggleNavbarButton`: navbar toggle button
+- `@theme-hope/modules/navbar/components/ToggleSidebarButton`: sidebar toggle button
 
 Miscellaneous:
 
-- `@theme-hope/module/navbar/components/icons`: navbar icons
-- `@theme-hope/module/navbar/composables`: navbar Composition API
+- `@theme-hope/modules/navbar/components/icons`: navbar icons
+- `@theme-hope/modules/navbar/composables`: navbar Composition API
 
 :::
 
@@ -124,15 +124,15 @@ Miscellaneous:
 
 Components:
 
-- `@theme-hope/module/sidebar/components/Sidebar`: sidebar
-- `@theme-hope/module/sidebar/components/SidebarChild`: sidebar link item
-- `@theme-hope/module/sidebar/components/SidebarGroup`: sidebar grouping links
-- `@theme-hope/module/sidebar/components/SidebarLinks`: sidebar links
+- `@theme-hope/modules/sidebar/components/Sidebar`: sidebar
+- `@theme-hope/modules/sidebar/components/SidebarChild`: sidebar link item
+- `@theme-hope/modules/sidebar/components/SidebarGroup`: sidebar grouping links
+- `@theme-hope/modules/sidebar/components/SidebarLinks`: sidebar links
 
 Miscellaneous:
 
-- `@theme-hope/module/sidebar/composables`: sidebar Composition API
-- `@theme-hope/module/sidebar/utils`: sidebar utility functions
+- `@theme-hope/modules/sidebar/composables`: sidebar Composition API
+- `@theme-hope/modules/sidebar/utils`: sidebar utility functions
 
 :::
 
@@ -140,23 +140,23 @@ Miscellaneous:
 
 Components:
 
-- `@theme-hope/module/info/components/AuthorInfo`: author information
-- `@theme-hope/module/info/components/CategoryInfo`: category information
-- `@theme-hope/module/info/components/DateInfo`: date information
-- `@theme-hope/module/info/components/OriginalMark`: original mark
-- `@theme-hope/module/info/components/PageInfo`: page information
-- `@theme-hope/module/info/components/PageMeta`: page meta information
-- `@theme-hope/module/info/components/PageViewInfo`: page views information
-- `@theme-hope/module/info/components/ReadingTimeInfo`: reading time information
-- `@theme-hope/module/info/components/TagInfo`: tag information
-- `@theme-hope/module/info/components/TOC`: table of contents
-- `@theme-hope/module/info/components/WordInfo`: word information
+- `@theme-hope/modules/info/components/AuthorInfo`: author information
+- `@theme-hope/modules/info/components/CategoryInfo`: category information
+- `@theme-hope/modules/info/components/DateInfo`: date information
+- `@theme-hope/modules/info/components/OriginalMark`: original mark
+- `@theme-hope/modules/info/components/PageInfo`: page information
+- `@theme-hope/modules/info/components/PageMeta`: page meta information
+- `@theme-hope/modules/info/components/PageViewInfo`: page views information
+- `@theme-hope/modules/info/components/ReadingTimeInfo`: reading time information
+- `@theme-hope/modules/info/components/TagInfo`: tag information
+- `@theme-hope/modules/info/components/TOC`: table of contents
+- `@theme-hope/modules/info/components/WordInfo`: word information
 
 Miscellaneous:
 
-- `@theme-hope/module/blog/components/icons`: info icons
-- `@theme-hope/module/blog/composables`: info Composables API
-- `@theme-hope/module/blog/utils`: info utility functions
+- `@theme-hope/modules/blog/components/icons`: info icons
+- `@theme-hope/modules/blog/composables`: info Composables API
+- `@theme-hope/modules/blog/utils`: info utility functions
 
 :::
 
@@ -164,27 +164,27 @@ Miscellaneous:
 
 Components:
 
-- `@theme-hope/module/blog/components/ArticleItem`: article item
-- `@theme-hope/module/blog/components/ArticleList`: article list
-- `@theme-hope/module/blog/components/ArticleType`: article type
-- `@theme-hope/module/blog/components/BloggerInfo`: blogger info
-- `@theme-hope/module/blog/components/BlogHero`: blog homepage logo and introduction
-- `@theme-hope/module/blog/components/BlogHome`: blog home page
-- `@theme-hope/module/blog/components/BlogPage`: normal blog page
-- `@theme-hope/module/blog/components/CategoryList`: Category list
-- `@theme-hope/module/blog/components/InfoList`: blog info list
-- `@theme-hope/module/blog/components/InfoPanel`: blog info panel
-- `@theme-hope/module/blog/components/Pagination`: pagination
-- `@theme-hope/module/blog/components/ProjectPanel`: blog homepage project panel
-- `@theme-hope/module/blog/components/SocialMedia`: social media links
-- `@theme-hope/module/blog/components/TagList`: tag list
-- `@theme-hope/module/blog/components/TimelineItems`: timeline items
-- `@theme-hope/module/blog/components/TimelineList`: timeline List
+- `@theme-hope/modules/blog/components/ArticleItem`: article item
+- `@theme-hope/modules/blog/components/ArticleList`: article list
+- `@theme-hope/modules/blog/components/ArticleType`: article type
+- `@theme-hope/modules/blog/components/BloggerInfo`: blogger info
+- `@theme-hope/modules/blog/components/BlogHero`: blog homepage logo and introduction
+- `@theme-hope/modules/blog/components/BlogHome`: blog home page
+- `@theme-hope/modules/blog/components/BlogPage`: normal blog page
+- `@theme-hope/modules/blog/components/CategoryList`: Category list
+- `@theme-hope/modules/blog/components/InfoList`: blog info list
+- `@theme-hope/modules/blog/components/InfoPanel`: blog info panel
+- `@theme-hope/modules/blog/components/Pagination`: pagination
+- `@theme-hope/modules/blog/components/ProjectPanel`: blog homepage project panel
+- `@theme-hope/modules/blog/components/SocialMedia`: social media links
+- `@theme-hope/modules/blog/components/TagList`: tag list
+- `@theme-hope/modules/blog/components/TimelineItems`: timeline items
+- `@theme-hope/modules/blog/components/TimelineList`: timeline List
 
 Miscellaneous:
 
-- `@theme-hope/module/blog/components/icons`: blog icons
-- `@theme-hope/module/blog/composables`: blog Composables API
+- `@theme-hope/modules/blog/components/icons`: blog icons
+- `@theme-hope/modules/blog/composables`: blog Composables API
 
 :::
 
@@ -192,31 +192,31 @@ Miscellaneous:
 
 Components:
 
-- `@theme-hope/module/encrypt/components/GlobalEncrypt`: gloabl encrypt wrapper
-- `@theme-hope/module/encrypt/components/LocalEncrypt`: local encrypt wrapper
-- `@theme-hope/module/encrypt/components/PasswordModal`: password input box
+- `@theme-hope/modules/encrypt/components/GlobalEncrypt`: gloabl encrypt wrapper
+- `@theme-hope/modules/encrypt/components/LocalEncrypt`: local encrypt wrapper
+- `@theme-hope/modules/encrypt/components/PasswordModal`: password input box
 
 Miscellaneous:
 
-- `@theme-hope/module/encrypt/composables`: encryption Composition API
-- `@theme-hope/module/encrypt/utils`: encryption utility functions
+- `@theme-hope/modules/encrypt/composables`: encryption Composition API
+- `@theme-hope/modules/encrypt/utils`: encryption utility functions
 
 :::
 
 ::: details Appearance module component alias
 
-- `@theme-hope/module/outlook/components/AppearanceMode`: theme mode
-- `@theme-hope/module/outlook/components/AppearanceSwitch`: theme appearance switch
-- `@theme-hope/module/outlook/components/OutlookButton`: appearance button
-- `@theme-hope/module/outlook/components/OutlookSettings`: appearance settings
-- `@theme-hope/module/outlook/components/ThemeColor`: theme color
-- `@theme-hope/module/outlook/components/ThemeColorPicker`: theme color picker
-- `@theme-hope/module/outlook/components/ToggleFullScreenButton`: fullscreen toggle button
+- `@theme-hope/modules/outlook/components/AppearanceMode`: theme mode
+- `@theme-hope/modules/outlook/components/AppearanceSwitch`: theme appearance switch
+- `@theme-hope/modules/outlook/components/OutlookButton`: appearance button
+- `@theme-hope/modules/outlook/components/OutlookSettings`: appearance settings
+- `@theme-hope/modules/outlook/components/ThemeColor`: theme color
+- `@theme-hope/modules/outlook/components/ThemeColorPicker`: theme color picker
+- `@theme-hope/modules/outlook/components/ToggleFullScreenButton`: fullscreen toggle button
 
 Miscellaneous:
 
-- `@theme-hope/module/outlook/components/icons`: appearance icons
-- `@theme-hope/module/outlook/composables`: appearance Composition API
+- `@theme-hope/modules/outlook/components/icons`: appearance icons
+- `@theme-hope/modules/outlook/composables`: appearance Composition API
 
 :::
 

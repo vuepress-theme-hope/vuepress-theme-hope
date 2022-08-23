@@ -27,6 +27,24 @@
     "url": "https://mrhope.site"
   },
   "type": "module",
+  "exports": {
+    ".": "./lib/node/index.js",
+    "./lib/client/*": "./lib/client/*",
+    "./components/*": "./lib/client/components/*",
+    "./composables/*": "./lib/client/composables/*",
+    "./layouts/*": "./lib/client/layouts/*",
+    "./modules/*": "./lib/client/modules/*",
+    "./styles/*": "./lib/client/styles/*",
+    "./utils/*": "./lib/client/utils/*",
+    "./blog/*": "./lib/client/modules/blog/*",
+    "./encrypt/*": "./lib/client/modules/encrypt/*",
+    "./info/*": "./lib/client/modules/info/*",
+    "./navbar/*": "./lib/client/modules/navbar/*",
+    "./outlook/*": "./lib/client/modules/outlook/*",
+    "./sidebar/*": "./lib/client/modules/sidebar/*",
+    "./templates/*": "./templates/*",
+    "./package.json": "./package.json"
+  },
   "main": "lib/node/index.js",
   "types": "lib/node/index.d.ts",
   "files": [

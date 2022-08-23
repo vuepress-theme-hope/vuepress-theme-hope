@@ -19,7 +19,7 @@ import {
 
 import PageFooter from "@theme-hope/components/PageFooter";
 import { useMobile, useThemeLocaleData } from "@theme-hope/composables";
-import { useSidebarItems } from "@theme-hope/module/sidebar/composables";
+import { useSidebarItems } from "@theme-hope/modules/sidebar/composables";
 
 import type { ComponentOptions, VNode } from "vue";
 import type { HopeThemePageFrontmatter } from "../../shared";

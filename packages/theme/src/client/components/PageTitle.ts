@@ -2,7 +2,7 @@ import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import { defineComponent, h, unref } from "vue";
 
 import Icon from "@theme-hope/components/Icon";
-import PageInfo from "@theme-hope/module/info/components/PageInfo";
+import PageInfo from "@theme-hope/modules/info/components/PageInfo";
 import { usePageInfo, useThemeLocaleData } from "@theme-hope/composables";
 
 import type { VNode } from "vue";

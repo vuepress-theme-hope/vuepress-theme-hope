@@ -100,23 +100,23 @@ module.exports = {
 
 Компоненты:
 
-- `@theme-hope/module/navbar/components/DropdownLink`: выпадающий список
-- `@theme-hope/module/navbar/components/LanguageDropdown`: выпадающий список языков
-- `@theme-hope/module/navbar/components/NavActions`: функции панели навигации
-- `@theme-hope/module/navbar/components/Navbar`: панель навигации
-- `@theme-hope/module/navbar/components/NavbarBrand`: информация о бренде навигационной панели
-- `@theme-hope/module/navbar/components/NavbarLinks`: ссылки на панели навигации
-- `@theme-hope/module/navbar/components/NavScreen`: экран навигации в мобильном представлении
-- `@theme-hope/module/navbar/components/NavScreenDropdown`: выпадающее меню мобильной панели навигации
-- `@theme-hope/module/navbar/components/NavScreenLinks`: ссылки для мобильного просмотра на панели навигации
-- `@theme-hope/module/navbar/components/RepoLink`: ссылка на репозиторий
-- `@theme-hope/module/navbar/components/ToggleNavbarButton`: кнопка переключения панели навигации
-- `@theme-hope/module/navbar/components/ToggleSidebarButton`: кнопка переключения боковой панели
+- `@theme-hope/modules/navbar/components/DropdownLink`: выпадающий список
+- `@theme-hope/modules/navbar/components/LanguageDropdown`: выпадающий список языков
+- `@theme-hope/modules/navbar/components/NavActions`: функции панели навигации
+- `@theme-hope/modules/navbar/components/Navbar`: панель навигации
+- `@theme-hope/modules/navbar/components/NavbarBrand`: информация о бренде навигационной панели
+- `@theme-hope/modules/navbar/components/NavbarLinks`: ссылки на панели навигации
+- `@theme-hope/modules/navbar/components/NavScreen`: экран навигации в мобильном представлении
+- `@theme-hope/modules/navbar/components/NavScreenDropdown`: выпадающее меню мобильной панели навигации
+- `@theme-hope/modules/navbar/components/NavScreenLinks`: ссылки для мобильного просмотра на панели навигации
+- `@theme-hope/modules/navbar/components/RepoLink`: ссылка на репозиторий
+- `@theme-hope/modules/navbar/components/ToggleNavbarButton`: кнопка переключения панели навигации
+- `@theme-hope/modules/navbar/components/ToggleSidebarButton`: кнопка переключения боковой панели
 
 Разное:
 
-- `@theme-hope/module/navbar/components/icons`: иконки панели навигации
-- `@theme-hope/module/navbar/composables`: Composition API панели навигации
+- `@theme-hope/modules/navbar/components/icons`: иконки панели навигации
+- `@theme-hope/modules/navbar/composables`: Composition API панели навигации
 
 :::
 
@@ -124,15 +124,15 @@ module.exports = {
 
 Компоненты:
 
-- `@theme-hope/module/sidebar/components/Sidebar`: боковая панель
-- `@theme-hope/module/sidebar/components/SidebarChild`: элемент ссылки на боковой панели
-- `@theme-hope/module/sidebar/components/SidebarGroup`: группировка ссылок на боковой панели
-- `@theme-hope/module/sidebar/components/SidebarLinks`: ссылки на боковой панели
+- `@theme-hope/modules/sidebar/components/Sidebar`: боковая панель
+- `@theme-hope/modules/sidebar/components/SidebarChild`: элемент ссылки на боковой панели
+- `@theme-hope/modules/sidebar/components/SidebarGroup`: группировка ссылок на боковой панели
+- `@theme-hope/modules/sidebar/components/SidebarLinks`: ссылки на боковой панели
 
 Разное:
 
-- `@theme-hope/module/sidebar/composables`: Composition API боковой панели
-- `@theme-hope/module/sidebar/utils`: утилитарные функции боковой панели
+- `@theme-hope/modules/sidebar/composables`: Composition API боковой панели
+- `@theme-hope/modules/sidebar/utils`: утилитарные функции боковой панели
 
 :::
 
@@ -140,23 +140,23 @@ module.exports = {
 
 Компоненты:
 
-- `@theme-hope/module/info/components/AuthorInfo`: информация об авторе
-- `@theme-hope/module/info/components/CategoryInfo`: информация о категории
-- `@theme-hope/module/info/components/DateInfo`: информация о дате
-- `@theme-hope/module/info/components/OriginalMark`: оригинальное выделение
-- `@theme-hope/module/info/components/PageInfo`: информация о странице
-- `@theme-hope/module/info/components/PageMeta`: метаинформация страницы
-- `@theme-hope/module/info/components/PageViewInfo`: информация о просмотрах страниц
-- `@theme-hope/module/info/components/ReadingTimeInfo`: информация о времени чтения
-- `@theme-hope/module/info/components/TagInfo`: информация тега
-- `@theme-hope/module/info/components/TOC`: оглавление
-- `@theme-hope/module/info/components/WordInfo`: информация о слове
+- `@theme-hope/modules/info/components/AuthorInfo`: информация об авторе
+- `@theme-hope/modules/info/components/CategoryInfo`: информация о категории
+- `@theme-hope/modules/info/components/DateInfo`: информация о дате
+- `@theme-hope/modules/info/components/OriginalMark`: оригинальное выделение
+- `@theme-hope/modules/info/components/PageInfo`: информация о странице
+- `@theme-hope/modules/info/components/PageMeta`: метаинформация страницы
+- `@theme-hope/modules/info/components/PageViewInfo`: информация о просмотрах страниц
+- `@theme-hope/modules/info/components/ReadingTimeInfo`: информация о времени чтения
+- `@theme-hope/modules/info/components/TagInfo`: информация тега
+- `@theme-hope/modules/info/components/TOC`: оглавление
+- `@theme-hope/modules/info/components/WordInfo`: информация о слове
 
 Разное:
 
-- `@theme-hope/module/blog/components/icons`: информация об иконках
-- `@theme-hope/module/blog/composables`: Composables API информации
-- `@theme-hope/module/blog/utils`: информационные служебные функции
+- `@theme-hope/modules/blog/components/icons`: информация об иконках
+- `@theme-hope/modules/blog/composables`: Composables API информации
+- `@theme-hope/modules/blog/utils`: информационные служебные функции
 
 :::
 
@@ -164,27 +164,27 @@ module.exports = {
 
 Компоненты:
 
-- `@theme-hope/module/blog/components/ArticleItem`: элемент статьи
-- `@theme-hope/module/blog/components/ArticleList`: список статей
-- `@theme-hope/module/blog/components/ArticleType`: тип статьи
-- `@theme-hope/module/blog/components/BloggerInfo`: информация о блогере
-- `@theme-hope/module/blog/components/BlogHero`: логотип главной страницы блога и введение
-- `@theme-hope/module/blog/components/BlogHome`: домашняя страница блога
-- `@theme-hope/module/blog/components/BlogPage`: обычная страница блога
-- `@theme-hope/module/blog/components/CategoryList`: список категорий
-- `@theme-hope/module/blog/components/InfoList`: список информации о блоге
-- `@theme-hope/module/blog/components/InfoPanel`: информационная панель блога
-- `@theme-hope/module/blog/components/Pagination`: нумерация страниц
-- `@theme-hope/module/blog/components/ProjectPanel`: панель проекта на главной странице блога
-- `@theme-hope/module/blog/components/SocialMedia`: ссылки на социальные сети
-- `@theme-hope/module/blog/components/TagList`: список тегов
-- `@theme-hope/module/blog/components/TimelineItems`: элементы временной шкалы
-- `@theme-hope/module/blog/components/TimelineList`: список временной шкалы
+- `@theme-hope/modules/blog/components/ArticleItem`: элемент статьи
+- `@theme-hope/modules/blog/components/ArticleList`: список статей
+- `@theme-hope/modules/blog/components/ArticleType`: тип статьи
+- `@theme-hope/modules/blog/components/BloggerInfo`: информация о блогере
+- `@theme-hope/modules/blog/components/BlogHero`: логотип главной страницы блога и введение
+- `@theme-hope/modules/blog/components/BlogHome`: домашняя страница блога
+- `@theme-hope/modules/blog/components/BlogPage`: обычная страница блога
+- `@theme-hope/modules/blog/components/CategoryList`: список категорий
+- `@theme-hope/modules/blog/components/InfoList`: список информации о блоге
+- `@theme-hope/modules/blog/components/InfoPanel`: информационная панель блога
+- `@theme-hope/modules/blog/components/Pagination`: нумерация страниц
+- `@theme-hope/modules/blog/components/ProjectPanel`: панель проекта на главной странице блога
+- `@theme-hope/modules/blog/components/SocialMedia`: ссылки на социальные сети
+- `@theme-hope/modules/blog/components/TagList`: список тегов
+- `@theme-hope/modules/blog/components/TimelineItems`: элементы временной шкалы
+- `@theme-hope/modules/blog/components/TimelineList`: список временной шкалы
 
 Разное:
 
-- `@theme-hope/module/blog/components/icons`: иконки блогов
-- `@theme-hope/module/blog/composables`: Composables API блога
+- `@theme-hope/modules/blog/components/icons`: иконки блогов
+- `@theme-hope/modules/blog/composables`: Composables API блога
 
 :::
 
@@ -192,31 +192,31 @@ module.exports = {
 
 Компоненты:
 
-- `@theme-hope/module/encrypt/components/GlobalEncrypt`: глобальная оболочка шифрования
-- `@theme-hope/module/encrypt/components/LocalEncrypt`: локальная оболочка шифрования
-- `@theme-hope/module/encrypt/components/PasswordModal`: поле ввода пароля
+- `@theme-hope/modules/encrypt/components/GlobalEncrypt`: глобальная оболочка шифрования
+- `@theme-hope/modules/encrypt/components/LocalEncrypt`: локальная оболочка шифрования
+- `@theme-hope/modules/encrypt/components/PasswordModal`: поле ввода пароля
 
 Разное:
 
-- `@theme-hope/module/encrypt/composables`: Composition API шифрования
-- `@theme-hope/module/encrypt/utils`: функции утилиты шифрования
+- `@theme-hope/modules/encrypt/composables`: Composition API шифрования
+- `@theme-hope/modules/encrypt/utils`: функции утилиты шифрования
 
 :::
 
 ::: details Псевдоним компонента модуля внешнего вида
 
-- `@theme-hope/module/outlook/components/AppearanceMode`: режим темы
-- `@theme-hope/module/outlook/components/AppearanceSwitch`: переключатель внешнего вида темы
-- `@theme-hope/module/outlook/components/OutlookButton`: кнопка появления
-- `@theme-hope/module/outlook/components/OutlookSettings`: настройки внешнего вида
-- `@theme-hope/module/outlook/components/ThemeColor`: цвет темы
-- `@theme-hope/module/outlook/components/ThemeColorPicker`: выбор цвета темы
-- `@theme-hope/module/outlook/components/ToggleFullScreenButton`: кнопка переключения в полноэкранный режим
+- `@theme-hope/modules/outlook/components/AppearanceMode`: режим темы
+- `@theme-hope/modules/outlook/components/AppearanceSwitch`: переключатель внешнего вида темы
+- `@theme-hope/modules/outlook/components/OutlookButton`: кнопка появления
+- `@theme-hope/modules/outlook/components/OutlookSettings`: настройки внешнего вида
+- `@theme-hope/modules/outlook/components/ThemeColor`: цвет темы
+- `@theme-hope/modules/outlook/components/ThemeColorPicker`: выбор цвета темы
+- `@theme-hope/modules/outlook/components/ToggleFullScreenButton`: кнопка переключения в полноэкранный режим
 
 Разное:
 
-- `@theme-hope/module/outlook/components/icons`: иконки внешнего вида
-- `@theme-hope/module/outlook/composables`: Composition API внешнего вида
+- `@theme-hope/modules/outlook/components/icons`: иконки внешнего вида
+- `@theme-hope/modules/outlook/composables`: Composition API внешнего вида
 
 :::
 

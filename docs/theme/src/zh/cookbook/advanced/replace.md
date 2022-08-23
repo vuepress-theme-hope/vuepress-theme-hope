@@ -102,23 +102,23 @@ module.exports = {
 
 组件:
 
-- `@theme-hope/module/navbar/components/DropdownLink`: 下拉列表
-- `@theme-hope/module/navbar/components/LanguageDropdown`: 语言下拉列表
-- `@theme-hope/module/navbar/components/NavActions`: 导航栏功能
-- `@theme-hope/module/navbar/components/Navbar`: 导航栏
-- `@theme-hope/module/navbar/components/NavbarBrand`: 导航栏品牌信息
-- `@theme-hope/module/navbar/components/NavbarLinks`: 导航栏链接
-- `@theme-hope/module/navbar/components/NavScreen`: 移动视图下的导航屏
-- `@theme-hope/module/navbar/components/NavScreenDropdown`: 移动视图下导航栏下拉菜单
-- `@theme-hope/module/navbar/components/NavScreenLinks`: 移动式视图下导航栏链接
-- `@theme-hope/module/navbar/components/RepoLink`: 仓库链接
-- `@theme-hope/module/navbar/components/ToggleNavbarButton`: 导航栏切换按钮
-- `@theme-hope/module/navbar/components/ToggleSidebarButton`: 侧边栏切换按钮
+- `@theme-hope/modules/navbar/components/DropdownLink`: 下拉列表
+- `@theme-hope/modules/navbar/components/LanguageDropdown`: 语言下拉列表
+- `@theme-hope/modules/navbar/components/NavActions`: 导航栏功能
+- `@theme-hope/modules/navbar/components/Navbar`: 导航栏
+- `@theme-hope/modules/navbar/components/NavbarBrand`: 导航栏品牌信息
+- `@theme-hope/modules/navbar/components/NavbarLinks`: 导航栏链接
+- `@theme-hope/modules/navbar/components/NavScreen`: 移动视图下的导航屏
+- `@theme-hope/modules/navbar/components/NavScreenDropdown`: 移动视图下导航栏下拉菜单
+- `@theme-hope/modules/navbar/components/NavScreenLinks`: 移动式视图下导航栏链接
+- `@theme-hope/modules/navbar/components/RepoLink`: 仓库链接
+- `@theme-hope/modules/navbar/components/ToggleNavbarButton`: 导航栏切换按钮
+- `@theme-hope/modules/navbar/components/ToggleSidebarButton`: 侧边栏切换按钮
 
 杂项:
 
-- `@theme-hope/module/navbar/components/icons`: 导航栏图标
-- `@theme-hope/module/navbar/composables`: 导航栏可组合 API
+- `@theme-hope/modules/navbar/components/icons`: 导航栏图标
+- `@theme-hope/modules/navbar/composables`: 导航栏可组合 API
 
 :::
 
@@ -126,15 +126,15 @@ module.exports = {
 
 组件:
 
-- `@theme-hope/module/sidebar/components/Sidebar`: 侧边栏
-- `@theme-hope/module/sidebar/components/SidebarChild`: 侧边栏链接子项
-- `@theme-hope/module/sidebar/components/SidebarGroup`: 侧边栏分组链接
-- `@theme-hope/module/sidebar/components/SidebarLinks`: 侧边栏链接
+- `@theme-hope/modules/sidebar/components/Sidebar`: 侧边栏
+- `@theme-hope/modules/sidebar/components/SidebarChild`: 侧边栏链接子项
+- `@theme-hope/modules/sidebar/components/SidebarGroup`: 侧边栏分组链接
+- `@theme-hope/modules/sidebar/components/SidebarLinks`: 侧边栏链接
 
 杂项:
 
-- `@theme-hope/module/sidebar/composables`: 侧边栏可组合 API
-- `@theme-hope/module/sidebar/utils`: 侧边栏通用函数
+- `@theme-hope/modules/sidebar/composables`: 侧边栏可组合 API
+- `@theme-hope/modules/sidebar/utils`: 侧边栏通用函数
 
 :::
 
@@ -142,23 +142,23 @@ module.exports = {
 
 Components:
 
-- `@theme-hope/module/info/components/AuthorInfo`: 作者信息
-- `@theme-hope/module/info/components/CategoryInfo`: 分类信息
-- `@theme-hope/module/info/components/DateInfo`: 写作日期信息
-- `@theme-hope/module/info/components/OriginalMark`: 原创标识
-- `@theme-hope/module/info/components/PageInfo`: 页面信息
-- `@theme-hope/module/info/components/PageMeta`: 页面元数据 information
-- `@theme-hope/module/info/components/PageViewInfo`: 浏览量信息 information
-- `@theme-hope/module/info/components/ReadingTimeInfo`: 阅读时间信息 time information
-- `@theme-hope/module/info/components/TagInfo`: 标签信息
-- `@theme-hope/module/info/components/TOC`: 内容列表
-- `@theme-hope/module/info/components/WordInfo`: 字数信息
+- `@theme-hope/modules/info/components/AuthorInfo`: 作者信息
+- `@theme-hope/modules/info/components/CategoryInfo`: 分类信息
+- `@theme-hope/modules/info/components/DateInfo`: 写作日期信息
+- `@theme-hope/modules/info/components/OriginalMark`: 原创标识
+- `@theme-hope/modules/info/components/PageInfo`: 页面信息
+- `@theme-hope/modules/info/components/PageMeta`: 页面元数据 information
+- `@theme-hope/modules/info/components/PageViewInfo`: 浏览量信息 information
+- `@theme-hope/modules/info/components/ReadingTimeInfo`: 阅读时间信息 time information
+- `@theme-hope/modules/info/components/TagInfo`: 标签信息
+- `@theme-hope/modules/info/components/TOC`: 内容列表
+- `@theme-hope/modules/info/components/WordInfo`: 字数信息
 
 杂项:
 
-- `@theme-hope/module/blog/components/icons`: 信息图标
-- `@theme-hope/module/blog/composables`: 信息可组合 API
-- `@theme-hope/module/blog/utils`: 信息通用函数
+- `@theme-hope/modules/blog/components/icons`: 信息图标
+- `@theme-hope/modules/blog/composables`: 信息可组合 API
+- `@theme-hope/modules/blog/utils`: 信息通用函数
 
 :::
 
@@ -166,27 +166,27 @@ Components:
 
 组件:
 
-- `@theme-hope/module/blog/components/ArticleItem`: 文章项
-- `@theme-hope/module/blog/components/ArticleList`: 文章列表
-- `@theme-hope/module/blog/components/ArticleType`: 文章类型
-- `@theme-hope/module/blog/components/BloggerInfo`: 博主信息
-- `@theme-hope/module/blog/components/BlogHero`: 博客主页 Logo 与介绍
-- `@theme-hope/module/blog/components/BlogHome`: 博客主页
-- `@theme-hope/module/blog/components/BlogPage`: 博客普通页面
-- `@theme-hope/module/blog/components/CategoryList`: 分类列表
-- `@theme-hope/module/blog/components/InfoList`: 博客信息列表
-- `@theme-hope/module/blog/components/InfoPanel`: 博客信息面板
-- `@theme-hope/module/blog/components/Pagination`: 分页组件
-- `@theme-hope/module/blog/components/ProjectPanel`: 博客主页项目面板
-- `@theme-hope/module/blog/components/SocialMedia`: 社交媒体链接
-- `@theme-hope/module/blog/components/TagList`: 标签列表
-- `@theme-hope/module/blog/components/TimelineItems`: 时间线项目
-- `@theme-hope/module/blog/components/TimelineList`: 时间线列表
+- `@theme-hope/modules/blog/components/ArticleItem`: 文章项
+- `@theme-hope/modules/blog/components/ArticleList`: 文章列表
+- `@theme-hope/modules/blog/components/ArticleType`: 文章类型
+- `@theme-hope/modules/blog/components/BloggerInfo`: 博主信息
+- `@theme-hope/modules/blog/components/BlogHero`: 博客主页 Logo 与介绍
+- `@theme-hope/modules/blog/components/BlogHome`: 博客主页
+- `@theme-hope/modules/blog/components/BlogPage`: 博客普通页面
+- `@theme-hope/modules/blog/components/CategoryList`: 分类列表
+- `@theme-hope/modules/blog/components/InfoList`: 博客信息列表
+- `@theme-hope/modules/blog/components/InfoPanel`: 博客信息面板
+- `@theme-hope/modules/blog/components/Pagination`: 分页组件
+- `@theme-hope/modules/blog/components/ProjectPanel`: 博客主页项目面板
+- `@theme-hope/modules/blog/components/SocialMedia`: 社交媒体链接
+- `@theme-hope/modules/blog/components/TagList`: 标签列表
+- `@theme-hope/modules/blog/components/TimelineItems`: 时间线项目
+- `@theme-hope/modules/blog/components/TimelineList`: 时间线列表
 
 杂项:
 
-- `@theme-hope/module/blog/components/icons`: 博客图标
-- `@theme-hope/module/blog/composables`: 博客可组合 API
+- `@theme-hope/modules/blog/components/icons`: 博客图标
+- `@theme-hope/modules/blog/composables`: 博客可组合 API
 
 :::
 
@@ -194,31 +194,31 @@ Components:
 
 组件:
 
-- `@theme-hope/module/encrypt/components/GlobalEncrypt`: 全局加密
-- `@theme-hope/module/encrypt/components/LocalEncrypt`: 本地加密
-- `@theme-hope/module/encrypt/components/PasswordModal`: 密码输入框
+- `@theme-hope/modules/encrypt/components/GlobalEncrypt`: 全局加密
+- `@theme-hope/modules/encrypt/components/LocalEncrypt`: 本地加密
+- `@theme-hope/modules/encrypt/components/PasswordModal`: 密码输入框
 
 杂项:
 
-- `@theme-hope/module/encrypt/composables`: 加密可组合 API
-- `@theme-hope/module/encrypt/utils`: 加密通用函数
+- `@theme-hope/modules/encrypt/composables`: 加密可组合 API
+- `@theme-hope/modules/encrypt/utils`: 加密通用函数
 
 :::
 
 ::: details 外观模块组件别名
 
-- `@theme-hope/module/outlook/components/AppearanceMode`: 主题外观模式
-- `@theme-hope/module/outlook/components/AppearanceSwitch`: 主题外观开关
-- `@theme-hope/module/outlook/components/OutlookButton`: 外观按钮
-- `@theme-hope/module/outlook/components/OutlookSettings`: 外观设置
-- `@theme-hope/module/outlook/components/ThemeColor`: 主题色
-- `@theme-hope/module/outlook/components/ThemeColorPicker`: 主题色选择器
-- `@theme-hope/module/outlook/components/ToggleFullScreenButton`: 全屏切换按钮
+- `@theme-hope/modules/outlook/components/AppearanceMode`: 主题外观模式
+- `@theme-hope/modules/outlook/components/AppearanceSwitch`: 主题外观开关
+- `@theme-hope/modules/outlook/components/OutlookButton`: 外观按钮
+- `@theme-hope/modules/outlook/components/OutlookSettings`: 外观设置
+- `@theme-hope/modules/outlook/components/ThemeColor`: 主题色
+- `@theme-hope/modules/outlook/components/ThemeColorPicker`: 主题色选择器
+- `@theme-hope/modules/outlook/components/ToggleFullScreenButton`: 全屏切换按钮
 
 杂项:
 
-- `@theme-hope/module/outlook/components/icons`: 外观图标
-- `@theme-hope/module/outlook/composables`: 外观可组合 API
+- `@theme-hope/modules/outlook/components/icons`: 外观图标
+- `@theme-hope/modules/outlook/composables`: 外观可组合 API
 
 :::
 

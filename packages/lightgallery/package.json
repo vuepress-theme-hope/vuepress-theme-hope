@@ -27,6 +27,11 @@
     "url": "https://mrhope.site"
   },
   "type": "module",
+  "exports": {
+    ".": "./lib/node/index.js",
+    "./lib/client/*": "./lib/client/*",
+    "./package.json": "./package.json"
+  },
   "main": "lib/node/index.js",
   "types": "lib/node/index.d.ts",
   "files": [

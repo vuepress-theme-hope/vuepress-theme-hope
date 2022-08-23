@@ -83,7 +83,7 @@ module.exports = {
 <script setup lang="ts">
 import { computed } from 'vue';
 import { useThemeData } from '@theme-hope/composables';
-import ThemeColorPicker from '@theme-hope/module/outlook/components/ThemeColorPicker';
+import ThemeColorPicker from '@theme-hope/modules/outlook/components/ThemeColorPicker';
 
 const themeData = useThemeData();
 

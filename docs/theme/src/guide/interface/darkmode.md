@@ -36,7 +36,7 @@ Available options:
 - `"disable"`: disable dark mode
 
 <script setup lang="ts">
-import AppearanceSwitch from '@theme-hope/module/outlook/components/AppearanceSwitch'
+import AppearanceSwitch from '@theme-hope/modules/outlook/components/AppearanceSwitch'
 </script>
 
 ## Global Vairables

@@ -159,7 +159,7 @@ export default [
       "@theme-hope/composables",
       "@theme-hope/utils",
       "@theme-hope/components/transitions/DropTransition.vue",
-      "@theme-hope/module/blog/components/icons/EmptyIcon.vue",
+      "@theme-hope/modules/blog/components/icons/EmptyIcon.vue",
       "@vuepress/client",
       "vue",
       "vue-router",

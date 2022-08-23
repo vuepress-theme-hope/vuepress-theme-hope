@@ -27,7 +27,7 @@ export const getLayoutConfig = (
   if (plugins.blog)
     layoutConfig["Blog"] = path.resolve(
       __dirname,
-      "../client/module/blog/layouts/Blog.js"
+      "../client/modules/blog/layouts/Blog.js"
     );
 
   if (app.env.isDebug) console.log("Theme layout config:", layoutConfig);
