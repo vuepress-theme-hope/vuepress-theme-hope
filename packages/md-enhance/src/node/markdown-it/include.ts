@@ -231,7 +231,6 @@ export const include: PluginWithOptions<IncludeOptions> = (
     };
 
     md.renderer.rules["vth_inc_pop"] = function (_tokens, _idx, _options, env, _self) {
-      // const token = tokens[idx];
       const includedPaths = env.includedPaths;
       if (Array.isArray(includedPaths)) {
         includedPaths.pop();
