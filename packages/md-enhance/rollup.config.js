@@ -61,6 +61,10 @@ export default [
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/Playground", {
+    external: ["vue", /\.scss$/],
+    dtsExternal: [/\.scss$/],
+  }),
+  ...rollupTypescript("client/components/VuePlayground", {
     external: [
       "@vuepress/client",
       "@vue/repl",
