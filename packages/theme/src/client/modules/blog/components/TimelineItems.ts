@@ -1,13 +1,13 @@
 import { computed, defineComponent, h } from "vue";
 import { RouterLink } from "vue-router";
 
-import DropTransition from "@theme-hope/components/transitions/DropTransition";
-import { useThemeLocaleData } from "@theme-hope/composables";
+import DropTransition from "@theme-hope/components/transitions/DropTransition.js";
+import { useThemeLocaleData } from "@theme-hope/composables/index.js";
 import {
   useBlogOptions,
   useTimelines,
-} from "@theme-hope/modules/blog/composables";
-import TOC from "@theme-hope/modules/info/components/TOC";
+} from "@theme-hope/modules/blog/composables/index.js";
+import TOC from "@theme-hope/modules/info/components/TOC.js";
 
 import type { VNode } from "vue";
 

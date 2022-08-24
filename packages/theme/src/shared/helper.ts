@@ -10,7 +10,7 @@ import type { ReadingTimeOptions } from "vuepress-plugin-reading-time2";
 import type { SitemapOptions } from "vuepress-plugin-sitemap2";
 import type { SeoOptions } from "vuepress-plugin-seo2";
 import type { HopeThemeNavbarConfig } from "./navbar.js";
-import type { HopeThemeBlogPluginOptions } from "./options.js";
+import type { HopeThemeBlogPluginOptions } from "./options/index.js";
 import type {
   HopeThemeSidebarConfig,
   HopeThemeSidebarArrayConfig,

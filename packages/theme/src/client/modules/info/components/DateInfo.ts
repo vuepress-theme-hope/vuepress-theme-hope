@@ -1,8 +1,8 @@
 import { usePageLang } from "@vuepress/client";
 import { defineComponent, h } from "vue";
 
-import { CalendarIcon } from "@theme-hope/modules/info/components/icons";
-import { useMetaLocale } from "@theme-hope/modules/info/composables";
+import { CalendarIcon } from "@theme-hope/modules/info/components/icons.js";
+import { useMetaLocale } from "@theme-hope/modules/info/composables/index.js";
 
 import type { PropType, VNode } from "vue";
 import type { DateInfo } from "vuepress-shared";

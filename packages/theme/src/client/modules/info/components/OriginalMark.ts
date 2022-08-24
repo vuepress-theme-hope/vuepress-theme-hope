@@ -1,6 +1,6 @@
 import { defineComponent, h } from "vue";
 
-import { useMetaLocale } from "@theme-hope/modules/info/composables";
+import { useMetaLocale } from "@theme-hope/modules/info/composables/index.js";
 
 import type { VNode } from "vue";
 

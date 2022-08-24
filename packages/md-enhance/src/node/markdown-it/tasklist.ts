@@ -28,7 +28,7 @@ import {
 
 import type { PluginWithOptions } from "markdown-it";
 import type { default as StateCore } from "markdown-it/lib/rules_core/state_core.js";
-import type { TaskListOptions } from "../../shared";
+import type { TaskListOptions } from "../../shared/index.js";
 
 interface TaskListEnv {
   tasklists: number;

@@ -3,12 +3,12 @@ import { computed, defineComponent, h, onMounted, watch, ref } from "vue";
 import { RouterLink, useRoute, useRouter } from "vue-router";
 import { resolveRouteWithRedirect } from "vuepress-shared/lib/client";
 
-import Icon from "@theme-hope/components/Icon";
-import { useThemeLocaleData } from "@theme-hope/composables";
-import { getAncestorLinks } from "@theme-hope/utils";
+import Icon from "@theme-hope/components/Icon.js";
+import { useThemeLocaleData } from "@theme-hope/composables/index.js";
+import { getAncestorLinks } from "@theme-hope/utils/index.js";
 
 import type { VNode } from "vue";
-import type { HopeThemeNormalPageFrontmatter } from "../../shared";
+import type { HopeThemeNormalPageFrontmatter } from "../../shared/index.js";
 
 import "../styles/breadcrumb.scss";
 

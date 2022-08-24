@@ -1,10 +1,13 @@
 import { computed, defineComponent, h } from "vue";
 import { RouterLink } from "vue-router";
 
-import DropTransition from "@theme-hope/components/transitions/DropTransition";
-import { TimelineIcon } from "@theme-hope/modules/blog/components/icons";
-import { useTimelines } from "@theme-hope/modules/blog/composables";
-import { useNavigate, useThemeLocaleData } from "@theme-hope/composables";
+import DropTransition from "@theme-hope/components/transitions/DropTransition.js";
+import { TimelineIcon } from "@theme-hope/modules/blog/components/icons/index.js";
+import { useTimelines } from "@theme-hope/modules/blog/composables/index.js";
+import {
+  useNavigate,
+  useThemeLocaleData,
+} from "@theme-hope/composables/index.js";
 
 import type { VNode } from "vue";
 

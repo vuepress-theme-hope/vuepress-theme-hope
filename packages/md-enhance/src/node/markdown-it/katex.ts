@@ -24,7 +24,7 @@
  * SOFTWARE.
  */
 
-import Katex from "katex";
+import { default as Katex } from "katex";
 import { escapeHtml } from "./utils.js";
 
 import type { default as StateInline } from "markdown-it/lib/rules_inline/state_inline.js";

@@ -7,13 +7,13 @@ import type {
 import type {
   HopeThemeFeatureRootConfig,
   HopeThemeFeatureRootOptions,
-} from "./feature.js";
-import type { HopeThemeLayoutRootOptions } from "./layout.js";
+} from "./feature/index.js";
+import type { HopeThemeLayoutRootOptions } from "./layout/index.js";
 import type {
   HopeThemeLocaleConfig,
   HopeThemeLocaleOptions,
 } from "./locales.js";
-import type { HopeThemePluginsOptions } from "./plugins.js";
+import type { HopeThemePluginsOptions } from "./plugins/index.js";
 
 export interface HopeThemeRootInfoOptions {
   /**

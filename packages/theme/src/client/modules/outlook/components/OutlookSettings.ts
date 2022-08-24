@@ -1,10 +1,10 @@
 import { ClientOnly } from "@vuepress/client";
 import { computed, defineComponent, h } from "vue";
 
-import AppearanceMode from "@theme-hope/modules/outlook/components/AppearanceMode";
-import ThemeColor from "@theme-hope/modules/outlook/components/ThemeColor";
-import ToggleFullScreenButton from "@theme-hope/modules/outlook/components/ToggleFullScreenButton";
-import { usePure, useThemeData } from "@theme-hope/composables";
+import AppearanceMode from "@theme-hope/modules/outlook/components/AppearanceMode.js";
+import ThemeColor from "@theme-hope/modules/outlook/components/ThemeColor.js";
+import ToggleFullScreenButton from "@theme-hope/modules/outlook/components/ToggleFullScreenButton.js";
+import { usePure, useThemeData } from "@theme-hope/composables/index.js";
 
 import type { VNode } from "vue";
 

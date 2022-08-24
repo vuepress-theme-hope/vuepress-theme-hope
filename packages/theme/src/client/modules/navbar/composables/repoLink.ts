@@ -1,11 +1,11 @@
 import { isLinkHttp } from "@vuepress/shared";
 import { computed } from "vue";
 
-import { useThemeLocaleData } from "@theme-hope/composables";
-import { resolveRepoType } from "@theme-hope/utils";
+import { useThemeLocaleData } from "@theme-hope/composables/index.js";
+import { resolveRepoType } from "@theme-hope/utils/index.js";
 
 import type { ComputedRef } from "vue";
-import type { RepoType } from "@theme-hope/utils";
+import type { RepoType } from "@theme-hope/utils/index.js";
 
 export interface RepoConfig {
   type: RepoType | "Source";

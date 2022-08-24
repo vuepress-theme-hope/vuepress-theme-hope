@@ -1,14 +1,14 @@
 import { computed, defineComponent, h, ref, toRef, watch } from "vue";
 import { useRoute } from "vue-router";
 
-import AutoLink from "@theme-hope/components/AutoLink";
-import Icon from "@theme-hope/components/Icon";
+import AutoLink from "@theme-hope/components/AutoLink.js";
+import Icon from "@theme-hope/components/Icon.js";
 
 import type { PropType, VNode } from "vue";
 import type {
   AutoLink as AutoLinkType,
   HopeThemeNavGroup,
-} from "../../../../shared";
+} from "../../../../shared/index.js";
 
 import "../styles/nav-screen-dropdown.scss";
 

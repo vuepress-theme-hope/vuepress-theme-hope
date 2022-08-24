@@ -2,8 +2,11 @@ import { useSiteLocaleData, withBase } from "@vuepress/client";
 import { computed, defineComponent, h } from "vue";
 import { getAuthor } from "vuepress-shared/lib/client";
 
-import SocialMedia from "@theme-hope/modules/blog/components/SocialMedia";
-import { useNavigate, useThemeLocaleData } from "@theme-hope/composables";
+import SocialMedia from "@theme-hope/modules/blog/components/SocialMedia.js";
+import {
+  useNavigate,
+  useThemeLocaleData,
+} from "@theme-hope/composables/index.js";
 
 import {
   useArticles,
@@ -11,7 +14,7 @@ import {
   useCategoryMap,
   useTagMap,
   useTimelines,
-} from "@theme-hope/modules/blog/composables";
+} from "@theme-hope/modules/blog/composables/index.js";
 
 import type { VNode } from "vue";
 

@@ -17,7 +17,7 @@ import {
   defineSidebarArrayConfig,
   defineSidebarConfig,
   defineSidebarObjectConfig,
-} from "./compact.js";
+} from "./compact/index.js";
 
 export {
   config,
@@ -38,7 +38,7 @@ export {
 
 export * from "./themeConfig.js";
 export * from "./helpers.js";
-export * from "./locales.js";
+export * from "./locales/index.js";
 export * from "./theme.js";
 export * from "../shared/index.js";
 

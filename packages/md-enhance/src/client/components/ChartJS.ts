@@ -40,7 +40,7 @@ export default defineComponent({
 
     onMounted(() => {
       void Promise.all([
-        import(/* webpackChunkName: "chart" */ "chart.js/auto"),
+        import(/* webpackChunkName: "chart" */ "chart.js/auto/auto.mjs"),
         // delay
         new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
       ]).then(([{ default: Chart }]) => {

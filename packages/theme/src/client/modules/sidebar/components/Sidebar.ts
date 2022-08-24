@@ -1,9 +1,9 @@
 import { defineComponent, h, onMounted, watch, ref } from "vue";
 import { useRoute } from "vue-router";
 
-import { useThemeLocaleData } from "@theme-hope/composables";
-import SidebarLinks from "@theme-hope/modules/sidebar/components/SidebarLinks";
-import { useSidebarItems } from "@theme-hope/modules/sidebar/composables";
+import { useThemeLocaleData } from "@theme-hope/composables/index.js";
+import SidebarLinks from "@theme-hope/modules/sidebar/components/SidebarLinks.js";
+import { useSidebarItems } from "@theme-hope/modules/sidebar/composables/index.js";
 
 import type { VNode } from "vue";
 

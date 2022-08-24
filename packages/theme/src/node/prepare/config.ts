@@ -22,7 +22,7 @@ export const prepareConfigFile = (
 import BloggerInfo from "@theme-hope/modules/blog/components/BloggerInfo";
 import BlogHome from "@theme-hope/modules/blog/components/BlogHome";
 import BlogPage from "@theme-hope/modules/blog/components/BlogPage";
-import { setupBlog } from "@theme-hope/modules/blog/composables";
+import { setupBlog } from "@theme-hope/modules/blog/composables/index.js";
 import "${CLIENT_FOLDER}module/blog/styles/layout.scss";
 `;
 
@@ -56,9 +56,9 @@ import NormalPage from "@theme-hope/components/NormalPage";
 import Navbar from "@theme-hope/modules/navbar/components/Navbar";
 import Sidebar from "@theme-hope/modules/sidebar/components/Sidebar";
 
-import { useScrollPromise } from "@theme-hope/composables";
-import { injectDarkMode, setupDarkMode } from "@theme-hope/modules/outlook/composables";
-import { setupSidebarItems } from "@theme-hope/modules/sidebar/composables";
+import { useScrollPromise } from "@theme-hope/composables/index.js";
+import { injectDarkMode, setupDarkMode } from "@theme-hope/modules/outlook/composables/index.js";
+import { setupSidebarItems } from "@theme-hope/modules/sidebar/composables/index.js";
 
 import "${CLIENT_FOLDER}styles/index.scss";
 

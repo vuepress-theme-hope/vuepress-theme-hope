@@ -2,11 +2,11 @@ import { defineComponent, h } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { generateIndexfromHash } from "vuepress-shared/lib/client";
 
-import { TagIcon } from "@theme-hope/modules/info/components/icons";
-import { useMetaLocale } from "@theme-hope/modules/info/composables";
+import { TagIcon } from "@theme-hope/modules/info/components/icons.js";
+import { useMetaLocale } from "@theme-hope/modules/info/composables/index.js";
 
 import type { PropType, VNode } from "vue";
-import type { PageTag } from "@theme-hope/modules/info/utils";
+import type { PageTag } from "@theme-hope/modules/info/utils/index.js";
 
 import "../styles/tag.scss";
 

@@ -10,7 +10,7 @@ import { viLocale } from "./vi.js";
 import { zhLocale } from "./zh.js";
 import { zhTWLocale } from "./zhTW.js";
 
-import type { HopeThemeLocaleData } from "../../shared";
+import type { HopeThemeLocaleData } from "../../shared/index.js";
 
 export const themeLocalesData: Record<string, HopeThemeLocaleData> = {
   "/en/": enLocale,

@@ -1,14 +1,14 @@
 import { computed, defineComponent, h, onMounted, ref, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
 
-import ArticleItem from "@theme-hope/modules/blog/components/ArticleItem";
-import Pagination from "@theme-hope/modules/blog/components/Pagination";
-import DropTransition from "@theme-hope/components/transitions/DropTransition";
-import { EmptyIcon } from "@theme-hope/modules/blog/components/icons";
-import { useBlogOptions } from "@theme-hope/modules/blog/composables";
+import ArticleItem from "@theme-hope/modules/blog/components/ArticleItem.js";
+import Pagination from "@theme-hope/modules/blog/components/Pagination.js";
+import DropTransition from "@theme-hope/components/transitions/DropTransition.js";
+import { EmptyIcon } from "@theme-hope/modules/blog/components/icons/index.js";
+import { useBlogOptions } from "@theme-hope/modules/blog/composables/index.js";
 
 import type { PropType, VNode } from "vue";
-import type { ArticleInfo } from "../../../../shared";
+import type { ArticleInfo } from "../../../../shared/index.js";
 
 import "../styles/article-list.scss";
 

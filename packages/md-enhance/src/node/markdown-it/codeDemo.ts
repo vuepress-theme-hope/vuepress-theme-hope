@@ -4,7 +4,7 @@ import { container } from "./container.js";
 
 import type { PluginSimple } from "markdown-it";
 import type { default as Token } from "markdown-it/lib/token.js";
-import type { CodeDemoOptions } from "../../shared";
+import type { CodeDemoOptions } from "../../shared/index.js";
 
 export const CODE_DEMO_DEFAULT_SETTING: CodeDemoOptions = {
   useBabel: false,

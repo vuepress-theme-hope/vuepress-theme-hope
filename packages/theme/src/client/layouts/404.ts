@@ -5,7 +5,7 @@ import { useRouteLocale } from "@vuepress/client";
 import SkipLink from "@theme-hope/components/SkipLink";
 import { Page404Icon } from "@theme-hope/components/icons";
 
-import { useThemeLocaleData } from "@theme-hope/composables";
+import { useThemeLocaleData } from "@theme-hope/composables/index.js";
 
 import type { VNode } from "vue";
 

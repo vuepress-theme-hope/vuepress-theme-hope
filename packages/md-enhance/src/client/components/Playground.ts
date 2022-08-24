@@ -4,7 +4,7 @@ import { defineComponent, h } from "vue";
 import ExternalPlayground from "./ExternalPlayground.js";
 import InternalPlayground from "./InternalPlayground.js";
 import { parsePlaygroundSettings } from "../utils/index.js";
-import { IMPORT_MAP_KEY } from "../../shared";
+import { IMPORT_MAP_KEY } from "../../shared/index.js";
 
 import type { VNode } from "vue";
 

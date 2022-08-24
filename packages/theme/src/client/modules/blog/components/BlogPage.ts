@@ -2,12 +2,12 @@ import { usePageFrontmatter } from "@vuepress/client";
 import { computed, defineComponent, h, resolveComponent } from "vue";
 import { useRoute } from "vue-router";
 
-import ArticleList from "@theme-hope/modules/blog/components/ArticleList";
-import ArticleType from "@theme-hope/modules/blog/components/ArticleType";
-import CategoryList from "@theme-hope/modules/blog/components/CategoryList";
-import TagList from "@theme-hope/modules/blog/components/TagList";
-import TimelineItems from "@theme-hope/modules/blog/components/TimelineItems";
-import DropTransition from "@theme-hope/components/transitions/DropTransition";
+import ArticleList from "@theme-hope/modules/blog/components/ArticleList.js";
+import ArticleType from "@theme-hope/modules/blog/components/ArticleType.js";
+import CategoryList from "@theme-hope/modules/blog/components/CategoryList.js";
+import TagList from "@theme-hope/modules/blog/components/TagList.js";
+import TimelineItems from "@theme-hope/modules/blog/components/TimelineItems.js";
+import DropTransition from "@theme-hope/components/transitions/DropTransition.js";
 import {
   useArticles,
   useCategoryMap,
@@ -15,7 +15,7 @@ import {
   useSlides,
   useTagMap,
   useStars,
-} from "@theme-hope/modules/blog/composables";
+} from "@theme-hope/modules/blog/composables/index.js";
 
 import type { VNode } from "vue";
 import type {

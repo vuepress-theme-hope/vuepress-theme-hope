@@ -17,10 +17,16 @@ import type {
 import type { GitData } from "@vuepress/plugin-git";
 import type { ComputedRef } from "vue";
 import type { ReadingTime } from "vuepress-plugin-reading-time2";
-import type { CategoryMapRef } from "@theme-hope/modules/blog/composables";
-import type { PageInfoProps } from "@theme-hope/modules/info/components/PageInfo";
-import type { PageCategory, PageTag } from "@theme-hope/modules/info/utils";
-import type { HopeThemeNormalPageFrontmatter, PageInfo } from "../../shared";
+import type { CategoryMapRef } from "@theme-hope/modules/blog/composables/index.js";
+import type { PageInfoProps } from "@theme-hope/modules/info/components/PageInfo.js";
+import type {
+  PageCategory,
+  PageTag,
+} from "@theme-hope/modules/info/utils/index.js";
+import type {
+  HopeThemeNormalPageFrontmatter,
+  PageInfo,
+} from "../../shared/index.js";
 
 declare const ENABLE_BLOG: boolean;
 declare const ENABLE_VISITOR: boolean;

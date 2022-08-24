@@ -1,14 +1,14 @@
 import { usePageFrontmatter } from "@vuepress/client";
 import { defineComponent, h, resolveComponent } from "vue";
 
-import BlogHome from "@theme-hope/modules/blog/components/BlogHome";
-import BlogPage from "@theme-hope/modules/blog/components/BlogPage";
-import BloggerInfo from "@theme-hope/modules/blog/components/BloggerInfo";
-import InfoList from "@theme-hope/modules/blog/components/InfoList";
-import InfoPanel from "@theme-hope/modules/blog/components/InfoPanel";
-import DropTransition from "@theme-hope/components/transitions/DropTransition";
-import SkipLink from "@theme-hope/components/SkipLink";
-import { useMobile } from "@theme-hope/composables";
+import BlogHome from "@theme-hope/modules/blog/components/BlogHome.js";
+import BlogPage from "@theme-hope/modules/blog/components/BlogPage.js";
+import BloggerInfo from "@theme-hope/modules/blog/components/BloggerInfo.js";
+import InfoList from "@theme-hope/modules/blog/components/InfoList.js";
+import InfoPanel from "@theme-hope/modules/blog/components/InfoPanel.js";
+import DropTransition from "@theme-hope/components/transitions/DropTransition.js";
+import SkipLink from "@theme-hope/components/SkipLink.js";
+import { useMobile } from "@theme-hope/composables/index.js";
 
 import type { ComponentOptions, VNode } from "vue";
 

@@ -3,7 +3,7 @@ import { useBlogCategory } from "vuepress-plugin-blog2/lib/client";
 
 import type { ComputedRef, InjectionKey } from "vue";
 import type { BlogCategoryData } from "vuepress-plugin-blog2";
-import type { ArticleInfo } from "../../../../shared";
+import type { ArticleInfo } from "../../../../shared/index.js";
 
 export type CategoryMapRef = ComputedRef<BlogCategoryData<ArticleInfo>>;
 

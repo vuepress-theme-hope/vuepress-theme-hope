@@ -13,7 +13,10 @@ import {
 } from "@vuepress/shared";
 import { useRoute } from "vue-router";
 
-import { useAutoLink, useThemeLocaleData } from "@theme-hope/composables";
+import {
+  useAutoLink,
+  useThemeLocaleData,
+} from "@theme-hope/composables/index.js";
 import { resolvePrefix } from "./utils.js";
 
 import type { PageHeader } from "@vuepress/client";
@@ -26,7 +29,7 @@ import type {
   ResolvedHopeThemeSidebarHeaderItem,
   ResolvedHopeThemeSidebarPageItem,
   ResolvedHopeThemeSidebarGroupItem,
-} from "../../../../shared";
+} from "../../../../shared/index.js";
 
 /**
  * Util to transform page header to sidebar item

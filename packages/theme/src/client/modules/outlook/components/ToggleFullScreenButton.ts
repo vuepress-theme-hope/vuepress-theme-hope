@@ -1,10 +1,10 @@
 import { useFullscreen } from "@vueuse/core";
 import { computed, defineComponent, h } from "vue";
-import { useThemeLocaleData } from "@theme-hope/composables";
+import { useThemeLocaleData } from "@theme-hope/composables/index.js";
 import {
   CancelFullScreenIcon,
   EnterFullScreenIcon,
-} from "@theme-hope/modules/outlook/components/icons";
+} from "@theme-hope/modules/outlook/components/icons/index.js";
 
 import type { VNode } from "vue";
 

@@ -1,9 +1,9 @@
 import { convertNavbarConfig } from "./navbar.js";
 import { convertSidebarConfig } from "./sidebar.js";
 import { droppedLogger, deprecatedLogger } from "./utils.js";
-import { logger } from "../utils/index.js";
+import { logger } from "../utils.js";
 
-import type { HopeThemeOptions } from "../../shared";
+import type { HopeThemeOptions } from "../../shared/index.js";
 
 const DEPRECATED_THEME_OPTIONS: [string, string][] = [
   // v1

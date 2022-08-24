@@ -1,4 +1,4 @@
-import type { HopeThemeSidebarConfig } from "../../sidebar";
+import type { HopeThemeSidebarConfig } from "../../sidebar.js";
 
 export interface HopeThemeSidebarLocaleOptions {
   /**

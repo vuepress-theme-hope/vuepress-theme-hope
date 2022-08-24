@@ -1,6 +1,6 @@
 import { getLocales } from "vuepress-shared";
 import { resolveEncrypt } from "./encrypt.js";
-import { themeLocalesData } from "./locales.js";
+import { themeLocalesData } from "./locales/index.js";
 
 import type { App } from "@vuepress/core";
 import type { ThemeStatus } from "./status.js";

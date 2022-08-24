@@ -4,7 +4,7 @@ import { getDate } from "vuepress-shared/lib/client";
 
 import type { ComputedRef, InjectionKey } from "vue";
 import type { Article } from "vuepress-plugin-blog2";
-import type { ArticleInfo } from "../../../../shared";
+import type { ArticleInfo } from "../../../../shared/index.js";
 
 export interface TimelineItem {
   year: number;

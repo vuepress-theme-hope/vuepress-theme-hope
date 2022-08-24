@@ -5,14 +5,14 @@ import {
 } from "@vuepress/client";
 import { computed, defineComponent, h, ref } from "vue";
 
-import DropTransition from "@theme-hope/components/transitions/DropTransition";
+import DropTransition from "@theme-hope/components/transitions/DropTransition.js";
+import { SlideDownIcon } from "./icons/icons.js";
 import defaultHeroBgImagePath from "../assets/hero.jpg";
 
 import type { VNode } from "vue";
-import type { HopeThemeBlogHomePageFrontmatter } from "../../../../shared";
+import type { HopeThemeBlogHomePageFrontmatter } from "../../../../shared/index.js";
 
 import "../styles/blog-hero.scss";
-import { SlideDownIcon } from "./icons.js";
 
 export default defineComponent({
   name: "BlogHero",

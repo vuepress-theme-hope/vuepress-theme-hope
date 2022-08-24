@@ -1,4 +1,4 @@
-import type { HopeThemeLocaleData } from "../../shared";
+import type { HopeThemeLocaleData } from "../../shared/index.js";
 
 export const skLocale: HopeThemeLocaleData = {
   lang: "sk-SK",

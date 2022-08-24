@@ -1,7 +1,7 @@
 import { computed, defineComponent, h } from "vue";
 import { icons } from "@temp/theme-hope/socialMedia";
-import { usePure } from "@theme-hope/composables";
-import { useBlogOptions } from "@theme-hope/modules/blog/composables";
+import { usePure } from "@theme-hope/composables/index.js";
+import { useBlogOptions } from "@theme-hope/modules/blog/composables/index.js";
 
 import type { VNode } from "vue";
 

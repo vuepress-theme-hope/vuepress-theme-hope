@@ -10,13 +10,16 @@ import { useCategoryMap } from "./categoryMap.js";
 import { useBlogOptions } from "./options.js";
 import { useTagMap } from "./tagMap.js";
 
-import { useThemeLocaleData } from "@theme-hope/composables";
+import { useThemeLocaleData } from "@theme-hope/composables/index.js";
 
 import type { ComputedRef } from "vue";
 import type { AuthorInfo, DateInfo } from "vuepress-shared";
-import type { PageInfoProps } from "@theme-hope/modules/info/components/PageInfo";
-import type { PageCategory, PageTag } from "@theme-hope/modules/info/utils";
-import type { ArticleInfo, PageInfo } from "../../../../shared";
+import type { PageInfoProps } from "@theme-hope/modules/info/components/PageInfo.js";
+import type {
+  PageCategory,
+  PageTag,
+} from "@theme-hope/modules/info/utils/index.js";
+import type { ArticleInfo, PageInfo } from "../../../../shared/index.js";
 
 export type AuthorRef = ComputedRef<AuthorInfo[]>;
 

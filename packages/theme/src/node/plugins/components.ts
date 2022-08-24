@@ -2,7 +2,7 @@ import { componentsPlugin } from "vuepress-plugin-components";
 
 import type { AvailableComponent } from "vuepress-plugin-components";
 import type { Plugin } from "@vuepress/core";
-import type { HopeThemeOptions } from "../../shared";
+import type { HopeThemeOptions } from "../../shared/index.js";
 
 export const getComponentsPlugin = (
   components: AvailableComponent[] = ["Badge", "FontIcon"],

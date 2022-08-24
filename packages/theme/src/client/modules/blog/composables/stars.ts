@@ -3,7 +3,7 @@ import { useBlogType } from "vuepress-plugin-blog2/lib/client";
 
 import type { ComputedRef, InjectionKey } from "vue";
 import type { BlogTypeData } from "vuepress-plugin-blog2";
-import type { ArticleInfo } from "../../../../shared";
+import type { ArticleInfo } from "../../../../shared/index.js";
 
 export type StarsRef = ComputedRef<BlogTypeData<ArticleInfo>>;
 

@@ -1,7 +1,10 @@
 import { isLinkExternal, isString } from "@vuepress/shared";
 import { computed } from "vue";
 
-import { useAutoLink, useThemeLocaleData } from "@theme-hope/composables";
+import {
+  useAutoLink,
+  useThemeLocaleData,
+} from "@theme-hope/composables/index.js";
 
 import type { ComputedRef } from "vue";
 import type {
@@ -10,7 +13,7 @@ import type {
   HopeThemeNavbarGroup,
   HopeThemeNavGroup,
   ResolvedHopeThemeNavbarItem,
-} from "../../../../shared";
+} from "../../../../shared/index.js";
 
 export const resolveNavbarItem = (
   item: HopeThemeNavbarItem | HopeThemeNavbarGroup | string,

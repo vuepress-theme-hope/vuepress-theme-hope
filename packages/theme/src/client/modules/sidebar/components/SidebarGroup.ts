@@ -1,13 +1,13 @@
 import { computed, defineComponent, h } from "vue";
 import { RouterLink, useRoute } from "vue-router";
 
-import DropTransition from "@theme-hope/components/transitions/DropTransition";
-import Icon from "@theme-hope/components/Icon";
-import SidebarLinks from "@theme-hope/modules/sidebar/components/SidebarLinks";
-import { isActiveSidebarItem } from "@theme-hope/modules/sidebar/utils";
+import DropTransition from "@theme-hope/components/transitions/DropTransition.js";
+import Icon from "@theme-hope/components/Icon.js";
+import SidebarLinks from "@theme-hope/modules/sidebar/components/SidebarLinks.js";
+import { isActiveSidebarItem } from "@theme-hope/modules/sidebar/utils/index.js";
 
 import type { PropType, VNode } from "vue";
-import type { ResolvedHopeThemeSidebarGroupItem } from "../../../../shared";
+import type { ResolvedHopeThemeSidebarGroupItem } from "../../../../shared/index.js";
 
 import "../styles/sidebar-group.scss";
 

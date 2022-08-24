@@ -10,9 +10,9 @@ import type {
 } from "./navbar.js";
 import type { HopeThemeSidebarLocaleOptions } from "./sidebar.js";
 import type { HopeThemeRouteLocaleData } from "./route.js";
-import type { HopeThemeNormalPageFrontmatter } from "../../frontmatter";
-import type { PageInfo } from "../../info";
-import type { HopeThemePageData } from "../../page";
+import type { HopeThemeNormalPageFrontmatter } from "../../frontmatter/index.js";
+import type { PageInfo } from "../../info.js";
+import type { HopeThemePageData } from "../../page.js";
 
 export interface HopeThemeSidebarFileInfo {
   type: "file";

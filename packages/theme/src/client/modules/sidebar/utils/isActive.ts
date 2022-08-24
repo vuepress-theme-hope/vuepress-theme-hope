@@ -1,7 +1,7 @@
 import { isActiveLink } from "vuepress-shared/lib/client";
 
 import type { RouteLocationNormalizedLoaded } from "vue-router";
-import type { ResolvedSidebarItem } from "../../../../shared";
+import type { ResolvedSidebarItem } from "../../../../shared/index.js";
 
 export const isActiveSidebarItem = (
   route: RouteLocationNormalizedLoaded,

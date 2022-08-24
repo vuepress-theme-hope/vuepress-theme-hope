@@ -20,7 +20,7 @@ import type {
   HopeThemeConfig,
   HopeThemeOptions,
   HopeThemePluginsOptions,
-} from "../../shared";
+} from "../../shared/index.js";
 
 export const getPluginConfig = (
   plugins: HopeThemePluginsOptions,

@@ -1,6 +1,6 @@
 import { computed, defineComponent, h, ref, VNode } from "vue";
 
-import { useThemeLocaleData } from "@theme-hope/composables";
+import { useThemeLocaleData } from "@theme-hope/composables/index.js";
 
 import "../styles/pagination.scss";
 

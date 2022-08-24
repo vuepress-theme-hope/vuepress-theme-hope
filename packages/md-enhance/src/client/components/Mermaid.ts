@@ -9,7 +9,7 @@ import {
 } from "vue";
 import { LoadingIcon } from "./icons.js";
 
-import type MermaidAPI from "mermaid/mermaidAPI.js";
+import type { default as MermaidAPI } from "mermaid/mermaidAPI.js";
 import type { VNode } from "vue";
 
 import "../styles/mermaid.scss";
@@ -100,8 +100,10 @@ export default defineComponent({
       void Promise.all([
         import(/* webpackChunkName: "mermaid" */ "mermaid"),
         new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
-      ]).then(([mermaid]) => {
-        const { initialize, render } = mermaid.default;
+      ]).then(([{ default: mermaid }]) => {
+        const { initialize, render } =
+          // FIXME: Fix types issue in upstream
+          mermaid as unknown as typeof mermaid.default;
 
         const renderMermaid = (): void => {
           // generate a unvisiable container

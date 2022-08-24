@@ -7,14 +7,14 @@ import {
   checkStyle,
   convertFrontmatter,
   convertThemeConfig,
-} from "./compact.js";
+} from "./compact/index.js";
 import { getLayoutConfig } from "./layout.js";
-import { getPluginConfig, usePlugin } from "./plugins.js";
+import { getPluginConfig, usePlugin } from "./plugins/index.js";
 import {
   prepareConfigFile,
   prepareSidebarData,
   prepareSocialMediaIcons,
-} from "./prepare.js";
+} from "./prepare/index.js";
 import { checkSocialMediaIcons } from "./socialMedia.js";
 import { getStatus } from "./status.js";
 import { getThemeConfig } from "./themeConfig.js";

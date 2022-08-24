@@ -5,13 +5,13 @@ import type {
   HopeThemeFeatureLocaleConfig,
   HopeThemeFeatureLocaleData,
   HopeThemeFeatureLocaleOptions,
-} from "./feature.js";
+} from "./feature/index.js";
 import type { LocaleData2Option } from "./helpers.js";
 import type {
   HopeThemeLayoutLocaleData,
   HopeThemeLayoutLocaleConfig,
   HopeThemeLayoutLocaleOptions,
-} from "./layout.js";
+} from "./layout/index.js";
 
 export interface HopeThemeLocaleData
   extends HopeThemeAppearanceLocaleData,

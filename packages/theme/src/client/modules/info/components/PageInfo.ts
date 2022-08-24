@@ -1,15 +1,15 @@
 import { defineComponent, resolveComponent, h } from "vue";
 
-import { usePure } from "@theme-hope/composables";
+import { usePure } from "@theme-hope/composables/index.js";
 
-import AuthorInfo from "@theme-hope/modules/info/components/AuthorInfo";
-import CategoryInfo from "@theme-hope/modules/info/components/CategoryInfo";
-import DateInfo from "@theme-hope/modules/info/components/DateInfo";
-import PageViewInfo from "@theme-hope/modules/info/components/PageViewInfo";
-import ReadingTimeInfo from "@theme-hope/modules/info/components/ReadingTimeInfo";
-import TagInfo from "@theme-hope/modules/info/components/TagInfo";
-import OriginalInfo from "@theme-hope/modules/info/components/OriginalMark";
-import WordInfo from "@theme-hope/modules/info/components/WordInfo";
+import AuthorInfo from "@theme-hope/modules/info/components/AuthorInfo.js";
+import CategoryInfo from "@theme-hope/modules/info/components/CategoryInfo.js";
+import DateInfo from "@theme-hope/modules/info/components/DateInfo.js";
+import PageViewInfo from "@theme-hope/modules/info/components/PageViewInfo.js";
+import ReadingTimeInfo from "@theme-hope/modules/info/components/ReadingTimeInfo.js";
+import TagInfo from "@theme-hope/modules/info/components/TagInfo.js";
+import OriginalInfo from "@theme-hope/modules/info/components/OriginalMark.js";
+import WordInfo from "@theme-hope/modules/info/components/WordInfo.js";
 
 import type { PropType, VNode } from "vue";
 import type { ReadingTime } from "vuepress-plugin-reading-time2";
@@ -17,8 +17,11 @@ import type {
   AuthorInfo as AuthorInfoType,
   DateInfo as DateInfoType,
 } from "vuepress-shared";
-import type { PageCategory, PageTag } from "@theme-hope/modules/info/utils";
-import type { PageInfo } from "../../../../shared";
+import type {
+  PageCategory,
+  PageTag,
+} from "@theme-hope/modules/info/utils/index.js";
+import type { PageInfo } from "../../../../shared/index.js";
 
 import "balloon-css/balloon.css";
 import "../styles/page-info.scss";

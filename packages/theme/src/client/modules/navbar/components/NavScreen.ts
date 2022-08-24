@@ -10,9 +10,9 @@ import {
 } from "vue";
 import { useRoute } from "vue-router";
 
-import { useMobile } from "@theme-hope/composables";
-import NavScreenLinks from "@theme-hope/modules/navbar/components/NavScreenLinks";
-import OutlookSettings from "@theme-hope/modules/outlook/components/OutlookSettings";
+import { useMobile } from "@theme-hope/composables/index.js";
+import NavScreenLinks from "@theme-hope/modules/navbar/components/NavScreenLinks.js";
+import OutlookSettings from "@theme-hope/modules/outlook/components/OutlookSettings.js";
 
 import type { VNode } from "vue";
 

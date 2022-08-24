@@ -4,8 +4,8 @@ import {
   usePageFrontmatter,
   useSiteLocaleData,
 } from "@vuepress/client";
-import { useThemeLocaleData } from "@theme-hope/composables";
-import { resolveEditLink } from "@theme-hope/modules/info/utils";
+import { useThemeLocaleData } from "@theme-hope/composables/index.js";
+import { resolveEditLink } from "@theme-hope/modules/info/utils/index.js";
 
 import type { GitContributor } from "@vuepress/plugin-git";
 import type { ComputedRef } from "vue";
@@ -13,7 +13,7 @@ import type {
   AutoLink,
   HopeThemePageData,
   HopeThemeNormalPageFrontmatter,
-} from "../../../../shared";
+} from "../../../../shared/index.js";
 
 export const useEditLink = (): ComputedRef<null | AutoLink> => {
   const themeLocale = useThemeLocaleData();

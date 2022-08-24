@@ -1,23 +1,26 @@
 import { computed, defineComponent, h, ref } from "vue";
 
-import CategoryList from "@theme-hope/modules/blog/components/CategoryList";
-import DropTransition from "@theme-hope/components/transitions/DropTransition";
-import TagList from "@theme-hope/modules/blog/components/TagList";
-import TimelineList from "@theme-hope/modules/blog/components/TimelineList";
+import CategoryList from "@theme-hope/modules/blog/components/CategoryList.js";
+import DropTransition from "@theme-hope/components/transitions/DropTransition.js";
+import TagList from "@theme-hope/modules/blog/components/TagList.js";
+import TimelineList from "@theme-hope/modules/blog/components/TimelineList.js";
 import {
   ArticleIcon,
   CategoryIcon,
   TagIcon,
   TimelineIcon,
-} from "@theme-hope/modules/blog/components/icons";
+} from "@theme-hope/modules/blog/components/icons/index.js";
 
-import { useNavigate, useThemeLocaleData } from "@theme-hope/composables";
+import {
+  useNavigate,
+  useThemeLocaleData,
+} from "@theme-hope/composables/index.js";
 import {
   useArticles,
   useCategoryMap,
   useStars,
   useTagMap,
-} from "@theme-hope/modules/blog/composables";
+} from "@theme-hope/modules/blog/composables/index.js";
 
 import type { FunctionalComponent, VNode } from "vue";
 

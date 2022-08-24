@@ -3,14 +3,14 @@ import { useRoute } from "vue-router";
 import {
   renderChildren,
   renderItem,
-} from "@theme-hope/modules/sidebar/composables";
-import { isActiveSidebarItem } from "@theme-hope/modules/sidebar/utils";
+} from "@theme-hope/modules/sidebar/composables/index.js";
+import { isActiveSidebarItem } from "@theme-hope/modules/sidebar/utils/index.js";
 
 import type { PropType, VNode } from "vue";
 import type {
   ResolvedHopeThemeSidebarHeaderItem,
   ResolvedHopeThemeSidebarPageItem,
-} from "../../../../shared";
+} from "../../../../shared/index.js";
 
 import "../styles/sidebar-child.scss";
 

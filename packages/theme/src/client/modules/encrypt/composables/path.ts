@@ -3,7 +3,7 @@ import { computed } from "vue";
 import { useRoute } from "vue-router";
 
 import { useEncryptData } from "./utils.js";
-import { checkToken } from "@theme-hope/modules/encrypt/utils";
+import { checkToken } from "@theme-hope/modules/encrypt/utils/index.js";
 
 import type { ComputedRef } from "vue";
 

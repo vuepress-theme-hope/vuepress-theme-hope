@@ -3,7 +3,7 @@ import { defineComponent, h, onMounted, watch, ref } from "vue";
 import { RouterLink, useRoute } from "vue-router";
 import { isActiveLink } from "vuepress-shared/lib/client";
 
-import { useMetaLocale } from "@theme-hope/modules/info/composables";
+import { useMetaLocale } from "@theme-hope/modules/info/composables/index.js";
 
 import type { PageHeader } from "@vuepress/shared";
 import type { PropType, VNode } from "vue";

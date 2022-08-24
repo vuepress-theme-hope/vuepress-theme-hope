@@ -1,13 +1,13 @@
 import { computed, defineComponent, h } from "vue";
 import { RouterLink, useRoute } from "vue-router";
 
-import { useThemeLocaleData } from "@theme-hope/composables";
+import { useThemeLocaleData } from "@theme-hope/composables/index.js";
 import {
   useArticles,
   useEncryptedArticles,
   useSlides,
   useStars,
-} from "@theme-hope/modules/blog/composables";
+} from "@theme-hope/modules/blog/composables/index.js";
 
 import type { VNode } from "vue";
 

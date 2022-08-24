@@ -1,10 +1,13 @@
 import { usePageFrontmatter } from "@vuepress/client";
 import { computed, defineComponent, h } from "vue";
 
-import { usePageAuthor, useThemeLocaleData } from "@theme-hope/composables";
+import {
+  usePageAuthor,
+  useThemeLocaleData,
+} from "@theme-hope/composables/index.js";
 
 import type { VNode } from "vue";
-import type { HopeThemeNormalPageFrontmatter } from "../../shared";
+import type { HopeThemeNormalPageFrontmatter } from "../../shared/index.js";
 
 import "../styles/footer.scss";
 

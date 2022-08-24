@@ -4,12 +4,12 @@ import {
   AutoIcon,
   DarkIcon,
   LightIcon,
-} from "@theme-hope/modules/outlook/components/icons";
-import { useThemeData } from "@theme-hope/composables";
-import { useDarkMode } from "@theme-hope/modules/outlook/composables";
+} from "@theme-hope/modules/outlook/components/icons/index.js";
+import { useThemeData } from "@theme-hope/composables/index.js";
+import { useDarkMode } from "@theme-hope/modules/outlook/composables/index.js";
 
 import type { VNode } from "vue";
-import type { DarkmodeStatus } from "@theme-hope/modules/outlook/composables";
+import type { DarkmodeStatus } from "@theme-hope/modules/outlook/composables/index.js";
 
 import "../styles/appearance-switch.scss";
 

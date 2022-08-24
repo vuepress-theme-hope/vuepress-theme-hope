@@ -5,15 +5,15 @@ import { RouterLink } from "vue-router";
 import {
   SlideIcon,
   StickyIcon,
-} from "@theme-hope/modules/blog/components/icons";
-import { useArticleInfo } from "@theme-hope/modules/blog/composables";
-import { LockIcon } from "@theme-hope/modules/encrypt/components/icons";
+} from "@theme-hope/modules/blog/components/icons/index.js";
+import { useArticleInfo } from "@theme-hope/modules/blog/composables/index.js";
+import { LockIcon } from "@theme-hope/modules/encrypt/components/icons.js";
 
 import type { PropType, VNode } from "vue";
-import type { ArticleInfo } from "../../../../shared";
+import type { ArticleInfo } from "../../../../shared/index.js";
 
 import "../styles/article-item.scss";
-import PageInfo from "@theme-hope/modules/info/components/PageInfo";
+import PageInfo from "@theme-hope/modules/info/components/PageInfo.js";
 
 export default defineComponent({
   name: "ArticleItem",
