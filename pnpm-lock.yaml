@@ -1,5 +1,16 @@
 lockfileVersion: 5.4
 
+patchedDependencies:
+  mitt@3.0.0:
+    hash: 4gwmhmjqmdcx2eqz3s6leupoa4
+    path: patches/mitt@3.0.0.patch
+  chart.js@3.9.1:
+    hash: 3sthdsdyega5ysvjie2bdpkbpm
+    path: patches/chart.js@3.9.1.patch
+  cac@6.7.12:
+    hash: vyzckwdzxrqnnjngmb75twjlle
+    path: patches/cac@6.7.12.patch
+
 importers:
 
   .:
@@ -959,7 +970,7 @@ importers:
       '@vuepress/utils': 2.0.0-beta.50
       '@vueuse/core': 9.1.0_vue@3.2.37
       balloon-css: 1.2.0
-      chart.js: 3.9.1
+      chart.js: 3.9.1_3sthdsdyega5ysvjie2bdpkbpm
       echarts: 5.3.3
       flowchart.js: 1.17.1
       katex: 0.16.0
@@ -1022,7 +1033,7 @@ importers:
       '@vuepress/shared': 2.0.0-beta.50
       '@vuepress/utils': 2.0.0-beta.50
       '@vueuse/core': 9.1.0_vue@3.2.37
-      mitt: 3.0.0
+      mitt: 3.0.0_4gwmhmjqmdcx2eqz3s6leupoa4
       register-service-worker: 1.7.2
       vue: 3.2.37
       vue-router: 4.1.4_vue@3.2.37
@@ -3872,7 +3883,7 @@ packages:
       '@vuepress/client': 2.0.0-beta.50
       '@vuepress/core': 2.0.0-beta.50
       '@vuepress/utils': 2.0.0-beta.50
-      mitt: 3.0.0
+      mitt: 3.0.0_4gwmhmjqmdcx2eqz3s6leupoa4
       register-service-worker: 1.7.2
       vue: 3.2.37
       workbox-build: 6.5.4
@@ -4557,7 +4568,7 @@ packages:
     hasBin: true
     dependencies:
       '@jsdevtools/ez-spawn': 3.0.4
-      cac: 6.7.12
+      cac: 6.7.12_vyzckwdzxrqnnjngmb75twjlle
       fast-glob: 3.2.11
       kleur: 4.1.5
       prompts: 2.4.2
@@ -4594,6 +4605,12 @@ packages:
   /cac/6.7.12:
     resolution: {integrity: sha512-rM7E2ygtMkJqD9c7WnFU6fruFcN3xe4FM5yUmgxhZzIKJk4uHl9U/fhwdajGFQbQuv43FAUo1Fe8gX/oIKDeSA==}
     engines: {node: '>=8'}
+
+  /cac/6.7.12_vyzckwdzxrqnnjngmb75twjlle:
+    resolution: {integrity: sha512-rM7E2ygtMkJqD9c7WnFU6fruFcN3xe4FM5yUmgxhZzIKJk4uHl9U/fhwdajGFQbQuv43FAUo1Fe8gX/oIKDeSA==}
+    engines: {node: '>=8'}
+    dev: true
+    patched: true
 
   /cacache/16.1.2:
     resolution: {integrity: sha512-Xx+xPlfCZIUHagysjjOAje9nRo8pRDczQCcXb4J2O0BLtH+xeVue6ba4y1kfJfQMAnM2mkcoMIAyOctlaRGWYA==}
@@ -4721,9 +4738,10 @@ packages:
   /chardet/0.7.0:
     resolution: {integrity: sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==}
 
-  /chart.js/3.9.1:
+  /chart.js/3.9.1_3sthdsdyega5ysvjie2bdpkbpm:
     resolution: {integrity: sha512-Ro2JbLmvg83gXF5F4sniaQ+lTbSv18E+TIf2cOeiH1Iqd2PGFOtem+DUufMZsCJwFE7ywPOpfXFBwRTGq7dh6w==}
     dev: false
+    patched: true
 
   /check-error/1.0.2:
     resolution: {integrity: sha512-BrgHpW9NURQgzoNyjfq0Wu6VFO6D7IZEmJNdtgNqpzGG8RuNFHt2jQxWlAs4HMe119chBnv+34syEZtc6IhLtA==}
@@ -9058,8 +9076,9 @@ packages:
       yallist: 4.0.0
     dev: true
 
-  /mitt/3.0.0:
+  /mitt/3.0.0_4gwmhmjqmdcx2eqz3s6leupoa4:
     resolution: {integrity: sha512-7dX2/10ITVyqh4aOSVI9gdape+t9l2/8QxHrFmUXu4EEUpdlxl6RudZUPZoc+zuY2hk1j7XxVroIVIan/pD/SQ==}
+    patched: true
 
   /mkdirp/1.0.4:
     resolution: {integrity: sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==}

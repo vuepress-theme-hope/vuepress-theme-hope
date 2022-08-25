@@ -1,4 +1,4 @@
-import type { ArticleInfo } from "./shared.js";
+import type { ArticleInfo } from "./shared/index.js";
 
 declare module "vue-router" {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface

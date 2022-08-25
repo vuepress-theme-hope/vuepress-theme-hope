@@ -125,6 +125,11 @@
         "react-dom",
         "webpack"
       ]
+    },
+    "patchedDependencies": {
+      "cac@6.7.12": "patches/cac@6.7.12.patch",
+      "chart.js@3.9.1": "patches/chart.js@3.9.1.patch",
+      "mitt@3.0.0": "patches/mitt@3.0.0.patch"
     }
   }
 }

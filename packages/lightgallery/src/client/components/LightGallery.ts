@@ -1,4 +1,4 @@
-import lightGallery from "lightgallery";
+import { default as lightGallery } from "lightgallery";
 import {
   defineComponent,
   h,
@@ -59,36 +59,50 @@ export default defineComponent({
     const pluginsStyles: unknown[] = [];
 
     if (LIGHT_GALLERY_AUTOPLAY) {
+      // FIXME:
+      // @ts-ignore
       plugins.push(import("lightgallery/plugins/autoplay"));
       pluginsStyles.push(import("lightgallery/scss/lg-autoplay.scss"));
     }
 
     if (LIGHT_GALLERY_FULLSCREEN) {
+      // FIXME:
+      // @ts-ignore
       plugins.push(import("lightgallery/plugins/fullscreen"));
       pluginsStyles.push(import("lightgallery/scss/lg-fullscreen.scss"));
     }
 
     if (LIGHT_GALLERY_PAGER) {
+      // FIXME:
+      // @ts-ignore
       plugins.push(import("lightgallery/plugins/pager"));
       pluginsStyles.push(import("lightgallery/scss/lg-pager.scss"));
     }
 
     if (LIGHT_GALLERY_ROTATE) {
+      // FIXME:
+      // @ts-ignore
       plugins.push(import("lightgallery/plugins/rotate"));
       pluginsStyles.push(import("lightgallery/scss/lg-rotate.scss"));
     }
 
     if (LIGHT_GALLERY_SHARE) {
+      // FIXME:
+      // @ts-ignore
       plugins.push(import("lightgallery/plugins/share"));
       pluginsStyles.push(import("lightgallery/scss/lg-share.scss"));
     }
 
     if (LIGHT_GALLERY_THUMBNAIL) {
+      // FIXME:
+      // @ts-ignore
       plugins.push(import("lightgallery/plugins/thumbnail"));
       pluginsStyles.push(import("lightgallery/scss/lg-thumbnail.scss"));
     }
 
     if (LIGHT_GALLERY_ZOOM) {
+      // FIXME:
+      // @ts-ignore
       plugins.push(import("lightgallery/plugins/zoom"));
       pluginsStyles.push(import("lightgallery/scss/lg-zoom.scss"));
     }
