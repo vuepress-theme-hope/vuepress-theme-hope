@@ -36,6 +36,7 @@
   "exports": {
     ".": "./lib/node/index.js",
     "./lib/client/*": "./lib/client/*",
+    "./SlidePage": "./lib/client/SlidePage.js",
     "./package.json": "./package.json"
   },
   "main": "lib/node/index.js",

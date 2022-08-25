@@ -1,6 +1,6 @@
 import { defineComponent, h } from "vue";
 import { RouterLink, useRoute } from "vue-router";
-import { generateIndexfromHash } from "vuepress-shared/lib/client";
+import { generateIndexfromHash } from "vuepress-shared/client";
 
 import { useCategoryMap } from "@theme-hope/modules/blog/composables/index.js";
 

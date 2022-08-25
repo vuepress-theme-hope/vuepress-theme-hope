@@ -3,7 +3,7 @@ import {
   useThemeLocaleData as _useThemeLocaleData,
 } from "@vuepress/plugin-theme-data/client";
 import { computed } from "vue";
-import { getAuthor } from "vuepress-shared/lib/client";
+import { getAuthor } from "vuepress-shared/client";
 
 import type { AuthorInfo } from "vuepress-shared";
 import type {

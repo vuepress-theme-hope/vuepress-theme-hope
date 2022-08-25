@@ -1,15 +1,15 @@
 lockfileVersion: 5.4
 
 patchedDependencies:
-  mitt@3.0.0:
-    hash: 4gwmhmjqmdcx2eqz3s6leupoa4
-    path: patches/mitt@3.0.0.patch
-  chart.js@3.9.1:
-    hash: 3sthdsdyega5ysvjie2bdpkbpm
-    path: patches/chart.js@3.9.1.patch
   cac@6.7.12:
     hash: vyzckwdzxrqnnjngmb75twjlle
     path: patches/cac@6.7.12.patch
+  chart.js@3.9.1:
+    hash: 3sthdsdyega5ysvjie2bdpkbpm
+    path: patches/chart.js@3.9.1.patch
+  mitt@3.0.0:
+    hash: 4gwmhmjqmdcx2eqz3s6leupoa4
+    path: patches/mitt@3.0.0.patch
 
 importers:
 
@@ -882,7 +882,7 @@ importers:
       inquirer: 9.1.0
       rimraf: 3.0.2
     dependencies:
-      cac: 6.7.12
+      cac: 6.7.12_vyzckwdzxrqnnjngmb75twjlle
       execa: 6.1.0
       inquirer: 9.1.0
     devDependencies:
@@ -1069,7 +1069,7 @@ importers:
       '@vuepress/core': 2.0.0-beta.50
       '@vuepress/shared': 2.0.0-beta.50
       '@vuepress/utils': 2.0.0-beta.50
-      cac: 6.7.12
+      cac: 6.7.12_vyzckwdzxrqnnjngmb75twjlle
       vuepress-shared: link:../shared
     devDependencies:
       rimraf: 3.0.2
@@ -3699,7 +3699,7 @@ packages:
       '@vuepress/core': 2.0.0-beta.50
       '@vuepress/shared': 2.0.0-beta.50
       '@vuepress/utils': 2.0.0-beta.50
-      cac: 6.7.12
+      cac: 6.7.12_vyzckwdzxrqnnjngmb75twjlle
       chokidar: 3.5.3
       envinfo: 7.8.1
       esbuild: 0.15.5
@@ -4602,14 +4602,9 @@ packages:
       yargs-parser: 20.2.9
     dev: true
 
-  /cac/6.7.12:
-    resolution: {integrity: sha512-rM7E2ygtMkJqD9c7WnFU6fruFcN3xe4FM5yUmgxhZzIKJk4uHl9U/fhwdajGFQbQuv43FAUo1Fe8gX/oIKDeSA==}
-    engines: {node: '>=8'}
-
   /cac/6.7.12_vyzckwdzxrqnnjngmb75twjlle:
     resolution: {integrity: sha512-rM7E2ygtMkJqD9c7WnFU6fruFcN3xe4FM5yUmgxhZzIKJk4uHl9U/fhwdajGFQbQuv43FAUo1Fe8gX/oIKDeSA==}
     engines: {node: '>=8'}
-    dev: true
     patched: true
 
   /cacache/16.1.2:

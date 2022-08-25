@@ -25,8 +25,10 @@
   "type": "module",
   "exports": {
     ".": "./lib/node/index.js",
+    "./client": "./lib/client/index.js",
     "./lib/client": "./lib/client/index.js",
     "./lib/client/*": "./lib/client/*",
+    "./noopModule": "./lib/client/noopModule.js",
     "./package.json": "./package.json"
   },
   "main": "lib/node/index.js",

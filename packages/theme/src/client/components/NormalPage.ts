@@ -1,9 +1,6 @@
 import { usePageFrontmatter } from "@vuepress/client";
 import { computed, defineComponent, h, resolveComponent } from "vue";
-import {
-  isComponentRegistered,
-  RenderDefault,
-} from "vuepress-shared/lib/client";
+import { isComponentRegistered, RenderDefault } from "vuepress-shared/client";
 
 import BreadCrumb from "@theme-hope/components/BreadCrumb.js";
 import MarkdownContent from "@theme-hope/components/MarkdownContent.js";
