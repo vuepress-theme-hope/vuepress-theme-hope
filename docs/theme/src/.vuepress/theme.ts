@@ -1,10 +1,14 @@
 import { hopeTheme } from "vuepress-theme-hope";
-import { enNavbarConfig, zhNavbarConfig, ruNavbarConfig } from "./navbar.js";
+import {
+  enNavbarConfig,
+  zhNavbarConfig,
+  ruNavbarConfig,
+} from "./navbar/index.js";
 import {
   enSidebarConfig,
   zhSidebarConfig,
   ruSidebarConfig,
-} from "./sidebar.js";
+} from "./sidebar/index.js";
 
 const hostname =
   process.env.HOSTNAME || "https://vuepress-theme-hope-v2.netlify.app";
