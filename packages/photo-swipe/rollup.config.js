@@ -15,7 +15,7 @@ export default [
       "photoswipe",
       "vue",
       "vue-router",
-      "vuepress-shared/client",
+      "vuepress-shared/lib/client",
       /\.css$/,
     ],
     dtsExternal: [/\.css$/],

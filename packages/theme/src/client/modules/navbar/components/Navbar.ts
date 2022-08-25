@@ -1,5 +1,5 @@
 import { computed, defineComponent, h, ref, resolveComponent } from "vue";
-import { isComponentRegistered } from "vuepress-shared/client";
+import { isComponentRegistered } from "vuepress-shared/lib/client";
 
 import {
   useMobile,

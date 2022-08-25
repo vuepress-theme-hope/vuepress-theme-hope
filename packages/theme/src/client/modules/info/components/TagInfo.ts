@@ -1,6 +1,6 @@
 import { defineComponent, h } from "vue";
 import { useRoute, useRouter } from "vue-router";
-import { generateIndexfromHash } from "vuepress-shared/client";
+import { generateIndexfromHash } from "vuepress-shared/lib/client";
 
 import { TagIcon } from "@theme-hope/modules/info/components/icons.js";
 import { useMetaLocale } from "@theme-hope/modules/info/composables/index.js";

@@ -27,7 +27,7 @@
 
 import { onMounted, watch } from "vue";
 import { useRoute } from "vue-router";
-import { Message, useLocaleConfig } from "vuepress-shared/client";
+import { Message, useLocaleConfig } from "vuepress-shared/lib/client";
 import { CHECK_ICON, COPY_BUTTON, PURE_COPY_BUTTON } from "../utils/index.js";
 
 import type {
