@@ -38,8 +38,9 @@
   "scripts": {
     "build": "rollup -c",
     "clean": "rimraf ./lib ./*.tsbuildinfo",
+    "copy": "cpx \"src/client/**/*.{vue,scss}\" lib/client",
     "dev": "concurrently \"pnpm dev:copy\" \"pnpm dev:ts\"",
-    "dev:copy": "cpx \"src/client/**/*.{vue,scss}\" lib/client -w",
+    "dev:copy": "pnpm copy -w",
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {

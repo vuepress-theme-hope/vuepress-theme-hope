@@ -10,8 +10,10 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "cross-env mode=production pnpm run --stream -r build",
+    "build": "concurrently \"tsc -b tsconfig.build.json\" \"pnpm run copy\"",
+    "build:bundle": "cross-env mode=production pnpm run --stream -r build",
     "clean": "pnpm run --stream -r clean",
+    "copy": "pnpm run --parallel -r copy",
     "commit": "pnpm git-cz",
     "dev": "concurrently \"tsc -b tsconfig.build.json --watch\" \"pnpm run dev:copy\"",
     "dev:copy": "pnpm run --parallel -r dev:copy",
