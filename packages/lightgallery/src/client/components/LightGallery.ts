@@ -17,6 +17,14 @@ import type { VNode } from "vue";
 
 import "lightgallery/scss/lightgallery.scss";
 
+type LightGalleryPlugin<T = unknown> = {
+  default: new (
+    instance: LightGallery,
+    $LG: LgQuery
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  ) => T;
+};
+
 declare const IMAGE_SELECTOR: string;
 declare const LIGHT_GALLERY_DELAY: number;
 declare const LIGHT_GALLERY_OPTIONS: LightGallerySettings;
@@ -49,61 +57,76 @@ export default defineComponent({
     let instance: LightGallery | null = null;
     let id: number;
 
-    const plugins: Promise<{
-      default: new (
-        instance: LightGallery,
-        $LG: LgQuery
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      ) => any;
-    }>[] = [];
+    const plugins: Promise<LightGalleryPlugin>[] = [];
     const pluginsStyles: unknown[] = [];
 
     if (LIGHT_GALLERY_AUTOPLAY) {
-      // FIXME:
-      // @ts-ignore
-      plugins.push(import("lightgallery/plugins/autoplay"));
+      plugins.push(
+        // FIXME:
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        <Promise<LightGalleryPlugin>>import("lightgallery/plugins/autoplay")
+      );
       pluginsStyles.push(import("lightgallery/scss/lg-autoplay.scss"));
     }
 
     if (LIGHT_GALLERY_FULLSCREEN) {
-      // FIXME:
-      // @ts-ignore
-      plugins.push(import("lightgallery/plugins/fullscreen"));
+      plugins.push(
+        // FIXME:
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        <Promise<LightGalleryPlugin>>import("lightgallery/plugins/fullscreen")
+      );
       pluginsStyles.push(import("lightgallery/scss/lg-fullscreen.scss"));
     }
 
     if (LIGHT_GALLERY_PAGER) {
-      // FIXME:
-      // @ts-ignore
-      plugins.push(import("lightgallery/plugins/pager"));
+      plugins.push(
+        // FIXME:
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        <Promise<LightGalleryPlugin>>import("lightgallery/plugins/pager")
+      );
       pluginsStyles.push(import("lightgallery/scss/lg-pager.scss"));
     }
 
     if (LIGHT_GALLERY_ROTATE) {
-      // FIXME:
-      // @ts-ignore
-      plugins.push(import("lightgallery/plugins/rotate"));
+      plugins.push(
+        // FIXME:
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        <Promise<LightGalleryPlugin>>import("lightgallery/plugins/rotate")
+      );
       pluginsStyles.push(import("lightgallery/scss/lg-rotate.scss"));
     }
 
     if (LIGHT_GALLERY_SHARE) {
-      // FIXME:
-      // @ts-ignore
-      plugins.push(import("lightgallery/plugins/share"));
+      plugins.push(
+        // FIXME:
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        <Promise<LightGalleryPlugin>>import("lightgallery/plugins/share")
+      );
       pluginsStyles.push(import("lightgallery/scss/lg-share.scss"));
     }
 
     if (LIGHT_GALLERY_THUMBNAIL) {
-      // FIXME:
-      // @ts-ignore
-      plugins.push(import("lightgallery/plugins/thumbnail"));
+      plugins.push(
+        // FIXME:
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        <Promise<LightGalleryPlugin>>import("lightgallery/plugins/thumbnail")
+      );
       pluginsStyles.push(import("lightgallery/scss/lg-thumbnail.scss"));
     }
 
     if (LIGHT_GALLERY_ZOOM) {
-      // FIXME:
-      // @ts-ignore
-      plugins.push(import("lightgallery/plugins/zoom"));
+      plugins.push(
+        // FIXME:
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        <Promise<LightGalleryPlugin>>import("lightgallery/plugins/zoom")
+      );
       pluginsStyles.push(import("lightgallery/scss/lg-zoom.scss"));
     }
 

@@ -22,10 +22,10 @@ export default defineComponent({
           (m) => m.default || m
         ),
         import(
-          "three/examples/jsm/controls/OrbitControls" /* webpackChunkName: "hope-logo" */
+          "three/examples/jsm/controls/OrbitControls.js" /* webpackChunkName: "hope-logo" */
         ).then((m) => m.default || m),
         import(
-          "three/examples/jsm/loaders/STLLoader" /* webpackChunkName: "hope-logo" */
+          "three/examples/jsm/loaders/STLLoader.js" /* webpackChunkName: "hope-logo" */
         ).then((m) => m.default || m),
       ]).then(([THREE, { OrbitControls }, { STLLoader }]) => {
         // Settings

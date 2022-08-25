@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import MarkdownIt from "markdown-it";
 
-import { playground } from "../../src/node/markdown-it";
+import { playground } from "../../src/node/markdown-it/index.js";
 
 describe("playground", () => {
   const markdownIt = MarkdownIt({ linkify: true }).use(playground);

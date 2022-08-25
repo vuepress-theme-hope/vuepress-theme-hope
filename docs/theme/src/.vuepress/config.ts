@@ -5,9 +5,7 @@ import theme from "./theme.js";
 const __dirname = getDirname(import.meta.url);
 
 export default config(
-  {
-    indexName: "vuepress-theme-hope-theme-v2",
-  },
+  { indexName: "vuepress-theme-hope-theme-v2" },
   {
     head: [
       [

@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import MarkdownIt from "markdown-it";
-import { align } from "../../src/node/markdown-it";
+import { align } from "../../src/node/markdown-it/index.js";
 
 describe("align", () => {
   const markdownIt = MarkdownIt({ linkify: true }).use(align);
