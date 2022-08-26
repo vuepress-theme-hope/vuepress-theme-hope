@@ -10,16 +10,14 @@ const getDirAlias = (dir: string): [string, string][] =>
         file.endsWith(".js") || file.endsWith(".vue") || !file.includes(".")
     )
     .map<[string, string]>((file) => [
-      `@theme-hope/${dir}/${
-        file.endsWith(".js") ? file.replace(/(?:\/index)?\.js$/, "") : file
-      }`,
+      `@theme-hope/${dir}/${file}`,
       path.resolve(__dirname, "../client", dir, file),
     ]);
 
 const getEntryAlias = (entry: string): [string, string] | null =>
   fs.existsSync(path.resolve(__dirname, "../client", entry, "index.js"))
     ? [
-        `@theme-hope/${entry}`,
+        `@theme-hope/${entry}/index.js`,
         path.resolve(__dirname, "../client", entry, "index.js"),
       ]
     : null;

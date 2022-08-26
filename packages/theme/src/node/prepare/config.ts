@@ -19,11 +19,11 @@ export const prepareConfigFile = (
 
   if (enableBlog) {
     configImport += `
-import BloggerInfo from "@theme-hope/modules/blog/components/BloggerInfo";
-import BlogHome from "@theme-hope/modules/blog/components/BlogHome";
-import BlogPage from "@theme-hope/modules/blog/components/BlogPage";
+import BloggerInfo from "@theme-hope/modules/blog/components/BloggerInfo.js";
+import BlogHome from "@theme-hope/modules/blog/components/BlogHome.js";
+import BlogPage from "@theme-hope/modules/blog/components/BlogPage.js";
 import { setupBlog } from "@theme-hope/modules/blog/composables/index.js";
-import "${CLIENT_FOLDER}module/blog/styles/layout.scss";
+import "${CLIENT_FOLDER}modules/blog/styles/layout.scss";
 `;
 
     enhance += `
@@ -37,8 +37,8 @@ app.component("BlogPage", BlogPage);
 
   if (enableEncrypt) {
     configImport += `
-import GloablEncrypt from "@theme-hope/modules/encrypt/components/GloablEncrypt";
-import LocalEncrypt from "@theme-hope/modules/encrypt/components/LocalEncrypt";
+import GloablEncrypt from "@theme-hope/modules/encrypt/components/GloablEncrypt.js";
+import LocalEncrypt from "@theme-hope/modules/encrypt/components/LocalEncrypt.js";
 `;
     enhance += `
 app.component("GloablEncrypt", GloablEncrypt);
@@ -50,11 +50,11 @@ app.component("LocalEncrypt", LocalEncrypt);
     `theme-hope/config.js`,
     `import { defineClientConfig } from "@vuepress/client";
 
-import CommonWrapper from "@theme-hope/components/CommonWrapper";
-import HomePage from "@theme-hope/components/HomePage";
-import NormalPage from "@theme-hope/components/NormalPage";
-import Navbar from "@theme-hope/modules/navbar/components/Navbar";
-import Sidebar from "@theme-hope/modules/sidebar/components/Sidebar";
+import CommonWrapper from "@theme-hope/components/CommonWrapper.js";
+import HomePage from "@theme-hope/components/HomePage.js";
+import NormalPage from "@theme-hope/components/NormalPage.js";
+import Navbar from "@theme-hope/modules/navbar/components/Navbar.js";
+import Sidebar from "@theme-hope/modules/sidebar/components/Sidebar.js";
 
 import { useScrollPromise } from "@theme-hope/composables/index.js";
 import { injectDarkMode, setupDarkMode } from "@theme-hope/modules/outlook/composables/index.js";

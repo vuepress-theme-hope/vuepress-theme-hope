@@ -36,7 +36,7 @@ tag:
 - `"disable"`: отключить темный режим
 
 <script setup lang="ts">
-import AppearanceSwitch from '@theme-hope/modules/outlook/components/AppearanceSwitch'
+import AppearanceSwitch from '@theme-hope/modules/outlook/components/AppearanceSwitch.js'
 </script>
 
 ## Глобальные переменные
