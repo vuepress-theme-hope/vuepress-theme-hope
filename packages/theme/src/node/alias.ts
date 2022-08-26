@@ -37,8 +37,8 @@ export const resolveAlias = (isDebug = false): Record<string, string> => {
       ),
     // define modules
     ...fs
-      .readdirSync(path.resolve(__dirname, "../client/module"))
-      .map((folder) => `module/${folder}`)
+      .readdirSync(path.resolve(__dirname, "../client/modules"))
+      .map((folder) => `modules/${folder}`)
       .map((file) => [
         // define module components
         ...getDirAlias(`${file}/components`),

@@ -10,7 +10,12 @@
     "url": "https://mrhope.site"
   },
   "type": "module",
-  "main": "index.ts",
+  "exports": {
+    ".": "./index.js"
+  },
+  "scripts": {
+    "build": "tsc --build tsconfig.build.json"
+  },
   "dependencies": {
     "@types/three": "0.143.1",
     "@vuepress/cli": "2.0.0-beta.50",

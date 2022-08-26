@@ -11,8 +11,10 @@ packages/*/lib/
 # Vuepress Output
 dist/
 
-# VS Code Config file
-# .vscode/
+# Docs shared
+docs/shared/**/*.js
+docs/shared/**/*.js.map
+docs/shared/**/*.d.ts
 
 # Rollup Cache
 .rollup.cache/

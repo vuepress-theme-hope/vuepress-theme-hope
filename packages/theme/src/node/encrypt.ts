@@ -1,5 +1,5 @@
-import { logger } from "./utils.js";
 import { hashSync } from "bcrypt-ts";
+import { logger } from "./utils.js";
 
 import type {
   HopeThemeEncryptConfig,
