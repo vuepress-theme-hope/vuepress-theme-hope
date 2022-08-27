@@ -106,7 +106,7 @@
     "stylelint-order": "5.0.0",
     "ts-node": "10.9.1",
     "tslib": "2.4.0",
-    "typescript": "4.8.2",
+    "typescript": "4.7.4",
     "vitest": "0.22.1"
   },
   "packageManager": "pnpm@7.9.5",
@@ -129,6 +129,7 @@
       ]
     },
     "patchedDependencies": {
+      "@vuepress/theme-default@2.0.0-beta.50": "patches/@vuepress__theme-default@2.0.0-beta.50.patch",
       "cac@6.7.12": "patches/cac@6.7.12.patch",
       "chart.js@3.9.1": "patches/chart.js@3.9.1.patch",
       "mitt@3.0.0": "patches/mitt@3.0.0.patch"

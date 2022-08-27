@@ -26,6 +26,7 @@
   "type": "module",
   "exports": {
     ".": "./lib/node/index.js",
+    "./client": "./lib/client/index.js",
     "./lib/client": "./lib/client/index.js",
     "./package.json": "./package.json"
   },
@@ -49,7 +50,7 @@
     "chokidar": "^3.5.3",
     "vue": "^3.2.37",
     "vue-router": "^4.1.5",
-    "vuepress-shared": "workspace:*"
+    "vuepress-shared": "workspace:2.0.0-beta.91"
   },
   "devDependencies": {
     "rimraf": "3.0.2"

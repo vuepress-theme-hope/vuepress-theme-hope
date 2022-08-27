@@ -1,5 +1,5 @@
 import { inject, provide } from "vue";
-import { useBlogType } from "vuepress-plugin-blog2/lib/client";
+import { useBlogType } from "vuepress-plugin-blog2/client";
 
 import type { ComputedRef, InjectionKey } from "vue";
 import type { BlogTypeData } from "vuepress-plugin-blog2";

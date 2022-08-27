@@ -33,7 +33,7 @@ defineProps({
 });
 </script>
 <style lang="scss">
-@use "@vuepress/theme-default/lib/client/styles/mixins";
+@use "@vuepress/theme-default/styles/mixins";
 
 .article-wrapper {
   @include mixins.content_wrapper;

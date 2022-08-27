@@ -5,12 +5,12 @@ type IAnyObject = Record<string, any>;
 export const deepAssign = <
   T extends IAnyObject,
   U extends IAnyObject = T,
-  V extends IAnyObject = T
+  V extends Partial<T> & Partial<U> = T & U
 >(
   originObject: T,
   ...assignObjects: U[]
 ): V => {
-  if (assignObjects.length === 0) return originObject as V;
+  if (assignObjects.length === 0) return originObject as unknown as V;
 
   /** Object being merged */
   const assignObject = (assignObjects.shift() as IAnyObject) || {};

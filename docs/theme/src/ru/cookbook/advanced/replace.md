@@ -264,7 +264,7 @@ export default defineUserConfig({
   </HopeHomePage>
 </template>
 <script setup lang="ts">
-import HopeHomePage from "vuepress-theme-hope/lib/client/components/HomePage";
+import HopeHomePage from "vuepress-theme-hope/components/HomePage.js";
 </script>
 ```
 

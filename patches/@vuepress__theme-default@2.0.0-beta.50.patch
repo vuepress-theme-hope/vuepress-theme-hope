@@ -1,0 +1,14 @@
+diff --git a/package.json b/package.json
+index 47ba5ff882f488de57b3a08a79ba54b1e792c1ab..c4ad3a56966ed7540cdf7e1cfd8fbb8b3fa78a9a 100644
+--- a/package.json
++++ b/package.json
+@@ -24,7 +24,9 @@
+     "./client": "./lib/client/index.js",
+     "./components/*": "./lib/client/components/*",
+     "./layouts/*": "./lib/client/layouts/*",
++    "./styles/*": "./lib/client/styles/*",
+     "./templates/*": "./templates/*",
++    "./lib/*": "./lib/*",
+     "./package.json": "./package.json"
+   },
+   "main": "./lib/node/index.js",

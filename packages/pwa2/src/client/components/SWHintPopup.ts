@@ -1,5 +1,5 @@
 import { Transition, defineComponent, h, onMounted, ref } from "vue";
-import { useLocaleConfig } from "vuepress-shared/lib/client";
+import { useLocaleConfig } from "vuepress-shared/client";
 
 import { UpdateIcon } from "./icons.js";
 import { usePWAEvent } from "../composables/index.js";

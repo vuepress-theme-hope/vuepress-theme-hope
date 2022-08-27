@@ -1,6 +1,7 @@
 import { useRouteLocale } from "@vuepress/client";
 import { computed } from "vue";
 
+import type { LocaleData } from "@vuepress/shared";
 import type { ComputedRef } from "vue";
 import type { ConvertLocaleConfig } from "../../shared/index.js";
 
@@ -10,7 +11,7 @@ import type { ConvertLocaleConfig } from "../../shared/index.js";
  * @param localesConfig client locale Config
  * @returns current locale config
  */
-export const useLocaleConfig = <T>(
+export const useLocaleConfig = <T extends LocaleData>(
   localesConfig: ConvertLocaleConfig<T>
 ): ComputedRef<T> => {
   const routeLocale = useRouteLocale();

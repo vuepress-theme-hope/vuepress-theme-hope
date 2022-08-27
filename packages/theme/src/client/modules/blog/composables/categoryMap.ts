@@ -1,5 +1,5 @@
 import { inject, provide } from "vue";
-import { useBlogCategory } from "vuepress-plugin-blog2/lib/client";
+import { useBlogCategory } from "vuepress-plugin-blog2/client";
 
 import type { ComputedRef, InjectionKey } from "vue";
 import type { BlogCategoryData } from "vuepress-plugin-blog2";
