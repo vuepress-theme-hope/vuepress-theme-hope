@@ -22,7 +22,7 @@ const getEntryAlias = (entry: string): [string, string] | null =>
       ]
     : null;
 
-export const resolveAlias = (isDebug = false): Record<string, string> => {
+export const resolveAlias = (isDebug: boolean): Record<string, string> => {
   // use alias to make all components replaceable
   const alias = Object.fromEntries([
     // define components
@@ -49,7 +49,7 @@ export const resolveAlias = (isDebug = false): Record<string, string> => {
           ),
       ])
       .flat(),
-    ["crypto", path.resolve(__dirname, "./empty-chunk")],
+    ["bcrypt-ts", "bcrypt-ts/browser"],
   ]);
 
   if (isDebug) console.log("Theme alias config:", alias);
