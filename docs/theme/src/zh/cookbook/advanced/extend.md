@@ -60,10 +60,10 @@ export default {
 
 ```js
 // .vuepress/theme/index.js
-const { path } = require("@vuepress/utils");
-const { hopeTheme } = require("vuepress-theme-hope");
+import { path } from "@vuepress/utils";
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   name: "vuepress-theme-local",
 
   extends: hopeTheme(options),

@@ -372,7 +372,7 @@ Here is a complex example:
 Notice that path aliases are not available in import code syntax. You can use following config to handle path alias yourself:
 
 ```js
-module.exports = {
+export default {
   markdown: {
     importCode: {
       handleImportPath: (str) =>

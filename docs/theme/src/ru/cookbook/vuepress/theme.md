@@ -20,9 +20,9 @@ VuePress имеет стандартную тему по умолчанию, к�
 Чтобы настроить тему по умолчанию, вам необходимо импортировать и использовать ее в файле конфигурации с помощью параметра [тема](https://v2.vuepress.vuejs.org/reference/config.html#theme):
 
 ```js
-const { defaultTheme } = require("vuepress");
+import { defaultTheme } from "vuepress";
 
-module.exports = {
+export default {
   theme: defaultTheme({
     // default theme config
     navbar: [

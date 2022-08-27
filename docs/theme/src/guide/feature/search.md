@@ -78,9 +78,9 @@ The theme can ONLY apply plugins it bundles, so `plugins` field in theme options
 
    ```js
    // .vuepress/config.js
-   const { searchPlugin } = require("@vuepress/plugin-search");
+   import { searchPlugin } from "@vuepress/plugin-search";
 
-   module.exports = {
+   export default {
      plugins: [
        searchPlugin({
          // your options
@@ -296,9 +296,9 @@ See [Plugin Docs][search] for available options.
 
    ```js
    // .vuepress/config.js
-   const { docsearchPlugin } = require("@vuepress/plugin-docsearch");
+   import { docsearchPlugin } from "@vuepress/plugin-docsearch";
 
-   module.exports = {
+   export default {
      plugins: [
        docsearchPlugin({
          // your options

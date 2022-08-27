@@ -66,9 +66,9 @@ export default {
 
 ```js
 // .vuepress/config.js
-const { copyCodePlugin } = require("vuepress-plugin-copy-code2");
+import { copyCodePlugin } from "vuepress-plugin-copy-code2";
 
-module.exports = {
+export default {
   plugins: [
     copyCodePlugin({
       // your options

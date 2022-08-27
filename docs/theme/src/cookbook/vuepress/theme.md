@@ -20,9 +20,9 @@ If you don't specify the theme to use, the default theme will be used automatica
 To configure the default theme, you need to import and use it in your config file via the [theme](https://v2.vuepress.vuejs.org/reference/config.html#theme) option:
 
 ```js
-const { defaultTheme } = require("vuepress");
+import { defaultTheme } from "vuepress";
 
-module.exports = {
+export default {
   theme: defaultTheme({
     // default theme config
     navbar: [

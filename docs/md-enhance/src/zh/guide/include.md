@@ -31,9 +31,9 @@ export default {
 
 ```js {8}
 // .vuepress/config.js
-const { mdEnhancePlugin } = require("vuepress-plugin-md-enhance");
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
-module.exports = {
+export default {
   plugins: [
     mdEnhancePlugin({
       // 启用导入支持
@@ -119,10 +119,10 @@ export default {
 
 ```js {8}
 // .vuepress/config.js
-const { path } = require("@vuepress/utils");
-const { mdEnhancePlugin } = require("vuepress-plugin-md-enhance");
+import { path } from "@vuepress/utils";
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
-module.exports = {
+export default {
   plugins: [
     mdEnhancePlugin({
       // 添加 `@src` 别名支持
@@ -167,10 +167,10 @@ export default {
 
 ```js {8}
 // .vuepress/config.js
-const { path } = require("@vuepress/utils");
-const { mdEnhancePlugin } = require("vuepress-plugin-md-enhance");
+import { path } from "@vuepress/utils";
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
-module.exports = {
+export default {
   pagePatterns: ["**/*.md", "!*.snippet.md", "!.vuepress", "!node_modules"],
 
   plugins: [

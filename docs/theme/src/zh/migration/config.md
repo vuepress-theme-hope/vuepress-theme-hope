@@ -37,10 +37,10 @@ tag:
 ```diff
 // .vuepress/config.js
 - const { config } = require("vuepress-theme-hope");
-+ const { hopeTheme } = require("vuepress-theme-hope");
++ import { hopeTheme } from "vuepress-theme-hope";
 
 - module.exports = theme.config({
-+ module.exports = {
++ export default {
     // your site config here
     // ...
 

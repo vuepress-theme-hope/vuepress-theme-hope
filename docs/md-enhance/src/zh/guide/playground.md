@@ -15,11 +15,11 @@ icon: code
 
 ```ts {8}
 // .vuepress/config.ts
-import { mdEnhance } from "vuepress-plugin-md-enhance";
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
   plugins: [
-    mdEnhance({
+    mdEnhancePlugin({
       // 配置你的交互演示
       playground: true, // 使用默认配置
     }),
@@ -31,11 +31,11 @@ export default {
 
 ```js {8}
 // .vuepress/config.js
-const { mdEnhance } = require("vuepress-plugin-md-enhance");
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
-module.exports = {
+export default {
   plugins: [
-    mdEnhance({
+    mdEnhancePlugin({
       // 配置你的交互演示
       playground: true, // 使用默认配置
     }),
@@ -53,11 +53,11 @@ module.exports = {
 
 ```ts {8-21}
 // .vuepress/config.ts
-import { mdEnhance } from "vuepress-plugin-md-enhance";
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
   plugins: [
-    mdEnhance({
+    mdEnhancePlugin({
       // 配置你的 playground
       playground: {
         mode: "external", // 使用外置模式
@@ -82,11 +82,11 @@ export default {
 
 ```js {8-21}
 // .vuepress/config.js
-const { mdEnhance } = require("vuepress-plugin-md-enhance");
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
-module.exports = {
+export default {
   plugins: [
-    mdEnhance({
+    mdEnhancePlugin({
       // 配置你的 playground
       playground: {
         mode: "external", // 使用外置模式

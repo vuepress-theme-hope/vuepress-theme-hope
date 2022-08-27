@@ -66,9 +66,9 @@ export default {
 
 ```js
 // .vuepress/config.js
-const { seoPlugin } = require("vuepress-plugin-seo2");
+import { seoPlugin } from "vuepress-plugin-seo2";
 
-module.exports = {
+export default {
   plugins: [
     seoPlugin({
       // your options

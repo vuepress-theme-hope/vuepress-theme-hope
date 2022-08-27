@@ -54,9 +54,9 @@ export default defineUserConfig({
 
 ```js {6-11}
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     themeColor: {
       blue: "#2196f3",

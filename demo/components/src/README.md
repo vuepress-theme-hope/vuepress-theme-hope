@@ -10,19 +10,3 @@ actions:
 
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 ---
-
-## Demo
-
-```js
-// .vuepress/config.js
-module.exports = {
-  plugins: [
-    [
-      "components",
-      {
-        // options
-      },
-    ],
-  ],
-};
-```

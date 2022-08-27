@@ -15,11 +15,11 @@ The plugin provides you playground support.
 
 ```ts {8}
 // .vuepress/config.ts
-import { mdEnhance } from "vuepress-plugin-md-enhance";
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
   plugins: [
-    mdEnhance({
+    mdEnhancePlugin({
       // playground config here
       playground: true, // use default settings
     }),
@@ -31,11 +31,11 @@ export default {
 
 ```js {8}
 // .vuepress/config.js
-const { mdEnhance } = require("vuepress-plugin-md-enhance");
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
-module.exports = {
+export default {
   plugins: [
-    mdEnhance({
+    mdEnhancePlugin({
       // playground config here
       playground: true, // use default settings
     }),
@@ -53,11 +53,11 @@ You can also customize your playground config by using `PlaygroundOptions`:
 
 ```ts {8-21}
 // .vuepress/config.ts
-import { mdEnhance } from "vuepress-plugin-md-enhance";
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
   plugins: [
-    mdEnhance({
+    mdEnhancePlugin({
       // playground config here
       playground: {
         mode: "external", // use external mode
@@ -82,11 +82,11 @@ export default {
 
 ```js {8-21}
 // .vuepress/config.js
-const { mdEnhance } = require("vuepress-plugin-md-enhance");
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
-module.exports = {
+export default {
   plugins: [
-    mdEnhance({
+    mdEnhancePlugin({
       // playground config here
       playground: {
         mode: "external", // use external mode

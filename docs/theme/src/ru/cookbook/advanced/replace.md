@@ -46,10 +46,10 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-const { path } = require("@vuepress/utils");
-const { hopeTheme } = require("vuepress-theme-hope");
+import { path } from "@vuepress/utils";
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     // конфиг вашей темы здесь
   }),

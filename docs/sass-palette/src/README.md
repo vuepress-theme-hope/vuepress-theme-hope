@@ -75,9 +75,9 @@ export default yourPlugin;
 
 ```js
 // Your plugin or theme entry
-const { useSassPalettePlugin } = require("vuepress-plugin-sass-palette");
+import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
-module.exports = (options) => (app) => {
+const yourPlugin = (options) => (app) => {
   useSassPalettePlugin(app, {
     // plugin options
   });
@@ -86,6 +86,8 @@ module.exports = (options) => (app) => {
     // your plugin api
   };
 };
+
+export default yourPlugin;
 ```
 
 :::
