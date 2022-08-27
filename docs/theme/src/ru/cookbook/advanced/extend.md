@@ -38,7 +38,7 @@ export const localTheme = (options: HopeThemeOptions) => ({
   alias: {
     // Вы можете переопределить или добавить псевдонимы здесь
     // Например, здесь мы меняем компонент HomePage vuepress-theme-hope на component/HomePage.vue под нашей собственной темой
-    "@theme-hope/components/HomePage": path.resolve(
+    "@theme-hope/components/HomePage.js": path.resolve(
       __dirname,
       "./components/HomePage.vue"
     ),
@@ -57,7 +57,7 @@ export const localTheme = (options: HopeThemeOptions) => ({
 @tab JS
 
 ```js
-// .vuepress/them/index.js
+// .vuepress/theme/index.js
 const { path } = require("@vuepress/utils");
 const { hopeTheme } = require("vuepress-theme-hope");
 
@@ -69,7 +69,7 @@ module.exports = (options) => ({
   alias: {
     // Вы можете переопределить или добавить псевдонимы здесь
     // Например, здесь мы меняем компонент HomePage vuepress-theme-hope на component/HomePage.vue под нашей собственной темой
-    "@theme-hope/components/HomePage": path.resolve(
+    "@theme-hope/components/HomePage.js": path.resolve(
       __dirname,
       "./components/HomePage.vue"
     ),

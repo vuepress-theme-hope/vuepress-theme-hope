@@ -62,70 +62,63 @@ export default defineComponent({
 
     if (LIGHT_GALLERY_AUTOPLAY) {
       plugins.push(
-        // FIXME:
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        <Promise<LightGalleryPlugin>>import("lightgallery/plugins/autoplay")
+        <Promise<LightGalleryPlugin>>(
+          import("lightgallery/plugins/autoplay/lg-autoplay.es5.js")
+        )
       );
       pluginsStyles.push(import("lightgallery/scss/lg-autoplay.scss"));
     }
 
     if (LIGHT_GALLERY_FULLSCREEN) {
       plugins.push(
-        // FIXME:
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        <Promise<LightGalleryPlugin>>import("lightgallery/plugins/fullscreen")
+        <Promise<LightGalleryPlugin>>(
+          import("lightgallery/plugins/fullscreen/lg-fullscreen.es5.js")
+        )
       );
       pluginsStyles.push(import("lightgallery/scss/lg-fullscreen.scss"));
     }
 
     if (LIGHT_GALLERY_PAGER) {
       plugins.push(
-        // FIXME:
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        <Promise<LightGalleryPlugin>>import("lightgallery/plugins/pager")
+        <Promise<LightGalleryPlugin>>(
+          import("lightgallery/plugins/pager/lg-pager.es5.js")
+        )
       );
       pluginsStyles.push(import("lightgallery/scss/lg-pager.scss"));
     }
 
     if (LIGHT_GALLERY_ROTATE) {
       plugins.push(
-        // FIXME:
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        <Promise<LightGalleryPlugin>>import("lightgallery/plugins/rotate")
+        <Promise<LightGalleryPlugin>>(
+          import("lightgallery/plugins/rotate/lg-rotate.es5.js")
+        )
       );
       pluginsStyles.push(import("lightgallery/scss/lg-rotate.scss"));
     }
 
     if (LIGHT_GALLERY_SHARE) {
       plugins.push(
-        // FIXME:
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        <Promise<LightGalleryPlugin>>import("lightgallery/plugins/share")
+        <Promise<LightGalleryPlugin>>(
+          import("lightgallery/plugins/share/lg-share.es5.js")
+        )
       );
       pluginsStyles.push(import("lightgallery/scss/lg-share.scss"));
     }
 
     if (LIGHT_GALLERY_THUMBNAIL) {
       plugins.push(
-        // FIXME:
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        <Promise<LightGalleryPlugin>>import("lightgallery/plugins/thumbnail")
+        <Promise<LightGalleryPlugin>>(
+          import("lightgallery/plugins/thumbnail/lg-thumbnail.es5.js")
+        )
       );
       pluginsStyles.push(import("lightgallery/scss/lg-thumbnail.scss"));
     }
 
     if (LIGHT_GALLERY_ZOOM) {
       plugins.push(
-        // FIXME:
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        <Promise<LightGalleryPlugin>>import("lightgallery/plugins/zoom")
+        <Promise<LightGalleryPlugin>>(
+          import("lightgallery/plugins/zoom/lg-zoom.es5.js")
+        )
       );
       pluginsStyles.push(import("lightgallery/scss/lg-zoom.scss"));
     }

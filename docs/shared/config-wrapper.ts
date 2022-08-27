@@ -77,9 +77,9 @@ export const config = (
     ],
 
     alias: {
-      "@theme-hope/components/HomeHero": path.resolve(
+      "@theme-hope/components/HomeHero.js": path.resolve(
         __dirname,
-        "./components/HopeHero"
+        "./components/HopeHero.js"
       ),
       ...alias,
     },
