@@ -47,7 +47,7 @@ export default defineComponent({
     onMounted(() => {
       void Promise.all([
         import(
-          /* webpackChunkName: "flowchart" */ "flowchart.js/src/flowchart.parse"
+          /* webpackChunkName: "flowchart" */ "flowchart.js/src/flowchart.parse.js"
         ),
         // delay
         new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
