@@ -1,8 +1,10 @@
 import { defineUserConfig } from "@vuepress/cli";
 import { docsearchPlugin } from "@vuepress/plugin-docsearch";
-import { path } from "@vuepress/utils";
+import { getDirname, path } from "@vuepress/utils";
 import { addViteOptimizeDepsInclude } from "vuepress-shared";
 import type { UserConfig } from "@vuepress/cli";
+
+const __dirname = getDirname(import.meta.url);
 
 const BASE = <"/" | `/${string}/`>process.env["BASE"] || "/";
 
@@ -75,9 +77,9 @@ export const config = (
     ],
 
     alias: {
-      "@theme-hope/components/HomeHero": path.resolve(
+      "@theme-hope/components/HomeHero.js": path.resolve(
         __dirname,
-        "./components/HopeHero"
+        "./components/HopeHero.js"
       ),
       ...alias,
     },

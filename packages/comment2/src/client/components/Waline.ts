@@ -3,14 +3,14 @@ import { Waline } from "@waline/client/dist/component";
 import { pageviewCount } from "@waline/client/dist/pageview";
 import { computed, defineComponent, h, onMounted, watch } from "vue";
 import { useRoute } from "vue-router";
-import { useLocaleConfig } from "vuepress-shared/lib/client";
+import { useLocaleConfig } from "vuepress-shared/client";
 
 import type { VNode } from "vue";
 import type {
   CommentPluginFrontmatter,
   WalineLocaleConfig,
   WalineOptions,
-} from "../../shared";
+} from "../../shared/index.js";
 
 import "@waline/client/dist/waline.css";
 import "../styles/waline.scss";

@@ -8,10 +8,10 @@
   </ParentLayout>
 </template>
 <script setup lang="ts">
-import { useBlogType } from "vuepress-plugin-blog2/lib/client";
+import { useBlogType } from "vuepress-plugin-blog2/client";
 
 import ArticleList from "../components/ArticleList.vue";
-import ParentLayout from "@vuepress/theme-default/lib/client/layouts/Layout.vue";
+import ParentLayout from "@vuepress/theme-default/layouts/Layout.vue";
 
 const articles = useBlogType("article");
 </script>

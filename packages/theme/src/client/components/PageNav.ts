@@ -4,21 +4,21 @@ import { useEventListener } from "@vueuse/core";
 import { computed, defineComponent, h } from "vue";
 import { useRoute } from "vue-router";
 
-import AutoLink from "@theme-hope/components/AutoLink";
-import Icon from "@theme-hope/components/Icon";
+import AutoLink from "@theme-hope/components/AutoLink.js";
+import Icon from "@theme-hope/components/Icon.js";
 import {
   useAutoLink,
   useNavigate,
   useThemeLocaleData,
-} from "@theme-hope/composables";
-import { useSidebarItems } from "@theme-hope/module/sidebar/composables";
+} from "@theme-hope/composables/index.js";
+import { useSidebarItems } from "@theme-hope/modules/sidebar/composables/index.js";
 
 import type { VNode } from "vue";
 import type {
   HopeThemeNormalPageFrontmatter,
   AutoLink as AutoLinkType,
   ResolvedSidebarItem,
-} from "../../shared";
+} from "../../shared/index.js";
 
 import "../styles/page-nav.scss";
 

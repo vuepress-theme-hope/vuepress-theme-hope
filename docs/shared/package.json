@@ -10,17 +10,22 @@
     "url": "https://mrhope.site"
   },
   "type": "module",
-  "main": "index.ts",
+  "exports": {
+    ".": "./index.js"
+  },
+  "scripts": {
+    "build": "tsc --build tsconfig.build.json"
+  },
   "dependencies": {
     "@types/three": "0.143.1",
-    "@vuepress/cli": "2.0.0-beta.49",
-    "@vuepress/client": "2.0.0-beta.49",
-    "@vuepress/core": "2.0.0-beta.49",
-    "@vuepress/plugin-docsearch": "2.0.0-beta.49",
-    "@vuepress/utils": "2.0.0-beta.49",
+    "@vuepress/cli": "2.0.0-beta.50",
+    "@vuepress/client": "2.0.0-beta.50",
+    "@vuepress/core": "2.0.0-beta.50",
+    "@vuepress/plugin-docsearch": "2.0.0-beta.50",
+    "@vuepress/utils": "2.0.0-beta.50",
     "three": "0.143.0",
     "vue": "3.2.37",
-    "vuepress-shared": "workspace:*",
-    "vuepress-theme-hope": "workspace:*"
+    "vuepress-shared": "workspace:2.0.0-beta.91",
+    "vuepress-theme-hope": "workspace:2.0.0-beta.91"
   }
 }

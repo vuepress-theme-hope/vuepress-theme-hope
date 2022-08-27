@@ -9,7 +9,7 @@ import type {
   HopeThemeBlogLocaleData,
   HopeThemeBlogPluginOptions,
   HopeThemeConfig,
-} from "../../shared";
+} from "../../shared/index.js";
 
 const defaultOptions: HopeThemeBlogPluginOptions = {
   article: "/article/",

@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import MarkdownIt from "markdown-it";
-import { sub } from "../../src/node/markdown-it";
+import { sub } from "../../src/node/markdown-it/index.js";
 
 describe("subscript", () => {
   const markdownIt = MarkdownIt({ linkify: true }).use(sub);

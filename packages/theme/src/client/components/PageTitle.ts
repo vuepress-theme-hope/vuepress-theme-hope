@@ -1,12 +1,15 @@
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import { defineComponent, h, unref } from "vue";
 
-import Icon from "@theme-hope/components/Icon";
-import PageInfo from "@theme-hope/module/info/components/PageInfo";
-import { usePageInfo, useThemeLocaleData } from "@theme-hope/composables";
+import Icon from "@theme-hope/components/Icon.js";
+import PageInfo from "@theme-hope/modules/info/components/PageInfo.js";
+import {
+  usePageInfo,
+  useThemeLocaleData,
+} from "@theme-hope/composables/index.js";
 
 import type { VNode } from "vue";
-import type { HopeThemeNormalPageFrontmatter } from "../../shared";
+import type { HopeThemeNormalPageFrontmatter } from "../../shared/index.js";
 
 import "../styles/page-title.scss";
 

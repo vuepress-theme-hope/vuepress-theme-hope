@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import MarkdownIt from "markdown-it";
-import { hint } from "../../src/node/markdown-it";
+import { hint } from "../../src/node/markdown-it/index.js";
 
 describe("hint", () => {
   describe("with options", () => {

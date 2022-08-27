@@ -369,7 +369,7 @@ v-pre 扩展是由我们的内置插件支持的。
 需要注意的是，路径别名在导入代码语法中不会生效。你可以通过下面的配置来自行处理路径别名:
 
 ```js
-module.exports = {
+export default {
   markdown: {
     importCode: {
       handleImportPath: (str) =>

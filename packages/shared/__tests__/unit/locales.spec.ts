@@ -3,7 +3,7 @@ import { createBaseApp } from "@vuepress/core";
 import { path } from "@vuepress/utils";
 import { describe, it, expect } from "vitest";
 import { getLocales } from "../../src/node/locales";
-import { emptyTheme } from "./__fixtures__/theme/empty";
+import { emptyTheme } from "./__fixtures__/theme/empty.js";
 
 const defaultLocaleConfig = {
   "/en/": {

@@ -1,7 +1,7 @@
 import { useEventListener, useDebounceFn } from "@vueuse/core";
 import { computed, defineComponent, h, onMounted, ref } from "vue";
-import { LOADING_SVG } from "./icons";
-import presets from "../flowchart-preset";
+import { LOADING_SVG } from "./icons.js";
+import presets from "../flowchart-preset/index.js";
 
 import type * as Flowchart from "flowchart.js";
 import type { PropType, VNode } from "vue";
@@ -47,7 +47,7 @@ export default defineComponent({
     onMounted(() => {
       void Promise.all([
         import(
-          /* webpackChunkName: "flowchart" */ "flowchart.js/src/flowchart.parse"
+          /* webpackChunkName: "flowchart" */ "flowchart.js/src/flowchart.parse.js"
         ),
         // delay
         new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),

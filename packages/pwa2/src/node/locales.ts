@@ -1,4 +1,4 @@
-import type { PWALocaleConfig } from "../shared";
+import type { PWALocaleConfig } from "../shared/index.js";
 
 /** Muti language config for pwa popup */
 export const pwaLocales: PWALocaleConfig = {

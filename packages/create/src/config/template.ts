@@ -1,8 +1,8 @@
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
+import { dirname, join, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 import { execaCommandSync } from "execa";
-import { existsSync, readFileSync, writeFileSync } from "fs";
 import inquirer from "inquirer";
-import { dirname, join, resolve } from "path";
-import { fileURLToPath } from "url";
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 const __filename = fileURLToPath(import.meta.url);
@@ -15,10 +15,10 @@ import {
   checkGitRepo,
   copy,
   ensureDirExistSync,
-} from "../utils";
+} from "../utils/index.js";
 
-import type { CreateI18n, Lang } from "./i18n";
-import type { PackageManager } from "../utils";
+import type { CreateI18n, Lang } from "./i18n.js";
+import type { PackageManager } from "../utils/index.js";
 
 const getWorkflowContent = (
   packageManager: PackageManager,

@@ -1,4 +1,4 @@
-import { tabs } from "./tabs";
+import { tabs } from "./tabs.js";
 
 import type { PluginSimple } from "markdown-it";
 

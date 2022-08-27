@@ -3,12 +3,12 @@ import type {
   HopeThemeBlogLocaleData,
   HopeThemeBlogOptions,
   HopeThemePaginationLocaleData,
-} from "./blog";
+} from "./blog.js";
 import type {
   HopeThemeEncryptConfig,
   HopeThemeEncryptLocaleData,
   HopeThemeEncryptOptions,
-} from "./encrypt";
+} from "./encrypt.js";
 
 export interface HopeThemeFeatureLocaleData {
   /**

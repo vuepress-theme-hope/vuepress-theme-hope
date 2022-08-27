@@ -66,9 +66,9 @@ export default {
 
 ```js
 // .vuepress/config.js
-const { sitemapPlugin } = require("vuepress-plugin-sitemap2");
+import { sitemapPlugin } from "vuepress-plugin-sitemap2";
 
-module.exports = {
+export default {
   plugins: [
     sitemapPlugin({
       // 配置选项

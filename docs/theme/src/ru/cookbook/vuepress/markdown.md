@@ -372,7 +372,7 @@ const onePlusTwoPlusThree = {{ 1 + 2 + 3 }}
 Обратите внимание, что псевдонимы пути недоступны в синтаксисе кода импорта. Вы можете использовать следующую конфигурацию для самостоятельной обработки псевдонима пути:
 
 ```js
-module.exports = {
+export default {
   markdown: {
     importCode: {
       handleImportPath: (str) =>

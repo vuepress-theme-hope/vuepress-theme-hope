@@ -1,3 +1,3 @@
-export * from "./config";
-export * from "./sidebar";
-export * from "./socialMedia";
+export * from "./config.js";
+export * from "./sidebar/index.js";
+export * from "./socialMedia.js";

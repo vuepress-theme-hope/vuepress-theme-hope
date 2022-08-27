@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 // Russian [ru]
 import type { Dayjs, default as dayjs } from "dayjs";
-import type { Locale } from "./locale";
+import type { Locale } from "./locale.js";
 
 const monthFormat =
   "января_февраля_марта_апреля_мая_июня_июля_августа_сентября_октября_ноября_декабря".split(

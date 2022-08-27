@@ -2,25 +2,25 @@ import { externalLinkIconPlugin } from "@vuepress/plugin-external-link-icon";
 import { nprogressPlugin } from "@vuepress/plugin-nprogress";
 import { prismjsPlugin } from "@vuepress/plugin-prismjs";
 import { themeDataPlugin } from "@vuepress/plugin-theme-data";
-import { getActiveHeaderLinksPlugin } from "./activeHeaderLinks";
-import { getBlogPlugin } from "./blog";
-import { getCommentPlugin } from "./comment";
-import { getComponentsPlugin } from "./components";
-import { getCopyCodePlugin } from "./copyCode";
-import { getCopyrightPlugin } from "./copyright";
-import { getFeedPlugin } from "./feed";
-import { getMdEnhancePlugin } from "./mdEnhance";
-import { getPhotoSwipePlugin } from "./photoSwipe";
-import { getPWAPlugin } from "./pwa";
-import { getSitemapPlugin } from "./sitemap";
-import { getSEOPlugin } from "./seo";
+import { getActiveHeaderLinksPlugin } from "./activeHeaderLinks.js";
+import { getBlogPlugin } from "./blog.js";
+import { getCommentPlugin } from "./comment.js";
+import { getComponentsPlugin } from "./components.js";
+import { getCopyCodePlugin } from "./copyCode.js";
+import { getCopyrightPlugin } from "./copyright.js";
+import { getFeedPlugin } from "./feed.js";
+import { getMdEnhancePlugin } from "./mdEnhance.js";
+import { getPhotoSwipePlugin } from "./photoSwipe.js";
+import { getPWAPlugin } from "./pwa.js";
+import { getSitemapPlugin } from "./sitemap.js";
+import { getSEOPlugin } from "./seo.js";
 
 import type { PluginConfig } from "@vuepress/core";
 import type {
   HopeThemeConfig,
   HopeThemeOptions,
   HopeThemePluginsOptions,
-} from "../../shared";
+} from "../../shared/index.js";
 
 export const getPluginConfig = (
   plugins: HopeThemePluginsOptions,

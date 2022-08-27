@@ -1,7 +1,7 @@
-import mitt from "mitt";
+import { default as mitt } from "mitt";
 import { onMounted, provide } from "vue";
-import { pwaEventSymbol, useForceUpdate, useRegister } from ".";
-import type { PWAEvent } from ".";
+import { pwaEventSymbol, useForceUpdate, useRegister } from "./index.js";
+import type { PWAEvent } from "./index.js";
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 declare const __VUEPRESS_SSR__: boolean;

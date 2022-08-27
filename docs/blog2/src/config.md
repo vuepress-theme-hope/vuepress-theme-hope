@@ -184,6 +184,8 @@ export interface BlogTypeOptions {
 
 ## Composition API
 
+You can import the following api from `vuepress-plugin-blog2/client`.
+
 - Blog category
 
   ```ts

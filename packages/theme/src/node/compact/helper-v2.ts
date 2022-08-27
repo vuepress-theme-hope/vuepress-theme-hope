@@ -1,6 +1,6 @@
-import { convertThemeConfig } from "./theme";
-import { hopeTheme } from "../theme";
-import { logger } from "../utils";
+import { convertThemeConfig } from "./theme.js";
+import { hopeTheme } from "../theme.js";
+import { logger } from "../utils.js";
 
 import type { UserConfig } from "@vuepress/cli";
 import type {
@@ -9,7 +9,7 @@ import type {
   HopeThemeSidebarArrayConfig,
   HopeThemeSidebarObjectConfig,
   HopeThemeOptions,
-} from "../../shared";
+} from "../../shared/index.js";
 
 /**
  * @deprecated use `navbar` instead

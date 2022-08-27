@@ -9,13 +9,13 @@ import type { PWAOptions } from "vuepress-plugin-pwa2";
 import type { ReadingTimeOptions } from "vuepress-plugin-reading-time2";
 import type { SitemapOptions } from "vuepress-plugin-sitemap2";
 import type { SeoOptions } from "vuepress-plugin-seo2";
-import type { HopeThemeNavbarConfig } from "./navbar";
-import type { HopeThemeBlogPluginOptions } from "./options";
+import type { HopeThemeNavbarConfig } from "./navbar.js";
+import type { HopeThemeBlogPluginOptions } from "./options/index.js";
 import type {
   HopeThemeSidebarConfig,
   HopeThemeSidebarArrayConfig,
   HopeThemeSidebarObjectConfig,
-} from "./sidebar";
+} from "./sidebar.js";
 
 export type HopeThemeNavbarHelper = (
   navbarConfig: HopeThemeNavbarConfig

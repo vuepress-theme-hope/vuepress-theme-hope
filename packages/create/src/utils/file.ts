@@ -4,8 +4,8 @@ import {
   mkdirSync,
   readdirSync,
   statSync,
-} from "fs";
-import { dirname } from "path";
+} from "node:fs";
+import { dirname } from "node:path";
 
 export const ensureDirExistSync = (dirPath: string): void => {
   try {

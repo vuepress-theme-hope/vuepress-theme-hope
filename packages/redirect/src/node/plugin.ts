@@ -1,12 +1,12 @@
-import { handleRedirect } from "./extends";
-import { generateHTML } from "./generate";
-import { logger } from "./utils";
+import { handleRedirect } from "./extends.js";
+import { generateHTML } from "./generate.js";
+import { logger } from "./utils.js";
 
 import type { Page, PluginFunction } from "@vuepress/core";
 import type {
   RedirectOptions,
   RedirectPluginFrontmatterOption,
-} from "../shared";
+} from "../shared/index.js";
 
 export const redirectPlugin =
   (options: RedirectOptions = {}): PluginFunction =>

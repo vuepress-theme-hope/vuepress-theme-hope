@@ -17,18 +17,18 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-import { default as Token } from "markdown-it/lib/token";
+import { default as Token } from "markdown-it/lib/token.js";
 import {
   getParentTokenIndex,
   isInlineToken,
   isParagraphToken,
   isListItemToken,
   setTokenAttr,
-} from "./utils";
+} from "./utils.js";
 
 import type { PluginWithOptions } from "markdown-it";
-import type { default as StateCore } from "markdown-it/lib/rules_core/state_core";
-import type { TaskListOptions } from "../../shared";
+import type { default as StateCore } from "markdown-it/lib/rules_core/state_core.js";
+import type { TaskListOptions } from "../../shared/index.js";
 
 interface TaskListEnv {
   tasklists: number;

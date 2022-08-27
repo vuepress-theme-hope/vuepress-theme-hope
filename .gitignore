@@ -2,6 +2,10 @@
 node_modules/
 
 # Build files
+docs/shared/**/*.js
+docs/shared/**/*.js.map
+docs/shared/**/*.d.ts
+
 packages/*/lib/
 
 # Vuepress Cache
@@ -10,9 +14,6 @@ packages/*/lib/
 .temp/
 # Vuepress Output
 dist/
-
-# VS Code Config file
-# .vscode/
 
 # Rollup Cache
 .rollup.cache/

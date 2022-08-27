@@ -1,14 +1,13 @@
 import type { LocaleConfig } from "@vuepress/core";
 import type { KatexOptions } from "katex";
-import type { AttrsOptions } from "./attrs";
-import type { CodeDemoOptions } from "./codeDemo";
-import type { ImageMarkOptions } from "./imageMark";
-import type { IncludeOptions } from "./include";
-import type { MarkdownEnhanceLocaleData } from "./locales";
-import type { PresentationOptions } from "./presentation";
-import type { TaskListOptions } from "./tasklist";
-import type { StylizeOptions } from "./stylize";
-import type { PlaygroundOptions } from "./playground";
+import type { AttrsOptions } from "./attrs.js";
+import type { CodeDemoOptions } from "./codeDemo.js";
+import type { ImageMarkOptions } from "./imageMark.js";
+import type { IncludeOptions } from "./include.js";
+import type { MarkdownEnhanceLocaleData } from "./locales.js";
+import type { PresentationOptions } from "./presentation.js";
+import type { TaskListOptions } from "./tasklist.js";
+import type { StylizeOptions } from "./stylize.js";
 
 /**
  * md-enhance plugin configuration
@@ -258,15 +257,6 @@ export interface MarkdownEnhanceOptions {
    * 关键词显示增强选项
    */
   stylize?: StylizeOptions;
-
-  /**
-   * Whether to enable playground support
-   *
-   * 是否启用 playground 支持
-   *
-   * @default false
-   */
-  playground?: PlaygroundOptions | boolean;
 
   /**
    * @deprecated This option is for demo only, please enable options you need in production.

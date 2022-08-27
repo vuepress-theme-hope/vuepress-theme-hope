@@ -1,18 +1,20 @@
-import { path } from "@vuepress/utils";
+import { getDirname, path } from "@vuepress/utils";
 import { watch } from "chokidar";
 
-import { injectConfigModule } from "./inject";
+import { injectConfigModule } from "./inject.js";
 import {
   prepareConfigFile,
   prepareInjectSass,
   prepareConfigSass,
   preparePaletteSass,
   prepareStyleSass,
-} from "./prepare";
-import { logger } from "./utils";
+} from "./prepare.js";
+import { logger } from "./utils.js";
 
 import type { PluginFunction } from "@vuepress/core";
-import type { SassPaletteOptions } from "../shared";
+import type { SassPaletteOptions } from "../shared/index.js";
+
+const __dirname = getDirname(import.meta.url);
 
 export const sassPalettePlugin =
   (options: SassPaletteOptions): PluginFunction =>

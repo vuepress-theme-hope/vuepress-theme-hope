@@ -31,10 +31,9 @@ export default defineUserConfig({
       },
       "/zh/": {
         navbar: ["/zh/", "/zh/demo", "/zh/custom", "/zh/exclude"],
-        lang: "zh-CN",
-        selectText: "选择语言",
+        selectLanguageText: "选择语言",
+        selectLanguageName: "简体中文",
         lastUpdatedText: "上次编辑于",
-        label: "简体中文",
       },
     },
   }),

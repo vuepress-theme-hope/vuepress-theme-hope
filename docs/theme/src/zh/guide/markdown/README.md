@@ -56,8 +56,6 @@ dir:
 
 - [样式化](stylize.md)
 
-- [交互演示](playground.md)
-
 - [组件](components.md)
 
 - [其他](others.md)

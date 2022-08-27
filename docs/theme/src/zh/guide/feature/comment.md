@@ -46,9 +46,9 @@ export default defineUserConfig({
 @tab JS
 
 ```js {7,10}
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     plugins: {
       comment: {
@@ -147,9 +147,9 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     plugins: {
       comment: {

@@ -12,17 +12,17 @@ import {
   watch,
 } from "vue";
 import { useRouter } from "vue-router";
-import {
-  isComponentRegistered,
-  RenderDefault,
-} from "vuepress-shared/lib/client";
+import { isComponentRegistered, RenderDefault } from "vuepress-shared/client";
 
-import PageFooter from "@theme-hope/components/PageFooter";
-import { useMobile, useThemeLocaleData } from "@theme-hope/composables";
-import { useSidebarItems } from "@theme-hope/module/sidebar/composables";
+import PageFooter from "@theme-hope/components/PageFooter.js";
+import {
+  useMobile,
+  useThemeLocaleData,
+} from "@theme-hope/composables/index.js";
+import { useSidebarItems } from "@theme-hope/modules/sidebar/composables/index.js";
 
 import type { ComponentOptions, VNode } from "vue";
-import type { HopeThemePageFrontmatter } from "../../shared";
+import type { HopeThemePageFrontmatter } from "../../shared/index.js";
 
 import "../styles/common.scss";
 

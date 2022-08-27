@@ -1,6 +1,6 @@
-import type { HopeThemePageFrontmatter } from "./base";
-import type { PageInfo } from "../info";
-import type { AutoLink } from "../utils";
+import type { HopeThemePageFrontmatter } from "./base.js";
+import type { PageInfo } from "../info.js";
+import type { AutoLink } from "../utils.js";
 
 export interface HopeThemeNormalPageFrontmatter
   extends HopeThemePageFrontmatter {

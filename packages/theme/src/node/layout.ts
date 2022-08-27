@@ -1,7 +1,9 @@
-import { path } from "@vuepress/utils";
+import { getDirname, path } from "@vuepress/utils";
 
 import type { App } from "@vuepress/core";
-import type { HopeThemePluginsOptions } from "../shared";
+import type { HopeThemePluginsOptions } from "../shared/index.js";
+
+const __dirname = getDirname(import.meta.url);
 
 export const getLayoutConfig = (
   app: App,
@@ -25,7 +27,7 @@ export const getLayoutConfig = (
   if (plugins.blog)
     layoutConfig["Blog"] = path.resolve(
       __dirname,
-      "../client/module/blog/layouts/Blog.js"
+      "../client/modules/blog/layouts/Blog.js"
     );
 
   if (app.env.isDebug) console.log("Theme layout config:", layoutConfig);

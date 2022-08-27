@@ -1,8 +1,8 @@
 import { hash } from "@vuepress/utils";
-import { container } from "../markdown-it";
+import { container } from "../markdown-it/index.js";
 
 import type { PluginSimple } from "markdown-it";
-import type { default as Token } from "markdown-it/lib/token";
+import type { default as Token } from "markdown-it/lib/token.js";
 
 /** @deprecated */
 export const legacyCodeDemo: PluginSimple = (md) => {

@@ -1,11 +1,11 @@
 import { getLocales } from "vuepress-shared";
 
-import { readingTimeLocales } from "./locales";
-import { getReadingTime } from "./readingTime";
-import { logger } from "./utils";
+import { readingTimeLocales } from "./locales.js";
+import { getReadingTime } from "./readingTime.js";
+import { logger } from "./utils.js";
 
 import type { Page, PluginFunction } from "@vuepress/core";
-import type { ReadingTime, ReadingTimeOptions } from "../shared";
+import type { ReadingTime, ReadingTimeOptions } from "../shared/index.js";
 
 /** Reading time plugin */
 export const readingTimePlugin =

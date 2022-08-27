@@ -60,9 +60,9 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     // 此处放置主题配置
   }),

@@ -1,5 +1,7 @@
 import { Logger } from "vuepress-shared";
-import { fs, path } from "@vuepress/utils";
+import { fs, getDirname, path } from "@vuepress/utils";
+
+const __dirname = getDirname(import.meta.url);
 
 export const emptyFile = path.resolve(__dirname, "../../styles/empty.scss");
 

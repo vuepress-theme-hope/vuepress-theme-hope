@@ -1,10 +1,11 @@
 import { ensureEndingSlash } from "@vuepress/shared";
-import { path } from "@vuepress/utils";
-import { logger } from "./utils";
+import { getDirname, path } from "@vuepress/utils";
+import { logger } from "./utils.js";
 
 import type { App } from "@vuepress/core";
-import type { AvailableComponent, ComponentOptions } from "../shared";
+import type { AvailableComponent, ComponentOptions } from "../shared/index.js";
 
+const __dirname = getDirname(import.meta.url);
 const CLIENT_FOLDER = ensureEndingSlash(path.resolve(__dirname, "../client"));
 
 const availableComponents: AvailableComponent[] = [
@@ -104,11 +105,11 @@ export const prepareConfigFile = (
     `components/config.js`,
     `${
       shouldImportUseScriptTag
-        ? `import { useScriptTag } from "${CLIENT_FOLDER}composables";\n`
+        ? `import { useScriptTag } from "${CLIENT_FOLDER}composables/index.js";\n`
         : ""
     }${
       shouldImportUseStyleTag
-        ? `import { useStyleTag } from "${CLIENT_FOLDER}composables";\n`
+        ? `import { useStyleTag } from "${CLIENT_FOLDER}composables/index.js";\n`
         : ""
     }${
       shouldImportH ? `import { h } from "vue";\n` : ""

@@ -1,4 +1,4 @@
-import type { Author, AuthorInfo } from "../types";
+import type { Author, AuthorInfo } from "../types/index.js";
 
 export const getAuthor = (
   author: Author | false | undefined,

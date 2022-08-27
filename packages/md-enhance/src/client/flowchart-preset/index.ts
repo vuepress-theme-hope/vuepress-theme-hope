@@ -4,9 +4,9 @@
  * MIT LICENSED
  */
 
-import ant from "./ant";
-import pie from "./pie";
-import vue from "./vue";
+import ant from "./ant.js";
+import pie from "./pie.js";
+import vue from "./vue.js";
 
 export default {
   ant,

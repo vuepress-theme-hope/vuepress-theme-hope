@@ -3,7 +3,7 @@ import { useStorage } from "@vueuse/core";
 import { defineComponent, h, ref, watch } from "vue";
 
 import type { PropType, VNode } from "vue";
-import type { TabProps } from "./Tabs";
+import type { TabProps } from "./Tabs.js";
 
 import "../styles/code-tabs.scss";
 

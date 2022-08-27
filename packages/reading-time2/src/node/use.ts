@@ -1,6 +1,6 @@
-import { readingTimePlugin } from "./plugin";
+import { readingTimePlugin } from "./plugin.js";
 import type { App } from "@vuepress/core";
-import type { ReadingTimeOptions } from "../shared";
+import type { ReadingTimeOptions } from "../shared/index.js";
 
 /**
  * Composition Api to use `vuepress-plugin-reading-time2`

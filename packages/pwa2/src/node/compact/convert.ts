@@ -1,5 +1,5 @@
-import { deprecatedLogger } from "./utils";
-import type { PWAOptions } from "../../shared";
+import { deprecatedLogger } from "./utils.js";
+import type { PWAOptions } from "../../shared/index.js";
 
 /** @deprecated */
 export const convertOptions = (

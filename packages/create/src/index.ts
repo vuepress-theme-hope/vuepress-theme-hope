@@ -3,10 +3,10 @@ import { cac } from "cac";
 import { execaCommand, execaCommandSync } from "execa";
 import inquirer from "inquirer";
 
-import { getLanguage, generateTemplate } from "./config";
-import { createPackageJson } from "./packageJson";
-import { getRegistry } from "./registry";
-import { getPackageManager } from "./utils";
+import { getLanguage, generateTemplate } from "./config/index.js";
+import { createPackageJson } from "./packageJson.js";
+import { getRegistry } from "./registry.js";
+import { getPackageManager } from "./utils/index.js";
 // eslint-disable-next-line
 // @ts-ignore
 import pkg from "../package.json";

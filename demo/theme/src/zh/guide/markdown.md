@@ -67,9 +67,9 @@ export default {
 @tab JS
 
 ```js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     plugins: {
       mdEnhance: {

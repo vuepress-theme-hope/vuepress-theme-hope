@@ -1,7 +1,7 @@
 import type { LocaleConfig } from "@vuepress/core";
 import type { GenerateSWOptions } from "workbox-build";
-import type { PWALocaleData } from "./locales";
-import type { ManifestOption } from "./manifest";
+import type { PWALocaleData } from "./locales.js";
+import type { ManifestOption } from "./manifest.js";
 
 interface ApplePWAOptions {
   /**

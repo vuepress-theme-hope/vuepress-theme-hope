@@ -20,7 +20,7 @@ export default [
       "@vuepress/client",
       "@vueuse/core",
       "vue",
-      "vuepress-shared/lib/client",
+      "vuepress-shared/client",
       /\.scss$/,
     ],
     dtsExternal: [/\.scss$/],
@@ -38,7 +38,7 @@ export default [
       "@vuepress/client",
       "@vuepress/shared",
       "vue",
-      "vuepress-shared/lib/client",
+      "vuepress-shared/client",
       /\.scss$/,
     ],
     dtsExternal: [/\.scss$/],
@@ -47,7 +47,7 @@ export default [
     external: ["vue"],
   }),
   ...rollupTypescript("client/components/YouTube", {
-    external: ["vue"],
+    external: ["@vuepress/client", "vue"],
   }),
   ...rollupTypescript("client/composables/index", {
     external: ["@vueuse/core"],

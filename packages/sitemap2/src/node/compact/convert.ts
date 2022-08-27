@@ -1,5 +1,5 @@
-import { deprecatedLogger } from "./utils";
-import type { SitemapOptions } from "../../shared";
+import { deprecatedLogger } from "./utils.js";
+import type { SitemapOptions } from "../../shared/index.js";
 
 /** @deprecated */
 export const convertOptions = (

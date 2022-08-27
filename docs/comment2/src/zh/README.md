@@ -64,9 +64,9 @@ export default {
 
 ```js
 // .vuepress/config.js
-const { commentPlugin } = require("vuepress-plugin-comment2");
+import { commentPlugin } from "vuepress-plugin-comment2";
 
-module.exports = {
+export default {
   plugins: [
     commentPlugin({
       // 插件选项

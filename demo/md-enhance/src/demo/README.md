@@ -22,4 +22,3 @@ title: Get Started
 - [Tabs](tabs.md)
 - [Tasklist](tasklist.md)
 - [Tex](tex.md)
-- [Playground](playground.md)

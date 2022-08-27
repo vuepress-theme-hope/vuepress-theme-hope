@@ -19,14 +19,14 @@
   },
   "dependencies": {
     "@types/katex": "0.14.0",
-    "@vuepress/client": "2.0.0-beta.49",
-    "@vuepress/utils": "2.0.0-beta.49",
-    "docs-shared": "workspace:*",
+    "@vuepress/client": "2.0.0-beta.50",
+    "@vuepress/utils": "2.0.0-beta.50",
+    "docs-shared": "workspace:2.0.0-beta.91",
     "katex": "0.16.0",
     "sass-loader": "13.0.2",
     "vue": "3.2.37",
-    "vuepress-plugin-md-enhance": "workspace:*",
-    "vuepress-vite": "2.0.0-beta.49",
-    "vuepress-webpack": "2.0.0-beta.49"
+    "vuepress-plugin-md-enhance": "workspace:2.0.0-beta.91",
+    "vuepress-vite": "2.0.0-beta.50",
+    "vuepress-webpack": "2.0.0-beta.50"
   }
 }

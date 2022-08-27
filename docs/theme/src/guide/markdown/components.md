@@ -88,11 +88,11 @@ See [CodePen][codepen] page for available props.
 Component which allows you to display font icons.
 
 - Home icon: <FontIcon icon="home" />
-- A big and red markdown icon: <FontIcon icon="markdown" color="red" size="32" />
+- A big and red markdown icon: <FontIcon icon="markdown" color="red" :size="32" />
 
 ```md
 - Home icon: <FontIcon icon="home" />
-- A big and red markdown icon: <FontIcon icon="markdown" color="red" size="32" />
+- A big and red markdown icon: <FontIcon icon="markdown" color="red" :size="32" />
 ```
 
 See [FontIcon][fonticon] page for available props.

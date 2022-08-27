@@ -1,12 +1,12 @@
 import { fs, path } from "@vuepress/utils";
-import { NEWLINES_RE } from "./utils";
+import { NEWLINES_RE } from "./utils.js";
 
 import type { MarkdownEnv } from "@vuepress/markdown";
 import type { PluginWithOptions } from "markdown-it";
-import type { RuleBlock } from "markdown-it/lib/parser_block";
-import type { RuleCore } from "markdown-it/lib/parser_core";
-import type { default as Token } from "markdown-it/lib/token";
-import type { IncludeOptions } from "../../shared";
+import type { RuleBlock } from "markdown-it/lib/parser_block.js";
+import type { RuleCore } from "markdown-it/lib/parser_core.js";
+import type { default as Token } from "markdown-it/lib/token.js";
+import type { IncludeOptions } from "../../shared/index.js";
 
 interface ImportFileInfo {
   filePath: string;

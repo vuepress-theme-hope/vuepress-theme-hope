@@ -1,11 +1,11 @@
-import { deprecatedLogger } from "./utils";
-import { logger } from "../utils";
+import { deprecatedLogger } from "./utils.js";
+import { logger } from "../utils.js";
 
 import type {
   HopeThemeNavbarConfig,
   HopeThemeNavbarItem,
   HopeThemeNavbarGroup,
-} from "../../shared";
+} from "../../shared/index.js";
 
 const handleNavbarConfig = (config: unknown[]): HopeThemeNavbarConfig =>
   config

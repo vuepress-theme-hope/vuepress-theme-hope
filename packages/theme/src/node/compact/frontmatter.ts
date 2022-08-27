@@ -1,7 +1,7 @@
-import { deprecatedLogger, droppedLogger } from "./utils";
-import { logger } from "../utils";
+import { deprecatedLogger, droppedLogger } from "./utils.js";
+import { logger } from "../utils.js";
 
-import type { HopeThemePageFrontmatter } from "../../shared";
+import type { HopeThemePageFrontmatter } from "../../shared/index.js";
 
 const DEPRECATED_FRONTMATTER_OPTIONS: [string, string][] = [
   ["authors", "author"],
