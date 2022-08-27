@@ -12,6 +12,10 @@ node_modules/
 coverage/
 
 # Dist files
+docs/shared/**/*.js
+docs/shared/**/*.js.map
+docs/shared/**/*.d.ts
+
 packages/*/lib/
 
 # Rollup cache
