@@ -1,5 +1,5 @@
 import { navbar } from "vuepress-theme-hope";
-import { version } from "vuepress-theme-hope/package.json";
+import { version } from "../version";
 
 export const zh = navbar([
   "/zh/",
