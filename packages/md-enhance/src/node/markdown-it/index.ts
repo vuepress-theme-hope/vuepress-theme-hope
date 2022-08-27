@@ -23,4 +23,3 @@ export * from "./tasklist.js";
 export * from "./vPre.js";
 export * from "./stylize.js";
 export * from "./uml.js";
-export * from "./playground.js";

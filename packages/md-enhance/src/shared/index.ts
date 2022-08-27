@@ -8,4 +8,3 @@ export * from "./options.js";
 export * from "./presentation.js";
 export * from "./tasklist.js";
 export * from "./stylize.js";
-export * from "./playground.js";

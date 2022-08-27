@@ -8,7 +8,6 @@ import type { MarkdownEnhanceLocaleData } from "./locales.js";
 import type { PresentationOptions } from "./presentation.js";
 import type { TaskListOptions } from "./tasklist.js";
 import type { StylizeOptions } from "./stylize.js";
-import type { PlaygroundOptions } from "./playground.js";
 
 /**
  * md-enhance plugin configuration
@@ -258,15 +257,6 @@ export interface MarkdownEnhanceOptions {
    * 关键词显示增强选项
    */
   stylize?: StylizeOptions;
-
-  /**
-   * Whether to enable playground support
-   *
-   * 是否启用 playground 支持
-   *
-   * @default false
-   */
-  playground?: PlaygroundOptions | boolean;
 
   /**
    * @deprecated This option is for demo only, please enable options you need in production.

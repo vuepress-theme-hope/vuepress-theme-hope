@@ -65,17 +65,6 @@ export default [
     external: ["mermaid", "vue", "vuepress-shared/client", /\.scss$/],
     dtsExternal: [/\.scss$/],
   }),
-  ...rollupTypescript("client/components/Playground", {
-    external: [
-      "@vuepress/client",
-      "@vue/repl",
-      "@vue/repl/style.css",
-      "vue",
-      "vuepress-shared/client",
-      /\.s?css$/,
-    ],
-    dtsExternal: [/\.s?css$/],
-  }),
   ...rollupTypescript("client/components/Presentation", {
     external: [
       /^@temp/,
