@@ -81,9 +81,9 @@ export default {
 <!-- markdownlint-restore -->
 
 <script setup lang="ts">
-import { computed } from 'vue';
-import { useThemeData } from '@theme-hope/composables/index.js';
-import ThemeColorPicker from '@theme-hope/modules/outlook/components/ThemeColorPicker.js';
+import { computed } from "vue";
+import { useThemeData } from "@theme-hope/composables/index.js";
+import ThemeColorPicker from "@theme-hope/modules/outlook/components/ThemeColorPicker.js";
 
 const themeData = useThemeData();
 
