@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-hope-root",
-  "version": "2.0.0-beta.92",
+  "version": "2.0.0-beta.93",
   "private": true,
   "description": "A vuepress theme with tons of features",
   "type": "module",
@@ -13,8 +13,8 @@
     "build": "concurrently \"tsc -b tsconfig.build.json\" \"pnpm run copy\"",
     "build:bundle": "cross-env mode=production pnpm run --stream -r build",
     "clean": "pnpm run --stream -r clean",
-    "copy": "pnpm run --parallel -r copy",
     "commit": "pnpm git-cz",
+    "copy": "pnpm run --parallel -r copy",
     "dev": "concurrently \"tsc -b tsconfig.build.json --watch\" \"pnpm run dev:copy\"",
     "dev:copy": "pnpm run --parallel -r dev:copy",
     "docs:vite-build": "pnpm run --parallel -r docs:vite-build",
