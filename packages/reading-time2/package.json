@@ -42,7 +42,7 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "vuepress-shared": "workspace:2.0.0-beta.91"
+    "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
     "@vuepress/core": "2.0.0-beta.50",

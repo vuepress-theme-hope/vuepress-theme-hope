@@ -55,8 +55,8 @@
     "register-service-worker": "^1.7.2",
     "vue": "^3.2.37",
     "vue-router": "^4.1.5",
-    "vuepress-plugin-sass-palette": "workspace:2.0.0-beta.91",
-    "vuepress-shared": "workspace:2.0.0-beta.91",
+    "vuepress-plugin-sass-palette": "workspace:*",
+    "vuepress-shared": "workspace:*",
     "workbox-build": "^6.5.4"
   },
   "devDependencies": {

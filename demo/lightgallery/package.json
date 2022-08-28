@@ -19,7 +19,7 @@
     "@vuepress/theme-default": "2.0.0-beta.50",
     "sass-loader": "13.0.2",
     "vue": "3.2.37",
-    "vuepress-plugin-lightgallery": "workspace:2.0.0-beta.91",
+    "vuepress-plugin-lightgallery": "workspace:*",
     "vuepress-vite": "2.0.0-beta.50",
     "vuepress-webpack": "2.0.0-beta.50"
   }

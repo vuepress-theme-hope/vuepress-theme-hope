@@ -10,18 +10,18 @@
     "url": "https://mrhope.site"
   },
   "type": "module",
-  "module": "./lib/index.js",
-  "typings": "./lib/index.d.ts",
   "exports": {
     ".": {
       "types": "./lib/index.d.ts",
       "default": "./lib/index.js"
     }
   },
+  "module": "./lib/index.js",
+  "typings": "./lib/index.d.ts",
   "scripts": {
     "build": "tsc --build tsconfig.build.json",
-    "copy": "cpx \"src/**/*.{vue,scss}\" lib",
     "clean": "rimraf ./lib ./*.tsbuildinfo",
+    "copy": "cpx \"src/**/*.{vue,scss}\" lib",
     "dev": "concurrently \"pnpm dev:copy\" \"pnpm dev:ts\"",
     "dev:copy": "pnpm copy -w",
     "dev:ts": "tsc -b tsconfig.build.json --watch"
@@ -36,7 +36,7 @@
     "rimraf": "3.0.2",
     "three": "0.143.0",
     "vue": "3.2.37",
-    "vuepress-shared": "workspace:2.0.0-beta.91",
-    "vuepress-theme-hope": "workspace:2.0.0-beta.91"
+    "vuepress-shared": "workspace:*",
+    "vuepress-theme-hope": "workspace:*"
   }
 }
