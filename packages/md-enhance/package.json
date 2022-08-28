@@ -67,7 +67,7 @@
     "chart.js": "^3.9.1",
     "echarts": "^5.3.3",
     "flowchart.js": "^1.17.1",
-    "katex": "^0.16.0",
+    "katex": "^0.16.1",
     "markdown-it": "^13.0.1",
     "mermaid": "^9.1.6",
     "reveal.js": "^4.3.1",

@@ -19,7 +19,8 @@
   "module": "./lib/index.js",
   "typings": "./lib/index.d.ts",
   "scripts": {
-    "build": "tsc --build tsconfig.build.json",
+    "build": "pnpm build:ts && pnpm copy",
+    "build:ts": "tsc --build tsconfig.release.json",
     "clean": "rimraf ./lib ./*.tsbuildinfo",
     "copy": "cpx \"src/**/*.{vue,scss}\" lib",
     "dev": "concurrently \"pnpm dev:copy\" \"pnpm dev:ts\"",

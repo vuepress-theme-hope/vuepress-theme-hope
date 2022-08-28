@@ -10,8 +10,8 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "concurrently \"tsc -b tsconfig.build.json\" \"pnpm run copy\"",
-    "build:bundle": "cross-env mode=production pnpm run --stream -r build",
+    "build": "cross-env mode=production pnpm run --stream -r build",
+    "build:nobundle": "concurrently \"tsc -b tsconfig.build.json\" \"pnpm run copy\"",
     "clean": "pnpm run --stream -r clean",
     "commit": "pnpm git-cz",
     "copy": "pnpm run --parallel -r copy",
@@ -61,7 +61,7 @@
     }
   },
   "devDependencies": {
-    "@commitlint/cli": "17.1.0",
+    "@commitlint/cli": "17.1.1",
     "@commitlint/config-conventional": "17.1.0",
     "@rollup/plugin-commonjs": "22.0.2",
     "@rollup/plugin-json": "4.1.0",

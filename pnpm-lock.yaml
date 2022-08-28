@@ -18,7 +18,7 @@ importers:
 
   .:
     specifiers:
-      '@commitlint/cli': 17.1.0
+      '@commitlint/cli': 17.1.1
       '@commitlint/config-conventional': 17.1.0
       '@rollup/plugin-commonjs': 22.0.2
       '@rollup/plugin-json': 4.1.0
@@ -66,7 +66,7 @@ importers:
       typescript: 4.7.4
       vitest: 0.22.1
     devDependencies:
-      '@commitlint/cli': 17.1.0_ts-node@10.9.1
+      '@commitlint/cli': 17.1.1_ts-node@10.9.1
       '@commitlint/config-conventional': 17.1.0
       '@rollup/plugin-commonjs': 22.0.2_rollup@2.78.1
       '@rollup/plugin-json': 4.1.0_rollup@2.78.1
@@ -956,7 +956,7 @@ importers:
       chart.js: ^3.9.1
       echarts: ^5.3.3
       flowchart.js: ^1.17.1
-      katex: ^0.16.0
+      katex: ^0.16.1
       markdown-it: ^13.0.1
       markdown-it-container: 3.0.0
       mermaid: ^9.1.6
@@ -980,7 +980,7 @@ importers:
       chart.js: 3.9.1_3sthdsdyega5ysvjie2bdpkbpm
       echarts: 5.3.3
       flowchart.js: 1.17.1
-      katex: 0.16.0
+      katex: 0.16.1
       markdown-it: 13.0.1
       mermaid: 9.1.6
       reveal.js: 4.3.1
@@ -2414,8 +2414,8 @@ packages:
     resolution: {integrity: sha512-mgmE7XBYY/21erpzhexk4Cj1cyTQ9LzvnTxtzM17BJ7ERMNE6W72mQRo0I1Ud8eFJ+RVVIcBNhLFZ3GX4XFz5w==}
     dev: false
 
-  /@commitlint/cli/17.1.0_ts-node@10.9.1:
-    resolution: {integrity: sha512-jzq9vZqOvscEqv7tA8pNFgzNw5TPrAHAhR73+IsNwsklpJB1eHN8wIgmGiTNAbKTLs6DjdrVD6uRZE0J7LHWNg==}
+  /@commitlint/cli/17.1.1_ts-node@10.9.1:
+    resolution: {integrity: sha512-xyQJNJs1j18At5wSBF6bMo1on6ZrpcHUr4duacznPU0RnywCAABDBP1s63BmhkTMdNXLVgVM4J1H2sG0HSS3IA==}
     engines: {node: '>=v14'}
     hasBin: true
     dependencies:
@@ -8437,6 +8437,13 @@ packages:
 
   /katex/0.16.0:
     resolution: {integrity: sha512-wPRB4iUPysfH97wTgG5/tRLYxmKVq6Q4jRAWRVOUxXB1dsiv4cvcNjqabHkrOvJHM1Bpk3WrgmllSO1vIvP24w==}
+    hasBin: true
+    dependencies:
+      commander: 8.3.0
+    dev: false
+
+  /katex/0.16.1:
+    resolution: {integrity: sha512-UBMAkwVv0kG5StxdAegSSCPSUb8oXO5WIIMm/c9GP+7gR3BNcmdNnmA3FIgJlsKKjRyapWFQj27h9+CNjbxVIw==}
     hasBin: true
     dependencies:
       commander: 8.3.0
