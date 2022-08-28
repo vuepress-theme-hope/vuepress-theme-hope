@@ -25,6 +25,9 @@
     "url": "https://mrhope.site"
   },
   "type": "module",
+  "exports": {
+    "./package.json": "./package.json"
+  },
   "bin": {
     "create-vuepress-theme-hope": "./lib/index.js"
   },

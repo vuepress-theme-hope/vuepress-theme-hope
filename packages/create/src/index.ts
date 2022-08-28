@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { createRequire } from "node:module";
 import { cac } from "cac";
 import { execaCommand, execaCommandSync } from "execa";
 import inquirer from "inquirer";
@@ -7,12 +8,12 @@ import { getLanguage, generateTemplate } from "./config/index.js";
 import { createPackageJson } from "./packageJson.js";
 import { getRegistry } from "./registry.js";
 import { getPackageManager } from "./utils/index.js";
-// eslint-disable-next-line
-// @ts-ignore
-import pkg from "../package.json";
+
+const { version } = <Record<string, unknown>>(
+  createRequire(import.meta.url)("create-vuepress-theme-hope/package.json")
+);
 
 const cli = cac("vuepress-theme-hope");
-const version = pkg.version;
 
 cli
   .command("[dir]", "Generate a new vuepress-theme-hope project")
@@ -86,6 +87,6 @@ cli.help(() => [
   },
 ]);
 
-cli.version(version);
+cli.version(<string>version);
 
 cli.parse();
