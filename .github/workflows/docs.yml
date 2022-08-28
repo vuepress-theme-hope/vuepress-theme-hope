@@ -58,6 +58,7 @@ jobs:
           pnpm cpx "docs/seo2/dist/**" dist/seo
           pnpm cpx "docs/sitemap2/dist/**" dist/sitemap
           pnpm cpx "docs/theme/dist/**" dist
+          > dist/.nojekyll
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4

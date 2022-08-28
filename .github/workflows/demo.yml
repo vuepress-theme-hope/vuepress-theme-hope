@@ -34,7 +34,9 @@ jobs:
         env:
           BASE: /v2-demo/
           HOSTNAME: https://vuepress-theme-hope.github.io/
-        run: pnpm --filter theme-demo demo:vite-build
+        run: |-
+          pnpm --filter theme-demo demo:vite-build
+          > demo/theme/dist/.nojekyll
 
       - name: Deploy to gh pages
         uses: JamesIves/github-pages-deploy-action@v4

@@ -57,6 +57,7 @@ jobs:
           pnpm cpx "docs/seo2/dist/**" dist/seo
           pnpm cpx "docs/sitemap2/dist/**" dist/sitemap
           pnpm cpx "docs/theme/dist/**" dist
+          > dist/.nojekyll
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
@@ -118,6 +119,7 @@ jobs:
           pnpm cpx "docs/seo2/dist/**" dist/seo
           pnpm cpx "docs/sitemap2/dist/**" dist/sitemap
           pnpm cpx "docs/theme/dist/**" dist
+          > dist/.nojekyll
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
@@ -152,7 +154,9 @@ jobs:
         run: pnpm run build
 
       - name: Build Netlify Demo
-        run: pnpm --filter theme-demo demo:vite-build
+        run: |-
+          pnpm --filter theme-demo demo:vite-build
+          > demo/theme/dist/.nojekyll
 
       - name: Deploy to netlify
         uses: JamesIves/github-pages-deploy-action@v4
@@ -167,7 +171,9 @@ jobs:
         env:
           BASE: /v2-demo/
           HOSTNAME: https://vuepress-theme-hope.gitee.io/
-        run: pnpm --filter theme-demo demo:vite-build
+        run: |-
+          pnpm --filter theme-demo demo:vite-build
+          > demo/theme/dist/.nojekyll
 
       - name: Deploy to gitee
         uses: JamesIves/github-pages-deploy-action@v4
@@ -225,7 +231,9 @@ jobs:
         env:
           BASE: /${{ matrix.plugin-name }}-demo/
           HOSTNAME: https://vuepress-theme-hope.github.io/
-        run: pnpm --filter ${{ matrix.plugin-name }}-demo demo:vite-build
+        run: |-
+          pnpm --filter ${{ matrix.plugin-name }}-demo demo:vite-build
+          > demo/${{ matrix.plugin-name }}/src/.vuepress/dist/.nojekyll
 
       - name: Deploy ${{ matrix.plugin-name }} demo
         uses: JamesIves/github-pages-deploy-action@v4
