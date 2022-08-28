@@ -4,20 +4,26 @@ All notable changes to this project will be documented in this file. See [Conven
 
 ## [2.0.0-beta.92](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.91...v2.0.0-beta.92) (2022-08-28)
 
-
 ### Features
 
-* **md-enhance:** rebuild hint ([83f2d61](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/83f2d61750e5b1dc85898c964575f881deffba4a))
-* migrate to ESM ([#2158](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2158)) ([2fa50e8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2fa50e8c0b1da5d601e385f92e1ad99289d878aa))
-
+- **md-enhance:** rebuild hint ([83f2d61](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/83f2d61750e5b1dc85898c964575f881deffba4a))
+- migrate to ESM ([#2158](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2158)) ([2fa50e8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2fa50e8c0b1da5d601e385f92e1ad99289d878aa))
 
 ### Bug Fixes
 
-* **deps:** pin dependencies ([#2126](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2126)) ([dfcfd02](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/dfcfd02e83a821e0ac8d45e1639495934634ffae))
-* **deps:** update dependency @types/three to v0.143.1 ([#2140](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2140)) ([4bcdb68](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4bcdb68234d6d63e7190a73241f275c288e98554))
-* **md-enhance:** fix flowchart issue with pnpm ([#2149](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2149)) ([53629f8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/53629f8a5e355051de72b61a7b3f7eccaa37d257))
-* **md-enhance:** resolve relative image/link path when including markdown file ([#2143](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2143)) ([097519a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/097519ad0d83aed3dba9c54f30362bf6163ff0bd))
-* **theme:** fix issues in sidebarSorter ([b17a758](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b17a7589b3c45effd78102844e6281acc72a6afe))
+- **deps:** pin dependencies ([#2126](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2126)) ([dfcfd02](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/dfcfd02e83a821e0ac8d45e1639495934634ffae))
+- **deps:** update dependency @types/three to v0.143.1 ([#2140](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2140)) ([4bcdb68](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4bcdb68234d6d63e7190a73241f275c288e98554))
+- **md-enhance:** fix flowchart issue with pnpm ([#2149](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2149)) ([53629f8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/53629f8a5e355051de72b61a7b3f7eccaa37d257))
+- **md-enhance:** resolve relative image/link path when including markdown file ([#2143](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2143)) ([097519a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/097519ad0d83aed3dba9c54f30362bf6163ff0bd))
+- **theme:** fix issues in sidebarSorter ([b17a758](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b17a7589b3c45effd78102844e6281acc72a6afe))
+
+### ⚠ BREAKING CHANGES
+
+- **blog2**: client file path updated
+- **md-enhance**: PlayGround is removed
+- **md-enhance**: SlidePage layout path updated
+- **theme**: alias updated
+- No longer use rollup to bundle production code
 
 ## [2.0.0-beta.91](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.90...v2.0.0-beta.91) (2022-08-13)
 
