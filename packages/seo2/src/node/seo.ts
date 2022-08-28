@@ -1,16 +1,21 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { fs } from "@vuepress/utils";
-import { getAlternateLinks, getCanonicalLink, getJSONLD, getOGP } from "./info";
+import {
+  getAlternateLinks,
+  getCanonicalLink,
+  getJSONLD,
+  getOGP,
+} from "./info.js";
 import {
   addOGP,
   appendAlternate,
   appendCanonical,
   appendJSONLD,
-} from "./inject";
-import { logger } from "./utils";
+} from "./inject.js";
+import { logger } from "./utils.js";
 
 import type { App, AppDir } from "@vuepress/core";
-import type { ExtendPage, SeoOptions } from "../shared";
+import type { ExtendPage, SeoOptions } from "../shared/index.js";
 
 export const appendSEO = (
   page: ExtendPage,

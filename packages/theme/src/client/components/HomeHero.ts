@@ -6,11 +6,11 @@ import {
 import { isArray } from "@vuepress/shared";
 import { computed, defineComponent, h } from "vue";
 
-import AutoLink from "@theme-hope/components/AutoLink";
-import DropTransition from "@theme-hope/components/transitions/DropTransition";
+import AutoLink from "@theme-hope/components/AutoLink.js";
+import DropTransition from "@theme-hope/components/transitions/DropTransition.js";
 
 import type { VNode } from "vue";
-import type { HopeThemeProjectHomePageFrontmatter } from "../../shared";
+import type { HopeThemeProjectHomePageFrontmatter } from "../../shared/index.js";
 
 export default defineComponent({
   name: "HomeHero",

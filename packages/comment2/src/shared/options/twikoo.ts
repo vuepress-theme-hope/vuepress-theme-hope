@@ -1,4 +1,4 @@
-import type { BaseCommentOptions } from "./base";
+import type { BaseCommentOptions } from "./base.js";
 
 export interface TwikooInitOptions {
   /**

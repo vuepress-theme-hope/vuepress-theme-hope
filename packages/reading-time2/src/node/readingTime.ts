@@ -1,4 +1,4 @@
-import type { ReadingTime } from "../shared";
+import type { ReadingTime } from "../shared/index.js";
 
 /**
  * Extract Latin words from content

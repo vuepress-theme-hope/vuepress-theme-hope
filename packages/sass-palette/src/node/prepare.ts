@@ -1,4 +1,4 @@
-import { getPath } from "./utils";
+import { getPath } from "./utils.js";
 
 import type { App } from "@vuepress/core";
 

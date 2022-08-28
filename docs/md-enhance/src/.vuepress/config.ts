@@ -1,8 +1,8 @@
-import { path } from "@vuepress/utils";
+import { getDirname, path } from "@vuepress/utils";
 import { config } from "docs-shared";
-import theme from "./theme";
+import theme from "./theme.js";
 
-const base = <"/" | `/${string}/`>process.env.BASE || "/";
+const __dirname = getDirname(import.meta.url);
 
 export default config(
   {

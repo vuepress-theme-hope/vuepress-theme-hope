@@ -1,5 +1,9 @@
-import { pwa, theme } from "docs-shared";
-import { version } from "vuepress-plugin-seo2/package.json";
+import { createRequire } from "node:module";
+import { fs, pwa, theme } from "docs-shared";
+
+const { version } = fs.readJsonSync(
+  createRequire(import.meta.url).resolve("vuepress-plugin-seo2/package.json")
+);
 
 export default theme("seo2", {
   locales: {

@@ -66,9 +66,9 @@ export default {
 
 ```js
 // .vuepress/config.js
-const { blogPlugin } = require("vuepress-plugin-blog2");
+import { blogPlugin } from "vuepress-plugin-blog2";
 
-module.exports = {
+export default {
   plugins: [
     blogPlugin({
       //插件选项

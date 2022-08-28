@@ -1,2 +1,2 @@
-export * from "./sidebar";
-export * from "./sorter";
+export * from "./sidebar.js";
+export * from "./sorter.js";

@@ -1,8 +1,13 @@
 {
   "extends": "../../tsconfig.build.base.json",
-  "references": [
-    { "path": "./tsconfig.esm.json" },
-    { "path": "./tsconfig.release.cjs.json" }
-  ],
-  "files": []
+  "compilerOptions": {
+    "baseUrl": "./",
+    "lib": ["dom", "es2021"],
+    "rootDir": "./src",
+    "outDir": "./lib",
+    "paths": {
+      "@theme-hope/*": ["./src/client/*"]
+    }
+  },
+  "include": ["./src", "./src/*.d.ts"]
 }

@@ -10,11 +10,11 @@ import {
   titleNumberDescSorter,
   titleNumberSorter,
   titleSorter,
-} from "../../src/node/prepare";
-import { getStatus } from "../../src/node/status";
-import { getThemeConfig } from "../../src/node/themeConfig";
-import { HopeThemeOptions } from "../../src/shared";
-import { sidebarTheme } from "./__fixtures__/theme/sidebar";
+} from "../../src/node/prepare/index.js";
+import { getStatus } from "../../src/node/status.js";
+import { getThemeConfig } from "../../src/node/themeConfig.js";
+import { HopeThemeOptions } from "../../src/shared/index.js";
+import { sidebarTheme } from "./__fixtures__/theme/sidebar.js";
 
 const app = createBaseApp({
   bundler: {} as any,

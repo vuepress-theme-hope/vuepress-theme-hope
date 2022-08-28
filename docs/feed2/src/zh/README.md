@@ -66,9 +66,9 @@ export default {
 
 ```js
 // .vuepress/config.js
-const { feedPlugin } = require("vuepress-plugin-feed2");
+import { feedPlugin } from "vuepress-plugin-feed2";
 
-module.exports = {
+export default {
   plugins: [
     feedPlugin({
       // 插件选项

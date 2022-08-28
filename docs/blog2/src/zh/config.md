@@ -184,6 +184,8 @@ export interface BlogTypeOptions {
 
 ## 可组合式 API
 
+你可以从 `vuepress-plugin-blog2/client` 导入下列 API:
+
 - 博客分类
 
   ```ts

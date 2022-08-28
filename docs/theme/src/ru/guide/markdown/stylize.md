@@ -40,9 +40,9 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     plugins: {
       mdEnhance: {
@@ -103,9 +103,9 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     plugins: {
       mdEnhance: {
@@ -172,9 +172,9 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-const { mdEnhancePlugin } = require("vuepress-plugin-md-enhance");
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
-module.exports = {
+export default {
   plugins: [
     mdEnhancePlugin({
       stylize: [

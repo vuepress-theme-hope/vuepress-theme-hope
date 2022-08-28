@@ -2,10 +2,10 @@
 import { chalk, fs, path } from "@vuepress/utils";
 import { getRootLang } from "vuepress-shared";
 
-import { logger } from "./utils";
+import { logger } from "./utils.js";
 
 import type { App } from "@vuepress/core";
-import type { ManifestOption, PWAOptions } from "../shared";
+import type { ManifestOption, PWAOptions } from "../shared/index.js";
 
 export const getManifest = async (
   app: App,

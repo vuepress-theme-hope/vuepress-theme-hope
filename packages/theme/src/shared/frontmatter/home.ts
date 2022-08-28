@@ -1,4 +1,4 @@
-import type { HopeThemePageFrontmatter } from "./base";
+import type { HopeThemePageFrontmatter } from "./base.js";
 
 export interface HopeThemeHomeActionOptions {
   text: string;

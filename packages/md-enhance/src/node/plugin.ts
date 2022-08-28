@@ -1,3 +1,4 @@
+import { getDirname, path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   addCustomElement,
@@ -8,16 +9,16 @@ import {
   getLocales,
 } from "vuepress-shared";
 
-import { logger } from "./utils";
+import { logger } from "./utils.js";
 
-import { checkLinks, getCheckLinksStatus } from "./checkLink";
-import { markdownEnhanceLocales } from "./locales";
+import { checkLinks, getCheckLinksStatus } from "./checkLink.js";
 import {
   convertOptions,
   legacyCodeDemo,
   legacyCodeGroup,
   legacyFlowchart,
-} from "./compact";
+} from "./compact/index.js";
+import { markdownEnhanceLocales } from "./locales.js";
 import {
   CODE_DEMO_DEFAULT_SETTING,
   DEFAULT_VUE_PLAYGROUND_OPTIONS,
@@ -37,7 +38,6 @@ import {
   mark,
   mermaid,
   normalDemo,
-  playground,
   presentation,
   reactDemo,
   stylize,
@@ -48,13 +48,15 @@ import {
   vPre,
   vueDemo,
   vuePlayground,
-} from "./markdown-it";
-import { prepareConfigFile, prepareRevealPluginFile } from "./prepare";
-import { MATHML_TAGS } from "./utils";
+} from "./markdown-it/index.js";
+import { prepareConfigFile, prepareRevealPluginFile } from "./prepare.js";
+import { MATHML_TAGS } from "./utils.js";
 
 import type { PluginFunction } from "@vuepress/core";
 import type { KatexOptions } from "katex";
-import type { MarkdownEnhanceOptions } from "../shared";
+import type { MarkdownEnhanceOptions } from "../shared/index.js";
+
+const __dirname = getDirname(import.meta.url);
 
 export const mdEnhancePlugin =
   (
@@ -150,6 +152,17 @@ export const mdEnhancePlugin =
               )
             : DEFAULT_VUE_PLAYGROUND_OPTIONS,
       }),
+
+      alias: {
+        // FIXME:
+        // this is a workaround for https://github.com/vitejs/vite/issues/7621
+        // Remove this when issue is fixed
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        "vuepress-plugin-md-enhance/SlidePage": path.resolve(
+          __dirname,
+          "../client/SlidePage.js"
+        ),
+      },
 
       extendsBundlerOptions: (config: unknown, app): void => {
         if (katexOptions.output !== "html")

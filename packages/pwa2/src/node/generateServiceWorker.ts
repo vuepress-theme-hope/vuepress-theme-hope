@@ -1,6 +1,6 @@
 import { chalk, fs, path } from "@vuepress/utils";
 import { generateSW } from "workbox-build";
-import { logger } from "./utils";
+import { logger } from "./utils.js";
 
 import type {
   ManifestEntry,
@@ -9,7 +9,7 @@ import type {
 } from "workbox-build";
 
 import type { App } from "@vuepress/core";
-import type { PWAOptions } from "../shared";
+import type { PWAOptions } from "../shared/index.js";
 
 const imageFilter =
   (outDir: string, maxsize = 1024): ManifestTransform =>

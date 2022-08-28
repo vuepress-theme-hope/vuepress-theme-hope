@@ -66,9 +66,9 @@ export default {
 
 ```js
 // .vuepress/config.js
-const { lightgalleryPlugin } = require("vuepress-plugin-lightgallery");
+import { lightgalleryPlugin } from "vuepress-plugin-lightgallery";
 
-module.exports = {
+export default {
   plugins: [
     lightgalleryPlugin({
       // 插件选项

@@ -1,11 +1,13 @@
-import { path } from "@vuepress/utils";
+import { getDirname, path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import { addViteOptimizeDepsInclude } from "vuepress-shared";
 
-import { logger } from "./utils";
+import { logger } from "./utils.js";
 
 import type { PluginFunction } from "@vuepress/core";
-import type { LightGalleryOptions } from "../shared";
+import type { LightGalleryOptions } from "../shared/index.js";
+
+const __dirname = getDirname(import.meta.url);
 
 export const lightgalleryPlugin =
   (options: LightGalleryOptions = {}): PluginFunction =>

@@ -2,7 +2,7 @@
 import { removeEndingSlash } from "@vuepress/shared";
 import { getAuthor, getDate } from "vuepress-shared";
 
-import { getCover, getImages, getLocales, resolveUrl } from "./utils";
+import { getCover, getImages, getLocales, resolveUrl } from "./utils.js";
 
 import type { App } from "@vuepress/core";
 import type {
@@ -10,7 +10,7 @@ import type {
   ExtendPage,
   SeoContent,
   SeoOptions,
-} from "../shared";
+} from "../shared/index.js";
 
 export const getOGP = (
   page: ExtendPage,

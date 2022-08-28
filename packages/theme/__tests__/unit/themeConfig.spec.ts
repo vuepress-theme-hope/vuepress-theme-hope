@@ -5,7 +5,7 @@ import { describe, it, expect } from "vitest";
 
 import { getStatus } from "../../src/node/status";
 import { getThemeConfig } from "../../src/node/themeConfig";
-import { emptyTheme } from "./__fixtures__/theme/empty";
+import { emptyTheme } from "./__fixtures__/theme/empty.js";
 
 import type { HopeThemeOptions } from "../../src/shared";
 

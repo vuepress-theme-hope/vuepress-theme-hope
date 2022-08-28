@@ -1,10 +1,11 @@
-import { lang2PathConfig, path2langConfig, supportedLangs } from "./config";
-import { Logger } from "../logger";
-import { deepAssign } from "../../shared";
+import { lang2PathConfig, path2langConfig, supportedLangs } from "./config.js";
+import { Logger } from "../logger.js";
+import { deepAssign } from "../../shared/index.js";
 
 import type { App, LocaleConfig } from "@vuepress/core";
-import type { HopeLang } from "./types";
-import type { ConvertLocaleConfig } from "../../shared";
+import type { LocaleData } from "@vuepress/shared";
+import type { HopeLang } from "./types.js";
+import type { ConvertLocaleConfig } from "../../shared/index.js";
 
 const reportStatus: Record<string, boolean> = {};
 
@@ -78,7 +79,7 @@ export const getRootLangPath = (app: App): string =>
 export const getLocalePaths = (app: App): string[] =>
   Array.from(new Set([...Object.keys(app.siteData.locales)]));
 
-export interface GetLocalesOptions<T> {
+export interface GetLocalesOptions<T extends LocaleData> {
   app: App;
   default: ConvertLocaleConfig<T>;
   config?: LocaleConfig<T> | undefined;
@@ -93,7 +94,7 @@ export interface GetLocalesOptions<T> {
  * @param userLocalesConfig user locale config
  * @returns final locale config
  */
-export const getLocales = <T>({
+export const getLocales = <T extends LocaleData>({
   app,
   name,
   default: defaultLocalesConfig,

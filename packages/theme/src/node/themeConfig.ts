@@ -1,16 +1,16 @@
 import { getLocales } from "vuepress-shared";
-import { resolveEncrypt } from "./encrypt";
-import { themeLocalesData } from "./locales";
+import { resolveEncrypt } from "./encrypt.js";
+import { themeLocalesData } from "./locales/index.js";
 
 import type { App } from "@vuepress/core";
-import type { ThemeStatus } from "./status";
+import type { ThemeStatus } from "./status.js";
 import {
   HopeThemeConfig,
   HopeThemeLocaleConfig,
   HopeThemeLocaleOptions,
   HopeThemeOptions,
   HopeThemeRootConfig,
-} from "../shared";
+} from "../shared/index.js";
 
 const rootAllowConfig = [
   "blog",

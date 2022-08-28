@@ -3,8 +3,11 @@ import { computed, defineComponent, h, onMounted, ref } from "vue";
 import { useRoute } from "vue-router";
 
 import type { VNode } from "vue";
-import type { GiscusLang, GiscusProps } from "../utils";
-import type { CommentPluginFrontmatter, GiscusOptions } from "../../shared";
+import type { GiscusLang, GiscusProps } from "../utils/index.js";
+import type {
+  CommentPluginFrontmatter,
+  GiscusOptions,
+} from "../../shared/index.js";
 
 import "../styles/giscus.scss";
 

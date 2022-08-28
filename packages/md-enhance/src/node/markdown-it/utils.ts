@@ -1,4 +1,4 @@
-import type { default as Token } from "markdown-it/lib/token";
+import type { default as Token } from "markdown-it/lib/token.js";
 
 // https://spec.commonmark.org/0.29/#line-ending
 export const NEWLINES_RE = /\r\n?|\n/g;

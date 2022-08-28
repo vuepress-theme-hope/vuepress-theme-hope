@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 // Polish [pl]
 import type { Dayjs, default as dayjs } from "dayjs";
-import type { Locale } from "./locale";
+import type { Locale } from "./locale.js";
 
 const plural = (n: number): boolean =>
   n % 10 < 5 && n % 10 > 1 && ~~(n / 10) % 10 !== 1;

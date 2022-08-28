@@ -1,5 +1,5 @@
 import { hash } from "@vuepress/utils";
-import { uml } from "../markdown-it";
+import { uml } from "../markdown-it/index.js";
 
 import type { PluginSimple } from "markdown-it";
 

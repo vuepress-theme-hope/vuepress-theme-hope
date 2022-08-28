@@ -1,10 +1,10 @@
 import { describe, it, expect, vi } from "vitest";
 import { createMarkdown } from "@vuepress/markdown";
 import MarkdownIt from "markdown-it";
-import { attrs, katex } from "../../src/node/markdown-it";
-import { getAttrs } from "../../src/node/markdown-it/attrs";
+import { attrs, katex } from "../../src/node/markdown-it/index.js";
+import { getAttrs } from "../../src/node/markdown-it/attrs.js";
 
-import type { AttrsOptions } from "../../src/shared";
+import type { AttrsOptions } from "../../src/shared/index.js";
 
 const replaceDelimiters = (
   text: string,

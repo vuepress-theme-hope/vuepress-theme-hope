@@ -1,6 +1,6 @@
-import { lightgalleryPlugin } from "./plugin";
+import { lightgalleryPlugin } from "./plugin.js";
 
-export * from "./plugin";
-export * from "../shared";
+export * from "./plugin.js";
+export * from "../shared/index.js";
 
 export default lightgalleryPlugin;

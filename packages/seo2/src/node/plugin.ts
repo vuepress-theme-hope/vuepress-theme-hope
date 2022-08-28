@@ -1,12 +1,12 @@
 import { chalk } from "@vuepress/utils";
 import { stripTags } from "vuepress-shared";
 
-import { convertOptions } from "./compact";
-import { appendSEO, generateRobotsTxt } from "./seo";
-import { logger, md2text } from "./utils";
+import { convertOptions } from "./compact/index.js";
+import { appendSEO, generateRobotsTxt } from "./seo.js";
+import { logger, md2text } from "./utils.js";
 
 import type { Plugin, PluginFunction } from "@vuepress/core";
-import type { ExtendPage, SeoOptions } from "../shared";
+import type { ExtendPage, SeoOptions } from "../shared/index.js";
 
 export const seoPlugin =
   (options: SeoOptions, legacy = false): PluginFunction =>

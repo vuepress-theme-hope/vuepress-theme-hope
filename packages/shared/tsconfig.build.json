@@ -1,8 +1,9 @@
 {
   "extends": "../../tsconfig.build.base.json",
-  "references": [
-    { "path": "./tsconfig.esm.json" },
-    { "path": "./tsconfig.cjs.json" }
-  ],
-  "files": []
+  "compilerOptions": {
+    "lib": ["dom", "es2021"],
+    "rootDir": "./src",
+    "outDir": "./lib"
+  },
+  "include": ["./src", "./src/*.d.ts"]
 }

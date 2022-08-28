@@ -1,5 +1,5 @@
-import { mergeViteConfig } from "./mergeViteConfig";
-import { detectPackageManager } from "../utils";
+import { mergeViteConfig } from "./mergeViteConfig.js";
+import { detectPackageManager } from "../utils/index.js";
 
 import type { App } from "@vuepress/core";
 import type { ViteBundlerOptions } from "@vuepress/bundler-vite";

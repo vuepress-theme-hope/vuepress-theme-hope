@@ -64,9 +64,9 @@ export default {
 
 ```js
 // .vuepress/config.js
-const { componentsPlugin } = require("vuepress-plugin-components");
+import { componentsPlugin } from "vuepress-plugin-components";
 
-module.exports = {
+export default {
   plugins: [
     componentsPlugin({
       // your options

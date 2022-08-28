@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import MarkdownIt from "markdown-it";
-import { vPre } from "../../src/node/markdown-it";
+import { vPre } from "../../src/node/markdown-it/index.js";
 
 describe("v-pre", () => {
   it("should add v-pre wrapper", () => {

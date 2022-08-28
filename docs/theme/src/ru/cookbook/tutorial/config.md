@@ -51,10 +51,10 @@ export default defineUserConfig({
 @tab JS
 
 ```js{2,4,6}
-// .vuepress/config.js
-const { defineUserConfig } = require("vuepress");
+// .vuepress/config.ts
+import { defineUserConfig } from "vuepress";
 
-module.exports = defineUserConfig({
+export default defineUserConfig({
    // put your config here
 });
 ```

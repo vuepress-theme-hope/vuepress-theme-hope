@@ -1,7 +1,5 @@
 import { config } from "docs-shared";
-import theme from "./theme";
-
-const base = <"/" | `/${string}/`>process.env.BASE || "/";
+import theme from "./theme.js";
 
 export default config(
   {
@@ -9,8 +7,6 @@ export default config(
     indexName: "vuepress-theme-hope-components",
   },
   {
-    base: `${base}components/`,
-
     locales: {
       "/": {
         lang: "en-US",

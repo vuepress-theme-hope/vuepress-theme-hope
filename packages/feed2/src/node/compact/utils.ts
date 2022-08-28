@@ -1,4 +1,4 @@
-import { logger } from "../utils";
+import { logger } from "../utils.js";
 
 export interface DeprecatedLoggerOptions {
   options: Record<string, unknown>;

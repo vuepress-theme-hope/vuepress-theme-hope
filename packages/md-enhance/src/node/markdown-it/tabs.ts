@@ -1,7 +1,7 @@
 import type { Options, PluginWithOptions } from "markdown-it";
-import type { RuleBlock } from "markdown-it/lib/parser_block";
-import type { default as Renderer } from "markdown-it/lib/renderer";
-import type { default as Token } from "markdown-it/lib/token";
+import type { RuleBlock } from "markdown-it/lib/parser_block.js";
+import type { default as Renderer } from "markdown-it/lib/renderer.js";
+import type { default as Token } from "markdown-it/lib/token.js";
 
 interface BaseTabData {
   title: string;

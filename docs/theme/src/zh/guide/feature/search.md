@@ -78,9 +78,9 @@ tag:
 
    ```js
    // .vuepress/config.js
-   const { searchPlugin } = require("@vuepress/plugin-search");
+   import { searchPlugin } from "@vuepress/plugin-search";
 
-   module.exports = {
+   export default {
      plugins: [
        searchPlugin({
          // 你的选项
@@ -131,9 +131,9 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-const { searchPlugin } = require("@vuepress/plugin-search");
+import { searchPlugin } from "@vuepress/plugin-search";
 
-module.exports = {
+export default {
   plugins: [
     searchPlugin({
       // ...
@@ -350,9 +350,9 @@ module.exports = {
 
    ```js
    // .vuepress/config.js
-   const { docsearchPlugin } = require("@vuepress/plugin-docsearch");
+   import { docsearchPlugin } from "@vuepress/plugin-docsearch";
 
-   module.exports = {
+   export default {
      plugins: [
        docsearchPlugin({
          // 你的选项
@@ -442,9 +442,9 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-const { docsearchPlugin } = require("@vuepress/plugin-docsearch");
+import { docsearchPlugin } from "@vuepress/plugin-docsearch";
 
-module.exports = {
+export default {
   plugins: [
     docsearchPlugin({
       // ...

@@ -1,10 +1,10 @@
 import { getAuthor, getCategory, isAbsoluteUrl, isUrl } from "vuepress-shared";
-import { getImageMineType, resolveHTML, resolveUrl } from "./utils";
+import { getImageMineType, resolveHTML, resolveUrl } from "./utils.js";
 
 import type { AuthorInfo } from "vuepress-shared";
 import type { App, Page, PageFrontmatter } from "@vuepress/core";
 import type { GitData } from "@vuepress/plugin-git";
-import type { Feed } from "./feed";
+import type { Feed } from "./feed.js";
 import type {
   FeedAuthor,
   FeedCategory,
@@ -15,7 +15,7 @@ import type {
   FeedOptions,
   FeedFrontmatterOption,
   FeedPluginFrontmatter,
-} from "../shared";
+} from "../shared/index.js";
 
 export class FeedPage {
   private pageFeedOptions: FeedFrontmatterOption;

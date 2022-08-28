@@ -1,7 +1,7 @@
 import { logger } from "@vuepress/utils";
 
 import type { App, Page } from "@vuepress/core";
-import type { MarkdownEnhanceOptions } from "../shared";
+import type { MarkdownEnhanceOptions } from "../shared/index.js";
 
 export const getCheckLinksStatus = (
   app: App,

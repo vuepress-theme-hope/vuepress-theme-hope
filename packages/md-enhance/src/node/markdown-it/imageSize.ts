@@ -1,7 +1,7 @@
 import type { MarkdownEnv } from "@vuepress/markdown";
 import type { PluginSimple } from "markdown-it";
-import type { RuleInline } from "markdown-it/lib/parser_inline";
-import type { default as Token } from "markdown-it/lib/token";
+import type { RuleInline } from "markdown-it/lib/parser_inline.js";
+import type { default as Token } from "markdown-it/lib/token.js";
 
 interface MarkdownReference {
   href: string;

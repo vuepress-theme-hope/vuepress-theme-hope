@@ -24,6 +24,11 @@
     "email": "mister-hope@outlook.com",
     "url": "https://mrhope.site"
   },
+  "type": "module",
+  "exports": {
+    ".": "./lib/node/index.js",
+    "./package.json": "./package.json"
+  },
   "main": "lib/node/index.js",
   "types": "lib/node/index.d.ts",
   "files": [
@@ -37,10 +42,10 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "vuepress-shared": "workspace:*"
+    "vuepress-shared": "workspace:2.0.0-beta.91"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.49",
+    "@vuepress/core": "2.0.0-beta.50",
     "rimraf": "3.0.2"
   },
   "publishConfig": {

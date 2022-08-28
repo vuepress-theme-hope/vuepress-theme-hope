@@ -1,11 +1,11 @@
-import { existsSync, writeFileSync, readFileSync } from "fs";
+import { existsSync, writeFileSync, readFileSync } from "node:fs";
+import { resolve } from "node:path";
 import inquirer from "inquirer";
-import { resolve } from "path";
 
-import { getNextVersion, PackageManager } from "./utils";
-import { deepAssign } from "./utils/deepAssign";
+import { getNextVersion, PackageManager } from "./utils/index.js";
+import { deepAssign } from "./utils/deepAssign.js";
 
-import type { CreateI18n } from "./config";
+import type { CreateI18n } from "./config/index.js";
 
 const getScript = (dir: string): Record<string, string> => ({
   // eslint-disable-next-line @typescript-eslint/naming-convention

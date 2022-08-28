@@ -92,7 +92,7 @@ export default defineUserConfig({
 @tab JS
 
 ```js {3-9}
-module.exports = {
+export default {
   head: [
     [
       "link",

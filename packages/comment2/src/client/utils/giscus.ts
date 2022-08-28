@@ -2,7 +2,7 @@ import type {
   GiscusInputPosition,
   GiscusMapping,
   GiscusRepo,
-} from "../../shared";
+} from "../../shared/index.js";
 
 type BooleanString = "0" | "1";
 

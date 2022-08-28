@@ -1,4 +1,4 @@
-import { RevealOptions } from "./reveal";
+import { RevealOptions } from "./reveal.js";
 
 export type RevealPlugin = "highlight" | "math" | "search" | "notes" | "zoom";
 

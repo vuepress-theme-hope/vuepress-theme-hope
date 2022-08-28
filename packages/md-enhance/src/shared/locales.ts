@@ -1,5 +1,5 @@
 import type { ConvertLocaleConfig } from "vuepress-shared";
-import type { MarkdownHintLocaleData } from "./hint";
+import type { MarkdownHintLocaleData } from "./hint.js";
 
 export type MarkdownEnhanceLocaleData = MarkdownHintLocaleData;
 

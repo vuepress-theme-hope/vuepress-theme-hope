@@ -1,23 +1,29 @@
-import { path } from "@vuepress/utils";
+import { getDirname, path } from "@vuepress/utils";
 
-import { resolveAlias } from "./alias";
-import { updateBundlerConfig } from "./bundler";
-import { extendsPage } from "./extendsPage";
-import { checkStyle, convertFrontmatter, convertThemeConfig } from "./compact";
-import { getLayoutConfig } from "./layout";
-import { getPluginConfig, usePlugin } from "./plugins";
+import { resolveAlias } from "./alias.js";
+import { updateBundlerConfig } from "./bundler.js";
+import { extendsPage } from "./extendsPage.js";
+import {
+  checkStyle,
+  convertFrontmatter,
+  convertThemeConfig,
+} from "./compact/index.js";
+import { getLayoutConfig } from "./layout.js";
+import { getPluginConfig, usePlugin } from "./plugins/index.js";
 import {
   prepareConfigFile,
   prepareSidebarData,
   prepareSocialMediaIcons,
-} from "./prepare";
-import { checkSocialMediaIcons } from "./socialMedia";
-import { getStatus } from "./status";
-import { getThemeConfig } from "./themeConfig";
-import { prepareThemeColorScss } from "./themeColor";
+} from "./prepare/index.js";
+import { checkSocialMediaIcons } from "./socialMedia.js";
+import { getStatus } from "./status.js";
+import { getThemeConfig } from "./themeConfig.js";
+import { prepareThemeColorScss } from "./themeColor.js";
 
 import type { Page, ThemeFunction } from "@vuepress/core";
-import type { HopeThemeOptions, HopeThemePageData } from "../shared";
+import type { HopeThemeOptions, HopeThemePageData } from "../shared/index.js";
+
+const __dirname = getDirname(import.meta.url);
 
 export const hopeTheme =
   (

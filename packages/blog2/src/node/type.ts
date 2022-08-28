@@ -1,9 +1,9 @@
 import { createPage } from "@vuepress/core";
 import { removeLeadingSlash } from "@vuepress/shared";
-import { logger } from "./utils";
+import { logger } from "./utils.js";
 
 import type { App } from "@vuepress/core";
-import type { BlogOptions, PageMap, TypeMap } from "../shared";
+import type { BlogOptions, PageMap, TypeMap } from "../shared/index.js";
 
 const HMR_CODE = `
 if (import.meta.webpackHot) {

@@ -52,9 +52,9 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-const { defineUserConfig } = require("vuepress");
+import { defineUserConfig } from "vuepress";
 
-module.exports = defineUserConfig({
+export default defineUserConfig({
   // 此处放置配置
 });
 ```

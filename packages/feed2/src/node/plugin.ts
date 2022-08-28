@@ -1,12 +1,12 @@
 import { chalk } from "@vuepress/utils";
-import { convertOptions } from "./compact";
-import { checkOutput, ensureHostName, getFeedOptions } from "./options";
-import { injectLinkstoHead } from "./injectHead";
-import { FeedGenerator } from "./generator";
-import { logger } from "./utils";
+import { convertOptions } from "./compact/index.js";
+import { checkOutput, ensureHostName, getFeedOptions } from "./options.js";
+import { injectLinkstoHead } from "./injectHead.js";
+import { FeedGenerator } from "./generator.js";
+import { logger } from "./utils.js";
 
 import type { PluginFunction, PluginObject } from "@vuepress/core";
-import type { FeedOptions } from "../shared";
+import type { FeedOptions } from "../shared/index.js";
 
 export const feedPlugin =
   (options: FeedOptions, legacy = false): PluginFunction =>

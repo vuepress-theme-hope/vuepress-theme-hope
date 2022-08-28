@@ -1,4 +1,4 @@
-import type { CodeDemoOptions } from "../../../shared";
+import type { CodeDemoOptions } from "../../../shared/index.js";
 
 export interface CodeType {
   html: [code: string, type: string] | [];

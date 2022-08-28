@@ -75,9 +75,9 @@ export default yourPlugin;
 
 ```js
 // 你的插件或主题入口
-const { useSassPalettePlugin } = require("vuepress-plugin-sass-palette");
+import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
-module.exports = (options) => (app) => {
+const yourPlugin = (options) => (app) => {
   useSassPalettePlugin(app, {
     // 插件选项
   });
@@ -86,6 +86,8 @@ module.exports = (options) => (app) => {
     // 你的插件 API
   };
 };
+
+export default yourPlugin;
 ```
 
 :::

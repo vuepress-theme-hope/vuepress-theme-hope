@@ -66,9 +66,9 @@ export default {
 
 ```js
 // .vuepress/config.js
-const { copyrightPlugin } = require("vuepress-plugin-copyright2");
+import { copyrightPlugin } from "vuepress-plugin-copyright2";
 
-module.exports = {
+export default {
   plugins: [
     copyrightPlugin({
       // your options

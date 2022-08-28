@@ -1,4 +1,4 @@
-import type { BackToTopLocaleConfig } from "../shared";
+import type { BackToTopLocaleConfig } from "../shared/index.js";
 
 export const backToTopLocales: BackToTopLocaleConfig = {
   "/en/": {

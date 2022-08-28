@@ -1,11 +1,11 @@
 import { ensureLeadingSlash, resolveLocalePath } from "@vuepress/shared";
 
-import { container } from "./container";
+import { container } from "./container.js";
 
 import type { MarkdownEnv } from "@vuepress/markdown";
 import type { PluginWithOptions } from "markdown-it";
-import type { MarkdownHintLocaleData } from "../../shared";
-import { ConvertLocaleConfig } from "vuepress-shared";
+import type { ConvertLocaleConfig } from "vuepress-shared";
+import type { MarkdownHintLocaleData } from "../../shared/index.js";
 
 export type MarkdownItHintOptions = ConvertLocaleConfig<MarkdownHintLocaleData>;
 

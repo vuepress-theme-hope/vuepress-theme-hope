@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import MarkdownIt from "markdown-it";
-import { footnote } from "../../src/node/markdown-it";
+import { footnote } from "../../src/node/markdown-it/index.js";
 
 describe("footnote", () => {
   const markdownIt = MarkdownIt({ linkify: true }).use(footnote);

@@ -10,8 +10,10 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "cross-env mode=production pnpm run --stream -r build",
+    "build": "concurrently \"tsc -b tsconfig.build.json\" \"pnpm run copy\"",
+    "build:bundle": "cross-env mode=production pnpm run --stream -r build",
     "clean": "pnpm run --stream -r clean",
+    "copy": "pnpm run --parallel -r copy",
     "commit": "pnpm git-cz",
     "dev": "concurrently \"tsc -b tsconfig.build.json --watch\" \"pnpm run dev:copy\"",
     "dev:copy": "pnpm run --parallel -r dev:copy",
@@ -59,16 +61,16 @@
     }
   },
   "devDependencies": {
-    "@commitlint/cli": "17.0.3",
-    "@commitlint/config-conventional": "17.0.3",
+    "@commitlint/cli": "17.1.0",
+    "@commitlint/config-conventional": "17.1.0",
     "@rollup/plugin-commonjs": "22.0.2",
     "@rollup/plugin-json": "4.1.0",
     "@rollup/plugin-node-resolve": "13.3.0",
-    "@rollup/plugin-typescript": "8.3.4",
+    "@rollup/plugin-typescript": "8.4.0",
     "@types/inquirer": "9.0.1",
-    "@types/node": "18.6.4",
-    "@typescript-eslint/eslint-plugin": "5.33.1",
-    "@typescript-eslint/parser": "5.33.1",
+    "@types/node": "18.7.13",
+    "@typescript-eslint/eslint-plugin": "5.35.1",
+    "@typescript-eslint/parser": "5.35.1",
     "@vitest/coverage-c8": "0.22.1",
     "@vue/eslint-config-typescript": "11.0.0",
     "bumpp": "8.2.1",
@@ -78,17 +80,17 @@
     "concurrently": "7.3.0",
     "cpx2": "4.2.0",
     "cross-env": "7.0.3",
-    "cz-git": "1.3.10",
-    "eslint": "8.22.0",
+    "cz-git": "1.3.11",
+    "eslint": "8.23.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-prettier": "4.2.1",
-    "eslint-plugin-vue": "9.3.0",
+    "eslint-plugin-vue": "9.4.0",
     "execa": "6.1.0",
     "husky": "8.0.1",
     "inquirer": "9.1.0",
     "lint-staged": "13.0.3",
-    "markdownlint-cli": "0.32.1",
-    "npm-check-updates": "16.0.5",
+    "markdownlint-cli": "0.32.2",
+    "npm-check-updates": "16.0.6",
     "ora": "6.1.2",
     "prettier": "2.7.1",
     "rollup": "2.78.1",
@@ -97,9 +99,9 @@
     "rollup-plugin-terser": "7.0.2",
     "sort-package-json": "1.57.0",
     "standard-version": "9.5.0",
-    "stylelint": "14.10.0",
+    "stylelint": "14.11.0",
     "stylelint-config-prettier": "9.0.3",
-    "stylelint-config-standard": "27.0.0",
+    "stylelint-config-standard": "28.0.0",
     "stylelint-config-standard-scss": "5.0.0",
     "stylelint-order": "5.0.0",
     "ts-node": "10.9.1",
@@ -107,7 +109,7 @@
     "typescript": "4.7.4",
     "vitest": "0.22.1"
   },
-  "packageManager": "pnpm@7.9.3",
+  "packageManager": "pnpm@7.9.5",
   "engines": {
     "node": ">=14",
     "pnpm": ">=7"
@@ -125,6 +127,12 @@
         "react-dom",
         "webpack"
       ]
+    },
+    "patchedDependencies": {
+      "@vuepress/theme-default@2.0.0-beta.50": "patches/@vuepress__theme-default@2.0.0-beta.50.patch",
+      "cac@6.7.12": "patches/cac@6.7.12.patch",
+      "chart.js@3.9.1": "patches/chart.js@3.9.1.patch",
+      "mitt@3.0.0": "patches/mitt@3.0.0.patch"
     }
   }
 }

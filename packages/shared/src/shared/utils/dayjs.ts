@@ -1,8 +1,8 @@
 import { default as Dayjs } from "dayjs";
-import { default as localizedFormat } from "dayjs/plugin/localizedFormat";
-import { default as objectSupport } from "dayjs/plugin/objectSupport";
-import { default as timezone } from "dayjs/plugin/timezone";
-import { default as utc } from "dayjs/plugin/utc";
+import { default as localizedFormat } from "dayjs/plugin/localizedFormat.js";
+import { default as objectSupport } from "dayjs/plugin/objectSupport.js";
+import { default as timezone } from "dayjs/plugin/timezone.js";
+import { default as utc } from "dayjs/plugin/utc.js";
 
 Dayjs.extend(localizedFormat);
 Dayjs.extend(objectSupport);

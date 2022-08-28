@@ -1,7 +1,7 @@
 import { useReveal } from "@temp/md-enhance/reveal";
 import { defineComponent, h, onBeforeUnmount, onMounted, ref } from "vue";
 import { usePageFrontmatter } from "@vuepress/client";
-import { LoadingIcon } from "./icons";
+import { LoadingIcon } from "./icons.js";
 
 import type { PropType, VNode } from "vue";
 import type Reveal from "reveal.js/dist/reveal.esm.js";

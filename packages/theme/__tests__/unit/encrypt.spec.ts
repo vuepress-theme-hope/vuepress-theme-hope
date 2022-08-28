@@ -3,7 +3,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { compareSync } from "bcrypt-ts";
 import { describe, it, expect } from "vitest";
-import { resolveEncrypt } from "../../src/node/encrypt";
+import { resolveEncrypt } from "../../src/node/encrypt.js";
 
 const adminSinglePassword = "1234";
 const adminMutiplePassword = ["1234", "abcd"];
