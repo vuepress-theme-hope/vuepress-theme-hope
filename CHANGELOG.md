@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.94](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.93...v2.0.0-beta.94) (2022-08-28)
+
+### Features
+
+- use rollup to bundle production code ([25152b5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/25152b5572d9b576b426c8f445428d1d8c6eef30))
+
+### Bug Fixes
+
+- **create:** fix issue while importing package.json ([50eef9b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/50eef9be127e7dfddc3b85aa8872b7884e2eaed2))
+- **lightgallery:** fix import ([999c0de](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/999c0dedcbbea4201ef239e0bd78b6d74391b0da))
+- **md-enhance:** fix vite handle ([852d31b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/852d31b58615b047542472813ab92076bce400c5))
+- **pwa2:** workaround for beta50 issue ([9def80a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9def80a41bc771782f01dbd83d52a5b1d7b814a0))
+- **redirect:** fix cli ([13b0840](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/13b0840a8676016ad09f72e4b06dd82e888ae19c))
+- **shared:** update import ([3d3e281](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3d3e2816220b53342b0e894d646f36bd9922db59))
+
 ## [2.0.0-beta.93](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.92...v2.0.0-beta.93) (2022-08-28)
 
 ## [2.0.0-beta.92](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.91...v2.0.0-beta.92) (2022-08-28)
