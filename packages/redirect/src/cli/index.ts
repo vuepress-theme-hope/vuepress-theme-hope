@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { createRequire } from "node:module";
 import { createBuildApp } from "@vuepress/core";
 import {
   loadUserConfig,
@@ -12,6 +13,8 @@ import { fs, logger, path } from "@vuepress/utils";
 import { cac } from "cac";
 
 import { getRedirectHTML } from "../shared/index.js";
+
+const require = createRequire(import.meta.url);
 
 const cli = cac("vp-redirect");
 // eslint-disable-next-line
