@@ -10,8 +10,13 @@
     "url": "https://mrhope.site"
   },
   "type": "module",
+  "module": "./lib/index.js",
+  "typings": "./lib/index.d.ts",
   "exports": {
-    ".": "./lib/index.js"
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    }
   },
   "scripts": {
     "build": "tsc --build tsconfig.build.json",

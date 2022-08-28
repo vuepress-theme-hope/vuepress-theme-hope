@@ -50,6 +50,7 @@ export default config(
         __dirname,
         "./components/KatexPlayground"
       ),
+      "@NetlifyBadge": path.resolve(__dirname, "./components/NetlifyBadge"),
     },
 
     define: () => ({

@@ -177,13 +177,8 @@ export default {
 
 <!-- markdownlint-disable -->
 
-<a v-if="isNetlify" href="https://www.netlify.com" target="_blank">
-
-![通过 Netlify 部署](https://www.netlify.com/img/global/badges/netlify-light.svg#light)
-![通过 Netlify 部署](https://www.netlify.com/img/global/badges/netlify-dark.svg#dark)
-
-</a>
+<NetlifyBadge alt="通过 Netlify 部署" />
 
 <script setup lang="ts">
-const isNetlify = IS_NETLIFY;
+import NetlifyBadge from "@NetlifyBadge";
 </script>
