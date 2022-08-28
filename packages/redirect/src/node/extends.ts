@@ -4,7 +4,7 @@ import type { App, Page } from "@vuepress/core";
 import type {
   RedirectOptions,
   RedirectPluginFrontmatterOption,
-} from "../shared";
+} from "../shared/index.js";
 
 export const handleRedirect = (
   { frontmatter }: Page<Record<string, never>, RedirectPluginFrontmatterOption>,

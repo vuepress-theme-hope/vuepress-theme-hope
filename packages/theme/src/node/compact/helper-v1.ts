@@ -1,7 +1,7 @@
-import { defineHopeConfig } from "./helper-v2";
-import { convertThemeConfig } from "./theme";
+import { defineHopeConfig } from "./helper-v2.js";
+import { convertThemeConfig } from "./theme.js";
 
-import { logger } from "../utils";
+import { logger } from "../utils.js";
 
 import type { Plugin, PluginConfig } from "@vuepress/core";
 import type { UserConfig } from "@vuepress/cli";
@@ -10,7 +10,7 @@ import type {
   HopeThemeNavbarConfig,
   HopeThemeSidebarConfig,
   HopeThemeOptions,
-} from "../../shared";
+} from "../../shared/index.js";
 
 /**
  * @deprecated use `navbar` instead

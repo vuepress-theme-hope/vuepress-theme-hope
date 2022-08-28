@@ -2,7 +2,7 @@ import { usePageFrontmatter, usePageData } from "@vuepress/client";
 import { useEventListener } from "@vueuse/core";
 import { computed, onMounted, watchEffect } from "vue";
 
-import type { CopyrightPluginFrontmatter } from "../../shared";
+import type { CopyrightPluginFrontmatter } from "../../shared/index.js";
 
 declare const COPYRIGHT_TRIGGER_WORDS: number;
 declare const COPYRIGHT_DISABLE_COPY: boolean;

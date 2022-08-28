@@ -1,4 +1,4 @@
-import type { PhotoSwipeLocaleConfig } from "../shared";
+import type { PhotoSwipeLocaleConfig } from "../shared/index.js";
 
 export const photoSwipeLocales: PhotoSwipeLocaleConfig = {
   "/en/": {

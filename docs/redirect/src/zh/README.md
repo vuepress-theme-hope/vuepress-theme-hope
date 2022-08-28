@@ -66,9 +66,9 @@ export default {
 
 ```js
 // .vuepress/config.js
-const { redirectPlugin } = require("vuepress-plugin-redirect");
+import { redirectPlugin } from "vuepress-plugin-redirect";
 
-module.exports = {
+export default {
   plugins: [
     redirectPlugin({
       // 配置选项

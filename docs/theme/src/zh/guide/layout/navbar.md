@@ -41,9 +41,9 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     navbar: ["/zh/guide/README.md", "/zh/config/README.md", "/zh/faq.md"],
   }),
@@ -104,9 +104,9 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     navbar: [
       {
@@ -176,9 +176,9 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     navbar: [
       {
@@ -224,9 +224,9 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     navbar: [
       {
@@ -283,9 +283,9 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     navbar: [
       {
@@ -337,9 +337,9 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     navbar: false,
   }),
@@ -388,9 +388,9 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     logo: "/logo.png",
   }),
@@ -442,9 +442,9 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     locales: {
       "/": {
@@ -504,9 +504,9 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     // 默认为 GitHub. 同时也可以是一个完整的 URL
     repo: "vuepress-theme-hope/vuepress-theme-hope",
@@ -568,9 +568,9 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     navbarLayout: {
       left: ["Brand"],
@@ -623,9 +623,9 @@ export default navbarConfig;
 
 ```js
 // .vuepress/navbar.js
-const { navbar } = require("vuepress-theme-hope");
+import { navbar } from "vuepress-theme-hope";
 
-module.exports = navbar([
+export default navbar([
   /* 你的导航栏配置 */
 ]);
 ```
@@ -647,9 +647,9 @@ module.exports = navbar([
 @tab JS
 
 ```js
-const { navbar } = require("vuepress-theme-hope");
+import { navbar } from "vuepress-theme-hope";
 
-module.exports = navbar([
+export default navbar([
   "/zh/guide/",
   "/zh/config/",
   "/zh/faq/",

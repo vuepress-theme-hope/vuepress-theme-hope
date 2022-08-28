@@ -50,9 +50,9 @@ export default defineUserConfig({
 @tab JS
 
 ```js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   // site config
   lang: "en-US",
   title: "Hello, VuePress!",

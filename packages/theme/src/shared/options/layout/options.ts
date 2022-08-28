@@ -1,18 +1,18 @@
-import type { HopeThemeFooterLocaleOptions } from "./footer";
-import type { HopeThemeDocsLocaleOptions } from "./info";
+import type { HopeThemeFooterLocaleOptions } from "./footer.js";
+import type { HopeThemeDocsLocaleOptions } from "./info.js";
 import type {
   HopeThemeMetaLocateData,
   HopeThemeMetaLocaleOptions,
-} from "./meta";
+} from "./meta.js";
 import type {
   HopeThemeNavbarLocaleData,
   HopeThemeNavbarLocaleOptions,
-} from "./navbar";
-import type { HopeThemeSidebarLocaleOptions } from "./sidebar";
-import type { HopeThemeRouteLocaleData } from "./route";
-import type { HopeThemeNormalPageFrontmatter } from "../../frontmatter";
-import type { PageInfo } from "../../info";
-import type { HopeThemePageData } from "../../page";
+} from "./navbar.js";
+import type { HopeThemeSidebarLocaleOptions } from "./sidebar.js";
+import type { HopeThemeRouteLocaleData } from "./route.js";
+import type { HopeThemeNormalPageFrontmatter } from "../../frontmatter/index.js";
+import type { PageInfo } from "../../info.js";
+import type { HopeThemePageData } from "../../page.js";
 
 export interface HopeThemeSidebarFileInfo {
   type: "file";

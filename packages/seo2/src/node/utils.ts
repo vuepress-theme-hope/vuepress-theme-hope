@@ -7,7 +7,7 @@ import {
 import { Logger, isAbsoluteUrl, isUrl } from "vuepress-shared";
 
 import type { App, SiteLocaleConfig } from "@vuepress/core";
-import type { ExtendPage, SeoOptions } from "../shared";
+import type { ExtendPage, SeoOptions } from "../shared/index.js";
 
 export const logger = new Logger("vuepress-plugin-seo2");
 

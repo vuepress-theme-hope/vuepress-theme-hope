@@ -1,6 +1,6 @@
 import { pwa, theme } from "docs-shared";
-import { enNavbarConfig, zhNavbarConfig } from "./navbar";
-import { enSidebarConfig, zhSidebarConfig } from "./sidebar";
+import { enNavbarConfig, zhNavbarConfig } from "./navbar.js";
+import { enSidebarConfig, zhSidebarConfig } from "./sidebar.js";
 
 export default theme("comment2", {
   locales: {

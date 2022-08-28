@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import MarkdownIt from "markdown-it";
-import { mermaid } from "../../src/node/markdown-it";
+import { mermaid } from "../../src/node/markdown-it/index.js";
 
 const demo = `flowchart TB
   c1-->a2

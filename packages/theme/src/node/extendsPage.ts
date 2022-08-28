@@ -15,7 +15,7 @@ import type {
   HopeThemeBlogHomePageFrontmatter,
   HopeThemeProjectHomePageFrontmatter,
   HopeThemeNormalPageFrontmatter,
-} from "../shared";
+} from "../shared/index.js";
 
 export const checkFrontmatter = (
   page: Page<HopeThemePageData>,

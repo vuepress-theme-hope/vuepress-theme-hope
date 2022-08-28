@@ -1,8 +1,8 @@
 import { removeLeadingSlash } from "@vuepress/shared";
 import { path } from "@vuepress/utils";
 
-import { getSorter } from "./sorter";
-import { logger } from "../../utils";
+import { getSorter } from "./sorter.js";
+import { logger } from "../../utils.js";
 
 import type { App, Page } from "@vuepress/core";
 import type {
@@ -15,7 +15,7 @@ import type {
   HopeThemeSidebarSorter,
   HopeThemeSidebarInfo,
   HopeThemeSidebarSorterFunction,
-} from "../../../shared";
+} from "../../../shared/index.js";
 
 const getInfo = (
   app: App,

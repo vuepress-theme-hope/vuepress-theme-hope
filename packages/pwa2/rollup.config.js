@@ -15,8 +15,9 @@ export default [
     external: [
       "@vuepress/client",
       "@vueuse/core",
+      "mitt",
       "vue",
-      "vuepress-shared/lib/client",
+      "vuepress-shared/client",
       /\.scss$/,
     ],
     dtsExternal: [/\.scss$/],
@@ -25,8 +26,9 @@ export default [
     external: [
       "@vuepress/client",
       "register-service-worker",
+      "mitt",
       "vue",
-      "vuepress-shared/lib/client",
+      "vuepress-shared/client",
       /\.scss$/,
     ],
     dtsExternal: [/\.scss$/],
@@ -35,8 +37,9 @@ export default [
     external: [
       "@vuepress/client",
       "register-service-worker",
+      "mitt",
       "vue",
-      "vuepress-shared/lib/client",
+      "vuepress-shared/client",
       /\.scss$/,
     ],
     dtsExternal: [/\.scss$/],

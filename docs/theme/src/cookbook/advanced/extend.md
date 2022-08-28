@@ -38,7 +38,7 @@ export const localTheme = (options: HopeThemeOptions) => ({
   alias: {
     // You can override or add aliases here
     // For example, here we change the vuepress-theme-hope HomePage component to components/HomePage.vue under our own theme
-    "@theme-hope/components/HomePage": path.resolve(
+    "@theme-hope/components/HomePage.js": path.resolve(
       __dirname,
       "./components/HomePage.vue"
     ),
@@ -57,11 +57,11 @@ export const localTheme = (options: HopeThemeOptions) => ({
 @tab JS
 
 ```js
-// .vuepress/them/index.js
-const { path } = require("@vuepress/utils");
-const { hopeTheme } = require("vuepress-theme-hope");
+// .vuepress/theme/index.js
+import { path } from "@vuepress/utils";
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = (options) => ({
+export default (options) => ({
   name: "vuepress-theme-local",
 
   extends: hopeTheme(options),
@@ -69,7 +69,7 @@ module.exports = (options) => ({
   alias: {
     // You can override or add aliases here
     // For example, here we change the vuepress-theme-hope HomePage component to components/HomePage.vue under our own theme
-    "@theme-hope/components/HomePage": path.resolve(
+    "@theme-hope/components/HomePage.js": path.resolve(
       __dirname,
       "./components/HomePage.vue"
     ),

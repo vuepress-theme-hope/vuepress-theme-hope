@@ -6,17 +6,17 @@ import {
   useCustomDevServer,
 } from "vuepress-shared";
 
-import { convertOptions } from "./compact";
-import { getManifest, generateManifest } from "./generateManifest";
-import { generateServiceWorker } from "./generateServiceWorker";
-import { appendBase } from "./helper";
-import { injectLinkstoHead } from "./injectHead";
-import { pwaLocales } from "./locales";
-import { prepareConfigFile } from "./prepare";
-import { logger } from "./utils";
+import { convertOptions } from "./compact/index.js";
+import { getManifest, generateManifest } from "./generateManifest.js";
+import { generateServiceWorker } from "./generateServiceWorker.js";
+import { appendBase } from "./helper.js";
+import { injectLinkstoHead } from "./injectHead.js";
+import { pwaLocales } from "./locales.js";
+import { prepareConfigFile } from "./prepare.js";
+import { logger } from "./utils.js";
 
 import type { PluginFunction } from "@vuepress/core";
-import type { PWAOptions } from "../shared";
+import type { PWAOptions } from "../shared/index.js";
 
 export const pwaPlugin =
   (options: PWAOptions = {}, legacy = false): PluginFunction =>

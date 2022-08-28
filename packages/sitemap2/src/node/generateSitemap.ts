@@ -5,7 +5,7 @@ import {
 } from "@vuepress/shared";
 import { chalk, fs, withSpinner } from "@vuepress/utils";
 import { SitemapStream } from "sitemap";
-import { logger } from "./utils";
+import { logger } from "./utils.js";
 
 import type { App, Page } from "@vuepress/core";
 import type { GitData } from "@vuepress/plugin-git";
@@ -17,7 +17,7 @@ import type {
   SitemapNewsOption,
   SitemapOptions,
   SitemapVideoOption,
-} from "../shared";
+} from "../shared/index.js";
 
 interface SitemapPageInfo {
   lastmod?: string;

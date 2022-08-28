@@ -99,11 +99,6 @@ features:
     details: 你可以直接在 Markdown 中插入幻灯片
     link: /zh/guide/presentation/
 
-  - title: Playground 支持
-    icon: code
-    details: 你可以直接在 Markdown 中插入 Vue playground
-    link: /zh/guide/playground.html
-
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 copyright: false
 ---
@@ -157,9 +152,9 @@ export default {
 
 ```js
 // .vuepress/config.js
-const { mdEnhancePlugin } = require("vuepress-plugin-md-enhance");
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
-module.exports = {
+export default {
   plugins: [
     mdEnhancePlugin({
       // 你的选项

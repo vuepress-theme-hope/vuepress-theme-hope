@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import MarkdownIt from "markdown-it";
-import { sup } from "../../src/node/markdown-it";
+import { sup } from "../../src/node/markdown-it/index.js";
 
 describe("superscript", () => {
   const markdownIt = MarkdownIt({ linkify: true }).use(sup);

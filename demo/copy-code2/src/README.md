@@ -13,16 +13,15 @@ footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 
 ## Demo
 
-```js
-// .vuepress/config.js
-module.exports = {
+```ts
+// .vuepress/config.ts
+import { copyCodePlugin } from "vuepress-plugin-copy-code2";
+
+export default {
   plugins: [
-    [
-      "copy-code2",
-      {
-        // options
-      },
-    ],
+    copyCodePlugin({
+      // your options
+    }),
   ],
 };
 ```

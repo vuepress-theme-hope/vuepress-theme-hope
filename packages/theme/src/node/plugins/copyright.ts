@@ -6,7 +6,7 @@ import type { CopyrightOptions } from "vuepress-plugin-copyright2";
 import type {
   HopeThemeConfig,
   HopeThemeNormalPageFrontmatter,
-} from "../../shared";
+} from "../../shared/index.js";
 
 export const getCopyrightPlugin = (
   themeConfig: HopeThemeConfig,

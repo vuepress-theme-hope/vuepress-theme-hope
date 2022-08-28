@@ -1,16 +1,20 @@
 import { encodeCDATA, encodeXML, isUrl, stripTags } from "vuepress-shared";
 import { js2xml } from "xml-js";
-import { FEED_GENERATOR } from "../utils";
+import { FEED_GENERATOR } from "../utils.js";
 
-import type { Feed } from "../feed";
-import type { FeedCategory, FeedEnclosure, FeedItemOption } from "../../shared";
 import type {
   RSSCategory,
   RSSContent,
   RSSEnclosure,
   RSSGuid,
   RSSItem,
-} from "./typings";
+} from "./typings.js";
+import type { Feed } from "../feed.js";
+import type {
+  FeedCategory,
+  FeedEnclosure,
+  FeedItemOption,
+} from "../../shared/index.js";
 
 const genCategory = (category: FeedCategory): RSSCategory => {
   const { name, domain } = category;

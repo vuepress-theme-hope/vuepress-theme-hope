@@ -152,9 +152,9 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   // 站点选项
   // ...
 
@@ -177,13 +177,8 @@ module.exports = {
 
 <!-- markdownlint-disable -->
 
-<a v-if="isNetlify" href="https://www.netlify.com" target="_blank">
-
-![通过 Netlify 部署](https://www.netlify.com/img/global/badges/netlify-light.svg#light)
-![通过 Netlify 部署](https://www.netlify.com/img/global/badges/netlify-dark.svg#dark)
-
-</a>
+<NetlifyBadge alt="通过 Netlify 部署" />
 
 <script setup lang="ts">
-const isNetlify = IS_NETLIFY;
+import NetlifyBadge from "@NetlifyBadge";
 </script>

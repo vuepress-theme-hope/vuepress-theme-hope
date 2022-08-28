@@ -1,5 +1,5 @@
 import type { App } from "@vuepress/core";
-import type { HopeThemeConfig } from "../shared";
+import type { HopeThemeConfig } from "../shared/index.js";
 
 export const prepareThemeColorScss = async (
   app: App,

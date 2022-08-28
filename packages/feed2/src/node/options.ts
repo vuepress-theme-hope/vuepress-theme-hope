@@ -5,7 +5,7 @@ import {
 } from "@vuepress/shared";
 import { deepAssign } from "vuepress-shared";
 
-import { compareDate, resolveUrl } from "./utils";
+import { compareDate, resolveUrl } from "./utils.js";
 
 import type { App, Page } from "@vuepress/core";
 import type { GitData } from "@vuepress/plugin-git";
@@ -14,7 +14,7 @@ import type {
   FeedChannelOption,
   FeedLinks,
   FeedOptions,
-} from "../shared";
+} from "../shared/index.js";
 
 export type ResolvedFeedOptions = BaseFeedOptions & { hostname: string };
 

@@ -1,9 +1,10 @@
 import { ensureEndingSlash } from "@vuepress/shared";
-import { path } from "@vuepress/utils";
+import { getDirname, path } from "@vuepress/utils";
 
 import type { App } from "@vuepress/core";
-import type { MarkdownEnhanceOptions, RevealPlugin } from "../shared";
+import type { MarkdownEnhanceOptions, RevealPlugin } from "../shared/index.js";
 
+const __dirname = getDirname(import.meta.url);
 const CLIENT_FOLDER = ensureEndingSlash(path.resolve(__dirname, "../client"));
 
 export const prepareConfigFile = async (
@@ -75,11 +76,6 @@ export const prepareConfigFile = async (
   if (getStatus("tabs")) {
     configImport += `import Tabs from "${CLIENT_FOLDER}components/Tabs";\n`;
     enhance += `app.component("Tabs", Tabs);\n`;
-  }
-
-  if (getStatus("playground")) {
-    configImport += `const Playground = defineAsyncComponent(() => import("${CLIENT_FOLDER}components/Playground"));\n`;
-    enhance += `app.component("Playground", Playground);\n`;
   }
 
   if (getStatus("tasklist"))

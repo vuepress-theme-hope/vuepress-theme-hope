@@ -27,9 +27,12 @@
 
 import type { MarkdownEnv } from "@vuepress/markdown";
 import type { Options, PluginWithOptions } from "markdown-it";
-import type { default as Token } from "markdown-it/lib/token";
-import type { default as Renderer, RenderRule } from "markdown-it/lib/renderer";
-import type { RuleBlock } from "markdown-it/lib/parser_block";
+import type { default as Token } from "markdown-it/lib/token.js";
+import type {
+  default as Renderer,
+  RenderRule,
+} from "markdown-it/lib/renderer.js";
+import type { RuleBlock } from "markdown-it/lib/parser_block.js";
 
 export interface MarkdownItContainerOptions {
   /** container name */

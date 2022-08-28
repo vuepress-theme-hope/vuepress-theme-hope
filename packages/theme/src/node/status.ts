@@ -1,4 +1,4 @@
-import type { HopeThemeOptions } from "../shared";
+import type { HopeThemeOptions } from "../shared/index.js";
 
 export interface ThemeStatus {
   enableBlog: boolean;

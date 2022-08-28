@@ -33,9 +33,9 @@ export default {
 
 ```js {7-10}
 // .vuepress/config.js
-const { mdEnhancePlugin } = require("vuepress-plugin-md-enhance");
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
-module.exports = {
+export default {
   plugins: [
     mdEnhancePlugin({
       // Enable image mark

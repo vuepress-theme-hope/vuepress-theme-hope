@@ -1,4 +1,4 @@
-import type { ReadingTimeLocaleConfig } from "../shared";
+import type { ReadingTimeLocaleConfig } from "../shared/index.js";
 
 /**
  * Default locale config for `vuepress-plugin-reading-time2` plugin

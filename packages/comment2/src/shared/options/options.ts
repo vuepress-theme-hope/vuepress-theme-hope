@@ -1,7 +1,7 @@
-import type { DisableCommentOptions } from "./disable";
-import type { GiscusOptions } from "./giscus";
-import type { TwikooOptions } from "./twikoo";
-import type { WalineOptions } from "./waline";
+import type { DisableCommentOptions } from "./disable.js";
+import type { GiscusOptions } from "./giscus.js";
+import type { TwikooOptions } from "./twikoo.js";
+import type { WalineOptions } from "./waline.js";
 
 /**
  * 评论选项

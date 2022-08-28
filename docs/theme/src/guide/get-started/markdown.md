@@ -68,9 +68,9 @@ export default {
 @tab JS
 
 ```js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     plugins: {
       mdEnhance: {
@@ -411,12 +411,6 @@ Setting this to a invalid stytax <span style="color:red">doesn't</span> have any
 - [View Detail](../markdown/stylize.md)
 
 <!-- markdownlint-enable MD033 -->
-
-#### Playground
-
-You can insert Vue playground in Markdown files directly.
-
-- [View Detail](../markdown/playground.md)
 
 #### Presentation
 

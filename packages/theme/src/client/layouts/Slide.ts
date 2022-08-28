@@ -1,3 +1,3 @@
-import SlidePage from "vuepress-plugin-md-enhance/lib/client/SlidePage.js";
+import SlidePage from "vuepress-plugin-md-enhance/SlidePage";
 
 export default SlidePage;

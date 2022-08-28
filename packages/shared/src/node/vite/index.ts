@@ -1,2 +1,2 @@
-export * from "./mergeViteConfig";
-export * from "./viteHelper";
+export * from "./mergeViteConfig.js";
+export * from "./viteHelper.js";

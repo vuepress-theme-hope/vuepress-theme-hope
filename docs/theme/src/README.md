@@ -148,9 +148,9 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     // your theme config here
   }),
@@ -167,15 +167,8 @@ module.exports = {
 
 - [vuepressthemehope](https://t.me/vuepressthemehope)
 
-<!-- markdownlint-disable -->
-
-<a v-if="isNetlify " href="https://www.netlify.com" target="_blank">
-
-![Deploys by Netlify](https://www.netlify.com/img/global/badges/netlify-light.svg#light)
-![Deploys by Netlify](https://www.netlify.com/img/global/badges/netlify-dark.svg#dark)
-
-</a>
+<NetlifyBadge />
 
 <script setup lang="ts">
-const isNetlify = IS_NETLIFY;
+import NetlifyBadge from "@NetlifyBadge";
 </script>

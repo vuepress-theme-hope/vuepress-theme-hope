@@ -2,7 +2,10 @@ import { usePageFrontmatter, usePageLang } from "@vuepress/client";
 import { computed, defineComponent, h, onMounted } from "vue";
 
 import type { VNode } from "vue";
-import type { CommentPluginFrontmatter, TwikooOptions } from "../../shared";
+import type {
+  CommentPluginFrontmatter,
+  TwikooOptions,
+} from "../../shared/index.js";
 
 import "../styles/twikoo.scss";
 

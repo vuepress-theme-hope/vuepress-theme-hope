@@ -36,7 +36,7 @@ tag:
 - `"disable"`: 禁用深色模式
 
 <script setup lang="ts">
-import AppearanceSwitch from '@theme-hope/module/outlook/components/AppearanceSwitch'
+import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch.js"
 </script>
 
 ## 全局变量

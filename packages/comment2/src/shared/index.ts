@@ -1,2 +1,2 @@
-export * from "./frontmatter";
-export * from "./options";
+export * from "./frontmatter.js";
+export * from "./options/index.js";

@@ -1,4 +1,4 @@
-import type { HopeThemeNavbarConfig } from "../../navbar";
+import type { HopeThemeNavbarConfig } from "../../navbar.js";
 
 export type HopeThemeNavbarComponent =
   | "Brand"

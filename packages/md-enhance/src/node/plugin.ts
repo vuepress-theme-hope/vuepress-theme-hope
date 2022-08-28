@@ -1,3 +1,4 @@
+import { getDirname, path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   addCustomElement,
@@ -7,16 +8,16 @@ import {
   getLocales,
 } from "vuepress-shared";
 
-import { logger } from "./utils";
+import { logger } from "./utils.js";
 
-import { checkLinks, getCheckLinksStatus } from "./checkLink";
-import { markdownEnhanceLocales } from "./locales";
+import { checkLinks, getCheckLinksStatus } from "./checkLink.js";
 import {
   convertOptions,
   legacyCodeDemo,
   legacyCodeGroup,
   legacyFlowchart,
-} from "./compact";
+} from "./compact/index.js";
+import { markdownEnhanceLocales } from "./locales.js";
 import {
   CODE_DEMO_DEFAULT_SETTING,
   align,
@@ -35,7 +36,6 @@ import {
   mark,
   mermaid,
   normalDemo,
-  playground,
   presentation,
   reactDemo,
   stylize,
@@ -45,13 +45,15 @@ import {
   tasklist,
   vPre,
   vueDemo,
-} from "./markdown-it";
-import { prepareConfigFile, prepareRevealPluginFile } from "./prepare";
-import { MATHML_TAGS } from "./utils";
+} from "./markdown-it/index.js";
+import { prepareConfigFile, prepareRevealPluginFile } from "./prepare.js";
+import { MATHML_TAGS } from "./utils.js";
 
 import type { PluginFunction } from "@vuepress/core";
 import type { KatexOptions } from "katex";
-import type { MarkdownEnhanceOptions } from "../shared";
+import type { MarkdownEnhanceOptions } from "../shared/index.js";
+
+const __dirname = getDirname(import.meta.url);
 
 export const mdEnhancePlugin =
   (
@@ -97,7 +99,6 @@ export const mdEnhancePlugin =
     const mermaidEnable = getStatus("mermaid");
     const presentationEnable = getStatus("presentation");
     const texEnable = getStatus("tex");
-    const playgroundEnable = getStatus("playground");
 
     const shouldCheckLinks = getCheckLinksStatus(app, options);
 
@@ -138,9 +139,18 @@ export const mdEnhancePlugin =
           typeof options.presentation.revealConfig === "object"
             ? options.presentation.revealConfig
             : {},
-        PLAYGROUND_OPTIONS:
-          typeof options.playground === "object" ? options.playground : {},
       }),
+
+      alias: {
+        // FIXME:
+        // this is a workaround for https://github.com/vitejs/vite/issues/7621
+        // Remove this when issue is fixed
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        "vuepress-plugin-md-enhance/SlidePage": path.resolve(
+          __dirname,
+          "../client/SlidePage.js"
+        ),
+      },
 
       extendsBundlerOptions: (config: unknown, app): void => {
         if (katexOptions.output !== "html")
@@ -181,11 +191,6 @@ export const mdEnhancePlugin =
             ),
           ]);
           addViteSsrExternal({ app, config }, "reveal.js");
-        }
-
-        if (playgroundEnable) {
-          addViteOptimizeDepsInclude({ app, config }, "@vue/repl");
-          addViteSsrExternal({ app, config }, "@vue/repl");
         }
       },
 
@@ -250,7 +255,6 @@ export const mdEnhancePlugin =
         }
         if (mermaidEnable) md.use(mermaid);
         if (presentationEnable) md.use(presentation);
-        if (playgroundEnable) md.use(playground);
       },
 
       extendsPage: (page, app): void => {

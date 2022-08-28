@@ -1,5 +1,5 @@
 import { defineComponent, h, onMounted, ref } from "vue";
-import { LOADING_SVG } from "./icons";
+import { LOADING_SVG } from "./icons.js";
 
 import type { ChartConfiguration } from "chart.js";
 import type { PropType, VNode } from "vue";
@@ -40,7 +40,7 @@ export default defineComponent({
 
     onMounted(() => {
       void Promise.all([
-        import(/* webpackChunkName: "chart" */ "chart.js/auto"),
+        import(/* webpackChunkName: "chart" */ "chart.js/auto/auto.mjs"),
         // delay
         new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
       ]).then(([{ default: Chart }]) => {

@@ -38,7 +38,7 @@ jobs:
 
       - name: Build project
         env:
-          NODE_OPTIONS: --max_old_space_size=4096
+          NODE_OPTIONS: --max_old_space_size=8192
         run: pnpm run build
 
       # test with specific node version
@@ -75,7 +75,7 @@ jobs:
 
       - name: Build project
         env:
-          NODE_OPTIONS: --max_old_space_size=4096
+          NODE_OPTIONS: --max_old_space_size=8192
         run: pnpm run build
 
       - name: Linter test
@@ -85,7 +85,7 @@ jobs:
 
       - name: Unit test
         env:
-          NODE_OPTIONS: --max_old_space_size=4096
+          NODE_OPTIONS: --max_old_space_size=8192
         run: pnpm run test
 
       - name: Upload coverage

@@ -1,6 +1,6 @@
-import { sync } from "execa";
-import { existsSync } from "fs";
-import { dirname, resolve } from "path";
+import { existsSync } from "node:fs";
+import { dirname, resolve } from "node:path";
+import { execaSync } from "execa";
 
 export type PackageManager = "npm" | "yarn" | "pnpm";
 
@@ -10,7 +10,8 @@ const localCache = new Map<string, PackageManager>();
 const isInstalled = (packageManager: PackageManager): boolean => {
   try {
     return (
-      sync(`${packageManager} --version`, { stdio: "ignore" }).exitCode === 0
+      execaSync(`${packageManager} --version`, { stdio: "ignore" }).exitCode ===
+      0
     );
   } catch (e) {
     return false;

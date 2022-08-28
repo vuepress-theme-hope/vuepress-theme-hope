@@ -1,5 +1,11 @@
-import { pwa, theme } from "docs-shared";
-import { version } from "vuepress-plugin-components/package.json";
+import { createRequire } from "node:module";
+import { fs, pwa, theme } from "docs-shared";
+
+const { version } = fs.readJsonSync(
+  createRequire(import.meta.url).resolve(
+    "vuepress-plugin-components/package.json"
+  )
+);
 
 export default theme("components", {
   addThis: "ra-5f829c59e6c6bc9a",

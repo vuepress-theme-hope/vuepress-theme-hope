@@ -1,1 +1,1 @@
-export * from "./components/CodeGroup";
+export * from "./components/CodeGroup.js";

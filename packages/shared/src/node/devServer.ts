@@ -1,6 +1,7 @@
 import { removeEndingSlash, removeLeadingSlash } from "@vuepress/shared";
-import { mergeViteConfig } from "./vite";
+import { mergeViteConfig } from "./vite/index.js";
 
+import type { IncomingMessage, ServerResponse } from "node:http";
 import type { App } from "@vuepress/core";
 import type { ViteBundlerOptions } from "@vuepress/bundler-vite";
 import type {
@@ -9,7 +10,6 @@ import type {
 } from "@vuepress/bundler-webpack";
 import type { HandleFunction } from "connect";
 import type { Plugin } from "vite";
-import type { IncomingMessage, ServerResponse } from "http";
 
 /**
  * Handle specific path when runing VuePress DevServe

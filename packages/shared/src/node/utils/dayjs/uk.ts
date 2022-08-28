@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import type { default as dayjs, Dayjs } from "dayjs";
-import type { Locale } from "./locale";
+import type { Locale } from "./locale.js";
 
 const monthFormat =
   "січня_лютого_березня_квітня_травня_червня_липня_серпня_вересня_жовтня_листопада_грудня".split(

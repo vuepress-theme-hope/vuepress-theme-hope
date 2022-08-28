@@ -1,2 +1,2 @@
-export * from "./useBlogCategory";
-export * from "./useBlogType";
+export * from "./useBlogCategory.js";
+export * from "./useBlogType.js";

@@ -3,7 +3,7 @@ import type {
   FeedCategory,
   FeedChannelOption,
   FeedEnclosure,
-} from "./feed";
+} from "./feed.js";
 
 export interface FeedItemOption {
   /**

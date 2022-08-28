@@ -2,7 +2,7 @@ import type {
   HopeThemeSidebarInfo,
   HopeThemeSidebarSorter,
   HopeThemeSidebarSorterFunction,
-} from "../../../shared";
+} from "../../../shared/index.js";
 
 export const readmeSorter = (
   infoA: HopeThemeSidebarInfo,

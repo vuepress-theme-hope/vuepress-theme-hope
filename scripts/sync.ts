@@ -1,7 +1,7 @@
-import { readdirSync } from "fs";
-import { request } from "https";
+import { readdirSync } from "node:fs";
+import { request } from "node:https";
+import { resolve } from "node:path";
 import ora from "ora";
-import { resolve } from "path";
 
 const packagesDir = resolve(process.cwd(), "packages");
 const packages = readdirSync(packagesDir);

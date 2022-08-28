@@ -24,6 +24,18 @@
     "email": "mister-hope@outlook.com",
     "url": "https://mrhope.site"
   },
+  "type": "module",
+  "exports": {
+    ".": "./lib/node/index.js",
+    "./styles*": "./styles/*",
+    "./color.scss": "./styles/default/color.scss",
+    "./config.scss": "./styles/default/config.scss",
+    "./layout.scss": "./styles/default/layout.scss",
+    "./palette.scss": "./styles/default/palette.scss",
+    "./empty.scss": "./styles/empty.scss",
+    "./helper.scss": "./styles/helper.scss",
+    "./package.json": "./package.json"
+  },
   "main": "lib/node/index.js",
   "types": "lib/node/index.d.ts",
   "files": [
@@ -38,15 +50,15 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@vuepress/utils": "2.0.0-beta.49",
+    "@vuepress/utils": "2.0.0-beta.50",
     "chokidar": "^3.5.3",
-    "sass": "^1.54.3",
-    "vuepress-shared": "workspace:*"
+    "sass": "^1.54.5",
+    "vuepress-shared": "workspace:2.0.0-beta.91"
   },
   "devDependencies": {
-    "@vuepress/bundler-vite": "2.0.0-beta.49",
-    "@vuepress/bundler-webpack": "2.0.0-beta.49",
-    "@vuepress/core": "2.0.0-beta.49",
+    "@vuepress/bundler-vite": "2.0.0-beta.50",
+    "@vuepress/bundler-webpack": "2.0.0-beta.50",
+    "@vuepress/core": "2.0.0-beta.50",
     "rimraf": "3.0.2"
   },
   "peerDependencies": {

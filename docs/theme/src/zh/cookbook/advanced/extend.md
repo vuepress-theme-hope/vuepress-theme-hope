@@ -40,7 +40,7 @@ export default {
   alias: {
     // 你可以在这里覆盖或新增别名
     // 比如这里我们将 vuepress-theme-hope 主页组件改为自己主题下的 components/HomePage.vue
-    "@theme-hope/components/HomePage": path.resolve(
+    "@theme-hope/components/HomePage.js": path.resolve(
       __dirname,
       "./components/HomePage.vue"
     ),
@@ -59,11 +59,11 @@ export default {
 @tab JS
 
 ```js
-// .vuepress/them/index.js
-const { path } = require("@vuepress/utils");
-const { hopeTheme } = require("vuepress-theme-hope");
+// .vuepress/theme/index.js
+import { path } from "@vuepress/utils";
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   name: "vuepress-theme-local",
 
   extends: hopeTheme(options),
@@ -71,7 +71,7 @@ module.exports = {
   alias: {
     // 你可以在这里覆盖或新增别名
     // 比如这里我们将 vuepress-theme-hope 主页组件改为自己主题下的 components/HomePage.vue
-    "@theme-hope/components/HomePage": path.resolve(
+    "@theme-hope/components/HomePage.js": path.resolve(
       __dirname,
       "./components/HomePage.vue"
     ),

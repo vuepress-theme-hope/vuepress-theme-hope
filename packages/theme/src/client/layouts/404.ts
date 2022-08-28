@@ -2,10 +2,10 @@ import { defineComponent, h, resolveComponent } from "vue";
 import { useLink } from "vue-router";
 import { useRouteLocale } from "@vuepress/client";
 
-import SkipLink from "@theme-hope/components/SkipLink";
-import { Page404Icon } from "@theme-hope/components/icons";
+import SkipLink from "@theme-hope/components/SkipLink.js";
+import { Page404Icon } from "@theme-hope/components/icons/index.js";
 
-import { useThemeLocaleData } from "@theme-hope/composables";
+import { useThemeLocaleData } from "@theme-hope/composables/index.js";
 
 import type { VNode } from "vue";
 

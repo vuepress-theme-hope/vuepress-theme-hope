@@ -1,2 +1,2 @@
-export * from "./i18n";
-export * from "./template";
+export * from "./i18n.js";
+export * from "./template.js";

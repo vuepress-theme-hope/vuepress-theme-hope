@@ -2,7 +2,7 @@ import type {
   SitemapImageOption,
   SitemapNewsOption,
   SitemapVideoOption,
-} from "./sitemap";
+} from "./sitemap.js";
 
 export interface SitemapFrontmatterOption {
   /**

@@ -25,10 +25,10 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import { UNESCAPE_RE } from "./utils";
+import { UNESCAPE_RE } from "./utils.js";
 
 import type { PluginSimple } from "markdown-it";
-import type { RuleInline } from "markdown-it/lib/parser_inline";
+import type { RuleInline } from "markdown-it/lib/parser_inline.js";
 
 const superscriptRender: RuleInline = (state, silent) => {
   let found;

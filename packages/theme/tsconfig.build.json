@@ -1,5 +1,15 @@
 {
   "extends": "../../tsconfig.build.base.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "lib": ["dom", "es2021"],
+    "rootDir": "./src",
+    "outDir": "./lib",
+    "paths": {
+      "@theme-hope/*": ["./src/client/*"]
+    }
+  },
+  "include": ["./src", "./src/*.d.ts"],
   "references": [
     { "path": "../blog2/tsconfig.build.json" },
     { "path": "../comment2/tsconfig.build.json" },
@@ -12,9 +22,6 @@
     { "path": "../sass-palette/tsconfig.build.json" },
     { "path": "../seo2/tsconfig.build.json" },
     { "path": "../sitemap2/tsconfig.build.json" },
-    { "path": "../shared/tsconfig.build.json" },
-    { "path": "./tsconfig.esm.json" },
-    { "path": "./tsconfig.cjs.json" }
-  ],
-  "files": []
+    { "path": "../shared/tsconfig.build.json" }
+  ]
 }
