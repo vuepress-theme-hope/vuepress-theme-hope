@@ -80,7 +80,7 @@ ${
 
       - name: ${lang === "简体中文" ? "构建文档" : "Build Docs"}
         env:
-          NODE_OPTIONS: --max_old_space_size=4096
+          NODE_OPTIONS: --max_old_space_size=8192
         run: |-
           ${packageManager} run docs:build
           > ${join(dir, ".vuepress/dist/.nojekyll").replace(/\\/g, "/")}

@@ -29,13 +29,13 @@ jobs:
 
       - name: Build project
         env:
-          NODE_OPTIONS: --max_old_space_size=4096
+          NODE_OPTIONS: --max_old_space_size=8192
         run: pnpm run build
 
       - name: Docs build
         env:
           NETLIFY: true
-          NODE_OPTIONS: --max_old_space_size=4096
+          NODE_OPTIONS: --max_old_space_size=8192
         run: pnpm run docs:vite-build
 
       - name: Combine output
@@ -90,14 +90,14 @@ jobs:
 
       - name: Build project
         env:
-          NODE_OPTIONS: --max_old_space_size=4096
+          NODE_OPTIONS: --max_old_space_size=8192
         run: pnpm run build
 
       - name: Docs build
         env:
           BASE: /v2/
           HOSTNAME: https://vuepress-theme-hope.gitee.io/
-          NODE_OPTIONS: --max_old_space_size=4096
+          NODE_OPTIONS: --max_old_space_size=8192
         run: pnpm run docs:vite-build
 
       - name: Combine output
@@ -148,7 +148,7 @@ jobs:
 
       - name: Build project
         env:
-          NODE_OPTIONS: --max_old_space_size=4096
+          NODE_OPTIONS: --max_old_space_size=8192
         run: pnpm run build
 
       - name: Build Netlify Demo
@@ -218,7 +218,7 @@ jobs:
 
       - name: Build project
         env:
-          NODE_OPTIONS: --max_old_space_size=4096
+          NODE_OPTIONS: --max_old_space_size=8192
         run: pnpm run build
 
       - name: Build ${{ matrix.plugin-name }} demo
