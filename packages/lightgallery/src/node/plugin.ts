@@ -1,6 +1,6 @@
 import { getDirname, path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
-import { addViteOptimizeDepsInclude } from "vuepress-shared";
+import { addViteOptimizeDepsExclude } from "vuepress-shared";
 
 import { logger } from "./utils.js";
 
@@ -36,10 +36,13 @@ export const lightgalleryPlugin =
       }),
 
       extendsBundlerOptions: (config: unknown, app): void => {
-        addViteOptimizeDepsInclude({ app, config }, [
-          "lightgallery",
-          ...plugins.map((name) => `lightgallery/plugins/${name}`),
+        addViteOptimizeDepsExclude({ app, config }, [
+          "lightgallery/lightgallery.es5.js",
+          ...plugins.map(
+            (name) => `lightgallery/plugins/${name}/lg-${name}.es5.js`
+          ),
         ]);
+        addViteOptimizeDepsExclude({ app, config }, ["lightgallery"]);
       },
 
       clientConfigFile: path.resolve(__dirname, "../client/config.js"),

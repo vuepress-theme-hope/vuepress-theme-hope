@@ -6,6 +6,11 @@ type LightGalleryPlugin<T = unknown> = {
   ) => T;
 };
 
+declare module "lightgallery/lightgallery.es5.js" {
+  import { LightGallery } from "lightgallery/lightgallery.js";
+  export default LightGallery;
+}
+
 declare module "lightgallery/plugins/autoplay/lg-autoplay.es5.js" {
   export default LightGalleryPlugin;
 }

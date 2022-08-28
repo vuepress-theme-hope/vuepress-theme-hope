@@ -1,4 +1,4 @@
-import { default as lightGallery } from "lightgallery";
+import { default as lightGallery } from "lightgallery/lightgallery.es5.js";
 import {
   defineComponent,
   h,
@@ -140,7 +140,7 @@ export default defineComponent({
             document.querySelectorAll<HTMLImageElement>(IMAGE_SELECTOR)
           );
 
-          instance = lightGallery(container.value!, {
+          instance = new lightGallery(container.value!, {
             ...LIGHT_GALLERY_OPTIONS,
             dynamic: true,
             dynamicEl: getImages(images),

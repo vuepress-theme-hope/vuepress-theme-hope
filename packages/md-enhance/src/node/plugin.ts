@@ -157,7 +157,7 @@ export const mdEnhancePlugin =
           addCustomElement({ app, config }, MATHML_TAGS);
 
         if (chartEnable) {
-          addViteOptimizeDepsInclude({ app, config }, "chart.js/auto");
+          addViteOptimizeDepsInclude({ app, config }, "chart.js/auto/auto.mjs");
           addViteSsrExternal({ app, config }, "chart.js");
         }
 
@@ -187,7 +187,6 @@ export const mdEnhancePlugin =
               (plugin) => `reveal.js/plugin/${plugin}/${plugin}.esm.js`
             ),
           ]);
-          addViteSsrExternal({ app, config }, "reveal.js");
         }
       },
 
