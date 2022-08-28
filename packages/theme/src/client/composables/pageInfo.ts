@@ -5,7 +5,7 @@ import {
   getCategory,
   getDate,
   getTag,
-} from "vuepress-shared/client";
+} from "vuepress-shared/lib/client";
 
 import { useThemeLocaleData } from "./themeData.js";
 

@@ -1,4 +1,4 @@
-import { useLocaleConfig } from "vuepress-shared/client";
+import { useLocaleConfig } from "vuepress-shared/lib/client";
 import { Transition, computed, defineComponent, h, onMounted, ref } from "vue";
 import { locales } from "../define.js";
 import { UpdateIcon } from "../components/icons.js";

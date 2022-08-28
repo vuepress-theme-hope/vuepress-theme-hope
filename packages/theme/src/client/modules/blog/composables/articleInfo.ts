@@ -4,7 +4,7 @@ import {
   getCategory,
   getDate,
   getTag,
-} from "vuepress-shared/client";
+} from "vuepress-shared/lib/client";
 
 import { useCategoryMap } from "./categoryMap.js";
 import { useBlogOptions } from "./options.js";

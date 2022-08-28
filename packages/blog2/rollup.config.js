@@ -16,7 +16,7 @@ export default [
       "@vuepress/shared",
       "vue",
       "vue-router",
-      "vuepress-shared/client",
+      "vuepress-shared/lib/client",
     ],
   }),
 ];
