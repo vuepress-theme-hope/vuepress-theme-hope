@@ -11,10 +11,15 @@
   },
   "type": "module",
   "exports": {
-    ".": "./index.js"
+    ".": "./lib/index.js"
   },
   "scripts": {
-    "build": "tsc --build tsconfig.build.json"
+    "build": "tsc --build tsconfig.build.json",
+    "copy": "cpx \"src/**/*.{vue,scss}\" lib",
+    "clean": "rimraf ./lib ./*.tsbuildinfo",
+    "dev": "concurrently \"pnpm dev:copy\" \"pnpm dev:ts\"",
+    "dev:copy": "pnpm copy -w",
+    "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
     "@types/three": "0.143.1",
@@ -23,6 +28,7 @@
     "@vuepress/core": "2.0.0-beta.50",
     "@vuepress/plugin-docsearch": "2.0.0-beta.50",
     "@vuepress/utils": "2.0.0-beta.50",
+    "rimraf": "3.0.2",
     "three": "0.143.0",
     "vue": "3.2.37",
     "vuepress-shared": "workspace:2.0.0-beta.91",

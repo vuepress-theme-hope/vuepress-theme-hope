@@ -15,8 +15,7 @@ ignorePatterns:
   - "**/node_modules/**"
   - ".cache/**"
   - ".temp/**"
-  - "docs/shared/**/*.js"
-  - "docs/shared/**/*.d.ts"
+  - "docs/shared/lib/**"
   - "packages/*/lib/**"
 
 rules:

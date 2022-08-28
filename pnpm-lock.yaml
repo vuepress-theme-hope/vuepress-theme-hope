@@ -694,6 +694,7 @@ importers:
       '@vuepress/core': 2.0.0-beta.50
       '@vuepress/plugin-docsearch': 2.0.0-beta.50
       '@vuepress/utils': 2.0.0-beta.50
+      rimraf: 3.0.2
       three: 0.143.0
       vue: 3.2.37
       vuepress-shared: workspace:2.0.0-beta.91
@@ -705,6 +706,7 @@ importers:
       '@vuepress/core': 2.0.0-beta.50
       '@vuepress/plugin-docsearch': 2.0.0-beta.50
       '@vuepress/utils': 2.0.0-beta.50
+      rimraf: 3.0.2
       three: 0.143.0
       vue: 3.2.37
       vuepress-shared: link:../../packages/shared

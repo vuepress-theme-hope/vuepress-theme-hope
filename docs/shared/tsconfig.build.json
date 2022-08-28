@@ -1,9 +1,11 @@
 {
   "extends": "../../tsconfig.build.base.json",
   "compilerOptions": {
-    "lib": ["dom", "es2021"]
+    "lib": ["dom", "es2021"],
+    "rootDir": "./src",
+    "outDir": "./lib"
   },
-  "include": ["."],
+  "include": ["./src", "./src/*.d.ts"],
   "references": [
     { "path": "../../packages/blog2/tsconfig.build.json" },
     { "path": "../../packages/comment2/tsconfig.build.json" },
