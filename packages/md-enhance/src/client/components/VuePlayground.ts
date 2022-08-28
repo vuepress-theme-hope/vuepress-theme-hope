@@ -1,8 +1,8 @@
 import { ReplStore, Repl } from "@vue/repl";
 import { computed, defineComponent, h, onMounted, ref } from "vue";
 
-import { LOADING_SVG, CODE_SVG } from "./icons";
-import { getVuePlaygroundSettings } from "../utils";
+import { LOADING_SVG, CODE_SVG } from "./icons.js";
+import { getVuePlaygroundSettings } from "../utils/index.js";
 
 import type { ReplProps } from "@vue/repl";
 import type { VNode } from "vue";

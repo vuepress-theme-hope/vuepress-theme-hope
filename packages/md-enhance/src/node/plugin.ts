@@ -38,6 +38,7 @@ import {
   mark,
   mermaid,
   normalDemo,
+  playground,
   presentation,
   reactDemo,
   stylize,
@@ -259,7 +260,7 @@ export const mdEnhancePlugin =
         if (flowchartEnable) {
           md.use(flowchart);
           // TODO: Remove it in v2 stable
-          md.use(legacyFlowchart);
+          if (legacy) md.use(legacyFlowchart);
         }
         if (chartEnable) md.use(chart);
         if (echartsEnable) md.use(echarts);
@@ -272,7 +273,9 @@ export const mdEnhancePlugin =
         }
         if (mermaidEnable) md.use(mermaid);
         if (presentationEnable) md.use(presentation);
-        if (typeof options.playground === "object")
+        if (Array.isArray(options.playground))
+          options.playground.forEach((item) => md.use(playground, item));
+        else if (typeof options.playground === "object")
           md.use(playground, options.playground);
         if (vuePlaygroundEnable) md.use(vuePlayground);
       },

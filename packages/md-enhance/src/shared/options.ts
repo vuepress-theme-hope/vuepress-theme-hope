@@ -265,7 +265,7 @@ export interface MarkdownEnhanceOptions {
    *
    * 是否启用 playground 支持
    */
-  playground?: PlaygroundOptions;
+  playground?: PlaygroundOptions | PlaygroundOptions[];
 
   /**
    * Whether to enable vue playground support

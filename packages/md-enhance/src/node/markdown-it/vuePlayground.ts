@@ -1,8 +1,11 @@
 import { deepAssign } from "vuepress-shared";
-import { playground } from "./playground";
+import { playground } from "./playground.js";
 
 import type { PluginWithOptions } from "markdown-it";
-import type { PlaygroundData, VuePlaygroundOptions } from "../../shared";
+import type {
+  PlaygroundData,
+  VuePlaygroundOptions,
+} from "../../shared/index.js";
 
 export const DEFAULT_VUE_PLAYGROUND_OPTIONS: VuePlaygroundOptions = {
   autoResize: true,

@@ -1,6 +1,6 @@
 import { defineComponent, h, ref } from "vue";
 
-import { LOADING_SVG, PLAY_SVG } from "./icons";
+import { LOADING_SVG, PLAY_SVG } from "./icons.js";
 
 import type { VNode } from "vue";
 
