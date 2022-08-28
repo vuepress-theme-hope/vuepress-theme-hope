@@ -169,12 +169,9 @@ export const mdEnhancePlugin =
         if (flowchartEnable) {
           addViteOptimizeDepsInclude(
             { app, config },
-            "flowchart.js/src/flowchart.parse"
+            "flowchart.js/src/flowchart.parse.js"
           );
-          addViteSsrExternal(
-            { app, config },
-            "flowchart.js/src/flowchart.parse"
-          );
+          addViteSsrExternal({ app, config }, "flowchart.js");
         }
 
         if (mermaidEnable) {
