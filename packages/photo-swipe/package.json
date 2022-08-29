@@ -47,8 +47,8 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@vuepress/client": "2.0.0-beta.50",
-    "@vuepress/utils": "2.0.0-beta.50",
+    "@vuepress/client": "2.0.0-beta.51",
+    "@vuepress/utils": "2.0.0-beta.51",
     "@vueuse/core": "^9.1.1",
     "photoswipe": "^5.3.0",
     "vue": "^3.2.37",
@@ -57,7 +57,7 @@
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.50",
+    "@vuepress/core": "2.0.0-beta.51",
     "rimraf": "3.0.2"
   },
   "peerDependencies": {

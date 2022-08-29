@@ -18,7 +18,7 @@ You need to create an entry file for your theme and import `hopeTheme` from `vue
 
 In your entry file, set `extends: hopeTheme(options)` to extend the `vuepress-theme-hope` theme.
 
-The aliases of the same name (`alias`) and layouts (`layouts`) of your own newly created theme has higher priority over the extended theme `vuepress-theme-hope`, which means that you can override `vuepress-theme-hope` components via `alias` and add or override layout provided by `vuepress-theme-hope` via `layouts`.
+The aliases of the same name (`alias`) and layouts (`layouts`) of your own newly created theme has higher priority over the extended theme `vuepress-theme-hope`, which means that you can override `vuepress-theme-hope` components via `alias`.
 
 ::: code-tabs#language
 
@@ -43,14 +43,6 @@ export const localTheme = (options: HopeThemeOptions) => ({
       "./components/HomePage.vue"
     ),
   },
-
-  layouts: {
-    // You can override or add layouts here
-    // For example, here we change the default layout of vuepress-theme-hope to layouts/Layout.vue under our own theme
-    Layout: path.resolve(__dirname, "layouts/Layout.vue"),
-    // Also we added a Changelog layout
-    Changelog: path.resolve(__dirname, "layouts/Changelog.vue"),
-  },
 });
 ```
 
@@ -74,15 +66,49 @@ export default (options) => ({
       "./components/HomePage.vue"
     ),
   },
-
-  layouts: {
-    // You can override or add layouts here
-    // For example, here we change the default layout of vuepress-theme-hope to layouts/Layout.vue under our own theme
-    Layout: path.resolve(__dirname, "layouts/Layout.vue"),
-    // Also we added a Changelog layout
-    Changelog: path.resolve(__dirname, "layouts/Changelog.vue"),
-  },
 });
 ```
 
 :::
+
+Also, you can add or override layout provided by `vuepress-theme-hope` via `layouts` in your theme client config file.
+
+::: code-tabs#language
+
+@tab TS
+
+```ts
+// .vuepress/theme/config.ts
+import { defineClientConfig } from "@vuepress/client";
+import Changelog from "./layouts/Changelog.vue";
+import Layout from "./layouts/Layout.vue";
+
+export default defineClientConfig({
+  // You can override or add layouts here
+  layouts: {
+    // For example, here we change the default layout of vuepress-theme-hope to layouts/Layout.vue under our own theme
+    Layout,
+    // Also we added a Changelog layout
+    Changelog,
+  },
+});
+```
+
+@tab JS
+
+```js
+// .vuepress/theme/config.js
+import { defineClientConfig } from "@vuepress/client";
+import Changelog from "./layouts/Changelog.vue";
+import Layout from "./layouts/Layout.vue";
+
+export default defineClientConfig({
+  // You can override or add layouts here
+  layouts: {
+    // For example, here we change the default layout of vuepress-theme-hope to layouts/Layout.vue under our own theme
+    Layout,
+    // Also we added a Changelog layout
+    Changelog,
+  },
+});
+```

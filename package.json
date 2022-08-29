@@ -129,8 +129,7 @@
       ]
     },
     "patchedDependencies": {
-      "@vuepress/theme-default@2.0.0-beta.50": "patches/@vuepress__theme-default@2.0.0-beta.50.patch",
-      "cac@6.7.12": "patches/cac@6.7.12.patch",
+      "@vuepress/theme-default@2.0.0-beta.51": "patches/@vuepress__theme-default@2.0.0-beta.51.patch",
       "chart.js@3.9.1": "patches/chart.js@3.9.1.patch",
       "mitt@3.0.0": "patches/mitt@3.0.0.patch"
     }

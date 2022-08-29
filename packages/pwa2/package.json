@@ -47,9 +47,9 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@vuepress/client": "2.0.0-beta.50",
-    "@vuepress/shared": "2.0.0-beta.50",
-    "@vuepress/utils": "2.0.0-beta.50",
+    "@vuepress/client": "2.0.0-beta.51",
+    "@vuepress/shared": "2.0.0-beta.51",
+    "@vuepress/utils": "2.0.0-beta.51",
     "@vueuse/core": "^9.1.1",
     "mitt": "^3.0.0",
     "register-service-worker": "^1.7.2",
@@ -60,7 +60,7 @@
     "workbox-build": "^6.5.4"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.50",
+    "@vuepress/core": "2.0.0-beta.51",
     "rimraf": "3.0.2"
   },
   "peerDependencies": {

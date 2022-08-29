@@ -3,7 +3,7 @@ import { sidebar } from "vuepress-theme-hope";
 export default sidebar([
   "/",
   "/home",
-  "/slide",
+  "/slides",
   {
     icon: "creative",
     text: "Guide",

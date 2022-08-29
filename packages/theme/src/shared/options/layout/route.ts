@@ -4,8 +4,7 @@ export interface HopeThemeRouteLocaleData {
    *
    * 404 页面的提示信息
    */
-  // eslint-disable-next-line @typescript-eslint/naming-convention
-  "404msg": string[];
+  notFoundMsg: string[];
   /**
    * Back to homepage
    *

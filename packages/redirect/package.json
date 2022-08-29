@@ -44,11 +44,11 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@vuepress/cli": "2.0.0-beta.50",
-    "@vuepress/core": "2.0.0-beta.50",
-    "@vuepress/shared": "2.0.0-beta.50",
-    "@vuepress/utils": "2.0.0-beta.50",
-    "cac": "^6.7.12",
+    "@vuepress/cli": "2.0.0-beta.51",
+    "@vuepress/core": "2.0.0-beta.51",
+    "@vuepress/shared": "2.0.0-beta.51",
+    "@vuepress/utils": "2.0.0-beta.51",
+    "cac": "^6.7.14",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {

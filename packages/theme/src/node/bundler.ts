@@ -71,7 +71,10 @@ export const checkTag = (config: unknown, app: App): void => {
 };
 
 export const updateBundlerConfig = (config: unknown, app: App): void => {
-  addViteOptimizeDepsInclude({ app, config }, "@vueuse/core");
+  addViteOptimizeDepsInclude({ app, config }, [
+    "@vueuse/core",
+    "bcrypt-ts/browser",
+  ]);
 
   checkTag(config, app);
 };

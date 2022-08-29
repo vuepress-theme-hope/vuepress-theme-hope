@@ -18,7 +18,7 @@ tag:
 
 В файле ввода установите `extends: hopeTheme(options)`, чтобы расширить тему `vuepress-theme-hope`.
 
-Одноименные псевдонимы (`alias`) и макеты (`layouts`) вашей собственной только что созданной темы имеют более высокий приоритет по сравнению с расширенной темой `vuepress-theme-hope`, что означает, что вы можете переопределить `vuepress-theme-hope` компоненты через `alias` и добавить или переопределить макет, предоставленный `vuepress-theme-hope` через `layouts`.
+Одноименные псевдонимы (`alias`) и макеты (`layouts`) вашей собственной только что созданной темы имеют более высокий приоритет по сравнению с расширенной темой `vuepress-theme-hope`, что означает, что вы можете переопределить `vuepress-theme-hope` компоненты через `alias` и добавить или переопределить макет.
 
 ::: code-tabs#language
 
@@ -43,14 +43,6 @@ export const localTheme = (options: HopeThemeOptions) => ({
       "./components/HomePage.vue"
     ),
   },
-
-  layouts: {
-    // Вы можете переопределить или добавить макеты здесь
-    // Например, здесь мы меняем макет по умолчанию vuepress-theme-hope на layouts/Layout.vue под нашу собственную тему
-    Layout: path.resolve(__dirname, "layouts/Layout.vue"),
-    // Также мы добавили макет списка изменений
-    Changelog: path.resolve(__dirname, "layouts/Changelog.vue"),
-  },
 });
 ```
 
@@ -74,15 +66,52 @@ export default (options) => ({
       "./components/HomePage.vue"
     ),
   },
-
-  layouts: {
-    // Вы можете переопределить или добавить макеты здесь
-    // Например, здесь мы меняем макет по умолчанию vuepress-theme-hope на layouts/Layout.vue под нашу собственную тему
-    Layout: path.resolve(__dirname, "layouts/Layout.vue"),
-    // Также мы добавили макет списка изменений
-    Changelog: path.resolve(__dirname, "layouts/Changelog.vue"),
-  },
 });
 ```
 
 :::
+
+:::
+
+Also, you can add or override layout provided by `vuepress-theme-hope` via `layouts` in your theme client config file.
+
+::: code-tabs#language
+
+@tab TS
+
+```ts
+// .vuepress/theme/config.ts
+import { defineClientConfig } from "@vuepress/client";
+import Changelog from "./layouts/Changelog.vue";
+import Layout from "./layouts/Layout.vue";
+
+export default defineClientConfig({
+  // Вы можете переопределить или добавить макеты здесь
+  layouts: {
+    // Например, здесь мы меняем макет по умолчанию vuepress-theme-hope на layouts/Layout.vue под нашу собственную тему
+    Layout,
+    // Также мы добавили макет списка изменений
+    Changelog,
+  },
+});
+```
+
+@tab JS
+
+```js
+// .vuepress/theme/config.js
+import { defineClientConfig } from "@vuepress/client";
+import Changelog from "./layouts/Changelog.vue";
+import Layout from "./layouts/Layout.vue";
+
+export default defineClientConfig({
+  // Вы можете переопределить или добавить макеты здесь
+  layouts: {
+    // Например, здесь мы меняем макет по умолчанию vuepress-theme-hope на layouts/Layout.vue под нашу собственную тему
+    Layout,
+    // Также мы добавили макет списка изменений
+    Changelog,
+  },e"),
+  },
+});
+```

@@ -8,7 +8,6 @@ import {
   convertFrontmatter,
   convertThemeConfig,
 } from "./compact/index.js";
-import { getLayoutConfig } from "./layout.js";
 import { getPluginConfig, usePlugin } from "./plugins/index.js";
 import {
   prepareConfigFile,
@@ -107,14 +106,12 @@ export const hopeTheme =
         legacy
       ),
 
-      layouts: getLayoutConfig(app, plugins),
-
       templateBuild: path.resolve(
         __dirname,
         "../../templates/index.build.html"
       ),
 
-      clientConfigFile: (app) => prepareConfigFile(app, status),
+      clientConfigFile: (app) => prepareConfigFile(app, plugins, status),
     };
   };
 

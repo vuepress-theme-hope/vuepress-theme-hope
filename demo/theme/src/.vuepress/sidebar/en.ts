@@ -4,7 +4,7 @@ export const en = sidebar({
   "/": [
     "",
     "home",
-    "slide",
+    "slides",
     {
       icon: "creative",
       text: "Guide",

@@ -3,6 +3,7 @@ import { getDirname, path } from "@vuepress/utils";
 
 import type { App } from "@vuepress/core";
 import type { ThemeStatus } from "../status.js";
+import type { HopeThemePluginsOptions } from "../../shared/index.js";
 
 const __dirname = getDirname(import.meta.url);
 const CLIENT_FOLDER = ensureEndingSlash(
@@ -11,11 +12,13 @@ const CLIENT_FOLDER = ensureEndingSlash(
 
 export const prepareConfigFile = (
   app: App,
+  plugins: HopeThemePluginsOptions,
   { enableBlog, enableEncrypt }: ThemeStatus
 ): Promise<string> => {
   let configImport = "";
   let enhance = "";
   let setup = "";
+  let layout = "";
 
   if (enableBlog) {
     configImport += `
@@ -32,7 +35,7 @@ app.component("BlogHome", BlogHome);
 app.component("BlogPage", BlogPage);
 `;
 
-    setup += `setupBlog();\n`;
+    setup += "setupBlog();\n";
   }
 
   if (enableEncrypt) {
@@ -46,6 +49,19 @@ app.component("LocalEncrypt", LocalEncrypt);
 `;
   }
 
+  if (
+    plugins.mdEnhance &&
+    (plugins.mdEnhance.enableAll || plugins.mdEnhance.presentation)
+  ) {
+    configImport += `import Slide from "${CLIENT_FOLDER}layouts/Slide.js";\n`;
+    layout += "Slide,\n";
+  }
+
+  if (plugins.blog) {
+    configImport += `import Blog from "${CLIENT_FOLDER}modules/blog/layouts/Blog.js";\n`;
+    layout += "Blog,\n";
+  }
+
   return app.writeTemp(
     `theme-hope/config.js`,
     `import { defineClientConfig } from "@vuepress/client";
@@ -55,6 +71,8 @@ import HomePage from "@theme-hope/components/HomePage.js";
 import NormalPage from "@theme-hope/components/NormalPage.js";
 import Navbar from "@theme-hope/modules/navbar/components/Navbar.js";
 import Sidebar from "@theme-hope/modules/sidebar/components/Sidebar.js";
+import Layout from "${CLIENT_FOLDER}layouts/Layout.js";
+import NotFound from "${CLIENT_FOLDER}layouts/NotFound.js";
 
 import { useScrollPromise } from "@theme-hope/composables/index.js";
 import { injectDarkMode, setupDarkMode } from "@theme-hope/modules/outlook/composables/index.js";
@@ -97,6 +115,14 @@ ${setup
   .map((item) => `    ${item}`)
   .join("\n")}
   },
+  layouts: {
+    Layout,
+    NotFound,
+${layout
+  .split("\n")
+  .map((item) => `    ${item}`)
+  .join("\n")}
+  }
 });`
   );
 };

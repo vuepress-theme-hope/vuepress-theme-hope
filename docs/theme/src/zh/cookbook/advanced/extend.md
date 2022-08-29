@@ -20,7 +20,7 @@ tag:
 
 在你的入口文件中，设置 `extends: hopeTheme(options)` 声明继承 `vuepress-theme-hope` 主题。
 
-你自己新创建的主题的同名别名 (`alias`) 和 同名布局 (`layouts`) 的优先级高于被继承主题 `vuepress-theme-hope`，这意味着你可以通过 `alias` 覆盖 `vuepress-theme-hope` 主题的组件，并通过 `layouts` 覆盖或新增 `vuepress-theme-hope` 提供的布局。
+你自己新创建的主题的同名别名 (`alias`) 和 同名布局 (`layouts`) 的优先级高于被继承主题 `vuepress-theme-hope`，这意味着你可以通过 `alias` 覆盖 `vuepress-theme-hope` 主题的组件
 
 ::: code-tabs#language
 
@@ -45,14 +45,6 @@ export default {
       "./components/HomePage.vue"
     ),
   },
-
-  layouts: {
-    // 你可以在这里覆盖或新增布局
-    // 比如这里我们将 vuepress-theme-hope 的默认布局改为自己主题下的 layouts/Layout.vue
-    Layout: path.resolve(__dirname, "layouts/Layout.vue"),
-    // 同时我们新增了一个 Changelog 布局
-    Changelog: path.resolve(__dirname, "layouts/Changelog.vue"),
-  },
 };
 ```
 
@@ -76,15 +68,49 @@ export default {
       "./components/HomePage.vue"
     ),
   },
-
-  layouts: {
-    // 你可以在这里覆盖或新增布局
-    // 比如这里我们将 vuepress-theme-hope 的默认布局改为自己主题下的 layouts/Layout.vue
-    Layout: path.resolve(__dirname, "layouts/Layout.vue"),
-    // 同时我们新增了一个 Changelog 布局
-    Changelog: path.resolve(__dirname, "layouts/Changelog.vue"),
-  },
 };
 ```
 
 :::
+
+你也可以通过主题客户端文件的 `layouts` 覆盖或新增 `vuepress-theme-hope` 提供的布局。
+
+::: code-tabs#language
+
+@tab TS
+
+```ts
+// .vuepress/theme/config.ts
+import { defineClientConfig } from "@vuepress/client";
+import Changelog from "./layouts/Changelog.vue";
+import Layout from "./layouts/Layout.vue";
+
+export default defineClientConfig({
+  // 你可以在这里覆盖或新增布局
+  layouts: {
+    // 比如这里我们将 vuepress-theme-hope 的默认布局改为自己主题下的 layouts/Layout.vue
+    Layout,
+    // 同时我们新增了一个 Changelog 布局
+    Changelog,
+  },
+});
+```
+
+@tab JS
+
+```js
+// .vuepress/theme/config.js
+import { defineClientConfig } from "@vuepress/client";
+import Changelog from "./layouts/Changelog.vue";
+import Layout from "./layouts/Layout.vue";
+
+export default defineClientConfig({
+  // 你可以在这里覆盖或新增布局
+  layouts: {
+    // 比如这里我们将 vuepress-theme-hope 的默认布局改为自己主题下的 layouts/Layout.vue
+    Layout,
+    // 同时我们新增了一个 Changelog 布局
+    Changelog,
+  },
+});
+```

@@ -10,6 +10,7 @@ import {
 import TOC from "@theme-hope/modules/info/components/TOC.js";
 
 import type { VNode } from "vue";
+import type { PageHeader } from "@vuepress/shared";
 
 import "../styles/timeline-items.scss";
 
@@ -42,7 +43,7 @@ export default defineComponent({
         { class: "timeline-wrapper" },
         h("ul", { class: "timeline-content" }, [
           h(DropTransition, () => h("li", { class: "motto" }, hint.value)),
-          h(TOC, { items: items.value }),
+          h(TOC, { items: items.value as unknown as PageHeader[] }),
           ...timelines.value.config.map(({ year, items }, index) =>
             h(
               DropTransition,
