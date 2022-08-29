@@ -35,6 +35,8 @@ import type {
   CopyCodeLocaleConfig,
 } from "../../shared/index.js";
 
+import "vuepress-shared/lib/client/styles/message.scss";
+
 declare const CODE_COPY_OPTIONS: Required<CopyCodeOptions>;
 declare const CODE_COPY_LOCALES: CopyCodeLocaleConfig;
 
