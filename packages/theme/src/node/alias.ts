@@ -49,7 +49,6 @@ export const resolveAlias = (isDebug: boolean): Record<string, string> => {
           ),
       ])
       .flat(),
-    ["bcrypt-ts", "bcrypt-ts/browser"],
   ]);
 
   if (isDebug) console.log("Theme alias config:", alias);
