@@ -13,7 +13,7 @@ Waline server address url
 ## emoji
 
 - Type: `(string | WalineEmojiInfo)[] | false`
-- Default: `['//unpkg.com/@waline/emojis@1.0.1/weibo']`
+- Default: `['//unpkg.com/@waline/emojis@1.1.0/weibo']`
 
 Emoji settings, for details see [Custom Emoji](https://waline.js.org/en/guide/client/emoji.html)
 
