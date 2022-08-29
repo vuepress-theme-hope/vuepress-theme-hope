@@ -2,8 +2,8 @@ import { existsSync, writeFileSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import inquirer from "inquirer";
 
-import { getNextVersion, PackageManager } from "./utils/index.js";
-import { deepAssign } from "./utils/deepAssign.js";
+import { version } from "./config/index.js";
+import { deepAssign } from "./utils/index.js";
 
 import type { CreateI18n } from "./config/index.js";
 
@@ -16,21 +16,7 @@ const getScript = (dir: string): Record<string, string> => ({
   "docs:dev": `vuepress dev ${dir}`,
 });
 
-const getDevDependencies = async (
-  packageManager: PackageManager,
-  deps: string[]
-): Promise<Record<string, string>> =>
-  Object.fromEntries(
-    await Promise.all(
-      deps.map<Promise<[string, string]>>(async (dep) => [
-        dep,
-        `^${await getNextVersion(packageManager, dep)}`,
-      ])
-    )
-  );
-
 export const createPackageJson = async (
-  packageManager: PackageManager,
   dir: string,
   message: CreateI18n
 ): Promise<void> => {
@@ -40,12 +26,12 @@ export const createPackageJson = async (
 
   const packageJsonPath = resolve(process.cwd(), "package.json");
   const scripts = getScript(dir);
-  const devDependencies = await getDevDependencies(packageManager, [
-    "@vuepress/client",
-    "vue",
-    "vuepress",
-    "vuepress-theme-hope",
-  ]);
+  const devDependencies = {
+    "@vuepress/client": "2.0.0-beta.51",
+    vue: "^3.2.27",
+    vuepress: "2.0.0-beta.51",
+    "vuepress-theme-hope": version,
+  };
 
   if (existsSync(packageJsonPath)) {
     console.log(message.updatePackage);

@@ -1,17 +1,12 @@
 #!/usr/bin/env node
-import { createRequire } from "node:module";
 import { cac } from "cac";
 import { execaCommand, execaCommandSync } from "execa";
 import inquirer from "inquirer";
 
-import { getLanguage, generateTemplate } from "./config/index.js";
+import { getLanguage, generateTemplate, version } from "./config/index.js";
 import { createPackageJson } from "./packageJson.js";
 import { getRegistry } from "./registry.js";
 import { getPackageManager } from "./utils/index.js";
-
-const { version } = <Record<string, unknown>>(
-  createRequire(import.meta.url)("create-vuepress-theme-hope/package.json")
-);
 
 const cli = cac("vuepress-theme-hope");
 
@@ -36,7 +31,7 @@ cli
 
     console.log(message.getVersion);
 
-    await createPackageJson(packageManager, dir, message);
+    await createPackageJson(dir, message);
 
     await generateTemplate(packageManager, dir, lang, message);
 
@@ -87,6 +82,6 @@ cli.help(() => [
   },
 ]);
 
-cli.version(<string>version);
+cli.version(version);
 
 cli.parse();
