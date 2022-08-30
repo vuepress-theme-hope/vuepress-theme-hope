@@ -561,7 +561,7 @@ importers:
       '@vuepress/client': 2.0.0-beta.51
       '@vuepress/utils': 2.0.0-beta.51
       docs-shared: workspace:*
-      katex: 0.16.0
+      katex: 0.16.2
       sass-loader: 13.0.2
       vue: 3.2.37
       vuepress-plugin-md-enhance: workspace:*
@@ -572,7 +572,7 @@ importers:
       '@vuepress/client': 2.0.0-beta.51
       '@vuepress/utils': 2.0.0-beta.51
       docs-shared: link:../shared
-      katex: 0.16.0
+      katex: 0.16.2
       sass-loader: 13.0.2
       vue: 3.2.37
       vuepress-plugin-md-enhance: link:../../packages/md-enhance
@@ -734,7 +734,7 @@ importers:
       '@vuepress/utils': 2.0.0-beta.51
       axios: 0.27.2
       docs-shared: workspace:*
-      katex: 0.16.0
+      katex: 0.16.2
       sass-loader: 13.0.2
       vue: 3.2.37
       vuepress-shared: workspace:*
@@ -747,7 +747,7 @@ importers:
       '@vuepress/utils': 2.0.0-beta.51
       axios: 0.27.2
       docs-shared: link:../shared
-      katex: 0.16.0
+      katex: 0.16.2
       sass-loader: 13.0.2
       vue: 3.2.37
       vuepress-shared: link:../../packages/shared
@@ -8438,13 +8438,6 @@ packages:
   /jsonpointer/5.0.1:
     resolution: {integrity: sha512-p/nXbhSEcu3pZRdkW1OfJhpsVtW1gd4Wa1fnQc9YLiTfAjn0312eMKimbdIQzuZl9aa9xUGaRlP9T/CJE/ditQ==}
     engines: {node: '>=0.10.0'}
-
-  /katex/0.16.0:
-    resolution: {integrity: sha512-wPRB4iUPysfH97wTgG5/tRLYxmKVq6Q4jRAWRVOUxXB1dsiv4cvcNjqabHkrOvJHM1Bpk3WrgmllSO1vIvP24w==}
-    hasBin: true
-    dependencies:
-      commander: 8.3.0
-    dev: false
 
   /katex/0.16.2:
     resolution: {integrity: sha512-70DJdQAyh9EMsthw3AaQlDyFf54X7nWEUIa5W+rq8XOpEk//w5Th7/8SqFqpvi/KZ2t6MHUj4f9wLmztBmAYQA==}
