@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.96](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.95...v2.0.0-beta.96) (2022-08-30)
+
+### Features
+
+- **create:** do not request package from registry ([6fa14e1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6fa14e1898f6f3b7f1b2e36651df464e7d3303de))
+- **shared:** improve message utils ([470dee9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/470dee934042921574590e93360698ed33bf5de8))
+
+### Bug Fixes
+
+- **theme:** stop using alisa for bcrypt-ts ([cc4e533](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cc4e533b6f9e4176f559b907f36c99de68a43d40))
+
 ## [2.0.0-beta.95](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.94...v2.0.0-beta.95) (2022-08-29)
 
 ### Features
