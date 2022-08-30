@@ -15,7 +15,7 @@ importers:
 
   .:
     specifiers:
-      '@commitlint/cli': 17.1.1
+      '@commitlint/cli': 17.1.2
       '@commitlint/config-conventional': 17.1.0
       '@rollup/plugin-commonjs': 22.0.2
       '@rollup/plugin-json': 4.1.0
@@ -63,7 +63,7 @@ importers:
       typescript: 4.7.4
       vitest: 0.22.1
     devDependencies:
-      '@commitlint/cli': 17.1.1
+      '@commitlint/cli': 17.1.2
       '@commitlint/config-conventional': 17.1.0
       '@rollup/plugin-commonjs': 22.0.2_rollup@2.78.1
       '@rollup/plugin-json': 4.1.0_rollup@2.78.1
@@ -2411,8 +2411,8 @@ packages:
     resolution: {integrity: sha512-mgmE7XBYY/21erpzhexk4Cj1cyTQ9LzvnTxtzM17BJ7ERMNE6W72mQRo0I1Ud8eFJ+RVVIcBNhLFZ3GX4XFz5w==}
     dev: false
 
-  /@commitlint/cli/17.1.1:
-    resolution: {integrity: sha512-xyQJNJs1j18At5wSBF6bMo1on6ZrpcHUr4duacznPU0RnywCAABDBP1s63BmhkTMdNXLVgVM4J1H2sG0HSS3IA==}
+  /@commitlint/cli/17.1.2:
+    resolution: {integrity: sha512-h/4Hlka3bvCLbnxf0Er2ri5A44VMlbMSkdTRp8Adv2tRiklSTRIoPGs7OEXDv3EoDs2AAzILiPookgM4Gi7LOw==}
     engines: {node: '>=v14'}
     hasBin: true
     dependencies:
@@ -3112,7 +3112,7 @@ packages:
     dependencies:
       '@types/http-cache-semantics': 4.0.1
       '@types/keyv': 3.1.4
-      '@types/node': 18.7.13
+      '@types/node': 18.7.14
       '@types/responselike': 1.0.0
     dev: true
 
@@ -3182,7 +3182,7 @@ packages:
   /@types/fs-extra/8.1.2:
     resolution: {integrity: sha512-SvSrYXfWSc7R4eqnOzbQF4TZmfpNSM9FrSWLU3EUnWBuyZqNBOrv1B1JA3byUDPUl9z4Ab3jeZG2eDdySlgNMg==}
     dependencies:
-      '@types/node': 18.7.13
+      '@types/node': 18.7.14
     dev: true
 
   /@types/fs-extra/9.0.13:
@@ -3194,7 +3194,7 @@ packages:
     resolution: {integrity: sha512-ZUxbzKl0IfJILTS6t7ip5fQQM/J3TJYubDm3nMbgubNNYS62eXeUpoLUC8/7fJNiFYHTrGPQn7hspDUzIHX3UA==}
     dependencies:
       '@types/minimatch': 5.1.1
-      '@types/node': 18.7.13
+      '@types/node': 18.7.14
     dev: true
 
   /@types/hash-sum/1.0.0:
@@ -3237,7 +3237,7 @@ packages:
   /@types/keyv/3.1.4:
     resolution: {integrity: sha512-BQ5aZNSCpj7D6K2ksrRCTmKRLEpnPvWDiLPfoGyhZ++8YtiK9d/3DBKPJgry359X/P1PfruyYwvnvwFjuEiEIg==}
     dependencies:
-      '@types/node': 18.7.13
+      '@types/node': 18.7.14
     dev: true
 
   /@types/linkify-it/3.0.2:
@@ -3310,7 +3310,7 @@ packages:
   /@types/responselike/1.0.0:
     resolution: {integrity: sha512-85Y2BjiufFzaMIlvJDvTTB8Fxl2xfLo4HgmHzVBz08w4wDePCTjYw66PdrolO0kzli3yam/YCgRufyo1DdQVTA==}
     dependencies:
-      '@types/node': 18.7.13
+      '@types/node': 18.7.14
     dev: true
 
   /@types/retry/0.12.0:
