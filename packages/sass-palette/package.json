@@ -52,7 +52,7 @@
   "dependencies": {
     "@vuepress/utils": "2.0.0-beta.51",
     "chokidar": "^3.5.3",
-    "sass": "^1.54.5",
+    "sass": "^1.54.6",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
