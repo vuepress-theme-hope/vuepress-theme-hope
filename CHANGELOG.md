@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.97](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.96...v2.0.0-beta.97) (2022-09-01)
+
+### Bug Fixes
+
+- mark vuepress-shared noExternal ([5450a9b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5450a9b8c580959e9885b71439cd4e6fc1832b05))
+
 ## [2.0.0-beta.96](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.95...v2.0.0-beta.96) (2022-08-30)
 
 ### Features
