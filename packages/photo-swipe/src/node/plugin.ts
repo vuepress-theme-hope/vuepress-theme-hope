@@ -1,6 +1,6 @@
 import { getDirname, path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
-import { getLocales } from "vuepress-shared";
+import { addViteSsrNoExternal, getLocales } from "vuepress-shared";
 
 import { photoSwipeLocales } from "./locales.js";
 import { logger } from "./utils.js";
@@ -44,6 +44,10 @@ export const photoSwipePlugin =
         ),
         PHOTO_SWIPE_OPTIONS: options.options || {},
       }),
+
+      extendsBundlerOptions: (config: unknown, app): void => {
+        addViteSsrNoExternal({ app, config }, "vuepress-shared");
+      },
 
       clientConfigFile: path.resolve(__dirname, "../client/config.js"),
     };

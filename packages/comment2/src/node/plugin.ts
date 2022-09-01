@@ -3,6 +3,7 @@ import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   addCustomElement,
   addViteSsrExternal,
+  addViteSsrNoExternal,
   addViteOptimizeDepsExclude,
   addViteOptimizeDepsInclude,
   getLocales,
@@ -72,6 +73,7 @@ export const commentPlugin =
         if (provider === "Waline") {
           addViteOptimizeDepsInclude({ app, config }, "autosize");
           addViteOptimizeDepsExclude({ app, config }, "@waline/client");
+          addViteSsrNoExternal({ app, config }, "vuepress-shared");
         }
 
         if (provider === "Twikoo") {

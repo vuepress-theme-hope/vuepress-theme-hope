@@ -5,6 +5,7 @@ import {
   addViteOptimizeDepsExclude,
   addViteOptimizeDepsInclude,
   addViteSsrExternal,
+  addViteSsrNoExternal,
   getLocales,
 } from "vuepress-shared";
 
@@ -153,6 +154,8 @@ export const mdEnhancePlugin =
       },
 
       extendsBundlerOptions: (config: unknown, app): void => {
+        addViteSsrNoExternal({ app, config }, "vuepress-shared");
+
         if (katexOptions.output !== "html")
           addCustomElement({ app, config }, MATHML_TAGS);
 
