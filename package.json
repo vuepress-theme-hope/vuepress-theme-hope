@@ -65,7 +65,7 @@
     "@commitlint/config-conventional": "17.1.0",
     "@rollup/plugin-commonjs": "22.0.2",
     "@rollup/plugin-json": "4.1.0",
-    "@rollup/plugin-node-resolve": "13.3.0",
+    "@rollup/plugin-node-resolve": "14.0.0",
     "@rollup/plugin-typescript": "8.4.0",
     "@types/inquirer": "9.0.1",
     "@types/node": "18.7.14",

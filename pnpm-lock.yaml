@@ -19,7 +19,7 @@ importers:
       '@commitlint/config-conventional': 17.1.0
       '@rollup/plugin-commonjs': 22.0.2
       '@rollup/plugin-json': 4.1.0
-      '@rollup/plugin-node-resolve': 13.3.0
+      '@rollup/plugin-node-resolve': 14.0.0
       '@rollup/plugin-typescript': 8.4.0
       '@types/inquirer': 9.0.1
       '@types/node': 18.7.14
@@ -67,7 +67,7 @@ importers:
       '@commitlint/config-conventional': 17.1.0
       '@rollup/plugin-commonjs': 22.0.2_rollup@2.79.0
       '@rollup/plugin-json': 4.1.0_rollup@2.79.0
-      '@rollup/plugin-node-resolve': 13.3.0_rollup@2.79.0
+      '@rollup/plugin-node-resolve': 14.0.0_rollup@2.79.0
       '@rollup/plugin-typescript': 8.4.0_ppxule2mhlgb6ds3e4gxjflaqy
       '@types/inquirer': 9.0.1
       '@types/node': 18.7.14
@@ -2973,11 +2973,11 @@ packages:
       resolve: 1.22.1
       rollup: 2.78.1
 
-  /@rollup/plugin-node-resolve/13.3.0_rollup@2.79.0:
-    resolution: {integrity: sha512-Lus8rbUo1eEcnS4yTFKLZrVumLPY+YayBdWXgFSHYhTT2iJbMhoaaBL3xl5NCdeRytErGr8tZ0L71BMRmnlwSw==}
+  /@rollup/plugin-node-resolve/14.0.0_rollup@2.79.0:
+    resolution: {integrity: sha512-XkWfpgp/zGiFu8LS+JAiQeZN4oYYA4/ViFJiZhwQegTg5ZbzKTvM9YyKXVBNnmZ8Et76WnlVgwRUu1rhKF4ayw==}
     engines: {node: '>= 10.0.0'}
     peerDependencies:
-      rollup: ^2.42.0
+      rollup: ^2.78.0
     dependencies:
       '@rollup/pluginutils': 3.1.0_rollup@2.79.0
       '@types/resolve': 1.17.1
