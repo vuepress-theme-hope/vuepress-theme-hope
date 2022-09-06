@@ -20,7 +20,7 @@ importers:
       '@rollup/plugin-commonjs': 22.0.2
       '@rollup/plugin-json': 4.1.0
       '@rollup/plugin-node-resolve': 13.3.0
-      '@rollup/plugin-typescript': 8.4.0
+      '@rollup/plugin-typescript': 8.5.0
       '@types/inquirer': 9.0.1
       '@types/node': 18.7.14
       '@typescript-eslint/eslint-plugin': 5.36.1
@@ -68,7 +68,7 @@ importers:
       '@rollup/plugin-commonjs': 22.0.2_rollup@2.79.0
       '@rollup/plugin-json': 4.1.0_rollup@2.79.0
       '@rollup/plugin-node-resolve': 13.3.0_rollup@2.79.0
-      '@rollup/plugin-typescript': 8.4.0_ppxule2mhlgb6ds3e4gxjflaqy
+      '@rollup/plugin-typescript': 8.5.0_ppxule2mhlgb6ds3e4gxjflaqy
       '@types/inquirer': 9.0.1
       '@types/node': 18.7.14
       '@typescript-eslint/eslint-plugin': 5.36.1_uoznksvaqimddkvahx6c3yyzku
@@ -2997,8 +2997,8 @@ packages:
       magic-string: 0.25.9
       rollup: 2.78.1
 
-  /@rollup/plugin-typescript/8.4.0_ppxule2mhlgb6ds3e4gxjflaqy:
-    resolution: {integrity: sha512-QssfoOP6V4/6skX12EfOW5UzJAv/c334F4OJWmQpe2kg3agEa0JwVCckwmfuvEgDixyX+XyxjFenH7M2rDKUyQ==}
+  /@rollup/plugin-typescript/8.5.0_ppxule2mhlgb6ds3e4gxjflaqy:
+    resolution: {integrity: sha512-wMv1/scv0m/rXx21wD2IsBbJFba8wGF3ErJIr6IKRfRj49S85Lszbxb4DCo8iILpluTjk2GAAu9CoZt4G3ppgQ==}
     engines: {node: '>=8.0.0'}
     peerDependencies:
       rollup: ^2.14.0
