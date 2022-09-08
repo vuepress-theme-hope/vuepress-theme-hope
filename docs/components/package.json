@@ -21,7 +21,7 @@
     "@vuepress/client": "2.0.0-beta.51",
     "docs-shared": "workspace:*",
     "sass-loader": "13.0.2",
-    "vue": "3.2.38",
+    "vue": "3.2.39",
     "vuepress-plugin-components": "workspace:*",
     "vuepress-vite": "2.0.0-beta.51",
     "vuepress-webpack": "2.0.0-beta.51"
