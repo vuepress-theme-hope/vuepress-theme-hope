@@ -23,44 +23,44 @@ export const prepareConfigFile = async (
       : options.enableAll || false;
 
   if (getStatus("chart")) {
-    configImport += `import ChartJS from "${CLIENT_FOLDER}components/ChartJS";\n`;
+    configImport += `import ChartJS from "${CLIENT_FOLDER}components/ChartJS.js";\n`;
     enhance += `app.component("ChartJS", ChartJS);\n`;
   }
 
   if (getStatus("echarts")) {
-    configImport += `import ECharts from "${CLIENT_FOLDER}components/ECharts";\n`;
+    configImport += `import ECharts from "${CLIENT_FOLDER}components/ECharts.js";\n`;
     enhance += `app.component("ECharts", ECharts);\n`;
   }
 
   if (getStatus("demo")) {
-    configImport += `import CodeDemo from "${CLIENT_FOLDER}components/CodeDemo";\n`;
+    configImport += `import CodeDemo from "${CLIENT_FOLDER}components/CodeDemo.js";\n`;
     enhance += `app.component("CodeDemo", CodeDemo);\n`;
   }
 
   if (getStatus("codetabs")) {
-    configImport += `import CodeTabs from "${CLIENT_FOLDER}components/CodeTabs";\n`;
+    configImport += `import CodeTabs from "${CLIENT_FOLDER}components/CodeTabs.js";\n`;
     enhance += `app.component("CodeTabs", CodeTabs);\n`;
 
     // TODO: Remove it in v2 stable
     if (legacy) {
-      configImport += `import { CodeGroup, CodeGroupItem } from "${CLIENT_FOLDER}compact";\n`;
+      configImport += `import { CodeGroup, CodeGroupItem } from "${CLIENT_FOLDER}compact/index.js";\n`;
       enhance += `app.component("CodeGroup", CodeGroup);\n`;
       enhance += `app.component("CodeGroupItem", CodeGroupItem);\n`;
     }
   }
 
   if (getStatus("flowchart")) {
-    configImport += `import FlowChart from "${CLIENT_FOLDER}components/FlowChart";\n`;
+    configImport += `import FlowChart from "${CLIENT_FOLDER}components/FlowChart.js";\n`;
     enhance += `app.component("FlowChart", FlowChart);\n`;
   }
 
   if (getStatus("mermaid")) {
-    configImport += `import Mermaid from "${CLIENT_FOLDER}components/Mermaid";\n`;
+    configImport += `import Mermaid from "${CLIENT_FOLDER}components/Mermaid.js";\n`;
     enhance += `app.component("Mermaid", Mermaid);\n`;
   }
 
   if (getStatus("presentation")) {
-    configImport += `import Presentation from "${CLIENT_FOLDER}components/Presentation";\n`;
+    configImport += `import Presentation from "${CLIENT_FOLDER}components/Presentation.js";\n`;
     enhance += `app.component("Presentation", Presentation);\n`;
   }
 
@@ -74,7 +74,7 @@ export const prepareConfigFile = async (
     configImport += `import "${CLIENT_FOLDER}styles/image-mark.scss";\n`;
 
   if (getStatus("tabs")) {
-    configImport += `import Tabs from "${CLIENT_FOLDER}components/Tabs";\n`;
+    configImport += `import Tabs from "${CLIENT_FOLDER}components/Tabs.js";\n`;
     enhance += `app.component("Tabs", Tabs);\n`;
   }
 

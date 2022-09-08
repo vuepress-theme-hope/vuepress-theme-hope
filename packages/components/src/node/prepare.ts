@@ -67,7 +67,7 @@ export const prepareConfigFile = (
 
   options.components.forEach((item) => {
     if (availableComponents.includes(item)) {
-      configImport += `import ${item} from "${CLIENT_FOLDER}components/${item}";\n`;
+      configImport += `import ${item} from "${CLIENT_FOLDER}components/${item}.js";\n`;
       enhance += `app.component("${item}", ${item});\n`;
     }
 
@@ -95,7 +95,7 @@ export const prepareConfigFile = (
 
   if (options.backToTop) {
     shouldImportH = true;
-    configImport += `import BackToTop from "${CLIENT_FOLDER}components/BackToTop";\n`;
+    configImport += `import BackToTop from "${CLIENT_FOLDER}components/BackToTop.js";\n`;
     rootComponents += `() => h(BackToTop, { threshold: ${
       typeof options.backToTop === "number" ? options.backToTop : 300
     } }),\n`;
