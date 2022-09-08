@@ -1,5 +1,5 @@
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
-import { getLocales } from "vuepress-shared";
+import { addViteSsrNoExternal, getLocales } from "vuepress-shared";
 
 import { backToTopLocales } from "./locales.js";
 import { prepareConfigFile } from "./prepare.js";
@@ -29,6 +29,10 @@ export const componentsPlugin =
           typeof options.iconPrefix === "string"
             ? options.iconPrefix
             : getIconPrefix(options.iconAssets),
+      },
+
+      extendsBundlerOptions: (config: unknown, app): void => {
+        addViteSsrNoExternal({ app, config }, "vuepress-shared");
       },
 
       clientConfigFile: (app) => prepareConfigFile(app, options),

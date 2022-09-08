@@ -42,9 +42,7 @@ export default defineComponent({
 
       void Promise.all([
         import("twikoo"),
-        new Promise<void>((resolve) => {
-          setTimeout(resolve, twikooOption.delay);
-        }),
+        new Promise<void>((resolve) => setTimeout(resolve, twikooOption.delay)),
       ]).then(([{ init }]) => {
         if (timeID === id)
           void init({

@@ -419,6 +419,7 @@ merge release
 
 ::: details Code
 
+````md
 ```git-graph
 commit
 branch hotfix
@@ -462,6 +463,7 @@ merge main
 checkout develop
 merge release
 ```
+````
 
 :::
 
