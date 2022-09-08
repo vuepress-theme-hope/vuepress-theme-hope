@@ -92,10 +92,9 @@ export default defineComponent({
       emitMetadata: "0",
     }));
 
-    onMounted(() => {
-      void import("giscus").then(() => {
-        loaded.value = true;
-      });
+    onMounted(async () => {
+      await import("giscus");
+      loaded.value = true;
     });
 
     return (): VNode =>
