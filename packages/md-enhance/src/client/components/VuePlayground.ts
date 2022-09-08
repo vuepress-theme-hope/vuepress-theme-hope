@@ -11,7 +11,7 @@ import "@vue/repl/style.css";
 import "../styles/vue-playground.scss";
 
 export default defineComponent({
-  name: "InternalPlayground",
+  name: "VuePlayground",
 
   props: {
     title: { type: String, default: "" },
