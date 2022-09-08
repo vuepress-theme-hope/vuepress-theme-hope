@@ -1,0 +1,102 @@
+// Vitest Snapshot v1
+
+exports[`playground > Should resolve playground info 1`] = `
+{
+  "files": {
+    "App.vue": {
+      "content": "<script setup>
+import { ref } from 'vue'
+const msg = ref('Hello World!')
+</script>
+<template>
+  <h1>{{ msg }}</h1>
+  <input v-model=\\"msg\\" />
+</template>
+",
+      "lang": "vue",
+    },
+    "Comp.vue": {
+      "content": "<template>
+  <div>Comp</div>
+</template>
+",
+      "lang": "vue",
+    },
+    "import-map.json": {
+      "content": "{
+  \\"imports\\": {
+    \\"vue\\": \\"https://sfc.vuejs.org/vue.runtime.esm-browser.js\\"
+  }
+}
+",
+      "lang": "json",
+    },
+  },
+  "key": "62b3bf5a",
+  "title": "Playground%20demo",
+}
+`;
+
+exports[`playground > Should resolve playground info with settings 1`] = `
+{
+  "files": {
+    "App.vue": {
+      "content": "<script setup>
+import { ref } from 'vue'
+const msg = ref('Hello World!')
+</script>
+<template>
+  <h1>{{ msg }}</h1>
+  <input v-model=\\"msg\\" />
+</template>
+",
+      "lang": "vue",
+    },
+    "Comp.vue": {
+      "content": "<template>
+  <div>Comp</div>
+</template>
+",
+      "lang": "vue",
+    },
+  },
+  "key": "1877a7d0",
+  "settings": {
+    "service": "https://element-plus.run/",
+  },
+  "title": "Playground%20demo2",
+}
+`;
+
+exports[`playground > Should resolve playground info with settings 2`] = `
+{
+  "files": {
+    "App.vue": {
+      "content": "<script setup>
+import { ref } from 'vue'
+const msg = ref('Hello World!')
+</script>
+<template>
+  <h1>{{ msg }}</h1>
+  <input v-model=\\"msg\\" />
+</template>
+",
+      "lang": "vue",
+    },
+    "import-map.json": {
+      "content": "{
+  \\"imports\\": {
+    \\"vue\\": \\"https://sfc.vuejs.org/vue.runtime.esm-browser.js\\"
+  }
+}
+",
+      "lang": "json",
+    },
+  },
+  "key": "1877a7d0",
+  "settings": {
+    "service": "https://element-plus.run/",
+  },
+  "title": "Playground%20demo2",
+}
+`;

@@ -6,6 +6,7 @@ import {
   addViteOptimizeDepsInclude,
   addViteSsrExternal,
   addViteSsrNoExternal,
+  deepAssign,
   getLocales,
 } from "vuepress-shared";
 
@@ -21,6 +22,7 @@ import {
 import { markdownEnhanceLocales } from "./locales.js";
 import {
   CODE_DEMO_DEFAULT_SETTING,
+  DEFAULT_VUE_PLAYGROUND_OPTIONS,
   align,
   attrs,
   chart,
@@ -37,6 +39,7 @@ import {
   mark,
   mermaid,
   normalDemo,
+  playground,
   presentation,
   reactDemo,
   stylize,
@@ -46,6 +49,7 @@ import {
   tasklist,
   vPre,
   vueDemo,
+  vuePlayground,
 } from "./markdown-it/index.js";
 import { prepareConfigFile, prepareRevealPluginFile } from "./prepare.js";
 import { MATHML_TAGS } from "./utils.js";
@@ -100,6 +104,7 @@ export const mdEnhancePlugin =
     const mermaidEnable = getStatus("mermaid");
     const presentationEnable = getStatus("presentation");
     const texEnable = getStatus("tex");
+    const vuePlaygroundEnable = getStatus("vuePlayground");
 
     const shouldCheckLinks = getCheckLinksStatus(app, options);
 
@@ -142,6 +147,14 @@ export const mdEnhancePlugin =
           typeof options.presentation.revealConfig === "object"
             ? options.presentation.revealConfig
             : {},
+        VUE_PLAYGROUND_OPTIONS:
+          typeof options.vuePlayground === "object"
+            ? deepAssign(
+                {},
+                DEFAULT_VUE_PLAYGROUND_OPTIONS,
+                options.vuePlayground
+              )
+            : DEFAULT_VUE_PLAYGROUND_OPTIONS,
       }),
 
       alias: {
@@ -192,6 +205,13 @@ export const mdEnhancePlugin =
               (plugin) => `reveal.js/plugin/${plugin}/${plugin}.esm.js`
             ),
           ]);
+
+          addViteSsrExternal({ app, config }, "reveal.js");
+        }
+
+        if (vuePlaygroundEnable) {
+          addViteOptimizeDepsInclude({ app, config }, "@vue/repl");
+          addViteSsrExternal({ app, config }, "@vue/repl");
         }
       },
 
@@ -243,7 +263,7 @@ export const mdEnhancePlugin =
         if (flowchartEnable) {
           md.use(flowchart);
           // TODO: Remove it in v2 stable
-          md.use(legacyFlowchart);
+          if (legacy) md.use(legacyFlowchart);
         }
         if (chartEnable) md.use(chart);
         if (echartsEnable) md.use(echarts);
@@ -256,6 +276,12 @@ export const mdEnhancePlugin =
         }
         if (mermaidEnable) md.use(mermaid);
         if (presentationEnable) md.use(presentation);
+
+        if (Array.isArray(options.playground))
+          options.playground.forEach((item) => md.use(playground, item));
+        else if (typeof options.playground === "object")
+          md.use(playground, options.playground);
+        if (vuePlaygroundEnable) md.use(vuePlayground);
       },
 
       extendsPage: (page, app): void => {
