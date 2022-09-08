@@ -75,7 +75,7 @@
     "@vuepress/plugin-theme-data": "2.0.0-beta.51",
     "@vuepress/shared": "2.0.0-beta.51",
     "@vuepress/utils": "2.0.0-beta.51",
-    "@vueuse/core": "^9.1.1",
+    "@vueuse/core": "^9.2.0",
     "balloon-css": "^1.2.0",
     "bcrypt-ts": "^2.2.0",
     "vue": "^3.2.38",
