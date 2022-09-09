@@ -37,7 +37,7 @@ export default defineUserConfig({
     // 比如这里我们将主题的主页组件改为用户 .vuepress/components 下的 HomePage.vue
     "@theme-hope/components/HomePage.js": path.resolve(
       __dirname,
-      "./components/HomePage.vue"
+      "./components/HomePage.js"
     ),
   },
 });
@@ -61,10 +61,22 @@ export default {
     // 比如这里我们将主题的主页组件改为用户 .vuepress/components 下的 HomePage.vue
     "@theme-hope/components/HomePage.js": path.resolve(
       __dirname,
-      "./components/HomePage.vue"
+      "./components/HomePage.js"
     ),
   },
 };
+```
+
+:::
+
+::: tip
+
+如果你想使用 `vue` 文件，你可以创建一个简单的 wrapper:
+
+```js
+// wrapper.js
+import YouComponent from "./YouComponent.vue";
+export default YouComponent;
 ```
 
 :::
@@ -250,7 +262,7 @@ export default defineUserConfig({
     // 比如这里我们将主题的主页组件改为用户 .vuepress/components 下的 HomePage.vue
     "@theme-hope/components/HomePage.js": path.resolve(
       __dirname,
-      "./components/HomePage.vue"
+      "./components/HomePage.js"
     ),
   },
 });

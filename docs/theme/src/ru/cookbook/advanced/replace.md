@@ -36,7 +36,7 @@ export default defineUserConfig({
     // Например, здесь мы меняем компонент домашней страницы темы на HomePage.vue под пользователем .vuepress/components
     "@theme-hope/components/HomePage.js": path.resolve(
       __dirname,
-      "./components/HomePage.vue"
+      "./components/HomePage.js"
     ),
   },
 });
@@ -59,10 +59,22 @@ export default {
     // Например, здесь мы меняем компонент домашней страницы темы на HomePage.vue под пользователем .vuepress/components
     "@theme-hope/components/HomePage.js": path.resolve(
       __dirname,
-      "./components/HomePage.vue"
+      "./components/HomePage.js"
     ),
   },
 };
+```
+
+:::
+
+::: tip
+
+If you want to use `vue` files, you can make a simple js wrapper by writing:
+
+```js
+// wrapper.js
+import YouComponent from "./YouComponent.vue";
+export default YouComponent;
 ```
 
 :::
@@ -247,7 +259,7 @@ export default defineUserConfig({
     // Например, здесь мы меняем компонент домашней страницы темы на HomePage.vue под пользователем .vuepress/components
     "@theme-hope/components/HomePage.js": path.resolve(
       __dirname,
-      "./components/HomePage.vue"
+      "./components/HomePage.js"
     ),
   },
 });

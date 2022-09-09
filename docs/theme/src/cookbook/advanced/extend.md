@@ -37,10 +37,10 @@ export const localTheme = (options: HopeThemeOptions) => ({
 
   alias: {
     // You can override or add aliases here
-    // For example, here we change the vuepress-theme-hope HomePage component to components/HomePage.vue under our own theme
+    // For example, here we change the vuepress-theme-hope HomePage component to components/HomePage.js under our own theme
     "@theme-hope/components/HomePage.js": path.resolve(
       __dirname,
-      "./components/HomePage.vue"
+      "./components/HomePage.js"
     ),
   },
 });
@@ -60,13 +60,25 @@ export default (options) => ({
 
   alias: {
     // You can override or add aliases here
-    // For example, here we change the vuepress-theme-hope HomePage component to components/HomePage.vue under our own theme
+    // For example, here we change the vuepress-theme-hope HomePage component to components/HomePage.js under our own theme
     "@theme-hope/components/HomePage.js": path.resolve(
       __dirname,
-      "./components/HomePage.vue"
+      "./components/HomePage.js"
     ),
   },
 });
+```
+
+:::
+
+::: tip
+
+If you want to use `vue` files, you can make a simple js wrapper by writing:
+
+```js
+// wrapper.js
+import YouComponent from "./YouComponent.vue";
+export default YouComponent;
 ```
 
 :::
