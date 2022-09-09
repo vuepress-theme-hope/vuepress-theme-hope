@@ -7,4 +7,5 @@ export * from "./plugins.js";
 export * from "./stripTags.js";
 export * from "./utils/index.js";
 export * from "./vite/index.js";
+export * from "./webpack.js";
 export * from "../shared/index.js";
