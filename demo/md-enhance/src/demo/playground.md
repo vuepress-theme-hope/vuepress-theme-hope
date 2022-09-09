@@ -8,7 +8,7 @@ title: Playground Demo
 
 #### Customize imports
 
-::: vue-external-playground Playground demo
+::: vue-playground#external Playground demo
 
 @file App.vue
 
@@ -50,7 +50,7 @@ const msg = ref("Hello World!");
 
 #### Customize settings
 
-::: vue-external-playground Playground demo3
+::: vue-playground#external Playground demo3
 
 @file App.vue
 

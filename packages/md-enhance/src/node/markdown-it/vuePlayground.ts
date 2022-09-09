@@ -53,7 +53,7 @@ export const vuePlayground: PluginWithOptions<VuePlaygroundOptions> = (
   });
 
   md.use(playground, {
-    name: "vue-external-playground",
+    name: "vue-playground#external",
     openRender: (playgroundData: PlaygroundData) => {
       const optionsString = new URLSearchParams(
         Object.entries(
