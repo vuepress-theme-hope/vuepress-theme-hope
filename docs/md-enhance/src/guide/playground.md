@@ -21,7 +21,9 @@ export default {
   plugins: [
     mdEnhance({
       // playground config here
-      playground: true, // use default settings
+      playground: {
+        // your playground options here
+      },
     }),
   ],
 };
@@ -122,7 +124,7 @@ We can use `external` and `internal` mode.
 
 #### Basic usage
 
-::: playground Basic usage
+::: vue-playground Basic usage
 
 @file App.vue
 
@@ -144,7 +146,7 @@ const msg = ref("Hello World!");
 :::: details Code
 
 ````md
-::: playground Basic usage
+::: vue-playground Basic usage
 
 @file App.vue
 
@@ -174,7 +176,8 @@ This example shows you how to customize your playground.
 - Use your own import map
 - Apply extra options to your playground
 
-::: playground Advanced usage
+::: vue-playground Advanced usage
+
 @file App.vue
 
 ```vue

@@ -17,6 +17,7 @@ title: Get Started
 - [Mark](mark.md)
 - [Include files](include.md)
 - [Mermaid](mermaid.md)
+- [Playground](playground.md)
 - [Presentation](presentation.md)
 - [Subscript and Superscript](sup-sub.md)
 - [Tabs](tabs.md)

@@ -6,6 +6,7 @@ import {
   addViteOptimizeDepsInclude,
   addViteSsrExternal,
   addViteSsrNoExternal,
+  chainWebpack,
   deepAssign,
   getLocales,
 } from "vuepress-shared";
@@ -212,6 +213,12 @@ export const mdEnhancePlugin =
         if (vuePlaygroundEnable) {
           addViteOptimizeDepsInclude({ app, config }, "@vue/repl");
           addViteSsrExternal({ app, config }, "@vue/repl");
+
+          // hide webpack warnings
+          chainWebpack({ app, config }, (config) => {
+            config.module.set("exprContextCritical", false);
+            config.module.set("unknownContextCritical", false);
+          });
         }
       },
 
