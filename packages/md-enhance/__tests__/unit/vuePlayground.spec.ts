@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import MarkdownIt from "markdown-it";
 
-import { vuePlayground } from "../../src/node/markdown-it";
+import { vuePlayground } from "../../src/node/markdown-it/index.js";
 
 describe("Vue Playground", () => {
   const markdownIt = MarkdownIt({ linkify: true }).use(vuePlayground);
