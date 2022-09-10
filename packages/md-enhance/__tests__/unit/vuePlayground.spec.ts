@@ -50,7 +50,7 @@ const msg = ref('Hello World!')
     expect(
       markdownIt.render(
         `
-::: vue-playground#external Playground demo
+::: playground#vue Playground demo
 
 @file App.vue
 \`\`\`vue
@@ -132,7 +132,7 @@ const msg = ref('Hello World!')
     expect(
       markdownIt.render(
         `
-::: vue-playground#external Playground demo2
+::: playground#vue Playground demo2
 
 @file App.vue
 
@@ -216,7 +216,7 @@ const msg = ref('Hello World!')
     expect(
       markdownIt.render(
         `
-::: vue-playground#external Playground demo2
+::: playground#vue Playground demo2
 
 @file App.vue
 

@@ -57,6 +57,9 @@ export default defineUserConfig({
   plugins: [
     mdEnhancePlugin({
       enableAll: true,
+      playground: {
+        presets: ["ts", "vue"],
+      },
       presentation: {
         plugins: ["highlight", "math", "search", "notes", "zoom"],
       },

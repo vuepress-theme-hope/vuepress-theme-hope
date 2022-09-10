@@ -4,11 +4,49 @@ title: Playground Demo
 
 ## Demo
 
-### External mode
+### TS
+
+::: playground#ts TS demo 1
+
+@file index.ts
+
+```ts
+const msg = "hello world";
+
+const speak = (msg: string) => console.log(msg);
+
+speak(msg);
+```
+
+:::
+
+::: playground#ts TS demo 2
+
+@file index.ts
+
+```ts
+const msg = "hello world";
+
+const speak = (msg: string) => console.log(msg);
+
+speak(msg);
+```
+
+@settings
+
+```json
+{
+  "target": "es5"
+}
+```
+
+:::
+
+### Vue
 
 #### Customize imports
 
-::: vue-playground#external Playground demo
+::: playground#vue Vue demo
 
 @file App.vue
 
@@ -50,7 +88,7 @@ const msg = ref("Hello World!");
 
 #### Customize settings
 
-::: vue-playground#external Playground demo3
+::: playground#vue Vue demo 2
 
 @file App.vue
 
@@ -83,54 +121,6 @@ const msg = ref("Hello Playground!");
 {
   "service": "https://vue-sfc-playground.vercel.app/",
   "showOutput": true
-}
-```
-
-:::
-
-### Internal mode
-
-::: vue-playground Internal mode
-
-@file App.vue
-
-```vue
-<script setup>
-import { ref } from "vue";
-
-const msg = ref("Hello Playground!");
-</script>
-
-<template>
-  <h1>{{ msg }}</h1>
-  <input v-model="msg" />
-</template>
-```
-
-:::
-
-::: vue-playground Internal mode2 - show compile output
-
-@file App.vue
-
-```vue
-<script setup>
-import { ref } from "vue";
-
-const msg = ref("Hello Playground!");
-</script>
-
-<template>
-  <h1>{{ msg }}</h1>
-  <input v-model="msg" />
-</template>
-```
-
-@setting
-
-```json
-{
-  "showCompileOutput": true
 }
 ```
 

@@ -1,7 +1,6 @@
-import { deepAssign } from "vuepress-shared";
-import { playground } from "./playground.js";
+import { playground } from "./playground/index.js";
 
-import type { PluginWithOptions } from "markdown-it";
+import type { PluginSimple } from "markdown-it";
 import type {
   PlaygroundData,
   VuePlaygroundOptions,
@@ -37,10 +36,7 @@ const encodeFiles = (playgroundData: PlaygroundData): string =>
     )
   ).toString("base64");
 
-export const vuePlayground: PluginWithOptions<VuePlaygroundOptions> = (
-  md,
-  { service = "https://sfc.vuejs.org/", ...options } = {}
-) => {
+export const vuePlayground: PluginSimple = (md) => {
   md.use(playground, {
     name: "vue-playground",
     openRender: (playgroundData: PlaygroundData) =>
@@ -50,29 +46,5 @@ export const vuePlayground: PluginWithOptions<VuePlaygroundOptions> = (
         JSON.stringify(playgroundData.settings || {})
       )}" files="${encodeURIComponent(encodeFiles(playgroundData))}">\n`,
     closeRender: () => `</VuePlayground>\n`,
-  });
-
-  md.use(playground, {
-    name: "vue-playground#external",
-    openRender: (playgroundData: PlaygroundData) => {
-      const optionsString = new URLSearchParams(
-        Object.entries(
-          deepAssign(
-            {},
-            <Record<string, unknown>>playgroundData.settings || {},
-            <Record<string, unknown>>options
-          )
-        ).map<[string, string]>(([key, value]) => [key, String(value)])
-      ).toString();
-
-      const link = `${service.replace(/\/$/g, "")}${
-        optionsString ? `?${optionsString}` : ""
-      }#${encodeFiles(playgroundData)}`;
-
-      return `<Playground key="${playgroundData.key}" title="${
-        playgroundData.title || ""
-      }" link="${encodeURIComponent(link)}">\n`;
-    },
-    closeRender: () => `</Playground>\n`,
   });
 };

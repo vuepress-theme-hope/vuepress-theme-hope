@@ -15,7 +15,7 @@ export * from "./lazyLoad.js";
 export * from "./mark.js";
 export * from "./include.js";
 export * from "./mermaid.js";
-export * from "./playground.js";
+export * from "./playground/index.js";
 export * from "./presentation.js";
 export * from "./sub.js";
 export * from "./sup.js";

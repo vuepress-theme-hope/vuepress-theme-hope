@@ -1,6 +1,6 @@
 // Vitest Snapshot v1
 
-exports[`playground > Should resolve playground info 1`] = `
+exports[`playground > basic > Should resolve playground info 1`] = `
 {
   "files": {
     "App.vue": {
@@ -37,7 +37,7 @@ const msg = ref('Hello World!')
 }
 `;
 
-exports[`playground > Should resolve playground info with settings 1`] = `
+exports[`playground > basic > Should resolve playground info with settings 1`] = `
 {
   "files": {
     "App.vue": {
@@ -68,7 +68,7 @@ const msg = ref('Hello World!')
 }
 `;
 
-exports[`playground > Should resolve playground info with settings 2`] = `
+exports[`playground > basic > Should resolve playground info with settings 2`] = `
 {
   "files": {
     "App.vue": {
@@ -99,4 +99,20 @@ const msg = ref('Hello World!')
   },
   "title": "Playground%20demo2",
 }
+`;
+
+exports[`playground > ts preset > Should work 1`] = `
+"<Playground key=\\"2d9205c7\\" title=\\"TS%20demo%201\\" link=\\"https%3A%2F%2Fwww.typescriptlang.org%2Fplay%23code%2FMYewdgzgLgBAthA5jAvDARACwKYBtcgwDuIATrgCboDcAULaJLBAA7YCGA1qjABQKIAXDGikAlmEQBKVAD4YjCCFzYAdAUT8kUurVYdOW6XSA\\">
+</Playground>
+"
+`;
+
+exports[`playground > ts preset > Should work 2`] = `
+"<Playground key=\\"2d9205c8\\" title=\\"TS%20demo%202\\" link=\\"https%3A%2F%2Fwww.typescriptlang.org%2Fplay%3F1%23code%2FMYewdgzgLgBAthA5jAvDARACwKYBtcgwDuIATrgCboDcAULaJLBAA7YCGA1qjABQKIAXDGikAlmEQBKVAD4YjCCFzYAdAUT8kUurVYdOW6XSA\\">
+<pre><code class=\\"language-json\\">{
+  &quot;target&quot;: &quot;es5&quot;
+}
+</code></pre>
+</Playground>
+"
 `;

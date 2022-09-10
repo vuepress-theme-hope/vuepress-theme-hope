@@ -5,7 +5,11 @@ import type { CodeDemoOptions } from "./codeDemo.js";
 import type { ImageMarkOptions } from "./imageMark.js";
 import type { IncludeOptions } from "./include.js";
 import type { MarkdownEnhanceLocaleData } from "./locales.js";
-import type { PlaygroundOptions } from "./playground.js";
+import type {
+  PlaygroundOptions,
+  TSPresetPlaygroundOptions,
+  VuePresetPlaygroundOptions,
+} from "./playground.js";
 import type { PresentationOptions } from "./presentation.js";
 import type { TaskListOptions } from "./tasklist.js";
 import type { StylizeOptions } from "./stylize.js";
@@ -261,13 +265,19 @@ export interface MarkdownEnhanceOptions {
   stylize?: StylizeOptions;
 
   /**
-<<<<<<< HEAD
-=======
    * Whether to enable playground support
    *
    * 是否启用 playground 支持
    */
-  playground?: PlaygroundOptions | PlaygroundOptions[];
+  playground?: {
+    /** Playground presets */
+    presets: ("ts" | "vue" | PlaygroundOptions)[];
+    /** Playground config */
+    config?: {
+      ts?: TSPresetPlaygroundOptions;
+      vue?: VuePresetPlaygroundOptions;
+    };
+  };
 
   /**
    * Whether to enable vue playground support
@@ -279,7 +289,6 @@ export interface MarkdownEnhanceOptions {
   vuePlayground?: VuePlaygroundOptions | boolean;
 
   /**
->>>>>>> playground
    * @deprecated This option is for demo only, please enable options you need in production.
    *
    * Whether to enable all features.

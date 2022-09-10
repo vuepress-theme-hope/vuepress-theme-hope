@@ -51,6 +51,8 @@ import {
   vPre,
   vueDemo,
   vuePlayground,
+  getVuePlaygroundPreset,
+  getTSPlaygroundPreset,
 } from "./markdown-it/index.js";
 import { prepareConfigFile, prepareRevealPluginFile } from "./prepare.js";
 import { MATHML_TAGS } from "./utils.js";
@@ -283,11 +285,17 @@ export const mdEnhancePlugin =
         }
         if (mermaidEnable) md.use(mermaid);
         if (presentationEnable) md.use(presentation);
+        if (typeof options.playground === "object") {
+          const { presets = [], config = {} } = options.playground;
 
-        if (Array.isArray(options.playground))
-          options.playground.forEach((item) => md.use(playground, item));
-        else if (typeof options.playground === "object")
-          md.use(playground, options.playground);
+          presets.forEach((preset) => {
+            if (preset === "ts")
+              md.use(playground, getTSPlaygroundPreset(config.ts || {}));
+            else if (preset === "vue")
+              md.use(playground, getVuePlaygroundPreset(config.vue || {}));
+            else if (typeof preset === "object") md.use(playground, preset);
+          });
+        }
         if (vuePlaygroundEnable) md.use(vuePlayground);
       },
 

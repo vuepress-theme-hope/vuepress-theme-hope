@@ -1,22 +1,26 @@
 import { describe, expect, it } from "vitest";
 import MarkdownIt from "markdown-it";
 
-import { playground } from "../../src/node/markdown-it/index.js";
+import {
+  getTSPlaygroundPreset,
+  playground,
+} from "../../src/node/markdown-it/index.js";
 
 describe("playground", () => {
-  const markdownIt = MarkdownIt({ linkify: true }).use(playground, {
-    name: "playground",
-    openRender: (data) => {
-      expect(data).toMatchSnapshot();
+  describe("basic", () => {
+    const markdownIt = MarkdownIt({ linkify: true }).use(playground, {
+      name: "playground",
+      openRender: (data) => {
+        expect(data).toMatchSnapshot();
 
-      return "";
-    },
-    closeRender: () => "",
-  });
+        return "";
+      },
+      closeRender: () => "",
+    });
 
-  it("Should resolve playground info", () => {
-    markdownIt.render(
-      `
+    it("Should resolve playground info", () => {
+      markdownIt.render(
+        `
 ::: playground Playground demo
 
 @file App.vue
@@ -50,13 +54,13 @@ const msg = ref('Hello World!')
 \`\`\`
 :::
 `,
-      {}
-    );
-  });
+        {}
+      );
+    });
 
-  it("Should resolve playground info with settings", () => {
-    markdownIt.render(
-      `
+    it("Should resolve playground info with settings", () => {
+      markdownIt.render(
+        `
 ::: playground Playground demo2
 
 @file App.vue
@@ -90,13 +94,13 @@ const msg = ref('Hello World!')
 
 :::
 `,
-      {}
-    );
-  });
+        {}
+      );
+    });
 
-  it("Should resolve playground info with settings", () => {
-    markdownIt.render(
-      `
+    it("Should resolve playground info with settings", () => {
+      markdownIt.render(
+        `
 ::: playground Playground demo2
 
 @file App.vue
@@ -132,7 +136,60 @@ const msg = ref('Hello World!')
 
 :::
 `,
-      {}
+        {}
+      );
+    });
+  });
+
+  describe("ts preset", () => {
+    const defaultMarkdownIt = MarkdownIt({ linkify: true }).use(
+      playground,
+      getTSPlaygroundPreset({})
     );
+
+    it("Should work", () => {
+      const result1 = defaultMarkdownIt.render(`
+::: playground#ts TS demo 1
+
+@file index.ts
+
+\`\`\`ts
+const msg = "hello world";
+
+const speak = (msg: string) => console.log(msg);
+
+speak(msg);
+\`\`\`
+
+:::
+`);
+
+      const result2 = defaultMarkdownIt.render(`
+::: playground#ts TS demo 2
+
+@file index.ts
+
+\`\`\`ts
+const msg = "hello world";
+
+const speak = (msg: string) => console.log(msg);
+
+speak(msg);
+\`\`\`
+
+@settings
+
+\`\`\`json
+{
+  "target": "es5"
+}
+\`\`\`
+
+:::
+`);
+
+      expect(result1).toMatchSnapshot();
+      expect(result2).toMatchSnapshot();
+    });
   });
 });

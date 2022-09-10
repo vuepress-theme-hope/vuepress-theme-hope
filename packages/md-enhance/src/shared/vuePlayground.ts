@@ -11,15 +11,6 @@ import type { SFCOptions } from "@vue/repl";
  */
 export interface VuePlaygroundOptions {
   /**
-   * external playground service url
-   *
-   * playground 外部地址
-   *
-   * @default "https://sfc.vuejs.org/"
-   */
-  service?: string;
-
-  /**
    * Whether to show code in internal playground.
    *
    * 是否在内置 Playground 中显示代码

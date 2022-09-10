@@ -27,7 +27,7 @@ export default defineComponent({
           h("div", { class: "actions" }, [
             h("a", {
               class: "action",
-              href: props.link,
+              href: decodeURIComponent(props.link),
               target: "_blank",
               innerHTML: PLAY_SVG,
             }),
