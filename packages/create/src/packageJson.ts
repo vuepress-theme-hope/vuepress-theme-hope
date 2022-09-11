@@ -95,7 +95,12 @@ export const createPackageJson = async (
       },
     ]);
 
-    const packageContent = { ...result, scripts, devDependencies };
+    const packageContent = {
+      ...result,
+      type: "module",
+      scripts,
+      devDependencies,
+    };
 
     writeFileSync(
       packageJsonPath,
