@@ -22,7 +22,30 @@ export default {
     mdEnhance({
       // playground config here
       playground: {
-        // your playground options here
+        // add presets here
+        presets: [
+          "ts",
+          "vue",
+          {
+            name: "playground#language",
+            openRender: (playgroundData: PlaygroundData) => {
+              // xxx
+            },
+            closeRender: () => {
+              // xxx
+            },
+          },
+        ],
+        // configure built-in presets (optional)
+        config: {
+          ts: {
+            // xxx
+          },
+          vue: {
+            // xxx
+          },
+          // ...
+        },
       },
     }),
   ],
@@ -33,28 +56,6 @@ export default {
 
 ```js {8}
 // .vuepress/config.js
-const { mdEnhance } = require("vuepress-plugin-md-enhance");
-
-module.exports = {
-  plugins: [
-    mdEnhance({
-      // playground config here
-      playground: true, // use default settings
-    }),
-  ],
-};
-```
-
-:::
-
-You can also customize your playground config by using `PlaygroundOptions`:
-
-::: code-tabs#config
-
-@tab TS
-
-```ts {8-21}
-// .vuepress/config.ts
 import { mdEnhance } from "vuepress-plugin-md-enhance";
 
 export default {
@@ -62,46 +63,29 @@ export default {
     mdEnhance({
       // playground config here
       playground: {
-        mode: "external", // use external mode
-        external: {
-          base: "https://sfc.vuejs.org/", // use the vue sfc playground.
-          defaultImportsMap: "import-map.json",
-        },
-        internal: {
-          defaultImportsMap: "import-map.json",
-          showCode: false, // hide code
-          showCompileOutput: false, // hide js, css, ssr panel
-          showImportMap: true, // show import map
-          clearConsole: false, // do not clear console message
-        },
-      },
-    }),
-  ],
-};
-```
-
-@tab JS
-
-```js {8-21}
-// .vuepress/config.js
-const { mdEnhance } = require("vuepress-plugin-md-enhance");
-
-module.exports = {
-  plugins: [
-    mdEnhance({
-      // playground config here
-      playground: {
-        mode: "external", // use external mode
-        external: {
-          base: "https://sfc.vuejs.org/", // use the vue sfc playground.
-          defaultImportsMap: "import-map.json",
-        },
-        internal: {
-          defaultImportsMap: "import-map.json",
-          showCode: false, // hide code
-          showCompileOutput: false, // hide js, css, ssr panel
-          showImportMap: true, // show import map
-          clearConsole: false, // do not clear console message
+        // add presets here
+        presets: [
+          "ts",
+          "vue",
+          {
+            name: "playground#language",
+            openRender: (playgroundData: PlaygroundData) => {
+              // xxx
+            },
+            closeRender: () => {
+              // xxx
+            },
+          },
+        ],
+        // configure built-in presets (optional)
+        config: {
+          ts: {
+            // xxx
+          },
+          vue: {
+            // xxx
+          },
+          // ...
         },
       },
     }),
@@ -113,85 +97,102 @@ module.exports = {
 
 ## Usage
 
-We can use `external` and `internal` mode.
+You should add presets through `playground.presets` in plugin options.
 
-- `external` mode can embed an `iframe` to show the playground. You can also use your own online playground, which is more flexible.
-- `internal` mode can directly render the code by using the `@vue/repl`.
+To use playground, you should use a container named `playground#preset`.
+
+In it, you can use:
+
+- `@file FileName` then a code block to add files
+- `@import` then a json block to customize "import map"
+- `@setting` then a json block to customize settings
+
+You can see the below demos to see more details.
+
+## Available presets
+
+Currently, we support `ts` and `vue` presets, and we are looking forward to more presets comming from PRs.
+
+If you want to add a playground of your own, you can add a preset by you own in [Advanced Section](#advanced), and welcome to open a PR about your fantastic preset.
+
+::: info TS preset
+
+TS preset is using official playground by default, and do not support mutiple ts files, so all you need to do is add one single ts file through `@file xxx.ts` directive (the filename is not important but the `.ts` file extension is).
+
+To use cutomized compilerOptions, you can provide one through `@setting` directive. But attention, official TS playground does not support all options.
+
+Meanwhile, you can customize the default compilerOption through `playground.config.ts`, and you can use another service besides the official playground through `service` option, just in case you want to deploy your own playground site.
+
+:::
+
+::: info Vue Preset
+
+Vue preset is using the official playground by default, and do not support customizing options like [Vue Playground](./vue-playground.md). So if you are heavily relying on interacting vue playground, we suggest you to use [Vue Playground](./vue-playground.md) instead.
+
+But if you only want a few demos instead of bundling a whole vue playground, you can use this preset to create a `<iframe>`.
+
+Only `service`, `dev` and `ssr` option is available in `@setting` directive.
+
+:::
 
 ## Demo
 
-### External mode
+### TS
 
-#### Basic usage
+::: playground#ts TS demo 1
 
-::: vue-playground Basic usage
+@file index.ts
 
-@file App.vue
+```ts
+const msg = "hello world";
 
-```vue
-<script setup>
-import { ref } from "vue";
+const speak = (msg: string) => console.log(msg);
 
-const msg = ref("Hello World!");
-</script>
-
-<template>
-  <h1>{{ msg }}</h1>
-  <input v-model="msg" />
-</template>
+speak(msg);
 ```
 
 :::
 
-:::: details Code
+::: playground#ts TS demo 2
 
-````md
-::: vue-playground Basic usage
+@file index.ts
 
-@file App.vue
+```ts
+const msg = "hello world";
 
-```vue
-<script setup>
-import { ref } from "vue";
+const speak = (msg: string) => console.log(msg);
 
-const msg = ref("Hello World!");
-</script>
+speak(msg);
+```
 
-<template>
-  <h1>{{ msg }}</h1>
-  <input v-model="msg" />
-</template>
+@settings
+
+```json
+{
+  "target": "es5"
+}
 ```
 
 :::
-````
 
-::::
+### Vue
 
-#### Advanced usage
-
-This example shows you how to customize your playground.
-
-- Use your own playground
-- Use your own import map
-- Apply extra options to your playground
-
-::: vue-playground Advanced usage
+::: playground#vue Vue demo with cutomized imports
 
 @file App.vue
 
 ```vue
 <script setup>
 import { ref } from "vue";
+
 import Comp from "./Comp.vue";
 
-const msg = ref("Hello Playground!");
+const msg = ref("Hello World!");
 </script>
 
 <template>
   <h1>{{ msg }}</h1>
   <input v-model="msg" />
-
   <Comp />
 </template>
 ```
@@ -201,19 +202,39 @@ const msg = ref("Hello Playground!");
 ```vue
 <template>
   <div>Comp</div>
-  <el-row class="mb-4">
-    <el-button>Default</el-button>
-    <el-button type="primary">Primary</el-button>
-    <el-button type="success">Success</el-button>
-    <el-button type="info">Info</el-button>
-    <el-button type="warning">Warning</el-button>
-    <el-button type="danger">Danger</el-button>
-    <el-button>中文</el-button>
-  </el-row>
 </template>
 ```
 
-@import user-imports.json
+@import
+
+```json
+{
+  "imports": {
+    "vue": "https://sfc.vuejs.org/vue.runtime.esm-browser.js"
+  }
+}
+```
+
+:::
+
+::: playground#vue Vue demo with customized settings
+
+@file App.vue
+
+```vue
+<script setup>
+import { ref } from "vue";
+
+const msg = ref("Hello Playground!");
+</script>
+
+<template>
+  <h1>{{ msg }}</h1>
+  <input v-model="msg" />
+</template>
+```
+
+@import
 
 ```json
 {
@@ -227,217 +248,13 @@ const msg = ref("Hello Playground!");
 
 ```json
 {
-  "mode": "external",
-  "external": {
-    "base": "https://vue-sfc-playground.vercel.app/",
-    "options": {
-      "showOutput": "true"
-    }
-  }
+  "service": "https://vue-sfc-playground.vercel.app/",
+  "showOutput": true
 }
 ```
 
 :::
 
-:::: details Code
+### Advanced
 
-````md
-::: playground Advanced usage
-@file App.vue
-
-```vue
-<script setup>
-import { ref } from "vue";
-import Comp from "./Comp.vue";
-
-const msg = ref("Hello Playground!");
-</script>
-
-<template>
-  <h1>{{ msg }}</h1>
-  <input v-model="msg" />
-
-  <Comp />
-</template>
-```
-
-@file Comp.vue
-
-```vue
-<template>
-  <div>Comp</div>
-  <el-row class="mb-4">
-    <el-button>Default</el-button>
-    <el-button type="primary">Primary</el-button>
-    <el-button type="success">Success</el-button>
-    <el-button type="info">Info</el-button>
-    <el-button type="warning">Warning</el-button>
-    <el-button type="danger">Danger</el-button>
-    <el-button>中文</el-button>
-  </el-row>
-</template>
-```
-
-@import user-imports.json
-
-```json
-{
-  "imports": {
-    "lodash-es": "https://cdn.jsdelivr.net/npm/lodash-es@4.17.21/lodash.min.js"
-  }
-}
-```
-
-@setting
-
-```json
-{
-  "mode": "external",
-  "external": {
-    "base": "https://vue-sfc-playground.vercel.app/",
-    "options": {
-      "showOutput": "true"
-    }
-  }
-}
-```
-
-:::
-````
-
-::::
-
-### Internal mode
-
-#### Basic usage
-
-::: playground Basic usage
-@file App.vue
-
-```vue
-<script setup>
-import { ref } from "vue";
-
-const msg = ref("Hello Playground!");
-</script>
-
-<template>
-  <h1>{{ msg }}</h1>
-  <input v-model="msg" />
-</template>
-```
-
-@setting
-
-```json
-{
-  "mode": "internal"
-}
-```
-
-:::
-
-:::: details Code
-
-````md
-::: playground Basic usage
-@file App.vue
-
-```vue
-<script setup>
-import { ref } from "vue";
-
-const msg = ref("Hello Playground!");
-</script>
-
-<template>
-  <h1>{{ msg }}</h1>
-  <input v-model="msg" />
-</template>
-```
-
-@setting
-
-```json
-{
-  "mode": "internal"
-}
-```
-
-:::
-````
-
-::::
-
-#### Advanced usage
-
-Display the playground, show `JS`, `CSS`, `SSR` panel, and show the code editor.
-
-The playground's `key` is automaticlly generated. And it's calculated based on the title.
-You can also specify it yourself by using `playground#customId`.
-
-::: playground#customId Advanced usage
-@file App.vue
-
-```vue
-<script setup>
-import { ref } from "vue";
-
-const msg = ref("Hello Playground!");
-</script>
-
-<template>
-  <h1>{{ msg }}</h1>
-  <input v-model="msg" />
-</template>
-```
-
-@setting
-
-```json
-{
-  "mode": "internal",
-  "internal": {
-    "showCode": "true",
-    "showCompileOutput": "true"
-  }
-}
-```
-
-:::
-
-:::: details Code
-
-````md
-::: playground#customId Advanced usage
-@file App.vue
-
-```vue
-<script setup>
-import { ref } from "vue";
-
-const msg = ref("Hello Playground!");
-</script>
-
-<template>
-  <h1>{{ msg }}</h1>
-  <input v-model="msg" />
-</template>
-```
-
-@setting
-
-```json
-{
-  "mode": "internal",
-  "internal": {
-    "showCode": "true",
-    "showCompileOutput": "true"
-  }
-}
-```
-
-:::
-````
-
-::::
+You can provide your own presets.

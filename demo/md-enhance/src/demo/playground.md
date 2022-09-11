@@ -44,9 +44,7 @@ speak(msg);
 
 ### Vue
 
-#### Customize imports
-
-::: playground#vue Vue demo
+::: playground#vue Vue demo with cutomized imports
 
 @file App.vue
 
@@ -86,9 +84,7 @@ const msg = ref("Hello World!");
 
 :::
 
-#### Customize settings
-
-::: playground#vue Vue demo 2
+::: playground#vue Vue demo with customized settings
 
 @file App.vue
 

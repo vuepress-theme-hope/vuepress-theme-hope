@@ -4,7 +4,7 @@ title: Playground Demo
 
 ## Demo
 
-::: vue-playground Internal mode
+::: vue-playground Vue Playground
 
 @file App.vue
 
@@ -23,7 +23,7 @@ const msg = ref("Hello Playground!");
 
 :::
 
-::: vue-playground Internal mode2 - show compile output
+::: vue-playground Vue Playground - show compile output
 
 @file App.vue
 
