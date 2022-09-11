@@ -10,12 +10,12 @@ describe("playground", () => {
   describe("basic", () => {
     const markdownIt = MarkdownIt({ linkify: true }).use(playground, {
       name: "playground",
-      openRender: (data) => {
+      tag: "Playground",
+      getter: (data) => {
         expect(data).toMatchSnapshot();
 
-        return "";
+        return {};
       },
-      closeRender: () => "",
     });
 
     it("Should resolve playground info", () => {

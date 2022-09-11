@@ -20,8 +20,11 @@ export interface PlaygroundData {
 
 export interface PlaygroundOptions {
   name: string;
-  openRender: (playgroundData: PlaygroundData) => string;
-  closeRender: () => string;
+  /**
+   * @default 'Playground'
+   */
+  tag?: string;
+  getter: (data: PlaygroundData) => Record<string, string>;
 }
 
 export interface TSPresetPlaygroundOptions extends CompilerOptions {

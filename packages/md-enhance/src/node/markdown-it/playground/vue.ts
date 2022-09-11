@@ -14,37 +14,45 @@ const VUE_SUPPORTED_EXTENSIONS = [
   "json",
 ];
 
-const encodeFiles = (playgroundData: PlaygroundData): string =>
-  Buffer.from(
-    JSON.stringify(
-      Object.fromEntries(
-        Object.entries(playgroundData.files)
-          .filter(([, { lang }]) => VUE_SUPPORTED_EXTENSIONS.includes(lang))
-          .map(([key, config]) => [key, config.content])
-      )
-    )
-  ).toString("base64");
-
 export const getVuePlaygroundPreset = ({
   service = "https://sfc.vuejs.org/",
   dev = false,
   ssr = false,
 }: VuePresetPlaygroundOptions = {}): PlaygroundOptions => ({
   name: "playground#vue",
-  openRender: (playgroundData: PlaygroundData): string => {
+  getter: (playgroundData: PlaygroundData): Record<string, string> => {
+    const { title = "", files, settings, key } = playgroundData;
     const optionsString = new URLSearchParams(
-      Object.entries(
-        <Record<string, unknown>>playgroundData.settings || {}
-      ).map<[string, string]>(([key, value]) => [key, String(value)])
+      Object.entries(<Record<string, unknown>>settings || {}).map<
+        [string, string]
+      >(([key, value]) => [key, String(value)])
     ).toString();
 
-    return `<Playground key="${playgroundData.key}" title="${
-      playgroundData.title || ""
-    }" link="${encodeURIComponent(
-      `${service}${optionsString ? `?${optionsString}` : ""}#${
-        dev ? "__DEV__" : ""
-      }${ssr ? "__SSR__" : ""}${encodeFiles(playgroundData)}`
-    )}">\n`;
+    return {
+      key,
+      title,
+      link: encodeURIComponent(
+        `${service}${optionsString ? `?${optionsString}` : ""}#${
+          // dev flag
+          dev ? "__DEV__" : ""
+        }${
+          // ssr flag
+          ssr ? "__SSR__" : ""
+        }${
+          // code base64
+          Buffer.from(
+            JSON.stringify(
+              Object.fromEntries(
+                Object.entries(files)
+                  .filter(([, { lang }]) =>
+                    VUE_SUPPORTED_EXTENSIONS.includes(lang)
+                  )
+                  .map(([key, config]) => [key, config.content])
+              )
+            )
+          ).toString("base64")
+        }`
+      ),
+    };
   },
-  closeRender: () => `</Playground>\n`,
 });

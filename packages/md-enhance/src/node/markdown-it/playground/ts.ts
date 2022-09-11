@@ -5,6 +5,7 @@ import { compressToEncodedURIComponent } from "./ventors/lzstring.js";
 import type { CompilerOptions } from "typescript";
 import type {
   PlaygroundData,
+  PlaygroundOptions,
   TSPresetPlaygroundOptions,
 } from "../../../shared/index.js";
 
@@ -111,9 +112,14 @@ export const getURL = (
 export const getTSPlaygroundPreset = ({
   service = "https://www.typescriptlang.org/play",
   ...compilerOptions
-}: TSPresetPlaygroundOptions = {}) => ({
+}: TSPresetPlaygroundOptions = {}): PlaygroundOptions => ({
   name: "playground#ts",
-  openRender: ({ title = "", files, settings, key }: PlaygroundData) => {
+  getter: ({
+    title = "",
+    files,
+    settings,
+    key,
+  }: PlaygroundData): Record<string, string> => {
     const tsfiles = Object.keys(files).filter((key) => key.endsWith(".ts"));
 
     if (tsfiles.length !== 1)
@@ -128,9 +134,10 @@ export const getTSPlaygroundPreset = ({
       )
     )}`;
 
-    return `<Playground key="${key}" title="${title}" link="${encodeURIComponent(
-      link
-    )}">\n`;
+    return {
+      key,
+      title,
+      link: encodeURIComponent(link),
+    };
   },
-  closeRender: () => `</Playground>\n`,
 });

@@ -1,4 +1,5 @@
 import { hash } from "@vuepress/utils";
+import { escapeHtml } from "../utils.js";
 
 import type { PluginWithOptions } from "markdown-it";
 import type { RuleBlock } from "markdown-it/lib/parser_block.js";
@@ -227,18 +228,17 @@ const atMarkerRule =
 
 export const playground: PluginWithOptions<PlaygroundOptions> = (
   md,
-  { name = "playground", openRender, closeRender } = {
+  { name = "playground", tag = "Playground", getter } = {
     name: "playground",
-    openRender: (playgroundData: PlaygroundData) =>
-      `<Playground key="${playgroundData.key}
-        title="${playgroundData.title || ""}"
-        files="${encodeURIComponent(JSON.stringify(playgroundData.files))}"
-        settings="${encodeURIComponent(
-          JSON.stringify(playgroundData.settings || {})
-        )}" 
-      >\n`,
-
-    closeRender: () => `</Playground>\n`,
+    tag: "Playground",
+    getter: (playgroundData: PlaygroundData): Record<string, string> => ({
+      key: playgroundData.key,
+      title: playgroundData.title || "",
+      files: encodeURIComponent(JSON.stringify(playgroundData.files)),
+      settings: encodeURIComponent(
+        JSON.stringify(playgroundData.settings || {})
+      ),
+    }),
   }
 ) => {
   md.block.ruler.before("fence", `${name}`, getPlaygroundRule(name), {
@@ -317,8 +317,12 @@ export const playground: PluginWithOptions<PlaygroundOptions> = (
       }
     }
 
-    return openRender(playgroundData);
+    const attrs = getter(playgroundData);
+
+    return `<${tag} ${Object.entries(attrs)
+      .map(([attr, value]) => `${attr}="${escapeHtml(value)}"`)
+      .join(" ")}>\n`;
   };
 
-  md.renderer.rules[`${name}_close`] = closeRender;
+  md.renderer.rules[`${name}_close`] = (): string => `</${tag}>\n`;
 };
