@@ -1,6 +1,6 @@
-import { defineComponent, h, ref } from "vue";
+import { defineComponent, h } from "vue";
 
-import { LOADING_SVG, PLAY_SVG } from "./icons.js";
+import { PLAY_SVG } from "./icons.js";
 
 import type { VNode } from "vue";
 
@@ -16,8 +16,6 @@ export default defineComponent({
   },
 
   setup(props) {
-    const loading = ref(true);
-
     return (): (VNode | null)[] => [
       h("div", { class: "playground-wrapper" }, [
         h("div", { class: "title-wrapper" }, [
@@ -33,21 +31,14 @@ export default defineComponent({
             }),
           ]),
         ]),
-        h("div", { class: "preview-container" }, [
-          loading.value
-            ? h("div", {
-                class: ["preview-loading-wrapper"],
-                innerHTML: LOADING_SVG,
-              })
-            : null,
+        h(
+          "div",
+          { class: "preview-container" },
           h("iframe", {
             class: "iframe-preview",
             src: decodeURIComponent(props.link),
-            onload: () => {
-              loading.value = false;
-            },
-          }),
-        ]),
+          })
+        ),
       ]),
     ];
   },
