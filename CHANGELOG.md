@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.98](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.97...v2.0.0-beta.98) (2022-09-12)
+
+### Features
+
+- **comment2:** support `metaIcon` in Waline ([4c87572](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4c87572d04c75e5835eae0f249c335f0d04b70dd))
+- **create:** add `"type": "module"` by default ([86df4b5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/86df4b595396d5d91564a3056b03b88e660a84ee))
+- **md-enhance:** add playground and vue playground ([#2202](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2202)) ([7c8cfff](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7c8cfff11fdf4ec3520cc39c7bab64535b12339a))
+- **shared:** add chainwebpack helpers ([4b4f983](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4b4f9833c4934bcdfbd817e2723acace67874ce9))
+
+### Bug Fixes
+
+- add missing js extension ([b6e2ed5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b6e2ed51a28664d9d7b2a046c63e2c01ea529fad))
+- **create:** fix wrong import in template ([6cb780a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6cb780a2e95243cded6b9434b4e748ebd3d6d2de))
+- **md-enhance:** add missing extension ([dabb9f3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/dabb9f30c5dd1d3c10c763208d01d321893db0af))
+- **md-enhance:** fix link check, fix [#2196](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2196) ([97a78c3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/97a78c3b4720d8e842ae9ec0777db272ebb19dfc))
+- **md-enhance:** fix vite build issue ([082c1dc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/082c1dc60be8188471d2c337f3241fe70ecf1036))
+
 ## [2.0.0-beta.97](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.96...v2.0.0-beta.97) (2022-09-01)
 
 ### Bug Fixes
