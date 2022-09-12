@@ -122,7 +122,7 @@ export const prepareRevealPluginFile = async (
 
   await app.writeTemp(
     "md-enhance/reveal.js",
-    `import { ${packages.join(", ")} } from "${CLIENT_FOLDER}reveal";
+    `import { ${packages.join(", ")} } from "${CLIENT_FOLDER}reveal/index.js";
 
 export const useReveal = () => [${packages
       .map((name) => `${name}()`)
