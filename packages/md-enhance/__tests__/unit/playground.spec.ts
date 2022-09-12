@@ -10,8 +10,8 @@ describe("playground", () => {
   describe("basic", () => {
     const markdownIt = MarkdownIt({ linkify: true }).use(playground, {
       name: "playground",
-      tag: "Playground",
-      getter: (data) => {
+      component: "Playground",
+      propsGetter: (data) => {
         expect(data).toMatchSnapshot();
 
         return {};

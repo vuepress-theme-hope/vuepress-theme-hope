@@ -14,38 +14,39 @@ const VUE_SUPPORTED_EXTENSIONS = [
   "json",
 ];
 
-export const getVuePlaygroundPreset = ({
-  service = "https://sfc.vuejs.org/",
-  dev = false,
-  ssr = false,
-}: VuePresetPlaygroundOptions = {}): PlaygroundOptions => ({
+export const getVuePlaygroundPreset = (
+  options: VuePresetPlaygroundOptions = {}
+): PlaygroundOptions => ({
   name: "playground#vue",
-  getter: (playgroundData: PlaygroundData): Record<string, string> => {
-    const { title = "", files, settings, key } = playgroundData;
-    const optionsString = new URLSearchParams(
-      Object.entries(<Record<string, unknown>>settings || {}).map<
-        [string, string]
-      >(([key, value]) => [key, String(value)])
-    ).toString();
+  propsGetter: (playgroundData: PlaygroundData): Record<string, string> => {
+    const { title = "", files, settings: localSettings, key } = playgroundData;
+    const settings = {
+      // defaults
+      service: "https://sfc.vuejs.org/",
+      dev: false,
+      ssr: false,
+      ...options,
+      ...localSettings,
+    };
 
     return {
       key,
       title,
       link: encodeURIComponent(
-        `${service}${optionsString ? `?${optionsString}` : ""}#${
+        `${settings.service}#${
           // dev flag
-          dev ? "__DEV__" : ""
+          settings.dev ? "__DEV__" : ""
         }${
           // ssr flag
-          ssr ? "__SSR__" : ""
+          settings.ssr ? "__SSR__" : ""
         }${
           // code base64
           Buffer.from(
             JSON.stringify(
               Object.fromEntries(
                 Object.entries(files)
-                  .filter(([, { lang }]) =>
-                    VUE_SUPPORTED_EXTENSIONS.includes(lang)
+                  .filter(([, { ext }]) =>
+                    VUE_SUPPORTED_EXTENSIONS.includes(ext)
                   )
                   .map(([key, config]) => [key, config.content])
               )

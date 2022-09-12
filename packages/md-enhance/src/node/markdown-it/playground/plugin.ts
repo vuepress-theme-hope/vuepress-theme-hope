@@ -228,10 +228,10 @@ const atMarkerRule =
 
 export const playground: PluginWithOptions<PlaygroundOptions> = (
   md,
-  { name = "playground", tag = "Playground", getter } = {
+  { name = "playground", component = "Playground", propsGetter } = {
     name: "playground",
-    tag: "Playground",
-    getter: (playgroundData: PlaygroundData): Record<string, string> => ({
+    component: "Playground",
+    propsGetter: (playgroundData: PlaygroundData): Record<string, string> => ({
       key: playgroundData.key,
       title: playgroundData.title || "",
       files: encodeURIComponent(JSON.stringify(playgroundData.files)),
@@ -281,7 +281,7 @@ export const playground: PluginWithOptions<PlaygroundOptions> = (
           if (!info) continue;
           currentKey = info;
         } else if (type === "import_open")
-          currentKey = info || "import-map.json";
+          playgroundData.importMap = currentKey = info || "import-map.json";
 
         if (type === "setting_open") foundSettings = true;
         if (type === "setting_close") foundSettings = false;
@@ -300,7 +300,9 @@ export const playground: PluginWithOptions<PlaygroundOptions> = (
         // parse settings
         if (foundSettings) {
           if (type === "fence" && info === "json")
-            playgroundData.settings = JSON.parse(content.trim());
+            playgroundData.settings = <Record<string, unknown>>(
+              JSON.parse(content.trim())
+            );
 
           continue;
         }
@@ -308,7 +310,7 @@ export const playground: PluginWithOptions<PlaygroundOptions> = (
         // add code block content
         if (type === "fence" && currentKey)
           playgroundData.files[currentKey] = {
-            lang: info,
+            ext: info,
             content: content,
           };
 
@@ -317,12 +319,12 @@ export const playground: PluginWithOptions<PlaygroundOptions> = (
       }
     }
 
-    const attrs = getter(playgroundData);
+    const props = propsGetter(playgroundData);
 
-    return `<${tag} ${Object.entries(attrs)
+    return `<${component} ${Object.entries(props)
       .map(([attr, value]) => `${attr}="${escapeHtml(value)}"`)
       .join(" ")}>\n`;
   };
 
-  md.renderer.rules[`${name}_close`] = (): string => `</${tag}>\n`;
+  md.renderer.rules[`${name}_close`] = (): string => `</${component}>\n`;
 };

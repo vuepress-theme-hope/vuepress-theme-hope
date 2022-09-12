@@ -1,9 +1,14 @@
 ---
 title: Playground
 icon: code
+category:
+  - Markdown
+tag:
+  - Markdown
+  - Playground
 ---
 
-The plugin provides you playground support.
+Let the Markdown file support playground in your VuePress site.
 
 <!-- more -->
 
@@ -15,79 +20,84 @@ The plugin provides you playground support.
 
 ```ts {8-33}
 // .vuepress/config.ts
-import { mdEnhance } from "vuepress-plugin-md-enhance";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  plugins: [
-    mdEnhance({
-      // playground config here
-      playground: {
-        // add presets here
-        presets: [
-          "ts",
-          "vue",
-          {
-            name: "playground#language",
-            component: "PlaygroundComponent",
-            propsGetter: (
-              playgroundData: PlaygroundData
-            ): Record<string, string> => ({
-              // playground props
-            }),
-          },
-        ],
-        // configure built-in presets (optional)
-        config: {
-          ts: {
-            // xxx
-          },
-          vue: {
-            // xxx
+export default defineUserConfig({
+  theme: hopeTheme({
+    plugins: {
+      mdEnhance: {
+        // playground config here
+        playground: {
+          // add presets here
+          presets: [
+            "ts",
+            "vue",
+            {
+              name: "playground#language",
+              component: "PlaygroundComponent",
+              propsGetter: (
+                playgroundData: PlaygroundData
+              ): Record<string, string> => ({
+                // playground props
+              }),
+            },
+          ],
+          // configure built-in presets (optional)
+          config: {
+            ts: {
+              // xxx
+            },
+            vue: {
+              // xxx
+            },
           },
         },
       },
-    }),
-  ],
-};
+    },
+  }),
+});
 ```
 
 @tab JS
 
 ```js {8-33}
 // .vuepress/config.js
-import { mdEnhance } from "vuepress-plugin-md-enhance";
+import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
-  plugins: [
-    mdEnhance({
-      // playground config here
-      playground: {
-        // add presets here
-        presets: [
-          "ts",
-          "vue",
-          {
-            name: "playground#language",
-            component: "PlaygroundComponent",
-            propsGetter: (
-              playgroundData: PlaygroundData
-            ): Record<string, string> => ({
-              // playground props
-            }),
-          },
-        ],
-        // configure built-in presets (optional)
-        config: {
-          ts: {
-            // xxx
-          },
-          vue: {
-            // xxx
+  theme: hopeTheme({
+    plugins: {
+      mdEnhance: {
+        // playground config here
+        playground: {
+          // add presets here
+          presets: [
+            "ts",
+            "vue",
+            {
+              name: "playground#language",
+              component: "PlaygroundComponent",
+              propsGetter: (
+                playgroundData: PlaygroundData
+              ): Record<string, string> => ({
+                // playground props
+              }),
+            },
+          ],
+          // configure built-in presets (optional)
+          config: {
+            ts: {
+              // xxx
+            },
+            vue: {
+              // xxx
+            },
           },
         },
       },
-    }),
-  ],
+    },
+  }),
 };
 ```
 

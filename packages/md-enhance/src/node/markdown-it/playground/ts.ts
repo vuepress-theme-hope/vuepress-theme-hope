@@ -9,62 +9,6 @@ import type {
   TSPresetPlaygroundOptions,
 } from "../../../shared/index.js";
 
-// const TARGET_MAP = {
-//   es3: 0,
-//   es5: 1,
-//   es6: 2,
-//   es2015: 2,
-//   es2016: 3,
-//   es2017: 4,
-//   es2018: 5,
-//   es2019: 6,
-//   es2020: 7,
-//   es2021: 8,
-//   es2022: 9,
-//   esnext: 99,
-// };
-
-// const MODULE_MAP = {
-//   none: 0,
-//   commonjs: 1,
-//   amd: 2,
-//   system: 4,
-//   umd: 3,
-//   es6: 5,
-//   es2015: 5,
-//   es2020: 6,
-//   es2022: 7,
-//   esnext: 99,
-//   node16: 100,
-//   nodenext: 199,
-// };
-
-// const JSX_MAP = {
-//   preserve: 1,
-//   "react-native": 3,
-//   react: 2,
-//   "react-jsx": 4,
-//   "react-jsxdev": 5,
-// };
-
-// const IMPORTS_NOT_USED_AS_VALUES = {
-//   remove: 0,
-//   preserve: 1,
-//   error: 2,
-// };
-
-// const MODULE_RESOLUTION_MAP = {
-//   node: 2,
-//   classic: 1,
-//   node16: 3,
-//   nodenext: 99,
-// };
-
-// const NEWLINE_MAP = {
-//   crlf: 0,
-//   lf: 1,
-// };
-
 /** Gets a query string representation (hash + queries) */
 export const getURL = (
   code: string,
@@ -114,7 +58,7 @@ export const getTSPlaygroundPreset = ({
   ...compilerOptions
 }: TSPresetPlaygroundOptions = {}): PlaygroundOptions => ({
   name: "playground#ts",
-  getter: ({
+  propsGetter: ({
     title = "",
     files,
     settings,

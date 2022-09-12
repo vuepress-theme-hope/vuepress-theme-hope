@@ -278,9 +278,25 @@ Setting this to a invalid stytax <span style="color:red">doesn't</span> have any
 
 ### Playground
 
-You can insert Vue playground in Markdown files directly.
+::: playground#ts TS demo
 
-::: vue-playground Basic usage
+@file index.ts
+
+```ts
+const msg = "hello world";
+
+const speak = (msg: string) => console.log(msg);
+
+speak(msg);
+```
+
+:::
+
+- [View Detail](playground.md)
+
+### Vue Playground
+
+::: vue-playground Vue Playground
 
 @file App.vue
 
@@ -299,7 +315,7 @@ const msg = ref("Hello World!");
 
 :::
 
-- [View Detail](playground.md)
+- [View Detail](vue-playground.md)
 
 ### Presentation
 

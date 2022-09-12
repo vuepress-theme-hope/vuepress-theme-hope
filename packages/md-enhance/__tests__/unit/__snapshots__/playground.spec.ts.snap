@@ -13,14 +13,14 @@ const msg = ref('Hello World!')
   <input v-model=\\"msg\\" />
 </template>
 ",
-      "lang": "vue",
+      "ext": "vue",
     },
     "Comp.vue": {
       "content": "<template>
   <div>Comp</div>
 </template>
 ",
-      "lang": "vue",
+      "ext": "vue",
     },
     "import-map.json": {
       "content": "{
@@ -29,9 +29,10 @@ const msg = ref('Hello World!')
   }
 }
 ",
-      "lang": "json",
+      "ext": "json",
     },
   },
+  "importMap": "import-map.json",
   "key": "62b3bf5a",
   "title": "Playground%20demo",
 }
@@ -50,14 +51,14 @@ const msg = ref('Hello World!')
   <input v-model=\\"msg\\" />
 </template>
 ",
-      "lang": "vue",
+      "ext": "vue",
     },
     "Comp.vue": {
       "content": "<template>
   <div>Comp</div>
 </template>
 ",
-      "lang": "vue",
+      "ext": "vue",
     },
   },
   "key": "1877a7d0",
@@ -81,7 +82,7 @@ const msg = ref('Hello World!')
   <input v-model=\\"msg\\" />
 </template>
 ",
-      "lang": "vue",
+      "ext": "vue",
     },
     "import-map.json": {
       "content": "{
@@ -90,9 +91,10 @@ const msg = ref('Hello World!')
   }
 }
 ",
-      "lang": "json",
+      "ext": "json",
     },
   },
+  "importMap": "import-map.json",
   "key": "1877a7d0",
   "settings": {
     "service": "https://element-plus.run/",

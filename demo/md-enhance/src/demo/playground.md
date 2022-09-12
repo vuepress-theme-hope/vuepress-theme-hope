@@ -1,5 +1,5 @@
 ---
-title: Playground Demo
+title: Playground
 ---
 
 ## Demo
@@ -101,22 +101,12 @@ const msg = ref("Hello Playground!");
 </template>
 ```
 
-@import
-
-```json
-{
-  "imports": {
-    "lodash-es": "https://cdn.jsdelivr.net/npm/lodash-es@4.17.21/lodash.min.js"
-  }
-}
-```
-
 @setting
 
 ```json
 {
-  "service": "https://vue-sfc-playground.vercel.app/",
-  "showOutput": true
+  "dev": true,
+  "ssr": true
 }
 ```
 

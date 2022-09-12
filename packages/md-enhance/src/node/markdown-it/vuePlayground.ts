@@ -25,12 +25,12 @@ const VUE_SUPPORTED_EXTENSIONS = [
   "json",
 ];
 
-const encodeFiles = (playgroundData: PlaygroundData): string =>
+const encodeFiles = (files: PlaygroundData["files"]): string =>
   Buffer.from(
     JSON.stringify(
       Object.fromEntries(
-        Object.entries(playgroundData.files)
-          .filter(([, { lang }]) => VUE_SUPPORTED_EXTENSIONS.includes(lang))
+        Object.entries(files)
+          .filter(([, { ext }]) => VUE_SUPPORTED_EXTENSIONS.includes(ext))
           .map(([key, config]) => [key, config.content])
       )
     )
@@ -39,12 +39,12 @@ const encodeFiles = (playgroundData: PlaygroundData): string =>
 export const vuePlayground: PluginSimple = (md) => {
   md.use(playground, {
     name: "vue-playground",
-    openRender: (playgroundData: PlaygroundData) =>
-      `<VuePlayground key="${playgroundData.key}" title="${
-        playgroundData.title || ""
-      }" settings="${encodeURIComponent(
-        JSON.stringify(playgroundData.settings || {})
-      )}" files="${encodeURIComponent(encodeFiles(playgroundData))}">\n`,
-    closeRender: () => `</VuePlayground>\n`,
+    component: "VuePlayground",
+    propsGetter: ({ title = "", key, files, settings }: PlaygroundData) => ({
+      title,
+      key,
+      settings: encodeURIComponent(JSON.stringify(settings || {})),
+      files: encodeURIComponent(encodeFiles(files)),
+    }),
   });
 };

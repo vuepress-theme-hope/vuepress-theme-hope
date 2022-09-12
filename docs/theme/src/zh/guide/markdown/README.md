@@ -56,6 +56,10 @@ dir:
 
 - [样式化](stylize.md)
 
+- [交互演示](playground.md)
+
+- [Vue 交互演示](vue-playground.md)
+
 - [组件](components.md)
 
 - [其他](others.md)

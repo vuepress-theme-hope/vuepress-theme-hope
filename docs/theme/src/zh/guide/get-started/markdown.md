@@ -260,7 +260,7 @@ npm i -D vuepress-theme-hope
 
 - [查看详情](../markdown/tasklist.md)
 
-### 图片增强
+#### 图片增强
 
 支持为图片设置颜色模式和大小
 
@@ -328,7 +328,7 @@ npm i -D vuepress-theme-hope
 
 - [查看详情](../markdown/echarts.md)
 
-### 流程图
+#### 流程图
 
 ```flow
 cond=>condition: 是否执行操作?
@@ -362,7 +362,7 @@ flowchart TB
 
 - [查看详情](../markdown/mermaid.md)
 
-### Tex 语法
+#### Tex 语法
 
 $$
 \frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right)
@@ -371,13 +371,13 @@ $$
 
 - [查看详情](../markdown/tex.md)
 
-### 导入文件
+#### 导入文件
 
 @include(../markdown/demo.snippet.md{5-9})
 
 - [查看详情](../markdown/include.md)
 
-### 代码演示
+#### 代码演示
 
 ::: normal-demo 一个普通 Demo
 
@@ -411,6 +411,47 @@ span {
 - [查看详情](../markdown/stylize.md)
 
 <!-- markdownlint-enable MD033 -->
+
+### 交互演示
+
+::: playground#ts TS 案例
+
+@file index.ts
+
+```ts
+const msg = "hello world";
+
+const speak = (msg: string) => console.log(msg);
+
+speak(msg);
+```
+
+:::
+
+- [查看详情](../markdown/playground.md)
+
+### Vue 交互演示
+
+::: vue-playground Vue 交互演示
+
+@file App.vue
+
+```vue
+<script setup>
+import { ref } from "vue";
+
+const msg = ref("Hello World!");
+</script>
+
+<template>
+  <h1>{{ msg }}</h1>
+  <input v-model="msg" />
+</template>
+```
+
+:::
+
+- [查看详情](../markdown/vue-playground.md)
 
 #### 幻灯片
 

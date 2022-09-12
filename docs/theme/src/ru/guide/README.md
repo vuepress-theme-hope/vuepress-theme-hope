@@ -43,6 +43,8 @@ tag:
 - [Демонстрация кода](markdown/demo.md)
 - [Презентация](markdown/presentation.md)
 - [Стилизация](markdown/stylize.md)
+- [Playground](markdown/playground.md)
+- [Vue Playground](markdown/vue-playground.md)
 - [Компоненты из коробки](markdown/components.md)
 - [Кастомизация темы](interface/code-theme.md)
 

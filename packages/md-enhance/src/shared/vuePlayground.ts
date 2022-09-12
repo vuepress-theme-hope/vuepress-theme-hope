@@ -5,15 +5,15 @@ import type { SFCOptions } from "@vue/repl";
  *
  * @description Vue playground is using [`@vue/repl`](https://github.com/vuejs/repl)
  *
- * Vue Playground 配置
+ * Vue 交互演示配置
  *
  * @description Vue playground 使用 [`@vue/repl`](https://github.com/vuejs/repl)
  */
 export interface VuePlaygroundOptions {
   /**
-   * Whether to show code in internal playground.
+   * Whether to show code in playground
    *
-   * 是否在内置 Playground 中显示代码
+   * 是否在交互演示中显示代码
    *
    * @default false
    */
@@ -29,7 +29,7 @@ export interface VuePlaygroundOptions {
   /**
    * specify default URL to import Vue runtime from in the sandbox
    *
-   * 指定默认的 Vue 运行时。
+   * 指定默认的 Vue 运行时
    *
    * @default "https://unpkg.com/@vue/runtime-dom@${version}/dist/runtime-dom.esm-browser.js"
    */
@@ -38,23 +38,23 @@ export interface VuePlaygroundOptions {
   /**
    * Specify default URL to import Vue Server Renderer from in the sandbox
    *
-   * 指定默认的 Vue 服务端渲染器。
+   * 指定默认的 Vue 服务端渲染器
    *
    * @default "https://unpkg.com/@vue/server-renderer@${version}/dist/server-renderer.esm-browser.js"
    */
   defaultVueServerRendererURL?: string;
 
   /**
-   * Whether to enable repl's editor resizable.
+   * Whether to enable repl's editor resizable
    *
-   * 是否启用自动调整大小。
+   * 是否启用自动调整大小
    *
    * @default true
    */
   autoResize?: boolean;
 
   /**
-   * Whether to show JS, CSS, SSR panel.
+   * Whether to show JS, CSS, SSR panel
    *
    * 是否显示 JS, CSS, SSR 面板
    *
@@ -63,7 +63,7 @@ export interface VuePlaygroundOptions {
   showCompileOutput?: boolean;
 
   /**
-   * Whether to show import map.
+   * Whether to show import map
    *
    * 是否显示 import map
    *
@@ -72,7 +72,7 @@ export interface VuePlaygroundOptions {
   showImportMap?: boolean;
 
   /**
-   * Whether to clear console.
+   * Whether to clear console
    *
    * 是否清空控制台
    *
@@ -90,14 +90,14 @@ export interface VuePlaygroundOptions {
   layout?: "vertical" | "horizontal";
 
   /**
-   * Options to configure the `vue/compiler-sfc`.
+   * Options to configure the `vue/compiler-sfc`
    *
    * `vue/compiler-sfc` 配置项
    */
   sfcOptions?: SFCOptions;
 
   /**
-   * Whether to enable SSR.
+   * Whether to enable SSR
    *
    * 是否启用 SSR
    *

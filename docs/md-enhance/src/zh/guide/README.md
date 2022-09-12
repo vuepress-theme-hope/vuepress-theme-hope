@@ -278,6 +278,47 @@ span {
 
 <!-- markdownlint-enable MD033 -->
 
+### 交互演示
+
+::: playground#ts TS 案例
+
+@file index.ts
+
+```ts
+const msg = "hello world";
+
+const speak = (msg: string) => console.log(msg);
+
+speak(msg);
+```
+
+:::
+
+- [查看详情](playground.md)
+
+### Vue 交互演示
+
+::: vue-playground Vue 交互演示
+
+@file App.vue
+
+```vue
+<script setup>
+import { ref } from "vue";
+
+const msg = ref("Hello World!");
+</script>
+
+<template>
+  <h1>{{ msg }}</h1>
+  <input v-model="msg" />
+</template>
+```
+
+:::
+
+- [查看详情](vue-playground.md)
+
 ### 幻灯片
 
 @slidestart
