@@ -263,6 +263,7 @@ export const playground: PluginWithOptions<PlaygroundOptions> = (
     const playgroundData: PlaygroundData = {
       key: hash(`playground${index}-${info}`),
       title: encodeURIComponent(info),
+      settings: {},
       files: {},
     };
 
