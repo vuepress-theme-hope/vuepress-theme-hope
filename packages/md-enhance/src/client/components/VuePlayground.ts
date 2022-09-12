@@ -1,10 +1,9 @@
-import { ReplStore, Repl } from "@vue/repl";
 import { computed, defineComponent, h, onMounted, ref } from "vue";
 
 import { LOADING_SVG, CODE_SVG } from "./icons.js";
 import { getVuePlaygroundSettings } from "../utils/index.js";
 
-import type { ReplProps } from "@vue/repl";
+import type { Repl, ReplProps, ReplStore } from "@vue/repl";
 import type { VNode } from "vue";
 
 import "@vue/repl/style.css";
@@ -21,10 +20,8 @@ export default defineComponent({
 
   setup(props) {
     const loading = ref(true);
-    const store = new ReplStore({
-      serializedState: decodeURIComponent(props.files),
-      showOutput: true,
-    });
+    const component = ref<typeof Repl | null>(null);
+    const store = ref<ReplStore | null>(null);
 
     const playgroundOptions = computed(() =>
       getVuePlaygroundSettings(props.settings)
@@ -33,8 +30,16 @@ export default defineComponent({
     const showCode = ref(playgroundOptions.value.showCode || false);
 
     const setupRepl = async (): Promise<void> => {
+      const { ReplStore, Repl } = await import("@vue/repl");
+
+      component.value = Repl;
+      store.value = new ReplStore({
+        serializedState: decodeURIComponent(props.files),
+        showOutput: true,
+      });
+
       if (playgroundOptions.value.vueVersion)
-        await store.setVueVersion(playgroundOptions.value.vueVersion);
+        await store.value.setVueVersion(playgroundOptions.value.vueVersion);
     };
 
     onMounted(async () => {
@@ -73,10 +78,12 @@ export default defineComponent({
                   innerHTML: LOADING_SVG,
                 })
               : null,
-            h(Repl, <ReplProps>{
-              store,
-              ...playgroundOptions.value,
-            }),
+            component.value
+              ? h(component.value, <ReplProps>{
+                  store: store.value,
+                  ...playgroundOptions.value,
+                })
+              : null,
           ]
         ),
       ]),
