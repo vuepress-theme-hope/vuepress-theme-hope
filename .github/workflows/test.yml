@@ -20,6 +20,9 @@ jobs:
           - "14"
           - "16"
           - "18"
+        bundler:
+          - vite
+          - webpack
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -46,13 +49,9 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
 
-      - name: Webpack build test
+      - name: ${{ matrix.bundler }} build test
         run: |
-          pnpm run -r demo:webpack-build
-
-      - name: Vite build test
-        run: |
-          pnpm run -r demo:vite-build
+          pnpm run -r demo:${{ matrix.bundler }}-build
 
   linter-and-unit:
     name: Linter and Unit test
