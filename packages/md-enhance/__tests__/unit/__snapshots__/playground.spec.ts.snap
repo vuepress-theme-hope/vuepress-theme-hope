@@ -34,6 +34,7 @@ const msg = ref('Hello World!')
   },
   "importMap": "import-map.json",
   "key": "62b3bf5a",
+  "settings": {},
   "title": "Playground%20demo",
 }
 `;
