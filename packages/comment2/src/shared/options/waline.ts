@@ -13,9 +13,18 @@ export interface WalineOptions
   provider: "Waline";
 
   /**
-   * 是否启用访问量
+   * Whether import meta icons
    *
+   * 是否导入 Meta 图标
+   *
+   * @default true
+   */
+  metaIcon?: boolean;
+
+  /**
    * Whether enable page views count by default
+   *
+   * 是否启用访问量
    *
    * @default true
    */

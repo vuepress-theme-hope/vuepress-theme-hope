@@ -76,6 +76,13 @@ Waline 的服务端地址。
 
 评论字数限制。填入单个数字时为最大字数限制。设置为 `0` 时无限制。
 
+## metaIcon
+
+- 类型: `boolean`
+- 默认值: `true`
+
+是否导入 Meta 图标。
+
 ## pageSize
 
 - 类型: `number`

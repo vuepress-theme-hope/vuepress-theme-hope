@@ -12,7 +12,6 @@ import "../styles/twikoo.scss";
 declare const COMMENT_OPTIONS: TwikooOptions;
 
 const twikooOption = COMMENT_OPTIONS;
-
 const enableTwikoo = Boolean(twikooOption.envId);
 
 export default defineComponent({

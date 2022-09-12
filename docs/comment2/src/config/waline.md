@@ -76,6 +76,13 @@ Login mode status, optional values:
 
 Comment word s limit. When a single number is filled in, it 's the maximum number of comment words. No limit when set to `0`.
 
+## metaIcon
+
+- Type: `boolean`
+- Default: `true`
+
+Whether import meta icon.
+
 ## pageSize
 
 - Type: `number`

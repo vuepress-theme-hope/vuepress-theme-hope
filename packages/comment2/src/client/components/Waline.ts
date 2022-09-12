@@ -1,5 +1,5 @@
 import { usePageFrontmatter, usePageLang, withBase } from "@vuepress/client";
-import { Waline } from "@waline/client/dist/component";
+import { Waline } from "@waline/client/dist/component.esm.js";
 import { pageviewCount } from "@waline/client/dist/pageview";
 import { computed, defineComponent, h, onMounted, watch } from "vue";
 import { useRoute } from "vue-router";
@@ -19,11 +19,12 @@ declare const COMMENT_OPTIONS: WalineOptions;
 
 declare const WALINE_LOCALES: WalineLocaleConfig;
 
-export const walineOption = COMMENT_OPTIONS;
+const walineOption = COMMENT_OPTIONS;
+const walineLocales = WALINE_LOCALES;
+const enableWaline = Boolean(walineOption.serverURL);
 
-export const enableWaline = Boolean(walineOption.serverURL);
-
-export const walineLocales = WALINE_LOCALES;
+if (walineOption.metaIcon !== false)
+  import("@waline/client/dist/waline-meta.css");
 
 export default defineComponent({
   name: "WalineComment",

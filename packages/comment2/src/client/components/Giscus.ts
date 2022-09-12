@@ -14,7 +14,6 @@ import "../styles/giscus.scss";
 declare const COMMENT_OPTIONS: GiscusOptions;
 
 const giscusOption = COMMENT_OPTIONS;
-
 const enableGiscus = Boolean(
   giscusOption.repo &&
     giscusOption.repoId &&
