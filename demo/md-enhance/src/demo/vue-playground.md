@@ -29,6 +29,23 @@ const msg = ref("Hello Playground!");
 
 ```vue
 <script setup>
+import { ref } from "vue";
+import Comp from "./Comp.vue";
+
+const msg = ref("Hello Playground!");
+</script>
+
+<template>
+  <h1>{{ msg }}</h1>
+  <input v-model="msg" />
+  <Comp />
+</template>
+```
+
+@file Comp.vue
+
+```vue
+<script setup>
 import { useBattery } from "@vueuse/core";
 import { ref } from "vue";
 
@@ -47,7 +64,9 @@ const { charging, level } = useBattery();
 ```json
 {
   "imports": {
-    "@vueuse/core": "https://cdn.jsdelivr.net/npm/@vueuse/core"
+    "@vueuse/core": "https://unpkg.com/@vueuse/core/index.mjs",
+    "@vueuse/shared": "https://unpkg.com/@vueuse/shared/index.mjs",
+    "vue-demi": "https://unpkg.com/vue-demi/lib/index.mjs"
   }
 }
 ```

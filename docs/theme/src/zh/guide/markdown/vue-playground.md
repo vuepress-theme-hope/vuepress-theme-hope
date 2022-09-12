@@ -114,6 +114,23 @@ const msg = ref("你好交互演示!");
 
 ```vue
 <script setup>
+import { ref } from "vue";
+import Comp from "./Comp.vue";
+
+const msg = ref("Hello Playground!");
+</script>
+
+<template>
+  <h1>{{ msg }}</h1>
+  <input v-model="msg" />
+  <Comp />
+</template>
+```
+
+@file Comp.vue
+
+```vue
+<script setup>
 import { useBattery } from "@vueuse/core";
 import { ref } from "vue";
 
@@ -155,6 +172,23 @@ const { charging, level } = useBattery();
 ::: vue-playground 自定义导入与映射的 Vue 交互演示
 
 @file App.vue
+
+```vue
+<script setup>
+import { ref } from "vue";
+import Comp from "./Comp.vue";
+
+const msg = ref("Hello Playground!");
+</script>
+
+<template>
+  <h1>{{ msg }}</h1>
+  <input v-model="msg" />
+  <Comp />
+</template>
+```
+
+@file Comp.vue
 
 ```vue
 <script setup>
