@@ -36,11 +36,13 @@ export default defineUserConfig({
         "/demo/mark",
         "/demo/include",
         "/demo/mermaid",
+        "/demo/playground",
         "/demo/presentation",
         "/demo/sup-sub",
         "/demo/tabs",
         "/demo/tasklist",
         "/demo/tex",
+        "/demo/vue-playground",
       ],
     },
 
@@ -57,6 +59,9 @@ export default defineUserConfig({
   plugins: [
     mdEnhancePlugin({
       enableAll: true,
+      playground: {
+        presets: ["ts", "vue"],
+      },
       presentation: {
         plugins: ["highlight", "math", "search", "notes", "zoom"],
       },

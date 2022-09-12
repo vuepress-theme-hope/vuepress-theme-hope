@@ -89,6 +89,16 @@ features:
     details: 将你的文档分段，并在 Markdown 中导入
     link: /zh/guide/include.html
 
+  - title: 交互演示支持
+    icon: code
+    details: 你可以在 Markdown 中添加交互演示
+    link: /zh/guide/playground.html
+
+  - title: Vue 交互演示支持
+    icon: code
+    details: 在交互演示中展示 Vue 组件
+    link: /zh/guide/vue-playground.html
+
   - title: 代码案例支持
     icon: discover
     details: 你可以很方便的插入代码案例

@@ -250,6 +250,214 @@ Whether to enable [Mermaid](https://mermaid-js.github.io/mermaid/#/) support.
 
 Stylize inline tokens to create snippet you want.
 
+### playground
+
+- Type: `PlaygroundGlobalOptions`
+
+  ```ts
+  import type { CompilerOptions } from "typescript";
+
+  interface PlaygroundCodeConfig {
+    /**
+     * Code block extension
+     *
+     * @description It's based on filename, not code fence language
+     */
+    ext: string;
+
+    /**
+     * Code block content
+     */
+    content: string;
+  }
+
+  interface PlaygroundData {
+    /**
+     * Title of Playground
+     */
+    title?: string;
+
+    /**
+     * Import map file name
+     *
+     * @default 'import-map.json'
+     */
+    importMap?: string;
+
+    /**
+     * Playground iles info
+     */
+    files: Record<
+      /** File name */
+      string,
+      /** File detail */
+      PlaygroundCodeConfig
+    >;
+
+    /**
+     * Playground settings
+     *
+     * @description It's parsed result of json content after setting directive
+     */
+    settings: Record<string, unknown>;
+
+    /**
+     * hash key based on playground content
+     */
+    key: string;
+  }
+
+  interface PlaygroundOptions {
+    /**
+     * Playground container name
+     */
+    name: string;
+
+    /**
+     * Playground component name
+     *
+     * @default 'Playground'
+     */
+    component?: string;
+
+    /**
+     * Props getter
+     */
+    propsGetter: (data: PlaygroundData) => Record<string, string>;
+  }
+
+  interface TSPresetPlaygroundOptions extends CompilerOptions {
+    /**
+     * external playground service url
+     *
+     * @default "https://www.typescriptlang.org/play"
+     */
+    service?: string;
+  }
+
+  export interface VuePresetPlaygroundOptions {
+    /**
+     * external playground service url
+     *
+     * @default "https://sfc.vuejs.org/"
+     */
+    service?: string;
+
+    /**
+     * Whether to use dev version
+     *
+     * @default false
+     */
+    dev?: boolean;
+
+    /**
+     * Whether to enable SSR
+     *
+     * @default false
+     */
+    ssr?: boolean;
+  }
+
+  interface PlaygroundGlobalOptions {
+    /** Playground presets */
+    presets: ("ts" | "vue" | PlaygroundOptions)[];
+    /** Playground config */
+    config?: {
+      ts?: TSPresetPlaygroundOptions;
+      vue?: VuePresetPlaygroundOptions;
+    };
+  }
+  ```
+
+- Required: No
+
+Playground options.
+
+### vuePlayground
+
+- Type: `VuePlaygroundOptions | boolean`
+
+  ```ts
+  interface VuePlaygroundOptions {
+    /**
+     * Whether to show code in playground
+     *
+     * @default false
+     */
+    showCode?: boolean;
+
+    /**
+     * specify the version of vue
+     */
+    vueVersion?: string;
+
+    /**
+     * specify default URL to import Vue runtime from in the sandbox
+     *
+     * @default "https://unpkg.com/@vue/runtime-dom@${version}/dist/runtime-dom.esm-browser.js"
+     */
+    defaultVueRuntimeURL?: string;
+
+    /**
+     * Specify default URL to import Vue Server Renderer from in the sandbox
+     *
+     * @default "https://unpkg.com/@vue/server-renderer@${version}/dist/server-renderer.esm-browser.js"
+     */
+    defaultVueServerRendererURL?: string;
+
+    /**
+     * Whether to enable repl's editor resizable
+     *
+     * @default true
+     */
+    autoResize?: boolean;
+
+    /**
+     * Whether to show JS, CSS, SSR panel
+     *
+     * @default false
+     */
+    showCompileOutput?: boolean;
+
+    /**
+     * Whether to show import map
+     *
+     * @default true
+     */
+    showImportMap?: boolean;
+
+    /**
+     * Whether to clear console
+     *
+     * @default false
+     */
+    clearConsole?: boolean;
+
+    /**
+     * Layout
+     *
+     * @default 'vertical'
+     */
+    layout?: "vertical" | "horizontal";
+
+    /**
+     * Options to configure the `vue/compiler-sfc`
+     */
+    sfcOptions?: SFCOptions;
+
+    /**
+     * Whether to enable SSR
+     *
+     * @default true
+     */
+    ssr?: boolean;
+  }
+  ```
+
+- Default: `false`
+
+Whether to enable vue playground support.
+
 ### demo
 
 - Type: `CodeDemoGlobalOptions | boolean`

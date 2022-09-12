@@ -276,6 +276,47 @@ Setting this to a invalid stytax <span style="color:red">doesn't</span> have any
 
 <!-- markdownlint-enable MD033 -->
 
+### Playground
+
+::: playground#ts TS demo
+
+@file index.ts
+
+```ts
+const msg = "hello world";
+
+const speak = (msg: string) => console.log(msg);
+
+speak(msg);
+```
+
+:::
+
+- [View Detail](playground.md)
+
+### Vue Playground
+
+::: vue-playground Vue Playground
+
+@file App.vue
+
+```vue
+<script setup>
+import { ref } from "vue";
+
+const msg = ref("Hello World!");
+</script>
+
+<template>
+  <h1>{{ msg }}</h1>
+  <input v-model="msg" />
+</template>
+```
+
+:::
+
+- [View Detail](vue-playground.md)
+
 ### Presentation
 
 @slidestart

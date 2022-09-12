@@ -5,6 +5,8 @@ export * from "./imageMark.js";
 export * from "./include.js";
 export * from "./locales.js";
 export * from "./options.js";
+export * from "./playground.js";
 export * from "./presentation.js";
 export * from "./tasklist.js";
 export * from "./stylize.js";
+export * from "./vuePlayground.js";

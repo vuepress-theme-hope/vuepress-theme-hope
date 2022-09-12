@@ -234,7 +234,7 @@ describe("generate locale", () => {
           "/": { lang: "zh-CN" },
           "/en/": { lang: "en-US" },
           "/jp/": { lang: "jp-JP" },
-          "/unknown/": { lang: "unkown-Language" },
+          "/unknown/": { lang: "unknown-Language" },
         },
         source: path.resolve(__dirname, "./__fixtures__/src"),
         bundler: {} as any,

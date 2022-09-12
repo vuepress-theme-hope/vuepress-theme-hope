@@ -1,0 +1,121 @@
+// Vitest Snapshot v1
+
+exports[`playground > basic > Should resolve playground info 1`] = `
+{
+  "files": {
+    "App.vue": {
+      "content": "<script setup>
+import { ref } from 'vue'
+const msg = ref('Hello World!')
+</script>
+<template>
+  <h1>{{ msg }}</h1>
+  <input v-model=\\"msg\\" />
+</template>
+",
+      "ext": "vue",
+    },
+    "Comp.vue": {
+      "content": "<template>
+  <div>Comp</div>
+</template>
+",
+      "ext": "vue",
+    },
+    "import-map.json": {
+      "content": "{
+  \\"imports\\": {
+    \\"vue\\": \\"https://sfc.vuejs.org/vue.runtime.esm-browser.js\\"
+  }
+}
+",
+      "ext": "json",
+    },
+  },
+  "importMap": "import-map.json",
+  "key": "62b3bf5a",
+  "settings": {},
+  "title": "Playground%20demo",
+}
+`;
+
+exports[`playground > basic > Should resolve playground info with settings 1`] = `
+{
+  "files": {
+    "App.vue": {
+      "content": "<script setup>
+import { ref } from 'vue'
+const msg = ref('Hello World!')
+</script>
+<template>
+  <h1>{{ msg }}</h1>
+  <input v-model=\\"msg\\" />
+</template>
+",
+      "ext": "vue",
+    },
+    "Comp.vue": {
+      "content": "<template>
+  <div>Comp</div>
+</template>
+",
+      "ext": "vue",
+    },
+  },
+  "key": "1877a7d0",
+  "settings": {
+    "service": "https://element-plus.run/",
+  },
+  "title": "Playground%20demo2",
+}
+`;
+
+exports[`playground > basic > Should resolve playground info with settings 2`] = `
+{
+  "files": {
+    "App.vue": {
+      "content": "<script setup>
+import { ref } from 'vue'
+const msg = ref('Hello World!')
+</script>
+<template>
+  <h1>{{ msg }}</h1>
+  <input v-model=\\"msg\\" />
+</template>
+",
+      "ext": "vue",
+    },
+    "import-map.json": {
+      "content": "{
+  \\"imports\\": {
+    \\"vue\\": \\"https://sfc.vuejs.org/vue.runtime.esm-browser.js\\"
+  }
+}
+",
+      "ext": "json",
+    },
+  },
+  "importMap": "import-map.json",
+  "key": "1877a7d0",
+  "settings": {
+    "service": "https://element-plus.run/",
+  },
+  "title": "Playground%20demo2",
+}
+`;
+
+exports[`playground > ts preset > Should work 1`] = `
+"<Playground key=\\"2d9205c7\\" title=\\"TS%20demo%201\\" link=\\"https%3A%2F%2Fwww.typescriptlang.org%2Fplay%23code%2FMYewdgzgLgBAthA5jAvDARACwKYBtcgwDuIATrgCboDcAULaJLBAA7YCGA1qjABQKIAXDGikAlmEQBKVAD4YjCCFzYAdAUT8kUurVYdOW6XSA\\">
+</Playground>
+"
+`;
+
+exports[`playground > ts preset > Should work 2`] = `
+"<Playground key=\\"2d9205c8\\" title=\\"TS%20demo%202\\" link=\\"https%3A%2F%2Fwww.typescriptlang.org%2Fplay%3F1%23code%2FMYewdgzgLgBAthA5jAvDARACwKYBtcgwDuIATrgCboDcAULaJLBAA7YCGA1qjABQKIAXDGikAlmEQBKVAD4YjCCFzYAdAUT8kUurVYdOW6XSA\\">
+<pre><code class=\\"language-json\\">{
+  &quot;target&quot;: &quot;es5&quot;
+}
+</code></pre>
+</Playground>
+"
+`;

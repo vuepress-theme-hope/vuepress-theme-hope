@@ -18,6 +18,9 @@ export default theme("md-enhance", {
   plugins: {
     mdEnhance: {
       enableAll: true,
+      playground: {
+        presets: ["ts", "vue"],
+      },
       presentation: {
         plugins: ["highlight", "math", "search", "notes", "zoom"],
       },

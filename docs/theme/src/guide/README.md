@@ -43,6 +43,8 @@ Added more syntax to Markdown, enriching documentation and blog writing:
 - [Code demo](markdown/demo.md)
 - [Presentation](markdown/presentation.md)
 - [Stylize](markdown/stylize.md)
+- [Playground](markdown/playground.md)
+- [Vue Playground](markdown/vue-playground.md)
 - [Components out of box](markdown/components.md)
 - [Customize Themes](interface/code-theme.md)
 

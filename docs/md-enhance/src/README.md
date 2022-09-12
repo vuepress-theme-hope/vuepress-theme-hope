@@ -89,6 +89,16 @@ features:
     details: split your docs with different parts and import them in Markdown
     link: /guide/include.html
 
+  - title: Playground Support
+    icon: code
+    details: You can add playground in markdown files
+    link: /guide/playground.html
+
+  - title: Vue playground Support
+    icon: code
+    details: Show living vue component in playground
+    link: /guide/vue-playground.html
+
   - title: Code Demo Support
     icon: discover
     details: You can insert code demo easily

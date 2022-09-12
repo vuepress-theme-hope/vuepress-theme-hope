@@ -304,6 +304,218 @@ interface TaskListOptions {
 
 对行内语法进行样式化以创建代码片段
 
+## playground
+
+- 类型: `PlaygroundGlobalOptions`
+
+  ```ts
+  import type { CompilerOptions } from "typescript";
+
+  interface PlaygroundCodeConfig {
+    /**
+     * 代码块扩展名
+     *
+     * @description 它基于文件名，而不是代码块语言
+     */
+    ext: string;
+
+    /**
+     * 代码块内容
+     */
+    content: string;
+  }
+
+  interface PlaygroundData {
+    /**
+     * 交互演示标题
+     */
+    title?: string;
+
+    /**
+     * Import map 文件名
+     *
+     * @default 'import-map.json'
+     */
+    importMap?: string;
+
+    /**
+     * 交互演示文件信息
+     */
+    files: Record<
+      /**
+       * 文件名
+       */
+      string,
+      /**
+       * 文件详情
+       */
+      PlaygroundCodeConfig
+    >;
+
+    /**
+     * 交互演示设置
+     *
+     * @description 它是设置指令后的 json 内容的解析结果
+     */
+    settings: Record<string, unknown>;
+
+    /**
+     * 根据交互演示内容生成的 hash key
+     */
+    key: string;
+  }
+
+  interface PlaygroundOptions {
+    /**
+     * 交互演示容器名
+     */
+    name: string;
+
+    /**
+     * 交互演示组件名称
+     *
+     * @default 'Playground'
+     */
+    component?: string;
+
+    /**
+     * 属性获取器
+     */
+    propsGetter: (data: PlaygroundData) => Record<string, string>;
+  }
+
+  interface TSPresetPlaygroundOptions extends CompilerOptions {
+    /**
+     * 交互演示外部地址
+     *
+     * @default "https://www.typescriptlang.org/play"
+     */
+    service?: string;
+  }
+
+  export interface VuePresetPlaygroundOptions {
+    /**
+     * 交互演示外部地址
+     *
+     * @default "https://sfc.vuejs.org/"
+     */
+    service?: string;
+
+    /**
+     * 是否启用开发版本
+     *
+     * @default false
+     */
+    dev?: boolean;
+
+    /**
+     * 是否启用 SSR
+     *
+     * @default false
+     */
+    ssr?: boolean;
+  }
+
+  interface PlaygroundGlobalOptions {
+    /** 交互演示预设 */
+    presets: ("ts" | "vue" | PlaygroundOptions)[];
+    /** 交互演示配置 */
+    config?: {
+      ts?: TSPresetPlaygroundOptions;
+      vue?: VuePresetPlaygroundOptions;
+    };
+  }
+  ```
+
+- 必填: 否
+
+交互演示选项。
+
+## vuePlayground
+
+- 类型: `VuePlaygroundOptions | boolean`
+
+  ```ts
+  interface VuePlaygroundOptions {
+    /**
+     * 是否在交互演示中显示代码
+     *
+     * @default false
+     */
+    showCode?: boolean;
+
+    /**
+     * 指定 vue 版本
+     */
+    vueVersion?: string;
+
+    /**
+     * 指定默认的 Vue 运行时
+     *
+     * @default "https://unpkg.com/@vue/runtime-dom@${version}/dist/runtime-dom.esm-browser.js"
+     */
+    defaultVueRuntimeURL?: string;
+
+    /**
+     * 指定默认的 Vue 服务端渲染器
+     *
+     * @default "https://unpkg.com/@vue/server-renderer@${version}/dist/server-renderer.esm-browser.js"
+     */
+    defaultVueServerRendererURL?: string;
+
+    /**
+     * 是否启用自动调整大小
+     *
+     * @default true
+     */
+    autoResize?: boolean;
+
+    /**
+     * 是否显示 JS, CSS, SSR 面板
+     *
+     * @default false
+     */
+    showCompileOutput?: boolean;
+
+    /**
+     * 是否显示 import map
+     *
+     * @default true
+     */
+    showImportMap?: boolean;
+
+    /**
+     * 是否清空控制台
+     *
+     * @default false
+     */
+    clearConsole?: boolean;
+
+    /**
+     * 布局
+     *
+     * @default 'vertical'
+     */
+    layout?: "vertical" | "horizontal";
+
+    /**
+     * `vue/compiler-sfc` 配置项
+     */
+    sfcOptions?: SFCOptions;
+
+    /**
+     * 是否启用 SSR
+     *
+     * @default true
+     */
+    ssr?: boolean;
+  }
+  ```
+
+- 默认值: `false`
+
+是否启用 Vue 交互演示支持。
+
 ## demo
 
 - 类型: `CodeDemoGlobalOptions | boolean`
@@ -354,8 +566,8 @@ CodePen 编辑器布局
 
 ### demo.codepenEditors
 
-- Type: `string`
-- Default value: `"101"`
+- 类型: `string`
+- 默认值: `"101"`
 
 CodePen 编辑器状态
 

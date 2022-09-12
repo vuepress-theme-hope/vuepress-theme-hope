@@ -5,9 +5,15 @@ import type { CodeDemoOptions } from "./codeDemo.js";
 import type { ImageMarkOptions } from "./imageMark.js";
 import type { IncludeOptions } from "./include.js";
 import type { MarkdownEnhanceLocaleData } from "./locales.js";
+import type {
+  PlaygroundOptions,
+  TSPresetPlaygroundOptions,
+  VuePresetPlaygroundOptions,
+} from "./playground.js";
 import type { PresentationOptions } from "./presentation.js";
 import type { TaskListOptions } from "./tasklist.js";
 import type { StylizeOptions } from "./stylize.js";
+import type { VuePlaygroundOptions } from "./vuePlayground.js";
 
 /**
  * md-enhance plugin configuration
@@ -257,6 +263,30 @@ export interface MarkdownEnhanceOptions {
    * 关键词显示增强选项
    */
   stylize?: StylizeOptions;
+
+  /**
+   * Whether to enable playground support
+   *
+   * 是否启用 playground 支持
+   */
+  playground?: {
+    /** Playground presets */
+    presets: ("ts" | "vue" | PlaygroundOptions)[];
+    /** Playground config */
+    config?: {
+      ts?: TSPresetPlaygroundOptions;
+      vue?: VuePresetPlaygroundOptions;
+    };
+  };
+
+  /**
+   * Whether to enable vue playground support
+   *
+   * 是否启用 Vue Playground 支持
+   *
+   * @default false
+   */
+  vuePlayground?: VuePlaygroundOptions | boolean;
 
   /**
    * @deprecated This option is for demo only, please enable options you need in production.
