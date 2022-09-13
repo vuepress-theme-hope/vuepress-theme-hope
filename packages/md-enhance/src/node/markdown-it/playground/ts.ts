@@ -1,6 +1,6 @@
-import ts from "typescript";
 import { deepAssign } from "vuepress-shared";
 import { compressToEncodedURIComponent } from "./ventors/lzstring.js";
+import { optionDeclarations } from "./ventors/optionDelcarations.js";
 
 import type { CompilerOptions } from "typescript";
 import type {
@@ -17,30 +17,15 @@ export const getURL = (
   const hash = `#code/${compressToEncodedURIComponent(code)}`;
 
   const queryString = Object.entries(compilerOptions)
-    .filter(
-      ([key, value]) =>
-        value !== null &&
-        value !== undefined &&
-        Boolean(
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-          // @ts-ignore
-          // eslint-disable-next-line
-          ts.optionDeclarations.find((option) => option.name === key)
-        )
-    )
     .map(([key, value]) => {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      // eslint-disable-next-line
-      const type = ts.optionDeclarations.find(
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        // eslint-disable-next-line
-        (option) => option.name === key
-      ).type as Map<string, number> | "boolean" | "list" | "number" | "string";
+      const item = optionDeclarations.find((option) => option.name === key)!;
 
-      if (type instanceof Map) {
-        const result = type.get(value as string);
+      if (!item || value === null || value === undefined) return "";
+
+      const { type } = item;
+
+      if (typeof type === "object") {
+        const result = type[value as keyof typeof type];
 
         return result?.toString() || "";
       }
