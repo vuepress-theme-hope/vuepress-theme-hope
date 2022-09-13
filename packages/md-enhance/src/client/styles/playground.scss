@@ -13,8 +13,7 @@
 
   margin-top: 1rem;
   margin-bottom: 1rem;
-  border: 1px solid;
-  border-color: var(--code-border-color);
+  border: 1px solid var(--c-border, #ddd);
   border-radius: 6px;
 
   .title-wrapper {
@@ -22,8 +21,7 @@
     flex-flow: row wrap;
 
     padding: 8px 10px;
-    border-bottom: 1px solid;
-    border-bottom-color: var(--code-border-color);
+    border-bottom: 1px solid var(--c-border, #ddd);
 
     background-color: var(--playground-header-bg-color, #eee);
 
