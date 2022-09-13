@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.100](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.99...v2.0.0-beta.100) (2022-09-13)
+
+### Features
+
+- **comment2:** bump @waline/client ([96b1bae](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/96b1baea7c8ec1f5a3db64c9f204906dd7248847))
+- **theme:** improve original badge style ([4a4cf57](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4a4cf572186a0d5057351774b4eef685ff602b43))
+
+### Bug Fixes
+
+- **md-enhance:** fix playground style with theme default ([dfc534c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/dfc534cc9d3174ec269d7564a4500cc058de3248))
+
 ## [2.0.0-beta.99](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.98...v2.0.0-beta.99) (2022-09-13)
 
 ### ⚠ BREAKING CHANGES
