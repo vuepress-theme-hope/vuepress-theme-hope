@@ -335,6 +335,17 @@ const msg = ref("Hello Playground!");
 }
 ```
 
+@import
+
+```json
+{
+  "imports": {
+    "vue": "https://sfc.vuejs.org/vue.runtime.esm-browser.js",
+    "vue/server-renderer": "https://sfc.vuejs.org/server-renderer.esm-browser.js"
+  }
+}
+```
+
 :::
 
 :::: details Code
@@ -363,6 +374,17 @@ const msg = ref("Hello Playground!");
 {
   "dev": true,
   "ssr": true
+}
+```
+
+@import
+
+```json
+{
+  "imports": {
+    "vue": "https://sfc.vuejs.org/vue.runtime.esm-browser.js",
+    "vue/server-renderer": "https://sfc.vuejs.org/server-renderer.esm-browser.js"
+  }
 }
 ```
 
