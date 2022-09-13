@@ -31,8 +31,8 @@ export default [
   ...rollupTypescript("client/components/Waline", {
     external: [
       "@vuepress/client",
-      "@waline/client/dist/component",
-      "@waline/client/dist/pageview",
+      "@waline/client/dist/component.mjs",
+      "@waline/client/dist/pageview.mjs",
       "autosize",
       "marked",
       "vue",

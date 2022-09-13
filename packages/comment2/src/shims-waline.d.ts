@@ -1,4 +1,4 @@
-declare module "@waline/client/dist/component.esm.js" {
+declare module "@waline/client/dist/component.mjs" {
   import type { ComponentOptions } from "vue";
 
   export const Waline: ComponentOptions;

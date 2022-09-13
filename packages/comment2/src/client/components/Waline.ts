@@ -1,6 +1,6 @@
 import { usePageFrontmatter, usePageLang, withBase } from "@vuepress/client";
-import { Waline } from "@waline/client/dist/component.esm.js";
-import { pageviewCount } from "@waline/client/dist/pageview.esm.js";
+import { Waline } from "@waline/client/dist/component.mjs";
+import { pageviewCount } from "@waline/client/dist/pageview.mjs";
 import { computed, defineComponent, h, onMounted, watch } from "vue";
 import { useRoute } from "vue-router";
 import { useLocaleConfig } from "vuepress-shared/lib/client";
