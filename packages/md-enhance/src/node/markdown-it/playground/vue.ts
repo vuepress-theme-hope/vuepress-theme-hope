@@ -1,3 +1,4 @@
+import { deepAssign } from "vuepress-shared";
 import type {
   PlaygroundData,
   PlaygroundOptions,
@@ -48,7 +49,40 @@ export const getVuePlaygroundPreset = (
                   .filter(([, { ext }]) =>
                     VUE_SUPPORTED_EXTENSIONS.includes(ext)
                   )
-                  .map(([key, config]) => [key, config.content])
+                  .map(([key, { content }]) => {
+                    if (key === "import-map.json") {
+                      const importMap = <
+                        {
+                          imports: Record<string, string>;
+                          scopes?: Record<string, Record<string, string>>;
+                        }
+                      >JSON.parse(content);
+
+                      return [
+                        key,
+                        JSON.stringify(
+                          deepAssign(
+                            {},
+                            {
+                              // insure vue exisits and vue/server-render exisits when ssr is on
+                              imports: {
+                                vue: "https://sfc.vuejs.org/vue.runtime.esm-browser.js",
+                                ...(settings.ssr
+                                  ? {
+                                      "vue/server-renderer":
+                                        "https://sfc.vuejs.org/server-renderer.esm-browser.js",
+                                    }
+                                  : {}),
+                              },
+                            },
+                            importMap
+                          )
+                        ),
+                      ];
+                    }
+
+                    return [key, content];
+                  })
               )
             )
           ).toString("base64")
