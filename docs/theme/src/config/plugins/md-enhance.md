@@ -586,25 +586,6 @@ If the theme you are using has a switching animation, it is recommended to confi
 
 :::
 
-### enableAll <Badge text="Demo only" type="danger" />
-
-- Type: `boolean`
-- Default: `false`
-
-Whether to enable all features.
-
-::: danger
-
-Please use this option ONLY for playing or testing.
-
-The plugin is FULLY treeshakable, so you should use the options below and enable ONLY the feature you want to use.
-
-Enabling features you don’t need will increase dev and build time. (`markdown-it` has to check for extra syntaxs)
-
-Also, some feature will add large chunks to your output (can up to 2MB).
-
-:::
-
 ### locales
 
 - Type: `MarkdownEnhanceLocaleConfig`

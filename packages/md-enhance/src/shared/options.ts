@@ -289,19 +289,6 @@ export interface MarkdownEnhanceOptions {
   vuePlayground?: VuePlaygroundOptions | boolean;
 
   /**
-   * @deprecated This option is for demo only, please enable options you need in production.
-   *
-   * Whether to enable all features.
-   *
-   * @deprecated 此选项仅用于案例，请在生产环境中启用你需要的选项
-   *
-   * 是否启用全部增强语法
-   *
-   * @default false
-   */
-  enableAll?: boolean;
-
-  /**
    * The delay of operating dom, in ms
    *
    * If the theme you are using has a switching animation, it is recommended to configure this option to `Switch animation duration + 200`

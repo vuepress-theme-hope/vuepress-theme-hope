@@ -597,25 +597,6 @@ CodePen 编辑器显示情况，第一位代表 HTML ，第二位代表 JS，第
 
 :::
 
-### enableAll <Badge text="仅限示例" type="danger" />
-
-- 类型: `boolean`
-- 默认值: `false`
-
-启用全部功能。
-
-::: danger
-
-请仅将此选项用于体验或测试。
-
-插件完全支持代码分割，所以你应该使用下方选项并**仅**启用你需要的功能。
-
-启用不需要的功能将增加开发和构建时间。 (`markdown-it` 必须检查额外的语法)
-
-同时，一些功能会输出体积较大的文件到输出结果。(可高达 2MB)
-
-:::
-
 ### locales
 
 - 类型: `MarkdownEnhanceLocaleConfig`

@@ -49,10 +49,7 @@ app.component("LocalEncrypt", LocalEncrypt);
 `;
   }
 
-  if (
-    plugins.mdEnhance &&
-    (plugins.mdEnhance.enableAll || plugins.mdEnhance.presentation)
-  ) {
+  if (plugins.mdEnhance && plugins.mdEnhance.presentation) {
     configImport += `import Slide from "${CLIENT_FOLDER}layouts/Slide.js";\n`;
     layout += "Slide,\n";
   }

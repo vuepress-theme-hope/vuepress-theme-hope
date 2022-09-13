@@ -18,7 +18,7 @@ export const prepareConfigFile = async (
   const getStatus = (key: keyof MarkdownEnhanceOptions, gfm = false): boolean =>
     key in options
       ? Boolean(options[key])
-      : (gfm && "gfm" in options && options.gfm) || options.enableAll || false;
+      : (gfm && "gfm" in options && options.gfm) || false;
 
   if (getStatus("chart")) {
     configImport += `import ChartJS from "${CLIENT_FOLDER}components/ChartJS.js";\n`;

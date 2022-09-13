@@ -16,10 +16,7 @@ export const getStatus = (themeOptions: HopeThemeOptions): ThemeStatus => {
       themeOptions.encrypt &&
         ("admin" in themeOptions.encrypt || "config" in themeOptions.encrypt)
     ),
-    enableSlide: Boolean(
-      plugins.mdEnhance &&
-        (plugins.mdEnhance.enableAll || plugins.mdEnhance.presentation)
-    ),
+    enableSlide: Boolean(plugins.mdEnhance && plugins.mdEnhance.presentation),
     enableVisitor: Boolean(
       plugins.comment && plugins.comment.provider === "Waline"
     ),

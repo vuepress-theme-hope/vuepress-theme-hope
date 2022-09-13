@@ -43,48 +43,6 @@ Frontmatter — важная концепция в VuePress. Если вы эт�
 
 Используя [`vuepress-plugin-md-enhance`][md-enhance], тема расширяет синтаксис Markdown и предоставляет более богатые функции записи.
 
-:::: tip Включить все
-
-Вы можете установить `plugins.mdEnhance.enableAll: true` в настройках темы, чтобы включить все функции плагина [md-enhance][md-enhance], чтобы попробовать их.
-
-::: code-tabs#language
-
-@tab TS
-
-```ts
-import { hopeTheme } from "vuepress-theme-hope";
-
-export default {
-  theme: hopeTheme({
-    plugins: {
-      mdEnhance: {
-        enableAll: true,
-      },
-    },
-  }),
-};
-```
-
-@tab JS
-
-```js
-import { hopeTheme } from "vuepress-theme-hope";
-
-export default {
-  theme: hopeTheme({
-    plugins: {
-      mdEnhance: {
-        enableAll: true,
-      },
-    },
-  }),
-};
-```
-
-:::
-
-::::
-
 #### Пользовательский контейнер
 
 ::: v-pre
