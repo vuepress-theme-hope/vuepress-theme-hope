@@ -18,23 +18,11 @@ export const prepareConfigFile = async (
   const getStatus = (key: keyof MarkdownEnhanceOptions, gfm = false): boolean =>
     key in options
       ? Boolean(options[key])
-      : gfm && "gfm" in options
-      ? Boolean(options.gfm)
-      : options.enableAll || false;
+      : (gfm && "gfm" in options && options.gfm) || options.enableAll || false;
 
   if (getStatus("chart")) {
     configImport += `import ChartJS from "${CLIENT_FOLDER}components/ChartJS.js";\n`;
     enhance += `app.component("ChartJS", ChartJS);\n`;
-  }
-
-  if (getStatus("echarts")) {
-    configImport += `import ECharts from "${CLIENT_FOLDER}components/ECharts.js";\n`;
-    enhance += `app.component("ECharts", ECharts);\n`;
-  }
-
-  if (getStatus("demo")) {
-    configImport += `import CodeDemo from "${CLIENT_FOLDER}components/CodeDemo.js";\n`;
-    enhance += `app.component("CodeDemo", CodeDemo);\n`;
   }
 
   if (getStatus("codetabs")) {
@@ -49,10 +37,29 @@ export const prepareConfigFile = async (
     }
   }
 
+  if (getStatus("container"))
+    configImport += `import "${CLIENT_FOLDER}styles/container/index.scss";\n`;
+
+  if (getStatus("demo")) {
+    configImport += `import CodeDemo from "${CLIENT_FOLDER}components/CodeDemo.js";\n`;
+    enhance += `app.component("CodeDemo", CodeDemo);\n`;
+  }
+
+  if (getStatus("echarts")) {
+    configImport += `import ECharts from "${CLIENT_FOLDER}components/ECharts.js";\n`;
+    enhance += `app.component("ECharts", ECharts);\n`;
+  }
+
   if (getStatus("flowchart")) {
     configImport += `import FlowChart from "${CLIENT_FOLDER}components/FlowChart.js";\n`;
     enhance += `app.component("FlowChart", FlowChart);\n`;
   }
+
+  if (getStatus("footnote", true))
+    configImport += `import "${CLIENT_FOLDER}styles/footnote.scss";\n`;
+
+  if (getStatus("imageMark", true))
+    configImport += `import "${CLIENT_FOLDER}styles/image-mark.scss";\n`;
 
   if (getStatus("mermaid")) {
     configImport += `import Mermaid from "${CLIENT_FOLDER}components/Mermaid.js";\n`;
@@ -64,32 +71,24 @@ export const prepareConfigFile = async (
     enhance += `app.component("Presentation", Presentation);\n`;
   }
 
-  if (getStatus("container"))
-    configImport += `import "${CLIENT_FOLDER}styles/container/index.scss";\n`;
-
-  if (getStatus("footnote"))
-    configImport += `import "${CLIENT_FOLDER}styles/footnote.scss";\n`;
-
-  if (getStatus("imageMark"))
-    configImport += `import "${CLIENT_FOLDER}styles/image-mark.scss";\n`;
+  if (getStatus("playground")) {
+    configImport += `import Playground from "${CLIENT_FOLDER}components/Playground.js";\n`;
+    enhance += `app.component("Playground", Playground);\n`;
+  }
 
   if (getStatus("tabs")) {
     configImport += `import Tabs from "${CLIENT_FOLDER}components/Tabs.js";\n`;
     enhance += `app.component("Tabs", Tabs);\n`;
   }
 
-  if (getStatus("playground")) {
-    configImport += `import Playground from "${CLIENT_FOLDER}components/Playground.js";\n`;
-    enhance += `app.component("Playground", Playground);\n`;
-  }
-
-  if (getStatus("vuePlayground"))
-    enhance += `const VuePlayground = defineAsyncComponent(() => import("${CLIENT_FOLDER}components/VuePlayground.js"));\napp.component("VuePlayground", VuePlayground);\n`;
-  if (getStatus("tasklist"))
+  if (getStatus("tasklist", true))
     configImport += `import "${CLIENT_FOLDER}styles/tasklist.scss";\n`;
 
   if (getStatus("tex"))
     configImport += `import "${CLIENT_FOLDER}styles/tex.scss";\n`;
+
+  if (getStatus("vuePlayground"))
+    enhance += `const VuePlayground = defineAsyncComponent(() => import("${CLIENT_FOLDER}components/VuePlayground.js"));\napp.component("VuePlayground", VuePlayground);\n`;
 
   return app.writeTemp(
     `md-enhance/config.js`,

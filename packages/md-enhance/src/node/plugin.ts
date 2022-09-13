@@ -87,9 +87,9 @@ export const mdEnhancePlugin =
     ): boolean =>
       key in options
         ? Boolean(options[key])
-        : gfm && "gfm" in options
-        ? Boolean(options.gfm)
-        : options.enableAll || false;
+        : (gfm && "gfm" in options && options.gfm) ||
+          options.enableAll ||
+          false;
 
     const locales = getLocales({
       app,
