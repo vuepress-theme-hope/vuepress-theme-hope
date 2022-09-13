@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.99](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.98...v2.0.0-beta.99) (2022-09-13)
+
+### ⚠ BREAKING CHANGES
+
+- **md-enhance:** remove `enableAll` option
+
+### Features
+
+- **md-enhance:** remove `enableAll` option ([637b209](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/637b2090e01ec4c3a55b1db002c657d86fb4b3a6))
+
+### Bug Fixes
+
+- **comment2:** import esm version of Waline, fix [#2208](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2208) ([bed6aff](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/bed6affa4fb5c03c012668ff516727dfb6660e27))
+- **md-enhance:** ensure import map for vue playground preset ([9f659a9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9f659a9df17a14b71ee2dfad87524e741118912b))
+- **md-enhance:** fix gfm option ([66b8ccd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/66b8ccda0f203f97212b8f8418ba43a5de22bd35))
+- **md-enhance:** fix playground loading issue ([3546010](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/35460101eda99b636688e5bf9a4ecde6c29fc69a))
+- **md-enhance:** fix slide style ([808b042](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/808b0421e84e7e727d834815b5eefa4d2d104e16))
+- **md-enhance:** stop importing typescript, fix [#2207](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2207) ([d36cec1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d36cec15e989496278c250d0eae460db204fabca))
+
+### Performance Improvements
+
+- **md-enhance:** use shadowRef for components ([40c2743](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/40c274352c5a4bbdbf92d7a0b415a1ca0d983766))
+
 ## [2.0.0-beta.98](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.97...v2.0.0-beta.98) (2022-09-12)
 
 ### Features
