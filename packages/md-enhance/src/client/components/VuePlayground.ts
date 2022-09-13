@@ -1,4 +1,4 @@
-import { computed, defineComponent, h, onMounted, ref } from "vue";
+import { computed, defineComponent, h, onMounted, ref, shallowRef } from "vue";
 
 import { LOADING_SVG, CODE_SVG } from "./icons.js";
 import { getVuePlaygroundSettings } from "../utils/index.js";
@@ -20,7 +20,7 @@ export default defineComponent({
 
   setup(props) {
     const loading = ref(true);
-    const component = ref<typeof Repl | null>(null);
+    const component = shallowRef<typeof Repl | null>(null);
     const store = ref<ReplStore | null>(null);
 
     const playgroundOptions = computed(() =>
