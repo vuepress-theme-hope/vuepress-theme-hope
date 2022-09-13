@@ -362,13 +362,9 @@ span {
 
 #### Stylize
 
-<!-- markdownlint-disable MD033 -->
-
-Setting this to a invalid stytax <span style="color:red">doesn't</span> have any effect.
+Donate Mr.Hope a cup of coffee. _Recommanded_
 
 - [View Detail](../markdown/stylize.md)
-
-<!-- markdownlint-enable MD033 -->
 
 #### Playground
 

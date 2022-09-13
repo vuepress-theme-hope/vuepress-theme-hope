@@ -128,7 +128,7 @@ A custom details container
 
 - [View Detail](https://vuepress-theme-hope.github.io/v2/guide/markdown/container.html)
 
-### Tabs
+#### Tabs
 
 ::: tabs#fruit
 
@@ -150,7 +150,7 @@ Orange
 
 #### Code Tabs
 
-::: code-tabs
+::: code-tabs#shell
 
 @tab pnpm
 
@@ -196,6 +196,12 @@ I am right align
 
 - [View Detail](https://vuepress-theme-hope.github.io/v2/guide/markdown/align.html)
 
+#### Attrs
+
+A **word**{#word} having id.
+
+- [View Detail](https://vuepress-theme-hope.github.io/v2/guide/markdown/attrs.html)
+
 #### Footnote
 
 This text has footnote[^first].
@@ -221,7 +227,7 @@ You can mark ==important words== .
 
 Support setting color scheme and size
 
-- [View Detail](https://vuepress-theme-hope.github.io/v2/guide/markdown/image.md)
+- [View Detail](https://vuepress-theme-hope.github.io/v2/guide/markdown/image.html)
 
 #### Chart
 
@@ -332,7 +338,7 @@ $$
 
 @include(./README.md{11-17})
 
-- [View Detail](https://vuepress-theme-hope.github.io/v2/guide/markdown/include.md)
+- [View Detail](https://vuepress-theme-hope.github.io/v2/guide/markdown/include.html)
 
 #### Code Demo
 
@@ -361,11 +367,50 @@ span {
 
 #### Stylize
 
-<!-- markdownlint-disable MD033 -->
+Donate Mr.Hope a cup of coffee. _Recommanded_
 
-Setting this to a invalid stytax <span style="color:red">doesn't</span> have any effect.
+- [View Detail](https://vuepress-theme-hope.github.io/v2/guide/markdown/stylize.html)
 
-- [View Detail](https://vuepress-theme-hope.github.io/v2/guide/markdown/stylize.md)
+#### Playground
+
+::: playground#ts TS demo
+
+@file index.ts
+
+```ts
+const msg = "hello world";
+
+const speak = (msg: string) => console.log(msg);
+
+speak(msg);
+```
+
+:::
+
+- [View Detail](https://vuepress-theme-hope.github.io/v2/guide/markdown/playground.html)
+
+#### Vue Playground
+
+::: vue-playground Vue Playground
+
+@file App.vue
+
+```vue
+<script setup>
+import { ref } from "vue";
+
+const msg = ref("Hello World!");
+</script>
+
+<template>
+  <h1>{{ msg }}</h1>
+  <input v-model="msg" />
+</template>
+```
+
+:::
+
+- [View Detail](https://vuepress-theme-hope.github.io/v2/guide/markdown/vue-playground.html)
 
 #### Presentation
 
