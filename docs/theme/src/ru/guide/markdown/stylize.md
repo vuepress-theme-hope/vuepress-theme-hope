@@ -82,8 +82,8 @@ export default defineUserConfig({
       mdEnhance: {
         stylize: [
           {
-            match: "Recommanded",
-            replacer: ({ tag, attrs }) => {
+            matcher: "Recommanded",
+            replacer: ({ tag }) => {
               if (tag === "em")
                 return {
                   tag: "Badge",
@@ -111,8 +111,8 @@ export default {
       mdEnhance: {
         stylize: [
           {
-            match: "Recommanded",
-            replacer: ({ tag, attrs }) => {
+            matcher: "Recommanded",
+            replacer: ({ tag }) => {
               if (tag === "em")
                 return {
                   tag: "Badge",
@@ -151,12 +151,12 @@ export default defineUserConfig({
       mdEnhance: {
         stylize: [
           {
-            match: /n't$/,
+            matcher: /n't$/,
             replacer: ({ tag, attrs, content }) => {
               if (tag === "em")
                 return {
                   tag: "span",
-                  attrs: { style: "color: red" },
+                  attrs: { ...attrs, style: "color: red" },
                   content,
                 };
             },
@@ -179,12 +179,12 @@ export default {
     mdEnhancePlugin({
       stylize: [
         {
-          match: /n't$/,
+          matcher: /n't$/,
           replacer: ({ tag, attrs, content }) => {
             if (tag === "em")
               return {
                 tag: "span",
-                attrs: { style: "color: red" },
+                attrs: { ...attrs, style: "color: red" },
                 content,
               };
           },
