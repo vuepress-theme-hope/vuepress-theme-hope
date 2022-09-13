@@ -11,7 +11,7 @@ on:
 
 jobs:
   test-demos:
-    name: Test demos on node ${{ matrix.node }}
+    name: Test demos using ${{ matrix.bundler }} on node ${{ matrix.node }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
