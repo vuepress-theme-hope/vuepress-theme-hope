@@ -89,9 +89,9 @@ export interface MathJaxTexInputOptions {
   ) => MmlNode;
 }
 
-export interface MathjaxSVGOutputOptions {
+export interface MathjaxCommonOutputOptions {
   /**
-   * global scaling factor for all expressions
+   * Global scaling factor for all expressions
    *
    * @default 1
    */
@@ -105,21 +105,53 @@ export interface MathjaxSVGOutputOptions {
   minScale?: number;
 
   /**
-   * Whether to make mtext elements use surrounding font
+   * make mtext elements use surrounding font
    *
    * @default false
    */
   mtextInheritFont?: boolean;
 
   /**
-   * Whether to make merror text use surrounding font
+   * make merror text use surrounding font
    *
-   * @default false
+   * @default true
    */
   merrorInheritFont?: boolean;
 
   /**
-   * true for MathML spacing rules, false for TeX rules
+   * font to use for mtext, if not inheriting (empty means use MathJax fonts)
+   *
+   * @default ""
+   */
+  mtextFont?: string;
+
+  /**
+   * font to use for merror, if not inheriting (empty means use MathJax fonts)
+   *
+   * @default "serif"
+   */
+  merrorFont?: string;
+
+  /**
+   * font to use for character that aren't in MathJax's fonts
+   *
+   * @default "serif"
+   */
+  unknownFamily?: string;
+
+  /**
+   * @default "center"
+   */
+  displayAlign?: "left" | "center" | "right";
+
+  /**
+   * @default 0
+   */
+  displayIndent?: string;
+
+  /**
+   * - `true` for MathML spacing rules
+   * - `false` for TeX rules
    *
    * @default false
    */
@@ -136,17 +168,33 @@ export interface MathjaxSVGOutputOptions {
    * @default 0.5
    */
   exFactor?: number;
+}
+
+export interface MathjaxCommonHTMLOutputOptions
+  extends MathjaxCommonOutputOptions {
+  /**
+   * Whether match ex-height of surrounding font
+   *
+   * @default true
+   */
+  matchFontHeight?: boolean;
 
   /**
-   * @default "center"
+   * The URL where the fonts are found
+   *
+   * @default "[mathjax]/components/output/chtml/fonts/woff-v2"
    */
-  displayAlign?: "left" | "center" | "right";
+  fontURL?: string;
 
   /**
-   * @default 0
+   * Whether only produce CSS that is used in the processed equations
+   *
+   * @default true
    */
-  displayIndent?: string;
+  adaptiveCSS?: boolean;
+}
 
+export interface MathjaxSVGOutputOptions extends MathjaxCommonOutputOptions {
   /**
    * @default "none"
    */
@@ -172,6 +220,26 @@ export interface MathjaxSVGOutputOptions {
 
 // TODO: Add mathjax options
 export interface MathJaxOptions {
+  /**
+   * Output syntax
+   *
+   * @default 'svg'
+   */
+
+  output?: "chtml" | "svg";
+
+  /**
+   * Tex input options
+   */
   tex?: MathJaxTexInputOptions;
+
+  /**
+   * Common HTML output options
+   */
+  chtml?: MathjaxCommonHTMLOutputOptions;
+
+  /**
+   * SVG output options
+   */
   svg?: MathjaxSVGOutputOptions;
 }

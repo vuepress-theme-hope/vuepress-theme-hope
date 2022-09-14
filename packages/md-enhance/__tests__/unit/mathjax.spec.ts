@@ -3,29 +3,48 @@ import MarkdownIt from "markdown-it";
 import { mathjax } from "../../src/node/markdown-it/index.js";
 
 const markdownIt = MarkdownIt({ linkify: true }).use(mathjax);
+const markdownItHTML = MarkdownIt({ linkify: true }).use(mathjax, {
+  output: "chtml",
+});
+
+const examples = [
+  "a=1",
+  `\\frac {\\partial^r} {\\partial \\omega^r} \\left(\\frac {y^{\\omega}} {\\omega}\\right) = \\left(\\frac {y^{\\omega}} {\\omega}\\right) \\left\\{(\\log y)^r + \\sum_{i=1}^r \\frac {(-1)^ Ir \\cdots (r-i+1) (\\log y)^{ri}} {\\omega^i} \\right\\}`,
+];
 
 describe("inline mathjax", () => {
-  it("Shoud render", () => {
-    expect(markdownIt.render(`$a=1$`)).toMatchSnapshot();
+  it("Should output SVG", () => {
+    examples.forEach((example) => {
+      expect(markdownIt.render(`$${example}$`)).toMatchSnapshot();
+      expect(
+        markdownIt.render(`A tex equation $${example}$ inline.`)
+      ).toMatchSnapshot();
+
+      expect(markdownIt.render(`$${example}$`)).toMatch(
+        /<mjx-container .*><svg .*>[\s\S]*<\/svg><\/mjx-container>/
+      );
+      expect(markdownIt.render(`A tex equation $${example}$ inline.`)).toMatch(
+        /<mjx-container .*><svg .*>[\s\S]*<\/svg><\/mjx-container>/
+      );
+    });
   });
 
-  it("Should not render when escape", () => {
-    expect(markdownIt.render("$a = 1\\$")).toEqual("<p>$a = 1$</p>\n");
-    expect(markdownIt.render("\\$a = 1$")).toEqual("<p>$a = 1$</p>\n");
-  });
+  it("Should output HTML", () => {
+    examples.forEach((example) => {
+      expect(markdownItHTML.render(`$${example}$`)).toMatchSnapshot();
+      expect(
+        markdownItHTML.render(`A tex equation $${example}$ inline.`)
+      ).toMatchSnapshot();
 
-  it("Should not render when having spaces", () => {
-    expect(markdownIt.render(`$ a = 1 $`)).toEqual("<p>$ a = 1 $</p>\n");
-  });
-
-  it("Should not render when the ending tag is followed by number", () => {
-    expect(markdownIt.render(`Of course $1 = $1`)).toEqual(
-      "<p>Of course $1 = $1</p>\n"
-    );
-  });
-
-  it("Should render when the first one is after a charater", () => {
-    expect(markdownIt.render(`The next$a = 1$ won’t work`)).toMatchSnapshot();
+      expect(markdownItHTML.render(`$${example}$`)).toMatch(
+        /<mjx-container .*><mjx-math .*>[\s\S]*<\/mjx-math><\/mjx-container>/
+      );
+      expect(
+        markdownItHTML.render(`A tex equation $${example}$ inline.`)
+      ).toMatch(
+        /<mjx-container .*><mjx-math .*>[\s\S]*<\/mjx-math><\/mjx-container>/
+      );
+    });
   });
 
   it("Should not render error msg when content is wrong", () => {
@@ -34,39 +53,6 @@ describe("inline mathjax", () => {
 });
 
 describe("block mathjax", () => {
-  it("Shoud render", () => {
-    expect(markdownIt.render(`$$a=1$$`)).toMatchSnapshot();
-
-    expect(
-      markdownIt.render(`
-$$
-a = 1
-$$
-`)
-    ).toMatchSnapshot();
-  });
-
-  it("Should not render when escape", () => {
-    expect(markdownIt.render("\\$\\$a = 1$$")).toEqual("<p>$$a = 1$$</p>\n");
-    expect(
-      markdownIt.render(`
-\\$\\$
-a = 1
-\\$\\$
-`)
-    ).toEqual(`<p>$$
-a = 1
-$$</p>\n`);
-  });
-
-  it("Should render when having spaces", () => {
-    expect(markdownIt.render(`$$ a = 1 $$`)).toMatchSnapshot();
-
-    expect(markdownIt.render(`All $$ a = 1 $$ is true.`)).toEqual(
-      "<p>All $$ a = 1 $$ is true.</p>\n"
-    );
-  });
-
   it("Should not render error msg when content is wrong", () => {
     expect(markdownIt.render("$$\\fra{a}{b}$$")).toMatchSnapshot();
 

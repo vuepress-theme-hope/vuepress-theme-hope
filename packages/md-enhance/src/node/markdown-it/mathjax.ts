@@ -27,6 +27,7 @@
 import juice from "juice";
 import { mathjax as MathJax } from "mathjax-full/js/mathjax.js";
 import { TeX } from "mathjax-full/js/input/tex.js";
+import { CHTML } from "mathjax-full/js/output/chtml.js";
 import { SVG } from "mathjax-full/js/output/svg.js";
 import { liteAdaptor } from "mathjax-full/js/adaptors/liteAdaptor.js";
 import { RegisterHTMLHandler } from "mathjax-full/js/handlers/html.js";
@@ -34,11 +35,14 @@ import { AllPackages } from "mathjax-full/js/input/tex/AllPackages.js";
 import { tex } from "./tex.js";
 
 import type { PluginWithOptions } from "markdown-it";
+import type { LiteElement } from "mathjax-full/js/adaptors/lite/Element.js";
 import type { MathJaxOptions } from "../../shared/index.js";
 
 interface DocumentOptions {
-  InputJax: TeX<unknown, unknown, unknown>;
-  OutputJax: SVG<unknown, unknown, unknown>;
+  InputJax: TeX<LiteElement, string, HTMLElement>;
+  OutputJax:
+    | CHTML<LiteElement, string, HTMLElement>
+    | SVG<LiteElement, string, HTMLElement>;
 }
 
 const renderMath = (
@@ -55,23 +59,31 @@ const renderMath = (
     mathDocument.convert(content, { display: displayMode })
   );
   const stylesheet = adaptor.outerHTML(
-    documentOptions.OutputJax.styleSheet(mathDocument) as any
+    documentOptions.OutputJax.styleSheet(mathDocument)
   );
 
   /* eslint-enable */
   return juice(html + stylesheet);
 };
 
-export const mathjax: PluginWithOptions<MathJaxOptions> = (md, options) => {
+export const mathjax: PluginWithOptions<MathJaxOptions> = (
+  md,
+  options = {}
+) => {
   const documentOptions = {
-    InputJax: new TeX({
+    InputJax: new TeX<LiteElement, string, HTMLElement>({
       packages: AllPackages,
-      ...options?.tex,
+      ...options.tex,
     }),
-    OutputJax: new SVG({
-      fontCache: "none",
-      ...options?.svg,
-    }),
+    OutputJax:
+      options?.output === "chtml"
+        ? new CHTML<LiteElement, string, HTMLElement>({
+            ...options.chtml,
+          })
+        : new SVG<LiteElement, string, HTMLElement>({
+            fontCache: "none",
+            ...options.svg,
+          }),
   };
 
   md.use(tex, {

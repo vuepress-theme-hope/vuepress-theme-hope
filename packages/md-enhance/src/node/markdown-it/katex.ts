@@ -24,6 +24,7 @@
  * SOFTWARE.
  */
 
+import { createRequire } from "node:module";
 import { default as Katex } from "katex";
 import { tex } from "./tex.js";
 import { escapeHtml } from "./utils.js";
@@ -31,6 +32,8 @@ import { escapeHtml } from "./utils.js";
 import type { PluginWithOptions } from "markdown-it";
 import type { KatexOptions as OriginalKatexOptions } from "katex";
 import type { KatexOptions } from "../../shared/index.js";
+
+const require = createRequire(import.meta.url);
 
 // set KaTeX as the renderer for markdown-it-simplemath
 const katexInline = (tex: string, options: OriginalKatexOptions): string => {

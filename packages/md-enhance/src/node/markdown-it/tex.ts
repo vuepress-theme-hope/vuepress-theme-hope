@@ -188,7 +188,7 @@ const blockTex: RuleBlock = (state, start, end, silent) => {
 
   token.block = true;
   token.content =
-    (firstLine?.trim() ? `${firstLine}\n` : "") +
+    (firstLine?.trim() ? `\n${firstLine}\n` : "\n") +
     state.getLines(start + 1, next, state.tShift[start], true) +
     (lastLine?.trim() ? lastLine : "");
   token.map = [start, state.line];
