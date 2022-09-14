@@ -76,6 +76,9 @@ export default defineUserConfig({
       playground: {
         presets: ["ts", "vue"],
       },
+      katex: {
+        mhchem: true,
+      },
       presentation: {
         plugins: ["highlight", "math", "search", "notes", "zoom"],
       },
@@ -95,7 +98,6 @@ export default defineUserConfig({
       sub: true,
       sup: true,
       tabs: true,
-      tex: true,
       vpre: true,
       vuePlayground: true,
     }),
