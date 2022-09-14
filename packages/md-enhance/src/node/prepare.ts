@@ -84,8 +84,8 @@ export const prepareConfigFile = async (
   if (getStatus("tasklist", true))
     configImport += `import "${CLIENT_FOLDER}styles/tasklist.scss";\n`;
 
-  if (getStatus("tex"))
-    configImport += `import "${CLIENT_FOLDER}styles/tex.scss";\n`;
+  if (getStatus("katex"))
+    configImport += `import "${CLIENT_FOLDER}styles/katex.scss";\n`;
 
   if (getStatus("vuePlayground"))
     enhance += `const VuePlayground = defineAsyncComponent(() => import("${CLIENT_FOLDER}components/VuePlayground.js"));\napp.component("VuePlayground", VuePlayground);\n`;
