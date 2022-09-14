@@ -57,7 +57,7 @@ export interface CustomElementCommonOptions {
  */
 export const addCustomElement = (
   { app, config }: CustomElementCommonOptions,
-  customElement: string[] | string
+  customElement: string[] | string | RegExp
 ): void => {
   const customElements =
     typeof customElement === "string" ? [customElement] : customElement;
@@ -82,7 +82,12 @@ export const addCustomElement = (
 
     viteBundlerConfig.vuePluginOptions.template.compilerOptions.isCustomElement =
       (tag: string): boolean | void => {
-        if (customElements.includes(tag)) return true;
+        if (
+          customElements instanceof RegExp
+            ? customElements.test(tag)
+            : customElements.includes(tag)
+        )
+          return true;
 
         return isCustomElement(tag);
       };
@@ -103,7 +108,12 @@ export const addCustomElement = (
     webpackBundlerConfig.vue.compilerOptions.isCustomElement = (
       tag: string
     ): boolean | void => {
-      if (customElements.includes(tag)) return true;
+      if (
+        customElements instanceof RegExp
+          ? customElements.test(tag)
+          : customElements.includes(tag)
+      )
+        return true;
 
       return isCustomElement(tag);
     };
