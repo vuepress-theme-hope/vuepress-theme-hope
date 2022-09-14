@@ -69,6 +69,7 @@ export const getVuePlaygroundPreset = (
                                 vue: "https://sfc.vuejs.org/vue.runtime.esm-browser.js",
                                 ...(settings.ssr
                                   ? {
+                                      // eslint-disable-next-line @typescript-eslint/naming-convention
                                       "vue/server-renderer":
                                         "https://sfc.vuejs.org/server-renderer.esm-browser.js",
                                     }
