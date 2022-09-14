@@ -39,11 +39,12 @@ export const checkLinks = (page: Page, app: App): void => {
     ...markdownLinks
       // absolute markdown links
       .filter(({ raw }) => raw.startsWith("/"))
-      .filter(({ raw }) =>
+      .filter(({ absolute }) =>
         // check whether the page exists
         pages.every(
           ({ filePathRelative }) =>
-            !filePathRelative || `/${filePathRelative}` !== raw
+            !filePathRelative ||
+            `/${filePathRelative}` !== absolute.replace(app.options.base, "/")
         )
       ),
   ].map(({ raw }) => raw);
