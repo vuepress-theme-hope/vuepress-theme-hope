@@ -76,7 +76,7 @@ export const mathjax: PluginWithOptions<MathJaxOptions> = (
       ...options.tex,
     }),
     OutputJax:
-      options?.output === "chtml"
+      options.output === "chtml"
         ? new CHTML<LiteElement, string, HTMLElement>({
             ...options.chtml,
           })

@@ -1,4 +1,4 @@
-import { describe, it, expect, vi } from "vitest";
+import { describe, it, expect } from "vitest";
 import MarkdownIt from "markdown-it";
 import { tex } from "../../src/node/markdown-it/index.js";
 
