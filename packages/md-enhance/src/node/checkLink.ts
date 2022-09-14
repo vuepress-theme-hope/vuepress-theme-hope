@@ -44,7 +44,7 @@ export const checkLinks = (page: Page, app: App): void => {
         pages.every(
           ({ filePathRelative }) =>
             !filePathRelative ||
-            `/${filePathRelative}` !== absolute.replace(app.options.base, "/")
+            `${app.options.base}${filePathRelative}` !== absolute
         )
       ),
   ].map(({ raw }) => raw);
