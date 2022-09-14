@@ -2,7 +2,7 @@ import { describe, it, expect } from "vitest";
 import MarkdownIt from "markdown-it";
 import { tex } from "../../src/node/markdown-it/index.js";
 
-const render = (content: string, displayMode: boolean) =>
+const render = (content: string, displayMode: boolean): string =>
   displayMode
     ? `<p>{Tex content: ${content}}</p>`
     : `{Tex content: ${content}}`;
