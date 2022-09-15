@@ -362,7 +362,7 @@ span {
 
 #### Стилизация
 
-Donate Mr.Hope a cup of coffee. _Recommanded_
+Донат Mr.Hope на чашку кофе. _Рекомендуется_
 
 - [Посмотреть детали](../markdown/stylize.md)
 
@@ -382,7 +382,7 @@ speak(msg);
 
 :::
 
-- [View Detail](../markdown/playground.md)
+- [Посмотреть детали](../markdown/playground.md)
 
 #### Vue Playground
 
@@ -405,7 +405,7 @@ const msg = ref("Hello World!");
 
 :::
 
-- [View Detail](../markdown/vue-playground.md)
+- [Посмотреть детали](../markdown/vue-playground.md)
 
 #### Презентация
 

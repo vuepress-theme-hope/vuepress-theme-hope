@@ -4,15 +4,15 @@ icon: code
 category:
   - Markdown
 tag:
-  - Markdown
+  - Выделение
   - Playground
 ---
 
-Let the Markdown file support playground in your VuePress site.
+Пусть файл Markdown поддерживает плейграунд на вашем сайте VuePress.
 
 <!-- more -->
 
-## Config
+## Конфиг
 
 ::: code-tabs#config
 
@@ -103,47 +103,47 @@ export default {
 
 :::
 
-## Usage
+## Использование
 
-You should add presets through `playground.presets` in plugin options.
+Вы должны добавить пресеты через `playground.presets` в настройках плагина.
 
-To use playground, you should use a container named `playground#preset`.
+Чтобы использовать плейграунд, вы должны использовать контейнер с именем `playground#preset`.
 
-In it, you can use 3 directives:
+В нем вы можете использовать 3 директивы:
 
-- `@file fileName` then a code block to add files
-- `@import importMapFileName` then a json block to customize "import map"
-- `@setting` then a json block to customize settings
+- `@file fileName`, затем блок кода для добавления файлов
+- `@import importMapFileName`, затем блок json для настройки "import map"
+- `@setting`, затем блок json для настройки параметров
 
-You can see the below demos to see more details.
+Вы можете увидеть демо ниже, чтобы увидеть больше деталей.
 
-## Available presets
+## Доступные пресеты
 
-Currently, we support `ts` and `vue` presets, and we are looking forward to more presets comming from PRs.
+В настоящее время мы поддерживаем пресеты `ts` и `vue`, и мы с нетерпением ждем новых пресетов от PR.
 
-If you want to add a playground of your own, you can add a preset by you own in [Advanced Section](#advanced), and welcome to open a PR about your fantastic preset.
+Если вы хотите добавить собственную playground, вы можете добавить свой собственный пресет в [Продвинутый раздел](#advanced) и добро пожаловать, чтобы открыть PR о вашем фантастическом пресете.
 
-::: info TS preset
+::: info Предустановка TS
 
-TS preset is using official playground by default, and do not support mutiple ts files, so all you need to do is add one single ts file through `@file xxx.ts` directive (the filename is not important but the `.ts` file extension is).
+Предустановка TS по умолчанию использует официальную playground и не поддерживает несколько файлов ts, поэтому все, что вам нужно сделать, это добавить один единственный файл ts с помощью директивы `@file xxx.ts` (имя файла не важно, но `.ts` расширение файла есть).
 
-To use cutomized compilerOptions, you can provide one through `@setting` directive. But attention, official TS playground does not support all compiler options.
+Чтобы использовать измененные параметры компилятора, вы можете указать их с помощью директивы `@setting`. Но внимание, официальная площадка TS не поддерживает все опции компилятора.
 
-Meanwhile, you can customize the default compilerOption through `playground.config.ts`, and you can use another service besides the official playground through `service` option, just in case you want to deploy your own playground site.
-
-:::
-
-::: info Vue Preset
-
-Vue preset is using the official playground by default, and do not support customizing options like [Vue Playground](./vue-playground.md). So if you are heavily relying on interacting vue playground, we suggest you to use [Vue Playground](./vue-playground.md) instead.
-
-But if you only want a few demos instead of bundling a whole vue playground, you can use this preset to create a `<iframe>`.
-
-Only `service`, `dev` and `ssr` option is available in `@setting` directive.
+Между тем, вы можете настроить компилятор по умолчанию с помощью `playground.config.ts`, и вы можете использовать другой сервис, помимо официальной playground , через опцию `service`, на тот случай, если вы хотите развернуть свой собственный сайт playground .
 
 :::
 
-## Demo
+::: info Предустановка Vue
+
+Предустановка Vue по умолчанию использует официальную playground и не поддерживает такие параметры настройки, как [Vue Playground](./vue-playground.md). Поэтому, если вы сильно полагаетесь на интерактивную playground vue, мы предлагаем вам вместо этого использовать [Vue Playground](./vue-playground.md) instead.
+
+Но если вам нужно только несколько демонстраций вместо того, чтобы объединять целую playground vue, вы можете использовать этот пресет для создания `<iframe>`.
+
+Только опции `service`, `dev` и `ssr` доступны в директиве `@setting`.
+
+:::
+
+## Демо
 
 ### TS
 
@@ -233,7 +233,7 @@ speak(msg);
 
 ### Vue
 
-::: playground#vue Vue demo with cutomized imports
+::: playground#vue Демонстрация Vue с кастомизированным импортом
 
 @file App.vue
 
@@ -276,7 +276,7 @@ const msg = ref("Hello World!");
 :::: details Code
 
 ````md
-::: playground#vue Vue demo with cutomized imports
+::: playground#vue Демонстрация Vue с кастомизированным импортом
 
 @file App.vue
 
@@ -319,7 +319,7 @@ const msg = ref("Hello World!");
 
 ::::
 
-::: playground#vue Vue demo with customized settings
+::: playground#vue Демонстрация Vue с индивидуальными настройками
 
 @file App.vue
 
@@ -350,7 +350,7 @@ const msg = ref("Hello Playground!");
 :::: details Code
 
 ````md
-::: playground#vue Vue demo with customized settings
+::: playground#vue Демонстрация Vue с индивидуальными настройками
 
 @file App.vue
 
@@ -381,9 +381,9 @@ const msg = ref("Hello Playground!");
 
 ::::
 
-## Advanced
+## Продвинутый
 
-You can provide your own presets.
+Вы можете предоставить свои собственные пресеты.
 
 ```ts
 interface PlaygroundCodeConfig {
@@ -456,8 +456,8 @@ interface PlaygroundOptions {
 }
 ```
 
-Basically, we provide a `playgroundData` object to `getter` function, and you are supposed to provide:
+По сути, мы предоставляем объект `playgroundData` функции `getter`, и вы должны предоставить:
 
-- A container name via `name` option
-- A client component name via `component` option
-- A function receiving playgroundData and returning a props map with `attr` → `value` via `propsGetter` option
+- Имя контейнера через опцию `name`
+- Имя клиентского компонента через опцию `component`
+- Функция, получающая playgroundData и возвращающая карту свойства с атрибутом `attr` → `value` через `propsGetter`

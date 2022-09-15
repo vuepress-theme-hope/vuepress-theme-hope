@@ -253,7 +253,7 @@ interface TaskListOptions {
 
 ### playground
 
-- Type: `PlaygroundGlobalOptions`
+- Тип: `PlaygroundGlobalOptions`
 
   ```ts
   import type { CompilerOptions } from "typescript";
@@ -370,13 +370,13 @@ interface TaskListOptions {
   }
   ```
 
-- Required: No
+- Обязательный: Нет
 
-Playground options.
+Варианты плейграунда.
 
 ### vuePlayground
 
-- Type: `VuePlaygroundOptions | boolean`
+- Тип: `VuePlaygroundOptions | boolean`
 
   ```ts
   interface VuePlaygroundOptions {
@@ -455,9 +455,9 @@ Playground options.
   }
   ```
 
-- Default: `false`
+- По умолчанию: `false`
 
-Whether to enable vue playground support.
+Включить ли поддержку Vue Playground.
 
 ### demo
 
