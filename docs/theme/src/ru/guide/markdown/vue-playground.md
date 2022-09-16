@@ -8,11 +8,11 @@ tag:
   - Playground
 ---
 
-Let the Markdown file support vue playground in your VuePress site.
+Пусть файл Markdown поддерживает playground vue на вашем сайте VuePress.
 
 <!-- more -->
 
-## Config
+## Конфиг
 
 ::: code-tabs#config
 
@@ -55,19 +55,19 @@ export default {
 
 :::
 
-## Usage
+## Использование
 
-To use vue playground, you should use a container named `vue-playground`.
+Чтобы использовать playground vue, вы должны использовать контейнер с именем `vue-playground`.
 
-In it, you can use 3 directives:
+В нем вы можете использовать 3 директивы:
 
-- `@file FileName` then a code block to add files
-- `@import` then a json block to customize "import map"
-- `@setting` then a json block to customize settings
+- `@file FileName`, затем блок кода для добавления файлов
+- `@import`, затем блок json для настройки "import map"
+- `@setting`, затем блок json для настройки параметров
 
-You can see the below demos to see more details.
+Вы можете увидеть демо ниже, чтобы увидеть больше деталей.
 
-## Demo
+## Демо
 
 ::: vue-playground Vue Playground
 

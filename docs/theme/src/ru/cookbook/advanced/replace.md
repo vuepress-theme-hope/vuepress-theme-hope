@@ -69,7 +69,7 @@ export default {
 
 ::: tip
 
-If you want to use `vue` files, you can make a simple js wrapper by writing:
+Если вы хотите использовать файлы `vue`, вы можете создать простую оболочку js, написав:
 
 ```js
 // wrapper.js
@@ -100,6 +100,8 @@ export default YouComponent;
 - `@theme-hope/components/SkipLink.js`: перейти к основному содержанию
 - `@theme-hope/components/transitions/DropTransition.js`: drop служебные функции темы
 - `@theme-hope/components/transitions/FadeSlideY.js`: fade slide y служебные функции темы
+- `@theme-hope/components/transitions/DropTransition.js`: компонент перехода drop
+- `@theme-hope/components/transitions/FadeSlideY.js`: компонент перехода fade slide y
 
 Разное:
 
