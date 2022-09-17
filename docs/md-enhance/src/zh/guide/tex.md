@@ -21,7 +21,7 @@ export default {
   plugins: [
     mdEnhancePlugin({
       // 使用 KaTeX 启用 TeX 支持
-      tex: true,
+      katex: true,
       // 使用 mathjax 启用 TeX 支持
       mathjax: true,
     }),
@@ -39,7 +39,7 @@ export default {
   plugins: [
     mdEnhancePlugin({
       // 使用 KaTeX 启用 TeX 支持
-      tex: true,
+      katex: true,
       // 使用 mathjax 启用 TeX 支持
       mathjax: true,
     }),

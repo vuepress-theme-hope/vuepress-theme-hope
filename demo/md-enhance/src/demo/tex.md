@@ -34,13 +34,6 @@ $$
 
 need `mhchem` extension, see [mhchem extension](https://github.com/KaTeX/KaTeX/tree/main/contrib/mhchem)
 
-```ts
-tex: {
-  render: "katex",
-  plugins: ["mhchem"],
-},
-```
-
 ```md
 $$
 \ce{Zn^2+  <=>[+ 2OH-][+ 2H+]  $\underset{\text{amphoteres Hydroxid}}{\ce{Zn(OH)2 v}}$  <=>[+ 2OH-][+ 2H+]  $\underset{\text{Hydroxozikat}}{\ce{[Zn(OH)4]^2-}}$}
