@@ -11,6 +11,8 @@ import type { ReadingTime } from "vuepress-plugin-reading-time2";
 export default defineComponent({
   name: "ReadingTimeInfo",
 
+  inheritAttrs: false,
+
   props: {
     readingTime: {
       type: Object as PropType<ReadingTime | null>,
@@ -19,8 +21,6 @@ export default defineComponent({
 
     pure: Boolean,
   },
-
-  inheritAttrs: false,
 
   setup(props) {
     const metaLocale = useMetaLocale();

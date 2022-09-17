@@ -13,6 +13,8 @@ import "../styles/category.scss";
 export default defineComponent({
   name: "CategoryInfo",
 
+  inheritAttrs: false,
+
   props: {
     category: {
       type: Array as PropType<PageCategory[]>,
@@ -21,8 +23,6 @@ export default defineComponent({
 
     pure: Boolean,
   },
-
-  inheritAttrs: false,
 
   setup(props) {
     const router = useRouter();
