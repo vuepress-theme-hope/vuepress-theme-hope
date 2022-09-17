@@ -7,7 +7,7 @@ icon: config
 
 我们支持 foo 功能，...
 
-## Details
+## 详情
 
 - [ray](ray.md)
 - ...

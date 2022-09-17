@@ -7,7 +7,7 @@ icon: creative
 
 我们支持 bar 功能，...
 
-## Details
+## 详情
 
 - [baz](baz.md)
 - ...
