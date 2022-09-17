@@ -3,7 +3,7 @@ import { enNavbar, zhNavbar } from "./navbar/index.js";
 import { enSidebar, zhSidebar } from "./sidebar/index.js";
 
 const hostname =
-  process.env.HOSTNAME || "https://vuepress-theme-hope-v2-demo.netlify.app";
+  process.env.HOSTNAME || "https://vuepress-theme-hope-blog-demo.netlify.app";
 
 export default hopeTheme({
   hostname,
@@ -230,9 +230,9 @@ export default hopeTheme({
         ],
         shortcuts: [
           {
-            name: "Guide",
-            short_name: "Guide",
-            url: "/guide/",
+            name: "Demo",
+            short_name: "Demo",
+            url: "/demo/",
             icons: [
               {
                 src: "/assets/icon/guide-maskable.png",
@@ -255,6 +255,6 @@ export default hopeTheme({
     seo:
       hostname === "https://vuepress-theme-hope.github.io"
         ? {}
-        : { canonical: "https://vuepress-theme-hope.github.io/v2/v2-demo/" },
+        : { canonical: "https://vuepress-theme-hope.github.io/blog-demo/" },
   },
 });

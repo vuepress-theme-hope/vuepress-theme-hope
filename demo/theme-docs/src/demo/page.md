@@ -1,6 +1,6 @@
 ---
 # This is the title of the article
-title: page config
+title: Page Config
 # This is the icon of the page
 icon: page
 # This control sidebar order

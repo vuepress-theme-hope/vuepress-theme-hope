@@ -1,17 +1,16 @@
 ---
-title: Guides
-index: false
+title: Guide
 icon: creative
-category:
-  - Guide
 ---
 
-## Catalog
+## Highlight Features
 
-- [Markdown Enhance](markdown.md)
+### Bar
 
-- [Page Config](page.md)
+- [baz](bar/baz.md)
+- ...
 
-- [Function Disable](disable.md)
+### Foo
 
-- [Encryption Demo](encrypt.md)
+- [ray](foo/ray.md)
+- ...

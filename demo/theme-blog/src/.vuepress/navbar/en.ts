@@ -55,7 +55,7 @@ export const enNavbar = navbar([
       },
       {
         text: "V2 Docs Demo",
-        link: "https://vuepress-theme-hope.github.io/v2-docs-demo/",
+        link: "https://vuepress-theme-hope.github.io/docs-demo/",
       },
       {
         text: "V1 Docs",

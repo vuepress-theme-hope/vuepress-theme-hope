@@ -1,17 +1,16 @@
 ---
-title: 主要功能与配置演示
-index: false
+title: 指南
 icon: creative
-category:
-  - 使用指南
 ---
 
-## 目录
+## 功能亮点
 
-- [Markdown 展示](markdown.md)
+### Bar
 
-- [页面展示](page.md)
+- [baz](bar/baz.md)
+- ...
 
-- [禁用展示](disable.md)
+### Foo
 
-- [加密展示](encrypt.md)
+- [ray](foo/ray.md)
+- ...

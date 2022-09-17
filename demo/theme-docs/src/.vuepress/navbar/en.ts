@@ -1,48 +1,26 @@
 import { navbar } from "vuepress-theme-hope";
 import { version } from "../version";
 
-export const en = navbar([
+export const enNavbar = navbar([
   "/",
-  "/home",
-  { text: "Guide", icon: "creative", link: "/guide/" },
+  { text: "Demo", icon: "discover", link: "/demo/" },
   {
-    text: "Posts",
-    icon: "edit",
-    prefix: "/posts/",
+    text: "Guide",
+    icon: "creative",
+    prefix: "/guide/",
     children: [
       {
-        text: "Articles 1-4",
-        icon: "edit",
-        prefix: "article/",
-        children: [
-          { text: "Article 1", icon: "edit", link: "article1" },
-          { text: "Article 2", icon: "edit", link: "article2" },
-          "article3",
-          "article4",
-        ],
+        text: "Bar",
+        icon: "creative",
+        prefix: "bar/",
+        children: ["baz", { text: "...", icon: "more", link: "" }],
       },
       {
-        text: "Articles 5-12",
-        icon: "edit",
-        children: [
-          {
-            text: "Article 5",
-            icon: "edit",
-            link: "article/article5",
-          },
-          {
-            text: "Article 6",
-            icon: "edit",
-            link: "article/article6",
-          },
-          "article/article7",
-          "article/article8",
-        ],
+        text: "Foo",
+        icon: "config",
+        prefix: "foo/",
+        children: ["ray", { text: "...", icon: "more", link: "" }],
       },
-      { text: "Article 9", icon: "edit", link: "article9" },
-      { text: "Article 10", icon: "edit", link: "article10" },
-      "article11",
-      "article12",
     ],
   },
   {
@@ -52,6 +30,10 @@ export const en = navbar([
       {
         text: "V2 Docs",
         link: "https://vuepress-theme-hope.github.io/v2/",
+      },
+      {
+        text: "V2 Blog Demo",
+        link: "https://vuepress-theme-hope.github.io/blog-demo/",
       },
       {
         text: "V1 Docs",
