@@ -181,14 +181,25 @@ interface TaskListOptions {
 }
 ```
 
-### tex
+### katex
 
 - 类型: `KatexOptions | boolean`
 - 默认值: `false`
 
-是否启用 $\TeX$ 语法支持。你可以传入一个对象作为 $\KaTeX$ 的配置选项。
+是否通过 $\KaTeX$ 启用 $\TeX$ 语法支持。你可以传入一个对象作为 $\KaTeX$ 的配置选项。
+
+特别低，你可以通过 `katex.mhchem: true` 来启用 mhchem 扩展。
 
 可用的选项，详见 [Katex 文档](https://katex.org/docs/options.html)。
+
+### mathjax
+
+- 类型: `MathJaxOptions | boolean`
+- 默认值: `false`
+
+是否通过 Math Jax 启用 $\TeX$ 语法支持。你可以传递一个对象来配置 Math Jax。
+
+可用的选项，详见 [源代码](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/main/packages/md-enhance/src/shared/mathjax.ts)。
 
 ### flowchart
 

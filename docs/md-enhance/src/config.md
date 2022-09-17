@@ -195,14 +195,25 @@ interface TaskListOptions {
 }
 ```
 
-## tex
+## katex
 
-- Type: `KatexOptions | boolean`
+- Type: `KatexOptions & { mhchem?: boolean } | boolean`
 - Default: `false`
 
-Whether to enable $\TeX$ syntax support. You can pass an object to config $\KaTeX$.
+Whether to enable $\TeX$ syntax support through $\KaTeX$. You can pass an object to config $\KaTeX$.
+
+In particular, you can enable the mhchem extension with `katex.mhchem: true`.
 
 Please see [Katex Docs](https://katex.org/docs/options.html) for available options.
+
+## mathjax
+
+- Type: `MathJaxOptions | boolean`
+- Default: `false`
+
+Whether to enable $\TeX$ syntax support through Math Jax. You can pass an object to config Math Jax.
+
+Please see [source code](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/main/packages/md-enhance/src/shared/mathjax.ts) for available options.
 
 ## include
 

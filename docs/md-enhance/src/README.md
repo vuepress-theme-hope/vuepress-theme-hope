@@ -187,6 +187,7 @@ This plugin exports the following markdown-it plugin, and you can use them in ot
 - footnote
 - imageMark
 - include
+- mathjax
 - katex
 - lazyload
 - mark
@@ -194,4 +195,5 @@ This plugin exports the following markdown-it plugin, and you can use them in ot
 - sub
 - sup
 - tasklist
+- tex
 - uml

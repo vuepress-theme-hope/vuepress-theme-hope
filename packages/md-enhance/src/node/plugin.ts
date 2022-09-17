@@ -36,6 +36,7 @@ import {
   imageSize,
   include,
   katex,
+  mathjax,
   lazyLoad,
   mark,
   mermaid,
@@ -99,7 +100,8 @@ export const mdEnhancePlugin =
     const tasklistEnable = getStatus("tasklist", true);
     const mermaidEnable = getStatus("mermaid");
     const presentationEnable = getStatus("presentation");
-    const texEnable = getStatus("tex");
+    const katexEnable = getStatus("katex");
+    const mathjaxEnable = getStatus("mathjax");
     const vuePlaygroundEnable = getStatus("vuePlayground");
 
     const shouldCheckLinks = getCheckLinksStatus(app, options);
@@ -114,7 +116,7 @@ export const mdEnhancePlugin =
         // eslint-disable-next-line @typescript-eslint/naming-convention
         "\\idotsint": "\\int\\!\\cdots\\!\\int",
       },
-      ...(typeof options.tex === "object" ? options.tex : {}),
+      ...(typeof options.katex === "object" ? options.katex : {}),
     };
 
     const revealPlugins =
@@ -167,8 +169,9 @@ export const mdEnhancePlugin =
       extendsBundlerOptions: (config: unknown, app): void => {
         addViteSsrNoExternal({ app, config }, "vuepress-shared");
 
-        if (katexOptions.output !== "html")
+        if (katexEnable && katexOptions.output !== "html")
           addCustomElement({ app, config }, MATHML_TAGS);
+        else if (mathjaxEnable) addCustomElement({ app, config }, /^mjx-/);
 
         if (chartEnable) {
           addViteOptimizeDepsInclude({ app, config }, "chart.js/auto/auto.mjs");
@@ -247,7 +250,13 @@ export const mdEnhancePlugin =
           legacy
         )
           md.use(vPre);
-        if (texEnable) md.use(katex, katexOptions);
+        if (katexEnable) md.use(katex, katexOptions);
+        else if (mathjaxEnable)
+          md.use(
+            mathjax,
+            typeof options.mathjax === "object" ? options.mathjax : {}
+          );
+
         if (getStatus("include"))
           md.use(
             include,
