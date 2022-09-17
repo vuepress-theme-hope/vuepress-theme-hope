@@ -18,6 +18,8 @@ export default defineComponent({
     pure: Boolean,
   },
 
+  inheritAttrs: false,
+
   setup(props) {
     const metaLocale = useMetaLocale();
 

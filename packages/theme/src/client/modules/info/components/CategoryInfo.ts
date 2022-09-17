@@ -22,6 +22,8 @@ export default defineComponent({
     pure: Boolean,
   },
 
+  inheritAttrs: false,
+
   setup(props) {
     const router = useRouter();
     const route = useRoute();

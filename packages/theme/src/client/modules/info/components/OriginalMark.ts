@@ -7,6 +7,8 @@ import type { VNode } from "vue";
 export default defineComponent({
   name: "OriginalMark",
 
+  inheritAttrs: false,
+
   props: {
     isOriginal: Boolean,
   },

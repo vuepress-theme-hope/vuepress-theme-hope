@@ -24,6 +24,8 @@ export default defineComponent({
     pure: Boolean,
   },
 
+  inheritAttrs: false,
+
   setup(props) {
     const lang = usePageLang();
     const metaLocale = useMetaLocale();

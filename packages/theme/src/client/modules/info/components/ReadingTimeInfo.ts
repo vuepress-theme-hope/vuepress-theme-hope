@@ -20,6 +20,8 @@ export default defineComponent({
     pure: Boolean,
   },
 
+  inheritAttrs: false,
+
   setup(props) {
     const metaLocale = useMetaLocale();
     const readingTimeLocale = useLocaleConfig(readingTimeLocales);
