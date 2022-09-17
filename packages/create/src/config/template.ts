@@ -120,40 +120,62 @@ const updateGitIgnore = (dir: string): void => {
 };
 
 export const generateTemplate = async (
-  packageManager: PackageManager,
-  dir: string,
-  lang: Lang,
-  message: CreateI18n
+  targetDir: string,
+  {
+    packageManager,
+    lang,
+    message,
+    preset,
+  }: {
+    packageManager: PackageManager;
+    lang: Lang;
+    message: CreateI18n;
+    preset?: "blog" | "docs" | null;
+  }
 ): Promise<void> => {
-  const { i18n, workflow } = await inquirer.prompt<{
-    i18n: boolean;
+  const { workflow } = await inquirer.prompt<{
+    // i18n: boolean;
     workflow: boolean;
   }>([
-    {
-      name: "i18n",
-      type: "confirm",
-      message: message.i18nMessage,
-      default: false,
-    },
+    // {
+    //   name: "i18n",
+    //   type: "confirm",
+    //   message: message.question.i18n,
+    //   default: false,
+    // },
     {
       name: "workflow",
       type: "confirm",
-      message: message.workflowMessage,
+      message: message.question.workflow,
       default: true,
     },
   ]);
 
-  console.log(message.template);
+  if (!preset)
+    preset = (
+      await inquirer.prompt<{ preset: "blog" | "docs" }>([
+        {
+          name: "preset",
+          type: "list",
+          message: message.question.preset,
+          choices: ["blog", "docs"],
+        },
+      ])
+    ).preset;
 
-  const templateFolder = i18n
-    ? "i18n"
-    : lang === "简体中文"
-    ? "zh-CN"
-    : "en-US";
+  console.log(message.flow.generateTemplate);
+
+  // copy public assets
+  copy(
+    resolve(__dirname, "../assets/public"),
+    resolve(process.cwd(), targetDir, "./vuepress/public")
+  );
+
+  const templateFolder = preset;
 
   copy(
     resolve(__dirname, "../template", templateFolder),
-    resolve(process.cwd(), dir)
+    resolve(process.cwd(), targetDir)
   );
 
   if (workflow) {
@@ -163,7 +185,7 @@ export const generateTemplate = async (
 
     writeFileSync(
       resolve(workflowDir, "deploy-docs.yml"),
-      getWorkflowContent(packageManager, dir, lang),
+      getWorkflowContent(packageManager, targetDir, lang),
       { encoding: "utf-8" }
     );
   }
@@ -171,7 +193,7 @@ export const generateTemplate = async (
   // git related
   const isGitRepo = checkGitRepo();
 
-  if (isGitRepo) updateGitIgnore(dir);
+  if (isGitRepo) updateGitIgnore(targetDir);
   else if (checkGitInstalled()) {
     const { git } = await inquirer.prompt<{
       git: boolean;
@@ -179,14 +201,14 @@ export const generateTemplate = async (
       {
         name: "git",
         type: "confirm",
-        message: message.gitMessage,
+        message: message.question.git,
         default: true,
       },
     ]);
 
     if (git) {
       execaCommandSync("git init");
-      updateGitIgnore(dir);
+      updateGitIgnore(targetDir);
     }
   }
 };

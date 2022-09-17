@@ -12,67 +12,87 @@ const cli = cac("vuepress-theme-hope");
 
 cli
   .command("[dir]", "Generate a new vuepress-theme-hope project")
+  .option("-p, --preset <preset>", "Choose preset to use")
   .usage(
     "pnpm create vuepress-theme-hope@next [dir] / npm init vuepress-theme-hope@next [dir]"
   )
   .example("docs")
-  .action(async (dir: string) => {
-    if (!dir) return cli.outputHelp();
-
-    // get language
-    const { lang, message } = await getLanguage();
-
-    // get packageManager
-    const packageManager = await getPackageManager(message.packageManager);
-
-    // check if the user is a noob and warn him 🤪
-    if (dir.startsWith("[") && dir.endsWith("]"))
-      return console.log(message.dirError(packageManager));
-
-    console.log(message.getVersion);
-
-    await createPackageJson(dir, message);
-
-    await generateTemplate(packageManager, dir, lang, message);
-
-    /*
-     * Install deps
-     */
-
-    const registry =
-      packageManager === "pnpm" ? "" : await getRegistry(packageManager, lang);
-
-    console.log(message.install);
-    console.warn(message.wait);
-
-    execaCommandSync(
-      `${packageManager} install ${registry ? "" : `--registry ${registry}`}`,
-      { stdout: "inherit" }
-    );
-
-    console.log(message.success);
-
-    /*
-     * Open dev server
-     */
-
-    const { choice } = await inquirer.prompt<{ choice: boolean }>([
+  .action(
+    async (
+      targetDir: string,
       {
-        name: "choice",
-        type: "confirm",
-        message: message.devServerAsk,
-        default: true,
-      },
-    ]);
+        preset = null,
+      }: {
+        preset?: "docs" | "blog" | null;
+      }
+    ) => {
+      if (!targetDir) return cli.outputHelp();
 
-    if (choice) {
-      console.log(message.devServer);
+      // get language
+      const { lang, message } = await getLanguage();
 
-      await execaCommand(`${packageManager} run docs:dev`, {
-        stdout: "inherit",
+      if (preset && !["doc", "blog"].includes(preset))
+        return console.log(message.error.preset);
+
+      // get packageManager
+      const packageManager = await getPackageManager(
+        message.question.packageManager
+      );
+
+      // check if the user is a noob and warn him 🤪
+      if (targetDir.startsWith("[") && targetDir.endsWith("]"))
+        return console.log(message.error.dir(packageManager));
+
+      await createPackageJson(targetDir, message);
+
+      await generateTemplate(targetDir, {
+        packageManager,
+        lang,
+        message,
+        preset,
       });
-    } else console.log(message.hint(packageManager));
-  });
+
+      /*
+       * Install deps
+       */
+
+      const registry =
+        packageManager === "pnpm"
+          ? ""
+          : await getRegistry(packageManager, lang);
+
+      console.log(message.flow.install);
+      console.warn(message.hint.install);
+
+      execaCommandSync(
+        `${packageManager} install ${registry ? "" : `--registry ${registry}`}`,
+        { stdout: "inherit" }
+      );
+
+      console.log(message.hint.finish);
+
+      /*
+       * Open dev server
+       */
+
+      const { choice } = await inquirer.prompt<{ choice: boolean }>([
+        {
+          name: "choice",
+          type: "confirm",
+          message: message.question.devServer,
+          default: true,
+        },
+      ]);
+
+      if (choice) {
+        console.log(message.flow.devServer);
+
+        await execaCommand(`${packageManager} run docs:dev`, {
+          stdout: "inherit",
+        });
+      } else console.log(message.hint.devServer(packageManager));
+    }
+  );
 
 cli.help(() => [
   {
