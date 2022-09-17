@@ -10,6 +10,8 @@ import type { DateInfo } from "vuepress-shared";
 export default defineComponent({
   name: "DateInfo",
 
+  inheritAttrs: false,
+
   props: {
     date: {
       type: Object as PropType<DateInfo | null>,
@@ -23,8 +25,6 @@ export default defineComponent({
 
     pure: Boolean,
   },
-
-  inheritAttrs: false,
 
   setup(props) {
     const lang = usePageLang();
