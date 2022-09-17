@@ -403,7 +403,37 @@ importers:
       vuepress-vite: 2.0.0-beta.51_rwbafjiqatlpkdwd3bdql3o5j4
       vuepress-webpack: 2.0.0-beta.51_vue@3.2.39
 
-  demo/theme:
+  demo/theme-blog:
+    specifiers:
+      '@vuepress/cli': 2.0.0-beta.51
+      '@vuepress/client': 2.0.0-beta.51
+      '@vuepress/plugin-docsearch': 2.0.0-beta.51
+      '@vuepress/plugin-pwa': 2.0.0-beta.51
+      '@vuepress/plugin-pwa-popup': 2.0.0-beta.51
+      '@vuepress/plugin-shiki': 2.0.0-beta.51
+      '@vuepress/utils': 2.0.0-beta.51
+      cross-env: 7.0.3
+      sass-loader: 13.0.2
+      vue: 3.2.39
+      vuepress-theme-hope: workspace:*
+      vuepress-vite: 2.0.0-beta.51
+      vuepress-webpack: 2.0.0-beta.51
+    devDependencies:
+      '@vuepress/cli': 2.0.0-beta.51
+      '@vuepress/client': 2.0.0-beta.51
+      '@vuepress/plugin-docsearch': 2.0.0-beta.51
+      '@vuepress/plugin-pwa': 2.0.0-beta.51
+      '@vuepress/plugin-pwa-popup': 2.0.0-beta.51
+      '@vuepress/plugin-shiki': 2.0.0-beta.51
+      '@vuepress/utils': 2.0.0-beta.51
+      cross-env: 7.0.3
+      sass-loader: 13.0.2
+      vue: 3.2.39
+      vuepress-theme-hope: link:../../packages/theme
+      vuepress-vite: 2.0.0-beta.51_rwbafjiqatlpkdwd3bdql3o5j4
+      vuepress-webpack: 2.0.0-beta.51_vue@3.2.39
+
+  demo/theme-docs:
     specifiers:
       '@vuepress/cli': 2.0.0-beta.51
       '@vuepress/client': 2.0.0-beta.51
