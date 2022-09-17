@@ -1,8 +1,8 @@
 {
-  "name": "theme-demo",
+  "name": "theme-blog-demo",
   "version": "2.0.0-beta.100",
   "private": true,
-  "description": "Demo for vuepress-theme-hope",
+  "description": "Blog demo for vuepress-theme-hope",
   "license": "MIT",
   "author": "Mr.Hope",
   "scripts": {
