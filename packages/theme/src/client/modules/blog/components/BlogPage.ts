@@ -5,6 +5,7 @@ import { useRoute } from "vue-router";
 import ArticleList from "@theme-hope/modules/blog/components/ArticleList.js";
 import ArticleType from "@theme-hope/modules/blog/components/ArticleType.js";
 import CategoryList from "@theme-hope/modules/blog/components/CategoryList.js";
+import InfoPanel from "@theme-hope/modules/blog/components/InfoPanel.js";
 import TagList from "@theme-hope/modules/blog/components/TagList.js";
 import TimelineItems from "@theme-hope/modules/blog/components/TimelineItems.js";
 import DropTransition from "@theme-hope/components/transitions/DropTransition.js";
@@ -80,15 +81,24 @@ export default defineComponent({
     });
 
     return (): VNode =>
-      h("main", { class: "blog-page" }, [
-        h(DropTransition, () =>
-          componentName.value ? h(resolveComponent(componentName.value)) : null
-        ),
-        h(DropTransition, { appear: true, delay: 0.24 }, () =>
-          frontmatter.value.blog?.key === "timeline"
-            ? h(TimelineItems)
-            : h(ArticleList, { key: route.path, items: items.value })
-        ),
-      ]);
+      h(
+        "div",
+        { class: "page blog" },
+        h("div", { class: "blog-page-wrapper" }, [
+          h("main", { class: "blog-main", id: "main-content" }, [
+            h(DropTransition, () =>
+              componentName.value
+                ? h(resolveComponent(componentName.value))
+                : null
+            ),
+            h(DropTransition, { appear: true, delay: 0.24 }, () =>
+              frontmatter.value.blog?.key === "timeline"
+                ? h(TimelineItems)
+                : h(ArticleList, { key: route.path, items: items.value })
+            ),
+          ]),
+          h(DropTransition, { delay: 0.16 }, () => h(InfoPanel)),
+        ])
+      );
   },
 });

@@ -6,6 +6,8 @@
   left: 0;
   z-index: 150;
 
+  display: none;
+
   overflow-y: auto;
 
   padding: 0 2rem;
@@ -14,8 +16,8 @@
 
   transition: background-color 0.5s;
 
-  @media (min-width: hope-config.$tablet) {
-    display: none;
+  @media (max-width: hope-config.$tablet) {
+    display: block;
   }
 
   .container {

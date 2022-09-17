@@ -9,6 +9,8 @@ import type { AuthorInfo } from "vuepress-shared";
 export default defineComponent({
   name: "AuthorInfo",
 
+  inheritAttrs: false,
+
   props: {
     author: {
       type: Array as PropType<AuthorInfo[]>,

@@ -9,14 +9,13 @@ import {
 } from "vue";
 import { LoadingIcon } from "./icons.js";
 
-import type { Mermaid } from "mermaid";
-import type { default as MermaidAPI } from "mermaid/mermaidAPI.js";
+import type { Config, Mermaid } from "mermaid";
 import type { VNode } from "vue";
 
 import "../styles/mermaid.scss";
 
 declare const MARKDOWN_ENHANCE_DELAY: number;
-declare const MERMAID_OPTIONS: MermaidAPI.Config;
+declare const MERMAID_OPTIONS: Config;
 
 const getThemeVariables = (isDarkMode: boolean): Record<string, unknown> => {
   return {
@@ -99,12 +98,15 @@ export default defineComponent({
       isDarkmode.value = getDarkmodeStatus();
 
       void Promise.all([
-        import(/* webpackChunkName: "mermaid" */ "mermaid"),
+        // FIXME: Fix types issue in upstream
+        import(
+          /* webpackChunkName: "mermaid" */ "mermaid"
+        ) as unknown as Promise<{
+          default: Mermaid;
+        }>,
         new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
       ]).then(([{ default: mermaid }]) => {
-        const { initialize, render } =
-          // FIXME: Fix types issue in upstream
-          mermaid as unknown as Mermaid;
+        const { initialize, render } = mermaid;
 
         const renderMermaid = (): void => {
           // generate a unvisiable container
@@ -126,8 +128,6 @@ export default defineComponent({
             flowchart: { useMaxWidth: false },
             sequence: { useMaxWidth: false },
             journey: { useMaxWidth: false },
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-ignore
             gantt: { useMaxWidth: false },
             er: { useMaxWidth: false },
             pie: { useMaxWidth: false },

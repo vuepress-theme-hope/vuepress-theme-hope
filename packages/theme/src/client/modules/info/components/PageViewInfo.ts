@@ -13,6 +13,8 @@ import type { VNode } from "vue";
 export default defineComponent({
   name: "PageViewInfo",
 
+  inheritAttrs: false,
+
   props: {
     pageview: {
       type: [Boolean, String],

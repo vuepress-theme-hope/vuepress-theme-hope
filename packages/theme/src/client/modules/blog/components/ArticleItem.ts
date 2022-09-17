@@ -2,6 +2,7 @@ import { withBase } from "@vuepress/client";
 import { defineComponent, h, toRef, unref } from "vue";
 import { RouterLink } from "vue-router";
 
+import PageInfo from "@theme-hope/modules/info/components/PageInfo.js";
 import {
   SlideIcon,
   StickyIcon,
@@ -13,7 +14,6 @@ import type { PropType, VNode } from "vue";
 import type { ArticleInfo } from "../../../../shared/index.js";
 
 import "../styles/article-item.scss";
-import PageInfo from "@theme-hope/modules/info/components/PageInfo.js";
 
 export default defineComponent({
   name: "ArticleItem",
@@ -39,29 +39,19 @@ export default defineComponent({
           vocab: "https://schema.org/",
           typeof: "Article",
         },
-        [
+        h(RouterLink, { to: props.path }, () => [
           info.value.sticky ? h(StickyIcon) : null,
-          h(
-            "header",
-            { class: "title" },
-            h(
-              RouterLink,
-              {
-                to: props.path,
-              },
-              () => [
-                info.value.isEncrypted ? h(LockIcon) : null,
-                info.value.type === "slide" ? h(SlideIcon) : null,
-                h("span", { property: "headline" }, info.value.title),
-                info.value.cover
-                  ? h("meta", {
-                      property: "image",
-                      content: withBase(info.value.cover),
-                    })
-                  : null,
-              ]
-            )
-          ),
+          h("header", { class: "title" }, [
+            info.value.isEncrypted ? h(LockIcon) : null,
+            info.value.type === "slide" ? h(SlideIcon) : null,
+            h("span", { property: "headline" }, info.value.title),
+            info.value.cover
+              ? h("meta", {
+                  property: "image",
+                  content: withBase(info.value.cover),
+                })
+              : null,
+          ]),
           info.value.excerpt
             ? h("div", { class: "excerpt", innerHTML: info.value.excerpt })
             : null,
@@ -70,7 +60,7 @@ export default defineComponent({
             config: unref(config),
             ...(items.value ? { items: items.value } : {}),
           }),
-        ]
+        ])
       );
   },
 });

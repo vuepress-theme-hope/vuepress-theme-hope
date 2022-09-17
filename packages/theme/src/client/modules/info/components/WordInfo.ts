@@ -11,6 +11,8 @@ import type { ReadingTime } from "vuepress-plugin-reading-time2";
 export default defineComponent({
   name: "ReadTimeInfo",
 
+  inheritAttrs: false,
+
   props: {
     readingTime: {
       type: Object as PropType<ReadingTime | null>,

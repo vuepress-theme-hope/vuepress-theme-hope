@@ -18,7 +18,7 @@ tag:
 
 В файле ввода установите `extends: hopeTheme(options)`, чтобы расширить тему `vuepress-theme-hope`.
 
-Одноименные псевдонимы (`alias`) и макеты (`layouts`) вашей собственной только что созданной темы имеют более высокий приоритет по сравнению с расширенной темой `vuepress-theme-hope`, что означает, что вы можете переопределить `vuepress-theme-hope` компоненты через `alias` и добавить или переопределить макет.
+Одноименные алиасы (`alias`) и макеты (`layouts`) вашей собственной только что созданной темы имеют более высокий приоритет по сравнению с расширенной темой `vuepress-theme-hope`, что означает, что вы можете переопределить `vuepress-theme-hope` компоненты через `alias`.
 
 ::: code-tabs#language
 
@@ -37,7 +37,7 @@ export const localTheme = (options: HopeThemeOptions) => ({
 
   alias: {
     // Вы можете переопределить или добавить псевдонимы здесь
-    // Например, здесь мы меняем компонент HomePage vuepress-theme-hope на component/HomePage.vue под нашей собственной темой
+    // Например, здесь мы меняем компонент HomePage vuepress-theme-hope на component/HomePage.js под нашей собственной темой
     "@theme-hope/components/HomePage.js": path.resolve(
       __dirname,
       "./components/HomePage.js"
@@ -60,7 +60,7 @@ export default (options) => ({
 
   alias: {
     // Вы можете переопределить или добавить псевдонимы здесь
-    // Например, здесь мы меняем компонент HomePage vuepress-theme-hope на component/HomePage.vue под нашей собственной темой
+    // Например, здесь мы меняем компонент HomePage vuepress-theme-hope на component/HomePage.js под нашей собственной темой
     "@theme-hope/components/HomePage.js": path.resolve(
       __dirname,
       "./components/HomePage.js"
@@ -73,7 +73,7 @@ export default (options) => ({
 
 ::: tip
 
-If you want to use `vue` files, you can make a simple js wrapper by writing:
+Если вы хотите использовать файлы `vue`, вы можете создать простую оболочку js, написав:
 
 ```js
 // wrapper.js
@@ -83,7 +83,7 @@ export default YouComponent;
 
 :::
 
-Also, you can add or override layout provided by `vuepress-theme-hope` via `layouts` in your theme client config file.
+Кроме того, вы можете добавить или переопределить макет, предоставленный `vuepress-theme-hope`, через `layouts` в клиентском файле конфигурации вашей темы.
 
 ::: code-tabs#language
 
@@ -121,7 +121,6 @@ export default defineClientConfig({
     Layout,
     // Также мы добавили макет списка изменений
     Changelog,
-  },e"),
   },
 });
 ```

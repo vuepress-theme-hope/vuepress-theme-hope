@@ -9,6 +9,12 @@ on:
 jobs:
   deploy-demo:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        name:
+          - blog
+          - docs
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -32,16 +38,16 @@ jobs:
 
       - name: Build GitHub Pages Demo
         env:
-          BASE: /v2-demo/
+          BASE: /${{ matrix.name }}-demo/
           HOSTNAME: https://vuepress-theme-hope.github.io/
         run: |-
-          pnpm --filter theme-demo demo:vite-build
+          pnpm --filter theme-${{ matrix.name }}-demo demo:vite-build
           > demo/theme/dist/.nojekyll
 
       - name: Deploy to gh pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          repository-name: vuepress-theme-hope/v2-demo
+          repository-name: vuepress-theme-hope/${{ matrix.name }}-demo
           branch: gh-pages
           folder: demo/theme/dist
           token: ${{ secrets.ACCESS_TOKEN }}

@@ -5,8 +5,6 @@ import BlogHome from "@theme-hope/modules/blog/components/BlogHome.js";
 import BlogPage from "@theme-hope/modules/blog/components/BlogPage.js";
 import BloggerInfo from "@theme-hope/modules/blog/components/BloggerInfo.js";
 import InfoList from "@theme-hope/modules/blog/components/InfoList.js";
-import InfoPanel from "@theme-hope/modules/blog/components/InfoPanel.js";
-import DropTransition from "@theme-hope/components/transitions/DropTransition.js";
 import SkipLink from "@theme-hope/components/SkipLink.js";
 import { useMobile } from "@theme-hope/composables/index.js";
 
@@ -27,16 +25,7 @@ export default defineComponent({
         { sidebar: false },
         {
           default: () =>
-            frontmatter.value["home"]
-              ? h(BlogHome)
-              : h(
-                  "main",
-                  { class: "page blog", id: "main-content" },
-                  h("div", { class: "blog-page-wrapper" }, [
-                    h(BlogPage),
-                    h(DropTransition, { delay: 0.16 }, () => h(InfoPanel)),
-                  ])
-                ),
+            frontmatter.value["home"] ? h(BlogHome) : h(BlogPage),
           navScreenBottom: () => h(BloggerInfo),
           ...(isMobile.value ? { sidebar: () => h(InfoList) } : {}),
         }

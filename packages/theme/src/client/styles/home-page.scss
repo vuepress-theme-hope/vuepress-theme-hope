@@ -66,10 +66,6 @@
     .action {
       margin: 1.8rem auto;
 
-      @media (min-width: hope-config.$pad) {
-        margin: 1.8rem 0;
-      }
-
       @media (max-width: hope-config.$tablet) {
         margin: 1.5rem auto;
       }

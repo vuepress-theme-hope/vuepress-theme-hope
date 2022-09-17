@@ -13,6 +13,8 @@ import "../styles/tag.scss";
 export default defineComponent({
   name: "TagInfo",
 
+  inheritAttrs: false,
+
   props: {
     tag: {
       type: Array as PropType<PageTag[]>,

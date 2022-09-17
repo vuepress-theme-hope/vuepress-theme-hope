@@ -34,7 +34,7 @@ export const createPackageJson = async (
   };
 
   if (existsSync(packageJsonPath)) {
-    console.log(message.updatePackage);
+    console.log(message.flow.updatePackage);
 
     // eslint-disable-next-line
     const packageContent: any = JSON.parse(
@@ -49,7 +49,7 @@ export const createPackageJson = async (
       { encoding: "utf-8" }
     );
   } else {
-    console.log(message.createPackage);
+    console.log(message.flow.createPackage);
 
     interface PackageJsonAnswer {
       name: string;
@@ -62,35 +62,35 @@ export const createPackageJson = async (
       {
         name: "name",
         type: "input",
-        message: message.nameMessage,
+        message: message.question.name,
         default: "vuepress-theme-hope-template",
         validate: (input: string): true | string =>
           /^(?:@[a-z0-9-*~][a-z0-9-*._~]*\/)?[a-z0-9-~][a-z0-9-._~]*$/u.exec(
             input
           )
             ? true
-            : message.nameError,
+            : message.error.name,
       },
       {
         name: "version",
         type: "input",
-        message: message.versionMessage,
+        message: message.question.version,
         default: "2.0.0",
         validate: (input: string): true | string =>
           /^[0-9]+\.[0-9]+\.(?:[0=9]+|[0-9]+-[a-z]+\.[0-9])$/u.exec(input)
             ? true
-            : message.versionError,
+            : message.error.version,
       },
       {
         name: "description",
         type: "input",
-        message: message.descriptionMessage,
+        message: message.question.description,
         default: "A project of vuepress-theme-hope",
       },
       {
         name: "license",
         type: "input",
-        message: message.licenseMessage,
+        message: message.question.license,
         default: "MIT",
       },
     ]);

@@ -1,10 +1,6 @@
-.blog-page {
+.blog-main {
   flex: 1;
   max-width: 780px;
-
-  @media (min-width: hope-config.$tablet) {
-    margin: 0 15px;
-  }
 
   .article-title {
     margin: 10px 15px;
