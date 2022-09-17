@@ -5,7 +5,6 @@
 
   width: 100%;
   margin: 0 auto 1.25rem;
-  padding: 0.75rem 1.25rem;
   border-radius: 0.4rem;
 
   background: var(--bg-color-float);
@@ -28,6 +27,16 @@
 
   &:hover {
     box-shadow: 0 2px 6px 2px var(--card-shadow);
+  }
+
+  > a {
+    display: block;
+    padding: 0.75rem 1.25rem;
+    color: inherit;
+
+    @media (max-width: hope-config.$pad) {
+      padding: 0.75rem 1rem;
+    }
   }
 
   .sticky-icon {
