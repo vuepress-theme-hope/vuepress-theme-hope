@@ -5,13 +5,18 @@
 
   width: 100%;
   margin: 0 auto 1.25rem;
-  padding: 1rem 1.25rem;
+  padding: 0.75rem 1.25rem;
   border-radius: 0.4rem;
 
   background: var(--bg-color-float);
   box-shadow: 0 1px 3px 1px var(--card-shadow);
 
   text-align: left;
+
+  @media (max-width: hope-config.$pad) {
+    margin: 0 auto 1rem;
+    padding: 0.75rem 1rem;
+  }
 
   @media (max-width: hope-config.$mobile) {
     border-radius: 0;
@@ -41,9 +46,9 @@
 
     display: inline-block;
 
-    font-size: 1.28rem;
+    font-size: 1.25rem;
     font-family: var(--font-family-fancy);
-    line-height: 2rem;
+    line-height: 1.6;
 
     &::after {
       content: "";
@@ -74,6 +79,7 @@
 
     a {
       color: inherit;
+      font-weight: 600;
     }
 
     .lock-icon,
@@ -84,8 +90,8 @@
       display: inline-block;
       vertical-align: baseline;
 
-      width: 1.25em;
-      height: 1.25em;
+      width: 1em;
+      height: 1em;
       margin-right: 0.25em;
 
       color: var(--theme-color);
@@ -94,7 +100,15 @@
 
   .excerpt {
     overflow: hidden;
-    line-height: 1.7;
+    line-height: 1.6;
+
+    @media (max-width: hope-config.$pad) {
+      font-size: 15px;
+    }
+
+    @media (max-width: hope-config.$mobile) {
+      font-size: 14px;
+    }
 
     h1 {
       display: none;
@@ -143,6 +157,11 @@
     section.footnotes {
       display: none;
     }
+  }
+
+  hr {
+    margin-block-end: 0.375em;
+    margin-block-start: 0.375em;
   }
 
   .page-info {
