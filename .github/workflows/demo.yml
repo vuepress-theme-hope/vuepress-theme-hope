@@ -42,13 +42,13 @@ jobs:
           HOSTNAME: https://vuepress-theme-hope.github.io/
         run: |-
           pnpm --filter theme-${{ matrix.name }}-demo demo:vite-build
-          > demo/theme/dist/.nojekyll
+          > demo/theme-${{ matrix.name }}/dist/.nojekyll
 
       - name: Deploy to gh pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           repository-name: vuepress-theme-hope/${{ matrix.name }}-demo
           branch: gh-pages
-          folder: demo/theme/dist
+          folder: demo/theme-${{ matrix.name }}/dist
           token: ${{ secrets.ACCESS_TOKEN }}
           single-commit: true
