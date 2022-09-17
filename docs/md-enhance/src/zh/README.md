@@ -189,6 +189,7 @@ export default {
 - footnote
 - imageMark
 - include
+- mathjax
 - katex
 - lazyload
 - mark
@@ -196,4 +197,5 @@ export default {
 - sub
 - sup
 - tasklist
+- tex
 - uml

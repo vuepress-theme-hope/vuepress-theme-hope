@@ -1,5 +1,5 @@
 ---
-title: Tex
+title: TeX
 icon: tex
 ---
 
@@ -13,15 +13,17 @@ Let the Markdown file in your VuePress site support the $\TeX$ syntax.
 
 @tab TS
 
-```ts {8}
+```ts {7-10}
 // .vuepress/config.ts
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
   plugins: [
     mdEnhancePlugin({
-      // Enable Tex Support
-      tex: true,
+      // Enable Tex Support using katex
+      katex: true,
+      // Enable Tex Support using mathjax
+      mathjax: true,
     }),
   ],
 };
@@ -29,21 +31,25 @@ export default {
 
 @tab JS
 
-```js {8}
+```js {7-10}
 // .vuepress/config.js
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
   plugins: [
     mdEnhancePlugin({
-      // Enable Tex Support
-      tex: true,
+      // Enable Tex Support using katex
+      katex: true,
+      // Enable Tex Support using mathjax
+      mathjax: true,
     }),
   ],
 };
 ```
 
 :::
+
+You can only enable ONE of them, and katex has a higher priority.
 
 ## Grammar
 
@@ -81,11 +87,38 @@ $$
 
 <!-- markdownlint-restore -->
 
+## Support List
+
+Katex:
+
+- [$\KaTeX$ Support Features](https://katex.org/docs/supported.html)
+- [$\KaTeX$ Support List](https://katex.org/docs/support_table.html)
+
+Mathjax:
+
+- [Supported TeX/LaTeX commands](https://docs.mathjax.org/en/latest/input/tex/macros/index.html#tex-commands)
+
 ## Advanced
 
-Besides setting `tex: true` in plugin options, you can also pass an object to it as `KatexOptions`. It will be passed to katex. Please see [Katex Docs](https://katex.org/docs/options.html) for available options.
+::: info KaTeX
 
-## Tutorial
+When using KaTeX, you can pass an object to `katex` as `KatexOptions`. It will be passed to KaTeX. Please see [KaTeX Docs](https://katex.org/docs/options.html) for available options.
+
+Also, a sepcial option `mhchem` is supported for you to enable mhchem extension by setting it to `true`.
+
+:::
+
+::: info Mathjax
+
+When using mathjax, you can pass an object to `mathjax`.
+
+You can set `output` option to either `svg` (default) or `chtml` to change betwwen SVG and HTML output.
+
+Also, you can set `tex` option which is passed to TeX input parser, and you can set `chtml` or `svg` option based on your output syntax which is passed to Common HTML output parser and SVG output parser.
+
+:::
+
+## Tex Tutorial
 
 ### Operator
 
@@ -412,14 +445,7 @@ $$
 
 ## Text
 
-To insert text in tex, you should use `\text{}` to wrap them.
-
-## More
-
-For more symbols, pleasae check out
-
-- [$\KaTeX$ Support Features](https://katex.org/docs/supported.html)
-- [$\KaTeX$ Support List](https://katex.org/docs/support_table.html)
+To insert text in TeX, you should use `\text{}` to wrap them.
 
 <script setup lang="ts">
 import KatexPlayground from '@KatexPlayground';

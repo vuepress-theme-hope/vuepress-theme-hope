@@ -13,15 +13,17 @@ icon: tex
 
 @tab TS
 
-```ts {8}
+```ts {7-10}
 // .vuepress/config.ts
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
   plugins: [
     mdEnhancePlugin({
-      // 启用 TeX 支持
+      // 使用 KaTeX 启用 TeX 支持
       tex: true,
+      // 使用 mathjax 启用 TeX 支持
+      mathjax: true,
     }),
   ],
 };
@@ -29,21 +31,25 @@ export default {
 
 @tab JS
 
-```js {8}
+```js {7-10}
 // .vuepress/config.js
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
   plugins: [
     mdEnhancePlugin({
-      // 启用 TeX 支持
+      // 使用 KaTeX 启用 TeX 支持
       tex: true,
+      // 使用 mathjax 启用 TeX 支持
+      mathjax: true,
     }),
   ],
 };
 ```
 
 :::
+
+您只能启用其中一个，并且 katex 具有更高的优先级。
 
 ## 语法
 
@@ -75,17 +81,40 @@ $$
 
 ## 在此尝试
 
-<!-- markdownlint-disable -->
-
 <KatexPlayground />
 
-<!-- markdownlint-restore -->
+## 支持列表
+
+Katex:
+
+- [$\KaTeX$ 支持功能](https://katex.org/docs/supported.html)
+- [$\KaTeX$ 支持列表](https://katex.org/docs/support_table.html)
+
+Mathjax:
+
+- [支持的 TeX/LaTeX 命令](https://docs.mathjax.org/en/latest/input/tex/macros/index.html#tex-commands)
 
 ## 高级
 
-除了在插件选项中设置 `tex: true` 之外，你还可以将对象作为 `KatexOptions` 传递给它。 它将被传递给 katex。 有关可用选项，请参阅 [Katex 文档](https://katex.org/docs/options.html)。
+::: info KaTeX
 
-## 教程
+使用 KaTeX 时，您可以将对象作为 `KatexOptions` 传递给 `katex`。 它将被传递给 KaTeX 有关可用选项，请参阅 [KaTeX Docs](https://katex.org/docs/options.html)。
+
+此外，我们还支持一个特殊选项 `mhchem`，您可以通过将其设置为 `true` 来启用 mhchem 扩展。
+
+:::
+
+::: info Mathjax
+
+使用 mathjax 时，您可以将对象传递给 `mathjax`。
+
+您可以将 `output` 选项设置为 `svg` (默认) 或 `chtml` 以更改 SVG 和 HTML 输出。
+
+此外，您可以通过 `tex` 选项将设置传递给 TeX 输入解析器，并且可以根据出书格式，通过 `chtml` 或 `svg` 选项传递给通用 HTML 输出解析器和 SVG 输出解析器的输出语法设置 。
+
+:::
+
+## TeX 教程
 
 ### 运算符
 
@@ -409,13 +438,6 @@ $$
 ## 文字
 
 如果你需要在公式中插入文字，请使用 `\text{}`。
-
-## 更多
-
-有关更多符号，请查看
-
-- [$\KaTeX$ 支持功能](https://katex.org/docs/supported.html)
-- [$\KaTeX$ 支持列表](https://katex.org/docs/support_table.html)
 
 <script setup lang="ts">
 import KatexPlayground from '@KatexPlayground';
