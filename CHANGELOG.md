@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.101](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.100...v2.0.0-beta.101) (2022-09-17)
+
+### Features
+
+- **create:** rebuild template ([d3329f0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d3329f0e54ab2f0e31c547d3a36e18b46f364e48))
+- **md-enhance:** add mathjax support, close [#2079](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2079) ([#2110](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2110)) ([feeb6b3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/feeb6b3e8887c96eecb2593f48649e9b9afdfa85))
+- rebuild theme demo ([#2222](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2222)) ([59a7d4d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/59a7d4dea3b56475f3d2388043ae39841e988a19))
+- **shared:** support RegExp ([950c98d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/950c98d88d6ecb6294364d90cf32c2e1c962cc52))
+- **theme:** fix breakpoints and optimize layout ([cf710f3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cf710f3124bf0a07600f467fbaa1bb340caeea12))
+- **theme:** improve article item ([dffc637](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/dffc637cae4753cf923eb83e9612c0f857a6255e))
+- **theme:** update article list style ([05db4be](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/05db4be8cd7c18bd23a124eede29427eb159a458))
+
+### Bug Fixes
+
+- **create:** fix hostname ([6082809](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6082809dc0de688b7ee0cf2d727a82a8abb691e3))
+- fix docs and template ([b5ddb7e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b5ddb7e95b2e8f21ccd34b52111960e2fc39906c))
+- **md-enhance:** fix absolute md link check, fix [#2196](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2196) ([915c670](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/915c670d0b9624bd303d0e6c3c0a8a20c9700e5c))
+- **theme:** fix SSR result ([f10dcc2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f10dcc2298c1d203124d2706b5355416446237ba))
+
+### Performance Improvements
+
+- **md-enhance:** improve performance in link check ([636fe29](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/636fe29081d90da0a3ba8a085e092f16f9a3a5ce))
+
 ## [2.0.0-beta.100](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.99...v2.0.0-beta.100) (2022-09-13)
 
 ### Features
