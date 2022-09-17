@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: space-evenly;
 
-  padding: 0.75rem 2rem;
+  padding-left: 0.75rem 2rem 0.75rem calc(var(--sidebar-width) + 2rem);
   border-top: 1px solid var(--border-color);
 
   background: var(--bg-color);
@@ -15,13 +15,13 @@
   transition: border-top-color var(--color-transition),
     background var(--color-transition);
 
-  @media (min-width: hope-config.$tablet) {
-    padding-left: calc(var(--sidebar-width) + 2rem);
+  @media (max-width: hope-config.$tablet) {
+    padding-left: 2rem;
+  }
 
-    .no-sidebar &,
-    .sidebar-collapsed & {
-      padding-left: 2rem;
-    }
+  .no-sidebar &,
+  .sidebar-collapsed & {
+    padding-left: 2rem;
   }
 
   > div {

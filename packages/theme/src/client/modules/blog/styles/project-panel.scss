@@ -16,7 +16,7 @@
   .project {
     position: relative;
 
-    width: calc(50% - 40px);
+    width: calc(33% - 40px);
     margin: 6px 8px;
     padding: 12px;
     border-radius: 8px;
@@ -26,8 +26,8 @@
     transition: background-color var(--color-transition),
       transform var(--transform-transition);
 
-    @media (min-width: hope-config.$pad) {
-      width: calc(33% - 40px);
+    @media (max-width: hope-config.$pad) {
+      width: calc(50% - 40px);
     }
 
     @media (min-width: hope-config.$pc) {

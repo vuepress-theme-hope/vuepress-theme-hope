@@ -8,7 +8,7 @@
   left: var(--sidebar-width);
   z-index: 100;
 
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
 
@@ -16,8 +16,8 @@
 
   transition: left var(--transform-transition);
 
-  @media (min-width: hope-config.$tablet) {
-    display: flex;
+  @media (max-width: hope-config.$tablet) {
+    display: none;
   }
 
   &:hover {
@@ -31,15 +31,6 @@
 }
 
 .theme-container {
-  @media (min-width: (hope-config.$tablet + 1px)) {
-    &:not(.sidebar-open) {
-      .sidebar {
-        box-shadow: 2px 0 8px var(--card-shadow);
-        transform: translateX(0);
-      }
-    }
-  }
-
   .page {
     // leave space for navbar
     padding-top: var(--navbar-height);
@@ -54,6 +45,7 @@
   }
 
   .sidebar {
+    // add space for navbar
     top: var(--navbar-height);
   }
 
@@ -101,13 +93,18 @@
     }
   }
 
+  // open state on mobile
   &.sidebar-open {
     .sidebar {
+      // show box shadow
       box-shadow: 2px 0 8px var(--card-shadow);
+
+      // show sidebar
       transform: translateX(0);
     }
   }
 
+  // close state on desktop
   &.sidebar-collapsed {
     .page {
       // spaces for toggle button
@@ -115,6 +112,10 @@
     }
 
     .sidebar {
+      // hide box shadow
+      box-shadow: none;
+
+      // collapse sidebar
       transform: translateX(-100%);
     }
 

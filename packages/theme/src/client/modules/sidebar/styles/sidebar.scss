@@ -12,20 +12,27 @@
   margin: 0;
 
   background: var(--sidebar-bg-color);
+  box-shadow: 2px 0 8px var(--card-shadow);
 
   font-size: 16px;
 
   transition: background-color var(--color-transition),
     box-shadow var(--color-transition), transform var(--transform-transition);
-  transform: translateX(-100%);
 
   backdrop-filter: saturate(150%) blur(12px);
   scrollbar-color: var(--theme-color) var(--border-color);
-
   scrollbar-width: thin;
-
   @media (max-width: hope-config.$pad) {
     font-size: 15px;
+  }
+
+  // on mobile
+  @media (max-width: hope-config.$tablet) {
+    // a collapsed sidebar should not have box shadow
+    box-shadow: 2px 0 8px var(--card-shadow);
+
+    // sidebar should be collapsed by default
+    transform: translateX(-100%);
   }
 
   a {

@@ -10,7 +10,7 @@ export const useMobile = (): Ref<boolean> => {
 
   const mobileHandler = (): void => {
     isMobile.value =
-      window.innerWidth <= (themeData.value.mobileBreakPoint || 719);
+      window.innerWidth < (themeData.value.mobileBreakPoint || 719);
   };
 
   onMounted(() => {
