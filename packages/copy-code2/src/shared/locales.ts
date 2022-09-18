@@ -2,11 +2,18 @@ import type { ConvertLocaleConfig } from "vuepress-shared";
 
 export interface CopyCodeLocaleData {
   /**
-   * Copy button label text
+   * Copy text
    *
-   * 复制按钮文字
+   * 复制文字
    */
   copy: string;
+
+  /**
+   * Copied text
+   *
+   * 已复制文字
+   */
+  copied: string;
 
   /**
    * Success message text after content is copied

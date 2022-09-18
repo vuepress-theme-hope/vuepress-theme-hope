@@ -28,7 +28,7 @@
 import { onMounted, watch } from "vue";
 import { useRoute } from "vue-router";
 import { Message, useLocaleConfig } from "vuepress-shared/lib/client";
-import { CHECK_ICON, COPY_BUTTON, PURE_COPY_BUTTON } from "../utils/index.js";
+import { CHECK_ICON, copyToClipboard } from "../utils/index.js";
 
 import type {
   CopyCodeOptions,
@@ -49,63 +49,25 @@ const isMobile = (): boolean =>
       )
     : false;
 
+const timeoutIdMap: Map<HTMLElement, NodeJS.Timeout> = new Map();
+
 export const setupCopyCode = (): void => {
   const route = useRoute();
   const locale = useLocaleConfig(CODE_COPY_LOCALES);
 
   let message: Message;
 
-  const copyToClipboard = (code: string): void => {
-    const selection = document.getSelection();
-
-    /** current selection */
-    const selectedRange =
-      selection && selection.rangeCount > 0 ? selection.getRangeAt(0) : false;
-
-    const textAreaElement = document.createElement("textarea");
-
-    textAreaElement.value = code;
-    textAreaElement.setAttribute("readonly", "");
-    textAreaElement.style.position = "absolute";
-    textAreaElement.style.top = "-9999px";
-    document.body.appendChild(textAreaElement);
-
-    textAreaElement.select();
-    document.execCommand("copy");
-
-    if (!options.pure)
-      message.pop(
-        `${CHECK_ICON}<span>${locale.value.copy} 🎉</span>`,
-        options.duration
-      );
-
-    document.body.removeChild(textAreaElement);
-
-    // recover the previous selection
-    if (selectedRange && selection) {
-      selection.removeAllRanges();
-      selection.addRange(selectedRange);
-    }
-  };
-
   const insertCopyButton = (codeBlockElement: HTMLElement): void => {
     if (!codeBlockElement.hasAttribute("copy-code-registered")) {
       const copyElement = document.createElement("button");
 
-      if (options.pure) {
-        copyElement.className = "copy-code-pure-button";
-        copyElement.innerHTML = PURE_COPY_BUTTON;
-      } else {
-        copyElement.className = "copy-code-button";
-        copyElement.innerHTML = COPY_BUTTON;
-      }
+      copyElement.classList.add("copy");
+      copyElement.innerHTML = '<div class="copy-icon" />';
+      copyElement.setAttribute("aria-label", locale.value.copy);
+      copyElement.setAttribute("data-copied", locale.value.copied);
 
-      copyElement.addEventListener("click", () => {
-        copyToClipboard(codeBlockElement.innerText);
-      });
-
-      copyElement.setAttribute("aria-label", locale.value.hint);
-      copyElement.setAttribute("data-balloon-pos", "left");
+      if (options.pure) copyElement.classList.add("pure");
+      else copyElement.setAttribute("data-balloon-pos", "left");
 
       if (codeBlockElement.parentElement)
         codeBlockElement.parentElement.insertBefore(
@@ -116,7 +78,7 @@ export const setupCopyCode = (): void => {
     }
   };
 
-  const genCopyButton = (): void => {
+  const generateCopyButton = (): void => {
     const selector =
       options.selector || '.theme-default-content div[class*="language-"] pre';
 
@@ -134,16 +96,70 @@ export const setupCopyCode = (): void => {
     }, options.delay || 500);
   };
 
+  const copy = (
+    codeContainer: HTMLDivElement,
+    codeContent: HTMLPreElement,
+    button: HTMLButtonElement
+  ): void => {
+    let { innerText: text = "" } = codeContent;
+
+    if (
+      // is shell
+      /language-(shellscript|shell|bash|sh|zsh)/.test(
+        codeContainer.classList.toString()
+      )
+    )
+      text = text.replace(/^ *(\$|>) /gm, "");
+
+    void copyToClipboard(text).then(() => {
+      button.classList.add("copied");
+      clearTimeout(timeoutIdMap.get(button));
+
+      const timeoutId = setTimeout(() => {
+        button.classList.remove("copied");
+        button.blur();
+        timeoutIdMap.delete(button);
+      }, 2000);
+
+      timeoutIdMap.set(button, timeoutId);
+
+      if (!options.pure)
+        message.pop(
+          `${CHECK_ICON}<span>${locale.value.hint} 🎉</span>`,
+          options.duration
+        );
+    });
+  };
+
   onMounted(() => {
     message = new Message();
 
-    if (!isMobile() || options.showInMobile) genCopyButton();
+    if (!isMobile() || options.showInMobile) generateCopyButton();
+
+    window.addEventListener("click", (event) => {
+      const el = event.target as HTMLElement;
+
+      if (el.matches('div[class*="language-"] > button.copy')) {
+        const codeContainer = <HTMLDivElement>el.parentElement;
+        const preBlock = <HTMLPreElement | null>el.nextElementSibling;
+
+        if (preBlock) copy(codeContainer, preBlock, <HTMLButtonElement>el);
+      } else if (el.matches('div[class*="language-"] div.copy-icon')) {
+        const buttonElement = <HTMLButtonElement>el.parentElement;
+        const codeContainer = <HTMLDivElement>buttonElement.parentElement;
+        const preBlock = <HTMLPreElement | null>(
+          buttonElement.nextElementSibling
+        );
+
+        if (preBlock) copy(codeContainer, preBlock, buttonElement);
+      }
+    });
   });
 
   watch(
     () => route.path,
     () => {
-      if (!isMobile() || options.showInMobile) genCopyButton();
+      if (!isMobile() || options.showInMobile) generateCopyButton();
     }
   );
 };
