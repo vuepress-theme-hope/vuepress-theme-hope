@@ -74,6 +74,9 @@ export const appendAlternate = (
   urls: { lang: string; path: string }[]
 ): void => {
   urls.forEach(({ lang, path }) => {
-    head.push(["link", { rel: "alternate", hreflang: lang, href: path }]);
+    head.push([
+      "link",
+      { rel: "alternate", hreflang: lang.toLowerCase(), href: path },
+    ]);
   });
 };
