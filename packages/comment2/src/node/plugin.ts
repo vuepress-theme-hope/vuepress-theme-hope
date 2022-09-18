@@ -61,7 +61,12 @@ export const commentPlugin =
 
       define: () => ({
         COMMENT_OPTIONS: options,
-        WALINE_LOCALES: userWalineLocales,
+        ...(options.provider === "Waline"
+          ? {
+              WALINE_LOCALES: userWalineLocales,
+              WALINE_META: options.metaIcon !== false,
+            }
+          : {}),
       }),
 
       extendsBundlerOptions: (config: unknown, app): void => {

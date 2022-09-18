@@ -17,14 +17,14 @@ import "../styles/waline.scss";
 
 declare const COMMENT_OPTIONS: WalineOptions;
 
+declare const WALINE_META: boolean;
 declare const WALINE_LOCALES: WalineLocaleConfig;
 
 const walineOption = COMMENT_OPTIONS;
 const walineLocales = WALINE_LOCALES;
 const enableWaline = Boolean(walineOption.serverURL);
 
-if (walineOption.metaIcon !== false)
-  import("@waline/client/dist/waline-meta.css");
+if (WALINE_META) import("@waline/client/dist/waline-meta.css");
 
 export default defineComponent({
   name: "WalineComment",
