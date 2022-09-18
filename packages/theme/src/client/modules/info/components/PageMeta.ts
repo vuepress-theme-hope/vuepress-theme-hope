@@ -1,3 +1,4 @@
+import { ClientOnly } from "@vuepress/client";
 import { defineComponent, h } from "vue";
 
 import AutoLink from "@theme-hope/components/AutoLink.js";
@@ -40,7 +41,9 @@ export default defineComponent({
         updateTime.value
           ? h("div", { class: "meta-item update-time" }, [
               h("span", { class: "label" }, `${metaLocales.lastUpdated}: `),
-              h("span", { class: "info" }, updateTime.value),
+              h(ClientOnly, () =>
+                h("span", { class: "info" }, <string>updateTime.value)
+              ),
             ])
           : null,
         contributors.value && contributors.value.length
