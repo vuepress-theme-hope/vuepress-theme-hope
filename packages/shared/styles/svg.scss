@@ -1,6 +1,7 @@
 // stylelint-disable order/order
 // stylelint-disable scss/operator-no-newline-after
 @use "sass:math";
+@use "sass:string";
 
 @function encode-svg($svg) {
   $encoded: "";
