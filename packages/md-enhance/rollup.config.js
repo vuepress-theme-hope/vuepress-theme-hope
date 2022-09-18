@@ -3,12 +3,15 @@ import { rollupTypescript } from "../../scripts/rollup";
 export default [
   ...rollupTypescript("node/index", {
     external: [
+      "node:module",
       "vuepress-shared",
       "@vuepress/plugin-container",
       "@vuepress/shared",
       "@vuepress/utils",
+      "juice",
       "markdown-it/lib/token.js",
       "markdown-it/lib/helpers/parse_link_label.js",
+      /^mathjax-full\//,
       "katex",
       "vuepress-plugin-sass-palette",
     ],
@@ -35,7 +38,7 @@ export default [
       "vuepress-shared/lib/client",
       /\.scss$/,
     ],
-    dtsExternal: [/\.scss$/],
+    dtsExternal: ["balloon-css/balloon.css", /\.scss$/],
   }),
   ...rollupTypescript("client/components/CodeTabs", {
     external: ["@vuepress/client", "@vueuse/core", "vue", /\.scss$/],
@@ -66,18 +69,19 @@ export default [
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/Playground", {
-    external: ["vue", /\.scss$/],
+    external: ["vue", "vuepress-shared/lib/client", /\.scss$/],
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/VuePlayground", {
     external: [
       "@vuepress/client",
       "@vue/repl",
+      "@vue/repl/style.css",
       "vue",
       "vuepress-shared/lib/client",
       /\.scss$/,
     ],
-    dtsExternal: [/\.scss$/],
+    dtsExternal: ["@vue/repl/style.css", /\.scss$/],
   }),
   ...rollupTypescript("client/components/Presentation", {
     external: [

@@ -18,9 +18,7 @@ importers:
       '@commitlint/cli': 17.1.2
       '@commitlint/config-conventional': 17.1.0
       '@rollup/plugin-commonjs': 22.0.2
-      '@rollup/plugin-json': 4.1.0
       '@rollup/plugin-node-resolve': 14.1.0
-      '@rollup/plugin-typescript': 8.5.0
       '@types/inquirer': 9.0.1
       '@types/node': 18.7.18
       '@typescript-eslint/eslint-plugin': 5.37.0
@@ -35,6 +33,7 @@ importers:
       cpx2: 4.2.0
       cross-env: 7.0.3
       cz-git: 1.3.11
+      esbuild: 0.15.7
       eslint: 8.23.1
       eslint-config-prettier: 8.5.0
       eslint-plugin-prettier: 4.2.1
@@ -50,7 +49,7 @@ importers:
       rollup: 2.79.0
       rollup-plugin-copy: 3.4.0
       rollup-plugin-dts: 4.2.2
-      rollup-plugin-terser: 7.0.2
+      rollup-plugin-esbuild: 4.10.1
       sort-package-json: 1.57.0
       standard-version: 9.5.0
       stylelint: 14.11.0
@@ -66,9 +65,7 @@ importers:
       '@commitlint/cli': 17.1.2
       '@commitlint/config-conventional': 17.1.0
       '@rollup/plugin-commonjs': 22.0.2_rollup@2.79.0
-      '@rollup/plugin-json': 4.1.0_rollup@2.79.0
       '@rollup/plugin-node-resolve': 14.1.0_rollup@2.79.0
-      '@rollup/plugin-typescript': 8.5.0_ppxule2mhlgb6ds3e4gxjflaqy
       '@types/inquirer': 9.0.1
       '@types/node': 18.7.18
       '@typescript-eslint/eslint-plugin': 5.37.0_7yuior3nseb5pya2lwpwzaadte
@@ -83,6 +80,7 @@ importers:
       cpx2: 4.2.0
       cross-env: 7.0.3
       cz-git: 1.3.11
+      esbuild: 0.15.7
       eslint: 8.23.1
       eslint-config-prettier: 8.5.0_eslint@8.23.1
       eslint-plugin-prettier: 4.2.1_cabrci5exjdaojcvd6xoxgeowu
@@ -98,7 +96,7 @@ importers:
       rollup: 2.79.0
       rollup-plugin-copy: 3.4.0
       rollup-plugin-dts: 4.2.2_xdb5ss5ub2cemhlks3szmapm6q
-      rollup-plugin-terser: 7.0.2_rollup@2.79.0
+      rollup-plugin-esbuild: 4.10.1_uu2p2v3owefbwsafzxfcsbbrxa
       sort-package-json: 1.57.0
       standard-version: 9.5.0
       stylelint: 14.11.0
@@ -2987,15 +2985,6 @@ packages:
       rollup: 2.79.0
     dev: true
 
-  /@rollup/plugin-json/4.1.0_rollup@2.79.0:
-    resolution: {integrity: sha512-yfLbTdNS6amI/2OpmbiBoW12vngr5NW2jCJVZSBEz+H5KfUJZ2M7sDjk0U6GOOdCWFVScShte29o9NezJ53TPw==}
-    peerDependencies:
-      rollup: ^1.20.0 || ^2.0.0
-    dependencies:
-      '@rollup/pluginutils': 3.1.0_rollup@2.79.0
-      rollup: 2.79.0
-    dev: true
-
   /@rollup/plugin-node-resolve/11.2.1_rollup@2.79.0:
     resolution: {integrity: sha512-yc2n43jcqVyGE2sqV5/YCmocy9ArjVAP/BeXyTtADTBBX6V0e5UMqwO8CdQ0kzjb6zu5P1qMzsScCMRvE9OlVg==}
     engines: {node: '>= 10.0.0'}
@@ -3034,24 +3023,6 @@ packages:
       magic-string: 0.25.9
       rollup: 2.79.0
 
-  /@rollup/plugin-typescript/8.5.0_ppxule2mhlgb6ds3e4gxjflaqy:
-    resolution: {integrity: sha512-wMv1/scv0m/rXx21wD2IsBbJFba8wGF3ErJIr6IKRfRj49S85Lszbxb4DCo8iILpluTjk2GAAu9CoZt4G3ppgQ==}
-    engines: {node: '>=8.0.0'}
-    peerDependencies:
-      rollup: ^2.14.0
-      tslib: '*'
-      typescript: '>=3.7.0'
-    peerDependenciesMeta:
-      tslib:
-        optional: true
-    dependencies:
-      '@rollup/pluginutils': 3.1.0_rollup@2.79.0
-      resolve: 1.22.1
-      rollup: 2.79.0
-      tslib: 2.4.0
-      typescript: 4.7.4
-    dev: true
-
   /@rollup/pluginutils/3.1.0_rollup@2.79.0:
     resolution: {integrity: sha512-GksZ6pr6TpIjHm8h9lSQ8pi8BE9VeubNT0OMJ3B5uZJ8pz73NPiqOtCog/x2/QzM1ENChPKxMDhiQuRHsqc+lg==}
     engines: {node: '>= 8.0.0'}
@@ -3062,6 +3033,14 @@ packages:
       estree-walker: 1.0.1
       picomatch: 2.3.1
       rollup: 2.79.0
+
+  /@rollup/pluginutils/4.2.1:
+    resolution: {integrity: sha512-iKnFXr7NkdZAIHiIWE+BX5ULi/ucVFYWD6TbAV+rZctiRTY2PL6tsIKhoIOaoskiWAkgu+VsbXgUVDNLHf+InQ==}
+    engines: {node: '>= 8.0.0'}
+    dependencies:
+      estree-walker: 2.0.2
+      picomatch: 2.3.1
+    dev: true
 
   /@sindresorhus/is/5.3.0:
     resolution: {integrity: sha512-CX6t4SYQ37lzxicAqsBtxA3OseeoVrh9cSJ5PFYam0GksYlupRfy1A+Q4aYD3zvcfECLc0zO2u+ZnR2UYKvCrw==}
@@ -10481,6 +10460,24 @@ packages:
       typescript: 4.7.4
     optionalDependencies:
       '@babel/code-frame': 7.18.6
+    dev: true
+
+  /rollup-plugin-esbuild/4.10.1_uu2p2v3owefbwsafzxfcsbbrxa:
+    resolution: {integrity: sha512-/ymcRB283zjFp1JTBXO8ekxv0c9vRc2L6OTljghsLthQ4vqeDSDWa9BVz1tHiVrx6SbUnUpDPLC0K/MXK7j5TA==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      esbuild: '>=0.10.1'
+      rollup: ^1.20.0 || ^2.0.0
+    dependencies:
+      '@rollup/pluginutils': 4.2.1
+      debug: 4.3.4
+      es-module-lexer: 0.9.3
+      esbuild: 0.15.7
+      joycon: 3.1.1
+      jsonc-parser: 3.2.0
+      rollup: 2.79.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /rollup-plugin-terser/7.0.2_rollup@2.79.0:

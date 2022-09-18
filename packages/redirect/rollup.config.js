@@ -4,6 +4,7 @@ export default [
   ...rollupTypescript("cli/index", {
     dts: false,
     external: [
+      "node:module",
       "@vuepress/cli",
       "@vuepress/core",
       "@vuepress/shared",

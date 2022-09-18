@@ -6,6 +6,7 @@ export default [
       "vuepress-shared",
       "@vuepress/core",
       "@vuepress/shared",
+      "@vuepress/utils",
       "chokidar",
     ],
   }),
@@ -18,5 +19,6 @@ export default [
       "vue-router",
       "vuepress-shared/lib/client",
     ],
+    dtsExternal: [/^@temp/],
   }),
 ];
