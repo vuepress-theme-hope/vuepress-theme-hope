@@ -167,7 +167,7 @@ export const generateTemplate = async (
 
   // copy public assets
   copy(
-    resolve(__dirname, "../assets/public"),
+    resolve(__dirname, "../template/public"),
     resolve(process.cwd(), targetDir, "./vuepress/public")
   );
 
