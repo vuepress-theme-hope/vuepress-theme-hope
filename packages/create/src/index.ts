@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import { existsSync, readdirSync } from "node:fs";
+import { resolve } from "node:path";
 import { cac } from "cac";
 import { execaCommand, execaCommandSync } from "execa";
 import inquirer from "inquirer";
@@ -42,6 +44,12 @@ cli
       // check if the user is a noob and warn him 🤪
       if (targetDir.startsWith("[") && targetDir.endsWith("]"))
         return console.log(message.error.dir(packageManager));
+
+      const targetDirPath = resolve(process.cwd(), targetDir);
+
+      // check if the user is trying to cover his files
+      if (existsSync(targetDirPath) && readdirSync(targetDirPath).length)
+        return console.error(message.error.empty(targetDir));
 
       await createPackageJson(targetDir, message);
 
