@@ -86,6 +86,8 @@ export const prepareConfigFile = async (
 
   if (getStatus("katex"))
     configImport += `import "${CLIENT_FOLDER}styles/katex.scss";\n`;
+  else if (getStatus("mathjax"))
+    configImport += `import "${CLIENT_FOLDER}styles/mathjax.scss";\n`;
 
   if (getStatus("vuePlayground"))
     enhance += `const VuePlayground = defineAsyncComponent(() => import("${CLIENT_FOLDER}components/VuePlayground.js"));\napp.component("VuePlayground", VuePlayground);\n`;
