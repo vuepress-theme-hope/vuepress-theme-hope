@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.102](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.101...v2.0.0-beta.102) (2022-09-18)
+
+### Features
+
+- **copy-code2:** rebuild copy code ([596c3c9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/596c3c94cc562ba07f070231b4e7830198588090))
+- **create:** ensure target dir is empty ([d389f8a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d389f8a416d2dac0ed1f578aa5e792b27a4be199))
+- **theme:** improve Pagination alert ([9301b0d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9301b0dc95ce95089e0dfb9d406451411f94f9e2))
+
+### Bug Fixes
+
+- **comment2:** fix waline meta icon ([affc0b1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/affc0b148f262c3d2c6b32cdd966bc25ae7c61b1))
+- **create:** fix template path, fix [#2224](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2224) ([54613b5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/54613b5d0eb558dc36e5384d36b84c7f07d206f0))
+- **md-enhance:** fix display mode with mathjax svg ([7435322](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/74353223bcb039ab11987456676abb32d3bd7fb4))
+- **seo2:** correct hreflang ([8c5fd0e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8c5fd0e36d98a559bf4bb1cb956f1b154a8cd07c))
+- **theme:** fix hero alt in homepage ([9604efe](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9604efeaf5ca009ca9c98c9af5eb06fa10ad2119))
+- **theme:** improve article list on mobile ([8402fff](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8402fffad735ae901d4850b4f4c830ae4c72aa60))
+- **theme:** wrap updatetime with client only ([a48b240](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a48b240c5d36cc54a886259f06ebb5781f8a9cce))
+
+### Performance Improvements
+
+- **md-enhance:** improve svg output ([1f26824](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1f26824e5539565cd4d3de6ddaf537c3bc9f4b69))
+
 ## [2.0.0-beta.101](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.100...v2.0.0-beta.101) (2022-09-17)
 
 ### Features
