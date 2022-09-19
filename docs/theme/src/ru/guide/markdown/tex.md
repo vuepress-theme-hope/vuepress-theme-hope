@@ -1,5 +1,5 @@
 ---
-title: Tex
+title: TeX
 icon: tex
 category:
   - Markdown
@@ -18,7 +18,7 @@ tag:
 
 @tab TS
 
-```ts {8-10}
+```ts {8-13}
 // .vuepress/config.ts
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
@@ -27,7 +27,10 @@ export default defineUserConfig({
   theme: hopeTheme({
     plugins: {
       mdEnhance: {
-        tex: true,
+        // Enable Tex Support using katex
+        katex: true,
+        // Enable Tex Support using mathjax
+        mathjax: true,
       },
     },
   }),
@@ -36,7 +39,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {7-9}
+```js {7-12}
 // .vuepress/config.js
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -44,7 +47,10 @@ export default {
   theme: hopeTheme({
     plugins: {
       mdEnhance: {
-        tex: true,
+        // Enable Tex Support using katex
+        katex: true,
+        // Enable Tex Support using mathjax
+        mathjax: true,
       },
     },
   }),
@@ -52,6 +58,8 @@ export default {
 ```
 
 :::
+
+Вы можете включить только ОДНУ из них, и катекс имеет более высокий приоритет.
 
 ## Грамматика
 
@@ -89,7 +97,38 @@ $$
 
 <!-- markdownlint-restore -->
 
-## Руководство
+## Список поддержки
+
+Katex:
+
+- [Функции поддержки $\KaTeX$](https://katex.org/docs/supported.html)
+- [Список поддержки $\KaTeX$](https://katex.org/docs/support_table.html)
+
+Mathjax:
+
+- [Поддерживаемые команды TeX/LaTeX](https://docs.mathjax.org/en/latest/input/tex/macros/index.html#tex-commands)
+
+## Продвинутые
+
+::: info KaTeX
+
+При использовании KaTeX вы можете передать объект в `katex` как `KatexOptions`. Он будет передан KaTeX. Доступные варианты смотрите в [Документации KaTeX](https://katex.org/docs/options.html).
+
+Кроме того, поддерживается специальная опция `mhchem`, позволяющая включить расширение mhchem, установив для него значение `true`.
+
+:::
+
+::: info Mathjax
+
+При использовании mathjax вы можете передать объект в `mathjax`.
+
+Вы можете установить для параметра `output` значение `svg` (по умолчанию) или `chtml`, чтобы изменить вывод между SVG и HTML.
+
+Кроме того, вы можете установить параметр `tex`, который передается парсеру ввода TeX, и вы можете установить параметр `chtml` или `svg` на основе вашего синтаксиса вывода, который передается парсеру вывода Common HTML и парсеру вывода SVG.
+
+:::
+
+## Учебник по Tex
 
 ### Оператор
 
@@ -416,14 +455,7 @@ $$
 
 ## Текст
 
-Чтобы вставить текст в tex, вы должны использовать `\text{}` для переноса их.
-
-## Еще
-
-Дополнительные символы смотрите
-
-- [Функции поддержки $\KaTeX$](https://katex.org/docs/supported.html)
-- [Список поддержки $\KaTeX$](https://katex.org/docs/support_table.html)
+Чтобы вставить текст в TeX, вы должны использовать `\text{}` для переноса их.
 
 <script setup lang="ts">
 import KatexPlayground from '@KatexPlayground';
