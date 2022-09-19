@@ -21,6 +21,7 @@ export const convertOptions = (
     newOption: "katex",
   });
 
+  droppedLogger(options, "enableAll");
   droppedLogger(options, "lineNumbers");
   droppedLogger(options, "imageFix");
 };
