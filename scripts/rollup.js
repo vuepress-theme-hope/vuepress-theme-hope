@@ -34,7 +34,7 @@ export const rollupTypescript = (
     plugins: [
       ...(preserveShebang ? [shebang()] : []),
       ...(resolve ? [nodeResolve({ preferBuiltins: true }), commonjs()] : []),
-      esbuild({ minify: isProduction, target: "node14" }),
+      esbuild({ charset: "utf8", minify: isProduction, target: "node14" }),
       ...(copyOptions.length
         ? [
             copy({
