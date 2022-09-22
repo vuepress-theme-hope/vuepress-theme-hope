@@ -168,7 +168,7 @@ export const generateTemplate = async (
   // copy public assets
   copy(
     resolve(__dirname, "../template/public"),
-    resolve(process.cwd(), targetDir, "./vuepress/public")
+    resolve(process.cwd(), targetDir, "./.vuepress/public")
   );
 
   const templateFolder = preset;
