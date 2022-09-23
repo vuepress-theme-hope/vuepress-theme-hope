@@ -101,49 +101,52 @@ E.g.: you can use `@src` as an alias for your source directory.
 
 @tab TS
 
-```ts {8}
+```ts {10-17}
 // .vuepress/config.ts
-import { path } from "@vuepress/utils";
-import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  plugins: [
-    mdEnhancePlugin({
-      // Add `@src` alias support
-      include: {
-        getPath: (file) => {
-          if (file.startsWith("@src"))
-            return file.replace("@src", path.resolve(__dirname, ".."));
+export default defineUserConfig({
+  theme: hopeTheme({
+    plugins: {
+      mdEnhance: {
+        // Add `@src` alias support
+        include: {
+          getPath: (file) => {
+            if (file.startsWith("@src"))
+              return file.replace("@src", path.resolve(__dirname, ".."));
 
-          return file;
+            return file;
+          },
         },
       },
-    }),
-  ],
-};
+    },
+  }),
+});
 ```
 
 @tab JS
 
-```js {8}
+```js {9-16}
 // .vuepress/config.js
-import { path } from "@vuepress/utils";
-import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
+import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
-  plugins: [
-    mdEnhancePlugin({
-      // Add `@src` alias support
-      include: {
-        getPath: (file) => {
-          if (file.startsWith("@src"))
-            return file.replace("@src", path.resolve(__dirname, ".."));
+  theme: hopeTheme({
+    plugins: {
+      mdEnhance: {
+        // Add `@src` alias support
+        include: {
+          getPath: (file) => {
+            if (file.startsWith("@src"))
+              return file.replace("@src", path.resolve(__dirname, ".."));
 
-          return file;
+            return file;
+          },
         },
       },
-    }),
-  ],
+    },
+  }),
 };
 ```
 
@@ -155,37 +158,40 @@ Also, to place your Markdown files directly besides your actual files, but donâ€
 
 @tab TS
 
-```ts {8}
+```ts {6}
 // .vuepress/config.ts
-import { path } from "@vuepress/utils";
-import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
+export default defineUserConfig({
   pagePatterns: ["**/*.md", "!*.snippet.md", "!.vuepress", "!node_modules"],
 
-  plugins: [
-    mdEnhancePlugin({
-      include: true,
-    }),
-  ],
-};
+  theme: hopeTheme({
+    plugins: {
+      mdEnhance: {
+        include: true,
+      },
+    },
+  }),
+});
 ```
 
 @tab JS
 
-```js {8}
+```js {5}
 // .vuepress/config.js
-import { path } from "@vuepress/utils";
-import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
+import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
   pagePatterns: ["**/*.md", "!*.snippet.md", "!.vuepress", "!node_modules"],
 
-  plugins: [
-    mdEnhancePlugin({
-      include: true,
-    }),
-  ],
+  theme: hopeTheme({
+    plugins: {
+      mdEnhance: {
+        include: true,
+      },
+    },
+  }),
 };
 ```
 

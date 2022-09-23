@@ -147,9 +147,8 @@ export default {
 
 @tab TS
 
-```ts {8}
+```ts {5}
 // .vuepress/config.ts
-import { path } from "@vuepress/utils";
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
@@ -165,9 +164,8 @@ export default {
 
 @tab JS
 
-```js {8}
+```js {5}
 // .vuepress/config.js
-import { path } from "@vuepress/utils";
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
