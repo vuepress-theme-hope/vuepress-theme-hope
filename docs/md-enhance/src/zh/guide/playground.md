@@ -39,10 +39,10 @@ export default {
         // 设置内置预设 (可选)
         config: {
           ts: {
-            // xxx
+            // ...
           },
           vue: {
-            // xxx
+            // ...
           },
         },
       },
@@ -79,10 +79,10 @@ export default {
         // 设置内置预设 (可选)
         config: {
           ts: {
-            // xxx
+            // ...
           },
           vue: {
-            // xxx
+            // ...
           },
         },
       },

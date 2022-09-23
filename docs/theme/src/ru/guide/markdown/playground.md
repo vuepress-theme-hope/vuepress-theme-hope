@@ -46,10 +46,10 @@ export default defineUserConfig({
           // configure built-in presets (optional)
           config: {
             ts: {
-              // xxx
+              // ...
             },
             vue: {
-              // xxx
+              // ...
             },
           },
         },
@@ -88,10 +88,10 @@ export default {
           // configure built-in presets (optional)
           config: {
             ts: {
-              // xxx
+              // ...
             },
             vue: {
-              // xxx
+              // ...
             },
           },
         },
