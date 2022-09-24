@@ -23,7 +23,7 @@ export const setupPWA = (): void => {
     let refreshing = false;
 
     // only listen controllerchange event when a serviceWorker is active
-    if (navigator.serviceWorker.controller)
+    if (navigator.serviceWorker?.controller)
       navigator.serviceWorker.addEventListener("controllerchange", () => {
         if (refreshing) return;
 
