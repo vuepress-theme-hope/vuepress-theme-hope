@@ -63,9 +63,7 @@ const renderMath = (
   );
 
   /* eslint-enable */
-  return documentOptions.OutputJax instanceof SVG
-    ? html
-    : juice(html + stylesheet);
+  return juice(html + stylesheet);
 };
 
 export const mathjax: PluginWithOptions<MathJaxOptions> = (
