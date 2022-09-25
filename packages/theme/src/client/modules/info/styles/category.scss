@@ -6,6 +6,10 @@
   padding-left: 0;
   list-style: none;
 
+  li {
+    display: inline-block;
+  }
+
   .category {
     display: inline-block;
 

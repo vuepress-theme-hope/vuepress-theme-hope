@@ -49,19 +49,23 @@ export default defineComponent({
                 props.tag.map(({ name, path }) =>
                   h(
                     "li",
-                    {
-                      class: [
-                        "tag",
-                        {
-                          // TODO: magic number 9 is tricky here
-                          [`tag${generateIndexfromHash(name, 9)}`]: !props.pure,
-                          clickable: path,
-                        },
-                      ],
-                      role: path ? "navigation" : "",
-                      onClick: () => navigate(path),
-                    },
-                    name
+                    h(
+                      "span",
+                      {
+                        class: [
+                          "tag",
+                          {
+                            // TODO: magic number 9 is tricky here
+                            [`tag${generateIndexfromHash(name, 9)}`]:
+                              !props.pure,
+                            clickable: path,
+                          },
+                        ],
+                        role: path ? "navigation" : "",
+                        onClick: () => navigate(path),
+                      },
+                      name
+                    )
                   )
                 )
               ),
