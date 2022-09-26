@@ -24,7 +24,7 @@ tag:
 
 @tab TS
 
-```ts {8,11}
+```ts {9,12}
 // .vuepress/config.ts
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
@@ -33,7 +33,7 @@ export default defineUserConfig({
   theme: hopeTheme({
     plugins: {
       comment: {
-        type: "waline",
+        provider: "waline",
 
         // waline 模式下
         serverURL: "...", // your serverURL
@@ -45,14 +45,15 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {7,10}
+```js {8,11}
+// .vuepress/config.js
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
   theme: hopeTheme({
     plugins: {
       comment: {
-        type: "waline",
+        provider: "waline",
 
         // waline 模式下
         serverURL: "...", // your serverURL
@@ -100,12 +101,6 @@ Giscus 是一个基于 GitHub Discussion 的评论系统，启用简便。
 
 请将 `data-repo`, `data-repo-id`, `data-category` 和 `data-category-id` 作为插件选项传入 `repo`, `repoId`, `category` `categoryId`。
 
-::: info 夜间模式
-
-为了能使 Giscus 使用正确的主题，你需要为 `<CommentService />` 通过 `darkmode` 属性传入一个布尔值，代表当前是否开启夜间模式。
-
-:::
-
 其他的配置项详见 [Giscus 配置][comment2-giscus-config]。
 
 ## Waline
@@ -135,7 +130,7 @@ export default defineUserConfig({
   theme: hopeTheme({
     plugins: {
       comment: {
-        type: "waline",
+        provider: "waline",
         serverURL: "YOUR_SERVER_URL", // your server url
       },
     },
@@ -153,7 +148,7 @@ export default {
   theme: hopeTheme({
     plugins: {
       comment: {
-        type: "waline",
+        provider: "waline",
         serverURL: "YOUR_SERVER_URL", // your server url
       },
     },

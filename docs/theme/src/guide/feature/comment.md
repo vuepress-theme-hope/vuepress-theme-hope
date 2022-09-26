@@ -24,7 +24,7 @@ tag:
 
 @tab TS
 
-```ts {8,13}
+```ts {9,12}
 // .vuepress/config.ts
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
@@ -33,7 +33,7 @@ export default defineUserConfig({
   theme: hopeTheme({
     plugins: {
       comment: {
-        type: "waline",
+        provider: "waline",
 
         // waline 模式下
         serverURL: "...", // your serverURL
@@ -45,7 +45,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {7,12}
+```js {8,11}
 // .vuepress/config.js
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -53,7 +53,7 @@ export default {
   theme: hopeTheme({
     plugins: {
       comment: {
-        type: "waline",
+        provider: "waline",
 
         // waline 模式下
         serverURL: "...", // your serverURL
@@ -99,12 +99,6 @@ After completing the above steps, please go to the [Giscus page](https://giscus.
 
 Please pass `data-repo`, `data-repo-id`, `data-category` and `data-category-id` as plugin options as `repo`, `repoId`, `category` `categoryId`.
 
-::: info Darkmode
-
-To let Giscus use the correct theme, you need to pass a boolean value to `<CommentService />` via the `darkmode` property, indicating whether darkmode is currently enabled.
-
-:::
-
 For other options, see [Giscus Config][comment2-giscus-config].
 
 ## Waline
@@ -134,7 +128,7 @@ export default defineUserConfig({
   theme: hopeTheme({
     plugins: {
       comment: {
-        type: "waline",
+        provider: "waline",
         serverURL: "YOUR_SERVER_URL", // your server url
       },
     },
@@ -152,7 +146,7 @@ export default {
   theme: hopeTheme({
     plugins: {
       comment: {
-        type: "waline",
+        provider: "waline",
         serverURL: "YOUR_SERVER_URL", // your server url
       },
     },
