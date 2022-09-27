@@ -38,7 +38,7 @@ Waline 的服务端地址。
 
 :::
 
-自定义样式与深色模式详见 [自定义样式](https://waline.js.org/guide/client/style.html)。
+自定义样式与暗黑模式详见 [自定义样式](https://waline.js.org/guide/client/style.html)。
 
 ## meta
 
@@ -90,11 +90,63 @@ Waline 的服务端地址。
 
 评论列表分页，每页条数。
 
+## search
+
+- 类型: `WalineSearchOptions | false`
+- 必填: 否
+- 详情:
+
+  ```ts
+  interface WalineSearchResult extends Record<string, unknown> {
+    /**
+     * Image link
+     */
+    src: string;
+
+    /**
+     * Image title, optional
+     */
+    title?: string;
+
+    /**
+     * Image preview link, optional
+     *
+     * @default src
+     */
+    preview?: string;
+  }
+
+  interface WalineSearchOptions {
+    /**
+     * 搜索行为
+     */
+    search: (word: string) => Promise<WalineSearchResult[]>;
+
+    /**
+     * 默认的搜索行为
+     *
+     * @default () => search('')
+     */
+    default?: () => Promise<WalineSearchResult[]>;
+
+    /**
+     * 获取更多行为
+     *
+     * @default (word) => search(word)
+     */
+    more?: (
+      word: string,
+      currectCount: number
+    ) => Promise<WalineSearchResult[]>;
+  }
+  ```
+
+自定义搜索功能，设置 `false` 可禁用搜索。
+
 ## copyright
 
 - 类型: `boolean`
 - 默认值: `true`
-- 必填: 否
 
 是否显示页脚版权信息。
 
@@ -103,3 +155,17 @@ Waline 的服务端地址。
 我们希望你保持打开以支持 Waline。
 
 :::
+
+## recaptchaV3Key
+
+- 类型: `string`
+- 必填: 否
+
+reCAPTCHA V3 是 Google 提供的验证码服务，配置 reCAPTCHA V3 网站密钥即可开启该功能。服务端需要同步配置 `RECAPTCHA_V3_SECRET` 环境变量。
+
+## reaction
+
+- 类型: `boolean | string[]`
+- 默认值: `false`
+
+为文章增加表情互动功能，设置为 `true` 提供默认表情，也可以通过设置表情地址数组来自定义表情图片，最大支持 8 个表情。
