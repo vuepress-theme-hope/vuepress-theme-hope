@@ -57,9 +57,9 @@ Welcome to Waline. In just a few steps, you can enable Waline to provide comment
 
 ## Assign Domain (Optional)
 
-1. Click <kbd>Settings</kbd> - <kbd>Domains</kbd> to go to domain setting page.
+1. Click `Settings` - `Domains` to go to domain setting page.
 
-1. Input domain you want to assign and click <kbd>Add</kbd> button.
+1. Input domain you want to assign and click `Add` button.
 
    ![Add domain](/assets/image/vercel-8.png)
 
