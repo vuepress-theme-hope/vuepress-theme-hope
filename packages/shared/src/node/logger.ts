@@ -59,7 +59,9 @@ export class Logger {
    */
   info(text = ""): Ora {
     return (
-      !text && this.currentInstance ? this.currentInstance : this.create(text)
+      !text && this.currentInstance
+        ? this.currentInstance
+        : this.create(chalk.blue(text))
     ).info();
   }
 
@@ -71,7 +73,9 @@ export class Logger {
    */
   succeed(text = ""): Ora {
     return (
-      !text && this.currentInstance ? this.currentInstance : this.create(text)
+      !text && this.currentInstance
+        ? this.currentInstance
+        : this.create(chalk.green(text))
     ).succeed();
   }
 
@@ -83,7 +87,9 @@ export class Logger {
    */
   warn(text = ""): Ora {
     return (
-      !text && this.currentInstance ? this.currentInstance : this.create(text)
+      !text && this.currentInstance
+        ? this.currentInstance
+        : this.create(chalk.yellow(text))
     ).warn();
   }
 
@@ -95,7 +101,9 @@ export class Logger {
    */
   error(text = ""): Ora {
     return (
-      !text && this.currentInstance ? this.currentInstance : this.create(text)
+      !text && this.currentInstance
+        ? this.currentInstance
+        : this.create(chalk.red(text))
     ).fail();
   }
 }
