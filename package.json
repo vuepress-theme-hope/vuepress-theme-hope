@@ -42,7 +42,8 @@
     ],
     "*.{js,ts}": [
       "eslint --fix",
-      "prettier --write"
+      "prettier --write",
+      "vitest related"
     ],
     "*.{md,json,yml}": [
       "prettier --write"
