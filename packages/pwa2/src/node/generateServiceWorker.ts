@@ -26,7 +26,7 @@ const imageFilter =
 
         if (stats.size > maxsize * 1024)
           warnings.push(
-            `Skipped ${entry.url}, as its ${Math.ceil(stats.size / 1024)} KB.\n`
+            `Skipped ${entry.url}, as it's ${Math.ceil(stats.size / 1024)} KB.`
           );
         else manifest.push(entry);
       } else manifest.push(entry);
