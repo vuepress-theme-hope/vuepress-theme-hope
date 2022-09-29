@@ -11,8 +11,17 @@ export default defineComponent({
   },
 
   props: {
+    /**
+     * @description Transition type
+     */
     type: { type: String as PropType<"single" | "group">, default: "single" },
+    /**
+     * @description Transition delay
+     */
     delay: { type: Number, default: 0 },
+    /**
+     * @description Transition duration
+     */
     duration: { type: Number, default: 0.25 },
     appear: Boolean,
   },

@@ -109,7 +109,7 @@ export const i18n: Record<Lang, CreateI18n> = {
       name: "Your project name",
       version: "Your project version",
       description: "Your project description",
-      license: "Your project lincense",
+      license: "Your project license",
     },
 
     hint: {

@@ -153,23 +153,23 @@ export const getJSONLD = (
 export const getCanonicalLink = (
   page: ExtendPage,
   options: SeoOptions
-): string | null => {
-  if (typeof options.canonical === "function") return options.canonical(page);
-
-  if (typeof options.canonical === "string")
-    return `${removeEndingSlash(options.canonical)}${page.path}`;
-
-  return null;
-};
+): string | null =>
+  typeof options.canonical === "function"
+    ? options.canonical(page)
+    : typeof options.canonical === "string"
+    ? `${removeEndingSlash(options.canonical)}${page.path}`
+    : null;
 
 export const getAlternateLinks = (
   page: ExtendPage,
-  app: App
-): { lang: string; path: string }[] => {
-  const locales = getLocales(page.lang, app.siteData.locales);
-
-  return locales.map(({ lang, localePath }) => ({
+  { hostname }: SeoOptions,
+  { options, siteData }: App
+): { lang: string; path: string }[] =>
+  getLocales(page.lang, siteData.locales).map(({ lang, localePath }) => ({
     lang,
-    path: `${localePath}${page.path.replace(page.pathLocale, "")}`,
+    path: resolveUrl(
+      hostname,
+      options.base,
+      `${localePath}${page.path.replace(page.pathLocale, "")}`
+    ),
   }));
-};

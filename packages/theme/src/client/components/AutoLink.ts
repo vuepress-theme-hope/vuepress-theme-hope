@@ -15,11 +15,20 @@ export default defineComponent({
   inheritAttrs: false,
 
   props: {
+    /**
+     * @description Autolink config
+     */
     config: {
       type: Object as PropType<AutoLink>,
       required: true,
     },
+    /**
+     * @description Whether it's active only when exact match
+     */
     exact: Boolean,
+    /**
+     * @description Whether show externalLinkIcon with a link
+     */
     externalLinkIcon: {
       type: Boolean,
       default: true,

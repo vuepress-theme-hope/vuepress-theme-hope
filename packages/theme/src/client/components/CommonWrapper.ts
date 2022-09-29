@@ -33,10 +33,12 @@ export default defineComponent({
   name: "CommonWrapper",
 
   props: {
+    /** @description Whether enable navbar */
     navbar: {
       type: Boolean,
       default: true,
     },
+    /** @description Whether enable sidebar */
     sidebar: {
       type: Boolean,
       default: true,

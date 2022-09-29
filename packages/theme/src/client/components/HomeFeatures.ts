@@ -41,6 +41,7 @@ export default defineComponent({
                         class: "feature link",
                         href: feature.link,
                         role: "navigation",
+                        "aria-label": feature.title,
                         target: "_blank",
                       },
                       children
@@ -51,6 +52,7 @@ export default defineComponent({
                         class: "feature link",
                         to: feature.link,
                         role: "navigation",
+                        "aria-label": feature.title,
                       },
                       () => children
                     )

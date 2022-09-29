@@ -16,14 +16,6 @@ import { getThemeConfig } from "../../src/node/themeConfig.js";
 import { HopeThemeOptions } from "../../src/shared/index.js";
 import { sidebarTheme } from "./__fixtures__/theme/sidebar.js";
 
-const app = createBaseApp({
-  bundler: {} as any,
-  source: path.resolve(__dirname, "./__fixtures__/src"),
-  theme: sidebarTheme,
-});
-
-await app.init();
-
 describe("should handle order", () => {
   it("Should preserve order", () => {
     expect(
@@ -346,7 +338,15 @@ describe("should handle title", () => {
   });
 });
 
-describe("should generate sidebarData correcly", () => {
+describe("should generate sidebarData correcly", async () => {
+  const app = createBaseApp({
+    bundler: {} as any,
+    source: path.resolve(__dirname, "./__fixtures__/src"),
+    theme: sidebarTheme,
+  });
+
+  await app.init();
+
   it("Should resolve structure in root", () => {
     const themeOptions: HopeThemeOptions = {
       sidebar: "structure",

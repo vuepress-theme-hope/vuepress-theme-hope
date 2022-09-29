@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.104](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.103...v2.0.0-beta.104) (2022-09-24)
+
+### Features
+
+- **md-enhance:** add deprecated notice ([0bfcd0e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0bfcd0e96df34901176a0e19fa6501eec8b30bfd))
+
+### Bug Fixes
+
+- **create:** fix public assets path ([edd6229](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/edd62292b5f4cb4d562e4d1305926d03c0ddedaa))
+- **seo2:** correct generate alternate links ([347bff8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/347bff84d41922bca51ce78bfb02b4dafa20fd62))
+
+## [2.0.0-beta.103](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.102...v2.0.0-beta.103) (2022-09-19)
+
 ## [2.0.0-beta.102](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.101...v2.0.0-beta.102) (2022-09-18)
 
 ### Features

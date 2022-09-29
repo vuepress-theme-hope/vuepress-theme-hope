@@ -156,13 +156,13 @@ $colorB: green !default;
 ::: details 一个例子
 
 ```scss
-// User palette
+// 用户调色板
 $text-color: (
   light: #222,
   dark: #999,
 );
 
-// Default palette
+// 默认调色板
 $text-color: (
   light: #2c3e50,
   dark: #9e9e9e,

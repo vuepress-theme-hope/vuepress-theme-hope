@@ -21,6 +21,7 @@ export default defineComponent({
       type: Array as PropType<TabProps[]>,
       required: true,
     },
+    hash: { type: String, required: true },
     tabId: {
       type: String,
       default: "",
@@ -107,7 +108,7 @@ export default defineComponent({
           ? h("div", { class: "code-tabs" }, [
               h(
                 "div",
-                { class: "code-tabs-nav" },
+                { class: "code-tabs-nav", role: "tablist" },
                 props.data.map(({ title }, index) => {
                   const isActive = index === activeIndex.value;
 
@@ -119,8 +120,9 @@ export default defineComponent({
                           tabRefs.value[index] = <HTMLUListElement>element;
                       },
                       class: ["code-tabs-nav-tab", { active: isActive }],
-                      "aria-pressed": isActive,
-                      "aria-expanded": isActive,
+                      role: "tab",
+                      "aria-controls": `codetab-${props.hash}-${index}`,
+                      "aria-selected": isActive,
                       onClick: () => {
                         activeIndex.value = index;
                         updateStore();
@@ -139,7 +141,9 @@ export default defineComponent({
                   "div",
                   {
                     class: ["code-tab", { active: isActive }],
-                    "aria-selected": isActive,
+                    id: `codetab-${props.hash}-${index}`,
+                    role: "tabpanel",
+                    "aria-expanded": isActive,
                   },
                   slots[`tab${index}`]?.({ title, value, isActive })
                 );

@@ -36,7 +36,7 @@ export const appendSEO = (
     : null;
 
   const canonicalLink = getCanonicalLink(page, options);
-  const alternateLinks = getAlternateLinks(page, app);
+  const alternateLinks = getAlternateLinks(page, options, app);
 
   addOGP(head, ogpContent);
   appendJSONLD(head, jsonLDContent);
