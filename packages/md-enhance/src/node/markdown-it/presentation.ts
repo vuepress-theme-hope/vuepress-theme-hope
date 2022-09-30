@@ -1,3 +1,4 @@
+import { utoa } from "vuepress-shared";
 import { uml } from "./uml.js";
 
 import type { PluginSimple } from "markdown-it";
@@ -12,9 +13,9 @@ export const presentation: PluginSimple = (md) => {
       const key = `presentation-${index}`;
       const { content, info } = token;
 
-      return `<Presentation id="${key}" data-code="${encodeURIComponent(
-        content
-      )}" theme="${info.trim() || "auto"}"></Presentation>`;
+      return `<Presentation id="${key}" code="${utoa(content)}" theme="${
+        info.trim() || "auto"
+      }"></Presentation>`;
     },
   });
 };

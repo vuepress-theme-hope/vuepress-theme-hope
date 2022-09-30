@@ -1,4 +1,5 @@
 import { computed, defineComponent, h, onMounted, ref } from "vue";
+import { atou } from "vuepress-shared/lib/client";
 import { CODEPEN_SVG, JSFIDDLE_SVG, LOADING_SVG } from "./icons.js";
 import { loadNormal, loadReact, loadVue } from "../composables/index.js";
 import {
@@ -55,16 +56,11 @@ export default defineComponent({
     const loaded = ref(false);
 
     const config = computed(
-      () =>
-        <Partial<CodeDemoOptions>>(
-          JSON.parse(decodeURIComponent(props.config || "{}"))
-        )
+      () => <Partial<CodeDemoOptions>>JSON.parse(atou(props.config) || "{}")
     );
 
     const codeType = computed(() => {
-      const codeConfig = <Record<string, string>>(
-        JSON.parse(decodeURIComponent(props.code || "{}"))
-      );
+      const codeConfig = <Record<string, string>>JSON.parse(atou(props.code));
 
       return getCode(codeConfig);
     });

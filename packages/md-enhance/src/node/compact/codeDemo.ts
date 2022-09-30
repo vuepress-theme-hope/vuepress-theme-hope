@@ -1,3 +1,4 @@
+import { utoa } from "vuepress-shared";
 import { container } from "../markdown-it/index.js";
 
 import type { PluginSimple } from "markdown-it";
@@ -21,7 +22,7 @@ export const legacyCodeDemo: PluginSimple = (md) => {
         if (type === `container_demo_close`) break;
         if (!content) continue;
         if (type === "fence") {
-          if (info === "json") config = encodeURIComponent(content);
+          if (info === "json") config = utoa(content);
           else code[info] = content;
         }
       }
@@ -29,7 +30,7 @@ export const legacyCodeDemo: PluginSimple = (md) => {
       return `
 <CodeDemo id="code-demo-${index}" type="${type?.[1] || "normal"}"${
         title ? ` title="${encodeURIComponent(title[1])}"` : ""
-      }${config ? ` config="${config}"` : ""} code="${encodeURIComponent(
+      }${config ? ` config="${config}"` : ""} code="${utoa(
         JSON.stringify(code)
       )}">
 `;

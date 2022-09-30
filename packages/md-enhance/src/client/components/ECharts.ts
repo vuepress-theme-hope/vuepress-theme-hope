@@ -1,5 +1,6 @@
 import { useDebounceFn, useEventListener } from "@vueuse/core";
 import { defineComponent, h, onMounted, onBeforeUnmount, ref } from "vue";
+import { atou } from "vuepress-shared/lib/client";
 import { LOADING_SVG } from "./icons.js";
 
 import type { EChartsType, EChartsOption } from "echarts";
@@ -45,10 +46,7 @@ export default defineComponent({
         // delay
         new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
       ]).then(([echarts]) => {
-        const options = parseEChartsConfig(
-          decodeURIComponent(props.config),
-          props.type
-        );
+        const options = parseEChartsConfig(atou(props.config), props.type);
 
         chart = echarts.init(echartsWrapper.value!);
         chart.showLoading();

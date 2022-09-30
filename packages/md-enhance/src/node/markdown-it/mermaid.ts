@@ -1,3 +1,4 @@
+import { utoa } from "vuepress-shared";
 import type { PluginSimple } from "markdown-it";
 import type { default as Renderer } from "markdown-it/lib/renderer.js";
 
@@ -6,9 +7,7 @@ const mermaidRender: Renderer.RenderRule = (tokens, index) => {
   const key = `mermaid-${index}`;
   const { content } = token;
 
-  return `<Mermaid id="${key}" code="${encodeURIComponent(
-    content
-  )}"></Mermaid>`;
+  return `<Mermaid id="${key}" code="${utoa(content)}"></Mermaid>`;
 };
 
 // a hack for sequenceDiagram
@@ -17,7 +16,7 @@ const mermaidHackRender = (
   content: string,
   index: number
 ): string =>
-  `<Mermaid id="mermaid-${index}" code="${encodeURIComponent(
+  `<Mermaid id="mermaid-${index}" code="${utoa(
     `${name}\n${content
       .split("\n")
       .map((line) => (line ? `  ${line}` : ""))

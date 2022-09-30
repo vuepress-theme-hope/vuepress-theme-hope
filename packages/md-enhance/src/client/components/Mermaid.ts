@@ -7,6 +7,7 @@ import {
   ref,
   watch,
 } from "vue";
+import { atou } from "vuepress-shared/lib/client";
 import { LoadingIcon } from "./icons.js";
 
 import type { Config, Mermaid } from "mermaid";
@@ -88,7 +89,7 @@ export default defineComponent({
 
     onMounted(() => {
       const html = document.querySelector("html")!;
-      const code = decodeURIComponent(props.code);
+      const code = atou(props.code);
 
       const getDarkmodeStatus = (): boolean =>
         html.classList.contains("dark") ||

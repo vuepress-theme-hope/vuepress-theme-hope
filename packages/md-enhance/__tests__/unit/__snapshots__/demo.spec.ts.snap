@@ -2,7 +2,7 @@
 
 exports[`demo > Should resolve demo info 1`] = `
 "
-<CodeDemo id=\\"code-demo-0\\" type=\\"normal\\" title=\\"A%20normal%20demo\\" code=\\"%7B%22html%22%3A%22%3Ch1%3EMr.Hope%3C%2Fh1%3E%5Cn%3Cp%3EIs%20%3Cspan%20id%3D%5C%22very%5C%22%3Every%3C%2Fspan%3E%20handsome%3C%2Fp%3E%5Cn%22%2C%22js%22%3A%22document.querySelector(%5C%22%23very%5C%22).addEventListener(%5C%22click%5C%22%2C%20()%20%3D%3E%20%7B%5Cn%20%20alert(%5C%22Very%20handsome!%5C%22)%3B%5Cn%7D)%3B%5Cn%22%2C%22css%22%3A%22span%20%7B%5Cn%20%20color%3A%20red%3B%5Cn%7D%5Cn%22%7D\\">
+<CodeDemo id=\\"code-demo-0\\" type=\\"normal\\" title=\\"A%20normal%20demo\\" code=\\"eNo9jkELwjAMhf9KjBcFmXidXW+Cgp4ET72MNrBp1862G8jYfzed4CUJyfvey4RN6iyWKJqDvIXi7HsSe56VE728RBCxrx20plI4UvgolLmJfV5LaGpnou8Y6ZnAHT4jexmvh45cKt4Da+9kSScfNgrXP4ttURtzGllxbWMiR/mmbatfCnew2UIlYVIOoLYUEt8ejP2zVmxwVG7OhRN1zJHLlwujvfWhhEAmi1gyfwHzbUvd\\">
 <pre><code class=\\"language-html\\">&lt;h1&gt;Mr.Hope&lt;/h1&gt;
 &lt;p&gt;Is &lt;span id=&quot;very&quot;&gt;very&lt;/span&gt; handsome&lt;/p&gt;
 </code></pre>
@@ -15,7 +15,7 @@ exports[`demo > Should resolve demo info 1`] = `
 }
 </code></pre>
 </CodeDemo>
-<CodeDemo id=\\"code-demo-5\\" type=\\"react\\" title=\\"A%20react%20demo\\" code=\\"%7B%22js%22%3A%22export%20default%20class%20App%20extends%20React.Component%20%7B%5Cn%20%20constructor(props)%20%7B%5Cn%20%20%20%20super(props)%3B%5Cn%20%20%20%20this.state%20%3D%20%7B%20message%3A%20%5C%22very%20handsome%5C%22%20%7D%3B%5Cn%20%20%7D%5Cn%20%20render()%20%7B%5Cn%20%20%20%20return%20(%5Cn%20%20%20%20%20%20%3Cdiv%20className%3D%5C%22box-react%5C%22%3E%5Cn%20%20%20%20%20%20%20%20Mr.Hope%20is%20%3Cspan%3E%7Bthis.state.message%7D%3C%2Fspan%3E%5Cn%20%20%20%20%20%20%3C%2Fdiv%3E%5Cn%20%20%20%20)%3B%5Cn%20%20%7D%5Cn%7D%5Cn%22%2C%22css%22%3A%22.box-react%20span%20%7B%5Cn%20%20color%3A%20red%3B%5Cn%7D%5Cn%22%7D\\">
+<CodeDemo id=\\"code-demo-5\\" type=\\"react\\" title=\\"A%20react%20demo\\" code=\\"eNpFkEFrwzAMhf/Kw6cOtvSepYWxyy7bYedcvERbMxLbSEpJCfnvtesmBWOQrPfeZ83mX0xpaAqeFS392rFXNL0VwVsIoEnJtYJvso0W734I3pFTzLUDGu9EeWzU8y6wD/KU+4CMgdbea27pqZNC1CrhgBkDidg/KlGbM/EFJxtj/EC1wXJTLOniGB6NNl8mHdlhlyugartzpv2yAx1q8+OnF06stTmuQ8AnFx8+EDpBJcG64/ygKe4kS7W/PW3W++h9r/IfIlE85tk0knZWbFlIwnUlvecycrZRkqaXKxQ1dTY=\\">
 <pre><code class=\\"language-js\\">export default class App extends React.Component {
   constructor(props) {
     super(props);
@@ -35,7 +35,7 @@ exports[`demo > Should resolve demo info 1`] = `
 }
 </code></pre>
 </CodeDemo>
-<CodeDemo id=\\"code-demo-9\\" type=\\"vue\\" title=\\"A%20vue%20demo\\" code=\\"%7B%22vue%22%3A%22%3Ctemplate%3E%5Cn%20%20%3Cdiv%20class%3D%5C%22box-vue%5C%22%3E%5Cn%20%20%20%20Mr.Hope%20is%20%3Cspan%3E%7B%7B%20message%20%7D%7D%3C%2Fspan%3E%5Cn%20%20%3C%2Fdiv%3E%5Cn%3C%2Ftemplate%3E%5Cn%3Cscript%3E%5Cnexport%20default%20%7B%5Cn%20%20data%3A%20()%20%3D%3E%20(%7B%20message%3A%20%5C%22very%20handsome%5C%22%20%7D)%2C%5Cn%7D%3B%5Cn%3C%2Fscript%3E%5Cn%3Cstyle%3E%5Cn.box-vue%20span%20%7B%5Cn%20%20color%3A%20red%3B%5Cn%7D%5Cn%3C%2Fstyle%3E%5Cn%22%7D\\">
+<CodeDemo id=\\"code-demo-9\\" type=\\"vue\\" title=\\"A%20vue%20demo\\" code=\\"eNpNjsEOgjAQRH9l0pMmKnesnL34B71UuipJoU23EAjpv1uQEG+T3Zk3M4uhJ1EKGan1VkeqVAdI0wyorWa+KfF04zmblFhfwCNc7s4TGoZkr7tqntESs34TUpLFelspRcZkJYs/uOQ6ND5mRaN3IcLQS/c2Yl4iRkdd4nDErcJhx5ZQYqAw4aM7w67NW5COJ9Wl60LfiZLjZJeSy7YZy5YfuXbWhRKBTM6kNbaZRfoChEVaCQ==\\">
 <pre><code class=\\"language-vue\\">&lt;template&gt;
   &lt;div class=&quot;box-vue&quot;&gt;
     Mr.Hope is &lt;span&gt;{{ message }}&lt;/span&gt;
@@ -53,7 +53,7 @@ export default {
 &lt;/style&gt;
 </code></pre>
 </CodeDemo>
-<CodeDemo id=\\"code-demo-12\\" type=\\"normal\\" title=\\"A%20normal%20demo\\" code=\\"%7B%22md%22%3A%22%23%20Title%5Cn%5Cnis%20very%20handsome.%5Cn%22%2C%22ts%22%3A%22const%20message%3A%20string%20%3D%20%5C%22Mr.Hope%5C%22%3B%5Cn%5Cndocument.querySelector(%5C%22h1%5C%22).innerHTML%20%3D%20message%3B%5Cn%22%2C%22scss%22%3A%22h1%20%7B%5Cn%20%20font-style%3A%20italic%3B%5Cn%5Cn%20%20%2B%20p%20%7B%5Cn%20%20%20%20color%3A%20red%3B%5Cn%20%20%7D%5Cn%7D%5Cn%22%7D\\">
+<CodeDemo id=\\"code-demo-12\\" type=\\"normal\\" title=\\"A%20normal%20demo\\" code=\\"eNotjb0KwkAQhF9lWBtFDdhG7C200nKbcFnNwWVPb1dBxHf3/IHpZub7njT21NIEx+hJWFmj4S7lgaHT3vIoDSstyK2uQlZzjGLWnaWFeYl6xgZM+9Js80WY1h9En8NtFPXmequkgyQJnsuUaVgxzZqoKmV73O/q9Q+rtyqxYB/NsMKTFThl9aX5I1VX9C7F8KUDc1x+CyDklEuLIn3tgBdrDb3eveNIFA==\\">
 <pre><code class=\\"language-md\\"># Title
 
 is very handsome.

@@ -1,4 +1,5 @@
 import { defineComponent, h, onMounted, ref } from "vue";
+import { atou } from "vuepress-shared/lib/client";
 import { LOADING_SVG } from "./icons.js";
 
 import type { ChartConfiguration } from "chart.js";
@@ -46,10 +47,9 @@ export default defineComponent({
       ]).then(([{ default: Chart }]) => {
         Chart.defaults.maintainAspectRatio = false;
 
-        const data = parseChartConfig(
-          decodeURIComponent(props.config),
-          props.type
-        );
+        console.log(atou(props.config));
+
+        const data = parseChartConfig(atou(props.config), props.type);
         const ctx = chartCanvasElement.value!.getContext("2d")!;
 
         new Chart(ctx, data);
