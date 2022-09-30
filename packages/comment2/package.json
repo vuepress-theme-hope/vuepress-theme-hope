@@ -51,10 +51,10 @@
   "dependencies": {
     "@vuepress/client": "2.0.0-beta.51",
     "@vuepress/utils": "2.0.0-beta.51",
-    "@waline/client": "^2.10.0",
+    "@waline/client": "^2.11.2",
     "giscus": "^1.2.0",
     "twikoo": "^1.6.7",
-    "vue": "^3.2.39",
+    "vue": "^3.2.40",
     "vue-router": "^4.1.5",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*"
