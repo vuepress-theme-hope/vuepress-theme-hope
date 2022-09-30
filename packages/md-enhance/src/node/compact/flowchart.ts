@@ -1,3 +1,4 @@
+import { utoa } from "vuepress-shared";
 import { uml } from "../markdown-it/index.js";
 
 import type { PluginSimple } from "markdown-it";
@@ -17,9 +18,9 @@ export const legacyFlowchart: PluginSimple = (md) => {
       const key = `flowchart-${index}`;
       const { content, info } = token;
 
-      return `<FlowChart id="${key}" code="${encodeURIComponent(
-        content
-      )}" preset="${info.trim() || "vue"}"></FlowChart>`;
+      return `<FlowChart id="${key}" code="${utoa(content)}" preset="${
+        info.trim() || "vue"
+      }"></FlowChart>`;
     },
   });
 };

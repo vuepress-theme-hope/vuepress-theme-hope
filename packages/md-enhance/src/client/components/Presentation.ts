@@ -1,6 +1,7 @@
 import { useReveal } from "@temp/md-enhance/reveal";
-import { defineComponent, h, onBeforeUnmount, onMounted, ref } from "vue";
 import { usePageFrontmatter } from "@vuepress/client";
+import { defineComponent, h, onBeforeUnmount, onMounted, ref } from "vue";
+import { atou } from "vuepress-shared/lib/client";
 import { LoadingIcon } from "./icons.js";
 
 import type { PropType, VNode } from "vue";
@@ -34,6 +35,7 @@ export default defineComponent({
 
   props: {
     id: { type: String, required: true },
+    code: { type: String, required: true },
     theme: { type: String as PropType<ThemeType>, default: "auto" },
   },
 
@@ -48,9 +50,7 @@ export default defineComponent({
 
     onMounted(() => {
       if (presentationElement.value) {
-        code.value = decodeURIComponent(
-          presentationContainer.value?.dataset["code"] || ""
-        );
+        code.value = atou(props.code);
 
         presentationElement.value.setAttribute("id", props.id);
         presentationElement.value.setAttribute("data-theme", props.theme);

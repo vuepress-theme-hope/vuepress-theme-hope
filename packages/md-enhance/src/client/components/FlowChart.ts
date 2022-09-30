@@ -1,4 +1,5 @@
 import { useEventListener, useDebounceFn } from "@vueuse/core";
+import { atou } from "vuepress-shared/lib/client";
 import { computed, defineComponent, h, onMounted, ref } from "vue";
 import { LOADING_SVG } from "./icons.js";
 import presets from "../flowchart-preset/index.js";
@@ -51,10 +52,8 @@ export default defineComponent({
         ),
         // delay
         new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
-      ]).then(([flowchart]) => {
-        const { default: parse } = flowchart;
-
-        svg = parse(decodeURIComponent(props.code));
+      ]).then(([{ default: parse }]) => {
+        svg = parse(atou(props.code));
 
         // update scale
         scale.value = getScale(window.innerWidth);

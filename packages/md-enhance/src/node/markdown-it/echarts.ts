@@ -1,3 +1,4 @@
+import { utoa } from "vuepress-shared";
 import { container } from "./container.js";
 
 import type { PluginSimple } from "markdown-it";
@@ -26,10 +27,10 @@ export const echarts: PluginSimple = (md) => {
         if (!content) continue;
         if (type === "fence") {
           if (info === "json") {
-            config = encodeURIComponent(content);
+            config = utoa(content);
             configType = "json";
           } else if (info === "js" || info === "javascript") {
-            config = encodeURIComponent(content);
+            config = utoa(content);
             configType = "js";
           }
         }

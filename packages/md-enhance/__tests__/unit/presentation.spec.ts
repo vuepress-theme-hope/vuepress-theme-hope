@@ -42,7 +42,7 @@ ${demo}
 `);
 
     expect(renderResult).toMatch(
-      /<Presentation id="presentation-.*?" data-code=".*?" theme=".*?"><\/Presentation>/
+      /<Presentation id="presentation-.*?" code=".*?" theme=".*?"><\/Presentation>/
     );
     expect(renderResult).toMatchSnapshot();
   });

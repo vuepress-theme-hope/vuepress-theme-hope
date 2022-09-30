@@ -1,3 +1,4 @@
+import { utoa } from "vuepress-shared";
 import { container } from "./container.js";
 
 import type { PluginSimple } from "markdown-it";
@@ -33,7 +34,7 @@ const getPlugin =
           if (type === `container_${name}_close`) break;
           if (!content) continue;
           if (type === "fence") {
-            if (info === "json") config = encodeURIComponent(content);
+            if (info === "json") config = utoa(content);
             else code[info] = content;
           }
         }
@@ -41,7 +42,7 @@ const getPlugin =
         return `
 <CodeDemo id="code-demo-${index}" type="${name.split("-")[0]}"${
           title ? ` title="${encodeURIComponent(title)}"` : ""
-        }${config ? ` config="${config}"` : ""} code="${encodeURIComponent(
+        }${config ? ` config="${config}"` : ""} code="${utoa(
           JSON.stringify(code)
         )}">
 `;
