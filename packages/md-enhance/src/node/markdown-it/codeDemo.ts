@@ -1,5 +1,3 @@
-import { hash } from "@vuepress/utils";
-
 import { container } from "./container.js";
 
 import type { PluginSimple } from "markdown-it";
@@ -41,7 +39,7 @@ const getPlugin =
         }
 
         return `
-<CodeDemo id="code-demo-${hash(code)}" type="${name.split("-")[0]}"${
+<CodeDemo id="code-demo-${index}" type="${name.split("-")[0]}"${
           title ? ` title="${encodeURIComponent(title)}"` : ""
         }${config ? ` config="${config}"` : ""} code="${encodeURIComponent(
           JSON.stringify(code)

@@ -1,10 +1,9 @@
-import { hash } from "@vuepress/utils";
 import type { PluginSimple } from "markdown-it";
 import type { default as Token } from "markdown-it/lib/token.js";
 
-const flowchartRender = (tokens: Token[], idx: number): string => {
-  const token = tokens[idx];
-  const key = `flowchart-${hash(idx)}`;
+const flowchartRender = (tokens: Token[], index: number): string => {
+  const token = tokens[index];
+  const key = `flowchart-${index}`;
   const { content, info } = token;
 
   return `<FlowChart id="${key}" code="${encodeURIComponent(

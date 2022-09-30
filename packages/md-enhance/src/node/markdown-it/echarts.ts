@@ -1,5 +1,3 @@
-import { hash } from "@vuepress/utils";
-
 import { container } from "./container.js";
 
 import type { PluginSimple } from "markdown-it";
@@ -15,7 +13,7 @@ export const echarts: PluginSimple = (md) => {
         .slice(7)
         .trim();
 
-      const key = `echarts-${hash(index)}`;
+      const key = `echarts-${index}`;
 
       let config = "{}";
       let configType = "";

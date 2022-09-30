@@ -22,7 +22,7 @@ export default defineComponent({
       type: Array as PropType<TabProps[]>,
       required: true,
     },
-    hash: { type: String, required: true },
+    id: { type: String, required: true },
     tabId: {
       type: String,
       default: "",
@@ -116,7 +116,7 @@ export default defineComponent({
                   },
                   class: ["tab-list-nav-item", { active: isActive }],
                   role: "tab",
-                  "aria-controls": `tab-${props.hash}-${index}`,
+                  "aria-controls": `tab-${props.id}-${index}`,
                   "aria-selected": isActive,
                   onClick: () => {
                     activeIndex.value = index;
@@ -136,7 +136,7 @@ export default defineComponent({
               "div",
               {
                 class: ["tab-item", { active: isActive }],
-                id: `tab-${props.hash}-${index}`,
+                id: `tab-${props.id}-${index}`,
                 role: "tabpanel",
                 "aria-expanded": isActive,
               },

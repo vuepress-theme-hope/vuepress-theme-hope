@@ -1,4 +1,3 @@
-import { hash } from "@vuepress/utils";
 import type { Options, PluginWithOptions } from "markdown-it";
 import type { RuleBlock } from "markdown-it/lib/parser_block.js";
 import type { default as Renderer } from "markdown-it/lib/renderer.js";
@@ -313,7 +312,7 @@ export const tabs: PluginWithOptions<TabOptions> = (
       ...customData[index],
     }));
 
-    return `<${component} hash="${hash(data)}" :data='${
+    return `<${component} id="${index}" :data='${
       // single quote will break @vue/compiler-sfc
       JSON.stringify(data).replace(/'/g, "&#39")
     }'${activeIndex !== -1 ? ` :active="${activeIndex}"` : ""}${
