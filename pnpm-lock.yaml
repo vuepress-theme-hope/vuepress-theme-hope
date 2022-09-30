@@ -811,7 +811,7 @@ importers:
       '@vuepress/client': 2.0.0-beta.51
       '@vuepress/core': 2.0.0-beta.51
       '@vuepress/utils': 2.0.0-beta.51
-      '@waline/client': ^2.11.2
+      '@waline/client': ^2.11.3
       giscus: ^1.2.0
       rimraf: 3.0.2
       twikoo: ^1.6.7
@@ -822,7 +822,7 @@ importers:
     dependencies:
       '@vuepress/client': 2.0.0-beta.51
       '@vuepress/utils': 2.0.0-beta.51
-      '@waline/client': 2.11.2
+      '@waline/client': 2.11.3
       giscus: 1.2.0
       twikoo: 1.6.7
       vue: 3.2.40
@@ -989,7 +989,7 @@ importers:
       mermaid: ^9.1.7
       reveal.js: ^4.3.1
       rimraf: 3.0.2
-      typescript: ^4.8.4
+      typescript: 4.8.4
       vue: ^3.2.40
       vue-router: ^4.1.5
       vuepress-plugin-sass-palette: workspace:*
@@ -1166,7 +1166,7 @@ importers:
       execa: ^6.1.0
       ora: ^6.1.2
       rimraf: 3.0.2
-      vite: 3.1.2
+      vite: 3.0.9
       vue: ^3.2.40
       vue-router: ^4.1.5
     dependencies:
@@ -1185,7 +1185,7 @@ importers:
       '@vuepress/bundler-webpack': 2.0.0-beta.51
       '@vuepress/core': 2.0.0-beta.51
       rimraf: 3.0.2
-      vite: 3.1.2
+      vite: 3.0.9
 
   packages/sitemap2:
     specifiers:
@@ -2531,11 +2531,11 @@ packages:
       '@types/node': 14.18.31
       chalk: 4.1.2
       cosmiconfig: 7.0.1
-      cosmiconfig-typescript-loader: 4.1.1_65tt6ghu567vt4e3bnchx3jir4
+      cosmiconfig-typescript-loader: 4.1.1_gpl3msxjb2n3qdkii2jvdrcxxe
       lodash: 4.17.21
       resolve-from: 5.0.0
-      ts-node: 10.9.1_xhyudlifwzdkgybz7r5z63wv5a
-      typescript: 4.7.4
+      ts-node: 10.9.1_fk6arlf3j7tudlucddpzvj2plq
+      typescript: 4.8.4
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
@@ -4004,8 +4004,8 @@ packages:
       - '@vue/composition-api'
       - vue
 
-  /@waline/client/2.11.2:
-    resolution: {integrity: sha512-RIKoNFobw6PJcRPOOQtz6Rz311AoY8mIZFDfzyxPHE7OWPdBcsZoI9ydLXptIf2JNqltuPyIt1TIuNxGADY8Xg==}
+  /@waline/client/2.11.3:
+    resolution: {integrity: sha512-xjLGIlwfF7nRnpd/rBfbyiYY5j5NwdHHT9CqT7rI24gHmd98pizYbfp0QITMAvM7zCUIKIe743Y2yeIKCBHHAA==}
     engines: {node: '>=14'}
     dependencies:
       '@vueuse/core': 9.3.0_vue@3.2.40
@@ -5308,7 +5308,7 @@ packages:
   /core-util-is/1.0.3:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
 
-  /cosmiconfig-typescript-loader/4.1.1_65tt6ghu567vt4e3bnchx3jir4:
+  /cosmiconfig-typescript-loader/4.1.1_gpl3msxjb2n3qdkii2jvdrcxxe:
     resolution: {integrity: sha512-9DHpa379Gp0o0Zefii35fcmuuin6q92FnLDffzdZ0l9tVd3nEobG3O+MZ06+kuBvFTSVScvNb/oHA13Nd4iipg==}
     engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
@@ -5319,8 +5319,8 @@ packages:
     dependencies:
       '@types/node': 14.18.31
       cosmiconfig: 7.0.1
-      ts-node: 10.9.1_xhyudlifwzdkgybz7r5z63wv5a
-      typescript: 4.7.4
+      ts-node: 10.9.1_fk6arlf3j7tudlucddpzvj2plq
+      typescript: 4.8.4
     dev: true
 
   /cosmiconfig/7.0.1:
@@ -11442,6 +11442,37 @@ packages:
   /ts-debounce/4.0.0:
     resolution: {integrity: sha512-+1iDGY6NmOGidq7i7xZGA4cm8DAa6fqdYcvO5Z6yBevH++Bdo9Qt/mN0TzHUgcCcKv1gmh9+W5dHqz8pMWbCbg==}
 
+  /ts-node/10.9.1_fk6arlf3j7tudlucddpzvj2plq:
+    resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
+    hasBin: true
+    peerDependencies:
+      '@swc/core': '>=1.2.50'
+      '@swc/wasm': '>=1.2.50'
+      '@types/node': '*'
+      typescript: '>=2.7'
+    peerDependenciesMeta:
+      '@swc/core':
+        optional: true
+      '@swc/wasm':
+        optional: true
+    dependencies:
+      '@cspotcode/source-map-support': 0.8.1
+      '@tsconfig/node10': 1.0.9
+      '@tsconfig/node12': 1.0.11
+      '@tsconfig/node14': 1.0.3
+      '@tsconfig/node16': 1.0.3
+      '@types/node': 14.18.31
+      acorn: 8.8.0
+      acorn-walk: 8.2.0
+      arg: 4.1.3
+      create-require: 1.1.1
+      diff: 4.0.2
+      make-error: 1.3.6
+      typescript: 4.8.4
+      v8-compile-cache-lib: 3.0.1
+      yn: 3.1.1
+    dev: true
+
   /ts-node/10.9.1_m3nog76u6r43d4ktipn6jzdv4u:
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
     hasBin: true
@@ -11462,37 +11493,6 @@ packages:
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.3
       '@types/node': 18.7.23
-      acorn: 8.8.0
-      acorn-walk: 8.2.0
-      arg: 4.1.3
-      create-require: 1.1.1
-      diff: 4.0.2
-      make-error: 1.3.6
-      typescript: 4.7.4
-      v8-compile-cache-lib: 3.0.1
-      yn: 3.1.1
-    dev: true
-
-  /ts-node/10.9.1_xhyudlifwzdkgybz7r5z63wv5a:
-    resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
-    hasBin: true
-    peerDependencies:
-      '@swc/core': '>=1.2.50'
-      '@swc/wasm': '>=1.2.50'
-      '@types/node': '*'
-      typescript: '>=2.7'
-    peerDependenciesMeta:
-      '@swc/core':
-        optional: true
-      '@swc/wasm':
-        optional: true
-    dependencies:
-      '@cspotcode/source-map-support': 0.8.1
-      '@tsconfig/node10': 1.0.9
-      '@tsconfig/node12': 1.0.11
-      '@tsconfig/node14': 1.0.3
-      '@tsconfig/node16': 1.0.3
-      '@types/node': 14.18.31
       acorn: 8.8.0
       acorn-walk: 8.2.0
       arg: 4.1.3
@@ -11843,33 +11843,6 @@ packages:
       resolve: 1.22.1
       rollup: 2.77.3
       sass: 1.55.0
-    optionalDependencies:
-      fsevents: 2.3.2
-    dev: true
-
-  /vite/3.1.2:
-    resolution: {integrity: sha512-wTDKPkiVbeT+drTPdkuvjVIC/2vKKUc1w3qNOuwgpyvPCZF6fvdxB5v5WEcCsqaYea0zrwA4+XialJKCHM3oVQ==}
-    engines: {node: ^14.18.0 || >=16.0.0}
-    hasBin: true
-    peerDependencies:
-      less: '*'
-      sass: '*'
-      stylus: '*'
-      terser: ^5.4.0
-    peerDependenciesMeta:
-      less:
-        optional: true
-      sass:
-        optional: true
-      stylus:
-        optional: true
-      terser:
-        optional: true
-    dependencies:
-      esbuild: 0.15.10
-      postcss: 8.4.16
-      resolve: 1.22.1
-      rollup: 2.78.1
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
