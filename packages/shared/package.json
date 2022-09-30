@@ -54,6 +54,7 @@
     "@vuepress/utils": "2.0.0-beta.51",
     "dayjs": "^1.11.5",
     "execa": "^6.1.0",
+    "fflate": "^0.7.3",
     "ora": "^6.1.2",
     "vue": "^3.2.40",
     "vue-router": "^4.1.5"

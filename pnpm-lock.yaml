@@ -10,6 +10,9 @@ patchedDependencies:
   mitt@3.0.0:
     hash: 4gwmhmjqmdcx2eqz3s6leupoa4
     path: patches/mitt@3.0.0.patch
+  fflate@0.7.3:
+    hash: qdpjlqbzryzkfzhd4dmj5zonom
+    path: patches/fflate@0.7.3.patch
 
 importers:
 
@@ -1164,6 +1167,7 @@ importers:
       '@vuepress/utils': 2.0.0-beta.51
       dayjs: ^1.11.5
       execa: ^6.1.0
+      fflate: ^0.7.3
       ora: ^6.1.2
       rimraf: 3.0.2
       vite: 3.1.2
@@ -1176,6 +1180,7 @@ importers:
       '@vuepress/utils': 2.0.0-beta.51
       dayjs: 1.11.5
       execa: 6.1.0
+      fflate: 0.7.3_qdpjlqbzryzkfzhd4dmj5zonom
       ora: 6.1.2
       vue: 3.2.40
       vue-router: 4.1.5_vue@3.2.40
@@ -7081,6 +7086,11 @@ packages:
     engines: {node: '>=0.8.0'}
     dependencies:
       websocket-driver: 0.7.4
+
+  /fflate/0.7.3_qdpjlqbzryzkfzhd4dmj5zonom:
+    resolution: {integrity: sha512-0Zz1jOzJWERhyhsimS54VTqOteCNwRtIlh8isdL0AXLo0g7xNTfTL7oWrkmCnPhZGocKIkWHBistBrrpoNH3aw==}
+    dev: false
+    patched: true
 
   /figures/3.2.0:
     resolution: {integrity: sha512-yaduQFRKLXYOGgEn6AZau90j3ggSOyiqXU0F9JZfeXYhNa+Jk4X+s45A2zg5jns87GAFa34BBm2kXw4XpNcbdg==}
