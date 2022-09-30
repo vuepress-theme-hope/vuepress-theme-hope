@@ -237,11 +237,11 @@ export const include: PluginWithOptions<IncludeOptions> = (
 
     md.renderer.rules["include_push"] = (
       tokens,
-      idx,
+      index,
       _options,
       env: IncludeEnv
     ): string => {
-      const token = tokens[idx];
+      const token = tokens[index];
       const includedPaths = env.includedPaths || (env.includedPaths = []);
 
       includedPaths.push(token.info);
@@ -251,7 +251,7 @@ export const include: PluginWithOptions<IncludeOptions> = (
 
     md.renderer.rules["include_pop"] = (
       _tokens,
-      _idx,
+      _index,
       _options,
       env: IncludeEnv
     ): string => {
@@ -268,41 +268,41 @@ export const include: PluginWithOptions<IncludeOptions> = (
 
       md.renderer.rules.image = (
         tokens,
-        idx,
+        index,
         options,
         env: IncludeEnv,
         self
       ): string => {
-        const token = tokens[idx];
+        const token = tokens[index];
 
         if (env.filePath)
           resolveRelatedLink("src", token, env.filePath, env.includedPaths);
 
         // pass token to default renderer.
-        return defaultRender(tokens, idx, options, env, self);
+        return defaultRender(tokens, index, options, env, self);
       };
     }
 
     if (resolveLinkPath) {
       const defaultRender =
         md.renderer.rules["link_open"] ||
-        ((tokens, idx, options, _env, self): string =>
-          self.renderToken(tokens, idx, options));
+        ((tokens, index, options, _env, self): string =>
+          self.renderToken(tokens, index, options));
 
       md.renderer.rules["link_open"] = (
         tokens,
-        idx,
+        index,
         options,
         env: IncludeEnv,
         self
       ): string => {
-        const token = tokens[idx];
+        const token = tokens[index];
 
         if (env.filePath)
           resolveRelatedLink("href", token, env.filePath, env.includedPaths);
 
         // pass token to default renderer.
-        return defaultRender(tokens, idx, options, env, self);
+        return defaultRender(tokens, index, options, env, self);
       };
     }
   }

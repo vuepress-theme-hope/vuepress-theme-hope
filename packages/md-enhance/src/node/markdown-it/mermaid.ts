@@ -1,11 +1,9 @@
-import { hash } from "@vuepress/utils";
-
 import type { PluginSimple } from "markdown-it";
 import type { default as Renderer } from "markdown-it/lib/renderer.js";
 
 const mermaidRender: Renderer.RenderRule = (tokens, index) => {
   const token = tokens[index];
-  const key = `mermaid-${hash(index)}`;
+  const key = `mermaid-${index}`;
   const { content } = token;
 
   return `<Mermaid id="${key}" code="${encodeURIComponent(
@@ -19,7 +17,7 @@ const mermaidHackRender = (
   content: string,
   index: number
 ): string =>
-  `<Mermaid id="mermaid-${hash(index)}" code="${encodeURIComponent(
+  `<Mermaid id="mermaid-${index}" code="${encodeURIComponent(
     `${name}\n${content
       .split("\n")
       .map((line) => (line ? `  ${line}` : ""))
