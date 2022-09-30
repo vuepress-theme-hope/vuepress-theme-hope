@@ -20,7 +20,7 @@
   "dependencies": {
     "@types/katex": "0.14.0",
     "@vuepress/client": "2.0.0-beta.51",
-    "@vuepress/utils": "2.0.0-beta.51",
+    "@vuepress/utils": "2.0.0-beta.50-pre",
     "docs-shared": "workspace:*",
     "katex": "0.16.2",
     "sass-loader": "13.0.2",
