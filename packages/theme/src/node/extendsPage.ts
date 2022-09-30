@@ -95,7 +95,9 @@ export const extendsPage = (
       // generated from markdown files
       Boolean(frontmatter.article !== false && filePathRelative);
 
-    const isEncrypted = Object.keys(config).some((key) => path.startsWith(key));
+    const isEncrypted = Object.keys(config).some((key) =>
+      decodeURI(path).startsWith(key)
+    );
     const isSlide = isArticle && frontmatter.layout === "Slide";
 
     // save basic info to routeMeta
