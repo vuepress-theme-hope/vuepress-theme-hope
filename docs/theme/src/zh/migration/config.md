@@ -333,6 +333,10 @@ tag:
 
   - `plugins.mdEnhance.lazyLoad` 默认值由 `true` 改为 `false` ![警告](https://img.shields.io/badge/-warning-yellow)
 
+  - 移除 `plugins.mdEnhance.enableAll` ![移除](https://img.shields.io/badge/-removed-red)
+
+    有太多不知道自己在做什么的菜鸟用户，他们只是启用此选项而没有使用提供的所有功能，但他们抱怨加载速度。
+
   - 移除 `plugins.mdEnhance.lineNumbers` ![移除](https://img.shields.io/badge/-removed-red)
 
     VuePress2 支持单独对代码块配置行号

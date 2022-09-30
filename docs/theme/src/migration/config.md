@@ -333,6 +333,10 @@ Move all plugin related options under `plugins`.
 
   - change default value of `plugins.mdEnhance.lazyLoad` from `true` to `false` ![changed](https://img.shields.io/badge/-changed-yellow)
 
+  - remove `plugins.mdEnhance.enableAll` ![removed](https://img.shields.io/badge/-removed-red)
+
+    There are too many noob users who don't know what they are doing, and they just enable this option without using all the feature provided, yet they complain about load speed.
+
   - remove `plugins.mdEnhance.lineNumbers` ![removed](https://img.shields.io/badge/-removed-red)
 
     VuePress2 supports line numbers config for code blocks individually
