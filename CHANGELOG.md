@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.105](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.104...v2.0.0-beta.105) (2022-09-30)
+
+### Features
+
+- improve logger ([f9fa453](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f9fa45331da31970a4f97bda74db276f053edaec))
+- **md-enhance:** improve tab a11y ([42a9850](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/42a9850e5743522447df7398e333a454cd475741))
+- **theme:** improve a11y ([5145dd6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5145dd6c57133a2b242da4bd886c10d90e8f0e31))
+
+### Bug Fixes
+
+- **create:** fix template output ([0692069](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0692069c9f1b8363b90bda43ec3971696e2c800a))
+- **deps:** update dependency inquirer to v9.1.2 ([#2228](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2228)) ([8195cf9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8195cf9a0756b91bfd989cc49beb9cce6defec7b))
+- **deps:** update dependency three to v0.145.0 ([#2240](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2240)) ([6071520](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/60715203fd767bbd7dbbad975b6f7e2f60bec58a))
+- **pwa2:** ensure updatefound ([9881b45](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9881b45b2a6fb25e5026a499bd7bd8a9c0314270))
+- **pwa2:** fix controller issue ([25dad4c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/25dad4cd5abf91b68d4e8608c23e912820dec288))
+- **theme:** fix encrypt function with none ascii path, fix [#2245](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2245) ([099956d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/099956d3d8d361642e7ef8a385a6c510310a6881))
+- **theme:** fix navbar autohide, [#2234](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2234) ([af2775a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/af2775aa444c6d2fc7bfa970daf27ef929d9d334))
+
 ## [2.0.0-beta.104](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.103...v2.0.0-beta.104) (2022-09-24)
 
 ### Features
