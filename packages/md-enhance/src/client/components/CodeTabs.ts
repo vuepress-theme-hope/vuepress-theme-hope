@@ -21,7 +21,7 @@ export default defineComponent({
       type: Array as PropType<TabProps[]>,
       required: true,
     },
-    hash: { type: String, required: true },
+    id: { type: String, required: true },
     tabId: {
       type: String,
       default: "",
@@ -121,7 +121,7 @@ export default defineComponent({
                       },
                       class: ["code-tabs-nav-tab", { active: isActive }],
                       role: "tab",
-                      "aria-controls": `codetab-${props.hash}-${index}`,
+                      "aria-controls": `codetab-${props.id}-${index}`,
                       "aria-selected": isActive,
                       onClick: () => {
                         activeIndex.value = index;
@@ -141,7 +141,7 @@ export default defineComponent({
                   "div",
                   {
                     class: ["code-tab", { active: isActive }],
-                    id: `codetab-${props.hash}-${index}`,
+                    id: `codetab-${props.id}-${index}`,
                     role: "tabpanel",
                     "aria-expanded": isActive,
                   },
