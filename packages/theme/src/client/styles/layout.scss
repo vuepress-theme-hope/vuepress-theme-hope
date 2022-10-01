@@ -19,6 +19,10 @@
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--theme-color);
+
+  &:active {
+    background-color: var(--theme-color-light);
+  }
 }
 
 .hide-in-mobile {

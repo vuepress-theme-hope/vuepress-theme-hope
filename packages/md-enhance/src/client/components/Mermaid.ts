@@ -173,7 +173,7 @@ export default defineComponent({
         "div",
         {
           ref: mermaidElement,
-          class: ["md-enhance-mermaid", { loading: !svgCode.value }],
+          class: ["mermaid-wrapper", { loading: !svgCode.value }],
         },
         svgCode.value
           ? // mermaid
