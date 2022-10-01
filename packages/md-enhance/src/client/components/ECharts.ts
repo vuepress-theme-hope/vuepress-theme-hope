@@ -14,14 +14,16 @@ const parseEChartsConfig = (
   config: string,
   type: "js" | "json"
 ): EChartsOption => {
-  if (type === "json") return <EChartsOption>JSON.parse(config);
+  if (type === "js") {
+    const exports = {};
+    const module = { exports };
 
-  const exports = {};
-  const module = { exports };
+    eval(config);
 
-  eval(config);
+    return <EChartsOption>module.exports;
+  }
 
-  return <EChartsOption>module.exports;
+  return <EChartsOption>JSON.parse(config);
 };
 
 export default defineComponent({

@@ -5,7 +5,7 @@ import { echarts } from "../../src/node/markdown-it/index.js";
 describe("echarts", () => {
   const markdownIt = MarkdownIt({ linkify: true }).use(echarts);
 
-  it("Should resolve echarts info with json block", () => {
+  it("Should resolve echarts container with json block", () => {
     const result = markdownIt.render(
       `
 ::: echarts A line chart
@@ -35,11 +35,11 @@ describe("echarts", () => {
 
     expect(result).toMatch(/<ECharts.*><\/ECharts>/);
     expect(result).toContain(`title="${encodeURIComponent("A line chart")}"`);
-    expect(result).toContain('type="json"');
+    expect(result).not.toContain('type=""');
     expect(result).toMatchSnapshot();
   });
 
-  it("Should resolve echarts info with js block", () => {
+  it("Should resolve echarts container with js block", () => {
     const result = markdownIt.render(
       `
 ::: echarts A line chart
@@ -73,7 +73,7 @@ module.exports = {
     expect(result).toMatchSnapshot();
   });
 
-  it("Should resolve echarts info with javascript block", () => {
+  it("Should resolve echarts container with javascript block", () => {
     const result = markdownIt.render(
       `
 ::: echarts A line chart
@@ -107,7 +107,7 @@ module.exports = {
     expect(result).toMatchSnapshot();
   });
 
-  it("Should resolve echarts with empty title and body", () => {
+  it("Should resolve echarts container with empty title and body", () => {
     const result = markdownIt.render(
       `
 ::: echarts
@@ -119,7 +119,52 @@ module.exports = {
 
     expect(result).toMatch(/<ECharts.*><\/ECharts>/);
     expect(result).not.toContain('title="');
-    expect(result).toContain('type=""');
+    expect(result).not.toContain('type=""');
+    expect(result).toMatchSnapshot();
+  });
+
+  it("Should resolve echarts fence", () => {
+    const result = markdownIt.render(
+      `
+\`\`\`echarts:A line chart
+{
+  'xAxis': {
+    'type': 'category',
+    'data': ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  },
+  'yAxis': {
+    'type': 'value'
+  },
+  'series': [
+    {
+      'data': [150, 230, 224, 218, 135, 147, 260],
+      'type': 'line'
+    }
+  ]
+}
+\`\`\`
+`,
+      {}
+    );
+
+    expect(result).toMatch(/<ECharts.*><\/ECharts>/);
+    expect(result).toContain(`title="${encodeURIComponent("A line chart")}"`);
+    expect(result).not.toContain('type=""');
+    expect(result).toMatchSnapshot();
+  });
+
+  it("Should resolve echarts fence with empty title and body", () => {
+    const result = markdownIt.render(
+      `
+\`\`\`echarts
+\`\`\`
+`,
+      {}
+    );
+
+    expect(result).toMatch(/<ECharts.*><\/ECharts>/);
+    expect(result).not.toContain('title="');
+    expect(result).not.toContain('type=""');
     expect(result).toMatchSnapshot();
   });
 });
