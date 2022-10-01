@@ -116,7 +116,7 @@ export const extendsPage = (
         : page.excerpt ||
           frontmatter.description ||
           (typeof plugins.blog === "object" && plugins.blog.autoExcerpt
-            ? frontmatter.summary
+            ? frontmatter.summary || ""
             : ""),
     };
 
