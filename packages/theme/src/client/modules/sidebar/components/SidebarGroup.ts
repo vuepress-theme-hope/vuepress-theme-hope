@@ -1,7 +1,6 @@
 import { computed, defineComponent, h } from "vue";
 import { RouterLink, useRoute } from "vue-router";
 
-import DropTransition from "@theme-hope/components/transitions/DropTransition.js";
 import Icon from "@theme-hope/components/Icon.js";
 import SidebarLinks from "@theme-hope/modules/sidebar/components/SidebarLinks.js";
 import { isActiveSidebarItem } from "@theme-hope/modules/sidebar/utils/index.js";
@@ -32,51 +31,55 @@ export default defineComponent({
       isActiveSidebarItem(route, props.config, true)
     );
 
-    return (): VNode[] => {
-      const { collapsable, children = [], icon, link, text } = props.config;
+    return (): VNode => {
+      const {
+        collapsable,
+        children = [],
+        icon,
+        prefix,
+        link,
+        text,
+      } = props.config;
 
-      return [
-        h("section", { class: "sidebar-group" }, [
-          h(
-            collapsable ? "button" : "p",
-            {
-              class: [
-                "sidebar-heading",
-                {
-                  clickable: collapsable || link,
-                  exact: exact.value,
-                  active: active.value,
-                },
-              ],
-              ...(collapsable
-                ? {
-                    onClick: () => emit("toggle"),
-                    onKeydown: (event: KeyboardEvent): void => {
-                      if (event.key === "Enter") emit("toggle");
-                    },
-                  }
-                : {}),
-            },
-            [
-              // icon
-              h(Icon, { icon }),
-              // title
-              link
-                ? h(RouterLink, { to: link, class: "title" }, () => text)
-                : h("span", { class: "title" }, text),
-              // arrow
-              collapsable
-                ? h("span", { class: ["arrow", props.open ? "down" : "right"] })
-                : null,
-            ]
-          ),
-          h(DropTransition, () =>
-            props.open || !collapsable
-              ? h(SidebarLinks, { config: children })
-              : null
-          ),
-        ]),
-      ];
+      return h("section", { class: "sidebar-group" }, [
+        h(
+          collapsable ? "button" : "p",
+          {
+            class: [
+              "sidebar-heading",
+              {
+                clickable: collapsable || link,
+                exact: exact.value,
+                active: active.value,
+              },
+            ],
+            ...(collapsable
+              ? {
+                  onClick: () => emit("toggle"),
+                  onKeydown: (event: KeyboardEvent): void => {
+                    if (event.key === "Enter") emit("toggle");
+                  },
+                }
+              : {}),
+          },
+          [
+            // icon
+            h(Icon, { icon }),
+            // title
+            link
+              ? h(RouterLink, { to: link, class: "title" }, () => text)
+              : h("span", { class: "title" }, text),
+            // arrow
+            collapsable
+              ? h("span", { class: ["arrow", props.open ? "down" : "right"] })
+              : null,
+          ]
+        ),
+
+        props.open || !collapsable
+          ? h(SidebarLinks, { key: prefix, config: children })
+          : null,
+      ]);
     };
   },
 });
