@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.106](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.105...v2.0.0-beta.106) (2022-10-01)
+
+### Features
+
+- **md-enhance:** support echarts block ([c132552](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c132552c7109c5480b77f610b701fd57bce7415e))
+- **shared:** add props ([37ba81c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/37ba81c5716f08cd61809823908309964be8058d))
+- **theme:** improve scrollbar ([9e03776](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9e03776dbabfe41923c148f3e7a0d6bfe8357a02))
+
+### Bug Fixes
+
+- **md-enhance:** fix CodeTab ([86eea86](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/86eea865accf31081c7d27e7eaebe8e1ebd72415))
+- **theme:** fix issues with autoExcerpt, close [#2248](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2248) ([e3337ee](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e3337ee387b25890fb104a0bc29ca63d3cb25e0a))
+- **theme:** remove sidebar transition, fix [#2242](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2242) ([75b84cd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/75b84cdc44bfff27ba7ae721dba4be3e46e19b11))
+
+### Performance Improvements
+
+- **md-enhance:** reduce SSG size ([5e0a54f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5e0a54f0cf66cc3427465214a3bdac9645ac8a2b))
+- **md-enhance:** stop using hash to generate id ([511e14b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/511e14b6d01c4a9bb4ca093f63d0f2358a8972f8))
+
 ## [2.0.0-beta.105](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.104...v2.0.0-beta.105) (2022-09-30)
 
 ### Features
