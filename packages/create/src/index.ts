@@ -73,7 +73,7 @@ cli
       console.warn(message.hint.install);
 
       execaCommandSync(
-        `${packageManager} install ${registry ? "" : `--registry ${registry}`}`,
+        `${packageManager} install ${registry ? `--registry ${registry}` : ""}`,
         { stdout: "inherit" }
       );
 
