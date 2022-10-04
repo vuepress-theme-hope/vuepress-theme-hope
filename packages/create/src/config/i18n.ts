@@ -39,8 +39,9 @@ export interface CreateI18n {
     name: string;
     version: string;
     preset: string;
-    dir: (packageManager: PackageManager) => string;
-    empty: (targetDir: string) => string;
+    outputDirMissing: (packageManager: PackageManager) => string;
+    updateDirMissing: (packageManager: PackageManager) => string;
+    dirNotEmpty: (targetDir: string) => string;
   };
 }
 
@@ -81,9 +82,11 @@ export const i18n: Record<Lang, CreateI18n> = {
       name: "应用名称应只包含小写字母、数字和连接线 (-)",
       version: "此版本无效，版本号应为 'x.x.x'",
       preset: "预设 (--preset) 仅支持 doc 或 blog",
-      dir: (packageManager: PackageManager): string =>
+      outputDirMissing: (packageManager: PackageManager): string =>
+        `"[dir]" 的方括号表示此处为一个参数，你应该替换为自己想使用的文件夹名称，如 "my-blog", "project-docs" 等!\n例如: "${packageManager} init vuepress-theme-hope@next project-docs"`,
+      updateDirMissing: (packageManager: PackageManager): string =>
         `"[dir]" 的方括号表示此处为一个参数，你应该替换为自己想使用的文件夹名称，如 "src", "docs" 等!\n例如: "${packageManager} init vuepress-theme-hope@next docs"`,
-      empty: (dir: string) =>
+      dirNotEmpty: (dir: string) =>
         `目标文件夹 "${dir}" 不为空，请选择一个空文件夹或者手动删除文件夹中的文件`,
     },
   },
@@ -125,9 +128,11 @@ export const i18n: Record<Lang, CreateI18n> = {
       version:
         "This version is not a valid one. Version should be like 'x.x.x'",
       preset: 'preset (--preset) only support "doc" or "blog"',
-      dir: (packageManager: PackageManager): string =>
+      outputDirMissing: (packageManager: PackageManager): string =>
+        `The brackets in "[dir]" means it is an argument, you should replace it with folder name you want to use! E.g.: "my-blog", "project-docs"\nFor example: "${packageManager} init vuepress-theme-hope@next project-docs"`,
+      updateDirMissing: (packageManager: PackageManager): string =>
         `The brackets in "[dir]" means it is an argument, you should replace it with folder name you want to use! E.g.: "src", "docs"\nFor example: "${packageManager} init vuepress-theme-hope@next docs"`,
-      empty: (dir: string) =>
+      dirNotEmpty: (dir: string) =>
         `Target folder "${dir}" is not empty, please choose an empty folder or delete files in it.`,
     },
   },

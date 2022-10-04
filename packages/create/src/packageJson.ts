@@ -17,15 +17,16 @@ const getScript = (dir: string): Record<string, string> => ({
 });
 
 export const createPackageJson = async (
-  dir: string,
-  message: CreateI18n
+  message: CreateI18n,
+  source: string,
+  cwd = process.cwd()
 ): Promise<void> => {
   /**
    * generate package.json
    */
 
-  const packageJsonPath = resolve(process.cwd(), "package.json");
-  const scripts = getScript(dir);
+  const packageJsonPath = resolve(cwd, "package.json");
+  const scripts = getScript(source);
   const devDependencies = {
     "@vuepress/client": "2.0.0-beta.51",
     vue: "^3.2.29",
