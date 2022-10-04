@@ -16,4 +16,6 @@ export default defineUserConfig({
   }),
 
   plugins: [pwaPlugin()],
+
+  shouldPrefetch: false,
 });
