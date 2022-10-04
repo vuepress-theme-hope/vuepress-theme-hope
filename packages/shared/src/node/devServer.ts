@@ -1,4 +1,4 @@
-import { removeEndingSlash, removeLeadingSlash } from "@vuepress/shared";
+import { removeLeadingSlash } from "@vuepress/shared";
 import { mergeViteConfig } from "./vite/index.js";
 
 import type { IncomingMessage, ServerResponse } from "node:http";
@@ -50,7 +50,7 @@ export const useCustomDevServer = (
     const viteMockRequestPlugin: Plugin = {
       name: `virtual:devserver-mock/${path}`,
       configureServer: ({ middlewares }) => {
-        middlewares.use(`${removeLeadingSlash(base)}${path}`, handler);
+        middlewares.use(`${base}${removeLeadingSlash(path)}`, handler);
       },
     };
 
@@ -71,7 +71,7 @@ export const useCustomDevServer = (
       server: WebpackDevServer
     ): WebpackDevServer.Middleware[] => {
       server.app?.get(
-        `${removeEndingSlash(base)}${path}`,
+        `${base}${removeLeadingSlash(path)}`,
         (request, response) => {
           getResponse(request)
             .then((data) => response.status(200).send(data))
