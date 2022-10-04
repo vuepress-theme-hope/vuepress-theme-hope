@@ -46,7 +46,7 @@ importers:
       inquirer: 9.1.2
       lint-staged: 13.0.3
       markdownlint-cli: 0.32.2
-      npm-check-updates: 16.3.4
+      npm-check-updates: 16.3.8
       ora: 6.1.2
       prettier: 2.7.1
       rollup: 2.79.1
@@ -93,7 +93,7 @@ importers:
       inquirer: 9.1.2
       lint-staged: 13.0.3
       markdownlint-cli: 0.32.2
-      npm-check-updates: 16.3.4
+      npm-check-updates: 16.3.8
       ora: 6.1.2
       prettier: 2.7.1
       rollup: 2.79.1
@@ -9328,8 +9328,8 @@ packages:
       npm-normalize-package-bin: 2.0.0
     dev: true
 
-  /npm-check-updates/16.3.4:
-    resolution: {integrity: sha512-PDkd+KRhgzsB01c9dCo8O/Aad98ODb7aRxPamg+QOUXEdi/CcbItynxdCvHx9r1AXoMm0w1zixHeUZf8ktBwqQ==}
+  /npm-check-updates/16.3.8:
+    resolution: {integrity: sha512-2CUeCWEs+arWQUJH2IEkiZU/Ak2fLBqGkMyM5JDkfnGhz1VHNe3yyGiXD+0JeVmjbXTEpgZ0t6C9VK52atGuAw==}
     engines: {node: '>=14.14'}
     hasBin: true
     dependencies:
