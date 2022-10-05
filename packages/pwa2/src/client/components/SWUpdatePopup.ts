@@ -13,14 +13,14 @@ export default defineComponent({
 
   setup(_props, { slots }) {
     const locale = useLocaleConfig(locales);
-    const registration = ref<ServiceWorkerRegistration | null>(null);
+    const registration = ref<ServiceWorkerRegistration>();
 
     const enabled = computed(() => Boolean(registration.value));
 
     const reload = (): void => {
       if (registration.value) {
         useSkipWaiting(registration.value);
-        registration.value = null;
+        registration.value = undefined;
       }
     };
 

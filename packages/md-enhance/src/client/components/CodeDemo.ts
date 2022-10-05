@@ -50,8 +50,8 @@ export default defineComponent({
 
   setup(props, { slots }) {
     const isExpanded = ref(false);
-    const demoWrapper = ref<HTMLDivElement | null>(null);
-    const codeContainer = ref<HTMLDivElement | null>(null);
+    const demoWrapper = ref<HTMLDivElement>();
+    const codeContainer = ref<HTMLDivElement>();
     const height = ref("0");
     const loaded = ref(false);
 

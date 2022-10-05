@@ -20,8 +20,8 @@ export default defineComponent({
 
   setup(props) {
     const loading = ref(true);
-    const component = shallowRef<typeof Repl | null>(null);
-    const store = ref<ReplStore | null>(null);
+    const component = shallowRef<typeof Repl>();
+    const store = ref<ReplStore>();
 
     const playgroundOptions = computed(() =>
       getVuePlaygroundSettings(props.settings)

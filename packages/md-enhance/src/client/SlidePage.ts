@@ -14,7 +14,7 @@ export default defineComponent({
   setup() {
     const router = useRouter();
     const showMenu = ref(false);
-    const menu = ref<HTMLElement | null>(null);
+    const menu = ref<HTMLElement>();
 
     const toggle = (): void => {
       showMenu.value = !showMenu.value;

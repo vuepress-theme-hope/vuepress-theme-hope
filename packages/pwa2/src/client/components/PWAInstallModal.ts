@@ -34,7 +34,7 @@ export default defineComponent({
     const locale = useLocaleConfig(locales);
 
     const manifest = ref<ManifestOption>({});
-    const deferredprompt = ref<InstallPromptEvent | null>(null);
+    const deferredprompt = ref<InstallPromptEvent>();
 
     const getManifest = async (): Promise<void> => {
       const manifestContent = localStorage.getItem("manifest");

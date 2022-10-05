@@ -37,7 +37,7 @@ export default defineComponent({
   },
 
   setup(props) {
-    const echartsWrapper = ref<HTMLElement | null>(null);
+    const echartsWrapper = ref<HTMLElement>();
     let chart: EChartsType;
 
     const loading = ref(true);

@@ -34,8 +34,8 @@ export default defineComponent({
   },
 
   setup(props) {
-    const chartElement = ref<HTMLElement | null>(null);
-    const chartCanvasElement = ref<HTMLCanvasElement | null>(null);
+    const chartElement = ref<HTMLElement>();
+    const chartCanvasElement = ref<HTMLCanvasElement>();
 
     const loading = ref(true);
 

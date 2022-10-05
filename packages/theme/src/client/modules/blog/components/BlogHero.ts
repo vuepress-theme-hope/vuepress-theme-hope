@@ -21,7 +21,7 @@ export default defineComponent({
     const title = usePageHeadTitle();
     const frontmatter = usePageFrontmatter<HopeThemeBlogHomePageFrontmatter>();
 
-    const hero = ref<HTMLElement | null>(null);
+    const hero = ref<HTMLElement>();
     const heroImage = computed(() => frontmatter.value.heroImage || null);
 
     const isFullScreen = computed(

@@ -66,7 +66,7 @@ export default defineComponent({
     const route = useRoute();
     const page = usePageData();
     const metaLocale = useMetaLocale();
-    const toc = ref<HTMLElement | null>(null);
+    const toc = ref<HTMLElement>();
 
     const scrollTo = (top: number): void => {
       toc.value?.scrollTo({ top, behavior: "smooth" });

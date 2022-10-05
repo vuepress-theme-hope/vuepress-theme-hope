@@ -16,7 +16,7 @@ export default defineComponent({
     const route = useRoute();
     const themeLocale = useThemeLocaleData();
     const sidebarItems = useSidebarItems();
-    const sidebar = ref<HTMLElement | null>(null);
+    const sidebar = ref<HTMLElement>();
 
     onMounted(() => {
       // scroll to active sidebar item
