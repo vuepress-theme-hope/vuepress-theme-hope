@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.107](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.106...v2.0.0-beta.107) (2022-10-05)
+
+### Features
+
+- Add ja support. ([#2255](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2255)) ([ad5a837](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ad5a8379626f8ec1086464ec3cbc0f717f79bf21))
+- **components:** add Bilibili component ([5d62e94](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5d62e9496f8a0145913f581bf7cd70845b893127))
+- **components:** add video player ([2788c58](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2788c582900116927828139c38d814d53a9c083e))
+- **create:** add update command ([160f543](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/160f543200e558469e6c0827ebb6362770d59848))
+
+### Bug Fixes
+
+- **components:** add missing allows ([0311dc0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0311dc0bcbd1d830910355e7946a2a0e4553582c))
+- **create:** fix issue when using pnpm ([810b3da](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/810b3da440107969cf6518398d81f4f43aa6a862))
+- **deps:** update dependency axios to v1 ([#2256](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2256)) ([a667927](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a667927fd2fc487c63d9f6ef077b54b6cd50238b))
+- **shared:** fix useCustomDevServer in vite with base ([ddbd95f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ddbd95fc4b7a94fb909b601df9c0ad56c984749f))
+
 ## [2.0.0-beta.106](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.105...v2.0.0-beta.106) (2022-10-01)
 
 ### Features
