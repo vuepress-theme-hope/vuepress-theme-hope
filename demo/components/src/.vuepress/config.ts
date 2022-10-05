@@ -20,6 +20,7 @@ export default defineUserConfig({
     sidebar: [
       "/demo/",
       "/demo/badge",
+      "/demo/bilibili",
       "/demo/codepen",
       "/demo/fonticon",
       "/demo/pdf",
@@ -38,6 +39,7 @@ export default defineUserConfig({
       backToTop: true,
       components: [
         "Badge",
+        "BiliBili",
         "CodePen",
         "FontIcon",
         "PDF",

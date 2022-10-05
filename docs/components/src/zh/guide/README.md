@@ -13,11 +13,13 @@ icon: creative
 
 :::
 
-此插件可以注册 6 个组件和 2 个全局组件:
+此插件可以注册 7 个组件和 2 个全局组件:
 
 - [AddThis](addthis.md) (全局组件)
 
 - [BackToTop](backtotop.md) (全局组件)
+
+- [BiliBili](bilibili.md)
 
 - [Badge](badge.md)
 
