@@ -13,6 +13,9 @@ patchedDependencies:
   fflate@0.7.3:
     hash: qdpjlqbzryzkfzhd4dmj5zonom
     path: patches/fflate@0.7.3.patch
+  lit@2.3.1:
+    hash: zeswywstidiz33573yn2m63kui
+    path: patches/lit@2.3.1.patch
 
 importers:
 
