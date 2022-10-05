@@ -64,6 +64,6 @@ export const walineLocales: WalineLocaleConfig = {
 
   "/ja/": {
     placeholder:
-        "伝言をどうぞ (メールアドレスを入力すると、返信があった際にメールでお知らせします。)",
+      "伝言をどうぞ (メールアドレスを入力すると、返信があった際にメールでお知らせします。)",
   },
 };
