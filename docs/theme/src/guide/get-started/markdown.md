@@ -21,7 +21,7 @@ If you are a new comer and don’t know how to write Markdown, please read [Mark
 
 ## Markdown Config
 
-VuePress introduce configuration for each markdown page using Frontmatter.
+VuePress introduce configuration for each Markdown page using Frontmatter.
 
 ::: info
 

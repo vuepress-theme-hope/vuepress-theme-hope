@@ -45,7 +45,7 @@ You are free to write your Markdown here.
 
 ::: tip Assets
 
-- You can place images besides your markdown files, but you should use **relative links** (i.e.: starting with `./`) for them.
+- You can place images besides your Markdown files, but you should use **relative links** (i.e.: starting with `./`) for them.
 
 - For images in `.vuepress/public` directory, please use absolute links (i.e.: startingwith `/`) for them.
 

@@ -229,7 +229,7 @@ Please see [source code](https://github.com/vuepress-theme-hope/vuepress-theme-h
     getPath?: (path: string) => string;
 
     /**
-     * Whether deep include files in included markdown files
+     * Whether deep include files in included Markdown files
      *
      * @default false
      */

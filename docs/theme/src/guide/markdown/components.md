@@ -129,7 +129,7 @@ See [PDF][pdf] page for available props.
 
 ## StackBlitz
 
-Embed StackBlitz demo in markdown files.
+Embed StackBlitz demo in Markdown files.
 
 <StackBlitz id="vuepress-theme-hope" />
 
@@ -147,7 +147,7 @@ See [StackBlitz][stackblitz] page for available props.
 
 ## YouTube
 
-Embed YouTube video in markdown files.
+Embed YouTube video in Markdown files.
 
 <YouTube id="0JJPfz5dg20" />
 
