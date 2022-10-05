@@ -187,4 +187,19 @@ export const pwaLocales: PWALocaleConfig = {
     hint: "Nuevo contenido encontrado.",
     update: "Hay nuevo contenido disponible.",
   },
+
+  "/ja/": {
+    install: "インストール",
+    iOSInstall: "共有ボタンをタップし、「ホームスクリーンに追加」をタップします",
+    cancel: "キャンセル",
+    close: "閉じる",
+    prevImage: "前の画像",
+    nextImage: "次の画像",
+    desc: "詳細",
+    feature: "主な特徴",
+    explain:
+        "このアプリは、PCまたはモバイルデバイスにインストールすることができます。 これにより、このウェブアプリは、インストールされている他のアプリと同様に表示され、動作するようになります。 アプリ一覧で見つけることができ、ホーム画面、スタートメニュー、タスクバーに固定することができます。 このインストールされたウェブアプリケーションは、他のアプリケーションやオペレーティングシステムと安全にやり取りすることもできます。",
+    hint: "新しいコンテンツが見つかりました。",
+    update: "新しいコンテンツが登場しました。",
+  },
 };

@@ -61,4 +61,9 @@ export const walineLocales: WalineLocaleConfig = {
     placeholder:
       "Escriba un comentario aquí (Ingrese su correo electrónico para recibir una notificación en caso de respuesta)",
   },
+
+  "/ja/": {
+    placeholder:
+        "伝言をどうぞ (メールアドレスを入力すると、返信があった際にメールでお知らせします。)",
+  },
 };
