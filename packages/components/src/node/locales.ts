@@ -48,4 +48,8 @@ export const backToTopLocales: BackToTopLocaleConfig = {
   "/es/": {
     backToTop: "Volver arriba",
   },
+
+  "/ja/": {
+    backToTop: "このページのトップへ戻る",
+  },
 };

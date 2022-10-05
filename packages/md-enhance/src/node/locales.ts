@@ -108,4 +108,13 @@ export const markdownEnhanceLocales: MarkdownEnhanceLocaleConfig = {
     danger: "Advertencia",
     details: "Detalles",
   },
+
+  "/ja/": {
+    info: "関連情報",
+    note: "注",
+    tip: "ヒント",
+    warning: "注意",
+    danger: "警告",
+    details: "詳細",
+  },
 };

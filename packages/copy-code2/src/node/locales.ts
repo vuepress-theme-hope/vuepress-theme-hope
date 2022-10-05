@@ -73,4 +73,10 @@ export const copyCodeLocales: CopyCodeLocaleConfig = {
     copied: "Copiado",
     hint: "Copiado con éxito",
   },
+
+  "/ja/": {
+    copy: "コピーコード",
+    copied: "コピー機",
+    hint: "コピーに成功",
+  },
 };

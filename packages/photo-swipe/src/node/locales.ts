@@ -108,4 +108,13 @@ export const photoSwipeLocales: PhotoSwipeLocaleConfig = {
     arrowPrev: "Anterior (Flecha izquierda)",
     arrowNext: "Siguiente (Flecha derecha)",
   },
+
+  "/ja/": {
+    close: "閉じる",
+    download: "画像ダウンロード",
+    fullscreen: "全画面表示への切り替え",
+    zoom: "拡大・縮小",
+    arrowPrev: "前へ（左矢印）",
+    arrowNext: "次へ（右矢印）",
+  },
 };

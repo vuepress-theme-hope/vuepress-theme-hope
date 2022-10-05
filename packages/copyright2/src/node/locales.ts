@@ -43,4 +43,10 @@ export const copyrightLocales: CopyrightLocaleConfig = {
     license: "Licencia :license",
     link: ":link",
   },
+
+  "/ja/": {
+    author: "著作権者 :author",
+    license: ":licenseプロトコルに基づく",
+    link: ":link",
+  },
 };

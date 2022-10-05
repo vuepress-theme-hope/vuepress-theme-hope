@@ -75,4 +75,10 @@ export const readingTimeLocales: ReadingTimeLocaleConfig = {
     less1Minute: "Menos de 1 minuto",
     time: "Alrededor de $time min",
   },
+
+  "/ja/": {
+    word: "$word字程度",
+    less1Minute: "1分以内",
+    time: "約$time分",
+  },
 };
