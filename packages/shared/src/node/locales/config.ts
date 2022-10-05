@@ -12,7 +12,7 @@ export const lang2PathConfig = {
   "sk-SK": "/sk/",
   "uk-UA": "/uk/",
   "vi-VN": "/vi/",
-  "jp-JP": "/jp/",
+  "ja-JP": "/ja/",
   "zh-CN": "/zh/",
   "zh-TW": "/zh-tw/",
 };

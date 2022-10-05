@@ -1,7 +1,7 @@
 import type { HopeThemeLocaleData } from "../../shared/index.js";
 
-export const jpLocale: HopeThemeLocaleData = {
-  lang: "jp-JP",
+export const jaLocale: HopeThemeLocaleData = {
+  lang: "ja-JP",
 
   navbarLocales: {
     langName: "日本語",
