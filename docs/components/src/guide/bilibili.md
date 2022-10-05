@@ -43,20 +43,26 @@ Whether to enable danmaku
 
 ## Demo
 
+A bilibili video:
+
 <BiliBili bvid="BV1Be4y1f7Es" />
 
 ```md
 <BiliBili bvid="BV1Be4y1f7Es" />
 ```
 
-<BiliBili bvid="BV1Be4y1f7Es" :time="60" />
+A bilibili video with start time and page:
+
+<BiliBili bvid="BV1Be4y1f7Es" :time="60" :page="2" />
 
 ```md
-<BiliBili bvid="BV1Be4y1f7Es" :time="60" />
+<BiliBili bvid="BV1Be4y1f7Es" :time="60" :page="2" />
 ```
 
-<BiliBili bvid="BV1kt411o7C3" :page="2" :high-quality="false" :danmaku="false" />
+A bilibili video with custom settings:
+
+<BiliBili bvid="BV1kt411o7C3" :high-quality="false" :danmaku="false" />
 
 ```md
-<BiliBili bvid="BV1kt411o7C3" :page="2" :high-quality="false" :danmaku="false" />
+<BiliBili bvid="BV1kt411o7C3" :high-quality="false" :danmaku="false" />
 ```

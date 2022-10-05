@@ -14,9 +14,11 @@ tag:
 注册一些可以在 Markdown 文件中使用的组件，可用的组件名称为:
 
 - `"Badge"`
+- `"Bilibili"`
 - `"CodePen"`
 - `"PDF"`
 - `"StackBlitz"`
+- `"VideoPlayer"`
 - `"YouTube"`
 
 你可以将 `plugin.components` 设置为需要的组件数组，默认情况下为 `["Badge"]`。

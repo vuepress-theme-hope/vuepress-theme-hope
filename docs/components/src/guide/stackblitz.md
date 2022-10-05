@@ -80,11 +80,15 @@ Hide the debugging console in the editor preview.
 
 ## Demo
 
+A StackBlitz project:
+
 <StackBlitz id="vuepress-theme-hope" />
 
 ```md
 <StackBlitz id="vuepress-theme-hope" />
 ```
+
+A StackBlitz project with custom settings:
 
 <StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hidedevtools />
 

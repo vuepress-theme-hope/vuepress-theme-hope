@@ -2,7 +2,7 @@
 title: BiliBili
 ---
 
-在 Markdown 文件中嵌入 B 站视频
+在 Markdown 文件中嵌入 B 站视频。
 
 ## 属性
 
@@ -43,20 +43,26 @@ B 站 iframe 高度。
 
 ## 案例
 
+一个 B 站视频:
+
 <BiliBili bvid="BV1Be4y1f7Es" />
 
 ```md
 <BiliBili bvid="BV1Be4y1f7Es" />
 ```
 
-<BiliBili bvid="BV1Be4y1f7Es" :time="60" />
+一个自定义分 P 和空降地址的 B 站视频:
+
+<BiliBili bvid="BV1Be4y1f7Es" :time="60" :page="2" />
 
 ```md
-<BiliBili bvid="BV1Be4y1f7Es" :time="60" />
+<BiliBili bvid="BV1Be4y1f7Es" :time="60" :page="2" />
 ```
 
-<BiliBili bvid="BV1kt411o7C3" :page="2" :high-quality="false" :danmaku="false" />
+一个自定义设置的 B 站视频:
+
+<BiliBili bvid="BV1kt411o7C3" :high-quality="false" :danmaku="false" />
 
 ```md
-<BiliBili bvid="BV1kt411o7C3" :page="2" :high-quality="false" :danmaku="false" />
+<BiliBili bvid="BV1kt411o7C3" :high-quality="false" :danmaku="false" />
 ```

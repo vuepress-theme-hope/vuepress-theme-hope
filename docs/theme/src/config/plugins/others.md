@@ -14,9 +14,11 @@ tag:
 Register components which can be used in Markdown files, available component names are:
 
 - `"Badge"`
+- `"Bilibili"`
 - `"CodePen"`
 - `"PDF"`
 - `"StackBlitz"`
+- `"VideoPlayer"`
 - `"YouTube"`
 
 You can set `plugin.components` with an array of components you want, by default it will be `["Badge"]`.

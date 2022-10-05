@@ -134,17 +134,23 @@ Whether disable keyboard control of the video.
 
 ## Demo
 
+A YouTube video:
+
 <YouTube id="0JJPfz5dg20" />
 
 ```md
 <YouTube id="0JJPfz5dg20" />
 ```
 
+A YouTube video with custom settings:
+
 <YouTube id="0JJPfz5dg20" disable-fullscreen />
 
 ```md
 <YouTube id="0JJPfz5dg20" disable-fullscreen />
 ```
+
+A YouTube play list:
 
 <YouTube list-type="playlist" list="PLJNLwTPak6dhCRzVelZIs2-DfBp01NX_1" />
 

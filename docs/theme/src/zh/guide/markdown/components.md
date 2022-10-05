@@ -36,6 +36,36 @@ tag:
 
 有关可用属性，请参阅 [Badge][badge] 页面。
 
+## BiliBili
+
+在 Markdown 文件中嵌入 B 站视频。
+
+一个 B 站视频:
+
+<BiliBili bvid="BV1Be4y1f7Es" />
+
+```md
+<BiliBili bvid="BV1Be4y1f7Es" />
+```
+
+一个自定义分 P 和空降地址的 B 站视频:
+
+<BiliBili bvid="BV1Be4y1f7Es" :time="60" :page="2" />
+
+```md
+<BiliBili bvid="BV1Be4y1f7Es" :time="60" :page="2" />
+```
+
+一个自定义设置的 B 站视频:
+
+<BiliBili bvid="BV1kt411o7C3" :high-quality="false" :danmaku="false" />
+
+```md
+<BiliBili bvid="BV1kt411o7C3" :high-quality="false" :danmaku="false" />
+```
+
+有关可用属性，请参阅 [BiliBili][bilibili] 页面。
+
 ## CodePen
 
 一个允许你嵌入 CodePen 演示的组件。
@@ -132,11 +162,15 @@ PDF 浏览器组件。
 
 在 Markdown 文件中嵌入 StackBlitz 演示。
 
+一个 StackBlitz 项目:
+
 <StackBlitz id="vuepress-theme-hope" />
 
 ```md
 <StackBlitz id="vuepress-theme-hope" />
 ```
+
+一个自定义设置的 StackBlitz 项目:
 
 <StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hidedevtools />
 
@@ -146,21 +180,85 @@ PDF 浏览器组件。
 
 有关可用属性，请参阅 [StackBlitz][stackblitz] 页面。
 
+## VideoPlayer
+
+在 Markdown 文件中嵌入视频。
+
+一个视频播放器:
+
+<VideoPlayer src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm" />
+
+```md
+<VideoPlayer src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm" />
+```
+
+一个包含了封面和音轨的播放器:
+
+<VideoPlayer
+  src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm"
+  poster="/poster.svg"
+  :tracks="[
+    {
+      default: true,
+      src: 'https://gist.githubusercontent.com/wheatjs/a85a65a82d87d7c098e1a0972ef1f726/raw',
+      kind: 'subtitles',
+      label: 'English',
+      srcLang: 'en',
+    },
+    {
+      src: 'https://gist.githubusercontent.com/wheatjs/38f32925d20c683bf77ba33ff737891b/raw',
+      kind: 'subtitles',
+      label: 'French',
+      srcLang: 'fr',
+    },
+  ]"
+/>
+
+```md
+<VideoPlayer
+  src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm"
+  poster="/poster.svg"
+  :tracks="[
+    {
+      default: true,
+      src: 'https://gist.githubusercontent.com/wheatjs/a85a65a82d87d7c098e1a0972ef1f726/raw',
+      kind: 'subtitles',
+      label: 'English',
+      srcLang: 'en',
+    },
+    {
+      src: 'https://gist.githubusercontent.com/wheatjs/38f32925d20c683bf77ba33ff737891b/raw',
+      kind: 'subtitles',
+      label: 'French',
+      srcLang: 'fr',
+    },
+  ]"
+/>
+```
+
+有关可用属性，请参阅 [VideoPlayer][videoplayer] 页面。
+
 ## YouTube
 
 在 Markdown 文件中嵌入 YouTube 视频。
 
+一个 YouTube 视频:
+
 <YouTube id="0JJPfz5dg20" />
 
 ```md
 <YouTube id="0JJPfz5dg20" />
 ```
 
+一个自定义设置的 YouTube 视频:
+
 <YouTube id="0JJPfz5dg20" disable-fullscreen />
 
 ```md
 <YouTube id="0JJPfz5dg20" disable-fullscreen />
 ```
+
+一个 YouTube 播放列表:
 
 <YouTube list-type="playlist" list="PLJNLwTPak6dhCRzVelZIs2-DfBp01NX_1" />
 
@@ -171,8 +269,10 @@ PDF 浏览器组件。
 有关可用属性，请参阅 [YouTube][youtube] 页面。
 
 [badge]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/badge.html
+[bilibili]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/bilibili.html
 [codepen]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/codepen.html
 [fonticon]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/fonticon.html
 [pdf]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/pdf.html
 [stackblitz]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/stackblitz.html
+[videoplayer]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/videoplayer.html
 [youtube]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/youtube.html

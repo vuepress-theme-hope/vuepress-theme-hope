@@ -134,17 +134,23 @@ YouTube iframe 高度。
 
 ## 演示
 
+一个 YouTube 视频:
+
 <YouTube id="0JJPfz5dg20" />
 
 ```md
 <YouTube id="0JJPfz5dg20" />
 ```
 
+一个自定义设置的 YouTube 视频:
+
 <YouTube id="0JJPfz5dg20" disable-fullscreen />
 
 ```md
 <YouTube id="0JJPfz5dg20" disable-fullscreen />
 ```
+
+一个 YouTube 播放列表:
 
 <YouTube list-type="playlist" list="PLJNLwTPak6dhCRzVelZIs2-DfBp01NX_1" />
 

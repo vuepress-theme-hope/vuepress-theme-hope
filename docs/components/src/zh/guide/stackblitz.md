@@ -80,11 +80,15 @@ StackBlitz Demo 高度。
 
 ## 演示
 
+一个 StackBlitz 项目:
+
 <StackBlitz id="vuepress-theme-hope" />
 
 ```md
 <StackBlitz id="vuepress-theme-hope" />
 ```
+
+一个自定义设置的 StackBlitz 项目:
 
 <StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hidedevtools />
 
