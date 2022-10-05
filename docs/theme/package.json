@@ -21,7 +21,7 @@
     "@types/katex": "0.14.0",
     "@vuepress/client": "2.0.0-beta.51",
     "@vuepress/utils": "2.0.0-beta.51",
-    "axios": "0.27.2",
+    "axios": "1.0.0",
     "docs-shared": "workspace:*",
     "katex": "0.16.2",
     "sass-loader": "13.0.2",
