@@ -13,6 +13,9 @@ patchedDependencies:
   fflate@0.7.3:
     hash: qdpjlqbzryzkfzhd4dmj5zonom
     path: patches/fflate@0.7.3.patch
+  lit@2.3.1:
+    hash: zeswywstidiz33573yn2m63kui
+    path: patches/lit@2.3.1.patch
 
 importers:
 
@@ -7392,7 +7395,7 @@ packages:
   /giscus/1.2.0:
     resolution: {integrity: sha512-IpfWvU0/hYbMGQKuoPlED8wWmluRYIOjtrBCnL7logsWjMpPRxiAC2pUIC0+SC0pDMOqXrk1onTYMHgwgRpRzg==}
     dependencies:
-      lit: 2.3.1
+      lit: 2.3.1_zeswywstidiz33573yn2m63kui
     dev: false
 
   /git-hooks-list/3.0.0:
@@ -8626,13 +8629,14 @@ packages:
       '@types/trusted-types': 2.0.2
     dev: false
 
-  /lit/2.3.1:
+  /lit/2.3.1_zeswywstidiz33573yn2m63kui:
     resolution: {integrity: sha512-TejktDR4mqG3qB32Y8Lm5Lye3c8SUehqz7qRsxe1PqGYL6me2Ef+jeQAEqh20BnnGncv4Yxy2njEIT0kzK1WCw==}
     dependencies:
       '@lit/reactive-element': 1.4.1
       lit-element: 3.2.2
       lit-html: 2.3.1
     dev: false
+    patched: true
 
   /load-json-file/4.0.0:
     resolution: {integrity: sha512-Kx8hMakjX03tiGTLAIdJ+lL0htKnXjEZN6hk/tozf/WOuYGdZBJrZ+rCJRbVCugsjB3jMLn9746NsQIf5VjBMw==}
