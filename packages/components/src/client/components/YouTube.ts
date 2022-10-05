@@ -1,6 +1,8 @@
 import { computed, defineComponent, h } from "vue";
-import type { VNode } from "vue";
 import { usePageLang } from "@vuepress/client";
+import type { VNode } from "vue";
+
+import "../styles/youtube.scss";
 
 export default defineComponent({
   name: "YouTube",
@@ -102,9 +104,9 @@ export default defineComponent({
         ? h("iframe", {
             src: `https://www.youtube.com/embed/${coreURL.value}${params.value}`,
             class: "youtube-iframe",
+            allow:
+              "accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture",
             style: {
-              width: "100%",
-              "border-radius": "8px",
               height:
                 typeof props.height === "string"
                   ? props.height
