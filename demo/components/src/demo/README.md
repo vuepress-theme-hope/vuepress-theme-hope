@@ -16,4 +16,6 @@
 
 - [StackBlitz](stackblitz.md)
 
+- [VideoPlayer](videoplayer.md)
+
 - [YouTube](youtube.md)

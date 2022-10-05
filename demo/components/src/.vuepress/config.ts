@@ -25,6 +25,7 @@ export default defineUserConfig({
       "/demo/fonticon",
       "/demo/pdf",
       "/demo/stackblitz",
+      "/demo/videoplayer",
       "/demo/youtube",
     ],
 
@@ -44,6 +45,7 @@ export default defineUserConfig({
         "FontIcon",
         "PDF",
         "StackBlitz",
+        "VideoPlayer",
         "YouTube",
       ],
       iconAssets: "iconfont",

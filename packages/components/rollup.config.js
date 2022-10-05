@@ -55,6 +55,10 @@ export default [
     external: ["@vuepress/client", "vue", /\.scss$/],
     dtsExternal: [/\.scss$/],
   }),
+  ...rollupTypescript("client/components/VideoPlayer", {
+    external: ["vue", /\.scss$/],
+    dtsExternal: ["@vueuse/core", /\.scss$/],
+  }),
   ...rollupTypescript("client/composables/index", {
     external: ["@vueuse/core"],
   }),

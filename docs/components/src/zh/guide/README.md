@@ -13,7 +13,7 @@ icon: creative
 
 :::
 
-此插件可以注册 7 个组件和 2 个全局组件:
+此插件可以注册 8 个组件和 2 个全局组件:
 
 - [AddThis](addthis.md) (全局组件)
 
@@ -30,5 +30,7 @@ icon: creative
 - [PDF](pdf.md)
 
 - [StackBlitz](stackblitz.md)
+
+- [Video Player](videoplayer.md)
 
 - [YouTube](youtube.md)

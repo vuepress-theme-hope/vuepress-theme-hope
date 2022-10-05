@@ -15,6 +15,7 @@ icon: config
     | "FontIcon"
     | "PDF"
     | "StackBlitz"
+    | "VideoPlayer"
     | "YouTube";
   ```
 
@@ -30,6 +31,7 @@ icon: config
 - `"FontIcon"`
 - `"PDF"`
 - `"StackBlitz"`
+- `""VideoPlayer""`
 - `"YouTube"`
 
 ## addThis
