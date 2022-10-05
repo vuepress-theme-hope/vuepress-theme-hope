@@ -10,7 +10,7 @@ tag:
 
 ## Link check
 
-The theme will check your markdown links in dev mode by default.
+The theme will check your Markdown links in dev mode by default.
 
 You can customize this feature through `plugins.mdEnhance.linkCheck` in theme options, and you can choose from `'always'`, `'never'`, `'dev'` and `'build'`.
 

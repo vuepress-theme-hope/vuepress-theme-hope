@@ -6,6 +6,8 @@
 
 - [Badge](badge.md)
 
+- [BiliBili](bilibili.md)
+
 - [CodePen](codepen.md)
 
 - [FontIcon](fonticon.md)

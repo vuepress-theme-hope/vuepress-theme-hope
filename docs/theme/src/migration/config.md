@@ -237,9 +237,9 @@ Move all plugin related options under `plugins`.
 
 - move `mdEnhance` to `plugins.mdEnhance`
 
-  - markdown link check ![New](https://img.shields.io/badge/-New-brightgreen)
+  - Markdown link check ![New](https://img.shields.io/badge/-New-brightgreen)
 
-    The plugin now check your markdown links and warn you when broken links are detected.
+    The plugin now check your Markdown links and warn you when broken links are detected.
 
     You can control this behavior with `plugins.mdEnhance.linkCheck` option
 
@@ -301,7 +301,7 @@ Move all plugin related options under `plugins`.
 
   - content include support ![New](https://img.shields.io/badge/-New-brightgreen)
 
-    use `@include()` to include other file content in markdown via `plugins.mdEnhance.include` options.
+    use `@include()` to include other file content in Markdown via `plugins.mdEnhance.include` options.
 
     Use `@include(filename)` to include a file.
 

@@ -2,6 +2,7 @@ import { defineComponent, h } from "vue";
 
 import type { VNode, PropType } from "vue";
 
+import "../styles/stack-blitz.scss";
 export default defineComponent({
   name: "StackBlitz",
 
@@ -92,9 +93,8 @@ export default defineComponent({
         }${props.hideNavigation ? "&hideNavigation=1" : ""}${
           props.hidedevtools ? "&hidedevtools=1" : ""
         }`,
+        allow: "clipboard-write",
         style: {
-          width: "100%",
-          "border-radius": "8px",
           height:
             typeof props.height === "string"
               ? props.height

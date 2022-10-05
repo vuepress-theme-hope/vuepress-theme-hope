@@ -36,7 +36,7 @@ features:
 
   - title: Attrs support
     icon: code
-    details: Allow you to add attributes for markdown content
+    details: Allow you to add attributes for Markdown content
     link: /guide/atts.html
 
   - title: Superscript and subscript support
@@ -91,7 +91,7 @@ features:
 
   - title: Playground Support
     icon: code
-    details: You can add playground in markdown files
+    details: You can add playground in Markdown files
     link: /guide/playground.html
 
   - title: Vue playground Support
@@ -179,7 +179,7 @@ For details, see [Migration Guide](./migration.md).
 
 ## Advanced
 
-This plugin exports the following markdown-it plugin, and you can use them in other projects.
+This plugin exports the following Markdown-it plugin, and you can use them in other projects.
 
 - align
 - attrs

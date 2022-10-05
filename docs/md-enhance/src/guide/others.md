@@ -5,7 +5,7 @@ icon: more
 
 ## Link check
 
-`vuepress-plugin-md-enhance` check your markdown links in dev mode by default.
+`vuepress-plugin-md-enhance` check your Markdown links in dev mode by default.
 
 You can customize this feature through `linkCheck` in plugin options, and you can choose from `'always'`, `'never'`, `'dev'` and `'build'`.
 

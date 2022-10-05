@@ -58,7 +58,7 @@ export default {
 
 This is the same as tabs function, but it's special built for code blocks.
 
-Only code fence after `@tab` marker is allowed inside code tabs, other markdown content will be ignored.
+Only code fence after `@tab` marker is allowed inside code tabs, other Markdown content will be ignored.
 
 ## Demo
 
