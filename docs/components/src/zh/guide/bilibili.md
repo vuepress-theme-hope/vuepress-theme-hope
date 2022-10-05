@@ -41,10 +41,22 @@ B 站 iframe 高度。
 
 是否启用弹幕
 
-## Demo
+## 案例
 
 <BiliBili bvid="BV1Be4y1f7Es" />
 
+```md
+<BiliBili bvid="BV1Be4y1f7Es" />
+```
+
 <BiliBili bvid="BV1Be4y1f7Es" :time="60" />
 
+```md
+<BiliBili bvid="BV1Be4y1f7Es" :time="60" />
+```
+
 <BiliBili bvid="BV1kt411o7C3" :page="2" :high-quality="false" :danmaku="false" />
+
+```md
+<BiliBili bvid="BV1kt411o7C3" :page="2" :high-quality="false" :danmaku="false" />
+```
