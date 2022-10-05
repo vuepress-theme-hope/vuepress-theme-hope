@@ -299,7 +299,7 @@ tag:
 
   - 包含文件支持 ![新增](https://img.shields.io/badge/-新增-brightgreen)
 
-    新增 `plugins.mdEnhance.include` 选项使用 `@include()` 将其他文件内容导入到 markdown 中。
+    新增 `plugins.mdEnhance.include` 选项使用 `@include()` 将其他文件内容导入到 Markdown 中。
 
     使用 `@include(filename)` 导入文件。
 

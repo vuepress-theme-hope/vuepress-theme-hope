@@ -209,7 +209,7 @@ interface TaskListOptions {
     getPath?: (path: string) => string;
 
     /**
-     * 是否深度导入包含的 markdown 文件
+     * 是否深度导入包含的 Markdown 文件
      *
      * @default false
      */

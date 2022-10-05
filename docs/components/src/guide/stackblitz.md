@@ -2,7 +2,7 @@
 title: StackBlitz
 ---
 
-Embed StackBlitz demo in markdown files.
+Embed StackBlitz demo in Markdown files.
 
 <!-- more -->
 

@@ -109,7 +109,7 @@ You can use `=widthxheight` to specify the image size when setting `plugins.mdEn
 ![Alt](/example.bmp =x300)
 ```
 
-The above markdown will be parsed as:
+The above Markdown will be parsed as:
 
 ```html
 <img src="/example.png" width="200" height="300" />

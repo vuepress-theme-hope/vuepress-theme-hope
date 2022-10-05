@@ -9,9 +9,9 @@ You can pass the second argument `true` to enable legacy mode when calling `mdEn
 
 ## New Features
 
-- markdown link check
+- Markdown link check
 
-  The plugin now check your markdown links and warn you when broken links are detected.
+  The plugin now check your Markdown links and warn you when broken links are detected.
 
   You can control this behavior with `linkCheck` option
 
@@ -85,7 +85,7 @@ You can pass the second argument `true` to enable legacy mode when calling `mdEn
 
 - content include support
 
-  use `@include()` to include other file content in markdown via `include` options.
+  use `@include()` to include other file content in Markdown via `include` options.
 
   Use `@include(filename)` to include a file.
 

@@ -16,7 +16,7 @@ actions:
 features:
   - title: Markdown Enhance
     icon: markdown
-    details: Add align, sup/sub script, footnote, tasklist, tex, flowchart, diagram, mark and presentation support in markdown
+    details: Add align, sup/sub script, footnote, tasklist, tex, flowchart, diagram, mark and presentation support in Markdown
     link: https://vuepress-theme-hope.github.io/v2/guide/markdown/
 
   - title: Slide page

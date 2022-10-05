@@ -34,15 +34,7 @@ export default theme("components", {
         {
           text: "Components",
           prefix: "/guide/",
-          children: [
-            "addthis",
-            "backtotop",
-            "badge",
-            "codepen",
-            "fonticon",
-            "pdf",
-            "stackblitz",
-          ],
+          children: "structure",
         },
         "/config",
       ],
@@ -71,15 +63,7 @@ export default theme("components", {
         {
           text: "组件",
           prefix: "/zh/guide/",
-          children: [
-            "addthis",
-            "backtotop",
-            "badge",
-            "codepen",
-            "fonticon",
-            "pdf",
-            "stackblitz",
-          ],
+          children: "structure",
         },
         "/zh/config",
       ],
@@ -87,7 +71,14 @@ export default theme("components", {
   },
 
   plugins: {
-    components: ["Badge", "CodePen", "PDF", "StackBlitz", "YouTube"],
+    components: [
+      "Badge",
+      "BiliBili",
+      "CodePen",
+      "PDF",
+      "StackBlitz",
+      "YouTube",
+    ],
 
     mdEnhance: {
       codetabs: true,

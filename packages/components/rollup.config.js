@@ -15,6 +15,10 @@ export default [
     external: ["vue", /\.scss$/],
     dtsExternal: [/\.scss$/],
   }),
+  ...rollupTypescript("client/components/BiliBili", {
+    external: ["vue", /\.scss$/],
+    dtsExternal: [/\.scss$/],
+  }),
   ...rollupTypescript("client/components/BackToTop", {
     external: [
       "@vuepress/client",
@@ -44,10 +48,12 @@ export default [
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/StackBlitz", {
-    external: ["vue"],
+    external: ["vue", /\.scss$/],
+    dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/YouTube", {
-    external: ["@vuepress/client", "vue"],
+    external: ["@vuepress/client", "vue", /\.scss$/],
+    dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/composables/index", {
     external: ["@vueuse/core"],

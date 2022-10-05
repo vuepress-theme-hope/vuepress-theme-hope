@@ -2,7 +2,7 @@
 title: YouTube
 ---
 
-Embed YouTube vidoes in markdown files.
+Embed YouTube vidoes in Markdown files.
 
 <!-- more -->
 

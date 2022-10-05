@@ -10,6 +10,7 @@ icon: config
   ```ts
   type AvailableComponent =
     | "Badge"
+    | "BiliBili"
     | "CodePen"
     | "FontIcon"
     | "PDF"
@@ -24,6 +25,7 @@ icon: config
 可接受的组件名称为:
 
 - `"Badge"`
+- `"BiliBili"`
 - `"CodePen"`
 - `"FontIcon"`
 - `"PDF"`

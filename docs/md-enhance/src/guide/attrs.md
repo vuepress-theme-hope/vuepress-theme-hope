@@ -3,7 +3,7 @@ title: Attrs support
 icon: code
 ---
 
-You can use custom syntax to add attrs for markdown content.
+You can use custom syntax to add attrs for Markdown content.
 
 <!-- more -->
 
@@ -47,7 +47,7 @@ export default {
 
 ## Usage
 
-You can use `{attrs}` to add attrs to markdown content.
+You can use `{attrs}` to add attrs to Markdown content.
 
 For example, if you want a heading2 "Hello World" with a id "say-hello-world", you can write:
 
