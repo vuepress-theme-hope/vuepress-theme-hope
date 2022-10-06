@@ -8,7 +8,7 @@ import inquirer from "inquirer";
 import { getLanguage, generateTemplate, version } from "./config/index.js";
 import { createPackageJson } from "./packageJson.js";
 import { getRegistry } from "./registry.js";
-import { getPackageManager } from "./utils/index.js";
+import { ensureDirExistSync, getPackageManager } from "./utils/index.js";
 
 import type { CreateI18n, Lang } from "./config/index.js";
 import type { PackageManager } from "./utils/index.js";
@@ -45,6 +45,8 @@ const preAction = async (
   // check if the user is trying to cover his files
   if (existsSync(targetDirPath) && readdirSync(targetDirPath).length)
     return console.error(message.error.dirNotEmpty(targetDir));
+
+  ensureDirExistSync(targetDirPath);
 
   // return choise
   return { lang, message, packageManager };
