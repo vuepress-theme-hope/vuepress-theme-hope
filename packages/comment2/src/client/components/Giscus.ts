@@ -82,7 +82,9 @@ export default defineComponent({
       category: giscusOption.category,
       categoryId: giscusOption.categoryId,
       lang: giscusLang.value,
-      theme: props.darkmode ? "dark" : "light",
+      theme: props.darkmode
+        ? giscusOption.darkTheme ?? "dark"
+        : giscusOption.lightTheme ?? "light",
       mapping: giscusOption.mapping || "pathname",
       term: withBase(route.path),
       inputPosition: giscusOption.inputPosition || "top",

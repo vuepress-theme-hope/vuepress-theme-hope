@@ -19,10 +19,16 @@ Giscus is a commenting system based on GitHub Discussion that is easy to start.
 
 Please pass `data-repo`, `data-repo-id`, `data-category` and `data-category-id` as plugin options as `repo`, `repoId`, `category` `categoryId`.
 
+For other options, see [Giscus Config](../config/giscus.md).
+
+## Theme
+
+By default, the theme of Giscus is `light` or `dark` (based on darkmode status).
+
 ::: info Darkmode
 
 To let Giscus apply the correct theme, you need to pass a boolean value to `<CommentService />` via `darkmode` property, indicating whether darkmode is currently enabled.
 
 :::
 
-For other options, see [Giscus Config](../config/giscus.md).
+If you want to customize theme in lightmode and darkmode, you can set `lightTheme` and `darkTheme` option with a built-in theme keyword or a custom css link starting with `https://`.

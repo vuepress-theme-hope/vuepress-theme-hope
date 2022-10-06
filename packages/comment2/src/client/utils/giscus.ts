@@ -2,21 +2,10 @@ import type {
   GiscusInputPosition,
   GiscusMapping,
   GiscusRepo,
+  GiscusTheme,
 } from "../../shared/index.js";
 
 type BooleanString = "0" | "1";
-
-export type GiscusTheme =
-  | "light"
-  | "light_high_contrast"
-  | "light_protanopia"
-  | "dark"
-  | "dark_high_contrast"
-  | "dark_protanopia"
-  | "dark_dimmed"
-  | "transparent_dark"
-  | "preferred_color_scheme"
-  | `https://${string}`;
 
 export type GiscusLang =
   | "de"
