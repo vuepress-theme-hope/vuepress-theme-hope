@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.108](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.107...v2.0.0-beta.108) (2022-10-06)
+
+### Features
+
+- **comment2:** support theme for giscus, close [#2260](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2260) ([edbde83](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/edbde833152cda04b3c70e5357bfbd8efa694435))
+- **theme:** add giscus custom theme ([bd4f10d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/bd4f10dd5b9ed03be87c84b970fbfd1a34bf7e5f))
+
+### Bug Fixes
+
+- **create:** fix targetDir ([713ffbd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/713ffbd7f872b547d40522b3d9261a9d2a7e186a))
+- **theme:** fix giscus css link ([409851d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/409851d8cd9a8f27d45c89908d7b43cb30ad086e))
+
 ## [2.0.0-beta.107](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.106...v2.0.0-beta.107) (2022-10-05)
 
 ### Features
