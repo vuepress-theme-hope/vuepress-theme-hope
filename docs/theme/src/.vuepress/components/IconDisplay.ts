@@ -1,6 +1,6 @@
 import { useRouteLocale } from "@vuepress/client";
 import axios from "axios";
-import { defineComponent, h, onMounted, reactive } from "vue";
+import { defineComponent, h, onMounted, ref } from "vue";
 import { Message } from "vuepress-shared/lib/client";
 
 import type { VNode } from "vue";
@@ -29,7 +29,7 @@ export default defineComponent({
 
   setup(props) {
     const routeLocale = useRouteLocale();
-    const icons = reactive<string[]>([]);
+    const icons = ref<string[]>([]);
 
     const copyToClipboard = (content: string) => {
       const selection = document.getSelection();
@@ -61,21 +61,29 @@ export default defineComponent({
     };
 
     onMounted(() => {
+      const regExp = new RegExp(`\\n\\.(${props.iconPrefix}.*?):before`, "g");
       message = new Message();
 
-      axios.get(props.link).then(({ data }) => {
-        const regExp = new RegExp(`\\n\\.(${props.iconPrefix}.*?):before`, "g");
-        let result;
+      axios
+        .get(props.link)
+        .then(({ data }) => {
+          const icons: string[] = [];
+          let result;
 
-        while ((result = regExp.exec(data))) icons.push(result[1]);
-      });
+          while ((result = regExp.exec(data))) icons.push(result[1]);
+
+          return icons;
+        })
+        .then((data) => {
+          icons.value = data.sort((a, b) => a.localeCompare(b));
+        });
     });
 
     return (): VNode =>
       h(
         "div",
         { class: "icon-display-wrapper" },
-        icons.map((icon) =>
+        icons.value.map((icon) =>
           h("div", { class: "icon", onClick: () => copyToClipboard(icon) }, [
             h("div", { class: ["iconfont", icon] }),
             h("div", { class: "text" }, icon),
