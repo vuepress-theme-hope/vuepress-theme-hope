@@ -21,7 +21,7 @@ Please pass `data-repo`, `data-repo-id`, `data-category` and `data-category-id` 
 
 ::: info Darkmode
 
-To let Giscus aplly the correct theme, you need to pass a boolean value to `<CommentService />` via `darkmode` property, indicating whether darkmode is currently enabled.
+To let Giscus apply the correct theme, you need to pass a boolean value to `<CommentService />` via `darkmode` property, indicating whether darkmode is currently enabled.
 
 :::
 
