@@ -1,4 +1,6 @@
 .theme-hope-content a {
+  &[href*="github.com/"],
+  &[href*=".vuejs.org/"],
   &[href*="/v2/blog/"],
   &[href*="/v2/comment/"],
   &[href*="/v2/components/"],
@@ -30,6 +32,14 @@
 
       font-family: iconfont, sans-serif;
     }
+  }
+
+  &[href*="github.com/"]::before {
+    content: "\e653";
+  }
+
+  &[href*=".vuejs.org/"]::before {
+    content: "\f25f";
   }
 
   &[href*="/v2/blog/"]::before {
@@ -127,10 +137,5 @@
 
   &[href*="/guide/advanced/"]::before {
     content: "\e77c";
-  }
-
-  &[href^="https://v2.vuepress.vuejs.org/"]::before
-  {
-    content: "\f25f";
   }
 }
