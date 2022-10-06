@@ -46,7 +46,7 @@ importers:
       eslint-plugin-vue: 9.6.0
       execa: 6.1.0
       husky: 8.0.1
-      inquirer: 9.1.2
+      inquirer: 9.1.3
       lint-staged: 13.0.3
       markdownlint-cli: 0.32.2
       npm-check-updates: 16.3.8
@@ -93,7 +93,7 @@ importers:
       eslint-plugin-vue: 9.6.0_eslint@8.24.0
       execa: 6.1.0
       husky: 8.0.1
-      inquirer: 9.1.2
+      inquirer: 9.1.3
       lint-staged: 13.0.3
       markdownlint-cli: 0.32.2
       npm-check-updates: 16.3.8
@@ -917,12 +917,12 @@ importers:
       '@types/inquirer': 9.0.2
       cac: 6.7.14
       execa: 6.1.0
-      inquirer: 9.1.2
+      inquirer: 9.1.3
       rimraf: 3.0.2
     dependencies:
       cac: 6.7.14
       execa: 6.1.0
-      inquirer: 9.1.2
+      inquirer: 9.1.3
     devDependencies:
       '@types/inquirer': 9.0.2
       rimraf: 3.0.2
@@ -8019,12 +8019,12 @@ packages:
       wrap-ansi: 7.0.0
     dev: true
 
-  /inquirer/9.1.2:
-    resolution: {integrity: sha512-Hj2Ml1WpxKJU2npP2Rj0OURGkHV+GtNW2CwFdHDiXlqUBAUrWTcZHxCkFywX/XHzOS7wrG/kExgJFbUkVgyHzg==}
+  /inquirer/9.1.3:
+    resolution: {integrity: sha512-3OoUzit8tEebW4tpIZUXPRvcGNm4xhGeQp+GpdupDiz2OdWAqjO50EoeVOXx1Z91M0GLe6d16jJUArIhI/cNPQ==}
     engines: {node: '>=12.0.0'}
     dependencies:
       ansi-escapes: 5.0.0
-      chalk: 5.0.1
+      chalk: 5.1.0
       cli-cursor: 4.0.0
       cli-width: 4.0.0
       external-editor: 3.1.0
