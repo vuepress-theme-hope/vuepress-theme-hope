@@ -1,6 +1,6 @@
 ---
 title: PWA
-icon: setting
+icon: app
 category:
   - 高级
 tag:
