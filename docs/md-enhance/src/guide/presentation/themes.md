@@ -24,6 +24,8 @@ Theme available:
 
 ## `auto`
 
+> Based on theme mode.
+
 @slidestart
 
 ## Slide Title

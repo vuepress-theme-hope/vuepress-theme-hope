@@ -77,6 +77,8 @@ GFM поддерживает маркировку изображений суф�
 
 Приведенная выше демонстрация отобразит следующий результат
 
+<AppearanceSwitch /> (Попробуйте переключить режим темы)
+
 ![GitHub Light](/assets/icon/github-light.png#gh-dark-mode-only)
 ![GitHub Dark](/assets/icon/github-dark.png#gh-light-mode-only)
 
@@ -116,3 +118,7 @@ interface ImageMarkOptions {
 <img src="/example.jpg" title="Image title" width="200" />
 <img src="/example.bmp" height="300" />
 ```
+
+<script setup lang="ts">
+import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch.js"
+</script>

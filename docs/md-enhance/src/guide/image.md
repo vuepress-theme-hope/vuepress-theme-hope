@@ -67,6 +67,8 @@ You can enable it using `imageMark` option.
 
 The above demo will render the following result
 
+<AppearanceSwitch /> (Try to toggle theme mode)
+
 ![GitHub Light](/assets/icon/github-light.png#gh-dark-mode-only)
 ![GitHub Dark](/assets/icon/github-dark.png#gh-light-mode-only)
 
@@ -106,3 +108,7 @@ The above Markdown will be parsed as:
 <img src="/example.jpg" title="Image title" width="200" />
 <img src="/example.bmp" height="300" />
 ```
+
+<script setup lang="ts">
+import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch.js"
+</script>

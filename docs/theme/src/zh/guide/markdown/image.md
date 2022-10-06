@@ -77,6 +77,8 @@ GFM 支持通过 ID 标记图片，使得图片只在特定的模式显示。我
 
 上述演示会渲染如下结果
 
+<AppearanceSwitch /> (尝试切换主题)
+
 ![GitHub Light](/assets/icon/github-light.png#gh-dark-mode-only)
 ![GitHub Dark](/assets/icon/github-dark.png#gh-light-mode-only)
 
@@ -116,3 +118,7 @@ interface ImageMarkOptions {
 <img src="/example.jpg" title="图片标题" width="200" />
 <img src="/example.bmp" height="300" />
 ```
+
+<script setup lang="ts">
+import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch.js"
+</script>

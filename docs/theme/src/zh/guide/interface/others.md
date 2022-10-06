@@ -16,6 +16,8 @@ tag:
 
 ## 全屏按钮
 
+<ToggleFullScreenButton />
+
 如果你需要这个功能，你可以在主题选项中设置 `fullscreen: true`。
 
 ::: tip
@@ -60,3 +62,7 @@ export default {
 `vuepress-theme-hope` 添加了一个返回顶部控件，默认情况下将在下滑 300px 后显示。
 
 你可以在主题选项中设置 `backToTop: false` 来禁用它，或者是设置为一个数字以更改默认的触发距离。
+
+<script setup lang="ts">
+import ToggleFullScreenButton from "@theme-hope/modules/outlook/components/ToggleFullScreenButton.js";
+</script>

@@ -35,10 +35,10 @@ tag:
 - `"enable"`: 强制深色模式
 - `"disable"`: 禁用深色模式
 
-<script setup lang="ts">
-import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch.js"
-</script>
-
 ## 全局变量
 
 `$isDarkMode` 在所有 Markdown 文件中都可用。
+
+<script setup lang="ts">
+import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch.js"
+</script>

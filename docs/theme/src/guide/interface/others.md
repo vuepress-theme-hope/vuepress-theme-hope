@@ -16,6 +16,8 @@ For detailed info, please see [Config → Style Customize](../../config/style.md
 
 ## Fullscreen Button
 
+<ToggleFullScreenButton />
+
 If you need it, you can enable it by setting `fullscreen: true` in the theme options.
 
 ::: tip
@@ -60,3 +62,7 @@ export default {
 `vuepress-theme-hope` adds a back-to-top control which will display after scrolling down 300px by default.
 
 You can set `backToTop: false` in theme options to disable it, or set it to a number to change the default trigger distance.
+
+<script setup lang="ts">
+import ToggleFullScreenButton from "@theme-hope/modules/outlook/components/ToggleFullScreenButton.js";
+</script>

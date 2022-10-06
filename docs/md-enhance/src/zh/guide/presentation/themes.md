@@ -24,6 +24,8 @@ icon: palette
 
 ## `auto`
 
+> 基于主题模式
+
 @slidestart
 
 ## 幻灯片标题
