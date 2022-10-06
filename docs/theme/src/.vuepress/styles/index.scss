@@ -128,4 +128,9 @@
   &[href*="/guide/advanced/"]::before {
     content: "\e77c";
   }
+
+  &[href^="https://v2.vuepress.vuejs.org/"]::before
+  {
+    content: "\f25f";
+  }
 }
