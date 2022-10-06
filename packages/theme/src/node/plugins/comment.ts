@@ -15,9 +15,9 @@ export const getCommentPlugin = (
       ...(options?.provider === "Giscus"
         ? {
             lightTheme:
-              "https://cdn.githubraw.com/vuepress-theme-hope/vuepress-theme-hope/main/packages/theme/templates/giscus/light.css",
+              "https://unpkg.com/vuepress-theme-hope@next/templates/giscus/light.css",
             darkTheme:
-              "https://cdn.githubraw.com/vuepress-theme-hope/vuepress-theme-hope/main/packages/theme/templates/giscus/dark.css",
+              "https://unpkg.com/vuepress-theme-hope@next/templates/giscus/dark.css",
           }
         : {}),
       ...(options?.provider === "Waline"
