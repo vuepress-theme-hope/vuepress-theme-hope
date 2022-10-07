@@ -760,7 +760,7 @@ importers:
       '@types/katex': 0.14.0
       '@vuepress/client': 2.0.0-beta.51
       '@vuepress/utils': 2.0.0-beta.51
-      axios: 1.0.0
+      axios: 1.1.2
       docs-shared: workspace:*
       katex: 0.16.2
       sass-loader: 13.0.2
@@ -773,7 +773,7 @@ importers:
       '@types/katex': 0.14.0
       '@vuepress/client': 2.0.0-beta.51
       '@vuepress/utils': 2.0.0-beta.51
-      axios: 1.0.0
+      axios: 1.1.2
       docs-shared: link:../shared
       katex: 0.16.2
       sass-loader: 13.0.2
@@ -4401,8 +4401,8 @@ packages:
     resolution: {integrity: sha512-UIWUlE4TOVPNNj2jjrU39wI4hEYbneUypEqcyRmRFIx5CC2gNdg3rQr+Zh7/3h6egbBvm33TDQjNQKtj9Tk1HA==}
     dev: false
 
-  /axios/1.0.0:
-    resolution: {integrity: sha512-SsHsGFN1qNPFT5QhSoSD37SHDfGyLSW5AESmyLk2JeCMHv5g0I9g0Hz/zQHx2KNe0jGXh2q2hAm7OdkXm360CA==}
+  /axios/1.1.2:
+    resolution: {integrity: sha512-bznQyETwElsXl2RK7HLLwb5GPpOLlycxHCtrpDR/4RqqBzjARaOTo3jz4IgtntWUYee7Ne4S8UHd92VCuzPaWA==}
     dependencies:
       follow-redirects: 1.15.2
       form-data: 4.0.0
