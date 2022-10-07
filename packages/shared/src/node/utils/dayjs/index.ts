@@ -5,7 +5,6 @@ import { default as timezone } from "dayjs/plugin/timezone.js";
 import { default as utc } from "dayjs/plugin/utc.js";
 import { loadDeLocale } from "./de.js";
 import { loadDeAtLocale } from "./de-at.js";
-
 import { loadEnLocale } from "./en.js";
 import { loadEsLocale } from "./es.js";
 import { loadFrLocale } from "./fr.js";
@@ -17,6 +16,7 @@ import { loadUkLocale } from "./uk.js";
 import { loadViLocale } from "./vi.js";
 import { loadZhLocale } from "./zh.js";
 import { loadZhTWLocale } from "./zh-tw.js";
+import { loadJaLocale } from "./ja.js";
 
 dayjs.extend(localizedFormat);
 dayjs.extend(objectSupport);
@@ -36,6 +36,7 @@ loadUkLocale(dayjs);
 loadViLocale(dayjs);
 loadZhLocale(dayjs);
 loadZhTWLocale(dayjs);
+loadJaLocale(dayjs);
 
 export const getLocale = (lang = "en"): string => {
   const langcode = lang.toLowerCase();
@@ -55,6 +56,7 @@ export const getLocale = (lang = "en"): string => {
       "vi",
       "zh",
       "zh-tw",
+      "ja",
     ].includes(langcode)
   )
     return langcode;
@@ -68,6 +70,7 @@ export const getLocale = (lang = "en"): string => {
   if (langcode === "sk-sk") return "sk";
   if (langcode === "vi-vn") return "vi";
   if (langcode === "zh-cn") return "zh";
+  if (langcode === "ja-jp") return "ja";
 
   console.warn(`${lang} locale missing in config`);
 
