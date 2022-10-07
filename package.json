@@ -44,7 +44,11 @@
       "eslint --fix",
       "prettier --write"
     ],
-    "*.{md,json,yml}": [
+    "*.md": [
+      "markdownlint",
+      "prettier --write"
+    ],
+    "*.{json,yml}": [
       "prettier --write"
     ],
     "*.scss": [
