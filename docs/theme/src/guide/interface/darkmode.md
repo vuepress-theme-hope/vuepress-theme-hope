@@ -17,11 +17,7 @@ In dark mode, the page uses a dark background to make you comfortable.
 
 Toggle the button below to see effects.
 
-<!-- markdownlint-disable-->
-
 <AppearanceSwitch />
-
-<!-- markdownlint-restore -->
 
 ## Options
 

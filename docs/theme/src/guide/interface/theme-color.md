@@ -74,11 +74,7 @@ export default {
 
 ### Try it
 
-<!-- markdownlint-disable-->
-
 <ThemeColorPicker :themeColor="themeColor" />
-
-<!-- markdownlint-restore -->
 
 <script setup lang="ts">
 import { computed } from "vue";

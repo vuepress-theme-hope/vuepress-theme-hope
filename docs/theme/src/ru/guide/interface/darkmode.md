@@ -17,11 +17,7 @@ tag:
 
 Нажмите кнопку ниже, чтобы увидеть эффекты.
 
-<!-- markdownlint-disable-->
-
 <AppearanceSwitch />
-
-<!-- markdownlint-restore -->
 
 ## Опции
 
