@@ -20,7 +20,7 @@
   "dependencies": {
     "@vuepress/client": "2.0.0-beta.51",
     "docs-shared": "workspace:*",
-    "sass-loader": "13.0.2",
+    "sass-loader": "13.1.0",
     "vue": "3.2.40",
     "vuepress-plugin-copy-code2": "workspace:*",
     "vuepress-vite": "2.0.0-beta.51",
