@@ -44,7 +44,11 @@
       "eslint --fix",
       "prettier --write"
     ],
-    "*.{md,json,yml}": [
+    "*.md": [
+      "markdownlint",
+      "prettier --write"
+    ],
+    "*.{json,yml}": [
       "prettier --write"
     ],
     "*.scss": [
@@ -130,9 +134,7 @@
     "patchedDependencies": {
       "@vuepress/theme-default@2.0.0-beta.51": "patches/@vuepress__theme-default@2.0.0-beta.51.patch",
       "chart.js@3.9.1": "patches/chart.js@3.9.1.patch",
-      "mitt@3.0.0": "patches/mitt@3.0.0.patch",
-      "fflate@0.7.3": "patches/fflate@0.7.3.patch",
-      "lit@2.3.1": "patches/lit@2.3.1.patch"
+      "mitt@3.0.0": "patches/mitt@3.0.0.patch"
     }
   }
 }

@@ -95,40 +95,39 @@ The plugin will collect all the info you want and write them to `routeMeta` fiel
 ::: details Demo
 
 ```ts
-// theme
+// theme intrance
+import { blogPlugin } from "vuepress-plugin-blog2";
+
 export default {
   name: "vuepress-theme-xxx",
   plugins: [
-    [
-      "blog2",
-      {
-        filter: ({ filePathRelative, frontmatter }) => {
-          // drop those pages which is NOT generated from file
-          if (!filePathRelative) return false;
+    blogPlugin({
+      filter: ({ filePathRelative, frontmatter }) => {
+        // drop those pages which is NOT generated from file
+        if (!filePathRelative) return false;
 
-          // drop those pages in `archives` directory
-          if (filePathRelative.startsWith("archives/")) return false;
+        // drop those pages in `archives` directory
+        if (filePathRelative.startsWith("archives/")) return false;
 
-          // drop those pages which do not use default layout
-          if (frontmatter.home || frontmatter.layout) return false;
+        // drop those pages which do not use default layout
+        if (frontmatter.home || frontmatter.layout) return false;
 
-          return true;
-        },
-
-        getInfo: ({ excerpt, frontmatter, git = {} }) => {
-          // getting page info
-          const info: Record<string, any> = {
-            author: frontmatter.author || "",
-            categories: frontmatter.categories || [],
-            date: frontmatter.date || git.createdTime || null,
-            tags: frontmatter.tags || [],
-            excerpt: page.excerpt,
-          };
-
-          return info;
-        },
+        return true;
       },
-    ],
+
+      getInfo: ({ excerpt, frontmatter, git = {} }) => {
+        // getting page info
+        const info: Record<string, any> = {
+          author: frontmatter.author || "",
+          categories: frontmatter.categories || [],
+          date: frontmatter.date || git.createdTime || null,
+          tags: frontmatter.tags || [],
+          excerpt: page.excerpt,
+        };
+
+        return info;
+      },
+    }),
     // other plugins ...
   ],
 };
@@ -159,28 +158,27 @@ Let’s start with 2 examples here.
 Imagine you are setting tags for each articles witlh `tag` field in page frontmatter. You want a tag mapping page in `/tag/` with `TagMap` layout , and group each tag list with tagName in `/tag/tagName` with `TagList` layout, you probably need a configuation like this:
 
 ```ts
-// theme
+// theme intrance
+import { blogPlugin } from "vuepress-plugin-blog2";
+
 export default {
   name: "vuepress-theme-xxx",
   plugins: [
-    [
-      "blog2",
-      {
-        // other options ...
-        category: [
-          {
-            key: "tag",
-            getter: ({ frontmatter }) => frontmatter.tag || [],
-            path: "/tag/",
-            layout: "TagMap",
-            frontmatter: () => ({ title: "Tag page" }),
-            itemPath: "/tag/:name/",
-            itemLayout: "TagList",
-            itemFrontmatter: (name) => ({ title: `Tag ${name}` }),
-          },
-        ],
-      },
-    ],
+    blogPlugin({
+      // other options ...
+      category: [
+        {
+          key: "tag",
+          getter: ({ frontmatter }) => frontmatter.tag || [],
+          path: "/tag/",
+          layout: "TagMap",
+          frontmatter: () => ({ title: "Tag page" }),
+          itemPath: "/tag/:name/",
+          itemLayout: "TagList",
+          itemFrontmatter: (name) => ({ title: `Tag ${name}` }),
+        },
+      ],
+    }),
     // other plugins ...
   ],
 };
@@ -189,25 +187,24 @@ export default {
 Also, you may want to star some of your articles, and display them to visitors. When you are setting `star: true` in frontmatter to mark them, you probably need a configuation like this to display them in `/star/` path with `StarList` layout:
 
 ```ts
-// theme
+// theme intrance
+import { blogPlugin } from "vuepress-plugin-blog2";
+
 export default {
   name: "vuepress-theme-xxx",
   plugins: [
-    [
-      "blog2",
-      {
-        // other options ...
-        type: [
-          {
-            key: "star",
-            filter: ({ frontmatter }) => frontmatter.star,
-            path: "/star/",
-            layout: "StarList",
-            frontmatter: () => ({ title: "Star page" }),
-          },
-        ],
-      },
-    ],
+    blogPlugin({
+      // other options ...
+      type: [
+        {
+          key: "star",
+          filter: ({ frontmatter }) => frontmatter.star,
+          path: "/star/",
+          layout: "StarList",
+          frontmatter: () => ({ title: "Star page" }),
+        },
+      ],
+    }),
     // other plugins ...
   ],
 };
