@@ -22,9 +22,12 @@
       "StackBlitz",
       "VideoPlayer",
       "YouTube",
+      "AppearanceSwitch",
       "IconDisplay",
       "KatexPlayground",
-      "NetlifyBadge"
+      "NetlifyBadge",
+      "ThemeColorPicker",
+      "ToggleFullScreenButton"
     ]
   },
   "MD035": {

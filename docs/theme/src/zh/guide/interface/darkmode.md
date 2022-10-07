@@ -17,11 +17,7 @@ tag:
 
 切换下面的按钮以查看效果。
 
-<!-- markdownlint-disable-->
-
 <AppearanceSwitch />
-
-<!-- markdownlint-restore -->
 
 ## 选项
 
