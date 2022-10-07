@@ -90,40 +90,39 @@ flowchart TB
 ::: details 案例
 
 ```ts
-// 主题
+// 主题入口
+import { blogPlugin } from "vuepress-plugin-blog2";
+
 export default {
   name: "vuepress-theme-xxx",
   plugins: [
-    [
-      "blog2",
-      {
-        filter: ({ filePathRelative, frontmatter }) => {
-          // 舍弃那些不是从 Markdown 文件生成的页面
-          if (!filePathRelative) return false;
+    blogPlugin({
+      filter: ({ filePathRelative, frontmatter }) => {
+        // 舍弃那些不是从 Markdown 文件生成的页面
+        if (!filePathRelative) return false;
 
-          // 舍弃 `archives` 文件夹的页面
-          if (filePathRelative.startsWith("archives/")) return false;
+        // 舍弃 `archives` 文件夹的页面
+        if (filePathRelative.startsWith("archives/")) return false;
 
-          // 舍弃那些没有使用默认布局的页面
-          if (frontmatter.home || frontmatter.layout) return false;
+        // 舍弃那些没有使用默认布局的页面
+        if (frontmatter.home || frontmatter.layout) return false;
 
-          return true;
-        },
-
-        getInfo: ({ excerpt, frontmatter, git = {} }) => {
-          // 获取页面信息
-          const info: Record<string, any> = {
-            author: frontmatter.author || "",
-            categories: frontmatter.categories || [],
-            date: frontmatter.date || git.createdTime || null,
-            tags: frontmatter.tags || [],
-            excerpt: page.excerpt,
-          };
-
-          return info;
-        },
+        return true;
       },
-    ],
+
+      getInfo: ({ excerpt, frontmatter, git = {} }) => {
+        // 获取页面信息
+        const info: Record<string, any> = {
+          author: frontmatter.author || "",
+          categories: frontmatter.categories || [],
+          date: frontmatter.date || git.createdTime || null,
+          tags: frontmatter.tags || [],
+          excerpt: page.excerpt,
+        };
+
+        return info;
+      },
+    }),
     // 其他插件 ...
   ],
 };
@@ -154,28 +153,27 @@ export default {
 假设你想为每篇文章设置标签，并且你正在通过 `frontmatter.tag` 设置它们。同时，你想要在 `/tag/` 中使用 `TagMap` 布局的标签页面，并在`/tag/标签名称` 中使用 `TagList` 布局对标签按名称进行分组，你可能需要这样的配置:
 
 ```ts
-// 主题
+// 主题入口
+import { blogPlugin } from "vuepress-plugin-blog2";
+
 export default {
   name: "vuepress-theme-xxx",
   plugins: [
-    [
-      "blog2",
-      {
-        // 其他配置 ...
-        category: [
-          {
-            key: "tag",
-            getter: ({ frontmatter }) => frontmatter.tag || [],
-            path: "/tag/",
-            layout: "TagMap",
-            frontmatter: () => ({ title: "标签页" }),
-            itemPath: "/tag/:name/",
-            itemLayout: "TagList",
-            itemFrontmatter: (name) => ({ title: `${name}标签` }),
-          },
-        ],
-      },
-    ],
+    blogPlugin({
+      // 其他配置 ...
+      category: [
+        {
+          key: "tag",
+          getter: ({ frontmatter }) => frontmatter.tag || [],
+          path: "/tag/",
+          layout: "TagMap",
+          frontmatter: () => ({ title: "标签页" }),
+          itemPath: "/tag/:name/",
+          itemLayout: "TagList",
+          itemFrontmatter: (name) => ({ title: `${name}标签` }),
+        },
+      ],
+    }),
     // 其他插件 ...
   ],
 };
@@ -184,25 +182,24 @@ export default {
 此外，你可能希望为你的一些文章加注星标，并将其展示给访问者。当你在 frontmatter 中设置 `star: true` 来标记它们时，你可能需要这样的配置来在 `/star/` 路径中以 `StarList` 布局显示它们:
 
 ```ts
-// 主题
+// 主题入口
+import { blogPlugin } from "vuepress-plugin-blog2";
+
 export default {
   name: "vuepress-theme-xxx",
   plugins: [
-    [
-      "blog2",
-      {
-        // 其他配置 ...
-        type: [
-          {
-            key: "star",
-            filter: ({ frontmatter }) => frontmatter.star,
-            path: "/star/",
-            layout: "StarList",
-            frontmatter: () => ({ title: "收藏页" }),
-          },
-        ],
-      },
-    ],
+    blogPlugin({
+      // 其他配置 ...
+      type: [
+        {
+          key: "star",
+          filter: ({ frontmatter }) => frontmatter.star,
+          path: "/star/",
+          layout: "StarList",
+          frontmatter: () => ({ title: "收藏页" }),
+        },
+      ],
+    }),
     // 其他插件 ...
   ],
 };
