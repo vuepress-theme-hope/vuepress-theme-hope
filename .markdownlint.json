@@ -26,7 +26,8 @@
       "IconDisplay",
       "KatexPlayground",
       "NetlifyBadge",
-      "ThemeColorPicker"
+      "ThemeColorPicker",
+      "ToggleFullScreenButton"
     ]
   },
   "MD035": {
