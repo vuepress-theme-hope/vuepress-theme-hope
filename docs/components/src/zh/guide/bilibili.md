@@ -20,10 +20,17 @@ B 站视频 bvid。
 
 视频分 P。
 
+### width
+
+- 类型: `string | number`
+- 默认值: `100%`
+
+B 站 iframe 高度。
+
 ### height
 
 - 类型: `string | number`
-- 默认值: `400`
+- 默认值: `auto`
 
 B 站 iframe 高度。
 

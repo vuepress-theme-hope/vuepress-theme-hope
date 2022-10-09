@@ -20,10 +20,17 @@ BiliBili video id
 
 Part of the video.
 
+### width
+
+- Type: `string | number`
+- Default: `100%`
+
+BiliBili iframe width.
+
 ### height
 
 - Type: `string | number`
-- Default: `400`
+- Default: `auto`
 
 BiliBili iframe height.
 

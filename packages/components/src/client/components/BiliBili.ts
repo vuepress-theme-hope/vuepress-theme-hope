@@ -19,7 +19,12 @@ export default defineComponent({
 
     height: {
       type: [String, Number],
-      default: 400,
+      default: "auto",
+    },
+
+    width: {
+      type: [String, Number],
+      default: "100%",
     },
 
     time: {
@@ -41,6 +46,7 @@ export default defineComponent({
   setup(props) {
     return (): VNode | null =>
       h("iframe", {
+        ref: "bili",
         // Tip: `https://www.bilibili.com/blackboard/newplayer.html?bvid=${props.bvid}&as_wide=1&page=1` only support whitelist sites now
         src: `https://player.bilibili.com/player.html?bvid=${props.bvid}&t=${
           props.time
@@ -51,11 +57,21 @@ export default defineComponent({
         allow:
           "accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture",
         style: {
-          height:
-            typeof props.height === "string"
-              ? props.height
-              : `${props.height}px`,
+          width:
+            typeof props.width === "string" ? props.width : `${props.width}px`,
         },
       });
+  },
+  mounted() {
+    const bili = this.$refs["bili"] as HTMLIFrameElement;
+
+    bili.style.height =
+      typeof this.height === "string"
+        ? this.height.toLowerCase() == "auto"
+          ? bili.scrollWidth > 520
+            ? `${(bili.scrollWidth * 9) / 16 + 70}px`
+            : `${(bili.scrollWidth * 9) / 16}px`
+          : this.height
+        : (bili.style.height = `${this.height}px`);
   },
 });
