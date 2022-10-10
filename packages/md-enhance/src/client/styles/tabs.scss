@@ -33,12 +33,12 @@
   padding: 0;
   border-radius: 8px 8px 0 0;
 
-  background-color: var(--tab-nav-bg-color);
+  background: var(--tab-nav-bg-color);
   list-style: none;
 
   white-space: nowrap;
 
-  transition: background-color var(--color-transition, 0.3s ease);
+  transition: background var(--color-transition, 0.3s ease);
 
   @media (max-width: hope-config.$mobile) {
     border-radius: 0;
@@ -55,7 +55,7 @@
   padding: 0.5em 1em;
   border-radius: 8px 8px 0 0;
 
-  background-color: transparent;
+  background: transparent;
   color: var(--tab-nav-text-color);
 
   font-weight: 600;
@@ -64,11 +64,11 @@
 
   cursor: pointer;
 
-  transition: background-color var(--color-transition, 0.3s ease),
+  transition: background var(--color-transition, 0.3s ease),
     color var(--color-transition, 0.3s ease);
 
   &:hover {
-    background-color: var(--tab-nav-hover-color);
+    background: var(--tab-nav-hover-color);
   }
 
   &::before,
@@ -92,7 +92,7 @@
   }
 
   &.active {
-    background-color: var(--tab-bg-color);
+    background: var(--tab-bg-color);
 
     &::before {
       background: radial-gradient(
@@ -122,6 +122,7 @@
   display: none;
   padding: 1rem 0.75rem;
   background: var(--tab-bg-color);
+  transition: background var(--color-transition, 0.3s ease);
 
   &.active {
     display: block;

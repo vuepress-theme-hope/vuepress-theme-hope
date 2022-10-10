@@ -9,7 +9,7 @@
 @mixin theme($theme) {
   .reveal-viewport#{$theme} {
     @include body-background;
-    background-color: $background-color;
+    background: $background-color;
   }
 
   .reveal#{$theme} {
@@ -20,7 +20,7 @@
 
     @media print {
       .backgrounds {
-        background-color: $background-color;
+        background: $background-color;
       }
     }
 
@@ -313,7 +313,7 @@
         border: none;
 
         &:nth-child(2n) {
-          background-color: inherit !important;
+          background: inherit !important;
         }
       }
 

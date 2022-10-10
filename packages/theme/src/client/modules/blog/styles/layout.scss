@@ -12,6 +12,8 @@
     padding-bottom: 2rem;
 
     background: var(--bg-color-back);
+
+    transition: background var(--color-transition);
   }
 
   &.has-toc .page.blog {

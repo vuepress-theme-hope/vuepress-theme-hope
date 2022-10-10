@@ -4,6 +4,7 @@
 
   .page & {
     background: var(--bg-color-float);
+    transition: background var(--color-transition);
   }
 
   .blogger {
@@ -38,9 +39,13 @@
 
     > div {
       width: 25%;
+
       font-size: 13px;
       text-align: center;
+
       cursor: pointer;
+
+      transition: color var(--color-transition);
 
       &:hover {
         color: var(--theme-color);

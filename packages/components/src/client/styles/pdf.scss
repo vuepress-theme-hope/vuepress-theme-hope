@@ -13,10 +13,12 @@
   padding: 8px;
   border-radius: 8px;
 
-  background-color: var(--c-bg);
+  background: var(--c-bg);
+
+  transition: background var(--color-transition, 0.3s ease);
 
   &:hover {
-    background-color: var(--c-bg-light);
+    background: var(--c-bg-light);
   }
 }
 

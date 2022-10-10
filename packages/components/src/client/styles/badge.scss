@@ -14,13 +14,13 @@
   padding: 0 6px;
   border-radius: 3px;
 
-  background-color: var(--c-brand, #3eaf7c);
+  background: var(--c-brand, #3eaf7c);
   color: var(--white);
 
   font-size: 14px;
   line-height: 18px;
 
-  transition: background-color var(--color-transition, 0.3s ease),
+  transition: background var(--color-transition, 0.3s ease),
     color var(--color-transition, 0.3s ease);
 
   // compatible with toc
@@ -29,23 +29,23 @@
   }
 
   &.tip {
-    background-color: var(--badge-tip-color);
+    background: var(--badge-tip-color);
   }
 
   &.warning {
-    background-color: var(--badge-warning-color);
+    background: var(--badge-warning-color);
   }
 
   &.danger {
-    background-color: var(--badge-danger-color);
+    background: var(--badge-danger-color);
   }
 
   &.info {
-    background-color: var(--badge-info-color);
+    background: var(--badge-info-color);
   }
 
   &.note {
-    background-color: var(--badge-note-color);
+    background: var(--badge-note-color);
   }
 
   & + & {

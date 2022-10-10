@@ -12,6 +12,9 @@
 
   text-align: left;
 
+  transition: background var(--color-transition),
+    box-shadow var(--color-transition);
+
   @media (max-width: hope-config.$pad) {
     margin: 0 auto 1rem;
   }

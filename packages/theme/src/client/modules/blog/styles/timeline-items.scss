@@ -180,7 +180,7 @@
         // stylelint-disable max-nesting-depth
         &::before {
           border-color: var(--theme-color);
-          background-color: var(--bg-color-active);
+          background: var(--bg-color-active);
         }
         // stylelint-enable max-nesting-depth
       }

@@ -12,9 +12,9 @@
 
   padding: 0 2rem;
 
-  background-color: var(--bg-color);
+  background: var(--bg-color);
 
-  transition: background-color 0.5s;
+  transition: background 0.5s;
 
   @media (max-width: hope-config.$tablet) {
     display: block;

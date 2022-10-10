@@ -2,7 +2,11 @@
   margin: 1rem auto;
   padding: 1rem;
   border: 1px solid var(--c-border, #eaecef);
+
   text-align: center;
+
+  transition: background var(--color-transition, 0.3s ease),
+    border var(--color-transition, 0.3s ease);
 
   .codepen-button {
     display: block;
@@ -12,15 +16,19 @@
     border: 1px solid var(--c-brand, #3eaf7c);
     border-radius: 4px;
 
-    background-color: transparent;
+    background: transparent;
     color: var(--c-brand, #3eaf7c);
 
     font-size: 16px;
 
     cursor: pointer;
 
+    transition: background var(--color-transition, 0.3s ease),
+      border var(--color-transition, 0.3s ease),
+      color var(--color-transition, 0.3s ease);
+
     &:hover {
-      background-color: var(--c-brand-light, #4abf8a);
+      background: var(--c-brand-light, #4abf8a);
       color: var(--c-bg, #fff);
     }
   }

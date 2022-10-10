@@ -30,7 +30,7 @@
 
     cursor: pointer;
 
-    transition: background-color 0.3s, color 0.3s;
+    transition: background 0.3s, color 0.3s;
 
     @media (max-width: hope-config.$mobile) {
       font-size: 0.9rem;

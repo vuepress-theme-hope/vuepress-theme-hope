@@ -20,15 +20,18 @@ input[type="checkbox"].task-list-item-checkbox {
     border: 1px solid #ddd;
     border-radius: 2px;
 
-    background-color: #fff;
+    background: #fff;
 
     text-align: center;
 
     visibility: visible;
 
+    transition: background var(--color-transition, 0.3s ease),
+      border-color var(--color-transition, 0.3s ease);
+
     #{hope-config.$dark-selector} & {
       border-color: #666;
-      background-color: #333;
+      background: #333;
     }
   }
 
@@ -36,11 +39,11 @@ input[type="checkbox"].task-list-item-checkbox {
     &::after {
       content: "";
       border-color: var(--c-brand, #3eaf7c);
-      background-color: var(--c-brand, #3eaf7c);
+      background: var(--c-brand, #3eaf7c);
 
       #{hope-config.$dark-selector} & {
         border-color: var(--c-brand, #3eaf7c);
-        background-color: var(--c-brand, #3eaf7c);
+        background: var(--c-brand, #3eaf7c);
       }
     }
 

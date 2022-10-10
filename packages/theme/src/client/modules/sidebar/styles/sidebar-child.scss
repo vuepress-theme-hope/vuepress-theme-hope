@@ -16,7 +16,7 @@
   border-width: 0;
   border-left: 0.25rem solid transparent;
 
-  background-color: transparent;
+  background: transparent;
   color: var(--text-color);
 
   font-size: 1.1em;
@@ -32,7 +32,7 @@
 
   &.clickable {
     &:hover {
-      background-color: var(--bg-color-active);
+      background: var(--bg-color-active);
     }
 
     &.exact {
@@ -90,12 +90,12 @@ button.sidebar-heading {
   }
 
   &:hover {
-    background-color: var(--bg-color-active);
+    background: var(--bg-color-active);
   }
 
   &.active {
     border-left-color: var(--theme-color);
-    background-color: var(--theme-color-mask);
+    background: var(--theme-color-mask);
     color: var(--theme-color);
     font-weight: 500;
 
@@ -110,7 +110,7 @@ button.sidebar-heading {
     border-left: none;
 
     &.active {
-      background-color: transparent;
+      background: transparent;
       font-weight: 500;
     }
   }
