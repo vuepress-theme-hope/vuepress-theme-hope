@@ -1,5 +1,7 @@
-.article {
+.article-item {
   position: relative;
+
+  display: block;
 
   box-sizing: border-box;
 
@@ -7,13 +9,9 @@
   margin: 0 auto 1.25rem;
   border-radius: 0.4rem;
 
-  background: var(--bg-color-float);
-  box-shadow: 0 1px 3px 1px var(--card-shadow);
+  color: inherit;
 
   text-align: left;
-
-  transition: background var(--color-transition),
-    box-shadow var(--color-transition);
 
   @media (max-width: hope-config.$pad) {
     margin: 0 auto 1rem;
@@ -27,17 +25,19 @@
     margin-bottom: 0;
   }
 
-  &:hover {
-    box-shadow: 0 2px 6px 2px var(--card-shadow);
-  }
-
-  > a {
-    display: block;
+  > article {
     padding: 0.75rem 1.25rem;
-    color: inherit;
+    background: var(--bg-color-float);
+    box-shadow: 0 1px 3px 1px var(--card-shadow);
+    transition: background var(--color-transition),
+      box-shadow var(--color-transition);
 
     @media (max-width: hope-config.$pad) {
       padding: 0.75rem 1rem;
+    }
+
+    &:hover {
+      box-shadow: 0 2px 6px 2px var(--card-shadow);
     }
   }
 

@@ -32,35 +32,36 @@ export default defineComponent({
     const { config, items } = useArticleInfo(info);
 
     return (): VNode =>
-      h(
-        "article",
-        {
-          class: "article",
-          vocab: "https://schema.org/",
-          typeof: "Article",
-        },
-        h(RouterLink, { to: props.path }, () => [
-          info.value.sticky ? h(StickyIcon) : null,
-          h("header", { class: "title" }, [
-            info.value.isEncrypted ? h(LockIcon) : null,
-            info.value.type === "slide" ? h(SlideIcon) : null,
-            h("span", { property: "headline" }, info.value.title),
-            info.value.cover
-              ? h("meta", {
-                  property: "image",
-                  content: withBase(info.value.cover),
-                })
+      h(RouterLink, { class: "article-item", to: props.path }, () =>
+        h(
+          "article",
+          {
+            vocab: "https://schema.org/",
+            typeof: "Article",
+          },
+          [
+            info.value.sticky ? h(StickyIcon) : null,
+            h("header", { class: "title" }, [
+              info.value.isEncrypted ? h(LockIcon) : null,
+              info.value.type === "slide" ? h(SlideIcon) : null,
+              h("span", { property: "headline" }, info.value.title),
+              info.value.cover
+                ? h("meta", {
+                    property: "image",
+                    content: withBase(info.value.cover),
+                  })
+                : null,
+            ]),
+            info.value.excerpt
+              ? h("div", { class: "excerpt", innerHTML: info.value.excerpt })
               : null,
-          ]),
-          info.value.excerpt
-            ? h("div", { class: "excerpt", innerHTML: info.value.excerpt })
-            : null,
-          h("hr", { class: "hr" }),
-          h(PageInfo, {
-            config: unref(config),
-            ...(items.value ? { items: items.value } : {}),
-          }),
-        ])
+            h("hr", { class: "hr" }),
+            h(PageInfo, {
+              config: unref(config),
+              ...(items.value ? { items: items.value } : {}),
+            }),
+          ]
+        )
       );
   },
 });
