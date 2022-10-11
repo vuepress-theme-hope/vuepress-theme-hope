@@ -25,14 +25,28 @@ B 站视频 bvid。
 - 类型: `string | number`
 - 默认值: `100%`
 
-B 站 iframe 高度。
+B 站 iframe 宽度。
 
 ### height
 
-- 类型: `string | number`
-- 默认值: `auto`
+- Type: `string | number`
+- Default: `0`
 
-B 站 iframe 高度。
+B 站 iframe 高度, 当值为 0 时 `autoHeight` 生效。
+
+### autoHeight
+
+- Type: `Array<number>`
+- Default: `[9 / 16, 70]`
+
+B 站 iframe 高度自动计算参数, `height = width * autoHeight[0] + autoHeight[1]`.
+
+### mobileWidth
+
+- Type: `number`
+- Default: `520`
+
+B 站 iframe 移动端播放器触发宽度, 必须与 `autoHeight` 同时使用. 当 iframe 宽度小于设定值时, 高度将会变为 `height = width * autoHeight[0]`
 
 ### time
 
@@ -68,8 +82,8 @@ B 站 iframe 高度。
 
 一个自定义设置的 B 站视频:
 
-<BiliBili bvid="BV1kt411o7C3" :high-quality="false" :danmaku="false" />
+<BiliBili bvid="BV1kt411o7C3" :auto-height="[9 / 16, 20]" :high-quality="false" :danmaku="false" />
 
 ```md
-<BiliBili bvid="BV1kt411o7C3" :high-quality="false" :danmaku="false" />
+<BiliBili bvid="BV1kt411o7C3" :auto-height="[9 / 16, 20]" :high-quality="false" :danmaku="false" />
 ```

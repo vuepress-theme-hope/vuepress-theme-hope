@@ -1,4 +1,4 @@
-import { defineComponent, h } from "vue";
+import { PropType, defineComponent, h } from "vue";
 import type { VNode } from "vue";
 
 import "../styles/bilibli.scss";
@@ -19,12 +19,22 @@ export default defineComponent({
 
     height: {
       type: [String, Number],
-      default: "auto",
+      default: 0,
+    },
+
+    autoHeight: {
+      type: Array as PropType<Array<number>>,
+      default: () => [9 / 16, 70],
     },
 
     width: {
       type: [String, Number],
       default: "100%",
+    },
+
+    mobileWidth: {
+      type: Number,
+      default: 520,
     },
 
     time: {
@@ -62,16 +72,24 @@ export default defineComponent({
         },
       });
   },
+
   mounted() {
+    const getHeight = (width: number): string => {
+      if (this.height === 0) {
+        if (width < this.mobileWidth) {
+          return `${width * this.autoHeight[0]}px`;
+        } else {
+          return `${width * this.autoHeight[0] + this.autoHeight[1]}px`;
+        }
+      } else {
+        return typeof this.height === "string"
+          ? this.height
+          : `${this.height}px`;
+      }
+    };
+
     const bili = this.$refs["bili"] as HTMLIFrameElement;
 
-    bili.style.height =
-      typeof this.height === "string"
-        ? this.height.toLowerCase() == "auto"
-          ? bili.scrollWidth > 520
-            ? `${(bili.scrollWidth * 9) / 16 + 70}px`
-            : `${(bili.scrollWidth * 9) / 16}px`
-          : this.height
-        : (bili.style.height = `${this.height}px`);
+    bili.style.height = getHeight(bili.scrollWidth);
   },
 });

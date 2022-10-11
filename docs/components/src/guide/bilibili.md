@@ -11,7 +11,7 @@ Embed BiliBili vidoes in Markdown files.
 - Type: `string`
 - Required: Yes
 
-BiliBili video id
+BiliBili video id.
 
 ### page
 
@@ -30,9 +30,23 @@ BiliBili iframe width.
 ### height
 
 - Type: `string | number`
-- Default: `auto`
+- Default: `0`
 
-BiliBili iframe height.
+BiliBili iframe height, when the value is 0, `autoHeight` is valid.
+
+### autoHeight
+
+- Type: `Array<number>`
+- Default: `[9 / 16, 70]`
+
+Automatic calculation parameters of BiliBili iframe height, `height = width * autoHeight[0] + autoHeight[1]`.
+
+### mobileWidth
+
+- Type: `number`
+- Default: `520`
+
+BiliBili iframe mobile player trigger width, must be used with `autoHeight`. When the iframe width smaller than the set width, the height will become `height = width * autoHeight[0]`
 
 ### time
 
@@ -68,8 +82,8 @@ A bilibili video with start time and page:
 
 A bilibili video with custom settings:
 
-<BiliBili bvid="BV1kt411o7C3" :high-quality="false" :danmaku="false" />
+<BiliBili bvid="BV1kt411o7C3" :auto-height="[9 / 16, 20]" :high-quality="false" :danmaku="false" />
 
 ```md
-<BiliBili bvid="BV1kt411o7C3" :high-quality="false" :danmaku="false" />
+<BiliBili bvid="BV1kt411o7C3" :auto-height="[9 / 16, 20]" :high-quality="false" :danmaku="false" />
 ```
