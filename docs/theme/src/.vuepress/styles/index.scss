@@ -1,6 +1,6 @@
 .theme-hope-content a {
-  &[href*="github.com/"],
-  &[href*=".vuejs.org/"],
+  &[href*="github.com"],
+  &[href*=".vuejs.org"],
   &[href*="/v2/blog/"],
   &[href*="/v2/comment/"],
   &[href*="/v2/components/"],
@@ -34,11 +34,11 @@
     }
   }
 
-  &[href*="github.com/"]::before {
+  &[href*="github.com"]::before {
     content: "\e653";
   }
 
-  &[href*=".vuejs.org/"]::before {
+  &[href*=".vuejs.org"]::before {
     content: "\f25f";
   }
 
