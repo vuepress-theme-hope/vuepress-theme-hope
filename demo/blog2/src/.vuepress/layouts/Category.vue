@@ -56,7 +56,7 @@ const categoryMap = useBlogCategory("category");
 
     cursor: pointer;
 
-    transition: background-color 0.3s, color 0.3s;
+    transition: background 0.3s, color 0.3s;
 
     @media (max-width: 419px) {
       font-size: 0.9rem;
@@ -77,7 +77,7 @@ const categoryMap = useBlogCategory("category");
     }
 
     &.router-link-active {
-      background-color: var(--c-brand);
+      background: var(--c-brand);
 
       .category-num {
         color: var(--c-bg);

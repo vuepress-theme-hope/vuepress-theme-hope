@@ -1,3 +1,18 @@
+@mixin dot() {
+  content: " ";
+
+  position: absolute;
+  z-index: 2;
+
+  border: 1px solid var(--dot-border-color);
+  border-radius: 50%;
+
+  background: var(--dot-color);
+
+  transition: background var(--color-transition),
+    border-color var(--color-transition);
+}
+
 .timeline-list-wrapper {
   --dot-color: #fff;
   --dot-bar-color: #eaecef;
@@ -58,6 +73,8 @@
       margin-left: -2px;
 
       background: var(--dot-bar-color);
+
+      transition: background var(--color-transition);
     }
   }
 
@@ -72,21 +89,15 @@
     font-size: 20px;
 
     &::before {
-      content: " ";
+      @include dot;
 
-      position: absolute;
       top: 50%;
       left: -20px;
-      z-index: 2;
 
       width: 8px;
       height: 8px;
       margin-top: -4px;
       margin-left: -4px;
-      border: 1px solid var(--dot-border-color);
-      border-radius: 50%;
-
-      background: var(--dot-color);
     }
   }
 
@@ -103,29 +114,28 @@
     font-size: 12px;
     line-height: 32px;
 
-    &::before {
-      content: " ";
+    transition: color var(--color-transition);
 
-      position: absolute;
+    &::before {
+      @include dot;
       top: 24px;
       left: -19px;
-      z-index: 2;
 
       width: 6px;
       height: 6px;
       margin-left: -4px;
-      border: 1px solid var(--dot-border-color);
-      border-radius: 50%;
-
-      background: var(--dot-color);
     }
   }
 
   .timeline-title {
     color: inherit;
+
     font-size: 14px;
     line-height: 32px;
+
     cursor: pointer;
+
+    transition: color var(--color-transition);
   }
 
   .timeline-item {
@@ -137,6 +147,8 @@
     border-bottom: 1px dashed var(--border-color);
 
     list-style: none;
+
+    transition: border-color var(--color-transition);
 
     &:hover {
       .timeline-date {

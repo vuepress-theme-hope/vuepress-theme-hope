@@ -18,9 +18,14 @@
 #appearance-switch {
   @include reset.button;
   vertical-align: middle;
+
   padding: 6px;
+
   color: var(--dark-grey);
+
   cursor: pointer;
+
+  transition: color var(--color-transition);
 
   &:hover {
     color: var(--theme-color);

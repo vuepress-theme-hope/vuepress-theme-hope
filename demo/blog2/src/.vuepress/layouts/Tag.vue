@@ -55,7 +55,7 @@ const tagMap = useBlogCategory("tag");
 
     cursor: pointer;
 
-    transition: background-color 0.3s, color 0.3s;
+    transition: background 0.3s, color 0.3s;
 
     @media (max-width: 419px) {
       font-size: 0.9rem;
@@ -76,7 +76,7 @@ const tagMap = useBlogCategory("tag");
     }
 
     &.router-link-active {
-      background-color: var(--c-brand);
+      background: var(--c-brand);
 
       .tag-num {
         color: var(--c-bg);

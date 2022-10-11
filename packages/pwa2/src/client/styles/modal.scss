@@ -49,6 +49,9 @@
   font-weight: 600;
   line-height: 2.2rem;
 
+  transition: background var(--color-transition, 0.3s ease),
+    color var(--color-transition, 0.3s ease);
+
   // stylelint-disable media-feature-name-no-unknown
   @media (display-mode: standalone) {
     display: none;
@@ -105,6 +108,7 @@
 
     background: var(--c-bg, #fff);
 
+    transition: background var(--color-transition, 0.3s ease);
     animation: 0.15s pwa-opened;
 
     @media (max-width: hope-config.$laptop) {
@@ -137,6 +141,7 @@
       @include reset.button;
       float: right;
       color: var(--grey3);
+      transition: color var(--color-transition, 0.3s ease);
 
       &:hover,
       &:focus {
@@ -171,6 +176,8 @@
       border-radius: 24px;
 
       background: #eee;
+
+      transition: background var(--color-transition, 0.3s ease);
 
       @media (max-width: hope-config.$pad) {
         width: 60px;
@@ -269,9 +276,12 @@
 
     li {
       color: var(--dark-grey);
+
       font-weight: 600;
       font-size: 16px;
       line-height: 29px;
+
+      transition: color var(--color-transition, 0.3s ease);
     }
   }
 
@@ -287,7 +297,7 @@
     button {
       @include reset.button;
       width: 4em;
-      transition: background 0.2s;
+      transition: background var(--color-transition, 0.3s ease);
 
       &:hover,
       &:focus {
@@ -379,6 +389,7 @@
   .install-button {
     background: var(--c-brand, #3eaf7c);
     color: var(--white);
+    transition: color var(--color-transition, 0.3s ease);
 
     @media (max-width: hope-config.$mobile) {
       span {
@@ -421,6 +432,9 @@
     font-size: 14px;
     text-align: center;
 
+    transition: background var(--color-transition, 0.3s ease),
+      box-shadow var(--color-transition, 0.3s ease);
+
     &::after {
       content: " ";
 
@@ -433,6 +447,8 @@
       border-top: 1em solid var(--white);
       border-right: 0.8em solid transparent;
       border-left: 0.8em solid transparent;
+
+      transition: border-color var(--color-transition, 0.3s ease);
     }
 
     p {
@@ -448,6 +464,8 @@
 
       background: #07c160;
       color: var(--white);
+
+      transition: color var(--color-transition, 0.3s ease);
     }
   }
 }

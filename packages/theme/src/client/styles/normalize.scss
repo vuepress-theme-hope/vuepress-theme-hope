@@ -5,7 +5,7 @@
 html,
 body {
   background: var(--bg-color);
-  transition: background-color var(--color-transition);
+  transition: background var(--color-transition);
 }
 
 #{hope-config.$dark-selector} {
@@ -29,8 +29,7 @@ kbd {
 
 code {
   font-family: var(--font-family-code);
-  transition: background-color var(--color-transition),
-    color var(--color-transition);
+  transition: background var(--color-transition), color var(--color-transition);
 
   #{hope-config.$dark-selector} & {
     background: #333;

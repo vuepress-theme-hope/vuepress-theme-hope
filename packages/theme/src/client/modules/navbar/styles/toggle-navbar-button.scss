@@ -30,9 +30,9 @@
     width: 16px;
     height: 2px;
 
-    background-color: var(--dark-grey);
+    background: var(--dark-grey);
 
-    transition: top 0.25s, background-color 0.5s, transform 0.25s;
+    transition: top 0.25s, background 0.5s, transform 0.25s;
   }
 
   .button-top {
@@ -93,8 +93,8 @@
       .button-top,
       .button-middle,
       .button-bottom {
-        background-color: var(--theme-color);
-        transition: top 0.25s, background-color 0.25s, transform 0.25s;
+        background: var(--theme-color);
+        transition: top 0.25s, background 0.25s, transform 0.25s;
       }
     }
   }

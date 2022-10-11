@@ -27,7 +27,7 @@
     line-height: 1.5;
     text-align: center;
 
-    transition: background-color var(--color-transition),
+    transition: background var(--color-transition),
       color var(--color-transition);
 
     &.clickable:hover {

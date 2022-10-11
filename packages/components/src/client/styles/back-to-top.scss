@@ -13,9 +13,13 @@
   padding: 0.5rem;
   border-radius: 1rem;
 
-  background-color: var(--c-bg, #fff);
+  background: var(--c-bg, #fff);
   color: var(--c-brand, #3eaf7c);
   box-shadow: 2px 2px 10px 0 var(--card-shadow);
+
+  transition: background var(--color-transition, 0.3s ease),
+    color var(--color-transition, 0.3s ease),
+    box-shadow var(--color-transition, 0.3s ease);
 
   @media (max-width: hope-config.$tablet) {
     width: 2.25rem;

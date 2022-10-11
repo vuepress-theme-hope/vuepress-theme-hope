@@ -17,7 +17,7 @@ div[class*="language-"] {
     cursor: pointer;
 
     .copy-icon {
-      background-color: currentcolor;
+      background: currentcolor;
 
       -webkit-mask-image: var(--copy-icon);
       mask-image: var(--copy-icon);
@@ -86,7 +86,7 @@ div[class*="language-"] {
       transition: opacity 0.4s;
 
       &:hover {
-        background-color: var(--code-hl-bg-color, rgb(0 0 0 / 66%));
+        background: var(--code-hl-bg-color, rgb(0 0 0 / 66%));
       }
 
       &.copied::after {
@@ -102,7 +102,7 @@ div[class*="language-"] {
         padding: 0.625rem;
         border-radius: 0.5rem;
 
-        background-color: var(--code-hl-bg-color, rgb(0 0 0 / 66%));
+        background: var(--code-hl-bg-color, rgb(0 0 0 / 66%));
 
         font-weight: 500;
         line-height: 1.25rem;

@@ -1,13 +1,15 @@
 .icon-display-wrapper {
   display: flex;
-  margin: 10px 0;
   flex-wrap: wrap;
+  margin: 10px 0;
 
   .icon {
     box-sizing: border-box;
+
     width: 20%;
     padding: 16px 10px;
     border-radius: 6px;
+
     text-align: center;
 
     @media (max-width: 768px) {
@@ -19,7 +21,7 @@
     }
 
     &:hover {
-      background-color: var(--bgcolor-light);
+      background: var(--bgcolor-light);
       cursor: pointer;
     }
 

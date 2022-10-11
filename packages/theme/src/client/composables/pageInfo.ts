@@ -29,7 +29,7 @@ import type {
 } from "../../shared/index.js";
 
 declare const ENABLE_BLOG: boolean;
-declare const ENABLE_VISITOR: boolean;
+declare const SUPPORT_PAGEVIEW: boolean;
 
 export const usePageAuthor = (): ComputedRef<AuthorInfo[]> => {
   const themeLocale = useThemeLocaleData();
@@ -116,7 +116,7 @@ export const usePageInfo = (): {
     tag: tag.value,
     isOriginal: frontmatter.value.isOriginal || false,
     readingTime: page.value.readingTime,
-    pageview: ENABLE_VISITOR
+    pageview: SUPPORT_PAGEVIEW
       ? "pageview" in frontmatter.value
         ? frontmatter.value.pageview
         : true

@@ -63,7 +63,7 @@ export const hopeTheme =
 
       define: () => ({
         ENABLE_BLOG: status.enableBlog,
-        ENABLE_VISITOR: status.enableVisitor,
+        SUPPORT_PAGEVIEW: status.supportPageview,
       }),
 
       extendsBundlerOptions: (config: unknown, app): void =>

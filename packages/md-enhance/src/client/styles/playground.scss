@@ -23,9 +23,12 @@
     padding: 8px 10px;
     border-bottom: 1px solid var(--c-border, #ddd);
 
-    background-color: var(--playground-header-bg-color, #eee);
+    background: var(--playground-header-bg-color, #eee);
 
     font-weight: 500;
+
+    transition: background var(--color-transition, 0.3s ease),
+      border-color var(--color-transition, 0.3s ease);
   }
 
   .title {
@@ -62,7 +65,8 @@
   .preview-container {
     position: relative;
     overflow: hidden;
-    background-color: var(--c-bg);
+    background: var(--c-bg);
+    transition: background var(--color-transition, 0.3s ease);
 
     iframe {
       display: block;
@@ -80,7 +84,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
     background: var(--grey15);
+
+    transition: background var(--color-transition, 0.3s ease);
 
     .loading-icon {
       width: 4em;

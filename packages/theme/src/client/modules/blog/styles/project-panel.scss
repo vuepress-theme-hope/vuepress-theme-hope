@@ -21,9 +21,9 @@
     padding: 12px;
     border-radius: 8px;
 
-    background-color: var(--bg-color-float);
+    background: var(--bg-color-float);
 
-    transition: background-color var(--color-transition),
+    transition: background var(--color-transition),
       transform var(--transform-transition);
 
     @media (max-width: hope-config.$pad) {
@@ -47,6 +47,8 @@
 
       font-weight: 500;
       font-size: 16px;
+
+      transition: color var(--color-transition);
     }
 
     .desc {

@@ -120,8 +120,7 @@
 
       font-size: 1.2rem;
 
-      transition: background-color var(--color-transition),
-        color var(--color-transition);
+      transition: color var(--color-transition), color var(--color-transition);
 
       @media (max-width: hope-config.$tablet) {
         padding: 0.8rem 1.2rem;
@@ -133,18 +132,18 @@
       }
 
       &:hover {
-        background-color: var(--theme-color);
+        background: var(--theme-color);
         color: var(--white);
       }
 
       &.primary {
-        background-color: var(--theme-color);
+        background: var(--theme-color);
         color: var(--white);
 
         // stylelint-disable max-nesting-depth
         &:hover {
           border-color: var(--theme-color-light);
-          background-color: var(--theme-color-light);
+          background: var(--theme-color-light);
         }
         // stylelint-enable max-nesting-depth
       }
