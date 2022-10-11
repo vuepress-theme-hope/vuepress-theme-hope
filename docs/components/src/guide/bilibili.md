@@ -11,7 +11,7 @@ Embed BiliBili vidoes in Markdown files.
 - Type: `string`
 - Required: Yes
 
-BiliBili video id
+BiliBili video id.
 
 ### page
 
@@ -20,12 +20,26 @@ BiliBili video id
 
 Part of the video.
 
+### width
+
+- Type: `string | number`
+- Default: `100%`
+
+BiliBili component width.
+
 ### height
 
 - Type: `string | number`
-- Default: `400`
+- Required: No
 
-BiliBili iframe height.
+BiliBili component height
+
+### radio
+
+- Type: `number`
+- Default: `16 / 9`
+
+BiliBili component radio, ONLY valid when `height` not set.
 
 ### time
 
@@ -45,24 +59,24 @@ Whether to enable danmaku
 
 A bilibili video:
 
-<BiliBili bvid="BV1Be4y1f7Es" />
+<BiliBili bvid="BV1kt411o7C3" />
 
 ```md
-<BiliBili bvid="BV1Be4y1f7Es" />
+<BiliBili bvid="BV1kt411o7C3" />
 ```
 
-A bilibili video with start time and page:
+A bilibili video with radio, start time and page:
 
-<BiliBili bvid="BV1Be4y1f7Es" :time="60" :page="2" />
+<BiliBili bvid="BV1kt411o7C3" :ratio="9/16" :time="60" :page="2" />
 
 ```md
-<BiliBili bvid="BV1Be4y1f7Es" :time="60" :page="2" />
+<BiliBili bvid="BV1kt411o7C3" :ratio="9/16" :time="60" :page="2" />
 ```
 
 A bilibili video with custom settings:
 
-<BiliBili bvid="BV1kt411o7C3" :high-quality="false" :danmaku="false" />
+<BiliBili bvid="BV1kt411o7C3" :auto-height="[9 / 16, 20]" :high-quality="false" :danmaku="false" />
 
 ```md
-<BiliBili bvid="BV1kt411o7C3" :high-quality="false" :danmaku="false" />
+<BiliBili bvid="BV1kt411o7C3" :auto-height="[9 / 16, 20]" :high-quality="false" :danmaku="false" />
 ```

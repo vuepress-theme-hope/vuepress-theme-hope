@@ -42,18 +42,18 @@ tag:
 
 Видео bilibili:
 
-<BiliBili bvid="BV1Be4y1f7Es" />
+<BiliBili bvid="BV1kt411o7C3" />
 
 ```md
-<BiliBili bvid="BV1Be4y1f7Es" />
+<BiliBili bvid="BV1kt411o7C3" />
 ```
 
 Видео bilibili со временем начала и страницей:
 
-<BiliBili bvid="BV1Be4y1f7Es" :time="60" :page="2" />
+<BiliBili bvid="BV1kt411o7C3" :ratio="9/16" :time="60" :page="2" />
 
 ```md
-<BiliBili bvid="BV1Be4y1f7Es" :time="60" :page="2" />
+<BiliBili bvid="BV1kt411o7C3" :ratio="9/16" :time="60" :page="2" />
 ```
 
 Видео bilibili с пользовательскими настройками:

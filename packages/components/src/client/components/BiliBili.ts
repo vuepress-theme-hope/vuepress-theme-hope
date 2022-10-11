@@ -1,4 +1,6 @@
 import { defineComponent, h } from "vue";
+import { useSize } from "../composables/index.js";
+
 import type { VNode } from "vue";
 
 import "../styles/bilibli.scss";
@@ -17,9 +19,19 @@ export default defineComponent({
       default: 1,
     },
 
+    width: {
+      type: [String, Number],
+      default: "100%",
+    },
+
     height: {
       type: [String, Number],
-      default: 400,
+      default: undefined,
+    },
+
+    ratio: {
+      type: Number,
+      default: 16 / 9,
     },
 
     time: {
@@ -39,8 +51,11 @@ export default defineComponent({
   },
 
   setup(props) {
+    const { el, width, height } = useSize<HTMLIFrameElement>(props);
+
     return (): VNode | null =>
       h("iframe", {
+        ref: el,
         // Tip: `https://www.bilibili.com/blackboard/newplayer.html?bvid=${props.bvid}&as_wide=1&page=1` only support whitelist sites now
         src: `https://player.bilibili.com/player.html?bvid=${props.bvid}&t=${
           props.time
@@ -51,10 +66,8 @@ export default defineComponent({
         allow:
           "accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture",
         style: {
-          height:
-            typeof props.height === "string"
-              ? props.height
-              : `${props.height}px`,
+          width: width.value,
+          height: height.value,
         },
       });
   },

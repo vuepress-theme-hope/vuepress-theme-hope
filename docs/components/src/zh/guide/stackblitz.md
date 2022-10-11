@@ -15,12 +15,26 @@ title: StackBlitz
 
 StackBlitz id
 
+### width
+
+- 类型: `string | number`
+- 默认值: `100%`
+
+StackBlitz 组件宽度。
+
 ### height
 
 - 类型: `string | number`
-- 默认值: `"80vh"`
+- 必填：否
 
-StackBlitz Demo 高度。
+StackBlitz 组件高度
+
+### radio
+
+- 类型: `number`
+- 默认值: `16 / 9`
+
+StackBlitz 组件高度宽高比，只有当未指定 `height` 时有效。
 
 ### file
 
