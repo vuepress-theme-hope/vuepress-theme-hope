@@ -1,5 +1,8 @@
-import { computed, defineComponent, h } from "vue";
 import { usePageLang } from "@vuepress/client";
+import { computed, defineComponent, h } from "vue";
+
+import { useSize } from "../composables/index.js";
+
 import type { VNode } from "vue";
 
 import "../styles/youtube.scss";
@@ -13,9 +16,19 @@ export default defineComponent({
       default: "",
     },
 
+    width: {
+      type: [String, Number],
+      default: "100%",
+    },
+
     height: {
       type: [String, Number],
-      default: 400,
+      default: undefined,
+    },
+
+    ratio: {
+      type: Number,
+      default: 16 / 9,
     },
 
     autoplay: Boolean,
@@ -65,6 +78,8 @@ export default defineComponent({
 
   setup(props) {
     const lang = usePageLang();
+    const { el, width, height } = useSize<HTMLIFrameElement>(props);
+
     const coreURL = computed(() =>
       props.id
         ? `${props.id}?`
@@ -102,15 +117,14 @@ export default defineComponent({
     return (): VNode | null =>
       coreURL.value
         ? h("iframe", {
+            ref: el,
             src: `https://www.youtube.com/embed/${coreURL.value}${params.value}`,
             class: "youtube-iframe",
             allow:
               "accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture",
             style: {
-              height:
-                typeof props.height === "string"
-                  ? props.height
-                  : `${props.height}px`,
+              width: width.value,
+              height: height.value,
             },
           })
         : null;

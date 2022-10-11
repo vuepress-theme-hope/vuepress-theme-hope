@@ -42,18 +42,18 @@ Embed BiliBili vidoes in Markdown files.
 
 A bilibili video:
 
-<BiliBili bvid="BV1Be4y1f7Es" />
+<BiliBili bvid="BV1kt411o7C3" />
 
 ```md
-<BiliBili bvid="BV1Be4y1f7Es" />
+<BiliBili bvid="BV1kt411o7C3" />
 ```
 
 A bilibili video with start time and page:
 
-<BiliBili bvid="BV1Be4y1f7Es" :time="60" :page="2" />
+<BiliBili bvid="BV1kt411o7C3" :ratio="9/16" :time="60" :page="2" />
 
 ```md
-<BiliBili bvid="BV1Be4y1f7Es" :time="60" :page="2" />
+<BiliBili bvid="BV1kt411o7C3" :ratio="9/16" :time="60" :page="2" />
 ```
 
 A bilibili video with custom settings:

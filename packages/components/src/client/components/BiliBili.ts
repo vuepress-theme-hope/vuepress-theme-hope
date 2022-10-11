@@ -1,4 +1,6 @@
-import { PropType, defineComponent, h } from "vue";
+import { defineComponent, h } from "vue";
+import { useSize } from "../composables/index.js";
+
 import type { VNode } from "vue";
 
 import "../styles/bilibli.scss";
@@ -17,24 +19,19 @@ export default defineComponent({
       default: 1,
     },
 
-    height: {
-      type: [String, Number],
-      default: 0,
-    },
-
-    autoHeight: {
-      type: Array as PropType<Array<number>>,
-      default: () => [9 / 16, 70],
-    },
-
     width: {
       type: [String, Number],
       default: "100%",
     },
 
-    mobileWidth: {
+    height: {
+      type: [String, Number],
+      default: undefined,
+    },
+
+    ratio: {
       type: Number,
-      default: 520,
+      default: 16 / 9,
     },
 
     time: {
@@ -54,9 +51,11 @@ export default defineComponent({
   },
 
   setup(props) {
+    const { el, width, height } = useSize<HTMLIFrameElement>(props);
+
     return (): VNode | null =>
       h("iframe", {
-        ref: "bili",
+        ref: el,
         // Tip: `https://www.bilibili.com/blackboard/newplayer.html?bvid=${props.bvid}&as_wide=1&page=1` only support whitelist sites now
         src: `https://player.bilibili.com/player.html?bvid=${props.bvid}&t=${
           props.time
@@ -67,29 +66,9 @@ export default defineComponent({
         allow:
           "accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture",
         style: {
-          width:
-            typeof props.width === "string" ? props.width : `${props.width}px`,
+          width: width.value,
+          height: height.value,
         },
       });
-  },
-
-  mounted() {
-    const getHeight = (width: number): string => {
-      if (this.height === 0) {
-        if (width < this.mobileWidth) {
-          return `${width * this.autoHeight[0]}px`;
-        } else {
-          return `${width * this.autoHeight[0] + this.autoHeight[1]}px`;
-        }
-      } else {
-        return typeof this.height === "string"
-          ? this.height
-          : `${this.height}px`;
-      }
-    };
-
-    const bili = this.$refs["bili"] as HTMLIFrameElement;
-
-    bili.style.height = getHeight(bili.scrollWidth);
   },
 });

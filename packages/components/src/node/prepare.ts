@@ -107,11 +107,11 @@ export const prepareConfigFile = (
     `components/config.js`,
     `${
       shouldImportUseScriptTag
-        ? `import { useScriptTag } from "${CLIENT_FOLDER}composables/index.js";\n`
+        ? `import { useScriptTag } from "${CLIENT_FOLDER}vueuse.js";\n`
         : ""
     }${
       shouldImportUseStyleTag
-        ? `import { useStyleTag } from "${CLIENT_FOLDER}composables/index.js";\n`
+        ? `import { useStyleTag } from "${CLIENT_FOLDER}vueuse.js";\n`
         : ""
     }${
       shouldImportH ? `import { h } from "vue";\n` : ""

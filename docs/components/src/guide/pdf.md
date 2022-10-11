@@ -17,12 +17,26 @@ You can use this component to embe a PDF viewer.
 
 PDF document link, relative path is NOT supported.
 
+### width
+
+- Type: `string | number`
+- Default: `100%`
+
+PDF viewer width.
+
 ### height
 
 - Type: `string | number`
-- Required: Yes
+- Required: No
 
-Height of PDF previewer.
+PDF viewer height
+
+### radio
+
+- Type: `number`
+- Default: `16 / 9`
+
+PDF viewer radio, ONLY valid when `height` not set.
 
 ### page
 

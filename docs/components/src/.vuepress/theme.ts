@@ -32,6 +32,7 @@ export default theme("components", {
       sidebar: [
         "/",
         {
+          icon: "plugin",
           text: "Components",
           prefix: "/guide/",
           children: "structure",
@@ -61,6 +62,7 @@ export default theme("components", {
       sidebar: [
         "/zh/",
         {
+          icon: "plugin",
           text: "组件",
           prefix: "/zh/guide/",
           children: "structure",

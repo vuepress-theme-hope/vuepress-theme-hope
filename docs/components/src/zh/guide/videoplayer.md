@@ -13,6 +13,27 @@ title: Video Player
 
 视频文件地址
 
+### width
+
+- 类型: `string | number`
+- 默认值: `100%`
+
+视频宽度。
+
+### height
+
+- 类型: `string | number`
+- 必填：否
+
+视频高度
+
+### radio
+
+- 类型: `number`
+- 默认值: `16 / 9`
+
+视频高度宽高比，只有当未指定 `height` 时有效。
+
 ### type
 
 - 类型: `string`

@@ -41,6 +41,7 @@ export default [
     external: [
       "@vuepress/client",
       "@vuepress/shared",
+      "@vueuse/core",
       "vue",
       "vuepress-shared/lib/client",
       /\.scss$/,
@@ -48,18 +49,18 @@ export default [
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/StackBlitz", {
-    external: ["vue", /\.scss$/],
+    external: ["@vueuse/core", "vue", /\.scss$/],
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/YouTube", {
-    external: ["@vuepress/client", "vue", /\.scss$/],
+    external: ["@vueuse/core", "@vuepress/client", "vue", /\.scss$/],
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/VideoPlayer", {
-    external: ["vue", /\.scss$/],
+    external: ["@vueuse/core", "vue", /\.scss$/],
     dtsExternal: ["@vueuse/core", /\.scss$/],
   }),
-  ...rollupTypescript("client/composables/index", {
+  ...rollupTypescript("client/vueuse", {
     external: ["@vueuse/core"],
   }),
 ];

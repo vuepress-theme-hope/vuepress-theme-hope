@@ -25,28 +25,21 @@ Part of the video.
 - Type: `string | number`
 - Default: `100%`
 
-BiliBili iframe width.
+BiliBili component width.
 
 ### height
 
 - Type: `string | number`
-- Default: `0`
+- Required: No
 
-BiliBili iframe height, when the value is 0, `autoHeight` is valid.
+BiliBili component height
 
-### autoHeight
-
-- Type: `Array<number>`
-- Default: `[9 / 16, 70]`
-
-Automatic calculation parameters of BiliBili iframe height, `height = width * autoHeight[0] + autoHeight[1]`.
-
-### mobileWidth
+### radio
 
 - Type: `number`
-- Default: `520`
+- Default: `16 / 9`
 
-BiliBili iframe mobile player trigger width, must be used with `autoHeight`. When the iframe width smaller than the set width, the height will become `height = width * autoHeight[0]`
+BiliBili component radio, ONLY valid when `height` not set.
 
 ### time
 
@@ -66,18 +59,18 @@ Whether to enable danmaku
 
 A bilibili video:
 
-<BiliBili bvid="BV1Be4y1f7Es" />
+<BiliBili bvid="BV1kt411o7C3" />
 
 ```md
-<BiliBili bvid="BV1Be4y1f7Es" />
+<BiliBili bvid="BV1kt411o7C3" />
 ```
 
-A bilibili video with start time and page:
+A bilibili video with radio, start time and page:
 
-<BiliBili bvid="BV1Be4y1f7Es" :time="60" :page="2" />
+<BiliBili bvid="BV1kt411o7C3" :ratio="9/16" :time="60" :page="2" />
 
 ```md
-<BiliBili bvid="BV1Be4y1f7Es" :time="60" :page="2" />
+<BiliBili bvid="BV1kt411o7C3" :ratio="9/16" :time="60" :page="2" />
 ```
 
 A bilibili video with custom settings:

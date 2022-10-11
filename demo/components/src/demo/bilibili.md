@@ -2,6 +2,6 @@
 
 ## Demo
 
-<BiliBili bvid="BV1Be4y1f7Es" />
+<BiliBili bvid="BV1kt411o7C3" />
 
-<BiliBili bvid="BV1Be4y1f7Es" :time="60" />
+<BiliBili bvid="BV1kt411o7C3" :time="60" />

@@ -15,12 +15,26 @@ Embed StackBlitz demo in Markdown files.
 
 StackBlitz id
 
+### width
+
+- Type: `string | number`
+- Default: `100%`
+
+Stackblitz component width.
+
 ### height
 
 - Type: `string | number`
-- Default: `"80vh"`
+- Required: No
 
-StackBlitz Demo height.
+Stackblitz component height
+
+### radio
+
+- Type: `number`
+- Default: `16 / 9`
+
+Stackblitz component radio, ONLY valid when `height` not set.
 
 ### file
 

@@ -21,12 +21,26 @@ YouTube 视频 ID
 
 :::
 
+### width
+
+- 类型: `string | number`
+- 默认值: `100%`
+
+YouTube 组件宽度。
+
 ### height
 
 - 类型: `string | number`
-- 默认值: `400`
+- 必填：否
 
-YouTube iframe 高度。
+YouTube 组件高度
+
+### radio
+
+- 类型: `number`
+- 默认值: `16 / 9`
+
+YouTube 组件高度宽高比，只有当未指定 `height` 时有效。
 
 ### autoplay
 

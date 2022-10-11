@@ -1,6 +1,5 @@
 ---
 title: Guide
-icon: creative
 ---
 
 ::: info Tree Shakable

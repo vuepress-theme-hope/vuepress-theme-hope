@@ -25,28 +25,21 @@ B 站视频 bvid。
 - 类型: `string | number`
 - 默认值: `100%`
 
-B 站 iframe 宽度。
+B 站组件宽度。
 
 ### height
 
-- Type: `string | number`
-- Default: `0`
+- 类型: `string | number`
+- 必填：否
 
-B 站 iframe 高度, 当值为 0 时 `autoHeight` 生效。
+B 站组件高度
 
-### autoHeight
+### radio
 
-- Type: `Array<number>`
-- Default: `[9 / 16, 70]`
+- 类型: `number`
+- 默认值: `16 / 9`
 
-B 站 iframe 高度自动计算参数, `height = width * autoHeight[0] + autoHeight[1]`.
-
-### mobileWidth
-
-- Type: `number`
-- Default: `520`
-
-B 站 iframe 移动端播放器触发宽度, 必须与 `autoHeight` 同时使用. 当 iframe 宽度小于设定值时, 高度将会变为 `height = width * autoHeight[0]`
+B 站组件高度宽高比，只有当未指定 `height` 时有效。
 
 ### time
 
@@ -66,18 +59,18 @@ B 站 iframe 移动端播放器触发宽度, 必须与 `autoHeight` 同时使用
 
 一个 B 站视频:
 
-<BiliBili bvid="BV1Be4y1f7Es" />
+<BiliBili bvid="BV1kt411o7C3" />
 
 ```md
-<BiliBili bvid="BV1Be4y1f7Es" />
+<BiliBili bvid="BV1kt411o7C3" />
 ```
 
 一个自定义分 P 和空降地址的 B 站视频:
 
-<BiliBili bvid="BV1Be4y1f7Es" :time="60" :page="2" />
+<BiliBili bvid="BV1kt411o7C3" :ratio="9/16" :time="60" :page="2" />
 
 ```md
-<BiliBili bvid="BV1Be4y1f7Es" :time="60" :page="2" />
+<BiliBili bvid="BV1kt411o7C3" :ratio="9/16" :time="60" :page="2" />
 ```
 
 一个自定义设置的 B 站视频:

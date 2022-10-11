@@ -21,12 +21,26 @@ It is ONLY not required, when you are setting `listType` to `"playlist"` and pro
 
 :::
 
+### width
+
+- Type: `string | number`
+- Default: `100%`
+
+YouTube componnet width.
+
 ### height
 
 - Type: `string | number`
-- Default: `400`
+- Required: No
 
-YouTube iframe height.
+YouTube componnet height
+
+### radio
+
+- Type: `number`
+- Default: `16 / 9`
+
+YouTube componnet radio, ONLY valid when `height` not set.
 
 ### autoplay
 
