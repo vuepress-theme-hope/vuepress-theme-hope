@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.109](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.108...v2.0.0-beta.109) (2022-10-11)
+
+### Features
+
+- **components:** support size options ([#2285](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2285)) ([0b6f38c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0b6f38cacee7e89d97e143169ece20352ce5ef8c))
+
+### Bug Fixes
+
+- **deps:** update dependency axios to v1.1.2 ([#2261](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2261)) ([99ed344](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/99ed344120cadec84ffd55638be1397811474c5b))
+- **deps:** update dependency inquirer to v9.1.3 ([#2262](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2262)) ([91b677e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/91b677ea16502ffcfe6d960b8ef153ade426e756))
+- **deps:** update dependency sass-loader to v13.1.0 ([#2263](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2263)) ([73efc77](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/73efc7704568cd7e9958cacb2f318d636018db40))
+- improve color transition ([dac17df](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/dac17df723deae5457ba7663386448db8ba267cc))
+- ja-JP locate missing in config ([#2264](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2264)) ([81bfa6c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/81bfa6c4f760ef75b31b0bfb8b4bb5e9fca646d0))
+- **theme:** fix article item transition ([584d3ef](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/584d3ef121dd9156d40f42a26042f843d3aae771))
+- **theme:** fix color transition ([4fe5fc3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4fe5fc3d1c06380135a8336219be81e1a7d75048))
+- **theme:** fix navbar slot ([1353008](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/13530082176a03b13a0abe3f340831405de8edfb))
+- **theme:** fix navbar slot, fix [#2286](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2286) ([330564b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/330564bd424a3ab06c06fa48c598bd6713092bb0))
+- **theme:** fix pageview issue, fix [#2278](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2278) ([a5d0f03](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a5d0f035b209f9109c150f7b0f9f642943363ce9))
+
 ## [2.0.0-beta.108](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.107...v2.0.0-beta.108) (2022-10-06)
 
 ### Features
