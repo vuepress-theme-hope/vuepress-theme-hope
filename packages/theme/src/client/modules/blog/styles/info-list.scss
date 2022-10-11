@@ -8,6 +8,8 @@
     border-radius: 6px;
     background: var(--bg-color-float);
     box-shadow: 0 1px 3px 1px var(--card-shadow);
+    transition: background var(--color-transition),
+      box-shadow var(--color-transition);
 
     &:hover {
       box-shadow: 0 2px 6px 2px var(--card-shadow);
@@ -37,6 +39,8 @@
 
     color: var(--grey3);
 
+    transition: color var(--color-transition);
+
     &:focus {
       outline: none;
     }
@@ -48,6 +52,8 @@
       border-radius: 50%;
 
       background: rgb(127 127 127 / 15%);
+
+      transition: background var(--color-transition);
 
       #{hope-config.$dark-selector} & {
         background: rgb(255 255 255 / 15%);
@@ -105,7 +111,9 @@
 
   .sticky-article {
     padding: 12px 8px 4px;
-    border-bottom: 1px dashed var(--grey14);
+    border-bottom: 1px dashed var(--grey);
+    transition: border-color var(--color-transition),
+      color var(--color-transition);
 
     &:hover {
       color: var(--theme-color);
