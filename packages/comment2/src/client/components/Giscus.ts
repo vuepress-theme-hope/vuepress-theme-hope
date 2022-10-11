@@ -3,15 +3,57 @@ import { computed, defineComponent, h, onMounted, ref } from "vue";
 import { useRoute } from "vue-router";
 
 import type { VNode } from "vue";
-import type { GiscusLang, GiscusProps } from "../utils/index.js";
 import type {
   CommentPluginFrontmatter,
+  GiscusInputPosition,
+  GiscusMapping,
   GiscusOptions,
+  GiscusRepo,
+  GiscusTheme,
 } from "../../shared/index.js";
 
 import "../styles/giscus.scss";
 
 declare const COMMENT_OPTIONS: GiscusOptions;
+
+type BooleanString = "0" | "1";
+
+export type GiscusLang =
+  | "de"
+  | "gsw"
+  | "en"
+  | "es"
+  | "fr"
+  | "id"
+  | "it"
+  | "ja"
+  | "ko"
+  | "pl"
+  | "ro"
+  | "ru"
+  | "tr"
+  | "vi"
+  | "zh-CN"
+  | "zh-TW";
+
+export type GiscusLoading = "lazy" | "eager";
+
+export interface GiscusProps {
+  id?: string | undefined;
+  repo: GiscusRepo;
+  repoId: string;
+  category?: string | undefined;
+  categoryId?: string | undefined;
+  mapping: GiscusMapping;
+  term?: string | undefined;
+  theme?: GiscusTheme | undefined;
+  reactionsEnabled?: BooleanString | undefined;
+  strict?: BooleanString | undefined;
+  emitMetadata?: BooleanString | undefined;
+  inputPosition?: GiscusInputPosition | undefined;
+  lang?: GiscusLang | undefined;
+  loading?: GiscusLoading | undefined;
+}
 
 const giscusOption = COMMENT_OPTIONS;
 const enableGiscus = Boolean(

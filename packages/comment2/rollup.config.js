@@ -42,4 +42,7 @@ export default [
     ],
     dtsExternal: [/\.s?css$/],
   }),
+  ...rollupTypescript("client/pageview", {
+    external: ["@waline/client/dist/pageview.mjs"],
+  }),
 ];

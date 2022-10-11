@@ -29,7 +29,7 @@ export default defineComponent({
   setup(props) {
     const info = toRef(props, "info");
 
-    const { config, items } = useArticleInfo(info);
+    const { config, items } = useArticleInfo(props);
 
     return (): VNode =>
       h(RouterLink, { class: "article-item", to: props.path }, () =>

@@ -12,6 +12,8 @@ import type { ArticleInfo } from "../../../../shared/index.js";
 
 import "../styles/article-list.scss";
 
+declare const SUPPORT_PAGEVIEW: boolean;
+
 export default defineComponent({
   name: "ArticleList",
 
@@ -69,6 +71,13 @@ export default defineComponent({
       const { page } = route.query;
 
       updatePage(page ? Number(page) : 1);
+
+      if (SUPPORT_PAGEVIEW)
+        void import("vuepress-plugin-comment2/lib/client/pageview.js").then(
+          ({ updatePageview }) => {
+            updatePageview();
+          }
+        );
     });
 
     return (): VNode =>

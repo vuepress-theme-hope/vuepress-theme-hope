@@ -26,6 +26,8 @@ const enableWaline = Boolean(walineOption.serverURL);
 
 if (WALINE_META) import("@waline/client/dist/waline-meta.css");
 
+export { pageviewCount };
+
 export default defineComponent({
   name: "WalineComment",
 

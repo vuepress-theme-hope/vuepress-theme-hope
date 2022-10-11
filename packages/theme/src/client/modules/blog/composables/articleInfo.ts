@@ -1,4 +1,4 @@
-import { computed, reactive, Ref } from "vue";
+import { computed, reactive, toRef } from "vue";
 import {
   getAuthor,
   getCategory,
@@ -12,7 +12,7 @@ import { useTagMap } from "./tagMap.js";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index.js";
 
-import type { ComputedRef } from "vue";
+import type { ComputedRef, Ref } from "vue";
 import type { AuthorInfo, DateInfo } from "vuepress-shared";
 import type { PageInfoProps } from "@theme-hope/modules/info/components/PageInfo.js";
 import type {
@@ -71,12 +71,14 @@ export const useArticleDate = (info: Ref<ArticleInfo>): DateRef =>
     return date ? getDate(date) : null;
   });
 
-export const useArticleInfo = (
-  info: Ref<ArticleInfo>
-): {
+export const useArticleInfo = (props: {
+  info: ArticleInfo;
+  path: string;
+}): {
   config: PageInfoProps;
   items: ComputedRef<PageInfo[] | false | undefined>;
 } => {
+  const info = toRef(props, "info");
   const blogOptions = useBlogOptions();
   const author = useArticleAuthor(info);
   const category = useArticleCategory(info);
@@ -91,6 +93,7 @@ export const useArticleInfo = (
     tag: tag.value,
     isOriginal: info.value.isOriginal || false,
     readingTime: info.value.readingTime || null,
+    pageview: props.path,
   });
 
   const items = computed(() => blogOptions.value.articleInfo);
