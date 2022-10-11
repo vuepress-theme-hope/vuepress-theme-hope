@@ -10,12 +10,12 @@
     "url": "https://mrhope.site"
   },
   "scripts": {
-    "broken-docs:webpack-build": "vuepress-webpack build src",
-    "broken-docs:webpack-clean-dev": "vuepress-webpack dev src --clean-cache",
-    "broken-docs:webpack-dev": "vuepress-webpack dev src",
     "docs:vite-build": "vuepress-vite build src",
     "docs:vite-clean-dev": "vuepress-vite dev src --clean-cache",
-    "docs:vite-dev": "vuepress-vite dev src"
+    "docs:vite-dev": "vuepress-vite dev src",
+    "docs:webpack-build": "vuepress-webpack build src",
+    "docs:webpack-clean-dev": "vuepress-webpack dev src --clean-cache",
+    "docs:webpack-dev": "vuepress-webpack dev src"
   },
   "dependencies": {
     "@vuepress/client": "2.0.0-beta.51",
