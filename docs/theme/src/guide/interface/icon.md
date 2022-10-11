@@ -9,12 +9,14 @@ tag:
   - Interface
 ---
 
-The entire theme adds FontClass format icon support in multiple places.
+The entire theme adds FontClass / Unage format icon support in multiple places.
 
 You can use iconfont and fontawesome to add icons to your project.
 
 - For china users, iconfont is recommended
 - For overseas users, fontawesome is recommended
+
+Also, png/svg format icon is supported. You can use absolute path or pathname to add icons.
 
 <!-- more -->
 
