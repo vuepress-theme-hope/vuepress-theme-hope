@@ -89,21 +89,21 @@ export default defineComponent({
                   emit("toggle-sidebar");
                 },
               }),
-              slots["left-start"]?.(),
+              slots["leftStart"]?.(),
               ...navbarLayout.value.left.map((item) => map[item]),
-              slots["left-end"]?.(),
+              slots["leftEnd"]?.(),
             ]),
 
             h("div", { class: "navbar-center" }, [
-              slots["center-start"]?.(),
+              slots["centerStart"]?.(),
               ...navbarLayout.value.center.map((item) => map[item]),
-              slots["center-end"]?.(),
+              slots["centerEnd"]?.(),
             ]),
 
             h("div", { class: "navbar-right" }, [
-              slots["right-start"]?.(),
+              slots["rightStart"]?.(),
               ...navbarLayout.value.right.map((item) => map[item]),
-              slots["right-end"]?.(),
+              slots["rightEnd"]?.(),
 
               h(ToggleNavbarButton, {
                 active: showScreen.value,

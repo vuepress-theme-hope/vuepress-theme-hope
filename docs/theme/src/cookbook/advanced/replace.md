@@ -303,7 +303,7 @@ Components that provide slots are as follows:
 
 - `DropdownLink`: `title`
 - `NavActions`: `before`, `after`
-- `Navbar`: `left`, `center`, `right`
+- `Navbar`: `leftStart`, `leftEnd`, `centerStart`, `centerEnd`, `rightStart`, `rightEnd`
 - `NavbarBrand`: `default`
 - `NavScreen`: `before`, `after`
 - `NavScreenDropdown`: `before`, `after`
