@@ -93,10 +93,12 @@ E.g.: you can use `@src` as an alias for your source directory.
 
 @tab TS
 
-```ts {8}
+```ts {10}
 // .vuepress/config.ts
-import { path } from "@vuepress/utils";
+import { getDirname, path } from "@vuepress/utils";
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
+
+const __dirname = getDirname(import.meta.url);
 
 export default {
   plugins: [
@@ -117,10 +119,12 @@ export default {
 
 @tab JS
 
-```js {8}
+```js {10}
 // .vuepress/config.js
-import { path } from "@vuepress/utils";
+import { getDirname, path } from "@vuepress/utils";
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
+
+const __dirname = getDirname(import.meta.url);
 
 export default {
   plugins: [

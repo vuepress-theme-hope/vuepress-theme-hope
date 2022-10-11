@@ -372,6 +372,10 @@ const onePlusTwoPlusThree = {{ 1 + 2 + 3 }}
 Обратите внимание, что псевдонимы пути недоступны в синтаксисе кода импорта. Вы можете использовать следующую конфигурацию для самостоятельной обработки псевдонима пути:
 
 ```js
+import { getDirname, path } from "@vuepress/utils";
+
+const __dirname = getDirname(import.meta.url);
+
 export default {
   markdown: {
     importCode: {

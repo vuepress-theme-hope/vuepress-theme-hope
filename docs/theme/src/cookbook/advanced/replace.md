@@ -22,9 +22,11 @@ You need to replace the component alias used in the theme with `alias` option in
 
 ```ts
 // .vuepress/config.ts
-import { path } from "@vuepress/utils";
+import { getDirname, path } from "@vuepress/utils";
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
+
+const __dirname = getDirname(import.meta.url);
 
 export default defineUserConfig({
   theme: hopeTheme({
@@ -46,8 +48,10 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-import { path } from "@vuepress/utils";
+import { getDirname, path } from "@vuepress/utils";
 import { hopeTheme } from "vuepress-theme-hope";
+
+const __dirname = getDirname(import.meta.url);
 
 export default {
   theme: hopeTheme({
@@ -245,9 +249,11 @@ For example, if your site has strong social attributes, and you want to display 
 
 ```ts
 // .vuepress/config.ts
-import { path } from "@vuepress/utils";
+import { getDirname, path } from "@vuepress/utils";
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
+
+const __dirname = getDirname(import.meta.url);
 
 export default defineUserConfig({
   theme: hopeTheme({

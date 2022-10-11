@@ -100,10 +100,13 @@ interface IncludeOptions {
 
 @tab TS
 
-```ts {10-17}
+```ts {13-20}
 // .vuepress/config.ts
+import { getDirname, path } from "@vuepress/utils";
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
+
+const __dirname = getDirname(import.meta.url);
 
 export default defineUserConfig({
   theme: hopeTheme({
@@ -126,9 +129,12 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {9-16}
+```js {12-19}
 // .vuepress/config.js
+import { getDirname, path } from "@vuepress/utils";
 import { hopeTheme } from "vuepress-theme-hope";
+
+const __dirname = getDirname(import.meta.url);
 
 export default {
   theme: hopeTheme({

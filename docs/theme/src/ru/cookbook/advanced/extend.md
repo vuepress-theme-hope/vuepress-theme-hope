@@ -26,9 +26,11 @@ tag:
 
 ```ts
 // .vuepress/theme/index.ts
-import { path } from "@vuepress/utils";
+import { getDirname, path } from "@vuepress/utils";
 import { hopeTheme } from "vuepress-theme-hope";
 import type { HopeThemeOptions } from "vuepress-theme-hope";
+
+const __dirname = getDirname(import.meta.url);
 
 export const localTheme = (options: HopeThemeOptions) => ({
   name: "vuepress-theme-local",
@@ -50,8 +52,10 @@ export const localTheme = (options: HopeThemeOptions) => ({
 
 ```js
 // .vuepress/theme/index.js
-import { path } from "@vuepress/utils";
+import { getDirname, path } from "@vuepress/utils";
 import { hopeTheme } from "vuepress-theme-hope";
+
+const __dirname = getDirname(import.meta.url);
 
 export default (options) => ({
   name: "vuepress-theme-local",

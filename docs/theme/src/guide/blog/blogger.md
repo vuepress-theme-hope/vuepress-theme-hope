@@ -87,9 +87,11 @@ You can also config your social media links with `blog.medias` option.
 
 ```ts
 // .vuepress/config.ts
-import { path } from "@vuepress/utils";
+import { getDirname, path } from "@vuepress/utils";
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
+
+const __dirname = getDirname(import.meta.url);
 
 export default defineUserConfig({
   thene: hopeTheme({
@@ -121,8 +123,10 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-import { path } from "@vuepress/utils";
+import { getDirname, path } from "@vuepress/utils";
 import { hopeTheme } from "vuepress-theme-hope";
+
+const __dirname = getDirname(import.meta.url);
 
 export default {
   theme: hopeTheme({

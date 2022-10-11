@@ -66,7 +66,9 @@ In order to import your own components correctly, you need to create aliases for
 
 ```ts
 // .vuepress/config.ts
-import { path } from "@vuepress/utils";
+import { getDirname, path } from "@vuepress/utils";
+
+const __dirname = getDirname(import.meta.url);
 
 export default {
   alias: {
