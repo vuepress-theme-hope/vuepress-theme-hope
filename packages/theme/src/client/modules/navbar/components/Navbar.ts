@@ -103,7 +103,7 @@ export default defineComponent({
             h("div", { class: "navbar-right" }, [
               slots["right-start"]?.(),
               ...navbarLayout.value.right.map((item) => map[item]),
-              slots["right-start"]?.(),
+              slots["right-end"]?.(),
 
               h(ToggleNavbarButton, {
                 active: showScreen.value,
