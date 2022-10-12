@@ -27,8 +27,8 @@
 
     font-weight: 500;
 
-    transition: background var(--color-transition, 0.3s ease),
-      border-color var(--color-transition, 0.3s ease);
+    transition: background var(--color-transition),
+      border-color var(--color-transition);
   }
 
   .title {
@@ -66,7 +66,7 @@
     position: relative;
     overflow: hidden;
     background: var(--c-bg);
-    transition: background var(--color-transition, 0.3s ease);
+    transition: background var(--color-transition);
 
     iframe {
       display: block;
@@ -87,7 +87,7 @@
 
     background: var(--grey15);
 
-    transition: background var(--color-transition, 0.3s ease);
+    transition: background var(--color-transition);
 
     .loading-icon {
       width: 4em;

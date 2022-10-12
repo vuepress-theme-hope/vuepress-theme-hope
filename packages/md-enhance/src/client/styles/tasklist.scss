@@ -26,8 +26,8 @@ input[type="checkbox"].task-list-item-checkbox {
 
     visibility: visible;
 
-    transition: background var(--color-transition, 0.3s ease),
-      border-color var(--color-transition, 0.3s ease);
+    transition: background var(--color-transition),
+      border-color var(--color-transition);
 
     #{hope-config.$dark-selector} & {
       border-color: #666;

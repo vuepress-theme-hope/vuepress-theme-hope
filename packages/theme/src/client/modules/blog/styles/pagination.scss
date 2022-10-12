@@ -21,7 +21,7 @@
 
     height: 30px;
     margin: 0 0.5rem;
-    border: 1px solid var(--border-color, #eaecef);
+    border: 1px solid var(--border-color);
     border-radius: 0.25rem;
 
     // stylelint-disable max-nesting-depth
@@ -31,7 +31,7 @@
 
       padding: 0 0.5rem;
 
-      background: var(--bg-color, #fff);
+      background: var(--bg-color);
       color: var(--theme-color);
 
       cursor: pointer;

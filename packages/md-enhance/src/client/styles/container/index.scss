@@ -62,9 +62,8 @@
 
 .custom-container {
   position: relative;
-  transition: background var(--color-transition, 0.3s ease),
-    border-color var(--color-transition, 0.3s ease),
-    color var(--color-transition, 0.3s ease);
+  transition: background var(--color-transition),
+    border-color var(--color-transition), color var(--color-transition);
 
   .custom-container-title {
     position: relative;
@@ -260,7 +259,7 @@
     &::before {
       border-radius: 50%;
       background: #ccc;
-      transition: background var(--color-transition, 0.3s ease),
+      transition: background var(--color-transition),
         transform var(--transform-transition);
 
       #{hope-config.$dark-selector} & {

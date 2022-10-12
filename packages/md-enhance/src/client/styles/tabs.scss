@@ -38,7 +38,7 @@
 
   white-space: nowrap;
 
-  transition: background var(--color-transition, 0.3s ease);
+  transition: background var(--color-transition);
 
   @media (max-width: hope-config.$mobile) {
     border-radius: 0;
@@ -64,8 +64,7 @@
 
   cursor: pointer;
 
-  transition: background var(--color-transition, 0.3s ease),
-    color var(--color-transition, 0.3s ease);
+  transition: background var(--color-transition), color var(--color-transition);
 
   &:hover {
     background: var(--tab-nav-hover-color);
@@ -122,7 +121,7 @@
   display: none;
   padding: 1rem 0.75rem;
   background: var(--tab-bg-color);
-  transition: background var(--color-transition, 0.3s ease);
+  transition: background var(--color-transition);
 
   &.active {
     display: block;
