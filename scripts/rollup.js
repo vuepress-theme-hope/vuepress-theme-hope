@@ -28,6 +28,7 @@ export const rollupTypescript = (
         format: "esm",
         sourcemap: true,
         exports: "named",
+        inlineDynamicImports,
         ...output,
       },
     ],
@@ -47,7 +48,6 @@ export const rollupTypescript = (
           ]
         : []),
     ],
-    inlineDynamicImports,
     external,
     treeshake: {
       unknownGlobalSideEffects: false,

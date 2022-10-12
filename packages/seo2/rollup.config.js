@@ -1,4 +1,4 @@
-import { rollupTypescript } from "../../scripts/rollup";
+import { rollupTypescript } from "../../scripts/rollup.js";
 
 export default rollupTypescript("node/index", {
   external: [
