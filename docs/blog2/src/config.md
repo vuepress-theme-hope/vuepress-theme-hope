@@ -9,6 +9,8 @@ icon: config
 
 - Type: `(page: Page) => Record<string, unknown>`
 - Required: No
+- Reference:
+  - [Guide → Gathering Info](./guide.md#gathering-info)
 
 Function getting article info.
 
@@ -18,6 +20,8 @@ Article info will injected in route meta so that they will be available later in
 
 - Type: `(page: Page) => boolean`
 - Default: `(page) => Boolean(page.filePathRelative) && !page.frontmatter.home`
+- Reference:
+  - [Guide → Collecting Articles](./guide.md#collecting-articles)
 
 Page filter, determine whether a page should be included.
 
@@ -26,12 +30,18 @@ By default, all the pages generated from Markdown files but not homepage will be
 ### category
 
 - Type: `BlogCategoryOptions[]`
+- Required: No
+- Reference:
+  - [Guide → Customizing Categories and Types](./guide.md#customizing-categories-and-types)
 
 Blog category config, see [Blog Category Config](#blog-category-config)
 
 ### type
 
 - Type: `BlogTypeOptions[]`
+- Required: No
+- Reference:
+  - [Guide → Customizing Categories and Types](./guide.md#customizing-categories-and-types)
 
 Blog type config, see [Blog Type Config](#blog-type-config)
 

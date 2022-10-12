@@ -134,7 +134,7 @@ Now you can set [different themes for code blocks](../guide/interface/code-theme
 
 The following new features are added:
 
-- [Image Mark](../guide/markdown/others.md#image-mark)
+- [Image Mark](../guide/markdown/image.md#image-mark)
 
 - [GFM](../guide/markdown/others.md#gfm)
 

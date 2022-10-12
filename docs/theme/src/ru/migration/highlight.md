@@ -134,7 +134,7 @@ Valine и Vssue больше не поддерживаются.
 
 Добавлены следующие новые функции:
 
-- [Метка изображения](../guide/markdown/others.md#image-mark)
+- [Метка изображения](../guide/markdown/image.md#image-mark)
 
 - [GFM](../guide/markdown/others.md#gfm)
 

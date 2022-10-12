@@ -13,6 +13,7 @@ tag:
 Доступные компоненты:
 
 - Badge
+- BiliBili
 - CodePen
 - FontIcon
 - PDF

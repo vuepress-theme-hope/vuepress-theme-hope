@@ -54,7 +54,7 @@ New in Page:
 
 - [Path navigation](layout/breadcrumb.md)
 
-- Add [TOC anchor](layout/page.md#heading-list) on the right side under the desktop width
+- Add [TOC anchor](layout/page.md#header-list) on the right side under the desktop width
 
 - [Custom footer](layout/footer.md)
 

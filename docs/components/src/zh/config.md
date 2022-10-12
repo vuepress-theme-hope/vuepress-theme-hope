@@ -31,13 +31,15 @@ icon: config
 - `"FontIcon"`
 - `"PDF"`
 - `"StackBlitz"`
-- `""VideoPlayer""`
+- `"VideoPlayer"`
 - `"YouTube"`
 
 ## addThis
 
 - 类型: `string | false`
 - 默认: `false`
+- 参考:
+  - [指南 → AddThis](./guide/addthis.md#使用)
 
 AddThis 的公开 ID。
 
@@ -71,7 +73,7 @@ AddThis 的公开 ID。
 
 ## iconAssets
 
-- 类型: `string`
+- 类型: `` "iconfont" | "fontawesome" | `//${string}` | `http://${string}` | `https://${string}`  ``
 - 必填: 否
 
 字体图标资源链接，支持 `'iconfont'` 和 `'fontawesome'` 关键字。

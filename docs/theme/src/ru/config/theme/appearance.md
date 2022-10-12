@@ -21,7 +21,7 @@ tag:
 
 ## iconAssets <Badge text="Только root" type="warning" />
 
-- Тип: `string`
+- Тип: `` "iconfont" | "fontawesome" | `//${string}` | `http://${string}` | `https://${string}`  ``
 - Обязательный: Нет
 - Детали: [Интерфейс → Иконка](../../guide/interface/icon.md)
 

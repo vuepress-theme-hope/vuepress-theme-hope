@@ -13,6 +13,7 @@ By using `vuepress-plugin-components`, you can import and use some components in
 Available components:
 
 - Badge
+- BiliBili
 - CodePen
 - FontIcon
 - PDF

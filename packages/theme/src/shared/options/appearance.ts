@@ -103,7 +103,12 @@ export interface HopeThemeAppearanceRootOptions {
    *
    * @description `'iconfont'` and `'fontawesome'` keywords are supported
    */
-  iconAssets?: string;
+  iconAssets?:
+    | "iconfont"
+    | "fontawesome"
+    | `//${string}`
+    | `http://${string}`
+    | `https://${string}`;
 
   /**
    * Font Icon class prefix

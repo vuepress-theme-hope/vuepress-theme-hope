@@ -16,9 +16,9 @@ Whether to support full GFM syntax.
 
 For full GFM syntax, see [GFM](https://github.github.com/gfm/).
 
-We are not 100% supporting it to be honestly, we only supply it’s syntax including tasklists, footnote and so on.
+We are not 100% supporting it to be honestly, we only supply it’s syntax including footnote, tasklists, code highlight, image mark and so on.
 
-Some of the behavior might be different, for example to allow Vue syntax, we are not disallowing `<script>` tags. But in most situation, the behavior should be same.
+Some of the behavior might be different, for example to support Vue syntax, we are not disallowing `<script>` tags. But in most situation, the behavior should be same.
 
 :::
 

@@ -31,13 +31,15 @@ Available component names:
 - `"FontIcon"`
 - `"PDF"`
 - `"StackBlitz"`
-- `""VideoPlayer""`
+- `"VideoPlayer"`
 - `"YouTube"`
 
 ## addThis
 
 - Type: `string | false`
 - Default: `false`
+- Reference:
+  - [Guide → AddThis](./guide/addthis.md#usage)
 
 Public ID of addThis.
 
@@ -71,7 +73,7 @@ Locales config for BackToTop button.
 
 ## iconAssets
 
-- Type: `string`
+- Type: `` "iconfont" | "fontawesome" | `//${string}` | `http://${string}` | `https://${string}`  ``
 - Required: No
 
 Link of font icon asset, `'iconfont'` and `'fontawesome'` keywords are supported.

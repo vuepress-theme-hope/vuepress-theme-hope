@@ -13,6 +13,7 @@ tag:
 可用组件:
 
 - Badge
+- BiliBili
 - CodePen
 - FontIcon
 - PDF
