@@ -3,10 +3,6 @@
   align-items: center;
   justify-content: center;
 
-  background: var(--grey14);
-
-  transition: background var(--color-transition, 0.3s ease);
-
   .loading-icon {
     width: 4em;
     height: 4em;
