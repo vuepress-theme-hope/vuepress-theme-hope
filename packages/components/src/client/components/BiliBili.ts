@@ -1,4 +1,6 @@
-import { defineComponent, h } from "vue";
+import { useEventListener } from "@vueuse/core";
+import { checkIsMobile } from "vuepress-shared/lib/client";
+import { computed, defineComponent, h, onMounted, ref } from "vue";
 import { useSize } from "../composables/index.js";
 
 import type { VNode } from "vue";
@@ -51,7 +53,25 @@ export default defineComponent({
   },
 
   setup(props) {
-    const { el, width, height } = useSize<HTMLIFrameElement>(props);
+    const isMobile = ref(false);
+    // on pc with width >= 640, a 68px hint will be under video
+    const extraHeight = computed(() => (isMobile.value ? 0 : 68));
+
+    const updateMobile = (): void => {
+      isMobile.value =
+        checkIsMobile(navigator.userAgent) || el.value!.clientWidth < 640;
+    };
+
+    onMounted(() => {
+      updateMobile();
+      useEventListener("orientationchange", () => updateMobile());
+      useEventListener("resize", () => updateMobile());
+    });
+
+    const { el, width, height } = useSize<HTMLIFrameElement>(
+      props,
+      extraHeight
+    );
 
     return (): VNode | null =>
       h("iframe", {

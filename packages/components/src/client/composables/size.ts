@@ -1,5 +1,6 @@
 import { useEventListener } from "@vueuse/core";
-import { computed, onMounted, ref, unref } from "vue";
+import { computed, onMounted, isRef, ref, unref, watch } from "vue";
+import type { MaybeRef } from "@vueuse/core";
 import type { Ref } from "vue";
 
 const getValue = (value: string | number) =>
@@ -18,7 +19,8 @@ export interface SizeInfo<E extends HTMLElement> {
 }
 
 export const useSize = <E extends HTMLElement>(
-  options: SizeOptions
+  options: SizeOptions,
+  extraHeight: MaybeRef<number> = 0
 ): SizeInfo<E> => {
   const el = ref<E>();
   const width = computed(() => getValue(unref(options.width) || "100%"));
@@ -28,18 +30,20 @@ export const useSize = <E extends HTMLElement>(
     const height = unref(options.height);
     const ratio = unref(options.ratio) || 16 / 9;
 
-    return height ? getValue(height) : `${Number(width) / ratio}px`;
+    return height
+      ? getValue(height)
+      : `${Number(width) / ratio + unref(extraHeight)}px`;
+  };
+
+  const updateHeight = () => {
+    height.value = getHeight(el.value!.clientWidth);
   };
 
   onMounted(() => {
-    height.value = getHeight(el.value!.clientWidth);
-
-    useEventListener("orientationchange", () => {
-      height.value = getHeight(el.value!.clientWidth);
-    });
-    useEventListener("resize", () => {
-      height.value = getHeight(el.value!.clientWidth);
-    });
+    updateHeight();
+    if (isRef(extraHeight)) watch(extraHeight, () => updateHeight());
+    useEventListener("orientationchange", () => updateHeight());
+    useEventListener("resize", () => updateHeight());
   });
 
   return {
