@@ -1,5 +1,5 @@
 import { usePageFrontmatter } from "@vuepress/client";
-import { computed, defineComponent, h } from "vue";
+import { defineComponent, h } from "vue";
 import { RouterLink } from "vue-router";
 import { generateIndexfromHash } from "vuepress-shared/lib/client";
 
@@ -17,13 +17,6 @@ export default defineComponent({
     const frontmatter = usePageFrontmatter<BlogPluginCategoryFrontmatter>();
     const tagMap = useTagMap();
 
-    const tagList = computed(() =>
-      Object.entries(tagMap.value.map).map(([name, { path }]) => ({
-        name,
-        path,
-      }))
-    );
-
     const isActive = (name: string): boolean =>
       name === frontmatter.value.blog?.name;
 
@@ -31,20 +24,21 @@ export default defineComponent({
       h(
         "ul",
         { class: "tag-list-wrapper" },
-        tagList.value.map(({ name, path }) =>
+        Object.entries(tagMap.value.map).map(([tag, { path, items }]) =>
           h(
             "li",
             {
               class: [
                 "tag",
                 // TODO: magic number 9 is tricky here
-                `tag${generateIndexfromHash(name, 9)}`,
-                { active: isActive(name) },
+                `tag${generateIndexfromHash(tag, 9)}`,
+                { active: isActive(tag) },
               ],
             },
-            h(RouterLink, { to: path }, () =>
-              h("div", { class: "tag-name" }, name)
-            )
+            h(RouterLink, { to: path }, () => [
+              tag,
+              h("span", { class: "tag-num" }, items.length),
+            ])
           )
         )
       );

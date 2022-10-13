@@ -50,6 +50,10 @@
     }
   }
 
+  .tag-num {
+    margin-left: 0.5em;
+  }
+
   @each $color in hope-config.$colors {
     $index: list.index(hope-config.$colors, $color) - 1;
 
