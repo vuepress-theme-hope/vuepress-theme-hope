@@ -188,6 +188,8 @@ export default {
 - container
 - footnote
 - imageMark
+- imageSize
+- imageTitle
 - include
 - mathjax
 - katex

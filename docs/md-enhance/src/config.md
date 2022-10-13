@@ -26,6 +26,8 @@ Some of the behavior might be different, for example to support Vue syntax, we a
 
 - Type: `boolean`
 - Default: `false`
+- Details:
+  - [Custom Container](./guide/container.md)
 
 Whether to enable custom container including
 
@@ -60,6 +62,8 @@ Whether to enable link check.
 
 - Type: `boolean`
 - Default: `false`
+- Details:
+  - [v-pre wrapper](./guide/others.md#v-pre)
 
 Whether to enable v-pre wrapper.
 
@@ -67,6 +71,8 @@ Whether to enable v-pre wrapper.
 
 - Type: `boolean`
 - Default: `false`
+- Details:
+  - [Tabs](./guide/tabs.md)
 
 Whether to enable tabs.
 
@@ -74,6 +80,8 @@ Whether to enable tabs.
 
 - Type: `boolean`
 - Default: `false`
+- Details:
+  - [Code Tabs](./guide/code-tabs.md)
 
 Whether to enable codetabs.
 
@@ -81,6 +89,8 @@ Whether to enable codetabs.
 
 - Type: `boolean`
 - Default: `false`
+- Details:
+  - [Align](./guide/align.md)
 
 Whether to enable custom align.
 
@@ -116,6 +126,8 @@ Whether to enable custom align.
   ```
 
 - Default: `false`
+- Details:
+  - [Attrs](./guide/attrs.md)
 
 Whether to enable attribute cutomize support.
 

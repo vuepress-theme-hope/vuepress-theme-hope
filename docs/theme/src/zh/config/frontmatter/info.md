@@ -36,7 +36,7 @@ tag:
 
 - 类型: `string`
 - 必填: 否
-- 参考:
+- 详情:
   - [指南 → 图标支持](../../guide/interface/icon.md)
 
 当前页面图标的 FontClass 或文件路径 (建议填写)。

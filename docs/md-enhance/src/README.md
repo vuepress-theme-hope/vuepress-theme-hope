@@ -186,6 +186,8 @@ This plugin exports the following Markdown-it plugin, and you can use them in ot
 - container
 - footnote
 - imageMark
+- imageSize
+- imageTitle
 - include
 - mathjax
 - katex

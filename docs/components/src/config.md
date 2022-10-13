@@ -38,7 +38,7 @@ Available component names:
 
 - Type: `string | false`
 - Default: `false`
-- Reference:
+- Details:
   - [Guide → AddThis](./guide/addthis.md#usage)
 
 Public ID of addThis.

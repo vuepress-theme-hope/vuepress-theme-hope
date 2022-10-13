@@ -26,6 +26,8 @@ icon: config
 
 - 类型: `boolean`
 - 默认值: `false`
+- 详情:
+  - [自定义容器](./guide/container.md)
 
 是否启用自定义容器支持:
 
@@ -60,6 +62,8 @@ icon: config
 
 - 类型: `boolean`
 - 默认值: `false`
+- 详情:
+  - [v-pre](./guide/others.md#v-pre)
 
 是否启用 v-pre 容器。
 
@@ -67,6 +71,8 @@ icon: config
 
 - 类型: `boolean`
 - 默认值: `false`
+- 详情:
+  - [选项卡](./guide/tabs.md)
 
 是否启用选项卡。
 
@@ -74,6 +80,8 @@ icon: config
 
 - 类型: `boolean`
 - 默认值: `false`
+- 详情:
+  - [代码组](./guide/code-tabs.md)
 
 是否启用代码组。
 
@@ -81,6 +89,8 @@ icon: config
 
 - 类型: `boolean`
 - 默认值: `false`
+- 详情:
+  - [自定义对齐](./guide/align.md)
 
 是否启用自定义对齐格式支持。
 
@@ -116,6 +126,8 @@ icon: config
   ```
 
 - 默认值: `false`
+- 详情:
+  - [定义属性](./guide/attrs.md)
 
 是否启用自定义属性支持。
 

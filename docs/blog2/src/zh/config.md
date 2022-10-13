@@ -9,7 +9,7 @@ icon: config
 
 - 类型: `(page: Page) => Record<string, unknown>`
 - 必填: 否
-- 参考:
+- 详情:
   - [指南 → 收集文章并生成信息](./guide.md#收集文章并生成信息)
 
 获取文章信息的函数。
@@ -20,7 +20,7 @@ icon: config
 
 - 类型: `(page: Page) => boolean`
 - 默认: `(page) => Boolean(page.filePathRelative) && !page.frontmatter.home`
-- 参考:
+- 详情:
   - [指南 → 收集文章并生成信息](./guide.md#收集文章并生成信息)
 
 页面过滤器，此函数用于鉴别页面是否作为文章。
@@ -31,7 +31,7 @@ icon: config
 
 - 类型: `BlogCategoryOptions[]`
 - 必填: 否
-- 参考:
+- 详情:
   - [指南 → 自定义类别和类型](./guide.md#自定义类别和类型)
 
 博客分类配置，详见 [博客分类配置](#博客分类配置)。
@@ -40,7 +40,7 @@ icon: config
 
 - 类型: `BlogTypeOptions[]`
 - 必填: 否
-- 参考:
+- 详情:
   - [指南 → 自定义类别和类型](./guide.md#自定义类别和类型)
 
 博客分类配置，详见 [博客类型配置](#博客类型配置)。

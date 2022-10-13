@@ -38,7 +38,7 @@ icon: config
 
 - 类型: `string | false`
 - 默认: `false`
-- 参考:
+- 详情:
   - [指南 → AddThis](./guide/addthis.md#使用)
 
 AddThis 的公开 ID。
