@@ -113,6 +113,11 @@ category:
 - [网站链接](https://blog.ciberviler.top/)
 - [源码地址](https://github.com/xlc520/xlc520.github.io)
 
+### someone blog
+
+- [网站链接](https://weigao.cc)
+- [源码地址](https://github.com/chenweigao/blogv2)
+
 ## 更多
 
 - 随时随地通过 PR 添加你的博客或文档至此。
