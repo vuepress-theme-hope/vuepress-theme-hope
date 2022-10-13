@@ -157,6 +157,20 @@ interface ImageMarkOptions {
 }
 ```
 
+### imageSize
+
+- Type: `boolean`
+- Default: `false`
+
+Whether enable image size support.
+
+### imageTitle
+
+- Type: `boolean`
+- Default: `false`
+
+Whether enable image title support.
+
 ### tasklist
 
 - Тип: `TaskListOptions | boolean`

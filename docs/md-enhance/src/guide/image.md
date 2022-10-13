@@ -13,7 +13,7 @@ Improve image syntax in Markdown to support color scheme and size.
 
 @tab TS
 
-```ts {7-10}
+```ts {7-12}
 // .vuepress/config.ts
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
@@ -24,6 +24,8 @@ export default {
       imageMark: true,
       // Enable image size
       imageSize: true,
+      // Enable image title
+      imageTitle: true,
     }),
   ],
 };
@@ -31,7 +33,7 @@ export default {
 
 @tab JS
 
-```js {7-10}
+```js {7-12}
 // .vuepress/config.js
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
@@ -42,6 +44,8 @@ export default {
       imageMark: true,
       // Enable image size
       imageSize: true,
+      // Enable image title
+      imageTitle: true,
     }),
   ],
 };
@@ -108,6 +112,20 @@ The above Markdown will be parsed as:
 <img src="/example.jpg" title="Image title" width="200" />
 <img src="/example.bmp" height="300" />
 ```
+
+## Image Title
+
+Sometimes, you may want to add a description with image, in this case, you should set `imageTitle: true` in plugin options.
+
+Then, when you add a title to the image, the image will be displayed as `<figure>` and title will be displayed as `<figurecaption>`.
+
+```md
+![GitHub Logo](/assets/icon/github-light.png "Github Logo")
+```
+
+Will be rendered as:
+
+![GitHub Logo](/assets/icon/github-light.png "Github Logo")
 
 <script setup lang="ts">
 import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch.js"

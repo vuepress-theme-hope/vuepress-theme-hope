@@ -61,6 +61,9 @@ export const prepareConfigFile = async (
   if (getStatus("imageMark", true))
     configImport += `import "${CLIENT_FOLDER}styles/image-mark.scss";\n`;
 
+  if (getStatus("imageTitle", true))
+    configImport += `import "${CLIENT_FOLDER}styles/image-title.scss";\n`;
+
   if (getStatus("mermaid")) {
     configImport += `import Mermaid from "${CLIENT_FOLDER}components/Mermaid.js";\n`;
     enhance += `app.component("Mermaid", Mermaid);\n`;
@@ -93,7 +96,7 @@ export const prepareConfigFile = async (
   return app.writeTemp(
     `md-enhance/config.js`,
     `import { defineClientConfig } from "@vuepress/client";
-    import { defineAsyncComponent } from "vue";
+import { defineAsyncComponent } from "vue";
 ${configImport}
 
 export default defineClientConfig({

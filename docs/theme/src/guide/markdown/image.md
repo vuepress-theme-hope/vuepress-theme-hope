@@ -18,7 +18,7 @@ Improve image syntax in Markdown to support color scheme and size.
 
 @tab TS
 
-```ts {9-12}
+```ts {9-14}
 // .vuepress/config.ts
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
@@ -31,6 +31,8 @@ export default defineUserConfig({
         imageMark: true,
         // Enable image size
         imageSize: true,
+        // Enable image title
+        imageTitle: true,
       },
     },
   }),
@@ -39,7 +41,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {9-12}
+```js {9-14}
 // .vuepress/config.js
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -51,6 +53,8 @@ export default {
         imageMark: true,
         // Enable image size
         imageSize: true,
+        // Enable image title
+        imageTitle: true,
       },
     },
   }),
@@ -102,7 +106,7 @@ interface ImageMarkOptions {
 
 ## Image Size
 
-You can use `=widthxheight` to specify the image size when setting `plugins.mdEnhanceimageSize: true` in theme options.
+You can use `=widthxheight` to specify the image size when setting `plugins.mdEnhance.imageSize: true` in theme options.
 
 ```md
 ![Alt](/example.png =200x300)
@@ -118,6 +122,20 @@ The above Markdown will be parsed as:
 <img src="/example.jpg" title="Image title" width="200" />
 <img src="/example.bmp" height="300" />
 ```
+
+## Image Title
+
+Sometimes, you may want to add a description with image, in this case, you should set `plugins.mdEnhance.imageTitle: true`.
+
+Then, when you add a title to the image, the image will be displayed as `<figure>` and title will be displayed as `<figurecaption>`.
+
+```md
+![GitHub Logo](/assets/icon/github-light.png "Github Logo")
+```
+
+Will be rendered as:
+
+![GitHub Logo](/assets/icon/github-light.png "Github Logo")
 
 <script setup lang="ts">
 import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch.js"

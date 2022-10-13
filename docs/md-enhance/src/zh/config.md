@@ -170,6 +170,20 @@ interface ImageMarkOptions {
 }
 ```
 
+## imageSize
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否启用图片尺寸支持。
+
+## imageTitle
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否启用图片标题支持。
+
 ## tasklist
 
 - 类型: `TaskListOptions | boolean`

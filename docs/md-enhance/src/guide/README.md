@@ -112,7 +112,7 @@ You can mark ==important words== .
 
 ### Image Enhancement
 
-Support setting color scheme and size
+Support setting title, color scheme and size
 
 - [View Detail](image.md)
 

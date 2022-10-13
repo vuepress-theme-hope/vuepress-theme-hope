@@ -10,6 +10,7 @@ export * from "./footnote.js";
 export * from "./hint.js";
 export * from "./imageMark.js";
 export * from "./imageSize.js";
+export * from "./imageTitle.js";
 export * from "./katex.js";
 export * from "./mathjax.js";
 export * from "./lazyLoad.js";

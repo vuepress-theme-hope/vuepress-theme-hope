@@ -112,7 +112,7 @@ npm i -D vuepress-plugin-md-enhance@next
 
 ### 图片增强
 
-支持设置颜色模式和大小
+支持设置标题、颜色模式和大小
 
 - [查看详情](image.md)
 

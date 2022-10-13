@@ -147,6 +147,15 @@ export interface MarkdownEnhanceOptions {
   lazyLoad?: boolean;
 
   /**
+   * Whether render figure when title is set
+   *
+   * 是否在设置标题时渲染 figure
+   *
+   * @default false
+   */
+  imageTitle?: boolean;
+
+  /**
    * Whether to enable gfm image id mark support
    *
    * 是否启用 GFM 图片 ID 标记。

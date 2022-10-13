@@ -18,7 +18,7 @@ tag:
 
 @tab TS
 
-```ts {9-12}
+```ts {9-14}
 // .vuepress/config.ts
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
@@ -31,6 +31,8 @@ export default defineUserConfig({
         imageMark: true,
         // 启用图片大小
         imageSize: true,
+        // 启用图片标题
+        imageTitle: true,
       },
     },
   }),
@@ -39,7 +41,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {9-12}
+```js {9-14}
 /// .vuepress/config.js
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -51,6 +53,8 @@ export default {
         imageMark: true,
         // 启用图片大小
         imageSize: true,
+        // 启用图片标题
+        imageTitle: true,
       },
     },
   }),
@@ -118,6 +122,20 @@ interface ImageMarkOptions {
 <img src="/example.jpg" title="图片标题" width="200" />
 <img src="/example.bmp" height="300" />
 ```
+
+## 图片标题
+
+有时，您可能希望为图像添加描述，在这种情况下，您应该在插件选项中设置 `imageTitle: true`。
+
+这样当您为图像添加标题时，图像将显示为 `<figure>` ，标题将显示为 `<figurecaption>`。
+
+```md
+![GitHub 徽标](/assets/icon/github-light.png "Github 徽标")
+```
+
+将呈现为：
+
+![GitHub 徽标](/assets/icon/github-light.png "Github 徽标")
 
 <script setup lang="ts">
 import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch.js"

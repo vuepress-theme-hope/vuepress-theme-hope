@@ -149,12 +149,26 @@ tag:
 
 ```ts
 interface ImageMarkOptions {
-  /** lightmode only IDs */
+  /** 日间模式的 ID */
   light?: string[];
-  /** darkmode only IDs */
+  /** 夜间模式的 ID */
   dark?: string[];
 }
 ```
+
+### imageSize
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否启用图片尺寸支持。
+
+### imageTitle
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否启用图片标题支持。
 
 ### tasklist
 
