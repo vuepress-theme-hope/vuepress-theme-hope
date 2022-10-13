@@ -29,8 +29,11 @@ export default defineComponent({
     const route = useRoute();
     const metaLocale = useMetaLocale();
 
-    const navigate = (path = ""): void => {
-      if (path && route.path !== path) void router.push(path);
+    const navigate = (event: Event, path = ""): void => {
+      if (path && route.path !== path) {
+        event.preventDefault();
+        void router.push(path);
+      }
     };
 
     return (): VNode | null =>
@@ -65,7 +68,7 @@ export default defineComponent({
                           },
                         ],
                         role: path ? "navigation" : "",
-                        onClick: () => navigate(path),
+                        onClick: (event: Event) => navigate(event, path),
                       },
                       name
                     )
