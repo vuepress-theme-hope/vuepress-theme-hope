@@ -27,7 +27,7 @@ importers:
       '@vue/eslint-config-typescript': 11.0.2
       bumpp: 8.2.1
       c8: 7.12.0
-      chalk: 5.1.0
+      chalk: 5.1.2
       commitizen: 4.2.5
       concurrently: 7.4.0
       cpx2: 4.2.0
@@ -75,7 +75,7 @@ importers:
       '@vue/eslint-config-typescript': 11.0.2_bdxbbxtuayd4lgflbnh77t3rcm
       bumpp: 8.2.1
       c8: 7.12.0
-      chalk: 5.1.0
+      chalk: 5.1.2
       commitizen: 4.2.5
       concurrently: 7.4.0
       cpx2: 4.2.0
@@ -4537,7 +4537,7 @@ packages:
     dependencies:
       ansi-align: 3.0.1
       camelcase: 7.0.0
-      chalk: 5.1.0
+      chalk: 5.1.2
       cli-boxes: 3.0.0
       string-width: 5.1.2
       type-fest: 2.19.0
@@ -4763,6 +4763,10 @@ packages:
 
   /chalk/5.1.0:
     resolution: {integrity: sha512-56zD4khRTBoIyzUYAFgDDaPhUMN/fC/rySe6aZGqbj/VWiU2eI3l6ZLOtYGFZAV5v02mwPjtpzlrOveJiz5eZQ==}
+    engines: {node: ^12.17.0 || ^14.13 || >=16.0.0}
+
+  /chalk/5.1.2:
+    resolution: {integrity: sha512-E5CkT4jWURs1Vy5qGJye+XwCkNj7Od3Af7CP6SujMetSMkLs8Do2RWJK5yx1wamHV/op8Rz+9rltjaTQWDnEFQ==}
     engines: {node: ^12.17.0 || ^14.13 || >=16.0.0}
 
   /chardet/0.7.0:
@@ -8751,7 +8755,7 @@ packages:
     resolution: {integrity: sha512-l0x2DvrW294C9uDCoQe1VSU4gf529FkSZ6leBl4TiqZH/e+0R7hSfHQBNut2mNygDgHwvYHfFLn6Oxb3VWj2rA==}
     engines: {node: '>=12'}
     dependencies:
-      chalk: 5.1.0
+      chalk: 5.1.2
       is-unicode-supported: 1.3.0
 
   /log-update/4.0.0:
@@ -9352,7 +9356,7 @@ packages:
     engines: {node: '>=14.14'}
     hasBin: true
     dependencies:
-      chalk: 5.1.0
+      chalk: 5.1.2
       cli-table: 0.3.11
       commander: 9.4.1
       fast-memoize: 2.5.2
@@ -11755,7 +11759,7 @@ packages:
     engines: {node: '>=14.16'}
     dependencies:
       boxen: 7.0.0
-      chalk: 5.1.0
+      chalk: 5.1.2
       configstore: 6.0.0
       has-yarn: 3.0.0
       import-lazy: 4.0.0
