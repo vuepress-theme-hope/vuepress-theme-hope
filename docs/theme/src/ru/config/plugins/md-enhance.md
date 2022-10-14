@@ -159,17 +159,17 @@ interface ImageMarkOptions {
 
 ### imageSize
 
-- Type: `boolean`
-- Default: `false`
+- Тип: `boolean`
+- По умолчанию: `false`
 
-Whether enable image size support.
+Включить ли поддержку размера изображения.
 
 ### imageTitle
 
-- Type: `boolean`
-- Default: `false`
+- Тип: `boolean`
+- По умолчанию: `false`
 
-Whether enable image title support.
+Включить ли поддержку названия изображения.
 
 ### tasklist
 
