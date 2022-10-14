@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.110](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.109...v2.0.0-beta.110) (2022-10-14)
+
+### Features
+
+- **components:** improve bilibili ratio ([856db76](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/856db76ba128bf03db342aab330958f7f27b4a86))
+- **md-enhance:** improve loading style ([e0438c2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e0438c2c5b28b4575755157ee5c903df6feedccd))
+- **md-enhance:** support imageTitle ([23f7410](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/23f7410ca7e84d145e3f84f39815d97c07913778))
+- **theme:** add number for tag, close [#2219](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2219) ([6ab908e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6ab908e4d842baeb4631bbe4dbdd89e084e2f8ed))
+
+### Bug Fixes
+
+- **theme:** fix article-item ssr issue ([a752754](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a752754a8a55e2a8377e22e7f6bd5a7c7e5e2cbd))
+- **theme:** fix category and tag click in article list ([fb2dc43](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fb2dc433e31be447c0dee960347329ecc9762083))
+- **theme:** fix remember checkbox align, fix [#2292](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2292) ([113de5e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/113de5eb0ff208a90e1f411e0a25c469e4c0ed58))
+
+### Performance Improvements
+
+- remove unneeded fallback ([154493f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/154493fee57fd3cebe8f0822aa8fbc42ad6692fa))
+
 ## [2.0.0-beta.109](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.108...v2.0.0-beta.109) (2022-10-11)
 
 ### Features
