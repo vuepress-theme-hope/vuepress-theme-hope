@@ -80,7 +80,7 @@ export default defineComponent({
               value: remember.value,
               onChange: () => (remember.value = !remember.value),
             }),
-            h("span", locale.value.remember),
+            locale.value.remember,
           ]),
           h("button", { class: "submit", onClick: () => verify() }, "OK"),
         ])
