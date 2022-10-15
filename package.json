@@ -99,7 +99,7 @@
     "prettier": "2.7.1",
     "rollup": "2.79.1",
     "rollup-plugin-copy": "3.4.0",
-    "rollup-plugin-dts": "4.2.3",
+    "rollup-plugin-dts": "5.0.0",
     "rollup-plugin-esbuild": "4.10.1",
     "sort-package-json": "2.0.0",
     "standard-version": "9.5.0",
