@@ -123,17 +123,17 @@ interface ImageMarkOptions {
 <img src="/example.bmp" height="300" />
 ```
 
-## Image Title
+## Заголовок изображения
 
-Sometimes, you may want to add a description with image, in this case, you should set `plugins.mdEnhance.imageTitle: true`.
+Иногда вам может понадобиться добавить описание с изображением, в этом случае вы должны установить `plugins.mdEnhance.imageTitle: true`.
 
-Then, when you add a title to the image, the image will be displayed as `<figure>` and title will be displayed as `<figurecaption>`.
+Затем, когда вы добавите заголовок к изображению, изображение будет отображаться как `<figure>`, а заголовок будет отображаться как `<figurecaption>`.
 
 ```md
 ![GitHub Logo](/assets/icon/github-light.png "Github Logo")
 ```
 
-Will be rendered as:
+Будет отображаться как:
 
 ![GitHub Logo](/assets/icon/github-light.png "Github Logo")
 

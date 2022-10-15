@@ -531,7 +531,7 @@ export default {
 
 - [Переключатель цвета темы](../interface/theme-color.md)
 - [Темный режим](../interface/darkmode.md)
-- [Кнопка полноэкранного режима](../interface/others.md#fullscreen-button)
+- [Кнопка полноэкранного режима](../interface/others.md#полноэкранная-кнопка)
 
 ## Конфигурация макета
 
