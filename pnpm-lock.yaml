@@ -23,7 +23,7 @@ importers:
       '@types/node': 18.7.23
       '@typescript-eslint/eslint-plugin': 5.40.0
       '@typescript-eslint/parser': 5.40.0
-      '@vitest/coverage-c8': 0.24.1
+      '@vitest/coverage-c8': 0.24.3
       '@vue/eslint-config-typescript': 11.0.2
       bumpp: 8.2.1
       c8: 7.12.0
@@ -71,7 +71,7 @@ importers:
       '@types/node': 18.7.23
       '@typescript-eslint/eslint-plugin': 5.40.0_ik43yucnjuzsopqc3tao6tk3x4
       '@typescript-eslint/parser': 5.40.0_l76llshcx5hpzqzl7lfng4kpb4
-      '@vitest/coverage-c8': 0.24.1
+      '@vitest/coverage-c8': 0.24.3
       '@vue/eslint-config-typescript': 11.0.2_bdxbbxtuayd4lgflbnh77t3rcm
       bumpp: 8.2.1
       c8: 7.12.0
@@ -3532,11 +3532,11 @@ packages:
       vite: 3.0.9
       vue: 3.2.40
 
-  /@vitest/coverage-c8/0.24.1:
-    resolution: {integrity: sha512-cOFHXRHB9WHtGgsHE4FX4Ef1c9Hon668RNJQOJvqSy1/1Y7zIYIBhFWmuFKLZRCMV4jGT5CRiuB9KtdNsOc3og==}
+  /@vitest/coverage-c8/0.24.3:
+    resolution: {integrity: sha512-tAmMyHxWYnAwGeJb7QgTuEX8aLasTg4X1/6INobXa/7wYGEJ28CACFO5iLn1HzFVPoLvhsS3luQjiflGjjSMRQ==}
     dependencies:
       c8: 7.12.0
-      vitest: 0.24.1
+      vitest: 0.24.3
     transitivePeerDependencies:
       - '@edge-runtime/vm'
       - '@vitest/browser'
