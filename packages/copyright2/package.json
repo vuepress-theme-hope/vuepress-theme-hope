@@ -48,7 +48,7 @@
     "@vuepress/shared": "2.0.0-beta.51",
     "@vuepress/utils": "2.0.0-beta.51",
     "@vueuse/core": "^9.3.0",
-    "vue": "^3.2.40",
+    "vue": "^3.2.41",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
