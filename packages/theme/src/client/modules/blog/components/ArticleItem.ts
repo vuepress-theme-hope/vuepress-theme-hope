@@ -9,6 +9,15 @@ import {
 } from "@theme-hope/modules/blog/components/icons/index.js";
 import { useArticleInfo } from "@theme-hope/modules/blog/composables/index.js";
 import { LockIcon } from "@theme-hope/modules/encrypt/components/icons.js";
+import {
+  COVER,
+  EXCERPT,
+  IS_ENCRYPTED,
+  PageType,
+  STICKY,
+  TITLE,
+  TYPE,
+} from "../../../../shared/index.js";
 
 import type { PropType, VNode } from "vue";
 import type { ArticleInfo } from "../../../../shared/index.js";
@@ -39,20 +48,20 @@ export default defineComponent({
           typeof: "Article",
         },
         h(RouterLink, { to: props.path }, () => [
-          info.value.sticky ? h(StickyIcon) : null,
+          info.value[STICKY] ? h(StickyIcon) : null,
           h("header", { class: "title" }, [
-            info.value.isEncrypted ? h(LockIcon) : null,
-            info.value.type === "slide" ? h(SlideIcon) : null,
-            h("span", { property: "headline" }, info.value.title),
-            info.value.cover
+            info.value[IS_ENCRYPTED] ? h(LockIcon) : null,
+            info.value[TYPE] === PageType.Slide ? h(SlideIcon) : null,
+            h("span", { property: "headline" }, info.value[TITLE]),
+            info.value[COVER]
               ? h("meta", {
                   property: "image",
-                  content: withBase(info.value.cover),
+                  content: withBase(info.value[COVER]),
                 })
               : null,
           ]),
-          info.value.excerpt
-            ? h("div", { class: "excerpt", innerHTML: info.value.excerpt })
+          info.value[EXCERPT]
+            ? h("div", { class: "excerpt", innerHTML: info.value[EXCERPT] })
             : null,
           h("hr", { class: "hr" }),
           h(PageInfo, {

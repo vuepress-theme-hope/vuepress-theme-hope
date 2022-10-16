@@ -159,7 +159,7 @@ export interface HopeThemePluginsOptions {
    *
    * @see http://vuepress-theme-hope.github.io/v2/reading-time/zh/
    */
-  readingTime?: ReadingTimeOptions;
+  readingTime?: ReadingTimeOptions | false;
 
   /**
    * SEO plugin options

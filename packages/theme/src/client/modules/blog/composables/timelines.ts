@@ -2,6 +2,8 @@ import { computed, inject, provide } from "vue";
 import { useBlogType } from "vuepress-plugin-blog2/client";
 import { getDate } from "vuepress-shared/lib/client";
 
+import { DATE } from "../../../../shared/index.js";
+
 import type { ComputedRef, InjectionKey } from "vue";
 import type { Article } from "vuepress-plugin-blog2";
 import type { ArticleInfo } from "../../../../shared/index.js";
@@ -44,7 +46,7 @@ export const setupTimelines = (): void => {
 
     // filter before sort
     timelines.value.items.forEach(({ info, path }) => {
-      const { year, month, day } = getDate(info.date)?.info || {};
+      const { year, month, day } = getDate(info[DATE])?.info || {};
 
       if (year && month && day) {
         if (!timelineItems[0] || timelineItems[0].year !== year)

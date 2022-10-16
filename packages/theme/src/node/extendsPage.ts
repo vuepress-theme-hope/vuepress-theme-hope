@@ -7,6 +7,25 @@ import {
   timeTransformer,
 } from "vuepress-shared";
 
+import {
+  AUTHOR,
+  CATEGORY,
+  COVER,
+  DATE,
+  EXCERPT,
+  ICON,
+  IS_ENCRYPTED,
+  IS_ORIGINAL,
+  LOCALIZED_DATE,
+  PageType,
+  READING_TIME,
+  SHORT_TITLE,
+  STICKY,
+  TAG,
+  TITLE,
+  TYPE,
+} from "../shared/index.js";
+
 import type { Page } from "@vuepress/core";
 import type {
   HopeThemeConfig,
@@ -77,16 +96,13 @@ export const extendsPage = (
   // inject localized date
   injectLocalizedDate(page);
 
-  // save basic info to routeMeta
-  page.routeMeta = {
-    ...page.routeMeta,
-    title: page.title,
-    icon: frontmatter.icon,
-  };
+  page.routeMeta[TITLE] = page.title;
+
+  if ("icon" in frontmatter) page.routeMeta[ICON] = frontmatter.icon;
 
   // resolve shortTitle
   if ("shortTitle" in frontmatter)
-    page.routeMeta["shortTitle"] = frontmatter.shortTitle;
+    page.routeMeta[SHORT_TITLE] = frontmatter.shortTitle;
 
   if (plugins.blog) {
     const isArticle =
@@ -94,71 +110,71 @@ export const extendsPage = (
       frontmatter.article ||
       // generated from markdown files
       Boolean(frontmatter.article !== false && filePathRelative);
-
     const isEncrypted = Object.keys(config).some((key) =>
       decodeURI(path).startsWith(key)
     );
     const isSlide = isArticle && frontmatter.layout === "Slide";
 
-    // save basic info to routeMeta
-    page.routeMeta = {
-      ...page.routeMeta,
-      type: frontmatter.home
-        ? "home"
-        : isSlide
-        ? "slide"
-        : isArticle
-        ? "article"
-        : "page",
-      readingTime: page.data.readingTime,
-      excerpt: isEncrypted
-        ? ""
-        : page.excerpt ||
-          frontmatter.description ||
-          (typeof plugins.blog === "object" && plugins.blog.autoExcerpt
-            ? frontmatter.summary || ""
-            : ""),
-    };
+    // save page type to routeMeta
+    page.routeMeta[TYPE] = frontmatter.home
+      ? PageType.Home
+      : isSlide
+      ? PageType.Slide
+      : isArticle
+      ? PageType.Article
+      : PageType.Page;
+
+    const excerpt = isEncrypted
+      ? ""
+      : page.excerpt ||
+        frontmatter.description ||
+        (typeof plugins.blog === "object" && plugins.blog.autoExcerpt
+          ? frontmatter.summary || ""
+          : "");
+
+    // save page excerpt to routeMeta
+    if (excerpt) page.routeMeta[EXCERPT] = excerpt;
 
     // resolve author
-    if ("author" in frontmatter) page.routeMeta["author"] = frontmatter.author;
+    if ("author" in frontmatter) page.routeMeta[AUTHOR] = frontmatter.author;
 
     // resolve date
     if ("date" in frontmatter) {
       const date = getDate(page.frontmatter.date)?.value;
 
       if (date) {
-        page.routeMeta["date"] = frontmatter.date;
+        page.routeMeta[DATE] = frontmatter.date;
 
-        page.routeMeta["localizedDate"] = timeTransformer(date, {
+        page.routeMeta[LOCALIZED_DATE] = timeTransformer(date, {
           lang: page.lang,
           type: "date",
         });
       }
-    } else if (createdTime) page.routeMeta["date"] = new Date(createdTime);
+    } else if (createdTime) page.routeMeta[DATE] = new Date(createdTime);
 
     if ("category" in frontmatter)
       // resolve category
       // resolve category
-      page.routeMeta["category"] = frontmatter.category;
+      page.routeMeta[CATEGORY] = frontmatter.category;
 
     // resolve tag
-    if ("tag" in frontmatter) page.routeMeta["tag"] = frontmatter.tag;
+    if ("tag" in frontmatter) page.routeMeta[TAG] = frontmatter.tag;
 
     // resolve sticky
-    if ("sticky" in frontmatter) page.routeMeta["sticky"] = frontmatter.sticky;
-
-    // resolve star
-    if ("star" in frontmatter) page.routeMeta["star"] = frontmatter.star;
+    if ("sticky" in frontmatter) page.routeMeta[STICKY] = frontmatter.sticky;
 
     // resolve image
-    if ("cover" in frontmatter) page.routeMeta["image"] = frontmatter.cover;
+    if ("cover" in frontmatter) page.routeMeta[COVER] = frontmatter.cover;
+
+    // ensure a valid reading time exisits
+    if (page.data.readingTime && page.data.readingTime.words !== 0)
+      page.routeMeta[READING_TIME] = page.data.readingTime;
 
     // resolve isOriginal
     if ("isOriginal" in frontmatter)
-      page.routeMeta["isOriginal"] = frontmatter.isOriginal;
+      page.routeMeta[IS_ORIGINAL] = frontmatter.isOriginal;
 
     // resolve encrypted
-    if (isEncrypted) page.routeMeta["isEncrypted"] = true;
+    if (isEncrypted) page.routeMeta[IS_ENCRYPTED] = true;
   }
 };

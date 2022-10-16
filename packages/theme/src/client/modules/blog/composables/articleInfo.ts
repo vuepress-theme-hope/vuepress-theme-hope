@@ -9,6 +9,15 @@ import {
 import { useCategoryMap } from "./categoryMap.js";
 import { useBlogOptions } from "./options.js";
 import { useTagMap } from "./tagMap.js";
+import {
+  AUTHOR,
+  CATEGORY,
+  DATE,
+  IS_ORIGINAL,
+  LOCALIZED_DATE,
+  READING_TIME,
+  TAG,
+} from "../../../../shared/index.js";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index.js";
 
@@ -27,7 +36,7 @@ export const useArticleAuthor = (info: Ref<ArticleInfo>): AuthorRef => {
   const themeLocale = useThemeLocaleData();
 
   return computed(() => {
-    const { author } = info.value;
+    const { [AUTHOR]: author } = info.value;
 
     if (author) return getAuthor(author);
     if (author === false) return [];
@@ -42,7 +51,7 @@ export const useArticleCategory = (info: Ref<ArticleInfo>): CategoryRef => {
   const categoryMap = useCategoryMap();
 
   return computed(() =>
-    getCategory(info.value.category).map((name) => ({
+    getCategory(info.value[CATEGORY]).map((name) => ({
       name,
       path: categoryMap.value.map[name].path,
     }))
@@ -55,7 +64,7 @@ export const useArticleTag = (info: Ref<ArticleInfo>): TagRef => {
   const tagMap = useTagMap();
 
   return computed(() =>
-    getTag(info.value.tag).map((name) => ({
+    getTag(info.value[TAG]).map((name) => ({
       name,
       path: tagMap.value.map[name].path,
     }))
@@ -66,7 +75,7 @@ export type DateRef = ComputedRef<DateInfo | null>;
 
 export const useArticleDate = (info: Ref<ArticleInfo>): DateRef =>
   computed(() => {
-    const { date } = info.value;
+    const { [DATE]: date } = info.value;
 
     return date ? getDate(date) : null;
   });
@@ -89,10 +98,10 @@ export const useArticleInfo = (props: {
     author: author.value,
     category: category.value,
     date: date.value,
-    localizedDate: info.value.localizedDate || "",
+    localizedDate: info.value[LOCALIZED_DATE] || "",
     tag: tag.value,
-    isOriginal: info.value.isOriginal || false,
-    readingTime: info.value.readingTime || null,
+    isOriginal: info.value[IS_ORIGINAL] || false,
+    readingTime: info.value[READING_TIME] || null,
     pageview: props.path,
   });
 
