@@ -1,4 +1,4 @@
-.article {
+.article-item {
   position: relative;
 
   box-sizing: border-box;
@@ -21,7 +21,7 @@
     margin-bottom: 0;
   }
 
-  > a {
+  .article {
     display: block;
 
     padding: 0.75rem 1.25rem;
@@ -39,6 +39,7 @@
 
     &:hover {
       box-shadow: 0 2px 6px 2px var(--card-shadow);
+      cursor: pointer;
     }
   }
 
@@ -57,6 +58,8 @@
     position: relative;
 
     display: inline-block;
+
+    color: var(--text-color);
 
     font-size: 1.25rem;
     font-family: var(--font-family-fancy);

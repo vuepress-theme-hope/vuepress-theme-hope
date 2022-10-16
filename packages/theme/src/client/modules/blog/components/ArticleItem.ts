@@ -1,6 +1,6 @@
 import { withBase } from "@vuepress/client";
 import { defineComponent, h, toRef, unref } from "vue";
-import { RouterLink } from "vue-router";
+import { RouterLink, useRouter } from "vue-router";
 
 import PageInfo from "@theme-hope/modules/info/components/PageInfo.js";
 import {
@@ -36,39 +36,49 @@ export default defineComponent({
   },
 
   setup(props) {
+    const router = useRouter();
     const { config, items } = useArticleInfo(props);
     const info = toRef(props, "info");
 
     return (): VNode =>
       h(
-        "article",
-        {
-          class: "article",
-          vocab: "https://schema.org/",
-          typeof: "Article",
-        },
-        h(RouterLink, { to: props.path }, () => [
-          info.value[STICKY] ? h(StickyIcon) : null,
-          h("header", { class: "title" }, [
-            info.value[IS_ENCRYPTED] ? h(LockIcon) : null,
-            info.value[TYPE] === PageType.Slide ? h(SlideIcon) : null,
-            h("span", { property: "headline" }, info.value[TITLE]),
-            info.value[COVER]
-              ? h("meta", {
-                  property: "image",
-                  content: withBase(info.value[COVER]),
-                })
+        "div",
+        { class: "article-item" },
+        h(
+          "article",
+          {
+            class: "article",
+            vocab: "https://schema.org/",
+            typeof: "Article",
+            onClick: () => {
+              void router.push(props.path);
+            },
+          },
+          [
+            info.value[STICKY] ? h(StickyIcon) : null,
+            h(RouterLink, { to: props.path }, () => [
+              h("header", { class: "title" }, [
+                info.value[IS_ENCRYPTED] ? h(LockIcon) : null,
+                info.value[TYPE] === PageType.Slide ? h(SlideIcon) : null,
+                h("span", { property: "headline" }, info.value[TITLE]),
+                info.value[COVER]
+                  ? h("meta", {
+                      property: "image",
+                      content: withBase(info.value[COVER]),
+                    })
+                  : null,
+              ]),
+            ]),
+            info.value[EXCERPT]
+              ? h("div", { class: "excerpt", innerHTML: info.value[EXCERPT] })
               : null,
-          ]),
-          info.value[EXCERPT]
-            ? h("div", { class: "excerpt", innerHTML: info.value[EXCERPT] })
-            : null,
-          h("hr", { class: "hr" }),
-          h(PageInfo, {
-            config: unref(config),
-            ...(items.value ? { items: items.value } : {}),
-          }),
-        ])
+            h("hr", { class: "hr" }),
+            h(PageInfo, {
+              config: unref(config),
+              ...(items.value ? { items: items.value } : {}),
+            }),
+          ]
+        )
       );
   },
 });
