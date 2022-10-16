@@ -1,7 +1,6 @@
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
-  addViteOptimizeDepsInclude,
-  addViteSsrNoExternal,
+  addViteOptimizeDepsExclude,
   getLocales,
   useCustomDevServer,
 } from "vuepress-shared";
@@ -55,11 +54,9 @@ export const pwaPlugin =
       }),
 
       extendsBundlerOptions: (config: unknown, app): void => {
-        addViteOptimizeDepsInclude({ app, config }, "register-service-worker");
-
-        addViteSsrNoExternal({ app, config }, [
+        addViteOptimizeDepsExclude({ app, config }, [
+          "mitt",
           "register-service-worker",
-          "vuepress-shared",
         ]);
 
         useCustomDevServer(

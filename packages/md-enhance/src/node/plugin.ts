@@ -5,7 +5,6 @@ import {
   addViteOptimizeDepsExclude,
   addViteOptimizeDepsInclude,
   addViteSsrExternal,
-  addViteSsrNoExternal,
   chainWebpack,
   deepAssign,
   getLocales,
@@ -168,19 +167,17 @@ export const mdEnhancePlugin =
       },
 
       extendsBundlerOptions: (config: unknown, app): void => {
-        addViteSsrNoExternal({ app, config }, "vuepress-shared");
-
         if (katexEnable && katexOptions.output !== "html")
           addCustomElement({ app, config }, MATHML_TAGS);
         else if (mathjaxEnable) addCustomElement({ app, config }, /^mjx-/);
 
         if (chartEnable) {
-          addViteOptimizeDepsInclude({ app, config }, "chart.js/auto/auto.mjs");
+          addViteOptimizeDepsExclude({ app, config }, "chart.js/auto/auto.mjs");
           addViteSsrExternal({ app, config }, "chart.js");
         }
 
         if (echartsEnable) {
-          addViteOptimizeDepsInclude({ app, config }, "echarts");
+          addViteOptimizeDepsExclude({ app, config }, "echarts");
           addViteSsrExternal({ app, config }, "echarts");
         }
 
@@ -193,7 +190,7 @@ export const mdEnhancePlugin =
         }
 
         if (mermaidEnable) {
-          addViteOptimizeDepsInclude({ app, config }, "mermaid");
+          addViteOptimizeDepsExclude({ app, config }, "mermaid");
           addViteSsrExternal({ app, config }, "mermaid");
         }
 

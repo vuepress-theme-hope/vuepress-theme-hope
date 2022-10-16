@@ -1,6 +1,6 @@
 import { getDirname, path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
-import { addViteSsrNoExternal, getLocales } from "vuepress-shared";
+import { addViteOptimizeDepsExclude, getLocales } from "vuepress-shared";
 
 import { photoSwipeLocales } from "./locales.js";
 import { logger } from "./utils.js";
@@ -46,7 +46,7 @@ export const photoSwipePlugin =
       }),
 
       extendsBundlerOptions: (config: unknown, app): void => {
-        addViteSsrNoExternal({ app, config }, "vuepress-shared");
+        addViteOptimizeDepsExclude({ app, config }, "photoswipe");
       },
 
       clientConfigFile: path.resolve(__dirname, "../client/config.js"),

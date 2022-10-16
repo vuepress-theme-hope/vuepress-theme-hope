@@ -7,7 +7,6 @@ import {
 } from "@vuepress/core";
 import { getDirname, path } from "@vuepress/utils";
 import { watch } from "chokidar";
-import { addViteSsrNoExternal } from "vuepress-shared";
 
 import { prepareCategory } from "./category.js";
 import { prepareType } from "./type.js";
@@ -48,10 +47,6 @@ export const blogPlugin =
           __dirname,
           "../client/index.js"
         ),
-      },
-
-      extendsBundlerOptions: (config: unknown, app): void => {
-        addViteSsrNoExternal({ app, config }, "vuepress-shared");
       },
 
       extendsPage: (page): void => {
