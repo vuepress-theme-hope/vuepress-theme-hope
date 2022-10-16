@@ -118,6 +118,13 @@ category:
 - [网站链接](https://weigao.cc)
 - [源码地址](https://github.com/chenweigao/blogv2)
 
+### 花木瑞的博客
+
+- [网站链接](https://flower-dance.life)
+- [源码地址](https://github.com/huamurui/huamurui.github.io)
+
+
+
 ## 更多
 
 - 随时随地通过 PR 添加你的博客或文档至此。
