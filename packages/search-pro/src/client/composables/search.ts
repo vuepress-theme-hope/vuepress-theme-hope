@@ -1,22 +1,24 @@
 import { computed, ref, watch } from "vue";
+
+import type { Ref } from "vue";
 import type {
   PageIndex,
   Suggestion,
   SearchIndex,
-  SearchIndexRef,
   Word,
-  Options,
-  LocaleOptions,
-} from "./types.js";
-import type { Ref } from "vue";
+  SearchProOptions,
+  SearchProLocaleOptions,
+} from "../../shared/index.js";
 
 import {
   searchIndex as searchIndexRaw,
-  UPD_NAME,
   // @ts-expect-error -- generated from prepare-search-index
 } from "@internal/vuepress-plugin-next-search-index";
 
-const searchIndex: SearchIndexRef = ref(searchIndexRaw);
+// eslint-disable-next-line @typescript-eslint/naming-convention -- ignore
+declare const __VUE_HMR_RUNTIME__: Record<string, any>;
+
+const searchIndex: Ref<SearchIndex> = ref(searchIndexRaw);
 const pathToPage = computed(() => {
   const map = new Map<string, PageIndex>();
   for (const page of searchIndex.value) {
@@ -25,20 +27,19 @@ const pathToPage = computed(() => {
   return map;
 });
 
-// eslint-disable-next-line @typescript-eslint/naming-convention -- ignore
-declare const __VUE_HMR_RUNTIME__: Record<string, any>;
-
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-if (import.meta.webpackHot || import.meta.hot) {
-  __VUE_HMR_RUNTIME__["updateSearchProIndex"] = (data: SearchIndex) => {
-    searchIndex.value = data;
-  };
-}
-
 // eslint-disable-next-line require-jsdoc
-export function getPlaceholder(options: LocaleOptions, locale: Ref<string>) {
+export const getPlaceholder = (
+  options: SearchProLocaleOptions,
+  locale: Ref<string>
+) => {
   const placeholder: Ref<string> = ref("");
+
+  // eslint-disable-next-line require-jsdoc
+  function getPla() {
+    // @ts-ignore
+    placeholder.value = getOptions(options, locale).placeholder;
+  }
+
   watch(
     locale,
     () => {
@@ -49,17 +50,19 @@ export function getPlaceholder(options: LocaleOptions, locale: Ref<string>) {
     }
   );
   return placeholder;
+};
 
-  // eslint-disable-next-line require-jsdoc
-  function getPla() {
-    // @ts-ignore
-    placeholder.value = getOptions(options, locale).placeholder;
-  }
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+if (import.meta.webpackHot || import.meta.hot) {
+  __VUE_HMR_RUNTIME__["updateSearchProIndex"] = (data: SearchIndex) => {
+    searchIndex.value = data;
+  };
 }
 
 // eslint-disable-next-line require-jsdoc
-function getOptions(options: LocaleOptions, locale: Ref<string>) {
-  let opCache: Options = {};
+function getOptions(options: SearchProOptions, locale: Ref<string>) {
+  let opCache: SearchProOptions = {};
   for (const optionsKey in options.locales) {
     if (optionsKey === locale.value) {
       opCache = options.locales[optionsKey];
@@ -87,12 +90,12 @@ function getOptions(options: LocaleOptions, locale: Ref<string>) {
 // eslint-disable-next-line require-jsdoc
 export function useSuggestions(
   query: Ref<string>,
-  options: LocaleOptions,
+  options: SearchProOptions,
   locale: Ref<string>
 ): Ref<Suggestion[]> {
   const suggestions = ref([] as Suggestion[]);
   let id: NodeJS.Timeout | null = null;
-  let op: Options = getOptions(options, locale);
+  let op: SearchProOptions = getOptions(options, locale);
 
   watch(query, () => {
     if (id) {
@@ -150,7 +153,7 @@ export function useSuggestions(
 function* extractSuggestions(
   page: PageIndex,
   queryStr: string,
-  options: Options,
+  options: SearchProOptions,
   locale: Ref<string>
 ): Iterable<Suggestion> {
   if (page.pathLocale !== locale.value) return;
