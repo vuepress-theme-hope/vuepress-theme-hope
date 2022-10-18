@@ -1,0 +1,53 @@
+:root {
+  //查询框内输入文字颜色
+  --next-search-input-text-color: var(--c-text);
+  //查询框选中后边框颜色
+  --next-search-input-accent-border-color: var(--c-brand);
+  //查询框未选中时边框颜色
+  --next-search-input-border-color: var(--c-border);
+  //查询结果内所有框线的颜色
+  --next-search-border-color: var(--c-border);
+  //查询结果的背景底色（包括查询详情背景颜色）
+  --next-search-bg-color: var(--c-bg);
+  //一级大标题的字体颜色
+  --next-search-ppt-text-color: var(--c-bg);
+  //一级大标题的背景底色
+  --next-search-ppt-bg-color: var(--c-brand);
+  //二级小标题的字体颜色
+  --next-search-pt-text-color: var(--c-brand);
+  //二级小标题的背景底色
+  --next-search-pt-bg-color: var(--c-bg-light);
+  //查询详情字体颜色
+  --next-search-item-text-color: var(--c-brand-light);
+  //查询高亮结果字体颜色
+  --next-search-hl-text-color: var(--c-bg);
+  //查询高亮结果字体背景色
+  --next-search-hl-bg-color: var(--c-brand);
+  //鼠标移入后详情的背景颜色
+  --next-search-item-accent-bg-color: var(--c-brand-light);
+  //鼠标移入后查查询详情字体颜色
+  --next-search-item-accent-text-color: var(--c-bg);
+  //鼠标移入后查询高亮结果字体颜色
+  --next-search-hl-accent-text-color: var(--c-brand);
+  //鼠标移入后查询高亮结果字体背景色
+  --next-search-hl-accent-bg-color: var(--c-bg);
+}
+
+html.dark {
+  --next-search-input-text-color: var(--c-text);
+  --next-search-input-accent-border-color: var(--c-brand);
+  --next-search-input-border-color: var(--c-border);
+  --next-search-border-color: var(--c-border);
+  --next-search-bg-color: var(--c-bg);
+  --next-search-ppt-text-color: var(--c-bg);
+  --next-search-ppt-bg-color: var(--c-brand);
+  --next-search-pt-text-color: var(--c-brand);
+  --next-search-pt-bg-color: var(--c-bg-light);
+  --next-search-item-text-color: var(--c-text-lighter);
+  --next-search-hl-text-color: var(--c-bg);
+  --next-search-hl-bg-color: var(--c-brand);
+  --next-search-item-accent-bg-color: var(--c-text-lighter);
+  --next-search-item-accent-text-color: var(--c-bg);
+  --next-search-hl-accent-text-color: var(--c-brand);
+  --next-search-hl-accent-bg-color: var(--c-bg);
+}

@@ -1,0 +1,37 @@
+:root {
+  --next-search-input-text-color: #2c3e50;
+  --next-search-input-accent-border-color: #3eaf7c;
+  --next-search-input-border-color: #eaecef;
+  --next-search-border-color: #eaecef;
+  --next-search-bg-color: #ffffff;
+  --next-search-ppt-text-color: #ffffff;
+  --next-search-ppt-bg-color: #3eaf7c;
+  --next-search-pt-text-color: #3eaf7c;
+  --next-search-pt-bg-color: #F5FFFA;
+  --next-search-item-text-color: #3eaf7c;
+  --next-search-hl-text-color: #ffffff;
+  --next-search-hl-bg-color: #3eaf7c;
+  --next-search-item-accent-bg-color: #F0FFF0;
+  --next-search-item-accent-text-color: #3eaf7c;
+  --next-search-hl-accent-text-color: #ffffff;
+  --next-search-hl-accent-bg-color: #3eaf7c;
+}
+
+html.dark {
+  --next-search-input-text-color: var(--c-text);
+  --next-search-input-accent-border-color: var(--c-brand);
+  --next-search-input-border-color: var(--c-border);
+  --next-search-border-color: var(--c-border);
+  --next-search-bg-color: var(--c-bg);
+  --next-search-ppt-text-color: var(--c-bg);
+  --next-search-ppt-bg-color: var(--c-brand);
+  --next-search-pt-text-color: var(--c-brand);
+  --next-search-pt-bg-color: var(--c-bg-light);
+  --next-search-item-text-color: var(--c-text-lighter);
+  --next-search-hl-text-color: var(--c-bg);
+  --next-search-hl-bg-color: var(--c-brand);
+  --next-search-item-accent-bg-color: var(--c-text-lighter);
+  --next-search-item-accent-text-color: var(--c-bg);
+  --next-search-hl-accent-text-color: var(--c-brand);
+  --next-search-hl-accent-bg-color: var(--c-bg);
+}

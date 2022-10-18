@@ -1,0 +1,21 @@
+{
+  "name": "vuepress-plugin-next-search",
+  "short_name": "next-search",
+  "description": "适配vuepress2的搜索插件",
+  "start_url": "/guide/index.html",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#3eaf7c",
+  "icons": [
+    {
+      "src": "/docs/images/home.jif",
+      "sizes": "192x192",
+      "type": "image/jpg"
+    },
+    {
+       "src": "/docs/images/home.jif",
+      "sizes": "384x384",
+      "type": "image/jpg"
+    }
+  ]
+}
