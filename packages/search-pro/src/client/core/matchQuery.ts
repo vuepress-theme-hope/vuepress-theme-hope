@@ -1,136 +1,148 @@
-import { computed, ref, watch } from 'vue'
-import type { PageIndex, Suggestion, SearchIndex, SearchIndexRef, Word, Options, LocaleOptions } from './types'
-import type { Ref } from 'vue'
+import { computed, ref, watch } from "vue";
+import type {
+  PageIndex,
+  Suggestion,
+  SearchIndex,
+  SearchIndexRef,
+  Word,
+  Options,
+  LocaleOptions,
+} from "./types.js";
+import type { Ref } from "vue";
 
 import {
   searchIndex as searchIndexRaw,
   UPD_NAME,
   // @ts-expect-error -- generated from prepare-search-index
-} from '@internal/vuepress-plugin-next-search-index'
+} from "@internal/vuepress-plugin-next-search-index";
 
-const searchIndex: SearchIndexRef = ref(searchIndexRaw)
+const searchIndex: SearchIndexRef = ref(searchIndexRaw);
 const pathToPage = computed(() => {
-  const map = new Map<string, PageIndex>()
+  const map = new Map<string, PageIndex>();
   for (const page of searchIndex.value) {
-    map.set(page.path, page)
+    map.set(page.path, page);
   }
-  return map
-})
+  return map;
+});
 
 // eslint-disable-next-line @typescript-eslint/naming-convention -- ignore
-declare const __VUE_HMR_RUNTIME__: Record<string, any>
-if (
-  // @ts-expect-error -- ignore
-  import.meta.webpackHot ||
-  // @ts-expect-error -- ignore
-  import.meta.hot
-) {
-  __VUE_HMR_RUNTIME__[UPD_NAME] = (data: SearchIndex) => {
-    searchIndex.value = data
-  }
+declare const __VUE_HMR_RUNTIME__: Record<string, any>;
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+if (import.meta.webpackHot || import.meta.hot) {
+  __VUE_HMR_RUNTIME__["updateSearchProIndex"] = (data: SearchIndex) => {
+    searchIndex.value = data;
+  };
 }
 
 // eslint-disable-next-line require-jsdoc
 export function getPlaceholder(options: LocaleOptions, locale: Ref<string>) {
-  const placeholder: Ref<string> = ref('')
+  const placeholder: Ref<string> = ref("");
   watch(
     locale,
     () => {
-      getPla()
+      getPla();
     },
     {
       immediate: true,
     }
-  )
-  return placeholder
+  );
+  return placeholder;
 
   // eslint-disable-next-line require-jsdoc
   function getPla() {
     // @ts-ignore
-    placeholder.value = getOptions(options, locale).placeholder
+    placeholder.value = getOptions(options, locale).placeholder;
   }
 }
 
 // eslint-disable-next-line require-jsdoc
 function getOptions(options: LocaleOptions, locale: Ref<string>) {
-  let opCache: Options = {}
+  let opCache: Options = {};
   for (const optionsKey in options.locales) {
     if (optionsKey === locale.value) {
-      opCache = options.locales[optionsKey]
+      opCache = options.locales[optionsKey];
     }
-    if (optionsKey === '?') {
-      opCache = options.locales[optionsKey]
+    if (optionsKey === "?") {
+      opCache = options.locales[optionsKey];
     }
   }
-  if (JSON.stringify(opCache) === '{}') {
-    opCache = options
+  if (JSON.stringify(opCache) === "{}") {
+    opCache = options;
   } else {
     opCache = {
       fullText: opCache.fullText ?? options.fullText,
       placeholder: opCache.placeholder ?? options.placeholder,
       frontmatter: {
-        category: opCache.frontmatter?.category ?? options.frontmatter?.category,
+        category:
+          opCache.frontmatter?.category ?? options.frontmatter?.category,
         tag: opCache.frontmatter?.tag ?? options.frontmatter?.tag,
       },
-    }
+    };
   }
-  return opCache
+  return opCache;
 }
 
 // eslint-disable-next-line require-jsdoc
-export function useSuggestions(query: Ref<string>, options: LocaleOptions, locale: Ref<string>): Ref<Suggestion[]> {
-  const suggestions = ref([] as Suggestion[])
-  let id: NodeJS.Timeout | null = null
-  let op: Options = getOptions(options, locale)
+export function useSuggestions(
+  query: Ref<string>,
+  options: LocaleOptions,
+  locale: Ref<string>
+): Ref<Suggestion[]> {
+  const suggestions = ref([] as Suggestion[]);
+  let id: NodeJS.Timeout | null = null;
+  let op: Options = getOptions(options, locale);
 
   watch(query, () => {
     if (id) {
-      clearTimeout(id)
+      clearTimeout(id);
     }
-    id = setTimeout(search, 100)
-  })
+    id = setTimeout(search, 100);
+  });
   watch(locale, () => {
     if (id) {
-      clearTimeout(id)
+      clearTimeout(id);
     }
-    op = getOptions(options, locale)
-    id = setTimeout(search, 100)
-  })
+    op = getOptions(options, locale);
+    id = setTimeout(search, 100);
+  });
 
-  return suggestions
+  return suggestions;
 
   // eslint-disable-next-line require-jsdoc
   function search() {
-    const queryStr = query.value.toLowerCase().trim()
+    const queryStr = query.value.toLowerCase().trim();
     if (!queryStr) {
-      suggestions.value = []
-      return
+      suggestions.value = [];
+      return;
     }
-    const suggestionResults = new Map<string, Suggestion[]>()
-    const suggestionSubTitles = new Set<string>()
+    const suggestionResults = new Map<string, Suggestion[]>();
+    const suggestionSubTitles = new Set<string>();
     for (const page of searchIndex.value) {
       for (const suggest of extractSuggestions(page, queryStr, op, locale)) {
-        suggestionSubTitles.add(suggest.parentPageTitle)
-        let list = suggestionResults.get(suggest.parentPageTitle)
+        suggestionSubTitles.add(suggest.parentPageTitle);
+        let list = suggestionResults.get(suggest.parentPageTitle);
         if (!list) {
-          list = []
-          suggestionResults.set(suggest.parentPageTitle, list)
+          list = [];
+          suggestionResults.set(suggest.parentPageTitle, list);
         }
-        list.push(suggest)
+        list.push(suggest);
       }
     }
     const sortedSuggestionSubTitles = [...suggestionSubTitles].sort((a, b) => {
-      const listA = suggestionResults.get(a)!
-      const listB = suggestionResults.get(b)!
-      return listB.length - listA.length
-    })
+      const listA = suggestionResults.get(a)!;
+      const listB = suggestionResults.get(b)!;
+      return listB.length - listA.length;
+    });
     suggestions.value = [...suggestionResults]
       .flatMap(([, s]) => s)
       .sort(
         (a, b) =>
-          sortedSuggestionSubTitles.indexOf(a.parentPageTitle) - sortedSuggestionSubTitles.indexOf(b.parentPageTitle) ||
+          sortedSuggestionSubTitles.indexOf(a.parentPageTitle) -
+            sortedSuggestionSubTitles.indexOf(b.parentPageTitle) ||
           a.point - b.point
-      )
+      );
   }
 }
 
@@ -141,18 +153,23 @@ function* extractSuggestions(
   options: Options,
   locale: Ref<string>
 ): Iterable<Suggestion> {
-  if (page.pathLocale !== locale.value) return
-  let frontmatter = ''
+  if (page.pathLocale !== locale.value) return;
+  let frontmatter = "";
   if (page.frontmatter?.tag?.length) {
-    frontmatter += options.frontmatter?.tag + ' : ' + page.frontmatter?.tag.join('|')
+    frontmatter +=
+      options.frontmatter?.tag + " : " + page.frontmatter?.tag.join("|");
   }
   if (page.frontmatter?.category?.length) {
     // @ts-ignore
-    frontmatter += ' & ' + options.frontmatter?.category + ' : ' + page.frontmatter?.category.join('|')
+    frontmatter +=
+      " & " +
+      options.frontmatter?.category +
+      " : " +
+      page.frontmatter?.category.join("|");
     //console.log(frontmatter);
   }
 
-  const matchTitle = buildMatch(page.title, queryStr)
+  const matchTitle = buildMatch(page.title, queryStr);
   if (matchTitle) {
     yield {
       path: page.path,
@@ -163,10 +180,10 @@ function* extractSuggestions(
       page,
       content: null,
       point: 1,
-    }
-    return
+    };
+    return;
   }
-  const matchFrontmatter = buildMatch(frontmatter, queryStr)
+  const matchFrontmatter = buildMatch(frontmatter, queryStr);
   if (matchFrontmatter) {
     yield {
       path: page.path,
@@ -177,14 +194,14 @@ function* extractSuggestions(
       page,
       content: null,
       point: 2,
-    }
-    return
+    };
+    return;
   }
   for (const content of page.contents) {
-    const matchHeader = buildMatch(content.header, queryStr)
+    const matchHeader = buildMatch(content.header, queryStr);
     if (matchHeader) {
       yield {
-        path: page.path + (content.slug ? `#${content.slug}` : ''),
+        path: page.path + (content.slug ? `#${content.slug}` : ""),
         parentPageTitle: getParentPageTitle(page),
         title: page.title,
         display: matchHeader,
@@ -192,20 +209,20 @@ function* extractSuggestions(
         page,
         content: null,
         point: 3,
-      }
-      continue
+      };
+      continue;
     }
     if (options.fullText) {
-      const matchContent = buildMatch(content.content, queryStr)
+      const matchContent = buildMatch(content.content, queryStr);
       if (matchContent) {
         yield {
-          path: page.path + (content.slug ? `#${content.slug}` : ''),
+          path: page.path + (content.slug ? `#${content.slug}` : ""),
           parentPageTitle: getParentPageTitle(page),
           title: page.title,
           display: [
             {
-              type: 'header',
-              str: content.header.trim() ? `${content.header}\n` : '',
+              type: "header",
+              str: content.header.trim() ? `${content.header}\n` : "",
             },
             ...matchContent,
           ],
@@ -213,7 +230,7 @@ function* extractSuggestions(
           page,
           content: null,
           point: 10,
-        }
+        };
       }
     }
   }
@@ -221,67 +238,67 @@ function* extractSuggestions(
 
 // eslint-disable-next-line require-jsdoc
 function getParentPageTitle(page: PageIndex): string {
-  const pathParts = page.path.substring(page.pathLocale.length).split('/')
-  let parentPagePath = page.pathLocale
-  if (pathParts[0]) parentPagePath += `${pathParts[0]}/`
+  const pathParts = page.path.substring(page.pathLocale.length).split("/");
+  let parentPagePath = page.pathLocale;
+  if (pathParts[0]) parentPagePath += `${pathParts[0]}/`;
 
-  const parentPage = pathToPage.value.get(parentPagePath) || page
-  return parentPage.title
+  const parentPage = pathToPage.value.get(parentPagePath) || page;
+  return parentPage.title;
 }
 
 // eslint-disable-next-line require-jsdoc
 function buildMatch(text: string, queryStr: string): Word[] | null {
-  const result: Word[] = []
-  let totalLength = 0
+  const result: Word[] = [];
+  let totalLength = 0;
 
-  const lower = text.toLowerCase().replace(/\s/gu, ' ')
-  let start = 0
-  let matchIndex = lower.indexOf(queryStr, start)
+  const lower = text.toLowerCase().replace(/\s/gu, " ");
+  let start = 0;
+  let matchIndex = lower.indexOf(queryStr, start);
   if (matchIndex < 0) {
-    return null
+    return null;
   }
   while (matchIndex >= 0) {
-    const end = matchIndex + queryStr.length
-    append(text.slice(start, matchIndex), 'normal')
-    append(text.slice(matchIndex, end), 'highlight')
+    const end = matchIndex + queryStr.length;
+    append(text.slice(start, matchIndex), "normal");
+    append(text.slice(matchIndex, end), "highlight");
 
-    start = end
-    matchIndex = lower.indexOf(queryStr, start)
-    if (totalLength > 100) break
+    start = end;
+    matchIndex = lower.indexOf(queryStr, start);
+    if (totalLength > 100) break;
   }
-  append(text.slice(start), 'normal')
+  append(text.slice(start), "normal");
 
-  return result.filter((w) => w.str)
+  return result.filter((w) => w.str);
 
   // eslint-disable-next-line require-jsdoc
-  function append(s: string, type: 'normal' | 'highlight') {
-    let str = s
+  function append(s: string, type: "normal" | "highlight") {
+    let str = s;
 
-    if (type === 'normal') {
+    if (type === "normal") {
       if (str.length > 50) {
         if (totalLength === 0) {
-          str = `… ${str.slice(-10)}`
+          str = `… ${str.slice(-10)}`;
         }
       }
     }
 
-    let needEllipsis = false
+    let needEllipsis = false;
     if (totalLength + str.length > 100) {
-      if (result.some((w) => w.type === 'ellipsis')) return
-      str = str.slice(0, Math.max(100 - totalLength, 1))
-      needEllipsis = true
+      if (result.some((w) => w.type === "ellipsis")) return;
+      str = str.slice(0, Math.max(100 - totalLength, 1));
+      needEllipsis = true;
     }
     result.push({
       type,
       str,
-    })
-    totalLength += str.length
+    });
+    totalLength += str.length;
     if (needEllipsis) {
       result.push({
-        type: 'ellipsis',
-        str: ' …',
-      })
-      totalLength += 2
+        type: "ellipsis",
+        str: " …",
+      });
+      totalLength += 2;
     }
   }
 }

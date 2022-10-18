@@ -22,6 +22,6 @@ const plugins = [
   //     }
   //   }
   // }),
-]
+];
 
-export { plugins }
+export { plugins };

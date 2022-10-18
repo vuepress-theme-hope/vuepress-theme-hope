@@ -1160,6 +1160,7 @@ importers:
       htmlparser2: ^8.0.1
       rimraf: 3.0.2
       vue: ^3.2.41
+      vue-router: ^4.1.5
       vuepress-plugin-sass-palette: workspace:*
       vuepress-shared: workspace:*
     dependencies:
@@ -1168,6 +1169,7 @@ importers:
       chokidar: 3.5.3
       htmlparser2: 8.0.1
       vue: 3.2.41
+      vue-router: 4.1.5_vue@3.2.41
       vuepress-plugin-sass-palette: link:../sass-palette
       vuepress-shared: link:../shared
     devDependencies:

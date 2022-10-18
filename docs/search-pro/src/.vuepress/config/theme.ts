@@ -1,6 +1,6 @@
-import { navbar ,twNavbar} from "./navbar";
+import { navbar, twNavbar } from "./navbar";
 import { twSidebar, sidebar } from "./sidebar";
-import  { hopeTheme } from  "vuepress-theme-hope";
+import { hopeTheme } from "vuepress-theme-hope";
 
 // @ts-ignore
 const theme = hopeTheme({
@@ -18,13 +18,13 @@ const theme = hopeTheme({
     red: "#f26d6d",
     orange: "#fb9b5f",
     purple: "#b96ad9",
-    pink: "#ff95ca"
+    pink: "#ff95ca",
   },
   navbarLayout: {
     left: ["Brand"],
     center: [],
-    right: ["Search","Links","Language","Repo","Outlook"],
-  //   right: ["Links","Language","Repo","Outlook","Search"],
+    right: ["Search", "Links", "Language", "Repo", "Outlook"],
+    //   right: ["Links","Language","Repo","Outlook","Search"],
   },
   editLink: true,
   editLinkPattern: ":repo/blob/:branch/docs/:path",
@@ -36,32 +36,32 @@ const theme = hopeTheme({
     description: "求求你，不要再卷了😭",
     intro: "https://github.com/holajacky/vuepress-plugin-next-search",
     medias: {
-        Github: "https://github.com/holajacky/",
-    }
+      Github: "https://github.com/holajacky/",
+    },
   },
   plugins: {
     blog: true,
     mdEnhance: {
-        container: true,
-        tabs: true,
-        codetabs: true,
-        footnote: true,
-        tasklist: true,
-        align: true,
-        sub: true,
-        sup: true,
-        mark: true,
-        imageSize: true,
+      container: true,
+      tabs: true,
+      codetabs: true,
+      footnote: true,
+      tasklist: true,
+      align: true,
+      sub: true,
+      sup: true,
+      mark: true,
+      imageSize: true,
     },
   },
   locales: {
-    '/': {},
-    '/zh-TW/': {
+    "/": {},
+    "/zh-TW/": {
       navbar: twNavbar,
-      sidebar : twSidebar,
+      sidebar: twSidebar,
     },
     "/en/": {},
   },
-})
+});
 
-export { theme }
+export { theme };

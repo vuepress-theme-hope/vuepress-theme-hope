@@ -9,61 +9,32 @@ import { Parser } from "htmlparser2";
 const HMR_CODE = `
 if (import.meta.webpackHot) {
   import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__[UPD_NAME]) {
-    __VUE_HMR_RUNTIME__[UPD_NAME](searchIndex)
-  }
+  if (__VUE_HMR_RUNTIME__.updateSearchProIndex)
+    __VUE_HMR_RUNTIME__.updateSearchProIndex(searchIndex)
 }
 
 if (import.meta.hot) {
   import.meta.hot.accept(({ searchIndex }) => {
-    if (__VUE_HMR_RUNTIME__[UPD_NAME]) {
-      __VUE_HMR_RUNTIME__[UPD_NAME](searchIndex)
-    }
+    __VUE_HMR_RUNTIME__.updateSearchProIndex(searchIndex);
   })
 }
 `;
 
-// eslint-disable-next-line require-jsdoc
-function extractPageFrontmatter(frontmatter: PageFrontmatter): Frontmatter {
-  return {
-    category:
-      typeof frontmatter.category === "undefined"
-        ? []
-        : (frontmatter.category as string[]),
-    tag:
-      typeof frontmatter.tag === "undefined"
-        ? []
-        : (frontmatter.tag as string[]),
-  };
-}
-
-export const prepareSearchIndex = async (app: App): Promise<void> => {
-  const searchIndex: PageIndex[] = [];
-  for (const page of app.pages) {
-    searchIndex.push({
-      path: page.path,
-      title: page.title,
-      pathLocale: page.pathLocale,
-      frontmatter: extractPageFrontmatter(page.frontmatter),
-      contents: extractPageContents(page),
-    });
-  }
-
-  // search index file content
-  let content = `
-export const searchIndex = ${JSON.stringify(searchIndex, null, 2)}
-export const UPD_NAME = 'update-vuepress-plugin-next-search-index'
-`;
-
-  // inject HMR code
-  if (app.env.isDev) content += HMR_CODE;
-
-  await app.writeTemp("internal/vuepress-plugin-next-search-index.js", content);
-};
+// TODO: Support category and tag getter
+const extractInfo = (frontmatter: PageFrontmatter): SearchPageFrontmatter => ({
+  category:
+    typeof frontmatter["category"] === "undefined"
+      ? []
+      : (frontmatter["category"] as string[]),
+  tag:
+    typeof frontmatter["tag"] === "undefined"
+      ? []
+      : (frontmatter["tag"] as string[]),
+});
 
 // eslint-disable-next-line require-jsdoc
-function extractPageContents(page: VuepressPage): PageContent[] {
-  const results: PageContent[] = [];
+const extractContent = (page: Page): PageContent[] => {
+  const indexs: PageContent[] = [];
 
   const slugs = new Map<string, string>();
   const headers = [...page.headers];
@@ -82,16 +53,16 @@ function extractPageContents(page: VuepressPage): PageContent[] {
     slug: "",
     content: "",
   };
-  results.push(scope);
+  indexs.push(scope);
 
   const parser = new Parser({
     ontext(text) {
-      if (ignoreElement) {
-        return;
-      }
+      if (ignoreElement) return;
+
       const prop = withinHeader ? "header" : "content";
       scope[prop] += text;
     },
+
     onopentag(name, attribute) {
       if (
         ignoreElement ||
@@ -99,56 +70,88 @@ function extractPageContents(page: VuepressPage): PageContent[] {
         name === "style" ||
         (name === "div" && attribute.class === "line-numbers")
       ) {
-        ignoreElement++;
-        return;
-      }
-      if (withinHeader) {
-        withinHeader++;
+        ignoreElement += 1;
+
         return;
       }
 
-      if (!/^h\d$/u.test(name)) {
+      if (withinHeader) {
+        withinHeader += 1;
+
         return;
       }
+
+      if (!/^h\d$/u.test(name)) return;
+
       const id = attribute.id;
       const title = slugs.get(id);
+
       if (title) {
         scope = {
           header: title,
           slug: id,
           content: "",
         };
-        results.push(scope);
-        ignoreElement++;
+        indexs.push(scope);
+        ignoreElement += 1;
       } else {
         scope = {
           header: "",
           slug: id,
           content: "",
         };
-        results.push(scope);
-        withinHeader++;
+        indexs.push(scope);
+        withinHeader += 1;
       }
     },
     onclosetag() {
       if (ignoreElement) {
-        ignoreElement--;
+        ignoreElement -= 1;
+
         return;
       }
-      if (withinHeader) {
-        withinHeader--;
-      }
+
+      if (withinHeader) withinHeader -= 1;
     },
   });
+
   parser.parseComplete(page.contentRendered);
-  return results
-    .map((p) => {
-      p.header = p.header
+
+  return indexs
+    .map((index) => {
+      index.header = index.header
         .replace(/\s{2,}/g, " ")
         .replace(/^#/g, "")
         .trim();
-      p.content = p.content.replace(/\s{2,}/g, " ").trim();
-      return p;
+      index.content = index.content.replace(/\s{2,}/g, " ").trim();
+
+      return index;
     })
     .filter((p) => p.content || p.header);
-}
+};
+
+export const prepareSearchIndex = async ({
+  env,
+  pages,
+  writeTemp,
+}: App): Promise<void> => {
+  const searchIndex = pages.map(
+    (page): PageIndex => ({
+      path: page.path,
+      title: page.title,
+      pathLocale: page.pathLocale,
+      frontmatter: extractInfo(page.frontmatter),
+      contents: extractContent(page),
+    })
+  );
+
+  // search index file content
+  let content = `
+export const searchIndex = ${JSON.stringify(searchIndex, null, 2)}
+`;
+
+  // inject HMR code
+  if (env.isDev) content += HMR_CODE;
+
+  await writeTemp("internal/search-pro/index.js", content);
+};
