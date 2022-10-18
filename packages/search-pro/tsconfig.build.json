@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.build.base.json",
+  "compilerOptions": {
+    "lib": ["dom", "es2021"],
+
+    "rootDir": "./src",
+    "outDir": "./lib"
+  },
+  "include": ["./src", "./src/*.d.ts"],
+  "references": [
+    { "path": "../sass-palette/tsconfig.build.json" },
+    { "path": "../shared/tsconfig.build.json" }
+  ]
+}
