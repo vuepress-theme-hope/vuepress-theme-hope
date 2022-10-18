@@ -9,15 +9,7 @@ import {
 import { useCategoryMap } from "./categoryMap.js";
 import { useBlogOptions } from "./options.js";
 import { useTagMap } from "./tagMap.js";
-import {
-  AUTHOR,
-  CATEGORY,
-  DATE,
-  IS_ORIGINAL,
-  LOCALIZED_DATE,
-  READING_TIME,
-  TAG,
-} from "../../../../shared/index.js";
+import { ArticleInfoType } from "../../../../shared/index.js";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index.js";
 
@@ -36,7 +28,7 @@ export const useArticleAuthor = (info: Ref<ArticleInfo>): AuthorRef => {
   const themeLocale = useThemeLocaleData();
 
   return computed(() => {
-    const { [AUTHOR]: author } = info.value;
+    const { [ArticleInfoType.author]: author } = info.value;
 
     if (author) return getAuthor(author);
     if (author === false) return [];
@@ -51,7 +43,7 @@ export const useArticleCategory = (info: Ref<ArticleInfo>): CategoryRef => {
   const categoryMap = useCategoryMap();
 
   return computed(() =>
-    getCategory(info.value[CATEGORY]).map((name) => ({
+    getCategory(info.value[ArticleInfoType.category]).map((name) => ({
       name,
       path: categoryMap.value.map[name].path,
     }))
@@ -64,7 +56,7 @@ export const useArticleTag = (info: Ref<ArticleInfo>): TagRef => {
   const tagMap = useTagMap();
 
   return computed(() =>
-    getTag(info.value[TAG]).map((name) => ({
+    getTag(info.value[ArticleInfoType.tag]).map((name) => ({
       name,
       path: tagMap.value.map[name].path,
     }))
@@ -75,7 +67,7 @@ export type DateRef = ComputedRef<DateInfo | null>;
 
 export const useArticleDate = (info: Ref<ArticleInfo>): DateRef =>
   computed(() => {
-    const { [DATE]: date } = info.value;
+    const { [ArticleInfoType.date]: date } = info.value;
 
     return date ? getDate(date) : null;
   });
@@ -98,10 +90,10 @@ export const useArticleInfo = (props: {
     author: author.value,
     category: category.value,
     date: date.value,
-    localizedDate: info.value[LOCALIZED_DATE] || "",
+    localizedDate: info.value[ArticleInfoType.localizedDate] || "",
     tag: tag.value,
-    isOriginal: info.value[IS_ORIGINAL] || false,
-    readingTime: info.value[READING_TIME] || null,
+    isOriginal: info.value[ArticleInfoType.isOriginal] || false,
+    readingTime: info.value[ArticleInfoType.readingTime] || null,
     pageview: props.path,
   });
 

@@ -8,7 +8,7 @@ import {
   useNavigate,
   useThemeLocaleData,
 } from "@theme-hope/composables/index.js";
-import { TITLE } from "../../../../shared/index.js";
+import { ArticleInfoType } from "../../../../shared/index.js";
 
 import type { VNode } from "vue";
 
@@ -64,7 +64,7 @@ export default defineComponent({
                               class: "timeline-title",
                               to: path,
                             },
-                            () => info[TITLE]
+                            () => info[ArticleInfoType.title]
                           ),
                         ])
                       )

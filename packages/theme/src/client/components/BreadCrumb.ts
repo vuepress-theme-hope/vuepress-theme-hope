@@ -6,7 +6,7 @@ import { resolveRouteWithRedirect } from "vuepress-shared/lib/client";
 import Icon from "@theme-hope/components/Icon.js";
 import { useThemeLocaleData } from "@theme-hope/composables/index.js";
 import { getAncestorLinks } from "@theme-hope/utils/index.js";
-import { ICON, SHORT_TITLE, TITLE } from "../../shared/index.js";
+import { ArticleInfoType } from "../../shared/index.js";
 
 import type { VNode } from "vue";
 import type { HopeThemeNormalPageFrontmatter } from "../../shared/index.js";
@@ -56,11 +56,13 @@ export default defineComponent({
 
           if (route) {
             const { meta, path } = resolveRouteWithRedirect(router, route.path);
+            const title =
+              meta[ArticleInfoType.shortTitle] || meta[ArticleInfoType.title];
 
-            if (meta[SHORT_TITLE] || meta[TITLE])
+            if (title)
               return {
-                title: meta[SHORT_TITLE] || meta[TITLE],
-                icon: meta[ICON],
+                title,
+                icon: meta[ArticleInfoType.icon],
                 path,
               };
           }

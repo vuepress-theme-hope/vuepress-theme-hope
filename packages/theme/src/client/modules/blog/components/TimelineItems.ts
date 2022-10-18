@@ -8,7 +8,7 @@ import {
   useTimelines,
 } from "@theme-hope/modules/blog/composables/index.js";
 import TOC from "@theme-hope/modules/info/components/TOC.js";
-import { TITLE } from "../../../../shared/index.js";
+import { ArticleInfoType } from "../../../../shared/index.js";
 
 import type { VNode } from "vue";
 import type { PageHeader } from "@vuepress/shared";
@@ -68,7 +68,7 @@ export default defineComponent({
                             class: "timeline-title",
                             to: path,
                           },
-                          () => info[TITLE]
+                          () => info[ArticleInfoType.title]
                         ),
                       ])
                     )

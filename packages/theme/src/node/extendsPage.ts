@@ -7,24 +7,7 @@ import {
   timeTransformer,
 } from "vuepress-shared";
 
-import {
-  AUTHOR,
-  CATEGORY,
-  COVER,
-  DATE,
-  EXCERPT,
-  ICON,
-  IS_ENCRYPTED,
-  IS_ORIGINAL,
-  LOCALIZED_DATE,
-  PageType,
-  READING_TIME,
-  SHORT_TITLE,
-  STICKY,
-  TAG,
-  TITLE,
-  TYPE,
-} from "../shared/index.js";
+import { ArticleInfoType, PageType } from "../shared/index.js";
 
 import type { Page } from "@vuepress/core";
 import type {
@@ -96,13 +79,14 @@ export const extendsPage = (
   // inject localized date
   injectLocalizedDate(page);
 
-  page.routeMeta[TITLE] = page.title;
+  page.routeMeta[ArticleInfoType.title] = page.title;
 
-  if ("icon" in frontmatter) page.routeMeta[ICON] = frontmatter.icon;
+  if ("icon" in frontmatter)
+    page.routeMeta[ArticleInfoType.icon] = frontmatter.icon;
 
   // resolve shortTitle
   if ("shortTitle" in frontmatter)
-    page.routeMeta[SHORT_TITLE] = frontmatter.shortTitle;
+    page.routeMeta[ArticleInfoType.shortTitle] = frontmatter.shortTitle;
 
   if (plugins.blog) {
     const isArticle =
@@ -116,13 +100,13 @@ export const extendsPage = (
     const isSlide = isArticle && frontmatter.layout === "Slide";
 
     // save page type to routeMeta
-    page.routeMeta[TYPE] = frontmatter.home
-      ? PageType.Home
+    page.routeMeta[ArticleInfoType.type] = frontmatter.home
+      ? PageType.home
       : isSlide
-      ? PageType.Slide
+      ? PageType.slide
       : isArticle
-      ? PageType.Article
-      : PageType.Page;
+      ? PageType.article
+      : PageType.page;
 
     const excerpt = isEncrypted
       ? ""
@@ -133,48 +117,53 @@ export const extendsPage = (
           : "");
 
     // save page excerpt to routeMeta
-    if (excerpt) page.routeMeta[EXCERPT] = excerpt;
+    if (excerpt) page.routeMeta[ArticleInfoType.excerpt] = excerpt;
 
     // resolve author
-    if ("author" in frontmatter) page.routeMeta[AUTHOR] = frontmatter.author;
+    if ("author" in frontmatter)
+      page.routeMeta[ArticleInfoType.author] = frontmatter.author;
 
     // resolve date
     if ("date" in frontmatter) {
       const date = getDate(page.frontmatter.date)?.value;
 
       if (date) {
-        page.routeMeta[DATE] = frontmatter.date;
+        page.routeMeta[ArticleInfoType.date] = frontmatter.date;
 
-        page.routeMeta[LOCALIZED_DATE] = timeTransformer(date, {
+        page.routeMeta[ArticleInfoType.localizedDate] = timeTransformer(date, {
           lang: page.lang,
           type: "date",
         });
       }
-    } else if (createdTime) page.routeMeta[DATE] = new Date(createdTime);
+    } else if (createdTime)
+      page.routeMeta[ArticleInfoType.date] = new Date(createdTime);
 
     if ("category" in frontmatter)
       // resolve category
       // resolve category
-      page.routeMeta[CATEGORY] = frontmatter.category;
+      page.routeMeta[ArticleInfoType.category] = frontmatter.category;
 
     // resolve tag
-    if ("tag" in frontmatter) page.routeMeta[TAG] = frontmatter.tag;
+    if ("tag" in frontmatter)
+      page.routeMeta[ArticleInfoType.tag] = frontmatter.tag;
 
     // resolve sticky
-    if ("sticky" in frontmatter) page.routeMeta[STICKY] = frontmatter.sticky;
+    if ("sticky" in frontmatter)
+      page.routeMeta[ArticleInfoType.sticky] = frontmatter.sticky;
 
     // resolve image
-    if ("cover" in frontmatter) page.routeMeta[COVER] = frontmatter.cover;
+    if ("cover" in frontmatter)
+      page.routeMeta[ArticleInfoType.cover] = frontmatter.cover;
 
     // ensure a valid reading time exisits
     if (page.data.readingTime && page.data.readingTime.words !== 0)
-      page.routeMeta[READING_TIME] = page.data.readingTime;
+      page.routeMeta[ArticleInfoType.readingTime] = page.data.readingTime;
 
     // resolve isOriginal
     if ("isOriginal" in frontmatter)
-      page.routeMeta[IS_ORIGINAL] = frontmatter.isOriginal;
+      page.routeMeta[ArticleInfoType.isOriginal] = frontmatter.isOriginal;
 
     // resolve encrypted
-    if (isEncrypted) page.routeMeta[IS_ENCRYPTED] = true;
+    if (isEncrypted) page.routeMeta[ArticleInfoType.isEncrypted] = true;
   }
 };

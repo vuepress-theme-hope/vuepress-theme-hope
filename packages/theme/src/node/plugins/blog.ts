@@ -1,12 +1,5 @@
 import { blogPlugin } from "vuepress-plugin-blog2";
-import {
-  CATEGORY,
-  DATE,
-  IS_ENCRYPTED,
-  PageType,
-  TAG,
-  TYPE,
-} from "../../shared/index.js";
+import { ArticleInfoType, PageType } from "../../shared/index.js";
 
 import type { Page, Plugin } from "@vuepress/core";
 import type { GitData } from "@vuepress/plugin-git";
@@ -61,7 +54,10 @@ const sorter = (
   if (prevKey && !nextKey) return -1;
   if (!prevKey && nextKey) return 1;
 
-  return compareDate(pageA.routeMeta[DATE], pageB.routeMeta[DATE]);
+  return compareDate(
+    pageA.routeMeta[ArticleInfoType.date],
+    pageB.routeMeta[ArticleInfoType.date]
+  );
 };
 
 export const getBlogOptions = (
@@ -99,8 +95,8 @@ export const getBlogPlugin = (
     filter:
       blogOptions.filter ||
       (({ routeMeta }): boolean =>
-        routeMeta[TYPE] == PageType.Article ||
-        routeMeta[TYPE] == PageType.Slide),
+        routeMeta[ArticleInfoType.type] == PageType.article ||
+        routeMeta[ArticleInfoType.type] == PageType.slide),
 
     category: [
       {
@@ -111,7 +107,7 @@ export const getBlogPlugin = (
           { git: GitData },
           HopeThemeNormalPageFrontmatter,
           { routeMeta: ArticleInfo }
-        >) => routeMeta[CATEGORY] || [],
+        >) => routeMeta[ArticleInfoType.category] || [],
         sorter,
         path: blogOptions.category,
         layout: "Blog",
@@ -132,7 +128,7 @@ export const getBlogPlugin = (
           { git: GitData },
           HopeThemeNormalPageFrontmatter,
           { routeMeta: ArticleInfo }
-        >) => routeMeta[TAG] || [],
+        >) => routeMeta[ArticleInfoType.tag] || [],
         sorter,
         path: blogOptions.tag,
         layout: "Blog",
@@ -173,7 +169,7 @@ export const getBlogPlugin = (
           { git: GitData },
           HopeThemeNormalPageFrontmatter,
           { routeMeta: ArticleInfo }
-        >) => Boolean(routeMeta[IS_ENCRYPTED]),
+        >) => Boolean(routeMeta[ArticleInfoType.isEncrypted]),
         path: blogOptions.encrypted,
         layout: "Blog",
         frontmatter: (localePath) => ({
@@ -189,7 +185,7 @@ export const getBlogPlugin = (
           { git: GitData },
           HopeThemeNormalPageFrontmatter,
           { routeMeta: ArticleInfo }
-        >) => routeMeta.type === PageType.Slide,
+        >) => routeMeta[ArticleInfoType.type] === PageType.slide,
         path: blogOptions.slide,
         layout: "Blog",
         frontmatter: (localePath) => ({
@@ -209,7 +205,7 @@ export const getBlogPlugin = (
             HopeThemeNormalPageFrontmatter,
             { routeMeta: ArticleInfo }
           >
-        ) => {
+        ): number => {
           const prevKey = pageA.frontmatter.star;
           const nextKey = pageB.frontmatter.star;
 
@@ -218,7 +214,10 @@ export const getBlogPlugin = (
           if (prevKey && !nextKey) return -1;
           if (!prevKey && nextKey) return 1;
 
-          return compareDate(pageA.routeMeta[DATE], pageB.routeMeta[DATE]);
+          return compareDate(
+            pageA.routeMeta[ArticleInfoType.date],
+            pageB.routeMeta[ArticleInfoType.date]
+          );
         },
         filter: ({
           frontmatter,
@@ -246,7 +245,11 @@ export const getBlogPlugin = (
             HopeThemeNormalPageFrontmatter,
             { routeMeta: ArticleInfo }
           >
-        ) => compareDate(pageA.routeMeta[DATE], pageB.routeMeta[DATE]),
+        ) =>
+          compareDate(
+            pageA.routeMeta[ArticleInfoType.date],
+            pageB.routeMeta[ArticleInfoType.date]
+          ),
         filter: ({
           frontmatter,
           routeMeta,
@@ -254,7 +257,9 @@ export const getBlogPlugin = (
           { git: GitData },
           HopeThemeNormalPageFrontmatter,
           { routeMeta: ArticleInfo }
-        >) => DATE in routeMeta && frontmatter["timeline"] !== false,
+        >) =>
+          ArticleInfoType.date in routeMeta &&
+          frontmatter["timeline"] !== false,
         path: blogOptions.timeline,
         layout: "Blog",
         frontmatter: (localePath) => ({

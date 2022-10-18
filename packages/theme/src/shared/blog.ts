@@ -1,102 +1,104 @@
 import type { ReadingTime } from "vuepress-plugin-reading-time2";
 import type { Author } from "vuepress-shared";
 
-export const TYPE = "y";
-export const TITLE = "t";
-export const SHORT_TITLE = "s";
-export const ICON = "i";
-export const AUTHOR = "a";
-export const DATE = "d";
-export const LOCALIZED_DATE = "l";
-export const CATEGORY = "c";
-export const TAG = "g";
-export const IS_ENCRYPTED = "n";
-export const IS_ORIGINAL = "o";
-export const READING_TIME = "r";
-export const EXCERPT = "e";
-export const STICKY = "u";
-export const COVER = "v";
+export enum ArticleInfoType {
+  type = "y",
+  title = "t",
+  shortTitle = "s",
+  icon = "i",
+  author = "a",
+  date = "d",
+  localizedDate = "l",
+  category = "c",
+  tag = "g",
+  isEncrypted = "n",
+  isOriginal = "o",
+  readingTime = "r",
+  excerpt = "e",
+  sticky = "u",
+  cover = "v",
+}
 
 export enum PageType {
-  Article = "a",
-  Home = "h",
-  Slide = "s",
-  Page = "p",
+  article = "a",
+  home = "h",
+  slide = "s",
+  page = "p",
 }
 
 export interface ArticleInfo extends Record<string, unknown> {
   /**
    * Type
    */
-  type: PageType;
+  [ArticleInfoType.type]: PageType;
 
   /**
    * Article title
    */
-  [TITLE]: string;
+  [ArticleInfoType.title]: string;
 
   /**
    * Article short title
    */
-  [SHORT_TITLE]: string;
+  [ArticleInfoType.shortTitle]: string;
 
   /**
    * Page icon
    */
-  [ICON]?: string;
+  [ArticleInfoType.icon]?: string;
 
   /**
    * Article author
    */
-  [AUTHOR]?: Author | false;
+  [ArticleInfoType.author]?: Author | false;
 
   /**
    * writing date info
    */
-  [DATE]?: Date;
+  [ArticleInfoType.date]?: Date;
 
   /**
    * writing date info in currect language
    */
-  [LOCALIZED_DATE]?: string;
+  [ArticleInfoType.localizedDate]?: string;
 
   /**
    * article category
    */
-  [CATEGORY]?: string[];
+  [ArticleInfoType.category]?: string[];
 
   /**
    * Article tag
    */
-  [TAG]?: string[];
+  [ArticleInfoType.tag]?: string[];
 
   /**
    * Reading time info
    */
-  [READING_TIME]?: ReadingTime;
+  [ArticleInfoType.readingTime]?: ReadingTime;
 
   /**
    * article excerpt
    */
-  [EXCERPT]: string;
+  [ArticleInfoType.excerpt]: string;
 
   /**
    * Whether is encrypted
    */
-  [IS_ENCRYPTED]?: true;
+  [ArticleInfoType.isEncrypted]?: true;
 
   /**
    * Whether is original
    */
-  [IS_ORIGINAL]?: true;
+  [ArticleInfoType.isOriginal]?: true;
 
   /**
    * Sticky info
    */
-  [STICKY]?: number | boolean;
+  [ArticleInfoType.sticky]?: number | boolean;
 
   /**
    * Cover image
    */
-  [COVER]?: string;
+  [ArticleInfoType.cover]?: string;
 }
