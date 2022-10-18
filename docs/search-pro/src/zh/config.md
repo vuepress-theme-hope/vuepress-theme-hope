@@ -1,20 +1,12 @@
 ---
 title: 配置项
-date: 2022-06-09
-icon: style
-category:
-- 指南
-tag:
-- 配置项
 ---
-
-<!-- More -->
 
 ## fullText
 
-- 类型：`boolean`
-- 默认值：`true`
-- 详情\
+- 类型: `boolean`
+- 默认值: `true`
+- 详情:
   是否开启文章正文搜索功能。
 - 默认搜索范围
   - 标题
@@ -30,24 +22,24 @@ tag:
 ```md
 ---
 category:
-- 分类1
-- 分类2
+  - 分类1
+  - 分类2
 tag:
-- 标签1
-- 标签2
+  - 标签1
+  - 标签2
 ---
 ```
 
 ## placeholder
 
-- 类型：`string`
-- 默认值：`'搜索'`
+- 类型: `string`
+- 默认值: `'搜索'`
 - 详情\
   搜索输入框的 `placeholder` 属性。
 
 ## frontmatter
 
-- 类型：`Record<string, NextSearchPluginOptions>`
+- 类型: `Record<string, NextSearchPluginOptions>`
 - 详情\
   用于自定义`category`和`tag`在搜索框内的显示文字。
 - 举个栗子

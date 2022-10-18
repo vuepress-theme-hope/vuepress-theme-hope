@@ -6,8 +6,8 @@ heroImage: /images/home.gif
 heroText: vuepress-plugin-next-search
 tagline: 适配vuepressV2的全文搜索工具
 actions:
-- text: 快速上手
-  link: /guide/index/
+- text: 快速上手，英文页面
+  link: /en/guide/index/
   type: primary
 - text: Github
   link: https://github.com/holajacky/vuepress-plugin-next-search
@@ -24,7 +24,7 @@ features:
   details: 使用vuepress2制作，主题为vuepress-theme-hope/v2，求来个英语牛B的帮忙搞下英文文档，要求：用爱发电
   icon: alias
 copyright: false
-footer: MIT Licensed | Copyright © holajacky@126.com | <a href="https://beian.miit.gov.cn/" target="_blank">浙ICP备2022017723号-1</a>
+footer: MIT Licensed | Copyright © holajacky@126.com
 ---
 
 ## 📖鸣谢名单
