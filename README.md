@@ -28,8 +28,6 @@
 
 A vuepress theme with tons of features✨
 
-![Status](https://repobeats.axiom.co/api/embed/1164cd0962fe9e8ce7fd3785cb28c79adecf8a26.svg)
-
 ## [English Docs](https://vuepress-theme-hope.github.io/v2/)
 
 ## [Online Demo](https://stackblitz.com/fork/vuepress-theme-hope)
@@ -62,3 +60,15 @@ Also V2 has a better performance:🚀
 - Build time reduced by **30%**
 - Output Size reduced by **25%**
 - Webpage performance up to **70%**
+
+## Project Status
+
+![Status](https://repobeats.axiom.co/api/embed/1164cd0962fe9e8ce7fd3785cb28c79adecf8a26.svg)
+
+## Contributors
+
+Thanks to all the contributors!
+
+<a href="https://github.com/vuepress-theme-hope/vuepress-theme-hope/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=vuepress-theme-hope/vuepress-theme-hope" />
+</a>
