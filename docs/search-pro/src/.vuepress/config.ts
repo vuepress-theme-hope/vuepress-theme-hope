@@ -1,28 +1,25 @@
-import { defineUserConfig } from 'vuepress'
-import { head } from "./config/head";
-import { theme } from "./config/theme";
-import { plugins } from "./config/plugins";
+import { config } from "docs-shared";
+import theme from "./theme.js";
 
-// @ts-ignore
-export default defineUserConfig({
-  lang: 'zh-CN',
-  title: 'vuepress-plugin-next-search',
-  description: '适配vuepress2的全文搜索工具',
-  port: 34567,
-  head,
-  theme,
-  plugins,
-  base: '/',
-  dest: './dist',
-  locales: {
-    '/': {
-      lang: 'zh-CN',
-    },
-    '/zh-TW/': {
-      lang: 'zh-TW',
-    },
-    "/en/": {
-      lang: "en-US",
-    },
+export default config(
+  {
+    base: `search-pro`,
+    indexName: "vuepress-theme-hope-search-pro",
   },
-})
+  {
+    locales: {
+      "/": {
+        lang: "en-US",
+        title: "Search Pro Plugin",
+        description: "Full text search plugin at client",
+      },
+      "/zh/": {
+        lang: "zh-CN",
+        title: "增强搜索插件",
+        description: "在客户端进行全文搜索",
+      },
+    },
+
+    theme,
+  }
+);
