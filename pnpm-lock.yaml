@@ -695,6 +695,22 @@ importers:
       vuepress-vite: 2.0.0-beta.51_k4vptf7sk6j6frwxg4oyeqjotm
       vuepress-webpack: 2.0.0-beta.51_vue@3.2.41
 
+  docs/search-pro:
+    specifiers:
+      '@vuepress/client': 2.0.0-beta.51
+      docs-shared: workspace:*
+      sass-loader: 13.1.0
+      vue: 3.2.41
+      vuepress-vite: 2.0.0-beta.51
+      vuepress-webpack: 2.0.0-beta.51
+    dependencies:
+      '@vuepress/client': 2.0.0-beta.51
+      docs-shared: link:../shared
+      sass-loader: 13.1.0
+      vue: 3.2.41
+      vuepress-vite: 2.0.0-beta.51_k4vptf7sk6j6frwxg4oyeqjotm
+      vuepress-webpack: 2.0.0-beta.51_vue@3.2.41
+
   docs/seo2:
     specifiers:
       '@vuepress/client': 2.0.0-beta.51
@@ -1139,6 +1155,8 @@ importers:
     specifiers:
       '@vuepress/client': 2.0.0-beta.51
       '@vuepress/core': 2.0.0-beta.51
+      '@vuepress/utils': 2.0.0-beta.51
+      chokidar: ^3.5.3
       htmlparser2: ^8.0.1
       rimraf: 3.0.2
       vue: ^3.2.41
@@ -1146,6 +1164,8 @@ importers:
       vuepress-shared: workspace:*
     dependencies:
       '@vuepress/client': 2.0.0-beta.51
+      '@vuepress/utils': 2.0.0-beta.51
+      chokidar: 3.5.3
       htmlparser2: 8.0.1
       vue: 3.2.41
       vuepress-plugin-sass-palette: link:../sass-palette

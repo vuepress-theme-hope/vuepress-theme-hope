@@ -1,5 +1,4 @@
-import type { App, LocaleConfig, Page } from "@vuepress/core";
-import type { Ref } from "vue";
+import type { Page } from "@vuepress/core";
 
 export interface SearchPageFrontmatter {
   category: string[] | null;
@@ -37,7 +36,6 @@ export interface Suggestion {
 }
 
 export type SearchIndex = PageIndex[];
-export type SearchIndexRef = Ref<SearchIndex>;
 
 export type Options = {
   fullText?: boolean;
@@ -47,25 +45,3 @@ export type Options = {
     category?: string;
   };
 };
-
-export interface LocaleOptions extends Options {
-  locales?: LocalesOptions;
-}
-
-export type VuepressApp = Pick<App, "env" | "writeTemp"> & {
-  pages: VuepressPage[];
-};
-
-export type VuepressPage = Pick<
-  Page,
-  | "pathLocale"
-  | "title"
-  | "path"
-  | "headers"
-  | "contentRendered"
-  | "frontmatter"
->;
-
-export type LocalesOptions = LocaleConfig<Options>;
-
-export type LocaleData = Record<string, any>;
