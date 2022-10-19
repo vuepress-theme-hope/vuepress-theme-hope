@@ -223,7 +223,9 @@ export const prepareCategory = (
 
     await app.writeTemp(
       `blog/category.js`,
-      `export const categoryMap = ${JSON.stringify(finalMap)}\n${HMR_CODE}`
+      `export const categoryMap = ${JSON.stringify(finalMap)}\n${
+        app.env.isDev ? HMR_CODE : ""
+      }`
     );
 
     if (app.env.isDebug) logger.info("All categories generated.");

@@ -137,7 +137,9 @@ export const prepareType = (
 
     await app.writeTemp(
       `blog/type.js`,
-      `export const typeMap = ${JSON.stringify(finalMap)}\n${HMR_CODE}`
+      `export const typeMap = ${JSON.stringify(finalMap)}\n${
+        app.env.isDev ? HMR_CODE : ""
+      }`
     );
 
     if (app.env.isDebug) logger.info("All types generated.");

@@ -13,6 +13,7 @@ import type {
 
 // eslint-disable-next-line
 declare const __VUE_HMR_RUNTIME__: Record<string, any>;
+declare const __VUEPRESS_DEV__: boolean;
 declare const BLOG_META_SCOPE: string;
 
 export const blogCategoryMap = ref(categoryMap);
@@ -81,7 +82,7 @@ export const useBlogCategory = <
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-if (import.meta.webpackHot || import.meta.hot) {
+if (__VUEPRESS_DEV__ && (import.meta.webpackHot || import.meta.hot)) {
   __VUE_HMR_RUNTIME__["updateBlogCategory"] = (
     map: Record<string, CategoryMap>
   ): void => {
