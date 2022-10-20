@@ -132,6 +132,7 @@ export default defineComponent({
       inputPosition: giscusOption.inputPosition || "top",
       reactionsEnabled: giscusOption.reactionsEnabled !== false ? "1" : "0",
       strict: giscusOption.strict !== false ? "1" : "0",
+      loading: giscusOption.lazyLoading !== false ? "lazy" : "eager",
       emitMetadata: "0",
     }));
 
