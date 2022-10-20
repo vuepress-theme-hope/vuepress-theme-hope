@@ -7,9 +7,6 @@ patchedDependencies:
   mitt@3.0.0:
     hash: 4gwmhmjqmdcx2eqz3s6leupoa4
     path: patches/mitt@3.0.0.patch
-  chart.js@3.9.1:
-    hash: 5ajox23vvndk6xm43nfutxdhza
-    path: patches/chart.js@3.9.1.patch
 
 importers:
 
@@ -980,7 +977,7 @@ importers:
       '@vuepress/utils': 2.0.0-beta.51
       '@vueuse/core': ^9.3.1
       balloon-css: ^1.2.0
-      chart.js: ^3.9.1
+      chart.js: ^4.0.0-0
       echarts: ^5.4.0
       flowchart.js: ^1.17.1
       juice: ^8.1.0
@@ -1007,7 +1004,7 @@ importers:
       '@vuepress/utils': 2.0.0-beta.51
       '@vueuse/core': 9.3.1_vue@3.2.41
       balloon-css: 1.2.0
-      chart.js: 3.9.1_5ajox23vvndk6xm43nfutxdhza
+      chart.js: 4.0.0-alpha.2
       echarts: 5.4.0
       flowchart.js: 1.17.1
       juice: 8.1.0
@@ -4806,10 +4803,10 @@ packages:
   /chardet/0.7.0:
     resolution: {integrity: sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==}
 
-  /chart.js/3.9.1_5ajox23vvndk6xm43nfutxdhza:
-    resolution: {integrity: sha512-Ro2JbLmvg83gXF5F4sniaQ+lTbSv18E+TIf2cOeiH1Iqd2PGFOtem+DUufMZsCJwFE7ywPOpfXFBwRTGq7dh6w==}
+  /chart.js/4.0.0-alpha.2:
+    resolution: {integrity: sha512-zQWWelV2aRRR2pdMT8mYlqMA9v168ja469JQG1i1+laXaHB9MzlqAHf+JqiPyOsKnpTRsClcqH3KJcGKJFhqDg==}
+    engines: {pnpm: ^7.0.0}
     dev: false
-    patched: true
 
   /check-error/1.0.2:
     resolution: {integrity: sha512-BrgHpW9NURQgzoNyjfq0Wu6VFO6D7IZEmJNdtgNqpzGG8RuNFHt2jQxWlAs4HMe119chBnv+34syEZtc6IhLtA==}

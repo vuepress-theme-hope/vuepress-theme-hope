@@ -64,7 +64,7 @@
     "@vuepress/utils": "2.0.0-beta.51",
     "@vueuse/core": "^9.3.1",
     "balloon-css": "^1.2.0",
-    "chart.js": "^3.9.1",
+    "chart.js": "^4.0.0-0",
     "echarts": "^5.4.0",
     "flowchart.js": "^1.17.1",
     "juice": "^8.1.0",
