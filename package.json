@@ -94,7 +94,7 @@
     "lint-staged": "13.0.3",
     "magic-string": "0.26.7",
     "markdownlint-cli": "0.32.2",
-    "npm-check-updates": "16.3.13",
+    "npm-check-updates": "16.3.15",
     "ora": "6.1.2",
     "prettier": "2.7.1",
     "rollup": "3.2.3",
