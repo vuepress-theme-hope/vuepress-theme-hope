@@ -44,15 +44,15 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@vuepress/client": "2.0.0-beta.51",
-    "@vuepress/shared": "2.0.0-beta.51",
-    "@vuepress/utils": "2.0.0-beta.51",
+    "@vuepress/client": "2.0.0-beta.52",
+    "@vuepress/shared": "2.0.0-beta.52",
+    "@vuepress/utils": "2.0.0-beta.52",
     "@vueuse/core": "^9.3.1",
     "vue": "^3.2.41",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.51",
+    "@vuepress/core": "2.0.0-beta.52",
     "rimraf": "3.0.2"
   },
   "publishConfig": {

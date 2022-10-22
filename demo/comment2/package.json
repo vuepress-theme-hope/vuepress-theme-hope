@@ -14,15 +14,15 @@
     "demo:vite-dev": "vuepress-vite dev src"
   },
   "devDependencies": {
-    "@vuepress/cli": "2.0.0-beta.51",
-    "@vuepress/client": "2.0.0-beta.51",
-    "@vuepress/core": "2.0.0-beta.51",
-    "@vuepress/theme-default": "2.0.0-beta.51",
-    "@vuepress/utils": "2.0.0-beta.51",
+    "@vuepress/cli": "2.0.0-beta.52",
+    "@vuepress/client": "2.0.0-beta.52",
+    "@vuepress/core": "2.0.0-beta.52",
+    "@vuepress/theme-default": "2.0.0-beta.52",
+    "@vuepress/utils": "2.0.0-beta.52",
     "sass-loader": "13.1.0",
     "vue": "3.2.41",
     "vuepress-plugin-comment2": "workspace:*",
-    "vuepress-vite": "2.0.0-beta.51",
-    "vuepress-webpack": "2.0.0-beta.51"
+    "vuepress-vite": "2.0.0-beta.52",
+    "vuepress-webpack": "2.0.0-beta.52"
   }
 }
