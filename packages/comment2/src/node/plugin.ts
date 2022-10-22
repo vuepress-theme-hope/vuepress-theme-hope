@@ -69,6 +69,8 @@ export const commentPlugin =
       }),
 
       extendsBundlerOptions: (config: unknown, app): void => {
+        addViteOptimizeDepsExclude({ app, config }, "@CommentProvider");
+
         if (provider === "Giscus") {
           addCustomElement({ app, config }, "GiscusWidget");
           addViteSsrExternal({ app, config }, "giscus");
