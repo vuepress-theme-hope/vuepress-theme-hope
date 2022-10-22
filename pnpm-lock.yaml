@@ -115,7 +115,7 @@ importers:
       sass-loader: 13.1.0
       vue: 3.2.41
       vue-router: 4.1.5
-      vuepress-plugin-blog2: workspace:2.0.0-beta.110
+      vuepress-plugin-blog2: workspace:*
       vuepress-vite: 2.0.0-beta.52
       vuepress-webpack: 2.0.0-beta.52
     devDependencies:
@@ -140,7 +140,7 @@ importers:
       '@vuepress/utils': 2.0.0-beta.52
       sass-loader: 13.1.0
       vue: 3.2.41
-      vuepress-plugin-comment2: workspace:2.0.0-beta.110
+      vuepress-plugin-comment2: workspace:*
       vuepress-vite: 2.0.0-beta.52
       vuepress-webpack: 2.0.0-beta.52
     devDependencies:
@@ -162,7 +162,7 @@ importers:
       '@vuepress/theme-default': 2.0.0-beta.52
       sass-loader: 13.1.0
       vue: 3.2.41
-      vuepress-plugin-components: workspace:2.0.0-beta.110
+      vuepress-plugin-components: workspace:*
       vuepress-vite: 2.0.0-beta.52
       vuepress-webpack: 2.0.0-beta.52
     devDependencies:
@@ -182,7 +182,7 @@ importers:
       '@vuepress/theme-default': 2.0.0-beta.52
       sass-loader: 13.1.0
       vue: 3.2.41
-      vuepress-plugin-copy-code2: workspace:2.0.0-beta.110
+      vuepress-plugin-copy-code2: workspace:*
       vuepress-vite: 2.0.0-beta.52
       vuepress-webpack: 2.0.0-beta.52
     devDependencies:
@@ -203,7 +203,7 @@ importers:
       '@vuepress/utils': 2.0.0-beta.52
       sass-loader: 13.1.0
       vue: 3.2.41
-      vuepress-plugin-copyright2: workspace:2.0.0-beta.110
+      vuepress-plugin-copyright2: workspace:*
       vuepress-vite: 2.0.0-beta.52
       vuepress-webpack: 2.0.0-beta.52
     devDependencies:
@@ -224,7 +224,7 @@ importers:
       '@vuepress/theme-default': 2.0.0-beta.52
       sass-loader: 13.1.0
       vue: 3.2.41
-      vuepress-plugin-feed2: workspace:2.0.0-beta.110
+      vuepress-plugin-feed2: workspace:*
       vuepress-vite: 2.0.0-beta.52
       vuepress-webpack: 2.0.0-beta.52
     devDependencies:
@@ -244,7 +244,7 @@ importers:
       '@vuepress/theme-default': 2.0.0-beta.52
       sass-loader: 13.1.0
       vue: 3.2.41
-      vuepress-plugin-lightgallery: workspace:2.0.0-beta.110
+      vuepress-plugin-lightgallery: workspace:*
       vuepress-vite: 2.0.0-beta.52
       vuepress-webpack: 2.0.0-beta.52
     devDependencies:
@@ -264,7 +264,7 @@ importers:
       '@vuepress/theme-default': 2.0.0-beta.52
       sass-loader: 13.1.0
       vue: 3.2.41
-      vuepress-plugin-md-enhance: workspace:2.0.0-beta.110
+      vuepress-plugin-md-enhance: workspace:*
       vuepress-vite: 2.0.0-beta.52
       vuepress-webpack: 2.0.0-beta.52
     devDependencies:
@@ -284,7 +284,7 @@ importers:
       '@vuepress/theme-default': 2.0.0-beta.52
       sass-loader: 13.1.0
       vue: 3.2.41
-      vuepress-plugin-photo-swipe: workspace:2.0.0-beta.110
+      vuepress-plugin-photo-swipe: workspace:*
       vuepress-vite: 2.0.0-beta.52
       vuepress-webpack: 2.0.0-beta.52
     devDependencies:
@@ -304,7 +304,7 @@ importers:
       '@vuepress/theme-default': 2.0.0-beta.52
       sass-loader: 13.1.0
       vue: 3.2.41
-      vuepress-plugin-pwa2: workspace:2.0.0-beta.110
+      vuepress-plugin-pwa2: workspace:*
       vuepress-vite: 2.0.0-beta.52
       vuepress-webpack: 2.0.0-beta.52
     devDependencies:
@@ -324,7 +324,7 @@ importers:
       '@vuepress/theme-default': 2.0.0-beta.52
       sass-loader: 13.1.0
       vue: 3.2.41
-      vuepress-plugin-redirect: workspace:2.0.0-beta.110
+      vuepress-plugin-redirect: workspace:*
       vuepress-vite: 2.0.0-beta.52
       vuepress-webpack: 2.0.0-beta.52
     devDependencies:
@@ -344,7 +344,7 @@ importers:
       '@vuepress/theme-default': 2.0.0-beta.52
       sass-loader: 13.1.0
       vue: 3.2.41
-      vuepress-plugin-sass-palette: workspace:2.0.0-beta.110
+      vuepress-plugin-sass-palette: workspace:*
       vuepress-vite: 2.0.0-beta.52
       vuepress-webpack: 2.0.0-beta.52
     devDependencies:
@@ -364,7 +364,7 @@ importers:
       '@vuepress/theme-default': 2.0.0-beta.52
       sass-loader: 13.1.0
       vue: 3.2.41
-      vuepress-plugin-seo2: workspace:2.0.0-beta.110
+      vuepress-plugin-seo2: workspace:*
       vuepress-vite: 2.0.0-beta.52
       vuepress-webpack: 2.0.0-beta.52
     devDependencies:
@@ -384,7 +384,7 @@ importers:
       '@vuepress/theme-default': 2.0.0-beta.52
       sass-loader: 13.1.0
       vue: 3.2.41
-      vuepress-plugin-sitemap2: workspace:2.0.0-beta.110
+      vuepress-plugin-sitemap2: workspace:*
       vuepress-vite: 2.0.0-beta.52
       vuepress-webpack: 2.0.0-beta.52
     devDependencies:
@@ -409,7 +409,7 @@ importers:
       cross-env: 7.0.3
       sass-loader: 13.1.0
       vue: 3.2.41
-      vuepress-theme-hope: workspace:2.0.0-beta.110
+      vuepress-theme-hope: workspace:*
       vuepress-vite: 2.0.0-beta.52
       vuepress-webpack: 2.0.0-beta.52
     devDependencies:
@@ -439,7 +439,7 @@ importers:
       cross-env: 7.0.3
       sass-loader: 13.1.0
       vue: 3.2.41
-      vuepress-theme-hope: workspace:2.0.0-beta.110
+      vuepress-theme-hope: workspace:*
       vuepress-vite: 2.0.0-beta.52
       vuepress-webpack: 2.0.0-beta.52
     devDependencies:
@@ -460,7 +460,7 @@ importers:
   docs/blog2:
     specifiers:
       '@vuepress/client': 2.0.0-beta.52
-      docs-shared: workspace:2.0.0-beta.110
+      docs-shared: workspace:*
       sass-loader: 13.1.0
       vue: 3.2.41
       vuepress-vite: 2.0.0-beta.52
@@ -476,10 +476,10 @@ importers:
   docs/comment2:
     specifiers:
       '@vuepress/client': 2.0.0-beta.52
-      docs-shared: workspace:2.0.0-beta.110
+      docs-shared: workspace:*
       sass-loader: 13.1.0
       vue: 3.2.41
-      vuepress-plugin-comment2: workspace:2.0.0-beta.110
+      vuepress-plugin-comment2: workspace:*
       vuepress-vite: 2.0.0-beta.52
       vuepress-webpack: 2.0.0-beta.52
     dependencies:
@@ -494,10 +494,10 @@ importers:
   docs/components:
     specifiers:
       '@vuepress/client': 2.0.0-beta.52
-      docs-shared: workspace:2.0.0-beta.110
+      docs-shared: workspace:*
       sass-loader: 13.1.0
       vue: 3.2.41
-      vuepress-plugin-components: workspace:2.0.0-beta.110
+      vuepress-plugin-components: workspace:*
       vuepress-vite: 2.0.0-beta.52
       vuepress-webpack: 2.0.0-beta.52
     dependencies:
@@ -512,10 +512,10 @@ importers:
   docs/copy-code2:
     specifiers:
       '@vuepress/client': 2.0.0-beta.52
-      docs-shared: workspace:2.0.0-beta.110
+      docs-shared: workspace:*
       sass-loader: 13.1.0
       vue: 3.2.41
-      vuepress-plugin-copy-code2: workspace:2.0.0-beta.110
+      vuepress-plugin-copy-code2: workspace:*
       vuepress-vite: 2.0.0-beta.52
       vuepress-webpack: 2.0.0-beta.52
     dependencies:
@@ -530,7 +530,7 @@ importers:
   docs/copyright2:
     specifiers:
       '@vuepress/client': 2.0.0-beta.52
-      docs-shared: workspace:2.0.0-beta.110
+      docs-shared: workspace:*
       sass-loader: 13.1.0
       vue: 3.2.41
       vuepress-vite: 2.0.0-beta.52
@@ -546,10 +546,10 @@ importers:
   docs/feed2:
     specifiers:
       '@vuepress/client': 2.0.0-beta.52
-      docs-shared: workspace:2.0.0-beta.110
+      docs-shared: workspace:*
       sass-loader: 13.1.0
       vue: 3.2.41
-      vuepress-plugin-feed2: workspace:2.0.0-beta.110
+      vuepress-plugin-feed2: workspace:*
       vuepress-vite: 2.0.0-beta.52
       vuepress-webpack: 2.0.0-beta.52
     dependencies:
@@ -564,10 +564,10 @@ importers:
   docs/lightgallery:
     specifiers:
       '@vuepress/client': 2.0.0-beta.52
-      docs-shared: workspace:2.0.0-beta.110
+      docs-shared: workspace:*
       sass-loader: 13.1.0
       vue: 3.2.41
-      vuepress-plugin-lightgallery: workspace:2.0.0-beta.110
+      vuepress-plugin-lightgallery: workspace:*
       vuepress-vite: 2.0.0-beta.52
       vuepress-webpack: 2.0.0-beta.52
     dependencies:
@@ -584,11 +584,11 @@ importers:
       '@types/katex': 0.14.0
       '@vuepress/client': 2.0.0-beta.52
       '@vuepress/utils': 2.0.0-beta.52
-      docs-shared: workspace:2.0.0-beta.110
+      docs-shared: workspace:*
       katex: 0.16.2
       sass-loader: 13.1.0
       vue: 3.2.41
-      vuepress-plugin-md-enhance: workspace:2.0.0-beta.110
+      vuepress-plugin-md-enhance: workspace:*
       vuepress-vite: 2.0.0-beta.52
       vuepress-webpack: 2.0.0-beta.52
     dependencies:
@@ -606,10 +606,10 @@ importers:
   docs/photo-swipe:
     specifiers:
       '@vuepress/client': 2.0.0-beta.52
-      docs-shared: workspace:2.0.0-beta.110
+      docs-shared: workspace:*
       sass-loader: 13.1.0
       vue: 3.2.41
-      vuepress-plugin-photo-swipe: workspace:2.0.0-beta.110
+      vuepress-plugin-photo-swipe: workspace:*
       vuepress-vite: 2.0.0-beta.52
       vuepress-webpack: 2.0.0-beta.52
     dependencies:
@@ -624,10 +624,10 @@ importers:
   docs/pwa2:
     specifiers:
       '@vuepress/client': 2.0.0-beta.52
-      docs-shared: workspace:2.0.0-beta.110
+      docs-shared: workspace:*
       sass-loader: 13.1.0
       vue: 3.2.41
-      vuepress-plugin-pwa2: workspace:2.0.0-beta.110
+      vuepress-plugin-pwa2: workspace:*
       vuepress-vite: 2.0.0-beta.52
       vuepress-webpack: 2.0.0-beta.52
     dependencies:
@@ -642,10 +642,10 @@ importers:
   docs/reading-time2:
     specifiers:
       '@vuepress/client': 2.0.0-beta.52
-      docs-shared: workspace:2.0.0-beta.110
+      docs-shared: workspace:*
       sass-loader: 13.1.0
       vue: 3.2.41
-      vuepress-plugin-reading-time2: workspace:2.0.0-beta.110
+      vuepress-plugin-reading-time2: workspace:*
       vuepress-vite: 2.0.0-beta.52
       vuepress-webpack: 2.0.0-beta.52
     dependencies:
@@ -660,7 +660,7 @@ importers:
   docs/redirect:
     specifiers:
       '@vuepress/client': 2.0.0-beta.52
-      docs-shared: workspace:2.0.0-beta.110
+      docs-shared: workspace:*
       sass-loader: 13.1.0
       vue: 3.2.41
       vuepress-vite: 2.0.0-beta.52
@@ -676,7 +676,7 @@ importers:
   docs/sass-palette:
     specifiers:
       '@vuepress/client': 2.0.0-beta.52
-      docs-shared: workspace:2.0.0-beta.110
+      docs-shared: workspace:*
       sass-loader: 13.1.0
       vue: 3.2.41
       vuepress-vite: 2.0.0-beta.52
@@ -692,10 +692,10 @@ importers:
   docs/seo2:
     specifiers:
       '@vuepress/client': 2.0.0-beta.52
-      docs-shared: workspace:2.0.0-beta.110
+      docs-shared: workspace:*
       sass-loader: 13.1.0
       vue: 3.2.41
-      vuepress-plugin-seo2: workspace:2.0.0-beta.110
+      vuepress-plugin-seo2: workspace:*
       vuepress-vite: 2.0.0-beta.52
       vuepress-webpack: 2.0.0-beta.52
     dependencies:
@@ -718,8 +718,8 @@ importers:
       rimraf: 3.0.2
       three: 0.145.0
       vue: 3.2.41
-      vuepress-shared: workspace:2.0.0-beta.110
-      vuepress-theme-hope: workspace:2.0.0-beta.110
+      vuepress-shared: workspace:*
+      vuepress-theme-hope: workspace:*
     dependencies:
       '@types/three': 0.144.0
       '@vuepress/cli': 2.0.0-beta.52
@@ -736,10 +736,10 @@ importers:
   docs/sitemap2:
     specifiers:
       '@vuepress/client': 2.0.0-beta.52
-      docs-shared: workspace:2.0.0-beta.110
+      docs-shared: workspace:*
       sass-loader: 13.1.0
       vue: 3.2.41
-      vuepress-plugin-sitemap2: workspace:2.0.0-beta.110
+      vuepress-plugin-sitemap2: workspace:*
       vuepress-vite: 2.0.0-beta.52
       vuepress-webpack: 2.0.0-beta.52
     dependencies:
@@ -757,12 +757,12 @@ importers:
       '@vuepress/client': 2.0.0-beta.52
       '@vuepress/utils': 2.0.0-beta.52
       axios: 1.1.3
-      docs-shared: workspace:2.0.0-beta.110
+      docs-shared: workspace:*
       katex: 0.16.2
       sass-loader: 13.1.0
       vue: 3.2.41
-      vuepress-shared: workspace:2.0.0-beta.110
-      vuepress-theme-hope: workspace:2.0.0-beta.110
+      vuepress-shared: workspace:*
+      vuepress-theme-hope: workspace:*
       vuepress-vite: 2.0.0-beta.52
       vuepress-webpack: 2.0.0-beta.52
     dependencies:
@@ -789,7 +789,7 @@ importers:
       rimraf: 3.0.2
       vue: ^3.2.41
       vue-router: ^4.1.5
-      vuepress-shared: workspace:2.0.0-beta.110
+      vuepress-shared: workspace:*
     dependencies:
       '@vuepress/client': 2.0.0-beta.52
       '@vuepress/core': 2.0.0-beta.52
@@ -813,8 +813,8 @@ importers:
       twikoo: ^1.6.7
       vue: ^3.2.41
       vue-router: ^4.1.5
-      vuepress-plugin-sass-palette: workspace:2.0.0-beta.110
-      vuepress-shared: workspace:2.0.0-beta.110
+      vuepress-plugin-sass-palette: workspace:*
+      vuepress-shared: workspace:*
     dependencies:
       '@vuepress/client': 2.0.0-beta.52
       '@vuepress/utils': 2.0.0-beta.52
@@ -840,9 +840,9 @@ importers:
       rimraf: 3.0.2
       vue: ^3.2.41
       vue-router: ^4.1.5
-      vuepress-plugin-reading-time2: workspace:2.0.0-beta.110
-      vuepress-plugin-sass-palette: workspace:2.0.0-beta.110
-      vuepress-shared: workspace:2.0.0-beta.110
+      vuepress-plugin-reading-time2: workspace:*
+      vuepress-plugin-sass-palette: workspace:*
+      vuepress-shared: workspace:*
     dependencies:
       '@vuepress/client': 2.0.0-beta.52
       '@vuepress/shared': 2.0.0-beta.52
@@ -867,8 +867,8 @@ importers:
       rimraf: 3.0.2
       vue: ^3.2.41
       vue-router: ^4.1.5
-      vuepress-plugin-sass-palette: workspace:2.0.0-beta.110
-      vuepress-shared: workspace:2.0.0-beta.110
+      vuepress-plugin-sass-palette: workspace:*
+      vuepress-shared: workspace:*
     dependencies:
       '@vuepress/client': 2.0.0-beta.52
       '@vuepress/utils': 2.0.0-beta.52
@@ -890,7 +890,7 @@ importers:
       '@vueuse/core': ^9.3.1
       rimraf: 3.0.2
       vue: ^3.2.41
-      vuepress-shared: workspace:2.0.0-beta.110
+      vuepress-shared: workspace:*
     dependencies:
       '@vuepress/client': 2.0.0-beta.52
       '@vuepress/shared': 2.0.0-beta.52
@@ -924,7 +924,7 @@ importers:
       '@vuepress/shared': 2.0.0-beta.52
       '@vuepress/utils': 2.0.0-beta.52
       rimraf: 3.0.2
-      vuepress-shared: workspace:2.0.0-beta.110
+      vuepress-shared: workspace:*
       xml-js: ^1.6.11
     dependencies:
       '@vuepress/shared': 2.0.0-beta.52
@@ -945,8 +945,8 @@ importers:
       rimraf: 3.0.2
       vue: ^3.2.41
       vue-router: ^4.1.5
-      vuepress-plugin-sass-palette: workspace:2.0.0-beta.110
-      vuepress-shared: workspace:2.0.0-beta.110
+      vuepress-plugin-sass-palette: workspace:*
+      vuepress-shared: workspace:*
     dependencies:
       '@vuepress/client': 2.0.0-beta.52
       '@vuepress/utils': 2.0.0-beta.52
@@ -988,8 +988,8 @@ importers:
       typescript: 4.8.4
       vue: ^3.2.41
       vue-router: ^4.1.5
-      vuepress-plugin-sass-palette: workspace:2.0.0-beta.110
-      vuepress-shared: workspace:2.0.0-beta.110
+      vuepress-plugin-sass-palette: workspace:*
+      vuepress-shared: workspace:*
     dependencies:
       '@babel/core': 7.19.6
       '@types/katex': 0.14.0
@@ -1032,8 +1032,8 @@ importers:
       rimraf: 3.0.2
       vue: ^3.2.41
       vue-router: ^4.1.5
-      vuepress-plugin-sass-palette: workspace:2.0.0-beta.110
-      vuepress-shared: workspace:2.0.0-beta.110
+      vuepress-plugin-sass-palette: workspace:*
+      vuepress-shared: workspace:*
     dependencies:
       '@vuepress/client': 2.0.0-beta.52
       '@vuepress/utils': 2.0.0-beta.52
@@ -1059,8 +1059,8 @@ importers:
       rimraf: 3.0.2
       vue: ^3.2.41
       vue-router: ^4.1.5
-      vuepress-plugin-sass-palette: workspace:2.0.0-beta.110
-      vuepress-shared: workspace:2.0.0-beta.110
+      vuepress-plugin-sass-palette: workspace:*
+      vuepress-shared: workspace:*
       workbox-build: ^6.5.4
     dependencies:
       '@vuepress/client': 2.0.0-beta.52
@@ -1082,7 +1082,7 @@ importers:
     specifiers:
       '@vuepress/core': 2.0.0-beta.52
       rimraf: 3.0.2
-      vuepress-shared: workspace:2.0.0-beta.110
+      vuepress-shared: workspace:*
     dependencies:
       vuepress-shared: link:../shared
     devDependencies:
@@ -1097,7 +1097,7 @@ importers:
       '@vuepress/utils': 2.0.0-beta.52
       cac: ^6.7.14
       rimraf: 3.0.2
-      vuepress-shared: workspace:2.0.0-beta.110
+      vuepress-shared: workspace:*
     dependencies:
       '@vuepress/cli': 2.0.0-beta.52
       '@vuepress/core': 2.0.0-beta.52
@@ -1117,7 +1117,7 @@ importers:
       chokidar: ^3.5.3
       rimraf: 3.0.2
       sass: ^1.55.0
-      vuepress-shared: workspace:2.0.0-beta.110
+      vuepress-shared: workspace:*
     dependencies:
       '@vuepress/utils': 2.0.0-beta.52
       chokidar: 3.5.3
@@ -1137,7 +1137,7 @@ importers:
       '@vuepress/utils': 2.0.0-beta.52
       gray-matter: ^4.0.3
       rimraf: 3.0.2
-      vuepress-shared: workspace:2.0.0-beta.110
+      vuepress-shared: workspace:*
     dependencies:
       '@vuepress/shared': 2.0.0-beta.52
       '@vuepress/utils': 2.0.0-beta.52
@@ -1193,7 +1193,7 @@ importers:
       '@vuepress/utils': 2.0.0-beta.52
       rimraf: 3.0.2
       sitemap: ^7.1.1
-      vuepress-shared: workspace:2.0.0-beta.110
+      vuepress-shared: workspace:*
     dependencies:
       '@vuepress/shared': 2.0.0-beta.52
       '@vuepress/utils': 2.0.0-beta.52
@@ -1228,20 +1228,20 @@ importers:
       rimraf: 3.0.2
       vue: ^3.2.41
       vue-router: ^4.1.5
-      vuepress-plugin-blog2: workspace:2.0.0-beta.110
-      vuepress-plugin-comment2: workspace:2.0.0-beta.110
-      vuepress-plugin-components: workspace:2.0.0-beta.110
-      vuepress-plugin-copy-code2: workspace:2.0.0-beta.110
-      vuepress-plugin-copyright2: workspace:2.0.0-beta.110
-      vuepress-plugin-feed2: workspace:2.0.0-beta.110
-      vuepress-plugin-md-enhance: workspace:2.0.0-beta.110
-      vuepress-plugin-photo-swipe: workspace:2.0.0-beta.110
-      vuepress-plugin-pwa2: workspace:2.0.0-beta.110
-      vuepress-plugin-reading-time2: workspace:2.0.0-beta.110
-      vuepress-plugin-sass-palette: workspace:2.0.0-beta.110
-      vuepress-plugin-seo2: workspace:2.0.0-beta.110
-      vuepress-plugin-sitemap2: workspace:2.0.0-beta.110
-      vuepress-shared: workspace:2.0.0-beta.110
+      vuepress-plugin-blog2: workspace:*
+      vuepress-plugin-comment2: workspace:*
+      vuepress-plugin-components: workspace:*
+      vuepress-plugin-copy-code2: workspace:*
+      vuepress-plugin-copyright2: workspace:*
+      vuepress-plugin-feed2: workspace:*
+      vuepress-plugin-md-enhance: workspace:*
+      vuepress-plugin-photo-swipe: workspace:*
+      vuepress-plugin-pwa2: workspace:*
+      vuepress-plugin-reading-time2: workspace:*
+      vuepress-plugin-sass-palette: workspace:*
+      vuepress-plugin-seo2: workspace:*
+      vuepress-plugin-sitemap2: workspace:*
+      vuepress-shared: workspace:*
     dependencies:
       '@vuepress/cli': 2.0.0-beta.52
       '@vuepress/client': 2.0.0-beta.52
