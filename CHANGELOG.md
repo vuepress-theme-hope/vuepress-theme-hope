@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.112](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.111...v2.0.0-beta.112) (2022-10-22)
+
+### Bug Fixes
+
+- **create:** fix package json generate ([6304cf7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6304cf7785237edee6243cbe27e2fea036a45e46))
+- exclude alias for vite ([8337c18](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8337c18f3be58855b95be8fc8f44607bcfb9ca0d))
+
 ## [2.0.0-beta.111](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.110...v2.0.0-beta.111) (2022-10-22)
 
 ### Features
