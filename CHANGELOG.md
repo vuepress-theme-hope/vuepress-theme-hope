@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.111](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.110...v2.0.0-beta.111) (2022-10-22)
+
+### Features
+
+- **comment2:** support lazy loading ([f074c6c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f074c6cdac367b79d2c58e3609769935ce320c96))
+- **md-enhance:** use chart.js v4 ([8fac99c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8fac99c9bf73d30cd73de12e435fb14da87eb384))
+
+### Bug Fixes
+
+- **deps:** update dependency axios to v1.1.3 ([#2300](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2300)) ([d14ef7f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d14ef7fdca27c1653774916b424573f69c272da9))
+- **md-enhance:** fix code demo toggle button ([885023b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/885023ba3364d2af64f37e3c91728e3e1d4c4292))
+- **theme:** fix ssr issue ([99f8ad9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/99f8ad97d90743be3469d4738e88ced63581befa))
+
+### Performance Improvements
+
+- **blog2:** stop bundling hmr code to prod ([69106f6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/69106f60060e3f792719e979e877c9b1046d50e8))
+- optimize vite speed ([0da1bad](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0da1badf7fd54bd83436f0d3df9681e3fb77a033))
+- **theme:** optimize app size ([8a85ff4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8a85ff409089afcba3d852a100bf462d8371059c))
+
 ## [2.0.0-beta.110](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.109...v2.0.0-beta.110) (2022-10-14)
 
 ### Features

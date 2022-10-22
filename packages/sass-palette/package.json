@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-sass-palette",
-  "version": "2.0.0-beta.110",
+  "version": "2.0.0-beta.111",
   "description": "A common palette plugin for vuepress themes and plugins",
   "keywords": [
     "vuepress",
