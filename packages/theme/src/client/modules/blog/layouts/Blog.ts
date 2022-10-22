@@ -8,7 +8,7 @@ import InfoList from "@theme-hope/modules/blog/components/InfoList.js";
 import SkipLink from "@theme-hope/components/SkipLink.js";
 import { useMobile } from "@theme-hope/composables/index.js";
 
-import type { ComponentOptions, VNode } from "vue";
+import type { DefineComponent, VNode } from "vue";
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names
@@ -21,7 +21,7 @@ export default defineComponent({
     return (): VNode[] => [
       h(SkipLink),
       h(
-        <ComponentOptions>resolveComponent("CommonWrapper"),
+        <DefineComponent>resolveComponent("CommonWrapper"),
         { sidebar: false },
         {
           default: () =>
