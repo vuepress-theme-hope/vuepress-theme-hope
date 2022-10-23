@@ -48,6 +48,7 @@ tag:
 ::: tip 可用的社交媒体:
 
 - `"Baidu"`: 百度
+- `"BiliBili"`: 哔哩哔哩
 - `"Bitbucket"`: Bitbucket
 - `"Dingding"`: 钉钉
 - `"Discord"`: Discord
@@ -61,6 +62,7 @@ tag:
 - `"Gitlab"`: Gitlab
 - `"Gmail"`: 谷歌邮箱
 - `"Instagram"`: Instagram
+- `"Lark"`: 飞书
 - `"Line"`: Line
 - `"Linkedin"`: 领英
 - `"Pinterest"`: 拼趣

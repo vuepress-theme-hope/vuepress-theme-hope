@@ -23,6 +23,7 @@ export default hopeTheme({
   blog: {
     medias: {
       Baidu: "https://example.com",
+      BiliBili: "https://example.com",
       Bitbucket: "https://example.com",
       Dingding: "https://example.com",
       Discord: "https://example.com",
@@ -36,6 +37,7 @@ export default hopeTheme({
       Gitlab: "https://example.com",
       Gmail: "https://example.com",
       Instagram: "https://example.com",
+      Lark: "https://example.com",
       Lines: "https://example.com",
       Linkedin: "https://example.com",
       Pinterest: "https://example.com",

@@ -48,6 +48,7 @@ tag:
 ::: tip Доступные социальные сети:
 
 - `"Baidu"`
+- `"BiliBili"`
 - `"Bitbucket"`
 - `"Dingding"`
 - `"Discord"`
@@ -61,6 +62,7 @@ tag:
 - `"Gitlab"`
 - `"Gmail"`
 - `"Instagram"`
+- `"Lark"`
 - `"Line"`
 - `"Linkedin"`
 - `"Pinterest"`
