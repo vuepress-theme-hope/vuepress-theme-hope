@@ -1,7 +1,7 @@
 import { usePageFrontmatter, useRouteLocale } from "@vuepress/client";
 import { computed, defineComponent, h, onMounted, watch, ref } from "vue";
 import { RouterLink, useRoute, useRouter } from "vue-router";
-import { resolveRouteWithRedirect } from "vuepress-shared/lib/client";
+import { resolveRouteWithRedirect } from "vuepress-shared/client";
 
 import Icon from "@theme-hope/components/Icon.js";
 import { useThemeLocaleData } from "@theme-hope/composables/index.js";

@@ -52,7 +52,7 @@ export const commentPlugin =
       name: "vuepress-plugin-comment2",
 
       alias: {
-        "@CommentProvider":
+        "vuepress-plugin-comment2/provider":
           provider === "None"
             ? noopModule
             : path.resolve(__dirname, `../client/components/${provider}.js`),
@@ -69,8 +69,6 @@ export const commentPlugin =
       }),
 
       extendsBundlerOptions: (config: unknown, app): void => {
-        addViteOptimizeDepsExclude({ app, config }, "@CommentProvider");
-
         if (provider === "Giscus") {
           addCustomElement({ app, config }, "GiscusWidget");
           addViteSsrExternal({ app, config }, "giscus");

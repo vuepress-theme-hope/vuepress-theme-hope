@@ -1,5 +1,5 @@
 import { computed, defineComponent, h, onMounted, ref, VNode } from "vue";
-import { Message } from "vuepress-shared/lib/client";
+import { Message } from "vuepress-shared/client";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index.js";
 

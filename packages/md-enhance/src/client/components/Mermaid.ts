@@ -7,7 +7,7 @@ import {
   ref,
   watch,
 } from "vue";
-import { atou } from "vuepress-shared/lib/client";
+import { atou } from "vuepress-shared/client";
 import { LoadingIcon } from "./icons.js";
 
 import type { Config, Mermaid } from "mermaid";

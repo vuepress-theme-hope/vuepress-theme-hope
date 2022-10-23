@@ -1,6 +1,6 @@
 import { useDebounceFn, useEventListener } from "@vueuse/core";
 import { defineComponent, h, onMounted, onBeforeUnmount, ref } from "vue";
-import { atou } from "vuepress-shared/lib/client";
+import { atou } from "vuepress-shared/client";
 import { LOADING_SVG } from "./icons.js";
 
 import type { EChartsType, EChartsOption } from "echarts";

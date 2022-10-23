@@ -1,5 +1,5 @@
 import { defineComponent, h, onMounted, ref } from "vue";
-import { atou } from "vuepress-shared/lib/client";
+import { atou } from "vuepress-shared/client";
 import { LOADING_SVG } from "./icons.js";
 
 import type { ChartConfiguration } from "chart.js";

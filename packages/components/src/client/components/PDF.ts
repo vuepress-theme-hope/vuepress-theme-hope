@@ -6,7 +6,7 @@ import {
   checkIsiPad,
   checkIsiPhone,
   checkIsSafari,
-} from "vuepress-shared/lib/client";
+} from "vuepress-shared/client";
 import { useSize } from "../composables/index.js";
 
 import type { VNode } from "vue";

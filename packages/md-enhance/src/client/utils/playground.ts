@@ -1,4 +1,4 @@
-import { deepAssign } from "vuepress-shared/lib/client";
+import { deepAssign } from "vuepress-shared/client";
 
 import type { VuePlaygroundOptions } from "../../shared/index.js";
 

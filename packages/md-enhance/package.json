@@ -35,7 +35,7 @@
   "type": "module",
   "exports": {
     ".": "./lib/node/index.js",
-    "./lib/client/*": "./lib/client/*",
+    "./client/*": "./lib/client/*",
     "./SlidePage": "./lib/client/SlidePage.js",
     "./package.json": "./package.json"
   },

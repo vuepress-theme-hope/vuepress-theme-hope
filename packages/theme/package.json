@@ -29,8 +29,9 @@
   "type": "module",
   "exports": {
     ".": "./lib/node/index.js",
-    "./lib/client/*": "./lib/client/*",
+    "./client/*": "./lib/client/*",
     "./components/*": "./lib/client/components/*",
+    "./composables": "./lib/client/composables/index.js",
     "./composables/*": "./lib/client/composables/*",
     "./layouts/*": "./lib/client/layouts/*",
     "./modules/*": "./lib/client/modules/*",

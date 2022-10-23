@@ -1,5 +1,5 @@
 import { useRouter } from "vue-router";
-import { resolveRouteWithRedirect } from "vuepress-shared/lib/client";
+import { resolveRouteWithRedirect } from "vuepress-shared/client";
 
 import { ArticleInfoType } from "../../shared/index.js";
 import type { AutoLink } from "../../shared/index.js";

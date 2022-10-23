@@ -1,6 +1,6 @@
 import { computed, inject, provide } from "vue";
 import { useBlogType } from "vuepress-plugin-blog2/client";
-import { getDate } from "vuepress-shared/lib/client";
+import { getDate } from "vuepress-shared/client";
 
 import { ArticleInfoType } from "../../../../shared/index.js";
 

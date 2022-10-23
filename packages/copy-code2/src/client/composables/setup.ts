@@ -27,7 +27,7 @@
 
 import { onMounted, watch } from "vue";
 import { useRoute } from "vue-router";
-import { Message, useLocaleConfig } from "vuepress-shared/lib/client";
+import { Message, useLocaleConfig } from "vuepress-shared/client";
 import { CHECK_ICON, copyToClipboard } from "../utils/index.js";
 
 import type {
@@ -35,7 +35,7 @@ import type {
   CopyCodeLocaleConfig,
 } from "../../shared/index.js";
 
-import "vuepress-shared/lib/client/styles/message.scss";
+import "vuepress-shared/client/styles/message.scss";
 
 declare const CODE_COPY_OPTIONS: Required<CopyCodeOptions>;
 declare const CODE_COPY_LOCALES: CopyCodeLocaleConfig;

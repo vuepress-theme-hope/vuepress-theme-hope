@@ -1,7 +1,7 @@
 import { useReveal } from "@temp/md-enhance/reveal";
 import { usePageFrontmatter } from "@vuepress/client";
 import { defineComponent, h, onBeforeUnmount, onMounted, ref } from "vue";
-import { atou } from "vuepress-shared/lib/client";
+import { atou } from "vuepress-shared/client";
 import { LoadingIcon } from "./icons.js";
 
 import type { PropType, VNode } from "vue";

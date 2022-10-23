@@ -29,7 +29,7 @@
   "type": "module",
   "exports": {
     ".": "./lib/node/index.js",
-    "./lib/client/*": "./lib/client/*",
+    "./client/*": "./lib/client/*",
     "./package.json": "./package.json"
   },
   "main": "lib/node/index.js",
