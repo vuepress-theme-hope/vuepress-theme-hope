@@ -45,6 +45,13 @@ Page - Discussion mapping. For details see [Giscus Page](https://giscus.app/)
 
 Whether enable strict mapping or not
 
+## lazyLoading
+
+- Type: `boolean`
+- Default: `true`
+
+Whether enable lazy loading or not
+
 ## reactionsEnabled
 
 - Type: `boolean`

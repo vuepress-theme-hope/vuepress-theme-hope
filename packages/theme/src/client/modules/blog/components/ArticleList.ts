@@ -73,7 +73,7 @@ export default defineComponent({
       updatePage(page ? Number(page) : 1);
 
       if (SUPPORT_PAGEVIEW)
-        void import("vuepress-plugin-comment2/lib/client/pageview.js").then(
+        void import("vuepress-plugin-comment2/client/pageview.js").then(
           ({ updatePageview }) => {
             updatePageview();
           }

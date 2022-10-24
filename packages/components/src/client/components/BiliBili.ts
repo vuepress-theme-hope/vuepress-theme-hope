@@ -1,5 +1,5 @@
 import { useEventListener } from "@vueuse/core";
-import { checkIsMobile } from "vuepress-shared/lib/client";
+import { checkIsMobile } from "vuepress-shared/client";
 import { computed, defineComponent, h, onMounted, ref } from "vue";
 import { useSize } from "../composables/index.js";
 

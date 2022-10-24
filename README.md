@@ -69,6 +69,4 @@ Also V2 has a better performance:🚀
 
 Thanks to all the contributors!
 
-<a href="https://github.com/vuepress-theme-hope/vuepress-theme-hope/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=vuepress-theme-hope/vuepress-theme-hope" />
-</a>
+[![contributors](https://contrib.rocks/image?repo=vuepress-theme-hope/vuepress-theme-hope)](https://github.com/vuepress-theme-hope/vuepress-theme-hope/graphs/contributors)

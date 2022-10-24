@@ -78,6 +78,7 @@ Set social links.
 The following social medias has built-in icons:
 
 - `"Baidu"`
+- `"BiliBili"`
 - `"Bitbucket"`
 - `"Dingding"`
 - `"Discord"`
@@ -91,6 +92,7 @@ The following social medias has built-in icons:
 - `"Gitlab"`
 - `"Gmail"`
 - `"Instagram"`
+- `"Lark"`
 - `"Line"`
 - `"Linkedin"`
 - `"Pinterest"`

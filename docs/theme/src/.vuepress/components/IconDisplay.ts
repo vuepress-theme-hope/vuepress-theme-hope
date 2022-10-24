@@ -1,7 +1,7 @@
 import { useRouteLocale } from "@vuepress/client";
 import axios from "axios";
 import { defineComponent, h, onMounted, ref } from "vue";
-import { Message } from "vuepress-shared/lib/client";
+import { Message } from "vuepress-shared/client";
 
 import type { VNode } from "vue";
 import type { CopyCodeLocaleConfig } from "vuepress-plugin-copy-code2";

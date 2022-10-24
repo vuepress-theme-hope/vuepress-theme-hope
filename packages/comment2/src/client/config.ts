@@ -1,6 +1,6 @@
 import { defineClientConfig, usePageFrontmatter } from "@vuepress/client";
 import { computed, defineComponent, h } from "vue";
-import CommentProvider from "@CommentProvider";
+import CommentProvider from "vuepress-plugin-comment2/provider";
 
 import type { VNode } from "vue";
 import type {

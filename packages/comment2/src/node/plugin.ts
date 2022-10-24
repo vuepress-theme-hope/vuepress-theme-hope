@@ -52,7 +52,7 @@ export const commentPlugin =
       name: "vuepress-plugin-comment2",
 
       alias: {
-        "@CommentProvider":
+        "vuepress-plugin-comment2/provider":
           provider === "None"
             ? noopModule
             : path.resolve(__dirname, `../client/components/${provider}.js`),

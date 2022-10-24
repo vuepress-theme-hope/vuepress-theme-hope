@@ -9,7 +9,7 @@ import {
   useThemeLocaleData,
 } from "@theme-hope/composables/index.js";
 
-import type { ComponentOptions, VNode } from "vue";
+import type { DefineComponent, VNode } from "vue";
 import type { HopeThemePageFrontmatter } from "../../shared/index.js";
 
 declare const ENABLE_BLOG: boolean;
@@ -35,7 +35,7 @@ export default defineComponent({
     return (): VNode[] => [
       h(SkipLink),
       h(
-        resolveComponent("CommonWrapper") as ComponentOptions,
+        <DefineComponent>resolveComponent("CommonWrapper"),
         {},
         {
           default: () =>

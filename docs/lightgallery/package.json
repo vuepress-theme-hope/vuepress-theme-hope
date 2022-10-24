@@ -1,6 +1,6 @@
 {
   "name": "lightgallery-docs",
-  "version": "2.0.0-beta.110",
+  "version": "2.0.0-beta.113",
   "private": true,
   "description": "Docs for vuepress-plugin-lightgallery",
   "license": "MIT",
@@ -18,12 +18,12 @@
     "docs:webpack-dev": "vuepress-webpack dev src"
   },
   "dependencies": {
-    "@vuepress/client": "2.0.0-beta.51",
+    "@vuepress/client": "2.0.0-beta.52",
     "docs-shared": "workspace:*",
     "sass-loader": "13.1.0",
     "vue": "3.2.41",
     "vuepress-plugin-lightgallery": "workspace:*",
-    "vuepress-vite": "2.0.0-beta.51",
-    "vuepress-webpack": "2.0.0-beta.51"
+    "vuepress-vite": "2.0.0-beta.52",
+    "vuepress-webpack": "2.0.0-beta.52"
   }
 }

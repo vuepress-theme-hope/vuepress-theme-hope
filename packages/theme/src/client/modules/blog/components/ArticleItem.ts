@@ -9,15 +9,7 @@ import {
 } from "@theme-hope/modules/blog/components/icons/index.js";
 import { useArticleInfo } from "@theme-hope/modules/blog/composables/index.js";
 import { LockIcon } from "@theme-hope/modules/encrypt/components/icons.js";
-import {
-  COVER,
-  EXCERPT,
-  IS_ENCRYPTED,
-  PageType,
-  STICKY,
-  TITLE,
-  TYPE,
-} from "../../../../shared/index.js";
+import { ArticleInfoType, PageType } from "../../../../shared/index.js";
 
 import type { PropType, VNode } from "vue";
 import type { ArticleInfo } from "../../../../shared/index.js";
@@ -55,22 +47,31 @@ export default defineComponent({
             },
           },
           [
-            info.value[STICKY] ? h(StickyIcon) : null,
+            info.value[ArticleInfoType.sticky] ? h(StickyIcon) : null,
             h(RouterLink, { to: props.path }, () => [
               h("header", { class: "title" }, [
-                info.value[IS_ENCRYPTED] ? h(LockIcon) : null,
-                info.value[TYPE] === PageType.Slide ? h(SlideIcon) : null,
-                h("span", { property: "headline" }, info.value[TITLE]),
-                info.value[COVER]
+                info.value[ArticleInfoType.isEncrypted] ? h(LockIcon) : null,
+                info.value[ArticleInfoType.type] === PageType.slide
+                  ? h(SlideIcon)
+                  : null,
+                h(
+                  "span",
+                  { property: "headline" },
+                  info.value[ArticleInfoType.title]
+                ),
+                info.value[ArticleInfoType.cover]
                   ? h("meta", {
                       property: "image",
-                      content: withBase(info.value[COVER]),
+                      content: withBase(info.value[ArticleInfoType.cover]!),
                     })
                   : null,
               ]),
             ]),
-            info.value[EXCERPT]
-              ? h("div", { class: "excerpt", innerHTML: info.value[EXCERPT] })
+            info.value[ArticleInfoType.excerpt]
+              ? h("div", {
+                  class: "excerpt",
+                  innerHTML: info.value[ArticleInfoType.excerpt],
+                })
               : null,
             h("hr", { class: "hr" }),
             h(PageInfo, {

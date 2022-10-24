@@ -1,5 +1,5 @@
 import { useEventListener, useDebounceFn } from "@vueuse/core";
-import { atou } from "vuepress-shared/lib/client";
+import { atou } from "vuepress-shared/client";
 import { computed, defineComponent, h, onMounted, ref } from "vue";
 import { LOADING_SVG } from "./icons.js";
 import presets from "../flowchart-preset/index.js";

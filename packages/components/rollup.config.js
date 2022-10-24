@@ -16,7 +16,7 @@ export default [
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/BiliBili", {
-    external: ["@vueuse/core", "vue", "vuepress-shared/lib/client", /\.scss$/],
+    external: ["@vueuse/core", "vue", "vuepress-shared/client", /\.scss$/],
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/BackToTop", {
@@ -24,7 +24,7 @@ export default [
       "@vuepress/client",
       "@vueuse/core",
       "vue",
-      "vuepress-shared/lib/client",
+      "vuepress-shared/client",
       /\.scss$/,
     ],
     dtsExternal: [/\.scss$/],
@@ -43,7 +43,7 @@ export default [
       "@vuepress/shared",
       "@vueuse/core",
       "vue",
-      "vuepress-shared/lib/client",
+      "vuepress-shared/client",
       /\.scss$/,
     ],
     dtsExternal: [/\.scss$/],

@@ -1,5 +1,5 @@
 import { computed, defineComponent, h, onMounted, ref } from "vue";
-import { atou } from "vuepress-shared/lib/client";
+import { atou } from "vuepress-shared/client";
 import { CODEPEN_SVG, JSFIDDLE_SVG, LOADING_SVG } from "./icons.js";
 import { loadNormal, loadReact, loadVue } from "../composables/index.js";
 import {

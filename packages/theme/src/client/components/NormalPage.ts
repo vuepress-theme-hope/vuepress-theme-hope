@@ -1,9 +1,6 @@
 import { usePageFrontmatter } from "@vuepress/client";
 import { computed, defineComponent, h, resolveComponent } from "vue";
-import {
-  isComponentRegistered,
-  RenderDefault,
-} from "vuepress-shared/lib/client";
+import { isComponentRegistered, RenderDefault } from "vuepress-shared/client";
 
 import BreadCrumb from "@theme-hope/components/BreadCrumb.js";
 import MarkdownContent from "@theme-hope/components/MarkdownContent.js";
@@ -17,7 +14,7 @@ import TOC from "@theme-hope/modules/info/components/TOC.js";
 
 import { useDarkMode } from "@theme-hope/modules/outlook/composables/index.js";
 
-import type { ComponentOptions, VNode } from "vue";
+import type { DefineComponent, VNode } from "vue";
 import type { HopeThemeNormalPageFrontmatter } from "../../shared/index.js";
 
 import "../styles/page.scss";
@@ -42,7 +39,7 @@ export default defineComponent({
         { class: "page", id: "main-content" },
         h(
           isComponentRegistered("LocalEncrypt")
-            ? (resolveComponent("LocalEncrypt") as ComponentOptions)
+            ? <DefineComponent>resolveComponent("LocalEncrypt")
             : RenderDefault,
           () => [
             slots["top"]?.(),

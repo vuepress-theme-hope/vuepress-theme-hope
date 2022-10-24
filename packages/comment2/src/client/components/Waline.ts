@@ -3,7 +3,7 @@ import { Waline } from "@waline/client/dist/component.mjs";
 import { pageviewCount } from "@waline/client/dist/pageview.mjs";
 import { computed, defineComponent, h, onMounted, watch } from "vue";
 import { useRoute } from "vue-router";
-import { useLocaleConfig } from "vuepress-shared/lib/client";
+import { useLocaleConfig } from "vuepress-shared/client";
 
 import type { VNode } from "vue";
 import type {

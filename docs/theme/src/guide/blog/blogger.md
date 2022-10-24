@@ -48,6 +48,7 @@ You can also config your social media links with `blog.medias` option.
 ::: tip Available social media:
 
 - `"Baidu"`
+- `"BiliBili"`
 - `"Bitbucket"`
 - `"Dingding"`
 - `"Discord"`
@@ -61,6 +62,7 @@ You can also config your social media links with `blog.medias` option.
 - `"Gitlab"`
 - `"Gmail"`
 - `"Instagram"`
+- `"Lark"`
 - `"Line"`
 - `"Linkedin"`
 - `"Pinterest"`

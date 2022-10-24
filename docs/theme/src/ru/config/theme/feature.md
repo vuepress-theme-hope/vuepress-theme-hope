@@ -78,6 +78,7 @@ tag:
 Следующие социальные сети имеют встроенные иконки:
 
 - `"Baidu"`
+- `"BiliBili"`
 - `"Bitbucket"`
 - `"Dingding"`
 - `"Discord"`
@@ -91,6 +92,7 @@ tag:
 - `"Gitlab"`
 - `"Gmail"`
 - `"Instagram"`
+- `"Lark"`
 - `"Line"`
 - `"Linkedin"`
 - `"Pinterest"`

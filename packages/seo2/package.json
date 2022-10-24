@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-seo2",
-  "version": "2.0.0-beta.110",
+  "version": "2.0.0-beta.113",
   "description": "SEO plugin for vuepress",
   "keywords": [
     "vuepress",
@@ -41,14 +41,14 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@vuepress/shared": "2.0.0-beta.51",
-    "@vuepress/utils": "2.0.0-beta.51",
+    "@vuepress/shared": "2.0.0-beta.52",
+    "@vuepress/utils": "2.0.0-beta.52",
     "gray-matter": "^4.0.3",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.51",
-    "@vuepress/plugin-git": "2.0.0-beta.51",
+    "@vuepress/core": "2.0.0-beta.52",
+    "@vuepress/plugin-git": "2.0.0-beta.52",
     "rimraf": "3.0.2"
   },
   "publishConfig": {

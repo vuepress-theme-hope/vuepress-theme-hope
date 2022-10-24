@@ -45,6 +45,13 @@ icon: github
 
 是否启用严格匹配
 
+## lazyLoading
+
+- 类型: `boolean`
+- 默认值: `true`
+
+是否启用懒加载
+
 ## reactionsEnabled
 
 - 类型: `boolean`

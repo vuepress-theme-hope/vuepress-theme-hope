@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-redirect",
-  "version": "2.0.0-beta.110",
+  "version": "2.0.0-beta.113",
   "description": "Redirect plugin for vuepress",
   "keywords": [
     "vuepress",
@@ -44,10 +44,10 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@vuepress/cli": "2.0.0-beta.51",
-    "@vuepress/core": "2.0.0-beta.51",
-    "@vuepress/shared": "2.0.0-beta.51",
-    "@vuepress/utils": "2.0.0-beta.51",
+    "@vuepress/cli": "2.0.0-beta.52",
+    "@vuepress/core": "2.0.0-beta.52",
+    "@vuepress/shared": "2.0.0-beta.52",
+    "@vuepress/utils": "2.0.0-beta.52",
     "cac": "^6.7.14",
     "vuepress-shared": "workspace:*"
   },

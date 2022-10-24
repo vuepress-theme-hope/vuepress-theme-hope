@@ -12,10 +12,7 @@ import {
   watch,
 } from "vue";
 import { useRouter } from "vue-router";
-import {
-  isComponentRegistered,
-  RenderDefault,
-} from "vuepress-shared/lib/client";
+import { isComponentRegistered, RenderDefault } from "vuepress-shared/client";
 
 import PageFooter from "@theme-hope/components/PageFooter.js";
 import {
@@ -24,7 +21,7 @@ import {
 } from "@theme-hope/composables/index.js";
 import { useSidebarItems } from "@theme-hope/modules/sidebar/composables/index.js";
 
-import type { ComponentOptions, VNode } from "vue";
+import type { DefineComponent, VNode } from "vue";
 import type { HopeThemePageFrontmatter } from "../../shared/index.js";
 
 import "../styles/common.scss";
@@ -195,13 +192,13 @@ export default defineComponent({
         },
         h(
           isComponentRegistered("GloablEncrypt")
-            ? (resolveComponent("GloablEncrypt") as ComponentOptions)
+            ? <DefineComponent>resolveComponent("GloablEncrypt")
             : RenderDefault,
           () => [
             // navbar
             enableNavbar.value
               ? h(
-                  resolveComponent("Navbar") as ComponentOptions,
+                  <DefineComponent>resolveComponent("Navbar"),
                   { onToggleSidebar: () => toggleMobileSidebar() },
                   {
                     leftStart: () => slots["navbarLeftStart"]?.(),
@@ -244,7 +241,7 @@ export default defineComponent({
             ),
             // sidebar
             h(
-              resolveComponent("Sidebar") as ComponentOptions,
+              <DefineComponent>resolveComponent("Sidebar"),
               {},
               {
                 ...(slots["sidebar"]

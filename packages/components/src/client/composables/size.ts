@@ -3,7 +3,7 @@ import { computed, onMounted, isRef, ref, unref, watch } from "vue";
 import type { MaybeRef } from "@vueuse/core";
 import type { Ref } from "vue";
 
-const getValue = (value: string | number) =>
+const getValue = (value: string | number): string =>
   typeof value === "string" ? value : `${value}px`;
 
 export interface SizeOptions {
@@ -35,7 +35,7 @@ export const useSize = <E extends HTMLElement>(
       : `${Number(width) / ratio + unref(extraHeight)}px`;
   };
 
-  const updateHeight = () => {
+  const updateHeight = (): void => {
     height.value = getHeight(el.value!.clientWidth);
   };
 

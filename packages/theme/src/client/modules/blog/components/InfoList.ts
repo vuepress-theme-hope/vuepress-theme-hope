@@ -21,7 +21,7 @@ import {
   useStars,
   useTagMap,
 } from "@theme-hope/modules/blog/composables/index.js";
-import { TITLE } from "../../../../shared/index.js";
+import { ArticleInfoType } from "../../../../shared/index.js";
 
 import type { FunctionalComponent, VNode } from "vue";
 
@@ -114,7 +114,7 @@ export default defineComponent({
                             class: "sticky-article",
                             onClick: () => navigate(path),
                           },
-                          info[TITLE]
+                          info[ArticleInfoType.title]
                         )
                     )
                   )

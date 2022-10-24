@@ -74,6 +74,15 @@ export interface GiscusOptions extends BaseCommentOptions {
   strict?: boolean;
 
   /**
+   * Whether enable lazy loading
+   *
+   * 是否启用懒加载
+   *
+   * @default true
+   */
+  lazyLoading?: boolean;
+
+  /**
    * Whether enable reactions or not
    *
    * 是否启用主帖子上的反应
