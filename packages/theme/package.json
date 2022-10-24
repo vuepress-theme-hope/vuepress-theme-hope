@@ -98,7 +98,7 @@
   },
   "devDependencies": {
     "@vuepress/bundler-vite": "2.0.0-beta.52",
-    "@vuepress/bundler-webpack": "2.0.0-beta.52",
+    "@vuepress/bundler-webpack": "2.0.0-beta.53",
     "@vuepress/markdown": "2.0.0-beta.52",
     "rimraf": "3.0.2"
   },
