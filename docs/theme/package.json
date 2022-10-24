@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@types/katex": "0.14.0",
-    "@vuepress/client": "2.0.0-beta.52",
+    "@vuepress/client": "2.0.0-beta.53",
     "@vuepress/utils": "2.0.0-beta.52",
     "axios": "1.1.3",
     "docs-shared": "workspace:*",

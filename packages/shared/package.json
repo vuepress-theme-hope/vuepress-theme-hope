@@ -48,7 +48,7 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@vuepress/client": "2.0.0-beta.52",
+    "@vuepress/client": "2.0.0-beta.53",
     "@vuepress/plugin-git": "2.0.0-beta.52",
     "@vuepress/shared": "2.0.0-beta.52",
     "@vuepress/utils": "2.0.0-beta.52",
