@@ -14,7 +14,7 @@
     "demo:vite-dev": "vuepress-vite dev src"
   },
   "devDependencies": {
-    "@vuepress/cli": "2.0.0-beta.52",
+    "@vuepress/cli": "2.0.0-beta.53",
     "@vuepress/client": "2.0.0-beta.52",
     "@vuepress/core": "2.0.0-beta.52",
     "@vuepress/theme-default": "2.0.0-beta.52",
