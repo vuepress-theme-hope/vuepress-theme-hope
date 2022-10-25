@@ -48,22 +48,22 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@vuepress/client": "2.0.0-beta.52",
-    "@vuepress/plugin-git": "2.0.0-beta.52",
-    "@vuepress/shared": "2.0.0-beta.52",
-    "@vuepress/utils": "2.0.0-beta.52",
+    "@vuepress/client": "2.0.0-beta.53",
+    "@vuepress/plugin-git": "2.0.0-beta.53",
+    "@vuepress/shared": "2.0.0-beta.53",
+    "@vuepress/utils": "2.0.0-beta.53",
     "dayjs": "^1.11.6",
     "execa": "^6.1.0",
     "fflate": "^0.7.4",
     "ora": "^6.1.2",
     "vue": "^3.2.41",
-    "vue-router": "^4.1.5"
+    "vue-router": "^4.1.6"
   },
   "devDependencies": {
     "@types/connect": "3.4.35",
-    "@vuepress/bundler-vite": "2.0.0-beta.52",
-    "@vuepress/bundler-webpack": "2.0.0-beta.52",
-    "@vuepress/core": "2.0.0-beta.52",
+    "@vuepress/bundler-vite": "2.0.0-beta.53",
+    "@vuepress/bundler-webpack": "2.0.0-beta.53",
+    "@vuepress/core": "2.0.0-beta.53",
     "rimraf": "3.0.2",
     "vite": "3.1.8"
   },
