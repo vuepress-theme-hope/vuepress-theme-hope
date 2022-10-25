@@ -7,17 +7,15 @@ import type { BlogOptions, PageMap, TypeMap } from "../shared/index.js";
 
 const HMR_CODE = `
 if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updateBlogType) {
-    __VUE_HMR_RUNTIME__.updateBlogType(typeMap)
-  }
+  import.meta.webpackHot.accept();
+  if (__VUE_HMR_RUNTIME__.updateBlogType)
+    __VUE_HMR_RUNTIME__.updateBlogType(typeMap);
 }
 
-if (import.meta.hot) {
+if (import.meta.hot)
   import.meta.hot.accept(({ typeMap }) => {
-    __VUE_HMR_RUNTIME__.updateBlogType(typeMap)
-  })
-}
+    __VUE_HMR_RUNTIME__.updateBlogType(typeMap);
+  });
 `;
 
 export const prepareType = (
@@ -137,9 +135,10 @@ export const prepareType = (
 
     await app.writeTemp(
       `blog/type.js`,
-      `export const typeMap = ${JSON.stringify(finalMap)}\n${
-        app.env.isDev ? HMR_CODE : ""
-      }`
+      `\
+export const typeMap = ${JSON.stringify(finalMap)};
+${app.env.isDev ? HMR_CODE : ""}
+`
     );
 
     if (app.env.isDebug) logger.info("All types generated.");

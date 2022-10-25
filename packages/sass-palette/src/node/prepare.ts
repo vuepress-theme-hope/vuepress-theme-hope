@@ -5,15 +5,16 @@ import type { App } from "@vuepress/core";
 export const prepareConfigFile = (app: App, id: string): Promise<string> =>
   app.writeTemp(
     `sass-palette/load-${id}.js`,
-    `import "@sass-palette/${id}-inject";
-
-export default {};`
+    `\
+import "@sass-palette/${id}-inject";
+export default {};
+`
   );
 
 export const prepareInjectSass = (app: App, id: string): Promise<string> =>
   app.writeTemp(
     `sass-palette/${id}-inject.scss`,
-    `
+    `\
 @use "sass:color";
 @use "sass:list";
 @use "sass:math";
@@ -24,7 +25,6 @@ export const prepareInjectSass = (app: App, id: string): Promise<string> =>
 @use "@sass-palette/${id}-palette";
 
 $variables: meta.module-variables("${id}-palette");
-
 ${
   app.env.isDebug
     ? `
@@ -74,7 +74,7 @@ export const prepareConfigSass = (
 ): Promise<string> =>
   app.writeTemp(
     `sass-palette/${id}-config.scss`,
-    `
+    `\
 @import "file:///${getPath(defaultPalette)}";
 @import "file:///${getPath(defaultConfig)}";
 @import "file:///${getPath(userPalette)}";
@@ -96,7 +96,7 @@ export const preparePaletteSass = (
 ): Promise<string> =>
   app.writeTemp(
     `sass-palette/${id}-palette.scss`,
-    `
+    `\
 @import "file:///${getPath(defaultPalette)}";
 @import "file:///${getPath(userPalette)}";
 @import "file:///${getPath(generator)}";
@@ -115,7 +115,8 @@ export const prepareStyleSass = (
   userStyle
     ? app.writeTemp(
         `sass-palette/${id}-style.scss`,
-        `@forward "file:///${getPath(userStyle)}";
+        `\
+@forward "file:///${getPath(userStyle)}";
 `
       )
     : Promise.resolve(null);
