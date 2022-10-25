@@ -85,7 +85,7 @@ export interface MathJaxTexInputOptions {
 
   formatError?: (
     jax: TeX<unknown, unknown, unknown>,
-    error: TexError
+    error: typeof TexError
   ) => MmlNode;
 }
 
