@@ -49,18 +49,18 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@vuepress/client": "2.0.0-beta.52",
-    "@vuepress/utils": "2.0.0-beta.52",
+    "@vuepress/client": "2.0.0-beta.53",
+    "@vuepress/utils": "2.0.0-beta.53",
     "@waline/client": "^2.13.0",
     "giscus": "^1.2.0",
     "twikoo": "^1.6.7",
     "vue": "^3.2.41",
-    "vue-router": "^4.1.5",
+    "vue-router": "^4.1.6",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.52",
+    "@vuepress/core": "2.0.0-beta.53",
     "rimraf": "3.0.2"
   },
   "peerDependencies": {
