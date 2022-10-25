@@ -68,7 +68,7 @@ ${
       - name: ${lang === "简体中文" ? "设置 Node.js" : "Setup Node.js"}
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
           cache: ${packageManager}
 
       - name: ${lang === "简体中文" ? "安装依赖" : "Install Deps"}
