@@ -1,0 +1,242 @@
+@use "vuepress-shared/styles/reset";
+
+:root {
+  --playground-header-bg-color: #eee;
+}
+
+#{hope-config.$dark-selector} {
+  --playground-header-bg-color: #333;
+
+  // vue-repl dark mode
+
+  /**
+   * copied from https://github.com/vuejs/repl/blob/main/src/Repl.vue
+   */
+  .vue-repl {
+    --bg: #1a1a1a;
+    --bg-soft: #242424;
+    --border: #383838;
+    --text-light: #aaa;
+    --color-branding: #42d392;
+    --color-branding-dark: #89ddff;
+
+    .import-map-wrapper {
+      background: linear-gradient(
+        90deg,
+        rgb(26 26 26 / 0%) 0%,
+        rgb(26 26 26 / 100%) 25%
+      ) !important;
+    }
+
+    /**
+     * copied from https://github.com/vuejs/repl/blob/main/src/codemirror/codemirror.css
+     */
+    // stylelint-disable selector-class-pattern
+    .CodeMirror {
+      --symbols: #89ddff;
+      --base: #a6accd;
+      --comment: #6d6d6d;
+      --keyword: #89ddff;
+      --string: #c3e88d;
+      --variable: #82aaff;
+      --number: #f78c6c;
+      --tags: #f07178;
+      --brackets: var(--symbols);
+      --property: #f07178;
+      --attribute: #c792ea;
+      --cursor: #fff;
+      --selected-bg: rgb(255 255 255 / 10%);
+      --selected-bg-non-focus: rgb(255 255 255 / 15%);
+
+      color: var(--symbols);
+    }
+    // stylelint-enable selector-class-pattern
+  }
+}
+
+.vue-playground-wrapper {
+  overflow: hidden;
+
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--c-border, #ddd);
+  border-radius: 6px;
+
+  .title-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--c-border, #ddd);
+
+    background: var(--playground-header-bg-color, #eee);
+
+    font-weight: 500;
+
+    transition: background var(--color-transition) border-color
+      var(--color-transition);
+  }
+
+  .title {
+    flex: 1;
+
+    overflow: hidden;
+
+    font-size: 1.25rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+  }
+
+  .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: #777;
+  }
+
+  .action {
+    display: inline-flex;
+    margin-left: 10px;
+
+    &:hover .icon {
+      transition: transform 0.15s cubic-bezier(0.2, 0, 0.13, 2);
+      transform: scale(1.2);
+    }
+
+    &.code {
+      @media (max-width: hope-config.$tablet) {
+        display: none;
+      }
+    }
+  }
+
+  .preview-loading-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--grey15);
+
+    transition: background var(--color-transition);
+
+    .loading-icon {
+      width: 4em;
+      height: 4em;
+      margin: 2.5em auto;
+
+      color: var(--c-brand);
+
+      transition: color var(--color-transition);
+    }
+  }
+
+  .source-container {
+    display: none;
+
+    &.show {
+      display: block;
+    }
+  }
+
+  // internal styles
+  // stylelint-disable selector-max-compound-selectors
+  // stylelint-disable max-nesting-depth
+  .repl-container {
+    position: relative;
+
+    overflow: hidden;
+
+    height: auto;
+
+    background: var(--c-bg);
+
+    transition: background var(--color-transition);
+
+    @media (max-width: hope-config.$tablet) {
+      &.show-code {
+        .vue-repl {
+          .split-pane.show-output {
+            .left {
+              display: none !important;
+            }
+          }
+
+          .split-pane:not(.show-output) {
+            .left {
+              display: block !important;
+            }
+          }
+        }
+      }
+
+      &.hide-code {
+        .vue-repl {
+          .split-pane.show-output {
+            .left {
+              display: none !important;
+            }
+          }
+
+          .split-pane:not(.show-output) {
+            .left {
+              display: block !important;
+            }
+          }
+        }
+      }
+    }
+
+    iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .vue-repl {
+      .split-pane {
+        .left {
+          .editor-container {
+            height: 100% !important;
+          }
+        }
+      }
+    }
+
+    &.show-code {
+      .vue-repl {
+        .split-pane {
+          .left {
+            display: block !important;
+          }
+        }
+      }
+    }
+
+    &.hide-code {
+      .vue-repl {
+        .split-pane {
+          .left {
+            display: none !important;
+          }
+        }
+      }
+    }
+
+    // reset .theme-hope-content pre
+    .theme-hope-content & {
+      pre,
+      pre[class*="language-"] {
+        margin: 0;
+        padding: 0;
+        border-radius: 0;
+      }
+    }
+  }
+  // stylelint-enable max-nesting-depth
+  // stylelint-enable selector-max-compound-selectors
+}

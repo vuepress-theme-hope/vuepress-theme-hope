@@ -1,4 +1,4 @@
-import type { BackToTopLocaleConfig } from "../shared";
+import type { BackToTopLocaleConfig } from "../shared/index.js";
 
 export const backToTopLocales: BackToTopLocaleConfig = {
   "/en/": {
@@ -47,5 +47,9 @@ export const backToTopLocales: BackToTopLocaleConfig = {
 
   "/es/": {
     backToTop: "Volver arriba",
+  },
+
+  "/ja/": {
+    backToTop: "このページのトップへ戻る",
   },
 };

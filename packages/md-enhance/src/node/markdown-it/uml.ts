@@ -1,6 +1,6 @@
 import type { PluginWithOptions } from "markdown-it";
-import type { RuleBlock } from "markdown-it/lib/parser_block";
-import type { RenderRule } from "markdown-it/lib/renderer";
+import type { RuleBlock } from "markdown-it/lib/parser_block.js";
+import type { RenderRule } from "markdown-it/lib/renderer.js";
 
 export interface MarkdownItUMLOptions {
   /** name */

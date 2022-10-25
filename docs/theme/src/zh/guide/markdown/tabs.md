@@ -40,9 +40,9 @@ export default defineUserConfig({
 
 ```js {7-10}
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     plugins: {
       mdEnhance: {
@@ -137,7 +137,7 @@ npm 应该与 Node.js 被一同安装。
 如果你使用的是 Node.js v16+，你可以使用 corepack 来启用 pnpm:
 
 ```bash
-corepack prepare pnpm@7.6.0 --activated
+corepack prepare pnpm@7.14.0 --activated
 ```
 
 否则，你可以使用 npm 安装它:

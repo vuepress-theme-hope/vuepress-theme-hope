@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import MarkdownIt from "markdown-it";
-import { lazyLoad } from "../../src/node/markdown-it/lazyLoad";
+import { lazyLoad } from "../../src/node/markdown-it/index.js";
 
 describe("lazyLoad", () => {
   const markdownIt = MarkdownIt({ linkify: true }).use(lazyLoad);

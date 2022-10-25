@@ -31,9 +31,9 @@ export default {
 
 ```js {8}
 // .vuepress/config.js
-const { mdEnhancePlugin } = require("vuepress-plugin-md-enhance");
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
-module.exports = {
+export default {
   plugins: [
     mdEnhancePlugin({
       // Enable include files
@@ -79,7 +79,7 @@ interface IncludeOptions {
   getPath?: (path: string) => string;
 
   /**
-   * Whether deep include files in included markdown files
+   * Whether deep include files in included Markdown files
    *
    * @default false
    */
@@ -93,10 +93,12 @@ E.g.: you can use `@src` as an alias for your source directory.
 
 @tab TS
 
-```ts {8}
+```ts {10}
 // .vuepress/config.ts
-import { path } from "@vuepress/utils";
+import { getDirname, path } from "@vuepress/utils";
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
+
+const __dirname = getDirname(import.meta.url);
 
 export default {
   plugins: [
@@ -117,12 +119,14 @@ export default {
 
 @tab JS
 
-```js {8}
+```js {10}
 // .vuepress/config.js
-const { path } = require("@vuepress/utils");
-const { mdEnhancePlugin } = require("vuepress-plugin-md-enhance");
+import { getDirname, path } from "@vuepress/utils";
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
-module.exports = {
+const __dirname = getDirname(import.meta.url);
+
+export default {
   plugins: [
     mdEnhancePlugin({
       // Add `@src` alias support
@@ -147,9 +151,8 @@ Also, to place your Markdown files directly besides your actual files, but donâ€
 
 @tab TS
 
-```ts {8}
+```ts {5}
 // .vuepress/config.ts
-import { path } from "@vuepress/utils";
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
@@ -165,12 +168,11 @@ export default {
 
 @tab JS
 
-```js {8}
+```js {5}
 // .vuepress/config.js
-const { path } = require("@vuepress/utils");
-const { mdEnhancePlugin } = require("vuepress-plugin-md-enhance");
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
-module.exports = {
+export default {
   pagePatterns: ["**/*.md", "!*.snippet.md", "!.vuepress", "!node_modules"],
 
   plugins: [

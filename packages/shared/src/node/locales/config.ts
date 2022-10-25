@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import type { HopeLang } from "./types";
+import type { HopeLang } from "./types.js";
 
 export const lang2PathConfig = {
   "de-AT": "/de-at/",
@@ -12,7 +12,7 @@ export const lang2PathConfig = {
   "sk-SK": "/sk/",
   "uk-UA": "/uk/",
   "vi-VN": "/vi/",
-  "jp-JP": "/jp/",
+  "ja-JP": "/ja/",
   "zh-CN": "/zh/",
   "zh-TW": "/zh-tw/",
 };

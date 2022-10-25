@@ -48,6 +48,7 @@ You can also config your social media links with `blog.medias` option.
 ::: tip Available social media:
 
 - `"Baidu"`
+- `"BiliBili"`
 - `"Bitbucket"`
 - `"Dingding"`
 - `"Discord"`
@@ -61,6 +62,7 @@ You can also config your social media links with `blog.medias` option.
 - `"Gitlab"`
 - `"Gmail"`
 - `"Instagram"`
+- `"Lark"`
 - `"Line"`
 - `"Linkedin"`
 - `"Pinterest"`
@@ -87,9 +89,11 @@ You can also config your social media links with `blog.medias` option.
 
 ```ts
 // .vuepress/config.ts
-import { path } from "@vuepress/utils";
+import { getDirname, path } from "@vuepress/utils";
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
+
+const __dirname = getDirname(import.meta.url);
 
 export default defineUserConfig({
   thene: hopeTheme({
@@ -121,10 +125,12 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-const { path } = require("@vuepress/utils");
+import { getDirname, path } from "@vuepress/utils";
 import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+const __dirname = getDirname(import.meta.url);
+
+export default {
   theme: hopeTheme({
     blog: {
       media: {

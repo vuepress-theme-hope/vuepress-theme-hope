@@ -1,4 +1,4 @@
-import type { PageInfo } from "../../info";
+import type { PageInfo } from "../../info.js";
 
 export interface HopeThemeBlogLocaleData {
   /** 文章文字 */

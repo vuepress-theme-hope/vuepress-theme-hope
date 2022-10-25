@@ -4,7 +4,7 @@ import {
   normalDemo,
   vueDemo,
   reactDemo,
-} from "../../src/node/markdown-it/codeDemo";
+} from "../../src/node/markdown-it/index.js";
 
 describe("demo", () => {
   const markdownIt = MarkdownIt({ linkify: true })

@@ -1,13 +1,13 @@
 import { computed, defineComponent, h, toRef } from "vue";
 import { RouterLink, useRoute } from "vue-router";
 import { useSiteData } from "@vuepress/client";
-import { ExternalLinkIcon } from "@vuepress/plugin-external-link-icon/lib/client";
+import { ExternalLinkIcon } from "@vuepress/plugin-external-link-icon/client";
 import { isLinkHttp, isLinkMailto, isLinkTel } from "@vuepress/shared";
 
-import Icon from "@theme-hope/components/Icon";
+import Icon from "@theme-hope/components/Icon.js";
 
 import type { PropType, VNode } from "vue";
-import type { AutoLink } from "../../shared";
+import type { AutoLink } from "../../shared/index.js";
 
 export default defineComponent({
   name: "AutoLink",
@@ -15,11 +15,20 @@ export default defineComponent({
   inheritAttrs: false,
 
   props: {
+    /**
+     * @description Autolink config
+     */
     config: {
       type: Object as PropType<AutoLink>,
       required: true,
     },
+    /**
+     * @description Whether it's active only when exact match
+     */
     exact: Boolean,
+    /**
+     * @description Whether show externalLinkIcon with a link
+     */
     externalLinkIcon: {
       type: Boolean,
       default: true,

@@ -26,7 +26,7 @@ Also V2 has a better performance:🚀
 
 ## Vue3 Changes
 
-Vue 3 uses proxy to provide reactivity and support the brandly new composition api. THe proxy-based reactivity is a lot faster than the old-style reactivity based on setter/getter.
+Vue 3 uses proxy to provide reactivity and support the brandly new composition api. The proxy-based reactivity is a lot faster than the old-style reactivity based on setter/getter.
 
 Also, composition api is treeshaking friendly.
 
@@ -134,7 +134,7 @@ Now you can set [different themes for code blocks](../guide/interface/code-theme
 
 The following new features are added:
 
-- [Image Mark](../guide/markdown/others.md#image-mark)
+- [Image Mark](../guide/markdown/image.md#image-mark)
 
 - [GFM](../guide/markdown/others.md#gfm)
 

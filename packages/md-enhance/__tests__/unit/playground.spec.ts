@@ -1,16 +1,28 @@
 import { describe, expect, it } from "vitest";
 import MarkdownIt from "markdown-it";
 
-import { playground } from "../../src/node/markdown-it/playground";
+import {
+  getTSPlaygroundPreset,
+  playground,
+} from "../../src/node/markdown-it/index.js";
 
 describe("playground", () => {
-  const markdownIt = MarkdownIt({ linkify: true }).use(playground);
+  describe("basic", () => {
+    const markdownIt = MarkdownIt({ linkify: true }).use(playground, {
+      name: "playground",
+      component: "Playground",
+      propsGetter: (data) => {
+        expect(data).toMatchSnapshot();
 
-  it("Should resolve playground info", () => {
-    expect(
+        return {};
+      },
+    });
+
+    it("Should resolve playground info", () => {
       markdownIt.render(
         `
 ::: playground Playground demo
+
 @file App.vue
 \`\`\`vue
 <script setup>
@@ -22,13 +34,17 @@ const msg = ref('Hello World!')
   <input v-model="msg" />
 </template>
 \`\`\`
+
 @file Comp.vue
+
 \`\`\`vue
 <template>
   <div>Comp</div>
 </template>
 \`\`\`
-@imports
+
+@import
+
 \`\`\`json
 {
   "imports": {
@@ -39,16 +55,16 @@ const msg = ref('Hello World!')
 :::
 `,
         {}
-      )
-    ).toMatchSnapshot();
-  });
+      );
+    });
 
-  it("Should resolve playground info with settings", () => {
-    expect(
+    it("Should resolve playground info with settings", () => {
       markdownIt.render(
         `
 ::: playground Playground demo2
+
 @file App.vue
+
 \`\`\`vue
 <script setup>
 import { ref } from 'vue'
@@ -59,34 +75,36 @@ const msg = ref('Hello World!')
   <input v-model="msg" />
 </template>
 \`\`\`
+
 @file Comp.vue
+
 \`\`\`vue
 <template>
   <div>Comp</div>
 </template>
 \`\`\`
-@settings
+
+@setting
+
 \`\`\`json
 {
-  "mode": "external",
-  "external": {
-    "base": "https://element-plus.run/"
-  }
+  "service": "https://element-plus.run/"
 }
 \`\`\`
+
 :::
 `,
         {}
-      )
-    ).toMatchSnapshot();
-  });
+      );
+    });
 
-  it("Should resolve playground info with settings", () => {
-    expect(
+    it("Should resolve playground info with settings", () => {
       markdownIt.render(
         `
-::: playground#customId Playground demo2
+::: playground Playground demo2
+
 @file App.vue
+
 \`\`\`vue
 <script setup>
 import { ref } from 'vue'
@@ -97,7 +115,9 @@ const msg = ref('Hello World!')
   <input v-model="msg" />
 </template>
 \`\`\`
-@imports user-imports.json
+
+@import
+
 \`\`\`json
 {
   "imports": {
@@ -105,19 +125,71 @@ const msg = ref('Hello World!')
   }
 }
 \`\`\`
-@settings
+
+@setting
+
 \`\`\`json
 {
-  "mode": "external",
-  "external": {
-    "base": "https://element-plus.run/"
-  }
+  "service": "https://element-plus.run/"
 }
 \`\`\`
+
 :::
 `,
         {}
-      )
-    ).toMatchSnapshot();
+      );
+    });
+  });
+
+  describe("ts preset", () => {
+    const defaultMarkdownIt = MarkdownIt({ linkify: true }).use(
+      playground,
+      getTSPlaygroundPreset({})
+    );
+
+    it("Should work", () => {
+      const result1 = defaultMarkdownIt.render(`
+::: playground#ts TS demo 1
+
+@file index.ts
+
+\`\`\`ts
+const msg = "hello world";
+
+const speak = (msg: string) => console.log(msg);
+
+speak(msg);
+\`\`\`
+
+:::
+`);
+
+      const result2 = defaultMarkdownIt.render(`
+::: playground#ts TS demo 2
+
+@file index.ts
+
+\`\`\`ts
+const msg = "hello world";
+
+const speak = (msg: string) => console.log(msg);
+
+speak(msg);
+\`\`\`
+
+@settings
+
+\`\`\`json
+{
+  "target": "es5"
+}
+\`\`\`
+
+:::
+`);
+
+      expect(result1).toMatchSnapshot();
+      expect(result2).toMatchSnapshot();
+    });
   });
 });

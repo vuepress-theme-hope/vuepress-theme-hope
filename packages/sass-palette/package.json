@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-sass-palette",
-  "version": "2.0.0-beta.91",
+  "version": "2.0.0-beta.114",
   "description": "A common palette plugin for vuepress themes and plugins",
   "keywords": [
     "vuepress",
@@ -24,11 +24,22 @@
     "email": "mister-hope@outlook.com",
     "url": "https://mrhope.site"
   },
+  "type": "module",
+  "exports": {
+    ".": "./lib/node/index.js",
+    "./styles*": "./styles/*",
+    "./color.scss": "./styles/default/color.scss",
+    "./config.scss": "./styles/default/config.scss",
+    "./layout.scss": "./styles/default/layout.scss",
+    "./palette.scss": "./styles/default/palette.scss",
+    "./empty.scss": "./styles/empty.scss",
+    "./helper.scss": "./styles/helper.scss",
+    "./package.json": "./package.json"
+  },
   "main": "lib/node/index.js",
   "types": "lib/node/index.d.ts",
   "files": [
     "lib",
-    "src",
     "styles"
   ],
   "scripts": {
@@ -38,15 +49,15 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@vuepress/utils": "2.0.0-beta.49",
+    "@vuepress/utils": "2.0.0-beta.53",
     "chokidar": "^3.5.3",
-    "sass": "^1.54.3",
+    "sass": "^1.55.0",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "@vuepress/bundler-vite": "2.0.0-beta.49",
-    "@vuepress/bundler-webpack": "2.0.0-beta.49",
-    "@vuepress/core": "2.0.0-beta.49",
+    "@vuepress/bundler-vite": "2.0.0-beta.53",
+    "@vuepress/bundler-webpack": "2.0.0-beta.53",
+    "@vuepress/core": "2.0.0-beta.53",
     "rimraf": "3.0.2"
   },
   "peerDependencies": {

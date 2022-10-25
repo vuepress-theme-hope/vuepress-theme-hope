@@ -1,16 +1,19 @@
 .katex-playground {
   textarea {
     width: 100%;
-    background-color: var(--bgcolor-light);
-    color: var(--text-color);
-    font-size: 18px;
     border-color: var(--border-color);
     border-radius: 0.5rem;
+
+    background: var(--bgcolor-light);
+    color: var(--text-color);
+
+    font-size: 18px;
+
     resize: vertical;
 
     &:active,
     &:focus-visible {
-      background-color: var(--bg-color-active);
+      background: var(--bg-color-active);
       outline: 1px solid var(--light-grey);
     }
   }

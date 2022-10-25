@@ -1,4 +1,4 @@
-import type { AutoLink, TextItem } from "./utils";
+import type { AutoLink, TextItem } from "./utils.js";
 
 export type HopeThemeSidebarPageItem = AutoLink;
 
@@ -54,6 +54,7 @@ export interface ResolvedHopeThemeSidebarPageItem
 export interface ResolvedHopeThemeSidebarGroupItem
   extends HopeThemeSidebarGroupItem {
   type: "group";
+  prefix: string;
   children: ResolvedSidebarItem[];
 }
 

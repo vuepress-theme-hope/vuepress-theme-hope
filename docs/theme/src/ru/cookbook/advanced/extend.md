@@ -18,7 +18,7 @@ tag:
 
 В файле ввода установите `extends: hopeTheme(options)`, чтобы расширить тему `vuepress-theme-hope`.
 
-Одноименные псевдонимы (`alias`) и макеты (`layouts`) вашей собственной только что созданной темы имеют более высокий приоритет по сравнению с расширенной темой `vuepress-theme-hope`, что означает, что вы можете переопределить `vuepress-theme-hope` компоненты через `alias` и добавить или переопределить макет, предоставленный `vuepress-theme-hope` через `layouts`.
+Одноименные алиасы (`alias`) и макеты (`layouts`) вашей собственной только что созданной темы имеют более высокий приоритет по сравнению с расширенной темой `vuepress-theme-hope`, что означает, что вы можете переопределить `vuepress-theme-hope` компоненты через `alias`.
 
 ::: code-tabs#language
 
@@ -26,9 +26,11 @@ tag:
 
 ```ts
 // .vuepress/theme/index.ts
-import { path } from "@vuepress/utils";
+import { getDirname, path } from "@vuepress/utils";
 import { hopeTheme } from "vuepress-theme-hope";
 import type { HopeThemeOptions } from "vuepress-theme-hope";
+
+const __dirname = getDirname(import.meta.url);
 
 export const localTheme = (options: HopeThemeOptions) => ({
   name: "vuepress-theme-local",
@@ -37,19 +39,11 @@ export const localTheme = (options: HopeThemeOptions) => ({
 
   alias: {
     // Вы можете переопределить или добавить псевдонимы здесь
-    // Например, здесь мы меняем компонент HomePage vuepress-theme-hope на component/HomePage.vue под нашей собственной темой
-    "@theme-hope/components/HomePage": path.resolve(
+    // Например, здесь мы меняем компонент HomePage vuepress-theme-hope на component/HomePage.js под нашей собственной темой
+    "@theme-hope/components/HomePage.js": path.resolve(
       __dirname,
-      "./components/HomePage.vue"
+      "./components/HomePage.js"
     ),
-  },
-
-  layouts: {
-    // Вы можете переопределить или добавить макеты здесь
-    // Например, здесь мы меняем макет по умолчанию vuepress-theme-hope на layouts/Layout.vue под нашу собственную тему
-    Layout: path.resolve(__dirname, "layouts/Layout.vue"),
-    // Также мы добавили макет списка изменений
-    Changelog: path.resolve(__dirname, "layouts/Changelog.vue"),
   },
 });
 ```
@@ -57,32 +51,80 @@ export const localTheme = (options: HopeThemeOptions) => ({
 @tab JS
 
 ```js
-// .vuepress/them/index.js
-const { path } = require("@vuepress/utils");
-const { hopeTheme } = require("vuepress-theme-hope");
+// .vuepress/theme/index.js
+import { getDirname, path } from "@vuepress/utils";
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = (options) => ({
+const __dirname = getDirname(import.meta.url);
+
+export default (options) => ({
   name: "vuepress-theme-local",
 
   extends: hopeTheme(options),
 
   alias: {
     // Вы можете переопределить или добавить псевдонимы здесь
-    // Например, здесь мы меняем компонент HomePage vuepress-theme-hope на component/HomePage.vue под нашей собственной темой
-    "@theme-hope/components/HomePage": path.resolve(
+    // Например, здесь мы меняем компонент HomePage vuepress-theme-hope на component/HomePage.js под нашей собственной темой
+    "@theme-hope/components/HomePage.js": path.resolve(
       __dirname,
-      "./components/HomePage.vue"
+      "./components/HomePage.js"
     ),
-  },
-
-  layouts: {
-    // Вы можете переопределить или добавить макеты здесь
-    // Например, здесь мы меняем макет по умолчанию vuepress-theme-hope на layouts/Layout.vue под нашу собственную тему
-    Layout: path.resolve(__dirname, "layouts/Layout.vue"),
-    // Также мы добавили макет списка изменений
-    Changelog: path.resolve(__dirname, "layouts/Changelog.vue"),
   },
 });
 ```
 
 :::
+
+::: tip
+
+Если вы хотите использовать файлы `vue`, вы можете создать простую оболочку js, написав:
+
+```js
+// wrapper.js
+import YouComponent from "./YouComponent.vue";
+export default YouComponent;
+```
+
+:::
+
+Кроме того, вы можете добавить или переопределить макет, предоставленный `vuepress-theme-hope`, через `layouts` в клиентском файле конфигурации вашей темы.
+
+::: code-tabs#language
+
+@tab TS
+
+```ts
+// .vuepress/theme/config.ts
+import { defineClientConfig } from "@vuepress/client";
+import Changelog from "./layouts/Changelog.vue";
+import Layout from "./layouts/Layout.vue";
+
+export default defineClientConfig({
+  // Вы можете переопределить или добавить макеты здесь
+  layouts: {
+    // Например, здесь мы меняем макет по умолчанию vuepress-theme-hope на layouts/Layout.vue под нашу собственную тему
+    Layout,
+    // Также мы добавили макет списка изменений
+    Changelog,
+  },
+});
+```
+
+@tab JS
+
+```js
+// .vuepress/theme/config.js
+import { defineClientConfig } from "@vuepress/client";
+import Changelog from "./layouts/Changelog.vue";
+import Layout from "./layouts/Layout.vue";
+
+export default defineClientConfig({
+  // Вы можете переопределить или добавить макеты здесь
+  layouts: {
+    // Например, здесь мы меняем макет по умолчанию vuepress-theme-hope на layouts/Layout.vue под нашу собственную тему
+    Layout,
+    // Также мы добавили макет списка изменений
+    Changelog,
+  },
+});
+```

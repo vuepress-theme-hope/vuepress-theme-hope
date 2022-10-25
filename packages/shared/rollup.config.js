@@ -1,4 +1,4 @@
-import { rollupTypescript } from "../../scripts/rollup";
+import { rollupTypescript } from "../../scripts/rollup.js";
 
 export default [
   ...rollupTypescript("node/index", {
@@ -8,11 +8,11 @@ export default [
       "@vuepress/utils",
       "@vuepress/shared",
       "execa",
-      "http",
+      "node:http",
       "ora",
       "vite",
     ],
-    dtsExternal: ["http"],
+    dtsExternal: ["node:http"],
   }),
   ...rollupTypescript("client/index", {
     resolve: true,

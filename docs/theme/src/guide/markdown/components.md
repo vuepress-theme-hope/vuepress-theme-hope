@@ -13,6 +13,7 @@ By using `vuepress-plugin-components`, you can import and use some components in
 Available components:
 
 - Badge
+- BiliBili
 - CodePen
 - FontIcon
 - PDF
@@ -35,6 +36,36 @@ A badge component.
 - <Badge text="note" type="note" vertical="middle" />
 
 See [Badge][badge] page for available props.
+
+## BiliBili
+
+Embed BiliBili vidoes in Markdown files.
+
+A bilibili video:
+
+<BiliBili bvid="BV1kt411o7C3" />
+
+```md
+<BiliBili bvid="BV1kt411o7C3" />
+```
+
+A bilibili video with start time and page:
+
+<BiliBili bvid="BV1kt411o7C3" :ratio="9/16" :time="60" :page="2" />
+
+```md
+<BiliBili bvid="BV1kt411o7C3" :ratio="9/16" :time="60" :page="2" />
+```
+
+A bilibili video with custom settings:
+
+<BiliBili bvid="BV1kt411o7C3" :high-quality="false" :danmaku="false" />
+
+```md
+<BiliBili bvid="BV1kt411o7C3" :high-quality="false" :danmaku="false" />
+```
+
+See [Bilibili][bilibili] page for available props.
 
 ## CodePen
 
@@ -88,11 +119,11 @@ See [CodePen][codepen] page for available props.
 Component which allows you to display font icons.
 
 - Home icon: <FontIcon icon="home" />
-- A big and red markdown icon: <FontIcon icon="markdown" color="red" size="32" />
+- A big and red markdown icon: <FontIcon icon="markdown" color="red" :size="32" />
 
 ```md
 - Home icon: <FontIcon icon="home" />
-- A big and red markdown icon: <FontIcon icon="markdown" color="red" size="32" />
+- A big and red markdown icon: <FontIcon icon="markdown" color="red" :size="32" />
 ```
 
 See [FontIcon][fonticon] page for available props.
@@ -129,13 +160,17 @@ See [PDF][pdf] page for available props.
 
 ## StackBlitz
 
-Embed StackBlitz demo in markdown files.
+Embed StackBlitz demo in Markdown files.
+
+A StackBlitz project:
 
 <StackBlitz id="vuepress-theme-hope" />
 
 ```md
 <StackBlitz id="vuepress-theme-hope" />
 ```
+
+A StackBlitz project with custom settings:
 
 <StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hidedevtools />
 
@@ -145,9 +180,69 @@ Embed StackBlitz demo in markdown files.
 
 See [StackBlitz][stackblitz] page for available props.
 
+## VideoPlayer
+
+Embed vidoes in Markdown files.
+
+A video player:
+
+<VideoPlayer src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm" />
+
+```md
+<VideoPlayer src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm" />
+```
+
+A video player with tracks and poster:
+
+<VideoPlayer
+  src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm"
+  poster="/poster.svg"
+  :tracks="[
+    {
+      default: true,
+      src: 'https://gist.githubusercontent.com/wheatjs/a85a65a82d87d7c098e1a0972ef1f726/raw',
+      kind: 'subtitles',
+      label: 'English',
+      srcLang: 'en',
+    },
+    {
+      src: 'https://gist.githubusercontent.com/wheatjs/38f32925d20c683bf77ba33ff737891b/raw',
+      kind: 'subtitles',
+      label: 'French',
+      srcLang: 'fr',
+    },
+  ]"
+/>
+
+```md
+<VideoPlayer
+  src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm"
+  poster="/poster.svg"
+  :tracks="[
+    {
+      default: true,
+      src: 'https://gist.githubusercontent.com/wheatjs/a85a65a82d87d7c098e1a0972ef1f726/raw',
+      kind: 'subtitles',
+      label: 'English',
+      srcLang: 'en',
+    },
+    {
+      src: 'https://gist.githubusercontent.com/wheatjs/38f32925d20c683bf77ba33ff737891b/raw',
+      kind: 'subtitles',
+      label: 'French',
+      srcLang: 'fr',
+    },
+  ]"
+/>
+```
+
+See [Video Player][videoplayer] page for available props.
+
 ## YouTube
 
-Embed YouTube video in markdown files.
+Embed YouTube video in Markdown files.
+
+A YouTube video:
 
 <YouTube id="0JJPfz5dg20" />
 
@@ -155,11 +250,15 @@ Embed YouTube video in markdown files.
 <YouTube id="0JJPfz5dg20" />
 ```
 
+A YouTube video with custom settings:
+
 <YouTube id="0JJPfz5dg20" disable-fullscreen />
 
 ```md
 <YouTube id="0JJPfz5dg20" disable-fullscreen />
 ```
+
+A YouTube play list:
 
 <YouTube list-type="playlist" list="PLJNLwTPak6dhCRzVelZIs2-DfBp01NX_1" />
 
@@ -170,8 +269,10 @@ Embed YouTube video in markdown files.
 See [YouTube][youtube] page for available props.
 
 [badge]: https://vuepress-theme-hope.github.io/v2/components/guide/badge.html
+[bilibili]: https://vuepress-theme-hope.github.io/v2/components/guide/bilibili.html
 [codepen]: https://vuepress-theme-hope.github.io/v2/components/guide/codepen.html
 [fonticon]: https://vuepress-theme-hope.github.io/v2/components/guide/fonticon.html
 [pdf]: https://vuepress-theme-hope.github.io/v2/components/guide/pdf.html
 [stackblitz]: https://vuepress-theme-hope.github.io/v2/components/guide/stackblitz.html
+[videoplayer]: https://vuepress-theme-hope.github.io/v2/components/guide/videoplayer.html
 [youtube]: https://vuepress-theme-hope.github.io/v2/components/guide/youtube.html

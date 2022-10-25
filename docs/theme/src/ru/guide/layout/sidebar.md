@@ -41,9 +41,9 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     sidebar: ["README.md", "guide/README.md", "config/README.md"],
   }),
@@ -106,9 +106,9 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     sidebar: [
       {
@@ -199,9 +199,9 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     sidebar: [
       {
@@ -280,9 +280,9 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     sidebar: [
       {
@@ -375,9 +375,9 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     sidebar: [
       "/" /* / */,
@@ -470,9 +470,9 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     sidebar: {
       "/foo/": [
@@ -542,9 +542,9 @@ export default defineUserConfig({
 
 ```js {6}
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     sidebar: "heading",
   }),
@@ -607,9 +607,9 @@ export default defineUserConfig({
 
 ```js {7,9}
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     sidebar: {
       "/foo/": "structure",
@@ -716,6 +716,25 @@ interface SidebarDirInfo {
 }
 ```
 
+#### Кастомизация сортировщика
+
+В дополнение к приведенной выше реализации мы также добавили более мощную опцию `sidebarSorter` в параметры темы. Вы можете передать одно или несколько имен встроенных сортировщиков или передать функцию сортировщика, необходимую для сортировки элементов боковой панели на одном уровне.
+
+Доступные ключевые слова:
+
+- `readme`: сначала `README.md` или `readme.md`
+- `order`: положительный порядок сначала с его значением по возрастанию, отрицательный порядок последним с его значением по убыванию
+- `date`: сортировать по дате по возрастанию
+- `date-desc`: сортировать по дате по убыванию
+- `title`: в алфавитном порядке по названию
+- `title-number`: сортировка в алфавитном порядке по названию и сортировка по возрастанию одинаковых заголовков с разными метками номеров
+- `title-number-desc`: сортировка в алфавитном порядке по названию и сортировка по убыванию одинаковых заголовков с разными метками номеров
+- `filename`: сортировка в алфавитном порядке по имени файла
+- `file-number`: сортировка в алфавитном порядке по имени файла и сортировка по возрастанию одинаковых имен файлов с разными метками номеров
+- `file-number-desc`: сортировка в алфавитном порядке по имени файла и сортировка по убыванию одинаковых имен файлов с разными метками номеров
+
+В соответствии с приведенным выше расширенным элементом управления, его значение по умолчанию равно `["readme", "order", "title"]`
+
 ### Отключение боковой панели
 
 Вы можете отключить боковую панель на определенной странице с помощью `YAML front matter`:
@@ -779,9 +798,9 @@ export default defineUserConfig({
 
 ```js {8}
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     plugins: {
       // Default: true
@@ -832,9 +851,9 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     locales: {
       "/": {
@@ -892,9 +911,9 @@ export default sidebarConfig;
 
 ```js
 // .vuepress/sidebar.js
-const { sidebar } = require("vuepress-theme-hope");
+import { sidebar } from "vuepress-theme-hope";
 
-module.exports = sidebar(/* Your sidebar configuration */);
+export default sidebar(/* Your sidebar configuration */);
 ```
 
 :::
@@ -915,9 +934,9 @@ module.exports = sidebar(/* Your sidebar configuration */);
 
 ```js
 // .vuepress/config.js
-const { sidebar } = require("vuepress-theme-hope");
+import { sidebar } from "vuepress-theme-hope";
 
-module.exports = sidebar({
+export default sidebar({
   "/": [
     "",
     {

@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import MarkdownIt from "markdown-it";
-import { tasklist } from "../../src/node/markdown-it/tasklist";
+import { tasklist } from "../../src/node/markdown-it/index.js";
 
 describe("Task list", () => {
   const markdownIt = MarkdownIt({ linkify: true }).use(tasklist);

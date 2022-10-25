@@ -39,9 +39,9 @@ export default defineUserConfig({
 
 ```js {7-9}
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     plugins: {
       mdEnhance: {
@@ -58,7 +58,7 @@ module.exports = {
 
 This is the same as tabs function, but it's special built for code blocks.
 
-Only code fence after `@tab` marker is allowed inside code tabs, other markdown content will be ignored.
+Only code fence after `@tab` marker is allowed inside code tabs, other Markdown content will be ignored.
 
 ## Demo
 

@@ -1,0 +1,37 @@
+.blog-info-wrapper {
+  .sidebar & {
+    // hide blogger info in sidebar
+    .blogger-info {
+      display: none;
+    }
+  }
+
+  .page & {
+    position: sticky;
+    top: calc(var(--navbar-height) + 0.75rem);
+
+    flex: 0 0 300px;
+
+    box-sizing: border-box;
+
+    height: auto;
+    margin: 0 0 0.75rem 1rem;
+
+    transition: all 0.3s;
+
+    @media (max-width: hope-config.$tablet) {
+      display: none;
+    }
+
+    .blogger-info {
+      margin-bottom: 16px;
+      padding: 8px 0;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px 1px var(--card-shadow);
+
+      &:hover {
+        box-shadow: 0 2px 6px 2px var(--card-shadow);
+      }
+    }
+  }
+}

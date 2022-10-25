@@ -1,13 +1,15 @@
 import type { LocaleConfig } from "@vuepress/core";
-import type { BackToTopLocaleData } from "./locales";
+import type { BackToTopLocaleData } from "./locales.js";
 
 export type AvailableComponent =
   | "Badge"
+  | "BiliBili"
   | "Catalog"
   | "CodePen"
   | "FontIcon"
   | "PDF"
   | "StackBlitz"
+  | "VideoPlayer"
   | "YouTube";
 
 export interface ComponentOptions {
@@ -57,7 +59,12 @@ export interface ComponentOptions {
    *
    * @description `'iconfont'` and `'fontawesome'` keywords are supported
    */
-  iconAssets?: string;
+  iconAssets?:
+    | "iconfont"
+    | "fontawesome"
+    | `//${string}`
+    | `http://${string}`
+    | `https://${string}`;
 
   /**
    * Class prefix of font icon

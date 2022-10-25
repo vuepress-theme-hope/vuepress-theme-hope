@@ -22,9 +22,11 @@ You need to replace the component alias used in the theme with `alias` option in
 
 ```ts
 // .vuepress/config.ts
-import { path } from "@vuepress/utils";
+import { getDirname, path } from "@vuepress/utils";
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
+
+const __dirname = getDirname(import.meta.url);
 
 export default defineUserConfig({
   theme: hopeTheme({
@@ -34,9 +36,9 @@ export default defineUserConfig({
   alias: {
     // Here you can redirect aliases to your own components
     // For example, here we change the theme’s home page component to HomePage.vue under user .vuepress/components
-    "@theme-hope/components/HomePage": path.resolve(
+    "@theme-hope/components/HomePage.js": path.resolve(
       __dirname,
-      "./components/HomePage.vue"
+      "./components/HomePage.js"
     ),
   },
 });
@@ -46,10 +48,12 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-const { path } = require("@vuepress/utils");
-const { hopeTheme } = require("vuepress-theme-hope");
+import { getDirname, path } from "@vuepress/utils";
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+const __dirname = getDirname(import.meta.url);
+
+export default {
   theme: hopeTheme({
     // your theme config here
   }),
@@ -57,12 +61,24 @@ module.exports = {
   alias: {
     // Here you can redirect aliases to your own components
     // For example, here we change the theme’s home page component to HomePage.vue under user .vuepress/components
-    "@theme-hope/components/HomePage": path.resolve(
+    "@theme-hope/components/HomePage.js": path.resolve(
       __dirname,
-      "./components/HomePage.vue"
+      "./components/HomePage.js"
     ),
   },
 };
+```
+
+:::
+
+::: tip
+
+If you want to use `vue` files, you can make a simple js wrapper by writing:
+
+```js
+// wrapper.js
+import YouComponent from "./YouComponent.vue";
+export default YouComponent;
 ```
 
 :::
@@ -73,26 +89,27 @@ Here are list of aliases.
 
 Components:
 
-- `@theme-hope/components/AutoLink`: basic link
-- `@theme-hope/components/BreadCrumb`: breacrumb
-- `@theme-hope/components/CommonWrapper`: basic layout integration
-- `@theme-hope/components/HomeFeatures`: homepage features
-- `@theme-hope/components/HomeHero`: homepage logo and introduction
-- `@theme-hope/components/HomePage`: home page
-- `@theme-hope/components/Icon`: icon
-- `@theme-hope/components/MarkdownContent`: Markdown content
-- `@theme-hope/components/NormalPage`: normal page
-- `@theme-hope/components/PageFooter`: page footer
-- `@theme-hope/components/PageNav`: page navigation
-- `@theme-hope/components/PageTitle`: page title
-- `@theme-hope/components/SkipLink`: skip to main content
+- `@theme-hope/components/AutoLink.js`: basic link
+- `@theme-hope/components/BreadCrumb.js`: breacrumb
+- `@theme-hope/components/CommonWrapper.js`: basic layout integration
+- `@theme-hope/components/HomeFeatures.js`: homepage features
+- `@theme-hope/components/HomeHero.js`: homepage logo and introduction
+- `@theme-hope/components/HomePage.js`: home page
+- `@theme-hope/components/Icon.js`: icon
+- `@theme-hope/components/MarkdownContent.js`: Markdown content
+- `@theme-hope/components/NormalPage.js`: normal page
+- `@theme-hope/components/PageFooter.js`: page footer
+- `@theme-hope/components/PageNav.js`: page navigation
+- `@theme-hope/components/PageTitle.js`: page title
+- `@theme-hope/components/SkipLink.js`: skip to main content
+- `@theme-hope/components/transitions/DropTransition.js`: drop transition component
+- `@theme-hope/components/transitions/FadeSlideY.js`: fade slide y transition component
 
 Miscellaneous:
 
-- `@theme-hope/components/icons`: theme icons
-- `@theme-hope/components/transitions`: theme transitions
-- `@theme-hope/composables`: theme Composition API
-- `@theme-hope/utils`: theme utility functions
+- `@theme-hope/components/icons/index.js`: theme icons
+- `@theme-hope/composables/index.js`: theme Composition API
+- `@theme-hope/utils/index.js`: theme utility functions
 
 :::
 
@@ -100,23 +117,23 @@ Miscellaneous:
 
 Components:
 
-- `@theme-hope/module/navbar/components/DropdownLink`: dropdown list
-- `@theme-hope/module/navbar/components/LanguageDropdown`: language dropdown
-- `@theme-hope/module/navbar/components/NavActions`: navbar functions
-- `@theme-hope/module/navbar/components/Navbar`: navbar
-- `@theme-hope/module/navbar/components/NavbarBrand`: navbar brand information
-- `@theme-hope/module/navbar/components/NavbarLinks`: navbar links
-- `@theme-hope/module/navbar/components/NavScreen`: navigation screen in mobile view
-- `@theme-hope/module/navbar/components/NavScreenDropdown`: mobile view navbar dropdown menu
-- `@theme-hope/module/navbar/components/NavScreenLinks`: mobile view navbar links
-- `@theme-hope/module/navbar/components/RepoLink`: repository link
-- `@theme-hope/module/navbar/components/ToggleNavbarButton`: navbar toggle button
-- `@theme-hope/module/navbar/components/ToggleSidebarButton`: sidebar toggle button
+- `@theme-hope/modules/navbar/components/DropdownLink.js`: dropdown list
+- `@theme-hope/modules/navbar/components/LanguageDropdown.js`: language dropdown
+- `@theme-hope/modules/navbar/components/NavActions.js`: navbar functions
+- `@theme-hope/modules/navbar/components/Navbar.js`: navbar
+- `@theme-hope/modules/navbar/components/NavbarBrand.js`: navbar brand information
+- `@theme-hope/modules/navbar/components/NavbarLinks.js`: navbar links
+- `@theme-hope/modules/navbar/components/NavScreen.js`: navigation screen in mobile view
+- `@theme-hope/modules/navbar/components/NavScreenDropdown.js`: mobile view navbar dropdown menu
+- `@theme-hope/modules/navbar/components/NavScreenLinks.js`: mobile view navbar links
+- `@theme-hope/modules/navbar/components/RepoLink.js`: repository link
+- `@theme-hope/modules/navbar/components/ToggleNavbarButton.js`: navbar toggle button
+- `@theme-hope/modules/navbar/components/ToggleSidebarButton.js`: sidebar toggle button
 
 Miscellaneous:
 
-- `@theme-hope/module/navbar/components/icons`: navbar icons
-- `@theme-hope/module/navbar/composables`: navbar Composition API
+- `@theme-hope/modules/navbar/components/icons/index.js`: navbar icons
+- `@theme-hope/modules/navbar/composables/index.js`: navbar Composition API
 
 :::
 
@@ -124,15 +141,15 @@ Miscellaneous:
 
 Components:
 
-- `@theme-hope/module/sidebar/components/Sidebar`: sidebar
-- `@theme-hope/module/sidebar/components/SidebarChild`: sidebar link item
-- `@theme-hope/module/sidebar/components/SidebarGroup`: sidebar grouping links
-- `@theme-hope/module/sidebar/components/SidebarLinks`: sidebar links
+- `@theme-hope/modules/sidebar/components/Sidebar.js`: sidebar
+- `@theme-hope/modules/sidebar/components/SidebarChild.js`: sidebar link item
+- `@theme-hope/modules/sidebar/components/SidebarGroup.js`: sidebar grouping links
+- `@theme-hope/modules/sidebar/components/SidebarLinks.js`: sidebar links
 
 Miscellaneous:
 
-- `@theme-hope/module/sidebar/composables`: sidebar Composition API
-- `@theme-hope/module/sidebar/utils`: sidebar utility functions
+- `@theme-hope/modules/sidebar/composables/index.js`: sidebar Composition API
+- `@theme-hope/modules/sidebar/utils/index.js`: sidebar utility functions
 
 :::
 
@@ -140,23 +157,23 @@ Miscellaneous:
 
 Components:
 
-- `@theme-hope/module/info/components/AuthorInfo`: author information
-- `@theme-hope/module/info/components/CategoryInfo`: category information
-- `@theme-hope/module/info/components/DateInfo`: date information
-- `@theme-hope/module/info/components/OriginalMark`: original mark
-- `@theme-hope/module/info/components/PageInfo`: page information
-- `@theme-hope/module/info/components/PageMeta`: page meta information
-- `@theme-hope/module/info/components/PageViewInfo`: page views information
-- `@theme-hope/module/info/components/ReadingTimeInfo`: reading time information
-- `@theme-hope/module/info/components/TagInfo`: tag information
-- `@theme-hope/module/info/components/TOC`: table of contents
-- `@theme-hope/module/info/components/WordInfo`: word information
+- `@theme-hope/modules/info/components/AuthorInfo.js`: author information
+- `@theme-hope/modules/info/components/CategoryInfo.js`: category information
+- `@theme-hope/modules/info/components/DateInfo.js`: date information
+- `@theme-hope/modules/info/components/OriginalMark.js`: original mark
+- `@theme-hope/modules/info/components/PageInfo.js`: page information
+- `@theme-hope/modules/info/components/PageMeta.js`: page meta information
+- `@theme-hope/modules/info/components/PageViewInfo.js`: page views information
+- `@theme-hope/modules/info/components/ReadingTimeInfo.js`: reading time information
+- `@theme-hope/modules/info/components/TagInfo.js`: tag information
+- `@theme-hope/modules/info/components/TOC.js`: table of contents
+- `@theme-hope/modules/info/components/WordInfo.js`: word information
 
 Miscellaneous:
 
-- `@theme-hope/module/blog/components/icons`: info icons
-- `@theme-hope/module/blog/composables`: info Composables API
-- `@theme-hope/module/blog/utils`: info utility functions
+- `@theme-hope/modules/blog/components/icons.js`: info icons
+- `@theme-hope/modules/blog/composables/index.js`: info Composables API
+- `@theme-hope/modules/blog/utils/index.js`: info utility functions
 
 :::
 
@@ -164,27 +181,27 @@ Miscellaneous:
 
 Components:
 
-- `@theme-hope/module/blog/components/ArticleItem`: article item
-- `@theme-hope/module/blog/components/ArticleList`: article list
-- `@theme-hope/module/blog/components/ArticleType`: article type
-- `@theme-hope/module/blog/components/BloggerInfo`: blogger info
-- `@theme-hope/module/blog/components/BlogHero`: blog homepage logo and introduction
-- `@theme-hope/module/blog/components/BlogHome`: blog home page
-- `@theme-hope/module/blog/components/BlogPage`: normal blog page
-- `@theme-hope/module/blog/components/CategoryList`: Category list
-- `@theme-hope/module/blog/components/InfoList`: blog info list
-- `@theme-hope/module/blog/components/InfoPanel`: blog info panel
-- `@theme-hope/module/blog/components/Pagination`: pagination
-- `@theme-hope/module/blog/components/ProjectPanel`: blog homepage project panel
-- `@theme-hope/module/blog/components/SocialMedia`: social media links
-- `@theme-hope/module/blog/components/TagList`: tag list
-- `@theme-hope/module/blog/components/TimelineItems`: timeline items
-- `@theme-hope/module/blog/components/TimelineList`: timeline List
+- `@theme-hope/modules/blog/components/ArticleItem.js`: article item
+- `@theme-hope/modules/blog/components/ArticleList.js`: article list
+- `@theme-hope/modules/blog/components/ArticleType.js`: article type
+- `@theme-hope/modules/blog/components/BloggerInfo.js`: blogger info
+- `@theme-hope/modules/blog/components/BlogHero.js`: blog homepage logo and introduction
+- `@theme-hope/modules/blog/components/BlogHome.js`: blog home page
+- `@theme-hope/modules/blog/components/BlogPage.js`: normal blog page
+- `@theme-hope/modules/blog/components/CategoryList.js`: Category list
+- `@theme-hope/modules/blog/components/InfoList.js`: blog info list
+- `@theme-hope/modules/blog/components/InfoPanel.js`: blog info panel
+- `@theme-hope/modules/blog/components/Pagination.js`: pagination
+- `@theme-hope/modules/blog/components/ProjectPanel.js`: blog homepage project panel
+- `@theme-hope/modules/blog/components/SocialMedia.js`: social media links
+- `@theme-hope/modules/blog/components/TagList.js`: tag list
+- `@theme-hope/modules/blog/components/TimelineItems.js`: timeline items
+- `@theme-hope/modules/blog/components/TimelineList.js`: timeline List
 
 Miscellaneous:
 
-- `@theme-hope/module/blog/components/icons`: blog icons
-- `@theme-hope/module/blog/composables`: blog Composables API
+- `@theme-hope/modules/blog/components/icons/index.js`: blog icons
+- `@theme-hope/modules/blog/composables/index.js`: blog Composables API
 
 :::
 
@@ -192,31 +209,31 @@ Miscellaneous:
 
 Components:
 
-- `@theme-hope/module/encrypt/components/GlobalEncrypt`: gloabl encrypt wrapper
-- `@theme-hope/module/encrypt/components/LocalEncrypt`: local encrypt wrapper
-- `@theme-hope/module/encrypt/components/PasswordModal`: password input box
+- `@theme-hope/modules/encrypt/components/GlobalEncrypt.js`: gloabl encrypt wrapper
+- `@theme-hope/modules/encrypt/components/LocalEncrypt.js`: local encrypt wrapper
+- `@theme-hope/modules/encrypt/components/PasswordModal.js`: password input box
 
 Miscellaneous:
 
-- `@theme-hope/module/encrypt/composables`: encryption Composition API
-- `@theme-hope/module/encrypt/utils`: encryption utility functions
+- `@theme-hope/modules/encrypt/composables/index.js`: encryption Composition API
+- `@theme-hope/modules/encrypt/utils/index.js`: encryption utility functions
 
 :::
 
 ::: details Appearance module component alias
 
-- `@theme-hope/module/outlook/components/AppearanceMode`: theme mode
-- `@theme-hope/module/outlook/components/AppearanceSwitch`: theme appearance switch
-- `@theme-hope/module/outlook/components/OutlookButton`: appearance button
-- `@theme-hope/module/outlook/components/OutlookSettings`: appearance settings
-- `@theme-hope/module/outlook/components/ThemeColor`: theme color
-- `@theme-hope/module/outlook/components/ThemeColorPicker`: theme color picker
-- `@theme-hope/module/outlook/components/ToggleFullScreenButton`: fullscreen toggle button
+- `@theme-hope/modules/outlook/components/AppearanceMode.js`: theme mode
+- `@theme-hope/modules/outlook/components/AppearanceSwitch.js`: theme appearance switch
+- `@theme-hope/modules/outlook/components/OutlookButton.js`: appearance button
+- `@theme-hope/modules/outlook/components/OutlookSettings.js`: appearance settings
+- `@theme-hope/modules/outlook/components/ThemeColor.js`: theme color
+- `@theme-hope/modules/outlook/components/ThemeColorPicker.js`: theme color picker
+- `@theme-hope/modules/outlook/components/ToggleFullScreenButton.js`: fullscreen toggle button
 
 Miscellaneous:
 
-- `@theme-hope/module/outlook/components/icons`: appearance icons
-- `@theme-hope/module/outlook/composables`: appearance Composition API
+- `@theme-hope/modules/outlook/components/icons/index.js`: appearance icons
+- `@theme-hope/modules/outlook/composables/index.js`: appearance Composition API
 
 :::
 
@@ -232,9 +249,11 @@ For example, if your site has strong social attributes, and you want to display 
 
 ```ts
 // .vuepress/config.ts
-import { path } from "@vuepress/utils";
+import { getDirname, path } from "@vuepress/utils";
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
+
+const __dirname = getDirname(import.meta.url);
 
 export default defineUserConfig({
   theme: hopeTheme({
@@ -244,9 +263,9 @@ export default defineUserConfig({
   alias: {
     // Here you can direct aliases to your own components
     // For example, here we change the theme’s home page component to HomePage.vue under user .vuepress/components
-    "@theme-hope/components/HomePage": path.resolve(
+    "@theme-hope/components/HomePage.js": path.resolve(
       __dirname,
-      "./components/HomePage.vue"
+      "./components/HomePage.js"
     ),
   },
 });
@@ -264,7 +283,7 @@ export default defineUserConfig({
   </HopeHomePage>
 </template>
 <script setup lang="ts">
-import HopeHomePage from "vuepress-theme-hope/lib/client/components/HomePage";
+import HopeHomePage from "vuepress-theme-hope/components/HomePage.js";
 </script>
 ```
 
@@ -284,7 +303,7 @@ Components that provide slots are as follows:
 
 - `DropdownLink`: `title`
 - `NavActions`: `before`, `after`
-- `Navbar`: `left`, `center`, `right`
+- `Navbar`: `leftStart`, `leftEnd`, `centerStart`, `centerEnd`, `rightStart`, `rightEnd`
 - `NavbarBrand`: `default`
 - `NavScreen`: `before`, `after`
 - `NavScreenDropdown`: `before`, `after`

@@ -22,9 +22,11 @@ tag:
 
 ```ts
 // .vuepress/config.ts
-import { path } from "@vuepress/utils";
+import { getDirname, path } from "@vuepress/utils";
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
+
+const __dirname = getDirname(import.meta.url);
 
 export default defineUserConfig({
   theme: hopeTheme({
@@ -34,9 +36,9 @@ export default defineUserConfig({
   alias: {
     // Здесь вы можете перенаправить псевдонимы на свои собственные компоненты
     // Например, здесь мы меняем компонент домашней страницы темы на HomePage.vue под пользователем .vuepress/components
-    "@theme-hope/components/HomePage": path.resolve(
+    "@theme-hope/components/HomePage.js": path.resolve(
       __dirname,
-      "./components/HomePage.vue"
+      "./components/HomePage.js"
     ),
   },
 });
@@ -46,10 +48,12 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-const { path } = require("@vuepress/utils");
-const { hopeTheme } = require("vuepress-theme-hope");
+import { getDirname, path } from "@vuepress/utils";
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+const __dirname = getDirname(import.meta.url);
+
+export default {
   theme: hopeTheme({
     // конфиг вашей темы здесь
   }),
@@ -57,12 +61,24 @@ module.exports = {
   alias: {
     // Здесь вы можете перенаправить псевдонимы на свои собственные компоненты
     // Например, здесь мы меняем компонент домашней страницы темы на HomePage.vue под пользователем .vuepress/components
-    "@theme-hope/components/HomePage": path.resolve(
+    "@theme-hope/components/HomePage.js": path.resolve(
       __dirname,
-      "./components/HomePage.vue"
+      "./components/HomePage.js"
     ),
   },
 };
+```
+
+:::
+
+::: tip
+
+Если вы хотите использовать файлы `vue`, вы можете создать простую оболочку js, написав:
+
+```js
+// wrapper.js
+import YouComponent from "./YouComponent.vue";
+export default YouComponent;
 ```
 
 :::
@@ -73,26 +89,29 @@ module.exports = {
 
 Компоненты:
 
-- `@theme-hope/components/AutoLink`: основная ссылка
-- `@theme-hope/components/BreadCrumb`: хлебная крошка
-- `@theme-hope/components/CommonWrapper`: базовая интеграция макета
-- `@theme-hope/components/HomeFeatures`: функции главной страницы
-- `@theme-hope/components/HomeHero`: логотип главной страницы и введение
-- `@theme-hope/components/HomePage`: главная страница
-- `@theme-hope/components/Icon`: иконка
-- `@theme-hope/components/MarkdownContent`: контент разметки
-- `@theme-hope/components/NormalPage`: обычная страница
-- `@theme-hope/components/PageFooter`: футер страницы
-- `@theme-hope/components/PageNav`: навигация страницы
-- `@theme-hope/components/PageTitle`: заголовок страницы
-- `@theme-hope/components/SkipLink`: перейти к основному содержанию
+- `@theme-hope/components/AutoLink.js`: основная ссылка
+- `@theme-hope/components/BreadCrumb.js`: хлебная крошка
+- `@theme-hope/components/CommonWrapper.js`: базовая интеграция макета
+- `@theme-hope/components/HomeFeatures.js`: функции главной страницы
+- `@theme-hope/components/HomeHero.js`: логотип главной страницы и введение
+- `@theme-hope/components/HomePage.js`: главная страница
+- `@theme-hope/components/Icon.js`: иконка
+- `@theme-hope/components/MarkdownContent.js`: контент разметки
+- `@theme-hope/components/NormalPage.js`: обычная страница
+- `@theme-hope/components/PageFooter.js`: футер страницы
+- `@theme-hope/components/PageNav.js`: навигация страницы
+- `@theme-hope/components/PageTitle.js`: заголовок страницы
+- `@theme-hope/components/SkipLink.js`: перейти к основному содержанию
+- `@theme-hope/components/transitions/DropTransition.js`: drop служебные функции темы
+- `@theme-hope/components/transitions/FadeSlideY.js`: fade slide y служебные функции темы
+- `@theme-hope/components/transitions/DropTransition.js`: компонент перехода drop
+- `@theme-hope/components/transitions/FadeSlideY.js`: компонент перехода fade slide y
 
 Разное:
 
-- `@theme-hope/components/icons`: иконки темы
-- `@theme-hope/components/transitions`: переводы темы
-- `@theme-hope/composables`: Composition API темы
-- `@theme-hope/utils`: служебные функции темы
+- `@theme-hope/components/icons/index.js`: иконки темы
+- `@theme-hope/composables/index.js`: Composition API темы
+- `@theme-hope/utils/index.js`: служебные функции темы
 
 :::
 
@@ -100,23 +119,23 @@ module.exports = {
 
 Компоненты:
 
-- `@theme-hope/module/navbar/components/DropdownLink`: выпадающий список
-- `@theme-hope/module/navbar/components/LanguageDropdown`: выпадающий список языков
-- `@theme-hope/module/navbar/components/NavActions`: функции панели навигации
-- `@theme-hope/module/navbar/components/Navbar`: панель навигации
-- `@theme-hope/module/navbar/components/NavbarBrand`: информация о бренде навигационной панели
-- `@theme-hope/module/navbar/components/NavbarLinks`: ссылки на панели навигации
-- `@theme-hope/module/navbar/components/NavScreen`: экран навигации в мобильном представлении
-- `@theme-hope/module/navbar/components/NavScreenDropdown`: выпадающее меню мобильной панели навигации
-- `@theme-hope/module/navbar/components/NavScreenLinks`: ссылки для мобильного просмотра на панели навигации
-- `@theme-hope/module/navbar/components/RepoLink`: ссылка на репозиторий
-- `@theme-hope/module/navbar/components/ToggleNavbarButton`: кнопка переключения панели навигации
-- `@theme-hope/module/navbar/components/ToggleSidebarButton`: кнопка переключения боковой панели
+- `@theme-hope/modules/navbar/components/DropdownLink.js`: выпадающий список
+- `@theme-hope/modules/navbar/components/LanguageDropdown.js`: выпадающий список языков
+- `@theme-hope/modules/navbar/components/NavActions.js`: функции панели навигации
+- `@theme-hope/modules/navbar/components/Navbar.js`: панель навигации
+- `@theme-hope/modules/navbar/components/NavbarBrand.js`: информация о бренде навигационной панели
+- `@theme-hope/modules/navbar/components/NavbarLinks.js`: ссылки на панели навигации
+- `@theme-hope/modules/navbar/components/NavScreen.js`: экран навигации в мобильном представлении
+- `@theme-hope/modules/navbar/components/NavScreenDropdown.js`: выпадающее меню мобильной панели навигации
+- `@theme-hope/modules/navbar/components/NavScreenLinks.js`: ссылки для мобильного просмотра на панели навигации
+- `@theme-hope/modules/navbar/components/RepoLink.js`: ссылка на репозиторий
+- `@theme-hope/modules/navbar/components/ToggleNavbarButton.js`: кнопка переключения панели навигации
+- `@theme-hope/modules/navbar/components/ToggleSidebarButton.js`: кнопка переключения боковой панели
 
 Разное:
 
-- `@theme-hope/module/navbar/components/icons`: иконки панели навигации
-- `@theme-hope/module/navbar/composables`: Composition API панели навигации
+- `@theme-hope/modules/navbar/components/icons/index.js`: иконки панели навигации
+- `@theme-hope/modules/navbar/composables/index.js`: Composition API панели навигации
 
 :::
 
@@ -124,15 +143,15 @@ module.exports = {
 
 Компоненты:
 
-- `@theme-hope/module/sidebar/components/Sidebar`: боковая панель
-- `@theme-hope/module/sidebar/components/SidebarChild`: элемент ссылки на боковой панели
-- `@theme-hope/module/sidebar/components/SidebarGroup`: группировка ссылок на боковой панели
-- `@theme-hope/module/sidebar/components/SidebarLinks`: ссылки на боковой панели
+- `@theme-hope/modules/sidebar/components/Sidebar.js`: боковая панель
+- `@theme-hope/modules/sidebar/components/SidebarChild.js`: элемент ссылки на боковой панели
+- `@theme-hope/modules/sidebar/components/SidebarGroup.js`: группировка ссылок на боковой панели
+- `@theme-hope/modules/sidebar/components/SidebarLinks.js`: ссылки на боковой панели
 
 Разное:
 
-- `@theme-hope/module/sidebar/composables`: Composition API боковой панели
-- `@theme-hope/module/sidebar/utils`: утилитарные функции боковой панели
+- `@theme-hope/modules/sidebar/composables/index.js`: Composition API боковой панели
+- `@theme-hope/modules/sidebar/utils/index.js`: утилитарные функции боковой панели
 
 :::
 
@@ -140,23 +159,23 @@ module.exports = {
 
 Компоненты:
 
-- `@theme-hope/module/info/components/AuthorInfo`: информация об авторе
-- `@theme-hope/module/info/components/CategoryInfo`: информация о категории
-- `@theme-hope/module/info/components/DateInfo`: информация о дате
-- `@theme-hope/module/info/components/OriginalMark`: оригинальное выделение
-- `@theme-hope/module/info/components/PageInfo`: информация о странице
-- `@theme-hope/module/info/components/PageMeta`: метаинформация страницы
-- `@theme-hope/module/info/components/PageViewInfo`: информация о просмотрах страниц
-- `@theme-hope/module/info/components/ReadingTimeInfo`: информация о времени чтения
-- `@theme-hope/module/info/components/TagInfo`: информация тега
-- `@theme-hope/module/info/components/TOC`: оглавление
-- `@theme-hope/module/info/components/WordInfo`: информация о слове
+- `@theme-hope/modules/info/components/AuthorInfo.js`: информация об авторе
+- `@theme-hope/modules/info/components/CategoryInfo.js`: информация о категории
+- `@theme-hope/modules/info/components/DateInfo.js`: информация о дате
+- `@theme-hope/modules/info/components/OriginalMark.js`: оригинальное выделение
+- `@theme-hope/modules/info/components/PageInfo.js`: информация о странице
+- `@theme-hope/modules/info/components/PageMeta.js`: метаинформация страницы
+- `@theme-hope/modules/info/components/PageViewInfo.js`: информация о просмотрах страниц
+- `@theme-hope/modules/info/components/ReadingTimeInfo.js`: информация о времени чтения
+- `@theme-hope/modules/info/components/TagInfo.js`: информация тега
+- `@theme-hope/modules/info/components/TOC.js`: оглавление
+- `@theme-hope/modules/info/components/WordInfo.js`: информация о слове
 
 Разное:
 
-- `@theme-hope/module/blog/components/icons`: информация об иконках
-- `@theme-hope/module/blog/composables`: Composables API информации
-- `@theme-hope/module/blog/utils`: информационные служебные функции
+- `@theme-hope/modules/blog/components/icons.js`: информация об иконках
+- `@theme-hope/modules/blog/composables/index.js`: Composables API информации
+- `@theme-hope/modules/blog/utils/index.js`: информационные служебные функции
 
 :::
 
@@ -164,27 +183,27 @@ module.exports = {
 
 Компоненты:
 
-- `@theme-hope/module/blog/components/ArticleItem`: элемент статьи
-- `@theme-hope/module/blog/components/ArticleList`: список статей
-- `@theme-hope/module/blog/components/ArticleType`: тип статьи
-- `@theme-hope/module/blog/components/BloggerInfo`: информация о блогере
-- `@theme-hope/module/blog/components/BlogHero`: логотип главной страницы блога и введение
-- `@theme-hope/module/blog/components/BlogHome`: домашняя страница блога
-- `@theme-hope/module/blog/components/BlogPage`: обычная страница блога
-- `@theme-hope/module/blog/components/CategoryList`: список категорий
-- `@theme-hope/module/blog/components/InfoList`: список информации о блоге
-- `@theme-hope/module/blog/components/InfoPanel`: информационная панель блога
-- `@theme-hope/module/blog/components/Pagination`: нумерация страниц
-- `@theme-hope/module/blog/components/ProjectPanel`: панель проекта на главной странице блога
-- `@theme-hope/module/blog/components/SocialMedia`: ссылки на социальные сети
-- `@theme-hope/module/blog/components/TagList`: список тегов
-- `@theme-hope/module/blog/components/TimelineItems`: элементы временной шкалы
-- `@theme-hope/module/blog/components/TimelineList`: список временной шкалы
+- `@theme-hope/modules/blog/components/ArticleItem.js`: элемент статьи
+- `@theme-hope/modules/blog/components/ArticleList.js`: список статей
+- `@theme-hope/modules/blog/components/ArticleType.js`: тип статьи
+- `@theme-hope/modules/blog/components/BloggerInfo.js`: информация о блогере
+- `@theme-hope/modules/blog/components/BlogHero.js`: логотип главной страницы блога и введение
+- `@theme-hope/modules/blog/components/BlogHome.js`: домашняя страница блога
+- `@theme-hope/modules/blog/components/BlogPage.js`: обычная страница блога
+- `@theme-hope/modules/blog/components/CategoryList.js`: список категорий
+- `@theme-hope/modules/blog/components/InfoList.js`: список информации о блоге
+- `@theme-hope/modules/blog/components/InfoPanel.js`: информационная панель блога
+- `@theme-hope/modules/blog/components/Pagination.js`: нумерация страниц
+- `@theme-hope/modules/blog/components/ProjectPanel.js`: панель проекта на главной странице блога
+- `@theme-hope/modules/blog/components/SocialMedia.js`: ссылки на социальные сети
+- `@theme-hope/modules/blog/components/TagList.js`: список тегов
+- `@theme-hope/modules/blog/components/TimelineItems.js`: элементы временной шкалы
+- `@theme-hope/modules/blog/components/TimelineList.js`: список временной шкалы
 
 Разное:
 
-- `@theme-hope/module/blog/components/icons`: иконки блогов
-- `@theme-hope/module/blog/composables`: Composables API блога
+- `@theme-hope/modules/blog/components/icons/index.js`: иконки блогов
+- `@theme-hope/modules/blog/composables/index.js`: Composables API блога
 
 :::
 
@@ -192,31 +211,31 @@ module.exports = {
 
 Компоненты:
 
-- `@theme-hope/module/encrypt/components/GlobalEncrypt`: глобальная оболочка шифрования
-- `@theme-hope/module/encrypt/components/LocalEncrypt`: локальная оболочка шифрования
-- `@theme-hope/module/encrypt/components/PasswordModal`: поле ввода пароля
+- `@theme-hope/modules/encrypt/components/GlobalEncrypt.js`: глобальная оболочка шифрования
+- `@theme-hope/modules/encrypt/components/LocalEncrypt.js`: локальная оболочка шифрования
+- `@theme-hope/modules/encrypt/components/PasswordModal.js`: поле ввода пароля
 
 Разное:
 
-- `@theme-hope/module/encrypt/composables`: Composition API шифрования
-- `@theme-hope/module/encrypt/utils`: функции утилиты шифрования
+- `@theme-hope/modules/encrypt/composables/index.js`: Composition API шифрования
+- `@theme-hope/modules/encrypt/utils/index.js`: функции утилиты шифрования
 
 :::
 
 ::: details Псевдоним компонента модуля внешнего вида
 
-- `@theme-hope/module/outlook/components/AppearanceMode`: режим темы
-- `@theme-hope/module/outlook/components/AppearanceSwitch`: переключатель внешнего вида темы
-- `@theme-hope/module/outlook/components/OutlookButton`: кнопка появления
-- `@theme-hope/module/outlook/components/OutlookSettings`: настройки внешнего вида
-- `@theme-hope/module/outlook/components/ThemeColor`: цвет темы
-- `@theme-hope/module/outlook/components/ThemeColorPicker`: выбор цвета темы
-- `@theme-hope/module/outlook/components/ToggleFullScreenButton`: кнопка переключения в полноэкранный режим
+- `@theme-hope/modules/outlook/components/AppearanceMode.js`: режим темы
+- `@theme-hope/modules/outlook/components/AppearanceSwitch.js`: переключатель внешнего вида темы
+- `@theme-hope/modules/outlook/components/OutlookButton.js`: кнопка появления
+- `@theme-hope/modules/outlook/components/OutlookSettings.js`: настройки внешнего вида
+- `@theme-hope/modules/outlook/components/ThemeColor.js`: цвет темы
+- `@theme-hope/modules/outlook/components/ThemeColorPicker.js`: выбор цвета темы
+- `@theme-hope/modules/outlook/components/ToggleFullScreenButton.js`: кнопка переключения в полноэкранный режим
 
 Разное:
 
-- `@theme-hope/module/outlook/components/icons`: иконки внешнего вида
-- `@theme-hope/module/outlook/composables`: Composition API внешнего вида
+- `@theme-hope/modules/outlook/components/icons/index.js`: иконки внешнего вида
+- `@theme-hope/modules/outlook/composables/index.js`: Composition API внешнего вида
 
 :::
 
@@ -232,9 +251,11 @@ module.exports = {
 
 ```ts
 // .vuepress/config.ts
-import { path } from "@vuepress/utils";
+import { getDirname, path } from "@vuepress/utils";
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
+
+const __dirname = getDirname(import.meta.url);
 
 export default defineUserConfig({
   theme: hopeTheme({
@@ -244,9 +265,9 @@ export default defineUserConfig({
   alias: {
     // Здесь вы можете указать псевдонимы для ваших собственных компонентов
     // Например, здесь мы меняем компонент домашней страницы темы на HomePage.vue под пользователем .vuepress/components
-    "@theme-hope/components/HomePage": path.resolve(
+    "@theme-hope/components/HomePage.js": path.resolve(
       __dirname,
-      "./components/HomePage.vue"
+      "./components/HomePage.js"
     ),
   },
 });
@@ -264,7 +285,7 @@ export default defineUserConfig({
   </HopeHomePage>
 </template>
 <script setup lang="ts">
-import HopeHomePage from "vuepress-theme-hope/lib/client/components/HomePage";
+import HopeHomePage from "vuepress-theme-hope/components/HomePage.js";
 </script>
 ```
 
@@ -284,7 +305,7 @@ import HopeHomePage from "vuepress-theme-hope/lib/client/components/HomePage";
 
 - `DropdownLink`: `title`
 - `NavActions`: `before`, `after`
-- `Navbar`: `left`, `center`, `right`
+- `Navbar`: `leftStart`, `leftEnd`, `centerStart`, `centerEnd`, `rightStart`, `rightEnd`
 - `NavbarBrand`: `default`
 - `NavScreen`: `before`, `after`
 - `NavScreenDropdown`: `before`, `after`

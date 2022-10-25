@@ -17,11 +17,7 @@ tag:
 
 Нажмите кнопку ниже, чтобы увидеть эффекты.
 
-<!-- markdownlint-disable-->
-
 <AppearanceSwitch />
-
-<!-- markdownlint-restore -->
 
 ## Опции
 
@@ -35,10 +31,10 @@ tag:
 - `"enable"`: только темный режим
 - `"disable"`: отключить темный режим
 
-<script setup lang="ts">
-import AppearanceSwitch from '@theme-hope/module/outlook/components/AppearanceSwitch'
-</script>
-
 ## Глобальные переменные
 
 `$isDarkMode` доступен во всех маркдаун файлах.
+
+<script setup lang="ts">
+import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch.js"
+</script>

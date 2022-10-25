@@ -41,9 +41,9 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     sidebar: ["/zh/README.md", "/zh/guide/README.md", "/zh/config/README.md"],
   }),
@@ -106,9 +106,9 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     sidebar: [
       {
@@ -199,9 +199,9 @@ export default defineUserConfig({
 @tab JS
 
 ```js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     sidebar: [
       {
@@ -281,9 +281,9 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     sidebar: [
       {
@@ -376,9 +376,9 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     sidebar: [
       "/" /* / */,
@@ -471,9 +471,9 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     sidebar: {
       "/foo/": [
@@ -535,9 +535,9 @@ export default defineUserConfig({
 
 ```js {6}
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     sidebar: "heading",
   }),
@@ -600,9 +600,9 @@ export default defineUserConfig({
 
 ```js {7,9}
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     sidebar: {
       "/foo/": "structure",
@@ -794,9 +794,9 @@ export default defineUserConfig({
 
 ```js {8}
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     plugins: {
       // 默认值: true
@@ -847,9 +847,9 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     locales: {
       "/": {
@@ -907,9 +907,9 @@ export default sidebarConfig;
 
 ```js
 // .vuepress/sidebar.js
-const { sidebar } = require("vuepress-theme-hope");
+import { sidebar } from "vuepress-theme-hope";
 
-module.exports = sidebar(/* 你的侧边栏配置 */);
+export default sidebar(/* 你的侧边栏配置 */);
 ```
 
 :::
@@ -930,9 +930,9 @@ module.exports = sidebar(/* 你的侧边栏配置 */);
 
 ```js
 // .vuepress/config.js
-const { sidebar } = require("vuepress-theme-hope");
+import { sidebar } from "vuepress-theme-hope";
 
-module.exports = sidebar({
+export default sidebar({
   "/zh/": [
     "",
     {

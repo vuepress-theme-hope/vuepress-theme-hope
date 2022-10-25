@@ -12,6 +12,14 @@ export const getCommentPlugin = (
   return commentPlugin(
     <CommentOptions>{
       provider: "None",
+      ...(options?.provider === "Giscus"
+        ? {
+            lightTheme:
+              "https://unpkg.com/vuepress-theme-hope@next/templates/giscus/light.css",
+            darkTheme:
+              "https://unpkg.com/vuepress-theme-hope@next/templates/giscus/dark.css",
+          }
+        : {}),
       ...(options?.provider === "Waline"
         ? { dark: 'html[data-theme="dark"]' }
         : {}),

@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-hope-root",
-  "version": "2.0.0-beta.91",
+  "version": "2.0.0-beta.114",
   "private": true,
   "description": "A vuepress theme with tons of features",
   "type": "module",
@@ -10,13 +10,15 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "cross-env mode=production pnpm run --stream -r build",
+    "build": "cross-env NODE_ENV=production pnpm run --stream -r build",
+    "build:nobundle": "concurrently \"tsc -b tsconfig.build.json\" \"pnpm run copy\"",
     "clean": "pnpm run --stream -r clean",
     "commit": "pnpm git-cz",
+    "copy": "pnpm run --parallel -r copy",
     "dev": "concurrently \"tsc -b tsconfig.build.json --watch\" \"pnpm run dev:copy\"",
     "dev:copy": "pnpm run --parallel -r dev:copy",
-    "docs:vite-build": "pnpm run --parallel -r docs:vite-build",
-    "docs:webpack-build": "pnpm run --parallel -r docs:vite-build",
+    "docs:vite-build": "pnpm run -r docs:vite-build",
+    "docs:webpack-build": "pnpm run -r docs:vite-build",
     "postinstall": "husky install",
     "lint": "pnpm lint:prettier --write && pnpm lint:eslint --fix && pnpm lint:stylelint --fix",
     "lint:check": "pnpm lint:prettier && pnpm lint:eslint && pnpm lint:stylelint",
@@ -33,7 +35,66 @@
     "release:sync": "cross-env NODE_OPTIONS=\"--experimental-json-modules\" ts-node-esm  -O {\\\"module\\\":\\\"ESNext\\\"} scripts/sync",
     "test": "vitest --coverage"
   },
-  "lint-staged": {
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-git"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "17.1.2",
+    "@commitlint/config-conventional": "17.1.0",
+    "@rollup/plugin-commonjs": "23.0.2",
+    "@rollup/plugin-node-resolve": "15.0.1",
+    "@types/inquirer": "9.0.2",
+    "@types/node": "18.11.5",
+    "@typescript-eslint/eslint-plugin": "5.41.0",
+    "@typescript-eslint/parser": "5.41.0",
+    "@vitest/coverage-c8": "0.24.3",
+    "@vue/eslint-config-typescript": "11.0.2",
+    "bumpp": "8.2.1",
+    "c8": "7.12.0",
+    "commitizen": "4.2.5",
+    "concurrently": "7.5.0",
+    "cpx2": "4.2.0",
+    "cross-env": "7.0.3",
+    "cz-git": "1.3.12",
+    "esbuild": "0.15.12",
+    "eslint": "8.26.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-prettier": "4.2.1",
+    "eslint-plugin-vue": "9.6.0",
+    "execa": "6.1.0",
+    "husky": "8.0.1",
+    "inquirer": "9.1.4",
+    "magic-string": "0.26.7",
+    "markdownlint-cli": "0.32.2",
+    "nano-staged": "0.8.0",
+    "npm-check-updates": "16.3.15",
+    "ora": "6.1.2",
+    "picocolors": "1.0.0",
+    "prettier": "2.7.1",
+    "rollup": "3.2.3",
+    "rollup-plugin-copy": "3.4.0",
+    "rollup-plugin-dts": "5.0.0",
+    "rollup-plugin-esbuild": "4.10.1",
+    "sort-package-json": "2.0.0",
+    "standard-version": "9.5.0",
+    "stylelint": "14.14.0",
+    "stylelint-config-prettier": "9.0.3",
+    "stylelint-config-standard": "29.0.0",
+    "stylelint-config-standard-scss": "6.0.0",
+    "stylelint-order": "5.0.0",
+    "ts-node": "10.9.1",
+    "tslib": "2.4.0",
+    "typescript": "4.7.4",
+    "vitest": "0.24.3"
+  },
+  "packageManager": "pnpm@7.14.0",
+  "engines": {
+    "node": ">=14",
+    "pnpm": ">=7"
+  },
+  "nano-staged": {
     "*.vue": [
       "eslint --fix",
       "prettier --write"
@@ -42,7 +103,11 @@
       "eslint --fix",
       "prettier --write"
     ],
-    "*.{md,json,yml}": [
+    "*.md": [
+      "markdownlint",
+      "prettier --write"
+    ],
+    "*.{json,yml}": [
       "prettier --write"
     ],
     "*.scss": [
@@ -52,64 +117,6 @@
     "package.json": [
       "sort-package-json"
     ]
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-git"
-    }
-  },
-  "devDependencies": {
-    "@commitlint/cli": "17.0.3",
-    "@commitlint/config-conventional": "17.0.3",
-    "@rollup/plugin-commonjs": "22.0.2",
-    "@rollup/plugin-json": "4.1.0",
-    "@rollup/plugin-node-resolve": "13.3.0",
-    "@rollup/plugin-typescript": "8.3.4",
-    "@types/inquirer": "9.0.0",
-    "@types/node": "18.6.4",
-    "@typescript-eslint/eslint-plugin": "5.33.0",
-    "@typescript-eslint/parser": "5.33.0",
-    "@vue/eslint-config-typescript": "11.0.0",
-    "bumpp": "8.2.1",
-    "c8": "7.12.0",
-    "chalk": "5.0.1",
-    "commitizen": "4.2.5",
-    "concurrently": "7.3.0",
-    "cpx2": "4.2.0",
-    "cross-env": "7.0.3",
-    "cz-git": "1.3.10",
-    "eslint": "8.21.0",
-    "eslint-config-prettier": "8.5.0",
-    "eslint-plugin-prettier": "4.2.1",
-    "eslint-plugin-vue": "9.3.0",
-    "execa": "6.1.0",
-    "husky": "8.0.1",
-    "inquirer": "9.1.0",
-    "lint-staged": "13.0.3",
-    "markdownlint-cli": "0.32.1",
-    "npm-check-updates": "16.0.5",
-    "ora": "6.1.2",
-    "prettier": "2.7.1",
-    "rollup": "2.77.3",
-    "rollup-plugin-copy": "3.4.0",
-    "rollup-plugin-dts": "4.2.2",
-    "rollup-plugin-terser": "7.0.2",
-    "sort-package-json": "1.57.0",
-    "standard-version": "9.5.0",
-    "stylelint": "14.10.0",
-    "stylelint-config-prettier": "9.0.3",
-    "stylelint-config-standard": "27.0.0",
-    "stylelint-config-standard-scss": "5.0.0",
-    "stylelint-order": "5.0.0",
-    "ts-node": "10.9.1",
-    "tslib": "2.4.0",
-    "typescript": "4.7.4",
-    "vitest": "0.21.1"
-  },
-  "packageManager": "pnpm@7.9.0",
-  "engines": {
-    "node": ">=14",
-    "pnpm": ">=7"
   },
   "pnpm": {
     "peerDependencyRules": {
@@ -124,6 +131,9 @@
         "react-dom",
         "webpack"
       ]
+    },
+    "patchedDependencies": {
+      "mitt@3.0.0": "patches/mitt@3.0.0.patch"
     }
   }
 }

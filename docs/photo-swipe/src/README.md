@@ -68,9 +68,9 @@ export default {
 
 ```js
 // .vuepress/config.js
-const { photoSwipePlugin } = require("vuepress-plugin-photo-swipe");
+import { photoSwipePlugin } from "vuepress-plugin-photo-swipe";
 
-module.exports = {
+export default {
   plugins: [
     photoSwipePlugin({
       // your options

@@ -48,6 +48,7 @@ tag:
 ::: tip 可用的社交媒体:
 
 - `"Baidu"`: 百度
+- `"BiliBili"`: 哔哩哔哩
 - `"Bitbucket"`: Bitbucket
 - `"Dingding"`: 钉钉
 - `"Discord"`: Discord
@@ -61,6 +62,7 @@ tag:
 - `"Gitlab"`: Gitlab
 - `"Gmail"`: 谷歌邮箱
 - `"Instagram"`: Instagram
+- `"Lark"`: 飞书
 - `"Line"`: Line
 - `"Linkedin"`: 领英
 - `"Pinterest"`: 拼趣
@@ -89,9 +91,11 @@ tag:
 
 ```ts
 // .vuepress/config.ts
-import { path } from "@vuepress/utils";
+import { getDirname, path } from "@vuepress/utils";
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
+
+const __dirname = getDirname(import.meta.url);
 
 export default defineUserConfig({
   theme: hopeTheme({
@@ -123,10 +127,12 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-const { path } = require("@vuepress/utils");
-const { hopeTheme } = require("vuepress-theme-hope");
+import { getDirname, path } from "@vuepress/utils";
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+const __dirname = getDirname(import.meta.url);
+
+export default {
   theme: hopeTheme({
     blog: {
       media: {

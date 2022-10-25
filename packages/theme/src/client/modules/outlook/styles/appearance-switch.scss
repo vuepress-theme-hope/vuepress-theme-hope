@@ -1,0 +1,38 @@
+@use "vuepress-shared/styles/reset";
+
+.appearance-title {
+  display: block;
+
+  margin: 0;
+  padding: 0 0.25rem;
+
+  color: var(--light-grey);
+
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 2;
+
+  transition: color var(--color-transition);
+}
+
+#appearance-switch {
+  @include reset.button;
+  vertical-align: middle;
+
+  padding: 6px;
+
+  color: var(--dark-grey);
+
+  cursor: pointer;
+
+  transition: color var(--color-transition);
+
+  &:hover {
+    color: var(--theme-color);
+  }
+
+  .icon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}

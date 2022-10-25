@@ -1,2 +1,2 @@
-export * from "./blog";
-export * from "./options";
+export * from "./blog.js";
+export * from "./options.js";

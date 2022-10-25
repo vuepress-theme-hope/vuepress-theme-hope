@@ -1,4 +1,4 @@
-import { path } from "@vuepress/utils";
+import { getDirname, path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   addCustomElement,
@@ -7,14 +7,16 @@ import {
   addViteOptimizeDepsInclude,
   getLocales,
   noopModule,
-} from "vuepress-shared";
+} from "vuepress-shared/node";
 
-import { convertOptions } from "./compact";
-import { walineLocales } from "./locales";
-import { logger } from "./utils";
+import { convertOptions } from "./compact.js";
+import { walineLocales } from "./locales.js";
+import { logger } from "./utils.js";
 
-import type { CommentOptions } from "../shared";
+import type { CommentOptions } from "../shared/index.js";
 import type { PluginFunction } from "@vuepress/core";
+
+const __dirname = getDirname(import.meta.url);
 
 /** Comment Plugin */
 export const commentPlugin =
@@ -50,7 +52,7 @@ export const commentPlugin =
       name: "vuepress-plugin-comment2",
 
       alias: {
-        "@CommentProvider":
+        "vuepress-plugin-comment2/provider":
           provider === "None"
             ? noopModule
             : path.resolve(__dirname, `../client/components/${provider}.js`),
@@ -58,7 +60,12 @@ export const commentPlugin =
 
       define: () => ({
         COMMENT_OPTIONS: options,
-        WALINE_LOCALES: userWalineLocales,
+        ...(options.provider === "Waline"
+          ? {
+              WALINE_LOCALES: userWalineLocales,
+              WALINE_META: options.metaIcon !== false,
+            }
+          : {}),
       }),
 
       extendsBundlerOptions: (config: unknown, app): void => {
@@ -70,6 +77,7 @@ export const commentPlugin =
         if (provider === "Waline") {
           addViteOptimizeDepsInclude({ app, config }, "autosize");
           addViteOptimizeDepsExclude({ app, config }, "@waline/client");
+          addViteSsrExternal({ app, config }, "@waline/client");
         }
 
         if (provider === "Twikoo") {

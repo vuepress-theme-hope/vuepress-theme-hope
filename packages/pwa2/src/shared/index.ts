@@ -1,3 +1,3 @@
-export * from "./locales";
-export * from "./manifest";
-export * from "./options";
+export * from "./locales.js";
+export * from "./manifest.js";
+export * from "./options.js";

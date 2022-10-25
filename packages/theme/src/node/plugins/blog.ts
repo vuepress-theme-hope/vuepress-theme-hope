@@ -1,4 +1,5 @@
 import { blogPlugin } from "vuepress-plugin-blog2";
+import { ArticleInfoType, PageType } from "../../shared/index.js";
 
 import type { Page, Plugin } from "@vuepress/core";
 import type { GitData } from "@vuepress/plugin-git";
@@ -9,7 +10,7 @@ import type {
   HopeThemeBlogLocaleData,
   HopeThemeBlogPluginOptions,
   HopeThemeConfig,
-} from "../../shared";
+} from "../../shared/index.js";
 
 const defaultOptions: HopeThemeBlogPluginOptions = {
   article: "/article/",
@@ -53,7 +54,10 @@ const sorter = (
   if (prevKey && !nextKey) return -1;
   if (!prevKey && nextKey) return 1;
 
-  return compareDate(pageA.routeMeta.date, pageB.routeMeta.date);
+  return compareDate(
+    pageA.routeMeta[ArticleInfoType.date],
+    pageB.routeMeta[ArticleInfoType.date]
+  );
 };
 
 export const getBlogOptions = (
@@ -90,10 +94,9 @@ export const getBlogPlugin = (
 
     filter:
       blogOptions.filter ||
-      (({ frontmatter, filePathRelative, routeMeta }): boolean =>
-        Boolean(filePathRelative) &&
-        frontmatter["home"] !== true &&
-        routeMeta["type"] !== "page"),
+      (({ routeMeta }): boolean =>
+        routeMeta[ArticleInfoType.type] == PageType.article ||
+        routeMeta[ArticleInfoType.type] == PageType.slide),
 
     category: [
       {
@@ -104,7 +107,7 @@ export const getBlogPlugin = (
           { git: GitData },
           HopeThemeNormalPageFrontmatter,
           { routeMeta: ArticleInfo }
-        >) => routeMeta.category || [],
+        >) => routeMeta[ArticleInfoType.category] || [],
         sorter,
         path: blogOptions.category,
         layout: "Blog",
@@ -125,7 +128,7 @@ export const getBlogPlugin = (
           { git: GitData },
           HopeThemeNormalPageFrontmatter,
           { routeMeta: ArticleInfo }
-        >) => routeMeta.tag || [],
+        >) => routeMeta[ArticleInfoType.tag] || [],
         sorter,
         path: blogOptions.tag,
         layout: "Blog",
@@ -166,7 +169,7 @@ export const getBlogPlugin = (
           { git: GitData },
           HopeThemeNormalPageFrontmatter,
           { routeMeta: ArticleInfo }
-        >) => Boolean(routeMeta.isEncrypted),
+        >) => Boolean(routeMeta[ArticleInfoType.isEncrypted]),
         path: blogOptions.encrypted,
         layout: "Blog",
         frontmatter: (localePath) => ({
@@ -182,7 +185,7 @@ export const getBlogPlugin = (
           { git: GitData },
           HopeThemeNormalPageFrontmatter,
           { routeMeta: ArticleInfo }
-        >) => routeMeta.type === "slide",
+        >) => routeMeta[ArticleInfoType.type] === PageType.slide,
         path: blogOptions.slide,
         layout: "Blog",
         frontmatter: (localePath) => ({
@@ -191,7 +194,31 @@ export const getBlogPlugin = (
       },
       {
         key: "star",
-        sorter,
+        sorter: (
+          pageA: Page<
+            { git: GitData },
+            HopeThemeNormalPageFrontmatter,
+            { routeMeta: ArticleInfo }
+          >,
+          pageB: Page<
+            { git: GitData },
+            HopeThemeNormalPageFrontmatter,
+            { routeMeta: ArticleInfo }
+          >
+        ): number => {
+          const prevKey = pageA.frontmatter.star;
+          const nextKey = pageB.frontmatter.star;
+
+          if (prevKey && nextKey && prevKey !== nextKey)
+            return Number(nextKey) - Number(prevKey);
+          if (prevKey && !nextKey) return -1;
+          if (!prevKey && nextKey) return 1;
+
+          return compareDate(
+            pageA.routeMeta[ArticleInfoType.date],
+            pageB.routeMeta[ArticleInfoType.date]
+          );
+        },
         filter: ({
           frontmatter,
         }: Page<
@@ -218,7 +245,11 @@ export const getBlogPlugin = (
             HopeThemeNormalPageFrontmatter,
             { routeMeta: ArticleInfo }
           >
-        ) => compareDate(pageA.routeMeta.date, pageB.routeMeta.date),
+        ) =>
+          compareDate(
+            pageA.routeMeta[ArticleInfoType.date],
+            pageB.routeMeta[ArticleInfoType.date]
+          ),
         filter: ({
           frontmatter,
           routeMeta,
@@ -226,7 +257,9 @@ export const getBlogPlugin = (
           { git: GitData },
           HopeThemeNormalPageFrontmatter,
           { routeMeta: ArticleInfo }
-        >) => "date" in routeMeta && frontmatter["timeline"] !== false,
+        >) =>
+          ArticleInfoType.date in routeMeta &&
+          frontmatter["timeline"] !== false,
         path: blogOptions.timeline,
         layout: "Blog",
         frontmatter: (localePath) => ({

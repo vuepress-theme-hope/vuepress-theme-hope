@@ -1,2 +1,2 @@
-export * from "./locales";
-export * from "./options";
+export * from "./locales.js";
+export * from "./options.js";

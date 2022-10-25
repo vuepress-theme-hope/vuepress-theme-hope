@@ -1,174 +1,142 @@
-import type { SFCOptions } from "@vue/repl";
+import type { CompilerOptions } from "typescript";
 
-export type PlaygroundMode = "internal" | "external";
+export interface PlaygroundCodeConfig {
+  /**
+   * Code block extension
+   *
+   * @description It's based on filename, not code fence language
+   *
+   * 代码块扩展名
+   *
+   * @description 它基于文件名，而不是代码块语言
+   */
+  ext: string;
 
-/**
- * Playground options
- *
- * Playground 配置
- */
+  /**
+   * Code block content
+   *
+   * 代码块内容
+   */
+  content: string;
+}
+
+export interface PlaygroundData {
+  /**
+   * Title of Playground
+   *
+   * 交互演示标题
+   */
+  title?: string;
+
+  /**
+   * Import map file name
+   *
+   * Import map 文件名
+   *
+   * @default 'import-map.json'
+   */
+  importMap?: string;
+
+  /**
+   * Playground iles info
+   *
+   * 交互演示文件信息
+   */
+  files: Record<
+    /**
+     * File name
+     *
+     * 文件名
+     */
+    string,
+    /**
+     * File detail
+     *
+     * 文件详情
+     */
+    PlaygroundCodeConfig
+  >;
+
+  /**
+   * Playground settings
+   *
+   * @description It's parsed result of json content after setting directive
+   *
+   * 交互演示设置
+   *
+   * @description 它是设置指令后的 json 内容的解析结果
+   */
+  settings: Record<string, unknown>;
+
+  /**
+   * hash key based on playground content
+   *
+   * 根据交互演示内容生成的 hash key
+   */
+  key: string;
+}
+
 export interface PlaygroundOptions {
   /**
-   * Playground mode
+   * Playground container name
    *
-   * Playground 模式
-   *
-   * @default 'external'
+   * 交互演示容器名
    */
-  mode?: PlaygroundMode;
+  name: string;
 
   /**
-   * external options
+   * Playground component name
    *
-   * 外置模式配置
+   * 交互演示组件名称
+   *
+   * @default 'Playground'
    */
-  external?: ExternalPlaygroundOptions;
+  component?: string;
 
   /**
-   * internal options
+   * Props getter
    *
-   * 内置式配置
+   * 属性获取器
    */
-  internal?: InternalPlaygroundOptions;
+  propsGetter: (data: PlaygroundData) => Record<string, string>;
 }
 
-/**
- * Playground external options
- *
- * Playground 外置模式配置
- */
-export interface ExternalPlaygroundOptions {
+export interface TSPresetPlaygroundOptions extends CompilerOptions {
   /**
-   * playground base url
+   * external playground service url
    *
-   * playground 基础地址
-   */
-  base?: string;
-
-  /**
-   * default import map, default value: "imports-map.json".
-   * you can use your own, for example: "user-imports.json".
+   * 交互演示外部地址
    *
-   * 默认 import map, 默认值: "imports-map.json".
-   * 你也可以使用自己的 import map，比如: "user-imports.json".
+   * @default "https://www.typescriptlang.org/play"
    */
-  defaultImportsMap?: string;
-
-  /**
-   * other options, which will be passed as query strings.
-   *
-   * 其他配置，这些会被作为查询字符串传过去。
-   */
-  options?: Record<string, string>;
+  service?: string;
 }
 
-/**
- * Playground internal options.
- * Please see `@vue/repl` for more details.
- *
- * Playground 内置模式配置
- * 详情请查看 `@vue/repl` 。
- */
-export interface InternalPlaygroundOptions {
+export interface VuePresetPlaygroundOptions {
   /**
-   * specify the default URL to import Vue runtime from in the sandbox
-   * default is the CDN link from unpkg.com.
+   * external playground service url
    *
-   * 指定默认的 Vue 运行时。
-   * 默认使用 unpkg.com CDN 。
+   * 交互演示外部地址
+   *
+   * @default "https://sfc.vuejs.org/"
    */
-  defaultVueRuntimeURL?: string;
+  service?: string;
 
   /**
-   * specify the version of vue
+   * Whether to use dev version
    *
-   * 指定 vue 版本
-   */
-  vueVersion?: string;
-
-  /**
-   * default import map, default value: "imports-map.json".
-   * you can use your own, for example: "user-imports.json".
-   *
-   * 默认 import map, 默认值: "imports-map.json".
-   * 你也可以使用自己的 import map，比如: "user-imports.json".
-   */
-  defaultImportsMap?: string;
-
-  /**
-   * Whether to enable repl's editor resizable.
-   *
-   * 是否启用自动调整大小。
-   */
-  autoResize?: boolean;
-
-  /**
-   * Whether to show code.
-   *
-   * 是否显示代码
+   * 是否启用开发版本
    *
    * @default false
    */
-  showCode?: boolean;
+  dev?: boolean;
 
   /**
-   * Whether to show JS, CSS, SSR panel.
-   *
-   * 是否显示 JS, CSS, SSR 面板
-   *
-   * @default false
-   */
-  showCompileOutput?: boolean;
-
-  /**
-   * Whether to show import map.
-   *
-   * 是否显示 import map
-   */
-  showImportMap?: boolean;
-
-  /**
-   * Whether to clear console.
-   *
-   * 是否清空控制台
-   *
-   * @default false
-   */
-  clearConsole?: boolean;
-
-  /**
-   * When layout is 'vertical', displays as top-down.
-   * Otherwise, displays as left-right.
-   * Default is 'vertical'.
-   *
-   * 当设为 'vertical' 时，显示上下模式。
-   * 否则显示左右模式。
-   * 默认为 'vertical'.
-   *
-   * @default 'vertical'
-   */
-  layout?: string;
-
-  /**
-   * Options to configure the `vue/compiler-sfc`.
-   *
-   * `vue/compiler-sfc` 配置项
-   */
-  sfcOptions?: SFCOptions;
-
-  /**
-   * Whether to enable SSR.
+   * Whether to enable SSR
    *
    * 是否启用 SSR
+   *
+   * @default false
    */
   ssr?: boolean;
 }
-
-export interface PlaygroundCodeConfig {
-  lang?: string;
-  content?: string;
-}
-
-export type PlaygroundFiles = Record<string, PlaygroundCodeConfig>;
-
-export const IMPORT_MAP_KEY = "%IMPORT_MAP_KEY%";

@@ -10,10 +10,12 @@ icon: config
   ```ts
   type AvailableComponent =
     | "Badge"
+    | "BiliBili"
     | "CodePen"
     | "FontIcon"
     | "PDF"
     | "StackBlitz"
+    | "VideoPlayer"
     | "YouTube";
   ```
 
@@ -24,16 +26,20 @@ icon: config
 可接受的组件名称为:
 
 - `"Badge"`
+- `"BiliBili"`
 - `"CodePen"`
 - `"FontIcon"`
 - `"PDF"`
 - `"StackBlitz"`
+- `"VideoPlayer"`
 - `"YouTube"`
 
 ## addThis
 
 - 类型: `string | false`
 - 默认: `false`
+- 详情:
+  - [指南 → AddThis](./guide/addthis.md#使用)
 
 AddThis 的公开 ID。
 
@@ -67,7 +73,7 @@ AddThis 的公开 ID。
 
 ## iconAssets
 
-- 类型: `string`
+- 类型: `` "iconfont" | "fontawesome" | `//${string}` | `http://${string}` | `https://${string}`  ``
 - 必填: 否
 
 字体图标资源链接，支持 `'iconfont'` 和 `'fontawesome'` 关键字。

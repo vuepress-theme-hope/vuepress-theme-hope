@@ -39,9 +39,9 @@ export default defineUserConfig({
 
 ```js {7-9}
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     plugins: {
       mdEnhance: {
@@ -58,7 +58,7 @@ module.exports = {
 
 此功能选项卡功能相同，但它是专门为代码块构建的。
 
-代码选项卡只会渲染 `@tab` 标记后的代码块，其他 markdown 内容将被忽略。
+代码选项卡只会渲染 `@tab` 标记后的代码块，其他 Markdown 内容将被忽略。
 
 ## 演示
 

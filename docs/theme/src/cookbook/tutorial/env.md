@@ -23,7 +23,7 @@ You need to download and install the latest long-term maintenance release on you
 
 ::: note
 
-In the opened page, click the green button on the left to complete the download.
+In the opened page, click the green button (LTS) on the left to complete the download.
 
 :::
 
@@ -83,5 +83,5 @@ Install pnpm by entering the following command in the terminal:
 
 ```sh
 corepack enable
-corepack prepare pnpm@7.6.0 --activate
+corepack prepare pnpm@7.14.0 --activate
 ```

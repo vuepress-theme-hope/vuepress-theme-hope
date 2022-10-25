@@ -24,9 +24,9 @@
  */
 
 import type { PluginWithOptions } from "markdown-it";
-import type Token from "markdown-it/lib/token";
-import type { RuleCore } from "markdown-it/lib/parser_core";
-import type { AttrsOptions } from "../../shared";
+import type { default as Token } from "markdown-it/lib/token.js";
+import type { RuleCore } from "markdown-it/lib/parser_core.js";
+import type { AttrsOptions } from "../../shared/index.js";
 
 type Attr = [key: string, value: string];
 

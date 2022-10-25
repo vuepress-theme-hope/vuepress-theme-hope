@@ -25,6 +25,8 @@ export const enSidebarConfig = sidebar({
         "flowchart",
         "mermaid",
         "tex",
+        "playground",
+        "vue-playground",
         {
           text: "Code Demo",
           icon: "discover",
@@ -40,7 +42,6 @@ export const enSidebarConfig = sidebar({
           children: ["", "demo", "themes"],
         },
         "stylize",
-        "playground",
         "others",
       ],
     },
@@ -67,6 +68,8 @@ export const enSidebarConfig = sidebar({
     "flowchart",
     "mermaid",
     "tex",
+    "playground",
+    "vue-playground",
     {
       text: "Code Demo",
       icon: "discover",
@@ -82,7 +85,6 @@ export const enSidebarConfig = sidebar({
       children: ["", "demo", "themes"],
     },
     "stylize",
-    "playground",
     "others",
   ],
 });
@@ -112,6 +114,8 @@ export const zhSidebarConfig = sidebar({
         "flowchart",
         "mermaid",
         "tex",
+        "playground",
+        "vue-playground",
         {
           text: "代码演示",
           icon: "discover",
@@ -127,7 +131,6 @@ export const zhSidebarConfig = sidebar({
           children: ["", "demo", "themes"],
         },
         "stylize",
-        "playground",
         "others",
       ],
     },
@@ -154,6 +157,8 @@ export const zhSidebarConfig = sidebar({
     "flowchart",
     "mermaid",
     "tex",
+    "playground",
+    "vue-playground",
     {
       text: "代码演示",
       icon: "discover",
@@ -169,7 +174,6 @@ export const zhSidebarConfig = sidebar({
       children: ["", "demo", "themes"],
     },
     "stylize",
-    "playground",
     "others",
   ],
 });

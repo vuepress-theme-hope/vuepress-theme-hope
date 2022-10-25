@@ -5,6 +5,18 @@ labels:
   - enhancement
 assignees: Mister-Hope
 body:
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      description: Make sure that you follow these statements.
+      options:
+        - label: I searched exising issues and no one else requests similar feature.
+          required: true
+
+        - label: I think that 25%+ users are positive towards this feature.
+          required: true
+
   - type: textarea
     id: feature
     attributes:

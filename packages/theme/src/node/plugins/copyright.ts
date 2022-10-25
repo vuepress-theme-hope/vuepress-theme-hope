@@ -1,12 +1,12 @@
 import { copyrightPlugin } from "vuepress-plugin-copyright2";
-import { getAuthor } from "vuepress-shared";
+import { getAuthor } from "vuepress-shared/node";
 
 import type { Page, Plugin } from "@vuepress/core";
 import type { CopyrightOptions } from "vuepress-plugin-copyright2";
 import type {
   HopeThemeConfig,
   HopeThemeNormalPageFrontmatter,
-} from "../../shared";
+} from "../../shared/index.js";
 
 export const getCopyrightPlugin = (
   themeConfig: HopeThemeConfig,

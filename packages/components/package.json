@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-components",
-  "version": "2.0.0-beta.91",
+  "version": "2.0.0-beta.114",
   "description": "Components collection plugin for VuePress2",
   "keywords": [
     "vuepress",
@@ -23,33 +23,39 @@
     "email": "mister-hope@outlook.com",
     "url": "https://mrhope.site"
   },
+  "type": "module",
+  "exports": {
+    ".": "./lib/node/index.js",
+    "./client/*": "./lib/client/*",
+    "./package.json": "./package.json"
+  },
   "main": "lib/node/index.js",
   "types": "lib/node/index.d.ts",
   "files": [
-    "lib",
-    "src"
+    "lib"
   ],
   "scripts": {
     "build": "rollup -c",
     "clean": "rimraf ./lib ./*.tsbuildinfo",
+    "copy": "cpx \"src/client/**/*.{vue,scss}\" lib/client",
     "dev": "concurrently \"pnpm dev:copy\" \"pnpm dev:ts\"",
-    "dev:copy": "cpx \"src/client/**/*.{vue,scss}\" lib/client -w",
+    "dev:copy": "pnpm copy -w",
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@vuepress/client": "2.0.0-beta.49",
-    "@vuepress/shared": "2.0.0-beta.49",
-    "@vuepress/utils": "2.0.0-beta.49",
-    "@vueuse/core": "^9.1.0",
+    "@vuepress/client": "2.0.0-beta.53",
+    "@vuepress/shared": "2.0.0-beta.53",
+    "@vuepress/utils": "2.0.0-beta.53",
+    "@vueuse/core": "^9.3.1",
     "balloon-css": "^1.2.0",
-    "vue": "^3.2.37",
-    "vue-router": "^4.1.3",
+    "vue": "^3.2.41",
+    "vue-router": "^4.1.6",
     "vuepress-plugin-reading-time2": "workspace:*",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.49",
+    "@vuepress/core": "2.0.0-beta.53",
     "rimraf": "3.0.2"
   },
   "peerDependencies": {

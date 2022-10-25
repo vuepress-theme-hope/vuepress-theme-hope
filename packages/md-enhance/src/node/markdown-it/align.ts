@@ -1,4 +1,4 @@
-import { container } from "./container";
+import { container } from "./container.js";
 
 import type { PluginSimple } from "markdown-it";
 
@@ -7,7 +7,7 @@ export const align: PluginSimple = (md) => {
     md.use((md) =>
       container(md, {
         name,
-        openRender: () => `<div style="text-align: ${name}">`,
+        openRender: () => `<div style="text-align:${name}">\n`,
       })
     )
   );

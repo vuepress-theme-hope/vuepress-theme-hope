@@ -135,7 +135,7 @@ VuePressThemeHope@v2 使用组合 API 重写，其样式系统从 stylus 迁移�
 
 添加了以下新功能:
 
-- [图像标记](../guide/markdown/others.md#image-mark)
+- [图像标记](../guide/markdown/image.md#image-mark)
 
 - [GFM](../guide/markdown/others.md#gfm)
 

@@ -43,48 +43,6 @@ Frontmatter — важная концепция в VuePress. Если вы эт�
 
 Используя [`vuepress-plugin-md-enhance`][md-enhance], тема расширяет синтаксис Markdown и предоставляет более богатые функции записи.
 
-:::: tip Включить все
-
-Вы можете установить `plugins.mdEnhance.enableAll: true` в настройках темы, чтобы включить все функции плагина [md-enhance][md-enhance], чтобы попробовать их.
-
-::: code-tabs#language
-
-@tab TS
-
-```ts
-import { hopeTheme } from "vuepress-theme-hope";
-
-export default {
-  theme: hopeTheme({
-    plugins: {
-      mdEnhance: {
-        enableAll: true,
-      },
-    },
-  }),
-};
-```
-
-@tab JS
-
-```js
-const { hopeTheme } = require("vuepress-theme-hope");
-
-module.exports = {
-  theme: hopeTheme({
-    plugins: {
-      mdEnhance: {
-        enableAll: true,
-      },
-    },
-  }),
-};
-```
-
-:::
-
-::::
-
 #### Пользовательский контейнер
 
 ::: v-pre
@@ -233,7 +191,7 @@ I am right align
 
 - [Посмотреть детали](../markdown/align.md)
 
-### Атрибуты
+#### Атрибуты
 
 A **word**{#word} having id.
 
@@ -404,13 +362,50 @@ span {
 
 #### Стилизация
 
-<!-- markdownlint-disable MD033 -->
-
-Setting this to a invalid stytax <span style="color:red">doesn't</span> have any effect.
+Донат Mr.Hope на чашку кофе. _Рекомендуется_
 
 - [Посмотреть детали](../markdown/stylize.md)
 
-<!-- markdownlint-enable MD033 -->
+#### Playground
+
+::: playground#ts TS demo
+
+@file index.ts
+
+```ts
+const msg = "hello world";
+
+const speak = (msg: string) => console.log(msg);
+
+speak(msg);
+```
+
+:::
+
+- [Посмотреть детали](../markdown/playground.md)
+
+#### Vue Playground
+
+::: vue-playground Vue Playground
+
+@file App.vue
+
+```vue
+<script setup>
+import { ref } from "vue";
+
+const msg = ref("Hello World!");
+</script>
+
+<template>
+  <h1>{{ msg }}</h1>
+  <input v-model="msg" />
+</template>
+```
+
+:::
+
+- [Посмотреть детали](../markdown/vue-playground.md)
 
 #### Презентация
 

@@ -25,19 +25,19 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
           cache: pnpm
 
       - name: Build project
         env:
-          NODE_OPTIONS: --max_old_space_size=4096
+          NODE_OPTIONS: --max_old_space_size=8192
         run: pnpm run build
 
       - name: Docs build
         env:
           BASE: /v2/
           HOSTNAME: https://vuepress-theme-hope.github.io/
-          NODE_OPTIONS: --max_old_space_size=4096
+          NODE_OPTIONS: --max_old_space_size=8192
         run: pnpm run docs:vite-build
 
       - name: Combine output
@@ -58,6 +58,7 @@ jobs:
           pnpm cpx "docs/seo2/dist/**" dist/seo
           pnpm cpx "docs/sitemap2/dist/**" dist/sitemap
           pnpm cpx "docs/theme/dist/**" dist
+          > dist/.nojekyll
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4

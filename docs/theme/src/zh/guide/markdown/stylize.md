@@ -39,9 +39,9 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     plugins: {
       mdEnhance: {
@@ -81,8 +81,8 @@ export default defineUserConfig({
       mdEnhance: {
         stylize: [
           {
-            match: "Recommanded",
-            replacer: ({ tag, attrs }) => {
+            matcher: "Recommanded",
+            replacer: ({ tag }) => {
               if (tag === "em")
                 return {
                   tag: "Badge",
@@ -102,16 +102,16 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     plugins: {
       mdEnhance: {
         stylize: [
           {
-            match: "Recommanded",
-            replacer: ({ tag, attrs }) => {
+            matcher: "Recommanded",
+            replacer: ({ tag }) => {
               if (tag === "em")
                 return {
                   tag: "Badge",
@@ -150,12 +150,12 @@ export default defineUserConfig({
       mdEnhance: {
         stylize: [
           {
-            match: /n't$/,
+            matcher: /n't$/,
             replacer: ({ tag, attrs, content }) => {
               if (tag === "em")
                 return {
                   tag: "span",
-                  attrs: { style: "color: red" },
+                  attrs: { ...attrs, style: "color: red" },
                   content,
                 };
             },
@@ -171,19 +171,19 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-const { mdEnhancePlugin } = require("vuepress-plugin-md-enhance");
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
-module.exports = {
+export default {
   plugins: [
     mdEnhancePlugin({
       stylize: [
         {
-          match: /n't$/,
+          matcher: /n't$/,
           replacer: ({ tag, attrs, content }) => {
             if (tag === "em")
               return {
                 tag: "span",
-                attrs: { style: "color: red" },
+                attrs: { ...attrs, style: "color: red" },
                 content,
               };
           },

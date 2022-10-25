@@ -13,7 +13,7 @@ Waline server address url
 ## emoji
 
 - Type: `(string | WalineEmojiInfo)[] | false`
-- Default: `['//unpkg.com/@waline/emojis@1.0.1/weibo']`
+- Default: `['//unpkg.com/@waline/emojis@1.1.0/weibo']`
 
 Emoji settings, for details see [Custom Emoji](https://waline.js.org/en/guide/client/emoji.html)
 
@@ -30,11 +30,7 @@ Darkmode support
 
 ::: tip Examples
 
-- **Docusaurus**: It will enable darkmode by setting `data-theme="dark"` on the `<html>` tag itself. So you need to set `'html[data-theme="dark"]'` as `dark` option.
-
-- **hexo-theme-fluid**: It will enable darkmode by setting `data-user-color-scheme="dark"` on the `<html>` tag itself. So you need to set `'html[data-user-color-scheme="dark"]'` as `dark` option.
-
-- **vuepress-theme-hope**: It will enable darkmode by setting `theme-dark` class on the `<body>` tag itself. So you need to set `'body.theme-dark'` as `dark` option.
+- **vuepress-theme-hope** will enable darkmode by setting `theme-dark` class on the `<body>` tag itself. So the theme automatically set `'body.theme-dark'` as `dark` option for you.
 
 :::
 
@@ -76,12 +72,72 @@ Login mode status, optional values:
 
 Comment word s limit. When a single number is filled in, it 's the maximum number of comment words. No limit when set to `0`.
 
+## metaIcon
+
+- Type: `boolean`
+- Default: `true`
+
+Whether import meta icon.
+
 ## pageSize
 
 - Type: `number`
 - Default: `10`
 
 number of comments per page.
+
+## search
+
+- Type: `WalineSearchOptions | false`
+- Required: No
+- Details:
+
+  ```ts
+  interface WalineSearchResult extends Record<string, unknown> {
+    /**
+     * Image link
+     */
+    src: string;
+
+    /**
+     * Image title, optional
+     */
+    title?: string;
+
+    /**
+     * Image preview link, optional
+     *
+     * @default src
+     */
+    preview?: string;
+  }
+
+  interface WalineSearchOptions {
+    /**
+     * Search action
+     */
+    search: (word: string) => Promise<WalineSearchResult[]>;
+
+    /**
+     * Default search action
+     *
+     * @default () => search('')
+     */
+    default?: () => Promise<WalineSearchResult[]>;
+
+    /**
+     * Fetch more action
+     *
+     * @default (word) => search(word)
+     */
+    more?: (
+      word: string,
+      currectCount: number
+    ) => Promise<WalineSearchResult[]>;
+  }
+  ```
+
+Customize search featreus, you can disable search function by setting it to `false`.
 
 ## copyright
 
@@ -95,3 +151,17 @@ Whether show copyright and version in footer.
 We hope you can keep it on to support Waline.
 
 :::
+
+## recaptchaV3Key
+
+- Type: `string`
+- Required: No
+
+reCAPTCHA V3 is a captcha service provided by Google. You can add reCAPTCHA V3 site key with `recaptchaV3Key` to enable it. Notice you should also set environment variable `RECAPTCHA_V3_SECRET` for server.
+
+## reaction
+
+- Type: `boolean | string[]`
+- Default: `false`
+
+Add emoji interaction function to the article, set it to `true` to provide the default emoji, you can also customize the emoji image by setting the emoji url array, and supports a maximum of 8 emojis.

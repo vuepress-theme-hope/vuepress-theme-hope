@@ -20,7 +20,7 @@ tag:
 
 在你的入口文件中，设置 `extends: hopeTheme(options)` 声明继承 `vuepress-theme-hope` 主题。
 
-你自己新创建的主题的同名别名 (`alias`) 和 同名布局 (`layouts`) 的优先级高于被继承主题 `vuepress-theme-hope`，这意味着你可以通过 `alias` 覆盖 `vuepress-theme-hope` 主题的组件，并通过 `layouts` 覆盖或新增 `vuepress-theme-hope` 提供的布局。
+你自己新创建的主题的同名别名 (`alias`) 和 同名布局 (`layouts`) 的优先级高于被继承主题 `vuepress-theme-hope`，这意味着你可以通过 `alias` 覆盖 `vuepress-theme-hope` 主题的组件
 
 ::: code-tabs#language
 
@@ -28,9 +28,11 @@ tag:
 
 ```ts
 // .vuepress/theme/index.ts
-import { path } from "@vuepress/utils";
+import { getDirname, path } from "@vuepress/utils";
 import { hopeTheme } from "vuepress-theme-hope";
 import type { HopeThemeOptions } from "vuepress-theme-hope";
+
+const __dirname = getDirname(import.meta.url);
 
 export default {
   name: "vuepress-theme-local",
@@ -39,19 +41,11 @@ export default {
 
   alias: {
     // 你可以在这里覆盖或新增别名
-    // 比如这里我们将 vuepress-theme-hope 主页组件改为自己主题下的 components/HomePage.vue
-    "@theme-hope/components/HomePage": path.resolve(
+    // 比如这里我们将 vuepress-theme-hope 主页组件改为自己主题下的 components/HomePage.js
+    "@theme-hope/components/HomePage.js": path.resolve(
       __dirname,
-      "./components/HomePage.vue"
+      "./components/HomePage.js"
     ),
-  },
-
-  layouts: {
-    // 你可以在这里覆盖或新增布局
-    // 比如这里我们将 vuepress-theme-hope 的默认布局改为自己主题下的 layouts/Layout.vue
-    Layout: path.resolve(__dirname, "layouts/Layout.vue"),
-    // 同时我们新增了一个 Changelog 布局
-    Changelog: path.resolve(__dirname, "layouts/Changelog.vue"),
   },
 };
 ```
@@ -59,32 +53,80 @@ export default {
 @tab JS
 
 ```js
-// .vuepress/them/index.js
-const { path } = require("@vuepress/utils");
-const { hopeTheme } = require("vuepress-theme-hope");
+// .vuepress/theme/index.js
+import { getDirname, path } from "@vuepress/utils";
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+const __dirname = getDirname(import.meta.url);
+
+export default {
   name: "vuepress-theme-local",
 
   extends: hopeTheme(options),
 
   alias: {
     // 你可以在这里覆盖或新增别名
-    // 比如这里我们将 vuepress-theme-hope 主页组件改为自己主题下的 components/HomePage.vue
-    "@theme-hope/components/HomePage": path.resolve(
+    // 比如这里我们将 vuepress-theme-hope 主页组件改为自己主题下的 components/HomePage.js
+    "@theme-hope/components/HomePage.js": path.resolve(
       __dirname,
-      "./components/HomePage.vue"
+      "./components/HomePage.js"
     ),
-  },
-
-  layouts: {
-    // 你可以在这里覆盖或新增布局
-    // 比如这里我们将 vuepress-theme-hope 的默认布局改为自己主题下的 layouts/Layout.vue
-    Layout: path.resolve(__dirname, "layouts/Layout.vue"),
-    // 同时我们新增了一个 Changelog 布局
-    Changelog: path.resolve(__dirname, "layouts/Changelog.vue"),
   },
 };
 ```
 
 :::
+
+::: tip
+
+如果你想使用 `vue` 文件，你可以创建一个简单的 wrapper:
+
+```js
+// wrapper.js
+import YouComponent from "./YouComponent.vue";
+export default YouComponent;
+```
+
+:::
+
+你也可以通过主题客户端文件的 `layouts` 覆盖或新增 `vuepress-theme-hope` 提供的布局。
+
+::: code-tabs#language
+
+@tab TS
+
+```ts
+// .vuepress/theme/config.ts
+import { defineClientConfig } from "@vuepress/client";
+import Changelog from "./layouts/Changelog.vue";
+import Layout from "./layouts/Layout.vue";
+
+export default defineClientConfig({
+  // 你可以在这里覆盖或新增布局
+  layouts: {
+    // 比如这里我们将 vuepress-theme-hope 的默认布局改为自己主题下的 layouts/Layout.vue
+    Layout,
+    // 同时我们新增了一个 Changelog 布局
+    Changelog,
+  },
+});
+```
+
+@tab JS
+
+```js
+// .vuepress/theme/config.js
+import { defineClientConfig } from "@vuepress/client";
+import Changelog from "./layouts/Changelog.vue";
+import Layout from "./layouts/Layout.vue";
+
+export default defineClientConfig({
+  // 你可以在这里覆盖或新增布局
+  layouts: {
+    // 比如这里我们将 vuepress-theme-hope 的默认布局改为自己主题下的 layouts/Layout.vue
+    Layout,
+    // 同时我们新增了一个 Changelog 布局
+    Changelog,
+  },
+});
+```

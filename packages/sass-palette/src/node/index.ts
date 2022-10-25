@@ -1,7 +1,7 @@
-import { sassPalettePlugin } from "./plugin";
+import { sassPalettePlugin } from "./plugin.js";
 
-export * from "../shared";
-export * from "./plugin";
-export * from "./use";
+export * from "../shared/index.js";
+export * from "./plugin.js";
+export * from "./use.js";
 
 export default sassPalettePlugin;

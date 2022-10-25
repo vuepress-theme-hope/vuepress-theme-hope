@@ -1,5 +1,5 @@
-import { hash } from "@vuepress/utils";
-import { uml } from "../markdown-it";
+import { utoa } from "vuepress-shared/node";
+import { uml } from "../markdown-it/index.js";
 
 import type { PluginSimple } from "markdown-it";
 
@@ -9,18 +9,18 @@ export const legacyFlowchart: PluginSimple = (md) => {
     name: "flowchart",
     open: "flowstart",
     close: "flowend",
-    render: (tokens, idx): string => {
+    render: (tokens, index): string => {
       console.warn(
         '"@flowstart ... @flowend" is deprecated, you should use ```flow ... ``` instead.'
       );
 
-      const token = tokens[idx];
-      const key = `flowchart_${hash(idx)}`;
+      const token = tokens[index];
+      const key = `flowchart-${index}`;
       const { content, info } = token;
 
-      return `<FlowChart id="${key}" code="${encodeURIComponent(
-        content
-      )}" preset="${info.trim() || "vue"}"></FlowChart>`;
+      return `<FlowChart id="${key}" code="${utoa(content)}" preset="${
+        info.trim() || "vue"
+      }"></FlowChart>`;
     },
   });
 };

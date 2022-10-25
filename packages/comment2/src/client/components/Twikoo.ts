@@ -2,14 +2,16 @@ import { usePageFrontmatter, usePageLang } from "@vuepress/client";
 import { computed, defineComponent, h, onMounted } from "vue";
 
 import type { VNode } from "vue";
-import type { CommentPluginFrontmatter, TwikooOptions } from "../../shared";
+import type {
+  CommentPluginFrontmatter,
+  TwikooOptions,
+} from "../../shared/index.js";
 
 import "../styles/twikoo.scss";
 
 declare const COMMENT_OPTIONS: TwikooOptions;
 
 const twikooOption = COMMENT_OPTIONS;
-
 const enableTwikoo = Boolean(twikooOption.envId);
 
 export default defineComponent({
@@ -39,9 +41,7 @@ export default defineComponent({
 
       void Promise.all([
         import("twikoo"),
-        new Promise<void>((resolve) => {
-          setTimeout(resolve, twikooOption.delay);
-        }),
+        new Promise<void>((resolve) => setTimeout(resolve, twikooOption.delay)),
       ]).then(([{ init }]) => {
         if (timeID === id)
           void init({

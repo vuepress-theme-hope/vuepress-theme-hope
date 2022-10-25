@@ -1,6 +1,6 @@
 import { chalk, fs, path } from "@vuepress/utils";
 import { generateSW } from "workbox-build";
-import { logger } from "./utils";
+import { logger } from "./utils.js";
 
 import type {
   ManifestEntry,
@@ -9,7 +9,7 @@ import type {
 } from "workbox-build";
 
 import type { App } from "@vuepress/core";
-import type { PWAOptions } from "../shared";
+import type { PWAOptions } from "../shared/index.js";
 
 const imageFilter =
   (outDir: string, maxsize = 1024): ManifestTransform =>
@@ -26,7 +26,7 @@ const imageFilter =
 
         if (stats.size > maxsize * 1024)
           warnings.push(
-            `Skipped ${entry.url}, as its ${Math.ceil(stats.size / 1024)} KB.\n`
+            `Skipped ${entry.url}, as it's ${Math.ceil(stats.size / 1024)} KB.`
           );
         else manifest.push(entry);
       } else manifest.push(entry);
@@ -45,7 +45,9 @@ export const generateServiceWorker = async (
   const swDest = dest("service-worker.js");
   const destDir = path.relative(process.cwd(), dest());
 
-  const globPatterns = ["**/*.{js,css,svg,woff,woff2,eot,ttf,otf}"];
+  // FIXME: vuepress2beta50 has a bug that output app.js as app.mjs,
+  // this shoud be removed after vuepress2 release beta51
+  const globPatterns = ["**/*.{js,mjs,css,svg,woff,woff2,eot,ttf,otf}"];
 
   if (options.cacheHTML) globPatterns.push("**/*.html");
   else globPatterns.push("./index.html", "./404.html");

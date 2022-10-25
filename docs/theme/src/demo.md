@@ -11,20 +11,35 @@ category:
 
 ## Docs
 
+### Fast Request
+
+- [Link][fast-request]
+- [Source](https://github.com/dromara/fast-request)
+
 ### Waline
 
 - [Link][waline]
 - [Source](https://github.com/walinejs/waline)
 
-### vuepress-theme-hope
+### ALIST
 
-- [Link][vuepress-theme-hope]
-- [Source](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/main/docs/theme)
+- [Link][alist]
+- [Source](https://github.com/alist-org/docs)
 
-### Fast Request
+### Taskiq
 
-- [Link][fast-request]
-- [Source](https://github.com/dromara/fast-request)
+- [Link][taskiq]
+- [Source](https://github.com/taskiq-python/taskiq/tree/master/docs)
+
+### Nosana
+
+- [Link][nosana]
+- [Source](https://github.com/nosana-ci/docs.nosana.io)
+
+### Pulsar
+
+- [Link][pulsar]
+- [Source](https://github.com/pulsar-edit/pulsar-edit.github.io)
 
 ## Blog
 
@@ -35,8 +50,11 @@ category:
 
 ## More
 
-- Feel free to add yours
+- Feel free to add yours through pull request
 
-[vuepress-theme-hope]: https://vuepress-theme-hope.github.io/v2/
+[nosana]: https://docs.nosana.io/
+[alist]: https://alist.nn.ci/
 [waline]: https://waline.js.org/en/
 [fast-request]: https://dromara.org/fast-request/en/
+[taskiq]: https://taskiq-python.github.io/
+[pulsar]: https://pulsar-edit.dev/

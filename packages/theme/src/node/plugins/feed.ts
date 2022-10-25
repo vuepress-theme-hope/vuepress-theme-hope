@@ -1,9 +1,9 @@
 import { feedPlugin } from "vuepress-plugin-feed2";
-import { deepAssign } from "vuepress-shared";
+import { deepAssign } from "vuepress-shared/node";
 
 import type { Plugin } from "@vuepress/core";
 import type { FeedOptions } from "vuepress-plugin-feed2";
-import type { HopeThemeConfig } from "../../shared";
+import type { HopeThemeConfig } from "../../shared/index.js";
 
 export const getFeedPlugin = (
   themeConfig: HopeThemeConfig,

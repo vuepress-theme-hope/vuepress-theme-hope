@@ -54,9 +54,9 @@ export default defineUserConfig({
 
 ```js {6-11}
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     themeColor: {
       blue: "#2196f3",
@@ -74,16 +74,12 @@ module.exports = {
 
 ### Try it
 
-<!-- markdownlint-disable-->
-
 <ThemeColorPicker :themeColor="themeColor" />
 
-<!-- markdownlint-restore -->
-
 <script setup lang="ts">
-import { computed } from 'vue';
-import { useThemeData } from '@theme-hope/composables';
-import ThemeColorPicker from '@theme-hope/module/outlook/components/ThemeColorPicker';
+import { computed } from "vue";
+import { useThemeData } from "@theme-hope/composables/index.js";
+import ThemeColorPicker from "@theme-hope/modules/outlook/components/ThemeColorPicker.js";
 
 const themeData = useThemeData();
 

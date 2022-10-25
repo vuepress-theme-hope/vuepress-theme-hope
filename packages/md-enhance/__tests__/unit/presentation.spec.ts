@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import MarkdownIt from "markdown-it";
-import { presentation } from "../../src/node/markdown-it/presentation";
+import { presentation } from "../../src/node/markdown-it/index.js";
 
 const demo = `
 ## Slide 1
@@ -42,7 +42,7 @@ ${demo}
 `);
 
     expect(renderResult).toMatch(
-      /<Presentation id="presentation-.*?" data-code=".*?" theme=".*?"><\/Presentation>/
+      /<Presentation id="presentation-.*?" code=".*?" theme=".*?"><\/Presentation>/
     );
     expect(renderResult).toMatchSnapshot();
   });

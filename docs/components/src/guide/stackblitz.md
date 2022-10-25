@@ -2,7 +2,7 @@
 title: StackBlitz
 ---
 
-Embed StackBlitz demo in markdown files.
+Embed StackBlitz demo in Markdown files.
 
 <!-- more -->
 
@@ -15,12 +15,26 @@ Embed StackBlitz demo in markdown files.
 
 StackBlitz id
 
+### width
+
+- Type: `string | number`
+- Default: `100%`
+
+Stackblitz component width.
+
 ### height
 
 - Type: `string | number`
-- Default: `"80vh"`
+- Required: No
 
-StackBlitz Demo height.
+Stackblitz component height
+
+### radio
+
+- Type: `number`
+- Default: `16 / 9`
+
+Stackblitz component radio, ONLY valid when `height` not set.
 
 ### file
 
@@ -80,11 +94,15 @@ Hide the debugging console in the editor preview.
 
 ## Demo
 
+A StackBlitz project:
+
 <StackBlitz id="vuepress-theme-hope" />
 
 ```md
 <StackBlitz id="vuepress-theme-hope" />
 ```
+
+A StackBlitz project with custom settings:
 
 <StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hidedevtools />
 

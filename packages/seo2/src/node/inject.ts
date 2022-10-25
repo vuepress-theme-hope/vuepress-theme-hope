@@ -1,5 +1,9 @@
 import type { HeadConfig } from "@vuepress/core";
-import type { ArticleJSONLD, ArticleSeoContent, SeoContent } from "../shared";
+import type {
+  ArticleJSONLD,
+  ArticleSeoContent,
+  SeoContent,
+} from "../shared/index.js";
 
 interface MetaOptions {
   name: string;
@@ -70,6 +74,9 @@ export const appendAlternate = (
   urls: { lang: string; path: string }[]
 ): void => {
   urls.forEach(({ lang, path }) => {
-    head.push(["link", { rel: "alternate", hreflang: lang, href: path }]);
+    head.push([
+      "link",
+      { rel: "alternate", hreflang: lang.toLowerCase(), href: path },
+    ]);
   });
 };

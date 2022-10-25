@@ -1,0 +1,45 @@
+.theme-container {
+  .page.blog {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    box-sizing: border-box;
+
+    min-height: 100vh;
+    margin: 0 auto;
+    padding-top: var(--navbar-height);
+    padding-bottom: 2rem;
+
+    background: var(--bg-color-back);
+
+    transition: background var(--color-transition);
+  }
+
+  &.has-toc .page.blog {
+    @media (min-width: hope-config.$pc) {
+      // fix toc padding
+      padding-right: 0;
+    }
+  }
+}
+
+.blog-page-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  @media (max-width: hope-config.$pad) {
+    padding: 0 1rem;
+  }
+
+  @media (max-width: hope-config.$mobile) {
+    padding: 0;
+  }
+}

@@ -10,19 +10,11 @@ import {
   titleNumberDescSorter,
   titleNumberSorter,
   titleSorter,
-} from "../../src/node/prepare";
-import { getStatus } from "../../src/node/status";
-import { getThemeConfig } from "../../src/node/themeConfig";
-import { HopeThemeOptions } from "../../src/shared";
-import { sidebarTheme } from "./__fixtures__/theme/sidebar";
-
-const app = createBaseApp({
-  bundler: {} as any,
-  source: path.resolve(__dirname, "./__fixtures__/src"),
-  theme: sidebarTheme,
-});
-
-await app.init();
+} from "../../src/node/prepare/index.js";
+import { getStatus } from "../../src/node/status.js";
+import { getThemeConfig } from "../../src/node/themeConfig.js";
+import { HopeThemeOptions } from "../../src/shared/index.js";
+import { sidebarTheme } from "./__fixtures__/theme/sidebar.js";
 
 describe("should handle order", () => {
   it("Should preserve order", () => {
@@ -346,7 +338,15 @@ describe("should handle title", () => {
   });
 });
 
-describe("should generate sidebarData correcly", () => {
+describe("should generate sidebarData correcly", async () => {
+  const app = createBaseApp({
+    bundler: {} as any,
+    source: path.resolve(__dirname, "./__fixtures__/src"),
+    theme: sidebarTheme,
+  });
+
+  await app.init();
+
   it("Should resolve structure in root", () => {
     const themeOptions: HopeThemeOptions = {
       sidebar: "structure",

@@ -24,18 +24,18 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
           cache: pnpm
 
       - name: Build project
         env:
-          NODE_OPTIONS: --max_old_space_size=4096
+          NODE_OPTIONS: --max_old_space_size=8192
         run: pnpm run build
 
       - name: Docs build
         env:
           NETLIFY: true
-          NODE_OPTIONS: --max_old_space_size=4096
+          NODE_OPTIONS: --max_old_space_size=8192
         run: pnpm run docs:vite-build
 
       - name: Combine output
@@ -57,6 +57,7 @@ jobs:
           pnpm cpx "docs/seo2/dist/**" dist/seo
           pnpm cpx "docs/sitemap2/dist/**" dist/sitemap
           pnpm cpx "docs/theme/dist/**" dist
+          > dist/.nojekyll
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
@@ -85,19 +86,19 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
           cache: pnpm
 
       - name: Build project
         env:
-          NODE_OPTIONS: --max_old_space_size=4096
+          NODE_OPTIONS: --max_old_space_size=8192
         run: pnpm run build
 
       - name: Docs build
         env:
           BASE: /v2/
           HOSTNAME: https://vuepress-theme-hope.gitee.io/
-          NODE_OPTIONS: --max_old_space_size=4096
+          NODE_OPTIONS: --max_old_space_size=8192
         run: pnpm run docs:vite-build
 
       - name: Combine output
@@ -118,6 +119,7 @@ jobs:
           pnpm cpx "docs/seo2/dist/**" dist/seo
           pnpm cpx "docs/sitemap2/dist/**" dist/sitemap
           pnpm cpx "docs/theme/dist/**" dist
+          > dist/.nojekyll
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
@@ -130,6 +132,12 @@ jobs:
 
   deploy-theme-demo:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        name:
+          - blog
+          - docs
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -143,38 +151,42 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
           cache: pnpm
 
       - name: Build project
         env:
-          NODE_OPTIONS: --max_old_space_size=4096
+          NODE_OPTIONS: --max_old_space_size=8192
         run: pnpm run build
 
       - name: Build Netlify Demo
-        run: pnpm --filter theme-demo demo:vite-build
+        run: |-
+          pnpm --filter theme-${{ matrix.name }}-demo demo:vite-build
+          > demo/theme-${{ matrix.name }}/dist/.nojekyll
 
       - name: Deploy to netlify
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          repository-name: vuepress-theme-hope/v2-demo
+          repository-name: vuepress-theme-hope/${{ matrix.name }}-demo
           branch: netlify
-          folder: demo/theme/dist
+          folder: demo/theme-${{ matrix.name }}/dist
           token: ${{ secrets.ACCESS_TOKEN }}
           single-commit: true
 
       - name: Build Gitee Demo
         env:
-          BASE: /v2-demo/
+          BASE: /${{ matrix.name }}-demo/
           HOSTNAME: https://vuepress-theme-hope.gitee.io/
-        run: pnpm --filter theme-demo demo:vite-build
+        run: |-
+          pnpm --filter theme-${{ matrix.name }}-demo demo:vite-build
+          > demo/theme-${{ matrix.name }}/dist/.nojekyll
 
       - name: Deploy to gitee
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          repository-name: vuepress-theme-hope/v2-demo
+          repository-name: vuepress-theme-hope/${{ matrix.name }}-demo
           branch: gitee
-          folder: demo/theme/dist
+          folder: demo/theme-${{ matrix.name }}/dist
           token: ${{ secrets.ACCESS_TOKEN }}
           single-commit: true
 
@@ -213,19 +225,21 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
           cache: pnpm
 
       - name: Build project
         env:
-          NODE_OPTIONS: --max_old_space_size=4096
+          NODE_OPTIONS: --max_old_space_size=8192
         run: pnpm run build
 
       - name: Build ${{ matrix.plugin-name }} demo
         env:
           BASE: /${{ matrix.plugin-name }}-demo/
           HOSTNAME: https://vuepress-theme-hope.github.io/
-        run: pnpm --filter ${{ matrix.plugin-name }}-demo demo:vite-build
+        run: |-
+          pnpm --filter ${{ matrix.plugin-name }}-demo demo:vite-build
+          > demo/${{ matrix.plugin-name }}/src/.vuepress/dist/.nojekyll
 
       - name: Deploy ${{ matrix.plugin-name }} demo
         uses: JamesIves/github-pages-deploy-action@v4

@@ -12,17 +12,17 @@ import {
   watch,
 } from "vue";
 import { useRouter } from "vue-router";
+import { isComponentRegistered, RenderDefault } from "vuepress-shared/client";
+
+import PageFooter from "@theme-hope/components/PageFooter.js";
 import {
-  isComponentRegistered,
-  RenderDefault,
-} from "vuepress-shared/lib/client";
+  useMobile,
+  useThemeLocaleData,
+} from "@theme-hope/composables/index.js";
+import { useSidebarItems } from "@theme-hope/modules/sidebar/composables/index.js";
 
-import PageFooter from "@theme-hope/components/PageFooter";
-import { useMobile, useThemeLocaleData } from "@theme-hope/composables";
-import { useSidebarItems } from "@theme-hope/module/sidebar/composables";
-
-import type { ComponentOptions, VNode } from "vue";
-import type { HopeThemePageFrontmatter } from "../../shared";
+import type { DefineComponent, VNode } from "vue";
+import type { HopeThemePageFrontmatter } from "../../shared/index.js";
 
 import "../styles/common.scss";
 
@@ -30,10 +30,12 @@ export default defineComponent({
   name: "CommonWrapper",
 
   props: {
+    /** @description Whether enable navbar */
     navbar: {
       type: Boolean,
       default: true,
     },
+    /** @description Whether enable sidebar */
     sidebar: {
       type: Boolean,
       default: true,
@@ -129,18 +131,22 @@ export default defineComponent({
 
     useEventListener(
       "scroll",
-      useThrottleFn(() => {
-        const distance = getScrollTop();
+      useThrottleFn(
+        () => {
+          const distance = getScrollTop();
 
-        // scroll down
-        if (lastDistance < distance && distance > 58) {
-          if (!isMobileSidebarOpen.value) hideNavbar.value = true;
-        }
-        // scroll up
-        else hideNavbar.value = false;
+          // scroll down
+          if (lastDistance < distance && distance > 58) {
+            if (!isMobileSidebarOpen.value) hideNavbar.value = true;
+          }
+          // scroll up
+          else hideNavbar.value = false;
 
-        lastDistance = distance;
-      }, 300)
+          lastDistance = distance;
+        },
+        300,
+        true
+      )
     );
 
     watch(isMobile, (value) => {
@@ -186,13 +192,13 @@ export default defineComponent({
         },
         h(
           isComponentRegistered("GloablEncrypt")
-            ? (resolveComponent("GloablEncrypt") as ComponentOptions)
+            ? <DefineComponent>resolveComponent("GloablEncrypt")
             : RenderDefault,
           () => [
             // navbar
             enableNavbar.value
               ? h(
-                  resolveComponent("Navbar") as ComponentOptions,
+                  <DefineComponent>resolveComponent("Navbar"),
                   { onToggleSidebar: () => toggleMobileSidebar() },
                   {
                     leftStart: () => slots["navbarLeftStart"]?.(),
@@ -235,7 +241,7 @@ export default defineComponent({
             ),
             // sidebar
             h(
-              resolveComponent("Sidebar") as ComponentOptions,
+              <DefineComponent>resolveComponent("Sidebar"),
               {},
               {
                 ...(slots["sidebar"]

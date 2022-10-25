@@ -17,12 +17,26 @@ PDF 预览组件。
 
 PDF 链接，**不支持**相对路径。
 
+### width
+
+- 类型: `string | number`
+- 默认值: `100%`
+
+PDF 浏览器宽度。
+
 ### height
 
 - 类型: `string | number`
-- 必填: 是
+- 必填：否
 
-PDF 预览器的高度
+PDF 浏览器件高度
+
+### radio
+
+- 类型: `number`
+- 默认值: `16 / 9`
+
+PDF 浏览器高度宽高比，只有当未指定 `height` 时有效。
 
 ### page
 

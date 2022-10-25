@@ -19,10 +19,16 @@ Giscus 是一个基于 GitHub Discussion 的评论系统，启用简便。
 
 请将 `data-repo`, `data-repo-id`, `data-category` 和 `data-category-id` 作为插件选项传入 `repo`, `repoId`, `category` `categoryId`。
 
+其他的配置项详见 [Giscus 配置](../config/giscus.md)。
+
+## 主题
+
+默认情况下，Giscus 使用 `light` 或 `dark` 主题 (基于夜间模式状态)。
+
 ::: info 夜间模式
 
 为了能使 Giscus 应用正确的主题，你需要为 `<CommentService />` 通过 `darkmode` 属性传入一个布尔值，代表当前是否开启夜间模式。
 
 :::
 
-其他的配置项详见 [Giscus 配置](../config/giscus.md)。
+如果你想在日间模式和夜间模式下自定义主题，你可以设置 `lightTheme` 和 `darkTheme` 选项，使用内置主题关键字或以 `https://` 开头的自定义 css 链接。

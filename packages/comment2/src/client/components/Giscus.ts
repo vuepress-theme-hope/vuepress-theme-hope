@@ -3,15 +3,59 @@ import { computed, defineComponent, h, onMounted, ref } from "vue";
 import { useRoute } from "vue-router";
 
 import type { VNode } from "vue";
-import type { GiscusLang, GiscusProps } from "../utils";
-import type { CommentPluginFrontmatter, GiscusOptions } from "../../shared";
+import type {
+  CommentPluginFrontmatter,
+  GiscusInputPosition,
+  GiscusMapping,
+  GiscusOptions,
+  GiscusRepo,
+  GiscusTheme,
+} from "../../shared/index.js";
 
 import "../styles/giscus.scss";
 
 declare const COMMENT_OPTIONS: GiscusOptions;
 
-const giscusOption = COMMENT_OPTIONS;
+type BooleanString = "0" | "1";
 
+export type GiscusLang =
+  | "de"
+  | "gsw"
+  | "en"
+  | "es"
+  | "fr"
+  | "id"
+  | "it"
+  | "ja"
+  | "ko"
+  | "pl"
+  | "ro"
+  | "ru"
+  | "tr"
+  | "vi"
+  | "zh-CN"
+  | "zh-TW";
+
+export type GiscusLoading = "lazy" | "eager";
+
+export interface GiscusProps {
+  id?: string | undefined;
+  repo: GiscusRepo;
+  repoId: string;
+  category?: string | undefined;
+  categoryId?: string | undefined;
+  mapping: GiscusMapping;
+  term?: string | undefined;
+  theme?: GiscusTheme | undefined;
+  reactionsEnabled?: BooleanString | undefined;
+  strict?: BooleanString | undefined;
+  emitMetadata?: BooleanString | undefined;
+  inputPosition?: GiscusInputPosition | undefined;
+  lang?: GiscusLang | undefined;
+  loading?: GiscusLoading | undefined;
+}
+
+const giscusOption = COMMENT_OPTIONS;
 const enableGiscus = Boolean(
   giscusOption.repo &&
     giscusOption.repoId &&
@@ -80,19 +124,21 @@ export default defineComponent({
       category: giscusOption.category,
       categoryId: giscusOption.categoryId,
       lang: giscusLang.value,
-      theme: props.darkmode ? "dark" : "light",
+      theme: props.darkmode
+        ? giscusOption.darkTheme ?? "dark"
+        : giscusOption.lightTheme ?? "light",
       mapping: giscusOption.mapping || "pathname",
       term: withBase(route.path),
       inputPosition: giscusOption.inputPosition || "top",
       reactionsEnabled: giscusOption.reactionsEnabled !== false ? "1" : "0",
       strict: giscusOption.strict !== false ? "1" : "0",
+      loading: giscusOption.lazyLoading !== false ? "lazy" : "eager",
       emitMetadata: "0",
     }));
 
-    onMounted(() => {
-      void import("giscus").then(() => {
-        loaded.value = true;
-      });
+    onMounted(async () => {
+      await import("giscus");
+      loaded.value = true;
     });
 
     return (): VNode =>

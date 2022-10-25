@@ -21,7 +21,7 @@ If you are a new comer and don’t know how to write Markdown, please read [Mark
 
 ## Markdown Config
 
-VuePress introduce configuration for each markdown page using Frontmatter.
+VuePress introduce configuration for each Markdown page using Frontmatter.
 
 ::: info
 
@@ -42,48 +42,6 @@ For these extended syntax, please see [Built-in Markdown Features](../../cookboo
 ### Theme Enhancement
 
 By using [`vuepress-plugin-md-enhance`][md-enhance], the theme extends more Markdown syntax and provides richer writing functions.
-
-:::: tip Enable all
-
-You can set `plugins.mdEnhance.enableAll: true` in theme options to enable all features of the [md-enhance][md-enhance] plugin to try them.
-
-::: code-tabs#language
-
-@tab TS
-
-```ts
-import { hopeTheme } from "vuepress-theme-hope";
-
-export default {
-  theme: hopeTheme({
-    plugins: {
-      mdEnhance: {
-        enableAll: true,
-      },
-    },
-  }),
-};
-```
-
-@tab JS
-
-```js
-const { hopeTheme } = require("vuepress-theme-hope");
-
-module.exports = {
-  theme: hopeTheme({
-    plugins: {
-      mdEnhance: {
-        enableAll: true,
-      },
-    },
-  }),
-};
-```
-
-:::
-
-::::
 
 #### Custom Container
 
@@ -233,7 +191,7 @@ I am right align
 
 - [View Detail](../markdown/align.md)
 
-### Attrs
+#### Attrs
 
 A **word**{#word} having id.
 
@@ -404,19 +362,50 @@ span {
 
 #### Stylize
 
-<!-- markdownlint-disable MD033 -->
-
-Setting this to a invalid stytax <span style="color:red">doesn't</span> have any effect.
+Donate Mr.Hope a cup of coffee. _Recommanded_
 
 - [View Detail](../markdown/stylize.md)
 
-<!-- markdownlint-enable MD033 -->
-
 #### Playground
 
-You can insert Vue playground in Markdown files directly.
+::: playground#ts TS demo
+
+@file index.ts
+
+```ts
+const msg = "hello world";
+
+const speak = (msg: string) => console.log(msg);
+
+speak(msg);
+```
+
+:::
 
 - [View Detail](../markdown/playground.md)
+
+#### Vue Playground
+
+::: vue-playground Vue Playground
+
+@file App.vue
+
+```vue
+<script setup>
+import { ref } from "vue";
+
+const msg = ref("Hello World!");
+</script>
+
+<template>
+  <h1>{{ msg }}</h1>
+  <input v-model="msg" />
+</template>
+```
+
+:::
+
+- [View Detail](../markdown/vue-playground.md)
 
 #### Presentation
 

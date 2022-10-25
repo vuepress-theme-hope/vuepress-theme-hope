@@ -1,6 +1,7 @@
 import { computed, defineComponent, h, onMounted, ref } from "vue";
-import { CODEPEN_SVG, JSFIDDLE_SVG, LOADING_SVG } from "./icons";
-import { loadNormal, loadReact, loadVue } from "../composables";
+import { atou } from "vuepress-shared/client";
+import { CODEPEN_SVG, JSFIDDLE_SVG, LOADING_SVG } from "./icons.js";
+import { loadNormal, loadReact, loadVue } from "../composables/index.js";
 import {
   injectCSS,
   injectScript,
@@ -8,10 +9,10 @@ import {
   getReactCode,
   getNormalCode,
   getVueCode,
-} from "../utils";
+} from "../utils/index.js";
 
 import type { PropType, VNode } from "vue";
-import type { CodeDemoOptions } from "../../shared";
+import type { CodeDemoOptions } from "../../shared/index.js";
 
 import "balloon-css/balloon.css";
 import "../styles/code-demo.scss";
@@ -49,22 +50,17 @@ export default defineComponent({
 
   setup(props, { slots }) {
     const isExpanded = ref(false);
-    const demoWrapper = ref<HTMLDivElement | null>(null);
-    const codeContainer = ref<HTMLDivElement | null>(null);
+    const demoWrapper = ref<HTMLDivElement>();
+    const codeContainer = ref<HTMLDivElement>();
     const height = ref("0");
     const loaded = ref(false);
 
     const config = computed(
-      () =>
-        <Partial<CodeDemoOptions>>(
-          JSON.parse(decodeURIComponent(props.config || "{}"))
-        )
+      () => <Partial<CodeDemoOptions>>JSON.parse(atou(props.config) || "{}")
     );
 
     const codeType = computed(() => {
-      const codeConfig = <Record<string, string>>(
-        JSON.parse(decodeURIComponent(props.code || "{}"))
-      );
+      const codeConfig = <Record<string, string>>JSON.parse(atou(props.code));
 
       return getCode(codeConfig);
     });

@@ -1,6 +1,6 @@
 {
   "name": "copyright2-demo",
-  "version": "2.0.0-beta.91",
+  "version": "2.0.0-beta.114",
   "private": true,
   "description": "Demo for vuepress-plugin-copyright2",
   "license": "MIT",
@@ -14,14 +14,14 @@
     "demo:webpack-dev": "vuepress-webpack dev src"
   },
   "devDependencies": {
-    "@vuepress/cli": "2.0.0-beta.49",
-    "@vuepress/client": "2.0.0-beta.49",
-    "@vuepress/theme-default": "2.0.0-beta.49",
-    "@vuepress/utils": "2.0.0-beta.49",
-    "sass-loader": "13.0.2",
-    "vue": "3.2.37",
+    "@vuepress/cli": "2.0.0-beta.53",
+    "@vuepress/client": "2.0.0-beta.53",
+    "@vuepress/theme-default": "2.0.0-beta.53",
+    "@vuepress/utils": "2.0.0-beta.53",
+    "sass-loader": "13.1.0",
+    "vue": "3.2.41",
     "vuepress-plugin-copyright2": "workspace:*",
-    "vuepress-vite": "2.0.0-beta.49",
-    "vuepress-webpack": "2.0.0-beta.49"
+    "vuepress-vite": "2.0.0-beta.53",
+    "vuepress-webpack": "2.0.0-beta.53"
   }
 }

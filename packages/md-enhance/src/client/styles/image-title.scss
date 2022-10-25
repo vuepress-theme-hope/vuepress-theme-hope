@@ -1,0 +1,19 @@
+#{hope-config.$content-class} {
+  figure {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    img {
+      overflow: hidden;
+      margin: 0 auto;
+      border-radius: 8px;
+    }
+
+    figcaption {
+      display: inline-block;
+      margin: 6px auto;
+      font-size: 0.8rem;
+    }
+  }
+}

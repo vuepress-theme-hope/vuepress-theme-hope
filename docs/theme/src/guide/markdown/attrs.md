@@ -8,7 +8,7 @@ tag:
   - Markdown
 ---
 
-You can use custom syntax to add attrs for markdown content.
+You can use custom syntax to add attrs for Markdown content.
 
 <!-- more -->
 
@@ -38,9 +38,9 @@ export default defineUserConfig({
 
 ```js {8}
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     plugins: {
       mdEnhance: {
@@ -55,7 +55,7 @@ module.exports = {
 
 ## Usage
 
-You can use `{attrs}` to add attrs to markdown content.
+You can use `{attrs}` to add attrs to Markdown content.
 
 For example, if you want a heading2 "Hello World" with a id "say-hello-world", you can write:
 

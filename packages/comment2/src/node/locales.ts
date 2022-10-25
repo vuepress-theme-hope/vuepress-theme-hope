@@ -1,4 +1,4 @@
-import type { WalineLocaleConfig } from "../shared";
+import type { WalineLocaleConfig } from "../shared/index.js";
 
 /**
  * Default locale config for Waline
@@ -60,5 +60,10 @@ export const walineLocales: WalineLocaleConfig = {
   "/es/": {
     placeholder:
       "Escriba un comentario aquí (Ingrese su correo electrónico para recibir una notificación en caso de respuesta)",
+  },
+
+  "/ja/": {
+    placeholder:
+      "伝言をどうぞ (メールアドレスを入力すると、返信があった際にメールでお知らせします。)",
   },
 };

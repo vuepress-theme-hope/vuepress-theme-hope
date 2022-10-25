@@ -89,6 +89,16 @@ features:
     details: 将你的文档分段，并在 Markdown 中导入
     link: /zh/guide/include.html
 
+  - title: 交互演示支持
+    icon: code
+    details: 你可以在 Markdown 中添加交互演示
+    link: /zh/guide/playground.html
+
+  - title: Vue 交互演示支持
+    icon: code
+    details: 在交互演示中展示 Vue 组件
+    link: /zh/guide/vue-playground.html
+
   - title: 代码案例支持
     icon: discover
     details: 你可以很方便的插入代码案例
@@ -98,11 +108,6 @@ features:
     icon: slides
     details: 你可以直接在 Markdown 中插入幻灯片
     link: /zh/guide/presentation/
-
-  - title: Playground 支持
-    icon: code
-    details: 你可以直接在 Markdown 中插入 Vue playground
-    link: /zh/guide/playground.html
 
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 copyright: false
@@ -157,9 +162,9 @@ export default {
 
 ```js
 // .vuepress/config.js
-const { mdEnhancePlugin } = require("vuepress-plugin-md-enhance");
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
-module.exports = {
+export default {
   plugins: [
     mdEnhancePlugin({
       // 你的选项
@@ -183,7 +188,10 @@ module.exports = {
 - container
 - footnote
 - imageMark
+- imageSize
+- imageTitle
 - include
+- mathjax
 - katex
 - lazyload
 - mark
@@ -191,4 +199,5 @@ module.exports = {
 - sub
 - sup
 - tasklist
+- tex
 - uml

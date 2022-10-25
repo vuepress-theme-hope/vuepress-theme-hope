@@ -1,19 +1,22 @@
 import { ensureEndingSlash } from "@vuepress/shared";
-import { path } from "@vuepress/utils";
-import { logger } from "./utils";
+import { getDirname, path } from "@vuepress/utils";
+import { logger } from "./utils.js";
 
 import type { App } from "@vuepress/core";
-import type { AvailableComponent, ComponentOptions } from "../shared";
+import type { AvailableComponent, ComponentOptions } from "../shared/index.js";
 
+const __dirname = getDirname(import.meta.url);
 const CLIENT_FOLDER = ensureEndingSlash(path.resolve(__dirname, "../client"));
 
 const availableComponents: AvailableComponent[] = [
   "Badge",
+  "BiliBili",
   "Catalog",
   "CodePen",
   "FontIcon",
   "PDF",
   "StackBlitz",
+  "VideoPlayer",
   "YouTube",
 ];
 
@@ -67,8 +70,12 @@ export const prepareConfigFile = (
 
   options.components.forEach((item) => {
     if (availableComponents.includes(item)) {
-      configImport += `import ${item} from "${CLIENT_FOLDER}components/${item}";\n`;
-      enhance += `app.component("${item}", ${item});\n`;
+      configImport += `\
+import ${item} from "${CLIENT_FOLDER}components/${item}.js";
+`;
+      enhance += `\
+app.component("${item}", ${item});
+`;
     }
 
     if (item === "FontIcon" && options.iconAssets) {
@@ -79,10 +86,14 @@ export const prepareConfigFile = (
 
         if (type === "script") {
           shouldImportUseScriptTag = true;
-          setup += `useScriptTag(\`${content}\`);\n`;
+          setup += `\
+useScriptTag(\`${content}\`);
+`;
         } else {
           shouldImportUseStyleTag = true;
-          setup += `useStyleTag(\`${content}\`, { id: "icon-assets" });\n`;
+          setup += `\
+useStyleTag(\`${content}\`, { id: "icon-assets" });
+`;
         }
       }
     }
@@ -90,30 +101,48 @@ export const prepareConfigFile = (
 
   if (typeof options.addThis === "string") {
     shouldImportUseScriptTag = true;
-    setup += `useScriptTag(\`//s7.addthis.com/js/300/addthis_widget.js#pubid=${options.addThis}\`);\n`;
+    setup += `\
+useScriptTag(\`//s7.addthis.com/js/300/addthis_widget.js#pubid=${options.addThis}\`);
+`;
   }
 
   if (options.backToTop) {
     shouldImportH = true;
-    configImport += `import BackToTop from "${CLIENT_FOLDER}components/BackToTop";\n`;
-    rootComponents += `() => h(BackToTop, { threshold: ${
+    configImport += `\
+import BackToTop from "${CLIENT_FOLDER}components/BackToTop.js";
+`;
+    rootComponents += `\
+() => h(BackToTop, { threshold: ${
       typeof options.backToTop === "number" ? options.backToTop : 300
-    } }),\n`;
+    } }),
+`;
   }
 
   return app.writeTemp(
     `components/config.js`,
-    `${
-      shouldImportUseScriptTag
-        ? `import { useScriptTag } from "${CLIENT_FOLDER}composables";\n`
-        : ""
-    }${
-      shouldImportUseStyleTag
-        ? `import { useStyleTag } from "${CLIENT_FOLDER}composables";\n`
-        : ""
-    }${
-      shouldImportH ? `import { h } from "vue";\n` : ""
-    }import { defineClientConfig } from "@vuepress/client";
+    `\
+import { defineClientConfig } from "@vuepress/client";
+${
+  shouldImportH
+    ? `\
+import { h } from "vue";
+`
+    : ""
+}
+${
+  shouldImportUseScriptTag
+    ? `\
+import { useScriptTag } from "${CLIENT_FOLDER}vueuse.js";
+`
+    : ""
+}\
+${
+  shouldImportUseStyleTag
+    ? `\
+import { useStyleTag } from "${CLIENT_FOLDER}vueuse.js";
+`
+    : ""
+}\
 ${configImport}
 
 export default defineClientConfig({
@@ -135,6 +164,7 @@ ${rootComponents
   .map((item) => `    ${item}`)
   .join("\n")}
   ],
-});`
+});
+`
   );
 };

@@ -32,9 +32,9 @@ After user press the copy button, a success hint will display on the screen. The
 
 ```js
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     plugins: {
       copyCode: {},

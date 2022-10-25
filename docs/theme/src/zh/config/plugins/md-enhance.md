@@ -149,12 +149,26 @@ tag:
 
 ```ts
 interface ImageMarkOptions {
-  /** lightmode only IDs */
+  /** 日间模式的 ID */
   light?: string[];
-  /** darkmode only IDs */
+  /** 夜间模式的 ID */
   dark?: string[];
 }
 ```
+
+### imageSize
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否启用图片尺寸支持。
+
+### imageTitle
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否启用图片标题支持。
 
 ### tasklist
 
@@ -181,14 +195,25 @@ interface TaskListOptions {
 }
 ```
 
-### tex
+### katex
 
 - 类型: `KatexOptions | boolean`
 - 默认值: `false`
 
-是否启用 $\TeX$ 语法支持。你可以传入一个对象作为 $\KaTeX$ 的配置选项。
+是否通过 $\KaTeX$ 启用 $\TeX$ 语法支持。你可以传入一个对象作为 $\KaTeX$ 的配置选项。
+
+特别低，你可以通过 `katex.mhchem: true` 来启用 mhchem 扩展。
 
 可用的选项，详见 [Katex 文档](https://katex.org/docs/options.html)。
+
+### mathjax
+
+- 类型: `MathJaxOptions | boolean`
+- 默认值: `false`
+
+是否通过 Math Jax 启用 $\TeX$ 语法支持。你可以传递一个对象来配置 Math Jax。
+
+可用的选项，详见 [源代码](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/main/packages/md-enhance/src/shared/mathjax.ts)。
 
 ### flowchart
 
@@ -249,6 +274,218 @@ interface TaskListOptions {
 - 默认值: `false`
 
 对行内语法进行样式化以创建代码片段
+
+### playground
+
+- 类型: `PlaygroundGlobalOptions`
+
+  ```ts
+  import type { CompilerOptions } from "typescript";
+
+  interface PlaygroundCodeConfig {
+    /**
+     * 代码块扩展名
+     *
+     * @description 它基于文件名，而不是代码块语言
+     */
+    ext: string;
+
+    /**
+     * 代码块内容
+     */
+    content: string;
+  }
+
+  interface PlaygroundData {
+    /**
+     * 交互演示标题
+     */
+    title?: string;
+
+    /**
+     * Import map 文件名
+     *
+     * @default 'import-map.json'
+     */
+    importMap?: string;
+
+    /**
+     * 交互演示文件信息
+     */
+    files: Record<
+      /**
+       * 文件名
+       */
+      string,
+      /**
+       * 文件详情
+       */
+      PlaygroundCodeConfig
+    >;
+
+    /**
+     * 交互演示设置
+     *
+     * @description 它是设置指令后的 json 内容的解析结果
+     */
+    settings: Record<string, unknown>;
+
+    /**
+     * 根据交互演示内容生成的 hash key
+     */
+    key: string;
+  }
+
+  interface PlaygroundOptions {
+    /**
+     * 交互演示容器名
+     */
+    name: string;
+
+    /**
+     * 交互演示组件名称
+     *
+     * @default 'Playground'
+     */
+    component?: string;
+
+    /**
+     * 属性获取器
+     */
+    propsGetter: (data: PlaygroundData) => Record<string, string>;
+  }
+
+  interface TSPresetPlaygroundOptions extends CompilerOptions {
+    /**
+     * 交互演示外部地址
+     *
+     * @default "https://www.typescriptlang.org/play"
+     */
+    service?: string;
+  }
+
+  export interface VuePresetPlaygroundOptions {
+    /**
+     * 交互演示外部地址
+     *
+     * @default "https://sfc.vuejs.org/"
+     */
+    service?: string;
+
+    /**
+     * 是否启用开发版本
+     *
+     * @default false
+     */
+    dev?: boolean;
+
+    /**
+     * 是否启用 SSR
+     *
+     * @default false
+     */
+    ssr?: boolean;
+  }
+
+  interface PlaygroundGlobalOptions {
+    /** 交互演示预设 */
+    presets: ("ts" | "vue" | PlaygroundOptions)[];
+    /** 交互演示配置 */
+    config?: {
+      ts?: TSPresetPlaygroundOptions;
+      vue?: VuePresetPlaygroundOptions;
+    };
+  }
+  ```
+
+- 必填: 否
+
+交互演示选项。
+
+### vuePlayground
+
+- 类型: `VuePlaygroundOptions | boolean`
+
+  ```ts
+  interface VuePlaygroundOptions {
+    /**
+     * 是否在交互演示中显示代码
+     *
+     * @default false
+     */
+    showCode?: boolean;
+
+    /**
+     * 指定 vue 版本
+     */
+    vueVersion?: string;
+
+    /**
+     * 指定默认的 Vue 运行时
+     *
+     * @default "https://unpkg.com/@vue/runtime-dom@${version}/dist/runtime-dom.esm-browser.js"
+     */
+    defaultVueRuntimeURL?: string;
+
+    /**
+     * 指定默认的 Vue 服务端渲染器
+     *
+     * @default "https://unpkg.com/@vue/server-renderer@${version}/dist/server-renderer.esm-browser.js"
+     */
+    defaultVueServerRendererURL?: string;
+
+    /**
+     * 是否启用自动调整大小
+     *
+     * @default true
+     */
+    autoResize?: boolean;
+
+    /**
+     * 是否显示 JS, CSS, SSR 面板
+     *
+     * @default false
+     */
+    showCompileOutput?: boolean;
+
+    /**
+     * 是否显示 import map
+     *
+     * @default true
+     */
+    showImportMap?: boolean;
+
+    /**
+     * 是否清空控制台
+     *
+     * @default false
+     */
+    clearConsole?: boolean;
+
+    /**
+     * 布局
+     *
+     * @default 'vertical'
+     */
+    layout?: "vertical" | "horizontal";
+
+    /**
+     * `vue/compiler-sfc` 配置项
+     */
+    sfcOptions?: SFCOptions;
+
+    /**
+     * 是否启用 SSR
+     *
+     * @default true
+     */
+    ssr?: boolean;
+  }
+  ```
+
+- 默认值: `false`
+
+是否启用 Vue 交互演示支持。
 
 ### demo
 
@@ -332,103 +569,6 @@ CodePen 编辑器显示情况，第一位代表 HTML ，第二位代表 JS，第
 
 默认值: `"https://unpkg.com/react-dom/umd/react-dom.production.min.js"`
 
-### playground
-
-- 类型: `PlaygroundOptions | boolean`
-- 默认值: `false`
-
-是否启用 Playground 支持。
-
-```ts
-/** Playground 配置 */
-interface PlaygroundOptions {
-  /** 模式: [internal, external] */
-  mode?: PlaygroundMode;
-  /**
-   * 外置模式配置
-   */
-  external?: ExternalPlaygroundOptions;
-  /**
-   * 内置式配置
-   */
-  internal?: InternalPlaygroundOptions;
-}
-
-/**
- * 外置模式配置
- */
-interface ExternalPlaygroundOptions {
-  /**
-   * playground 基础地址
-   */
-  base?: string;
-  /**
-   * 默认 import map, 默认值: "imports-map.json".
-   * 你也可以使用自己的 import map，比如: "user-imports.json".
-   */
-  defaultImportsMap?: string;
-  /**
-   * 其他配置，这些会被作为查询字符串传过去。
-   */
-  options?: Record<string, string>;
-}
-
-/**
- * Playground 内置模式配置
- * 详情请查看 `@vue/repl` 。
- */
-interface InternalPlaygroundOptions {
-  /**
-   * 指定默认的 Vue 运行时。
-   * 默认使用 unpkg.com CDN 。
-   */
-  defaultVueRuntimeURL?: string;
-  /**
-   * 指定 vue 版本
-   */
-  vueVersion?: string;
-  /**
-   * 默认 import map, 默认值: "imports-map.json".
-   * 你也可以使用自己的 import map，比如: "user-imports.json".
-   */
-  defaultImportsMap?: string;
-  /**
-   * 是否自动调整大小。
-   */
-  autoResize?: boolean;
-  /**
-   * 是否显示代码
-   */
-  showCode?: boolean;
-  /**
-   * 是否显示 js, css, ssr 面板
-   */
-  showCompileOutput?: boolean;
-  /**
-   * 是否显示 import map.
-   */
-  showImportMap?: boolean;
-  /**
-   * 是否清空控制台
-   */
-  clearConsole?: boolean;
-  /**
-   * 当设为 'vertical' 时，显示上下模式。
-   * 否则显示左右模式。
-   * 默认为 'vertical'.
-   */
-  layout?: string;
-  /**
-   * `vue/compiler-sfc`.配置项
-   */
-  sfcOptions?: SFCOptions;
-  /**
-   * 是否启用 SSR.
-   */
-  ssr?: boolean;
-}
-```
-
 ### presentation
 
 - 类型: `PresentationOptions | boolean`
@@ -479,25 +619,6 @@ interface InternalPlaygroundOptions {
 ::: tip
 
 如果你使用的主题有切换动画，建议配置此选项为 `切换动画时长 + 200`。
-
-:::
-
-### enableAll <Badge text="仅限示例" type="danger" />
-
-- 类型: `boolean`
-- 默认值: `false`
-
-启用全部功能。
-
-::: danger
-
-请仅将此选项用于体验或测试。
-
-插件完全支持代码分割，所以你应该使用下方选项并**仅**启用你需要的功能。
-
-启用不需要的功能将增加开发和构建时间。 (`markdown-it` 必须检查额外的语法)
-
-同时，一些功能会输出体积较大的文件到输出结果。(可高达 2MB)
 
 :::
 

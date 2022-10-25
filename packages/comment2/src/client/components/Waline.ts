@@ -1,29 +1,32 @@
 import { usePageFrontmatter, usePageLang, withBase } from "@vuepress/client";
-import { Waline } from "@waline/client/dist/component";
-import { pageviewCount } from "@waline/client/dist/pageview";
+import { Waline } from "@waline/client/dist/component.mjs";
+import { pageviewCount } from "@waline/client/dist/pageview.mjs";
 import { computed, defineComponent, h, onMounted, watch } from "vue";
 import { useRoute } from "vue-router";
-import { useLocaleConfig } from "vuepress-shared/lib/client";
+import { useLocaleConfig } from "vuepress-shared/client";
 
 import type { VNode } from "vue";
 import type {
   CommentPluginFrontmatter,
   WalineLocaleConfig,
   WalineOptions,
-} from "../../shared";
+} from "../../shared/index.js";
 
 import "@waline/client/dist/waline.css";
 import "../styles/waline.scss";
 
 declare const COMMENT_OPTIONS: WalineOptions;
 
+declare const WALINE_META: boolean;
 declare const WALINE_LOCALES: WalineLocaleConfig;
 
-export const walineOption = COMMENT_OPTIONS;
+const walineOption = COMMENT_OPTIONS;
+const walineLocales = WALINE_LOCALES;
+const enableWaline = Boolean(walineOption.serverURL);
 
-export const enableWaline = Boolean(walineOption.serverURL);
+if (WALINE_META) import("@waline/client/dist/waline-meta.css");
 
-export const walineLocales = WALINE_LOCALES;
+export { pageviewCount };
 
 export default defineComponent({
   name: "WalineComment",
@@ -69,8 +72,8 @@ export default defineComponent({
         ...(walineOption.locale || {}),
       },
       emoji: [
-        "//unpkg.com/@waline/emojis@1.0.1/weibo",
-        "//unpkg.com/@waline/emojis@1.0.1/bilibili",
+        "//unpkg.com/@waline/emojis@1.1.0/weibo",
+        "//unpkg.com/@waline/emojis@1.1.0/bilibili",
       ],
       dark: "html.dark",
       ...walineOption,

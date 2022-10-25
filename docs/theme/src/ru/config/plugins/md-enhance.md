@@ -33,25 +33,6 @@ tag:
 
 ## Опции плагина
 
-### enableAll <Badge text="Только демо" type="danger" />
-
-- Тип: `boolean`
-- По умолчанию: `false`
-
-Включить ли все функции.
-
-::: danger
-
-Пожалуйста, используйте эту опцию ТОЛЬКО для игры или тестирования.
-
-Плагин ПОЛНОСТЬЮ поддерживает древовидную структуру, поэтому вам следует использовать приведенные ниже параметры и включать ТОЛЬКО ту функцию, которую вы хотите использовать.
-
-Включение функций, которые вам не нужны, увеличит время разработки и сборки. (`markdown-it` должен проверять наличие дополнительных синтаксисов)
-
-Кроме того, некоторые функции будут добавлять большие куски в ваш вывод (может достигать 2 МБ).
-
-:::
-
 ### gfm
 
 - Тип: `boolean`
@@ -176,6 +157,20 @@ interface ImageMarkOptions {
 }
 ```
 
+### imageSize
+
+- Тип: `boolean`
+- По умолчанию: `false`
+
+Включить ли поддержку размера изображения.
+
+### imageTitle
+
+- Тип: `boolean`
+- По умолчанию: `false`
+
+Включить ли поддержку названия изображения.
+
 ### tasklist
 
 - Тип: `TaskListOptions | boolean`
@@ -201,14 +196,25 @@ interface TaskListOptions {
 }
 ```
 
-### tex
+### katex
 
-- Тип: `KatexOptions | boolean`
+- Тип: `KatexOptions & { mhchem?: boolean } | boolean`
 - По умолчанию: `false`
 
-Включить ли поддержку синтаксиса $\TeX$. Вы можете передать объект в конфигурацию $\KaTeX$.
+Включить ли поддержку синтаксиса $\TeX$ через $\KaTeX$. Вы можете передать объект в конфигурацию $\KaTeX$.
+
+В частности, вы можете включить расширение mhchem с помощью `katex.mhchem: true`.
 
 Доступные варианты смотрите в [Документации Katex](https://katex.org/docs/options.html).
+
+### mathjax
+
+- Type: `MathJaxOptions | boolean`
+- Default: `false`
+
+Включить ли поддержку синтаксиса $\TeX$ через Math Jax. Вы можете передать объект в конфигурацию Math Jax.
+
+Доступные варианты смотрите в [исходном коде](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/main/packages/md-enhance/src/shared/mathjax.ts).
 
 ### flowchart
 
@@ -269,6 +275,214 @@ interface TaskListOptions {
 - По умолчанию: `false`
 
 Стилизуйте встроенные токены, чтобы создать нужный фрагмент.
+
+### playground
+
+- Тип: `PlaygroundGlobalOptions`
+
+  ```ts
+  import type { CompilerOptions } from "typescript";
+
+  interface PlaygroundCodeConfig {
+    /**
+     * Code block extension
+     *
+     * @description It's based on filename, not code fence language
+     */
+    ext: string;
+
+    /**
+     * Code block content
+     */
+    content: string;
+  }
+
+  interface PlaygroundData {
+    /**
+     * Title of Playground
+     */
+    title?: string;
+
+    /**
+     * Import map file name
+     *
+     * @default 'import-map.json'
+     */
+    importMap?: string;
+
+    /**
+     * Playground iles info
+     */
+    files: Record<
+      /** File name */
+      string,
+      /** File detail */
+      PlaygroundCodeConfig
+    >;
+
+    /**
+     * Playground settings
+     *
+     * @description It's parsed result of json content after setting directive
+     */
+    settings: Record<string, unknown>;
+
+    /**
+     * hash key based on playground content
+     */
+    key: string;
+  }
+
+  interface PlaygroundOptions {
+    /**
+     * Playground container name
+     */
+    name: string;
+
+    /**
+     * Playground component name
+     *
+     * @default 'Playground'
+     */
+    component?: string;
+
+    /**
+     * Props getter
+     */
+    propsGetter: (data: PlaygroundData) => Record<string, string>;
+  }
+
+  interface TSPresetPlaygroundOptions extends CompilerOptions {
+    /**
+     * external playground service url
+     *
+     * @default "https://www.typescriptlang.org/play"
+     */
+    service?: string;
+  }
+
+  export interface VuePresetPlaygroundOptions {
+    /**
+     * external playground service url
+     *
+     * @default "https://sfc.vuejs.org/"
+     */
+    service?: string;
+
+    /**
+     * Whether to use dev version
+     *
+     * @default false
+     */
+    dev?: boolean;
+
+    /**
+     * Whether to enable SSR
+     *
+     * @default false
+     */
+    ssr?: boolean;
+  }
+
+  interface PlaygroundGlobalOptions {
+    /** Playground presets */
+    presets: ("ts" | "vue" | PlaygroundOptions)[];
+    /** Playground config */
+    config?: {
+      ts?: TSPresetPlaygroundOptions;
+      vue?: VuePresetPlaygroundOptions;
+    };
+  }
+  ```
+
+- Обязательный: Нет
+
+Варианты плейграунда.
+
+### vuePlayground
+
+- Тип: `VuePlaygroundOptions | boolean`
+
+  ```ts
+  interface VuePlaygroundOptions {
+    /**
+     * Whether to show code in playground
+     *
+     * @default false
+     */
+    showCode?: boolean;
+
+    /**
+     * specify the version of vue
+     */
+    vueVersion?: string;
+
+    /**
+     * specify default URL to import Vue runtime from in the sandbox
+     *
+     * @default "https://unpkg.com/@vue/runtime-dom@${version}/dist/runtime-dom.esm-browser.js"
+     */
+    defaultVueRuntimeURL?: string;
+
+    /**
+     * Specify default URL to import Vue Server Renderer from in the sandbox
+     *
+     * @default "https://unpkg.com/@vue/server-renderer@${version}/dist/server-renderer.esm-browser.js"
+     */
+    defaultVueServerRendererURL?: string;
+
+    /**
+     * Whether to enable repl's editor resizable
+     *
+     * @default true
+     */
+    autoResize?: boolean;
+
+    /**
+     * Whether to show JS, CSS, SSR panel
+     *
+     * @default false
+     */
+    showCompileOutput?: boolean;
+
+    /**
+     * Whether to show import map
+     *
+     * @default true
+     */
+    showImportMap?: boolean;
+
+    /**
+     * Whether to clear console
+     *
+     * @default false
+     */
+    clearConsole?: boolean;
+
+    /**
+     * Layout
+     *
+     * @default 'vertical'
+     */
+    layout?: "vertical" | "horizontal";
+
+    /**
+     * Options to configure the `vue/compiler-sfc`
+     */
+    sfcOptions?: SFCOptions;
+
+    /**
+     * Whether to enable SSR
+     *
+     * @default true
+     */
+    ssr?: boolean;
+  }
+  ```
+
+- По умолчанию: `false`
+
+Включить ли поддержку Vue Playground.
 
 ### demo
 

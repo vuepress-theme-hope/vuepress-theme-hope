@@ -9,6 +9,12 @@ on:
 jobs:
   deploy-demo:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        name:
+          - blog
+          - docs
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -22,25 +28,27 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
           cache: pnpm
 
       - name: Build project
         env:
-          NODE_OPTIONS: --max_old_space_size=4096
+          NODE_OPTIONS: --max_old_space_size=8192
         run: pnpm run build
 
       - name: Build GitHub Pages Demo
         env:
-          BASE: /v2-demo/
+          BASE: /${{ matrix.name }}-demo/
           HOSTNAME: https://vuepress-theme-hope.github.io/
-        run: pnpm --filter theme-demo demo:vite-build
+        run: |-
+          pnpm --filter theme-${{ matrix.name }}-demo demo:vite-build
+          > demo/theme-${{ matrix.name }}/dist/.nojekyll
 
       - name: Deploy to gh pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          repository-name: vuepress-theme-hope/v2-demo
+          repository-name: vuepress-theme-hope/${{ matrix.name }}-demo
           branch: gh-pages
-          folder: demo/theme/dist
+          folder: demo/theme-${{ matrix.name }}/dist
           token: ${{ secrets.ACCESS_TOKEN }}
           single-commit: true

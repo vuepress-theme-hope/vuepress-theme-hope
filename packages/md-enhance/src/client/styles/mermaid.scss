@@ -1,4 +1,4 @@
-.md-enhance-mermaid {
+.mermaid-wrapper {
   overflow-x: auto;
   padding: 0.6em 0.4em;
   text-align: center;
@@ -13,7 +13,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--grey14);
 
     svg {
       width: 4em;

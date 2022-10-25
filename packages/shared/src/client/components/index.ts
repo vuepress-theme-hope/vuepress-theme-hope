@@ -1,2 +1,2 @@
-export { IconBase } from "./IconBase";
-export { RenderDefault } from "./RenderDefault";
+export { IconBase } from "./IconBase.js";
+export { RenderDefault } from "./RenderDefault.js";

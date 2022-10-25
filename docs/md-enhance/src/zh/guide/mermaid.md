@@ -31,9 +31,9 @@ export default {
 
 ```js {8}
 // .vuepress/config.js
-const { mdEnhancePlugin } = require("vuepress-plugin-md-enhance");
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
-module.exports = {
+export default {
   plugins: [
     mdEnhancePlugin({
       // 启用 mermaid
@@ -419,6 +419,7 @@ merge release
 
 ::: details Code
 
+````md
 ```git-graph
 commit
 branch hotfix
@@ -462,6 +463,7 @@ merge main
 checkout develop
 merge release
 ```
+````
 
 :::
 

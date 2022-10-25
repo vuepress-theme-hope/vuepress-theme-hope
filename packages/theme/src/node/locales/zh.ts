@@ -1,4 +1,4 @@
-import type { HopeThemeLocaleData } from "../../shared";
+import type { HopeThemeLocaleData } from "../../shared/index.js";
 
 export const zhLocale: HopeThemeLocaleData = {
   lang: "zh-CN",
@@ -62,7 +62,7 @@ export const zhLocale: HopeThemeLocaleData = {
 
   routeLocales: {
     // eslint-disable-next-line @typescript-eslint/naming-convention
-    "404msg": [
+    notFoundMsg: [
       "这里什么也没有",
       "我们是怎么来到这儿的？",
       "这 是 四 零 四 !",

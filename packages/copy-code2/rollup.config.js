@@ -1,4 +1,4 @@
-import { rollupTypescript } from "../../scripts/rollup";
+import { rollupTypescript } from "../../scripts/rollup.js";
 
 export default [
   ...rollupTypescript("node/index", {
@@ -8,6 +8,7 @@ export default [
       "@vuepress/utils",
       "vuepress-plugin-sass-palette",
     ],
+    dtsExternal: ["vuepress-shared"],
   }),
   ...rollupTypescript("client/config", {
     external: [
@@ -15,7 +16,7 @@ export default [
       "balloon-css/balloon.css",
       "vue",
       "vue-router",
-      "vuepress-shared/lib/client",
+      "vuepress-shared/client",
       /\.scss$/,
     ],
     dtsExternal: ["balloon-css/balloon.css", /\.scss$/],

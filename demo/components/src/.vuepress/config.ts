@@ -20,10 +20,12 @@ export default defineUserConfig({
     sidebar: [
       "/demo/",
       "/demo/badge",
+      "/demo/bilibili",
       "/demo/codepen",
       "/demo/fonticon",
       "/demo/pdf",
       "/demo/stackblitz",
+      "/demo/videoplayer",
       "/demo/youtube",
     ],
 
@@ -38,11 +40,13 @@ export default defineUserConfig({
       backToTop: true,
       components: [
         "Badge",
+        "BiliBili",
         "Catalog",
         "CodePen",
         "FontIcon",
         "PDF",
         "StackBlitz",
+        "VideoPlayer",
         "YouTube",
       ],
       iconAssets: "iconfont",

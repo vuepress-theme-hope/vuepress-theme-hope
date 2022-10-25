@@ -1,1 +1,1 @@
-export * from "./photoswipe";
+export * from "./photoswipe.js";

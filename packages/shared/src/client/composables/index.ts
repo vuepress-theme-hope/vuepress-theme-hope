@@ -1,3 +1,3 @@
-export * from "./component";
-export * from "./locales";
-export * from "./page";
+export * from "./component.js";
+export * from "./locales.js";
+export * from "./page.js";

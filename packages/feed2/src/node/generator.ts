@@ -1,15 +1,15 @@
 import { chalk, fs } from "@vuepress/utils";
-import { dirname } from "path";
+import { dirname } from "node:path";
 
-import { Feed } from "./feed";
-import { getFeedChannelOption, getFilename, getFeedLinks } from "./options";
-import { FeedPage } from "./page";
-import { compareDate, logger } from "./utils";
+import { Feed } from "./feed.js";
+import { getFeedChannelOption, getFilename, getFeedLinks } from "./options.js";
+import { FeedPage } from "./page.js";
+import { compareDate, logger } from "./utils.js";
 
 import type { App, Page } from "@vuepress/core";
 import type { GitData } from "@vuepress/plugin-git";
-import type { ResolvedFeedOptionsMap } from "./options";
-import type { FeedPluginFrontmatter } from "../shared";
+import type { ResolvedFeedOptionsMap } from "./options.js";
+import type { FeedPluginFrontmatter } from "../shared/index.js";
 
 export class FeedGenerator {
   /** feed 生成器 */

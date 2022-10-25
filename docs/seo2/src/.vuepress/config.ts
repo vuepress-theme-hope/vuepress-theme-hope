@@ -1,7 +1,5 @@
 import { config } from "docs-shared";
-import theme from "./theme";
-
-const base = <"/" | `/${string}/`>process.env.BASE || "/";
+import theme from "./theme.js";
 
 export default config(
   {

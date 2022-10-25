@@ -43,7 +43,8 @@ Added more syntax to Markdown, enriching documentation and blog writing:
 - [Code demo](markdown/demo.md)
 - [Presentation](markdown/presentation.md)
 - [Stylize](markdown/stylize.md)
-- [Playgroud](markdown/playground.md)
+- [Playground](markdown/playground.md)
+- [Vue Playground](markdown/vue-playground.md)
 - [Components out of box](markdown/components.md)
 - [Customize Themes](interface/code-theme.md)
 
@@ -53,7 +54,7 @@ New in Page:
 
 - [Path navigation](layout/breadcrumb.md)
 
-- Add [TOC anchor](layout/page.md#heading-list) on the right side under the desktop width
+- Add [TOC anchor](layout/page.md#header-list) on the right side under the desktop width
 
 - [Custom footer](layout/footer.md)
 

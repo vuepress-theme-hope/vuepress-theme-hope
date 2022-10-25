@@ -1,7 +1,7 @@
-declare module "@CommentProvider" {
-  import type { ComponentOptions } from "vue";
+declare module "vuepress-plugin-comment2/provider" {
+  import type { DefineComponent } from "vue";
 
-  const component: ComponentOptions;
+  const component: DefineComponent;
 
   export default component;
 }

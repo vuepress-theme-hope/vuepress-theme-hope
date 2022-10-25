@@ -1,6 +1,6 @@
-import { droppedLogger } from "./utils";
+import { droppedLogger } from "./utils.js";
 
-import type { FeedOptions } from "../../shared";
+import type { FeedOptions } from "../../shared/index.js";
 
 /** @deprecated */
 export const convertOptions = (

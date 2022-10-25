@@ -1,7 +1,9 @@
 import { defineComponent, h } from "vue";
+import { useSize } from "../composables/index.js";
 
 import type { VNode, PropType } from "vue";
 
+import "../styles/stack-blitz.scss";
 export default defineComponent({
   name: "StackBlitz",
 
@@ -16,9 +18,19 @@ export default defineComponent({
       required: true,
     },
 
+    width: {
+      type: [String, Number],
+      default: "100%",
+    },
+
     height: {
       type: [String, Number],
-      default: "80vh",
+      default: undefined,
+    },
+
+    ratio: {
+      type: Number,
+      default: 16 / 9,
     },
 
     /**
@@ -78,8 +90,11 @@ export default defineComponent({
   },
 
   setup(props) {
+    const { el, width, height } = useSize<HTMLIFrameElement>(props);
+
     return (): VNode =>
       h("iframe", {
+        ref: el,
         class: "stack-blitz-iframe",
         src: `https://stackblitz.com/edit/${props.id}?embed=${
           props.embed ? 1 : 0
@@ -92,13 +107,10 @@ export default defineComponent({
         }${props.hideNavigation ? "&hideNavigation=1" : ""}${
           props.hidedevtools ? "&hidedevtools=1" : ""
         }`,
+        allow: "clipboard-write",
         style: {
-          width: "100%",
-          "border-radius": "8px",
-          height:
-            typeof props.height === "string"
-              ? props.height
-              : `${props.height}px`,
+          width: width.value,
+          height: height.value,
         },
       });
   },

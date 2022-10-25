@@ -10,7 +10,7 @@ tag:
 
 让你的 VuePress 站点中的 Markdown 文件支持流程图。
 
-本插件利用了 [flowchart.js](https://github.com/adrai/flowchart.js) 来支持这一功能。
+我们使用 [flowchart.js](https://github.com/adrai/flowchart.js) 来支持这一功能。
 
 <!-- more -->
 
@@ -40,9 +40,9 @@ export default defineUserConfig({
 
 ```js {7-9}
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     plugins: {
       mdEnhance: {

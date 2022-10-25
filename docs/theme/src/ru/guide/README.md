@@ -43,6 +43,8 @@ tag:
 - [Демонстрация кода](markdown/demo.md)
 - [Презентация](markdown/presentation.md)
 - [Стилизация](markdown/stylize.md)
+- [Playground](markdown/playground.md)
+- [Vue Playground](markdown/vue-playground.md)
 - [Компоненты из коробки](markdown/components.md)
 - [Кастомизация темы](interface/code-theme.md)
 
@@ -52,7 +54,7 @@ tag:
 
 - [Путь навигации](layout/breadcrumb.md)
 
-- Добавлен [якорь TOC](layout/page.md#heading-list) справа ниже ширины рабочего стола
+- Добавлен [якорь TOC](layout/page.md#список-заголовков) справа ниже ширины рабочего стола
 
 - [Пользовательский футер](layout/footer.md)
 
@@ -77,9 +79,9 @@ tag:
 
 - [Темный режим](interface/darkmode.md): позволяет переключаться вручную или применять автоматически в соответствии с настройками устройства
 
-- [Кнопка полного экрана](interface/others.md#fullscreen-button)
+- [Кнопка полного экрана](interface/others.md#полноэкранная-кнопка)
 
-- [Кнопка «Вернуться к началу»](interface/others.md#back-to-top-button)
+- [Кнопка «Вернуться к началу»](interface/others.md#кнопка-«вернуться-к-началу»)
 
 ### Улучшение страницы
 

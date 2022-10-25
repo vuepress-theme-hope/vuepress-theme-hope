@@ -1,10 +1,9 @@
-import { hash } from "@vuepress/utils";
-
-import { container } from "./container";
+import { utoa } from "vuepress-shared/node";
+import { container } from "./container.js";
 
 import type { PluginSimple } from "markdown-it";
-import type { default as Token } from "markdown-it/lib/token";
-import type { CodeDemoOptions } from "../../shared";
+import type { default as Token } from "markdown-it/lib/token.js";
+import type { CodeDemoOptions } from "../../shared/index.js";
 
 export const CODE_DEMO_DEFAULT_SETTING: CodeDemoOptions = {
   useBabel: false,
@@ -35,15 +34,15 @@ const getPlugin =
           if (type === `container_${name}_close`) break;
           if (!content) continue;
           if (type === "fence") {
-            if (info === "json") config = encodeURIComponent(content);
+            if (info === "json") config = utoa(content);
             else code[info] = content;
           }
         }
 
         return `
-<CodeDemo id="code-demo-${hash(code)}" type="${name.split("-")[0]}"${
+<CodeDemo id="code-demo-${index}" type="${name.split("-")[0]}"${
           title ? ` title="${encodeURIComponent(title)}"` : ""
-        }${config ? ` config="${config}"` : ""} code="${encodeURIComponent(
+        }${config ? ` config="${config}"` : ""} code="${utoa(
           JSON.stringify(code)
         )}">
 `;

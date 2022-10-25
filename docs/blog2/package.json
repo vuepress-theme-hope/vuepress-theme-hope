@@ -1,6 +1,6 @@
 {
   "name": "blog2-docs",
-  "version": "2.0.0-beta.91",
+  "version": "2.0.0-beta.114",
   "private": true,
   "description": "Docs for vuepress-plugin-blog2",
   "license": "MIT",
@@ -18,11 +18,11 @@
     "docs:webpack-dev": "vuepress-webpack dev src"
   },
   "dependencies": {
-    "@vuepress/client": "2.0.0-beta.49",
+    "@vuepress/client": "2.0.0-beta.53",
     "docs-shared": "workspace:*",
-    "sass-loader": "13.0.2",
-    "vue": "3.2.37",
-    "vuepress-vite": "2.0.0-beta.49",
-    "vuepress-webpack": "2.0.0-beta.49"
+    "sass-loader": "13.1.0",
+    "vue": "3.2.41",
+    "vuepress-vite": "2.0.0-beta.53",
+    "vuepress-webpack": "2.0.0-beta.53"
   }
 }

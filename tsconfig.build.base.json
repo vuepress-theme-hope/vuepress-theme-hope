@@ -16,8 +16,8 @@
 
     // Modules
     "baseUrl": "./",
-    "module": "es2020",
-    "moduleResolution": "node",
+    "module": "ESNext",
+    "moduleResolution": "NodeNext",
     "resolveJsonModule": true,
 
     // Emit
@@ -41,11 +41,11 @@
     "forceConsistentCasingInFileNames": true,
 
     // lib
-    "lib": ["es2021"],
+    "lib": ["ES2021"],
     // mininal node 14 support
-    "target": "es2020",
+    "target": "ES2020",
     // mininal node 16 support
-    // "target": "es2021",
+    // "target": "ES2021",
 
     // Compiler Diagnostics
     "composite": true,

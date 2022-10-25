@@ -1,11 +1,12 @@
 import { chalk } from "@vuepress/utils";
-import { default as ora } from "ora";
+import ora from "ora";
+import type { Ora } from "ora";
 
 /**
  * Shell Logger
  */
 export class Logger {
-  private currentInstance: ora.Ora | null = ora();
+  private currentInstance: Ora | null = ora();
   constructor(
     /**
      * Plugin name
@@ -19,7 +20,7 @@ export class Logger {
    * @param text Loading hint text
    * @returns Ora Instance
    */
-  create(text: string): ora.Ora {
+  create(text: string): Ora {
     this.currentInstance = ora({
       prefixText: chalk.blue(`${this.name}: `) || "",
       text,
@@ -44,7 +45,7 @@ export class Logger {
    * @param text Loading hint text
    * @returns Ora Instance
    */
-  load(text = ""): ora.Ora {
+  load(text = ""): Ora {
     return (
       !text && this.currentInstance ? this.currentInstance : this.create(text)
     ).start();
@@ -56,9 +57,11 @@ export class Logger {
    * @param text Loading hint text
    * @returns Ora Instance
    */
-  info(text = ""): ora.Ora {
+  info(text = ""): Ora {
     return (
-      !text && this.currentInstance ? this.currentInstance : this.create(text)
+      !text && this.currentInstance
+        ? this.currentInstance
+        : this.create(chalk.blue(text))
     ).info();
   }
 
@@ -68,9 +71,11 @@ export class Logger {
    * @param text Loading hint text
    * @returns Ora Instance
    */
-  succeed(text = ""): ora.Ora {
+  succeed(text = ""): Ora {
     return (
-      !text && this.currentInstance ? this.currentInstance : this.create(text)
+      !text && this.currentInstance
+        ? this.currentInstance
+        : this.create(chalk.green(text))
     ).succeed();
   }
 
@@ -80,9 +85,11 @@ export class Logger {
    * @param text Loading hint text
    * @returns Ora Instance
    */
-  warn(text = ""): ora.Ora {
+  warn(text = ""): Ora {
     return (
-      !text && this.currentInstance ? this.currentInstance : this.create(text)
+      !text && this.currentInstance
+        ? this.currentInstance
+        : this.create(chalk.yellow(text))
     ).warn();
   }
 
@@ -92,9 +99,11 @@ export class Logger {
    * @param text Loading hint text
    * @returns Ora Instance
    */
-  error(text = ""): ora.Ora {
+  error(text = ""): Ora {
     return (
-      !text && this.currentInstance ? this.currentInstance : this.create(text)
+      !text && this.currentInstance
+        ? this.currentInstance
+        : this.create(chalk.red(text))
     ).fail();
   }
 }

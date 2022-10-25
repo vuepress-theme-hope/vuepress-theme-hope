@@ -7,15 +7,16 @@ import {
   ref,
   watch,
 } from "vue";
-import { LoadingIcon } from "./icons";
+import { atou } from "vuepress-shared/client";
+import { LoadingIcon } from "./icons.js";
 
-import type MermaidAPI from "mermaid/mermaidAPI";
+import type { Config, Mermaid } from "mermaid";
 import type { VNode } from "vue";
 
 import "../styles/mermaid.scss";
 
 declare const MARKDOWN_ENHANCE_DELAY: number;
-declare const MERMAID_OPTIONS: MermaidAPI.Config;
+declare const MERMAID_OPTIONS: Config;
 
 const getThemeVariables = (isDarkMode: boolean): Record<string, unknown> => {
   return {
@@ -88,7 +89,7 @@ export default defineComponent({
 
     onMounted(() => {
       const html = document.querySelector("html")!;
-      const code = decodeURIComponent(props.code);
+      const code = atou(props.code);
 
       const getDarkmodeStatus = (): boolean =>
         html.classList.contains("dark") ||
@@ -98,10 +99,15 @@ export default defineComponent({
       isDarkmode.value = getDarkmodeStatus();
 
       void Promise.all([
-        import(/* webpackChunkName: "mermaid" */ "mermaid"),
+        // FIXME: Fix types issue in upstream
+        import(
+          /* webpackChunkName: "mermaid" */ "mermaid"
+        ) as unknown as Promise<{
+          default: Mermaid;
+        }>,
         new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
-      ]).then(([mermaid]) => {
-        const { initialize, render } = mermaid.default;
+      ]).then(([{ default: mermaid }]) => {
+        const { initialize, render } = mermaid;
 
         const renderMermaid = (): void => {
           // generate a unvisiable container
@@ -123,8 +129,6 @@ export default defineComponent({
             flowchart: { useMaxWidth: false },
             sequence: { useMaxWidth: false },
             journey: { useMaxWidth: false },
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-ignore
             gantt: { useMaxWidth: false },
             er: { useMaxWidth: false },
             pie: { useMaxWidth: false },
@@ -169,7 +173,7 @@ export default defineComponent({
         "div",
         {
           ref: mermaidElement,
-          class: ["md-enhance-mermaid", { loading: !svgCode.value }],
+          class: ["mermaid-wrapper", { loading: !svgCode.value }],
         },
         svgCode.value
           ? // mermaid

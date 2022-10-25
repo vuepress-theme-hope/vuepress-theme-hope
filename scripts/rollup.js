@@ -1,13 +1,11 @@
 import commonjs from "@rollup/plugin-commonjs";
-import json from "@rollup/plugin-json";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
-import typescript from "@rollup/plugin-typescript";
 import copy from "rollup-plugin-copy";
 import dts from "rollup-plugin-dts";
-import { terser } from "rollup-plugin-terser";
-import shebang from "./shebang";
+import esbuild from "rollup-plugin-esbuild";
+import shebang from "./shebang.js";
 
-const isProduction = process.env.mode === "production";
+const isProduction = process.env.NODE_ENV === "production";
 
 export const rollupTypescript = (
   filePath,
@@ -17,7 +15,6 @@ export const rollupTypescript = (
     dtsExternal = [],
     resolve = false,
     copy: copyOptions = [],
-    tsconfig = {},
     output = {},
     inlineDynamicImports = true,
     preserveShebang = false,
@@ -28,18 +25,17 @@ export const rollupTypescript = (
     output: [
       {
         file: `./lib/${filePath}.js`,
-        format: filePath.startsWith("client/") ? "esm" : "cjs",
+        format: "esm",
         sourcemap: true,
         exports: "named",
+        inlineDynamicImports,
         ...output,
       },
     ],
     plugins: [
       ...(preserveShebang ? [shebang()] : []),
-      typescript(tsconfig),
-      json(),
       ...(resolve ? [nodeResolve({ preferBuiltins: true }), commonjs()] : []),
-      ...(isProduction ? [terser()] : []),
+      esbuild({ charset: "utf8", minify: isProduction, target: "node14" }),
       ...(copyOptions.length
         ? [
             copy({
@@ -52,7 +48,6 @@ export const rollupTypescript = (
           ]
         : []),
     ],
-    inlineDynamicImports,
     external,
     treeshake: {
       unknownGlobalSideEffects: false,

@@ -1,4 +1,4 @@
-import type { PWALocaleConfig } from "../shared";
+import type { PWALocaleConfig } from "../shared/index.js";
 
 /** Muti language config for pwa popup */
 export const pwaLocales: PWALocaleConfig = {
@@ -186,5 +186,21 @@ export const pwaLocales: PWALocaleConfig = {
       "Esta aplicación se puede instalar en su PC o dispositivo móvil. Esto permitirá que esta aplicación web se vea y se comporte como cualquier otra aplicación instalada. Lo encontrará en su lista de aplicaciones y podrá fijarlo a su pantalla de inicio, menús de inicio o barras de tareas. Esta aplicación web instalada también podrá interactuar de manera segura con otras aplicaciones y su sistema operativo.",
     hint: "Nuevo contenido encontrado.",
     update: "Hay nuevo contenido disponible.",
+  },
+
+  "/ja/": {
+    install: "インストール",
+    iOSInstall:
+      "共有ボタンをタップし、「ホームスクリーンに追加」をタップします",
+    cancel: "キャンセル",
+    close: "閉じる",
+    prevImage: "前の画像",
+    nextImage: "次の画像",
+    desc: "詳細",
+    feature: "主な特徴",
+    explain:
+      "このアプリは、PCまたはモバイルデバイスにインストールすることができます。 これにより、このウェブアプリは、インストールされている他のアプリと同様に表示され、動作するようになります。 アプリ一覧で見つけることができ、ホーム画面、スタートメニュー、タスクバーに固定することができます。 このインストールされたウェブアプリケーションは、他のアプリケーションやオペレーティングシステムと安全にやり取りすることもできます。",
+    hint: "新しいコンテンツが見つかりました。",
+    update: "新しいコンテンツが登場しました。",
   },
 };

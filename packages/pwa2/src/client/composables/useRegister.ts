@@ -1,6 +1,6 @@
 import { withBase } from "@vuepress/client";
 
-import type { PWAEvent } from "./usePWAEvent";
+import type { PWAEvent } from "./usePWAEvent.js";
 
 declare const SW_PATH: string;
 
@@ -24,9 +24,11 @@ export const useRegister = async (event: PWAEvent): Promise<void> => {
       event.emit("cached", registration);
     },
 
-    updatefound(registration) {
-      console.log("[PWA]: New content is downloading.");
-      event.emit("updatefound", registration);
+    async updatefound(registration) {
+      if (await navigator.serviceWorker.getRegistration()) {
+        console.log("[PWA]: New content is downloading.");
+        event.emit("updatefound", registration);
+      }
     },
 
     updated(registration) {

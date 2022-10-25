@@ -1,4 +1,4 @@
-import type { CopyrightLocaleConfig } from "../shared";
+import type { CopyrightLocaleConfig } from "../shared/index.js";
 
 /** Muti language config for copyright */
 export const copyrightLocales: CopyrightLocaleConfig = {
@@ -41,6 +41,12 @@ export const copyrightLocales: CopyrightLocaleConfig = {
   "/es/": {
     author: "Derechos de autor :author",
     license: "Licencia :license",
+    link: ":link",
+  },
+
+  "/ja/": {
+    author: "著作権者 :author",
+    license: ":licenseプロトコルに基づく",
     link: ":link",
   },
 };

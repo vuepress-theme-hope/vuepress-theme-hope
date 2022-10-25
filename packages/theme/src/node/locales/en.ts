@@ -1,4 +1,4 @@
-import type { HopeThemeLocaleData } from "../../shared";
+import type { HopeThemeLocaleData } from "../../shared/index.js";
 
 export const enLocale: HopeThemeLocaleData = {
   lang: "en-US",
@@ -62,7 +62,7 @@ export const enLocale: HopeThemeLocaleData = {
 
   routeLocales: {
     // eslint-disable-next-line @typescript-eslint/naming-convention
-    "404msg": [
+    notFoundMsg: [
       "There’s nothing here.",
       "How did we get here?",
       "That’s a Four-Oh-Four.",

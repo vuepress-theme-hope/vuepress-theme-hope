@@ -43,7 +43,7 @@ Whether to support full GFM syntax.
 
 For full GFM syntax, see [GFM](https://github.github.com/gfm/).
 
-We are not 100% supporting it to be honestly, we only supply it’s syntax inlucding tasklists, footnote and so on.
+We are not 100% supporting it to be honestly, we only supply it’s syntax including tasklists, footnote and so on.
 
 Some of the behavior might be different, for example to allow Vue syntax, we are not disallowing `<script>` tags. But in most situation, the behavior should be same.
 
@@ -156,6 +156,20 @@ interface ImageMarkOptions {
 }
 ```
 
+### imageSize
+
+- Type: `boolean`
+- Default: `false`
+
+Whether enable image size support.
+
+### imageTitle
+
+- Type: `boolean`
+- Default: `false`
+
+Whether enable image title support.
+
 ### tasklist
 
 - Type: `TaskListOptions | boolean`
@@ -181,14 +195,25 @@ interface TaskListOptions {
 }
 ```
 
-### tex
+### katex
 
-- Type: `KatexOptions | boolean`
+- Type: `KatexOptions & { mhchem?: boolean } | boolean`
 - Default: `false`
 
-Whether to enable $\TeX$ syntax support. You can pass an object to config $\KaTeX$.
+Whether to enable $\TeX$ syntax support through $\KaTeX$. You can pass an object to config $\KaTeX$.
+
+In particular, you can enable the mhchem extension with `katex.mhchem: true`.
 
 Please see [Katex Docs](https://katex.org/docs/options.html) for available options.
+
+### mathjax
+
+- Type: `MathJaxOptions | boolean`
+- Default: `false`
+
+Whether to enable $\TeX$ syntax support through Math Jax. You can pass an object to config Math Jax.
+
+Please see [source code](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/main/packages/md-enhance/src/shared/mathjax.ts) for available options.
 
 ### flowchart
 
@@ -249,6 +274,214 @@ Whether to enable [Mermaid](https://mermaid-js.github.io/mermaid/#/) support.
 - Default: `false`
 
 Stylize inline tokens to create snippet you want.
+
+### playground
+
+- Type: `PlaygroundGlobalOptions`
+
+  ```ts
+  import type { CompilerOptions } from "typescript";
+
+  interface PlaygroundCodeConfig {
+    /**
+     * Code block extension
+     *
+     * @description It's based on filename, not code fence language
+     */
+    ext: string;
+
+    /**
+     * Code block content
+     */
+    content: string;
+  }
+
+  interface PlaygroundData {
+    /**
+     * Title of Playground
+     */
+    title?: string;
+
+    /**
+     * Import map file name
+     *
+     * @default 'import-map.json'
+     */
+    importMap?: string;
+
+    /**
+     * Playground iles info
+     */
+    files: Record<
+      /** File name */
+      string,
+      /** File detail */
+      PlaygroundCodeConfig
+    >;
+
+    /**
+     * Playground settings
+     *
+     * @description It's parsed result of json content after setting directive
+     */
+    settings: Record<string, unknown>;
+
+    /**
+     * hash key based on playground content
+     */
+    key: string;
+  }
+
+  interface PlaygroundOptions {
+    /**
+     * Playground container name
+     */
+    name: string;
+
+    /**
+     * Playground component name
+     *
+     * @default 'Playground'
+     */
+    component?: string;
+
+    /**
+     * Props getter
+     */
+    propsGetter: (data: PlaygroundData) => Record<string, string>;
+  }
+
+  interface TSPresetPlaygroundOptions extends CompilerOptions {
+    /**
+     * external playground service url
+     *
+     * @default "https://www.typescriptlang.org/play"
+     */
+    service?: string;
+  }
+
+  export interface VuePresetPlaygroundOptions {
+    /**
+     * external playground service url
+     *
+     * @default "https://sfc.vuejs.org/"
+     */
+    service?: string;
+
+    /**
+     * Whether to use dev version
+     *
+     * @default false
+     */
+    dev?: boolean;
+
+    /**
+     * Whether to enable SSR
+     *
+     * @default false
+     */
+    ssr?: boolean;
+  }
+
+  interface PlaygroundGlobalOptions {
+    /** Playground presets */
+    presets: ("ts" | "vue" | PlaygroundOptions)[];
+    /** Playground config */
+    config?: {
+      ts?: TSPresetPlaygroundOptions;
+      vue?: VuePresetPlaygroundOptions;
+    };
+  }
+  ```
+
+- Required: No
+
+Playground options.
+
+### vuePlayground
+
+- Type: `VuePlaygroundOptions | boolean`
+
+  ```ts
+  interface VuePlaygroundOptions {
+    /**
+     * Whether to show code in playground
+     *
+     * @default false
+     */
+    showCode?: boolean;
+
+    /**
+     * specify the version of vue
+     */
+    vueVersion?: string;
+
+    /**
+     * specify default URL to import Vue runtime from in the sandbox
+     *
+     * @default "https://unpkg.com/@vue/runtime-dom@${version}/dist/runtime-dom.esm-browser.js"
+     */
+    defaultVueRuntimeURL?: string;
+
+    /**
+     * Specify default URL to import Vue Server Renderer from in the sandbox
+     *
+     * @default "https://unpkg.com/@vue/server-renderer@${version}/dist/server-renderer.esm-browser.js"
+     */
+    defaultVueServerRendererURL?: string;
+
+    /**
+     * Whether to enable repl's editor resizable
+     *
+     * @default true
+     */
+    autoResize?: boolean;
+
+    /**
+     * Whether to show JS, CSS, SSR panel
+     *
+     * @default false
+     */
+    showCompileOutput?: boolean;
+
+    /**
+     * Whether to show import map
+     *
+     * @default true
+     */
+    showImportMap?: boolean;
+
+    /**
+     * Whether to clear console
+     *
+     * @default false
+     */
+    clearConsole?: boolean;
+
+    /**
+     * Layout
+     *
+     * @default 'vertical'
+     */
+    layout?: "vertical" | "horizontal";
+
+    /**
+     * Options to configure the `vue/compiler-sfc`
+     */
+    sfcOptions?: SFCOptions;
+
+    /**
+     * Whether to enable SSR
+     *
+     * @default true
+     */
+    ssr?: boolean;
+  }
+  ```
+
+- Default: `false`
+
+Whether to enable vue playground support.
 
 ### demo
 
@@ -325,103 +558,6 @@ Default value: `"https://unpkg.com/react/umd/react.production.min.js"`
 
 Default value: `"https://unpkg.com/react-dom/umd/react-dom.production.min.js"`
 
-### playground
-
-- Type: `PlaygroundOptions | boolean`
-- Default: `false`
-
-Whether to enable playground support.
-
-```ts
-/** Playground options */
-interface PlaygroundOptions {
-  /** mode: [internal, external] */
-  mode?: PlaygroundMode;
-  /**
-   * external options
-   */
-  external?: ExternalPlaygroundOptions;
-  /**
-   * internal options
-   */
-  internal?: InternalPlaygroundOptions;
-}
-
-/**
- * Playground external options
- */
-interface ExternalPlaygroundOptions {
-  /**
-   * playground base url
-   */
-  base?: string;
-  /**
-   * default import map, default value: "imports-map.json".
-   * you can use your own, for example: "user-imports.json".
-   */
-  defaultImportsMap?: string;
-  /**
-   * other options, which will be passed as query strings.
-   */
-  options?: Record<string, string>;
-}
-
-/**
- * Playground internal options.
- * Please see `@vue/repl` for more details.
- */
-interface InternalPlaygroundOptions {
-  /**
-   * specify the default URL to import Vue runtime from in the sandbox
-   * default is the CDN link from unpkg.com.
-   */
-  defaultVueRuntimeURL?: string;
-  /**
-   * specify the version of vue
-   */
-  vueVersion?: string;
-  /**
-   * default import map, default value: "imports-map.json".
-   * you can use your own, for example: "user-imports.json".
-   */
-  defaultImportsMap?: string;
-  /**
-   * Whether to enable repl's editor resizable.
-   */
-  autoResize?: boolean;
-  /**
-   * Whether to show code.
-   */
-  showCode?: boolean;
-  /**
-   * Whether to show js, css, ssr panel.
-   */
-  showCompileOutput?: boolean;
-  /**
-   * Whether to show import map.
-   */
-  showImportMap?: boolean;
-  /**
-   * Whether to clear console.
-   */
-  clearConsole?: boolean;
-  /**
-   * When layout is 'vertical', displays as top-down.
-   * Otherwise, displays as left-right.
-   * Default is 'vertical'.
-   */
-  layout?: string;
-  /**
-   * Options to configure the `vue/compiler-sfc`.
-   */
-  sfcOptions?: SFCOptions;
-  /**
-   * Whether to enable SSR.
-   */
-  ssr?: boolean;
-}
-```
-
 ### presentation
 
 - Type: `PresentationOptions | boolean`
@@ -472,25 +608,6 @@ The delay of operating dom, in ms.
 ::: tip
 
 If the theme you are using has a switching animation, it is recommended to configure this option to `Switch animation duration + 200`.
-
-:::
-
-### enableAll <Badge text="Demo only" type="danger" />
-
-- Type: `boolean`
-- Default: `false`
-
-Whether to enable all features.
-
-::: danger
-
-Please use this option ONLY for playing or testing.
-
-The plugin is FULLY treeshakable, so you should use the options below and enable ONLY the feature you want to use.
-
-Enabling features you don’t need will increase dev and build time. (`markdown-it` has to check for extra syntaxs)
-
-Also, some feature will add large chunks to your output (can up to 2MB).
 
 :::
 

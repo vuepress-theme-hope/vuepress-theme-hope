@@ -1,9 +1,10 @@
 import { ensureEndingSlash } from "@vuepress/shared";
-import { path } from "@vuepress/utils";
+import { getDirname, path } from "@vuepress/utils";
 
 import type { App } from "@vuepress/core";
-import type { PWAOptions } from "../shared";
+import type { PWAOptions } from "../shared/index.js";
 
+const __dirname = getDirname(import.meta.url);
 const CLIENT_FOLDER = ensureEndingSlash(path.resolve(__dirname, "../client"));
 
 export const prepareConfigFile = (
@@ -14,29 +15,42 @@ export const prepareConfigFile = (
   let rootComponents = "";
 
   if (options.showInstall) {
-    configImport += `import PWAInstall from "${CLIENT_FOLDER}components/PWAInstall";\n`;
+    configImport += `\
+import PWAInstall from "${CLIENT_FOLDER}components/PWAInstall.js";
+`;
 
-    rootComponents += `PWAInstall,\n`;
+    rootComponents += `\
+PWAInstall,
+`;
   }
 
   if (options.update === "hint") {
-    configImport += `import SWHintPopup from "${
-      options.hintComponent || `${CLIENT_FOLDER}components/SWHintPopup`
-    }";\n`;
+    configImport += `\
+import SWHintPopup from "${
+      options.hintComponent || `${CLIENT_FOLDER}components/SWHintPopup.js`
+    }";
+`;
 
-    rootComponents += `SWHintPopup,\n`;
+    rootComponents += `\
+SWHintPopup,
+`;
   } else if (options.update !== "disable" && options.update !== "force") {
-    configImport += `import SWUpdatePopup from "${
-      options.updateComponent || `${CLIENT_FOLDER}components/SWUpdatePopup`
-    }";\n`;
+    configImport += `\
+import SWUpdatePopup from "${
+      options.updateComponent || `${CLIENT_FOLDER}components/SWUpdatePopup.js`
+    }";
+`;
 
-    rootComponents += `SWUpdatePopup,\n`;
+    rootComponents += `\
+SWUpdatePopup,
+`;
   }
 
   return app.writeTemp(
     `pwa2/config.js`,
-    `import { defineClientConfig } from "@vuepress/client";
-import { setupPWA } from "${CLIENT_FOLDER}composables/setup";
+    `\
+import { defineClientConfig } from "@vuepress/client";
+import { setupPWA } from "${CLIENT_FOLDER}composables/setup.js";
 ${configImport}
 
 export default defineClientConfig({
@@ -49,6 +63,7 @@ ${rootComponents
   .map((item) => `    ${item}`)
   .join("\n")}
   ],
-});`
+});
+`
   );
 };

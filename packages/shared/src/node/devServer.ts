@@ -1,6 +1,7 @@
-import { removeEndingSlash, removeLeadingSlash } from "@vuepress/shared";
-import { mergeViteConfig } from "./vite";
+import { removeLeadingSlash } from "@vuepress/shared";
+import { mergeViteConfig } from "./vite/index.js";
 
+import type { IncomingMessage, ServerResponse } from "node:http";
 import type { App } from "@vuepress/core";
 import type { ViteBundlerOptions } from "@vuepress/bundler-vite";
 import type {
@@ -9,7 +10,6 @@ import type {
 } from "@vuepress/bundler-webpack";
 import type { HandleFunction } from "connect";
 import type { Plugin } from "vite";
-import type { IncomingMessage, ServerResponse } from "http";
 
 /**
  * Handle specific path when runing VuePress DevServe
@@ -50,7 +50,7 @@ export const useCustomDevServer = (
     const viteMockRequestPlugin: Plugin = {
       name: `virtual:devserver-mock/${path}`,
       configureServer: ({ middlewares }) => {
-        middlewares.use(`${removeLeadingSlash(base)}${path}`, handler);
+        middlewares.use(`${base}${removeLeadingSlash(path)}`, handler);
       },
     };
 
@@ -71,7 +71,7 @@ export const useCustomDevServer = (
       server: WebpackDevServer
     ): WebpackDevServer.Middleware[] => {
       server.app?.get(
-        `${removeEndingSlash(base)}${path}`,
+        `${base}${removeLeadingSlash(path)}`,
         (request, response) => {
           getResponse(request)
             .then((data) => response.status(200).send(data))

@@ -37,10 +37,10 @@ tag:
 ```diff
 // .vuepress/config.js
 - const { config } = require("vuepress-theme-hope");
-+ const { hopeTheme } = require("vuepress-theme-hope");
++ import { hopeTheme } from "vuepress-theme-hope";
 
 - module.exports = theme.config({
-+ module.exports = {
++ export default {
     // your site config here
     // ...
 
@@ -299,7 +299,7 @@ tag:
 
   - 包含文件支持 ![新增](https://img.shields.io/badge/-新增-brightgreen)
 
-    新增 `plugins.mdEnhance.include` 选项使用 `@include()` 将其他文件内容导入到 markdown 中。
+    新增 `plugins.mdEnhance.include` 选项使用 `@include()` 将其他文件内容导入到 Markdown 中。
 
     使用 `@include(filename)` 导入文件。
 
@@ -332,6 +332,10 @@ tag:
   - `mdEnhance.codegroup` 重命名为 `plugins.mdEnhance.codetabs` ![警告](https://img.shields.io/badge/-warning-yellow)
 
   - `plugins.mdEnhance.lazyLoad` 默认值由 `true` 改为 `false` ![警告](https://img.shields.io/badge/-warning-yellow)
+
+  - 移除 `plugins.mdEnhance.enableAll` ![移除](https://img.shields.io/badge/-removed-red)
+
+    有太多不知道自己在做什么的菜鸟用户，他们只是启用此选项而没有使用提供的所有功能，但他们抱怨加载速度。
 
   - 移除 `plugins.mdEnhance.lineNumbers` ![移除](https://img.shields.io/badge/-removed-red)
 

@@ -1,36 +1,51 @@
 import type { ReadingTime } from "vuepress-plugin-reading-time2";
 import type { Author } from "vuepress-shared";
 
+export const enum ArticleInfoType {
+  type = "y",
+  title = "t",
+  shortTitle = "s",
+  icon = "i",
+  author = "a",
+  date = "d",
+  localizedDate = "l",
+  category = "c",
+  tag = "g",
+  isEncrypted = "n",
+  isOriginal = "o",
+  readingTime = "r",
+  excerpt = "e",
+  sticky = "u",
+  cover = "v",
+}
+
+export const enum PageType {
+  article = "a",
+  home = "h",
+  slide = "s",
+  page = "p",
+}
+
 export interface ArticleInfo extends Record<string, unknown> {
   /**
    * Type
    */
-  type: "article" | "page" | "slide";
-
-  /**
-   * Whether is encrypted
-   */
-  isEncrypted?: boolean;
-
-  /**
-   * Whether is original
-   */
-  isOriginal?: boolean;
+  [ArticleInfoType.type]: PageType;
 
   /**
    * Article title
    */
-  title: string;
+  [ArticleInfoType.title]: string;
 
   /**
    * Article short title
    */
-  shortTitle: string;
+  [ArticleInfoType.shortTitle]: string;
 
   /**
    * Page icon
    */
-  icon?: string;
+  [ArticleInfoType.icon]?: string;
 
   /**
    * Whether this page should be indexed
@@ -47,50 +62,55 @@ export interface ArticleInfo extends Record<string, unknown> {
   /**
    * Article author
    */
-  author?: Author | false;
+  [ArticleInfoType.author]?: Author | false;
 
   /**
    * writing date info
    */
-  date?: Date;
+  [ArticleInfoType.date]?: Date;
 
   /**
    * writing date info in currect language
    */
-  localizedDate?: string;
+  [ArticleInfoType.localizedDate]?: string;
 
   /**
    * article category
    */
-  category?: string[];
+  [ArticleInfoType.category]?: string[];
 
   /**
    * Article tag
    */
-  tag?: string[];
+  [ArticleInfoType.tag]?: string[];
 
   /**
    * Reading time info
    */
-  readingTime?: ReadingTime;
+  [ArticleInfoType.readingTime]?: ReadingTime;
 
   /**
    * article excerpt
    */
-  excerpt: string;
+  [ArticleInfoType.excerpt]: string;
+
+  /**
+   * Whether is encrypted
+   */
+  [ArticleInfoType.isEncrypted]?: true;
+
+  /**
+   * Whether is original
+   */
+  [ArticleInfoType.isOriginal]?: true;
 
   /**
    * Sticky info
    */
-  sticky?: number | boolean;
-
-  /**
-   * Start info
-   */
-  star?: number | boolean;
+  [ArticleInfoType.sticky]?: number | boolean;
 
   /**
    * Cover image
    */
-  cover?: string;
+  [ArticleInfoType.cover]?: string;
 }

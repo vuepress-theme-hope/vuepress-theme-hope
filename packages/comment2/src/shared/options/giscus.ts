@@ -1,4 +1,4 @@
-import type { BaseCommentOptions } from "./base";
+import type { BaseCommentOptions } from "./base.js";
 
 export type GiscusRepo = `${string}/${string}`;
 
@@ -11,6 +11,18 @@ export type GiscusMapping =
   | "pathname";
 
 export type GiscusInputPosition = "top" | "bottom";
+
+export type GiscusTheme =
+  | "light"
+  | "light_high_contrast"
+  | "light_protanopia"
+  | "dark"
+  | "dark_high_contrast"
+  | "dark_protanopia"
+  | "dark_dimmed"
+  | "transparent_dark"
+  | "preferred_color_scheme"
+  | `https://${string}`;
 
 export interface GiscusOptions extends BaseCommentOptions {
   provider: "Giscus";
@@ -62,6 +74,15 @@ export interface GiscusOptions extends BaseCommentOptions {
   strict?: boolean;
 
   /**
+   * Whether enable lazy loading
+   *
+   * 是否启用懒加载
+   *
+   * @default true
+   */
+  lazyLoading?: boolean;
+
+  /**
    * Whether enable reactions or not
    *
    * 是否启用主帖子上的反应
@@ -78,4 +99,30 @@ export interface GiscusOptions extends BaseCommentOptions {
    * @default 'top'
    */
   inputPosition?: GiscusInputPosition;
+
+  /**
+   * Giscus theme used in lightmode
+   *
+   * @description Should be a built-in theme keyword or a css link starting with `https://`
+   *
+   * Giscus 在日间模式下使用的主题
+   *
+   * @description 应为一个内置主题关键词或者一个 CSS 链接
+   *
+   * @default "light"
+   */
+  lightTheme?: GiscusTheme;
+
+  /**
+   * Giscus theme used in darkmode
+   *
+   * @description Should be a built-in theme keyword or a css link starting with `https://`
+   *
+   * Giscus 在夜间模式下使用的主题
+   *
+   * @description 应为一个内置主题关键词或者一个 CSS 链接
+   *
+   * @default "dark"
+   */
+  darkTheme?: GiscusTheme;
 }

@@ -31,9 +31,9 @@ export default {
 
 ```js {8}
 // .vuepress/config.js
-const { mdEnhancePlugin } = require("vuepress-plugin-md-enhance");
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
-module.exports = {
+export default {
   plugins: [
     mdEnhancePlugin({
       // adds code tabs support
@@ -49,7 +49,7 @@ module.exports = {
 
 This is the same as tabs function, but it's special built for code blocks.
 
-Only code fence after `@tab` marker is allowed inside code tabs, other markdown content will be ignored.
+Only code fence after `@tab` marker is allowed inside code tabs, other Markdown content will be ignored.
 
 ## Demo
 

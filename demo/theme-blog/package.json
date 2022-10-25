@@ -1,0 +1,31 @@
+{
+  "name": "theme-blog-demo",
+  "version": "2.0.0-beta.114",
+  "private": true,
+  "description": "Blog demo for vuepress-theme-hope",
+  "license": "MIT",
+  "author": "Mr.Hope",
+  "scripts": {
+    "demo:vite-build": "vuepress-vite build src",
+    "demo:vite-clean-dev": "vuepress-vite dev src --clean-cache",
+    "demo:vite-dev": "vuepress-vite dev src",
+    "demo:webpack-build": "vuepress-webpack build src",
+    "demo:webpack-clean-dev": "vuepress-webpack dev src --clean-cache",
+    "demo:webpack-dev": "vuepress-webpack dev src"
+  },
+  "devDependencies": {
+    "@vuepress/cli": "2.0.0-beta.53",
+    "@vuepress/client": "2.0.0-beta.53",
+    "@vuepress/plugin-docsearch": "2.0.0-beta.53",
+    "@vuepress/plugin-pwa": "2.0.0-beta.53",
+    "@vuepress/plugin-pwa-popup": "2.0.0-beta.53",
+    "@vuepress/plugin-shiki": "2.0.0-beta.53",
+    "@vuepress/utils": "2.0.0-beta.53",
+    "cross-env": "7.0.3",
+    "sass-loader": "13.1.0",
+    "vue": "3.2.41",
+    "vuepress-theme-hope": "workspace:*",
+    "vuepress-vite": "2.0.0-beta.53",
+    "vuepress-webpack": "2.0.0-beta.53"
+  }
+}

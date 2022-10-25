@@ -1,3 +1,3 @@
-export * from "./en";
-export * from "./zh";
-export * from "./ru";
+export * from "./en.js";
+export * from "./zh.js";
+export * from "./ru.js";

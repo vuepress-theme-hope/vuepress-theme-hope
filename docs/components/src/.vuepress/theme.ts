@@ -1,5 +1,11 @@
-import { pwa, theme } from "docs-shared";
-import { version } from "vuepress-plugin-components/package.json";
+import { createRequire } from "node:module";
+import { fs, pwa, theme } from "docs-shared";
+
+const { version } = fs.readJsonSync(
+  createRequire(import.meta.url).resolve(
+    "vuepress-plugin-components/package.json"
+  )
+);
 
 export default theme("components", {
   addThis: "ra-5f829c59e6c6bc9a",
@@ -26,17 +32,10 @@ export default theme("components", {
       sidebar: [
         "/",
         {
+          icon: "plugin",
           text: "Components",
           prefix: "/guide/",
-          children: [
-            "addthis",
-            "backtotop",
-            "badge",
-            "codepen",
-            "fonticon",
-            "pdf",
-            "stackblitz",
-          ],
+          children: "structure",
         },
         "/config",
       ],
@@ -63,17 +62,10 @@ export default theme("components", {
       sidebar: [
         "/zh/",
         {
+          icon: "plugin",
           text: "组件",
           prefix: "/zh/guide/",
-          children: [
-            "addthis",
-            "backtotop",
-            "badge",
-            "codepen",
-            "fonticon",
-            "pdf",
-            "stackblitz",
-          ],
+          children: "structure",
         },
         "/zh/config",
       ],
@@ -81,7 +73,14 @@ export default theme("components", {
   },
 
   plugins: {
-    components: ["Badge", "CodePen", "PDF", "StackBlitz", "YouTube"],
+    components: [
+      "Badge",
+      "BiliBili",
+      "CodePen",
+      "PDF",
+      "StackBlitz",
+      "YouTube",
+    ],
 
     mdEnhance: {
       codetabs: true,

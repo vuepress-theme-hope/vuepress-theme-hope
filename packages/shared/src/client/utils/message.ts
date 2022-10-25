@@ -25,10 +25,9 @@
  * © 2019 GitHub, Inc.
  */
 
-import "../styles/message.scss";
-
 export class Message {
   private containerElement: HTMLElement;
+  private messageElements: Record<number, HTMLDivElement> = {};
 
   // generate or make sure message container element
   constructor() {
@@ -43,25 +42,41 @@ export class Message {
     }
   }
 
-  pop(html: string, duration = 2000): void {
+  pop(html: string, duration = 2000): number {
     const messageElement = document.createElement("div");
+    const messageId = Date.now();
 
     messageElement.className = "message move-in";
     messageElement.innerHTML = html;
     this.containerElement.appendChild(messageElement);
+    this.messageElements[messageId] = messageElement;
 
     if (duration > 0)
       setTimeout(() => {
-        this.close(messageElement);
+        this.close(messageId);
       }, duration);
+
+    return messageId;
   }
 
-  close(messageElement: HTMLDivElement): void {
-    messageElement.className = messageElement.className.replace("move-in", "");
-    messageElement.className += "move-out";
+  close(messageId?: number): void {
+    if (messageId) {
+      const messageElement = this.messageElements[messageId];
 
-    messageElement.addEventListener("animationend", () => {
-      messageElement.remove();
-    });
+      messageElement.className = messageElement.className.replace(
+        "move-in",
+        ""
+      );
+      messageElement.className += "move-out";
+      messageElement.addEventListener("animationend", () => {
+        messageElement.remove();
+        delete this.messageElements[messageId];
+      });
+    } else
+      Object.keys(this.messageElements).forEach((id) => this.close(Number(id)));
+  }
+
+  destory(): void {
+    document.body.removeChild(this.containerElement);
   }
 }

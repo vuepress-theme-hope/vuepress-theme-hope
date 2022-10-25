@@ -1,12 +1,11 @@
-import { rollupTypescript } from "../../scripts/rollup";
+import { rollupTypescript } from "../../scripts/rollup.js";
 
 export default [
   ...rollupTypescript("node/index", {
     external: [
-      "vuepress-shared",
       "@vuepress/utils",
-      "vue",
       "vuepress-plugin-sass-palette",
+      "vuepress-shared/node",
     ],
   }),
   ...rollupTypescript("client/config", {

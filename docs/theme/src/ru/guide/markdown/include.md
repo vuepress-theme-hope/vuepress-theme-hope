@@ -38,9 +38,9 @@ export default defineUserConfig({
 
 ```js {7-9}
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     plugins: {
       mdEnhance: {
@@ -87,7 +87,7 @@ interface IncludeOptions {
   getPath?: (path: string) => string;
 
   /**
-   * Whether deep include files in included markdown files
+   * Whether deep include files in included Markdown files
    *
    * @default false
    */
@@ -101,49 +101,58 @@ interface IncludeOptions {
 
 @tab TS
 
-```ts {8}
+```ts {13-20}
 // .vuepress/config.ts
-import { path } from "@vuepress/utils";
-import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
+import { getDirname, path } from "@vuepress/utils";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
-  plugins: [
-    mdEnhancePlugin({
-      // Add `@src` alias support
-      include: {
-        getPath: (file) => {
-          if (file.startsWith("@src"))
-            return file.replace("@src", path.resolve(__dirname, ".."));
+const __dirname = getDirname(import.meta.url);
 
-          return file;
+export default defineUserConfig({
+  theme: hopeTheme({
+    plugins: {
+      mdEnhance: {
+        // Add `@src` alias support
+        include: {
+          getPath: (file) => {
+            if (file.startsWith("@src"))
+              return file.replace("@src", path.resolve(__dirname, ".."));
+
+            return file;
+          },
         },
       },
-    }),
-  ],
-};
+    },
+  }),
+});
 ```
 
 @tab JS
 
-```js {8}
+```js {12-19}
 // .vuepress/config.js
-const { path } = require("@vuepress/utils");
-const { mdEnhancePlugin } = require("vuepress-plugin-md-enhance");
+import { getDirname, path } from "@vuepress/utils";
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
-  plugins: [
-    mdEnhancePlugin({
-      // Add `@src` alias support
-      include: {
-        getPath: (file) => {
-          if (file.startsWith("@src"))
-            return file.replace("@src", path.resolve(__dirname, ".."));
+const __dirname = getDirname(import.meta.url);
 
-          return file;
+export default {
+  theme: hopeTheme({
+    plugins: {
+      mdEnhance: {
+        // Add `@src` alias support
+        include: {
+          getPath: (file) => {
+            if (file.startsWith("@src"))
+              return file.replace("@src", path.resolve(__dirname, ".."));
+
+            return file;
+          },
         },
       },
-    }),
-  ],
+    },
+  }),
 };
 ```
 
@@ -155,37 +164,40 @@ module.exports = {
 
 @tab TS
 
-```ts {8}
+```ts {6}
 // .vuepress/config.ts
-import { path } from "@vuepress/utils";
-import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
+export default defineUserConfig({
   pagePatterns: ["**/*.md", "!*.snippet.md", "!.vuepress", "!node_modules"],
 
-  plugins: [
-    mdEnhancePlugin({
-      include: true,
-    }),
-  ],
-};
+  theme: hopeTheme({
+    plugins: {
+      mdEnhance: {
+        include: true,
+      },
+    },
+  }),
+});
 ```
 
 @tab JS
 
-```js {8}
+```js {5}
 // .vuepress/config.js
-const { path } = require("@vuepress/utils");
-const { mdEnhancePlugin } = require("vuepress-plugin-md-enhance");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   pagePatterns: ["**/*.md", "!*.snippet.md", "!.vuepress", "!node_modules"],
 
-  plugins: [
-    mdEnhancePlugin({
-      include: true,
-    }),
-  ],
+  theme: hopeTheme({
+    plugins: {
+      mdEnhance: {
+        include: true,
+      },
+    },
+  }),
 };
 ```
 

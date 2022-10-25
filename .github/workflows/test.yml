@@ -11,7 +11,7 @@ on:
 
 jobs:
   test-demos:
-    name: Test demos on node ${{ matrix.node }}
+    name: Test demos using ${{ matrix.bundler }} on node ${{ matrix.node }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -20,6 +20,9 @@ jobs:
           - "14"
           - "16"
           - "18"
+        bundler:
+          - vite
+          - webpack
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -33,12 +36,12 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
           cache: pnpm
 
       - name: Build project
         env:
-          NODE_OPTIONS: --max_old_space_size=4096
+          NODE_OPTIONS: --max_old_space_size=8192
         run: pnpm run build
 
       # test with specific node version
@@ -46,13 +49,9 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
 
-      - name: Webpack build test
+      - name: ${{ matrix.bundler }} build test
         run: |
-          pnpm run -r demo:webpack-build
-
-      - name: Vite build test
-        run: |
-          pnpm run -r demo:vite-build
+          pnpm run -r demo:${{ matrix.bundler }}-build
 
   linter-and-unit:
     name: Linter and Unit test
@@ -70,12 +69,12 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
           cache: pnpm
 
       - name: Build project
         env:
-          NODE_OPTIONS: --max_old_space_size=4096
+          NODE_OPTIONS: --max_old_space_size=8192
         run: pnpm run build
 
       - name: Linter test
@@ -85,7 +84,7 @@ jobs:
 
       - name: Unit test
         env:
-          NODE_OPTIONS: --max_old_space_size=4096
+          NODE_OPTIONS: --max_old_space_size=8192
         run: pnpm run test
 
       - name: Upload coverage

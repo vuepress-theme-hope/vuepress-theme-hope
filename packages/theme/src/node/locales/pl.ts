@@ -1,4 +1,4 @@
-import type { HopeThemeLocaleData } from "../../shared";
+import type { HopeThemeLocaleData } from "../../shared/index.js";
 
 export const plLocale: HopeThemeLocaleData = {
   lang: "pl-PL",
@@ -62,7 +62,7 @@ export const plLocale: HopeThemeLocaleData = {
 
   routeLocales: {
     // eslint-disable-next-line @typescript-eslint/naming-convention
-    "404msg": [
+    notFoundMsg: [
       "Nic tu nie ma.",
       "Jak tu się dostaliśmy?",
       "A imię jego czterdzieści i cztery",

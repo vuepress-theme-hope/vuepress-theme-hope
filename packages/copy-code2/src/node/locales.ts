@@ -1,64 +1,82 @@
-import type { CopyCodeLocaleConfig } from "../shared";
+import type { CopyCodeLocaleConfig } from "../shared/index.js";
 
 /** Muti language config for copy code */
 export const copyCodeLocales: CopyCodeLocaleConfig = {
   "/en/": {
-    copy: "Copied successfully",
-    hint: "Copy code",
+    copy: "Copy code",
+    copied: "Copied",
+    hint: "Copied successfully",
   },
 
   "/zh/": {
-    copy: "复制成功",
-    hint: "复制代码",
+    copy: "复制代码",
+    copied: "已复制",
+    hint: "复制成功",
   },
 
   "/zh-tw/": {
-    copy: "複製成功",
-    hint: "複製代碼",
+    copy: "複製代碼",
+    copied: "已複製",
+    hint: "複製成功",
   },
 
   "/de-at/": {
-    copy: "Kopieren erfolgreich",
-    hint: "Kopiere den Code.",
+    copy: "Kopiere den Code.",
+    copied: "Kopierter",
+    hint: "Kopieren erfolgreich",
   },
 
   "/vi/": {
-    copy: "Sao chép thành công",
-    hint: "Sao chép code",
+    copy: "Sao chép code",
+    copied: "Đã sao chép",
+    hint: "Sao chép thành công",
   },
 
   "/uk/": {
-    copy: "Скопіюйте успішно",
-    hint: "Скопіюйте код",
+    copy: "Скопіюйте код",
+    copied: "Скопійовано",
+    hint: "Скопіюйте успішно",
   },
 
   "/ru/": {
-    copy: "Скопировано успешно",
-    hint: "Скопировать код",
+    copy: "Скопировать код",
+    copied: "Скопировано",
+    hint: "Скопировано успешно",
   },
 
   "/br/": {
-    copy: "Copiado com sucesso",
-    hint: "Copiar o código",
+    copy: "Copiar o código",
+    copied: "Código",
+    hint: "Copiado com sucesso",
   },
 
   "/pl/": {
-    copy: "Skopiowano pomyślnie",
-    hint: "Skopiuj kod",
+    copy: "Skopiuj kod",
+    copied: "Skopiowane",
+    hint: "Skopiowano pomyślnie",
   },
 
   "/sk/": {
-    copy: "Úspešne skopírované",
-    hint: "Skopíruj kód",
+    copy: "Skopíruj kód",
+    copied: "Skopírované",
+    hint: "Úspešne skopírované",
   },
 
   "/fr/": {
-    copy: "Copié avec succès",
-    hint: "Copier le code",
+    copy: "Copier le code",
+    copied: "Copié",
+    hint: "Copié avec succès",
   },
 
   "/es/": {
-    copy: "Copiado con éxito",
-    hint: "Copiar código",
+    copy: "Copiar código",
+    copied: "Copiado",
+    hint: "Copiado con éxito",
+  },
+
+  "/ja/": {
+    copy: "コピーコード",
+    copied: "コピー機",
+    hint: "コピーに成功",
   },
 };

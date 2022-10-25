@@ -1,9 +1,10 @@
 import { ensureEndingSlash } from "@vuepress/shared";
-import { path } from "@vuepress/utils";
+import { getDirname, path } from "@vuepress/utils";
 
 import type { App } from "@vuepress/core";
-import type { MarkdownEnhanceOptions, RevealPlugin } from "../shared";
+import type { MarkdownEnhanceOptions, RevealPlugin } from "../shared/index.js";
 
+const __dirname = getDirname(import.meta.url);
 const CLIENT_FOLDER = ensureEndingSlash(path.resolve(__dirname, "../client"));
 
 export const prepareConfigFile = async (
@@ -17,81 +18,143 @@ export const prepareConfigFile = async (
   const getStatus = (key: keyof MarkdownEnhanceOptions, gfm = false): boolean =>
     key in options
       ? Boolean(options[key])
-      : gfm && "gfm" in options
-      ? Boolean(options.gfm)
-      : options.enableAll || false;
+      : (gfm && "gfm" in options && options.gfm) || false;
 
   if (getStatus("chart")) {
-    configImport += `import ChartJS from "${CLIENT_FOLDER}components/ChartJS";\n`;
-    enhance += `app.component("ChartJS", ChartJS);\n`;
-  }
-
-  if (getStatus("echarts")) {
-    configImport += `import ECharts from "${CLIENT_FOLDER}components/ECharts";\n`;
-    enhance += `app.component("ECharts", ECharts);\n`;
-  }
-
-  if (getStatus("demo")) {
-    configImport += `import CodeDemo from "${CLIENT_FOLDER}components/CodeDemo";\n`;
-    enhance += `app.component("CodeDemo", CodeDemo);\n`;
+    configImport += `\
+import ChartJS from "${CLIENT_FOLDER}components/ChartJS.js";
+`;
+    enhance += `\
+app.component("ChartJS", ChartJS);
+`;
   }
 
   if (getStatus("codetabs")) {
-    configImport += `import CodeTabs from "${CLIENT_FOLDER}components/CodeTabs";\n`;
-    enhance += `app.component("CodeTabs", CodeTabs);\n`;
+    configImport += `\
+import CodeTabs from "${CLIENT_FOLDER}components/CodeTabs.js";
+`;
+    enhance += `\
+app.component("CodeTabs", CodeTabs);
+`;
 
     // TODO: Remove it in v2 stable
     if (legacy) {
-      configImport += `import { CodeGroup, CodeGroupItem } from "${CLIENT_FOLDER}compact";\n`;
-      enhance += `app.component("CodeGroup", CodeGroup);\n`;
-      enhance += `app.component("CodeGroupItem", CodeGroupItem);\n`;
+      configImport += `\
+import { CodeGroup, CodeGroupItem } from "${CLIENT_FOLDER}compact/index.js";
+`;
+      enhance += `\
+app.component("CodeGroup", CodeGroup);
+app.component("CodeGroupItem", CodeGroupItem);
+`;
     }
   }
 
-  if (getStatus("flowchart")) {
-    configImport += `import FlowChart from "${CLIENT_FOLDER}components/FlowChart";\n`;
-    enhance += `app.component("FlowChart", FlowChart);\n`;
+  if (getStatus("container"))
+    configImport += `\
+import "${CLIENT_FOLDER}styles/container/index.scss";
+`;
+
+  if (getStatus("demo")) {
+    configImport += `\
+import CodeDemo from "${CLIENT_FOLDER}components/CodeDemo.js";
+`;
+    enhance += `\
+app.component("CodeDemo", CodeDemo);
+`;
   }
 
+  if (getStatus("echarts")) {
+    configImport += `\
+import ECharts from "${CLIENT_FOLDER}components/ECharts.js";
+`;
+    enhance += `\
+app.component("ECharts", ECharts);
+`;
+  }
+
+  if (getStatus("flowchart")) {
+    configImport += `\
+import FlowChart from "${CLIENT_FOLDER}components/FlowChart.js";
+`;
+    enhance += `\
+app.component("FlowChart", FlowChart);
+`;
+  }
+
+  if (getStatus("footnote", true))
+    configImport += `\
+import "${CLIENT_FOLDER}styles/footnote.scss";
+`;
+
+  if (getStatus("imageMark", true))
+    configImport += `\
+import "${CLIENT_FOLDER}styles/image-mark.scss";
+`;
+
+  if (getStatus("imageTitle", true))
+    configImport += `\
+import "${CLIENT_FOLDER}styles/image-title.scss";
+`;
+
   if (getStatus("mermaid")) {
-    configImport += `import Mermaid from "${CLIENT_FOLDER}components/Mermaid";\n`;
-    enhance += `app.component("Mermaid", Mermaid);\n`;
+    configImport += `\
+import Mermaid from "${CLIENT_FOLDER}components/Mermaid.js";
+`;
+    enhance += `\
+app.component("Mermaid", Mermaid);
+`;
   }
 
   if (getStatus("presentation")) {
-    configImport += `import Presentation from "${CLIENT_FOLDER}components/Presentation";\n`;
-    enhance += `app.component("Presentation", Presentation);\n`;
-  }
-
-  if (getStatus("container"))
-    configImport += `import "${CLIENT_FOLDER}styles/container/index.scss";\n`;
-
-  if (getStatus("footnote"))
-    configImport += `import "${CLIENT_FOLDER}styles/footnote.scss";\n`;
-
-  if (getStatus("imageMark"))
-    configImport += `import "${CLIENT_FOLDER}styles/image-mark.scss";\n`;
-
-  if (getStatus("tabs")) {
-    configImport += `import Tabs from "${CLIENT_FOLDER}components/Tabs";\n`;
-    enhance += `app.component("Tabs", Tabs);\n`;
+    configImport += `\
+import Presentation from "${CLIENT_FOLDER}components/Presentation.js";
+`;
+    enhance += `\
+app.component("Presentation", Presentation);
+`;
   }
 
   if (getStatus("playground")) {
-    configImport += `const Playground = defineAsyncComponent(() => import("${CLIENT_FOLDER}components/Playground"));\n`;
-    enhance += `app.component("Playground", Playground);\n`;
+    configImport += `\
+import Playground from "${CLIENT_FOLDER}components/Playground.js";
+`;
+    enhance += `\
+app.component("Playground", Playground);
+`;
   }
 
-  if (getStatus("tasklist"))
-    configImport += `import "${CLIENT_FOLDER}styles/tasklist.scss";\n`;
+  if (getStatus("tabs")) {
+    configImport += `\
+import Tabs from "${CLIENT_FOLDER}components/Tabs.js";
+`;
+    enhance += `\
+app.component("Tabs", Tabs);
+`;
+  }
 
-  if (getStatus("tex"))
-    configImport += `import "${CLIENT_FOLDER}styles/tex.scss";\n`;
+  if (getStatus("tasklist", true))
+    configImport += `\
+import "${CLIENT_FOLDER}styles/tasklist.scss";
+`;
+
+  if (getStatus("katex"))
+    configImport += `\
+import "${CLIENT_FOLDER}styles/katex.scss";
+`;
+
+  if (getStatus("vuePlayground")) {
+    configImport += `\
+import { defineAsyncComponent } from "vue";
+`;
+    enhance += `\
+app.component("VuePlayground", defineAsyncComponent(() => import("${CLIENT_FOLDER}components/VuePlayground.js")));
+    `;
+  }
 
   return app.writeTemp(
     `md-enhance/config.js`,
-    `import { defineClientConfig } from "@vuepress/client";
-    import { defineAsyncComponent } from "vue";
+    `\
+import { defineClientConfig } from "@vuepress/client";
 ${configImport}
 
 export default defineClientConfig({
@@ -100,8 +163,9 @@ ${enhance
   .split("\n")
   .map((item) => `    ${item}`)
   .join("\n")}
-  }
-});`
+  },
+});
+`
   );
 };
 
@@ -119,11 +183,12 @@ export const prepareRevealPluginFile = async (
 
   await app.writeTemp(
     "md-enhance/reveal.js",
-    `import { ${packages.join(", ")} } from "${CLIENT_FOLDER}reveal";
+    `\
+import { ${packages.join(", ")} } from "${CLIENT_FOLDER}reveal/index.js";
 
 export const useReveal = () => [${packages
       .map((name) => `${name}()`)
-      .join(", ")}
-];`
+      .join(", ")}];
+`
   );
 };

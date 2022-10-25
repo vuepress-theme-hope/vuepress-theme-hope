@@ -6,11 +6,11 @@ import {
 import { isArray } from "@vuepress/shared";
 import { computed, defineComponent, h } from "vue";
 
-import AutoLink from "@theme-hope/components/AutoLink";
-import DropTransition from "@theme-hope/components/transitions/DropTransition";
+import AutoLink from "@theme-hope/components/AutoLink.js";
+import DropTransition from "@theme-hope/components/transitions/DropTransition.js";
 
 import type { VNode } from "vue";
-import type { HopeThemeProjectHomePageFrontmatter } from "../../shared";
+import type { HopeThemeProjectHomePageFrontmatter } from "../../shared/index.js";
 
 export default defineComponent({
   name: "HomeHero",
@@ -65,7 +65,7 @@ export default defineComponent({
                   key: "light",
                   class: { light: heroImageDark.value },
                   src: heroImage.value,
-                  alt: heroAlt,
+                  alt: heroAlt.value,
                 })
               : null,
             heroImageDark.value
@@ -73,7 +73,7 @@ export default defineComponent({
                   key: "dark",
                   class: "dark",
                   src: heroImageDark.value,
-                  alt: heroAlt,
+                  alt: heroAlt.value,
                 })
               : null,
           ]),
@@ -81,12 +81,12 @@ export default defineComponent({
           h("div", { class: "hero-info" }, [
             heroText.value
               ? h(DropTransition, { appear: true, delay: 0.04 }, () =>
-                  h("h1", { id: "main-title" }, heroText.value as string)
+                  h("h1", { id: "main-title" }, <string>heroText.value)
                 )
               : null,
             tagline.value
               ? h(DropTransition, { appear: true, delay: 0.08 }, () =>
-                  h("p", { class: "description" }, tagline.value as string)
+                  h("p", { class: "description" }, <string>tagline.value)
                 )
               : null,
             actions.value.length

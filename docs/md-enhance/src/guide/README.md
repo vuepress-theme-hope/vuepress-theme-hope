@@ -13,20 +13,6 @@ At the same time, VuePress itself adds some Markdown syntaxes. You can [view the
 
 :::
 
-## Enable All Features
-
-You can set `enableAll: true` in plugin options to enable all features of this plugin.
-
-::: danger
-
-Please use this option ONLY for playing or testing.
-
-The plugin is FULLY treeshakable, so you should use the options below and enable ONLY the feature you want to use.
-
-Enabling features you don’t need will increase dev and build time. (`markdown-it` has to check for extra syntaxs)
-
-Also, some feature will add large chunks to your output (can up to 2MB).
-
 ## New Feature
 
 ### Tabs
@@ -126,7 +112,7 @@ You can mark ==important words== .
 
 ### Image Enhancement
 
-Support setting color scheme and size
+Support setting title, color scheme and size
 
 - [View Detail](image.md)
 
@@ -270,7 +256,7 @@ span {
 
 <!-- markdownlint-disable MD033 -->
 
-Setting this to a invalid stytax <span style="color:red">doesn't</span> have any effect.
+Donate Mr.Hope a cup of coffee. _Recommanded_
 
 - [View Detail](stylize.md)
 
@@ -278,9 +264,44 @@ Setting this to a invalid stytax <span style="color:red">doesn't</span> have any
 
 ### Playground
 
-You can insert Vue playground in Markdown files directly.
+::: playground#ts TS demo
+
+@file index.ts
+
+```ts
+const msg = "hello world";
+
+const speak = (msg: string) => console.log(msg);
+
+speak(msg);
+```
+
+:::
 
 - [View Detail](playground.md)
+
+### Vue Playground
+
+::: vue-playground Vue Playground
+
+@file App.vue
+
+```vue
+<script setup>
+import { ref } from "vue";
+
+const msg = ref("Hello World!");
+</script>
+
+<template>
+  <h1>{{ msg }}</h1>
+  <input v-model="msg" />
+</template>
+```
+
+:::
+
+- [View Detail](vue-playground.md)
 
 ### Presentation
 

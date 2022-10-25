@@ -36,7 +36,7 @@ features:
 
   - title: Attrs support
     icon: code
-    details: Allow you to add attributes for markdown content
+    details: Allow you to add attributes for Markdown content
     link: /guide/atts.html
 
   - title: Superscript and subscript support
@@ -89,6 +89,16 @@ features:
     details: split your docs with different parts and import them in Markdown
     link: /guide/include.html
 
+  - title: Playground Support
+    icon: code
+    details: You can add playground in Markdown files
+    link: /guide/playground.html
+
+  - title: Vue playground Support
+    icon: code
+    details: Show living vue component in playground
+    link: /guide/vue-playground.html
+
   - title: Code Demo Support
     icon: discover
     details: You can insert code demo easily
@@ -98,11 +108,6 @@ features:
     icon: slides
     details: You can insert presentation in Markdown files directly
     link: /guide/presentation/
-
-  - title: Playground Support
-    icon: code
-    details: You can insert vue playground in Markdown files directly
-    link: /guide/playground.html
 
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 copyright: false
@@ -155,9 +160,9 @@ export default {
 
 ```js
 // .vuepress/config.js
-const { mdEnhancePlugin } = require("vuepress-plugin-md-enhance");
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
-module.exports = {
+export default {
   plugins: [
     mdEnhancePlugin({
       // your options
@@ -174,14 +179,17 @@ For details, see [Migration Guide](./migration.md).
 
 ## Advanced
 
-This plugin exports the following markdown-it plugin, and you can use them in other projects.
+This plugin exports the following Markdown-it plugin, and you can use them in other projects.
 
 - align
 - attrs
 - container
 - footnote
 - imageMark
+- imageSize
+- imageTitle
 - include
+- mathjax
 - katex
 - lazyload
 - mark
@@ -189,4 +197,5 @@ This plugin exports the following markdown-it plugin, and you can use them in ot
 - sub
 - sup
 - tasklist
+- tex
 - uml

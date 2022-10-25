@@ -9,12 +9,14 @@ tag:
   - Interface
 ---
 
-The entire theme adds FontClass format icon support in multiple places.
+The entire theme adds FontClass / Unage format icon support in multiple places.
 
 You can use iconfont and fontawesome to add icons to your project.
 
 - For china users, iconfont is recommended
 - For overseas users, fontawesome is recommended
+
+Also, png/svg format icon is supported. You can use absolute path or pathname to add icons.
 
 <!-- more -->
 
@@ -106,9 +108,9 @@ export default defineUserConfig({
 
 ```js {7-9}
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     iconAssets: "fontawesome",
   }),
@@ -154,9 +156,9 @@ export default defineUserConfig({
 
 ```js {7-9}
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     iconAssets: "iconfont",
   }),

@@ -1,6 +1,6 @@
 import { useEventListener } from "@vueuse/core";
 import { onMounted, ref } from "vue";
-import { useThemeData } from "./themeData";
+import { useThemeData } from "./themeData.js";
 
 import type { Ref } from "vue";
 
@@ -10,7 +10,7 @@ export const useMobile = (): Ref<boolean> => {
 
   const mobileHandler = (): void => {
     isMobile.value =
-      window.innerWidth <= (themeData.value.mobileBreakPoint || 719);
+      window.innerWidth < (themeData.value.mobileBreakPoint || 719);
   };
 
   onMounted(() => {

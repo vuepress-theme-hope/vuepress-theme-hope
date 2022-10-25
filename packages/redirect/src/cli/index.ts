@@ -1,7 +1,7 @@
 #!/usr/bin/env node
+import { createRequire } from "node:module";
 import { createBuildApp } from "@vuepress/core";
 import {
-  allowTs,
   loadUserConfig,
   transformUserConfigToPlugin,
   resolveAppConfig,
@@ -12,7 +12,9 @@ import { removeEndingSlash, removeLeadingSlash } from "@vuepress/shared";
 import { fs, logger, path } from "@vuepress/utils";
 import { cac } from "cac";
 
-import { getRedirectHTML } from "../shared";
+import { getRedirectHTML } from "../shared/index.js";
+
+const require = createRequire(import.meta.url);
 
 const cli = cac("vp-redirect");
 // eslint-disable-next-line
@@ -58,9 +60,6 @@ cli
         process.env["NODE_ENV"] = "production";
       }
 
-      // allow ts files globally
-      allowTs();
-
       // resolve app config from cli options
       const cliAppConfig = resolveCliAppConfig(sourceDir, {});
 
@@ -69,7 +68,7 @@ cli
         cliAppConfig.source
       );
 
-      const userConfig = await loadUserConfig(userConfigPath);
+      const { userConfig } = await loadUserConfig(userConfigPath);
 
       // resolve the final app config to use
       const appConfig = resolveAppConfig({

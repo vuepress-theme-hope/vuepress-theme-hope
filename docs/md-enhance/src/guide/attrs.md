@@ -3,7 +3,7 @@ title: Attrs support
 icon: code
 ---
 
-You can use custom syntax to add attrs for markdown content.
+You can use custom syntax to add attrs for Markdown content.
 
 <!-- more -->
 
@@ -31,9 +31,9 @@ export default {
 
 ```js {8}
 // .vuepress/config.js
-const { mdEnhancePlugin } = require("vuepress-plugin-md-enhance");
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
-module.exports = {
+export default {
   plugins: [
     mdEnhancePlugin({
       // Enable attrs support
@@ -47,7 +47,7 @@ module.exports = {
 
 ## Usage
 
-You can use `{attrs}` to add attrs to markdown content.
+You can use `{attrs}` to add attrs to Markdown content.
 
 For example, if you want a heading2 "Hello World" with a id "say-hello-world", you can write:
 

@@ -1,5 +1,5 @@
-import { deprecatedLogger, droppedLogger } from "./utils";
-import type { MarkdownEnhanceOptions } from "../../shared";
+import { deprecatedLogger, droppedLogger } from "./utils.js";
+import type { MarkdownEnhanceOptions } from "../../shared/index.js";
 
 /** @deprecated */
 export const convertOptions = (
@@ -15,7 +15,13 @@ export const convertOptions = (
     deprecatedOption: "mdImport",
     newOption: "include",
   });
+  deprecatedLogger({
+    options,
+    deprecatedOption: "tex",
+    newOption: "katex",
+  });
 
+  droppedLogger(options, "enableAll");
   droppedLogger(options, "lineNumbers");
   droppedLogger(options, "imageFix");
 };

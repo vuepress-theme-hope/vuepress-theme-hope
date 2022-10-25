@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import MarkdownIt from "markdown-it";
-import { chart } from "../../src/node/markdown-it/chart";
+import { chart } from "../../src/node/markdown-it/index.js";
 
 describe("chart", () => {
   const markdownIt = MarkdownIt({ linkify: true }).use(chart);

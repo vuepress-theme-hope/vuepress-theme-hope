@@ -9,12 +9,14 @@ tag:
   - Интерфейс
 ---
 
-Вся тема добавляет поддержку иконок формата FontClass в нескольких местах.
+Вся тема добавляет поддержку иконок формата FontClass / Unage в нескольких местах.
 
 Вы можете использовать iconfont и fontawesome для добавления иконок в свой проект.
 
 - Для пользователей Китая рекомендуется iconfont
 - Для зарубежных пользователей рекомендуется fontawesome
+
+Также поддерживает иконку формата png/svg. Вы можете использовать абсолютный путь или имя пути для добавления иконок.
 
 <!-- more -->
 
@@ -106,9 +108,9 @@ export default defineUserConfig({
 
 ```js {7-9}
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     iconAssets: "fontawesome",
   }),
@@ -154,9 +156,9 @@ export default defineUserConfig({
 
 ```js {7-9}
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     iconAssets: "iconfont",
   }),

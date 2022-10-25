@@ -1,12 +1,14 @@
-import { path } from "@vuepress/utils";
+import { getDirname, path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
-import { getLocales } from "vuepress-shared";
+import { addViteOptimizeDepsExclude, getLocales } from "vuepress-shared/node";
 
-import { photoSwipeLocales } from "./locales";
-import { logger } from "./utils";
+import { photoSwipeLocales } from "./locales.js";
+import { logger } from "./utils.js";
 
 import type { PluginFunction } from "@vuepress/core";
-import type { PhotoSwipeOptions } from "../shared";
+import type { PhotoSwipeOptions } from "../shared/index.js";
+
+const __dirname = getDirname(import.meta.url);
 
 export const photoSwipePlugin =
   (options: PhotoSwipeOptions = {}): PluginFunction =>
@@ -42,6 +44,10 @@ export const photoSwipePlugin =
         ),
         PHOTO_SWIPE_OPTIONS: options.options || {},
       }),
+
+      extendsBundlerOptions: (config: unknown, app): void => {
+        addViteOptimizeDepsExclude({ app, config }, "photoswipe");
+      },
 
       clientConfigFile: path.resolve(__dirname, "../client/config.js"),
     };

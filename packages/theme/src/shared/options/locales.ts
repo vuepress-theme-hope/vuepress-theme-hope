@@ -1,17 +1,17 @@
 import type { LocaleData } from "@vuepress/shared";
 import type { Author } from "vuepress-shared";
-import type { HopeThemeAppearanceLocaleData } from "./appearance";
+import type { HopeThemeAppearanceLocaleData } from "./appearance.js";
 import type {
   HopeThemeFeatureLocaleConfig,
   HopeThemeFeatureLocaleData,
   HopeThemeFeatureLocaleOptions,
-} from "./feature";
-import type { LocaleData2Option } from "./helpers";
+} from "./feature/index.js";
+import type { LocaleData2Option } from "./helpers.js";
 import type {
   HopeThemeLayoutLocaleData,
   HopeThemeLayoutLocaleConfig,
   HopeThemeLayoutLocaleOptions,
-} from "./layout";
+} from "./layout/index.js";
 
 export interface HopeThemeLocaleData
   extends HopeThemeAppearanceLocaleData,

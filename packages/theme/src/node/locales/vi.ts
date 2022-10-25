@@ -1,4 +1,4 @@
-import type { HopeThemeLocaleData } from "../../shared";
+import type { HopeThemeLocaleData } from "../../shared/index.js";
 
 export const viLocale: HopeThemeLocaleData = {
   lang: "vi-VN",
@@ -62,7 +62,7 @@ export const viLocale: HopeThemeLocaleData = {
 
   routeLocales: {
     // eslint-disable-next-line @typescript-eslint/naming-convention
-    "404msg": [
+    notFoundMsg: [
       "Ở đây chẳng có gì cả.",
       "Sao chúng ta lại đến đây?",
       "Đây là lỗi bốn-không-bốn",

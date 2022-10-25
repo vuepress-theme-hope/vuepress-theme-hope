@@ -24,7 +24,7 @@ tag:
 
 @tab TS
 
-```ts {8,13}
+```ts {9,12}
 // .vuepress/config.ts
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
@@ -33,7 +33,7 @@ export default defineUserConfig({
   theme: hopeTheme({
     plugins: {
       comment: {
-        type: "waline",
+        provider: "waline",
 
         // waline 模式下
         serverURL: "...", // your serverURL
@@ -45,15 +45,15 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {7,12}
+```js {8,11}
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     plugins: {
       comment: {
-        type: "waline",
+        provider: "waline",
 
         // waline 模式下
         serverURL: "...", // your serverURL
@@ -99,12 +99,6 @@ Giscus — это система комментариев на основе GitH
 
 Пожалуйста, передайте `data-repo`, `data-repo-id`, `data-category` и `data-category-id` в качестве параметров плагина как `repo`, `repoId`, `category` `categoryId`.
 
-::: info Темный режим
-
-Чтобы позволить Giscus использовать правильную тему, вам нужно передать логическое значение в `<CommentService />` через свойство `darkmode`, указывающее, включен ли темный режим в данный момент.
-
-:::
-
 Другие параметры смотрите в [Конфиге Giscus][comment2-giscus-config].
 
 ## Waline
@@ -134,7 +128,7 @@ export default defineUserConfig({
   theme: hopeTheme({
     plugins: {
       comment: {
-        type: "waline",
+        provider: "waline",
         serverURL: "YOUR_SERVER_URL", // your server url
       },
     },
@@ -146,13 +140,13 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     plugins: {
       comment: {
-        type: "waline",
+        provider: "waline",
         serverURL: "YOUR_SERVER_URL", // your server url
       },
     },

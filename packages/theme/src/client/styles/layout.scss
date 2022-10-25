@@ -18,7 +18,11 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--theme-color);
+  background: var(--theme-color);
+
+  &:active {
+    background: var(--theme-color-light);
+  }
 }
 
 .hide-in-mobile {

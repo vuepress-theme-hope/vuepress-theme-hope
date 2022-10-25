@@ -234,11 +234,11 @@ function customHead<
 
 - [开放内容协议 OGP](https://ogp.me/) (**O**pen **G**raph **Pr**otocal)
 
-  本插件完美支持该协议，会自动生成符合该协议的 `<meta>` 标签。
+  此插件完美支持该协议，会自动生成符合该协议的 `<meta>` 标签。
 
 - [JSON-LD 1.1](https://www.w3.org/TR/json-ld-api/)
 
-  本插件会为文章类页面生成 NewsArticle 类标签。
+  此插件会为文章类页面生成 NewsArticle 类标签。
 
 - [RDFa 1.1](https://www.w3.org/TR/rdfa-primer/)
 

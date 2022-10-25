@@ -5,7 +5,9 @@ import {
   getTag,
   injectLocalizedDate,
   timeTransformer,
-} from "vuepress-shared";
+} from "vuepress-shared/node";
+
+import { ArticleInfoType, PageType } from "../shared/index.js";
 
 import type { Page } from "@vuepress/core";
 import type {
@@ -15,7 +17,7 @@ import type {
   HopeThemeBlogHomePageFrontmatter,
   HopeThemeProjectHomePageFrontmatter,
   HopeThemeNormalPageFrontmatter,
-} from "../shared";
+} from "../shared/index.js";
 
 export const checkFrontmatter = (
   page: Page<HopeThemePageData>,
@@ -77,16 +79,14 @@ export const extendsPage = (
   // inject localized date
   injectLocalizedDate(page);
 
-  // save basic info to routeMeta
-  page.routeMeta = {
-    ...page.routeMeta,
-    title: page.title,
-    icon: frontmatter.icon,
-  };
+  page.routeMeta[ArticleInfoType.title] = page.title;
+
+  if ("icon" in frontmatter)
+    page.routeMeta[ArticleInfoType.icon] = frontmatter.icon;
 
   // resolve shortTitle
   if ("shortTitle" in frontmatter)
-    page.routeMeta["shortTitle"] = frontmatter.shortTitle;
+    page.routeMeta[ArticleInfoType.shortTitle] = frontmatter.shortTitle;
 
   if (plugins.blog) {
     const isArticle =
@@ -94,69 +94,76 @@ export const extendsPage = (
       frontmatter.article ||
       // generated from markdown files
       Boolean(frontmatter.article !== false && filePathRelative);
-
-    const isEncrypted = Object.keys(config).some((key) => path.startsWith(key));
+    const isEncrypted = Object.keys(config).some((key) =>
+      decodeURI(path).startsWith(key)
+    );
     const isSlide = isArticle && frontmatter.layout === "Slide";
 
-    // save basic info to routeMeta
-    page.routeMeta = {
-      ...page.routeMeta,
-      type: frontmatter.home
-        ? "home"
-        : isSlide
-        ? "slide"
-        : isArticle
-        ? "article"
-        : "page",
-      readingTime: page.data.readingTime,
-      excerpt: isEncrypted
-        ? ""
-        : page.excerpt ||
-          frontmatter.description ||
-          (typeof plugins.blog === "object" && plugins.blog.autoExcerpt
-            ? frontmatter.summary
-            : ""),
-    };
+    // save page type to routeMeta
+    page.routeMeta[ArticleInfoType.type] = frontmatter.home
+      ? PageType.home
+      : isSlide
+      ? PageType.slide
+      : isArticle
+      ? PageType.article
+      : PageType.page;
+
+    const excerpt = isEncrypted
+      ? ""
+      : page.excerpt ||
+        frontmatter.description ||
+        (typeof plugins.blog === "object" && plugins.blog.autoExcerpt
+          ? frontmatter.summary || ""
+          : "");
+
+    // save page excerpt to routeMeta
+    if (excerpt) page.routeMeta[ArticleInfoType.excerpt] = excerpt;
 
     // resolve author
-    if ("author" in frontmatter) page.routeMeta["author"] = frontmatter.author;
+    if ("author" in frontmatter)
+      page.routeMeta[ArticleInfoType.author] = frontmatter.author;
 
     // resolve date
     if ("date" in frontmatter) {
       const date = getDate(page.frontmatter.date)?.value;
 
       if (date) {
-        page.routeMeta["date"] = frontmatter.date;
+        page.routeMeta[ArticleInfoType.date] = frontmatter.date;
 
-        page.routeMeta["localizedDate"] = timeTransformer(date, {
+        page.routeMeta[ArticleInfoType.localizedDate] = timeTransformer(date, {
           lang: page.lang,
           type: "date",
         });
       }
-    } else if (createdTime) page.routeMeta["date"] = new Date(createdTime);
+    } else if (createdTime)
+      page.routeMeta[ArticleInfoType.date] = new Date(createdTime);
 
     if ("category" in frontmatter)
       // resolve category
       // resolve category
-      page.routeMeta["category"] = frontmatter.category;
+      page.routeMeta[ArticleInfoType.category] = frontmatter.category;
 
     // resolve tag
-    if ("tag" in frontmatter) page.routeMeta["tag"] = frontmatter.tag;
+    if ("tag" in frontmatter)
+      page.routeMeta[ArticleInfoType.tag] = frontmatter.tag;
 
     // resolve sticky
-    if ("sticky" in frontmatter) page.routeMeta["sticky"] = frontmatter.sticky;
-
-    // resolve star
-    if ("star" in frontmatter) page.routeMeta["star"] = frontmatter.star;
+    if ("sticky" in frontmatter)
+      page.routeMeta[ArticleInfoType.sticky] = frontmatter.sticky;
 
     // resolve image
-    if ("cover" in frontmatter) page.routeMeta["image"] = frontmatter.cover;
+    if ("cover" in frontmatter)
+      page.routeMeta[ArticleInfoType.cover] = frontmatter.cover;
+
+    // ensure a valid reading time exisits
+    if (page.data.readingTime && page.data.readingTime.words !== 0)
+      page.routeMeta[ArticleInfoType.readingTime] = page.data.readingTime;
 
     // resolve isOriginal
     if ("isOriginal" in frontmatter)
-      page.routeMeta["isOriginal"] = frontmatter.isOriginal;
+      page.routeMeta[ArticleInfoType.isOriginal] = frontmatter.isOriginal;
 
     // resolve encrypted
-    if (isEncrypted) page.routeMeta["isEncrypted"] = true;
+    if (isEncrypted) page.routeMeta[ArticleInfoType.isEncrypted] = true;
   }
 };

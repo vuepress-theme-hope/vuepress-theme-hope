@@ -13,22 +13,6 @@ icon: creative
 
 :::
 
-## 一键启用所有功能
-
-你可以在选项中 `enableAll` 设置为 `true` 来启用插件的所有功能。
-
-::: danger
-
-请仅将此选项用于体验或测试。
-
-插件完全支持代码分割，所以你应该使用下方选项并**仅**启用你需要的功能。
-
-启用不需要的功能将增加开发和构建时间。 (`markdown-it` 必须检查额外的语法)
-
-同时，一些功能会输出体积较大的文件到输出结果。(可高达 2MB)
-
-:::
-
 ## 新增的更多语法
 
 ### 选项卡
@@ -128,7 +112,7 @@ npm i -D vuepress-plugin-md-enhance@next
 
 ### 图片增强
 
-支持设置颜色模式和大小
+支持设置标题、颜色模式和大小
 
 - [查看详情](image.md)
 
@@ -280,9 +264,44 @@ span {
 
 ### 交互演示
 
-你可以直接在 Markdown 中插入 Vue 交互演示。
+::: playground#ts TS 案例
+
+@file index.ts
+
+```ts
+const msg = "hello world";
+
+const speak = (msg: string) => console.log(msg);
+
+speak(msg);
+```
+
+:::
 
 - [查看详情](playground.md)
+
+### Vue 交互演示
+
+::: vue-playground Vue 交互演示
+
+@file App.vue
+
+```vue
+<script setup>
+import { ref } from "vue";
+
+const msg = ref("Hello World!");
+</script>
+
+<template>
+  <h1>{{ msg }}</h1>
+  <input v-model="msg" />
+</template>
+```
+
+:::
+
+- [查看详情](vue-playground.md)
 
 ### 幻灯片
 

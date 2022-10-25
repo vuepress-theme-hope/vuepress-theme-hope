@@ -21,7 +21,7 @@ tag:
 
 ## iconAssets <Badge text="Только root" type="warning" />
 
-- Тип: `string`
+- Тип: `` "iconfont" | "fontawesome" | `//${string}` | `http://${string}` | `https://${string}`  ``
 - Обязательный: Нет
 - Детали: [Интерфейс → Иконка](../../guide/interface/icon.md)
 
@@ -59,7 +59,7 @@ tag:
 
 - Тип: `boolean`
 - По умолчанию: `false`
-- Детали: [Интерфейс → Кнопка «Полноэкранный режим»](../../guide/interface/others.md#fullscreen-button)
+- Детали: [Интерфейс → Кнопка «Полноэкранный режим»](../../guide/interface/others.md#полноэкранная-кнопка)
 
 Показывать ли кнопку «полноэкранный режим».
 
@@ -67,7 +67,7 @@ tag:
 
 - Тип: `boolean | number`
 - По умолчанию: `true`
-- Детали: [Интерфейс → Кнопка «Наверх»](../../guide/interface/others.md#back-to-top-button)
+- Детали: [Интерфейс → Кнопка «Наверх»](../../guide/interface/others.md#кнопка-«вернуться-к-началу»)
 
 Показывать ли кнопку «Вернуться к началу».
 

@@ -1,4 +1,8 @@
-import { addViteOptimizeDepsInclude, tagHint } from "vuepress-shared";
+import {
+  addViteOptimizeDepsExclude,
+  addViteOptimizeDepsInclude,
+  tagHint,
+} from "vuepress-shared/node";
 
 import type { App } from "@vuepress/core";
 import type { ViteBundlerOptions } from "@vuepress/bundler-vite";
@@ -72,6 +76,7 @@ export const checkTag = (config: unknown, app: App): void => {
 
 export const updateBundlerConfig = (config: unknown, app: App): void => {
   addViteOptimizeDepsInclude({ app, config }, "@vueuse/core");
+  addViteOptimizeDepsExclude({ app, config }, "@theme-hope");
 
   checkTag(config, app);
 };

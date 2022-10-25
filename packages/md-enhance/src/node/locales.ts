@@ -1,4 +1,4 @@
-import type { MarkdownEnhanceLocaleConfig } from "../shared";
+import type { MarkdownEnhanceLocaleConfig } from "../shared/index.js";
 
 export const markdownEnhanceLocales: MarkdownEnhanceLocaleConfig = {
   "/en/": {
@@ -107,5 +107,14 @@ export const markdownEnhanceLocales: MarkdownEnhanceLocaleConfig = {
     warning: "Aviso",
     danger: "Advertencia",
     details: "Detalles",
+  },
+
+  "/ja/": {
+    info: "関連情報",
+    note: "注",
+    tip: "ヒント",
+    warning: "注意",
+    danger: "警告",
+    details: "詳細",
   },
 };

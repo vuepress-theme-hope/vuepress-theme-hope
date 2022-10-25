@@ -2,7 +2,7 @@
 title: YouTube
 ---
 
-Embed YouTube vidoes in markdown files.
+Embed YouTube vidoes in Markdown files.
 
 <!-- more -->
 
@@ -21,12 +21,26 @@ It is ONLY not required, when you are setting `listType` to `"playlist"` and pro
 
 :::
 
+### width
+
+- Type: `string | number`
+- Default: `100%`
+
+YouTube componnet width.
+
 ### height
 
 - Type: `string | number`
-- Default: `400`
+- Required: No
 
-YouTube iframe height.
+YouTube componnet height
+
+### radio
+
+- Type: `number`
+- Default: `16 / 9`
+
+YouTube componnet radio, ONLY valid when `height` not set.
 
 ### autoplay
 
@@ -134,17 +148,23 @@ Whether disable keyboard control of the video.
 
 ## Demo
 
+A YouTube video:
+
 <YouTube id="0JJPfz5dg20" />
 
 ```md
 <YouTube id="0JJPfz5dg20" />
 ```
 
+A YouTube video with custom settings:
+
 <YouTube id="0JJPfz5dg20" disable-fullscreen />
 
 ```md
 <YouTube id="0JJPfz5dg20" disable-fullscreen />
 ```
+
+A YouTube play list:
 
 <YouTube list-type="playlist" list="PLJNLwTPak6dhCRzVelZIs2-DfBp01NX_1" />
 

@@ -1,4 +1,4 @@
-import type { CommentOptions } from "../shared";
+import type { CommentOptions } from "../shared/index.js";
 
 /** @deprecated */
 export const convertOptions = (

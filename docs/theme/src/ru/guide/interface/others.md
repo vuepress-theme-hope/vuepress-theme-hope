@@ -16,6 +16,8 @@ tag:
 
 ## Полноэкранная кнопка
 
+<ToggleFullScreenButton />
+
 Если вам это нужно, вы можете включить его, установив `fullscreen: true` в настройках темы.
 
 ::: tip
@@ -44,9 +46,9 @@ export default defineUserConfig({
 
 ```js
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     fullscreen: true,
   }),
@@ -60,3 +62,7 @@ module.exports = {
 `vuepress-theme-hope` добавляет элемент управления back-to-top, который по умолчанию будет отображаться после прокрутки вниз на 300 пикселей.
 
 Вы можете установить `backToTop: false` в параметрах темы, чтобы отключить его, или установить его на число, чтобы изменить расстояние срабатывания по умолчанию.
+
+<script setup lang="ts">
+import ToggleFullScreenButton from "@theme-hope/modules/outlook/components/ToggleFullScreenButton.js";
+</script>

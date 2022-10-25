@@ -1,13 +1,4 @@
-export * from "./components";
-export * from "./composables";
-export * from "./utils";
-export {
-  compareDate,
-  deepAssign,
-  getAuthor,
-  getCategory,
-  getDate,
-  getTag,
-  isAbsoluteUrl,
-  isUrl,
-} from "../shared";
+export * from "./components/index.js";
+export * from "./composables/index.js";
+export * from "./utils/index.js";
+export * from "../shared/index.js";

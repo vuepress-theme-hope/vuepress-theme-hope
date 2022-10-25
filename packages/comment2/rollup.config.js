@@ -1,12 +1,13 @@
-import { rollupTypescript } from "../../scripts/rollup";
+import { rollupTypescript } from "../../scripts/rollup.js";
 
 export default [
   ...rollupTypescript("node/index", {
     external: [
-      "vuepress-shared",
       "@vuepress/utils",
       "vuepress-plugin-sass-palette",
+      "vuepress-shared/node",
     ],
+    dtsExternal: ["vuepress-shared"],
   }),
   ...rollupTypescript("client/config", {
     external: [
@@ -14,7 +15,7 @@ export default [
       "@vuepress/client",
       "vue",
       "vue-router",
-      "vuepress-shared/lib/client",
+      "vuepress-shared/client",
       /\.scss$/,
     ],
     dtsExternal: [/\.scss$/],
@@ -31,15 +32,18 @@ export default [
   ...rollupTypescript("client/components/Waline", {
     external: [
       "@vuepress/client",
-      "@waline/client/dist/component",
-      "@waline/client/dist/pageview",
+      "@waline/client/dist/component.mjs",
+      "@waline/client/dist/pageview.mjs",
       "autosize",
       "marked",
       "vue",
       "vue-router",
-      "vuepress-shared/lib/client",
+      "vuepress-shared/client",
       /\.s?css$/,
     ],
     dtsExternal: [/\.s?css$/],
+  }),
+  ...rollupTypescript("client/pageview", {
+    external: ["@waline/client/dist/pageview.mjs"],
   }),
 ];

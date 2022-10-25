@@ -15,13 +15,20 @@
       "br",
       "script",
       "Badge",
+      "BiliBili",
+      "Catalog",
       "CodePen",
       "FontIcon",
       "PDF",
       "StackBlitz",
+      "VideoPlayer",
       "YouTube",
+      "AppearanceSwitch",
       "IconDisplay",
-      "KatexPlayground"
+      "KatexPlayground",
+      "NetlifyBadge",
+      "ThemeColorPicker",
+      "ToggleFullScreenButton"
     ]
   },
   "MD035": {

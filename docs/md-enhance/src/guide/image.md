@@ -13,7 +13,7 @@ Improve image syntax in Markdown to support color scheme and size.
 
 @tab TS
 
-```ts {7-10}
+```ts {7-12}
 // .vuepress/config.ts
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
@@ -24,6 +24,8 @@ export default {
       imageMark: true,
       // Enable image size
       imageSize: true,
+      // Enable image title
+      imageTitle: true,
     }),
   ],
 };
@@ -31,17 +33,19 @@ export default {
 
 @tab JS
 
-```js {7-10}
+```js {7-12}
 // .vuepress/config.js
-const { mdEnhancePlugin } = require("vuepress-plugin-md-enhance");
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
-module.exports = {
+export default {
   plugins: [
     mdEnhancePlugin({
       // Enable image mark
       imageMark: true,
       // Enable image size
       imageSize: true,
+      // Enable image title
+      imageTitle: true,
     }),
   ],
 };
@@ -66,6 +70,8 @@ You can enable it using `imageMark` option.
 ::: details Case
 
 The above demo will render the following result
+
+<AppearanceSwitch /> (Try to toggle theme mode)
 
 ![GitHub Light](/assets/icon/github-light.png#gh-dark-mode-only)
 ![GitHub Dark](/assets/icon/github-dark.png#gh-light-mode-only)
@@ -99,10 +105,28 @@ You can use `=widthxheight` to specify the image size when setting `imageSize: t
 ![Alt](/example.bmp =x300)
 ```
 
-The above markdown will be parsed as:
+The above Markdown will be parsed as:
 
 ```html
 <img src="/example.png" width="200" height="300" />
 <img src="/example.jpg" title="Image title" width="200" />
 <img src="/example.bmp" height="300" />
 ```
+
+## Image Title
+
+Sometimes, you may want to add a description with image, in this case, you should set `imageTitle: true` in plugin options.
+
+Then, when you add a title to the image, the image will be displayed as `<figure>` and title will be displayed as `<figurecaption>`.
+
+```md
+![GitHub Logo](/assets/icon/github-light.png "Github Logo")
+```
+
+Will be rendered as:
+
+![GitHub Logo](/assets/icon/github-light.png "Github Logo")
+
+<script setup lang="ts">
+import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch.js"
+</script>

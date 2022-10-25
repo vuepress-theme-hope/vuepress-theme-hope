@@ -1,8 +1,8 @@
-import { useLocaleConfig } from "vuepress-shared/lib/client";
+import { useLocaleConfig } from "vuepress-shared/client";
 import { Transition, computed, defineComponent, h, onMounted, ref } from "vue";
-import { locales } from "../define";
-import { UpdateIcon } from "../components/icons";
-import { usePWAEvent, useSkipWaiting } from "../composables";
+import { locales } from "../define.js";
+import { UpdateIcon } from "../components/icons.js";
+import { usePWAEvent, useSkipWaiting } from "../composables/index.js";
 
 import type { VNode } from "vue";
 
@@ -13,14 +13,14 @@ export default defineComponent({
 
   setup(_props, { slots }) {
     const locale = useLocaleConfig(locales);
-    const registration = ref<ServiceWorkerRegistration | null>(null);
+    const registration = ref<ServiceWorkerRegistration>();
 
     const enabled = computed(() => Boolean(registration.value));
 
     const reload = (): void => {
       if (registration.value) {
         useSkipWaiting(registration.value);
-        registration.value = null;
+        registration.value = undefined;
       }
     };
 

@@ -1,23 +1,22 @@
 import { createPage } from "@vuepress/core";
 import { removeLeadingSlash } from "@vuepress/shared";
-import { logger } from "./utils";
+import { logger } from "./utils.js";
 
 import type { App, Page } from "@vuepress/core";
-import type { BlogOptions, CategoryMap, PageMap } from "../shared";
+import type { BlogOptions, CategoryMap, PageMap } from "../shared/index.js";
 
 const HMR_CODE = `
 if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updateBlogCategory) {
-    __VUE_HMR_RUNTIME__.updateBlogCategory(categoryMap)
-  }
+  import.meta.webpackHot.accept();
+  if (__VUE_HMR_RUNTIME__.updateBlogCategory)
+    __VUE_HMR_RUNTIME__.updateBlogCategory(categoryMap);
 }
 
-if (import.meta.hot) {
+if (import.meta.hot)
   import.meta.hot.accept(({ categoryMap }) => {
-    __VUE_HMR_RUNTIME__.updateBlogCategory(categoryMap)
-  })
-}
+    __VUE_HMR_RUNTIME__.updateBlogCategory(categoryMap);
+  });
+
 `;
 
 export const prepareCategory = (
@@ -223,7 +222,10 @@ export const prepareCategory = (
 
     await app.writeTemp(
       `blog/category.js`,
-      `export const categoryMap = ${JSON.stringify(finalMap)}\n${HMR_CODE}`
+      `\
+export const categoryMap = ${JSON.stringify(finalMap)};
+${app.env.isDev ? HMR_CODE : ""}
+`
     );
 
     if (app.env.isDebug) logger.info("All categories generated.");

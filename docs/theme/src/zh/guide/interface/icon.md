@@ -9,12 +9,14 @@ tag:
   - 图标
 ---
 
-整个主题在多处都添加了 FontClass 格式图标的支持。
+整个主题在多处都添加了 FontClass/图片 格式图标的支持。
 
 目前你可以使用 iconfont 和 fontawesome 为你的项目添加图标。
 
 - 对于国内用户，推荐使用 iconfont
 - 对于海外用户，推荐使用 fontawesome
+
+同时，png/svg 格式的图标也是支持的。你可以使用绝对路径或者路径名来添加图标。
 
 <!-- more -->
 
@@ -106,9 +108,9 @@ export default defineUserConfig({
 
 ```js {7-9}
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     iconAssets: "fontawesome",
   }),
@@ -154,9 +156,9 @@ export default defineUserConfig({
 
 ```js {7-9}
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     iconAssets: "iconfont",
   }),

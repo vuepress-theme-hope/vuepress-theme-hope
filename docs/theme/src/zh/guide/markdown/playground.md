@@ -1,9 +1,14 @@
 ---
 title: 交互演示
 icon: code
+category:
+  - Markdown
+tag:
+  - Markdown
+  - 交互演示
 ---
 
-让你 VuePress 站点中的 Markdown 文件支持代码交互。
+让你的 VuePress 站点中的 Markdown 文件支持交互演示。
 
 <!-- more -->
 
@@ -13,102 +18,77 @@ icon: code
 
 @tab TS
 
-```ts {8-11}
+```ts {8-33}
 // .vuepress/config.ts
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
+export default defineUserConfig({
   theme: hopeTheme({
-    plugins: {
-      mdEnhance: {
-        // 配置你的交互演示
-        playground: true, // 使用默认配置
-      },
-    },
-  }),
-};
-```
-
-@tab JS
-
-```js {7-10}
-// .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
-
-module.exports = {
-  theme: hopeTheme({
-    plugins: {
-      mdEnhance: {
-        // 配置你的交互演示
-        playground: true, // 使用默认配置
-      },
-    },
-  }),
-};
-```
-
-:::
-
-你也可以使用 `PlaygroundOptions` 自定义你的 playground 配置：
-
-::: code-tabs#config
-
-@tab TS
-
-```ts {8-24}
-// .vuepress/config.ts
-import { defineUserConfig } from "vuepress";
-import { hopeTheme } from "vuepress-theme-hope";
-
-export default {
-  theme: hopeTheme({
-    plugins: {
-      mdEnhance: {
-        // 配置你的 playground
-        playground: {
-          mode: "external", // 使用外置模式
-          external: {
-            base: "https://sfc.vuejs.org/", // 使用 vue sfc playground.
-            defaultImportsMap: "import-map.json",
+    mdEnhance: {
+      // 在此放置交互演示配置
+      playground: {
+        // 添加预设
+        presets: [
+          "ts",
+          "vue",
+          {
+            name: "playground#language",
+            component: "PlaygroundComponent",
+            propsGetter: (
+              playgroundData: PlaygroundData
+            ): Record<string, string> => ({
+              // 交互演示属性
+            }),
           },
-          internal: {
-            defaultImportsMap: "import-map.json",
-            showCode: false, // 不显示代码
-            showCompileOutput: false, // 不显示 js, css, ssr 面板
-            showImportMap: true, // 显示 import map
-            clearConsole: false, // 不清空控制台
+        ],
+        // 设置内置预设 (可选)
+        config: {
+          ts: {
+            // ...
+          },
+          vue: {
+            // ...
           },
         },
       },
     },
   }),
-};
+});
 ```
 
 @tab JS
 
-```js {7-23}
+```js {8-33}
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
-    plugins: {
-      mdEnhance: {
-        // 配置你的 playground
-        playground: {
-          mode: "external", // 使用外置模式
-          external: {
-            base: "https://sfc.vuejs.org/", // 使用 vue sfc playground.
-            defaultImportsMap: "import-map.json",
+    mdEnhance: {
+      // 在此放置交互演示配置
+      playground: {
+        // 添加预设
+        presets: [
+          "ts",
+          "vue",
+          {
+            name: "playground#language",
+            component: "PlaygroundComponent",
+            propsGetter: (
+              playgroundData: PlaygroundData
+            ): Record<string, string> => ({
+              // 交互演示属性
+            }),
           },
-          internal: {
-            defaultImportsMap: "import-map.json",
-            showCode: false, // 不显示代码
-            showCompileOutput: false, // 不显示 js, css, ssr 面板
-            showImportMap: true, // 显示 import map
-            clearConsole: false, // 不清空控制台
+        ],
+        // 设置内置预设 (可选)
+        config: {
+          ts: {
+            // ...
+          },
+          vue: {
+            // ...
           },
         },
       },
@@ -121,32 +101,58 @@ module.exports = {
 
 ## 使用
 
-我们可以使用 `external` 和 `internal` 模式。
+您应该通过 `plugins.mdEnhance` 中的 `playground.presets` 添加预设。
 
-- `external` 模式嵌入 `iframe` 来展示 playground。你也可以使用自己的在线 playground，外置 playground 会比较灵活。
-- `internal` 模式使用 `@vue/repl` 直接渲染代码。
+要使用交互演示，您应该使用一个名为 `playground#preset` 的容器。
+
+在其中，您可以使用 3 个指令：
+
+- `@file fileName` 紧跟文件的代码块
+- `@import importMapFileName` 紧跟一个自定义“导入映射”的 json 代码块
+- `@setting` 紧跟一个自定义设置的 json 代码块
+
+您可以查看以下演示以查看更多详细信息。
+
+## 可用预设
+
+目前，我们支持 `ts` 和 `vue` 预设，我们期待更多来自 PR 的预设。
+
+如果您想添加自己的交互演示，可以在 [高级用法](#高级用法) 中添加您自己的预设。同时我们欢迎为您的精彩预设创建 PR。
+
+::: info TS 预设
+
+TS 预设默认使用官方交互演示，不支持多个 ts 文件，所以你需要做的就是通过 `@file xxx.ts` 指令添加一个 ts 文件 (文件名不重要，但需要 `.ts` 文件扩展名)。
+
+要使用定制化的编译器选项，您可以通过 `@setting` 指令提供一个。但请注意，官方 TS 交互演示并不支持所有的编译器。
+
+同时，您可以通过插件选项中的 `playground.config.ts` 自定义默认的 compilerOption，通过 `service` 选项可以使用官方交互演示之外的其他服务，以防你想部署自己的交互演示站点。
+
+:::
+
+::: info Vue 预设
+
+Vue 预设默认使用官方交互演示，并不像 [Vue 交互演示](./vue-playground.md) 支持自定义选项。因此，如果您严重依赖 Vue 交互演示，我们建议您改用 [Vue 交互演示](./vue-playground.md)。
+
+但是如果你只想要几个演示而不是捆绑整个 Vue 交互演示，你可以使用这个预设来创建一个 `<iframe>`。
+
+`@setting` 指令中只有 `service`、`dev` 和 `ssr` 选项可用。
+
+:::
 
 ## 案例
 
-### 外置模式
+### TS
 
-#### 基础用法
+::: playground#ts TS 案例 1
 
-::: playground 基础用法
+@file index.ts
 
-@file App.vue
+```ts
+const msg = "你好世界";
 
-```vue
-<script setup>
-import { ref } from "vue";
+const speak = (msg: string) => console.log(msg);
 
-const msg = ref("Hello World!");
-</script>
-
-<template>
-  <h1>{{ msg }}</h1>
-  <input v-model="msg" />
-</template>
+speak(msg);
 ```
 
 :::
@@ -154,21 +160,16 @@ const msg = ref("Hello World!");
 :::: details 代码
 
 ````md
-::: playground 基础用法
+::: playground#ts TS 案例 1
 
-@file App.vue
+@file index.ts
 
-```vue
-<script setup>
-import { ref } from "vue";
+```ts
+const msg = "你好世界";
 
-const msg = ref("Hello World!");
-</script>
+const speak = (msg: string) => console.log(msg);
 
-<template>
-  <h1>{{ msg }}</h1>
-  <input v-model="msg" />
-</template>
+speak(msg);
 ```
 
 :::
@@ -176,29 +177,74 @@ const msg = ref("Hello World!");
 
 ::::
 
-#### 高级用法
+::: playground#ts TS 案例 2
 
-本示例向你展示如何自定义你的 playground。
+@file index.ts
 
-- 使用你自己的 playground
-- 使用你自己的 import map
-- 应用额外的配置到你的 playground
+```ts
+const msg = "你好世界";
 
-::: playground 高级用法
+const speak = (msg: string) => console.log(msg);
+
+speak(msg);
+```
+
+@settings
+
+```json
+{
+  "target": "es5"
+}
+```
+
+:::
+
+:::: details 代码
+
+````md
+::: playground#ts TS 案例 2
+
+@file index.ts
+
+```ts
+const msg = "你好世界";
+
+const speak = (msg: string) => console.log(msg);
+
+speak(msg);
+```
+
+@settings
+
+```json
+{
+  "target": "es5"
+}
+```
+
+:::
+````
+
+::::
+
+### Vue
+
+::: playground#vue 使用自定义导入的 Vue 案例
+
 @file App.vue
 
 ```vue
 <script setup>
 import { ref } from "vue";
+
 import Comp from "./Comp.vue";
 
-const msg = ref("Hello Playground!");
+const msg = ref("Hello World!");
 </script>
 
 <template>
   <h1>{{ msg }}</h1>
   <input v-model="msg" />
-
   <Comp />
 </template>
 ```
@@ -208,38 +254,15 @@ const msg = ref("Hello Playground!");
 ```vue
 <template>
   <div>Comp</div>
-  <el-row class="mb-4">
-    <el-button>Default</el-button>
-    <el-button type="primary">Primary</el-button>
-    <el-button type="success">Success</el-button>
-    <el-button type="info">Info</el-button>
-    <el-button type="warning">Warning</el-button>
-    <el-button type="danger">Danger</el-button>
-    <el-button>中文</el-button>
-  </el-row>
 </template>
 ```
 
-@imports user-imports.json
+@import
 
 ```json
 {
   "imports": {
-    "lodash-es": "https://cdn.jsdelivr.net/npm/lodash-es@4.17.21/lodash.min.js"
-  }
-}
-```
-
-@settings
-
-```json
-{
-  "mode": "external",
-  "external": {
-    "base": "https://vue-sfc-playground.vercel.app/",
-    "options": {
-      "showOutput": "true"
-    }
+    "vue": "https://sfc.vuejs.org/vue.runtime.esm-browser.js"
   }
 }
 ```
@@ -249,21 +272,22 @@ const msg = ref("Hello Playground!");
 :::: details 代码
 
 ````md
-::: playground 高级用法
+::: playground#vue 使用自定义导入的 Vue 案例
+
 @file App.vue
 
 ```vue
 <script setup>
 import { ref } from "vue";
+
 import Comp from "./Comp.vue";
 
-const msg = ref("Hello Playground!");
+const msg = ref("Hello World!");
 </script>
 
 <template>
   <h1>{{ msg }}</h1>
   <input v-model="msg" />
-
   <Comp />
 </template>
 ```
@@ -273,38 +297,15 @@ const msg = ref("Hello Playground!");
 ```vue
 <template>
   <div>Comp</div>
-  <el-row class="mb-4">
-    <el-button>Default</el-button>
-    <el-button type="primary">Primary</el-button>
-    <el-button type="success">Success</el-button>
-    <el-button type="info">Info</el-button>
-    <el-button type="warning">Warning</el-button>
-    <el-button type="danger">Danger</el-button>
-    <el-button>中文</el-button>
-  </el-row>
 </template>
 ```
 
-@imports user-imports.json
+@import
 
 ```json
 {
   "imports": {
-    "lodash-es": "https://cdn.jsdelivr.net/npm/lodash-es@4.17.21/lodash.min.js"
-  }
-}
-```
-
-@settings
-
-```json
-{
-  "mode": "external",
-  "external": {
-    "base": "https://vue-sfc-playground.vercel.app/",
-    "options": {
-      "showOutput": "true"
-    }
+    "vue": "https://sfc.vuejs.org/vue.runtime.esm-browser.js"
   }
 }
 ```
@@ -314,11 +315,8 @@ const msg = ref("Hello Playground!");
 
 ::::
 
-### 内置模式
+::: playground#vue 使用自定义设置的 Vue 案例
 
-#### 基础用法
-
-::: playground 基础用法
 @file App.vue
 
 ```vue
@@ -334,11 +332,12 @@ const msg = ref("Hello Playground!");
 </template>
 ```
 
-@settings
+@setting
 
 ```json
 {
-  "mode": "internal"
+  "dev": true,
+  "ssr": true
 }
 ```
 
@@ -347,7 +346,8 @@ const msg = ref("Hello Playground!");
 :::: details 代码
 
 ````md
-::: playground 基础用法
+::: playground#vue 使用自定义设置的 Vue 案例
+
 @file App.vue
 
 ```vue
@@ -363,11 +363,12 @@ const msg = ref("Hello Playground!");
 </template>
 ```
 
-@settings
+@setting
 
 ```json
 {
-  "mode": "internal"
+  "dev": true,
+  "ssr": true
 }
 ```
 
@@ -376,75 +377,87 @@ const msg = ref("Hello Playground!");
 
 ::::
 
-#### 高级用法
+## 高级用法
 
-显示 playground 的 `JS`, `CSS`, `SSR` 面板，并显示代码编辑器。
+您可以提供自己的预设。
 
-Playground 的 `key` 是自动产生的。它是基于标题计算的。
-你也可以自己指定它，使用 `playground#customId` 形式。
+```ts
+interface PlaygroundCodeConfig {
+  /**
+   * 代码块扩展名
+   *
+   * @description 它基于文件名，而不是代码块语言
+   */
+  ext: string;
 
-::: playground#customId 高级用法
-@file App.vue
+  /**
+   * 代码块内容
+   */
+  content: string;
+}
 
-```vue
-<script setup>
-import { ref } from "vue";
+interface PlaygroundData {
+  /**
+   * 交互演示标题
+   */
+  title?: string;
 
-const msg = ref("Hello Playground!");
-</script>
+  /**
+   * Import map 文件名
+   *
+   * @default 'import-map.json'
+   */
+  importMap?: string;
 
-<template>
-  <h1>{{ msg }}</h1>
-  <input v-model="msg" />
-</template>
-```
+  /**
+   * 交互演示文件信息
+   */
+  files: Record<
+    /**
+     * 文件名
+     */
+    string,
+    /**
+     * 文件详情
+     */
+    PlaygroundCodeConfig
+  >;
 
-@settings
+  /**
+   * 交互演示设置
+   *
+   * @description 它是设置指令后的 json 内容的解析结果
+   */
+  settings: Record<string, unknown>;
 
-```json
-{
-  "mode": "internal",
-  "internal": {
-    "showCode": "true",
-    "showCompileOutput": "true"
-  }
+  /**
+   * 根据交互演示内容生成的 hash key
+   */
+  key: string;
+}
+
+interface PlaygroundOptions {
+  /**
+   * 交互演示容器名
+   */
+  name: string;
+
+  /**
+   * 交互演示组件名称
+   *
+   * @default 'Playground'
+   */
+  component?: string;
+
+  /**
+   * 属性获取器
+   */
+  propsGetter: (data: PlaygroundData) => Record<string, string>;
 }
 ```
 
-:::
+我们为 `getter` 函数提供了一个 `playgroundData` 对象，你应该提供下列内容:
 
-:::: details 代码
-
-````md
-::: playground#customId 高级用法
-@file App.vue
-
-```vue
-<script setup>
-import { ref } from "vue";
-
-const msg = ref("Hello Playground!");
-</script>
-
-<template>
-  <h1>{{ msg }}</h1>
-  <input v-model="msg" />
-</template>
-```
-
-@settings
-
-```json
-{
-  "mode": "internal",
-  "internal": {
-    "showCode": "true",
-    "showCompileOutput": "true"
-  }
-}
-```
-
-:::
-````
-
-::::
+- 通过 `name` 选项提供容器名称
+- 通过 `component` 选项提供客户端组件名称
+- 通过 `propsGetter` 选项提供一个接收 playgroundData 并返回格式为 `attr` → `value` 属性映射的函数

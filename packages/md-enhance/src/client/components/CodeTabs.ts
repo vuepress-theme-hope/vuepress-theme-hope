@@ -3,7 +3,7 @@ import { useStorage } from "@vueuse/core";
 import { defineComponent, h, ref, watch } from "vue";
 
 import type { PropType, VNode } from "vue";
-import type { TabProps } from "./Tabs";
+import type { TabProps } from "./Tabs.js";
 
 import "../styles/code-tabs.scss";
 
@@ -21,6 +21,7 @@ export default defineComponent({
       type: Array as PropType<TabProps[]>,
       required: true,
     },
+    id: { type: String, required: true },
     tabId: {
       type: String,
       default: "",
@@ -107,7 +108,7 @@ export default defineComponent({
           ? h("div", { class: "code-tabs" }, [
               h(
                 "div",
-                { class: "code-tabs-nav" },
+                { class: "code-tabs-nav", role: "tablist" },
                 props.data.map(({ title }, index) => {
                   const isActive = index === activeIndex.value;
 
@@ -119,8 +120,9 @@ export default defineComponent({
                           tabRefs.value[index] = <HTMLUListElement>element;
                       },
                       class: ["code-tabs-nav-tab", { active: isActive }],
-                      "aria-pressed": isActive,
-                      "aria-expanded": isActive,
+                      role: "tab",
+                      "aria-controls": `codetab-${props.id}-${index}`,
+                      "aria-selected": isActive,
                       onClick: () => {
                         activeIndex.value = index;
                         updateStore();
@@ -139,7 +141,9 @@ export default defineComponent({
                   "div",
                   {
                     class: ["code-tab", { active: isActive }],
-                    "aria-selected": isActive,
+                    id: `codetab-${props.id}-${index}`,
+                    role: "tabpanel",
+                    "aria-expanded": isActive,
                   },
                   slots[`tab${index}`]?.({ title, value, isActive })
                 );

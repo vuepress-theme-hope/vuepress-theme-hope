@@ -6,6 +6,8 @@ export const prepareSocialMediaIcons = async (
 ): Promise<void> => {
   await app.writeTemp(
     `theme-hope/socialMedia.js`,
-    `export const icons = ${JSON.stringify(icons)}`
+    `\
+export const icons = ${JSON.stringify(icons)};
+`
   );
 };

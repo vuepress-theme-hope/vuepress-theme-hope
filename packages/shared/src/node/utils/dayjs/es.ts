@@ -1,6 +1,6 @@
 // Spanish [es]
 import type { default as dayjs } from "dayjs";
-import type { Locale } from "./locale";
+import type { Locale } from "./locale.js";
 
 const locale: Partial<Locale> = {
   name: "es",

@@ -1,16 +1,17 @@
-import { brLocale } from "./br";
-import { deLocale } from "./de";
-import { enLocale } from "./en";
-import { esLocale } from "./es";
-import { frLocale } from "./fr";
-import { ruLocale } from "./ru";
-import { skLocale } from "./sk";
-import { ukLocale } from "./uk";
-import { viLocale } from "./vi";
-import { zhLocale } from "./zh";
-import { zhTWLocale } from "./zhTW";
+import { brLocale } from "./br.js";
+import { deLocale } from "./de.js";
+import { enLocale } from "./en.js";
+import { esLocale } from "./es.js";
+import { frLocale } from "./fr.js";
+import { ruLocale } from "./ru.js";
+import { skLocale } from "./sk.js";
+import { ukLocale } from "./uk.js";
+import { viLocale } from "./vi.js";
+import { zhLocale } from "./zh.js";
+import { zhTWLocale } from "./zhTW.js";
+import { jaLocale } from "./ja.js";
 
-import type { HopeThemeLocaleData } from "../../shared";
+import type { HopeThemeLocaleData } from "../../shared/index.js";
 
 export const themeLocalesData: Record<string, HopeThemeLocaleData> = {
   "/en/": enLocale,
@@ -34,4 +35,6 @@ export const themeLocalesData: Record<string, HopeThemeLocaleData> = {
   "/fr/": frLocale,
 
   "/es/": esLocale,
+
+  "/ja/": jaLocale,
 };

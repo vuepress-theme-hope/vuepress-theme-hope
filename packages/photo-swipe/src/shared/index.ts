@@ -1,3 +1,3 @@
-export * from "./locales";
-export * from "./options";
-export * from "./photoswipe";
+export * from "./locales.js";
+export * from "./options.js";
+export * from "./photoswipe.js";

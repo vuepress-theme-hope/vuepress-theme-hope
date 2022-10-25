@@ -10,10 +10,12 @@ icon: config
   ```ts
   type AvailableComponent =
     | "Badge"
+    | "BiliBili"
     | "CodePen"
     | "FontIcon"
     | "PDF"
     | "StackBlitz"
+    | "VideoPlayer"
     | "YouTube";
   ```
 
@@ -24,16 +26,20 @@ Components to be registered.
 Available component names:
 
 - `"Badge"`
+- `"BiliBili"`
 - `"CodePen"`
 - `"FontIcon"`
 - `"PDF"`
 - `"StackBlitz"`
+- `"VideoPlayer"`
 - `"YouTube"`
 
 ## addThis
 
 - Type: `string | false`
 - Default: `false`
+- Details:
+  - [Guide → AddThis](./guide/addthis.md#usage)
 
 Public ID of addThis.
 
@@ -67,7 +73,7 @@ Locales config for BackToTop button.
 
 ## iconAssets
 
-- Type: `string`
+- Type: `` "iconfont" | "fontawesome" | `//${string}` | `http://${string}` | `https://${string}`  ``
 - Required: No
 
 Link of font icon asset, `'iconfont'` and `'fontawesome'` keywords are supported.

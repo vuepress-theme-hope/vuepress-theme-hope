@@ -45,6 +45,13 @@ Page - Discussion mapping. For details see [Giscus Page](https://giscus.app/)
 
 Whether enable strict mapping or not
 
+## lazyLoading
+
+- Type: `boolean`
+- Default: `true`
+
+Whether enable lazy loading or not
+
 ## reactionsEnabled
 
 - Type: `boolean`
@@ -58,3 +65,51 @@ Whether enable reactions or not
 - Default: `"top"`
 
 Input position
+
+## lightTheme
+
+- Type: `GiscusTheme`
+
+  ```ts
+  type GiscusTheme =
+    | "light"
+    | "light_high_contrast"
+    | "light_protanopia"
+    | "dark"
+    | "dark_high_contrast"
+    | "dark_protanopia"
+    | "dark_dimmed"
+    | "transparent_dark"
+    | "preferred_color_scheme"
+    | `https://${string}`;
+  ```
+
+- Default: `"light"`
+
+Giscus theme used in lightmode
+
+Should be a built-in theme keyword or a css link starting with `https://`.
+
+## darkTheme
+
+- Type: `GiscusTheme`
+
+  ```ts
+  type GiscusTheme =
+    | "light"
+    | "light_high_contrast"
+    | "light_protanopia"
+    | "dark"
+    | "dark_high_contrast"
+    | "dark_protanopia"
+    | "dark_dimmed"
+    | "transparent_dark"
+    | "preferred_color_scheme"
+    | `https://${string}`;
+  ```
+
+- Default: `"dark"`
+
+Giscus theme used in darkmode
+
+Should be a built-in theme keyword or a css link starting with `https://`.

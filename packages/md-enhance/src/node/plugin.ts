@@ -1,22 +1,28 @@
+import { getDirname, path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   addCustomElement,
   addViteOptimizeDepsExclude,
   addViteOptimizeDepsInclude,
   addViteSsrExternal,
-} from "vuepress-shared";
+  chainWebpack,
+  deepAssign,
+  getLocales,
+} from "vuepress-shared/node";
 
-import { logger } from "./utils";
+import { logger } from "./utils.js";
 
-import { checkLinks, getCheckLinksStatus } from "./checkLink";
+import { checkLinks, getCheckLinksStatus } from "./checkLink.js";
 import {
   convertOptions,
   legacyCodeDemo,
   legacyCodeGroup,
   legacyFlowchart,
-} from "./compact";
+} from "./compact/index.js";
+import { markdownEnhanceLocales } from "./locales.js";
 import {
   CODE_DEMO_DEFAULT_SETTING,
+  DEFAULT_VUE_PLAYGROUND_OPTIONS,
   align,
   attrs,
   chart,
@@ -24,10 +30,12 @@ import {
   echarts,
   flowchart,
   footnote,
+  hint,
   imageMark,
   imageSize,
   include,
   katex,
+  mathjax,
   lazyLoad,
   mark,
   mermaid,
@@ -42,14 +50,19 @@ import {
   tasklist,
   vPre,
   vueDemo,
-} from "./markdown-it";
-import { prepareConfigFile, prepareRevealPluginFile } from "./prepare";
-import { usePlugins } from "./usePlugins";
-import { MATHML_TAGS } from "./utils";
+  vuePlayground,
+  getVuePlaygroundPreset,
+  getTSPlaygroundPreset,
+  imageTitle,
+} from "./markdown-it/index.js";
+import { prepareConfigFile, prepareRevealPluginFile } from "./prepare.js";
+import { MATHML_TAGS } from "./utils.js";
 
 import type { PluginFunction } from "@vuepress/core";
 import type { KatexOptions } from "katex";
-import type { MarkdownEnhanceOptions } from "../shared";
+import type { MarkdownEnhanceOptions } from "../shared/index.js";
+
+const __dirname = getDirname(import.meta.url);
 
 export const mdEnhancePlugin =
   (
@@ -64,20 +77,20 @@ export const mdEnhancePlugin =
       );
     if (app.env.isDebug) logger.info(`Options: ${options.toString()}`);
 
-    if (options.enableAll)
-      logger.error(
-        'Do not use "enableAll" option in production, this option is only built for demo!\nTo avoid including large chunks of some features, enable features you are using ONLY.'
-      );
-
     const getStatus = (
       key: keyof MarkdownEnhanceOptions,
       gfm = false
     ): boolean =>
       key in options
         ? Boolean(options[key])
-        : gfm && "gfm" in options
-        ? Boolean(options.gfm)
-        : options.enableAll || false;
+        : (gfm && "gfm" in options && options.gfm) || false;
+
+    const locales = getLocales({
+      app,
+      name: "md-enhance",
+      default: markdownEnhanceLocales,
+      config: options.locales,
+    });
 
     const chartEnable = getStatus("chart");
     const echartsEnable = getStatus("echarts");
@@ -87,8 +100,9 @@ export const mdEnhancePlugin =
     const tasklistEnable = getStatus("tasklist", true);
     const mermaidEnable = getStatus("mermaid");
     const presentationEnable = getStatus("presentation");
-    const texEnable = getStatus("tex");
-    const playgroundEnable = getStatus("playground");
+    const katexEnable = getStatus("katex");
+    const mathjaxEnable = getStatus("mathjax");
+    const vuePlaygroundEnable = getStatus("vuePlayground");
 
     const shouldCheckLinks = getCheckLinksStatus(app, options);
 
@@ -102,7 +116,7 @@ export const mdEnhancePlugin =
         // eslint-disable-next-line @typescript-eslint/naming-convention
         "\\idotsint": "\\int\\!\\cdots\\!\\int",
       },
-      ...(typeof options.tex === "object" ? options.tex : {}),
+      ...(typeof options.katex === "object" ? options.katex : {}),
     };
 
     const revealPlugins =
@@ -113,7 +127,7 @@ export const mdEnhancePlugin =
 
     useSassPalettePlugin(app, { id: "hope" });
 
-    usePlugins(app, options);
+    let initialized = false;
 
     return {
       name: "vuepress-plugin-md-enhance",
@@ -131,31 +145,52 @@ export const mdEnhancePlugin =
           typeof options.presentation.revealConfig === "object"
             ? options.presentation.revealConfig
             : {},
-        PLAYGROUND_OPTIONS:
-          typeof options.playground === "object" ? options.playground : {},
+        VUE_PLAYGROUND_OPTIONS:
+          typeof options.vuePlayground === "object"
+            ? deepAssign(
+                {},
+                DEFAULT_VUE_PLAYGROUND_OPTIONS,
+                options.vuePlayground
+              )
+            : DEFAULT_VUE_PLAYGROUND_OPTIONS,
       }),
 
+      alias: {
+        // FIXME:
+        // this is a workaround for https://github.com/vitejs/vite/issues/7621
+        // Remove this when issue is fixed
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        "vuepress-plugin-md-enhance/SlidePage": path.resolve(
+          __dirname,
+          "../client/SlidePage.js"
+        ),
+      },
+
       extendsBundlerOptions: (config: unknown, app): void => {
-        if (katexOptions.output !== "html")
+        if (katexEnable && katexOptions.output !== "html")
           addCustomElement({ app, config }, MATHML_TAGS);
+        else if (mathjaxEnable) addCustomElement({ app, config }, /^mjx-/);
 
         if (chartEnable) {
-          addViteOptimizeDepsInclude({ app, config }, "chart.js/auto");
+          addViteOptimizeDepsExclude({ app, config }, "chart.js/auto/auto.mjs");
           addViteSsrExternal({ app, config }, "chart.js");
         }
 
         if (echartsEnable) {
-          addViteOptimizeDepsInclude({ app, config }, "echarts");
+          addViteOptimizeDepsExclude({ app, config }, "echarts");
           addViteSsrExternal({ app, config }, "echarts");
         }
 
         if (flowchartEnable) {
-          addViteOptimizeDepsInclude({ app, config }, "flowchart.js");
+          addViteOptimizeDepsInclude(
+            { app, config },
+            "flowchart.js/src/flowchart.parse.js"
+          );
           addViteSsrExternal({ app, config }, "flowchart.js");
         }
 
         if (mermaidEnable) {
-          addViteOptimizeDepsInclude({ app, config }, "mermaid");
+          addViteOptimizeDepsExclude({ app, config }, "mermaid");
           addViteSsrExternal({ app, config }, "mermaid");
         }
 
@@ -167,12 +202,19 @@ export const mdEnhancePlugin =
               (plugin) => `reveal.js/plugin/${plugin}/${plugin}.esm.js`
             ),
           ]);
+
           addViteSsrExternal({ app, config }, "reveal.js");
         }
 
-        if (playgroundEnable) {
+        if (vuePlaygroundEnable) {
           addViteOptimizeDepsInclude({ app, config }, "@vue/repl");
           addViteSsrExternal({ app, config }, "@vue/repl");
+
+          // hide webpack warnings
+          chainWebpack({ app, config }, (config) => {
+            config.module.set("exprContextCritical", false);
+            config.module.set("unknownContextCritical", false);
+          });
         }
       },
 
@@ -182,7 +224,9 @@ export const mdEnhancePlugin =
         if (getStatus("attrs"))
           md.use(attrs, typeof options.attrs === "object" ? options.attrs : {});
         if (getStatus("align")) md.use(align);
+        if (getStatus("container")) md.use(hint, locales);
         if (getStatus("lazyLoad")) md.use(lazyLoad);
+        if (getStatus("imageTitle")) md.use(imageTitle);
         if (imageMarkEnable)
           md.use(
             imageMark,
@@ -205,7 +249,13 @@ export const mdEnhancePlugin =
           legacy
         )
           md.use(vPre);
-        if (texEnable) md.use(katex, katexOptions);
+        if (katexEnable) md.use(katex, katexOptions);
+        else if (mathjaxEnable)
+          md.use(
+            mathjax,
+            typeof options.mathjax === "object" ? options.mathjax : {}
+          );
+
         if (getStatus("include"))
           md.use(
             include,
@@ -223,7 +273,7 @@ export const mdEnhancePlugin =
         if (flowchartEnable) {
           md.use(flowchart);
           // TODO: Remove it in v2 stable
-          md.use(legacyFlowchart);
+          if (legacy) md.use(legacyFlowchart);
         }
         if (chartEnable) md.use(chart);
         if (echartsEnable) md.use(echarts);
@@ -236,17 +286,26 @@ export const mdEnhancePlugin =
         }
         if (mermaidEnable) md.use(mermaid);
         if (presentationEnable) md.use(presentation);
-        if (playgroundEnable) md.use(playground);
+        if (typeof options.playground === "object") {
+          const { presets = [], config = {} } = options.playground;
+
+          presets.forEach((preset) => {
+            if (preset === "ts")
+              md.use(playground, getTSPlaygroundPreset(config.ts || {}));
+            else if (preset === "vue")
+              md.use(playground, getVuePlaygroundPreset(config.vue || {}));
+            else if (typeof preset === "object") md.use(playground, preset);
+          });
+        }
+        if (vuePlaygroundEnable) md.use(vuePlayground);
       },
 
       extendsPage: (page, app): void => {
-        // app already initailzed
-        if (shouldCheckLinks && app.pages) {
-          checkLinks(page, app);
-        }
+        if (shouldCheckLinks && initialized) checkLinks(page, app);
       },
 
       onInitialized: async (app): Promise<void> => {
+        initialized = true;
         if (shouldCheckLinks)
           app.pages.forEach((page) => checkLinks(page, app));
 

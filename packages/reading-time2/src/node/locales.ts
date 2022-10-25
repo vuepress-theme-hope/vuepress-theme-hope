@@ -1,4 +1,4 @@
-import type { ReadingTimeLocaleConfig } from "../shared";
+import type { ReadingTimeLocaleConfig } from "../shared/index.js";
 
 /**
  * Default locale config for `vuepress-plugin-reading-time2` plugin
@@ -74,5 +74,11 @@ export const readingTimeLocales: ReadingTimeLocaleConfig = {
     word: "Alrededor de $word palabras",
     less1Minute: "Menos de 1 minuto",
     time: "Alrededor de $time min",
+  },
+
+  "/ja/": {
+    word: "$word字程度",
+    less1Minute: "1分以内",
+    time: "約$time分",
   },
 };

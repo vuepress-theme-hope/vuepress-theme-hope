@@ -43,48 +43,6 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
 
 通过 [`vuepress-plugin-md-enhance`][md-enhance]，主题扩展了更多 Markdown 语法，提供更加丰富的写作功能。
 
-:::: tip 一键启用
-
-你可以设置在主题选项中设置 `plugins.mdEnhance.enableAll: true` 启用 [md-enhance][md-enhance] 插件的所有功能以尝试他们。
-
-::: code-tabs#language
-
-@tab TS
-
-```ts
-import { hopeTheme } from "vuepress-theme-hope";
-
-export default {
-  theme: hopeTheme({
-    plugins: {
-      mdEnhance: {
-        enableAll: true,
-      },
-    },
-  }),
-};
-```
-
-@tab JS
-
-```js
-const { hopeTheme } = require("vuepress-theme-hope");
-
-module.exports = {
-  theme: hopeTheme({
-    plugins: {
-      mdEnhance: {
-        enableAll: true,
-      },
-    },
-  }),
-};
-```
-
-:::
-
-::::
-
 #### 自定义容器
 
 ::: v-pre
@@ -260,7 +218,7 @@ npm i -D vuepress-theme-hope
 
 - [查看详情](../markdown/tasklist.md)
 
-### 图片增强
+#### 图片增强
 
 支持为图片设置颜色模式和大小
 
@@ -328,7 +286,7 @@ npm i -D vuepress-theme-hope
 
 - [查看详情](../markdown/echarts.md)
 
-### 流程图
+#### 流程图
 
 ```flow
 cond=>condition: 是否执行操作?
@@ -362,7 +320,7 @@ flowchart TB
 
 - [查看详情](../markdown/mermaid.md)
 
-### Tex 语法
+#### Tex 语法
 
 $$
 \frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right)
@@ -371,13 +329,13 @@ $$
 
 - [查看详情](../markdown/tex.md)
 
-### 导入文件
+#### 导入文件
 
 @include(../markdown/demo.snippet.md{5-9})
 
 - [查看详情](../markdown/include.md)
 
-### 代码演示
+#### 代码演示
 
 ::: normal-demo 一个普通 Demo
 
@@ -412,11 +370,46 @@ span {
 
 <!-- markdownlint-enable MD033 -->
 
-#### 交互演示
+### 交互演示
 
-你可以直接在 Markdown 中插入 Vue 交互演示。
+::: playground#ts TS 案例
+
+@file index.ts
+
+```ts
+const msg = "hello world";
+
+const speak = (msg: string) => console.log(msg);
+
+speak(msg);
+```
+
+:::
 
 - [查看详情](../markdown/playground.md)
+
+### Vue 交互演示
+
+::: vue-playground Vue 交互演示
+
+@file App.vue
+
+```vue
+<script setup>
+import { ref } from "vue";
+
+const msg = ref("Hello World!");
+</script>
+
+<template>
+  <h1>{{ msg }}</h1>
+  <input v-model="msg" />
+</template>
+```
+
+:::
+
+- [查看详情](../markdown/vue-playground.md)
 
 #### 幻灯片
 

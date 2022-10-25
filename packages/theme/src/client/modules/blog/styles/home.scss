@@ -1,0 +1,11 @@
+.page.blog {
+  .blog-home {
+    flex: 1;
+    overflow: hidden;
+    max-width: 780px;
+  }
+
+  #{hope-config.$content-class}:empty {
+    padding: 0;
+  }
+}

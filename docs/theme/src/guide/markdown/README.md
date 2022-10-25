@@ -54,7 +54,9 @@ Besides Markdown syntaxes VuePress itself adds, `vuepress-theme-hope` enables mo
 
 - [Stylize](stylize.md)
 
-- [Playgroud](playground.md)
+- [Playground](playground.md)
+
+- [Vue Playground](vue-playground.md)
 
 - [Components](components.md)
 

@@ -1,5 +1,5 @@
 import type { App } from "@vuepress/core";
-import type { HopeThemeConfig } from "../shared";
+import type { HopeThemeConfig } from "../shared/index.js";
 
 export const prepareThemeColorScss = async (
   app: App,
@@ -7,8 +7,10 @@ export const prepareThemeColorScss = async (
 ): Promise<void> => {
   await app.writeTemp(
     "theme-hope/theme-color.scss",
-    `$picker: (${Object.entries(themeConfig.themeColor || {})
+    `\
+$picker: (${Object.entries(themeConfig.themeColor || {})
       .map(([color, value]) => `"${color}": ${value}`)
-      .join(",")});`
+      .join(",")});
+`
   );
 };

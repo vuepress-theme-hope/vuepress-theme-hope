@@ -1,4 +1,4 @@
-import chalk from "chalk";
+import pc from "picocolors";
 import { execaCommand } from "execa";
 import ora from "ora";
 import inquirer from "inquirer";
@@ -10,7 +10,7 @@ const { prompt } = inquirer;
 const tags = ["next", "test", "alpha", "beta", "latest"];
 
 const release = async (): Promise<void> => {
-  ora(`Current version: ${chalk.green(currentVersion)}`).info();
+  ora(`Current version: ${pc.green(currentVersion)}`).info();
 
   const { npmTag } = await prompt<{ npmTag: string }>([
     {

@@ -37,10 +37,10 @@ tag:
 ```diff
 // .vuepress/config.js
 - const { config } = require("vuepress-theme-hope");
-+ const { hopeTheme } = require("vuepress-theme-hope");
++ import { hopeTheme } from "vuepress-theme-hope";
 
 - module.exports = theme.config({
-+ module.exports = {
++ export default {
     // your site config here
     // ...
 
@@ -237,9 +237,9 @@ Move all plugin related options under `plugins`.
 
 - move `mdEnhance` to `plugins.mdEnhance`
 
-  - markdown link check ![New](https://img.shields.io/badge/-New-brightgreen)
+  - Markdown link check ![New](https://img.shields.io/badge/-New-brightgreen)
 
-    The plugin now check your markdown links and warn you when broken links are detected.
+    The plugin now check your Markdown links and warn you when broken links are detected.
 
     You can control this behavior with `plugins.mdEnhance.linkCheck` option
 
@@ -301,7 +301,7 @@ Move all plugin related options under `plugins`.
 
   - content include support ![New](https://img.shields.io/badge/-New-brightgreen)
 
-    use `@include()` to include other file content in markdown via `plugins.mdEnhance.include` options.
+    use `@include()` to include other file content in Markdown via `plugins.mdEnhance.include` options.
 
     Use `@include(filename)` to include a file.
 
@@ -332,6 +332,10 @@ Move all plugin related options under `plugins`.
   - rename `mdEnhance.codegroup` to `plugins.mdEnhance.codetabs` ![changed](https://img.shields.io/badge/-changed-yellow)
 
   - change default value of `plugins.mdEnhance.lazyLoad` from `true` to `false` ![changed](https://img.shields.io/badge/-changed-yellow)
+
+  - remove `plugins.mdEnhance.enableAll` ![removed](https://img.shields.io/badge/-removed-red)
+
+    There are too many noob users who don't know what they are doing, and they just enable this option without using all the feature provided, yet they complain about load speed.
 
   - remove `plugins.mdEnhance.lineNumbers` ![removed](https://img.shields.io/badge/-removed-red)
 

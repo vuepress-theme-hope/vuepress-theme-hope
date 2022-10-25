@@ -1,4 +1,6 @@
-import { fs, path } from "@vuepress/utils";
+import { fs, getDirname, path } from "@vuepress/utils";
+
+const __dirname = getDirname(import.meta.url);
 
 const getDirAlias = (dir: string): [string, string][] =>
   fs
@@ -8,21 +10,19 @@ const getDirAlias = (dir: string): [string, string][] =>
         file.endsWith(".js") || file.endsWith(".vue") || !file.includes(".")
     )
     .map<[string, string]>((file) => [
-      `@theme-hope/${dir}/${
-        file.endsWith(".js") ? file.replace(/(?:\/index)?\.js$/, "") : file
-      }`,
+      `@theme-hope/${dir}/${file}`,
       path.resolve(__dirname, "../client", dir, file),
     ]);
 
 const getEntryAlias = (entry: string): [string, string] | null =>
   fs.existsSync(path.resolve(__dirname, "../client", entry, "index.js"))
     ? [
-        `@theme-hope/${entry}`,
+        `@theme-hope/${entry}/index.js`,
         path.resolve(__dirname, "../client", entry, "index.js"),
       ]
     : null;
 
-export const resolveAlias = (isDebug = false): Record<string, string> => {
+export const resolveAlias = (isDebug: boolean): Record<string, string> => {
   // use alias to make all components replaceable
   const alias = Object.fromEntries([
     // define components
@@ -35,8 +35,8 @@ export const resolveAlias = (isDebug = false): Record<string, string> => {
       ),
     // define modules
     ...fs
-      .readdirSync(path.resolve(__dirname, "../client/module"))
-      .map((folder) => `module/${folder}`)
+      .readdirSync(path.resolve(__dirname, "../client/modules"))
+      .map((folder) => `modules/${folder}`)
       .map((file) => [
         // define module components
         ...getDirAlias(`${file}/components`),
@@ -49,7 +49,6 @@ export const resolveAlias = (isDebug = false): Record<string, string> => {
           ),
       ])
       .flat(),
-    ["crypto", path.resolve(__dirname, "./empty-chunk")],
   ]);
 
   if (isDebug) console.log("Theme alias config:", alias);

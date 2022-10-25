@@ -26,11 +26,6 @@ a {
   overflow-wrap: break-word;
 }
 
-p a code {
-  color: #3eaf7c;
-  font-weight: 400;
-}
-
 kbd {
   padding: 0 0.15em;
   border: solid 0.15rem #ddd;
@@ -49,6 +44,11 @@ code {
 
   font-size: 0.85em;
   overflow-wrap: break-word;
+
+  p a & {
+    color: #3eaf7c;
+    font-weight: 400;
+  }
 }
 
 blockquote {
@@ -59,10 +59,6 @@ blockquote {
   color: #666;
 
   font-size: 1rem;
-
-  & > p {
-    margin: 0;
-  }
 }
 
 ul,
@@ -140,6 +136,10 @@ p,
 ul,
 ol {
   line-height: 1.7;
+}
+
+blockquote > p {
+  margin: 0;
 }
 
 hr {

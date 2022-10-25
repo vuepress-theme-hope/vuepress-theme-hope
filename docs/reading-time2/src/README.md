@@ -71,9 +71,9 @@ export default {
 
 ```js
 // .vuepress/config.js
-const { readingTimePlugin } = require("vuepress-plugin-reading-time2");
+import { readingTimePlugin } from "vuepress-plugin-reading-time2";
 
-module.exports = {
+export default {
   plugins: [
     readingTimePlugin({
       // your options

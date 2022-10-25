@@ -5,12 +5,12 @@ type IAnyObject = Record<string, any>;
 export const deepAssign = <
   T extends IAnyObject,
   U extends IAnyObject = T,
-  V extends IAnyObject = T
+  V extends Partial<T> & Partial<U> = T & U
 >(
   originObject: T,
   ...assignObjects: U[]
 ): V => {
-  if (assignObjects.length === 0) return originObject as V;
+  if (assignObjects.length === 0) return originObject as unknown as V;
 
   /** Object being merged */
   const assignObject = (assignObjects.shift() as IAnyObject) || {};
@@ -39,39 +39,4 @@ export const deepAssign = <
   });
 
   return deepAssign(originObject, ...assignObjects);
-};
-
-/** Deep merge objects to the last one */
-export const deepAssignReverse = (
-  ...assignObjects: IAnyObject[]
-): IAnyObject => {
-  if (assignObjects.length === 0) throw new Error("No param is given");
-  if (assignObjects.length === 1) return assignObjects[0];
-
-  const assignObject = assignObjects.pop() as IAnyObject;
-  const originObject = assignObjects.pop() as IAnyObject;
-
-  Object.keys(originObject).forEach((property) => {
-    if (assignObject[property] === undefined)
-      if (typeof originObject[property] === "object")
-        if (Array.isArray(originObject[property]))
-          assignObject[property] = [...(originObject[property] as unknown[])];
-        else
-          assignObject[property] = {
-            ...(originObject[property] as Record<string, unknown>),
-          };
-      else assignObject[property] = originObject[property] as unknown;
-    else if (
-      typeof assignObject[property] === "object" &&
-      !Array.isArray(assignObject) &&
-      typeof originObject[property] === "object" &&
-      !Array.isArray(originObject[property])
-    )
-      deepAssignReverse(
-        originObject[property] as IAnyObject,
-        assignObject[property] as IAnyObject
-      );
-  });
-
-  return deepAssignReverse(...assignObjects, assignObject);
 };

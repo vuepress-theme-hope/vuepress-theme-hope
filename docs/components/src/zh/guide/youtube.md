@@ -21,12 +21,26 @@ YouTube 视频 ID
 
 :::
 
+### width
+
+- 类型: `string | number`
+- 默认值: `100%`
+
+YouTube 组件宽度。
+
 ### height
 
 - 类型: `string | number`
-- 默认值: `400`
+- 必填：否
 
-YouTube iframe 高度。
+YouTube 组件高度
+
+### radio
+
+- 类型: `number`
+- 默认值: `16 / 9`
+
+YouTube 组件高度宽高比，只有当未指定 `height` 时有效。
 
 ### autoplay
 
@@ -134,17 +148,23 @@ YouTube iframe 高度。
 
 ## 演示
 
+一个 YouTube 视频:
+
 <YouTube id="0JJPfz5dg20" />
 
 ```md
 <YouTube id="0JJPfz5dg20" />
 ```
 
+一个自定义设置的 YouTube 视频:
+
 <YouTube id="0JJPfz5dg20" disable-fullscreen />
 
 ```md
 <YouTube id="0JJPfz5dg20" disable-fullscreen />
 ```
+
+一个 YouTube 播放列表:
 
 <YouTube list-type="playlist" list="PLJNLwTPak6dhCRzVelZIs2-DfBp01NX_1" />
 

@@ -18,9 +18,9 @@ tag:
 Как правило, вам необходимо включить плагин в параметр [плагинов](https://v2.vuepress.vuejs.org/reference/config.html#plugins), чтобы использовать его. Например, используйте [@vuepress/plugin-google-analytics](https://v2.vuepress.vuejs.org/reference/plugin/google-analytics.html) для интеграции Google Analytics:
 
 ```js
-const { googleAnalyticsPlugin } = require("@vuepress/plugin-google-analytics");
+import { googleAnalyticsPlugin } from "@vuepress/plugin-google-analytics";
 
-module.exports = {
+export default {
   plugins: [
     googleAnalyticsPlugin({
       id: "G-XXXXXXXXXX",
@@ -39,14 +39,14 @@ module.exports = {
 
 Чтобы использовать свой собственный плагин, но не хотите его публиковать, вы можете создать локальный плагин.
 
-Рекомендуется использовать [Файл конфигурации](./config.md#config-file) непосредственно в качестве подключаемого модуля, поскольку [доступны почти все API подключаемых модулей](https://v2.vuepress.vuejs.org/reference/config.html#plugin-api), что в большинстве случаев было бы удобнее.
+Рекомендуется использовать [Файл конфигурации](./config.md#файл-конфигурации) непосредственно в качестве подключаемого модуля, поскольку [доступны почти все API подключаемых модулей](https://v2.vuepress.vuejs.org/reference/config.html#plugin-api), что в большинстве случаев было бы удобнее.
 
 Но если в вашем конфигурационном файле слишком много вещей, вы можете выделить их в отдельные плагины и использовать в своем конфигурационном файле:
 
 ```js
-const myPlugin = require("./path/to/my-plugin.js");
+import myPlugin from "./path/to/my-plugin.js";
 
-module.exports = {
+export default {
   plugins: [myPlugin()],
 };
 ```

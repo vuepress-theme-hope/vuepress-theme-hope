@@ -2,7 +2,10 @@
   margin: 1rem auto;
   padding: 1rem;
   border: 1px solid var(--c-border, #eaecef);
+
   text-align: center;
+
+  transition: background var(--color-transition), border var(--color-transition);
 
   .codepen-button {
     display: block;
@@ -12,20 +15,23 @@
     border: 1px solid var(--c-brand, #3eaf7c);
     border-radius: 4px;
 
-    background-color: transparent;
+    background: transparent;
     color: var(--c-brand, #3eaf7c);
 
     font-size: 16px;
 
     cursor: pointer;
 
+    transition: background var(--color-transition),
+      border var(--color-transition), color var(--color-transition);
+
     &:hover {
-      background-color: var(--c-brand-light, #4abf8a);
+      background: var(--c-brand-light, #4abf8a);
       color: var(--c-bg, #fff);
     }
   }
 }
 
 iframe[src*="codepen.io"] {
-  border-radius: 8px;
+  border: none;
 }

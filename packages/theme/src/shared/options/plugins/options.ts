@@ -11,7 +11,7 @@ import type { ReadingTimeOptions } from "vuepress-plugin-reading-time2";
 import type { SitemapOptions } from "vuepress-plugin-sitemap2";
 import type { SeoOptions } from "vuepress-plugin-seo2";
 
-import type { HopeThemeBlogPluginOptions } from "./blog";
+import type { HopeThemeBlogPluginOptions } from "./blog.js";
 
 export interface HopeThemePluginsOptions {
   /**
@@ -159,7 +159,7 @@ export interface HopeThemePluginsOptions {
    *
    * @see http://vuepress-theme-hope.github.io/v2/reading-time/zh/
    */
-  readingTime?: ReadingTimeOptions;
+  readingTime?: ReadingTimeOptions | false;
 
   /**
    * SEO plugin options

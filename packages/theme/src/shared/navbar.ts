@@ -1,4 +1,4 @@
-import type { AutoLink, TextItem } from "./utils";
+import type { AutoLink, TextItem } from "./utils.js";
 
 /**
  * Base nav group, has nav items children

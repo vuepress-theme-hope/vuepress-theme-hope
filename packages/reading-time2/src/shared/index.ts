@@ -1,3 +1,3 @@
-export * from "./extends";
-export * from "./locales";
-export * from "./options";
+export * from "./extends.js";
+export * from "./locales.js";
+export * from "./options.js";

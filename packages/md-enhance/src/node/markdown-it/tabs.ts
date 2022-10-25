@@ -1,9 +1,9 @@
 import type { Options, PluginWithOptions } from "markdown-it";
-import type { RuleBlock } from "markdown-it/lib/parser_block";
-import type { default as Renderer } from "markdown-it/lib/renderer";
-import type { default as Token } from "markdown-it/lib/token";
+import type { RuleBlock } from "markdown-it/lib/parser_block.js";
+import type { default as Renderer } from "markdown-it/lib/renderer.js";
+import type { default as Token } from "markdown-it/lib/token.js";
 
-export interface BaseTabData {
+interface BaseTabData {
   title: string;
   value?: string;
 }
@@ -307,11 +307,14 @@ export const tabs: PluginWithOptions<TabOptions> = (
       }
     }
 
-    return `<${component} :data='${
+    const data = basicData.map((item, index) => ({
+      ...item,
+      ...customData[index],
+    }));
+
+    return `<${component} id="${index}" :data='${
       // single quote will break @vue/compiler-sfc
-      JSON.stringify(
-        basicData.map((item, index) => ({ ...item, ...customData[index] }))
-      ).replace(/'/g, "&#39")
+      JSON.stringify(data).replace(/'/g, "&#39")
     }'${activeIndex !== -1 ? ` :active="${activeIndex}"` : ""}${
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       meta.id ? ` tab-id="${meta.id as string}"` : ""

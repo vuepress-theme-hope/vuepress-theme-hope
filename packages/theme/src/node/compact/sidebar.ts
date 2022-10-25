@@ -1,11 +1,11 @@
-import { droppedLogger, deprecatedLogger } from "./utils";
-import { logger } from "../utils";
+import { droppedLogger, deprecatedLogger } from "./utils.js";
+import { logger } from "../utils.js";
 
 import type {
   HopeThemeSidebarConfig,
   HopeThemeSidebarArrayConfig,
   HopeThemeSidebarItem,
-} from "../../shared";
+} from "../../shared/index.js";
 
 const handleArraySidebarConfig = (
   config: unknown[]

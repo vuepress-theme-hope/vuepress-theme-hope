@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-redirect",
-  "version": "2.0.0-beta.91",
+  "version": "2.0.0-beta.114",
   "description": "Redirect plugin for vuepress",
   "keywords": [
     "vuepress",
@@ -23,14 +23,18 @@
     "email": "mister-hope@outlook.com",
     "url": "https://mrhope.site"
   },
+  "type": "module",
+  "exports": {
+    ".": "./lib/node/index.js",
+    "./package.json": "./package.json"
+  },
   "main": "lib/node/index.js",
   "types": "lib/node/index.d.ts",
   "bin": {
     "vp-redirect": "./lib/cli/index.js"
   },
   "files": [
-    "lib",
-    "src"
+    "lib"
   ],
   "scripts": {
     "build": "rollup -c",
@@ -39,11 +43,11 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@vuepress/cli": "2.0.0-beta.49",
-    "@vuepress/core": "2.0.0-beta.49",
-    "@vuepress/shared": "2.0.0-beta.49",
-    "@vuepress/utils": "2.0.0-beta.49",
-    "cac": "^6.7.12",
+    "@vuepress/cli": "2.0.0-beta.53",
+    "@vuepress/core": "2.0.0-beta.53",
+    "@vuepress/shared": "2.0.0-beta.53",
+    "@vuepress/utils": "2.0.0-beta.53",
+    "cac": "^6.7.14",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {

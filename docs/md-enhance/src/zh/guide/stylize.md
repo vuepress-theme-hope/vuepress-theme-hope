@@ -34,9 +34,9 @@ export default {
 
 ```js
 // .vuepress/config.js
-const { mdEnhancePlugin } = require("vuepress-plugin-md-enhance");
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
-module.exports = {
+export default {
   plugins: [
     mdEnhancePlugin({
       stylize: [
@@ -72,8 +72,8 @@ export default {
     mdEnhancePlugin({
       stylize: [
         {
-          match: "Recommanded",
-          replacer: ({ tag, attrs }) => {
+          matcher: "Recommanded",
+          replacer: ({ tag }) => {
             if (tag === "em")
               return {
                 tag: "Badge",
@@ -92,15 +92,15 @@ export default {
 
 ```js
 // .vuepress/config.js
-const { mdEnhancePlugin } = require("vuepress-plugin-md-enhance");
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
-module.exports = {
+export default {
   plugins: [
     mdEnhancePlugin({
       stylize: [
         {
-          match: "Recommanded",
-          replacer: ({ tag, attrs }) => {
+          matcher: "Recommanded",
+          replacer: ({ tag }) => {
             if (tag === "em")
               return {
                 tag: "Badge",
@@ -136,12 +136,12 @@ export default {
     mdEnhancePlugin({
       stylize: [
         {
-          match: /n't$/,
+          matcher: /n't$/,
           replacer: ({ tag, attrs, content }) => {
             if (tag === "em")
               return {
                 tag: "span",
-                attrs: { style: "color: red" },
+                attrs: { ...attrs, style: "color: red" },
                 content,
               };
           },
@@ -156,19 +156,19 @@ export default {
 
 ```js
 // .vuepress/config.js
-const { mdEnhancePlugin } = require("vuepress-plugin-md-enhance");
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
-module.exports = {
+export default {
   plugins: [
     mdEnhancePlugin({
       stylize: [
         {
-          match: /n't$/,
+          matcher: /n't$/,
           replacer: ({ tag, attrs, content }) => {
             if (tag === "em")
               return {
                 tag: "span",
-                attrs: { style: "color: red" },
+                attrs: { ...attrs, style: "color: red" },
                 content,
               };
           },

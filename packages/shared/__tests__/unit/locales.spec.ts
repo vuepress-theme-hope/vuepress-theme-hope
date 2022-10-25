@@ -3,7 +3,7 @@ import { createBaseApp } from "@vuepress/core";
 import { path } from "@vuepress/utils";
 import { describe, it, expect } from "vitest";
 import { getLocales } from "../../src/node/locales";
-import { emptyTheme } from "./__fixtures__/theme/empty";
+import { emptyTheme } from "./__fixtures__/theme/empty.js";
 
 const defaultLocaleConfig = {
   "/en/": {
@@ -14,7 +14,7 @@ const defaultLocaleConfig = {
     text: "中文",
     fallback: "中文",
   },
-  "/jp/": {
+  "/ja/": {
     text: "日本",
     fallback: "日本",
   },
@@ -30,7 +30,7 @@ describe("generate locale", () => {
       locales: {
         "/": { lang: "zh-CN" },
         "/en/": { lang: "en-US" },
-        "/jp/": { lang: "jp-JP" },
+        "/ja/": { lang: "ja-JP" },
       },
       source: path.resolve(__dirname, "./__fixtures__/src"),
       bundler: {} as any,
@@ -46,7 +46,7 @@ describe("generate locale", () => {
         text: "English",
         fallback: "English",
       },
-      "/jp/": {
+      "/ja/": {
         text: "日本",
         fallback: "日本",
       },
@@ -58,7 +58,7 @@ describe("generate locale", () => {
       locales: {
         "/": { lang: "zh-CN" },
         "/en-us/": { lang: "en-US" },
-        "/jp-jp/": { lang: "jp-JP" },
+        "/ja-jp/": { lang: "ja-JP" },
       },
       source: path.resolve(__dirname, "./__fixtures__/src"),
       bundler: {} as any,
@@ -74,7 +74,7 @@ describe("generate locale", () => {
         text: "English",
         fallback: "English",
       },
-      "/jp-jp/": {
+      "/ja-jp/": {
         text: "日本",
         fallback: "日本",
       },
@@ -86,7 +86,7 @@ describe("generate locale", () => {
       locales: {
         "/": { lang: "zh-CN" },
         "/en/": { lang: "en-US" },
-        "/jp/": { lang: "jp-JP" },
+        "/ja/": { lang: "ja-JP" },
       },
       source: path.resolve(__dirname, "./__fixtures__/src"),
       bundler: {} as any,
@@ -109,7 +109,7 @@ describe("generate locale", () => {
         text: "English (US)",
         fallback: "English",
       },
-      "/jp/": {
+      "/ja/": {
         text: "日本",
         fallback: "日本",
       },
@@ -122,7 +122,7 @@ describe("generate locale", () => {
         locales: {
           "/": { lang: "zh-CN" },
           "/en/": { lang: "en-US" },
-          "/jp/": { lang: "jp-JP" },
+          "/ja/": { lang: "ja-JP" },
           "/unknown/": { lang: "unknown-Language" },
         },
         source: path.resolve(__dirname, "./__fixtures__/src"),
@@ -141,7 +141,7 @@ describe("generate locale", () => {
           text: "English",
           fallback: "English",
         },
-        "/jp/": {
+        "/ja/": {
           text: "日本",
           fallback: "日本",
         },
@@ -157,7 +157,7 @@ describe("generate locale", () => {
         locales: {
           "/en/": { lang: "en-US" },
           "/zh/": { lang: "zh-CN" },
-          "/jp/": { lang: "jp-JP" },
+          "/ja/": { lang: "ja-JP" },
           "/unknown/": { lang: "unknown-Language" },
         },
         source: path.resolve(__dirname, "./__fixtures__/src"),
@@ -180,7 +180,7 @@ describe("generate locale", () => {
           text: "中文",
           fallback: "中文",
         },
-        "/jp/": {
+        "/ja/": {
           text: "日本",
           fallback: "日本",
         },
@@ -198,7 +198,7 @@ describe("generate locale", () => {
         locales: {
           "/": { lang: "zh-CN" },
           "/en/": { lang: "en-US" },
-          "/jp/": { lang: "jp-JP" },
+          "/ja/": { lang: "ja-JP" },
           "/test/": { lang: "test-Language" },
         },
         source: path.resolve(__dirname, "./__fixtures__/src"),
@@ -217,7 +217,7 @@ describe("generate locale", () => {
           text: "English",
           fallback: "English",
         },
-        "/jp/": {
+        "/ja/": {
           text: "日本",
           fallback: "日本",
         },
@@ -233,8 +233,8 @@ describe("generate locale", () => {
         locales: {
           "/": { lang: "zh-CN" },
           "/en/": { lang: "en-US" },
-          "/jp/": { lang: "jp-JP" },
-          "/unknown/": { lang: "unkown-Language" },
+          "/ja/": { lang: "ja-JP" },
+          "/unknown/": { lang: "unknown-Language" },
         },
         source: path.resolve(__dirname, "./__fixtures__/src"),
         bundler: {} as any,
@@ -256,7 +256,7 @@ describe("generate locale", () => {
           text: "English",
           fallback: "English",
         },
-        "/jp/": {
+        "/ja/": {
           text: "日本",
           fallback: "日本",
         },

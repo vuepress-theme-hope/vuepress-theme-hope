@@ -18,7 +18,7 @@ tag:
 
 @tab TS
 
-```ts {9-12}
+```ts {9-14}
 // .vuepress/config.ts
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
@@ -31,6 +31,8 @@ export default defineUserConfig({
         imageMark: true,
         // Enable image size
         imageSize: true,
+        // Enable image title
+        imageTitle: true,
       },
     },
   }),
@@ -39,11 +41,11 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {9-12}
+```js {9-14}
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     plugins: {
       mdEnhance: {
@@ -51,6 +53,8 @@ module.exports = {
         imageMark: true,
         // Enable image size
         imageSize: true,
+        // Enable image title
+        imageTitle: true,
       },
     },
   }),
@@ -77,6 +81,8 @@ GFM поддерживает маркировку изображений суф�
 
 Приведенная выше демонстрация отобразит следующий результат
 
+<AppearanceSwitch /> (Попробуйте переключить режим темы)
+
 ![GitHub Light](/assets/icon/github-light.png#gh-dark-mode-only)
 ![GitHub Dark](/assets/icon/github-dark.png#gh-light-mode-only)
 
@@ -100,7 +106,7 @@ interface ImageMarkOptions {
 
 ## Размер изображения
 
-Вы можете использовать `=widthxheight`, чтобы указать размер изображения при установке `plugins.mdEnhanceimageSize: true` в параметрах темы.
+Вы можете использовать `=widthxheight`, чтобы указать размер изображения при установке `plugins.mdEnhance.imageSize: true` в параметрах темы.
 
 ```md
 ![Alt](/example.png =200x300)
@@ -116,3 +122,21 @@ interface ImageMarkOptions {
 <img src="/example.jpg" title="Image title" width="200" />
 <img src="/example.bmp" height="300" />
 ```
+
+## Заголовок изображения
+
+Иногда вам может понадобиться добавить описание с изображением, в этом случае вы должны установить `plugins.mdEnhance.imageTitle: true`.
+
+Затем, когда вы добавите заголовок к изображению, изображение будет отображаться как `<figure>`, а заголовок будет отображаться как `<figurecaption>`.
+
+```md
+![GitHub Logo](/assets/icon/github-light.png "Github Logo")
+```
+
+Будет отображаться как:
+
+![GitHub Logo](/assets/icon/github-light.png "Github Logo")
+
+<script setup lang="ts">
+import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch.js"
+</script>

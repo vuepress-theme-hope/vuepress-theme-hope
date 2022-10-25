@@ -1,6 +1,6 @@
-import { blogPlugin } from "./plugin";
+import { blogPlugin } from "./plugin.js";
 
-export * from "./plugin";
-export * from "../shared";
+export * from "./plugin.js";
+export * from "../shared/index.js";
 
 export default blogPlugin;

@@ -10,7 +10,7 @@ tag:
 
 让你的 VuePress 站点中的 Markdown 文件支持幻灯片。
 
-本插件利用了 [reveal.js](https://revealjs.com/) 来支持这一功能。
+我们使用 [reveal.js](https://revealjs.com/) 来支持这一功能。
 
 <!-- more -->
 
@@ -42,9 +42,9 @@ export default defineUserConfig({
 
 ```js {7-9}
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     plugins: {
       mdEnhance: {

@@ -6,7 +6,8 @@ import {
   checkIsiPad,
   checkIsiPhone,
   checkIsSafari,
-} from "vuepress-shared/lib/client";
+} from "vuepress-shared/client";
+import { useSize } from "../composables/index.js";
 
 import type { VNode } from "vue";
 
@@ -20,15 +21,32 @@ export default defineComponent({
 
   props: {
     url: { type: String, required: true },
-    height: { type: [String, Number], default: 480 },
+
+    width: {
+      type: [String, Number],
+      default: "100%",
+    },
+
+    height: {
+      type: [String, Number],
+      default: undefined,
+    },
+
+    ratio: {
+      type: Number,
+      default: 16 / 9,
+    },
+
     page: {
       type: Number,
       default: 1,
     },
+
     toolbar: {
       type: Boolean,
       default: true,
     },
+
     zoom: {
       type: Number,
       default: 100,
@@ -36,6 +54,7 @@ export default defineComponent({
   },
 
   setup(props) {
+    const { el, width, height } = useSize<HTMLDivElement>(props);
     const isChrome = ref(true);
     const isMobile = ref(false);
 
@@ -44,10 +63,6 @@ export default defineComponent({
         `#page=${props.page}&toolbar=${props.toolbar ? 1 : 0}&zoom=${
           props.zoom
         }`
-    );
-
-    const height = computed(() =>
-      typeof props.height === "string" ? props.height : `${props.height}px`
     );
 
     onMounted(() => {
@@ -73,31 +88,37 @@ export default defineComponent({
         isLinkHttp(link) || __VUEPRESS_SSR__ ? "" : window?.location.host || ""
       }${link}`;
 
-      return h("div", { class: "pdf-preview" }, [
-        h("iframe", {
-          class: "pdf-iframe",
-          src: isMobile.value
-            ? `https://drive.google.com/viewerng/viewer?embedded=true&url=${encodeURI(
-                fullLink
-              )}`
-            : `${withBase(props.url)}${isChrome.value ? hash.value : ""}`,
+      return h(
+        "div",
+        {
+          class: "pdf-preview",
+          ref: el,
           style: {
-            width: "100%",
+            width: width.value,
             height: height.value,
-            "border-radius": "8px",
           },
-        }),
-        h(
-          "button",
-          {
-            class: "pdf-open-button",
-            onClick: () => {
-              window.open(fullLink);
+        },
+        [
+          h("iframe", {
+            class: "pdf-iframe",
+            src: isMobile.value
+              ? `https://drive.google.com/viewerng/viewer?embedded=true&url=${encodeURI(
+                  fullLink
+                )}`
+              : `${withBase(props.url)}${isChrome.value ? hash.value : ""}`,
+          }),
+          h(
+            "button",
+            {
+              class: "pdf-open-button",
+              onClick: () => {
+                window.open(fullLink);
+              },
             },
-          },
-          "Open"
-        ),
-      ]);
+            "Open"
+          ),
+        ]
+      );
     };
   },
 });

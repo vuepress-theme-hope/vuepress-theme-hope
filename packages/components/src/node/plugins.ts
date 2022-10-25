@@ -1,12 +1,12 @@
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
-import { getLocales } from "vuepress-shared";
+import { getLocales } from "vuepress-shared/node";
 
-import { backToTopLocales } from "./locales";
-import { prepareConfigFile } from "./prepare";
-import { getIconPrefix, logger } from "./utils";
+import { backToTopLocales } from "./locales.js";
+import { prepareConfigFile } from "./prepare.js";
+import { getIconPrefix, logger } from "./utils.js";
 
 import type { PluginFunction } from "@vuepress/core";
-import type { ComponentOptions } from "../shared";
+import type { ComponentOptions } from "../shared/index.js";
 
 export const componentsPlugin =
   (options: ComponentOptions): PluginFunction =>

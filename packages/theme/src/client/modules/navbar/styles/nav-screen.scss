@@ -1,0 +1,55 @@
+#nav-screen {
+  position: fixed;
+  top: var(--navbar-height);
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 150;
+
+  display: none;
+
+  overflow-y: auto;
+
+  padding: 0 2rem;
+
+  background: var(--bg-color);
+
+  transition: background 0.5s;
+
+  @media (max-width: hope-config.$tablet) {
+    display: block;
+  }
+
+  .container {
+    max-width: 320px;
+    margin: 0 auto;
+    padding: 2rem 0 4rem;
+  }
+
+  &.fade-enter-active,
+  &.fade-leave-active {
+    transition: opacity 0.25s;
+
+    .container {
+      transition: transform 0.25s ease;
+    }
+  }
+
+  &.fade-enter-from,
+  &.fade-leave-to {
+    opacity: 0;
+
+    .container {
+      transform: translateY(-8px);
+    }
+  }
+
+  .outlook-wrapper {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .icon {
+    margin-right: 0.25em;
+  }
+}

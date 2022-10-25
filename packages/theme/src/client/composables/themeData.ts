@@ -1,17 +1,20 @@
 import {
   useThemeData as _useThemeData,
   useThemeLocaleData as _useThemeLocaleData,
-} from "@vuepress/plugin-theme-data/lib/client";
+} from "@vuepress/plugin-theme-data/client";
 import { computed } from "vue";
-import { getAuthor } from "vuepress-shared/lib/client";
+import { getAuthor } from "vuepress-shared/client";
 
 import type { AuthorInfo } from "vuepress-shared";
 import type {
   ThemeDataRef,
   ThemeLocaleDataRef,
-} from "@vuepress/plugin-theme-data/lib/client";
+} from "@vuepress/plugin-theme-data/client";
 import type { ComputedRef } from "vue";
-import type { HopeThemeConfig, HopeThemeLocaleConfig } from "../../shared";
+import type {
+  HopeThemeConfig,
+  HopeThemeLocaleConfig,
+} from "../../shared/index.js";
 
 export const useThemeData = (): ThemeDataRef<HopeThemeConfig> =>
   _useThemeData<HopeThemeConfig>();

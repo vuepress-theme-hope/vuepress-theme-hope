@@ -17,11 +17,7 @@ tag:
 
 切换下面的按钮以查看效果。
 
-<!-- markdownlint-disable-->
-
 <AppearanceSwitch />
-
-<!-- markdownlint-restore -->
 
 ## 选项
 
@@ -35,10 +31,10 @@ tag:
 - `"enable"`: 强制深色模式
 - `"disable"`: 禁用深色模式
 
-<script setup lang="ts">
-import AppearanceSwitch from '@theme-hope/module/outlook/components/AppearanceSwitch'
-</script>
-
 ## 全局变量
 
 `$isDarkMode` 在所有 Markdown 文件中都可用。
+
+<script setup lang="ts">
+import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch.js"
+</script>

@@ -66,9 +66,9 @@ export default {
 
 ```js
 // .vuepress/config.js
-const { pwaPlugin } = require("vuepress-plugin-pwa2");
+import { pwaPlugin } from "vuepress-plugin-pwa2";
 
-module.exports = {
+export default {
   plugins: [
     pwaPlugin({
       // your options

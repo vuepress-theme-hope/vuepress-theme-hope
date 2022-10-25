@@ -1,6 +1,6 @@
 ---
 title: PWA
-icon: setting
+icon: app
 category:
   - 高级
 tag:
@@ -20,7 +20,7 @@ tag:
 
 `vuepress-theme-hope` 将主题选项中的 `plugins.pwa` 作为插件选项提供给 `vuepress-plugin-pwa2`。
 
-如果你正在使用本插件，我们推荐在你的 VuePress 配置文件中设置 `shouldPrefetch: false`。
+如果你正在使用此插件，我们推荐在你的 VuePress 配置文件中设置 `shouldPrefetch: false`。
 
 :::
 
@@ -44,7 +44,7 @@ Service Worker [^service-worker] (简称 SW) 主要用于获取并托管网站�
 
     1. 每次用户重新打开网站时，Service Worker 会向自身注册时的地址发出校验命令，如果检测到新版本的 Service Worker，则会更新自身，并开始缓存注册在新 Service Worker 中的资源列表。成功获取内容更新后，Service Worker 将会触发 `update` 事件。可以通过此事件提示用户，比如将在右下角显示一个弹出窗口，提示用户新内容可用并允许用户触发更新。
 
-本插件会自动通过 `workbox-build` 注册 Service Worker。为了更好地控制 Service Worker 可以预缓存的内容，插件提供了下列设置。
+此插件会自动通过 `workbox-build` 注册 Service Worker。为了更好地控制 Service Worker 可以预缓存的内容，插件提供了下列设置。
 
 ::: tip
 

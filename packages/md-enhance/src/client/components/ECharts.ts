@@ -1,6 +1,7 @@
 import { useDebounceFn, useEventListener } from "@vueuse/core";
 import { defineComponent, h, onMounted, onBeforeUnmount, ref } from "vue";
-import { LOADING_SVG } from "./icons";
+import { atou } from "vuepress-shared/client";
+import { LOADING_SVG } from "./icons.js";
 
 import type { EChartsType, EChartsOption } from "echarts";
 import type { PropType, VNode } from "vue";
@@ -13,14 +14,16 @@ const parseEChartsConfig = (
   config: string,
   type: "js" | "json"
 ): EChartsOption => {
-  if (type === "json") return <EChartsOption>JSON.parse(config);
+  if (type === "js") {
+    const exports = {};
+    const module = { exports };
 
-  const exports = {};
-  const module = { exports };
+    eval(config);
 
-  eval(config);
+    return <EChartsOption>module.exports;
+  }
 
-  return <EChartsOption>module.exports;
+  return <EChartsOption>JSON.parse(config);
 };
 
 export default defineComponent({
@@ -34,7 +37,7 @@ export default defineComponent({
   },
 
   setup(props) {
-    const echartsWrapper = ref<HTMLElement | null>(null);
+    const echartsWrapper = ref<HTMLElement>();
     let chart: EChartsType;
 
     const loading = ref(true);
@@ -45,10 +48,7 @@ export default defineComponent({
         // delay
         new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
       ]).then(([echarts]) => {
-        const options = parseEChartsConfig(
-          decodeURIComponent(props.config),
-          props.type
-        );
+        const options = parseEChartsConfig(atou(props.config), props.type);
 
         chart = echarts.init(echartsWrapper.value!);
         chart.showLoading();

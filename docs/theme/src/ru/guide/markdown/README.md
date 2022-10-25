@@ -54,6 +54,10 @@ dir:
 
 - [Стилизация](stylize.md)
 
+- [Playground](playground.md)
+
+- [Vue Playground](vue-playground.md)
+
 - [Компоненты](components.md)
 
 - [Другие](others.md)

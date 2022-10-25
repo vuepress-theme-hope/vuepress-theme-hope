@@ -14,9 +14,11 @@ tag:
 注册一些可以在 Markdown 文件中使用的组件，可用的组件名称为:
 
 - `"Badge"`
+- `"Bilibili"`
 - `"CodePen"`
 - `"PDF"`
 - `"StackBlitz"`
+- `"VideoPlayer"`
 - `"YouTube"`
 
 你可以将 `plugin.components` 设置为需要的组件数组，默认情况下为 `["Badge"]`。
@@ -49,13 +51,13 @@ tag:
 
 控制 `@vuepress/plugin-nprogress`，通过 nprogress 提供切换页面时的进度条。
 
-默认情况下，主题会启用本插件，你可以设置 `false` 禁用它。
+默认情况下，主题会启用此插件，你可以设置 `false` 禁用它。
 
 ## prismjs <Badge text="默认启用" />
 
 控制 `@vuepress/plugin-prismjs`，通过 PrismJS 提供代码块高亮。
 
-默认情况下，主题会启用本插件，你可以设置 `false` 禁用它并自行高亮代码块。
+默认情况下，主题会启用此插件，你可以设置 `false` 禁用它并自行高亮代码块。
 
 ::: info
 

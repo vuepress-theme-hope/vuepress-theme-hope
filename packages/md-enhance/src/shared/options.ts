@@ -1,14 +1,20 @@
 import type { LocaleConfig } from "@vuepress/core";
-import type { KatexOptions } from "katex";
-import type { AttrsOptions } from "./attrs";
-import type { CodeDemoOptions } from "./codeDemo";
-import type { ImageMarkOptions } from "./imageMark";
-import type { IncludeOptions } from "./include";
-import type { MarkdownEnhanceLocaleData } from "./locales";
-import type { PresentationOptions } from "./presentation";
-import type { TaskListOptions } from "./tasklist";
-import type { StylizeOptions } from "./stylize";
-import type { PlaygroundOptions } from "./playground";
+import type { AttrsOptions } from "./attrs.js";
+import type { CodeDemoOptions } from "./codeDemo.js";
+import type { ImageMarkOptions } from "./imageMark.js";
+import type { IncludeOptions } from "./include.js";
+import type { KatexOptions } from "./katex.js";
+import type { MarkdownEnhanceLocaleData } from "./locales.js";
+import type { MathJaxOptions } from "./mathjax.js";
+import type {
+  PlaygroundOptions,
+  TSPresetPlaygroundOptions,
+  VuePresetPlaygroundOptions,
+} from "./playground.js";
+import type { PresentationOptions } from "./presentation.js";
+import type { TaskListOptions } from "./tasklist.js";
+import type { StylizeOptions } from "./stylize.js";
+import type { VuePlaygroundOptions } from "./vuePlayground.js";
 
 /**
  * md-enhance plugin configuration
@@ -141,6 +147,15 @@ export interface MarkdownEnhanceOptions {
   lazyLoad?: boolean;
 
   /**
+   * Whether render figure when title is set
+   *
+   * 是否在设置标题时渲染 figure
+   *
+   * @default false
+   */
+  imageTitle?: boolean;
+
+  /**
    * Whether to enable gfm image id mark support
    *
    * 是否启用 GFM 图片 ID 标记。
@@ -186,17 +201,30 @@ export interface MarkdownEnhanceOptions {
   include?: IncludeOptions | boolean;
 
   /**
-   * Whether to enable TeX syntax support
+   * Whether to enable katex support
    *
    * @see https://katex.org/docs/options.html
    *
-   * 是否启用 TeX 语法支持
+   * 是否启用 katex 语法支持
    *
    * @see https://katex.org/docs/options.html
    *
    * @default false
    */
-  tex?: KatexOptions | boolean;
+  katex?: KatexOptions | boolean;
+
+  /**
+   * Whether to enable mathjax support
+   *
+   * @see http://docs.mathjax.org/en/latest/options/index.html
+   *
+   * 是否启用 mathjax 语法支持
+   *
+   * @see http://docs.mathjax.org/en/latest/options/index.html
+   *
+   * @default false
+   */
+  mathjax?: MathJaxOptions | boolean;
 
   /**
    * Whether to enable chart support
@@ -263,23 +291,25 @@ export interface MarkdownEnhanceOptions {
    * Whether to enable playground support
    *
    * 是否启用 playground 支持
-   *
-   * @default false
    */
-  playground?: PlaygroundOptions | boolean;
+  playground?: {
+    /** Playground presets */
+    presets: ("ts" | "vue" | PlaygroundOptions)[];
+    /** Playground config */
+    config?: {
+      ts?: TSPresetPlaygroundOptions;
+      vue?: VuePresetPlaygroundOptions;
+    };
+  };
 
   /**
-   * @deprecated This option is for demo only, please enable options you need in production.
+   * Whether to enable vue playground support
    *
-   * Whether to enable all features.
-   *
-   * @deprecated 此选项仅用于案例，请在生产环境中启用你需要的选项
-   *
-   * 是否启用全部增强语法
+   * 是否启用 Vue Playground 支持
    *
    * @default false
    */
-  enableAll?: boolean;
+  vuePlayground?: VuePlaygroundOptions | boolean;
 
   /**
    * The delay of operating dom, in ms

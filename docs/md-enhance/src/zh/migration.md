@@ -85,7 +85,7 @@ icon: change
 
 - 包含文件支持
 
-  新增 `include` 选项使用 `@include()` 将其他文件内容导入到 markdown 中。
+  新增 `include` 选项使用 `@include()` 将其他文件内容导入到 Markdown 中。
 
   使用 `@include(filename)` 导入文件。
 
@@ -198,6 +198,10 @@ icon: change
   ````
 
 ## 移除的选项
+
+- `enableAll` 被移除
+
+  有太多不知道自己在做什么的菜鸟用户，他们只是启用此选项而没有使用提供的所有功能，但他们抱怨加载速度。
 
 - `lineNumbers` 被移除
 

@@ -1,0 +1,64 @@
+.blogger-info {
+  padding: 0.5rem;
+  font-family: var(--font-family-fancy);
+
+  .page & {
+    background: var(--bg-color-float);
+    transition: background var(--color-transition);
+  }
+
+  .blogger {
+    padding: 0.5rem;
+    text-align: center;
+  }
+
+  .blogger-avatar {
+    width: 8rem;
+    height: 8rem;
+    margin: 0 auto;
+
+    &.round {
+      border-radius: 50%;
+    }
+  }
+
+  .blogger-name {
+    margin: 1rem auto;
+    font-size: 22px;
+  }
+
+  .blogger-description {
+    margin: 1rem auto;
+    font-size: 14px;
+  }
+
+  .num-wrapper {
+    display: flex;
+    width: 80%;
+    margin: 0 auto 1rem;
+
+    > div {
+      width: 25%;
+
+      font-size: 13px;
+      text-align: center;
+
+      cursor: pointer;
+
+      transition: color var(--color-transition);
+
+      &:hover {
+        color: var(--theme-color);
+      }
+
+      // stylelint-disable selector-max-compound-selectors
+      .num {
+        position: relative;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        font-size: 20px;
+      }
+      // stylelint-enable selector-max-compound-selectors
+    }
+  }
+}

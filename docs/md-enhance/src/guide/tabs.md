@@ -31,9 +31,9 @@ export default {
 
 ```js {8}
 // .vuepress/config.js
-const { mdEnhancePlugin } = require("vuepress-plugin-md-enhance");
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
-module.exports = {
+export default {
   plugins: [
     mdEnhancePlugin({
       // adds tabs support
@@ -126,7 +126,7 @@ npm should be installed with Node.js.
 If you are using Node.js v16+, you can use corepack to enable pnpm:
 
 ```bash
-corepack prepare pnpm@7.6.0 --activated
+corepack prepare pnpm@7.14.0 --activated
 ```
 
 Otherwise, you can install it with npm:

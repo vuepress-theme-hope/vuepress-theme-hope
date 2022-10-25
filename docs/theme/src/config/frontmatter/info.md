@@ -36,8 +36,10 @@ Current page’s description.
 
 - Type: `string`
 - Required: No
+- Details:
+  - [Guide → Icon Support](../../guide/interface/icon.md)
 
-FontClass of the current page icon (recommended).
+FontClass / Image link of the current page icon (recommended).
 
 ## author
 

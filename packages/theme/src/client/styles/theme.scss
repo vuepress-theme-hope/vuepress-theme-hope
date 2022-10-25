@@ -59,3 +59,20 @@
     }
   }
 }
+
+@media (min-width: hope-config.$laptop) {
+  .chart-wrapper,
+  .flowchat-wrapper,
+  .mermaid-wrapper {
+    &::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+
+    &::-webkit-scrollbar-track-piece {
+      -webkit-border-radius: 8px;
+      border-radius: 8px;
+      background: rgb(0 0 0 / 10%);
+    }
+  }
+}

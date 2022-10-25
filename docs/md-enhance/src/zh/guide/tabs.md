@@ -31,9 +31,9 @@ export default {
 
 ```js {8}
 // .vuepress/config.js
-const { mdEnhancePlugin } = require("vuepress-plugin-md-enhance");
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
-module.exports = {
+export default {
   plugins: [
     mdEnhancePlugin({
       // 添加选项卡支持
@@ -126,7 +126,7 @@ npm 应该与 Node.js 被一同安装。
 如果你使用的是 Node.js v16+，你可以使用 corepack 来启用 pnpm:
 
 ```bash
-corepack prepare pnpm@7.6.0 --activated
+corepack prepare pnpm@7.14.0 --activated
 ```
 
 否则，你可以使用 npm 安装它:

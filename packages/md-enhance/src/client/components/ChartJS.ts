@@ -1,5 +1,6 @@
 import { defineComponent, h, onMounted, ref } from "vue";
-import { LOADING_SVG } from "./icons";
+import { atou } from "vuepress-shared/client";
+import { LOADING_SVG } from "./icons.js";
 
 import type { ChartConfiguration } from "chart.js";
 import type { PropType, VNode } from "vue";
@@ -33,8 +34,8 @@ export default defineComponent({
   },
 
   setup(props) {
-    const chartElement = ref<HTMLElement | null>(null);
-    const chartCanvasElement = ref<HTMLCanvasElement | null>(null);
+    const chartElement = ref<HTMLElement>();
+    const chartCanvasElement = ref<HTMLCanvasElement>();
 
     const loading = ref(true);
 
@@ -46,10 +47,7 @@ export default defineComponent({
       ]).then(([{ default: Chart }]) => {
         Chart.defaults.maintainAspectRatio = false;
 
-        const data = parseChartConfig(
-          decodeURIComponent(props.config),
-          props.type
-        );
+        const data = parseChartConfig(atou(props.config), props.type);
         const ctx = chartCanvasElement.value!.getContext("2d")!;
 
         new Chart(ctx, data);

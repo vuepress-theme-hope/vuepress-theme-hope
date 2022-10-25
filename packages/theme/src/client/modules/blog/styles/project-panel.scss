@@ -1,0 +1,105 @@
+@use "sass:color";
+@use "sass:list";
+
+.project-panel {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-content: stretch;
+  align-items: stretch;
+  justify-content: flex-start;
+
+  margin-bottom: 12px;
+
+  .project {
+    position: relative;
+
+    width: calc(33% - 40px);
+    margin: 6px 8px;
+    padding: 12px;
+    border-radius: 8px;
+
+    background: var(--bg-color-float);
+
+    transition: background var(--color-transition),
+      transform var(--transform-transition);
+
+    @media (max-width: hope-config.$pad) {
+      width: calc(50% - 40px);
+    }
+
+    @media (min-width: hope-config.$pc) {
+      width: calc(25% - 40px);
+    }
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(0.98, 0.98);
+    }
+
+    .name {
+      position: relative;
+      z-index: 2;
+
+      color: var(--grey3);
+
+      font-weight: 500;
+      font-size: 16px;
+
+      transition: color var(--color-transition);
+    }
+
+    .desc {
+      position: relative;
+      z-index: 2;
+
+      margin: 6px 0;
+
+      color: var(--dark-grey);
+
+      font-size: 13px;
+    }
+
+    .image {
+      position: relative;
+      z-index: 2;
+
+      float: right;
+
+      width: 40px;
+      height: 40px;
+    }
+
+    .icon {
+      position: relative;
+      z-index: 2;
+
+      float: right;
+
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  @each $color in hope-config.$colors {
+    $index: list.index(hope-config.$colors, $color) - 1;
+
+    .project#{$index} {
+      background: color.scale($color, $lightness: 90%);
+
+      &:hover {
+        background: color.scale($color, $lightness: 75%);
+      }
+
+      #{hope-config.$dark-selector} & {
+        background: color.scale($color, $lightness: -75%);
+
+        &:hover {
+          background: color.scale($color, $lightness: -60%);
+        }
+      }
+    }
+  }
+}

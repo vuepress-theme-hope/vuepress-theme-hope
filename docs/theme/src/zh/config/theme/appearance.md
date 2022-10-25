@@ -21,7 +21,7 @@ tag:
 
 ## iconAssets <Badge text="仅限 Root" type="warning" />
 
-- 类型: `string`
+- 类型: `` "iconfont" | "fontawesome" | `//${string}` | `http://${string}` | `https://${string}`  ``
 - 必填: 否
 - 详情: [界面 → 图标](../../guide/interface/icon.md)
 

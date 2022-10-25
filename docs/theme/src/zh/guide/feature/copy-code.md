@@ -22,7 +22,7 @@ tag:
 
 ## 使用
 
-启用后，本插件会自动添加复制按钮到每个代码块的右下角。
+启用后，此插件会自动添加复制按钮到每个代码块的右下角。
 
 默认情况下，按钮仅在桌面模式显示，如果你需要在移动端展示这个按钮，请在主题选项中设置 `plugins.copyCode.showInMobile: true`。
 
@@ -32,9 +32,9 @@ tag:
 
 ```js
 // .vuepress/config.js
-const { hopeTheme } = require("vuepress-theme-hope");
+import { hopeTheme } from "vuepress-theme-hope";
 
-module.exports = {
+export default {
   theme: hopeTheme({
     plugins: {
       copyCode: {},
