@@ -1,4 +1,4 @@
-import { deepAssign } from "vuepress-shared";
+import { deepAssign } from "vuepress-shared/node";
 import type {
   PlaygroundData,
   PlaygroundOptions,

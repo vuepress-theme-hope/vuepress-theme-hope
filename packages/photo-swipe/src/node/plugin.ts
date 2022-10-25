@@ -1,6 +1,6 @@
 import { getDirname, path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
-import { addViteOptimizeDepsExclude, getLocales } from "vuepress-shared";
+import { addViteOptimizeDepsExclude, getLocales } from "vuepress-shared/node";
 
 import { photoSwipeLocales } from "./locales.js";
 import { logger } from "./utils.js";

@@ -7,7 +7,7 @@ import {
   addViteOptimizeDepsInclude,
   getLocales,
   noopModule,
-} from "vuepress-shared";
+} from "vuepress-shared/node";
 
 import { convertOptions } from "./compact.js";
 import { walineLocales } from "./locales.js";

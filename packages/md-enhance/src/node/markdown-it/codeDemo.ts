@@ -1,4 +1,4 @@
-import { utoa } from "vuepress-shared";
+import { utoa } from "vuepress-shared/node";
 import { container } from "./container.js";
 
 import type { PluginSimple } from "markdown-it";

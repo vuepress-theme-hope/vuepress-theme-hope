@@ -1,4 +1,4 @@
-import { encodeCDATA, encodeXML } from "vuepress-shared";
+import { encodeCDATA, encodeXML } from "vuepress-shared/node";
 import { js2xml } from "xml-js";
 import { FEED_GENERATOR } from "../utils.js";
 

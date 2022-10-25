@@ -1,5 +1,5 @@
 import { chalk } from "@vuepress/utils";
-import { stripTags } from "vuepress-shared";
+import { stripTags } from "vuepress-shared/node";
 
 import { convertOptions } from "./compact/index.js";
 import { appendSEO, generateRobotsTxt } from "./seo.js";

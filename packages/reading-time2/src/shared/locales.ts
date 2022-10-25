@@ -1,4 +1,4 @@
-import type { ConvertLocaleConfig } from "vuepress-shared";
+import type { ConvertLocaleConfig } from "vuepress-shared/node";
 
 /**
  * Muti language config for `vuepress-plugin-reading-time2` plugin

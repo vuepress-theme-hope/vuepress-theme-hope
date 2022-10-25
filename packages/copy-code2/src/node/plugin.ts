@@ -1,6 +1,6 @@
 import { getDirname, path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
-import { getLocales } from "vuepress-shared";
+import { getLocales } from "vuepress-shared/node";
 
 import { copyCodeLocales } from "./locales.js";
 import { logger } from "./utils.js";

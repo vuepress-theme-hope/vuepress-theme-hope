@@ -3,12 +3,13 @@ import { rollupTypescript } from "../../scripts/rollup.js";
 export default [
   ...rollupTypescript("node/index", {
     external: [
-      "vuepress-shared",
       "@vuepress/shared",
       "@vuepress/utils",
       "workbox-build",
       "vuepress-plugin-sass-palette",
+      "vuepress-shared/node",
     ],
+    dtsExternal: ["vuepress-shared"],
   }),
   ...rollupTypescript("client/components/PWAInstall", {
     resolve: true,

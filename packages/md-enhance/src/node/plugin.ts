@@ -8,7 +8,7 @@ import {
   chainWebpack,
   deepAssign,
   getLocales,
-} from "vuepress-shared";
+} from "vuepress-shared/node";
 
 import { logger } from "./utils.js";
 

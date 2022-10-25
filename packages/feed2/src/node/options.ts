@@ -3,7 +3,7 @@ import {
   removeEndingSlash,
   removeLeadingSlash,
 } from "@vuepress/shared";
-import { deepAssign } from "vuepress-shared";
+import { deepAssign } from "vuepress-shared/node";
 
 import { compareDate, resolveUrl } from "./utils.js";
 

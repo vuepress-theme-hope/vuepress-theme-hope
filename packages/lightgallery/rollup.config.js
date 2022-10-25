@@ -4,9 +4,8 @@ export default [
   ...rollupTypescript("node/index", {
     external: [
       "@vuepress/utils",
-      "vue",
       "vuepress-plugin-sass-palette",
-      "vuepress-shared",
+      "vuepress-shared/node",
     ],
   }),
   ...rollupTypescript("client/config", {

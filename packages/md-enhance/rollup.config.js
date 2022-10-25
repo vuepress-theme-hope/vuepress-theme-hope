@@ -4,7 +4,6 @@ export default [
   ...rollupTypescript("node/index", {
     external: [
       "node:module",
-      "vuepress-shared",
       "@vuepress/plugin-container",
       "@vuepress/shared",
       "@vuepress/utils",
@@ -14,7 +13,9 @@ export default [
       /^mathjax-full\//,
       "katex",
       "vuepress-plugin-sass-palette",
+      "vuepress-shared/node",
     ],
+    dtsExternal: ["vuepress-shared"],
     copy: [["client/styles", "client"]],
   }),
   ...rollupTypescript("client/compact/index", {

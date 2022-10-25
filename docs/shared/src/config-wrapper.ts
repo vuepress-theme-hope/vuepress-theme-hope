@@ -1,7 +1,7 @@
 import { defineUserConfig } from "@vuepress/cli";
 import { docsearchPlugin } from "@vuepress/plugin-docsearch";
 import { getDirname, path } from "@vuepress/utils";
-import { addViteOptimizeDepsInclude } from "vuepress-shared";
+import { addViteOptimizeDepsInclude } from "vuepress-shared/node";
 import type { UserConfig } from "@vuepress/cli";
 
 const __dirname = getDirname(import.meta.url);

@@ -8,6 +8,7 @@ export default [
       "@vuepress/utils",
       "vuepress-plugin-sass-palette",
     ],
+    dtsExternal: ["vuepress-shared"],
   }),
   ...rollupTypescript("client/config", {
     external: [

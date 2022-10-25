@@ -4,7 +4,7 @@ import {
   removeEndingSlash,
   removeLeadingSlash,
 } from "@vuepress/shared";
-import { Logger, isAbsoluteUrl, isUrl } from "vuepress-shared";
+import { Logger, isAbsoluteUrl, isUrl } from "vuepress-shared/node";
 
 import type { App, SiteLocaleConfig } from "@vuepress/core";
 import type { ExtendPage, SeoOptions } from "../shared/index.js";

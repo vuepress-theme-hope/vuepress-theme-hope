@@ -2,7 +2,7 @@ import {
   addViteOptimizeDepsExclude,
   addViteOptimizeDepsInclude,
   tagHint,
-} from "vuepress-shared";
+} from "vuepress-shared/node";
 
 import type { App } from "@vuepress/core";
 import type { ViteBundlerOptions } from "@vuepress/bundler-vite";

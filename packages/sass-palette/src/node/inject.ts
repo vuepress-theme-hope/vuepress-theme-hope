@@ -1,4 +1,4 @@
-import { mergeViteConfig } from "vuepress-shared";
+import { mergeViteConfig } from "vuepress-shared/node";
 
 import type { App } from "@vuepress/core";
 import type { ViteBundlerOptions } from "@vuepress/bundler-vite";

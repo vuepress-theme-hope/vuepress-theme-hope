@@ -1,6 +1,6 @@
 import { getDirname, path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
-import { addViteOptimizeDepsExclude } from "vuepress-shared";
+import { addViteOptimizeDepsExclude } from "vuepress-shared/node";
 
 import { logger } from "./utils.js";
 
