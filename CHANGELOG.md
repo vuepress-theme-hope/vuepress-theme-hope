@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.114](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.113...v2.0.0-beta.114) (2022-10-25)
+
+### Features
+
+- **theme:** support bilibili and lark icon ([7471199](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/74711998e4005144d7285649f04a6a757cc0b056))
+
+### Bug Fixes
+
+- **deps:** update dependency katex to v0.16.3 ([#2328](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2328)) ([25aab2d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/25aab2d1a58868457b403203701fb60047be662b))
+- **md-enhance:** fix option types ([16e57bb](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/16e57bb1ac9040e01d3bb4b6df51840cf87c48bb))
+
 ## [2.0.0-beta.113](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.112...v2.0.0-beta.113) (2022-10-22)
 
 ### Bug Fixes
