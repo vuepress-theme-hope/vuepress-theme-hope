@@ -61,7 +61,7 @@
     "@vuepress/client": "2.0.0-beta.53",
     "@vuepress/shared": "2.0.0-beta.53",
     "@vuepress/utils": "2.0.0-beta.53",
-    "@vueuse/core": "^9.3.1",
+    "@vueuse/core": "^9.4.0",
     "balloon-css": "^1.2.0",
     "chart.js": "^4.0.0-alpha.3",
     "echarts": "^5.4.0",

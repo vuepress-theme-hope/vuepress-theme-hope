@@ -49,7 +49,7 @@
     "@vuepress/client": "2.0.0-beta.53",
     "@vuepress/shared": "2.0.0-beta.53",
     "@vuepress/utils": "2.0.0-beta.53",
-    "@vueuse/core": "^9.3.1",
+    "@vueuse/core": "^9.4.0",
     "mitt": "^3.0.0",
     "register-service-worker": "^1.7.2",
     "vue": "^3.2.41",
