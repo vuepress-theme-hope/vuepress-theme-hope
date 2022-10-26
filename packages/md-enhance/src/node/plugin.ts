@@ -1,4 +1,3 @@
-import { getDirname, path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   addCustomElement,
@@ -62,8 +61,6 @@ import { MATHML_TAGS } from "./utils.js";
 import type { PluginFunction } from "@vuepress/core";
 import type { KatexOptions } from "katex";
 import type { MarkdownEnhanceOptions } from "../shared/index.js";
-
-const __dirname = getDirname(import.meta.url);
 
 export const mdEnhancePlugin =
   (
@@ -155,17 +152,6 @@ export const mdEnhancePlugin =
               )
             : DEFAULT_VUE_PLAYGROUND_OPTIONS,
       }),
-
-      alias: {
-        // FIXME:
-        // this is a workaround for https://github.com/vitejs/vite/issues/7621
-        // Remove this when issue is fixed
-        // eslint-disable-next-line @typescript-eslint/naming-convention
-        "vuepress-plugin-md-enhance/SlidePage": path.resolve(
-          __dirname,
-          "../client/SlidePage.js"
-        ),
-      },
 
       extendsBundlerOptions: (config: unknown, app): void => {
         addViteSsrNoExternal({ app, config }, "vuepress-shared");
