@@ -5,6 +5,7 @@ import {
   addViteOptimizeDepsExclude,
   addViteOptimizeDepsInclude,
   addViteSsrExternal,
+  addViteSsrNoExternal,
   chainWebpack,
   deepAssign,
   getLocales,
@@ -167,6 +168,8 @@ export const mdEnhancePlugin =
       },
 
       extendsBundlerOptions: (config: unknown, app): void => {
+        addViteSsrNoExternal({ app, config }, "vuepress-shared");
+
         if (katexEnable && katexOptions.output !== "html")
           addCustomElement({ app, config }, MATHML_TAGS);
         else if (mathjaxEnable) addCustomElement({ app, config }, /^mjx-/);
