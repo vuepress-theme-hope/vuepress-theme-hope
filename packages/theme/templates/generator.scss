@@ -3,27 +3,46 @@
 @use "sass:map";
 @use "@sass-palette/helper";
 
+$bg-color-light: (
+  light: helper.get-color($bg-color, $isDark: false),
+  dark: color.scale(helper.get-color($bg-color-secondary, $isDark: true)),
+) !default;
+$bg-color-back: (
+  light: helper.get-color($bg-color-secondary, $isDark: false),
+  dark: color.scale(helper.get-color($bg-color, $isDark: true)),
+) !default;
+$bg-color-float: (
+  light: helper.get-color($bg-color, $isDark: false),
+  dark: color.scale(helper.get-color($bg-color-secondary, $isDark: true)),
+) !default;
 $text-color-light: (
   light:
     color.scale(helper.get-color($text-color, $isDark: false), $lightness: 10%),
   dark:
     color.scale(helper.get-color($text-color, $isDark: true), $lightness: 10%),
 ) !default;
-
 $text-color-lighter: (
   light:
     color.scale(helper.get-color($text-color, $isDark: false), $lightness: 20%),
   dark:
     color.scale(helper.get-color($text-color, $isDark: true), $lightness: 20%),
 ) !default;
-
 $text-color-bright: (
   light:
     color.scale(helper.get-color($text-color, $isDark: false), $lightness: 40%),
   dark:
     color.scale(helper.get-color($text-color, $isDark: true), $lightness: 40%),
 ) !default;
-
+$bg-color-blur: (
+  light: color.change(helper.get-color($bg-color, $isDark: false), $alpha: 0.9),
+  dark: color.change(helper.get-color($bg-color, $isDark: true), $alpha: 0.9),
+) !default;
+$bg-color-float-blur: (
+  light:
+    color.change(helper.get-color($bg-color-float, $isDark: false), $alpha: 0.9),
+  dark:
+    color.change(helper.get-color($bg-color-float, $isDark: true), $alpha: 0.9),
+) !default;
 $theme-color-dark: (
   light:
     color.scale(
@@ -33,14 +52,12 @@ $theme-color-dark: (
   dark:
     color.scale(helper.get-color($theme-color, $isDark: true), $lightness: -10%),
 ) !default;
-
 $theme-color-light: (
   light:
     color.scale(helper.get-color($theme-color, $isDark: false), $lightness: 10%),
   dark:
     color.scale(helper.get-color($theme-color, $isDark: true), $lightness: 10%),
 ) !default;
-
 $theme-color-mask: (
   light:
     color.change(helper.get-color($theme-color, $isDark: false), $alpha: 0.15),

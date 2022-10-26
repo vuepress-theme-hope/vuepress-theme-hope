@@ -76,12 +76,7 @@ $pc: 1920px;
 - `$theme-color`: 主题色
 - `$text-color`: 字体颜色
 - `$bg-color`: 背景色
-- `$bg-color-light`: 浅背景色
-- `$bg-color-active`: 用于激活元素的背景色
-- `$bg-color-back`: 用于背景元素的背景色
-- `$bg-color-float`: 用于浮动元素的背景色
-- `$bg-color-blur`: 用于模糊元素的背景色
-- `$bg-color-float-blur`: 用于浮动模糊元素的背景色
+- `$bg-color-secondary`: 另一套更浅的背景色
 - `$border-color`: 边框颜色
 - `$box-shadow`: 元素阴影色
 - `$card-shadow`: 卡片阴影色

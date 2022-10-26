@@ -38,12 +38,20 @@ Move to `palette.scss`.
 
 Move to `palette.scss`.
 
+- Add `$bg-color-secondary`
+
 - `$accentColor` renamed to `$theme-color`
+
 - `$textColor`, `$darkTextColor` merged into `$text-color`
+
 - `$bgColor`, `$darkBgColor` merged into `$bg-color`
-- `$bgColorLight`, `$darkBgColorLight` merged into `$bg-color-light`
-- `$bgColorBlur`, `darkBgColorBlur` merged into `$bg-color-blur`
+
+- `$bgColorLight`, `$darkBgColorLight` removed
+
+- `$bgColorBlur`, `darkBgColorBlur` removed
+
 - `$cardShadowColor`, `$darkCardShadowColor` merged into `$card-shadow`
+
 - `$boxShadowColor`, `$darkBoxShadowColor` merged into `$box-shadow`
 
 - `$arrowBgColor` removed
@@ -56,7 +64,7 @@ Move to `palette.scss`.
 
 ### Font
 
-- Added `$font-family`, `$font-family-fancy` and `$font-family-code`
+- Add `$font-family`, `$font-family-fancy` and `$font-family-code`
 
 ### Transition
 

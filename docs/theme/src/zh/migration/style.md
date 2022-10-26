@@ -38,13 +38,21 @@ tag:
 
 移动至 `palette.scss`。
 
+- 新增 `$bg-color-secondary`
+
 - `$accentColor` 重命名为 `$theme-color`
+
 - `$textColor`, `$darkTextColor` 合并为 `$text-color`
+
 - `$bgColor`, `$darkBgColor` 合并为 `$bg-color`
-- `$bgColorLight`, `$darkBgColorLight` 合并为 `$bg-color-light`
-- `$bg-color-blur`, `$darkBgColorBlur` 合并为 `$bg-color-blur`
+
 - `$cardShadowColor`, `$darkCardShadowColor` 合并为 `$card-shadow`
+
 - `$boxShadowColor`, `$darkBoxShadowColor` 合并为 `$box-shadow`
+
+- `$bgColorLight`, `$darkBgColorLight` 移除
+
+- `$bg-color-blur`, `$darkBgColorBlur` 移除
 
 - `$arrowBgColor` 移除
 
