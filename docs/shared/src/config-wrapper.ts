@@ -23,6 +23,12 @@ export const config = (
 
     dest: "./dist",
 
+    markdown: {
+      code: {
+        lineNumbers: 10,
+      },
+    },
+
     plugins: [
       docsearchPlugin({
         appId: "VXIEHELDL1",
