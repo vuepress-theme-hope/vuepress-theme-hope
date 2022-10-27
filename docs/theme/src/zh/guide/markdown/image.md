@@ -18,7 +18,7 @@ tag:
 
 @tab TS
 
-```ts {9-14}
+```ts {9-16}
 // .vuepress/config.ts
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
@@ -27,6 +27,8 @@ export default defineUserConfig({
   theme: hopeTheme({
     plugins: {
       mdEnhance: {
+        // 启用图片懒加载
+        imageLazyload: true,
         // 启用图片标记
         imageMark: true,
         // 启用图片大小
@@ -41,7 +43,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {9-14}
+```js {9-16}
 /// .vuepress/config.js
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -49,6 +51,8 @@ export default {
   theme: hopeTheme({
     plugins: {
       mdEnhance: {
+        // 启用图片懒加载
+        imageLazyload: true,
         // 启用图片标记
         imageMark: true,
         // 启用图片大小
@@ -60,6 +64,16 @@ export default {
   }),
 };
 ```
+
+:::
+
+## 图片懒加载
+
+如果你想在你的页面中延迟加载图片，你可以在插件选项中设置 `imageLazyload: true`。
+
+::: note
+
+我们正在使用原生 HTML5 功能启用延迟加载，因此您的浏览器必须支持 [loading=lazy 属性](https://caniuse.com/loading-lazy-attr)。
 
 :::
 

@@ -187,13 +187,13 @@ export default {
 - attrs
 - container
 - footnote
+- imageLazyload
 - imageMark
 - imageSize
 - imageTitle
 - include
 - mathjax
 - katex
-- lazyload
 - mark
 - stylize
 - sub
