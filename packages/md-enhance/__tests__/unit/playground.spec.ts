@@ -3,6 +3,7 @@ import MarkdownIt from "markdown-it";
 
 import {
   getTSPlaygroundPreset,
+  getVuePlaygroundPreset,
   playground,
 } from "../../src/node/markdown-it/index.js";
 
@@ -142,13 +143,13 @@ const msg = ref('Hello World!')
   });
 
   describe("ts preset", () => {
-    const defaultMarkdownIt = MarkdownIt({ linkify: true }).use(
+    const markdownItwithTSPreset = MarkdownIt({ linkify: true }).use(
       playground,
       getTSPlaygroundPreset({})
     );
 
     it("Should work", () => {
-      const result1 = defaultMarkdownIt.render(`
+      const result1 = markdownItwithTSPreset.render(`
 ::: playground#ts TS demo 1
 
 @file index.ts
@@ -164,7 +165,7 @@ speak(msg);
 :::
 `);
 
-      const result2 = defaultMarkdownIt.render(`
+      const result2 = markdownItwithTSPreset.render(`
 ::: playground#ts TS demo 2
 
 @file index.ts
@@ -177,7 +178,7 @@ const speak = (msg: string) => console.log(msg);
 speak(msg);
 \`\`\`
 
-@settings
+@setting
 
 \`\`\`json
 {
@@ -186,6 +187,90 @@ speak(msg);
 \`\`\`
 
 :::
+`);
+
+      expect(result1).toMatchSnapshot();
+      expect(result2).toMatchSnapshot();
+    });
+  });
+
+  describe("vue preset", () => {
+    const markdownItwithVuePreset = MarkdownIt({ linkify: true }).use(
+      playground,
+      getVuePlaygroundPreset({})
+    );
+
+    it("Should work", () => {
+      const result1 = markdownItwithVuePreset.render(`
+::: playground#vue Vue demo with cutomized imports
+
+@file App.vue
+
+\`\`\`vue
+<script setup>
+import { ref } from "vue";
+
+import Comp from "./Comp.vue";
+
+const msg = ref("Hello World!");
+</script>
+
+<template>
+  <h1>{{ msg }}</h1>
+  <input v-model="msg" />
+  <Comp />
+</template>
+\`\`\`
+
+@file Comp.vue
+
+\`\`\`vue
+<template>
+  <div>Comp</div>
+</template>
+\`\`\`
+
+@import
+
+\`\`\`json
+{
+  "imports": {
+    "vue": "https://sfc.vuejs.org/vue.runtime.esm-browser.js"
+  }
+}
+\`\`\`
+
+:::
+`);
+      const result2 = markdownItwithVuePreset.render(`
+::: playground#vue Vue demo with customized settings
+
+@file App.vue
+
+\`\`\`vue
+<script setup>
+import { ref } from "vue";
+
+const msg = ref("Hello Playground!");
+</script>
+
+<template>
+  <h1>{{ msg }}</h1>
+  <input v-model="msg" />
+</template>
+\`\`\`
+
+@setting
+
+\`\`\`json
+{
+  "dev": true,
+  "ssr": true
+}
+\`\`\`
+
+:::
+
 `);
 
       expect(result1).toMatchSnapshot();

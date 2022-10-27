@@ -14,40 +14,24 @@ exports[`Vue Playground > Should resolve playground info 2`] = `
 
 exports[`Vue Playground > Should resolve playground info with settings 1`] = `
 "<VuePlayground title=\\"Playground%20demo2\\" key=\\"1877a7d0\\" settings=\\"%7B%22service%22%3A%22https%3A%2F%2Felement-plus.run%2F%22%7D\\" files=\\"eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiB9IGZyb20gJ3Z1ZSdcbmNvbnN0IG1zZyA9IHJlZignSGVsbG8gV29ybGQhJylcbjwvc2NyaXB0PlxuPHRlbXBsYXRlPlxuICA8aDE%2Be3sgbXNnIH19PC9oMT5cbiAgPGlucHV0IHYtbW9kZWw9XCJtc2dcIiAvPlxuPC90ZW1wbGF0ZT5cbiIsIkNvbXAudnVlIjoiPHRlbXBsYXRlPlxuICA8ZGl2PkNvbXA8L2Rpdj5cbjwvdGVtcGxhdGU%2BXG4ifQ%3D%3D\\">
-<pre><code class=\\"language-json\\">{
-  &quot;service&quot;: &quot;https://element-plus.run/&quot;
-}
-</code></pre>
 </VuePlayground>
 "
 `;
 
 exports[`Vue Playground > Should resolve playground info with settings 2`] = `
 "<VuePlayground title=\\"Playground%20demo2\\" key=\\"1877a7d0\\" settings=\\"%7B%22service%22%3A%22https%3A%2F%2Felement-plus.run%2F%22%7D\\" files=\\"eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiB9IGZyb20gJ3Z1ZSdcbmNvbnN0IG1zZyA9IHJlZignSGVsbG8gV29ybGQhJylcbjwvc2NyaXB0PlxuPHRlbXBsYXRlPlxuICA8aDE%2Be3sgbXNnIH19PC9oMT5cbiAgPGlucHV0IHYtbW9kZWw9XCJtc2dcIiAvPlxuPC90ZW1wbGF0ZT5cbiIsIkNvbXAudnVlIjoiPHRlbXBsYXRlPlxuICA8ZGl2PkNvbXA8L2Rpdj5cbjwvdGVtcGxhdGU%2BXG4ifQ%3D%3D\\">
-<pre><code class=\\"language-json\\">{
-  &quot;service&quot;: &quot;https://element-plus.run/&quot;
-}
-</code></pre>
 </VuePlayground>
 "
 `;
 
 exports[`Vue Playground > Should resolve playground info with settings 3`] = `
 "<VuePlayground title=\\"Playground%20demo2\\" key=\\"1877a7d0\\" settings=\\"%7B%22service%22%3A%22https%3A%2F%2Felement-plus.run%2F%22%7D\\" files=\\"eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiB9IGZyb20gJ3Z1ZSdcbmNvbnN0IG1zZyA9IHJlZignSGVsbG8gV29ybGQhJylcbjwvc2NyaXB0PlxuPHRlbXBsYXRlPlxuICA8aDE%2Be3sgbXNnIH19PC9oMT5cbiAgPGlucHV0IHYtbW9kZWw9XCJtc2dcIiAvPlxuPC90ZW1wbGF0ZT5cbiIsImltcG9ydC1tYXAuanNvbiI6IntcbiAgXCJpbXBvcnRzXCI6IHtcbiAgICBcInZ1ZVwiOiBcImh0dHBzOi8vc2ZjLnZ1ZWpzLm9yZy92dWUucnVudGltZS5lc20tYnJvd3Nlci5qc1wiXG4gIH1cbn1cbiJ9\\">
-<pre><code class=\\"language-json\\">{
-  &quot;service&quot;: &quot;https://element-plus.run/&quot;
-}
-</code></pre>
 </VuePlayground>
 "
 `;
 
 exports[`Vue Playground > Should resolve playground info with settings 4`] = `
 "<VuePlayground title=\\"Playground%20demo2\\" key=\\"1877a7d0\\" settings=\\"%7B%22service%22%3A%22https%3A%2F%2Felement-plus.run%2F%22%7D\\" files=\\"eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiB9IGZyb20gJ3Z1ZSdcbmNvbnN0IG1zZyA9IHJlZignSGVsbG8gV29ybGQhJylcbjwvc2NyaXB0PlxuPHRlbXBsYXRlPlxuICA8aDE%2Be3sgbXNnIH19PC9oMT5cbiAgPGlucHV0IHYtbW9kZWw9XCJtc2dcIiAvPlxuPC90ZW1wbGF0ZT5cbiIsImltcG9ydC1tYXAuanNvbiI6IntcbiAgXCJpbXBvcnRzXCI6IHtcbiAgICBcInZ1ZVwiOiBcImh0dHBzOi8vc2ZjLnZ1ZWpzLm9yZy92dWUucnVudGltZS5lc20tYnJvd3Nlci5qc1wiXG4gIH1cbn1cbiJ9\\">
-<pre><code class=\\"language-json\\">{
-  &quot;service&quot;: &quot;https://element-plus.run/&quot;
-}
-</code></pre>
 </VuePlayground>
 "
 `;

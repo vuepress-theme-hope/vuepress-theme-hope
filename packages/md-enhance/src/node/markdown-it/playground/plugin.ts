@@ -304,12 +304,9 @@ export const playground: PluginWithOptions<PlaygroundOptions> = (
             playgroundData.settings = <Record<string, unknown>>(
               JSON.parse(content.trim())
             );
-
-          continue;
         }
-
         // add code block content
-        if (type === "fence" && currentKey)
+        else if (type === "fence" && currentKey)
           playgroundData.files[currentKey] = {
             ext: info,
             content: content,
