@@ -1,9 +1,9 @@
 import { describe, it, expect } from "vitest";
 import MarkdownIt from "markdown-it";
-import { lazyLoad } from "../../src/node/markdown-it/index.js";
+import { imageLazyload } from "../../src/node/markdown-it/index.js";
 
-describe("lazyLoad", () => {
-  const markdownIt = MarkdownIt({ linkify: true }).use(lazyLoad);
+describe("image lazyLoad", () => {
+  const markdownIt = MarkdownIt({ linkify: true }).use(imageLazyload);
 
   it("Shoud render", () => {
     expect(markdownIt.render(`![image](/logo.svg)`)).toEqual(

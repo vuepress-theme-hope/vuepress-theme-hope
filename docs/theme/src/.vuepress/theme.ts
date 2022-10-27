@@ -87,12 +87,12 @@ export default hopeTheme({
       echarts: true,
       flowchart: true,
       gfm: true,
+      imageLazyload: true,
       imageMark: true,
       imageSize: true,
       imageTitle: true,
       include: true,
       katex: true,
-      lazyLoad: true,
       mark: true,
       mermaid: true,
       playground: {

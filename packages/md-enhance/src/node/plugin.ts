@@ -31,12 +31,12 @@ import {
   flowchart,
   footnote,
   hint,
+  imageLazyload,
   imageMark,
   imageSize,
   include,
   katex,
   mathjax,
-  lazyLoad,
   mark,
   mermaid,
   normalDemo,
@@ -214,7 +214,7 @@ export const mdEnhancePlugin =
           md.use(attrs, typeof options.attrs === "object" ? options.attrs : {});
         if (getStatus("align")) md.use(align);
         if (getStatus("container")) md.use(hint, locales);
-        if (getStatus("lazyLoad")) md.use(lazyLoad);
+        if (getStatus("imageLazyload")) md.use(imageLazyload);
         if (getStatus("imageTitle")) md.use(imageTitle);
         if (imageMarkEnable)
           md.use(

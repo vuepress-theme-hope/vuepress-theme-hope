@@ -152,19 +152,19 @@ icon: config
 
 是否启用脚注格式支持。
 
-## lazyLoad
-
-- 类型: `boolean`
-- 默认值: `false`
-
-是否使用原生方式懒加载页面图片。
-
 ## mark
 
 - 类型: `boolean`
 - 默认值: `false`
 
 是否启用标记格式支持。
+
+## imageLazyload
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否使用原生方式懒加载页面图片。
 
 ## imageMark
 

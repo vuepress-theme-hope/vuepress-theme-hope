@@ -331,7 +331,7 @@ tag:
 
   - переименован `mdEnhance.codegroup` в `plugins.mdEnhance.codetabs` ![changed](https://img.shields.io/badge/-changed-yellow)
 
-  - изменение значение по умолчанию `plugins.mdEnhance.lazyLoad` с `true` на `false` ![changed](https://img.shields.io/badge/-changed-yellow)
+  - переименован `mdEnhance.lazyload` в `plugins.mdEnhance.imageLazyload` изменение значение по умолчанию с `true` на `false` ![changed](https://img.shields.io/badge/-changed-yellow)
 
   - удалено `plugins.mdEnhance.lineNumbers` ![removed](https://img.shields.io/badge/-removed-red)
 

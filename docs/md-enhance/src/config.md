@@ -152,19 +152,19 @@ Whether to enable the lower corner format support.
 
 Whether to enable footnote format support.
 
-## lazyLoad
-
-- Type: `boolean`
-- Default: `false`
-
-Whether to lazy load every images in page in native way.
-
 ## mark
 
 - Type: `boolean`
 - Default: `false`
 
 Whether to enable mark support.
+
+## imageLazyload
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to lazy load every images in page in native way.
 
 ## imageMark
 

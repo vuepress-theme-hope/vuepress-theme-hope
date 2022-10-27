@@ -331,7 +331,7 @@ Move all plugin related options under `plugins`.
 
   - rename `mdEnhance.codegroup` to `plugins.mdEnhance.codetabs` ![changed](https://img.shields.io/badge/-changed-yellow)
 
-  - change default value of `plugins.mdEnhance.lazyLoad` from `true` to `false` ![changed](https://img.shields.io/badge/-changed-yellow)
+  - rename `plugins.mdEnhance.lazyLoad` to `plugins.mdEnhance.lazyLoad` and change default value from `true` to `false` ![changed](https://img.shields.io/badge/-changed-yellow)
 
   - remove `plugins.mdEnhance.enableAll` ![removed](https://img.shields.io/badge/-removed-red)
 

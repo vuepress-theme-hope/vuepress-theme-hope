@@ -331,7 +331,7 @@ tag:
 
   - `mdEnhance.codegroup` 重命名为 `plugins.mdEnhance.codetabs` ![警告](https://img.shields.io/badge/-warning-yellow)
 
-  - `plugins.mdEnhance.lazyLoad` 默认值由 `true` 改为 `false` ![警告](https://img.shields.io/badge/-warning-yellow)
+  - `plugins.mdEnhance.lazyLoad` 改为 `plugins.mdEnhance.imageLazyload`，默认值由 `true` 改为 `false` ![警告](https://img.shields.io/badge/-warning-yellow)
 
   - 移除 `plugins.mdEnhance.enableAll` ![移除](https://img.shields.io/badge/-removed-red)
 

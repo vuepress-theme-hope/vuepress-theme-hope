@@ -144,7 +144,7 @@ export interface MarkdownEnhanceOptions {
    *
    * @default false
    */
-  lazyLoad?: boolean;
+  imageLazyload?: boolean;
 
   /**
    * Whether render figure when title is set
