@@ -12,6 +12,11 @@ export const convertOptions = (
   });
   deprecatedLogger({
     options,
+    deprecatedOption: "lazyload",
+    newOption: "imageLazyload",
+  });
+  deprecatedLogger({
+    options,
     deprecatedOption: "mdImport",
     newOption: "include",
   });
