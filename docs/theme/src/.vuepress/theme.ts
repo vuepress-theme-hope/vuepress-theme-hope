@@ -65,7 +65,15 @@ export default hopeTheme({
   plugins: {
     blog: true,
 
-    components: ["Badge", "CodePen", "PDF", "StackBlitz", "YouTube"],
+    components: [
+      "Badge",
+      "BiliBili",
+      "CodePen",
+      "PDF",
+      "StackBlitz",
+      "VideoPlayer",
+      "YouTube",
+    ],
 
     comment: {
       provider: "Giscus",
