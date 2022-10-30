@@ -67,13 +67,13 @@ export default {
 
 :::
 
-## Image Lazyload
+## Отложенная загрузка изображений
 
-If you want to lazyload images in your pages, you can set `imageLazyload: true` in plugin options.
+Если вы хотите отложено загружать изображения на своих страницах, вы можете установить `imageLazyload: true` в настройках плагина.
 
 ::: note
 
-We are enabling lazyload using native HTML5 features, so your brower must support [loading=lazy attribute](https://caniuse.com/loading-lazy-attr).
+Мы включаем отложенную загрузку с использованием встроенных функций HTML5, поэтому ваш браузер должен поддерживать атрибут [loading=lazy attribute](https://caniuse.com/loading-lazy-attr).
 
 :::
 
