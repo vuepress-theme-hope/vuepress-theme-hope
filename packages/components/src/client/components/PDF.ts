@@ -82,11 +82,11 @@ export default defineComponent({
     });
 
     return (): VNode => {
-      const link = withBase(props.url);
-
-      const fullLink = `${
-        isLinkHttp(link) || __VUEPRESS_SSR__ ? "" : window?.location.host || ""
-      }${link}`;
+      const fullLink = isLinkHttp(props.url)
+        ? props.url
+        : __VUEPRESS_SSR__
+        ? ""
+        : `${window?.location.origin || ""}${withBase(props.url)}`;
 
       return h(
         "div",
