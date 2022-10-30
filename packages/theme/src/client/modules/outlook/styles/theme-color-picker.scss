@@ -41,7 +41,7 @@
       &.theme-color {
         background: helper.get-color(hope-config.$theme-color, $isDark: false);
 
-        #{config.$dark-selector} {
+        #{hope-config.$dark-selector} {
           background: helper.get-color(hope-config.$theme-color, $isDark: true);
         }
       }
