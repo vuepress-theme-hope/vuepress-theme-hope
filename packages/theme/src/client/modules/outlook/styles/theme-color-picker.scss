@@ -39,10 +39,10 @@
 
       // original theme-color
       &.theme-color {
-        background: helper.get-color($theme-color, $isDark: false);
+        background: helper.get-color(hope-config.$theme-color, $isDark: false);
 
-        #{config.$dark-selector} {
-          background: helper.get-color($theme-color, $isDark: true);
+        #{hope-config.$dark-selector} {
+          background: helper.get-color(hope-config.$theme-color, $isDark: true);
         }
       }
     }

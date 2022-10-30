@@ -1,6 +1,6 @@
 import { getDirname, path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
-import { getLocales } from "vuepress-shared/node";
+import { addViteSsrNoExternal, getLocales } from "vuepress-shared/node";
 
 import { copyCodeLocales } from "./locales.js";
 import { logger } from "./utils.js";
@@ -33,6 +33,10 @@ export const copyCodePlugin =
         CODE_COPY_OPTIONS: options,
         CODE_COPY_LOCALES: userCopyCodeLocales,
       }),
+
+      extendsBundlerOptions: (config: unknown, app): void => {
+        addViteSsrNoExternal({ app, config }, "vuepress-shared");
+      },
 
       clientConfigFile: path.resolve(__dirname, "../client/config.js"),
     };
