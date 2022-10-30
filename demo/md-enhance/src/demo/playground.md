@@ -32,7 +32,7 @@ const speak = (msg: string) => console.log(msg);
 speak(msg);
 ```
 
-@settings
+@setting
 
 ```json
 {

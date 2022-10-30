@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-pwa2",
-  "version": "2.0.0-beta.113",
+  "version": "2.0.0-beta.116",
   "description": "Powerful PWA plugin for vuepress",
   "keywords": [
     "vuepress",
@@ -35,8 +35,7 @@
   "main": "lib/node/index.js",
   "types": "lib/node/index.d.ts",
   "files": [
-    "lib",
-    "src"
+    "lib"
   ],
   "scripts": {
     "build": "rollup -c",
@@ -47,20 +46,20 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@vuepress/client": "2.0.0-beta.52",
-    "@vuepress/shared": "2.0.0-beta.52",
-    "@vuepress/utils": "2.0.0-beta.52",
-    "@vueuse/core": "^9.3.1",
+    "@vuepress/client": "2.0.0-beta.53",
+    "@vuepress/shared": "2.0.0-beta.53",
+    "@vuepress/utils": "2.0.0-beta.53",
+    "@vueuse/core": "^9.4.0",
     "mitt": "^3.0.0",
     "register-service-worker": "^1.7.2",
     "vue": "^3.2.41",
-    "vue-router": "^4.1.5",
+    "vue-router": "^4.1.6",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*",
     "workbox-build": "^6.5.4"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.52",
+    "@vuepress/core": "2.0.0-beta.53",
     "rimraf": "3.0.2"
   },
   "peerDependencies": {

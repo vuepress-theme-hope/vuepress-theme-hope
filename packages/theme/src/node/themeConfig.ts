@@ -1,4 +1,4 @@
-import { getLocales } from "vuepress-shared";
+import { getLocales } from "vuepress-shared/node";
 import { resolveEncrypt } from "./encrypt.js";
 import { themeLocalesData } from "./locales/index.js";
 

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { chalk, fs, path } from "@vuepress/utils";
-import { getRootLang } from "vuepress-shared";
+import { getRootLang } from "vuepress-shared/node";
 
 import { logger } from "./utils.js";
 

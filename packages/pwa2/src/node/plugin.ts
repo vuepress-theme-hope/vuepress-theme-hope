@@ -3,7 +3,7 @@ import {
   addViteOptimizeDepsExclude,
   getLocales,
   useCustomDevServer,
-} from "vuepress-shared";
+} from "vuepress-shared/node";
 
 import { convertOptions } from "./compact/index.js";
 import { getManifest, generateManifest } from "./generateManifest.js";

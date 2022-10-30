@@ -21,7 +21,7 @@ export const prepareConfigFile = (
   let layout = "";
 
   if (enableBlog) {
-    configImport += `
+    configImport += `\
 import BloggerInfo from "@theme-hope/modules/blog/components/BloggerInfo.js";
 import BlogHome from "@theme-hope/modules/blog/components/BlogHome.js";
 import BlogPage from "@theme-hope/modules/blog/components/BlogPage.js";
@@ -29,21 +29,23 @@ import { setupBlog } from "@theme-hope/modules/blog/composables/index.js";
 import "${CLIENT_FOLDER}modules/blog/styles/layout.scss";
 `;
 
-    enhance += `
+    enhance += `\
 app.component("BloggerInfo", BloggerInfo);
 app.component("BlogHome", BlogHome);
 app.component("BlogPage", BlogPage);
 `;
 
-    setup += "setupBlog();\n";
+    setup += `\
+setupBlog();
+`;
   }
 
   if (enableEncrypt) {
-    configImport += `
+    configImport += `\
 import GloablEncrypt from "@theme-hope/modules/encrypt/components/GloablEncrypt.js";
 import LocalEncrypt from "@theme-hope/modules/encrypt/components/LocalEncrypt.js";
 `;
-    enhance += `
+    enhance += `\
 app.component("GloablEncrypt", GloablEncrypt);
 app.component("LocalEncrypt", LocalEncrypt);
 `;

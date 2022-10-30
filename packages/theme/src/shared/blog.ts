@@ -1,7 +1,7 @@
 import type { ReadingTime } from "vuepress-plugin-reading-time2";
 import type { Author } from "vuepress-shared";
 
-export enum ArticleInfoType {
+export const enum ArticleInfoType {
   type = "y",
   title = "t",
   shortTitle = "s",
@@ -19,7 +19,7 @@ export enum ArticleInfoType {
   cover = "v",
 }
 
-export enum PageType {
+export const enum PageType {
   article = "a",
   home = "h",
   slide = "s",

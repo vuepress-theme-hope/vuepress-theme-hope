@@ -1,5 +1,5 @@
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
-import { getLocales } from "vuepress-shared";
+import { getLocales } from "vuepress-shared/node";
 
 import { backToTopLocales } from "./locales.js";
 import { prepareConfigFile } from "./prepare.js";

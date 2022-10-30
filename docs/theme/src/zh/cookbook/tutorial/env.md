@@ -25,7 +25,7 @@ tag:
 
 ::: note
 
-请在打开的页面中，点击左侧的绿色按钮，即可完成下载。
+请在打开的页面中，点击左侧的绿色按钮 (LTS)，即可完成下载。
 
 :::
 
@@ -95,5 +95,5 @@ pnpm 的一些功能可以保证你拥有正确的依赖。
 
 ```sh
 corepack enable
-corepack prepare pnpm@7.11.0 --activate
+corepack prepare pnpm@7.14.0 --activate
 ```

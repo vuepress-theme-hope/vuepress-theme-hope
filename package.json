@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-hope-root",
-  "version": "2.0.0-beta.113",
+  "version": "2.0.0-beta.116",
   "private": true,
   "description": "A vuepress theme with tons of features",
   "type": "module",
@@ -35,7 +35,66 @@
     "release:sync": "cross-env NODE_OPTIONS=\"--experimental-json-modules\" ts-node-esm  -O {\\\"module\\\":\\\"ESNext\\\"} scripts/sync",
     "test": "vitest --coverage"
   },
-  "lint-staged": {
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-git"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "17.1.2",
+    "@commitlint/config-conventional": "17.1.0",
+    "@rollup/plugin-commonjs": "23.0.2",
+    "@rollup/plugin-node-resolve": "15.0.1",
+    "@types/inquirer": "9.0.2",
+    "@types/node": "18.11.7",
+    "@typescript-eslint/eslint-plugin": "5.41.0",
+    "@typescript-eslint/parser": "5.41.0",
+    "@vitest/coverage-c8": "0.24.3",
+    "@vue/eslint-config-typescript": "11.0.2",
+    "bumpp": "8.2.1",
+    "c8": "7.12.0",
+    "commitizen": "4.2.5",
+    "concurrently": "7.5.0",
+    "cpx2": "4.2.0",
+    "cross-env": "7.0.3",
+    "cz-git": "1.3.12",
+    "esbuild": "0.15.12",
+    "eslint": "8.26.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-prettier": "4.2.1",
+    "eslint-plugin-vue": "9.6.0",
+    "execa": "6.1.0",
+    "husky": "8.0.1",
+    "inquirer": "9.1.4",
+    "magic-string": "0.26.7",
+    "markdownlint-cli": "0.32.2",
+    "nano-staged": "0.8.0",
+    "npm-check-updates": "16.3.16",
+    "ora": "6.1.2",
+    "picocolors": "1.0.0",
+    "prettier": "2.7.1",
+    "rollup": "3.2.3",
+    "rollup-plugin-copy": "3.4.0",
+    "rollup-plugin-dts": "5.0.0",
+    "rollup-plugin-esbuild": "4.10.1",
+    "sort-package-json": "2.0.0",
+    "standard-version": "9.5.0",
+    "stylelint": "14.14.0",
+    "stylelint-config-prettier": "9.0.3",
+    "stylelint-config-standard": "29.0.0",
+    "stylelint-config-standard-scss": "6.0.0",
+    "stylelint-order": "5.0.0",
+    "ts-node": "10.9.1",
+    "tslib": "2.4.0",
+    "typescript": "4.7.4",
+    "vitest": "0.24.3"
+  },
+  "packageManager": "pnpm@7.14.1",
+  "engines": {
+    "node": ">=14",
+    "pnpm": ">=7"
+  },
+  "nano-staged": {
     "*.vue": [
       "eslint --fix",
       "prettier --write"
@@ -58,65 +117,6 @@
     "package.json": [
       "sort-package-json"
     ]
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-git"
-    }
-  },
-  "devDependencies": {
-    "@commitlint/cli": "17.1.2",
-    "@commitlint/config-conventional": "17.1.0",
-    "@rollup/plugin-commonjs": "23.0.2",
-    "@rollup/plugin-node-resolve": "15.0.1",
-    "@types/inquirer": "9.0.2",
-    "@types/node": "18.11.2",
-    "@typescript-eslint/eslint-plugin": "5.40.1",
-    "@typescript-eslint/parser": "5.40.1",
-    "@vitest/coverage-c8": "0.24.3",
-    "@vue/eslint-config-typescript": "11.0.2",
-    "bumpp": "8.2.1",
-    "c8": "7.12.0",
-    "chalk": "5.1.2",
-    "commitizen": "4.2.5",
-    "concurrently": "7.5.0",
-    "cpx2": "4.2.0",
-    "cross-env": "7.0.3",
-    "cz-git": "1.3.12",
-    "esbuild": "0.15.12",
-    "eslint": "8.26.0",
-    "eslint-config-prettier": "8.5.0",
-    "eslint-plugin-prettier": "4.2.1",
-    "eslint-plugin-vue": "9.6.0",
-    "execa": "6.1.0",
-    "husky": "8.0.1",
-    "inquirer": "9.1.4",
-    "lint-staged": "13.0.3",
-    "magic-string": "0.26.7",
-    "markdownlint-cli": "0.32.2",
-    "npm-check-updates": "16.3.15",
-    "ora": "6.1.2",
-    "prettier": "2.7.1",
-    "rollup": "3.2.3",
-    "rollup-plugin-copy": "3.4.0",
-    "rollup-plugin-dts": "5.0.0",
-    "rollup-plugin-esbuild": "4.10.1",
-    "sort-package-json": "2.0.0",
-    "standard-version": "9.5.0",
-    "stylelint": "14.14.0",
-    "stylelint-config-prettier": "9.0.3",
-    "stylelint-config-standard": "29.0.0",
-    "stylelint-config-standard-scss": "5.0.0",
-    "stylelint-order": "5.0.0",
-    "ts-node": "10.9.1",
-    "tslib": "2.4.0",
-    "typescript": "4.7.4",
-    "vitest": "0.24.3"
-  },
-  "packageManager": "pnpm@7.14.0",
-  "engines": {
-    "node": ">=14",
-    "pnpm": ">=7"
   },
   "pnpm": {
     "peerDependencyRules": {

@@ -1,4 +1,4 @@
-import { utoa } from "vuepress-shared";
+import { utoa } from "vuepress-shared/node";
 import type { PluginSimple } from "markdown-it";
 import type { default as Renderer } from "markdown-it/lib/renderer.js";
 

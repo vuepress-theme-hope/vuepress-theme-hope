@@ -1,4 +1,4 @@
-import { deepAssign } from "vuepress-shared";
+import { deepAssign } from "vuepress-shared/node";
 import { compressToEncodedURIComponent } from "./ventors/lzstring.js";
 import { optionDeclarations } from "./ventors/optionDelcarations.js";
 

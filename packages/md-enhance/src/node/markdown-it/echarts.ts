@@ -1,4 +1,4 @@
-import { utoa } from "vuepress-shared";
+import { utoa } from "vuepress-shared/node";
 import { container } from "./container.js";
 import type { default as Token } from "markdown-it/lib/token.js";
 

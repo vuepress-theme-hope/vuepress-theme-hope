@@ -1,6 +1,6 @@
 {
   "name": "comment2-demo",
-  "version": "2.0.0-beta.113",
+  "version": "2.0.0-beta.116",
   "private": true,
   "description": "Demo for vuepress-plugin-comment2",
   "license": "MIT",
@@ -14,15 +14,15 @@
     "demo:vite-dev": "vuepress-vite dev src"
   },
   "devDependencies": {
-    "@vuepress/cli": "2.0.0-beta.52",
-    "@vuepress/client": "2.0.0-beta.52",
-    "@vuepress/core": "2.0.0-beta.52",
-    "@vuepress/theme-default": "2.0.0-beta.52",
-    "@vuepress/utils": "2.0.0-beta.52",
+    "@vuepress/cli": "2.0.0-beta.53",
+    "@vuepress/client": "2.0.0-beta.53",
+    "@vuepress/core": "2.0.0-beta.53",
+    "@vuepress/theme-default": "2.0.0-beta.53",
+    "@vuepress/utils": "2.0.0-beta.53",
     "sass-loader": "13.1.0",
     "vue": "3.2.41",
     "vuepress-plugin-comment2": "workspace:*",
-    "vuepress-vite": "2.0.0-beta.52",
-    "vuepress-webpack": "2.0.0-beta.52"
+    "vuepress-vite": "2.0.0-beta.53",
+    "vuepress-webpack": "2.0.0-beta.53"
   }
 }

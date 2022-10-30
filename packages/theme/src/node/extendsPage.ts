@@ -5,7 +5,7 @@ import {
   getTag,
   injectLocalizedDate,
   timeTransformer,
-} from "vuepress-shared";
+} from "vuepress-shared/node";
 
 import { ArticleInfoType, PageType } from "../shared/index.js";
 

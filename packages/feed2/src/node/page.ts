@@ -1,4 +1,9 @@
-import { getAuthor, getCategory, isAbsoluteUrl, isUrl } from "vuepress-shared";
+import {
+  getAuthor,
+  getCategory,
+  isAbsoluteUrl,
+  isUrl,
+} from "vuepress-shared/node";
 import { getImageMineType, resolveHTML, resolveUrl } from "./utils.js";
 
 import type { AuthorInfo } from "vuepress-shared";

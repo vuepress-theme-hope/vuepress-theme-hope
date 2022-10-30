@@ -185,13 +185,13 @@ This plugin exports the following Markdown-it plugin, and you can use them in ot
 - attrs
 - container
 - footnote
+- imageLazyload
 - imageMark
 - imageSize
 - imageTitle
 - include
 - mathjax
 - katex
-- lazyload
 - mark
 - stylize
 - sub

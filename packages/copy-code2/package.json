@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-copy-code2",
-  "version": "2.0.0-beta.113",
+  "version": "2.0.0-beta.116",
   "description": "Copy Code plugin for vuepress",
   "keywords": [
     "vuepress",
@@ -33,8 +33,7 @@
   "main": "lib/node/index.js",
   "types": "lib/node/index.d.ts",
   "files": [
-    "lib",
-    "src"
+    "lib"
   ],
   "scripts": {
     "build": "rollup -c",
@@ -45,16 +44,16 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@vuepress/client": "2.0.0-beta.52",
-    "@vuepress/utils": "2.0.0-beta.52",
+    "@vuepress/client": "2.0.0-beta.53",
+    "@vuepress/utils": "2.0.0-beta.53",
     "balloon-css": "^1.2.0",
     "vue": "^3.2.41",
-    "vue-router": "^4.1.5",
+    "vue-router": "^4.1.6",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.52",
+    "@vuepress/core": "2.0.0-beta.53",
     "rimraf": "3.0.2"
   },
   "peerDependencies": {

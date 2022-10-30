@@ -15,28 +15,41 @@ export const prepareConfigFile = (
   let rootComponents = "";
 
   if (options.showInstall) {
-    configImport += `import PWAInstall from "${CLIENT_FOLDER}components/PWAInstall.js";\n`;
+    configImport += `\
+import PWAInstall from "${CLIENT_FOLDER}components/PWAInstall.js";
+`;
 
-    rootComponents += `PWAInstall,\n`;
+    rootComponents += `\
+PWAInstall,
+`;
   }
 
   if (options.update === "hint") {
-    configImport += `import SWHintPopup from "${
+    configImport += `\
+import SWHintPopup from "${
       options.hintComponent || `${CLIENT_FOLDER}components/SWHintPopup.js`
-    }";\n`;
+    }";
+`;
 
-    rootComponents += `SWHintPopup,\n`;
+    rootComponents += `\
+SWHintPopup,
+`;
   } else if (options.update !== "disable" && options.update !== "force") {
-    configImport += `import SWUpdatePopup from "${
+    configImport += `\
+import SWUpdatePopup from "${
       options.updateComponent || `${CLIENT_FOLDER}components/SWUpdatePopup.js`
-    }";\n`;
+    }";
+`;
 
-    rootComponents += `SWUpdatePopup,\n`;
+    rootComponents += `\
+SWUpdatePopup,
+`;
   }
 
   return app.writeTemp(
     `pwa2/config.js`,
-    `import { defineClientConfig } from "@vuepress/client";
+    `\
+import { defineClientConfig } from "@vuepress/client";
 import { setupPWA } from "${CLIENT_FOLDER}composables/setup.js";
 ${configImport}
 
@@ -50,6 +63,7 @@ ${rootComponents
   .map((item) => `    ${item}`)
   .join("\n")}
   ],
-});`
+});
+`
   );
 };

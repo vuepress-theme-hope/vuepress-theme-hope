@@ -76,12 +76,7 @@ Available color variables:
 - `$theme-color`: theme color
 - `$text-color`: text color
 - `$bg-color`: background color
-- `$bg-color-light`: lighter background color
-- `$bg-color-active`: background color using on active elements
-- `$bg-color-back`: background color using on mask or background elements
-- `$bg-color-float`: float background color using on floating elements
-- `$bg-color-blur`: background color using on blur elements
-- `$bg-color-float-blur`: background color using on floating blur elements
+- `$bg-color-secondary`: another "lighter" background color
 - `$border-color`: border color
 - `$box-shadow`: shadow color using on elements
 - `$card-shadow`: shadow color using on cards

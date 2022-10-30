@@ -3,11 +3,11 @@ import { rollupTypescript } from "../../scripts/rollup.js";
 export default [
   ...rollupTypescript("node/index", {
     external: [
-      "vuepress-shared",
       "@vuepress/shared",
       "@vuepress/utils",
       "vuepress-plugin-reading-time2",
       "vuepress-plugin-sass-palette",
+      "vuepress-shared/node",
     ],
     copy: [["client/styles", "client"]],
   }),

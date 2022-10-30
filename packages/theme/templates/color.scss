@@ -2,47 +2,18 @@
 @use "sass:map";
 
 $theme-color: #3eaf7c !default;
-
 $text-color: (
   light: #2c3e50,
   dark: #9e9e9e,
 ) !default;
-
 $bg-color: (
   light: #fff,
   dark: #1d2025,
 ) !default;
-
-$bg-color-light: (
-  light: #fff,
-  dark: #252934,
-) !default;
-
-$bg-color-active: (
+$bg-color-secondary: (
   light: #f8f8f8,
   dark: #252934,
 ) !default;
-
-$bg-color-back: (
-  light: #f8f8f8,
-  dark: #1d2025,
-) !default;
-
-$bg-color-float: (
-  light: #fff,
-  dark: #252934,
-) !default;
-
-$bg-color-blur: (
-  light: rgba(255, 255, 255, 0.9),
-  dark: rgba(29, 32, 37, 0.9),
-) !default;
-
-$bg-color-float-blur: (
-  light: rgba(255, 255, 255, 0.9),
-  dark: rgba(37, 41, 52, 0.9),
-) !default;
-
 $border-color: (
   light: #eaecef,
   dark: #302d28,
@@ -53,44 +24,36 @@ $box-shadow: (
   light: #f0f1f2,
   dark: #282a32,
 ) !default;
-
 $card-shadow: (
-  light: rgba(0, 0, 0, 0.15),
-  dark: rgba(0, 0, 0, 0.3),
+  light: rgb(0 0 0 / 15%),
+  dark: rgb(0 0 0 / 30%),
 ) !default;
 
 // contants
-
 $black: (
   light: #000,
   dark: #fff,
 );
-
 $dark-grey: (
   light: #666,
   dark: #999,
 );
-
 $light-grey: (
   light: #999,
   dark: #666,
 );
-
 $white: (
   light: #fff,
   dark: #000,
 );
-
 $grey3: (
   light: #333,
   dark: #bbb,
 );
-
 $grey12: (
   light: #bbb,
   dark: #333,
 );
-
 $grey14: (
   light: #eee,
   dark: #111,

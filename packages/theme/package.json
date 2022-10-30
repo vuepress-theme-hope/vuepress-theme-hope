@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-hope",
-  "version": "2.0.0-beta.113",
+  "version": "2.0.0-beta.116",
   "description": "A light vuepress theme with tons of features",
   "keywords": [
     "vuepress",
@@ -29,6 +29,7 @@
   "type": "module",
   "exports": {
     ".": "./lib/node/index.js",
+    "./client": "./lib/client/index.js",
     "./client/*": "./lib/client/*",
     "./components/*": "./lib/client/components/*",
     "./composables": "./lib/client/composables/index.js",
@@ -50,7 +51,6 @@
   "types": "lib/node/index.d.ts",
   "files": [
     "lib",
-    "src",
     "templates"
   ],
   "scripts": {
@@ -63,24 +63,24 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@vuepress/cli": "2.0.0-beta.52",
-    "@vuepress/client": "2.0.0-beta.52",
-    "@vuepress/core": "2.0.0-beta.52",
-    "@vuepress/plugin-active-header-links": "2.0.0-beta.52",
-    "@vuepress/plugin-container": "2.0.0-beta.52",
-    "@vuepress/plugin-external-link-icon": "2.0.0-beta.52",
-    "@vuepress/plugin-git": "2.0.0-beta.52",
-    "@vuepress/plugin-nprogress": "2.0.0-beta.52",
-    "@vuepress/plugin-palette": "2.0.0-beta.52",
-    "@vuepress/plugin-prismjs": "2.0.0-beta.52",
-    "@vuepress/plugin-theme-data": "2.0.0-beta.52",
-    "@vuepress/shared": "2.0.0-beta.52",
-    "@vuepress/utils": "2.0.0-beta.52",
-    "@vueuse/core": "^9.3.1",
+    "@vuepress/cli": "2.0.0-beta.53",
+    "@vuepress/client": "2.0.0-beta.53",
+    "@vuepress/core": "2.0.0-beta.53",
+    "@vuepress/plugin-active-header-links": "2.0.0-beta.53",
+    "@vuepress/plugin-container": "2.0.0-beta.53",
+    "@vuepress/plugin-external-link-icon": "2.0.0-beta.53",
+    "@vuepress/plugin-git": "2.0.0-beta.53",
+    "@vuepress/plugin-nprogress": "2.0.0-beta.53",
+    "@vuepress/plugin-palette": "2.0.0-beta.53",
+    "@vuepress/plugin-prismjs": "2.0.0-beta.53",
+    "@vuepress/plugin-theme-data": "2.0.0-beta.53",
+    "@vuepress/shared": "2.0.0-beta.53",
+    "@vuepress/utils": "2.0.0-beta.53",
+    "@vueuse/core": "^9.4.0",
     "balloon-css": "^1.2.0",
     "bcrypt-ts": "^2.2.0",
     "vue": "^3.2.41",
-    "vue-router": "^4.1.5",
+    "vue-router": "^4.1.6",
     "vuepress-plugin-blog2": "workspace:*",
     "vuepress-plugin-comment2": "workspace:*",
     "vuepress-plugin-components": "workspace:*",
@@ -97,9 +97,9 @@
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "@vuepress/bundler-vite": "2.0.0-beta.52",
-    "@vuepress/bundler-webpack": "2.0.0-beta.52",
-    "@vuepress/markdown": "2.0.0-beta.52",
+    "@vuepress/bundler-vite": "2.0.0-beta.53",
+    "@vuepress/bundler-webpack": "2.0.0-beta.53",
+    "@vuepress/markdown": "2.0.0-beta.53",
     "rimraf": "3.0.2"
   },
   "peerDependencies": {

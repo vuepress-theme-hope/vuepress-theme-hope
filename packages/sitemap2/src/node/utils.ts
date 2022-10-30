@@ -1,3 +1,3 @@
-import { Logger } from "vuepress-shared";
+import { Logger } from "vuepress-shared/node";
 
 export const logger = new Logger("vuepress-plugin-sitemap2");

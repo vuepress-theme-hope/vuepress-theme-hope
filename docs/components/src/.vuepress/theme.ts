@@ -14,7 +14,7 @@ export default theme("components", {
     "/": {
       navbar: [
         "/",
-        "/guide",
+        "/guide/",
         "/config",
         "/demo",
         {
@@ -44,7 +44,7 @@ export default theme("components", {
     "/zh/": {
       navbar: [
         "/zh/",
-        "/zh/guide",
+        "/zh/guide/",
         "/zh/config",
         "/zh/demo",
         {

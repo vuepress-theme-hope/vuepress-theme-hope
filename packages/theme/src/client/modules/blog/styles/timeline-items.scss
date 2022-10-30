@@ -174,7 +174,7 @@
         // stylelint-disable max-nesting-depth
         &::before {
           border-color: var(--theme-color);
-          background: var(--bg-color-active);
+          background: var(--bg-color-secondary);
         }
         // stylelint-enable max-nesting-depth
       }

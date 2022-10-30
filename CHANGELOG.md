@@ -2,6 +2,42 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.116](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.115...v2.0.0-beta.116) (2022-10-27)
+
+### ⚠ BREAKING CHANGES
+
+- **md-enhance:** rename lazyload to imageLazyload
+
+### Features
+
+- **md-enhance:** add compact code for old option lazyload ([6749c46](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6749c46061d662d46d96025d5786c9fe1dd88354))
+- **md-enhance:** rename lazyLoad to imageLazyload ([0e45aaf](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0e45aaf2072ec1ccfc0ef2104a646e589b2ea359))
+- **theme:** export shared at client ([9f0b169](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9f0b169fcc80213f60306cfda64e15f6ce241adc))
+- **theme:** improve bgcolor ([88605c2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/88605c2014a83342f78502bdb83c67b471a71b44))
+
+### Bug Fixes
+
+- **md-enhance:** fix setting directive in playground ([916e1fb](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/916e1fb44b01ae8d4cc27a5191abb4823a166938))
+
+## [2.0.0-beta.115](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.114...v2.0.0-beta.115) (2022-10-26)
+
+### Bug Fixes
+
+- **md-enhance:** fix [#2326](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2326) ([ea681f1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ea681f1ac0c00df5b97ad715e59ec76d294fb8fb))
+- remove workarounds ([962303d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/962303d9ef2de2056d91975fe45f7cd8a9cc8619))
+- **shared:** fix broken exports, fix [#2338](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2338) ([188b2f1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/188b2f1cc0ce1c37df7540aed93cc917a91dc1a4))
+
+## [2.0.0-beta.114](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.113...v2.0.0-beta.114) (2022-10-25)
+
+### Features
+
+- **theme:** support bilibili and lark icon ([7471199](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/74711998e4005144d7285649f04a6a757cc0b056))
+
+### Bug Fixes
+
+- **deps:** update dependency katex to v0.16.3 ([#2328](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2328)) ([25aab2d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/25aab2d1a58868457b403203701fb60047be662b))
+- **md-enhance:** fix option types ([16e57bb](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/16e57bb1ac9040e01d3bb4b6df51840cf87c48bb))
+
 ## [2.0.0-beta.113](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.112...v2.0.0-beta.113) (2022-10-22)
 
 ### Bug Fixes

@@ -7,7 +7,7 @@ import {
   addViteOptimizeDepsInclude,
   getLocales,
   noopModule,
-} from "vuepress-shared";
+} from "vuepress-shared/node";
 
 import { convertOptions } from "./compact.js";
 import { walineLocales } from "./locales.js";
@@ -52,6 +52,7 @@ export const commentPlugin =
       name: "vuepress-plugin-comment2",
 
       alias: {
+        // eslint-disable-next-line @typescript-eslint/naming-convention
         "vuepress-plugin-comment2/provider":
           provider === "None"
             ? noopModule

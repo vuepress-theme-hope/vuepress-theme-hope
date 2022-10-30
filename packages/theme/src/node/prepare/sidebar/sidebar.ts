@@ -207,6 +207,8 @@ export const prepareSidebarData = async (
 
   await app.writeTemp(
     "theme-hope/sidebar.js",
-    `export const sidebarData = ${JSON.stringify(sidebarData)}`
+    `\
+export const sidebarData = ${JSON.stringify(sidebarData)};
+`
   );
 };

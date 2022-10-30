@@ -6,6 +6,7 @@ export default rollupTypescript("node/index", {
     "@vuepress/shared",
     "@vuepress/utils",
     "gray-matter",
-    "vuepress-shared",
+    "vuepress-shared/node",
   ],
+  dtsExternal: ["vuepress-shared"],
 });

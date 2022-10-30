@@ -32,7 +32,7 @@
 
   &.clickable {
     &:hover {
-      background: var(--bg-color-active);
+      background: var(--bg-color-secondary);
     }
 
     &.exact {
@@ -90,7 +90,7 @@ button.sidebar-heading {
   }
 
   &:hover {
-    background: var(--bg-color-active);
+    background: var(--bg-color-secondary);
   }
 
   &.active {

@@ -4,7 +4,7 @@ import {
   removeLeadingSlash,
 } from "@vuepress/shared";
 import { getDirname, path } from "@vuepress/utils";
-import { getLocales } from "vuepress-shared";
+import { getLocales } from "vuepress-shared/node";
 
 import { copyrightLocales } from "./locales.js";
 import { logger } from "./utils.js";
