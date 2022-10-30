@@ -136,7 +136,7 @@ overrides:
             - PascalCase
             - UPPER_CASE
           leadingUnderscore: allowSingleOrDouble
-          trailingUnderscore: allow
+          trailingUnderscore: allowSingleOrDouble
 
         - selector:
             - parameter

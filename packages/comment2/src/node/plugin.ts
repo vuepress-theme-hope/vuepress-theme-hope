@@ -52,6 +52,7 @@ export const commentPlugin =
       name: "vuepress-plugin-comment2",
 
       alias: {
+        // eslint-disable-next-line @typescript-eslint/naming-convention
         "vuepress-plugin-comment2/provider":
           provider === "None"
             ? noopModule
