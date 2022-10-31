@@ -34,7 +34,8 @@
     "vp-redirect": "./lib/cli/index.js"
   },
   "files": [
-    "lib"
+    "lib",
+    "src"
   ],
   "scripts": {
     "build": "rollup -c",
