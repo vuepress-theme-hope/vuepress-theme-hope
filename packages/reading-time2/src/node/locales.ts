@@ -81,4 +81,10 @@ export const readingTimeLocales: ReadingTimeLocaleConfig = {
     less1Minute: "1分以内",
     time: "約$time分",
   },
+  
+  "/tr/": {
+    word: "Yaklaşık $word kelime",
+    less1Minute: "1 dakikadan az",
+    time: "Yaklaşık $time dakika",
+  },
 };

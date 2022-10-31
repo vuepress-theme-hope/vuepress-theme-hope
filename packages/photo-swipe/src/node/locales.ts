@@ -117,4 +117,13 @@ export const photoSwipeLocales: PhotoSwipeLocaleConfig = {
     arrowPrev: "前へ（左矢印）",
     arrowNext: "次へ（右矢印）",
   },
+  
+  "/tr/": {
+    close: "Kapat",
+    download: "Resmi indir",
+    fullscreen: "Tam ekrana geç",
+    zoom: "Yakınlaştır/Uzaklaştır",
+    arrowPrev: "Önceki (Sol ok)",
+    arrowNext: "Sonraki (Sağ ok)",
+  },
 };

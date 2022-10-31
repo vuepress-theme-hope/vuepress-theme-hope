@@ -203,4 +203,19 @@ export const pwaLocales: PWALocaleConfig = {
     hint: "新しいコンテンツが見つかりました。",
     update: "新しいコンテンツが登場しました。",
   },
+  
+  "/tr/": {
+    install: "Yükle",
+    iOSInstall: "Paylaş düğmesine ve ardından 'Ana Ekrana Ekle' düğmesine basın",
+    cancel: "İptal",
+    close: "Kapat",
+    prevImage: "Önceki Resim",
+    nextImage: "Sonraki Resim",
+    desc: "Tanım",
+    feature: "Ana Özellikler",
+    explain:
+      "Bu uygulama PC'nize veya mobil cihazınıza yüklenebilir. Yüklenmesi bu web uygulamasının diğer yüklü uygulamalar gibi görünmesini ve davranmasını sağlar. Yüklenen web uygulamasını uygulama listenizde bulabilir ve ana ekranınıza, menülere veya görev çubuklarına sabitleyebilirsiniz. Aynı zamanda yüklenen web uygulaması, diğer uygulamalar ve işletim sisteminizle güvenli bir şekilde etkileşime girebilecektir.",
+    hint: "Yeni içerik bulundu.",
+    update: "Yeni içerik mevcut.",
+  },
 };
