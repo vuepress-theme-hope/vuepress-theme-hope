@@ -30,7 +30,7 @@ importers:
       eslint: 8.26.0
       eslint-config-prettier: 8.5.0
       eslint-plugin-prettier: 4.2.1
-      eslint-plugin-vue: 9.6.0
+      eslint-plugin-vue: 9.7.0
       execa: 6.1.0
       husky: 8.0.1
       inquirer: 9.1.4
@@ -66,7 +66,7 @@ importers:
       '@typescript-eslint/eslint-plugin': 5.41.0_xkoez77pqhokuvzzbmebx7tr74
       '@typescript-eslint/parser': 5.41.0_t7ph7dpvh7g5bfovntuojbuu4i
       '@vitest/coverage-c8': 0.24.3
-      '@vue/eslint-config-typescript': 11.0.2_zntnitd7vbjlcydi3ofron7txi
+      '@vue/eslint-config-typescript': 11.0.2_xfuppkckh7eu5tdnv2nfwa2kha
       bumpp: 8.2.1
       c8: 7.12.0
       commitizen: 4.2.5
@@ -78,7 +78,7 @@ importers:
       eslint: 8.26.0
       eslint-config-prettier: 8.5.0_eslint@8.26.0
       eslint-plugin-prettier: 4.2.1_aniwkeyvlpmwkidetuytnokvcm
-      eslint-plugin-vue: 9.6.0_eslint@8.26.0
+      eslint-plugin-vue: 9.7.0_eslint@8.26.0
       execa: 6.1.0
       husky: 8.0.1
       inquirer: 9.1.4
@@ -3586,7 +3586,7 @@ packages:
   /@vue/devtools-api/6.4.5:
     resolution: {integrity: sha512-JD5fcdIuFxU4fQyXUu3w2KpAJHzTVdN+p4iOX2lMWSHMOoQdMAcpFLZzm9Z/2nmsoZ1a96QEhZ26e50xLBsgOQ==}
 
-  /@vue/eslint-config-typescript/11.0.2_zntnitd7vbjlcydi3ofron7txi:
+  /@vue/eslint-config-typescript/11.0.2_xfuppkckh7eu5tdnv2nfwa2kha:
     resolution: {integrity: sha512-EiKud1NqlWmSapBFkeSrE994qpKx7/27uCGnhdqzllYDpQZroyX/O6bwjEpeuyKamvLbsGdO6PMR2faIf+zFnw==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -3600,7 +3600,7 @@ packages:
       '@typescript-eslint/eslint-plugin': 5.41.0_xkoez77pqhokuvzzbmebx7tr74
       '@typescript-eslint/parser': 5.41.0_t7ph7dpvh7g5bfovntuojbuu4i
       eslint: 8.26.0
-      eslint-plugin-vue: 9.6.0_eslint@8.26.0
+      eslint-plugin-vue: 9.7.0_eslint@8.26.0
       typescript: 4.7.4
       vue-eslint-parser: 9.1.0_eslint@8.26.0
     transitivePeerDependencies:
@@ -6640,8 +6640,8 @@ packages:
       prettier-linter-helpers: 1.0.0
     dev: true
 
-  /eslint-plugin-vue/9.6.0_eslint@8.26.0:
-    resolution: {integrity: sha512-zzySkJgVbFCylnG2+9MDF7N+2Rjze2y0bF8GyUNpFOnT8mCMfqqtLDJkHBuYu9N/psW1A6DVbQhPkP92E+qakA==}
+  /eslint-plugin-vue/9.7.0_eslint@8.26.0:
+    resolution: {integrity: sha512-DrOO3WZCZEwcLsnd3ohFwqCoipGRSTKTBTnLwdhqAbYZtzWl0o7D+D8ZhlmiZvABKTEl8AFsqH1GHGdybyoQmw==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^6.2.0 || ^7.0.0 || ^8.0.0
