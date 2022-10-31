@@ -102,7 +102,7 @@ export default defineUserConfig({
       sub: true,
       sup: true,
       tabs: true,
-      vpre: true,
+      vPre: true,
       vuePlayground: true,
     }),
   ],

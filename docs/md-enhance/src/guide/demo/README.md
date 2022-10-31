@@ -76,7 +76,7 @@ The json block is optional, for config please see [config](../../config.md#demo)
 
 The plugin support three types:
 
-- normal (default)
+- normal
 - vue
 - react
 

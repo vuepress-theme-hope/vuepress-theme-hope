@@ -15,7 +15,7 @@ icon: style
 
 @tab TS
 
-```ts
+```ts {7-9}
 // .vuepress/config.ts
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
@@ -32,7 +32,7 @@ export default {
 
 @tab JS
 
-```js
+```js {7-9}
 // .vuepress/config.js
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
@@ -63,7 +63,7 @@ export default {
 
 @tab TS
 
-```ts
+```ts {7-19}
 // .vuepress/config.ts
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
@@ -90,7 +90,7 @@ export default {
 
 @tab JS
 
-```js
+```js {7-19}
 // .vuepress/config.js
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
@@ -127,7 +127,7 @@ export default {
 
 @tab TS
 
-```ts
+```ts {7-19}
 // .vuepress/config.ts
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
@@ -154,7 +154,7 @@ export default {
 
 @tab JS
 
-```js
+```js {7-19}
 // .vuepress/config.js
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 

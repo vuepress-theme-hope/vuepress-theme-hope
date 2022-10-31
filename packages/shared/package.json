@@ -36,6 +36,7 @@
   "types": "lib/node/index.d.ts",
   "files": [
     "lib",
+    "src",
     "styles"
   ],
   "scripts": {

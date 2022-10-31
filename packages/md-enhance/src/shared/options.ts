@@ -72,7 +72,7 @@ export interface MarkdownEnhanceOptions {
    *
    * @default false
    */
-  vpre?: boolean;
+  vPre?: boolean;
 
   /**
    * Whether to enable tabs.

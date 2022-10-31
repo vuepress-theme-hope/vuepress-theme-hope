@@ -25,7 +25,11 @@ export const convertOptions = (
     deprecatedOption: "tex",
     newOption: "katex",
   });
-
+  deprecatedLogger({
+    options,
+    deprecatedOption: "vpre",
+    newOption: "vPre",
+  });
   droppedLogger(options, "enableAll");
   droppedLogger(options, "lineNumbers");
   droppedLogger(options, "imageFix");

@@ -319,7 +319,7 @@ Move all plugin related options under `plugins`.
 
     Control supporting gfm
 
-  - add `plugins.mdEnhance.vpre` ![New](https://img.shields.io/badge/-New-brightgreen)
+  - add `plugins.mdEnhance.vPre` ![New](https://img.shields.io/badge/-New-brightgreen)
 
     The following syntax is no longer built into VuePress2, so we add this option.
 

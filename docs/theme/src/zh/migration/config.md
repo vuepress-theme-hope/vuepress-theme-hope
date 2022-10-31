@@ -317,7 +317,7 @@ tag:
 
     一键支持 GFM
 
-  - `plugins.mdEnhance.vpre` ![新增](https://img.shields.io/badge/-新增-brightgreen)
+  - `plugins.mdEnhance.vPre` ![新增](https://img.shields.io/badge/-新增-brightgreen)
 
     VuePress 2 从 `@vuepress/core` 中删除了以下容器支持，因此添加了此选项
 

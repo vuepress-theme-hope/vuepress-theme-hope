@@ -42,16 +42,12 @@ icon: creative
     align-items: center;
     flex-wrap: wrap;
   }
+
   .image-preview > img {
      box-sizing: border-box;
+     width: 33.3% !important;
      padding: 9px;
      border-radius: 16px;
-   }
-
-  @media (max-width: 1440px){
-    .image-preview > img {
-      width: 33.3% !important;
-    }
   }
 
   @media (max-width: 719px){
@@ -65,7 +61,6 @@ icon: creative
       width: 100% !important;
     }
   }
-
 </style>
 
 <!-- markdownlint-restore -->

@@ -35,7 +35,7 @@ type Author = string | string[] | AuthorInfo | AuthorInfo[];
 
 是否自动生成描述
 
-## canonical
+### canonical
 
 - 类型: `string | ((page: Page) => string | null)`
 - 必填: 否

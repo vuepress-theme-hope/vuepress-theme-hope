@@ -233,7 +233,7 @@ export const mdEnhancePlugin =
 
         // addtional functions
         if (
-          getStatus("vpre") ||
+          getStatus("vPre") ||
           // TODO: Remove it in v2 stable
           legacy
         )
