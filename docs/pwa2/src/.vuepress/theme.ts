@@ -25,6 +25,8 @@ export default theme("pwa2", {
           ],
         },
       ],
+
+      sidebar: false,
     },
     "/zh/": {
       navbar: [
@@ -44,6 +46,8 @@ export default theme("pwa2", {
           ],
         },
       ],
+
+      sidebar: false,
     },
   },
 

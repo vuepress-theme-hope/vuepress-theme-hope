@@ -26,7 +26,7 @@ Default author.
 
 Whether generate description automatically
 
-## canonical
+### canonical
 
 - Type: `string | ((page: Page) => string | null)`
 - Required: No

@@ -18,7 +18,6 @@ But PLEASE DO AWARE that organizational license can only be used on one product.
 YOU ARE WARNED!
 
 :::
-l
 
 ## Demo
 
