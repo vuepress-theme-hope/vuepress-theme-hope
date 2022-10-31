@@ -319,7 +319,7 @@ tag:
 
     Управление с поддержкой gfm
 
-  - добавлен `plugins.mdEnhance.vpre` ![New](https://img.shields.io/badge/-New-brightgreen)
+  - добавлен `plugins.mdEnhance.vPre` ![New](https://img.shields.io/badge/-New-brightgreen)
 
     Следующий синтаксис больше не встроен в VuePress2, поэтому мы добавляем эту опцию.
 

@@ -61,7 +61,7 @@ Set required fields, default anonymous, optional values:
 
 Login mode status, optional values:
 
-- `'enable'`: enable login (default)
+- `'enable'`: enable login
 - `'disable'`: Login is disabled, users should fill in information to comment
 - `'force'`: Forced login, users must login to comment
 

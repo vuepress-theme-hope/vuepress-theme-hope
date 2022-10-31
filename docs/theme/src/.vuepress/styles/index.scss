@@ -42,6 +42,10 @@
     content: "\f25f";
   }
 
+  &[href*="sfc.vuejs.org"]::before {
+    display: none;
+  }
+
   &[href*="/v2/blog/"]::before {
     content: "\e655";
   }

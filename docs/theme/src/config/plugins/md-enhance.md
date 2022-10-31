@@ -77,7 +77,7 @@ Whether to enable link check.
 
 :::
 
-### vpre
+### vPre
 
 - Type: `boolean`
 - Default: `false`

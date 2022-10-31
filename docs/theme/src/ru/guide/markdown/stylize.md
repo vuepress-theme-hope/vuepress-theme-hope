@@ -18,7 +18,7 @@ tag:
 
 @tab TS
 
-```ts
+```ts {9-11}
 // .vuepress/config.ts
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
@@ -38,7 +38,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js
+```js {9-11}
 // .vuepress/config.js
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -71,7 +71,7 @@ export default {
 
 @tab TS
 
-```ts
+```ts {9-21}
 // .vuepress/config.ts
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
@@ -101,7 +101,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js
+```js {9-21}
 // .vuepress/config.js
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -140,7 +140,7 @@ export default {
 
 @tab TS
 
-```ts
+```ts {9-21}
 // .vuepress/config.ts
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
@@ -170,7 +170,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js
+```js {9-21}
 // .vuepress/config.js
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 

@@ -76,7 +76,7 @@ JSON 块是可选的，可用的配置详见 [配置](../../config.md#demo)。
 
 该插件支持三种类型:
 
-- normal (默认)
+- normal
 - vue
 - react
 

@@ -78,7 +78,7 @@ tag:
 
 :::
 
-### vpre
+### vPre
 
 - Тип: `boolean`
 - По умолчанию: `false`
