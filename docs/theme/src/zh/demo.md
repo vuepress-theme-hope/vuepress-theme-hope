@@ -118,6 +118,11 @@ category:
 - [网站链接](https://weigao.cc)
 - [源码地址](https://github.com/chenweigao/blogv2)
 
+### zfh's blog
+
+- [网站链接](https://zfhblog.top)
+- [源码地址](https://github.com/zhangfanhang/zfhblog)
+
 ## 更多
 
 - 随时随地通过 PR 添加你的博客或文档至此。
