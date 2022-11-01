@@ -31,7 +31,6 @@ Code block:
 
 - `$code-light-theme`: code block theme in lightmode
 - `$code-dark-theme`: code block theme in darkmode
-- `$code-lang`: code block languages
 
 Content class: `$content-class`
 

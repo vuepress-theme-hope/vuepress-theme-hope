@@ -8,12 +8,16 @@ $dark-selector: 'html[data-theme="dark"]';
 
 // wide screen
 $pc: 1440px !default;
+
 // desktop
 $laptop: 1280px !default;
+
 // narrow desktop / iPad
 $pad: 959px !default;
+
 // wide mobile
 $tablet: 719px !default;
+
 // narrow mobile
 $mobile: 419px !default;
 
@@ -28,7 +32,3 @@ $colors: #cf1322, #fa541c, #f39c12, #2ecc71, #25a55b, #10a5a5, #096dd9, #aa6fe9,
 // theme
 $code-light-theme: "one-light" !default;
 $code-dark-theme: "one-dark" !default;
-// code languages
-$code-lang: "c" "cpp" "cs" "css" "dart" "docker" "fs" "go" "html" "java" "js"
-  "json" "kt" "less" "makefile" "md" "php" "py" "rb" "rs" "sass" "scss" "sh"
-  "ts" "vue" "yml" !default;
