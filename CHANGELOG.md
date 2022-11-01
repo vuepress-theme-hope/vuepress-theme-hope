@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.117](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.116...v2.0.0-beta.117) (2022-11-01)
+
+### Features
+
+- **md-enhance:** hide eval warning ([6f478a1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6f478a18ba3be09424d834c4e14f25ba6a49aeda))
+
+### Bug Fixes
+
+- **components:** fix PDF link issue, fix 2347 ([8487e4c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8487e4c50ababee01476ca7b245631291ed92d0e))
+- **copy-code2:** fix vuepress-shared issue ([cf4a8ab](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cf4a8ab9933d4a3b2b92c93b8014e3563a979922))
+- **deps:** update dependency three to v0.146.0 ([#2342](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2342)) ([aca1dd0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/aca1dd0b3ddada5657db5d8f63d08d50b55479c4))
+- **theme:** fix code block lang flag ([f4b406e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f4b406ec9eeaff5a5eed3d6e2a1fe02f82e41454))
+- **theme:** fix issue when user specific darkmode for darkmode ([66fa75e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/66fa75e8ef10c188aa5e7e54c41331dfd20f8276))
+- **theme:** fix theme color ([f4e7467](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f4e7467848ab70aaa9b77dc1c7fd2c81a8cc024f))
+- **theme:** fix themeColor sass error ([176bd23](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/176bd23f20a3d9bd8477265ecf78d835b27ec45d))
+
 ## [2.0.0-beta.116](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.115...v2.0.0-beta.116) (2022-10-27)
 
 ### ⚠ BREAKING CHANGES
