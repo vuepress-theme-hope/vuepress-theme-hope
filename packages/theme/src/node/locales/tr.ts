@@ -1,6 +1,6 @@
 import type { HopeThemeLocaleData } from "../../shared/index.js";
 
-export const enLocale: HopeThemeLocaleData = {
+export const trLocale: HopeThemeLocaleData = {
   lang: "tr-TR",
 
   navbarLocales: {
@@ -31,7 +31,7 @@ export const enLocale: HopeThemeLocaleData = {
     category: "Kategori",
     tag: "Etiket",
     timeline: "Zaman çizelgesi",
-    timelineTitle: "Dün Bir Kere Daha!",
+    timelineTitle: "Yesterday Once More!",
     all: "Tümü",
     intro: "Kişisel Giriş",
     star: "Yıldız",
