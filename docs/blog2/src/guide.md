@@ -95,7 +95,7 @@ The plugin will collect all the info you want and write them to `routeMeta` fiel
 ::: details Demo
 
 ```ts
-// theme intrance
+// theme entrance
 import { blogPlugin } from "vuepress-plugin-blog2";
 
 export default {
@@ -151,14 +151,14 @@ Basically, you would want 2 types of collection in your blog:
 
   For example, you may want to describe some of your articles as diary.
 
-After understanding description of these 2 types, you can set `category` and `type` options, each accepts an array, and each element represents a configuation.
+After understanding description of these 2 types, you can set `category` and `type` options, each accepts an array, and each element represents a configuration.
 
 Let’s start with 2 examples here.
 
-Imagine you are setting tags for each articles witlh `tag` field in page frontmatter. You want a tag mapping page in `/tag/` with `TagMap` layout , and group each tag list with tagName in `/tag/tagName` with `TagList` layout, you probably need a configuation like this:
+Imagine you are setting tags for each articles with `tag` field in page frontmatter. You want a tag mapping page in `/tag/` with `TagMap` layout , and group each tag list with tagName in `/tag/tagName` with `TagList` layout, you probably need a configuration like this:
 
 ```ts
-// theme intrance
+// theme entrance
 import { blogPlugin } from "vuepress-plugin-blog2";
 
 export default {
@@ -184,10 +184,10 @@ export default {
 };
 ```
 
-Also, you may want to star some of your articles, and display them to visitors. When you are setting `star: true` in frontmatter to mark them, you probably need a configuation like this to display them in `/star/` path with `StarList` layout:
+Also, you may want to star some of your articles, and display them to visitors. When you are setting `star: true` in frontmatter to mark them, you probably need a configuration like this to display them in `/star/` path with `StarList` layout:
 
 ```ts
-// theme intrance
+// theme entrance
 import { blogPlugin } from "vuepress-plugin-blog2";
 
 export default {
@@ -242,7 +242,7 @@ For return types, please see [Composition API Return Types](./config.md#composit
 
 This plugin adds native i18n support, so your settings will be automatically apply to each language.
 
-For example, if user has following lcoales config, and you are setting the "star" example above:
+For example, if user has following locales config, and you are setting the "star" example above:
 
 ```ts
 // .vuepress/config.ts

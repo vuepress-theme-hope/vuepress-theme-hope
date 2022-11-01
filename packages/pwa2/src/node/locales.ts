@@ -1,10 +1,10 @@
 import type { PWALocaleConfig } from "../shared/index.js";
 
-/** Muti language config for pwa popup */
+/** Multi language config for pwa popup */
 export const pwaLocales: PWALocaleConfig = {
   "/en/": {
     install: "Install",
-    iOSInstall: "Tap the share button and then 'Add to Homescreen'",
+    iOSInstall: "Tap the share button and then 'Add to Home Screen'",
     cancel: "Cancel",
     close: "Close",
     prevImage: "Previous Image",

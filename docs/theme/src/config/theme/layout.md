@@ -196,7 +196,7 @@ You can:
 Available keywords are:
 
 - `readme`: `README.md` or `readme.md` first
-- `order`: possitive order first with its value ascendingly, negative order last with its value descendingly
+- `order`: positive order first with its value ascendingly, negative order last with its value descendingly
 - `date`: sort by date ascendingly
 - `date-desc`: sort by date descendingly
 - `title`: alphabetically sort by title

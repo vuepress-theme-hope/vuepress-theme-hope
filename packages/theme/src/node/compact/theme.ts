@@ -31,7 +31,7 @@ const DEPRECATED_THEME_OPTIONS: [string, string][] = [
   ["wordPerMinute", "plugins.readingTime.wordPerMinute"],
 
   // v2
-  ["fullSreen", "fullscreen"],
+  ["fullScreen", "fullscreen"],
   ["headingDepth", "headerDepth"],
 ];
 
@@ -177,7 +177,7 @@ export const convertThemeConfig = (
 
   // handle encrypt
   if (typeof themeOptions["encrypt"] === "object" && themeOptions["encrypt"]) {
-    const encrypt = themeOptions["ecrypt"] as Record<string, unknown>;
+    const encrypt = themeOptions["encrypt"] as Record<string, unknown>;
 
     if ("global" in encrypt && typeof encrypt["global"] !== "boolean") {
       logger.warn(
@@ -192,7 +192,7 @@ export const convertThemeConfig = (
         '"encrypt.status" is deprecated, please use "encrypt.global" instead.'
       );
 
-      encrypt["gloabl"] = encrypt["status"] === "global";
+      encrypt["global"] = encrypt["status"] === "global";
       delete encrypt["status"];
     }
   }

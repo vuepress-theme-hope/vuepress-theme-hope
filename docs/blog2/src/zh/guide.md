@@ -237,7 +237,7 @@ interface BlogFrontmatterOptions {
 
 该插件添加了原生多语言支持，因此你的设置将自动应用于每种语言。
 
-例如，如果用户进行了以下 lcoales 配置，并且你正在设置上面的“star”示例:
+例如，如果用户进行了以下 locales 配置，并且你正在设置上面的“star”示例:
 
 ```ts
 // .vuepress/config.ts

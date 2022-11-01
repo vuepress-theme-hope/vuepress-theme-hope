@@ -80,9 +80,9 @@ export interface PWAOptions {
   manifest?: ManifestOption;
 
   /**
-   * Path of favico
+   * Path of favicon
    *
-   * favico 地址
+   * favicon 地址
    */
   favicon?: string;
 

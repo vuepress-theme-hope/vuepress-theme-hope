@@ -41,7 +41,7 @@ body:
     id: operating-systems
     attributes:
       label: Which operating system are you using?
-      description: You may select more than one. Don't select anything if it's not about the environment.
+      description: You may select more than one. Don’t select anything if it's not about the environment.
       options:
         - label: macOS
         - label: Windows
@@ -66,5 +66,5 @@ body:
     id: additional-context
     attributes:
       label: Additional context
-      description: If you are not reporting something obvious, a minial reproductin repo and related log is required.
-      placeholder: Add any other context about the problem here. Especially the issue occurs in certain OS, browser or configuation.
+      description: If you are not reporting something obvious, a minimal reproduction repo and related log is required.
+      placeholder: Add any other context about the problem here. Especially the issue occurs in certain OS, browser or configuration.

@@ -12,7 +12,7 @@ declare module "photoswipe" {
 
     /**
      * Allow swipe navigation to next/prev item when current item is zoomed.
-     * Option is always false on devices that don't have hardware touch support.
+     * Option is always false on devices that don’t have hardware touch support.
      *
      * @default true
      */
@@ -197,7 +197,7 @@ declare module "photoswipe" {
     name: string;
 
     /**
-     * Classname of the element.
+     * Class name of the element.
      *
      * If not defined - name will be used in format pswp__button--name, or pswp__name
      */
@@ -245,7 +245,7 @@ declare module "photoswipe" {
      * - 'wrapper' (scroll viewport wrapper, .pswp__scroll-wrap),
      * - 'root' (root element of the dialog, .pswp)
      *
-     * @description If you add a text inside 'wrapper' - it won't be selectable, as PhotoSwipe intersects all touch events there.
+     * @description If you add a text inside 'wrapper' - it won’t be selectable, as PhotoSwipe intersects all touch events there.
      */
     appendTo?: "bar" | "wrapper" | "root";
 
@@ -364,7 +364,7 @@ declare module "photoswipe" {
      *
      * @param  holder mainScroll.itemHolders array item
      * @param index Slide index
-     * @param force If content should be set even if index wasn't changed
+     * @param force If content should be set even if index wasn’t changed
      */
     setContent(holder: unknown[], index: number, force: boolean): void;
 

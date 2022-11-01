@@ -23,7 +23,7 @@ $theme-color: #f00;
 
 ## Палитра цветов темы
 
-Вам нужно установить `themeColor` с форматом `{ colorname1: colorvalue, colorname2: colorvalue, ... }`:
+Вам нужно установить `themeColor` с форматом `{ colorName1: colorValue1, colorName2: colorValue2, ... }`:
 
 Первый цвет — это цвет темы по умолчанию выше.
 

@@ -96,7 +96,7 @@ import { hopeTheme } from "vuepress-theme-hope";
 const __dirname = getDirname(import.meta.url);
 
 export default defineUserConfig({
-  thene: hopeTheme({
+  theme: hopeTheme({
     blog: {
       media: {
         // GitHub Icon is available

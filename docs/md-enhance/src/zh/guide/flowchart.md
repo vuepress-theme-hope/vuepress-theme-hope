@@ -299,7 +299,7 @@ nodeVar2->nodeVar3
 
 连接格式定义如下:
 
-`<node variable name>[(<specificaion1>[, <specification2])]-><node variable name>[[(<specificaion1>[, <specification2])]-><node variable name>]`
+`<node variable name>[(<specification1>[, <specification2])]-><node variable name>[[(<specification1>[, <specification2])]-><node variable name>]`
 
 在 `[]` 中的项是可选的。
 

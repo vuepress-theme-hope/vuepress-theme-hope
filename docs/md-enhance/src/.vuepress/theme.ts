@@ -42,13 +42,13 @@ export default theme("md-enhance", {
       },
       stylize: [
         {
-          matcher: "Recommanded",
+          matcher: "Recommended",
           replacer: ({ tag }) => {
             if (tag === "em")
               return {
                 tag: "Badge",
                 attrs: { type: "tip" },
-                content: "Recommanded",
+                content: "Recommended",
               };
           },
         },

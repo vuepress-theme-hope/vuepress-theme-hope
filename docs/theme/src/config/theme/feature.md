@@ -116,7 +116,7 @@ The following social medias has built-in icons:
 - Type: `boolean`
 - Default: `false`
 
-Whether cliping the avatar with round shape
+Whether clipping the avatar with round shape
 
 ### blog.sidebarDisplay
 
@@ -166,7 +166,7 @@ For details, see [Encrypt Intro](../../guide/feature/encrypt.md).
 
 ::: note
 
-You can only set this option directly under theme options, setting it in each loclae **has NO effect**.
+You can only set this option directly under theme options, setting it in each locale **has NO effect**.
 
 :::
 

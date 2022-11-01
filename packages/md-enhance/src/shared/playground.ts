@@ -38,7 +38,7 @@ export interface PlaygroundData {
   importMap?: string;
 
   /**
-   * Playground iles info
+   * Playground files info
    *
    * 交互演示文件信息
    */

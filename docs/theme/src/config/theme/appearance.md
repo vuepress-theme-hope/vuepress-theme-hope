@@ -105,7 +105,7 @@ Useful when you want to provide "A pure document site".
 ## iconPrefix <Badge text="Root only" type="warning" />
 
 - Type: `string`
-- Default: Inffered from iconAssets
+- Default: Inferred from iconAssets
 - Details: [Interface → Icon](../../guide/interface/icon.md)
 
 Prefix of icon FontClass， usually, it can be automatically set by the theme.

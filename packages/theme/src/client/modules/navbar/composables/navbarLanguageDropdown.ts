@@ -34,7 +34,7 @@ export const useNavbarLanguageDropdown =
         text: "",
         ariaLabel: navbarLocales?.selectLangAriaLabel,
         children: localePaths.map((targetLocalePath) => {
-          // target locale config of this langauge link
+          // target locale config of this language link
           const targetSiteLocale =
             siteLocale.value.locales?.[targetLocalePath] ?? {};
           const targetThemeLocale =

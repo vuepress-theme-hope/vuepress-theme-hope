@@ -9,7 +9,7 @@ tag:
   - Interface
 ---
 
-The entire theme adds FontClass / Unage format icon support in multiple places.
+The entire theme adds FontClass / Picture format icon support in multiple places.
 
 You can use iconfont and fontawesome to add icons to your project.
 

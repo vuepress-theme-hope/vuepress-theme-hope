@@ -18,7 +18,7 @@ A simple slide demo and useful hints.
 
 <!-- .element: class="r-fit-text" -->
 
-> By Mr.Hope. Please scroll mousewheel down to the next slide
+> By Mr.Hope. Please scroll mouse wheel down to the next slide
 
 ---
 
@@ -42,7 +42,7 @@ Use `---` to mark horizontal slides
 
 <!-- .element: class="fragment fade-in" -->
 
-Use `--` to sperate vertical slides in a horizontal slide.
+Use `--` to separate vertical slides in a horizontal slide.
 
 <!-- .element: class="fragment fade-in" -->
 
@@ -78,7 +78,7 @@ You can use all kinds of markup in slides.
 
 Headings will transform to UPPERCASE by default.
 
-Here is paragraph with some **bold**, _italic_, ~~strikethrough~~ text and a [link](https://mrhope.site), and it can auto break itself so you don’t need to worry the length.
+Here is paragraph with some **bold**, _italic_, ~~strike-through~~ text and a [link](https://mrhope.site), and it can auto break itself so you don’t need to worry the length.
 
 --
 
@@ -174,7 +174,7 @@ You can use all kinds of markup in slides.
 
 ### Background
 
-Cutom background by adding `data-background` attribute to slide.
+Custom background by adding `data-background` attribute to slide.
 
 ---
 
@@ -277,7 +277,7 @@ Add `fragment` and animation class to element.
 
 ## Fragment
 
-### Mutiple fragments
+### Multiple fragments
 
 Multiple fragments can be applied to the same element sequentially by wrapping it
 

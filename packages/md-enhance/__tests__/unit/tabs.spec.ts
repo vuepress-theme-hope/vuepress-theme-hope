@@ -5,7 +5,7 @@ import { tabs } from "../../src/node/markdown-it/index.js";
 const markdownIt = MarkdownIt({ linkify: true }).use(tabs);
 
 describe("tabs", () => {
-  it("shoud render single block", () => {
+  it("Should render single block", () => {
     expect(
       markdownIt.render(`
 ::: tabs
@@ -32,7 +32,7 @@ const a = 1;
     ).toMatchSnapshot();
   });
 
-  it("shoud render mutiple block", () => {
+  it("Should render multiple block", () => {
     expect(
       markdownIt.render(`
 ::: tabs
@@ -69,7 +69,7 @@ const a = 1;
     ).toMatchSnapshot();
   });
 
-  it("shoud support tabs id", () => {
+  it("Should support tabs id", () => {
     expect(
       markdownIt.render(`
 ::: tabs#event
@@ -118,7 +118,7 @@ const a = 1;
     ).toMatchSnapshot();
   });
 
-  it("shoud support active", () => {
+  it("Should support active", () => {
     expect(
       markdownIt.render(`
 ::: tabs

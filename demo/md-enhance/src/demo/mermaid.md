@@ -238,7 +238,7 @@ Future task2              :         des4, after des3, 5d
 
 section Critical tasks
 Completed task in the critical line :crit, done, 2014-01-06,24h
-Implement parser and jison          :crit, done, after des1, 2d
+Implement parser                    :crit, done, after des1, 2d
 Create tests for parser             :crit, active, 3d
 Future task in critical line        :crit, 5d
 Create tests for renderer           :2d
@@ -272,7 +272,7 @@ Future task2              :         des4, after des3, 5d
 
 section Critical tasks
 Completed task in the critical line :crit, done, 2014-01-06,24h
-Implement parser and jison          :crit, done, after des1, 2d
+Implement parser                    :crit, done, after des1, 2d
 Create tests for parser             :crit, active, 3d
 Future task in critical line        :crit, 5d
 Create tests for renderer           :2d
@@ -403,7 +403,7 @@ graph TB
     end
 
     %% Notice that no text in shape are added here instead that is appended further down
-    e --> od3>Really long text with linebreak<br>in an Odd shape]
+    e --> od3>Really long text with line break<br>in an Odd shape]
 
     %% Comments after double percent signs
     e((Inner / circle<br>and some odd <br>special characters)) --> f(,.?!+-*ز)
@@ -430,7 +430,7 @@ graph TB
     end
 
     %% Notice that no text in shape are added here instead that is appended further down
-    e --> od3>Really long text with linebreak<br>in an Odd shape]
+    e --> od3>Really long text with line break<br>in an Odd shape]
 
     %% Comments after double percent signs
     e((Inner / circle<br>and some odd <br>special characters)) --> f(,.?!+-*ز)

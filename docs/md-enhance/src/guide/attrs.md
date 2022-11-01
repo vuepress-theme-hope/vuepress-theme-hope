@@ -77,7 +77,7 @@ will be rendered into:
 
 ## Advanced
 
-You can pass options to `attrs` to cutomize plugin behavior.
+You can pass options to `attrs` to customize plugin behavior.
 
 ```ts
 interface AttrsOptions {

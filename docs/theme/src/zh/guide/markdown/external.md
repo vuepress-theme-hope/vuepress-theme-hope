@@ -2,7 +2,7 @@
 title: 外部引入
 icon: link
 order: -1
-cateogry:
+category:
   - Markdown
 tag:
   - Markdown

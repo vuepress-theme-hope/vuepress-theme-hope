@@ -37,7 +37,7 @@ export const useBlogType = <
         `useBlogType: ${
           key
             ? `key ${key} is invalid`
-            : "can not bind to an exisiting key on non blog pages"
+            : "can not bind to an existing key on non blog pages"
         }`
       );
 

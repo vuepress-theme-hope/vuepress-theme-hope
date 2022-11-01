@@ -5,7 +5,7 @@ import { mark } from "../../src/node/markdown-it/index.js";
 describe("mark", () => {
   const markdownIt = MarkdownIt({ linkify: true }).use(mark);
 
-  it("Shoud render", () => {
+  it("Should render", () => {
     expect(markdownIt.render(`==Mark==`)).toEqual("<p><mark>Mark</mark></p>\n");
   });
 

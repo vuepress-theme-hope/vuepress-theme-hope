@@ -9,7 +9,7 @@ tag:
   - Layout
 ---
 
-The theme adds Breadcrumb support, you can config it using `breadcrumb` in page frontmatter and theme options <Badge text="Support page config" /> [^supportpageconfig], the default value is `true`.
+The theme adds Breadcrumb support, you can config it using `breadcrumb` in page frontmatter and theme options <Badge text="Support page config" /> [^support-page-config], the default value is `true`.
 
 Without any config, a Breadcrumb that matches the theme color is displayed at the top of the page content to help the reader understand the document structure.
 
@@ -27,7 +27,7 @@ Please remember to set a title for **HOME PAGE**!
 
 :::
 
-[^supportpageconfig]: **Page config support**
+[^support-page-config]: **Page config support**
 
     **Support local configuration**<Badge text="Support page config" /> means that the theme allows the configuration of the page to override the global configuration.
 

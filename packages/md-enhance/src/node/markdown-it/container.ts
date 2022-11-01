@@ -1,5 +1,5 @@
 /**
- * Forked and modifyed from https://github.com/markdown-it/markdown-it-container/blob/master/index.js
+ * Forked and modified from https://github.com/markdown-it/markdown-it-container/blob/master/index.js
  *
  * Copyright (c) 2015 Vitaly Puzrin, Alex Kocharin.
  *
@@ -116,8 +116,8 @@ export const container: PluginWithOptions<MarkdownItContainerOptions> = (
 
     // Search for the end of the block
     while (
-      // unclosed block should be autoclosed by end of document.
-      // also block seems to be autoclosed by end of parent
+      // unclosed block should be auto closed by end of document.
+      // also block seems to be auto closed by end of parent
       nextLine < endLine
     ) {
       nextLine += 1;

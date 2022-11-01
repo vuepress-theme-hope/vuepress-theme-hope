@@ -13,7 +13,7 @@ export interface PhotoSwipeInitOptions {
 
   /**
    * Allow swipe navigation to next/prev item when current item is zoomed.
-   * Option is always false on devices that don't have hardware touch support.
+   * Option is always false on devices that don’t have hardware touch support.
    *
    * @default true
    */

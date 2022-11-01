@@ -76,7 +76,7 @@ export class Message {
       Object.keys(this.messageElements).forEach((id) => this.close(Number(id)));
   }
 
-  destory(): void {
+  destroy(): void {
     document.body.removeChild(this.containerElement);
   }
 }

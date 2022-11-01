@@ -86,16 +86,16 @@ describe("stylize", () => {
   it("Should render LINEs with MUST", () => {
     expect(
       markdownIt.render(
-        "**MUST** at the begining of the line\n\n" +
-          "__MUST__ at the begining of the line\n\n" +
+        "**MUST** at the beginning of the line\n\n" +
+          "__MUST__ at the beginning of the line\n\n" +
           "At the end of the line *MUST*\n\n" +
           "At the end of the line _MUST_\n\n" +
           "Some content with **MUST** and some words.\n\n" +
           "Some content with __MUST__ and some words.\n\n"
       )
     ).toEqual(
-      '<p><strong class="badge tip">MUST</strong> at the begining of the line</p>\n' +
-        '<p><strong class="badge tip">MUST</strong> at the begining of the line</p>\n' +
+      '<p><strong class="badge tip">MUST</strong> at the beginning of the line</p>\n' +
+        '<p><strong class="badge tip">MUST</strong> at the beginning of the line</p>\n' +
         '<p>At the end of the line <em class="badge tip">MUST</em></p>\n' +
         '<p>At the end of the line <em class="badge tip">MUST</em></p>\n' +
         '<p>Some content with <strong class="badge tip">MUST</strong> and some words.</p>\n' +

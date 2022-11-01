@@ -21,7 +21,7 @@ const preAction = async (
   message: CreateI18n;
   packageManager: PackageManager;
 } | void> => {
-  // ensure targetDir is specfied by user
+  // ensure targetDir is specified by user
   if (!targetDir) return cli.outputHelp();
 
   // get language
@@ -48,7 +48,7 @@ const preAction = async (
 
   ensureDirExistSync(targetDirPath);
 
-  // return choise
+  // return choice
   return { lang, message, packageManager };
 };
 
@@ -183,7 +183,7 @@ cli.help(() => [
   {
     title:
       "pnpm create vuepress-theme-hope@next inject [dir] / npm init vuepress-theme-hope@next inject [dir]",
-    body: "Add vuepress-theme-hope template in [dir] under currect project",
+    body: "Add vuepress-theme-hope template in [dir] under current project",
   },
 ]);
 

@@ -34,7 +34,7 @@ export const checkFrontmatter = (
   if ("date" in frontmatter && !(frontmatter.date instanceof Date)) {
     if (isDev)
       logger.error(
-        `"date" roperty in Page FrontMatter should be a valid Date.${
+        `"date" property in Page FrontMatter should be a valid Date.${
           filePathRelative ? `\nFound in ${filePathRelative}` : ""
         }`
       );
@@ -155,7 +155,7 @@ export const extendsPage = (
     if ("cover" in frontmatter)
       page.routeMeta[ArticleInfoType.cover] = frontmatter.cover;
 
-    // ensure a valid reading time exisits
+    // ensure a valid reading time exists
     if (page.data.readingTime && page.data.readingTime.words !== 0)
       page.routeMeta[ArticleInfoType.readingTime] = page.data.readingTime;
 

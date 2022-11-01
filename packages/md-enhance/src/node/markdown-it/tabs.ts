@@ -66,8 +66,8 @@ export const tabs: PluginWithOptions<TabOptions> = (
 
     // Search for the end of the block
     while (
-      // unclosed block should be autoclosed by end of document.
-      // also block seems to be autoclosed by end of parent
+      // unclosed block should be auto closed by end of document.
+      // also block seems to be auto closed by end of parent
       nextLine < endLine
     ) {
       nextLine += 1;
@@ -168,8 +168,8 @@ export const tabs: PluginWithOptions<TabOptions> = (
 
     // Search for the end of the block
     while (
-      // unclosed block should be autoclosed by end of document.
-      // also block seems to be autoclosed by end of parent
+      // unclosed block should be auto closed by end of document.
+      // also block seems to be auto closed by end of parent
       nextLine < endLine
     ) {
       nextLine += 1;
@@ -268,7 +268,7 @@ export const tabs: PluginWithOptions<TabOptions> = (
     const basicData: BaseTabData[] = [];
     const customData = getter(tokens, index, options, env, self);
     let activeIndex = -1;
-    let isTabstart = false;
+    let isTabStart = false;
 
     for (let i = index; i < tokens.length; i++) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
@@ -288,7 +288,7 @@ export const tabs: PluginWithOptions<TabOptions> = (
             "{ title, value, isActive }",
           ]);
 
-          isTabstart = true;
+          isTabStart = true;
           basicData.push({
             title: info,
             // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
@@ -300,7 +300,7 @@ export const tabs: PluginWithOptions<TabOptions> = (
 
         if (type === "tab_close") continue;
 
-        if (!isTabstart) {
+        if (!isTabStart) {
           tokens[i].type = `${name}_tabs_empty`;
           tokens[i].hidden = true;
         }

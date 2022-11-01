@@ -2,7 +2,7 @@
 title: BiliBili
 ---
 
-Embed BiliBili vidoes in Markdown files.
+Embed BiliBili videos in Markdown files.
 
 ## Props
 

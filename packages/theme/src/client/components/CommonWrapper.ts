@@ -191,8 +191,8 @@ export default defineComponent({
           onTouchEnd,
         },
         h(
-          isComponentRegistered("GloablEncrypt")
-            ? <DefineComponent>resolveComponent("GloablEncrypt")
+          isComponentRegistered("GlobalEncrypt")
+            ? <DefineComponent>resolveComponent("GlobalEncrypt")
             : RenderDefault,
           () => [
             // navbar

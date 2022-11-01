@@ -34,12 +34,12 @@ The theme provides `plugins` option to pass options to plugins.
 
 ::: info Plugin Options Name
 
-All key names in `plugins` option are the camelcase version of the plugin name, with the optional number `2` suffix removed.
+All key names in `plugins` option are the camelCase version of the plugin name, with the optional number `2` suffix removed.
 
 For example:
 
-- `vuepress-plugin-copy-code2` is controled by key name `copyCode`.
-- `vuepress-plugin-md-enhance2` is controled by key name `mdEnhance`.
+- `vuepress-plugin-copy-code2` is controlled by key name `copyCode`.
+- `vuepress-plugin-md-enhance2` is controlled by key name `mdEnhance`.
 
 :::
 
@@ -55,7 +55,7 @@ For example:
 
 - [vuepress-plugin-copy-code2][copy-code2]: Provides one-click copy code block function.
 
-- [vuepress-plugin-copyright2][copyright2]: Append copyright information when copying or diable copy and selection.
+- [vuepress-plugin-copyright2][copyright2]: Append copyright information when copying or disable copy and selection.
 
 - [vuepress-plugin-feed2][feed2]: Feed support
 

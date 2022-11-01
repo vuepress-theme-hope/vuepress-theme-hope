@@ -2,7 +2,7 @@
 title: External import
 icon: link
 order: -1
-cateogry:
+category:
   - Markdown
 tag:
   - Markdown

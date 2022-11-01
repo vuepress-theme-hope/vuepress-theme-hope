@@ -16,7 +16,7 @@ Whether to support full GFM syntax.
 
 For full GFM syntax, see [GFM](https://github.github.com/gfm/).
 
-We are not 100% supporting it to be honestly, we only supply it’s syntax including footnote, tasklists, code highlight, image mark and so on.
+We are not 100% supporting it to be honestly, we only supply it’s syntax including footnote, tasklist, code highlight, image mark and so on.
 
 Some of the behavior might be different, for example to support Vue syntax, we are not disallowing `<script>` tags. But in most situation, the behavior should be same.
 
@@ -129,7 +129,7 @@ Whether to enable custom align.
 - Details:
   - [Attrs](./guide/attrs.md)
 
-Whether to enable attribute cutomize support.
+Whether to enable attribute customize support.
 
 ## sup
 
@@ -376,7 +376,7 @@ Stylize inline tokens to create snippet you want.
     importMap?: string;
 
     /**
-     * Playground iles info
+     * Playground files info
      */
     files: Record<
       /** File name */

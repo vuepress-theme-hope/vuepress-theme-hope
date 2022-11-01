@@ -10,7 +10,7 @@ const render = (content: string, displayMode: boolean): string =>
 const markdownIt = MarkdownIt({ linkify: true }).use(tex, { render });
 
 describe("inline katex", () => {
-  it("Shoud render", () => {
+  it("Should render", () => {
     expect(markdownIt.render(`$a=1$`)).toEqual("<p>{Tex content: a=1}</p>\n");
     expect(markdownIt.render(`A tex equation $a=1$ inline.`)).toEqual(
       "<p>A tex equation {Tex content: a=1} inline.</p>\n"
@@ -26,7 +26,7 @@ describe("inline katex", () => {
     expect(markdownIt.render(`$ a = 1 $`)).toEqual("<p>$ a = 1 $</p>\n");
   });
 
-  it("Should not render when the first one is after a charater", () => {
+  it("Should not render when the first one is after a character", () => {
     expect(markdownIt.render(`The next$a = 1$ won’t work`)).toMatchSnapshot();
   });
 
@@ -38,7 +38,7 @@ describe("inline katex", () => {
 });
 
 describe("block katex", () => {
-  it("Shoud render", () => {
+  it("Should render", () => {
     expect(markdownIt.render(`$$a=1$$`)).toEqual(
       "<p>{Tex content: \na=1\n}</p>"
     );

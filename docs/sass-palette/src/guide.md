@@ -227,7 +227,7 @@ Same as config file, any variables in palette will be injected into `${id}-confi
 
 We are exposing internal functions which `vuepress-plugin-sass-palette` uses, as a helper module.
 
-You can use this helper with `@sass-palette/helper` alia and call its function to achieve similar features yourself.
+You can use this helper with `@sass-palette/helper` alias and call its function to achieve similar features yourself.
 
 ## Generator
 
@@ -265,7 +265,7 @@ Later, you should manually include user style file by importing `@sass-palette/$
 
 ::: note
 
-`@sass-palette/${id}-style` is an alia to user style file and you can import it in JS/TS/SASS.
+`@sass-palette/${id}-style` is an alias to user style file and you can import it in JS/TS/SASS.
 
 :::
 

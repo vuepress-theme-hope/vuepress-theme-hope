@@ -64,7 +64,7 @@ export default {
 
 - `replacer`: 自定义匹配标记的函数
 
-例如，你可以使用以下配置将 `*Recommanded*` 转换为徽章 `<Badge type="tip">Recommanded</Badge>`：
+例如，你可以使用以下配置将 `*Recommended*` 转换为徽章 `<Badge type="tip">Recommended</Badge>`：
 
 ::: code-tabs#language
 
@@ -81,13 +81,13 @@ export default defineUserConfig({
       mdEnhance: {
         stylize: [
           {
-            matcher: "Recommanded",
+            matcher: "Recommended",
             replacer: ({ tag }) => {
               if (tag === "em")
                 return {
                   tag: "Badge",
                   attrs: { type: "tip" },
-                  content: "Recommanded",
+                  content: "Recommended",
                 };
             },
           },
@@ -110,13 +110,13 @@ export default {
       mdEnhance: {
         stylize: [
           {
-            matcher: "Recommanded",
+            matcher: "Recommended",
             replacer: ({ tag }) => {
               if (tag === "em")
                 return {
                   tag: "Badge",
                   attrs: { type: "tip" },
-                  content: "Recommanded",
+                  content: "Recommended",
                 };
             },
           },
@@ -150,7 +150,7 @@ export default defineUserConfig({
       mdEnhance: {
         stylize: [
           {
-            matcher: /n't$/,
+            matcher: /n’t$/,
             replacer: ({ tag, attrs, content }) => {
               if (tag === "em")
                 return {
@@ -178,7 +178,7 @@ export default {
     mdEnhancePlugin({
       stylize: [
         {
-          matcher: /n't$/,
+          matcher: /n’t$/,
           replacer: ({ tag, attrs, content }) => {
             if (tag === "em")
               return {

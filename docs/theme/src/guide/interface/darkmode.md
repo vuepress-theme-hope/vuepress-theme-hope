@@ -31,9 +31,9 @@ Available options:
 - `"enable"`: only dark mode
 - `"disable"`: disable dark mode
 
-## Global Vairables
+## Global Variables
 
-`$isDarkMode` is avaiable in all Markdown files.
+`$isDarkMode` is available in all Markdown files.
 
 <script setup lang="ts">
 import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch.js"

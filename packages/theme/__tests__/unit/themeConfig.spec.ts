@@ -15,7 +15,7 @@ const app = createBaseApp({
   theme: emptyTheme,
 });
 
-describe("should generate themeConfig correcly", () => {
+describe("should generate themeConfig correctly", () => {
   it("Should contain basic properties", () => {
     const themeConfig = {};
 

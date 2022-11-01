@@ -2,7 +2,7 @@
 title: Video Player
 ---
 
-Embed vidoes in Markdown files.
+Embed videos in Markdown files.
 
 ## Props
 

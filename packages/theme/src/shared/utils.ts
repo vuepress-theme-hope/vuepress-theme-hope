@@ -46,7 +46,7 @@ export interface AutoLink extends TextItem {
   target?: string;
 
   /**
-   * Regexpmode to be active
+   * Regexp mode to be active
    *
    * 匹配激活的正则表达式
    */

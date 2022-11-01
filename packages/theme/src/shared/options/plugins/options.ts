@@ -33,7 +33,7 @@ export interface HopeThemePluginsOptions {
   /**
    * Components enabled
    *
-   * @description FontIcon is used internally, so it will be registed anyway.
+   * @description FontIcon is used internally, so it will be registered anyway.
    *
    * @see https://vuepress-theme-hope.github.io/v2/components/config.html
    *

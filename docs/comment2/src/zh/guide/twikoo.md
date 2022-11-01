@@ -67,7 +67,6 @@ icon: comment
 - 请确保你已经安装了 [Node.js](https://nodejs.org/en/download/)
 - 请将命令、代码中“你的环境 ID”替换为你自己的环境 ID
 - 第 7 步会弹出浏览器要求授权，需在有图形界面的系统下进行
-- 请勿在 Termux 下操作。虽然可以部署成功，但是使用时会报错 `[FUNCTIONS_EXECUTE_FAIL] Error: EACCES: permission denied, open '/var/user/index.js'`
 
 :::
 

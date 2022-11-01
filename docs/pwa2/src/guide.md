@@ -75,7 +75,7 @@ We recognize images by file extension. Any files ending with `.png`, `.jpg`, `.j
 
 ### HTML Cache
 
-If you have small sites, and would like to make docusment fully offline available, you can set `cacheHTML` to `true` to cache all HTML files.
+If you have small sites, and would like to make document fully offline available, you can set `cacheHTML` to `true` to cache all HTML files.
 
 ::: tip Why only home and 404 page been cached by default?
 

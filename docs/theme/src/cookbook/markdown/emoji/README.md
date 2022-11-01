@@ -19,6 +19,6 @@ icon: emoji
 
 - [View Detail](place.md)
 
-## Synbol
+## Symbol
 
 - [View Detail](symbol.md)

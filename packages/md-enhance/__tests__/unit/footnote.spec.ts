@@ -9,11 +9,11 @@ describe("footnote", () => {
     expect(
       markdownIt.render(
         `
-Here is a footnote reference,[^1] and another.[^longnote]
+Here is a footnote reference,[^1] and another.[^long-note]
 
 [^1]: Here is the footnote.
 
-[^longnote]: Here's one with multiple blocks.
+[^long-note]: Here's one with multiple blocks.
 
     Subsequent paragraphs are indented to show that they
 belong to the previous footnote.
@@ -25,7 +25,7 @@ belong to the previous footnote.
     multi-paragraph list items.
 
 This paragraph won’t be part of the note, because it
-isn't indented.
+isn’t indented.
 `,
         {}
       )
@@ -79,7 +79,7 @@ foo[^1] bar[^2].
   it("Should support inline note", () => {
     expect(
       markdownIt.render(`
-Here is an inline note.^[Inlines notes are easier to write, since
+Here is an inline note.^[Inline notes are easier to write, since
 you don’t have to pick an identifier and move down to type the
 note.]
 `)
@@ -90,7 +90,7 @@ note.]
     expect(markdownIt.render(`foo^[ *bar* ]`)).toMatchSnapshot();
   });
 
-  it("Duplicate footnotes shoud have suffix", () => {
+  it("Duplicate footnotes should have suffix", () => {
     expect(
       markdownIt.render(`
 [^xxxxx] [^xxxxx]
@@ -162,11 +162,11 @@ note.]
     expect(
       markdownIt.render(
         `
-Here is a footnote reference,[^1] and another.[^longnote]
+Here is a footnote reference,[^1] and another.[^long-note]
 
 [^1]: Here is the footnote.
 
-[^longnote]: Here's one with multiple blocks.
+[^long-note]: Here's one with multiple blocks.
 
     Subsequent paragraphs are indented to show that they
 belong to the previous footnote.
@@ -178,7 +178,7 @@ belong to the previous footnote.
     multi-paragraph list items.
 
 This paragraph won’t be part of the note, because it
-isn't indented.
+isn’t indented.
 `,
         { docId: "test-doc-id" }
       )

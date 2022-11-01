@@ -6,6 +6,11 @@ a = 1
 }</p>"
 `;
 
+exports[`inline katex > Should not render when the first one is after a character 1`] = `
+"<p>The next{Tex content: a = 1} won’t work</p>
+"
+`;
+
 exports[`inline katex > Should not render when the first one is after a charater 1`] = `
 "<p>The next{Tex content: a = 1} won’t work</p>
 "

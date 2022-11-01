@@ -120,7 +120,7 @@ interface ImageMarkOptions {
 
 ## 图片尺寸
 
-当你在主题选项中设置 `plugin.mdEhance.imageSize: true` 时，可以使用 `=widthxheight` 指定图像大小。
+当你在主题选项中设置 `plugin.mdEnhance.imageSize: true` 时，可以使用 `=widthxheight` 指定图像大小。
 
 ```md
 ![Alt](/example.png =200x300)
@@ -141,7 +141,7 @@ interface ImageMarkOptions {
 
 有时，您可能希望为图像添加描述，在这种情况下，您应该在插件选项中设置 `imageTitle: true`。
 
-这样当您为图像添加标题时，图像将显示为 `<figure>` ，标题将显示为 `<figurecaption>`。
+这样当您为图像添加标题时，图像将显示为 `<figure>` ，标题将显示为 `<figcaption>`。
 
 ```md
 ![GitHub 徽标](/assets/icon/github-light.png "Github 徽标")

@@ -264,7 +264,7 @@ export interface FeedGetter {
   /**
    * Item author getter
    *
-   * @description The getter should return an emtyp array when lacking author info
+   * @description The getter should return an empty array when lacking author info
    *
    * 项目作者获取器
    *

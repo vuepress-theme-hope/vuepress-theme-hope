@@ -1,6 +1,6 @@
 // Vitest Snapshot v1
 
-exports[`should generate themeConfig correcly > Should contain basic properties 1`] = `
+exports[`should generate themeConfig correctly > Should contain basic properties 1`] = `
 {
   "blog": {},
   "darkmode": "switch",
@@ -66,7 +66,7 @@ exports[`should generate themeConfig correcly > Should contain basic properties 
 }
 `;
 
-exports[`should generate themeConfig correcly > Should handle single language 1`] = `
+exports[`should generate themeConfig correctly > Should handle single language 1`] = `
 {
   "blog": {},
   "darkmode": "switch",
@@ -139,7 +139,7 @@ exports[`should generate themeConfig correcly > Should handle single language 1`
 }
 `;
 
-exports[`should generate themeConfig correcly > locale should have higher property 1`] = `
+exports[`should generate themeConfig correctly > locale should have higher property 1`] = `
 {
   "blog": {},
   "darkmode": "switch",
@@ -210,7 +210,7 @@ exports[`should generate themeConfig correcly > locale should have higher proper
 }
 `;
 
-exports[`should generate themeConfig correcly > root only option should not appear in locales 1`] = `
+exports[`should generate themeConfig correctly > root only option should not appear in locales 1`] = `
 {
   "blog": {},
   "darkmode": "disable",
@@ -276,7 +276,7 @@ exports[`should generate themeConfig correcly > root only option should not appe
 }
 `;
 
-exports[`should generate themeConfig correcly > should fallback to root if locale config is missing 1`] = `
+exports[`should generate themeConfig correctly > should fallback to root if locale config is missing 1`] = `
 {
   "blog": {},
   "darkmode": "switch",

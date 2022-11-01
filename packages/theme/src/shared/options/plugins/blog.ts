@@ -23,7 +23,7 @@ export interface HopeThemeBlogPluginOptions
   /**
    * Path to navigate when clicking category label
    *
-   * `:name` will be automatically replaced by currect category name
+   * `:name` will be automatically replaced by current category name
    *
    * 点击分类标签时跳转的路径。
    *
@@ -45,7 +45,7 @@ export interface HopeThemeBlogPluginOptions
   /**
    * Path to navigate when clicking tag label
    *
-   * `:name` will be automatically replaced by currect tag name
+   * `:name` will be automatically replaced by current tag name
    *
    * 点击标签跳转的路径。
    *

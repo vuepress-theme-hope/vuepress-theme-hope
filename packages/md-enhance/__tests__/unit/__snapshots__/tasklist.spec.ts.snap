@@ -1,5 +1,29 @@
 // Vitest Snapshot v1
 
+exports[`Task list > Should increase id 1`] = `
+"<ul class=\\"task-list-container\\">
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-0\\" disabled=\\"disabled\\"> unchecked item 1</li>
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-1\\" disabled=\\"disabled\\"> unchecked item 2</li>
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-2\\" disabled=\\"disabled\\"> unchecked item 3</li>
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-3\\" checked=\\"checked\\" disabled=\\"disabled\\"> checked item 4</li>
+</ul>
+<p>Some content</p>
+<ul class=\\"task-list-container\\">
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-4\\" disabled=\\"disabled\\"> unchecked item 1</li>
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-5\\" disabled=\\"disabled\\"> unchecked item 2</li>
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-6\\" disabled=\\"disabled\\"> unchecked item 3</li>
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-7\\" checked=\\"checked\\" disabled=\\"disabled\\"> checked item 4
+<ul class=\\"task-list-container\\">
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-8\\" disabled=\\"disabled\\"> unchecked item 1</li>
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-9\\" disabled=\\"disabled\\"> unchecked item 2</li>
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-10\\" disabled=\\"disabled\\"> unchecked item 3</li>
+<li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-11\\" checked=\\"checked\\" disabled=\\"disabled\\"> checked item 4</li>
+</ul>
+</li>
+</ul>
+"
+`;
+
 exports[`Task list > Should increse id 1`] = `
 "<ul class=\\"task-list-container\\">
 <li class=\\"task-list-item\\"><input type=\\"checkbox\\" class=\\"task-list-item-checkbox\\" id=\\"task-item-0\\" disabled=\\"disabled\\"> unchecked item 1</li>

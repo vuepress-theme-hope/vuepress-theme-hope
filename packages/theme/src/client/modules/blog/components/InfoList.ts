@@ -73,7 +73,7 @@ export default defineComponent({
               h(
                 "div",
                 {
-                  class: ["icon-wapper", { active: active.value === key }],
+                  class: ["icon-wrapper", { active: active.value === key }],
                   "aria-label": locale.value[key],
                   "data-balloon-pos": "up",
                 },

@@ -5,7 +5,7 @@ import type { AutoLink, TextItem } from "./utils.js";
  */
 export interface HopeThemeNavGroup<T> extends TextItem {
   /**
-   * Link prefix of currect group
+   * Link prefix of current group
    *
    * 当前分组的页面前缀
    */

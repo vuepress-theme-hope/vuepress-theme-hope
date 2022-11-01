@@ -10,7 +10,7 @@ export const checkStyle = (app: App): void => {
     !fs.existsSync(app.dir.source(".vuepress/styles/index.scss"))
   ) {
     logger.error(
-      "V2 style switched to scss intead of stylus, so you should remove index.styl and create index.scss under .vuepress/styles."
+      "V2 style switched to scss instead of stylus, so you should remove index.styl and create index.scss under .vuepress/styles."
     );
   }
 
@@ -20,7 +20,7 @@ export const checkStyle = (app: App): void => {
     !fs.existsSync(app.dir.source(".vuepress/styles/config.scss"))
   ) {
     logger.error(
-      "V2 style switched to scss intead of stylus, so you should remove palette.styl and create config.scss and palette.scss under .vuepress/styles."
+      "V2 style switched to scss instead of stylus, so you should remove palette.styl and create config.scss and palette.scss under .vuepress/styles."
     );
   }
 };

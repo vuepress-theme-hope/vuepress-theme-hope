@@ -118,9 +118,9 @@ The structure of each project is as follows:
 │
 └── src → source file
   │
-  ├── client → client-side souce code
+  ├── client → client-side source code
   │
-  ├── node → Node.js side  soucecode
+  ├── node → Node.js side source code
   │
   └── shared → Shared files between node and client
 ```

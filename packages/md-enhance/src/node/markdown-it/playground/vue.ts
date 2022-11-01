@@ -64,7 +64,7 @@ export const getVuePlaygroundPreset = (
                           deepAssign(
                             {},
                             {
-                              // insure vue exisits and vue/server-render exisits when ssr is on
+                              // insure vue exists and vue/server-render exists when ssr is on
                               imports: {
                                 vue: "https://sfc.vuejs.org/vue.runtime.esm-browser.js",
                                 ...(settings.ssr

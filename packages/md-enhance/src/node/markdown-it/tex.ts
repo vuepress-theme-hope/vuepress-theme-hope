@@ -34,7 +34,7 @@ export interface TexOptions {
 }
 
 /*
- * Test if potential opening or closing delimieter
+ * Test if potential opening or closing delimiter
  * Assumes that there is a "$" at state.src[pos]
  */
 const isValidDelim = (
@@ -49,7 +49,7 @@ const isValidDelim = (
 
     /*
      * Check non-whitespace conditions for opening and closing, and
-     * check that closing delimeter isn’t followed by a number
+     * check that closing delimiter isn’t followed by a number
      */
     canClose: !(
       prevChar === " " ||
@@ -77,10 +77,10 @@ const inlineTex: RuleInline = (state, silent) => {
   }
 
   /*
-   * First check for and bypass all properly escaped delimieters
+   * First check for and bypass all properly escaped delimiters
    * This loop will assume that the first leading backtick can not
    * be the first character in state.src, which is known since
-   * we have found an opening delimieter already.
+   * we have found an opening delimiter already.
    */
   const start = state.pos + 1;
 
@@ -99,7 +99,7 @@ const inlineTex: RuleInline = (state, silent) => {
     match += 1;
   }
 
-  // No closing delimter found.  Consume $ and continue.
+  // No closing delimiter found.  Consume $ and continue.
   if (match === -1) {
     if (!silent) state.pending += "$";
 

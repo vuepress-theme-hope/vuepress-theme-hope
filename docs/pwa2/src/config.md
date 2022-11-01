@@ -19,7 +19,7 @@ You can fill with an object which will be parsed to manifest.webmanifest.
 
 ::: tip
 
-Some options have their fallback if you donot set them.
+Some options have their fallback if you don’t set them.
 
 - name: `siteConfig.title` || `siteConfig.locales['/'].title` || `"Site"`
 - short_name: `siteConfig.title` || `siteConfig.locales['/'].title` || `"Site"`
@@ -47,7 +47,7 @@ For docs of Manifest, please see [W3C Manifest](https://w3c.github.io/manifest/)
 - Type: `string`
 - Required: No
 
-Path of favico.ico with absolute path.
+Path of favicon.ico with absolute path.
 
 ::: warning
 

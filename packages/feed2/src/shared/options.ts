@@ -44,7 +44,7 @@ export interface BaseFeedOptions {
   icon?: string;
 
   /**
-   * Max items outputed
+   * Maximum output items
    *
    * 输出的最大条目数量
    *
@@ -62,7 +62,7 @@ export interface BaseFeedOptions {
   customElements?: string[];
 
   /**
-   * A custom filter funciton, used to filter feed items.
+   * A custom filter function, used to filter feed items.
    *
    * Feed 项目过滤器
    */

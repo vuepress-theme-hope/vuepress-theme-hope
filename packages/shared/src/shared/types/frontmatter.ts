@@ -17,7 +17,7 @@ export interface BasePageFrontMatter extends PageFrontmatter {
   author?: Author | false;
 
   /**
-   * Writting Date
+   * Writing Date
    *
    * 写作日期
    */

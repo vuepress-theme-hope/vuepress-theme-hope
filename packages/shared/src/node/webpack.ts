@@ -23,9 +23,9 @@ export const chainWebpack = (
     const bundlerConfig = <WebpackBundlerOptions>config;
     const { chainWebpack: originalChainWebpack } = bundlerConfig;
 
-    bundlerConfig.chainWebpack = (config, isServr, isBuild): void => {
-      originalChainWebpack?.(config, isServr, isBuild);
-      chainWebpack(config, isServr, isBuild);
+    bundlerConfig.chainWebpack = (config, isServer, isBuild): void => {
+      originalChainWebpack?.(config, isServer, isBuild);
+      chainWebpack(config, isServer, isBuild);
     };
   }
 };

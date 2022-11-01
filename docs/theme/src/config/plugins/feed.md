@@ -104,7 +104,7 @@ Custom element or component which should be removed in feed.
     );
   ```
 
-A custom filter funciton, used to filter feed items.
+A custom filter function, used to filter feed items.
 
 ### sort
 

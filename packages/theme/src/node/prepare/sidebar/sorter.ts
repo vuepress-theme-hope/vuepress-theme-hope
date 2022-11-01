@@ -39,7 +39,7 @@ export const orderSorter = (
   // itemA order is present while itemB order is absent
   if (infoB.order === null) return -infoA.order;
 
-  // now we are sure both order exisit
+  // now we are sure both order exist
 
   // itemA order is positive
   if (infoA.order > 0) {

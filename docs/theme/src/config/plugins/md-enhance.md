@@ -310,7 +310,7 @@ Stylize inline tokens to create snippet you want.
     importMap?: string;
 
     /**
-     * Playground iles info
+     * Playground files info
      */
     files: Record<
       /** File name */

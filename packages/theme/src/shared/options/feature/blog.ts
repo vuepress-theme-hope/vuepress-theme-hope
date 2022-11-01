@@ -125,7 +125,7 @@ export interface HopeThemeBlogOptions {
   medias?: Record<string, [string, string] | string>;
 
   /**
-   * Whether cliping the avatar with round shape
+   * Whether clipping the avatar with round shape
    *
    * 是否剪裁头像为圆形形状
    *

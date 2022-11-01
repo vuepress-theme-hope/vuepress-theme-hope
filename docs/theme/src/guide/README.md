@@ -29,10 +29,10 @@ Added more syntax to Markdown, enriching documentation and blog writing:
 - [Code Tabs](markdown/code-tabs.md)
 - [Footnote](markdown/footnote.md)
 - [Task list](markdown/tasklist.md)
-- [Image Enahancement](markdown/image.md)
+- [Image Enhancement](markdown/image.md)
 - [Custom alignment](markdown/align.md)
 - [Custom Attributes](markdown/attrs.md)
-- [Subscript and Supercript](markdown/sup-sub.md)
+- [Subscript and Superscript](markdown/sup-sub.md)
 - [Mark](markdown/mark.md)
 - [Chart](markdown/chart.md)
 - [ECharts](markdown/echarts.md)
@@ -96,7 +96,7 @@ Layout Optimization:
   - Reading Counts
   - Author and writing date
   - Automatically generated word count and estimated reading time
-  - Tags and Categorys
+  - Tags and Categories
 
 - [Copyright](feature/copyright.md)
 
@@ -106,9 +106,9 @@ Layout Optimization:
 
 ### Blog
 
-- [Article list with sticky support, and summary autogeneration](blog/intro.md)
+- [Article list with sticky support, and summary auto generation](blog/intro.md)
 
-- [Cateory and tag list](blog/category-and-tags.md)
+- [Category and tag list](blog/category-and-tags.md)
 
 - [Timeline](blog/timeline.md)
 
@@ -138,7 +138,7 @@ The theme includes the following plugins, you can use them in other themes or di
 
 - [vuepress-plugin-copy-code2][copy-code2]: Provide copy button for code blocks
 
-- [vuepress-plugin-copyright2][copyright2]: Append copyright information when copying or diable copy and selection.
+- [vuepress-plugin-copyright2][copyright2]: Append copyright information when copying or disable copy and selection.
 
 - [vuepress-plugin-feed2][feed2]: Feed support
 

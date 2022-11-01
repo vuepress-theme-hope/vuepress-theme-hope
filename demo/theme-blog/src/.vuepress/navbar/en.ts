@@ -40,7 +40,7 @@ export const enNavbar = navbar([
         ],
       },
       { text: "Cherry", icon: "edit", link: "cherry" },
-      { text: "Dragonfruit", icon: "edit", link: "dragonfruit" },
+      { text: "Dragon Fruit", icon: "edit", link: "dragonfruit" },
       "tomato",
       "strawberry",
     ],

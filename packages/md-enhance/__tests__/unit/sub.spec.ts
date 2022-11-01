@@ -5,7 +5,7 @@ import { sub } from "../../src/node/markdown-it/index.js";
 describe("subscript", () => {
   const markdownIt = MarkdownIt({ linkify: true }).use(sub);
 
-  it("Shoud render", () => {
+  it("Should render", () => {
     expect(markdownIt.render(`~test~`)).toEqual("<p><sub>test</sub></p>\n");
   });
 
@@ -18,7 +18,7 @@ describe("subscript", () => {
     expect(markdownIt.render(`~foo bar~`)).toEqual("<p>~foo bar~</p>\n");
   });
 
-  it("Shoud render when spcaes are escpaed", () => {
+  it("Should render when spaces are escaped", () => {
     expect(markdownIt.render(`~foo\\ bar\\ baz~`)).toEqual(
       "<p><sub>foo bar baz</sub></p>\n"
     );

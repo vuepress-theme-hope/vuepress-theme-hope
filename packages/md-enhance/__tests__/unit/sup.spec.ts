@@ -5,7 +5,7 @@ import { sup } from "../../src/node/markdown-it/index.js";
 describe("superscript", () => {
   const markdownIt = MarkdownIt({ linkify: true }).use(sup);
 
-  it("Shoud render", () => {
+  it("Should render", () => {
     expect(markdownIt.render(`^test^`)).toEqual("<p><sup>test</sup></p>\n");
   });
 
@@ -18,7 +18,7 @@ describe("superscript", () => {
     expect(markdownIt.render(`2^4 + 3^5`)).toEqual("<p>2^4 + 3^5</p>\n");
   });
 
-  it("Shoud render when spcaes are escpaed", () => {
+  it("Should render when spaces are escaped", () => {
     expect(markdownIt.render(`^foo\\ bar\\ baz^`)).toEqual(
       "<p><sup>foo bar baz</sup></p>\n"
     );

@@ -41,7 +41,7 @@ ${
     :root {
       #{$key}: #{$value};
     }
-  } @else if helper.color-islegal($value) {
+  } @else if helper.color-is-legal($value) {
     @if meta.global-variable-exists("dark-selector", $module: "${id}-config") {
       @include helper.inject-color($key, $value, $dark-selector: ${id}-config.$dark-selector);
     } @else {

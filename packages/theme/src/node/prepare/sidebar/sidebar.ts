@@ -34,7 +34,7 @@ const getInfo = (
             filePathRelative &&
             // inside dir
             filePathRelative.startsWith(dir) &&
-            // filter only currect level
+            // filter only current level
             /^[^/]*(?:\/README.md)?$/.test(
               filePathRelative.slice(dir.length)
             ) &&

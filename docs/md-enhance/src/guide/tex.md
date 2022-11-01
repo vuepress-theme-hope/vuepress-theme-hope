@@ -104,7 +104,7 @@ Mathjax:
 
 When using KaTeX, you can pass an object to `katex` as `KatexOptions`. It will be passed to KaTeX. Please see [KaTeX Docs](https://katex.org/docs/options.html) for available options.
 
-Also, a sepcial option `mhchem` is supported for you to enable mhchem extension by setting it to `true`.
+Also, a special option `mhchem` is supported for you to enable mhchem extension by setting it to `true`.
 
 :::
 
@@ -112,7 +112,7 @@ Also, a sepcial option `mhchem` is supported for you to enable mhchem extension 
 
 When using mathjax, you can pass an object to `mathjax`.
 
-You can set `output` option to either `svg` (default) or `chtml` to change betwwen SVG and HTML output.
+You can set `output` option to either `svg` (default) or `chtml` to change between SVG and HTML output.
 
 Also, you can set `tex` option which is passed to TeX input parser, and you can set `chtml` or `svg` option based on your output syntax which is passed to Common HTML output parser and SVG output parser.
 
@@ -143,7 +143,7 @@ Also, you can set `tex` option which is passed to TeX input parser, and you can 
 
 - Fraction `\frac{aaa}{bbb}` $\frac{aaa}{bbb}$ (the first parameter is the numerator and the second is the denominator).
 
-- Lianjia: `\sum` $\sum$
+- Sum: `\sum` $\sum$
 
 - Tandem: `\prod` $\prod$
 
@@ -319,10 +319,10 @@ $$
 
 Using the `smallmatrix` environment, you can generate small matrices of inline formulas.
 
-A small matix: $( \begin{smallmatrix} a&b\\c&d \end{smallmatrix} )$.
+A small matrix: $( \begin{smallmatrix} a&b\\c&d \end{smallmatrix} )$.
 
 ```md
-A small matix: $( \begin{smallmatrix} a&b\\c&d \end{smallmatrix} )$.
+A small matrix: $( \begin{smallmatrix} a&b\\c&d \end{smallmatrix} )$.
 ```
 
 ### Multi-line Formula

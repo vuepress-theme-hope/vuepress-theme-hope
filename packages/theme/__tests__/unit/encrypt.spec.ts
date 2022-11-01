@@ -6,12 +6,12 @@ import { describe, it, expect } from "vitest";
 import { resolveEncrypt } from "../../src/node/encrypt.js";
 
 const adminSinglePassword = "1234";
-const adminMutiplePassword = ["1234", "abcd"];
+const adminMultiplePassword = ["1234", "abcd"];
 
 const userSinglePassword = "5678";
-const userMutiplePassword = ["5678", "apple"];
+const userMultiplePassword = ["5678", "apple"];
 
-describe.skip("Should resolve encrypt option corrctly", () => {
+describe.skip("Should resolve encrypt option correctly", () => {
   it("should encrypt admin password", () => {
     const result1 = resolveEncrypt({ admin: adminSinglePassword });
 
@@ -23,12 +23,12 @@ describe.skip("Should resolve encrypt option corrctly", () => {
       compareSync(adminSinglePassword, result1.admin!.pop()!)
     ).toBeTruthy();
 
-    const result2 = resolveEncrypt({ admin: adminMutiplePassword });
+    const result2 = resolveEncrypt({ admin: adminMultiplePassword });
 
     expect(Object.keys(result2)).toEqual(["admin"]);
 
     expect(
-      adminMutiplePassword.every((token, index) =>
+      adminMultiplePassword.every((token, index) =>
         compareSync(token, result2.admin![index]!)
       )
     ).toBeTruthy();
@@ -46,13 +46,13 @@ describe.skip("Should resolve encrypt option corrctly", () => {
       compareSync(userSinglePassword, result1.config!["/"].pop()!)
     ).toBeTruthy();
 
-    const result2 = resolveEncrypt({ config: { "/": userMutiplePassword } });
+    const result2 = resolveEncrypt({ config: { "/": userMultiplePassword } });
 
     expect(Object.keys(result2)).toEqual(["config"]);
     expect(Object.keys(result2.config!)).toEqual(["/"]);
 
     expect(
-      userMutiplePassword.every((token, index) =>
+      userMultiplePassword.every((token, index) =>
         compareSync(token, result2.config!["/"][index])
       )
     ).toBeTruthy();

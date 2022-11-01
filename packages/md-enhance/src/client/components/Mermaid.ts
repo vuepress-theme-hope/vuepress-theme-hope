@@ -110,7 +110,7 @@ export default defineComponent({
         const { initialize, render } = mermaid;
 
         const renderMermaid = (): void => {
-          // generate a unvisiable container
+          // generate a invisible container
           const container = document.createElement("div");
 
           container.style.position = "relative";

@@ -133,7 +133,7 @@ export interface MathjaxCommonOutputOptions {
   merrorFont?: string;
 
   /**
-   * font to use for character that aren't in MathJax's fonts
+   * font to use for character that aren’t in MathJax's fonts
    *
    * @default "serif"
    */

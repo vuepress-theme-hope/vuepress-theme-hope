@@ -14,7 +14,7 @@ tag:
 Register components which can be used in Markdown files, available component names are:
 
 - `"Badge"`
-- `"Bilibili"`
+- `"BiliBili"`
 - `"CodePen"`
 - `"PDF"`
 - `"StackBlitz"`

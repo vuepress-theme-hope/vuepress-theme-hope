@@ -33,7 +33,7 @@ If necessary, provide a minimal reproduction Repo[^minimal-reproduction-repo] li
 
 ::: warning Theme and Plugins in repo only
 
-- If you have questions about learning and using Vue, TypeScript, Sass, or you don't know how to write what you want, you may want to ask questions on the Vue forums, Stack Overflow, etc.
+- If you have questions about learning and using Vue, TypeScript, Sass, or you don’t know how to write what you want, you may want to ask questions on the Vue forums, Stack Overflow, etc.
 
 - If you have questions about VuePress, please [open a new discussion](https://github.com/vuepress/vuepress-next/discussions/new) in VuePress repo, as a member of the VuePress team, Mr.Hope will try to answer in his spare time.
 

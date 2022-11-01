@@ -227,7 +227,7 @@ export default {
 {
   "type": "line",
   "data": {
-    "labels": ["January", "Feburary", "March", "April", "May", "June", "July"],
+    "labels": ["January", "February", "March", "April", "May", "June", "July"],
     "datasets": [
       {
         "label": "My First Dataset",
@@ -252,7 +252,7 @@ export default {
 {
   "type": "line",
   "data": {
-    "labels": ["January", "Feburary", "March", "April", "May", "June", "July"],
+    "labels": ["January", "February", "March", "April", "May", "June", "July"],
     "datasets": [
       {
         "label": "My First Dataset",

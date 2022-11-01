@@ -87,8 +87,8 @@ If you were using `@vuepress/plugin-blog` in VuePress1, you should know that thi
 
 - `@vuepress/plugin-blog` is more like a blogging utils collection targeting users.
 
-  It gives you detailed options to filter with frontmatter, dir and other conditions. Also, it's combined with feed, sitemap, mailchimp, panigation and other blog related features. Mainly, you get collections you want using compicated options, and the results are mixined globally with panigation.
+  It gives you detailed options to filter with frontmatter, dir and other conditions. Also, it's combined with feed, sitemap, mailchimp, pagination and other blog related features. Mainly, you get collections you want using complicated options, and the results are mixed in globally with pagination.
 
 - `vuepress-plugin-blog2` however, is targeting theme developers, and only have < 1kb gzipped client chunk size.
 
-  Since `siteData.pages` is no longer available in VuePress2 for scalability reasons, the plugin is only injecting them to routeMeta on node side and provide compoistion apis for you to get them on client side. While it does not provide any related features such as panigation, feed, sitemap. Mainly, you will get collections through functions returning values from page objects, and you will need to use other plugins to provide other features, and handle panigation yourself.
+  Since `siteData.pages` is no longer available in VuePress2 for scalability reasons, the plugin is only injecting them to routeMeta on node side and provide composition apis for you to get them on client side. While it does not provide any related features such as pagination, feed, sitemap. Mainly, you will get collections through functions returning values from page objects, and you will need to use other plugins to provide other features, and handle pagination yourself.

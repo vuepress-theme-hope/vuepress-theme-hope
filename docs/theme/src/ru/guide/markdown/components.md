@@ -65,7 +65,7 @@ tag:
 <BiliBili bvid="BV1kt411o7C3" :high-quality="false" :danmaku="false" />
 ```
 
-Смотрите страницу [Bilibili][bilibili] для доступных свойств.
+Смотрите страницу [BiliBili][bilibili] для доступных свойств.
 
 ## CodePen
 

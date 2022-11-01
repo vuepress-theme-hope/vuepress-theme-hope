@@ -231,7 +231,7 @@ export const mdEnhancePlugin =
             typeof options.tasklist === "object" ? options.tasklist : {},
           ]);
 
-        // addtional functions
+        // additional functions
         if (
           getStatus("vPre") ||
           // TODO: Remove it in v2 stable

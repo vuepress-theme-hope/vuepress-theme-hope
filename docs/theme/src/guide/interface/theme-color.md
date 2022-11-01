@@ -23,7 +23,7 @@ $theme-color: #f00;
 
 ## Theme Color Picker
 
-You need to set `themeColor` with `{ colorname1: colorvalue, colorname2: colorvalue, ... }` format:
+You need to set `themeColor` with `{ colorName1: colorValue1, colorName2: colorValue2, ... }` format:
 
 The first color is the default theme color above.
 

@@ -9,7 +9,7 @@ tag:
   - Project Content
 ---
 
-This tutorial guides you on how to weite content in a VuePress project.
+This tutorial guides you on how to write content in a VuePress project.
 
 <!-- more -->
 
@@ -79,7 +79,7 @@ Each Markdown file will be processed by VuePress Theme Hope to render the conten
 
 ::: tip Markdown Syntax
 
-If you don't know Markdown yet, check out the [Markdown Tutorial](../markdown/README.md).
+If you don’t know Markdown yet, check out the [Markdown Tutorial](../markdown/README.md).
 
 In about fifteen minutes, you can learn how to write Markdown, remember to come back after reading it!
 
