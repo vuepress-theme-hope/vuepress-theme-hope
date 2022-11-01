@@ -100,7 +100,7 @@ export const prepareCategory = (
             else if (app.pages[index].key !== mainPage.key) {
               app.pages.splice(index, 1, mainPage);
 
-              if (init) logger.warn(`Overiding existed path ${pagePath}`);
+              if (init) logger.warn(`Overriding existed path ${pagePath}`);
             }
             pageKeys.push(mainPage.key);
 
@@ -151,7 +151,8 @@ export const prepareCategory = (
                   else if (app.pages[index].key !== page.key) {
                     app.pages.splice(index, 1, page);
 
-                    if (init) logger.warn(`Overiding existed path ${pagePath}`);
+                    if (init)
+                      logger.warn(`Overriding existed path ${pagePath}`);
                   }
 
                   pageKeys.push(page.key);
@@ -180,7 +181,7 @@ export const prepareCategory = (
               .map(({ key }) => key);
 
           if (app.env.isDebug) {
-            let infoMessage = `Route ${localePath} in ${key} cateogry:\n`;
+            let infoMessage = `Route ${localePath} in ${key} category:\n`;
 
             for (const category in map) {
               const { path, keys } = map[category];

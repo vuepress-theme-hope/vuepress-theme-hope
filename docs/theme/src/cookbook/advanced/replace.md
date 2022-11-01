@@ -90,7 +90,7 @@ Here are list of aliases.
 Components:
 
 - `@theme-hope/components/AutoLink.js`: basic link
-- `@theme-hope/components/BreadCrumb.js`: breacrumb
+- `@theme-hope/components/BreadCrumb.js`: breadcrumb
 - `@theme-hope/components/CommonWrapper.js`: basic layout integration
 - `@theme-hope/components/HomeFeatures.js`: homepage features
 - `@theme-hope/components/HomeHero.js`: homepage logo and introduction
@@ -209,7 +209,7 @@ Miscellaneous:
 
 Components:
 
-- `@theme-hope/modules/encrypt/components/GlobalEncrypt.js`: gloabl encrypt wrapper
+- `@theme-hope/modules/encrypt/components/GlobalEncrypt.js`: global encrypt wrapper
 - `@theme-hope/modules/encrypt/components/LocalEncrypt.js`: local encrypt wrapper
 - `@theme-hope/modules/encrypt/components/PasswordModal.js`: password input box
 

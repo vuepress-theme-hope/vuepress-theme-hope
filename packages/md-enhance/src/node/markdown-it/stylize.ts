@@ -24,7 +24,7 @@ const scanTokens = (
     const token = tokens[index];
     const { content, type } = token;
 
-    // skip currect token
+    // skip current token
     if (type !== "text" || skipContents.includes(content)) continue;
 
     const config = options.find(({ matcher }) =>

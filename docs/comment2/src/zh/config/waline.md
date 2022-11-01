@@ -136,7 +136,7 @@ Waline 的服务端地址。
      */
     more?: (
       word: string,
-      currectCount: number
+      currentCount: number
     ) => Promise<WalineSearchResult[]>;
   }
   ```

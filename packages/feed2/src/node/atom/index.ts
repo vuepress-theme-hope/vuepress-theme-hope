@@ -11,7 +11,7 @@ import type {
   AtomEntry,
 } from "./typings.js";
 
-const genAuthororContributor = (author: FeedAuthor): AtomAuthor => {
+const getAuthor = (author: FeedAuthor): AtomAuthor => {
   const { name = "Unknown", email, url } = author;
 
   return {
@@ -58,9 +58,7 @@ export const renderAtom = (feed: Feed): string => {
 
       ...(channel.description ? { subtitle: channel.description } : {}),
 
-      ...(channel.author
-        ? { author: genAuthororContributor(channel.author) }
-        : {}),
+      ...(channel.author ? { author: getAuthor(channel.author) } : {}),
 
       updated: channel.lastUpdated
         ? channel.lastUpdated.toISOString()
@@ -92,7 +90,7 @@ export const renderAtom = (feed: Feed): string => {
 
   content.feed.contributor = Array.from(feed.contributors)
     .filter((contributor) => contributor.name)
-    .map((contributor) => genAuthororContributor(contributor));
+    .map((contributor) => getAuthor(contributor));
 
   /**
    * "entry" nodes
@@ -129,7 +127,7 @@ export const renderAtom = (feed: Feed): string => {
     if (item.author)
       entry.author = item.author
         .filter((author) => author.name)
-        .map((author) => genAuthororContributor(author));
+        .map((author) => getAuthor(author));
 
     if (item.category)
       // category
@@ -138,7 +136,7 @@ export const renderAtom = (feed: Feed): string => {
     // contributor
     if (item.contributor)
       entry.contributor = item.contributor.map((contributor) =>
-        genAuthororContributor(contributor)
+        getAuthor(contributor)
       );
 
     // published

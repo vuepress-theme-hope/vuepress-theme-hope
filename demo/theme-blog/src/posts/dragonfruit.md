@@ -2,14 +2,14 @@
 icon: edit
 date: 2022-01-10
 category:
-  - Dragonfruit
+  - Dragon Fruit
   - Fruit
 tag:
   - red
   - big
 ---
 
-# Dragonfruit
+# Dragon Fruit
 
 ## Heading 2
 

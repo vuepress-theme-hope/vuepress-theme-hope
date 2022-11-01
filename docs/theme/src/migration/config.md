@@ -213,7 +213,7 @@ Move all plugin related options under `plugins`.
 
   - Multi-category support ![New](https://img.shields.io/badge/-new-brightgreen)
 
-  - Move all output options from `plugins.feed.ouput` option to plugin option root and rename them.
+  - Move all output options from `plugins.feed.output` option to plugin option root and rename them.
 
     - `feed.output.atom.enable` renamed to `plugins.feed.atom` ![changed](https://img.shields.io/badge/-changed-yellow)
 
@@ -335,7 +335,7 @@ Move all plugin related options under `plugins`.
 
   - remove `plugins.mdEnhance.enableAll` ![removed](https://img.shields.io/badge/-removed-red)
 
-    There are too many noob users who don't know what they are doing, and they just enable this option without using all the feature provided, yet they complain about load speed.
+    There are too many noob users who don’t know what they are doing, and they just enable this option without using all the feature provided, yet they complain about load speed.
 
   - remove `plugins.mdEnhance.lineNumbers` ![removed](https://img.shields.io/badge/-removed-red)
 
@@ -383,7 +383,7 @@ Move all plugin related options under `plugins`.
 
   - Description generation ![New](https://img.shields.io/badge/-New-brightgreen)
 
-    The plugin can generate a descrption for you automatically via `plugin.seo.autoDescription` options
+    The plugin can generate a description for you automatically via `plugin.seo.autoDescription` options
 
   - Canonical link ![New](https://img.shields.io/badge/-New-brightgreen)
 
@@ -391,7 +391,7 @@ Move all plugin related options under `plugins`.
 
   - `seo.customMeta` renamed to `plugin.seo.customHead` ![changed](https://img.shields.io/badge/-changed-yellow)
 
-    Now you can edit all head tags intead of only meta in V1.
+    Now you can edit all head tags instead of only meta in V1.
     are deployed in several places.
 
 - move `sitemap` to `plugins.sitemap`

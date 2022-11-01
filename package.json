@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-hope-root",
-  "version": "2.0.0-beta.116",
+  "version": "2.0.0-beta.119",
   "private": true,
   "description": "A vuepress theme with tons of features",
   "type": "module",
@@ -41,15 +41,15 @@
     }
   },
   "devDependencies": {
-    "@commitlint/cli": "17.1.2",
-    "@commitlint/config-conventional": "17.1.0",
+    "@commitlint/cli": "17.2.0",
+    "@commitlint/config-conventional": "17.2.0",
     "@rollup/plugin-commonjs": "23.0.2",
     "@rollup/plugin-node-resolve": "15.0.1",
     "@types/inquirer": "9.0.2",
     "@types/node": "18.11.8",
-    "@typescript-eslint/eslint-plugin": "5.41.0",
-    "@typescript-eslint/parser": "5.41.0",
-    "@vitest/coverage-c8": "0.24.3",
+    "@typescript-eslint/eslint-plugin": "5.42.0",
+    "@typescript-eslint/parser": "5.42.0",
+    "@vitest/coverage-c8": "0.24.4",
     "@vue/eslint-config-typescript": "11.0.2",
     "bumpp": "8.2.1",
     "c8": "7.12.0",
@@ -73,7 +73,7 @@
     "ora": "6.1.2",
     "picocolors": "1.0.0",
     "prettier": "2.7.1",
-    "rollup": "3.2.3",
+    "rollup": "3.2.5",
     "rollup-plugin-copy": "3.4.0",
     "rollup-plugin-dts": "5.0.0",
     "rollup-plugin-esbuild": "4.10.1",
@@ -85,9 +85,9 @@
     "stylelint-config-standard-scss": "6.0.0",
     "stylelint-order": "5.0.0",
     "ts-node": "10.9.1",
-    "tslib": "2.4.0",
+    "tslib": "2.4.1",
     "typescript": "4.7.4",
-    "vitest": "0.24.3"
+    "vitest": "0.24.4"
   },
   "packageManager": "pnpm@7.14.1",
   "engines": {

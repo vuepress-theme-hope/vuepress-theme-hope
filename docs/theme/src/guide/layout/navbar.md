@@ -140,7 +140,7 @@ export default {
 - `/path/a/`
 - `/path/b/`
 
-But you may have multiple folders with files under `/path/`. To avoid multiple dropown items been activated under route starting with `/path/a/` or `/path/b/`, you can set `activeMatch` option for the first item with `^/path/(?:(?!a/|b/).*)?$`.
+But you may have multiple folders with files under `/path/`. To avoid multiple dropdown items been activated under route starting with `/path/a/` or `/path/b/`, you can set `activeMatch` option for the first item with `^/path/(?:(?!a/|b/).*)?$`.
 
 :::
 
@@ -495,7 +495,7 @@ export default defineUserConfig({
   theme: hopeTheme({
     // Assumes GitHub. Can also be a full GitLab url.
     repo: "vuepress-theme-hope/vuepress-theme-hope",
-    // Customising the header label
+    // Customizing the header label
     // Defaults to "GitHub" / "GitLab" / "Gitee" / "Bitbucket" or "Source" depending on `repo`
     repoLabel: "GitHub",
     // Whether to display repo link, default is `true`
@@ -514,7 +514,7 @@ export default {
   theme: hopeTheme({
     // Assumes GitHub. Can also be a full GitLab url.
     repo: "vuepress-theme-hope/vuepress-theme-hope",
-    // Customising the header label
+    // Customizing the header label
     // Defaults to "GitHub" / "GitLab" / "Gitee" / "Bitbucket" or "Source" depending on `repo`
     repoLabel: "GitHub",
     // Whether to display repo link, default is `true`

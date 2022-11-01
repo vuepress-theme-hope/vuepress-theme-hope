@@ -93,7 +93,7 @@ export const i18n: Record<Lang, CreateI18n> = {
   // eslint-disable-next-line @typescript-eslint/naming-convention
   "english (US)": {
     flow: {
-      getVersion: "Getting lastest version of deps...",
+      getVersion: "Getting latest version of deps...",
       createPackage: "Generating package.json...",
       updatePackage: "Updating package.json...",
       generateTemplate: "Generating Template...",

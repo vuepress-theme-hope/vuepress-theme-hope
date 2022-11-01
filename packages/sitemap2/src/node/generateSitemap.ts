@@ -95,7 +95,7 @@ const generatePageMap = (
 
     if (excludePage || excludeUrls.includes(page.path)) return;
 
-    const lastmodifyTime = modifyTimeGetter(page);
+    const lastModifyTime = modifyTimeGetter(page);
     const { defaultPath } = stripLocalePrefix(page);
     const relatedLocales = pageLocalesMap.get(defaultPath) || [];
 
@@ -125,7 +125,7 @@ const generatePageMap = (
     const sitemapInfo: SitemapPageInfo = {
       ...(changefreq ? { changefreq } : {}),
       links,
-      ...(lastmodifyTime ? { lastmod: lastmodifyTime } : {}),
+      ...(lastModifyTime ? { lastmod: lastModifyTime } : {}),
       ...frontmatterOptions,
     };
 

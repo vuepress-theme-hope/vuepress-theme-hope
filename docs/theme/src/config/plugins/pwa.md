@@ -74,7 +74,7 @@ For docs of Manifest, please see [W3C Manifest](https://w3c.github.io/manifest/)
 - Type: `string`
 - Required: No
 
-Path of favico.ico with absolute path.
+Path of favicon.ico with absolute path.
 
 ::: warning
 

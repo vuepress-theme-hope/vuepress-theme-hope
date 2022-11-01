@@ -309,7 +309,7 @@ Connections are defined in their own section below the node definitions.
 
 The `->` operator specifies a connection from one node to another like `nodeVar1->nodeVar2->nodeVar3`.
 
-Not all nodes need to be specified in one string and can be separaged like so
+Not all nodes need to be specified in one string and can be separated like so
 
 ```md
 nodeVar1->nodeVar2
@@ -318,7 +318,7 @@ nodeVar2->nodeVar3
 
 Connection syntax is as follows:
 
-`<node variable name>[(<specificaion1>[, <specification2])]-><node variable name>[[(<specificaion1>[, <specification2])]-><node variable name>]`
+`<node variable name>[(<specification1>[, <specification2])]-><node variable name>[[(<specification1>[, <specification2])]-><node variable name>]`
 
 Items in `[]` are optional.
 

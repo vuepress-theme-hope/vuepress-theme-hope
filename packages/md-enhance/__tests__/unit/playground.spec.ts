@@ -202,7 +202,7 @@ speak(msg);
 
     it("Should work", () => {
       const result1 = markdownItwithVuePreset.render(`
-::: playground#vue Vue demo with cutomized imports
+::: playground#vue Vue demo with customized imports
 
 @file App.vue
 

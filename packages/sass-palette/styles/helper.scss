@@ -27,7 +27,7 @@
   @return $property;
 }
 
-@function color-islegal($value) {
+@function color-is-legal($value) {
   // single color
   @if meta.type-of($value) == color {
     @return true;
@@ -41,7 +41,7 @@
       @return true;
     }
 
-    @if (islegal-config(map.get($value, "base"))) {
+    @if (is-legal-config(map.get($value, "base"))) {
       $scale: map.get($value, "scale");
 
       @if (meta.type-of($scale) == map) {

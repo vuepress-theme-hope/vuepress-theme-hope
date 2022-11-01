@@ -2,7 +2,7 @@
 @use "@sass-palette/helper";
 @use "@temp/theme-hope/theme-color";
 
-.themecolor-title {
+.theme-color-title {
   display: block;
 
   margin: 0;
@@ -17,7 +17,7 @@
   transition: color var(--color-transition);
 }
 
-#themecolor-picker {
+#theme-color-picker {
   display: flex;
 
   margin: 0;

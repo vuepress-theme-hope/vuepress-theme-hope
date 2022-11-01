@@ -2,7 +2,7 @@
 title: YouTube
 ---
 
-Embed YouTube vidoes in Markdown files.
+Embed YouTube videos in Markdown files.
 
 <!-- more -->
 
@@ -26,21 +26,21 @@ It is ONLY not required, when you are setting `listType` to `"playlist"` and pro
 - Type: `string | number`
 - Default: `100%`
 
-YouTube componnet width.
+YouTube component width.
 
 ### height
 
 - Type: `string | number`
 - Required: No
 
-YouTube componnet height
+YouTube component height
 
 ### radio
 
 - Type: `number`
 - Default: `16 / 9`
 
-YouTube componnet radio, ONLY valid when `height` not set.
+YouTube component radio, ONLY valid when `height` not set.
 
 ### autoplay
 

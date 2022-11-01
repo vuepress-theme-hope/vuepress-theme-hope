@@ -47,7 +47,7 @@ You are free to write your Markdown here.
 
 - You can place images besides your Markdown files, but you should use **relative links** (i.e.: starting with `./`) for them.
 
-- For images in `.vuepress/public` directory, please use absolute links (i.e.: startingwith `/`) for them.
+- For images in `.vuepress/public` directory, please use absolute links (i.e.: starting with `/`) for them.
 
 :::
 
@@ -60,9 +60,9 @@ The theme contains a custom badge:
 This page should contain:
 
 - [BreadCrumb](https://vuepress-theme-hope.github.io/v2/guide/layout/breadcrumb.html)
-- [Title and infomation](https://vuepress-theme-hope.github.io/v2/guide/feature/page-info.html)
+- [Title and information](https://vuepress-theme-hope.github.io/v2/guide/feature/page-info.html)
 - [TOC (Table of Contents)](https://vuepress-theme-hope.github.io/v2/guide/layout/page.html#header-list)
-- [Meta infomation including update time and contributors](https://vuepress-theme-hope.github.io/v2/guide/feature/meta.html)
+- [Meta information including update time and contributors](https://vuepress-theme-hope.github.io/v2/guide/feature/meta.html)
 - [Comments](https://vuepress-theme-hope.github.io/v2/guide/feature/comment.html)
 - [Navbar](https://vuepress-theme-hope.github.io/v2/guide/layout/navbar.html)
 - [Sidebar](https://vuepress-theme-hope.github.io/v2/guide/layout/sidebar.html)

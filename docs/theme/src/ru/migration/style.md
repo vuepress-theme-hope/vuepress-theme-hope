@@ -31,7 +31,7 @@ tag:
 
 Перемещено в `palette.scss`.
 
-- `$mobileidebarWidth` переименован в `$sidebar-mobile-width`
+- `$mobileSidebarWidth` переименован в `$sidebar-mobile-width`
 - `$lineNumbersWrapperWidth` переименован в `$line-numbers-width`
 
 ### Цвета

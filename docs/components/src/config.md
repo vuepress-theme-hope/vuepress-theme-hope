@@ -81,6 +81,6 @@ Link of font icon asset, `'iconfont'` and `'fontawesome'` keywords are supported
 ## iconPrefix
 
 - Type: `string`
-- Default: Inffered from iconAssets
+- Default: Inferred from iconAssets
 
 Class prefix of font icon

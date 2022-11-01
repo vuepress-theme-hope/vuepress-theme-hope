@@ -128,7 +128,7 @@ tag:
      ],
      ignoreCanonicalTo: false,
      exclusionPatterns: [
-       // You can use this to stop algolia crawing some paths
+       // You can use this to stop algolia crawling some paths
      ],
      discoveryPatterns: [
        // These are urls which algolia looking for,

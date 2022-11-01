@@ -183,7 +183,7 @@ export interface MarkdownEnhanceOptions {
   mark?: boolean;
 
   /**
-   * Whether to enable tastlist format support
+   * Whether to enable tasklist format support
    *
    * 是否启用任务列表支持
    *

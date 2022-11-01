@@ -142,7 +142,7 @@ export default {
 - `/path/a/`
 - `/path/b/`
 
-But you may have multiple folders with files under `/path/`. To avoid multiple dropown items been activated under route starting with `/path/a/` or `/path/b/`, you can set `activeMatch` option for the first item with `^/path/(?:(?!a/|b/).*)?$`.
+But you may have multiple folders with files under `/path/`. To avoid multiple dropdown items been activated under route starting with `/path/a/` or `/path/b/`, you can set `activeMatch` option for the first item with `^/path/(?:(?!a/|b/).*)?$`.
 
 :::
 
@@ -637,7 +637,7 @@ If you use the structure to generate a folder with other folders nested under it
 
 During the automatic generation from structure, you can control whether files in the same folder are included through the `index` option in the page Frontmatter, and control how they are sorted through `order`.
 
-When you don't want the page to be included in the sidebar, you need to set `index: false` in Frontmatter.
+When you don’t want the page to be included in the sidebar, you need to set `index: false` in Frontmatter.
 
 By default, the sidebar will be sorted according to the current language according to the title text of the file name. You can control how they are sorted by `order`. When you set a positive number, they will appear at the front of the group, the smaller the more forward, when you set a negative number, it will appear at the back of the group, and the larger the more backward:
 
@@ -718,12 +718,12 @@ interface SidebarDirInfo {
 
 #### Customize Sorter
 
-In addition to the above implementation, we also added a more powerful `sidebarSorter` option to the theme options. You can pass one or a series of built-in sorter names, or you can pass a soter function you need to sort sidebar items at the same level.
+In addition to the above implementation, we also added a more powerful `sidebarSorter` option to the theme options. You can pass one or a series of built-in sorter names, or you can pass a sorter function you need to sort sidebar items at the same level.
 
 Available keywords are:
 
 - `readme`: `README.md` or `readme.md` first
-- `order`: possitive order first with its value ascendingly, negative order last with its value descendingly
+- `order`: positive order first with its value ascendingly, negative order last with its value descendingly
 - `date`: sort by date ascendingly
 - `date-desc`: sort by date descendingly
 - `title`: alphabetically sort by title

@@ -362,7 +362,7 @@ span {
 
 #### Stylize
 
-Donate Mr.Hope a cup of coffee. _Recommanded_
+Donate Mr.Hope a cup of coffee. _Recommended_
 
 - [View Detail](../markdown/stylize.md)
 

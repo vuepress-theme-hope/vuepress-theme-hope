@@ -35,7 +35,7 @@ icon: creative
 
 ## 优先级
 
-你可以在插件中设置 `priority` 以提供一个默认值。同时你可以通过 fontmatter 中的 `sitemap.priority` 来为每个页面设置优先级。可接受的值为 `0` 到 `1` 的浮点数。
+你可以在插件中设置 `priority` 以提供一个默认值。同时你可以通过 frontmatter 中的 `sitemap.priority` 来为每个页面设置优先级。可接受的值为 `0` 到 `1` 的浮点数。
 
 ## 修改时间获取
 

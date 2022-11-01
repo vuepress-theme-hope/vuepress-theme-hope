@@ -109,15 +109,15 @@ You can see the below demos to see more details.
 
 ## Available presets
 
-Currently, we support `ts` and `vue` presets, and we are looking forward to more presets comming from PRs.
+Currently, we support `ts` and `vue` presets, and we are looking forward to more presets coming from PRs.
 
 If you want to add a playground of your own, you can add a preset by you own in [Advanced Section](#advanced), and welcome to open a PR about your fantastic preset.
 
 ::: info TS preset
 
-TS preset is using official playground by default, and do not support mutiple ts files, so all you need to do is add one single ts file through `@file xxx.ts` directive (the filename is not important but the `.ts` file extension is).
+TS preset is using official playground by default, and do not support multiple ts files, so all you need to do is add one single ts file through `@file xxx.ts` directive (the filename is not important but the `.ts` file extension is).
 
-To use cutomized compilerOptions, you can provide one through `@setting` directive. But attention, official TS playground does not support all compiler options.
+To use customized compilerOptions, you can provide one through `@setting` directive. But attention, official TS playground does not support all compiler options.
 
 Meanwhile, you can customize the default compilerOption through `playground.config.ts`, and you can use another service besides the official playground through `service` option, just in case you want to deploy your own playground site.
 
@@ -223,7 +223,7 @@ speak(msg);
 
 ### Vue
 
-::: playground#vue Vue demo with cutomized imports
+::: playground#vue Vue demo with customized imports
 
 @file App.vue
 
@@ -266,7 +266,7 @@ const msg = ref("Hello World!");
 :::: details Code
 
 ````md
-::: playground#vue Vue demo with cutomized imports
+::: playground#vue Vue demo with customized imports
 
 @file App.vue
 
@@ -404,7 +404,7 @@ interface PlaygroundData {
   importMap?: string;
 
   /**
-   * Playground iles info
+   * Playground files info
    */
   files: Record<
     /** File name */

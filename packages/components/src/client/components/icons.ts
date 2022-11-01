@@ -3,7 +3,7 @@ import { IconBase } from "vuepress-shared/client";
 
 import type { FunctionalComponent } from "vue";
 
-export const BacktoTopIcon: FunctionalComponent = () =>
+export const BackToTopIcon: FunctionalComponent = () =>
   h(IconBase, { name: "back-to-top" }, () => [
     h("path", {
       d: "M512 843.2c-36.2 0-66.4-13.6-85.8-21.8-10.8-4.6-22.6 3.6-21.8 15.2l7 102c.4 6.2 7.6 9.4 12.6 5.6l29-22c3.6-2.8 9-1.8 11.4 2l41 64.2c3 4.8 10.2 4.8 13.2 0l41-64.2c2.4-3.8 7.8-4.8 11.4-2l29 22c5 3.8 12.2.6 12.6-5.6l7-102c.8-11.6-11-20-21.8-15.2-19.6 8.2-49.6 21.8-85.8 21.8z",
@@ -13,4 +13,4 @@ export const BacktoTopIcon: FunctionalComponent = () =>
     }),
   ]);
 
-BacktoTopIcon.displayName = "BacktoTopIcon";
+BackToTopIcon.displayName = "BackToTopIcon";

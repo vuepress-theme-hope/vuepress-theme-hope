@@ -191,7 +191,7 @@ For detailed demo, please see [Presentation Demo][presentation-demo]
 
 You can set `reveal` to pass options to reveal.js per page in frontmatter, you can also set `presentation` in plugin options to set reveal.js globally.
 
-For more options, see [reveal.js config](https://revealjs.com/config/). For more usage, see [reveal.js documatation](https://revealjs.com/)
+For more options, see [reveal.js config](https://revealjs.com/config/). For more usage, see [reveal.js documentation](https://revealjs.com/)
 
 [theme-demo]: https://vuepress-theme-hope.github.io/v2/md-enhance/guide/presentation/themes.html
 [presentation-demo]: https://vuepress-theme-hope.github.io/v2/md-enhance/guide/presentation/demo.html

@@ -85,7 +85,7 @@ will be rendered into:
 
 ## Advanced
 
-You can pass options to `plugins.mdEnhance.attrs` to cutomize plugin behavior.
+You can pass options to `plugins.mdEnhance.attrs` to customize plugin behavior.
 
 ```ts
 interface AttrsOptions {

@@ -17,7 +17,7 @@ If you don’t want certain pages to appear in the sitemap, you can turn them in
 
 ## Output Location
 
-You can also control the output link through the `sitemapFilename` option of the plugin, the link is relative to doutput directory. By default the plugin will use `sitemap.xml`.
+You can also control the output link through the `sitemapFilename` option of the plugin, the link is relative to output directory. By default the plugin will use `sitemap.xml`.
 
 ## Change Frequency
 
@@ -35,7 +35,7 @@ The legal frequencies are:
 
 ## Priority
 
-You can set `priority` in the plugin to provide a default value. At the same time you can set the priority for each page through `sitemap.priority` in fontmatter. Acceptable values are floating point numbers from `0` to `1`.
+You can set `priority` in the plugin to provide a default value. At the same time you can set the priority for each page through `sitemap.priority` in frontmatter. Acceptable values are floating point numbers from `0` to `1`.
 
 ## Modify Time
 

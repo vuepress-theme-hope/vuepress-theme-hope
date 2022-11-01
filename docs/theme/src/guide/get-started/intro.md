@@ -103,7 +103,7 @@ The theme is containing full blog support, you can use the brand new [blog homep
 
 - Provides [PWA](../advanced/pwa.md)
 
-### Othes
+### Others
 
 - Provide [Copyright Information Append](../feature/copyright.md) function, which can append copyright information when users copy content, or disable page copy and selection
 - Provide [article encryption](../feature/encrypt.md) function to protect private information

@@ -201,11 +201,11 @@ You can pass the second argument `true` to enable legacy mode when calling `mdEn
 
 - `enableAll` removed
 
-  There are too many noob users who don't know what they are doing, and they just enable this option without using all the feature provided, yet they complain about load speed.
+  There are too many noob users who don’t know what they are doing, and they just enable this option without using all the feature provided, yet they complain about load speed.
 
 - `lineNumbers` removed
 
-  VuePress 2 supports linenumber config per code block now.
+  VuePress 2 supports line number config per code block now.
 
 - `imageFix` removed
 

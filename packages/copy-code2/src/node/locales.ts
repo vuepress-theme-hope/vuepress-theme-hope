@@ -1,6 +1,6 @@
 import type { CopyCodeLocaleConfig } from "../shared/index.js";
 
-/** Muti language config for copy code */
+/** Multi language config for copy code */
 export const copyCodeLocales: CopyCodeLocaleConfig = {
   "/en/": {
     copy: "Copy code",

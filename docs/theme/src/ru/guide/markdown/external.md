@@ -2,7 +2,7 @@
 title: Внешний импорт
 icon: link
 order: -1
-cateogry:
+category:
   - Markdown
 tag:
   - Markdown

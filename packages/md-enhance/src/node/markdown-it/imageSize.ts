@@ -75,7 +75,7 @@ const parseImageSize = (
 
   pos = width.pos;
 
-  // next charactor must be 'x'
+  // next character must be 'x'
   if (str.charAt(pos) !== "x") return result;
 
   pos += 1;

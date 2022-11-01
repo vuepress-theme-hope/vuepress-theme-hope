@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-lightgallery",
-  "version": "2.0.0-beta.116",
+  "version": "2.0.0-beta.119",
   "description": "Light Gallery plugin for VuePress",
   "keywords": [
     "vuepress",
@@ -34,8 +34,7 @@
   "main": "lib/node/index.js",
   "types": "lib/node/index.d.ts",
   "files": [
-    "lib",
-    "src"
+    "lib"
   ],
   "scripts": {
     "build": "rollup -c",

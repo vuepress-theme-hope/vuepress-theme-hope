@@ -3,7 +3,7 @@ import MarkdownIt from "markdown-it";
 import { uml } from "../../src/node/markdown-it/index.js";
 
 describe("uml", () => {
-  it("shoud render without options", () => {
+  it("Should render without options", () => {
     const markdownIt = MarkdownIt({ linkify: true }).use(uml);
 
     expect(
@@ -17,7 +17,7 @@ abc
     ).toMatchSnapshot();
   });
 
-  it("shoud keep content as is", () => {
+  it("Should keep content as is", () => {
     const markdownIt = MarkdownIt({ linkify: true }).use(uml);
 
     expect(
@@ -31,7 +31,7 @@ Text with **bold** and \`code\`.
     ).toMatchSnapshot();
   });
 
-  it("shoud render with options", () => {
+  it("Should render with options", () => {
     const markdownIt = MarkdownIt({ linkify: true }).use(uml, {
       name: "test",
       open: "teststart",

@@ -3,7 +3,7 @@ title: Get Started
 icon: creative
 ---
 
-By installing and enableing this plugin, you can use more syntax in your Markdown files.
+By installing and enabling this plugin, you can use more syntax in your Markdown files.
 
 ::: tip
 
@@ -103,7 +103,7 @@ You can mark ==important words== .
 
 - [View Detail](mark.md)
 
-### Tasklist
+### Task List
 
 - [x] Plan A
 - [ ] Plan B
@@ -256,7 +256,7 @@ span {
 
 <!-- markdownlint-disable MD033 -->
 
-Donate Mr.Hope a cup of coffee. _Recommanded_
+Donate Mr.Hope a cup of coffee. _Recommended_
 
 - [View Detail](stylize.md)
 

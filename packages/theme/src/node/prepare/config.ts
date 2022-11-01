@@ -42,11 +42,11 @@ setupBlog();
 
   if (enableEncrypt) {
     configImport += `\
-import GloablEncrypt from "@theme-hope/modules/encrypt/components/GloablEncrypt.js";
+import GlobalEncrypt from "@theme-hope/modules/encrypt/components/GlobalEncrypt.js";
 import LocalEncrypt from "@theme-hope/modules/encrypt/components/LocalEncrypt.js";
 `;
     enhance += `\
-app.component("GloablEncrypt", GloablEncrypt);
+app.component("GlobalEncrypt", GlobalEncrypt);
 app.component("LocalEncrypt", LocalEncrypt);
 `;
   }

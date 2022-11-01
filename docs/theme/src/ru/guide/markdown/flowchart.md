@@ -318,7 +318,7 @@ nodeVar2->nodeVar3
 
 Синтаксис подключения следующий:
 
-`<node variable name>[(<specificaion1>[, <specification2])]-><node variable name>[[(<specificaion1>[, <specification2])]-><node variable name>]`
+`<node variable name>[(<specification1>[, <specification2])]-><node variable name>[[(<specification1>[, <specification2])]-><node variable name>]`
 
 Элементы в `[]` являются необязательными.
 

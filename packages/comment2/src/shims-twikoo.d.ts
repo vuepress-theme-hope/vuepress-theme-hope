@@ -27,12 +27,12 @@ declare module "twikoo" {
     path?: string;
 
     /**
-     * Diplay language
+     * Display language
      */
     lang?: string;
 
     /**
-     * Calback when comment loaded
+     * Callback when comment loaded
      */
     onCommentLoaded?: () => void;
   }
@@ -52,7 +52,7 @@ declare module "twikoo" {
     region?: string;
 
     /**
-     * @description protocal, domain and url should not be included
+     * @description protocol, domain and url should not be included
      */
     urls: string[];
     /**

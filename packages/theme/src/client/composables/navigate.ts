@@ -14,7 +14,7 @@ export const useNavigate = (): ((url: string) => void) => {
         url.startsWith("https://") ||
         url.startsWith("mailto:")
       ) {
-        // Outter url
+        // Outer url
         if (window) window.open(url);
       } else {
         // Inner relative path

@@ -30,7 +30,7 @@ export const copyrightPlugin =
       locales,
     } = options;
 
-    const currentlocales = getLocales({
+    const currentLocales = getLocales({
       app,
       name: "copyright",
       default: copyrightLocales,
@@ -49,7 +49,7 @@ export const copyrightPlugin =
 
       extendsPage: (page: Page<{ copyright?: string }>, app): void => {
         const { base } = app.options;
-        const locale = currentlocales[page.pathLocale];
+        const locale = currentLocales[page.pathLocale];
 
         const authorText = author
           ? locale.author.replace(

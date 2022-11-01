@@ -2,7 +2,7 @@
 
 PDF viewer component.
 
-You can use this component to embe a PDF viewer.
+You can use this component to embed a PDF viewer.
 
 <!-- more -->
 

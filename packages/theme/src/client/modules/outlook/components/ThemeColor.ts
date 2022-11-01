@@ -27,10 +27,10 @@ export default defineComponent({
 
     return (): VNode | null =>
       themeColor.value
-        ? h("div", { class: "themecolor-wrapper" }, [
+        ? h("div", { class: "theme-color-wrapper" }, [
             h(
               "label",
-              { class: "themecolor-title", for: "theme-color-picker" },
+              { class: "theme-color-title", for: "theme-color-picker" },
               locale.value
             ),
             h(ThemeColorPicker, { themeColor: themeColor.value }),

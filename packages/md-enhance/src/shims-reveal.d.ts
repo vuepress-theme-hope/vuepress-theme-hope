@@ -84,7 +84,7 @@ declare module "reveal.js/dist/reveal.esm.js" {
      * Optional function that blocks keyboard events when retuning false
      *
      * If you set this to 'focused', we will only capture keyboard events
-     * for embdedded decks when they are in focus
+     * for embedded decks when they are in focus
      */
     keyboardCondition: null | "focused" | ((event: KeyboardEvent) => boolean);
 
@@ -156,7 +156,7 @@ declare module "reveal.js/dist/reveal.esm.js" {
     showNotes: boolean;
 
     /**
-     * Global override for autolaying embedded media (video/audio/iframe)
+     * Global override for auto playing embedded media (video/audio/iframe)
      *- null:   Media will only autoplay if data-autoplay is present
      *- true:   All media will autoplay, regardless of individual setting
      *- false:  No media will autoplay, regardless of individual setting
@@ -214,7 +214,7 @@ declare module "reveal.js/dist/reveal.esm.js" {
 
     /**
      * Opens links in an iframe preview overlay
-     * Add `data-preview-link` and `data-preview-link="false"` to customise each link individually
+     * Add `data-preview-link` and `data-preview-link="false"` to customize each link individually
      */
     previewLinks: boolean;
 

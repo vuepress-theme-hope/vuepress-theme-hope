@@ -414,7 +414,7 @@ interface PlaygroundData {
   importMap?: string;
 
   /**
-   * Playground iles info
+   * Playground files info
    */
   files: Record<
     /** File name */

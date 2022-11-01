@@ -8,7 +8,7 @@ tag:
   - Feed
 ---
 
-The theme adds feed suport using [`vuepress-plugin-feed2`][feed2].
+The theme adds feed support using [`vuepress-plugin-feed2`][feed2].
 
 ::: info
 

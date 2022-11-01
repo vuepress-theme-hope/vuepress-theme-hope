@@ -85,7 +85,7 @@ describe("Task list", () => {
     ).toMatchSnapshot();
   });
 
-  it("Should increse id", () => {
+  it("Should increase id", () => {
     const markdownItWithOutLabel = MarkdownIt({ linkify: true }).use(tasklist, {
       label: false,
     });

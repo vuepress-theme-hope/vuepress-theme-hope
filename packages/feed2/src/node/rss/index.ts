@@ -21,13 +21,7 @@ const genCategory = (category: FeedCategory): RSSCategory => {
 
   return {
     _text: name,
-    ...(domain
-      ? {
-          _attributes: {
-            domain,
-          },
-        }
-      : {}),
+    ...(domain ? { _attributes: { domain } } : {}),
   };
 };
 

@@ -211,7 +211,7 @@ tag:
 
   - 多分类支持 ![新增](https://img.shields.io/badge/-新增-brightgreen)
 
-  - 所有的输出选项从插件选项中的 `ouput` 选项移出到根选项下，并进行了重命名。
+  - 所有的输出选项从插件选项中的 `output` 选项移出到根选项下，并进行了重命名。
 
     - `feed.output.atom.enable` 重命名为 `plugins.feed.atom` ![警告](https://img.shields.io/badge/-warning-yellow)
 

@@ -338,7 +338,7 @@ describe("should handle title", () => {
   });
 });
 
-describe("should generate sidebarData correcly", async () => {
+describe("should generate sidebarData correctly", async () => {
   const app = createBaseApp({
     bundler: {} as any,
     source: path.resolve(__dirname, "./__fixtures__/src"),

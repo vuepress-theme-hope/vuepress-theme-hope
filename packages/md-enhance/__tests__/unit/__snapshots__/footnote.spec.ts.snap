@@ -26,7 +26,7 @@ baz <a href=\\"#footnote-ref1\\" class=\\"footnote-backref\\">↩︎</a></p>
 "
 `;
 
-exports[`footnote > Duplicate footnotes shoud have suffix 1`] = `
+exports[`footnote > Duplicate footnotes should have suffix 1`] = `
 "<p><sup class=\\"footnote-ref\\"><a href=\\"#footnote1\\">[1]</a><a class=\\"footnote-anchor\\" id=\\"footnote-ref1\\" /></sup> <sup class=\\"footnote-ref\\"><a href=\\"#footnote1\\">[1:1]</a><a class=\\"footnote-anchor\\" id=\\"footnote-ref1:1\\" /></sup></p>
 <hr class=\\"footnotes-sep\\">
 <section class=\\"footnotes\\">
@@ -102,7 +102,7 @@ exports[`footnote > Nested footnotes 1`] = `
 exports[`footnote > Pandoc example 1`] = `
 "<p>Here is a footnote reference,<sup class=\\"footnote-ref\\"><a href=\\"#footnote1\\">[1]</a><a class=\\"footnote-anchor\\" id=\\"footnote-ref1\\" /></sup> and another.<sup class=\\"footnote-ref\\"><a href=\\"#footnote2\\">[2]</a><a class=\\"footnote-anchor\\" id=\\"footnote-ref2\\" /></sup></p>
 <p>This paragraph won’t be part of the note, because it
-isn't indented.</p>
+isn’t indented.</p>
 <hr class=\\"footnotes-sep\\">
 <section class=\\"footnotes\\">
 <ol class=\\"footnotes-list\\">
@@ -163,7 +163,7 @@ exports[`footnote > Should support inline note 1`] = `
 <hr class=\\"footnotes-sep\\">
 <section class=\\"footnotes\\">
 <ol class=\\"footnotes-list\\">
-<li id=\\"footnote1\\" class=\\"footnote-item\\"><p>Inlines notes are easier to write, since
+<li id=\\"footnote1\\" class=\\"footnote-item\\"><p>Inline notes are easier to write, since
 you don’t have to pick an identifier and move down to type the
 note. <a href=\\"#footnote-ref1\\" class=\\"footnote-backref\\">↩︎</a></p>
 </li>
@@ -191,7 +191,7 @@ exports[`footnote > Should terminate each other 1`] = `
 exports[`footnote > custom docId in env 1`] = `
 "<p>Here is a footnote reference,<sup class=\\"footnote-ref\\"><a href=\\"#footnote-test-doc-id-1\\">[1]</a><a class=\\"footnote-anchor\\" id=\\"footnote-ref-test-doc-id-1\\" /></sup> and another.<sup class=\\"footnote-ref\\"><a href=\\"#footnote-test-doc-id-2\\">[2]</a><a class=\\"footnote-anchor\\" id=\\"footnote-ref-test-doc-id-2\\" /></sup></p>
 <p>This paragraph won’t be part of the note, because it
-isn't indented.</p>
+isn’t indented.</p>
 <hr class=\\"footnotes-sep\\">
 <section class=\\"footnotes\\">
 <ol class=\\"footnotes-list\\">

@@ -47,13 +47,13 @@ export default defineComponent({
     const hasHttpProtocol = computed(() => isLinkHttp(config.value.link));
 
     // if the link has non-http protocol
-    const hasNonHttpProtocal = computed(
+    const hasNonHttpProtocol = computed(
       () => isLinkMailto(config.value.link) || isLinkTel(config.value.link)
     );
 
     // resolve the `target` attr
     const linkTarget = computed(() =>
-      hasNonHttpProtocal.value
+      hasNonHttpProtocol.value
         ? undefined
         : config.value.target || (hasHttpProtocol.value ? "_blank" : undefined)
     );
@@ -65,13 +65,13 @@ export default defineComponent({
     const renderRouterLink = computed(
       () =>
         !hasHttpProtocol.value &&
-        !hasNonHttpProtocal.value &&
+        !hasNonHttpProtocol.value &&
         !isBlankTarget.value
     );
 
     // resolve the `rel` attr
     const anchorRel = computed(() =>
-      hasNonHttpProtocal.value
+      hasNonHttpProtocol.value
         ? undefined
         : config.value.rel ||
           (isBlankTarget.value ? "noopener noreferrer" : undefined)

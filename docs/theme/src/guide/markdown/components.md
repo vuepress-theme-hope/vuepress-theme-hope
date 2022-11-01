@@ -39,7 +39,7 @@ See [Badge][badge] page for available props.
 
 ## BiliBili
 
-Embed BiliBili vidoes in Markdown files.
+Embed BiliBili videos in Markdown files.
 
 A bilibili video:
 
@@ -65,7 +65,7 @@ A bilibili video with custom settings:
 <BiliBili bvid="BV1kt411o7C3" :high-quality="false" :danmaku="false" />
 ```
 
-See [Bilibili][bilibili] page for available props.
+See [BiliBili][bilibili] page for available props.
 
 ## CodePen
 
@@ -182,7 +182,7 @@ See [StackBlitz][stackblitz] page for available props.
 
 ## VideoPlayer
 
-Embed vidoes in Markdown files.
+Embed videos in Markdown files.
 
 A video player:
 

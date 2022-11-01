@@ -31,7 +31,7 @@ export const copyToClipboard = async (text: string): Promise<void> => {
     document.body.removeChild(element);
 
     if (originalRange) {
-      selection!.removeAllRanges(); // originalRange can't be truthy when selection is falsy
+      selection!.removeAllRanges(); // originalRange can’t be truthy when selection is falsy
       selection!.addRange(originalRange);
     }
 

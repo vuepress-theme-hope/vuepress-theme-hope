@@ -47,7 +47,7 @@ ${demo}
     expect(renderResult).toMatchSnapshot();
   });
 
-  it("Shoud not render", () => {
+  it("Should not render", () => {
     expect(
       markdownIt.render(`
 ${demo}

@@ -12,7 +12,7 @@ describe("Image Mark", () => {
     }
   );
 
-  it("Shoud render", () => {
+  it("Should render", () => {
     expect(markdownIt.render(`![image](/logo.svg)`)).toEqual(
       '<p><img src="/logo.svg" alt="image"></p>\n'
     );
@@ -33,7 +33,7 @@ describe("Image Mark", () => {
     );
   });
 
-  it("Shoud support options", () => {
+  it("Should support options", () => {
     expect(
       markdownItWithCustomOptions.render(`![image](/logo.svg#lightmode)`)
     ).toEqual(
@@ -47,7 +47,7 @@ describe("Image Mark", () => {
     );
   });
 
-  it("Shoud not be effected by title", () => {
+  it("Should not be effected by title", () => {
     expect(markdownIt.render(`![image](/logo.svg#light "title")`)).toEqual(
       '<p><img src="/logo.svg" alt="image" title="title" data-mode="lightmode-only"></p>\n'
     );

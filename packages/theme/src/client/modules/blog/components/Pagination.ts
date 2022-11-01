@@ -44,8 +44,8 @@ export default defineComponent({
       return props.currentPage < totalPages.value - 3;
     });
 
-    /** Page indexs */
-    const indexs = computed(() => {
+    /** Page indexes */
+    const indexes = computed(() => {
       const { currentPage } = props;
       let min = 1;
       let max = totalPages.value;
@@ -127,7 +127,7 @@ export default defineComponent({
                   : []),
 
                 // numbers
-                ...indexs.value.map((num) =>
+                ...indexes.value.map((num) =>
                   h(
                     "div",
                     {

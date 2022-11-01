@@ -12,14 +12,14 @@ export interface CodeDemoOptions {
   useBabel: boolean;
 
   /**
-   * JS Libray links
+   * JS Library links
    *
    * 引入的 JS 外部库链接
    */
   jsLib: string[];
 
   /**
-   * CSS Libray links
+   * CSS Library links
    *
    * 引入的 CSS 外部库链接
    */

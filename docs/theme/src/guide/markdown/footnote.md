@@ -59,7 +59,7 @@ export default {
 
 - Use `[^Anchor text]: ...` to describe footnote content
 
-- If there are muti paragraph in footnote, the paragraph show be double indented
+- If there are multi paragraph in footnote, the paragraph show be double indented
 
 ## Demo
 

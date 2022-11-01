@@ -39,7 +39,7 @@ export const checkOutput = (options: Partial<FeedOptions>): boolean =>
     Object.entries(options.locales).some(
       ([, { atom, json, rss }]) => atom || json || rss
     )) ||
-  // root option requsts output
+  // root option requests output
   Boolean(options.atom || options.json || options.rss);
 
 export const getFeedOptions = (
@@ -78,7 +78,7 @@ export const getFeedOptions = (
         ...options,
         ...options.locales?.[localePath],
 
-        // make sure hostname is not been overrided
+        // make sure hostname is not been override
         hostname: options.hostname,
       },
     ])
@@ -94,7 +94,7 @@ export const getFeedChannelOption = (
   const { hostname, icon, image } = options;
   const author = options.channel?.author?.name;
 
-  const defaultChannelOpion: FeedChannelOption = {
+  const defaultChannelOption: FeedChannelOption = {
     title: locales[localePath]?.title || title || locales["/"]?.title || "",
     link: resolveUrl(hostname, base, localePath),
     description:
@@ -111,7 +111,7 @@ export const getFeedChannelOption = (
     ...(author ? { author: { name: author } } : {}),
   };
 
-  return deepAssign(defaultChannelOpion, options.channel || {});
+  return deepAssign(defaultChannelOption, options.channel || {});
 };
 
 export const getFilename = (

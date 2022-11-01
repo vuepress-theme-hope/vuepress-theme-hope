@@ -60,7 +60,7 @@ export const echarts: PluginSimple = (md) => {
           }
         }
 
-        // set to an unexisit token type
+        // set to an unexist token type
         tokens[i].type = "echarts_empty";
         // hide token
         tokens[i].hidden = true;

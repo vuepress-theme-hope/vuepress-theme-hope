@@ -105,7 +105,7 @@ tag:
 ## iconPrefix <Badge text="Только root" type="warning" />
 
 - Тип: `string`
-- По умолчанию: Inffered from iconAssets
+- По умолчанию: Inferred from iconAssets
 - Детали: [Интерфейс → Иконка](../../guide/interface/icon.md)
 
 Префикс значка FontClass， обычно он может быть автоматически установлен темой.

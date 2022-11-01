@@ -89,7 +89,7 @@ describe("deepassign", () => {
     });
   });
 
-  it("assign muti object", () => {
+  it("assign multi object", () => {
     const object1 = { a: { a: 1, b: 2 } };
     const object2 = { a: { b: 1, c: 2 } };
     const object3 = { a: { b: 0 }, b: { a: 1 } };

@@ -21,7 +21,7 @@ export interface HopeThemeEncryptLocaleData {
   remember: string;
 
   /**
-   * Passwrod error hint
+   * Password error hint
    *
    * 密码错误提示
    */
@@ -35,7 +35,7 @@ export interface HopeThemeEncryptLocaleData {
  */
 export interface HopeThemeEncryptOptions {
   /**
-   * Whether encrypt gloablly
+   * Whether encrypt globally
    *
    * 是否全局加密
    *
@@ -84,7 +84,7 @@ export interface HopeThemeEncryptOptions {
  */
 export interface HopeThemeEncryptConfig {
   /**
-   * Whether encrypt gloablly
+   * Whether encrypt globally
    *
    * 是否全局加密
    *

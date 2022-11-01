@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-redirect",
-  "version": "2.0.0-beta.116",
+  "version": "2.0.0-beta.119",
   "description": "Redirect plugin for vuepress",
   "keywords": [
     "vuepress",
@@ -34,8 +34,7 @@
     "vp-redirect": "./lib/cli/index.js"
   },
   "files": [
-    "lib",
-    "src"
+    "lib"
   ],
   "scripts": {
     "build": "rollup -c",

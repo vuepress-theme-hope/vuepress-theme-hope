@@ -26,9 +26,9 @@ Also V2 has a better performance:🚀
 
 ## Vue3 Changes
 
-Vue 3 uses proxy to provide reactivity and support the brandly new composition api. The proxy-based reactivity is a lot faster than the old-style reactivity based on setter/getter.
+Vue 3 uses proxy to provide reactivity and composition api. The proxy-based reactivity is a lot faster than the old-style reactivity based on setter/getter.
 
-Also, composition api is treeshaking friendly.
+Also, composition api is tree-shaking friendly.
 
 ## VuePress2 Changes
 
@@ -40,9 +40,9 @@ VuePress@v2 is a lot more flexible than VuePress@v1, it removes siteData and sit
 
 ## VuePress Theme Hope Changes
 
-VuePressThemeHope@v2 is rewriteen with composition API and it's style system is migrated from stylus to sass.
+VuePressThemeHope@v2 is rewritten with composition API and it's style system is migrated from stylus to sass.
 
-By rewriting theme and plugins with composition api, almost feature you disabled can be removed by treeshaking when bundling, so that you can get a smaller size easily.
+By rewriting theme and plugins with composition api, almost feature you disabled can be removed by tree-shaking when bundling, so that you can get a smaller size easily.
 
 Also, we are adding new features to VuePressThemeHope@v2.
 
@@ -50,11 +50,11 @@ Also, we are adding new features to VuePressThemeHope@v2.
 
 #### Blog
 
-- Now the whole blog feature is treeshakable, and is disabled by default.
+- Now the whole blog feature is tree-shakable, and is disabled by default.
 
   To enable it, you need to set `plugins.blog` to `true`.
 
-- Social media icons is now treeshakable, and [icons can be customized](../guide/blog/blogger.md)
+- Social media icons is now tree-shakable, and [icons can be customized](../guide/blog/blogger.md)
 
 - Support [disabling the Hero section or background image of blog homepage](../guide/blog/home.md)
 
@@ -70,7 +70,7 @@ Instead, we add Giscus and Twikoo support besides Waline.
 
 #### Encrypt
 
-- Now encrypt feature is treeshaking friendly, and encrypt checking is only done when necesary.
+- Now encrypt feature is tree-shaking friendly, and encrypt checking is only done when necessary.
 
 - Password in frontmatter is removed
 
@@ -92,7 +92,7 @@ We now use PhotoSwipe@v5, which is smaller in size.
 
 #### SEO
 
-- Add canoical link supopport
+- Add canonical link support
 - Add JSON-LD support
 - Support injecting any head tags in V2 now.
 
@@ -124,7 +124,7 @@ Now you can set [different themes for code blocks](../guide/interface/code-theme
 
 - They now shares same config options
 
-- New `activeMatch` option controlling whether the item should be actived.
+- New `activeMatch` option controlling whether the item should be activated.
 
 - New `"structure"` keyword support to [generate Sidebar from file structure](../guide/layout/sidebar.md#auto-sidebar)
 

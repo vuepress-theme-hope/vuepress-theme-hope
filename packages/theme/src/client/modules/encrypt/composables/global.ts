@@ -13,7 +13,7 @@ export interface GlobalEncrypt {
   validateGlobalToken: (token: string, keep?: boolean) => void;
 }
 
-export const useGlobalEcrypt = (): GlobalEncrypt => {
+export const useGlobalEncrypt = (): GlobalEncrypt => {
   const encryptData = useEncryptData();
 
   const localToken = useStorage(STORAGE_KEY, "");

@@ -35,7 +35,6 @@ import type { KatexOptions } from "../../shared/index.js";
 
 const require = createRequire(import.meta.url);
 
-// set KaTeX as the renderer for markdown-it-simplemath
 const katexInline = (tex: string, options: OriginalKatexOptions): string => {
   try {
     return Katex.renderToString(tex, { ...options, displayMode: false });

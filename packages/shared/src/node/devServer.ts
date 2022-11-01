@@ -12,11 +12,11 @@ import type { HandleFunction } from "connect";
 import type { Plugin } from "vite";
 
 /**
- * Handle specific path when runing VuePress DevServe
+ * Handle specific path when running VuePress DevServe
  *
  * @param config VuePress Bundler config
  * @param app VuePress Node App
- * @param path Path to be responsed
+ * @param path Path to be responded
  * @param getResponse respond function
  * @param errMsg error msg
  */
@@ -25,7 +25,7 @@ export const useCustomDevServer = (
   app: App,
   path: string,
   getResponse: (request?: IncomingMessage) => Promise<string | Buffer>,
-  errMsg = "The server encounted an error"
+  errMsg = "The server encountered an error"
 ): void => {
   const { base, bundler } = app.options;
 
@@ -48,7 +48,7 @@ export const useCustomDevServer = (
     };
 
     const viteMockRequestPlugin: Plugin = {
-      name: `virtual:devserver-mock/${path}`,
+      name: `virtual:dev-server-mock/${path}`,
       configureServer: ({ middlewares }) => {
         middlewares.use(`${base}${removeLeadingSlash(path)}`, handler);
       },

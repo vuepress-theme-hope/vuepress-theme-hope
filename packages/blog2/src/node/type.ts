@@ -86,7 +86,7 @@ export const prepareType = (
             else if (app.pages[index].key !== page.key) {
               app.pages.splice(index, 1, page);
 
-              if (init) logger.warn(`Overiding existed path ${pagePath}`);
+              if (init) logger.warn(`Overriding existed path ${pagePath}`);
             }
 
             pageKeys.push(page.key);

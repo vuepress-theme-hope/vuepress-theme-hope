@@ -31,7 +31,6 @@ tag:
 
 - `$code-light-theme`: 日间模式代码块主题
 - `$code-dark-theme`: 夜间模式代码块主题
-- `$code-lang`: 代码块语言
 
 内容类名: `$content-class`
 

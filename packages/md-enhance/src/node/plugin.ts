@@ -8,6 +8,7 @@ import {
   chainWebpack,
   deepAssign,
   getLocales,
+  mergeViteConfig,
 } from "vuepress-shared/node";
 
 import { logger } from "./utils.js";
@@ -59,6 +60,8 @@ import { prepareConfigFile, prepareRevealPluginFile } from "./prepare.js";
 import { MATHML_TAGS } from "./utils.js";
 
 import type { PluginFunction } from "@vuepress/core";
+import type { ViteBundlerOptions } from "@vuepress/bundler-vite";
+import type { RollupWarning } from "rollup";
 import type { KatexOptions } from "katex";
 import type { MarkdownEnhanceOptions } from "../shared/index.js";
 
@@ -154,6 +157,30 @@ export const mdEnhancePlugin =
       }),
 
       extendsBundlerOptions: (config: unknown, app): void => {
+        const { bundler } = app.options;
+
+        if (bundler.name.endsWith("vite")) {
+          const bundlerConfig = <ViteBundlerOptions>config;
+
+          bundlerConfig.viteOptions = mergeViteConfig(
+            bundlerConfig.viteOptions || {},
+            {
+              build: {
+                rollupOptions: {
+                  onwarn(
+                    warning: RollupWarning,
+                    warn: (warning: RollupWarning) => void
+                  ) {
+                    if (warning.message.includes("Use of eval")) return;
+
+                    warn(warning);
+                  },
+                },
+              },
+            }
+          );
+        }
+
         addViteSsrNoExternal({ app, config }, "vuepress-shared");
 
         if (katexEnable && katexOptions.output !== "html")
@@ -231,7 +258,7 @@ export const mdEnhancePlugin =
             typeof options.tasklist === "object" ? options.tasklist : {},
           ]);
 
-        // addtional functions
+        // additional functions
         if (
           getStatus("vPre") ||
           // TODO: Remove it in v2 stable

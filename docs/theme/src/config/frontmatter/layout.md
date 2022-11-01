@@ -9,7 +9,7 @@ tag:
   - Layout
 ---
 
-You can configue page layout by setting the following frontmatter options.
+You can configure page layout by setting the following frontmatter options.
 
 ## pageInfo
 
@@ -92,7 +92,7 @@ Page order in sidebar.
 
 ## dir
 
-Sidebar group infomation used for [structure sidebar](../../guide/layout/sidebar.md#auto-sidebar).
+Sidebar group information used for [structure sidebar](../../guide/layout/sidebar.md#auto-sidebar).
 
 ### dir.text
 

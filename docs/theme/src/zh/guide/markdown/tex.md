@@ -321,10 +321,10 @@ $$
 
 使用 `smallmatrix` 环境，可以生成行内公式的小矩阵。
 
-A small matix: $( \begin{smallmatrix} a&b\\c&d \end{smallmatrix} )$.
+A small matrix: $( \begin{smallmatrix} a&b\\c&d \end{smallmatrix} )$.
 
 ```md
-A small matix: $( \begin{smallmatrix} a&b\\c&d \end{smallmatrix} )$.
+A small matrix: $( \begin{smallmatrix} a&b\\c&d \end{smallmatrix} )$.
 ```
 
 ### 多行公式

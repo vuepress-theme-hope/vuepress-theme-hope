@@ -7,7 +7,7 @@ Name changed from `@mr-hope/vuepress-feed` to `vuepress-plugin-feed2`. ⚠
 
 ## Output Option changes
 
-- Move all output options from `ouput` option to plugin option root and rename them.
+- Move all output options from `output` option to plugin option root and rename them.
 
   - `output.atom.enable` renamed to `atom`
 

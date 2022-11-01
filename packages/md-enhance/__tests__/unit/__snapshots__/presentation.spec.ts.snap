@@ -1,6 +1,6 @@
 // Vitest Snapshot v1
 
-exports[`presentation > Shoud not render 1`] = `
+exports[`presentation > Should not render 1`] = `
 "<h2>Slide 1</h2>
 <p>A paragraph with some text and a <a href=\\"https://mrhope.site\\">link</a></p>
 <hr>
@@ -21,7 +21,7 @@ $$</p>
 "
 `;
 
-exports[`presentation > Shoud not render 2`] = `
+exports[`presentation > Should not render 2`] = `
 "<p>@slidestar</p>
 <h2>Slide 1</h2>
 <p>A paragraph with some text and a <a href=\\"https://mrhope.site\\">link</a></p>

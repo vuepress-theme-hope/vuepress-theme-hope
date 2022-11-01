@@ -14,7 +14,7 @@ tag:
 注册一些可以在 Markdown 文件中使用的组件，可用的组件名称为:
 
 - `"Badge"`
-- `"Bilibili"`
+- `"BiliBili"`
 - `"CodePen"`
 - `"PDF"`
 - `"StackBlitz"`

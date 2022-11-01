@@ -44,7 +44,7 @@ speak(msg);
 
 ### Vue
 
-::: playground#vue Vue demo with cutomized imports
+::: playground#vue Vue demo with customized imports
 
 @file App.vue
 

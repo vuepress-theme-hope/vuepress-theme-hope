@@ -30,7 +30,7 @@ icon: config
 
 - 类型: `string`
 - 默认值:
-  - `siteConfig.lcoales['/'].locales`
+  - `siteConfig.locales['/'].locales`
   - 如果上述未提供，回退到 `"en-US"`
 
 频道使用的语言

@@ -2,7 +2,7 @@ import { useEventListener, useDebounceFn } from "@vueuse/core";
 import { usePageFrontmatter } from "@vuepress/client";
 import { Transition, computed, defineComponent, h, onMounted, ref } from "vue";
 import { useLocaleConfig } from "vuepress-shared/client";
-import { BacktoTopIcon } from "./icons.js";
+import { BackToTopIcon } from "./icons.js";
 
 import "../styles/back-to-top.scss";
 
@@ -66,7 +66,7 @@ export default defineComponent({
                   scrollTop.value = 0;
                 },
               },
-              h(BacktoTopIcon)
+              h(BackToTopIcon)
             )
           : null
       );

@@ -55,9 +55,9 @@ The `stylize` receives an array, where each element accepts 2 options:
 
 - `matcher`: should be `string` or `RegExp`.
 
-- `replacer`: a function cutomizing the matched token
+- `replacer`: a function customizing the matched token
 
-For example, you can use the following cofig to transform `*Recommanded*` into a Badge `<Badge type="tip">Recommanded</Badge>`:
+For example, you can use the following config to transform `*Recommended*` into a Badge `<Badge type="tip">Recommended</Badge>`:
 
 ::: code-tabs#language
 
@@ -72,13 +72,13 @@ export default {
     mdEnhancePlugin({
       stylize: [
         {
-          matcher: "Recommanded",
+          matcher: "Recommended",
           replacer: ({ tag }) => {
             if (tag === "em")
               return {
                 tag: "Badge",
                 attrs: { type: "tip" },
-                content: "Recommanded",
+                content: "Recommended",
               };
           },
         },
@@ -99,13 +99,13 @@ export default {
     mdEnhancePlugin({
       stylize: [
         {
-          matcher: "Recommanded",
+          matcher: "Recommended",
           replacer: ({ tag }) => {
             if (tag === "em")
               return {
                 tag: "Badge",
                 attrs: { type: "tip" },
-                content: "Recommanded",
+                content: "Recommended",
               };
           },
         },
@@ -119,7 +119,7 @@ export default {
 
 <!-- markdownlint-disable MD033 -->
 
-Another example is you want a to set all the emphsis `n't` words to red color, so that `Setting this to a invalid stytax *doesn't* have any effect.` becomes: "Setting this to a invalid stytax <span style="color:red">doesn't</span> have any effect."
+Another example is you want a to set all the emphasis `n’t` words to red color, so that `Setting this to a invalid syntax *doesn’t* have any effect.` becomes: "Setting this to a invalid syntax <span style="color:red">doesn’t</span> have any effect."
 
 <!-- markdownlint-enable MD033 -->
 
@@ -136,7 +136,7 @@ export default {
     mdEnhancePlugin({
       stylize: [
         {
-          matcher: /n't$/,
+          matcher: /n’t$/,
           replacer: ({ tag, attrs, content }) => {
             if (tag === "em")
               return {
@@ -163,7 +163,7 @@ export default {
     mdEnhancePlugin({
       stylize: [
         {
-          matcher: /n't$/,
+          matcher: /n’t$/,
           replacer: ({ tag, attrs, content }) => {
             if (tag === "em")
               return {
@@ -181,11 +181,11 @@ export default {
 
 :::
 
-If you want to skip some words in some pages, you can set `noStylize` in page frontmatter with an array containing content you don't want to stylize.
+If you want to skip some words in some pages, you can set `noStylize` in page frontmatter with an array containing content you don’t want to stylize.
 
 ::: info Performance
 
-To avoid preformance impact, you should try to avoid using RegExp for better performance unless you need it.
+To avoid performance impact, you should try to avoid using RegExp for better performance unless you need it.
 
 Also try to create snippets with RegExp having lower costs, e.g: RegExp starting with `^` and ending with `$`.
 

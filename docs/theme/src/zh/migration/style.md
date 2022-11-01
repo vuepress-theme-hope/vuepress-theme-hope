@@ -31,7 +31,7 @@ tag:
 
 移动至 `palette.scss`。
 
-- `$mobileidebarWidth` 重命名为 `$sidebar-mobile-width`
+- `$mobileSidebarWidth` 重命名为 `$sidebar-mobile-width`
 - `$lineNumbersWrapperWidth` 重命名为 `$line-numbers-width`
 
 ### 颜色

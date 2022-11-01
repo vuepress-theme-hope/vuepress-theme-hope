@@ -14,7 +14,7 @@ tag:
 
 ## 启用
 
-页面信息默认全局启用，同时支持页面配置[^supportpageconfig]。你可以在特定页面的 front matter 中设置 `pageInfo: false` 来局部禁用它。
+页面信息默认全局启用，同时支持页面配置。你可以在特定页面的 front matter 中设置 `pageInfo: false` 来局部禁用它。
 
 如果你需要保持全局禁用，请在主题选项中设置 `pageInfo: false`。这样你可以在特定页面的 front matter 中设置 `pageInfo` 来局部启用它。
 

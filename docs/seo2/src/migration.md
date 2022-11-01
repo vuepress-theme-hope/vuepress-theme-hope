@@ -11,7 +11,7 @@ icon: change
 
 - Description generation
 
-  The plugin can generate a descrption for you automatically via `autoDescription` options
+  The plugin can generate a description for you automatically via `autoDescription` options
 
 - Canonical link
 
@@ -21,4 +21,4 @@ icon: change
 
 - `customMeta` renamed to `customHead`
 
-  Now you can edit all head tags intead of only meta in V1.
+  Now you can edit all head tags instead of only meta in V1.

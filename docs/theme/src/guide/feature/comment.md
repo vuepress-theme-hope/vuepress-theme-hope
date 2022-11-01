@@ -113,7 +113,7 @@ After that, create a vercel app using the below button.
 
 Then input your new GitHub repo name and set `LEAN_ID`, `LEAN_KEY` and `LEAN_MASTER_KEY` environment variables in the "Environment Variables" column. `APP ID` is the value of `LEAN_ID`, and `APP Key` to `LEAN_KEY`, `Master Key` to `LEAN_MASTER_KEY`.
 
-Click `Deploy` button to deploy. It will show you deploy successfully after a minitues time. Then config the vercel link in your theme options:
+Click `Deploy` button to deploy. It will show you deploy successfully after some time. Then config the vercel link in your theme options:
 
 ::: code-tabs#language
 

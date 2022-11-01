@@ -37,12 +37,12 @@ Setting to `true` is equivalent to setting `{ global: true }`.
 - When the `global` option of the plugin is not `true`, the plugin is disabled globally, and you need to manually enable it by setting `copy: true` in page frontmatter.
 - Setting `global: true` makes it enabled globally, and allows setting `copy: false` in page frontmatter to disable it.
 
-To avoid disturbing visitors, copyright information will be appended only when the length of content copied by the user is not less than `100`. If you want to change this trigger value, please set `triggerWords`, and this option supports being overrided via `copy.triggerWord` in page frontmatter.
+To avoid disturbing visitors, copyright information will be appended only when the length of content copied by the user is not less than `100`. If you want to change this trigger value, please set `triggerWords`, and this option supports being override via `copy.triggerWord` in page frontmatter.
 
 ## Disable Copy and Selection
 
-- If you don't want users to copy your entire site or specific page text, you can disable copying in plugin options or page frontmatter by setting `disableCopy`, the latter has higher priority.
-- If you don't want users to select your entire site or specific page text, you can disable selection in plugin options or page frontmatter by setting `disableSelection`, the latter has higher priority.
+- If you don’t want users to copy your entire site or specific page text, you can disable copying in plugin options or page frontmatter by setting `disableCopy`, the latter has higher priority.
+- If you don’t want users to select your entire site or specific page text, you can disable selection in plugin options or page frontmatter by setting `disableSelection`, the latter has higher priority.
 
 ## Copyright Information
 
@@ -54,6 +54,6 @@ Please copy this text and paste it to any location to see the effect. Please cop
 
 ## More
 
-For plugin documatation, please visit [vuepress-plugin-copyright2 docs][copyright2].
+For plugin documentation, please visit [vuepress-plugin-copyright2 docs][copyright2].
 
 [copyright2]: https://vuepress-theme-hope.github.io/v2/copyright/zh/

@@ -73,7 +73,7 @@ If you want to lazyload images in your pages, you can set `imageLazyload: true` 
 
 ::: note
 
-We are enabling lazyload using native HTML5 features, so your brower must support [loading=lazy attribute](https://caniuse.com/loading-lazy-attr).
+We are enabling lazyload using native HTML5 features, so your browser must support [loading=lazy attribute](https://caniuse.com/loading-lazy-attr).
 
 :::
 
@@ -141,7 +141,7 @@ The above Markdown will be parsed as:
 
 Sometimes, you may want to add a description with image, in this case, you should set `plugins.mdEnhance.imageTitle: true`.
 
-Then, when you add a title to the image, the image will be displayed as `<figure>` and title will be displayed as `<figurecaption>`.
+Then, when you add a title to the image, the image will be displayed as `<figure>` and title will be displayed as `<figcaption>`.
 
 ```md
 ![GitHub Logo](/assets/icon/github-light.png "Github Logo")

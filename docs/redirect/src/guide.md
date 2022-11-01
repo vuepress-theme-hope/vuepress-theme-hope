@@ -35,7 +35,7 @@ redirect({
 
 The plugin will redirect `/foo.html` to `https://example.com/bar.html` and `/baz.html` to `https://example.com/qux.html`.
 
-And when you don't set `hostname` above, the plugin will redirect `/foo.html` to `/bar.html` and `/baz.html` to `https://example.com/qux.html`.
+And when you don’t set `hostname` above, the plugin will redirect `/foo.html` to `/bar.html` and `/baz.html` to `https://example.com/qux.html`.
 
 :::
 

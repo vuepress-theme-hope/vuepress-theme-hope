@@ -29,7 +29,9 @@ export default defineComponent({
       }
 
       classes.remove(
-        ...themes.filter((themeclass) => themeclass !== `theme-${theme}`)
+        ...themes.filter(
+          (themeColorClass) => themeColorClass !== `theme-${theme}`
+        )
       );
 
       classes.add(`theme-${theme}`);
@@ -43,7 +45,7 @@ export default defineComponent({
     });
 
     return (): VNode =>
-      h("ul", { id: "themecolor-picker" }, [
+      h("ul", { id: "theme-color-picker" }, [
         h(
           "li",
           h("span", {

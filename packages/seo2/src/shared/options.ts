@@ -19,7 +19,7 @@ export type ExtendPage<
 
 export interface SeoOptions {
   /**
-   * Delopy hostname
+   * Deploy hostname
    *
    * 部署域名
    */

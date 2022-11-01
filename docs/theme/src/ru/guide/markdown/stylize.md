@@ -65,7 +65,7 @@ export default {
 
 - `replacer`: функция, обрезающая совпадающий токен
 
-Например, вы можете использовать следующую конфигурацию для преобразования `*Recommanded*` в значок `<Badge type="tip">Recommanded</Badge>`:
+Например, вы можете использовать следующую конфигурацию для преобразования `*Recommended*` в значок `<Badge type="tip">Recommended</Badge>`:
 
 ::: code-tabs#language
 
@@ -82,13 +82,13 @@ export default defineUserConfig({
       mdEnhance: {
         stylize: [
           {
-            matcher: "Recommanded",
+            matcher: "Recommended",
             replacer: ({ tag }) => {
               if (tag === "em")
                 return {
                   tag: "Badge",
                   attrs: { type: "tip" },
-                  content: "Recommanded",
+                  content: "Recommended",
                 };
             },
           },
@@ -111,13 +111,13 @@ export default {
       mdEnhance: {
         stylize: [
           {
-            matcher: "Recommanded",
+            matcher: "Recommended",
             replacer: ({ tag }) => {
               if (tag === "em")
                 return {
                   tag: "Badge",
                   attrs: { type: "tip" },
-                  content: "Recommanded",
+                  content: "Recommended",
                 };
             },
           },
@@ -132,7 +132,7 @@ export default {
 
 <!-- markdownlint-disable MD033 -->
 
-Другой пример: вы хотите, чтобы все слова с эмфисом `n't` были окрашены в красный цвет, так что `Setting this to a invalid stytax *doesn't* have any effect.` становится: "Установка недопустимого ститакса <span style="color:red">не имеет</span> никакого эффекта."
+Другой пример: вы хотите, чтобы все слова с эмфисом `n’t` были окрашены в красный цвет, так что `Setting this to a invalid syntax *doesn’t* have any effect.` становится: "Установка недопустимого ститакса <span style="color:red">не имеет</span> никакого эффекта."
 
 <!-- markdownlint-enable MD033 -->
 
@@ -151,7 +151,7 @@ export default defineUserConfig({
       mdEnhance: {
         stylize: [
           {
-            matcher: /n't$/,
+            matcher: /n’t$/,
             replacer: ({ tag, attrs, content }) => {
               if (tag === "em")
                 return {
@@ -179,7 +179,7 @@ export default {
     mdEnhancePlugin({
       stylize: [
         {
-          matcher: /n't$/,
+          matcher: /n’t$/,
           replacer: ({ tag, attrs, content }) => {
             if (tag === "em")
               return {

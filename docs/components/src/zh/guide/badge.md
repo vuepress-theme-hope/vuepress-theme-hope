@@ -43,7 +43,6 @@ title: Badge
 - 默认值: `"top"`
 
 徽章的垂直方向的位置
-sition of the badge
 
 ## 示例
 

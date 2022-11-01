@@ -1,7 +1,7 @@
 import type { ConvertLocaleConfig } from "vuepress-shared/node";
 
 /**
- * Muti language config for `vuepress-plugin-reading-time2` plugin
+ * Multi language config for `vuepress-plugin-reading-time2` plugin
  *
  * `vuepress-plugin-reading-time2` 插件的多语言配置
  */

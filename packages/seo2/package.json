@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-seo2",
-  "version": "2.0.0-beta.116",
+  "version": "2.0.0-beta.119",
   "description": "SEO plugin for vuepress",
   "keywords": [
     "vuepress",
@@ -31,8 +31,7 @@
   "main": "lib/node/index.js",
   "types": "lib/node/index.d.ts",
   "files": [
-    "lib",
-    "src"
+    "lib"
   ],
   "scripts": {
     "build": "rollup -c",

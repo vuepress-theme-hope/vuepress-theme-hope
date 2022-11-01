@@ -15,4 +15,4 @@ category:
 
 [^scroll-behavior-support]: Смотрите [Safari 15.4 Release Notes](https://developer.apple.com/documentation/safari-release-notes/safari-15_4-release-notes#New-Features)
 
-Если вам нужно использовать эту функцию в более старых версиях Safari, обратитесь к [Связанному вопросу на Stack Overflow](https://stackoverflow.com/questions/56011205/is-there-a-safari-equivalent-for-scroll-behavior-smooth), чтобы понять причину и импортировать пакет [smooth-scroll](https://github.com/iamdustan/smoothscroll), чтобы сделать pollyfill самостоятельно.
+Если вам нужно использовать эту функцию в более старых версиях Safari, обратитесь к [Связанному вопросу на Stack Overflow](https://stackoverflow.com/questions/56011205/is-there-a-safari-equivalent-for-scroll-behavior-smooth), чтобы понять причину и импортировать пакет [smooth-scroll](https://github.com/iamdustan/smoothscroll), чтобы сделать polyfill самостоятельно.

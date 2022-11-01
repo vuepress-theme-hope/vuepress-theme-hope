@@ -5,7 +5,7 @@ import { imageSize } from "../../src/node/markdown-it/index.js";
 describe("Image Size", () => {
   const markdownIt = MarkdownIt({ linkify: true }).use(imageSize);
 
-  it("Shoud render", () => {
+  it("Should render", () => {
     expect(markdownIt.render(`![image](/logo.svg)`)).toEqual(
       '<p><img src="/logo.svg" alt="image"></p>\n'
     );
@@ -23,7 +23,7 @@ describe("Image Size", () => {
     );
   });
 
-  it("Shoud not render", () => {
+  it("Should not render", () => {
     expect(markdownIt.render(`![image](/logo.svg =abcxdef)`)).toEqual(
       "<p>![image](/logo.svg =abcxdef)</p>\n"
     );

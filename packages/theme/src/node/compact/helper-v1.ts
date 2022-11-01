@@ -73,7 +73,7 @@ const checkMarkdownOptions = (
   // slugify
   if ("slugify" in options) {
     logger.error(
-      '"markdown.slugify" is no longger supported in VuePress2.\nIf you want to change the slugify function anyway, set the following options separately:\n· markdown.anchor.slugify\n· markdown.toc.slugify\n· markdown.extractHeaders.slugify'
+      '"markdown.slugify" is no longer supported in VuePress2.\nIf you want to change the slugify function anyway, set the following options separately:\n· markdown.anchor.slugify\n· markdown.toc.slugify\n· markdown.extractHeaders.slugify'
     );
 
     delete options["slugify"];
@@ -81,7 +81,7 @@ const checkMarkdownOptions = (
 
   // pageSuffix
   if ("pageSuffix" in options) {
-    logger.error('"markdown.pageSuffix" is no longger supported in VuePress2.');
+    logger.error('"markdown.pageSuffix" is no longer supported in VuePress2.');
 
     delete options["pageSuffix"];
   }
@@ -89,7 +89,7 @@ const checkMarkdownOptions = (
   // externalLinks
   if ("externalLinks" in options) {
     logger.error(
-      '"markdown.externalLinks" is no longger supported in VuePress2, please use "markdown.links.externalAttrs" instead.'
+      '"markdown.externalLinks" is no longer supported in VuePress2, please use "markdown.links.externalAttrs" instead.'
     );
 
     delete options["externalLinks"];
@@ -98,7 +98,7 @@ const checkMarkdownOptions = (
   // plugins
   if ("plugins" in options) {
     logger.error(
-      '"markdown.plugins" is no longger supported in VuePress2, please use "extendsMarkdown" hook instead.'
+      '"markdown.plugins" is no longer supported in VuePress2, please use "extendsMarkdown" hook instead.'
     );
 
     delete options["plugins"];

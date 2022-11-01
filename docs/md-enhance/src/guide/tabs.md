@@ -61,7 +61,7 @@ You can add an id suffix in `tabs` container, which will be used as tab id. All 
 :::
 ```
 
-Inside this container, you should use `@tab` marker to mark and sperate tab contents.
+Inside this container, you should use `@tab` marker to mark and separate tab contents.
 
 Behind `@tab` marker, you can add text `:active` to activate the tab by default, and the text will be resolved as tab title.
 
@@ -105,13 +105,13 @@ By default, the title will be used as value of tab, but you can override it usin
 :::
 ```
 
-:::: info Switching together and persisting choise
+:::: info Switching together and persisting choice
 
 If you want to make some tab groups switch together, you can use same tab id to bind them.
 
-Also, your choise with that tab id will be stored and persisted.
+Also, your choice with that tab id will be stored and persisted.
 
-Here is an exmple:
+Here is an example:
 
 Choose a package manager:
 

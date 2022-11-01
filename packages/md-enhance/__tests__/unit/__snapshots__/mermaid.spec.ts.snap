@@ -1,6 +1,6 @@
 // Vitest Snapshot v1
 
-exports[`mermaid > Shoud not render 1`] = `
+exports[`mermaid > Should not render 1`] = `
 "<p>flowchart TB
 c1--&gt;a2
 subgraph one
@@ -18,7 +18,7 @@ two --&gt; c2</p>
 "
 `;
 
-exports[`mermaid > Shoud not render 2`] = `
+exports[`mermaid > Should not render 2`] = `
 "<pre><code class=\\"language-md\\">flowchart TB
   c1--&gt;a2
   subgraph one
@@ -41,7 +41,7 @@ exports[`mermaid > Should render \`\`\`class 1`] = `"<Mermaid id=\\"mermaid-0\\"
 
 exports[`mermaid > Should render \`\`\`er 1`] = `"<Mermaid id=\\"mermaid-0\\" code=\\"eNp1jT0OwjAMhfeewhfIBdgqkoGBgILEboSJLPIjOUEMbe9OKnVoBgbLz89P7yPRjF4wDgDH0cE8K5UnsOPZaKXd6W4cHABDyN+yRaa2AUoVTh6EPDeJlXOyn/gg2X8jvqm785NCM5Y2V+NuF/sHyCtsS3S8F0upFmNXG3DncaqAftXL8ANM5kJr\\"></Mermaid>"`;
 
-exports[`mermaid > Should render \`\`\`gantt 1`] = `"<Mermaid id=\\"mermaid-0\\" code=\\"eNqVU8Fu2zAMvfcrCAMFWsAZ4jQbutyCBB0GrDv1sltViU602lIg0Vvz9yXl2LWTtmh9kkW9x8dHcqMc0RmAUYQ3PtSKAP7wN7m9nazXHCBLFUL7LY2xbgM/lr/v7sBYtQmqhrJxmqx3qrK0B/JQI9NYw1h80lVjMAr2P+IjOhP5+vwcLu672D0orXFHEeIOtS2tTloiWDcQAmXSlnNsH8GXQFtMlHCRxcbxbXYJPkDWpclyeGgInKf2qQ+mDQpB9uXyjHVETMJh2Z34buXrXYWEBkjFx0Pd6VsY7zCXE6sucphNi/lkWkym3/L+eM0MS6b6hydwYVApxBzMMBswfM/hSvy6aagJr0P7E0OvclAlYTjQfD2Czt6BzgdQpmHowIdVsGS1qhKLNOrIDO6IeKm7Z5V1CAv55b4kc4aezLfM8FMIanQEOxUi51XOwF8bOduLwCFDr04clsJWAXkcgCeCR4SnoCMaldgydPaeeMnCx6LHuGTgSZ7AY4RhlGmRFPEWDMb8qFHdy2Lk7NrrRlxQhylbY+TUDwhp/SDuOfT01rQotmJoSypPRLTgbg9ZksHasz+bQ4GLFqUKAGmN9ENgipdiK2xvAHnQdZ+yBc+vt8NyfqnIovud+Vg1bQWJ+uMVfEK1aHwGRAxmlw==\\"></Mermaid>"`;
+exports[`mermaid > Should render \`\`\`gantt 1`] = `"<Mermaid id=\\"mermaid-0\\" code=\\"eNqVU01v2zAMvfdXEAYKtIAzxGk2dLkFCToMWHfqZbeqEp0ItaVAorfm34+UP2A3adHqJJt6j4+P5E45ogsAowjvfKgVAfzhM7u/n223HCBLFUJ71sZYt4Mf698PD2Cs2gVVQ9k4TdY7VVk6AnmokWmsYSy+6KoxGAX7D/EZnYn8+/ISrh772CMorfFAEeIBtS2tTloiWDcSAmXSlnPsGMGXQHtMlHCVxcbx3+wafICsT5Pl8NQQOE/tUx9MGxSC7Mv1BeuImITDur/xv42vDxUSGiAVn7u601kZ7zCXG6sucljMi+VsXszm3/LhessMa6b6iydwYVApxBzMsBgxfM/hRvy6a6gJ56HDjaE3OaiSMHQ0X19BF+9AlyMo0zB05MMmWLJaVYlFGvXKDO6IeKn7Z5V1CCv55L4kc8aeLPfM8FMIanQEBxUi5z1zJgyDOnFYCtsE5HEAnggeEZ6Cc0QdQ2/viZcsfCp6iksGnuQJPEYYJplWSRFvwWjMz1XEL4uJs1uvG3FBdVO2xcipnxDS+kE8cujlrWlRbMXYllSeiGjB/R6yJIO1Z392XYGrFqUKAGmN9ENgipdiL2xvAHnQ9ZCyBS9v9+NyfqnIooed+Vg1bQWJ+uMVfEK1aPwPxhRkQQ==\\"></Mermaid>"`;
 
 exports[`mermaid > Should render \`\`\`git-graph 1`] = `"<Mermaid id=\\"mermaid-0\\" code=\\"eNpLzyxxL0osyOBSUEjOz83NLFHITLFSUPLLL8pNzFGCi6JJB6WWpRYVpyoplFQWpFopBLmGuQYFu+JS7ZGZnpEDxCUw9R6e7h4+QByC0AEAoSMq3Q==\\"></Mermaid>"`;
 
@@ -49,7 +49,7 @@ exports[`mermaid > Should render \`\`\`journey 1`] = `"<Mermaid id=\\"mermaid-0\
 
 exports[`mermaid > Should render \`\`\`mermaid 1`] = `"<Mermaid id=\\"mermaid-0\\" code=\\"eNpLy8kvT85ILCpRCHHiUlBINtTVtUs0ArKKS5PSixILMhTy81KB3ES4RGpeCrJ0SXk+kJsEkk7CJp1RlArSDzY4GaEAaKoCUASqHawKmV+eD+YBNQAAgWYsmw==\\"></Mermaid>"`;
 
-exports[`mermaid > Should render \`\`\`pie 1`] = `"<Mermaid id=\\"mermaid-0\\" code=\\"eNoryEzlUlAoySzJSVUIz0gsUQjLz0lJzc0vKlFIyU8tzlMvUchILEu1BypSUFByC/J09XMJVlKwUjCCijj6evpEggSMIQJ+/sGuIK6JKRcA9yEXxA==\\"></Mermaid>"`;
+exports[`mermaid > Should render \`\`\`pie 1`] = `"<Mermaid id=\\"mermaid-0\\" code=\\"eNoryEzlUlAoySzJSVUIz0gsUQjLz0lJzc0vKlFIyU8tznvUMLNEISOxLNUeqExBQcktyNPVzyVYScFKwQgq4ujr6RMJEjCGCPj5B7uCuCamXAB+DBmY\\"></Mermaid>"`;
 
 exports[`mermaid > Should render \`\`\`sequence 1`] = `"<Mermaid id=\\"mermaid-0\\" code=\\"eNptkL2OwjAQhHueYq4nuR6dcuKnAAp6SicssUXiFfZGCW/POgSQEN1q5tvZn0jXjnxFG2fqYNoZsGxcRciKAisuF9hS03Aq57DcwwTCjbt/BVXLFNuz9Yolr+ROkoukvZDhEbnADqZFzXyCWOMv8WcihpH/7h9YCMHVVsDnidMeJZwSMGjY139l+C1SAXEtzRH5LWuUKE0QGgQnpjjKngVnp6FeMwL3+ex10bTt2lJ1cZrZO7Hj5DzPn//JprOPFFUd3Y//3AGRcm49\\"></Mermaid>"`;
 

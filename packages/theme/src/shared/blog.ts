@@ -58,7 +58,7 @@ export interface ArticleInfo extends Record<string, unknown> {
   [ArticleInfoType.date]?: Date;
 
   /**
-   * writing date info in currect language
+   * writing date info in current language
    */
   [ArticleInfoType.localizedDate]?: string;
 

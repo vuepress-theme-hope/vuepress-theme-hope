@@ -23,7 +23,7 @@ const msg = ref("Hello Playground!");
 
 :::
 
-::: vue-playground Vue Playground with cutomized settings and import
+::: vue-playground Vue Playground with customized settings and import
 
 @file App.vue
 

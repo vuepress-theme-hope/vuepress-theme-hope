@@ -31,7 +31,7 @@ Move to `config.scss`.
 
 Move to `palette.scss`.
 
-- `$mobileidebarWidth` renamed to `$sidebar-mobile-width`
+- `$mobileSidebarWidth` renamed to `$sidebar-mobile-width`
 - `$lineNumbersWrapperWidth` renamed to `$line-numbers-width`
 
 ### Colors

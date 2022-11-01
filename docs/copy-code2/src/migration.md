@@ -11,4 +11,4 @@ Renamed from `@mr-hope/vuepress-plugin-copy-code` to `vuepress-plugin-copy-code2
 
 - Add `delay` option ![New](https://img.shields.io/badge/-New-brightgreen)
 
-  Delay time registing copy button
+  Delay time adding copy button

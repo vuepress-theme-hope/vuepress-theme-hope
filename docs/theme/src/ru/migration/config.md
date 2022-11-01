@@ -213,7 +213,7 @@ tag:
 
   - Поддержка нескольких категорий ![New](https://img.shields.io/badge/-new-brightgreen)
 
-  - Переместите все параметры вывода из параметра `plugins.feed.ouput` в корневой каталог параметров плагина и переименуйте их.
+  - Переместите все параметры вывода из параметра `plugins.feed.output` в корневой каталог параметров плагина и переименуйте их.
 
     - `feed.output.atom.enable` переименован `plugins.feed.atom` ![changed](https://img.shields.io/badge/-changed-yellow)
 

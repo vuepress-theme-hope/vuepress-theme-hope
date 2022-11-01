@@ -15,4 +15,4 @@ Currently, this property is only supported on iOS / iPadOS 15.4+ and macOS 12.3+
 
 [^scroll-behavior-support]: See [Safari 15.4 Release Notes](https://developer.apple.com/documentation/safari-release-notes/safari-15_4-release-notes#New-Features)
 
-If you need to use this feature in older versions of Safari, please refer to [Related Stack Overflow Question](https://stackoverflow.com/questions/56011205/is-there-a-safari-equivalent-for-scroll-behavior-smooth) to understand the reason and import [smooth-scroll](https://github.com/iamdustan/smoothscroll) package to make pollyfill by yourself.
+If you need to use this feature in older versions of Safari, please refer to [Related Stack Overflow Question](https://stackoverflow.com/questions/56011205/is-there-a-safari-equivalent-for-scroll-behavior-smooth) to understand the reason and import [smooth-scroll](https://github.com/iamdustan/smoothscroll) package to make polyfill by yourself.

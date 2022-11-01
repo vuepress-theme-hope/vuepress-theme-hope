@@ -1,6 +1,6 @@
 import type { CopyrightLocaleConfig } from "../shared/index.js";
 
-/** Muti language config for copyright */
+/** Multi language config for copyright */
 export const copyrightLocales: CopyrightLocaleConfig = {
   "/en/": {
     author: "Copyright by :author",

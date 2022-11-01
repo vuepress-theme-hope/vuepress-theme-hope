@@ -24,14 +24,14 @@ const DEPRECATED_HOME_FRONTMATTER_OPTIONS: [string, string][] = [
 ];
 
 const DROPPED_FRONTMATTER_OPTIONS: [string, string][] = [
-  ["metaTitle", "Pleae use custom resolver to set metaTitle."],
-  ["mediaLink", "Social mediea links are no longer displayed in footer."],
+  ["metaTitle", "Please use custom resolver to set metaTitle."],
+  ["mediaLink", "Social media links are no longer displayed in footer."],
   ["password", "Simple password protection is no longer supported."],
   ["search", "Search plugin no longer support this option."],
 ];
 
 /**
- * @deprecated You should use V2 standard frontmatters and avoid using it
+ * @deprecated You should use V2 standard frontmatter and avoid using it
  */
 export const convertFrontmatter = (
   frontmatter: Record<string, unknown>,
