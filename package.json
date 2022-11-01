@@ -73,7 +73,7 @@
     "ora": "6.1.2",
     "picocolors": "1.0.0",
     "prettier": "2.7.1",
-    "rollup": "3.2.3",
+    "rollup": "3.2.5",
     "rollup-plugin-copy": "3.4.0",
     "rollup-plugin-dts": "5.0.0",
     "rollup-plugin-esbuild": "4.10.1",
