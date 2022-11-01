@@ -197,14 +197,6 @@ div[class*="language-"] {
   }
 }
 
-@each $lang in hope-config.$code-lang {
-  div[class*="language-"].ext-#{$lang} {
-    &::before {
-      content: "" + $lang;
-    }
-  }
-}
-
 // narrow mobile
 @media (max-width: hope-config.$mobile) {
   #{hope-config.$content-class} {
