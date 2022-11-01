@@ -32,7 +32,6 @@
     "create-vuepress-theme-hope": "./lib/index.js"
   },
   "files": [
-    "lib",
     "template"
   ],
   "scripts": {

@@ -1,5 +1,5 @@
 {
-  "extends": "./tsconfig.base.json",
+  "extends": "./tsconfig.build.base.json",
   "references": [
     { "path": "./docs/shared/tsconfig.build.json" },
     { "path": "./packages/blog2/tsconfig.build.json" },

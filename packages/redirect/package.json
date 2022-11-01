@@ -34,7 +34,6 @@
     "vp-redirect": "./lib/cli/index.js"
   },
   "files": [
-    "lib",
     "src"
   ],
   "scripts": {

@@ -5,6 +5,7 @@
     "lib": ["dom", "es2021"],
     "rootDir": "./src",
     "outDir": "./lib",
+    "inlineSources": true,
     "paths": {
       "@theme-hope/*": ["./src/client/*"]
     }

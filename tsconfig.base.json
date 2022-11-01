@@ -27,7 +27,7 @@
     "newLine": "lf",
     "noEmitOnError": true,
     "removeComments": false,
-    "inlineSources": false,
+    "inlineSources": true,
     "inlineSourceMap": false,
     "sourceMap": true,
 
