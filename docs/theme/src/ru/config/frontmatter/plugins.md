@@ -40,25 +40,25 @@ tag:
 
 - Тип: `string`
 
-Название элемента фида
+Название элемента потока
 
 ### feed.description
 
 - Тип: `string`
 
-Описание фида
+Описание потока
 
 ### feed.content
 
 - Тип: `string`
 
-Содержимое фида
+Содержимое потока
 
 ### feed.author
 
 - Тип: `FeedAuthor[] | FeedAuthor`
 
-Автор элемента фида
+Автор элемента потока
 
 ::: details Формат FeedAuthor
 
@@ -96,7 +96,7 @@ interface FeedAuthor {
 
 - Тип: `FeedContributor[] | FeedContributor`
 
-Участники фида
+Участники потока
 
 ::: details FeedContributor format
 
@@ -134,7 +134,7 @@ interface FeedContributor {
 
 - Тип: `string`
 
-Идентификатор элемента фида, используемый для идентификации элемента фида.
+Идентификатор элемента потока, используемый для идентификации элемента потока.
 
 ::: note
 
