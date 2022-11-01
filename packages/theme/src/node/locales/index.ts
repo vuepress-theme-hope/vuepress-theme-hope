@@ -10,6 +10,7 @@ import { viLocale } from "./vi.js";
 import { zhLocale } from "./zh.js";
 import { zhTWLocale } from "./zhTW.js";
 import { jaLocale } from "./ja.js";
+import { trLocale } from "./tr.js";
 
 import type { HopeThemeLocaleData } from "../../shared/index.js";
 
@@ -37,4 +38,6 @@ export const themeLocalesData: Record<string, HopeThemeLocaleData> = {
   "/es/": esLocale,
 
   "/ja/": jaLocale,
+
+  "/tr/": trLocale,
 };

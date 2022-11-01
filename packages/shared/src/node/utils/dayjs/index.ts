@@ -17,6 +17,7 @@ import { loadViLocale } from "./vi.js";
 import { loadZhLocale } from "./zh.js";
 import { loadZhTWLocale } from "./zh-tw.js";
 import { loadJaLocale } from "./ja.js";
+import { loadTrLocale } from "./tr.js";
 
 dayjs.extend(localizedFormat);
 dayjs.extend(objectSupport);
@@ -37,6 +38,7 @@ loadViLocale(dayjs);
 loadZhLocale(dayjs);
 loadZhTWLocale(dayjs);
 loadJaLocale(dayjs);
+loadTrLocale(dayjs);
 
 export const getLocale = (lang = "en"): string => {
   const langcode = lang.toLowerCase();
@@ -57,6 +59,7 @@ export const getLocale = (lang = "en"): string => {
       "zh",
       "zh-tw",
       "ja",
+      "tr",
     ].includes(langcode)
   )
     return langcode;
@@ -71,6 +74,7 @@ export const getLocale = (lang = "en"): string => {
   if (langcode === "vi-vn") return "vi";
   if (langcode === "zh-cn") return "zh";
   if (langcode === "ja-jp") return "ja";
+  if (langcode === "tr-tr") return "tr";
 
   console.warn(`${lang} locale missing in config`);
 

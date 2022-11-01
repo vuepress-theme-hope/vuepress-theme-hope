@@ -15,6 +15,7 @@ export const lang2PathConfig = {
   "ja-JP": "/ja/",
   "zh-CN": "/zh/",
   "zh-TW": "/zh-tw/",
+  "tr-TR": "/tr/",
 };
 
 export const supportedLangs = Object.keys(lang2PathConfig);
