@@ -18,16 +18,6 @@ files.forEach((pkgName) => {
       name: `vuepress-plugin-${pkgName}`,
       version,
       description: desc,
-      main: "lib/node/index.js",
-      types: "lib/node/index.d.ts",
-      publishConfig: {
-        access: "public",
-      },
-      repository: {
-        type: "git",
-        url: "git+https://github.com/vuepress-theme-hope/vuepress-theme-hope.git",
-        directory: `packages/${pkgName}`,
-      },
       keywords: [
         "vuepress",
         "vuepress2",
@@ -35,16 +25,38 @@ files.forEach((pkgName) => {
         pkgName,
         "mr-hope",
       ],
-      author: {
-        email: "mister-hope@outlook.com",
-        name: "Mr.Hope",
-        url: "https://mrhope.site",
-      },
-      license: "MIT",
+      homepage: `https://github.com/vuepress-theme-hope/vuepress-theme-hope/packages/${pkgName}#readme`,
       bugs: {
         url: "https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues",
       },
-      homepage: `https://github.com/vuepress-theme-hope/vuepress-theme-hope/packages/${pkgName}#readme`,
+      repository: {
+        type: "git",
+        url: "git+https://github.com/vuepress-theme-hope/vuepress-theme-hope.git",
+        directory: `packages/${pkgName}`,
+      },
+      license: "MIT",
+      author: {
+        name: "Mr.Hope",
+        email: "mister-hope@outlook.com",
+        url: "https://mrhope.site",
+      },
+      type: "module",
+      exports: {
+        ".": "./lib/node/index.js",
+        "./package.json": "./package.json",
+      },
+      main: "lib/node/index.js",
+      types: "lib/node/index.d.ts",
+      files: ["lib"],
+      scripts: {
+        build: "rollup -c",
+        clean: "rimraf ./lib ./*.tsbuildinfo",
+        dev: "pnpm dev:ts",
+        "dev:ts": "tsc -b tsconfig.build.json --watch",
+      },
+      publishConfig: {
+        access: "public",
+      },
     };
 
     writeFileSync(pkgPath, `${JSON.stringify(pkgJSON, null, 2)}\n`);
@@ -62,33 +74,30 @@ files.forEach((pkgName) => {
 
 ${desc}.
 
-## Usage
+## Install
 
 \`\`\`bash
-yarn add vuepress-plugin-${pkgName}@next
-\`\`\`
-
-Or
-
-\`\`\`bash
-npm i vuepress-plugin-${pkgName}@next
+# pnpm
+pnpm add -D vuepress-plugin-${pkgName}@next
+# npm
+npm i -D vuepress-plugin-${pkgName}@next
+# yarn
+yarn add -D vuepress-plugin-${pkgName}@next
 \`\`\`
 
 ---
 
-VuePress 的 ${pkgName} 插件。
-
-## 使用
+## 安装
 
 \`\`\`bash
-yarn add vuepress-plugin-${pkgName}@next
+# pnpm
+pnpm add -D vuepress-plugin-${pkgName}@next
+# npm
+npm i -D vuepress-plugin-${pkgName}@next
+# yarn
+yarn add -D vuepress-plugin-${pkgName}@next
 \`\`\`
 
-或
-
-\`\`\`bash
-npm i vuepress-plugin-${pkgName}@next
-\`\`\`
 `
     );
 });
