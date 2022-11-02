@@ -7,6 +7,8 @@
     "esbenp.prettier-vscode",
     "davidanson.vscode-markdownlint",
     "stylelint.vscode-stylelint",
-    "bierner.markdown-yaml-preamble"
+    "bierner.markdown-yaml-preamble",
+    "streetsidesoftware.code-spell-checker",
+    "streetsidesoftware.code-spell-checker-russian"
   ]
 }
