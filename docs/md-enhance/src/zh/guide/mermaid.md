@@ -543,6 +543,64 @@ Rel(SystemC, customerA, "Sends e-mails to")
 
 :::
 
+### 思维导图
+
+```mindmap
+root((VuePress))
+  Out of box
+    Default theme
+      Navbar
+      Sidebar
+      Darkmode
+    I18n
+    Search
+      Search
+      DocSearch<br />by algolia
+  Customize
+    Theme
+      (hope)
+    Plugins
+      (components)
+      (md-enhance)
+      (photo-swipe)
+      (copy-code2)
+      (copyright2)
+      (feed2)
+      (sitemap2)
+      (seo2)
+```
+
+::: details 代码
+
+````md
+```mindmap
+root((VuePress))
+  Out of box
+    Default theme
+      Navbar
+      Sidebar
+      Darkmode
+    I18n
+    Search
+      Search
+      DocSearch<br />by algolia
+  Customize
+    Theme
+      (hope)
+    Plugins
+      (components)
+      (md-enhance)
+      (photo-swipe)
+      (copy-code2)
+      (copyright2)
+      (feed2)
+      (sitemap2)
+      (seo2)
+```
+````
+
+:::
+
 ### 一个复杂的案例
 
 ```mermaid

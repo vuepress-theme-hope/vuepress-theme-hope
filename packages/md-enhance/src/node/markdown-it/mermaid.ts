@@ -49,6 +49,8 @@ export const mermaid: PluginSimple = (md) => {
       return mermaidHackRender("gitGraph", content, index);
     if (info.trim() === "c4c")
       return mermaidHackRender("C4Context", content, index);
+    if (info.trim() === "mindmap")
+      return mermaidHackRender("mindmap", content, index);
 
     return fence!(...args);
   };

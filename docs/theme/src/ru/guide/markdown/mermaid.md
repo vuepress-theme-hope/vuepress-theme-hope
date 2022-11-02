@@ -551,6 +551,64 @@ Rel(SystemC, customerA, "Sends e-mails to")
 
 :::
 
+### Карта разума
+
+```mindmap
+root((VuePress))
+  Out of box
+    Default theme
+      Navbar
+      Sidebar
+      Darkmode
+    I18n
+    Search
+      Search
+      DocSearch<br />by algolia
+  Customize
+    Theme
+      (hope)
+    Plugins
+      (components)
+      (md-enhance)
+      (photo-swipe)
+      (copy-code2)
+      (copyright2)
+      (feed2)
+      (sitemap2)
+      (seo2)
+```
+
+::: details Код
+
+````md
+```mindmap
+root((VuePress))
+  Out of box
+    Default theme
+      Navbar
+      Sidebar
+      Darkmode
+    I18n
+    Search
+      Search
+      DocSearch<br />by algolia
+  Customize
+    Theme
+      (hope)
+    Plugins
+      (components)
+      (md-enhance)
+      (photo-swipe)
+      (copy-code2)
+      (copyright2)
+      (feed2)
+      (sitemap2)
+      (seo2)
+```
+````
+
+:::
+
 ### Сложный пример
 
 ```mermaid
