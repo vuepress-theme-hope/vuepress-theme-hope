@@ -33,7 +33,7 @@ export const trLocale: HopeThemeLocaleData = {
     timeline: "Zaman Çizelgesi",
     timelineTitle: "Yesterday Once More!",
     all: "Hepsi",
-    intro: "Kişisel Giriş",
+    intro: "Kişisel Tanıtım",
     star: "Yıldız",
     slides: "Slaytlar",
     encrypt: "Şifreli",
@@ -63,9 +63,9 @@ export const trLocale: HopeThemeLocaleData = {
   routeLocales: {
     notFoundMsg: [
       "Burada hiçbir şey yok.",
-      "Buraya nasıl geldik?",
+      "Bu sayfaya nasıl geldik?",
       "Bir hata var - Dört-Sıfır-Dört.",
-      "Bazı çalışmayan bağlantılarımız var.",
+      "Bazı çalışmayan bağlantılar var.",
     ],
     back: "Geri dön",
     home: "Ana sayfaya git",
