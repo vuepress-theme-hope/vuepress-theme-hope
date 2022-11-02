@@ -86,14 +86,13 @@ function normalizeSingleAlias({ find, replacement }: Alias): Alias {
   return { find, replacement };
 }
 
-const normalizeAlias = (o: AliasOptions): Alias[] =>
-  Array.isArray(o)
-    ? o.map(normalizeSingleAlias)
-    : Object.keys(o).map((find) =>
+const normalizeAlias = (aliasOption: AliasOptions): Alias[] =>
+  Array.isArray(aliasOption)
+    ? aliasOption.map(normalizeSingleAlias)
+    : Object.keys(aliasOption).map((find) =>
         normalizeSingleAlias({
           find,
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-          replacement: (o as any)[find],
+          replacement: (<Record<string, string>>aliasOption)[find],
         })
       );
 

@@ -209,7 +209,6 @@ const atMarkerRule =
     openToken.markup = markup;
     openToken.info = info.trim();
 
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     openToken.map = [startLine, nextLine];
 
     state.md.block.tokenize(state, startLine + 1, nextLine);
@@ -257,7 +256,6 @@ export const playground: PluginWithOptions<PlaygroundOptions> = (
   });
 
   md.renderer.rules[`${name}_open`] = (tokens, index): string => {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const { info } = tokens[index];
 
     const playgroundData: PlaygroundData = {

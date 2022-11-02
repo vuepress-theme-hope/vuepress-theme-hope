@@ -18,11 +18,7 @@ import type { VNode } from "vue";
 import "lightgallery/scss/lightgallery.scss";
 
 type LightGalleryPlugin<T = unknown> = {
-  default: new (
-    instance: LightGallery,
-    $LG: LgQuery
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  ) => T;
+  default: new (instance: LightGallery, $LG: LgQuery) => T;
 };
 
 declare const IMAGE_SELECTOR: string;

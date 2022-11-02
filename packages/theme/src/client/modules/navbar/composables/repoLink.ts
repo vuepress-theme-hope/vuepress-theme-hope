@@ -8,7 +8,7 @@ import type { ComputedRef } from "vue";
 import type { RepoType } from "@theme-hope/utils/index.js";
 
 export interface RepoConfig {
-  type: RepoType | "Source";
+  type: Exclude<RepoType, null> | "Source";
   label: string;
   link: string;
 }

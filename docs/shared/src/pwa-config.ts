@@ -14,7 +14,10 @@ export const pwa = ({
   guide = "/guide.html",
   config = "/config.html",
 }: GeneratePwaOptions): HopeThemePluginsOptions["pwa"] => {
-  const shortcuts = [];
+  const shortcuts: Exclude<
+    Exclude<HopeThemePluginsOptions["pwa"], boolean | undefined>["manifest"],
+    undefined
+  >["shortcuts"] = [];
 
   if (guide)
     shortcuts.push({
@@ -98,8 +101,6 @@ export const pwa = ({
           type: "image/png",
         },
       ],
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
       shortcuts,
     },
   };

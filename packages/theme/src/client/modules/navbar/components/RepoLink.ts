@@ -35,7 +35,6 @@ export default defineComponent({
                 rel: "noopener noreferrer",
                 "aria-label": repo.value.label,
               },
-              // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
               h(resolveComponent(`${repo.value.type}Icon`), {
                 style: {
                   width: "1.25rem",

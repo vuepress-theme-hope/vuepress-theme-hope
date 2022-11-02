@@ -61,7 +61,6 @@ export const enLocale: HopeThemeLocaleData = {
   },
 
   routeLocales: {
-    // eslint-disable-next-line @typescript-eslint/naming-convention
     notFoundMsg: [
       "There’s nothing here.",
       "How did we get here?",

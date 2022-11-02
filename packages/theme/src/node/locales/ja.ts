@@ -61,7 +61,6 @@ export const jaLocale: HopeThemeLocaleData = {
   },
 
   routeLocales: {
-    // eslint-disable-next-line @typescript-eslint/naming-convention
     notFoundMsg: [
       "ここには何もありません。",
       "どうやってここにたどり着いたのか?",

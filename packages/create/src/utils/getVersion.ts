@@ -20,8 +20,7 @@ export const getNextVersion = async (
 
             res.on("data", (data) => (body += data));
             res.on("end", () => {
-              // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-              resolve(JSON.parse(body).next as string);
+              resolve((<{ next: string }>JSON.parse(body)).next);
             });
           } else {
             reject();

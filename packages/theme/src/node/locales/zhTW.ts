@@ -61,7 +61,6 @@ export const zhTWLocale: HopeThemeLocaleData = {
   },
 
   routeLocales: {
-    // eslint-disable-next-line @typescript-eslint/naming-convention
     notFoundMsg: [
       "這裡什麼也沒有",
       "我們是怎麼來到這兒的？",

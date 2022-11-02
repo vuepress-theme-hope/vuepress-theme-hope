@@ -34,7 +34,7 @@ export default defineComponent({
     const locale = useLocaleConfig(locales);
 
     const manifest = ref<ManifestOption>({});
-    const deferredprompt = ref<InstallPromptEvent>();
+    const deferredPrompt = ref<InstallPromptEvent>();
 
     const getManifest = async (): Promise<void> => {
       const manifestContent = localStorage.getItem("manifest");
@@ -78,12 +78,12 @@ export default defineComponent({
     };
 
     const install = async (): Promise<void> => {
-      if (deferredprompt.value) {
-        deferredprompt.value.prompt();
+      if (deferredPrompt.value) {
+        deferredPrompt.value.prompt();
 
         document.dispatchEvent(new CustomEvent("show"));
 
-        const choiceResult = await deferredprompt.value.userChoice;
+        const choiceResult = await deferredPrompt.value.userChoice;
 
         if (choiceResult.outcome === "accepted") {
           console.info("PWA has been installed");
@@ -108,7 +108,7 @@ export default defineComponent({
       // eslint-disable-next-line no-prototype-builtins
       if (window.hasOwnProperty("BeforeInstallPromptEvent")) {
         useEventListener(window, "beforeinstallprompt", (event) => {
-          deferredprompt.value = <InstallPromptEvent>event;
+          deferredPrompt.value = <InstallPromptEvent>event;
 
           emit("can-install", true);
           event.preventDefault();
