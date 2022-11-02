@@ -10,13 +10,13 @@ import {
 import { atou } from "vuepress-shared/client";
 import { LoadingIcon } from "./icons.js";
 
-import type { Config, Mermaid } from "mermaid";
+import type { MermaidConfig } from "mermaid";
 import type { VNode } from "vue";
 
 import "../styles/mermaid.scss";
 
 declare const MARKDOWN_ENHANCE_DELAY: number;
-declare const MERMAID_OPTIONS: Config;
+declare const MERMAID_OPTIONS: MermaidConfig;
 
 const getThemeVariables = (isDarkMode: boolean): Record<string, unknown> => {
   return {
@@ -99,15 +99,10 @@ export default defineComponent({
       isDarkmode.value = getDarkmodeStatus();
 
       void Promise.all([
-        // FIXME: Fix types issue in upstream
-        import(
-          /* webpackChunkName: "mermaid" */ "mermaid"
-        ) as unknown as Promise<{
-          default: Mermaid;
-        }>,
+        import(/* webpackChunkName: "mermaid" */ "mermaid"),
         new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
       ]).then(([{ default: mermaid }]) => {
-        const { initialize, render } = mermaid;
+        const { initialize, renderAsync } = mermaid;
 
         const renderMermaid = (): void => {
           // generate a invisible container
@@ -143,9 +138,9 @@ export default defineComponent({
           document.body.appendChild(container);
 
           // make sure dom is refreshed
-          void nextTick(() => {
-            render(props.id, code, renderCallback, container);
-          });
+          void nextTick().then(() =>
+            renderAsync(props.id, code, renderCallback, container)
+          );
         };
 
         renderMermaid();
