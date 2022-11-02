@@ -1,15 +1,15 @@
 import MagicString from "magic-string";
 
-const hashbangRegex = /^\s*(#!.*)/;
+const hashBangRegex = /^\s*(#!.*)/;
 
 export default function shebangPlugin() {
   const shebangMap = new Map();
 
   return {
-    name: "hashbang",
+    name: "hash-bang",
 
     transform(code, id) {
-      let match = hashbangRegex.exec(code);
+      let match = hashBangRegex.exec(code);
 
       if (match) {
         const str = new MagicString(code);
