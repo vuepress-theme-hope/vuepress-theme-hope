@@ -117,7 +117,7 @@ export const markdownEnhanceLocales: MarkdownEnhanceLocaleConfig = {
     danger: "警告",
     details: "詳細",
   },
-  
+
   "/tr/": {
     info: "Bilgi",
     note: "Not",

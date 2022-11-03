@@ -79,7 +79,7 @@ export const copyCodeLocales: CopyCodeLocaleConfig = {
     copied: "コピー機",
     hint: "コピーに成功",
   },
-  
+
   "/tr/": {
     copy: "Kodu kopyala",
     copied: "Kopyalandı",

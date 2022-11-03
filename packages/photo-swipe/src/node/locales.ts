@@ -117,7 +117,7 @@ export const photoSwipeLocales: PhotoSwipeLocaleConfig = {
     arrowPrev: "前へ（左矢印）",
     arrowNext: "次へ（右矢印）",
   },
-  
+
   "/tr/": {
     close: "Kapat",
     download: "Resmi indir",

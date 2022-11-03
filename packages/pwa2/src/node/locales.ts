@@ -203,10 +203,11 @@ export const pwaLocales: PWALocaleConfig = {
     hint: "新しいコンテンツが見つかりました。",
     update: "新しいコンテンツが登場しました。",
   },
-  
+
   "/tr/": {
     install: "Yükle",
-    iOSInstall: "Paylaş düğmesine ve ardından 'Ana Ekrana Ekle' düğmesine basın",
+    iOSInstall:
+      "Paylaş düğmesine ve ardından 'Ana Ekrana Ekle' düğmesine basın",
     cancel: "İptal",
     close: "Kapat",
     prevImage: "Önceki Resim",

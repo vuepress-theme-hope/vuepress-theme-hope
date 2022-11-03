@@ -66,7 +66,7 @@ export const walineLocales: WalineLocaleConfig = {
     placeholder:
       "伝言をどうぞ (メールアドレスを入力すると、返信があった際にメールでお知らせします。)",
   },
-  
+
   "/tr/": {
     placeholder:
       "Buraya bir yorum yazın (Yanıtlandığında bir e-posta bildirimi almak için e-posta adresinizi girin)",

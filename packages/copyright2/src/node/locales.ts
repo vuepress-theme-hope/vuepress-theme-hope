@@ -49,7 +49,7 @@ export const copyrightLocales: CopyrightLocaleConfig = {
     license: ":licenseプロトコルに基づく",
     link: ":link",
   },
-  
+
   "/tr/": {
     author: "Telif hakkı sahibi :author",
     license: "Lisans :license",
