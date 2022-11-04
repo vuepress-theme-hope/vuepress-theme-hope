@@ -52,4 +52,8 @@ export const backToTopLocales: BackToTopLocaleConfig = {
   "/ja/": {
     backToTop: "このページのトップへ戻る",
   },
+
+  "/tr/": {
+    backToTop: "En başa dön",
+  },
 };
