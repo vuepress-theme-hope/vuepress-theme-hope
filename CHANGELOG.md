@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.120](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.119...v2.0.0-beta.120) (2022-11-04)
+
+### Features
+
+- add Turkish language support ([#2357](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2357)) ([f737e12](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f737e125dd4706943adaa65ff67f2be0350f67c7))
+- **md-enhance:** add mindmap support for mermaid ([1e6b07a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1e6b07aa6d55fb8da40a127a1a78f7ab18ba277e))
+
+### Bug Fixes
+
+- **md-enhance:** fix vue-playground styles ([6a5f005](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6a5f0054ddde1f11e414faaf5b91a4cfacb9330a))
+
 ## [2.0.0-beta.119](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.118...v2.0.0-beta.119) (2022-11-01)
 
 ## [2.0.0-beta.118](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.117...v2.0.0-beta.118) (2022-11-01)
