@@ -1222,7 +1222,7 @@ importers:
       '@vuepress/utils': 2.0.0-beta.53
       '@vueuse/core': ^9.4.0
       balloon-css: ^1.2.0
-      bcrypt-ts: ^2.2.2
+      bcrypt-ts: ^3.0.0
       rimraf: 3.0.2
       vue: ^3.2.41
       vue-router: ^4.1.6
@@ -1256,7 +1256,7 @@ importers:
       '@vuepress/utils': 2.0.0-beta.53
       '@vueuse/core': 9.4.0_vue@3.2.41
       balloon-css: 1.2.0
-      bcrypt-ts: 2.2.2
+      bcrypt-ts: 3.0.0
       vue: 3.2.41
       vue-router: 4.1.6_vue@3.2.41
       vuepress-plugin-blog2: link:../blog2
@@ -4500,8 +4500,8 @@ packages:
   /batch/0.6.1:
     resolution: {integrity: sha512-x+VAiMRL6UPkx+kudNvxTl6hB2XNNCG2r+7wixVfIYwu/2HKRXimwQyaumLjMveWvT2Hkd/cAJw+QBMfJ/EKVw==}
 
-  /bcrypt-ts/2.2.2:
-    resolution: {integrity: sha512-ZkCQGGu00GYf8vSOeeW1bJGI3H13rLElHowhe+39sp3SKnC5gYt+omn/DQ/DG1cE4B9M8GjjVKsASTqH60C8IA==}
+  /bcrypt-ts/3.0.0:
+    resolution: {integrity: sha512-z4pqdPaAuuvBsHCwb77bisxT9qo5hRSbn78FXNhhTywHabqMzcIosDxjnKUrkPQbMyz2curUT+fJRith57rIvg==}
     dev: false
 
   /big.js/5.2.2:
