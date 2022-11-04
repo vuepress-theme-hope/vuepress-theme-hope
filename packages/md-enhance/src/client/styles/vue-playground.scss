@@ -227,8 +227,8 @@
       }
     }
 
-    // reset .theme-hope-content pre
-    .theme-hope-content & {
+    // reset pre
+    #{config.$content-class} & {
       pre,
       pre[class*="language-"] {
         margin: 0;
