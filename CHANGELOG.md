@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.121](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.120...v2.0.0-beta.121) (2022-11-05)
+
+### Bug Fixes
+
+- **md-enhance:** fix wrong variable ([9239987](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9239987c34cf31f7f8ac8ede0b277a472efea4b9))
+
 ## [2.0.0-beta.120](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.119...v2.0.0-beta.120) (2022-11-04)
 
 ### Features
