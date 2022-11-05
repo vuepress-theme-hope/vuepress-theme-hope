@@ -228,7 +228,7 @@
     }
 
     // reset pre
-    #{config.$content-class} & {
+    #{hope-config.$content-class} & {
       pre,
       pre[class*="language-"] {
         margin: 0;
