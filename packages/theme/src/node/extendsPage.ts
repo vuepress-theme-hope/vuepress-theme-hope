@@ -21,26 +21,12 @@ import type {
 
 export const checkFrontmatter = (
   page: Page<HopeThemePageData>,
-  isDev = false
+  isDebug = false
 ): void => {
   const frontmatter = page.frontmatter as
     | HopeThemeProjectHomePageFrontmatter
     | HopeThemeBlogHomePageFrontmatter
     | HopeThemeNormalPageFrontmatter;
-
-  const { filePathRelative } = page;
-
-  // check date
-  if ("date" in frontmatter && !(frontmatter.date instanceof Date)) {
-    if (isDev)
-      logger.error(
-        `"date" property in Page FrontMatter should be a valid Date.${
-          filePathRelative ? `\nFound in ${filePathRelative}` : ""
-        }`
-      );
-
-    delete frontmatter.date;
-  }
 
   // resolve category
   if ("category" in frontmatter) {
@@ -55,13 +41,81 @@ export const checkFrontmatter = (
 
     frontmatter.tag = tag;
   }
+
+  if (isDebug) {
+    const { filePathRelative } = page;
+
+    // check date
+    if ("date" in frontmatter && !(frontmatter.date instanceof Date)) {
+      logger.error(
+        `"date" property in Page FrontMatter should be a valid Date.${
+          filePathRelative ? `\nFound in ${filePathRelative}` : ""
+        }`
+      );
+
+      delete frontmatter.date;
+    }
+
+    // check sidebar
+    if (
+      "sidebar" in frontmatter &&
+      frontmatter.sidebar !== "heading" &&
+      typeof frontmatter.sidebar !== "boolean"
+    ) {
+      logger.warn(
+        `"sidebar" property in Page FrontMatter should be "heading" or boolean.${
+          filePathRelative ? `\nFound in ${filePathRelative}` : ""
+        }`
+      );
+
+      delete frontmatter.sidebar;
+    }
+
+    // check string values
+    ["title", "shortTitle", "containerClass"].forEach((key) => {
+      if (key in frontmatter && typeof frontmatter[key] !== "string") {
+        logger.warn(
+          `"${key}" property in Page FrontMatter should be string.${
+            filePathRelative ? `\nFound in ${filePathRelative}` : ""
+          }`
+        );
+
+        delete frontmatter[key];
+      }
+    });
+
+    // check boolean values
+    [
+      "home",
+      "navbar",
+      "toc",
+      "index",
+      "lastUpdated",
+      "contributors",
+      "editLink",
+      "breadcrumb",
+      "breadcrumbIcon",
+      "pageview",
+      "article",
+    ].forEach((key) => {
+      if (key in frontmatter && typeof frontmatter[key] !== "boolean") {
+        logger.warn(
+          `"${key}" property in Page FrontMatter should be boolean.${
+            filePathRelative ? `\nFound in ${filePathRelative}` : ""
+          }`
+        );
+
+        delete frontmatter[key];
+      }
+    });
+  }
 };
 
 export const extendsPage = (
   themeConfig: HopeThemeConfig,
   plugins: HopeThemePluginsOptions,
   page: Page<HopeThemePageData>,
-  isDev = false
+  isDebug = false
 ): void => {
   const { config = {} } = themeConfig.encrypt;
   const frontmatter = page.frontmatter as
@@ -71,7 +125,7 @@ export const extendsPage = (
   const { filePathRelative, path } = page;
   const { createdTime } = page.data.git || {};
 
-  checkFrontmatter(page, isDev);
+  checkFrontmatter(page, isDebug);
 
   // save relative file path into page data to generate edit link
   page.data.filePathRelative = filePathRelative;

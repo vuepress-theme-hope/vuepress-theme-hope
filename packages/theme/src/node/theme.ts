@@ -80,7 +80,7 @@ export const hopeTheme =
           themeConfig,
           plugins,
           <Page<HopeThemePageData>>page,
-          app.env.isDev
+          app.env.isDebug
         );
       },
 
