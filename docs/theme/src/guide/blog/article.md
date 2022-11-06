@@ -14,12 +14,6 @@ tag:
 
 The topic provides you with a list of all articles under the path `/article/` by default.
 
-## Auto Excerpt
-
-By default, the theme will only display the excerpt or description you specify in the article list.
-
-If you want the theme to automatically extract excerpts, set `plugins.blog.autoExcerpt: true` in theme options.
-
 ## Article
 
 All articles will be added to the article list by default and rendered under the path `/article/`.
@@ -34,6 +28,18 @@ To sticky a specific article in the article list, just set `sticky` to `true` in
 ::: tip Order
 
 For sticky articles, you can set `sticky` with a number to set their order. Articles with large numbers will be listed first.
+
+:::
+
+## Excerpt
+
+If you want to add a excerpt for article, you can use `<!-- more-->` comment to mark it. All contents before the comment will be regarded as excerpt. Also, you can specific it with `excerpt` in frontmatter with a HTML string.
+
+::: info Auto Excerpt
+
+By default, the theme will only display the excerpt or description you specify in the article list.
+
+If you want the theme to automatically extract excerpts, set `plugins.blog.autoExcerpt: true` in theme options.
 
 :::
 
