@@ -9,7 +9,7 @@ tag:
   - Markdown
 ---
 
-The theme provides you you code tabs support.
+The theme provides you code tabs support.
 
 <!-- more -->
 
