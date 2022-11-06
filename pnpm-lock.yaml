@@ -44,7 +44,7 @@ importers:
       rollup-plugin-copy: 3.4.0
       rollup-plugin-dts: 5.0.0
       rollup-plugin-esbuild: 4.10.1
-      sort-package-json: 2.0.0
+      sort-package-json: 2.1.0
       standard-version: 9.5.0
       stylelint: 14.14.1
       stylelint-config-prettier: 9.0.3
@@ -91,7 +91,7 @@ importers:
       rollup-plugin-copy: 3.4.0
       rollup-plugin-dts: 5.0.0_2vm62a3pbtlrlsxizjmuesj26q
       rollup-plugin-esbuild: 4.10.1_b76bwh2xfplsy4n4t42ms6ttgm
-      sort-package-json: 2.0.0
+      sort-package-json: 2.1.0
       standard-version: 9.5.0
       stylelint: 14.14.1
       stylelint-config-prettier: 9.0.3_stylelint@14.14.1
@@ -10608,8 +10608,8 @@ packages:
     resolution: {integrity: sha512-855pvK+VkU7PaKYPc+Jjnmt4EzejQHyhhF33q31qG8x7maDzkeFhAAThdCYay11CISO+qAMwjOBP+fPZe0IPyg==}
     dev: true
 
-  /sort-package-json/2.0.0:
-    resolution: {integrity: sha512-71AZsHsf33oC8Pa0/4/6eo1IufgLfibqxTXTA3bfeicx8gba7kDc5Cofy2YHWrH/cV8nfXSQeMNpGliR07oEHA==}
+  /sort-package-json/2.1.0:
+    resolution: {integrity: sha512-M5ctkdnn7znAkoVQJ0Y+PHDUieyXMhydPyW7r2J9ZM0Iwc3BTyEf5cmoSRfHNo07FEvzWwnphcP7GlrAX164UQ==}
     hasBin: true
     dependencies:
       detect-indent: 7.0.1
