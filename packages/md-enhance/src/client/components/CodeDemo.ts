@@ -1,6 +1,6 @@
 import { computed, defineComponent, h, onMounted, ref } from "vue";
 import { atou } from "vuepress-shared/client";
-import { CODEPEN_SVG, JSFIDDLE_SVG, LOADING_SVG } from "./icons.js";
+import { CODEPEN_SVG, JSFIDDLE_SVG, LoadingIcon } from "./icons.js";
 import { loadNormal, loadReact, loadVue } from "../composables/index.js";
 import {
   injectCSS,
@@ -118,12 +118,7 @@ export default defineComponent({
 
     return (): VNode =>
       h("div", { class: "code-demo-wrapper", id: props.id }, [
-        loaded.value
-          ? null
-          : h("div", {
-              class: ["loading"],
-              innerHTML: LOADING_SVG,
-            }),
+        loaded.value ? null : h("div", { class: "loading" }, h(LoadingIcon)),
         h("div", { class: "code-demo-header" }, [
           code.value.isLegal
             ? h("button", {

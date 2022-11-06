@@ -1,7 +1,7 @@
 import { useEventListener, useDebounceFn } from "@vueuse/core";
 import { atou } from "vuepress-shared/client";
 import { computed, defineComponent, h, onMounted, ref } from "vue";
-import { LOADING_SVG } from "./icons.js";
+import { LoadingIcon } from "./icons.js";
 import presets from "../flowchart-preset/index.js";
 
 import type * as Flowchart from "flowchart.js";
@@ -80,10 +80,7 @@ export default defineComponent({
 
     return (): (VNode | null)[] => [
       loading.value
-        ? h("div", {
-            class: ["flowchart-loading-wrapper"],
-            innerHTML: LOADING_SVG,
-          })
+        ? h("div", { class: "flowchart-loading-wrapper" }, h(LoadingIcon))
         : null,
       h("div", {
         ref: element,

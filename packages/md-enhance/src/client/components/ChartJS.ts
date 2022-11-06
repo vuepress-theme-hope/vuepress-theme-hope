@@ -1,6 +1,6 @@
 import { defineComponent, h, onMounted, ref } from "vue";
 import { atou } from "vuepress-shared/client";
-import { LOADING_SVG } from "./icons.js";
+import { LoadingIcon } from "./icons.js";
 
 import type { ChartConfiguration } from "chart.js";
 import type { PropType, VNode } from "vue";
@@ -61,10 +61,7 @@ export default defineComponent({
         ? h("div", { class: "chart-title" }, decodeURIComponent(props.title))
         : null,
       loading.value
-        ? h("div", {
-            class: "chart-loading-wrapper",
-            innerHTML: LOADING_SVG,
-          })
+        ? h("div", { class: "chart-loading-wrapper" }, h(LoadingIcon))
         : null,
       h(
         "div",

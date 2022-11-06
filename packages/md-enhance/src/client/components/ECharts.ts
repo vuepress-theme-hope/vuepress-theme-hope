@@ -1,7 +1,7 @@
 import { useDebounceFn, useEventListener } from "@vueuse/core";
 import { defineComponent, h, onMounted, onBeforeUnmount, ref } from "vue";
 import { atou } from "vuepress-shared/client";
-import { LOADING_SVG } from "./icons.js";
+import { LoadingIcon } from "./icons.js";
 
 import type { EChartsType, EChartsOption } from "echarts";
 import type { PropType, VNode } from "vue";
@@ -73,10 +73,7 @@ export default defineComponent({
         ? h("div", { class: "echarts-title" }, decodeURIComponent(props.title))
         : null,
       loading.value
-        ? h("div", {
-            class: "echarts-loading-wrapper",
-            innerHTML: LOADING_SVG,
-          })
+        ? h("div", { class: "echarts-loading-wrapper" }, h(LoadingIcon))
         : null,
       h("div", {
         ref: echartsWrapper,
