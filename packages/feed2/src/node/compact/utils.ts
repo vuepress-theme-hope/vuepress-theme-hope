@@ -1,3 +1,4 @@
+import { chalk } from "@vuepress/utils";
 import { logger } from "../utils.js";
 
 export interface DeprecatedLoggerOptions {
@@ -17,9 +18,11 @@ export const deprecatedLogger = ({
 }: DeprecatedLoggerOptions): void => {
   if (deprecatedOption in options) {
     logger.warn(
-      `"${deprecatedOption}" is deprecated${
+      `${chalk.magenta(deprecatedOption)} is ${chalk.yellow("deprecated")}${
         scope ? ` in ${scope}` : ""
-      }, please use "${newOption}" instead.${msg ? `\n${msg}` : ""}`
+      }, please use "${chalk.magenta(newOption)}" instead.${
+        msg ? `\n${msg}` : ""
+      }`
     );
 
     if (newOption.includes(".")) {
@@ -48,9 +51,9 @@ export const droppedLogger = (
 ): void => {
   if (droppedOption in options) {
     logger.error(
-      `"${droppedOption}" is removed${
+      `"${chalk.magenta(droppedOption)}" is ${chalk.red("removed")}${
         newOption
-          ? `, please use ${newOption} instead.`
+          ? `, please use ${chalk.magenta(newOption)} instead.`
           : " and no longer supported"
       }${hint ? `\n${hint}` : ""}`
     );

@@ -21,7 +21,7 @@ import type {
 
 export const checkFrontmatter = (
   page: Page<HopeThemePageData>,
-  isDebug = false
+  isDebug: boolean
 ): void => {
   const frontmatter = page.frontmatter as
     | HopeThemeProjectHomePageFrontmatter
@@ -115,7 +115,7 @@ export const extendsPage = (
   themeConfig: HopeThemeConfig,
   plugins: HopeThemePluginsOptions,
   page: Page<HopeThemePageData>,
-  isDebug = false
+  isDebug: boolean
 ): void => {
   const { config = {} } = themeConfig.encrypt;
   const frontmatter = page.frontmatter as

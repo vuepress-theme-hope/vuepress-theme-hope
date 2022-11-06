@@ -1,4 +1,6 @@
+import { chalk } from "@vuepress/utils";
 import { convertThemeConfig } from "./theme.js";
+import { deprecatedMsg } from "./utils.js";
 import { hopeTheme } from "../theme.js";
 import { logger } from "../utils.js";
 
@@ -12,65 +14,78 @@ import type {
 } from "../../shared/index.js";
 
 /**
- * @deprecated use `navbar` instead
+ * import and use `hopeTheme` instead
+ *
+ * @description This function will be removed in v2 future release and is only available before v2 touch stable
+ */
+export const hopeThemeLegacy = (themeOptions: HopeThemeOptions) =>
+  hopeTheme(themeOptions, true);
+
+/**
+ * @deprecated use `import { navbar } from "vuepress-theme-hope";` instead
  */
 export const defineNavbarConfig = (
   config: HopeThemeNavbarConfig
 ): HopeThemeNavbarConfig => {
-  logger.warn(
-    '"defineNavbarConfig" is deprecated, please import and use "navbar" from vuepress-theme-hope instead.'
+  deprecatedMsg(
+    "defineNavbarConfig",
+    'import { navbar } from "vuepress-theme-hope";'
   );
 
   return config;
 };
 
 /**
- * @deprecated use `sidebar` instead
+ * @deprecated use `import { sidebar } from "vuepress-theme-hope";` instead
  */
 export const defineSidebarConfig = (
   config: HopeThemeSidebarConfig
 ): HopeThemeSidebarConfig => {
-  logger.warn(
-    '"defineSidebarConfig" is deprecated, please import and use "sidebar" from vuepress-theme-hope instead.'
+  deprecatedMsg(
+    "defineSidebarConfig",
+    'import { sidebar } from "vuepress-theme-hope";'
   );
 
   return config;
 };
 
 /**
- * @deprecated use `arraySidebar` instead
+ * @deprecated use `import { arraySidebar } from "vuepress-theme-hope";` instead
  */
 export const defineSidebarArrayConfig = (
   config: HopeThemeSidebarArrayConfig
 ): HopeThemeSidebarArrayConfig => {
-  logger.warn(
-    '"defineSidebarArrayConfig" is deprecated, please import and use "arraySidebar" from vuepress-theme-hope instead.'
+  deprecatedMsg(
+    "defineSidebarArrayConfig",
+    'import { arraySidebar } from "vuepress-theme-hope";'
   );
 
   return config;
 };
 
 /**
- * @deprecated use `objectSidebar` instead
+ * @deprecated use `import { objectSidebar } from "vuepress-theme-hope";` instead
  */
 export const defineSidebarObjectConfig = (
   config: HopeThemeSidebarObjectConfig
 ): HopeThemeSidebarObjectConfig => {
-  logger.warn(
-    '"defineSidebarObjectConfig" is deprecated, please import and use "objectSidebar" from vuepress-theme-hope instead.'
+  deprecatedMsg(
+    "defineSidebarObjectConfig",
+    'import { objectSidebar } from "vuepress-theme-hope";'
   );
 
   return config;
 };
 
 /**
- * @deprecated import and use `hopeTheme` instead
+ * @deprecated use `import { hopeThemeLegacy } from "vuepress-theme-hope";` instead
  */
 export const defineThemeConfig = (
   themeConfig: HopeThemeOptions
 ): HopeThemeOptions => {
-  logger.warn(
-    '"defineThemeConfig" is deprecated, please import "hopeTheme" from vuepress-theme-hope and use "theme : hopeTheme(themeConfig)" instead.'
+  deprecatedMsg(
+    "defineThemeConfig",
+    'import { hopeThemeLegacy } from "vuepress-theme-hope";'
   );
 
   return convertThemeConfig(
@@ -85,20 +100,35 @@ export const defineHopeConfig = (
   config: UserConfig & Record<string, unknown>
 ): UserConfig => {
   logger.warn(
-    '"defineHopeConfig" is deprecated, please import "hopeTheme" from vuepress-theme-hope and use "theme : hopeTheme(themeConfig)" instead.'
+    `\
+"${chalk.magenta("defineHopeConfig")}" is ${chalk.red(
+      "deprecated"
+    )}, please use the following code instead:
+
+${chalk.magenta(`\
+import { defineUserConfig } from "vuepress";
+import { hopeThemeLegacy } from "vuepress-theme-hope";
+
+export default {
+  // site config
+  // ...
+
+  theme : hopeThemeLegacy({
+    // theme config
+    // ...
+  }),
+};
+`)}
+`
   );
 
   // check themeConfig
   if ("themeConfig" in config && typeof config["themeConfig"] === "object") {
-    config.theme = hopeTheme(config["themeConfig"] as HopeThemeOptions, true);
-
-    logger.warn(
-      '"themeConfig" is deprecated, please import "hopeTheme" from vuepress-theme-hope and use "theme : hopeTheme(themeConfig)" instead.'
-    );
+    config.theme = hopeThemeLegacy(config["themeConfig"] as HopeThemeOptions);
   }
 
   // check theme
-  if (typeof config.theme !== "function") config.theme = hopeTheme({});
+  if (typeof config.theme !== "function") config.theme = hopeThemeLegacy({});
 
   return config;
 };
