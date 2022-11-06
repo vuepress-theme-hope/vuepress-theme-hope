@@ -120,7 +120,7 @@ tag:
 
 - [Поддержка PWA](advanced/pwa.md)
 
-- [Генерация фида](advanced/feed.md)
+- [Генерация потока](advanced/feed.md)
 
 - [SEO-улучшение](advanced/seo.md)
 
@@ -140,7 +140,7 @@ tag:
 
 - [vuepress-plugin-copyright2][copyright2]: Добавляет информацию об авторских правах при копировании или отключении копирования и выбора
 
-- [vuepress-plugin-feed2][feed2]: Поддержка фидов
+- [vuepress-plugin-feed2][feed2]: Поддержка потоков
 
 - [vuepress-plugin-md-enhance][md-enhance]: Предоставляет больше синтаксиса Markdown
 
