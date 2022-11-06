@@ -99,7 +99,9 @@ export default defineComponent({
       isDarkmode.value = getDarkmodeStatus();
 
       void Promise.all([
-        import(/* webpackChunkName: "mermaid" */ "mermaid"),
+        import(
+          /* webpackChunkName: "mermaid" */ "mermaid/dist/mermaid.esm.mjs"
+        ),
         new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
       ]).then(([{ default: mermaid }]) => {
         const { initialize, renderAsync } = mermaid;
