@@ -18,8 +18,9 @@ Available components:
 - FontIcon
 - PDF
 - StackBlitz
-
-By default, `<Badge />` and `<CodePen />` is enabled.
+- VideoPlayer
+- YouTube
+  By default, `<Badge />` and `<FontIcon />` is enabled.
 
 To enable components, you should set `plugin.components` with an array of components name.
 

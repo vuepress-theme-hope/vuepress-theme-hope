@@ -18,8 +18,10 @@ tag:
 - FontIcon
 - PDF
 - StackBlitz
+- VideoPlayer
+- YouTube
 
-По умолчанию `<Badge />` и `<CodePen />` включены.
+По умолчанию `<Badge />` и `<FontIcon />` включены.
 
 Чтобы включить компоненты, вы должны установить `plugin.components` с массивом имен компонентов.
 

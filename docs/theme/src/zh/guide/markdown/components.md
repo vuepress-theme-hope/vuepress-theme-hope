@@ -18,8 +18,10 @@ tag:
 - FontIcon
 - PDF
 - StackBlitz
+- VideoPlayer
+- YouTube
 
-默认情况下，`<Badge />` 和 `<CodePen />` 是启用的。
+默认情况下，`<Badge />` 和 `<FontIcon />` 是启用的。
 
 要启用组件，你应该使用组件名称数组设置 `plugin.components`。
 
