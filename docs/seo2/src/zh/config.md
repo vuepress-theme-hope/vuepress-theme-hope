@@ -40,7 +40,7 @@ type Author = string | string[] | AuthorInfo | AuthorInfo[];
 - 类型: `string | ((page: Page) => string | null)`
 - 必填: 否
 
-首选连接
+首选链接
 
 ### fallBackImage
 

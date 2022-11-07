@@ -127,7 +127,7 @@ Page order in sidebar.
 
 ::: note
 
-设置为 `true` 意味着将分组连接设置为 README.md 链接。
+设置为 `true` 意味着将分组链接设置为 README.md 链接。
 
 :::
 

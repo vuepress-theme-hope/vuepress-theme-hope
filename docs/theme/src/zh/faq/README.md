@@ -25,7 +25,7 @@ category:
 
 如果你确定某处有问题，请在 GitHub 上 [open an issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/new/choose) 并指出问题的具体细节。
 
-必要时，请提供一个 最小复现 Repo[^minimal-reproduction-repo] 连接。
+必要时，请提供一个 最小复现 Repo[^minimal-reproduction-repo] 链接。
 
 [^minimal-reproduction-repo]: 最小复现 Repo 的基本思想是使用最少的代码和配置来触发丢失或错误的行为。最小复现 Repo 使开发人员更容易查看错误或缺失功能的位置，并验证新代码是否满足要求。
 
