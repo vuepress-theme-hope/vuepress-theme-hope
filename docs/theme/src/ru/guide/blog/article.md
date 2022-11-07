@@ -31,9 +31,9 @@ tag:
 
 :::
 
-## выдержка
+## Выдержка
 
-If you want to add a excerpt for article, you can use `<!-- more-->` comment to mark it. All contents before the comment will be regarded as excerpt. Also, you can specific it with `excerpt` in frontmatter with a HTML string.
+Если вы хотите добавить отрывок к статье, вы можете использовать комментарий `<!-- more-->`, чтобы пометить его. Все содержимое до комментария будет считаться выдержкой. Кроме того, вы можете указать его с помощью `excerpt` во вступительном слове со строкой HTML.
 
 ::: info Авто выдержка
 
