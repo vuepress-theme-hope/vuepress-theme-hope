@@ -104,7 +104,7 @@ tag:
   interface HopeThemeSidebarGroupItem extends TextItem {
     prefix?: string;
     link?: string;
-    collapsable?: boolean;
+    collapsible?: boolean;
     children: (
       | HopeThemeSidebarPageItem
       | HopeThemeSidebarGroupItem
@@ -116,7 +116,7 @@ tag:
   interface HopeThemeSidebarStructureItem extends TextItem {
     prefix: string;
     link?: string;
-    collapsable?: boolean;
+    collapsible?: boolean;
     children: "structure";
   }
 

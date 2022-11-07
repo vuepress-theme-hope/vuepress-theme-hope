@@ -7,7 +7,7 @@
     }
   }
 
-  &:not(.collapsable) {
+  &:not(.collapsible) {
     .sidebar-heading:not(.clickable) {
       color: inherit;
       cursor: auto;

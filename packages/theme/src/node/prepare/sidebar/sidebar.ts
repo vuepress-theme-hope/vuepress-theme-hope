@@ -71,9 +71,9 @@ const getInfo = (
                       page.frontmatter.shortTitle ||
                       page.title,
                     icon: dirInfo?.icon || page.frontmatter.icon,
-                    collapsable:
-                      dirInfo && "collapsable" in dirInfo
-                        ? dirInfo.collapsable
+                    collapsible:
+                      dirInfo && "collapsible" in dirInfo
+                        ? dirInfo.collapsible
                         : true,
                     ...(dirInfo?.link ? { link: page.path } : {}),
                     prefix: dirname,

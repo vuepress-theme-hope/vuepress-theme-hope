@@ -150,7 +150,7 @@ export default {
 
 如果你需要展示嵌套结构的侧边栏，你可以将同类链接整理成菜单分组。
 
-你需要使用 [对象格式](#对象格式) ，并提供额外的 `children` 选项设置链接列表。和导航栏一样，你可以在侧边栏中使用 `prefix` 来为组内的每个链接添加默认的路径前缀，并且侧边栏额外支持设置 `collapsable: true` 来使菜单分组可折叠。
+你需要使用 [对象格式](#对象格式) ，并提供额外的 `children` 选项设置链接列表。和导航栏一样，你可以在侧边栏中使用 `prefix` 来为组内的每个链接添加默认的路径前缀，并且侧边栏额外支持设置 `collapsible: true` 来使菜单分组可折叠。
 
 ::: code-tabs#language
 
@@ -174,7 +174,7 @@ export default defineUserConfig({
         // 可选的，会添加到每个 item 链接地址之前
         prefix: "/foo/",
         // 可选的, 设置分组是否可以折叠，默认值是 false,
-        collapsable: true,
+        collapsible: true,
         // 必要的，分组的子项目
         children: [
           "README.md" /* /foo/index.html */,
@@ -214,7 +214,7 @@ export default {
         // 可选的，会添加到每个 item 链接地址之前
         prefix: "/foo/",
         // 可选的, 设置分组是否可以折叠，默认值是 false,
-        collapsable: true,
+        collapsible: true,
         // 必要的，分组的子项目
         children: [
           "README.md" /* /foo/index.html */,
@@ -682,7 +682,7 @@ interface SidebarDirInfo {
    * @default true
    */
 
-  collapsable?: boolean;
+  collapsible?: boolean;
 
   /**
    * 目录是否可点击
@@ -1008,7 +1008,7 @@ export default sidebar({
       text: "Markdown",
       icon: "markdown",
       prefix: "markdown/",
-      collapsable: true,
+      collapsible: true,
       children: [
         "",
         "demo",
@@ -1017,7 +1017,7 @@ export default sidebar({
           icon: "emoji",
           link: "emoji/",
           prefix: "emoji/",
-          collapsable: true,
+          collapsible: true,
           children: "structure",
         },
       ],
@@ -1026,14 +1026,14 @@ export default sidebar({
       text: "VuePress",
       icon: "vue",
       prefix: "vuepress/",
-      collapsable: true,
+      collapsible: true,
       children: ["", "file", "markdown", "config", "plugin", "theme"],
     },
     {
       text: "高级",
       icon: "advance",
       prefix: "advanced/",
-      collapsable: true,
+      collapsible: true,
       children: ["component", "style", "replace", "extend"],
     },
   ],

@@ -156,7 +156,7 @@ tag:
       prefix: string;
       text: string;
       icon?: string;
-      collapsable?: boolean;
+      collapsible?: boolean;
       link?: string;
     };
     children: HopeThemeSidebarInfo[];

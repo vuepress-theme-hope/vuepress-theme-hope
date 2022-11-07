@@ -111,7 +111,7 @@ Page order in sidebar.
 
 分组图标。
 
-### dir.collapsable
+### dir.collapsible
 
 - 类型: `boolean`
 - 默认值: `true`

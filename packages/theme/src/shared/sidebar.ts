@@ -5,7 +5,7 @@ export type HopeThemeSidebarPageItem = AutoLink;
 export interface HopeThemeSidebarGroupItem extends TextItem {
   prefix?: string;
   link?: string;
-  collapsable?: boolean;
+  collapsible?: boolean;
   children: (
     | HopeThemeSidebarPageItem
     | HopeThemeSidebarGroupItem
@@ -17,7 +17,7 @@ export interface HopeThemeSidebarGroupItem extends TextItem {
 export interface HopeThemeSidebarStructureItem extends TextItem {
   prefix: string;
   link?: string;
-  collapsable?: boolean;
+  collapsible?: boolean;
   children: "structure";
 }
 

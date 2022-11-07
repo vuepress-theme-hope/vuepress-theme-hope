@@ -108,12 +108,12 @@ Group title.
 
 Group icon.
 
-### dir.collapsable
+### dir.collapsible
 
 - Type: `boolean`
 - Default: `true`
 
-Whether group is collapsable
+Whether group is collapsible
 
 ### dir.link
 

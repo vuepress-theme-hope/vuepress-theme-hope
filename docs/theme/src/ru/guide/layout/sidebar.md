@@ -150,7 +150,7 @@ export default {
 
 Если вам нужна боковая панель, отображающая вложенную структуру, вы можете сгруппировать похожие ссылки.
 
-Вы должны использовать [формат объекта](#формат-объекта) и предоставить дополнительную опцию `children` для установки списка ссылок. Как и в навигационной панели, вы можете использовать `prefix` на боковой панели, чтобы добавить префикс пути по умолчанию к каждой ссылке в группе, а боковая панель дополнительно поддерживает установку `collapsable: true`, чтобы сделать группу меню сворачиваемой.
+Вы должны использовать [формат объекта](#формат-объекта) и предоставить дополнительную опцию `children` для установки списка ссылок. Как и в навигационной панели, вы можете использовать `prefix` на боковой панели, чтобы добавить префикс пути по умолчанию к каждой ссылке в группе, а боковая панель дополнительно поддерживает установку `collapsible: true`, чтобы сделать группу меню сворачиваемой.
 
 ::: code-tabs#language
 
@@ -174,7 +174,7 @@ export default defineUserConfig({
         // optional, will be appended to each item link
         prefix: "/foo/",
         // optional, defaults to false
-        collapsable: false,
+        collapsible: false,
         // required, items of group
         children: [
           "README.md" /* /foo/index.html */,
@@ -214,7 +214,7 @@ export default {
         // optional, will be appended to each item link
         prefix: "/foo/",
         // optional, defaults to false
-        collapsable: false,
+        collapsible: false,
         // required, items of group
         children: [
           "README.md" /* /foo/index.html */,
@@ -689,7 +689,7 @@ interface SidebarDirInfo {
    * @default true
    */
 
-  collapsable?: boolean;
+  collapsible?: boolean;
 
   /**
    * Whether the directory is clickable
@@ -1012,7 +1012,7 @@ export default sidebar({
       text: "Markdown",
       icon: "markdown",
       prefix: "markdown/",
-      collapsable: true,
+      collapsible: true,
       children: [
         "",
         "demo",
@@ -1021,7 +1021,7 @@ export default sidebar({
           icon: "emoji",
           link: "emoji/",
           prefix: "emoji/",
-          collapsable: true,
+          collapsible: true,
           children: "structure",
         },
       ],
@@ -1030,14 +1030,14 @@ export default sidebar({
       text: "VuePress",
       icon: "vue",
       prefix: "vuepress/",
-      collapsable: true,
+      collapsible: true,
       children: ["", "page", "markdown", "file", "config", "plugin", "theme"],
     },
     {
       text: "Advanced",
       icon: "advance",
       prefix: "advanced/",
-      collapsable: true,
+      collapsible: true,
       children: ["component", "style", "replace", "extend"],
     },
   ],

@@ -33,7 +33,7 @@ export default defineComponent({
 
     return (): VNode => {
       const {
-        collapsable,
+        collapsible,
         children = [],
         icon,
         prefix,
@@ -43,17 +43,17 @@ export default defineComponent({
 
       return h("section", { class: "sidebar-group" }, [
         h(
-          collapsable ? "button" : "p",
+          collapsible ? "button" : "p",
           {
             class: [
               "sidebar-heading",
               {
-                clickable: collapsable || link,
+                clickable: collapsible || link,
                 exact: exact.value,
                 active: active.value,
               },
             ],
-            ...(collapsable
+            ...(collapsible
               ? {
                   onClick: () => emit("toggle"),
                   onKeydown: (event: KeyboardEvent): void => {
@@ -70,13 +70,13 @@ export default defineComponent({
               ? h(RouterLink, { to: link, class: "title" }, () => text)
               : h("span", { class: "title" }, text),
             // arrow
-            collapsable
+            collapsible
               ? h("span", { class: ["arrow", props.open ? "down" : "right"] })
               : null,
           ]
         ),
 
-        props.open || !collapsable
+        props.open || !collapsible
           ? h(SidebarLinks, { key: prefix, config: children })
           : null,
       ]);

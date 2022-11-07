@@ -62,14 +62,14 @@ export interface HopeThemeNormalPageFrontmatter
     icon?: string;
 
     /**
-     * Whether Dir is collapsable
+     * Whether Dir is collapsible
      *
      * 目录是否可折叠
      *
      * @default true
      */
 
-    collapsable?: boolean;
+    collapsible?: boolean;
 
     /**
      * Whether Dir is clickable
