@@ -31,6 +31,11 @@ category:
 - [网站链接][dynamic-tp]
 - [源码地址](https://github.com/dromara/dynamic-tp/tree/master/docs)
 
+### 小佟の学习笔记
+
+* [网站链接](https://xt-gitee.gitee.io/notes/)
+* [源码地址](https://gitee.com/xt-gitee/notes)
+
 ### JavaGuide
 
 - [网站链接][java-guide]
