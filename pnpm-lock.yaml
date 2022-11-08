@@ -31,7 +31,7 @@ importers:
       eslint-plugin-prettier: 4.2.1
       eslint-plugin-vue: 9.7.0
       execa: 6.1.0
-      husky: 8.0.1
+      husky: 8.0.2
       inquirer: 9.1.4
       magic-string: 0.26.7
       markdownlint-cli: 0.32.2
@@ -78,7 +78,7 @@ importers:
       eslint-plugin-prettier: 4.2.1_v7o5sx5x3wbs57ifz6wc4f76we
       eslint-plugin-vue: 9.7.0_eslint@8.27.0
       execa: 6.1.0
-      husky: 8.0.1
+      husky: 8.0.2
       inquirer: 9.1.4
       magic-string: 0.26.7
       markdownlint-cli: 0.32.2
@@ -7724,8 +7724,8 @@ packages:
       ms: 2.1.3
     dev: true
 
-  /husky/8.0.1:
-    resolution: {integrity: sha512-xs7/chUH/CKdOCs7Zy0Aev9e/dKOMZf3K1Az1nar3tzlv0jfqnYtu235bstsWTmXOR0EfINrPa97yy4Lz6RiKw==}
+  /husky/8.0.2:
+    resolution: {integrity: sha512-Tkv80jtvbnkK3mYWxPZePGFpQ/tT3HNSs/sasF9P2YfkMezDl3ON37YN6jUUI4eTg5LcyVynlb6r4eyvOmspvg==}
     engines: {node: '>=14'}
     hasBin: true
     dev: true
