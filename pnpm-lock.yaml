@@ -13,7 +13,7 @@ importers:
       '@commitlint/config-conventional': 17.2.0
       '@rollup/plugin-commonjs': 23.0.2
       '@rollup/plugin-node-resolve': 15.0.1
-      '@types/inquirer': 9.0.2
+      '@types/inquirer': 9.0.3
       '@types/node': 18.11.9
       '@typescript-eslint/eslint-plugin': 5.42.0
       '@typescript-eslint/parser': 5.42.0
@@ -60,7 +60,7 @@ importers:
       '@commitlint/config-conventional': 17.2.0
       '@rollup/plugin-commonjs': 23.0.2_rollup@3.2.5
       '@rollup/plugin-node-resolve': 15.0.1_rollup@3.2.5
-      '@types/inquirer': 9.0.2
+      '@types/inquirer': 9.0.3
       '@types/node': 18.11.9
       '@typescript-eslint/eslint-plugin': 5.42.0_3w4pgp7t2frixi5l37xnsiadhy
       '@typescript-eslint/parser': 5.42.0_2uhzae5rel2qyw7fhfmxrmdt3q
@@ -902,7 +902,7 @@ importers:
 
   packages/create:
     specifiers:
-      '@types/inquirer': 9.0.2
+      '@types/inquirer': 9.0.3
       cac: 6.7.14
       execa: 6.1.0
       inquirer: 9.1.4
@@ -912,7 +912,7 @@ importers:
       execa: 6.1.0
       inquirer: 9.1.4
     devDependencies:
-      '@types/inquirer': 9.0.2
+      '@types/inquirer': 9.0.3
       rimraf: 3.0.2
 
   packages/feed2:
@@ -3228,8 +3228,8 @@ packages:
     dependencies:
       '@types/node': 18.11.9
 
-  /@types/inquirer/9.0.2:
-    resolution: {integrity: sha512-MQc3adiIh/rDxLkjnvL03rSvuHg+/dKif4dn/MRsnE+oU1bAdyuDbW0w+ewR1M/M/u/Z0YAbw7NZYCpgQ5SW8A==}
+  /@types/inquirer/9.0.3:
+    resolution: {integrity: sha512-CzNkWqQftcmk2jaCWdBTf9Sm7xSw4rkI1zpU/Udw3HX5//adEZUIm9STtoRP1qgWj0CWQtJ9UTvqmO2NNjhMJw==}
     dependencies:
       '@types/through': 0.0.30
       rxjs: 7.5.7
