@@ -17,7 +17,7 @@ importers:
       '@types/node': 18.11.9
       '@typescript-eslint/eslint-plugin': 5.42.0
       '@typescript-eslint/parser': 5.42.0
-      '@vitest/coverage-c8': 0.24.5
+      '@vitest/coverage-c8': 0.25.0
       '@vue/eslint-config-typescript': 11.0.2
       bumpp: 8.2.1
       commitizen: 4.2.5
@@ -54,7 +54,7 @@ importers:
       ts-node: 10.9.1
       tslib: 2.4.1
       typescript: 4.7.4
-      vitest: 0.24.5
+      vitest: 0.25.0
     devDependencies:
       '@commitlint/cli': 17.2.0
       '@commitlint/config-conventional': 17.2.0
@@ -64,7 +64,7 @@ importers:
       '@types/node': 18.11.9
       '@typescript-eslint/eslint-plugin': 5.42.0_3w4pgp7t2frixi5l37xnsiadhy
       '@typescript-eslint/parser': 5.42.0_2uhzae5rel2qyw7fhfmxrmdt3q
-      '@vitest/coverage-c8': 0.24.5
+      '@vitest/coverage-c8': 0.25.0
       '@vue/eslint-config-typescript': 11.0.2_qyjznpwebazwkjejbnritmft4e
       bumpp: 8.2.1
       commitizen: 4.2.5
@@ -101,7 +101,7 @@ importers:
       ts-node: 10.9.1_vq46kxj6zfka4f6ijsosnft3hy
       tslib: 2.4.1
       typescript: 4.7.4
-      vitest: 0.24.5
+      vitest: 0.25.0
 
   demo/blog2:
     specifiers:
@@ -3508,11 +3508,11 @@ packages:
       vite: 3.1.8
       vue: 3.2.41
 
-  /@vitest/coverage-c8/0.24.5:
-    resolution: {integrity: sha512-955yK/SdSBZPYrSXgXB0F+0JnOX5EY9kSL7ywJ4rNajmkFUhwLjuKm13Xb6YKSyIY/g5WvbBnyowqfNRxBJ3ww==}
+  /@vitest/coverage-c8/0.25.0:
+    resolution: {integrity: sha512-rAeekiideYYvuHk0/nfMvlPiJhyeE9oFFL/Zxp5ZvRF3p2AvQaj8Z6Na//08lIxvm6oi9rDijdkYE0CFMtT7uA==}
     dependencies:
       c8: 7.12.0
-      vitest: 0.24.5
+      vitest: 0.25.0
     transitivePeerDependencies:
       - '@edge-runtime/vm'
       - '@vitest/browser'
@@ -11714,8 +11714,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitest/0.24.5:
-    resolution: {integrity: sha512-zw6JhPUHtLILQDe5Q39b/SzoITkG+R7hcFjuthp4xsi6zpmfQPOZcHodZ+3bqoWl4EdGK/p1fuMiEwdxgbGLOA==}
+  /vitest/0.25.0:
+    resolution: {integrity: sha512-CVgBdKSeA27mowKC/C31Tx7ZBjRoyasq/yW7zoqUaCdKaOsjdzRUH5KgSL3eG36DzaaUsbnwWPUbAOtFz5k6tQ==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
     peerDependencies:
@@ -11739,9 +11739,12 @@ packages:
       '@types/chai': 4.3.3
       '@types/chai-subset': 1.3.3
       '@types/node': 18.11.9
+      acorn: 8.8.1
+      acorn-walk: 8.2.0
       chai: 4.3.6
       debug: 4.3.4
       local-pkg: 0.4.2
+      source-map: 0.6.1
       strip-literal: 0.4.2
       tinybench: 2.3.1
       tinypool: 0.3.0
