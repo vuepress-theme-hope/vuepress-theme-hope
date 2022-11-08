@@ -43,7 +43,7 @@ importers:
       rollup: 3.2.5
       rollup-plugin-copy: 3.4.0
       rollup-plugin-dts: 5.0.0
-      rollup-plugin-esbuild: 4.10.2
+      rollup-plugin-esbuild: 4.10.3
       sort-package-json: 2.1.0
       standard-version: 9.5.0
       stylelint: 14.14.1
@@ -90,7 +90,7 @@ importers:
       rollup: 3.2.5
       rollup-plugin-copy: 3.4.0
       rollup-plugin-dts: 5.0.0_2vm62a3pbtlrlsxizjmuesj26q
-      rollup-plugin-esbuild: 4.10.2_b76bwh2xfplsy4n4t42ms6ttgm
+      rollup-plugin-esbuild: 4.10.3_b76bwh2xfplsy4n4t42ms6ttgm
       sort-package-json: 2.1.0
       standard-version: 9.5.0
       stylelint: 14.14.1
@@ -3035,6 +3035,14 @@ packages:
       estree-walker: 1.0.1
       picomatch: 2.3.1
       rollup: 2.79.1
+
+  /@rollup/pluginutils/4.2.1:
+    resolution: {integrity: sha512-iKnFXr7NkdZAIHiIWE+BX5ULi/ucVFYWD6TbAV+rZctiRTY2PL6tsIKhoIOaoskiWAkgu+VsbXgUVDNLHf+InQ==}
+    engines: {node: '>= 8.0.0'}
+    dependencies:
+      estree-walker: 2.0.2
+      picomatch: 2.3.1
+    dev: true
 
   /@rollup/pluginutils/5.0.2_rollup@3.2.5:
     resolution: {integrity: sha512-pTd9rIsP92h+B6wWwFbW8RkZv4hiR/xKsqre4SIuAOaOEQRxi0lqLke9k2/7WegC85GgUs9pjmOjCUi3In4vwA==}
@@ -6348,10 +6356,6 @@ packages:
 
   /es-module-lexer/0.9.3:
     resolution: {integrity: sha512-1HQ2M2sPtxwnvOvT1ZClHyQDiggdNjURWpY2we6aMKCQiUVxTmVs2UYPLIrD84sS+kMdUwfBSylbJPwNnBrnHQ==}
-
-  /es-module-lexer/1.1.0:
-    resolution: {integrity: sha512-fJg+1tiyEeS8figV+fPcPpm8WqJEflG3yPU0NOm5xMvrNkuiy7HzX/Ljng4Y0hAoiw4/3hQTCFYw+ub8+a2pRA==}
-    dev: true
 
   /es-to-primitive/1.2.1:
     resolution: {integrity: sha512-QCOllgZJtaUo9miYBcLChTUaHNjJF3PYs1VidD7AwiEj1kYxKeQTctLAezAOH5ZKRH0g2IgPn6KwB4IT8iRpvA==}
@@ -10229,16 +10233,16 @@ packages:
       '@babel/code-frame': 7.18.6
     dev: true
 
-  /rollup-plugin-esbuild/4.10.2_b76bwh2xfplsy4n4t42ms6ttgm:
-    resolution: {integrity: sha512-OPrBgdN1ZC2zQvq/rm5Zvzpb0Rez7zbbVJ+1b5Az//kLlfhwR1mqOP3wAhkg9sn5nF7p+97p55TORE0RNXzNcw==}
-    engines: {node: '>=14.18.0', npm: '>=8.0.0'}
+  /rollup-plugin-esbuild/4.10.3_b76bwh2xfplsy4n4t42ms6ttgm:
+    resolution: {integrity: sha512-RILwUCgnCL5vo8vyZ/ZpwcqRuE5KmLizEv6BujBQfgXFZ6ggcS0FiYvQN+gsTJfWCMaU37l0Fosh4eEufyO97Q==}
+    engines: {node: '>=12'}
     peerDependencies:
       esbuild: '>=0.10.1'
-      rollup: ^1.20.0 || ^2.0.0 || ^3.0.0
+      rollup: ^1.20.0 || ^2.0.0
     dependencies:
-      '@rollup/pluginutils': 5.0.2_rollup@3.2.5
+      '@rollup/pluginutils': 4.2.1
       debug: 4.3.4
-      es-module-lexer: 1.1.0
+      es-module-lexer: 0.9.3
       esbuild: 0.15.13
       joycon: 3.1.1
       jsonc-parser: 3.2.0
