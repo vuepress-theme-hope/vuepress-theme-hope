@@ -28,7 +28,7 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@types/three": "0.144.0",
+    "@types/three": "0.146.0",
     "@vuepress/cli": "2.0.0-beta.53",
     "@vuepress/client": "2.0.0-beta.53",
     "@vuepress/core": "2.0.0-beta.53",
