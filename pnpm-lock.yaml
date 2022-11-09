@@ -43,7 +43,7 @@ importers:
       rollup: 3.2.5
       rollup-plugin-copy: 3.4.0
       rollup-plugin-dts: 5.0.0
-      rollup-plugin-esbuild: 4.10.2
+      rollup-plugin-esbuild: 5.0.0
       sort-package-json: 2.1.0
       standard-version: 9.5.0
       stylelint: 14.14.1
@@ -90,7 +90,7 @@ importers:
       rollup: 3.2.5
       rollup-plugin-copy: 3.4.0
       rollup-plugin-dts: 5.0.0_2vm62a3pbtlrlsxizjmuesj26q
-      rollup-plugin-esbuild: 4.10.2_b76bwh2xfplsy4n4t42ms6ttgm
+      rollup-plugin-esbuild: 5.0.0_b76bwh2xfplsy4n4t42ms6ttgm
       sort-package-json: 2.1.0
       standard-version: 9.5.0
       stylelint: 14.14.1
@@ -10229,8 +10229,8 @@ packages:
       '@babel/code-frame': 7.18.6
     dev: true
 
-  /rollup-plugin-esbuild/4.10.2_b76bwh2xfplsy4n4t42ms6ttgm:
-    resolution: {integrity: sha512-OPrBgdN1ZC2zQvq/rm5Zvzpb0Rez7zbbVJ+1b5Az//kLlfhwR1mqOP3wAhkg9sn5nF7p+97p55TORE0RNXzNcw==}
+  /rollup-plugin-esbuild/5.0.0_b76bwh2xfplsy4n4t42ms6ttgm:
+    resolution: {integrity: sha512-1cRIOHAPh8WQgdQQyyvFdeOdxuiyk+zB5zJ5+YOwrZP4cJ0MT3Fs48pQxrZeyZHcn+klFherytILVfE4aYrneg==}
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
     peerDependencies:
       esbuild: '>=0.10.1'
