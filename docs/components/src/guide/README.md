@@ -30,6 +30,6 @@ This plugin can register 8 components and 2 global components:
 
 - [StackBlitz](stackblitz.md)
 
-- [Video Player](videoplayer.md)
+- [VideoPlayer](videoplayer.md)
 
 - [YouTube](youtube.md)

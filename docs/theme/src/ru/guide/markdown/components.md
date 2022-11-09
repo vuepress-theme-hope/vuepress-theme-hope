@@ -238,7 +238,7 @@ tag:
 />
 ```
 
-Смотрите страницу [Video Player][videoplayer] для доступных свойств.
+Смотрите страницу [VideoPlayer][videoplayer] для доступных свойств.
 
 ## YouTube
 

@@ -30,6 +30,6 @@ title: 指南
 
 - [StackBlitz](stackblitz.md)
 
-- [Video Player](videoplayer.md)
+- [VideoPlayer](videoplayer.md)
 
 - [YouTube](youtube.md)

@@ -237,7 +237,7 @@ A video player with tracks and poster:
 />
 ```
 
-See [Video Player][videoplayer] page for available props.
+See [VideoPlayer][videoplayer] page for available props.
 
 ## YouTube
 

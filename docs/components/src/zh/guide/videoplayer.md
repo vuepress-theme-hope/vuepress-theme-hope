@@ -1,5 +1,5 @@
 ---
-title: Video Player
+title: VideoPlayer
 ---
 
 在 Markdown 文件中嵌入视频。

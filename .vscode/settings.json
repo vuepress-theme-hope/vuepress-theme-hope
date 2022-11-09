@@ -105,7 +105,5 @@
     "vmatrix"
   ],
   "markdown.validate.enabled": true,
-  "yaml.schemas": {
-    "https://json.schemastore.org/github-issue-config.json": "file:///home/mister-hope/projects/vuepress-theme-hope/.github/ISSUE_TEMPLATE/config.yml"
-  }
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

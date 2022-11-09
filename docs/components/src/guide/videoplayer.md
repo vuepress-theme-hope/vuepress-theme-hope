@@ -1,5 +1,5 @@
 ---
-title: Video Player
+title: VideoPlayer
 ---
 
 Embed videos in Markdown files.
