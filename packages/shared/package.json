@@ -55,7 +55,7 @@
     "execa": "^6.1.0",
     "fflate": "^0.7.4",
     "ora": "^6.1.2",
-    "vue": "^3.2.41",
+    "vue": "^3.2.43",
     "vue-router": "^4.1.6"
   },
   "devDependencies": {

@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "build": "cross-env NODE_ENV=production pnpm run --stream -r build",
-    "build:nobundle": "concurrently \"tsc -b tsconfig.build.json\" \"pnpm run copy\"",
+    "build:no-bundle": "concurrently \"tsc -b tsconfig.build.json\" \"pnpm run copy\"",
     "clean": "pnpm run --stream -r clean",
     "commit": "pnpm git-cz",
     "copy": "pnpm run --parallel -r copy",
@@ -79,7 +79,7 @@
     "sort-package-json": "2.1.0",
     "standard-version": "9.5.0",
     "stylelint": "14.14.1",
-    "stylelint-config-prettier": "9.0.3",
+    "stylelint-config-prettier": "9.0.4",
     "stylelint-config-standard": "29.0.0",
     "stylelint-config-standard-scss": "6.1.0",
     "stylelint-order": "5.0.0",
