@@ -42,7 +42,9 @@ files.forEach((pkgName) => {
       },
       type: "module",
       exports: {
+        // eslint-disable-next-line @typescript-eslint/naming-convention
         ".": "./lib/node/index.js",
+        // eslint-disable-next-line @typescript-eslint/naming-convention
         "./package.json": "./package.json",
       },
       main: "lib/node/index.js",
@@ -52,6 +54,7 @@ files.forEach((pkgName) => {
         build: "rollup -c",
         clean: "rimraf ./lib ./*.tsbuildinfo",
         dev: "pnpm dev:ts",
+        // eslint-disable-next-line @typescript-eslint/naming-convention
         "dev:ts": "tsc -b tsconfig.build.json --watch",
       },
       publishConfig: {

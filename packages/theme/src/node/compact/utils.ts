@@ -62,10 +62,13 @@ export const droppedLogger = (
   }
 };
 
-export const deprecatedMsg = (deprecatedOptions: string, hint: string) => {
+export const deprecatedMsg = (
+  deprecatedOptions: string,
+  hint: string
+): void => {
   logger.warn(
     `"${chalk.magenta(deprecatedOptions)}" is ${chalk.red(
       "deprecated"
-    )}, please use "${chalk.magenta(hint)}" finstead.`
+    )}, please use "${chalk.magenta(hint)}" instead.`
   );
 };

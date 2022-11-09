@@ -4,6 +4,7 @@ import { deprecatedMsg } from "./utils.js";
 import { hopeTheme } from "../theme.js";
 import { logger } from "../utils.js";
 
+import type { ThemeFunction } from "@vuepress/core";
 import type { UserConfig } from "@vuepress/cli";
 import type {
   HopeThemeNavbarConfig,
@@ -18,8 +19,9 @@ import type {
  *
  * @description This function will be removed in v2 future release and is only available before v2 touch stable
  */
-export const hopeThemeLegacy = (themeOptions: HopeThemeOptions) =>
-  hopeTheme(themeOptions, true);
+export const hopeThemeLegacy = (
+  themeOptions: HopeThemeOptions
+): ThemeFunction => hopeTheme(themeOptions, true);
 
 /**
  * @deprecated use `import { navbar } from "vuepress-theme-hope";` instead

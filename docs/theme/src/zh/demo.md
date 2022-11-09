@@ -33,8 +33,8 @@ category:
 
 ### 小佟の学习笔记
 
-* [网站链接](https://xt-gitee.gitee.io/notes/)
-* [源码地址](https://gitee.com/xt-gitee/notes)
+- [网站链接](https://xt-gitee.gitee.io/notes/)
+- [源码地址](https://gitee.com/xt-gitee/notes)
 
 ### JavaGuide
 
