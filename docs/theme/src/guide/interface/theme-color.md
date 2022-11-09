@@ -21,7 +21,7 @@ You should set the default theme color of your site in `.vuepress/styles/palette
 $theme-color: #f00;
 ```
 
-## Theme Color Picker
+## Theme Color Picker {#theme-color-picker-title}
 
 You need to set `themeColor` with `{ colorName1: colorValue1, colorName2: colorValue2, ... }` format:
 
