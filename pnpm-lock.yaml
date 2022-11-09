@@ -17,7 +17,7 @@ importers:
       '@types/node': 18.11.9
       '@typescript-eslint/eslint-plugin': 5.42.1
       '@typescript-eslint/parser': 5.42.1
-      '@vitest/coverage-c8': 0.25.0
+      '@vitest/coverage-c8': 0.25.1
       '@vue/eslint-config-typescript': 11.0.2
       bumpp: 8.2.1
       commitizen: 4.2.5
@@ -54,7 +54,7 @@ importers:
       ts-node: 10.9.1
       tslib: 2.4.1
       typescript: 4.7.4
-      vitest: 0.25.0
+      vitest: 0.25.1
     devDependencies:
       '@commitlint/cli': 17.2.0
       '@commitlint/config-conventional': 17.2.0
@@ -64,7 +64,7 @@ importers:
       '@types/node': 18.11.9
       '@typescript-eslint/eslint-plugin': 5.42.1_4ecohspxivztjywoa2p2hiswum
       '@typescript-eslint/parser': 5.42.1_2uhzae5rel2qyw7fhfmxrmdt3q
-      '@vitest/coverage-c8': 0.25.0
+      '@vitest/coverage-c8': 0.25.1
       '@vue/eslint-config-typescript': 11.0.2_qyjznpwebazwkjejbnritmft4e
       bumpp: 8.2.1
       commitizen: 4.2.5
@@ -101,7 +101,7 @@ importers:
       ts-node: 10.9.1_vq46kxj6zfka4f6ijsosnft3hy
       tslib: 2.4.1
       typescript: 4.7.4
-      vitest: 0.25.0
+      vitest: 0.25.1
 
   demo/blog2:
     specifiers:
@@ -3508,11 +3508,11 @@ packages:
       vite: 3.1.8
       vue: 3.2.41
 
-  /@vitest/coverage-c8/0.25.0:
-    resolution: {integrity: sha512-rAeekiideYYvuHk0/nfMvlPiJhyeE9oFFL/Zxp5ZvRF3p2AvQaj8Z6Na//08lIxvm6oi9rDijdkYE0CFMtT7uA==}
+  /@vitest/coverage-c8/0.25.1:
+    resolution: {integrity: sha512-gpl5QNaNeIN0mfRiosCqBFoZcizb5GA458TDnOQXkGDc4kklazxn70u9evGfV62wiiAUfGGebgRhxlBkAa6m6g==}
     dependencies:
       c8: 7.12.0
-      vitest: 0.25.0
+      vitest: 0.25.1
     transitivePeerDependencies:
       - '@edge-runtime/vm'
       - '@vitest/browser'
@@ -11714,8 +11714,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitest/0.25.0:
-    resolution: {integrity: sha512-CVgBdKSeA27mowKC/C31Tx7ZBjRoyasq/yW7zoqUaCdKaOsjdzRUH5KgSL3eG36DzaaUsbnwWPUbAOtFz5k6tQ==}
+  /vitest/0.25.1:
+    resolution: {integrity: sha512-eH74h6MkuEgsqR4mAQZeMK9O0PROiKY+i+1GMz/fBi5A3L2ml5U7JQs7LfPU7+uWUziZyLHagl+rkyfR8SLhlA==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
     peerDependencies:
