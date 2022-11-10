@@ -33,7 +33,7 @@ For sticky articles, you can set `sticky` with a number to set their order. Arti
 
 ## Excerpt
 
-If you want to add a excerpt for article, you can use `<!-- more-->` comment to mark it. All contents before the comment will be regarded as excerpt. Also, you can specific it with `excerpt` in frontmatter with a HTML string.
+If you want to add a excerpt for article, you can use `<!-- more -->` comment to mark it. All contents before the comment will be regarded as excerpt. Also, you can specific it with `excerpt` in frontmatter with a HTML string.
 
 ::: info Auto Excerpt
 
