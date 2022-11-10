@@ -19,7 +19,7 @@
     "@vuepress/core": "2.0.0-beta.53",
     "@vuepress/theme-default": "2.0.0-beta.53",
     "@vuepress/utils": "2.0.0-beta.53",
-    "sass-loader": "13.1.0",
+    "sass-loader": "13.2.0",
     "vue": "3.2.43",
     "vuepress-plugin-comment2": "workspace:*",
     "vuepress-vite": "2.0.0-beta.53",
