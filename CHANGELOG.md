@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.122](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.121...v2.0.0-beta.122) (2022-11-10)
+
+### ⚠ BREAKING CHANGES
+
+- **theme:** fix typos in config, changing collapsable to collapsible
+
+### Features
+
+- **theme:** add extra check in debug mode ([ee00f8c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ee00f8c07c76611d30c7592343a7eb58b3b16415))
+- **theme:** add hopeThemeLegacy and improve logger ([a08c577](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a08c577cebdadbd396209cb978db67b740dead48))
+- **theme:** fix typos in collapsible ([7d3144c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7d3144c341bb75c4ceba33e0efff3c0146ce5c52))
+- **theme:** support frontmatter.excerpt ([fb231d9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fb231d931d7e34fcdddae1a3b65dd9f0bcaee548))
+
+### Bug Fixes
+
+- **comment2:** fix giscus tr support ([a577bb3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a577bb32ac393ff60c56e225aa8c865c430a6bdd))
+- **copy-code2:** fix pure mode appearance ([419d671](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/419d6718ba04c7c99ce88d1669f3d62b19676049))
+- **deps:** update dependency @types/three to v0.146.0 ([#2388](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2388)) ([ccad9c9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ccad9c97c53b89b5fbecb6a577db0e025b43d096))
+- **deps:** update dependency sass-loader to v13.2.0 ([#2398](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2398)) ([72a1508](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/72a15088e6af4569a837867ba90a88747965028b))
+- **md-enhance:** fix loading icon ([6542578](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/65425782cbcfd1efabd73281871ef49df08ba850))
+- **md-enhance:** fix mermaid issue in dev mode ([26b57c0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/26b57c09f2f666f3e8ed7e8c9b58b5e144f6ef58))
+- **md-enhance:** fix type issue ([4b32b67](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4b32b67ede8c64a0fd6be8aedc4ab0b08ede3e8d))
+
 ## [2.0.0-beta.121](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.120...v2.0.0-beta.121) (2022-11-05)
 
 ### Bug Fixes
