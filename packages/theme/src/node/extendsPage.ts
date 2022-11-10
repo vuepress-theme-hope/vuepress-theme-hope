@@ -164,7 +164,8 @@ export const extendsPage = (
 
     const excerpt = isEncrypted
       ? ""
-      : page.excerpt ||
+      : frontmatter.excerpt ||
+        page.excerpt ||
         frontmatter.description ||
         (typeof plugins.blog === "object" && plugins.blog.autoExcerpt
           ? frontmatter.summary || ""

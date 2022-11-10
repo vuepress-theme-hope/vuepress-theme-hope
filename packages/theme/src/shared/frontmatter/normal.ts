@@ -213,4 +213,11 @@ export interface HopeThemeNormalPageFrontmatter
    * 是否收藏，如果填入数字，更大值会出现在前面
    */
   star?: boolean | number;
+
+  /**
+   * Page excerpt
+   *
+   * 页面的摘要
+   */
+  excerpt?: string;
 }
