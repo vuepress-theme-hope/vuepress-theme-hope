@@ -69,9 +69,9 @@
     "katex": "^0.16.3",
     "markdown-it": "^13.0.1",
     "mathjax-full": "^3.2.2",
-    "mermaid": "^9.2.1",
+    "mermaid": "^9.2.2",
     "reveal.js": "^4.4.0",
-    "vue": "^3.2.43",
+    "vue": "^3.2.44",
     "vue-router": "^4.1.6",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*"
