@@ -24,25 +24,38 @@ export const getFeedPlugin = (
     deepAssign(
       {
         hostname,
-        author: themeConfig.author,
+        ...(themeConfig.author ? { author: themeConfig.author } : {}),
         locales: Object.entries(themeConfig.locales).map(
           ([localePath, { author, copyright }]) => [
             localePath,
             { author, channel: { copyright } },
           ]
         ),
+      },
+      options || {},
+      {
         customElements: [
           "ExternalLinkIcon",
           "Badge",
+          "Bilibili",
           "ChartJS",
           "CodeDemo",
+          "CodePen",
           "CodeTabs",
+          "ECharts",
           "FlowChart",
           "Mermaid",
+          "PDF",
+          "Playground",
           "Presentation",
+          "StackBlitz",
+          "Tabs",
+          "VideoPlayer",
+          "VuePlayground",
+          "YouTube",
+          ...(options?.customElements || []),
         ],
-      },
-      options || {}
+      }
     ),
     legacy
   );
