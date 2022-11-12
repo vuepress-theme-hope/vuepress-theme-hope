@@ -1,4 +1,4 @@
-import { usePageLang } from "@vuepress/client";
+import { ClientOnly, usePageLang } from "@vuepress/client";
 import { defineComponent, h } from "vue";
 
 import { CalendarIcon } from "@theme-hope/modules/info/components/icons.js";
@@ -43,8 +43,12 @@ export default defineComponent({
               h(CalendarIcon),
               h(
                 "span",
-                props.localizedDate ||
-                  props.date.value?.toLocaleDateString(lang.value)
+                h(
+                  ClientOnly,
+                  () =>
+                    props.localizedDate ||
+                    props.date!.value?.toLocaleDateString(lang.value)
+                )
               ),
               h("meta", {
                 property: "datePublished",

@@ -1,5 +1,6 @@
 import { usePageData } from "@vuepress/client";
-import { ComputedRef, computed } from "vue";
+import { computed } from "vue";
+import type { ComputedRef } from "vue";
 
 export type PageTitleRef = ComputedRef<string>;
 

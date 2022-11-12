@@ -60,7 +60,7 @@ export interface PageInfoProps {
    *
    * 写作日期
    */
-  localizedDate?: string;
+  localizedDate?: string | null;
 
   /**
    * Whether the article is original
