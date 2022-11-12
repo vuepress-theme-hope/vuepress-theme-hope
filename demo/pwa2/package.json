@@ -18,7 +18,7 @@
     "@vuepress/client": "2.0.0-beta.53",
     "@vuepress/theme-default": "2.0.0-beta.53",
     "sass-loader": "13.2.0",
-    "vue": "3.2.44",
+    "vue": "3.2.45",
     "vuepress-plugin-pwa2": "workspace:*",
     "vuepress-vite": "2.0.0-beta.53",
     "vuepress-webpack": "2.0.0-beta.53"

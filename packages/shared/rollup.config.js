@@ -4,12 +4,13 @@ export default [
   ...rollupTypescript("node/index", {
     resolve: true,
     external: [
+      "node:http",
       "@vuepress/plugin-git",
       "@vuepress/utils",
       "@vuepress/shared",
       "execa",
-      "node:http",
       "ora",
+      "striptags",
       "vite",
     ],
     dtsExternal: ["node:http"],

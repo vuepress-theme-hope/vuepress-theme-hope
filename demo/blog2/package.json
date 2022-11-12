@@ -20,7 +20,7 @@
     "@vuepress/theme-default": "2.0.0-beta.53",
     "@vuepress/utils": "2.0.0-beta.53",
     "sass-loader": "13.2.0",
-    "vue": "3.2.44",
+    "vue": "3.2.45",
     "vue-router": "4.1.6",
     "vuepress-plugin-blog2": "workspace:*",
     "vuepress-vite": "2.0.0-beta.53",

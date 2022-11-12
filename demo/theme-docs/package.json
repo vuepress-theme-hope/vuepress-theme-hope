@@ -23,7 +23,7 @@
     "@vuepress/utils": "2.0.0-beta.53",
     "cross-env": "7.0.3",
     "sass-loader": "13.2.0",
-    "vue": "3.2.44",
+    "vue": "3.2.45",
     "vuepress-theme-hope": "workspace:*",
     "vuepress-vite": "2.0.0-beta.53",
     "vuepress-webpack": "2.0.0-beta.53"

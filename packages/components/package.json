@@ -48,7 +48,7 @@
     "@vuepress/utils": "2.0.0-beta.53",
     "@vueuse/core": "^9.5.0",
     "balloon-css": "^1.2.0",
-    "vue": "^3.2.44",
+    "vue": "^3.2.45",
     "vue-router": "^4.1.6",
     "vuepress-plugin-reading-time2": "workspace:*",
     "vuepress-plugin-sass-palette": "workspace:*",

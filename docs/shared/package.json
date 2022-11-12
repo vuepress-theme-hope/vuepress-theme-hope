@@ -36,7 +36,7 @@
     "@vuepress/utils": "2.0.0-beta.53",
     "rimraf": "3.0.2",
     "three": "0.146.0",
-    "vue": "3.2.44",
+    "vue": "3.2.45",
     "vuepress-shared": "workspace:*",
     "vuepress-theme-hope": "workspace:*"
   }
