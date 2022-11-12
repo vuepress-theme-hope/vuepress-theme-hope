@@ -9,6 +9,7 @@ export default [
       "@vuepress/utils",
       "@vuepress/shared",
       "execa",
+      "fflate/node",
       "ora",
       "striptags",
       "vite",
@@ -17,7 +18,14 @@ export default [
   }),
   ...rollupTypescript("client/index", {
     resolve: true,
-    external: ["@vuepress/client", "ora", "vue", "vue-router", /\.scss$/],
+    external: [
+      "@vuepress/client",
+      "@vuepress/shared",
+      "fflate/browser",
+      "vue",
+      "vue-router",
+      /\.scss$/,
+    ],
     dtsExternal: [/\.scss$/],
     copy: [["client/styles", "client"]],
   }),
