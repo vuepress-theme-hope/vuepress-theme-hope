@@ -17,14 +17,13 @@ export default defineComponent({
     const mediaLinks = computed(() => {
       const config = blogOptions.value.medias;
 
-      if (config)
-        return Object.entries(config).map(([media, url]) => ({
-          name: media,
-          icon: icons[media],
-          url: url as string,
-        }));
-
-      return [];
+      return config
+        ? Object.entries(config).map(([media, url]) => ({
+            name: media,
+            icon: icons[media],
+            url: url as string,
+          }))
+        : [];
     });
 
     return (): VNode | null =>
