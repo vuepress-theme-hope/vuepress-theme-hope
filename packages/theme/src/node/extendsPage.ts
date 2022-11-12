@@ -1,9 +1,11 @@
 import { logger } from "@vuepress/utils";
+import matter from "gray-matter";
 import {
   getCategory,
   getDate,
   getTag,
   injectLocalizedDate,
+  md2text,
   timeTransformer,
 } from "vuepress-shared/node";
 
@@ -168,7 +170,12 @@ export const extendsPage = (
         page.excerpt ||
         frontmatter.description ||
         (typeof plugins.blog === "object" && plugins.blog.autoExcerpt
-          ? frontmatter.summary || ""
+          ? md2text(
+              matter(page.content)
+                .content.trim()
+                // remove first heading1 as title
+                .replace(/^# (.*)$/gm, "")
+            ).slice(0, 180)
           : "");
 
     // save page excerpt to routeMeta

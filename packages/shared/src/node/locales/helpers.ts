@@ -1,5 +1,5 @@
 import { lang2PathConfig, path2langConfig, supportedLangs } from "./config.js";
-import { Logger } from "../logger.js";
+import { Logger } from "../helpers/index.js";
 import { deepAssign } from "../../shared/index.js";
 
 import type { App, LocaleConfig } from "@vuepress/core";

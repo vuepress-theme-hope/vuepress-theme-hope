@@ -45,13 +45,6 @@ export interface BasePageFrontMatter extends PageFrontmatter {
   isOriginal?: boolean;
 
   /**
-   * Page summary
-   *
-   * 页面摘要
-   */
-  summary?: string;
-
-  /**
    * Whether the page is an article
    *
    * 页面是否是文章

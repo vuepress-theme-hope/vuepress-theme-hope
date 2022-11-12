@@ -73,9 +73,7 @@ export const getOGP = (
     "og:url": resolveUrl(options.hostname, base, page.path),
     "og:site_name": title,
     "og:title": articleTitle,
-    "og:description":
-      page.frontmatter.description ||
-      (options.autoDescription ? page.frontmatter.summary || "" : ""),
+    "og:description": page.frontmatter.description || "",
     "og:type": isArticle(page) ? "article" : "website",
     "og:image": ogImage,
     "og:updated_time": modifiedTime,

@@ -1,10 +1,10 @@
-import matter from "gray-matter";
 import {
   isLinkHttp,
   removeEndingSlash,
   removeLeadingSlash,
 } from "@vuepress/shared";
-import { Logger, isAbsoluteUrl, isUrl } from "vuepress-shared/node";
+import matter from "gray-matter";
+import { Logger, isAbsoluteUrl, isUrl, md2text } from "vuepress-shared/node";
 
 import type { App, SiteLocaleConfig } from "@vuepress/core";
 import type { ExtendPage, SeoOptions } from "../shared/index.js";
@@ -82,48 +82,16 @@ export const resolveUrl = (
       : `https://${removeEndingSlash(hostname)}`
   }${base}${removeLeadingSlash(url)}`;
 
-export const stripTags = (content = ""): string =>
-  content
-    // remove html tags
-    .replace(/<\/?.+?\/?>/g, "");
-
-export const md2text = (content?: string): string =>
-  content
-    ? stripTags(matter(content).content)
-        // remove img
-        .replace(/!\[(.*?)\]\(.*?\)/gm, "")
-        // remove code blocks
-        .replace(/```([\s\S]*?)```/g, "")
-        // remove custom container end
-        .replace(/^\s*:::\s*$/gm, "")
-        // remove custom container start
-        .replace(/^\s*:::\s*(.+?)(?:\s+(.*))?$/gm, "$2")
-        // remove heading1
-        .replace(/^# (.*)$/gm, "$1")
-        // convert other headings to text
-        .replace(/^#{1,6} (.*)$/gm, "$1")
-        // convert unordered lists to text with comma
-        .replace(/^\s*[-*+] (.*)$/gm, "$1; ")
-        // convert blockquotes with quotes
-        .replace(/^\s*>+(.*)$/gm, '"$1"')
-        // convert links to text
-        .replace(/(^|[^\\])\[(.*?)\]\(.*?\)/gm, "$1$2")
-        // convert inline code
-        .replace(/`{1,2}([^`])(.*?)`{1,2}/g, "$1$2")
-        // just remove delete lines
-        .replace(/~~(.*?)~~/g, "")
-        // remove bold or italic
-        .replace(/(^|[^\\])([*|_]{1,2})(.*?)([^\\])\2/gm, "$1$3$4")
-        // remove html tags
-        .replace(/<\/?.+?\/?>/g, "")
-        // trim lines
-        .split("\n")
-        .map((line) => line.trim())
-        .join("\n")
-        // convert link breaks into spaces
-        .replace(/(?:\r?\n)+/g, " ")
-        // convert 2 or more spaces into 1
-        .replace(/ +/g, " ")
-        // trim
-        .trim()
-    : "";
+export const extractContent = (content: string): string =>
+  md2text(
+    matter(content)
+      .content.trim()
+      // remove first heading1 as title
+      .replace(/^# (.*)$/gm, "")
+  )
+    // convert link breaks into spaces
+    .replace(/(?:\r?\n)+/g, " ")
+    // convert 2 or more spaces into 1
+    .replace(/ +/g, " ")
+    // trim
+    .trim();
