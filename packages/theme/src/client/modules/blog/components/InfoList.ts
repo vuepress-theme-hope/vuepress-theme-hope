@@ -1,4 +1,5 @@
 import { computed, defineComponent, h, ref } from "vue";
+import { RouterLink } from "vue-router";
 
 import CategoryList from "@theme-hope/modules/blog/components/CategoryList.js";
 import DropTransition from "@theme-hope/components/transitions/DropTransition.js";
@@ -110,11 +111,12 @@ export default defineComponent({
                       () =>
                         h(
                           "li",
-                          {
-                            class: "sticky-article",
-                            onClick: () => navigate(path),
-                          },
-                          info[ArticleInfoType.title]
+                          { class: "sticky-article" },
+                          h(
+                            RouterLink,
+                            { to: path },
+                            () => info[ArticleInfoType.title]
+                          )
                         )
                     )
                   )

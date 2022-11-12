@@ -115,9 +115,16 @@
     transition: border-color var(--color-transition),
       color var(--color-transition);
 
+    a {
+      color: inherit;
+    }
+
     &:hover {
-      color: var(--theme-color);
       cursor: pointer;
+
+      a {
+        color: var(--theme-color);
+      }
     }
   }
 
