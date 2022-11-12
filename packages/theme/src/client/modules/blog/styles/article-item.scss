@@ -5,16 +5,11 @@
 
   width: 100%;
   margin: 0 auto 1.25rem;
-  border-radius: 0.4rem;
 
   text-align: left;
 
   @media (max-width: hope-config.$pad) {
     margin: 0 auto 1rem;
-  }
-
-  @media (max-width: hope-config.$mobile) {
-    border-radius: 0;
   }
 
   &:last-child {
@@ -25,6 +20,7 @@
     display: block;
 
     padding: 0.75rem 1.25rem;
+    border-radius: 0.4rem;
 
     background: var(--bg-color-float);
     color: inherit;
@@ -35,6 +31,10 @@
 
     @media (max-width: hope-config.$pad) {
       padding: 0.75rem 1rem;
+    }
+
+    @media (max-width: hope-config.$mobile) {
+      border-radius: 0;
     }
 
     &:hover {
