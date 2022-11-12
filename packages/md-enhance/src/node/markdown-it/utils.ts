@@ -42,9 +42,3 @@ export const escapeHtml = (unsafeHTML: string): string =>
     .replace(/>/gu, "&gt;")
     .replace(/"/gu, "&quot;")
     .replace(/'/gu, "&#039;");
-
-export interface UMLOptions {
-  name: string;
-  open: string;
-  close: string;
-}
