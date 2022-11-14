@@ -1,3 +1,3 @@
 ---
-home: ture
+home: true
 ---
