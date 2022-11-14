@@ -2,7 +2,7 @@ import MagicString from "magic-string";
 
 const hashBangRegex = /^\s*(#!.*)/;
 
-export default function shebangPlugin() {
+export const shebangPlugin = function () {
   const shebangMap = new Map();
 
   return {
@@ -42,4 +42,4 @@ export default function shebangPlugin() {
       }
     },
   };
-}
+};

@@ -3,7 +3,7 @@ import { nodeResolve } from "@rollup/plugin-node-resolve";
 import copy from "rollup-plugin-copy";
 import dts from "rollup-plugin-dts";
 import esbuild from "rollup-plugin-esbuild";
-import shebang from "./shebang.js";
+import { shebangPlugin } from "./shebang.js";
 
 const isProduction = process.env.NODE_ENV === "production";
 
@@ -33,7 +33,7 @@ export const rollupTypescript = (
       },
     ],
     plugins: [
-      ...(preserveShebang ? [shebang()] : []),
+      ...(preserveShebang ? [shebangPlugin()] : []),
       ...(resolve ? [nodeResolve({ preferBuiltins: true }), commonjs()] : []),
       esbuild({ charset: "utf8", minify: isProduction, target: "node14" }),
       ...(copyOptions.length

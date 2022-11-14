@@ -56,7 +56,7 @@ npm i -D vuepress-plugin-sass-palette@next
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import type { PluginFunction } from "@vuepress/core";
 
-const yourPlugin =
+export const yourPlugin =
   (options): PluginFunction =>
   (app) => {
     useSassPalettePlugin(app, {
@@ -67,8 +67,6 @@ const yourPlugin =
       // 你的插件 API
     };
   };
-
-export default yourPlugin;
 ```
 
 @tab JS
@@ -86,8 +84,6 @@ const yourPlugin = (options) => (app) => {
     // 你的插件 API
   };
 };
-
-export default yourPlugin;
 ```
 
 :::

@@ -56,7 +56,7 @@ You must invoke `useSassPalettePlugin` function during plugin initialization to 
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import type { PluginFunction } from "@vuepress/core";
 
-const yourPlugin =
+export const yourPlugin =
   (options): PluginFunction =>
   (app) => {
     useSassPalettePlugin(app, {
@@ -67,8 +67,6 @@ const yourPlugin =
       // your plugin api
     };
   };
-
-export default yourPlugin;
 ```
 
 @tab JS
@@ -77,7 +75,7 @@ export default yourPlugin;
 // Your plugin or theme entry
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
-const yourPlugin = (options) => (app) => {
+export const yourPlugin = (options) => (app) => {
   useSassPalettePlugin(app, {
     // plugin options
   });
@@ -86,8 +84,6 @@ const yourPlugin = (options) => (app) => {
     // your plugin api
   };
 };
-
-export default yourPlugin;
 ```
 
 :::

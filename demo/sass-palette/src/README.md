@@ -26,7 +26,7 @@ pnpm add -D vuepress-plugin-sass-palette@next
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import type { PluginFunction } from "@vuepress/core";
 
-const yourPlugin =
+export const yourPlugin =
   (options): PluginFunction =>
   (app) => {
     useSassPalettePlugin(app, {
@@ -37,6 +37,4 @@ const yourPlugin =
       // your plugin api
     };
   };
-
-export default yourPlugin;
 ```
