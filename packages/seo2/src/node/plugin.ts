@@ -28,11 +28,21 @@ export const seoPlugin =
 
       extendsPage: (page: ExtendPage, app): void => {
         // generate summary
-        if (!page.frontmatter.description && options.autoDescription)
-          page.frontmatter.description =
-            stripTags(page.excerpt) ||
-            extractContent(page.content).slice(0, 180) ||
-            "";
+        if (
+          !page.frontmatter.description &&
+          options.autoDescription !== false
+        ) {
+          if (page.excerpt)
+            page.frontmatter.description = stripTags(page.excerpt);
+          else {
+            const pageContent = extractContent(page.content);
+
+            page.frontmatter.description =
+              pageContent.length > 180
+                ? `${pageContent.slice(0, 177)}...`
+                : pageContent;
+          }
+        }
 
         appendSEO(page, options, app);
       },
