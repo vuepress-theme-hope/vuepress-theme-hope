@@ -8,6 +8,10 @@ body {
   transition: background var(--color-transition);
 }
 
+:root {
+  color-scheme: light;
+}
+
 #{hope-config.$dark-selector} {
   color-scheme: dark;
 }
