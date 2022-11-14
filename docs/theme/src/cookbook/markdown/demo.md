@@ -183,7 +183,7 @@ You can also use these in VuePress:
 
 To be able to jump to each other when editing the Markdown using the editor, you need to use the **relative path**, also you must place `README.md` in **every folder**.
 
-代码:
+Code:
 
 ```md
 - [Home page-Can route when editing Markdown file](../../README.md)
