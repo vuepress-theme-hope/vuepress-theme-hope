@@ -192,7 +192,7 @@ export const getSidebarData = (
 
   if (app.env.isDebug)
     logger.info(
-      `Sidebar structure data:${JSON.stringify(sidebarData, null, 2)}`
+      `Sidebar structure data: ${JSON.stringify(sidebarData, null, 2)}`
     );
 
   return sidebarData;
