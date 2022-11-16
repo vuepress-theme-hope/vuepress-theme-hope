@@ -1,5 +1,6 @@
 import { ensureEndingSlash } from "@vuepress/shared";
 import { getDirname, path } from "@vuepress/utils";
+// import { getMathjaxStyle } from "./markdown-it/mathjax.js";
 
 import type { App } from "@vuepress/core";
 import type { MarkdownEnhanceOptions } from "./options.js";

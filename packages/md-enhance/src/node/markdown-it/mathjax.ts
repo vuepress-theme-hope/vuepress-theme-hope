@@ -24,12 +24,15 @@
  * SOFTWARE.
  */
 
+import { createRequire } from "node:module";
 import juice from "juice";
 import { mathjax as MathJax } from "mathjax-full/js/mathjax.js";
 import { TeX } from "mathjax-full/js/input/tex.js";
 import { CHTML } from "mathjax-full/js/output/chtml.js";
 import { SVG } from "mathjax-full/js/output/svg.js";
 import { liteAdaptor } from "mathjax-full/js/adaptors/liteAdaptor.js";
+import { LiteDocument } from "mathjax-full/js/adaptors/lite/Document.js";
+import { HTMLDocument } from "mathjax-full/js/handlers/html/HTMLDocument.js";
 import { RegisterHTMLHandler } from "mathjax-full/js/handlers/html.js";
 import { AllPackages } from "mathjax-full/js/input/tex/AllPackages.js";
 import { tex } from "./tex.js";
@@ -66,6 +69,26 @@ const renderMath = (
   return juice(html + stylesheet);
 };
 
+export const getMathjaxStyle = (options: MathJaxOptions): string => {
+  const adaptor = liteAdaptor();
+  const ouputJax =
+    options.output === "chtml"
+      ? new CHTML<LiteElement, string, HTMLElement>({
+          fontURL: createRequire(import.meta.url).resolve("mathjax-full"),
+          ...options.chtml,
+        })
+      : new SVG<LiteElement, string, HTMLElement>({
+          fontCache: "none",
+          ...options.svg,
+        });
+  const html = new HTMLDocument(new LiteDocument(), adaptor, {
+    InputJax: new TeX({ packages: AllPackages, ...options.tex }),
+    OutputJax: ouputJax,
+  });
+
+  return adaptor.textContent(ouputJax.styleSheet(html as any));
+};
+
 export const mathjax: PluginWithOptions<MathJaxOptions> = (
   md,
   options = {}
@@ -78,6 +101,7 @@ export const mathjax: PluginWithOptions<MathJaxOptions> = (
     OutputJax:
       options.output === "chtml"
         ? new CHTML<LiteElement, string, HTMLElement>({
+            fontURL: createRequire(import.meta.url).resolve("mathjax-full"),
             ...options.chtml,
           })
         : new SVG<LiteElement, string, HTMLElement>({
