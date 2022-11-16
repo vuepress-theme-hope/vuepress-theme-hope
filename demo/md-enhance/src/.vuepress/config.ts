@@ -80,8 +80,9 @@ export default defineUserConfig({
       playground: {
         presets: ["ts", "vue"],
       },
-      katex: {
-        mhchem: true,
+      mathjax: {
+        output: "chtml",
+        // mhchem: true,
       },
       presentation: {
         plugins: ["highlight", "math", "search", "notes", "zoom"],
