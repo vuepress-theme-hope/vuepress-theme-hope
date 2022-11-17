@@ -5,11 +5,6 @@ import type { PropType, VNode } from "vue";
 export default defineComponent({
   name: "DropTransition",
 
-  components: {
-    Transition,
-    TransitionGroup,
-  },
-
   props: {
     /**
      * @description Transition type

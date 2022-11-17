@@ -18,12 +18,6 @@ interface InstallPromptEvent extends Event {
 export default defineComponent({
   name: "PWAInstallModal",
 
-  components: {
-    ArrowLeftIcon,
-    ArrowRightIcon,
-    CloseIcon,
-  },
-
   props: {
     useHint: Boolean,
   },
