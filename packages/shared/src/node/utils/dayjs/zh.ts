@@ -1,4 +1,4 @@
-import type { default as dayjs } from "dayjs";
+import type dayjs from "dayjs";
 import type { Locale } from "./locale.js";
 
 const locale: Locale = {

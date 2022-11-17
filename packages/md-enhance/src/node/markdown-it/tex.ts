@@ -24,7 +24,7 @@
  * SOFTWARE.
  */
 
-import type { default as StateInline } from "markdown-it/lib/rules_inline/state_inline.js";
+import type StateInline from "markdown-it/lib/rules_inline/state_inline.js";
 import type { PluginWithOptions } from "markdown-it";
 import type { RuleInline } from "markdown-it/lib/parser_inline.js";
 import type { RuleBlock } from "markdown-it/lib/parser_block.js";

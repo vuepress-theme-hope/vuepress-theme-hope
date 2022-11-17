@@ -25,7 +25,7 @@
  */
 
 import { createRequire } from "node:module";
-import { default as Katex } from "katex";
+import Katex from "katex";
 import { tex } from "./tex.js";
 import { escapeHtml } from "./utils.js";
 

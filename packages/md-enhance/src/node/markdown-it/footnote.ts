@@ -25,14 +25,14 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import { default as Token } from "markdown-it/lib/token.js";
-import { default as parseLinkLabel } from "markdown-it/lib/helpers/parse_link_label.js";
+import Token from "markdown-it/lib/token.js";
+import parseLinkLabel from "markdown-it/lib/helpers/parse_link_label.js";
 
 import type { MarkdownEnv } from "@vuepress/markdown";
-import type { default as Renderer } from "markdown-it/lib/renderer.js";
-import type { default as StateBlock } from "markdown-it/lib/rules_block/state_block.js";
-import type { default as StateCore } from "markdown-it/lib/rules_core/state_core.js";
-import type { default as StateInline } from "markdown-it/lib/rules_inline/state_inline.js";
+import type Renderer from "markdown-it/lib/renderer.js";
+import type StateBlock from "markdown-it/lib/rules_block/state_block.js";
+import type StateCore from "markdown-it/lib/rules_core/state_core.js";
+import type StateInline from "markdown-it/lib/rules_inline/state_inline.js";
 import type { PluginSimple } from "markdown-it";
 import type { RuleBlock } from "markdown-it/lib/parser_block.js";
 import type { RuleInline } from "markdown-it/lib/parser_inline.js";

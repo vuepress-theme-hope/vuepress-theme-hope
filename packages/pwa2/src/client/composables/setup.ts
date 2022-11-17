@@ -1,4 +1,4 @@
-import { default as mitt } from "mitt";
+import mitt from "mitt";
 import { onMounted, provide } from "vue";
 import { pwaEventSymbol, useForceUpdate, useRegister } from "./index.js";
 import type { PWAEvent } from "./index.js";

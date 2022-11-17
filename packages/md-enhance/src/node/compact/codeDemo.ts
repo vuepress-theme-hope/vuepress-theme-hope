@@ -2,7 +2,7 @@ import { utoa } from "vuepress-shared/node";
 import { container } from "../markdown-it/index.js";
 
 import type { PluginSimple } from "markdown-it";
-import type { default as Token } from "markdown-it/lib/token.js";
+import type Token from "markdown-it/lib/token.js";
 
 /** @deprecated */
 export const legacyCodeDemo: PluginSimple = (md) => {

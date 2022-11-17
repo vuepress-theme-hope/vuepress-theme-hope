@@ -1,6 +1,6 @@
 import type { MmlNode } from "mathjax-full/js/core/MmlTree/MmlNode.js";
 import type { TeX } from "mathjax-full/js/input/tex.js";
-import type { default as TexError } from "mathjax-full/js/input/tex/TexError.js";
+import type TexError from "mathjax-full/js/input/tex/TexError.js";
 
 export interface MathJaxTexInputOptions {
   /**

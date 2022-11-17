@@ -1,6 +1,6 @@
 import { utoa } from "vuepress-shared/node";
 import type { PluginSimple } from "markdown-it";
-import type { default as Renderer } from "markdown-it/lib/renderer.js";
+import type Renderer from "markdown-it/lib/renderer.js";
 
 const mermaidRender: Renderer.RenderRule = (tokens, index) => {
   const token = tokens[index];

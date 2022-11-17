@@ -5,7 +5,7 @@ import type { MarkdownEnv } from "@vuepress/markdown";
 import type { PluginWithOptions } from "markdown-it";
 import type { RuleBlock } from "markdown-it/lib/parser_block.js";
 import type { RuleCore } from "markdown-it/lib/parser_core.js";
-import type { default as Token } from "markdown-it/lib/token.js";
+import type Token from "markdown-it/lib/token.js";
 import type { IncludeOptions } from "../../shared/index.js";
 
 interface ImportFileInfo {

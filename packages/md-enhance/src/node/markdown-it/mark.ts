@@ -27,7 +27,7 @@
 
 import type { PluginSimple } from "markdown-it";
 import type { RuleInline } from "markdown-it/lib/parser_inline.js";
-import type { default as StateInline } from "markdown-it/lib/rules_inline/state_inline.js";
+import type StateInline from "markdown-it/lib/rules_inline/state_inline.js";
 
 /*
  * Insert each marker as a separate text token, and add it to delimiter list

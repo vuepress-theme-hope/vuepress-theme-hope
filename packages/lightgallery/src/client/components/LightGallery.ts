@@ -1,4 +1,4 @@
-import { default as lightGallery } from "lightgallery/lightgallery.es5.js";
+import lightGallery from "lightgallery/lightgallery.es5.js";
 import {
   defineComponent,
   h,

@@ -1,7 +1,7 @@
-import { default as dayjs } from "dayjs";
-import { default as objectSupport } from "dayjs/plugin/objectSupport.js";
-import { default as timezone } from "dayjs/plugin/timezone.js";
-import { default as utc } from "dayjs/plugin/utc.js";
+import dayjs from "dayjs";
+import objectSupport from "dayjs/plugin/objectSupport.js";
+import timezone from "dayjs/plugin/timezone.js";
+import utc from "dayjs/plugin/utc.js";
 
 dayjs.extend(objectSupport);
 dayjs.extend(utc);

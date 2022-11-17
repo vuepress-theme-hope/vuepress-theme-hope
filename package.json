@@ -85,7 +85,7 @@
     "stylelint-order": "5.0.0",
     "ts-node": "10.9.1",
     "tslib": "2.4.1",
-    "typescript": "4.7.4",
+    "typescript": "4.9.3",
     "vitest": "0.25.2"
   },
   "packageManager": "pnpm@7.16.1",
@@ -132,7 +132,9 @@
       ]
     },
     "patchedDependencies": {
-      "mitt@3.0.0": "patches/mitt@3.0.0.patch"
+      "mitt@3.0.0": "patches/mitt@3.0.0.patch",
+      "@types/katex@0.14.0": "patches/@types__katex@0.14.0.patch",
+      "mermaid@9.2.2": "patches/mermaid@9.2.2.patch"
     }
   }
 }

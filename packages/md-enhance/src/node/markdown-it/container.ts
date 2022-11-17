@@ -27,7 +27,7 @@
 
 import type { MarkdownEnv } from "@vuepress/markdown";
 import type { Options, PluginWithOptions } from "markdown-it";
-import type { default as Token } from "markdown-it/lib/token.js";
+import type Token from "markdown-it/lib/token.js";
 import type {
   default as Renderer,
   RenderRule,
