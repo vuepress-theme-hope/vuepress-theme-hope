@@ -1,0 +1,693 @@
+// Vitest Snapshot v1
+
+exports[`generateIndex > Should generate full index 1`] = `
+{
+  "contents": [
+    {
+      "contents": [
+        "Here is article excerpt.",
+      ],
+      "header": "",
+      "slug": "",
+    },
+    {
+      "contents": [
+        "Here is main content of article.",
+        "A",
+        "B",
+        "C",
+      ],
+      "header": "Content",
+      "slug": "content",
+    },
+  ],
+  "title": "Demo Page",
+}
+`;
+
+exports[`generateIndex > Should generate full index 2`] = `
+{
+  "contents": [
+    {
+      "contents": [],
+      "header": "Heading 1",
+      "slug": "heading-1",
+    },
+    {
+      "contents": [],
+      "header": "Heading 2",
+      "slug": "heading-2",
+    },
+    {
+      "contents": [],
+      "header": "Heading 3",
+      "slug": "heading-3",
+    },
+    {
+      "contents": [],
+      "header": "Heading 4",
+      "slug": "heading-4",
+    },
+    {
+      "contents": [],
+      "header": "Heading 5",
+      "slug": "heading-5",
+    },
+    {
+      "contents": [],
+      "header": "Heading 6",
+      "slug": "heading-6",
+    },
+    {
+      "contents": [
+        "This sentence has bold、italic and delete style text.",
+      ],
+      "header": "Text",
+      "slug": "text",
+    },
+    {
+      "contents": [
+        "This is a paragraph.",
+        "This is another paragraph.",
+      ],
+      "header": "Paragraph",
+      "slug": "paragraph",
+    },
+    {
+      "contents": [
+        "I would like to line break at this point",
+        "::: tip",
+        "In codes above, two spaces are behind at.",
+        ":::",
+      ],
+      "header": "Line Break",
+      "slug": "line-break",
+    },
+    {
+      "contents": [
+        "Blockquotes can also be nested...",
+        "...by using greater-than signs right next to each other...",
+        "...or with spaces between arrows.",
+      ],
+      "header": "Blockquotes",
+      "slug": "blockquotes",
+    },
+    {
+      "contents": [],
+      "header": "List",
+      "slug": "list",
+    },
+    {
+      "contents": [
+        "Create a list by starting a line with -",
+        "Make sub-lists by indenting 2 spaces:",
+        "Marker character change forces new list start:",
+        "Ac tristique libero volutpat at",
+        "Facilisis in pretium nisl aliquet",
+        "Nulla volutpat aliquam velit link break",
+        "New paragraph",
+        "It’s easy!",
+      ],
+      "header": "Unordered List",
+      "slug": "unordered-list",
+    },
+    {
+      "contents": [
+        "Lorem ipsum dolor sit amet",
+        "Consectetur adipiscing elit line break line break again",
+        "Integer molestie lorem at massa",
+      ],
+      "header": "Ordered List",
+      "slug": "ordered-list",
+    },
+    {
+      "contents": [],
+      "header": "HR",
+      "slug": "hr",
+    },
+    {
+      "contents": [
+        "Home page using absolute path",
+        "Home page using relative path",
+      ],
+      "header": "Link",
+      "slug": "link",
+    },
+    {
+      "contents": [],
+      "header": "Image",
+      "slug": "image",
+    },
+    {
+      "contents": [
+        "Classic:",
+        "😉 😢 😆 😋",
+      ],
+      "header": "Emoji",
+      "slug": "emoji",
+    },
+    {
+      "contents": [
+        "center",
+        "right",
+        "left",
+        "For center align use :-:",
+        "For right align use -:",
+        "For left align use :-",
+        "b",
+        "aaaaaaaaa",
+        "aaaa",
+        "c",
+        "aaaa",
+        "a",
+      ],
+      "header": "Tables",
+      "slug": "tables",
+    },
+    {
+      "contents": [
+        "Inline Code: code",
+        "Block code:",
+        "Syntax highlighting:",
+      ],
+      "header": "Codes",
+      "slug": "codes",
+    },
+  ],
+  "title": "Heading 1",
+}
+`;
+
+exports[`generateIndex > Should generate full index 3`] = `
+{
+  "contents": [
+    {
+      "contents": [
+        "Markdown content.",
+      ],
+      "header": "",
+      "slug": "",
+    },
+  ],
+  "title": "Tag Test",
+}
+`;
+
+exports[`generateIndex > Should generate full index 4`] = `
+{
+  "contents": [
+    {
+      "contents": [
+        "Markdown content.",
+      ],
+      "header": "",
+      "slug": "",
+    },
+  ],
+  "title": "",
+}
+`;
+
+exports[`generateIndex > Should generate full index 5`] = `null`;
+
+exports[`generateIndex > Should generate index 1`] = `
+{
+  "contents": [],
+  "title": "Demo Page",
+}
+`;
+
+exports[`generateIndex > Should generate index 2`] = `
+{
+  "contents": [
+    {
+      "contents": [],
+      "header": "Heading 1",
+      "slug": "heading-1",
+    },
+    {
+      "contents": [],
+      "header": "Heading 2",
+      "slug": "heading-2",
+    },
+    {
+      "contents": [],
+      "header": "Heading 3",
+      "slug": "heading-3",
+    },
+    {
+      "contents": [],
+      "header": "Heading 4",
+      "slug": "heading-4",
+    },
+    {
+      "contents": [],
+      "header": "Heading 5",
+      "slug": "heading-5",
+    },
+    {
+      "contents": [],
+      "header": "Heading 6",
+      "slug": "heading-6",
+    },
+    {
+      "contents": [],
+      "header": "Text",
+      "slug": "text",
+    },
+    {
+      "contents": [],
+      "header": "Paragraph",
+      "slug": "paragraph",
+    },
+    {
+      "contents": [],
+      "header": "Line Break",
+      "slug": "line-break",
+    },
+    {
+      "contents": [],
+      "header": "Blockquotes",
+      "slug": "blockquotes",
+    },
+    {
+      "contents": [],
+      "header": "List",
+      "slug": "list",
+    },
+    {
+      "contents": [],
+      "header": "Unordered List",
+      "slug": "unordered-list",
+    },
+    {
+      "contents": [],
+      "header": "Ordered List",
+      "slug": "ordered-list",
+    },
+    {
+      "contents": [],
+      "header": "HR",
+      "slug": "hr",
+    },
+    {
+      "contents": [],
+      "header": "Link",
+      "slug": "link",
+    },
+    {
+      "contents": [],
+      "header": "Image",
+      "slug": "image",
+    },
+    {
+      "contents": [],
+      "header": "Emoji",
+      "slug": "emoji",
+    },
+    {
+      "contents": [],
+      "header": "Tables",
+      "slug": "tables",
+    },
+  ],
+  "title": "Heading 1",
+}
+`;
+
+exports[`generateIndex > Should generate index 3`] = `
+{
+  "contents": [],
+  "title": "Tag Test",
+}
+`;
+
+exports[`generateIndex > Should generate index 4`] = `
+{
+  "contents": [],
+  "title": "",
+}
+`;
+
+exports[`generateIndex > Should generate index 5`] = `null`;
+
+exports[`generateIndex > Should support customFields 1`] = `
+{
+  "contents": [],
+  "customFields": {
+    "tag": [
+      "Demo",
+    ],
+  },
+  "title": "Demo Page",
+}
+`;
+
+exports[`generateIndex > Should support customFields 2`] = `
+{
+  "contents": [
+    {
+      "contents": [],
+      "header": "Heading 1",
+      "slug": "heading-1",
+    },
+    {
+      "contents": [],
+      "header": "Heading 2",
+      "slug": "heading-2",
+    },
+    {
+      "contents": [],
+      "header": "Heading 3",
+      "slug": "heading-3",
+    },
+    {
+      "contents": [],
+      "header": "Heading 4",
+      "slug": "heading-4",
+    },
+    {
+      "contents": [],
+      "header": "Heading 5",
+      "slug": "heading-5",
+    },
+    {
+      "contents": [],
+      "header": "Heading 6",
+      "slug": "heading-6",
+    },
+    {
+      "contents": [],
+      "header": "Text",
+      "slug": "text",
+    },
+    {
+      "contents": [],
+      "header": "Paragraph",
+      "slug": "paragraph",
+    },
+    {
+      "contents": [],
+      "header": "Line Break",
+      "slug": "line-break",
+    },
+    {
+      "contents": [],
+      "header": "Blockquotes",
+      "slug": "blockquotes",
+    },
+    {
+      "contents": [],
+      "header": "List",
+      "slug": "list",
+    },
+    {
+      "contents": [],
+      "header": "Unordered List",
+      "slug": "unordered-list",
+    },
+    {
+      "contents": [],
+      "header": "Ordered List",
+      "slug": "ordered-list",
+    },
+    {
+      "contents": [],
+      "header": "HR",
+      "slug": "hr",
+    },
+    {
+      "contents": [],
+      "header": "Link",
+      "slug": "link",
+    },
+    {
+      "contents": [],
+      "header": "Image",
+      "slug": "image",
+    },
+    {
+      "contents": [],
+      "header": "Emoji",
+      "slug": "emoji",
+    },
+    {
+      "contents": [],
+      "header": "Tables",
+      "slug": "tables",
+    },
+  ],
+  "title": "Heading 1",
+}
+`;
+
+exports[`generateIndex > Should support customFields 3`] = `
+{
+  "contents": [],
+  "customFields": {
+    "tag": [
+      "markdown",
+    ],
+  },
+  "title": "Tag Test",
+}
+`;
+
+exports[`generateIndex > Should support customFields 4`] = `
+{
+  "contents": [],
+  "customFields": {
+    "tag": [
+      "markdown",
+    ],
+  },
+  "title": "",
+}
+`;
+
+exports[`generateIndex > Should support customFields 5`] = `null`;
+
+exports[`generateIndex > Should support customFields with full index 1`] = `
+{
+  "contents": [
+    {
+      "contents": [
+        "Here is article excerpt.",
+      ],
+      "header": "",
+      "slug": "",
+    },
+    {
+      "contents": [
+        "Here is main content of article.",
+        "A",
+        "B",
+        "C",
+      ],
+      "header": "Content",
+      "slug": "content",
+    },
+  ],
+  "customFields": {
+    "tag": [
+      "Demo",
+    ],
+  },
+  "title": "Demo Page",
+}
+`;
+
+exports[`generateIndex > Should support customFields with full index 2`] = `
+{
+  "contents": [
+    {
+      "contents": [],
+      "header": "Heading 1",
+      "slug": "heading-1",
+    },
+    {
+      "contents": [],
+      "header": "Heading 2",
+      "slug": "heading-2",
+    },
+    {
+      "contents": [],
+      "header": "Heading 3",
+      "slug": "heading-3",
+    },
+    {
+      "contents": [],
+      "header": "Heading 4",
+      "slug": "heading-4",
+    },
+    {
+      "contents": [],
+      "header": "Heading 5",
+      "slug": "heading-5",
+    },
+    {
+      "contents": [],
+      "header": "Heading 6",
+      "slug": "heading-6",
+    },
+    {
+      "contents": [
+        "This sentence has bold、italic and delete style text.",
+      ],
+      "header": "Text",
+      "slug": "text",
+    },
+    {
+      "contents": [
+        "This is a paragraph.",
+        "This is another paragraph.",
+      ],
+      "header": "Paragraph",
+      "slug": "paragraph",
+    },
+    {
+      "contents": [
+        "I would like to line break at this point",
+        "::: tip",
+        "In codes above, two spaces are behind at.",
+        ":::",
+      ],
+      "header": "Line Break",
+      "slug": "line-break",
+    },
+    {
+      "contents": [
+        "Blockquotes can also be nested...",
+        "...by using greater-than signs right next to each other...",
+        "...or with spaces between arrows.",
+      ],
+      "header": "Blockquotes",
+      "slug": "blockquotes",
+    },
+    {
+      "contents": [],
+      "header": "List",
+      "slug": "list",
+    },
+    {
+      "contents": [
+        "Create a list by starting a line with -",
+        "Make sub-lists by indenting 2 spaces:",
+        "Marker character change forces new list start:",
+        "Ac tristique libero volutpat at",
+        "Facilisis in pretium nisl aliquet",
+        "Nulla volutpat aliquam velit link break",
+        "New paragraph",
+        "It’s easy!",
+      ],
+      "header": "Unordered List",
+      "slug": "unordered-list",
+    },
+    {
+      "contents": [
+        "Lorem ipsum dolor sit amet",
+        "Consectetur adipiscing elit line break line break again",
+        "Integer molestie lorem at massa",
+      ],
+      "header": "Ordered List",
+      "slug": "ordered-list",
+    },
+    {
+      "contents": [],
+      "header": "HR",
+      "slug": "hr",
+    },
+    {
+      "contents": [
+        "Home page using absolute path",
+        "Home page using relative path",
+      ],
+      "header": "Link",
+      "slug": "link",
+    },
+    {
+      "contents": [],
+      "header": "Image",
+      "slug": "image",
+    },
+    {
+      "contents": [
+        "Classic:",
+        "😉 😢 😆 😋",
+      ],
+      "header": "Emoji",
+      "slug": "emoji",
+    },
+    {
+      "contents": [
+        "center",
+        "right",
+        "left",
+        "For center align use :-:",
+        "For right align use -:",
+        "For left align use :-",
+        "b",
+        "aaaaaaaaa",
+        "aaaa",
+        "c",
+        "aaaa",
+        "a",
+      ],
+      "header": "Tables",
+      "slug": "tables",
+    },
+    {
+      "contents": [
+        "Inline Code: code",
+        "Block code:",
+        "Syntax highlighting:",
+      ],
+      "header": "Codes",
+      "slug": "codes",
+    },
+  ],
+  "title": "Heading 1",
+}
+`;
+
+exports[`generateIndex > Should support customFields with full index 3`] = `
+{
+  "contents": [
+    {
+      "contents": [
+        "Markdown content.",
+      ],
+      "header": "",
+      "slug": "",
+    },
+  ],
+  "customFields": {
+    "tag": [
+      "markdown",
+    ],
+  },
+  "title": "Tag Test",
+}
+`;
+
+exports[`generateIndex > Should support customFields with full index 4`] = `
+{
+  "contents": [
+    {
+      "contents": [
+        "Markdown content.",
+      ],
+      "header": "",
+      "slug": "",
+    },
+  ],
+  "customFields": {
+    "tag": [
+      "markdown",
+    ],
+  },
+  "title": "",
+}
+`;
+
+exports[`generateIndex > Should support customFields with full index 5`] = `null`;
