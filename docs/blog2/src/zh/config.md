@@ -19,7 +19,7 @@ icon: config
 ### filter
 
 - 类型: `(page: Page) => boolean`
-- 默认: `(page) => Boolean(page.filePathRelative) && !page.frontmatter.home`
+- 默认值: `(page) => Boolean(page.filePathRelative) && !page.frontmatter.home`
 - 详情:
   - [指南 → 收集文章并生成信息](./guide.md#收集文章并生成信息)
 
@@ -48,14 +48,14 @@ icon: config
 ### slugify
 
 - 类型: `(name: string) => string`
-- 默认: `(name) => name.replace(/ _/g, '-').replace(/[:?*|\\/<>]/g, "").toLowerCase()`
+- 默认值: `(name) => name.replace(/ _/g, '-').replace(/[:?*|\\/<>]/g, "").toLowerCase()`
 
 Slugify 函数，用于转换 key 在路由中注册的形式。
 
 ### metaScope
 
 - 类型: `string`
-- 默认: `"_blog"`
+- 默认值: `"_blog"`
 
 注入文章信息至路由元数据时使用的键名。
 

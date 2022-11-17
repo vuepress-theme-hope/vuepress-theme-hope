@@ -19,7 +19,7 @@ icon: config
     | "YouTube";
   ```
 
-- 默认: `[]`
+- 默认值: `[]`
 
 需要被注册的组件。
 
@@ -37,7 +37,7 @@ icon: config
 ## addThis
 
 - 类型: `string | false`
-- 默认: `false`
+- 默认值: `false`
 - 详情:
   - [指南 → AddThis](./guide/addthis.md#使用)
 
@@ -46,7 +46,7 @@ AddThis 的公开 ID。
 ## backToTop
 
 - 类型: `boolean | number`
-- 默认: `false`
+- 默认值: `false`
 
 是否启用返回顶部按钮，当设置为数字时，会被作为返回顶部按钮触发距离 (单位: 像素)，默认为 300。
 

@@ -63,7 +63,7 @@ type Author = string | string[] | AuthorInfo | AuthorInfo[];
 ## isOriginal
 
 - 类型: `boolean`
-- 默认: `false`
+- 默认值: `false`
 
 当前文章是否为原创。
 
@@ -106,14 +106,14 @@ type Author = string | string[] | AuthorInfo | AuthorInfo[];
 ## article
 
 - 类型: `boolean`
-- 默认: `true`
+- 默认值: `true`
 
 是否将该文章添加至文章列表中。
 
 ## timeline
 
 - 类型: `boolean`
-- 默认: `true`
+- 默认值: `true`
 
 是否将该文章添加至时间线中。
 

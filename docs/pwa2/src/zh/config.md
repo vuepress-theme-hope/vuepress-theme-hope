@@ -155,7 +155,7 @@ icon: config
 ### apple.statusBarColor
 
 - 类型: `"black" | "white"`
-- 默认: `"black"`
+- 默认值: `"black"`
 
 苹果的状态栏颜色
 

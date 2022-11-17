@@ -13,7 +13,7 @@ icon: config
 ## config
 
 - 类型: `string`
-- 默认: `` `.vuepress/styles/${id}-palette.scss` ``
+- 默认值: `` `.vuepress/styles/${id}-palette.scss` ``
 
 用户配置文件路径，相对于源文件夹。
 
@@ -28,7 +28,7 @@ icon: config
 ## defaultConfig
 
 - 类型: `string`
-- 默认: `"vuepress-plugin-sass-palette/styles/default/config.scss"`
+- 默认值: `"vuepress-plugin-sass-palette/styles/default/config.scss"`
 
 默认的配置文件路径，应为绝对路径。
 
@@ -41,7 +41,7 @@ icon: config
 ## palette
 
 - 类型: `string`
-- 默认: `` `.vuepress/styles/${id}-palette.scss` ``
+- 默认值: `` `.vuepress/styles/${id}-palette.scss` ``
 
 用户的调色板文件路径，相对于源文件夹。
 
@@ -56,7 +56,7 @@ icon: config
 ## defaultPalette
 
 - 类型: `string`
-- 默认: `"vuepress-plugin-sass-palette/styles/default/palette.scss"`
+- 默认值: `"vuepress-plugin-sass-palette/styles/default/palette.scss"`
 
 默认的调色板文件路径，应为绝对路径。
 

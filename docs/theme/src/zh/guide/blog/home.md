@@ -24,7 +24,7 @@ tag:
 ### hero
 
 - 类型: `boolean`
-- 默认: `true`
+- 默认值: `true`
 
 是否显示主页的图标与描述。主页的图标、描述设置同 [默认主页](../layout/home.md)。
 
@@ -49,7 +49,7 @@ tag:
 ### heroFullScreen
 
 - 类型: `boolean`
-- 默认: `false`
+- 默认值: `false`
 
 是否全屏显示 Hero
 

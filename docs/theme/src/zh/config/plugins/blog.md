@@ -30,7 +30,7 @@ tag:
 ### filter
 
 - 类型: `(page: Page) => boolean`
-- 默认: `(page) => Boolean(page.filePathRelative) && !page.frontmatter.home`
+- 默认值: `(page) => Boolean(page.filePathRelative) && !page.frontmatter.home`
 
 页面过滤器，此函数用于鉴别页面是否作为文章。
 

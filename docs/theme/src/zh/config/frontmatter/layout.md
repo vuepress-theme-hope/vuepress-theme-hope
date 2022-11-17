@@ -246,6 +246,6 @@ Page order in sidebar.
 ## layout
 
 - 类型: `string`
-- 默认: `"Layout"`
+- 默认值: `"Layout"`
 
 页面的自定义布局名称。

@@ -6,14 +6,14 @@ icon: config
 ## provider
 
 - 类型: `"Giscus" | "Twikoo" | "Waline" | "None"`
-- 默认: `"None"`
+- 默认值: `"None"`
 
 评论服务提供者。
 
 ## comment
 
 - 类型: `boolean`
-- 默认: `true`
+- 默认值: `true`
 
 是否默认启用评论功能。
 

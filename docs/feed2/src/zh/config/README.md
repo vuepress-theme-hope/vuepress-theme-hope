@@ -13,21 +13,21 @@ icon: config
 ## atom
 
 - 类型: `boolean`
-- 默认: `false`
+- 默认值: `false`
 
 是否启用 Atom 格式输出。
 
 ## json
 
 - 类型: `boolean`
-- 默认: `false`
+- 默认值: `false`
 
 是否启用 JSON 格式输出。
 
 ## rss
 
 - 类型: `boolean`
-- 默认: `false`
+- 默认值: `false`
 
 是否启用 RSS 格式输出。
 
@@ -101,21 +101,21 @@ icon: config
 ## atomOutputFilename
 
 - 类型: `string`
-- 默认: `atom.xml`
+- 默认值: `atom.xml`
 
 Atom 格式输出路径，相对于输出路径。
 
 ## jsonOutputFilename
 
 - 类型: `string`
-- 默认: `feed.json`
+- 默认值: `feed.json`
 
 JSON 格式输出路径，相对于输出路径。
 
 ## rssOutputFilename
 
 - 类型: `string`
-- 默认: `rss.xml`
+- 默认值: `rss.xml`
 
 RSS 格式输出路径，相对于输出路径。
 

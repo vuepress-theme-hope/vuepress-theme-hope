@@ -141,14 +141,14 @@ tag:
 ### blog.articlePerPage
 
 - 类型: `number`
-- 默认: `10`
+- 默认值: `10`
 
 每页的文章数量。
 
 ### blog.articleInfo
 
 - 类型: `ArticleInfo[]`
-- 默认: `["Author", "Original", "Date", "PageView", "Category", "Tag", "ReadingTime"]`
+- 默认值: `["Author", "Original", "Date", "PageView", "Category", "Tag", "ReadingTime"]`
 
 文章列表中展示的文章信息
 
