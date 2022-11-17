@@ -1,0 +1,34 @@
+import { defineUserConfig } from "@vuepress/cli";
+import { defaultTheme } from "@vuepress/theme-default";
+import { searchProPlugin } from "vuepress-plugin-search-pro";
+
+const base = <"/" | `/${string}/`>process.env.BASE || "/";
+
+export default defineUserConfig({
+  base,
+
+  title: "Search Pro",
+
+  description: "VuePress Client Search plugin",
+
+  theme: defaultTheme({
+    logo: "/logo.svg",
+
+    repo: "vuepress-theme-hope/vuepress-theme-hope/tree/main/demo/search-pro/",
+
+    navbar: ["/", "/demo"],
+  }),
+
+  plugins: [
+    searchProPlugin({
+      fullIndex: true,
+      customFields: [
+        {
+          name: "tags",
+          getter: ({ frontmatter }) => frontmatter.tag as string[],
+          formatter: `Tag: $content`,
+        },
+      ],
+    }),
+  ],
+});

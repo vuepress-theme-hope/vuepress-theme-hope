@@ -1,0 +1,71 @@
+{
+  "name": "vuepress-plugin-search-pro",
+  "version": "2.0.0-beta.122",
+  "description": "A advanced search plugin in client",
+  "keywords": [
+    "vuepress",
+    "vuepress2",
+    "vuepress-plugin",
+    "search"
+  ],
+  "homepage": "https://vuepress-theme-hope.github.io/v2/search-pro/",
+  "bugs": {
+    "url": "https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuepress-theme-hope/vuepress-theme-hope.git",
+    "directory": "packages/search-pro"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Mr.Hope",
+    "email": "mister-hope@outlook.com",
+    "url": "https://mrhope.site"
+  },
+  "type": "module",
+  "exports": {
+    ".": "./lib/node/index.js",
+    "./lib/client/*": "./lib/client/*",
+    "./package.json": "./package.json"
+  },
+  "main": "lib/node/index.js",
+  "types": "lib/node/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "clean": "rimraf ./lib ./*.tsbuildinfo",
+    "copy": "cpx \"src/client/**/*.{vue,scss}\" lib/client",
+    "dev": "concurrently \"pnpm dev:copy\" \"pnpm dev:ts\"",
+    "dev:copy": "pnpm copy -w",
+    "dev:ts": "tsc -b tsconfig.build.json --watch"
+  },
+  "dependencies": {
+    "@vueuse/core": "^9.5.0",
+    "@vuepress/client": "2.0.0-beta.53",
+    "@vuepress/utils": "2.0.0-beta.53",
+    "chokidar": "^3.5.3",
+    "cheerio": "^1.0.0-rc.12",
+    "vue": "^3.2.45",
+    "vue-router": "^4.1.6",
+    "vuepress-plugin-sass-palette": "workspace:*",
+    "vuepress-shared": "workspace:*"
+  },
+  "peerDependencies": {
+    "sass-loader": "^13.3d.0"
+  },
+  "peerDependenciesMeta": {
+    "sass-loader": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@vuepress/core": "2.0.0-beta.53",
+    "rimraf": "3.0.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

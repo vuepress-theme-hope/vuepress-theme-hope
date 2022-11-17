@@ -1,0 +1,31 @@
+.theme-hope-content a {
+  &[href*="/guide/"],
+  &[href*="/config/"] {
+    &::before {
+      position: relative;
+      bottom: 0.125em;
+
+      vertical-align: middle;
+
+      margin-right: 0.25em;
+
+      color: var(--theme-color);
+
+      font-family: iconfont, sans-serif;
+    }
+  }
+
+  &[href*="/config.html"],
+  &[href*="/config/"] {
+    &::before {
+      content: "\e656";
+    }
+  }
+
+  &[href*="/guide.html"],
+  &[href*="/guide/"] {
+    ::before {
+      content: "\e718";
+    }
+  }
+}
