@@ -4,6 +4,7 @@ import type { App } from "@vuepress/core";
 import type { ViteBundlerOptions } from "@vuepress/bundler-vite";
 import type { WebpackBundlerOptions } from "@vuepress/bundler-webpack";
 
+// Copied from https://github.com/vuejs/core/blob/b2bac9fa1763ab895f9bea18ef83d58673e1a4ec/packages/shared/src/domTagConfig.ts#L6-L28
 // https://developer.mozilla.org/en-US/docs/Web/HTML/Element
 const HTML_TAGS =
   "html,body,base,head,link,meta,style,title,address,article,aside,footer," +
