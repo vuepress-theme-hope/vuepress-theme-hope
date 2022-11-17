@@ -10,7 +10,7 @@ import type {
 
 declare const COMMENT_OPTIONS: CommentOptions;
 
-const enableComment = COMMENT_OPTIONS;
+const enableComment = COMMENT_OPTIONS.comment !== false;
 
 export default defineClientConfig({
   enhance: ({ app }) => {
@@ -27,7 +27,7 @@ export default defineClientConfig({
         const enabled = computed(() => {
           return (
             frontmatter.value.comment ||
-            (enableComment !== false && frontmatter.value.comment !== false)
+            (enableComment && frontmatter.value.comment !== false)
           );
         });
 
