@@ -7,6 +7,7 @@ on:
 
 jobs:
   publish:
+    name: Publish packages
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -31,10 +32,14 @@ jobs:
           NODE_OPTIONS: --max_old_space_size=8192
         run: pnpm run build
 
+      - name: Set Token
+        run: |-
+          echo "registry=https://registry.npmjs.org/
+          //registry.npmjs.org/:always-auth=true
+          //registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}"
+
       - name: Publish packages
         run: pnpm publish -r --tag next --no-git-checks
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Sync npmmirror
         run: pnpm release:sync
