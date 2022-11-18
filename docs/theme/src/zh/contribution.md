@@ -57,6 +57,7 @@ corepack prepare pnpm@7.14.0 --activate
 │ ├── pwa → pwa2 插件文档
 │ ├── reading-time → reading-time2 插件文档
 │ ├── sass-palette → sass-palette 插件文档
+│ ├── search-pro → search-pro 插件文档
 │ ├── seo → seo2 插件文档
 │ └── theme → 主题文档
 │
@@ -73,6 +74,7 @@ corepack prepare pnpm@7.14.0 --activate
 │ ├── pwa2 → pwa2 插件
 │ ├── reading-time2 → reading-time2 插件
 │ ├── sass-palette → sass-palette 插件
+│ ├── search-pro → search-pro 插件
 │ ├── seo2 → seo2 插件
 │ ├── shared → 共享文件
 │ ├── sitemap2 → sitemap2 插件

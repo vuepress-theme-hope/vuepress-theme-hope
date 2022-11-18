@@ -150,8 +150,6 @@ The theme includes the following plugins, you can use them in other themes or di
 
 - [vuepress-plugin-reading-time2][reading-time2]: Expect reading time and words count
 
-- [vuepress-plugin-redirect][redirect]: Redirect pages
-
 - [vuepress-plugin-sass-palette][sass-palette]: Sass style plugin for all plugins and themes
 
 - [vuepress-plugin-seo2][seo2]: SEO Enhancement Plugin
@@ -163,6 +161,10 @@ The theme includes the following plugins, you can use them in other themes or di
 Here are some other plugins that are not enabled by default by the theme, you can enable them according to your own needs.
 
 - [vuepress-plugin-lightgallery][lightgallery]: Photo preview plugin based on lightgallery
+
+- [vuepress-plugin-redirect][redirect]: Redirect pages
+
+- [vuepress-plugin-search-pro][search-pro]: Client search plugin
 
 :::
 
@@ -179,5 +181,6 @@ Here are some other plugins that are not enabled by default by the theme, you ca
 [reading-time2]: https://vuepress-theme-hope.github.io/v2/reading-time/
 [redirect]: https://vuepress-theme-hope.github.io/v2/redirect/
 [sass-palette]: https://vuepress-theme-hope.github.io/v2/sass-palette/
+[search-pro]: https://vuepress-theme-hope.github.io/v2/search-pro/
 [seo2]: https://vuepress-theme-hope.github.io/v2/seo/
 [sitemap2]: https://vuepress-theme-hope.github.io/v2/sitemap/

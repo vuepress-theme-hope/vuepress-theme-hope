@@ -88,6 +88,11 @@ export const enNavbarConfig = navbar([
             link: "https://vuepress-theme-hope.github.io/v2/sass-palette/",
           },
           {
+            text: "Client Search Plugin",
+            icon: "search",
+            link: "https://vuepress-theme-hope.github.io/v2/search-pro/",
+          },
+          {
             text: "Seo Plugin",
             icon: "strong",
             link: "https://vuepress-theme-hope.github.io/v2/seo/",
