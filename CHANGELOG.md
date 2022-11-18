@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.124](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.123...v2.0.0-beta.124) (2022-11-18)
+
+### ⚠ BREAKING CHANGES
+
+- **search-pro:** rename `fullIndex` to `indexContent`
+
+### Features
+
+- **md-enhance:** support mindmap in mermaid ([236f28e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/236f28e843225f9cb3739a1a0da0a461181b536f))
+- **search-pro:** add history search ([a953a1d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a953a1d51c3d32034a4091393842f8ba2d7701a0))
+- **search-pro:** add more locale options ([c499156](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c4991561963e3f2dc467a8c5c6821ed92bf7b184))
+- **search-pro:** improve hmr ([f32a5a2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f32a5a203e23df51d3ba7adccc1a2ca443241f65))
+- **search-pro:** improve modal style ([b9d3e49](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b9d3e49614b4ffd851d6d5294d3c3e08dd28dec5))
+- **search-pro:** index excerpt by default ([3d6004a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3d6004aca713c7d8a7afede5ac818ef76e42b70d))
+- **search-pro:** rename `fullIndex` to `indexContent` ([acd61a9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/acd61a90512b4a41540cb7b2a2321027b9eb5d2a))
+
+### Bug Fixes
+
+- **comment2:** fix Waline options ([34c3420](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/34c3420027a24b87f9dc1bd7b52a9bb6de157bf2))
+- **md-enhance:** add fallback for theme color ([c3f0e0e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c3f0e0e0c50d2281a3e11d8115c43fa25ab40d84))
+- **search-pro:** fix closing modal directly not clearing input ([5d9a259](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5d9a2597506e1297af96442cae490ba176c69e37))
+- **search-pro:** fix modal style ([c473bbd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c473bbd8290169d2e87c1b42d1e5b578aa957330))
+- **search-pro:** update styles ([222c9fb](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/222c9fbd150ba03faf36e01b08a81a10581051d1))
+
 ## [2.0.0-beta.123](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.122...v2.0.0-beta.123) (2022-11-18)
 
 ### ⚠ BREAKING CHANGES
