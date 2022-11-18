@@ -1,20 +1,19 @@
 import type { LocaleConfig } from "@vuepress/core";
-import type { AttrsOptions } from "./typings/attrs.js";
-import type { CodeDemoOptions } from "../shared/codeDemo.js";
-import type { ImageMarkOptions } from "./typings/imageMark.js";
-import type { IncludeOptions } from "./typings/include.js";
-import type { KatexOptions } from "./typings/katex.js";
-import type { MarkdownEnhanceLocaleData } from "./typings/locales.js";
-import type { MathJaxOptions } from "./typings/mathjax.js";
 import type {
+  AttrsOptions,
+  ImageMarkOptions,
+  IncludeOptions,
+  KatexOptions,
+  MarkdownEnhanceLocaleData,
+  MathJaxOptions,
+  StylizeOptions,
   PlaygroundOptions,
+  PresentationOptions,
+  TaskListOptions,
   TSPresetPlaygroundOptions,
   VuePresetPlaygroundOptions,
-} from "./typings/playground.js";
-import type { PresentationOptions } from "./typings/presentation.js";
-import type { TaskListOptions } from "./typings/tasklist.js";
-import type { StylizeOptions } from "./typings/stylize.js";
-import type { VuePlaygroundOptions } from "../shared/index.js";
+} from "./typings/index.js";
+import type { CodeDemoOptions, VuePlaygroundOptions } from "../shared/index.js";
 
 /**
  * md-enhance plugin configuration

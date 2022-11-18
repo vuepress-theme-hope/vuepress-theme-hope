@@ -5,12 +5,8 @@ import { getAuthor, getDate } from "vuepress-shared/node";
 import { getCover, getImages, getLocales, resolveUrl } from "./utils.js";
 
 import type { App } from "@vuepress/core";
-import type {
-  ArticleJSONLD,
-  ExtendPage,
-  SeoContent,
-  SeoOptions,
-} from "../shared/index.js";
+import type { SeoOptions } from "./options.js";
+import type { ArticleJSONLD, ExtendPage, SeoContent } from "./typings/index.js";
 
 export const getOGP = (
   page: ExtendPage,

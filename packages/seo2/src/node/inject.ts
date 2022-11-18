@@ -3,7 +3,7 @@ import type {
   ArticleJSONLD,
   ArticleSeoContent,
   SeoContent,
-} from "../shared/index.js";
+} from "./typings/index.js";
 
 interface MetaOptions {
   name: string;

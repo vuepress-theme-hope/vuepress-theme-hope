@@ -1,21 +1,6 @@
-import type { App, HeadConfig, Page, PageFrontmatter } from "@vuepress/core";
-import type { GitData } from "@vuepress/plugin-git";
-import type { Author, BasePageFrontMatter } from "vuepress-shared";
-import type { ArticleJSONLD } from "./json-ld.js";
-import type { SeoContent } from "./ogp.js";
-
-export type ExtendPage<
-  ExtraPageData extends Record<string | number | symbol, unknown> & {
-    git?: GitData;
-  } = { git?: GitData },
-  ExtraPageFrontmatter extends PageFrontmatter<
-    BasePageFrontMatter & { banner: string; cover: string }
-  > = PageFrontmatter<BasePageFrontMatter & { banner: string; cover: string }>,
-  ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-    never,
-    never
-  >
-> = Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>;
+import type { App, HeadConfig, Page } from "@vuepress/core";
+import type { Author } from "vuepress-shared";
+import type { ArticleJSONLD, ExtendPage, SeoContent } from "./typings/index.js";
 
 export interface SeoOptions {
   /**
