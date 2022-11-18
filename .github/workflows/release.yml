@@ -1,4 +1,4 @@
-name: Deploy Docs and Demos
+name: Publish packages and deploy Docs and Demos
 
 on:
   push:
@@ -6,6 +6,39 @@ on:
       - v2.**
 
 jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7
+          run_install: true
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: pnpm
+
+      - name: Build project
+        env:
+          NODE_OPTIONS: --max_old_space_size=8192
+        run: pnpm run build
+
+      - name: Publish packages
+        run: pnpm publish -r --tag next --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Sync npmmirror
+        run: pnpm release:sync
+
   deploy-netlify-docs:
     name: Deploy V2 docs to Netlify
     runs-on: ubuntu-latest
@@ -54,6 +87,7 @@ jobs:
           pnpm cpx "docs/redirect/dist/**" dist/redirect
           pnpm cpx "docs/redirect/dist/**" dist/redirect
           pnpm cpx "docs/sass-palette/dist/**" dist/sass-palette
+          pnpm cpx "docs/search-pro/dist/**" dist/search-pro
           pnpm cpx "docs/seo2/dist/**" dist/seo
           pnpm cpx "docs/sitemap2/dist/**" dist/sitemap
           pnpm cpx "docs/theme/dist/**" dist
@@ -116,6 +150,7 @@ jobs:
           pnpm cpx "docs/reading-time2/dist/**" dist/reading-time
           pnpm cpx "docs/redirect/dist/**" dist/redirect
           pnpm cpx "docs/sass-palette/dist/**" dist/sass-palette
+          pnpm cpx "docs/search-pro/dist/**" dist/search-pro
           pnpm cpx "docs/seo2/dist/**" dist/seo
           pnpm cpx "docs/sitemap2/dist/**" dist/sitemap
           pnpm cpx "docs/theme/dist/**" dist
@@ -209,6 +244,7 @@ jobs:
           - pwa2
           - redirect
           - sass-palette
+          - search-pro
           - seo2
           - sitemap2
 
