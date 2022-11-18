@@ -719,6 +719,7 @@ importers:
       docs-shared: workspace:*
       sass-loader: 13.1.0
       vue: 3.2.45
+      vuepress-plugin-search-pro: workspace:*
       vuepress-vite: 2.0.0-beta.53
       vuepress-webpack: 2.0.0-beta.53
     dependencies:
@@ -726,6 +727,7 @@ importers:
       docs-shared: link:../shared
       sass-loader: 13.1.0
       vue: 3.2.45
+      vuepress-plugin-search-pro: link:../../packages/search-pro
       vuepress-vite: 2.0.0-beta.53_ti3wepbkgsfdytjlydfm2jrrla
       vuepress-webpack: 2.0.0-beta.53_vue@3.2.45
 

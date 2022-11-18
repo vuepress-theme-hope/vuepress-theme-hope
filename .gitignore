@@ -15,6 +15,9 @@ dist/
 # Rollup Cache
 .rollup.cache/
 
+# npm config
+.npmrc
+
 # Typescript build info
 *.tsbuildinfo
 
