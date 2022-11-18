@@ -1,5 +1,5 @@
 import type { LocaleConfig } from "@vuepress/core";
-import type { BackToTopLocaleData } from "../shared/locales.js";
+import type { BackToTopLocaleData } from "../shared/index.js";
 
 export type AvailableComponent =
   | "Badge"

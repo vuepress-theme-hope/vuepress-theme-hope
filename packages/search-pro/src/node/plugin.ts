@@ -27,15 +27,12 @@ export const searchProPlugin =
       },
 
       define: {
-        // eslint-disable-next-line @typescript-eslint/naming-convention
         SEARCH_PRO_CUSTOM_FIELDS: Object.fromEntries(
           (options.customFields || [])
             .filter((item) => "formatter" in item)
             .map(({ name, formatter }) => [name, formatter])
         ),
-        // eslint-disable-next-line @typescript-eslint/naming-convention
         SEARCH_PRO_HOTKEYS: options.hotKeys || [{ key: "k", ctrl: true }],
-        // eslint-disable-next-line @typescript-eslint/naming-convention
         SEARCH_PRO_LOCALES: getLocales({
           app,
           name: "search-pro",

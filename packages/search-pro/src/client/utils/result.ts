@@ -1,7 +1,7 @@
 import { getMatchedContent } from "./matchContent.js";
 
 import type { Word } from "./matchContent.js";
-import type { LocaleIndex } from "../../shared/data.js";
+import type { LocaleIndex } from "../../shared/index.js";
 
 export interface TitleMatchedItem {
   type: "title";
