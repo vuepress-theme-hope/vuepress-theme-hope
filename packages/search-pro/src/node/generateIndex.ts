@@ -27,10 +27,15 @@ export const generatePageIndex = (
   customFieldsGetter: SearchProCustomFieldOptions[] = [],
   indexContent = false
 ): PageIndex | null => {
+  const hasExcerpt = page.excerpt.length > 0;
+
   const result: PageIndex = {
     title: page.title,
     contents: [],
   };
+
+  // here are some variables holding the current state of the parser
+  let shouldIndexContent = hasExcerpt || indexContent;
   let currentContent = "";
   let currentHeaderContent: PageHeaderContent = {
     header: "",
@@ -42,7 +47,7 @@ export const generatePageIndex = (
   const render = (node: AnyNode): void => {
     if (node.type === "tag") {
       if (HEADING_TAGS.includes(node.name)) {
-        if (currentContent && indexContent) {
+        if (currentContent && shouldIndexContent) {
           // add last content
           currentHeaderContent?.contents.push(
             currentContent.replace(/\s+/gu, " ")
@@ -50,6 +55,7 @@ export const generatePageIndex = (
           currentContent = "";
         }
 
+        // content before first header does not belong to any header
         if (isContentBeforeFirstHeader) {
           // the content before the first header shall have actual contents
           if (currentHeaderContent.contents.length)
@@ -68,7 +74,7 @@ export const generatePageIndex = (
           contents: [],
         };
       } else if (CONTENT_BLOCK_TAGS.includes(node.name)) {
-        if (currentContent && indexContent) {
+        if (currentContent && shouldIndexContent) {
           // add last content
           currentHeaderContent?.contents.push(
             currentContent.replace(/\s+/gu, " ")
@@ -80,9 +86,21 @@ export const generatePageIndex = (
         node.childNodes.forEach(render);
     } else if (node.type === "text")
       currentContent += node.data.trim() ? node.data : "";
+    else if (
+      // we are expecting to stop at excerpt marker
+      hasExcerpt &&
+      !indexContent &&
+      // we got excerpt marker
+      node.type === "comment" &&
+      node.data.trim() === "more"
+    ) {
+      shouldIndexContent = false;
+    }
   };
 
   const nodes = $.parseHTML(page.contentRendered);
+
+  // get custom fields
   const customFields = Object.fromEntries(
     customFieldsGetter
       .map(({ name, getter }) => {
@@ -97,14 +115,16 @@ export const generatePageIndex = (
       .filter((item): item is [string, string[]] => item !== null)
   );
 
+  // no content in page and no customFields
   if (!nodes?.length && !Object.keys(customFields).length) return null;
 
+  // walk through nodes and extrac indexes
   nodes?.forEach((node) => {
     render(node);
   });
 
   // push contents in last block tags
-  if (currentContent && indexContent)
+  if (shouldIndexContent && currentContent)
     currentHeaderContent?.contents.push(currentContent);
 
   // push last content

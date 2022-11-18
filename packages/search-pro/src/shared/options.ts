@@ -77,7 +77,7 @@ export interface SearchProOptions {
   /**
    * Whether index page content
    *
-   * @description By default only the title and excerpt of the page will be indexed, and the content of the page will not be indexed. If you need to index the content of the page, you can set this option to `true`
+   * @description By default only headings and excerpt of the page will be indexed, and the content of the page will not be indexed. If you need to index the content of the page, you can set this option to `true`
    *
    * 是否索引正文内容
    *
