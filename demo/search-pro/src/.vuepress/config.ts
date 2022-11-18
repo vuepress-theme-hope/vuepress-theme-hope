@@ -22,6 +22,7 @@ export default defineUserConfig({
   plugins: [
     searchProPlugin({
       indexContent: true,
+      hotReload: true,
       customFields: [
         {
           name: "tags",
