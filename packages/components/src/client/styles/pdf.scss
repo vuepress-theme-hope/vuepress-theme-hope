@@ -15,12 +15,12 @@
   padding: 8px;
   border-radius: 8px;
 
-  background: var(--c-bg);
+  background: var(--c-bg, #fff);
 
   transition: background var(--color-transition);
 
   &:hover {
-    background: var(--c-bg-light);
+    background: var(--c-bg-light, #f3f4f5);
   }
 }
 

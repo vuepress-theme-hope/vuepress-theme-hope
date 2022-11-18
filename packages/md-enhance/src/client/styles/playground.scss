@@ -65,7 +65,7 @@
   .preview-container {
     position: relative;
     overflow: hidden;
-    background: var(--c-bg);
+    background: var(--c-bg, #fff);
     transition: background var(--color-transition);
 
     iframe {
