@@ -847,7 +847,7 @@ importers:
       '@vuepress/client': 2.0.0-beta.53
       '@vuepress/core': 2.0.0-beta.53
       '@vuepress/utils': 2.0.0-beta.53
-      '@waline/client': ^2.14.0
+      '@waline/client': ^2.14.1
       giscus: ^1.2.3
       rimraf: 3.0.2
       twikoo: ^1.6.7
@@ -858,7 +858,7 @@ importers:
     dependencies:
       '@vuepress/client': 2.0.0-beta.53
       '@vuepress/utils': 2.0.0-beta.53
-      '@waline/client': 2.14.0
+      '@waline/client': 2.14.1
       giscus: 1.2.3
       twikoo: 1.6.7
       vue: 3.2.45
@@ -4123,8 +4123,8 @@ packages:
       - '@vue/composition-api'
       - vue
 
-  /@waline/client/2.14.0:
-    resolution: {integrity: sha512-+CaDIVS5WVKd1e33VA+3+ed86TVvycLi8FYiRv5xM+tnRp4xIOjLsFMNFS7zLOIGkpYillCBunmLGvY5g7apyA==}
+  /@waline/client/2.14.1:
+    resolution: {integrity: sha512-JnZidLAbuv9yf/+6LvLyv0t6dMHniIuFImgt4npctdCtG6cWuwIr8chhnJg4egiO5iVjlYbZeZYYvhwtjtPxwQ==}
     engines: {node: '>=14'}
     dependencies:
       '@vueuse/core': 9.5.0_vue@3.2.45
