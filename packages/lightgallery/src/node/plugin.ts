@@ -5,7 +5,7 @@ import { addViteOptimizeDepsExclude } from "vuepress-shared/node";
 import { logger } from "./utils.js";
 
 import type { PluginFunction } from "@vuepress/core";
-import type { LightGalleryOptions } from "../shared/index.js";
+import type { LightGalleryOptions } from "./options.js";
 
 const __dirname = getDirname(import.meta.url);
 
