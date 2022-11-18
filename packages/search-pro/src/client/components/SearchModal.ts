@@ -13,7 +13,7 @@ import { useLocaleConfig } from "vuepress-shared/client";
 import { SearchLoading } from "./SearchLoading.js";
 import { SearchIcon } from "./icons.js";
 import { searchModalSymbol } from "../composables/index.js";
-import { searchProLocales } from "../utils/index.js";
+import { searchProLocales } from "../define.js";
 
 import type { VNode } from "vue";
 

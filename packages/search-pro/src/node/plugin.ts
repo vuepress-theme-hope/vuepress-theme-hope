@@ -6,7 +6,7 @@ import { searchProLocales } from "./locales.js";
 import { prepareSearchIndex } from "./prepare.js";
 
 import type { PluginFunction } from "@vuepress/core";
-import type { SearchProOptions } from "../shared/index.js";
+import type { SearchProOptions } from "./options.js";
 
 const __dirname = getDirname(import.meta.url);
 

@@ -5,7 +5,7 @@ import { RouterLink, useRoute, useRouter } from "vue-router";
 
 import { HeadingIcon, HeartIcon, HistoryIcon, TitleIcon } from "./icons.js";
 import { useSearchHistory, useSearchResults } from "../composables/index.js";
-import { searchProClientCustomFiledConfig } from "../utils/index.js";
+import { searchProClientCustomFiledConfig } from "../define.js";
 
 import type { VNode } from "vue";
 import type { MatchedItem, Word } from "../utils/index.js";

@@ -2,7 +2,8 @@ import { utoa } from "vuepress-shared/node";
 import { generatePageIndex } from "./generateIndex.js";
 
 import type { App } from "@vuepress/core";
-import type { PageIndex, SearchProOptions } from "../shared/index.js";
+import type { SearchProOptions } from "./options.js";
+import type { PageIndex } from "../shared/index.js";
 
 const HMR_CODE = `
 if (import.meta.webpackHot) {

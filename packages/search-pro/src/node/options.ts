@@ -1,43 +1,9 @@
 import type { LocaleConfig, Page } from "@vuepress/core";
-import type { SearchProLocaleData } from "./locales.js";
-
-export type SearchProCustomFieldFormatter = string | Record<string, string>;
-
-export interface SearchProHotKeyOptions {
-  /**
-   * Value of `event.key` to trigger the hot key
-   *
-   * 热键的 `event.key` 值
-   */
-  key: string;
-
-  /**
-   * Whether to press `event.altKey` at the same time
-   *
-   * 是否同时按下 `event.altKey`
-   *
-   * @default false
-   */
-  alt?: boolean;
-
-  /**
-   * Whether to press `event.ctrlKey` at the same time
-   *
-   * 是否同时按下 `event.ctrlKey`
-   *
-   * @default false
-   */
-  ctrl?: boolean;
-
-  /**
-   * Whether to press `event.shiftKey` at the same time
-   *
-   * 是否同时按下 `event.shiftKey`
-   *
-   * @default false
-   */
-  shift?: boolean;
-}
+import type {
+  SearchProCustomFieldFormatter,
+  SearchProHotKeyOptions,
+  SearchProLocaleData,
+} from "../shared/index.js";
 
 export interface SearchProCustomFieldOptions {
   /**
@@ -67,11 +33,6 @@ export interface SearchProCustomFieldOptions {
    */
   formatter?: SearchProCustomFieldFormatter;
 }
-
-export type SearchProClientCustomFiledConfig = Record<
-  string,
-  SearchProCustomFieldFormatter
->;
 
 export interface SearchProOptions {
   /**

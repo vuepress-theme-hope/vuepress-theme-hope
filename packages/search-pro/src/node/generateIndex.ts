@@ -2,11 +2,8 @@ import { load } from "cheerio";
 
 import type { Page } from "@vuepress/core";
 import type { AnyNode } from "cheerio";
-import type {
-  PageHeaderContent,
-  PageIndex,
-  SearchProCustomFieldOptions,
-} from "../shared/index.js";
+import type { SearchProCustomFieldOptions } from "./options.js";
+import type { PageHeaderContent, PageIndex } from "../shared/index.js";
 
 const HEADING_TAGS = "h1,h2,h3,h4,h5,h6".split(",");
 

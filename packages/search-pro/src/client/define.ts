@@ -1,8 +1,13 @@
 import type {
-  SearchProClientCustomFiledConfig,
+  SearchProCustomFieldFormatter,
   SearchProHotKeyOptions,
   SearchProLocaleConfig,
-} from "../../shared/index.js";
+} from "../shared/index.js";
+
+type SearchProClientCustomFiledConfig = Record<
+  string,
+  SearchProCustomFieldFormatter
+>;
 
 declare const SEARCH_PRO_CUSTOM_FIELDS: SearchProClientCustomFiledConfig;
 declare const SEARCH_PRO_HOTKEYS: SearchProHotKeyOptions[];
