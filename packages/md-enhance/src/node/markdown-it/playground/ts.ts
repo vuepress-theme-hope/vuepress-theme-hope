@@ -7,7 +7,7 @@ import type {
   PlaygroundData,
   PlaygroundOptions,
   TSPresetPlaygroundOptions,
-} from "../../../shared/index.js";
+} from "../../typings/index.js";
 
 /** Gets a query string representation (hash + queries) */
 export const getURL = (

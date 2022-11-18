@@ -6,7 +6,7 @@ import type { PluginWithOptions } from "markdown-it";
 import type { RuleBlock } from "markdown-it/lib/parser_block.js";
 import type { RuleCore } from "markdown-it/lib/parser_core.js";
 import type Token from "markdown-it/lib/token.js";
-import type { IncludeOptions } from "../../shared/index.js";
+import type { IncludeOptions } from "../typings/index.js";
 
 interface ImportFileInfo {
   filePath: string;

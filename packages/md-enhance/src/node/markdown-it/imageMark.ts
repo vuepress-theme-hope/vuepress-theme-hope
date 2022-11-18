@@ -1,5 +1,5 @@
 import type { PluginWithOptions } from "markdown-it";
-import type { ImageMarkOptions } from "../../shared/index.js";
+import type { ImageMarkOptions } from "../typings/index.js";
 
 export const imageMark: PluginWithOptions<ImageMarkOptions> = (
   md,

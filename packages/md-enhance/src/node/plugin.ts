@@ -63,7 +63,7 @@ import type { PluginFunction } from "@vuepress/core";
 import type { ViteBundlerOptions } from "@vuepress/bundler-vite";
 import type { RollupWarning } from "rollup";
 import type { KatexOptions } from "katex";
-import type { MarkdownEnhanceOptions } from "../shared/index.js";
+import type { MarkdownEnhanceOptions } from "./options.js";
 
 export const mdEnhancePlugin =
   (
