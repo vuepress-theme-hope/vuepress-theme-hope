@@ -27,7 +27,7 @@ const __dirname = getDirname(import.meta.url);
 export const hopeTheme =
   (
     options: HopeThemeOptions,
-    // TODO: remove this option in stable release
+    // TODO: Remove this in v2 stable
     legacy = false
   ): ThemeFunction =>
   (app) => {

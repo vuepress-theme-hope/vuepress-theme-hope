@@ -1,4 +1,4 @@
-// TODO: remove in v2 stable version
+// TODO: Remove this in v2 stable
 import {
   // v1
   convertFrontmatter,

@@ -17,9 +17,6 @@ export const useSearchResults = (query: Ref<string>): Ref<Result[]> => {
     results.value = queryString
       ? getResults(queryString, localeIndex.value)
       : [];
-
-    // FIXME: remove me
-    console.log(results.value);
   }, 200);
 
   watch([query, routeLocale], () => {

@@ -38,7 +38,7 @@ import CodeTabs from "${CLIENT_FOLDER}components/CodeTabs.js";
 app.component("CodeTabs", CodeTabs);
 `;
 
-    // TODO: Remove it in v2 stable
+    // TODO: Remove this in v2 stable
     if (legacy) {
       configImport += `\
 import { CodeGroup, CodeGroupItem } from "${CLIENT_FOLDER}compact/index.js";

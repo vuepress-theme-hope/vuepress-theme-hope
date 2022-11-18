@@ -9,7 +9,7 @@ import type { SitemapOptions } from "./options.js";
 export const sitemapPlugin =
   (options: SitemapOptions, legacy = false): PluginFunction =>
   (app) => {
-    // TODO: Remove it in v2 stable
+    // TODO: Remove this in v2 stable
     if (legacy)
       convertOptions(options as SitemapOptions & Record<string, unknown>);
     if (app.env.isDebug) logger.info(`Options: ${options.toString()}`);

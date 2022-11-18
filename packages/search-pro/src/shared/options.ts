@@ -73,7 +73,6 @@ export type SearchProClientCustomFiledConfig = Record<
   SearchProCustomFieldFormatter
 >;
 
-// TODO: Add hotkey
 export interface SearchProOptions {
   /**
    * Whether index full text

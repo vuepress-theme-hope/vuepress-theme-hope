@@ -22,7 +22,7 @@ const __dirname = getDirname(import.meta.url);
 export const commentPlugin =
   (options: CommentOptions, legacy = false): PluginFunction =>
   (app) => {
-    // TODO: Remove this in V2
+    // TODO: Remove this in v2 stable
     if (legacy)
       convertOptions(options as CommentOptions & Record<string, unknown>);
     if (app.env.isDebug) logger.info(`Options: ${options.toString()}`);

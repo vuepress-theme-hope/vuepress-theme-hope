@@ -54,7 +54,6 @@ const getResultsWeight = (matchedItem: MatchedItem[]): number =>
     0
   );
 
-// TODO: Support custom fields
 export const getResults = (
   queryString: string,
   localeIndex: LocaleIndex
