@@ -1,6 +1,8 @@
 import mitt from "mitt";
 import { onMounted, provide } from "vue";
-import { pwaEventSymbol, useForceUpdate, useRegister } from "./index.js";
+import { pwaEventSymbol } from "./usePWAEvent.js";
+import { useForceUpdate } from "./useForceUpdate.js";
+import { useRegister } from "./useRegister.js";
 import type { PWAEvent } from "./index.js";
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
