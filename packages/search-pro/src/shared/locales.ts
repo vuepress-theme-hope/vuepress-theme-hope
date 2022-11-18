@@ -47,6 +47,20 @@ export interface SearchProLocaleData {
    * 关闭提示
    */
   exit: string;
+
+  /**
+   * Loading hint
+   *
+   * 加载提示
+   */
+  loading: string;
+
+  /**
+   * Empty hint
+   *
+   * 无结果提示
+   */
+  emply: string;
 }
 
 export type SearchProLocaleConfig = ConvertLocaleConfig<SearchProLocaleData>;

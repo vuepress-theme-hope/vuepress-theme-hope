@@ -2,10 +2,14 @@ import { useRouteLocale } from "@vuepress/client";
 import { useEventListener } from "@vueuse/core";
 import { computed, defineComponent, h, onMounted, ref, toRef } from "vue";
 import { RouterLink, useRoute, useRouter } from "vue-router";
+import { useLocaleConfig } from "vuepress-shared/client";
 
 import { HeadingIcon, HeartIcon, HistoryIcon, TitleIcon } from "./icons.js";
 import { useSearchHistory, useSearchResults } from "../composables/index.js";
-import { searchProClientCustomFiledConfig } from "../define.js";
+import {
+  searchProClientCustomFiledConfig,
+  searchProLocales,
+} from "../define.js";
 
 import type { VNode } from "vue";
 import type { MatchedItem, Word } from "../utils/index.js";
@@ -28,6 +32,7 @@ export default defineComponent({
     const router = useRouter();
     const route = useRoute();
     const routeLocale = useRouteLocale();
+    const locale = useLocaleConfig(searchProLocales);
     const { history, addHistory } = useSearchHistory();
 
     const query = toRef(props, "query");
@@ -208,6 +213,10 @@ export default defineComponent({
               );
             })
           )
-        : h("div", { class: "search-pro-result-list empty" }, "No results");
+        : h(
+            "div",
+            { class: "search-pro-result-list empty" },
+            locale.value.emply
+          );
   },
 });

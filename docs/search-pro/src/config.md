@@ -171,6 +171,31 @@ Usually in development, users do not need to update the index database in real t
      * Close text
      */
     close: string;
+
+    /**
+     * Select hint
+     */
+    select: string;
+
+    /**
+     * Choose hint
+     */
+    navigate: string;
+
+    /**
+     * Close hint
+     */
+    exit: string;
+
+    /**
+     * Loading hint
+     */
+    loading: string;
+
+    /**
+     * Empty hint
+     */
+    emply: string;
   }
 
   interface SearchProLocaleConfig {

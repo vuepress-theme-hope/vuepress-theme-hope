@@ -9,6 +9,8 @@ export const searchProLocales: SearchProLocaleConfig = {
     select: "to select",
     navigate: "to navigate",
     exit: "to exit",
+    emply: "No results found",
+    loading: "Loading search indexes...",
   },
 
   "/zh/": {
@@ -18,6 +20,8 @@ export const searchProLocales: SearchProLocaleConfig = {
     select: "选择",
     navigate: "切换",
     exit: "关闭",
+    emply: "没有找到结果",
+    loading: "正在加载搜索索引...",
   },
 
   "/zh-tw/": {
@@ -27,5 +31,7 @@ export const searchProLocales: SearchProLocaleConfig = {
     select: "選擇",
     navigate: "切換",
     exit: "關閉",
+    emply: "沒有找到結果",
+    loading: "正在加載搜索索引...",
   },
 };

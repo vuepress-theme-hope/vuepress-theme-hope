@@ -171,6 +171,31 @@ export default defineUserConfig({
      * 关闭文字
      */
     close: string;
+
+    /**
+     * 选择提示
+     */
+    select: string;
+
+    /**
+     * 选择提示
+     */
+    navigate: string;
+
+    /**
+     * 关闭提示
+     */
+    exit: string;
+
+    /**
+     * 加载提示
+     */
+    loading: string;
+
+    /**
+     * 无结果提示
+     */
+    emply: string;
   }
 
   interface SearchProLocaleConfig {
