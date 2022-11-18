@@ -316,9 +316,9 @@ tag:
 
 :::
 
-## Use `vuepress-plugin-search-pro`
+## Использование `vuepress-plugin-search-pro`
 
-1. Install `vuepress-plugin-search-pro`
+1. Установите `vuepress-plugin-search-pro`
 
    ::: code-tabs#shell
 
@@ -342,7 +342,7 @@ tag:
 
    :::
 
-1. Import `searchProPlugin` from `vuepress-plugin-search-pro` and apply it in `plugins` under `config.{ts,js}`.
+1. Импортируйте `searchProPlugin` из `vuepress-plugin-search-pro` и примените его в `plugins` в `config.{ts,js}`.
 
    ::: code-tabs#language
 
@@ -407,9 +407,9 @@ tag:
 
    :::
 
-::: info More
+::: info Еще
 
-See [Plugin Docs][search-pro] for available options.
+Смотрите [Документацию по Плагинам][search-pro] для доступных опций.
 
 :::
 
