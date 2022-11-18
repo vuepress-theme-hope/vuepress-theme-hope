@@ -4,7 +4,7 @@ import { generateSiteMap } from "./generateSitemap.js";
 import { logger } from "./utils.js";
 
 import type { PluginObject, PluginFunction } from "@vuepress/core";
-import type { SitemapOptions } from "../shared/index.js";
+import type { SitemapOptions } from "./options.js";
 
 export const sitemapPlugin =
   (options: SitemapOptions, legacy = false): PluginFunction =>
