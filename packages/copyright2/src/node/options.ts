@@ -1,5 +1,5 @@
 import type { LocaleConfig, Page } from "@vuepress/core";
-import type { CopyrightLocaleData } from "./locales.js";
+import type { CopyrightLocaleData } from "../shared/locales.js";
 
 export interface CopyrightOptions {
   /**
