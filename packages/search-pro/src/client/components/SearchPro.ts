@@ -7,10 +7,10 @@ import { searchProLocales } from "../utils/index.js";
 
 import type { VNode } from "vue";
 
-import "../styles/search-button.scss";
+import "../styles/search-pro.scss";
 
 export default defineComponent({
-  name: "SearchButton",
+  name: "SearchPro",
 
   setup() {
     const locale = useLocaleConfig(searchProLocales);
