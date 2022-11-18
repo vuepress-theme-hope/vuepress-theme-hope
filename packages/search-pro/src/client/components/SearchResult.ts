@@ -121,22 +121,22 @@ export default defineComponent({
       query.value === ""
         ? h(
             "ul",
-            { class: "result-list" },
+            { class: "search-pro-result-list" },
             history.value.map((history) =>
               h(
                 "li",
-                { class: "result-item" },
+                { class: "search-pro-result-list-item" },
                 h(
                   "div",
                   {
-                    class: "result-content",
+                    class: "search-pro-result-item",
                     onClick: () => {
                       emit("updateQuery", history);
                     },
                   },
                   [
-                    h("div", { class: "type-icon" }, h(HistoryIcon)),
-                    h("div", { class: "matched-content" }, history),
+                    h(HistoryIcon, { class: "search-pro-result-type" }),
+                    h("div", { class: "search-pro-result-content" }, history),
                   ]
                 )
               )
@@ -145,7 +145,7 @@ export default defineComponent({
         : hasResults.value
         ? h(
             "ul",
-            { class: "result-list" },
+            { class: "search-pro-result-list" },
             searchResults.value.map(({ title, contents }, index) => {
               const isCurrentResultActive =
                 activatedResultIndex.value === index;
@@ -153,65 +153,61 @@ export default defineComponent({
               return h(
                 "li",
                 {
-                  class: ["result-item", { active: isCurrentResultActive }],
+                  class: [
+                    "search-pro-result-list-item",
+                    { active: isCurrentResultActive },
+                  ],
                 },
                 [
-                  h("div", { class: "result-title" }, title || "Documentation"),
                   h(
                     "div",
-                    { class: "result-wrapper" },
-                    contents.map((item, contentIndex) =>
-                      h(
-                        RouterLink,
-                        {
-                          class: [
-                            "result-content",
-                            {
-                              active:
-                                isCurrentResultActive &&
-                                activatedResultContentIndex.value ===
-                                  contentIndex,
-                            },
-                          ],
-                          to: item.path,
-                          onClick: () => {
-                            addHistory(query.value);
-                            emit("updateQuery", "");
-                            emit("close");
+                    { class: "search-pro-result-title" },
+                    title || "Documentation"
+                  ),
+                  contents.map((item, contentIndex) =>
+                    h(
+                      RouterLink,
+                      {
+                        to: item.path,
+                        class: [
+                          "search-pro-result-item",
+                          {
+                            active:
+                              isCurrentResultActive &&
+                              activatedResultContentIndex.value ===
+                                contentIndex,
                           },
+                        ],
+                        onClick: () => {
+                          addHistory(query.value);
+                          emit("updateQuery", "");
+                          emit("close");
                         },
-                        () => [
+                      },
+                      () => [
+                        item.type === "content"
+                          ? null
+                          : h(
+                              item.type === "title"
+                                ? TitleIcon
+                                : item.type === "heading"
+                                ? HeadingIcon
+                                : HeartIcon,
+                              { class: "search-pro-result-type" }
+                            ),
+                        h("div", { class: "search-pro-result-content" }, [
                           item.type === "content"
-                            ? null
-                            : h(
-                                "div",
-                                { class: "type-icon" },
-                                h(
-                                  item.type === "title"
-                                    ? TitleIcon
-                                    : item.type === "heading"
-                                    ? HeadingIcon
-                                    : HeartIcon
-                                )
-                              ),
-                          h("div", { class: "matched-content" }, [
-                            item.type === "content"
-                              ? h(
-                                  "div",
-                                  { class: "content-header" },
-                                  item.header
-                                )
-                              : null,
-                            h("div", getDisplay(item)),
-                          ]),
-                        ]
-                      )
+                            ? h("div", { class: "content-header" }, item.header)
+                            : null,
+                          h("div", getDisplay(item)),
+                        ]),
+                      ]
                     )
                   ),
                 ]
               );
             })
           )
-        : h("div", { class: "result-list empty" }, "No results");
+        : h("div", { class: "search-pro-result-list empty" }, "No results");
   },
 });

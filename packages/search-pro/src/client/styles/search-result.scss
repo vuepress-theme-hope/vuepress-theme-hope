@@ -1,26 +1,73 @@
-.result-list {
+.search-pro-result-list {
+  scrollbar-color: var(--c-brand, #3aa675) var(--c-border, #eaecef);
+  scrollbar-width: thin;
   @media (max-width: hope-config.$mobile) {
     font-size: 13px;
   }
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-track-piece {
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    background: rgb(0 0 0 / 10%);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--c-brand, #3aa675);
+
+    &:active {
+      background: var(--c-brand-light, #4abf8a);
+    }
+  }
 }
 
-.result-item {
+.search-pro-result-list-item {
   display: block;
   margin: 0.5rem 0;
   list-style: none;
 }
 
-.result-title {
+.search-pro-result-title {
   margin-bottom: 0.25rem;
   font-size: 0.85rem;
   text-indent: 0.5em;
 
-  .result-item.active & {
+  .search-pro-result-item.active & {
     color: var(--c-brand, #3aa675);
   }
 }
 
-.result-content {
+.search-pro-result-type {
+  display: block;
+
+  width: 1rem;
+  height: 1rem;
+  padding: 0.5rem 0.5rem 0.5rem 0;
+
+  color: var(--c-brand, #3aa675);
+}
+
+.search-pro-result-content {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+
+  line-height: 1.25;
+
+  .content-header {
+    margin-bottom: 0.25rem;
+    border-bottom: 1px solid var(--c-border-dark, #dfe2e5);
+    font-size: 1.1em;
+  }
+}
+
+.search-pro-result-item {
   display: flex;
   align-items: center;
 
@@ -28,7 +75,7 @@
   padding: 0.5rem 0.75rem;
   border-radius: 0.25rem;
 
-  background-color: var(--c-bg, #fff);
+  background-color: var(--c-bg-light, #f3f4f5);
   color: inherit;
 
   font-weight: normal;
@@ -41,36 +88,13 @@
 
   &:hover,
   &.active {
-    background-color: var(--c-brand, #3aa675);
+    background-color: var(--c-brand-light, #4abf8a);
     color: var(--white);
+    cursor: pointer;
 
+    .search-pro-result-type,
     strong {
       color: var(--white);
     }
-  }
-
-  .type-icon {
-    width: 1rem;
-    height: 1rem;
-    padding: 0.5rem 0.5rem 0.5rem 0;
-
-    .icon {
-      width: 1rem;
-      height: 1rem;
-      color: var(--light-grey);
-    }
-  }
-
-  .matched-content {
-    display: flex;
-    flex-grow: 1;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: center;
-  }
-
-  .content-header {
-    border-bottom: 1px solid var(--c-border);
-    font-size: 1.1em;
   }
 }

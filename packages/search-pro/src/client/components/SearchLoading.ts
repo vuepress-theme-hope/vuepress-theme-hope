@@ -15,7 +15,7 @@ const LoadingIcon: FunctionalComponent = (): VNode =>
     [
       h(
         "circle",
-        { cx: "28", cy: "75", r: "11", fill: "#88baf0" },
+        { cx: "28", cy: "75", r: "11", fill: "currentColor" },
         h("animate", {
           attributeName: "fill-opacity",
           begin: "0s",
@@ -63,7 +63,7 @@ const LoadingIcon: FunctionalComponent = (): VNode =>
   );
 
 export const SearchLoading: FunctionalComponent = (): VNode =>
-  h("div", { class: "result-list loading" }, [
+  h("div", { class: "search-pro-result-list loading" }, [
     h(LoadingIcon),
     "Loading search indexes...",
   ]);

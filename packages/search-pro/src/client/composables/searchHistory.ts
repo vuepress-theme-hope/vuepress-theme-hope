@@ -14,12 +14,13 @@ const searchProStorage = useLocalStorage<string[]>(SEARCH_PRO_STORAGE, []);
 export const useSearchHistory = (limit = 5): SearchHistory => {
   const addHistory = (query: string): void => {
     if (searchProStorage.value.length < limit)
-      searchProStorage.value = [query, ...searchProStorage.value];
+      searchProStorage.value = Array.from(
+        new Set([query, ...searchProStorage.value])
+      );
     else
-      searchProStorage.value = [
-        ...searchProStorage.value.slice(0, limit - 1),
-        query,
-      ];
+      searchProStorage.value = Array.from(
+        new Set([...searchProStorage.value.slice(0, limit - 1), query])
+      );
   };
 
   return {
