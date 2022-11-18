@@ -91,6 +91,8 @@ export default defineUserConfig({
 });
 ```
 
+:::
+
 ## hotKeys
 
 - Type: `SearchProHotKeyOptions[]`
