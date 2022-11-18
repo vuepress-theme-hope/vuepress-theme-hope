@@ -14,7 +14,7 @@ import type {
   FeedChannelOption,
   FeedLinks,
   FeedOptions,
-} from "../shared/index.js";
+} from "./typings/index.js";
 
 export type ResolvedFeedOptions = BaseFeedOptions & { hostname: string };
 

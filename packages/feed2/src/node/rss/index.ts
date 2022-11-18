@@ -14,7 +14,7 @@ import type {
   FeedCategory,
   FeedEnclosure,
   FeedItemOption,
-} from "../../shared/index.js";
+} from "../typings/index.js";
 
 const genCategory = (category: FeedCategory): RSSCategory => {
   const { name, domain } = category;

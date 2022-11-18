@@ -20,7 +20,7 @@ import type {
   FeedOptions,
   FeedFrontmatterOption,
   FeedPluginFrontmatter,
-} from "../shared/index.js";
+} from "./typings/index.js";
 
 export class FeedPage {
   private pageFeedOptions: FeedFrontmatterOption;

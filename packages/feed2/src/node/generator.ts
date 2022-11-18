@@ -9,7 +9,7 @@ import { compareDate, logger } from "./utils.js";
 import type { App, Page } from "@vuepress/core";
 import type { GitData } from "@vuepress/plugin-git";
 import type { ResolvedFeedOptionsMap } from "./options.js";
-import type { FeedPluginFrontmatter } from "../shared/index.js";
+import type { FeedPluginFrontmatter } from "./typings/index.js";
 
 export class FeedGenerator {
   /** feed 生成器 */

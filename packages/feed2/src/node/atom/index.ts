@@ -3,7 +3,7 @@ import { js2xml } from "xml-js";
 import { FEED_GENERATOR } from "../utils.js";
 
 import type { Feed } from "../feed.js";
-import type { FeedAuthor, FeedCategory } from "../../shared/index.js";
+import type { FeedAuthor, FeedCategory } from "../typings/index.js";
 import type {
   AtomAuthor,
   AtomCategory,
