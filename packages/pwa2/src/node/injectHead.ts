@@ -1,5 +1,5 @@
 import type { HeadConfig } from "@vuepress/core";
-import type { PWAOptions } from "../shared/index.js";
+import type { PWAOptions } from "./options.js";
 
 export const injectLinkstoHead = (
   options: PWAOptions,
