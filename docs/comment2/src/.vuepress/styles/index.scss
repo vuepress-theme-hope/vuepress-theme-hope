@@ -15,14 +15,12 @@
     }
   }
 
-  &[href*="/config.html"],
   &[href*="/config/"] {
     &::before {
       content: "\e656";
     }
   }
 
-  &[href*="/guide.html"],
   &[href*="/guide/"] {
     ::before {
       content: "\e718";

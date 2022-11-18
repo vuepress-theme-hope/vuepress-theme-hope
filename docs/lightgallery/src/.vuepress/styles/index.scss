@@ -1,6 +1,6 @@
 .theme-hope-content a {
-  &[href*="/guide/"],
-  &[href*="/config/"] {
+  &[href*="/guide.html"],
+  &[href*="/config.html"] {
     &::before {
       position: relative;
       bottom: 0.125em;
@@ -15,15 +15,13 @@
     }
   }
 
-  &[href*="/config.html"],
-  &[href*="/config/"] {
+  &[href*="/config.html"] {
     &::before {
       content: "\e656";
     }
   }
 
-  &[href*="/guide.html"],
-  &[href*="/guide/"] {
+  &[href*="/guide.html"] {
     ::before {
       content: "\e718";
     }
