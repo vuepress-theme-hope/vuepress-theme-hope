@@ -1,9 +1,9 @@
 import { defineClientConfig } from "@vuepress/client";
 
-import SearchPro from "./components/SearchPro.js";
+import SearchBox from "./components/SearchBox.js";
 
 export default defineClientConfig({
   enhance({ app }) {
-    app.component("SearchPro", SearchPro);
+    app.component("SearchBox", SearchBox);
   },
 });

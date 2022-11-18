@@ -77,10 +77,10 @@
       margin: 0;
       padding: 0.25rem 1rem 0.3rem 2.5rem;
       border: 0;
-      border: 1px solid var(--c-brand);
+      border: 1px solid var(--c-brand, #3eaf7c);
       border-radius: 8px;
 
-      background-color: var(--c-bg-light, #f8f8f8);
+      background-color: var(--c-bg-light, #f3f4f5);
       outline: none;
 
       font-size: 1.25rem;

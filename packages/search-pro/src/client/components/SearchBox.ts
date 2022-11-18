@@ -12,10 +12,10 @@ import {
 
 import type { VNode } from "vue";
 
-import "../styles/search-pro.scss";
+import "../styles/search-box.scss";
 
 export default defineComponent({
-  name: "SearchPro",
+  name: "SearchBox",
 
   setup() {
     const locale = useLocaleConfig(searchProLocales);

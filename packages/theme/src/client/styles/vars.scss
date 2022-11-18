@@ -12,7 +12,7 @@
 
   // background colors
   --c-bg: var(--bg-color);
-  --c-bg-light: var(--bg-color-light);
+  --c-bg-light: var(--bg-color-secondary);
   --c-border: var(--border-color);
 
   // layout
@@ -32,7 +32,7 @@
 
   // background
   --c-bg: var(--bg-color);
-  --c-bg-light: var(--bg-color-light);
+  --c-bg-light: var(--bg-color-secondary);
   --c-border: var(--border-color);
 
   /* others */
@@ -105,7 +105,7 @@
   --search-text-color: var(--text-color);
   --search-border-color: var(--border-color);
   --search-item-text-color: var(--text-color-lighter);
-  --search-item-focus-bg-color: var(--bg-color-light);
+  --search-item-focus-bg-color: var(--bg-color-secondary);
 }
 
 // plugin-external-link-icon

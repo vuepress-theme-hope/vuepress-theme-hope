@@ -64,8 +64,8 @@ export default defineComponent({
           ? h(resolveComponent("Docsearch"))
           : isComponentRegistered("SearchBox")
           ? h(resolveComponent("SearchBox"))
-          : isComponentRegistered("SearchPro")
-          ? h(resolveComponent("SearchPro"))
+          : isComponentRegistered("SearchBox")
+          ? h(resolveComponent("SearchBox"))
           : null,
       };
 

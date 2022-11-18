@@ -5,7 +5,7 @@ import ParentLayout from "@vuepress/theme-default/layouts/Layout.vue";
 <template>
   <ParentLayout>
     <template #navbar-after>
-      <SearchButton />
+      <SearchBox />
     </template>
   </ParentLayout>
 </template>
