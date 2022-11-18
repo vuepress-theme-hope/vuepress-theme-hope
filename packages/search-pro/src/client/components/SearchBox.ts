@@ -1,9 +1,9 @@
 import { useEventListener } from "@vueuse/core";
-import { defineComponent, h, ref } from "vue";
+import { defineComponent, h, inject } from "vue";
 import { useLocaleConfig } from "vuepress-shared/client";
 
-import SearchModal from "./SearchModal.js";
 import { SearchIcon } from "./icons.js";
+import { searchModalSymbol } from "../composables/index.js";
 import {
   isFocusingTextControl,
   isKeyMatched,
@@ -19,7 +19,7 @@ export default defineComponent({
 
   setup() {
     const locale = useLocaleConfig(searchProLocales);
-    const isActive = ref(false);
+    const isActive = inject(searchModalSymbol)!;
 
     const onKeydown = (event: KeyboardEvent): void => {
       if (
@@ -51,13 +51,6 @@ export default defineComponent({
         },
         h(SearchIcon)
       ),
-      isActive.value
-        ? h(SearchModal, {
-            onClose: () => {
-              isActive.value = false;
-            },
-          })
-        : null,
     ];
   },
 });

@@ -24,10 +24,11 @@
   .background {
     position: fixed;
     top: 0;
-    right: 0;
-    bottom: 0;
     left: 0;
     z-index: 998;
+
+    width: 100vw;
+    height: 100vh;
 
     animation: 0.25s pwa-fadein;
 
@@ -123,10 +124,10 @@
       width: 15px;
       height: 15px;
       margin: 0 0.25rem;
-      padding: 0.25rem;
-      border: none;
+      padding: 2px;
+      border: 1px solid (--c-border, #eaecef);
 
-      box-shadow: 2px 2px 8px 0 var(--card-shadow);
+      box-shadow: 1px 1px 4px 0 var(--card-shadow);
     }
 
     svg {
