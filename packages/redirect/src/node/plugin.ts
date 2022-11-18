@@ -3,10 +3,8 @@ import { generateHTML } from "./generate.js";
 import { logger } from "./utils.js";
 
 import type { Page, PluginFunction } from "@vuepress/core";
-import type {
-  RedirectOptions,
-  RedirectPluginFrontmatterOption,
-} from "../shared/index.js";
+import type { RedirectOptions } from "./options.js";
+import type { RedirectPluginFrontmatterOption } from "./typings/index.js";
 
 export const redirectPlugin =
   (options: RedirectOptions = {}): PluginFunction =>

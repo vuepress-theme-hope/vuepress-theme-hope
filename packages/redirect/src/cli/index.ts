@@ -12,7 +12,7 @@ import { removeEndingSlash, removeLeadingSlash } from "@vuepress/shared";
 import { fs, logger, path } from "@vuepress/utils";
 import { cac } from "cac";
 
-import { getRedirectHTML } from "../shared/index.js";
+import { getRedirectHTML } from "../node/typings/index.js";
 
 const require = createRequire(import.meta.url);
 

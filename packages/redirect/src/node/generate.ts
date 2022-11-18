@@ -4,13 +4,11 @@ import {
   removeLeadingSlash,
 } from "@vuepress/shared";
 import { fs, path, withSpinner } from "@vuepress/utils";
-import { getRedirectHTML } from "../shared/index.js";
+import { getRedirectHTML } from "./typings/index.js";
 
 import type { App, Page } from "@vuepress/core";
-import type {
-  RedirectOptions,
-  RedirectPluginFrontmatterOption,
-} from "../shared/index.js";
+import type { RedirectOptions } from "./options.js";
+import type { RedirectPluginFrontmatterOption } from "./typings/index.js";
 
 export const generateHTML = async (
   app: App,
