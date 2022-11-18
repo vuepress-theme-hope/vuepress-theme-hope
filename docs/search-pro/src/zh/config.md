@@ -16,21 +16,6 @@ icon: config
 
 :::
 
-## hotReload
-
-- 类型: `boolean`
-- 默认值: `false`
-
-是否在开发服务器中中启用实时热重载。
-
-::: note
-
-它是默认禁用的，因为此功能会对内容巨大的站点产生极大性能影响，并且在编辑 Markdown 时剧烈增加热重载的速度。
-
-通常情况下，在开发中，用户并不需要实时更新索引数据库。
-
-:::
-
 ## customFields
 
 - 类型: `SearchProCustomFieldOptions[]`
@@ -105,6 +90,61 @@ export default defineUserConfig({
   ],
 });
 ```
+
+## hotKeys
+
+- 类型: `SearchProHotKeyOptions[]`
+
+  ```ts
+  interface SearchProHotKeyOptions {
+    /**
+     * 热键的 `event.key` 值
+     */
+    key: string;
+
+    /**
+     * 是否同时按下 `event.altKey`
+     *
+     * @default false
+     */
+    alt?: boolean;
+
+    /**
+     * 是否同时按下 `event.ctrlKey`
+     *
+     * @default false
+     */
+    ctrl?: boolean;
+
+    /**
+     * 是否同时按下 `event.shiftKey`
+     *
+     * @default false
+     */
+    shift?: boolean;
+  }
+  ```
+
+- 默认值: `[{key:'k',ctrl:true}]`
+
+指定热键的 [event.key](http://keycode.info/)。
+
+当热键被按下时，搜索框的输入框会被聚焦，设置为空数组以禁用热键。
+
+## hotReload
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否在开发服务器中中启用实时热重载。
+
+::: note
+
+它是默认禁用的，因为此功能会对内容巨大的站点产生极大性能影响，并且在编辑 Markdown 时剧烈增加热重载的速度。
+
+通常情况下，在开发中，用户并不需要实时更新索引数据库。
+
+:::
 
 ## locales
 

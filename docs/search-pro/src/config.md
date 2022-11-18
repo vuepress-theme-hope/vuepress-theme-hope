@@ -16,21 +16,6 @@ By default the plugin will only index titles and custom fields, when set to `tru
 
 :::
 
-## hotReload
-
-- Type: `boolean`
-- Default: `false`
-
-Whether to enable hot reload in the development server.
-
-::: note
-
-It is disabled by default because this feature can have a huge performance impact on sites with huge content and drastically increases the speed of hot reloads when editing Markdown.
-
-Usually in development, users do not need to update the index database in real time.
-
-:::
-
 ## customFields
 
 - Type: `SearchProCustomFieldOptions[]`
@@ -105,6 +90,61 @@ export default defineUserConfig({
   ],
 });
 ```
+
+## hotKeys
+
+- Type: `SearchProHotKeyOptions[]`
+
+  ```ts
+  interface SearchProHotKeyOptions {
+    /**
+     * Value of `event.key` to trigger the hot key
+     */
+    key: string;
+
+    /**
+     * Whether to press `event.altKey` at the same time
+     *
+     * @default false
+     */
+    alt?: boolean;
+
+    /**
+     * Whether to press `event.ctrlKey` at the same time
+     *
+     * @default false
+     */
+    ctrl?: boolean;
+
+    /**
+     * Whether to press `event.shiftKey` at the same time
+     *
+     * @default false
+     */
+    shift?: boolean;
+  }
+  ```
+
+- Default: `[{key:'k',ctrl:true}]`
+
+Specify the [event.key](http://keycode.info/) of the hotkeys.
+
+When hotkeys are pressed, the search box input will be focused. Set to an empty array to disable hotkeys.
+
+## hotReload
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to enable hot reload in the development server.
+
+::: note
+
+It is disabled by default because this feature can have a huge performance impact on sites with huge content and drastically increases the speed of hot reloads when editing Markdown.
+
+Usually in development, users do not need to update the index database in real time.
+
+:::
 
 ## locales
 

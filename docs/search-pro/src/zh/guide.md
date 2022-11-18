@@ -127,3 +127,7 @@ export default defineUserConfig({
 ```
 
 :::
+
+## 搜索热键
+
+默认情况下，搜索热键为 `Ctrl + K`。你可以通过 `hotkeys` 选项来自定义搜索热键，参见 [配置](./config.md#hotkeys)。

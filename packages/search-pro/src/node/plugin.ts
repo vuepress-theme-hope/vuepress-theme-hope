@@ -34,6 +34,8 @@ export const searchProPlugin =
             .map(({ name, formatter }) => [name, formatter])
         ),
         // eslint-disable-next-line @typescript-eslint/naming-convention
+        SEARCH_PRO_HOTKEYS: options.hotKeys || [{ key: "k", ctrl: true }],
+        // eslint-disable-next-line @typescript-eslint/naming-convention
         SEARCH_PRO_LOCALES: getLocales({
           app,
           name: "search-pro",

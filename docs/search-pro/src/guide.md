@@ -127,3 +127,7 @@ export default defineUserConfig({
 ```
 
 :::
+
+## Search Hotkeys
+
+By default, the search hotkey is `Ctrl + K`. You can customize search hotkeys via the `hotkeys` option, see [config](./config.md#hotkeys).
