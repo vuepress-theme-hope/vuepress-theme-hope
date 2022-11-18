@@ -53,6 +53,7 @@ export default defineComponent({
               class: "background",
               onClick: () => {
                 isActive.value = false;
+                input.value = "";
               },
             }),
             h("div", { class: "search-pro-modal" }, [
