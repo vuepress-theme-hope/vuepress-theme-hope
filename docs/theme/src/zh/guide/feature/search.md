@@ -541,8 +541,8 @@ export default {
    export default defineUserConfig({
      plugins: [
        searchProPlugin({
-         // 启用全文索引
-         fullIndex: true,
+         // 索引全部内容
+         indexContent: true,
          // 为分类和标签添加索引
          customFields: [
            {
@@ -570,8 +570,8 @@ export default {
    export default {
      plugins: [
        searchProPlugin({
-         // 启用全文索引
-         fullIndex: true,
+         // 索引全部内容
+         indexContent: true,
          // 为分类和标签添加索引
          customFields: [
            {

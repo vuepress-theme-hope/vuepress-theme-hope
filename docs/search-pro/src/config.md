@@ -3,16 +3,16 @@ title: Plugin Options
 icon: config
 ---
 
-## fullIndex
+## indexContent
 
 - Type: `boolean`
 - Default: `false`
 
-Whether to enable full-text indexing.
+Whether to enable content indexing.
 
 ::: tip
 
-By default the plugin will only index titles and custom fields, when set to `true` the plugin will index all contents.
+By default the plugin will only index heading and custom fields, when set to `true` the plugin will index all contents.
 
 :::
 

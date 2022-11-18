@@ -22,7 +22,7 @@ export default config(
     },
     plugins: [
       searchProPlugin({
-        fullIndex: true,
+        indexContent: true,
       }),
     ],
 

@@ -356,8 +356,8 @@ See [Plugin Docs][docsearch] for how to use docsearch plugin and its available o
    export default defineUserConfig({
      plugins: [
        searchProPlugin({
-         // enable full index
-         fullIndex: true,
+         // index all contents
+         indexContent: true,
          // add supports for category and tags
          customFields: [
            {
@@ -385,8 +385,8 @@ See [Plugin Docs][docsearch] for how to use docsearch plugin and its available o
    export default {
      plugins: [
        searchPlugin({
-         // enable full index
-         fullIndex: true,
+         // index all contents
+         indexContent: true,
          // add supports for category and tags
          customFields: [
            {

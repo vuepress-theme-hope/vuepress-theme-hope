@@ -21,7 +21,7 @@ Using client-side search has the following disadvantages:
 
 ## Simple Usage
 
-For small sites, where you usually need a full-text search out of the box, you can call the `vuepress-plugin-search-pro` plugin directly via `{ fullIndex: true }`.
+For small sites, where you usually need a full-text search out of the box, you can call the `vuepress-plugin-search-pro` plugin directly via `{ indexContent: true }`.
 
 ## Custom Index Fields
 

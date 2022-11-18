@@ -27,7 +27,7 @@ export const prepareSearchIndex = async (
       const pageIndex = generatePageIndex(
         page,
         options.customFields,
-        options.fullIndex
+        options.indexContent
       );
 
       return pageIndex

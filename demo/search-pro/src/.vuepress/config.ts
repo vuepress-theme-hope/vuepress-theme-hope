@@ -21,7 +21,7 @@ export default defineUserConfig({
 
   plugins: [
     searchProPlugin({
-      fullIndex: true,
+      indexContent: true,
       customFields: [
         {
           name: "tags",

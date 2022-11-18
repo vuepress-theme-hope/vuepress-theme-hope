@@ -75,13 +75,17 @@ export type SearchProClientCustomFiledConfig = Record<
 
 export interface SearchProOptions {
   /**
-   * Whether index full text
+   * Whether index page content
    *
-   * 是否开启全文索引
+   * @description By default only the title and excerpt of the page will be indexed, and the content of the page will not be indexed. If you need to index the content of the page, you can set this option to `true`
+   *
+   * 是否索引正文内容
+   *
+   * @description 默认情况下，只会索引页面的标题和摘要，不会索引页面的正文内容。如果需要索引页面的正文内容，可以将该选项设置为 `true`
    *
    * @default false
    */
-  fullIndex?: boolean;
+  indexContent?: boolean;
 
   /**
    * Whether enable hmr

@@ -21,7 +21,7 @@ icon: creative
 
 ## 直接使用
 
-对于小型站点来说，通常情况下你需要一个开箱即用的全文搜索，你可以直接通过 `{ fullIndex: true }` 调用 `vuepress-plugin-search-pro` 插件。
+对于小型站点来说，通常情况下你需要一个开箱即用的全文搜索，你可以直接通过 `{ indexContent: true }` 调用 `vuepress-plugin-search-pro` 插件。
 
 ## 自定义索引
 

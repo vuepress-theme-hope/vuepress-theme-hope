@@ -25,7 +25,7 @@ const $ = load("");
 export const generatePageIndex = (
   page: Page,
   customFieldsGetter: SearchProCustomFieldOptions[] = [],
-  fullIndex = false
+  indexContent = false
 ): PageIndex | null => {
   const result: PageIndex = {
     title: page.title,
@@ -42,7 +42,7 @@ export const generatePageIndex = (
   const render = (node: AnyNode): void => {
     if (node.type === "tag") {
       if (HEADING_TAGS.includes(node.name)) {
-        if (currentContent && fullIndex) {
+        if (currentContent && indexContent) {
           // add last content
           currentHeaderContent?.contents.push(
             currentContent.replace(/\s+/gu, " ")
@@ -68,7 +68,7 @@ export const generatePageIndex = (
           contents: [],
         };
       } else if (CONTENT_BLOCK_TAGS.includes(node.name)) {
-        if (currentContent && fullIndex) {
+        if (currentContent && indexContent) {
           // add last content
           currentHeaderContent?.contents.push(
             currentContent.replace(/\s+/gu, " ")
@@ -104,7 +104,7 @@ export const generatePageIndex = (
   });
 
   // push contents in last block tags
-  if (currentContent && fullIndex)
+  if (currentContent && indexContent)
     currentHeaderContent?.contents.push(currentContent);
 
   // push last content

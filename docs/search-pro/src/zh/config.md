@@ -3,12 +3,12 @@ title: 插件选项
 icon: config
 ---
 
-## fullIndex
+## indexContent
 
 - 类型: `boolean`
 - 默认值: `false`
 
-是否开启全文索引。
+是否索引内容。
 
 ::: tip
 
