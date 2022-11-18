@@ -1,6 +1,5 @@
 export * from "./blog.js";
 export * from "./frontmatter/index.js";
-export * from "./helper.js";
 export * from "./info.js";
 export * from "./navbar.js";
 export * from "./options/index.js";
