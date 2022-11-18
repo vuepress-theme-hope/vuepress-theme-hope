@@ -55,7 +55,7 @@ jobs:
           pnpm cpx "docs/reading-time2/dist/**" dist/reading-time
           pnpm cpx "docs/redirect/dist/**" dist/redirect
           pnpm cpx "docs/sass-palette/dist/**" dist/sass-palette
-          pnpm cpx "docs/search-pro/dist/**" dist/seo
+          pnpm cpx "docs/search-pro/dist/**" dist/search-pro
           pnpm cpx "docs/seo2/dist/**" dist/seo
           pnpm cpx "docs/sitemap2/dist/**" dist/sitemap
           pnpm cpx "docs/theme/dist/**" dist
