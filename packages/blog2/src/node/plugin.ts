@@ -12,7 +12,7 @@ import { prepareType } from "./type.js";
 import { getPageMap, logger } from "./utils.js";
 
 import type { PluginFunction } from "@vuepress/core";
-import type { BlogOptions } from "../shared/index.js";
+import type { BlogOptions } from "./options.js";
 
 export const blogPlugin =
   (options: BlogOptions): PluginFunction =>

@@ -1,7 +1,7 @@
 import { Logger } from "vuepress-shared/node";
 
 import type { App, Page } from "@vuepress/core";
-import type { PageMap } from "../shared/index.js";
+import type { PageMap } from "./typings.js";
 
 export const logger = new Logger("vuepress-plugin-blog2");
 
