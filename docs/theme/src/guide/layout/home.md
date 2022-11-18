@@ -18,80 +18,36 @@ To use it, set `home: true` in page frontmatter. Any extra content after the `YA
 
 <!-- more -->
 
-## Frontmatter Options
+## Site Information
 
-### home
+You can use `heroText` to set the main title and `tagline` to set the subtitle.
 
-- Type: `boolean`
+If you have a logo, you can place it in the `public` folder and set it via `heroImage`, if you want to display another logo in night mode, you can use `heroImageDark`. For better A11y, we recommend that you set the description of Logo to `heroAlt`.
 
-Enable homepage style when setting to `true`
+## Home button
 
-### title
+You can display some important links in the form of buttons on the home page.
 
-- Type: `string`
-- Required: No
+You can set them via `actions` which is an array where each element is an object with the following keys:
 
-Page title, will be used in breadcrumb, seo, etc.
+- `text`: button text
+- `link`: button link
+- `type`: button type (only `"primary"` and `"default"` (default) are supported)
 
-### heroText
+## Project features
 
-- Type: `string | false`
-- Default: `"Hello"`
+You can set and display item features through `features`, which is an array, each element is an object, containing the following keys:
 
-Hero Title
+- `title`: title
+- `details`: details
+- `icon` (optional): can be filled with full path or absolute path image link, or FontClass
+- `link` (optional): link address
 
-### tagline
+::: info
 
-- Type: `string | false`
-- Default: `"Welcome to your VuePress site"`
+For complete configuration items, see [Home Frontmatter Configuration](../../config/frontmatter/home.md).
 
-Short description in hero
-
-### heroImage
-
-- Type: `string`
-- Required: No
-
-Home hero (logo) image address, need to fill in the absolute path (pictures need to be placed in the `.vuepress/public` folder)
-
-### heroImageDark
-
-- Type: `string`
-- Required: No
-
-Darkmode Home hero (logo) image address, need to fill in the absolute path (pictures need to be placed in the `.vuepress/public` folder), will be the same as `heroImage` by default.
-
-### heroAlt
-
-- Type: `string`
-- Required: No
-
-Home icon alt text
-
-### actions
-
-- Type: `ActionConfig | ActionConfig[]`
-- Required: No
-
-`ActionConfig` structure:
-
-- `text`: Button text
-- `link`: Button link
-- `type`: Button type (Only support `"primary"` and `"default"` (default))
-
-### features
-
-- Type: `Feature[]`
-- Required: No
-
-Structure of `Feature`:
-
-- `title`: `string` title
-- `details` (optional): `string` details
-- `icon` (optional): `string` support absolute or full image links, or icon FontClass
-- `link` (optional): `string` link address
-
-Feature description
+:::
 
 ## Demo
 

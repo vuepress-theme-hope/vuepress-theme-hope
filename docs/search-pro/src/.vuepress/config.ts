@@ -1,10 +1,11 @@
 import { config } from "docs-shared";
+import { searchProPlugin } from "vuepress-plugin-search-pro";
 import theme from "./theme.js";
 
 export default config(
   {
     base: `search-pro`,
-    indexName: "vuepress-theme-hope-search-pro",
+    indexName: false,
   },
   {
     locales: {
@@ -19,6 +20,11 @@ export default config(
         description: "强大的客户端搜索插件",
       },
     },
+    plugins: [
+      searchProPlugin({
+        indexContent: true,
+      }),
+    ],
 
     theme,
   }

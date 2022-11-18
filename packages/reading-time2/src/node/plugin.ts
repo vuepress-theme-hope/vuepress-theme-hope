@@ -5,7 +5,8 @@ import { getReadingTime } from "./readingTime.js";
 import { logger } from "./utils.js";
 
 import type { Page, PluginFunction } from "@vuepress/core";
-import type { ReadingTime, ReadingTimeOptions } from "../shared/index.js";
+import type { ReadingTimeOptions } from "./options.js";
+import type { ReadingTime } from "./typings/index.js";
 
 /** Reading time plugin */
 export const readingTimePlugin =

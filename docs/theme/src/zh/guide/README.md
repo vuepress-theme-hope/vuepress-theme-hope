@@ -150,8 +150,6 @@ tag:
 
 - [vuepress-plugin-reading-time2][reading-time2]: 阅读时间与字数统计
 
-- [vuepress-plugin-redirect][redirect]: 重定向插件
-
 - [vuepress-plugin-sass-palette][sass-palette]: 面向全部插件和主题的 Sass 配置插件
 
 - [vuepress-plugin-seo2][seo2]: SEO 增强插件
@@ -163,6 +161,10 @@ tag:
 这里还有一些其他没有被主题默认启用的插件，你可以根据自己的需求自行启用。
 
 - [vuepress-plugin-lightgallery][lightgallery]: 基于 lightgallery 图片浏览插件
+
+- [vuepress-plugin-redirect][redirect]: 重定向插件
+
+- [vuepress-plugin-search-pro][search-pro]: 客户端搜索插件
 
 :::
 
@@ -180,4 +182,5 @@ tag:
 [redirect]: https://vuepress-theme-hope.github.io/v2/redirect/zh/
 [sass-palette]: https://vuepress-theme-hope.github.io/v2/sass-palette/zh/
 [seo2]: https://vuepress-theme-hope.github.io/v2/seo/zh/
+[search-pro]: https://vuepress-theme-hope.github.io/v2/search-pro/zh/
 [sitemap2]: https://vuepress-theme-hope.github.io/v2/sitemap/zh/

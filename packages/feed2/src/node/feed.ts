@@ -6,7 +6,7 @@ import type {
   FeedContributor,
   FeedInitOptions,
   FeedItemOption,
-} from "../shared/index.js";
+} from "./typings/index.js";
 
 export class Feed {
   items: FeedItemOption[] = [];

@@ -31,7 +31,7 @@ import { escapeHtml } from "./utils.js";
 
 import type { PluginWithOptions } from "markdown-it";
 import type { KatexOptions as OriginalKatexOptions } from "katex";
-import type { KatexOptions } from "../../shared/index.js";
+import type { KatexOptions } from "../typings/index.js";
 
 const require = createRequire(import.meta.url);
 

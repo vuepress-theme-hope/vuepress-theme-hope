@@ -2,7 +2,7 @@ import { inject, provide } from "vue";
 import { useBlogType } from "vuepress-plugin-blog2/client";
 
 import type { ComputedRef, InjectionKey } from "vue";
-import type { BlogTypeData } from "vuepress-plugin-blog2";
+import type { BlogTypeData } from "vuepress-plugin-blog2/client";
 import type { ArticleInfo } from "../../../../shared/index.js";
 
 export type ArticlesRef = ComputedRef<BlogTypeData<ArticleInfo>>;

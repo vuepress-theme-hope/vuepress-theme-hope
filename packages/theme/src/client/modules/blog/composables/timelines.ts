@@ -5,7 +5,7 @@ import { getDate } from "vuepress-shared/client";
 import { ArticleInfoType } from "../../../../shared/index.js";
 
 import type { ComputedRef, InjectionKey } from "vue";
-import type { Article } from "vuepress-plugin-blog2";
+import type { Article } from "vuepress-plugin-blog2/client";
 import type { ArticleInfo } from "../../../../shared/index.js";
 
 export interface TimelineItem {

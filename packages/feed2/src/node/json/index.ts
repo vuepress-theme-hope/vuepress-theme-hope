@@ -3,7 +3,7 @@ import { stripTags } from "vuepress-shared/node";
 
 import type { Feed } from "../feed.js";
 import type { JSONAuthor, JSONContent, JSONItem } from "./typings.js";
-import type { FeedAuthor } from "../../shared/index.js";
+import type { FeedAuthor } from "../typings/index.js";
 
 const formatAuthor = (author: FeedAuthor): JSONAuthor => ({
   name: author.name!,

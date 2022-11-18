@@ -6,10 +6,10 @@ import { resolveRouteWithRedirect } from "vuepress-shared/client";
 
 import type { ComputedRef } from "vue";
 import type {
-  BlogCategoryData,
   BlogCategoryFrontmatterOptions,
   CategoryMap,
 } from "../../shared/index.js";
+import type { BlogCategoryData } from "../typings.js";
 
 // eslint-disable-next-line
 declare const __VUE_HMR_RUNTIME__: Record<string, any>;

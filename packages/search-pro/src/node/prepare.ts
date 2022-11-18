@@ -2,7 +2,8 @@ import { utoa } from "vuepress-shared/node";
 import { generatePageIndex } from "./generateIndex.js";
 
 import type { App } from "@vuepress/core";
-import type { PageIndex, SearchProOptions } from "../shared/index.js";
+import type { SearchProOptions } from "./options.js";
+import type { PageIndex, SearchIndex } from "../shared/index.js";
 
 const HMR_CODE = `
 if (import.meta.webpackHot) {
@@ -18,6 +19,8 @@ if (import.meta.hot) {
 }
 `;
 
+let previousSearchIndex: SearchIndex | null = null;
+
 export const prepareSearchIndex = async (
   { env, pages, options: appOptions, writeTemp }: App,
   options: SearchProOptions
@@ -27,7 +30,7 @@ export const prepareSearchIndex = async (
       const pageIndex = generatePageIndex(
         page,
         options.customFields,
-        options.fullIndex
+        options.indexContent
       );
 
       return pageIndex
@@ -54,6 +57,8 @@ export const prepareSearchIndex = async (
     ])
   );
 
+  previousSearchIndex = searchIndex;
+
   // search index file content
   let content = `\
 export const database = "${utoa(JSON.stringify(searchIndex))}"
@@ -63,4 +68,90 @@ export const database = "${utoa(JSON.stringify(searchIndex))}"
   if (env.isDev) content += HMR_CODE;
 
   await writeTemp("search-pro/index.js", content);
+};
+
+export const updateSearchIndex = async (
+  app: App,
+  options: SearchProOptions,
+  path: string
+) => {
+  if (previousSearchIndex) {
+    const actualPath = path
+      .replace(/^pages\//, "")
+      .replace(/\/index\.html\.vue/, "/readme.md")
+      .replace(/\.html\.vue/, ".md");
+
+    const { env, pages, writeTemp } = app;
+
+    const page = pages.find(
+      ({ filePathRelative }) =>
+        filePathRelative?.toLowerCase() === actualPath.toLowerCase()
+    )!;
+
+    if (page) {
+      const pageIndex = generatePageIndex(
+        page,
+        options.customFields,
+        options.indexContent
+      );
+
+      // update index
+      if (pageIndex) {
+        previousSearchIndex[page.pathLocale][page.path] = pageIndex;
+
+        // search index file content
+        let content = `\
+export const database = "${utoa(JSON.stringify(previousSearchIndex))}"
+`;
+
+        // inject HMR code
+        if (env.isDev) content += HMR_CODE;
+
+        await writeTemp("search-pro/index.js", content);
+
+        return;
+      }
+    }
+  }
+
+  await prepareSearchIndex(app, options);
+};
+
+export const removeSearchIndex = async (
+  app: App,
+  options: SearchProOptions,
+  path: string
+) => {
+  if (previousSearchIndex) {
+    const actualPath = path
+      .replace(/^pages\//, "")
+      .replace(/\/index\.html\.vue/, "/readme.md")
+      .replace(/\.html\.vue/, ".md");
+
+    const { env, pages, writeTemp } = app;
+
+    const page = pages.find(
+      ({ filePathRelative }) =>
+        filePathRelative?.toLowerCase() === actualPath.toLowerCase()
+    )!;
+
+    if (page) {
+      // remove index
+      delete previousSearchIndex[page.pathLocale][page.path];
+
+      // search index file content
+      let content = `\
+export const database = "${utoa(JSON.stringify(previousSearchIndex))}"
+`;
+
+      // inject HMR code
+      if (env.isDev) content += HMR_CODE;
+
+      await writeTemp("search-pro/index.js", content);
+
+      return;
+    }
+  }
+
+  await prepareSearchIndex(app, options);
 };

@@ -5,7 +5,7 @@ import { container } from "./container.js";
 import type { MarkdownEnv } from "@vuepress/markdown";
 import type { PluginWithOptions } from "markdown-it";
 import type { ConvertLocaleConfig } from "vuepress-shared";
-import type { MarkdownHintLocaleData } from "../../shared/index.js";
+import type { MarkdownHintLocaleData } from "../typings/index.js";
 
 export type MarkdownItHintOptions = ConvertLocaleConfig<MarkdownHintLocaleData>;
 

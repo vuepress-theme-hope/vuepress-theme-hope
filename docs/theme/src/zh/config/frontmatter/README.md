@@ -18,3 +18,7 @@ tag:
 - [布局 Frontmatter 配置](layout.md)
 
 - [插件 Frontmatter 配置](plugins.md)
+
+- [主页 Frontmatter 配置](home.md)
+
+- [博客主页 Frontmatter 配置](blog-home.md)

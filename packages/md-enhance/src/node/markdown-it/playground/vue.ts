@@ -3,7 +3,7 @@ import type {
   PlaygroundData,
   PlaygroundOptions,
   VuePresetPlaygroundOptions,
-} from "../../../shared/index.js";
+} from "../../typings/index.js";
 
 const VUE_SUPPORTED_EXTENSIONS = [
   "html",

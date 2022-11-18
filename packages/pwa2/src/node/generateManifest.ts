@@ -5,7 +5,8 @@ import { getRootLang } from "vuepress-shared/node";
 import { logger } from "./utils.js";
 
 import type { App } from "@vuepress/core";
-import type { ManifestOption, PWAOptions } from "../shared/index.js";
+import type { PWAOptions } from "./options.js";
+import type { ManifestOption } from "../shared/index.js";
 
 export const getManifest = async (
   app: App,

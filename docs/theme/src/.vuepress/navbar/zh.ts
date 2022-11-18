@@ -89,6 +89,11 @@ export const zhNavbarConfig = navbar([
             link: "https://vuepress-theme-hope.github.io/v2/sass-palette/zh/",
           },
           {
+            text: "客户端搜索插件",
+            icon: "search",
+            link: "https://vuepress-theme-hope.github.io/v2/search-pro/zh/",
+          },
+          {
             text: "Seo 插件",
             icon: "strong",
             link: "https://vuepress-theme-hope.github.io/v2/seo/zh/",

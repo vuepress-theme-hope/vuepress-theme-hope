@@ -63,7 +63,7 @@ import type { PluginFunction } from "@vuepress/core";
 import type { ViteBundlerOptions } from "@vuepress/bundler-vite";
 import type { RollupWarning } from "rollup";
 import type { KatexOptions } from "katex";
-import type { MarkdownEnhanceOptions } from "../shared/index.js";
+import type { MarkdownEnhanceOptions } from "./options.js";
 
 export const mdEnhancePlugin =
   (
@@ -71,7 +71,7 @@ export const mdEnhancePlugin =
     legacy = false
   ): PluginFunction =>
   (app) => {
-    // TODO: Remove it in v2 stable
+    // TODO: Remove this in v2 stable
     if (legacy)
       convertOptions(
         options as MarkdownEnhanceOptions & Record<string, unknown>
@@ -261,7 +261,7 @@ export const mdEnhancePlugin =
         // additional functions
         if (
           getStatus("vPre") ||
-          // TODO: Remove it in v2 stable
+          // TODO: Remove this in v2 stable
           legacy
         )
           md.use(vPre);
@@ -282,13 +282,13 @@ export const mdEnhancePlugin =
         // features
         if (getStatus("codetabs")) {
           md.use(codeTabs);
-          // TODO: Remove it in v2 stable
+          // TODO: Remove this in v2 stable
           if (legacy) md.use(legacyCodeGroup);
         }
         if (getStatus("tabs")) md.use(tabs);
         if (flowchartEnable) {
           md.use(flowchart);
-          // TODO: Remove it in v2 stable
+          // TODO: Remove this in v2 stable
           if (legacy) md.use(legacyFlowchart);
         }
         if (chartEnable) md.use(chart);
@@ -297,7 +297,7 @@ export const mdEnhancePlugin =
           md.use(normalDemo);
           md.use(vueDemo);
           md.use(reactDemo);
-          // TODO: Remove it in v2 stable
+          // TODO: Remove this in v2 stable
           if (legacy) md.use(legacyCodeDemo);
         }
         if (mermaidEnable) md.use(mermaid);

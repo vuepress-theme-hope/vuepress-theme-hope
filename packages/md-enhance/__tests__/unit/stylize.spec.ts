@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import MarkdownIt from "markdown-it";
 import { stylize } from "../../src/node/markdown-it/index.js";
-import type { StylizeOptions, StylizeResult } from "../../src/shared/index.js";
+import type { StylizeOptions, StylizeResult } from "../../src/node/index.js";
 
 describe("stylize", () => {
   const options: StylizeOptions = [

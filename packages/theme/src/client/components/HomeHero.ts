@@ -3,7 +3,6 @@ import {
   useSiteLocaleData,
   withBase,
 } from "@vuepress/client";
-import { isArray } from "@vuepress/shared";
 import { computed, defineComponent, h } from "vue";
 
 import AutoLink from "@theme-hope/components/AutoLink.js";
@@ -52,9 +51,7 @@ export default defineComponent({
       () => frontmatter.value.heroAlt || heroText.value || "hero"
     );
 
-    const actions = computed(() =>
-      isArray(frontmatter.value.actions) ? frontmatter.value.actions : []
-    );
+    const actions = computed(() => frontmatter.value.actions ?? []);
 
     return (): VNode =>
       h("header", { class: "hero" }, [

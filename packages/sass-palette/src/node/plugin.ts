@@ -12,7 +12,7 @@ import {
 import { logger } from "./utils.js";
 
 import type { PluginFunction } from "@vuepress/core";
-import type { SassPaletteOptions } from "../shared/index.js";
+import type { SassPaletteOptions } from "./options.js";
 
 const __dirname = getDirname(import.meta.url);
 

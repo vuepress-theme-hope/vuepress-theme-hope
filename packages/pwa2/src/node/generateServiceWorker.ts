@@ -9,7 +9,7 @@ import type {
 } from "workbox-build";
 
 import type { App } from "@vuepress/core";
-import type { PWAOptions } from "../shared/index.js";
+import type { PWAOptions } from "./options.js";
 
 const imageFilter =
   (outDir: string, maxSize = 1024): ManifestTransform =>

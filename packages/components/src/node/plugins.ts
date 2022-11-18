@@ -6,7 +6,7 @@ import { prepareConfigFile } from "./prepare.js";
 import { getIconPrefix, logger } from "./utils.js";
 
 import type { PluginFunction } from "@vuepress/core";
-import type { ComponentOptions } from "../shared/index.js";
+import type { ComponentOptions } from "./options.js";
 
 export const componentsPlugin =
   (options: ComponentOptions): PluginFunction =>

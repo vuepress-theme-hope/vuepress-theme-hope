@@ -9,15 +9,14 @@ import { logger } from "./utils.js";
 
 import type { App, Page } from "@vuepress/core";
 import type { GitData } from "@vuepress/plugin-git";
+import type { ModifyTimeGetter, SitemapOptions } from "./options.js";
 import type {
-  ModifyTimeGetter,
   SitemapFrontmatterOption,
   SitemapImageOption,
   SitemapLinkOption,
   SitemapNewsOption,
-  SitemapOptions,
   SitemapVideoOption,
-} from "../shared/index.js";
+} from "./typings/index.js";
 
 interface SitemapPageInfo {
   lastmod?: string;

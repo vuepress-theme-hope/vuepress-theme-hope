@@ -212,7 +212,15 @@ exports[`generateIndex > Should generate full index 5`] = `null`;
 
 exports[`generateIndex > Should generate index 1`] = `
 {
-  "contents": [],
+  "contents": [
+    {
+      "contents": [
+        "Here is article excerpt.",
+      ],
+      "header": "",
+      "slug": "",
+    },
+  ],
   "title": "Demo Page",
 }
 `;
@@ -333,7 +341,15 @@ exports[`generateIndex > Should generate index 5`] = `null`;
 
 exports[`generateIndex > Should support customFields 1`] = `
 {
-  "contents": [],
+  "contents": [
+    {
+      "contents": [
+        "Here is article excerpt.",
+      ],
+      "header": "",
+      "slug": "",
+    },
+  ],
   "customFields": {
     "tag": [
       "Demo",

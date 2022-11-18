@@ -21,11 +21,11 @@ icon: creative
 
 ## 直接使用
 
-对于小型站点来说，通常情况下你需要一个开箱即用的全文搜索，你可以直接通过 `{ fullIndex: true }` 调用 `vuepress-plugin-search-pro` 插件。
+对于小型站点来说，通常情况下你需要一个开箱即用的全文搜索，你可以直接通过 `{ indexContent: true }` 调用 `vuepress-plugin-search-pro` 插件。
 
 ## 自定义索引
 
-无论是主题开发者还是用户，在 Frontmatter 中或者通过 `extendsPage` 生命周期为页面提娜佳额外数据是一个常见的操作。很多情况下，你可能希望把这些数据也编入索引，所以我们提供了 `customFields` 选项。
+无论是主题开发者还是用户，在 Frontmatter 中或者通过 `extendsPage` 生命周期为页面添加额外数据是一个常见的操作。很多情况下，你可能希望把这些数据也编入索引，所以我们提供了 `customFields` 选项。
 
 `customFields` 接受一个数组，其中每一项代表一项自定义搜索索引的配置项。每一个配置项包含三个部分:
 
@@ -127,3 +127,7 @@ export default defineUserConfig({
 ```
 
 :::
+
+## 搜索热键
+
+默认情况下，搜索热键为 `Ctrl + K`。你可以通过 `hotkeys` 选项来自定义搜索热键，参见 [配置](./config.md#hotkeys)。

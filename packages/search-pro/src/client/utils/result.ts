@@ -1,7 +1,7 @@
 import { getMatchedContent } from "./matchContent.js";
 
 import type { Word } from "./matchContent.js";
-import type { LocaleIndex } from "../../shared/data.js";
+import type { LocaleIndex } from "../../shared/index.js";
 
 export interface TitleMatchedItem {
   type: "title";
@@ -54,7 +54,6 @@ const getResultsWeight = (matchedItem: MatchedItem[]): number =>
     0
   );
 
-// TODO: Support custom fields
 export const getResults = (
   queryString: string,
   localeIndex: LocaleIndex

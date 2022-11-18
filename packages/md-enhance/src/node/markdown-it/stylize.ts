@@ -2,7 +2,7 @@ import type { MarkdownEnv } from "@vuepress/markdown";
 import type { PageFrontmatter } from "@vuepress/shared";
 import type { PluginWithOptions } from "markdown-it";
 import type Token from "markdown-it/lib/token.js";
-import type { StylizeOptions } from "../../shared/index.js";
+import type { StylizeOptions } from "../typings/index.js";
 
 export interface StylizeFrontmatter {
   /**

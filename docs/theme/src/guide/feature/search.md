@@ -8,7 +8,7 @@ tag:
   - Search
 ---
 
-The theme adds built-in support for [`@vuepress/plugin-search`][search] and [`@vuepress/plugin-docsearch`][docsearch]. Just install the plugin you want and config it, you will get a search box in navbar.
+The theme adds built-in support for [`@vuepress/plugin-search`][search], [`@vuepress/plugin-docsearch`][docsearch] and [`vuepress-plugin-search-pro`][search-pro]. Just install the plugin you want and config it, you will get a search box in navbar.
 
 To use search plugin, you need to apply it via `plugins` in the [**VuePress config file**](../../cookbook/vuepress/config.md).
 
@@ -316,5 +316,103 @@ See [Plugin Docs][docsearch] for how to use docsearch plugin and its available o
 
 :::
 
+## Use `vuepress-plugin-search-pro`
+
+1. Install `vuepress-plugin-search-pro`
+
+   ::: code-tabs#shell
+
+   @tab pnpm
+
+   ```bash
+   pnpm add -D vuepress-plugin-search-pro@next
+   ```
+
+   @tab yarn
+
+   ```bash
+   yarn add -D vuepress-plugin-search-pro@next
+   ```
+
+   @tab npm
+
+   ```bash
+   npm i -D vuepress-plugin-search-pro@next
+   ```
+
+   :::
+
+1. Import `searchProPlugin` from `vuepress-plugin-search-pro` and apply it in `plugins` under `config.{ts,js}`.
+
+   ::: code-tabs#language
+
+   @tab TS
+
+   ```ts
+   // .vuepress/config.ts
+   import { searchProPlugin } from "vuepress-plugin-search-pro";
+   import { defineUserConfig } from "vuepress";
+
+   export default defineUserConfig({
+     plugins: [
+       searchProPlugin({
+         // index all contents
+         indexContent: true,
+         // add supports for category and tags
+         customFields: [
+           {
+             name: "category",
+             getter: (page) => page.frontmatter.category,
+             formatter: "Category: $content",
+           },
+           {
+             name: "tag",
+             getter: (page) => page.frontmatter.tag,
+             formatter: "Tag: $content",
+           },
+         ],
+       }),
+     ],
+   });
+   ```
+
+   @tab JS
+
+   ```js
+   // .vuepress/config.js
+   import { searchProPlugin } from "vuepress-plugin-search-pro";
+
+   export default {
+     plugins: [
+       searchPlugin({
+         // index all contents
+         indexContent: true,
+         // add supports for category and tags
+         customFields: [
+           {
+             name: "category",
+             getter: (page) => page.frontmatter.category,
+             formatter: "Category: $content",
+           },
+           {
+             name: "tag",
+             getter: (page) => page.frontmatter.tag,
+             formatter: "Tag: $content",
+           },
+         ],
+       }),
+     ],
+   };
+   ```
+
+   :::
+
+::: info More
+
+See [Plugin Docs][search-pro] for available options.
+
+:::
+
 [docsearch]: https://v2.vuepress.vuejs.org/reference/plugin/docsearch.html
 [search]: https://v2.vuepress.vuejs.org/reference/plugin/search.html
+[search-pro]: https://vuepress-theme-hope.github.io/v2/search-pro/

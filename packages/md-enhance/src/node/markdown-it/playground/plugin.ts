@@ -3,10 +3,7 @@ import { escapeHtml } from "../utils.js";
 
 import type { PluginWithOptions } from "markdown-it";
 import type { RuleBlock } from "markdown-it/lib/parser_block.js";
-import type {
-  PlaygroundData,
-  PlaygroundOptions,
-} from "../../../shared/index.js";
+import type { PlaygroundData, PlaygroundOptions } from "../../typings/index.js";
 
 const AT_MARKER = `@`;
 const VALID_MARKERS = ["file", "import", "setting"];

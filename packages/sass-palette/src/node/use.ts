@@ -1,7 +1,7 @@
 import { sassPalettePlugin } from "./plugin.js";
 
 import type { App, PluginObject } from "@vuepress/core";
-import type { SassPaletteOptions } from "../shared/index.js";
+import type { SassPaletteOptions } from "./options.js";
 
 export const useSassPalettePlugin = (
   app: App,

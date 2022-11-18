@@ -1,6 +1,6 @@
 {
   "name": "theme-blog-demo",
-  "version": "2.0.0-beta.122",
+  "version": "2.0.0-beta.123",
   "private": true,
   "description": "Blog demo for vuepress-theme-hope",
   "license": "MIT",
@@ -9,9 +9,9 @@
     "demo:vite-build": "vuepress-vite build src",
     "demo:vite-clean-dev": "vuepress-vite dev src --clean-cache",
     "demo:vite-dev": "vuepress-vite dev src",
-    "demo:webpack-build": "vuepress-webpack build src",
-    "demo:webpack-clean-dev": "vuepress-webpack dev src --clean-cache",
-    "demo:webpack-dev": "vuepress-webpack dev src"
+    "broken-demo:webpack-build": "vuepress-webpack build src",
+    "broken-demo:webpack-clean-dev": "vuepress-webpack dev src --clean-cache",
+    "broken-demo:webpack-dev": "vuepress-webpack dev src"
   },
   "devDependencies": {
     "@vuepress/cli": "2.0.0-beta.53",

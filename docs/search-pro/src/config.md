@@ -3,31 +3,16 @@ title: Plugin Options
 icon: config
 ---
 
-## fullIndex
+## indexContent
 
 - Type: `boolean`
 - Default: `false`
 
-Whether to enable full-text indexing.
+Whether to enable content indexing.
 
 ::: tip
 
-By default the plugin will only index titles and custom fields, when set to `true` the plugin will index all contents.
-
-:::
-
-## hotReload
-
-- Type: `boolean`
-- Default: `false`
-
-Whether to enable hot reload in the development server.
-
-::: note
-
-It is disabled by default because this feature can have a huge performance impact on sites with huge content and drastically increases the speed of hot reloads when editing Markdown.
-
-Usually in development, users do not need to update the index database in real time.
+By default only headings and excerpt of the page will be indexed along with your cutom fields, and the content of the page will not be indexed. If you need to index the content of the page, you can set this option to `true`
 
 :::
 
@@ -106,6 +91,63 @@ export default defineUserConfig({
 });
 ```
 
+:::
+
+## hotKeys
+
+- Type: `SearchProHotKeyOptions[]`
+
+  ```ts
+  interface SearchProHotKeyOptions {
+    /**
+     * Value of `event.key` to trigger the hot key
+     */
+    key: string;
+
+    /**
+     * Whether to press `event.altKey` at the same time
+     *
+     * @default false
+     */
+    alt?: boolean;
+
+    /**
+     * Whether to press `event.ctrlKey` at the same time
+     *
+     * @default false
+     */
+    ctrl?: boolean;
+
+    /**
+     * Whether to press `event.shiftKey` at the same time
+     *
+     * @default false
+     */
+    shift?: boolean;
+  }
+  ```
+
+- Default: `[{key:'k',ctrl:true}]`
+
+Specify the [event.key](http://keycode.info/) of the hotkeys.
+
+When hotkeys are pressed, the search box input will be focused. Set to an empty array to disable hotkeys.
+
+## hotReload
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to enable hot reload in the development server.
+
+::: note
+
+It is disabled by default because this feature can have a huge performance impact on sites with huge content and drastically increases the speed of hot reloads when editing Markdown.
+
+Usually in development, users do not need to update the index database in real time.
+
+:::
+
 ## locales
 
 - Type: `SearchProLocaleConfig`
@@ -129,6 +171,31 @@ export default defineUserConfig({
      * Close text
      */
     close: string;
+
+    /**
+     * Select hint
+     */
+    select: string;
+
+    /**
+     * Choose hint
+     */
+    navigate: string;
+
+    /**
+     * Close hint
+     */
+    exit: string;
+
+    /**
+     * Loading hint
+     */
+    loading: string;
+
+    /**
+     * Empty hint
+     */
+    emply: string;
   }
 
   interface SearchProLocaleConfig {

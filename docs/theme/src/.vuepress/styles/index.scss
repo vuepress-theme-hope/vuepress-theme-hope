@@ -14,6 +14,7 @@
   &[href*="/v2/reading-time/"],
   &[href*="/v2/redirect/"],
   &[href*="/v2/sass-palette/"],
+  &[href*="/v2/search-pro/"],
   &[href*="/v2/seo/"],
   &[href*="/v2/sitemap/"],
   &[href*="/guide/"],
@@ -93,6 +94,10 @@
 
   &[href*="/v2/sass-palette/"]::before {
     content: "\e7cc";
+  }
+
+  &[href*="/v2/search-pro/"]::before {
+    content: "\e6c7";
   }
 
   &[href*="/v2/seo/"]::before {

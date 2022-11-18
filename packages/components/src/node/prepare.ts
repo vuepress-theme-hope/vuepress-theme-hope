@@ -3,7 +3,7 @@ import { getDirname, path } from "@vuepress/utils";
 import { logger } from "./utils.js";
 
 import type { App } from "@vuepress/core";
-import type { AvailableComponent, ComponentOptions } from "../shared/index.js";
+import type { AvailableComponent, ComponentOptions } from "./options.js";
 
 const __dirname = getDirname(import.meta.url);
 const CLIENT_FOLDER = ensureEndingSlash(path.resolve(__dirname, "../client"));

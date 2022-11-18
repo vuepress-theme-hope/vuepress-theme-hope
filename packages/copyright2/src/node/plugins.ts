@@ -10,7 +10,7 @@ import { copyrightLocales } from "./locales.js";
 import { logger } from "./utils.js";
 
 import type { Page, PluginFunction } from "@vuepress/core";
-import type { CopyrightOptions } from "../shared/index.js";
+import type { CopyrightOptions } from "./options.js";
 
 const __dirname = getDirname(import.meta.url);
 

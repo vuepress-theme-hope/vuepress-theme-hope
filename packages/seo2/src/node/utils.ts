@@ -7,7 +7,8 @@ import matter from "gray-matter";
 import { Logger, isAbsoluteUrl, isUrl, md2text } from "vuepress-shared/node";
 
 import type { App, SiteLocaleConfig } from "@vuepress/core";
-import type { ExtendPage, SeoOptions } from "../shared/index.js";
+import type { SeoOptions } from "./options.js";
+import type { ExtendPage } from "./typings/index.js";
 
 export const logger = new Logger("vuepress-plugin-seo2");
 

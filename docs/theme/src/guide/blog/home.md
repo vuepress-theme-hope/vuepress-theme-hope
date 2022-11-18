@@ -19,45 +19,21 @@ You need to set `layout: Blog` and `home: true` in the frontmatter of homepage.
 ![Homepage screenshot](./assets/blog-light.png#light)
 ![Homepage screenshot](./assets/blog-dark.png#dark)
 
-## Frontmatter Options
+## Homepage information
 
-### hero
+You can use `heroText` to set the main title and `tagline` to set the subtitle.
 
-- Type: `boolean`
-- Default: `true`
+If you have a logo, you can place it in the `public` folder and set it via `heroImage`, if you want to display another logo in night mode, you can use `heroImageDark`. For better A11y, we recommend that you set the description of Logo to `heroAlt`.
 
-Whether to display the icon and description of the home page.
+You can set the background image through `bgImage`, but you need to pay attention that you must fill in the full URL or absolute path. If you want the information to be displayed in full screen, you can set `heroFullScreen: true`.
 
-### bgImage
+If you need to customize some styles, you can set the style of the logo and background image through `heroImageStyle` and `bgImageStyle`.
 
-- Type: `string | false`
+### Project Display
 
-For the address of the background picture, you must fill in the absolute path. If not filled in, a default landscape picture will be automatically applied.
+Typically, you might want to display some projects, books, articles, links, friend links, etc. on your homepage.
 
-### bgImageStyle
-
-- Type: `Record <string, string>`
-
-The CSS style of the background image.
-
-### heroImageStyle
-
-- Type: `Record <string, string>`
-
-CSS style for home icon
-
-### heroFullScreen
-
-- Type: `boolean`
-- Default: `false`
-
-Whether Hero is full screen displayed
-
-### projects
-
-- Type: `ProjectOption[]`
-
-`ProjectOption` includes:
+You can set them via `projects`, which is an array where each element is an object with the following keys:
 
 - `name`: required, project name
 - `link`: required, project link, fill in an external path or absolute path
@@ -65,3 +41,9 @@ Whether Hero is full screen displayed
 - `icon`: Icon, you can fill in full path or absolute path image link, also icon FontClass is supported
 
   We provide these icons as built-in support either: `"link"`, `"project"`, `"book"`, `"article"`, `"friend"`。
+
+::: info
+
+For complete configuration items, see [Blog Home Frontmatter Configuration](../../config/frontmatter/blog-home.md).
+
+:::

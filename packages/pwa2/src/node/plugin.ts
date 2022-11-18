@@ -15,12 +15,12 @@ import { prepareConfigFile } from "./prepare.js";
 import { logger } from "./utils.js";
 
 import type { PluginFunction } from "@vuepress/core";
-import type { PWAOptions } from "../shared/index.js";
+import type { PWAOptions } from "./options.js";
 
 export const pwaPlugin =
   (options: PWAOptions = {}, legacy = false): PluginFunction =>
   (app) => {
-    // TODO: Remove it in v2 stable
+    // TODO: Remove this in v2 stable
     if (legacy) convertOptions(options as PWAOptions & Record<string, unknown>);
     if (app.env.isDebug) logger.info(`Options: ${options.toString()}`);
 

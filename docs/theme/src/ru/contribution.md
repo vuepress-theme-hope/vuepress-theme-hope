@@ -57,6 +57,7 @@ corepack prepare pnpm@7.14.0 --activate
 │ ├── pwa → pwa2 plugin document
 │ ├── reading-time → reading-time2 plugin document
 │ ├── sass-palette → sass-palette plugin document
+│ ├── search-pro → search-pro plugin document
 │ ├── seo → seo2 plugin document
 │ └── theme → theme document
 │
@@ -73,6 +74,7 @@ corepack prepare pnpm@7.14.0 --activate
 │ ├── pwa2 → pwa2 plugin
 │ ├── reading-time2 → reading-time2 plugin
 │ ├── sass-palette → sass-palette plugin
+│ ├── search-pro → search-pro plugin
 │ ├── seo2 → seo2 plugin
 │ ├── shared → shared file
 │ ├── sitemap2 → sitemap2 plugin

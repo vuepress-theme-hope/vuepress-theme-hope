@@ -100,13 +100,20 @@ export default defineComponent({
 
       void Promise.all([
         import(
-          /* webpackChunkName: "mermaid" */ "mermaid/dist/mermaid.esm.mjs"
+          /* webpackChunkName: "mermaid" */ "mermaid/dist/mermaid.esm.min.mjs"
+        ),
+        import(
+          /* webpackChunkName: "mermaid" */ "@mermaid-js/mermaid-mindmap/dist/mermaid-mindmap.esm.min.mjs"
         ),
         new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
-      ]).then(([{ default: mermaid }]) => {
-        const { initialize, renderAsync } = mermaid;
+      ]).then(async ([{ default: mermaid }, { default: mindmap }]) => {
+        try {
+          await mermaid.registerExternalDiagrams([mindmap]);
+        } catch (err) {
+          // mermaid does not provide a api to get registered diagrams
+        }
 
-        const renderMermaid = (): void => {
+        const renderMermaid = async (): Promise<void> => {
           // generate a invisible container
           const container = document.createElement("div");
 
@@ -118,7 +125,7 @@ export default defineComponent({
             document.body.removeChild(container);
           };
 
-          initialize({
+          mermaid.initialize({
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
             theme: "base",
@@ -140,12 +147,12 @@ export default defineComponent({
           document.body.appendChild(container);
 
           // make sure dom is refreshed
-          void nextTick().then(() =>
-            renderAsync(props.id, code, renderCallback, container)
-          );
+          await nextTick();
+
+          await mermaid.renderAsync(props.id, code, renderCallback, container);
         };
 
-        renderMermaid();
+        await renderMermaid();
 
         // watch darkmode change
         observer = new MutationObserver(() => {

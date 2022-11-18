@@ -28,19 +28,18 @@
 import { onMounted, watch } from "vue";
 import { useRoute } from "vue-router";
 import { Message, useLocaleConfig } from "vuepress-shared/client";
+
+import {
+  copyCodeDelay,
+  copyCodeDuration,
+  copyCodeLocales,
+  copyCodePure,
+  copyCodeSelector,
+  copyCodeShowInMobile,
+} from "../define.js";
 import { CHECK_ICON, copyToClipboard } from "../utils/index.js";
 
-import type {
-  CopyCodeOptions,
-  CopyCodeLocaleConfig,
-} from "../../shared/index.js";
-
 import "vuepress-shared/client/styles/message.scss";
-
-declare const CODE_COPY_OPTIONS: Required<CopyCodeOptions>;
-declare const CODE_COPY_LOCALES: CopyCodeLocaleConfig;
-
-const options = CODE_COPY_OPTIONS;
 
 const isMobile = (): boolean =>
   navigator
@@ -53,7 +52,7 @@ const timeoutIdMap: Map<HTMLElement, NodeJS.Timeout> = new Map();
 
 export const setupCopyCode = (): void => {
   const route = useRoute();
-  const locale = useLocaleConfig(CODE_COPY_LOCALES);
+  const locale = useLocaleConfig(copyCodeLocales);
 
   let message: Message;
 
@@ -66,7 +65,7 @@ export const setupCopyCode = (): void => {
       copyElement.setAttribute("aria-label", locale.value.copy);
       copyElement.setAttribute("data-copied", locale.value.copied);
 
-      if (options.pure) copyElement.classList.add("pure");
+      if (copyCodePure) copyElement.classList.add("pure");
       else copyElement.setAttribute("data-balloon-pos", "left");
 
       if (codeBlockElement.parentElement)
@@ -79,21 +78,18 @@ export const setupCopyCode = (): void => {
   };
 
   const generateCopyButton = (): void => {
-    const selector =
-      options.selector || '.theme-default-content div[class*="language-"] pre';
-
     setTimeout(() => {
-      if (typeof selector === "string")
+      if (typeof copyCodeSelector === "string")
         document
-          .querySelectorAll<HTMLElement>(selector)
+          .querySelectorAll<HTMLElement>(copyCodeSelector)
           .forEach(insertCopyButton);
-      else if (Array.isArray(selector))
-        selector.forEach((item) => {
+      else if (Array.isArray(copyCodeSelector))
+        copyCodeSelector.forEach((item) => {
           document
             .querySelectorAll<HTMLElement>(item)
             .forEach(insertCopyButton);
         });
-    }, options.delay || 500);
+    }, copyCodeDelay || 500);
   };
 
   const copy = (
@@ -123,10 +119,10 @@ export const setupCopyCode = (): void => {
 
       timeoutIdMap.set(button, timeoutId);
 
-      if (!options.pure)
+      if (!copyCodePure)
         message.pop(
           `${CHECK_ICON}<span>${locale.value.hint} 🎉</span>`,
-          options.duration
+          copyCodeDuration
         );
     });
   };
@@ -134,7 +130,7 @@ export const setupCopyCode = (): void => {
   onMounted(() => {
     message = new Message();
 
-    if (!isMobile() || options.showInMobile) generateCopyButton();
+    if (!isMobile() || copyCodeShowInMobile) generateCopyButton();
 
     window.addEventListener("click", (event) => {
       const el = event.target as HTMLElement;
@@ -159,7 +155,7 @@ export const setupCopyCode = (): void => {
   watch(
     () => route.path,
     () => {
-      if (!isMobile() || options.showInMobile) generateCopyButton();
+      if (!isMobile() || copyCodeShowInMobile) generateCopyButton();
     }
   );
 };

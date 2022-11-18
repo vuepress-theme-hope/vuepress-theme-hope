@@ -15,7 +15,8 @@ import {
 import { logger } from "./utils.js";
 
 import type { App, AppDir } from "@vuepress/core";
-import type { ExtendPage, SeoOptions } from "../shared/index.js";
+import type { SeoOptions } from "./options.js";
+import type { ExtendPage } from "./typings/index.js";
 
 export const appendSEO = (
   page: ExtendPage,

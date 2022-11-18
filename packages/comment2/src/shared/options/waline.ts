@@ -9,7 +9,10 @@ export type WalineLocaleConfig = ConvertLocaleConfig<WalineLocaleData>;
 
 export interface WalineOptions
   extends BaseCommentOptions,
-    Omit<WalineInitOptions, "el" | "comment"> {
+    Omit<
+      WalineInitOptions,
+      "el" | "comment" | "imageUploader" | "texRenderer"
+    > {
   provider: "Waline";
 
   /**

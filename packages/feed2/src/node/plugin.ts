@@ -6,7 +6,7 @@ import { FeedGenerator } from "./generator.js";
 import { logger } from "./utils.js";
 
 import type { PluginFunction, PluginObject } from "@vuepress/core";
-import type { FeedOptions } from "../shared/index.js";
+import type { FeedOptions } from "./typings/index.js";
 
 export const feedPlugin =
   (options: FeedOptions, legacy = false): PluginFunction =>

@@ -36,7 +36,7 @@ import { tex } from "./tex.js";
 
 import type { PluginWithOptions } from "markdown-it";
 import type { LiteElement } from "mathjax-full/js/adaptors/lite/Element.js";
-import type { MathJaxOptions } from "../../shared/index.js";
+import type { MathJaxOptions } from "../typings/index.js";
 
 interface DocumentOptions {
   InputJax: TeX<LiteElement, string, HTMLElement>;

@@ -4,7 +4,7 @@ import MarkdownIt from "markdown-it";
 import { attrs, katex } from "../../src/node/markdown-it/index.js";
 import { getAttrs } from "../../src/node/markdown-it/attrs.js";
 
-import type { AttrsOptions } from "../../src/shared/index.js";
+import type { AttrsOptions } from "../../src/node/index.js";
 
 const replaceDelimiters = (
   text: string,

@@ -3,10 +3,14 @@ import { watch } from "chokidar";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import { addViteSsrNoExternal, getLocales } from "vuepress-shared/node";
 import { searchProLocales } from "./locales.js";
-import { prepareSearchIndex } from "./prepare.js";
+import {
+  prepareSearchIndex,
+  removeSearchIndex,
+  updateSearchIndex,
+} from "./prepare.js";
 
 import type { PluginFunction } from "@vuepress/core";
-import type { SearchProOptions } from "../shared/index.js";
+import type { SearchProOptions } from "./options.js";
 
 const __dirname = getDirname(import.meta.url);
 
@@ -27,13 +31,12 @@ export const searchProPlugin =
       },
 
       define: {
-        // eslint-disable-next-line @typescript-eslint/naming-convention
         SEARCH_PRO_CUSTOM_FIELDS: Object.fromEntries(
           (options.customFields || [])
             .filter((item) => "formatter" in item)
             .map(({ name, formatter }) => [name, formatter])
         ),
-        // eslint-disable-next-line @typescript-eslint/naming-convention
+        SEARCH_PRO_HOTKEYS: options.hotKeys || [{ key: "k", ctrl: true }],
         SEARCH_PRO_LOCALES: getLocales({
           app,
           name: "search-pro",
@@ -52,19 +55,20 @@ export const searchProPlugin =
 
       onWatched: (app, watchers): void => {
         if (options.hotReload) {
-          const searchIndexWatcher = watch("internal/pageData/*", {
+          // this ensure the page is generated or updated
+          const searchIndexWatcher = watch("pages/**/*.vue", {
             cwd: app.dir.temp(),
             ignoreInitial: true,
           });
 
-          searchIndexWatcher.on("add", () => {
-            void prepareSearchIndex(app, options);
+          searchIndexWatcher.on("add", (path) => {
+            void updateSearchIndex(app, options, path);
           });
-          searchIndexWatcher.on("change", () => {
-            void prepareSearchIndex(app, options);
+          searchIndexWatcher.on("change", (path) => {
+            void updateSearchIndex(app, options, path);
           });
-          searchIndexWatcher.on("unlink", () => {
-            void prepareSearchIndex(app, options);
+          searchIndexWatcher.on("unlink", (path) => {
+            void removeSearchIndex(app, options, path);
           });
 
           watchers.push(searchIndexWatcher);

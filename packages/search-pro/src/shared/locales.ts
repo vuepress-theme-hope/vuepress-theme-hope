@@ -26,6 +26,41 @@ export interface SearchProLocaleData {
    * 关闭文字
    */
   close: string;
+
+  /**
+   * Select hint
+   *
+   * 选择提示
+   */
+  select: string;
+
+  /**
+   * Choose hint
+   *
+   * 选择提示
+   */
+  navigate: string;
+
+  /**
+   * Close hint
+   *
+   * 关闭提示
+   */
+  exit: string;
+
+  /**
+   * Loading hint
+   *
+   * 加载提示
+   */
+  loading: string;
+
+  /**
+   * Empty hint
+   *
+   * 无结果提示
+   */
+  emply: string;
 }
 
 export type SearchProLocaleConfig = ConvertLocaleConfig<SearchProLocaleData>;

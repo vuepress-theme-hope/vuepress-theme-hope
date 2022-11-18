@@ -1,4 +1,5 @@
-import type { ManifestOption, PWAOptions } from "../shared/index.js";
+import type { PWAOptions } from "./options.js";
+import type { ManifestOption } from "../shared/index.js";
 
 const appendBaseHelper = (base: string, link: string): string =>
   link.startsWith("/") ? link.replace(/^\//, base) : link;

@@ -18,3 +18,7 @@ tag:
 - [Конфигурация макета Frontmatter](layout.md)
 
 - [Конфигурация плагина Frontmatter](plugins.md)
+
+- [Home Frontmatter Config](home.md)
+
+- [Blog Home Frontmatter Config](blog-home.md)

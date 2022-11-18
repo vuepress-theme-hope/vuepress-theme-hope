@@ -25,9 +25,6 @@ export const convertOptions = (
       ["placeholder", "locale.placeholder"],
 
       // waline v1
-      ["highlight", "highlighter"],
-      ["uploadImage", "imageUploader"],
-      ["previewMath", "texRenderer"],
       ["anonymous", "login"],
       ["copyRight", "copyright"],
     ].forEach(([oldOptions, newOptions]) => {
@@ -57,6 +54,9 @@ export const convertOptions = (
       // waline v1
       "avatarCDN",
       "mathTagSupport",
+      "highlight",
+      "uploadImage",
+      "previewMath",
     ].forEach((option) => {
       if (option in options) {
         console.warn(

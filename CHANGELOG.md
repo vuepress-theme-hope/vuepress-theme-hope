@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.123](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.122...v2.0.0-beta.123) (2022-11-18)
+
+### ⚠ BREAKING CHANGES
+
+- Remove default export
+
+### Features
+
+- add search-pro plugin ([#2413](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2413)) ([78719cb](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/78719cbac33a2a2393f44ffa80cc1f3a2e551d04))
+- improve description generation ([c1aee7d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c1aee7d6d43b09499a133a1049704821e78a7fbe))
+- remove default export ([c829b80](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c829b808c0644870ca985f554131c8ce813b7ca8))
+- **search-pro:** add hints ([f54c11c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f54c11c1a2c5bccfd13124d09261eee7f915f73e))
+- **search-pro:** improve style ([5ecddbf](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5ecddbff95e6fbb6365c25e829385c4f855e5ca7))
+- **search-pro:** support hotKeys ([81a22ac](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/81a22accbff7e931cead54d02c4fc3e9f29a6954))
+- **seo2:** improve autoDescription ([9ab1bf4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9ab1bf42d59c653695ab952a9e93fe7ece9ef80f))
+- **theme:** add built-in support for search-pro plugin ([2d44b87](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2d44b87e9c875364d586fd6f40e0d426a86ae812))
+- **theme:** add color-scheme ([85b6ec8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/85b6ec899af7464bd0cbb424df5f13866f086bdd))
+- **theme:** improve ssr ([ffb8afd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ffb8afd2631572c5b2e74b3e771567b2b5ae68bd))
+
+### Bug Fixes
+
+- **comment2:** fix comment option ([6f90bfe](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6f90bfe08be401310c039e4bf30dab1b73768134))
+- **deps:** update dependency vue to v3.2.45 ([#2394](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2394)) ([fb4de30](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fb4de302d99541a425c6890c982d2fc03e612471))
+- **theme:** fix article item radius ([136992d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/136992d5c10261c893dcf1743083c416fc9f9ca7))
+- **theme:** fix feed customElements ([0da0568](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0da0568267a5776033163c183108e0d912a05cf8))
+- **theme:** fix SSR mismatch ([ce5af15](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ce5af15acf40309dfdce24b936d6160740b27ca7))
+
 ## [2.0.0-beta.122](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.121...v2.0.0-beta.122) (2022-11-10)
 
 ### ⚠ BREAKING CHANGES

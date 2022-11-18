@@ -150,8 +150,6 @@ tag:
 
 - [vuepress-plugin-reading-time2][reading-time2]: Ожидаемое время чтения и количество слов
 
-- [vuepress-plugin-redirect][redirect]: Редирект страниц
-
 - [vuepress-plugin-sass-palette][sass-palette]: Плагин в стиле Sass для всех плагинов и тем
 
 - [vuepress-plugin-seo2][seo2]: Плагин для улучшения СЕО
@@ -163,6 +161,10 @@ tag:
 Вот некоторые другие плагины, которые по умолчанию не включены в тему, вы можете включить их в соответствии со своими потребностями
 
 - [vuepress-plugin-lightgallery][lightgallery]: Плагин предварительного просмотра фотографий на основе lightgallery
+
+- [vuepress-plugin-redirect][redirect]: Редирект страниц
+
+- [vuepress-plugin-search-pro][search-pro]: Client search plugin
 
 :::
 
@@ -179,5 +181,6 @@ tag:
 [reading-time2]: https://vuepress-theme-hope.github.io/v2/reading-time/
 [redirect]: https://vuepress-theme-hope.github.io/v2/redirect/
 [sass-palette]: https://vuepress-theme-hope.github.io/v2/sass-palette/
+[search-pro]: https://vuepress-theme-hope.github.io/v2/search-pro/
 [seo2]: https://vuepress-theme-hope.github.io/v2/seo/
 [sitemap2]: https://vuepress-theme-hope.github.io/v2/sitemap/
