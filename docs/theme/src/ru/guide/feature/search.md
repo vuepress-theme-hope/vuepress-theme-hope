@@ -8,7 +8,7 @@ tag:
   - Поиск
 ---
 
-В тему добавлена встроенная поддержка [`@vuepress/plugin-search`][search] и [`@vuepress/plugin-docsearch`][docsearch]. Просто установите нужный плагин и настройте его, и вы получите окно поиска на панели навигации.
+В тему добавлена встроенная поддержка [`@vuepress/plugin-search`][search], [`@vuepress/plugin-docsearch`][docsearch] и[`vuepress-plugin-search-pro`][search-pro]. Просто установите нужный плагин и настройте его, и вы получите окно поиска на панели навигации.
 
 Чтобы использовать поисковый плагин, вам нужно применить его через `plugins` в [**файле конфигурации VuePress**](../../cookbook/vuepress/config.md).
 
@@ -316,5 +316,103 @@ tag:
 
 :::
 
+## Use `vuepress-plugin-search-pro`
+
+1. Install `vuepress-plugin-search-pro`
+
+   ::: code-tabs#shell
+
+   @tab pnpm
+
+   ```bash
+   pnpm add -D vuepress-plugin-search-pro@next
+   ```
+
+   @tab yarn
+
+   ```bash
+   yarn add -D vuepress-plugin-search-pro@next
+   ```
+
+   @tab npm
+
+   ```bash
+   npm i -D vuepress-plugin-search-pro@next
+   ```
+
+   :::
+
+1. Import `searchProPlugin` from `vuepress-plugin-search-pro` and apply it in `plugins` under `config.{ts,js}`.
+
+   ::: code-tabs#language
+
+   @tab TS
+
+   ```ts
+   // .vuepress/config.ts
+   import { searchProPlugin } from "vuepress-plugin-search-pro";
+   import { defineUserConfig } from "vuepress";
+
+   export default defineUserConfig({
+     plugins: [
+       searchProPlugin({
+         // enable full index
+         fullIndex: true,
+         // add supports for category and tags
+         customFields: [
+           {
+             name: "category",
+             getter: (page) => page.frontmatter.category,
+             formatter: "Category: $content",
+           },
+           {
+             name: "tag",
+             getter: (page) => page.frontmatter.tag,
+             formatter: "Tag: $content",
+           },
+         ],
+       }),
+     ],
+   });
+   ```
+
+   @tab JS
+
+   ```js
+   // .vuepress/config.js
+   import { searchProPlugin } from "vuepress-plugin-search-pro";
+
+   export default {
+     plugins: [
+       searchPlugin({
+         // enable full index
+         fullIndex: true,
+         // add supports for category and tags
+         customFields: [
+           {
+             name: "category",
+             getter: (page) => page.frontmatter.category,
+             formatter: "Category: $content",
+           },
+           {
+             name: "tag",
+             getter: (page) => page.frontmatter.tag,
+             formatter: "Tag: $content",
+           },
+         ],
+       }),
+     ],
+   };
+   ```
+
+   :::
+
+::: info More
+
+See [Plugin Docs][search-pro] for available options.
+
+:::
+
 [docsearch]: https://v2.vuepress.vuejs.org/reference/plugin/docsearch.html
 [search]: https://v2.vuepress.vuejs.org/reference/plugin/search.html
+[search-pro]: https://vuepress-theme-hope.github.io/v2/search-pro/

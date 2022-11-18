@@ -8,7 +8,7 @@ tag:
   - 搜索
 ---
 
-主题对 [`@vuepress/plugin-search`][search] 和 [`@vuepress/plugin-docsearch`][docsearch] 提供了内置支持。你只需要添加并配置所需的搜索插件，就能够在导航栏获得一个搜索框。
+主题对 [`@vuepress/plugin-search`][search]、 [`@vuepress/plugin-docsearch`][docsearch] 和 [`vuepress-plugin-search-pro`][search-pro] 提供了内置支持。你只需要添加并配置所需的搜索插件，就能够在导航栏获得一个搜索框。
 
 如果你需要搜索插件，请通过 [**VuePress 配置文件**](../../cookbook/vuepress/config.md) 的 `plugins` 选项应用它。
 
@@ -501,5 +501,103 @@ export default {
 
 ::::
 
+## 使用 `vuepress-plugin-search-pro`
+
+1. 安装 `vuepress-plugin-search-pro`
+
+   ::: code-tabs#shell
+
+   @tab pnpm
+
+   ```bash
+   pnpm add -D vuepress-plugin-search-pro@next
+   ```
+
+   @tab yarn
+
+   ```bash
+   yarn add -D vuepress-plugin-search-pro@next
+   ```
+
+   @tab npm
+
+   ```bash
+   npm i -D vuepress-plugin-search-pro@next
+   ```
+
+   :::
+
+1. 从 `vuepress-plugin-search-pro` 导入 `searchProPlugin` 并将其应用至 `config.{ts,js}` 下的 `plugins` 选项.
+
+   ::: code-tabs#language
+
+   @tab TS
+
+   ```ts
+   // .vuepress/config.ts
+   import { searchProPlugin } from "vuepress-plugin-search-pro";
+   import { defineUserConfig } from "vuepress";
+
+   export default defineUserConfig({
+     plugins: [
+       searchProPlugin({
+         // 启用全文索引
+         fullIndex: true,
+         // 为分类和标签添加索引
+         customFields: [
+           {
+             name: "category",
+             getter: (page) => page.frontmatter.category,
+             formatter: "分类：$content",
+           },
+           {
+             name: "tag",
+             getter: (page) => page.frontmatter.tag,
+             formatter: "标签：$content",
+           },
+         ],
+       }),
+     ],
+   });
+   ```
+
+   @tab JS
+
+   ```js
+   // .vuepress/config.js
+   import { searchProPlugin } from "vuepress-plugin-search-pro";
+
+   export default {
+     plugins: [
+       searchProPlugin({
+         // 启用全文索引
+         fullIndex: true,
+         // 为分类和标签添加索引
+         customFields: [
+           {
+             name: "category",
+             getter: (page) => page.frontmatter.category,
+             formatter: "分类：$content",
+           },
+           {
+             name: "tag",
+             getter: (page) => page.frontmatter.tag,
+             formatter: "标签：$content",
+           },
+         ],
+       }),
+     ],
+   };
+   ```
+
+   :::
+
+::: info 更多
+
+关于搜索插件的可用选项，详见 [插件文档][search-pro]。
+
+:::
+
 [docsearch]: https://v2.vuepress.vuejs.org/zh/reference/plugin/docsearch.html
 [search]: https://v2.vuepress.vuejs.org/zh/reference/plugin/search.html
+[search-pro]: https://vuepress-theme-hope.github.io/v2/search-pro/zh/
