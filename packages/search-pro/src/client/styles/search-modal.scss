@@ -98,7 +98,12 @@
 
     &.loading,
     &.empty {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
       padding: 1.5rem;
+
       font-weight: 600;
       font-size: 22px;
       text-align: center;

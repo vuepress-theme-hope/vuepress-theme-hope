@@ -1,6 +1,7 @@
 import { defineComponent, defineAsyncComponent, h, ref, onMounted } from "vue";
 import { useLocaleConfig } from "vuepress-shared/client";
 
+import { SearchLoading } from "./SearchLoading.js";
 import { SearchIcon } from "./icons.js";
 import { searchProLocales } from "../utils/index.js";
 
@@ -13,8 +14,7 @@ const SearchResult = defineAsyncComponent({
     import(
       /* webpackChunkName: "search-pro-result" */ "vuepress-plugin-search-pro/result"
     ),
-  loadingComponent: () =>
-    h("div", { class: "result-list loading" }, "Loading search indexes..."),
+  loadingComponent: SearchLoading,
 });
 
 export default defineComponent({
