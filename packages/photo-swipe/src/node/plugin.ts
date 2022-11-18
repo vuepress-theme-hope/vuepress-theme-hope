@@ -6,7 +6,7 @@ import { photoSwipeLocales } from "./locales.js";
 import { logger } from "./utils.js";
 
 import type { PluginFunction } from "@vuepress/core";
-import type { PhotoSwipeOptions } from "../shared/index.js";
+import type { PhotoSwipeOptions } from "./options.js";
 
 const __dirname = getDirname(import.meta.url);
 

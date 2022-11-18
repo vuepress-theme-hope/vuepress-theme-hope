@@ -1,4 +1,4 @@
-import type { PhotoSwipeInitOptions } from "photoswipe";
+import type { PhotoSwipeInitOptions } from "../shared/index.js";
 
 declare const PHOTO_SWIPE_SELECTOR: string;
 declare const PHOTO_SWIPE_DELAY: number;
