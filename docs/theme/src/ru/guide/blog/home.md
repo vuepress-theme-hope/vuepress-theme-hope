@@ -19,49 +19,31 @@ tag:
 ![Скриншот главной страницы](./assets/blog-light.png#light)
 ![Скриншот главной страницы](./assets/blog-dark.png#dark)
 
-## Frontmatter опции
+## Homepage information
 
-### hero
+You can use `heroText` to set the main title and `tagline` to set the subtitle.
 
-- Тип: `boolean`
-- По умолчанию: `true`
+If you have a logo, you can place it in the `public` folder and set it via `heroImage`, if you want to display another logo in night mode, you can use `heroImageDark`. For better A11y, we recommend that you set the description of Logo to `heroAlt`.
 
-Отображать ли значок и описание домашней страницы.
+You can set the background image through `bgImage`, but you need to pay attention that you must fill in the full URL or absolute path. If you want the information to be displayed in full screen, you can set `heroFullScreen: true`.
 
-### bgImage
+If you need to customize some styles, you can set the style of the logo and background image through `heroImageStyle` and `bgImageStyle`.
 
-- Тип: `string | false`
+### Project Display
 
-Для адреса фонового изображения необходимо указать абсолютный путь. Если не заполнить, будет автоматически применено пейзажное изображение по умолчанию.
+Typically, you might want to display some projects, books, articles, links, friend links, etc. on your homepage.
 
-### bgImageStyle
+You can set them via `projects`, which is an array where each element is an object with the following keys:
 
-- Тип: `Record <string, string>`
+- `name`: required, project name
+- `link`: required, project link, fill in an external path or absolute path
+- `desc`: project description
+- `icon`: Icon, you can fill in full path or absolute path image link, also icon FontClass is supported
 
-Стиль CSS фонового изображения.
+  We provide these icons as built-in support either: `"link"`, `"project"`, `"book"`, `"article"`, `"friend"`。
 
-### heroImageStyle
+::: info
 
-- Тип: `Record <string, string>`
+For complete configuration items, see [Blog Home Frontmatter Configuration](../../config/frontmatter/blog-home.md).
 
-Стиль CSS для домашней иконки
-
-### heroFullScreen
-
-- Тип: `boolean`
-- По умолчанию: `false`
-
-Отображается ли герой в полноэкранном режиме
-
-### projects
-
-- Тип: `ProjectOption[]`
-
-`ProjectOption` включает:
-
-- `name`: обязательно, имя проекта
-- `link`: обязательно, ссылка на проект, заполните внешний путь или абсолютный путь
-- `desc`: описание проекта
-- `icon`: иконка, вы можете указать полный или абсолютный путь ссылки на изображение, также поддерживается значок FontClass.
-
-  Мы предоставляем эти иконки в качестве встроенной поддержки: `"link"`, `"project"`, `"book"`, `"article"`, `"friend"`。
+:::

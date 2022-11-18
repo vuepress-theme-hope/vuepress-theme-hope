@@ -18,80 +18,36 @@ tag:
 
 <!-- more -->
 
-## Опции Frontmatter
+## Site Information
 
-### home
+You can use `heroText` to set the main title and `tagline` to set the subtitle.
 
-- Тип: `boolean`
+If you have a logo, you can place it in the `public` folder and set it via `heroImage`, if you want to display another logo in night mode, you can use `heroImageDark`. For better A11y, we recommend that you set the description of Logo to `heroAlt`.
 
-Включить стиль домашней страницы при значении `true`
+## Home button
 
-### title
+You can display some important links in the form of buttons on the home page.
 
-- Тип: `string`
-- Обязательно: Нет
+You can set them via `actions` which is an array where each element is an object with the following keys:
 
-Название страницы будет использоваться в хлебных крошках, SEO и т. д.
+- `text`: button text
+- `link`: button link
+- `type`: button type (only `"primary"` and `"default"` (default) are supported)
 
-### heroText
+## Project features
 
-- Тип: `string | false`
-- По умолчанию: `"Hello"`
+You can set and display item features through `features`, which is an array, each element is an object, containing the following keys:
 
-Титул героя
+- `title`: title
+- `details`: details
+- `icon` (optional): can be filled with full path or absolute path image link, or FontClass
+- `link` (optional): link address
 
-### tagline
+::: info
 
-- Тип: `string | false`
-- По умолчанию: `"Welcome to your VuePress site"`
+For complete configuration items, see [Home Frontmatter Configuration](../../config/frontmatter/home.md).
 
-Краткое описание в герое
-
-### heroImage
-
-- Тип: `string`
-- Обязательно: Нет
-
-Адрес изображения главного героя (логотипа), необходимо указать абсолютный путь (изображения необходимо поместить в папку `.vuepress/public`)
-
-### heroImageDark
-
-- Тип: `string`
-- Обязательно: Нет
-
-Адрес изображения главного героя (логотипа) темного режима, необходимо указать абсолютный путь (изображения необходимо поместить в папку `.vuepress/public`), по умолчанию будет таким же, как и `heroImage`.
-
-### heroAlt
-
-- Тип: `string`
-- Обязательно: Нет
-
-Альтернативный текст иконки Home
-
-### actions
-
-- Тип: `ActionConfig | ActionConfig[]`
-- Обязательно: Нет
-
-Структура `ActionConfig`:
-
-- `text`: Кнопка текстом
-- `link`: Кнопка ссылкой
-- `type`: Тип кнопки (Поддержка только `"primary"` и `"default"` (по умолчанию))
-
-### features
-
-- Тип: `Feature[]`
-- Обязательно: Нет
-
-Структура `Feature`:
-
-- `title`: `string` тайтл
-- `details` (опционально): `string` детали
-- `icon` (опционально): `string` иконка FontClass
-- `link` (опционально): `string` адрес ссылки
-
-Описание функции
+:::
 
 ## Демо
 
