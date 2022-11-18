@@ -3,8 +3,8 @@ import { useEventListener } from "@vueuse/core";
 import { computed, defineComponent, h, onMounted, ref, toRef } from "vue";
 import { RouterLink, useRoute, useRouter } from "vue-router";
 
-import { HeadingIcon, HeartIcon, TitleIcon } from "./icons.js";
-import { useSearchResults } from "../composables/index.js";
+import { HeadingIcon, HeartIcon, HistoryIcon, TitleIcon } from "./icons.js";
+import { useSearchHistory, useSearchResults } from "../composables/index.js";
 import { searchProClientCustomFiledConfig } from "../utils/index.js";
 
 import type { VNode } from "vue";
@@ -12,7 +12,6 @@ import type { MatchedItem, Word } from "../utils/index.js";
 
 import "../styles/search-result.scss";
 
-// TODO: Add history search
 export default defineComponent({
   name: "SearchResult",
 
@@ -23,12 +22,13 @@ export default defineComponent({
     },
   },
 
-  emits: ["close"],
+  emits: ["close", "updateQuery"],
 
   setup(props, { emit }) {
     const router = useRouter();
     const route = useRoute();
     const routeLocale = useRouteLocale();
+    const { history, addHistory } = useSearchHistory();
 
     const query = toRef(props, "query");
     const searchResults = useSearchResults(query);
@@ -109,6 +109,8 @@ export default defineComponent({
 
           if (route.path !== path) {
             void router.push(path);
+            addHistory(query.value);
+            emit("updateQuery", "");
             emit("close");
           }
         }
@@ -116,7 +118,31 @@ export default defineComponent({
     });
 
     return (): VNode =>
-      hasResults.value
+      query.value === ""
+        ? h(
+            "ul",
+            { class: "result-list" },
+            history.value.map((history) =>
+              h(
+                "li",
+                { class: "result-item" },
+                h(
+                  "div",
+                  {
+                    class: "result-content",
+                    onClick: () => {
+                      emit("updateQuery", history);
+                    },
+                  },
+                  [
+                    h("div", { class: "type-icon" }, h(HistoryIcon)),
+                    h("div", { class: "matched-content" }, history),
+                  ]
+                )
+              )
+            )
+          )
+        : hasResults.value
         ? h(
             "ul",
             { class: "result-list" },
@@ -148,7 +174,11 @@ export default defineComponent({
                             },
                           ],
                           to: item.path,
-                          onClick: () => emit("close"),
+                          onClick: () => {
+                            addHistory(query.value);
+                            emit("updateQuery", "");
+                            emit("close");
+                          },
                         },
                         () => [
                           item.type === "content"

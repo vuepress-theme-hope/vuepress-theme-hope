@@ -21,6 +21,15 @@ export const HeartIcon: FunctionalComponent = () =>
 
 HeartIcon.displayName = "HeartIcon";
 
+export const HistoryIcon: FunctionalComponent = () =>
+  h(IconBase, { name: "history" }, () =>
+    h("path", {
+      d: "M512 1024a512 512 0 1 1 512-512 512 512 0 0 1-512 512zm0-896a384 384 0 1 0 384 384 384 384 0 0 0-384-384zm192 448H512a64 64 0 0 1-64-64V320a64 64 0 0 1 128 0v128h128a64 64 0 0 1 0 128z",
+    })
+  );
+
+HistoryIcon.displayName = "HistoryIcon";
+
 export const TitleIcon: FunctionalComponent = () =>
   h(IconBase, { name: "title" }, () =>
     h("path", {

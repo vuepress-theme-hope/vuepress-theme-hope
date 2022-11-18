@@ -1,3 +1,4 @@
+import { useEventListener } from "@vueuse/core";
 import {
   defineComponent,
   defineAsyncComponent,
@@ -17,7 +18,6 @@ import { searchProLocales } from "../utils/index.js";
 import type { VNode } from "vue";
 
 import "../styles/search-modal.scss";
-import { useEventListener } from "@vueuse/core";
 
 const SearchResult = defineAsyncComponent({
   loader: () =>
@@ -75,6 +75,9 @@ export default defineComponent({
                 query: input.value,
                 onClose: () => {
                   isActive.value = false;
+                },
+                onUpdateQuery: (query: string) => {
+                  input.value = query;
                 },
               }),
 
