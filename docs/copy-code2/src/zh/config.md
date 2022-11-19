@@ -7,22 +7,37 @@ icon: config
 
 - 类型: `string | string[]`
 - 默认值: `'.theme-default-content div[class*="language-"] pre'`
+- 详情:
+  - [指南 → 代码块选择](./guide.md#代码块选择)
 
 代码块选择器
-
-## duration
-
-- 类型: `number`
-- 默认值: `2000`
-
-提示消息显示时间，设置为 `0` 会禁用提示。
 
 ## showInMobile
 
 - 类型: `boolean`
 - 默认值: `false`
+- 详情:
+  - [指南 → 按钮展示](./guide.md#按钮展示)
 
 是否展示在移动端
+
+## duration
+
+- 类型: `number`
+- 默认值: `2000`
+- 详情:
+  - [指南 → 复制提示](./guide.md#复制提示)
+
+提示消息显示时间，设置为 `0` 会禁用提示。
+
+## pure
+
+- 类型: `false`
+- 默认值: `false`
+- 详情:
+  - [指南 → 纯净模式](./guide.md#纯净模式)
+
+是否生成样式纯净的小而简单的复制按钮。
 
 ## delay
 
@@ -32,13 +47,6 @@ icon: config
 注册复制按钮的延时，单位 ms。
 
 如果你使用的主题有切换动画，建议配置此选项为 `切换动画时长 + 200`
-
-## pure
-
-- 类型: `false`
-- 默认值: `false`
-
-是否生成样式纯净的小而简单的复制按钮。
 
 ## locales
 

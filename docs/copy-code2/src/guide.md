@@ -3,46 +3,20 @@ title: Guide
 icon: creative
 ---
 
-## Usage
+This plugin will automatically add a copy button to the bottom right corner of each code block.
 
-This plugin will add a copy button to the bottom right corner of each code block.
+## Code Block Selection
 
-By default, the button is only displayed on desktop mode. To display this button on mobile devices, set `showInMobile` to `true`.
+By default, the plugin will select code blocks according to the default theme's selector. If you are using a third-party theme, you can set one or more CSS selectors to the `selector` option.
 
-After user press the copy button, a success hint will display on the screen. The default hint duration is 2000ms, to change the duration, please set `duration` in options (ms). To disable the hint, set duration to `0`.
+## Button Display
 
-## Demo
+By default, the button is only displayed in desktop mode, if you need to display the button on mobile, set `showInMobile` to `true`.
 
-::: code-tabs#language
+## Copy Hint
 
-@tab TS
+After the user clicks the copy button, a copy success message will be displayed on the screen. The default prompt duration is 2000ms, if you need to change this duration, please set `duration` (unit ms), if you don't need this prompt, please set `duration` to `0`.
 
-```ts
-// .vuepress/config.ts
-import { copyCode } from "vuepress-plugin-copy-code2";
+## Pure Mode
 
-export default {
-  plugins: [
-    copyCode({
-      // your options
-    }),
-  ],
-};
-```
-
-@tab JS
-
-```js
-// .vuepress/config.js
-import { copyCode } from "vuepress-plugin-copy-code2";
-
-export default {
-  plugins: [
-    copyCode({
-      // your options
-    }),
-  ],
-};
-```
-
-:::
+By default the plugin will show a big blue button, if you want to make the button and tooltip less "obvious" you can add the `pure: true` option.
