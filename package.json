@@ -26,13 +26,13 @@
     "lint:md": "markdownlint **/*.md",
     "lint:prettier": "prettier --check .",
     "lint:stylelint": "stylelint packages/*/src/**/*.scss",
-    "packages:bootstrap": "ts-node -O {\\\"module\\\":\\\"commonjs\\\"} scripts/bootstrap.ts",
+    "packages:bootstrap": "tsx scripts/bootstrap.ts",
     "packages:check-update": "ncu --deep --timeout 600000",
     "packages:update": "pnpm up -r",
     "release": "pnpm clean && pnpm build && pnpm release:bump && pnpm release:publish && pnpm release:sync",
     "release:bump": "bumpp package.json demo/*/package.json docs/*/package.json packages/*/package.json --execute=\"pnpm standard-version --skip.bump --skip.commit --skip.tag && git add CHANGELOG.md\" --commit \"chore(release): publish v%s\" --all --tag --push",
-    "release:publish": "cross-env NODE_OPTIONS=\"--experimental-json-modules\" ts-node-esm  -O {\\\"module\\\":\\\"ESNext\\\"} scripts/release.ts",
-    "release:sync": "cross-env NODE_OPTIONS=\"--experimental-json-modules\" ts-node-esm  -O {\\\"module\\\":\\\"ESNext\\\"} scripts/sync.ts",
+    "release:publish": "cross-env NODE_OPTIONS=\"--experimental-json-modules\" tsx scripts/release.ts",
+    "release:sync": "cross-env NODE_OPTIONS=\"--experimental-json-modules\" tsx scripts/sync.ts",
     "test": "vitest --coverage"
   },
   "config": {
@@ -83,14 +83,15 @@
     "stylelint-config-standard": "29.0.0",
     "stylelint-config-standard-scss": "6.1.0",
     "stylelint-order": "5.0.0",
-    "ts-node": "10.9.1",
     "tslib": "2.4.1",
+    "tsx": "3.12.1",
     "typescript": "4.9.3",
     "vitest": "0.25.2"
   },
   "packageManager": "pnpm@7.16.1",
   "engines": {
     "node": ">=14",
+    "npm": ">=8",
     "pnpm": ">=7"
   },
   "nano-staged": {
