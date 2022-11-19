@@ -1,94 +1,94 @@
 ---
-title: Blog Home Frontmatter Config
+title: Конфигурация главной страницы блога Frontmatter
 icon: config
 order: 5
 category:
   - Config
 tag:
   - Frontmatter
-  - Blog Home
+  - Главная блога
 ---
 
 ## home
 
-- Type: `boolean`
-- Default: `false`
+- Тип: `boolean`
+- По умолчанию: `false`
 
-Enable homepage style when setting to `true`
+Включить стиль домашней страницы при значении `true`
 
 ## title
 
-- Type: `string`
-- Required: No
+- Тип: `string`
+- Обязательный: Нет
 
-Page title, will be used in breadcrumb, seo, etc.
+Название страницы будет использоваться в хлебных крошках, СЕО и т. д.
 
 ## heroText
 
-- Type: `string | false`
-- Default: `"Hello"`
+- Тип: `string | false`
+- По умолчанию: `"Hello"`
 
-Hero Title
+Заголовок Hero
 
 ## tagline
 
-- Type: `string | false`
-- Default: `"Welcome to your VuePress site"`
+- Тип: `string | false`
+- По умолчанию: `"Welcome to your VuePress site"`
 
-Short description in hero
+Краткое описание в hero
 
 ## heroImage
 
-- Type: `string`
-- Required: No
+- Тип: `string`
+- Обязательный: Нет
 
-Home hero (logo) image address, need to fill in the absolute path (pictures need to be placed in the `.vuepress/public` folder)
+Адрес главного героя (логотипа) необходимо указать как абсолютный путь (изображения должны быть помещены в папку `.vuepress/public`)
 
 ## heroImageDark
 
-- Type: `string`
-- Required: No
+- Тип: `string`
+- Обязательный: Нет
 
-Darkmode Home hero (logo) image address, need to fill in the absolute path (pictures need to be placed in the `.vuepress/public` folder), will be the same as `heroImage` by default.
+Адрес главного героя (логотипа) темного режима, необходимо указать как абсолютный путь (изображения должны быть помещены в папку `.vuepress/public`), по умолчанию будет таким же, как и `heroImage`.
 
 ## heroAlt
 
-- Type: `string`
-- Required: No
+- Тип: `string`
+- Обязательный: Нет
 
-Home icon alt text
+Альтернативный текст иконки Home
 
 ## bgImage
 
-- Type: `string | false`
-- Default: A built-in picture
+- Тип: `string | false`
+- По умолчанию: A built-in picture
 
-Link of background image, you must fill in absolute path of full path. If not filled in, a default landscape picture will be automatically applied.
+Ссылка на фоновое изображение, вы должны указать абсолютный путь или полный путь. Если не заполнить, будет автоматически применено landscape изображение по умолчанию
 
 ### bgImageStyle
 
-- Type: `Record<string, string>`
-- Required: No
+- Тип: `Record<string, string>`
+- Обязательный: Нет
 
-The CSS style of the background image.
+Стиль CSS фонового изображения
 
 ### heroImageStyle
 
-- Type: `Record<string, string>`
-- Required: No
+- Тип: `Record<string, string>`
+- Обязательный: Нет
 
-CSS style for home icon
+Стиль CSS для иконки home
 
 ### heroFullScreen
 
-- Type: `boolean`
-- Default: `false`
+- Тип: `boolean`
+- По умолчанию: `false`
 
-Whether Hero is full screen displayed
+Отображается ли Hero в полноэкранном режиме
 
 ### projects
 
-- Type: `HopeThemeBlogHomeProjectOptions[]`
+- Тип: `HopeThemeBlogHomeProjectOptions[]`
 
   ```ts
   interface HopeThemeBlogHomeProjectOptions {
@@ -116,6 +116,6 @@ Whether Hero is full screen displayed
   }
   ```
 
-- Required: No
+- Обязательный: Нет
 
-Project list
+Список проектов

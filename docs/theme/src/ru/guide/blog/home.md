@@ -19,31 +19,31 @@ tag:
 ![Скриншот главной страницы](./assets/blog-light.png#light)
 ![Скриншот главной страницы](./assets/blog-dark.png#dark)
 
-## Homepage information
+## Информация о главной странице
 
-You can use `heroText` to set the main title and `tagline` to set the subtitle.
+Вы можете использовать `heroText`, чтобы установить основной заголовок, и `tagline`, чтобы установить подзаголовок.
 
-If you have a logo, you can place it in the `public` folder and set it via `heroImage`, if you want to display another logo in night mode, you can use `heroImageDark`. For better A11y, we recommend that you set the description of Logo to `heroAlt`.
+Если у вас есть логотип, вы можете поместить его в папку `public` и установить через `heroImage`, если вы хотите отображать другой логотип в темном режиме, вы можете использовать `heroImageDark`. Для лучшего A11y мы рекомендуем вам установить описание логотипа на `heroAlt`.
 
-You can set the background image through `bgImage`, but you need to pay attention that you must fill in the full URL or absolute path. If you want the information to be displayed in full screen, you can set `heroFullScreen: true`.
+Вы можете установить фоновое изображение через `bgImage`, но вам нужно обратить внимание, что вы должны указать полный URL-адрес или абсолютный путь. Если вы хотите, чтобы информация отображалась в полноэкранном режиме, вы можете установить `heroFullScreen: true`.
 
-If you need to customize some styles, you can set the style of the logo and background image through `heroImageStyle` and `bgImageStyle`.
+Если вам нужно настроить некоторые стили, вы можете установить стиль логотипа и фонового изображения с помощью `heroImageStyle` и `bgImageStyle`.
 
-### Project Display
+### Отображение проекта
 
-Typically, you might want to display some projects, books, articles, links, friend links, etc. on your homepage.
+Как правило, вы можете захотеть отобразить некоторые проекты, книги, статьи, ссылки, ссылки друзей и т. д. на своей домашней странице.
 
-You can set them via `projects`, which is an array where each element is an object with the following keys:
+Вы можете установить их через `projects`, которые представляют собой массив, где каждый элемент является объектом со следующими ключами:
 
-- `name`: required, project name
-- `link`: required, project link, fill in an external path or absolute path
-- `desc`: project description
-- `icon`: Icon, you can fill in full path or absolute path image link, also icon FontClass is supported
+- `name`: обязательно, имя проекта
+- `link`: обязательно, ссылка на проект, заполните внешний путь или абсолютный путь
+- `desc`: описание проекта
+- `icon`: иконка, вы можете указать полный или абсолютный путь ссылки на изображение, также поддерживается иконка FontClass
 
-  We provide these icons as built-in support either: `"link"`, `"project"`, `"book"`, `"article"`, `"friend"`。
+  Мы предоставляем эти иконки в качестве встроенной поддержки: `"link"`, `"project"`, `"book"`, `"article"`, `"friend"`。
 
 ::: info
 
-For complete configuration items, see [Blog Home Frontmatter Configuration](../../config/frontmatter/blog-home.md).
+Полные элементы конфигурации см. в разделе [Конфигурация Frontmatter домашней страницы блога](../../config/frontmatter/blog-home.md).
 
 :::

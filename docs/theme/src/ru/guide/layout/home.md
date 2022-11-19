@@ -18,34 +18,34 @@ tag:
 
 <!-- more -->
 
-## Site Information
+## Информация о сайте
 
-You can use `heroText` to set the main title and `tagline` to set the subtitle.
+Вы можете использовать `heroText`, чтобы установить основной заголовок, и `tagline`, чтобы установить подзаголовок.
 
-If you have a logo, you can place it in the `public` folder and set it via `heroImage`, if you want to display another logo in night mode, you can use `heroImageDark`. For better A11y, we recommend that you set the description of Logo to `heroAlt`.
+Если у вас есть логотип, вы можете поместить его в `public` папку и установить через `heroImage`, если вы хотите отображать другой логотип в ночном режиме, вы можете использовать `heroImageDark`. Для лучшего A11y мы рекомендуем вам установить описание логотипа на `heroAlt`.
 
-## Home button
+## Кнопка Домашняя страница
 
-You can display some important links in the form of buttons on the home page.
+Вы можете отобразить некоторые важные ссылки в виде кнопок на главной странице.
 
-You can set them via `actions` which is an array where each element is an object with the following keys:
+Вы можете установить их через `actions`, которые представляют собой массив, где каждый элемент является объектом со следующими ключами:
 
-- `text`: button text
-- `link`: button link
-- `type`: button type (only `"primary"` and `"default"` (default) are supported)
+- `text`: текст кнопки
+- `link`: ссылка кнопки
+- `type`: тип кнопки (поддерживаются только `"primary"` и `"default"` (по умолчанию))
 
-## Project features
+## Особенности проекта
 
-You can set and display item features through `features`, which is an array, each element is an object, containing the following keys:
+Вы можете установить и отобразить характеристики элемента через `features`, которые представляют собой массив, каждый элемент которого представляет собой объект, содержащий следующие ключи:
 
-- `title`: title
-- `details`: details
-- `icon` (optional): can be filled with full path or absolute path image link, or FontClass
-- `link` (optional): link address
+- `title`: название
+- `details`: детали
+- `icon` (опционально): может быть заполнен полным или абсолютным путем ссылки на изображение или FontClass
+- `link` (опционально): адрес ссылки
 
 ::: info
 
-For complete configuration items, see [Home Frontmatter Configuration](../../config/frontmatter/home.md).
+Полные элементы конфигурации смотрите в разделе [Конфигурация Frontmatter домашней страницы](../../config/frontmatter/home.md).
 
 :::
 

@@ -1,5 +1,5 @@
 ---
-title: Frontmatter Config
+title: Конфиг Frontmatter
 icon: config
 index: false
 dir:
@@ -19,6 +19,6 @@ tag:
 
 - [Конфигурация плагина Frontmatter](plugins.md)
 
-- [Home Frontmatter Config](home.md)
+- [Конфигурация главной страницы Frontmatter](home.md)
 
-- [Blog Home Frontmatter Config](blog-home.md)
+- [Конфигурация главной страницы блога Frontmatter](blog-home.md)
