@@ -3,8 +3,6 @@ import type { HopeThemeLocaleData } from "../../shared/index.js";
 export const ruLocale: HopeThemeLocaleData = {
   lang: "ru-RU",
 
-  skipToContent: "Перейти к основному содержанию",
-
   navbarLocales: {
     langName: "Русский",
     selectLangAriaLabel: "Выберите язык",
@@ -63,6 +61,7 @@ export const ruLocale: HopeThemeLocaleData = {
   },
 
   routeLocales: {
+    skipToContent: "Перейти к основному содержанию",
     notFoundMsg: [
       "Здесь ничего нет.",
       "Как мы сюда попали?",

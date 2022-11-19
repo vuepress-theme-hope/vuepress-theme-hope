@@ -3,8 +3,6 @@ import type { HopeThemeLocaleData } from "../../shared/index.js";
 export const koLocale: HopeThemeLocaleData = {
   lang: "ko-KR",
 
-  skipToContent: "본문으로 건너뛰기",
-
   navbarLocales: {
     langName: "한국어",
     selectLangAriaLabel: "언어 선택",
@@ -63,6 +61,7 @@ export const koLocale: HopeThemeLocaleData = {
   },
 
   routeLocales: {
+    skipToContent: "본문으로 건너뛰기",
     notFoundMsg: [
       "여기에는 아무것도 없습니다.",
       "어떻게 여기까지 왔어?",

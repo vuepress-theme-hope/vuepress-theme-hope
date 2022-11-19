@@ -1,5 +1,10 @@
 export interface HopeThemeRouteLocaleData {
   /**
+   * Skip to main content
+   */
+  skipToContent: string;
+
+  /**
    * 404 page msgs
    *
    * 404 页面的提示信息

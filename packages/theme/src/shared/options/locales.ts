@@ -21,11 +21,6 @@ export interface HopeThemeLocaleData
    * Current lang code
    */
   lang: string;
-
-  /**
-   * Skip to main content
-   */
-  skipToContent: string;
 }
 
 export type HopeThemeLocaleOptions =

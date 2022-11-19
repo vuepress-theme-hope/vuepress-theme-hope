@@ -3,8 +3,6 @@ import type { HopeThemeLocaleData } from "../../shared/index.js";
 export const zhTWLocale: HopeThemeLocaleData = {
   lang: "zh-TW",
 
-  skipToContent: "跳至主要內容",
-
   navbarLocales: {
     langName: "繁體中文",
     selectLangAriaLabel: "選擇語言",
@@ -63,6 +61,7 @@ export const zhTWLocale: HopeThemeLocaleData = {
   },
 
   routeLocales: {
+    skipToContent: "跳至主要內容",
     notFoundMsg: [
       "這裡什麼也沒有",
       "我們是怎麼來到這兒的？",
