@@ -57,14 +57,23 @@
     "rimraf": "3.0.2"
   },
   "peerDependencies": {
-    "sass-loader": "^13.0.0"
+    "sass-loader": "^13.0.0",
+    "vuepress": "2.0.0-beta.53",
+    "vuepress-vite": "2.0.0-beta.53",
+    "vuepress-webpack": "2.0.0-beta.53"
   },
   "peerDependenciesMeta": {
     "sass-loader": {
       "optional": true
+    },
+    "vuepress": {
+      "optional": true
+    },
+    "vuepress-vite": {
+      "optional": true
+    },
+    "vuepress-webpack": {
+      "optional": true
     }
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }

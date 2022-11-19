@@ -45,12 +45,26 @@
     "vuepress-shared": "workspace:*",
     "xml-js": "^1.6.11"
   },
+  "peerDependencies": {
+    "sass-loader": "^13.0.0",
+    "vuepress": "2.0.0-beta.53",
+    "vuepress-vite": "2.0.0-beta.53",
+    "vuepress-webpack": "2.0.0-beta.53"
+  },
+  "peerDependenciesMeta": {
+    "vuepress": {
+      "optional": true
+    },
+    "vuepress-vite": {
+      "optional": true
+    },
+    "vuepress-webpack": {
+      "optional": true
+    }
+  },
   "devDependencies": {
     "@vuepress/core": "2.0.0-beta.53",
     "@vuepress/plugin-git": "2.0.0-beta.53",
     "rimraf": "3.0.2"
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }
