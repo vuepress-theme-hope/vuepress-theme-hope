@@ -3,6 +3,8 @@ import type { HopeThemeLocaleData } from "../../shared/index.js";
 export const ukLocale: HopeThemeLocaleData = {
   lang: "uk-UA",
 
+  skipToContent: "Перейти до основного вмісту",
+
   navbarLocales: {
     langName: "Українська",
     selectLangAriaLabel: "Оберіть мову",

@@ -3,6 +3,8 @@ import type { HopeThemeLocaleData } from "../../shared/index.js";
 export const jaLocale: HopeThemeLocaleData = {
   lang: "ja-JP",
 
+  skipToContent: "メインコンテンツへスキップ",
+
   navbarLocales: {
     langName: "日本語",
     selectLangAriaLabel: "言語の選択",

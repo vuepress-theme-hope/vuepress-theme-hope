@@ -3,6 +3,8 @@ import type { HopeThemeLocaleData } from "../../shared/index.js";
 export const frLocale: HopeThemeLocaleData = {
   lang: "fr-FR",
 
+  skipToContent: "Aller au contenu principal",
+
   navbarLocales: {
     langName: "Français",
     selectLangAriaLabel: "Selection de la langue",

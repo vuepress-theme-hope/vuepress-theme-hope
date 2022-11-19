@@ -3,6 +3,8 @@ import type { HopeThemeLocaleData } from "../../shared/index.js";
 export const viLocale: HopeThemeLocaleData = {
   lang: "vi-VN",
 
+  skipToContent: "Bỏ qua nội dung chính",
+
   navbarLocales: {
     langName: "Ngôn ngữ",
     selectLangAriaLabel: "Chọn ngôn ngữ",

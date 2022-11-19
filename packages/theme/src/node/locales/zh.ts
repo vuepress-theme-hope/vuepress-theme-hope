@@ -3,6 +3,8 @@ import type { HopeThemeLocaleData } from "../../shared/index.js";
 export const zhLocale: HopeThemeLocaleData = {
   lang: "zh-CN",
 
+  skipToContent: "跳至主要內容",
+
   navbarLocales: {
     langName: "简体中文",
     selectLangAriaLabel: "选择语言",

@@ -3,6 +3,8 @@ import type { HopeThemeLocaleData } from "../../shared/index.js";
 export const trLocale: HopeThemeLocaleData = {
   lang: "tr-TR",
 
+  skipToContent: "Ana içeriğe atla",
+
   navbarLocales: {
     langName: "Türkçe",
     selectLangAriaLabel: "Dil seçin",

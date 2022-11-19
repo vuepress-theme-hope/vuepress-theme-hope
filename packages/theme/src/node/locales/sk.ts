@@ -3,6 +3,8 @@ import type { HopeThemeLocaleData } from "../../shared/index.js";
 export const skLocale: HopeThemeLocaleData = {
   lang: "sk-SK",
 
+  skipToContent: "Preskočiť na hlavný obsah",
+
   navbarLocales: {
     langName: "Slovensky",
     selectLangAriaLabel: "Vyber si jazyk",

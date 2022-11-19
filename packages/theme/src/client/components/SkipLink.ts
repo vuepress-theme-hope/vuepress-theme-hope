@@ -2,6 +2,8 @@ import { defineComponent, h, ref, watch } from "vue";
 import { useRoute } from "vue-router";
 import type { VNode } from "vue";
 
+import { useThemeLocaleData } from "@theme-hope/composables/index.js";
+
 import "../styles/skip-link.scss";
 
 export default defineComponent({
@@ -17,6 +19,7 @@ export default defineComponent({
 
   setup(props) {
     const route = useRoute();
+    const themeLocale = useThemeLocaleData();
     const backToTop = ref<HTMLSpanElement>();
 
     watch(
@@ -54,7 +57,7 @@ export default defineComponent({
           class: "skip-link sr-only",
           onClick: focusMainContent,
         },
-        "Skip to content"
+        themeLocale.value.skipToContent
       ),
     ];
   },
