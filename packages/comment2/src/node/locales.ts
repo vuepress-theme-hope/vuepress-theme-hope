@@ -4,17 +4,17 @@ import type { WalineLocaleConfig } from "../shared/index.js";
  * Default locale config for Waline
  */
 export const walineLocales: WalineLocaleConfig = {
+  "/en/": {
+    placeholder:
+      "Write a comment here (Fill in the email address to receive an email notification when being replied)",
+  },
+
   "/zh/": {
     placeholder: "请留言。(填写邮箱可在被回复时收到邮件提醒)",
   },
 
   "/zh-tw/": {
     placeholder: "請留言。(填寫信箱可在被回覆時收到郵件提醒)",
-  },
-
-  "/en/": {
-    placeholder:
-      "Write a comment here (Fill in the email address to receive an email notification when being replied)",
   },
 
   "/de-at/": {
@@ -70,5 +70,10 @@ export const walineLocales: WalineLocaleConfig = {
   "/tr/": {
     placeholder:
       "Buraya bir yorum yazın (Yanıtlandığında bir e-posta bildirimi almak için e-posta adresinizi girin)",
+  },
+
+  "/ko/": {
+    placeholder:
+      "댓글을 남겨주세요 (답변이 있을 경우 이메일로 알림을 받으려면 이메일 주소를 입력하세요)",
   },
 };

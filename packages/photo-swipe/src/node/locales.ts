@@ -126,4 +126,13 @@ export const photoSwipeLocales: PhotoSwipeLocaleConfig = {
     arrowPrev: "Önceki (Sol ok)",
     arrowNext: "Sonraki (Sağ ok)",
   },
+
+  "/ko/": {
+    close: "닫기",
+    download: "이미지 다운로드",
+    fullscreen: "전체 화면 전환",
+    zoom: "확대/축소",
+    arrowPrev: "이전 (왼쪽 화살표)",
+    arrowNext: "다음 (오른쪽 화살표)",
+  },
 };

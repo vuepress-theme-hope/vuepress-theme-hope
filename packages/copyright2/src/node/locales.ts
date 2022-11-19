@@ -55,4 +55,10 @@ export const copyrightLocales: CopyrightLocaleConfig = {
     license: "Lisans :license",
     link: ":link",
   },
+
+  "/ko/": {
+    author: "저작권자 :author",
+    license: ":license 프로토콜에 따라",
+    link: ":link",
+  },
 };

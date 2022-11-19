@@ -144,4 +144,26 @@ export const searchProLocales: SearchProLocaleConfig = {
     emply: "結果が見つかりません",
     loading: "検索インデックスを読み込んでいます...",
   },
+
+  "/tr/": {
+    close: "Kapat",
+    placeholder: "Ara",
+    search: "Ara",
+    select: "seç",
+    navigate: "geç",
+    exit: "kapat",
+    emply: "Sonuç bulunamadı",
+    loading: "Arama dizinleri yükleniyor...",
+  },
+
+  "/ko/": {
+    close: "닫기",
+    placeholder: "검색",
+    search: "검색",
+    select: "선택",
+    navigate: "이동",
+    exit: "닫기",
+    emply: "결과를 찾을 수 없습니다",
+    loading: "검색 인덱스를 로드하는 중...",
+  },
 };

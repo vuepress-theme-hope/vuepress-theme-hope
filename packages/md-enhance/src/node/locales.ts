@@ -126,4 +126,13 @@ export const markdownEnhanceLocales: MarkdownEnhanceLocaleConfig = {
     danger: "Tehlike",
     details: "Detay",
   },
+
+  "/ko/": {
+    info: "정보",
+    note: "노트",
+    tip: "팁",
+    warning: "경고",
+    danger: "위험",
+    details: "세부사항",
+  },
 };

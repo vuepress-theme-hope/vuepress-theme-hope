@@ -219,4 +219,19 @@ export const pwaLocales: PWALocaleConfig = {
     hint: "Yeni içerik bulundu.",
     update: "Yeni içerik mevcut.",
   },
+
+  "/ko/": {
+    install: "설치",
+    iOSInstall: "공유 버튼을 누르고 '홈 화면에 추가'를 누르세요",
+    cancel: "취소",
+    close: "닫기",
+    prevImage: "이전 이미지",
+    nextImage: "다음 이미지",
+    desc: "설명",
+    feature: "주요 기능",
+    explain:
+      "이 앱은 PC 또는 모바일 장치에 설치할 수 있습니다. 이렇게 하면 이 웹 앱은 다른 설치된 앱과 마찬가지로 표시되고 작동합니다. 앱 목록에서 찾을 수 있으며 홈 화면, 시작 메뉴, 작업 표시줄에 고정할 수 있습니다. 설치된 웹 앱은 다른 앱과 안전하게 상호 작용할 수 있습니다.",
+    hint: "새로운 콘텐츠를 찾았습니다.",
+    update: "새로운 콘텐츠가 있습니다.",
+  },
 };

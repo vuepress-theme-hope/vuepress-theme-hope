@@ -85,4 +85,10 @@ export const copyCodeLocales: CopyCodeLocaleConfig = {
     copied: "Kopyalandı",
     hint: "Başarıyla kopyalandı",
   },
+
+  "/ko/": {
+    copy: "코드 복사",
+    copied: "복사됨",
+    hint: "성공적으로 복사됨",
+  },
 };
