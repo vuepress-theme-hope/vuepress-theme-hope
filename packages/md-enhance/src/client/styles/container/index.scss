@@ -202,6 +202,7 @@
   display: block;
 
   margin: 1.6em 0;
+  padding: 1.5rem;
   border-radius: 0.5rem;
 
   background: var(--detail-bg-color);
@@ -228,8 +229,12 @@
 
   summary {
     position: relative;
+
+    margin: -1.5rem;
     padding: 1.5rem 1.5rem 1.5rem 4rem;
+
     list-style: none;
+
     cursor: pointer;
 
     // a deprecated prefix
