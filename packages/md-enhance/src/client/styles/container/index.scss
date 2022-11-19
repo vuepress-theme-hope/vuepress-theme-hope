@@ -202,7 +202,6 @@
   display: block;
 
   margin: 1.6em 0;
-  padding: 1.5rem;
   border-radius: 0.5rem;
 
   background: var(--detail-bg-color);
@@ -229,12 +228,8 @@
 
   summary {
     position: relative;
-
-    padding-left: 2.5rem;
-
-    outline: none;
+    padding: 1.5rem 1.5rem 1.5rem 4rem;
     list-style: none;
-
     cursor: pointer;
 
     // a deprecated prefix
@@ -250,7 +245,7 @@
 
       position: absolute;
       top: calc(50% - 0.75rem);
-      left: 0;
+      left: 1.5rem;
 
       width: 1.5rem;
       height: 1.5rem;
