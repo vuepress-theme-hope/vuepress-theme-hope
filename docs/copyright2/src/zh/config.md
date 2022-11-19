@@ -109,7 +109,7 @@ icon: config
 - **土耳其语** (tr-TR)
 - **韩语** (ko-KR)
 
-:::s
+:::
 
 ## Frontmatter Options
 
