@@ -39,7 +39,7 @@
     "styles"
   ],
   "scripts": {
-    "build": "rollup -c",
+    "build": "rollup -c rollup.config.ts --configPlugin esbuild",
     "clean": "rimraf ./lib ./*.tsbuildinfo",
     "copy": "cpx \"src/client/**/*.{vue,scss}\" lib/client",
     "dev": "concurrently \"pnpm dev:copy\" \"pnpm dev:ts\"",

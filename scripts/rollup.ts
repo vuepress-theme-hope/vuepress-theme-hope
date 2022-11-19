@@ -1,14 +1,26 @@
 import commonjs from "@rollup/plugin-commonjs";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
+import { ModuleFormat, Plugin, RollupOptions } from "rollup";
 import copy from "rollup-plugin-copy";
 import dts from "rollup-plugin-dts";
 import esbuild from "rollup-plugin-esbuild";
 import { shebangPlugin } from "./shebang.js";
 
-const isProduction = process.env.NODE_ENV === "production";
+const isProduction = process.env["NODE_ENV"] === "production";
+
+export interface RollupTypescriptOptions {
+  dts?: boolean;
+  external?: (RegExp | string)[];
+  dtsExternal?: (RegExp | string)[];
+  resolve?: boolean;
+  copy?: (string | [string, string])[];
+  output?: Record<string, unknown>;
+  inlineDynamicImports?: boolean;
+  preserveShebang?: boolean;
+}
 
 export const rollupTypescript = (
-  filePath,
+  filePath: string,
   {
     dts: enableDts = true,
     external = [],
@@ -18,8 +30,8 @@ export const rollupTypescript = (
     output = {},
     inlineDynamicImports = true,
     preserveShebang = false,
-  } = {}
-) => [
+  }: RollupTypescriptOptions = {}
+): RollupOptions[] => [
   {
     input: `./src/${filePath}.ts`,
     output: [
@@ -34,17 +46,25 @@ export const rollupTypescript = (
     ],
     plugins: [
       ...(preserveShebang ? [shebangPlugin()] : []),
-      ...(resolve ? [nodeResolve({ preferBuiltins: true }), commonjs()] : []),
+      ...(resolve
+        ? [
+            nodeResolve({ preferBuiltins: true }),
+            // @ts-ignore
+            commonjs() as Plugin,
+          ]
+        : []),
+      // @ts-ignore
       esbuild({ charset: "utf8", minify: isProduction, target: "node14" }),
       ...(copyOptions.length
         ? [
+            // @ts-ignore
             copy({
               targets: copyOptions.map((item) =>
                 typeof item === "string"
                   ? { src: `./src/${item}`, dest: `./lib/${item}` }
                   : { src: `./src/${item[0]}`, dest: `./lib/${item[1]}` }
               ),
-            }),
+            }) as Plugin,
           ]
         : []),
     ],
@@ -57,7 +77,9 @@ export const rollupTypescript = (
     ? [
         {
           input: `./src/${filePath}.ts`,
-          output: [{ file: `./lib/${filePath}.d.ts`, format: "esm" }],
+          output: [
+            { file: `./lib/${filePath}.d.ts`, format: "esm" as ModuleFormat },
+          ],
           plugins: [
             dts({
               compilerOptions: {

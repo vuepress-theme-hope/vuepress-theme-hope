@@ -117,6 +117,9 @@ overrides:
         - "./tsconfig.json"
 
     rules:
+      "@typescript-eslint/ban-ts-comment":
+        - off
+
       "@typescript-eslint/explicit-function-return-type":
         - warn
         - allowTypedFunctionExpressions: true

@@ -4,7 +4,7 @@ import { InjectionKey, Ref } from "vue";
 export const searchModalSymbol: InjectionKey<Ref<boolean>> =
   Symbol.for("search-pro");
 
-export const setupSearchModal = () => {
+export const setupSearchModal = (): void => {
   const isActive = ref(false);
 
   provide(searchModalSymbol, isActive);

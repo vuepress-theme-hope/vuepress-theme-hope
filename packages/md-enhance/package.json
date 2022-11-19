@@ -45,7 +45,7 @@
     "lib"
   ],
   "scripts": {
-    "build": "rollup -c",
+    "build": "rollup -c rollup.config.ts --configPlugin esbuild",
     "clean": "rimraf ./lib ./*.tsbuildinfo",
     "copy": "cpx \"src/client/**/*.{vue,css,scss,eot,woff,ttf}\" lib/client",
     "dev": "concurrently \"pnpm dev:copy\" \"pnpm dev:ts\"",

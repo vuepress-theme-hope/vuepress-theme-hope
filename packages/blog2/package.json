@@ -35,7 +35,7 @@
     "lib"
   ],
   "scripts": {
-    "build": "rollup -c",
+    "build": "rollup -c rollup.config.ts --configPlugin esbuild",
     "clean": "rimraf ./lib ./*.tsbuildinfo",
     "dev": "pnpm dev:ts",
     "dev:ts": "tsc -b tsconfig.build.json --watch"

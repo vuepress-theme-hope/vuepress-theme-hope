@@ -74,7 +74,7 @@ export const updateSearchIndex = async (
   app: App,
   options: SearchProOptions,
   path: string
-) => {
+): Promise<void> => {
   if (previousSearchIndex) {
     const actualPath = path
       .replace(/^pages\//, "")
@@ -121,7 +121,7 @@ export const removeSearchIndex = async (
   app: App,
   options: SearchProOptions,
   path: string
-) => {
+): Promise<void> => {
   if (previousSearchIndex) {
     const actualPath = path
       .replace(/^pages\//, "")
