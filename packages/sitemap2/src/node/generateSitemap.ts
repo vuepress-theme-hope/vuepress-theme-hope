@@ -3,7 +3,7 @@ import {
   removeEndingSlash,
   removeLeadingSlash,
 } from "@vuepress/shared";
-import { chalk, fs, withSpinner } from "@vuepress/utils";
+import { chalk, fs } from "@vuepress/utils";
 import { SitemapStream } from "sitemap";
 import { logger } from "./utils.js";
 
@@ -161,49 +161,50 @@ export const generateSiteMap = async (
     options: { base },
   } = app;
 
-  await withSpinner(`Generating sitemap to ${chalk.cyan(sitemapFilename)}`)(
-    () =>
-      new Promise<void>((resolve) => {
-        const sitemap = new SitemapStream({
-          hostname,
-          ...(xmlns ? { xmlns } : {}),
-        });
-        const pagesMap = generatePageMap(app, options);
-        const sitemapXMLPath = dir.dest(sitemapFilename);
-        const writeStream = fs.createWriteStream(sitemapXMLPath);
+  logger.load(`Generating sitemap to ${chalk.cyan(`/${sitemapFilename}`)}`);
 
-        sitemap.pipe(writeStream);
+  await new Promise<void>((resolve) => {
+    const sitemap = new SitemapStream({
+      hostname,
+      ...(xmlns ? { xmlns } : {}),
+    });
+    const pagesMap = generatePageMap(app, options);
+    const sitemapXMLPath = dir.dest(sitemapFilename);
+    const writeStream = fs.createWriteStream(sitemapXMLPath);
 
-        pagesMap.forEach((page, path) =>
-          sitemap.write({
-            url: `${base}${removeLeadingSlash(path)}`,
-            ...page,
-          })
-        );
+    sitemap.pipe(writeStream);
 
-        extraUrls.forEach((item) =>
-          sitemap.write({ url: `${base}${removeLeadingSlash(item)}` })
-        );
-        sitemap.end(() => {
-          resolve();
-        });
+    pagesMap.forEach((page, path) =>
+      sitemap.write({
+        url: `${base}${removeLeadingSlash(path)}`,
+        ...page,
       })
-  );
+    );
+
+    extraUrls.forEach((item) =>
+      sitemap.write({ url: `${base}${removeLeadingSlash(item)}` })
+    );
+    sitemap.end(() => {
+      resolve();
+    });
+  });
+
+  logger.succeed();
 
   const robotTxtPath = dir.dest("robots.txt");
 
   if (fs.existsSync(robotTxtPath)) {
-    await withSpinner(`Appended sitemap path to ${chalk.cyan("robots.txt")}`)(
-      async () => {
-        const robotsTxt = await fs.readFile(robotTxtPath, { encoding: "utf8" });
+    logger.load(`Appended sitemap path to ${chalk.cyan("robots.txt")}`);
 
-        const newRobotsTxtContent = `${robotsTxt.replace(
-          /^Sitemap: .*$/u,
-          ""
-        )}\nSitemap: ${hostname}${base}${sitemapFilename}\n`;
+    const robotsTxt = await fs.readFile(robotTxtPath, { encoding: "utf8" });
 
-        await fs.writeFile(robotTxtPath, newRobotsTxtContent, { flag: "w" });
-      }
-    );
+    const newRobotsTxtContent = `${robotsTxt.replace(
+      /^Sitemap: .*$/u,
+      ""
+    )}\nSitemap: ${hostname}${base}${sitemapFilename}\n`;
+
+    await fs.writeFile(robotTxtPath, newRobotsTxtContent, { flag: "w" });
+
+    logger.succeed();
   }
 };
