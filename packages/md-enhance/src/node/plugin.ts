@@ -181,7 +181,7 @@ export const mdEnhancePlugin =
           );
         }
 
-        addViteSsrNoExternal({ app, config }, "vuepress-shared");
+        addViteSsrNoExternal({ app, config }, ["fflate", "vuepress-shared"]);
 
         if (katexEnable && katexOptions.output !== "html")
           addCustomElement({ app, config }, MATHML_TAGS);
