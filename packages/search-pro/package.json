@@ -54,7 +54,7 @@
     "vuepress-shared": "workspace:*"
   },
   "peerDependencies": {
-    "sass-loader": "^13.3d.0"
+    "sass-loader": "^13.0.0"
   },
   "peerDependenciesMeta": {
     "sass-loader": {
