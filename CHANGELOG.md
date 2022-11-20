@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.125](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.124...v2.0.0-beta.125) (2022-11-20)
+
+### Features
+
+- add korea ([6492b31](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6492b31ad13d4b81ca274d8691ff5199553ae92f))
+- **md-enhance:** improve detail a11y ([794abd5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/794abd560b32757aeb1ddcfbfd0ef03ad92eeb43))
+- **search-pro:** add more languages ([6dbd79a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6dbd79a4453ee9771cbbdcb159742eba56570dc9))
+- **theme:** improve a11y ([1d47b7b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1d47b7b9119d943c1ea22adfeed83909a79c2886))
+
+### Bug Fixes
+
+- **comment2:** fix waline option types ([37b6fd6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/37b6fd699799c2bee6b40b0b18adb7decae7d161))
+- fix fflate issue with vite, fix [#2430](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2430) ([72d5d3b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/72d5d3bdd120d9da7ebe05169149a27a213254c9))
+- **md-enhance:** fix detail style ([5ef6198](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5ef61985901cfd548850e2f6d62c1424bacc0957))
+- **search-pro:** fix broken deps ([7919156](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/79191565e0efb47bcb63992ed9ee27f94c8a05a3))
+- **search-pro:** fix uppercase words not matching ([4c04ff6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4c04ff6676b3b7fb0103d9f6ea01c52bd7408266))
+
 ## [2.0.0-beta.124](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.123...v2.0.0-beta.124) (2022-11-18)
 
 ### ⚠ BREAKING CHANGES
