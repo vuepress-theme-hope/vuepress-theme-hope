@@ -35,9 +35,26 @@ It should contain full protocol (eg: `https://example.com`).
 - Type: `Author`
 
   ```ts
-  type AuthorInfo = { name: string; url?: string };
+  type AuthorName = string;
 
-  type Author = string | string[] | AuthorInfo | AuthorInfo[];
+  interface AuthorInfo {
+    /**
+     * Author name
+     */
+    name: string;
+
+    /**
+     * Author website
+     */
+    url?: string;
+
+    /**
+     * Author email
+     */
+    email?: string;
+  }
+
+  type Author = AuthorName | AuthorName[] | AuthorInfo | AuthorInfo[];
   ```
 
 - Required: No

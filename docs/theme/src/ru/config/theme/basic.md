@@ -35,9 +35,26 @@ tag:
 - Тип: `Author`
 
   ```ts
-  type AuthorInfo = { name: string; url?: string };
+  type AuthorName = string;
 
-  type Author = string | string[] | AuthorInfo | AuthorInfo[];
+  interface AuthorInfo {
+    /**
+     * Author name
+     */
+    name: string;
+
+    /**
+     * Author website
+     */
+    url?: string;
+
+    /**
+     * Author email
+     */
+    email?: string;
+  }
+
+  type Author = AuthorName | AuthorName[] | AuthorInfo | AuthorInfo[];
   ```
 
 - Обязательный: Нет

@@ -44,13 +44,31 @@ FontClass / Image link of the current page icon (recommended).
 ## author
 
 - Type: `Author | boolean`
+
+  ```ts
+  type AuthorName = string;
+
+  interface AuthorInfo {
+    /**
+     * Author name
+     */
+    name: string;
+
+    /**
+     * Author website
+     */
+    url?: string;
+
+    /**
+     * Author email
+     */
+    email?: string;
+  }
+
+  type Author = AuthorName | AuthorName[] | AuthorInfo | AuthorInfo[];
+  ```
+
 - Required: No
-
-```ts
-type AuthorInfo = { name: string; url?: string };
-
-type Author = string | string[] | AuthorInfo | AuthorInfo[];
-```
 
 Show the author of the current page. If you don’t fill it, you will fall back to the default author.
 

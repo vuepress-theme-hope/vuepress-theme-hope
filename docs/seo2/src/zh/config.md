@@ -15,18 +15,33 @@ icon: config
 ### author
 
 - 类型: `Author`
+
+  ```ts
+  type AuthorName = string;
+
+  interface AuthorInfo {
+    /**
+     * 作者姓名
+     */
+    name: string;
+
+    /**
+     * 作者网站
+     */
+    url?: string;
+
+    /**
+     * 作者 Email
+     */
+    email?: string;
+  }
+
+  type Author = AuthorName | AuthorName[] | AuthorInfo | AuthorInfo[];
+  ```
+
 - 必填: 否
 
 默认作者
-
-```ts
-type AuthorInfo = {
-  name: string;
-  url?: string;
-};
-
-type Author = string | string[] | AuthorInfo | AuthorInfo[];
-```
 
 ### autoDescription
 
