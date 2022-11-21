@@ -7,7 +7,7 @@ icon: creative
 
 ::: danger Try not to use client-side search
 
-You should use a service provider to provide search services for your site when possible, such as [Algolia](https://www.algolia.com/), especially for larger sites. The advantage of this is that the service provider indexes your website, and users get results through the search API when they search. Special reminder, [DocSearch](https://docsearch.algolia.com/) is a free search service provided by Algolia for open source projects. If you meet the conditions, you should try to apply for this service and use [`vuepress-plugin-docsearch`](https://v2.vuepress.vuejs.org/reference/plugin/docsearch.html) plugin.
+You should use a service provider to provide search services for your site when possible, such as [Algolia](https://www.algolia.com/), especially for larger sites. The advantage of this is that the service provider indexes your website, and users get results through the search API when they search. Special reminder, [DocSearch](https://docsearch.algolia.com/) is a free search service provided by Algolia for open source projects. If you meet the conditions, you should try to apply for this service and use [`@vuepress/plugin-docsearch`](https://v2.vuepress.vuejs.org/reference/plugin/docsearch.html) plugin.
 
 You should only use client search if you are **using a free hosting service with sufficient traffic**, **not meeting DocSearch requirements**, and **refusing to pay for a service provider**.
 
@@ -130,4 +130,47 @@ export default defineUserConfig({
 
 ## Search Hotkeys
 
-By default, the search hotkey is `Ctrl + K`. You can customize search hotkeys via the `hotkeys` option, see [config](./config.md#hotkeys).
+By default, the search hotkey is `Ctrl + K`. You can customize search hotkeys via the `hotkeys` option, see [Config → Hot Keys](./config.md#hotkeys).
+
+## Hot Update
+
+If you are proofreading or refining your search results, you can enable hot reloading by setting the `hotReload: true` option, see [Config → Hot Reload](./config.md#hotreload).
+
+## Multilingual Configuration
+
+You can add specific paths or modify the multilingual configuration of existing paths through `locales`.
+
+```ts
+import { defineUserConfig } from "vuepress";
+import { searchProPlugin } from "vuepress-plugin-search-pro";
+
+export default defineUserConfig({
+  // We assume you are using the following multilingual
+  locales: {
+    "/": {
+      lang: "en-US",
+    },
+    // This is a path that does not receive plugin support
+    "/xx/": {
+      lang: "mm-NN",
+    },
+  },
+
+  plugins: [
+    searchProPlugin({
+      locales: {
+        "/": {
+          // Override placeholder
+          placeholder: "Start Searching",
+        },
+
+        "/xx": {
+          // Complete multilingual configuration here
+        },
+      },
+    }),
+  ],
+});
+```
+
+For specific options, see [Config → Locale Settings](./config.md#locales).
