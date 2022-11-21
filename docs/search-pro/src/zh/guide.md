@@ -138,20 +138,20 @@ export default defineUserConfig({
 
 ## 多语言配置
 
-你可以通过 `locales` 来新增特定路径或修改已有路径的多语言配置。
+你可以通过 `locales` 来新增特定语言的多语言配置或修改已支持语言的配置。
 
 ```ts
 import { defineUserConfig } from "vuepress";
 import { searchProPlugin } from "vuepress-plugin-search-pro";
 
 export default defineUserConfig({
-  // 我们假定你在使用如下多语言
   locales: {
     "/": {
+      // 这是一个支持的语言
       lang: "zh-CN",
     },
-    // 这是一个没有收到插件支持的路径
     "/xx/": {
+      // 这是一个没有收到插件支持的语言
       lang: "mm-NN",
     },
   },
@@ -164,8 +164,8 @@ export default defineUserConfig({
           placeholder: "开始搜索",
         },
 
-        "/xx": {
-          // 在这里完整设置多语言配置
+        "/xx/": {
+          // 在这里完整设置 `mm-NN` 的多语言配置
         },
       },
     }),

@@ -25,42 +25,53 @@ In preview mode, you can:
 
 :::
 
-## Demo
+## Image Selection
 
-<!-- markdownlint-disable -->
+By default, the plugin will select images according to the default theme's selector. If you are using a third-party theme, you can set one or more CSS selectors to the `selector` option.
 
-<div class="image-preview">
-  <img src="/assets/image/1.jpg" />
-  <img src="/assets/image/2.jpg" />
-  <img src="/assets/image/3.jpg" />
-</div>
+## Customize PhotoSwipe options
 
-<style>
-  .image-preview {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-  }
+You can pass options to [`photo-swipe`](http://photoswipe.com/) via `options`.
 
-  .image-preview > img {
-     box-sizing: border-box;
-     width: 33.3% !important;
-     padding: 9px;
-     border-radius: 16px;
-  }
+## Operation Delay
 
-  @media (max-width: 719px){
-    .image-preview > img {
-      width: 50% !important;
-    }
-  }
+If your theme adds animations when switching pages, you may need to delay when photo-swipe re-finds page images. You can configure this delay via the `delay` option, the default value is `500` (in milliseconds).
 
-  @media (max-width: 419px){
-    .image-preview > img {
-      width: 100% !important;
-    }
-  }
-</style>
+## Locale Customization
 
-<!-- markdownlint-restore -->
+You can add new locale config or modify existing ones through `locales` option.
+
+```ts
+import { defineUserConfig } from "vuepress";
+import { photoSwipePlugin } from "vuepress-plugin-photo-swipe";
+
+export default defineUserConfig({
+  locales: {
+    "/": {
+      // this is a supported language
+      lang: "en-US",
+    },
+    "/xx/": {
+      // the plugin does not support this language
+      lang: "mm-NN",
+    },
+  },
+
+  plugins: [
+    photoSwipePlugin({
+      locales: {
+        "/": {
+          // Override share label text
+          share: "Share with friends",
+        },
+
+        "/xx/": {
+          // Complete locale config for `mm-NN` language here
+        },
+      },
+    }),
+  ],
+});
+```
+
+For specific options, see [Config → Locale Settings](./config.md#locales).

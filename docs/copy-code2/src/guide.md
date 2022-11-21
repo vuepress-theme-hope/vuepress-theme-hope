@@ -20,3 +20,42 @@ After the user clicks the copy button, a copy success message will be displayed 
 ## Pure Mode
 
 By default the plugin will show a big blue button, if you want to make the button and tooltip less "obvious" you can add the `pure: true` option.
+
+## Locale Customization
+
+You can add new locale config or modify existing ones through `locales` option.
+
+```ts
+import { defineUserConfig } from "vuepress";
+import { copyCodePlugin } from "vuepress-plugin-copy-code2";
+
+export default defineUserConfig({
+  locales: {
+    "/": {
+      // this is a supported language
+      lang: "en-US",
+    },
+    "/xx/": {
+      // the plugin does not support this language
+      lang: "mm-NN",
+    },
+  },
+
+  plugins: [
+    copyCodePlugin({
+      locales: {
+        "/": {
+          // Override copy button label text
+          copy: "Copy Codes from code block",
+        },
+
+        "/xx/": {
+          // Complete locale config for `mm-NN` language here
+        },
+      },
+    }),
+  ],
+});
+```
+
+For specific options, see [Config → Locale Settings](./config.md#locales).

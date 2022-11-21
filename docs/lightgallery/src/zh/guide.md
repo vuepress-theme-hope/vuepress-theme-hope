@@ -15,6 +15,8 @@ icon: creative
 
 你被警告了！
 
+如果你对此表示担忧，你可以考虑使用 [vuepress-plugin-photo-swipe](https://vuepress-theme-hope.github.io/v2/photo-swipe/zh/)。
+
 :::
 
 ## 演示

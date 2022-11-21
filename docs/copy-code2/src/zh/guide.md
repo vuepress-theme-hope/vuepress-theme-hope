@@ -20,3 +20,42 @@ icon: creative
 ## 纯净模式
 
 默认情况下插件会展示一个较大的蓝色按钮，如果你希望让按钮和提示没有那么“显眼”，你可以添加 `pure: true` 选项。
+
+## 多语言配置
+
+你可以通过 `locales` 来新增特定语言的多语言配置或修改已支持语言的配置。
+
+```ts
+import { defineUserConfig } from "vuepress";
+import { copyCodePlugin } from "vuepress-plugin-copy-code2";
+
+export default defineUserConfig({
+  locales: {
+    "/": {
+      // 这是一个支持的语言
+      lang: "zh-CN",
+    },
+    "/xx/": {
+      // 这是一个没有收到插件支持的语言
+      lang: "mm-NN",
+    },
+  },
+
+  plugins: [
+    copyCodePlugin({
+      locales: {
+        "/": {
+          // 覆盖复制按钮标签文字
+          copy: "复制此段代码",
+        },
+
+        "/xx/": {
+          // 在这里完整设置 `mm-NN` 的多语言配置
+        },
+      },
+    }),
+  ],
+});
+```
+
+For specific options, see [Config → Locale Settings](./config.md#locales).

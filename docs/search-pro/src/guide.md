@@ -136,22 +136,22 @@ By default, the search hotkey is `Ctrl + K`. You can customize search hotkeys vi
 
 If you are proofreading or refining your search results, you can enable hot reloading by setting the `hotReload: true` option, see [Config → Hot Reload](./config.md#hotreload).
 
-## Multilingual Configuration
+## Locale Customization
 
-You can add specific paths or modify the multilingual configuration of existing paths through `locales`.
+You can add new locale config or modify existing ones through `locales` option.
 
 ```ts
 import { defineUserConfig } from "vuepress";
 import { searchProPlugin } from "vuepress-plugin-search-pro";
 
 export default defineUserConfig({
-  // We assume you are using the following multilingual
   locales: {
     "/": {
+      // this is a supported language
       lang: "en-US",
     },
-    // This is a path that does not receive plugin support
     "/xx/": {
+      // the plugin does not support this language
       lang: "mm-NN",
     },
   },
@@ -164,8 +164,8 @@ export default defineUserConfig({
           placeholder: "Start Searching",
         },
 
-        "/xx": {
-          // Complete multilingual configuration here
+        "/xx/": {
+          // Complete locale config for `mm-NN` language here
         },
       },
     }),

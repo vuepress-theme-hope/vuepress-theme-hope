@@ -12,7 +12,7 @@ Image selector
 
 ## options
 
-Options passed to [**photo-swipe**](http://photoswipe.com/)
+Options passed to [`photo-swipe`](http://photoswipe.com/)
 
 ## delay
 

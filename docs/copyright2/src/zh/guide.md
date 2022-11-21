@@ -22,6 +22,41 @@ icon: creative
 
 你可以通过插件的 `author` 和 `license` 选项设置作者和协议信息。如果文档的不同部分拥有不同的作者和协议，你可以传入一个使用当前页面对象作为参数的函数 `(page: Page) => string` 返回相应信息。
 
-## 自定义文字
+## 自定义版权信息文字
 
-你可以通过插件的 `locales` 选项配置插件在不同语言下的版权信息文字，详见 [配置 → locales](config.md#locales)。
+你可以通过插件的 `locales` 选项新增特定语言的版权信息文字或修改已支持语言的版权信息文字，详见 [配置 → locales](config.md#locales)。
+
+```ts
+import { defineUserConfig } from "vuepress";
+import { searchProPlugin } from "vuepress-plugin-search-pro";
+
+export default defineUserConfig({
+  locales: {
+    "/": {
+      // 这是一个支持的语言
+      lang: "zh-CN",
+    },
+    "/xx/": {
+      // 这是一个没有收到插件支持的语言
+      lang: "mm-NN",
+    },
+  },
+
+  plugins: [
+    searchProPlugin({
+      locales: {
+        "/": {
+          // 覆盖链接文字
+          link: "原文发表于 :link",
+        },
+
+        "/xx/": {
+          // 在这里完整设置 `mm-NN` 的多语言配置
+        },
+      },
+    }),
+  ],
+});
+```
+
+具体的选项详见 [配置 → 多语言配置](./config.md#locales)。
