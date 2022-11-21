@@ -67,21 +67,58 @@ tag:
 
   ```ts
   interface TextItem {
+    /**
+     * Text of item
+     */
     text: string;
+
+    /**
+     * Icon of item
+     */
     icon?: string;
+
+    /**
+     * Aria label of item
+     */
     ariaLabel?: string;
   }
 
   interface AutoLink extends TextItem {
+    /**
+     * link of item
+     */
     link: string;
+
+    /**
+     * Rel of `<a>` tag
+     */
     rel?: string;
+
+    /**
+     * Target of `<a>` tag
+     */
     target?: string;
+
+    /**
+     * Regexp mode to be active
+     */
     activeMatch?: string;
   }
 
   interface HopeThemeNavGroup<T> extends TextItem {
+    /**
+     * Link prefix of current group
+     */
     prefix?: string;
+
+    /**
+     * Link of current group
+     */
     link?: string;
+
+    /**
+     * Children of current group
+     */
     children: T[];
   }
 
@@ -106,24 +143,67 @@ tag:
 
   ```ts
   interface TextItem {
+    /**
+     * Text of item
+     */
     text: string;
+
+    /**
+     * Icon of item
+     */
     icon?: string;
+
+    /**
+     * Aria label of item
+     */
     ariaLabel?: string;
   }
 
   interface AutoLink extends TextItem {
+    /**
+     * link of item
+     */
     link: string;
+
+    /**
+     * Rel of `<a>` tag
+     */
     rel?: string;
+
+    /**
+     * Target of `<a>` tag
+     */
     target?: string;
+
+    /**
+     * Regexp mode to be active
+     */
     activeMatch?: string;
   }
 
   type HopeThemeSidebarPageItem = AutoLink;
 
   interface HopeThemeSidebarGroupItem extends TextItem {
+    /**
+     * Link prefix of current group
+     */
     prefix?: string;
+
+    /**
+     * Link of current group
+     */
     link?: string;
+
+    /**
+     * Whether current group is collapsible
+     *
+     * @default false
+     */
     collapsible?: boolean;
+
+    /**
+     * Children of current group
+     */
     children: (
       | HopeThemeSidebarPageItem
       | HopeThemeSidebarGroupItem
@@ -133,9 +213,23 @@ tag:
   }
 
   interface HopeThemeSidebarStructureItem extends TextItem {
-    prefix: string;
+    /**
+     * Link prefix of current group
+     */
+    prefix?: string;
+
+    /**
+     * Link of current group
+     */
     link?: string;
+
+    /**
+     * Whether current group is collapsible
+     *
+     * @default false
+     */
     collapsible?: boolean;
+
     children: "structure";
   }
 
@@ -164,5 +258,7 @@ tag:
 ## locales
 
 - Тип: `Record<string, HopeThemeLocaleOptions>`
+- Детали:
+  - [Конфигурация мультиязыка темы](./i18n.md)
 
 I18n конфиг темы, где можно задать параметры для каждого языка отдельно.
