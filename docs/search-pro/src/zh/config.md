@@ -195,7 +195,7 @@ export default defineUserConfig({
     /**
      * 无结果提示
      */
-    emply: string;
+    empty: string;
   }
 
   interface SearchProLocaleConfig {

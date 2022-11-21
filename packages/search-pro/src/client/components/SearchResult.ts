@@ -216,7 +216,7 @@ export default defineComponent({
         : h(
             "div",
             { class: "search-pro-result-list empty" },
-            locale.value.emply
+            locale.value.empty
           );
   },
 });

@@ -195,7 +195,7 @@ Usually in development, users do not need to update the index database in real t
     /**
      * Empty hint
      */
-    emply: string;
+    empty: string;
   }
 
   interface SearchProLocaleConfig {
