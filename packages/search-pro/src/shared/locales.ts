@@ -60,7 +60,7 @@ export interface SearchProLocaleData {
    *
    * 无结果提示
    */
-  emply: string;
+  empty: string;
 }
 
 export type SearchProLocaleConfig = ConvertLocaleConfig<SearchProLocaleData>;

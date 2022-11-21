@@ -36,12 +36,16 @@ export interface AutoLink extends TextItem {
   link: string;
 
   /**
-   * Rel of item anchor
+   * Rel of `<a>` tag
+   *
+   * `<a>` 标签的 `rel` 属性
    */
   rel?: string;
 
   /**
-   * Target of item anchor
+   * Target of `<a>` tag
+   *
+   * `<a>` 标签的 `target` 属性
    */
   target?: string;
 

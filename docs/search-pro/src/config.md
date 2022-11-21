@@ -127,7 +127,7 @@ export default defineUserConfig({
   }
   ```
 
-- Default: `[{key:'k',ctrl:true}]`
+- Default: `[{key: 'k', ctrl: true}]`
 
 Specify the [event.key](http://keycode.info/) of the hotkeys.
 
@@ -195,7 +195,7 @@ Usually in development, users do not need to update the index database in real t
     /**
      * Empty hint
      */
-    emply: string;
+    empty: string;
   }
 
   interface SearchProLocaleConfig {

@@ -44,13 +44,31 @@ tag:
 ## author
 
 - Тип: `Author | boolean`
+
+  ```ts
+  type AuthorName = string;
+
+  interface AuthorInfo {
+    /**
+     * Author name
+     */
+    name: string;
+
+    /**
+     * Author website
+     */
+    url?: string;
+
+    /**
+     * Author email
+     */
+    email?: string;
+  }
+
+  type Author = AuthorName | AuthorName[] | AuthorInfo | AuthorInfo[];
+  ```
+
 - Обязательный: Нет
-
-```ts
-type AuthorInfo = { name: string; url?: string };
-
-type Author = string | string[] | AuthorInfo | AuthorInfo[];
-```
 
 Показать автора текущей страницы. Если вы не заполните его, вы вернетесь к автору по умолчанию.
 

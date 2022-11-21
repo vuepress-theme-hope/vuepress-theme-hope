@@ -127,7 +127,7 @@ export default defineUserConfig({
   }
   ```
 
-- 默认值: `[{key:'k',ctrl:true}]`
+- 默认值: `[{key: 'k', ctrl: true}]`
 
 指定热键的 [event.key](http://keycode.info/)。
 
@@ -195,7 +195,7 @@ export default defineUserConfig({
     /**
      * 无结果提示
      */
-    emply: string;
+    empty: string;
   }
 
   interface SearchProLocaleConfig {

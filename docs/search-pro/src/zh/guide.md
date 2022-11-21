@@ -7,7 +7,7 @@ icon: creative
 
 ::: danger 尽量不要使用客户端搜索
 
-你应该在条件允许的情况下，使用服务提供商为你的站点提供搜索服务，例如 [Algolia](https://www.algolia.com/)，尤其是对于大型站点。这样做的好处是服务提供商为你的网站建立索引，用户搜索时通过搜素 API 得到结果。特别提示，[DocSearch](https://docsearch.algolia.com/) 是 Algolia 为开源项目提供的免费搜索服务，如果条件符合你应该尝试申请此服务，并使用 [`vuepress-plugin-docsearch`](https://v2.vuepress.vuejs.org/zh/reference/plugin/docsearch.html) 插件提供搜索。
+你应该在条件允许的情况下，使用服务提供商为你的站点提供搜索服务，例如 [Algolia](https://www.algolia.com/)，尤其是对于大型站点。这样做的好处是服务提供商为你的网站建立索引，用户搜索时通过搜素 API 得到结果。特别提示，[DocSearch](https://docsearch.algolia.com/) 是 Algolia 为开源项目提供的免费搜索服务，如果条件符合你应该尝试申请此服务，并使用 [`@vuepress/plugin-docsearch`](https://v2.vuepress.vuejs.org/zh/reference/plugin/docsearch.html) 插件提供搜索。
 
 只有当你在**使用不按流量计费且流量充足的托管服务**、**不满足 DocSearch 申请条件**且**不愿意付费使用服务提供商**时，你才应该使用客户端搜索。
 
@@ -128,6 +128,49 @@ export default defineUserConfig({
 
 :::
 
-## 搜索热键
+## 搜索快捷键
 
-默认情况下，搜索热键为 `Ctrl + K`。你可以通过 `hotkeys` 选项来自定义搜索热键，参见 [配置](./config.md#hotkeys)。
+默认情况下，搜索快捷键为 `Ctrl + K`。你可以通过 `hotkeys` 选项来自定义搜索快捷键，参见 [配置 → 快捷键](./config.md#hotkeys)。
+
+## 热更新
+
+如果你正在校对或完善你的搜索结果，你可以通过设置 `hotReload: true` 选项来开启热更新，参见 [配置 → 热更新](./config.md#hotreload)。
+
+## 多语言配置
+
+你可以通过 `locales` 来新增特定语言的多语言配置或修改已支持语言的配置。
+
+```ts
+import { defineUserConfig } from "vuepress";
+import { searchProPlugin } from "vuepress-plugin-search-pro";
+
+export default defineUserConfig({
+  locales: {
+    "/": {
+      // 这是一个支持的语言
+      lang: "zh-CN",
+    },
+    "/xx/": {
+      // 这是一个没有收到插件支持的语言
+      lang: "mm-NN",
+    },
+  },
+
+  plugins: [
+    searchProPlugin({
+      locales: {
+        "/": {
+          // 覆盖 placeholder
+          placeholder: "开始搜索",
+        },
+
+        "/xx/": {
+          // 在这里完整设置 `mm-NN` 的多语言配置
+        },
+      },
+    }),
+  ],
+});
+```
+
+具体的选项详见 [配置 → 多语言配置](./config.md#locales)。

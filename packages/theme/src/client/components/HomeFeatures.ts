@@ -4,6 +4,7 @@ import { computed, defineComponent, h } from "vue";
 import { RouterLink } from "vue-router";
 
 import Icon from "@theme-hope/components/Icon.js";
+
 import type { VNode } from "vue";
 import type { HopeThemeProjectHomePageFrontmatter } from "../../shared/index.js";
 

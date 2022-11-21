@@ -5,6 +5,7 @@ import DropTransition from "@theme-hope/components/transitions/DropTransition.js
 import HomeFeatures from "@theme-hope/components/HomeFeatures.js";
 import MarkdownContent from "@theme-hope/components/MarkdownContent.js";
 import HomeHero from "@theme-hope/components/HomeHero.js";
+import { usePure } from "@theme-hope/composables/index.js";
 
 import type { VNode } from "vue";
 import type { HopeThemeProjectHomePageFrontmatter } from "../../shared/index.js";
@@ -15,6 +16,7 @@ export default defineComponent({
   name: "HopePage",
 
   setup(_props, { slots }) {
+    const pure = usePure();
     const frontmatter =
       usePageFrontmatter<HopeThemeProjectHomePageFrontmatter>();
 
@@ -22,7 +24,7 @@ export default defineComponent({
       h(
         "main",
         {
-          class: "home project",
+          class: ["home project", { pure: pure.value }],
           id: "main-content",
           "aria-labelledby":
             frontmatter.value.heroText === null ? undefined : "main-title",

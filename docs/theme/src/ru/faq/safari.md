@@ -7,7 +7,7 @@ category:
 
 ## Плавная прокрутка не удалась
 
-Мы используем свойство CSS `scroll-behavior: smooth`, чтобы обеспечить плавную прокрутку. Его глобальный рейтинг одобрения составляет 87.66% [^scroll-behavior-percent]
+Мы используем свойство CSS `scroll-behavior: smooth`, чтобы обеспечить плавную прокрутку. Его глобальный рейтинг одобрения составляет 93.06% [^scroll-behavior-percent]
 
 [^scroll-behavior-percent]: Данные из [canIUse](https://caniuse.com/?search=scroll-behavior).
 

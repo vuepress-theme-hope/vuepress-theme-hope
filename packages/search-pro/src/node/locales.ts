@@ -9,7 +9,7 @@ export const searchProLocales: SearchProLocaleConfig = {
     select: "to select",
     navigate: "to navigate",
     exit: "to exit",
-    emply: "No results found",
+    empty: "No results found",
     loading: "Loading search indexes...",
   },
 
@@ -20,7 +20,7 @@ export const searchProLocales: SearchProLocaleConfig = {
     select: "选择",
     navigate: "切换",
     exit: "关闭",
-    emply: "没有找到结果",
+    empty: "没有找到结果",
     loading: "正在加载搜索索引...",
   },
 
@@ -31,7 +31,7 @@ export const searchProLocales: SearchProLocaleConfig = {
     select: "選擇",
     navigate: "切換",
     exit: "關閉",
-    emply: "沒有找到結果",
+    empty: "沒有找到結果",
     loading: "正在加載搜索索引...",
   },
 
@@ -42,7 +42,7 @@ export const searchProLocales: SearchProLocaleConfig = {
     select: "auswählen",
     navigate: "wechseln",
     exit: "schließen",
-    emply: "Keine Ergebnisse gefunden",
+    empty: "Keine Ergebnisse gefunden",
     loading: "Suchindex wird geladen...",
   },
 
@@ -53,7 +53,7 @@ export const searchProLocales: SearchProLocaleConfig = {
     select: "chọn",
     navigate: "chuyển",
     exit: "đóng",
-    emply: "Không tìm thấy kết quả",
+    empty: "Không tìm thấy kết quả",
     loading: "Đang tải chỉ mục tìm kiếm...",
   },
 
@@ -64,7 +64,7 @@ export const searchProLocales: SearchProLocaleConfig = {
     select: "вибрати",
     navigate: "перейти",
     exit: "закрити",
-    emply: "Нічого не знайдено",
+    empty: "Нічого не знайдено",
     loading: "Завантаження пошукових індексів...",
   },
 
@@ -75,7 +75,7 @@ export const searchProLocales: SearchProLocaleConfig = {
     select: "выбрать",
     navigate: "переключить",
     exit: "закрыть",
-    emply: "Ничего не найдено",
+    empty: "Ничего не найдено",
     loading: "Загрузка поисковых индексов...",
   },
 
@@ -86,7 +86,7 @@ export const searchProLocales: SearchProLocaleConfig = {
     select: "selecionar",
     navigate: "navegar",
     exit: "fechar",
-    emply: "Nenhum resultado encontrado",
+    empty: "Nenhum resultado encontrado",
     loading: "Carregando índices de pesquisa...",
   },
 
@@ -97,7 +97,7 @@ export const searchProLocales: SearchProLocaleConfig = {
     select: "wybierz",
     navigate: "przejdź",
     exit: "zamknij",
-    emply: "Nie znaleziono wyników",
+    empty: "Nie znaleziono wyników",
     loading: "Ładowanie indeksów wyszukiwania...",
   },
 
@@ -108,7 +108,7 @@ export const searchProLocales: SearchProLocaleConfig = {
     select: "vybrať",
     navigate: "prepnúť",
     exit: "zavrieť",
-    emply: "Nenašli sa žiadne výsledky",
+    empty: "Nenašli sa žiadne výsledky",
     loading: "Načítavajú sa vyhľadávacie indexy...",
   },
 
@@ -119,7 +119,7 @@ export const searchProLocales: SearchProLocaleConfig = {
     select: "sélectionner",
     navigate: "naviguer",
     exit: "fermer",
-    emply: "Aucun résultat trouvé",
+    empty: "Aucun résultat trouvé",
     loading: "Chargement des index de recherche...",
   },
 
@@ -130,7 +130,7 @@ export const searchProLocales: SearchProLocaleConfig = {
     select: "seleccionar",
     navigate: "navegar",
     exit: "cerrar",
-    emply: "No se encontraron resultados",
+    empty: "No se encontraron resultados",
     loading: "Cargando índices de búsqueda...",
   },
 
@@ -141,7 +141,7 @@ export const searchProLocales: SearchProLocaleConfig = {
     select: "選択",
     navigate: "切り替え",
     exit: "閉じる",
-    emply: "結果が見つかりません",
+    empty: "結果が見つかりません",
     loading: "検索インデックスを読み込んでいます...",
   },
 
@@ -152,7 +152,7 @@ export const searchProLocales: SearchProLocaleConfig = {
     select: "seç",
     navigate: "geç",
     exit: "kapat",
-    emply: "Sonuç bulunamadı",
+    empty: "Sonuç bulunamadı",
     loading: "Arama dizinleri yükleniyor...",
   },
 
@@ -163,7 +163,7 @@ export const searchProLocales: SearchProLocaleConfig = {
     select: "선택",
     navigate: "이동",
     exit: "닫기",
-    emply: "결과를 찾을 수 없습니다",
+    empty: "결과를 찾을 수 없습니다",
     loading: "검색 인덱스를 로드하는 중...",
   },
 };

@@ -12,7 +12,7 @@ icon: config
 
 ## options
 
-传递给 [**photo-swipe**](http://photoswipe.com/) 的额外选项
+传递给 [`photo-swipe`](http://photoswipe.com/) 的额外选项
 
 ## delay
 

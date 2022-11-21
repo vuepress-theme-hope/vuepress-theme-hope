@@ -7,7 +7,7 @@ category:
 
 ## Smooth Scrolling failed
 
-We use the CSS property `scroll-behavior: smooth` to provide smooth scrolling. It has a global approval rating of 87.66% [^scroll-behavior-percent]
+We use the CSS property `scroll-behavior: smooth` to provide smooth scrolling. It has a global approval rating of 93.06% [^scroll-behavior-percent]
 
 [^scroll-behavior-percent]: Data from [canIUse](https://caniuse.com/?search=scroll-behavior).
 
