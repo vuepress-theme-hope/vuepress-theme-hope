@@ -56,7 +56,10 @@ export default defineComponent({
     const loaded = ref(false);
 
     const config = computed(
-      () => <Partial<CodeDemoOptions>>JSON.parse(atou(props.config) || "{}")
+      () =>
+        <Partial<CodeDemoOptions>>(
+          JSON.parse(props.config ? atou(props.config) : "{}")
+        )
     );
 
     const codeType = computed(() => {

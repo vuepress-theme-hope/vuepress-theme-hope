@@ -37,9 +37,7 @@ describe("props", () => {
   });
 
   it("transform should return itself", () => {
-    expect(browserUtoaResults).toEqual(compressed);
-    expect(nodeUtoaResults).toEqual(compressed);
-    expect(browserAtouResults).toEqual(words);
-    expect(nodeAutoResults).toEqual(words);
+    expect(browserUtoaResults.map((word) => atou(word))).toEqual(words);
+    expect(nodeUtoaResults.map((word) => atou(word))).toEqual(words);
   });
 });
