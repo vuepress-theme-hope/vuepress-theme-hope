@@ -5,7 +5,8 @@ icon: home
 heroImage: /logo.svg
 heroText: vuepress-plugin-reading-time2
 tagline: Expect reading time and word count statistics
-footer: MIT Licensed | Copyright © 2019-present Mr.Hope
+footer: Theme by <a href="https://vuepress-theme-hope.github.io/v2/" target="_blank">VuePress Theme Hope</a> | MIT Licensed, Copyright © 2019-present Mr.Hope
+
 copyright: false
 ---
 
