@@ -49,7 +49,7 @@
     "@types/node": "18.11.9",
     "@typescript-eslint/eslint-plugin": "5.44.0",
     "@typescript-eslint/parser": "5.44.0",
-    "@vitest/coverage-c8": "0.25.2",
+    "@vitest/coverage-c8": "0.25.3",
     "@vue/eslint-config-typescript": "11.0.2",
     "bumpp": "8.2.1",
     "commitizen": "4.2.5",
@@ -86,7 +86,7 @@
     "tslib": "2.4.1",
     "tsx": "3.12.1",
     "typescript": "4.9.3",
-    "vitest": "0.25.2"
+    "vitest": "0.25.3"
   },
   "packageManager": "pnpm@7.17.0",
   "engines": {
