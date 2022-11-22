@@ -98,7 +98,7 @@ export default defineComponent({
     const getDisplay = (matchedItem: MatchedItem): (VNode | string)[] => {
       if (matchedItem.type === "custom") {
         const formatterConfig =
-          searchProClientCustomFiledConfig[matchedItem.name] || "$content";
+          searchProClientCustomFiledConfig[matchedItem.index] || "$content";
 
         const [prefix, suffix = ""] =
           typeof formatterConfig === "object"

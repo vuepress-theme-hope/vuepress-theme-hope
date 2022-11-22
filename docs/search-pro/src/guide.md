@@ -27,9 +27,8 @@ For small sites, where you usually need a full-text search out of the box, you c
 
 Whether you are a theme developer or a user, it's a common operation to add extra data to a page through Frontmatter or the `extendsPage` lifecycle. In most cases, you may want to index these data as well, so we provide the `customFields` option.
 
-`customFields` accepts an array, each element represents a custom search index configuration item. Each configuration item contains three parts:
+`customFields` accepts an array, each element represents a custom search index configuration item. Each configuration item contains 2 parts:
 
-- `name`: the name of the custom field
 - `getter`: The getter for this custom field. This function takes `page` object as a parameter and returns the value of the custom field as a string (single), an array of strings (multiple), `null` (the item is missing).
 - `formatter`: a string controlling how the item is displayed in the custom search result, where `$content` is replaced with the actual value returned by `getter`. If you're using multiple languages, you can also set it as an object to set the display format for each language individually.
 

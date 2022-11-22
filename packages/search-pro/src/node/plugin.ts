@@ -33,8 +33,10 @@ export const searchProPlugin =
       define: {
         SEARCH_PRO_CUSTOM_FIELDS: Object.fromEntries(
           (options.customFields || [])
-            .filter((item) => "formatter" in item)
-            .map(({ name, formatter }) => [name, formatter])
+            .map(({ formatter }, index) =>
+              formatter ? [(index.toString(), formatter)] : null
+            )
+            .filter((item): item is [string, string] => item !== null)
         ),
         SEARCH_PRO_HOTKEYS: options.hotKeys || [{ key: "k", ctrl: true }],
         SEARCH_PRO_LOCALES: getLocales({

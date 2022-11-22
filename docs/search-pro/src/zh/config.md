@@ -23,11 +23,6 @@ icon: config
   ```ts
   interface SearchProCustomFieldOptions {
     /**
-     * 自定义项目的名称
-     */
-    name: string;
-
-    /**
      * 自定义项目的获取器
      */
     getter: (page: Page) => string | string[] | null;

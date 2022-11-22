@@ -7,13 +7,6 @@ import type {
 
 export interface SearchProCustomFieldOptions {
   /**
-   * Name of the custom field
-   *
-   * 自定义项目的名称
-   */
-  name: string;
-
-  /**
    * Custom field getter
    *
    * 自定义项目的获取器

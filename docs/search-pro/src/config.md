@@ -23,11 +23,6 @@ By default only headings and excerpt of the page will be indexed along with your
   ```ts
   interface SearchProCustomFieldOptions {
     /**
-     * Name of the custom field
-     */
-    name: string;
-
-    /**
      * Custom field getter
      */
     getter: (page: Page) => string | string[] | null;
