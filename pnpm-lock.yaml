@@ -1175,10 +1175,12 @@ importers:
 
   packages/search-pro:
     specifiers:
+      '@types/body-scroll-lock': ^3.1.0
       '@vuepress/client': 2.0.0-beta.53
       '@vuepress/core': 2.0.0-beta.53
       '@vuepress/utils': 2.0.0-beta.53
       '@vueuse/core': ^9.5.0
+      body-scroll-lock: ^3.1.5
       cheerio: ^1.0.0-rc.12
       chokidar: ^3.5.3
       rimraf: 3.0.2
@@ -1187,9 +1189,11 @@ importers:
       vuepress-plugin-sass-palette: workspace:*
       vuepress-shared: workspace:*
     dependencies:
+      '@types/body-scroll-lock': 3.1.0
       '@vuepress/client': 2.0.0-beta.53
       '@vuepress/utils': 2.0.0-beta.53
       '@vueuse/core': 9.5.0_vue@3.2.45
+      body-scroll-lock: 3.1.5
       cheerio: 1.0.0-rc.12
       chokidar: 3.5.3
       vue: 3.2.45

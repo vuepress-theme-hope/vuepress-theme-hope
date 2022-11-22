@@ -104,13 +104,19 @@
   }
 }
 
-.search-pro-result-list {
+.search-pro-result {
+  flex-grow: 1;
+
   overflow-y: auto;
 
   min-height: 40vh;
   max-height: calc(90vh - 8rem);
   margin: 0.5rem 0;
-  padding: 0;
+
+  @media (max-width: hope-config.$pad) {
+    min-height: unset;
+    max-height: unset;
+  }
 
   &.loading,
   &.empty {

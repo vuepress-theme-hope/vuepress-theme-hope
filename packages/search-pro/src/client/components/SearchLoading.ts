@@ -73,7 +73,7 @@ export const SearchLoading = defineComponent({
     const locale = useLocaleConfig(searchProLocales);
 
     return (): VNode =>
-      h("div", { class: "search-pro-result-list loading" }, [
+      h("div", { class: "search-pro-result loading" }, [
         h(LoadingIcon),
         locale.value.loading,
       ]);

@@ -1,4 +1,4 @@
-.search-pro-result-list {
+.search-pro-result {
   scrollbar-color: var(--c-brand, #3aa675) var(--c-border, #eaecef);
   scrollbar-width: thin;
   @media (max-width: hope-config.$mobile) {
@@ -23,6 +23,11 @@
       background: var(--c-brand-light, #4abf8a);
     }
   }
+}
+
+.search-pro-result-list {
+  margin: 0;
+  padding: 0;
 }
 
 .search-pro-result-list-item {

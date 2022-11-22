@@ -1,6 +1,15 @@
 import { useRouteLocale } from "@vuepress/client";
 import { useEventListener } from "@vueuse/core";
-import { computed, defineComponent, h, onMounted, ref, toRef } from "vue";
+import { disableBodyScroll, clearAllBodyScrollLocks } from "body-scroll-lock";
+import {
+  computed,
+  defineComponent,
+  h,
+  onBeforeUnmount,
+  onMounted,
+  ref,
+  toRef,
+} from "vue";
 import { RouterLink, useRoute, useRouter } from "vue-router";
 import { useLocaleConfig } from "vuepress-shared/client";
 
@@ -40,6 +49,7 @@ export default defineComponent({
 
     const activatedResultIndex = ref(0);
     const activatedResultContentIndex = ref(0);
+    const searchResult = ref<HTMLElement>();
 
     const hasResults = computed(() => searchResults.value.length > 0);
     const activatedResult = computed(
@@ -120,15 +130,35 @@ export default defineComponent({
           }
         }
       });
+
+      disableBodyScroll(searchResult.value!, { reserveScrollBarGap: true });
+    });
+
+    onBeforeUnmount(() => {
+      clearAllBodyScrollLocks();
     });
 
     return (): VNode =>
-      query.value === ""
-        ? h(
-            "ul",
-            { class: "search-pro-result-list" },
-            history.value.length
-              ? history.value.map((history) =>
+      h(
+        "div",
+        {
+          class: [
+            "search-pro-result",
+            {
+              empty:
+                query.value === ""
+                  ? history.value.length === 0
+                  : !hasResults.value,
+            },
+          ],
+          ref: searchResult,
+        },
+        query.value === ""
+          ? history.value.length
+            ? h(
+                "ul",
+                { class: "search-pro-result-list" },
+                history.value.map((history) =>
                   h("li", { class: "search-pro-result-list-item" }, [
                     h(
                       "div",
@@ -154,82 +184,79 @@ export default defineComponent({
                     ),
                   ])
                 )
-              : h(
-                  "div",
-                  { class: "search-pro-result-list empty" },
-                  locale.value.emptyHistory
-                )
-          )
-        : hasResults.value
-        ? h(
-            "ul",
-            { class: "search-pro-result-list" },
-            searchResults.value.map(({ title, contents }, index) => {
-              const isCurrentResultActive =
-                activatedResultIndex.value === index;
+              )
+            : locale.value.emptyHistory
+          : hasResults.value
+          ? h(
+              "ul",
+              { class: "search-pro-result-list" },
+              searchResults.value.map(({ title, contents }, index) => {
+                const isCurrentResultActive =
+                  activatedResultIndex.value === index;
 
-              return h(
-                "li",
-                {
-                  class: [
-                    "search-pro-result-list-item",
-                    { active: isCurrentResultActive },
-                  ],
-                },
-                [
-                  h(
-                    "div",
-                    { class: "search-pro-result-title" },
-                    title || "Documentation"
-                  ),
-                  contents.map((item, contentIndex) =>
+                return h(
+                  "li",
+                  {
+                    class: [
+                      "search-pro-result-list-item",
+                      { active: isCurrentResultActive },
+                    ],
+                  },
+                  [
                     h(
-                      RouterLink,
-                      {
-                        to: item.path,
-                        class: [
-                          "search-pro-result-item",
-                          {
-                            active:
-                              isCurrentResultActive &&
-                              activatedResultContentIndex.value ===
-                                contentIndex,
+                      "div",
+                      { class: "search-pro-result-title" },
+                      title || "Documentation"
+                    ),
+                    contents.map((item, contentIndex) =>
+                      h(
+                        RouterLink,
+                        {
+                          to: item.path,
+                          class: [
+                            "search-pro-result-item",
+                            {
+                              active:
+                                isCurrentResultActive &&
+                                activatedResultContentIndex.value ===
+                                  contentIndex,
+                            },
+                          ],
+                          onClick: () => {
+                            addHistory(query.value);
+                            emit("updateQuery", "");
+                            emit("close");
                           },
-                        ],
-                        onClick: () => {
-                          addHistory(query.value);
-                          emit("updateQuery", "");
-                          emit("close");
                         },
-                      },
-                      () => [
-                        item.type === "content"
-                          ? null
-                          : h(
-                              item.type === "title"
-                                ? TitleIcon
-                                : item.type === "heading"
-                                ? HeadingIcon
-                                : HeartIcon,
-                              { class: "search-pro-result-type" }
-                            ),
-                        h("div", { class: "search-pro-result-content" }, [
+                        () => [
                           item.type === "content"
-                            ? h("div", { class: "content-header" }, item.header)
-                            : null,
-                          h("div", getDisplay(item)),
-                        ]),
-                      ]
-                    )
-                  ),
-                ]
-              );
-            })
-          )
-        : h(
-            "div",
-            { class: "search-pro-result-list empty" },
-            locale.value.emptyResult
-          );
+                            ? null
+                            : h(
+                                item.type === "title"
+                                  ? TitleIcon
+                                  : item.type === "heading"
+                                  ? HeadingIcon
+                                  : HeartIcon,
+                                { class: "search-pro-result-type" }
+                              ),
+                          h("div", { class: "search-pro-result-content" }, [
+                            item.type === "content"
+                              ? h(
+                                  "div",
+                                  { class: "content-header" },
+                                  item.header
+                                )
+                              : null,
+                            h("div", getDisplay(item)),
+                          ]),
+                        ]
+                      )
+                    ),
+                  ]
+                );
+              })
+            )
+          : locale.value.emptyResult
+      );
   },
 });
