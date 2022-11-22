@@ -14,6 +14,8 @@
 
   cursor: pointer;
 
+  transition: background var(--color-transition), color var(--color-transition);
+
   .search-icon {
     display: block;
     width: 20px;
