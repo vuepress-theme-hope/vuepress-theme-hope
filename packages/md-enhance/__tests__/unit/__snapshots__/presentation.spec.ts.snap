@@ -44,4 +44,4 @@ $$</p>
 "
 `;
 
-exports[`presentation > Should render 1`] = `"<Presentation id=\\"presentation-0\\" code=\\"eNpVjc0KwjAQhO/7FAvtoQX7pzelB4969WilDXYx0aYNyYqC+O4mUJDeho9vZiCK8DSonrAC2KMRVtysMBJfiiW6SRMyvRnF2KPA86DGxyWRzMZti0JbORnKnWJKAbIsg//c2gM8MGk/PIeAFs4m96dd190dXKfR+RessdoFFNSF6ctxDMekYUks2nI1hyr1ncY9dftRdfkN0g8aMTop\\" theme=\\"auto\\"></Presentation>"`;
+exports[`presentation > Should render 1`] = `"<Presentation id=\\"presentation-0\\" code=\\"eJxVjc0KwjAQhO/7FAvtoQX7pzelB4969WilDXYx0aYNyYqC+O4mUJDeho9vZiCK8DSonrAC2KMRVtysMBJfiiW6SRMyvRnF2KPA86DGxyWRzMZti0JbORnKnWJKAbIsg//c2gM8MGk/PIeAFs4m96dd190dXKfR+RessdoFFNSF6ctxDMekYUks2nI1hyr1ncY9dftRdfkN0g8aMTop\\" theme=\\"auto\\"></Presentation>"`;
