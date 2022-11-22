@@ -42,13 +42,13 @@ export interface SearchProOptions {
   indexContent?: boolean;
 
   /**
-   * Whether enable hmr
+   * Delay to start searching after input
    *
-   * 是否启用 hmr
+   * 结束输入到开始搜索的延时
    *
-   * @default false
+   * @default 300
    */
-  hotReload?: boolean;
+  delay?: number;
 
   /**
    * Custom field for search
@@ -67,6 +67,15 @@ export interface SearchProOptions {
    * @default [{key: 'k', ctrl: true}]
    */
   hotKeys?: SearchProHotKeyOptions[];
+
+  /**
+   * Whether enable hmr
+   *
+   * 是否启用 hmr
+   *
+   * @default false
+   */
+  hotReload?: boolean;
 
   /**
    * Locales config

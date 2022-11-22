@@ -128,6 +128,19 @@ Specify the [event.key](http://keycode.info/) of the hotkeys.
 
 When hotkeys are pressed, the search box input will be focused. Set to an empty array to disable hotkeys.
 
+## delay
+
+- Type: `number`
+- Default: `300`
+
+Delay to start searching after input.
+
+::: note
+
+Performing client search with huge contents could be slow, so under this case you might need to increase this value to ensure user finish input before searching.
+
+:::
+
 ## hotReload
 
 - Type: `boolean`

@@ -3,6 +3,7 @@ import { useRouteLocale } from "@vuepress/client";
 import { computed, ref, watch } from "vue";
 
 import { searchIndex } from "./searchIndex.js";
+import { searchProDelay } from "../define.js";
 import { getResults } from "../utils/index.js";
 
 import type { Ref } from "vue";
@@ -17,7 +18,7 @@ export const useSearchResults = (query: Ref<string>): Ref<Result[]> => {
     results.value = queryString
       ? getResults(queryString, localeIndex.value)
       : [];
-  }, 200);
+  }, searchProDelay);
 
   watch([query, routeLocale], () => {
     updateResults(query.value);
