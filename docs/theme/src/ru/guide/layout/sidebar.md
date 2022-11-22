@@ -716,7 +716,7 @@ interface SidebarDirInfo {
 }
 ```
 
-If no README.md file exists for the corresponding folder, only the group header will be generated from the folder name.
+Если для соответствующей папки не существует файла README.md, из имени папки будет создан только заголовок группы.
 
 #### Кастомизация сортировщика
 
