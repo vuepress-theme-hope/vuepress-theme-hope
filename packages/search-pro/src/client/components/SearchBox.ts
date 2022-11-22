@@ -3,7 +3,7 @@ import { defineComponent, h, inject } from "vue";
 import { useLocaleConfig } from "vuepress-shared/client";
 
 import { SearchIcon } from "./icons.js";
-import { searchModalSymbol } from "../composables/index.js";
+import { searchModalSymbol } from "../composables/setup.js";
 import { searchProLocales } from "../define.js";
 import { isFocusingTextControl, isKeyMatched } from "../utils/index.js";
 
