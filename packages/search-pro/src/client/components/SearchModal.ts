@@ -59,7 +59,7 @@ export default defineComponent({
               },
             }),
             h("div", { class: "search-pro-modal" }, [
-              h("div", { class: "search-box" }, [
+              h("div", { class: "search-pro-box" }, [
                 h(SearchIcon),
                 h("input", {
                   ref: inputElement,
@@ -72,6 +72,17 @@ export default defineComponent({
                     input.value = (<HTMLInputElement>target).value;
                   },
                 }),
+                h(
+                  "button",
+                  {
+                    class: "close-button",
+                    onClick: () => {
+                      isActive.value = false;
+                      input.value = "";
+                    },
+                  },
+                  locale.value.cancel
+                ),
               ]),
 
               h(SearchResult, {

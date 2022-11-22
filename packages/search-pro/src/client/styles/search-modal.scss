@@ -58,34 +58,48 @@
     animation: 0.25s pwa-mobile;
   }
 
-  .search-box {
-    position: relative;
-    display: flex;
+  @media (max-width: hope-config.$pad) {
+    width: calc(100% - 1.5rem);
+    max-width: unset;
+    height: calc(100% - 1.5rem);
+  }
+}
 
-    .search-icon {
-      position: absolute;
-      top: calc(50% - 0.75rem);
-      left: 0.5rem;
+.search-pro-box {
+  position: relative;
+  display: flex;
 
-      width: 1.5rem;
-      height: 1.5rem;
-    }
+  .search-icon {
+    position: absolute;
+    top: calc(50% - 0.75rem);
+    left: 0.5rem;
 
-    input {
-      flex: 1;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 
-      min-width: 0;
-      margin: 0;
-      padding: 0.25rem 1rem 0.3rem 2.5rem;
-      border: 0;
-      border: 1px solid var(--c-brand, #3eaf7c);
-      border-radius: 8px;
+  input {
+    flex: 1;
 
-      background-color: var(--c-bg-light, #f3f4f5);
-      outline: none;
+    min-width: 0;
+    margin: 0;
+    padding: 0.25rem 1rem 0.3rem 2.5rem;
+    border: 0;
+    border: 1px solid var(--c-brand, #3eaf7c);
+    border-radius: 8px;
 
-      font-size: 1.25rem;
-      line-height: 2;
+    background-color: var(--c-bg-light, #f3f4f5);
+    outline: none;
+
+    font-size: 1.25rem;
+    line-height: 2;
+  }
+
+  .close-button {
+    display: none;
+
+    @media (max-width: hope-config.$pad) {
+      display: block;
     }
   }
 }

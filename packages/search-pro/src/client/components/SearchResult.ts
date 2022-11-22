@@ -127,25 +127,38 @@ export default defineComponent({
         ? h(
             "ul",
             { class: "search-pro-result-list" },
-            history.value.map((history) =>
-              h(
-                "li",
-                { class: "search-pro-result-list-item" },
-                h(
-                  "div",
-                  {
-                    class: "search-pro-result-item",
-                    onClick: () => {
-                      emit("updateQuery", history);
-                    },
-                  },
-                  [
-                    h(HistoryIcon, { class: "search-pro-result-type" }),
-                    h("div", { class: "search-pro-result-content" }, history),
-                  ]
+            history.value.length
+              ? history.value.map((history) =>
+                  h("li", { class: "search-pro-result-list-item" }, [
+                    h(
+                      "div",
+                      { class: "search-pro-result-title" },
+                      locale.value.history
+                    ),
+                    h(
+                      "div",
+                      {
+                        class: "search-pro-result-item",
+                        onClick: () => {
+                          emit("updateQuery", history);
+                        },
+                      },
+                      [
+                        h(HistoryIcon, { class: "search-pro-result-type" }),
+                        h(
+                          "div",
+                          { class: "search-pro-result-content" },
+                          history
+                        ),
+                      ]
+                    ),
+                  ])
                 )
-              )
-            )
+              : h(
+                  "div",
+                  { class: "search-pro-result-list empty" },
+                  locale.value.emptyHistory
+                )
           )
         : hasResults.value
         ? h(
@@ -216,7 +229,7 @@ export default defineComponent({
         : h(
             "div",
             { class: "search-pro-result-list empty" },
-            locale.value.empty
+            locale.value.emptyResult
           );
   },
 });
