@@ -68,7 +68,7 @@
     "magic-string": "0.26.7",
     "markdownlint-cli": "0.32.2",
     "nano-staged": "0.8.0",
-    "npm-check-updates": "16.4.2",
+    "npm-check-updates": "16.4.3",
     "ora": "6.1.2",
     "picocolors": "1.0.0",
     "prettier": "2.7.1",
