@@ -17,66 +17,47 @@ import type {
   HopeThemeSidebarObjectConfig,
 } from "../../shared/index.js";
 
-export type HopeThemeNavbarHelper = (
-  navbarConfig: HopeThemeNavbarConfig
-) => HopeThemeNavbarConfig;
+type Helper<T> = (options: T) => T;
 
-export type HopeThemeSidebarHelper = (
-  navbarConfig: HopeThemeSidebarConfig
-) => HopeThemeSidebarConfig;
+export type HopeThemeNavbarHelper = Helper<HopeThemeNavbarConfig>;
 
-export type HopeThemeSidebarArrayHelper = (
-  navbarConfig: HopeThemeSidebarArrayConfig
-) => HopeThemeSidebarArrayConfig;
+export type HopeThemeSidebarHelper = Helper<HopeThemeSidebarConfig>;
 
-export type HopeThemeSidebarObjectHelper = (
-  navbarConfig: HopeThemeSidebarObjectConfig
-) => HopeThemeSidebarObjectConfig;
+export type HopeThemeSidebarArrayHelper = Helper<HopeThemeSidebarArrayConfig>;
 
-export type HopeThemeBlogPluginHelper = (
-  blogConfig: HopeThemeBlogPluginOptions | boolean
-) => HopeThemeBlogPluginOptions | boolean;
+export type HopeThemeSidebarObjectHelper = Helper<HopeThemeSidebarObjectConfig>;
 
-export type HopeThemeCommentPluginHelper = (
-  commentConfig: CommentOptions | false
-) => CommentOptions | false;
+export type HopeThemeBlogPluginHelper = Helper<
+  HopeThemeBlogPluginOptions | boolean
+>;
 
-export type HopeThemeCopyCodePluginHelper = (
-  copyCodeConfig: CopyCodeOptions | false
-) => CopyCodeOptions | false;
+export type HopeThemeCommentPluginHelper = Helper<CommentOptions | false>;
 
-export type HopeThemeCopyrightPluginHelper = (
-  copyrightConfig: CopyrightOptions | false
-) => CopyrightOptions | false;
+export type HopeThemeCopyCodePluginHelper = Helper<CopyCodeOptions | false>;
 
-export type HopeThemeFeedPluginHelper = (
-  feedConfig: Omit<FeedOptions, "hostname"> | false
-) => Omit<FeedOptions, "hostname"> | false;
+export type HopeThemeCopyrightPluginHelper = Helper<CopyrightOptions | false>;
 
-export type HopeThemeGitPluginHelper = (
-  gitConfig: GitPluginOptions | false
-) => GitPluginOptions | false;
+export type HopeThemeFeedPluginHelper = Helper<
+  Omit<FeedOptions, "hostname"> | false
+>;
 
-export type HopeThemeMdEnhancePluginHelper = (
-  mdEnhanceConfig: MarkdownEnhanceOptions | false
-) => MarkdownEnhanceOptions | false;
+export type HopeThemeGitPluginHelper = Helper<GitPluginOptions | false>;
+export type HopeThemeMdEnhancePluginHelper = Helper<
+  MarkdownEnhanceOptions | false
+>;
 
-export type HopeThemePhotoSwipePluginHelper = (
-  photoSwipeConfig: PhotoSwipeOptions | false
-) => PhotoSwipeOptions | false;
+export type HopeThemePhotoSwipePluginHelper = Helper<PhotoSwipeOptions | false>;
 
-export type HopeThemePWAPluginHelper = (
-  pwaConfig: PWAOptions | false
-) => PWAOptions | false;
+export type HopeThemePWAPluginHelper = Helper<PWAOptions | false>;
 
-export type HopeThemeReadingTimePluginHelper = (
-  readingTimeConfig: ReadingTimeOptions | false
-) => ReadingTimeOptions | false;
+export type HopeThemeReadingTimePluginHelper = Helper<
+  ReadingTimeOptions | false
+>;
 
-export type HopeThemeSEOPluginHelper = (
-  seoConfig: Omit<SeoOptions, "hostname" | "author"> | false
-) => Omit<SeoOptions, "hostname" | "author"> | false;
+export type HopeThemeSEOPluginHelper = Helper<
+  Omit<SeoOptions, "hostname" | "author"> | false
+>;
 
-export type HopeThemeSitemapPluginHelper = (
-  sitemapConfig: Omit<SitemapOptions, "hostname"> | false
-) => Omit<SitemapOptions, "hostname"> | false;
+export type HopeThemeSitemapPluginHelper = Helper<
+  Omit<SitemapOptions, "hostname"> | false
+>;

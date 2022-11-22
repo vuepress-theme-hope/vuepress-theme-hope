@@ -21,11 +21,11 @@ export interface SearchProLocaleData {
   search: string;
 
   /**
-   * Close text
+   * Cancel text
    *
-   * 关闭文字
+   * 取消文字
    */
-  close: string;
+  cancel: string;
 
   /**
    * Select hint
@@ -56,11 +56,25 @@ export interface SearchProLocaleData {
   loading: string;
 
   /**
+   * Search history text
+   *
+   * 搜索历史文字
+   */
+  history: string;
+
+  /**
+   * Search history empty hint
+   *
+   * 无搜索历史提示
+   */
+  emptyHistory: string;
+
+  /**
    * Empty hint
    *
    * 无结果提示
    */
-  empty: string;
+  emptyResult: string;
 }
 
 export type SearchProLocaleConfig = ConvertLocaleConfig<SearchProLocaleData>;

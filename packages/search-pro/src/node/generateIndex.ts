@@ -100,13 +100,13 @@ export const generatePageIndex = (
   // get custom fields
   const customFields = Object.fromEntries(
     customFieldsGetter
-      .map(({ name, getter }) => {
+      .map(({ getter }, index) => {
         const result = getter(page);
 
         return Array.isArray(result)
-          ? [name, result]
+          ? [index.toString(), result]
           : result
-          ? [name, [result]]
+          ? [index.toString(), [result]]
           : null;
       })
       .filter((item): item is [string, string[]] => item !== null)
@@ -115,7 +115,7 @@ export const generatePageIndex = (
   // no content in page and no customFields
   if (!nodes?.length && !Object.keys(customFields).length) return null;
 
-  // walk through nodes and extrac indexes
+  // walk through nodes and extract indexes
   nodes?.forEach((node) => {
     render(node);
   });
