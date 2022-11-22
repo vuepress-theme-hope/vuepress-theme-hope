@@ -56,6 +56,7 @@
 .navbar-right,
 .navbar-center {
   display: flex;
+  flex: 1;
   align-items: center;
 
   > * {
@@ -70,6 +71,18 @@
       margin-right: 0 !important;
     }
   }
+}
+
+.navbar-left {
+  justify-content: start;
+}
+
+.navbar-center {
+  justify-content: center;
+}
+
+.navbar-right {
+  justify-content: end;
 }
 
 // docsearch fix
