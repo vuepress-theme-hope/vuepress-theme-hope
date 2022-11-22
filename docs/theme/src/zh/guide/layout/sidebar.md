@@ -721,13 +721,9 @@ interface SidebarDirInfo {
 - `date`: 按日期升序排序
 - `date-desc`: 按日期降序排序
 - `title`: 按标题字母顺序排序
-- `title-number`: 根据标题的字母顺序排序，并以数字标签对相同的标题进行升序排序
-- `title-number-desc`: 按照标题的字母顺序排序，并以数字标签对相同的标题进行降序排序
 - `filename`: 按文件名字母顺序排序
-- `file-number`: 根据文件名的字母顺序排序，并以数字标签对相同的文件名进行升序排序
-- `file-number-desc`: 根据文件名的字母顺序排序，并以数字标签对相同的文件名进行降序排序
 
-对应上述的进阶控制，它的默认值是 `["readme", "order", "title"]`
+对应上述的进阶控制，它的默认值是 `["readme", "order", "title", "filename"]`
 
 ## 禁用侧边栏
 

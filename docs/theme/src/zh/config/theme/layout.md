@@ -133,58 +133,61 @@ tag:
 - 类型: `HopeThemeSidebarSorter`
 
   ```ts
-  export interface HopeThemeSidebarFileInfo {
+  interface HopeThemeSidebarFileInfo {
     type: "file";
-
-    order: number | null;
-    frontmatter: HopeThemeNormalPageFrontmatter;
-    pageData: HopeThemePageData;
+    filename: string;
 
     title: string;
-    path: string;
-  }
-
-  export interface HopeThemeSidebarDirInfo {
-    type: "dir";
-
     order: number | null;
 
     frontmatter: HopeThemeNormalPageFrontmatter;
     pageData: HopeThemePageData;
+  }
 
-    info: {
-      prefix: string;
-      text: string;
+  interface HopeThemeSidebarDirInfo {
+    type: "dir";
+    dirname: string;
+    children: HopeThemeSidebarInfo[];
+
+    title: string;
+    order: number | null;
+
+    groupInfo: {
+      // prefix: string;
+      // text: string;
       icon?: string;
       collapsible?: boolean;
       link?: string;
     };
-    children: HopeThemeSidebarInfo[];
+
+    frontmatter: HopeThemeNormalPageFrontmatter | null;
+    pageData: HopeThemePageData | null;
   }
 
-  export type HopeThemeSidebarInfo =
+  type HopeThemeSidebarInfo =
     | HopeThemeSidebarFileInfo
     | HopeThemeSidebarDirInfo;
 
-  export type HopeThemeSidebarSorterKeyWord =
+  type HopeThemeSidebarSorterKeyWord =
     | "readme"
     | "order"
     | "date"
     | "date-desc"
     | "filename"
-    | "file-number"
-    | "file-number-desc"
-    | "title"
-    | "title-number"
-    | "title-number-desc";
+    | "title";
 
-  export type HopeThemeSidebarSorterFunction = (
+  type HopeThemeSidebarSorterFunction = (
     infoA: HopeThemeSidebarInfo,
     infoB: HopeThemeSidebarInfo
   ) => number;
+
+  type HopeThemeSidebarSorter =
+    | HopeThemeSidebarSorterFunction
+    | HopeThemeSidebarSorterKeyWord
+    | HopeThemeSidebarSorterKeyWord[];
   ```
 
-- 默认值: `["readme", "order", "title"]`
+- 默认值: `["readme", "order", "title", "filename"]`
 
 结构侧边栏排序器。
 
@@ -200,11 +203,7 @@ tag:
 - `date`: 按日期升序排序
 - `date-desc`: 按日期降序排序
 - `title`: 按标题字母顺序排序
-- `title-number`: 根据标题的字母顺序排序，并以数字标签对相同的标题进行升序排序
-- `title-number-desc`: 按照标题的字母顺序排序，并以数字标签对相同的标题进行降序排序
 - `filename`: 按文件名字母顺序排序
-- `file-number`: 根据文件名的字母顺序排序，并以数字标签对相同的文件名进行升序排序
-- `file-number-desc`: 根据文件名的字母顺序排序，并以数字标签对相同的文件名进行降序排序
 
 ### headerDepth
 

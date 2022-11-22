@@ -727,13 +727,9 @@ Available keywords are:
 - `date`: sort by date ascendingly
 - `date-desc`: sort by date descendingly
 - `title`: alphabetically sort by title
-- `title-number`: alphabetically sort according to title and ascendingly sort same titles with different number label
-- `title-number-desc`: alphabetically sort according to title and descendingly sort same titles with different number label
 - `filename`: alphabetically sort by filename
-- `file-number`: alphabetically sort according to filename and ascendingly sort same filenames with different number label
-- `file-number-desc`: alphabetically sort according to filename and descendingly sort same filenames with different number label
 
-Corresponding to the above advanced control, its default value is `["readme", "order", "title"]`
+Corresponding to the above advanced control, its default value is `["readme", "order", "title", "filename"]`
 
 ### Disabling Sidebar
 

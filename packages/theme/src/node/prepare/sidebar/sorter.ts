@@ -8,16 +8,10 @@ export const readmeSorter = (
   infoA: HopeThemeSidebarInfo,
   infoB: HopeThemeSidebarInfo
 ): number => {
-  if (
-    infoA.type === "file" &&
-    (infoA.path === "README.md" || infoA.path === "readme.md")
-  )
+  if (infoA.type === "file" && infoA.filename.toLowerCase() === "readme.md")
     return -1;
 
-  if (
-    infoB.type === "file" &&
-    (infoB.path === "README.md" || infoB.path === "readme.md")
-  )
+  if (infoB.type === "file" && infoB.filename.toLowerCase() === "readme.md")
     return 1;
 
   return 0;
@@ -61,16 +55,16 @@ export const dateSorter = (
   infoA: HopeThemeSidebarInfo,
   infoB: HopeThemeSidebarInfo
 ): number => {
-  if (infoA.frontmatter.date instanceof Date) {
-    if (infoB.frontmatter.date instanceof Date)
+  if (infoA.frontmatter?.date instanceof Date) {
+    if (infoB.frontmatter?.date instanceof Date)
       return (
-        infoA.frontmatter.date.getTime() - infoB.frontmatter.date.getTime()
+        infoA.frontmatter?.date.getTime() - infoB.frontmatter.date.getTime()
       );
 
     return -1;
   }
 
-  if (infoB.frontmatter.date instanceof Date) return 1;
+  if (infoB.frontmatter?.date instanceof Date) return 1;
 
   return 0;
 };
@@ -79,8 +73,8 @@ export const dateDescSorter = (
   infoA: HopeThemeSidebarInfo,
   infoB: HopeThemeSidebarInfo
 ): number => {
-  if (infoA.frontmatter.date instanceof Date) {
-    if (infoB.frontmatter.date instanceof Date)
+  if (infoA.frontmatter?.date instanceof Date) {
+    if (infoB.frontmatter?.date instanceof Date)
       return (
         infoB.frontmatter.date.getTime() - infoA.frontmatter.date.getTime()
       );
@@ -88,83 +82,42 @@ export const dateDescSorter = (
     return -1;
   }
 
-  if (infoB.frontmatter.date instanceof Date) return 1;
+  if (infoB.frontmatter?.date instanceof Date) return 1;
 
   return 0;
 };
 
 const getFilename = (info: HopeThemeSidebarInfo): string =>
-  info.type === "file"
-    ? info.path.replace(/\.md$/, "")
-    : info.info.prefix.replace(/\/$/, "");
+  info.type === "file" ? info.filename.replace(/\.md$/, "") : info.dirname;
 
 export const filenameSorter = (
   infoA: HopeThemeSidebarInfo,
   infoB: HopeThemeSidebarInfo
-): number => getFilename(infoA).localeCompare(getFilename(infoB));
-
-export const fileNumberSorter = (
-  infoA: HopeThemeSidebarInfo,
-  infoB: HopeThemeSidebarInfo
 ): number => {
-  const [, filenameA, fileANumber] = /^(.*?)(\d*)?$/.exec(getFilename(infoA))!;
-  const [, filenameB, fileBNumber] = /^(.*?)(\d*)?$/.exec(getFilename(infoB))!;
+  const result = getFilename(infoA).localeCompare(
+    getFilename(infoB),
+    undefined,
+    {
+      numeric: true,
+      sensitivity: "accent",
+    }
+  );
 
-  const result = filenameA.localeCompare(filenameB);
+  if (result !== 0) return result;
 
-  if (result) return result;
+  if (infoA.type === "file" && infoB.type === "dir") return -1;
+  if (infoA.type === "dir" && infoB.type === "file") return 1;
 
-  return Number(fileANumber) - Number(fileBNumber);
+  return 0;
 };
-
-export const fileNumberDescSorter = (
-  infoA: HopeThemeSidebarInfo,
-  infoB: HopeThemeSidebarInfo
-): number => {
-  const [, filenameA, fileANumber] = /^(.*?)(\d*)?$/.exec(getFilename(infoA))!;
-  const [, filenameB, fileBNumber] = /^(.*?)(\d*)?$/.exec(getFilename(infoB))!;
-  const result = filenameA.localeCompare(filenameB);
-
-  if (result) return result;
-
-  return Number(fileBNumber) - Number(fileANumber);
-};
-
-const getTitle = (info: HopeThemeSidebarInfo): string =>
-  info.type === "dir" ? info.info.text : info.title;
 
 export const titleSorter = (
   infoA: HopeThemeSidebarInfo,
   infoB: HopeThemeSidebarInfo
-): number => getTitle(infoA).localeCompare(getTitle(infoB));
-
-export const titleNumberSorter = (
-  infoA: HopeThemeSidebarInfo,
-  infoB: HopeThemeSidebarInfo
-): number => {
-  const [, titleA, titleANumber] = /^(.*?)(\d*)?$/g.exec(getTitle(infoA))!;
-  const [, titleB, titleBNumber] = /^(.*?)(\d*)?$/g.exec(getTitle(infoB))!;
-
-  const result = titleA.localeCompare(titleB);
-
-  if (result) return result;
-
-  return Number(titleANumber) - Number(titleBNumber);
-};
-
-export const titleNumberDescSorter = (
-  infoA: HopeThemeSidebarInfo,
-  infoB: HopeThemeSidebarInfo
-): number => {
-  const [, titleA, titleANumber] = /^(.*?)(\d*)?$/.exec(getTitle(infoA))!;
-  const [, titleB, titleBNumber] = /^(.*?)(\d*)?$/.exec(getTitle(infoB))!;
-
-  const result = titleA.localeCompare(titleB);
-
-  if (result) return result;
-
-  return Number(titleBNumber) - Number(titleANumber);
-};
+): number =>
+  infoA.title.localeCompare(infoB.title, undefined, {
+    numeric: true,
+  });
 
 const sortKeyMap: Record<string, HopeThemeSidebarSorterFunction> = {
   readme: readmeSorter,
@@ -172,11 +125,7 @@ const sortKeyMap: Record<string, HopeThemeSidebarSorterFunction> = {
   date: dateSorter,
   "date-desc": dateDescSorter,
   filename: filenameSorter,
-  "file-number": fileNumberSorter,
-  "file-number-desc": fileNumberDescSorter,
   title: titleSorter,
-  "title-number": titleNumberSorter,
-  "title-number-desc": titleNumberDescSorter,
 };
 
 const availableKeywords = Object.keys(sortKeyMap);
@@ -194,5 +143,5 @@ export const getSorter = (
 
   if (typeof sorter === "function") return [sorter];
 
-  return [readmeSorter, orderSorter, titleSorter];
+  return [readmeSorter, orderSorter, titleSorter, filenameSorter];
 };

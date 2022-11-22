@@ -27,7 +27,7 @@ export interface HopeThemeNormalPageFrontmatter
    *
    * @default 0
    */
-  order?: number | false;
+  order?: number;
 
   /**
    * Dir config
