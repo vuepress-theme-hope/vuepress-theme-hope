@@ -25,7 +25,7 @@ $theme-color: #f00;
 
 你需要按照 `{ 颜色名1: 颜色值, 颜色名2: 颜色值, ... }` 的格式在主题选项中配置 `themeColor`:
 
-第一个颜色为上方设置的默认主题色。
+第一个颜色应为上方设置的默认主题色。
 
 :::: details 例子
 
@@ -52,11 +52,12 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {6-11}
-// .vuepress/config.js
+```js {7-12}
+// .vuepress/config.ts
+import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
+export default defineUserConfig({
   theme: hopeTheme({
     themeColor: {
       blue: "#2196f3",
@@ -65,7 +66,7 @@ export default {
       orange: "#fb9b5f",
     },
   }),
-};
+});
 ```
 
 :::
