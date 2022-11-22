@@ -24,12 +24,7 @@ export default [
     copy: [["compact/styles", "compact"]],
   }),
   ...rollupTypescript("client/components/ChartJS", {
-    external: [
-      "chart.js/auto/auto.mjs",
-      "vue",
-      "vuepress-shared/client",
-      /\.scss$/,
-    ],
+    external: ["chart.js/auto", "vue", "vuepress-shared/client", /\.scss$/],
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/CodeDemo", {
@@ -66,7 +61,12 @@ export default [
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/Mermaid", {
-    external: ["mermaid", "vue", "vuepress-shared/client", /\.scss$/],
+    external: [
+      "mermaid/dist/mermaid.esm.min.mjs",
+      "vue",
+      "vuepress-shared/client",
+      /\.scss$/,
+    ],
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/Playground", {
