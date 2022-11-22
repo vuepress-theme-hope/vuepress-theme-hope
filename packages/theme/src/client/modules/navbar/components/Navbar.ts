@@ -82,50 +82,38 @@ export default defineComponent({
             ],
           },
           [
-            h(
-              "div",
-              { class: "navbar-left" },
-              h("div", [
-                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-                // @ts-ignore
-                h(ToggleSidebarButton, {
-                  onToggle: () => {
-                    if (showScreen.value) showScreen.value = false;
-                    emit("toggle-sidebar");
-                  },
-                }),
-                slots["leftStart"]?.(),
-                ...navbarLayout.value.left.map((item) => map[item]),
-                slots["leftEnd"]?.(),
-              ])
-            ),
+            h("div", { class: "navbar-left" }, [
+              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+              // @ts-ignore
+              h(ToggleSidebarButton, {
+                onToggle: () => {
+                  if (showScreen.value) showScreen.value = false;
+                  emit("toggle-sidebar");
+                },
+              }),
+              slots["leftStart"]?.(),
+              ...navbarLayout.value.left.map((item) => map[item]),
+              slots["leftEnd"]?.(),
+            ]),
 
-            h(
-              "div",
-              { class: "navbar-center" },
-              h("div", [
-                slots["centerStart"]?.(),
-                ...navbarLayout.value.center.map((item) => map[item]),
-                slots["centerEnd"]?.(),
-              ])
-            ),
+            h("div", { class: "navbar-center" }, [
+              slots["centerStart"]?.(),
+              ...navbarLayout.value.center.map((item) => map[item]),
+              slots["centerEnd"]?.(),
+            ]),
 
-            h(
-              "div",
-              { class: "navbar-right" },
-              h("div", [
-                slots["rightStart"]?.(),
-                ...navbarLayout.value.right.map((item) => map[item]),
-                slots["rightEnd"]?.(),
+            h("div", { class: "navbar-right" }, [
+              slots["rightStart"]?.(),
+              ...navbarLayout.value.right.map((item) => map[item]),
+              slots["rightEnd"]?.(),
 
-                h(ToggleNavbarButton, {
-                  active: showScreen.value,
-                  onToggle: () => {
-                    showScreen.value = !showScreen.value;
-                  },
-                }),
-              ])
-            ),
+              h(ToggleNavbarButton, {
+                active: showScreen.value,
+                onToggle: () => {
+                  showScreen.value = !showScreen.value;
+                },
+              }),
+            ]),
           ]
         ),
         h(
