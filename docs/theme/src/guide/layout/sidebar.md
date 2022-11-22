@@ -631,7 +631,7 @@ export default {
 
 In the above modification, since the original sidebar array is all files under the relevant path, you can easily replace it with the `"structure"` keyword.
 
-If you use the structure to generate a folder with other folders nested under it and **the folder contains a `README.md` file**, the corresponding folder will be rendered as a group. So you can even be more aggressive, for example setting `sidebar: "structure"` to have your sidebars all auto-generated from the file structure.
+If you use the structure to generate a folder with other folders nested under it, the corresponding folder will be rendered as a group. So you can even be more aggressive, for example setting `sidebar: "structure"` to have your sidebars all auto-generated from the file structure.
 
 #### Advanced Control
 
@@ -715,6 +715,8 @@ interface SidebarDirInfo {
   order?: number | false;
 }
 ```
+
+If no README.md file exists for the corresponding folder, only the group header will be generated from the folder name.
 
 #### Customize Sorter
 
