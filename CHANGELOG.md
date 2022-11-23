@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.129](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.128...v2.0.0-beta.129) (2022-11-23)
+
+### Bug Fixes
+
+- fix deps ([b3b5283](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b3b5283ef8b70b7e847be082df29fe96c934ea37))
+
 ## [2.0.0-beta.128](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.127...v2.0.0-beta.128) (2022-11-23)
 
 ### Features
