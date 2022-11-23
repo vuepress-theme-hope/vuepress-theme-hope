@@ -364,7 +364,7 @@ interface TaskListOptions {
     service?: string;
   }
 
-  export interface VuePresetPlaygroundOptions {
+  interface VuePresetPlaygroundOptions {
     /**
      * 交互演示外部地址
      *

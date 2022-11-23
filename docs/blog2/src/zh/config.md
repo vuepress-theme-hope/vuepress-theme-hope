@@ -87,7 +87,7 @@ Slugify 函数，用于转换 key 在路由中注册的形式。
 博客分类配置应为一个数组，每一项控制一个分类规则。
 
 ```ts
-export interface BlogCategoryOptions {
+interface BlogCategoryOptions {
   /**
    * 唯一的分类名称
    */
@@ -155,7 +155,7 @@ export interface BlogCategoryOptions {
 博客类型配置应为一个数组，每一项控制一个类型规则。
 
 ```ts
-export interface BlogTypeOptions {
+interface BlogTypeOptions {
   /**
    * 唯一的类型名称
    */
@@ -199,7 +199,7 @@ export interface BlogTypeOptions {
 - 博客分类
 
   ```ts
-  export declare const useBlogCategory: <
+  declare const useBlogCategory: <
     T extends Record<string, unknown> = Record<string, unknown>
   >(
     key?: string
@@ -211,7 +211,7 @@ export interface BlogTypeOptions {
 - 博客类型
 
   ```ts
-  export declare const useBlogType: <
+  declare const useBlogType: <
     T extends Record<string, unknown> = Record<string, unknown>
   >(
     key?: string
@@ -223,16 +223,14 @@ export interface BlogTypeOptions {
 详细的返回值如下:
 
 ```ts
-export interface Article<
-  T extends Record<string, unknown> = Record<string, unknown>
-> {
+interface Article<T extends Record<string, unknown> = Record<string, unknown>> {
   /** 文章路径 */
   path: string;
   /** 文章信息 */
   info: T;
 }
 
-export interface BlogCategoryData<
+interface BlogCategoryData<
   T extends Record<string, unknown> = Record<string, unknown>
 > {
   /** 分类路径 */
@@ -255,7 +253,7 @@ export interface BlogCategoryData<
   };
 }
 
-export interface BlogTypeData<
+interface BlogTypeData<
   T extends Record<string, unknown> = Record<string, unknown>
 > {
   /** 类别路径 */

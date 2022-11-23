@@ -153,8 +153,6 @@ tag:
     order: number | null;
 
     groupInfo: {
-      // prefix: string;
-      // text: string;
       icon?: string;
       collapsible?: boolean;
       link?: string;

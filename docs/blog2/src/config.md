@@ -87,7 +87,7 @@ Also, you can try to detect number of pages in users project and decide whether 
 Blog category config should be an array, while each item is controlling a "category" rule.
 
 ```ts
-export interface BlogCategoryOptions {
+interface BlogCategoryOptions {
   /**
    * Unique category name
    */
@@ -155,7 +155,7 @@ export interface BlogCategoryOptions {
 Blog type config should be an array, while each item is controlling a "type" rule.
 
 ```ts
-export interface BlogTypeOptions {
+interface BlogTypeOptions {
   /**
    * Unique type name
    */
@@ -199,7 +199,7 @@ You can import the following api from `vuepress-plugin-blog2/client`.
 - Blog category
 
   ```ts
-  export declare const useBlogCategory: <
+  declare const useBlogCategory: <
     T extends Record<string, unknown> = Record<string, unknown>
   >(
     key?: string
@@ -213,7 +213,7 @@ You can import the following api from `vuepress-plugin-blog2/client`.
 - Blog category
 
   ```ts
-  export declare const useBlogType: <
+  declare const useBlogType: <
     T extends Record<string, unknown> = Record<string, unknown>
   >(
     key?: string
@@ -227,16 +227,14 @@ You can import the following api from `vuepress-plugin-blog2/client`.
 Returning values are:
 
 ```ts
-export interface Article<
-  T extends Record<string, unknown> = Record<string, unknown>
-> {
+interface Article<T extends Record<string, unknown> = Record<string, unknown>> {
   /** Article path */
   path: string;
   /** Article info */
   info: T;
 }
 
-export interface BlogCategoryData<
+interface BlogCategoryData<
   T extends Record<string, unknown> = Record<string, unknown>
 > {
   /** Category path */
@@ -259,7 +257,7 @@ export interface BlogCategoryData<
   };
 }
 
-export interface BlogTypeData<
+interface BlogTypeData<
   T extends Record<string, unknown> = Record<string, unknown>
 > {
   /** Type path */

@@ -153,8 +153,6 @@ Whether show icons in the sidebar
     order: number | null;
 
     groupInfo: {
-      // prefix: string;
-      // text: string;
       icon?: string;
       collapsible?: boolean;
       link?: string;

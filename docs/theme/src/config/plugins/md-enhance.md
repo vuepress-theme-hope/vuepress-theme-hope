@@ -360,7 +360,7 @@ Stylize inline tokens to create snippet you want.
     service?: string;
   }
 
-  export interface VuePresetPlaygroundOptions {
+  interface VuePresetPlaygroundOptions {
     /**
      * external playground service url
      *
