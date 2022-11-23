@@ -22,7 +22,10 @@ import {
 import { useSidebarItems } from "@theme-hope/modules/sidebar/composables/index.js";
 
 import type { DefineComponent, VNode } from "vue";
-import type { HopeThemePageFrontmatter } from "../../shared/index.js";
+import type {
+  HopeThemeNormalPageFrontmatter,
+  HopeThemeProjectHomePageFrontmatter,
+} from "../../shared/index.js";
 
 import "../styles/common.scss";
 
@@ -45,7 +48,9 @@ export default defineComponent({
   setup(props, { slots }) {
     const router = useRouter();
     const page = usePageData();
-    const frontmatter = usePageFrontmatter<HopeThemePageFrontmatter>();
+    const frontmatter = usePageFrontmatter<
+      HopeThemeProjectHomePageFrontmatter | HopeThemeNormalPageFrontmatter
+    >();
     const themeLocale = useThemeLocaleData();
     const isMobile = useMobile();
 
@@ -112,10 +117,11 @@ export default defineComponent({
       }
     };
 
-    const enableToc = computed(
-      () =>
-        frontmatter.value.toc ||
-        (themeLocale.value.toc !== false && frontmatter.value.toc !== false)
+    const enableToc = computed(() =>
+      frontmatter.value.home
+        ? false
+        : frontmatter.value.toc ||
+          (themeLocale.value.toc !== false && frontmatter.value.toc !== false)
     );
 
     /** Get scroll distance */

@@ -155,6 +155,13 @@ export interface HopeThemeNormalPageFrontmatter
   next?: string | AutoLink;
 
   /**
+   * Whether show toc list in desktop mode
+   *
+   * 是否在桌面模式下展示标题列表
+   */
+  toc?: boolean;
+
+  /**
    * PageInfo items
    *
    * 页面信息项

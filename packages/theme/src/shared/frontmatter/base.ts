@@ -29,11 +29,4 @@ export interface HopeThemePageFrontmatter extends BasePageFrontMatter {
    * 页面容器的额外类名
    */
   containerClass?: string;
-
-  /**
-   * Whether show toc list in desktop mode
-   *
-   * 是否在桌面模式下展示标题列表
-   */
-  toc?: boolean;
 }
