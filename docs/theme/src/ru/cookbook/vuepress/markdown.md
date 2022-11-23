@@ -17,7 +17,7 @@ tag:
 
 В этом разделе будут представлены встроенные расширения синтаксиса Markdown для VuePress.
 
-Вы также можете настроить эти встроенные расширения, загрузить дополнительные плагины markdown-it и реализовать свои собственные расширения с помощью опции [markdown](https://v2.vuepress.vuejs.org/reference/config.md#markdown) и [extendsMarkdown](https://v2.vuepress.vuejs.org/reference/plugin-api.md#extendsmarkdown).
+Вы также можете настроить эти встроенные расширения, загрузить дополнительные плагины markdown-it и реализовать свои собственные расширения с помощью опции [markdown](https://v2.vuepress.vuejs.org/reference/config.md#markdown) и [extendsMarkdown](https://v2.vuepress.vuejs.org/reference/plugin-api.html#extendsmarkdown).
 
 ### Встроенный
 
@@ -33,7 +33,7 @@ tag:
 ::: tip
 Это расширение привязки заголовков поддерживается [markdown-it-anchor](https://github.com/valeriangalliat/markdown-it-anchor).
 
-Ссылка на конфигурацию: [markdown.anchor](https://v2.vuepress.vuejs.org/reference/config.md#markdown-anchor)
+Ссылка на конфигурацию: [markdown.anchor](https://v2.vuepress.vuejs.org/reference/config.html#markdown-anchor)
 :::
 
 ### Ссылки
@@ -111,12 +111,12 @@ tag:
 
 - Относительные пути являются действительными ссылками на целевые файлы, и по ним можно правильно перемещаться при просмотре исходных файлов в вашем редакторе или репозитории.
 - Относительные пути согласованы в разных локалях, поэтому вам не нужно менять путь локали при переводе контента.
-- При использовании абсолютных путей, если [base](https://v2.vuepress.vuejs.org/reference/config.md#base) вашего сайта не `"/"`, вам нужно будет добавить `base` вручную или используйте [base хелпер](https://v2.vuepress.vuejs.org/guide/assets.html#base-helper).
+- При использовании абсолютных путей, если [base](https://v2.vuepress.vuejs.org/reference/config.html#base) вашего сайта не `"/"`, вам нужно будет добавить `base` вручную или используйте [base хелпер](https://v2.vuepress.vuejs.org/guide/assets.html#base-helper).
 
 ::: tip
 Это расширение ссылок поддерживается нашим встроенным плагином.
 
-Ссылка на конфигурацию: [markdown.links](https://v2.vuepress.vuejs.org/reference/config.md#markdown-links)
+Ссылка на конфигурацию: [markdown.links](https://v2.vuepress.vuejs.org/reference/config.html#markdown-links)
 :::
 
 ### Эмодзи
@@ -138,7 +138,7 @@ VuePress 2 is out :tada: !
 ::: tip
 Это расширение emoji поддерживается [markdown-it-emoji](https://github.com/markdown-it/markdown-it-emoji).
 
-Ссылка на конфигурацию: [markdown.emoji](https://v2.vuepress.vuejs.org/reference/config.md#markdown-emoji)
+Ссылка на конфигурацию: [markdown.emoji](https://v2.vuepress.vuejs.org/reference/config.html#markdown-emoji)
 :::
 
 ### Оглавление
@@ -160,7 +160,7 @@ VuePress 2 is out :tada: !
 ::: tip
 Это расширение toc поддерживается нашим встроенным плагином, который разветвлен и модифицирован из [markdown-it-toc-done-right](https://github.com/nagaozen/markdown-it-toc-done-right).
 
-Ссылка на конфигурацию: [markdown.toc](https://v2.vuepress.vuejs.org/reference/config.md#markdown-toc)
+Ссылка на конфигурацию: [markdown.toc](https://v2.vuepress.vuejs.org/reference/config.html#markdown-toc)
 :::
 
 ### Блоки кода
@@ -216,7 +216,7 @@ export const config: UserConfig = {
 ::: tip
 Это расширение для выделения строк поддерживается нашим встроенным плагином, который является разветвленным и модифицированным из [markdown-it-highlight-lines](https://github.com/egoist/markdown-it-highlight-lines).
 
-Ссылка на конфигурацию: [markdown.code.highlightLines](https://v2.vuepress.vuejs.org/reference/config.md#markdown-code-highlightlines)
+Ссылка на конфигурацию: [markdown.code.highlightLines](https://v2.vuepress.vuejs.org/reference/config.html#markdown-code-highlightlines)
 :::
 
 #### Номера строк
@@ -258,7 +258,7 @@ const line3 = 'This is line 3'
 ::: tip
 Это расширение номеров строк поддерживается нашим встроенным плагином.
 
-Ссылка на конфигурацию: [markdown.code.lineNumbers](https://v2.vuepress.vuejs.org/reference/config.md#markdown-code-linenumbers)
+Ссылка на конфигурацию: [markdown.code.lineNumbers](https://v2.vuepress.vuejs.org/reference/config.html#markdown-code-linenumbers)
 :::
 
 #### Обертка с помощью v-pre
@@ -321,7 +321,7 @@ const onePlusTwoPlusThree = {{ 1 + 2 + 3 }}
 ::: tip
 Это расширение v-pre поддерживается нашим встроенным плагином.
 
-Ссылка на конфигурацию: [markdown.code.vPre](https://v2.vuepress.vuejs.org/reference/config.md#markdown-vpre)
+Ссылка на конфигурацию: [markdown.code.vPre](https://v2.vuepress.vuejs.org/reference/config.html#markdown-vpre)
 :::
 
 ### Импорт блоков кода
@@ -395,14 +395,14 @@ export default {
 ::: tip
 Это расширение кода импорта поддерживается нашим встроенным плагином.
 
-Ссылка на конфигурацию: [markdown.importCode](https://v2.vuepress.vuejs.org/reference/config.md#markdown-importcode)
+Ссылка на конфигурацию: [markdown.importCode](https://v2.vuepress.vuejs.org/reference/config.html#markdown-importcode)
 :::
 
 ## Использование Vue в Markdown
 
 В этом разделе будут представлены некоторые основные принципы использования Vue в Markdown.
 
-Ознакомьтесь с [Учебник с примерами > Markdown и Vue SFC](https://v2.vuepress.vuejs.org/advanced/cookbook/markdown-and-vue-sfc.md) для получения более подробной информации.
+Ознакомьтесь с [Учебник с примерами > Markdown и Vue SFC](https://v2.vuepress.vuejs.org/advanced/cookbook/markdown-and-vue-sfc.html) для получения более подробной информации.
 
 ### Синтаксис шаблона
 
@@ -447,7 +447,7 @@ This is default theme built-in `<Badge />` component <Badge text="demo" />
 
 ::: tip
 
-Ознакомьтесь со [Встроенными компонентами](https://v2.vuepress.vuejs.org/reference/components.md) для получения полного списка встроенных компонентов.
+Ознакомьтесь со [Встроенными компонентами](https://v2.vuepress.vuejs.org/reference/components.html) для получения полного списка встроенных компонентов.
 
 :::
 
@@ -463,5 +463,5 @@ This is default theme built-in `<Badge />` component <Badge text="demo" />
 
 - Добавление директивы [v-pre](https://v3.vuejs.org/api/directives.html#v-pre) для пропуска компиляции элемента и его дочерних элементов. Обратите внимание, что синтаксис шаблона также будет недопустимым.
 - Использование [compilerOptions.isCustomElement](https://v3.vuejs.org/api/application-config.html#compileroptions), чтобы компилятор шаблонов Vue не пытался разрешать их как компоненты.
-  - Для `@bundler-webpack`, установите [vue.compilerOptions](https://v2.vuepress.vuejs.org/reference/bundler/webpack.md#vue)
-  - Для `@bundler-vite`, установите [vuePluginOptions.template.compilerOptions](https://v2.vuepress.vuejs.org/reference/bundler/vite.md#vuepluginoptions)
+  - Для `@bundler-webpack`, установите [vue.compilerOptions](https://v2.vuepress.vuejs.org/reference/bundler/webpack.html#vue)
+  - Для `@bundler-vite`, установите [vuePluginOptions.template.compilerOptions](https://v2.vuepress.vuejs.org/reference/bundler/vite.html#vuepluginoptions)

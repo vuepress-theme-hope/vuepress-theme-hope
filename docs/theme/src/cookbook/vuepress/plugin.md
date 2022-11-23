@@ -9,7 +9,7 @@ tag:
   - VuePress
 ---
 
-With the help of [Plugin API](https://v2.vuepress.vuejs.org/reference/plugin-api.md), VuePress plugin can provide different features for you.
+With the help of [Plugin API](https://v2.vuepress.vuejs.org/reference/plugin-api.html), VuePress plugin can provide different features for you.
 
 ## Community Plugin
 

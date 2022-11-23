@@ -26,7 +26,7 @@ VuePress ориентирован на уценку. Каждый файл Markd
    └─ README.md
 ```
 
-Возьмите каталог `docs` в качестве [исходного каталога](https://v2.vuepress.vuejs.org/reference/cli.md), например вы используете команду `vuepress dev docs`. Тогда пути маршрута ваших файлов Markdown будут такими:
+Возьмите каталог `docs` в качестве [исходного каталога](https://v2.vuepress.vuejs.org/reference/cli.html), например вы используете команду `vuepress dev docs`. Тогда пути маршрута ваших файлов Markdown будут такими:
 
 | Относительный путь | Путь маршрута        |
 | ------------------ | -------------------- |
@@ -53,9 +53,9 @@ description: Description of this page
 
 ::: tip
 
-Ознакомьтесь со [Справочником Frontmatter](https://v2.vuepress.vuejs.org/reference/frontmatter.md) для получения полного списка встроенных интерфейсов VuePress.
+Ознакомьтесь со [Справочником Frontmatter](https://v2.vuepress.vuejs.org/reference/frontmatter.html) для получения полного списка встроенных интерфейсов VuePress.
 
-Ознакомьтесь с [Тема по умолчанию > Справочником Frontmatter](https://v2.vuepress.vuejs.org/reference/default-theme/frontmatter.md), чтобы узнать о теме по умолчанию.
+Ознакомьтесь с [Конфиг > Frontmatter](../../config/frontmatter/README.md), чтобы узнать о теме по `vuepress-theme-hope`.
 
 :::
 

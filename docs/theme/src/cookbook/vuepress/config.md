@@ -69,7 +69,7 @@ export default {
 
 ::: tip
 
-Check out the [Config Reference](https://v2.vuepress.vuejs.org/reference/config.md) for a full list of VuePress config.
+Check out the [Config Reference](https://v2.vuepress.vuejs.org/reference/config.html) for a full list of VuePress config.
 
 :::
 

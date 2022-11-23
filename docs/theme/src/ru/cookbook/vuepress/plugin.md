@@ -9,7 +9,7 @@ tag:
   - VuePress
 ---
 
-С помощью [Plugin API](https://v2.vuepress.vuejs.org/reference/plugin-api.md), плагин VuePress может предоставить вам различные функции.
+С помощью [Plugin API](https://v2.vuepress.vuejs.org/reference/plugin-api.html), плагин VuePress может предоставить вам различные функции.
 
 ## Плагин сообщества
 

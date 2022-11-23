@@ -71,7 +71,7 @@ export default {
 
 ::: tip
 
-前往 [配置参考](https://v2.vuepress.vuejs.org/zh/reference/config.md) 查看所有 VuePress 配置。
+前往 [配置参考](https://v2.vuepress.vuejs.org/zh/reference/config.html) 查看所有 VuePress 配置。
 
 :::
 

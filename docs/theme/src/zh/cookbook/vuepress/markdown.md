@@ -15,7 +15,7 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
 
 本章节将会介绍 VuePress 内置支持的 Markdown 语法扩展。
 
-你也可以通过 [markdown](https://v2.vuepress.vuejs.org/zh/reference/config.md#markdown) 和 [extendsMarkdown](https://v2.vuepress.vuejs.org/zh/reference/plugin-api.md#extendsmarkdown) 来配置这些内置扩展、加载更多 markdown-it 插件、实现你自己的扩展等。
+你也可以通过 [markdown](https://v2.vuepress.vuejs.org/zh/reference/config.html#markdown) 和 [extendsMarkdown](https://v2.vuepress.vuejs.org/zh/reference/plugin-api.html#extendsmarkdown) 来配置这些内置扩展、加载更多 markdown-it 插件、实现你自己的扩展等。
 
 ### 内置
 
@@ -31,7 +31,7 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
 ::: tip
 标题锚点扩展由 [markdown-it-anchor](https://github.com/valeriangalliat/markdown-it-anchor) 支持。
 
-配置参考: [markdown.anchor](https://v2.vuepress.vuejs.org/zh/reference/config.md#markdown-anchor)
+配置参考: [markdown.anchor](https://v2.vuepress.vuejs.org/zh/reference/config.html#markdown-anchor)
 :::
 
 ### 链接

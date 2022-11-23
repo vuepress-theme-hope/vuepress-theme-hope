@@ -26,7 +26,7 @@ VuePress 是以 Markdown 为中心的。你项目中的每一个 Markdown 文件
    └─ README.md
 ```
 
-将 `docs` 目录作为你的 [sourceDir](https://v2.vuepress.vuejs.org/zh/reference/cli.md) ，例如你在运行 `vuepress dev docs` 命令。此时，你的 Markdown 文件对应的路由路径为:
+将 `docs` 目录作为你的 [sourceDir](https://v2.vuepress.vuejs.org/zh/reference/cli.html) ，例如你在运行 `vuepress dev docs` 命令。此时，你的 Markdown 文件对应的路由路径为:
 
 | 相对路径           | 路由路径             |
 | ------------------ | -------------------- |
@@ -52,9 +52,11 @@ description: 页面的描述
 同样的，VuePress 有一些内置支持的 Frontmatter 字段，而你使用的主题也可能有它自己的特殊 Frontmatter 。
 
 ::: tip
-前往 [Frontmatter 参考](https://v2.vuepress.vuejs.org/zh/reference/config.md) 查看 VuePress 支持的 Frontmatter 配置。
 
-前往 [默认主题 > Frontmatter 参考](https://v2.vuepress.vuejs.org/zh/reference/default-theme/frontmatter.md) 查看默认主题的 Frontmatter 配置。
+前往 [Frontmatter 参考](https://v2.vuepress.vuejs.org/zh/reference/config.html) 查看 VuePress 支持的 Frontmatter 配置。
+
+前往 [配置 > Frontmatter](../../config/frontmatter/README.md) 查看 `vuepress-theme-hope` 的 Frontmatter 配置。
+
 :::
 
 ## 内容
