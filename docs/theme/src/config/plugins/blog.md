@@ -98,3 +98,10 @@ Star article list route path.
 - Default: `/timeline/`
 
 Timeline list route path.
+
+### hotReload
+
+- Type: `boolean`
+- Default: Whether using `--debug` flag
+
+Whether to enable hot reload in the development server.

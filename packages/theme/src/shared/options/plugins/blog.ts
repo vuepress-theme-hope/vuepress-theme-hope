@@ -1,7 +1,7 @@
 import type { BlogOptions } from "vuepress-plugin-blog2";
 
 export interface BlogPluginOptions
-  extends Partial<Pick<BlogOptions, "filter">> {
+  extends Partial<Pick<BlogOptions, "filter" | "hotReload">> {
   /**
    * Path of article list
    *

@@ -98,3 +98,10 @@ tag:
 - По умолчанию: `/timeline/`
 
 Путь маршрута списка временной шкалы.
+
+### hotReload
+
+- Type: `boolean`
+- Default: Whether using `--debug` flag
+
+Whether to enable hot reload in the development server.

@@ -267,5 +267,7 @@ export const getBlogPlugin = (
         }),
       },
     ],
+
+    ...("hotReload" in blogOptions ? { hotReload: blogOptions.hotReload } : {}),
   });
 };
