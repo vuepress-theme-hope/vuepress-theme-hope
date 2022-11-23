@@ -80,8 +80,8 @@ export class FeedGenerator {
 
     logger.succeed(
       `added ${chalk.cyan(
-        `${count} page(s)`
-      )} as feed item(s) in route ${chalk.cyan(localePath)}`
+        `${count} page${count > 1 ? "s" : ""}`
+      )} as feed item${count > 1 ? "s" : ""} in route ${chalk.cyan(localePath)}`
     );
   }
 
@@ -105,7 +105,7 @@ export class FeedGenerator {
 
             logger.succeed(
               `Atom feed file generated and saved to ${chalk.cyan(
-                atomOutputFilename
+                `/${atomOutputFilename}`
               )}`
             );
           }
@@ -117,7 +117,7 @@ export class FeedGenerator {
 
             logger.succeed(
               `JSON feed file generated and saved to ${chalk.cyan(
-                jsonOutputFilename
+                `${jsonOutputFilename}`
               )}`
             );
           }
@@ -129,7 +129,7 @@ export class FeedGenerator {
 
             logger.succeed(
               `RSS feed file generated and saved to ${chalk.cyan(
-                rssOutputFilename
+                `${rssOutputFilename}`
               )}`
             );
           }

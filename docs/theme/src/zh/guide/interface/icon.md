@@ -92,7 +92,7 @@ tag:
 
 @tab TS
 
-```ts
+```ts {7}
 // .vuepress/config.ts
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
@@ -106,15 +106,16 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {7-9}
-// .vuepress/config.js
+```js {7}
+// .vuepress/config.ts
+import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
+export default defineUserConfig({
   theme: hopeTheme({
     iconAssets: "fontawesome",
   }),
-};
+});
 ```
 
 :::
@@ -140,7 +141,7 @@ Font-awesome 当前版本为 V6。
 
 @tab TS
 
-```ts
+```ts {7}
 // .vuepress/config.ts
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
@@ -154,15 +155,16 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {7-9}
-// .vuepress/config.js
+```js {7}
+// .vuepress/config.ts
+import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
+export default defineUserConfig({
   theme: hopeTheme({
     iconAssets: "iconfont",
   }),
-};
+});
 ```
 
 :::

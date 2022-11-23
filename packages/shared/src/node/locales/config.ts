@@ -6,16 +6,17 @@ export const lang2PathConfig = {
   "en-US": "/en/",
   "es-ES": "/es/",
   "fr-FR": "/fr/",
+  "ja-JP": "/ja/",
+  "ko-KR": "/ko/",
   "pl-PL": "/pl/",
   "pt-BR": "/br/",
   "ru-RU": "/ru/",
   "sk-SK": "/sk/",
+  "tr-TR": "/tr/",
   "uk-UA": "/uk/",
   "vi-VN": "/vi/",
-  "ja-JP": "/ja/",
   "zh-CN": "/zh/",
   "zh-TW": "/zh-tw/",
-  "tr-TR": "/tr/",
 };
 
 export const supportedLangs = Object.keys(lang2PathConfig);

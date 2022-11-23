@@ -133,49 +133,61 @@ tag:
 - Тип: `HopeThemeSidebarSorter`
 
   ```ts
-  export interface HopeThemeSidebarFileInfo {
+  interface HopeThemeSidebarFileInfo {
     type: "file";
-    order: number | null;
-    frontmatter: HopeThemeNormalPageFrontmatter;
-    pageData: HopeThemePageData;
+    filename: string;
+
     title: string;
-    path: string;
-  }
-  export interface HopeThemeSidebarDirInfo {
-    type: "dir";
     order: number | null;
+
     frontmatter: HopeThemeNormalPageFrontmatter;
     pageData: HopeThemePageData;
-    info: {
-      prefix: string;
-      text: string;
+  }
+
+  interface HopeThemeSidebarDirInfo {
+    type: "dir";
+    dirname: string;
+    children: HopeThemeSidebarInfo[];
+
+    title: string;
+    order: number | null;
+
+    groupInfo: {
+      // prefix: string;
+      // text: string;
       icon?: string;
       collapsible?: boolean;
       link?: string;
     };
-    children: HopeThemeSidebarInfo[];
+
+    frontmatter: HopeThemeNormalPageFrontmatter | null;
+    pageData: HopeThemePageData | null;
   }
-  export type HopeThemeSidebarInfo =
+
+  type HopeThemeSidebarInfo =
     | HopeThemeSidebarFileInfo
     | HopeThemeSidebarDirInfo;
-  export type HopeThemeSidebarSorterKeyWord =
+
+  type HopeThemeSidebarSorterKeyWord =
     | "readme"
     | "order"
     | "date"
     | "date-desc"
     | "filename"
-    | "file-number"
-    | "file-number-desc"
-    | "title"
-    | "title-number"
-    | "title-number-desc";
-  export type HopeThemeSidebarSorterFunction = (
+    | "title";
+
+  type HopeThemeSidebarSorterFunction = (
     infoA: HopeThemeSidebarInfo,
     infoB: HopeThemeSidebarInfo
   ) => number;
+
+  type HopeThemeSidebarSorter =
+    | HopeThemeSidebarSorterFunction
+    | HopeThemeSidebarSorterKeyWord
+    | HopeThemeSidebarSorterKeyWord[];
   ```
 
-- По умолчанию: `["readme", "order", "title"]`
+- По умолчанию: `["readme", "order", "title", "filename"]`
 
 Структура сортировки боковой панели.
 
@@ -191,11 +203,7 @@ tag:
 - `date`: сортировка по дате по возрастанию
 - `date-desc`: сортировка по дате по убыванию
 - `title`: сортировка по названию в алфавитном порядке
-- `title-number`: сортировка по алфавиту по названию и сортировка по возрастанию тех же названий с разными номерными метками
-- `title-number-desc`: сортировка по алфавиту в соответствии с названием и сортировка по убыванию одинаковых названий с разными номерными метками
 - `filename`: сортировка по алфавиту по имени файла
-- `file-number`: сортировка по алфавиту по имени файла и сортировка по возрастанию одинаковых имен файлов с разными номерными метками
-- `file-number-desc`: сортировка по алфавиту по имени файла и сортировка по убыванию одинаковых имен файлов с разными числовыми метками
 
 ### headerDepth
 

@@ -61,6 +61,7 @@ export const viLocale: HopeThemeLocaleData = {
   },
 
   routeLocales: {
+    skipToContent: "Bỏ qua nội dung chính",
     notFoundMsg: [
       "Ở đây chẳng có gì cả.",
       "Sao chúng ta lại đến đây?",

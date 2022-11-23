@@ -17,6 +17,7 @@ export default [
     external: [
       "@vuepress/client",
       "@vueuse/core",
+      "body-scroll-lock",
       "vue",
       "vue-router",
       "vuepress-shared/client",

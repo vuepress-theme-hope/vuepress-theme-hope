@@ -25,7 +25,7 @@ $theme-color: #f00;
 
 You need to set `themeColor` with `{ colorName1: colorValue1, colorName2: colorValue2, ... }` format:
 
-The first color is the default theme color above.
+The first color should be the default theme color above.
 
 :::: details Example
 
@@ -52,11 +52,12 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {6-11}
-// .vuepress/config.js
+```js {7-12}
+// .vuepress/config.ts
+import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
-export default {
+export default defineUserConfig({
   theme: hopeTheme({
     themeColor: {
       blue: "#2196f3",
@@ -65,7 +66,7 @@ export default {
       orange: "#fb9b5f",
     },
   }),
-};
+});
 ```
 
 :::

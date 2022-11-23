@@ -23,11 +23,6 @@ icon: config
   ```ts
   interface SearchProCustomFieldOptions {
     /**
-     * 自定义项目的名称
-     */
-    name: string;
-
-    /**
      * 自定义项目的获取器
      */
     getter: (page: Page) => string | string[] | null;
@@ -127,11 +122,24 @@ export default defineUserConfig({
   }
   ```
 
-- 默认值: `[{key:'k',ctrl:true}]`
+- 默认值: `[{key: 'k', ctrl: true}]`
 
 指定热键的 [event.key](http://keycode.info/)。
 
 当热键被按下时，搜索框的输入框会被聚焦，设置为空数组以禁用热键。
+
+## delay
+
+- 类型: `number`
+- 默认值: `300`
+
+结束输入到开始搜索的延时
+
+::: note
+
+有大量内容时，进行客户端搜素可能会很慢，在这种情况下你可能需要增加此值来确保开始搜索时用户已完成输入。
+
+:::
 
 ## hotReload
 
@@ -195,7 +203,7 @@ export default defineUserConfig({
     /**
      * 无结果提示
      */
-    emply: string;
+    empty: string;
   }
 
   interface SearchProLocaleConfig {

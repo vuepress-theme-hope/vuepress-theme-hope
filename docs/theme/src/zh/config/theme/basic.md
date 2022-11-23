@@ -33,9 +33,26 @@ tag:
 - 类型: `Author`
 
   ```ts
-  type AuthorInfo = { name: string; url?: string };
+  type AuthorName = string;
 
-  type Author = string | string[] | AuthorInfo | AuthorInfo[];
+  interface AuthorInfo {
+    /**
+     * 作者姓名
+     */
+    name: string;
+
+    /**
+     * 作者网站
+     */
+    url?: string;
+
+    /**
+     * 作者 Email
+     */
+    email?: string;
+  }
+
+  type Author = AuthorName | AuthorName[] | AuthorInfo | AuthorInfo[];
   ```
 
 - 必填: 否
@@ -48,21 +65,58 @@ tag:
 
   ```ts
   interface TextItem {
+    /**
+     * 项目文字
+     */
     text: string;
+
+    /**
+     * 项目图标
+     */
     icon?: string;
+
+    /**
+     * 项目无障碍标签
+     */
     ariaLabel?: string;
   }
 
   interface AutoLink extends TextItem {
+    /**
+     * 当前页面链接
+     */
     link: string;
+
+    /**
+     * `<a>` 标签的 `rel` 属性
+     */
     rel?: string;
+
+    /**
+     * `<a>` 标签的 `target` 属性
+     */
     target?: string;
+
+    /**
+     * 匹配激活的正则表达式
+     */
     activeMatch?: string;
   }
 
   interface HopeThemeNavGroup<T> extends TextItem {
+    /**
+     * 当前分组的页面前缀
+     */
     prefix?: string;
+
+    /**
+     * 当前分组的链接
+     */
     link?: string;
+
+    /**
+     * 当前分组的子项
+     */
     children: T[];
   }
 
@@ -87,24 +141,67 @@ tag:
 
   ```ts
   interface TextItem {
+    /**
+     * 项目文字
+     */
     text: string;
+
+    /**
+     * 项目图标
+     */
     icon?: string;
+
+    /**
+     * 项目无障碍标签
+     */
     ariaLabel?: string;
   }
 
   interface AutoLink extends TextItem {
+    /**
+     * 当前页面链接
+     */
     link: string;
+
+    /**
+     * `<a>` 标签的 `rel` 属性
+     */
     rel?: string;
+
+    /**
+     * `<a>` 标签的 `target` 属性
+     */
     target?: string;
+
+    /**
+     * 匹配激活的正则表达式
+     */
     activeMatch?: string;
   }
 
   type HopeThemeSidebarPageItem = AutoLink;
 
   interface HopeThemeSidebarGroupItem extends TextItem {
+    /**
+     * 当前分组的页面前缀
+     */
     prefix?: string;
+
+    /**
+     * 当前分组的链接
+     */
     link?: string;
+
+    /**
+     * 当前分组的链接是否可折叠
+     *
+     * @default false
+     */
     collapsible?: boolean;
+
+    /**
+     * 当前分组的子项
+     */
     children: (
       | HopeThemeSidebarPageItem
       | HopeThemeSidebarGroupItem
@@ -114,9 +211,23 @@ tag:
   }
 
   interface HopeThemeSidebarStructureItem extends TextItem {
-    prefix: string;
+    /**
+     * 当前分组的页面前缀
+     */
+    prefix?: string;
+
+    /**
+     * 当前分组的链接
+     */
     link?: string;
+
+    /**
+     * 当前分组的链接是否可折叠
+     *
+     * @default false
+     */
     collapsible?: boolean;
+
     children: "structure";
   }
 
@@ -145,5 +256,7 @@ tag:
 ## locales
 
 - 类型: `Record<string, HopeThemeLocaleOptions>`
+- 详情:
+  - [主题多语言配置](./i18n.md)
 
 主题的多语言配置，你可以在这里分别为每个语言设置单独的选项。

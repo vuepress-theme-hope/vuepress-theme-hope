@@ -1,11 +1,10 @@
-import { useScrollLock } from "@vueuse/core";
+import { disableBodyScroll, clearAllBodyScrollLocks } from "body-scroll-lock";
 import {
   Transition,
   defineComponent,
   h,
   ref,
   onBeforeUnmount,
-  onMounted,
   watch,
 } from "vue";
 import { useRoute } from "vue-router";
@@ -30,28 +29,25 @@ export default defineComponent({
   setup(props, { emit, slots }) {
     const route = useRoute();
     const isMobile = useMobile();
-
-    const body = ref<HTMLElement | null>();
-    const isLocked = useScrollLock(body);
+    const screen = ref<HTMLElement>();
 
     watch(isMobile, (value) => {
-      if (!value && props.active) emit("close");
+      if (!value && props.active) {
+        clearAllBodyScrollLocks();
+        emit("close");
+      }
     });
 
     watch(
       () => route.path,
       () => {
-        isLocked.value = false;
+        clearAllBodyScrollLocks();
         emit("close");
       }
     );
 
-    onMounted(() => {
-      body.value = document.body;
-    });
-
     onBeforeUnmount(() => {
-      isLocked.value = false;
+      clearAllBodyScrollLocks();
     });
 
     return (): VNode =>
@@ -59,18 +55,15 @@ export default defineComponent({
         Transition,
         {
           name: "fade",
-          onEnter: () => {
-            isLocked.value = true;
-          },
-          onAfterLeave: () => {
-            isLocked.value = false;
-          },
+          onEnter: () =>
+            disableBodyScroll(screen.value!, { reserveScrollBarGap: true }),
+          onAfterLeave: () => clearAllBodyScrollLocks(),
         },
         () =>
           props.active
             ? h(
                 "div",
-                { id: "nav-screen" },
+                { id: "nav-screen", ref: screen },
                 h("div", { class: "container" }, [
                   slots["before"]?.(),
                   h(NavScreenLinks),

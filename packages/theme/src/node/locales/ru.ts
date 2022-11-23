@@ -61,6 +61,7 @@ export const ruLocale: HopeThemeLocaleData = {
   },
 
   routeLocales: {
+    skipToContent: "Перейти к основному содержанию",
     notFoundMsg: [
       "Здесь ничего нет.",
       "Как мы сюда попали?",

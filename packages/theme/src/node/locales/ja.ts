@@ -61,6 +61,7 @@ export const jaLocale: HopeThemeLocaleData = {
   },
 
   routeLocales: {
+    skipToContent: "メインコンテンツへスキップ",
     notFoundMsg: [
       "ここには何もありません。",
       "どうやってここにたどり着いたのか?",

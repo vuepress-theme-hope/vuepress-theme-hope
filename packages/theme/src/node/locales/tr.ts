@@ -61,6 +61,7 @@ export const trLocale: HopeThemeLocaleData = {
   },
 
   routeLocales: {
+    skipToContent: "Ana içeriğe atla",
     notFoundMsg: [
       "Burada hiçbir şey yok.",
       "Bu sayfaya nasıl geldik?",

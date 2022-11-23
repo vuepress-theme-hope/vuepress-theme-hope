@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-hope",
-  "version": "2.0.0-beta.124",
+  "version": "2.0.0-beta.126",
   "description": "A light vuepress theme with tons of features",
   "keywords": [
     "vuepress",
@@ -63,6 +63,7 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
+    "@types/body-scroll-lock": "^3.1.0",
     "@vuepress/cli": "2.0.0-beta.53",
     "@vuepress/client": "2.0.0-beta.53",
     "@vuepress/core": "2.0.0-beta.53",
@@ -79,6 +80,7 @@
     "@vueuse/core": "^9.5.0",
     "balloon-css": "^1.2.0",
     "bcrypt-ts": "^3.0.0",
+    "body-scroll-lock": "^3.1.5",
     "gray-matter": "^4.0.3",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6",

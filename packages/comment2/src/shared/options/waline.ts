@@ -11,7 +11,7 @@ export interface WalineOptions
   extends BaseCommentOptions,
     Omit<
       WalineInitOptions,
-      "el" | "comment" | "imageUploader" | "texRenderer"
+      "el" | "comment" | "search" | "imageUploader" | "texRenderer"
     > {
   provider: "Waline";
 
@@ -32,6 +32,15 @@ export interface WalineOptions
    * @default true
    */
   pageview?: boolean;
+
+  /**
+   * Whether enable gif search
+   *
+   * 是否启用表情包搜索
+   *
+   * @default true
+   */
+  search?: boolean;
 
   /**
    * Locale config for waline

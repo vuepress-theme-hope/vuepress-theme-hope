@@ -13,7 +13,8 @@ actions:
   - text: Config 🛠
     link: /config.html
 
-footer: MIT Licensed | Copyright © 2019-present Mr.Hope
+footer: Theme by <a href="https://vuepress-theme-hope.github.io/v2/" target="_blank">VuePress Theme Hope</a> | MIT Licensed, Copyright © 2019-present Mr.Hope
+
 copyright: false
 ---
 
@@ -88,5 +89,7 @@ The organization license has no limit for you under non-commercial usage as it s
 But PLEASE DO AWARE that organizational license can only be used on one product. To use this plugin for commercial usage, since lightgallery is under [GNU GPL license v3](https://www.gnu.org/licenses/gpl-3.0.html), you must put your source code under the [GNU GPL license v3](https://www.gnu.org/licenses/gpl-3.0.html) license, or consider [purchasing a license](https://www.lightgalleryjs.com/license/) to avoid troubles.
 
 YOU ARE WARNED!
+
+If you are worried about this, please consider using [photo-swipe](https://vuepress-theme-hope.github.io/v2/photo-swipe/) instead.
 
 :::

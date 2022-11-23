@@ -23,11 +23,6 @@ By default only headings and excerpt of the page will be indexed along with your
   ```ts
   interface SearchProCustomFieldOptions {
     /**
-     * Name of the custom field
-     */
-    name: string;
-
-    /**
      * Custom field getter
      */
     getter: (page: Page) => string | string[] | null;
@@ -127,11 +122,24 @@ export default defineUserConfig({
   }
   ```
 
-- Default: `[{key:'k',ctrl:true}]`
+- Default: `[{key: 'k', ctrl: true}]`
 
 Specify the [event.key](http://keycode.info/) of the hotkeys.
 
 When hotkeys are pressed, the search box input will be focused. Set to an empty array to disable hotkeys.
+
+## delay
+
+- Type: `number`
+- Default: `300`
+
+Delay to start searching after input.
+
+::: note
+
+Performing client search with huge contents could be slow, so under this case you might need to increase this value to ensure user finish input before searching.
+
+:::
 
 ## hotReload
 
@@ -195,7 +203,7 @@ Usually in development, users do not need to update the index database in real t
     /**
      * Empty hint
      */
-    emply: string;
+    empty: string;
   }
 
   interface SearchProLocaleConfig {
@@ -206,3 +214,23 @@ Usually in development, users do not need to update the index database in real t
 - Required: No
 
 Multilingual configuration of the search plugin.
+
+::: details Built-in Supported Languages
+
+- **Simplified Chinese** (zh-CN)
+- **Traditional Chinese** (zh-TW)
+- **English (United States)** (en-US)
+- **German** (de-AT)
+- **Russian** (ru-RU)
+- **Ukrainian** (uk-UA)
+- **Vietnamese** (vi-VN)
+- **Portuguese (Brazil)** (pt-BR)
+- **Polish** (pl-PL)
+- **French** (fr-FR)
+- **Spanish** (es-ES)
+- **Slovak** (sk-SK)
+- **Japanese** (ja-JP)
+- **Turkish** (tr-TR)
+- **Korean** (ko-KR)
+
+:::

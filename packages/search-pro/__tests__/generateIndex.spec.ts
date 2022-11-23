@@ -33,7 +33,6 @@ describe("generateIndex", () => {
       expect(
         generatePageIndex(page, [
           {
-            name: "tag",
             getter: ({ frontmatter }: Page): string[] | string | null =>
               (frontmatter.tag as string[] | string) || null,
           },
@@ -49,7 +48,6 @@ describe("generateIndex", () => {
           page,
           [
             {
-              name: "tag",
               getter: ({ frontmatter }: Page): string[] | string | null =>
                 (frontmatter.tag as string[] | string) || null,
             },

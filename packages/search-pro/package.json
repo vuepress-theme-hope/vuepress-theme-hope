@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-search-pro",
-  "version": "2.0.0-beta.124",
+  "version": "2.0.0-beta.126",
   "description": "A advanced search plugin in client",
   "keywords": [
     "vuepress",
@@ -43,9 +43,11 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
+    "@types/body-scroll-lock": "^3.1.0",
     "@vueuse/core": "^9.5.0",
     "@vuepress/client": "2.0.0-beta.53",
     "@vuepress/utils": "2.0.0-beta.53",
+    "body-scroll-lock": "^3.1.5",
     "chokidar": "^3.5.3",
     "cheerio": "^1.0.0-rc.12",
     "vue": "^3.2.45",
@@ -54,7 +56,7 @@
     "vuepress-shared": "workspace:*"
   },
   "peerDependencies": {
-    "sass-loader": "^13.3d.0"
+    "sass-loader": "^13.0.0"
   },
   "peerDependenciesMeta": {
     "sass-loader": {

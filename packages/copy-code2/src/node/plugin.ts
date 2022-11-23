@@ -29,7 +29,7 @@ export const copyCodePlugin =
 
       define: (): Record<string, unknown> => ({
         COPY_CODE_DELAY: options.delay || 500,
-        COPY_CODE_DURATION: options.duration || 300,
+        COPY_CODE_DURATION: options.duration || 2000,
         COPY_CODE_PURE: options.pure || false,
         COPY_CODE_SHOW_IN_MOBILE: options.showInMobile || false,
         COPY_CODE_LOCALES: userCopyCodeLocales,

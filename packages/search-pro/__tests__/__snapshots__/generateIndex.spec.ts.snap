@@ -351,7 +351,7 @@ exports[`generateIndex > Should support customFields 1`] = `
     },
   ],
   "customFields": {
-    "tag": [
+    "0": [
       "Demo",
     ],
   },
@@ -461,7 +461,7 @@ exports[`generateIndex > Should support customFields 3`] = `
 {
   "contents": [],
   "customFields": {
-    "tag": [
+    "0": [
       "markdown",
     ],
   },
@@ -473,7 +473,7 @@ exports[`generateIndex > Should support customFields 4`] = `
 {
   "contents": [],
   "customFields": {
-    "tag": [
+    "0": [
       "markdown",
     ],
   },
@@ -505,7 +505,7 @@ exports[`generateIndex > Should support customFields with full index 1`] = `
     },
   ],
   "customFields": {
-    "tag": [
+    "0": [
       "Demo",
     ],
   },
@@ -678,7 +678,7 @@ exports[`generateIndex > Should support customFields with full index 3`] = `
     },
   ],
   "customFields": {
-    "tag": [
+    "0": [
       "markdown",
     ],
   },
@@ -698,7 +698,7 @@ exports[`generateIndex > Should support customFields with full index 4`] = `
     },
   ],
   "customFields": {
-    "tag": [
+    "0": [
       "markdown",
     ],
   },

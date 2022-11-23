@@ -631,7 +631,7 @@ export default {
 
 In the above modification, since the original sidebar array is all files under the relevant path, you can easily replace it with the `"structure"` keyword.
 
-If you use the structure to generate a folder with other folders nested under it and **the folder contains a `README.md` file**, the corresponding folder will be rendered as a group. So you can even be more aggressive, for example setting `sidebar: "structure"` to have your sidebars all auto-generated from the file structure.
+If you use the structure to generate a folder with other folders nested under it, the corresponding folder will be rendered as a group. So you can even be more aggressive, for example setting `sidebar: "structure"` to have your sidebars all auto-generated from the file structure.
 
 #### Advanced Control
 
@@ -716,6 +716,8 @@ interface SidebarDirInfo {
 }
 ```
 
+If no README.md file exists for the corresponding folder, only the group header will be generated from the folder name.
+
 #### Customize Sorter
 
 In addition to the above implementation, we also added a more powerful `sidebarSorter` option to the theme options. You can pass one or a series of built-in sorter names, or you can pass a sorter function you need to sort sidebar items at the same level.
@@ -727,13 +729,9 @@ Available keywords are:
 - `date`: sort by date ascendingly
 - `date-desc`: sort by date descendingly
 - `title`: alphabetically sort by title
-- `title-number`: alphabetically sort according to title and ascendingly sort same titles with different number label
-- `title-number-desc`: alphabetically sort according to title and descendingly sort same titles with different number label
 - `filename`: alphabetically sort by filename
-- `file-number`: alphabetically sort according to filename and ascendingly sort same filenames with different number label
-- `file-number-desc`: alphabetically sort according to filename and descendingly sort same filenames with different number label
 
-Corresponding to the above advanced control, its default value is `["readme", "order", "title"]`
+Corresponding to the above advanced control, its default value is `["readme", "order", "title", "filename"]`
 
 ### Disabling Sidebar
 

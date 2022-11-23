@@ -61,6 +61,7 @@ export const zhTWLocale: HopeThemeLocaleData = {
   },
 
   routeLocales: {
+    skipToContent: "跳至主要內容",
     notFoundMsg: [
       "這裡什麼也沒有",
       "我們是怎麼來到這兒的？",

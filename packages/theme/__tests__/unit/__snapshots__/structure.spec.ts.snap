@@ -1,0 +1,410 @@
+// Vitest Snapshot v1
+
+exports[`should generate structure info correctly > Should generate structure info for whole dir 1`] = `
+[
+  {
+    "children": [
+      {
+        "filename": "file1.md",
+        "path": "dir-negative-order/file1.md",
+        "type": "file",
+      },
+      {
+        "filename": "file2.md",
+        "path": "dir-negative-order/file2.md",
+        "type": "file",
+      },
+      {
+        "filename": "file3.md",
+        "path": "dir-negative-order/file3.md",
+        "type": "file",
+      },
+      {
+        "filename": "file4.md",
+        "path": "dir-negative-order/file4.md",
+        "type": "file",
+      },
+      {
+        "filename": "README.md",
+        "path": "dir-negative-order/README.md",
+        "type": "file",
+      },
+    ],
+    "dirname": "dir-negative-order",
+    "path": "dir-negative-order",
+    "type": "dir",
+  },
+  {
+    "children": [
+      {
+        "filename": "file1.md",
+        "path": "dir-no-order/file1.md",
+        "type": "file",
+      },
+      {
+        "filename": "file2.md",
+        "path": "dir-no-order/file2.md",
+        "type": "file",
+      },
+      {
+        "filename": "file3.md",
+        "path": "dir-no-order/file3.md",
+        "type": "file",
+      },
+      {
+        "filename": "file4.md",
+        "path": "dir-no-order/file4.md",
+        "type": "file",
+      },
+      {
+        "filename": "README.md",
+        "path": "dir-no-order/README.md",
+        "type": "file",
+      },
+    ],
+    "dirname": "dir-no-order",
+    "path": "dir-no-order",
+    "type": "dir",
+  },
+  {
+    "children": [
+      {
+        "filename": "file1.md",
+        "path": "dir-positive-order/file1.md",
+        "type": "file",
+      },
+      {
+        "filename": "file2.md",
+        "path": "dir-positive-order/file2.md",
+        "type": "file",
+      },
+      {
+        "filename": "file3.md",
+        "path": "dir-positive-order/file3.md",
+        "type": "file",
+      },
+      {
+        "filename": "file4.md",
+        "path": "dir-positive-order/file4.md",
+        "type": "file",
+      },
+      {
+        "filename": "README.md",
+        "path": "dir-positive-order/README.md",
+        "type": "file",
+      },
+    ],
+    "dirname": "dir-positive-order",
+    "path": "dir-positive-order",
+    "type": "dir",
+  },
+  {
+    "children": [
+      {
+        "filename": "file1.md",
+        "path": "dir/file1.md",
+        "type": "file",
+      },
+      {
+        "filename": "file2.md",
+        "path": "dir/file2.md",
+        "type": "file",
+      },
+      {
+        "filename": "file3.md",
+        "path": "dir/file3.md",
+        "type": "file",
+      },
+      {
+        "filename": "file4.md",
+        "path": "dir/file4.md",
+        "type": "file",
+      },
+      {
+        "filename": "README.md",
+        "path": "dir/README.md",
+        "type": "file",
+      },
+    ],
+    "dirname": "dir",
+    "path": "dir",
+    "type": "dir",
+  },
+  {
+    "children": [
+      {
+        "filename": "file1.md",
+        "path": "link/file1.md",
+        "type": "file",
+      },
+      {
+        "filename": "file2.md",
+        "path": "link/file2.md",
+        "type": "file",
+      },
+      {
+        "filename": "file3.md",
+        "path": "link/file3.md",
+        "type": "file",
+      },
+      {
+        "filename": "file4.md",
+        "path": "link/file4.md",
+        "type": "file",
+      },
+      {
+        "filename": "README.md",
+        "path": "link/README.md",
+        "type": "file",
+      },
+    ],
+    "dirname": "link",
+    "path": "link",
+    "type": "dir",
+  },
+  {
+    "children": [
+      {
+        "filename": "file1.md",
+        "path": "nested-dir/file1.md",
+        "type": "file",
+      },
+      {
+        "filename": "file2.md",
+        "path": "nested-dir/file2.md",
+        "type": "file",
+      },
+      {
+        "filename": "file3.md",
+        "path": "nested-dir/file3.md",
+        "type": "file",
+      },
+      {
+        "filename": "file4.md",
+        "path": "nested-dir/file4.md",
+        "type": "file",
+      },
+      {
+        "children": [
+          {
+            "filename": "file1.md",
+            "path": "nested-dir/nested-dir1/file1.md",
+            "type": "file",
+          },
+          {
+            "filename": "file2.md",
+            "path": "nested-dir/nested-dir1/file2.md",
+            "type": "file",
+          },
+          {
+            "filename": "file3.md",
+            "path": "nested-dir/nested-dir1/file3.md",
+            "type": "file",
+          },
+          {
+            "filename": "file4.md",
+            "path": "nested-dir/nested-dir1/file4.md",
+            "type": "file",
+          },
+          {
+            "children": [
+              {
+                "filename": "file1.md",
+                "path": "nested-dir/nested-dir1/nested-dir2/file1.md",
+                "type": "file",
+              },
+              {
+                "filename": "file2.md",
+                "path": "nested-dir/nested-dir1/nested-dir2/file2.md",
+                "type": "file",
+              },
+              {
+                "filename": "file3.md",
+                "path": "nested-dir/nested-dir1/nested-dir2/file3.md",
+                "type": "file",
+              },
+              {
+                "filename": "file4.md",
+                "path": "nested-dir/nested-dir1/nested-dir2/file4.md",
+                "type": "file",
+              },
+              {
+                "filename": "README.md",
+                "path": "nested-dir/nested-dir1/nested-dir2/README.md",
+                "type": "file",
+              },
+            ],
+            "dirname": "nested-dir2",
+            "path": "nested-dir/nested-dir1/nested-dir2",
+            "type": "dir",
+          },
+          {
+            "children": [
+              {
+                "filename": "file1.md",
+                "path": "nested-dir/nested-dir1/nested-no-readme2/file1.md",
+                "type": "file",
+              },
+              {
+                "filename": "file2.md",
+                "path": "nested-dir/nested-dir1/nested-no-readme2/file2.md",
+                "type": "file",
+              },
+              {
+                "filename": "file3.md",
+                "path": "nested-dir/nested-dir1/nested-no-readme2/file3.md",
+                "type": "file",
+              },
+              {
+                "filename": "file4.md",
+                "path": "nested-dir/nested-dir1/nested-no-readme2/file4.md",
+                "type": "file",
+              },
+            ],
+            "dirname": "nested-no-readme2",
+            "path": "nested-dir/nested-dir1/nested-no-readme2",
+            "type": "dir",
+          },
+          {
+            "filename": "README.md",
+            "path": "nested-dir/nested-dir1/README.md",
+            "type": "file",
+          },
+        ],
+        "dirname": "nested-dir1",
+        "path": "nested-dir/nested-dir1",
+        "type": "dir",
+      },
+      {
+        "children": [
+          {
+            "filename": "file1.md",
+            "path": "nested-dir/nested-no-readme1/file1.md",
+            "type": "file",
+          },
+          {
+            "filename": "file2.md",
+            "path": "nested-dir/nested-no-readme1/file2.md",
+            "type": "file",
+          },
+          {
+            "filename": "file3.md",
+            "path": "nested-dir/nested-no-readme1/file3.md",
+            "type": "file",
+          },
+          {
+            "filename": "file4.md",
+            "path": "nested-dir/nested-no-readme1/file4.md",
+            "type": "file",
+          },
+          {
+            "children": [
+              {
+                "filename": "file1.md",
+                "path": "nested-dir/nested-no-readme1/nested-no-readme2/file1.md",
+                "type": "file",
+              },
+              {
+                "filename": "file2.md",
+                "path": "nested-dir/nested-no-readme1/nested-no-readme2/file2.md",
+                "type": "file",
+              },
+              {
+                "filename": "file3.md",
+                "path": "nested-dir/nested-no-readme1/nested-no-readme2/file3.md",
+                "type": "file",
+              },
+              {
+                "filename": "file4.md",
+                "path": "nested-dir/nested-no-readme1/nested-no-readme2/file4.md",
+                "type": "file",
+              },
+            ],
+            "dirname": "nested-no-readme2",
+            "path": "nested-dir/nested-no-readme1/nested-no-readme2",
+            "type": "dir",
+          },
+        ],
+        "dirname": "nested-no-readme1",
+        "path": "nested-dir/nested-no-readme1",
+        "type": "dir",
+      },
+      {
+        "filename": "README.md",
+        "path": "nested-dir/README.md",
+        "type": "file",
+      },
+    ],
+    "dirname": "nested-dir",
+    "path": "nested-dir",
+    "type": "dir",
+  },
+  {
+    "children": [
+      {
+        "filename": "file1.md",
+        "path": "options/file1.md",
+        "type": "file",
+      },
+      {
+        "filename": "file2.md",
+        "path": "options/file2.md",
+        "type": "file",
+      },
+      {
+        "filename": "file3.md",
+        "path": "options/file3.md",
+        "type": "file",
+      },
+      {
+        "filename": "file4.md",
+        "path": "options/file4.md",
+        "type": "file",
+      },
+      {
+        "filename": "README.md",
+        "path": "options/README.md",
+        "type": "file",
+      },
+    ],
+    "dirname": "options",
+    "path": "options",
+    "type": "dir",
+  },
+  {
+    "filename": "README.md",
+    "path": "README.md",
+    "type": "file",
+  },
+]
+`;
+
+exports[`should generate structure info correctly > Should resolve structure in dir 1`] = `
+[
+  {
+    "filename": "file1.md",
+    "path": "file1.md",
+    "type": "file",
+  },
+  {
+    "filename": "file2.md",
+    "path": "file2.md",
+    "type": "file",
+  },
+  {
+    "filename": "file3.md",
+    "path": "file3.md",
+    "type": "file",
+  },
+  {
+    "filename": "file4.md",
+    "path": "file4.md",
+    "type": "file",
+  },
+  {
+    "filename": "README.md",
+    "path": "README.md",
+    "type": "file",
+  },
+]
+`;

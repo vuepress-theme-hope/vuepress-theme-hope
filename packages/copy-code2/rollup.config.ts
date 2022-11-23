@@ -6,6 +6,7 @@ export default [
       "vuepress-shared",
       "@vuepress/core",
       "@vuepress/utils",
+      "vuepress-shared/node",
       "vuepress-plugin-sass-palette",
     ],
     dtsExternal: ["vuepress-shared"],

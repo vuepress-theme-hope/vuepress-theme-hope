@@ -7,13 +7,6 @@ import type {
 
 export interface SearchProCustomFieldOptions {
   /**
-   * Name of the custom field
-   *
-   * 自定义项目的名称
-   */
-  name: string;
-
-  /**
    * Custom field getter
    *
    * 自定义项目的获取器
@@ -49,13 +42,13 @@ export interface SearchProOptions {
   indexContent?: boolean;
 
   /**
-   * Whether enable hmr
+   * Delay to start searching after input
    *
-   * 是否启用 hmr
+   * 结束输入到开始搜索的延时
    *
-   * @default false
+   * @default 300
    */
-  hotReload?: boolean;
+  delay?: number;
 
   /**
    * Custom field for search
@@ -71,9 +64,18 @@ export interface SearchProOptions {
    *
    * @description 当热键被按下时，搜索框的输入框会被聚焦，设置为空数组以禁用热键
    *
-   * @default [{key:'k',ctrl:true}]
+   * @default [{key: 'k', ctrl: true}]
    */
   hotKeys?: SearchProHotKeyOptions[];
+
+  /**
+   * Whether enable hmr
+   *
+   * 是否启用 hmr
+   *
+   * @default false
+   */
+  hotReload?: boolean;
 
   /**
    * Locales config

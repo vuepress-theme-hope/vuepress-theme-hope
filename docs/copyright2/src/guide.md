@@ -24,4 +24,39 @@ You can set author and license information via `author` and `license` in plugin 
 
 ## Customize Copyright Text
 
-You can set copyright information text of the plugin in different languages ​​through the `locales` option. For details, see [Config → locales](config.md#locales).
+You can add copyright information text for a new locale or modify existing ones through `locales` option.
+
+```ts
+import { defineUserConfig } from "vuepress";
+import { copyrightPlugin } from "vuepress-plugin-copyright2";
+
+export default defineUserConfig({
+  locales: {
+    "/": {
+      // this is a supported language
+      lang: "en-US",
+    },
+    "/xx/": {
+      // the plugin does not support this language
+      lang: "mm-NN",
+    },
+  },
+
+  plugins: [
+    copyrightPlugin({
+      locales: {
+        "/": {
+          // Override link text
+          link: "Original posted at :link",
+        },
+
+        "/xx/": {
+          // Complete locale config for `mm-NN` language here
+        },
+      },
+    }),
+  ],
+});
+```
+
+For specific options, see [Config → Locale Settings](./config.md#locales).

@@ -2,6 +2,43 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.126](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.125...v2.0.0-beta.126) (2022-11-22)
+
+### Features
+
+- **search-pro:** add delay option ([7727f8e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7727f8ee43d330a8b352bbc6595de68482417d2d))
+- **search-pro:** add transition for search-box ([497f06b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/497f06b89c94670468a4e703728e0d028f257dc4))
+- **search-pro:** hide key-hints on mobile ([9d26582](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9d2658274b286357f1dea474c9aa1ac481c0d82f))
+- **search-pro:** improve modal appearance ([228c235](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/228c2354756f9fbf93505e501b63ade0f825b425))
+- **search-pro:** improve scroll-bar ([2867874](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2867874f1690b9657db1ed224700e982e4664358))
+- **search-pro:** no longer need name option in customFields ([2903ea7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2903ea770b0cfa0bbb7265c811d2fb5c4d3bb7d6))
+- **theme:** improve homepage style ([864aa2e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/864aa2e0db12dbc8bfcfc4c2f313f55b4a1b6699))
+- **theme:** improve navbar alignment ([#2435](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2435)) ([ab2e1d6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ab2e1d6402c1775a195a8cfb97e054783da75852))
+
+### Bug Fixes
+
+- **copy-code2:** correct duration ([6278bee](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6278beef478927943de8c27a0ed1a9f79a7e3f7f))
+- **search-pro:** fix typos in config ([192748a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/192748a60308223939f5b27e18d614e8d8e4a99c))
+- **seo2:** fix description line break, [#2431](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2431) ([ad69635](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ad69635e8d9a4c324df24103c6d7cbb7ac904782))
+- **theme:** fix [#2214](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2214) ([016508e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/016508ee033c11e0c36076032f717236a71f8dab))
+
+## [2.0.0-beta.125](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.124...v2.0.0-beta.125) (2022-11-20)
+
+### Features
+
+- add korea ([6492b31](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6492b31ad13d4b81ca274d8691ff5199553ae92f))
+- **md-enhance:** improve detail a11y ([794abd5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/794abd560b32757aeb1ddcfbfd0ef03ad92eeb43))
+- **search-pro:** add more languages ([6dbd79a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6dbd79a4453ee9771cbbdcb159742eba56570dc9))
+- **theme:** improve a11y ([1d47b7b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1d47b7b9119d943c1ea22adfeed83909a79c2886))
+
+### Bug Fixes
+
+- **comment2:** fix waline option types ([37b6fd6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/37b6fd699799c2bee6b40b0b18adb7decae7d161))
+- fix fflate issue with vite, fix [#2430](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2430) ([72d5d3b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/72d5d3bdd120d9da7ebe05169149a27a213254c9))
+- **md-enhance:** fix detail style ([5ef6198](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5ef61985901cfd548850e2f6d62c1424bacc0957))
+- **search-pro:** fix broken deps ([7919156](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/79191565e0efb47bcb63992ed9ee27f94c8a05a3))
+- **search-pro:** fix uppercase words not matching ([4c04ff6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4c04ff6676b3b7fb0103d9f6ea01c52bd7408266))
+
 ## [2.0.0-beta.124](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.123...v2.0.0-beta.124) (2022-11-18)
 
 ### ⚠ BREAKING CHANGES

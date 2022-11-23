@@ -71,6 +71,26 @@ Whether enabling backToTop button. When setting a number, it will be used as Bac
 
 Locales config for BackToTop button.
 
+::: details Built-in Supported Languages
+
+- **Simplified Chinese** (zh-CN)
+- **Traditional Chinese** (zh-TW)
+- **English (United States)** (en-US)
+- **German** (de-AT)
+- **Russian** (ru-RU)
+- **Ukrainian** (uk-UA)
+- **Vietnamese** (vi-VN)
+- **Portuguese (Brazil)** (pt-BR)
+- **Polish** (pl-PL)
+- **French** (fr-FR)
+- **Spanish** (es-ES)
+- **Slovak** (sk-SK)
+- **Japanese** (ja-JP)
+- **Turkish** (tr-TR)
+- **Korean** (ko-KR)
+
+:::
+
 ## iconAssets
 
 - Type: `` "iconfont" | "fontawesome" | `//${string}` | `http://${string}` | `https://${string}`  ``

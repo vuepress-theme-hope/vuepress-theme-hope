@@ -2,7 +2,7 @@
 
 exports[`demo > Should resolve demo info 1`] = `
 "
-<CodeDemo id=\\"code-demo-0\\" type=\\"normal\\" title=\\"A%20normal%20demo\\" code=\\"eNo9jkELwjAMhf9KjBcFmXidXW+Cgp4ET72MNrBp1862G8jYfzed4CUJyfvey4RN6iyWKJqDvIXi7HsSe56VE728RBCxrx20plI4UvgolLmJfV5LaGpnou8Y6ZnAHT4jexmvh45cKt4Da+9kSScfNgrXP4ttURtzGllxbWMiR/mmbatfCnew2UIlYVIOoLYUEt8ejP2zVmxwVG7OhRN1zJHLlwujvfWhhEAmi1gyfwHzbUvd\\">
+<CodeDemo id=\\"code-demo-0\\" type=\\"normal\\" title=\\"A%20normal%20demo\\" code=\\"eJw9jkELwjAMhf9KjBcFmXidXW+Cgp4ET72MNrBp1862G8jYfzed4CUJyfvey4RN6iyWKJqDvIXi7HsSe56VE728RBCxrx20plI4UvgolLmJfV5LaGpnou8Y6ZnAHT4jexmvh45cKt4Da+9kSScfNgrXP4ttURtzGllxbWMiR/mmbatfCnew2UIlYVIOoLYUEt8ejP2zVmxwVG7OhRN1zJHLlwujvfWhhEAmi1gyfwHzbUvd\\">
 <pre><code class=\\"language-html\\">&lt;h1&gt;Mr.Hope&lt;/h1&gt;
 &lt;p&gt;Is &lt;span id=&quot;very&quot;&gt;very&lt;/span&gt; handsome&lt;/p&gt;
 </code></pre>
@@ -15,7 +15,7 @@ exports[`demo > Should resolve demo info 1`] = `
 }
 </code></pre>
 </CodeDemo>
-<CodeDemo id=\\"code-demo-5\\" type=\\"react\\" title=\\"A%20react%20demo\\" code=\\"eNpFkEFrwzAMhf/Kw6cOtvSepYWxyy7bYedcvERbMxLbSEpJCfnvtesmBWOQrPfeZ83mX0xpaAqeFS392rFXNL0VwVsIoEnJtYJvso0W734I3pFTzLUDGu9EeWzU8y6wD/KU+4CMgdbea27pqZNC1CrhgBkDidg/KlGbM/EFJxtj/EC1wXJTLOniGB6NNl8mHdlhlyugartzpv2yAx1q8+OnF06stTmuQ8AnFx8+EDpBJcG64/ygKe4kS7W/PW3W++h9r/IfIlE85tk0knZWbFlIwnUlvecycrZRkqaXKxQ1dTY=\\">
+<CodeDemo id=\\"code-demo-5\\" type=\\"react\\" title=\\"A%20react%20demo\\" code=\\"eJxFkEFrwzAMhf/Kw6cOtvSepYWxyy7bYedcvERbMxLbSEpJCfnvtesmBWOQrPfeZ83mX0xpaAqeFS392rFXNL0VwVsIoEnJtYJvso0W734I3pFTzLUDGu9EeWzU8y6wD/KU+4CMgdbea27pqZNC1CrhgBkDidg/KlGbM/EFJxtj/EC1wXJTLOniGB6NNl8mHdlhlyugartzpv2yAx1q8+OnF06stTmuQ8AnFx8+EDpBJcG64/ygKe4kS7W/PW3W++h9r/IfIlE85tk0knZWbFlIwnUlvecycrZRkqaXKxQ1dTY=\\">
 <pre><code class=\\"language-js\\">export default class App extends React.Component {
   constructor(props) {
     super(props);
@@ -35,7 +35,7 @@ exports[`demo > Should resolve demo info 1`] = `
 }
 </code></pre>
 </CodeDemo>
-<CodeDemo id=\\"code-demo-9\\" type=\\"vue\\" title=\\"A%20vue%20demo\\" code=\\"eNpNjsEOgjAQRH9l0pMmKnesnL34B71UuipJoU23EAjpv1uQEG+T3Zk3M4uhJ1EKGan1VkeqVAdI0wyorWa+KfF04zmblFhfwCNc7s4TGoZkr7tqntESs34TUpLFelspRcZkJYs/uOQ6ND5mRaN3IcLQS/c2Yl4iRkdd4nDErcJhx5ZQYqAw4aM7w67NW5COJ9Wl60LfiZLjZJeSy7YZy5YfuXbWhRKBTM6kNbaZRfoChEVaCQ==\\">
+<CodeDemo id=\\"code-demo-9\\" type=\\"vue\\" title=\\"A%20vue%20demo\\" code=\\"eJxNjsEOgjAQRH9l0pMmKnesnL34B71UuipJoU23EAjpv1uQEG+T3Zk3M4uhJ1EKGan1VkeqVAdI0wyorWa+KfF04zmblFhfwCNc7s4TGoZkr7tqntESs34TUpLFelspRcZkJYs/uOQ6ND5mRaN3IcLQS/c2Yl4iRkdd4nDErcJhx5ZQYqAw4aM7w67NW5COJ9Wl60LfiZLjZJeSy7YZy5YfuXbWhRKBTM6kNbaZRfoChEVaCQ==\\">
 <pre><code class=\\"language-vue\\">&lt;template&gt;
   &lt;div class=&quot;box-vue&quot;&gt;
     Mr.Hope is &lt;span&gt;{{ message }}&lt;/span&gt;
@@ -53,7 +53,7 @@ export default {
 &lt;/style&gt;
 </code></pre>
 </CodeDemo>
-<CodeDemo id=\\"code-demo-12\\" type=\\"normal\\" title=\\"A%20normal%20demo\\" code=\\"eNotjb0KwkAQhF9lWBtFDdhG7C200nKbcFnNwWVPb1dBxHf3/IHpZub7njT21NIEx+hJWFmj4S7lgaHT3vIoDSstyK2uQlZzjGLWnaWFeYl6xgZM+9Js80WY1h9En8NtFPXmequkgyQJnsuUaVgxzZqoKmV73O/q9Q+rtyqxYB/NsMKTFThl9aX5I1VX9C7F8KUDc1x+CyDklEuLIn3tgBdrDb3eveNIFA==\\">
+<CodeDemo id=\\"code-demo-12\\" type=\\"normal\\" title=\\"A%20normal%20demo\\" code=\\"eJwtjb0KwkAQhF9lWBtFDdhG7C200nKbcFnNwWVPb1dBxHf3/IHpZub7njT21NIEx+hJWFmj4S7lgaHT3vIoDSstyK2uQlZzjGLWnaWFeYl6xgZM+9Js80WY1h9En8NtFPXmequkgyQJnsuUaVgxzZqoKmV73O/q9Q+rtyqxYB/NsMKTFThl9aX5I1VX9C7F8KUDc1x+CyDklEuLIn3tgBdrDb3eveNIFA==\\">
 <pre><code class=\\"language-md\\"># Title
 
 is very handsome.

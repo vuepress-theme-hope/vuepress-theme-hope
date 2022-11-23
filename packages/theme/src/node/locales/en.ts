@@ -61,6 +61,7 @@ export const enLocale: HopeThemeLocaleData = {
   },
 
   routeLocales: {
+    skipToContent: "Skip to main content",
     notFoundMsg: [
       "There’s nothing here.",
       "How did we get here?",

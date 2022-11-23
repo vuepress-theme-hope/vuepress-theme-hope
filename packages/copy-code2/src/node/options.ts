@@ -20,7 +20,7 @@ export interface CopyCodeOptions {
    *
    * @description 设置为 `0` 会禁用提示。
    *
-   * @default 300
+   * @default 2000
    */
   duration?: number;
 

@@ -16,31 +16,33 @@ import type { HopeThemePageData } from "../../page.js";
 
 export interface HopeThemeSidebarFileInfo {
   type: "file";
-
-  order: number | null;
-  frontmatter: HopeThemeNormalPageFrontmatter;
-  pageData: HopeThemePageData;
+  filename: string;
 
   title: string;
-  path: string;
+  order: number | null;
+
+  frontmatter: HopeThemeNormalPageFrontmatter;
+  pageData: HopeThemePageData;
 }
 
 export interface HopeThemeSidebarDirInfo {
   type: "dir";
+  dirname: string;
+  children: HopeThemeSidebarInfo[];
 
+  title: string;
   order: number | null;
 
-  frontmatter: HopeThemeNormalPageFrontmatter;
-  pageData: HopeThemePageData;
-
-  info: {
-    prefix: string;
-    text: string;
+  groupInfo: {
+    // prefix: string;
+    // text: string;
     icon?: string;
     collapsible?: boolean;
     link?: string;
   };
-  children: HopeThemeSidebarInfo[];
+
+  frontmatter: HopeThemeNormalPageFrontmatter | null;
+  pageData: HopeThemePageData | null;
 }
 
 export type HopeThemeSidebarInfo =
@@ -53,11 +55,7 @@ export type HopeThemeSidebarSorterKeyWord =
   | "date"
   | "date-desc"
   | "filename"
-  | "file-number"
-  | "file-number-desc"
-  | "title"
-  | "title-number"
-  | "title-number-desc";
+  | "title";
 
 export type HopeThemeSidebarSorterFunction = (
   infoA: HopeThemeSidebarInfo,

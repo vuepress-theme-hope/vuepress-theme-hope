@@ -56,4 +56,8 @@ export const backToTopLocales: BackToTopLocaleConfig = {
   "/tr/": {
     backToTop: "En başa dön",
   },
+
+  "/ko/": {
+    backToTop: "맨 위로",
+  },
 };

@@ -61,6 +61,7 @@ export const skLocale: HopeThemeLocaleData = {
   },
 
   routeLocales: {
+    skipToContent: "Preskočiť na hlavný obsah",
     notFoundMsg: [
       "Nič tu nieje.",
       "Ako si sa sem dostal?",

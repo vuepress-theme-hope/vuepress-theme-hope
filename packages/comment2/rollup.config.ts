@@ -11,10 +11,10 @@ export default [
   }),
   ...rollupTypescript("client/config", {
     external: [
-      "@CommentProvider",
       "@vuepress/client",
       "vue",
       "vue-router",
+      "vuepress-plugin-comment2/provider",
       "vuepress-shared/client",
       /\.scss$/,
     ],

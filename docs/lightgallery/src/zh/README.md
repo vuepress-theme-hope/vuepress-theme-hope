@@ -13,7 +13,8 @@ actions:
   - text: 配置 🛠
     link: /zh/config.html
 
-footer: MIT Licensed | Copyright © 2019-present Mr.Hope
+footer: 使用 <a href="https://vuepress-theme-hope.github.io/v2/" target="_blank">VuePress Theme Hope</a> 主题 | MIT 协议, 版权所有 © 2019-present Mr.Hope
+
 copyright: false
 ---
 
@@ -88,5 +89,7 @@ export default {
 但是请注意组织许可证只能用于单个商业产品。如果你想要以商业用途使用本插件，由于 lightgallery 是在 [GNU GPL license v3](https://www.gnu.org/licenses/gpl-3.0.html) 下，所以你必须在没有许可证下将你的源代码置于 [GNU GPL license v3](https://www.gnu.org/licenses/gpl-3.0.html) 协议下，或者考虑 [购买许可证](https://www.lightgalleryjs.com/license/) 以规避可能产生的问题。
 
 你被警告了！
+
+如果你对此表示担忧，你可以考虑使用 [vuepress-plugin-photo-swipe](https://vuepress-theme-hope.github.io/v2/photo-swipe/zh/)。
 
 :::

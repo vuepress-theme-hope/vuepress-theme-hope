@@ -61,6 +61,7 @@ export const ukLocale: HopeThemeLocaleData = {
   },
 
   routeLocales: {
+    skipToContent: "Перейти до основного вмісту",
     notFoundMsg: [
       "Тут немає нічого.",
       "Як ми сюди потрапили?",

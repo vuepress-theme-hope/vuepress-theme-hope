@@ -5,7 +5,8 @@ icon: home
 heroImage: /logo.svg
 heroText: vuepress-plugin-reading-time2
 tagline: 预计阅读时间与字数统计生成
-footer: MIT Licensed | Copyright © 2019-present Mr.Hope
+footer: 使用 <a href="https://vuepress-theme-hope.github.io/v2/" target="_blank">VuePress Theme Hope</a> 主题 | MIT 协议, 版权所有 © 2019-present Mr.Hope
+
 copyright: false
 ---
 
@@ -123,3 +124,23 @@ export default {
 - 必填: 否
 
 阅读时间插件的国际化配置。
+
+::: details 内置支持语言
+
+- **简体中文** (zh-CN)
+- **繁体中文** (zh-TW)
+- **英文(美国)** (en-US)
+- **德语** (de-AT)
+- **俄语** (ru-RU)
+- **乌克兰语** (uk-UA)
+- **越南语** (vi-VN)
+- **葡萄牙语(巴西)** (pt-BR)
+- **波兰语** (pl-PL)
+- **法语** (fr-FR)
+- **西班牙语** (es-ES)
+- **斯洛伐克** (sk-SK)
+- **日语** (ja-JP)
+- **土耳其语** (tr-TR)
+- **韩语** (ko-KR)
+
+:::

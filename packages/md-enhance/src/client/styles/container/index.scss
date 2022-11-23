@@ -230,9 +230,9 @@
   summary {
     position: relative;
 
-    padding-left: 2.5rem;
+    margin: -1.5rem;
+    padding: 1.5rem 1.5rem 1.5rem 4rem;
 
-    outline: none;
     list-style: none;
 
     cursor: pointer;
@@ -250,7 +250,7 @@
 
       position: absolute;
       top: calc(50% - 0.75rem);
-      left: 0;
+      left: 1.5rem;
 
       width: 1.5rem;
       height: 1.5rem;

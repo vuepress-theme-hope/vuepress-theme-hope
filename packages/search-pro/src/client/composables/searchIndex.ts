@@ -5,6 +5,7 @@ import { computed, ref } from "vue";
 import type { SearchIndex } from "../../shared/index.js";
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
+declare const __VUEPRESS_DEV__: boolean;
 declare const __VUE_HMR_RUNTIME__: Record<string, unknown>;
 
 const compressedSearchIndex = ref(database);
@@ -15,7 +16,7 @@ export const searchIndex = computed(
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-if (import.meta.webpackHot || import.meta.hot)
+if (__VUEPRESS_DEV__ && (import.meta.webpackHot || import.meta.hot))
   __VUE_HMR_RUNTIME__["updateSearchProDatabase"] = (database: string): void => {
     compressedSearchIndex.value = database;
   };

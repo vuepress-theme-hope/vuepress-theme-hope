@@ -9,8 +9,9 @@ export const getMatchedContent = (
   let totalLength = 0;
 
   const contentLowerCase = content.toLowerCase();
+  const queryStringLowerCase = queryString.toLowerCase();
 
-  let matchIndex = contentLowerCase.indexOf(queryString, start);
+  let matchIndex = contentLowerCase.indexOf(queryStringLowerCase, start);
 
   const append = (content: string, matched: boolean): void => {
     let appendContent = content;
@@ -45,13 +46,13 @@ export const getMatchedContent = (
   if (matchIndex < 0) return null;
 
   while (matchIndex >= 0) {
-    const end = matchIndex + queryString.length;
+    const end = matchIndex + queryStringLowerCase.length;
 
     append(content.slice(start, matchIndex), false);
     append(content.slice(matchIndex, end), true);
 
     start = end;
-    matchIndex = contentLowerCase.indexOf(queryString, start);
+    matchIndex = contentLowerCase.indexOf(queryStringLowerCase, start);
     if (totalLength > 100) break;
   }
 

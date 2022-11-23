@@ -34,7 +34,12 @@ export const seoPlugin =
           options.autoDescription !== false
         ) {
           if (page.excerpt)
-            page.frontmatter.description = stripTags(page.excerpt);
+            page.frontmatter.description = stripTags(page.excerpt)
+              // convert link breaks into spaces
+              .replace(/(?:\r?\n)+/g, " ")
+              // convert 2 or more spaces into 1
+              .replace(/ +/g, " ")
+              .trim();
           else {
             const pageContent = extractContent(page.content);
 

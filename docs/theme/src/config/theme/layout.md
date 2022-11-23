@@ -133,58 +133,61 @@ Whether show icons in the sidebar
 - Type: `HopeThemeSidebarSorter`
 
   ```ts
-  export interface HopeThemeSidebarFileInfo {
+  interface HopeThemeSidebarFileInfo {
     type: "file";
-
-    order: number | null;
-    frontmatter: HopeThemeNormalPageFrontmatter;
-    pageData: HopeThemePageData;
+    filename: string;
 
     title: string;
-    path: string;
-  }
-
-  export interface HopeThemeSidebarDirInfo {
-    type: "dir";
-
     order: number | null;
 
     frontmatter: HopeThemeNormalPageFrontmatter;
     pageData: HopeThemePageData;
+  }
 
-    info: {
-      prefix: string;
-      text: string;
+  interface HopeThemeSidebarDirInfo {
+    type: "dir";
+    dirname: string;
+    children: HopeThemeSidebarInfo[];
+
+    title: string;
+    order: number | null;
+
+    groupInfo: {
+      // prefix: string;
+      // text: string;
       icon?: string;
       collapsible?: boolean;
       link?: string;
     };
-    children: HopeThemeSidebarInfo[];
+
+    frontmatter: HopeThemeNormalPageFrontmatter | null;
+    pageData: HopeThemePageData | null;
   }
 
-  export type HopeThemeSidebarInfo =
+  type HopeThemeSidebarInfo =
     | HopeThemeSidebarFileInfo
     | HopeThemeSidebarDirInfo;
 
-  export type HopeThemeSidebarSorterKeyWord =
+  type HopeThemeSidebarSorterKeyWord =
     | "readme"
     | "order"
     | "date"
     | "date-desc"
     | "filename"
-    | "file-number"
-    | "file-number-desc"
-    | "title"
-    | "title-number"
-    | "title-number-desc";
+    | "title";
 
-  export type HopeThemeSidebarSorterFunction = (
+  type HopeThemeSidebarSorterFunction = (
     infoA: HopeThemeSidebarInfo,
     infoB: HopeThemeSidebarInfo
   ) => number;
+
+  type HopeThemeSidebarSorter =
+    | HopeThemeSidebarSorterFunction
+    | HopeThemeSidebarSorterKeyWord
+    | HopeThemeSidebarSorterKeyWord[];
   ```
 
-- Default: `["readme", "order", "title"]`
+- Default: `["readme", "order", "title", "filename"]`
 
 Structure sidebar sorter.
 
@@ -200,11 +203,7 @@ Available keywords are:
 - `date`: sort by date ascendingly
 - `date-desc`: sort by date descendingly
 - `title`: alphabetically sort by title
-- `title-number`: alphabetically sort according to title and ascendingly sort same titles with different number label
-- `title-number-desc`: alphabetically sort according to title and descendingly sort same titles with different number label
 - `filename`: alphabetically sort by filename
-- `file-number`: alphabetically sort according to filename and ascendingly sort same filenames with different number label
-- `file-number-desc`: alphabetically sort according to filename and descendingly sort same filenames with different number label
 
 ### headerDepth
 

@@ -7,7 +7,7 @@ icon: creative
 
 <!-- more -->
 
-## 浏览模式
+## 浏览模式介绍
 
 在浏览模式中，你可以:
 
@@ -25,42 +25,53 @@ icon: creative
 
 :::
 
-## 演示
+## 图片选择
 
-<!-- markdownlint-disable -->
+插件默认会按照默认主题的选择器选中图片，如果你在使用第三方主题，你可以将一个或多个 CSS 选择器设置给 `selector` 选项。
 
-<div class="image-preview">
-  <img src="/assets/image/1.jpg" />
-  <img src="/assets/image/2.jpg" />
-  <img src="/assets/image/3.jpg" />
-</div>
+## 自定义 PhotoSwipe 选项
 
-<style>
-  .image-preview {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-  }
+你可以通过 `options` 来将额外选项传递给 [`photo-swipe`](http://photoswipe.com/)
 
-  .image-preview > img {
-     box-sizing: border-box;
-     width: 33.3% !important;
-     padding: 9px;
-     border-radius: 16px;
-  }
+## 操作延迟
 
-  @media (max-width: 719px){
-    .image-preview > img {
-      width: 50% !important;
-    }
-  }
+如果你的主题在页面切换时会添加动画，你可能需要延迟 photo-swipe 重新查找页面图片的时间点。你可以通过 `delay` 选项来配置这一延迟，默认的值为 `500` (单位为毫秒)。
 
-  @media (max-width: 419px){
-    .image-preview > img {
-      width: 100% !important;
-    }
-  }
-</style>
+## 多语言配置
 
-<!-- markdownlint-restore -->
+你可以通过 `locales` 来新增特定语言的多语言配置或修改已支持语言的配置。
+
+```ts
+import { defineUserConfig } from "vuepress";
+import { photoSwipePlugin } from "vuepress-plugin-photo-swipe";
+
+export default defineUserConfig({
+  locales: {
+    "/": {
+      // 这是一个支持的语言
+      lang: "zh-CN",
+    },
+    "/xx/": {
+      // 这是一个没有收到插件支持的语言
+      lang: "mm-NN",
+    },
+  },
+
+  plugins: [
+    copyCodePlugin({
+      photoSwipePlugin: {
+        "/": {
+          // 覆盖分享标签文字
+          share: "分享给伙伴",
+        },
+
+        "/xx/": {
+          // 在这里完整设置 `mm-NN` 的多语言配置
+        },
+      },
+    }),
+  ],
+});
+```
+
+For specific options, see [Config → Locale Settings](./config.md#locales).
