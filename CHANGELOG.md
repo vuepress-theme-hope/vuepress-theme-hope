@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.127](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.126...v2.0.0-beta.127) (2022-11-23)
+
+### Features
+
+- make ReadingTimeInfo and PageViewInfo tree-shakable ([7c3ba12](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7c3ba12a928ec26a23ac0f362167b71ed0531834))
+- **shared:** support level options ([7440db0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7440db0a1e980de7d1fe451285cfa5760a7caa76))
+- **theme:** make language dropdown tree shakable ([06f09c4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/06f09c49d8643ccaf4e031c8e6de0a77e2266b4f))
+- **theme:** rebuild sidebar sorter ([5f9be32](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5f9be32c4c16687028f927cc1c3967bcd46a5905))
+
+### Bug Fixes
+
+- **copy-code2:** fix hint text color ([e995d0b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e995d0b67345420aeb02e9d11f7218d77db11e6f))
+- **deps:** update dependency axios to v1.2.0 ([#2445](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2445)) ([bc48c09](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/bc48c090cd77a19fe54eceea9236e70e89ab6116))
+- **search-pro:** insure database is in chunk ([386f634](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/386f6346a4aa3ea0c4a2a0769a680884970ef461))
+- **theme:** sidebar collapsed during page scroll ([93bda72](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/93bda72c2707a312797047fd88080c2bddec9f03))
+
+### Performance Improvements
+
+- **search-pro:** avoid bundling hmr code to production ([65bc3da](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/65bc3da451e104a7c67b152f315d8083569dc831))
+
 ## [2.0.0-beta.126](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.125...v2.0.0-beta.126) (2022-11-22)
 
 ### Features
