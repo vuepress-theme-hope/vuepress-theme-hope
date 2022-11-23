@@ -29,7 +29,7 @@ export default defineComponent({
     };
 
     watch(
-      () => [route.path, props.config],
+      () => route.path,
       (): void => {
         const index = props.config.findIndex((item) =>
           isMatchedSidebarItem(route, item)
