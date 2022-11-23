@@ -6,7 +6,7 @@ import Icon from "@theme-hope/components/Icon.js";
 
 import type { PropType, VNode } from "vue";
 import type {
-  AutoLink as AutoLinkType,
+  AutoLinkOptions as AutoLinkType,
   NavGroup,
 } from "../../../../shared/index.js";
 

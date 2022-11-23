@@ -13,9 +13,9 @@ import { viLocale } from "./vi.js";
 import { zhLocale } from "./zh.js";
 import { zhTWLocale } from "./zhTW.js";
 
-import type { HopeThemeLocaleData } from "../../shared/index.js";
+import type { ThemeLocaleData } from "../../shared/index.js";
 
-export const themeLocalesData: Record<string, HopeThemeLocaleData> = {
+export const themeLocalesData: Record<string, ThemeLocaleData> = {
   "/en/": enLocale,
 
   "/zh/": zhLocale,

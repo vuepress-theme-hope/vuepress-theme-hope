@@ -9,7 +9,7 @@ import {
 import type { ComputedRef } from "vue";
 import type { ResolvedThemeNavbarItem } from "../utils/index.js";
 import type {
-  AutoLink,
+  AutoLinkOptions,
   NavbarItem,
   NavbarGroup,
   NavGroup,
@@ -30,8 +30,8 @@ export const resolveNavbarItem = (
       children: item.children.map(
         (child) =>
           resolveNavbarItem(child, `${prefix}${item.prefix || ""}`) as
-            | NavGroup<AutoLink>
-            | AutoLink
+            | NavGroup<AutoLinkOptions>
+            | AutoLinkOptions
       ),
     };
 

@@ -1,6 +1,6 @@
-import type { HopeThemeNormalPageFrontmatter } from "../../frontmatter/index.js";
+import type { ThemeNormalPageFrontmatter } from "../../frontmatter/index.js";
 import type { SidebarOptions } from "../../sidebar.js";
-import type { HopeThemePageData } from "../../page.js";
+import type { ThemePageData } from "../../page.js";
 
 export interface SidebarFileInfo {
   type: "file";
@@ -9,8 +9,8 @@ export interface SidebarFileInfo {
   title: string;
   order: number | null;
 
-  frontmatter: HopeThemeNormalPageFrontmatter;
-  pageData: HopeThemePageData;
+  frontmatter: ThemeNormalPageFrontmatter;
+  pageData: ThemePageData;
 }
 
 export interface SidebarDirInfo {
@@ -27,8 +27,8 @@ export interface SidebarDirInfo {
     link?: string;
   };
 
-  frontmatter: HopeThemeNormalPageFrontmatter | null;
-  pageData: HopeThemePageData | null;
+  frontmatter: ThemeNormalPageFrontmatter | null;
+  pageData: ThemePageData | null;
 }
 
 export type SidebarInfo = SidebarFileInfo | SidebarDirInfo;

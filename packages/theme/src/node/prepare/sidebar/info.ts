@@ -3,8 +3,8 @@ import { getTitle } from "./title.js";
 
 import type { Page } from "@vuepress/core";
 import type {
-  HopeThemeNormalPageFrontmatter,
-  HopeThemePageData,
+  ThemeNormalPageFrontmatter,
+  ThemePageData,
   SidebarDirInfo,
   SidebarFileInfo,
   SidebarInfo,
@@ -25,14 +25,14 @@ export interface DirInfo {
   items: (DirInfo | FileInfo)[];
 }
 
-export interface HopeThemeSidebarInfoOptions {
+export interface ThemeSidebarInfoOptions {
   pages: Page[];
   sorters: SidebarSorterFunction[];
   scope: string;
 }
 
 const getChildrenInfo = (
-  { scope, pages, sorters }: HopeThemeSidebarInfoOptions,
+  { scope, pages, sorters }: ThemeSidebarInfoOptions,
   children: StructureInfo[]
 ): SidebarInfo[] =>
   children
@@ -50,12 +50,12 @@ const getChildrenInfo = (
     });
 
 const getInfoFromStructure = (
-  { scope, pages, sorters }: HopeThemeSidebarInfoOptions,
+  { scope, pages, sorters }: ThemeSidebarInfoOptions,
   info: StructureInfo
 ): SidebarInfo | null => {
   // handle file
   if (info.type === "file") {
-    const page = <Page<HopeThemePageData, HopeThemeNormalPageFrontmatter>>(
+    const page = <Page<ThemePageData, ThemeNormalPageFrontmatter>>(
       pages.find(
         ({ filePathRelative }) => filePathRelative === `${scope}${info.path}`
       )!
@@ -89,12 +89,12 @@ const getInfoFromStructure = (
   );
 
   if (READMEFile) {
-    const readmePage = <
-      Page<HopeThemePageData, HopeThemeNormalPageFrontmatter>
-    >relatedPages.find(
-      ({ filePathRelative }) =>
-        filePathRelative === `${scope}${READMEFile.path}`
-    )!;
+    const readmePage = <Page<ThemePageData, ThemeNormalPageFrontmatter>>(
+      relatedPages.find(
+        ({ filePathRelative }) =>
+          filePathRelative === `${scope}${READMEFile.path}`
+      )!
+    );
 
     // get dir information
     const dirOptions = readmePage.frontmatter.dir;
@@ -166,7 +166,7 @@ export const getSidebarInfo = ({
   pages,
   sorters,
   scope,
-}: HopeThemeSidebarInfoOptions): // base = ""
+}: ThemeSidebarInfoOptions): // base = ""
 SidebarInfo[] =>
   getStructure(pages, scope)
     .map((info) => getInfoFromStructure({ scope, pages, sorters }, info))

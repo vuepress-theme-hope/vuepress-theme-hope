@@ -1,5 +1,5 @@
 import type { App } from "@vuepress/core";
-import type { HopeThemeOptions } from "../shared/index.js";
+import type { ThemeOptions } from "../shared/index.js";
 
 export interface ThemeStatus {
   enableBlog: boolean;
@@ -12,7 +12,7 @@ export interface ThemeStatus {
 
 export const getStatus = (
   app: App,
-  themeOptions: HopeThemeOptions
+  themeOptions: ThemeOptions
 ): ThemeStatus => {
   const { locales } = app.options;
   const { plugins = {} } = themeOptions;

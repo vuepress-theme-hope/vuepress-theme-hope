@@ -15,7 +15,7 @@ import TOC from "@theme-hope/modules/info/components/TOC.js";
 import { useDarkMode } from "@theme-hope/modules/outlook/composables/index.js";
 
 import type { DefineComponent, VNode } from "vue";
-import type { HopeThemeNormalPageFrontmatter } from "../../shared/index.js";
+import type { ThemeNormalPageFrontmatter } from "../../shared/index.js";
 
 import "../styles/page.scss";
 
@@ -23,7 +23,7 @@ export default defineComponent({
   name: "NormalPage",
 
   setup(_props, { slots }) {
-    const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();
+    const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();
     const { isDarkMode } = useDarkMode();
     const themeLocale = useThemeLocaleData();
 

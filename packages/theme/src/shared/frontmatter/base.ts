@@ -1,6 +1,6 @@
 import type { BasePageFrontMatter } from "vuepress-shared";
 
-export interface HopeThemePageFrontmatter extends BasePageFrontMatter {
+export interface ThemePageFrontmatter extends BasePageFrontMatter {
   /**
    * Whether is home page
    *

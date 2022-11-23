@@ -24,7 +24,7 @@ import type {
   PageTag,
 } from "@theme-hope/modules/info/utils/index.js";
 import type {
-  HopeThemeNormalPageFrontmatter,
+  ThemeNormalPageFrontmatter,
   PageInfo,
 } from "../../shared/index.js";
 
@@ -101,7 +101,7 @@ export const usePageInfo = (): {
     localizedDate: string;
     readingTime?: ReadingTime;
   }>();
-  const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();
+  const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();
   const author = usePageAuthor();
   const category = usePageCategory();
   const tag = usePageTag();

@@ -10,7 +10,7 @@ import { SlideDownIcon } from "./icons/icons.js";
 import defaultHeroBgImagePath from "../assets/hero.jpg";
 
 import type { VNode } from "vue";
-import type { HopeThemeBlogHomePageFrontmatter } from "../../../../shared/index.js";
+import type { ThemeBlogHomePageFrontmatter } from "../../../../shared/index.js";
 
 import "../styles/blog-hero.scss";
 
@@ -19,7 +19,7 @@ export default defineComponent({
 
   setup(_props, { slots }) {
     const title = usePageHeadTitle();
-    const frontmatter = usePageFrontmatter<HopeThemeBlogHomePageFrontmatter>();
+    const frontmatter = usePageFrontmatter<ThemeBlogHomePageFrontmatter>();
 
     const hero = ref<HTMLElement>();
     const heroImage = computed(() => frontmatter.value.heroImage || null);

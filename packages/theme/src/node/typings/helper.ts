@@ -19,43 +19,39 @@ import type {
 
 type Helper<T> = (options: T) => T;
 
-export type HopeThemeNavbarHelper = Helper<NavbarOptions>;
+export type ThemeNavbarHelper = Helper<NavbarOptions>;
 
-export type HopeThemeSidebarHelper = Helper<SidebarOptions>;
+export type ThemeSidebarHelper = Helper<SidebarOptions>;
 
-export type HopeThemeSidebarArrayHelper = Helper<SidebarArrayOptions>;
+export type ThemeSidebarArrayHelper = Helper<SidebarArrayOptions>;
 
-export type HopeThemeSidebarObjectHelper = Helper<SidebarObjectOptions>;
+export type ThemeSidebarObjectHelper = Helper<SidebarObjectOptions>;
 
-export type HopeThemeBlogPluginHelper = Helper<BlogPluginOptions | boolean>;
+export type ThemeBlogPluginHelper = Helper<BlogPluginOptions | boolean>;
 
-export type HopeThemeCommentPluginHelper = Helper<CommentOptions | false>;
+export type ThemeCommentPluginHelper = Helper<CommentOptions | false>;
 
-export type HopeThemeCopyCodePluginHelper = Helper<CopyCodeOptions | false>;
+export type ThemeCopyCodePluginHelper = Helper<CopyCodeOptions | false>;
 
-export type HopeThemeCopyrightPluginHelper = Helper<CopyrightOptions | false>;
+export type ThemeCopyrightPluginHelper = Helper<CopyrightOptions | false>;
 
-export type HopeThemeFeedPluginHelper = Helper<
+export type ThemeFeedPluginHelper = Helper<
   Omit<FeedOptions, "hostname"> | false
 >;
 
-export type HopeThemeGitPluginHelper = Helper<GitPluginOptions | false>;
-export type HopeThemeMdEnhancePluginHelper = Helper<
-  MarkdownEnhanceOptions | false
->;
+export type ThemeGitPluginHelper = Helper<GitPluginOptions | false>;
+export type ThemeMdEnhancePluginHelper = Helper<MarkdownEnhanceOptions | false>;
 
-export type HopeThemePhotoSwipePluginHelper = Helper<PhotoSwipeOptions | false>;
+export type ThemePhotoSwipePluginHelper = Helper<PhotoSwipeOptions | false>;
 
-export type HopeThemePWAPluginHelper = Helper<PWAOptions | false>;
+export type ThemePWAPluginHelper = Helper<PWAOptions | false>;
 
-export type HopeThemeReadingTimePluginHelper = Helper<
-  ReadingTimeOptions | false
->;
+export type ThemeReadingTimePluginHelper = Helper<ReadingTimeOptions | false>;
 
-export type HopeThemeSEOPluginHelper = Helper<
+export type ThemeSEOPluginHelper = Helper<
   Omit<SeoOptions, "hostname" | "author"> | false
 >;
 
-export type HopeThemeSitemapPluginHelper = Helper<
+export type ThemeSitemapPluginHelper = Helper<
   Omit<SitemapOptions, "hostname"> | false
 >;

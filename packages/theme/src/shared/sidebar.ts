@@ -1,8 +1,8 @@
-import type { AutoLink, TextItem } from "./utils.js";
+import type { AutoLinkOptions, TextItemOptions } from "./utils.js";
 
-export type SidebarPageItem = AutoLink;
+export type SidebarPageItem = AutoLinkOptions;
 
-export interface SidebarStructureItem extends TextItem {
+export interface SidebarStructureItem extends TextItemOptions {
   /**
    * Link prefix of current group
    *
@@ -29,7 +29,7 @@ export interface SidebarStructureItem extends TextItem {
   children: "structure";
 }
 
-export interface SidebarGroupItem extends TextItem {
+export interface SidebarGroupItem extends TextItemOptions {
   /**
    * Link prefix of current group
    *

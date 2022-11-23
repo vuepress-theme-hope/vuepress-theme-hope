@@ -88,10 +88,10 @@ Whether Hero is full screen displayed
 
 ### projects
 
-- Type: `HopeThemeBlogHomeProjectOptions[]`
+- Type: `ThemeBlogHomeProjectOptions[]`
 
   ```ts
-  interface HopeThemeBlogHomeProjectOptions {
+  interface ThemeBlogHomeProjectOptions {
     /**
      * Project name
      */

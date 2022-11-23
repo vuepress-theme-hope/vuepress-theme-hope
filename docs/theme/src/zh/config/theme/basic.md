@@ -247,7 +247,7 @@ tag:
 
 ## locales
 
-- 类型: `Record<string, HopeThemeLocaleOptions>`
+- 类型: `Record<string, ThemeLocaleOptions>`
 - 详情:
   - [主题多语言配置](./i18n.md)
 

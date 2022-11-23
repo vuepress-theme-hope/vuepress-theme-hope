@@ -23,8 +23,8 @@ import { useSidebarItems } from "@theme-hope/modules/sidebar/composables/index.j
 
 import type { DefineComponent, VNode } from "vue";
 import type {
-  HopeThemeNormalPageFrontmatter,
-  HopeThemeProjectHomePageFrontmatter,
+  ThemeNormalPageFrontmatter,
+  ThemeProjectHomePageFrontmatter,
 } from "../../shared/index.js";
 
 import "../styles/common.scss";
@@ -49,7 +49,7 @@ export default defineComponent({
     const router = useRouter();
     const page = usePageData();
     const frontmatter = usePageFrontmatter<
-      HopeThemeProjectHomePageFrontmatter | HopeThemeNormalPageFrontmatter
+      ThemeProjectHomePageFrontmatter | ThemeNormalPageFrontmatter
     >();
     const themeLocale = useThemeLocaleData();
     const isMobile = useMobile();

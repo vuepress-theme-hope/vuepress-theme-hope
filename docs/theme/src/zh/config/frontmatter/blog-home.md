@@ -95,10 +95,10 @@ tag:
 
 ### projects
 
-- 类型: `HopeThemeBlogHomeProjectOptions[]`
+- 类型: `ThemeBlogHomeProjectOptions[]`
 
   ```ts
-  interface HopeThemeBlogHomeProjectOptions {
+  interface ThemeBlogHomeProjectOptions {
     /**
      * 项目名称
      */

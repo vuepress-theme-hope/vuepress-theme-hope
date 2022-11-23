@@ -6,10 +6,10 @@ import type { GitData } from "@vuepress/plugin-git";
 import type { BlogOptions } from "vuepress-plugin-blog2";
 import type {
   ArticleInfo,
-  HopeThemeNormalPageFrontmatter,
+  ThemeNormalPageFrontmatter,
   BlogLocaleData,
   BlogPluginOptions,
-  HopeThemeConfig,
+  ThemeConfig,
 } from "../../shared/index.js";
 
 const defaultOptions: BlogPluginOptions = {
@@ -37,12 +37,12 @@ const compareDate = (
 const sorter = (
   pageA: Page<
     { git: GitData },
-    HopeThemeNormalPageFrontmatter,
+    ThemeNormalPageFrontmatter,
     { routeMeta: ArticleInfo }
   >,
   pageB: Page<
     { git: GitData },
-    HopeThemeNormalPageFrontmatter,
+    ThemeNormalPageFrontmatter,
     { routeMeta: ArticleInfo }
   >
 ): number => {
@@ -68,7 +68,7 @@ export const getBlogOptions = (
 });
 
 export const getTitleLocales = (
-  themeData: HopeThemeConfig,
+  themeData: ThemeConfig,
   key: keyof BlogLocaleData
 ): Record<string, string> =>
   Object.fromEntries(
@@ -79,7 +79,7 @@ export const getTitleLocales = (
   );
 
 export const getBlogPlugin = (
-  themeData: HopeThemeConfig,
+  themeData: ThemeConfig,
   options?: BlogPluginOptions | boolean
 ): Plugin | null => {
   if (!options) return null;
@@ -105,7 +105,7 @@ export const getBlogPlugin = (
           routeMeta,
         }: Page<
           { git: GitData },
-          HopeThemeNormalPageFrontmatter,
+          ThemeNormalPageFrontmatter,
           { routeMeta: ArticleInfo }
         >) => routeMeta[ArticleInfoType.category] || [],
         sorter,
@@ -126,7 +126,7 @@ export const getBlogPlugin = (
           routeMeta,
         }: Page<
           { git: GitData },
-          HopeThemeNormalPageFrontmatter,
+          ThemeNormalPageFrontmatter,
           { routeMeta: ArticleInfo }
         >) => routeMeta[ArticleInfoType.tag] || [],
         sorter,
@@ -151,7 +151,7 @@ export const getBlogPlugin = (
           frontmatter,
         }: Page<
           { git: GitData },
-          HopeThemeNormalPageFrontmatter,
+          ThemeNormalPageFrontmatter,
           { routeMeta: ArticleInfo }
         >) => frontmatter.article !== false,
         path: blogOptions.article,
@@ -167,7 +167,7 @@ export const getBlogPlugin = (
           routeMeta,
         }: Page<
           { git: GitData },
-          HopeThemeNormalPageFrontmatter,
+          ThemeNormalPageFrontmatter,
           { routeMeta: ArticleInfo }
         >) => Boolean(routeMeta[ArticleInfoType.isEncrypted]),
         path: blogOptions.encrypted,
@@ -183,7 +183,7 @@ export const getBlogPlugin = (
           routeMeta,
         }: Page<
           { git: GitData },
-          HopeThemeNormalPageFrontmatter,
+          ThemeNormalPageFrontmatter,
           { routeMeta: ArticleInfo }
         >) => routeMeta[ArticleInfoType.type] === PageType.slide,
         path: blogOptions.slide,
@@ -197,12 +197,12 @@ export const getBlogPlugin = (
         sorter: (
           pageA: Page<
             { git: GitData },
-            HopeThemeNormalPageFrontmatter,
+            ThemeNormalPageFrontmatter,
             { routeMeta: ArticleInfo }
           >,
           pageB: Page<
             { git: GitData },
-            HopeThemeNormalPageFrontmatter,
+            ThemeNormalPageFrontmatter,
             { routeMeta: ArticleInfo }
           >
         ): number => {
@@ -223,7 +223,7 @@ export const getBlogPlugin = (
           frontmatter,
         }: Page<
           { git: GitData },
-          HopeThemeNormalPageFrontmatter,
+          ThemeNormalPageFrontmatter,
           { routeMeta: ArticleInfo }
         >) => Boolean(frontmatter.star),
         path: blogOptions.star,
@@ -237,12 +237,12 @@ export const getBlogPlugin = (
         sorter: (
           pageA: Page<
             { git: GitData },
-            HopeThemeNormalPageFrontmatter,
+            ThemeNormalPageFrontmatter,
             { routeMeta: ArticleInfo }
           >,
           pageB: Page<
             { git: GitData },
-            HopeThemeNormalPageFrontmatter,
+            ThemeNormalPageFrontmatter,
             { routeMeta: ArticleInfo }
           >
         ) =>
@@ -255,7 +255,7 @@ export const getBlogPlugin = (
           routeMeta,
         }: Page<
           { git: GitData },
-          HopeThemeNormalPageFrontmatter,
+          ThemeNormalPageFrontmatter,
           { routeMeta: ArticleInfo }
         >) =>
           ArticleInfoType.date in routeMeta &&

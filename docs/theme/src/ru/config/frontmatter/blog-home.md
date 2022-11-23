@@ -88,10 +88,10 @@ tag:
 
 ### projects
 
-- Тип: `HopeThemeBlogHomeProjectOptions[]`
+- Тип: `ThemeBlogHomeProjectOptions[]`
 
   ```ts
-  interface HopeThemeBlogHomeProjectOptions {
+  interface ThemeBlogHomeProjectOptions {
     /**
      * Project name
      */

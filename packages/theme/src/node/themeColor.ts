@@ -1,9 +1,9 @@
 import type { App } from "@vuepress/core";
-import type { HopeThemeConfig } from "../shared/index.js";
+import type { ThemeConfig } from "../shared/index.js";
 
 export const prepareThemeColorScss = async (
   app: App,
-  themeConfig: HopeThemeConfig
+  themeConfig: ThemeConfig
 ): Promise<void> => {
   await app.writeTemp(
     "theme-hope/theme-color.scss",

@@ -1,9 +1,9 @@
-import type { AutoLink, TextItem } from "./utils.js";
+import type { AutoLinkOptions, TextItemOptions } from "./utils.js";
 
 /**
  * Base nav group, has nav items children
  */
-export interface NavGroup<T> extends TextItem {
+export interface NavGroup<T> extends TextItemOptions {
   /**
    * Link prefix of current group
    *
@@ -30,6 +30,6 @@ export interface NavGroup<T> extends TextItem {
  * Navbar types
  */
 // user config
-export type NavbarItem = AutoLink;
+export type NavbarItem = AutoLinkOptions;
 export type NavbarGroup = NavGroup<NavbarGroup | NavbarItem | string>;
 export type NavbarOptions = (NavbarItem | NavbarGroup | string)[];

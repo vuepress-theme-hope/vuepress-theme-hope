@@ -8,7 +8,7 @@ import HomeHero from "@theme-hope/components/HomeHero.js";
 import { usePure } from "@theme-hope/composables/index.js";
 
 import type { VNode } from "vue";
-import type { HopeThemeProjectHomePageFrontmatter } from "../../shared/index.js";
+import type { ThemeProjectHomePageFrontmatter } from "../../shared/index.js";
 
 import "../styles/home-page.scss";
 
@@ -17,8 +17,7 @@ export default defineComponent({
 
   setup(_props, { slots }) {
     const pure = usePure();
-    const frontmatter =
-      usePageFrontmatter<HopeThemeProjectHomePageFrontmatter>();
+    const frontmatter = usePageFrontmatter<ThemeProjectHomePageFrontmatter>();
 
     return (): VNode =>
       h(

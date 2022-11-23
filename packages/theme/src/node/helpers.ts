@@ -1,60 +1,59 @@
 import type {
-  HopeThemeBlogPluginHelper,
-  HopeThemeCommentPluginHelper,
-  HopeThemeCopyCodePluginHelper,
-  HopeThemeCopyrightPluginHelper,
-  HopeThemeFeedPluginHelper,
-  HopeThemeGitPluginHelper,
-  HopeThemeMdEnhancePluginHelper,
-  HopeThemeNavbarHelper,
-  HopeThemePhotoSwipePluginHelper,
-  HopeThemePWAPluginHelper,
-  HopeThemeReadingTimePluginHelper,
-  HopeThemeSEOPluginHelper,
-  HopeThemeSidebarArrayHelper,
-  HopeThemeSidebarHelper,
-  HopeThemeSidebarObjectHelper,
-  HopeThemeSitemapPluginHelper,
+  ThemeBlogPluginHelper,
+  ThemeCommentPluginHelper,
+  ThemeCopyCodePluginHelper,
+  ThemeCopyrightPluginHelper,
+  ThemeFeedPluginHelper,
+  ThemeGitPluginHelper,
+  ThemeMdEnhancePluginHelper,
+  ThemeNavbarHelper,
+  ThemePhotoSwipePluginHelper,
+  ThemePWAPluginHelper,
+  ThemeReadingTimePluginHelper,
+  ThemeSEOPluginHelper,
+  ThemeSidebarArrayHelper,
+  ThemeSidebarHelper,
+  ThemeSidebarObjectHelper,
+  ThemeSitemapPluginHelper,
 } from "./typings/index.js";
 
-export const navbar: HopeThemeNavbarHelper = (navbarConfig) => navbarConfig;
+export const navbar: ThemeNavbarHelper = (navbarConfig) => navbarConfig;
 
-export const sidebar: HopeThemeSidebarHelper = (sidebarConfig) => sidebarConfig;
+export const sidebar: ThemeSidebarHelper = (sidebarConfig) => sidebarConfig;
 
-export const arraySidebar: HopeThemeSidebarArrayHelper = (sidebarConfig) =>
+export const arraySidebar: ThemeSidebarArrayHelper = (sidebarConfig) =>
   sidebarConfig;
 
-export const objectSidebar: HopeThemeSidebarObjectHelper = (sidebarConfig) =>
+export const objectSidebar: ThemeSidebarObjectHelper = (sidebarConfig) =>
   sidebarConfig;
 
-export const blog: HopeThemeBlogPluginHelper = (blogConfig) => blogConfig;
+export const blog: ThemeBlogPluginHelper = (blogConfig) => blogConfig;
 
-export const comment: HopeThemeCommentPluginHelper = (commentConfig) =>
+export const comment: ThemeCommentPluginHelper = (commentConfig) =>
   commentConfig;
 
-export const copyCode: HopeThemeCopyCodePluginHelper = (copyCodeConfig) =>
+export const copyCode: ThemeCopyCodePluginHelper = (copyCodeConfig) =>
   copyCodeConfig;
 
-export const copyright: HopeThemeCopyrightPluginHelper = (copyrightConfig) =>
+export const copyright: ThemeCopyrightPluginHelper = (copyrightConfig) =>
   copyrightConfig;
 
-export const feed: HopeThemeFeedPluginHelper = (feedConfig) => feedConfig;
+export const feed: ThemeFeedPluginHelper = (feedConfig) => feedConfig;
 
-export const git: HopeThemeGitPluginHelper = (gitConfig) => gitConfig;
+export const git: ThemeGitPluginHelper = (gitConfig) => gitConfig;
 
-export const mdEnhance: HopeThemeMdEnhancePluginHelper = (mdEnhanceConfig) =>
+export const mdEnhance: ThemeMdEnhancePluginHelper = (mdEnhanceConfig) =>
   mdEnhanceConfig;
 
-export const photoSwipe: HopeThemePhotoSwipePluginHelper = (photoSwipeConfig) =>
+export const photoSwipe: ThemePhotoSwipePluginHelper = (photoSwipeConfig) =>
   photoSwipeConfig;
 
-export const pwa: HopeThemePWAPluginHelper = (pwaConfig) => pwaConfig;
+export const pwa: ThemePWAPluginHelper = (pwaConfig) => pwaConfig;
 
-export const readingTime: HopeThemeReadingTimePluginHelper = (
-  readingTimeConfig
-) => readingTimeConfig;
+export const readingTime: ThemeReadingTimePluginHelper = (readingTimeConfig) =>
+  readingTimeConfig;
 
-export const seo: HopeThemeSEOPluginHelper = (seoConfig) => seoConfig;
+export const seo: ThemeSEOPluginHelper = (seoConfig) => seoConfig;
 
-export const sitemap: HopeThemeSitemapPluginHelper = (sitemapConfig) =>
+export const sitemap: ThemeSitemapPluginHelper = (sitemapConfig) =>
   sitemapConfig;

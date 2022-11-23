@@ -3,10 +3,10 @@ import { deepAssign } from "vuepress-shared/node";
 
 import type { Plugin } from "@vuepress/core";
 import type { FeedOptions } from "vuepress-plugin-feed2";
-import type { HopeThemeConfig } from "../../shared/index.js";
+import type { ThemeConfig } from "../../shared/index.js";
 
 export const getFeedPlugin = (
-  themeConfig: HopeThemeConfig,
+  themeConfig: ThemeConfig,
   options?: Omit<FeedOptions, "hostname">,
   hostname?: string,
   legacy = false

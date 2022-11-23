@@ -6,7 +6,7 @@ import { logger } from "../../utils.js";
 
 import type { App } from "@vuepress/core";
 import type {
-  HopeThemeConfig,
+  ThemeConfig,
   SidebarArrayOptions,
   SidebarOptions,
   SidebarGroupItem,
@@ -58,7 +58,7 @@ const getSidebarItems = (infos: SidebarInfo[]): (SidebarGroupItem | string)[] =>
 
 export const getSidebarData = (
   app: App,
-  themeConfig: HopeThemeConfig,
+  themeConfig: ThemeConfig,
   sorter?: SidebarSorter
 ): SidebarOptions => {
   const generatePaths: string[] = [];
@@ -102,7 +102,7 @@ export const getSidebarData = (
 
 export const prepareSidebarData = async (
   app: App,
-  themeConfig: HopeThemeConfig,
+  themeConfig: ThemeConfig,
   sorter?: SidebarSorter
 ): Promise<void> => {
   const sidebarData = getSidebarData(app, themeConfig, sorter);

@@ -10,7 +10,7 @@ import type {
   ResolvedSidebarItem,
   ResolvedSidebarHeaderItem,
 } from "../utils/index.js";
-import type { AutoLink as AutoLinkType } from "../../../../shared/index.js";
+import type { AutoLinkOptions as AutoLinkType } from "../../../../shared/index.js";
 
 export const renderItem = (
   config: ResolvedSidebarItem,

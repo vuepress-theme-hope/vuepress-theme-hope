@@ -17,16 +17,16 @@ import { getSEOPlugin } from "./seo.js";
 
 import type { PluginConfig } from "@vuepress/core";
 import type {
-  HopeThemeConfig,
-  HopeThemeOptions,
+  ThemeConfig,
+  ThemeOptions,
   PluginsOptions,
 } from "../../shared/index.js";
 
 export const getPluginConfig = (
   plugins: PluginsOptions,
-  themeData: HopeThemeConfig,
+  themeData: ThemeConfig,
   options: Pick<
-    HopeThemeOptions,
+    ThemeOptions,
     "addThis" | "backToTop" | "hostname" | "iconAssets" | "iconPrefix"
   >,
   legacy = false

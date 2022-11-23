@@ -1,6 +1,6 @@
-import type { HopeThemePageFrontmatter } from "./base.js";
+import type { ThemePageFrontmatter } from "./base.js";
 
-export interface HopeThemeBlogHomeProjectOptions {
+export interface ThemeBlogHomeProjectOptions {
   /**
    * Project name
    *
@@ -34,8 +34,7 @@ export interface HopeThemeBlogHomeProjectOptions {
   icon?: string;
 }
 
-export interface HopeThemeBlogHomePageFrontmatter
-  extends HopeThemePageFrontmatter {
+export interface ThemeBlogHomePageFrontmatter extends ThemePageFrontmatter {
   home: true;
   layout: "BlogHome";
   /**
@@ -53,5 +52,5 @@ export interface HopeThemeBlogHomePageFrontmatter
   bgImage?: string | false;
   bgImageStyle?: Record<string, string>;
   tagline?: string;
-  projects: HopeThemeBlogHomeProjectOptions[];
+  projects: ThemeBlogHomeProjectOptions[];
 }

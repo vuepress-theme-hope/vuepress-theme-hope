@@ -5,7 +5,7 @@ import { describe, it, expect } from "vitest";
 import { getSidebarData } from "../../src/node/prepare/index.js";
 import { getStatus } from "../../src/node/status.js";
 import { getThemeConfig } from "../../src/node/themeConfig.js";
-import { HopeThemeOptions } from "../../src/shared/index.js";
+import { ThemeOptions } from "../../src/shared/index.js";
 import { sidebarTheme } from "./__fixtures__/theme/sidebar.js";
 
 describe("should generate sidebarData correctly", async () => {
@@ -18,7 +18,7 @@ describe("should generate sidebarData correctly", async () => {
   await app.init();
 
   it("Should resolve structure in root", () => {
-    const themeOptions: HopeThemeOptions = {
+    const themeOptions: ThemeOptions = {
       sidebar: "structure",
     };
 
@@ -32,7 +32,7 @@ describe("should generate sidebarData correctly", async () => {
   });
 
   it("Should resolve structure in dir", () => {
-    const themeOptions: HopeThemeOptions = {
+    const themeOptions: ThemeOptions = {
       sidebar: {
         "/dir/": "structure",
         "/dir-negative-order/": "structure",
@@ -54,7 +54,7 @@ describe("should generate sidebarData correctly", async () => {
   });
 
   it("Should resolve structure in group options", () => {
-    const themeOptions: HopeThemeOptions = {
+    const themeOptions: ThemeOptions = {
       sidebar: {
         "/nested-dir/": [
           "",

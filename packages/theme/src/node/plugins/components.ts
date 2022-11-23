@@ -2,12 +2,12 @@ import { componentsPlugin } from "vuepress-plugin-components";
 
 import type { AvailableComponent } from "vuepress-plugin-components";
 import type { Plugin } from "@vuepress/core";
-import type { HopeThemeOptions } from "../../shared/index.js";
+import type { ThemeOptions } from "../../shared/index.js";
 
 export const getComponentsPlugin = (
   components: AvailableComponent[] = ["Badge", "FontIcon"],
   options: Pick<
-    HopeThemeOptions,
+    ThemeOptions,
     "addThis" | "backToTop" | "hostname" | "iconAssets" | "iconPrefix"
   >
 ): Plugin =>

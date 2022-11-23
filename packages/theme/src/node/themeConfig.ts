@@ -5,11 +5,10 @@ import { themeLocalesData } from "./locales/index.js";
 import type { App } from "@vuepress/core";
 import type { ThemeStatus } from "./status.js";
 import {
-  HopeThemeConfig,
-  HopeThemeLocaleConfig,
-  HopeThemeLocaleOptions,
-  HopeThemeOptions,
-  HopeThemeRootConfig,
+  ThemeConfig,
+  ThemeLocaleConfig,
+  ThemeLocaleOptions,
+  ThemeOptions,
 } from "../shared/index.js";
 
 const rootAllowConfig = [
@@ -22,7 +21,7 @@ const rootAllowConfig = [
   "mobileBreakPoint",
 ];
 
-const defaultRootOptions: HopeThemeRootConfig = {
+const defaultRootOptions: Omit<ThemeConfig, "locales"> = {
   // features
   blog: {},
   encrypt: {},
@@ -34,7 +33,7 @@ const defaultRootOptions: HopeThemeRootConfig = {
   fullscreen: false,
 };
 
-const defaultLocaleOptions: HopeThemeLocaleOptions = {
+const defaultLocaleOptions: ThemeLocaleOptions = {
   // features
   blog: {},
   // layouts
@@ -52,10 +51,10 @@ const defaultLocaleOptions: HopeThemeLocaleOptions = {
  */
 export const getThemeConfig = (
   app: App,
-  themeOptions: HopeThemeOptions,
+  themeOptions: ThemeOptions,
   { enableBlog }: ThemeStatus
-): HopeThemeConfig => {
-  const themeData: HopeThemeConfig = {
+): ThemeConfig => {
+  const themeData: ThemeConfig = {
     ...defaultRootOptions,
     ...Object.fromEntries(
       Object.entries(themeOptions).filter(([key]) =>
@@ -79,7 +78,7 @@ export const getThemeConfig = (
 
             return [
               locale,
-              <HopeThemeLocaleConfig>{
+              <ThemeLocaleConfig>{
                 // default config
                 ...defaultLocaleOptions,
                 ...config,
@@ -90,24 +89,21 @@ export const getThemeConfig = (
         // extract localeConfig
         config: Object.fromEntries(
           [
-            <[string, HopeThemeLocaleOptions]>["/", {}],
+            <[string, ThemeLocaleOptions]>["/", {}],
             ...Object.entries(themeOptions.locales || {}),
-          ].map<[string, HopeThemeLocaleConfig]>(
-            ([localePath, localeConfig]) => [
-              localePath,
-              <HopeThemeLocaleConfig>{
-                // root config
-                ...Object.fromEntries(
-                  Object.entries(themeOptions).filter(
-                    ([key]) =>
-                      key !== "locales" && !rootAllowConfig.includes(key)
-                  )
-                ),
-                // locale options
-                ...localeConfig,
-              },
-            ]
-          )
+          ].map<[string, ThemeLocaleConfig]>(([localePath, localeConfig]) => [
+            localePath,
+            <ThemeLocaleConfig>{
+              // root config
+              ...Object.fromEntries(
+                Object.entries(themeOptions).filter(
+                  ([key]) => key !== "locales" && !rootAllowConfig.includes(key)
+                )
+              ),
+              // locale options
+              ...localeConfig,
+            },
+          ])
         ),
       }),
   };

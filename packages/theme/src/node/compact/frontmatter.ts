@@ -1,7 +1,7 @@
 import { deprecatedLogger, droppedLogger } from "./utils.js";
 import { logger } from "../utils.js";
 
-import type { HopeThemePageFrontmatter } from "../../shared/index.js";
+import type { ThemePageFrontmatter } from "../../shared/index.js";
 
 const DEPRECATED_FRONTMATTER_OPTIONS: [string, string][] = [
   ["authors", "author"],
@@ -36,7 +36,7 @@ const DROPPED_FRONTMATTER_OPTIONS: [string, string][] = [
 export const convertFrontmatter = (
   frontmatter: Record<string, unknown>,
   filePathRelative = ""
-): HopeThemePageFrontmatter & Record<string, unknown> => {
+): ThemePageFrontmatter & Record<string, unknown> => {
   DEPRECATED_FRONTMATTER_OPTIONS.forEach(([deprecatedOption, newOption]) =>
     deprecatedLogger({
       options: frontmatter,

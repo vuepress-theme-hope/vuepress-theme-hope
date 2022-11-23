@@ -1,6 +1,6 @@
-import type { HopeThemeLocaleData } from "../../shared/index.js";
+import type { ThemeLocaleData } from "../../shared/index.js";
 
-export const ukLocale: HopeThemeLocaleData = {
+export const ukLocale: ThemeLocaleData = {
   lang: "uk-UA",
 
   navbarLocales: {

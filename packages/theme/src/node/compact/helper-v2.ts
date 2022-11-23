@@ -11,7 +11,7 @@ import type {
   SidebarOptions,
   SidebarArrayOptions,
   SidebarObjectOptions,
-  HopeThemeOptions,
+  ThemeOptions,
 } from "../../shared/index.js";
 
 /**
@@ -19,9 +19,8 @@ import type {
  *
  * @description This function will be removed in v2 future release and is only available before v2 touch stable
  */
-export const hopeThemeLegacy = (
-  themeOptions: HopeThemeOptions
-): ThemeFunction => hopeTheme(themeOptions, true);
+export const hopeThemeLegacy = (themeOptions: ThemeOptions): ThemeFunction =>
+  hopeTheme(themeOptions, true);
 
 /**
  * @deprecated use `import { navbar } from "vuepress-theme-hope";` instead
@@ -78,16 +77,14 @@ export const defineSidebarObjectConfig = (
 /**
  * @deprecated use `import { hopeThemeLegacy } from "vuepress-theme-hope";` instead
  */
-export const defineThemeConfig = (
-  themeConfig: HopeThemeOptions
-): HopeThemeOptions => {
+export const defineThemeConfig = (themeConfig: ThemeOptions): ThemeOptions => {
   deprecatedMsg(
     "defineThemeConfig",
     'import { hopeThemeLegacy } from "vuepress-theme-hope";'
   );
 
   return convertThemeConfig(
-    themeConfig as HopeThemeOptions & Record<string, unknown>
+    themeConfig as ThemeOptions & Record<string, unknown>
   );
 };
 
@@ -122,7 +119,7 @@ export default {
 
   // check themeConfig
   if ("themeConfig" in config && typeof config["themeConfig"] === "object") {
-    config.theme = hopeThemeLegacy(config["themeConfig"] as HopeThemeOptions);
+    config.theme = hopeThemeLegacy(config["themeConfig"] as ThemeOptions);
   }
 
   // check theme

@@ -1,6 +1,6 @@
-import type { HopeThemePageFrontmatter } from "./base.js";
+import type { ThemePageFrontmatter } from "./base.js";
 
-export interface HopeThemeHomeActionOptions {
+export interface ThemeHomeActionOptions {
   /**
    * Action name
    *
@@ -25,7 +25,7 @@ export interface HopeThemeHomeActionOptions {
   type?: "primary" | "default";
 }
 
-export interface HopeThemeHomeFeatureOptions {
+export interface ThemeHomeFeatureOptions {
   /**
    * Feature name
    *
@@ -59,8 +59,7 @@ export interface HopeThemeHomeFeatureOptions {
   link?: string;
 }
 
-export interface HopeThemeProjectHomePageFrontmatter
-  extends HopeThemePageFrontmatter {
+export interface ThemeProjectHomePageFrontmatter extends ThemePageFrontmatter {
   home: true;
   heroImage?: string;
   heroImageDark?: string;
@@ -68,6 +67,6 @@ export interface HopeThemeProjectHomePageFrontmatter
   heroText?: string | false;
   tagline?: string | false;
 
-  actions?: HopeThemeHomeActionOptions[];
-  features?: HopeThemeHomeFeatureOptions[];
+  actions?: ThemeHomeActionOptions[];
+  features?: ThemeHomeFeatureOptions[];
 }

@@ -13,7 +13,7 @@ import type {
   LayoutLocaleOptions,
 } from "./layout/index.js";
 
-export interface HopeThemeLocaleData
+export interface ThemeLocaleData
   extends AppearanceLocaleData,
     FeatureLocaleData,
     LayoutLocaleData {
@@ -23,26 +23,30 @@ export interface HopeThemeLocaleData
   lang: string;
 }
 
-export type HopeThemeLocaleOptions = LocaleDataToOption<AppearanceLocaleData> &
-  LocaleDataToOption<FeatureLocaleData> &
-  FeatureLocaleOptions &
-  LocaleDataToOption<LayoutLocaleData> &
-  LayoutLocaleOptions & {
-    /**
-     * Global default author
-     *
-     * 全局默认作者
-     */
-    author?: Author;
-  } & LocaleData;
+export interface ThemeLocaleOptions
+  extends LocaleData,
+    LocaleDataToOption<AppearanceLocaleData>,
+    LocaleDataToOption<FeatureLocaleData>,
+    FeatureLocaleOptions,
+    LocaleDataToOption<LayoutLocaleData>,
+    LayoutLocaleOptions {
+  /**
+   * Global default author
+   *
+   * 全局默认作者
+   */
+  author?: Author;
+}
 
-export type HopeThemeLocaleConfig = HopeThemeLocaleData &
-  FeatureLocaleConfig &
-  LayoutLocaleConfig & {
-    /**
-     * Global default author
-     *
-     * 全局默认作者
-     */
-    author?: Author;
-  } & LocaleData;
+export interface ThemeLocaleConfig
+  extends LocaleData,
+    ThemeLocaleData,
+    FeatureLocaleConfig,
+    LayoutLocaleConfig {
+  /**
+   * Global default author
+   *
+   * 全局默认作者
+   */
+  author?: Author;
+}

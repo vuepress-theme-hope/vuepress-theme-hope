@@ -7,7 +7,7 @@ import { getStatus } from "../../src/node/status";
 import { getThemeConfig } from "../../src/node/themeConfig";
 import { emptyTheme } from "./__fixtures__/theme/empty.js";
 
-import type { HopeThemeOptions } from "../../src/shared";
+import type { ThemeOptions } from "../../src/shared";
 
 const app = createBaseApp({
   bundler: {} as any,
@@ -72,7 +72,7 @@ describe("should generate themeConfig correctly", () => {
   });
 
   it("root only option should not appear in locales", () => {
-    const themeConfig: HopeThemeOptions = {
+    const themeConfig: ThemeOptions = {
       pure: true,
       darkmode: "disable",
       encrypt: {},

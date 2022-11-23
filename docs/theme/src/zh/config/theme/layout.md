@@ -140,8 +140,8 @@ tag:
     title: string;
     order: number | null;
 
-    frontmatter: HopeThemeNormalPageFrontmatter;
-    pageData: HopeThemePageData;
+    frontmatter: ThemeNormalPageFrontmatter;
+    pageData: ThemePageData;
   }
 
   interface SidebarDirInfo {
@@ -158,8 +158,8 @@ tag:
       link?: string;
     };
 
-    frontmatter: HopeThemeNormalPageFrontmatter | null;
-    pageData: HopeThemePageData | null;
+    frontmatter: ThemeNormalPageFrontmatter | null;
+    pageData: ThemePageData | null;
   }
 
   type SidebarInfo = SidebarFileInfo | SidebarDirInfo;

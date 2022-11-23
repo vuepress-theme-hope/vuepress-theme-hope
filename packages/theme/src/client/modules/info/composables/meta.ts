@@ -10,15 +10,15 @@ import { resolveEditLink } from "@theme-hope/modules/info/utils/index.js";
 import type { GitContributor } from "@vuepress/plugin-git";
 import type { ComputedRef } from "vue";
 import type {
-  AutoLink,
-  HopeThemePageData,
-  HopeThemeNormalPageFrontmatter,
+  AutoLinkOptions,
+  ThemePageData,
+  ThemeNormalPageFrontmatter,
 } from "../../../../shared/index.js";
 
-export const useEditLink = (): ComputedRef<null | AutoLink> => {
+export const useEditLink = (): ComputedRef<null | AutoLinkOptions> => {
   const themeLocale = useThemeLocaleData();
-  const page = usePageData<HopeThemePageData>();
-  const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();
+  const page = usePageData<ThemePageData>();
+  const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();
 
   return computed(() => {
     const {
@@ -56,8 +56,8 @@ export const useEditLink = (): ComputedRef<null | AutoLink> => {
 export const useUpdateTime = (): ComputedRef<null | string> => {
   const siteLocale = useSiteLocaleData();
   const themeLocale = useThemeLocaleData();
-  const page = usePageData<HopeThemePageData>();
-  const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();
+  const page = usePageData<ThemePageData>();
+  const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();
 
   return computed(() => {
     const showLastUpdated =
@@ -75,8 +75,8 @@ export const useUpdateTime = (): ComputedRef<null | string> => {
 
 export const useContributors = (): ComputedRef<null | GitContributor[]> => {
   const themeLocale = useThemeLocaleData();
-  const page = usePageData<HopeThemePageData>();
-  const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();
+  const page = usePageData<ThemePageData>();
+  const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();
 
   return computed(() => {
     const showContributors =

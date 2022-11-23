@@ -60,10 +60,10 @@ tag:
 
 ## actions
 
-- 类型: `HopeThemeHomeActionOptions[]`
+- 类型: `ThemeHomeActionOptions[]`
 
   ```ts
-  interface HopeThemeHomeActionOptions {
+  interface ThemeHomeActionOptions {
     /**
      * 操作名称
      */
@@ -88,10 +88,10 @@ tag:
 
 ### features
 
-- 类型: `HopeThemeHomeFeatureOptions[]`
+- 类型: `ThemeHomeFeatureOptions[]`
 
   ```ts
-  interface HopeThemeHomeFeatureOptions {
+  interface ThemeHomeFeatureOptions {
     /**
      * 功能名称
      */

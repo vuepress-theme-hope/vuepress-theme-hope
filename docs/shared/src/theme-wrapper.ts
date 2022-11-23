@@ -1,13 +1,13 @@
 import { hopeTheme } from "vuepress-theme-hope";
 import type { ThemeFunction } from "@vuepress/core";
-import type { HopeThemeOptions } from "vuepress-theme-hope";
+import type { ThemeOptions } from "vuepress-theme-hope";
 
 const hostname =
   process.env["HOSTNAME"] || "https://vuepress-theme-hope-v2.netlify.app";
 
 export const theme = (
   name: string,
-  { plugins = {}, ...options }: HopeThemeOptions
+  { plugins = {}, ...options }: ThemeOptions
 ): ThemeFunction =>
   hopeTheme({
     hostname,

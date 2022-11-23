@@ -2,7 +2,7 @@ import { useRouter } from "vue-router";
 import { resolveRouteWithRedirect } from "vuepress-shared/client";
 
 import { ArticleInfoType } from "../../shared/index.js";
-import type { AutoLink } from "../../shared/index.js";
+import type { AutoLinkOptions } from "../../shared/index.js";
 
 /**
  * Resolve AutoLink props from string
@@ -11,7 +11,10 @@ import type { AutoLink } from "../../shared/index.js";
  * - Input: '/README.md'
  * - Output: { text: 'Home', link: '/' }
  */
-export const useAutoLink = (item: string, preferFull = false): AutoLink => {
+export const useAutoLink = (
+  item: string,
+  preferFull = false
+): AutoLinkOptions => {
   const router = useRouter();
   const { fullPath, meta, name } = resolveRouteWithRedirect(
     router,

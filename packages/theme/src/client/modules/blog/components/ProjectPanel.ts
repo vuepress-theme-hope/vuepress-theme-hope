@@ -12,7 +12,7 @@ import {
 import { useNavigate, usePure } from "@theme-hope/composables/index.js";
 
 import type { VNode } from "vue";
-import type { HopeThemeBlogHomePageFrontmatter } from "../../../../shared/index.js";
+import type { ThemeBlogHomePageFrontmatter } from "../../../../shared/index.js";
 
 import "../styles/project-panel.scss";
 
@@ -30,7 +30,7 @@ export default defineComponent({
   components: { ArticleIcon, BookIcon, FriendIcon, LinkIcon, ProjectIcon },
 
   setup() {
-    const frontmatter = usePageFrontmatter<HopeThemeBlogHomePageFrontmatter>();
+    const frontmatter = usePageFrontmatter<ThemeBlogHomePageFrontmatter>();
     const pure = usePure();
     const navigate = useNavigate();
 

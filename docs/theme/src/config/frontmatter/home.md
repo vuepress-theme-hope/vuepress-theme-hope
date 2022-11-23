@@ -60,10 +60,10 @@ Home icon alt text
 
 ## actions
 
-- Type: `HopeThemeHomeActionOptions[]`
+- Type: `ThemeHomeActionOptions[]`
 
   ```ts
-  interface HopeThemeHomeActionOptions {
+  interface ThemeHomeActionOptions {
     /**
      * Action name
      */
@@ -88,10 +88,10 @@ Home actions
 
 ### features
 
-- Type: `HopeThemeHomeFeatureOptions[]`
+- Type: `ThemeHomeFeatureOptions[]`
 
   ```ts
-  interface HopeThemeHomeFeatureOptions {
+  interface ThemeHomeFeatureOptions {
     /**
      * Feature name
      */

@@ -60,10 +60,10 @@ tag:
 
 ## actions
 
-- Тип: `HopeThemeHomeActionOptions[]`
+- Тип: `ThemeHomeActionOptions[]`
 
   ```ts
-  interface HopeThemeHomeActionOptions {
+  interface ThemeHomeActionOptions {
     /**
      * Action name
      */
@@ -88,10 +88,10 @@ tag:
 
 ### features
 
-- Тип: `HopeThemeHomeFeatureOptions[]`
+- Тип: `ThemeHomeFeatureOptions[]`
 
   ```ts
-  interface HopeThemeHomeFeatureOptions {
+  interface ThemeHomeFeatureOptions {
     /**
      * Feature name
      */

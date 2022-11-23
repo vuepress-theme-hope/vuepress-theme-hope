@@ -7,7 +7,7 @@ import { isLinkHttp, isLinkMailto, isLinkTel } from "@vuepress/shared";
 import Icon from "@theme-hope/components/Icon.js";
 
 import type { PropType, VNode } from "vue";
-import type { AutoLink } from "../../shared/index.js";
+import type { AutoLinkOptions } from "../../shared/index.js";
 
 export default defineComponent({
   name: "AutoLink",
@@ -19,7 +19,7 @@ export default defineComponent({
      * @description Autolink config
      */
     config: {
-      type: Object as PropType<AutoLink>,
+      type: Object as PropType<AutoLinkOptions>,
       required: true,
     },
     /**

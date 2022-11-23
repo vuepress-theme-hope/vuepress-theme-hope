@@ -13,22 +13,22 @@ import { ArticleInfoType, PageType } from "../shared/index.js";
 
 import type { Page } from "@vuepress/core";
 import type {
-  HopeThemeConfig,
-  HopeThemePageData,
+  ThemeConfig,
+  ThemePageData,
   PluginsOptions,
-  HopeThemeBlogHomePageFrontmatter,
-  HopeThemeProjectHomePageFrontmatter,
-  HopeThemeNormalPageFrontmatter,
+  ThemeBlogHomePageFrontmatter,
+  ThemeProjectHomePageFrontmatter,
+  ThemeNormalPageFrontmatter,
 } from "../shared/index.js";
 
 export const checkFrontmatter = (
-  page: Page<HopeThemePageData>,
+  page: Page<ThemePageData>,
   isDebug: boolean
 ): void => {
   const frontmatter = page.frontmatter as
-    | HopeThemeProjectHomePageFrontmatter
-    | HopeThemeBlogHomePageFrontmatter
-    | HopeThemeNormalPageFrontmatter;
+    | ThemeProjectHomePageFrontmatter
+    | ThemeBlogHomePageFrontmatter
+    | ThemeNormalPageFrontmatter;
 
   // resolve category
   if ("category" in frontmatter) {
@@ -114,16 +114,16 @@ export const checkFrontmatter = (
 };
 
 export const extendsPage = (
-  themeConfig: HopeThemeConfig,
+  themeConfig: ThemeConfig,
   plugins: PluginsOptions,
-  page: Page<HopeThemePageData>,
+  page: Page<ThemePageData>,
   isDebug: boolean
 ): void => {
   const { config = {} } = themeConfig.encrypt;
   const frontmatter = page.frontmatter as
-    | HopeThemeProjectHomePageFrontmatter
-    | HopeThemeBlogHomePageFrontmatter
-    | HopeThemeNormalPageFrontmatter;
+    | ThemeProjectHomePageFrontmatter
+    | ThemeBlogHomePageFrontmatter
+    | ThemeNormalPageFrontmatter;
   const { filePathRelative, path } = page;
   const { createdTime } = page.data.git || {};
 

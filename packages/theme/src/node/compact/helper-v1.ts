@@ -11,7 +11,7 @@ import type { MarkdownOptions } from "@vuepress/markdown";
 import type {
   NavbarOptions,
   SidebarOptions,
-  HopeThemeOptions,
+  ThemeOptions,
 } from "../../shared/index.js";
 
 /**
@@ -41,16 +41,14 @@ export const sidebarConfig = (config: SidebarOptions): SidebarOptions => {
 /**
  * @deprecated use `import { hopeThemeLegacy } from "vuepress-theme-hope";` instead
  */
-export const themeConfig = (
-  themeConfig: HopeThemeOptions
-): HopeThemeOptions => {
+export const themeConfig = (themeConfig: ThemeOptions): ThemeOptions => {
   deprecatedMsg(
     "themeConfig",
     'import { hopeThemeLegacy } from "vuepress-theme-hope";'
   );
 
   return convertThemeConfig(
-    themeConfig as HopeThemeOptions & Record<string, unknown>
+    themeConfig as ThemeOptions & Record<string, unknown>
   );
 };
 

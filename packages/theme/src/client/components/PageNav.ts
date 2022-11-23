@@ -16,8 +16,8 @@ import { useSidebarItems } from "@theme-hope/modules/sidebar/composables/index.j
 import type { VNode } from "vue";
 import type { ResolvedSidebarItem } from "../modules/sidebar/utils/index.js";
 import type {
-  HopeThemeNormalPageFrontmatter,
-  AutoLink as AutoLinkType,
+  ThemeNormalPageFrontmatter,
+  AutoLinkOptions,
 } from "../../shared/index.js";
 
 import "../styles/page-nav.scss";
@@ -27,12 +27,12 @@ import "../styles/page-nav.scss";
  */
 const resolveFromFrontmatterConfig = (
   conf: unknown
-): null | false | AutoLinkType => {
+): AutoLinkOptions | null | false => {
   if (conf === false) return false;
 
   if (isString(conf)) return useAutoLink(conf, true);
 
-  if (isPlainObject<AutoLinkType>(conf)) return conf;
+  if (isPlainObject<AutoLinkOptions>(conf)) return conf;
 
   return null;
 };
@@ -44,7 +44,7 @@ const resolveFromSidebarItems = (
   sidebarItems: ResolvedSidebarItem[],
   currentPath: string,
   offset: number
-): null | AutoLinkType => {
+): AutoLinkOptions | null => {
   const index = sidebarItems.findIndex((item) => item.link === currentPath);
 
   if (index !== -1) {
@@ -52,7 +52,7 @@ const resolveFromSidebarItems = (
 
     if (!targetItem?.link) return null;
 
-    return targetItem as AutoLinkType;
+    return targetItem as AutoLinkOptions;
   }
 
   for (const item of sidebarItems)
@@ -74,7 +74,7 @@ export default defineComponent({
 
   setup() {
     const themeLocale = useThemeLocaleData();
-    const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();
+    const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();
     const sidebarItems = useSidebarItems();
     const route = useRoute();
     const navigate = useNavigate();

@@ -3,7 +3,7 @@ import { convertSidebarConfig } from "./sidebar.js";
 import { droppedLogger, deprecatedLogger } from "./utils.js";
 import { logger } from "../utils.js";
 
-import type { HopeThemeOptions } from "../../shared/index.js";
+import type { ThemeOptions } from "../../shared/index.js";
 
 const DEPRECATED_THEME_OPTIONS: [string, string][] = [
   // v1
@@ -140,7 +140,7 @@ const handleFooterOptions = (options: Record<string, unknown>): void => {
  */
 export const convertThemeConfig = (
   themeOptions: Record<string, unknown>
-): HopeThemeOptions => {
+): ThemeOptions => {
   // ensure plugins
   const plugins = (themeOptions["plugins"] =
     (themeOptions["plugins"] as Record<string, unknown>) || {});

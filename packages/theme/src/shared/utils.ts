@@ -1,7 +1,7 @@
 /**
  * Base link item, displayed as text
  */
-export interface TextItem {
+export interface TextItemOptions {
   /**
    * Text of item
    *
@@ -27,7 +27,7 @@ export interface TextItem {
 /**
  * Props for `<AutoLink>`
  */
-export interface AutoLink extends TextItem {
+export interface AutoLinkOptions extends TextItemOptions {
   /**
    * link of item
    *

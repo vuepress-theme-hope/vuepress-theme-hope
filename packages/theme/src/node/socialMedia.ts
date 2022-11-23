@@ -1,12 +1,12 @@
 import { fs, getDirname, path } from "@vuepress/utils";
 import { logger } from "./utils.js";
 
-import type { HopeThemeConfig } from "../shared/index.js";
+import type { ThemeConfig } from "../shared/index.js";
 
 const __dirname = getDirname(import.meta.url);
 
 export const checkSocialMediaIcons = (
-  themeConfig: HopeThemeConfig
+  themeConfig: ThemeConfig
 ): Record<string, string> => {
   const icons: Record<string, string> = {};
 

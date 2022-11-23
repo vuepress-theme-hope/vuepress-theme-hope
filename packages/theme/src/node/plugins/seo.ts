@@ -2,10 +2,10 @@ import { seoPlugin } from "vuepress-plugin-seo2";
 import { getBlogOptions } from "./blog.js";
 
 import type { Page, Plugin } from "@vuepress/core";
-import type { HopeThemeConfig, PluginsOptions } from "../../shared/index.js";
+import type { ThemeConfig, PluginsOptions } from "../../shared/index.js";
 
 export const getSEOPlugin = (
-  themeConfig: HopeThemeConfig,
+  themeConfig: ThemeConfig,
   { blog, seo }: PluginsOptions,
   hostname = "",
   legacy = false

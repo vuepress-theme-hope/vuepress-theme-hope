@@ -3,7 +3,7 @@ import { defineComponent, h, onMounted, ref } from "vue";
 
 import type { Mesh } from "three";
 import type { VNode } from "vue";
-import type { HopeThemeProjectHomePageFrontmatter } from "vuepress-theme-hope";
+import type { ThemeProjectHomePageFrontmatter } from "vuepress-theme-hope";
 
 import "./hope-logo.scss";
 
@@ -13,8 +13,7 @@ export default defineComponent({
   setup() {
     const ready = ref(false);
 
-    const frontmatter =
-      usePageFrontmatter<HopeThemeProjectHomePageFrontmatter>();
+    const frontmatter = usePageFrontmatter<ThemeProjectHomePageFrontmatter>();
 
     onMounted(() =>
       Promise.all([

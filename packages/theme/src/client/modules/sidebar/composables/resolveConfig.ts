@@ -27,7 +27,7 @@ import type {
   ResolvedSidebarGroupItem,
 } from "../utils/index.js";
 import type {
-  HopeThemeNormalPageFrontmatter,
+  ThemeNormalPageFrontmatter,
   SidebarArrayOptions,
   SidebarObjectOptions,
   SidebarItem,
@@ -170,7 +170,7 @@ export const resolveMultiSidebarItems = (
  */
 export const resolveSidebarItems = (): ResolvedSidebarItem[] => {
   const routeLocale = useRouteLocale();
-  const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();
+  const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();
   const themeLocale = useThemeLocaleData();
 
   // get sidebar config from frontmatter > themeConfig

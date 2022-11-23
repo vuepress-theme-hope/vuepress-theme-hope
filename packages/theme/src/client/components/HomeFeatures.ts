@@ -6,14 +6,13 @@ import { RouterLink } from "vue-router";
 import Icon from "@theme-hope/components/Icon.js";
 
 import type { VNode } from "vue";
-import type { HopeThemeProjectHomePageFrontmatter } from "../../shared/index.js";
+import type { ThemeProjectHomePageFrontmatter } from "../../shared/index.js";
 
 export default defineComponent({
   name: "HomeFeatures",
 
   setup() {
-    const frontmatter =
-      usePageFrontmatter<HopeThemeProjectHomePageFrontmatter>();
+    const frontmatter = usePageFrontmatter<ThemeProjectHomePageFrontmatter>();
 
     const features = computed(() => {
       if (isArray(frontmatter.value.features))

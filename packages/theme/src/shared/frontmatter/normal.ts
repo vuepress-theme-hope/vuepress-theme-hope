@@ -1,9 +1,8 @@
-import type { HopeThemePageFrontmatter } from "./base.js";
+import type { ThemePageFrontmatter } from "./base.js";
 import type { PageInfo } from "../info.js";
-import type { AutoLink } from "../utils.js";
+import type { AutoLinkOptions } from "../utils.js";
 
-export interface HopeThemeNormalPageFrontmatter
-  extends HopeThemePageFrontmatter {
+export interface ThemeNormalPageFrontmatter extends ThemePageFrontmatter {
   /**
    * Whether is homepage
    *
@@ -145,14 +144,14 @@ export interface HopeThemeNormalPageFrontmatter
    *
    * 上一页链接
    */
-  prev?: string | AutoLink;
+  prev?: string | AutoLinkOptions;
 
   /**
    * Next page link
    *
    * 下一页链接
    */
-  next?: string | AutoLink;
+  next?: string | AutoLinkOptions;
 
   /**
    * Whether show toc list in desktop mode

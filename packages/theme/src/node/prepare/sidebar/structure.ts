@@ -18,7 +18,7 @@ export interface DirInfo {
 
 export type StructureInfo = DirInfo | FileInfo;
 
-export interface HopeThemeSidebarInfoOptions {
+export interface ThemeSidebarInfoOptions {
   app: App;
   sorters: SidebarSorterFunction[];
   nestingDepth?: number;

@@ -249,7 +249,7 @@ tag:
 
 ## locales
 
-- Тип: `Record<string, HopeThemeLocaleOptions>`
+- Тип: `Record<string, ThemeLocaleOptions>`
 - Детали:
   - [Конфигурация мультиязыка темы](./i18n.md)
 

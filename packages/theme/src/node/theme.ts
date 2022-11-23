@@ -20,13 +20,13 @@ import { getThemeConfig } from "./themeConfig.js";
 import { prepareThemeColorScss } from "./themeColor.js";
 
 import type { Page, ThemeFunction } from "@vuepress/core";
-import type { HopeThemeOptions, HopeThemePageData } from "../shared/index.js";
+import type { ThemeOptions, ThemePageData } from "../shared/index.js";
 
 const __dirname = getDirname(import.meta.url);
 
 export const hopeTheme =
   (
-    options: HopeThemeOptions,
+    options: ThemeOptions,
     // TODO: Remove this in v2 stable
     legacy = false
   ): ThemeFunction =>
@@ -41,9 +41,7 @@ export const hopeTheme =
       sidebarSorter,
       ...themeOptions
     } = legacy
-      ? convertThemeConfig(
-          options as HopeThemeOptions & Record<string, unknown>
-        )
+      ? convertThemeConfig(options as ThemeOptions & Record<string, unknown>)
       : options;
 
     if (legacy) checkStyle(app);
@@ -80,7 +78,7 @@ export const hopeTheme =
         extendsPage(
           themeConfig,
           plugins,
-          <Page<HopeThemePageData>>page,
+          <Page<ThemePageData>>page,
           app.env.isDebug
         );
       },

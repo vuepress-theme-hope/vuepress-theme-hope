@@ -3,28 +3,22 @@ import type { AppearanceConfig, AppearanceOptions } from "./appearance.js";
 import type { FeatureConfig, FeatureOptions } from "./feature/index.js";
 import type { LayoutConfig, LayoutOptions } from "./layout/index.js";
 import type { InfoOptions } from "./info.js";
-import type {
-  HopeThemeLocaleConfig,
-  HopeThemeLocaleOptions,
-} from "./locales.js";
+import type { ThemeLocaleConfig, ThemeLocaleOptions } from "./locales.js";
 import type { PluginsOptions } from "./plugins/index.js";
 
-export type HopeThemeRootOptions = AppearanceOptions &
-  FeatureOptions &
-  LayoutOptions &
-  InfoOptions;
-
-export type HopeThemeRootConfig = AppearanceConfig &
-  FeatureConfig &
-  LayoutConfig &
-  InfoOptions;
-
-export interface HopeThemeOptions
-  extends HopeThemeRootOptions,
-    ThemeData<HopeThemeLocaleOptions> {
+export interface ThemeOptions
+  extends AppearanceOptions,
+    FeatureOptions,
+    InfoOptions,
+    LayoutOptions,
+    ThemeData<ThemeLocaleOptions> {
   plugins?: PluginsOptions;
 }
 
-export type HopeThemeConfig = HopeThemeRootConfig & {
-  locales: Record<string, HopeThemeLocaleConfig>;
-};
+export interface ThemeConfig
+  extends AppearanceConfig,
+    FeatureConfig,
+    InfoOptions,
+    LayoutConfig {
+  locales: Record<string, ThemeLocaleConfig>;
+}

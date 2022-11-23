@@ -1,6 +1,6 @@
-import type { HopeThemeLocaleData } from "../../shared/index.js";
+import type { ThemeLocaleData } from "../../shared/index.js";
 
-export const viLocale: HopeThemeLocaleData = {
+export const viLocale: ThemeLocaleData = {
   lang: "vi-VN",
 
   navbarLocales: {

@@ -7,7 +7,7 @@ import {
 } from "@theme-hope/composables/index.js";
 
 import type { VNode } from "vue";
-import type { HopeThemeNormalPageFrontmatter } from "../../shared/index.js";
+import type { ThemeNormalPageFrontmatter } from "../../shared/index.js";
 
 import "../styles/footer.scss";
 
@@ -15,7 +15,7 @@ export default defineComponent({
   name: "PageFooter",
 
   setup() {
-    const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();
+    const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();
     const themeLocale = useThemeLocaleData();
     const author = usePageAuthor();
 

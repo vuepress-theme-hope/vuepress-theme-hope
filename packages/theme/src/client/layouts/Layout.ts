@@ -10,7 +10,7 @@ import {
 } from "@theme-hope/composables/index.js";
 
 import type { DefineComponent, VNode } from "vue";
-import type { HopeThemePageFrontmatter } from "../../shared/index.js";
+import type { ThemePageFrontmatter } from "../../shared/index.js";
 
 declare const ENABLE_BLOG: boolean;
 
@@ -22,7 +22,7 @@ export default defineComponent({
     const themeData = useThemeData();
     const themeLocale = useThemeLocaleData();
     const page = usePageData();
-    const frontmatter = usePageFrontmatter<HopeThemePageFrontmatter>();
+    const frontmatter = usePageFrontmatter<ThemePageFrontmatter>();
     const isMobile = useMobile();
 
     const sidebarDisplay = computed(

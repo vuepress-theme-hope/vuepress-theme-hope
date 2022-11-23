@@ -9,7 +9,7 @@ import {
 } from "@theme-hope/composables/index.js";
 
 import type { VNode } from "vue";
-import type { HopeThemeNormalPageFrontmatter } from "../../shared/index.js";
+import type { ThemeNormalPageFrontmatter } from "../../shared/index.js";
 
 import "../styles/page-title.scss";
 
@@ -18,7 +18,7 @@ export default defineComponent({
 
   setup() {
     const page = usePageData();
-    const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();
+    const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();
     const themeLocale = useThemeLocaleData();
     const { config, items } = usePageInfo();
 

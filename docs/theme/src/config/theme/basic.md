@@ -249,7 +249,7 @@ Sidebar config
 
 ## locales
 
-- Type: `Record<string, HopeThemeLocaleOptions>`
+- Type: `Record<string, ThemeLocaleOptions>`
 - Details:
   - [Theme I18n Config](./i18n.md)
 
