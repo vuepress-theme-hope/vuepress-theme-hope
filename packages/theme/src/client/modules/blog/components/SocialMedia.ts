@@ -21,7 +21,7 @@ export default defineComponent({
         ? Object.entries(config).map(([media, url]) => ({
             name: media,
             icon: icons[media],
-            url: url as string,
+            url,
           }))
         : [];
     });

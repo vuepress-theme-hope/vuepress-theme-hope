@@ -7,7 +7,6 @@ import {
 } from "vuepress-shared/node";
 import type { ViteBundlerOptions } from "@vuepress/bundler-vite";
 import type { UserConfig } from "@vuepress/cli";
-import type { PluginContext, GetModuleInfo } from "rollup";
 
 const __dirname = getDirname(import.meta.url);
 
@@ -102,45 +101,45 @@ export const config = (
     extendsBundlerOptions: (config: unknown, app): void => {
       const { bundler } = app.options;
 
-      const cache = new Map<string, boolean>();
-      const isStaticallyImportedByEntry = (
-        id: string,
-        getModuleInfo: GetModuleInfo,
-        importStack: string[] = []
-      ): boolean => {
-        if (cache.has(id)) {
-          return !!cache.get(id);
-        }
-        if (importStack.includes(id)) {
-          // circular deps!
-          cache.set(id, false);
+      // const cache = new Map<string, boolean>();
+      // const isStaticallyImportedByEntry = (
+      //   id: string,
+      //   getModuleInfo: GetModuleInfo,
+      //   importStack: string[] = []
+      // ): boolean => {
+      //   if (cache.has(id)) {
+      //     return !!cache.get(id);
+      //   }
+      //   if (importStack.includes(id)) {
+      //     // circular deps!
+      //     cache.set(id, false);
 
-          return false;
-        }
-        const mod = getModuleInfo(id);
+      //     return false;
+      //   }
+      //   const mod = getModuleInfo(id);
 
-        if (!mod) {
-          cache.set(id, false);
+      //   if (!mod) {
+      //     cache.set(id, false);
 
-          return false;
-        }
-        if (mod.isEntry) {
-          cache.set(id, true);
+      //     return false;
+      //   }
+      //   if (mod.isEntry) {
+      //     cache.set(id, true);
 
-          return true;
-        }
-        const someImporterIs = mod.importers.some((item) =>
-          isStaticallyImportedByEntry(
-            item,
-            getModuleInfo,
-            importStack.concat(id)
-          )
-        );
+      //     return true;
+      //   }
+      //   const someImporterIs = mod.importers.some((item) =>
+      //     isStaticallyImportedByEntry(
+      //       item,
+      //       getModuleInfo,
+      //       importStack.concat(id)
+      //     )
+      //   );
 
-        cache.set(id, someImporterIs);
+      //   cache.set(id, someImporterIs);
 
-        return someImporterIs;
-      };
+      //   return someImporterIs;
+      // };
 
       addViteOptimizeDepsInclude({ app, config }, [
         "three",
@@ -160,7 +159,7 @@ export const config = (
             build: {
               rollupOptions: {
                 output: {
-                  manualChunks(id: string, _ctx: PluginContext) {
+                  manualChunks(id: string) {
                     // move known framework code into a stable chunk so that
                     // custom theme changes do not invalidate hash for all pages
                     if (
