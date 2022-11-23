@@ -16,7 +16,7 @@ exports[`should generate themeConfig correctly > Should contain basic properties
         "remember": "Remember password",
       },
       "headerDepth": 2,
-      "hideSiteNameonMobile": true,
+      "hideSiteNameOnMobile": true,
       "lang": "en-US",
       "metaLocales": {
         "author": "Author",
@@ -83,7 +83,7 @@ exports[`should generate themeConfig correctly > Should handle single language 1
         "remember": "Remember password",
       },
       "headerDepth": 2,
-      "hideSiteNameonMobile": true,
+      "hideSiteNameOnMobile": true,
       "lang": "en-US",
       "metaLocales": {
         "author": "Author",
@@ -157,7 +157,7 @@ exports[`should generate themeConfig correctly > locale should have higher prope
         "remember": "Remember password",
       },
       "headerDepth": 2,
-      "hideSiteNameonMobile": true,
+      "hideSiteNameOnMobile": true,
       "lang": "en-US",
       "metaLocales": {
         "author": "Author",
@@ -229,7 +229,7 @@ exports[`should generate themeConfig correctly > root only option should not app
         "remember": "Remember password",
       },
       "headerDepth": 2,
-      "hideSiteNameonMobile": true,
+      "hideSiteNameOnMobile": true,
       "lang": "en-US",
       "metaLocales": {
         "author": "Author",
@@ -296,7 +296,7 @@ exports[`should generate themeConfig correctly > should fallback to root if loca
         "remember": "Remember password",
       },
       "headerDepth": 2,
-      "hideSiteNameonMobile": true,
+      "hideSiteNameOnMobile": true,
       "lang": "en-US",
       "metaLocales": {
         "author": "Author",

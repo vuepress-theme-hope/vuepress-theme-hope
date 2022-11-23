@@ -19,7 +19,9 @@ describe("should generate themeConfig correctly", () => {
   it("Should contain basic properties", () => {
     const themeConfig = {};
 
-    expect(getThemeConfig(app, themeConfig, getStatus({}))).toMatchSnapshot();
+    expect(
+      getThemeConfig(app, themeConfig, getStatus(app, {}))
+    ).toMatchSnapshot();
   });
 
   it("Should handle single language", () => {
@@ -28,7 +30,9 @@ describe("should generate themeConfig correctly", () => {
       sidebar: ["/", "/about"],
     };
 
-    expect(getThemeConfig(app, themeConfig, getStatus({}))).toMatchSnapshot();
+    expect(
+      getThemeConfig(app, themeConfig, getStatus(app, {}))
+    ).toMatchSnapshot();
   });
 
   it("locale should have higher property", () => {
@@ -45,7 +49,9 @@ describe("should generate themeConfig correctly", () => {
       },
     };
 
-    expect(getThemeConfig(app, themeConfig, getStatus({}))).toMatchSnapshot();
+    expect(
+      getThemeConfig(app, themeConfig, getStatus(app, {}))
+    ).toMatchSnapshot();
   });
 
   it("should fallback to root if locale config is missing", () => {
@@ -60,7 +66,9 @@ describe("should generate themeConfig correctly", () => {
       },
     };
 
-    expect(getThemeConfig(app, themeConfig, getStatus({}))).toMatchSnapshot();
+    expect(
+      getThemeConfig(app, themeConfig, getStatus(app, {}))
+    ).toMatchSnapshot();
   });
 
   it("root only option should not appear in locales", () => {
@@ -70,6 +78,8 @@ describe("should generate themeConfig correctly", () => {
       encrypt: {},
     };
 
-    expect(getThemeConfig(app, themeConfig, getStatus({}))).toMatchSnapshot();
+    expect(
+      getThemeConfig(app, themeConfig, getStatus(app, {}))
+    ).toMatchSnapshot();
   });
 });

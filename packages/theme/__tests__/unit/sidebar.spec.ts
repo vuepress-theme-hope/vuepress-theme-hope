@@ -25,7 +25,7 @@ describe("should generate sidebarData correctly", async () => {
     const themeConfig = getThemeConfig(
       app,
       themeOptions,
-      getStatus(themeOptions)
+      getStatus(app, themeOptions)
     );
 
     expect(getSidebarData(app, themeConfig)).toMatchSnapshot();
@@ -47,7 +47,7 @@ describe("should generate sidebarData correctly", async () => {
     const themeConfig = getThemeConfig(
       app,
       themeOptions,
-      getStatus(themeOptions)
+      getStatus(app, themeOptions)
     );
 
     expect(getSidebarData(app, themeConfig)).toMatchSnapshot();
@@ -71,7 +71,7 @@ describe("should generate sidebarData correctly", async () => {
     const themeConfig = getThemeConfig(
       app,
       themeOptions,
-      getStatus(themeOptions)
+      getStatus(app, themeOptions)
     );
 
     expect(getSidebarData(app, themeConfig)).toMatchSnapshot();
