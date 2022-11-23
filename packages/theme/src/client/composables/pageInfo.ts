@@ -29,7 +29,6 @@ import type {
 } from "../../shared/index.js";
 
 declare const ENABLE_BLOG: boolean;
-declare const SUPPORT_PAGEVIEW: boolean;
 
 export const usePageAuthor = (): ComputedRef<AuthorInfo[]> => {
   const themeLocale = useThemeLocaleData();
@@ -100,7 +99,7 @@ export const usePageInfo = (): {
   const page = usePageData<{
     git?: GitData;
     localizedDate: string;
-    readingTime: ReadingTime;
+    readingTime?: ReadingTime;
   }>();
   const frontmatter = usePageFrontmatter<HopeThemeNormalPageFrontmatter>();
   const author = usePageAuthor();
@@ -115,12 +114,9 @@ export const usePageInfo = (): {
     localizedDate: page.value.localizedDate,
     tag: tag.value,
     isOriginal: frontmatter.value.isOriginal || false,
-    readingTime: page.value.readingTime,
-    pageview: SUPPORT_PAGEVIEW
-      ? "pageview" in frontmatter.value
-        ? frontmatter.value.pageview
-        : true
-      : false,
+    readingTime: page.value.readingTime || null,
+    pageview:
+      "pageview" in frontmatter.value ? frontmatter.value.pageview : true,
   });
 
   const items = computed(() =>

@@ -1,7 +1,7 @@
 import { getDirname, path } from "@vuepress/utils";
 
 import { resolveAlias } from "./alias.js";
-import { updateBundlerConfig } from "./bundler.js";
+import { extendsBundlerOptions } from "./bundler.js";
 import { extendsPage } from "./extendsPage.js";
 import {
   checkStyle,
@@ -63,12 +63,12 @@ export const hopeTheme =
 
       define: () => ({
         ENABLE_BLOG: status.enableBlog,
+        ENABLE_READING_TIME: status.enableReadingTime,
         HAS_MULTIPLE_LANGUAGES: status.hasMultipleLanguages,
         SUPPORT_PAGEVIEW: status.supportPageview,
       }),
 
-      extendsBundlerOptions: (config: unknown, app): void =>
-        updateBundlerConfig(config, app),
+      extendsBundlerOptions,
 
       extendsPage: (page): void => {
         if (legacy)

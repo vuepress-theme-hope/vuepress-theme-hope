@@ -74,7 +74,7 @@ export const checkTag = (config: unknown, app: App): void => {
   }
 };
 
-export const updateBundlerConfig = (config: unknown, app: App): void => {
+export const extendsBundlerOptions = (config: unknown, app: App): void => {
   addViteOptimizeDepsInclude({ app, config }, "@vueuse/core");
   addViteOptimizeDepsExclude({ app, config }, "@theme-hope");
 

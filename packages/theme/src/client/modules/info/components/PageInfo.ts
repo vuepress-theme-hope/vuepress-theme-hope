@@ -26,6 +26,9 @@ import type { PageInfo } from "../../../../shared/index.js";
 import "balloon-css/balloon.css";
 import "../styles/page-info.scss";
 
+declare const ENABLE_READING_TIME: boolean;
+declare const SUPPORT_PAGEVIEW: boolean;
+
 export interface PageInfoProps {
   /**
    * Authors of article
@@ -96,8 +99,8 @@ export default defineComponent({
     CategoryInfo,
     DateInfo,
     OriginalInfo,
-    PageViewInfo,
-    ReadingTimeInfo,
+    PageViewInfo: SUPPORT_PAGEVIEW ? PageViewInfo : () => null,
+    ReadingTimeInfo: ENABLE_READING_TIME ? ReadingTimeInfo : () => null,
     TagInfo,
     WordInfo,
   },
