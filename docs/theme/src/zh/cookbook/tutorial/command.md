@@ -71,3 +71,11 @@ npm i vuepress@next vuepress-theme-hope@next && npm install && npm update
 ```
 
 :::
+
+::: warning
+
+任何以 `@vuepress/plugin-` 开头的官方插件应该和 VuePress 保持相同版本。
+
+如果你使用了其他第三方插件，请确保它兼容你要升级到的 VuePress 版本。
+
+:::

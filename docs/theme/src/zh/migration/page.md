@@ -25,8 +25,20 @@ tag:
 
   ```ts
   interface AuthorInfo {
+    /**
+     * 作者姓名
+     */
     name: string;
+
+    /**
+     * 作者网站
+     */
     url?: string;
+
+    /**
+     * 作者 Email
+     */
+    email?: string;
   }
   ```
 
@@ -50,10 +62,10 @@ tag:
 
 - `updateTime` 重命名为 `lastUpdated`
 
-- `prev` 和 `next` 类型由 `string | false` 改为 `AutoLink | string | false`
+- `prev` 和 `next` 类型由 `string | false` 改为 `AutoLinkOptions | string | false`
 
   ```ts
-  interface AutoLink {
+  interface AutoLinkOptions {
     text: string;
     icon: string;
     link: string;

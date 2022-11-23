@@ -25,8 +25,20 @@ tag:
 
   ```ts
   interface AuthorInfo {
+    /**
+     * Author name
+     */
     name: string;
+
+    /**
+     * Author website
+     */
     url?: string;
+
+    /**
+     * Author email
+     */
+    email?: string;
   }
   ```
 
@@ -50,10 +62,10 @@ tag:
 
 - переименовано `updateTime` в `lastUpdated`
 
-- изменены типы `prev` и `next` с `string | false` на `AutoLink | string | false`
+- изменены типы `prev` и `next` с `string | false` на `AutoLinkOptions | string | false`
 
   ```ts
-  interface AutoLink {
+  interface AutoLinkOptions {
     text: string;
     icon: string;
     link: string;

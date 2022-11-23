@@ -66,7 +66,7 @@ Global default author.
 - Type: `NavbarConfig`
 
   ```ts
-  interface TextItem {
+  interface TextItemOptions {
     /**
      * Text of item
      */
@@ -83,7 +83,7 @@ Global default author.
     ariaLabel?: string;
   }
 
-  interface AutoLink extends TextItem {
+  interface AutoLinkOptions extends TextItemOptions {
     /**
      * link of item
      */
@@ -105,7 +105,7 @@ Global default author.
     activeMatch?: string;
   }
 
-  interface NavGroup<T> extends TextItem {
+  interface NavGroup<T> extends TextItemOptions {
     /**
      * Link prefix of current group
      */
@@ -122,7 +122,7 @@ Global default author.
     children: T[];
   }
 
-  type NavbarItem = AutoLink;
+  type NavbarItem = AutoLinkOptions;
   type NavbarGroup = NavGroup<NavbarGroup | NavbarItem | string>;
   type NavbarConfig = (NavbarItem | NavbarGroup | string)[];
   ```
@@ -136,7 +136,7 @@ Navbar config
 - Type: `SidebarConfig`
 
   ```ts
-  interface TextItem {
+  interface TextItemOptions {
     /**
      * Text of item
      */
@@ -153,7 +153,7 @@ Navbar config
     ariaLabel?: string;
   }
 
-  interface AutoLink extends TextItem {
+  interface AutoLinkOptions extends TextItemOptions {
     /**
      * link of item
      */
@@ -175,9 +175,9 @@ Navbar config
     activeMatch?: string;
   }
 
-  type SidebarPageItem = AutoLink;
+  type SidebarPageItem = AutoLinkOptions;
 
-  interface SidebarGroupItem extends TextItem {
+  interface SidebarGroupItem extends TextItemOptions {
     /**
      * Link prefix of current group
      */
@@ -206,7 +206,7 @@ Navbar config
     )[];
   }
 
-  interface SidebarStructureItem extends TextItem {
+  interface SidebarStructureItem extends TextItemOptions {
     /**
      * Link prefix of current group
      */

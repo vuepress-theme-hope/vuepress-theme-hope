@@ -104,10 +104,10 @@ tag:
 
 ## prev
 
-- Тип: `AutoLink | string | false`
+- Тип: `AutoLinkOptions | string | false`
 
   ```ts
-  interface AutoLink {
+  interface AutoLinkOptions {
     text: string;
     icon: string;
     link: string;
@@ -118,10 +118,10 @@ tag:
 
 ## next
 
-- Тип: `AutoLink |string | false`
+- Тип: `AutoLinkOptions |string | false`
 
   ```ts
-  interface AutoLink {
+  interface AutoLinkOptions {
     text: string;
     icon: string;
     link: string;

@@ -55,8 +55,20 @@ The format of AuthorInfo is as follows:
 
 ```ts
 interface AuthorInfo {
+  /**
+   * Author name
+   */
   name: string;
+
+  /**
+   * Author website
+   */
   url?: string;
+
+  /**
+   * Author email
+   */
+  email?: string;
 }
 ```
 

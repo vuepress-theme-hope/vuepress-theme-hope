@@ -55,8 +55,20 @@ author: Mr.Hope
 
 ```ts
 interface AuthorInfo {
+  /**
+   * 作者姓名
+   */
   name: string;
+
+  /**
+   * 作者网站
+   */
   url?: string;
+
+  /**
+   * 作者 Email
+   */
+  email?: string;
 }
 ```
 

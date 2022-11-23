@@ -64,7 +64,7 @@ tag:
 - 类型: `NavbarConfig`
 
   ```ts
-  interface TextItem {
+  interface TextItemOptions {
     /**
      * 项目文字
      */
@@ -81,7 +81,7 @@ tag:
     ariaLabel?: string;
   }
 
-  interface AutoLink extends TextItem {
+  interface AutoLinkOptions extends TextItemOptions {
     /**
      * 当前页面链接
      */
@@ -103,7 +103,7 @@ tag:
     activeMatch?: string;
   }
 
-  interface NavGroup<T> extends TextItem {
+  interface NavGroup<T> extends TextItemOptions {
     /**
      * 当前分组的页面前缀
      */
@@ -120,7 +120,7 @@ tag:
     children: T[];
   }
 
-  type NavbarItem = AutoLink;
+  type NavbarItem = AutoLinkOptions;
   type NavbarGroup = NavGroup<NavbarGroup | NavbarItem | string>;
   type NavbarConfig = (NavbarItem | NavbarGroup | string)[];
   ```
@@ -134,7 +134,7 @@ tag:
 - 类型: `SidebarConfig`
 
   ```ts
-  interface TextItem {
+  interface TextItemOptions {
     /**
      * 项目文字
      */
@@ -151,7 +151,7 @@ tag:
     ariaLabel?: string;
   }
 
-  interface AutoLink extends TextItem {
+  interface AutoLinkOptions extends TextItemOptions {
     /**
      * 当前页面链接
      */
@@ -173,9 +173,9 @@ tag:
     activeMatch?: string;
   }
 
-  type SidebarPageItem = AutoLink;
+  type SidebarPageItem = AutoLinkOptions;
 
-  interface SidebarGroupItem extends TextItem {
+  interface SidebarGroupItem extends TextItemOptions {
     /**
      * 当前分组的页面前缀
      */
@@ -204,7 +204,7 @@ tag:
     )[];
   }
 
-  interface SidebarStructureItem extends TextItem {
+  interface SidebarStructureItem extends TextItemOptions {
     /**
      * 当前分组的页面前缀
      */

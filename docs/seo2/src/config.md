@@ -14,7 +14,31 @@ Deploy hostname.
 
 ### author
 
-- Type: `string`
+- Type: `Author`
+
+  ```ts
+  type AuthorName = string;
+
+  interface AuthorInfo {
+    /**
+     * Author name
+     */
+    name: string;
+
+    /**
+     * Author website
+     */
+    url?: string;
+
+    /**
+     * Author email
+     */
+    email?: string;
+  }
+
+  type Author = AuthorName | AuthorName[] | AuthorInfo | AuthorInfo[];
+  ```
+
 - Required: No
 
 Default author.

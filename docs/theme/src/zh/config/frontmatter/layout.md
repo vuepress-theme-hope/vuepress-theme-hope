@@ -177,10 +177,10 @@ Page order in sidebar.
 
 ## prev
 
-- 类型: `string | false`
+- 类型: `AutoLinkOptions | string | false`
 
   ```ts
-  interface AutoLink {
+  interface AutoLinkOptions {
     text: string;
     icon: string;
     link: string;
@@ -191,10 +191,10 @@ Page order in sidebar.
 
 ## next
 
-- 类型: `string | false`
+- 类型: `AutoLinkOptions | string | false`
 
   ```ts
-  interface AutoLink {
+  interface AutoLinkOptions {
     text: string;
     icon: string;
     link: string;

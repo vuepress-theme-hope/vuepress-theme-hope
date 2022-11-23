@@ -71,3 +71,11 @@ npm i vuepress@next vuepress-theme-hope@next && npm install && npm update
 ```
 
 :::
+
+::: warning
+
+Any official plugins starting with `@vuepress/plugin-` should be the same version as VuePress.
+
+If you're using another third-party plugin, make sure it's compatible with the version of VuePress you're upgrading to.
+
+:::

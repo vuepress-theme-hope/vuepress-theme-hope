@@ -33,9 +33,17 @@ npm i vuepress@next vuepress-theme-hope@next
 
 :::
 
+::: warning
+
+Any official plugins starting with `@vuepress/plugin-` should be the same version as VuePress.
+
+If you're using another third-party plugin, make sure it's compatible with the version of VuePress you're upgrading to.
+
+:::
+
 ## Убедитесь в версии Node
 
-`vuepress-theme-hope` поддерживает только LTS-версию Node.js, то есть в настоящее время поддерживаются только последние версии v14, v16.
+`vuepress-theme-hope` поддерживает только LTS-версию Node.js, то есть в настоящее время поддерживаются только последние версии v14, v16, v18.
 
 Вы можете проверить его версию с помощью `node -v`. Если первая цифра номера версии не соответствует требованиям, [загрузите и установите LTS-версию Node.js](../cookbook/tutorial/env.md#nodejs).
 

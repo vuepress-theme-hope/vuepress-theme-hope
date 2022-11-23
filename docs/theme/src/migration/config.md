@@ -70,8 +70,20 @@ tag:
 
   ```ts
   interface AuthorInfo {
+    /**
+     * Author name
+     */
     name: string;
+
+    /**
+     * Author website
+     */
     url?: string;
+
+    /**
+     * Author email
+     */
+    email?: string;
   }
   ```
 

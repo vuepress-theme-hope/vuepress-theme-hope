@@ -66,7 +66,7 @@ tag:
 - Тип: `NavbarConfig`
 
   ```ts
-  interface TextItem {
+  interface TextItemOptions {
     /**
      * Text of item
      */
@@ -83,7 +83,7 @@ tag:
     ariaLabel?: string;
   }
 
-  interface AutoLink extends TextItem {
+  interface AutoLinkOptions extends TextItemOptions {
     /**
      * link of item
      */
@@ -105,7 +105,7 @@ tag:
     activeMatch?: string;
   }
 
-  interface NavGroup<T> extends TextItem {
+  interface NavGroup<T> extends TextItemOptions {
     /**
      * Link prefix of current group
      */
@@ -122,7 +122,7 @@ tag:
     children: T[];
   }
 
-  type NavbarItem = AutoLink;
+  type NavbarItem = AutoLinkOptions;
   type NavbarGroup = NavGroup<NavbarGroup | NavbarItem | string>;
   type NavbarConfig = (NavbarItem | NavbarGroup | string)[];
   ```
@@ -136,7 +136,7 @@ tag:
 - Тип: `SidebarConfig`
 
   ```ts
-  interface TextItem {
+  interface TextItemOptions {
     /**
      * Text of item
      */
@@ -153,7 +153,7 @@ tag:
     ariaLabel?: string;
   }
 
-  interface AutoLink extends TextItem {
+  interface AutoLinkOptions extends TextItemOptions {
     /**
      * link of item
      */
@@ -175,9 +175,9 @@ tag:
     activeMatch?: string;
   }
 
-  type SidebarPageItem = AutoLink;
+  type SidebarPageItem = AutoLinkOptions;
 
-  interface SidebarGroupItem extends TextItem {
+  interface SidebarGroupItem extends TextItemOptions {
     /**
      * Link prefix of current group
      */
@@ -206,7 +206,7 @@ tag:
     )[];
   }
 
-  interface SidebarStructureItem extends TextItem {
+  interface SidebarStructureItem extends TextItemOptions {
     /**
      * Link prefix of current group
      */
