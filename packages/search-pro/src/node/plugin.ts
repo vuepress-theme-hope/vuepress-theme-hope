@@ -57,7 +57,10 @@ export const searchProPlugin =
       onPrepared: (app): Promise<void> => prepareSearchIndex(app, options),
 
       onWatched: (app, watchers): void => {
-        if (options.hotReload) {
+        const hotReload =
+          "hotReload" in options ? options.hotReload : app.env.isDebug;
+
+        if (hotReload) {
           // this ensure the page is generated or updated
           const searchIndexWatcher = watch("pages/**/*.vue", {
             cwd: app.dir.temp(),

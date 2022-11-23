@@ -68,7 +68,7 @@ Setting to an empty key will inject to route meta directly instead of a field.
 ### hotReload
 
 - Type: `boolean`
-- Default: `false`
+- Default: Whether using `--debug` flag
 
 Whether enable hotReload in devServer.
 

@@ -144,7 +144,7 @@ Performing client search with huge contents could be slow, so under this case yo
 ## hotReload
 
 - Type: `boolean`
-- Default: `false`
+- Default: Whether using `--debug` flag
 
 Whether to enable hot reload in the development server.
 

@@ -68,7 +68,7 @@ Slugify 函数，用于转换 key 在路由中注册的形式。
 ### hotReload
 
 - 类型: `boolean`
-- 默认值: `false`
+- 默认值: 是否使用 `--debug` 标记
 
 是否在开发服务器中中启用实时热重载。
 

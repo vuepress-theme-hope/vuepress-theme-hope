@@ -61,7 +61,10 @@ export const blogPlugin =
       },
 
       onWatched: (app, watchers): void => {
-        if (options.hotReload) {
+        const hotReload =
+          "hotReload" in options ? options.hotReload : app.env.isDebug;
+
+        if (hotReload) {
           const pageDataWatcher = watch("pages/**/*.js", {
             cwd: app.dir.temp(),
             ignoreInitial: true,
