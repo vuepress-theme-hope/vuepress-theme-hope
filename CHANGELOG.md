@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.128](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.127...v2.0.0-beta.128) (2022-11-23)
+
+### Features
+
+- **theme:** add hotReload options ([adde3fe](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/adde3feadfcc4b295896ebcad7e246cd3135683a))
+- update hotReload default value ([dd66584](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/dd6658458fa382fc47f73624049e1ab45bf15987))
+
+### Bug Fixes
+
+- fix deps ([f8d0ec9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f8d0ec9ab2436e5f121864ccccdec07ca60fdec6))
+
 ## [2.0.0-beta.127](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.126...v2.0.0-beta.127) (2022-11-23)
 
 ### Features
