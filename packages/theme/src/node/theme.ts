@@ -48,7 +48,7 @@ export const hopeTheme =
 
     if (legacy) checkStyle(app);
 
-    const status = getStatus(options);
+    const status = getStatus(app, options);
     const themeConfig = getThemeConfig(app, themeOptions, status);
     const icons = status.enableBlog ? checkSocialMediaIcons(themeConfig) : {};
 
@@ -63,6 +63,7 @@ export const hopeTheme =
 
       define: () => ({
         ENABLE_BLOG: status.enableBlog,
+        HAS_MULTIPLE_LANGUAGES: status.hasMultipleLanguages,
         SUPPORT_PAGEVIEW: status.supportPageview,
       }),
 

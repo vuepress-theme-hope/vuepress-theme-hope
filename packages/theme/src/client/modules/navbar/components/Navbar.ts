@@ -22,6 +22,8 @@ import type {
 
 import "../styles/navbar.scss";
 
+declare const HAS_MULTIPLE_LANGUAGES: boolean;
+
 export default defineComponent({
   name: "NavBar",
 
@@ -56,7 +58,7 @@ export default defineComponent({
     return (): VNode[] => {
       const map: Record<NavbarComponent, VNode | null> = {
         Brand: h(NavbarBrand),
-        Language: h(LanguageDropdown),
+        Language: HAS_MULTIPLE_LANGUAGES ? h(LanguageDropdown) : null,
         Links: h(NavbarLinks),
         Repo: h(RepoLink),
         Outlook: h(OutlookButton),
