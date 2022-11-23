@@ -97,7 +97,6 @@ export const getDate = (
       const isDate =
         hour === undefined && minute === undefined && second === undefined;
 
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       const value = dayjs({ ...detail, month: detail.month - 1 }).toDate();
 

@@ -108,7 +108,6 @@ export const tabs: PluginWithOptions<TabOptions> = (
     const oldParent = state.parentType;
     const oldLineMax = state.lineMax;
 
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-expect-error
     state.parentType = `${name}_tabs`;
 
@@ -208,7 +207,6 @@ export const tabs: PluginWithOptions<TabOptions> = (
     const oldParent = state.parentType;
     const oldLineMax = state.lineMax;
 
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-expect-error
     state.parentType = `tab`;
 
@@ -248,7 +246,7 @@ export const tabs: PluginWithOptions<TabOptions> = (
   });
 
   // WARNING:  Here we use an internal variable to make sure tab rule is not registered
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
   // @ts-ignore
   // eslint-disable-next-line
   if (!md.block.ruler.__rules__.find(({ name }) => name === "tab"))

@@ -19,11 +19,11 @@ import type { PluginConfig } from "@vuepress/core";
 import type {
   HopeThemeConfig,
   HopeThemeOptions,
-  HopeThemePluginsOptions,
+  PluginsOptions,
 } from "../../shared/index.js";
 
 export const getPluginConfig = (
-  plugins: HopeThemePluginsOptions,
+  plugins: PluginsOptions,
   themeData: HopeThemeConfig,
   options: Pick<
     HopeThemeOptions,

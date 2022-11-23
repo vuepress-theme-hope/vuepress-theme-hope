@@ -758,7 +758,6 @@ const test = (
         break;
 
       case "function":
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         if (!ruleDetail(token[key])) return res;
 

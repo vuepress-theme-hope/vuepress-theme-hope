@@ -7,15 +7,15 @@ import { logger } from "../../utils.js";
 import type { App } from "@vuepress/core";
 import type {
   HopeThemeConfig,
-  HopeThemeSidebarArrayConfig,
-  HopeThemeSidebarConfig,
-  HopeThemeSidebarGroupItem,
-  HopeThemeSidebarSorter,
-  HopeThemeSidebarInfo,
+  SidebarArrayOptions,
+  SidebarOptions,
+  SidebarGroupItem,
+  SidebarSorter,
+  SidebarInfo,
 } from "../../../shared/index.js";
 
 const getGeneratePaths = (
-  sidebarConfig: HopeThemeSidebarArrayConfig,
+  sidebarConfig: SidebarArrayOptions,
   prefix = ""
 ): string[] => {
   const result: string[] = [];
@@ -44,9 +44,7 @@ const getGeneratePaths = (
   return result;
 };
 
-const getSidebarItems = (
-  infos: HopeThemeSidebarInfo[]
-): (HopeThemeSidebarGroupItem | string)[] =>
+const getSidebarItems = (infos: SidebarInfo[]): (SidebarGroupItem | string)[] =>
   infos.map((info) => {
     if (info.type === "file") return info.filename;
 
@@ -61,8 +59,8 @@ const getSidebarItems = (
 export const getSidebarData = (
   app: App,
   themeConfig: HopeThemeConfig,
-  sorter?: HopeThemeSidebarSorter
-): HopeThemeSidebarConfig => {
+  sorter?: SidebarSorter
+): SidebarOptions => {
   const generatePaths: string[] = [];
   const sorters = getSorter(sorter);
 
@@ -105,7 +103,7 @@ export const getSidebarData = (
 export const prepareSidebarData = async (
   app: App,
   themeConfig: HopeThemeConfig,
-  sorter?: HopeThemeSidebarSorter
+  sorter?: SidebarSorter
 ): Promise<void> => {
   const sidebarData = getSidebarData(app, themeConfig, sorter);
 

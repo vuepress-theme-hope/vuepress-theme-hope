@@ -7,7 +7,7 @@ import Icon from "@theme-hope/components/Icon.js";
 import type { PropType, VNode } from "vue";
 import type {
   AutoLink as AutoLinkType,
-  HopeThemeNavGroup,
+  NavGroup,
 } from "../../../../shared/index.js";
 
 import "../styles/dropdown-link.scss";
@@ -17,9 +17,7 @@ export default defineComponent({
 
   props: {
     config: {
-      type: Object as PropType<
-        HopeThemeNavGroup<AutoLinkType | HopeThemeNavGroup<AutoLinkType>>
-      >,
+      type: Object as PropType<NavGroup<AutoLinkType | NavGroup<AutoLinkType>>>,
       required: true,
     },
   },

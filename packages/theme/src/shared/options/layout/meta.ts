@@ -1,4 +1,4 @@
-export interface HopeThemeMetaLocateData {
+export interface MetaLocateData {
   /**
    * Author label text
    *
@@ -98,7 +98,7 @@ export interface HopeThemeMetaLocateData {
   editLink: string;
 }
 
-export interface HopeThemeMetaLocaleOptions {
+export interface MetaLocaleOptions {
   /**
    * Whether to show "Last Updated" or not
    *

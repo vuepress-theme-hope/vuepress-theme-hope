@@ -10,26 +10,24 @@ import type { ReadingTimeOptions } from "vuepress-plugin-reading-time2";
 import type { SitemapOptions } from "vuepress-plugin-sitemap2";
 import type { SeoOptions } from "vuepress-plugin-seo2";
 import type {
-  HopeThemeBlogPluginOptions,
-  HopeThemeNavbarConfig,
-  HopeThemeSidebarConfig,
-  HopeThemeSidebarArrayConfig,
-  HopeThemeSidebarObjectConfig,
+  BlogPluginOptions,
+  NavbarOptions,
+  SidebarOptions,
+  SidebarArrayOptions,
+  SidebarObjectOptions,
 } from "../../shared/index.js";
 
 type Helper<T> = (options: T) => T;
 
-export type HopeThemeNavbarHelper = Helper<HopeThemeNavbarConfig>;
+export type HopeThemeNavbarHelper = Helper<NavbarOptions>;
 
-export type HopeThemeSidebarHelper = Helper<HopeThemeSidebarConfig>;
+export type HopeThemeSidebarHelper = Helper<SidebarOptions>;
 
-export type HopeThemeSidebarArrayHelper = Helper<HopeThemeSidebarArrayConfig>;
+export type HopeThemeSidebarArrayHelper = Helper<SidebarArrayOptions>;
 
-export type HopeThemeSidebarObjectHelper = Helper<HopeThemeSidebarObjectConfig>;
+export type HopeThemeSidebarObjectHelper = Helper<SidebarObjectOptions>;
 
-export type HopeThemeBlogPluginHelper = Helper<
-  HopeThemeBlogPluginOptions | boolean
->;
+export type HopeThemeBlogPluginHelper = Helper<BlogPluginOptions | boolean>;
 
 export type HopeThemeCommentPluginHelper = Helper<CommentOptions | false>;
 

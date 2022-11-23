@@ -15,7 +15,7 @@ import type { Page } from "@vuepress/core";
 import type {
   HopeThemeConfig,
   HopeThemePageData,
-  HopeThemePluginsOptions,
+  PluginsOptions,
   HopeThemeBlogHomePageFrontmatter,
   HopeThemeProjectHomePageFrontmatter,
   HopeThemeNormalPageFrontmatter,
@@ -115,7 +115,7 @@ export const checkFrontmatter = (
 
 export const extendsPage = (
   themeConfig: HopeThemeConfig,
-  plugins: HopeThemePluginsOptions,
+  plugins: PluginsOptions,
   page: Page<HopeThemePageData>,
   isDebug: boolean
 ): void => {

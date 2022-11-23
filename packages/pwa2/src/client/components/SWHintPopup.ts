@@ -19,7 +19,7 @@ export default defineComponent({
     const uninstall = (): void => {
       if (enabled.value) {
         // force refresh
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
         // @ts-ignore
         window.location.reload(true);
         enabled.value = false;

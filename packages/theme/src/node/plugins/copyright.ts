@@ -10,7 +10,7 @@ import type {
 
 export const getCopyrightPlugin = (
   themeConfig: HopeThemeConfig,
-  options?: Partial<CopyrightOptions> | true,
+  options?: Partial<CopyrightOptions> | boolean,
   hostname?: string
 ): Plugin | null => {
   if (!options) return null;

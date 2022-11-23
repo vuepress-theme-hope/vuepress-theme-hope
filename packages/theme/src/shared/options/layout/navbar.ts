@@ -1,20 +1,6 @@
-import type { HopeThemeNavbarConfig } from "../../navbar.js";
+import type { NavbarOptions } from "../../navbar.js";
 
-export type HopeThemeNavbarComponent =
-  | "Brand"
-  | "Links"
-  | "Language"
-  | "Search"
-  | "Outlook"
-  | "Repo";
-
-export interface HopeNavbarLayoutOptions {
-  left: HopeThemeNavbarComponent[];
-  center: HopeThemeNavbarComponent[];
-  right: HopeThemeNavbarComponent[];
-}
-
-export interface HopeThemeNavbarLocaleData {
+export interface NavbarLocaleData {
   /**
    * Aria label of of the language selection dropdown
    *
@@ -30,39 +16,65 @@ export interface HopeThemeNavbarLocaleData {
   langName: string;
 }
 
-export interface HopeThemeNavbarLocaleOptions {
+/**
+ * Navbar component
+ *
+ * 导航栏组件
+ */
+export type NavbarComponent =
+  | "Brand"
+  | "Links"
+  | "Language"
+  | "Search"
+  | "Outlook"
+  | "Repo";
+
+/**
+ * Navbar layout options
+ *
+ * 导航栏布局选项
+ */
+export interface NavbarLayoutOptions {
+  left: NavbarComponent[];
+  center: NavbarComponent[];
+  right: NavbarComponent[];
+}
+
+export interface NavbarLocaleOptions {
   /**
    * Navbar config
    *
    * @description Set to `false` to disable navbar in current locale
+   *
    * @see https://vuepress-theme-hope.github.io/v2/guide/layout/navbar.html
    *
    * 导航栏配置
    *
    * @description 设置 `false` 以在当前语言中禁用导航栏
+   *
    * @see https://vuepress-theme-hope.gitee.io/v2/zh/guide/layout/navbar.html
    */
-  navbar?: HopeThemeNavbarConfig | false;
+  navbar?: NavbarOptions | false;
 
   /**
    * Navbar logo
    *
-   * should be absolute path relative to `.vuepress/public` folder
+   * @description should be absolute path relative to `.vuepress/public` folder
    *
    * 导航栏图标
    *
-   * 应为基于 `.vuepress/public` 文件夹的绝对路径
+   * @description 应为基于 `.vuepress/public` 文件夹的绝对路径
    */
   logo?: string;
 
   /**
    * Navbar logo under darkmode
    *
-   * should be absolute path relative to `.vuepress/public` folder
+   * @description should be absolute path relative to `.vuepress/public` folder
    *
    * 夜间模式下导航栏图标
    *
-   * 应为基于 `.vuepress/public` 文件夹的绝对路径
+   * @description 应为基于 `.vuepress/public` 文件夹的绝对路径
    */
   logoDark?: string;
 
@@ -114,7 +126,7 @@ export interface HopeThemeNavbarLocaleOptions {
    *
    * @default { left: ["Brand"], center: ["Links"], right: ["Language", "Repo", "Outlook", "Search"] }
    */
-  navbarLayout?: HopeNavbarLayoutOptions;
+  navbarLayout?: NavbarLayoutOptions;
 
   /**
    * Whether hide site title on mobile
@@ -123,5 +135,5 @@ export interface HopeThemeNavbarLocaleOptions {
    *
    * @default true
    */
-  hideSiteNameonMobile?: boolean;
+  hideSiteNameOnMobile?: boolean;
 }

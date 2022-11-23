@@ -11,13 +11,15 @@ import type { ReadingTimeOptions } from "vuepress-plugin-reading-time2";
 import type { SitemapOptions } from "vuepress-plugin-sitemap2";
 import type { SeoOptions } from "vuepress-plugin-seo2";
 
-import type { HopeThemeBlogPluginOptions } from "./blog.js";
+import type { BlogPluginOptions } from "./blog.js";
 
-export interface HopeThemePluginsOptions {
+export interface PluginsOptions {
   /**
    * Enable @vuepress/active-header-links or not
    *
    * 是否启用 @vuepress/active-header-links 插件
+   *
+   * @default true
    */
   activeHeaderLinks?: boolean;
 
@@ -28,7 +30,7 @@ export interface HopeThemePluginsOptions {
    *
    * @default false
    */
-  blog?: HopeThemeBlogPluginOptions | boolean;
+  blog?: BlogPluginOptions | boolean;
 
   /**
    * Components enabled
@@ -71,13 +73,23 @@ export interface HopeThemePluginsOptions {
 
   /**
    * Copyright Plugin options
+   *
+   * @see http://vuepress-theme-hope.github.io/v2/copyright/config.html
+   *
+   * 代码复制插件配置
+   *
+   * @see http://vuepress-theme-hope.github.io/v2/copyright/zh/config.html
+   *
+   * @default false
    */
-  copyright?: CopyrightOptions | true;
+  copyright?: CopyrightOptions | boolean;
 
   /**
    * Enable @vuepress/external-link-icon or not
    *
    * 是否启用 @vuepress/external-link-icon 插件
+   *
+   * @default true
    */
   externalLinkIcon?: boolean;
 
@@ -90,16 +102,20 @@ export interface HopeThemePluginsOptions {
    *
    * @see http://vuepress-theme-hope.github.io/v2/feed/zh/config/
    */
-  feed?: Omit<FeedOptions, "hostname"> | false;
+  feed?: Omit<FeedOptions, "hostname">;
 
   /**
    * Git plugin options
    *
-   * @see https://v2.vuepress.vuejs.org/reference/plugin/git.html#install
+   * @description By default this plugin is only enabled in production mode for performance reasons.
+   *
+   * @see https://v2.vuepress.vuejs.org/reference/plugin/git.html
    *
    * Git 插件配置
    *
-   * @see https://v2.vuepress.vuejs.org/zh/reference/plugin/git.html#install
+   * @description 默认情况下，出于性能原因，此插件仅在生产模式下启用。
+   *
+   * @see https://v2.vuepress.vuejs.org/zh/reference/plugin/git.html
    */
   git?: GitPluginOptions | boolean;
 
@@ -118,24 +134,32 @@ export interface HopeThemePluginsOptions {
    * Enable @vuepress/nprogress or not
    *
    * 是否启用 @vuepress/nprogress 插件
+   *
+   * @default true
    */
   nprogress?: boolean;
 
   /**
    * Photo Swipe plugin options
    *
+   * @description This plugin is enabled by default
+   *
    * @see http://vuepress-theme-hope.github.io/v2/photo-swipe/config/
    *
    * 图片预览插件配置
    *
    * @see http://vuepress-theme-hope.github.io/v2/photo-swipe/zh/config/
+   *
+   * @default true
    */
-  photoSwipe?: PhotoSwipeOptions | false;
+  photoSwipe?: PhotoSwipeOptions | boolean;
 
   /**
    * Enable @vuepress/prismjs or not
    *
    * 是否启用 @vuepress/prismjs 插件
+   *
+   * @default true
    */
   prismjs?: boolean;
 
@@ -147,6 +171,8 @@ export interface HopeThemePluginsOptions {
    * PWA 插件配置
    *
    * @see http://vuepress-theme-hope.github.io/v2/pwa/zh/config/
+   *
+   * @default false
    */
   pwa?: PWAOptions | boolean;
 
@@ -158,8 +184,10 @@ export interface HopeThemePluginsOptions {
    * 阅读时间插件配置
    *
    * @see http://vuepress-theme-hope.github.io/v2/reading-time/zh/
+   *
+   * @default true
    */
-  readingTime?: ReadingTimeOptions | false;
+  readingTime?: ReadingTimeOptions | boolean;
 
   /**
    * SEO plugin options
@@ -169,8 +197,10 @@ export interface HopeThemePluginsOptions {
    * SEO 插件配置
    *
    * @see http://vuepress-theme-hope.github.io/v2/seo/zh/config/
+   *
+   * @default true
    */
-  seo?: Omit<SeoOptions, "hostname" | "author"> | false;
+  seo?: Omit<SeoOptions, "hostname" | "author"> | boolean;
 
   /**
    * Sitemap plugin options
@@ -180,6 +210,8 @@ export interface HopeThemePluginsOptions {
    * Sitemap 插件配置
    *
    * @see http://vuepress-theme-hope.github.io/v2/sitemap/zh/config/
+   *
+   * @default true
    */
-  sitemap?: Omit<SitemapOptions, "hostname"> | false;
+  sitemap?: Omit<SitemapOptions, "hostname"> | boolean;
 }

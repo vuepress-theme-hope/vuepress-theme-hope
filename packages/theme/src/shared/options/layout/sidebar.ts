@@ -1,6 +1,57 @@
-import type { HopeThemeSidebarConfig } from "../../sidebar.js";
+import type { HopeThemeNormalPageFrontmatter } from "../../frontmatter/index.js";
+import type { SidebarOptions } from "../../sidebar.js";
+import type { HopeThemePageData } from "../../page.js";
 
-export interface HopeThemeSidebarLocaleOptions {
+export interface SidebarFileInfo {
+  type: "file";
+  filename: string;
+
+  title: string;
+  order: number | null;
+
+  frontmatter: HopeThemeNormalPageFrontmatter;
+  pageData: HopeThemePageData;
+}
+
+export interface SidebarDirInfo {
+  type: "dir";
+  dirname: string;
+  children: SidebarInfo[];
+
+  title: string;
+  order: number | null;
+
+  groupInfo: {
+    icon?: string;
+    collapsible?: boolean;
+    link?: string;
+  };
+
+  frontmatter: HopeThemeNormalPageFrontmatter | null;
+  pageData: HopeThemePageData | null;
+}
+
+export type SidebarInfo = SidebarFileInfo | SidebarDirInfo;
+
+export type SidebarSorterKeyword =
+  | "readme"
+  | "order"
+  | "date"
+  | "date-desc"
+  | "filename"
+  | "title";
+
+export type SidebarSorterFunction = (
+  infoA: SidebarInfo,
+  infoB: SidebarInfo
+) => number;
+
+export type SidebarSorter =
+  | SidebarSorterFunction
+  | SidebarSorterKeyword
+  | SidebarSorterKeyword[];
+
+export interface SidebarLocaleOptions {
   /**
    * sidebar config
    *
@@ -12,7 +63,7 @@ export interface HopeThemeSidebarLocaleOptions {
    * @description 设置为 `false` 以在当前语言中禁用侧边栏
    * @see https://vuepress-theme-hope.gitee.io/v2/zh/guide/layout/sidebar.html
    */
-  sidebar?: HopeThemeSidebarConfig | "structure" | "heading" | false;
+  sidebar?: SidebarOptions | "structure" | "heading" | false;
 
   /**
    * Whether show icons in the sidebar

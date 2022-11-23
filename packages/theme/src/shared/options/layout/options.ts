@@ -1,94 +1,36 @@
-import type { HopeThemeFooterLocaleOptions } from "./footer.js";
-import type { HopeThemeDocsLocaleOptions } from "./info.js";
-import type {
-  HopeThemeMetaLocateData,
-  HopeThemeMetaLocaleOptions,
-} from "./meta.js";
-import type {
-  HopeThemeNavbarLocaleData,
-  HopeThemeNavbarLocaleOptions,
-} from "./navbar.js";
-import type { HopeThemeSidebarLocaleOptions } from "./sidebar.js";
-import type { HopeThemeRouteLocaleData } from "./route.js";
-import type { HopeThemeNormalPageFrontmatter } from "../../frontmatter/index.js";
+import type { FooterLocaleOptions } from "./footer.js";
+import type { DocsRepoLocaleOptions } from "./info.js";
+import type { MetaLocateData, MetaLocaleOptions } from "./meta.js";
+import type { NavbarLocaleData, NavbarLocaleOptions } from "./navbar.js";
+import type { SidebarLocaleOptions, SidebarSorter } from "./sidebar.js";
+import type { RouteLocaleData } from "./route.js";
+
 import type { PageInfo } from "../../info.js";
-import type { HopeThemePageData } from "../../page.js";
 
-export interface HopeThemeSidebarFileInfo {
-  type: "file";
-  filename: string;
-
-  title: string;
-  order: number | null;
-
-  frontmatter: HopeThemeNormalPageFrontmatter;
-  pageData: HopeThemePageData;
-}
-
-export interface HopeThemeSidebarDirInfo {
-  type: "dir";
-  dirname: string;
-  children: HopeThemeSidebarInfo[];
-
-  title: string;
-  order: number | null;
-
-  groupInfo: {
-    icon?: string;
-    collapsible?: boolean;
-    link?: string;
-  };
-
-  frontmatter: HopeThemeNormalPageFrontmatter | null;
-  pageData: HopeThemePageData | null;
-}
-
-export type HopeThemeSidebarInfo =
-  | HopeThemeSidebarFileInfo
-  | HopeThemeSidebarDirInfo;
-
-export type HopeThemeSidebarSorterKeyWord =
-  | "readme"
-  | "order"
-  | "date"
-  | "date-desc"
-  | "filename"
-  | "title";
-
-export type HopeThemeSidebarSorterFunction = (
-  infoA: HopeThemeSidebarInfo,
-  infoB: HopeThemeSidebarInfo
-) => number;
-
-export type HopeThemeSidebarSorter =
-  | HopeThemeSidebarSorterFunction
-  | HopeThemeSidebarSorterKeyWord
-  | HopeThemeSidebarSorterKeyWord[];
-
-export interface HopeThemeLayoutLocaleData {
+export interface LayoutLocaleData {
   /**
    * Navbar related i18n config
    */
-  navbarLocales: HopeThemeNavbarLocaleData;
+  navbarLocales: NavbarLocaleData;
 
   /**
    * Meta related i18n config
    */
 
-  metaLocales: HopeThemeMetaLocateData;
+  metaLocales: MetaLocateData;
 
   /**
    * Router related i18n config
    */
-  routeLocales: HopeThemeRouteLocaleData;
+  routeLocales: RouteLocaleData;
 }
 
-export interface HopeThemeLayoutLocaleOptions
-  extends HopeThemeNavbarLocaleOptions,
-    HopeThemeSidebarLocaleOptions,
-    HopeThemeDocsLocaleOptions,
-    HopeThemeMetaLocaleOptions,
-    HopeThemeFooterLocaleOptions {
+export interface LayoutLocaleOptions
+  extends NavbarLocaleOptions,
+    SidebarLocaleOptions,
+    DocsRepoLocaleOptions,
+    MetaLocaleOptions,
+    FooterLocaleOptions {
   /**
    * Home path of current locale
    *
@@ -166,9 +108,12 @@ export interface HopeThemeLayoutLocaleOptions
   prevLink?: boolean;
 }
 
-export type HopeThemeLayoutLocaleConfig = HopeThemeLayoutLocaleOptions;
+export type LayoutLocaleConfig = LayoutLocaleOptions;
 
-export interface HopeThemeLayoutRootOptions {
+/**
+ * @kind root
+ */
+export interface LayoutOptions {
   /**
    * Wether display back to top button
    *
@@ -202,5 +147,7 @@ export interface HopeThemeLayoutRootOptions {
    *
    * @default 'order'
    */
-  sidebarSorter?: HopeThemeSidebarSorter;
+  sidebarSorter?: SidebarSorter;
 }
+
+export type LayoutConfig = Pick<LayoutOptions, "mobileBreakPoint">;

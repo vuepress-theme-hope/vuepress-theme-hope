@@ -4,11 +4,11 @@ import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import { useGitPlugin } from "vuepress-shared/node";
 
 import type { App } from "@vuepress/core";
-import type { HopeThemePluginsOptions } from "../../shared/index.js";
+import type { PluginsOptions } from "../../shared/index.js";
 
 const __dirname = getDirname(import.meta.url);
 
-export const usePlugin = (app: App, plugins: HopeThemePluginsOptions): void => {
+export const usePlugin = (app: App, plugins: PluginsOptions): void => {
   // respect git options
   if ("git" in plugins)
     useGitPlugin(
@@ -32,9 +32,10 @@ export const usePlugin = (app: App, plugins: HopeThemePluginsOptions): void => {
     });
 
   if (plugins.readingTime !== false)
-    useReadingTimePlugin(app, {
-      wordPerMinute: plugins.readingTime?.wordPerMinute || 300,
-    });
+    useReadingTimePlugin(
+      app,
+      typeof plugins.readingTime === "object" ? plugins.readingTime : {}
+    );
 
   useSassPalettePlugin(app, {
     id: "hope",

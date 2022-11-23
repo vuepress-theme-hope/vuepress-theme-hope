@@ -4,17 +4,16 @@ import type { Plugin } from "@vuepress/core";
 import type { SitemapOptions } from "vuepress-plugin-sitemap2";
 
 export const getSitemapPlugin = (
-  options?: Omit<SitemapOptions, "hostname"> | false,
+  options?: Omit<SitemapOptions, "hostname"> | boolean,
   hostname?: string,
   legacy = false
 ): Plugin | null => {
   if (options === false) return null;
 
-  // disable sitemap if `hostname` is not set and no options for sitemap plugin
-  if (!Object.keys(options || {}).length && !hostname) return null;
+  const sitemapOptions = typeof options === "object" ? options : {};
 
-  return sitemapPlugin(
-    <SitemapOptions>{ hostname, ...(options || {}) },
-    legacy
-  );
+  // disable sitemap if `hostname` is not set and no options for sitemap plugin
+  if (!Object.keys(sitemapOptions).length && !hostname) return null;
+
+  return sitemapPlugin(<SitemapOptions>{ hostname, ...sitemapOptions }, legacy);
 };

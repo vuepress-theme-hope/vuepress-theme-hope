@@ -32,7 +32,7 @@ export const convertOptions = (
         console.warn(
           `"${oldOptions}" is deprecated in @waline/client@v2, you should use "${newOptions}" instead.`
         );
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
         // @ts-ignore
         delete options[oldOptions];
       }
@@ -63,7 +63,6 @@ export const convertOptions = (
           `"${option}" is no longer supported in @waline/client@v2.`
         );
 
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         delete options[option];
       }

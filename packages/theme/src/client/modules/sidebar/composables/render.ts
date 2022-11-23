@@ -8,9 +8,9 @@ import { isActiveSidebarItem } from "@theme-hope/modules/sidebar/utils/index.js"
 import type { VNode } from "vue";
 import type {
   ResolvedSidebarItem,
-  ResolvedHopeThemeSidebarHeaderItem,
-  AutoLink as AutoLinkType,
-} from "../../../../shared/index.js";
+  ResolvedSidebarHeaderItem,
+} from "../utils/index.js";
+import type { AutoLink as AutoLinkType } from "../../../../shared/index.js";
 
 export const renderItem = (
   config: ResolvedSidebarItem,
@@ -26,7 +26,7 @@ export const renderItem = (
       h("p", props, [h(Icon, { icon: config.icon }), config.text]);
 
 export const renderChildren = (
-  children: ResolvedHopeThemeSidebarHeaderItem[]
+  children: ResolvedSidebarHeaderItem[]
 ): VNode | null => {
   const route = useRoute();
 

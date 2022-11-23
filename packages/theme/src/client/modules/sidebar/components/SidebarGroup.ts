@@ -6,7 +6,7 @@ import SidebarLinks from "@theme-hope/modules/sidebar/components/SidebarLinks.js
 import { isActiveSidebarItem } from "@theme-hope/modules/sidebar/utils/index.js";
 
 import type { PropType, VNode } from "vue";
-import type { ResolvedHopeThemeSidebarGroupItem } from "../../../../shared/index.js";
+import type { ResolvedSidebarGroupItem } from "../utils/index.js";
 
 import "../styles/sidebar-group.scss";
 
@@ -15,7 +15,7 @@ export default defineComponent({
 
   props: {
     config: {
-      type: Object as PropType<ResolvedHopeThemeSidebarGroupItem>,
+      type: Object as PropType<ResolvedSidebarGroupItem>,
       required: true,
     },
     open: { type: Boolean, required: true },

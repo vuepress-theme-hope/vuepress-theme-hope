@@ -57,7 +57,7 @@ export class FeedGenerator {
     const pages = this.app.pages
       .filter((page) => page.pathLocale === localePath)
       .filter(filter)
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
       // @ts-ignore
       .sort(sorter)
       .slice(0, feedCount);

@@ -1,7 +1,7 @@
 import { path } from "@vuepress/utils";
 
 import type { App, Page } from "@vuepress/core";
-import type { HopeThemeSidebarSorterFunction } from "../../../shared/index.js";
+import type { SidebarSorterFunction } from "../../../shared/index.js";
 
 export interface FileInfo {
   type: "file";
@@ -20,7 +20,7 @@ export type StructureInfo = DirInfo | FileInfo;
 
 export interface HopeThemeSidebarInfoOptions {
   app: App;
-  sorters: HopeThemeSidebarSorterFunction[];
+  sorters: SidebarSorterFunction[];
   nestingDepth?: number;
 }
 

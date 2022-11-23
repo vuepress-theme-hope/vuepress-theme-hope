@@ -1,11 +1,11 @@
-export type HopeThemeDarkmodeStatus =
+export type DarkmodeConfig =
   | "switch"
   | "auto"
   | "toggle"
   | "enable"
   | "disable";
 
-export interface HopeThemeOutlookLocaleData {
+export interface OutlookLocaleData {
   /**
    * Theme Color
    */
@@ -22,7 +22,7 @@ export interface HopeThemeOutlookLocaleData {
   fullscreen: string;
 }
 
-export interface HopeThemeAppearanceLocaleData {
+export interface AppearanceLocaleData {
   outlookLocales: {
     /**
      * Theme Color
@@ -47,7 +47,10 @@ export interface HopeThemeAppearanceLocaleData {
   };
 }
 
-export interface HopeThemeAppearanceRootOptions {
+/**
+ * @kind root
+ */
+export interface AppearanceOptions {
   /**
    * Whether enable pure mode
    *
@@ -76,7 +79,7 @@ export interface HopeThemeAppearanceRootOptions {
    *
    * @default 'auto-switch'
    */
-  darkmode?: HopeThemeDarkmodeStatus;
+  darkmode?: DarkmodeConfig;
 
   /**
    * Theme color configuration
@@ -120,10 +123,7 @@ export interface HopeThemeAppearanceRootOptions {
   iconPrefix?: string;
 }
 
-export type HopeThemeAppearanceRootConfig = HopeThemeAppearanceRootOptions &
+export type AppearanceConfig = AppearanceOptions &
   Required<
-    Pick<
-      HopeThemeAppearanceRootOptions,
-      "darkmode" | "fullscreen" | "pure" | "themeColor"
-    >
+    Pick<AppearanceOptions, "darkmode" | "fullscreen" | "pure" | "themeColor">
   >;

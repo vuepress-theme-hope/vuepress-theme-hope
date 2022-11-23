@@ -1,4 +1,4 @@
-export interface HopeThemeDocsLocaleOptions {
+export interface DocsRepoLocaleOptions {
   /**
    * Pattern of edit link, we provide built-in support for GitHub, Gitlab, Gitee, Bitbucket
    *

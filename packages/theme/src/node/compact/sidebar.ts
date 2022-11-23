@@ -2,14 +2,12 @@ import { droppedLogger, deprecatedLogger } from "./utils.js";
 import { logger } from "../utils.js";
 
 import type {
-  HopeThemeSidebarConfig,
-  HopeThemeSidebarArrayConfig,
-  HopeThemeSidebarItem,
+  SidebarOptions,
+  SidebarArrayOptions,
+  SidebarItem,
 } from "../../shared/index.js";
 
-const handleArraySidebarConfig = (
-  config: unknown[]
-): HopeThemeSidebarArrayConfig =>
+const handleArraySidebarConfig = (config: unknown[]): SidebarArrayOptions =>
   config
     .map((item) => {
       if (typeof item === "string") return item;
@@ -35,33 +33,31 @@ const handleArraySidebarConfig = (
           "Found in sidebar"
         );
 
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         if (Array.isArray(item.children))
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
           handleArraySidebarConfig(item.children as unknown[]);
 
-        return item as HopeThemeSidebarItem;
+        return item as SidebarItem;
       }
 
       return null;
     })
-    .filter((item): item is HopeThemeSidebarItem => item !== null);
+    .filter((item): item is SidebarItem => item !== null);
 
 /**
  * @deprecated You should use V2 standard sidebar config and avoid using it
  */
 export const convertSidebarConfig = (
   config: unknown
-): HopeThemeSidebarConfig | false => {
+): SidebarOptions | false => {
   if (config === false) return false;
   if (Array.isArray(config)) return handleArraySidebarConfig(config);
 
   if (typeof config === "object" && config)
     return Object.fromEntries(
       Object.entries(config).map<
-        [string, HopeThemeSidebarArrayConfig | "structure" | false]
+        [string, SidebarArrayOptions | "structure" | false]
       >(([key, value]) => {
         if (Array.isArray(value)) return [key, handleArraySidebarConfig(value)];
 

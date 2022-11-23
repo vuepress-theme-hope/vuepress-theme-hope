@@ -1,6 +1,6 @@
 import type { PageInfo } from "../../info.js";
 
-export interface HopeThemeBlogLocaleData {
+export interface BlogLocaleData {
   /** 文章文字 */
   article: string;
   /** 文章列表文字 */
@@ -25,7 +25,7 @@ export interface HopeThemeBlogLocaleData {
   encrypt: string;
 }
 
-export interface HopeThemePaginationLocaleData {
+export interface PaginationLocaleData {
   /**
    * Previous page button label text
    *
@@ -70,8 +70,10 @@ export interface HopeThemePaginationLocaleData {
  * 博客选项
  *
  * Blog configuration
+ *
+ * @kind locale
  */
-export interface HopeThemeBlogOptions {
+export interface BlogLocaleOptions {
   /**
    * Name of the Blogger
    *
@@ -109,7 +111,7 @@ export interface HopeThemeBlogOptions {
    *
    * Media links configuration
    *
-   * E.g.
+   * @example
    *
    * ```js
    * {
@@ -170,4 +172,6 @@ export interface HopeThemeBlogOptions {
   articleInfo?: PageInfo[];
 }
 
-export type HopeThemeBlogConfig = HopeThemeBlogOptions;
+export interface BlogLocaleConfig extends Omit<BlogLocaleOptions, "media"> {
+  medias?: Record<string, string>;
+}

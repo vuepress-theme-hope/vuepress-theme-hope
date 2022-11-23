@@ -111,7 +111,6 @@ const handleFooterOptions = (options: Record<string, unknown>): void => {
         '"footer.copyright" options is deprecated, please use "copyright" instead'
       );
 
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       options["copyright"] = footer["copyright"];
     }
@@ -121,7 +120,6 @@ const handleFooterOptions = (options: Record<string, unknown>): void => {
         '"footer.display" options is deprecated, please use "displayFooter" instead'
       );
 
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       options["displayFooter"] = footer["display"];
     }
@@ -131,7 +129,6 @@ const handleFooterOptions = (options: Record<string, unknown>): void => {
         '"footer.content" options is deprecated, please use "footer" instead'
       );
 
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       options["footer"] = footer["content"];
     } else delete options["footer"];

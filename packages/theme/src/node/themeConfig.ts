@@ -41,7 +41,7 @@ const defaultLocaleOptions: HopeThemeLocaleOptions = {
   repoDisplay: true,
   navbarIcon: true,
   navbarAutoHide: "mobile",
-  hideSiteNameonMobile: true,
+  hideSiteNameOnMobile: true,
   sidebar: "structure",
   sidebarIcon: true,
   headerDepth: 2,
@@ -70,10 +70,9 @@ export const getThemeConfig = (
         default: Object.fromEntries(
           Object.entries(themeLocalesData).map(([locale, config]) => {
             if (!enableBlog) {
-              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
               // @ts-ignore
               delete config.blogLocales;
-              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
               // @ts-ignore
               delete config.paginationLocales;
             }

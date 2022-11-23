@@ -158,7 +158,6 @@ export const container: PluginWithOptions<MarkdownItContainerOptions> = (
     const oldParent = state.parentType;
     const oldLineMax = state.lineMax;
 
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-expect-error
     state.parentType = "container";
 

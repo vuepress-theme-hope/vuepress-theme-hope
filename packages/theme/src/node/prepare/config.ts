@@ -3,7 +3,7 @@ import { getDirname, path } from "@vuepress/utils";
 
 import type { App } from "@vuepress/core";
 import type { ThemeStatus } from "../status.js";
-import type { HopeThemePluginsOptions } from "../../shared/index.js";
+import type { PluginsOptions } from "../../shared/index.js";
 
 const __dirname = getDirname(import.meta.url);
 const CLIENT_FOLDER = ensureEndingSlash(
@@ -12,7 +12,7 @@ const CLIENT_FOLDER = ensureEndingSlash(
 
 export const prepareConfigFile = (
   app: App,
-  plugins: HopeThemePluginsOptions,
+  plugins: PluginsOptions,
   { enableBlog, enableEncrypt }: ThemeStatus
 ): Promise<string> => {
   let configImport = "";

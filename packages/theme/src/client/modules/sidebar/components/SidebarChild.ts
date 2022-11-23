@@ -8,9 +8,9 @@ import { isActiveSidebarItem } from "@theme-hope/modules/sidebar/utils/index.js"
 
 import type { PropType, VNode } from "vue";
 import type {
-  ResolvedHopeThemeSidebarHeaderItem,
-  ResolvedHopeThemeSidebarPageItem,
-} from "../../../../shared/index.js";
+  ResolvedSidebarHeaderItem,
+  ResolvedSidebarPageItem,
+} from "../utils/index.js";
 
 import "../styles/sidebar-child.scss";
 
@@ -20,7 +20,7 @@ export default defineComponent({
   props: {
     config: {
       type: Object as PropType<
-        ResolvedHopeThemeSidebarPageItem | ResolvedHopeThemeSidebarHeaderItem
+        ResolvedSidebarPageItem | ResolvedSidebarHeaderItem
       >,
       required: true,
     },

@@ -1,3 +1,3 @@
-export type LocaleData2Option<T> = {
+export type LocaleDataToOption<T> = {
   [P in keyof T]?: Partial<T[P]>;
 };

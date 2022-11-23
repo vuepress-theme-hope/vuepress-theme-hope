@@ -1,4 +1,4 @@
-export interface HopeThemeRouteLocaleData {
+export interface RouteLocaleData {
   /**
    * Skip to main content
    */

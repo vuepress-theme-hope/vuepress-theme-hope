@@ -9,17 +9,15 @@ import type { Plugin, PluginConfig } from "@vuepress/core";
 import type { UserConfig } from "@vuepress/cli";
 import type { MarkdownOptions } from "@vuepress/markdown";
 import type {
-  HopeThemeNavbarConfig,
-  HopeThemeSidebarConfig,
+  NavbarOptions,
+  SidebarOptions,
   HopeThemeOptions,
 } from "../../shared/index.js";
 
 /**
  * @deprecated use `import { navbar } from "vuepress-theme-hope";` instead
  */
-export const navbarConfig = (
-  config: HopeThemeNavbarConfig
-): HopeThemeNavbarConfig => {
+export const navbarConfig = (config: NavbarOptions): NavbarOptions => {
   deprecatedMsg(
     "navbarConfig",
     'import { navbar } from "vuepress-theme-hope";'
@@ -31,9 +29,7 @@ export const navbarConfig = (
 /**
  * @deprecated use `import { arraySidebar } from "vuepress-theme-hope";` instead
  */
-export const sidebarConfig = (
-  config: HopeThemeSidebarConfig
-): HopeThemeSidebarConfig => {
+export const sidebarConfig = (config: SidebarOptions): SidebarOptions => {
   deprecatedMsg(
     "sidebarConfig",
     'import { sidebar } from "vuepress-theme-hope";'

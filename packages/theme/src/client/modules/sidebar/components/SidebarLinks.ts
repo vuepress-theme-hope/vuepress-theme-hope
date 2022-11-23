@@ -6,7 +6,7 @@ import SidebarGroup from "@theme-hope/modules/sidebar/components/SidebarGroup.js
 import { isMatchedSidebarItem } from "@theme-hope/modules/sidebar/utils/index.js";
 
 import type { PropType, VNode } from "vue";
-import type { ResolvedSidebarItem } from "../../../../shared/index.js";
+import type { ResolvedSidebarItem } from "../utils/index.js";
 
 import "../styles/sidebar-links.scss";
 

@@ -18,7 +18,7 @@ it("should handle readme", () => {
       { type: "file", filename: "3.md" },
       { type: "file", filename: "22.md" },
       { type: "file", filename: "README.md" },
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
       // @ts-ignore
     ].sort(readmeSorter)
   ).toEqual([
@@ -38,7 +38,7 @@ it("should handle readme", () => {
       { type: "file", filename: "4.md" },
       { type: "file", filename: "3.md" },
       { type: "file", filename: "22.md" },
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
       // @ts-ignore
     ].sort(readmeSorter)
   ).toEqual([
@@ -58,7 +58,7 @@ it("should handle readme", () => {
       { type: "file", filename: "3.md" },
       { type: "file", filename: "22.md" },
       { type: "file", filename: "readme.md" },
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
       // @ts-ignore
     ].sort(readmeSorter)
   ).toEqual([
@@ -78,7 +78,7 @@ it("should handle readme", () => {
       { type: "file", filename: "4.md" },
       { type: "file", filename: "3.md" },
       { type: "file", filename: "22.md" },
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
       // @ts-ignore
     ].sort(readmeSorter)
   ).toEqual([
@@ -99,7 +99,7 @@ describe("should handle order", () => {
         { label: "2", order: null },
         { label: "3", order: null },
         { label: "4", order: null },
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
         // @ts-ignore
       ].sort(orderSorter)
     ).toEqual([
@@ -117,7 +117,7 @@ describe("should handle order", () => {
         { label: "2", order: null },
         { label: "3", order: 1 },
         { label: "4", order: null },
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
         // @ts-ignore
       ].sort(orderSorter)
     ).toEqual([
@@ -133,7 +133,7 @@ describe("should handle order", () => {
         { label: "2", order: 1 },
         { label: "3", order: 1 },
         { label: "4", order: null },
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
         // @ts-ignore
       ].sort(orderSorter)
     ).toEqual([
@@ -149,7 +149,7 @@ describe("should handle order", () => {
         { label: "2", order: 2 },
         { label: "3", order: 1 },
         { label: "4", order: null },
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
         // @ts-ignore
       ].sort(orderSorter)
     ).toEqual([
@@ -165,7 +165,7 @@ describe("should handle order", () => {
         { label: "2", order: 3 },
         { label: "3", order: 2 },
         { label: "4", order: 1 },
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
         // @ts-ignore
       ].sort(orderSorter)
     ).toEqual([
@@ -183,7 +183,7 @@ describe("should handle order", () => {
         { label: "2", order: null },
         { label: "3", order: -1 },
         { label: "4", order: null },
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
         // @ts-ignore
       ].sort(orderSorter)
     ).toEqual([
@@ -199,7 +199,7 @@ describe("should handle order", () => {
         { label: "2", order: -1 },
         { label: "3", order: -1 },
         { label: "4", order: null },
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
         // @ts-ignore
       ].sort(orderSorter)
     ).toEqual([
@@ -215,7 +215,7 @@ describe("should handle order", () => {
         { label: "2", order: -1 },
         { label: "3", order: -2 },
         { label: "4", order: null },
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
         // @ts-ignore
       ].sort(orderSorter)
     ).toEqual([
@@ -231,7 +231,7 @@ describe("should handle order", () => {
         { label: "2", order: -2 },
         { label: "3", order: -3 },
         { label: "4", order: -4 },
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
         // @ts-ignore
       ].sort(orderSorter)
     ).toEqual([
@@ -250,7 +250,7 @@ describe("should handle order", () => {
         { label: "3", order: -1 },
         { label: "4", order: 1 },
         { label: "5", order: null },
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
         // @ts-ignore
       ].sort(orderSorter)
     ).toEqual([
@@ -272,7 +272,7 @@ describe("should handle time", () => {
         { label: "3", frontmatter: { date: new Date("2022-01-01") } },
         { label: "4", frontmatter: { date: new Date("1970-01-01") } },
         { label: "5", frontmatter: {} },
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
         // @ts-ignore
       ].sort(dateSorter)
     ).toEqual([
@@ -292,7 +292,7 @@ describe("should handle time", () => {
         { label: "3", frontmatter: { date: new Date("2022-01-01") } },
         { label: "4", frontmatter: { date: new Date("1970-01-01") } },
         { label: "5", frontmatter: {} },
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
         // @ts-ignore
       ].sort(dateDescSorter)
     ).toEqual([
@@ -315,7 +315,7 @@ describe("should handle title", () => {
         { title: "a" },
         { title: "A" },
         { title: "a b c" },
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
         // @ts-ignore
       ].sort(titleSorter)
     ).toEqual([
@@ -337,7 +337,7 @@ describe("should handle title", () => {
         { title: "4" },
         { title: "3" },
         { title: "22" },
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
         // @ts-ignore
       ].sort(titleSorter)
     ).toEqual([
@@ -357,7 +357,7 @@ describe("should handle title", () => {
         { title: "4" },
         { title: "3" },
         { title: "22" },
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
         // @ts-ignore
       ].sort(titleSorter)
     ).toEqual([
@@ -377,7 +377,7 @@ describe("should handle title", () => {
         { title: "apple4" },
         { title: "apple3" },
         { title: "apple22" },
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
         // @ts-ignore
       ].sort(titleSorter)
     ).toEqual([
@@ -397,7 +397,7 @@ describe("should handle title", () => {
         { title: "4apple" },
         { title: "3apple" },
         { title: "22apple" },
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
         // @ts-ignore
       ].sort(titleSorter)
     ).toEqual([
@@ -417,7 +417,7 @@ describe("should handle title", () => {
         { title: "apple-4" },
         { title: "apple-3" },
         { title: "apple-22" },
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
         // @ts-ignore
       ].sort(titleSorter)
     ).toEqual([
@@ -437,7 +437,7 @@ describe("should handle title", () => {
         { title: "4-apple" },
         { title: "3-apple" },
         { title: "22-apple" },
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
         // @ts-ignore
       ].sort(titleSorter)
     ).toEqual([
@@ -457,7 +457,7 @@ describe("should handle title", () => {
         { title: "Apple 2" },
         { title: "Banana 4" },
         { title: "Banana 3" },
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
         // @ts-ignore
       ].sort(titleSorter)
     ).toEqual([
@@ -480,7 +480,7 @@ it("should handle filename", () => {
       { type: "file", filename: "4.md" },
       { type: "file", filename: "3.md" },
       { type: "file", filename: "22.md" },
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
       // @ts-ignore
     ].sort(filenameSorter)
   ).toEqual([
@@ -500,7 +500,7 @@ it("should handle filename", () => {
       { type: "file", filename: "4.md" },
       { type: "file", filename: "3.md" },
       { type: "file", filename: "22.md" },
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
       // @ts-ignore
     ].sort(filenameSorter)
   ).toEqual([
@@ -520,7 +520,7 @@ it("should handle filename", () => {
       { type: "file", filename: "4.md" },
       { type: "file", filename: "3.md" },
       { type: "file", filename: "22.md" },
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
       // @ts-ignore
     ].sort(filenameSorter)
   ).toEqual([
@@ -540,7 +540,7 @@ it("should handle filename", () => {
       { type: "file", filename: "4.md" },
       { type: "file", filename: "3.md" },
       { type: "file", filename: "22.md" },
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
       // @ts-ignore
     ].sort(filenameSorter)
   ).toEqual([
@@ -564,7 +564,7 @@ it("should handle filename", () => {
       { type: "dir", dirname: "c" },
       { type: "dir", dirname: "b" },
       { type: "dir", dirname: "a" },
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
       // @ts-ignore
     ].sort(filenameSorter)
   ).toEqual([

@@ -126,7 +126,6 @@ export default defineComponent({
           };
 
           mermaid.initialize({
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
             theme: "base",
             themeVariables: getThemeVariables(isDarkmode.value),

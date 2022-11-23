@@ -1,6 +1,6 @@
 import type { BlogOptions } from "vuepress-plugin-blog2";
 
-export interface HopeThemeBlogPluginOptions
+export interface BlogPluginOptions
   extends Partial<Pick<BlogOptions, "filter">> {
   /**
    * Path of article list

@@ -16,8 +16,8 @@ import RepoLink from "@theme-hope/modules/navbar/components/RepoLink.js";
 
 import type { VNode } from "vue";
 import type {
-  HopeThemeNavbarComponent,
-  HopeThemeNavbarLocaleOptions,
+  NavbarComponent,
+  NavbarLocaleOptions,
 } from "../../../../shared/index.js";
 
 import "../styles/navbar.scss";
@@ -43,7 +43,7 @@ export default defineComponent({
     });
 
     const navbarLayout = computed<
-      Exclude<HopeThemeNavbarLocaleOptions["navbarLayout"], undefined>
+      Exclude<NavbarLocaleOptions["navbarLayout"], undefined>
     >(
       () =>
         themeLocale.value.navbarLayout || {
@@ -54,7 +54,7 @@ export default defineComponent({
     );
 
     return (): VNode[] => {
-      const map: Record<HopeThemeNavbarComponent, VNode | null> = {
+      const map: Record<NavbarComponent, VNode | null> = {
         Brand: h(NavbarBrand),
         Language: h(LanguageDropdown),
         Links: h(NavbarLinks),
@@ -83,7 +83,6 @@ export default defineComponent({
           },
           [
             h("div", { class: "navbar-left" }, [
-              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
               // @ts-ignore
               h(ToggleSidebarButton, {
                 onToggle: () => {

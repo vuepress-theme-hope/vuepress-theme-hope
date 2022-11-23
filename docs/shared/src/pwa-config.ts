@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import type { HopeThemePluginsOptions } from "vuepress-theme-hope";
+import type { PluginsOptions } from "vuepress-theme-hope";
 
 export interface GeneratePwaOptions {
   name: string;
@@ -13,9 +13,9 @@ export const pwa = ({
   shortName,
   guide = "/guide.html",
   config = "/config.html",
-}: GeneratePwaOptions): HopeThemePluginsOptions["pwa"] => {
+}: GeneratePwaOptions): PluginsOptions["pwa"] => {
   const shortcuts: Exclude<
-    Exclude<HopeThemePluginsOptions["pwa"], boolean | undefined>["manifest"],
+    Exclude<PluginsOptions["pwa"], boolean | undefined>["manifest"],
     undefined
   >["shortcuts"] = [];
 

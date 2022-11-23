@@ -1,8 +1,35 @@
 import type { AutoLink, TextItem } from "./utils.js";
 
-export type HopeThemeSidebarPageItem = AutoLink;
+export type SidebarPageItem = AutoLink;
 
-export interface HopeThemeSidebarGroupItem extends TextItem {
+export interface SidebarStructureItem extends TextItem {
+  /**
+   * Link prefix of current group
+   *
+   * 当前分组的页面前缀
+   */
+  prefix?: string;
+
+  /**
+   * Link of current group
+   *
+   * 当前分组的链接
+   */
+  link?: string;
+
+  /**
+   * Whether current group is collapsible
+   *
+   * 当前分组的链接是否可折叠
+   *
+   * @default false
+   */
+  collapsible?: boolean;
+
+  children: "structure";
+}
+
+export interface SidebarGroupItem extends TextItem {
   /**
    * Link prefix of current group
    *
@@ -32,78 +59,24 @@ export interface HopeThemeSidebarGroupItem extends TextItem {
    * 当前分组的子项
    */
   children: (
-    | HopeThemeSidebarPageItem
-    | HopeThemeSidebarGroupItem
-    | HopeThemeSidebarStructureItem
+    | SidebarPageItem
+    | SidebarGroupItem
+    | SidebarStructureItem
     | string
   )[];
 }
 
-export interface HopeThemeSidebarStructureItem extends TextItem {
-  /**
-   * Link prefix of current group
-   *
-   * 当前分组的页面前缀
-   */
-  prefix?: string;
-
-  /**
-   * Link of current group
-   *
-   * 当前分组的链接
-   */
-  link?: string;
-
-  /**
-   * Whether current group is collapsible
-   *
-   * 当前分组的链接是否可折叠
-   *
-   * @default false
-   */
-  collapsible?: boolean;
-
-  children: "structure";
-}
-
-export type HopeThemeSidebarItem =
-  | HopeThemeSidebarPageItem
-  | HopeThemeSidebarGroupItem
-  | HopeThemeSidebarStructureItem
+export type SidebarItem =
+  | SidebarPageItem
+  | SidebarGroupItem
+  | SidebarStructureItem
   | string;
 
-export type HopeThemeSidebarArrayConfig = HopeThemeSidebarItem[];
+export type SidebarArrayOptions = SidebarItem[];
 
-export type HopeThemeSidebarObjectConfig = Record<
+export type SidebarObjectOptions = Record<
   string,
-  HopeThemeSidebarArrayConfig | "structure" | false
+  SidebarArrayOptions | "structure" | false
 >;
 
-export type HopeThemeSidebarConfig =
-  | HopeThemeSidebarArrayConfig
-  | HopeThemeSidebarObjectConfig;
-
-// resolved
-export interface ResolvedHopeThemeSidebarHeaderItem
-  extends HopeThemeSidebarPageItem {
-  type: "heading";
-  children: ResolvedHopeThemeSidebarHeaderItem[];
-}
-
-export interface ResolvedHopeThemeSidebarPageItem
-  extends HopeThemeSidebarPageItem {
-  type: "page";
-  children: ResolvedHopeThemeSidebarHeaderItem[];
-}
-
-export interface ResolvedHopeThemeSidebarGroupItem
-  extends HopeThemeSidebarGroupItem {
-  type: "group";
-  prefix: string;
-  children: ResolvedSidebarItem[];
-}
-
-export type ResolvedSidebarItem =
-  | ResolvedHopeThemeSidebarHeaderItem
-  | ResolvedHopeThemeSidebarPageItem
-  | ResolvedHopeThemeSidebarGroupItem;
+export type SidebarOptions = SidebarArrayOptions | SidebarObjectOptions;

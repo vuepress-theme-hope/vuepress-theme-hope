@@ -1,4 +1,4 @@
-export interface HopeThemeEncryptLocaleData {
+export interface EncryptLocaleData {
   /**
    * Aria label for encrypt icon
    *
@@ -32,8 +32,10 @@ export interface HopeThemeEncryptLocaleData {
  * Encrypt Options
  *
  * 加密选项
+ *
+ * @kind root
  */
-export interface HopeThemeEncryptOptions {
+export interface EncryptOptions {
   /**
    * Whether encrypt globally
    *
@@ -52,7 +54,7 @@ export interface HopeThemeEncryptOptions {
   /**
    * Encrypt Configuration
    *
-   * E.g.:
+   * @example
    *
    * ```json
    * {
@@ -64,6 +66,8 @@ export interface HopeThemeEncryptOptions {
    * ```
    *
    * 加密配置
+   *
+   * @example
    *
    * ```json
    * {
@@ -78,11 +82,13 @@ export interface HopeThemeEncryptOptions {
 }
 
 /**
- * Encrypt Options
+ * Encrypt Config
  *
- * 加密选项
+ * 加密配置
+ *
+ * @kind root
  */
-export interface HopeThemeEncryptConfig {
+export interface EncryptConfig {
   /**
    * Whether encrypt globally
    *
@@ -98,6 +104,7 @@ export interface HopeThemeEncryptConfig {
    * 最高权限密码
    */
   admin?: string[];
+
   /**
    * Encrypt Configuration
    *

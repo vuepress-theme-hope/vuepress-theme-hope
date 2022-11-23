@@ -5,10 +5,10 @@ import type { Page } from "@vuepress/core";
 import type {
   HopeThemeNormalPageFrontmatter,
   HopeThemePageData,
-  HopeThemeSidebarDirInfo,
-  HopeThemeSidebarFileInfo,
-  HopeThemeSidebarInfo,
-  HopeThemeSidebarSorterFunction,
+  SidebarDirInfo,
+  SidebarFileInfo,
+  SidebarInfo,
+  SidebarSorterFunction,
 } from "../../../shared/index.js";
 import type { StructureInfo } from "./structure.js";
 
@@ -27,17 +27,17 @@ export interface DirInfo {
 
 export interface HopeThemeSidebarInfoOptions {
   pages: Page[];
-  sorters: HopeThemeSidebarSorterFunction[];
+  sorters: SidebarSorterFunction[];
   scope: string;
 }
 
 const getChildrenInfo = (
   { scope, pages, sorters }: HopeThemeSidebarInfoOptions,
   children: StructureInfo[]
-): HopeThemeSidebarInfo[] =>
+): SidebarInfo[] =>
   children
     .map((item) => getInfoFromStructure({ pages, scope, sorters }, item))
-    .filter((item): item is HopeThemeSidebarInfo => item !== null)
+    .filter((item): item is SidebarInfo => item !== null)
     // sort items
     .sort((infoA, infoB) => {
       for (let i = 0; i < sorters.length; i++) {
@@ -52,7 +52,7 @@ const getChildrenInfo = (
 const getInfoFromStructure = (
   { scope, pages, sorters }: HopeThemeSidebarInfoOptions,
   info: StructureInfo
-): HopeThemeSidebarInfo | null => {
+): SidebarInfo | null => {
   // handle file
   if (info.type === "file") {
     const page = <Page<HopeThemePageData, HopeThemeNormalPageFrontmatter>>(
@@ -63,7 +63,7 @@ const getInfoFromStructure = (
 
     if (page.frontmatter.index === false) return null;
 
-    const fileInfo: HopeThemeSidebarFileInfo = {
+    const fileInfo: SidebarFileInfo = {
       type: "file",
       filename: info.filename,
 
@@ -107,7 +107,7 @@ const getInfoFromStructure = (
 
     if (dirOptions?.index === false) return null;
 
-    const dirInfo: HopeThemeSidebarDirInfo = {
+    const dirInfo: SidebarDirInfo = {
       type: "dir",
       dirname: info.dirname,
       children: getChildrenInfo(
@@ -138,7 +138,7 @@ const getInfoFromStructure = (
     return dirInfo;
   }
 
-  const dirInfo: HopeThemeSidebarDirInfo = {
+  const dirInfo: SidebarDirInfo = {
     type: "dir",
     dirname: info.dirname,
     children: getChildrenInfo(
@@ -167,10 +167,10 @@ export const getSidebarInfo = ({
   sorters,
   scope,
 }: HopeThemeSidebarInfoOptions): // base = ""
-HopeThemeSidebarInfo[] =>
+SidebarInfo[] =>
   getStructure(pages, scope)
     .map((info) => getInfoFromStructure({ scope, pages, sorters }, info))
-    .filter((item): item is HopeThemeSidebarInfo => item !== null)
+    .filter((item): item is SidebarInfo => item !== null)
     // sort items
     .sort((infoA, infoB) => {
       for (let i = 0; i < sorters.length; i++) {

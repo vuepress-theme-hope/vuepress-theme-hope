@@ -80,7 +80,6 @@ export const useBlogCategory = <
   });
 };
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 if (__VUEPRESS_DEV__ && (import.meta.webpackHot || import.meta.hot)) {
   __VUE_HMR_RUNTIME__["updateBlogCategory"] = (

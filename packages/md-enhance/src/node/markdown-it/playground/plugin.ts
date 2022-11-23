@@ -90,7 +90,6 @@ const getPlaygroundRule =
     const oldParent = state.parentType;
     const oldLineMax = state.lineMax;
 
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-expect-error
     state.parentType = `${name}`;
 
@@ -193,7 +192,6 @@ const atMarkerRule =
     const oldParent = state.parentType;
     const oldLineMax = state.lineMax;
 
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-expect-error
     state.parentType = `${markerName}`;
 
@@ -243,7 +241,7 @@ export const playground: PluginWithOptions<PlaygroundOptions> = (
 
   VALID_MARKERS.forEach((marker) => {
     // WARNING:  Here we use an internal variable to make sure tab rule is not registered
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
     // @ts-ignore
     // eslint-disable-next-line
     if (!md.block.ruler.__rules__.find(({ name }) => name === "marker"))

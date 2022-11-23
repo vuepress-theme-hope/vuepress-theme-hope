@@ -1,15 +1,10 @@
 import { hashSync } from "bcrypt-ts/node";
 import { logger } from "./utils.js";
 
-import type {
-  HopeThemeEncryptConfig,
-  HopeThemeEncryptOptions,
-} from "../shared/index.js";
+import type { EncryptConfig, EncryptOptions } from "../shared/index.js";
 
-export const resolveEncrypt = (
-  encrypt: HopeThemeEncryptOptions
-): HopeThemeEncryptConfig => {
-  const result: HopeThemeEncryptConfig = {};
+export const resolveEncrypt = (encrypt: EncryptOptions): EncryptConfig => {
+  const result: EncryptConfig = {};
 
   if (encrypt.global) result.global = true;
 

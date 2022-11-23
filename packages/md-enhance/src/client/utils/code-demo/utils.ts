@@ -63,7 +63,7 @@ export const h = (
         const k = key.replace("data", "");
 
         node.dataset[k] = attrs[key];
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
         // @ts-ignore
       } else node[key] = attrs[key];
     });

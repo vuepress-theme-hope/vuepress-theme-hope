@@ -7,12 +7,12 @@ import type { BlogOptions } from "vuepress-plugin-blog2";
 import type {
   ArticleInfo,
   HopeThemeNormalPageFrontmatter,
-  HopeThemeBlogLocaleData,
-  HopeThemeBlogPluginOptions,
+  BlogLocaleData,
+  BlogPluginOptions,
   HopeThemeConfig,
 } from "../../shared/index.js";
 
-const defaultOptions: HopeThemeBlogPluginOptions = {
+const defaultOptions: BlogPluginOptions = {
   article: "/article/",
   category: "/category/",
   categoryItem: "/category/:name/",
@@ -61,15 +61,15 @@ const sorter = (
 };
 
 export const getBlogOptions = (
-  options?: HopeThemeBlogPluginOptions | boolean
-): HopeThemeBlogPluginOptions => ({
+  options?: BlogPluginOptions | boolean
+): BlogPluginOptions => ({
   ...defaultOptions,
   ...(typeof options === "object" ? options : {}),
 });
 
 export const getTitleLocales = (
   themeData: HopeThemeConfig,
-  key: keyof HopeThemeBlogLocaleData
+  key: keyof BlogLocaleData
 ): Record<string, string> =>
   Object.fromEntries(
     Object.entries(themeData.locales).map(([localePath, value]) => [
@@ -80,7 +80,7 @@ export const getTitleLocales = (
 
 export const getBlogPlugin = (
   themeData: HopeThemeConfig,
-  options?: HopeThemeBlogPluginOptions | boolean
+  options?: BlogPluginOptions | boolean
 ): Plugin | null => {
   if (!options) return null;
 

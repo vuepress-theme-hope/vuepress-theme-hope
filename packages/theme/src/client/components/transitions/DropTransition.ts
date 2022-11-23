@@ -35,7 +35,6 @@ export default defineComponent({
 
     return (): VNode =>
       h(
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         props.type === "single" ? Transition : TransitionGroup,
         {

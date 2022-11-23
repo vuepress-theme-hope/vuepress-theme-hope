@@ -5,9 +5,9 @@ import {
 } from "@theme-hope/composables/index.js";
 
 import type { ComputedRef } from "vue";
-import type { HopeThemeBlogConfig } from "../../../../shared/index.js";
+import type { BlogLocaleConfig } from "../../../../shared/index.js";
 
-export const useBlogOptions = (): ComputedRef<HopeThemeBlogConfig> => {
+export const useBlogOptions = (): ComputedRef<BlogLocaleConfig> => {
   const themeData = useThemeData();
   const themeLocale = useThemeLocaleData();
 

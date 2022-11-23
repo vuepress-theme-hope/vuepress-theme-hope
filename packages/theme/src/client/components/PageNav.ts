@@ -14,10 +14,10 @@ import {
 import { useSidebarItems } from "@theme-hope/modules/sidebar/composables/index.js";
 
 import type { VNode } from "vue";
+import type { ResolvedSidebarItem } from "../modules/sidebar/utils/index.js";
 import type {
   HopeThemeNormalPageFrontmatter,
   AutoLink as AutoLinkType,
-  ResolvedSidebarItem,
 } from "../../shared/index.js";
 
 import "../styles/page-nav.scss";

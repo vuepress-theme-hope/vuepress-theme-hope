@@ -1,44 +1,55 @@
 import type {
-  HopeThemeBlogConfig,
-  HopeThemeBlogLocaleData,
-  HopeThemeBlogOptions,
-  HopeThemePaginationLocaleData,
+  BlogLocaleConfig,
+  BlogLocaleData,
+  BlogLocaleOptions,
+  PaginationLocaleData,
 } from "./blog.js";
 import type {
-  HopeThemeEncryptConfig,
-  HopeThemeEncryptLocaleData,
-  HopeThemeEncryptOptions,
+  EncryptConfig,
+  EncryptLocaleData,
+  EncryptOptions,
 } from "./encrypt.js";
 
-export interface HopeThemeFeatureLocaleData {
+export interface FeatureLocaleData {
   /**
    * Blog related i18n config
+   *
+   * 博客相关多语言配置
    */
-  blogLocales: HopeThemeBlogLocaleData;
+  blogLocales: BlogLocaleData;
 
   /**
    * Pagination related i18n config
+   *
+   * 分页相关多语言配置
    */
-  paginationLocales: HopeThemePaginationLocaleData;
+  paginationLocales: PaginationLocaleData;
 
   /**
    * Encrypt related i18n config
+   *
+   * 加密相关多语言配置
    */
-  encryptLocales: HopeThemeEncryptLocaleData;
+  encryptLocales: EncryptLocaleData;
 }
 
-export interface HopeThemeFeatureLocaleOptions {
+export interface FeatureLocaleOptions {
   /**
-   * Blog feature
+   * Blog feature options
+   *
+   * 博客功能配置
    */
-  blog?: HopeThemeBlogOptions;
+  blog?: BlogLocaleOptions;
 }
 
-export interface HopeThemeFeatureLocaleConfig {
-  blog: HopeThemeBlogConfig;
+export interface FeatureLocaleConfig {
+  blog: BlogLocaleConfig;
 }
 
-export interface HopeThemeFeatureRootOptions {
+/**
+ * @kind root
+ */
+export interface FeatureOptions {
   /**
    * Add This 的公开 ID
    *
@@ -51,15 +62,22 @@ export interface HopeThemeFeatureRootOptions {
    *
    * 加密配置
    */
-  encrypt?: HopeThemeEncryptOptions;
+  encrypt?: EncryptOptions;
 }
 
-export interface HopeThemeFeatureRootConfig
-  extends HopeThemeFeatureLocaleConfig {
+export interface FeatureConfig {
+  /**
+   * Blog feature options
+   *
+   * 博客功能配置
+   */
+  // for config size consideration, blog options can be held in root and merged in client side
+  blog: BlogLocaleConfig;
+
   /**
    * Encrypt config
    *
    * 加密配置
    */
-  encrypt: HopeThemeEncryptConfig;
+  encrypt: EncryptConfig;
 }
