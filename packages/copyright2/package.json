@@ -57,6 +57,9 @@
     "vuepress-webpack": "2.0.0-beta.53"
   },
   "peerDependenciesMeta": {
+    "sass-loader": {
+      "optional": true
+    },
     "vuepress": {
       "optional": true
     },
