@@ -29,7 +29,7 @@ You can set the background image through `bgImage`, but you need to pay attentio
 
 If you need to customize some styles, you can set the style of the logo and background image through `heroImageStyle` and `bgImageStyle`.
 
-### Project Display
+## Project Display
 
 Typically, you might want to display some projects, books, articles, links, friend links, etc. on your homepage.
 
