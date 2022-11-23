@@ -589,7 +589,7 @@ export default {
 
 ## Типы и Помощники
 
-`vuepress-theme-hope` экспортирует тип навигационной панели как `HopeThemeNavbarConfig` и предоставляет вспомогательную функцию `navbar`. Они могут обеспечивать проверку и автозаполнение конфигурации панели навигации в TS и JS.
+`vuepress-theme-hope` экспортирует тип навигационной панели как `NavbarConfig` и предоставляет вспомогательную функцию `navbar`. Они могут обеспечивать проверку и автозаполнение конфигурации панели навигации в TS и JS.
 
 ::: tip
 
@@ -614,9 +614,9 @@ export default navbar([
 
 ```ts
 // .vuepress/navbar.ts
-import type { HopeThemeNavbarConfig } from "vuepress-theme-hope";
+import type { NavbarConfig } from "vuepress-theme-hope";
 
-const navbarConfig: HopeThemeNavbarConfig = [
+const navbarConfig: NavbarConfig = [
   /* Your navbar configuration */
 ];
 

@@ -19,7 +19,7 @@ tag:
 
 ### navbar <Badge text="Рекомендуется" type="tip" />
 
-- Тип: `HopeThemeNavbarConfig | false`
+- Тип: `NavbarConfig | false`
 - По умолчанию: `false`
 
 Конфигурация панели навигации
@@ -36,7 +36,7 @@ tag:
 - Тип: `HopeNavbarLayoutOptions`
 
   ```ts
-  type HopeThemeNavbarComponent =
+  type NavbarComponent =
     | "Brand"
     | "Links"
     | "Language"
@@ -45,9 +45,9 @@ tag:
     | "Repo";
 
   interface HopeNavbarLayoutOptions {
-    left: HopeThemeNavbarComponent[];
-    center: HopeThemeNavbarComponent[];
-    right: HopeThemeNavbarComponent[];
+    left: NavbarComponent[];
+    center: NavbarComponent[];
+    right: NavbarComponent[];
   }
   ```
 
@@ -103,7 +103,7 @@ tag:
 
 Скрывать ли панель навигации при прокрутке вниз.
 
-### hideSiteNameonMobile
+### hideSiteNameOnMobile
 
 - Тип: `boolean`
 - По умолчанию: `true`
@@ -116,7 +116,7 @@ tag:
 
 ### sidebar <Badge text="Рекомендуется" type="tip" />
 
-- Тип: `HopeThemeSidebarConfig | "structure" | "heading" | false`
+- Тип: `SidebarConfig | "structure" | "heading" | false`
 - По умолчанию: `"structure"`
 
 Конфигурация боковой панели.
@@ -130,10 +130,10 @@ tag:
 
 ### sidebarSorter <Badge text="Только root" />
 
-- Тип: `HopeThemeSidebarSorter`
+- Тип: `SidebarSorter`
 
   ```ts
-  interface HopeThemeSidebarFileInfo {
+  interface SidebarFileInfo {
     type: "file";
     filename: string;
 
@@ -144,10 +144,10 @@ tag:
     pageData: HopeThemePageData;
   }
 
-  interface HopeThemeSidebarDirInfo {
+  interface SidebarDirInfo {
     type: "dir";
     dirname: string;
-    children: HopeThemeSidebarInfo[];
+    children: SidebarInfo[];
 
     title: string;
     order: number | null;
@@ -162,11 +162,9 @@ tag:
     pageData: HopeThemePageData | null;
   }
 
-  type HopeThemeSidebarInfo =
-    | HopeThemeSidebarFileInfo
-    | HopeThemeSidebarDirInfo;
+  type SidebarInfo = SidebarFileInfo | SidebarDirInfo;
 
-  type HopeThemeSidebarSorterKeyWord =
+  type SidebarSorterKeyword =
     | "readme"
     | "order"
     | "date"
@@ -174,15 +172,15 @@ tag:
     | "filename"
     | "title";
 
-  type HopeThemeSidebarSorterFunction = (
-    infoA: HopeThemeSidebarInfo,
-    infoB: HopeThemeSidebarInfo
+  type SidebarSorterFunction = (
+    infoA: SidebarInfo,
+    infoB: SidebarInfo
   ) => number;
 
-  type HopeThemeSidebarSorter =
-    | HopeThemeSidebarSorterFunction
-    | HopeThemeSidebarSorterKeyWord
-    | HopeThemeSidebarSorterKeyWord[];
+  type SidebarSorter =
+    | SidebarSorterFunction
+    | SidebarSorterKeyword
+    | SidebarSorterKeyword[];
   ```
 
 - По умолчанию: `["readme", "order", "title", "filename"]`

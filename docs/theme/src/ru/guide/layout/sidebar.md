@@ -873,11 +873,11 @@ export default {
 
 ## Типы и Помощники
 
-`vuepress-theme-hope` экспортирует тип боковой панели как `HopeThemeSideConfig` и предоставляет вспомогательную функцию `sidebar`. Они могут обеспечить проверку и автозаполнение конфигурации боковой панели в TS и JS.
+`vuepress-theme-hope` экспортирует тип боковой панели как `SideConfig` и предоставляет вспомогательную функцию `sidebar`. Они могут обеспечить проверку и автозаполнение конфигурации боковой панели в TS и JS.
 
 ::: tip
 
-Чтобы справиться с ситуацией, когда вы разделяете [конфигурацию с несколькими боковыми панелями](#несколько-боковых-панелей) на несколько частей, мы также предоставляем тип `HopeThemeSidebarArrayConfig` и `HopeThemeSidebarObjectConfig` и вспомогательную функцию `arraySidebar` и `objectSidebar`.
+Чтобы справиться с ситуацией, когда вы разделяете [конфигурацию с несколькими боковыми панелями](#несколько-боковых-панелей) на несколько частей, мы также предоставляем тип `SidebarArrayConfig` и `SidebarObjectConfig` и вспомогательную функцию `arraySidebar` и `objectSidebar`.
 
 :::
 
@@ -896,9 +896,9 @@ export default sidebar(/* Your sidebar configuration */);
 
 ```ts {4}
 // .vuepress/navbar.ts
-import type { HopeThemeSidebarConfig } from "vuepress-theme-hope";
+import type { SidebarConfig } from "vuepress-theme-hope";
 
-const sidebarConfig: HopeThemeSidebarConfig = [
+const sidebarConfig: SidebarConfig = [
   /* Your sidebar configuration */
 ];
 

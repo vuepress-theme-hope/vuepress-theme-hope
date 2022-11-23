@@ -873,11 +873,11 @@ export default {
 
 ## Types and Helpers
 
-`vuepress-theme-hope` exports the type of sidebar as `HopeThemeSideConfig`, and provides a `sidebar` helper function. They can provide validation and autocompletion of sidebar configuration in TS and JS.
+`vuepress-theme-hope` exports the type of sidebar as `SideConfig`, and provides a `sidebar` helper function. They can provide validation and autocompletion of sidebar configuration in TS and JS.
 
 ::: tip
 
-To deal with the situation when you split [multi-sidebar configuration](#multiple-sidebars) into multiple parts, we also provide `HopeThemeSidebarArrayConfig` `HopeThemeSidebarObjectConfig` type and `arraySidebar` and `objectSidebar` Helper function.
+To deal with the situation when you split [multi-sidebar configuration](#multiple-sidebars) into multiple parts, we also provide `SidebarArrayConfig` `SidebarObjectConfig` type and `arraySidebar` and `objectSidebar` Helper function.
 
 :::
 
@@ -896,9 +896,9 @@ export default sidebar(/* Your sidebar configuration */);
 
 ```ts {4}
 // .vuepress/navbar.ts
-import type { HopeThemeSidebarConfig } from "vuepress-theme-hope";
+import type { SidebarConfig } from "vuepress-theme-hope";
 
-const sidebarConfig: HopeThemeSidebarConfig = [
+const sidebarConfig: SidebarConfig = [
   /* Your sidebar configuration */
 ];
 

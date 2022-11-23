@@ -19,7 +19,7 @@ For related guide, please see [Layout → Navbar](../../guide/layout/navbar.md).
 
 ### navbar <Badge text="Recommended" type="tip" />
 
-- Type: `HopeThemeNavbarConfig | false`
+- Type: `NavbarConfig | false`
 - Default: `false`
 
 Navbar config
@@ -36,7 +36,7 @@ Whether display icons in navbar.
 - Type: `HopeNavbarLayoutOptions`
 
   ```ts
-  type HopeThemeNavbarComponent =
+  type NavbarComponent =
     | "Brand"
     | "Links"
     | "Language"
@@ -45,9 +45,9 @@ Whether display icons in navbar.
     | "Repo";
 
   interface HopeNavbarLayoutOptions {
-    left: HopeThemeNavbarComponent[];
-    center: HopeThemeNavbarComponent[];
-    right: HopeThemeNavbarComponent[];
+    left: NavbarComponent[];
+    center: NavbarComponent[];
+    right: NavbarComponent[];
   }
   ```
 
@@ -103,7 +103,7 @@ The theme can recognize links of GitHub, Gitlab, Gitee and Bitbucket.
 
 Whether to hide navbar when scrolling down.
 
-### hideSiteNameonMobile
+### hideSiteNameOnMobile
 
 - Type: `boolean`
 - Default: `true`
@@ -116,7 +116,7 @@ For guide, see [Layout → Sidebar](../../guide/layout/sidebar.md).
 
 ### sidebar <Badge text="Recommended" type="tip" />
 
-- Type: `HopeThemeSidebarConfig | "structure" | "heading" | false`
+- Type: `SidebarConfig | "structure" | "heading" | false`
 - Default: `"structure"`
 
 Sidebar Config.
@@ -130,10 +130,10 @@ Whether show icons in the sidebar
 
 ### sidebarSorter <Badge text="Root Only" />
 
-- Type: `HopeThemeSidebarSorter`
+- Type: `SidebarSorter`
 
   ```ts
-  interface HopeThemeSidebarFileInfo {
+  interface SidebarFileInfo {
     type: "file";
     filename: string;
 
@@ -144,10 +144,10 @@ Whether show icons in the sidebar
     pageData: HopeThemePageData;
   }
 
-  interface HopeThemeSidebarDirInfo {
+  interface SidebarDirInfo {
     type: "dir";
     dirname: string;
-    children: HopeThemeSidebarInfo[];
+    children: SidebarInfo[];
 
     title: string;
     order: number | null;
@@ -162,11 +162,9 @@ Whether show icons in the sidebar
     pageData: HopeThemePageData | null;
   }
 
-  type HopeThemeSidebarInfo =
-    | HopeThemeSidebarFileInfo
-    | HopeThemeSidebarDirInfo;
+  type SidebarInfo = SidebarFileInfo | SidebarDirInfo;
 
-  type HopeThemeSidebarSorterKeyWord =
+  type SidebarSorterKeyword =
     | "readme"
     | "order"
     | "date"
@@ -174,15 +172,15 @@ Whether show icons in the sidebar
     | "filename"
     | "title";
 
-  type HopeThemeSidebarSorterFunction = (
-    infoA: HopeThemeSidebarInfo,
-    infoB: HopeThemeSidebarInfo
+  type SidebarSorterFunction = (
+    infoA: SidebarInfo,
+    infoB: SidebarInfo
   ) => number;
 
-  type HopeThemeSidebarSorter =
-    | HopeThemeSidebarSorterFunction
-    | HopeThemeSidebarSorterKeyWord
-    | HopeThemeSidebarSorterKeyWord[];
+  type SidebarSorter =
+    | SidebarSorterFunction
+    | SidebarSorterKeyword
+    | SidebarSorterKeyword[];
   ```
 
 - Default: `["readme", "order", "title", "filename"]`

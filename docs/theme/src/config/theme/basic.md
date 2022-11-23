@@ -63,7 +63,7 @@ Global default author.
 
 ## navbar
 
-- Type: `HopeThemeNavbarConfig`
+- Type: `NavbarConfig`
 
   ```ts
   interface TextItem {
@@ -105,7 +105,7 @@ Global default author.
     activeMatch?: string;
   }
 
-  interface HopeThemeNavGroup<T> extends TextItem {
+  interface NavGroup<T> extends TextItem {
     /**
      * Link prefix of current group
      */
@@ -122,15 +122,9 @@ Global default author.
     children: T[];
   }
 
-  type HopeThemeNavbarItem = AutoLink;
-  type HopeThemeNavbarGroup = HopeThemeNavGroup<
-    HopeThemeNavbarGroup | HopeThemeNavbarItem | string
-  >;
-  type HopeThemeNavbarConfig = (
-    | HopeThemeNavbarItem
-    | HopeThemeNavbarGroup
-    | string
-  )[];
+  type NavbarItem = AutoLink;
+  type NavbarGroup = NavGroup<NavbarGroup | NavbarItem | string>;
+  type NavbarConfig = (NavbarItem | NavbarGroup | string)[];
   ```
 
 - Details: [Layout → Navbar](../../guide/layout/navbar.md)
@@ -139,7 +133,7 @@ Navbar config
 
 ## sidebar
 
-- Type: `HopeThemeSidebarConfig`
+- Type: `SidebarConfig`
 
   ```ts
   interface TextItem {
@@ -181,9 +175,9 @@ Navbar config
     activeMatch?: string;
   }
 
-  type HopeThemeSidebarPageItem = AutoLink;
+  type SidebarPageItem = AutoLink;
 
-  interface HopeThemeSidebarGroupItem extends TextItem {
+  interface SidebarGroupItem extends TextItem {
     /**
      * Link prefix of current group
      */
@@ -205,14 +199,14 @@ Navbar config
      * Children of current group
      */
     children: (
-      | HopeThemeSidebarPageItem
-      | HopeThemeSidebarGroupItem
-      | HopeThemeSidebarStructureItem
+      | SidebarPageItem
+      | SidebarGroupItem
+      | SidebarStructureItem
       | string
     )[];
   }
 
-  interface HopeThemeSidebarStructureItem extends TextItem {
+  interface SidebarStructureItem extends TextItem {
     /**
      * Link prefix of current group
      */
@@ -233,22 +227,20 @@ Navbar config
     children: "structure";
   }
 
-  type HopeThemeSidebarItem =
-    | HopeThemeSidebarPageItem
-    | HopeThemeSidebarGroupItem
-    | HopeThemeSidebarStructureItem
+  type SidebarItem =
+    | SidebarPageItem
+    | SidebarGroupItem
+    | SidebarStructureItem
     | string;
 
-  type HopeThemeSidebarArrayConfig = HopeThemeSidebarItem[];
+  type SidebarArrayConfig = SidebarItem[];
 
-  type HopeThemeSidebarObjectConfig = Record<
+  type SidebarObjectConfig = Record<
     string,
-    HopeThemeSidebarArrayConfig | "structure" | false
+    SidebarArrayConfig | "structure" | false
   >;
 
-  type HopeThemeSidebarConfig =
-    | HopeThemeSidebarArrayConfig
-    | HopeThemeSidebarObjectConfig;
+  type SidebarConfig = SidebarArrayConfig | SidebarObjectConfig;
   ```
 
 - Details: [Layout → Sidebar](../../guide/layout/sidebar.md)

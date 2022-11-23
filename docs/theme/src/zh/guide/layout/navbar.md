@@ -585,7 +585,7 @@ export default {
 
 ## 相关助手与类型
 
-`vuepress-theme-hope` 将导航栏的类型导出为 `HopeThemeNavbarConfig`，同时，提供了一个 `navbar` Helper 函数。它们可以在 TS 和 JS 中提供导航栏配置的校验与自动补全。
+`vuepress-theme-hope` 将导航栏的类型导出为 `NavbarConfig`，同时，提供了一个 `navbar` Helper 函数。它们可以在 TS 和 JS 中提供导航栏配置的校验与自动补全。
 
 ::: tip
 
@@ -610,9 +610,9 @@ export default navbar([
 
 ```ts
 // .vuepress/navbar.ts
-import type { HopeThemeNavbarConfig } from "vuepress-theme-hope";
+import type { NavbarConfig } from "vuepress-theme-hope";
 
-const navbarConfig: HopeThemeNavbarConfig = [
+const navbarConfig: NavbarConfig = [
   /* 你的导航栏配置 */
 ];
 

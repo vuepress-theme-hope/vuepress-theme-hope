@@ -869,11 +869,11 @@ export default {
 
 ## 相关助手与类型
 
-`vuepress-theme-hope` 将侧边栏的类型导出为 `HopeThemeSideConfig`，同时，提供了一个 `sidebar` Helper 函数。它们可以在 TS 和 JS 中提供侧边栏配置的校验与自动补全。
+`vuepress-theme-hope` 将侧边栏的类型导出为 `SideConfig`，同时，提供了一个 `sidebar` Helper 函数。它们可以在 TS 和 JS 中提供侧边栏配置的校验与自动补全。
 
 ::: tip
 
-为了应对当你将 [多侧边栏配置](#多个侧边栏) 拆分成多个部分的情景，我们还针对性的提供了 `HopeThemeSidebarArrayConfig` `HopeThemeSidebarObjectConfig` 类型与 `arraySidebar` 和 `objectSidebar` Helper 函数。
+为了应对当你将 [多侧边栏配置](#多个侧边栏) 拆分成多个部分的情景，我们还针对性的提供了 `SidebarArrayConfig` `SidebarObjectConfig` 类型与 `arraySidebar` 和 `objectSidebar` Helper 函数。
 
 :::
 
@@ -892,9 +892,9 @@ export default sidebar(/* 你的侧边栏配置 */);
 
 ```ts {4}
 // .vuepress/navbar.ts
-import type { HopeThemeSidebarConfig } from "vuepress-theme-hope";
+import type { SidebarConfig } from "vuepress-theme-hope";
 
-const sidebarConfig: HopeThemeSidebarConfig = [
+const sidebarConfig: SidebarConfig = [
   /* 你的侧边栏配置 */
 ];
 

@@ -19,7 +19,7 @@ tag:
 
 ### navbar <Badge text="建议配置" type="tip" />
 
-- 类型: `HopeThemeNavbarConfig | false`
+- 类型: `NavbarConfig | false`
 - 默认值: `false`
 
 导航栏配置，具体配置方式见上方详情。
@@ -36,7 +36,7 @@ tag:
 - 类型: `HopeNavbarLayoutOptions`
 
   ```ts
-  type HopeThemeNavbarComponent =
+  type NavbarComponent =
     | "Brand"
     | "Links"
     | "Language"
@@ -45,9 +45,9 @@ tag:
     | "Repo";
 
   interface HopeNavbarLayoutOptions {
-    left: HopeThemeNavbarComponent[];
-    center: HopeThemeNavbarComponent[];
-    right: HopeThemeNavbarComponent[];
+    left: NavbarComponent[];
+    center: NavbarComponent[];
+    right: NavbarComponent[];
   }
   ```
 
@@ -103,7 +103,7 @@ tag:
 
 是否在向下滚动时自动隐藏导航栏。
 
-### hideSiteNameonMobile
+### hideSiteNameOnMobile
 
 - 类型: `boolean`
 - 默认值: `true`
@@ -116,7 +116,7 @@ tag:
 
 ### sidebar <Badge text="建议配置" type="tip" />
 
-- 类型: `HopeThemeSidebarConfig | "structure" | "heading" | false`
+- 类型: `SidebarConfig | "structure" | "heading" | false`
 - 默认值: `"structure"`
 
 侧边栏配置。
@@ -130,10 +130,10 @@ tag:
 
 ### sidebarSorter <Badge text="仅限 Root" />
 
-- 类型: `HopeThemeSidebarSorter`
+- 类型: `SidebarSorter`
 
   ```ts
-  interface HopeThemeSidebarFileInfo {
+  interface SidebarFileInfo {
     type: "file";
     filename: string;
 
@@ -144,10 +144,10 @@ tag:
     pageData: HopeThemePageData;
   }
 
-  interface HopeThemeSidebarDirInfo {
+  interface SidebarDirInfo {
     type: "dir";
     dirname: string;
-    children: HopeThemeSidebarInfo[];
+    children: SidebarInfo[];
 
     title: string;
     order: number | null;
@@ -162,11 +162,9 @@ tag:
     pageData: HopeThemePageData | null;
   }
 
-  type HopeThemeSidebarInfo =
-    | HopeThemeSidebarFileInfo
-    | HopeThemeSidebarDirInfo;
+  type SidebarInfo = SidebarFileInfo | SidebarDirInfo;
 
-  type HopeThemeSidebarSorterKeyWord =
+  type SidebarSorterKeyword =
     | "readme"
     | "order"
     | "date"
@@ -174,15 +172,15 @@ tag:
     | "filename"
     | "title";
 
-  type HopeThemeSidebarSorterFunction = (
-    infoA: HopeThemeSidebarInfo,
-    infoB: HopeThemeSidebarInfo
+  type SidebarSorterFunction = (
+    infoA: SidebarInfo,
+    infoB: SidebarInfo
   ) => number;
 
-  type HopeThemeSidebarSorter =
-    | HopeThemeSidebarSorterFunction
-    | HopeThemeSidebarSorterKeyWord
-    | HopeThemeSidebarSorterKeyWord[];
+  type SidebarSorter =
+    | SidebarSorterFunction
+    | SidebarSorterKeyword
+    | SidebarSorterKeyword[];
   ```
 
 - 默认值: `["readme", "order", "title", "filename"]`
