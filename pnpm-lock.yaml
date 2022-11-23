@@ -752,12 +752,14 @@ importers:
   docs/shared:
     specifiers:
       '@types/three': 0.146.0
+      '@vuepress/bundler-vite': 2.0.0-beta.53
       '@vuepress/cli': 2.0.0-beta.53
       '@vuepress/client': 2.0.0-beta.53
       '@vuepress/core': 2.0.0-beta.53
       '@vuepress/plugin-docsearch': 2.0.0-beta.53
       '@vuepress/utils': 2.0.0-beta.53
       rimraf: 3.0.2
+      rollup: ^3.4.0
       three: 0.146.0
       vue: 3.2.45
       vuepress-shared: workspace:*
@@ -774,6 +776,9 @@ importers:
       vue: 3.2.45
       vuepress-shared: link:../../packages/shared
       vuepress-theme-hope: link:../../packages/theme
+    devDependencies:
+      '@vuepress/bundler-vite': 2.0.0-beta.53
+      rollup: 3.4.0
 
   docs/sitemap2:
     specifiers:
