@@ -43,11 +43,11 @@ pnpm create vuepress-theme-hope@next my-docs
 npm create vuepress-theme-hope@next my-docs
 ```
 
-::: tip Folder Argument
+::: tip Аргумент папки
 
-Here `my-docs` is a argument representing the folder name of the VuePress Theme Hope project. In this tutorial, we will generate the project to the `my-docs` folder in the current directory.
+Здесь `my-docs` — это аргумент, представляющий имя папки проекта VuePress Theme Hope. В этом руководстве мы создадим проект в папку `my-docs` в текущем каталоге.
 
-You can change this parameter to use a new folder if you want.
+Вы можете изменить этот параметр, чтобы использовать новую папку, если хотите.
 
 :::
 
