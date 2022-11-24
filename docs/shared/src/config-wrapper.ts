@@ -164,7 +164,7 @@ export const config = (
                     // custom theme changes do not invalidate hash for all pages
                     if (
                       id.includes("plugin-vue:export-helper") ||
-                      // /node_modules\/@vuepress\/(client|shared)\//.test(id) ||
+                      /node_modules\/@vuepress\/shared\//.test(id) ||
                       /node_modules\/vue(-router)?\//.test(id)
                     ) {
                       return "framework";
