@@ -27,7 +27,7 @@ tag:
 
 :::
 
-### blog.name
+### blog\.name
 
 - 类型: `string`
 - 默认值: `author`

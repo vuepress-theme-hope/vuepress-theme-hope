@@ -27,7 +27,7 @@ For details, see [Blog Feature Intro](../../guide/blog/intro.md).
 
 :::
 
-### blog.name
+### blog\.name
 
 - Type: `string`
 - Default: `author`

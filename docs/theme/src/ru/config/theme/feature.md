@@ -27,7 +27,7 @@ tag:
 
 :::
 
-### blog.name
+### blog\.name
 
 - Тип: `string`
 - По умолчанию: `author`
