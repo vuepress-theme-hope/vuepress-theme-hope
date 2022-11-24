@@ -6,12 +6,15 @@ heroImage: /logo.svg
 heroText: VuePress Theme Hope
 tagline: Тема vuepress с множеством функций✨
 actions:
-  - text: Начать 💡
-    link: /guide/
+  - text: Руководство 🧭
+    link: /ru/cookbook/tutorial/
     type: primary
 
+  - text: вступление 💡
+    link: /ru/guide/get-started/intro.html
+
   - text: Конфиг 🛠
-    link: /config/
+    link: /ru/config/
 
   - text: Онлайн-демонстрация 🪀
     link: https://stackblitz.com/fork/vuepress-theme-hope
@@ -20,27 +23,27 @@ features:
   - title: Улучшение разметки
     icon: markdown
     details: Добавление выравнивания, надстрочного/подстрочного скрипта, сноски, списка задач, текста, блок-схемы, диаграммы, выделения и поддержка презентации в Markdown
-    link: /guide/markdown/
+    link: /ru/guide/markdown/
 
   - title: Слайд-страница
     icon: slides
     details: Добавление страниц слайдов для отображения того, что вам нравится
-    link: /guide/layout/slides
+    link: /ru/guide/layout/slides
 
   - title: Улучшение макета
     icon: layout
     details: Добавление хлебных крошек, нижнего колонтитула, улучшенной панели навигации, улучшенной навигации по страницам и т. д.
-    link: /guide/layout/
+    link: /ru/guide/layout/
 
   - title: Просмотры страниц и комментарии
     icon: comment
     details: Запустите статистику просмотров страниц и поддержку комментариев с помощью Waline
-    link: /guide/feature/comment.html
+    link: /ru/guide/feature/comment.html
 
   - title: Информация о статье
     icon: info
     details: Добавление автора, даты написания, время чтения, количество слов и другой информации в свою статью
-    link: /guide/feature/page-info.html
+    link: /ru/guide/feature/page-info.html
 
   - title: Поддержка блога
     icon: blog
@@ -50,57 +53,57 @@ features:
   - title: Пользовательский цвет темы
     icon: palette
     details: Поддержка пользовательских цветов темы и позволяет пользователям переключаться между предустановленными цветами темы
-    link: /guide/interface/theme-color.html
+    link: /ru/guide/interface/theme-color.html
 
   - title: Темный режим
     icon: contrast
     details: Свободно переключайтесь между светлым и темным режимами
-    link: /guide/interface/darkmode.html
+    link: /ru/guide/interface/darkmode.html
 
   - title: Полная поддержка A11y
     icon: support
     details: Полная поддержка специальных возможностей на вашем сайте
-    link: /guide/interface/accessibility.html
+    link: /ru/guide/interface/accessibility.html
 
   - title: Шифрование статьи
     icon: lock
     details: Шифруйте свои статьи на основе ссылок на страницы, чтобы их мог видеть только тот, кому вы хотите
-    link: /guide/feature/encrypt.html
+    link: /ru/guide/feature/encrypt.html
 
   - title: Кнопка копирования
     icon: copy
     details: Копируйте коды одним кликом в блоках кодов
-    link: /guide/feature/copy-code.html
+    link: /ru/guide/feature/copy-code.html
 
   - title: Предпросмотр изображения
     icon: pic
     details: Поддержка просмотра, масштабирования, обмена изображениями на странице, например, в галерее
-    link: /guide/feature/photo-swipe.html
+    link: /ru/guide/feature/photo-swipe.html
 
   - title: СЕО-улучшения
     icon: config
     details: Оптимизация страниц для поисковых систем
-    link: /guide/advanced/seo.html
+    link: /ru/guide/advanced/seo.html
 
   - title: Карта сайта
     icon: sitemap
     details: Создание карты сайта для своего сайта
-    link: /guide/advanced/sitemap.html
+    link: /ru/guide/advanced/sitemap.html
 
   - title: Поддержка каналов
     icon: rss
     details: Создание потока, чтобы пользователи могли подписаться на него
-    link: /guide/advanced/feed.html
+    link: /ru/guide/advanced/feed.html
 
   - title: Поддержка PWA
     icon: mobile
     details: Сделайте свой сайт больше похожим на APP
-    link: /guide/advanced/pwa.html
+    link: /ru/guide/advanced/pwa.html
 
   - title: Больше новых функций
     icon: more
     details: Включая поддержку иконок, полноэкранную кнопку и т. д.
-    link: /guide/feature/
+    link: /ru/guide/feature/
 
 copyright: false
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope

@@ -6,9 +6,12 @@ heroImage: /logo.svg
 heroText: VuePress Theme Hope
 tagline: 一个具有强大功能的 vuepress 主题✨
 actions:
-  - text: 快速上手 💡
-    link: /zh/guide/
+  - text: 使用教程 🧭
+    link: /zh/cookbook/tutorial/
     type: primary
+
+  - text: 介绍 💡
+    link: /zh/guide/get-started/intro.html
 
   - text: 配置 🛠
     link: /zh/config/

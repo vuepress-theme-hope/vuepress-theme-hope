@@ -6,9 +6,12 @@ heroImage: /logo.svg
 heroText: VuePress Theme Hope
 tagline: A VuePress theme with tons of features✨
 actions:
-  - text: Get Started 💡
-    link: /guide/
+  - text: Tutorial 🧭
+    link: /cookbook/tutorial/
     type: primary
+
+  - text: Intro 💡
+    link: /guide/get-started/intro.html
 
   - text: Config 🛠
     link: /config/
