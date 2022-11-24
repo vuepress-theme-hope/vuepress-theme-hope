@@ -157,7 +157,7 @@
 
       margin: 0.5rem;
       padding: 0.5em 1.5rem;
-      border: 2px solid var(--border-color);
+      border: 1px solid var(--text-color);
       border-radius: 2rem;
 
       background: var(--bg-color-float);
@@ -178,11 +178,12 @@
       }
 
       &:hover {
-        background: var(--theme-color);
-        color: var(--white);
+        border-color: var(--text-color-bright);
+        color: var(--text-color-bright);
       }
 
       &.primary {
+        border-color: var(--theme-color);
         background: var(--theme-color);
         color: var(--white);
 
@@ -285,7 +286,7 @@
   }
 
   &:not(.pure) {
-    .action-button:hover {
+    .action-button:active {
       transform: scale(0.96);
     }
 
