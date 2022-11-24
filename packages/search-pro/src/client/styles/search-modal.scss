@@ -96,7 +96,9 @@
   }
 
   .close-button {
+    @include reset.button;
     display: none;
+    color: var(--grey3);
 
     @media (max-width: hope-config.$pad) {
       display: block;
