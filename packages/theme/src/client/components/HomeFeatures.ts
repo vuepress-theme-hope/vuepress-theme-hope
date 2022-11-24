@@ -28,8 +28,10 @@ export default defineComponent({
             { class: "features" },
             frontmatter.value.features?.map((feature) => {
               const children = [
-                h(Icon, { icon: feature.icon }),
-                h("h2", { innerHTML: feature.title }),
+                h("h2", [
+                  h(Icon, { icon: feature.icon }),
+                  h("span", { innerHTML: feature.title }),
+                ]),
                 h("p", { innerHTML: feature.details }),
               ];
 
