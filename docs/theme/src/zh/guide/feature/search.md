@@ -8,7 +8,7 @@ tag:
   - 搜索
 ---
 
-主题对 [`@vuepress/plugin-search`][search]、 [`@vuepress/plugin-docsearch`][docsearch] 和 [`vuepress-plugin-search-pro`][search-pro] 提供了内置支持。你只需要添加并配置所需的搜索插件，就能够在导航栏获得一个搜索框。
+主题对 [`vuepress-plugin-search-pro`][search-pro]、 [`@vuepress/plugin-docsearch`][docsearch] 和 [`@vuepress/plugin-search`][search] 提供了内置支持。你只需要添加并配置所需的搜索插件，就能够在导航栏获得一个搜索框。
 
 如果你需要搜索插件，请通过 [**VuePress 配置文件**](../../cookbook/vuepress/config.md) 的 `plugins` 选项应用它。
 
@@ -28,33 +28,33 @@ tag:
 
 <!-- more -->
 
-## 使用 `@vuepress/plugin-search`
+## 使用 `vuepress-plugin-search-pro`
 
-1. 安装 `@vuepress/plugin-search`
+1. 安装 `vuepress-plugin-search-pro`
 
    ::: code-tabs#shell
 
    @tab pnpm
 
    ```bash
-   pnpm add -D @vuepress/plugin-search@next
+   pnpm add -D vuepress-plugin-search-pro@next
    ```
 
    @tab yarn
 
    ```bash
-   yarn add -D @vuepress/plugin-search@next
+   yarn add -D vuepress-plugin-search-pro@next
    ```
 
    @tab npm
 
    ```bash
-   npm i -D @vuepress/plugin-search@next
+   npm i -D vuepress-plugin-search-pro@next
    ```
 
    :::
 
-1. 从 `@vuepress/plugin-search` 导入 `searchPlugin` 并将其应用至 `config.{ts,js}` 下的 `plugins` 选项.
+1. 从 `vuepress-plugin-search-pro` 导入 `searchProPlugin` 并将其应用至 `config.{ts,js}` 下的 `plugins` 选项.
 
    ::: code-tabs#language
 
@@ -62,13 +62,27 @@ tag:
 
    ```ts
    // .vuepress/config.ts
-   import { searchPlugin } from "@vuepress/plugin-search";
+   import { searchProPlugin } from "vuepress-plugin-search-pro";
    import { defineUserConfig } from "vuepress";
 
    export default defineUserConfig({
      plugins: [
-       searchPlugin({
-         // 你的选项
+       searchProPlugin({
+         // 索引全部内容
+         indexContent: true,
+         // 为分类和标签添加索引
+         customFields: [
+           {
+             name: "category",
+             getter: (page) => page.frontmatter.category,
+             formatter: "分类：$content",
+           },
+           {
+             name: "tag",
+             getter: (page) => page.frontmatter.tag,
+             formatter: "标签：$content",
+           },
+         ],
        }),
      ],
    });
@@ -78,12 +92,26 @@ tag:
 
    ```js
    // .vuepress/config.js
-   import { searchPlugin } from "@vuepress/plugin-search";
+   import { searchProPlugin } from "vuepress-plugin-search-pro";
 
    export default {
      plugins: [
-       searchPlugin({
-         // 你的选项
+       searchProPlugin({
+         // 索引全部内容
+         indexContent: true,
+         // 为分类和标签添加索引
+         customFields: [
+           {
+             name: "category",
+             getter: (page) => page.frontmatter.category,
+             formatter: "分类：$content",
+           },
+           {
+             name: "tag",
+             getter: (page) => page.frontmatter.tag,
+             formatter: "标签：$content",
+           },
+         ],
        }),
      ],
    };
@@ -93,7 +121,7 @@ tag:
 
 ::: info 更多
 
-关于搜索插件的可用选项，详见 [插件文档][search]。
+关于搜索插件的可用选项，详见 [插件文档][search-pro]。
 
 :::
 
@@ -501,33 +529,33 @@ export default {
 
 ::::
 
-## 使用 `vuepress-plugin-search-pro`
+## 使用 `@vuepress/plugin-search`
 
-1. 安装 `vuepress-plugin-search-pro`
+1. 安装 `@vuepress/plugin-search`
 
    ::: code-tabs#shell
 
    @tab pnpm
 
    ```bash
-   pnpm add -D vuepress-plugin-search-pro@next
+   pnpm add -D @vuepress/plugin-search@next
    ```
 
    @tab yarn
 
    ```bash
-   yarn add -D vuepress-plugin-search-pro@next
+   yarn add -D @vuepress/plugin-search@next
    ```
 
    @tab npm
 
    ```bash
-   npm i -D vuepress-plugin-search-pro@next
+   npm i -D @vuepress/plugin-search@next
    ```
 
    :::
 
-1. 从 `vuepress-plugin-search-pro` 导入 `searchProPlugin` 并将其应用至 `config.{ts,js}` 下的 `plugins` 选项.
+1. 从 `@vuepress/plugin-search` 导入 `searchPlugin` 并将其应用至 `config.{ts,js}` 下的 `plugins` 选项.
 
    ::: code-tabs#language
 
@@ -535,27 +563,13 @@ export default {
 
    ```ts
    // .vuepress/config.ts
-   import { searchProPlugin } from "vuepress-plugin-search-pro";
+   import { searchPlugin } from "@vuepress/plugin-search";
    import { defineUserConfig } from "vuepress";
 
    export default defineUserConfig({
      plugins: [
-       searchProPlugin({
-         // 索引全部内容
-         indexContent: true,
-         // 为分类和标签添加索引
-         customFields: [
-           {
-             name: "category",
-             getter: (page) => page.frontmatter.category,
-             formatter: "分类：$content",
-           },
-           {
-             name: "tag",
-             getter: (page) => page.frontmatter.tag,
-             formatter: "标签：$content",
-           },
-         ],
+       searchPlugin({
+         // 你的选项
        }),
      ],
    });
@@ -565,26 +579,12 @@ export default {
 
    ```js
    // .vuepress/config.js
-   import { searchProPlugin } from "vuepress-plugin-search-pro";
+   import { searchPlugin } from "@vuepress/plugin-search";
 
    export default {
      plugins: [
-       searchProPlugin({
-         // 索引全部内容
-         indexContent: true,
-         // 为分类和标签添加索引
-         customFields: [
-           {
-             name: "category",
-             getter: (page) => page.frontmatter.category,
-             formatter: "分类：$content",
-           },
-           {
-             name: "tag",
-             getter: (page) => page.frontmatter.tag,
-             formatter: "标签：$content",
-           },
-         ],
+       searchPlugin({
+         // 你的选项
        }),
      ],
    };
@@ -594,7 +594,7 @@ export default {
 
 ::: info 更多
 
-关于搜索插件的可用选项，详见 [插件文档][search-pro]。
+关于搜索插件的可用选项，详见 [插件文档][search]。
 
 :::
 

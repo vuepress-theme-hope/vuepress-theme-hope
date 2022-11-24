@@ -111,7 +111,7 @@ footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 
 ## 🛠 安装
 
-在当前项目的 `[dir]` 文件夹内创建 vuepress-theme-hope 项目:
+在当前目录下的 `[dir]` 文件夹内创建 vuepress-theme-hope 项目:
 
 ::: code-tabs#shell
 

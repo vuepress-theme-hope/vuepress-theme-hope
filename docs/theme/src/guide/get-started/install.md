@@ -12,7 +12,7 @@ tag:
 
 ## Install
 
-Create a vuepress-theme-hope project in `[dir]` folder under the current project:
+Create a vuepress-theme-hope project in `[dir]` folder:
 
 ::: code-tabs#shell
 
@@ -32,7 +32,7 @@ npm init vuepress-theme-hope@next [dir]
 
 ::: note
 
-`[dir]` is a parameter here, replace it with real folder names, such as `docs`, `src` or other name you like.
+`[dir]` is a parameter here, replace it with real folder names, such as `docs`, `blog` or other name you like.
 
 :::
 

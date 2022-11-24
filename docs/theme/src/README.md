@@ -111,7 +111,7 @@ footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 
 ## 🛠Install
 
-Create a vuepress-theme-hope project in `[dir]` directory under the current project:
+Create a vuepress-theme-hope project in `[dir]` directory under the current path:
 
 ::: code-tabs#shell
 

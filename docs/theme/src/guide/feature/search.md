@@ -8,7 +8,7 @@ tag:
   - Search
 ---
 
-The theme adds built-in support for [`@vuepress/plugin-search`][search], [`@vuepress/plugin-docsearch`][docsearch] and [`vuepress-plugin-search-pro`][search-pro]. Just install the plugin you want and config it, you will get a search box in navbar.
+The theme adds built-in support for [`vuepress-plugin-search-pro`][search-pro], [`@vuepress/plugin-docsearch`][docsearch] and [`@vuepress/plugin-search`][search]. Just install the plugin you want and config it, you will get a search box in navbar.
 
 To use search plugin, you need to apply it via `plugins` in the [**VuePress config file**](../../cookbook/vuepress/config.md).
 
@@ -28,33 +28,33 @@ The theme can ONLY apply plugins it bundles, so `plugins` field in theme options
 
 <!-- more -->
 
-## Use `@vuepress/plugin-search`
+## Use `vuepress-plugin-search-pro`
 
-1. Install `@vuepress/plugin-search`
+1. Install `vuepress-plugin-search-pro`
 
    ::: code-tabs#shell
 
    @tab pnpm
 
    ```bash
-   pnpm add -D @vuepress/plugin-search@next
+   pnpm add -D vuepress-plugin-search-pro@next
    ```
 
    @tab yarn
 
    ```bash
-   yarn add -D @vuepress/plugin-search@next
+   yarn add -D vuepress-plugin-search-pro@next
    ```
 
    @tab npm
 
    ```bash
-   npm i -D @vuepress/plugin-search@next
+   npm i -D vuepress-plugin-search-pro@next
    ```
 
    :::
 
-1. Import `searchPlugin` from `@vuepress/plugin-search` and apply it in `plugins` under `config.{ts,js}`.
+1. Import `searchProPlugin` from `vuepress-plugin-search-pro` and apply it in `plugins` under `config.{ts,js}`.
 
    ::: code-tabs#language
 
@@ -62,13 +62,27 @@ The theme can ONLY apply plugins it bundles, so `plugins` field in theme options
 
    ```ts
    // .vuepress/config.ts
-   import { searchPlugin } from "@vuepress/plugin-search";
+   import { searchProPlugin } from "vuepress-plugin-search-pro";
    import { defineUserConfig } from "vuepress";
 
    export default defineUserConfig({
      plugins: [
-       searchPlugin({
-         // your options
+       searchProPlugin({
+         // index all contents
+         indexContent: true,
+         // add supports for category and tags
+         customFields: [
+           {
+             name: "category",
+             getter: (page) => page.frontmatter.category,
+             formatter: "Category: $content",
+           },
+           {
+             name: "tag",
+             getter: (page) => page.frontmatter.tag,
+             formatter: "Tag: $content",
+           },
+         ],
        }),
      ],
    });
@@ -78,12 +92,26 @@ The theme can ONLY apply plugins it bundles, so `plugins` field in theme options
 
    ```js
    // .vuepress/config.js
-   import { searchPlugin } from "@vuepress/plugin-search";
+   import { searchProPlugin } from "vuepress-plugin-search-pro";
 
    export default {
      plugins: [
        searchPlugin({
-         // your options
+         // index all contents
+         indexContent: true,
+         // add supports for category and tags
+         customFields: [
+           {
+             name: "category",
+             getter: (page) => page.frontmatter.category,
+             formatter: "Category: $content",
+           },
+           {
+             name: "tag",
+             getter: (page) => page.frontmatter.tag,
+             formatter: "Tag: $content",
+           },
+         ],
        }),
      ],
    };
@@ -93,7 +121,7 @@ The theme can ONLY apply plugins it bundles, so `plugins` field in theme options
 
 ::: info More
 
-See [Plugin Docs][search] for available options.
+See [Plugin Docs][search-pro] for available options.
 
 :::
 
@@ -316,33 +344,33 @@ See [Plugin Docs][docsearch] for how to use docsearch plugin and its available o
 
 :::
 
-## Use `vuepress-plugin-search-pro`
+## Use `@vuepress/plugin-search`
 
-1. Install `vuepress-plugin-search-pro`
+1. Install `@vuepress/plugin-search`
 
    ::: code-tabs#shell
 
    @tab pnpm
 
    ```bash
-   pnpm add -D vuepress-plugin-search-pro@next
+   pnpm add -D @vuepress/plugin-search@next
    ```
 
    @tab yarn
 
    ```bash
-   yarn add -D vuepress-plugin-search-pro@next
+   yarn add -D @vuepress/plugin-search@next
    ```
 
    @tab npm
 
    ```bash
-   npm i -D vuepress-plugin-search-pro@next
+   npm i -D @vuepress/plugin-search@next
    ```
 
    :::
 
-1. Import `searchProPlugin` from `vuepress-plugin-search-pro` and apply it in `plugins` under `config.{ts,js}`.
+1. Import `searchPlugin` from `@vuepress/plugin-search` and apply it in `plugins` under `config.{ts,js}`.
 
    ::: code-tabs#language
 
@@ -350,27 +378,13 @@ See [Plugin Docs][docsearch] for how to use docsearch plugin and its available o
 
    ```ts
    // .vuepress/config.ts
-   import { searchProPlugin } from "vuepress-plugin-search-pro";
+   import { searchPlugin } from "@vuepress/plugin-search";
    import { defineUserConfig } from "vuepress";
 
    export default defineUserConfig({
      plugins: [
-       searchProPlugin({
-         // index all contents
-         indexContent: true,
-         // add supports for category and tags
-         customFields: [
-           {
-             name: "category",
-             getter: (page) => page.frontmatter.category,
-             formatter: "Category: $content",
-           },
-           {
-             name: "tag",
-             getter: (page) => page.frontmatter.tag,
-             formatter: "Tag: $content",
-           },
-         ],
+       searchPlugin({
+         // your options
        }),
      ],
    });
@@ -380,26 +394,12 @@ See [Plugin Docs][docsearch] for how to use docsearch plugin and its available o
 
    ```js
    // .vuepress/config.js
-   import { searchProPlugin } from "vuepress-plugin-search-pro";
+   import { searchPlugin } from "@vuepress/plugin-search";
 
    export default {
      plugins: [
        searchPlugin({
-         // index all contents
-         indexContent: true,
-         // add supports for category and tags
-         customFields: [
-           {
-             name: "category",
-             getter: (page) => page.frontmatter.category,
-             formatter: "Category: $content",
-           },
-           {
-             name: "tag",
-             getter: (page) => page.frontmatter.tag,
-             formatter: "Tag: $content",
-           },
-         ],
+         // your options
        }),
      ],
    };
@@ -409,7 +409,7 @@ See [Plugin Docs][docsearch] for how to use docsearch plugin and its available o
 
 ::: info More
 
-See [Plugin Docs][search-pro] for available options.
+See [Plugin Docs][search] for available options.
 
 :::
 

@@ -8,7 +8,7 @@ tag:
   - Поиск
 ---
 
-В тему добавлена встроенная поддержка [`@vuepress/plugin-search`][search], [`@vuepress/plugin-docsearch`][docsearch] и[`vuepress-plugin-search-pro`][search-pro]. Просто установите нужный плагин и настройте его, и вы получите окно поиска на панели навигации.
+В тему добавлена встроенная поддержка [`vuepress-plugin-search-pro`][search-pro], [`@vuepress/plugin-docsearch`][docsearch] и [`@vuepress/plugin-search`][search]. Просто установите нужный плагин и настройте его, и вы получите окно поиска на панели навигации.
 
 Чтобы использовать поисковый плагин, вам нужно применить его через `plugins` в [**файле конфигурации VuePress**](../../cookbook/vuepress/config.md).
 
@@ -28,33 +28,33 @@ tag:
 
 <!-- more -->
 
-## Использование `@vuepress/plugin-search`
+## Использование `vuepress-plugin-search-pro`
 
-1. Установите `@vuepress/plugin-search`
+1. Установите `vuepress-plugin-search-pro`
 
    ::: code-tabs#shell
 
    @tab pnpm
 
    ```bash
-   pnpm add -D @vuepress/plugin-search@next
+   pnpm add -D vuepress-plugin-search-pro@next
    ```
 
    @tab yarn
 
    ```bash
-   yarn add -D @vuepress/plugin-search@next
+   yarn add -D vuepress-plugin-search-pro@next
    ```
 
    @tab npm
 
    ```bash
-   npm i -D @vuepress/plugin-search@next
+   npm i -D vuepress-plugin-search-pro@next
    ```
 
    :::
 
-1. Импортируйте `searchPlugin` из `@vuepress/plugin-search` и примените его в `plugins` под `config.{ts,js}`.
+1. Импортируйте `searchProPlugin` из `vuepress-plugin-search-pro` и примените его в `plugins` в `config.{ts,js}`.
 
    ::: code-tabs#language
 
@@ -62,13 +62,27 @@ tag:
 
    ```ts
    // .vuepress/config.ts
-   import { searchPlugin } from "@vuepress/plugin-search";
+   import { searchProPlugin } from "vuepress-plugin-search-pro";
    import { defineUserConfig } from "vuepress";
 
    export default defineUserConfig({
      plugins: [
-       searchPlugin({
-         // your options
+       searchProPlugin({
+         // index all contents
+         indexContent: true,
+         // add supports for category and tags
+         customFields: [
+           {
+             name: "category",
+             getter: (page) => page.frontmatter.category,
+             formatter: "Category: $content",
+           },
+           {
+             name: "tag",
+             getter: (page) => page.frontmatter.tag,
+             formatter: "Tag: $content",
+           },
+         ],
        }),
      ],
    });
@@ -78,12 +92,26 @@ tag:
 
    ```js
    // .vuepress/config.js
-   import { searchPlugin } from "@vuepress/plugin-search";
+   import { searchProPlugin } from "vuepress-plugin-search-pro";
 
    export default {
      plugins: [
        searchPlugin({
-         // your options
+         // index all contents
+         indexContent: true,
+         // add supports for category and tags
+         customFields: [
+           {
+             name: "category",
+             getter: (page) => page.frontmatter.category,
+             formatter: "Category: $content",
+           },
+           {
+             name: "tag",
+             getter: (page) => page.frontmatter.tag,
+             formatter: "Tag: $content",
+           },
+         ],
        }),
      ],
    };
@@ -91,9 +119,9 @@ tag:
 
    :::
 
-::: info Более
+::: info Еще
 
-Доступные параметры смотрите в [Документации по плагинам][search].
+Смотрите [Документацию по Плагинам][search-pro] для доступных опций.
 
 :::
 
@@ -316,33 +344,33 @@ tag:
 
 :::
 
-## Использование `vuepress-plugin-search-pro`
+## Использование `@vuepress/plugin-search`
 
-1. Установите `vuepress-plugin-search-pro`
+1. Установите `@vuepress/plugin-search`
 
    ::: code-tabs#shell
 
    @tab pnpm
 
    ```bash
-   pnpm add -D vuepress-plugin-search-pro@next
+   pnpm add -D @vuepress/plugin-search@next
    ```
 
    @tab yarn
 
    ```bash
-   yarn add -D vuepress-plugin-search-pro@next
+   yarn add -D @vuepress/plugin-search@next
    ```
 
    @tab npm
 
    ```bash
-   npm i -D vuepress-plugin-search-pro@next
+   npm i -D @vuepress/plugin-search@next
    ```
 
    :::
 
-1. Импортируйте `searchProPlugin` из `vuepress-plugin-search-pro` и примените его в `plugins` в `config.{ts,js}`.
+1. Импортируйте `searchPlugin` из `@vuepress/plugin-search` и примените его в `plugins` под `config.{ts,js}`.
 
    ::: code-tabs#language
 
@@ -350,27 +378,13 @@ tag:
 
    ```ts
    // .vuepress/config.ts
-   import { searchProPlugin } from "vuepress-plugin-search-pro";
+   import { searchPlugin } from "@vuepress/plugin-search";
    import { defineUserConfig } from "vuepress";
 
    export default defineUserConfig({
      plugins: [
-       searchProPlugin({
-         // index all contents
-         indexContent: true,
-         // add supports for category and tags
-         customFields: [
-           {
-             name: "category",
-             getter: (page) => page.frontmatter.category,
-             formatter: "Category: $content",
-           },
-           {
-             name: "tag",
-             getter: (page) => page.frontmatter.tag,
-             formatter: "Tag: $content",
-           },
-         ],
+       searchPlugin({
+         // your options
        }),
      ],
    });
@@ -380,26 +394,12 @@ tag:
 
    ```js
    // .vuepress/config.js
-   import { searchProPlugin } from "vuepress-plugin-search-pro";
+   import { searchPlugin } from "@vuepress/plugin-search";
 
    export default {
      plugins: [
        searchPlugin({
-         // index all contents
-         indexContent: true,
-         // add supports for category and tags
-         customFields: [
-           {
-             name: "category",
-             getter: (page) => page.frontmatter.category,
-             formatter: "Category: $content",
-           },
-           {
-             name: "tag",
-             getter: (page) => page.frontmatter.tag,
-             formatter: "Tag: $content",
-           },
-         ],
+         // your options
        }),
      ],
    };
@@ -407,9 +407,9 @@ tag:
 
    :::
 
-::: info Еще
+::: info Более
 
-Смотрите [Документацию по Плагинам][search-pro] для доступных опций.
+Доступные параметры смотрите в [Документации по плагинам][search].
 
 :::
 

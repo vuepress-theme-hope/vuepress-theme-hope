@@ -36,20 +36,18 @@ tag:
 在终端中执行下列命令:
 
 ```sh
-pnpm create vuepress-theme-hope@next docs
+pnpm create vuepress-theme-hope@next my-docs
 
 # 或
 
-npm create vuepress-theme-hope@next docs
+npm create vuepress-theme-hope@next my-docs
 ```
 
-::: tip 位置参数
+::: tip 文件夹参数
 
-这里的 `docs` 是一个参数，代表 VuePress 项目的文件夹名称，在本教程中，我们将 VuePress 项目生成至项目文件夹下的 `docs` 子文件夹。
+这里的 `my-docs` 是一个参数，代表 VuePress Theme Hope 项目的文件夹名称，在本教程中，我们将项目生成至当前目录下的 `my-docs` 文件夹。
 
-如果你有需求，你可以更改此参数来使用一个新文件夹，或使用 `.` 直接使用当前的文件夹。
-
-如果你是一个小白，请保持默认的 `docs` 参数不变，以更好地阅读接下来的章节。
+如果你有需求，你可以更改此参数来使用一个新文件夹名称。
 
 :::
 

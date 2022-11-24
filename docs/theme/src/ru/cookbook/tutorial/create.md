@@ -36,20 +36,18 @@ tag:
 Выполните следующую команду в терминале:
 
 ```sh
-pnpm create vuepress-theme-hope@next docs
+pnpm create vuepress-theme-hope@next my-docs
 
 # Or
 
-npm create vuepress-theme-hope@next docs
+npm create vuepress-theme-hope@next my-docs
 ```
 
-::: tip Аргумент позиции
+::: tip Folder Argument
 
-Здесь `docs` — это аргумент, представляющий имя папки проекта VuePress. В этом руководстве мы создадим проект VuePress в подпапке `docs` в папке проекта.
+Here `my-docs` is a argument representing the folder name of the VuePress Theme Hope project. In this tutorial, we will generate the project to the `my-docs` folder in the current directory.
 
-Вы можете изменить этот параметр, чтобы использовать новую папку, если хотите, или использовать `.`, чтобы использовать текущую папку напрямую.
-
-Если вы новичок, оставьте параметр `docs` по умолчанию без изменений, чтобы лучше читать следующие главы.
+You can change this parameter to use a new folder if you want.
 
 :::
 

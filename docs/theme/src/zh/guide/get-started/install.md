@@ -12,7 +12,7 @@ tag:
 
 ## 安装
 
-在当前项目的 `[dir]` 文件夹内创建 vuepress-theme-hope 项目:
+在 `[dir]` 文件夹内新建 vuepress-theme-hope 项目:
 
 ::: code-tabs#shell
 
@@ -32,7 +32,7 @@ npm init vuepress-theme-hope@next [dir]
 
 ::: note
 
-这里的 `[dir]` 是一个参数，你需要使用真实的文件夹名称替换它，例如 `docs`、`src` 或其他你喜欢的名称。
+这里的 `[dir]` 是一个参数，你需要使用真实的文件夹名称替换它，例如 `docs`、`blog` 或其他你喜欢的名称。
 
 :::
 
