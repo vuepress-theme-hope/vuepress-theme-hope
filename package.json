@@ -2,7 +2,7 @@
   "name": "vuepress-theme-hope-root",
   "version": "2.0.0-beta.129",
   "private": true,
-  "description": "A vuepress theme with tons of features",
+  "description": "A VuePress theme with tons of features",
   "type": "module",
   "workspaces": [
     "demo/*",

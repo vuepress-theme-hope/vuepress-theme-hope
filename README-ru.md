@@ -3,7 +3,7 @@
   <img width="240" src="https://vuepress-theme-hope.github.io/v2/logo.svg" style="text-align: center;">
 </p>
 <h1 align="center">vuepress-theme-hope</h1>
-<h4 align="center">Тема vuepress с множеством функций✨</h4>
+<h4 align="center">Тема VuePress с множеством функций✨</h4>
 
 [![Автор: Mr.Hope](https://img.shields.io/badge/author-Mr.Hope-blue.svg?style=for-the-badge)](https://mrhope.site)
 [![Лицензия](https://img.shields.io/npm/l/vuepress-theme-hope.svg?style=for-the-badge)](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/LICENSE)

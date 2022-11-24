@@ -15,7 +15,7 @@ body:
         - label: I am using **LTS** version of Node.js.
           required: true
 
-        - label: I am using the **latest v2 version** of vuepress and vuepress official plugins.
+        - label: I am using the **latest v2 version** of VuePress and VuePress official plugins.
           required: true
 
         - label: I am using the **latest v2 version** of vuepress-theme-hope and all plugins in this repo.

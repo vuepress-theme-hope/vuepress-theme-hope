@@ -57,8 +57,8 @@ home: true
 icon: home
 title: Home
 heroImage: /logo.svg
-heroText: vuepress-theme-hope
-tagline: A vuepress theme with tons of features✨
+heroText: VuePress Theme Hope
+tagline: A VuePress theme with tons of features✨
 actions:
   - text: Get Started 💡
     link: /guide/

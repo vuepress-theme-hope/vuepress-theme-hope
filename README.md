@@ -3,7 +3,7 @@
   <img width="240" src="https://vuepress-theme-hope.github.io/v2/logo.svg" style="text-align: center;">
 </p>
 <h1 align="center">vuepress-theme-hope</h1>
-<h4 align="center">A vuepress theme with tons of features✨</h4>
+<h4 align="center">A VuePress theme with tons of features✨</h4>
 
 <h4 align="center">
 
@@ -26,7 +26,7 @@
 [![codecov](https://codecov.io/gh/vuepress-theme-hope/vuepress-theme-hope/branch/main/graph/badge.svg?token=TNYMbGlxQ9)](https://codecov.io/gh/vuepress-theme-hope/vuepress-theme-hope)
 ![Test theme](https://github.com/vuepress-theme-hope/vuepress-theme-hope/actions/workflows/test.yml/badge.svg)
 
-A vuepress theme with tons of features✨
+A VuePress theme with tons of features✨
 
 ## [English Docs](https://vuepress-theme-hope.github.io/v2/)
 

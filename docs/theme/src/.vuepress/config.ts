@@ -21,7 +21,7 @@ export default config(
       "/": {
         lang: "en-US",
         title: "vuepress-theme-hope",
-        description: "A vuepress theme with tons of features✨",
+        description: "A VuePress theme with tons of features✨",
       },
       "/zh/": {
         lang: "zh-CN",

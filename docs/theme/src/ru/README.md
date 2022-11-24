@@ -3,7 +3,7 @@ home: true
 icon: home
 title: Главная
 heroImage: /logo.svg
-heroText: vuepress-theme-hope
+heroText: VuePress Theme Hope
 tagline: Тема vuepress с множеством функций✨
 actions:
   - text: Начать 💡
