@@ -222,7 +222,6 @@ interface BlogFrontmatterOptions {
    *
    * @description 仅在分类子项目页面中可用
    */
-
   name?: string;
 }
 ```

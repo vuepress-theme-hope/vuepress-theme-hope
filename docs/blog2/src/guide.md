@@ -227,7 +227,6 @@ interface BlogFrontmatterOptions {
    *
    * @description Only available in category item page
    */
-
   name?: string;
 }
 ```
