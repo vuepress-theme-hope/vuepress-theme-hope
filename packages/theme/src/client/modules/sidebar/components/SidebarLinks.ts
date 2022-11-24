@@ -37,7 +37,7 @@ export default defineComponent({
 
         openGroupIndex.value = index;
       },
-      { immediate: true }
+      { immediate: true, flush: "post" }
     );
 
     return (): VNode | null =>
