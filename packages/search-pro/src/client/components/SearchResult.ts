@@ -111,6 +111,13 @@ export default defineComponent({
       return getVNodes(matchedItem.display);
     };
 
+    const resetSearchResult = () => {
+      activatedResultIndex.value = 0;
+      activatedResultContentIndex.value = 0;
+      emit("updateQuery", "");
+      emit("close");
+    };
+
     onMounted(() => {
       useEventListener("keydown", (event: KeyboardEvent) => {
         if (!hasResults.value) return;
@@ -118,15 +125,13 @@ export default defineComponent({
         if (event.key === "ArrowUp") activePreviousResultContent();
         else if (event.key === "ArrowDown") activeNextResultContent();
         else if (event.key === "Enter") {
-          const path =
-            activatedResult.value.contents[activatedResultContentIndex.value]
-              .path;
+          const item =
+            activatedResult.value.contents[activatedResultContentIndex.value];
 
-          if (route.path !== path) {
-            void router.push(path);
-            addHistory(query.value);
-            emit("updateQuery", "");
-            emit("close");
+          if (route.path !== item.path) {
+            addHistory(item);
+            void router.push(item.path);
+            resetSearchResult();
           }
         }
       });
@@ -158,32 +163,41 @@ export default defineComponent({
             ? h(
                 "ul",
                 { class: "search-pro-result-list" },
-                history.value.map((history) =>
-                  h("li", { class: "search-pro-result-list-item" }, [
+                h("li", { class: "search-pro-result-list-item" }, [
+                  h(
+                    "div",
+                    { class: "search-pro-result-title" },
+                    locale.value.history
+                  ),
+                  history.value.map((item, historyIndex) =>
                     h(
-                      "div",
-                      { class: "search-pro-result-title" },
-                      locale.value.history
-                    ),
-                    h(
-                      "div",
+                      RouterLink,
                       {
-                        class: "search-pro-result-item",
+                        to: item.path,
+                        class: [
+                          "search-pro-result-item",
+                          {
+                            active:
+                              activatedResultContentIndex.value ===
+                              historyIndex,
+                          },
+                        ],
                         onClick: () => {
-                          emit("updateQuery", history);
+                          resetSearchResult();
                         },
                       },
-                      [
+                      () => [
                         h(HistoryIcon, { class: "search-pro-result-type" }),
-                        h(
-                          "div",
-                          { class: "search-pro-result-content" },
-                          history
-                        ),
+                        h("div", { class: "search-pro-result-content" }, [
+                          item.type === "content"
+                            ? h("div", { class: "content-header" }, item.header)
+                            : null,
+                          h("div", getDisplay(item)),
+                        ]),
                       ]
-                    ),
-                  ])
-                )
+                    )
+                  ),
+                ])
               )
             : locale.value.emptyHistory
           : hasResults.value
@@ -223,9 +237,8 @@ export default defineComponent({
                             },
                           ],
                           onClick: () => {
-                            addHistory(query.value);
-                            emit("updateQuery", "");
-                            emit("close");
+                            addHistory(item);
+                            resetSearchResult();
                           },
                         },
                         () => [
