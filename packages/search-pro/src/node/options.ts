@@ -42,6 +42,15 @@ export interface SearchProOptions {
   indexContent?: boolean;
 
   /**
+   * Max stored history item count
+   *
+   * 存储历史项目的最大数量
+   *
+   * @default 5
+   */
+  historyCount?: number;
+
+  /**
    * Delay to start searching after input
    *
    * 结束输入到开始搜索的延时

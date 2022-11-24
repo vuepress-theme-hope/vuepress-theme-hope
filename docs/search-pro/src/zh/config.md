@@ -128,6 +128,13 @@ export default defineUserConfig({
 
 当热键被按下时，搜索框的输入框会被聚焦，设置为空数组以禁用热键。
 
+## historyCount
+
+- 类型: `number`
+- 默认值: `5`
+
+存储历史项目的最大数量
+
 ## delay
 
 - 类型: `number`
