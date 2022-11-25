@@ -81,6 +81,8 @@ tag:
 
 - [vuepress-plugin-redirect][redirect]: Перенаправления страницы
 
+- [vuepress-plugin-remove-pwa][remove-pwa]: Plugins to remove pwa
+
 - [vuepress-plugin-search-pro][search-pro]: Client search plugin
 
 :::
@@ -113,6 +115,7 @@ tag:
 [pwa2]: https://vuepress-theme-hope.github.io/v2/pwa/
 [reading-time2]: https://vuepress-theme-hope.github.io/v2/reading-time/
 [redirect]: https://vuepress-theme-hope.github.io/v2/redirect/
+[remove-pwa]: https://vuepress-theme-hope.github.io/v2/remove-pwa/
 [sass-palette]: https://vuepress-theme-hope.github.io/v2/sass-palette/
 [search-pro]: https://vuepress-theme-hope.github.io/v2/search-pro/
 [seo2]: https://vuepress-theme-hope.github.io/v2/seo/

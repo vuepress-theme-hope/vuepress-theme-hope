@@ -81,6 +81,8 @@ Here are some other plugins that are not enabled by default by the theme, you ca
 
 - [vuepress-plugin-redirect][redirect]: Redirect pages
 
+- [vuepress-plugin-remove-pwa][remove-pwa]: Plugins to remove pwa
+
 - [vuepress-plugin-search-pro][search-pro]: Client search plugin
 
 :::
@@ -113,6 +115,7 @@ Here are some other plugins that are not enabled by default by the theme, you ca
 [pwa2]: https://vuepress-theme-hope.github.io/v2/pwa/
 [reading-time2]: https://vuepress-theme-hope.github.io/v2/reading-time/
 [redirect]: https://vuepress-theme-hope.github.io/v2/redirect/
+[remove-pwa]: https://vuepress-theme-hope.github.io/v2/remove-pwa/
 [sass-palette]: https://vuepress-theme-hope.github.io/v2/sass-palette/
 [search-pro]: https://vuepress-theme-hope.github.io/v2/search-pro/
 [seo2]: https://vuepress-theme-hope.github.io/v2/seo/

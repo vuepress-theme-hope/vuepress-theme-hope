@@ -164,6 +164,8 @@ tag:
 
 - [vuepress-plugin-redirect][redirect]: 重定向插件
 
+- [vuepress-plugin-remove-pwa][remove-pwa]: 移除 PWA 插件
+
 - [vuepress-plugin-search-pro][search-pro]: 客户端搜索插件
 
 :::
@@ -180,6 +182,7 @@ tag:
 [pwa2]: https://vuepress-theme-hope.github.io/v2/pwa/zh/
 [reading-time2]: https://vuepress-theme-hope.github.io/v2/reading-time/zh/
 [redirect]: https://vuepress-theme-hope.github.io/v2/redirect/zh/
+[remove-pwa]: https://vuepress-theme-hope.github.io/v2/remove-pwa/zh/
 [sass-palette]: https://vuepress-theme-hope.github.io/v2/sass-palette/zh/
 [seo2]: https://vuepress-theme-hope.github.io/v2/seo/zh/
 [search-pro]: https://vuepress-theme-hope.github.io/v2/search-pro/zh/

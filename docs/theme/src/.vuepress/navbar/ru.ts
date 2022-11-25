@@ -79,6 +79,11 @@ export const ruNavbarConfig = navbar([
             link: "https://vuepress-theme-hope.github.io/v2/reading-time/",
           },
           {
+            text: "Remove PWA Plugin",
+            icon: "app",
+            link: "https://vuepress-theme-hope.github.io/v2/remove-pwa/",
+          },
+          {
             text: "Плагин редиректа",
             icon: "navigation",
             link: "https://vuepress-theme-hope.github.io/v2/redirect/",

@@ -79,6 +79,11 @@ export const zhNavbarConfig = navbar([
             link: "https://vuepress-theme-hope.github.io/v2/reading-time/zh/",
           },
           {
+            text: "移除 PWA 插件",
+            icon: "app",
+            link: "https://vuepress-theme-hope.github.io/v2/remove-pwa/zh/",
+          },
+          {
             text: "重定向插件",
             icon: "navigation",
             link: "https://vuepress-theme-hope.github.io/v2/redirect/zh/",

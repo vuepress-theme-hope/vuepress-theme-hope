@@ -78,6 +78,11 @@ export const enNavbarConfig = navbar([
             link: "https://vuepress-theme-hope.github.io/v2/reading-time/",
           },
           {
+            text: "Remove PWA Plugin",
+            icon: "app",
+            link: "https://vuepress-theme-hope.github.io/v2/remove-pwa/",
+          },
+          {
             text: "Redirect Plugin",
             icon: "navigation",
             link: "https://vuepress-theme-hope.github.io/v2/redirect/",

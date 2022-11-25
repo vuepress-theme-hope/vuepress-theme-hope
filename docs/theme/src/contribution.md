@@ -43,7 +43,7 @@ The project is a monorepo, managed by pnpm.
 ├── .github → GitHub config
 ├── .husky → husky config
 │
-├── demo → Theme demo project
+├── demo → Demo projects
 │
 ├── docs → document directory
 │ ├── blog → blog2 plugin document
@@ -56,6 +56,7 @@ The project is a monorepo, managed by pnpm.
 │ ├── photo-swipe → photo-swipe document
 │ ├── pwa → pwa2 plugin document
 │ ├── reading-time → reading-time2 plugin document
+│ ├── remove-pwa → remove-pwa plugin document
 │ ├── sass-palette → sass-palette plugin document
 │ ├── search-pro → search-pro plugin document
 │ ├── seo → seo2 plugin document
@@ -73,6 +74,7 @@ The project is a monorepo, managed by pnpm.
 │ ├── photo-swipe → photo-swipe plugin
 │ ├── pwa2 → pwa2 plugin
 │ ├── reading-time2 → reading-time2 plugin
+│ ├── remove-pwa → remove-pwa plugin
 │ ├── sass-palette → sass-palette plugin
 │ ├── search-pro → search-pro plugin
 │ ├── seo2 → seo2 plugin
