@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.130](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.129...v2.0.0-beta.130) (2022-11-25)
+
+### Features
+
+- add remove-pwa plugin ([7b3e798](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7b3e798ec599068975636b2400cfdd75bcabd070))
+- **pwa2:** stop setting cacheId by default ([aaea010](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/aaea010dd021890f8b4dcbc7cd93e90cbea7adb0))
+- **search-pro:** add `historyCount` option ([81de34e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/81de34e70b48ad569a8aac871655ac8a6a5bdc0a))
+- **search-pro:** add close button for history ([9faeab9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9faeab9a220cd33c2e1f91b8b18e1b88e7062a28))
+- **search-pro:** improve a11y ([0198340](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0198340b297deec296cc4751e6c0c6a3bc312a25))
+- **search-pro:** update history to result ([5e351ef](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5e351efe8a1cac3da18a02c286600b3c7635ad39))
+- **theme:** improve homepage ([5873fa7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5873fa7f1965a95363c52f4004426c9fb42b935e))
+- **theme:** improve homepage action button ([4f059fe](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4f059fe6d83077a13680d6ee3aad643c384516c9))
+- **theme:** improve homepage style ([1722110](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/17221100f72dd88883bf61b8e484e710faf520a1))
+
+### Bug Fixes
+
+- **search-pro:** fix cancel button style ([2f391b1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2f391b1f1cd000c45a90a937e3d27bf8b375ad69))
+- **search-pro:** fix search-box color ([b965a31](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b965a3152804f9dac4fd044b483d3634e03c89e0))
+- **theme:** fix sidebarLinks open ([98d5d0f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/98d5d0ff2b0f63570ecdcc8385daa245b2f9aed8))
+- **theme:** fix toc style ([624b091](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/624b0919b8bab60870b221bd2bf81585bc2f2a35))
+
 ## [2.0.0-beta.129](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.128...v2.0.0-beta.129) (2022-11-23)
 
 ### Bug Fixes
