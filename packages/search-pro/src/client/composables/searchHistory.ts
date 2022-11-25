@@ -9,6 +9,7 @@ const SEARCH_PRO_STORAGE = "search-pro-history-results";
 export interface SearchHistory {
   history: Ref<MatchedItem[]>;
   addHistory: (item: MatchedItem) => void;
+  removeHistory: (index: number) => void;
 }
 
 const searchProStorage = useLocalStorage<MatchedItem[]>(SEARCH_PRO_STORAGE, []);
@@ -24,8 +25,16 @@ export const useSearchHistory = (): SearchHistory => {
       ];
   };
 
+  const removeHistory = (index: number) => {
+    searchProStorage.value = [
+      ...searchProStorage.value.slice(0, index),
+      ...searchProStorage.value.slice(index + 1),
+    ];
+  };
+
   return {
     history: searchProStorage,
     addHistory,
+    removeHistory,
   };
 };

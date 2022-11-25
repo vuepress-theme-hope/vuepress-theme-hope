@@ -13,7 +13,13 @@ import {
 import { RouterLink, useRoute, useRouter } from "vue-router";
 import { useLocaleConfig } from "vuepress-shared/client";
 
-import { HeadingIcon, HeartIcon, HistoryIcon, TitleIcon } from "./icons.js";
+import {
+  CloseIcon,
+  HeadingIcon,
+  HeartIcon,
+  HistoryIcon,
+  TitleIcon,
+} from "./icons.js";
 import { useSearchHistory, useSearchResults } from "../composables/index.js";
 import {
   searchProClientCustomFiledConfig,
@@ -42,7 +48,7 @@ export default defineComponent({
     const route = useRoute();
     const routeLocale = useRouteLocale();
     const locale = useLocaleConfig(searchProLocales);
-    const { history, addHistory } = useSearchHistory();
+    const { history, addHistory, removeHistory } = useSearchHistory();
 
     const query = toRef(props, "query");
     const searchResults = useSearchResults(query);
@@ -194,6 +200,17 @@ export default defineComponent({
                             : null,
                           h("div", getDisplay(item)),
                         ]),
+                        h(
+                          "button",
+                          {
+                            class: "search-pro-close-icon",
+                            onClick: (event: Event) => {
+                              removeHistory(historyIndex);
+                              event.stopPropagation();
+                            },
+                          },
+                          h(CloseIcon)
+                        ),
                       ]
                     )
                   ),

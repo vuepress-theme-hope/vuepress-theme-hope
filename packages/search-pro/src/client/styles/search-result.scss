@@ -46,14 +46,32 @@
   }
 }
 
-.search-pro-result-type {
-  display: block;
-
+.search-pro-result-type,
+.search-pro-close-icon {
   width: 1rem;
   height: 1rem;
-  padding: 0.5rem 0.5rem 0.5rem 0;
-
+  padding: 0.5rem;
   color: var(--c-brand, #3aa675);
+}
+
+.search-pro-result-type {
+  display: block;
+  margin-left: -0.5rem;
+}
+
+.search-pro-close-icon {
+  box-sizing: content-box;
+  margin-right: -0.5rem;
+  border-radius: 50%;
+
+  svg {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  &:hover {
+    background: rgb(128 128 128 / 30%);
+  }
 }
 
 .search-pro-result-content {
@@ -98,6 +116,7 @@
     cursor: pointer;
 
     .search-pro-result-type,
+    .search-pro-close-icon,
     strong {
       color: var(--white);
     }
