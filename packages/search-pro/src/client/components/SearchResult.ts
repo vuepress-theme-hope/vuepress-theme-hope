@@ -239,18 +239,20 @@ export default defineComponent({
                       { class: "search-pro-result-title" },
                       title || "Documentation"
                     ),
-                    contents.map((item, contentIndex) =>
-                      h(
+                    contents.map((item, contentIndex) => {
+                      const isCurrentContentActive =
+                        isCurrentResultActive &&
+                        activatedResultContentIndex.value === contentIndex;
+
+                      return h(
                         RouterLink,
                         {
                           to: item.path,
                           class: [
                             "search-pro-result-item",
                             {
-                              active:
-                                isCurrentResultActive &&
-                                activatedResultContentIndex.value ===
-                                  contentIndex,
+                              active: isCurrentContentActive,
+                              "aria-selected": isCurrentContentActive,
                             },
                           ],
                           onClick: () => {
@@ -270,7 +272,7 @@ export default defineComponent({
                                 { class: "search-pro-result-type" }
                               ),
                           h("div", { class: "search-pro-result-content" }, [
-                            item.type === "content"
+                            item.type === "content" && item.header
                               ? h(
                                   "div",
                                   { class: "content-header" },
@@ -280,8 +282,8 @@ export default defineComponent({
                             h("div", getDisplay(item)),
                           ]),
                         ]
-                      )
-                    ),
+                      );
+                    }),
                   ]
                 );
               })

@@ -125,7 +125,7 @@ export const getResults = (
             ...(suggestions[title] || []),
             {
               type: "content",
-              header: headerIndex.header || pageIndex.title || "Documentation",
+              header: headerIndex.header,
               path: path + (headerIndex.slug ? `#${headerIndex.slug}` : ""),
               display: matchedContent,
             },
