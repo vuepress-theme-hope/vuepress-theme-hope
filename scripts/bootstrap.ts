@@ -71,7 +71,8 @@ files.forEach((pkgName) => {
   if (!existsSync(readmePath))
     writeFileSync(
       readmePath,
-      `# vuepress-plugin-${pkgName}
+      `\
+# vuepress-plugin-${pkgName}
 
 [![Version](https://img.shields.io/npm/v/vuepress-plugin-${pkgName}/next.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/vuepress-plugin-${pkgName}.svg?style=flat-square&logo=npm) ![Size](https://img.shields.io/bundlephobia/min/vuepress-plugin-${pkgName}?style=flat-square&logo=npm)](https://www.npmjs.com/package/vuepress-plugin-${pkgName})
 
@@ -100,7 +101,6 @@ npm i -D vuepress-plugin-${pkgName}@next
 # yarn
 yarn add -D vuepress-plugin-${pkgName}@next
 \`\`\`
-
 `
     );
 });
