@@ -160,7 +160,7 @@
       border: 1px solid var(--text-color);
       border-radius: 2rem;
 
-      background: var(--bg-color-float);
+      background: var(--bg-color-secondary);
       color: var(--text-color);
 
       font-size: 1.2rem;
@@ -204,8 +204,6 @@
     align-items: stretch;
     justify-content: center;
 
-    overflow: hidden;
-
     margin: 0 -1rem;
     padding: 1.2rem 0;
     border-top: 1px solid var(--border-color);
@@ -221,8 +219,6 @@
     position: relative;
 
     flex-basis: calc(33% - 4rem);
-
-    overflow: hidden;
 
     margin: 0.5rem;
     padding: 1rem;
@@ -246,7 +242,6 @@
     @media (max-width: hope-config.$mobile) {
       flex-basis: calc(100%);
       margin: 0.5rem 0;
-      border-radius: 0;
       font-size: 0.9rem;
     }
 
@@ -255,7 +250,7 @@
     }
 
     &:hover {
-      background-color: var(--bg-color-float);
+      background-color: var(--bg-color-secondary);
       box-shadow: 0 2px 12px 0 var(--card-shadow);
       transform: scale(1.05);
     }
