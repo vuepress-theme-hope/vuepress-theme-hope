@@ -62,6 +62,7 @@ export default [
   }),
   ...rollupTypescript("client/components/Mermaid", {
     external: [
+      "@mermaid-js/mermaid-mindmap/dist/mermaid-mindmap.esm.min.mjs",
       "mermaid/dist/mermaid.esm.min.mjs",
       "vue",
       "vuepress-shared/client",
