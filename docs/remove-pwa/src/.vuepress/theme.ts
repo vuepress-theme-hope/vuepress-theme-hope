@@ -1,11 +1,4 @@
-import { createRequire } from "node:module";
-import { fs, pwa, theme } from "docs-shared";
-
-const { version } = fs.readJsonSync(
-  createRequire(import.meta.url).resolve(
-    "vuepress-plugin-remove-pwa/package.json"
-  )
-);
+import { pwa, theme } from "docs-shared";
 
 export default theme("remove-pwa", {
   locales: {
