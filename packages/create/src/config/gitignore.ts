@@ -8,8 +8,8 @@ ${dir}/.vuepress/.temp/
 ${dir}/.vuepress/dist/
 `;
 
-export const updateGitIgnore = (dir: string): void => {
-  const gitignorePath = resolve(process.cwd(), ".gitignore");
+export const updateGitIgnore = (dir: string, cwd = process.cwd()): void => {
+  const gitignorePath = resolve(cwd, ".gitignore");
 
   const gitignoreContent = existsSync(gitignorePath)
     ? readFileSync(gitignorePath, {

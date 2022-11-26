@@ -1,8 +1,8 @@
 import { execaCommandSync } from "execa";
 
-export const checkGitRepo = (): boolean => {
+export const checkGitRepo = (cwd = process.cwd()): boolean => {
   try {
-    execaCommandSync("git log");
+    execaCommandSync("git status", { cwd });
 
     return true;
   } catch {
@@ -12,7 +12,7 @@ export const checkGitRepo = (): boolean => {
 
 export const checkGitInstalled = (): boolean => {
   try {
-    execaCommandSync("git log");
+    execaCommandSync("git --version");
 
     return true;
   } catch {

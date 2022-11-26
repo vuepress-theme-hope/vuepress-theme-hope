@@ -127,7 +127,8 @@ cli
         const { lang, message, packageManager } = result;
 
         await createPackageJson(message, "src", targetDir);
-        await generateTemplate(join(targetDir, "src"), {
+        await generateTemplate("src", {
+          cwd: workingCWD,
           packageManager,
           lang,
           message,

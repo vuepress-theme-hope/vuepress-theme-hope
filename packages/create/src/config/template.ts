@@ -24,11 +24,13 @@ import type { PackageManager } from "../utils/index.js";
 export const generateTemplate = async (
   targetDir: string,
   {
+    cwd = process.cwd(),
     packageManager,
     lang,
     message,
     preset,
   }: {
+    cwd?: string;
     packageManager: PackageManager;
     lang: Lang;
     message: CreateI18n;
@@ -71,18 +73,18 @@ export const generateTemplate = async (
   // copy public assets
   copy(
     resolve(__dirname, "../template/public"),
-    resolve(process.cwd(), targetDir, "./.vuepress/public")
+    resolve(cwd, targetDir, "./.vuepress/public")
   );
 
   const templateFolder = preset;
 
   copy(
     resolve(__dirname, "../template", templateFolder),
-    resolve(process.cwd(), targetDir)
+    resolve(cwd, targetDir)
   );
 
   if (workflow) {
-    const workflowDir = resolve(process.cwd(), ".github/workflows");
+    const workflowDir = resolve(cwd, ".github/workflows");
 
     ensureDirExistSync(workflowDir);
 
@@ -94,9 +96,9 @@ export const generateTemplate = async (
   }
 
   // git related
-  const isGitRepo = checkGitRepo();
+  const isGitRepo = checkGitRepo(cwd);
 
-  if (isGitRepo) updateGitIgnore(targetDir);
+  if (isGitRepo) updateGitIgnore(targetDir, cwd);
   else if (checkGitInstalled()) {
     const { git } = await inquirer.prompt<{
       git: boolean;
@@ -110,8 +112,8 @@ export const generateTemplate = async (
     ]);
 
     if (git) {
-      execaCommandSync("git init");
-      updateGitIgnore(targetDir);
+      execaCommandSync("git init", { cwd });
+      updateGitIgnore(targetDir, cwd);
     }
   }
 };
