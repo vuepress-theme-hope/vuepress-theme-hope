@@ -147,3 +147,4 @@ category:
 [hutao]: https://hut.ao/
 [wings-boot]: https://wings.fessional.pro/
 [dynamic-tp]: https://dynamictp.cn/
+[weiser-blog]: https://weiser.fun/
