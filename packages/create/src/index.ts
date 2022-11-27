@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { existsSync, readdirSync } from "node:fs";
-import { join, resolve } from "node:path";
+import { resolve } from "node:path";
 import { cac } from "cac";
 import { execaCommand, execaCommandSync } from "execa";
 import inquirer from "inquirer";
