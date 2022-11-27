@@ -189,6 +189,7 @@ export default defineComponent({
                           },
                         ],
                         onClick: () => {
+                          console.log("click");
                           resetSearchResult();
                         },
                       },
@@ -205,8 +206,9 @@ export default defineComponent({
                           {
                             class: "search-pro-close-icon",
                             onClick: (event: Event) => {
-                              removeHistory(historyIndex);
+                              event.preventDefault();
                               event.stopPropagation();
+                              removeHistory(historyIndex);
                             },
                           },
                           h(CloseIcon)
