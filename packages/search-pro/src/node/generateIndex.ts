@@ -5,13 +5,28 @@ import type { AnyNode } from "cheerio";
 import type { SearchProCustomFieldOptions } from "./options.js";
 import type { PageHeaderContent, PageIndex } from "../shared/index.js";
 
-const HEADING_TAGS = "h1,h2,h3,h4,h5,h6".split(",");
+/**
+ * These tags are valid HTML tags which can contain content.
+ */
 
-// These tags are valid HTML tags which can contain content.
+/**
+ * @description h1 is removed because it's the title of the page.
+ */
+const HEADING_TAGS = "h2,h3,h4,h5,h6".split(",");
+
+/**
+ * @description Not all the block tags are included, because some of them shall not be indexed
+ */
 const CONTENT_BLOCK_TAGS =
-  "header,h1,h2,h3,h4,h5,h6,nav,section,div,dd,dl,dt,figcaption,figure,picture,hr,li,main,ol,p,ul,caption,table,thead,tbody,th,tr,td,datalist,fieldset,form,legend,optgroup,option,select,details,dialog,menu,menuitem,summary,blockquote,tfoot".split(
+  "header,nav,section,div,dd,dl,dt,figcaption,figure,picture,hr,li,main,ol,p,ul,caption,table,thead,tbody,th,tr,td,datalist,fieldset,form,legend,optgroup,option,select,details,dialog,menu,menuitem,summary,blockquote,tfoot".split(
     ","
   );
+
+/**
+ * @description Not all the inline tags are included, because some of them shall not be indexed, e.g.: pre
+ *
+ * routerlink is added to the list, because it is a special link tag
+ */
 const CONTENT_INLINE_TAGS =
   "routerlink,a,b,abbr,bdi,bdo,cite,code,dfn,em,i,kbd,mark,q,rp,rt,ruby,s,samp,small,span,strong,sub,sup,time,u,var,wbr,del,ins,button,label,legend,meter,optgroup,option,output,progress,select".split(
     ","
