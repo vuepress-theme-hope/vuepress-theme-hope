@@ -21,6 +21,8 @@ export const setupPhotoSwipe = (): void => {
       ),
     ]).then(([photoSwipe, images]) => {
       images.elements.forEach((image, index) => {
+        image.style.cursor = "zoom-in";
+
         image.addEventListener("click", (): void => {
           const gallery = new photoSwipe.default({
             dataSource: images.infos,

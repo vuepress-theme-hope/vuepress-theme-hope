@@ -5,7 +5,7 @@ icon: config
 
 ## selector
 
-- Type: `string`
+- Type: `string | string[]`
 - Default: `".theme-default-content :not(a) > img"`
 
 Image selector

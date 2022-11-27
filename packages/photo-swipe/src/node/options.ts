@@ -12,7 +12,7 @@ export interface PhotoSwipeOptions {
    *
    * @default '.theme-default-content :not(a) > img'
    */
-  selector?: string;
+  selector?: string | string[];
 
   /**
    * The delay of photo-swipe fetching page images, in ms

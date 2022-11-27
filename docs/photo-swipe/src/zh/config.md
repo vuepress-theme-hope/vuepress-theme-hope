@@ -5,7 +5,7 @@ icon: config
 
 ## selector
 
-- 类型: `string`
+- 类型: `string | string[]`
 - 默认值: `".theme-default-content :not(a) > img"`
 
 图片选择器

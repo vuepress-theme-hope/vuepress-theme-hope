@@ -12,10 +12,17 @@ export interface PhotoSwipeImages {
   infos: DataSourceItem[];
 }
 
-export const getImages = (selector: string): Promise<PhotoSwipeImages> => {
-  const images = Array.from(
-    document.querySelectorAll<HTMLImageElement>(selector)
-  );
+export const getImages = (
+  selector: string | string[]
+): Promise<PhotoSwipeImages> => {
+  const images =
+    typeof selector === "string"
+      ? Array.from(document.querySelectorAll<HTMLImageElement>(selector))
+      : selector
+          .map((item) =>
+            Array.from(document.querySelectorAll<HTMLImageElement>(item))
+          )
+          .flat();
 
   return Promise.all(
     images.map(
