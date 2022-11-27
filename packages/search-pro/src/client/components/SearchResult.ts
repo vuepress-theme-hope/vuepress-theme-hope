@@ -195,7 +195,7 @@ export default defineComponent({
                       () => [
                         h(HistoryIcon, { class: "search-pro-result-type" }),
                         h("div", { class: "search-pro-result-content" }, [
-                          item.type === "content"
+                          item.type === "content" && item.header
                             ? h("div", { class: "content-header" }, item.header)
                             : null,
                           h("div", getDisplay(item)),
