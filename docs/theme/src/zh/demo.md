@@ -128,6 +128,11 @@ category:
 - [网站链接](https://zfhblog.top)
 - [源码地址](https://github.com/zhangfanhang/zfhblog)
 
+### weiser's blog
+
+- [网站链接](https://weiser.fun)
+- [源码地址](https://github.com/xwzbupt/personal-site)
+
 ## 更多
 
 - 随时随地通过 PR 添加你的博客或文档至此。
