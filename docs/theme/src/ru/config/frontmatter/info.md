@@ -89,7 +89,7 @@ tag:
 
 - Тип: `DateString`
 - Обязательный: Нет
-- Формат: `YYYY-MM-DD` или `YYYY/MM/DD hh:mm:ss`
+- Формат: `YYYY-MM-DD` или `YYYY-MM-DD hh:mm:ss`
 
 Устанавливает время записи текущей страницы.
 

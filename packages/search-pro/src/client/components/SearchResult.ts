@@ -117,7 +117,7 @@ export default defineComponent({
       return getVNodes(matchedItem.display);
     };
 
-    const resetSearchResult = () => {
+    const resetSearchResult = (): void => {
       activatedResultIndex.value = 0;
       activatedResultContentIndex.value = 0;
       emit("updateQuery", "");

@@ -1,13 +1,15 @@
 import { getDirname, path } from "@vuepress/utils";
+import { watch } from "chokidar";
 
 import { resolveAlias } from "./alias.js";
 import { extendsBundlerOptions } from "./bundler.js";
-import { extendsPage } from "./extendsPage.js";
 import {
   checkStyle,
   convertFrontmatter,
   convertThemeConfig,
 } from "./compact/index.js";
+import { extendsPage } from "./extendsPage.js";
+import { checkFrontmatter } from "./frontmatter/index.js";
 import { getPluginConfig, usePlugin } from "./plugins/index.js";
 import {
   prepareConfigFile,
@@ -31,7 +33,9 @@ export const hopeTheme =
     legacy = false
   ): ThemeFunction =>
   (app) => {
+    const { isDebug } = app.env;
     const {
+      hotReload = isDebug,
       plugins = {},
       hostname,
       iconAssets,
@@ -52,12 +56,12 @@ export const hopeTheme =
 
     usePlugin(app, plugins);
 
-    if (app.env.isDebug) console.log("Theme plugin options:", plugins);
+    if (isDebug) console.log("Theme plugin options:", plugins);
 
     return {
       name: "vuepress-theme-hope",
 
-      alias: resolveAlias(app.env.isDebug),
+      alias: resolveAlias(isDebug),
 
       define: () => ({
         ENABLE_BLOG: status.enableBlog,
@@ -75,12 +79,9 @@ export const hopeTheme =
             page.filePathRelative || ""
           );
 
-        extendsPage(
-          themeConfig,
-          plugins,
-          <Page<ThemePageData>>page,
-          app.env.isDebug
-        );
+        checkFrontmatter(page, app.env.isDebug);
+
+        extendsPage(themeConfig, plugins, <Page<ThemePageData>>page, hotReload);
       },
 
       onPrepared: (): Promise<void> =>
@@ -89,6 +90,28 @@ export const hopeTheme =
           prepareThemeColorScss(app, themeConfig),
           prepareSocialMediaIcons(app, icons),
         ]).then(() => void 0),
+
+      onWatched: (app, watchers): void => {
+        if (hotReload) {
+          // this ensure the page is generated or updated
+          const searchIndexWatcher = watch("pages/**/*.vue", {
+            cwd: app.dir.temp(),
+            ignoreInitial: true,
+          });
+
+          searchIndexWatcher.on("add", () => {
+            void prepareSidebarData(app, themeConfig, sidebarSorter);
+          });
+          searchIndexWatcher.on("change", () => {
+            void prepareSidebarData(app, themeConfig, sidebarSorter);
+          });
+          searchIndexWatcher.on("unlink", () => {
+            void prepareSidebarData(app, themeConfig, sidebarSorter);
+          });
+
+          watchers.push(searchIndexWatcher);
+        }
+      },
 
       plugins: getPluginConfig(
         plugins,
@@ -99,6 +122,7 @@ export const hopeTheme =
           addThis,
           backToTop,
           hostname,
+          hotReload,
           iconAssets,
           iconPrefix,
         },

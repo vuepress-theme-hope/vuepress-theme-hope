@@ -27,7 +27,7 @@ export interface ThemeSidebarInfoOptions {
 export const getStructure = (pages: Page[], scope: string): StructureInfo[] => {
   const relatedPages = pages.filter(
     ({ filePathRelative, pathLocale }) =>
-      // generated from file and inside currect scope
+      // generated from file and inside current scope
       filePathRelative?.startsWith(scope) &&
       // root dir should filter other locales
       (scope !== "" || pathLocale === "/")
@@ -48,21 +48,21 @@ export const getStructure = (pages: Page[], scope: string): StructureInfo[] => {
     const relativePath = path.relative(scope, page.filePathRelative!);
     const filename = path.basename(relativePath);
 
-    let currectDir = structure;
+    let currentDir = structure;
     const levels = relativePath.split("/");
 
     levels.forEach((level, index) => {
       // already gets filename
       if (index === levels.length - 1)
-        currectDir.push({ type: "file", filename, path: relativePath });
-      // still generateing dir
+        currentDir.push({ type: "file", filename, path: relativePath });
+      // still generating dir
       else {
-        const result = currectDir.find<DirInfo>(
+        const result = currentDir.find<DirInfo>(
           (item): item is DirInfo =>
             item.type === "dir" && item.dirname === level
         );
 
-        if (result) currectDir = result.children;
+        if (result) currentDir = result.children;
         // we shall create this dir
         else {
           const dirInfo: DirInfo = {
@@ -72,9 +72,9 @@ export const getStructure = (pages: Page[], scope: string): StructureInfo[] => {
             children: [],
           };
 
-          currectDir.push(dirInfo);
+          currentDir.push(dirInfo);
 
-          currectDir = dirInfo.children;
+          currentDir = dirInfo.children;
         }
       }
     });

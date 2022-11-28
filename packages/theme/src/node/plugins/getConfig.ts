@@ -27,7 +27,12 @@ export const getPluginConfig = (
   themeData: ThemeConfig,
   options: Pick<
     ThemeOptions,
-    "addThis" | "backToTop" | "hostname" | "iconAssets" | "iconPrefix"
+    | "addThis"
+    | "backToTop"
+    | "hostname"
+    | "hotReload"
+    | "iconAssets"
+    | "iconPrefix"
   >,
   legacy = false
 ): PluginConfig => {
@@ -38,7 +43,7 @@ export const getPluginConfig = (
     plugins.nprogress === false ? null : nprogressPlugin(),
     plugins.prismjs === false ? null : prismjsPlugin(),
     themeDataPlugin({ themeData }),
-    getBlogPlugin(themeData, plugins.blog),
+    getBlogPlugin(themeData, plugins.blog, options.hotReload),
     getCommentPlugin(plugins.comment, legacy),
     getCopyCodePlugin(themeData, plugins.copyCode),
     getCopyrightPlugin(themeData, plugins.copyright, options.hostname),

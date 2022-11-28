@@ -31,11 +31,6 @@ category:
 - [网站链接][dynamic-tp]
 - [源码地址](https://github.com/dromara/dynamic-tp/tree/master/docs)
 
-### 小佟の学习笔记
-
-- [网站链接](https://xt-gitee.gitee.io/notes/)
-- [源码地址](https://gitee.com/xt-gitee/notes)
-
 ### JavaGuide
 
 - [网站链接][java-guide]
@@ -130,7 +125,7 @@ category:
 
 ### weiser's blog
 
-- [网站链接](https://weiser.fun)
+- [网站链接][weiser-blog]
 - [源码地址](https://github.com/xwzbupt/personal-site)
 
 ## 更多

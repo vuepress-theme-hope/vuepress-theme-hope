@@ -95,5 +95,5 @@ pnpm 的一些功能可以保证你拥有正确的依赖。
 
 ```sh
 corepack enable
-corepack prepare pnpm@7.17.0 --activate
+corepack prepare pnpm@7.17.1 --activate
 ```

@@ -633,6 +633,14 @@ export default {
 
 Если вы используете структуру для создания папки с другими папками, вложенными в нее, соответствующая папка будет отображаться как группа. Таким образом, вы можете быть даже более агрессивным, например, установив `sidebar: "structure"`, чтобы все ваши боковые панели автоматически генерировались из файловой структуры.
 
+::: warning Limitations
+
+Since structure sidebar is depending on file structure and markdown frontmatter, any changes in markdown may update the structure sidebar. (E.g: setting `index: false` in frontmatter as described below)
+
+However, recalculating the sidebar could be expensive for large sites, so the theme will only recalculate with [`hotReload` enabled](../../config/theme/basic.md#hotreload).
+
+:::
+
 #### Расширенный контроль
 
 Во время автоматического создания из структуры вы можете контролировать, включаются ли файлы в одной и той же папке с помощью параметра `index` на странице Frontmatter, а также управлять их сортировкой с помощью `order`.
