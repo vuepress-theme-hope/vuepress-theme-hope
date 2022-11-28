@@ -626,6 +626,14 @@ export default {
 
 如果你使用结构生成的文件夹下嵌套了其他文件夹，则对应的文件夹会被渲染成一个分组。所以你甚至可以更加激进，比如直接设置 `sidebar: "structure"` 让你的侧边栏全部从文件结构中自动生成。
 
+::: warning 限制
+
+由于结构侧边栏取决于文件结构和 Markdown Frontmatter，因此 Markdown 的任何更改都可能更新结构侧边栏。(例如: 如下所述在 Frontmatter 中设置 `index: false`)
+
+但是，对于大型网站，重新计算侧边栏是一个高耗时操作，因此主题只会在 [`hotReload` 启用](../../config/theme/basic.md#hotreload) 的情况下实时更新结构化侧边栏。
+
+:::
+
 #### 进阶控制
 
 在从结构自动生成的过程中，你可以通过页面 Frontmatter 中的 `index` 选项控制同一文件夹下的文件是否被包含、并通过 `order` 控制它们的排序方式。

@@ -633,6 +633,14 @@ In the above modification, since the original sidebar array is all files under t
 
 If you use the structure to generate a folder with other folders nested under it, the corresponding folder will be rendered as a group. So you can even be more aggressive, for example setting `sidebar: "structure"` to have your sidebars all auto-generated from the file structure.
 
+::: warning Limitations
+
+Since structure sidebar is depending on file structure and markdown frontmatter, any changes in markdown may update the structure sidebar. (E.g: setting `index: false` in frontmatter as described below)
+
+However, recalculating the sidebar could be expensive for large sites, so the theme will only recalculate with [`hotReload` enabled](../../config/theme/basic.md#hotreload).
+
+:::
+
 #### Advanced Control
 
 During the automatic generation from structure, you can control whether files in the same folder are included through the `index` option in the page Frontmatter, and control how they are sorted through `order`.

@@ -1,9 +1,6 @@
-import { logger } from "@vuepress/utils";
 import matter from "gray-matter";
 import {
-  getCategory,
   getDate,
-  getTag,
   injectLocalizedDate,
   md2text,
   timeTransformer,
@@ -21,103 +18,11 @@ import type {
   ThemeNormalPageFrontmatter,
 } from "../shared/index.js";
 
-export const checkFrontmatter = (
-  page: Page<ThemePageData>,
-  isDebug: boolean
-): void => {
-  const frontmatter = page.frontmatter as
-    | ThemeProjectHomePageFrontmatter
-    | ThemeBlogHomePageFrontmatter
-    | ThemeNormalPageFrontmatter;
-
-  // resolve category
-  if ("category" in frontmatter) {
-    const category = getCategory(frontmatter.category);
-
-    frontmatter.category = category;
-  }
-
-  // resolve tag
-  if ("tag" in frontmatter) {
-    const tag = getTag(frontmatter.tag);
-
-    frontmatter.tag = tag;
-  }
-
-  if (isDebug) {
-    const { filePathRelative } = page;
-
-    // check date
-    if ("date" in frontmatter && !(frontmatter.date instanceof Date)) {
-      logger.error(
-        `"date" property in Page FrontMatter should be a valid Date.${
-          filePathRelative ? `\nFound in ${filePathRelative}` : ""
-        }`
-      );
-
-      delete frontmatter.date;
-    }
-
-    // check sidebar
-    if (
-      "sidebar" in frontmatter &&
-      frontmatter.sidebar !== "heading" &&
-      typeof frontmatter.sidebar !== "boolean"
-    ) {
-      logger.warn(
-        `"sidebar" property in Page FrontMatter should be "heading" or boolean.${
-          filePathRelative ? `\nFound in ${filePathRelative}` : ""
-        }`
-      );
-
-      delete frontmatter.sidebar;
-    }
-
-    // check string values
-    ["title", "shortTitle", "containerClass"].forEach((key) => {
-      if (key in frontmatter && typeof frontmatter[key] !== "string") {
-        logger.warn(
-          `"${key}" property in Page FrontMatter should be string.${
-            filePathRelative ? `\nFound in ${filePathRelative}` : ""
-          }`
-        );
-
-        delete frontmatter[key];
-      }
-    });
-
-    // check boolean values
-    [
-      "home",
-      "navbar",
-      "toc",
-      "index",
-      "lastUpdated",
-      "contributors",
-      "editLink",
-      "breadcrumb",
-      "breadcrumbIcon",
-      "pageview",
-      "article",
-    ].forEach((key) => {
-      if (key in frontmatter && typeof frontmatter[key] !== "boolean") {
-        logger.warn(
-          `"${key}" property in Page FrontMatter should be boolean.${
-            filePathRelative ? `\nFound in ${filePathRelative}` : ""
-          }`
-        );
-
-        delete frontmatter[key];
-      }
-    });
-  }
-};
-
 export const extendsPage = (
   themeConfig: ThemeConfig,
   plugins: PluginsOptions,
   page: Page<ThemePageData>,
-  isDebug: boolean
+  hotReload = false
 ): void => {
   const { config = {} } = themeConfig.encrypt;
   const frontmatter = page.frontmatter as
@@ -126,8 +31,6 @@ export const extendsPage = (
     | ThemeNormalPageFrontmatter;
   const { filePathRelative, path } = page;
   const { createdTime } = page.data.git || {};
-
-  checkFrontmatter(page, isDebug);
 
   // save relative file path into page data to generate edit link
   page.data.filePathRelative = filePathRelative;
@@ -163,27 +66,6 @@ export const extendsPage = (
       : isArticle
       ? PageType.article
       : PageType.page;
-
-    const excerpt = isEncrypted
-      ? ""
-      : frontmatter.excerpt ||
-        page.excerpt ||
-        // special handle auto generated description by seo2 plugin
-        (page.data.autoDesc ? "" : frontmatter.description) ||
-        // handle autoExcerpt option
-        (typeof plugins.blog === "object" && plugins.blog.autoExcerpt
-          ? page.data.autoDesc
-            ? frontmatter.description
-            : md2text(
-                matter(page.content)
-                  .content.trim()
-                  // remove first heading1 as title
-                  .replace(/^# (.*)$/gm, "")
-              ).slice(0, 180)
-          : "");
-
-    // save page excerpt to routeMeta
-    if (excerpt) page.routeMeta[ArticleInfoType.excerpt] = excerpt;
 
     // resolve author
     if ("author" in frontmatter)
@@ -221,15 +103,40 @@ export const extendsPage = (
     if ("cover" in frontmatter)
       page.routeMeta[ArticleInfoType.cover] = frontmatter.cover;
 
-    // ensure a valid reading time exists
-    if (page.data.readingTime && page.data.readingTime.words !== 0)
-      page.routeMeta[ArticleInfoType.readingTime] = page.data.readingTime;
-
     // resolve isOriginal
     if ("isOriginal" in frontmatter)
       page.routeMeta[ArticleInfoType.isOriginal] = frontmatter.isOriginal;
 
     // resolve encrypted
     if (isEncrypted) page.routeMeta[ArticleInfoType.isEncrypted] = true;
+
+    // excerpt and reading-time is sensitive with markdown contents
+    // to improve hmr speed, we only ensure this with `hotReload` enabled.
+    if (hotReload) {
+      const excerpt = isEncrypted
+        ? ""
+        : frontmatter.excerpt ||
+          page.excerpt ||
+          // special handle auto generated description by seo2 plugin
+          (page.data.autoDesc ? "" : frontmatter.description) ||
+          // handle autoExcerpt option
+          (typeof plugins.blog === "object" && plugins.blog.autoExcerpt
+            ? page.data.autoDesc
+              ? frontmatter.description
+              : md2text(
+                  matter(page.content)
+                    .content.trim()
+                    // remove first heading1 as title
+                    .replace(/^# (.*)$/gm, "")
+                ).slice(0, 180)
+            : "");
+
+      // save page excerpt to routeMeta
+      if (excerpt) page.routeMeta[ArticleInfoType.excerpt] = excerpt;
+
+      // ensure a valid reading time exists
+      if (page.data.readingTime && page.data.readingTime.words !== 0)
+        page.routeMeta[ArticleInfoType.readingTime] = page.data.readingTime;
+    }
   }
 };

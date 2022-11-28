@@ -33,7 +33,7 @@ For sticky articles, you can set `sticky` with a number to set their order. Arti
 
 ## Excerpt
 
-### Add Excerpt
+### Adding Excerpt
 
 If you want to add an excerpt for an article, you can mark contents with `<!-- more -->` comment. Any content before this comment will be considered as an excerpt.
 
@@ -46,6 +46,8 @@ By default, the theme will only display excerpt you specify or the description s
 If you want the theme extracting excerpts automatically, set `plugins.blog.autoExcerpt: true` in theme options.
 
 ::: warning Excerpt Limitation
+
+Auto excerpt generation is not available in devServer by default due to performance considerations, use [hotReload](../../config/theme/basic.md#hotreload) to enable it.
 
 We recommend you to use `<!-- more -->` to mark excerpt as first choice. If you do need a special summary, set it in frontmatter yourself.
 

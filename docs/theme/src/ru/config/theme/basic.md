@@ -254,3 +254,30 @@ tag:
   - [Конфигурация мультиязыка темы](./i18n.md)
 
 I18n конфиг темы, где можно задать параметры для каждого языка отдельно.
+
+### hotReload
+
+- Type: `boolean`
+- Default: Whether using `--debug` flag
+
+Whether to enable hot reload in the development server.
+
+::: tip
+
+Normally, you will expect:
+
+- devServer can be started as soon as possible
+- changes in markdown can take effect fast on the devServer, and avoid restarting the entire VuePress application.
+
+In order to achieve this expectation, the theme needs to skip some time-consuming operations on the devServer, and it needs to disable some time-consuming functions that are triggered by page modifications on the devServer to improve the speed of project startup and hot update. At the same time, because some modifications will change the underlying raw data of VuePress, these modifications will cause the web page refresh and reload the entire VuePress application. In order to avoid frequent page reloads (i.e.: Page refresh is triggered and you are getting a blank screen for a few seconds) when modifying Markdown, the theme disables some features on the devServer.
+
+By default, devServer has the following limitations:
+
+- Git-based features will not be enabled, including contributors, automatic creating date and last update time (Calling Git binary and making file IO causes high time consumption)
+- The structured sidebar will only be generated when the application starts, and will not be updated subsequently (Sidebar sorting and indexing depends on every page frontmatter, any change in Markdown content will trigger recalculation, so large number of pages will result high time consumption)
+- Blog articles, tags, categories and lists of articles in each category will not be updated with the devServer (Any change in Markdown content will trigger recalculation, so large number of pages will result high time consumption)
+- ReadingTime and Word Info in blog article information are not injected (Any change in Markdown content will change the page word count information, so a VuePress underlying raw data is updated causing page refresh)
+
+Enabling it means you accept that every modification will trigger some expensive recalculations and the whole application will restart, which usually results refreshing the page and a few seconds of blank screen in environments with weak performance.
+
+:::

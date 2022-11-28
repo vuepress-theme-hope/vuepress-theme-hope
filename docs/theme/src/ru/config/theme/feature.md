@@ -160,6 +160,12 @@ tag:
 - `"ReadingTime"`
 - `"Word"`
 
+::: warning Limitation
+
+ReadingTime and Word are not available in devServer by default, [see reasons and how to enable it](./basic.md#hotreload).
+
+:::
+
 ## Зашифровать конфигурацию <Badge text="Только root" type="warning" />
 
 Для получения дополнительной информации смотрите [Введение в шифрование](../../guide/feature/encrypt.md).
