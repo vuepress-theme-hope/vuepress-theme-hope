@@ -3,7 +3,8 @@ import stripTags from "striptags";
 const removals: string | RegExp[] = [
   // code blocks
   /(?:^|\n).*?(`{3,}).*?\n[\s\S]*?\1\n/gm,
-
+  // directives
+  /^@/gm,
   // hr
   /^[-*]{3,}$/gm,
   // footnotes
