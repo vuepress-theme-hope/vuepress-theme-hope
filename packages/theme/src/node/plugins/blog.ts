@@ -80,7 +80,8 @@ export const getTitleLocales = (
 
 export const getBlogPlugin = (
   themeData: ThemeConfig,
-  options?: BlogPluginOptions | boolean
+  options?: BlogPluginOptions | boolean,
+  hotReload = false
 ): Plugin | null => {
   if (!options) return null;
 
@@ -268,6 +269,7 @@ export const getBlogPlugin = (
       },
     ],
 
+    hotReload,
     ...("hotReload" in blogOptions ? { hotReload: blogOptions.hotReload } : {}),
   });
 };

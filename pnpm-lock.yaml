@@ -1342,6 +1342,7 @@ importers:
       balloon-css: ^1.2.0
       bcrypt-ts: ^3.0.0
       body-scroll-lock: ^3.1.5
+      chokidar: ^3.5.3
       gray-matter: ^4.0.3
       rimraf: 3.0.2
       vue: ^3.2.45
@@ -1379,6 +1380,7 @@ importers:
       balloon-css: 1.2.0
       bcrypt-ts: 3.0.0
       body-scroll-lock: 3.1.5
+      chokidar: 3.5.3
       gray-matter: 4.0.3
       vue: 3.2.45
       vue-router: 4.1.6_vue@3.2.45

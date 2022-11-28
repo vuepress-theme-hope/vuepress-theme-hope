@@ -33,13 +33,30 @@ tag:
 
 ## Выдержка
 
-Если вы хотите добавить отрывок к статье, вы можете использовать комментарий `<!-- more -->`, чтобы пометить его. Все содержимое до комментария будет считаться выдержкой. Кроме того, вы можете указать его с помощью `excerpt` во вступительном слове со строкой HTML.
+### Adding Excerpt
 
-::: info Авто выдержка
+If you want to add an excerpt for an article, you can mark contents with `<!-- more -->` comment. Any content before this comment will be considered as an excerpt.
 
-По умолчанию тема будет отображать только тот отрывок или описание, которое вы укажете в списке статей.
+Meanwhile, if the excerpt you want to set is not what you want to show at the beginning of the article, you can also set the HTML string through the `excerpt` option in Frontmatter.
 
-Если вы хотите, чтобы тема автоматически извлекала отрывки, установите `plugins.blog.autoExcerpt: true` в параметрах темы.
+### Automatically Generate Excerpt
+
+By default, the theme will only display excerpt you specify or the description set in frontmatter for articles in article list.
+
+If you want the theme extracting excerpts automatically, set `plugins.blog.autoExcerpt: true` in theme options.
+
+::: warning Excerpt Limitation
+
+Auto excerpt generation is not available in devServer by default due to performance considerations, use [hotReload](../../config/theme/basic.md#hotreload) to enable it.
+
+We recommend you to use `<!-- more -->` to mark excerpt as first choice. If you do need a special summary, set it in frontmatter yourself.
+
+For the comment-marked excerpt, we will separate excerpt from markdown content then render it to HTMLString, so any content outside excerpt **is not considered during rendering**, such restrictions like:
+
+- `[[toc]]` tag cannot get the title of the rest of the article
+- Links and footnotes can not render correctly if their citations are outside excerpt
+
+In addition, since both cases excerpt is directly inserted into the DOM through `innerHTML`, this means that any components will be parsed as native tags and cannot not be rendered as Vue Component.
 
 :::
 

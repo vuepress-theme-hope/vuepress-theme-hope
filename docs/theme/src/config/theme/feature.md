@@ -160,6 +160,12 @@ Available values for `ArticleInfo`:
 - `"ReadingTime"`
 - `"Word"`
 
+::: warning Limitation
+
+ReadingTime and Word are not available in devServer by default, [see reasons and how to enable it](./basic.md#hotreload).
+
+:::
+
 ## Encrypt Config <Badge text="Root only" type="warning" />
 
 For details, see [Encrypt Intro](../../guide/feature/encrypt.md).

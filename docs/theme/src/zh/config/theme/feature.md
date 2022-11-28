@@ -162,6 +162,12 @@ tag:
 - `"ReadingTime"`
 - `"Word"`
 
+::: warning 限制
+
+默认情况下，ReadingTime 和 Word 在开发服务器中不可用，[查看原因以及如何启用它](./basic.md#hotreload)。
+
+:::
+
 ## 加密配置 <Badge text="仅限 Root" type="warning" />
 
 有关详细信息，请参阅 [加密功能介绍](../../guide/feature/encrypt.md)。

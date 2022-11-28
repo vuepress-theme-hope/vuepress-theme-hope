@@ -128,7 +128,7 @@ export const mdEnhancePlugin =
 
     useSassPalettePlugin(app, { id: "hope" });
 
-    let initialized = false;
+    let isAppInitialized = false;
 
     return {
       name: "vuepress-plugin-md-enhance",
@@ -317,11 +317,11 @@ export const mdEnhancePlugin =
       },
 
       extendsPage: (page, app): void => {
-        if (shouldCheckLinks && initialized) checkLinks(page, app);
+        if (shouldCheckLinks && isAppInitialized) checkLinks(page, app);
       },
 
       onInitialized: async (app): Promise<void> => {
-        initialized = true;
+        isAppInitialized = true;
         if (shouldCheckLinks)
           app.pages.forEach((page) => checkLinks(page, app));
 

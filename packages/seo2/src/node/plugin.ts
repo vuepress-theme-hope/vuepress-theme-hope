@@ -48,6 +48,8 @@ export const seoPlugin =
                 ? `${pageContent.slice(0, 177)}...`
                 : pageContent;
           }
+
+          page.data.autoDesc = true;
         }
 
         appendSEO(page, options, app);
