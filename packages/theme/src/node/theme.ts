@@ -122,6 +122,7 @@ export const hopeTheme =
           addThis,
           backToTop,
           hostname,
+          hotReload,
           iconAssets,
           iconPrefix,
         },

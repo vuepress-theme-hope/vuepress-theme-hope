@@ -5,11 +5,11 @@ import type { Plugin } from "@vuepress/core";
 import type { ThemeOptions } from "../../shared/index.js";
 
 export const getComponentsPlugin = (
-  components: AvailableComponent[] = ["Badge", "FontIcon"],
   options: Pick<
     ThemeOptions,
     "addThis" | "backToTop" | "hostname" | "iconAssets" | "iconPrefix"
-  >
+  >,
+  components: AvailableComponent[] = ["Badge", "FontIcon"]
 ): Plugin =>
   componentsPlugin({
     // FontIcon component is used by theme so we MUST enable it

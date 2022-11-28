@@ -254,3 +254,10 @@ Sidebar config
   - [Theme I18n Config](./i18n.md)
 
 I18n config of the theme, where you can set options for each language separately.
+
+### hotReload
+
+- Type: `boolean`
+- Default: Whether using `--debug` flag
+
+Whether to enable hot reload in the development server.

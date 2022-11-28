@@ -254,3 +254,10 @@ tag:
   - [Конфигурация мультиязыка темы](./i18n.md)
 
 I18n конфиг темы, где можно задать параметры для каждого языка отдельно.
+
+### hotReload
+
+- Type: `boolean`
+- Default: Whether using `--debug` flag
+
+Whether to enable hot reload in the development server.
