@@ -22,7 +22,7 @@ export const extendsPage = (
   themeConfig: ThemeConfig,
   plugins: PluginsOptions,
   page: Page<ThemePageData>,
-  isAppInitialized = false
+  hotReload = false
 ): void => {
   console.log(page.data);
   const { config = {} } = themeConfig.encrypt;
@@ -41,36 +41,85 @@ export const extendsPage = (
   // inject localized date
   injectLocalizedDate(page);
 
-  if (!isAppInitialized) {
-    page.routeMeta[ArticleInfoType.title] = page.title;
+  page.routeMeta[ArticleInfoType.title] = page.title;
 
-    if ("icon" in frontmatter)
-      page.routeMeta[ArticleInfoType.icon] = frontmatter.icon;
+  if ("icon" in frontmatter)
+    page.routeMeta[ArticleInfoType.icon] = frontmatter.icon;
 
-    // resolve shortTitle
-    if ("shortTitle" in frontmatter)
-      page.routeMeta[ArticleInfoType.shortTitle] = frontmatter.shortTitle;
+  // resolve shortTitle
+  if ("shortTitle" in frontmatter)
+    page.routeMeta[ArticleInfoType.shortTitle] = frontmatter.shortTitle;
 
-    if (plugins.blog) {
-      const isArticle =
-        // declaring this is an article
-        frontmatter.article ||
-        // generated from markdown files
-        Boolean(frontmatter.article !== false && filePathRelative);
-      const isEncrypted = Object.keys(config).some((key) =>
-        decodeURI(path).startsWith(key)
-      );
-      const isSlide = isArticle && frontmatter.layout === "Slide";
+  if (plugins.blog) {
+    const isArticle =
+      // declaring this is an article
+      frontmatter.article ||
+      // generated from markdown files
+      Boolean(frontmatter.article !== false && filePathRelative);
+    const isEncrypted = Object.keys(config).some((key) =>
+      decodeURI(path).startsWith(key)
+    );
+    const isSlide = isArticle && frontmatter.layout === "Slide";
 
-      // save page type to routeMeta
-      page.routeMeta[ArticleInfoType.type] = frontmatter.home
-        ? PageType.home
-        : isSlide
-        ? PageType.slide
-        : isArticle
-        ? PageType.article
-        : PageType.page;
+    // save page type to routeMeta
+    page.routeMeta[ArticleInfoType.type] = frontmatter.home
+      ? PageType.home
+      : isSlide
+      ? PageType.slide
+      : isArticle
+      ? PageType.article
+      : PageType.page;
 
+    // resolve author
+    if ("author" in frontmatter)
+      page.routeMeta[ArticleInfoType.author] = frontmatter.author;
+
+    // resolve date
+    if ("date" in frontmatter) {
+      const date = getDate(page.frontmatter.date)?.value;
+
+      if (date) {
+        page.routeMeta[ArticleInfoType.date] = frontmatter.date;
+
+        page.routeMeta[ArticleInfoType.localizedDate] = timeTransformer(date, {
+          lang: page.lang,
+          type: "date",
+        });
+      }
+    } else if (createdTime)
+      page.routeMeta[ArticleInfoType.date] = new Date(createdTime);
+
+    if ("category" in frontmatter)
+      // resolve category
+      // resolve category
+      page.routeMeta[ArticleInfoType.category] = frontmatter.category;
+
+    // resolve tag
+    if ("tag" in frontmatter)
+      page.routeMeta[ArticleInfoType.tag] = frontmatter.tag;
+
+    // resolve sticky
+    if ("sticky" in frontmatter)
+      page.routeMeta[ArticleInfoType.sticky] = frontmatter.sticky;
+
+    // resolve image
+    if ("cover" in frontmatter)
+      page.routeMeta[ArticleInfoType.cover] = frontmatter.cover;
+
+    // ensure a valid reading time exists
+    if (page.data.readingTime && page.data.readingTime.words !== 0 && hotReload)
+      page.routeMeta[ArticleInfoType.readingTime] = page.data.readingTime;
+
+    // resolve isOriginal
+    if ("isOriginal" in frontmatter)
+      page.routeMeta[ArticleInfoType.isOriginal] = frontmatter.isOriginal;
+
+    // resolve encrypted
+    if (isEncrypted) page.routeMeta[ArticleInfoType.isEncrypted] = true;
+
+    // excerpt and reading-time is sensitive with markdown contents
+    // to improve hmr speed, we only ensure this with `hotReload` enabled.
+    if (hotReload) {
       const excerpt = isEncrypted
         ? ""
         : frontmatter.excerpt ||
@@ -91,56 +140,6 @@ export const extendsPage = (
 
       // save page excerpt to routeMeta
       if (excerpt) page.routeMeta[ArticleInfoType.excerpt] = excerpt;
-
-      // resolve author
-      if ("author" in frontmatter)
-        page.routeMeta[ArticleInfoType.author] = frontmatter.author;
-
-      // resolve date
-      if ("date" in frontmatter) {
-        const date = getDate(page.frontmatter.date)?.value;
-
-        if (date) {
-          page.routeMeta[ArticleInfoType.date] = frontmatter.date;
-
-          page.routeMeta[ArticleInfoType.localizedDate] = timeTransformer(
-            date,
-            {
-              lang: page.lang,
-              type: "date",
-            }
-          );
-        }
-      } else if (createdTime)
-        page.routeMeta[ArticleInfoType.date] = new Date(createdTime);
-
-      if ("category" in frontmatter)
-        // resolve category
-        // resolve category
-        page.routeMeta[ArticleInfoType.category] = frontmatter.category;
-
-      // resolve tag
-      if ("tag" in frontmatter)
-        page.routeMeta[ArticleInfoType.tag] = frontmatter.tag;
-
-      // resolve sticky
-      if ("sticky" in frontmatter)
-        page.routeMeta[ArticleInfoType.sticky] = frontmatter.sticky;
-
-      // resolve image
-      if ("cover" in frontmatter)
-        page.routeMeta[ArticleInfoType.cover] = frontmatter.cover;
-
-      // ensure a valid reading time exists
-      if (page.data.readingTime && page.data.readingTime.words !== 0)
-        page.routeMeta[ArticleInfoType.readingTime] = page.data.readingTime;
-
-      // resolve isOriginal
-      if ("isOriginal" in frontmatter)
-        page.routeMeta[ArticleInfoType.isOriginal] = frontmatter.isOriginal;
-
-      // resolve encrypted
-      if (isEncrypted) page.routeMeta[ArticleInfoType.isEncrypted] = true;
     }
   }
 };

@@ -54,8 +54,6 @@ export const hopeTheme =
     const themeConfig = getThemeConfig(app, themeOptions, status);
     const icons = status.enableBlog ? checkSocialMediaIcons(themeConfig) : {};
 
-    const isAppInitialized = false;
-
     usePlugin(app, plugins);
 
     if (isDebug) console.log("Theme plugin options:", plugins);
@@ -83,12 +81,7 @@ export const hopeTheme =
 
         checkFrontmatter(page, app.env.isDebug);
 
-        extendsPage(
-          themeConfig,
-          plugins,
-          <Page<ThemePageData>>page,
-          isAppInitialized
-        );
+        extendsPage(themeConfig, plugins, <Page<ThemePageData>>page, hotReload);
       },
 
       onPrepared: (): Promise<void> =>
