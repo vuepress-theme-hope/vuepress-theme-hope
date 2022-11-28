@@ -1,6 +1,6 @@
-# vuepress-plugin-theme Demo
+# vuepress-theme-hope Blog Demo
 
-This is a demo and test for `vuepress-theme-hope`.
+This is a blog demo and test for `vuepress-theme-hope`.
 
 You can use this demo directly via:
 
