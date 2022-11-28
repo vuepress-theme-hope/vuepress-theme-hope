@@ -130,7 +130,7 @@ category:
 
 ### weiser's blog
 
-- [网站链接](https://weiser.fun)
+- [网站链接][weiser-blog]
 - [源码地址](https://github.com/xwzbupt/personal-site)
 
 ## 更多
