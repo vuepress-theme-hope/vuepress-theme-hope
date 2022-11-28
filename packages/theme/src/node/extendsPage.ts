@@ -168,14 +168,18 @@ export const extendsPage = (
       ? ""
       : frontmatter.excerpt ||
         page.excerpt ||
-        frontmatter.description ||
+        // special handle auto generated description by seo2 plugin
+        (page.data.autoDesc ? "" : frontmatter.description) ||
+        // handle autoExcerpt option
         (typeof plugins.blog === "object" && plugins.blog.autoExcerpt
-          ? md2text(
-              matter(page.content)
-                .content.trim()
-                // remove first heading1 as title
-                .replace(/^# (.*)$/gm, "")
-            ).slice(0, 180)
+          ? page.data.autoDesc
+            ? frontmatter.description
+            : md2text(
+                matter(page.content)
+                  .content.trim()
+                  // remove first heading1 as title
+                  .replace(/^# (.*)$/gm, "")
+              ).slice(0, 180)
           : "");
 
     // save page excerpt to routeMeta
