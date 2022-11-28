@@ -7,6 +7,7 @@
   margin: 0 auto 1.25rem;
 
   text-align: left;
+  word-break: break-word;
 
   @media (max-width: hope-config.$pad) {
     margin: 0 auto 1rem;

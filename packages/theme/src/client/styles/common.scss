@@ -133,28 +133,3 @@
     }
   }
 }
-
-#{hope-config.$content-class} {
-  &.custom {
-    margin: 0;
-    padding: 0;
-
-    img {
-      max-width: 100%;
-    }
-  }
-
-  &:not(.custom) {
-    @include wrapper.wrapper;
-
-    padding-top: 0;
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    img {
-      max-width: 100%;
-    }
-  }
-}
