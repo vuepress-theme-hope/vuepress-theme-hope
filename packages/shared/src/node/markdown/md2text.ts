@@ -9,6 +9,8 @@ const removals: string | RegExp[] = [
   /^[-*]{3,}$/gm,
   // footnotes
   /\[\^.+?\](: .*?$)?/gm,
+  // toc
+  /^[[toc]]$/gm,
 ];
 
 const replacers: [string | RegExp, string][] = [
