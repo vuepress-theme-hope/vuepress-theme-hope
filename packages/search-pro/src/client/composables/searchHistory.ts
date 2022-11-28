@@ -25,7 +25,7 @@ export const useSearchHistory = (): SearchHistory => {
       ];
   };
 
-  const removeHistory = (index: number) => {
+  const removeHistory = (index: number): void => {
     searchProStorage.value = [
       ...searchProStorage.value.slice(0, index),
       ...searchProStorage.value.slice(index + 1),
