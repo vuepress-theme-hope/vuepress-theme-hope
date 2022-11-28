@@ -63,6 +63,19 @@ export interface FeatureOptions {
    * 加密配置
    */
   encrypt?: EncryptOptions;
+
+  /**
+   * Whether enable hotReload for features that requires app to restart
+   *
+   * @description These features includes blog support and structure sidebar feature
+   *
+   * 是否为需要重启整个 app 的功能启用热更新
+   *
+   * @description 这些功能包括博客支持和结构侧边栏功能
+   *
+   * @default app.env.isDebug
+   */
+  hotReload?: boolean;
 }
 
 export interface FeatureConfig {
