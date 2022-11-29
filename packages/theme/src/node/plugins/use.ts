@@ -8,7 +8,11 @@ import type { PluginsOptions } from "../../shared/index.js";
 
 const __dirname = getDirname(import.meta.url);
 
-export const usePlugin = (app: App, plugins: PluginsOptions): void => {
+export const usePlugin = (
+  app: App,
+  plugins: PluginsOptions,
+  hotReload = false
+): void => {
   // respect git options
   if ("git" in plugins)
     useGitPlugin(
@@ -24,7 +28,7 @@ export const usePlugin = (app: App, plugins: PluginsOptions): void => {
         : {}
     );
   // only use git plugin in production or debug mode
-  else if (app.env.isDebug || app.env.isBuild)
+  else if (hotReload || app.env.isBuild)
     useGitPlugin(app, {
       createdTime: true,
       contributors: true,

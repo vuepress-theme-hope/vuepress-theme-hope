@@ -28,17 +28,12 @@ tag:
 
 :::
 
-::: warning Примечания по использованию
+::: warning Limitations
 
-Поскольку время последнего обновления основано на `git`, вы можете включить его только в проекте на основе `git`. Кроме того, поскольку временная метка используется из коммита git, она будет отображаться только после первого коммита на данной странице и будет обновляться только при изменении последующих коммитов на эту страницу.
+1. Since the contributors, last update time, and file creation time information are based on `git`, you can only enable it in a `git` based project.
+1. Since related information are from git commits, they will only be displayed after the first commit for a given page, and will only be updated when some commits change that page.
 
-:::
-
-::: danger Недоступно на сервере разработки
-
-Поскольку плагин `git` оказывает серьезное влияние на производительность, тема по умолчанию не включает его на сервере разработки.
-
-Если вам нужна эта информация, установите `plugins.git: true` в настройках темы или добавьте флаг `--debug` для запуска команды dev.
+1. Since the `git` plugin needs to call Git binary and involves file IO, this function will seriously affect the startup and hot update speed, so by default **theme will not be enabled in devServer**. Set `plugins.git: true` or `hotReload: true` in theme options if needed.
 
 :::
 

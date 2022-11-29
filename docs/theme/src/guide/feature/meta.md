@@ -28,17 +28,12 @@ The theme will use `Date.toLocaleString(pageLang)` to automatically localize the
 
 :::
 
-::: warning Usage Notes
+::: warning Limitations
 
-Since the last update time is `git` based, you can only enable it in a `git` based project. Also, since the timestamp used is from a git commit, it will only be displayed after the first commit on a given page, and will only be updated when subsequent commits change to that page.
+1. Since the contributors, last update time, and file creation time information are based on `git`, you can only enable it in a `git` based project.
+1. Since related information are from git commits, they will only be displayed after the first commit for a given page, and will only be updated when some commits change that page.
 
-:::
-
-::: danger Not available in dev server
-
-Since the `git` plugin has a serious performance impact, the theme will not enable it in dev server by default.
-
-If you need those info, please set `plugins.git: true` in theme options, or add the `--debug` flag to run dev command.
+1. Since the `git` plugin needs to call Git binary and involves file IO, this function will seriously affect the startup and hot update speed, so by default **theme will not be enabled in devServer**. Set `plugins.git: true` or `hotReload: true` in theme options if needed.
 
 :::
 
