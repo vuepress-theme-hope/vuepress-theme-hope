@@ -255,7 +255,7 @@ tag:
 
 I18n конфиг темы, где можно задать параметры для каждого языка отдельно.
 
-### hotReload
+## hotReload
 
 - Type: `boolean`
 - Default: Whether using `--debug` flag
