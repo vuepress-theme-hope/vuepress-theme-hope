@@ -1,62 +1,73 @@
 export type Word = [tag: string, content: string] | string;
 
+const maxLength = 100;
+const suffixLength = 20;
+
 export const getMatchedContent = (
   content: string,
   queryString: string
 ): Word[] | null => {
-  const result: Word[] = [];
-  let start = 0;
-  let totalLength = 0;
-
   const contentLowerCase = content.toLowerCase();
   const queryStringLowerCase = queryString.toLowerCase();
+  const result: Word[] = [];
 
-  let matchIndex = contentLowerCase.indexOf(queryStringLowerCase, start);
+  let startIndex = 0;
+  let contentLength = 0;
 
-  const append = (content: string, matched: boolean): void => {
-    let appendContent = content;
-    let needEllipsis = false;
+  const addResult = (content: string, isEnd = false) => {
+    let text = "";
 
     // a beginning of a long string
-    if (!matched && appendContent.length > 100 && totalLength === 0)
-      appendContent = `… ${appendContent.slice(-10)}`;
+    if (contentLength === 0)
+      text =
+        content.length > suffixLength
+          ? `… ${content.slice(-suffixLength)}`
+          : content;
+    // already the last text
+    else if (isEnd)
+      text =
+        // if the string will be longer than maxLength
+        content.length + contentLength > maxLength
+          ? `${content.slice(0, maxLength - contentLength)}… `
+          : content;
+    // text is at the middle
+    else
+      text =
+        content.length > suffixLength
+          ? `${content.slice(0, suffixLength)} … ${content.slice(
+              -suffixLength
+            )}`
+          : content;
 
-    // if the string will be longer than 100
-    if (totalLength + appendContent.length > 100) {
-      // already found something matches
-      if (result.some((word) => word[0] === "strong")) return;
+    if (text) result.push(text);
+    contentLength += text.length;
 
-      // cut the string
-      appendContent = appendContent.slice(0, Math.max(100 - totalLength, 1));
-      needEllipsis = true;
-    }
+    if (!isEnd) {
+      result.push(["strong", queryString]);
+      contentLength += queryString.length;
 
-    // add str
-    if (appendContent.length) {
-      result.push(matched ? ["strong", appendContent] : appendContent);
-      totalLength += appendContent.length;
-    }
-
-    if (needEllipsis) {
-      result.push("…");
-      totalLength += 2;
+      if (contentLength >= maxLength) result.push(" …");
     }
   };
 
-  if (matchIndex < 0) return null;
+  let matchIndex = contentLowerCase.indexOf(queryStringLowerCase, startIndex);
+
+  if (matchIndex === -1) return null;
 
   while (matchIndex >= 0) {
-    const end = matchIndex + queryStringLowerCase.length;
+    const endIndex = matchIndex + queryStringLowerCase.length;
 
-    append(content.slice(start, matchIndex), false);
-    append(content.slice(matchIndex, end), true);
+    // append content before
+    addResult(content.slice(startIndex, matchIndex));
 
-    start = end;
-    matchIndex = contentLowerCase.indexOf(queryStringLowerCase, start);
-    if (totalLength > 100) break;
+    startIndex = endIndex;
+
+    if (contentLength > maxLength) break;
+
+    matchIndex = contentLowerCase.indexOf(queryStringLowerCase, startIndex);
   }
 
-  append(content.slice(start), false);
+  if (contentLength < maxLength) addResult(content.slice(startIndex), true);
 
   return result;
 };
