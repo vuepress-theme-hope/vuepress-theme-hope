@@ -14,7 +14,7 @@ export const getMatchedContent = (
   let startIndex = 0;
   let contentLength = 0;
 
-  const addResult = (content: string, isEnd = false) => {
+  const addResult = (content: string, isEnd = false): void => {
     let text = "";
 
     // a beginning of a long string
