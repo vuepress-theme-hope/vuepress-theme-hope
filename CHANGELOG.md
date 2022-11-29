@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.131](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.130...v2.0.0-beta.131) (2022-11-29)
+
+### Features
+
+- **components:** add notice component ([d28b658](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d28b65870d1be89c5f9f1a5041b5bce827beb211))
+- **photo-swipe:** improve selector option and cursor style ([ee2fc79](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ee2fc793025170d2603ac48c6a8c4d0b25beac6b))
+- **seo2:** mark auto-generated description ([2d8832b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2d8832b47f227477f6e3203d48e3f6467a5bc138))
+- **theme:** add hotReload ([3afa961](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3afa961f8ebfc039fb52a51e5e05e4402bd0f3c4))
+
+### Bug Fixes
+
+- **comment2:** fix waline theme color ([3c410af](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3c410af8b9cf4312452aded31f9581f6dfa71139))
+- **comment2:** loose waline selector ([1b9169b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1b9169bfe0fad129b89fcfcbe12a976857acd22c))
+- **create:** fix package command ([4197c96](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4197c967b30e2b5485e7c996cd82970631598688))
+- **search-pro:** fix issue when removing history item ([a349c4d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a349c4d476320d46bef633d53436d79ac690ddf2))
+- **search-pro:** fix mask animation ([5e067e6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5e067e6aae4da22f984907e2468026f394024f00))
+- **search-pro:** fix match content ([4fea9c3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4fea9c38d6731c88b2a4411b20f1cd000116d8ee))
+- **search-pro:** fix search history header style ([7458e94](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7458e941a4a7f323af58f08696797c4bdf340868))
+- **search-pro:** omit h1 as header ([fb33028](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fb33028b6cd89f2ba4afb03b621f9b7c81374633))
+- **shared:** fix code blocks issue in md2text ([1dbe7e4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1dbe7e4b0df0f54a7948e5dcb2460b6628ac1743))
+- **shared:** m2text should remove directive ([0906176](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/090617675eeb34316a33d4e8ad3b943b75316ea6))
+- **shared:** m2text should remove toc ([612db75](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/612db75d836a0b2c83a8478e37e5cc3b9f1fd823))
+- **theme:** fix autoExcerpt ([b9cb818](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b9cb818d3446c548a9ffb3d26810cca7f4f61c44))
+- **theme:** fix theme style, fix [#2453](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2453) ([ea84519](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ea84519411e9555e32a9acd459c28c7b203c9ca4))
+
 ## [2.0.0-beta.130](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.129...v2.0.0-beta.130) (2022-11-25)
 
 ### Features
