@@ -1,5 +1,5 @@
 import type { LocaleConfig } from "@vuepress/core";
-import type { BackToTopLocaleData } from "../shared/index.js";
+import type { BackToTopLocaleData, NoticeOptions } from "../shared/index.js";
 
 export type AvailableComponent =
   | "Badge"
@@ -73,4 +73,11 @@ export interface ComponentOptions {
    * @default ''
    */
   iconPrefix?: string;
+
+  /**
+   * Global notice config
+   *
+   * 全局通知配置
+   */
+  notice?: NoticeOptions;
 }

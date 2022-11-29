@@ -4,6 +4,8 @@
 
 - BackToTop (Global Components)
 
+- Notice (Global Components)
+
 - [Badge](badge.md)
 
 - [BiliBili](bilibili.md)

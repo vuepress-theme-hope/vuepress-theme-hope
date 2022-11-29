@@ -12,7 +12,7 @@ For example, if you call this plugin with `{ backToTop: true }`, then only `<Bac
 
 :::
 
-This plugin can register 8 components and 2 global components:
+This plugin can register 8 components and 3 global components:
 
 - [AddThis](addthis.md) (Global Components)
 
@@ -25,6 +25,8 @@ This plugin can register 8 components and 2 global components:
 - [CodePen](codepen.md)
 
 - [FontIcon](fonticon.md)
+
+- [Notice](notice.md) (Global Components)
 
 - [PDF](pdf.md)
 

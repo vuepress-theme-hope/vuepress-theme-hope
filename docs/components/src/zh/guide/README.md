@@ -12,7 +12,7 @@ title: 指南
 
 :::
 
-此插件可以注册 8 个组件和 2 个全局组件:
+此插件可以注册 8 个组件和 3 个全局组件:
 
 - [AddThis](addthis.md) (全局组件)
 
@@ -25,6 +25,8 @@ title: 指南
 - [CodePen](codepen.md)
 
 - [FontIcon](fonticon.md)
+
+- [Notice](notice.md) (全局组件)
 
 - [PDF](pdf.md)
 

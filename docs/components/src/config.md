@@ -104,3 +104,82 @@ Link of font icon asset, `'iconfont'` and `'fontawesome'` keywords are supported
 - Default: Inferred from iconAssets
 
 Class prefix of font icon
+
+## notice
+
+- Type: `NoticeOptions`
+
+  ```ts
+  interface NoticeLocaleOptions {
+    /**
+     * Notice title
+     */
+    title: string;
+
+    /**
+     * Notice content
+     */
+    content: string;
+
+    /**
+     * Notice footer
+     */
+    actions: {
+      /**
+       * Action text
+       */
+      text: string;
+      /**
+       * Action link
+       */
+      link?: string;
+      /**
+       * Action type
+       *
+       * @default 'default
+       */
+      type?: "primary" | "default";
+    }[];
+  }
+
+  interface NoticeOptions {
+    /**
+     * Notice locales Options
+     */
+    locales: Record<string, NoticeLocaleOptions>;
+
+    /**
+     * Notice key
+     *
+     * @description Used to identify and store the notice status
+     */
+    key?: string;
+
+    /**
+     * Whether show notice only once or show it in every visit
+     *
+     * @description If `key` is not provided, this option will be ignored
+     *
+     * @default false
+     */
+    showOnce?: string;
+
+    /**
+     * Whether the user can close the notice
+     *
+     * @default true
+     */
+    canClose?: boolean;
+
+    /**
+     * Whether the notice should appear fullscreen
+     *
+     * @default false
+     */
+    fullscreen?: boolean;
+  }
+  ```
+
+- Required: No
+
+Config for global notice.

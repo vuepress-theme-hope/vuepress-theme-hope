@@ -117,6 +117,17 @@ import BackToTop from "${CLIENT_FOLDER}components/BackToTop.js";
 `;
   }
 
+  if (options.notice) {
+    shouldImportH = true;
+    configImport += `\
+import Notice from "${CLIENT_FOLDER}components/Notice.js";
+`;
+
+    rootComponents += `\
+() => h(Notice, ${JSON.stringify(options.notice)}),
+`;
+  }
+
   return app.writeTemp(
     `components/config.js`,
     `\

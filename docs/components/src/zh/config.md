@@ -104,3 +104,82 @@ AddThis 的公开 ID。
 - 默认值: 尝试从 iconAssets 推断
 
 字体图标的 Class 前缀
+
+## notice
+
+- Type: `NoticeOptions`
+
+  ```ts
+  interface NoticeLocaleOptions {
+    /**
+     * 通知标题
+     */
+    title: string;
+
+    /**
+     * 通知内容
+     */
+    content: string;
+
+    /**
+     * 通知操作
+     */
+    actions: {
+      /**
+       * 操作文字
+       */
+      text: string;
+      /**
+       * 操作链接
+       */
+      link?: string;
+      /**
+       * 操作类型
+       *
+       * @default 'default
+       */
+      type?: "primary" | "default";
+    }[];
+  }
+
+  interface NoticeOptions {
+    /**
+     * Notice 多语言选项
+     */
+    locales: Record<string, NoticeLocaleOptions>;
+
+    /**
+     * Notice 的 key
+     *
+     * @description 用于标识和存储 notice 的状态
+     */
+    key?: string;
+
+    /**
+     * 是否只显示一次通知
+     *
+     * @description 如果没有提供 `key`，此选项将被忽略
+     *
+     * @default false
+     */
+    showOnce?: string;
+
+    /**
+     * 用户是否可以关闭通知
+     *
+     * @default true
+     */
+    canClose?: boolean;
+
+    /**
+     * 通知是否应该全屏显示
+     *
+     * @default false
+     */
+    fullscreen?: boolean;
+  }
+  ```
+
+- 必填: 否
+
+全局通知的配置

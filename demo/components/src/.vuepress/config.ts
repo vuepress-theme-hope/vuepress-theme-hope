@@ -49,6 +49,23 @@ export default defineUserConfig({
         "YouTube",
       ],
       iconAssets: "iconfont",
+      notice: {
+        locales: {
+          "/": {
+            title: "Notice Title",
+            content: "Notice Content",
+            actions: [
+              {
+                text: "Primary Action",
+                link: "https://vuepress-theme-hope.github.io/",
+                type: "primary",
+              },
+              { text: "Default Action" },
+            ],
+          },
+        },
+        fullscreen: true,
+      },
     }),
   ],
 });

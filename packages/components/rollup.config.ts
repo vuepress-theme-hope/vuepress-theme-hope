@@ -37,6 +37,10 @@ export default [
     external: ["vue", /\.scss$/],
     dtsExternal: [/\.scss$/],
   }),
+  ...rollupTypescript("client/components/Notice", {
+    external: ["vue", "vue-router", "vuepress-shared/client", /\.scss$/],
+    dtsExternal: [/\.scss$/],
+  }),
   ...rollupTypescript("client/components/PDF", {
     external: [
       "@vuepress/client",
