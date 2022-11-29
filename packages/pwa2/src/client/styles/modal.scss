@@ -22,7 +22,7 @@
   }
 }
 
-@keyframes pwa-fadein {
+@keyframes pwa-fade-in {
   from {
     opacity: 0.2;
   }
@@ -90,7 +90,7 @@
     left: 0;
     z-index: 998;
 
-    animation: 0.25s pwa-fadein;
+    animation: 0.25s pwa-fade-in;
 
     backdrop-filter: blur(10px);
   }
