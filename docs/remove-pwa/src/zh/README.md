@@ -52,11 +52,11 @@ npm i -D vuepress-plugin-remove-pwa@next
 
 ```ts
 // .vuepress/config.ts
-import { pwaPlugin } from "vuepress-plugin-remove-pwa";
+import { removePWAPlugin } from "vuepress-plugin-remove-pwa";
 
 export default {
   plugins: [
-    pwaPlugin({
+    removePWAPlugin({
       // 你的选项
     }),
   ],
@@ -67,11 +67,11 @@ export default {
 
 ```js
 // .vuepress/config.js
-import { pwaPlugin } from "vuepress-plugin-remove-pwa";
+import { removePWAPlugin } from "vuepress-plugin-remove-pwa";
 
 export default {
   plugins: [
-    pwaPlugin({
+    removePWAPlugin({
       // 你的选项
     }),
   ],
