@@ -43,7 +43,7 @@ Stackblitz component radio, ONLY valid when `height` not set.
 
 The default file to have open in the editor.
 
-### initialpath
+### initialPath
 
 - Type: `string`
 - Required: No

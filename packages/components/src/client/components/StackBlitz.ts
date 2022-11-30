@@ -68,7 +68,7 @@ export default defineComponent({
      *
      * 预览的初始 URL 路径
      */
-    initialpath: {
+    initialPath: {
       type: String,
       default: "",
     },
@@ -135,8 +135,8 @@ export default defineComponent({
         src: `https://stackblitz.com/edit/${props.id}?embed=${
           props.embed ? 1 : 0
         }${props.file ? `&file=${props.file}` : ""}${
-          props.initialpath
-            ? `&initialpath=${encodeURI(props.initialpath)}`
+          props.initialPath
+            ? `&initialpath=${encodeURI(props.initialPath)}`
             : ""
         }&ctl=${props.clickToLoad ? 1 : 0}&view=${props.view}${
           props.hideExplorer ? "&hideExplorer=1" : ""

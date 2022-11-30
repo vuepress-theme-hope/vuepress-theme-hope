@@ -43,7 +43,7 @@ StackBlitz 组件高度宽高比，只有当未指定 `height` 时有效。
 
 在编辑器中打开的默认文件。
 
-### initialpath
+### initialPath
 
 - 类型: `string`
 - 必填: 否
