@@ -32,16 +32,6 @@ export default defineComponent({
     },
 
     /**
-     * Whether show notice only showOnce
-     *
-     * 是否仅展示一次通知
-     */
-    showOnce: {
-      type: Boolean,
-      default: false,
-    },
-
-    /**
      * Notice key
      *
      * 通知 key
@@ -52,24 +42,25 @@ export default defineComponent({
     },
 
     /**
-     * Whether the notice is closable
+     * Whether show notice only showOnce
      *
-     * 通知是否可关闭
+     * 是否仅展示一次通知
      */
-    canClose: {
-      type: Boolean,
-      default: true,
-    },
+    showOnce: Boolean,
+
+    /**
+     * Whether the notice shall be confirmed
+     *
+     * 通知是否需要确认
+     */
+    confirm: Boolean,
 
     /**
      * Whether display notice fullscreen
      *
      * 是否全屏显示通知
      */
-    fullscreen: {
-      type: Boolean,
-      default: false,
-    },
+    fullscreen: Boolean,
   },
 
   setup(props) {
@@ -117,7 +108,7 @@ export default defineComponent({
                     key: "mask",
                     class: "notice-mask",
                     onClick: () => {
-                      if (props.canClose !== false) close();
+                      if (!props.confirm) close();
                     },
                   })
                 : null,
@@ -130,7 +121,7 @@ export default defineComponent({
                 [
                   h("header", { class: "notice-title" }, [
                     h("span", { innerHTML: locale.value.title }),
-                    props.canClose === false
+                    props.confirm
                       ? null
                       : h(CloseIcon, { onClick: (): void => close() }),
                   ]),

@@ -88,13 +88,13 @@ export default {
 
 默认情况下，通知右侧会有一个关闭按钮，用户可以点击关闭。
 
-但是，如果您希望用户确认通知，您可以设置 `notice.canClose: false` 并设置一个只有文本的确认操作，这样用户只能通过点击确认按钮来关闭通知。
+但是，如果您希望用户确认通知，您可以设置 `notice.confirm: true`，这样用户只能通过点击操作按钮来关闭通知。
 
 :::
 
 ::: info 全屏
 
-如果要显示全屏弹出窗口，可以在插件选项中使用 `notice.fullscreen: true`。我们建议您将它与 `notice.canClose: false` 一起使用。
+如果要显示全屏弹出窗口，可以在插件选项中使用 `notice.fullscreen: true`。我们建议您将它与 `notice.confirm: true` 一起使用。
 
 通知将显示在屏幕中央，其他地方将被模糊遮罩覆盖。
 

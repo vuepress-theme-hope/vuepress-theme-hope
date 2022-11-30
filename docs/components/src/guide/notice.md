@@ -88,13 +88,13 @@ Also, notice remembering is based on notice title and notice content, you can se
 
 By default, there will be a close button on the right of notice, and users can close it by clicking it.
 
-However if you want users to confirm the notice, you can set `notice.canClose: false` and set a confirm action with only text, so that users can only close the notice by hitting the confirm button.
+However if you want users to confirm the notice, you can set `notice.confirm: true`, so that users can only close the notice by hitting action buttons.
 
 :::
 
 ::: info Fullscreen
 
-If you want to display a fullscreen popup, you can use `notice.fullscreen: true` in plugin options. We recommend you to use this together with `notice.canClose: false`.
+If you want to display a fullscreen popup, you can use `notice.fullscreen: true` in plugin options. We recommend you to use this together with `notice.confirm: true`.
 
 The notice will display in the center of screen, and the other places will be covered by a blur mask.
 

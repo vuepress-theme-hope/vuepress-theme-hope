@@ -75,13 +75,13 @@ export interface NoticeOptions {
   showOnce?: string;
 
   /**
-   * Whether the user can close the notice
+   * Whether the notice shall be confirmed
    *
-   * 用户是否可以关闭通知
+   * 通知是否需要确认
    *
-   * @default true
+   * @default false
    */
-  canClose?: boolean;
+  confirm?: boolean;
 
   /**
    * Whether the notice should appear fullscreen

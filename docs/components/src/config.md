@@ -165,11 +165,11 @@ Class prefix of font icon
     showOnce?: string;
 
     /**
-     * Whether the user can close the notice
+     * Whether the notice shall be confirmed
      *
      * @default true
      */
-    canClose?: boolean;
+    confirm?: boolean;
 
     /**
      * Whether the notice should appear fullscreen

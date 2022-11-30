@@ -165,11 +165,11 @@ AddThis 的公开 ID。
     showOnce?: string;
 
     /**
-     * 用户是否可以关闭通知
+     * 通知是否需要确认
      *
-     * @default true
+     * @default false
      */
-    canClose?: boolean;
+    confirm?: boolean;
 
     /**
      * 通知是否应该全屏显示
