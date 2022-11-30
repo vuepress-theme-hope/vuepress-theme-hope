@@ -33,6 +33,7 @@ export const getPluginConfig = (
     | "hotReload"
     | "iconAssets"
     | "iconPrefix"
+    | "notice"
   >,
   legacy = false
 ): PluginConfig => {

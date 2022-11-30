@@ -8,7 +8,13 @@ export const getComponentsPlugin = (
   components: AvailableComponent[] = ["Badge", "FontIcon"],
   options: Pick<
     ThemeOptions,
-    "addThis" | "backToTop" | "hostname" | "iconAssets" | "iconPrefix"
+    | "addThis"
+    | "backToTop"
+    | "hostname"
+    | "hotReload"
+    | "iconAssets"
+    | "iconPrefix"
+    | "notice"
   >
 ): Plugin =>
   componentsPlugin({
@@ -25,4 +31,5 @@ export const getComponentsPlugin = (
     ...(typeof options.iconPrefix === "string"
       ? { iconPrefix: options.iconPrefix }
       : {}),
+    ...(typeof options.notice === "object" ? { notice: options.notice } : {}),
   });

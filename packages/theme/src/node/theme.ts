@@ -43,6 +43,7 @@ export const hopeTheme =
       addThis,
       backToTop,
       sidebarSorter,
+      notice,
       ...themeOptions
     } = legacy
       ? convertThemeConfig(options as ThemeOptions & Record<string, unknown>)
@@ -125,6 +126,7 @@ export const hopeTheme =
           hotReload,
           iconAssets,
           iconPrefix,
+          notice,
         },
         legacy
       ),
