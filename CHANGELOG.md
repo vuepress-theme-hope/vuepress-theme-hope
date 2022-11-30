@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.132](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.131...v2.0.0-beta.132) (2022-11-30)
+
+### ⚠ BREAKING CHANGES
+
+- **components:** change embed default value, remove clickToLoad and add load props for StackBlitz
+- **components:** remove canClose and add confirm props for Notice
+- **components:** remove toolbar and add noToolbar for PDF
+- **components:** remove danmaku and highQuality, add lowQuality and noDanmaku
+- **components:** initialpath renamed as initialPath for Stackblitz component
+
+### Features
+
+- **components:** change embed default value, remove clickToLoad and add load props for StackBlitz ([e835bc8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e835bc85b68ea813ab4133372d17053bae65f36b))
+- **components:** initialpath renamed as initialPath for Stackblitz component ([b88352d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b88352d52708e3e9f50fbad52f55e537e11fdfb0))
+- **components:** remove canClose and add confirm props for Notice ([2a9e96e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2a9e96e53eec039da56e622b5c27eae96ecde309))
+- **components:** remove danmaku and highQuality, add lowQuality and noDanmaku ([09c9b5b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/09c9b5b1ba72032372b57122b6ca6b7d734dac12))
+- **components:** remove toolbar and add noToolbar for PDF ([1e7bafe](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1e7bafe7274cd03accf12ea1a8b3f711c039edbf))
+- **theme:** add notice option ([c0086f0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c0086f0eab66ac690a88adee8a24109bb106edbf))
+
+### Bug Fixes
+
+- **deps:** update dependency three to v0.147.0 ([#2466](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2466)) ([8a78073](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8a78073150af83d0b9419626f86dca0d9da681a1))
+- **redirect:** fix failure when redirecting from index.html ([af74119](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/af741196ef0293e5d457546e762d2e2ae77807ff))
+- **theme:** fix git plugin ([c1ce1a0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c1ce1a04a00485fa3b36f7a2c7df1a94cf8dccac))
+- **theme:** fix reactivity ([0aa3390](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0aa3390c72284c08478da99b3f21e24eddd306ee))
+
 ## [2.0.0-beta.131](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.130...v2.0.0-beta.131) (2022-11-29)
 
 ### Features
