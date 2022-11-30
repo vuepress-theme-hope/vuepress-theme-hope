@@ -29,9 +29,12 @@ export const generateHTML = async (
     (<Page<Record<string, never>, RedirectPluginFrontmatterOption>[]>pages)
       .map<[string, string][]>(({ frontmatter, path }) =>
         Array.isArray(frontmatter.redirectFrom)
-          ? frontmatter.redirectFrom.map((from) => [from, path])
+          ? frontmatter.redirectFrom.map((from) => [
+              from.replace(/\/$/, "/index.html"),
+              path,
+            ])
           : frontmatter.redirectFrom
-          ? [[frontmatter.redirectFrom, path]]
+          ? [[frontmatter.redirectFrom.replace(/\/$/, "/index.html"), path]]
           : []
       )
       .flat()
