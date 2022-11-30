@@ -1,5 +1,5 @@
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
-import { defineComponent, h, unref } from "vue";
+import { defineComponent, h } from "vue";
 
 import Icon from "@theme-hope/components/Icon.js";
 import PageInfo from "@theme-hope/modules/info/components/PageInfo.js";
@@ -20,7 +20,7 @@ export default defineComponent({
     const page = usePageData();
     const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();
     const themeLocale = useThemeLocaleData();
-    const { config, items } = usePageInfo();
+    const { info, items } = usePageInfo();
 
     return (): VNode =>
       h("div", { class: "page-title" }, [
@@ -31,7 +31,7 @@ export default defineComponent({
           page.value.title,
         ]),
         h(PageInfo, {
-          info: unref(config),
+          info: info.value,
           ...(items.value === null ? {} : { items: items.value }),
         }),
         h("hr"),

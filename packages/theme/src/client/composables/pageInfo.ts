@@ -1,5 +1,5 @@
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
-import { computed, inject, reactive } from "vue";
+import { computed, inject } from "vue";
 import {
   getAuthor,
   getCategory,
@@ -92,7 +92,7 @@ export const usePageDate = (): ComputedRef<DateInfo | null> => {
 };
 
 export const usePageInfo = (): {
-  config: PageInfoProps;
+  info: ComputedRef<PageInfoProps>;
   items: ComputedRef<PageInfo[] | false | null>;
 } => {
   const themeLocale = useThemeLocaleData();
@@ -107,7 +107,7 @@ export const usePageInfo = (): {
   const tag = usePageTag();
   const date = usePageDate();
 
-  const config = reactive<PageInfoProps>({
+  const info = computed<PageInfoProps>(() => ({
     author: author.value,
     category: category.value,
     date: date.value,
@@ -117,7 +117,7 @@ export const usePageInfo = (): {
     readingTime: page.value.readingTime || null,
     pageview:
       "pageview" in frontmatter.value ? frontmatter.value.pageview : true,
-  });
+  }));
 
   const items = computed(() =>
     "pageInfo" in frontmatter.value
@@ -127,5 +127,5 @@ export const usePageInfo = (): {
       : null
   );
 
-  return { config, items };
+  return { info, items };
 };

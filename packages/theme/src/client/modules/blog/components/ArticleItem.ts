@@ -1,5 +1,5 @@
 import { withBase } from "@vuepress/client";
-import { defineComponent, h, toRef, unref } from "vue";
+import { defineComponent, h, toRef } from "vue";
 import { RouterLink, useRouter } from "vue-router";
 
 import PageInfo from "@theme-hope/modules/info/components/PageInfo.js";
@@ -40,8 +40,8 @@ export default defineComponent({
 
   setup(props) {
     const router = useRouter();
-    const { info: config, items } = useArticleInfo(props);
     const info = toRef(props, "info");
+    const { info: articleInfo, items } = useArticleInfo(props);
 
     return (): VNode =>
       h(
@@ -86,7 +86,7 @@ export default defineComponent({
               : null,
             h("hr", { class: "hr" }),
             h(PageInfo, {
-              info: unref(config),
+              info: articleInfo.value,
               ...(items.value ? { items: items.value } : {}),
             }),
           ]

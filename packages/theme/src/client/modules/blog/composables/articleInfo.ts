@@ -1,4 +1,4 @@
-import { computed, reactive, toRef } from "vue";
+import { computed, toRef } from "vue";
 import {
   getAuthor,
   getCategory,
@@ -76,7 +76,7 @@ export const useArticleInfo = (props: {
   info: ArticleInfo;
   path: string;
 }): {
-  info: PageInfoProps;
+  info: ComputedRef<PageInfoProps>;
   items: ComputedRef<PageInfo[] | false | undefined>;
 } => {
   const articleInfo = toRef(props, "info");
@@ -86,7 +86,7 @@ export const useArticleInfo = (props: {
   const tag = useArticleTag(articleInfo);
   const date = useArticleDate(articleInfo);
 
-  const info = reactive<PageInfoProps>({
+  const info = computed(() => ({
     author: author.value,
     category: category.value,
     date: date.value,
@@ -95,7 +95,7 @@ export const useArticleInfo = (props: {
     isOriginal: articleInfo.value[ArticleInfoType.isOriginal] || false,
     readingTime: articleInfo.value[ArticleInfoType.readingTime] || null,
     pageview: props.path,
-  });
+  }));
 
   const items = computed(() => blogOptions.value.articleInfo);
 
