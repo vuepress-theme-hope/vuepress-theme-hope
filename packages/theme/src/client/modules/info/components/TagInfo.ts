@@ -1,6 +1,6 @@
 import { defineComponent, h } from "vue";
 import { useRoute, useRouter } from "vue-router";
-import { generateIndexfromHash } from "vuepress-shared/client";
+import { generateIndexFromHash } from "vuepress-shared/client";
 
 import { TagIcon } from "@theme-hope/modules/info/components/icons.js";
 import { useMetaLocale } from "@theme-hope/modules/info/composables/index.js";
@@ -16,11 +16,21 @@ export default defineComponent({
   inheritAttrs: false,
 
   props: {
+    /**
+     * Tag information
+     *
+     * 标签信息
+     */
     tag: {
       type: Array as PropType<PageTag[]>,
       default: () => [],
     },
 
+    /**
+     * Whether in pure mode
+     *
+     * 是否处于纯净模式
+     */
     pure: Boolean,
   },
 
@@ -59,7 +69,7 @@ export default defineComponent({
                           "tag",
                           {
                             // TODO: magic number 9 is tricky here
-                            [`tag${generateIndexfromHash(name, 9)}`]:
+                            [`tag${generateIndexFromHash(name, 9)}`]:
                               !props.pure,
                             clickable: path,
                           },

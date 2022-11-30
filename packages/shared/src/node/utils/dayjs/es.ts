@@ -39,6 +39,6 @@ const locale: Partial<Locale> = {
   ordinal: (n) => `${n}º`,
 };
 
-export const loadEsLocale = (extendeddayjs: typeof dayjs): void => {
-  extendeddayjs.locale("es", locale);
+export const loadEsLocale = (extendedDayjs: typeof dayjs): void => {
+  extendedDayjs.locale("es", locale);
 };

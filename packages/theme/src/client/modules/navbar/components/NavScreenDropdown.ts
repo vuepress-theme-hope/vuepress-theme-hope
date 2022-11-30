@@ -16,6 +16,11 @@ export default defineComponent({
   name: "NavScreenDropdown",
 
   props: {
+    /**
+     * Navbar Screen Dropdown list config
+     *
+     * 导航栏下拉列表配置
+     */
     config: {
       type: Object as PropType<NavGroup<AutoLinkType | NavGroup<AutoLinkType>>>,
       required: true,

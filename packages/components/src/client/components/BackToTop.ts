@@ -15,7 +15,15 @@ export default defineComponent({
   name: "BackToTop",
 
   props: {
-    threshold: { type: Number, default: 300 },
+    /**
+     * Threshold distance in pixels to display the button
+     *
+     * 显示按钮的阈值距离，单位为像素
+     */
+    threshold: {
+      type: Number,
+      default: 300,
+    },
   },
 
   setup(props) {

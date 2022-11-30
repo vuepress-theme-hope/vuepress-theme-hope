@@ -44,6 +44,6 @@ const locale: Partial<Locale> = {
   },
 };
 
-export const loadViLocale = (extendeddayjs: typeof dayjs): void => {
-  extendeddayjs.locale("vi", locale);
+export const loadViLocale = (extendedDayjs: typeof dayjs): void => {
+  extendedDayjs.locale("vi", locale);
 };

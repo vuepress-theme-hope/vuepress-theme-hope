@@ -4,7 +4,7 @@ import type { ManifestOption } from "../shared/index.js";
 const appendBaseHelper = (base: string, link: string): string =>
   link.startsWith("/") ? link.replace(/^\//, base) : link;
 
-export const appendBasetoManifest = (
+export const appendBaseToManifest = (
   base: string,
   manifest: ManifestOption
 ): ManifestOption => {
@@ -50,5 +50,5 @@ export const appendBase = (base: string, options: PWAOptions): void => {
     options.msTile.image = appendBaseHelper(base, options.msTile.image);
 
   if (options.manifest)
-    options.manifest = appendBasetoManifest(base, options.manifest);
+    options.manifest = appendBaseToManifest(base, options.manifest);
 };

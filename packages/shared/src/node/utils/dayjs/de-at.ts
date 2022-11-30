@@ -80,6 +80,6 @@ const locale: Partial<Locale> = {
   },
 };
 
-export const loadDeAtLocale = (extendeddayjs: typeof dayjs): void => {
-  extendeddayjs.locale("de-at", locale);
+export const loadDeAtLocale = (extendedDayjs: typeof dayjs): void => {
+  extendedDayjs.locale("de-at", locale);
 };

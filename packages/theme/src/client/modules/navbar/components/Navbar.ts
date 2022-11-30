@@ -27,7 +27,7 @@ declare const HAS_MULTIPLE_LANGUAGES: boolean;
 export default defineComponent({
   name: "NavBar",
 
-  emits: ["toggle-sidebar"],
+  emits: ["toggleSidebar"],
 
   setup(_props, { emit, slots }) {
     const themeLocale = useThemeLocaleData();
@@ -89,7 +89,7 @@ export default defineComponent({
               h(ToggleSidebarButton, {
                 onToggle: () => {
                   if (showScreen.value) showScreen.value = false;
-                  emit("toggle-sidebar");
+                  emit("toggleSidebar");
                 },
               }),
               slots["leftStart"]?.(),
@@ -120,7 +120,7 @@ export default defineComponent({
         h(
           NavScreen,
           {
-            active: showScreen.value,
+            show: showScreen.value,
             onClose: () => {
               showScreen.value = false;
             },

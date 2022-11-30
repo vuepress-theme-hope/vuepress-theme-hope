@@ -14,6 +14,11 @@ export default defineComponent({
   name: "SidebarLinks",
 
   props: {
+    /**
+     * Sidebar links config
+     *
+     * 侧边栏链接配置
+     */
     config: {
       type: Array as PropType<ResolvedSidebarItem[]>,
       required: true,

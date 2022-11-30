@@ -18,6 +18,11 @@ export default defineComponent({
   name: "SidebarChild",
 
   props: {
+    /**
+     * Sidebar item config
+     *
+     * 侧边栏项目配置
+     */
     config: {
       type: Object as PropType<
         ResolvedSidebarPageItem | ResolvedSidebarHeaderItem

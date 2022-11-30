@@ -14,11 +14,21 @@ export default defineComponent({
   inheritAttrs: false,
 
   props: {
+    /**
+     * Reading time information
+     *
+     * 阅读时间信息
+     */
     readingTime: {
       type: Object as PropType<ReadingTime | null>,
       default: () => null,
     },
 
+    /**
+     * Whether in pure mode
+     *
+     * 是否处于纯净模式
+     */
     pure: Boolean,
   },
 

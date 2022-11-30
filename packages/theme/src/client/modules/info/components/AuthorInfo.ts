@@ -12,11 +12,21 @@ export default defineComponent({
   inheritAttrs: false,
 
   props: {
+    /**
+     * Author information
+     *
+     * 作者信息
+     */
     author: {
       type: Array as PropType<AuthorInfo[]>,
       required: true,
     },
 
+    /**
+     * Whether in pure mode
+     *
+     * 是否处于纯净模式
+     */
     pure: Boolean,
   },
 

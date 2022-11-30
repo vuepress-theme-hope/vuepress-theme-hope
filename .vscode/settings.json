@@ -2,6 +2,7 @@
   "cSpell.language": "en,ru",
   "cSpell.words": [
     // words
+    "atou",
     "ascendingly",
     "blockquotes",
     "changefreq",
@@ -27,6 +28,8 @@
     "transpiling",
     "trackpad",
     "unexist",
+    "unzip",
+    "utoa",
     "webp",
 
     // name
@@ -36,12 +39,17 @@
     "codepen",
     "commitlint",
     "corepack",
+    "danmaku",
     "demi",
     "dingding",
     "dribbble",
+    "docsearch",
+    "echarts",
     "esbuild",
     "evernote",
     "execa",
+    "fflate",
+    "fontawesome",
     "flipboard",
     "giscus",
     "gitee",
@@ -54,6 +62,7 @@
     "livescript",
     "mailchimp",
     "mathjax",
+    "npmmirror",
     "nprogress",
     "pandoc",
     "photoswipe",
@@ -65,6 +74,7 @@
     "recaptcha",
     "shiki",
     "stackblitz",
+    "striptags",
     "styl",
     "stylelint",
     "tencent",
@@ -85,9 +95,6 @@
     "codetab",
     "codetabs",
     "cond",
-    "docsearch",
-    "echarts",
-    "fontawesome",
     "inputoutput",
     "mindmap",
     "slidestart",
@@ -95,6 +102,14 @@
     "rgba",
     "tasklist",
     "typeof",
+
+    // html attributes
+    "crossorigin",
+    "noopener",
+    "noreferrer",
+    "websub",
+    "tabindex",
+
     // tex command
     "bigg",
     "biggl",

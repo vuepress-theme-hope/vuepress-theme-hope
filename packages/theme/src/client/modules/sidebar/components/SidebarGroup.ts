@@ -14,11 +14,25 @@ export default defineComponent({
   name: "SidebarGroup",
 
   props: {
+    /**
+     * Sidebar group item config
+     *
+     * 侧边栏分组配置
+     */
     config: {
       type: Object as PropType<ResolvedSidebarGroupItem>,
       required: true,
     },
-    open: { type: Boolean, required: true },
+
+    /**
+     * Whether current group is open
+     *
+     * 当前分组是否展开
+     */
+    open: {
+      type: Boolean,
+      required: true,
+    },
   },
 
   emits: ["toggle"],

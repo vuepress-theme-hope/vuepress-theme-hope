@@ -21,26 +21,51 @@ export default defineComponent({
   name: "Notice",
 
   props: {
+    /**
+     * Notice locales settings
+     *
+     * 通知的多语言设置
+     */
     locales: {
       type: Object as PropType<Record<string, NoticeLocaleOptions>>,
       required: true,
     },
 
-    noticeKey: {
-      type: String,
-      default: "",
-    },
-
+    /**
+     * Whether show notice only showOnce
+     *
+     * 是否仅展示一次通知
+     */
     showOnce: {
       type: Boolean,
       default: false,
     },
 
+    /**
+     * Notice key
+     *
+     * 通知 key
+     */
+    noticeKey: {
+      type: String,
+      default: "",
+    },
+
+    /**
+     * Whether the notice is closable
+     *
+     * 通知是否可关闭
+     */
     canClose: {
       type: Boolean,
       default: true,
     },
 
+    /**
+     * Whether display notice fullscreen
+     *
+     * 是否全屏显示通知
+     */
     fullscreen: {
       type: Boolean,
       default: false,

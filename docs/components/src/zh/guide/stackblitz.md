@@ -85,7 +85,7 @@ StackBlitz 组件高度宽高比，只有当未指定 `height` 时有效。
 
 在嵌入视图中隐藏导航面板。
 
-### hidedevtools
+### hideDevtools
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -104,8 +104,8 @@ StackBlitz 组件高度宽高比，只有当未指定 `height` 时有效。
 
 一个自定义设置的 StackBlitz 项目:
 
-<StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hidedevtools />
+<StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hideDevtools />
 
 ```md
-<StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hidedevtools />
+<StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hideDevtools />
 ```

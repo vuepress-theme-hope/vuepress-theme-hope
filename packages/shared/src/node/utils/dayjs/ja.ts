@@ -57,6 +57,6 @@ const locale: Locale = {
   },
 };
 
-export const loadJaLocale = (extendeddayjs: typeof dayjs): void => {
-  extendeddayjs.locale("ja", locale);
+export const loadJaLocale = (extendedDayjs: typeof dayjs): void => {
+  extendedDayjs.locale("ja", locale);
 };

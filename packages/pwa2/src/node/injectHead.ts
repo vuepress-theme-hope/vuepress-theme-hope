@@ -1,7 +1,7 @@
 import type { HeadConfig } from "@vuepress/core";
 import type { PWAOptions } from "./options.js";
 
-export const injectLinkstoHead = (
+export const injectLinksToHead = (
   options: PWAOptions,
   base = "/",
   head: HeadConfig[] = []

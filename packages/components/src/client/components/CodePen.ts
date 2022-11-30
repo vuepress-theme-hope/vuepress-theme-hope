@@ -16,19 +16,66 @@ export default defineComponent({
   name: "CodePen",
 
   props: {
+    /**
+     * CodePen link
+     *
+     * CodePen 链接
+     */
     link: { type: String, default: "" },
+
+    /**
+     * CodePen username
+     *
+     * CodePen 用户名
+     */
     user: { type: String, default: "" },
+
+    /**
+     * CodePen hash
+     *
+     * CodePen hash
+     */
     slugHash: { type: String, default: "" },
+
+    /**
+     * CodePen title
+     *
+     * CodePen 标题
+     */
     title: { type: String, default: "" },
+
+    /**
+     * CodePen height
+     *
+     * CodePen 高度
+     */
     height: { type: Number, default: 380 },
+
+    /**
+     * CodePen theme
+     *
+     * CodePen 主题
+     */
     theme: {
       type: String as PropType<"default" | "light" | "dark">,
       default: "default",
     },
+
+    /**
+     * CodePen default tab
+     *
+     * CodePen 默认标签
+     */
     defaultTab: {
       type: Array as PropType<string[]>,
       default: () => ["result"],
     },
+
+    /**
+     * CodePen loading status
+     *
+     * CodePen 加载状态
+     */
     status: {
       type: String as PropType<"autoload" | "preview" | "clicktorun">,
       default: "preview",

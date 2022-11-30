@@ -30,9 +30,32 @@ export default defineComponent({
   name: "ECharts",
 
   props: {
+    /**
+     * echarts config
+     *
+     * 图表配置
+     */
     config: { type: String, required: true },
+
+    /**
+     * Chart id
+     *
+     * 图表 id
+     */
     id: { type: String, required: true },
+
+    /**
+     * Chart title
+     *
+     * 图表标题
+     */
     title: { type: String, default: "" },
+
+    /**
+     * Chart config type
+     *
+     * 图表配置类型
+     */
     type: { type: String as PropType<"js" | "json">, default: "json" },
   },
 

@@ -34,8 +34,25 @@ export default defineComponent({
   name: "Presentation",
 
   props: {
+    /**
+     * Presentation id
+     *
+     * 幻灯片 id
+     */
     id: { type: String, required: true },
+
+    /**
+     * Presentation code
+     *
+     * 幻灯片代码
+     */
     code: { type: String, required: true },
+
+    /**
+     * Presentation theme
+     *
+     * 幻灯片主题
+     */
     theme: { type: String as PropType<ThemeType>, default: "auto" },
   },
 

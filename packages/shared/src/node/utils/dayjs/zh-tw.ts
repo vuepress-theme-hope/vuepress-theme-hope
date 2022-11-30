@@ -41,6 +41,6 @@ const locale: Partial<Locale> = {
   },
 };
 
-export const loadZhTWLocale = (extendeddayjs: typeof dayjs): void => {
-  extendeddayjs.locale("zh-tw", locale);
+export const loadZhTWLocale = (extendedDayjs: typeof dayjs): void => {
+  extendedDayjs.locale("zh-tw", locale);
 };

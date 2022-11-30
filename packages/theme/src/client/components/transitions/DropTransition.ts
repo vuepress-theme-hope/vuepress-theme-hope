@@ -18,6 +18,10 @@ export default defineComponent({
      * @description Transition duration
      */
     duration: { type: Number, default: 0.25 },
+
+    /**
+     * @description appear
+     */
     appear: Boolean,
   },
 

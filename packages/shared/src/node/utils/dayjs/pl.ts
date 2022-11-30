@@ -97,6 +97,6 @@ const locale: Partial<Locale> = {
   },
 };
 
-export const loadPlLocale = (extendeddayjs: typeof dayjs): void => {
-  extendeddayjs.locale("pl", locale);
+export const loadPlLocale = (extendedDayjs: typeof dayjs): void => {
+  extendedDayjs.locale("pl", locale);
 };

@@ -1,7 +1,7 @@
 import { chalk } from "@vuepress/utils";
 import { convertOptions } from "./compact/index.js";
 import { checkOutput, ensureHostName, getFeedOptions } from "./options.js";
-import { injectLinkstoHead } from "./injectHead.js";
+import { injectLinksToHead } from "./injectHead.js";
 import { FeedGenerator } from "./generator.js";
 import { logger } from "./utils.js";
 
@@ -37,7 +37,7 @@ export const feedPlugin =
     return {
       ...plugin,
 
-      onPrepared: (app): void => injectLinkstoHead(app, feedOptions),
+      onPrepared: (app): void => injectLinksToHead(app, feedOptions),
 
       onGenerated: async (app): Promise<void> => {
         await new FeedGenerator(app, feedOptions).generateFeed();

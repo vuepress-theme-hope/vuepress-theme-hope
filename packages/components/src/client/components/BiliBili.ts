@@ -5,47 +5,87 @@ import { useSize } from "../composables/index.js";
 
 import type { VNode } from "vue";
 
-import "../styles/bilibli.scss";
+import "../styles/bili-bili.scss";
 
 export default defineComponent({
   name: "BiliBili",
 
   props: {
+    /**
+     * BiliBili video id
+     *
+     * B 站视频 ID
+     */
     bvid: {
       type: String,
       required: true,
     },
 
+    /**
+     * BiliBili video page
+     *
+     * B 站视频分页
+     */
     page: {
       type: Number,
       default: 1,
     },
 
+    /**
+     * Component width
+     *
+     * 组件宽度
+     */
     width: {
       type: [String, Number],
       default: "100%",
     },
 
+    /**
+     * Component height
+     *
+     * 组件高度
+     */
     height: {
       type: [String, Number],
       default: undefined,
     },
 
+    /**
+     * Component width / height ratio
+     *
+     * 组件长宽比
+     */
     ratio: {
       type: Number,
       default: 16 / 9,
     },
 
+    /**
+     * Start time in seconds
+     *
+     * 基于秒数的开始时间
+     */
     time: {
       type: Number,
       default: 0,
     },
 
+    /**
+     * Whether use high quality source
+     *
+     * 是否使用高清画质
+     */
     highQuality: {
       type: Boolean,
       default: true,
     },
 
+    /**
+     * Whether to display danmaku
+     *
+     * 是否启用弹幕
+     */
     danmaku: {
       type: Boolean,
       default: true,
@@ -82,7 +122,7 @@ export default defineComponent({
         }&high_quality=${props.highQuality ? 1 : 0}&page=${
           props.page
         }&danmaku=${props.danmaku ? 1 : 0}`,
-        class: "bilibili-iframe",
+        class: "bili-iframe",
         allow:
           "accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture",
         style: {

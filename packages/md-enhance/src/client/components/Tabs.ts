@@ -17,12 +17,41 @@ export default defineComponent({
   name: "Tabs",
 
   props: {
-    active: { type: Number, default: 0 },
+    /**
+     * Active tab index
+     *
+     * 激活的标签页序号
+     */
+    active: {
+      type: Number,
+      default: 0,
+    },
+
+    /**
+     * tab data
+     *
+     * 标签页数据
+     */
     data: {
       type: Array as PropType<TabProps[]>,
       required: true,
     },
-    id: { type: String, required: true },
+
+    /**
+     * Tab id
+     *
+     * 标签页 id
+     */
+    id: {
+      type: String,
+      required: true,
+    },
+
+    /**
+     * tab id
+     *
+     * 标签页 id
+     */
     tabId: {
       type: String,
       default: "",

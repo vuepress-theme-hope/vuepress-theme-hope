@@ -11,68 +11,163 @@ export default defineComponent({
   name: "YouTube",
 
   props: {
+    /**
+     * YouTube video id
+     *
+     * YouTube 视频 id
+     */
     id: {
       type: String,
       default: "",
     },
 
+    /**
+     * Component width
+     *
+     * 组件宽度
+     */
     width: {
       type: [String, Number],
       default: "100%",
     },
 
+    /**
+     * Component height
+     *
+     * 组件高度
+     */
     height: {
       type: [String, Number],
       default: undefined,
     },
 
+    /**
+     * Component width / height ratio
+     *
+     * 组件长宽比
+     */
     ratio: {
       type: Number,
       default: 16 / 9,
     },
 
+    /**
+     * Whether to autoplay the video
+     *
+     * 是否自动播放视频
+     */
     autoplay: Boolean,
+
+    /**
+     * Whether to loop the video
+     *
+     * 是否循环播放视频
+     */
     loop: Boolean,
+
+    /**
+     * Whether to show cc
+     *
+     * 是否显示字幕
+     */
     showCc: Boolean,
+
+    /**
+     * Whether to show annotations
+     *
+     * 是否显示注释
+     */
     showAnnotations: Boolean,
 
+    /**
+     * Video start time in seconds
+     *
+     * 视频开始时间 (秒)
+     */
     start: {
       type: Number,
       default: undefined,
     },
 
+    /**
+     * Video end time in seconds
+     *
+     * 视频结束时间 (秒)
+     */
     end: {
       type: Number,
       default: undefined,
     },
 
+    /**
+     * Default cc lang
+     *
+     * 默认字幕语言
+     */
     defaultCcLang: {
       type: String,
       default: "",
     },
 
+    /**
+     * UI language
+     *
+     * UI 语言
+     */
     uiLang: {
       type: String,
       default: "",
     },
 
+    /**
+     * List type
+     *
+     * 列表类型
+     */
     listType: {
       type: String,
       default: "",
     },
 
+    /**
+     * List
+     *
+     * 列表
+     */
     list: {
       type: String,
       default: "",
     },
 
+    /**
+     * Playlist id
+     *
+     * 播放列表 id
+     */
     playlist: {
       type: String,
       default: "",
     },
 
+    /**
+     * Whether to disable controls
+     *
+     * 是否禁用控制
+     */
     disableControls: Boolean,
+
+    /**
+     * Whether to disable fullscreen
+     *
+     * 是否禁用全屏
+     */
     disableFullscreen: Boolean,
+
+    /**
+     * Whether to disable keyboard
+     *
+     * 是否禁用键盘
+     */
     disableKeyboard: Boolean,
   },
 

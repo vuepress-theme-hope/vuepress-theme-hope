@@ -12,29 +12,50 @@ export default defineComponent({
      * StackBlitz id
      *
      * @description Full StackBlitz url is also supported
+     *
+     * StackBlitz ID
+     *
+     * @description 也支持完整的 StackBlitz 链接
      */
     id: {
       type: String,
       required: true,
     },
 
+    /**
+     * Component width
+     *
+     * 组件宽度
+     */
     width: {
       type: [String, Number],
       default: "100%",
     },
 
+    /**
+     * Component height
+     *
+     * 组件高度
+     */
     height: {
       type: [String, Number],
       default: undefined,
     },
 
+    /**
+     * Component width / height ratio
+     *
+     * 组件长宽比
+     */
     ratio: {
       type: Number,
       default: 16 / 9,
     },
 
     /**
-     * The default file to have open in the editor
+     * The default file to open in the editor
+     *
+     * 默认打开的文件
      */
     file: {
       type: String,
@@ -43,6 +64,8 @@ export default defineComponent({
 
     /**
      * The initial URL path the preview should open
+     *
+     * 预览的初始 URL 路径
      */
     initialpath: {
       type: String,
@@ -51,6 +74,8 @@ export default defineComponent({
 
     /**
      * Force embed view regardless of screen size
+     *
+     * 强制嵌入视图，无论屏幕尺寸如何
      */
     embed: {
       type: Boolean,
@@ -59,6 +84,8 @@ export default defineComponent({
 
     /**
      * Require user to 'click to load' the embed demo
+     *
+     * 要求用户“点击加载”嵌入式演示
      */
     clickToLoad: {
       type: Boolean,
@@ -67,6 +94,8 @@ export default defineComponent({
 
     /**
      * Which view to open by default
+     *
+     * 默认打开的视图
      */
     view: {
       type: String as PropType<"editor" | "preview">,
@@ -75,18 +104,24 @@ export default defineComponent({
 
     /**
      * Hide file explorer panel in embed view
+     *
+     * 在嵌入视图中隐藏文件资源管理器面板
      */
     hideExplorer: Boolean,
 
     /**
      * Hide file explorer panel in embed view
+     *
+     * 在嵌入视图中隐藏文件资源管理器面板
      */
     hideNavigation: Boolean,
 
     /**
      * Hide the debugging console in the editor preview
+     *
+     * 隐藏编辑器预览中的调试控制台
      */
-    hidedevtools: Boolean,
+    hideDevtools: Boolean,
   },
 
   setup(props) {
@@ -105,7 +140,7 @@ export default defineComponent({
         }&ctl=${props.clickToLoad ? 1 : 0}&view=${props.view}${
           props.hideExplorer ? "&hideExplorer=1" : ""
         }${props.hideNavigation ? "&hideNavigation=1" : ""}${
-          props.hidedevtools ? "&hidedevtools=1" : ""
+          props.hideDevtools ? "&hidedevtools=1" : ""
         }`,
         allow: "clipboard-write",
         style: {

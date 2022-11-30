@@ -41,9 +41,9 @@
 
     // lib
     "lib": ["DOM", "ESNext"],
-    // mininal node 14 support
+    // minimal node 14 support
     "target": "ES2020",
-    // mininal node 16 support
+    // minimal node 16 support
     // "target": "ES2021",
 
     // Compiler Diagnostics

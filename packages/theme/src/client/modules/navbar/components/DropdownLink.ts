@@ -16,6 +16,11 @@ export default defineComponent({
   name: "NavbarDropdownLink",
 
   props: {
+    /**
+     * Dropdown config
+     *
+     * 下拉列表配置
+     */
     config: {
       type: Object as PropType<NavGroup<AutoLinkType | NavGroup<AutoLinkType>>>,
       required: true,

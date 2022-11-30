@@ -15,8 +15,25 @@ export default defineComponent({
   name: "FlowChart",
 
   props: {
+    /**
+     * Flowchart code content
+     *
+     * 流程图代码内容
+     */
     code: { type: String, required: true },
+
+    /**
+     * Flowchart id
+     *
+     * 流程图 id
+     */
     id: { type: String, required: true },
+
+    /**
+     * Flowchart preset
+     *
+     * 流程图预设
+     */
     preset: {
       type: String as PropType<"ant" | "pie" | "vue">,
       default: "vue",

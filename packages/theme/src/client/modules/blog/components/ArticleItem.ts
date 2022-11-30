@@ -20,16 +20,27 @@ export default defineComponent({
   name: "ArticleItem",
 
   props: {
+    /**
+     * Article information
+     *
+     * 文章信息
+     */
     info: {
       type: Object as PropType<ArticleInfo>,
       required: true,
     },
+
+    /**
+     * Article path
+     *
+     * 文章路径
+     */
     path: { type: String, required: true },
   },
 
   setup(props) {
     const router = useRouter();
-    const { config, items } = useArticleInfo(props);
+    const { info: config, items } = useArticleInfo(props);
     const info = toRef(props, "info");
 
     return (): VNode =>
@@ -75,7 +86,7 @@ export default defineComponent({
               : null,
             h("hr", { class: "hr" }),
             h(PageInfo, {
-              config: unref(config),
+              info: unref(config),
               ...(items.value ? { items: items.value } : {}),
             }),
           ]

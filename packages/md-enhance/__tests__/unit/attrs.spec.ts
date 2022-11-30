@@ -17,8 +17,8 @@ describe("markdown-it-attrs", () => {
       allowed: [/^(class|attr)$/],
     });
 
-    expect(markdownIt.render("text {.someclass #someid attr=allowed}")).toBe(
-      '<p class="someclass" attr="allowed">text</p>\n'
+    expect(markdownIt.render("text {.some-class #some-id attr=allowed}")).toBe(
+      '<p class="some-class" attr="allowed">text</p>\n'
     );
   });
 });
@@ -412,7 +412,7 @@ const describeTestsWithOptions = (
     );
 
     it(
-      replaceDelimiters('should add class ul after a "softbreak"', options),
+      replaceDelimiters('should add class ul after a "soft-break"', options),
       () => {
         const src = "- item\n{.blue}";
 
@@ -430,7 +430,7 @@ const describeTestsWithOptions = (
 
     it(
       replaceDelimiters(
-        'should ignore non-text "attr-like" text after a "softbreak"',
+        'should ignore non-text "attr-like" text after a "soft-break"',
         options
       ),
       () => {
@@ -675,8 +675,8 @@ const describeTestsWithOptions = (
         allowed: ["id", "class"],
       });
 
-      const src = "text {.someclass #someid attr=notAllowed}";
-      const expected = '<p class="someclass" id="someid">text</p>\n';
+      const src = "text {.some-class #some-id attr=notAllowed}";
+      const expected = '<p class="some-class" id="some-id">text</p>\n';
 
       expect(
         markdownItWithOptions.render(replaceDelimiters(src, options))
@@ -689,8 +689,8 @@ const describeTestsWithOptions = (
         allowed: [/^(class|attr)$/],
       });
 
-      const src = "text {.someclass #someid attr=allowed}";
-      const expected = '<p class="someclass" attr="allowed">text</p>\n';
+      const src = "text {.some-class #some-id attr=allowed}";
+      const expected = '<p class="some-class" attr="allowed">text</p>\n';
 
       expect(
         markdownItWithOptions.render(replaceDelimiters(src, options))

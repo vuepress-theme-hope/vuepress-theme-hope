@@ -173,10 +173,10 @@ A StackBlitz project:
 
 A StackBlitz project with custom settings:
 
-<StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hidedevtools />
+<StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hideDevtools />
 
 ```md
-<StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hidedevtools />
+<StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hideDevtools />
 ```
 
 See [StackBlitz][stackblitz] page for available props.

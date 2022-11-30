@@ -1,6 +1,6 @@
 import { defineComponent, h } from "vue";
 import { useRoute, useRouter } from "vue-router";
-import { generateIndexfromHash } from "vuepress-shared/client";
+import { generateIndexFromHash } from "vuepress-shared/client";
 
 import { CategoryIcon } from "@theme-hope/modules/info/components/icons.js";
 import { useMetaLocale } from "@theme-hope/modules/info/composables/index.js";
@@ -16,11 +16,21 @@ export default defineComponent({
   inheritAttrs: false,
 
   props: {
+    /**
+     * Category information
+     *
+     * 分类信息
+     */
     category: {
       type: Array as PropType<PageCategory[]>,
       required: true,
     },
 
+    /**
+     * Whether in pure mode
+     *
+     * 是否处于纯净模式
+     */
     pure: Boolean,
   },
 
@@ -62,7 +72,7 @@ export default defineComponent({
                           "category",
                           {
                             // TODO: magic number 9 is tricky here
-                            [`category${generateIndexfromHash(name, 9)}`]:
+                            [`category${generateIndexFromHash(name, 9)}`]:
                               !props.pure,
                             clickable: path,
                           },

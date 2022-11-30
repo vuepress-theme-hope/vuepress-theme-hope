@@ -4,7 +4,7 @@ import { resolveUrl } from "./utils.js";
 import type { App, HeadConfig } from "@vuepress/core";
 import type { ResolvedFeedOptionsMap } from "./options.js";
 
-export const injectLinkstoHead = (
+export const injectLinksToHead = (
   app: App,
   options: ResolvedFeedOptionsMap
 ): void => {

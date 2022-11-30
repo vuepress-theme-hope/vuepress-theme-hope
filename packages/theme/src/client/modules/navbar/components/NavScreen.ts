@@ -21,7 +21,12 @@ export default defineComponent({
   name: "NavScreen",
 
   props: {
-    active: Boolean,
+    /**
+     * Whether to show the screen
+     *
+     * 是否显示
+     */
+    show: Boolean,
   },
 
   emits: ["close"],
@@ -32,7 +37,7 @@ export default defineComponent({
     const screen = ref<HTMLElement>();
 
     watch(isMobile, (value) => {
-      if (!value && props.active) {
+      if (!value && props.show) {
         clearAllBodyScrollLocks();
         emit("close");
       }
@@ -60,7 +65,7 @@ export default defineComponent({
           onAfterLeave: () => clearAllBodyScrollLocks(),
         },
         () =>
-          props.active
+          props.show
             ? h(
                 "div",
                 { id: "nav-screen", ref: screen },

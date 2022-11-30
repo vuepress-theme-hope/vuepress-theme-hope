@@ -174,10 +174,10 @@ tag:
 
 Проект StackBlitz с пользовательскими настройками:
 
-<StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hidedevtools />
+<StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hideDevtools />
 
 ```md
-<StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hidedevtools />
+<StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hideDevtools />
 ```
 
 Доступные свойства смотрите на странице [StackBlitz][stackblitz].

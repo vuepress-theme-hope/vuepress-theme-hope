@@ -20,33 +20,72 @@ export default defineComponent({
   name: "PDF",
 
   props: {
+    /**
+     * PDF link, should be absolute url
+     *
+     * PDF 文件链接，应为完整链接
+     */
     url: { type: String, required: true },
 
+    /**
+     * Component width
+     *
+     * 组件宽度
+     */
     width: {
       type: [String, Number],
       default: "100%",
     },
 
+    /**
+     * Component height
+     *
+     * 组件高度
+     */
     height: {
       type: [String, Number],
       default: undefined,
     },
 
+    /**
+     * Component width / height ratio
+     *
+     * 组件长宽比
+     */
     ratio: {
       type: Number,
       default: 16 / 9,
     },
 
+    /**
+     * PDF initial page number
+     *
+     * PDF 初始页码
+     *
+     * @description Chrome only
+     */
     page: {
       type: Number,
       default: 1,
     },
 
+    /**
+     * Whether show toolbar
+     *
+     * 是否显示工具栏
+     *
+     * @description Chrome only
+     */
     toolbar: {
       type: Boolean,
       default: true,
     },
 
+    /**
+     * initial zoom level (in percent)
+     *
+     * 初始缩放比率 (百分比)
+     */
     zoom: {
       type: Number,
       default: 100,

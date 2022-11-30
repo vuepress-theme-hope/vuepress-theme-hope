@@ -92,20 +92,7 @@ rules:
 
   selector-pseudo-element-no-unknown: true
 
-  selector-type-no-unknown:
-    - true
-    - ignore:
-        - custom-elements
-      ignoreTypes:
-        - page
-        - view
-        - text
-        - image
-        - icon
-        - navigator
-        - picker
-        - swiper
-        - slider
+  selector-type-no-unknown: true
 
   shorthand-property-no-redundant-values: true
 

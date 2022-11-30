@@ -65,6 +65,6 @@ const locale: Locale = {
   },
 };
 
-export const loadZhLocale = (extendeddayjs: typeof dayjs): void => {
-  extendeddayjs.locale("zh", locale);
+export const loadZhLocale = (extendedDayjs: typeof dayjs): void => {
+  extendedDayjs.locale("zh", locale);
 };

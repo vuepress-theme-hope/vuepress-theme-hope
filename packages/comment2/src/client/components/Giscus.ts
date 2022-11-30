@@ -86,6 +86,11 @@ export default defineComponent({
   name: "GiscusComment",
 
   props: {
+    /**
+     * Whether the component is in darkmode
+     *
+     * 组件是否处于夜间模式
+     */
     darkmode: Boolean,
   },
 

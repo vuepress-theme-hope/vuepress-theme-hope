@@ -4,4 +4,4 @@
 
 <StackBlitz id="vuepress-theme-hope" />
 
-<StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hidedevtools />
+<StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hideDevtools />

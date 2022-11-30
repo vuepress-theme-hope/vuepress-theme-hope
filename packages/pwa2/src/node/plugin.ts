@@ -9,7 +9,7 @@ import { convertOptions } from "./compact/index.js";
 import { getManifest, generateManifest } from "./generateManifest.js";
 import { generateServiceWorker } from "./generateServiceWorker.js";
 import { appendBase } from "./helper.js";
-import { injectLinkstoHead } from "./injectHead.js";
+import { injectLinksToHead } from "./injectHead.js";
 import { pwaLocales } from "./locales.js";
 import { prepareConfigFile } from "./prepare.js";
 import { logger } from "./utils.js";
@@ -35,7 +35,7 @@ export const pwaPlugin =
 
     const manifest = getManifest(app, options);
 
-    app.options.head = injectLinkstoHead(options, base, app.options.head);
+    app.options.head = injectLinksToHead(options, base, app.options.head);
 
     useSassPalettePlugin(app, { id: "hope" });
 

@@ -12,6 +12,11 @@ export default defineComponent({
   name: "PasswordModal",
 
   props: {
+    /**
+     * Whether is fullscreen
+     *
+     * 是否是全屏
+     */
     full: Boolean,
   },
 

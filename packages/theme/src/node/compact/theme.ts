@@ -9,6 +9,7 @@ const DEPRECATED_THEME_OPTIONS: [string, string][] = [
   // v1
   ["darkLogo", "logoDark"],
   ["navAutoHide", "navbarAutoHide"],
+  ["hideSiteTitleonMobile", "hideSiteNameOnMobile"],
   ["sidebarDepth ", "headerDepth"],
   ["prevLinks", "prevLink"],
   ["nextLinks", "nextLink"],
@@ -31,6 +32,7 @@ const DEPRECATED_THEME_OPTIONS: [string, string][] = [
   ["wordPerMinute", "plugins.readingTime.wordPerMinute"],
 
   // v2
+  ["hideSiteNameonMobile", "hideSiteNameOnMobile"],
   ["fullScreen", "fullscreen"],
   ["headingDepth", "headerDepth"],
 ];
@@ -52,10 +54,6 @@ const DROPPED_THEME_OPTIONS: [string, string?, string?][] = [
   [
     "displayAllHeaders",
     "Due to scalability consideration, V2 no longer supports this.",
-  ],
-  [
-    "hideSiteTitleonMobile",
-    "Site title will be hide on mobile because there is no space for it.",
   ],
   [
     "chunkRename",

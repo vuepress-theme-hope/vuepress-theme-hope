@@ -16,11 +16,21 @@ export default defineComponent({
   inheritAttrs: false,
 
   props: {
+    /**
+     * Whether show pageview and it's path
+     *
+     * 是否显示浏览量以及其路径
+     */
     pageview: {
       type: [Boolean, String],
       default: false,
     },
 
+    /**
+     * Whether in pure mode
+     *
+     * 是否处于纯净模式
+     */
     pure: Boolean,
   },
 

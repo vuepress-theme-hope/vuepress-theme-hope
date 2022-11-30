@@ -35,6 +35,11 @@ export default defineComponent({
   name: "SearchResult",
 
   props: {
+    /**
+     * Query string
+     *
+     * 查询字符串
+     */
     query: {
       type: String,
       required: true,

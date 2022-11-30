@@ -119,6 +119,6 @@ const locale: Partial<Locale> = {
   },
 };
 
-export const loadSkLocale = (extendeddayjs: typeof dayjs): void => {
-  extendeddayjs.locale("sk", locale);
+export const loadSkLocale = (extendedDayjs: typeof dayjs): void => {
+  extendedDayjs.locale("sk", locale);
 };

@@ -22,6 +22,6 @@ const locale: Partial<Locale> = {
   },
 };
 
-export const loadTrLocale = (extendeddayjs: typeof dayjs): void => {
-  extendeddayjs.locale("tr", locale);
+export const loadTrLocale = (extendedDayjs: typeof dayjs): void => {
+  extendedDayjs.locale("tr", locale);
 };

@@ -8,6 +8,11 @@ export default defineComponent({
   name: "ThemeColorPicker",
 
   props: {
+    /**
+     * Theme color picker config
+     *
+     * 主题色选择器配置
+     */
     themeColor: {
       type: Object as PropType<Record<string, string>>,
       required: true,

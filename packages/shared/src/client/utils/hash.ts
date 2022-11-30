@@ -1,4 +1,4 @@
-export const generateIndexfromHash = (
+export const generateIndexFromHash = (
   content: string,
   total: number
 ): number => {

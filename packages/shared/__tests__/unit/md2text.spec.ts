@@ -86,7 +86,7 @@ Some information.\
   it("Should remove footnote reference", () => {
     expect(
       md2text(`\
-This is a footnote reference,[^1] and another.[^longnote]
+This is a footnote reference,[^1] and another.[^long-note]
 `)
     ).toEqual(`\
 This is a footnote reference, and another.\
@@ -130,11 +130,11 @@ This is a paragraph with ~ markers with  and  deleted.\
       md2text(`\
 Hello World!
 
-Grettings with everyone.\
+Greetings with everyone.\
 `)
     ).toEqual(`\
 Hello World!
-Grettings with everyone.\
+Greetings with everyone.\
 `);
   });
 
@@ -206,11 +206,11 @@ subitem b;\
       md2text(`\
 > Hello World!
 >
-> > Grettings with everyone.\
+> > Greetings with everyone.\
 `)
     ).toEqual(`\
 Hello World!
-Grettings with everyone.\
+Greetings with everyone.\
 `);
   });
 

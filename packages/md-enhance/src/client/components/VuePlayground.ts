@@ -13,8 +13,28 @@ export default defineComponent({
   name: "VuePlayground",
 
   props: {
-    title: { type: String, default: "" },
+    /**
+     * Playground title
+     *
+     * 演示标题
+     */
+    title: {
+      type: String,
+      default: "",
+    },
+
+    /**
+     * Playground file data
+     *
+     * 演示文件数据
+     */
     files: { type: String, required: true },
+
+    /**
+     * Playground settings
+     *
+     * 演示设置
+     */
     settings: { type: String, default: "{}" },
   },
 
@@ -27,6 +47,7 @@ export default defineComponent({
       getVuePlaygroundSettings(props.settings)
     );
 
+    // eslint-disable-next-line vue/no-ref-object-destructure
     const showCode = ref(playgroundOptions.value.showCode || false);
 
     const setupRepl = async (): Promise<void> => {

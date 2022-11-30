@@ -2,7 +2,7 @@
 import { describe, it, expect } from "vitest";
 import { deepAssign } from "../../src/shared/utils/assign";
 
-describe("deepassign", () => {
+describe("deep assign", () => {
   it("simple assign", () => {
     const object1 = { a: 1 };
     const object2 = { b: 2 };
@@ -11,13 +11,13 @@ describe("deepassign", () => {
 
     expect(ans1).toEqual({ a: 1, b: 2 });
 
-    const object3 = { a: "zhangbowang" };
+    const object3 = { a: "mister-hope" };
     const object4 = { "%": "special", b: false };
 
     const ans2 = deepAssign(object3, object4);
 
     expect(ans2).toEqual({
-      a: "zhangbowang",
+      a: "mister-hope",
       "%": "special",
       b: false,
     });
@@ -31,7 +31,7 @@ describe("deepassign", () => {
 
     expect(ans1).toEqual({ a: 2 });
 
-    const object3 = { "%": "zhangbowang", b: true, c: 1 };
+    const object3 = { "%": "mister-hope", b: true, c: 1 };
     const object4 = { "%": "special", b: false, d: "2" };
 
     const ans2 = deepAssign(object3, object4);

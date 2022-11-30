@@ -18,6 +18,11 @@ export default defineComponent({
   name: "ArticleList",
 
   props: {
+    /**
+     * Articles
+     *
+     * 文章项目
+     */
     items: {
       type: Array as PropType<{ path: string; info: ArticleInfo }[]>,
       default: () => [],
@@ -92,7 +97,7 @@ export default defineComponent({
                 )
               ),
               h(Pagination, {
-                currentPage: currentPage.value,
+                current: currentPage.value,
                 perPage: articlePerPage.value,
                 total: props.items.length,
                 onUpdateCurrentPage: updatePage,

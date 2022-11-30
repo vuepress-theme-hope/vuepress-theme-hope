@@ -76,28 +76,28 @@ export const useArticleInfo = (props: {
   info: ArticleInfo;
   path: string;
 }): {
-  config: PageInfoProps;
+  info: PageInfoProps;
   items: ComputedRef<PageInfo[] | false | undefined>;
 } => {
-  const info = toRef(props, "info");
+  const articleInfo = toRef(props, "info");
   const blogOptions = useBlogOptions();
-  const author = useArticleAuthor(info);
-  const category = useArticleCategory(info);
-  const tag = useArticleTag(info);
-  const date = useArticleDate(info);
+  const author = useArticleAuthor(articleInfo);
+  const category = useArticleCategory(articleInfo);
+  const tag = useArticleTag(articleInfo);
+  const date = useArticleDate(articleInfo);
 
-  const config = reactive<PageInfoProps>({
+  const info = reactive<PageInfoProps>({
     author: author.value,
     category: category.value,
     date: date.value,
-    localizedDate: info.value[ArticleInfoType.localizedDate] || "",
+    localizedDate: articleInfo.value[ArticleInfoType.localizedDate] || "",
     tag: tag.value,
-    isOriginal: info.value[ArticleInfoType.isOriginal] || false,
-    readingTime: info.value[ArticleInfoType.readingTime] || null,
+    isOriginal: articleInfo.value[ArticleInfoType.isOriginal] || false,
+    readingTime: articleInfo.value[ArticleInfoType.readingTime] || null,
     pageview: props.path,
   });
 
   const items = computed(() => blogOptions.value.articleInfo);
 
-  return { config, items };
+  return { info, items };
 };

@@ -143,13 +143,13 @@ const msg = ref('Hello World!')
   });
 
   describe("ts preset", () => {
-    const markdownItwithTSPreset = MarkdownIt({ linkify: true }).use(
+    const markdownItWithTSPreset = MarkdownIt({ linkify: true }).use(
       playground,
       getTSPlaygroundPreset({})
     );
 
     it("Should work", () => {
-      const result1 = markdownItwithTSPreset.render(`
+      const result1 = markdownItWithTSPreset.render(`
 ::: playground#ts TS demo 1
 
 @file index.ts
@@ -165,7 +165,7 @@ speak(msg);
 :::
 `);
 
-      const result2 = markdownItwithTSPreset.render(`
+      const result2 = markdownItWithTSPreset.render(`
 ::: playground#ts TS demo 2
 
 @file index.ts
@@ -195,13 +195,13 @@ speak(msg);
   });
 
   describe("vue preset", () => {
-    const markdownItwithVuePreset = MarkdownIt({ linkify: true }).use(
+    const markdownItWithVuePreset = MarkdownIt({ linkify: true }).use(
       playground,
       getVuePlaygroundPreset({})
     );
 
     it("Should work", () => {
-      const result1 = markdownItwithVuePreset.render(`
+      const result1 = markdownItWithVuePreset.render(`
 ::: playground#vue Vue demo with customized imports
 
 @file App.vue
@@ -242,7 +242,7 @@ const msg = ref("Hello World!");
 
 :::
 `);
-      const result2 = markdownItwithVuePreset.render(`
+      const result2 = markdownItWithVuePreset.render(`
 ::: playground#vue Vue demo with customized settings
 
 @file App.vue

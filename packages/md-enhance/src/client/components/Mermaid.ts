@@ -77,7 +77,16 @@ export default defineComponent({
   name: "Mermaid",
 
   props: {
+    /**
+     * Mermaid id
+     */
     id: { type: String, required: true },
+
+    /**
+     * Mermaid config
+     *
+     * Mermaid 配置
+     */
     code: { type: String, required: true },
   },
 

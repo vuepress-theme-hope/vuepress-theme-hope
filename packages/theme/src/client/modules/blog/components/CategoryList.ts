@@ -1,6 +1,6 @@
 import { defineComponent, h } from "vue";
 import { RouterLink, useRoute } from "vue-router";
-import { generateIndexfromHash } from "vuepress-shared/client";
+import { generateIndexFromHash } from "vuepress-shared/client";
 
 import { useCategoryMap } from "@theme-hope/modules/blog/composables/index.js";
 
@@ -27,7 +27,7 @@ export default defineComponent({
                 class: [
                   "category",
                   // TODO: magic number 9 is tricky here
-                  `category${generateIndexfromHash(category, 9)}`,
+                  `category${generateIndexFromHash(category, 9)}`,
                   { active: path === route.path },
                 ],
               },

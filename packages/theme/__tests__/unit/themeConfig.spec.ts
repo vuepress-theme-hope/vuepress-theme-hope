@@ -3,11 +3,11 @@ import { createBaseApp } from "@vuepress/core";
 import { path } from "@vuepress/utils";
 import { describe, it, expect } from "vitest";
 
-import { getStatus } from "../../src/node/status";
-import { getThemeConfig } from "../../src/node/themeConfig";
+import { getStatus } from "../../src/node/status.js";
+import { getThemeConfig } from "../../src/node/themeConfig.js";
 import { emptyTheme } from "./__fixtures__/theme/empty.js";
 
-import type { ThemeOptions } from "../../src/shared";
+import type { ThemeOptions } from "../../src/shared/index.js";
 
 const app = createBaseApp({
   bundler: {} as any,

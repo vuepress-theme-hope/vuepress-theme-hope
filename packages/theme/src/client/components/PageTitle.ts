@@ -31,7 +31,7 @@ export default defineComponent({
           page.value.title,
         ]),
         h(PageInfo, {
-          config: unref(config),
+          info: unref(config),
           ...(items.value === null ? {} : { items: items.value }),
         }),
         h("hr"),

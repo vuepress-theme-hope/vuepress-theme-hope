@@ -175,10 +175,10 @@ PDF 浏览器组件。
 
 一个自定义设置的 StackBlitz 项目:
 
-<StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hidedevtools />
+<StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hideDevtools />
 
 ```md
-<StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hidedevtools />
+<StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hideDevtools />
 ```
 
 有关可用属性，请参阅 [StackBlitz][stackblitz] 页面。

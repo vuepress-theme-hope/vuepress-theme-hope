@@ -10,11 +10,25 @@ export default defineComponent({
   name: "Pagination",
 
   props: {
-    /** Number of total items */
+    /**
+     * Number of total items
+     *
+     * 项目总数
+     */
     total: { type: Number, default: 10 },
-    /** Items per page */
+    /**
+     * Items per page
+     *
+     * 每页项目数
+     */
     perPage: { type: Number, default: 10 },
-    currentPage: { type: Number, default: 1 },
+
+    /**
+     * Current page number
+     *
+     * 当前页面
+     */
+    current: { type: Number, default: 1 },
   },
 
   emits: ["updateCurrentPage"],
@@ -36,17 +50,17 @@ export default defineComponent({
     const displayLeftEllipsis = computed(() => {
       if (totalPages.value < 7) return false;
 
-      return props.currentPage > 4;
+      return props.current > 4;
     });
     const displayRightEllipsis = computed(() => {
       if (totalPages.value < 7) return false;
 
-      return props.currentPage < totalPages.value - 3;
+      return props.current < totalPages.value - 3;
     });
 
     /** Page indexes */
     const indexes = computed(() => {
-      const { currentPage } = props;
+      const { current: currentPage } = props;
       let min = 1;
       let max = totalPages.value;
       const arr = [];
@@ -98,14 +112,14 @@ export default defineComponent({
           ? h("div", { class: "pagination-list" }, [
               h("div", { class: "page-number" }, [
                 // prev button
-                props.currentPage > 1
+                props.current > 1
                   ? h(
                       "div",
                       {
                         class: "prev",
                         role: "navigation",
                         unselectable: "on",
-                        onClick: () => navigate(props.currentPage - 1),
+                        onClick: () => navigate(props.current - 1),
                       },
                       locale.value.prev
                     )
@@ -132,7 +146,7 @@ export default defineComponent({
                     "div",
                     {
                       key: num,
-                      class: { active: props.currentPage === num },
+                      class: { active: props.current === num },
                       role: "navigation",
                       onClick: () => navigate(num),
                     },
@@ -156,14 +170,14 @@ export default defineComponent({
                   : []),
 
                 // next button
-                props.currentPage < totalPages.value
+                props.current < totalPages.value
                   ? h(
                       "div",
                       {
                         class: "next",
                         role: "navigation",
                         unselectable: "on",
-                        onClick: () => navigate(props.currentPage + 1),
+                        onClick: () => navigate(props.current + 1),
                       },
                       locale.value.next
                     )

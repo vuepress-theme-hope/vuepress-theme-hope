@@ -1,7 +1,7 @@
 import { usePageFrontmatter } from "@vuepress/client";
 import { defineComponent, h } from "vue";
 import { RouterLink } from "vue-router";
-import { generateIndexfromHash } from "vuepress-shared/client";
+import { generateIndexFromHash } from "vuepress-shared/client";
 
 import { useTagMap } from "@theme-hope/modules/blog/composables/index.js";
 
@@ -31,7 +31,7 @@ export default defineComponent({
               class: [
                 "tag",
                 // TODO: magic number 9 is tricky here
-                `tag${generateIndexfromHash(tag, 9)}`,
+                `tag${generateIndexFromHash(tag, 9)}`,
                 { active: isActive(tag) },
               ],
             },

@@ -13,16 +13,31 @@ export default defineComponent({
   inheritAttrs: false,
 
   props: {
+    /**
+     * Date information
+     *
+     * 日期信息
+     */
     date: {
       type: Object as PropType<DateInfo | null>,
       default: null,
     },
 
+    /**
+     * Localized date text
+     *
+     * 本地化的日期文字
+     */
     localizedDate: {
       type: String,
       default: "",
     },
 
+    /**
+     * Whether in pure mode
+     *
+     * 是否处于纯净模式
+     */
     pure: Boolean,
   },
 

@@ -11,7 +11,18 @@ export default defineComponent({
   name: "Playground",
 
   props: {
+    /**
+     * Playground title
+     *
+     * 演示标题
+     */
     title: { type: String, default: "" },
+
+    /**
+     * Playground link
+     *
+     * 演示链接
+     */
     link: { type: String, required: true },
   },
 

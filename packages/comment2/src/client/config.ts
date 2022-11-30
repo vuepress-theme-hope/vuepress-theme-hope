@@ -18,6 +18,11 @@ export default defineClientConfig({
       name: "CommentService",
 
       props: {
+        /**
+         * Whether the component is in darkmode
+         *
+         * 组件是否处于夜间模式
+         */
         darkmode: Boolean,
       },
 

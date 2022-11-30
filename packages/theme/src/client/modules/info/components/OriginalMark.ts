@@ -10,6 +10,11 @@ export default defineComponent({
   inheritAttrs: false,
 
   props: {
+    /**
+     * Whether the article is original
+     *
+     * 文章是否是原创
+     */
     isOriginal: Boolean,
   },
 
