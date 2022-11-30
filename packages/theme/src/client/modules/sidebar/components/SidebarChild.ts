@@ -26,6 +26,7 @@ export default defineComponent({
     config: {
       type: Object as PropType<
         ResolvedSidebarPageItem | ResolvedSidebarHeaderItem
+        // eslint-disable-next-line vue/new-line-between-multi-line-property
       >,
       required: true,
     },
