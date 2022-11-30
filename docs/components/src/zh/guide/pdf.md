@@ -51,12 +51,12 @@ PDF 文档的初始页面
 
 :::
 
-#### toolbar
+### noToolbar
 
 - 类型: `boolean`
-- 默认值: `true`
+- 默认值: `false`
 
-是否显示工具栏
+是否隐藏工具栏
 
 ::: warning
 
@@ -89,10 +89,10 @@ PDF 文档的初始缩放比例
 
 禁用工具栏:
 
-<PDF url="/sample.pdf" :toolbar="false" />
+<PDF url="/sample.pdf" no-toolbar />
 
 ```md
-<PDF url="/sample.pdf" :toolbar="false" />
+<PDF url="/sample.pdf" no-toolbar />
 ```
 
 初始页面为第二页:

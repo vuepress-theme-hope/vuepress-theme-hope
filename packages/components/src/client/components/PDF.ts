@@ -77,10 +77,7 @@ export default defineComponent({
      *
      * @description Chrome only
      */
-    toolbar: {
-      type: Boolean,
-      default: true,
-    },
+    noToolbar: Boolean,
 
     /**
      * initial zoom level (in percent)
@@ -100,7 +97,7 @@ export default defineComponent({
 
     const hash = computed(
       () =>
-        `#page=${props.page}&toolbar=${props.toolbar ? 1 : 0}&zoom=${
+        `#page=${props.page}&toolbar=${props.noToolbar ? 0 : 1}&zoom=${
           props.zoom
         }`
     );

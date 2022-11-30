@@ -51,12 +51,12 @@ This prop only works on Chromium-based browsers.
 
 :::
 
-#### toolbar
+### noToolbar
 
 - Type: `boolean`
-- Default: `true`
+- Default: `false`
 
-Whether display toolbar.
+Whether to hide toolbar.
 
 ::: warning
 
@@ -64,7 +64,7 @@ This prop only works on Chromium-based browsers.
 
 :::
 
-#### zoom
+### zoom
 
 - Type: `number`
 - Default: `100`
@@ -89,10 +89,10 @@ Default PDF viewer:
 
 PDF viewer without toolbar:
 
-<PDF url="/sample.pdf" :toolbar="false" />
+<PDF url="/sample.pdf" no-toolbar />
 
 ```md
-<PDF url="/sample.pdf" :toolbar="false" />
+<PDF url="/sample.pdf" no-toolbar />
 ```
 
 PDF viewer with initial page 2:

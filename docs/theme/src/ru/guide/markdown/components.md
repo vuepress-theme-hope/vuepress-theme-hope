@@ -144,10 +144,10 @@ tag:
 
 Просмотрщик PDF без панели инструментов:
 
-<PDF url="/sample.pdf" :toolbar="false" />
+<PDF url="/sample.pdf" no-toolbar />
 
 ```md
-<PDF url="/sample.pdf" :toolbar="false" />
+<PDF url="/sample.pdf" no-toolbar />
 ```
 
 Просмотрщик PDF с начальной страницей 2:

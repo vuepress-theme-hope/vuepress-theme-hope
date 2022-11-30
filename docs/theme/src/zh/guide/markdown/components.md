@@ -145,10 +145,10 @@ PDF 浏览器组件。
 
 禁用工具栏:
 
-<PDF url="/sample.pdf" :toolbar="false" />
+<PDF url="/sample.pdf" no-toolbar />
 
 ```md
-<PDF url="/sample.pdf" :toolbar="false" />
+<PDF url="/sample.pdf" no-toolbar />
 ```
 
 初始页面为第二页:
