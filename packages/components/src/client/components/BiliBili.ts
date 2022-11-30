@@ -73,24 +73,18 @@ export default defineComponent({
     },
 
     /**
-     * Whether use high quality source
+     * Whether use low quality source
      *
-     * 是否使用高清画质
+     * 是否使用低质量画质
      */
-    highQuality: {
-      type: Boolean,
-      default: true,
-    },
+    lowQuality: Boolean,
 
     /**
-     * Whether to display danmaku
+     * Whether to disable danmaku
      *
-     * 是否启用弹幕
+     * 是否禁用弹幕
      */
-    danmaku: {
-      type: Boolean,
-      default: true,
-    },
+    noDanmaku: Boolean,
   },
 
   setup(props) {
@@ -120,9 +114,9 @@ export default defineComponent({
         // Tip: `https://www.bilibili.com/blackboard/newplayer.html?bvid=${props.bvid}&as_wide=1&page=1` only support whitelist sites now
         src: `https://player.bilibili.com/player.html?bvid=${props.bvid}&t=${
           props.time
-        }&high_quality=${props.highQuality ? 1 : 0}&page=${
-          props.page
-        }&danmaku=${props.danmaku ? 1 : 0}`,
+        }&high_quality=${props.lowQuality ? 0 : 1}&page=${props.page}&danmaku=${
+          props.noDanmaku ? 0 : 1
+        }`,
         class: "bili-iframe",
         allow:
           "accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture",
