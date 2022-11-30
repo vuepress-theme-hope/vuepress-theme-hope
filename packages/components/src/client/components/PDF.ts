@@ -1,3 +1,4 @@
+/* eslint-disable vue/no-unused-properties */
 import { withBase } from "@vuepress/client";
 import { isLinkHttp } from "@vuepress/shared";
 import { computed, defineComponent, h, onMounted, ref } from "vue";

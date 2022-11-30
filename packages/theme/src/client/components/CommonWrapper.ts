@@ -38,6 +38,7 @@ export default defineComponent({
       type: Boolean,
       default: true,
     },
+
     /** @description Whether enable sidebar */
     sidebar: {
       type: Boolean,

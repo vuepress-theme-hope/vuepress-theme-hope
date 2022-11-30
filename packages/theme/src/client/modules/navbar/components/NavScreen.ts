@@ -29,7 +29,9 @@ export default defineComponent({
     show: Boolean,
   },
 
-  emits: ["close"],
+  emits: {
+    close: () => true,
+  },
 
   setup(props, { emit, slots }) {
     const route = useRoute();

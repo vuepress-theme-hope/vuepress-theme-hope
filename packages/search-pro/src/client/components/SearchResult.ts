@@ -46,7 +46,11 @@ export default defineComponent({
     },
   },
 
-  emits: ["close", "updateQuery"],
+  emits: {
+    close: () => true,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    updateQuery: (_query: string) => true,
+  },
 
   setup(props, { emit }) {
     const router = useRouter();

@@ -1,3 +1,4 @@
+/* eslint-disable vue/no-unused-properties */
 import { usePageLang } from "@vuepress/client";
 import { computed, defineComponent, h } from "vue";
 

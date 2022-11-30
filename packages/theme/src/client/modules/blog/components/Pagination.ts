@@ -31,7 +31,10 @@ export default defineComponent({
     current: { type: Number, default: 1 },
   },
 
-  emits: ["updateCurrentPage"],
+  emits: {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    updateCurrentPage: (_page: number) => true,
+  },
 
   setup(props, { emit }) {
     let message: Message;

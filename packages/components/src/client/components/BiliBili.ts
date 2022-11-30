@@ -1,3 +1,4 @@
+/* eslint-disable vue/no-unused-properties */
 import { useEventListener } from "@vueuse/core";
 import { checkIsMobile } from "vuepress-shared/client";
 import { computed, defineComponent, h, onMounted, ref } from "vue";

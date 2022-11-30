@@ -27,7 +27,9 @@ declare const HAS_MULTIPLE_LANGUAGES: boolean;
 export default defineComponent({
   name: "NavBar",
 
-  emits: ["toggleSidebar"],
+  emits: {
+    toggleSidebar: () => true,
+  },
 
   setup(_props, { emit, slots }) {
     const themeLocale = useThemeLocaleData();

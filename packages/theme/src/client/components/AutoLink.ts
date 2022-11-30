@@ -22,10 +22,12 @@ export default defineComponent({
       type: Object as PropType<AutoLinkOptions>,
       required: true,
     },
+
     /**
      * @description Whether it's active only when exact match
      */
     exact: Boolean,
+
     /**
      * @description Whether show externalLinkIcon with a link
      */
@@ -35,7 +37,9 @@ export default defineComponent({
     },
   },
 
-  emits: ["focusout"],
+  emits: {
+    focusout: () => true,
+  },
 
   setup(props, { attrs, emit, slots }) {
     const route = useRoute();

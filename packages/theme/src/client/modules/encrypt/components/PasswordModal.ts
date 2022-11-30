@@ -20,7 +20,10 @@ export default defineComponent({
     full: Boolean,
   },
 
-  emits: ["verify"],
+  emits: {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    verify: (_password: string, _remember: boolean) => true,
+  },
 
   setup(props, { emit }) {
     const frontmatter = usePageFrontmatter();

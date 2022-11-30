@@ -1,3 +1,4 @@
+/* eslint-disable vue/no-unused-properties */
 import { defineComponent, h } from "vue";
 import { useSize } from "../composables/index.js";
 
