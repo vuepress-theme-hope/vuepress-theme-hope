@@ -22,7 +22,7 @@ export default defineComponent({
       h(SkipLink),
       h(
         <DefineComponent>resolveComponent("CommonWrapper"),
-        { sidebar: false },
+        { noSidebar: true },
         {
           default: () =>
             frontmatter.value["home"] ? h(BlogHome) : h(BlogPage),

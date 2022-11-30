@@ -33,17 +33,19 @@ export default defineComponent({
   name: "CommonWrapper",
 
   props: {
-    /** @description Whether enable navbar */
-    navbar: {
-      type: Boolean,
-      default: true,
-    },
+    /**
+     * Whether disable navbar
+     *
+     * 是否禁用导航栏
+     */
+    noNavbar: Boolean,
 
-    /** @description Whether enable sidebar */
-    sidebar: {
-      type: Boolean,
-      default: true,
-    },
+    /**
+     * Whether disable sidebar
+     *
+     * 是否禁用侧边栏
+     */
+    noSidebar: Boolean,
   },
 
   setup(props, { slots }) {
@@ -59,7 +61,7 @@ export default defineComponent({
     const hideNavbar = ref(false);
 
     const enableNavbar = computed(() => {
-      if (props.navbar === false) return false;
+      if (props.noNavbar) return false;
 
       if (
         frontmatter.value.navbar === false ||
@@ -79,7 +81,7 @@ export default defineComponent({
     const sidebarItems = useSidebarItems();
 
     const enableSidebar = computed(() => {
-      if (props.sidebar === false) return false;
+      if (props.noSidebar) return false;
 
       return (
         frontmatter.value.sidebar !== false &&

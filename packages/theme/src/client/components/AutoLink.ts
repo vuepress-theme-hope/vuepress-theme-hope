@@ -29,12 +29,9 @@ export default defineComponent({
     exact: Boolean,
 
     /**
-     * @description Whether show externalLinkIcon with a link
+     * @description Whether to hide externalLinkIcon
      */
-    externalLinkIcon: {
-      type: Boolean,
-      default: true,
-    },
+    noExternalLinkIcon: Boolean,
   },
 
   emits: {
@@ -148,7 +145,7 @@ export default defineComponent({
             slots["default"]?.() || [
               slots["before"]?.() || h(Icon, { icon }),
               text,
-              props.externalLinkIcon ? h(ExternalLinkIcon) : null,
+              props.noExternalLinkIcon ? null : h(ExternalLinkIcon),
               slots["after"]?.(),
             ]
           );

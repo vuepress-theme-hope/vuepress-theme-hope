@@ -30,7 +30,7 @@ export default defineComponent({
 
     return (): VNode[] => [
       h(SkipLink),
-      h(resolveComponent("CommonWrapper"), { sidebar: false }, () =>
+      h(resolveComponent("CommonWrapper"), { noSidebar: true }, () =>
         h("main", { class: "page not-found", id: "main-content" }, [
           h(NotFoundIcon),
           h("blockquote", getMsg()),
