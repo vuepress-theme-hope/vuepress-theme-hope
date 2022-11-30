@@ -128,6 +128,11 @@ category:
 - [网站链接][weiser-blog]
 - [源码地址](https://github.com/xwzbupt/personal-site)
 
+### Lazy_V 的博客
+
+- [网站链接][lazyv-blog]
+- [源码地址](https://github.com/zzxzzk115/blog)
+
 ## 更多
 
 - 随时随地通过 PR 添加你的博客或文档至此。
@@ -148,3 +153,4 @@ category:
 [wings-boot]: https://wings.fessional.pro/
 [dynamic-tp]: https://dynamictp.cn/
 [weiser-blog]: https://weiser.fun/
+[lazyv-blog]: https://zzxzzk115.github.io/blog/
