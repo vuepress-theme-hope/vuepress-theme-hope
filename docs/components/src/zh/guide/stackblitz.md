@@ -53,16 +53,16 @@ StackBlitz 组件高度宽高比，只有当未指定 `height` 时有效。
 ### embed
 
 - 类型: `boolean`
-- 默认值: `true`
+- 默认值: `false`
 
 无论屏幕大小如何，都强制嵌入视图。
 
-### clickToLoad
+### load
 
 - 类型: `boolean`
-- 默认值: `true`
+- 默认值: `false`
 
-要求用户 "点击加载" 嵌入演示。
+是否直接加载嵌入演示。
 
 ### view
 

@@ -78,20 +78,14 @@ export default defineComponent({
      *
      * 强制嵌入视图，无论屏幕尺寸如何
      */
-    embed: {
-      type: Boolean,
-      default: true,
-    },
+    embed: Boolean,
 
     /**
-     * Require user to 'click to load' the embed demo
+     * Whether load embed demo directly
      *
-     * 要求用户“点击加载”嵌入式演示
+     * 是否直接加载嵌入演示
      */
-    clickToLoad: {
-      type: Boolean,
-      default: true,
-    },
+    load: Boolean,
 
     /**
      * Which view to open by default
@@ -138,7 +132,7 @@ export default defineComponent({
           props.initialPath
             ? `&initialpath=${encodeURI(props.initialPath)}`
             : ""
-        }&ctl=${props.clickToLoad ? 1 : 0}&view=${props.view}${
+        }&ctl=${props.load ? 0 : 1}&view=${props.view}${
           props.hideExplorer ? "&hideExplorer=1" : ""
         }${props.hideNavigation ? "&hideNavigation=1" : ""}${
           props.hideDevtools ? "&hidedevtools=1" : ""

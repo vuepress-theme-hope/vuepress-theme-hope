@@ -53,16 +53,16 @@ The initial URL path the preview should open.
 ### embed
 
 - Type: `boolean`
-- Default: `true`
+- Default: `false`
 
 Force embed view regardless of screen size.
 
-### clickToLoad
+### load
 
 - Type: `boolean`
-- Default: `true`
+- Default: `false`
 
-Require user to 'click to load' the embed demo.
+RWhether load embed demo directly.
 
 ### view
 
