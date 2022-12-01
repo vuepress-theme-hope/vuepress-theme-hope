@@ -29,6 +29,14 @@ tag:
 
 - 如果你的仓库地址是一个普通的形如 `https://github.com/<USERNAME>/<REPO>` 的格式，网站将会被发布到 `https://<USERNAME>.github.io/<REPO>/` ，也就是说，你需要将 base 设置为 `"/<REPO>/"`。
 
+::: warning
+
+GitHub Pages 默认会忽略 `_` 开头的文件，导致部分脚本未正确加载，产生网站图标不显示、移动端布局下侧边栏无法展开等问题。有一种[方法](https://github.blog/2009-12-29-bypassing-jekyll-on-github-pages/)可以绕过这个行为。
+
+简单来说，你只需要在项目的 `.vuepress/public` 文件夹下新建命名为 `.nojekyll` 的文件，然后重新构建网站并部署就可以解决。
+
+:::
+
 ::: tip Github 教程
 
 关于 GitHub 的相关教程，你可以参考 [GitHub 简介](https://mrhope.site/code/github/)。
