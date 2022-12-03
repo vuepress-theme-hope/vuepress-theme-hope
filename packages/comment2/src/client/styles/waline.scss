@@ -11,6 +11,6 @@
   @include wrapper.wrapper;
 
   @media print {
-    display: none;
+    display: none !important;
   }
 }
