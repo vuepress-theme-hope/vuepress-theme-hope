@@ -22,7 +22,7 @@ export const extendsPage = (
   themeConfig: ThemeConfig,
   plugins: PluginsOptions,
   page: Page<ThemePageData>,
-  hotReload = false
+  injectContentSensitiveData = false
 ): void => {
   const { config = {} } = themeConfig.encrypt;
   const frontmatter = page.frontmatter as
@@ -110,17 +110,16 @@ export const extendsPage = (
     // resolve encrypted
     if (isEncrypted) page.routeMeta[ArticleInfoType.isEncrypted] = true;
 
-    // excerpt and reading-time is sensitive with markdown contents
-    // to improve hmr speed, we only ensure this with `hotReload` enabled.
-    if (hotReload) {
-      const excerpt = isEncrypted
-        ? ""
-        : frontmatter.excerpt ||
-          page.excerpt ||
-          // special handle auto generated description by seo2 plugin
-          (page.data.autoDesc ? "" : frontmatter.description) ||
-          // handle autoExcerpt option
-          (typeof plugins.blog === "object" && plugins.blog.autoExcerpt
+    const excerpt = isEncrypted
+      ? ""
+      : frontmatter.excerpt ||
+        page.excerpt ||
+        // special handle auto generated description by seo2 plugin
+        (page.data.autoDesc ? "" : frontmatter.description) ||
+        // handle autoExcerpt option
+        // excerpt is sensitive with markdown contents
+        (injectContentSensitiveData
+          ? typeof plugins.blog === "object" && plugins.blog.autoExcerpt
             ? page.data.autoDesc
               ? frontmatter.description
               : md2text(
@@ -129,14 +128,19 @@ export const extendsPage = (
                     // remove first heading1 as title
                     .replace(/^# (.*)$/gm, "")
                 ).slice(0, 180)
-            : "");
+            : ""
+          : "");
 
-      // save page excerpt to routeMeta
-      if (excerpt) page.routeMeta[ArticleInfoType.excerpt] = excerpt;
+    // save page excerpt to routeMeta
+    if (excerpt) page.routeMeta[ArticleInfoType.excerpt] = excerpt;
 
+    if (
+      // reading time data is sensitive with markdown contents
+      injectContentSensitiveData &&
       // ensure a valid reading time exists
-      if (page.data.readingTime && page.data.readingTime.words !== 0)
-        page.routeMeta[ArticleInfoType.readingTime] = page.data.readingTime;
-    }
+      page.data.readingTime &&
+      page.data.readingTime.words !== 0
+    )
+      page.routeMeta[ArticleInfoType.readingTime] = page.data.readingTime;
   }
 };
