@@ -60,7 +60,7 @@ export const setupCopyCode = (): void => {
     if (!codeBlockElement.hasAttribute("copy-code-registered")) {
       const copyElement = document.createElement("button");
 
-      copyElement.classList.add("copy");
+      copyElement.classList.add("copy-code-button");
       copyElement.innerHTML = '<div class="copy-icon" />';
       copyElement.setAttribute("aria-label", locale.value.copy);
       copyElement.setAttribute("data-copied", locale.value.copied);

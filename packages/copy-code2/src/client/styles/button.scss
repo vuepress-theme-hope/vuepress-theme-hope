@@ -10,7 +10,7 @@ $copied-icon: '<svg viewBox="0 0 24 24" fill="none" height="20" width="20" strok
 }
 
 div[class*="language-"] {
-  > button.copy {
+  > button.copy-code-button {
     @include reset.button;
     position: absolute;
     outline: none;
@@ -129,8 +129,14 @@ div[class*="language-"] {
     }
   }
 
-  &:hover > button.copy.pure,
-  > button.copy.pure:focus {
+  &:hover > button.copy-code-button.pure,
+  > button.copy-code-button.pure:focus {
     opacity: 1;
+  }
+}
+
+@media print {
+  div[class*="language-"] > button.copy-code-button {
+    display: none;
   }
 }
