@@ -1,5 +1,9 @@
 @use "vuepress-shared/styles/wrapper";
 
-.page .twikoo-wrapper {
+.twikoo-wrapper {
   @include wrapper.wrapper;
+
+  @media print {
+    display: none;
+  }
 }

@@ -9,4 +9,8 @@
   --waline-bgcolor-light: var(--c-bg-light, #f3f4f5);
 
   @include wrapper.wrapper;
+
+  @media print {
+    display: none;
+  }
 }
