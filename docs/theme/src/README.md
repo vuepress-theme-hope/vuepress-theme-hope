@@ -25,34 +25,34 @@ features:
     details: Add align, sup/sub script, footnote, tasklist, tex, flowchart, diagram, mark and presentation support in Markdown
     link: /guide/markdown/
 
-  - title: Slide page
+  - title: Slide Page
     icon: slides
     details: Adding slide pages to display things you like
     link: /guide/layout/slides
 
-  - title: Layout enhancement
+  - title: Layout Enhancement
     icon: layout
     details: Adding breadcrumb, footer, improved navbar, improved page nav and etc.
     link: /guide/layout/
 
-  - title: Pageviews and comments
+  - title: Pageviews and Comments
     icon: comment
     details: Start pageview statistics and comment support with Waline
     link: /guide/feature/comment.html
 
-  - title: Article information
+  - title: Article Information
     icon: info
     details: Add author, writing date, reading time, word count and other information to your article
     link: /guide/feature/page-info.html
 
-  - title: Blog support
+  - title: Blog Support
     icon: blog
     details: Listing your articles with their dates, tags and categories with some awesome layouts
     link: /guide/blog/
 
-  - title: Custom theme color
+  - title: Customizable Theme Color
     icon: palette
-    details: Supports custom theme colors and allows users to switch between preset theme colors
+    details: Customize theme color
     link: /guide/interface/theme-color.html
 
   - title: Dark Mode
@@ -70,17 +70,22 @@ features:
     details: Encrypt you articles based on page links, so that only the one you want could see them
     link: /guide/feature/encrypt.html
 
-  - title: Copy button
+  - title: Search
+    icon: search
+    details: Support docsearch and client search
+    link: /guide/feature/search.html
+
+  - title: Copy Code Blocks
     icon: copy
     details: Copy codes with one click in code blocks
     link: /guide/feature/copy-code.html
 
-  - title: Image preview
+  - title: Image Preview
     icon: pic
     details: Support viewing, zooming, sharing your page images like a gallery
     link: /guide/feature/photo-swipe.html
 
-  - title: SEO enhancement
+  - title: SEO Enhancement
     icon: config
     details: Optimize pages for search engines
     link: /guide/advanced/seo.html
@@ -90,17 +95,17 @@ features:
     details: Generate a Sitemap for your site
     link: /guide/advanced/sitemap.html
 
-  - title: Feed support
+  - title: Feed
     icon: rss
     details: Generate feed to allow users to subscribe it
     link: /guide/advanced/feed.html
 
-  - title: PWA support
+  - title: PWA
     icon: mobile
     details: Make your site more like an APP
     link: /guide/advanced/pwa.html
 
-  - title: More new features
+  - title: More New Features
     icon: more
     details: Including icon support, fullscreen button, etc.
     link: /guide/feature/

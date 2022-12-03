@@ -82,9 +82,9 @@ export interface AppearanceOptions {
   darkmode?: DarkmodeConfig;
 
   /**
-   * Theme color configuration
+   * Theme color picker configuration
    *
-   * 主题色选项配置
+   * 主题色选择器配置
    *
    * @default false
    */

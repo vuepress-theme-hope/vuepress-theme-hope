@@ -11,21 +11,17 @@ tag:
 
 此教程将指引你创建一个 VuePress Theme Hope 项目。
 
+<!-- more -->
+
 ## 选择合适的项目位置
 
 为了避免偶然间触发一些奇怪的问题，而你自己不会解决，请尽量避免使用包含中文文字、表情符号或空格的文件路径 (如: `C:\Users\小张\Desktop\VuePress 项目\Hope 主题❤️\`)。
 
 建议使用纯英文路径 (如: `D:\projects\vuepress-theme-hope\`)。
 
-::: tip
-
-如果你是一个新手，我们不建议你在已有项目内使用 VuePress Theme Hope，以避免出现你无法解决问题。请选择一个空文件夹初始化 VuePress Theme Hope。
-
-:::
-
 ## 初始化项目
 
-在选定的项目位置所在文件夹打开终端。
+在选定的位置所在文件夹中打开终端。
 
 ::: tip 在 Windows 上打开终端
 

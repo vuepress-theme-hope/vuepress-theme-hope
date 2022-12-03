@@ -31,7 +31,7 @@ A basic project structure is as follows:
 │     └── workflow → GitHub workflow configuration
 │          └── docs-deploy.yml → Workflow for automatic deployment of documents
 |
-├── docs → project folder specified by you
+├── src → docs folder
 │    │
 │    ├── .vuepress (optional) → VuePress config folder
 │    │    │

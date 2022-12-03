@@ -70,6 +70,11 @@ features:
     details: Шифруйте свои статьи на основе ссылок на страницы, чтобы их мог видеть только тот, кому вы хотите
     link: /ru/guide/feature/encrypt.html
 
+  - title: Search
+    icon: search
+    details: Support docsearch and client search
+    link: /ru/guide/feature/search.html
+
   - title: Кнопка копирования
     icon: copy
     details: Копируйте коды одним кликом в блоках кодов

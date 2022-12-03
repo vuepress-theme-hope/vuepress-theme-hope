@@ -17,7 +17,7 @@ This tutorial guides you on how to configure a VuePress project.
 
 Without config files, a VuePress project can only achieve limited functionality by default, so to better customize your website, VuePress provides config files.
 
-VuePress uses `.vuepress` folder under the project folder to store configuration, and all VuePress related files will be placed here.
+VuePress uses `.vuepress` folder inside the docs folder to store configuration, and all VuePress related files will be placed here.
 
 For a VuePress site, `.vuepress/config.ts` (or `.vuepress/config.js`) is the necessary config file.
 
@@ -60,6 +60,44 @@ export default defineUserConfig({
 ```
 
 :::
+
+In the template, in order to avoid the configuration file being too long, we use the ESM feature natively provided by JavaScript to split the theme configuration, navigation bar and sidebar configuration into separate files.
+
+The template extracts theme functions to `.vuepress/theme.js` and exports them via `export default`.
+
+`.vuepress/theme.ts`:
+
+```ts
+import { hopeTheme } from "vuepress-theme-hope";
+
+// We export the theme object by default
+export default hopeTheme({
+  // theme configuration
+});
+```
+
+Then import directly in the configuration file:
+
+`.vuepress/config.ts`:
+
+```ts
+//...
+// we introduce the theme here
+import theme from "./theme.js";
+
+//...
+
+export default defineUserConfig({
+  //...
+
+  // This is equivalent to `theme: hopeTheme({/* your config */})`
+  theme,
+
+  //...
+});
+```
+
+This can also help you understand the site configuration and theme configuration in the configuration more clearly.
 
 ## Config Scope
 

@@ -83,9 +83,9 @@ Node.js 本身只会占据几十 M 的空间!
 
 ::: tip
 
-我们推荐你使用 pnpm 管理你的项目，因为 VuePress 和 VuePress Theme Hope 都是通过 pnpm 来管理依赖的。
+我们推荐你使用 pnpm 作为项目管理器，因为 VuePress 和 VuePress Theme Hope 都是通过 pnpm 来管理依赖的。
 
-pnpm 的一些功能可以保证你拥有正确的依赖。
+pnpm 的一些功能可以保证你拥有正确的依赖，并且它能加速安装。
 
 :::
 

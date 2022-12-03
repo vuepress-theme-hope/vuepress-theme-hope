@@ -70,7 +70,12 @@ features:
     details: 你可以为你的特定页面或特定目录进行加密，以便陌生人不能随意访问它们
     link: /zh/guide/feature/encrypt.html
 
-  - title: 复制按钮
+  - title: 搜索支持
+    icon: search
+    details: 支持 docsearch 和基于客户端的搜索
+    link: /zh/guide/feature/search.html
+
+  - title: 代码复制
     icon: copy
     details: 一键复制代码块中的代码
     link: /zh/guide/feature/copy-code.html

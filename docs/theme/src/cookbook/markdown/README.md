@@ -21,11 +21,11 @@ Used to write documentation and save it under the software’s directory under t
 
 ## ShortCut Key
 
-| Display       | Code       | ShortCut Key   |
-| ------------- | ---------- | -------------- |
-| **Bold**      | `**text**` | Ctrl/⌘ + B     |
-| _Emphasize_   | `*text*`   | Ctrl/⌘ + I     |
-| `Inline Code` | \`code\`   | 选中后 `` ` `` |
+| Display       | Code       | ShortCut Key        |
+| ------------- | ---------- | ------------------- |
+| **Bold**      | `**text**` | Ctrl/⌘ + B          |
+| _Emphasize_   | `*text*`   | Ctrl/⌘ + I          |
+| `Inline Code` | \`code\`   | Select then `` ` `` |
 
 ## Title
 

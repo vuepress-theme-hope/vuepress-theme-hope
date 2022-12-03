@@ -75,7 +75,7 @@ tag:
 
 ::: tip
 
-这里还有一些其他没有被主题默认启用的插件，你可以根据自己的需求自行启用。
+这里还有一些其他没有被主题捆绑的插件，你可以根据自己的需求自行启用。
 
 - [vuepress-plugin-lightgallery][lightgallery]: 基于 lightgallery 图片浏览插件
 

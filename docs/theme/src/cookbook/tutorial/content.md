@@ -19,12 +19,10 @@ VuePress is markdown-centered. Each Markdown file inside your project is a stand
 
 By default, the route path of a page is determined by the relative path of your Markdown file.
 
-In the previous chapter, the `docs` directory was used as VuePress project folder. So if you have the following path structure:
-
-Assuming this is the directory structure of your Markdown files:
+Since you are generating the project from create helper, you will have the following file structure:
 
 ```
-└─ docs
+└─ src
    ├─ guide
    │  ├─ ...
    │  └─ page.md

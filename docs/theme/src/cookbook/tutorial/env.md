@@ -11,6 +11,8 @@ tag:
 
 This tutorial will guide you on how to set up a VuePress runtime environment.
 
+<!-- more -->
+
 ## Node.js
 
 [Node.js®](https://nodejs.org/en/) is a JavaScript runtime built on [Chrome's V8 JavaScript engine](https://v8.dev/).
@@ -71,9 +73,9 @@ After you install Node.js, please install [pnpm](https://pnpm.io).
 
 ::: tip
 
-We recommend that you use pnpm to manage your project, because VuePress and VuePress Theme Hope both use pnpm to manage dependencies.
+We recommend you to choose pnpm as package manager, because VuePress and VuePress Theme Hope both use pnpm to manage dependencies.
 
-Some features of pnpm ensure that you have the correct dependencies.
+Some features of pnpm ensure that you have the correct dependencies, also it can speed up your installation.
 
 :::
 

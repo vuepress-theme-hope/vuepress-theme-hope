@@ -53,7 +53,7 @@ If you don’t need this feature, set `darkmode: "disable"` to disable it.
 - Default: `false`
 - Details: [Interface → ThemeColor](../../guide/interface/theme-color.md)
 
-Theme color configuration.
+Theme color picker configuration.
 
 ## fullscreen <Badge text="Root only" type="warning" />
 

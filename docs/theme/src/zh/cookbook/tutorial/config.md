@@ -17,7 +17,7 @@ tag:
 
 如果没有配置文件，一个 VuePress 项目只能按照预设实现有限的功能，所以为了更好的自定义你的网站，VuePress 提供了配置文件。
 
-VuePress 使用项目文件夹下的 `.vuepress` 文件夹存放配置，所有 VuePress 相关的文件都将会被放在这里。
+VuePress 使用文档文件夹中的 `.vuepress` 文件夹存放配置，所有 VuePress 相关的文件都将会被放在这里。
 
 对于 VuePress 站点来说，`.vuepress/config.ts` (或 `.vuepress/config.js`) 是必要的配置文件。
 
@@ -60,6 +60,44 @@ export default defineUserConfig({
 ```
 
 :::
+
+在模板中，为了避免配置文件过长，我们使用 JavaScript 原生提供的 ESM 特性，将主题配置、导航栏和侧边栏配置拆分到了单独的文件夹中。
+
+模板将主题函数抽离到了 `.vuepress/theme.js`，并通过 `export default` 导出。
+
+`.vuepress/theme.ts`:
+
+```ts
+import { hopeTheme } from "vuepress-theme-hope";
+
+// 我们默认导出了主题对象
+export default hopeTheme({
+  // 主题配置
+});
+```
+
+随后在配置文件中直接引入:
+
+`.vuepress/config.ts`:
+
+```ts
+// ...
+// 我们在这里引入了主题
+import theme from "./theme.js";
+
+// ...
+
+export default defineUserConfig({
+  // ...
+
+  // 这和 `theme: hopeTheme({/* 你的配置 */})` 是等价的
+  theme,
+
+  // ...
+});
+```
+
+这也能更清晰的帮助你理解配置中的站点配置和主题配置。
 
 ## 配置作用域
 

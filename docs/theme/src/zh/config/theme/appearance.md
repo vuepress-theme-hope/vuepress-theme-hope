@@ -53,7 +53,7 @@ tag:
 - 默认值: `false`
 - 详情: [界面 → 主题色](../../guide/interface/theme-color.md)
 
-主题色选项配置。
+主题色选择器配置。
 
 ## fullscreen
 

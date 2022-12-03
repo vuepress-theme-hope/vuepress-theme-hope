@@ -158,7 +158,7 @@ The theme includes the following plugins, you can use them in other themes or di
 
 ::: tip
 
-Here are some other plugins that are not enabled by default by the theme, you can enable them according to your own needs.
+Here are some other plugins that are not bundled by the theme, you can enable them according to your own needs.
 
 - [vuepress-plugin-lightgallery][lightgallery]: Image preview plugin based on lightgallery
 
