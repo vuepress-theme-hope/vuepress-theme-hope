@@ -27,6 +27,12 @@ For instructions, please see [Blog Intro](../../guide/blog/intro.md).
 
 Whether to generate excerpt for every page.
 
+::: warning Limitation
+
+Auto excerpt is not available in devServer by default, [see reasons and how to enable it](../theme/basic.md#hotreload).
+
+:::
+
 ### filter
 
 - Type: `(page: Page) => boolean`

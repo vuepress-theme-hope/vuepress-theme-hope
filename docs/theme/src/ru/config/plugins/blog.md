@@ -27,6 +27,12 @@ tag:
 
 Генерировать ли выдержку для каждой страницы.
 
+::: warning Limitation
+
+Auto excerpt is not available in devServer by default, [see reasons and how to enable it](../theme/basic.md#hotreload).
+
+:::
+
 ### filter
 
 - Тип: `(page: Page) => boolean`

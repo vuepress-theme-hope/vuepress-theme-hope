@@ -27,6 +27,12 @@ tag:
 
 是否为每个页面生成摘录。
 
+::: warning 限制
+
+默认情况下自动生成摘要在 devServer 中不可用，[查看原因和如何启用](../theme/basic.md#hotreload)。
+
+:::
+
 ### filter
 
 - 类型: `(page: Page) => boolean`
