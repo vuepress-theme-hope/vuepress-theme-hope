@@ -60,10 +60,10 @@ A bilibili video with start time and page:
 
 A bilibili video with custom settings:
 
-<BiliBili bvid="BV1kt411o7C3" :high-quality="false" :danmaku="false" />
+<BiliBili bvid="BV1kt411o7C3" low-quality no-danmaku />
 
 ```md
-<BiliBili bvid="BV1kt411o7C3" :high-quality="false" :danmaku="false" />
+<BiliBili bvid="BV1kt411o7C3" low-quality no-danmaku />
 ```
 
 See [BiliBili][bilibili] page for available props.

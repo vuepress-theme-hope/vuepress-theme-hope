@@ -61,10 +61,10 @@ tag:
 
 一个自定义设置的 B 站视频:
 
-<BiliBili bvid="BV1kt411o7C3" :high-quality="false" :danmaku="false" />
+<BiliBili bvid="BV1kt411o7C3" low-quality no-danmaku />
 
 ```md
-<BiliBili bvid="BV1kt411o7C3" :high-quality="false" :danmaku="false" />
+<BiliBili bvid="BV1kt411o7C3" low-quality no-danmaku />
 ```
 
 有关可用属性，请参阅 [BiliBili][bilibili] 页面。

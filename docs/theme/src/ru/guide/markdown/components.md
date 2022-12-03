@@ -61,10 +61,10 @@ tag:
 
 Видео bilibili с пользовательскими настройками:
 
-<BiliBili bvid="BV1kt411o7C3" :high-quality="false" :danmaku="false" />
+<BiliBili bvid="BV1kt411o7C3" low-quality no-danmaku />
 
 ```md
-<BiliBili bvid="BV1kt411o7C3" :high-quality="false" :danmaku="false" />
+<BiliBili bvid="BV1kt411o7C3" low-quality no-danmaku />
 ```
 
 Смотрите страницу [BiliBili][bilibili] для доступных свойств.
