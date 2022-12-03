@@ -11,6 +11,10 @@
 
   font-size: 14px;
 
+  @media print {
+    display: flex !important;
+  }
+
   > span {
     display: flex;
     flex-shrink: 0;
@@ -27,6 +31,10 @@
     @media (max-width: hope-config.$mobile) {
       margin-right: 0.3em;
       font-size: 0.875em;
+    }
+
+    @media print {
+      display: flex !important;
     }
   }
 
