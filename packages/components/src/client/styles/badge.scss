@@ -22,8 +22,13 @@
 
   transition: background var(--color-transition), color var(--color-transition);
 
+  & + & {
+    margin-left: 5px;
+  }
+
   // compatible with toc
-  .table-of-contents & {
+  .table-of-contents &,
+  #toc & {
     vertical-align: middle;
   }
 
@@ -45,9 +50,5 @@
 
   &.note {
     background: var(--badge-note-color);
-  }
-
-  & + & {
-    margin-left: 5px;
   }
 }

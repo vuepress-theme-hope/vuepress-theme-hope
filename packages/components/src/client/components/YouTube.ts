@@ -23,6 +23,16 @@ export default defineComponent({
     },
 
     /**
+     * Youtube video title
+     *
+     * Youtube 视频标题
+     */
+    title: {
+      type: String,
+      default: "A YouTube video",
+    },
+
+    /**
      * Component width
      *
      * 组件宽度
@@ -210,19 +220,33 @@ export default defineComponent({
       return params.toString();
     });
 
-    return (): VNode | null =>
+    const videoLink = computed(() =>
       coreURL.value
-        ? h("iframe", {
-            ref: el,
-            src: `https://www.youtube.com/embed/${coreURL.value}${params.value}`,
-            class: "youtube-iframe",
-            allow:
-              "accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture",
-            style: {
-              width: width.value,
-              height: height.value,
-            },
-          })
+        ? `https://www.youtube.com/embed/${coreURL.value}${params.value}`
+        : null
+    );
+
+    return (): VNode[] | null =>
+      videoLink.value
+        ? [
+            h(
+              "div",
+              { class: "youtube-desc" },
+              h("a", { class: "sr-only", href: videoLink.value }, props.title)
+            ),
+            h("iframe", {
+              ref: el,
+              src: videoLink.value,
+              title: props.title,
+              class: "youtube-iframe",
+              allow:
+                "accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture",
+              style: {
+                width: width.value,
+                height: height.value,
+              },
+            }),
+          ]
         : null;
   },
 });

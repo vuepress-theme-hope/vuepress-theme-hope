@@ -23,6 +23,16 @@ export default defineComponent({
     },
 
     /**
+     * BiliBili video title
+     *
+     * B 站视频标题
+     */
+    title: {
+      type: String,
+      default: "A BiliBili video",
+    },
+
+    /**
      * BiliBili video page
      *
      * B 站视频分页
@@ -97,18 +107,32 @@ export default defineComponent({
         checkIsMobile(navigator.userAgent) || el.value!.clientWidth < 640;
     };
 
+    const { el, width, height } = useSize<HTMLIFrameElement>(
+      props,
+      extraHeight
+    );
+
+    const videoLink = computed(
+      () =>
+        `https://player.bilibili.com/player.html?bvid=${props.bvid}&t=${
+          props.time
+        }&high_quality=${props.lowQuality ? 0 : 1}&page=${props.page}&danmaku=${
+          props.noDanmaku ? 0 : 1
+        }`
+    );
+
     onMounted(() => {
       updateMobile();
       useEventListener("orientationchange", () => updateMobile());
       useEventListener("resize", () => updateMobile());
     });
 
-    const { el, width, height } = useSize<HTMLIFrameElement>(
-      props,
-      extraHeight
-    );
-
-    return (): VNode | null =>
+    return (): VNode[] => [
+      h(
+        "div",
+        { class: "bili-desc" },
+        h("a", { class: "sr-only", href: videoLink.value }, props.title)
+      ),
       h("iframe", {
         ref: el,
         // Tip: `https://www.bilibili.com/blackboard/newplayer.html?bvid=${props.bvid}&as_wide=1&page=1` only support whitelist sites now
@@ -117,6 +141,7 @@ export default defineComponent({
         }&high_quality=${props.lowQuality ? 0 : 1}&page=${props.page}&danmaku=${
           props.noDanmaku ? 0 : 1
         }`,
+        title: props.title,
         class: "bili-iframe",
         allow:
           "accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture",
@@ -124,6 +149,7 @@ export default defineComponent({
           width: width.value,
           height: height.value,
         },
-      });
+      }),
+    ];
   },
 });

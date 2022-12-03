@@ -30,6 +30,10 @@
   animation: 0.25s notice-fade-in;
 
   backdrop-filter: blur(10px);
+
+  @media print {
+    display: none;
+  }
 }
 
 .notice-wrapper {
@@ -45,6 +49,10 @@
 
   background: var(--c-bg, #fff);
   box-shadow: 0 2px 6px 0 var(--card-shadow);
+
+  @media print {
+    display: none;
+  }
 
   &.fullscreen {
     position: fixed;

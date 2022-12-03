@@ -155,6 +155,8 @@ import { useStyleTag } from "${CLIENT_FOLDER}vueuse.js";
 }\
 ${configImport}
 
+import "${CLIENT_FOLDER}styles/sr-only.scss";
+
 export default defineClientConfig({
   enhance: ({ app }) => {
 ${enhance

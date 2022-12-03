@@ -22,6 +22,16 @@ export default defineComponent({
     },
 
     /**
+     * Video title
+     *
+     * 视频标题
+     */
+    title: {
+      type: String,
+      default: "A video",
+    },
+
+    /**
      * Video file type
      *
      * 视频文件类型
@@ -103,19 +113,23 @@ export default defineComponent({
             height: height.value,
           },
         },
-        h(
-          "video",
-          {
-            crossorigin: "anonymous",
-            poster: props.poster,
-            controls: "",
-            ...(props.loop ? { loop: "" } : {}),
-          },
-          [
-            ...props.tracks.map((track) => h("track", track)),
-            h("source", { src: props.src, type: props.type }),
-          ]
-        )
+        [
+          h("a", { class: "sr-only", href: props.src }, props.title),
+          h(
+            "video",
+            {
+              title: props.title,
+              crossorigin: "anonymous",
+              poster: props.poster,
+              controls: "",
+              ...(props.loop ? { loop: "" } : {}),
+            },
+            [
+              ...props.tracks.map((track) => h("track", track)),
+              h("source", { src: props.src, type: props.type }),
+            ]
+          ),
+        ]
       );
   },
 });

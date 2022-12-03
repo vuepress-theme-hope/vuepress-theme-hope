@@ -8,9 +8,22 @@
 
   background: rgb(0 0 0 / 15%);
 
+  @media print {
+    height: auto !important;
+    background: transparent;
+
+    a {
+      display: block;
+    }
+  }
+
   video {
     display: block;
     width: 100%;
     height: 100%;
+
+    @media print {
+      display: none;
+    }
   }
 }
