@@ -16,6 +16,10 @@
   border: 1px solid var(--c-border, #ddd);
   border-radius: 6px;
 
+  @media print {
+    display: none !important;
+  }
+
   .title-wrapper {
     display: flex;
     flex-flow: row wrap;

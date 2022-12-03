@@ -65,6 +65,10 @@
   transition: background var(--color-transition),
     border-color var(--color-transition), color var(--color-transition);
 
+  @media print {
+    page-break-inside: avoid;
+  }
+
   .custom-container-title {
     position: relative;
     font-weight: 600;
@@ -87,6 +91,10 @@
     .custom-container-title {
       padding-left: 1.5rem;
 
+      @media print {
+        padding-left: 0;
+      }
+
       &::before {
         content: " ";
 
@@ -98,6 +106,10 @@
 
         background-position: left;
         background-repeat: no-repeat;
+
+        @media print {
+          display: none;
+        }
       }
     }
 
@@ -211,6 +223,10 @@
   transition: background var(--transform-transition),
     color var(--transform-transition);
 
+  @media print {
+    display: none;
+  }
+
   h4 {
     margin-top: 0;
   }
@@ -254,6 +270,10 @@
 
       width: 1.5rem;
       height: 1.5rem;
+
+      @media print {
+        display: block;
+      }
     }
 
     &::before {
