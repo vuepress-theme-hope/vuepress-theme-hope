@@ -17,6 +17,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: transparent;
+
+  @media print {
+    font-size: 10pt !important;
+  }
 }
 
 a {
@@ -166,4 +170,69 @@ th,
 td {
   padding: 0.6em 1em;
   border: 1px solid #dfe2e5;
+}
+
+@media print {
+  // clear style
+  *,
+  ::after,
+  ::before {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  // handle main content style
+  h2,
+  h3,
+  p {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+
+  a {
+    color: inherit;
+    font-weight: inherit !important;
+    font-size: inherit !important;
+    text-decoration: underline;
+
+    // add links after anchor
+    &[href^="http://"],
+    &[href^="https://"]
+    {
+      &::after {
+        content: " (" attr(href) ") ";
+      }
+    }
+  }
+
+  // add abbreviations
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  pre {
+    border: 1px solid #eee;
+    white-space: pre-wrap !important;
+
+    > code {
+      white-space: pre-wrap !important;
+    }
+  }
+
+  blockquote {
+    border-left: 0.2rem solid #ddd;
+    color: inherit;
+  }
+
+  blockquote,
+  img,
+  pre,
+  tr {
+    page-break-inside: avoid;
+  }
 }
