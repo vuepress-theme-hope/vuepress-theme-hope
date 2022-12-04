@@ -39,7 +39,7 @@ importers:
       execa: 6.1.0
       husky: 8.0.2
       inquirer: 9.1.4
-      magic-string: 0.26.7
+      magic-string: 0.27.0
       markdownlint-cli: 0.32.2
       nano-staged: 0.8.0
       npm-check-updates: 16.4.3
@@ -87,7 +87,7 @@ importers:
       execa: 6.1.0
       husky: 8.0.2
       inquirer: 9.1.4
-      magic-string: 0.26.7
+      magic-string: 0.27.0
       markdownlint-cli: 0.32.2
       nano-staged: 0.8.0
       npm-check-updates: 16.4.3
@@ -9108,6 +9108,13 @@ packages:
     engines: {node: '>=12'}
     dependencies:
       sourcemap-codec: 1.4.8
+    dev: true
+
+  /magic-string/0.27.0:
+    resolution: {integrity: sha512-8UnnX2PeRAPZuN12svgR9j7M1uWMovg/CEnIwIG0LFkXSJJe4PdfUGiTGl8V9bsBHFUtfVINcSyYxd7q+kx9fA==}
+    engines: {node: '>=12'}
+    dependencies:
+      '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
 
   /make-array/1.0.5:
