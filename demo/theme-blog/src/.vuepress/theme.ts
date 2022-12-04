@@ -23,6 +23,8 @@ export default hopeTheme({
 
   pageInfo: ["Author", "Original", "Date", "Category", "Tag", "ReadingTime"],
 
+  hotReload: true,
+
   blog: {
     medias: {
       Baidu: "https://example.com",

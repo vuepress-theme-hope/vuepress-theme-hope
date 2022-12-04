@@ -85,6 +85,7 @@ export const hopeTheme =
         checkFrontmatter(page, app.env.isDebug);
 
         extendsPage(
+          app,
           <Page<ThemePageData>>page,
           themeConfig,
           status,

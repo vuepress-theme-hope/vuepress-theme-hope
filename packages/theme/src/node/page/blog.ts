@@ -1,9 +1,9 @@
 import matter from "gray-matter";
-import { getDate, md2text, timeTransformer } from "vuepress-shared/node";
+import { getDate, timeTransformer } from "vuepress-shared/node";
 
 import { ArticleInfoType, PageType } from "../../shared/index.js";
 
-import type { Page } from "@vuepress/core";
+import type { App, Page } from "@vuepress/core";
 import type {
   ThemeData,
   ThemePageData,
@@ -13,6 +13,7 @@ import type {
 } from "../../shared/index.js";
 
 export const injectBlogInfo = (
+  app: App,
   themeData: ThemeData,
   page: Page<ThemePageData>,
   enableAutoExcerpt: boolean,
@@ -94,17 +95,31 @@ export const injectBlogInfo = (
       page.excerpt ||
       // special handle auto generated description by seo2 plugin
       (page.data.autoDesc ? "" : frontmatter.description) ||
-      // handle autoExcerpt option
+      // generate excerpt from content
       // excerpt is sensitive with markdown contents
       (injectContentSensitiveData && enableAutoExcerpt
-        ? page.data.autoDesc
-          ? frontmatter.description
-          : md2text(
-              matter(page.content)
-                .content.trim()
-                // remove first heading1 as title
-                .replace(/^# (.*)$/gm, "")
-            ).slice(0, 180)
+        ? app.markdown.render(
+            // get page content
+            matter(page.content)
+              .content.trim()
+              // remove first heading1 as title
+              .replace(/^# (.*)$/gm, "")
+              // get lines until total length is above 200
+              .split("\n")
+              .reduce(
+                (excerpt, content) =>
+                  excerpt.length < 200 ? `${excerpt}\n${content}` : excerpt,
+                ""
+              ),
+
+            // markdown env
+            {
+              base: app.options.base,
+              filePath: page.filePath,
+              filePathRelative: page.filePathRelative,
+              frontmatter: { ...page.frontmatter },
+            }
+          )
         : "");
 
   // save page excerpt to routeMeta

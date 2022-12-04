@@ -130,6 +130,24 @@
       display: none;
     }
 
+    h2 {
+      font-size: 1.4em;
+    }
+
+    h3 {
+      font-size: 1.2em;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+    }
+
     // stylelint-disable selector-max-compound-selectors
     h1 + p {
       margin-top: 0.5em;
