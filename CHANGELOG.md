@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.133](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.132...v2.0.0-beta.133) (2022-12-04)
+
+### Features
+
+- **comment2:** improve print style ([f1a116e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f1a116e9904e25041b6decb8de081253891f8a41))
+- **comment2:** improve print style ([8c28e14](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8c28e1442576a5fc3395cc67a42c81f320431932))
+- **components:** improve print style ([e59b5c3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e59b5c3ec7a63183708f62a6c35d2f855972fc28))
+- **copy-code2:** improve print style ([a934e7b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a934e7bb5b862e2860c6df262ed782d2fc127f25))
+- **create:** disable pwa by default ([d0d22ef](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d0d22ef9435f7c1f19d69d3b7e9821d55cb76801))
+- **md-enhance:** improve print style ([69e69e4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/69e69e4f66dda9e1209bc3c54d55509479f014b2))
+- **search-pro:** improve print style ([7884415](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7884415f1a738d4af127bd1b64bbf018924c09d5))
+- **shared:** improve normalized ([6d6ccaa](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6d6ccaa903ffa9c2d47cb4895beb89e6cc74d566))
+- **theme:** improve blog excerpt generating, close [#2460](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2460) ([cedbc2b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cedbc2b0a622081314fcd8f7c74c9ffc9a6f0e64))
+- **theme:** improve chunk split in Vite ([be77fd4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/be77fd42542e45687cc7ff12641476ea71e6fc1a))
+- **theme:** improve print style ([2873ce9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2873ce90c0804de0f1cb7f6a5be49622de73cfc8))
+
+### Bug Fixes
+
+- **theme:** fix excerpt generating ([62c9e38](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/62c9e38d1522cfb5497c2992f8f03d0b44c79006))
+
 ## [2.0.0-beta.132](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.131...v2.0.0-beta.132) (2022-11-30)
 
 ### ⚠ BREAKING CHANGES
