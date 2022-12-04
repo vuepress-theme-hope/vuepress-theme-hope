@@ -1,5 +1,5 @@
 import { chalk } from "@vuepress/utils";
-import { convertThemeConfig } from "./theme.js";
+import { convertThemeOptions } from "./theme.js";
 import { deprecatedMsg } from "./utils.js";
 import { hopeTheme } from "../theme.js";
 import { logger } from "../utils.js";
@@ -83,7 +83,7 @@ export const defineThemeConfig = (themeConfig: ThemeOptions): ThemeOptions => {
     'import { hopeThemeLegacy } from "vuepress-theme-hope";'
   );
 
-  return convertThemeConfig(
+  return convertThemeOptions(
     themeConfig as ThemeOptions & Record<string, unknown>
   );
 };

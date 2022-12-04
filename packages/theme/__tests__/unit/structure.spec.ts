@@ -2,8 +2,8 @@ import { createBaseApp } from "@vuepress/core";
 import { path } from "@vuepress/utils";
 import { describe, it, expect } from "vitest";
 
-import { getStructure } from "../../src/node/prepare/index.js";
 import { sidebarTheme } from "./__fixtures__/theme/sidebar.js";
+import { getStructure } from "../../src/node/prepare/index.js";
 
 describe("should generate structure info correctly", async () => {
   const app = createBaseApp({

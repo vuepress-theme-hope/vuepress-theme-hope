@@ -6,20 +6,22 @@ import { extendsBundlerOptions } from "./bundler.js";
 import {
   checkStyle,
   convertFrontmatter,
-  convertThemeConfig,
+  convertThemeOptions,
 } from "./compact/index.js";
-import { extendsPage } from "./extendsPage.js";
+import {
+  checkSocialMediaIcons,
+  getStatus,
+  getThemeData,
+} from "./config/index.js";
 import { checkFrontmatter } from "./frontmatter/index.js";
+import { extendsPage } from "./page/index.js";
 import { getPluginConfig, usePlugin } from "./plugins/index.js";
 import {
   prepareConfigFile,
   prepareSidebarData,
   prepareSocialMediaIcons,
+  prepareThemeColorScss,
 } from "./prepare/index.js";
-import { checkSocialMediaIcons } from "./socialMedia.js";
-import { getStatus } from "./status.js";
-import { getThemeConfig } from "./themeConfig.js";
-import { prepareThemeColorScss } from "./themeColor.js";
 
 import type { Page, ThemeFunction } from "@vuepress/core";
 import type { ThemeOptions, ThemePageData } from "../shared/index.js";
@@ -46,13 +48,13 @@ export const hopeTheme =
       notice,
       ...themeOptions
     } = legacy
-      ? convertThemeConfig(options as ThemeOptions & Record<string, unknown>)
+      ? convertThemeOptions(options as ThemeOptions & Record<string, unknown>)
       : options;
 
     if (legacy) checkStyle(app);
 
     const status = getStatus(app, options);
-    const themeConfig = getThemeConfig(app, themeOptions, status);
+    const themeConfig = getThemeData(app, themeOptions, status);
     const icons = status.enableBlog ? checkSocialMediaIcons(themeConfig) : {};
 
     usePlugin(app, plugins, hotReload);
@@ -83,9 +85,9 @@ export const hopeTheme =
         checkFrontmatter(page, app.env.isDebug);
 
         extendsPage(
-          themeConfig,
-          plugins,
           <Page<ThemePageData>>page,
+          themeConfig,
+          status,
           hotReload || app.env.isBuild
         );
       },
@@ -141,8 +143,6 @@ export const hopeTheme =
         "../../templates/index.build.html"
       ),
 
-      clientConfigFile: (app) => prepareConfigFile(app, plugins, status),
+      clientConfigFile: (app) => prepareConfigFile(app, status),
     };
   };
-
-export const hope = hopeTheme;

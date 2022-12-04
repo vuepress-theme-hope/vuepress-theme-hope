@@ -9,7 +9,7 @@ import type {
   ThemeNormalPageFrontmatter,
   BlogLocaleData,
   BlogPluginOptions,
-  ThemeConfig,
+  ThemeData,
 } from "../../shared/index.js";
 
 const defaultOptions: BlogPluginOptions = {
@@ -68,7 +68,7 @@ export const getBlogOptions = (
 });
 
 export const getTitleLocales = (
-  themeData: ThemeConfig,
+  themeData: ThemeData,
   key: keyof BlogLocaleData
 ): Record<string, string> =>
   Object.fromEntries(
@@ -79,7 +79,7 @@ export const getTitleLocales = (
   );
 
 export const getBlogPlugin = (
-  themeData: ThemeConfig,
+  themeData: ThemeData,
   options?: BlogPluginOptions | boolean,
   hotReload = false
 ): Plugin | null => {

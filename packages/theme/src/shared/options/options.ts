@@ -1,4 +1,4 @@
-import type { ThemeData } from "@vuepress/plugin-theme-data";
+import type { ThemeData as DefaultThemeData } from "@vuepress/plugin-theme-data";
 import type { AppearanceConfig, AppearanceOptions } from "./appearance.js";
 import type { FeatureConfig, FeatureOptions } from "./feature/index.js";
 import type { LayoutConfig, LayoutOptions } from "./layout/index.js";
@@ -11,11 +11,11 @@ export interface ThemeOptions
     FeatureOptions,
     InfoOptions,
     LayoutOptions,
-    ThemeData<ThemeLocaleOptions> {
+    DefaultThemeData<ThemeLocaleOptions> {
   plugins?: PluginsOptions;
 }
 
-export interface ThemeConfig
+export interface ThemeData
   extends AppearanceConfig,
     FeatureConfig,
     InfoOptions,

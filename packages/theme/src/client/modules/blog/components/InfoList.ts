@@ -22,7 +22,6 @@ import {
   useStars,
   useTagMap,
 } from "@theme-hope/modules/blog/composables/index.js";
-import { ArticleInfoType } from "../../../../shared/index.js";
 
 import type { FunctionalComponent, VNode } from "vue";
 
@@ -112,11 +111,7 @@ export default defineComponent({
                         h(
                           "li",
                           { class: "sticky-article" },
-                          h(
-                            RouterLink,
-                            { to: path },
-                            () => info[ArticleInfoType.title]
-                          )
+                          h(RouterLink, { to: path }, () => info.title)
                         )
                     )
                   )

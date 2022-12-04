@@ -65,11 +65,7 @@ export default defineComponent({
                 info.value[ArticleInfoType.type] === PageType.slide
                   ? h(SlideIcon)
                   : null,
-                h(
-                  "span",
-                  { property: "headline" },
-                  info.value[ArticleInfoType.title]
-                ),
+                h("span", { property: "headline" }, info.value.title),
                 info.value[ArticleInfoType.cover]
                   ? h("meta", {
                       property: "image",

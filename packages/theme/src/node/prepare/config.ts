@@ -2,8 +2,7 @@ import { ensureEndingSlash } from "@vuepress/shared";
 import { getDirname, path } from "@vuepress/utils";
 
 import type { App } from "@vuepress/core";
-import type { ThemeStatus } from "../status.js";
-import type { PluginsOptions } from "../../shared/index.js";
+import type { ThemeStatus } from "../config/status.js";
 
 const __dirname = getDirname(import.meta.url);
 const CLIENT_FOLDER = ensureEndingSlash(
@@ -12,8 +11,7 @@ const CLIENT_FOLDER = ensureEndingSlash(
 
 export const prepareConfigFile = (
   app: App,
-  plugins: PluginsOptions,
-  { enableBlog, enableEncrypt }: ThemeStatus
+  { enableBlog, enableEncrypt, enableSlide }: ThemeStatus
 ): Promise<string> => {
   let configImport = "";
   let enhance = "";
@@ -26,6 +24,7 @@ import BloggerInfo from "@theme-hope/modules/blog/components/BloggerInfo.js";
 import BlogHome from "@theme-hope/modules/blog/components/BlogHome.js";
 import BlogPage from "@theme-hope/modules/blog/components/BlogPage.js";
 import { setupBlog } from "@theme-hope/modules/blog/composables/index.js";
+import Blog from "${CLIENT_FOLDER}modules/blog/layouts/Blog.js";
 import "${CLIENT_FOLDER}modules/blog/styles/layout.scss";
 `;
 
@@ -38,6 +37,8 @@ app.component("BlogPage", BlogPage);
     setup += `\
 setupBlog();
 `;
+
+    layout += "Blog,\n";
   }
 
   if (enableEncrypt) {
@@ -51,14 +52,9 @@ app.component("LocalEncrypt", LocalEncrypt);
 `;
   }
 
-  if (plugins.mdEnhance && plugins.mdEnhance.presentation) {
+  if (enableSlide) {
     configImport += `import Slide from "${CLIENT_FOLDER}layouts/Slide.js";\n`;
     layout += "Slide,\n";
-  }
-
-  if (plugins.blog) {
-    configImport += `import Blog from "${CLIENT_FOLDER}modules/blog/layouts/Blog.js";\n`;
-    layout += "Blog,\n";
   }
 
   return app.writeTemp(

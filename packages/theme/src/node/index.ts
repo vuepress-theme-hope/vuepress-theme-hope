@@ -2,9 +2,9 @@
 import {
   // v1
   convertFrontmatter,
-  convertNavbarConfig,
-  convertSidebarConfig,
-  convertThemeConfig,
+  convertNavbarOptions,
+  convertSidebarOptions,
+  convertThemeOptions,
   config,
   navbarConfig,
   sidebarConfig,
@@ -25,9 +25,9 @@ export {
   sidebarConfig,
   themeConfig,
   convertFrontmatter,
-  convertNavbarConfig,
-  convertSidebarConfig,
-  convertThemeConfig,
+  convertNavbarOptions,
+  convertSidebarOptions,
+  convertThemeOptions,
   defineHopeConfig,
   defineThemeConfig,
   defineNavbarConfig,
@@ -35,12 +35,8 @@ export {
   defineSidebarConfig,
   defineSidebarObjectConfig,
 };
-
-export * from "./themeConfig.js";
-export * from "./helpers.js";
-export * from "./locales/index.js";
-export * from "./theme.js";
-export * from "../shared/index.js";
+/** @deprecated */
+export { hopeTheme as hope } from "./theme.js";
 
 export default {
   config,
@@ -48,3 +44,9 @@ export default {
   sidebarConfig,
   themeConfig,
 };
+
+export * from "./config/index.js";
+export * from "./helpers.js";
+export * from "./locales/index.js";
+export * from "./theme.js";
+export * from "../shared/index.js";

@@ -1,15 +1,15 @@
 import { getLocales } from "vuepress-shared/node";
-import { resolveEncrypt } from "./encrypt.js";
-import { themeLocalesData } from "./locales/index.js";
+import { getEncryptConfig } from "./encrypt.js";
+import { themeLocalesData } from "../locales/index.js";
 
 import type { App } from "@vuepress/core";
 import type { ThemeStatus } from "./status.js";
 import {
-  ThemeConfig,
+  ThemeData,
   ThemeLocaleConfig,
   ThemeLocaleOptions,
   ThemeOptions,
-} from "../shared/index.js";
+} from "../../shared/index.js";
 
 const rootAllowConfig = [
   "blog",
@@ -21,7 +21,7 @@ const rootAllowConfig = [
   "mobileBreakPoint",
 ];
 
-const defaultRootOptions: Omit<ThemeConfig, "locales"> = {
+const defaultRootOptions: Omit<ThemeData, "locales"> = {
   // features
   blog: {},
   encrypt: {},
@@ -47,14 +47,14 @@ const defaultLocaleOptions: ThemeLocaleOptions = {
 };
 
 /**
- * Get client-side `themeConfig`
+ * Get client-side `themeData`
  */
-export const getThemeConfig = (
+export const getThemeData = (
   app: App,
   themeOptions: ThemeOptions,
   { enableBlog }: ThemeStatus
-): ThemeConfig => {
-  const themeData: ThemeConfig = {
+): ThemeData => {
+  const themeData: ThemeData = {
     ...defaultRootOptions,
     ...Object.fromEntries(
       Object.entries(themeOptions).filter(([key]) =>
@@ -109,7 +109,7 @@ export const getThemeConfig = (
   };
 
   // handle encrypt options
-  themeData.encrypt = resolveEncrypt(themeData.encrypt);
+  themeData.encrypt = getEncryptConfig(themeData.encrypt);
 
   if (app.env.isDebug) console.log("Theme config: ", themeData);
 

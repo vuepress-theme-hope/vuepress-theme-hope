@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 // German (Austria) [de-at]
 import type dayjs from "dayjs";
 import type { Locale } from "./locale.js";

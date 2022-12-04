@@ -7,7 +7,7 @@ import type {
   NavbarGroup,
 } from "../../shared/index.js";
 
-const handleNavbarConfig = (config: unknown[]): NavbarOptions =>
+const handleNavbarOptions = (config: unknown[]): NavbarOptions =>
   config
     .map((item) => {
       if (typeof item === "string") return item;
@@ -23,7 +23,7 @@ const handleNavbarConfig = (config: unknown[]): NavbarOptions =>
         // @ts-ignore
         if (Array.isArray(item.children))
           // @ts-ignore
-          handleNavbarConfig(item.children as unknown[]);
+          handleNavbarOptions(item.children as unknown[]);
 
         return item as NavbarItem | NavbarGroup;
       }
@@ -35,9 +35,11 @@ const handleNavbarConfig = (config: unknown[]): NavbarOptions =>
 /**
  * @deprecated You should use V2 standard navbar config and avoid using it
  */
-export const convertNavbarConfig = (config: unknown): NavbarOptions | false => {
+export const convertNavbarOptions = (
+  config: unknown
+): NavbarOptions | false => {
   if (config === false) return false;
-  if (Array.isArray(config)) return handleNavbarConfig(config);
+  if (Array.isArray(config)) return handleNavbarOptions(config);
 
   logger.error('"navbar" config should be an array');
 

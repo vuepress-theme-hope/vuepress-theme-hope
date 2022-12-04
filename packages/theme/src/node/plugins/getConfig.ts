@@ -17,14 +17,14 @@ import { getSEOPlugin } from "./seo.js";
 
 import type { PluginConfig } from "@vuepress/core";
 import type {
-  ThemeConfig,
+  ThemeData,
   ThemeOptions,
   PluginsOptions,
 } from "../../shared/index.js";
 
 export const getPluginConfig = (
   plugins: PluginsOptions,
-  themeData: ThemeConfig,
+  themeData: ThemeData,
   options: Pick<
     ThemeOptions,
     | "addThis"

@@ -35,7 +35,7 @@ export interface ArticleInfo extends Record<string, unknown> {
   /**
    * Article title
    */
-  [ArticleInfoType.title]: string;
+  title: string;
 
   /**
    * Article short title

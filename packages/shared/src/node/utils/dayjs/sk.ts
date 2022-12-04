@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 // Slovak [sk]
 import type dayjs from "dayjs";
 import type { Locale } from "./locale.js";

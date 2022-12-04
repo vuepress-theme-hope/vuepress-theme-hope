@@ -2,10 +2,10 @@ import { seoPlugin } from "vuepress-plugin-seo2";
 import { getBlogOptions } from "./blog.js";
 
 import type { Page, Plugin } from "@vuepress/core";
-import type { ThemeConfig, PluginsOptions } from "../../shared/index.js";
+import type { ThemeData, PluginsOptions } from "../../shared/index.js";
 
 export const getSEOPlugin = (
-  themeConfig: ThemeConfig,
+  themeData: ThemeData,
   { blog, seo }: PluginsOptions,
   hostname = "",
   legacy = false
@@ -38,7 +38,7 @@ export const getSEOPlugin = (
   return seoPlugin(
     {
       hostname,
-      ...(themeConfig.author ? { author: themeConfig.author } : {}),
+      ...(themeData.author ? { author: themeData.author } : {}),
       isArticle,
       ...seoOptions,
     },

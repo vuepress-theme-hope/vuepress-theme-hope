@@ -56,8 +56,7 @@ export default defineComponent({
 
           if (route) {
             const { meta, path } = resolveRouteWithRedirect(router, route.path);
-            const title =
-              meta[ArticleInfoType.shortTitle] || meta[ArticleInfoType.title];
+            const title = meta[ArticleInfoType.shortTitle] || meta.title;
 
             if (title)
               return {

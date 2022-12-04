@@ -1,5 +1,5 @@
-import { convertNavbarConfig } from "./navbar.js";
-import { convertSidebarConfig } from "./sidebar.js";
+import { convertNavbarOptions } from "./navbar.js";
+import { convertSidebarOptions } from "./sidebar.js";
 import { droppedLogger, deprecatedLogger } from "./utils.js";
 import { logger } from "../utils.js";
 
@@ -136,7 +136,7 @@ const handleFooterOptions = (options: Record<string, unknown>): void => {
 /**
  * @deprecated You should use V2 standard options and avoid using it
  */
-export const convertThemeConfig = (
+export const convertThemeOptions = (
   themeOptions: Record<string, unknown>
 ): ThemeOptions => {
   // ensure plugins
@@ -155,11 +155,11 @@ export const convertThemeConfig = (
 
   // handle navbar
   if ("navbar" in themeOptions)
-    themeOptions["navbar"] = convertNavbarConfig(themeOptions["navbar"]);
+    themeOptions["navbar"] = convertNavbarOptions(themeOptions["navbar"]);
 
   // handle sidebar
   if ("sidebar" in themeOptions)
-    themeOptions["sidebar"] = convertSidebarConfig(themeOptions["sidebar"]);
+    themeOptions["sidebar"] = convertSidebarOptions(themeOptions["sidebar"]);
 
   // handle footer
   handleFooterOptions(themeOptions);
@@ -212,11 +212,11 @@ export const convertThemeConfig = (
 
         // handle navbar
         if ("navbar" in localeConfig)
-          localeConfig["navbar"] = convertNavbarConfig(localeConfig["navbar"]);
+          localeConfig["navbar"] = convertNavbarOptions(localeConfig["navbar"]);
 
         // handle sidebar
         if ("sidebar" in localeConfig)
-          localeConfig["sidebar"] = convertSidebarConfig(
+          localeConfig["sidebar"] = convertSidebarOptions(
             localeConfig["sidebar"]
           );
 

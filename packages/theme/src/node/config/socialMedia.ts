@@ -1,12 +1,12 @@
 import { fs, getDirname, path } from "@vuepress/utils";
-import { logger } from "./utils.js";
+import { logger } from "../utils.js";
 
-import type { ThemeConfig } from "../shared/index.js";
+import type { ThemeData } from "../../shared/index.js";
 
 const __dirname = getDirname(import.meta.url);
 
 export const checkSocialMediaIcons = (
-  themeConfig: ThemeConfig
+  themeData: ThemeData
 ): Record<string, string> => {
   const icons: Record<string, string> = {};
 
@@ -17,7 +17,7 @@ export const checkSocialMediaIcons = (
     if (typeof value === "string") {
       const templatePath = path.resolve(
         __dirname,
-        `../../templates/socialMediaIcons/${key.toLocaleLowerCase()}.svg`
+        `../../../templates/socialMediaIcons/${key.toLocaleLowerCase()}.svg`
       );
 
       if (fs.existsSync(templatePath)) {
@@ -56,15 +56,15 @@ export const checkSocialMediaIcons = (
     return false;
   };
 
-  Object.entries(themeConfig.blog?.medias || {}).forEach(([key, value]) => {
+  Object.entries(themeData.blog?.medias || {}).forEach(([key, value]) => {
     const result = checkIcon(key, value);
 
-    if (result) themeConfig.blog.medias![key] = result;
-    else delete themeConfig.blog.medias![key];
+    if (result) themeData.blog.medias![key] = result;
+    else delete themeData.blog.medias![key];
   });
 
-  if (themeConfig.locales)
-    Object.entries(themeConfig.locales).forEach(([, localeConfig]) => {
+  if (themeData.locales)
+    Object.entries(themeData.locales).forEach(([, localeConfig]) => {
       Object.entries(localeConfig.blog?.medias || {}).forEach(
         ([key, value]) => {
           const result = checkIcon(key, value);

@@ -4,12 +4,12 @@ import { getAuthor } from "vuepress-shared/node";
 import type { Page, Plugin } from "@vuepress/core";
 import type { CopyrightOptions } from "vuepress-plugin-copyright2";
 import type {
-  ThemeConfig,
+  ThemeData,
   ThemeNormalPageFrontmatter,
 } from "../../shared/index.js";
 
 export const getCopyrightPlugin = (
-  themeConfig: ThemeConfig,
+  themeData: ThemeData,
   options?: Partial<CopyrightOptions> | boolean,
   hostname?: string
 ): Plugin | null => {
@@ -19,7 +19,7 @@ export const getCopyrightPlugin = (
     hostname,
     author: (page: Page<Record<string, never>, ThemeNormalPageFrontmatter>) =>
       getAuthor(page.frontmatter.author)?.[0]?.name ||
-      getAuthor(themeConfig.author)?.[0]?.name ||
+      getAuthor(themeData.author)?.[0]?.name ||
       "",
     ...(typeof options === "object" ? options : { global: true }),
   });

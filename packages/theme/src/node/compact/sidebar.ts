@@ -7,7 +7,7 @@ import type {
   SidebarItem,
 } from "../../shared/index.js";
 
-const handleArraySidebarConfig = (config: unknown[]): SidebarArrayOptions =>
+const handleArraySidebarOptions = (config: unknown[]): SidebarArrayOptions =>
   config
     .map((item) => {
       if (typeof item === "string") return item;
@@ -16,6 +16,7 @@ const handleArraySidebarConfig = (config: unknown[]): SidebarArrayOptions =>
         const convertConfig: [string, string][] = [
           ["title", "text"],
           ["path", "link"],
+          ["collapsable", "collapsible"],
         ];
 
         convertConfig.forEach(([deprecatedOption, newOption]) =>
@@ -36,7 +37,7 @@ const handleArraySidebarConfig = (config: unknown[]): SidebarArrayOptions =>
         // @ts-ignore
         if (Array.isArray(item.children))
           // @ts-ignore
-          handleArraySidebarConfig(item.children as unknown[]);
+          handleArraySidebarOptions(item.children as unknown[]);
 
         return item as SidebarItem;
       }
@@ -48,18 +49,19 @@ const handleArraySidebarConfig = (config: unknown[]): SidebarArrayOptions =>
 /**
  * @deprecated You should use V2 standard sidebar config and avoid using it
  */
-export const convertSidebarConfig = (
+export const convertSidebarOptions = (
   config: unknown
 ): SidebarOptions | false => {
   if (config === false) return false;
-  if (Array.isArray(config)) return handleArraySidebarConfig(config);
+  if (Array.isArray(config)) return handleArraySidebarOptions(config);
 
   if (typeof config === "object" && config)
     return Object.fromEntries(
       Object.entries(config).map<
         [string, SidebarArrayOptions | "structure" | false]
       >(([key, value]) => {
-        if (Array.isArray(value)) return [key, handleArraySidebarConfig(value)];
+        if (Array.isArray(value))
+          return [key, handleArraySidebarOptions(value)];
 
         if (value === "structure" || value === false)
           return [key, <"structure" | false>value];

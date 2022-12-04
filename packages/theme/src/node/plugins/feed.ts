@@ -3,10 +3,10 @@ import { deepAssign } from "vuepress-shared/node";
 
 import type { Plugin } from "@vuepress/core";
 import type { FeedOptions } from "vuepress-plugin-feed2";
-import type { ThemeConfig } from "../../shared/index.js";
+import type { ThemeData } from "../../shared/index.js";
 
 export const getFeedPlugin = (
-  themeConfig: ThemeConfig,
+  themeData: ThemeData,
   options?: Omit<FeedOptions, "hostname">,
   hostname?: string,
   legacy = false
@@ -19,8 +19,8 @@ export const getFeedPlugin = (
     deepAssign(
       {
         hostname,
-        ...(themeConfig.author ? { author: themeConfig.author } : {}),
-        locales: Object.entries(themeConfig.locales).map(
+        ...(themeData.author ? { author: themeData.author } : {}),
+        locales: Object.entries(themeData.locales).map(
           ([localePath, { author, copyright }]) => [
             localePath,
             { author, channel: { copyright } },

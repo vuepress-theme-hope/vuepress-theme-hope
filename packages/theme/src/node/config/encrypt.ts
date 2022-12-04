@@ -1,9 +1,9 @@
 import { hashSync } from "bcrypt-ts/node";
-import { logger } from "./utils.js";
+import { logger } from "../utils.js";
 
-import type { EncryptConfig, EncryptOptions } from "../shared/index.js";
+import type { EncryptConfig, EncryptOptions } from "../../shared/index.js";
 
-export const resolveEncrypt = (encrypt: EncryptOptions): EncryptConfig => {
+export const getEncryptConfig = (encrypt: EncryptOptions): EncryptConfig => {
   const result: EncryptConfig = {};
 
   if (encrypt.global) result.global = true;

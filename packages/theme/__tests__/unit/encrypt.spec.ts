@@ -1,9 +1,7 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/naming-convention */
 import { compareSync } from "bcrypt-ts";
 import { describe, it, expect } from "vitest";
-import { resolveEncrypt } from "../../src/node/encrypt.js";
+import { getEncryptConfig } from "../../src/node/config/index.js";
 
 const adminSinglePassword = "1234";
 const adminMultiplePassword = ["1234", "abcd"];
@@ -13,7 +11,7 @@ const userMultiplePassword = ["5678", "apple"];
 
 describe.skip("Should resolve encrypt option correctly", () => {
   it("should encrypt admin password", () => {
-    const result1 = resolveEncrypt({ admin: adminSinglePassword });
+    const result1 = getEncryptConfig({ admin: adminSinglePassword });
 
     expect(Object.keys(result1)).toEqual(["admin"]);
 
@@ -23,7 +21,7 @@ describe.skip("Should resolve encrypt option correctly", () => {
       compareSync(adminSinglePassword, result1.admin!.pop()!)
     ).toBeTruthy();
 
-    const result2 = resolveEncrypt({ admin: adminMultiplePassword });
+    const result2 = getEncryptConfig({ admin: adminMultiplePassword });
 
     expect(Object.keys(result2)).toEqual(["admin"]);
 
@@ -35,7 +33,7 @@ describe.skip("Should resolve encrypt option correctly", () => {
   });
 
   it("should encrypt config password", () => {
-    const result1 = resolveEncrypt({ config: { "/": userSinglePassword } });
+    const result1 = getEncryptConfig({ config: { "/": userSinglePassword } });
 
     expect(Object.keys(result1)).toEqual(["config"]);
     expect(Object.keys(result1.config!)).toEqual(["/"]);
@@ -46,7 +44,7 @@ describe.skip("Should resolve encrypt option correctly", () => {
       compareSync(userSinglePassword, result1.config!["/"].pop()!)
     ).toBeTruthy();
 
-    const result2 = resolveEncrypt({ config: { "/": userMultiplePassword } });
+    const result2 = getEncryptConfig({ config: { "/": userMultiplePassword } });
 
     expect(Object.keys(result2)).toEqual(["config"]);
     expect(Object.keys(result2.config!)).toEqual(["/"]);
@@ -60,20 +58,20 @@ describe.skip("Should resolve encrypt option correctly", () => {
 
   it("should remove incorrect password", () => {
     // @ts-expect-error
-    expect(resolveEncrypt({ admin: 1234 })).toEqual({});
+    expect(getEncryptConfig({ admin: 1234 })).toEqual({});
 
     // @ts-expect-error
-    const result2 = resolveEncrypt({ admin: ["1234", 1234] });
+    const result2 = getEncryptConfig({ admin: ["1234", 1234] });
 
     expect(result2.admin!.length).toEqual(1);
 
     // @ts-expect-error
-    const result3 = resolveEncrypt({ config: { "/": 1234, "/zh/": "1234" } });
+    const result3 = getEncryptConfig({ config: { "/": 1234, "/zh/": "1234" } });
 
     expect(Object.keys(result3.config!)).toEqual(["/zh/"]);
 
     // @ts-expect-error
-    const result4 = resolveEncrypt({ config: { "/": [1234, "1234"] } });
+    const result4 = getEncryptConfig({ config: { "/": [1234, "1234"] } });
 
     expect(result4.config!["/"]!.length).toEqual(1);
   });

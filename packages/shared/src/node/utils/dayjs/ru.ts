@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 // Russian [ru]
 import type { Dayjs, default as dayjs } from "dayjs";
 import type { Locale } from "./locale.js";

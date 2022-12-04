@@ -3,9 +3,8 @@ import { createBaseApp } from "@vuepress/core";
 import { path } from "@vuepress/utils";
 import { describe, it, expect } from "vitest";
 
-import { getStatus } from "../../src/node/status.js";
-import { getThemeConfig } from "../../src/node/themeConfig.js";
 import { emptyTheme } from "./__fixtures__/theme/empty.js";
+import { getStatus, getThemeData } from "../../src/node/config/index.js";
 
 import type { ThemeOptions } from "../../src/shared/index.js";
 
@@ -15,28 +14,28 @@ const app = createBaseApp({
   theme: emptyTheme,
 });
 
-describe("should generate themeConfig correctly", () => {
+describe("should generate themeData correctly", () => {
   it("Should contain basic properties", () => {
-    const themeConfig = {};
+    const themeOptions = {};
 
     expect(
-      getThemeConfig(app, themeConfig, getStatus(app, {}))
+      getThemeData(app, themeOptions, getStatus(app, {}))
     ).toMatchSnapshot();
   });
 
   it("Should handle single language", () => {
-    const themeConfig = {
+    const themeOptions = {
       navbar: ["/", "/about"],
       sidebar: ["/", "/about"],
     };
 
     expect(
-      getThemeConfig(app, themeConfig, getStatus(app, {}))
+      getThemeData(app, themeOptions, getStatus(app, {}))
     ).toMatchSnapshot();
   });
 
   it("locale should have higher property", () => {
-    const themeConfig = {
+    const themeOptions = {
       navbar: ["/", "/about"],
 
       locales: {
@@ -50,12 +49,12 @@ describe("should generate themeConfig correctly", () => {
     };
 
     expect(
-      getThemeConfig(app, themeConfig, getStatus(app, {}))
+      getThemeData(app, themeOptions, getStatus(app, {}))
     ).toMatchSnapshot();
   });
 
   it("should fallback to root if locale config is missing", () => {
-    const themeConfig = {
+    const themeOptions = {
       navbar: ["/", "/about"],
 
       locales: {
@@ -67,19 +66,19 @@ describe("should generate themeConfig correctly", () => {
     };
 
     expect(
-      getThemeConfig(app, themeConfig, getStatus(app, {}))
+      getThemeData(app, themeOptions, getStatus(app, {}))
     ).toMatchSnapshot();
   });
 
   it("root only option should not appear in locales", () => {
-    const themeConfig: ThemeOptions = {
+    const themeOptions: ThemeOptions = {
       pure: true,
       darkmode: "disable",
       encrypt: {},
     };
 
     expect(
-      getThemeConfig(app, themeConfig, getStatus(app, {}))
+      getThemeData(app, themeOptions, getStatus(app, {}))
     ).toMatchSnapshot();
   });
 });
