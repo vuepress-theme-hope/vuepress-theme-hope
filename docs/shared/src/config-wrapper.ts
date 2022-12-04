@@ -1,11 +1,7 @@
 import { defineUserConfig } from "@vuepress/cli";
 import { docsearchPlugin } from "@vuepress/plugin-docsearch";
 import { getDirname, path } from "@vuepress/utils";
-import {
-  addViteOptimizeDepsInclude,
-  mergeViteConfig,
-} from "vuepress-shared/node";
-import type { ViteBundlerOptions } from "@vuepress/bundler-vite";
+import { addViteOptimizeDepsInclude } from "vuepress-shared/node";
 import type { UserConfig } from "@vuepress/cli";
 
 const __dirname = getDirname(import.meta.url);
@@ -99,99 +95,11 @@ export const config = (
     },
 
     extendsBundlerOptions: (config: unknown, app): void => {
-      const { bundler } = app.options;
-
-      // const cache = new Map<string, boolean>();
-      // const isStaticallyImportedByEntry = (
-      //   id: string,
-      //   getModuleInfo: GetModuleInfo,
-      //   importStack: string[] = []
-      // ): boolean => {
-      //   if (cache.has(id)) {
-      //     return !!cache.get(id);
-      //   }
-      //   if (importStack.includes(id)) {
-      //     // circular deps!
-      //     cache.set(id, false);
-
-      //     return false;
-      //   }
-      //   const mod = getModuleInfo(id);
-
-      //   if (!mod) {
-      //     cache.set(id, false);
-
-      //     return false;
-      //   }
-      //   if (mod.isEntry) {
-      //     cache.set(id, true);
-
-      //     return true;
-      //   }
-      //   const someImporterIs = mod.importers.some((item) =>
-      //     isStaticallyImportedByEntry(
-      //       item,
-      //       getModuleInfo,
-      //       importStack.concat(id)
-      //     )
-      //   );
-
-      //   cache.set(id, someImporterIs);
-
-      //   return someImporterIs;
-      // };
-
       addViteOptimizeDepsInclude({ app, config }, [
         "three",
         "three/examples/jsm/controls/OrbitControls",
         "three/examples/jsm/loaders/STLLoader",
       ]);
-
-      if (bundler.name.endsWith("vite")) {
-        const bundlerConfig = <ViteBundlerOptions>config;
-
-        // const dataFolder = app.dir.temp("internal");
-        // const clientConfigFile = app.dir.temp("internal/clientConfigs.js");
-
-        bundlerConfig.viteOptions = mergeViteConfig(
-          bundlerConfig.viteOptions || {},
-          {
-            build: {
-              rollupOptions: {
-                output: {
-                  manualChunks(id: string) {
-                    // move known framework code into a stable chunk so that
-                    // custom theme changes do not invalidate hash for all pages
-                    if (
-                      id.includes("plugin-vue:export-helper") ||
-                      /node_modules\/@vuepress\/shared\//.test(id) ||
-                      /node_modules\/vue(-router)?\//.test(id)
-                    ) {
-                      return "framework";
-                    }
-
-                    // split vuepress temp files to a chunk
-                    // if (id.includes(dataFolder) && id !== clientConfigFile) {
-                    //   return "data";
-                    // }
-
-                    // check if a module is statically imported by at least one entry.
-                    // if (
-                    //   id.includes("node_modules/") &&
-                    //   !/\.css($|\\?)/.test(id) &&
-                    //   isStaticallyImportedByEntry(id, ctx.getModuleInfo)
-                    // ) {
-                    //   return "vendor";
-                    // }
-
-                    return undefined;
-                  },
-                },
-              },
-            },
-          }
-        );
-      }
     },
 
     shouldPrefetch: false,
