@@ -21,7 +21,7 @@ module.exports = {
   prompt: {
     defaultScope: scopeComplete,
     customScopesAlign: !scopeComplete ? "top" : "bottom",
-    allowCustomIssuePrefixs: false,
-    allowEmptyIssuePrefixs: false,
+    allowCustomIssuePrefix: false,
+    allowEmptyIssuePrefix: false,
   },
 };
