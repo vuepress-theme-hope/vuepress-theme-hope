@@ -17,3 +17,10 @@
     }
   }
 }
+
+// TODO: Add it upstream
+.external-link-icon {
+  @media print {
+    display: none;
+  }
+}
