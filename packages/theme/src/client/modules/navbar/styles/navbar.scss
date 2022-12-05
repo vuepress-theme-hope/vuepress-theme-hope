@@ -29,6 +29,10 @@
 
   backdrop-filter: saturate(150%) blur(12px);
 
+  @media print {
+    display: none;
+  }
+
   .hide-navbar &.auto-hide {
     transform: translateY(-100%);
   }

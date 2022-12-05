@@ -15,6 +15,10 @@
 
   transition: border-top var(--color-transition);
 
+  @media print {
+    display: none;
+  }
+
   .nav-link {
     display: inline-block;
     padding: 0.25rem;

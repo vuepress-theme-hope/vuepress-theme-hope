@@ -127,6 +127,11 @@ a.header-anchor {
 
   transition: opacity 0.2s;
 
+  // hide heading anchor
+  @media print {
+    display: none !important;
+  }
+
   &:hover {
     text-decoration: none;
   }
@@ -140,6 +145,10 @@ p,
 ul,
 ol {
   line-height: 1.7;
+
+  @media print {
+    line-height: 1.5;
+  }
 }
 
 blockquote > p {

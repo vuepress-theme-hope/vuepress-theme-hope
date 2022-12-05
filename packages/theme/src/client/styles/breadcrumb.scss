@@ -23,6 +23,10 @@
     font-size: 12.8px;
   }
 
+  @media print {
+    display: none;
+  }
+
   .icon {
     margin-right: 0.25em;
   }

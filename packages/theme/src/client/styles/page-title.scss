@@ -28,6 +28,11 @@ h6 {
   padding-top: 0.5rem;
   padding-bottom: 0;
 
+  @media print {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+
   h1 {
     margin-top: calc(0.5rem - var(--navbar-height)) !important;
     margin-bottom: 1rem;

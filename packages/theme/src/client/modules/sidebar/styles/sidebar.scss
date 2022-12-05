@@ -22,6 +22,7 @@
   backdrop-filter: saturate(150%) blur(12px);
   scrollbar-color: var(--theme-color) var(--border-color);
   scrollbar-width: thin;
+
   @media (max-width: hope-config.$pad) {
     font-size: 15px;
   }
@@ -33,6 +34,10 @@
 
     // sidebar should be collapsed by default
     transform: translateX(-100%);
+  }
+
+  @media print {
+    display: none;
   }
 
   a {

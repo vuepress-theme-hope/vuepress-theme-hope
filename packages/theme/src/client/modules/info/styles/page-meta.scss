@@ -6,6 +6,12 @@
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 
+  @media print {
+    margin: 0 !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+
   .meta-item {
     margin-top: 0.5rem;
 
@@ -30,6 +36,10 @@
 
     @media (max-width: hope-config.$tablet) {
       margin-bottom: 8px;
+    }
+
+    @media print {
+      display: none;
     }
 
     .icon {

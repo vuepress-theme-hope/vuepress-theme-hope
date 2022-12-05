@@ -19,6 +19,11 @@
     padding-left: 2rem;
   }
 
+  @media print {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
   .no-sidebar &,
   .sidebar-collapsed & {
     padding-left: 2rem;

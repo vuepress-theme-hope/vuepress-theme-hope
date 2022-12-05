@@ -2,12 +2,10 @@
 @use "@sass-palette/hope-config";
 
 #{hope-config.$content-class} {
-  a:hover {
-    text-decoration: underline;
-  }
-
-  img {
-    max-width: 100%;
+  @media print {
+    margin: 0 !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
   }
 
   &.custom {
@@ -55,5 +53,13 @@
         }
       }
     }
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  img {
+    max-width: 100%;
   }
 }

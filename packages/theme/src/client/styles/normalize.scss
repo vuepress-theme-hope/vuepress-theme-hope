@@ -95,29 +95,8 @@ td {
     --bg-color: #fff !important;
   }
 
-  // ensure page margin
-  .page {
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  // hide elements
-  .skip-link,
-  .navbar,
-  .sidebar,
-  .breadcrumb,
-  .header-anchor,
-  .toc,
-  .page-nav {
-    display: none !important;
-  }
-
   // ensure line numbers and ext hint are placed at right place
   div[class*="language-"] {
     position: relative !important;
-  }
-
-  .page-meta .edit-link {
-    display: none;
   }
 }

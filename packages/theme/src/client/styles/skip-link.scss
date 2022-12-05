@@ -14,11 +14,11 @@
   font-size: 0.9em;
   text-decoration: none;
 
-  #{hope-config.$dark-selector} & {
-    color: var(--theme-color);
+  @media print {
+    display: none;
   }
 
-  .skip-link:focus {
+  &:focus {
     clip: auto;
     width: auto;
     height: auto;

@@ -59,30 +59,24 @@ export default defineComponent({
             },
             [
               h(CategoryIcon),
-              h(
-                "ul",
-                { class: "categories-wrapper" },
-                props.category.map(({ name, path }) =>
-                  h(
-                    "li",
-                    h(
-                      "span",
+
+              ...props.category.map(({ name, path }) =>
+                h(
+                  "span",
+                  {
+                    class: [
+                      "category-item",
                       {
-                        class: [
-                          "category",
-                          {
-                            // TODO: magic number 9 is tricky here
-                            [`category${generateIndexFromHash(name, 9)}`]:
-                              !props.pure,
-                            clickable: path,
-                          },
-                        ],
-                        role: path ? "navigation" : "",
-                        onClick: (event: Event) => navigate(event, path),
+                        // TODO: magic number 9 is tricky here
+                        [`category${generateIndexFromHash(name, 9)}`]:
+                          !props.pure,
+                        clickable: path,
                       },
-                      name
-                    )
-                  )
+                    ],
+                    role: path ? "navigation" : "",
+                    onClick: (event: Event) => navigate(event, path),
+                  },
+                  name
                 )
               ),
               h("meta", {

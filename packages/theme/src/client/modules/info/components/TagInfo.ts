@@ -56,30 +56,23 @@ export default defineComponent({
             },
             [
               h(TagIcon),
-              h(
-                "ul",
-                { class: "tags-wrapper" },
-                props.tag.map(({ name, path }) =>
-                  h(
-                    "li",
-                    h(
-                      "span",
+
+              ...props.tag.map(({ name, path }) =>
+                h(
+                  "span",
+                  {
+                    class: [
+                      "tag-item",
                       {
-                        class: [
-                          "tag",
-                          {
-                            // TODO: magic number 9 is tricky here
-                            [`tag${generateIndexFromHash(name, 9)}`]:
-                              !props.pure,
-                            clickable: path,
-                          },
-                        ],
-                        role: path ? "navigation" : "",
-                        onClick: (event: Event) => navigate(event, path),
+                        // TODO: magic number 9 is tricky here
+                        [`tag${generateIndexFromHash(name, 9)}`]: !props.pure,
+                        clickable: path,
                       },
-                      name
-                    )
-                  )
+                    ],
+                    role: path ? "navigation" : "",
+                    onClick: (event: Event) => navigate(event, path),
+                  },
+                  name
                 )
               ),
               h("meta", {

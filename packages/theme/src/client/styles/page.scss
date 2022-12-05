@@ -7,4 +7,11 @@
   @media (max-width: hope-config.$tablet) {
     min-height: 100vh;
   }
+
+  // ensure page margin
+  @media print {
+    min-height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
 }
