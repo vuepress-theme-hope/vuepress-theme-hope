@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.134](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.133...v2.0.0-beta.134) (2022-12-06)
+
+### ⚠ BREAKING CHANGES
+
+- **md-enhance:** `imageTitle` option is rebuilt as `figure` option
+
+### Features
+
+- **md-enhance:** add figure option ([b42896c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b42896c314b7092a9e9e1d309e1fc93b2ca6e3ca))
+- **theme:** hide externalLink icon in print ([28cc820](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/28cc82039ada80ec5e993134bd6fe431fc4b7943))
+- **theme:** improve print style ([96f20d7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/96f20d7d1105e6101e56e6cb81e856f99247190c))
+- **theme:** support array functions in sidebarSorter ([6f20f13](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6f20f135d10f11ea3008b6d32f51bca185d280c5))
+
+### Bug Fixes
+
+- **deps:** update dependency axios to v1.2.1 ([#2491](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2491)) ([275bb68](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/275bb68c6d7e3369c6ffa2ca39b223d782d51a1c))
+- **md-enhance:** fix imageTitle ([3e003a6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3e003a6c3df64e727512315eb7fef21a19ac9ac4))
+
 ## [2.0.0-beta.133](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.132...v2.0.0-beta.133) (2022-12-04)
 
 ### Features
