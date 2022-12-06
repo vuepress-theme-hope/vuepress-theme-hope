@@ -7,13 +7,13 @@ describe("Figure", () => {
 
   it("Should use alt it no title is found", () => {
     expect(markdownIt.render(`![image](/logo.svg)`)).toEqual(
-      '<figure><img src="/logo.svg" alt="image"><figcaption>image</figcaption></figure>\n'
+      '<figure><img src="/logo.svg" alt="image" tabindex="0"><figcaption>image</figcaption></figure>\n'
     );
   });
 
   it("Should use title and remove original title on image", () => {
     expect(markdownIt.render(`![image](/logo.svg "A image")`)).toEqual(
-      '<figure><img src="/logo.svg" alt="image"><figcaption>A image</figcaption></figure>\n'
+      '<figure><img src="/logo.svg" alt="image" tabindex="0"><figcaption>A image</figcaption></figure>\n'
     );
   });
 
@@ -29,13 +29,13 @@ describe("Figure", () => {
     expect(
       markdownIt.render(`[![image](/logo.svg)](https://example.com)`)
     ).toEqual(
-      '<figure><a href="https://example.com"><img src="/logo.svg" alt="image"></a><figcaption>image</figcaption></figure>\n'
+      '<figure><a href="https://example.com"><img src="/logo.svg" alt="image" tabindex="0"></a><figcaption>image</figcaption></figure>\n'
     );
 
     expect(
       markdownIt.render(`[![image](/logo.svg "A image")](https://example.com)`)
     ).toEqual(
-      '<figure><a href="https://example.com"><img src="/logo.svg" alt="image"></a><figcaption>A image</figcaption></figure>\n'
+      '<figure><a href="https://example.com"><img src="/logo.svg" alt="image" tabindex="0"></a><figcaption>A image</figcaption></figure>\n'
     );
   });
 });
