@@ -26,7 +26,7 @@ importers:
       '@vitest/coverage-c8': 0.25.4
       '@vue/eslint-config-typescript': 11.0.2
       bumpp: 8.2.1
-      commitizen: 4.2.5
+      commitizen: 4.2.6
       concurrently: 7.6.0
       cpx2: 4.2.0
       cross-env: 7.0.3
@@ -74,7 +74,7 @@ importers:
       '@vitest/coverage-c8': 0.25.4
       '@vue/eslint-config-typescript': 11.0.2_sb3redb42nwkq4q6vnqovjecl4
       bumpp: 8.2.1
-      commitizen: 4.2.5
+      commitizen: 4.2.6
       concurrently: 7.6.0
       cpx2: 4.2.0
       cross-env: 7.0.3
@@ -5190,8 +5190,8 @@ packages:
     engines: {node: ^12.20.0 || >=14}
     dev: true
 
-  /commitizen/4.2.5:
-    resolution: {integrity: sha512-9sXju8Qrz1B4Tw7kC5KhnvwYQN88qs2zbiB8oyMsnXZyJ24PPGiNM3nHr73d32dnE3i8VJEXddBFIbOgYSEXtQ==}
+  /commitizen/4.2.6:
+    resolution: {integrity: sha512-RyTM+EiD9GO01DJUn9MRRAet3XUHGfoUZoksLfr+1ym1Xt2q5EYJs9Fg2BtKSb5Mo53i0BtMBmWMHQXVlZ/L9w==}
     engines: {node: '>= 12'}
     hasBin: true
     dependencies:
@@ -5716,7 +5716,7 @@ packages:
     engines: {node: '>= 10'}
     dependencies:
       chalk: 2.4.2
-      commitizen: 4.2.5
+      commitizen: 4.2.6
       conventional-commit-types: 3.0.0
       lodash.map: 4.6.0
       longest: 2.0.1
