@@ -179,6 +179,7 @@ tag:
 
   type SidebarSorter =
     | SidebarSorterFunction
+    | SidebarSorterFunction[]
     | SidebarSorterKeyword
     | SidebarSorterKeyword[];
   ```
@@ -189,8 +190,9 @@ tag:
 
 Вы можете:
 
-- заполнить пользовательскую функцию
-- предоставить одно или массив ключевых слов сортировщика
+- fill in a custom function
+- provide one sorter keyword
+- provide an array of custom function or sorter keyword
 
 Доступные ключевые слова:
 

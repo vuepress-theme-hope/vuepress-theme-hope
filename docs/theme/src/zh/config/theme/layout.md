@@ -179,6 +179,7 @@ tag:
 
   type SidebarSorter =
     | SidebarSorterFunction
+    | SidebarSorterFunction[]
     | SidebarSorterKeyword
     | SidebarSorterKeyword[];
   ```
@@ -190,7 +191,8 @@ tag:
 你可以:
 
 - 填写自定义函数
-- 提供一个或一组排序器关键字
+- 提供一个排序器关键字
+- 提供一组自定义函数或排序器关键字
 
 可用的关键字有:
 

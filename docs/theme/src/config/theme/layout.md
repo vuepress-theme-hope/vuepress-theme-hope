@@ -179,6 +179,7 @@ Whether show icons in the sidebar
 
   type SidebarSorter =
     | SidebarSorterFunction
+    | SidebarSorterFunction[]
     | SidebarSorterKeyword
     | SidebarSorterKeyword[];
   ```
@@ -190,7 +191,8 @@ Structure sidebar sorter.
 You can:
 
 - fill in a custom function
-- provide one or an array of sorter keywords
+- provide one sorter keyword
+- provide an array of custom function or sorter keyword
 
 Available keywords are:
 

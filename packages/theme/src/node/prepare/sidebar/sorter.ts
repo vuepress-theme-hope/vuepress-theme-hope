@@ -125,12 +125,15 @@ export const getSorter = (sorter?: SidebarSorter): SidebarSorterFunction[] => {
   if (typeof sorter === "string" && availableKeywords.includes(sorter))
     return [sortKeyMap[sorter]];
 
-  if (Array.isArray(sorter))
-    return sorter
-      .filter((sorterKey) => availableKeywords.includes(sorterKey))
-      .map((sorterKey) => sortKeyMap[sorterKey]);
-
   if (typeof sorter === "function") return [sorter];
+
+  if (Array.isArray(sorter)) {
+    const result = sorter
+      .map((item) => (typeof item === "string" ? sortKeyMap[item] : item))
+      .filter((item) => typeof item === "function");
+
+    if (result.length) return result;
+  }
 
   return [readmeSorter, orderSorter, titleSorter, filenameSorter];
 };

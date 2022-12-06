@@ -48,6 +48,7 @@ export type SidebarSorterFunction = (
 
 export type SidebarSorter =
   | SidebarSorterFunction
+  | SidebarSorterFunction[]
   | SidebarSorterKeyword
   | SidebarSorterKeyword[];
 
