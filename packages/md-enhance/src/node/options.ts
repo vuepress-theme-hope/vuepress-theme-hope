@@ -1,6 +1,7 @@
 import type { LocaleConfig } from "@vuepress/core";
 import type {
   AttrsOptions,
+  FigureOptions,
   ImageMarkOptions,
   IncludeOptions,
   KatexOptions,
@@ -146,13 +147,13 @@ export interface MarkdownEnhanceOptions {
   imageLazyload?: boolean;
 
   /**
-   * Whether render figure when title is set
+   * Whether render figure with standalone imag
    *
-   * 是否在设置标题时渲染 figure
+   * 是否将单独的图片渲染为 figure
    *
    * @default false
    */
-  imageTitle?: boolean;
+  figure?: FigureOptions | boolean;
 
   /**
    * Whether to enable gfm image id mark support

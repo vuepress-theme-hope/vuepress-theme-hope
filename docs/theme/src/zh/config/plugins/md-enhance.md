@@ -133,6 +133,13 @@ tag:
 
 是否启用标记格式支持。
 
+### figure
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否启用图片 Figure 支持。
+
 ### imageLazyload
 
 - 类型: `boolean`
@@ -162,13 +169,6 @@ interface ImageMarkOptions {
 - 默认值: `false`
 
 是否启用图片尺寸支持。
-
-### imageTitle
-
-- 类型: `boolean`
-- 默认值: `false`
-
-是否启用图片标题支持。
 
 ### tasklist
 

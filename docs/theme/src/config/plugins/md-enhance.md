@@ -140,6 +140,13 @@ Whether to lazy load every images in page in native way.
 
 Whether to enable mark support.
 
+### figure
+
+- Type: `boolean`
+- Default: `false`
+
+Whether enable figure support.
+
 ### imageMark
 
 - Type: `ImageMarkOptions | boolean`
@@ -162,13 +169,6 @@ interface ImageMarkOptions {
 - Default: `false`
 
 Whether enable image size support.
-
-### imageTitle
-
-- Type: `boolean`
-- Default: `false`
-
-Whether enable image title support.
 
 ### tasklist
 

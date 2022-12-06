@@ -73,6 +73,11 @@ app.component("ECharts", ECharts);
 `;
   }
 
+  if (getStatus("figure", true))
+    configImport += `\
+import "${CLIENT_FOLDER}styles/figure.scss";
+`;
+
   if (getStatus("flowchart")) {
     configImport += `\
 import FlowChart from "${CLIENT_FOLDER}components/FlowChart.js";
@@ -90,11 +95,6 @@ import "${CLIENT_FOLDER}styles/footnote.scss";
   if (getStatus("imageMark", true))
     configImport += `\
 import "${CLIENT_FOLDER}styles/image-mark.scss";
-`;
-
-  if (getStatus("imageTitle", true))
-    configImport += `\
-import "${CLIENT_FOLDER}styles/image-title.scss";
 `;
 
   if (getStatus("mermaid")) {

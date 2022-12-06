@@ -1,4 +1,5 @@
 export * from "./attrs.js";
+export * from "./figure.js";
 export * from "./hint.js";
 export * from "./imageMark.js";
 export * from "./include.js";

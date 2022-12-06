@@ -159,6 +159,13 @@ Whether to enable footnote format support.
 
 Whether to enable mark support.
 
+## figure
+
+- Type: `boolean`
+- Default: `false`
+
+Whether enable figure support.
+
 ## imageLazyload
 
 - Type: `boolean`
@@ -188,13 +195,6 @@ interface ImageMarkOptions {
 - Default: `false`
 
 Whether enable image size support.
-
-## imageTitle
-
-- Type: `boolean`
-- Default: `false`
-
-Whether enable image title support.
 
 ## tasklist
 

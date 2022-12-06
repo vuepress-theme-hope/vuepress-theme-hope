@@ -20,14 +20,14 @@ import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 export default {
   plugins: [
     mdEnhancePlugin({
+      // Enable figure
+      figure: true,
       // Enable image lazyload
       imageLazyload: true,
       // Enable image mark
       imageMark: true,
       // Enable image size
       imageSize: true,
-      // Enable image title
-      imageTitle: true,
     }),
   ],
 };
@@ -42,14 +42,14 @@ import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 export default {
   plugins: [
     mdEnhancePlugin({
+      // Enable figure
+      figure: true,
       // Enable image lazyload
       imageLazyload: true,
       // Enable image mark
       imageMark: true,
       // Enable image size
       imageSize: true,
-      // Enable image title
-      imageTitle: true,
     }),
   ],
 };
@@ -127,19 +127,35 @@ The above Markdown will be parsed as:
 <img src="/example.bmp" height="300" />
 ```
 
-## Image Title
+## Figure
 
-Sometimes, you may want to add a description with image, in this case, you should set `imageTitle: true` in plugin options.
+Sometimes, you may want to add a description with image and place it between contents, in this case you should set `figure: true` in plugin options.
 
-Then, when you add a title to the image, the image will be displayed as `<figure>` and title will be displayed as `<figcaption>`.
+If the image is standalone in a line, wrapped or not wrapped by link, it will be displayed as `<figure>` and title (or alt) will be displayed as `<figcaption>`.
 
 ```md
-![GitHub Logo](/assets/icon/github-light.png "Github Logo")
+![VuePress Hope Logo](/favicon.ico)
+
+[![VuePress Hope Logo](/favicon.ico)](https://vuepress-theme-hope.github.io/)
+
+![VuePress Hope Logo](/favicon.ico "VuePress Hope Logo")
+
+[![VuePress Hope Logo](/favicon.ico "VuePress Hope Logo")](https://vuepress-theme-hope.github.io/)
+
+![VuePress Hope Logo](/logo.svg "VuePress Hope Logo" =300x300)
 ```
 
 Will be rendered as:
 
-![GitHub Logo](/assets/icon/github-light.png "Github Logo")
+![VuePress Hope Logo](/favicon.ico)
+
+[![VuePress Hope Logo](/favicon.ico)](https://vuepress-theme-hope.github.io/)
+
+![VuePress Hope Logo](/favicon.ico "VuePress Hope Logo")
+
+[![VuePress Hope Logo](/favicon.ico "VuePress Hope Logo")](https://vuepress-theme-hope.github.io/)
+
+![VuePress Hope Logo](/logo.svg "VuePress Hope Logo" =300x300)
 
 <script setup lang="ts">
 import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch.js"

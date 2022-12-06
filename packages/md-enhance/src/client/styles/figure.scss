@@ -1,0 +1,42 @@
+#{hope-config.$content-class} {
+  figure {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    width: auto;
+    margin: 1rem auto;
+
+    text-align: center;
+
+    transition: transform var(--transform-transition);
+
+    img {
+      overflow: hidden;
+      margin: 0 auto;
+      border-radius: 8px;
+
+      &[tabindex] {
+        // stylelint-disable-next-line max-nesting-depth
+        &:hover,
+        // stylelint-disable-next-line max-nesting-depth
+        &:focus {
+          box-shadow: 2px 2px 10px 0 var(--card-shadow);
+          transform: scale(1.05);
+        }
+      }
+    }
+
+    // stylelint-disable-next-line selector-max-compound-selectors
+    > a .external-link-icon {
+      display: none;
+    }
+
+    figcaption {
+      display: inline-block;
+      margin: 6px auto;
+      font-size: 0.8rem;
+    }
+  }
+}

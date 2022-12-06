@@ -187,11 +187,11 @@ export default {
 - align
 - attrs
 - container
+- figure
 - footnote
 - imageLazyload
 - imageMark
 - imageSize
-- imageTitle
 - include
 - mathjax
 - katex

@@ -27,14 +27,14 @@ export default defineUserConfig({
   theme: hopeTheme({
     plugins: {
       mdEnhance: {
+        // 启用 figure
+        figure: true,
         // 启用图片懒加载
         imageLazyload: true,
         // 启用图片标记
         imageMark: true,
         // 启用图片大小
         imageSize: true,
-        // 启用图片标题
-        imageTitle: true,
       },
     },
   }),
@@ -51,14 +51,14 @@ export default {
   theme: hopeTheme({
     plugins: {
       mdEnhance: {
+        // 启用 figure
+        figure: true,
         // 启用图片懒加载
         imageLazyload: true,
         // 启用图片标记
         imageMark: true,
         // 启用图片大小
         imageSize: true,
-        // 启用图片标题
-        imageTitle: true,
       },
     },
   }),
@@ -137,19 +137,35 @@ interface ImageMarkOptions {
 <img src="/example.bmp" height="300" />
 ```
 
-## 图片标题
+## 图片 Figure
 
-有时，您可能希望为图像添加描述，在这种情况下，您应该在插件选项中设置 `imageTitle: true`。
+有时，您可能希望为图像添加描述，并将其单独展示在上下文中，在这种情况下，您应该在插件选项中设置 `figure: true`。
 
-这样当您为图像添加标题时，图像将显示为 `<figure>` ，标题将显示为 `<figcaption>`。
+这样当您单独将图片至于一行 (也可同时嵌套链接)，图像将显示为 `<figure>` ，标题或图片替代文字将显示为 `<figcaption>`。
 
 ```md
-![GitHub 徽标](/assets/icon/github-light.png "Github 徽标")
+![VuePress Hope 图标](/favicon.ico)
+
+[![VuePress Hope 图标](/favicon.ico)](https://vuepress-theme-hope.github.io/)
+
+![VuePress Hope 图标](/favicon.ico "VuePress Hope 图标")
+
+[![VuePress Hope 图标](/favicon.ico "VuePress Hope 图标")](https://vuepress-theme-hope.github.io/)
+
+![VuePress Hope 图标](/logo.svg "VuePress Hope 图标" =300x300)
 ```
 
 将呈现为：
 
-![GitHub 徽标](/assets/icon/github-light.png "Github 徽标")
+![VuePress Hope 图标](/favicon.ico)
+
+[![VuePress Hope 图标](/favicon.ico)](https://vuepress-theme-hope.github.io/)
+
+![VuePress Hope 图标](/favicon.ico "VuePress Hope 图标")
+
+[![VuePress Hope 图标](/favicon.ico "VuePress Hope 图标")](https://vuepress-theme-hope.github.io/)
+
+![VuePress Hope 图标](/logo.svg "VuePress Hope 图标" =300x300)
 
 <script setup lang="ts">
 import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch.js"

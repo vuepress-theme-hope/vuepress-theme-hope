@@ -29,6 +29,7 @@ import {
   chart,
   codeTabs,
   echarts,
+  figure,
   flowchart,
   footnote,
   hint,
@@ -54,7 +55,6 @@ import {
   vuePlayground,
   getVuePlaygroundPreset,
   getTSPlaygroundPreset,
-  imageTitle,
 } from "./markdown-it/index.js";
 import { prepareConfigFile, prepareRevealPluginFile } from "./prepare.js";
 import { MATHML_TAGS } from "./utils.js";
@@ -242,7 +242,7 @@ export const mdEnhancePlugin =
         if (getStatus("align")) md.use(align);
         if (getStatus("container")) md.use(hint, locales);
         if (getStatus("imageLazyload")) md.use(imageLazyload);
-        if (getStatus("imageTitle")) md.use(imageTitle);
+        if (getStatus("figure")) md.use(figure);
         if (imageMarkEnable)
           md.use(
             imageMark,
