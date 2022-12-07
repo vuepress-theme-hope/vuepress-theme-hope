@@ -6,7 +6,7 @@ import type { WebpackBundlerOptions } from "@vuepress/bundler-webpack";
 
 // Copied from https://github.com/vuejs/core/blob/b2bac9fa1763ab895f9bea18ef83d58673e1a4ec/packages/shared/src/domTagConfig.ts#L6-L28
 // https://developer.mozilla.org/en-US/docs/Web/HTML/Element
-const HTML_TAGS =
+export const HTML_TAGS = (
   "html,body,base,head,link,meta,style,title,address,article,aside,footer," +
   "header,h1,h2,h3,h4,h5,h6,nav,section,div,dd,dl,dt,figcaption," +
   "figure,picture,hr,img,li,main,ol,p,pre,ul,a,b,abbr,bdi,bdo,br,cite,code," +
@@ -15,9 +15,10 @@ const HTML_TAGS =
   "canvas,script,noscript,del,ins,caption,col,colgroup,table,thead,tbody,td," +
   "th,tr,button,datalist,fieldset,form,input,label,legend,meter,optgroup," +
   "option,output,progress,select,textarea,details,dialog,menu," +
-  "summary,template,blockquote,iframe,tfoot";
+  "summary,template,blockquote,iframe,tfoot"
+).split(",");
 // https://developer.mozilla.org/en-US/docs/Web/SVG/Element
-const SVG_TAGS =
+export const SVG_TAGS = (
   "svg,animate,animateMotion,animateTransform,circle,clipPath,color-profile," +
   "defs,desc,discard,ellipse,feBlend,feColorMatrix,feComponentTransfer," +
   "feComposite,feConvolveMatrix,feDiffuseLighting,feDisplacementMap," +
@@ -27,13 +28,14 @@ const SVG_TAGS =
   "foreignObject,g,hatch,hatchpath,image,line,linearGradient,marker,mask," +
   "mesh,meshgradient,meshpatch,meshrow,metadata,mpath,path,pattern," +
   "polygon,polyline,radialGradient,rect,set,solidcolor,stop,switch,symbol," +
-  "text,textPath,title,tspan,unknown,use,view";
+  "text,textPath,title,tspan,unknown,use,view"
+).split(",");
 
 export const tagHint = (tag: string, isDebug = false): void => {
   if (
     isDebug &&
-    !HTML_TAGS.split(",").includes(tag) &&
-    !SVG_TAGS.split(",").includes(tag) &&
+    !HTML_TAGS.includes(tag) &&
+    !SVG_TAGS.includes(tag) &&
     tag === tag.toLowerCase() &&
     !tag.includes("-")
   ) {
