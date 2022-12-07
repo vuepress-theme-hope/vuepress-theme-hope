@@ -1,0 +1,60 @@
+// Vitest Snapshot v1
+
+exports[`Should generate page excerpt correctly > Should generate excerpt 1`] = `
+"<p>A text with </p>
+"
+`;
+
+exports[`Should generate page excerpt correctly > Should generate excerpt 2`] = `
+"<p>A long code block which is expected to be cut of</p>
+<div class=\\"language-javascript line-numbers-mode\\" data-ext=\\"js\\"><pre v-pre=\\"\\" class=\\"language-javascript\\"><code>const a = 1;
+const a = 1;
+const a = 1;
+const a = 1;
+const a = 1;
+const a = 1;
+const a = 1;
+const a = 1;
+const a = 1;
+const a = 1;
+const a = 1;
+const a = 1;</code></pre><div class=\\"line-numbers\\" aria-hidden=\\"true\\"><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div></div></div>"
+`;
+
+exports[`Should generate page excerpt correctly > Should generate excerpt 3`] = `
+"<p>Here is <strong>article excerpt</strong>.</p>
+<div class=\\"language-javascript line-numbers-mode\\" data-ext=\\"js\\"><pre v-pre=\\"\\" class=\\"language-javascript\\"><code>const a = 1;
+</code></pre><div class=\\"line-numbers\\" aria-hidden=\\"true\\"><div class=\\"line-number\\"></div></div></div><!-- more -->
+<h2 id=\\"content\\" tabindex=\\"-1\\"><a class=\\"header-anchor\\" href=\\"#content\\" aria-hidden=\\"true\\">#</a> Content</h2>
+<p>Here is main content of <strong>article</strong>.</p>
+<ol>
+<li>A</li>
+<li>B</li>
+<li>C</li>
+</ol>
+<div class=\\"language-javascript line-numbers-mode\\" data-ext=\\"js\\"><pre v-pre=\\"\\" class=\\"language-javascript\\"><code>const a = 1;
+</code></pre><div class=\\"line-numbers\\" aria-hidden=\\"true\\"><div class=\\"line-number\\"></div></div></div>"
+`;
+
+exports[`Should generate page excerpt correctly > Should generate excerpt 4`] = `
+"<h2 id=\\"heading-2\\" tabindex=\\"-1\\"><a class=\\"header-anchor\\" href=\\"#heading-2\\" aria-hidden=\\"true\\">#</a> Heading 2</h2>
+<h3 id=\\"heading-3\\" tabindex=\\"-1\\"><a class=\\"header-anchor\\" href=\\"#heading-3\\" aria-hidden=\\"true\\">#</a> Heading 3</h3>
+<h4 id=\\"heading-4\\" tabindex=\\"-1\\"><a class=\\"header-anchor\\" href=\\"#heading-4\\" aria-hidden=\\"true\\">#</a> Heading 4</h4>
+<h5 id=\\"heading-5\\" tabindex=\\"-1\\"><a class=\\"header-anchor\\" href=\\"#heading-5\\" aria-hidden=\\"true\\">#</a> Heading 5</h5>
+<h6 id=\\"heading-6\\" tabindex=\\"-1\\"><a class=\\"header-anchor\\" href=\\"#heading-6\\" aria-hidden=\\"true\\">#</a> Heading 6</h6>
+<h2 id=\\"text\\" tabindex=\\"-1\\"><a class=\\"header-anchor\\" href=\\"#text\\" aria-hidden=\\"true\\">#</a> Text</h2>
+<p>This sentence has <strong>bold</strong>、<em>italic</em> and <s>delete</s> style text.</p>
+<h2 id=\\"paragraph\\" tabindex=\\"-1\\"><a class=\\"header-anchor\\" href=\\"#paragraph\\" aria-hidden=\\"true\\">#</a> Paragraph</h2>
+<p>This is a paragraph.</p>
+<p>This is another paragraph.</p>
+"
+`;
+
+exports[`Should generate page excerpt correctly > Should generate excerpt 5`] = `
+"<p>This is a <a href=\\"/excerpt/demo.html\\" target=\\"blank\\">link</a> referencing other markdown.</p>
+<p><img src=\\"/logo.svg\\" alt=\\"logo\\"></p>
+<p><img src=\\"/logo.svg\\" alt=\\"logo\\"></p>
+<p><img src=\\"https://exmaple.com/logo.svg\\" alt=\\"logo\\"></p>
+<p>A inline image , <img src=\\"/logo.svg\\" alt=\\"logo\\"> and a <img src=\\"https://exmaple.com/logo.svg\\" alt=\\"logo\\">.</p>
+"
+`;

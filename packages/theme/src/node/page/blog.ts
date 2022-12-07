@@ -1,9 +1,17 @@
+import { isLinkHttp, removeEndingSlash } from "@vuepress/shared";
+import { load } from "cheerio";
 import matter from "gray-matter";
-import { getDate, timeTransformer } from "vuepress-shared/node";
+import {
+  HTML_TAGS,
+  SVG_TAGS,
+  getDate,
+  timeTransformer,
+} from "vuepress-shared/node";
 
 import { ArticleInfoType, PageType } from "../../shared/index.js";
 
 import type { App, Page } from "@vuepress/core";
+import type { AnyNode } from "cheerio";
 import type {
   ThemeData,
   ThemePageData,
@@ -12,7 +20,57 @@ import type {
   ThemeNormalPageFrontmatter,
 } from "../../shared/index.js";
 
-const getPageExcerpt = (
+const renderNodes = (app: App, nodes: AnyNode[]): AnyNode[] =>
+  nodes
+    .map((node) => {
+      if (node.type === "tag") {
+        // image using relative urls shall be dropped
+        if (node.tagName === "img") {
+          const { src } = node.attribs;
+
+          // this is a valid image link so we preserve it
+          if (isLinkHttp(src) || src.startsWith("/")) return node;
+
+          // The img is probably using alias
+          return null;
+        }
+
+        if (
+          HTML_TAGS.includes(node.tagName) ||
+          SVG_TAGS.includes(node.tagName)
+        ) {
+          // console.log(node.tagName);
+          node.children = renderNodes(app, node.children);
+
+          return node;
+        }
+
+        // we shall convert `<RouterLink>` to `<a>` tag
+        if (node.tagName === "routerlink") {
+          console.log("found");
+
+          node.tagName = "a";
+          node.attribs["href"] = `${removeEndingSlash(app.options.base)}${
+            node.attribs["to"]
+          }`;
+          node.attribs["target"] = "blank";
+          delete node.attribs["to"];
+          node.children = renderNodes(app, node.children);
+
+          return node;
+        }
+
+        return null;
+      }
+
+      return node;
+    })
+    .filter((node): node is AnyNode => node !== null);
+
+const $ = load("");
+
+export const getPageExcerpt = (
+  app: App,
   page: Page<ThemePageData>,
   autoExcerptLength: number
 ): string => {
@@ -28,7 +86,18 @@ const getPageExcerpt = (
     if (excerpt.length >= autoExcerptLength) break;
   }
 
-  return excerpt;
+  const renderedContent = app.markdown.render(
+    excerpt,
+    // markdown env
+    {
+      base: app.options.base,
+      filePath: page.filePath,
+      filePathRelative: page.filePathRelative,
+      frontmatter: { ...page.frontmatter },
+    }
+  );
+
+  return $.html(renderNodes(app, $.parseHTML(renderedContent)));
 };
 
 export const injectBlogInfo = (
@@ -118,7 +187,7 @@ export const injectBlogInfo = (
       // excerpt is sensitive with markdown contents
       (injectContentSensitiveData && autoExcerpt
         ? app.markdown.render(
-            getPageExcerpt(page, autoExcerpt),
+            getPageExcerpt(app, page, autoExcerpt),
             // markdown env
             {
               base: app.options.base,
