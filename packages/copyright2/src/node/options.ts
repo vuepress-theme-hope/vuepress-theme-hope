@@ -96,11 +96,11 @@ export interface CopyrightOptions {
   /**
    * Canonical hostname with base
    *
-   * @description This is useful when your content are deploying in multiple places
+   * @description This is useful when your content are deployed in multiple places
    *
    * 首选域名与部署目录
    *
-   * @description 当你再多个站点部署内容时很有用
+   * @description 当你在多个站点部署内容时很有用。
    */
   canonical?: string;
 }

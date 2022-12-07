@@ -5,13 +5,6 @@ icon: config
 
 ## Plugin Options
 
-### hostname
-
-- Type: `string`
-- Required: No
-
-Deploy hostname
-
 ### author
 
 - Type: `string | ((page: Page) => string)`
@@ -53,6 +46,26 @@ Disable copy
 - Default: `false`
 
 Disable selection
+
+### canonical
+
+- Type: `string`
+- Required: No
+
+Canonical hostname with base.
+
+This is useful when your content are deploying in multiple places.
+
+::: note Example
+
+If you are deploying same content under `https://myblog.com` and `https://blog.com/username/`, you may want to prefer one site as reference link.
+
+- If you prefer the first one, you should set `canonical` to `https://myblog.com`
+- If you prefer the second one, you should set `canonical` to `https://blog.com/username/`
+
+So copyright message triggered by copying content on another site also points to your preferred site.
+
+:::
 
 ### locales
 
