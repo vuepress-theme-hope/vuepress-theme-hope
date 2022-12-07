@@ -945,6 +945,7 @@ importers:
       '@vuepress/utils': 2.0.0-beta.53
       '@vueuse/core': ^9.6.0
       vue: ^3.2.45
+      vue-router: ^4.1.6
       vuepress-shared: workspace:*
     dependencies:
       '@vuepress/client': 2.0.0-beta.53
@@ -952,6 +953,7 @@ importers:
       '@vuepress/utils': 2.0.0-beta.53
       '@vueuse/core': 9.6.0_vue@3.2.45
       vue: 3.2.45
+      vue-router: 4.1.6_vue@3.2.45
       vuepress-shared: link:../shared
     devDependencies:
       '@vuepress/core': 2.0.0-beta.53
@@ -4629,7 +4631,7 @@ packages:
   /axios/1.2.1:
     resolution: {integrity: sha512-I88cFiGu9ryt/tfVEi4kX2SITsvDddTajXTOFmt2uK1ZVA8LytjtdeyefdQWEf5PU8w+4SSJDoYnggflB5tW4A==}
     dependencies:
-      follow-redirects: 1.15.2
+      follow-redirects: 1.15.2_debug@2.6.9
       form-data: 4.0.0
       proxy-from-env: 1.1.0
     transitivePeerDependencies:
@@ -7758,7 +7760,6 @@ packages:
         optional: true
     dependencies:
       debug: 2.6.9
-    dev: true
 
   /for-in/1.0.2:
     resolution: {integrity: sha512-7EwmXrOjyL+ChxMhmG5lnW9MPt1aIeZEwKhQzoBUdTV0N3zuwWDZYVJatDvZ2OyzPUvdIAZDsCetk3coyMfcnQ==}

@@ -1,17 +1,31 @@
 import { usePageFrontmatter, usePageData } from "@vuepress/client";
+import { isLinkHttp, removeEndingSlash } from "@vuepress/shared";
 import { useEventListener } from "@vueuse/core";
 import { computed, onMounted, watchEffect } from "vue";
+import { useRoute } from "vue-router";
+import { useLocaleConfig } from "vuepress-shared/client";
 
-import type { CopyrightPluginFrontmatter } from "../../shared/index.js";
+import type { ConvertLocaleConfig } from "vuepress-shared/client";
+import type {
+  CopyrightLocaleData,
+  CopyrightPluginFrontmatter,
+  CopyrightPluginPageData,
+} from "../../shared/index.js";
 
-declare const COPYRIGHT_TRIGGER_WORDS: number;
+declare const COPYRIGHT_CANONICAL: string;
 declare const COPYRIGHT_DISABLE_COPY: boolean;
 declare const COPYRIGHT_DISABLE_SELECTION: boolean;
 declare const COPYRIGHT_GLOBAL: boolean;
+declare const COPYRIGHT_LOCALES: ConvertLocaleConfig<CopyrightLocaleData>;
+declare const COPYRIGHT_TRIGGER_WORDS: number;
+
+const canonical = COPYRIGHT_CANONICAL;
 
 export const setupCopyright = (): void => {
-  const page = usePageData<{ copyright: string }>();
   const frontmatter = usePageFrontmatter<CopyrightPluginFrontmatter>();
+  const locale = useLocaleConfig(COPYRIGHT_LOCALES);
+  const page = usePageData<CopyrightPluginPageData>();
+  const route = useRoute();
 
   const enabled = computed(
     () =>
@@ -47,6 +61,29 @@ export const setupCopyright = (): void => {
     return COPYRIGHT_DISABLE_SELECTION;
   });
 
+  const getCopyright = (): string => {
+    const { author: authorInfo = "", license: licenseInfo = "" } =
+      page.value.copyright;
+    const { author, license, link } = locale.value;
+
+    return [
+      authorInfo ? author.replace(":author", authorInfo) : "",
+      licenseInfo ? license.replace(":license", licenseInfo) : "",
+      link.replace(
+        ":link",
+        canonical
+          ? `${
+              isLinkHttp(canonical)
+                ? removeEndingSlash(canonical)
+                : `https://${removeEndingSlash(canonical)}`
+            }${route.path}`
+          : window.location.href
+      ),
+    ]
+      .filter((item) => item)
+      .join("\n");
+  };
+
   const onCopy = (event: ClipboardEvent): void => {
     const selection = getSelection();
 
@@ -63,6 +100,7 @@ export const setupCopyright = (): void => {
         if (textRange.toString().length >= COPYRIGHT_TRIGGER_WORDS) {
           event.preventDefault();
 
+          const copyright = getCopyright();
           const node = document.createElement("div");
 
           node.appendChild(selection.getRangeAt(0).cloneContents());
@@ -70,9 +108,7 @@ export const setupCopyright = (): void => {
           if (event.clipboardData) {
             event.clipboardData.setData(
               "text/html",
-              `${
-                node.innerHTML
-              }<hr><div class="copyright">${page.value.copyright.replace(
+              `${node.innerHTML}<hr><div class="copyright">${copyright.replace(
                 /\\n/g,
                 "<br>"
               )}</div>`
@@ -81,7 +117,7 @@ export const setupCopyright = (): void => {
               "text/plain",
               `${
                 selection.getRangeAt(0).cloneContents().textContent || ""
-              }\n------\n${page.value.copyright}`
+              }\n------\n${copyright}`
             );
           }
         }
