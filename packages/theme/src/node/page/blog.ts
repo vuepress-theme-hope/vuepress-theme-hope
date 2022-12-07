@@ -20,52 +20,54 @@ import type {
   ThemeNormalPageFrontmatter,
 } from "../../shared/index.js";
 
-const renderNodes = (app: App, nodes: AnyNode[]): AnyNode[] =>
-  nodes
-    .map((node) => {
-      if (node.type === "tag") {
-        // image using relative urls shall be dropped
-        if (node.tagName === "img") {
-          const { src } = node.attribs;
+const renderNodes = (app: App, nodes: AnyNode[]): AnyNode[] | [] =>
+  Array.isArray(nodes)
+    ? nodes
+        .map((node) => {
+          if (node.type === "tag") {
+            // image using relative urls shall be dropped
+            if (node.tagName === "img") {
+              const { src } = node.attribs;
 
-          // this is a valid image link so we preserve it
-          if (isLinkHttp(src) || src.startsWith("/")) return node;
+              // this is a valid image link so we preserve it
+              if (isLinkHttp(src) || src.startsWith("/")) return node;
 
-          // The img is probably using alias
-          return null;
-        }
+              // The img is probably using alias
+              return null;
+            }
 
-        if (
-          HTML_TAGS.includes(node.tagName) ||
-          SVG_TAGS.includes(node.tagName)
-        ) {
-          // console.log(node.tagName);
-          node.children = renderNodes(app, node.children);
+            if (
+              HTML_TAGS.includes(node.tagName) ||
+              SVG_TAGS.includes(node.tagName)
+            ) {
+              // console.log(node.tagName);
+              node.children = renderNodes(app, node.children);
+
+              return node;
+            }
+
+            // we shall convert `<RouterLink>` to `<a>` tag
+            if (node.tagName === "routerlink") {
+              console.log("found");
+
+              node.tagName = "a";
+              node.attribs["href"] = `${removeEndingSlash(app.options.base)}${
+                node.attribs["to"]
+              }`;
+              node.attribs["target"] = "blank";
+              delete node.attribs["to"];
+              node.children = renderNodes(app, node.children);
+
+              return node;
+            }
+
+            return null;
+          }
 
           return node;
-        }
-
-        // we shall convert `<RouterLink>` to `<a>` tag
-        if (node.tagName === "routerlink") {
-          console.log("found");
-
-          node.tagName = "a";
-          node.attribs["href"] = `${removeEndingSlash(app.options.base)}${
-            node.attribs["to"]
-          }`;
-          node.attribs["target"] = "blank";
-          delete node.attribs["to"];
-          node.children = renderNodes(app, node.children);
-
-          return node;
-        }
-
-        return null;
-      }
-
-      return node;
-    })
-    .filter((node): node is AnyNode => node !== null);
+        })
+        .filter((node): node is AnyNode => node !== null)
+    : nodes;
 
 const $ = load("");
 
@@ -97,7 +99,7 @@ export const getPageExcerpt = (
     }
   );
 
-  return $.html(renderNodes(app, $.parseHTML(renderedContent)));
+  return $.html(renderNodes(app, $.parseHTML(renderedContent)) || []);
 };
 
 export const injectBlogInfo = (
