@@ -613,7 +613,7 @@ importers:
       '@vuepress/client': 2.0.0-beta.53
       '@vuepress/utils': 2.0.0-beta.53
       docs-shared: workspace:*
-      katex: 0.16.3
+      katex: 0.16.4
       sass-loader: 13.2.0
       vue: 3.2.45
       vuepress-plugin-md-enhance: workspace:*
@@ -624,7 +624,7 @@ importers:
       '@vuepress/client': 2.0.0-beta.53
       '@vuepress/utils': 2.0.0-beta.53
       docs-shared: link:../shared
-      katex: 0.16.3
+      katex: 0.16.4
       sass-loader: 13.2.0
       vue: 3.2.45
       vuepress-plugin-md-enhance: link:../../packages/md-enhance
@@ -823,7 +823,7 @@ importers:
       '@vuepress/utils': 2.0.0-beta.53
       axios: 1.2.1
       docs-shared: workspace:*
-      katex: 0.16.3
+      katex: 0.16.4
       sass-loader: 13.2.0
       vue: 3.2.45
       vuepress-shared: workspace:*
@@ -836,7 +836,7 @@ importers:
       '@vuepress/utils': 2.0.0-beta.53
       axios: 1.2.1
       docs-shared: link:../shared
-      katex: 0.16.3
+      katex: 0.16.4
       sass-loader: 13.2.0
       vue: 3.2.45
       vuepress-shared: link:../../packages/shared
@@ -9202,6 +9202,13 @@ packages:
 
   /katex/0.16.3:
     resolution: {integrity: sha512-3EykQddareoRmbtNiNEDgl3IGjryyrp2eg/25fHDEnlHymIDi33bptkMv6K4EOC2LZCybLW/ZkEo6Le+EM9pmA==}
+    hasBin: true
+    dependencies:
+      commander: 8.3.0
+    dev: false
+
+  /katex/0.16.4:
+    resolution: {integrity: sha512-WudRKUj8yyBeVDI4aYMNxhx5Vhh2PjpzQw1GRu/LVGqL4m1AxwD1GcUp0IMbdJaf5zsjtj8ghP0DOQRYhroNkw==}
     hasBin: true
     dependencies:
       commander: 8.3.0
