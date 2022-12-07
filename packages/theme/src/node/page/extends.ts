@@ -10,7 +10,7 @@ export const extendsPage = (
   app: App,
   page: Page<ThemePageData>,
   themeData: ThemeData,
-  { enableAutoExcerpt, enableBlog }: ThemeStatus,
+  { autoExcerpt, enableBlog }: ThemeStatus,
   injectContentSensitiveData = false
 ): void => {
   injectLocalizedDate(page);
@@ -21,7 +21,7 @@ export const extendsPage = (
       app,
       themeData,
       page,
-      enableAutoExcerpt,
+      autoExcerpt,
       injectContentSensitiveData
     );
 };

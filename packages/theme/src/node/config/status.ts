@@ -2,7 +2,7 @@ import type { App } from "@vuepress/core";
 import type { ThemeOptions } from "../../shared/index.js";
 
 export interface ThemeStatus {
-  enableAutoExcerpt: boolean;
+  autoExcerpt: number | false;
   enableBlog: boolean;
   enableEncrypt: boolean;
   enableSlide: boolean;
@@ -19,8 +19,14 @@ export const getStatus = (
   const { plugins = {} } = themeOptions;
 
   return {
-    enableAutoExcerpt:
-      typeof plugins.blog === "object" && Boolean(plugins.blog.autoExcerpt),
+    autoExcerpt:
+      typeof plugins.blog === "object"
+        ? typeof plugins.blog.autoExcerpt === "number"
+          ? plugins.blog.autoExcerpt
+          : plugins.blog.autoExcerpt
+          ? 200
+          : false
+        : false,
     enableBlog: Boolean(plugins.blog),
     enableEncrypt: Boolean(
       themeOptions.encrypt &&

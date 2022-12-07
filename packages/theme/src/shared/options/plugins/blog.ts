@@ -94,9 +94,13 @@ export interface BlogPluginOptions
   /**
    * Whether generate a excerpt automatically
    *
+   * @description When filling in a number, it means the excerpt length (by default it's 200)
+   *
    * 是否自动生成摘要
+   *
+   * @description 填写数字时表示摘录长度 (默认为 200)
    *
    * @default false
    */
-  autoExcerpt?: boolean;
+  autoExcerpt?: number | boolean;
 }

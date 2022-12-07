@@ -12,11 +12,30 @@ import type {
   ThemeNormalPageFrontmatter,
 } from "../../shared/index.js";
 
+const getPageExcerpt = (
+  page: Page<ThemePageData>,
+  autoExcerptLength: number
+): string => {
+  // get page content
+  const content = matter(page.content)
+    .content.trim()
+    // remove first heading1 as title
+    .replace(/^# (.*)$/gm, "");
+  let excerpt = "";
+
+  for (const line of content.split("\n")) {
+    excerpt += `\n${line}`;
+    if (excerpt.length >= autoExcerptLength) break;
+  }
+
+  return excerpt;
+};
+
 export const injectBlogInfo = (
   app: App,
   themeData: ThemeData,
   page: Page<ThemePageData>,
-  enableAutoExcerpt: boolean,
+  autoExcerpt: number | false,
   injectContentSensitiveData = false
 ): void => {
   const { config = {} } = themeData.encrypt;
@@ -97,21 +116,9 @@ export const injectBlogInfo = (
       (page.data.autoDesc ? "" : frontmatter.description) ||
       // generate excerpt from content
       // excerpt is sensitive with markdown contents
-      (injectContentSensitiveData && enableAutoExcerpt
+      (injectContentSensitiveData && autoExcerpt
         ? app.markdown.render(
-            // get page content
-            matter(page.content)
-              .content.trim()
-              // remove first heading1 as title
-              .replace(/^# (.*)$/gm, "")
-              // get lines until total length is above 200
-              .split("\n")
-              .reduce(
-                (excerpt, content) =>
-                  excerpt.length < 200 ? `${excerpt}\n${content}` : excerpt,
-                ""
-              ),
-
+            getPageExcerpt(page, autoExcerpt),
             // markdown env
             {
               base: app.options.base,

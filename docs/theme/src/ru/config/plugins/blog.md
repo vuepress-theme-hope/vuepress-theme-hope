@@ -22,10 +22,10 @@ tag:
 
 ### autoExcerpt
 
-- Тип: `boolean`
+- Тип: `number | boolean`
 - По умолчанию: `false`
 
-Генерировать ли выдержку для каждой страницы.
+Генерировать ли выдержку для каждой страницы. Number value means excerpt length (default is `200`).
 
 ::: warning Limitation
 

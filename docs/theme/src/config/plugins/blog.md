@@ -22,10 +22,10 @@ For instructions, please see [Blog Intro](../../guide/blog/intro.md).
 
 ### autoExcerpt
 
-- Type: `boolean`
+- Type: `number | boolean`
 - Default: `false`
 
-Whether to generate excerpt for every page.
+Whether to generate excerpt for every page. Number value means excerpt length (default is `200`).
 
 ::: warning Limitation
 

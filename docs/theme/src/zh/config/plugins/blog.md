@@ -22,10 +22,10 @@ tag:
 
 ### autoExcerpt
 
-- 类型: `boolean`
+- 类型: `number | boolean`
 - 默认值: `false`
 
-是否为每个页面生成摘录。
+是否为每个页面生成摘录。数字代表生成的摘录长度 (默认 `200`)
 
 ::: warning 限制
 
