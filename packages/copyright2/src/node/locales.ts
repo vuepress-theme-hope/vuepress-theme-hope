@@ -14,6 +14,12 @@ export const copyrightLocales: CopyrightLocaleConfig = {
     link: "原文链接：:link",
   },
 
+  "/zh-tw/": {
+    author: "著作權歸:author所有",
+    license: "基於:license協議",
+    link: "原文鏈接：:link",
+  },
+
   "/ru/": {
     author: "Авторские права :author",
     license: "Лицензия :license",
