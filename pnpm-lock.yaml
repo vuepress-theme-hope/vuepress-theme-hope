@@ -17,7 +17,7 @@ importers:
     specifiers:
       '@commitlint/cli': 17.3.0
       '@commitlint/config-conventional': 17.3.0
-      '@rollup/plugin-commonjs': 23.0.3
+      '@rollup/plugin-commonjs': 23.0.4
       '@rollup/plugin-node-resolve': 15.0.1
       '@types/inquirer': 9.0.3
       '@types/node': 18.11.11
@@ -66,7 +66,7 @@ importers:
     devDependencies:
       '@commitlint/cli': 17.3.0
       '@commitlint/config-conventional': 17.3.0
-      '@rollup/plugin-commonjs': 23.0.3_rollup@3.6.0
+      '@rollup/plugin-commonjs': 23.0.4_rollup@3.6.0
       '@rollup/plugin-node-resolve': 15.0.1_rollup@3.6.0
       '@types/inquirer': 9.0.3
       '@types/node': 18.11.11
@@ -3291,8 +3291,8 @@ packages:
       '@rollup/pluginutils': 3.1.0_rollup@2.79.1
       rollup: 2.79.1
 
-  /@rollup/plugin-commonjs/23.0.3_rollup@3.6.0:
-    resolution: {integrity: sha512-31HxrT5emGfTyIfAs1lDQHj6EfYxTXcwtX5pIIhq+B/xZBNIqQ179d/CkYxlpYmFCxT78AeU4M8aL8Iv/IBxFA==}
+  /@rollup/plugin-commonjs/23.0.4_rollup@3.6.0:
+    resolution: {integrity: sha512-bOPJeTZg56D2MCm+TT4psP8e8Jmf1Jsi7pFUMl8BN5kOADNzofNHe47+84WVCt7D095xPghC235/YKuNDEhczg==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       rollup: ^2.68.0||^3.0.0
@@ -3491,12 +3491,12 @@ packages:
     resolution: {integrity: sha512-9K4zoImiZc3HlIp6AVUDE4CWYx22a+lhSZMYNpbjW04+YF0KWj4pJXnEMjdnFTiQibFFmElcsasJXDbdI/EPhA==}
     dependencies:
       '@types/eslint': 8.4.10
-      '@types/estree': 0.0.51
+      '@types/estree': 1.0.0
 
   /@types/eslint/8.4.10:
     resolution: {integrity: sha512-Sl/HOqN8NKPmhWo2VBEPm0nvHnu2LL3v9vKo8MEq0EtbJ4eVzGPl41VNPvn5E1i5poMk4/XD8UriLHpJvEP/Nw==}
     dependencies:
-      '@types/estree': 0.0.51
+      '@types/estree': 1.0.0
       '@types/json-schema': 7.0.11
 
   /@types/estree/0.0.39:
@@ -3507,7 +3507,6 @@ packages:
 
   /@types/estree/1.0.0:
     resolution: {integrity: sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ==}
-    dev: true
 
   /@types/express-serve-static-core/4.17.31:
     resolution: {integrity: sha512-DxMhY+NAsTwMMFHBTtJFNp5qiHKJ7TeqOo23zVEM9alT1Ml27Q3xcTH0xwxn7Q0BbMcVEJOs/7aQtUWupUQN3Q==}
