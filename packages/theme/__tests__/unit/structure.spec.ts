@@ -2,14 +2,14 @@ import { createBaseApp } from "@vuepress/core";
 import { path } from "@vuepress/utils";
 import { describe, it, expect } from "vitest";
 
-import { sidebarTheme } from "./__fixtures__/theme/sidebar.js";
+import { emptyTheme } from "./__fixtures__/theme/empty.js";
 import { getStructure } from "../../src/node/prepare/index.js";
 
 describe("should generate structure info correctly", async () => {
   const app = createBaseApp({
     bundler: {} as any,
     source: path.resolve(__dirname, "./__fixtures__/src"),
-    theme: sidebarTheme,
+    theme: emptyTheme,
   });
 
   await app.init();

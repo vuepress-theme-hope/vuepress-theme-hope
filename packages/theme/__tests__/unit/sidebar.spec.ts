@@ -2,7 +2,7 @@ import { createBaseApp } from "@vuepress/core";
 import { path } from "@vuepress/utils";
 import { describe, it, expect } from "vitest";
 
-import { sidebarTheme } from "./__fixtures__/theme/sidebar.js";
+import { emptyTheme } from "./__fixtures__/theme/empty.js";
 import { getSidebarData } from "../../src/node/prepare/index.js";
 import { getStatus, getThemeData } from "../../src/node/config/index.js";
 
@@ -12,7 +12,7 @@ describe("should generate sidebarData correctly", async () => {
   const app = createBaseApp({
     bundler: {} as any,
     source: path.resolve(__dirname, "./__fixtures__/src"),
-    theme: sidebarTheme,
+    theme: emptyTheme,
   });
 
   await app.init();
