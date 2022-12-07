@@ -72,11 +72,9 @@ export const setupCopyright = (): void => {
       link.replace(
         ":link",
         canonical
-          ? `${
-              isLinkHttp(canonical)
-                ? removeEndingSlash(canonical)
-                : `https://${removeEndingSlash(canonical)}`
-            }${route.path}`
+          ? `${removeEndingSlash(
+              isLinkHttp(canonical) ? canonical : `https://${canonical}`
+            )}${route.path}`
           : window.location.href
       ),
     ]
