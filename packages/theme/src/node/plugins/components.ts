@@ -1,21 +1,18 @@
 import { componentsPlugin } from "vuepress-plugin-components";
 
-import type { AvailableComponent } from "vuepress-plugin-components";
+import type { ComponentOptions } from "vuepress-plugin-components";
 import type { Plugin } from "@vuepress/core";
 import type { ThemeOptions } from "../../shared/index.js";
 
 export const getComponentsPlugin = (
-  components: AvailableComponent[] = ["Badge", "FontIcon"],
   options: Pick<
     ThemeOptions,
-    | "addThis"
-    | "backToTop"
-    | "hostname"
-    | "hotReload"
-    | "iconAssets"
-    | "iconPrefix"
-    | "notice"
+    "backToTop" | "hostname" | "hotReload" | "iconAssets" | "iconPrefix"
   >,
+  {
+    components = ["Badge", "FontIcon"],
+    rootComponents = {},
+  }: ComponentOptions = {},
   legacy = false
 ): Plugin =>
   componentsPlugin(
@@ -33,15 +30,11 @@ export const getComponentsPlugin = (
           : {}),
       },
       rootComponents: {
-        ...(options.addThis ? { addThis: options.addThis } : {}),
+        ...rootComponents,
         backToTop:
           typeof options.backToTop === "number"
             ? options.backToTop
             : options.backToTop !== false,
-
-        ...(typeof options.notice === "object"
-          ? { notice: options.notice }
-          : {}),
       },
     },
     legacy

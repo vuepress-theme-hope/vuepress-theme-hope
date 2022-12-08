@@ -23,9 +23,66 @@ tag:
 
 По умолчанию `<Badge />` и `<FontIcon />` включены.
 
-Чтобы включить компоненты, вы должны установить `plugin.components` с массивом имен компонентов.
+Чтобы включить компоненты, вы должны установить `plugin.components.components` с массивом имен компонентов.
 
 <!-- more -->
+
+::: code-tabs#language
+
+@tab TS
+
+```ts {8-10}
+// .vuepress/config.ts
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default defineUserConfig({
+  theme: hopeTheme({
+    plugins: {
+      components: {
+        // components you want
+        components: [
+          "Badge",
+          "BiliBili",
+          "CodePen",
+          "PDF",
+          "StackBlitz",
+          "VideoPlayer",
+          "YouTube",
+        ],
+      },
+    },
+  }),
+});
+```
+
+@tab JS
+
+```js {7-9}
+// .vuepress/config.js
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default {
+  theme: hopeTheme({
+    plugins: {
+      components: {
+        // components you want
+        components: [
+          "Badge",
+          "BiliBili",
+          "CodePen",
+          "PDF",
+          "StackBlitz",
+          "VideoPlayer",
+          "YouTube",
+        ],
+      },
+    },
+  }),
+};
+```
+
+:::
 
 ## Значок
 

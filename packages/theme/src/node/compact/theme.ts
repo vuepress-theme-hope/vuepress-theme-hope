@@ -170,8 +170,28 @@ export const convertThemeOptions = (
     if (!plugins["blog"]) plugins["blog"] = true;
   }
 
-  // handle encrypt
+  // handle component
+  if (Array.isArray(plugins["components"])) {
+    logger.warn(
+      '"plugins.components" no longer accpets array, please set it to "plugin.components.components" instead.'
+    );
+
+    plugins["components"] = {
+      components: plugins["components"],
+    };
+  }
+
+  // handle addThis
+  if (themeOptions["addThis"])
+    deprecatedLogger({
+      options: themeOptions,
+      deprecatedOption: "addThis",
+      newOption: "plugins.components.rootComponents.addThis",
+      scope: "themeConfig",
+    });
+
   if (typeof themeOptions["encrypt"] === "object" && themeOptions["encrypt"]) {
+    // handle encrypt
     const encrypt = themeOptions["encrypt"] as Record<string, unknown>;
 
     if ("global" in encrypt && typeof encrypt["global"] !== "boolean") {

@@ -19,7 +19,7 @@ export interface ComponentOptions {
    *
    * @default []
    */
-  components: AvailableComponent[];
+  components?: AvailableComponent[];
 
   /**
    * Global config for components
@@ -56,7 +56,7 @@ export interface ComponentOptions {
     };
   };
 
-  rootComponents: {
+  rootComponents?: {
     /**
      * Add This 的公开 ID
      *

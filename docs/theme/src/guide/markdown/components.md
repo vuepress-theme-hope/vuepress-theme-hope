@@ -20,11 +20,69 @@ Available components:
 - StackBlitz
 - VideoPlayer
 - YouTube
-  By default, `<Badge />` and `<FontIcon />` is enabled.
 
-To enable components, you should set `plugin.components` with an array of components name.
+By default, `<Badge />` and `<FontIcon />` is enabled.
+
+To enable components, you should set `plugin.components.components` with an array of components name.
 
 <!-- more -->
+
+::: code-tabs#language
+
+@tab TS
+
+```ts {8-10}
+// .vuepress/config.ts
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default defineUserConfig({
+  theme: hopeTheme({
+    plugins: {
+      components: {
+        // components you want
+        components: [
+          "Badge",
+          "BiliBili",
+          "CodePen",
+          "PDF",
+          "StackBlitz",
+          "VideoPlayer",
+          "YouTube",
+        ],
+      },
+    },
+  }),
+});
+```
+
+@tab JS
+
+```js {7-9}
+// .vuepress/config.js
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default {
+  theme: hopeTheme({
+    plugins: {
+      components: {
+        // components you want
+        components: [
+          "Badge",
+          "BiliBili",
+          "CodePen",
+          "PDF",
+          "StackBlitz",
+          "VideoPlayer",
+          "YouTube",
+        ],
+      },
+    },
+  }),
+};
+```
+
+:::
 
 ## Badge
 

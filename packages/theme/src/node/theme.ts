@@ -42,10 +42,8 @@ export const hopeTheme =
       hostname,
       iconAssets,
       iconPrefix,
-      addThis,
       backToTop,
       sidebarSorter,
-      notice,
       ...themeOptions
     } = legacy
       ? convertThemeOptions(options as ThemeOptions & Record<string, unknown>)
@@ -128,13 +126,11 @@ export const hopeTheme =
 
         // @ts-ignore
         {
-          addThis,
           backToTop,
           hostname,
           hotReload,
           iconAssets,
           iconPrefix,
-          notice,
         },
         legacy
       ),

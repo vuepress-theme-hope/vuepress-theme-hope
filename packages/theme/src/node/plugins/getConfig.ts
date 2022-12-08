@@ -27,18 +27,12 @@ export const getPluginConfig = (
   themeData: ThemeData,
   options: Pick<
     ThemeOptions,
-    | "addThis"
-    | "backToTop"
-    | "hostname"
-    | "hotReload"
-    | "iconAssets"
-    | "iconPrefix"
-    | "notice"
+    "backToTop" | "hostname" | "hotReload" | "iconAssets" | "iconPrefix"
   >,
   legacy = false
 ): PluginConfig => {
   const pluginConfig = [
-    getComponentsPlugin(plugins.components, options, legacy),
+    getComponentsPlugin(options, plugins.components, legacy),
     getActiveHeaderLinksPlugin(plugins.activeHeaderLinks),
     plugins.externalLinkIcon === false ? null : externalLinkIconPlugin(),
     plugins.nprogress === false ? null : nprogressPlugin(),

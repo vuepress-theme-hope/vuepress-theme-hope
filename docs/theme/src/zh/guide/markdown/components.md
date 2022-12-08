@@ -23,9 +23,66 @@ tag:
 
 默认情况下，`<Badge />` 和 `<FontIcon />` 是启用的。
 
-要启用组件，你应该使用组件名称数组设置 `plugin.components`。
+要启用组件，你应该使用组件名称数组设置 `plugin.components.components`。
 
-<!-- 更多 -->
+<!-- more -->
+
+::: code-tabs#language
+
+@tab TS
+
+```ts {8-10}
+// .vuepress/config.ts
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default defineUserConfig({
+  theme: hopeTheme({
+    plugins: {
+      components: {
+        // 你想使用的组件
+        components: [
+          "Badge",
+          "BiliBili",
+          "CodePen",
+          "PDF",
+          "StackBlitz",
+          "VideoPlayer",
+          "YouTube",
+        ],
+      },
+    },
+  }),
+});
+```
+
+@tab JS
+
+```js {7-9}
+// .vuepress/config.js
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default {
+  theme: hopeTheme({
+    plugins: {
+      components: {
+        // 你想使用的组件
+        components: [
+          "Badge",
+          "BiliBili",
+          "CodePen",
+          "PDF",
+          "StackBlitz",
+          "VideoPlayer",
+          "YouTube",
+        ],
+      },
+    },
+  }),
+};
+```
+
+:::
 
 ## Badge
 

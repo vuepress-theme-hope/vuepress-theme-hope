@@ -1,4 +1,3 @@
-import type { NoticeOptions } from "vuepress-plugin-components";
 import type {
   BlogLocaleConfig,
   BlogLocaleData,
@@ -52,13 +51,6 @@ export interface FeatureLocaleConfig {
  */
 export interface FeatureOptions {
   /**
-   * Add This 的公开 ID
-   *
-   * Public ID for add this
-   */
-  addThis?: string;
-
-  /**
    * Encrypt config
    *
    * 加密配置
@@ -77,13 +69,6 @@ export interface FeatureOptions {
    * @default app.env.isDebug
    */
   hotReload?: boolean;
-
-  /**
-   * Global notice config
-   *
-   * 全局通知配置
-   */
-  notice?: NoticeOptions;
 }
 
 export interface FeatureConfig {

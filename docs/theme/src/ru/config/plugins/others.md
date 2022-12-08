@@ -11,7 +11,9 @@ tag:
 
 ## components
 
-Зарегистрируйте компоненты, которые можно использовать в файлах Markdown, доступные имена компонентов:
+Controls `vuepress-plugin-components`, providing a set of components for Markdown.
+
+Available component which can be used in markdown files are:
 
 - `"Badge"`
 - `"BiliBili"`
@@ -21,7 +23,15 @@ tag:
 - `"VideoPlayer"`
 - `"YouTube"`
 
-Вы можете установить `plugin.components` с массивом компонентов, которые вы хотите, по умолчанию это будет `["Badge"]`.
+You can set `plugin.components.components` with an array of components you want, by default it will be `["Badge"]`.
+
+Also, you can set `plugin.components.rootComponents` to enable some root components, such as addThis and notice.
+
+::: info
+
+For plugin options, please refer to [components plugin options][components-config].
+
+:::
 
 ## copyCode <Badge text="включено по умолчанию" />
 
@@ -118,6 +128,7 @@ tag:
 
 :::
 
+[components-config]: https://vuepress-theme-hope.github.io/v2/components/config.html
 [copy-code-config]: https://vuepress-theme-hope.github.io/v2/copy-code/config.html
 [git-config]: https://v2.vuepress.vuejs.org/reference/plugin/git.html
 [prismjs-config]: https://v2.vuepress.vuejs.org/reference/plugin/prismjs.html

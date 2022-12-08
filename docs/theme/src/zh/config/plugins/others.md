@@ -11,7 +11,9 @@ tag:
 
 ## components
 
-注册一些可以在 Markdown 文件中使用的组件，可用的组件名称为:
+控制 `vuepress-plugin-components`，为 Markdown 提供一组组件。
+
+可以在 Markdown 中使用的可用组件为:
 
 - `"Badge"`
 - `"BiliBili"`
@@ -21,7 +23,15 @@ tag:
 - `"VideoPlayer"`
 - `"YouTube"`
 
-你可以将 `plugin.components` 设置为需要的组件数组，默认情况下为 `["Badge"]`。
+你可以将 `plugin.components.components` 设置为需要的组件数组，默认情况下为 `["Badge"]`。
+
+同时，你可以设置 `plugin.components.rootComponents` 来启用一些根组件，例如 addThis 和 notice。
+
+::: info
+
+插件选项请参见 [components 插件选项][components-config].
+
+:::
 
 ## copyCode <Badge text="默认启用" />
 
@@ -118,6 +128,7 @@ tag:
 
 :::
 
+[components-config]: https://vuepress-theme-hope.github.io/v2/components/zh/config.html
 [copy-code-config]: https://vuepress-theme-hope.github.io/v2/copy-code/zh/config.html
 [git-config]: https://v2.vuepress.vuejs.org/zh/reference/plugin/git.html
 [prismjs-config]: https://v2.vuepress.vuejs.org/zh/reference/plugin/prismjs.html
