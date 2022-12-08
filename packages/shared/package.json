@@ -64,6 +64,6 @@
     "@vuepress/bundler-vite": "2.0.0-beta.54",
     "@vuepress/bundler-webpack": "2.0.0-beta.54",
     "@vuepress/core": "2.0.0-beta.54",
-    "vite": "3.1.8"
+    "vite": "3.2.5"
   }
 }
