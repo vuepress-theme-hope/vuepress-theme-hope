@@ -1,4 +1,4 @@
-import { chalk } from "@vuepress/utils";
+import { colors } from "@vuepress/utils";
 import { convertOptions } from "./compact/index.js";
 import { checkOutput, ensureHostName, getFeedOptions } from "./options.js";
 import { injectLinksToHead } from "./injectHead.js";
@@ -21,7 +21,7 @@ export const feedPlugin =
     };
 
     if (!ensureHostName(options)) {
-      logger.error(`Option ${chalk.magenta("hostname")} is required!`);
+      logger.error(`Option ${colors.magenta("hostname")} is required!`);
 
       return plugin;
     }

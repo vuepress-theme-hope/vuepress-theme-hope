@@ -1,4 +1,4 @@
-import { chalk } from "@vuepress/utils";
+import { colors } from "@vuepress/utils";
 import { convertOptions } from "./compact/index.js";
 import { generateSiteMap } from "./generateSitemap.js";
 import { logger } from "./utils.js";
@@ -19,7 +19,7 @@ export const sitemapPlugin =
     };
 
     if (!options.hostname) {
-      logger.error(`Option ${chalk.magenta("hostname")} is required!`);
+      logger.error(`Option ${colors.magenta("hostname")} is required!`);
 
       return plugin;
     }

@@ -3,7 +3,7 @@ import {
   removeEndingSlash,
   removeLeadingSlash,
 } from "@vuepress/shared";
-import { chalk, fs } from "@vuepress/utils";
+import { colors, fs } from "@vuepress/utils";
 import { SitemapStream } from "sitemap";
 import { logger } from "./utils.js";
 
@@ -161,7 +161,7 @@ export const generateSiteMap = async (
     options: { base },
   } = app;
 
-  logger.load(`Generating sitemap to ${chalk.cyan(`/${sitemapFilename}`)}`);
+  logger.load(`Generating sitemap to ${colors.cyan(`/${sitemapFilename}`)}`);
 
   await new Promise<void>((resolve) => {
     const sitemap = new SitemapStream({
@@ -194,7 +194,7 @@ export const generateSiteMap = async (
   const robotTxtPath = dir.dest("robots.txt");
 
   if (fs.existsSync(robotTxtPath)) {
-    logger.load(`Appended sitemap path to ${chalk.cyan("robots.txt")}`);
+    logger.load(`Appended sitemap path to ${colors.cyan("robots.txt")}`);
 
     const robotsTxt = await fs.readFile(robotTxtPath, { encoding: "utf8" });
 

@@ -1,4 +1,4 @@
-import { chalk } from "@vuepress/utils";
+import { colors } from "@vuepress/utils";
 
 import type { App } from "@vuepress/core";
 import type { ViteBundlerOptions } from "@vuepress/bundler-vite";
@@ -40,7 +40,7 @@ export const tagHint = (tag: string, isDebug = false): void => {
     !tag.includes("-")
   ) {
     console.warn(
-      chalk.yellow("warning: "),
+      colors.yellow("warning: "),
       `${tag} is used and it’s not a standard tag or standard custom element name`
     );
   }

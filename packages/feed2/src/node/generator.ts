@@ -1,4 +1,4 @@
-import { chalk, fs } from "@vuepress/utils";
+import { colors, fs } from "@vuepress/utils";
 import { dirname } from "node:path";
 
 import { Feed } from "./feed.js";
@@ -79,9 +79,11 @@ export class FeedGenerator {
     }
 
     logger.succeed(
-      `added ${chalk.cyan(
+      `added ${colors.cyan(
         `${count} page${count > 1 ? "s" : ""}`
-      )} as feed item${count > 1 ? "s" : ""} in route ${chalk.cyan(localePath)}`
+      )} as feed item${count > 1 ? "s" : ""} in route ${colors.cyan(
+        localePath
+      )}`
     );
   }
 
@@ -104,7 +106,7 @@ export class FeedGenerator {
             await fs.outputFile(dest(atomOutputFilename), feed.atom());
 
             logger.succeed(
-              `Atom feed file generated and saved to ${chalk.cyan(
+              `Atom feed file generated and saved to ${colors.cyan(
                 `/${atomOutputFilename}`
               )}`
             );
@@ -116,7 +118,7 @@ export class FeedGenerator {
             await fs.outputFile(dest(jsonOutputFilename), feed.json());
 
             logger.succeed(
-              `JSON feed file generated and saved to ${chalk.cyan(
+              `JSON feed file generated and saved to ${colors.cyan(
                 `${jsonOutputFilename}`
               )}`
             );
@@ -128,7 +130,7 @@ export class FeedGenerator {
             await fs.outputFile(dest(rssOutputFilename), feed.rss());
 
             logger.succeed(
-              `RSS feed file generated and saved to ${chalk.cyan(
+              `RSS feed file generated and saved to ${colors.cyan(
                 `${rssOutputFilename}`
               )}`
             );

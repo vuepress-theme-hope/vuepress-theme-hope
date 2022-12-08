@@ -40,15 +40,15 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@vuepress/shared": "2.0.0-beta.53",
-    "@vuepress/utils": "2.0.0-beta.53",
+    "@vuepress/shared": "2.0.0-beta.54",
+    "@vuepress/utils": "2.0.0-beta.54",
     "sitemap": "^7.1.1",
     "vuepress-shared": "workspace:*"
   },
   "peerDependencies": {
-    "vuepress": "2.0.0-beta.53",
-    "vuepress-vite": "2.0.0-beta.53",
-    "vuepress-webpack": "2.0.0-beta.53"
+    "vuepress": "2.0.0-beta.54",
+    "vuepress-vite": "2.0.0-beta.54",
+    "vuepress-webpack": "2.0.0-beta.54"
   },
   "engines": {
     "node": "^14.18.0 || >=16.0.0",
@@ -67,7 +67,7 @@
     }
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.53",
-    "@vuepress/plugin-git": "2.0.0-beta.53"
+    "@vuepress/core": "2.0.0-beta.54",
+    "@vuepress/plugin-git": "2.0.0-beta.54"
   }
 }

@@ -1,4 +1,4 @@
-import { chalk } from "@vuepress/utils";
+import { colors } from "@vuepress/utils";
 import { logger } from "../utils.js";
 
 export const droppedLogger = (
@@ -9,9 +9,9 @@ export const droppedLogger = (
 ): void => {
   if (droppedOption in options) {
     logger.error(
-      `"${chalk.magenta(droppedOption)}" is ${chalk.red("removed")}${
+      `"${colors.magenta(droppedOption)}" is ${colors.red("removed")}${
         newOption
-          ? `, please use ${chalk.magenta(newOption)} instead.`
+          ? `, please use ${colors.magenta(newOption)} instead.`
           : " and no longer supported"
       }${hint ? `\n${hint}` : ""}`
     );

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { chalk, fs, path } from "@vuepress/utils";
+import { colors, fs, path } from "@vuepress/utils";
 import { getRootLang } from "vuepress-shared/node";
 
 import { logger } from "./utils.js";
@@ -69,7 +69,7 @@ export const generateManifest = async (
 
   logger.succeed();
   logger.update(
-    `Manifest generated and saved to ${chalk.cyan(
+    `Manifest generated and saved to ${colors.cyan(
       path.relative(process.cwd(), manifestPath)
     )}!`
   );
