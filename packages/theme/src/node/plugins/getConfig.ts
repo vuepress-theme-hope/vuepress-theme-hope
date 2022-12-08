@@ -15,7 +15,7 @@ import { getPWAPlugin } from "./pwa.js";
 import { getSitemapPlugin } from "./sitemap.js";
 import { getSEOPlugin } from "./seo.js";
 
-import type { PluginConfig } from "@vuepress/core";
+import type { App, PluginConfig } from "@vuepress/core";
 import type {
   ThemeData,
   ThemeOptions,
@@ -23,6 +23,7 @@ import type {
 } from "../../shared/index.js";
 
 export const getPluginConfig = (
+  app: App,
   plugins: PluginsOptions,
   themeData: ThemeData,
   options: Pick<
@@ -38,7 +39,7 @@ export const getPluginConfig = (
     plugins.nprogress === false ? null : nprogressPlugin(),
     plugins.prismjs === false ? null : prismjsPlugin(),
     themeDataPlugin({ themeData }),
-    getBlogPlugin(themeData, plugins.blog, options.hotReload),
+    getBlogPlugin(app, themeData, plugins.blog, options.hotReload),
     getCommentPlugin(plugins.comment, legacy),
     getCopyCodePlugin(themeData, plugins.copyCode),
     getCopyrightPlugin(themeData, plugins.copyright, options.hostname),

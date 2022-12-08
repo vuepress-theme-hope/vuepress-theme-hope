@@ -1,15 +1,18 @@
 import { blogPlugin } from "vuepress-plugin-blog2";
+import { getDate, timeTransformer } from "vuepress-shared/node";
 import { ArticleInfoType, PageType } from "../../shared/index.js";
 
-import type { Page, Plugin } from "@vuepress/core";
+import type { App, Page, Plugin } from "@vuepress/core";
 import type { GitData } from "@vuepress/plugin-git";
 import type { BlogOptions } from "vuepress-plugin-blog2";
 import type {
   ArticleInfo,
-  ThemeNormalPageFrontmatter,
-  BlogLocaleData,
   BlogPluginOptions,
   ThemeData,
+  ThemePageData,
+  ThemeBlogHomePageFrontmatter,
+  ThemeProjectHomePageFrontmatter,
+  ThemeNormalPageFrontmatter,
 } from "../../shared/index.js";
 
 const defaultOptions: BlogPluginOptions = {
@@ -67,18 +70,8 @@ export const getBlogOptions = (
   ...(typeof options === "object" ? options : {}),
 });
 
-export const getTitleLocales = (
-  themeData: ThemeData,
-  key: keyof BlogLocaleData
-): Record<string, string> =>
-  Object.fromEntries(
-    Object.entries(themeData.locales).map(([localePath, value]) => [
-      localePath,
-      value.blogLocales[key],
-    ])
-  );
-
 export const getBlogPlugin = (
+  app: App,
   themeData: ThemeData,
   options?: BlogPluginOptions | boolean,
   hotReload = false
@@ -89,15 +82,113 @@ export const getBlogPlugin = (
     ...defaultOptions,
     ...(typeof options === "object" ? options : {}),
   };
+  const encryptedPaths = Object.keys(themeData.encrypt.config || {});
 
   return blogPlugin(<BlogOptions>{
     metaScope: "",
 
     filter:
       blogOptions.filter ||
-      (({ routeMeta }): boolean =>
-        routeMeta[ArticleInfoType.type] == PageType.article ||
-        routeMeta[ArticleInfoType.type] == PageType.slide),
+      (({ frontmatter, filePathRelative }: Page<ThemePageData>): boolean => {
+        const pageFrontmatter = frontmatter as
+          | ThemeProjectHomePageFrontmatter
+          | ThemeBlogHomePageFrontmatter
+          | ThemeNormalPageFrontmatter;
+
+        const isArticle =
+          // declaring this is an article
+          pageFrontmatter.article ||
+          // generated from markdown files
+          Boolean(pageFrontmatter.article !== false && filePathRelative);
+
+        const isSlide = isArticle && frontmatter.layout === "Slide";
+
+        return isArticle || isSlide;
+      }),
+
+    getInfo: (page: Page<ThemePageData>) => {
+      const info: Record<string, unknown> = {};
+      const frontmatter = page.frontmatter as
+        | ThemeProjectHomePageFrontmatter
+        | ThemeBlogHomePageFrontmatter
+        | ThemeNormalPageFrontmatter;
+      const { filePathRelative, path } = page;
+      const { createdTime } = page.data.git || {};
+
+      const isArticle =
+        // declaring this is an article
+        frontmatter.article ||
+        // generated from markdown files
+        Boolean(frontmatter.article !== false && filePathRelative);
+      const isEncrypted = encryptedPaths.some((key) =>
+        decodeURI(path).startsWith(key)
+      );
+      const isSlide = isArticle && frontmatter.layout === "Slide";
+
+      // save page type to routeMeta
+      info[ArticleInfoType.type] = frontmatter.home
+        ? PageType.home
+        : isSlide
+        ? PageType.slide
+        : isArticle
+        ? PageType.article
+        : PageType.page;
+
+      // resolve author
+      if ("author" in frontmatter)
+        info[ArticleInfoType.author] = frontmatter.author;
+
+      // resolve date
+      if ("date" in frontmatter) {
+        const date = getDate(page.frontmatter.date)?.value;
+
+        if (date) {
+          info[ArticleInfoType.date] = frontmatter.date;
+
+          info[ArticleInfoType.localizedDate] = timeTransformer(date, {
+            lang: page.lang,
+            type: "date",
+          });
+        }
+      } else if (createdTime)
+        info[ArticleInfoType.date] = new Date(createdTime);
+
+      // resolve category
+      if ("category" in frontmatter)
+        info[ArticleInfoType.category] = frontmatter.category;
+
+      // resolve tag
+      if ("tag" in frontmatter) info[ArticleInfoType.tag] = frontmatter.tag;
+
+      // resolve sticky
+      if ("sticky" in frontmatter)
+        info[ArticleInfoType.sticky] = frontmatter.sticky;
+
+      // resolve image
+      if ("cover" in frontmatter)
+        info[ArticleInfoType.cover] = frontmatter.cover;
+
+      // resolve isOriginal
+      if ("isOriginal" in frontmatter)
+        info[ArticleInfoType.isOriginal] = frontmatter.isOriginal;
+
+      // resolve encrypted
+      if (isEncrypted) info[ArticleInfoType.isEncrypted] = true;
+
+      // save page excerpt to routeMeta
+      if (page.data.excerpt) info[ArticleInfoType.excerpt] = page.data.excerpt;
+
+      if (
+        // reading time data is sensitive with markdown contents
+        (hotReload || app.env.isBuild) &&
+        // ensure a valid reading time exists
+        page.data.readingTime &&
+        page.data.readingTime.words !== 0
+      )
+        info[ArticleInfoType.readingTime] = page.data.readingTime;
+
+      return info;
+    },
 
     category: [
       {
@@ -268,6 +359,24 @@ export const getBlogPlugin = (
         }),
       },
     ],
+
+    excerpt: true,
+
+    excerptFilter: ({
+      data,
+      frontmatter,
+      path,
+    }: Page<{ autoDesc?: boolean }>) => {
+      const isPageEncrypted = encryptedPaths.some((key) =>
+        decodeURI(path).startsWith(key)
+      );
+
+      return (
+        !isPageEncrypted &&
+        !("excerpt" in frontmatter) &&
+        (data.autoDesc || !("description" in frontmatter))
+      );
+    },
 
     hotReload,
     ...("hotReload" in blogOptions ? { hotReload: blogOptions.hotReload } : {}),

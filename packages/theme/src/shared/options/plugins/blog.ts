@@ -1,7 +1,12 @@
 import type { BlogOptions } from "vuepress-plugin-blog2";
 
 export interface BlogPluginOptions
-  extends Partial<Pick<BlogOptions, "filter" | "hotReload">> {
+  extends Partial<
+    Pick<
+      BlogOptions,
+      "excerpt" | "excerptFilter" | "excerptLength" | "filter" | "hotReload"
+    >
+  > {
   /**
    * Path of article list
    *
@@ -90,17 +95,4 @@ export interface BlogPluginOptions
    * @default '/timeline/'
    */
   timeline?: string;
-
-  /**
-   * Whether generate a excerpt automatically
-   *
-   * @description When filling in a number, it means the excerpt length (by default it's 200)
-   *
-   * 是否自动生成摘要
-   *
-   * @description 填写数字时表示摘录长度 (默认为 200)
-   *
-   * @default false
-   */
-  autoExcerpt?: number | boolean;
 }

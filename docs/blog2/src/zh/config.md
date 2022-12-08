@@ -52,6 +52,61 @@ icon: config
 
 Slugify 函数，用于转换 key 在路由中注册的形式。
 
+### excerpt
+
+- 类型: `boolean`
+- 默认值: `false`
+
+摘要生成选项。
+
+### excerptSeparator
+
+- 类型: `string`
+- 默认值: `<!-- more -->`
+
+摘要分隔符。
+
+### excerptLength
+
+- 类型: `number`
+- 默认值: `300`
+- 详情:
+  - [指南 → 摘要生成](./guide.md#摘要生成)
+
+自动生成的摘要的长度。
+
+::: note
+
+摘要的长度会尽可能的接近这个值。如果设置为 `0`，意味着不自动生成摘要。
+
+:::
+
+### excerptFilter
+
+- 类型: `(page: Page) => boolean`
+- 默认值: `filter` 选项
+- 详情:
+  - [指南 → 摘要生成](./guide.md#摘要生成)
+
+页面过滤器，此函数用于鉴别插件是否需要生成摘要
+
+::: tip
+
+你可以使用此函数来跳过你不需要生成摘要的页面。例如：如果用户在 frontmatter 中设置了 `excerpt` 或 `description`，你可能希望直接使用它们。
+
+:::
+
+### customElement
+
+- 类型: `(tagName: string) => boolean`
+- 默认值: `() => false`
+- 详情:
+  - [指南 → 摘要生成](./guide.md#摘要生成)
+
+被认为是自定义元素的标签。
+
+用于判断一个标签是否是自定义元素，因为在摘要中，所有的 vue 组件都会被移除。
+
 ### metaScope
 
 - 类型: `string`

@@ -13,6 +13,7 @@ import { getPageMap, logger } from "./utils.js";
 
 import type { PluginFunction } from "@vuepress/core";
 import type { BlogOptions } from "./options.js";
+import { getPageExcerpt } from "./excerpt.js";
 
 export const blogPlugin =
   (options: BlogOptions): PluginFunction =>
@@ -22,6 +23,11 @@ export const blogPlugin =
       filter = (page): boolean =>
         Boolean(page.filePathRelative) && !page.frontmatter["home"],
       metaScope = "_blog",
+      customElement = () => false,
+      excerpt = true,
+      excerptSeparator = "<!-- more -->",
+      excerptLength = 300,
+      excerptFilter = filter,
     } = options;
 
     let generatePageKeys: string[] = [];
@@ -36,13 +42,28 @@ export const blogPlugin =
       }),
 
       extendsPage: (page): void => {
-        if (filter(page))
+        if (
+          excerpt &&
+          excerptFilter(page) &&
+          // TODO: Remove this once @vuepress/core no longer generate excerpt
+          !page.excerpt &&
+          !page.data.excerpt
+        ) {
+          page.excerpt = page.data.excerpt = getPageExcerpt(app, page, {
+            customElement,
+            excerptSeparator,
+            excerptLength,
+          });
+        }
+
+        if (filter(page)) {
           page.routeMeta = {
             ...(metaScope === ""
               ? getInfo(page)
               : { [metaScope]: getInfo(page) }),
             ...page.routeMeta,
           };
+        }
       },
 
       onInitialized: (app): Promise<void> => {
