@@ -23,6 +23,7 @@ export const blogPlugin =
       filter = (page): boolean =>
         Boolean(page.filePathRelative) && !page.frontmatter["home"],
       metaScope = "_blog",
+      customElement = () => false,
       excerpt = true,
       excerptSeparator = "<!-- more -->",
       excerptLength = 300,
@@ -47,12 +48,11 @@ export const blogPlugin =
           // TODO: Remove this once @vuepress/core no longer generate excerpt
           !page.data.excerpt
         ) {
-          page.data.excerpt = getPageExcerpt(
-            app,
-            page,
+          page.data.excerpt = getPageExcerpt(app, page, {
+            customElement,
             excerptSeparator,
-            excerptLength
-          );
+            excerptLength,
+          });
         }
 
         if (filter(page)) {

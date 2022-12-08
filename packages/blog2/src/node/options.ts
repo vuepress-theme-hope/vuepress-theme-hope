@@ -137,6 +137,17 @@ export interface BlogOptions {
   ) => boolean;
 
   /**
+   * Tags which is considered as custom elements
+   *
+   * @description This is used to determine whether a tag is a custom element since all vue components are removed in excerpt
+   *
+   * 被认为是自定义元素的标签
+   *
+   * @description 用于判断一个标签是否是自定义元素，因为在摘要中，所有的 vue 组件都会被移除
+   */
+  customElement?: (tagName: string) => boolean;
+
+  /**
    * Whether enable hotReload
    *
    * @description This may have performance impact in large sites

@@ -16,7 +16,13 @@ describe("Should generate page excerpt correctly", async () => {
 
   it("Should generate excerpt", () => {
     app.pages.forEach((page) => {
-      expect(getPageExcerpt(app, page, "<!-- more -->", 200)).toMatchSnapshot();
+      expect(
+        getPageExcerpt(app, page, {
+          customElement: () => false,
+          excerptLength: 200,
+          excerptSeparator: "<!-- more -->",
+        })
+      ).toMatchSnapshot();
     });
   });
 });

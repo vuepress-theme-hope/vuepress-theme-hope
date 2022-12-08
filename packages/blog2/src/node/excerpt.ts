@@ -5,10 +5,15 @@ import { HTML_TAGS, SVG_TAGS } from "vuepress-shared/node";
 
 import type { App, Page } from "@vuepress/core";
 import type { AnyNode } from "cheerio";
+import { BlogOptions } from "./options.js";
 
 const HEADING_TAGS = ["h1", "h2", "h3", "h4", "h5", "h6"];
 
-const handleNode = (app: App, node: AnyNode): AnyNode | null => {
+const handleNode = (
+  node: AnyNode,
+  base: string,
+  customElement: (tagName: string) => boolean
+): AnyNode | null => {
   if (node.type === "tag") {
     // remove heading id tabindex and anchor inside
     if (HEADING_TAGS.includes(node.tagName)) {
@@ -39,7 +44,7 @@ const handleNode = (app: App, node: AnyNode): AnyNode | null => {
 
     // standard tags can be returned
     if (HTML_TAGS.includes(node.tagName) || SVG_TAGS.includes(node.tagName)) {
-      node.children = handleNodes(app, node.children);
+      node.children = handleNodes(node.children, base, customElement);
 
       return node;
     }
@@ -47,15 +52,15 @@ const handleNode = (app: App, node: AnyNode): AnyNode | null => {
     // we shall convert `<RouterLink>` to `<a>` tag
     if (node.tagName === "routerlink") {
       node.tagName = "a";
-      node.attribs["href"] = `${removeEndingSlash(app.options.base)}${
-        node.attribs["to"]
-      }`;
+      node.attribs["href"] = `${removeEndingSlash(base)}${node.attribs["to"]}`;
       node.attribs["target"] = "blank";
       delete node.attribs["to"];
-      node.children = handleNodes(app, node.children);
+      node.children = handleNodes(node.children, base, customElement);
 
       return node;
     }
+
+    if (customElement(node.tagName)) return node;
 
     // other tags will be considered as vue components and will be dropped
     return null;
@@ -64,10 +69,14 @@ const handleNode = (app: App, node: AnyNode): AnyNode | null => {
   return node;
 };
 
-const handleNodes = (app: App, nodes: AnyNode[] | null): AnyNode[] =>
+const handleNodes = (
+  nodes: AnyNode[] | null,
+  base: string,
+  customElement: (tagName: string) => boolean
+): AnyNode[] =>
   Array.isArray(nodes)
     ? nodes
-        .map((node) => handleNode(app, node))
+        .map((node) => handleNode(node, base, customElement))
         .filter((node): node is AnyNode => node !== null)
     : [];
 
@@ -76,8 +85,13 @@ const $ = load("");
 export const getPageExcerpt = (
   app: App,
   page: Page,
-  excerptSeparator: string,
-  autoExcerptLength: number
+  {
+    customElement,
+    excerptSeparator,
+    excerptLength,
+  }: Required<
+    Pick<BlogOptions, "customElement" | "excerptLength" | "excerptSeparator">
+  >
 ): string => {
   // get page content
   const { excerpt } = matter(page.content, {
@@ -97,17 +111,23 @@ export const getPageExcerpt = (
       }
     );
 
-    return $.html(handleNodes(app, $.parseHTML(renderedContent)) || []);
+    return $.html(
+      handleNodes(
+        $.parseHTML(renderedContent),
+        app.options.base,
+        customElement
+      ) || []
+    );
   } else {
     let excerpt = "";
     const rootNodes = $.parseHTML(page.contentRendered) || [];
 
     for (const node of rootNodes) {
-      const resolvedNode = handleNode(app, node);
+      const resolvedNode = handleNode(node, app.options.base, customElement);
 
       if (resolvedNode) {
         excerpt += `${$.html(resolvedNode)}`;
-        if (excerpt.length >= autoExcerptLength) break;
+        if (excerpt.length >= excerptLength) break;
       }
     }
 
