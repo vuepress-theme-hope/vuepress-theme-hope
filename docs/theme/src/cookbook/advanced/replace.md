@@ -312,10 +312,6 @@ Components that provide slots are as follows:
 
 - `Sidebar`: `top`, `default`, `bottom`
 
-**Blog**:
-
-- `BlogHero`: `heroImage`, `heroInfo`
-
 ::: tip
 
 For the corresponding location and function of each slot, please refer to [theme source code](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/main/packages/theme/src/client/).

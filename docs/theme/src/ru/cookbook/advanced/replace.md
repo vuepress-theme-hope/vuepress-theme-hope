@@ -314,10 +314,6 @@ import HopeHomePage from "vuepress-theme-hope/components/HomePage.js";
 
 - `Sidebar`: `top`, `default`, `bottom`
 
-**Блог**:
-
-- `BlogHero`: `heroImage`, `heroInfo`
-
 ::: tip
 
 Соответствующее расположение и функции каждого слота смотрите в [исходном коде темы](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/main/packages/theme/src/client/).

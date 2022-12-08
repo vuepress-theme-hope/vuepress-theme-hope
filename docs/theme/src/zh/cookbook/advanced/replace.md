@@ -315,10 +315,6 @@ import HopeHomePage from "vuepress-theme-hope/components/HomePage.js";
 
 - `Sidebar`: `top`, `default`, `bottom`
 
-**博客**:
-
-- `BlogHero`: `heroImage`, `heroInfo`
-
 ::: tip
 
 对于每个插槽的对应位置和功能，请详见 [主题源码](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/main/packages/theme/src/client/)。
