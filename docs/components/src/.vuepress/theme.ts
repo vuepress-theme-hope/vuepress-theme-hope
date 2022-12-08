@@ -8,8 +8,6 @@ const { version } = fs.readJsonSync(
 );
 
 export default theme("components", {
-  addThis: "ra-5f829c59e6c6bc9a",
-
   locales: {
     "/": {
       navbar: [
@@ -73,14 +71,21 @@ export default theme("components", {
   },
 
   plugins: {
-    components: [
-      "Badge",
-      "BiliBili",
-      "CodePen",
-      "PDF",
-      "StackBlitz",
-      "YouTube",
-    ],
+    components: {
+      components: [
+        "Badge",
+        "BiliBili",
+        "CodePen",
+        "PDF",
+        "StackBlitz",
+        "VideoPlayer",
+        "YouTube",
+      ],
+
+      rootComponents: {
+        addThis: "ra-5f829c59e6c6bc9a",
+      },
+    },
 
     mdEnhance: {
       codetabs: true,
