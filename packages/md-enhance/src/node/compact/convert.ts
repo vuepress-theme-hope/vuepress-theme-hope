@@ -30,6 +30,11 @@ export const convertOptions = (
     deprecatedOption: "vpre",
     newOption: "vPre",
   });
+  deprecatedLogger({
+    options,
+    deprecatedOption: "imageTitle",
+    newOption: "figure",
+  });
   droppedLogger(options, "enableAll");
   droppedLogger(options, "lineNumbers");
   droppedLogger(options, "imageFix");
