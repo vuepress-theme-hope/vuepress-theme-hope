@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: space-evenly;
 
-  padding-left: 0.75rem 2rem 0.75rem calc(var(--sidebar-width) + 2rem);
+  padding: 0.75rem 2rem 0.75rem calc(var(--sidebar-width) + 2rem);
   border-top: 1px solid var(--border-color);
 
   background: var(--bg-color);
