@@ -826,6 +826,7 @@ importers:
       katex: 0.16.3
       sass-loader: 13.2.0
       vue: 3.2.45
+      vuepress-plugin-copy-code2: workspace:*
       vuepress-shared: workspace:*
       vuepress-theme-hope: workspace:*
       vuepress-vite: 2.0.0-beta.53
@@ -839,6 +840,7 @@ importers:
       katex: 0.16.3
       sass-loader: 13.2.0
       vue: 3.2.45
+      vuepress-plugin-copy-code2: link:../../packages/copy-code2
       vuepress-shared: link:../../packages/shared
       vuepress-theme-hope: link:../../packages/theme
       vuepress-vite: 2.0.0-beta.53_2ythdi7q4ppml34dx3kptsuwnu
