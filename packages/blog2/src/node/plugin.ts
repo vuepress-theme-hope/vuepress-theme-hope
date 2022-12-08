@@ -46,9 +46,10 @@ export const blogPlugin =
           excerpt &&
           excerptFilter(page) &&
           // TODO: Remove this once @vuepress/core no longer generate excerpt
+          !page.excerpt &&
           !page.data.excerpt
         ) {
-          page.data.excerpt = getPageExcerpt(app, page, {
+          page.excerpt = page.data.excerpt = getPageExcerpt(app, page, {
             customElement,
             excerptSeparator,
             excerptLength,
