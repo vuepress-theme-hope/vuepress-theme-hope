@@ -10,6 +10,18 @@ const HEADING_TAGS = ["h1", "h2", "h3", "h4", "h5", "h6"];
 
 const handleNode = (app: App, node: AnyNode): AnyNode | null => {
   if (node.type === "tag") {
+    // remove heading id tabindex and anchor inside
+    if (HEADING_TAGS.includes(node.tagName)) {
+      delete node.attribs["id"];
+      delete node.attribs["tabindex"];
+      node.children = node.children.filter(
+        (child) =>
+          child.type !== "tag" ||
+          child.tagName !== "a" ||
+          child.attribs["class"] !== "header-anchor"
+      );
+    }
+
     // image using relative urls shall be dropped
     if (node.tagName === "img") {
       const { src } = node.attribs;
@@ -25,18 +37,7 @@ const handleNode = (app: App, node: AnyNode): AnyNode | null => {
     if (node.tagName === "code" || node.tagName === "pre")
       delete node.attribs["v-pre"];
 
-    // remove heading id tabindex and anchor inside
-    if (HEADING_TAGS.includes(node.tagName)) {
-      delete node.attribs["id"];
-      delete node.attribs["tabindex"];
-      node.children = node.children.filter(
-        (child) =>
-          child.type !== "tag" ||
-          child.tagName !== "a" ||
-          child.attribs["class"] !== "header-anchor"
-      );
-    }
-
+    // standard tags can be returned
     if (HTML_TAGS.includes(node.tagName) || SVG_TAGS.includes(node.tagName)) {
       node.children = handleNodes(app, node.children);
 
@@ -56,6 +57,7 @@ const handleNode = (app: App, node: AnyNode): AnyNode | null => {
       return node;
     }
 
+    // other tags will be considered as vue components and will be dropped
     return null;
   }
 
