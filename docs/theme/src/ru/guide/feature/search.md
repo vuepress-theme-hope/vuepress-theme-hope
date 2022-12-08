@@ -62,8 +62,8 @@ tag:
 
    ```ts
    // .vuepress/config.ts
-   import { searchProPlugin } from "vuepress-plugin-search-pro";
    import { defineUserConfig } from "vuepress";
+   import { searchProPlugin } from "vuepress-plugin-search-pro";
 
    export default defineUserConfig({
      plugins: [
@@ -73,12 +73,10 @@ tag:
          // add supports for category and tags
          customFields: [
            {
-             name: "category",
              getter: (page) => page.frontmatter.category,
              formatter: "Category: $content",
            },
            {
-             name: "tag",
              getter: (page) => page.frontmatter.tag,
              formatter: "Tag: $content",
            },
@@ -96,18 +94,16 @@ tag:
 
    export default {
      plugins: [
-       searchPlugin({
+       searchProPlugin({
          // index all contents
          indexContent: true,
          // add supports for category and tags
          customFields: [
            {
-             name: "category",
              getter: (page) => page.frontmatter.category,
              formatter: "Category: $content",
            },
            {
-             name: "tag",
              getter: (page) => page.frontmatter.tag,
              formatter: "Tag: $content",
            },

@@ -96,7 +96,6 @@ export default defineUserConfig({
     searchProPlugin({
       customFields: [
         {
-          name: "category",
           getter: (page) => page.frontmatter.category,
           formatter: {
             "/": "Category: $content",
@@ -104,7 +103,6 @@ export default defineUserConfig({
           },
         },
         {
-          name: "tag",
           getter: (page) => page.frontmatter.tag,
           formatter: {
             "/": "Tag: $content",
