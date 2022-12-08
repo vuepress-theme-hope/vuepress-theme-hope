@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.136](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.135...v2.0.0-beta.136) (2022-12-08)
+
+### Features
+
+- **blog2:** support excerpt ([#2510](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2510)) ([194dcf3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/194dcf3d16250a00b3ddc063044eef180c6d33d6))
+- **components:** add audio player ([69cceb7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/69cceb7306ebd965120de225dd24317ea27c5ac9))
+- **components:** rebuild video player ([6b8c4c2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6b8c4c25637af43e14619bba643c9af61e3cae46))
+
+### Bug Fixes
+
+- **components:** fix ssr issue ([b63bff6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b63bff6214ee5917b125296f1dbd385a4bf7f893))
+- **components:** fix video player issue ([4f095fc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4f095fcd2497053161199b1d7fd806e1d203207b))
+
 ## [2.0.0-beta.135](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.134...v2.0.0-beta.135) (2022-12-08)
 
 ### ⚠ BREAKING CHANGES
