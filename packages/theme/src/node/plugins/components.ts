@@ -15,21 +15,34 @@ export const getComponentsPlugin = (
     | "iconAssets"
     | "iconPrefix"
     | "notice"
-  >
+  >,
+  legacy = false
 ): Plugin =>
-  componentsPlugin({
-    // FontIcon component is used by theme so we MUST enable it
-    components: components.includes("FontIcon")
-      ? components
-      : ["FontIcon", ...components],
-    backToTop:
-      typeof options.backToTop === "number"
-        ? options.backToTop
-        : options.backToTop !== false,
-    ...(options.addThis ? { addThis: options.addThis } : {}),
-    ...(options.iconAssets ? { iconAssets: options.iconAssets } : {}),
-    ...(typeof options.iconPrefix === "string"
-      ? { iconPrefix: options.iconPrefix }
-      : {}),
-    ...(typeof options.notice === "object" ? { notice: options.notice } : {}),
-  });
+  componentsPlugin(
+    {
+      // FontIcon component is used by theme so we MUST enable it
+      components: components.includes("FontIcon")
+        ? components
+        : ["FontIcon", ...components],
+      componentOptions: {
+        fontIcon: {
+          ...(options.iconAssets ? { assets: options.iconAssets } : {}),
+        },
+        ...(typeof options.iconPrefix === "string"
+          ? { prefix: options.iconPrefix }
+          : {}),
+      },
+      rootComponents: {
+        ...(options.addThis ? { addThis: options.addThis } : {}),
+        backToTop:
+          typeof options.backToTop === "number"
+            ? options.backToTop
+            : options.backToTop !== false,
+
+        ...(typeof options.notice === "object"
+          ? { notice: options.notice }
+          : {}),
+      },
+    },
+    legacy
+  );

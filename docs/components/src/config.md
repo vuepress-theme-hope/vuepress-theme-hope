@@ -34,7 +34,29 @@ Available component names:
 - `"VideoPlayer"`
 - `"YouTube"`
 
-## addThis
+## componentsOptions
+
+Global config for components.
+
+### componentsOptions.fontIcon.assets
+
+- Type: `` "iconfont" | "fontawesome" | `//${string}` | `http://${string}` | `https://${string}`  ``
+- Required: No
+
+Link of font icon asset, `'iconfont'` and `'fontawesome'` keywords are supported.
+
+### componentsOptions.fontIcon.prefix
+
+- Type: `string`
+- Default: Inferred from assets
+
+Class prefix of font icon
+
+## rootComponents
+
+Components to be mounted at root.
+
+### rootComponents.addThis
 
 - Type: `string | false`
 - Default: `false`
@@ -43,69 +65,14 @@ Available component names:
 
 Public ID of addThis.
 
-## backToTop
+### rootComponents.backToTop
 
 - Type: `boolean | number`
 - Default: `false`
 
 Whether enabling backToTop button. When setting a number, it will be used as BackToTop button threshold distance (in pixels), default is 300.
 
-## backToTopLocales
-
-- Type: `BackToTopLocaleConfig`
-
-  ```ts
-  interface BackToTopLocaleData {
-    /**
-     * Back to top button label text
-     */
-    backToTop: string;
-  }
-
-  interface BackToTopLocaleConfig {
-    [localePath: string]: BackToTopLocaleData;
-  }
-  ```
-
-- Required: No
-
-Locales config for BackToTop button.
-
-::: details Built-in Supported Languages
-
-- **Simplified Chinese** (zh-CN)
-- **Traditional Chinese** (zh-TW)
-- **English (United States)** (en-US)
-- **German** (de-AT)
-- **Russian** (ru-RU)
-- **Ukrainian** (uk-UA)
-- **Vietnamese** (vi-VN)
-- **Portuguese (Brazil)** (pt-BR)
-- **Polish** (pl-PL)
-- **French** (fr-FR)
-- **Spanish** (es-ES)
-- **Slovak** (sk-SK)
-- **Japanese** (ja-JP)
-- **Turkish** (tr-TR)
-- **Korean** (ko-KR)
-
-:::
-
-## iconAssets
-
-- Type: `` "iconfont" | "fontawesome" | `//${string}` | `http://${string}` | `https://${string}`  ``
-- Required: No
-
-Link of font icon asset, `'iconfont'` and `'fontawesome'` keywords are supported.
-
-## iconPrefix
-
-- Type: `string`
-- Default: Inferred from iconAssets
-
-Class prefix of font icon
-
-## notice
+### rootComponents.notice
 
 - Type: `NoticeOptions`
 
@@ -183,3 +150,48 @@ Class prefix of font icon
 - Required: No
 
 Config for global notice.
+
+## locales
+
+Component locales.
+
+### locales.backToTop
+
+- Type: `BackToTopLocaleConfig`
+
+  ```ts
+  interface BackToTopLocaleData {
+    /**
+     * Back to top button label text
+     */
+    backToTop: string;
+  }
+
+  interface BackToTopLocaleConfig {
+    [localePath: string]: BackToTopLocaleData;
+  }
+  ```
+
+- Required: No
+
+Locales config for BackToTop button.
+
+::: details Built-in Supported Languages
+
+- **Simplified Chinese** (zh-CN)
+- **Traditional Chinese** (zh-TW)
+- **English (United States)** (en-US)
+- **German** (de-AT)
+- **Russian** (ru-RU)
+- **Ukrainian** (uk-UA)
+- **Vietnamese** (vi-VN)
+- **Portuguese (Brazil)** (pt-BR)
+- **Polish** (pl-PL)
+- **French** (fr-FR)
+- **Spanish** (es-ES)
+- **Slovak** (sk-SK)
+- **Japanese** (ja-JP)
+- **Turkish** (tr-TR)
+- **Korean** (ko-KR)
+
+:::

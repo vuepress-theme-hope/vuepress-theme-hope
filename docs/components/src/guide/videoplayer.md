@@ -4,6 +4,8 @@ title: VideoPlayer
 
 Embed videos in Markdown files.
 
+<!-- more -->
+
 ## Props
 
 ### src

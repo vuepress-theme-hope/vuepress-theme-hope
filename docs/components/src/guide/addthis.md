@@ -2,6 +2,10 @@
 title: AddThis
 ---
 
+This is a global component providing share function and visitor statistics with [AddThis](https://www.addthis.com/).
+
+<!-- more -->
+
 ## Register
 
 Go to [AddThis registration page](https://www.addthis.com/register?next=/dashboard) to register.
@@ -18,4 +22,4 @@ Go to [Tools page](https://www.addthis.com/dashboard#gallery/) then add and conf
 
 After you finished, enter the [Get The Code Page](https://www.addthis.com/dashboard#get-the-code/) to get your pubid from the code.
 
-Set `addThis` option with `pubid` you get.
+Set `rootComponents.addThis` option with `pubid` you get.

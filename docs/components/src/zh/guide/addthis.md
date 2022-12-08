@@ -2,6 +2,10 @@
 title: AddThis
 ---
 
+这是一个全局组件，提供了分享功能和访客统计功能，基于 [AddThis](https://www.addthis.com/)。
+
+<!-- more -->
+
 ## 注册
 
 前往 [Add this 注册页面](https://www.addthis.com/register?next=/dashboard) 注册

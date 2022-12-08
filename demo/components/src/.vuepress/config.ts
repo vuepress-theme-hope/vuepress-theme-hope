@@ -36,8 +36,6 @@ export default defineUserConfig({
 
   plugins: [
     componentsPlugin({
-      addThis: "ra-5f829c59e6c6bc9a",
-      backToTop: true,
       components: [
         "Badge",
         "BiliBili",
@@ -48,23 +46,33 @@ export default defineUserConfig({
         "VideoPlayer",
         "YouTube",
       ],
-      iconAssets: "iconfont",
-      notice: {
-        locales: {
-          "/": {
-            title: "Notice Title",
-            content: "Notice Content",
-            actions: [
-              {
-                text: "Primary Action",
-                link: "https://vuepress-theme-hope.github.io/",
-                type: "primary",
-              },
-              { text: "Default Action" },
-            ],
-          },
+
+      componentOptions: {
+        fontIcon: {
+          assets: "iconfont",
         },
-        fullscreen: true,
+      },
+
+      rootComponents: {
+        addThis: "ra-5f829c59e6c6bc9a",
+        backToTop: true,
+        notice: {
+          locales: {
+            "/": {
+              title: "Notice Title",
+              content: "Notice Content",
+              actions: [
+                {
+                  text: "Primary Action",
+                  link: "https://vuepress-theme-hope.github.io/",
+                  type: "primary",
+                },
+                { text: "Default Action" },
+              ],
+            },
+          },
+          fullscreen: true,
+        },
       },
     }),
   ],

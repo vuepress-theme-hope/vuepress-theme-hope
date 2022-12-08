@@ -20,8 +20,10 @@ const availableComponents: AvailableComponent[] = [
 ];
 
 const getIconLink = (
-  iconLink: string
+  iconLink?: string
 ): { type: string; content: string } | null => {
+  if (!iconLink) return null;
+
   if (iconLink === "fontawesome")
     return {
       type: "script",
@@ -57,17 +59,21 @@ const getIconLink = (
 
 export const prepareConfigFile = (
   app: App,
-  options: ComponentOptions
+  {
+    components = [],
+    componentOptions = {},
+    rootComponents = {},
+  }: ComponentOptions
 ): Promise<string> => {
   let configImport = "";
   let enhance = "";
   let setup = "";
-  let rootComponents = "";
+  let configRootComponents = "";
   let shouldImportH = false;
   let shouldImportUseScriptTag = false;
   let shouldImportUseStyleTag = false;
 
-  options.components.forEach((item) => {
+  components.forEach((item) => {
     if (availableComponents.includes(item)) {
       configImport += `\
 import ${item} from "${CLIENT_FOLDER}components/${item}.js";
@@ -77,8 +83,8 @@ app.component("${item}", ${item});
 `;
     }
 
-    if (item === "FontIcon" && options.iconAssets) {
-      const result = getIconLink(options.iconAssets);
+    if (item === "FontIcon") {
+      const result = getIconLink(componentOptions.fontIcon?.assets);
 
       if (result) {
         const { type, content } = result;
@@ -98,33 +104,35 @@ useStyleTag(\`${content}\`, { id: "icon-assets" });
     }
   });
 
-  if (typeof options.addThis === "string") {
+  if (typeof rootComponents.addThis === "string") {
     shouldImportUseScriptTag = true;
     setup += `\
-useScriptTag(\`//s7.addthis.com/js/300/addthis_widget.js#pubid=${options.addThis}\`);
+useScriptTag(\`//s7.addthis.com/js/300/addthis_widget.js#pubid=${rootComponents.addThis}\`);
 `;
   }
 
-  if (options.backToTop) {
+  if (rootComponents.backToTop) {
     shouldImportH = true;
     configImport += `\
 import BackToTop from "${CLIENT_FOLDER}components/BackToTop.js";
 `;
-    rootComponents += `\
+    configRootComponents += `\
 () => h(BackToTop, { threshold: ${
-      typeof options.backToTop === "number" ? options.backToTop : 300
+      typeof rootComponents.backToTop === "number"
+        ? rootComponents.backToTop
+        : 300
     } }),
 `;
   }
 
-  if (options.notice) {
+  if (typeof rootComponents.notice === "object") {
     shouldImportH = true;
     configImport += `\
 import Notice from "${CLIENT_FOLDER}components/Notice.js";
 `;
 
-    rootComponents += `\
-() => h(Notice, ${JSON.stringify(options.notice)}),
+    configRootComponents += `\
+() => h(Notice, ${JSON.stringify(rootComponents.notice)}),
 `;
   }
 
@@ -171,7 +179,7 @@ ${setup
   .join("\n")}
   },
   rootComponents: [
-${rootComponents
+${configRootComponents
   .split("\n")
   .map((item) => `    ${item}`)
   .join("\n")}

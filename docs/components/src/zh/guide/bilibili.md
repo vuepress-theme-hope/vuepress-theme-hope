@@ -4,6 +4,8 @@ title: BiliBili
 
 在 Markdown 文件中嵌入 B 站视频。
 
+<!-- more -->
+
 ## 属性
 
 ### bvid

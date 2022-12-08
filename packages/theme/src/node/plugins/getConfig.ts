@@ -38,7 +38,7 @@ export const getPluginConfig = (
   legacy = false
 ): PluginConfig => {
   const pluginConfig = [
-    getComponentsPlugin(plugins.components, options),
+    getComponentsPlugin(plugins.components, options, legacy),
     getActiveHeaderLinksPlugin(plugins.activeHeaderLinks),
     plugins.externalLinkIcon === false ? null : externalLinkIconPlugin(),
     plugins.nprogress === false ? null : nprogressPlugin(),

@@ -4,6 +4,8 @@ title: BiliBili
 
 Embed BiliBili videos in Markdown files.
 
+<!-- more -->
+
 ## Props
 
 ### bvid
