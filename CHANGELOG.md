@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.135](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.134...v2.0.0-beta.135) (2022-12-08)
+
+### ⚠ BREAKING CHANGES
+
+- **theme:** plugin.components no longer accpet an array
+- **components:** rebuild component options
+
+### Features
+
+- **components:** rebuild component options ([563e257](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/563e25769736d1ad3d233815490ff63d8ef0de6a))
+- **copyright2:** add zh-TW support ([c55aefe](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c55aefec3f875865924b2a44455acb0ef2cc08fb))
+- **copyright2:** rebuild locale ([9318ac5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9318ac5b6616c9c133eef5898729fd9540b0ce19))
+- **shared:** export tags ([d0b5cd9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d0b5cd9427aaeafc920257ba20f06729d5a68d14))
+- **theme:** rebuild excerpt generating ([79332d2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/79332d230784bfb8b8ebed0f8e3ed45ca47bb068))
+- **theme:** remove slots in BlogHero and correct docs, fix [#2503](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2503) ([8e2fc14](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8e2fc1447cf98d17b72df3c38254ebbe115fb882))
+- **theme:** support number value for autoExcerpt ([3cac1bf](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3cac1bf05d67716a07441c853148edd0a0c2b8ef))
+- **theme:** update comopnent settings ([c0c7e17](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c0c7e1719ffed03865e06fa145f39248cc5734ec))
+
+### Bug Fixes
+
+- **md-enhance:** add compact for old imageTitle option ([ed5c4ff](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ed5c4ff04c2808f9492819514fa97a03bfab5073))
+- **theme:** fix excerpt generating under edge case ([1dedcf3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1dedcf385ff36099eaec89ee9d4a5bbf087a715f))
+- **theme:** footer padding typo, fix [#2420](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2420) ([4b7fa55](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4b7fa55a43dd9df6c4f6dc0e15b1352ae183f891))
+
 ## [2.0.0-beta.134](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.133...v2.0.0-beta.134) (2022-12-06)
 
 ### ⚠ BREAKING CHANGES
