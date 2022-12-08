@@ -100,6 +100,17 @@ You should use this to skip pages that you don't need to generate excerpt for. E
 
 :::
 
+### customElement
+
+- Type: `(tagName: string) => boolean`
+- Default: `() => false`
+- Details:
+  - [Guide → Generating Excerpt](./guide.md#generating-excerpt)
+
+Tags which is considered as custom elements.
+
+This is used to determine whether a tag is a custom element since all vue components are removed in excerpt
+
 ### metaScope
 
 - Type: `string`

@@ -96,6 +96,17 @@ Slugify 函数，用于转换 key 在路由中注册的形式。
 
 :::
 
+### customElement
+
+- 类型: `(tagName: string) => boolean`
+- 默认值: `() => false`
+- 详情:
+  - [指南 → 摘要生成](./guide.md#摘要生成)
+
+被认为是自定义元素的标签。
+
+用于判断一个标签是否是自定义元素，因为在摘要中，所有的 vue 组件都会被移除。
+
 ### metaScope
 
 - 类型: `string`
