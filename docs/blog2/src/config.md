@@ -52,6 +52,54 @@ Blog type config, see [Blog Type Config](#blog-type-config)
 
 Slugify function, used to convert key name which they are register in routes.
 
+### excerpt
+
+- Type: `boolean`
+- Default: `true`
+- Details:
+  - [Guide → Generating Excerpt](./guide.md#generating-excerpt)
+
+Excerpt generating options.
+
+### excerptSeparator
+
+- Type: `string`
+- Default: `<!-- more -->`
+- Details:
+  - [Guide → Generating Excerpt](./guide.md#generating-excerpt)
+
+### excerptLength
+
+- Type: `number`
+- Default: `300400`
+- Details:
+  - [Guide → Generating Excerpt](./guide.md#generating-excerpt)
+
+Length of excerpt when auto generating.
+
+::: note
+
+Excerpt length will be the minimal possible length reaching this value.
+
+You can set it to `0` to disable auto excerpt generation.
+
+:::
+
+### excerptFilter
+
+- Type: `(page: Page) => boolean`
+- Default: `filter` option
+- Details:
+  - [Guide → Generating Excerpt](./guide.md#generating-excerpt)
+
+Page filter, determine whether the plugin should generate excerpt for it.
+
+::: tip
+
+You should use this to skip pages that you don't need to generate excerpt for. E.g.: If users set `excerpt` or `description` in frontmatter, you may want to use them directly.
+
+:::
+
 ### metaScope
 
 - Type: `string`

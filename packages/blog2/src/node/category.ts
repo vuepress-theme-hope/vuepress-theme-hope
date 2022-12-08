@@ -4,7 +4,7 @@ import { logger } from "./utils.js";
 
 import type { App, Page } from "@vuepress/core";
 import type { BlogOptions } from "./options.js";
-import type { PageMap } from "./typings.js";
+import type { PageMap } from "./typings/index.js";
 import type { CategoryMap } from "../shared/index.js";
 
 const HMR_CODE = `

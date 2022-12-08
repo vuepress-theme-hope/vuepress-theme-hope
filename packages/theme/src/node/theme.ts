@@ -81,14 +81,7 @@ export const hopeTheme =
           );
 
         checkFrontmatter(page, app.env.isDebug);
-
-        extendsPage(
-          app,
-          <Page<ThemePageData>>page,
-          themeConfig,
-          status,
-          hotReload || app.env.isBuild
-        );
+        extendsPage(<Page<ThemePageData>>page);
       },
 
       onPrepared: (): Promise<void> =>
@@ -121,6 +114,7 @@ export const hopeTheme =
       },
 
       plugins: getPluginConfig(
+        app,
         plugins,
         themeConfig,
 

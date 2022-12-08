@@ -258,3 +258,19 @@ export default {
 ```
 
 Then `/zh/star/` and `/star/` will both be available, and only articles under the correct locale will appear.
+
+## Generating Excerpt
+
+This plugin provides a built-in excerpt generator, which can be enabled by setting `excerpt` option to `true` .
+
+The excerpt generator will try find a valid excerpt separator from markdown contents, if it finds one, it will use content before the separator. The sperator is default `<!-- more -->`, and you can customize it by setting `excerptSeparator` option.
+
+If it cannot find a valid separator, it will parse content from the beginning of markdown file, and stop till it's length reaches a preset value. The value is default `300`, and you can customize it by setting `excerptLength` option.
+
+To choose which page should generate excerpt, you can use `excerptFilter` option.
+
+::: tip Example
+
+Normally you may want to use `frontmatter.description` if users set them, so you can let filter function return `false` if `frontmatter.description` is not empty.
+
+:::
