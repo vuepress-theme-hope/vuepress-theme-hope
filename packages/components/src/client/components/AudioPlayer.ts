@@ -1,5 +1,3 @@
-/* eslint-disable vue/no-unused-properties */
-import Plyr from "plyr";
 import {
   computed,
   defineComponent,
@@ -9,7 +7,6 @@ import {
   ref,
 } from "vue";
 
-import type { UseMediaTextTrackSource } from "@vueuse/core";
 import type { Options as PlyrOptions } from "plyr";
 import type { PropType, VNode } from "vue";
 
@@ -27,9 +24,9 @@ export default defineComponent({
     },
 
     /**
-     * Video source
+     * Audio source
      *
-     * 视频源
+     * 音频源
      */
     src: {
       type: String,
@@ -37,9 +34,9 @@ export default defineComponent({
     },
 
     /**
-     * Video title
+     * Audio title
      *
-     * 视频标题
+     * 音频标题
      */
     title: {
       type: String,
@@ -47,9 +44,9 @@ export default defineComponent({
     },
 
     /**
-     * Video file type
+     * Audio file type
      *
-     * 视频文件类型
+     * 音频文件类型
      */
     type: {
       type: String,
@@ -57,19 +54,9 @@ export default defineComponent({
     },
 
     /**
-     * Video tracks
+     * Audio poster
      *
-     * 视频字幕
-     */
-    tracks: {
-      type: Array as PropType<UseMediaTextTrackSource[]>,
-      default: (): UseMediaTextTrackSource[] => [],
-    },
-
-    /**
-     * Video poster
-     *
-     * 视频海报
+     * 音频封面
      */
     poster: {
       type: String,
@@ -86,7 +73,7 @@ export default defineComponent({
 
   setup(props) {
     let player: Plyr | null = null;
-    const audio = ref<HTMLVideoElement>();
+    const audio = ref<HTMLAudioElement>();
 
     const plyrOptions = computed(() => ({
       hideYouTubeDOMError: true,
@@ -94,7 +81,9 @@ export default defineComponent({
     }));
 
     onMounted(() => {
-      if (audio.value) player = new Plyr(audio.value, plyrOptions.value);
+      void import("plyr").then(({ default: Plyr }) => {
+        if (audio.value) player = new Plyr(audio.value, plyrOptions.value);
+      });
     });
 
     onBeforeMount(() => {

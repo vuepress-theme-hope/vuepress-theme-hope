@@ -1,5 +1,3 @@
-/* eslint-disable vue/no-unused-properties */
-import Plyr from "plyr";
 import {
   computed,
   defineComponent,
@@ -69,7 +67,7 @@ export default defineComponent({
     /**
      * Video poster
      *
-     * 视频海报
+     * 视频封面
      */
     poster: {
       type: String,
@@ -104,7 +102,9 @@ export default defineComponent({
     }));
 
     onMounted(() => {
-      if (video.value) player = new Plyr(video.value, plyrOptions.value);
+      void import("plyr").then(({ default: Plyr }) => {
+        if (video.value) player = new Plyr(video.value, plyrOptions.value);
+      });
     });
 
     onBeforeMount(() => {

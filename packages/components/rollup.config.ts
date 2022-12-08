@@ -12,8 +12,8 @@ export default [
     copy: [["client/styles", "client"]],
   }),
   ...rollupTypescript("client/components/AudioPlayer", {
-    external: ["@vueuse/core", "plyr", "vue", /\.s?css$/],
-    dtsExternal: ["@vueuse/core", /\.s?css$/],
+    external: ["plyr", "vue", /\.s?css$/],
+    dtsExternal: [/\.s?css$/],
   }),
   ...rollupTypescript("client/components/Badge", {
     external: ["vue", /\.scss$/],
