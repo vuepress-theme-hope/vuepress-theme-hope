@@ -61,8 +61,8 @@ export default [
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/VideoPlayer", {
-    external: ["@vueuse/core", "vue", /\.scss$/],
-    dtsExternal: ["@vueuse/core", /\.scss$/],
+    external: ["@vueuse/core", "plyr", "vue", /\.s?css$/],
+    dtsExternal: ["@vueuse/core", /\.s?css$/],
   }),
   ...rollupTypescript("client/vueuse", {
     external: ["@vueuse/core"],

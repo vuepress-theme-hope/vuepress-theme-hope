@@ -1,15 +1,15 @@
 lockfileVersion: 5.4
 
 patchedDependencies:
-  mitt@3.0.0:
-    hash: qzs7n5sruuzja7qoe6i43clpfe
-    path: patches/mitt@3.0.0.patch
   '@types/katex@0.14.0':
     hash: hqyqxenocev52grrpe7hwg7asa
     path: patches/@types__katex@0.14.0.patch
   mermaid@9.2.2:
     hash: umczwv4hbnk62sn3xdjp6m77em
     path: patches/mermaid@9.2.2.patch
+  mitt@3.0.0:
+    hash: qzs7n5sruuzja7qoe6i43clpfe
+    path: patches/mitt@3.0.0.patch
 
 importers:
 
@@ -899,6 +899,7 @@ importers:
       '@vuepress/utils': 2.0.0-beta.53
       '@vueuse/core': ^9.6.0
       balloon-css: ^1.2.0
+      plyr: ^3.7.3
       vue: ^3.2.45
       vue-router: ^4.1.6
       vuepress-plugin-reading-time2: workspace:*
@@ -910,6 +911,7 @@ importers:
       '@vuepress/utils': 2.0.0-beta.53
       '@vueuse/core': 9.6.0_vue@3.2.45
       balloon-css: 1.2.0
+      plyr: 3.7.3
       vue: 3.2.45
       vue-router: 4.1.6_vue@3.2.45
       vuepress-plugin-reading-time2: link:../reading-time2
@@ -5624,6 +5626,11 @@ packages:
     dependencies:
       browserslist: 4.21.4
 
+  /core-js/3.26.1:
+    resolution: {integrity: sha512-21491RRQVzUn0GGM9Z1Jrpr6PNPxPi+Za8OM9q4tksTSnlbXXGKK1nXNg/QvwFYettXvSX6zWKCtHHfjN4puyA==}
+    requiresBuild: true
+    dev: false
+
   /core-util-is/1.0.3:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
 
@@ -5784,6 +5791,10 @@ packages:
 
   /csstype/2.6.21:
     resolution: {integrity: sha512-Z1PhmomIfypOpoMjRQB70jfvy/wxT50qW08YXO5lMIJkrdq4yOTR+AW7FqutScmB9NkLwxo+jU+kZLbofZZq/w==}
+
+  /custom-event-polyfill/1.0.7:
+    resolution: {integrity: sha512-TDDkd5DkaZxZFM8p+1I3yAlvM3rSr1wbrOliG4yJiwinMZN8z/iGL7BTlDkrJcYTmgUSb4ywVCc3ZaUtOtC76w==}
+    dev: false
 
   /cytoscape-cose-bilkent/4.1.0_cytoscape@3.23.0:
     resolution: {integrity: sha512-wgQlVIUJF13Quxiv5e1gstZ08rnZj2XaLHGoFMYXz7SkNfCDOOteKBE6SYRfA9WxxI/iBc3ajfDoc6hb/MRAHQ==}
@@ -9118,6 +9129,10 @@ packages:
       emojis-list: 3.0.0
       json5: 2.2.1
 
+  /loadjs/4.2.0:
+    resolution: {integrity: sha512-AgQGZisAlTPbTEzrHPb6q+NYBMD+DP9uvGSIjSUM5uG+0jG15cb8axWpxuOIqrmQjn6scaaH8JwloiP27b2KXA==}
+    dev: false
+
   /local-pkg/0.4.2:
     resolution: {integrity: sha512-mlERgSPrbxU3BP4qBqAvvwlgW4MTg78iwJdGGnv7kibKjWcJksrG3t6LB5lXI93wXRDvG4NpUgJFmTG4T6rdrg==}
     engines: {node: '>=14'}
@@ -10446,6 +10461,16 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
+  /plyr/3.7.3:
+    resolution: {integrity: sha512-ORULENBvEvvzMYXRQBALDmEi8P+wZt1Hr/NvHqchu/t7E2xJKNkRYWx0qCA1HETIGZ6zobrOVgqeAUqWimS7fQ==}
+    dependencies:
+      core-js: 3.26.1
+      custom-event-polyfill: 1.0.7
+      loadjs: 4.2.0
+      rangetouch: 2.0.1
+      url-polyfill: 1.1.12
+    dev: false
+
   /posix-character-classes/0.1.1:
     resolution: {integrity: sha512-xTgYBc3fuo7Yt7JbiuFxSYGToMoz8fLoE6TC9Wx1P/u+LfeThMOAqmuyECnlBaaJb+u1m9hHiXUEtwW4OzfUJg==}
     engines: {node: '>=0.10.0'}
@@ -10744,6 +10769,10 @@ packages:
   /range-parser/1.2.1:
     resolution: {integrity: sha512-Hrgsx+orqoygnmhFbKaHE6c296J+HTAQXoxEF6gNupROmmGJRoyzfG3ccAveqCBrwr/2yxQ5BVd/GTl5agOwSg==}
     engines: {node: '>= 0.6'}
+
+  /rangetouch/2.0.1:
+    resolution: {integrity: sha512-sln+pNSc8NGaHoLzwNBssFSf/rSYkqeBXzX1AtJlkJiUaVSJSbRAWJk+4omsXkN+EJalzkZhWQ3th1m0FpR5xA==}
+    dev: false
 
   /raphael/2.3.0:
     resolution: {integrity: sha512-w2yIenZAQnp257XUWGni4bLMVxpUpcIl7qgxEgDIXtmSypYtlNxfXWpOBxs7LBTps5sDwhRnrToJrMUrivqNTQ==}
@@ -12552,6 +12581,10 @@ packages:
     resolution: {integrity: sha512-Am1ousAhSLBeB9cG/7k7r2R0zj50uDRlZHPGbazid5s9rlF1F/QKYObEKSIunSjIOkJZqwRRLpvewjEkM7pSqg==}
     deprecated: Please see https://github.com/lydell/urix#deprecated
     dev: true
+
+  /url-polyfill/1.1.12:
+    resolution: {integrity: sha512-mYFmBHCapZjtcNHW0MDq9967t+z4Dmg5CJ0KqysK3+ZbyoNOWQHksGCTWwDhxGXllkWlOc10Xfko6v4a3ucM6A==}
+    dev: false
 
   /use/3.1.1:
     resolution: {integrity: sha512-cwESVXlO3url9YWlFW/TA9cshCEhtu7IKJ/p5soJ/gGpj7vbvFrAY/eIioQ6Dw23KjZhYgiIo8HOs1nQ2vr/oQ==}

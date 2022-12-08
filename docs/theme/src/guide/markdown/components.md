@@ -259,13 +259,13 @@ A video player with tracks and poster:
   :tracks="[
     {
       default: true,
-      src: 'https://gist.githubusercontent.com/wheatjs/a85a65a82d87d7c098e1a0972ef1f726/raw',
+      src: $withBase('/assets/subtitles/en.vtt'),
       kind: 'subtitles',
       label: 'English',
       srcLang: 'en',
     },
     {
-      src: 'https://gist.githubusercontent.com/wheatjs/38f32925d20c683bf77ba33ff737891b/raw',
+      src: $withBase('/assets/subtitles/fr.vtt'),
       kind: 'subtitles',
       label: 'French',
       srcLang: 'fr',
@@ -280,13 +280,13 @@ A video player with tracks and poster:
   :tracks="[
     {
       default: true,
-      src: 'https://gist.githubusercontent.com/wheatjs/a85a65a82d87d7c098e1a0972ef1f726/raw',
+      src: $withBase('/assets/subtitles/en.vtt'),
       kind: 'subtitles',
       label: 'English',
       srcLang: 'en',
     },
     {
-      src: 'https://gist.githubusercontent.com/wheatjs/38f32925d20c683bf77ba33ff737891b/raw',
+      src: $withBase('/assets/subtitles/fr.vtt'),
       kind: 'subtitles',
       label: 'French',
       srcLang: 'fr',

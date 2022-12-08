@@ -1,16 +1,33 @@
 /* eslint-disable vue/no-unused-properties */
-import { defineComponent, h } from "vue";
+import Plyr from "plyr";
+import {
+  computed,
+  defineComponent,
+  h,
+  onBeforeMount,
+  onMounted,
+  ref,
+} from "vue";
+
 import { useSize } from "../composables/index.js";
 
 import type { UseMediaTextTrackSource } from "@vueuse/core";
+import type { Options as PlyrOptions } from "plyr";
 import type { PropType, VNode } from "vue";
 
+import "plyr/dist/plyr.css";
 import "../styles/video-player.scss";
 
 export default defineComponent({
   name: "VideoPlayer",
 
   props: {
+    /** Options object for plyr config. **/
+    options: {
+      type: Object as PropType<PlyrOptions>,
+      default: () => ({}),
+    },
+
     /**
      * Video source
      *
@@ -37,6 +54,26 @@ export default defineComponent({
      * 视频文件类型
      */
     type: {
+      type: String,
+      default: "",
+    },
+
+    /**
+     * Video tracks
+     *
+     * 视频字幕
+     */
+    tracks: {
+      type: Array as PropType<UseMediaTextTrackSource[]>,
+      default: (): UseMediaTextTrackSource[] => [],
+    },
+
+    /**
+     * Video poster
+     *
+     * 视频海报
+     */
+    poster: {
       type: String,
       default: "",
     },
@@ -72,26 +109,6 @@ export default defineComponent({
     },
 
     /**
-     * Video poster
-     *
-     * 视频海报
-     */
-    poster: {
-      type: String,
-      default: "",
-    },
-
-    /**
-     * Video tracks
-     *
-     * 视频字幕
-     */
-    tracks: {
-      type: Array as PropType<UseMediaTextTrackSource[]>,
-      default: (): UseMediaTextTrackSource[] => [],
-    },
-
-    /**
      * Whether to loop the video
      *
      * 是否循环播放
@@ -100,36 +117,66 @@ export default defineComponent({
   },
 
   setup(props) {
-    const { el, width, height } = useSize<HTMLDivElement>(props);
+    const { el, width, height } = useSize<HTMLIFrameElement>(props);
 
-    return (): VNode =>
-      h(
-        "div",
-        {
-          class: "video-wrapper",
-          ref: el,
-          style: {
-            width: width.value,
-            height: height.value,
-          },
-        },
-        [
-          h("a", { class: "sr-only", href: props.src }, props.title),
-          h(
-            "video",
+    let player: Plyr | null = null;
+    const video = ref<HTMLVideoElement>();
+
+    const plyrOptions = computed(() => ({
+      hideYouTubeDOMError: true,
+      ...props.options,
+    }));
+
+    onMounted(() => {
+      if (video.value) player = new Plyr(video.value, plyrOptions.value);
+    });
+
+    onBeforeMount(() => {
+      try {
+        player?.destroy();
+      } catch (err: unknown) {
+        if (
+          !(
+            plyrOptions.value.hideYouTubeDOMError &&
+            (<Error>err).message ===
+              "The YouTube player is not attached to the DOM."
+          )
+        )
+          console.error(err);
+      }
+    });
+
+    return (): VNode[] | VNode | null =>
+      props.src
+        ? h(
+            "div",
             {
-              title: props.title,
-              crossorigin: "anonymous",
-              poster: props.poster,
-              controls: "",
-              ...(props.loop ? { loop: "" } : {}),
+              class: "video-wrapper",
+              ref: el,
+              style: {
+                width: width.value,
+                height: height.value,
+              },
             },
             [
-              ...props.tracks.map((track) => h("track", track)),
-              h("source", { src: props.src, type: props.type }),
+              h("a", { class: "sr-only", href: props.src }, props.title),
+              h(
+                "video",
+                {
+                  ref: video,
+                  title: props.title,
+                  crossorigin: "anonymous",
+                  poster: props.poster,
+                  controls: "",
+                  ...(props.loop ? { loop: "" } : {}),
+                },
+                [
+                  ...props.tracks.map((track) => h("track", track)),
+                  h("source", { src: props.src, type: props.type }),
+                ]
+              ),
             ]
-          ),
-        ]
-      );
+          )
+        : null;
   },
 });

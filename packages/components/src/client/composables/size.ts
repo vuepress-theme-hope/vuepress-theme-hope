@@ -36,7 +36,7 @@ export const useSize = <E extends HTMLElement>(
   };
 
   const updateHeight = (): void => {
-    height.value = getHeight(el.value!.clientWidth);
+    if (el.value) height.value = getHeight(el.value.clientWidth);
   };
 
   onMounted(() => {
