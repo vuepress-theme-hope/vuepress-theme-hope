@@ -9,8 +9,6 @@ import {
   ref,
 } from "vue";
 
-import { useSize } from "../composables/index.js";
-
 import type { UseMediaTextTrackSource } from "@vueuse/core";
 import type { Options as PlyrOptions } from "plyr";
 import type { PropType, VNode } from "vue";
@@ -89,26 +87,6 @@ export default defineComponent({
     },
 
     /**
-     * Component height
-     *
-     * 组件高度
-     */
-    height: {
-      type: [String, Number],
-      default: undefined,
-    },
-
-    /**
-     * Component width / height ratio
-     *
-     * 组件长宽比
-     */
-    ratio: {
-      type: Number,
-      default: 16 / 9,
-    },
-
-    /**
      * Whether to loop the video
      *
      * 是否循环播放
@@ -117,8 +95,6 @@ export default defineComponent({
   },
 
   setup(props) {
-    const { el, width, height } = useSize<HTMLIFrameElement>(props);
-
     let player: Plyr | null = null;
     const video = ref<HTMLVideoElement>();
 
@@ -146,16 +122,14 @@ export default defineComponent({
       }
     });
 
-    return (): VNode[] | VNode | null =>
+    return (): VNode | null =>
       props.src
         ? h(
             "div",
             {
               class: "video-wrapper",
-              ref: el,
               style: {
-                width: width.value,
-                height: height.value,
+                width: props.width,
               },
             },
             [
@@ -167,6 +141,7 @@ export default defineComponent({
                   title: props.title,
                   crossorigin: "anonymous",
                   poster: props.poster,
+                  preload: "metadata",
                   controls: "",
                   ...(props.loop ? { loop: "" } : {}),
                 },

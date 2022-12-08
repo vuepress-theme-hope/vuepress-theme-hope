@@ -22,20 +22,6 @@ Video source link
 
 Video width.
 
-### height
-
-- Type: `string | number`
-- Required: No
-
-Video height
-
-### radio
-
-- Type: `number`
-- Default: `16 / 9`
-
-Video radio, ONLY valid when `height` not set.
-
 ### type
 
 - Type: `string`
