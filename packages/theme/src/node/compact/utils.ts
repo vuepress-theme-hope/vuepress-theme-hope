@@ -1,4 +1,4 @@
-import { chalk } from "@vuepress/utils";
+import { colors } from "@vuepress/utils";
 import { logger } from "../utils.js";
 
 export interface DeprecatedLoggerOptions {
@@ -18,9 +18,9 @@ export const deprecatedLogger = ({
 }: DeprecatedLoggerOptions): void => {
   if (deprecatedOption in options) {
     logger.warn(
-      `${chalk.magenta(deprecatedOption)} is ${chalk.yellow("deprecated")}${
+      `${colors.magenta(deprecatedOption)} is ${colors.yellow("deprecated")}${
         scope ? ` in ${scope}` : ""
-      }, please use "${chalk.magenta(newOption)}" instead.${
+      }, please use "${colors.magenta(newOption)}" instead.${
         msg ? `\n${msg}` : ""
       }`
     );
@@ -51,9 +51,9 @@ export const droppedLogger = (
 ): void => {
   if (droppedOption in options) {
     logger.error(
-      `"${chalk.magenta(droppedOption)}" is ${chalk.red("removed")}${
+      `"${colors.magenta(droppedOption)}" is ${colors.red("removed")}${
         newOption
-          ? `, please use ${chalk.magenta(newOption)} instead.`
+          ? `, please use ${colors.magenta(newOption)} instead.`
           : " and no longer supported"
       }${hint ? `\n${hint}` : ""}`
     );
@@ -67,8 +67,8 @@ export const deprecatedMsg = (
   hint: string
 ): void => {
   logger.warn(
-    `"${chalk.magenta(deprecatedOptions)}" is ${chalk.red(
+    `"${colors.magenta(deprecatedOptions)}" is ${colors.red(
       "deprecated"
-    )}, please use "${chalk.magenta(hint)}" instead.`
+    )}, please use "${colors.magenta(hint)}" instead.`
   );
 };

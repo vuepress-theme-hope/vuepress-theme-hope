@@ -1,4 +1,4 @@
-import { chalk } from "@vuepress/utils";
+import { colors } from "@vuepress/utils";
 import { stripTags } from "vuepress-shared/node";
 
 import { convertOptions } from "./compact/index.js";
@@ -19,7 +19,7 @@ export const seoPlugin =
     const plugin: Plugin = { name: "vuepress-plugin-seo2" };
 
     if (!options.hostname) {
-      logger.error(`Option ${chalk.magenta("hostname")} is required!`);
+      logger.error(`Option ${colors.magenta("hostname")} is required!`);
 
       return plugin;
     }

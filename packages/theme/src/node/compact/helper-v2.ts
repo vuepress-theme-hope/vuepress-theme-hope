@@ -1,4 +1,4 @@
-import { chalk } from "@vuepress/utils";
+import { colors } from "@vuepress/utils";
 import { convertThemeOptions } from "./theme.js";
 import { deprecatedMsg } from "./utils.js";
 import { hopeTheme } from "../theme.js";
@@ -96,11 +96,11 @@ export const defineHopeConfig = (
 ): UserConfig => {
   logger.warn(
     `\
-"${chalk.magenta("defineHopeConfig")}" is ${chalk.red(
+"${colors.magenta("defineHopeConfig")}" is ${colors.red(
       "deprecated"
     )}, please use the following code instead:
 
-${chalk.magenta(`\
+${colors.magenta(`\
 import { defineUserConfig } from "vuepress";
 import { hopeThemeLegacy } from "vuepress-theme-hope";
 

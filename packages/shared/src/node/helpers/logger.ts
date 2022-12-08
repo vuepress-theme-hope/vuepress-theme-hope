@@ -1,4 +1,4 @@
-import { chalk } from "@vuepress/utils";
+import { colors } from "@vuepress/utils";
 import ora from "ora";
 import type { Ora } from "ora";
 
@@ -22,7 +22,7 @@ export class Logger {
    */
   create(text: string): Ora {
     this.currentInstance = ora({
-      prefixText: chalk.blue(`${this.name}: `) || "",
+      prefixText: colors.blue(`${this.name}: `) || "",
       text,
     });
 
@@ -61,7 +61,7 @@ export class Logger {
     return (
       !text && this.currentInstance
         ? this.currentInstance
-        : this.create(chalk.blue(text))
+        : this.create(colors.blue(text))
     ).info();
   }
 
@@ -75,7 +75,7 @@ export class Logger {
     return (
       !text && this.currentInstance
         ? this.currentInstance
-        : this.create(chalk.green(text))
+        : this.create(colors.green(text))
     ).succeed();
   }
 
@@ -89,7 +89,7 @@ export class Logger {
     return (
       !text && this.currentInstance
         ? this.currentInstance
-        : this.create(chalk.yellow(text))
+        : this.create(colors.yellow(text))
     ).warn();
   }
 
@@ -103,7 +103,7 @@ export class Logger {
     return (
       !text && this.currentInstance
         ? this.currentInstance
-        : this.create(chalk.red(text))
+        : this.create(colors.red(text))
     ).fail();
   }
 }

@@ -1,4 +1,4 @@
-import { chalk } from "@vuepress/utils";
+import { colors } from "@vuepress/utils";
 import { defineHopeConfig } from "./helper-v2.js";
 import { convertThemeOptions } from "./theme.js";
 import { deprecatedMsg } from "./utils.js";
@@ -58,9 +58,9 @@ const checkMarkdownOptions = (
   // lineNumbers
   if ("lineNumbers" in options) {
     logger.warn(
-      `${chalk.magenta("markdown.lineNumbers")} is ${chalk.yellow(
+      `${colors.magenta("markdown.lineNumbers")} is ${colors.yellow(
         "deprecated"
-      )}  in VuePress2, please use ${chalk.magenta(
+      )}  in VuePress2, please use ${colors.magenta(
         "markdown.code.lineNumbers"
       )} instead.`
     );
@@ -77,13 +77,13 @@ const checkMarkdownOptions = (
   if ("slugify" in options) {
     logger.error(
       `\
-${chalk.magenta("markdown.slugify")} is ${chalk.red(
+${colors.magenta("markdown.slugify")} is ${colors.red(
         "no longer supported"
       )} in VuePress2.
 If you want to change the slugify function anyway, set the following options separately:
-· ${chalk.blue("markdown.anchor.slugify")}
-· ${chalk.blue("markdown.toc.slugify")}
-· ${chalk.blue("markdown.extractHeaders.slugify")}
+· ${colors.blue("markdown.anchor.slugify")}
+· ${colors.blue("markdown.toc.slugify")}
+· ${colors.blue("markdown.extractHeaders.slugify")}
 `
     );
 
@@ -93,7 +93,7 @@ If you want to change the slugify function anyway, set the following options sep
   // pageSuffix
   if ("pageSuffix" in options) {
     logger.error(
-      `${chalk.magenta("markdown.pageSuffix")} is ${chalk.red(
+      `${colors.magenta("markdown.pageSuffix")} is ${colors.red(
         "no longer supported"
       )} in VuePress2.`
     );
@@ -104,9 +104,9 @@ If you want to change the slugify function anyway, set the following options sep
   // externalLinks
   if ("externalLinks" in options) {
     logger.error(
-      `${chalk.magenta("markdown.externalLinks")} is ${chalk.red(
+      `${colors.magenta("markdown.externalLinks")} is ${colors.red(
         "no longer supported"
-      )} in VuePress2, please use ${chalk.magenta(
+      )} in VuePress2, please use ${colors.magenta(
         "markdown.links.externalAttrs"
       )} instead.`
     );
@@ -117,9 +117,9 @@ If you want to change the slugify function anyway, set the following options sep
   // plugins
   if ("plugins" in options) {
     logger.error(
-      `${chalk.magenta("markdown.plugins")} is ${chalk.red(
+      `${colors.magenta("markdown.plugins")} is ${colors.red(
         "no longer supported"
-      )} in VuePress2, please use ${chalk.magenta(
+      )} in VuePress2, please use ${colors.magenta(
         "extendsMarkdown"
       )} hook instead.`
     );
@@ -172,11 +172,11 @@ const checkPluginOptions = (plugins: unknown): PluginConfig => {
         ].forEach(([deprecatedOption, newOption]) => {
           if (deprecatedOption in item)
             logger.warn(
-              `${chalk.magenta(
+              `${colors.magenta(
                 deprecatedOption
-              )} options in plugin options is ${chalk.yellow(
+              )} options in plugin options is ${colors.yellow(
                 "deprecated"
-              )} in VuePress2, please use ${chalk.magenta(newOption)} instead.`
+              )} in VuePress2, please use ${colors.magenta(newOption)} instead.`
             );
 
           // eslint-disable-next-line
@@ -209,9 +209,9 @@ const checkPluginOptions = (plugins: unknown): PluginConfig => {
         ].forEach((removedOption) => {
           if (removedOption in item)
             logger.error(
-              `${chalk.magenta(
+              `${colors.magenta(
                 removedOption
-              )} option in plugin options is ${chalk.red(
+              )} option in plugin options is ${colors.red(
                 "no longer supported"
               )} in VuePress2, make sure you are using a VuePress2 plugin.`
             );
@@ -227,7 +227,7 @@ const checkPluginOptions = (plugins: unknown): PluginConfig => {
   // check whether plugins is an object
   if (typeof plugins === "object") {
     logger.error(
-      `${chalk.magenta('object format "plugins"')} is ${chalk.red(
+      `${colors.magenta('object format "plugins"')} is ${colors.red(
         "no longer supported"
       )} in VuePress2, you should import plugins and call them in an array.`
     );
@@ -253,7 +253,9 @@ export const checkBundlerOptions = (config: Record<string, unknown>): void => {
   ].forEach((removedOption) => {
     if (removedOption in config)
       logger.error(
-        `"${chalk.magenta(removedOption)}" option in config file is ${chalk.red(
+        `"${colors.magenta(
+          removedOption
+        )}" option in config file is ${colors.red(
           "no longer supported"
         )} in VuePress2, you should set it in bundler options.`
       );
@@ -288,7 +290,7 @@ export const config = (userConfig: Record<string, unknown>): UserConfig => {
   ].forEach(([deprecatedOption, newOption]) => {
     if (deprecatedOption in userConfig)
       logger.warn(
-        `"${deprecatedOption}" option in config file is ${chalk.yellow(
+        `"${deprecatedOption}" option in config file is ${colors.yellow(
           "deprecated"
         )} in VuePress2, please use "${newOption}" instead.`
       );
@@ -320,7 +322,7 @@ export const config = (userConfig: Record<string, unknown>): UserConfig => {
   ].forEach(([removedOption, hint = ""]) => {
     if (removedOption in userConfig)
       logger.error(
-        `"${removedOption}" option in config is ${chalk.red(
+        `"${removedOption}" option in config is ${colors.red(
           "no longer supported"
         )} in VuePress2${hint ? `, ${hint}.` : "."}`
       );
@@ -332,7 +334,7 @@ export const config = (userConfig: Record<string, unknown>): UserConfig => {
   // other options
   if ("extraWatchFiles" in userConfig) {
     logger.error(
-      `${chalk.magenta("extraWatchFiles")} options is ${chalk.red(
+      `${colors.magenta("extraWatchFiles")} options is ${colors.red(
         "removed"
       )} in VuePress2, you should use "onWatched" hook.`
     );

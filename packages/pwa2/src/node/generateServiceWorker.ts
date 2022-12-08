@@ -1,4 +1,4 @@
-import { chalk, fs, path } from "@vuepress/utils";
+import { colors, fs, path } from "@vuepress/utils";
 import { generateSW } from "workbox-build";
 import { logger } from "./utils.js";
 
@@ -64,7 +64,7 @@ export const generateServiceWorker = async (
     logger.succeed();
 
     logger.info(
-      `Precache ${chalk.cyan(`${count} files`)}, totaling ${chalk.cyan(
+      `Precache ${colors.cyan(`${count} files`)}, totaling ${colors.cyan(
         `${(size / 1024 / 1024).toFixed(2)} Mb.`
       )}.`
     );
@@ -76,13 +76,13 @@ export const generateServiceWorker = async (
 
     if (size > 104857600)
       logger.error(
-        `Cache Size is larger than 100MB, so that it can not be registered on all browsers.\n${chalk.blue(
+        `Cache Size is larger than 100MB, so that it can not be registered on all browsers.\n${colors.blue(
           "Please consider disable `cacheHTML` and `cachePic`, or set `maxSize` and `maxPicSize` option.\n"
         )}`
       );
     else if (size > 52428800)
       logger.warn(
-        `\nCache Size is larger than 50MB, which will not be registered on Safari.\n${chalk.blue(
+        `\nCache Size is larger than 50MB, which will not be registered on Safari.\n${colors.blue(
           "Please consider disable `cacheHTML` and `cachePic`, or set `maxSize` and `maxPicSize` option.\n"
         )}`
       );
