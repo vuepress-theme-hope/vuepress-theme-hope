@@ -303,6 +303,18 @@ exports[`should generate sidebarData correctly > Should resolve structure in roo
       "prefix": "options/",
       "text": "Dir with options",
     },
+    {
+      "children": [
+        "component.md",
+        "cut.md",
+        "demo.md",
+        "example.md",
+        "link.md",
+      ],
+      "collapsible": true,
+      "prefix": "excerpt/",
+      "text": "Excerpt",
+    },
   ],
 }
 `;

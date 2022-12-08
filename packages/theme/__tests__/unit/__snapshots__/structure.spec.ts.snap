@@ -133,6 +133,38 @@ exports[`should generate structure info correctly > Should generate structure in
   {
     "children": [
       {
+        "filename": "component.md",
+        "path": "excerpt/component.md",
+        "type": "file",
+      },
+      {
+        "filename": "cut.md",
+        "path": "excerpt/cut.md",
+        "type": "file",
+      },
+      {
+        "filename": "demo.md",
+        "path": "excerpt/demo.md",
+        "type": "file",
+      },
+      {
+        "filename": "example.md",
+        "path": "excerpt/example.md",
+        "type": "file",
+      },
+      {
+        "filename": "link.md",
+        "path": "excerpt/link.md",
+        "type": "file",
+      },
+    ],
+    "dirname": "excerpt",
+    "path": "excerpt",
+    "type": "dir",
+  },
+  {
+    "children": [
+      {
         "filename": "file1.md",
         "path": "link/file1.md",
         "type": "file",
