@@ -73,6 +73,7 @@ export default theme("components", {
   plugins: {
     components: {
       components: [
+        "AudioPlayer",
         "Badge",
         "BiliBili",
         "CodePen",

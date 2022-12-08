@@ -1,10 +1,12 @@
 # Demo
 
-- AddThis (Global Components)
+- AddThis (Root Components)
 
-- BackToTop (Global Components)
+- BackToTop (Root Components)
 
-- Notice (Global Components)
+- Notice (Root Components)
+
+- [AudioPlayer](audioplayer.md)
 
 - [Badge](badge.md)
 

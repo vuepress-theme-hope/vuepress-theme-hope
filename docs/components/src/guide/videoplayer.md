@@ -20,7 +20,7 @@ Video source link
 - Type: `string | number`
 - Default: `100%`
 
-Video width.
+Video component width.
 
 ### type
 

@@ -12,7 +12,9 @@ title: 指南
 
 :::
 
-此插件支持 8 个组件:
+此插件支持 9 个组件:
+
+- [AudioPlayer](audioplayer.md)
 
 - [BiliBili](bilibili.md)
 

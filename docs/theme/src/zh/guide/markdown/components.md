@@ -12,6 +12,7 @@ tag:
 
 可用组件:
 
+- AudioPlayer
 - Badge
 - BiliBili
 - CodePen
@@ -42,6 +43,7 @@ export default defineUserConfig({
       components: {
         // 你想使用的组件
         components: [
+          "AudioPlayer",
           "Badge",
           "BiliBili",
           "CodePen",
@@ -68,6 +70,7 @@ export default {
       components: {
         // 你想使用的组件
         components: [
+          "AudioPlayer",
           "Badge",
           "BiliBili",
           "CodePen",
@@ -83,6 +86,34 @@ export default {
 ```
 
 :::
+
+## AudioPlayer
+
+一个音频播放器:
+
+<AudioPlayer :src="$withBase('/assets/sample.mp3')" />
+
+```md
+<AudioPlayer :src="$withBase('/assets/sample.mp3')" />
+```
+
+一个拥有标题和封面的音频播放器:
+
+<AudioPlayer
+  :src="$withBase('/assets/sample.mp3')"
+  title="A Sample Audio"
+  poster="/logo.svg"
+/>
+
+```md
+<AudioPlayer
+  :src="$withBase('/assets/sample.mp3')"
+  title="A Sample Audio"
+  poster="/logo.svg"
+/>
+```
+
+有关可用属性，请参阅 [AudioPlayer][audioplayer] 页面。
 
 ## Badge
 
@@ -328,6 +359,7 @@ PDF 浏览器组件。
 
 有关可用属性，请参阅 [YouTube][youtube] 页面。
 
+[audioplayer]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/audioplayer.html
 [badge]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/badge.html
 [bilibili]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/bilibili.html
 [codepen]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/codepen.html

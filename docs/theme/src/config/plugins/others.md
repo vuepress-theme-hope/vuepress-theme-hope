@@ -15,6 +15,7 @@ Controls `vuepress-plugin-components`, providing a set of components for Markdow
 
 Available component which can be used in markdown files are:
 
+- `"AudioPlayer"`
 - `"Badge"`
 - `"BiliBili"`
 - `"CodePen"`

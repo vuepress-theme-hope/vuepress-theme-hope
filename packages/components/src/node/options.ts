@@ -2,6 +2,7 @@ import type { LocaleConfig } from "@vuepress/core";
 import type { BackToTopLocaleData, NoticeOptions } from "../shared/index.js";
 
 export type AvailableComponent =
+  | "AudioPlayer"
   | "Badge"
   | "BiliBili"
   | "CodePen"

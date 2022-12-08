@@ -9,6 +9,7 @@ const __dirname = getDirname(import.meta.url);
 const CLIENT_FOLDER = ensureEndingSlash(path.resolve(__dirname, "../client"));
 
 const availableComponents: AvailableComponent[] = [
+  "AudioPlayer",
   "Badge",
   "BiliBili",
   "CodePen",

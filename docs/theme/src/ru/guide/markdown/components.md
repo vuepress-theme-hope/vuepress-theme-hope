@@ -12,6 +12,7 @@ tag:
 
 Доступные компоненты:
 
+- AudioPlayer
 - Badge
 - BiliBili
 - CodePen
@@ -42,6 +43,7 @@ export default defineUserConfig({
       components: {
         // components you want
         components: [
+          "AudioPlayer",
           "Badge",
           "BiliBili",
           "CodePen",
@@ -68,6 +70,7 @@ export default {
       components: {
         // components you want
         components: [
+          "AudioPlayer",
           "Badge",
           "BiliBili",
           "CodePen",
@@ -83,6 +86,34 @@ export default {
 ```
 
 :::
+
+## AudioPlayer
+
+An audio player:
+
+<AudioPlayer :src="$withBase('/assets/sample.mp3')" />
+
+```md
+<AudioPlayer :src="$withBase('/assets/sample.mp3')" />
+```
+
+An audio player with poster and title:
+
+<AudioPlayer
+  :src="$withBase('/assets/sample.mp3')"
+  title="A Sample Audio"
+  poster="/logo.svg"
+/>
+
+```md
+<AudioPlayer
+  :src="$withBase('/assets/sample.mp3')"
+  title="A Sample Audio"
+  poster="/logo.svg"
+/>
+```
+
+See [AudioPlayer][audioplayer] page for available props.
 
 ## Значок
 
@@ -327,6 +358,7 @@ export default {
 
 Доступные свойства смотрите на странице [YouTube][youtube].
 
+[audioplayer]: https://vuepress-theme-hope.github.io/v2/components/guide/audioplayer.html
 [badge]: https://vuepress-theme-hope.github.io/v2/components/guide/badge.html
 [bilibili]: https://vuepress-theme-hope.github.io/v2/components/guide/bilibili.html
 [codepen]: https://vuepress-theme-hope.github.io/v2/components/guide/codepen.html

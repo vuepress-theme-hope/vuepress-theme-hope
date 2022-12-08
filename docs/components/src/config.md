@@ -9,6 +9,7 @@ icon: config
 
   ```ts
   type AvailableComponent =
+    | "AudioPlayer"
     | "Badge"
     | "BiliBili"
     | "CodePen"
@@ -25,6 +26,7 @@ Components to be registered.
 
 Available component names:
 
+- `"AudioPlayer"`
 - `"Badge"`
 - `"BiliBili"`
 - `"CodePen"`

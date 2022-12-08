@@ -67,6 +67,7 @@ export default hopeTheme({
 
     components: {
       components: [
+        "AudioPlayer",
         "Badge",
         "BiliBili",
         "CodePen",

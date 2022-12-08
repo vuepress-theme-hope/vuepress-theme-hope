@@ -15,6 +15,7 @@ tag:
 
 可以在 Markdown 中使用的可用组件为:
 
+- `"AudioPlayer"`
 - `"Badge"`
 - `"BiliBili"`
 - `"CodePen"`

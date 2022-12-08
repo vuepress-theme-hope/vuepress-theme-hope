@@ -14,6 +14,8 @@ For example, if you call this plugin with `{ globalComponents: { backToTop: true
 
 This plugin support 8 components:
 
+- [AudioPlayer](audioplayer.md)
+
 - [Badge](badge.md)
 
 - [BiliBili](bilibili.md)

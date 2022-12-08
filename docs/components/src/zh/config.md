@@ -9,6 +9,7 @@ icon: config
 
   ```ts
   type AvailableComponent =
+    | "AudioPlayer"
     | "Badge"
     | "BiliBili"
     | "CodePen"
@@ -25,6 +26,7 @@ icon: config
 
 可接受的组件名称为:
 
+- `"AudioPlayer"`
 - `"Badge"`
 - `"BiliBili"`
 - `"CodePen"`
