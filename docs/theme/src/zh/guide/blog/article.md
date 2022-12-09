@@ -43,9 +43,9 @@ tag:
 
 ### 自动生成摘要
 
-主题默认情况下只会在文章列表中展示你指定的摘要或在 Frontmatter 中设置的描述。
+主题默认情况下会自动生成摘要。
 
-如果你想要让主题自动提取摘要，请在主题选项中设置 `plugins.blog.autoExcerpt: true`。
+如果你只想让主题展示你指定的摘要或在 Frontmatter 中设置的描述，请在主题选项中设置 `plugins.blog.excerptLength: 0`。
 
 ::: warning 摘要限制
 

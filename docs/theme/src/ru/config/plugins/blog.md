@@ -20,18 +20,26 @@ tag:
 
 ## Опции
 
-### autoExcerpt
+### excerpt
 
-- Тип: `number | boolean`
-- По умолчанию: `false`
+- Type: `boolean`
+- Default: `true`
 
-Генерировать ли выдержку для каждой страницы. Number value means excerpt length (default is `200`).
+Whether generate excerpt for page.
 
-::: warning Limitation
+### excerptSeparator
 
-Auto excerpt is not available in devServer by default, [see reasons and how to enable it](../theme/basic.md#hotreload).
+- Type: `string`
+- Default: `<!-- more -->`
 
-:::
+Separator used to split excerpt from page content.
+
+### excerptLength
+
+- Type: `number`
+- Default: `300`
+
+Length of excerpt when auto generating.
 
 ### filter
 
@@ -41,6 +49,13 @@ Auto excerpt is not available in devServer by default, [see reasons and how to e
 Фильтр страниц, определяющий, следует ли включать страницу.
 
 По умолчанию все страницы, созданные из файлов Markdown, но не домашняя страница, будут включены в качестве статей.
+
+### excerptFilter
+
+- Type: `(page: Page) => boolean`
+- Default: `filter` option
+
+Page filter, determine whether the plugin should generate excerpt for it.
 
 ### article
 

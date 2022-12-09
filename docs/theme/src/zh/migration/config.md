@@ -161,7 +161,7 @@ tag:
 
 - `blog.perPage` 重命名为 `blog.articlePerPage`
 
-- `blog.autoExcerpt` 移动至 `plugins.blog.autoExcerpt`，且默认值由 `true` 改为 `false`
+- `blog.autoExcerpt` 移动至 `plugins.blog.excerptLength`
 
 ### 加密配置
 

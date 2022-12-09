@@ -20,18 +20,26 @@ For instructions, please see [Blog Intro](../../guide/blog/intro.md).
 
 ## Options
 
-### autoExcerpt
+### excerpt
 
-- Type: `number | boolean`
-- Default: `false`
+- Type: `boolean`
+- Default: `true`
 
-Whether to generate excerpt for every page. Number value means excerpt length (default is `200`).
+Whether generate excerpt for page.
 
-::: warning Limitation
+### excerptSeparator
 
-Auto excerpt is not available in devServer by default, [see reasons and how to enable it](../theme/basic.md#hotreload).
+- Type: `string`
+- Default: `<!-- more -->`
 
-:::
+Separator used to split excerpt from page content.
+
+### excerptLength
+
+- Type: `number`
+- Default: `300`
+
+Length of excerpt when auto generating.
 
 ### filter
 
@@ -41,6 +49,13 @@ Auto excerpt is not available in devServer by default, [see reasons and how to e
 Page filter, determine whether a page should be included.
 
 By default, all the pages generated from Markdown files but not homepage will be included as articles.
+
+### excerptFilter
+
+- Type: `(page: Page) => boolean`
+- Default: `filter` option
+
+Page filter, determine whether the plugin should generate excerpt for it.
 
 ### article
 

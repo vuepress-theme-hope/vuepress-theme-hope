@@ -20,16 +20,30 @@ tag:
 
 ## 选项
 
-### autoExcerpt
+### excerpt
 
-- 类型: `number | boolean`
-- 默认值: `false`
+- 类型: `boolean`
+- 默认值: `true`
 
-是否为每个页面生成摘录。数字代表生成的摘录长度 (默认 `200`)
+是否生成摘要。
 
-::: warning 限制
+### excerptSeparator
 
-默认情况下自动生成摘要在 devServer 中不可用，[查看原因和如何启用](../theme/basic.md#hotreload)。
+- 类型: `string`
+- 默认值: `<!-- more -->`
+
+摘要分隔符。
+
+### excerptLength
+
+- 类型: `number`
+- 默认值: `300`
+
+自动生成的摘要的长度。
+
+::: note
+
+摘要的长度会尽可能的接近这个值。如果设置为 `0`，意味着不自动生成摘要。
 
 :::
 
@@ -41,6 +55,13 @@ tag:
 页面过滤器，此函数用于鉴别页面是否作为文章。
 
 默认情况下，所有从 Markdown 源文件中生成的非主页页面，会被作为文章。
+
+### excerptFilter
+
+- 类型: `(page: Page) => boolean`
+- 默认值: `filter` 选项
+
+页面过滤器，此函数用于鉴别插件是否需要生成摘要。
 
 ### article
 

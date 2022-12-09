@@ -41,22 +41,15 @@ Meanwhile, if the excerpt you want to set is not what you want to show at the be
 
 ### Automatically Generate Excerpt
 
-By default, the theme will only display excerpt you specify or the description set in frontmatter for articles in article list.
+By default, the theme extract article excerpts for you automatically,.
 
-If you want the theme extracting excerpts automatically, set `plugins.blog.autoExcerpt: true` in theme options.
+If you want the theme only display excerpt which you specify, set `plugins.blog.excerptLength: 0` in theme options.
 
 ::: warning Excerpt Limitation
 
-Auto excerpt generation is not available in devServer by default due to performance considerations, use [hotReload](../../config/theme/basic.md#hotreload) to enable it.
+We recommend you to use `<!-- more -->` to mark excerpt as first choice. If you do need a special excerpt, set it in frontmatter yourself.
 
-We recommend you to use `<!-- more -->` to mark excerpt as first choice. If you do need a special summary, set it in frontmatter yourself.
-
-For the comment-marked excerpt, we will separate excerpt from markdown content then render it to HTMLString, so any content outside excerpt **is not considered during rendering**, such restrictions like:
-
-- `[[toc]]` tag cannot get the title of the rest of the article
-- Links and footnotes can not render correctly if their citations are outside excerpt
-
-In addition, since both cases excerpt is directly inserted into the DOM through `innerHTML`, this means that any components will be parsed as native tags and cannot not be rendered as Vue Component.
+In addition, excerpt is directly inserted into the DOM through `innerHTML`, this means that no Vue features are available.
 
 :::
 

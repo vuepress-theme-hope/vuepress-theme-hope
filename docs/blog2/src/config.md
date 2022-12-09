@@ -59,7 +59,7 @@ Slugify function, used to convert key name which they are register in routes.
 - Details:
   - [Guide → Generating Excerpt](./guide.md#generating-excerpt)
 
-Excerpt generating options.
+Whether generate excerpt for page.
 
 ### excerptSeparator
 
@@ -68,10 +68,12 @@ Excerpt generating options.
 - Details:
   - [Guide → Generating Excerpt](./guide.md#generating-excerpt)
 
+Separator used to split excerpt from page content.
+
 ### excerptLength
 
 - Type: `number`
-- Default: `300400`
+- Default: `300`
 - Details:
   - [Guide → Generating Excerpt](./guide.md#generating-excerpt)
 

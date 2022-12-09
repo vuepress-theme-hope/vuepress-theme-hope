@@ -163,7 +163,7 @@ tag:
 
 - переименован `blog.perPage` в `blog.articlePerPage`
 
-- перемещен `blog.autoExcerpt` в `plugins.blog.autoExcerpt` и измените значение по умолчанию с `true` на `false`
+- перемещен `blog.autoExcerpt` в `plugins.blog.excerptLength`
 
 ### Конфигурация шифрования
 
