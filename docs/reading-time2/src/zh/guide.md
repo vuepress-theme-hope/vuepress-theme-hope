@@ -57,8 +57,8 @@ export default {
 ```vue
 <template>
   <div>
-    <p>预计阅读时间: {{ readingTime.minutes }} 分钟</p>
-    <p>字数: {{ readingTime.words }} 字</p>
+    <p>预计阅读时间: {{ page.readingTime.minutes }} 分钟</p>
+    <p>字数: {{ page.readingTime.words }} 字</p>
   </div>
 </template>
 
@@ -76,7 +76,7 @@ const pageData = usePageData();
 <template>
   <div>
     <p>{{ readingTimeInfo.time }}</p>
-    <p>{{ readingTime.word }}</p>
+    <p>{{ readingTimeInfo.word }}</p>
   </div>
 </template>
 

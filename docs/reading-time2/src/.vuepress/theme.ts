@@ -11,6 +11,9 @@ export default theme("reading-time2", {
   locales: {
     "/": {
       navbar: [
+        "/",
+        "/guide",
+        "/config",
         {
           text: version,
           icon: "note",
@@ -22,10 +25,14 @@ export default theme("reading-time2", {
           ],
         },
       ],
+      sidebar: false,
     },
 
     "/zh/": {
       navbar: [
+        "/zh/",
+        "/zh/guide",
+        "/zh/config",
         {
           text: version,
           icon: "note",
@@ -37,6 +44,7 @@ export default theme("reading-time2", {
           ],
         },
       ],
+      sidebar: false,
     },
   },
 

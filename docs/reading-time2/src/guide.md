@@ -57,8 +57,8 @@ You can get relevant data directly on the client side:
 ```vue
 <template>
   <div>
-    <p>Expect reading time: {{ readingTime.minutes }} minute(s)</p>
-    <p>Word count: {{ readingTime.words }} words</p>
+    <p>Expect reading time: {{ page.readingTime.minutes }} minute(s)</p>
+    <p>Word count: {{ page.readingTime.words }} words</p>
   </div>
 </template>
 
@@ -76,7 +76,7 @@ If you want to use with different locales, we provide the multilingual variable 
 <template>
   <div>
     <p>{{ readingTimeInfo.time }}</p>
-    <p>{{ readingTime.word }}</p>
+    <p>{{ readingTimeInfo.word }}</p>
   </div>
 </template>
 
