@@ -19,7 +19,7 @@
     "@vuepress/client": "2.0.0-beta.57",
     "@vuepress/plugin-docsearch": "2.0.0-beta.57",
     "@vuepress/plugin-pwa": "2.0.0-beta.57",
-    "@vuepress/plugin-pwa-popup": "2.0.0-beta.57",
+    "@vuepress/plugin-pwa-popup": "2.0.0-beta.50-pre.1",
     "@vuepress/plugin-shiki": "2.0.0-beta.57",
     "@vuepress/utils": "2.0.0-beta.57",
     "cross-env": "7.0.3",
