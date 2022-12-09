@@ -98,6 +98,15 @@ export interface BlogOptions extends PageExcerptOptions {
   slugify?: (name: string) => string;
 
   /**
+   * Excerpt generation
+   *
+   * 摘要生成
+   *
+   * @default false
+   */
+  excerpt?: boolean;
+
+  /**
    * Page filter, determine whether the plugin should generate excerpt for it.
    *
    * @description You should use this to skip pages that you don't need to generate excerpt for. E.g.: If users set `excerpt` or `description` in frontmatter, you may want to use them directly.

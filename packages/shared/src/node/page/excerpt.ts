@@ -10,15 +10,6 @@ const HEADING_TAGS = ["h1", "h2", "h3", "h4", "h5", "h6"];
 
 export interface PageExcerptOptions {
   /**
-   * Excerpt generation
-   *
-   * 摘要生成
-   *
-   * @default false
-   */
-  excerpt?: boolean;
-
-  /**
    * Excerpt separator
    *
    * 摘要分隔符
