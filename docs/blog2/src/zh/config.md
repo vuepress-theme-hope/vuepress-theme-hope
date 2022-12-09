@@ -96,7 +96,7 @@ Slugify 函数，用于转换 key 在路由中注册的形式。
 
 :::
 
-### customElement
+### isCustomElement
 
 - 类型: `(tagName: string) => boolean`
 - 默认值: `() => false`

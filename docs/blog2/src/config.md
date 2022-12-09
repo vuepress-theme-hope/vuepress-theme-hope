@@ -102,7 +102,7 @@ You should use this to skip pages that you don't need to generate excerpt for. E
 
 :::
 
-### customElement
+### isCustomElement
 
 - Type: `(tagName: string) => boolean`
 - Default: `() => false`
