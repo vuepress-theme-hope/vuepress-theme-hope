@@ -40,7 +40,7 @@ export default defineComponent({
 
   setup(props, { attrs, emit, slots }) {
     const route = useRoute();
-    const site = useSiteData();
+    const siteData = useSiteData();
 
     const config = toRef(props, "config");
 
@@ -88,7 +88,7 @@ export default defineComponent({
       // should not be active in `exact` mode
       if (props.exact) return false;
 
-      const localeKeys = Object.keys(site.value.locales);
+      const localeKeys = Object.keys(siteData.value.locales);
 
       return localeKeys.length
         ? // check all the locales
