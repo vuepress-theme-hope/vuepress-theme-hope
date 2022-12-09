@@ -15,35 +15,32 @@ const handleNode = (
   customElement: (tagName: string) => boolean
 ): AnyNode | null => {
   if (node.type === "tag") {
-    // remove heading id tabindex and anchor inside
-    if (HEADING_TAGS.includes(node.tagName)) {
-      delete node.attribs["id"];
-      delete node.attribs["tabindex"];
-      node.children = node.children.filter(
-        (child) =>
-          child.type !== "tag" ||
-          child.tagName !== "a" ||
-          child.attribs["class"] !== "header-anchor"
-      );
-    }
-
     // image using relative urls shall be dropped
     if (node.tagName === "img") {
       const { src } = node.attribs;
 
-      // this is a valid image link so we preserve it
-      if (isLinkHttp(src) || src.startsWith("/")) return node;
-
-      // The img is probably using alias
-      return null;
+      // this is not a resolvable image link
+      if (!isLinkHttp(src) && !src.startsWith("/")) return null;
     }
-
-    // remove `v-pre` attribute
-    if (node.tagName === "code" || node.tagName === "pre")
-      delete node.attribs["v-pre"];
 
     // standard tags can be returned
     if (HTML_TAGS.includes(node.tagName) || SVG_TAGS.includes(node.tagName)) {
+      // remove heading id tabindex and anchor inside
+      if (HEADING_TAGS.includes(node.tagName)) {
+        delete node.attribs["id"];
+        delete node.attribs["tabindex"];
+        node.children = node.children.filter(
+          (child) =>
+            child.type !== "tag" ||
+            child.tagName !== "a" ||
+            child.attribs["class"] !== "header-anchor"
+        );
+      }
+
+      // remove `v-pre` attribute
+      if (node.tagName === "code" || node.tagName === "pre")
+        delete node.attribs["v-pre"];
+
       node.children = handleNodes(node.children, base, customElement);
 
       return node;
