@@ -179,7 +179,12 @@ export const getBlogPlugin = (
       if (isEncrypted) info[ArticleInfoType.isEncrypted] = true;
 
       // save page excerpt to routeMeta
-      if (page.data.excerpt) info[ArticleInfoType.excerpt] = page.data.excerpt;
+      if (frontmatter.excerpt)
+        info[ArticleInfoType.excerpt] = frontmatter.excerpt;
+      else if (page.data.excerpt)
+        info[ArticleInfoType.excerpt] = page.data.excerpt;
+      else if (frontmatter.description)
+        info[ArticleInfoType.excerpt] = frontmatter.description;
 
       if (
         // reading time data is sensitive with markdown contents
@@ -365,20 +370,12 @@ export const getBlogPlugin = (
 
     excerpt: true,
 
-    excerptFilter: ({
-      data,
-      frontmatter,
-      path,
-    }: Page<{ autoDesc?: boolean }>) => {
+    excerptFilter: ({ frontmatter, path }) => {
       const isPageEncrypted = encryptedPaths.some((key) =>
         decodeURI(path).startsWith(key)
       );
 
-      return (
-        !isPageEncrypted &&
-        !("excerpt" in frontmatter) &&
-        (data.autoDesc || !("description" in frontmatter))
-      );
+      return !isPageEncrypted && !("excerpt" in frontmatter);
     },
 
     hotReload,
