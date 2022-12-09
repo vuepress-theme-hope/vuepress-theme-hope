@@ -1,25 +1,25 @@
 @use "@sass-palette/hope-config";
 
-pre[class*="language-"] > code {
-  background: none;
-  color: var(--code-color);
-
-  font-family: var(--font-family-code);
-  text-align: left;
-  white-space: pre;
-  word-spacing: normal;
-  word-wrap: normal;
-  word-break: normal;
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  hyphens: none;
-
-  transition: color var(--color-transition);
-}
-
 /* Code blocks */
 pre[class*="language-"] {
   overflow: auto;
+
+  > code {
+    background: none;
+    color: var(--code-color);
+
+    font-family: var(--font-family-code);
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-wrap: normal;
+    word-break: normal;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    hyphens: none;
+
+    transition: color var(--color-transition);
+  }
 }
 
 /* Inline code */
@@ -38,7 +38,9 @@ pre[class*="language-"] {
     padding: 1rem;
     border-radius: 6px;
 
-    line-height: 1.4;
+    // WARNING: Safari only support integer pixels for `<pre>` tag line-height
+    // so we override this into a integer
+    line-height: 1.375;
 
     code {
       padding: 0;
@@ -83,11 +85,9 @@ div[class*="language-"] {
   pre[class*="language-"] {
     position: relative;
     z-index: 1;
-    background: transparent;
 
-    // TODO: Add this in docs
-    // force override the background color to be compatible with shiki
-    // background: transparent !important;
+    // WARNING: force override the background color to be compatible with shiki
+    background: transparent !important;
   }
 
   .highlight-lines {
@@ -124,7 +124,6 @@ div[class*="language-"] {
 
       transition: border-color var(--color-transition);
 
-      // edited
       @media (max-width: hope-config.$mobile) {
         border-radius: 0;
       }
@@ -164,7 +163,9 @@ div[class*="language-"] {
 
       color: var(--code-line-color);
 
-      line-height: 1.4;
+      // WARNING: Safari only support integer pixels for `<pre>` tag line-height
+      // so we override this into a integer
+      line-height: 1.375;
       counter-reset: line-number;
       text-align: center;
 
@@ -177,7 +178,10 @@ div[class*="language-"] {
     .line-number {
       position: relative;
       z-index: 4;
-      height: 1.4em;
+
+      // WARNING: Safari only support integer pixels for `<pre>` tag line-height
+      // so we override this into a integer      h
+      height: 1.375em;
       user-select: none;
 
       &::before {
