@@ -1,5 +1,4 @@
-import { getPageExcerpt } from "vuepress-plugin-blog2";
-import { utoa } from "vuepress-shared/node";
+import { getPageExcerpt, utoa } from "vuepress-shared/node";
 import { generatePageIndex } from "./generateIndex.js";
 
 import type { App, Page } from "@vuepress/core";

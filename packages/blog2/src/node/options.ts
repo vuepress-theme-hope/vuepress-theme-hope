@@ -1,4 +1,5 @@
 import type { Page } from "@vuepress/core";
+import type { PageExcerptOptions } from "vuepress-shared/node";
 
 import type { BlogCategoryOptions, BlogTypeOptions } from "./typings/index.js";
 
@@ -21,7 +22,7 @@ export type PageWithExcerpt<
   ExtraPageFields extends Record<any, any> = Record<string, unknown>
 > = Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>;
 
-export interface BlogOptions {
+export interface BlogOptions extends PageExcerptOptions {
   /**
    * Function getting article info.
    *
@@ -97,37 +98,6 @@ export interface BlogOptions {
   slugify?: (name: string) => string;
 
   /**
-   * Excerpt generation
-   *
-   * 摘要生成
-   *
-   * @default false
-   */
-  excerpt?: boolean;
-
-  /**
-   * Excerpt separator
-   *
-   * 摘要分隔符
-   *
-   * @default '<!-- more -->'
-   */
-  excerptSeparator?: string;
-
-  /**
-   * Length of excerpt
-   *
-   * @description Excerpt length will be the minimal possible length reaching this value
-   *
-   * 摘要的长度
-   *
-   * @description 摘要的长度会尽可能的接近这个值
-   *
-   * @default 300
-   */
-  excerptLength?: number;
-
-  /**
    * Page filter, determine whether the plugin should generate excerpt for it.
    *
    * @description You should use this to skip pages that you don't need to generate excerpt for. E.g.: If users set `excerpt` or `description` in frontmatter, you may want to use them directly.
@@ -154,17 +124,6 @@ export interface BlogOptions {
   >(
     page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
   ) => boolean;
-
-  /**
-   * Tags which is considered as custom elements
-   *
-   * @description This is used to determine whether a tag is a custom element since all vue components are removed in excerpt
-   *
-   * 被认为是自定义元素的标签
-   *
-   * @description 用于判断一个标签是否是自定义元素，因为在摘要中，所有的 vue 组件都会被移除
-   */
-  customElement?: (tagName: string) => boolean;
 
   /**
    * Whether enable hotReload

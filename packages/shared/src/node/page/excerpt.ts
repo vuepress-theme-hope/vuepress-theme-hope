@@ -1,18 +1,61 @@
 import { isLinkHttp, removeEndingSlash } from "@vuepress/shared";
 import { load } from "cheerio";
 import matter from "gray-matter";
-import { HTML_TAGS, SVG_TAGS } from "vuepress-shared/node";
+import { HTML_TAGS, SVG_TAGS } from "../utils/index.js";
 
 import type { App, Page } from "@vuepress/core";
 import type { AnyNode } from "cheerio";
-import { BlogOptions } from "./options.js";
 
 const HEADING_TAGS = ["h1", "h2", "h3", "h4", "h5", "h6"];
+
+export interface PageExcerptOptions {
+  /**
+   * Excerpt generation
+   *
+   * 摘要生成
+   *
+   * @default false
+   */
+  excerpt?: boolean;
+
+  /**
+   * Excerpt separator
+   *
+   * 摘要分隔符
+   *
+   * @default '<!-- more -->'
+   */
+  excerptSeparator?: string;
+
+  /**
+   * Length of excerpt
+   *
+   * @description Excerpt length will be the minimal possible length reaching this value
+   *
+   * 摘要的长度
+   *
+   * @description 摘要的长度会尽可能的接近这个值
+   *
+   * @default 300
+   */
+  excerptLength?: number;
+
+  /**
+   * Tags which is considered as custom elements
+   *
+   * @description This is used to determine whether a tag is a custom element since all vue components are removed in excerpt
+   *
+   * 被认为是自定义元素的标签
+   *
+   * @description 用于判断一个标签是否是自定义元素，因为在摘要中，所有的 vue 组件都会被移除
+   */
+  isCustomElement?: (tagName: string) => boolean;
+}
 
 const handleNode = (
   node: AnyNode,
   base: string,
-  customElement: (tagName: string) => boolean
+  isCustomElement: (tagName: string) => boolean
 ): AnyNode | null => {
   if (node.type === "tag") {
     // image using relative urls shall be dropped
@@ -41,7 +84,7 @@ const handleNode = (
       if (node.tagName === "code" || node.tagName === "pre")
         delete node.attribs["v-pre"];
 
-      node.children = handleNodes(node.children, base, customElement);
+      node.children = handleNodes(node.children, base, isCustomElement);
 
       return node;
     }
@@ -52,12 +95,12 @@ const handleNode = (
       node.attribs["href"] = `${removeEndingSlash(base)}${node.attribs["to"]}`;
       node.attribs["target"] = "blank";
       delete node.attribs["to"];
-      node.children = handleNodes(node.children, base, customElement);
+      node.children = handleNodes(node.children, base, isCustomElement);
 
       return node;
     }
 
-    if (customElement(node.tagName)) return node;
+    if (isCustomElement(node.tagName)) return node;
 
     // other tags will be considered as vue components and will be dropped
     return null;
@@ -69,56 +112,53 @@ const handleNode = (
 const handleNodes = (
   nodes: AnyNode[] | null,
   base: string,
-  customElement: (tagName: string) => boolean
+  isCustomElement: (tagName: string) => boolean
 ): AnyNode[] =>
   Array.isArray(nodes)
     ? nodes
-        .map((node) => handleNode(node, base, customElement))
+        .map((node) => handleNode(node, base, isCustomElement))
         .filter((node): node is AnyNode => node !== null)
     : [];
 
 const $ = load("");
 
 export const getPageExcerpt = (
-  app: App,
-  page: Page,
+  { markdown, options: { base } }: App,
+  { content, contentRendered, filePath, filePathRelative, frontmatter }: Page,
   {
-    customElement = (): boolean => false,
+    isCustomElement = (): boolean => false,
     excerptSeparator = "<!-- more -->",
     excerptLength = 300,
-  }: Pick<
-    BlogOptions,
-    "customElement" | "excerptLength" | "excerptSeparator"
-  > = {}
+  }: PageExcerptOptions = {}
 ): string => {
   // get page content
-  const { excerpt } = matter(page.content, {
+  const { excerpt } = matter(content, {
     excerpt: true,
     // eslint-disable-next-line @typescript-eslint/naming-convention
     excerpt_separator: excerptSeparator,
   });
 
   if (excerpt) {
-    const renderedContent = app.markdown.render(
+    const renderedContent = markdown.render(
       excerpt,
       // markdown env
       {
-        base: app.options.base,
-        filePath: page.filePath,
-        filePathRelative: page.filePathRelative,
-        frontmatter: { ...page.frontmatter },
+        base,
+        filePath,
+        filePathRelative,
+        frontmatter: { ...frontmatter },
       }
     );
 
     return $.html(
-      handleNodes($.parseHTML(renderedContent), app.options.base, customElement)
+      handleNodes($.parseHTML(renderedContent), base, isCustomElement)
     );
   } else if (excerptLength > 0) {
     let excerpt = "";
-    const rootNodes = $.parseHTML(page.contentRendered) || [];
+    const rootNodes = $.parseHTML(contentRendered) || [];
 
     for (const node of rootNodes) {
-      const resolvedNode = handleNode(node, app.options.base, customElement);
+      const resolvedNode = handleNode(node, base, isCustomElement);
 
       if (resolvedNode) {
         excerpt += `${$.html(resolvedNode)}`;

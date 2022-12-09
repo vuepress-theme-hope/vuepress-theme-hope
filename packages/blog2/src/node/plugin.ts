@@ -5,10 +5,10 @@ import {
   preparePagesData,
   preparePagesRoutes,
 } from "@vuepress/core";
+import { getPageExcerpt } from "vuepress-shared/node";
 import { watch } from "chokidar";
 
 import { prepareCategory } from "./category.js";
-import { getPageExcerpt } from "./excerpt.js";
 import { prepareType } from "./type.js";
 import { getPageMap, logger } from "./utils.js";
 
@@ -23,11 +23,11 @@ export const blogPlugin =
       filter = (page): boolean =>
         Boolean(page.filePathRelative) && !page.frontmatter["home"],
       metaScope = "_blog",
-      customElement = (): boolean => false,
       excerpt = true,
       excerptSeparator = "<!-- more -->",
       excerptLength = 300,
       excerptFilter = filter,
+      isCustomElement = (): boolean => false,
     } = options;
 
     let generatePageKeys: string[] = [];
@@ -44,7 +44,7 @@ export const blogPlugin =
       extendsPage: (page): void => {
         if (excerpt && excerptFilter(page)) {
           (<PageWithExcerpt>page).data["excerpt"] = getPageExcerpt(app, page, {
-            customElement,
+            isCustomElement,
             excerptSeparator,
             excerptLength,
           });
