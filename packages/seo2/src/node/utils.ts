@@ -3,8 +3,7 @@ import {
   removeEndingSlash,
   removeLeadingSlash,
 } from "@vuepress/shared";
-import matter from "gray-matter";
-import { Logger, isAbsoluteUrl, isUrl, md2text } from "vuepress-shared/node";
+import { Logger, isAbsoluteUrl, isUrl } from "vuepress-shared/node";
 
 import type { App, SiteLocaleConfig } from "@vuepress/core";
 import type { SeoOptions } from "./options.js";
@@ -82,17 +81,3 @@ export const resolveUrl = (
       ? removeEndingSlash(hostname)
       : `https://${removeEndingSlash(hostname)}`
   }${base}${removeLeadingSlash(url)}`;
-
-export const extractPageContent = (content: string): string =>
-  md2text(
-    matter(content)
-      .content.trim()
-      // remove first heading1 as title
-      .replace(/^# (.*)$/gm, "")
-  )
-    // convert link breaks into spaces
-    .replace(/(?:\r?\n)+/g, " ")
-    // convert 2 or more spaces into 1
-    .replace(/ +/g, " ")
-    // trim
-    .trim();

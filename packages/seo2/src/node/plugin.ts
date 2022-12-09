@@ -1,9 +1,9 @@
 import { colors } from "@vuepress/utils";
-import { stripTags } from "vuepress-shared/node";
+import { getPageText, stripTags } from "vuepress-shared/node";
 
 import { convertOptions } from "./compact/index.js";
 import { appendSEO, generateRobotsTxt } from "./seo.js";
-import { extractPageContent, logger } from "./utils.js";
+import { logger } from "./utils.js";
 
 import type { Plugin, PluginFunction } from "@vuepress/core";
 import type { SeoOptions } from "./options.js";
@@ -41,12 +41,10 @@ export const seoPlugin =
               .replace(/ +/g, " ")
               .trim();
           else {
-            const pageContent = extractPageContent(page.content);
+            const pageText = getPageText(page.content);
 
             page.frontmatter.description =
-              pageContent.length > 180
-                ? `${pageContent.slice(0, 177)}...`
-                : pageContent;
+              pageText.length > 180 ? `${pageText.slice(0, 177)}...` : pageText;
           }
 
           page.data.autoDesc = true;
