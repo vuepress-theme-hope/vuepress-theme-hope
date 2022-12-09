@@ -49,7 +49,7 @@ tag:
 
 For performance reasons, hot updates are not enabled for blog-related data by default in devServer, i.e. if you add new articles or modify the categories, time, tags, sticky, star, etc. of existing articles, the related data of the entire site will not update until you restart devServer.
 
-In addition, since the blog information will be written to the underlying data of VuePress, modifying this file will cause application restart, so autoExcerpt generation and reading time (including word count information) which are sensitive to Markdown content will not take effect in devServer.
+In addition, since the blog information will be written to the underlying data of VuePress, modifying this file will cause application restart, so reading time (including word count information) which are sensitive to Markdown content will not take effect in devServer.
 
 If you want these to take effect or be updated in real time, you need to set `hotReload: true` and accept the fact that each modification will trigger a page refresh and some time having white screen due to heavy recomputing work.
 

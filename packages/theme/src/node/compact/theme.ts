@@ -91,7 +91,7 @@ const handleBlogOptions = (blogOptions: Record<string, unknown>): void => {
 
   if ("autoExcerpt" in blogOptions) {
     logger.error(
-      '"blog.autoExcerpt" options is no longer supported, please use "plugins.blog.autoExcerpt" instead'
+      '"blog.autoExcerpt" options is no longer supported, please use "plugins.blog.excerptLength" instead'
     );
     delete blogOptions["autoExcerpt"];
   }

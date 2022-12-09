@@ -163,7 +163,7 @@ Since the theme no longer has a built-in search:
 
 - rename `blog.perPage` to `blog.articlePerPage`
 
-- move `blog.autoExcerpt` to `plugins.blog.autoExcerpt`, and change default value from `true` to `false`
+- move `blog.autoExcerpt` to `plugins.blog.excerptLength`
 
 ### Encryption Config
 
