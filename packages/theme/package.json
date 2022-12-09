@@ -64,7 +64,7 @@
   },
   "dependencies": {
     "@types/body-scroll-lock": "^3.1.0",
-    "@vuepress/cli": "2.0.0-beta.57",
+    "@vuepress/cli": "2.0.0-beta.50-pre.1",
     "@vuepress/client": "2.0.0-beta.57",
     "@vuepress/core": "2.0.0-beta.57",
     "@vuepress/plugin-active-header-links": "2.0.0-beta.57",
