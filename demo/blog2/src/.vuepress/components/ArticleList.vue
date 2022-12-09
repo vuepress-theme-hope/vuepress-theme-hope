@@ -1,35 +1,40 @@
 <template>
   <div class="article-wrapper">
     <div v-if="!items.length">Nothing in here.</div>
-    <article class="article" v-for="{ info, path } in items">
+    <article
+      v-for="{ info, path } in items"
+      class="article"
+      @click="$router.push(path)"
+    >
       <header class="title">
-        <RouterLink :to="path">
-          {{ info.title }}
-        </RouterLink>
+        {{
+          (isTimeline ? `${new Date(info.date).toLocaleDateString()}: ` : "") +
+          info.title
+        }}
       </header>
       <hr />
       <div class="article-info">
         <span v-if="info.author" class="author">Author: {{ info.author }}</span>
-        <span v-if="info.date" class="date"
+        <span v-if="info.date && !isTimeline" class="date"
           >Date: {{ new Date(info.date).toLocaleDateString() }}</span
         >
         <span v-if="info.category" class="category"
-          >Category: {{ info.category.join(",") }}</span
+          >Category: {{ info.category.join(", ") }}</span
         >
-        <span v-if="info.tag" class="tag">Tag: {{ info.tag.join(",") }}</span>
+        <span v-if="info.tag" class="tag">Tag: {{ info.tag.join(", ") }}</span>
       </div>
+      <div v-if="info.excerpt" class="excerpt" v-html="info.excerpt" />
     </article>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { RouterLink } from "vue-router";
-
 defineProps({
   items: {
     type: Array,
     default: () => [],
   },
+  isTimeline: Boolean,
 });
 </script>
 <style lang="scss">
@@ -48,12 +53,18 @@ defineProps({
   width: 100%;
   margin: 0 auto 1.25rem;
   padding: 1rem 1.25rem;
+  border: 1px solid var(--c-border);
   border-radius: 0.4rem;
+  color: var(--c-text);
 
   text-align: left;
 
   @media (max-width: 419px) {
     border-radius: 0;
+  }
+
+  &:hover {
+    cursor: pointer;
   }
 
   .title {
@@ -83,8 +94,6 @@ defineProps({
     }
 
     &:hover {
-      cursor: pointer;
-
       &::after {
         visibility: visible;
         transform: scaleX(1);
@@ -103,6 +112,20 @@ defineProps({
     > span {
       margin-right: 0.5em;
       line-height: 1.8;
+    }
+  }
+
+  .excerpt {
+    h1 {
+      display: none;
+    }
+
+    h2 {
+      font-size: 1.2em;
+    }
+
+    h3 {
+      font-size: 1.15em;
     }
   }
 }

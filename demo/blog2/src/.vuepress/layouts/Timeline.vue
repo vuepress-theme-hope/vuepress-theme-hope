@@ -3,7 +3,7 @@
     <template #page>
       <main class="page">
         <h1 class="timeline-title">Timeline</h1>
-        <ArticleList :items="timelines.items" />
+        <ArticleList :items="timelines.items" is-timeline />
       </main>
     </template>
   </ParentLayout>

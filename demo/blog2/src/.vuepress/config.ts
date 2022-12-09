@@ -43,12 +43,13 @@ export default defineUserConfig({
         filePathRelative ? filePathRelative.startsWith("posts/") : false,
 
       // getting article info
-      getInfo: ({ frontmatter, title }) => ({
+      getInfo: ({ frontmatter, title, excerpt }) => ({
         title,
         author: frontmatter.author || "",
         date: frontmatter.date || null,
         category: frontmatter.category || [],
         tag: frontmatter.tag || [],
+        excerpt,
       }),
 
       category: [

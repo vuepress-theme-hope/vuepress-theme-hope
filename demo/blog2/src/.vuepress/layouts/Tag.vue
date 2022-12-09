@@ -77,6 +77,7 @@ const tagMap = useBlogCategory("tag");
 
     &.router-link-active {
       background: var(--c-brand);
+      color: var(--c-bg);
 
       .tag-num {
         color: var(--c-bg);

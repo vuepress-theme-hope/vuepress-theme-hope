@@ -78,6 +78,7 @@ const categoryMap = useBlogCategory("category");
 
     &.router-link-active {
       background: var(--c-brand);
+      color: var(--c-bg);
 
       .category-num {
         color: var(--c-bg);
