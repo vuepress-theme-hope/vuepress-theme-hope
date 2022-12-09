@@ -3,18 +3,12 @@ import { watch } from "chokidar";
 
 import { resolveAlias } from "./alias.js";
 import { extendsBundlerOptions } from "./bundler.js";
-import {
-  checkStyle,
-  convertFrontmatter,
-  convertThemeOptions,
-} from "./compact/index.js";
+import { checkStyle, convertThemeOptions } from "./compact/index.js";
 import {
   checkSocialMediaIcons,
   getStatus,
   getThemeData,
 } from "./config/index.js";
-import { checkFrontmatter } from "./frontmatter/index.js";
-import { extendsPage } from "./page/index.js";
 import { getPluginConfig, usePlugin } from "./plugins/index.js";
 import {
   prepareConfigFile,
@@ -23,8 +17,8 @@ import {
   prepareThemeColorScss,
 } from "./prepare/index.js";
 
-import type { Page, ThemeFunction } from "@vuepress/core";
-import type { ThemeOptions, ThemePageData } from "../shared/index.js";
+import type { ThemeFunction } from "@vuepress/core";
+import type { ThemeOptions } from "../shared/index.js";
 
 const __dirname = getDirname(import.meta.url);
 
@@ -55,7 +49,7 @@ export const hopeTheme =
     const themeConfig = getThemeData(app, themeOptions, status);
     const icons = status.enableBlog ? checkSocialMediaIcons(themeConfig) : {};
 
-    usePlugin(app, plugins, hotReload);
+    usePlugin(app, plugins, legacy, hotReload);
 
     if (isDebug) console.log("Theme plugin options:", plugins);
 
@@ -73,17 +67,6 @@ export const hopeTheme =
 
       extendsBundlerOptions,
 
-      extendsPage: (page): void => {
-        if (legacy)
-          page.frontmatter = convertFrontmatter(
-            page.frontmatter,
-            page.filePathRelative || ""
-          );
-
-        checkFrontmatter(page, app.env.isDebug);
-        extendsPage(<Page<ThemePageData>>page);
-      },
-
       onPrepared: (): Promise<void> =>
         Promise.all([
           prepareSidebarData(app, themeConfig, sidebarSorter),
@@ -94,22 +77,22 @@ export const hopeTheme =
       onWatched: (app, watchers): void => {
         if (hotReload) {
           // this ensure the page is generated or updated
-          const searchIndexWatcher = watch("pages/**/*.vue", {
+          const structureSidebarWatcher = watch("pages/**/*.vue", {
             cwd: app.dir.temp(),
             ignoreInitial: true,
           });
 
-          searchIndexWatcher.on("add", () => {
+          structureSidebarWatcher.on("add", () => {
             void prepareSidebarData(app, themeConfig, sidebarSorter);
           });
-          searchIndexWatcher.on("change", () => {
+          structureSidebarWatcher.on("change", () => {
             void prepareSidebarData(app, themeConfig, sidebarSorter);
           });
-          searchIndexWatcher.on("unlink", () => {
+          structureSidebarWatcher.on("unlink", () => {
             void prepareSidebarData(app, themeConfig, sidebarSorter);
           });
 
-          watchers.push(searchIndexWatcher);
+          watchers.push(structureSidebarWatcher);
         }
       },
 

@@ -1,5 +1,6 @@
 import { blogPlugin } from "vuepress-plugin-blog2";
 import { getDate, timeTransformer } from "vuepress-shared/node";
+import { checkFrontmatter } from "../frontmatter/check.js";
 import { ArticleInfoType, PageType } from "../../shared/index.js";
 
 import type { App, Page, Plugin } from "@vuepress/core";
@@ -124,6 +125,8 @@ export const getBlogPlugin = (
         decodeURI(path).startsWith(key)
       );
       const isSlide = isArticle && frontmatter.layout === "Slide";
+
+      checkFrontmatter(page, app.env.isDebug);
 
       // save page type to routeMeta
       info[ArticleInfoType.type] = frontmatter.home

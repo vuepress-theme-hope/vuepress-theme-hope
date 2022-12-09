@@ -5,13 +5,15 @@ import { useGitPlugin } from "vuepress-shared/node";
 
 import type { App } from "@vuepress/core";
 import type { PluginsOptions } from "../../shared/index.js";
+import { useExtendsPagePlugin } from "./pageConverter.js";
 
 const __dirname = getDirname(import.meta.url);
 
 export const usePlugin = (
   app: App,
   plugins: PluginsOptions,
-  hotReload = false
+  legacy: boolean,
+  hotReload: boolean
 ): void => {
   // respect git options
   if ("git" in plugins)
@@ -50,4 +52,6 @@ export const usePlugin = (
     palette: ".vuepress/styles/palette.scss",
     style: ".vuepress/styles/index.scss",
   });
+
+  useExtendsPagePlugin(app, legacy);
 };
