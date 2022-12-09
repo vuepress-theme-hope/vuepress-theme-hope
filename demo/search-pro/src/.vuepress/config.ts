@@ -25,8 +25,7 @@ export default defineUserConfig({
       hotReload: true,
       customFields: [
         {
-          name: "tags",
-          getter: ({ frontmatter }) => frontmatter.tag as string[],
+          getter: (page) => page.frontmatter.tag as string[],
           formatter: `Tag: $content`,
         },
       ],
