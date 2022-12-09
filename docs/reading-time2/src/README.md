@@ -5,23 +5,18 @@ icon: home
 heroImage: /logo.svg
 heroText: vuepress-plugin-reading-time2
 tagline: Expect reading time and word count statistics
+actions:
+  - text: Guide 💡
+    link: /guide.html
+    type: primary
+
+  - text: Config 🛠
+    link: /config.html
+
 footer: Theme by <a href="https://vuepress-theme-hope.github.io/v2/" target="_blank">VuePress Theme Hope</a> | MIT Licensed, Copyright © 2019-present Mr.Hope
 
 copyright: false
 ---
-
-This plugin will inject expect reading time and word count statistics into the page object.
-
-Will automatically inject `readingTime` into the page object:
-
-```ts
-interface ReadingTime {
-  /** Expect reading minute */
-  minutes: number;
-  /** Words count */
-  words: number;
-}
-```
 
 ## How to use
 
@@ -82,65 +77,5 @@ export default {
   ],
 };
 ```
-
-:::
-
-## Plugin Options
-
-### wordPerMinute
-
-- Type: `number`
-- Default: `300`
-
-Reading speed (words per minute)
-
-### locales
-
-- Type: `ReadingTimeLocaleConfig`
-
-  ```ts
-  interface ReadingTimeLocaleData {
-    /**
-     * Word template, `$word` will be automatically replaced by actual words
-     */
-    word: string;
-
-    /**
-     * Text for less than one minute
-     */
-    less1Minute: string;
-
-    /**
-     * Time template
-     */
-    time: string;
-  }
-
-  interface ReadingTimeLocaleConfig {
-    [localePath: string]: ReadingTimeLocaleData;
-  }
-  ```
-
-- Required: No
-
-Locales config for reading-time plugin.
-
-::: details Built-in Supported Languages
-
-- **Simplified Chinese** (zh-CN)
-- **Traditional Chinese** (zh-TW)
-- **English (United States)** (en-US)
-- **German** (de-AT)
-- **Russian** (ru-RU)
-- **Ukrainian** (uk-UA)
-- **Vietnamese** (vi-VN)
-- **Portuguese (Brazil)** (pt-BR)
-- **Polish** (pl-PL)
-- **French** (fr-FR)
-- **Spanish** (es-ES)
-- **Slovak** (sk-SK)
-- **Japanese** (ja-JP)
-- **Turkish** (tr-TR)
-- **Korean** (ko-KR)
 
 :::
