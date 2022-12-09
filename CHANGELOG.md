@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.139](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.138...v2.0.0-beta.139) (2022-12-09)
+
+### ⚠ BREAKING CHANGES
+
+- **blog2:** rename customElement to isCustomElement
+
+### Features
+
+- **blog2:** rename customElement to isCustomElement ([7241621](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/72416211fddbf23ab0279bf96509a6e1eec34c75))
+- **feed2:** improve feed generating ([0d2c944](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0d2c94425bb12fc46f758d1e4ba588d7dc9c41b5))
+- **shared:** add getPageText ([a6e0f13](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a6e0f13989edcda016b790889d666d066785eba7))
+
+### Bug Fixes
+
+- **theme:** support frontmatter excerpt ([bef9d70](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/bef9d70b7ed3df25493a0c89a19fdfc23da91b83))
+
 ## [2.0.0-beta.138](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.137...v2.0.0-beta.138) (2022-12-09)
 
 ## [2.0.0-beta.137](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.136...v2.0.0-beta.137) (2022-12-09)

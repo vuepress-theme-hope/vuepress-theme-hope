@@ -1,6 +1,6 @@
 {
   "name": "components-demo",
-  "version": "2.0.0-beta.138",
+  "version": "2.0.0-beta.139",
   "private": true,
   "description": "Demo for vuepress-plugin-components",
   "license": "MIT",
