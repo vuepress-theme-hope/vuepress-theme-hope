@@ -1,4 +1,5 @@
 packages:
   - demo/*
   - docs/*
+  - docs-shared/
   - packages/*

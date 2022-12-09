@@ -2,7 +2,7 @@
 node_modules/
 
 # Build files
-docs/shared/lib/
+docs-shared/lib/
 packages/*/lib/
 
 # Vuepress Cache
