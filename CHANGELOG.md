@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.137](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.136...v2.0.0-beta.137) (2022-12-09)
+
+### Bug Fixes
+
+- **search-pro:** fix option customFields not effects ([#2512](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2512)) ([b8c9973](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b8c99735b0a06ae8e18bd6e6b6379891532093c3))
+- **theme:** fix blog related issues ([c232fa4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c232fa4777da23afdf786de3fd2cddde46a69338))
+- **theme:** fix code line number alignment in safari ([1efc997](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1efc997a073d11c8f3ba67034a4229177e434c4b))
+
 ## [2.0.0-beta.136](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.135...v2.0.0-beta.136) (2022-12-08)
 
 ### Features
