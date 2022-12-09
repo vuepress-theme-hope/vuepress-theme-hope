@@ -1,13 +1,13 @@
 // Vitest Snapshot v1
 
-exports[`Should generate page excerpt correctly > Should generate excerpt 1`] = `""`;
+exports[`Should generate page excerpt correctly > Should generate excerpt for all pages 1`] = `""`;
 
-exports[`Should generate page excerpt correctly > Should generate excerpt 2`] = `
+exports[`Should generate page excerpt correctly > Should generate excerpt for all pages 2`] = `
 "<p>A text with </p>
 "
 `;
 
-exports[`Should generate page excerpt correctly > Should generate excerpt 3`] = `
+exports[`Should generate page excerpt correctly > Should generate excerpt for all pages 3`] = `
 "<p>A long code block which is expected to be cut of</p>
 <div class=\\"language-javascript line-numbers-mode\\" data-ext=\\"js\\"><pre class=\\"language-javascript\\"><code>const a = 1;
 const a = 1;
@@ -100,13 +100,13 @@ const a = 1;
 </code></pre><div class=\\"line-numbers\\" aria-hidden=\\"true\\"><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div><div class=\\"line-number\\"></div></div></div>"
 `;
 
-exports[`Should generate page excerpt correctly > Should generate excerpt 4`] = `
+exports[`Should generate page excerpt correctly > Should generate excerpt for all pages 4`] = `
 "<p>Here is <strong>article excerpt</strong>.</p>
 <div class=\\"language-javascript line-numbers-mode\\" data-ext=\\"js\\"><pre class=\\"language-javascript\\"><code>const a = 1;
 </code></pre><div class=\\"line-numbers\\" aria-hidden=\\"true\\"><div class=\\"line-number\\"></div></div></div>"
 `;
 
-exports[`Should generate page excerpt correctly > Should generate excerpt 5`] = `
+exports[`Should generate page excerpt correctly > Should generate excerpt for all pages 5`] = `
 "<h1> Heading 1</h1>
 <h2> Heading 2</h2>
 <h3> Heading 3</h3>
@@ -114,14 +114,36 @@ exports[`Should generate page excerpt correctly > Should generate excerpt 5`] = 
 <h5> Heading 5</h5>
 <h6> Heading 6</h6>
 <h2> Text</h2>
-<p>This sentence has <strong>bold</strong>、<em>italic</em> and <s>delete</s> style text.</p>"
+<p>This sentence has <strong>bold</strong>、<em>italic</em> and <s>delete</s> style text.</p>
+<h2> Paragraph</h2>
+<p>This is a paragraph.</p>
+<p>This is another paragraph.</p>"
 `;
 
-exports[`Should generate page excerpt correctly > Should generate excerpt 6`] = `
+exports[`Should generate page excerpt correctly > Should generate excerpt for all pages 6`] = `
 "<p>This is a <a href=\\"/demo.html\\" target=\\"blank\\">link</a> referencing other markdown.</p>
 <p><img src=\\"/logo.svg\\" alt=\\"logo\\"></p>
 <p><img src=\\"/logo.svg\\" alt=\\"logo\\"></p>
-<p><img src=\\"https://exmaple.com/logo.svg\\" alt=\\"logo\\"></p>"
+<p><img src=\\"https://exmaple.com/logo.svg\\" alt=\\"logo\\"></p>
+<p>A inline image , <img src=\\"/logo.svg\\" alt=\\"logo\\"> and a <img src=\\"https://exmaple.com/logo.svg\\" alt=\\"logo\\">.</p>"
 `;
 
-exports[`Should generate page excerpt correctly > Should generate excerpt 7`] = `""`;
+exports[`Should generate page excerpt correctly > Should generate excerpt for all pages 7`] = `""`;
+
+exports[`Should generate page excerpt correctly > Should only generate excerpt for marker 1`] = `""`;
+
+exports[`Should generate page excerpt correctly > Should only generate excerpt for marker 2`] = `""`;
+
+exports[`Should generate page excerpt correctly > Should only generate excerpt for marker 3`] = `""`;
+
+exports[`Should generate page excerpt correctly > Should only generate excerpt for marker 4`] = `
+"<p>Here is <strong>article excerpt</strong>.</p>
+<div class=\\"language-javascript line-numbers-mode\\" data-ext=\\"js\\"><pre class=\\"language-javascript\\"><code>const a = 1;
+</code></pre><div class=\\"line-numbers\\" aria-hidden=\\"true\\"><div class=\\"line-number\\"></div></div></div>"
+`;
+
+exports[`Should generate page excerpt correctly > Should only generate excerpt for marker 5`] = `""`;
+
+exports[`Should generate page excerpt correctly > Should only generate excerpt for marker 6`] = `""`;
+
+exports[`Should generate page excerpt correctly > Should only generate excerpt for marker 7`] = `""`;

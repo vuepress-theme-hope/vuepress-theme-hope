@@ -26,11 +26,11 @@ import type { PluginWithOptions } from "markdown-it";
 import type Token from "markdown-it/lib/token.js";
 import type { FigureOptions } from "../typings/index.js";
 
-const removeAttribute = (token: Token, attribute: string) => {
+const removeAttribute = (token: Token, attribute: string): void => {
   token.attrs = (token.attrs || []).filter(([key]) => key !== attribute);
 };
 
-const getCaption = (image: Token) => {
+const getCaption = (image: Token): string => {
   const title = image.attrs?.find(([attr]) => attr === "title")?.[1];
 
   if (title) {

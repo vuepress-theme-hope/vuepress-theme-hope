@@ -35,11 +35,11 @@ const CONTENT_INLINE_TAGS =
 const $ = load("");
 
 export const generatePageIndex = (
-  page: Page,
+  page: Page<{ excerpt?: string }>,
   customFieldsGetter: SearchProCustomFieldOptions[] = [],
   indexContent = false
 ): PageIndex | null => {
-  const hasExcerpt = page.excerpt.length > 0;
+  const hasExcerpt = "excerpt" in page.data && page.data["excerpt"].length;
 
   const result: PageIndex = {
     title: page.title,

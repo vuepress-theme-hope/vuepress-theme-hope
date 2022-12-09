@@ -9,8 +9,9 @@ export interface SeoPluginPageData {
 export type ExtendPage<
   ExtraPageData extends Record<string | number | symbol, unknown> & {
     autoDesc?: true;
+    excerpt?: string;
     git?: GitData;
-  } = { autoDesc?: true; git?: GitData },
+  } = { autoDesc?: true; excerpt?: string; git?: GitData },
   ExtraPageFrontmatter extends PageFrontmatter<
     BasePageFrontMatter & { banner: string; cover: string }
   > = PageFrontmatter<BasePageFrontMatter & { banner: string; cover: string }>,

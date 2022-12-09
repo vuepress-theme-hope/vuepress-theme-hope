@@ -22,7 +22,7 @@ export const componentsPlugin =
     return {
       name: "vuepress-plugin-components",
 
-      define: () => {
+      define: (): Record<string, unknown> => {
         const { assets, prefix } = options.componentOptions?.fontIcon || {};
 
         return {

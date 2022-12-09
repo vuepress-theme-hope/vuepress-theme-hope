@@ -3,7 +3,7 @@ import { stripTags } from "vuepress-shared/node";
 
 import { convertOptions } from "./compact/index.js";
 import { appendSEO, generateRobotsTxt } from "./seo.js";
-import { extractContent, logger } from "./utils.js";
+import { extractPageContent, logger } from "./utils.js";
 
 import type { Plugin, PluginFunction } from "@vuepress/core";
 import type { SeoOptions } from "./options.js";
@@ -28,20 +28,20 @@ export const seoPlugin =
       ...plugin,
 
       extendsPage: (page: ExtendPage, app): void => {
-        // generate summary
+        // generate description
         if (
           !page.frontmatter.description &&
           options.autoDescription !== false
         ) {
-          if (page.excerpt)
-            page.frontmatter.description = stripTags(page.excerpt)
+          if (page.data.excerpt)
+            page.frontmatter.description = stripTags(page.data.excerpt)
               // convert link breaks into spaces
               .replace(/(?:\r?\n)+/g, " ")
               // convert 2 or more spaces into 1
               .replace(/ +/g, " ")
               .trim();
           else {
-            const pageContent = extractContent(page.content);
+            const pageContent = extractPageContent(page.content);
 
             page.frontmatter.description =
               pageContent.length > 180

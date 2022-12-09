@@ -83,16 +83,18 @@ export const getPageExcerpt = (
   app: App,
   page: Page,
   {
-    customElement,
-    excerptSeparator,
-    excerptLength,
-  }: Required<
-    Pick<BlogOptions, "customElement" | "excerptLength" | "excerptSeparator">
-  >
+    customElement = (): boolean => false,
+    excerptSeparator = "<!-- more -->",
+    excerptLength = 300,
+  }: Pick<
+    BlogOptions,
+    "customElement" | "excerptLength" | "excerptSeparator"
+  > = {}
 ): string => {
   // get page content
   const { excerpt } = matter(page.content, {
     excerpt: true,
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     excerpt_separator: excerptSeparator,
   });
 
@@ -109,13 +111,9 @@ export const getPageExcerpt = (
     );
 
     return $.html(
-      handleNodes(
-        $.parseHTML(renderedContent),
-        app.options.base,
-        customElement
-      ) || []
+      handleNodes($.parseHTML(renderedContent), app.options.base, customElement)
     );
-  } else {
+  } else if (excerptLength > 0) {
     let excerpt = "";
     const rootNodes = $.parseHTML(page.contentRendered) || [];
 
@@ -130,4 +128,6 @@ export const getPageExcerpt = (
 
     return excerpt;
   }
+
+  return "";
 };

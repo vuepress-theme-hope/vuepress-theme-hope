@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
 
 /**
 Types from https://github.com/rollup/plugins/blob/master/packages/alias/types/index.d.ts
@@ -73,7 +74,14 @@ type AliasOptions = readonly Alias[] | { [find: string]: string };
 const isObject = (value: unknown): value is Record<string, any> =>
   Object.prototype.toString.call(value) === "[object Object]";
 
-function normalizeSingleAlias({ find, replacement }: Alias): Alias {
+const arraify = <T>(target: T | T[]): T[] =>
+  Array.isArray(target) ? target : [target];
+
+const normalizeSingleAlias = ({
+  find,
+  replacement,
+  customResolver,
+}: Alias): Alias => {
   if (
     typeof find === "string" &&
     find.endsWith("/") &&
@@ -83,8 +91,15 @@ function normalizeSingleAlias({ find, replacement }: Alias): Alias {
     replacement = replacement.slice(0, replacement.length - 1);
   }
 
-  return { find, replacement };
-}
+  const alias: Alias = {
+    find,
+    replacement,
+  };
+
+  if (customResolver) alias.customResolver = customResolver;
+
+  return alias;
+};
 
 const normalizeAlias = (aliasOption: AliasOptions): Alias[] =>
   Array.isArray(aliasOption)
@@ -96,20 +111,30 @@ const normalizeAlias = (aliasOption: AliasOptions): Alias[] =>
         })
       );
 
-const mergeAlias = (a: AliasOptions = [], b: AliasOptions = []): Alias[] => [
-  ...normalizeAlias(a),
-  ...normalizeAlias(b),
-];
+export const mergeAlias = (
+  defaults?: AliasOptions,
+  overrides?: AliasOptions
+): AliasOptions | undefined => {
+  if (!defaults) return overrides;
+  if (!overrides) return defaults;
+
+  if (isObject(defaults) && isObject(overrides))
+    return { ...defaults, ...overrides };
+
+  // the order is flipped because the alias is resolved from top-down,
+  // where the later should have higher priority
+  return [...normalizeAlias(overrides), ...normalizeAlias(defaults)];
+};
 
 const mergeConfigRecursively = (
-  a: Record<string, any>,
-  b: Record<string, any>,
+  defaults: Record<string, any>,
+  overrides: Record<string, any>,
   rootPath: string
 ): Record<string, any> => {
-  const merged: Record<string, any> = { ...a };
+  const merged: Record<string, any> = { ...defaults };
 
-  for (const key in b) {
-    const value = b[key];
+  for (const key in overrides) {
+    const value = overrides[key];
 
     if (value == null) {
       continue;
@@ -117,8 +142,29 @@ const mergeConfigRecursively = (
 
     const existing = merged[key];
 
-    if (Array.isArray(existing) && Array.isArray(value)) {
-      merged[key] = [...existing, ...value];
+    if (existing == null) {
+      merged[key] = value;
+      continue;
+    }
+
+    // fields that require special handling
+    if (key === "alias" && (rootPath === "resolve" || rootPath === "")) {
+      merged[key] = mergeAlias(existing, value);
+      continue;
+    } else if (key === "assetsInclude" && rootPath === "") {
+      merged[key] = [].concat(existing, value);
+      continue;
+    } else if (
+      key === "noExternal" &&
+      rootPath === "ssr" &&
+      (existing === true || value === true)
+    ) {
+      merged[key] = true;
+      continue;
+    }
+
+    if (Array.isArray(existing) || Array.isArray(value)) {
+      merged[key] = [...arraify(existing ?? []), ...arraify(value ?? [])];
       continue;
     }
     if (isObject(existing) && isObject(value)) {
@@ -130,21 +176,6 @@ const mergeConfigRecursively = (
       continue;
     }
 
-    // fields that require special handling
-    if (existing != null) {
-      if (key === "alias" && (rootPath === "resolve" || rootPath === "")) {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-        merged[key] = mergeAlias(existing, value);
-        continue;
-      } else if (key === "assetsInclude" && rootPath === "") {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-        merged[key] = [].concat(existing, value);
-        continue;
-      } else if (key === "noExternal" && existing === true) {
-        continue;
-      }
-    }
-
     merged[key] = value;
   }
 
@@ -152,7 +183,8 @@ const mergeConfigRecursively = (
 };
 
 export const mergeViteConfig = (
-  a: Record<string, any>,
-  b: Record<string, any>,
+  defaults: Record<string, any>,
+  overrides: Record<string, any>,
   isRoot = true
-): Record<string, any> => mergeConfigRecursively(a, b, isRoot ? "" : ".");
+): Record<string, any> =>
+  mergeConfigRecursively(defaults, overrides, isRoot ? "" : ".");

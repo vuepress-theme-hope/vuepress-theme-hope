@@ -8,12 +8,12 @@ import {
 import { watch } from "chokidar";
 
 import { prepareCategory } from "./category.js";
+import { getPageExcerpt } from "./excerpt.js";
 import { prepareType } from "./type.js";
 import { getPageMap, logger } from "./utils.js";
 
 import type { PluginFunction } from "@vuepress/core";
-import type { BlogOptions } from "./options.js";
-import { getPageExcerpt } from "./excerpt.js";
+import type { BlogOptions, PageWithExcerpt } from "./options.js";
 
 export const blogPlugin =
   (options: BlogOptions): PluginFunction =>
@@ -23,7 +23,7 @@ export const blogPlugin =
       filter = (page): boolean =>
         Boolean(page.filePathRelative) && !page.frontmatter["home"],
       metaScope = "_blog",
-      customElement = () => false,
+      customElement = (): boolean => false,
       excerpt = true,
       excerptSeparator = "<!-- more -->",
       excerptLength = 300,
@@ -42,14 +42,8 @@ export const blogPlugin =
       }),
 
       extendsPage: (page): void => {
-        if (
-          excerpt &&
-          excerptFilter(page) &&
-          // TODO: Remove this once @vuepress/core no longer generate excerpt
-          !page.excerpt &&
-          !page.data.excerpt
-        ) {
-          page.excerpt = page.data.excerpt = getPageExcerpt(app, page, {
+        if (excerpt && excerptFilter(page)) {
+          (<PageWithExcerpt>page).data["excerpt"] = getPageExcerpt(app, page, {
             customElement,
             excerptSeparator,
             excerptLength,

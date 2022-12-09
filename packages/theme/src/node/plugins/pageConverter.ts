@@ -33,7 +33,8 @@ export const injectPageInfo = (page: Page<ThemePageData>): void => {
 
 export const extendsPagePlugin = (legacy = false): PluginObject => ({
   name: "vuepress-theme-hope-extends-page",
-  extendsPage: (page, app) => {
+
+  extendsPage: (page, app): void => {
     if (legacy)
       page.frontmatter = convertFrontmatter(
         page.frontmatter,
@@ -46,6 +47,6 @@ export const extendsPagePlugin = (legacy = false): PluginObject => ({
   },
 });
 
-export const useExtendsPagePlugin = (app: App, legacy = false) => {
+export const useExtendsPagePlugin = (app: App, legacy = false): void => {
   app.use(extendsPagePlugin(legacy));
 };

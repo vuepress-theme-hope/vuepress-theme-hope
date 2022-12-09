@@ -14,15 +14,15 @@ describe("Should generate page excerpt correctly", async () => {
 
   await app.init();
 
-  it("Should generate excerpt", () => {
+  it("Should generate excerpt for all pages", () => {
     app.pages.forEach((page) => {
-      expect(
-        getPageExcerpt(app, page, {
-          customElement: () => false,
-          excerptLength: 200,
-          excerptSeparator: "<!-- more -->",
-        })
-      ).toMatchSnapshot();
+      expect(getPageExcerpt(app, page)).toMatchSnapshot();
+    });
+  });
+
+  it("Should only generate excerpt for marker", () => {
+    app.pages.forEach((page) => {
+      expect(getPageExcerpt(app, page, { excerptLength: 0 })).toMatchSnapshot();
     });
   });
 });

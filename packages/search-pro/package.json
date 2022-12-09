@@ -44,25 +44,26 @@
   },
   "dependencies": {
     "@types/body-scroll-lock": "^3.1.0",
-    "@vuepress/client": "2.0.0-beta.56",
-    "@vuepress/utils": "2.0.0-beta.56",
+    "@vuepress/client": "2.0.0-beta.57",
+    "@vuepress/utils": "2.0.0-beta.57",
     "@vueuse/core": "^9.6.0",
     "body-scroll-lock": "^3.1.5",
     "cheerio": "^1.0.0-rc.12",
     "chokidar": "^3.5.3",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6",
+    "vuepress-plugin-blog2": "workspace:*",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.56"
+    "@vuepress/core": "2.0.0-beta.57"
   },
   "peerDependencies": {
     "sass-loader": "^13.2.0",
-    "vuepress": "2.0.0-beta.56",
-    "vuepress-vite": "2.0.0-beta.56",
-    "vuepress-webpack": "2.0.0-beta.56"
+    "vuepress": "2.0.0-beta.57",
+    "vuepress-vite": "2.0.0-beta.57",
+    "vuepress-webpack": "2.0.0-beta.57"
   },
   "engines": {
     "node": "^14.18.0 || >=16.0.0",

@@ -31,7 +31,10 @@ export class FeedPage {
   constructor(
     private app: App,
     private options: FeedOptions,
-    private page: Page<{ git?: GitData }, FeedPluginFrontmatter>,
+    private page: Page<
+      { excerpt?: string; git?: GitData },
+      FeedPluginFrontmatter
+    >,
     private feed: Feed
   ) {
     this.base = this.app.options.base;
@@ -64,9 +67,9 @@ export class FeedPage {
 
     if (this.frontmatter.description) return this.frontmatter.description;
 
-    if (this.page.excerpt)
+    if (this.page.data.excerpt)
       return `html:${resolveHTML(
-        this.app.markdown.render(this.page.excerpt),
+        this.page.data.excerpt,
         this.options.customElements
       )}`;
 

@@ -1,7 +1,8 @@
+import { getPageExcerpt } from "vuepress-plugin-blog2";
 import { utoa } from "vuepress-shared/node";
 import { generatePageIndex } from "./generateIndex.js";
 
-import type { App } from "@vuepress/core";
+import type { App, Page } from "@vuepress/core";
 import type { SearchProOptions } from "./options.js";
 import type { PageIndex, SearchIndex } from "../shared/index.js";
 
@@ -22,9 +23,19 @@ if (import.meta.hot) {
 let previousSearchIndex: SearchIndex | null = null;
 
 export const prepareSearchIndex = async (
-  { env, pages, options: appOptions, writeTemp }: App,
-  options: SearchProOptions
+  app: App,
+  options: SearchProOptions,
+  isBlogPluginEnabled = false
 ): Promise<void> => {
+  const { pages } = app;
+  const hasExcerpt =
+    isBlogPluginEnabled || pages.some((page) => "excerpt" in page.data);
+
+  if (!hasExcerpt)
+    pages.forEach((page: Page<{ excerpt?: string }>) => {
+      page.data["excerpt"] = getPageExcerpt(app, page, { excerptLength: 0 });
+    });
+
   const pagesSearchIndex = pages
     .map((page) => {
       const pageIndex = generatePageIndex(
@@ -46,7 +57,7 @@ export const prepareSearchIndex = async (
     Object.keys(
       // locales should at least have root locales
       // eslint-disable-next-line @typescript-eslint/naming-convention
-      { "/": {}, ...appOptions.locales }
+      { "/": {}, ...app.options.locales }
     ).map((localePath) => [
       localePath,
       Object.fromEntries(
@@ -65,9 +76,9 @@ export const database = "${utoa(JSON.stringify(searchIndex))}"
 `;
 
   // inject HMR code
-  if (env.isDev) content += HMR_CODE;
+  if (app.env.isDev) content += HMR_CODE;
 
-  await writeTemp("search-pro/index.js", content);
+  await app.writeTemp("search-pro/index.js", content);
 };
 
 export const updateSearchIndex = async (

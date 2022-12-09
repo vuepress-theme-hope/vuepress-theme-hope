@@ -83,7 +83,7 @@ export const resolveUrl = (
       : `https://${removeEndingSlash(hostname)}`
   }${base}${removeLeadingSlash(url)}`;
 
-export const extractContent = (content: string): string =>
+export const extractPageContent = (content: string): string =>
   md2text(
     matter(content)
       .content.trim()

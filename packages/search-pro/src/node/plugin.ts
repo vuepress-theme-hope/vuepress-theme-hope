@@ -19,6 +19,10 @@ export const searchProPlugin =
   (app) => {
     useSassPalettePlugin(app, { id: "hope" });
 
+    const isBlogPluginEnabled = app.pluginApi.plugins.some(
+      ({ name }) => name === "vuepress-plugin-blog2"
+    );
+
     return {
       name: "vuepress-plugin-search-pro",
 
@@ -55,7 +59,8 @@ export const searchProPlugin =
         addViteSsrNoExternal({ app, config }, ["fflate", "vuepress-shared"]);
       },
 
-      onPrepared: (app): Promise<void> => prepareSearchIndex(app, options),
+      onPrepared: (app): Promise<void> =>
+        prepareSearchIndex(app, options, isBlogPluginEnabled),
 
       onWatched: (app, watchers): void => {
         const hotReload =

@@ -2,6 +2,25 @@ import type { Page } from "@vuepress/core";
 
 import type { BlogCategoryOptions, BlogTypeOptions } from "./typings/index.js";
 
+export interface BlogPluginPageData {
+  /**
+   * Page excerpt content
+   *
+   * 页面摘要内容
+   */
+  excerpt?: string;
+}
+
+export type PageWithExcerpt<
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  ExtraPageData extends Record<any, any> &
+    BlogPluginPageData = BlogPluginPageData,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  ExtraPageFrontmatter extends Record<any, any> = Record<string, unknown>,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  ExtraPageFields extends Record<any, any> = Record<string, unknown>
+> = Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>;
+
 export interface BlogOptions {
   /**
    * Function getting article info.
