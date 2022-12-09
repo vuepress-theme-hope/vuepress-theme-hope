@@ -12,7 +12,7 @@ node_modules/
 coverage/
 
 # Dist files
-docs/shared/lib/
+docs-shared/lib/
 packages/*/lib/
 
 # Rollup cache
