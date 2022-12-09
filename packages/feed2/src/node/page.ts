@@ -1,10 +1,12 @@
 import {
   getAuthor,
   getCategory,
+  getPageExcerpt,
+  getPageText,
   isAbsoluteUrl,
   isUrl,
 } from "vuepress-shared/node";
-import { getImageMineType, resolveHTML, resolveUrl } from "./utils.js";
+import { getImageMineType, resolveUrl } from "./utils.js";
 
 import type { AuthorInfo } from "vuepress-shared";
 import type { App, Page, PageFrontmatter } from "@vuepress/core";
@@ -67,13 +69,9 @@ export class FeedPage {
 
     if (this.frontmatter.description) return this.frontmatter.description;
 
-    if (this.page.data.excerpt)
-      return `html:${resolveHTML(
-        this.page.data.excerpt,
-        this.options.customElements
-      )}`;
+    const pageText = getPageText(this.page.content);
 
-    return null;
+    return pageText.length > 180 ? `${pageText.slice(0, 177)}...` : pageText;
   }
 
   get author(): FeedAuthor[] {
@@ -157,7 +155,7 @@ export class FeedPage {
 
     if (this.pageFeedOptions.content) return this.pageFeedOptions.content;
 
-    return resolveHTML(this.page.contentRendered, this.options.customElements);
+    return getPageExcerpt(this.app, this.page, { excerptLength: Infinity });
   }
 
   get image(): string | null {
