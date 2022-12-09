@@ -3,7 +3,7 @@ import { path } from "@vuepress/utils";
 import { describe, it, expect } from "vitest";
 
 import { emptyTheme } from "./__fixtures__/theme/empty.js";
-import { getPageExcerpt } from "../../src/node/index.js";
+import { getPageExcerpt } from "../../src/node/page/excerpt.js";
 
 describe("Should generate page excerpt correctly", async () => {
   const app = createBaseApp({

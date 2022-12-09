@@ -1,7 +1,7 @@
 import { createBaseApp } from "@vuepress/core";
 import { path } from "@vuepress/utils";
 import { describe, expect, it } from "vitest";
-import { getPageExcerpt } from "vuepress-plugin-blog2";
+import { getPageExcerpt } from "vuepress-shared/node";
 import { generatePageIndex } from "../src/node/generateIndex";
 
 import { emptyTheme } from "./__fixtures__/theme/empty.js";
