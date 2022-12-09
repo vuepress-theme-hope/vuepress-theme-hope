@@ -43,7 +43,7 @@ importers:
       magic-string: 0.27.0
       markdownlint-cli: 0.32.2
       nano-staged: 0.8.0
-      npm-check-updates: 16.5.1
+      npm-check-updates: 16.5.3
       ora: 6.1.2
       picocolors: 1.0.0
       prettier: 2.8.1
@@ -92,7 +92,7 @@ importers:
       magic-string: 0.27.0
       markdownlint-cli: 0.32.2
       nano-staged: 0.8.0
-      npm-check-updates: 16.5.1
+      npm-check-updates: 16.5.3
       ora: 6.1.2
       picocolors: 1.0.0
       prettier: 2.8.1
@@ -9971,8 +9971,8 @@ packages:
       npm-normalize-package-bin: 3.0.0
     dev: true
 
-  /npm-check-updates/16.5.1:
-    resolution: {integrity: sha512-LSDcPpnK41GnsIw1JO+sUe1QJPA8+pzLOW5Ahep2zOBaZk+Dkg/stow3FAT19scfYZRx3YyKoehrJQOSXN3t6g==}
+  /npm-check-updates/16.5.3:
+    resolution: {integrity: sha512-Z1kpflkmeV5tAsShJg23NxZhQBEdOIos2cEicqnH/AAWCXbtf8FX0dQn+udj2SnkAR/MUy5yR0Y4uL2vyUeaPg==}
     engines: {node: '>=14.14'}
     hasBin: true
     dependencies:
