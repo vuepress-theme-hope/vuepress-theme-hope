@@ -84,48 +84,6 @@ const a = 1;
 
 :::
 
-:::: details 代码
-
-```md
-::: v-pre
-
-安全的在 Markdown 中使用 {{ variable }}。
-
-:::
-
-::: info 自定义标题
-
-信息容器
-
-:::
-
-::: tip 自定义标题
-
-提示容器
-
-:::
-
-::: warning 自定义标题
-
-警告容器
-
-:::
-
-::: danger 自定义标题
-
-危险容器
-
-:::
-
-::: details 自定义标题
-
-详情容器
-
-:::
-```
-
-::::
-
 - [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/container.html)
 
 #### 代码块

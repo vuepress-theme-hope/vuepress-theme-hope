@@ -84,48 +84,6 @@ A custom details container
 
 :::
 
-:::: details Code
-
-```md
-::: v-pre
-
-Safely use {{ variable }} in Markdown.
-
-:::
-
-::: info Custom Title
-
-A custom information container
-
-:::
-
-::: tip Custom Title
-
-A custom tip container
-
-:::
-
-::: warning Custom Title
-
-A custom warning container
-
-:::
-
-::: danger Custom Title
-
-A custom danger container
-
-:::
-
-::: details Custom Title
-
-A custom details container
-
-:::
-```
-
-::::
-
 - [View Detail](https://vuepress-theme-hope.github.io/v2/guide/markdown/container.html)
 
 #### Tabs
