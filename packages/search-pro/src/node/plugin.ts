@@ -34,7 +34,7 @@ export const searchProPlugin =
         SEARCH_PRO_CUSTOM_FIELDS: Object.fromEntries(
           (options.customFields || [])
             .map(({ formatter }, index) =>
-              formatter ? [(index.toString(), formatter)] : null
+              formatter ? [index.toString(), formatter] : null
             )
             .filter((item): item is [string, string] => item !== null)
         ),
