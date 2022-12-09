@@ -84,8 +84,8 @@ A bilibili video with radio, start time and page:
 
 A bilibili video with custom settings:
 
-<BiliBili bvid="BV1kt411o7C3" :auto-height="[9 / 16, 20]" low-quality no-danmaku />
+<BiliBili bvid="BV1kt411o7C3" :ratio="[9 / 16, 20]" low-quality no-danmaku />
 
 ```md
-<BiliBili bvid="BV1kt411o7C3" :auto-height="[9 / 16, 20]" low-quality no-danmaku />
+<BiliBili bvid="BV1kt411o7C3" :ratio="[9 / 16, 20]" low-quality no-danmaku />
 ```

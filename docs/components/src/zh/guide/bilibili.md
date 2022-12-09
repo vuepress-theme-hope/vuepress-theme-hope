@@ -84,8 +84,8 @@ B 站组件高度宽高比，只有当未指定 `height` 时有效。
 
 一个自定义设置的 B 站视频:
 
-<BiliBili bvid="BV1kt411o7C3" :auto-height="[9 / 16, 20]" low-quality no-danmaku />
+<BiliBili bvid="BV1kt411o7C3" :ratio="[9 / 16, 20]" low-quality no-danmaku />
 
 ```md
-<BiliBili bvid="BV1kt411o7C3" :auto-height="[9 / 16, 20]" low-quality no-danmaku />
+<BiliBili bvid="BV1kt411o7C3" :ratio="[9 / 16, 20]" low-quality no-danmaku />
 ```
