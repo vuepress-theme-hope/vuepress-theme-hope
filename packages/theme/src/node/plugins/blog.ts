@@ -97,11 +97,12 @@ export const getBlogPlugin = (
           | ThemeNormalPageFrontmatter;
 
         const isArticle =
+          // not home
+          !frontmatter["home"] &&
           // declaring this is an article
-          pageFrontmatter.article ||
-          // generated from markdown files
-          Boolean(pageFrontmatter.article !== false && filePathRelative);
-
+          (pageFrontmatter.article ||
+            // generated from markdown files
+            Boolean(pageFrontmatter.article !== false && filePathRelative));
         const isSlide = isArticle && frontmatter.layout === "Slide";
 
         return isArticle || isSlide;
