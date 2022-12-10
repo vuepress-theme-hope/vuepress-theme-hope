@@ -1319,7 +1319,7 @@ importers:
       '@vuepress/plugin-external-link-icon': 2.0.0-beta.58
       '@vuepress/plugin-git': 2.0.0-beta.58
       '@vuepress/plugin-nprogress': 2.0.0-beta.58
-      '@vuepress/plugin-palette': 2.0.0-beta.58
+      '@vuepress/plugin-palette': 2.0.0-beta.50-pre.1
       '@vuepress/plugin-prismjs': 2.0.0-beta.58
       '@vuepress/plugin-theme-data': 2.0.0-beta.58
       '@vuepress/shared': 2.0.0-beta.58
@@ -1357,7 +1357,7 @@ importers:
       '@vuepress/plugin-external-link-icon': 2.0.0-beta.58
       '@vuepress/plugin-git': 2.0.0-beta.58
       '@vuepress/plugin-nprogress': 2.0.0-beta.58
-      '@vuepress/plugin-palette': 2.0.0-beta.58
+      '@vuepress/plugin-palette': 2.0.0-beta.50-pre.1
       '@vuepress/plugin-prismjs': 2.0.0-beta.58
       '@vuepress/plugin-theme-data': 2.0.0-beta.58
       '@vuepress/shared': 2.0.0-beta.58
@@ -3282,6 +3282,13 @@ packages:
       '@types/markdown-it': 12.2.3
       markdown-it: 13.0.1
 
+  /@mdit-vue/plugin-component/0.9.4:
+    resolution: {integrity: sha512-Sc32sjJiXbCxvOTwPc+h6pcT7zEQ1sWBUZ94iODkVPW75HmM7Ir1GC4JN4VwmuiVmjSG/W3caHlVnioG1ePGJw==}
+    dependencies:
+      '@types/markdown-it': 12.2.3
+      markdown-it: 13.0.1
+    dev: false
+
   /@mdit-vue/plugin-frontmatter/0.11.1:
     resolution: {integrity: sha512-AdZJInjD1pTJXlfhuoBS5ycuIQ3ewBfY0R/XHM3TRDEaDHQJHxouUCpCyijZmpdljTU45lFetIowaKtAi7GBog==}
     dependencies:
@@ -3289,6 +3296,15 @@ packages:
       '@types/markdown-it': 12.2.3
       gray-matter: 4.0.3
       markdown-it: 13.0.1
+
+  /@mdit-vue/plugin-frontmatter/0.9.2:
+    resolution: {integrity: sha512-qHVgr6v0sH4C2KPD/q/EMUQBGLjuxpS24gyqLHwKHzg+o977CJGS0UA2TymGybHTliaIqmRiQ9DGkIzqO7sJCQ==}
+    dependencies:
+      '@mdit-vue/types': 0.9.2
+      '@types/markdown-it': 12.2.3
+      gray-matter: 4.0.3
+      markdown-it: 13.0.1
+    dev: false
 
   /@mdit-vue/plugin-headers/0.11.1:
     resolution: {integrity: sha512-eBUonsEkXP2Uf2MIXSWZGCcLCIMSA1XfThJwhzSAosoa7fO5aw52LKCweddmn7zLQvgQh7p7382sFAhCc2KXog==}
@@ -3298,12 +3314,29 @@ packages:
       '@types/markdown-it': 12.2.3
       markdown-it: 13.0.1
 
+  /@mdit-vue/plugin-headers/0.9.3:
+    resolution: {integrity: sha512-CKmRltSTS+OoQDzkRLg+U8Xxte+VqvA9lE3WtdQf0L9wGZbYKSylJGZILiQh9DOJTo18tu0/ckoVwAtgpHmzxg==}
+    dependencies:
+      '@mdit-vue/shared': 0.9.2
+      '@mdit-vue/types': 0.9.2
+      '@types/markdown-it': 12.2.3
+      markdown-it: 13.0.1
+    dev: false
+
   /@mdit-vue/plugin-sfc/0.11.1:
     resolution: {integrity: sha512-3AjQXqExzT9FWGNOeTBqK1pbt1UA5anrZvjo7OO2PJ3lrfZd0rbjionFkmW/VW1912laHUraIP6n74mUNqPuWw==}
     dependencies:
       '@mdit-vue/types': 0.11.0
       '@types/markdown-it': 12.2.3
       markdown-it: 13.0.1
+
+  /@mdit-vue/plugin-sfc/0.9.2:
+    resolution: {integrity: sha512-WLzVVBI7j5E3LhI5yX6+cEdD1XuTv2dHLXbQRLW1X9txQyjhrOY12SBkn0RDiD119YzBXR+m4dXlw12uniX62g==}
+    dependencies:
+      '@mdit-vue/types': 0.9.2
+      '@types/markdown-it': 12.2.3
+      markdown-it: 13.0.1
+    dev: false
 
   /@mdit-vue/plugin-title/0.11.1:
     resolution: {integrity: sha512-lvgR1pSgwX5D3tmLGyYBsfd3GbEoscqYsLTE8Vg+rCY8LfSrHdwrOD3Eg+SM2KyS5+gn+Zw4nS0S1yxOIVZBCQ==}
@@ -3313,6 +3346,15 @@ packages:
       '@types/markdown-it': 12.2.3
       markdown-it: 13.0.1
 
+  /@mdit-vue/plugin-title/0.9.3:
+    resolution: {integrity: sha512-qGqrwDn5gNlJgSo7Fx5pDKM6MrfPixxoTIsW6zmi9k4dGQ9ezCalOeP8V3yExbPQ7SeY2/JKt439LyMQvZdVWA==}
+    dependencies:
+      '@mdit-vue/shared': 0.9.2
+      '@mdit-vue/types': 0.9.2
+      '@types/markdown-it': 12.2.3
+      markdown-it: 13.0.1
+    dev: false
+
   /@mdit-vue/plugin-toc/0.11.1:
     resolution: {integrity: sha512-1tkGb1092ZgLhoSmE5hkC6U0IRGG5bWhUY4p14npV4cwqntciXEoXRqPA1jGEDh5hnofZC0bHbeS3uKxsmAEew==}
     dependencies:
@@ -3321,6 +3363,15 @@ packages:
       '@types/markdown-it': 12.2.3
       markdown-it: 13.0.1
 
+  /@mdit-vue/plugin-toc/0.9.2:
+    resolution: {integrity: sha512-Du3fFz+YezlXex9Syn+bc8ADDRx/kBfBokeHXfd/qCW5XqS7I4THLR/IRqlvi9CgIZ0dx7bJv0avxil9EX1PoQ==}
+    dependencies:
+      '@mdit-vue/shared': 0.9.2
+      '@mdit-vue/types': 0.9.2
+      '@types/markdown-it': 12.2.3
+      markdown-it: 13.0.1
+    dev: false
+
   /@mdit-vue/shared/0.11.0:
     resolution: {integrity: sha512-eiGe42y7UYpjO6/8Lg6OpAtzZrRU9k8dhpX1e/kJMTcL+tn+XkqRMJJ8I2pdrOQMSkgvIva5FNAriykqFzkdGg==}
     dependencies:
@@ -3328,8 +3379,20 @@ packages:
       '@types/markdown-it': 12.2.3
       markdown-it: 13.0.1
 
+  /@mdit-vue/shared/0.9.2:
+    resolution: {integrity: sha512-05Nk/o+kJCgeAa7oBGJOIazJq+6n0+VR4jPhzV3LGc9TyuMEqnrH5XzmBoy45vzyyoe7pGxJ/PBDxq4HebQHtQ==}
+    dependencies:
+      '@mdit-vue/types': 0.9.2
+      '@types/markdown-it': 12.2.3
+      markdown-it: 13.0.1
+    dev: false
+
   /@mdit-vue/types/0.11.0:
     resolution: {integrity: sha512-ygCGP7vFpqS02hpZwEe1uz8cfImWX06+zRs08J+tCZRKb6k+easIaIHFtY9ZSxt7j9L/gAPLDo/5RmOT6z0DPQ==}
+
+  /@mdit-vue/types/0.9.2:
+    resolution: {integrity: sha512-SuoxzZHS2/9bEqeJ+bjj2xBLjoZhRo6Ww/GVqNZS2ji9rkoM2teA0kbwSmj0X6Kf00K9HnLs6T0dtDtqpBqEHA==}
+    dev: false
 
   /@mermaid-js/mermaid-mindmap/9.2.2:
     resolution: {integrity: sha512-uzUY0PR/itxkQxpDRg95yDPJ++mRDUmGce4EVCKFebUCs0UNI/xi5mhvV6Oq8czM2ImY0W1gJu4MS2Xq3yiQug==}
@@ -4246,6 +4309,15 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
+  /@vuepress/client/2.0.0-beta.50-pre.1:
+    resolution: {integrity: sha512-uhN/LTwCcVLnQjDnrEDMaiPT2bi4mQrvwdtwURnrSZ7dCIgXQ+DMKP1v6+f2vgAlrw3FLnPd97yd3V7lrQs8Ow==}
+    dependencies:
+      '@vue/devtools-api': 6.4.5
+      '@vuepress/shared': 2.0.0-beta.50-pre.1
+      vue: 3.2.45
+      vue-router: 4.1.6_vue@3.2.45
+    dev: false
+
   /@vuepress/client/2.0.0-beta.58:
     resolution: {integrity: sha512-CkJtfARRNCuA5pU7pl47K2jODPE8g38VD4HkirHenjFFwJkh6lAHhZoAsy4CP6eCOfPEfHDGGWrTG5LN/Q+gww==}
     dependencies:
@@ -4253,6 +4325,18 @@ packages:
       '@vuepress/shared': 2.0.0-beta.58
       vue: 3.2.45
       vue-router: 4.1.6_vue@3.2.45
+
+  /@vuepress/core/2.0.0-beta.50-pre.1:
+    resolution: {integrity: sha512-JVfRSlv7Gk+6HLGSqXWwk8qm6DtSAUujh09gQW2fAaPSp48ULv7+uzWxCQU/x0gO93ajZM5Ny3ojxNJNNUlQHg==}
+    dependencies:
+      '@vuepress/client': 2.0.0-beta.50-pre.1
+      '@vuepress/markdown': 2.0.0-beta.50-pre.1
+      '@vuepress/shared': 2.0.0-beta.50-pre.1
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
+      vue: 3.2.45
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
 
   /@vuepress/core/2.0.0-beta.58:
     resolution: {integrity: sha512-xInLgETdDaWJKInEsMydAg82RttSBO56zCS0GfR4+C8QcCEQgVz+JiDo842WjbEIfCt/ZqacRRdecxW0nlj8tQ==}
@@ -4264,6 +4348,29 @@ packages:
       vue: 3.2.45
     transitivePeerDependencies:
       - supports-color
+
+  /@vuepress/markdown/2.0.0-beta.50-pre.1:
+    resolution: {integrity: sha512-joljMXWVg7g1RlQM1D5hyxZECkjvrKL+mAIAlZMmuQwPFFuMjEIkL6MzzOv4R4BkCoBCfx1h8YpAlc8+Doqszw==}
+    dependencies:
+      '@mdit-vue/plugin-component': 0.9.4
+      '@mdit-vue/plugin-frontmatter': 0.9.2
+      '@mdit-vue/plugin-headers': 0.9.3
+      '@mdit-vue/plugin-sfc': 0.9.2
+      '@mdit-vue/plugin-title': 0.9.3
+      '@mdit-vue/plugin-toc': 0.9.2
+      '@mdit-vue/shared': 0.9.2
+      '@mdit-vue/types': 0.9.2
+      '@types/markdown-it': 12.2.3
+      '@types/markdown-it-emoji': 2.0.2
+      '@vuepress/shared': 2.0.0-beta.50-pre.1
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
+      markdown-it: 13.0.1
+      markdown-it-anchor: 8.6.5_ea7kj7wzjkld5jo2noyjqxi764
+      markdown-it-emoji: 2.0.2
+      mdurl: 1.0.1
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
 
   /@vuepress/markdown/2.0.0-beta.58:
     resolution: {integrity: sha512-d5d573sNBiKDutVfwkAozdvrnB0xr5FqF0/0FAIBwGB3GFZpLdOsglmKcHDwJadDgMBTL4qvB8l4od2av6eDjw==}
@@ -4386,6 +4493,16 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
+  /@vuepress/plugin-palette/2.0.0-beta.50-pre.1:
+    resolution: {integrity: sha512-iwYSf1TJUMyOQs2GPL9K1bKh6uI/LedTK7oWMMQx9GoefRWiM5yhxUOnKy+LQDYrTk5Yq1Xr18IK9qNikzAh5g==}
+    dependencies:
+      '@vuepress/core': 2.0.0-beta.50-pre.1
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
+      chokidar: 3.5.3
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
   /@vuepress/plugin-palette/2.0.0-beta.58:
     resolution: {integrity: sha512-VluNVbFVcTAeDnWvYnnFfkLrfC6z4PashPODN1TtLe/D7Zm+EgE/7K+yIfm4kSIrat52A25gok4OVy+CJk6qUQ==}
     dependencies:
@@ -4453,6 +4570,12 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
+  /@vuepress/shared/2.0.0-beta.50-pre.1:
+    resolution: {integrity: sha512-Gk6ikIV2V8LMokc+H/juH+kBOigo38Woup42Q2pmmWqmlwdLqbUcCYZSt/z+opeOUAqC9s3CZnKR8xCw+qo8BQ==}
+    dependencies:
+      '@vue/shared': 3.2.45
+    dev: false
+
   /@vuepress/shared/2.0.0-beta.58:
     resolution: {integrity: sha512-f6qEwhFz2YyIxVxD1NqIp2Dwos/ioY+hSFFM4d7Io124WhjYsVzvBY1v6uXVafu2crpbkiGfCcLeDT7b6fw8HQ==}
     dependencies:
@@ -4489,6 +4612,24 @@ packages:
     transitivePeerDependencies:
       - '@vue/composition-api'
       - supports-color
+
+  /@vuepress/utils/2.0.0-beta.50-pre.1:
+    resolution: {integrity: sha512-ODJP1kboA+c12Nf6gqkk4vU9JLnrjOaYI9+NsLtv/MXEXulWVr65ZWZK3SmF+RiNFJZDfTs9kXLbwujetkNBhQ==}
+    dependencies:
+      '@types/debug': 4.1.7
+      '@types/fs-extra': 9.0.13
+      '@types/hash-sum': 1.0.0
+      '@vuepress/shared': 2.0.0-beta.50-pre.1
+      chalk: 5.1.2
+      debug: 4.3.4
+      fs-extra: 10.1.0
+      globby: 13.1.2
+      hash-sum: 2.0.0
+      ora: 6.1.2
+      upath: 2.0.1
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
 
   /@vuepress/utils/2.0.0-beta.58:
     resolution: {integrity: sha512-jj/qf3a6syYJ7j6i9zo3EmIT1SDcHhRbuH/TFCqXrKeUOQFFhOGYwbQtyISM9/At9UeCLE/rz1Z+A868FQpczQ==}
@@ -8035,7 +8176,6 @@ packages:
       graceful-fs: 4.2.10
       jsonfile: 6.1.0
       universalify: 2.0.0
-    dev: true
 
   /fs-extra/11.1.0:
     resolution: {integrity: sha512-0rcTq621PD5jM/e0a3EJoGC/1TC5ZBCERW82LQuwfGnCa1V8w7dpYH1yNu+SLb6E5dkeCBzKEyLGlFrnr+dUyw==}
