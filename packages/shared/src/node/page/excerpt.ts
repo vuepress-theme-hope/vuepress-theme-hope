@@ -57,6 +57,14 @@ const handleNode = (
       if (!isLinkHttp(src) && !src.startsWith("/")) return null;
     }
 
+    // toc should be dropped
+    if (
+      [node.attribs["class"], node.attribs["id"]].some((item) =>
+        ["table-of-contents", "toc"].includes(item)
+      )
+    )
+      return null;
+
     // standard tags can be returned
     if (HTML_TAGS.includes(node.tagName) || SVG_TAGS.includes(node.tagName)) {
       // remove heading id tabindex and anchor inside
