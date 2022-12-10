@@ -49,7 +49,7 @@
   },
   "dependencies": {
     "@vuepress/client": "2.0.0-beta.58",
-    "@vuepress/utils": "2.0.0-beta.58",
+    "@vuepress/utils": "2.0.0-beta.50-pre.1",
     "@waline/client": "^2.14.1",
     "giscus": "^1.2.4",
     "twikoo": "^1.6.8",

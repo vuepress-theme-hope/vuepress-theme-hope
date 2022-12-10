@@ -49,7 +49,7 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@vuepress/utils": "2.0.0-beta.58",
+    "@vuepress/utils": "2.0.0-beta.50-pre.1",
     "chokidar": "^3.5.3",
     "sass": "^1.56.2",
     "vuepress-shared": "workspace:*"

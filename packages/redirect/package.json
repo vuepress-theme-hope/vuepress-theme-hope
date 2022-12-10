@@ -46,7 +46,7 @@
     "@vuepress/cli": "2.0.0-beta.58",
     "@vuepress/core": "2.0.0-beta.58",
     "@vuepress/shared": "2.0.0-beta.58",
-    "@vuepress/utils": "2.0.0-beta.58",
+    "@vuepress/utils": "2.0.0-beta.50-pre.1",
     "cac": "^6.7.14",
     "vuepress-shared": "workspace:*"
   },

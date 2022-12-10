@@ -45,7 +45,7 @@
   },
   "dependencies": {
     "@vuepress/client": "2.0.0-beta.58",
-    "@vuepress/utils": "2.0.0-beta.58",
+    "@vuepress/utils": "2.0.0-beta.50-pre.1",
     "balloon-css": "^1.2.0",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6",

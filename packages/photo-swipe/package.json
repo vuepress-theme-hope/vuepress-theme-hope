@@ -47,7 +47,7 @@
   },
   "dependencies": {
     "@vuepress/client": "2.0.0-beta.58",
-    "@vuepress/utils": "2.0.0-beta.58",
+    "@vuepress/utils": "2.0.0-beta.50-pre.1",
     "@vueuse/core": "^9.6.0",
     "photoswipe": "^5.3.4",
     "vue": "^3.2.45",

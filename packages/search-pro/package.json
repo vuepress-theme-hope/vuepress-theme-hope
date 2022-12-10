@@ -45,7 +45,7 @@
   "dependencies": {
     "@types/body-scroll-lock": "^3.1.0",
     "@vuepress/client": "2.0.0-beta.58",
-    "@vuepress/utils": "2.0.0-beta.58",
+    "@vuepress/utils": "2.0.0-beta.50-pre.1",
     "@vueuse/core": "^9.6.0",
     "body-scroll-lock": "^3.1.5",
     "cheerio": "^1.0.0-rc.12",

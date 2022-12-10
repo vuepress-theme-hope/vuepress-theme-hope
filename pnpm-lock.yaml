@@ -119,7 +119,7 @@ importers:
       '@vuepress/client': 2.0.0-beta.58
       '@vuepress/core': 2.0.0-beta.58
       '@vuepress/theme-default': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       sass-loader: 13.2.0
       vue: 3.2.45
       vue-router: 4.1.6
@@ -131,7 +131,7 @@ importers:
       '@vuepress/client': 2.0.0-beta.58
       '@vuepress/core': 2.0.0-beta.58
       '@vuepress/theme-default': 2.0.0-beta.58_sass-loader@13.2.0
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       sass-loader: 13.2.0
       vue: 3.2.45
       vue-router: 4.1.6_vue@3.2.45
@@ -145,7 +145,7 @@ importers:
       '@vuepress/client': 2.0.0-beta.58
       '@vuepress/core': 2.0.0-beta.58
       '@vuepress/theme-default': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       sass-loader: 13.2.0
       vue: 3.2.45
       vuepress-plugin-comment2: workspace:*
@@ -156,7 +156,7 @@ importers:
       '@vuepress/client': 2.0.0-beta.58
       '@vuepress/core': 2.0.0-beta.58
       '@vuepress/theme-default': 2.0.0-beta.58_sass-loader@13.2.0
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       sass-loader: 13.2.0
       vue: 3.2.45
       vuepress-plugin-comment2: link:../../packages/comment2
@@ -208,7 +208,7 @@ importers:
       '@vuepress/cli': 2.0.0-beta.58
       '@vuepress/client': 2.0.0-beta.58
       '@vuepress/theme-default': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       sass-loader: 13.2.0
       vue: 3.2.45
       vuepress-plugin-copyright2: workspace:*
@@ -218,7 +218,7 @@ importers:
       '@vuepress/cli': 2.0.0-beta.58
       '@vuepress/client': 2.0.0-beta.58
       '@vuepress/theme-default': 2.0.0-beta.58_sass-loader@13.2.0
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       sass-loader: 13.2.0
       vue: 3.2.45
       vuepress-plugin-copyright2: link:../../packages/copyright2
@@ -433,7 +433,7 @@ importers:
       '@vuepress/plugin-pwa': 2.0.0-beta.58
       '@vuepress/plugin-pwa-popup': 2.0.0-beta.58
       '@vuepress/plugin-shiki': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       cross-env: 7.0.3
       sass-loader: 13.2.0
       vue: 3.2.45
@@ -447,7 +447,7 @@ importers:
       '@vuepress/plugin-pwa': 2.0.0-beta.58
       '@vuepress/plugin-pwa-popup': 2.0.0-beta.58
       '@vuepress/plugin-shiki': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       cross-env: 7.0.3
       sass-loader: 13.2.0
       vue: 3.2.45
@@ -463,7 +463,7 @@ importers:
       '@vuepress/plugin-pwa': 2.0.0-beta.58
       '@vuepress/plugin-pwa-popup': 2.0.0-beta.58
       '@vuepress/plugin-shiki': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       cross-env: 7.0.3
       sass-loader: 13.2.0
       vue: 3.2.45
@@ -477,7 +477,7 @@ importers:
       '@vuepress/plugin-pwa': 2.0.0-beta.58
       '@vuepress/plugin-pwa-popup': 2.0.0-beta.58
       '@vuepress/plugin-shiki': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       cross-env: 7.0.3
       sass-loader: 13.2.0
       vue: 3.2.45
@@ -493,7 +493,7 @@ importers:
       '@vuepress/client': 2.0.0-beta.58
       '@vuepress/core': 2.0.0-beta.58
       '@vuepress/plugin-docsearch': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       three: 0.147.0
       vue: 3.2.45
       vuepress-shared: workspace:*
@@ -504,7 +504,7 @@ importers:
       '@vuepress/client': 2.0.0-beta.58
       '@vuepress/core': 2.0.0-beta.58
       '@vuepress/plugin-docsearch': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       three: 0.147.0
       vue: 3.2.45
       vuepress-shared: link:../packages/shared
@@ -638,7 +638,7 @@ importers:
     specifiers:
       '@types/katex': 0.14.0
       '@vuepress/client': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       docs-shared: workspace:*
       katex: 0.16.4
       sass-loader: 13.2.0
@@ -649,7 +649,7 @@ importers:
     dependencies:
       '@types/katex': 0.14.0_hqyqxenocev52grrpe7hwg7asa
       '@vuepress/client': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       docs-shared: link:../../docs-shared
       katex: 0.16.4
       sass-loader: 13.2.0
@@ -834,7 +834,7 @@ importers:
     specifiers:
       '@types/katex': 0.14.0
       '@vuepress/client': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       axios: 1.2.1
       docs-shared: workspace:*
       katex: 0.16.4
@@ -848,7 +848,7 @@ importers:
     dependencies:
       '@types/katex': 0.14.0_hqyqxenocev52grrpe7hwg7asa
       '@vuepress/client': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       axios: 1.2.1
       docs-shared: link:../../docs-shared
       katex: 0.16.4
@@ -865,7 +865,7 @@ importers:
       '@vuepress/client': 2.0.0-beta.58
       '@vuepress/core': 2.0.0-beta.58
       '@vuepress/shared': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       chokidar: ^3.5.3
       vue: ^3.2.45
       vue-router: ^4.1.6
@@ -874,7 +874,7 @@ importers:
       '@vuepress/client': 2.0.0-beta.58
       '@vuepress/core': 2.0.0-beta.58
       '@vuepress/shared': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       chokidar: 3.5.3
       vue: 3.2.45
       vue-router: 4.1.6_vue@3.2.45
@@ -884,7 +884,7 @@ importers:
     specifiers:
       '@vuepress/client': 2.0.0-beta.58
       '@vuepress/core': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       '@waline/client': ^2.14.1
       giscus: ^1.2.4
       twikoo: ^1.6.8
@@ -894,7 +894,7 @@ importers:
       vuepress-shared: workspace:*
     dependencies:
       '@vuepress/client': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       '@waline/client': 2.14.1
       giscus: 1.2.4
       twikoo: 1.6.8
@@ -910,7 +910,7 @@ importers:
       '@vuepress/client': 2.0.0-beta.58
       '@vuepress/core': 2.0.0-beta.58
       '@vuepress/shared': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       '@vueuse/core': ^9.6.0
       balloon-css: ^1.2.0
       plyr: ^3.7.3
@@ -922,7 +922,7 @@ importers:
     dependencies:
       '@vuepress/client': 2.0.0-beta.58
       '@vuepress/shared': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       '@vueuse/core': 9.6.0_vue@3.2.45
       balloon-css: 1.2.0
       plyr: 3.7.3
@@ -938,7 +938,7 @@ importers:
     specifiers:
       '@vuepress/client': 2.0.0-beta.58
       '@vuepress/core': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       balloon-css: ^1.2.0
       vue: ^3.2.45
       vue-router: ^4.1.6
@@ -946,7 +946,7 @@ importers:
       vuepress-shared: workspace:*
     dependencies:
       '@vuepress/client': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       balloon-css: 1.2.0
       vue: 3.2.45
       vue-router: 4.1.6_vue@3.2.45
@@ -960,7 +960,7 @@ importers:
       '@vuepress/client': 2.0.0-beta.58
       '@vuepress/core': 2.0.0-beta.58
       '@vuepress/shared': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       '@vueuse/core': ^9.6.0
       vue: ^3.2.45
       vue-router: ^4.1.6
@@ -968,7 +968,7 @@ importers:
     dependencies:
       '@vuepress/client': 2.0.0-beta.58
       '@vuepress/shared': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       '@vueuse/core': 9.6.0_vue@3.2.45
       vue: 3.2.45
       vue-router: 4.1.6_vue@3.2.45
@@ -994,12 +994,12 @@ importers:
       '@vuepress/core': 2.0.0-beta.58
       '@vuepress/plugin-git': 2.0.0-beta.58
       '@vuepress/shared': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       vuepress-shared: workspace:*
       xml-js: ^1.6.11
     dependencies:
       '@vuepress/shared': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       vuepress-shared: link:../shared
       xml-js: 1.6.11
     devDependencies:
@@ -1010,7 +1010,7 @@ importers:
     specifiers:
       '@vuepress/client': 2.0.0-beta.58
       '@vuepress/core': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       lightgallery: ^2.7.0
       vue: ^3.2.45
       vue-router: ^4.1.6
@@ -1018,7 +1018,7 @@ importers:
       vuepress-shared: workspace:*
     dependencies:
       '@vuepress/client': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       lightgallery: 2.7.0
       vue: 3.2.45
       vue-router: 4.1.6_vue@3.2.45
@@ -1040,7 +1040,7 @@ importers:
       '@vuepress/core': 2.0.0-beta.58
       '@vuepress/markdown': 2.0.0-beta.58
       '@vuepress/shared': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       '@vueuse/core': ^9.6.0
       balloon-css: ^1.2.0
       chart.js: ^4.0.1
@@ -1066,7 +1066,7 @@ importers:
       '@vue/repl': 1.3.2_vue@3.2.45
       '@vuepress/client': 2.0.0-beta.58
       '@vuepress/shared': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       '@vueuse/core': 9.6.0_vue@3.2.45
       balloon-css: 1.2.0
       chart.js: 4.0.1
@@ -1094,7 +1094,7 @@ importers:
     specifiers:
       '@vuepress/client': 2.0.0-beta.58
       '@vuepress/core': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       '@vueuse/core': ^9.6.0
       photoswipe: ^5.3.4
       vue: ^3.2.45
@@ -1103,7 +1103,7 @@ importers:
       vuepress-shared: workspace:*
     dependencies:
       '@vuepress/client': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       '@vueuse/core': 9.6.0_vue@3.2.45
       photoswipe: 5.3.4
       vue: 3.2.45
@@ -1118,7 +1118,7 @@ importers:
       '@vuepress/client': 2.0.0-beta.58
       '@vuepress/core': 2.0.0-beta.58
       '@vuepress/shared': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       '@vueuse/core': ^9.6.0
       mitt: ^3.0.0
       register-service-worker: ^1.7.2
@@ -1130,7 +1130,7 @@ importers:
     dependencies:
       '@vuepress/client': 2.0.0-beta.58
       '@vuepress/shared': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       '@vueuse/core': 9.6.0_vue@3.2.45
       mitt: 3.0.0_qzs7n5sruuzja7qoe6i43clpfe
       register-service-worker: 1.7.2
@@ -1156,14 +1156,14 @@ importers:
       '@vuepress/cli': 2.0.0-beta.58
       '@vuepress/core': 2.0.0-beta.58
       '@vuepress/shared': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       cac: ^6.7.14
       vuepress-shared: workspace:*
     dependencies:
       '@vuepress/cli': 2.0.0-beta.58
       '@vuepress/core': 2.0.0-beta.58
       '@vuepress/shared': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       cac: 6.7.14
       vuepress-shared: link:../shared
 
@@ -1172,12 +1172,12 @@ importers:
       '@vuepress/client': 2.0.0-beta.58
       '@vuepress/core': 2.0.0-beta.58
       '@vuepress/shared': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       vue: ^3.2.45
     dependencies:
       '@vuepress/client': 2.0.0-beta.58
       '@vuepress/shared': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       vue: 3.2.45
     devDependencies:
       '@vuepress/core': 2.0.0-beta.58
@@ -1187,12 +1187,12 @@ importers:
       '@vuepress/bundler-vite': 2.0.0-beta.58
       '@vuepress/bundler-webpack': 2.0.0-beta.58
       '@vuepress/core': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       chokidar: ^3.5.3
       sass: ^1.56.2
       vuepress-shared: workspace:*
     dependencies:
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       chokidar: 3.5.3
       sass: 1.56.2
       vuepress-shared: link:../shared
@@ -1206,7 +1206,7 @@ importers:
       '@types/body-scroll-lock': ^3.1.0
       '@vuepress/client': 2.0.0-beta.58
       '@vuepress/core': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       '@vueuse/core': ^9.6.0
       body-scroll-lock: ^3.1.5
       cheerio: ^1.0.0-rc.12
@@ -1219,7 +1219,7 @@ importers:
     dependencies:
       '@types/body-scroll-lock': 3.1.0
       '@vuepress/client': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       '@vueuse/core': 9.6.0_vue@3.2.45
       body-scroll-lock: 3.1.5
       cheerio: 1.0.0-rc.12
@@ -1237,11 +1237,11 @@ importers:
       '@vuepress/core': 2.0.0-beta.58
       '@vuepress/plugin-git': 2.0.0-beta.58
       '@vuepress/shared': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       vuepress-shared: workspace:*
     dependencies:
       '@vuepress/shared': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       vuepress-shared: link:../shared
     devDependencies:
       '@vuepress/core': 2.0.0-beta.58
@@ -1256,7 +1256,7 @@ importers:
       '@vuepress/core': 2.0.0-beta.58
       '@vuepress/plugin-git': 2.0.0-beta.58
       '@vuepress/shared': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       cheerio: ^1.0.0-rc.12
       dayjs: ^1.11.7
       execa: ^6.1.0
@@ -1270,7 +1270,7 @@ importers:
     dependencies:
       '@vuepress/client': 2.0.0-beta.58
       '@vuepress/shared': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       cheerio: 1.0.0-rc.12
       dayjs: 1.11.7
       execa: 6.1.0
@@ -1293,12 +1293,12 @@ importers:
       '@vuepress/core': 2.0.0-beta.58
       '@vuepress/plugin-git': 2.0.0-beta.58
       '@vuepress/shared': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       sitemap: ^7.1.1
       vuepress-shared: workspace:*
     dependencies:
       '@vuepress/shared': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       sitemap: 7.1.1
       vuepress-shared: link:../shared
     devDependencies:
@@ -1323,7 +1323,7 @@ importers:
       '@vuepress/plugin-prismjs': 2.0.0-beta.58
       '@vuepress/plugin-theme-data': 2.0.0-beta.58
       '@vuepress/shared': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       '@vueuse/core': ^9.6.0
       balloon-css: ^1.2.0
       bcrypt-ts: ^3.0.0
@@ -1361,7 +1361,7 @@ importers:
       '@vuepress/plugin-prismjs': 2.0.0-beta.58
       '@vuepress/plugin-theme-data': 2.0.0-beta.58
       '@vuepress/shared': 2.0.0-beta.58
-      '@vuepress/utils': 2.0.0-beta.58
+      '@vuepress/utils': 2.0.0-beta.50-pre.1
       '@vueuse/core': 9.6.0_vue@3.2.45
       balloon-css: 1.2.0
       bcrypt-ts: 3.0.0
@@ -4453,6 +4453,11 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
+  /@vuepress/shared/2.0.0-beta.50-pre.1:
+    resolution: {integrity: sha512-Gk6ikIV2V8LMokc+H/juH+kBOigo38Woup42Q2pmmWqmlwdLqbUcCYZSt/z+opeOUAqC9s3CZnKR8xCw+qo8BQ==}
+    dependencies:
+      '@vue/shared': 3.2.45
+
   /@vuepress/shared/2.0.0-beta.58:
     resolution: {integrity: sha512-f6qEwhFz2YyIxVxD1NqIp2Dwos/ioY+hSFFM4d7Io124WhjYsVzvBY1v6uXVafu2crpbkiGfCcLeDT7b6fw8HQ==}
     dependencies:
@@ -4488,6 +4493,23 @@ packages:
       vue-router: 4.1.6_vue@3.2.45
     transitivePeerDependencies:
       - '@vue/composition-api'
+      - supports-color
+
+  /@vuepress/utils/2.0.0-beta.50-pre.1:
+    resolution: {integrity: sha512-ODJP1kboA+c12Nf6gqkk4vU9JLnrjOaYI9+NsLtv/MXEXulWVr65ZWZK3SmF+RiNFJZDfTs9kXLbwujetkNBhQ==}
+    dependencies:
+      '@types/debug': 4.1.7
+      '@types/fs-extra': 9.0.13
+      '@types/hash-sum': 1.0.0
+      '@vuepress/shared': 2.0.0-beta.50-pre.1
+      chalk: 5.1.2
+      debug: 4.3.4
+      fs-extra: 10.1.0
+      globby: 13.1.2
+      hash-sum: 2.0.0
+      ora: 6.1.2
+      upath: 2.0.1
+    transitivePeerDependencies:
       - supports-color
 
   /@vuepress/utils/2.0.0-beta.58:
@@ -8035,7 +8057,6 @@ packages:
       graceful-fs: 4.2.10
       jsonfile: 6.1.0
       universalify: 2.0.0
-    dev: true
 
   /fs-extra/11.1.0:
     resolution: {integrity: sha512-0rcTq621PD5jM/e0a3EJoGC/1TC5ZBCERW82LQuwfGnCa1V8w7dpYH1yNu+SLb6E5dkeCBzKEyLGlFrnr+dUyw==}
