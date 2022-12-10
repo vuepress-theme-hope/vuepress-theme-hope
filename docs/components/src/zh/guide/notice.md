@@ -37,31 +37,33 @@ import { componentsPlugin } from "vuepress-plugin-components";
 export default {
   plugins: [
     componentsPlugin({
-      notice: {
-        locales: {
-          "/": {
-            title: "Notice",
-            content: "You may want to check official docs",
-            actions: [
-              {
-                text: "Check it now",
-                link: "https://vuepress-theme-hope.github.io/v2/components/notice.html",
-                type: "primary",
-              },
-              { text: "Later" },
-            ],
-          },
-          "/zh/": {
-            title: "通知",
-            content: "你可能想要查看官方文档",
-            actions: [
-              {
-                text: "现在查看",
-                link: "https://vuepress-theme-hope.github.io/v2/components/notice.html",
-                type: "primary",
-              },
-              { text: "稍后" },
-            ],
+      rootComponents: {
+        notice: {
+          locales: {
+            "/": {
+              title: "Notice",
+              content: "You may want to check official docs",
+              actions: [
+                {
+                  text: "Check it now",
+                  link: "https://vuepress-theme-hope.github.io/v2/components/notice.html",
+                  type: "primary",
+                },
+                { text: "Later" },
+              ],
+            },
+            "/zh/": {
+              title: "通知",
+              content: "你可能想要查看官方文档",
+              actions: [
+                {
+                  text: "现在查看",
+                  link: "https://vuepress-theme-hope.github.io/v2/components/notice.html",
+                  type: "primary",
+                },
+                { text: "稍后" },
+              ],
+            },
           },
         },
       },
