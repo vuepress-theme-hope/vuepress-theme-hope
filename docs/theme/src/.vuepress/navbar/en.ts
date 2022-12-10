@@ -103,6 +103,11 @@ export const enNavbarConfig = navbar([
             link: "https://vuepress-theme-hope.github.io/v2/seo/",
           },
           {
+            text: "VuePress shared",
+            icon: "app",
+            link: "https://vuepress-theme-hope.github.io/v2/shared/",
+          },
+          {
             text: "Sitemap Plugin",
             icon: "sitemap",
             link: "https://vuepress-theme-hope.github.io/v2/sitemap/",

@@ -104,6 +104,11 @@ export const zhNavbarConfig = navbar([
             link: "https://vuepress-theme-hope.github.io/v2/seo/zh/",
           },
           {
+            text: "VuePress 工具函数",
+            icon: "app",
+            link: "https://vuepress-theme-hope.github.io/v2/shared/",
+          },
+          {
             text: "Sitemap 插件",
             icon: "sitemap",
             link: "https://vuepress-theme-hope.github.io/v2/sitemap/zh/",
