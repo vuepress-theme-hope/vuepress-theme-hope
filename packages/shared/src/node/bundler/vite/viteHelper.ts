@@ -6,7 +6,13 @@ import type { App } from "@vuepress/core";
 import type { ViteBundlerOptions } from "@vuepress/bundler-vite";
 
 export interface ViteCommonOptions {
+  /**
+   * VuePress Node App
+   */
   app: App;
+  /**
+   * VuePress Bundler config
+   */
   config: unknown;
 }
 

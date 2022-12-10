@@ -22,7 +22,13 @@ export const tagHint = (tag: string, isDebug = false): void => {
 };
 
 export interface CustomElementCommonOptions {
+  /**
+   * VuePress Node App
+   */
   app: App;
+  /**
+   * VuePress Bundler config
+   */
   config: unknown;
 }
 

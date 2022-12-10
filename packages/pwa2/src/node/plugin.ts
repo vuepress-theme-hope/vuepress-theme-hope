@@ -60,11 +60,12 @@ export const pwaPlugin =
         ]);
 
         useCustomDevServer(
-          config,
-          app,
-          "/manifest.webmanifest",
-          async () => JSON.stringify(await manifest),
-          "Unexpected manifest generate error"
+          { app, config },
+          {
+            path: "/manifest.webmanifest",
+            response: async () => JSON.stringify(await manifest),
+            errMsg: "Unexpected manifest generate error",
+          }
         );
       },
 

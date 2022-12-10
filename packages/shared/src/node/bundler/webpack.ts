@@ -7,7 +7,13 @@ import type {
 } from "@vuepress/bundler-webpack";
 
 export interface WebpackCommonOptions {
+  /**
+   * VuePress Node App
+   */
   app: App;
+  /**
+   * VuePress Bundler config
+   */
   config: unknown;
 }
 
