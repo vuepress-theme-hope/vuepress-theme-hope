@@ -2,7 +2,13 @@ import type { RouteLocationNormalizedLoaded } from "vue-router";
 
 const HASH_REGEXP = /#.*$/u;
 
-export const getHash = (path: string): string | void => {
+/**
+ * Get hash from path
+ *
+ * @param path link path
+ * @returns hash
+ */
+export const getHash = (path: string): string => {
   const match = HASH_REGEXP.exec(path);
 
   if (match) return match[0];
@@ -15,6 +21,13 @@ export const normalizePath = (path: string): string =>
     .replace(HASH_REGEXP, "")
     .replace(/(index)?\.(md|html)$/, "");
 
+/**
+ * Whether the lick is active
+ *
+ * @param route Current route
+ * @param link link path
+ * @returns Whether the lick is active
+ */
 export const isActiveLink = (
   route: RouteLocationNormalizedLoaded,
   link?: string

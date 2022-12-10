@@ -12,7 +12,7 @@ import {
   watch,
 } from "vue";
 import { useRouter } from "vue-router";
-import { isComponentRegistered, RenderDefault } from "vuepress-shared/client";
+import { hasGlobalComponent, RenderDefault } from "vuepress-shared/client";
 
 import PageFooter from "@theme-hope/components/PageFooter.js";
 import {
@@ -200,7 +200,7 @@ export default defineComponent({
           onTouchEnd,
         },
         h(
-          isComponentRegistered("GlobalEncrypt")
+          hasGlobalComponent("GlobalEncrypt")
             ? <DefineComponent>resolveComponent("GlobalEncrypt")
             : RenderDefault,
           () => [

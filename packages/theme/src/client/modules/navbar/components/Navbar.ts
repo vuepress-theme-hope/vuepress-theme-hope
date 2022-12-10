@@ -1,5 +1,5 @@
 import { computed, defineComponent, h, ref, resolveComponent } from "vue";
-import { isComponentRegistered } from "vuepress-shared/client";
+import { hasGlobalComponent } from "vuepress-shared/client";
 
 import {
   useMobile,
@@ -64,11 +64,11 @@ export default defineComponent({
         Links: h(NavbarLinks),
         Repo: h(RepoLink),
         Outlook: h(OutlookButton),
-        Search: isComponentRegistered("Docsearch")
+        Search: hasGlobalComponent("Docsearch")
           ? h(resolveComponent("Docsearch"))
-          : isComponentRegistered("SearchBox")
+          : hasGlobalComponent("SearchBox")
           ? h(resolveComponent("SearchBox"))
-          : isComponentRegistered("SearchBox")
+          : hasGlobalComponent("SearchBox")
           ? h(resolveComponent("SearchBox"))
           : null,
       };

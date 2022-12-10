@@ -1,6 +1,6 @@
 import { usePageFrontmatter } from "@vuepress/client";
 import { computed, defineComponent, h, resolveComponent } from "vue";
-import { isComponentRegistered, RenderDefault } from "vuepress-shared/client";
+import { hasGlobalComponent, RenderDefault } from "vuepress-shared/client";
 
 import BreadCrumb from "@theme-hope/components/BreadCrumb.js";
 import MarkdownContent from "@theme-hope/components/MarkdownContent.js";
@@ -38,7 +38,7 @@ export default defineComponent({
         "main",
         { class: "page", id: "main-content" },
         h(
-          isComponentRegistered("LocalEncrypt")
+          hasGlobalComponent("LocalEncrypt")
             ? <DefineComponent>resolveComponent("LocalEncrypt")
             : RenderDefault,
           () => [
@@ -58,7 +58,7 @@ export default defineComponent({
             slots["contentAfter"]?.(),
             h(PageMeta),
             h(PageNav),
-            isComponentRegistered("CommentService")
+            hasGlobalComponent("CommentService")
               ? h(resolveComponent("CommentService"), {
                   darkmode: isDarkMode.value,
                 })

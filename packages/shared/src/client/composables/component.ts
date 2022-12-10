@@ -1,6 +1,6 @@
 import { capitalize, camelize, getCurrentInstance } from "vue";
 
-export const isComponentRegistered = (name: string): boolean => {
+export const hasGlobalComponent = (name: string): boolean => {
   const instance = getCurrentInstance();
 
   return (
