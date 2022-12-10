@@ -15,16 +15,16 @@
     "demo:webpack-dev": "vuepress-webpack dev src"
   },
   "devDependencies": {
-    "@vuepress/cli": "2.0.0-beta.57",
-    "@vuepress/client": "2.0.0-beta.57",
-    "@vuepress/core": "2.0.0-beta.57",
-    "@vuepress/theme-default": "2.0.0-beta.57",
-    "@vuepress/utils": "2.0.0-beta.57",
+    "@vuepress/cli": "2.0.0-beta.58",
+    "@vuepress/client": "2.0.0-beta.58",
+    "@vuepress/core": "2.0.0-beta.58",
+    "@vuepress/theme-default": "2.0.0-beta.58",
+    "@vuepress/utils": "2.0.0-beta.58",
     "sass-loader": "13.2.0",
     "vue": "3.2.45",
     "vue-router": "4.1.6",
     "vuepress-plugin-blog2": "workspace:*",
-    "vuepress-vite": "2.0.0-beta.57",
-    "vuepress-webpack": "2.0.0-beta.57"
+    "vuepress-vite": "2.0.0-beta.58",
+    "vuepress-webpack": "2.0.0-beta.58"
   }
 }

@@ -43,17 +43,17 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@vuepress/cli": "2.0.0-beta.57",
-    "@vuepress/core": "2.0.0-beta.57",
-    "@vuepress/shared": "2.0.0-beta.57",
-    "@vuepress/utils": "2.0.0-beta.57",
+    "@vuepress/cli": "2.0.0-beta.58",
+    "@vuepress/core": "2.0.0-beta.58",
+    "@vuepress/shared": "2.0.0-beta.58",
+    "@vuepress/utils": "2.0.0-beta.58",
     "cac": "^6.7.14",
     "vuepress-shared": "workspace:*"
   },
   "peerDependencies": {
-    "vuepress": "2.0.0-beta.57",
-    "vuepress-vite": "2.0.0-beta.57",
-    "vuepress-webpack": "2.0.0-beta.57"
+    "vuepress": "2.0.0-beta.58",
+    "vuepress-vite": "2.0.0-beta.58",
+    "vuepress-webpack": "2.0.0-beta.58"
   },
   "engines": {
     "node": "^14.18.0 || >=16.0.0",
