@@ -76,7 +76,7 @@ export default defineComponent({
             ]),
             info.value[ArticleInfoType.excerpt]
               ? h("div", {
-                  class: "excerpt",
+                  class: "article-excerpt",
                   innerHTML: info.value[ArticleInfoType.excerpt],
                 })
               : null,
