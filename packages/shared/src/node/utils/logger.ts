@@ -1,5 +1,5 @@
-import { colors } from "@vuepress/utils";
-import ora from "ora";
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+import { colors, ora } from "@vuepress/utils";
 import type { Ora } from "ora";
 
 /**
@@ -57,12 +57,16 @@ export class Logger {
    * @param text Loading hint text
    * @returns Ora Instance
    */
-  info(text = ""): Ora {
-    return (
+  info(text = "", ...args: any[]): Ora {
+    const instance = (
       !text && this.currentInstance
         ? this.currentInstance
         : this.create(colors.blue(text))
     ).info();
+
+    if (args.length) console.info(...args);
+
+    return instance;
   }
 
   /**
@@ -71,12 +75,16 @@ export class Logger {
    * @param text Loading hint text
    * @returns Ora Instance
    */
-  succeed(text = ""): Ora {
-    return (
+  succeed(text = "", ...args: any[]): Ora {
+    const instance = (
       !text && this.currentInstance
         ? this.currentInstance
         : this.create(colors.green(text))
     ).succeed();
+
+    if (args.length) console.log(...args);
+
+    return instance;
   }
 
   /**
@@ -85,12 +93,16 @@ export class Logger {
    * @param text Loading hint text
    * @returns Ora Instance
    */
-  warn(text = ""): Ora {
-    return (
+  warn(text = "", ...args: any[]): Ora {
+    const instance = (
       !text && this.currentInstance
         ? this.currentInstance
         : this.create(colors.yellow(text))
     ).warn();
+
+    if (args.length) console.log(...args);
+
+    return instance;
   }
 
   /**
@@ -99,11 +111,15 @@ export class Logger {
    * @param text Loading hint text
    * @returns Ora Instance
    */
-  error(text = ""): Ora {
-    return (
+  error(text = "", ...args: any[]): Ora {
+    const instance = (
       !text && this.currentInstance
         ? this.currentInstance
         : this.create(colors.red(text))
     ).fail();
+
+    if (args.length) console.log(...args);
+
+    return instance;
   }
 }

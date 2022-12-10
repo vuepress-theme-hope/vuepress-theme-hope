@@ -1,6 +1,5 @@
 ---
 title: Bundler Related
-icon: node
 ---
 
 Bundler functions should be called at node side, you shall import them from `vuepress-shared/node` in node side code only.

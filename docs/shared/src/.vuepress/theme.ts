@@ -6,7 +6,7 @@ export default theme("seo2", {
       navbar: [
         "/",
         "/shared",
-        { text: "Node", prefix: "/node/", children: ["bundler"] },
+        { text: "Node", prefix: "/node/", children: ["bundler", "content"] },
         "/client",
       ],
 
@@ -20,7 +20,7 @@ export default theme("seo2", {
         {
           text: "Node",
           prefix: "/zh/node/",
-          children: ["bundler"],
+          children: ["bundler", "content"],
         },
         "/zh/client",
       ],

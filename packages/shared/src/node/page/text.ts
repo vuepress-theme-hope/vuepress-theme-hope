@@ -1,7 +1,9 @@
 import matter from "gray-matter";
-import { md2text } from "../markdown/index.js";
+import { md2text } from "../utils/index.js";
 
-export const getPageText = (content: string): string =>
+import type { Page } from "@vuepress/core";
+
+export const getPageText = ({ content }: Page): string =>
   md2text(
     matter(content)
       .content.trim()

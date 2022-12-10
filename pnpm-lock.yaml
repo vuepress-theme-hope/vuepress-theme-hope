@@ -1276,7 +1276,6 @@ importers:
       execa: 6.1.0
       fflate: 0.7.4
       gray-matter: 4.0.3
-      ora: 6.1.2
       striptags: 3.2.0
       vue: 3.2.45
       vue-router: 4.1.6_vue@3.2.45
@@ -1286,6 +1285,7 @@ importers:
       '@vuepress/bundler-webpack': 2.0.0-beta.57
       '@vuepress/core': 2.0.0-beta.57
       '@vuepress/plugin-git': 2.0.0-beta.57
+      ora: 6.1.2
       vite: 4.0.0
 
   packages/sitemap2:

@@ -12,7 +12,7 @@ const __dirname = getDirname(import.meta.url);
 export const lightgalleryPlugin =
   (options: LightGalleryOptions = {}): PluginFunction =>
   (app) => {
-    if (app.env.isDebug) logger.info(`Options: ${options.toString()}`);
+    if (app.env.isDebug) logger.info("Options:", options);
 
     const plugins = options.plugins || ["pager", "share", "zoom"];
 

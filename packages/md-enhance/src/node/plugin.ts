@@ -76,7 +76,7 @@ export const mdEnhancePlugin =
       convertOptions(
         options as MarkdownEnhanceOptions & Record<string, unknown>
       );
-    if (app.env.isDebug) logger.info(`Options: ${options.toString()}`);
+    if (app.env.isDebug) logger.info("Options:", options);
 
     const getStatus = (
       key: keyof MarkdownEnhanceOptions,

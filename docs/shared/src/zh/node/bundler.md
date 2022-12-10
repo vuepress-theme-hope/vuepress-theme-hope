@@ -1,6 +1,5 @@
 ---
 title: 打包器相关
-icon: node
 ---
 
 打包器相关函数仅在 Node 端可用，您应该仅在 Node 侧代码中从 `vuepress-shared/node` 导入它们。

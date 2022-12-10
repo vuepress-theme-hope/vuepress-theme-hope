@@ -25,7 +25,7 @@ export const commentPlugin =
     // TODO: Remove this in v2 stable
     if (legacy)
       convertOptions(options as CommentOptions & Record<string, unknown>);
-    if (app.env.isDebug) logger.info(`Options: ${options.toString()}`);
+    if (app.env.isDebug) logger.info("Options:", options);
 
     const provider =
       options.provider &&

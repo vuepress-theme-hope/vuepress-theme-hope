@@ -9,7 +9,7 @@ import type { RedirectPluginFrontmatterOption } from "./typings/index.js";
 export const redirectPlugin =
   (options: RedirectOptions = {}): PluginFunction =>
   (app) => {
-    if (app.env.isDebug) logger.info(`Options: ${options.toString()}`);
+    if (app.env.isDebug) logger.info("Options:", options);
 
     return {
       name: "vuepress-plugin-redirect",

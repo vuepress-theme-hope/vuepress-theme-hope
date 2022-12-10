@@ -69,7 +69,7 @@ export class FeedPage {
 
     if (this.frontmatter.description) return this.frontmatter.description;
 
-    const pageText = getPageText(this.page.content);
+    const pageText = getPageText(this.page);
 
     return pageText.length > 180 ? `${pageText.slice(0, 177)}...` : pageText;
   }

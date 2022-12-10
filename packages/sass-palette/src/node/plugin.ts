@@ -19,7 +19,7 @@ const __dirname = getDirname(import.meta.url);
 export const sassPalettePlugin =
   (options: SassPaletteOptions): PluginFunction =>
   (app) => {
-    if (app.env.isDebug) logger.info(`Options: ${options.toString()}`);
+    if (app.env.isDebug) logger.info("Options:", options);
 
     const {
       id = "hope",

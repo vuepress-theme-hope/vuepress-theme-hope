@@ -13,7 +13,7 @@ const __dirname = getDirname(import.meta.url);
 export const copyrightPlugin =
   (options: CopyrightOptions): PluginFunction =>
   (app) => {
-    if (app.env.isDebug) logger.info(`Options: ${options.toString()}`);
+    if (app.env.isDebug) logger.info("Options:", options);
 
     const {
       canonical,

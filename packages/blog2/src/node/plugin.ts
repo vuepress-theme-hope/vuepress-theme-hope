@@ -32,7 +32,7 @@ export const blogPlugin =
 
     let generatePageKeys: string[] = [];
 
-    if (app.env.isDebug) logger.info(`Options: ${options.toString()}`);
+    if (app.env.isDebug) logger.info("Options:", options);
 
     return {
       name: "vuepress-plugin-blog2",

@@ -22,7 +22,7 @@ export const pwaPlugin =
   (app) => {
     // TODO: Remove this in v2 stable
     if (legacy) convertOptions(options as PWAOptions & Record<string, unknown>);
-    if (app.env.isDebug) logger.info(`Options: ${options.toString()}`);
+    if (app.env.isDebug) logger.info("Options:", options);
 
     const { base, shouldPrefetch = true } = app.options;
 

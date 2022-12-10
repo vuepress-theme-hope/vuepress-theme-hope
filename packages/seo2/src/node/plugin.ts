@@ -14,7 +14,7 @@ export const seoPlugin =
   (app) => {
     // TODO: Remove this in v2 stable
     if (legacy) convertOptions(options as SeoOptions & Record<string, unknown>);
-    if (app.env.isDebug) logger.info(`Options: ${options.toString()}`);
+    if (app.env.isDebug) logger.info("Options:", options);
 
     const plugin: Plugin = { name: "vuepress-plugin-seo2" };
 
@@ -41,7 +41,7 @@ export const seoPlugin =
               .replace(/ +/g, " ")
               .trim();
           else {
-            const pageText = getPageText(page.content);
+            const pageText = getPageText(page);
 
             page.frontmatter.description =
               pageText.length > 180 ? `${pageText.slice(0, 177)}...` : pageText;

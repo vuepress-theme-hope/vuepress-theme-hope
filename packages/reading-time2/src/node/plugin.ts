@@ -12,7 +12,7 @@ import type { ReadingTime } from "./typings/index.js";
 export const readingTimePlugin =
   (options: ReadingTimeOptions): PluginFunction =>
   (app) => {
-    if (app.env.isDebug) logger.info(`Options: ${options.toString()}`);
+    if (app.env.isDebug) logger.info("Options:", options);
 
     return {
       name: "vuepress-plugin-reading-time2",

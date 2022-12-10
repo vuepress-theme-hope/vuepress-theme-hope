@@ -13,7 +13,7 @@ const __dirname = getDirname(import.meta.url);
 export const copyCodePlugin =
   (options: CopyCodeOptions = {}): PluginFunction =>
   (app) => {
-    if (app.env.isDebug) logger.info(`Options: ${options.toString()}`);
+    if (app.env.isDebug) logger.info("Options:", options);
 
     useSassPalettePlugin(app, { id: "hope" });
 

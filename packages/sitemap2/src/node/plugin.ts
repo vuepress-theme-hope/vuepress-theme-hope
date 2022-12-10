@@ -12,7 +12,7 @@ export const sitemapPlugin =
     // TODO: Remove this in v2 stable
     if (legacy)
       convertOptions(options as SitemapOptions & Record<string, unknown>);
-    if (app.env.isDebug) logger.info(`Options: ${options.toString()}`);
+    if (app.env.isDebug) logger.info("Options:", options);
 
     const plugin: PluginObject = {
       name: "vuepress-plugin-sitemap2",

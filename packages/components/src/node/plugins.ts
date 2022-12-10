@@ -15,7 +15,7 @@ export const componentsPlugin =
     // TODO: Remove this in v2 stable
     if (legacy)
       convertOptions(options as ComponentOptions & Record<string, unknown>);
-    if (app.env.isDebug) logger.info(`Options: ${options.toString()}`);
+    if (app.env.isDebug) logger.info("Options:", options);
 
     useSassPalettePlugin(app, { id: "hope" });
 

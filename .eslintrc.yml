@@ -10,13 +10,13 @@ extends:
   - plugin:prettier/recommended
 
 ignorePatterns:
-  - "!.vuepress/**"
   - "**/dist/**"
   - "**/node_modules/**"
   - ".cache/**"
   - ".temp/**"
   - "docs-shared/lib/**"
   - "packages/*/lib/**"
+  - "!.vuepress/**"
 
 rules:
   padding-line-between-statements:

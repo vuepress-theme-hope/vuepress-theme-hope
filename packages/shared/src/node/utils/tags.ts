@@ -1,4 +1,7 @@
-// Copied from https://github.com/vuejs/core/blob/b2bac9fa1763ab895f9bea18ef83d58673e1a4ec/packages/shared/src/domTagConfig.ts#L6-L28
+/**
+ * Copied from https://github.com/vuejs/core/blob/b2bac9fa1763ab895f9bea18ef83d58673e1a4ec/packages/shared/src/domTagConfig.ts#L6-L28
+ */
+
 // https://developer.mozilla.org/en-US/docs/Web/HTML/Element
 export const HTML_TAGS = (
   "html,body,base,head,link,meta,style,title,address,article,aside,footer," +
@@ -11,6 +14,7 @@ export const HTML_TAGS = (
   "option,output,progress,select,textarea,details,dialog,menu," +
   "summary,template,blockquote,iframe,tfoot"
 ).split(",");
+
 // https://developer.mozilla.org/en-US/docs/Web/SVG/Element
 export const SVG_TAGS = (
   "svg,animate,animateMotion,animateTransform,circle,clipPath,color-profile," +

@@ -1,6 +1,6 @@
 import { lang2PathConfig, path2langConfig } from "./config.js";
-import { Logger } from "../helpers/index.js";
 import { deepMerge } from "../../shared/index.js";
+import { Logger } from "../utils/index.js";
 
 import type { App, LocaleConfig } from "@vuepress/core";
 import type { LocaleData } from "@vuepress/shared";
