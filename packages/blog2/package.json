@@ -42,7 +42,7 @@
   },
   "dependencies": {
     "@vuepress/client": "2.0.0-beta.58",
-    "@vuepress/core": "2.0.0-beta.58",
+    "@vuepress/core": "2.0.0-beta.50-pre.1",
     "@vuepress/shared": "2.0.0-beta.58",
     "@vuepress/utils": "2.0.0-beta.58",
     "chokidar": "^3.5.3",
@@ -51,7 +51,7 @@
     "vuepress-shared": "workspace:*"
   },
   "peerDependencies": {
-    "vuepress": "2.0.0-beta.58",
+    "vuepress": "2.0.0-beta.50-pre.1",
     "vuepress-vite": "2.0.0-beta.58",
     "vuepress-webpack": "2.0.0-beta.58"
   },

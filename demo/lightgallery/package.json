@@ -17,7 +17,7 @@
   "devDependencies": {
     "@vuepress/cli": "2.0.0-beta.58",
     "@vuepress/client": "2.0.0-beta.58",
-    "@vuepress/theme-default": "2.0.0-beta.58",
+    "@vuepress/theme-default": "2.0.0-beta.50-pre.1",
     "sass-loader": "13.2.0",
     "vue": "3.2.45",
     "vuepress-plugin-lightgallery": "workspace:*",

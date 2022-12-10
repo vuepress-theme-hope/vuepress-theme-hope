@@ -53,11 +53,11 @@
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.58"
+    "@vuepress/core": "2.0.0-beta.50-pre.1"
   },
   "peerDependencies": {
     "sass-loader": "^13.2.0",
-    "vuepress": "2.0.0-beta.58",
+    "vuepress": "2.0.0-beta.50-pre.1",
     "vuepress-vite": "2.0.0-beta.58",
     "vuepress-webpack": "2.0.0-beta.58"
   },
