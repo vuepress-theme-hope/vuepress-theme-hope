@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.140](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.139...v2.0.0-beta.140) (2022-12-10)
+
+### Features
+
+- **shared:** add getBundlerName ([2f074b9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2f074b9f66cb8f7f64127935ca710e40de8575e3))
+- **shared:** drop toc in excerpt, fix [#2525](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2525) ([fa27862](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fa27862d78671eab4361418f0fbb2fa8adbdd639))
+
+### Bug Fixes
+
+- **components:** fix audio and video popup style, fix [#2523](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2523) ([7cfb305](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7cfb3051518b6582465ef9a2569853cfbc9ee447))
+
+### Performance Improvements
+
+- **pwa2:** improve generated speed ([e13bb52](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e13bb524b4cc099c1e91d0e0a7faed934fef9cf6))
+
 ## [2.0.0-beta.139](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.138...v2.0.0-beta.139) (2022-12-09)
 
 ### ⚠ BREAKING CHANGES
