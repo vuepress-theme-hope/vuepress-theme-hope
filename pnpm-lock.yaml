@@ -796,6 +796,22 @@ importers:
       vuepress-vite: 2.0.0-beta.57_vpko65ewezldy5hqreb4jqvp2i
       vuepress-webpack: 2.0.0-beta.57_vue@3.2.45
 
+  docs/shared:
+    specifiers:
+      '@vuepress/client': 2.0.0-beta.57
+      docs-shared: workspace:*
+      sass-loader: 13.2.0
+      vue: 3.2.45
+      vuepress-vite: 2.0.0-beta.57
+      vuepress-webpack: 2.0.0-beta.57
+    dependencies:
+      '@vuepress/client': 2.0.0-beta.57
+      docs-shared: link:../../docs-shared
+      sass-loader: 13.2.0
+      vue: 3.2.45
+      vuepress-vite: 2.0.0-beta.57_vpko65ewezldy5hqreb4jqvp2i
+      vuepress-webpack: 2.0.0-beta.57_vue@3.2.45
+
   docs/sitemap2:
     specifiers:
       '@vuepress/client': 2.0.0-beta.57
