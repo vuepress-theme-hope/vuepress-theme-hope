@@ -75,7 +75,7 @@
     "@vuepress/plugin-palette": "2.0.0-beta.58",
     "@vuepress/plugin-prismjs": "2.0.0-beta.58",
     "@vuepress/plugin-theme-data": "2.0.0-beta.58",
-    "@vuepress/shared": "2.0.0-beta.58",
+    "@vuepress/shared": "2.0.0-beta.50-pre.1",
     "@vuepress/utils": "2.0.0-beta.58",
     "@vueuse/core": "^9.6.0",
     "balloon-css": "^1.2.0",
