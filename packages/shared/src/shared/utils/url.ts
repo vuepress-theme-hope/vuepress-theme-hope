@@ -1,7 +1,7 @@
 /**
- * check if string is a valid url
+ * check if a variable is a valid url
  */
-export const isUrl = (test: string): boolean => {
+export const isUrl = (test: unknown): boolean => {
   if (typeof test !== "string" || test === "") return false;
 
   // url Math
@@ -21,4 +21,8 @@ export const isUrl = (test: string): boolean => {
   );
 };
 
-export const isAbsoluteUrl = (test: string): boolean => test.startsWith("/");
+/**
+ * Whether a variable is a valid absolute url
+ */
+export const isAbsoluteUrl = (test: unknown): boolean =>
+  typeof test === "string" && test.startsWith("/");

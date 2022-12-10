@@ -28,32 +28,28 @@ export const getAuthor = (
   return [];
 };
 
+export const getStringArray = (
+  value: string[] | string | undefined,
+  optionName?: string
+): string[] => {
+  if (value) {
+    if (Array.isArray(value)) return value;
+    if (typeof value === "string") return [value];
+
+    console.error(
+      `Expect ${
+        optionName || "value"
+      } to be \`string[] | string | undefined\`, but got`,
+      value
+    );
+  }
+
+  return [];
+};
+
 export const getCategory = (
   category: string[] | string | undefined
-): string[] => {
-  if (category) {
-    if (Array.isArray(category)) return category;
-    if (typeof category === "string") return [category];
+): string[] => getStringArray(category, "category");
 
-    console.error(
-      `Expect 'category' to be \`string[] | string | undefined\`, but got`,
-      category
-    );
-  }
-
-  return [];
-};
-
-export const getTag = (tag: string[] | string | undefined): string[] => {
-  if (tag) {
-    if (Array.isArray(tag)) return tag;
-    if (typeof tag === "string") return [tag];
-
-    console.error(
-      `Expect 'tag' to be \`string[] | string | undefined\`, but got`,
-      tag
-    );
-  }
-
-  return [];
-};
+export const getTag = (tag: string[] | string | undefined): string[] =>
+  getStringArray(tag, "tag");
