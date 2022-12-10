@@ -70,8 +70,10 @@ export const pwaPlugin =
       },
 
       onGenerated: async (app): Promise<void> => {
-        await generateManifest(app, manifest);
-        await generateServiceWorker(app, options);
+        await Promise.all([
+          generateManifest(app, manifest),
+          generateServiceWorker(app, options),
+        ]);
       },
 
       clientConfigFile: (app) => prepareConfigFile(app, options),
