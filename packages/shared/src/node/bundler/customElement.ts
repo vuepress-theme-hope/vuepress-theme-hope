@@ -1,4 +1,5 @@
 import { colors } from "@vuepress/utils";
+import { getBundlerName } from "./getBundler.js";
 import { HTML_TAGS, SVG_TAGS } from "../utils/index.js";
 
 import type { App } from "@vuepress/core";
@@ -38,10 +39,10 @@ export const addCustomElement = (
 ): void => {
   const customElements =
     typeof customElement === "string" ? [customElement] : customElement;
-  const { bundler } = app.options;
+  const bundlerName = getBundlerName(app);
 
   // for vite
-  if (bundler.name.endsWith("vite")) {
+  if (bundlerName === "vite") {
     const viteBundlerConfig = <ViteBundlerOptions>config;
 
     if (!viteBundlerConfig.vuePluginOptions)
@@ -71,7 +72,7 @@ export const addCustomElement = (
   }
 
   // for webpack
-  if (bundler.name.endsWith("webpack")) {
+  else if (bundlerName === "webpack") {
     const webpackBundlerConfig = <WebpackBundlerOptions>config;
 
     if (!webpackBundlerConfig.vue) webpackBundlerConfig.vue = {};

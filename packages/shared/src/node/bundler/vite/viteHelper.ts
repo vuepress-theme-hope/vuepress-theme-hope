@@ -1,4 +1,5 @@
 import { mergeViteConfig } from "./mergeViteConfig.js";
+import { getBundlerName } from "../getBundler.js";
 import { detectPackageManager } from "../../utils/index.js";
 
 import type { App } from "@vuepress/core";
@@ -16,11 +17,11 @@ export const addViteOptimizeDepsInclude = (
   { app, config }: ViteCommonOptions,
   module: string | string[]
 ): void => {
-  const { bundler } = app.options;
+  const bundlerName = getBundlerName(app);
   const manager = detectPackageManager();
 
   if (
-    bundler.name.endsWith("vite") &&
+    bundlerName === "vite" &&
     ("OPTIMIZE_DEPS" in process.env
       ? Boolean(process.env["OPTIMIZE_DEPS"])
       : manager !== "pnpm")
@@ -49,9 +50,7 @@ export const addViteOptimizeDepsExclude = (
   { app, config }: ViteCommonOptions,
   module: string | string[]
 ): void => {
-  const { bundler } = app.options;
-
-  if (bundler.name.endsWith("vite")) {
+  if (getBundlerName(app) === "vite") {
     const bundlerConfig = <ViteBundlerOptions>config;
 
     bundlerConfig.viteOptions = mergeViteConfig(
@@ -76,9 +75,7 @@ export const addViteSsrExternal = (
   { app, config }: ViteCommonOptions,
   module: string | string[]
 ): void => {
-  const { bundler } = app.options;
-
-  if (bundler.name.endsWith("vite")) {
+  if (getBundlerName(app) === "vite") {
     const bundlerConfig = <ViteBundlerOptions>config;
 
     bundlerConfig.viteOptions = mergeViteConfig(
@@ -99,9 +96,7 @@ export const addViteSsrNoExternal = (
   { app, config }: ViteCommonOptions,
   module: string | string[]
 ): void => {
-  const { bundler } = app.options;
-
-  if (bundler.name.endsWith("vite")) {
+  if (getBundlerName(app) === "vite") {
     const bundlerConfig = <ViteBundlerOptions>config;
 
     bundlerConfig.viteOptions = mergeViteConfig(

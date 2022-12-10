@@ -1,3 +1,5 @@
+import { getBundlerName } from "./getBundler.js";
+
 import type { App } from "@vuepress/core";
 import type {
   WebpackChainConfig,
@@ -17,9 +19,7 @@ export const chainWebpack = (
     isBuild: boolean
   ) => void
 ): void => {
-  const { bundler } = app.options;
-
-  if (bundler.name.endsWith("webpack")) {
+  if (getBundlerName(app) === "webpack") {
     const bundlerConfig = <WebpackBundlerOptions>config;
     const { chainWebpack: originalChainWebpack } = bundlerConfig;
 
