@@ -1,6 +1,6 @@
 import { withBase } from "@vuepress/client";
 import { defineComponent, h, toRef } from "vue";
-import { RouterLink, useRouter } from "vue-router";
+import { RouterLink } from "vue-router";
 
 import PageInfo from "@theme-hope/modules/info/components/PageInfo.js";
 import {
@@ -39,7 +39,6 @@ export default defineComponent({
   },
 
   setup(props) {
-    const router = useRouter();
     const info = toRef(props, "info");
     const { info: articleInfo, items } = useArticleInfo(props);
 
@@ -53,9 +52,6 @@ export default defineComponent({
             class: "article",
             vocab: "https://schema.org/",
             typeof: "Article",
-            onClick: () => {
-              void router.push(props.path);
-            },
           },
           [
             info.value[ArticleInfoType.sticky] ? h(StickyIcon) : null,

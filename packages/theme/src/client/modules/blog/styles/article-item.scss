@@ -40,7 +40,6 @@
 
     &:hover {
       box-shadow: 0 2px 6px 2px var(--card-shadow);
-      cursor: pointer;
     }
   }
 
@@ -65,6 +64,8 @@
     font-size: 1.25rem;
     font-family: var(--font-family-fancy);
     line-height: 1.6;
+
+    cursor: pointer;
 
     &::after {
       content: "";
@@ -140,6 +141,7 @@
 .article-excerpt {
   overflow: hidden;
   line-height: 1.6;
+  cursor: default;
 
   @media (max-width: hope-config.$pad) {
     font-size: 15px;
