@@ -1,4 +1,4 @@
-import type { ConvertLocaleConfig } from "vuepress-shared";
+import type { RequiredLocaleConfig } from "vuepress-shared";
 
 export interface CopyrightLocaleData {
   /**
@@ -35,4 +35,4 @@ export interface CopyrightLocaleData {
   link: string;
 }
 
-export type CopyrightLocaleConfig = ConvertLocaleConfig<CopyrightLocaleData>;
+export type CopyrightLocaleConfig = RequiredLocaleConfig<CopyrightLocaleData>;

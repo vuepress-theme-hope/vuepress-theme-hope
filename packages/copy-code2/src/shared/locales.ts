@@ -1,4 +1,4 @@
-import type { ConvertLocaleConfig } from "vuepress-shared";
+import type { RequiredLocaleConfig } from "vuepress-shared";
 
 export interface CopyCodeLocaleData {
   /**
@@ -23,4 +23,4 @@ export interface CopyCodeLocaleData {
   hint: string;
 }
 
-export type CopyCodeLocaleConfig = ConvertLocaleConfig<CopyCodeLocaleData>;
+export type CopyCodeLocaleConfig = RequiredLocaleConfig<CopyCodeLocaleData>;

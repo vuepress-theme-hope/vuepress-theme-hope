@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { timeTransformer } from "../../src/node/utils/date";
+import { timeTransformer } from "../../src/node/utils/date.js";
 
 describe("timeTransformer", () => {
   describe("Should parse day", () => {

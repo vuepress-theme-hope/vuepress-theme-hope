@@ -6,7 +6,7 @@ import {
   addViteSsrExternal,
   addViteSsrNoExternal,
   chainWebpack,
-  deepAssign,
+  deepMerge,
   getLocales,
   mergeViteConfig,
 } from "vuepress-shared/node";
@@ -148,7 +148,7 @@ export const mdEnhancePlugin =
             : {},
         VUE_PLAYGROUND_OPTIONS:
           typeof options.vuePlayground === "object"
-            ? deepAssign(
+            ? deepMerge(
                 {},
                 DEFAULT_VUE_PLAYGROUND_OPTIONS,
                 options.vuePlayground

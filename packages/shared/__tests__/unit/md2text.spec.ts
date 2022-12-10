@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { md2text } from "../../src/node/markdown/md2text";
+import { md2text } from "../../src/node/markdown/md2text.js";
 
 describe("md2text", () => {
   it("Should remove code blocks", () => {

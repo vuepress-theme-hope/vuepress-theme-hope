@@ -3,7 +3,18 @@ import { getDate } from "../../shared/index.js";
 
 import type { Page } from "@vuepress/core";
 import type { GitPluginPageData } from "@vuepress/plugin-git";
-import type { DateOptions } from "../../shared/index.js";
+
+export interface DateOptions {
+  /**
+   * @default 'en'
+   */
+  lang?: string;
+  timezone?: string;
+  /**
+   * @default 'full'
+   */
+  type?: "date" | "time" | "full";
+}
 
 export const timeTransformer = (
   date: string | Date | undefined,

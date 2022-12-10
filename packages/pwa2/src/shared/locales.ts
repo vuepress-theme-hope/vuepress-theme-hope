@@ -1,4 +1,4 @@
-import type { ConvertLocaleConfig } from "vuepress-shared";
+import type { RequiredLocaleConfig } from "vuepress-shared";
 
 export interface PWALocaleData {
   /**
@@ -79,4 +79,4 @@ export interface PWALocaleData {
   update: string;
 }
 
-export type PWALocaleConfig = ConvertLocaleConfig<PWALocaleData>;
+export type PWALocaleConfig = RequiredLocaleConfig<PWALocaleData>;

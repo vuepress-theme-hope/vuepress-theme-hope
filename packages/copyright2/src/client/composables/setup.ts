@@ -5,7 +5,7 @@ import { computed, onMounted, watchEffect } from "vue";
 import { useRoute } from "vue-router";
 import { useLocaleConfig } from "vuepress-shared/client";
 
-import type { ConvertLocaleConfig } from "vuepress-shared/client";
+import type { RequiredLocaleConfig } from "vuepress-shared/client";
 import type {
   CopyrightLocaleData,
   CopyrightPluginFrontmatter,
@@ -16,7 +16,7 @@ declare const COPYRIGHT_CANONICAL: string;
 declare const COPYRIGHT_DISABLE_COPY: boolean;
 declare const COPYRIGHT_DISABLE_SELECTION: boolean;
 declare const COPYRIGHT_GLOBAL: boolean;
-declare const COPYRIGHT_LOCALES: ConvertLocaleConfig<CopyrightLocaleData>;
+declare const COPYRIGHT_LOCALES: RequiredLocaleConfig<CopyrightLocaleData>;
 declare const COPYRIGHT_TRIGGER_WORDS: number;
 
 const canonical = COPYRIGHT_CANONICAL;

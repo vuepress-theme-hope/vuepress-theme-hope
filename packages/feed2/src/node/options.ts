@@ -3,7 +3,7 @@ import {
   removeEndingSlash,
   removeLeadingSlash,
 } from "@vuepress/shared";
-import { deepAssign } from "vuepress-shared/node";
+import { deepMerge } from "vuepress-shared/node";
 
 import { compareDate, resolveUrl } from "./utils.js";
 
@@ -111,7 +111,7 @@ export const getFeedChannelOption = (
     ...(author ? { author: { name: author } } : {}),
   };
 
-  return deepAssign(defaultChannelOption, options.channel || {});
+  return deepMerge(defaultChannelOption, options.channel || {});
 };
 
 export const getFilename = (

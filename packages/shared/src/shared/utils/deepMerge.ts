@@ -2,18 +2,18 @@
 type IAnyObject = Record<string, any>;
 
 /** Deep merge objects to the first one */
-export const deepAssign = <
+export const deepMerge = <
   T extends IAnyObject,
   U extends IAnyObject = T,
   V extends Partial<T> & Partial<U> = T & U
 >(
   originObject: T,
-  ...assignObjects: U[]
+  ...overrideObjects: U[]
 ): V => {
-  if (assignObjects.length === 0) return originObject as unknown as V;
+  if (overrideObjects.length === 0) return originObject as unknown as V;
 
   /** Object being merged */
-  const assignObject = (assignObjects.shift() as IAnyObject) || {};
+  const assignObject = (overrideObjects.shift() as IAnyObject) || {};
 
   Object.keys(assignObject).forEach((property) => {
     if (
@@ -22,7 +22,7 @@ export const deepAssign = <
       typeof assignObject[property] === "object" &&
       !Array.isArray(assignObject[property])
     )
-      deepAssign(originObject[property], assignObject[property]);
+      deepMerge(originObject[property], assignObject[property]);
     else if (typeof assignObject[property] === "object")
       if (Array.isArray(assignObject[property]))
         (originObject as IAnyObject)[property] = [
@@ -38,5 +38,5 @@ export const deepAssign = <
       ] as unknown;
   });
 
-  return deepAssign(originObject, ...assignObjects);
+  return deepMerge(originObject, ...overrideObjects);
 };

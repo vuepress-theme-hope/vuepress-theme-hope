@@ -1,4 +1,4 @@
-import type { ConvertLocaleConfig } from "vuepress-shared";
+import type { RequiredLocaleConfig } from "vuepress-shared";
 
 export interface BackToTopLocaleData {
   /**
@@ -9,4 +9,4 @@ export interface BackToTopLocaleData {
   backToTop: string;
 }
 
-export type BackToTopLocaleConfig = ConvertLocaleConfig<BackToTopLocaleData>;
+export type BackToTopLocaleConfig = RequiredLocaleConfig<BackToTopLocaleData>;

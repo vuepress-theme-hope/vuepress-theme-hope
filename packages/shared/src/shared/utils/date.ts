@@ -7,18 +7,6 @@ dayjs.extend(objectSupport);
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
-export interface DateOptions {
-  /**
-   * @default 'en'
-   */
-  lang?: string;
-  timezone?: string;
-  /**
-   * @default 'full'
-   */
-  type?: "date" | "time" | "full";
-}
-
 export interface DateDetail {
   year?: number | undefined;
   month?: number | undefined;
@@ -29,11 +17,23 @@ export interface DateDetail {
 }
 
 export interface DateInfo {
-  value: Date | undefined;
-  info: DateDetail;
   type: "date" | "time" | "full";
+  info: DateDetail;
+  value: Date | undefined;
 }
 
+/**
+ * Get Date info
+ *
+ * @description The function returns null instead of throw error when the date is invalid
+ *
+ * 获取日期信息
+ *
+ * @description 当日期无效时，函数返回 null 而不是抛出错误
+ *
+ * @param date Date or date info
+ * @param timezone (optional) date timezone
+ */
 export const getDate = (
   date: string | Date | undefined,
   timezone?: string
@@ -115,6 +115,15 @@ export const getDate = (
   return null;
 };
 
+/**
+ * Recent date will returns positive value, so dates will be latest to oldest after sorting
+ *
+ * @description Invalid date will appear at last
+ *
+ * 最近的日期将返回正值，因此在排序后日期将是最新到最旧
+ *
+ * @description 无效日期将出现在最后
+ */
 export const compareDate = (
   dateA: Date | number | string | undefined,
   dateB: Date | number | string | undefined
