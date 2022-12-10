@@ -68,6 +68,6 @@
   },
   "devDependencies": {
     "@vuepress/core": "2.0.0-beta.58",
-    "@vuepress/plugin-git": "2.0.0-beta.58"
+    "@vuepress/plugin-git": "2.0.0-beta.50-pre.1"
   }
 }
