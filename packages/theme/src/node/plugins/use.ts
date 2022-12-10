@@ -1,11 +1,12 @@
 import { getDirname, path } from "@vuepress/utils";
 import { useReadingTimePlugin } from "vuepress-plugin-reading-time2";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
-import { useGitPlugin } from "vuepress-shared/node";
+
+import { useGitPlugin } from "./git.js";
+import { useExtendsPagePlugin } from "./pageConverter.js";
 
 import type { App } from "@vuepress/core";
 import type { PluginsOptions } from "../../shared/index.js";
-import { useExtendsPagePlugin } from "./pageConverter.js";
 
 const __dirname = getDirname(import.meta.url);
 

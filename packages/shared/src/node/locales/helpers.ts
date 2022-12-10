@@ -1,4 +1,4 @@
-import { lang2PathConfig, path2langConfig, supportedLangs } from "./config.js";
+import { lang2PathConfig, path2langConfig } from "./config.js";
 import { Logger } from "../helpers/index.js";
 import { deepMerge } from "../../shared/index.js";
 
@@ -6,28 +6,6 @@ import type { App, LocaleConfig } from "@vuepress/core";
 import type { LocaleData } from "@vuepress/shared";
 import type { HopeLang } from "./types.js";
 import type { RequiredLocaleConfig } from "../../shared/index.js";
-
-const reportStatus: Record<string, boolean> = {};
-
-/** Check if the lang is supported */
-export const checkLang = (lang = ""): boolean => supportedLangs.includes(lang);
-
-export const showLangError = (lang: string, plugin = ""): void => {
-  if (!reportStatus[lang]) {
-    console.warn(
-      `${lang} locates config is missing, and will return 'en-US' instead.
-${
-  lang === "root"
-    ? ""
-    : `You can contribute to https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/${
-        plugin || "<YOUR PLUGIN>"
-      }/src/node/locales.ts in this repository.
-`
-}Note: This warning will be shown only once`
-    );
-    reportStatus[lang] = true;
-  }
-};
 
 /** Get language from path */
 export const path2Lang = (path = "", debug = false): HopeLang => {
