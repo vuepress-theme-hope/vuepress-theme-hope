@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file. See [Conven
 
 ## [2.0.0-beta.141](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.140...v2.0.0-beta.141) (2022-12-11)
 
+### ⚠ BREAKING CHANGES
+
+- **theme:** blog homepage shall now use `layout: BlogHome`
+
 ### Features
 
 - **blog2:** not throw when no key is found ([ebe7236](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ebe7236114921e38acd9222eeef42d828c311ebc))
