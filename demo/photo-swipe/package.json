@@ -1,6 +1,6 @@
 {
   "name": "photo-swipe-demo",
-  "version": "2.0.0-beta.140",
+  "version": "2.0.0-beta.141",
   "private": true,
   "description": "Demo for vuepress-plugin-photo-swipe",
   "license": "MIT",

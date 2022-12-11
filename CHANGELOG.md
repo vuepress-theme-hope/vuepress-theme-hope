@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.141](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.140...v2.0.0-beta.141) (2022-12-11)
+
+### Features
+
+- **blog2:** not throw when no key is found ([ebe7236](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ebe7236114921e38acd9222eeef42d828c311ebc))
+- **theme:** improve excerpt style ([ded3da9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ded3da93353128cc5f6b0fba88dbb97aa766c2d0))
+- **theme:** support blog type, close [#2450](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2450) ([#2540](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2540)) ([63a5ebd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/63a5ebd6b9383fc97766dba316ee7cd16aa18396))
+
+### Bug Fixes
+
+- **pwa2:** fix logger issue. revert perf improve ([06b33bd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/06b33bd181fb96fb20844ef40f698534101a68f9))
+- **theme:** article excerpt shall not be clickable ([30778a3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/30778a39d4c6d078ab7e68356263f2ea93f92fb7))
+- **theme:** fix excerpt option not working ([7ec67b2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7ec67b2bafaf4549d2ff5ef486511c41989ce7ac))
+- **theme:** fix home appears in article list ([c02523c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c02523c7a6ab74e84c1a4c0f6cdff5856102a81f))
+- **theme:** fix styles on article list, fix [#2453](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2453) ([1b16f5a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1b16f5a7f5b90bf66b064b0720da59ce31b72dde))
+- **theme:** fix tag list in darkmode ([25401e6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/25401e6549b0684a11e5b1a6d56631e986607a31))
+
 ## [2.0.0-beta.140](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.139...v2.0.0-beta.140) (2022-12-10)
 
 ### Features
