@@ -1,7 +1,10 @@
 import { computed, defineComponent, h, resolveComponent } from "vue";
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
 
+import CommonWrapper from "@theme-hope/components/CommonWrapper.js";
 import FadeSlideY from "@theme-hope/components/transitions/FadeSlideY.js";
+import HomePage from "@theme-hope/components/HomePage.js";
+import NormalPage from "@theme-hope/components/NormalPage.js";
 import SkipLink from "@theme-hope/components/SkipLink.js";
 import { useMobile } from "@theme-hope/composables/index.js";
 import {
@@ -9,7 +12,7 @@ import {
   useThemeLocaleData,
 } from "@theme-hope/composables/index.js";
 
-import type { DefineComponent, VNode } from "vue";
+import type { VNode } from "vue";
 import type { ThemePageFrontmatter } from "../../shared/index.js";
 
 declare const ENABLE_BLOG: boolean;
@@ -35,15 +38,13 @@ export default defineComponent({
     return (): VNode[] => [
       h(SkipLink),
       h(
-        <DefineComponent>resolveComponent("CommonWrapper"),
+        CommonWrapper,
         {},
         {
           default: () =>
             frontmatter.value.home
-              ? h(resolveComponent("HomePage"))
-              : h(FadeSlideY, () =>
-                  h(resolveComponent("NormalPage"), { key: page.value.path })
-                ),
+              ? h(HomePage)
+              : h(FadeSlideY, () => h(NormalPage, { key: page.value.path })),
           ...(ENABLE_BLOG && sidebarDisplay.value !== "none"
             ? { navScreenBottom: () => h(resolveComponent("BloggerInfo")) }
             : {}),

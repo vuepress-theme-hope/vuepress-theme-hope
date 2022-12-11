@@ -36,7 +36,7 @@ export const getArticleType = (
         // generated from markdown files
         Boolean(frontmatter.article !== false && filePathRelative)),
     path: options.article,
-    layout: "Blog",
+    layout: "BlogType",
     frontmatter: (localePath) => ({
       title: themeData.locales[localePath].blogLocales.article,
     }),
@@ -75,7 +75,7 @@ export const getStarType = (
     },
 
     path: options.star,
-    layout: "Blog",
+    layout: "BlogType",
     frontmatter: (localePath) => ({
       title: themeData.locales[localePath].blogLocales.star,
     }),
@@ -105,7 +105,7 @@ export const getTimelineType = (
         pageB.routeMeta[ArticleInfoType.date]
       ),
     path: options.timeline,
-    layout: "Blog",
+    layout: "Timeline",
     frontmatter: (localePath) => ({
       title: themeData.locales[localePath].blogLocales.timeline,
     }),

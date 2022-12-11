@@ -29,7 +29,7 @@ export const getCategoryCategory = (
     getter: ({ routeMeta }) => routeMeta[ArticleInfoType.category] || [],
     sorter: defaultPageSorter,
     path: options.category,
-    layout: "Blog",
+    layout: "BlogCategory",
     frontmatter: (localePath) => ({
       title: themeData.locales[localePath].blogLocales.category,
     }),
@@ -37,7 +37,7 @@ export const getCategoryCategory = (
     itemFrontmatter: (name, localePath) => ({
       title: `${name} ${themeData.locales[localePath].blogLocales.category}`,
     }),
-    itemLayout: "Blog",
+    itemLayout: "BlogCategory",
   };
 
 export const getTagCategory = (
@@ -59,12 +59,12 @@ export const getTagCategory = (
     getter: ({ routeMeta }) => routeMeta[ArticleInfoType.tag] || [],
     sorter: defaultPageSorter,
     path: options.tag,
-    layout: "Blog",
+    layout: "BlogCategory",
     frontmatter: (localePath) => ({
       title: themeData.locales[localePath].blogLocales.tag,
     }),
     itemPath: options.tagItem,
-    itemLayout: "Blog",
+    itemLayout: "BlogCategory",
     itemFrontmatter: (name, localePath) => ({
       title: `${name} ${themeData.locales[localePath].blogLocales.tag}`,
     }),

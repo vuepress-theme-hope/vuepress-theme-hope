@@ -137,7 +137,7 @@ export default hopeTheme({
           filter: (page) => page.filePathRelative?.includes("demo/") || false,
           sorter: (pageA, pageB) =>
             compareDate(pageA.frontmatter.date, pageB.frontmatter.date),
-          layout: "Blog",
+          layout: "BlogType",
         },
       ],
     },
