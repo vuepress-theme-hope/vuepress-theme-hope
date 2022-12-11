@@ -35,8 +35,6 @@ export const ruLocale: ThemeLocaleData = {
     all: "Все",
     intro: "Личное вступление",
     star: "Звезда",
-    slides: "Слайды",
-    encrypt: "Зашифровано",
   },
 
   paginationLocales: {

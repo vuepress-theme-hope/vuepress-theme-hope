@@ -21,24 +21,28 @@ export const prepareConfigFile = (
   if (enableBlog) {
     configImport += `\
 import BloggerInfo from "@theme-hope/modules/blog/components/BloggerInfo.js";
-import BlogHome from "@theme-hope/modules/blog/components/BlogHome.js";
-import BlogPage from "@theme-hope/modules/blog/components/BlogPage.js";
 import { setupBlog } from "@theme-hope/modules/blog/composables/index.js";
-import Blog from "${CLIENT_FOLDER}modules/blog/layouts/Blog.js";
+import BlogCategory from "${CLIENT_FOLDER}modules/blog/layouts/BlogCategory.js";
+import BlogHome from "${CLIENT_FOLDER}modules/blog/layouts/BlogHome.js";
+import BlogType from "${CLIENT_FOLDER}modules/blog/layouts/BlogType.js";
+import Timeline from "${CLIENT_FOLDER}modules/blog/layouts/Timeline.js";
 import "${CLIENT_FOLDER}modules/blog/styles/layout.scss";
 `;
 
     enhance += `\
 app.component("BloggerInfo", BloggerInfo);
-app.component("BlogHome", BlogHome);
-app.component("BlogPage", BlogPage);
 `;
 
     setup += `\
 setupBlog();
 `;
 
-    layout += "Blog,\n";
+    layout += `\
+BlogCategory,
+BlogHome,
+BlogType,
+Timeline,
+`;
   }
 
   if (enableEncrypt) {
@@ -89,13 +93,6 @@ export default defineClientConfig({
 
     // inject global properties
     injectDarkMode(app);
-
-    // register to inject styles
-    app.component("CommonWrapper", CommonWrapper);
-    app.component("HomePage", HomePage);
-    app.component("NormalPage", NormalPage);
-    app.component("Navbar", Navbar);
-    app.component("Sidebar", Sidebar);
 
 ${enhance
   .split("\n")

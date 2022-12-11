@@ -57,6 +57,54 @@ Length of excerpt when auto generating.
 
 Page filter, determine whether the plugin should generate excerpt for it.
 
+### type
+
+- Type: `BlogTypeOptions[]`
+
+  ```ts
+  interface BlogTypeOptions {
+    /**
+     * Unique type name
+     */
+    key: string;
+
+    /**
+     * A filter function to determine whether a page should be the type
+     */
+    filter: (page: Page) => boolean;
+
+    /**
+     * A custom function to sort the pages
+     */
+    sorter?: (pageA: Page, pageB: Page) => number;
+
+    /**
+     * Page path to be registered
+     *
+     * @default '/:key/'
+     */
+    path?: string;
+
+    /**
+     * Frontmatter
+     */
+    frontmatter?: (localePath: string) => Record<string, string>;
+
+    /**
+     * Layout name
+     *
+     * @default 'BlogType'
+     */
+    layout?: string;
+  }
+  ```
+
+- Default: `[]`
+- Details:
+  - [Guide → Article List](../../guide/blog/article.md#other-types-of-articles)
+
+Additional article type.
+
 ### article
 
 - Тип: `string`
@@ -91,20 +139,6 @@ Page filter, determine whether the plugin should generate excerpt for it.
 - По умолчанию: `/tag/:name/`
 
 Путь маршрута списка тегов. `:name` будет заменено именем тега.
-
-### encrypted
-
-- Тип: `string`
-- По умолчанию: `/encrypted/`
-
-Путь к списку зашифрованных статей.
-
-### slide
-
-- Тип: `string`
-- По умолчанию: `/slide/`
-
-Путь маршрута списка слайдов.
 
 ### star
 

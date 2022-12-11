@@ -19,6 +19,8 @@ import {
   useMobile,
   useThemeLocaleData,
 } from "@theme-hope/composables/index.js";
+import Navbar from "@theme-hope/modules/navbar/components/Navbar.js";
+import Sidebar from "@theme-hope/modules/sidebar/components/Sidebar.js";
 import { useSidebarItems } from "@theme-hope/modules/sidebar/composables/index.js";
 
 import type { DefineComponent, VNode } from "vue";
@@ -207,7 +209,7 @@ export default defineComponent({
             // navbar
             enableNavbar.value
               ? h(
-                  <DefineComponent>resolveComponent("Navbar"),
+                  Navbar,
                   { onToggleSidebar: () => toggleMobileSidebar() },
                   {
                     leftStart: () => slots["navbarLeftStart"]?.(),
@@ -250,7 +252,7 @@ export default defineComponent({
             ),
             // sidebar
             h(
-              <DefineComponent>resolveComponent("Sidebar"),
+              Sidebar,
               {},
               {
                 ...(slots["sidebar"]

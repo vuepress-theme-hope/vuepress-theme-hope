@@ -59,6 +59,7 @@ export const hopeTheme =
       alias: resolveAlias(isDebug),
 
       define: () => ({
+        BLOG_TYPE_INFO: status.blogType,
         ENABLE_BLOG: status.enableBlog,
         ENABLE_READING_TIME: status.enableReadingTime,
         HAS_MULTIPLE_LANGUAGES: status.hasMultipleLanguages,

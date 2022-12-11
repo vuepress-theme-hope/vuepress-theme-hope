@@ -71,10 +71,76 @@ Similar to sticky articles, you can also set `star` to number to set their order
 
 :::
 
-## Encryption and Slides
+## Other types of articles <Badge text="Advanced" type="info" />
 
-The theme provides separate lists for the two special pages: encrypted article page and slide page. You can view them on the `/encrypt/` and `/slide/` pages.
+The theme provides separate lists for additional article type.
 
-At the same time, to help visitors distinguish between these two categories of pages, their categories will be clearly marked with icons in the article list.
+To add additional article type, you should set `plugins.blog.type` in theme options with an array of objects describing type you want.
 
-![Category Tips](./assets/icon-type.png)
+Each type should have a unique key (without special characters), and a `filter` function to determine whether a page should be the type. The `filter` function should accept page object and return a boolean value.
+
+To sort pages in the type list, you can also set a `sorter` function. The `sorter` function should accept two page objects and return a number.
+
+By default, the type list path will be `/key/` (with `key` replaced by your actual key). You can also set a custom path by setting `path` in options.
+
+`frontmatter` option controls the frontmatter of the layout page, with is a function accepting `localePath` and returning a frontmatter object. This option is useful when setting the title of the layout page.
+
+::: note
+
+`layout` is the layout name, by default it will be `BlogType`, a layout `vuepress-theme-hope` registered. ONLY IF you build a custom layout for the type list, shall you set this option to your layout value.
+
+:::
+
+Also you need to set `blogLocales[key]` in theme locales with the actual type name, so that the theme can display the type name correctly.
+
+To get start with, we would like to show you some examples.
+
+::: details Examples
+
+1. Adding a type of slide pages.
+
+   All slide pages should have `layout: Slide` in frontmatter. And the sequence doesn't matter.
+
+1. Adding a original type.
+
+You shall set the following options:
+
+```ts
+import { defineUserConfig } from "vuepress";
+// you may need to install vuepress-shared to use its `compareDate`
+import { compareDate } from "vuepress-shared";
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default defineUserConfig({
+  // other config
+  // ...
+
+  theme: hopeTheme({
+    blogLocales: {
+      slide: "Slides",
+      original: "Original",
+    },
+
+    plugins: {
+      blog: {
+        type: [
+          {
+            key: "slide",
+            filter: (page) => page.frontmatter.layout === "Slide",
+            frontmatter: () => ({ title: "Slides" }),
+          },
+          {
+            key: "original",
+            filter: (page) => page.frontmatter.original,
+            sorter: (pageA, pageB) =>
+              compareDate(pageA.frontmatter.date - pageB.frontmatter.date),
+            frontmatter: () => ({ title: "Original" }),
+          },
+        ],
+      },
+    },
+  }),
+});
+```
+
+:::

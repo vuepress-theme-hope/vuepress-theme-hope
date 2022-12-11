@@ -1,4 +1,4 @@
-import { pageSorter } from "./utils.js";
+import { defaultPageSorter } from "./utils.js";
 import { ArticleInfoType } from "../../../shared/index.js";
 
 import type { BlogCategoryOptions } from "vuepress-plugin-blog2";
@@ -27,9 +27,9 @@ export const getCategoryCategory = (
   >{
     key: "category",
     getter: ({ routeMeta }) => routeMeta[ArticleInfoType.category] || [],
-    sorter: pageSorter,
+    sorter: defaultPageSorter,
     path: options.category,
-    layout: "Blog",
+    layout: "BlogCategory",
     frontmatter: (localePath) => ({
       title: themeData.locales[localePath].blogLocales.category,
     }),
@@ -37,7 +37,7 @@ export const getCategoryCategory = (
     itemFrontmatter: (name, localePath) => ({
       title: `${name} ${themeData.locales[localePath].blogLocales.category}`,
     }),
-    itemLayout: "Blog",
+    itemLayout: "BlogCategory",
   };
 
 export const getTagCategory = (
@@ -57,14 +57,14 @@ export const getTagCategory = (
   >{
     key: "tag",
     getter: ({ routeMeta }) => routeMeta[ArticleInfoType.tag] || [],
-    sorter: pageSorter,
+    sorter: defaultPageSorter,
     path: options.tag,
-    layout: "Blog",
+    layout: "BlogCategory",
     frontmatter: (localePath) => ({
       title: themeData.locales[localePath].blogLocales.tag,
     }),
     itemPath: options.tagItem,
-    itemLayout: "Blog",
+    itemLayout: "BlogCategory",
     itemFrontmatter: (name, localePath) => ({
       title: `${name} ${themeData.locales[localePath].blogLocales.tag}`,
     }),

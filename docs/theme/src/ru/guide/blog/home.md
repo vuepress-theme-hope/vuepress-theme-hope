@@ -12,7 +12,7 @@ tag:
 
 `vuepress-theme-hope` позволяет вам включить домашнюю страницу в стиле блога.
 
-Вам нужно установить `layout: Blog` и `home: true` на главной странице frontmatter.
+Вам нужно установить `layout: BlogHome` и `home: true` на главной странице frontmatter.
 
 <!-- more -->
 

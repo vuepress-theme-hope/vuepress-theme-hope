@@ -80,10 +80,74 @@ tag:
 
 :::
 
-## 加密与幻灯片
+## 其他类型的文章 <Badge text="高级" type="info" />
 
-主题为加密文章页与幻灯片页这两个特殊页面提供了单独的列表，你可以在 `/encrypt/` 和 `/slide/` 页面查看它们。
+该主题为其他文章类型提供了单独的列表。
 
-同时为了帮助访问者区分，这两个类别的页面会在文章列表中用图标明确标明其类别。
+要添加其他文章类型，您应该在主题选项中设置 `plugins.blog.type`。它应该是一个一数组包含描述您想要的类型的配置对象。
 
-![类别提示](./assets/icon-type.png)
+每个类型都应该有一个唯一的键 (不含特殊字符)，以及一个 `filter` 函数来确定页面是否应该是该类型。 `filter` 函数应该接受页面对象并返回一个布尔值。
+
+要对类型列表中的页面进行排序，您还可以设置 `sorter` 选项。 `sorter` 函数应该接受两个页面对象并返回一个数字。
+
+默认情况下，类型列表路径为 `/key/` (`key` 被替换为实际键)。 您还可以通过在选项中设置 `path` 来设置自定义路径。
+
+`frontmatter` 选项控制布局页面的 frontmatter，它是一个接受 `localePath` 并返回 frontmatter 对象的函数。该选项在设置布局页面的标题时很有用。
+
+::: note
+
+`layout` 是布局名称，默认为 `BlogType`，是一个 `vuepress-theme-hope` 注册的布局。 仅当您为类型列表构建自定义布局时，才应将此选项设置为您的布局值。
+
+:::
+
+您还需要在主题语言环境中使用实际类型名称设置 `blogLocales[key]`，以便主题可以正确显示类型名称。
+
+为了方便上手，我们在这里展示一些示例。
+
+::: details 示例
+
+1. 增加了一种幻灯片页面。
+
+   所有幻灯片页面都应在 frontmatter 中包含 `layout: Slide`。 并且顺序无关紧要。
+
+1. 添加原创类型。
+
+您应设置以下选项：
+
+```ts
+import { defineUserConfig } from "vuepress";
+// 你可能需要安装 vuepress-shared 来使用它的 `compareDate`
+import { compareDate } from "vuepress-shared";
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default defineUserConfig({
+  // other config
+  // ...
+
+  theme: hopeTheme({
+    blogLocales: {
+      slide: "幻灯片",
+      original: "原创",
+    },
+
+    plugins: {
+      blog: {
+        type: [
+          {
+            key: "slide",
+            filter: (page) => page.frontmatter.layout === "Slide",
+          },
+          {
+            key: "original",
+            filter: (page) => page.frontmatter.original,
+            sorter: (pageA, pageB) =>
+              compareDate(pageA.frontmatter.date - pageB.frontmatter.date),
+          },
+        ],
+      },
+    },
+  }),
+});
+```
+
+:::

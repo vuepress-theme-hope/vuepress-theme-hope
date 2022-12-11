@@ -1,6 +1,6 @@
-import { pageSorter } from "./utils.js";
+import { defaultPageSorter } from "./utils.js";
 import { compareDate } from "vuepress-shared/node";
-import { ArticleInfoType, PageType } from "../../../shared/index.js";
+import { ArticleInfoType } from "../../../shared/index.js";
 
 import type { BlogTypeOptions } from "vuepress-plugin-blog2";
 import type { GitData } from "@vuepress/plugin-git";
@@ -27,7 +27,7 @@ export const getArticleType = (
     >
   >{
     key: "article",
-    sorter: pageSorter,
+    sorter: defaultPageSorter,
     filter: ({ frontmatter, filePathRelative }): boolean =>
       // not home
       !frontmatter.home &&
@@ -36,7 +36,7 @@ export const getArticleType = (
         // generated from markdown files
         Boolean(frontmatter.article !== false && filePathRelative)),
     path: options.article,
-    layout: "Blog",
+    layout: "BlogType",
     frontmatter: (localePath) => ({
       title: themeData.locales[localePath].blogLocales.article,
     }),
@@ -75,7 +75,7 @@ export const getStarType = (
     },
 
     path: options.star,
-    layout: "Blog",
+    layout: "BlogType",
     frontmatter: (localePath) => ({
       title: themeData.locales[localePath].blogLocales.star,
     }),
@@ -105,59 +105,8 @@ export const getTimelineType = (
         pageB.routeMeta[ArticleInfoType.date]
       ),
     path: options.timeline,
-    layout: "Blog",
+    layout: "Timeline",
     frontmatter: (localePath) => ({
       title: themeData.locales[localePath].blogLocales.timeline,
-    }),
-  };
-
-export const getEncryptedType = (
-  options: BlogPluginOptions,
-  themeData: ThemeData
-): BlogTypeOptions<
-  { git: GitData },
-  ThemeNormalPageFrontmatter,
-  { routeMeta: ArticleInfo }
-> =>
-  <
-    BlogTypeOptions<
-      { git: GitData },
-      ThemeNormalPageFrontmatter,
-      { routeMeta: ArticleInfo }
-    >
-  >{
-    key: "encrypted",
-    filter: ({ routeMeta }) => Boolean(routeMeta[ArticleInfoType.isEncrypted]),
-    sorter: pageSorter,
-    path: options.encrypted,
-    layout: "Blog",
-    frontmatter: (localePath) => ({
-      title: themeData.locales[localePath].blogLocales.encrypt,
-    }),
-  };
-
-export const getSlideType = (
-  options: BlogPluginOptions,
-  themeData: ThemeData
-): BlogTypeOptions<
-  { git: GitData },
-  ThemeNormalPageFrontmatter,
-  { routeMeta: ArticleInfo }
-> =>
-  <
-    BlogTypeOptions<
-      { git: GitData },
-      ThemeNormalPageFrontmatter,
-      { routeMeta: ArticleInfo }
-    >
-  >{
-    key: "slide",
-    sorter: pageSorter,
-    filter: ({ routeMeta }) =>
-      routeMeta[ArticleInfoType.type] === PageType.slide,
-    path: options.slide,
-    layout: "Blog",
-    frontmatter: (localePath) => ({
-      title: themeData.locales[localePath].blogLocales.slides,
     }),
   };

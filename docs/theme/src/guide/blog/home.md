@@ -12,7 +12,7 @@ tag:
 
 `vuepress-theme-hope` allows you to enable a blog-style homepage.
 
-You need to set `layout: Blog` and `home: true` in the frontmatter of homepage.
+You need to set `layout: BlogHome` and `home: true` in the frontmatter of homepage.
 
 <!-- more -->
 

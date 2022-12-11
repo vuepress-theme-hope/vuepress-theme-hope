@@ -35,8 +35,6 @@ export const koLocale: ThemeLocaleData = {
     all: "모두",
     intro: "개인 소개",
     star: "별",
-    slides: "슬라이드",
-    encrypt: "암호화",
   },
 
   paginationLocales: {

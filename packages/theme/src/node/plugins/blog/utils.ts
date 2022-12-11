@@ -8,7 +8,7 @@ import type {
   ThemeNormalPageFrontmatter,
 } from "../../../shared/index.js";
 
-export const pageSorter = (
+export const defaultPageSorter = (
   pageA: Page<
     { git: GitData },
     ThemeNormalPageFrontmatter,
