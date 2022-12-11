@@ -437,6 +437,7 @@ importers:
       cross-env: 7.0.3
       sass-loader: 13.2.0
       vue: 3.2.45
+      vuepress-shared: workspace:*
       vuepress-theme-hope: workspace:*
       vuepress-vite: 2.0.0-beta.58
       vuepress-webpack: 2.0.0-beta.58
@@ -451,6 +452,7 @@ importers:
       cross-env: 7.0.3
       sass-loader: 13.2.0
       vue: 3.2.45
+      vuepress-shared: link:../../packages/shared
       vuepress-theme-hope: link:../../packages/theme
       vuepress-vite: 2.0.0-beta.58_lswsvka5er7k6wvcf4pxdpqp6m
       vuepress-webpack: 2.0.0-beta.58_vue@3.2.45

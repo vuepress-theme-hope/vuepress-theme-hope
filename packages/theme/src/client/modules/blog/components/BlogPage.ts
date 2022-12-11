@@ -1,5 +1,6 @@
 import { usePageFrontmatter } from "@vuepress/client";
 import { computed, defineComponent, h, resolveComponent } from "vue";
+import { useBlogType } from "vuepress-plugin-blog2/client";
 import { useRoute } from "vue-router";
 
 import ArticleList from "@theme-hope/modules/blog/components/ArticleList.js";
@@ -12,8 +13,6 @@ import DropTransition from "@theme-hope/components/transitions/DropTransition.js
 import {
   useArticles,
   useCategoryMap,
-  useEncryptedArticles,
-  useSlides,
   useTagMap,
   useStars,
 } from "@theme-hope/modules/blog/composables/index.js";
@@ -21,8 +20,10 @@ import {
 import type { VNode } from "vue";
 import type {
   BlogCategoryFrontmatterOptions,
+  BlogTypeFrontmatterOptions,
   BlogPluginFrontmatter,
 } from "vuepress-plugin-blog2";
+import type { ArticleInfo } from "../../../../shared/index.js";
 
 import "../styles/page.scss";
 
@@ -40,10 +41,9 @@ export default defineComponent({
     const route = useRoute();
     const articles = useArticles();
     const categoryMap = useCategoryMap();
-    const encryptedArticles = useEncryptedArticles();
-    const slides = useSlides();
     const stars = useStars();
     const tagMap = useTagMap();
+    const blogType = useBlogType<ArticleInfo>();
 
     const componentName = computed(() => {
       const { key } = frontmatter.value.blog || {};
@@ -58,15 +58,14 @@ export default defineComponent({
     });
 
     const items = computed(() => {
-      const { name = "", key = "" } =
-        <BlogCategoryFrontmatterOptions>frontmatter.value.blog || {};
+      const { name = "", key = "", type } = <
+        (BlogCategoryFrontmatterOptions | BlogTypeFrontmatterOptions) & {
+          name?: string;
+        }
+      >frontmatter.value.blog || {};
 
-      return key === "encrypted"
-        ? encryptedArticles.value.items
-        : key === "star"
+      return key === "star"
         ? stars.value.items
-        : key === "slide"
-        ? slides.value.items
         : key === "timeline"
         ? []
         : key === "category"
@@ -77,6 +76,8 @@ export default defineComponent({
         ? name
           ? tagMap.value.map[name].items
           : []
+        : type === "type" && key
+        ? blogType.value.items
         : articles.value.items;
     });
 

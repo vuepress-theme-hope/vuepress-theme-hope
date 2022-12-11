@@ -3,14 +3,7 @@ import { blogPlugin } from "vuepress-plugin-blog2";
 import { getCategoryCategory, getTagCategory } from "./category.js";
 import { filter } from "./filter.js";
 import { injectBasicInfo } from "./info.js";
-import { getBlogOptions } from "./options.js";
-import {
-  getArticleType,
-  getEncryptedType,
-  getSlideType,
-  getStarType,
-  getTimelineType,
-} from "./type.js";
+import { getArticleType, getStarType, getTimelineType } from "./type.js";
 import { checkFrontmatter } from "../../frontmatter/check.js";
 import { ArticleInfoType } from "../../../shared/index.js";
 
@@ -30,7 +23,7 @@ export const getBlogPlugin = (
 ): Plugin | null => {
   if (!options) return null;
 
-  const blogOptions = getBlogOptions(options);
+  const blogOptions = options === true ? {} : options;
   const encryptedPaths = Object.keys(themeData.encrypt.config || {});
   const isPageEncrypted = ({ path }: Page): boolean =>
     encryptedPaths.some((key) => decodeURI(path).startsWith(key));
@@ -79,9 +72,7 @@ export const getBlogPlugin = (
       getArticleType(blogOptions, themeData),
       getStarType(blogOptions, themeData),
       getTimelineType(blogOptions, themeData),
-      // TODO: Allow customize
-      getSlideType(blogOptions, themeData),
-      getEncryptedType(blogOptions, themeData),
+      ...(blogOptions.type || []),
     ],
 
     metaScope: "",

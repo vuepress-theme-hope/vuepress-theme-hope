@@ -35,8 +35,6 @@ export const trLocale: ThemeLocaleData = {
     all: "Hepsi",
     intro: "Kişisel Tanıtım",
     star: "Yıldız",
-    slides: "Slaytlar",
-    encrypt: "Şifreli",
   },
 
   paginationLocales: {

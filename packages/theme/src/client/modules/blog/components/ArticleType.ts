@@ -1,11 +1,10 @@
+import { useRouteLocale } from "@vuepress/client";
 import { computed, defineComponent, h } from "vue";
 import { RouterLink, useRoute } from "vue-router";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index.js";
 import {
   useArticles,
-  useEncryptedArticles,
-  useSlides,
   useStars,
 } from "@theme-hope/modules/blog/composables/index.js";
 
@@ -13,15 +12,16 @@ import type { VNode } from "vue";
 
 import "../styles/article-type.scss";
 
+declare const BLOG_TYPE_INFO: { key: string; path: string }[];
+
 export default defineComponent({
   name: "ArticleType",
 
   setup() {
+    const localePath = useRouteLocale();
     const themeLocale = useThemeLocaleData();
     const route = useRoute();
     const articles = useArticles();
-    const encryptedArticles = useEncryptedArticles();
-    const slides = useSlides();
     const stars = useStars();
 
     const types = computed(() => {
@@ -33,8 +33,10 @@ export default defineComponent({
           path: articles.value.path,
         },
         { text: locale.star, path: stars.value.path },
-        { text: locale.slides, path: slides.value.path },
-        { text: locale.encrypt, path: encryptedArticles.value.path },
+        ...BLOG_TYPE_INFO.map(({ key, path }) => ({
+          text: locale[key],
+          path: path.replace(/^\//, localePath.value),
+        })),
       ];
     });
 

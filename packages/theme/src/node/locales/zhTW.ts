@@ -35,8 +35,6 @@ export const zhTWLocale: ThemeLocaleData = {
     all: "全部",
     intro: "個人介紹",
     star: "收藏",
-    slides: "幻燈片",
-    encrypt: "加密",
   },
 
   paginationLocales: {

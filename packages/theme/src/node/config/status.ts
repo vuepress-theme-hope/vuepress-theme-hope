@@ -6,6 +6,7 @@ export interface ThemeStatus {
   enableEncrypt: boolean;
   enableSlide: boolean;
   enableReadingTime: boolean;
+  blogType: { key: string; path: string }[];
   hasMultipleLanguages: boolean;
   supportPageview: boolean;
 }
@@ -25,6 +26,13 @@ export const getStatus = (
     ),
     enableSlide: Boolean(plugins.mdEnhance && plugins.mdEnhance.presentation),
     enableReadingTime: plugins.readingTime !== false,
+    blogType:
+      typeof plugins.blog === "object"
+        ? plugins.blog?.type?.map(({ key, path }) => ({
+            key,
+            path: path || `/${key}/`,
+          })) || []
+        : [],
     hasMultipleLanguages: Object.keys(locales).length > 1,
     supportPageview: Boolean(
       plugins.comment && plugins.comment.provider === "Waline"

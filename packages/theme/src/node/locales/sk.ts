@@ -35,8 +35,6 @@ export const skLocale: ThemeLocaleData = {
     all: "Všetko",
     intro: "Osobné intro",
     star: "Hviezda",
-    slides: "Prezentácie",
-    encrypt: "Zašifrované",
   },
 
   paginationLocales: {

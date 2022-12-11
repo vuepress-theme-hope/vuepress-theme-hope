@@ -35,8 +35,6 @@ export const ukLocale: ThemeLocaleData = {
     all: "Bce",
     intro: "Особистий вступ",
     star: "Зірка",
-    slides: "Слайди",
-    encrypt: "Зашифровано",
   },
 
   paginationLocales: {

@@ -1,4 +1,4 @@
-import type { BlogOptions } from "vuepress-plugin-blog2";
+import type { BlogOptions, BlogTypeOptions } from "vuepress-plugin-blog2";
 
 export interface BlogPluginOptions
   extends Partial<
@@ -61,24 +61,6 @@ export interface BlogPluginOptions
   tagItem?: string;
 
   /**
-   * Path of encrypted article list
-   *
-   * 加密文章列表的路径
-   *
-   * @default '/encrypted/'
-   */
-  encrypted?: string;
-
-  /**
-   * Path of slide list
-   *
-   * 幻灯片列表的路径
-   *
-   * @default '/slide/'
-   */
-  slide?: string;
-
-  /**
    * Path of star article list
    *
    * 星标文章列表的路径
@@ -95,4 +77,17 @@ export interface BlogPluginOptions
    * @default '/timeline/'
    */
   timeline?: string;
+
+  /**
+   * Additional Article Type
+   *
+   * @description This is an advanced option, please refer to the [blog2 plugin documentation](https://vuepress-theme-hope.github.io/v2/blog/guide.html#customizing-categories-and-types) for details
+   *
+   * 额外的文章类型
+   *
+   * @description 这是一个高级选项，请参考 [blog2 插件文档](https://vuepress-theme-hope.github.io/v2/blog/zh/guide.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%B1%BB%E5%88%AB%E5%92%8C%E7%B1%BB%E5%9E%8B) 了解详情
+   *
+   * @default []
+   */
+  type?: BlogTypeOptions[];
 }

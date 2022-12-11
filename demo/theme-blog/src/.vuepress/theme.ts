@@ -1,3 +1,4 @@
+import { compareDate } from "vuepress-shared";
 import { hopeTheme } from "vuepress-theme-hope";
 import { enNavbar, zhNavbar } from "./navbar/index.js";
 import { enSidebar, zhSidebar } from "./sidebar/index.js";
@@ -82,6 +83,10 @@ export default hopeTheme({
         intro: "/intro.html",
       },
 
+      blogLocales: {
+        tutorial: "Tutorial",
+      },
+
       metaLocales: {
         editLink: "Edit this page on GitHub",
       },
@@ -106,6 +111,10 @@ export default hopeTheme({
         intro: "/zh/intro.html",
       },
 
+      blogLocales: {
+        tutorial: "教程",
+      },
+
       // page meta
       metaLocales: {
         editLink: "在 GitHub 上编辑此页",
@@ -121,7 +130,17 @@ export default hopeTheme({
   },
 
   plugins: {
-    blog: true,
+    blog: {
+      type: [
+        {
+          key: "tutorial",
+          filter: (page) => page.filePathRelative?.includes("demo/") || false,
+          sorter: (pageA, pageB) =>
+            compareDate(pageA.frontmatter.date, pageB.frontmatter.date),
+          layout: "Blog",
+        },
+      ],
+    },
 
     // If you don’t need comment feature, you can remove following option
     // The following config is for demo ONLY, if you need comment feature, please generate and use your own config, see comment plugin documentation for details.

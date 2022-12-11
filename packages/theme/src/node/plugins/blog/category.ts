@@ -1,4 +1,4 @@
-import { pageSorter } from "./utils.js";
+import { defaultPageSorter } from "./utils.js";
 import { ArticleInfoType } from "../../../shared/index.js";
 
 import type { BlogCategoryOptions } from "vuepress-plugin-blog2";
@@ -27,7 +27,7 @@ export const getCategoryCategory = (
   >{
     key: "category",
     getter: ({ routeMeta }) => routeMeta[ArticleInfoType.category] || [],
-    sorter: pageSorter,
+    sorter: defaultPageSorter,
     path: options.category,
     layout: "Blog",
     frontmatter: (localePath) => ({
@@ -57,7 +57,7 @@ export const getTagCategory = (
   >{
     key: "tag",
     getter: ({ routeMeta }) => routeMeta[ArticleInfoType.tag] || [],
-    sorter: pageSorter,
+    sorter: defaultPageSorter,
     path: options.tag,
     layout: "Blog",
     frontmatter: (localePath) => ({

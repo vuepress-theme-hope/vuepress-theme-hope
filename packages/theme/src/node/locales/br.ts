@@ -35,8 +35,6 @@ export const brLocale: ThemeLocaleData = {
     all: "Todos",
     intro: "Intro Pessoal",
     star: "Estrela",
-    slides: "Slides",
-    encrypt: "Encriptado",
   },
 
   paginationLocales: {

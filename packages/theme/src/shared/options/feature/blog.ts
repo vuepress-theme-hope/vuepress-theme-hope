@@ -1,6 +1,6 @@
 import type { PageInfo } from "../../info.js";
 
-export interface BlogLocaleData {
+export interface BlogLocaleData extends Record<string, string> {
   /** 文章文字 */
   article: string;
   /** 文章列表文字 */
@@ -19,10 +19,6 @@ export interface BlogLocaleData {
   intro: string;
   /** 搜藏文字 */
   star: string;
-  /** 幻灯片 */
-  slides: string;
-  /** 加密 */
-  encrypt: string;
 }
 
 export interface PaginationLocaleData {

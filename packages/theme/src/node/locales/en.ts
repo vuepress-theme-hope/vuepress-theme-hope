@@ -35,8 +35,6 @@ export const enLocale: ThemeLocaleData = {
     all: "All",
     intro: "Personal Intro",
     star: "Star",
-    slides: "Slides",
-    encrypt: "Encrypted",
   },
 
   paginationLocales: {

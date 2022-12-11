@@ -35,8 +35,6 @@ export const deLocale: ThemeLocaleData = {
     all: "Alle",
     intro: "Persönliche Einleitung",
     star: "Star",
-    slides: "Slides",
-    encrypt: "Verschlüsselt",
   },
 
   paginationLocales: {
