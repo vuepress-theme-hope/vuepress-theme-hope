@@ -1,5 +1,5 @@
 import { seoPlugin } from "vuepress-plugin-seo2";
-import { getBlogOptions } from "./blog.js";
+import { getBlogOptions } from "./blog/index.js";
 
 import type { Page, Plugin } from "@vuepress/core";
 import type { ThemeData, PluginsOptions } from "../../shared/index.js";

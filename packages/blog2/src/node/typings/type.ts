@@ -1,6 +1,10 @@
 import type { Page } from "@vuepress/core";
 
-export interface BlogTypeOptions {
+export interface BlogTypeOptions<
+  ExtraPageData extends Record<any, any> = Record<never, never>,
+  ExtraPageFrontmatter extends Record<any, any> = Record<string, unknown>,
+  ExtraPageFields extends Record<any, any> = Record<never, never>
+> {
   /**
    * Unique type name
    *
@@ -13,20 +17,7 @@ export interface BlogTypeOptions {
    *
    * 一个过滤函数来决定页面是否满足此类型
    */
-  filter: <
-    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >,
-    ExtraPageFrontmatter extends Record<
-      string | number | symbol,
-      unknown
-    > = Record<string, unknown>,
-    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >
-  >(
+  filter: (
     page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
   ) => boolean;
 
@@ -35,20 +26,7 @@ export interface BlogTypeOptions {
    *
    * 页面排序器
    */
-  sorter?: <
-    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >,
-    ExtraPageFrontmatter extends Record<
-      string | number | symbol,
-      unknown
-    > = Record<string, unknown>,
-    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >
-  >(
+  sorter?: (
     pageA: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
     pageB: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
   ) => number;

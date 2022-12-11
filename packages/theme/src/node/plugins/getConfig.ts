@@ -3,7 +3,7 @@ import { nprogressPlugin } from "@vuepress/plugin-nprogress";
 import { prismjsPlugin } from "@vuepress/plugin-prismjs";
 import { themeDataPlugin } from "@vuepress/plugin-theme-data";
 import { getActiveHeaderLinksPlugin } from "./activeHeaderLinks.js";
-import { getBlogPlugin } from "./blog.js";
+import { getBlogPlugin } from "./blog/index.js";
 import { getCommentPlugin } from "./comment.js";
 import { getComponentsPlugin } from "./components.js";
 import { getCopyCodePlugin } from "./copyCode.js";

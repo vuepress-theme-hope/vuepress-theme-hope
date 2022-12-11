@@ -1,7 +1,7 @@
 import { injectLocalizedDate } from "vuepress-shared";
 import { convertFrontmatter } from "../compact/index.js";
 import { checkFrontmatter } from "../frontmatter/check.js";
-import { ArticleInfoType } from "../../shared/index.js";
+import { ArticleInfoType, PageType } from "../../shared/index.js";
 
 import type { App, Page, PluginObject } from "@vuepress/core";
 import type {
@@ -17,6 +17,22 @@ export const injectPageInfo = (page: Page<ThemePageData>): void => {
     | ThemeProjectHomePageFrontmatter
     | ThemeBlogHomePageFrontmatter
     | ThemeNormalPageFrontmatter;
+
+  const isArticle =
+    // declaring this is an article
+    frontmatter.article ||
+    // generated from markdown files
+    Boolean(frontmatter.article !== false && filePathRelative);
+  const isSlide = frontmatter.layout === "Slide";
+
+  // save page type to routeMeta
+  page.routeMeta[ArticleInfoType.type] = frontmatter.home
+    ? PageType.home
+    : isSlide
+    ? PageType.slide
+    : isArticle
+    ? PageType.article
+    : PageType.page;
 
   // save relative file path into page data to generate edit link
   page.data.filePathRelative = filePathRelative;
@@ -42,8 +58,8 @@ export const extendsPagePlugin = (legacy = false): PluginObject => ({
       );
 
     checkFrontmatter(page, app.env.isDebug);
-    injectLocalizedDate(page);
     injectPageInfo(<Page<ThemePageData>>page);
+    injectLocalizedDate(page);
   },
 });
 

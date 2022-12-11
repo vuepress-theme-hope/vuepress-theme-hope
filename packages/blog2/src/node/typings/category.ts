@@ -1,6 +1,10 @@
 import type { Page } from "@vuepress/core";
 
-export interface BlogCategoryOptions {
+export interface BlogCategoryOptions<
+  ExtraPageData extends Record<any, any> = Record<never, never>,
+  ExtraPageFrontmatter extends Record<any, any> = Record<string, unknown>,
+  ExtraPageFields extends Record<any, any> = Record<never, never>
+> {
   /**
    * Unique category name
    *
@@ -13,20 +17,7 @@ export interface BlogCategoryOptions {
    *
    * 从页面中获取分类的函数
    */
-  getter: <
-    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >,
-    ExtraPageFrontmatter extends Record<
-      string | number | symbol,
-      unknown
-    > = Record<string, unknown>,
-    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >
-  >(
+  getter: (
     page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
   ) => string[];
 
@@ -35,20 +26,7 @@ export interface BlogCategoryOptions {
    *
    * 页面排序器
    */
-  sorter?: <
-    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >,
-    ExtraPageFrontmatter extends Record<
-      string | number | symbol,
-      unknown
-    > = Record<string, unknown>,
-    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
-      never,
-      never
-    >
-  >(
+  sorter?: (
     pageA: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
     pageB: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
   ) => number;
