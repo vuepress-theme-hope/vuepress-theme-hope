@@ -29,7 +29,7 @@ export const getBlogPlugin = (
     encryptedPaths.some((key) => decodeURI(path).startsWith(key));
 
   return blogPlugin(<BlogOptions>{
-    excerpt: true,
+    excerpt: blogOptions.excerpt !== false,
 
     excerptFilter: (page) => {
       const isEncrypted = isPageEncrypted(page);

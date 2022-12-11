@@ -4,7 +4,7 @@ export interface BlogPluginOptions
   extends Partial<
     Pick<
       BlogOptions,
-      "excerpt" | "excerptFilter" | "excerptLength" | "filter" | "hotReload"
+      "excerptFilter" | "excerptLength" | "filter" | "hotReload"
     >
   > {
   /**
@@ -77,6 +77,15 @@ export interface BlogPluginOptions
    * @default '/timeline/'
    */
   timeline?: string;
+
+  /**
+   * Excerpt generation
+   *
+   * 摘要生成
+   *
+   * @default true
+   */
+  excerpt?: boolean;
 
   /**
    * Additional Article Type
