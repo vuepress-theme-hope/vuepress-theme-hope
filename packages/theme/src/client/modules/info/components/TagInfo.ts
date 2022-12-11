@@ -51,6 +51,7 @@ export default defineComponent({
         ? h(
             "span",
             {
+              class: "tag-info",
               "aria-label": `${metaLocale.value.tag}${props.pure ? "" : "🏷"}`,
               ...(props.pure ? {} : { "data-balloon-pos": "down" }),
             },
@@ -65,7 +66,8 @@ export default defineComponent({
                       "tag-item",
                       {
                         // TODO: magic number 9 is tricky here
-                        [`tag${generateIndexFromHash(name, 9)}`]: !props.pure,
+                        [`tag-item${generateIndexFromHash(name, 9)}`]:
+                          !props.pure,
                         clickable: path,
                       },
                     ],
