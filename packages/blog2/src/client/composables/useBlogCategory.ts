@@ -34,16 +34,17 @@ export const useBlogCategory = <
         ?.key ||
       "";
 
+    if (!mapKey) {
+      console.warn(`useBlogCategory: key not found`);
+
+      // fallback data
+      return { path: "/", map: {} };
+    }
+
     const routes = router.getRoutes();
 
     if (!blogCategoryMap.value[mapKey])
-      throw new Error(
-        `useBlogCategory: ${
-          key
-            ? `key ${key} is invalid`
-            : "can not bind to an existing key on non blog pages"
-        }`
-      );
+      throw new Error(`useBlogCategory: key ${mapKey} is invalid`);
 
     const currentMap = blogCategoryMap.value[mapKey][routeLocale.value];
     const result: BlogCategoryData<T> = {

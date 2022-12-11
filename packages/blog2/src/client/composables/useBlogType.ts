@@ -32,14 +32,15 @@ export const useBlogType = <
         ?.key ||
       "";
 
+    if (!mapKey) {
+      console.warn(`useBlogType: key not found`);
+
+      // fallback data
+      return { path: "/", items: [] };
+    }
+
     if (!blogTypeMap.value[mapKey])
-      throw new Error(
-        `useBlogType: ${
-          key
-            ? `key ${key} is invalid`
-            : "can not bind to an existing key on non blog pages"
-        }`
-      );
+      throw new Error(`useBlogType: key ${key} is invalid`);
 
     const routes = router.getRoutes();
     const configMap = blogTypeMap.value[mapKey][routeLocale.value];
