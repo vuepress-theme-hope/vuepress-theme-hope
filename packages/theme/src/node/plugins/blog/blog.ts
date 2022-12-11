@@ -72,7 +72,8 @@ export const getBlogPlugin = (
       getArticleType(blogOptions, themeData),
       getStarType(blogOptions, themeData),
       getTimelineType(blogOptions, themeData),
-      ...(blogOptions.type || []),
+      ...(blogOptions.type?.map((type) => ({ layout: "BlogType", ...type })) ||
+        []),
     ],
 
     metaScope: "",

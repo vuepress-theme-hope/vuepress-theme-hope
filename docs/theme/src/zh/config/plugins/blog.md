@@ -63,6 +63,54 @@ tag:
 
 页面过滤器，此函数用于鉴别插件是否需要生成摘要。
 
+### type
+
+- 类型: `BlogTypeOptions[]`
+
+  ```ts
+  interface BlogTypeOptions {
+    /**
+     * 唯一的类型名称
+     */
+    key: string;
+
+    /**
+     * 一个过滤函数来决定页面是否满足此类型
+     */
+    filter: (page: Page) => boolean;
+
+    /**
+     * 页面排序器
+     */
+    sorter?: (pageA: Page, pageB: Page) => number;
+
+    /**
+     * 待注册的页面路径
+     *
+     * @default '/:key/'
+     */
+    path?: string | false;
+
+    /**
+     * 页面布局组件名称
+     *
+     * @default 'BlogType'
+     */
+    layout?: string;
+
+    /**
+     * Front Matter 配置
+     */
+    frontmatter?: (localePath: string) => Record<string, string>;
+  }
+  ```
+
+- 默认值: `[]`
+- 详情:
+  - [指南 → 文章列表](../../guide/blog/article.md#其他类型的文章)
+
+额外的文章类型。
+
 ### article
 
 - 类型: `string`
@@ -97,20 +145,6 @@ tag:
 - 默认值: `/tag/:name/`
 
 标签列表路由路径。`:name` 会被自动替换为标签名称。
-
-### encrypted
-
-- 类型: `string`
-- 默认值: `/encrypted/`
-
-加密文章列表路由路径。
-
-### slide
-
-- 类型: `string`
-- 默认值: `/slide/`
-
-幻灯片列表路由路径。
 
 ### star
 

@@ -20,7 +20,5 @@ tag:
 | `categoryItem` | 特定分类列表 | `/category/:name/` |
 | `tag`          | 标签地图页   | `/tag/`            |
 | `tagItem`      | 特定标签列表 | `/tag/:name/`      |
-| `encrypted`    | 加密文章列表 | `/encrypted/`      |
-| `slide`        | 幻灯片列表   | `/slide/`          |
 | `star`         | 星标文章列表 | `/star/`           |
 | `timeline`     | 时间线列表   | `/timeline/`       |
