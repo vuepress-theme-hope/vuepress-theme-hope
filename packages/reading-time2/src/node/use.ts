@@ -11,7 +11,7 @@ export const useReadingTimePlugin = (
   app: App,
   options: ReadingTimeOptions
 ): void => {
-  const plugins = app.pluginApi.plugins;
+  const { plugins } = app.pluginApi;
 
   if (
     plugins.every((plugin) => plugin.name !== "vuepress-plugin-reading-time2")
@@ -25,7 +25,7 @@ export const useReadingTimePlugin = (
  * @description Should be invoke on node site
  */
 export const removeReadingTimePlugin = (app: App): void => {
-  const plugins = app.pluginApi.plugins;
+  const { plugins } = app.pluginApi;
 
   const index = plugins.findIndex(
     (plugin) => plugin.name === "vuepress-plugin-reading-time2"

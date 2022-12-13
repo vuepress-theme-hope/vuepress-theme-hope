@@ -12,7 +12,7 @@ export const useGitPlugin = (
   app: App,
   options: GitPluginOptions | false
 ): void => {
-  const plugins = app.pluginApi.plugins;
+  const { plugins } = app.pluginApi;
 
   if (
     plugins.every((plugin) => plugin.name !== "@vuepress/plugin-git") &&
@@ -27,7 +27,7 @@ export const useGitPlugin = (
  * @description Should be invoke on node site
  */
 export const removeGitPlugin = (app: App): void => {
-  const plugins = app.pluginApi.plugins;
+  const { plugins } = app.pluginApi;
 
   const index = plugins.findIndex(
     (plugin) => plugin.name === "@vuepress/plugin-git"

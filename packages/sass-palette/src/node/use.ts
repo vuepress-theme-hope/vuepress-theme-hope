@@ -7,7 +7,7 @@ export const useSassPalettePlugin = (
   app: App,
   options: SassPaletteOptions
 ): void => {
-  const plugins = app.pluginApi.plugins;
+  const { plugins } = app.pluginApi;
 
   if (
     plugins
@@ -21,7 +21,7 @@ export const useSassPalettePlugin = (
 };
 
 export const removePalettePlugin = (app: App, id: string): void => {
-  const plugins = app.pluginApi.plugins;
+  const { plugins } = app.pluginApi;
 
   const index = plugins
     .filter<PluginObject & { id: string }>(
