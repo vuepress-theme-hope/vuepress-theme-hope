@@ -1,9 +1,7 @@
-import { fs, getDirname, path } from "@vuepress/utils";
-import { logger } from "../utils.js";
+import { fs } from "@vuepress/utils";
+import { logger, TEMPLATE_FOLDER } from "../utils.js";
 
 import type { ThemeData } from "../../shared/index.js";
-
-const __dirname = getDirname(import.meta.url);
 
 export const checkSocialMediaIcons = (
   themeData: ThemeData
@@ -15,10 +13,7 @@ export const checkSocialMediaIcons = (
     value: string | [string, string]
   ): string | false => {
     if (typeof value === "string") {
-      const templatePath = path.resolve(
-        __dirname,
-        `../../../templates/socialMediaIcons/${key.toLocaleLowerCase()}.svg`
-      );
+      const templatePath = `${TEMPLATE_FOLDER}socialMediaIcons/${key.toLocaleLowerCase()}.svg`;
 
       if (fs.existsSync(templatePath)) {
         icons[key] = fs.readFileSync(templatePath, { encoding: "utf-8" });

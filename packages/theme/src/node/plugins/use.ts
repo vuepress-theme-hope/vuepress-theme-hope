@@ -1,14 +1,12 @@
-import { getDirname, path } from "@vuepress/utils";
 import { useReadingTimePlugin } from "vuepress-plugin-reading-time2";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
 import { useGitPlugin } from "./git.js";
 import { useExtendsPagePlugin } from "./pageConverter.js";
+import { TEMPLATE_FOLDER } from "../utils.js";
 
 import type { App } from "@vuepress/core";
 import type { PluginsOptions } from "../../shared/index.js";
-
-const __dirname = getDirname(import.meta.url);
 
 export const usePlugin = (
   app: App,
@@ -47,9 +45,9 @@ export const usePlugin = (
   useSassPalettePlugin(app, {
     id: "hope",
     config: ".vuepress/styles/config.scss",
-    defaultConfig: path.resolve(__dirname, "../../../templates/config.scss"),
-    defaultPalette: path.resolve(__dirname, "../../../templates/palette.scss"),
-    generator: path.resolve(__dirname, "../../../templates/generator.scss"),
+    defaultConfig: `${TEMPLATE_FOLDER}config.scss`,
+    defaultPalette: `${TEMPLATE_FOLDER}palette.scss`,
+    generator: `${TEMPLATE_FOLDER}generator.scss`,
     palette: ".vuepress/styles/palette.scss",
     style: ".vuepress/styles/index.scss",
   });

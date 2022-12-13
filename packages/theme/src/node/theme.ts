@@ -1,4 +1,3 @@
-import { getDirname, path } from "@vuepress/utils";
 import { watch } from "chokidar";
 
 import { resolveAlias } from "./alias.js";
@@ -16,11 +15,10 @@ import {
   prepareSocialMediaIcons,
   prepareThemeColorScss,
 } from "./prepare/index.js";
+import { TEMPLATE_FOLDER } from "./utils.js";
 
 import type { ThemeFunction } from "@vuepress/core";
 import type { ThemeOptions } from "../shared/index.js";
-
-const __dirname = getDirname(import.meta.url);
 
 export const hopeTheme =
   (
@@ -113,10 +111,7 @@ export const hopeTheme =
         legacy
       ),
 
-      templateBuild: path.resolve(
-        __dirname,
-        "../../templates/index.build.html"
-      ),
+      templateBuild: `${TEMPLATE_FOLDER}index.build.html`,
 
       clientConfigFile: (app) => prepareConfigFile(app, status),
     };
