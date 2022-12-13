@@ -21,9 +21,7 @@ export const setupPhotoSwipe = (): void => {
       ),
     ]).then(([photoSwipe, images]) => {
       images.elements.forEach((image, index) => {
-        image.style.cursor = "zoom-in";
-
-        image.addEventListener("click", (): void => {
+        const handler = (): void => {
           const gallery = new photoSwipe.default({
             dataSource: images.infos,
             ...locale.value,
@@ -74,6 +72,12 @@ export const setupPhotoSwipe = (): void => {
           });
 
           gallery.init();
+        };
+
+        image.style.cursor = "zoom-in";
+        image.addEventListener("click", handler);
+        image.addEventListener("keypress", ({ key }) => {
+          if (key === "Enter") handler();
         });
       });
     });
