@@ -34,7 +34,9 @@ export const checkLinks = (page: Page, app: App): void => {
       .filter(({ raw }) => !raw.startsWith("/"))
       .filter(({ relative }) =>
         // check whether the page exists
-        pages.every(({ filePathRelative }) => filePathRelative !== relative)
+        pages.every(
+          ({ filePathRelative }) => filePathRelative !== decodeURI(relative)
+        )
       ),
     ...markdownLinks
       // absolute markdown links
@@ -44,7 +46,7 @@ export const checkLinks = (page: Page, app: App): void => {
         pages.every(
           ({ filePathRelative }) =>
             !filePathRelative ||
-            `${app.options.base}${filePathRelative}` !== absolute
+            `${app.options.base}${filePathRelative}` !== decodeURI(absolute)
         )
       ),
   ].map(({ raw }) => raw);

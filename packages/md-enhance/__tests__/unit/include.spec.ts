@@ -10,9 +10,9 @@ interface IncludeEnv extends MarkdownEnv {
   includedFiles?: string[];
 }
 
-const mdFixturePathRelative = "./__fixtures__/include.md";
+const mdFixturePathRelative = "./__fixtures__/src/include.md";
 const mdFixturePath = path.resolve(__dirname, mdFixturePathRelative);
-const mdFixtureDeepIncludeRelative = "./__fixtures__/deepInclude.md";
+const mdFixtureDeepIncludeRelative = "./__fixtures__/src/deepInclude.md";
 const mdFixtureDeepIncludePath = path.resolve(
   __dirname,
   mdFixtureDeepIncludeRelative
@@ -161,7 +161,7 @@ describe("include", () => {
 
     it("should handle import path correctly", () => {
       const source = `\
-@include(@fixtures/include.md)
+@include(@source/include.md)
 `;
       const expected = `\
 <h2>Heading 2</h2>
@@ -175,8 +175,8 @@ describe("include", () => {
         .use(include, {
           getPath: (str: string): string =>
             str.replace(
-              /^@fixtures/,
-              path.resolve(__dirname, "./__fixtures__")
+              /^@source/,
+              path.resolve(__dirname, "./__fixtures__/src")
             ),
         })
         .use(MarkdownContainer, "tip");
@@ -280,9 +280,10 @@ foo
   });
 
   describe("the relative path of link/image", () => {
-    const mdFixturePathRelative = "./__fixtures__/relative/includeLink.md";
+    const mdFixturePathRelative = "./__fixtures__/src/relative/includeLink.md";
     const mdFixturePath = path.resolve(__dirname, mdFixturePathRelative);
-    const mdFixtureDeepIncludeRelative = "./__fixtures__/deepIncludeLink.md";
+    const mdFixtureDeepIncludeRelative =
+      "./__fixtures__/src/deepIncludeLink.md";
     const mdFixtureDeepIncludePath = path.resolve(
       __dirname,
       mdFixtureDeepIncludeRelative
@@ -294,8 +295,8 @@ foo
 `;
 
       const expected = `\
-<p><img src="./__fixtures__/relative/a.jpg" alt="Image1">
-<a href="./__fixtures__/relative/a.md">Markdown</a></p>
+<p><img src="./__fixtures__/src/relative/a.jpg" alt="Image1">
+<a href="./__fixtures__/src/relative/a.md">Markdown</a></p>
 `;
 
       const env: IncludeEnv = {
@@ -312,7 +313,7 @@ foo
 @include(${mdFixturePathRelative})
   `;
 
-      const expected = `<p><img src="./__fixtures__/relative/a.jpg" alt="Image1">
+      const expected = `<p><img src="./__fixtures__/src/relative/a.jpg" alt="Image1">
 <a href="./a.md">Markdown</a></p>
 `;
 
@@ -334,7 +335,7 @@ foo
   `;
 
       const expected = `<p><img src="./a.jpg" alt="Image1">
-<a href="./__fixtures__/relative/a.md">Markdown</a></p>
+<a href="./__fixtures__/src/relative/a.md">Markdown</a></p>
 `;
 
       const env: IncludeEnv = {
@@ -378,8 +379,8 @@ foo
 
       const expected = `\
 <h3>Heading 3</h3>
-<p><img src="./__fixtures__/relative/a.jpg" alt="Image1">
-<a href="./__fixtures__/relative/a.md">Markdown</a></p>
+<p><img src="./__fixtures__/src/relative/a.jpg" alt="Image1">
+<a href="./__fixtures__/src/relative/a.md">Markdown</a></p>
 `;
 
       const env: IncludeEnv = {
@@ -402,8 +403,8 @@ foo
 `;
 
       const expected = `\
-<p><img src="./__fixtures__/relative/a.jpg" alt="Image1">
-<a href="./__fixtures__/relative/a.md">Markdown</a></p>
+<p><img src="./__fixtures__/src/relative/a.jpg" alt="Image1">
+<a href="./__fixtures__/src/relative/a.md">Markdown</a></p>
 <p><a href="./b.md">B</a></p>
 `;
 
