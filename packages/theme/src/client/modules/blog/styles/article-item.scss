@@ -247,6 +247,10 @@
       display: inline-block;
       margin: 6px auto;
       font-size: 0.8rem;
+
+      &:only-child {
+        display: none;
+      }
     }
   }
 }
