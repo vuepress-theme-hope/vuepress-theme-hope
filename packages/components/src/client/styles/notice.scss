@@ -1,3 +1,7 @@
+:root {
+  --notice-width: 250px;
+}
+
 @keyframes notice-fade-in {
   from {
     opacity: 0.2;
@@ -44,7 +48,7 @@
 
   overflow: hidden;
 
-  width: 250px;
+  width: var(--notice-width);
   border-radius: 8px;
 
   background: var(--c-bg, #fff);
@@ -95,7 +99,7 @@
 }
 
 .notice-content {
-  padding: 0 12px;
+  margin: 1rem 0.75rem;
   font-size: 14px;
   line-height: 1.5;
 }

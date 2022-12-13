@@ -125,7 +125,7 @@ export default defineComponent({
                       ? null
                       : h(CloseIcon, { onClick: (): void => close() }),
                   ]),
-                  h("p", {
+                  h("div", {
                     class: "notice-content",
                     innerHTML: locale.value.content,
                   }),
