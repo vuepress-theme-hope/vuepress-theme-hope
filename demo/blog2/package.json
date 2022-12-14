@@ -25,6 +25,6 @@
     "vue-router": "4.1.6",
     "vuepress-plugin-blog2": "workspace:*",
     "vuepress-vite": "2.0.0-beta.58",
-    "vuepress-webpack": "2.0.0-beta.58"
+    "vuepress-webpack": "2.0.0-beta.59"
   }
 }

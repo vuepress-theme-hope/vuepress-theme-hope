@@ -22,6 +22,6 @@
     "vue": "3.2.45",
     "vuepress-plugin-feed2": "workspace:*",
     "vuepress-vite": "2.0.0-beta.58",
-    "vuepress-webpack": "2.0.0-beta.58"
+    "vuepress-webpack": "2.0.0-beta.59"
   }
 }
