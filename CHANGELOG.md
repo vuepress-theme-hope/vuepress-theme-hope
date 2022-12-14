@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.143](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.142...v2.0.0-beta.143) (2022-12-14)
+
+### ⚠ BREAKING CHANGES
+
+- **theme:** theme alias no longer needs `.js` extension
+
+### Features
+
+- **theme:** remove alias `.js` extension ([79ac606](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/79ac606af92b207ea911659253340006a00a0acd))
+
 ## [2.0.0-beta.142](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.141...v2.0.0-beta.142) (2022-12-14)
 
 ### Features
