@@ -41,6 +41,15 @@ Auto Minify в CloudFlare неправильно обрабатывает про
 
 Даже если у вас только один язык, вам все равно нужно [установить язык](../config/i18n.md#настроика-языка).
 
+## `xxx is missing sidebar config.`
+
+Using object format sidebar config means you want to set different sidebar based on routes.
+
+- If you want to avoid this warning, you need to add sidebar config for rootLocale path, since all pages will fallback to that.
+- If you want to disable sidebar in current route, set `sidebar: false` in frontmatter.
+- If you want to disable sidebar in current folder, add `currentFolderRoute: false` in sidebar config.
+- If you want to tell theme that you only want sidebar in routes you set, add `rootLocalePath: false` in sidebar config to tell theme sidebar config is disabled by default.
+
 ## `useXXX() is called without provider`
 
 Такие ошибки обычно возникают из-за неправильного включения в проект нескольких версий `@vue/xxx`, `@vuepress/xxx`, `vue` или `vue-router`.

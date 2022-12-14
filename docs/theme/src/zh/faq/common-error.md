@@ -41,6 +41,15 @@ CloudFlare 的 Auto Minify 会错误的对 HTML 的空格和换行进行处理�
 
 即使你只有一种语言，你仍然需要 [设置你的根目录语言](../config/i18n.md#设置语言)。
 
+## `xxx is missing sidebar config.`
+
+使用对象格式侧边栏配置意味着你想根据路由设置不同的侧边栏。
+
+- 如果你想避免这个警告，你需要为当前语言根路径添加侧边栏配置，因为所有页面都会回退到那个配置。
+- 如果你想在当前路由中禁用侧边栏，请在 frontmatter 中设置 `sidebar: false`。
+- 如果要在当前文件夹中禁用侧边栏，请在侧边栏配置中添加 `currentFolderRoute: false`。
+- 如果你想告诉主题你仅在设置的路由中需要侧边栏，请在侧边栏配置中添加 `当前语言根路径: false` 以告诉主题侧边栏配置默认禁用。
+
 ## `useXXX() is called without provider`
 
 此类错误通常是因为项目中错误的含有多个 `@vue/xxx`, `@vuepress/xxx`, `vue` 或 `vue-router` 版本引起的。

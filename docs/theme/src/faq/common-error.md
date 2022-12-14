@@ -41,6 +41,15 @@ If you see `xxx isn’t assign with a lang, and will return 'en-US' instead.` wh
 
 Even if you only have one language, you still need to [set language](../config/i18n.md#setting-language).
 
+## `xxx is missing sidebar config.`
+
+Using object format sidebar config means you want to set different sidebar based on routes.
+
+- If you want to avoid this warning, you need to add sidebar config for rootLocale path, since all pages will fallback to that.
+- If you want to disable sidebar in current route, set `sidebar: false` in frontmatter.
+- If you want to disable sidebar in current folder, add `currentFolderRoute: false` in sidebar config.
+- If you want to tell theme that you only want sidebar in routes you set, add `rootLocalePath: false` in sidebar config to tell theme sidebar config is disabled by default.
+
 ## `useXXX() is called without provider`
 
 Such errors are usually caused by incorrectly containing multiple versions of `@vue/xxx`, `@vuepress/xxx`, `vue` or `vue-router` in the project.

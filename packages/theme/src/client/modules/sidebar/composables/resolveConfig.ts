@@ -158,7 +158,7 @@ export const resolveMultiSidebarItems = (
     }
   }
 
-  console.warn(`${route.path} do not have valid sidebar config`);
+  console.warn(`${route.path} is missing sidebar config.`);
 
   return [];
 };
