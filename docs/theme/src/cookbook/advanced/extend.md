@@ -32,7 +32,7 @@ import type { ThemeOptions } from "vuepress-theme-hope";
 
 const __dirname = getDirname(import.meta.url);
 
-export const localTheme = (options: ThemeOptions) => ({
+export default (options: ThemeOptions) => ({
   name: "vuepress-theme-local",
 
   extends: hopeTheme(options),

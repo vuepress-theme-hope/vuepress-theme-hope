@@ -34,7 +34,7 @@ import type { ThemeOptions } from "vuepress-theme-hope";
 
 const __dirname = getDirname(import.meta.url);
 
-export default {
+export default (options) => ({
   name: "vuepress-theme-local",
 
   extends: hopeTheme(options),
@@ -47,7 +47,7 @@ export default {
       "./components/HomePage.vue"
     ),
   },
-};
+});
 ```
 
 @tab JS
@@ -59,7 +59,7 @@ import { hopeTheme } from "vuepress-theme-hope";
 
 const __dirname = getDirname(import.meta.url);
 
-export default {
+export default (options) => ({
   name: "vuepress-theme-local",
 
   extends: hopeTheme(options),
@@ -72,7 +72,7 @@ export default {
       "./components/HomePage.vue"
     ),
   },
-};
+});
 ```
 
 :::

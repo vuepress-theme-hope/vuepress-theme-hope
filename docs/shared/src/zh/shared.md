@@ -130,7 +130,7 @@ deepMerge(defaultOptions, userOptions);
 
 :::
 
-### date
+### getDate
 
 从字符串或日期对象中获取日期信息。
 

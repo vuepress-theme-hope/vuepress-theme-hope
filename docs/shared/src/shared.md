@@ -130,7 +130,7 @@ deepMerge(defaultOptions, userOptions);
 
 :::
 
-### date
+### getDate
 
 Get date info from a string or Date object.
 

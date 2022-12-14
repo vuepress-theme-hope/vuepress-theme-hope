@@ -106,7 +106,7 @@ export const zhNavbarConfig = navbar([
           {
             text: "VuePress 工具函数",
             icon: "app",
-            link: "https://vuepress-theme-hope.github.io/v2/shared/",
+            link: "https://vuepress-theme-hope.github.io/v2/shared/zh/",
           },
           {
             text: "Sitemap 插件",
