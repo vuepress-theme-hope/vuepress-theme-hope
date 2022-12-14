@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.142](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.141...v2.0.0-beta.142) (2022-12-14)
+
+### Features
+
+- **components:** add css variable for notice ([cd47d6f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cd47d6f1ad9fbf6fb119baf35c5a376675fe2808))
+- **md-enhance:** cancel figure image scale ([a94fcad](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a94fcad6ece7af4892b0b0ca7cd7d0b4b0cb5413))
+- **photo-swipe:** support zooming image by pressing enter ([3e9693d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3e9693df0003ccb8bc152e8c54a53efb08228369))
+- **theme:** update sidebar hint, close [#2549](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2549) ([b03177b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b03177bf0099eec2dcd647f733f09612ab700138))
+
+### Bug Fixes
+
+- **md-enhance:** fix cjk character issue with link check, fix [#2547](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2547) ([9d0f8d4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9d0f8d4dd232ac1323a010a3c2bc55ab7f2c06db))
+- **theme:** correctly hide figcaption in excerpt ([39f5be0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/39f5be07cfbb225e17119305e11d794e63fd11bf))
+- **theme:** fix article list excerpt, fix [#2544](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2544) ([6853ad1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6853ad103bd2fc0c11de9f6fcc746a5551a2e29c))
+
 ## [2.0.0-beta.141](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.140...v2.0.0-beta.141) (2022-12-11)
 
 ### ⚠ BREAKING CHANGES
