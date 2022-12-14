@@ -44,9 +44,9 @@
     "vuepress-shared": "workspace:*"
   },
   "peerDependencies": {
-    "vuepress": "2.0.0-beta.58",
-    "vuepress-vite": "2.0.0-beta.58",
-    "vuepress-webpack": "2.0.0-beta.58"
+    "vuepress": "2.0.0-beta.59",
+    "vuepress-vite": "2.0.0-beta.59",
+    "vuepress-webpack": "2.0.0-beta.59"
   },
   "engines": {
     "node": "^14.18.0 || >=16.0.0",
@@ -65,6 +65,6 @@
     }
   },
   "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.58"
+    "@vuepress/core": "2.0.0-beta.59"
   }
 }

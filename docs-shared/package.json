@@ -29,17 +29,17 @@
   },
   "dependencies": {
     "@types/three": "0.146.0",
-    "@vuepress/cli": "2.0.0-beta.58",
-    "@vuepress/client": "2.0.0-beta.58",
-    "@vuepress/core": "2.0.0-beta.58",
-    "@vuepress/plugin-docsearch": "2.0.0-beta.58",
-    "@vuepress/utils": "2.0.0-beta.58",
+    "@vuepress/cli": "2.0.0-beta.59",
+    "@vuepress/client": "2.0.0-beta.59",
+    "@vuepress/core": "2.0.0-beta.59",
+    "@vuepress/plugin-docsearch": "2.0.0-beta.59",
+    "@vuepress/utils": "2.0.0-beta.59",
     "three": "0.147.0",
     "vue": "3.2.45",
     "vuepress-shared": "workspace:*",
     "vuepress-theme-hope": "workspace:*"
   },
   "devDependencies": {
-    "@vuepress/bundler-vite": "2.0.0-beta.58"
+    "@vuepress/bundler-vite": "2.0.0-beta.59"
   }
 }
