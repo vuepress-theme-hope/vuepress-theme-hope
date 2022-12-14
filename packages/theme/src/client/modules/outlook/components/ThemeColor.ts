@@ -1,10 +1,10 @@
 import { computed, defineComponent, h } from "vue";
 
-import ThemeColorPicker from "@theme-hope/modules/outlook/components/ThemeColorPicker.js";
+import ThemeColorPicker from "@theme-hope/modules/outlook/components/ThemeColorPicker";
 import {
   useThemeData,
   useThemeLocaleData,
-} from "@theme-hope/composables/index.js";
+} from "@theme-hope/composables/index";
 
 import type { VNode } from "vue";
 

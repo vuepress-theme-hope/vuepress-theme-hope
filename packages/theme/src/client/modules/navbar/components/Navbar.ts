@@ -1,18 +1,15 @@
 import { computed, defineComponent, h, ref, resolveComponent } from "vue";
 import { hasGlobalComponent } from "vuepress-shared/client";
 
-import {
-  useMobile,
-  useThemeLocaleData,
-} from "@theme-hope/composables/index.js";
-import LanguageDropdown from "@theme-hope/modules/navbar/components/LanguageDropdown.js";
-import NavbarBrand from "@theme-hope/modules/navbar/components/NavbarBrand.js";
-import NavbarLinks from "@theme-hope/modules/navbar/components/NavbarLinks.js";
-import NavScreen from "@theme-hope/modules/navbar/components/NavScreen.js";
-import OutlookButton from "@theme-hope/modules/outlook/components/OutlookButton.js";
-import ToggleNavbarButton from "@theme-hope/modules/navbar/components/ToggleNavbarButton.js";
-import ToggleSidebarButton from "@theme-hope/modules/navbar/components/ToggleSidebarButton.js";
-import RepoLink from "@theme-hope/modules/navbar/components/RepoLink.js";
+import { useMobile, useThemeLocaleData } from "@theme-hope/composables/index";
+import LanguageDropdown from "@theme-hope/modules/navbar/components/LanguageDropdown";
+import NavbarBrand from "@theme-hope/modules/navbar/components/NavbarBrand";
+import NavbarLinks from "@theme-hope/modules/navbar/components/NavbarLinks";
+import NavScreen from "@theme-hope/modules/navbar/components/NavScreen";
+import OutlookButton from "@theme-hope/modules/outlook/components/OutlookButton";
+import ToggleNavbarButton from "@theme-hope/modules/navbar/components/ToggleNavbarButton";
+import ToggleSidebarButton from "@theme-hope/modules/navbar/components/ToggleSidebarButton";
+import RepoLink from "@theme-hope/modules/navbar/components/RepoLink";
 
 import type { VNode } from "vue";
 import type {

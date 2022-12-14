@@ -65,5 +65,5 @@ export default defineUserConfig({
 Вы можете установить `backToTop: false` в параметрах темы, чтобы отключить его, или установить его на число, чтобы изменить расстояние срабатывания по умолчанию.
 
 <script setup lang="ts">
-import ToggleFullScreenButton from "@theme-hope/modules/outlook/components/ToggleFullScreenButton.js";
+import ToggleFullScreenButton from "@theme-hope/modules/outlook/components/ToggleFullScreenButton";
 </script>

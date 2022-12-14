@@ -65,5 +65,5 @@ export default defineUserConfig({
 You can set `backToTop: false` in theme options to disable it, or set it to a number to change the default trigger distance.
 
 <script setup lang="ts">
-import ToggleFullScreenButton from "@theme-hope/modules/outlook/components/ToggleFullScreenButton.js";
+import ToggleFullScreenButton from "@theme-hope/modules/outlook/components/ToggleFullScreenButton";
 </script>

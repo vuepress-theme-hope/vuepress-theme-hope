@@ -5,7 +5,7 @@
     "module": "ESNext",
     "rootDir": "./src",
     "paths": {
-      "@theme-hope/*": ["./src/client/*"]
+      "@theme-hope/*": ["./src/client/*.js"]
     }
   },
   "include": ["./src"]

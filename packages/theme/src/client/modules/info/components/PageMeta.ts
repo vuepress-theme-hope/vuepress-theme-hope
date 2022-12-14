@@ -1,14 +1,14 @@
 import { ClientOnly } from "@vuepress/client";
 import { defineComponent, h } from "vue";
 
-import AutoLink from "@theme-hope/components/AutoLink.js";
-import { EditIcon } from "@theme-hope/components/icons/index.js";
-import { useThemeLocaleData } from "@theme-hope/composables/index.js";
+import AutoLink from "@theme-hope/components/AutoLink";
+import { EditIcon } from "@theme-hope/components/icons/index";
+import { useThemeLocaleData } from "@theme-hope/composables/index";
 import {
   useContributors,
   useEditLink,
   useUpdateTime,
-} from "@theme-hope/modules/info/composables/index.js";
+} from "@theme-hope/modules/info/composables/index";
 
 import type { VNode } from "vue";
 

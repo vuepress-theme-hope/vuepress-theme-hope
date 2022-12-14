@@ -39,10 +39,10 @@ export const localTheme = (options: ThemeOptions) => ({
 
   alias: {
     // Вы можете переопределить или добавить псевдонимы здесь
-    // Например, здесь мы меняем компонент HomePage vuepress-theme-hope на component/HomePage.js под нашей собственной темой
-    "@theme-hope/components/HomePage.js": path.resolve(
+    // Например, здесь мы меняем компонент HomePage vuepress-theme-hope на component/HomePage.vue под нашей собственной темой
+    "@theme-hope/components/HomePage": path.resolve(
       __dirname,
-      "./components/HomePage.js"
+      "./components/HomePage.vue"
     ),
   },
 });
@@ -64,25 +64,13 @@ export default (options) => ({
 
   alias: {
     // Вы можете переопределить или добавить псевдонимы здесь
-    // Например, здесь мы меняем компонент HomePage vuepress-theme-hope на component/HomePage.js под нашей собственной темой
-    "@theme-hope/components/HomePage.js": path.resolve(
+    // Например, здесь мы меняем компонент HomePage vuepress-theme-hope на component/HomePage.vue под нашей собственной темой
+    "@theme-hope/components/HomePage": path.resolve(
       __dirname,
-      "./components/HomePage.js"
+      "./components/HomePage.vue"
     ),
   },
 });
-```
-
-:::
-
-::: tip
-
-Если вы хотите использовать файлы `vue`, вы можете создать простую оболочку js, написав:
-
-```js
-// wrapper.js
-import YouComponent from "./YouComponent.vue";
-export default YouComponent;
 ```
 
 :::

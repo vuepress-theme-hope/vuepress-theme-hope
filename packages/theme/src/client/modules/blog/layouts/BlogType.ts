@@ -3,15 +3,15 @@ import { computed, defineComponent, h } from "vue";
 import { useBlogType } from "vuepress-plugin-blog2/client";
 import { useRoute } from "vue-router";
 
-import ArticleList from "@theme-hope/modules/blog/components/ArticleList.js";
-import ArticleType from "@theme-hope/modules/blog/components/ArticleType.js";
-import BlogWrapper from "@theme-hope/modules/blog/components/BlogWrapper.js";
-import InfoPanel from "@theme-hope/modules/blog/components/InfoPanel.js";
-import DropTransition from "@theme-hope/components/transitions/DropTransition.js";
+import ArticleList from "@theme-hope/modules/blog/components/ArticleList";
+import ArticleType from "@theme-hope/modules/blog/components/ArticleType";
+import BlogWrapper from "@theme-hope/modules/blog/components/BlogWrapper";
+import InfoPanel from "@theme-hope/modules/blog/components/InfoPanel";
+import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import {
   useArticles,
   useStars,
-} from "@theme-hope/modules/blog/composables/index.js";
+} from "@theme-hope/modules/blog/composables/index";
 
 import type { VNode } from "vue";
 import type {

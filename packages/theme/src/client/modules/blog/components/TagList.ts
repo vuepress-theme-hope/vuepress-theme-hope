@@ -3,7 +3,7 @@ import { defineComponent, h } from "vue";
 import { RouterLink } from "vue-router";
 import { generateIndexFromHash } from "vuepress-shared/client";
 
-import { useTagMap } from "@theme-hope/modules/blog/composables/index.js";
+import { useTagMap } from "@theme-hope/modules/blog/composables/index";
 
 import type { VNode } from "vue";
 import type { BlogPluginCategoryFrontmatter } from "vuepress-plugin-blog2";

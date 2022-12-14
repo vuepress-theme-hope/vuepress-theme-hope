@@ -6,8 +6,8 @@ import {
   GitHubIcon,
   GitlabIcon,
   SourceIcon,
-} from "@theme-hope/modules/navbar/components/icons/index.js";
-import { useNavbarRepo } from "@theme-hope/modules/navbar/composables/index.js";
+} from "@theme-hope/modules/navbar/components/icons/index";
+import { useNavbarRepo } from "@theme-hope/modules/navbar/composables/index";
 
 import type { VNode } from "vue";
 

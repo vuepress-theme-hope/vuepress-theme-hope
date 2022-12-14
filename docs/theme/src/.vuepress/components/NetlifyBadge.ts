@@ -1,5 +1,5 @@
 import { defineComponent, h } from "vue";
-import { useDarkMode } from "@theme-hope/modules/outlook/composables/index.js";
+import { useDarkMode } from "@theme-hope/modules/outlook/composables/index";
 import type { VNode } from "vue";
 
 declare const IS_NETLIFY: boolean;

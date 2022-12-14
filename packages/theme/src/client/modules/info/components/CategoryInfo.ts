@@ -2,11 +2,11 @@ import { defineComponent, h } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { generateIndexFromHash } from "vuepress-shared/client";
 
-import { CategoryIcon } from "@theme-hope/modules/info/components/icons.js";
-import { useMetaLocale } from "@theme-hope/modules/info/composables/index.js";
+import { CategoryIcon } from "@theme-hope/modules/info/components/icons";
+import { useMetaLocale } from "@theme-hope/modules/info/composables/index";
 
 import type { PropType, VNode } from "vue";
-import type { PageCategory } from "@theme-hope/modules/info/utils/index.js";
+import type { PageCategory } from "@theme-hope/modules/info/utils/index";
 
 import "../styles/category.scss";
 

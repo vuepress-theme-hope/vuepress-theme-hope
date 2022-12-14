@@ -5,7 +5,7 @@ import { useRouter } from "vue-router";
 import {
   useThemeData,
   useThemeLocaleData,
-} from "@theme-hope/composables/index.js";
+} from "@theme-hope/composables/index";
 
 import type { ComputedRef } from "vue";
 import type { AutoLinkOptions, NavGroup } from "../../../../shared/index.js";

@@ -41,10 +41,10 @@ export default {
 
   alias: {
     // 你可以在这里覆盖或新增别名
-    // 比如这里我们将 vuepress-theme-hope 主页组件改为自己主题下的 components/HomePage.js
-    "@theme-hope/components/HomePage.js": path.resolve(
+    // 比如这里我们将 vuepress-theme-hope 主页组件改为自己主题下的 components/HomePage.vue
+    "@theme-hope/components/HomePage": path.resolve(
       __dirname,
-      "./components/HomePage.js"
+      "./components/HomePage.vue"
     ),
   },
 };
@@ -66,25 +66,13 @@ export default {
 
   alias: {
     // 你可以在这里覆盖或新增别名
-    // 比如这里我们将 vuepress-theme-hope 主页组件改为自己主题下的 components/HomePage.js
-    "@theme-hope/components/HomePage.js": path.resolve(
+    // 比如这里我们将 vuepress-theme-hope 主页组件改为自己主题下的 components/HomePage.vue
+    "@theme-hope/components/HomePage": path.resolve(
       __dirname,
-      "./components/HomePage.js"
+      "./components/HomePage.vue"
     ),
   },
 };
-```
-
-:::
-
-::: tip
-
-如果你想使用 `vue` 文件，你可以创建一个简单的 wrapper:
-
-```js
-// wrapper.js
-import YouComponent from "./YouComponent.vue";
-export default YouComponent;
 ```
 
 :::

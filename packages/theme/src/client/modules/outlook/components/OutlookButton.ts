@@ -2,11 +2,11 @@ import { useFullscreen } from "@vueuse/core";
 import { computed, defineComponent, h, ref, watch } from "vue";
 import { useRoute } from "vue-router";
 
-import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch.js";
-import ToggleFullScreenButton from "@theme-hope/modules/outlook/components/ToggleFullScreenButton.js";
-import OutlookSettings from "@theme-hope/modules/outlook/components/OutlookSettings.js";
-import { OutlookIcon } from "@theme-hope/modules/outlook/components/icons/index.js";
-import { usePure, useThemeData } from "@theme-hope/composables/index.js";
+import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch";
+import ToggleFullScreenButton from "@theme-hope/modules/outlook/components/ToggleFullScreenButton";
+import OutlookSettings from "@theme-hope/modules/outlook/components/OutlookSettings";
+import { OutlookIcon } from "@theme-hope/modules/outlook/components/icons/index";
+import { usePure, useThemeData } from "@theme-hope/composables/index";
 
 import type { VNode } from "vue";
 

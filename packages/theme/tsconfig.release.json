@@ -7,7 +7,7 @@
     "outDir": "./lib",
     "inlineSources": true,
     "paths": {
-      "@theme-hope/*": ["./src/client/*"]
+      "@theme-hope/*": ["./src/client/*.js"]
     }
   },
   "include": ["./src", "./src/*.d.ts"]

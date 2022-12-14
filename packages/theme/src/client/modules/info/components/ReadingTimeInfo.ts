@@ -1,9 +1,9 @@
 import { computed, defineComponent, h } from "vue";
 import { useLocaleConfig } from "vuepress-shared/client";
 
-import { TimerIcon } from "@theme-hope/modules/info/components/icons.js";
-import { useMetaLocale } from "@theme-hope/modules/info/composables/index.js";
-import { readingTimeLocales } from "@theme-hope/modules/info/utils/index.js";
+import { TimerIcon } from "@theme-hope/modules/info/components/icons";
+import { useMetaLocale } from "@theme-hope/modules/info/composables/index";
+import { readingTimeLocales } from "@theme-hope/modules/info/utils/index";
 
 import type { PropType, VNode } from "vue";
 import type { ReadingTime } from "vuepress-plugin-reading-time2";

@@ -1,7 +1,7 @@
 import { computed, defineComponent, h, onMounted, ref, VNode } from "vue";
 import { Message } from "vuepress-shared/client";
 
-import { useThemeLocaleData } from "@theme-hope/composables/index.js";
+import { useThemeLocaleData } from "@theme-hope/composables/index";
 
 import "../styles/pagination.scss";
 

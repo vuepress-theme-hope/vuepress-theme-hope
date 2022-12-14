@@ -5,8 +5,8 @@ import {
 } from "@vuepress/client";
 import { computed, defineComponent, h } from "vue";
 
-import AutoLink from "@theme-hope/components/AutoLink.js";
-import DropTransition from "@theme-hope/components/transitions/DropTransition.js";
+import AutoLink from "@theme-hope/components/AutoLink";
+import DropTransition from "@theme-hope/components/transitions/DropTransition";
 
 import type { VNode } from "vue";
 import type { ThemeProjectHomePageFrontmatter } from "../../shared/index.js";

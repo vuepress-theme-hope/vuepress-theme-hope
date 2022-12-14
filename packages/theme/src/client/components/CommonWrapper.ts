@@ -14,14 +14,11 @@ import {
 import { useRouter } from "vue-router";
 import { hasGlobalComponent, RenderDefault } from "vuepress-shared/client";
 
-import PageFooter from "@theme-hope/components/PageFooter.js";
-import {
-  useMobile,
-  useThemeLocaleData,
-} from "@theme-hope/composables/index.js";
-import Navbar from "@theme-hope/modules/navbar/components/Navbar.js";
-import Sidebar from "@theme-hope/modules/sidebar/components/Sidebar.js";
-import { useSidebarItems } from "@theme-hope/modules/sidebar/composables/index.js";
+import PageFooter from "@theme-hope/components/PageFooter";
+import { useMobile, useThemeLocaleData } from "@theme-hope/composables/index";
+import Navbar from "@theme-hope/modules/navbar/components/Navbar";
+import Sidebar from "@theme-hope/modules/sidebar/components/Sidebar";
+import { useSidebarItems } from "@theme-hope/modules/sidebar/composables/index";
 
 import type { DefineComponent, VNode } from "vue";
 import type {

@@ -1,5 +1,5 @@
 import { Transition, defineComponent, h } from "vue";
-import { useScrollPromise } from "@theme-hope/composables/index.js";
+import { useScrollPromise } from "@theme-hope/composables/index";
 
 import type { VNode } from "vue";
 

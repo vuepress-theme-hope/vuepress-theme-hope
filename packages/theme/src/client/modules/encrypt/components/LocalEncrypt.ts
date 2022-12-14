@@ -1,7 +1,7 @@
 import { defineComponent, h } from "vue";
 
-import PasswordModal from "@theme-hope/modules/encrypt/components/PasswordModal.js";
-import { usePathEncrypt } from "@theme-hope/modules/encrypt/composables/index.js";
+import PasswordModal from "@theme-hope/modules/encrypt/components/PasswordModal";
+import { usePathEncrypt } from "@theme-hope/modules/encrypt/composables/index";
 
 import type { VNode } from "vue";
 

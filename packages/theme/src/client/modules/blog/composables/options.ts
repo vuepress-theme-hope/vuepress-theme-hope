@@ -2,7 +2,7 @@ import { computed } from "vue";
 import {
   useThemeData,
   useThemeLocaleData,
-} from "@theme-hope/composables/index.js";
+} from "@theme-hope/composables/index";
 
 import type { ComputedRef } from "vue";
 import type { BlogLocaleConfig } from "../../../../shared/index.js";

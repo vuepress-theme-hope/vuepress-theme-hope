@@ -65,5 +65,5 @@ export default defineUserConfig({
 你可以在主题选项中设置 `backToTop: false` 来禁用它，或者是设置为一个数字以更改默认的触发距离。
 
 <script setup lang="ts">
-import ToggleFullScreenButton from "@theme-hope/modules/outlook/components/ToggleFullScreenButton.js";
+import ToggleFullScreenButton from "@theme-hope/modules/outlook/components/ToggleFullScreenButton";
 </script>

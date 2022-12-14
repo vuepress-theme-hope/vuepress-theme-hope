@@ -1,12 +1,9 @@
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import { defineComponent, h } from "vue";
 
-import Icon from "@theme-hope/components/Icon.js";
-import PageInfo from "@theme-hope/modules/info/components/PageInfo.js";
-import {
-  usePageInfo,
-  useThemeLocaleData,
-} from "@theme-hope/composables/index.js";
+import Icon from "@theme-hope/components/Icon";
+import PageInfo from "@theme-hope/modules/info/components/PageInfo";
+import { usePageInfo, useThemeLocaleData } from "@theme-hope/composables/index";
 
 import type { VNode } from "vue";
 import type { ThemeNormalPageFrontmatter } from "../../shared/index.js";

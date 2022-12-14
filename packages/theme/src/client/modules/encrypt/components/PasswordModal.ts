@@ -2,7 +2,7 @@ import { usePageFrontmatter } from "@vuepress/client";
 import { computed, defineComponent, h, nextTick, ref } from "vue";
 
 import { LockIcon } from "./icons.js";
-import { useThemeLocaleData } from "@theme-hope/composables/index.js";
+import { useThemeLocaleData } from "@theme-hope/composables/index";
 
 import type { VNode } from "vue";
 

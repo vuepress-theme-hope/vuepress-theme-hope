@@ -2,11 +2,11 @@ import { useRouteLocale } from "@vuepress/client";
 import { computed, defineComponent, h } from "vue";
 import { RouterLink, useRoute } from "vue-router";
 
-import { useThemeLocaleData } from "@theme-hope/composables/index.js";
+import { useThemeLocaleData } from "@theme-hope/composables/index";
 import {
   useArticles,
   useStars,
-} from "@theme-hope/modules/blog/composables/index.js";
+} from "@theme-hope/modules/blog/composables/index";
 
 import type { VNode } from "vue";
 

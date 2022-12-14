@@ -4,8 +4,8 @@ import {
   usePageFrontmatter,
   useSiteLocaleData,
 } from "@vuepress/client";
-import { useThemeLocaleData } from "@theme-hope/composables/index.js";
-import { resolveEditLink } from "@theme-hope/modules/info/utils/index.js";
+import { useThemeLocaleData } from "@theme-hope/composables/index";
+import { resolveEditLink } from "@theme-hope/modules/info/utils/index";
 
 import type { GitContributor } from "@vuepress/plugin-git";
 import type { ComputedRef } from "vue";

@@ -4,7 +4,7 @@ import { computed, defineComponent, h } from "vue";
 import {
   usePageAuthor,
   useThemeLocaleData,
-} from "@theme-hope/composables/index.js";
+} from "@theme-hope/composables/index";
 
 import type { VNode } from "vue";
 import type { ThemeNormalPageFrontmatter } from "../../shared/index.js";

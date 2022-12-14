@@ -2,11 +2,8 @@ import { withBase } from "@vuepress/client";
 import { defineComponent, h, onMounted, watch, ref } from "vue";
 import { useRoute } from "vue-router";
 
-import {
-  EyeIcon,
-  FireIcon,
-} from "@theme-hope/modules/info/components/icons.js";
-import { useMetaLocale } from "@theme-hope/modules/info/composables/index.js";
+import { EyeIcon, FireIcon } from "@theme-hope/modules/info/components/icons";
+import { useMetaLocale } from "@theme-hope/modules/info/composables/index";
 
 import type { VNode } from "vue";
 

@@ -39,10 +39,10 @@ export const localTheme = (options: ThemeOptions) => ({
 
   alias: {
     // You can override or add aliases here
-    // For example, here we change the vuepress-theme-hope HomePage component to components/HomePage.js under our own theme
-    "@theme-hope/components/HomePage.js": path.resolve(
+    // For example, here we change the vuepress-theme-hope HomePage component to components/HomePage.vue under our own theme
+    "@theme-hope/components/HomePage": path.resolve(
       __dirname,
-      "./components/HomePage.js"
+      "./components/HomePage.vue"
     ),
   },
 });
@@ -64,25 +64,13 @@ export default (options) => ({
 
   alias: {
     // You can override or add aliases here
-    // For example, here we change the vuepress-theme-hope HomePage component to components/HomePage.js under our own theme
-    "@theme-hope/components/HomePage.js": path.resolve(
+    // For example, here we change the vuepress-theme-hope HomePage component to components/HomePage.vue under our own theme
+    "@theme-hope/components/HomePage": path.resolve(
       __dirname,
-      "./components/HomePage.js"
+      "./components/HomePage.vue"
     ),
   },
 });
-```
-
-:::
-
-::: tip
-
-If you want to use `vue` files, you can make a simple js wrapper by writing:
-
-```js
-// wrapper.js
-import YouComponent from "./YouComponent.vue";
-export default YouComponent;
 ```
 
 :::

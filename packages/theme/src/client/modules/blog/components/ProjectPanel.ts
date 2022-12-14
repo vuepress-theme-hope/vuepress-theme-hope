@@ -1,15 +1,15 @@
 import { usePageFrontmatter, withBase } from "@vuepress/client";
 import { defineComponent, h, resolveComponent } from "vue";
 
-import Icon from "@theme-hope/components/Icon.js";
+import Icon from "@theme-hope/components/Icon";
 import {
   ArticleIcon,
   BookIcon,
   FriendIcon,
   LinkIcon,
   ProjectIcon,
-} from "@theme-hope/modules/blog/components/icons/index.js";
-import { useNavigate, usePure } from "@theme-hope/composables/index.js";
+} from "@theme-hope/modules/blog/components/icons/index";
+import { useNavigate, usePure } from "@theme-hope/composables/index";
 
 import type { VNode } from "vue";
 import type { ThemeBlogHomePageFrontmatter } from "../../../../shared/index.js";

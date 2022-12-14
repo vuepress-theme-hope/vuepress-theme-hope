@@ -1,10 +1,7 @@
 import { isLinkExternal, isString } from "@vuepress/shared";
 import { computed } from "vue";
 
-import {
-  useAutoLink,
-  useThemeLocaleData,
-} from "@theme-hope/composables/index.js";
+import { useAutoLink, useThemeLocaleData } from "@theme-hope/composables/index";
 
 import type { ComputedRef } from "vue";
 import type { ResolvedThemeNavbarItem } from "../utils/index.js";

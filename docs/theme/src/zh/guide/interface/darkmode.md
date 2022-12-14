@@ -36,5 +36,5 @@ tag:
 `$isDarkMode` 在所有 Markdown 文件中都可用。
 
 <script setup lang="ts">
-import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch.js"
+import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch"
 </script>

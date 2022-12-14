@@ -1,10 +1,10 @@
 import { defineComponent, h } from "vue";
 
-import BloggerInfo from "@theme-hope/modules/blog/components/BloggerInfo.js";
-import InfoList from "@theme-hope/modules/blog/components/InfoList.js";
-import CommonWrapper from "@theme-hope/components/CommonWrapper.js";
-import SkipLink from "@theme-hope/components/SkipLink.js";
-import { useMobile } from "@theme-hope/composables/index.js";
+import BloggerInfo from "@theme-hope/modules/blog/components/BloggerInfo";
+import InfoList from "@theme-hope/modules/blog/components/InfoList";
+import CommonWrapper from "@theme-hope/components/CommonWrapper";
+import SkipLink from "@theme-hope/components/SkipLink";
+import { useMobile } from "@theme-hope/composables/index";
 
 import type { VNode } from "vue";
 

@@ -5,7 +5,7 @@ import {
 } from "@vuepress/client";
 import { computed, defineComponent, h, ref } from "vue";
 
-import DropTransition from "@theme-hope/components/transitions/DropTransition.js";
+import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import { SlideDownIcon } from "./icons/icons.js";
 import defaultHeroBgImagePath from "../assets/hero.jpg";
 

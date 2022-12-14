@@ -3,7 +3,7 @@ import { isArray, isLinkExternal } from "@vuepress/shared";
 import { computed, defineComponent, h } from "vue";
 import { RouterLink } from "vue-router";
 
-import Icon from "@theme-hope/components/Icon.js";
+import Icon from "@theme-hope/components/Icon";
 
 import type { VNode } from "vue";
 import type { ThemeProjectHomePageFrontmatter } from "../../shared/index.js";

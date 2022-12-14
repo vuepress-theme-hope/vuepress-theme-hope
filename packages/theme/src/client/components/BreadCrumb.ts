@@ -3,9 +3,9 @@ import { computed, defineComponent, h, onMounted, watch, ref } from "vue";
 import { RouterLink, useRoute, useRouter } from "vue-router";
 import { resolveRouteWithRedirect } from "vuepress-shared/client";
 
-import Icon from "@theme-hope/components/Icon.js";
-import { useThemeLocaleData } from "@theme-hope/composables/index.js";
-import { getAncestorLinks } from "@theme-hope/utils/index.js";
+import Icon from "@theme-hope/components/Icon";
+import { useThemeLocaleData } from "@theme-hope/composables/index";
+import { getAncestorLinks } from "@theme-hope/utils/index";
 import { ArticleInfoType } from "../../shared/index.js";
 
 import type { VNode } from "vue";

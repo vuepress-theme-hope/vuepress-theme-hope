@@ -1,6 +1,6 @@
 import { computed } from "vue";
 
-import { useThemeData } from "@theme-hope/composables/index.js";
+import { useThemeData } from "@theme-hope/composables/index";
 
 import type { ComputedRef } from "vue";
 import type { EncryptConfig } from "../../../../shared/index.js";

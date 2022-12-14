@@ -1,8 +1,8 @@
 import { h } from "vue";
 
-import DropTransition from "@theme-hope/components/transitions/DropTransition.js";
-import BloggerInfo from "@theme-hope/modules/blog/components/BloggerInfo.js";
-import InfoList from "@theme-hope/modules/blog/components/InfoList.js";
+import DropTransition from "@theme-hope/components/transitions/DropTransition";
+import BloggerInfo from "@theme-hope/modules/blog/components/BloggerInfo";
+import InfoList from "@theme-hope/modules/blog/components/InfoList";
 
 import type { FunctionalComponent, VNode } from "vue";
 

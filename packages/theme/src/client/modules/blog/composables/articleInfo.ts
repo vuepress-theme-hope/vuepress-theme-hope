@@ -11,15 +11,15 @@ import { useBlogOptions } from "./options.js";
 import { useTagMap } from "./tagMap.js";
 import { ArticleInfoType } from "../../../../shared/index.js";
 
-import { useThemeLocaleData } from "@theme-hope/composables/index.js";
+import { useThemeLocaleData } from "@theme-hope/composables/index";
 
 import type { ComputedRef, Ref } from "vue";
 import type { AuthorInfo, DateInfo } from "vuepress-shared";
-import type { PageInfoProps } from "@theme-hope/modules/info/components/PageInfo.js";
+import type { PageInfoProps } from "@theme-hope/modules/info/components/PageInfo";
 import type {
   PageCategory,
   PageTag,
-} from "@theme-hope/modules/info/utils/index.js";
+} from "@theme-hope/modules/info/utils/index";
 import type { ArticleInfo, PageInfo } from "../../../../shared/index.js";
 
 export type AuthorRef = ComputedRef<AuthorInfo[]>;

@@ -36,5 +36,5 @@ tag:
 `$isDarkMode` доступен во всех маркдаун файлах.
 
 <script setup lang="ts">
-import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch.js"
+import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch"
 </script>

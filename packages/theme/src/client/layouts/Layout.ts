@@ -1,16 +1,16 @@
 import { computed, defineComponent, h, resolveComponent } from "vue";
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
 
-import CommonWrapper from "@theme-hope/components/CommonWrapper.js";
-import FadeSlideY from "@theme-hope/components/transitions/FadeSlideY.js";
-import HomePage from "@theme-hope/components/HomePage.js";
-import NormalPage from "@theme-hope/components/NormalPage.js";
-import SkipLink from "@theme-hope/components/SkipLink.js";
-import { useMobile } from "@theme-hope/composables/index.js";
+import CommonWrapper from "@theme-hope/components/CommonWrapper";
+import FadeSlideY from "@theme-hope/components/transitions/FadeSlideY";
+import HomePage from "@theme-hope/components/HomePage";
+import NormalPage from "@theme-hope/components/NormalPage";
+import SkipLink from "@theme-hope/components/SkipLink";
+import { useMobile } from "@theme-hope/composables/index";
 import {
   useThemeData,
   useThemeLocaleData,
-} from "@theme-hope/composables/index.js";
+} from "@theme-hope/composables/index";
 
 import type { VNode } from "vue";
 import type { ThemePageFrontmatter } from "../../shared/index.js";

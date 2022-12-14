@@ -4,14 +4,14 @@ import { useEventListener } from "@vueuse/core";
 import { computed, defineComponent, h } from "vue";
 import { useRoute } from "vue-router";
 
-import AutoLink from "@theme-hope/components/AutoLink.js";
-import Icon from "@theme-hope/components/Icon.js";
+import AutoLink from "@theme-hope/components/AutoLink";
+import Icon from "@theme-hope/components/Icon";
 import {
   useAutoLink,
   useNavigate,
   useThemeLocaleData,
-} from "@theme-hope/composables/index.js";
-import { useSidebarItems } from "@theme-hope/modules/sidebar/composables/index.js";
+} from "@theme-hope/composables/index";
+import { useSidebarItems } from "@theme-hope/modules/sidebar/composables/index";
 
 import type { VNode } from "vue";
 import type { ResolvedSidebarItem } from "../modules/sidebar/utils/index.js";

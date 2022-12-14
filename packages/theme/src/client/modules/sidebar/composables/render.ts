@@ -1,9 +1,9 @@
 import { h } from "vue";
 import { useRoute } from "vue-router";
 
-import AutoLink from "@theme-hope/components/AutoLink.js";
-import Icon from "@theme-hope/components/Icon.js";
-import { isActiveSidebarItem } from "@theme-hope/modules/sidebar/utils/index.js";
+import AutoLink from "@theme-hope/components/AutoLink";
+import Icon from "@theme-hope/components/Icon";
+import { isActiveSidebarItem } from "@theme-hope/modules/sidebar/utils/index";
 
 import type { VNode } from "vue";
 import type {

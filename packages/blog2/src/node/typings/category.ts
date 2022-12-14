@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { Page } from "@vuepress/core";
 
 export interface BlogCategoryOptions<

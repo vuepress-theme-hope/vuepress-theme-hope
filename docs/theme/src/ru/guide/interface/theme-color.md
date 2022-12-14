@@ -79,8 +79,8 @@ export default defineUserConfig({
 
 <script setup lang="ts">
 import { computed } from "vue";
-import { useThemeData } from "@theme-hope/composables/index.js";
-import ThemeColorPicker from "@theme-hope/modules/outlook/components/ThemeColorPicker.js";
+import { useThemeData } from "@theme-hope/composables/index";
+import ThemeColorPicker from "@theme-hope/modules/outlook/components/ThemeColorPicker";
 
 const themeData = useThemeData();
 

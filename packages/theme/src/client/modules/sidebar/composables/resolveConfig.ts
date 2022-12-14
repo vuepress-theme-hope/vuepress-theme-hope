@@ -13,10 +13,7 @@ import {
 } from "@vuepress/shared";
 import { useRoute } from "vue-router";
 
-import {
-  useAutoLink,
-  useThemeLocaleData,
-} from "@theme-hope/composables/index.js";
+import { useAutoLink, useThemeLocaleData } from "@theme-hope/composables/index";
 import { resolvePrefix } from "./utils.js";
 
 import type { PageHeader } from "@vuepress/client";

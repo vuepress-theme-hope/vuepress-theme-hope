@@ -2,7 +2,7 @@ import { defineComponent, h, ref, watch } from "vue";
 import { useRoute } from "vue-router";
 import type { VNode } from "vue";
 
-import { useThemeLocaleData } from "@theme-hope/composables/index.js";
+import { useThemeLocaleData } from "@theme-hope/composables/index";
 
 import "../styles/skip-link.scss";
 

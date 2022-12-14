@@ -1,14 +1,14 @@
 import { defineComponent, h, VNode } from "vue";
 
-import ArticleList from "@theme-hope/modules/blog/components/ArticleList.js";
-import BlogHero from "@theme-hope/modules/blog/components/BlogHero.js";
-import InfoPanel from "@theme-hope/modules/blog/components/InfoPanel.js";
-import ProjectPanel from "@theme-hope/modules/blog/components/ProjectPanel.js";
+import ArticleList from "@theme-hope/modules/blog/components/ArticleList";
+import BlogHero from "@theme-hope/modules/blog/components/BlogHero";
+import InfoPanel from "@theme-hope/modules/blog/components/InfoPanel";
+import ProjectPanel from "@theme-hope/modules/blog/components/ProjectPanel";
 
-import DropTransition from "@theme-hope/components/transitions/DropTransition.js";
-import MarkdownContent from "@theme-hope/components/MarkdownContent.js";
+import DropTransition from "@theme-hope/components/transitions/DropTransition";
+import MarkdownContent from "@theme-hope/components/MarkdownContent";
 
-import { useArticles } from "@theme-hope/modules/blog/composables/index.js";
+import { useArticles } from "@theme-hope/modules/blog/composables/index";
 
 import "../styles/home.scss";
 

@@ -2,7 +2,7 @@ import { useRouteLocale, useSiteLocaleData, withBase } from "@vuepress/client";
 import { computed, defineComponent, h } from "vue";
 import { RouterLink } from "vue-router";
 
-import { useThemeLocaleData } from "@theme-hope/composables/index.js";
+import { useThemeLocaleData } from "@theme-hope/composables/index";
 
 import type { VNode } from "vue";
 
