@@ -14,21 +14,20 @@ export default defineComponent({
      *
      * 图标类名
      */
-    icon: String,
-
+    icon: { type: String, default: "" },
     /**
      * Icon color
      *
      * 图标颜色
      */
-    color: String,
+    color: { type: String, default: "" },
 
     /**
      * Icon size
      *
      * 图标大小
      */
-    size: [String, Number],
+    size: { type: [String, Number], default: "" },
   },
 
   setup(props) {
