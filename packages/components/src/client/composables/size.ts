@@ -9,7 +9,7 @@ const getValue = (value: string | number): string =>
 export interface SizeOptions {
   width: string | number | undefined;
   height: string | number | undefined;
-  ratio: number | undefined;
+  ratio: string | number | undefined;
 }
 
 export interface SizeInfo<E extends HTMLElement> {
@@ -26,9 +26,20 @@ export const useSize = <E extends HTMLElement>(
   const width = computed(() => getValue(unref(options.width) || "100%"));
   const height = ref("auto");
 
+  const getRadio = (radio: number | string | undefined): number => {
+    if (typeof radio === "string") {
+      const [width, height] = radio.split(":");
+      const parsedRadio = Number(width) / Number(height);
+
+      if (!Number.isNaN(parsedRadio)) return parsedRadio;
+    }
+
+    return typeof radio === "number" ? radio : 16 / 9;
+  };
+
   const getHeight = (width: number): string => {
     const height = unref(options.height);
-    const ratio = unref(options.ratio) || 16 / 9;
+    const ratio = getRadio(unref(options.ratio));
 
     return height
       ? getValue(height)

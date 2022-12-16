@@ -49,7 +49,7 @@ export default defineComponent({
      * 组件长宽比
      */
     ratio: {
-      type: Number,
+      type: [String, Number],
       default: 16 / 9,
     },
 

@@ -58,7 +58,7 @@ export default defineComponent({
      * 组件长宽比
      */
     ratio: {
-      type: Number,
+      type: [String, Number],
       default: 16 / 9,
     },
 
@@ -96,7 +96,7 @@ export default defineComponent({
      * 视频开始时间 (秒)
      */
     start: {
-      type: Number,
+      type: [String, Number],
       default: undefined,
     },
 
@@ -106,7 +106,7 @@ export default defineComponent({
      * 视频结束时间 (秒)
      */
     end: {
-      type: Number,
+      type: [String, Number],
       default: undefined,
     },
 

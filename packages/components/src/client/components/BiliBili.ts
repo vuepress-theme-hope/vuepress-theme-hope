@@ -38,7 +38,7 @@ export default defineComponent({
      * B 站视频分页
      */
     page: {
-      type: Number,
+      type: [String, Number],
       default: 1,
     },
 
@@ -68,7 +68,7 @@ export default defineComponent({
      * 组件长宽比
      */
     ratio: {
-      type: Number,
+      type: [String, Number],
       default: 16 / 9,
     },
 
@@ -78,7 +78,7 @@ export default defineComponent({
      * 基于秒数的开始时间
      */
     time: {
-      type: Number,
+      type: [String, Number],
       default: 0,
     },
 

@@ -26,7 +26,10 @@ export default defineComponent({
      *
      * PDF 文件链接，应为完整链接
      */
-    url: { type: String, required: true },
+    url: {
+      type: String,
+      required: true,
+    },
 
     /**
      * Component width
@@ -54,7 +57,7 @@ export default defineComponent({
      * 组件长宽比
      */
     ratio: {
-      type: Number,
+      type: [String, Number],
       default: 16 / 9,
     },
 
@@ -66,7 +69,7 @@ export default defineComponent({
      * @description Chrome only
      */
     page: {
-      type: Number,
+      type: [String, Number],
       default: 1,
     },
 
@@ -85,7 +88,7 @@ export default defineComponent({
      * 初始缩放比率 (百分比)
      */
     zoom: {
-      type: Number,
+      type: [String, Number],
       default: 100,
     },
   },

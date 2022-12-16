@@ -27,7 +27,10 @@ export default defineComponent({
      *
      * 图标大小
      */
-    size: { type: [String, Number], default: "" },
+    size: {
+      type: [String, Number],
+      default: "",
+    },
   },
 
   setup(props) {

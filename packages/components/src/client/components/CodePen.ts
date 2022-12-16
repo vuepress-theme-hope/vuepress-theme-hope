@@ -49,7 +49,10 @@ export default defineComponent({
      *
      * CodePen 高度
      */
-    height: { type: Number, default: 380 },
+    height: {
+      type: [String, Number],
+      default: 380,
+    },
 
     /**
      * CodePen theme
