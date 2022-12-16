@@ -6,7 +6,7 @@ import { BackIcon, HomeIcon } from "./components/icons.js";
 
 import type { VNode } from "vue";
 
-import "./styles/layout.scss";
+import "./styles/slide-page.scss";
 
 export default defineComponent({
   name: "SlidePage",
