@@ -58,10 +58,13 @@ corepack prepare pnpm@7.18.2 --activate
 │ ├── reading-time → reading-time2 插件文档
 │ ├── remove-pwa →remove-pwa 插件文档
 │ ├── sass-palette → sass-palette 插件文档
+│ ├── shared → vuepress-shared 文档
 │ ├── search-pro → search-pro 插件文档
 │ ├── seo → seo2 插件文档
 │ └── theme → 主题文档
 │
+├── docs-shared → 文档的通用文件
+|
 ├── packages → 项目源代码
 │ ├── blog2 → blog2 插件
 │ ├── comment2 → comment2 插件
@@ -115,36 +118,29 @@ corepack prepare pnpm@7.18.2 --activate
 ```
 .
 ├── lib → 编译后的输出文件
-│ │
-│ ├── client → 客户端侧代码
-│ │
-│ └── node → Node.js 侧代码
+│    │
+│    ├── client → 客户端侧代码
+│    │
+│    └── node → Node.js 侧代码
 │
 └── src → 源文件
-  │
-  ├── client → 客户端侧代码
-  │
-  ├── node → Node.js 侧代码
-  │
-  └── shared → 客户端和 Node.js 的共享文件
+     │
+     ├── client → 客户端侧代码
+     │
+     ├── node → Node.js 侧代码
+     │
+     └── shared → 客户端和 Node.js 的共享文件
 ```
 
-由于客户端一侧使用 ES Module (import/export)，而 Node.js 端一侧使用 commonjs (require/exports)，不能交叉引用 node 和 client 文件夹内的代码。
+VuePress 同时运行在客户端和 Node 端。 Node 侧有像 `fs` 这样的 node 模块，而客户端运行在有` document``windows``navigator `等全局变量的浏览器中，你应该清楚一段代码运行在哪里。
 
-- `client` 文件夹存放客户端代码，使用 esm 格式编译
-- `node` 文件夹存放 Node.js 端代码，使用 cjs 格式编译
-- `shared` 文件夹主要存放 TypeScript 类型。它可以被 client 和 node 文件夹引用，并编译为 cjs 格式。
+- `client` 目录存储在浏览器中运行的代码
+- `node` 目录存储在 Node.js 中运行的代码
+- `shared` 目录存储在客户端和 Node 中使用的文件，因此代码不应引用任何浏览器全局变量或 node 模块。
 
 为了更好的性能，所有插件在发布时都会使用 rollup 进行打包并压缩。
 
 ## 项目的运行与开发
-
-### 构建方式
-
-- 为了更好的性能，所有插件在发布时都会使用 `rollup` 进行打包并压缩。
-- 使用 `cpx` 提供的复制与文件监听命令，将其他格式的文件从源文件拷贝到输出目录。
-
-### 命令
 
 1. 构建项目: `pnpm build`
 
@@ -166,7 +162,7 @@ corepack prepare pnpm@7.18.2 --activate
 
 请不要混用构建和开发命令，因为它们的构建方式完全不同。
 
-你可能需要执行 `pnpm clean` 命令来清除上一次的构建结果。
+你可能需要执行 `pnpm clean` 命令来清除上一次的命令结果。
 
 :::
 

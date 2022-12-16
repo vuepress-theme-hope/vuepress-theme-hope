@@ -21,7 +21,7 @@ category:
 - [网站链接][fast-request]
 - [源码地址](https://github.com/dromara/fast-request)
 
-### Vanblog
+### VanBlog
 
 - [网站链接][van-blog]
 - [源码地址](https://github.com/Mereithhh/vanblog/tree/master/docs)

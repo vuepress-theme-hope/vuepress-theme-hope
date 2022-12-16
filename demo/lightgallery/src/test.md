@@ -6,6 +6,40 @@ This is a paragraph.
 
 This is a paragraph.
 
-![Image1](/img/1.jpg)
-![Image2](/img/2.jpg)
-![Image3](/img/3.jpg)
+<!-- markdownlint-disable -->
+
+<div class="image-preview">
+  <img src="/assets/image/1.jpg" />
+  <img src="/assets/image/2.jpg" />
+  <img src="/assets/image/3.jpg" />
+</div>
+
+<style>
+  .image-preview {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .image-preview > img {
+     box-sizing: border-box;
+     width: 33.3% !important;
+     padding: 9px;
+     border-radius: 16px;
+  }
+
+  @media (max-width: 719px){
+    .image-preview > img {
+      width: 50% !important;
+    }
+  }
+
+  @media (max-width: 419px){
+    .image-preview > img {
+      width: 100% !important;
+    }
+  }
+</style>
+
+<!-- markdownlint-restore -->

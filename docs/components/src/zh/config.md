@@ -44,6 +44,8 @@ icon: config
 
 - 类型: `` "iconfont" | "fontawesome" | `//${string}` | `http://${string}` | `https://${string}`  ``
 - 必填: 否
+- 详情:
+  - [指南 → FontIcon](./guide/fonticon.md)
 
 字体图标资源链接，支持 `'iconfont'` 和 `'fontawesome'` 关键字。
 
@@ -51,6 +53,8 @@ icon: config
 
 - 类型: `string`
 - 默认值: 尝试从 iconAssets 推断
+- 详情:
+  - [指南 → FontIcon](./guide/fonticon.md)
 
 字体图标的 Class 前缀
 
@@ -71,6 +75,8 @@ AddThis 的公开 ID。
 
 - 类型: `boolean | number`
 - 默认值: `false`
+- 详情:
+  - [指南 → BackToTop](./guide/backtotop.md)
 
 是否启用返回顶部按钮，当设置为数字时，会被作为返回顶部按钮触发距离 (单位: 像素)，默认为 300。
 
@@ -150,6 +156,8 @@ AddThis 的公开 ID。
   ```
 
 - 必填: 否
+- 详情:
+  - [指南 → Notice](./guide/notice.md)
 
 全局通知的配置
 

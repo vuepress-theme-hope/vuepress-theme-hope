@@ -141,10 +141,10 @@ See [AudioPlayer][audioplayer] page for available props.
 
 Видео bilibili со временем начала и страницей:
 
-<BiliBili bvid="BV1kt411o7C3" :ratio="9/16" :time="60" :page="2" />
+<BiliBili bvid="BV1kt411o7C3" ratio="16:9" time="60" page="2" />
 
 ```md
-<BiliBili bvid="BV1kt411o7C3" :ratio="9/16" :time="60" :page="2" />
+<BiliBili bvid="BV1kt411o7C3" ratio="16:9" time="60" page="2" />
 ```
 
 Видео bilibili с пользовательскими настройками:
@@ -230,20 +230,12 @@ See [AudioPlayer][audioplayer] page for available props.
 <PDF url="/sample.pdf" />
 ```
 
-Просмотрщик PDF без панели инструментов:
+Просмотрщик PDF без панели инструментов, Просмотрщик PDF с начальной страницей 2:
 
-<PDF url="/sample.pdf" no-toolbar />
-
-```md
-<PDF url="/sample.pdf" no-toolbar />
-```
-
-Просмотрщик PDF с начальной страницей 2:
-
-<PDF url="/sample.pdf" :page="2" />
+<PDF url="/sample.pdf" page="2" no-toolbar />
 
 ```md
-<PDF url="/sample.pdf" :page="2" />
+<PDF url="/sample.pdf" page="2" no-toolbar />
 ```
 
 Доступные свойства смотрите на странице [PDF][pdf].

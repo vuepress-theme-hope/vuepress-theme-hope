@@ -44,6 +44,8 @@ Global config for components.
 
 - Type: `` "iconfont" | "fontawesome" | `//${string}` | `http://${string}` | `https://${string}`  ``
 - Required: No
+- Details:
+  - [Guide → FontIcon](./guide/fonticon.md)
 
 Link of font icon asset, `'iconfont'` and `'fontawesome'` keywords are supported.
 
@@ -51,6 +53,8 @@ Link of font icon asset, `'iconfont'` and `'fontawesome'` keywords are supported
 
 - Type: `string`
 - Default: Inferred from assets
+- Details:
+  - [Guide → FontIcon](./guide/fonticon.md)
 
 Class prefix of font icon
 
@@ -71,6 +75,8 @@ Public ID of addThis.
 
 - Type: `boolean | number`
 - Default: `false`
+- Details:
+  - [Guide → BackToTop](./guide/backtotop.md)
 
 Whether enabling backToTop button. When setting a number, it will be used as BackToTop button threshold distance (in pixels), default is 300.
 
@@ -150,6 +156,8 @@ Whether enabling backToTop button. When setting a number, it will be used as Bac
   ```
 
 - Required: No
+- Details:
+  - [Guide → Notice](./guide/notice.md)
 
 Config for global notice.
 

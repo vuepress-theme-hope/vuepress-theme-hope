@@ -8,6 +8,24 @@ PDF 预览组件。
 
 <!-- more -->
 
+## Demo
+
+默认 PDF 阅读器:
+
+<PDF url="/sample.pdf" />
+
+```md
+<PDF url="/sample.pdf" />
+```
+
+禁用工具栏且初始页面为第二页的阅读器:
+
+<PDF url="/sample.pdf" page="2" no-toolbar />
+
+```md
+<PDF url="/sample.pdf" page="2" no-toolbar />
+```
+
 ## 属性
 
 ### url
@@ -76,29 +94,3 @@ PDF 文档的初始缩放比例
 此属性仅在基于 Chromium 内核的浏览器上有效。
 
 :::
-
-## Demo
-
-默认 PDF 阅读器:
-
-<PDF url="/sample.pdf" />
-
-```md
-<PDF url="/sample.pdf" />
-```
-
-禁用工具栏:
-
-<PDF url="/sample.pdf" no-toolbar />
-
-```md
-<PDF url="/sample.pdf" no-toolbar />
-```
-
-初始页面为第二页:
-
-<PDF url="/sample.pdf" :page="2" />
-
-```md
-<PDF url="/sample.pdf" :page="2" />
-```

@@ -16,18 +16,10 @@ Default PDF viewer:
 <PDF url="/sample.pdf" />
 ```
 
-PDF viewer without toolbar:
+PDF viewer starting with page 2 and without toolbar:
 
-<PDF url="/sample.pdf" no-toolbar />
-
-```md
-<PDF url="/sample.pdf" no-toolbar />
-```
-
-PDF viewer with initial page 2:
-
-<PDF url="/sample.pdf" :page="2" />
+<PDF url="/sample.pdf" page="2" no-toolbar />
 
 ```md
-<PDF url="/sample.pdf" :page="2" />
+<PDF url="/sample.pdf" page="2" no-toolbar />
 ```

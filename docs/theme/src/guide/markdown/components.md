@@ -141,10 +141,10 @@ A bilibili video:
 
 A bilibili video with start time and page:
 
-<BiliBili bvid="BV1kt411o7C3" :ratio="9/16" :time="60" :page="2" />
+<BiliBili bvid="BV1kt411o7C3" ratio="16:9" time="60" page="2" />
 
 ```md
-<BiliBili bvid="BV1kt411o7C3" :ratio="9/16" :time="60" :page="2" />
+<BiliBili bvid="BV1kt411o7C3" ratio="16:9" time="60" page="2" />
 ```
 
 A bilibili video with custom settings:
@@ -230,20 +230,12 @@ Default PDF viewer:
 <PDF url="/sample.pdf" />
 ```
 
-PDF viewer without toolbar:
+PDF viewer starting with page 2 and without toolbar:
 
-<PDF url="/sample.pdf" no-toolbar />
-
-```md
-<PDF url="/sample.pdf" no-toolbar />
-```
-
-PDF viewer with initial page 2:
-
-<PDF url="/sample.pdf" :page="2" />
+<PDF url="/sample.pdf" page="2" no-toolbar />
 
 ```md
-<PDF url="/sample.pdf" :page="2" />
+<PDF url="/sample.pdf" page="2" no-toolbar />
 ```
 
 See [PDF][pdf] page for available props.

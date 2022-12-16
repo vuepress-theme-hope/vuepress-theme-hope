@@ -8,6 +8,24 @@ You can use this component to embed a PDF viewer.
 
 <!-- more -->
 
+## Demo
+
+Default PDF viewer:
+
+<PDF url="/sample.pdf" />
+
+```md
+<PDF url="/sample.pdf" />
+```
+
+PDF viewer starting with page 2 and without toolbar:
+
+<PDF url="/sample.pdf" page="2" no-toolbar />
+
+```md
+<PDF url="/sample.pdf" page="2" no-toolbar />
+```
+
 ## Props
 
 ### url
@@ -76,29 +94,3 @@ Initial zoom level of pdf document.
 This prop only works on Chromium-based browsers.
 
 :::
-
-## Demo
-
-Default PDF viewer:
-
-<PDF url="/sample.pdf" />
-
-```md
-<PDF url="/sample.pdf" />
-```
-
-PDF viewer without toolbar:
-
-<PDF url="/sample.pdf" no-toolbar />
-
-```md
-<PDF url="/sample.pdf" no-toolbar />
-```
-
-PDF viewer with initial page 2:
-
-<PDF url="/sample.pdf" :page="2" />
-
-```md
-<PDF url="/sample.pdf" :page="2" />
-```

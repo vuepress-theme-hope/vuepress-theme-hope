@@ -58,10 +58,13 @@ The project is a monorepo, managed by pnpm.
 │ ├── reading-time → reading-time2 plugin document
 │ ├── remove-pwa → remove-pwa plugin document
 │ ├── sass-palette → sass-palette plugin document
+│ ├── shared → vuepress-shared document
 │ ├── search-pro → search-pro plugin document
 │ ├── seo → seo2 plugin document
 │ └── theme → theme document
 │
+├── docs-shared → common files for docs
+|
 ├── packages → project source code
 │ ├── blog2 → blog2 plugin
 │ ├── comment2 → comment2 plugin
@@ -115,36 +118,29 @@ The structure of each project is as follows:
 ```
 .
 ├── lib → compiled output file
-│ │
-│ ├── client → client-side compiled code
-│ │
-│ └── node → Node.js side compiled code
+│    │
+│    ├── client → client-side compiled code
+│    │
+│    └── node → Node.js side compiled code
 │
 └── src → source file
-  │
-  ├── client → client-side source code
-  │
-  ├── node → Node.js side source code
-  │
-  └── shared → Shared files between node and client
+     │
+     ├── client → client-side source code
+     │
+     ├── node → Node.js side source code
+     │
+     └── shared → Shared files between node and client
 ```
 
-Since the client-side uses ES Module (import/export) and the Node.js side uses commonjs (require/exports), the code in the node and client directories cannot be cross-referenced.
+VuePress is running both in client side and node side. Node side has node module like `fs`, while client side is running in browser which has `document` `windows` `navigator` etc. globals, you should be aware of where a piece of code is running.
 
-- `client` directory stores the client code, compiled in esm format
-- `node` directory stores the Node.js code, compiled in cjs format
-- `shared` directory basically stores TypeScript types, and is compiled in cjs format. It can be referenced by the client and node directories.
+- `client` directory stores code running in browser
+- `node` directory stores code running in Node.js
+- `shared` directory stores files that are used in both client and node, so code shall not reference any browser globals or node module.
 
 For better performance, all plugins are packed and minified using rollup when they are published.
 
 ## Project Development
-
-### How to build
-
-- For better performance, all plugins are packed and minified using `rollup` when they are published.
-- Use `cpx` package to copy and watch files in other formats from the source file to the output directory.
-
-### Command
 
 1. Build project: `pnpm build`
 
@@ -166,7 +162,7 @@ For better performance, all plugins are packed and minified using rollup when th
 
 Please do not mix build and dev commands as they compile in completely different ways.
 
-You may need to execute the `pnpm clean` command to clear previous build results.
+You may need to execute the `pnpm clean` command to clear previous command result.
 
 :::
 

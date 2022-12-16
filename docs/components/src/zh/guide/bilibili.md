@@ -18,10 +18,10 @@ title: BiliBili
 
 一个自定义分 P 和空降地址的 B 站视频:
 
-<BiliBili bvid="BV1kt411o7C3" :ratio="9/16" :time="60" :page="2" />
+<BiliBili bvid="BV1kt411o7C3" ratio="16:9" time="60" page="2" />
 
 ```md
-<BiliBili bvid="BV1kt411o7C3" :ratio="9/16" :time="60" :page="2" />
+<BiliBili bvid="BV1kt411o7C3" ratio="16:9" time="60" page="2" />
 ```
 
 一个自定义设置的 B 站视频:
