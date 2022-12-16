@@ -1,40 +1,59 @@
-import { h } from "vue";
+import { computed, defineComponent, h } from "vue";
+import type { VNode } from "vue";
 
-import type { FunctionalComponent } from "vue";
+import "../styles/font-icon.scss";
 
 declare const ICON_PREFIX: string;
 
-export interface FontIconProps {
-  icon?: string | undefined;
-  color?: string | undefined;
-  size?: number | undefined;
-}
+export default defineComponent({
+  name: "FontIcon",
 
-const FontIcon: FunctionalComponent<FontIconProps> = ({
-  icon = "",
-  color,
-  size,
-}) =>
-  icon
-    ? h("span", {
-        class: ["icon", `${ICON_PREFIX}${icon}`],
-        ...(color || size
-          ? {
-              style: {
-                ...(color ? { color } : {}),
-                ...(size ? { "font-size": `${size}px` } : {}),
-              },
-            }
-          : {}),
-      })
-    : null;
+  props: {
+    /**
+     * Icon class
+     *
+     * 图标类名
+     */
+    icon: String,
 
-FontIcon.displayName = "FontIcon";
+    /**
+     * Icon color
+     *
+     * 图标颜色
+     */
+    color: String,
 
-FontIcon.props = {
-  icon: String,
-  color: String,
-  size: Number,
-};
+    /**
+     * Icon size
+     *
+     * 图标大小
+     */
+    size: [String, Number],
+  },
 
-export default FontIcon;
+  setup(props) {
+    const style = computed(() => {
+      const styleObject: Record<string, string> = {};
+
+      if (props.color) {
+        styleObject["color"] = props.color;
+      }
+
+      if (props.size) {
+        styleObject["font-size"] = Number.isNaN(Number(props.size))
+          ? <string>props.size
+          : `${props.size}px`;
+      }
+
+      return Object.keys(styleObject).length ? styleObject : null;
+    });
+
+    return (): VNode | null =>
+      props.icon
+        ? h("span", {
+            class: ["font-icon icon", `${ICON_PREFIX}${props.icon}`],
+            style: style.value,
+          })
+        : null;
+  },
+});
