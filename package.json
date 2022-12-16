@@ -43,7 +43,7 @@
   "devDependencies": {
     "@commitlint/cli": "17.3.0",
     "@commitlint/config-conventional": "17.3.0",
-    "@rollup/plugin-commonjs": "23.0.4",
+    "@rollup/plugin-commonjs": "23.0.5",
     "@rollup/plugin-node-resolve": "15.0.1",
     "@types/inquirer": "9.0.3",
     "@types/node": "18.11.15",
@@ -58,7 +58,7 @@
     "cpx2": "4.2.0",
     "cross-env": "7.0.3",
     "cz-git": "1.4.1",
-    "esbuild": "0.16.6",
+    "esbuild": "0.16.7",
     "eslint": "8.29.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-prettier": "4.2.1",
@@ -135,9 +135,8 @@
       ]
     },
     "patchedDependencies": {
-      "mitt@3.0.0": "patches/mitt@3.0.0.patch",
       "@types/katex@0.14.0": "patches/@types__katex@0.14.0.patch",
-      "mermaid@9.2.2": "patches/mermaid@9.2.2.patch"
+      "mitt@3.0.0": "patches/mitt@3.0.0.patch"
     }
   }
 }
