@@ -6,6 +6,24 @@ Embed StackBlitz demo in Markdown files.
 
 <!-- more -->
 
+## Demo
+
+A StackBlitz project:
+
+<StackBlitz id="vuepress-theme-hope" />
+
+```md
+<StackBlitz id="vuepress-theme-hope" />
+```
+
+A StackBlitz project with custom settings:
+
+<StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hideDevtools />
+
+```md
+<StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hideDevtools />
+```
+
 ## Props
 
 ### id
@@ -91,21 +109,3 @@ Hide navigation panel in embed view.
 - Default: `false`
 
 Hide the debugging console in the editor preview.
-
-## Demo
-
-A StackBlitz project:
-
-<StackBlitz id="vuepress-theme-hope" />
-
-```md
-<StackBlitz id="vuepress-theme-hope" />
-```
-
-A StackBlitz project with custom settings:
-
-<StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hideDevtools />
-
-```md
-<StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hideDevtools />
-```

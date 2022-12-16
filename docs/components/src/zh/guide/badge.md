@@ -8,6 +8,14 @@ title: Badge
 
 <!-- more -->
 
+## 示例
+
+Badge Test <Badge text="Building" type="warning" /> <Badge text="MrHope" color="grey" />
+
+```md
+Badge Test <Badge text="Building" type="warning" /> <Badge text="MrHope" color="grey" />
+```
+
 ## 属性
 
 ### text
@@ -43,11 +51,3 @@ title: Badge
 - 默认值: `"top"`
 
 徽章的垂直方向的位置
-
-## 示例
-
-Badge Test <Badge text="Building" type="warning" /> <Badge text="MrHope" color="grey" />
-
-```md
-Badge Test <Badge text="Building" type="warning" /> <Badge text="MrHope" color="grey" />
-```

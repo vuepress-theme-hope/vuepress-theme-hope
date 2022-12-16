@@ -6,6 +6,32 @@ title: BiliBili
 
 <!-- more -->
 
+## 案例
+
+一个 B 站视频:
+
+<BiliBili bvid="BV1kt411o7C3" />
+
+```md
+<BiliBili bvid="BV1kt411o7C3" />
+```
+
+一个自定义分 P 和空降地址的 B 站视频:
+
+<BiliBili bvid="BV1kt411o7C3" :ratio="9/16" :time="60" :page="2" />
+
+```md
+<BiliBili bvid="BV1kt411o7C3" :ratio="9/16" :time="60" :page="2" />
+```
+
+一个自定义设置的 B 站视频:
+
+<BiliBili bvid="BV1kt411o7C3" :ratio="[9 / 16, 20]" low-quality no-danmaku />
+
+```md
+<BiliBili bvid="BV1kt411o7C3" :ratio="[9 / 16, 20]" low-quality no-danmaku />
+```
+
 ## 属性
 
 ### bvid
@@ -63,29 +89,3 @@ B 站组件高度宽高比，只有当未指定 `height` 时有效。
 - 默认值: `false`
 
 是否启用弹幕
-
-## 案例
-
-一个 B 站视频:
-
-<BiliBili bvid="BV1kt411o7C3" />
-
-```md
-<BiliBili bvid="BV1kt411o7C3" />
-```
-
-一个自定义分 P 和空降地址的 B 站视频:
-
-<BiliBili bvid="BV1kt411o7C3" :ratio="9/16" :time="60" :page="2" />
-
-```md
-<BiliBili bvid="BV1kt411o7C3" :ratio="9/16" :time="60" :page="2" />
-```
-
-一个自定义设置的 B 站视频:
-
-<BiliBili bvid="BV1kt411o7C3" :ratio="[9 / 16, 20]" low-quality no-danmaku />
-
-```md
-<BiliBili bvid="BV1kt411o7C3" :ratio="[9 / 16, 20]" low-quality no-danmaku />
-```

@@ -8,6 +8,18 @@ You can use it in Markdown to add an icon。
 
 <!-- more -->
 
+## Demo
+
+- Home icon: <FontIcon icon="home" />
+
+- A big and red markdown icon: <FontIcon icon="markdown" color="red" size="32" />
+
+```md
+- Home icon: <FontIcon icon="home" />
+
+- A big and red markdown icon: <FontIcon icon="markdown" color="red" size="32" />
+```
+
 ## Props
 
 ### icon
@@ -26,19 +38,7 @@ Color used for icon.
 
 ### size
 
-- Type: `number`
+- Type: `number | string`
 - Default: `Current font size`
 
-Icon size in pixels.
-
-## Demo
-
-- Home icon: <FontIcon icon="home" />
-
-- A big and red markdown icon: <FontIcon icon="markdown" color="red" :size="32" />
-
-```md
-- Home icon: <FontIcon icon="home" />
-
-- A big and red markdown icon: <FontIcon icon="markdown" color="red" :size="32" />
-```
+Icon size.

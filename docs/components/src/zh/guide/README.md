@@ -1,5 +1,7 @@
 ---
 title: 指南
+icon: creative
+index: false
 ---
 
 ::: info Tree Shakable

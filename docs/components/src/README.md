@@ -4,7 +4,7 @@ title: Home
 icon: home
 heroImage: /logo.svg
 heroText: vuepress-plugin-components
-tagline: Components lib plugin for VuePress2
+tagline: Useful components for VuePress2
 actions:
   - text: Get Started 💡
     link: /guide/

@@ -3,31 +3,36 @@ title: Guide
 icon: creative
 ---
 
-This plugin register `<CommentService />` component globally.
+## Adding Comment
 
-We recommended you to insert the comment component (`<CommentService />`) after the `<PageNav />` component.
+This plugin globally registers a component `<CommentService />`.
 
-By default, `<CommentService />` component is enabled globally. You can disable it locally by setting `comment: false` in page frontmatter.
+- If you are a user, you should use `alias` and layout slots to insert the component. We recommended you to insert the comment component (`<CommentService />`) after the `<PageNav />` component, and [here is a demo](../demo.md) with default theme.
+- If you are a theme developer, you should insert this component in the layout of your theme.
 
-To keep it globally disabled, please set `comment` to `false` in the plugin options. Then you can set `comment: true` in page frontmatter to enable it locally.
+## Comment Status
+
+By default, `<CommentService />` component is enabled globally, and you can use `comment` option in both plugin options and page frontmatter to control it.
+
+- You can disable it locally by setting `comment: false` in page frontmatter.
+
+- To keep it globally disabled, please set `comment` to `false` in the plugin options. Then you can set `comment: true` in page frontmatter to enable it locally.
+
+## Comment Services
 
 Currently you can choose from Giscus, Waline and Twikoo.
 
-::: tip Comment service selection
+::: tip Choosing from comment services
 
-- Giscus is recommended if your blog or documentation is primarily geared towards programmers.
-- If your blog or documentation is for the general public, Waline is recommended.
+People who your blog or documentation are targeting:
+
+- Programmers and developers: Giscus
+- General public: Waline
 
 :::
 
-## Giscus
+- [Giscus Guide](giscus.md)
 
-See [Giscus Config Guide](giscus.md)
+- [Waline Guide](waline.md)
 
-## Waline
-
-See [Waline Config Guide](waline.md)
-
-## Twikoo
-
-See [Twikoo Config Guide](twikoo.md)
+- [Twikoo Guide](twikoo.md)

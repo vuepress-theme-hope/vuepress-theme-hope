@@ -209,11 +209,11 @@ See [AudioPlayer][audioplayer] page for available props.
 Компонент, который позволяет отображать иконки шрифтов.
 
 - Home icon: <FontIcon icon="home" />
-- A big and red markdown icon: <FontIcon icon="markdown" color="red" :size="32" />
+- A big and red markdown icon: <FontIcon icon="markdown" color="red" size="32" />
 
 ```md
 - Home icon: <FontIcon icon="home" />
-- A big and red markdown icon: <FontIcon icon="markdown" color="red" :size="32" />
+- A big and red markdown icon: <FontIcon icon="markdown" color="red" size="32" />
 ```
 
 Доступные свойства смотрите на странице [FontIcon][fonticon].

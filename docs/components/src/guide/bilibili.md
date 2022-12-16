@@ -6,6 +6,32 @@ Embed BiliBili videos in Markdown files.
 
 <!-- more -->
 
+## Demo
+
+A bilibili video:
+
+<BiliBili bvid="BV1kt411o7C3" />
+
+```md
+<BiliBili bvid="BV1kt411o7C3" />
+```
+
+A bilibili video with radio, start time and page:
+
+<BiliBili bvid="BV1kt411o7C3" :ratio="9/16" :time="60" :page="2" />
+
+```md
+<BiliBili bvid="BV1kt411o7C3" :ratio="9/16" :time="60" :page="2" />
+```
+
+A bilibili video with custom settings:
+
+<BiliBili bvid="BV1kt411o7C3" :ratio="[9 / 16, 20]" low-quality no-danmaku />
+
+```md
+<BiliBili bvid="BV1kt411o7C3" :ratio="[9 / 16, 20]" low-quality no-danmaku />
+```
+
 ## Props
 
 ### bvid
@@ -63,29 +89,3 @@ Whether to use source having low quality.
 - Default: `false`
 
 Whether to disable danmaku
-
-## Demo
-
-A bilibili video:
-
-<BiliBili bvid="BV1kt411o7C3" />
-
-```md
-<BiliBili bvid="BV1kt411o7C3" />
-```
-
-A bilibili video with radio, start time and page:
-
-<BiliBili bvid="BV1kt411o7C3" :ratio="9/16" :time="60" :page="2" />
-
-```md
-<BiliBili bvid="BV1kt411o7C3" :ratio="9/16" :time="60" :page="2" />
-```
-
-A bilibili video with custom settings:
-
-<BiliBili bvid="BV1kt411o7C3" :ratio="[9 / 16, 20]" low-quality no-danmaku />
-
-```md
-<BiliBili bvid="BV1kt411o7C3" :ratio="[9 / 16, 20]" low-quality no-danmaku />
-```

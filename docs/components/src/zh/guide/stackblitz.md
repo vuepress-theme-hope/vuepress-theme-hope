@@ -6,6 +6,24 @@ title: StackBlitz
 
 <!-- more -->
 
+## 演示
+
+一个 StackBlitz 项目:
+
+<StackBlitz id="vuepress-theme-hope" />
+
+```md
+<StackBlitz id="vuepress-theme-hope" />
+```
+
+一个自定义设置的 StackBlitz 项目:
+
+<StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hideDevtools />
+
+```md
+<StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hideDevtools />
+```
+
 ## Props
 
 ### id
@@ -91,21 +109,3 @@ StackBlitz 组件高度宽高比，只有当未指定 `height` 时有效。
 - 默认值: `false`
 
 在编辑器预览中隐藏调试控制台。
-
-## 演示
-
-一个 StackBlitz 项目:
-
-<StackBlitz id="vuepress-theme-hope" />
-
-```md
-<StackBlitz id="vuepress-theme-hope" />
-```
-
-一个自定义设置的 StackBlitz 项目:
-
-<StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hideDevtools />
-
-```md
-<StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hideDevtools />
-```

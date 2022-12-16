@@ -8,6 +8,48 @@ CodePen 演示组件。
 
 <!-- more -->
 
+## 案例
+
+一个使用用户和 Slug Hash 的案例:
+
+<CodePen user="kowlor" slug-hash="ZYYQoy" title="Solar System animation - Pure CSS" :default-tab="['css','result']" :theme="$isDarkMode? 'dark': 'light'" />
+
+```md
+<CodePen
+  user="kowlor"
+  slug-hash="ZYYQoy"
+  title="Solar System animation - Pure CSS"
+  :default-tab="['css','result']"
+  :theme="$isDarkMode? 'dark': 'light'"
+/>
+```
+
+一个使用链接的案例:
+
+<CodePen link="https://codepen.io/kowlor/pen/ZYYQoy" title="Solar System animation - Pure CSS" :default-tab="['css','result']" :theme="$isDarkMode? 'dark': 'light'" />
+
+```md
+<CodePen
+  link="https://codepen.io/kowlor/pen/ZYYQoy"
+  title="Solar System animation - Pure CSS"
+  :default-tab="['css','result']"
+  :theme="$isDarkMode? 'dark': 'light'"
+/>
+```
+
+一个加载运行的案例:
+
+<CodePen link="https://codepen.io/keginaring/pen/XWZazwW" title="Solar System animation - Pure CSS" status="clicktorun" :theme="$isDarkMode? 'dark': 'light'" />
+
+```md
+<CodePen
+  link="https://codepen.io/kowlor/pen/ZYYQoy"
+  title="Envelope w/ Hearts"
+  status="clicktorun"
+  :theme="$isDarkMode? 'dark': 'light'"
+/>
+```
+
 ## 属性
 
 ### link
@@ -69,45 +111,3 @@ CodePen 嵌入演示状态。
 - 默认值: `["result"]`
 
 编辑器默认打开的选项卡。
-
-## 案例
-
-一个使用用户和 Slug Hash 的案例:
-
-<CodePen user="kowlor" slug-hash="ZYYQoy" title="Solar System animation - Pure CSS" :default-tab="['css','result']" :theme="$isDarkMode? 'dark': 'light'" />
-
-```md
-<CodePen
-  user="kowlor"
-  slug-hash="ZYYQoy"
-  title="Solar System animation - Pure CSS"
-  :default-tab="['css','result']"
-  :theme="$isDarkMode? 'dark': 'light'"
-/>
-```
-
-一个使用链接的案例:
-
-<CodePen link="https://codepen.io/kowlor/pen/ZYYQoy" title="Solar System animation - Pure CSS" :default-tab="['css','result']" :theme="$isDarkMode? 'dark': 'light'" />
-
-```md
-<CodePen
-  link="https://codepen.io/kowlor/pen/ZYYQoy"
-  title="Solar System animation - Pure CSS"
-  :default-tab="['css','result']"
-  :theme="$isDarkMode? 'dark': 'light'"
-/>
-```
-
-一个加载运行的案例:
-
-<CodePen link="https://codepen.io/keginaring/pen/XWZazwW" title="Solar System animation - Pure CSS" status="clicktorun" :theme="$isDarkMode? 'dark': 'light'" />
-
-```md
-<CodePen
-  link="https://codepen.io/kowlor/pen/ZYYQoy"
-  title="Envelope w/ Hearts"
-  status="clicktorun"
-  :theme="$isDarkMode? 'dark': 'light'"
-/>
-```

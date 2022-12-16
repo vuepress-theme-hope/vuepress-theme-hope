@@ -4,6 +4,62 @@ title: VideoPlayer
 
 在 Markdown 文件中嵌入视频。
 
+<!-- more -->
+
+## 案例
+
+一个视频播放器:
+
+<VideoPlayer src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm" />
+
+```md
+<VideoPlayer src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm" />
+```
+
+一个包含了封面和字幕的播放器:
+
+<VideoPlayer
+  src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm"
+  poster="/poster.svg"
+  :tracks="[
+    {
+      default: true,
+      src: $withBase('/assets/subtitles/en.vtt'),
+      kind: 'subtitles',
+      label: 'English',
+      srcLang: 'en',
+    },
+    {
+      src: $withBase('/assets/subtitles/fr.vtt'),
+      kind: 'subtitles',
+      label: 'French',
+      srcLang: 'fr',
+    },
+  ]"
+/>
+
+```md
+<VideoPlayer
+  src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm"
+  poster="/poster.svg"
+  :tracks="[
+    {
+      default: true,
+      src: $withBase('/assets/subtitles/en.vtt'),
+      kind: 'subtitles',
+      label: 'English',
+      srcLang: 'en',
+    },
+    {
+      src: $withBase('/assets/subtitles/fr.vtt'),
+      kind: 'subtitles',
+      label: 'French',
+      srcLang: 'fr',
+    },
+  ]"
+/>
+```
+
 ## Props
 
 ### src
@@ -76,57 +132,3 @@ title: VideoPlayer
 - 必填: 否
 
 视频的音轨
-
-## 案例
-
-一个视频播放器:
-
-<VideoPlayer src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm" />
-
-```md
-<VideoPlayer src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm" />
-```
-
-一个包含了封面和字幕的播放器:
-
-<VideoPlayer
-  src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm"
-  poster="/poster.svg"
-  :tracks="[
-    {
-      default: true,
-      src: $withBase('/assets/subtitles/en.vtt'),
-      kind: 'subtitles',
-      label: 'English',
-      srcLang: 'en',
-    },
-    {
-      src: $withBase('/assets/subtitles/fr.vtt'),
-      kind: 'subtitles',
-      label: 'French',
-      srcLang: 'fr',
-    },
-  ]"
-/>
-
-```md
-<VideoPlayer
-  src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm"
-  poster="/poster.svg"
-  :tracks="[
-    {
-      default: true,
-      src: $withBase('/assets/subtitles/en.vtt'),
-      kind: 'subtitles',
-      label: 'English',
-      srcLang: 'en',
-    },
-    {
-      src: $withBase('/assets/subtitles/fr.vtt'),
-      kind: 'subtitles',
-      label: 'French',
-      srcLang: 'fr',
-    },
-  ]"
-/>
-```

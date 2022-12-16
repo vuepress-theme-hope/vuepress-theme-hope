@@ -8,6 +8,18 @@ title: FontIcon
 
 <!-- more -->
 
+## Demo
+
+- 主页图标: <FontIcon icon="home" />
+
+- 一个大红 Markdown 图标: <FontIcon icon="markdown" color="red" size="32" />
+
+```md
+- 主页图标: <FontIcon icon="home" />
+
+- 一个大红 Markdown 图标: <FontIcon icon="markdown" color="red" size="32" />
+```
+
 ## 属性
 
 ### icon
@@ -26,19 +38,7 @@ Icon name
 
 ### size
 
-- 类型: `number`
+- 类型: `string | number`
 - 默认值: `当前字体大小`
 
-图标像素大小。
-
-## Demo
-
-- 主页图标: <FontIcon icon="home" />
-
-- 一个大红 Markdown 图标: <FontIcon icon="markdown" color="red" :size="32" />
-
-```md
-- 主页图标: <FontIcon icon="home" />
-
-- 一个大红 Markdown 图标: <FontIcon icon="markdown" color="red" :size="32" />
-```
+图标大小。

@@ -11,12 +11,12 @@ export default config(
       "/": {
         lang: "en-US",
         title: "Components Lib",
-        description: "Components Lib plugin for VuePress",
+        description: "Useful components for VuePress2",
       },
       "/zh/": {
         lang: "zh-CN",
         title: "组件库",
-        description: "VuePress 的组件库插件",
+        description: "面向 VuePress2 的常用组件",
       },
     },
 
