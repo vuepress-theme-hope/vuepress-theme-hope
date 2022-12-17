@@ -50,7 +50,7 @@
     "@vuepress/client": "2.0.0-beta.59",
     "@vuepress/shared": "2.0.0-beta.59",
     "@vuepress/utils": "2.0.0-beta.59",
-    "cheerio": "^1.0.0-rc.12",
+    "cheerio": "1.0.0-rc.12",
     "dayjs": "^1.11.7",
     "execa": "^6.1.0",
     "fflate": "^0.7.4",
