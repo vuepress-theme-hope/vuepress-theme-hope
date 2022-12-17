@@ -46,7 +46,7 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@vuepress/client": "2.0.0-beta.59",
+    "@vuepress/client": "2.0.0-beta.50-pre.1",
     "@vuepress/utils": "2.0.0-beta.59",
     "@vueuse/core": "^9.7.0",
     "photoswipe": "^5.3.4",

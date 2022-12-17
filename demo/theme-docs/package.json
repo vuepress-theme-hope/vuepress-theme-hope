@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "@vuepress/cli": "2.0.0-beta.59",
-    "@vuepress/client": "2.0.0-beta.59",
+    "@vuepress/client": "2.0.0-beta.50-pre.1",
     "@vuepress/plugin-docsearch": "2.0.0-beta.59",
     "@vuepress/plugin-pwa": "2.0.0-beta.59",
     "@vuepress/plugin-pwa-popup": "2.0.0-beta.59",
