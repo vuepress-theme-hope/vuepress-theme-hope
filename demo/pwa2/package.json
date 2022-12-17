@@ -15,7 +15,7 @@
     "demo:webpack-dev": "vuepress-webpack dev src"
   },
   "devDependencies": {
-    "@vuepress/cli": "2.0.0-beta.59",
+    "@vuepress/cli": "2.0.0-beta.50-pre.1",
     "@vuepress/client": "2.0.0-beta.59",
     "@vuepress/theme-default": "2.0.0-beta.59",
     "sass-loader": "13.2.0",
