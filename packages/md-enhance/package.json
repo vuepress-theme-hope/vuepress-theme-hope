@@ -79,7 +79,7 @@
   },
   "devDependencies": {
     "@types/babel__core": "7.1.20",
-    "@vuepress/bundler-vite": "2.0.0-beta.59",
+    "@vuepress/bundler-vite": "2.0.0-beta.50-pre.1",
     "@vuepress/core": "2.0.0-beta.59",
     "@vuepress/markdown": "2.0.0-beta.59",
     "markdown-it-container": "3.0.0",
