@@ -9,7 +9,7 @@ export default [
       "chokidar",
       "vuepress-shared/node",
     ],
-    dtsExternal: ["vuepress-shared"],
+    dtsExternal: ["vuepress-shared", "vuepress-shared/node"],
   }),
   ...rollupTypescript("client/index", {
     external: [
