@@ -18,7 +18,17 @@ You need to create an entry file for your theme and import `hopeTheme` from `vue
 
 In your entry file, set `extends: hopeTheme(options)` to extend the `vuepress-theme-hope` theme.
 
-The aliases of the same name (`alias`) and layouts (`layouts`) of your own newly created theme has higher priority over the extended theme `vuepress-theme-hope`, which means that you can override `vuepress-theme-hope` components via `alias`.
+The aliases of the same name (`alias`) and layouts (`layouts`) of your own newly created theme has higher priority over the extended theme `vuepress-theme-hope`, which means that you can override `vuepress-theme-hope` components via `alias` option in theme api, and you can add or override layouts via `layouts` in client config file.
+
+The theme provide the following layouts:
+
+- Layout
+- NotFound
+- Slide (Only available when presentation is enabled)
+- BlogCategory (Only available when blog is enabled)
+- BlogHome (Only available when blog is enabled)
+- BlogType (Only available when blog is enabled)
+- Timeline (Only available when blog is enabled)
 
 ::: code-tabs#language
 

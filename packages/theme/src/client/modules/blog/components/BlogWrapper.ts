@@ -11,7 +11,7 @@ import type { VNode } from "vue";
 import "../styles/page.scss";
 
 export default defineComponent({
-  name: "BlogCommon",
+  name: "BlogWrapper",
 
   setup(_props, { slots }) {
     const isMobile = useMobile();

@@ -177,7 +177,7 @@ export default {
 - `@theme-hope/modules/blog/components/BloggerInfo`: информация о блогере
 - `@theme-hope/modules/blog/components/BlogHero`: логотип главной страницы блога и введение
 - `@theme-hope/modules/blog/components/BlogHome`: домашняя страница блога
-- `@theme-hope/modules/blog/components/BlogPage`: обычная страница блога
+- `@theme-hope/modules/blog/components/BlogWrapper`: обычная страница блога
 - `@theme-hope/modules/blog/components/CategoryList`: список категорий
 - `@theme-hope/modules/blog/components/InfoList`: список информации о блоге
 - `@theme-hope/modules/blog/components/InfoPanel`: информационная панель блога

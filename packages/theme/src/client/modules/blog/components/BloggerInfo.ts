@@ -73,9 +73,7 @@ export default defineComponent({
                 ? h("img", {
                     class: [
                       "blogger-avatar",
-                      {
-                        round: blogOptions.value.roundAvatar,
-                      },
+                      { round: blogOptions.value.roundAvatar },
                     ],
                     src: withBase(bloggerAvatar.value),
                     property: "image",

@@ -175,7 +175,7 @@ Components:
 - `@theme-hope/modules/blog/components/BloggerInfo`: blogger info
 - `@theme-hope/modules/blog/components/BlogHero`: blog homepage logo and introduction
 - `@theme-hope/modules/blog/components/BlogHome`: blog home page
-- `@theme-hope/modules/blog/components/BlogPage`: normal blog page
+- `@theme-hope/modules/blog/components/BlogWrapper`: common wrapper for blog page
 - `@theme-hope/modules/blog/components/CategoryList`: Category list
 - `@theme-hope/modules/blog/components/InfoList`: blog info list
 - `@theme-hope/modules/blog/components/InfoPanel`: blog info panel

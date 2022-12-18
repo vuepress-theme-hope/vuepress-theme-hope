@@ -20,7 +20,17 @@ tag:
 
 在你的入口文件中，设置 `extends: hopeTheme(options)` 声明继承 `vuepress-theme-hope` 主题。
 
-你自己新创建的主题的同名别名 (`alias`) 和 同名布局 (`layouts`) 的优先级高于被继承主题 `vuepress-theme-hope`，这意味着你可以通过 `alias` 覆盖 `vuepress-theme-hope` 主题的组件
+你自己新创建的主题的同名别名 (`alias`) 和 同名布局 (`layouts`) 的优先级高于被继承主题 `vuepress-theme-hope`，这意味着你可以通过主题 API 的 `alias` 选项覆盖 `vuepress-theme-hope` 主题的组件，也可以通过客户端配置文件的同名布局覆盖 `vuepress-theme-hope` 主题的布局。
+
+主题提供了如下布局
+
+- Layout
+- NotFound
+- Slide (仅在幻灯片启用时可用)
+- BlogCategory (仅在博客启用时可用)
+- BlogHome (仅在博客启用时可用)
+- BlogType (仅在博客启用时可用)
+- Timeline (仅在博客启用时可用)
 
 ::: code-tabs#language
 

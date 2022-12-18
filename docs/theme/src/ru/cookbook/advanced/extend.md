@@ -18,7 +18,17 @@ tag:
 
 В файле ввода установите `extends: hopeTheme(options)`, чтобы расширить тему `vuepress-theme-hope`.
 
-Одноименные алиасы (`alias`) и макеты (`layouts`) вашей собственной только что созданной темы имеют более высокий приоритет по сравнению с расширенной темой `vuepress-theme-hope`, что означает, что вы можете переопределить `vuepress-theme-hope` компоненты через `alias`.
+The aliases of the same name (`alias`) and layouts (`layouts`) of your own newly created theme has higher priority over the extended theme `vuepress-theme-hope`, which means that you can override `vuepress-theme-hope` components via `alias` option in theme api, and you can add or override layouts via `layouts` in client config file.
+
+The theme provide the following layouts:
+
+- Layout
+- NotFound
+- Slide (Only available when presentation is enabled)
+- BlogCategory (Only available when blog is enabled)
+- BlogHome (Only available when blog is enabled)
+- BlogType (Only available when blog is enabled)
+- Timeline (Only available when blog is enabled)
 
 ::: code-tabs#language
 

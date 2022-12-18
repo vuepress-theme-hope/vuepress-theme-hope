@@ -177,7 +177,7 @@ Components:
 - `@theme-hope/modules/blog/components/BloggerInfo` 博主信息
 - `@theme-hope/modules/blog/components/BlogHero` 博客主页 Logo 与介绍
 - `@theme-hope/modules/blog/components/BlogHome` 博客主页
-- `@theme-hope/modules/blog/components/BlogPage` 博客普通页面
+- `@theme-hope/modules/blog/components/BlogWrapper` 博客常规布局
 - `@theme-hope/modules/blog/components/CategoryList` 分类列表
 - `@theme-hope/modules/blog/components/InfoList` 博客信息列表
 - `@theme-hope/modules/blog/components/InfoPanel` 博客信息面板
