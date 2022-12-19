@@ -37,6 +37,7 @@ import { tex } from "./tex.js";
 import type { PluginWithOptions } from "markdown-it";
 import type { LiteElement } from "mathjax-full/js/adaptors/lite/Element.js";
 import type { MathJaxOptions } from "../typings/index.js";
+import type { App } from "@vuepress/core";
 
 interface DocumentOptions {
   InputJax: TeX<LiteElement, string, HTMLElement>;
@@ -62,7 +63,7 @@ const renderMath = (
     documentOptions.OutputJax.styleSheet(mathDocument)
   );
 
-  return `${html}<component is="style">${stylesheet}</component>`;
+  return `${html}<component is="style" from="mathjax">${stylesheet}</component>`;
 };
 
 export const mathjax: PluginWithOptions<MathJaxOptions> = (
@@ -92,4 +93,39 @@ export const mathjax: PluginWithOptions<MathJaxOptions> = (
     render: (content, displayMode) =>
       renderMath(content, documentOptions, displayMode),
   });
+};
+
+export const minifyMathJaxCssAfterPrepare = (app: App) => {
+  const minifyCss = (content: string): string => {
+    const stylesheets = content.match(
+      /(?<=<component is="style" from="mathjax">).*?(?=<\/component>)/gms
+    );
+    if (stylesheets?.length) {
+      const allStyles = stylesheets
+        .map((e) => e.split("\n\n"))
+        .flat()
+        .map((e) => e.replaceAll("\n", ""));
+      const styles = Array.from(new Set(allStyles));
+      return (
+        content.replaceAll(
+          /<component is="style" from="mathjax">.*?<\/component>/gms,
+          ""
+        ) + `<component is="style">${styles.join("")}</component>`
+      );
+    }
+    return content;
+  };
+
+  const pagesWithMathJaxChtml = app.pages.filter((page) =>
+    page.contentRendered.includes(`<component is="style" from="mathjax">`)
+  );
+  return Promise.all(
+    pagesWithMathJaxChtml.map((page) => {
+      page.contentRendered = minifyCss(page.contentRendered);
+      return app.writeTemp(
+        page.componentFilePath,
+        `<template><div>${page.contentRendered}</div></template>`
+      );
+    })
+  );
 };
