@@ -7,7 +7,6 @@ export default [
       "@vuepress/plugin-container",
       "@vuepress/shared",
       "@vuepress/utils",
-      "juice",
       "markdown-it/lib/token.js",
       "markdown-it/lib/helpers/parse_link_label.js",
       /^mathjax-full\//,

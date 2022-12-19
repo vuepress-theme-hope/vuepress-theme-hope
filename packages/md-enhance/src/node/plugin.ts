@@ -55,6 +55,7 @@ import {
   vuePlayground,
   getVuePlaygroundPreset,
   getTSPlaygroundPreset,
+  minifyMathJaxCssAfterPrepare,
 } from "./markdown-it/index.js";
 import { prepareConfigFile, prepareRevealPluginFile } from "./prepare.js";
 import { MATHML_TAGS } from "./utils.js";
@@ -329,5 +330,15 @@ export const mdEnhancePlugin =
       },
 
       clientConfigFile: (app) => prepareConfigFile(app, options, legacy),
+
+      onPrepared: async (app): Promise<void> => {
+        if (
+          mathjaxEnable &&
+          typeof options.mathjax === "object" &&
+          options.mathjax.output === "chtml"
+        ) {
+          await minifyMathJaxCssAfterPrepare(app);
+        }
+      },
     };
   };
