@@ -14,7 +14,7 @@ importers:
     specifiers:
       '@commitlint/cli': 17.3.0
       '@commitlint/config-conventional': 17.3.0
-      '@rollup/plugin-commonjs': 23.0.7
+      '@rollup/plugin-commonjs': 24.0.0
       '@rollup/plugin-node-resolve': 15.0.1
       '@types/inquirer': 9.0.3
       '@types/node': 18.11.17
@@ -63,7 +63,7 @@ importers:
     devDependencies:
       '@commitlint/cli': 17.3.0
       '@commitlint/config-conventional': 17.3.0
-      '@rollup/plugin-commonjs': 23.0.7_rollup@3.7.5
+      '@rollup/plugin-commonjs': 24.0.0_rollup@3.7.5
       '@rollup/plugin-node-resolve': 15.0.1_rollup@3.7.5
       '@types/inquirer': 9.0.3
       '@types/node': 18.11.17
@@ -3291,8 +3291,8 @@ packages:
       '@rollup/pluginutils': 3.1.0_rollup@2.79.1
       rollup: 2.79.1
 
-  /@rollup/plugin-commonjs/23.0.7_rollup@3.7.5:
-    resolution: {integrity: sha512-hsSD5Qzyuat/swzrExGG5l7EuIlPhwTsT7KwKbSCQzIcJWjRxiimi/0tyMYY2bByitNb3i1p+6JWEDGa0NvT0Q==}
+  /@rollup/plugin-commonjs/24.0.0_rollup@3.7.5:
+    resolution: {integrity: sha512-0w0wyykzdyRRPHOb0cQt14mIBLujfAv6GgP6g8nvg/iBxEm112t3YPPq+Buqe2+imvElTka+bjNlJ/gB56TD8g==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       rollup: ^2.68.0||^3.0.0
