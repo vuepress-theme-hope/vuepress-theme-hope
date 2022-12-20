@@ -27,10 +27,10 @@
     "lint:prettier": "prettier --check .",
     "lint:stylelint": "stylelint packages/*/src/**/*.scss",
     "packages:bootstrap": "tsx scripts/bootstrap.ts",
-    "packages:check-update": "ncu --deep --timeout 600000",
+    "packages:check-update": "pnpm dlx npm-check-updates -u --deep --timeout 600000",
     "packages:update": "pnpm up -r",
     "release": "pnpm clean && pnpm build && pnpm release:bump && pnpm release:publish && pnpm release:sync",
-    "release:bump": "bumpp package.json demo/*/package.json docs/*/package.json packages/*/package.json --execute=\"pnpm standard-version --skip.bump --skip.commit --skip.tag && git add CHANGELOG.md\" --commit \"chore(release): publish v%s\" --all --tag --push",
+    "release:bump": "bumpp package.json demo/*/package.json docs/*/package.json packages/*/package.json --execute=\"pnpm commit-and-tag-version && git add CHANGELOG.md\" --commit \"chore(release): publish v%s\" --all --tag --push",
     "release:publish": "cross-env NODE_OPTIONS=\"--experimental-json-modules\" tsx scripts/release.ts",
     "release:sync": "cross-env NODE_OPTIONS=\"--experimental-json-modules\" tsx scripts/sync.ts",
     "test": "vitest --coverage"
@@ -47,29 +47,29 @@
     "@rollup/plugin-node-resolve": "15.0.1",
     "@types/inquirer": "9.0.3",
     "@types/node": "18.11.17",
-    "@typescript-eslint/eslint-plugin": "5.46.1",
-    "@typescript-eslint/parser": "5.46.1",
-    "@vitest/coverage-c8": "0.25.8",
+    "@typescript-eslint/eslint-plugin": "5.47.0",
+    "@typescript-eslint/parser": "5.47.0",
+    "@vitest/coverage-c8": "0.26.0",
     "@vue/eslint-config-typescript": "11.0.2",
-    "anywhere": "^1.6.0",
     "bumpp": "8.2.1",
+    "commit-and-tag-version": "10.1.0",
     "commitizen": "4.2.6",
     "concurrently": "7.6.0",
     "cpx2": "4.2.0",
     "cross-env": "7.0.3",
     "cz-git": "1.4.1",
-    "esbuild": "0.16.9",
+    "esbuild": "0.16.10",
     "eslint": "8.30.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-prettier": "4.2.1",
     "eslint-plugin-vue": "9.8.0",
     "execa": "6.1.0",
+    "http-server": "14.1.1",
     "husky": "8.0.2",
     "inquirer": "9.1.4",
     "magic-string": "0.27.0",
     "markdownlint-cli": "0.32.2",
     "nano-staged": "0.8.0",
-    "npm-check-updates": "16.6.0",
     "ora": "6.1.2",
     "picocolors": "1.0.0",
     "prettier": "2.8.1",
@@ -79,7 +79,6 @@
     "rollup-plugin-dts": "5.0.0",
     "rollup-plugin-esbuild": "5.0.0",
     "sort-package-json": "2.1.0",
-    "standard-version": "9.5.0",
     "stylelint": "14.16.0",
     "stylelint-config-prettier": "9.0.4",
     "stylelint-config-standard": "29.0.0",
@@ -88,13 +87,20 @@
     "tslib": "2.4.1",
     "tsx": "3.12.1",
     "typescript": "4.9.4",
-    "vitest": "0.25.8"
+    "vitest": "0.26.1"
   },
   "packageManager": "pnpm@7.18.2",
   "engines": {
     "node": "^14.18.0 || >=16.0.0",
     "npm": ">=8",
     "pnpm": ">=7"
+  },
+  "commit-and-tag-version": {
+    "skip": {
+      "bump": true,
+      "commit": true,
+      "tag": true
+    }
   },
   "nano-staged": {
     "*.vue": [

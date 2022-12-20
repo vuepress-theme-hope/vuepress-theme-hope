@@ -6,7 +6,7 @@
   "license": "MIT",
   "author": "Mr.Hope",
   "scripts": {
-    "demo:serve": "anywhere -s -h localhost -d src/.vuepress/dist",
+    "demo:serve": "http-server -a localhost src/.vuepress/dist -o",
     "demo:webpack-build": "vuepress-webpack build src",
     "demo:webpack-clean-dev": "vuepress-webpack dev src --clean-cache",
     "demo:webpack-dev": "vuepress-webpack dev src",

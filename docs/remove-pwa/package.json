@@ -10,7 +10,7 @@
     "url": "https://mrhope.site"
   },
   "scripts": {
-    "docs:serve": "anywhere -s -h localhost -d dist",
+    "docs:serve": "http-server -a localhost dist -o",
     "docs:vite-build": "vuepress-vite build src",
     "docs:vite-clean-dev": "vuepress-vite dev src --clean-cache",
     "docs:vite-dev": "vuepress-vite dev src",
