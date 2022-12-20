@@ -104,10 +104,10 @@ export const minifyMathJaxCssAfterPrepare = (app: App) => {
       const allStyles = stylesheets
         .map((e) => e.split("\n\n"))
         .flat()
-        .map((e) => e.replaceAll("\n", ""));
+        .map((e) => e.replace(/\n/g, ""));
       const styles = Array.from(new Set(allStyles));
       return (
-        content.replaceAll(
+        content.replace(
           /<component is="style" from="mathjax">.*?<\/component>/gms,
           ""
         ) + `<component is="style">${styles.join("")}</component>`
