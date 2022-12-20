@@ -1042,7 +1042,6 @@ importers:
       juice: ^8.1.0
       katex: ^0.16.4
       markdown-it: ^13.0.1
-      markdown-it-container: 3.0.0
       mathjax-full: ^3.2.2
       mermaid: ^9.3.0
       reveal.js: ^4.4.0
@@ -1080,7 +1079,6 @@ importers:
       '@vuepress/bundler-vite': 2.0.0-beta.59
       '@vuepress/core': 2.0.0-beta.59
       '@vuepress/markdown': 2.0.0-beta.59
-      markdown-it-container: 3.0.0
       typescript: 4.9.4
 
   packages/photo-swipe:

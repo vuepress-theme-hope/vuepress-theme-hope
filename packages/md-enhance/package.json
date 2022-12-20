@@ -82,7 +82,6 @@
     "@vuepress/bundler-vite": "2.0.0-beta.59",
     "@vuepress/core": "2.0.0-beta.59",
     "@vuepress/markdown": "2.0.0-beta.59",
-    "markdown-it-container": "3.0.0",
     "typescript": "4.9.4"
   },
   "peerDependencies": {

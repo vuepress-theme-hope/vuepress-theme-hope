@@ -1,8 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { path } from "@vuepress/utils";
 import MarkdownIt from "markdown-it";
-import MarkdownContainer from "markdown-it-container";
-import { include } from "../../src/node/markdown-it/index.js";
+import { container, include } from "../../src/node/markdown-it/index.js";
 
 import type { MarkdownEnv } from "@vuepress/markdown";
 
@@ -18,7 +17,7 @@ const mdFixtureDeepIncludePath = path.resolve(
   mdFixtureDeepIncludeRelative
 );
 
-const md = MarkdownIt().use(include).use(MarkdownContainer, "tip");
+const md = MarkdownIt().use(include).use(container, { name: "tip" });
 
 describe("include", () => {
   it("should not be parsed as import markdown syntax", () => {
@@ -179,7 +178,7 @@ describe("include", () => {
               path.resolve(__dirname, "./__fixtures__/src")
             ),
         })
-        .use(MarkdownContainer, "tip");
+        .use(container, { name: "tip" });
       const env: IncludeEnv = {
         filePath: null,
       };
@@ -258,7 +257,7 @@ foo
 
       const mdWithOptions = MarkdownIt()
         .use(include, { deep: true })
-        .use(MarkdownContainer, "tip");
+        .use(container, { name: "tip" });
       const env1: IncludeEnv = {
         filePath: __filename,
       };
