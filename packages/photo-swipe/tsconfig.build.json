@@ -1,7 +1,7 @@
 {
   "extends": "../../tsconfig.build.base.json",
   "compilerOptions": {
-    "lib": ["dom", "es2021"],
+    "lib": ["DOM", "ESNext"],
 
     "rootDir": "./src",
     "outDir": "./lib"
