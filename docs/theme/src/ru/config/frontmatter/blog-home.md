@@ -65,28 +65,28 @@ tag:
 
 Ссылка на фоновое изображение, вы должны указать абсолютный путь или полный путь. Если не заполнить, будет автоматически применено landscape изображение по умолчанию
 
-### bgImageStyle
+## bgImageStyle
 
 - Тип: `Record<string, string>`
 - Обязательный: Нет
 
 Стиль CSS фонового изображения
 
-### heroImageStyle
+## heroImageStyle
 
 - Тип: `Record<string, string>`
 - Обязательный: Нет
 
 Стиль CSS для иконки home
 
-### heroFullScreen
+## heroFullScreen
 
 - Тип: `boolean`
 - По умолчанию: `false`
 
 Отображается ли Hero в полноэкранном режиме
 
-### projects
+## projects
 
 - Тип: `ThemeBlogHomeProjectOptions[]`
 

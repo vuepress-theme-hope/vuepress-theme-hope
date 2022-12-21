@@ -72,28 +72,28 @@ tag:
 
 背景图片的地址，需填写绝对路径或完整路径。如果不填写，会自动应用一张默认的风景图片。
 
-### bgImageStyle
+## bgImageStyle
 
 - 类型: `Record<string, string>`
 - 必填: 否
 
 背景图片的 CSS 样式。
 
-### heroImageStyle
+## heroImageStyle
 
 - 类型: `Record<string, string>`
 - 必填: 否
 
 首页图标的 CSS 样式
 
-### heroFullScreen
+## heroFullScreen
 
 - 类型: `boolean`
 - 默认值: `false`
 
 是否全屏显示 Hero
 
-### projects
+## projects
 
 - 类型: `ThemeBlogHomeProjectOptions[]`
 

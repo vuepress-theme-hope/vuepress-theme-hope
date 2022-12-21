@@ -65,28 +65,28 @@ Home icon alt text
 
 Link of background image, you must fill in absolute path of full path. If not filled in, a default landscape picture will be automatically applied.
 
-### bgImageStyle
+## bgImageStyle
 
 - Type: `Record<string, string>`
 - Required: No
 
 The CSS style of the background image.
 
-### heroImageStyle
+## heroImageStyle
 
 - Type: `Record<string, string>`
 - Required: No
 
 CSS style for home icon
 
-### heroFullScreen
+## heroFullScreen
 
 - Type: `boolean`
 - Default: `false`
 
 Whether Hero is full screen displayed
 
-### projects
+## projects
 
 - Type: `ThemeBlogHomeProjectOptions[]`
 
