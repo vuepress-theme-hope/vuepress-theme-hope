@@ -56,6 +56,7 @@ import {
   getVuePlaygroundPreset,
   getTSPlaygroundPreset,
   minifyMathJaxCssAfterPrepare,
+  isImportGlobal,
 } from "./markdown-it/index.js";
 import { prepareConfigFile, prepareRevealPluginFile } from "./prepare.js";
 import { MATHML_TAGS } from "./utils.js";
@@ -332,11 +333,7 @@ export const mdEnhancePlugin =
       clientConfigFile: (app) => prepareConfigFile(app, options, legacy),
 
       onPrepared: async (app): Promise<void> => {
-        if (
-          mathjaxEnable &&
-          typeof options.mathjax === "object" &&
-          options.mathjax.output === "chtml"
-        ) {
+        if (mathjaxEnable && !isImportGlobal(options.mathjax!)) {
           await minifyMathJaxCssAfterPrepare(app);
         }
       },

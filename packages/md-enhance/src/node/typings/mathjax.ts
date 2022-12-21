@@ -218,7 +218,6 @@ export interface MathjaxSVGOutputOptions extends MathjaxCommonOutputOptions {
   titleID?: number;
 }
 
-// TODO: Add mathjax options
 export interface MathJaxOptions {
   /**
    * Output syntax

@@ -30,6 +30,8 @@ import { TeX } from "mathjax-full/js/input/tex.js";
 import { CHTML } from "mathjax-full/js/output/chtml.js";
 import { SVG } from "mathjax-full/js/output/svg.js";
 import { liteAdaptor } from "mathjax-full/js/adaptors/liteAdaptor.js";
+import { LiteDocument } from "mathjax-full/js/adaptors/lite/Document.js";
+import { HTMLDocument } from "mathjax-full/js/handlers/html/HTMLDocument.js";
 import { RegisterHTMLHandler } from "mathjax-full/js/handlers/html.js";
 import { AllPackages } from "mathjax-full/js/input/tex/AllPackages.js";
 import { tex } from "./tex.js";
@@ -46,10 +48,20 @@ interface DocumentOptions {
     | SVG<LiteElement, string, HTMLElement>;
 }
 
+export const isImportGlobal = (options: MathJaxOptions | boolean): boolean => {
+  return (
+    typeof options === "boolean" ||
+    (typeof options === "object" &&
+      (options.output === "svg" ||
+        (options.output === "chtml" && options.chtml?.adaptiveCSS === false)))
+  );
+};
+
 const renderMath = (
   content: string,
   documentOptions: DocumentOptions,
-  displayMode: boolean
+  displayMode: boolean,
+  isImportGlobal: boolean
 ): string => {
   const adaptor = liteAdaptor();
 
@@ -59,40 +71,32 @@ const renderMath = (
   const html = adaptor.outerHTML(
     mathDocument.convert(content, { display: displayMode })
   );
+  if (isImportGlobal) return html;
   const stylesheet = adaptor.innerHTML(
     documentOptions.OutputJax.styleSheet(mathDocument)
   );
-
   return `${html}<component is="style" from="mathjax">${stylesheet}</component>`;
 };
 
-export const mathjax: PluginWithOptions<MathJaxOptions> = (
-  md,
-  options = {}
-) => {
-  const documentOptions = {
-    InputJax: new TeX<LiteElement, string, HTMLElement>({
-      packages: AllPackages,
-      ...options.tex,
-    }),
-    OutputJax:
-      options.output === "chtml"
-        ? new CHTML<LiteElement, string, HTMLElement>({
-            // fontURL: createRequire(import.meta.url).resolve("mathjax-full"),
-            fontURL:
-              "http://fastly.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2",
-            ...options.chtml,
-          })
-        : new SVG<LiteElement, string, HTMLElement>({
-            fontCache: "none",
-            ...options.svg,
-          }),
-  };
-
-  md.use(tex, {
-    render: (content, displayMode) =>
-      renderMath(content, documentOptions, displayMode),
+export const getMathjaxStyle = (options: MathJaxOptions): string => {
+  const adaptor = liteAdaptor();
+  const ouputJax =
+    options.output === "chtml"
+      ? new CHTML<LiteElement, string, HTMLElement>({
+          fontURL:
+            "http://fastly.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2",
+          ...options.chtml,
+        })
+      : new SVG<LiteElement, string, HTMLElement>({
+          fontCache: "none",
+          ...options.svg,
+        });
+  const html = new HTMLDocument(new LiteDocument(), adaptor, {
+    InputJax: new TeX({ packages: AllPackages, ...options.tex }),
+    OutputJax: ouputJax,
   });
+
+  return adaptor.textContent(ouputJax.styleSheet(html as any));
 };
 
 export const minifyMathJaxCssAfterPrepare = (app: App) => {
@@ -128,4 +132,38 @@ export const minifyMathJaxCssAfterPrepare = (app: App) => {
       );
     })
   );
+};
+
+export const mathjax: PluginWithOptions<MathJaxOptions> = (
+  md,
+  options = {}
+) => {
+  const documentOptions = {
+    InputJax: new TeX<LiteElement, string, HTMLElement>({
+      packages: AllPackages,
+      ...options.tex,
+    }),
+    OutputJax:
+      options.output === "chtml"
+        ? new CHTML<LiteElement, string, HTMLElement>({
+            // fontURL: createRequire(import.meta.url).resolve("mathjax-full"),
+            fontURL:
+              "http://fastly.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2",
+            ...options.chtml,
+          })
+        : new SVG<LiteElement, string, HTMLElement>({
+            fontCache: "none",
+            ...options.svg,
+          }),
+  };
+
+  md.use(tex, {
+    render: (content, displayMode) =>
+      renderMath(
+        content,
+        documentOptions,
+        displayMode,
+        isImportGlobal(options)
+      ),
+  });
 };

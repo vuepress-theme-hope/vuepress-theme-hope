@@ -1,9 +1,11 @@
 import { ensureEndingSlash } from "@vuepress/shared";
 import { getDirname, path } from "@vuepress/utils";
+import { getMathjaxStyle, isImportGlobal } from "./markdown-it/mathjax.js";
 
 import type { App } from "@vuepress/core";
 import type { MarkdownEnhanceOptions } from "./options.js";
 import type { RevealPlugin } from "./typings/index.js";
+import { MathJaxOptions } from "./typings/index.js";
 
 const __dirname = getDirname(import.meta.url);
 const CLIENT_FOLDER = ensureEndingSlash(path.resolve(__dirname, "../client"));
@@ -150,6 +152,21 @@ import { defineAsyncComponent } from "vue";
     enhance += `\
 app.component("VuePlayground", defineAsyncComponent(() => import("${CLIENT_FOLDER}components/VuePlayground.js")));
     `;
+  }
+
+  if (getStatus("mathjax")) {
+    // if output is svg or output is chtml and adaptiveCSS is false
+    const mathjaxOptions = options.mathjax!;
+
+    if (isImportGlobal(mathjaxOptions)) {
+      configImport += `\
+import "../styles/mathjax.css";
+`;
+      await app.writeTemp(
+        `styles/mathjax.css`,
+        getMathjaxStyle(mathjaxOptions as MathJaxOptions)
+      );
+    }
   }
 
   return app.writeTemp(

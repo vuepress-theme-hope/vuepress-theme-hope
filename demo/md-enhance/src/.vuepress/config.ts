@@ -1,6 +1,9 @@
 import { defineUserConfig } from "@vuepress/cli";
 import { defaultTheme } from "@vuepress/theme-default";
-import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
+import {
+  MathjaxCommonHTMLOutputOptions,
+  mdEnhancePlugin,
+} from "vuepress-plugin-md-enhance";
 
 const base = <"/" | `/${string}/`>process.env.BASE || "/";
 
@@ -82,8 +85,17 @@ export default defineUserConfig({
       },
       mathjax: {
         output: "chtml",
-        // mhchem: true,
+        chtml: {
+          adaptiveCSS: false,
+        } as MathjaxCommonHTMLOutputOptions,
       },
+      // mathjax: {
+      //   output: "chtml",
+      // },
+      // mathjax: {
+      //   output: "svg",
+      // },
+      // mathjax: true,
       presentation: {
         plugins: ["highlight", "math", "search", "notes", "zoom"],
       },
