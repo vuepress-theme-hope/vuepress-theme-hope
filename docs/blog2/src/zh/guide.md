@@ -110,14 +110,14 @@ export default {
         return true;
       },
 
-      getInfo: ({ excerpt, frontmatter, git = {} }) => {
+      getInfo: ({ frontmatter, git = {}, data = {} }) => {
         // 获取页面信息
         const info: Record<string, any> = {
           author: frontmatter.author || "",
           categories: frontmatter.categories || [],
           date: frontmatter.date || git.createdTime || null,
           tags: frontmatter.tags || [],
-          excerpt: page.excerpt,
+          excerpt: data.excerpt || "",
         };
 
         return info;

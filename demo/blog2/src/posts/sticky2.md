@@ -5,9 +5,14 @@ category:
 tag:
   - tag E
 sticky: 10
+excerpt: true
 ---
 
 # Sticky Article with Higher Priority
+
+excerpt info
+
+<!-- more -->
 
 ## Heading 2
 

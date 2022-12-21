@@ -43,14 +43,18 @@ export default defineUserConfig({
         filePathRelative ? filePathRelative.startsWith("posts/") : false,
 
       // getting article info
-      getInfo: ({ frontmatter, title, excerpt }) => ({
+      getInfo: ({ frontmatter, title, data }) => ({
         title,
         author: frontmatter.author || "",
         date: frontmatter.date || null,
         category: frontmatter.category || [],
         tag: frontmatter.tag || [],
-        excerpt,
+        excerpt: data?.excerpt || "",
       }),
+
+      // If the user sets excerpt or description in frontmatter, the summary information will be displayed
+      excerptFilter: ({ frontmatter }) =>
+        Boolean(frontmatter?.excerpt || frontmatter?.description),
 
       category: [
         {
