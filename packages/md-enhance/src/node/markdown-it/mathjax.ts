@@ -47,11 +47,10 @@ interface DocumentOptions {
 }
 
 export const isImportGlobal = (options: MathJaxOptions | boolean): boolean => {
-  return (
-    typeof options === "boolean" ||
-    (typeof options === "object" &&
-      (options.output === "svg" ||
-        (options.output === "chtml" && options.chtml?.adaptiveCSS === false)))
+  return !(
+    typeof options === "object" &&
+    options.output === "chtml" &&
+    options.chtml?.adaptiveCSS === true
   );
 };
 
@@ -88,6 +87,7 @@ const getDocumentOptions = (options: MathJaxOptions): DocumentOptions => {
             // fontURL: createRequire(import.meta.url).resolve("mathjax-full"),
             fontURL:
               "http://fastly.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2",
+            adaptiveCSS: false,
             ...options.chtml,
           })
         : new SVG<LiteElement, string, HTMLElement>({

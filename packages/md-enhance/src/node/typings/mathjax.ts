@@ -189,7 +189,7 @@ export interface MathjaxCommonHTMLOutputOptions
   /**
    * Whether only produce CSS that is used in the processed equations
    *
-   * @default true
+   * @default false
    */
   adaptiveCSS?: boolean;
 }
