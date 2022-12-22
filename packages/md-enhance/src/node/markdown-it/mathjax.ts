@@ -52,6 +52,7 @@ export interface DocumentOptions {
   OutputJax:
     | CHTML<LiteElement, string, HTMLElement>
     | SVG<LiteElement, string, HTMLElement>;
+  enableAssistiveMml: boolean;
 }
 
 export const getDocumentOptions = (
@@ -82,6 +83,7 @@ export const getDocumentOptions = (
           fontCache: "none",
           ...options.svg,
         }),
+  enableAssistiveMml: options.a11y !== false,
 });
 
 export interface MathJaxUtils {
