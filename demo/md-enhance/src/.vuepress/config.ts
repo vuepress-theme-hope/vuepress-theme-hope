@@ -85,9 +85,6 @@ export default defineUserConfig({
       },
       mathjax: {
         output: "chtml",
-        chtml: {
-          adaptiveCSS: false,
-        } as MathjaxCommonHTMLOutputOptions,
       },
       // mathjax: {
       //   output: "chtml",

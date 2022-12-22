@@ -39,6 +39,7 @@ import {
   include,
   katex,
   mathjax,
+  initMathjax,
   mark,
   mermaid,
   normalDemo,
@@ -55,10 +56,12 @@ import {
   vuePlayground,
   getVuePlaygroundPreset,
   getTSPlaygroundPreset,
-  minifyMathJaxCssAfterPrepare,
-  isImportGlobal,
 } from "./markdown-it/index.js";
-import { prepareConfigFile, prepareRevealPluginFile } from "./prepare.js";
+import {
+  prepareConfigFile,
+  prepareMathjaxStyleFile,
+  prepareRevealPluginFile,
+} from "./prepare.js";
 import { MATHML_TAGS } from "./utils.js";
 
 import type { PluginFunction } from "@vuepress/core";
@@ -121,6 +124,8 @@ export const mdEnhancePlugin =
       },
       ...(typeof options.katex === "object" ? options.katex : {}),
     };
+
+    const mathjaxUtils = initMathjax(options.mathjax);
 
     const revealPlugins =
       typeof options.presentation === "object" &&
@@ -268,11 +273,7 @@ export const mdEnhancePlugin =
         )
           md.use(vPre);
         if (katexEnable) md.use(katex, katexOptions);
-        else if (mathjaxEnable)
-          md.use(
-            mathjax,
-            typeof options.mathjax === "object" ? options.mathjax : {}
-          );
+        else if (mathjaxEnable) md.use(mathjax, mathjaxUtils!);
 
         if (getStatus("include"))
           md.use(
@@ -322,20 +323,20 @@ export const mdEnhancePlugin =
         if (shouldCheckLinks && isAppInitialized) checkLinks(page, app);
       },
 
-      onInitialized: async (app): Promise<void> => {
+      onInitialized: (app): void => {
         isAppInitialized = true;
         if (shouldCheckLinks)
           app.pages.forEach((page) => checkLinks(page, app));
-
-        await prepareRevealPluginFile(app, revealPlugins);
       },
+
+      onPrepared: async (app): Promise<void> =>
+        Promise.all([
+          mathjaxEnable
+            ? prepareMathjaxStyleFile(app, mathjaxUtils!)
+            : Promise.resolve(),
+          prepareRevealPluginFile(app, revealPlugins),
+        ]).then(() => void 0),
 
       clientConfigFile: (app) => prepareConfigFile(app, options, legacy),
-
-      onPrepared: async (app): Promise<void> => {
-        if (mathjaxEnable && !isImportGlobal(options.mathjax!)) {
-          await minifyMathJaxCssAfterPrepare(app);
-        }
-      },
     };
   };

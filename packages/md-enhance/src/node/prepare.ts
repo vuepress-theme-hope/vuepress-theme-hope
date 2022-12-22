@@ -1,11 +1,11 @@
 import { ensureEndingSlash } from "@vuepress/shared";
 import { getDirname, path } from "@vuepress/utils";
-import { getMathjaxStyle, isImportGlobal } from "./markdown-it/mathjax.js";
+import { MathJax, CHTML } from "./markdown-it/mathjax.js";
 
 import type { App } from "@vuepress/core";
+import type { MathJaxUtils } from "./markdown-it/mathjax.js";
 import type { MarkdownEnhanceOptions } from "./options.js";
 import type { RevealPlugin } from "./typings/index.js";
-import { MathJaxOptions } from "./typings/index.js";
 
 const __dirname = getDirname(import.meta.url);
 const CLIENT_FOLDER = ensureEndingSlash(path.resolve(__dirname, "../client"));
@@ -154,19 +154,10 @@ app.component("VuePlayground", defineAsyncComponent(() => import("${CLIENT_FOLDE
     `;
   }
 
-  if (getStatus("mathjax")) {
-    const mathjaxOptions = options.mathjax!;
-
-    if (isImportGlobal(mathjaxOptions)) {
-      configImport += `\
-import "../styles/mathjax.css";
+  if (getStatus("mathjax"))
+    configImport += `\
+import "./mathjax.css";
 `;
-      await app.writeTemp(
-        `styles/mathjax.css`,
-        getMathjaxStyle(mathjaxOptions as MathJaxOptions)
-      );
-    }
-  }
 
   return app.writeTemp(
     `md-enhance/config.js`,
@@ -184,6 +175,22 @@ ${enhance
 });
 `
   );
+};
+
+export const prepareMathjaxStyleFile = async (
+  app: App,
+  { adaptor, documentOptions }: MathJaxUtils
+): Promise<void> => {
+  if (documentOptions.OutputJax instanceof CHTML)
+    await app.writeTemp(
+      "md-enhance/mathjax.css",
+      adaptor.innerHTML(
+        documentOptions.OutputJax.styleSheet(
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+          MathJax.document("", documentOptions)
+        )
+      )
+    );
 };
 
 export const prepareRevealPluginFile = async (

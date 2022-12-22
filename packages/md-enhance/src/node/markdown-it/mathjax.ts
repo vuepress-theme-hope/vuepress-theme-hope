@@ -25,6 +25,8 @@
  */
 
 // import { createRequire } from "node:module";
+// import { resolve } from "node:path";
+import juice from "juice";
 import { mathjax as MathJax } from "mathjax-full/js/mathjax.js";
 import { TeX } from "mathjax-full/js/input/tex.js";
 import { CHTML } from "mathjax-full/js/output/chtml.js";
@@ -35,118 +37,96 @@ import { AllPackages } from "mathjax-full/js/input/tex/AllPackages.js";
 import { tex } from "./tex.js";
 
 import type { PluginWithOptions } from "markdown-it";
+import type { LiteAdaptor } from "mathjax-full/js/adaptors/liteAdaptor.js";
 import type { LiteElement } from "mathjax-full/js/adaptors/lite/Element.js";
 import type { MathJaxOptions } from "../typings/index.js";
-import type { App } from "@vuepress/core";
 
-interface DocumentOptions {
+export { mathjax as MathJax } from "mathjax-full/js/mathjax.js";
+export { TeX } from "mathjax-full/js/input/tex.js";
+export { CHTML } from "mathjax-full/js/output/chtml.js";
+export { SVG } from "mathjax-full/js/output/svg.js";
+
+export interface DocumentOptions {
   InputJax: TeX<LiteElement, string, HTMLElement>;
   OutputJax:
     | CHTML<LiteElement, string, HTMLElement>
     | SVG<LiteElement, string, HTMLElement>;
 }
 
-export const isImportGlobal = (options: MathJaxOptions | boolean): boolean => {
-  return !(
-    typeof options === "object" &&
-    options.output === "chtml" &&
-    options.chtml?.adaptiveCSS === true
-  );
-};
+export const getDocumentOptions = (
+  options: MathJaxOptions
+): DocumentOptions => ({
+  InputJax: new TeX<LiteElement, string, HTMLElement>({
+    packages: AllPackages,
+    ...options.tex,
+  }),
+  OutputJax:
+    options.output === "chtml"
+      ? new CHTML<LiteElement, string, HTMLElement>({
+          // fontURL: "~mathjax-full/es5/output/chtml/fonts/woff-v2",
+          // fontURL: `file:///${resolve(
+          //   createRequire(import.meta.url).resolve("mathjax-full"),
+          //   "es5/output/chtml/fonts/woff-v2"
+          // )}`,
+          // fontURL: `file:///${resolve(
+          //   createRequire(import.meta.url).resolve("mathjax-full"),
+          //   "es5/output/chtml/fonts/woff-v2"
+          // )}`,
+          fontURL:
+            "http://fastly.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2",
+          adaptiveCSS: true,
+          ...options.chtml,
+        })
+      : new SVG<LiteElement, string, HTMLElement>({
+          fontCache: "none",
+          ...options.svg,
+        }),
+});
 
-const renderMath = (
-  content: string,
-  documentOptions: DocumentOptions,
-  displayMode: boolean,
-  isImportGlobal: boolean
-): string => {
+export interface MathJaxUtils {
+  adaptor: LiteAdaptor;
+  documentOptions: DocumentOptions;
+}
+
+export const initMathjax = (
+  options?: MathJaxOptions | boolean
+): MathJaxUtils | null => {
+  if (!options) return null;
+
+  const mathjaxOptions = typeof options === "object" ? options : {};
+  const documentOptions = getDocumentOptions(mathjaxOptions);
   const adaptor = liteAdaptor();
 
   RegisterHTMLHandler(adaptor);
-  const mathDocument = MathJax.document(content, documentOptions);
-  /* eslint-disable */
-  const html = adaptor.outerHTML(
-    mathDocument.convert(content, { display: displayMode })
-  );
-  if (isImportGlobal) return html;
-  const stylesheet = adaptor.innerHTML(
-    documentOptions.OutputJax.styleSheet(mathDocument)
-  );
-  return `${html}<component is="style" from="mathjax">${stylesheet}</component>`;
-};
 
-const getDocumentOptions = (options: MathJaxOptions): DocumentOptions => {
   return {
-    InputJax: new TeX<LiteElement, string, HTMLElement>({
-      packages: AllPackages,
-      ...options.tex,
-    }),
-    OutputJax:
-      options.output === "chtml"
-        ? new CHTML<LiteElement, string, HTMLElement>({
-            // fontURL: createRequire(import.meta.url).resolve("mathjax-full"),
-            fontURL:
-              "http://fastly.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2",
-            adaptiveCSS: false,
-            ...options.chtml,
-          })
-        : new SVG<LiteElement, string, HTMLElement>({
-            fontCache: "none",
-            ...options.svg,
-          }),
+    adaptor,
+    documentOptions,
   };
 };
 
-export const getMathjaxStyle = (options: MathJaxOptions): string => {
-  const adaptor = liteAdaptor();
-  const documentOptions = getDocumentOptions(options);
-  const html = MathJax.document("", documentOptions);
-  return adaptor.innerHTML(documentOptions.OutputJax.styleSheet(html));
-};
+export const mathjax: PluginWithOptions<MathJaxUtils> = (md, options) => {
+  const { adaptor, documentOptions } = options!;
 
-export const minifyMathJaxCssAfterPrepare = (app: App) => {
-  const minifyCss = (content: string): string => {
-    const stylesheets = content.match(
-      /(?<=<component is="style" from="mathjax">).*?(?=<\/component>)/gms
-    );
-    if (stylesheets?.length) {
-      const allStyles = stylesheets
-        .map((e) => e.split("\n\n"))
-        .flat()
-        .map((e) => e.replace(/\n/g, ""));
-      const styles = Array.from(new Set(allStyles));
-      return (
-        content.replace(
-          /<component is="style" from="mathjax">.*?<\/component>/gms,
-          ""
-        ) + `<component is="style">${styles.join("")}</component>`
-      );
-    }
-    return content;
-  };
-
-  const pagesWithMathJaxChtml = app.pages.filter((page) =>
-    page.contentRendered.includes(`<component is="style" from="mathjax">`)
-  );
-  return Promise.all(
-    pagesWithMathJaxChtml.map((page) => {
-      page.contentRendered = minifyCss(page.contentRendered);
-      return app.writeTemp(
-        page.componentFilePath,
-        `<template><div>${page.contentRendered}</div></template>`
-      );
-    })
-  );
-};
-
-export const mathjax: PluginWithOptions<MathJaxOptions> = (
-  md,
-  options = {}
-) => {
-  const documentOptions = getDocumentOptions(options);
-  const importGlobal = isImportGlobal(options);
   md.use(tex, {
-    render: (content, displayMode) =>
-      renderMath(content, documentOptions, displayMode, importGlobal),
+    render: (content, displayMode) => {
+      /* eslint-disable */
+      const mathDocument = MathJax.document(content, documentOptions).convert(
+        content,
+        { display: displayMode }
+      );
+      const html = adaptor.outerHTML(mathDocument);
+
+      if (documentOptions.OutputJax instanceof SVG) {
+        const stylesheet = adaptor.innerHTML(
+          documentOptions.OutputJax.styleSheet(mathDocument)
+        );
+        /* eslint-enable */
+
+        return juice(html + "<style>" + stylesheet + "</style>");
+      }
+
+      return html;
+    },
   });
 };
