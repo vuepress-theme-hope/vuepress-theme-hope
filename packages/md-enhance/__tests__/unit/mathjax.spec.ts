@@ -237,13 +237,15 @@ describe("Check generated style", () => {
       expect(markdownIt.render("$$\\frac{a}{b}$$")).toMatchSnapshot("content");
 
       expect(
-        mathjaxUtils.adaptor.innerHTML(
-          mathjaxUtils.documentOptions.OutputJax.styleSheet(
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-            MathJax.document("", mathjaxUtils.documentOptions)
+        mathjaxUtils.adaptor
+          .innerHTML(
+            mathjaxUtils.documentOptions.OutputJax.styleSheet(
+              // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+              MathJax.document("", mathjaxUtils.documentOptions)
+            )
           )
-        )
-      ).toMatchSnapshot("style");
+          .split("\n").length
+      ).toMatchSnapshot("lines");
     });
   });
 
@@ -291,12 +293,14 @@ describe("Check generated style", () => {
       await app.init();
 
       expect(
-        mathjaxUtils.adaptor.innerHTML(
-          mathjaxUtils.documentOptions.OutputJax.styleSheet(
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-            MathJax.document("", mathjaxUtils.documentOptions)
+        mathjaxUtils.adaptor
+          .innerHTML(
+            mathjaxUtils.documentOptions.OutputJax.styleSheet(
+              // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+              MathJax.document("", mathjaxUtils.documentOptions)
+            )
           )
-        )
+          .split("\n").length
       ).toMatchSnapshot();
     });
   });
