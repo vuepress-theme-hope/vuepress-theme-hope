@@ -487,7 +487,7 @@ importers:
       '@vuepress/core': 2.0.0-beta.59
       '@vuepress/plugin-docsearch': 2.0.0-beta.59
       '@vuepress/utils': 2.0.0-beta.59
-      three: 0.147.0
+      three: 0.148.0
       vue: 3.2.45
       vuepress-shared: workspace:*
       vuepress-theme-hope: workspace:*
@@ -498,7 +498,7 @@ importers:
       '@vuepress/core': 2.0.0-beta.59
       '@vuepress/plugin-docsearch': 2.0.0-beta.59
       '@vuepress/utils': 2.0.0-beta.59
-      three: 0.147.0
+      three: 0.148.0
       vue: 3.2.45
       vuepress-shared: link:../packages/shared
       vuepress-theme-hope: link:../packages/theme
@@ -10528,8 +10528,8 @@ packages:
     resolution: {integrity: sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==}
     dev: true
 
-  /three/0.147.0:
-    resolution: {integrity: sha512-LPTOslYQXFkmvceQjFTNnVVli2LaVF6C99Pv34fJypp8NbQLbTlu3KinZ0zURghS5zEehK+VQyvWuPZ/Sm8fzw==}
+  /three/0.148.0:
+    resolution: {integrity: sha512-8uzVV+qhTPi0bOFs/3te3RW6hb3urL8jYEl6irjCWo/l6sr8MPNMcClFev/MMYeIxr0gmDcoXTy/8LXh/LXkfw==}
     dev: false
 
   /through/2.3.8:
