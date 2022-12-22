@@ -228,6 +228,13 @@ export interface MathJaxOptions {
   output?: "chtml" | "svg";
 
   /**
+   * Enable A11y
+   *
+   * @default true
+   */
+  a11y?: boolean;
+
+  /**
    * Tex input options
    */
   tex?: MathJaxTexInputOptions;

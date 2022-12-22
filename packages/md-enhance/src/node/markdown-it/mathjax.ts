@@ -32,6 +32,7 @@ import { TeX } from "mathjax-full/js/input/tex.js";
 import { CHTML } from "mathjax-full/js/output/chtml.js";
 import { SVG } from "mathjax-full/js/output/svg.js";
 import { liteAdaptor } from "mathjax-full/js/adaptors/liteAdaptor.js";
+import { AssistiveMmlHandler } from "mathjax-full/js/a11y/assistive-mml.js";
 import { RegisterHTMLHandler } from "mathjax-full/js/handlers/html.js";
 import { AllPackages } from "mathjax-full/js/input/tex/AllPackages.js";
 import { tex } from "./tex.js";
@@ -97,7 +98,9 @@ export const initMathjax = (
   const documentOptions = getDocumentOptions(mathjaxOptions);
   const adaptor = liteAdaptor();
 
-  RegisterHTMLHandler(adaptor);
+  const handler = RegisterHTMLHandler(adaptor);
+
+  if (mathjaxOptions.a11y !== false) AssistiveMmlHandler(handler);
 
   return {
     adaptor,

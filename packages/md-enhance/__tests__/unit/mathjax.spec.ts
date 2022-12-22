@@ -16,7 +16,7 @@ const examples = [
   `\\frac {\\partial^r} {\\partial \\omega^r} \\left(\\frac {y^{\\omega}} {\\omega}\\right) = \\left(\\frac {y^{\\omega}} {\\omega}\\right) \\left\\{(\\log y)^r + \\sum_{i=1}^r \\frac {(-1)^ Ir \\cdots (r-i+1) (\\log y)^{ri}} {\\omega^i} \\right\\}`,
 ];
 
-describe("inline mathjax", () => {
+describe("Inline mathjax", () => {
   it("Should output SVG", () => {
     const markdownIt = MarkdownIt({ linkify: true }).use(
       mathjax,
@@ -30,10 +30,16 @@ describe("inline mathjax", () => {
       ).toMatchSnapshot();
 
       expect(markdownIt.render(`$${example}$`)).toMatch(
-        /<mjx-container .*><svg .*>[\s\S]*<\/svg><\/mjx-container>/
+        /<svg .*>[\s\S]*<\/svg>/
+      );
+      expect(markdownIt.render(`$${example}$`)).toMatch(
+        /<mjx-container .*>.*<\/mjx-container>/
       );
       expect(markdownIt.render(`A tex equation $${example}$ inline.`)).toMatch(
-        /<mjx-container .*><svg .*>[\s\S]*<\/svg><\/mjx-container>/
+        /<svg .*>[\s\S]*<\/svg>/
+      );
+      expect(markdownIt.render(`A tex equation $${example}$ inline.`)).toMatch(
+        /<mjx-container .*>.*<\/mjx-container>/
       );
     });
   });
@@ -53,13 +59,75 @@ describe("inline mathjax", () => {
       ).toMatchSnapshot();
 
       expect(markdownItHTML.render(`$${example}$`)).toMatch(
-        /<mjx-container .*><mjx-math .*>[\s\S]*<\/mjx-math><\/mjx-container>/
+        /<mjx-container .*>.*<\/mjx-container>/
+      );
+      expect(markdownItHTML.render(`$${example}$`)).toMatch(
+        /<mjx-math .*>[\s\S]*<\/mjx-math>/
+      );
+
+      expect(
+        markdownItHTML.render(`A tex equation $${example}$ inline.`)
+      ).toMatch(/<mjx-container .*>.*<\/mjx-container>/);
+      expect(
+        markdownItHTML.render(`A tex equation $${example}$ inline.`)
+      ).toMatch(/<mjx-math .*>[\s\S]*<\/mjx-math>/);
+    });
+  });
+
+  it("Should output A11y", () => {
+    const markdownIt = MarkdownIt({ linkify: true }).use(
+      mathjax,
+      initMathjax({})
+    );
+    const markdownItHTML = MarkdownIt({ linkify: true }).use(
+      mathjax,
+      initMathjax({
+        output: "chtml",
+      })
+    );
+
+    examples.forEach((example) => {
+      expect(markdownIt.render(`$${example}$`)).toMatch(
+        /<mjx-assistive-mml .*>[\s\S]*<\/mjx-assistive-mml>/
+      );
+      expect(markdownIt.render(`A tex equation $${example}$ inline.`)).toMatch(
+        /<mjx-assistive-mml .*>[\s\S]*<\/mjx-assistive-mml>/
+      );
+      expect(markdownItHTML.render(`$${example}$`)).toMatch(
+        /<mjx-assistive-mml .*>[\s\S]*<\/mjx-assistive-mml>/
       );
       expect(
         markdownItHTML.render(`A tex equation $${example}$ inline.`)
-      ).toMatch(
-        /<mjx-container .*><mjx-math .*>[\s\S]*<\/mjx-math><\/mjx-container>/
+      ).toMatch(/<mjx-assistive-mml .*>[\s\S]*<\/mjx-assistive-mml>/);
+    });
+  });
+
+  it("Should not output A11y", () => {
+    const markdownIt = MarkdownIt({ linkify: true }).use(
+      mathjax,
+      initMathjax({ a11y: false })
+    );
+    const markdownItHTML = MarkdownIt({ linkify: true }).use(
+      mathjax,
+      initMathjax({
+        a11y: false,
+        output: "chtml",
+      })
+    );
+
+    examples.forEach((example) => {
+      expect(markdownIt.render(`$${example}$`)).not.toMatch(
+        /<mjx-assistive-mml .*>[\s\S]*<\/mjx-assistive-mml>/
       );
+      expect(
+        markdownIt.render(`A tex equation $${example}$ inline.`)
+      ).not.toMatch(/<mjx-assistive-mml .*>[\s\S]*<\/mjx-assistive-mml>/);
+      expect(markdownItHTML.render(`$${example}$`)).not.toMatch(
+        /<mjx-assistive-mml .*>[\s\S]*<\/mjx-assistive-mml>/
+      );
+      expect(
+        markdownItHTML.render(`A tex equation $${example}$ inline.`)
+      ).not.toMatch(/<mjx-assistive-mml .*>[\s\S]*<\/mjx-assistive-mml>/);
     });
   });
 
@@ -73,8 +141,8 @@ describe("inline mathjax", () => {
   });
 });
 
-describe("block mathjax", () => {
-  it("Should render svg", () => {
+describe("Block mathjax", () => {
+  it("Should output SVG", () => {
     const markdownIt = MarkdownIt({ linkify: true }).use(
       mathjax,
       initMathjax({})
@@ -91,7 +159,7 @@ $$
     ).toMatchSnapshot();
   });
 
-  it("Should render html", () => {
+  it("Should output HTML", () => {
     const markdownIt = MarkdownIt({ linkify: true }).use(
       mathjax,
       initMathjax({ output: "chtml" })
@@ -146,7 +214,7 @@ $$
 
 describe("Check generated style", () => {
   describe("Basic sample", () => {
-    it("Should generate correct css with svg", () => {
+    it("Should generate correct CSS with svg", () => {
       const mathjaxUtils = initMathjax({ output: "svg" })!;
       const markdownIt = MarkdownIt({ linkify: true }).use(
         mathjax,
@@ -156,7 +224,7 @@ describe("Check generated style", () => {
       expect(markdownIt.render("$$\\frac{a}{b}$$")).toMatchSnapshot();
     });
 
-    it("Should generate correct css with chtml", () => {
+    it("Should generate correct CSS with HTML", () => {
       const mathjaxUtils = initMathjax({ output: "chtml" })!;
       const markdownIt = MarkdownIt({ linkify: true }).use(
         mathjax,
