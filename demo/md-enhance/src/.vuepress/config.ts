@@ -1,9 +1,6 @@
 import { defineUserConfig } from "@vuepress/cli";
 import { defaultTheme } from "@vuepress/theme-default";
-import {
-  MathjaxCommonHTMLOutputOptions,
-  mdEnhancePlugin,
-} from "vuepress-plugin-md-enhance";
+import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 const base = <"/" | `/${string}/`>process.env.BASE || "/";
 
