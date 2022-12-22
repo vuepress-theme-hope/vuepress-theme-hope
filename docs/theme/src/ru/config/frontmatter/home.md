@@ -86,7 +86,7 @@ tag:
 
 Действия Home
 
-### features
+## features
 
 - Тип: `ThemeHomeFeatureOptions[]`
 

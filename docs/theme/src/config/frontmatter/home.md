@@ -86,7 +86,7 @@ Home icon alt text
 
 Home actions
 
-### features
+## features
 
 - Type: `ThemeHomeFeatureOptions[]`
 

@@ -160,7 +160,7 @@ export interface MathjaxCommonOutputOptions {
   /**
    * RFDa and other attributes NOT to copy to the output
    */
-  skipAttributes: Record<string, boolean>;
+  skipAttributes?: Record<string, boolean>;
 
   /**
    * default size of ex in em units

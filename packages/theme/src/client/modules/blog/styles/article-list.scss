@@ -3,6 +3,10 @@
   padding-top: calc(var(--navbar-height) + 0.5rem);
   text-align: center;
 
+  &:first-child {
+    margin-top: 12px;
+  }
+
   .empty {
     max-width: 560px;
     margin: 0 auto;

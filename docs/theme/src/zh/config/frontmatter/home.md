@@ -86,7 +86,7 @@ tag:
 
 主页操作
 
-### features
+## features
 
 - 类型: `ThemeHomeFeatureOptions[]`
 
