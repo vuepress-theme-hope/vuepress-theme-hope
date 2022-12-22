@@ -26,7 +26,7 @@
 
 // import { createRequire } from "node:module";
 // import { resolve } from "node:path";
-import juice from "juice";
+// import juice from "juice";
 import { mathjax as MathJax } from "mathjax-full/js/mathjax.js";
 import { TeX } from "mathjax-full/js/input/tex.js";
 import { CHTML } from "mathjax-full/js/output/chtml.js";
@@ -118,18 +118,7 @@ export const mathjax: PluginWithOptions<MathJaxUtils> = (md, options) => {
         content,
         { display: displayMode }
       );
-      const html = adaptor.outerHTML(mathDocument);
-
-      if (documentOptions.OutputJax instanceof SVG) {
-        const stylesheet = adaptor.innerHTML(
-          documentOptions.OutputJax.styleSheet(mathDocument)
-        );
-        /* eslint-enable */
-
-        return juice(html + "<style>" + stylesheet + "</style>");
-      }
-
-      return html;
+      return adaptor.outerHTML(mathDocument);
     },
   });
 };
