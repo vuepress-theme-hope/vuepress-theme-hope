@@ -49,12 +49,18 @@ export default defineUserConfig({
         date: frontmatter.date || null,
         category: frontmatter.category || [],
         tag: frontmatter.tag || [],
-        excerpt: data?.excerpt || "",
+        excerpt:
+          // support manually set excerpt through frontmatter
+          typeof frontmatter.excerpt === "string"
+            ? frontmatter.excerpt
+            : data?.excerpt || "",
       }),
 
-      // If the user sets excerpt or description in frontmatter, the summary information will be displayed
+      // generate excerpt for all pages excerpt those users choose to disable
       excerptFilter: ({ frontmatter }) =>
-        Boolean(frontmatter?.excerpt || frontmatter?.description),
+        !frontmatter["home"] &&
+        frontmatter["excerpt"] !== false &&
+        typeof frontmatter["excerpt"] !== "string",
 
       category: [
         {
