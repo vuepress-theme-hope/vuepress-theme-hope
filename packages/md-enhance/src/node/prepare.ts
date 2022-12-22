@@ -155,7 +155,6 @@ app.component("VuePlayground", defineAsyncComponent(() => import("${CLIENT_FOLDE
   }
 
   if (getStatus("mathjax")) {
-    // if output is svg or output is chtml and adaptiveCSS is false
     const mathjaxOptions = options.mathjax!;
 
     if (isImportGlobal(mathjaxOptions)) {

@@ -143,13 +143,10 @@ export const mathjax: PluginWithOptions<MathJaxOptions> = (
   md,
   options = {}
 ) => {
+  const documentOptions = getDocumentOptions(options);
+  const importGlobal = isImportGlobal(options);
   md.use(tex, {
     render: (content, displayMode) =>
-      renderMath(
-        content,
-        getDocumentOptions(options),
-        displayMode,
-        isImportGlobal(options)
-      ),
+      renderMath(content, documentOptions, displayMode, importGlobal),
   });
 };
