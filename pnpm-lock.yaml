@@ -45,7 +45,7 @@ importers:
       picocolors: 1.0.0
       prettier: 2.8.1
       rimraf: 3.0.2
-      rollup: 3.7.5
+      rollup: 3.8.0
       rollup-plugin-copy: 3.4.0
       rollup-plugin-dts: 5.0.0
       rollup-plugin-esbuild: 5.0.0
@@ -62,8 +62,8 @@ importers:
     devDependencies:
       '@commitlint/cli': 17.3.0
       '@commitlint/config-conventional': 17.3.0
-      '@rollup/plugin-commonjs': 24.0.0_rollup@3.7.5
-      '@rollup/plugin-node-resolve': 15.0.1_rollup@3.7.5
+      '@rollup/plugin-commonjs': 24.0.0_rollup@3.8.0
+      '@rollup/plugin-node-resolve': 15.0.1_rollup@3.8.0
       '@types/inquirer': 9.0.3
       '@types/node': 18.11.17
       '@typescript-eslint/eslint-plugin': 5.47.0_ncmi6noazr3nzas7jxykisekym
@@ -93,10 +93,10 @@ importers:
       picocolors: 1.0.0
       prettier: 2.8.1
       rimraf: 3.0.2
-      rollup: 3.7.5
+      rollup: 3.8.0
       rollup-plugin-copy: 3.4.0
-      rollup-plugin-dts: 5.0.0_oj4jlwi3mkekxo3vucumcwebnq
-      rollup-plugin-esbuild: 5.0.0_wzqc5fpdsdncvbpcjrdwzvk52i
+      rollup-plugin-dts: 5.0.0_o46jwgjjuc5efgzlxncstuyfke
+      rollup-plugin-esbuild: 5.0.0_34vcvaonmni6vra7fweduoqci4
       sort-package-json: 2.1.0
       stylelint: 14.16.0
       stylelint-config-prettier: 9.0.4_stylelint@14.16.0
@@ -487,7 +487,7 @@ importers:
       '@vuepress/core': 2.0.0-beta.59
       '@vuepress/plugin-docsearch': 2.0.0-beta.59
       '@vuepress/utils': 2.0.0-beta.59
-      three: 0.147.0
+      three: 0.148.0
       vue: 3.2.45
       vuepress-shared: workspace:*
       vuepress-theme-hope: workspace:*
@@ -498,7 +498,7 @@ importers:
       '@vuepress/core': 2.0.0-beta.59
       '@vuepress/plugin-docsearch': 2.0.0-beta.59
       '@vuepress/utils': 2.0.0-beta.59
-      three: 0.147.0
+      three: 0.148.0
       vue: 3.2.45
       vuepress-shared: link:../packages/shared
       vuepress-theme-hope: link:../packages/theme
@@ -1253,7 +1253,7 @@ importers:
       gray-matter: ^4.0.3
       ora: 6.1.2
       striptags: 3.2.0
-      vite: 4.0.2
+      vite: 4.0.3
       vue: ^3.2.45
       vue-router: ^4.1.6
     dependencies:
@@ -1275,7 +1275,7 @@ importers:
       '@vuepress/core': 2.0.0-beta.59
       '@vuepress/plugin-git': 2.0.0-beta.59
       ora: 6.1.2
-      vite: 4.0.2
+      vite: 4.0.3
 
   packages/sitemap2:
     specifiers:
@@ -3190,7 +3190,7 @@ packages:
       '@rollup/pluginutils': 3.1.0_rollup@2.79.1
       rollup: 2.79.1
 
-  /@rollup/plugin-commonjs/24.0.0_rollup@3.7.5:
+  /@rollup/plugin-commonjs/24.0.0_rollup@3.8.0:
     resolution: {integrity: sha512-0w0wyykzdyRRPHOb0cQt14mIBLujfAv6GgP6g8nvg/iBxEm112t3YPPq+Buqe2+imvElTka+bjNlJ/gB56TD8g==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -3199,13 +3199,13 @@ packages:
       rollup:
         optional: true
     dependencies:
-      '@rollup/pluginutils': 5.0.2_rollup@3.7.5
+      '@rollup/pluginutils': 5.0.2_rollup@3.8.0
       commondir: 1.0.1
       estree-walker: 2.0.2
       glob: 8.0.3
       is-reference: 1.2.1
       magic-string: 0.27.0
-      rollup: 3.7.5
+      rollup: 3.8.0
     dev: true
 
   /@rollup/plugin-node-resolve/11.2.1_rollup@2.79.1:
@@ -3222,7 +3222,7 @@ packages:
       resolve: 1.22.1
       rollup: 2.79.1
 
-  /@rollup/plugin-node-resolve/15.0.1_rollup@3.7.5:
+  /@rollup/plugin-node-resolve/15.0.1_rollup@3.8.0:
     resolution: {integrity: sha512-ReY88T7JhJjeRVbfCyNj+NXAG3IIsVMsX9b5/9jC98dRP8/yxlZdz7mHZbHk5zHr24wZZICS5AcXsFZAXYUQEg==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -3231,13 +3231,13 @@ packages:
       rollup:
         optional: true
     dependencies:
-      '@rollup/pluginutils': 5.0.2_rollup@3.7.5
+      '@rollup/pluginutils': 5.0.2_rollup@3.8.0
       '@types/resolve': 1.20.2
       deepmerge: 4.2.2
       is-builtin-module: 3.2.0
       is-module: 1.0.0
       resolve: 1.22.1
-      rollup: 3.7.5
+      rollup: 3.8.0
     dev: true
 
   /@rollup/plugin-replace/2.4.2_rollup@2.79.1:
@@ -3260,7 +3260,7 @@ packages:
       picomatch: 2.3.1
       rollup: 2.79.1
 
-  /@rollup/pluginutils/5.0.2_rollup@3.7.5:
+  /@rollup/pluginutils/5.0.2_rollup@3.8.0:
     resolution: {integrity: sha512-pTd9rIsP92h+B6wWwFbW8RkZv4hiR/xKsqre4SIuAOaOEQRxi0lqLke9k2/7WegC85GgUs9pjmOjCUi3In4vwA==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -3272,7 +3272,7 @@ packages:
       '@types/estree': 1.0.0
       estree-walker: 2.0.2
       picomatch: 2.3.1
-      rollup: 3.7.5
+      rollup: 3.8.0
     dev: true
 
   /@surma/rollup-plugin-off-main-thread/2.2.3:
@@ -9569,7 +9569,7 @@ packages:
       is-plain-object: 3.0.1
     dev: true
 
-  /rollup-plugin-dts/5.0.0_oj4jlwi3mkekxo3vucumcwebnq:
+  /rollup-plugin-dts/5.0.0_o46jwgjjuc5efgzlxncstuyfke:
     resolution: {integrity: sha512-OO8ayCvuJCKaQSShyVTARxGurVVk4ulzbuvz+0zFd1f93vlnWFU5pBMT7HFeS6uj7MvvZLx4kUAarGATSU1+Ng==}
     engines: {node: '>=v14'}
     peerDependencies:
@@ -9577,26 +9577,26 @@ packages:
       typescript: ^4.1
     dependencies:
       magic-string: 0.26.7
-      rollup: 3.7.5
+      rollup: 3.8.0
       typescript: 4.9.4
     optionalDependencies:
       '@babel/code-frame': 7.18.6
     dev: true
 
-  /rollup-plugin-esbuild/5.0.0_wzqc5fpdsdncvbpcjrdwzvk52i:
+  /rollup-plugin-esbuild/5.0.0_34vcvaonmni6vra7fweduoqci4:
     resolution: {integrity: sha512-1cRIOHAPh8WQgdQQyyvFdeOdxuiyk+zB5zJ5+YOwrZP4cJ0MT3Fs48pQxrZeyZHcn+klFherytILVfE4aYrneg==}
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
     peerDependencies:
       esbuild: '>=0.10.1'
       rollup: ^1.20.0 || ^2.0.0 || ^3.0.0
     dependencies:
-      '@rollup/pluginutils': 5.0.2_rollup@3.7.5
+      '@rollup/pluginutils': 5.0.2_rollup@3.8.0
       debug: 4.3.4
       es-module-lexer: 1.1.0
       esbuild: 0.16.10
       joycon: 3.1.1
       jsonc-parser: 3.2.0
-      rollup: 3.7.5
+      rollup: 3.8.0
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -9626,6 +9626,14 @@ packages:
     hasBin: true
     optionalDependencies:
       fsevents: 2.3.2
+
+  /rollup/3.8.0:
+    resolution: {integrity: sha512-+UR6PnUslneJNiJfLSzy4XH6R50ZGF0MS7UCv20ftXrktF/TkvZDwiBtXX65esblLR5p8w6LmXgPwt2f2B8SoQ==}
+    engines: {node: '>=14.18.0', npm: '>=8.0.0'}
+    hasBin: true
+    optionalDependencies:
+      fsevents: 2.3.2
+    dev: true
 
   /run-async/2.4.1:
     resolution: {integrity: sha512-tvVnVv01b8c1RrA6Ep7JkStj85Guv/YrMcwqYQnwjsAS2cTmmPGBBjAjpCW7RrSodNSoE2/qg9O4bceNvUuDgQ==}
@@ -10422,8 +10430,8 @@ packages:
     resolution: {integrity: sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==}
     dev: true
 
-  /three/0.147.0:
-    resolution: {integrity: sha512-LPTOslYQXFkmvceQjFTNnVVli2LaVF6C99Pv34fJypp8NbQLbTlu3KinZ0zURghS5zEehK+VQyvWuPZ/Sm8fzw==}
+  /three/0.148.0:
+    resolution: {integrity: sha512-8uzVV+qhTPi0bOFs/3te3RW6hb3urL8jYEl6irjCWo/l6sr8MPNMcClFev/MMYeIxr0gmDcoXTy/8LXh/LXkfw==}
     dev: false
 
   /through/2.3.8:
@@ -10787,7 +10795,7 @@ packages:
       pathe: 0.2.0
       source-map: 0.6.1
       source-map-support: 0.5.21
-      vite: 4.0.2_@types+node@18.11.17
+      vite: 4.0.3_@types+node@18.11.17
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -10808,7 +10816,7 @@ packages:
       pathe: 0.2.0
       source-map: 0.6.1
       source-map-support: 0.5.21
-      vite: 4.0.2_@types+node@18.11.17
+      vite: 4.0.3_@types+node@18.11.17
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -10851,40 +10859,6 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
 
-  /vite/4.0.2_@types+node@18.11.17:
-    resolution: {integrity: sha512-QJaY3R+tFlTagH0exVqbgkkw45B+/bXVBzF2ZD1KB5Z8RiAoiKo60vSUf6/r4c2Vh9jfGBKM4oBI9b4/1ZJYng==}
-    engines: {node: ^14.18.0 || >=16.0.0}
-    hasBin: true
-    peerDependencies:
-      '@types/node': '>= 14'
-      less: '*'
-      sass: '*'
-      stylus: '*'
-      sugarss: '*'
-      terser: ^5.4.0
-    peerDependenciesMeta:
-      '@types/node':
-        optional: true
-      less:
-        optional: true
-      sass:
-        optional: true
-      stylus:
-        optional: true
-      sugarss:
-        optional: true
-      terser:
-        optional: true
-    dependencies:
-      '@types/node': 18.11.17
-      esbuild: 0.16.10
-      postcss: 8.4.20
-      resolve: 1.22.1
-      rollup: 3.7.5
-    optionalDependencies:
-      fsevents: 2.3.2
-    dev: true
-
   /vite/4.0.2_sass@1.57.1:
     resolution: {integrity: sha512-QJaY3R+tFlTagH0exVqbgkkw45B+/bXVBzF2ZD1KB5Z8RiAoiKo60vSUf6/r4c2Vh9jfGBKM4oBI9b4/1ZJYng==}
     engines: {node: ^14.18.0 || >=16.0.0}
@@ -10915,6 +10889,73 @@ packages:
       resolve: 1.22.1
       rollup: 3.7.5
       sass: 1.57.1
+    optionalDependencies:
+      fsevents: 2.3.2
+    dev: true
+
+  /vite/4.0.3:
+    resolution: {integrity: sha512-HvuNv1RdE7deIfQb8mPk51UKjqptO/4RXZ5yXSAvurd5xOckwS/gg8h9Tky3uSbnjYTgUm0hVCet1cyhKd73ZA==}
+    engines: {node: ^14.18.0 || >=16.0.0}
+    hasBin: true
+    peerDependencies:
+      '@types/node': '>= 14'
+      less: '*'
+      sass: '*'
+      stylus: '*'
+      sugarss: '*'
+      terser: ^5.4.0
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
+      less:
+        optional: true
+      sass:
+        optional: true
+      stylus:
+        optional: true
+      sugarss:
+        optional: true
+      terser:
+        optional: true
+    dependencies:
+      esbuild: 0.16.10
+      postcss: 8.4.20
+      resolve: 1.22.1
+      rollup: 3.7.5
+    optionalDependencies:
+      fsevents: 2.3.2
+    dev: true
+
+  /vite/4.0.3_@types+node@18.11.17:
+    resolution: {integrity: sha512-HvuNv1RdE7deIfQb8mPk51UKjqptO/4RXZ5yXSAvurd5xOckwS/gg8h9Tky3uSbnjYTgUm0hVCet1cyhKd73ZA==}
+    engines: {node: ^14.18.0 || >=16.0.0}
+    hasBin: true
+    peerDependencies:
+      '@types/node': '>= 14'
+      less: '*'
+      sass: '*'
+      stylus: '*'
+      sugarss: '*'
+      terser: ^5.4.0
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
+      less:
+        optional: true
+      sass:
+        optional: true
+      stylus:
+        optional: true
+      sugarss:
+        optional: true
+      terser:
+        optional: true
+    dependencies:
+      '@types/node': 18.11.17
+      esbuild: 0.16.10
+      postcss: 8.4.20
+      resolve: 1.22.1
+      rollup: 3.7.5
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
@@ -10954,7 +10995,7 @@ packages:
       tinybench: 2.3.1
       tinypool: 0.3.0
       tinyspy: 1.0.2
-      vite: 4.0.2_@types+node@18.11.17
+      vite: 4.0.3_@types+node@18.11.17
       vite-node: 0.26.0_@types+node@18.11.17
     transitivePeerDependencies:
       - less
@@ -11000,7 +11041,7 @@ packages:
       tinybench: 2.3.1
       tinypool: 0.3.0
       tinyspy: 1.0.2
-      vite: 4.0.2_@types+node@18.11.17
+      vite: 4.0.3_@types+node@18.11.17
       vite-node: 0.26.1_@types+node@18.11.17
     transitivePeerDependencies:
       - less

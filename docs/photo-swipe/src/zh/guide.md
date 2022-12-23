@@ -58,8 +58,8 @@ export default defineUserConfig({
   },
 
   plugins: [
-    copyCodePlugin({
-      photoSwipePlugin: {
+    photoSwipePlugin({
+      locales: {
         "/": {
           // 覆盖分享标签文字
           share: "分享给伙伴",
