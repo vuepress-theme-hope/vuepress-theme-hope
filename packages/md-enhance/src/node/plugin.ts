@@ -61,7 +61,7 @@ import {
   prepareConfigFile,
   prepareMathjaxStyleFile,
   prepareRevealPluginFile,
-} from "./prepare.js";
+} from "./prepare/index.js";
 import { MATHML_TAGS } from "./utils.js";
 
 import type { PluginFunction } from "@vuepress/core";

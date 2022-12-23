@@ -1,11 +1,8 @@
 import { ensureEndingSlash } from "@vuepress/shared";
 import { getDirname, path } from "@vuepress/utils";
-import { MathJax } from "./markdown-it/mathjax.js";
 
 import type { App } from "@vuepress/core";
-import type { MathJaxUtils } from "./markdown-it/mathjax.js";
-import type { MarkdownEnhanceOptions } from "./options.js";
-import type { RevealPlugin } from "./typings/index.js";
+import type { MarkdownEnhanceOptions } from "../options.js";
 
 const __dirname = getDirname(import.meta.url);
 const CLIENT_FOLDER = ensureEndingSlash(path.resolve(__dirname, "../client"));
@@ -173,45 +170,6 @@ ${enhance
   .join("\n")}
   },
 });
-`
-  );
-};
-
-export const prepareMathjaxStyleFile = async (
-  app: App,
-  { adaptor, documentOptions }: MathJaxUtils
-): Promise<void> => {
-  await app.writeTemp(
-    "md-enhance/mathjax.css",
-    adaptor.innerHTML(
-      documentOptions.OutputJax.styleSheet(
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-        MathJax.document("", documentOptions)
-      )
-    )
-  );
-};
-
-export const prepareRevealPluginFile = async (
-  app: App,
-  revealPlugins: RevealPlugin[]
-): Promise<void> => {
-  const packages = [
-    "reveal",
-    "revealMarkdown",
-    ...revealPlugins.map(
-      (key) => `reveal${key[0].toUpperCase()}${key.substring(1)}`
-    ),
-  ];
-
-  await app.writeTemp(
-    "md-enhance/reveal.js",
-    `\
-import { ${packages.join(", ")} } from "${CLIENT_FOLDER}reveal/index.js";
-
-export const useReveal = () => [${packages
-      .map((name) => `${name}()`)
-      .join(", ")}];
 `
   );
 };
