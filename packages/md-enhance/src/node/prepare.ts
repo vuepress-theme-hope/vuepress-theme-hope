@@ -9,9 +9,6 @@ import type { RevealPlugin } from "./typings/index.js";
 
 const __dirname = getDirname(import.meta.url);
 const CLIENT_FOLDER = ensureEndingSlash(path.resolve(__dirname, "../client"));
-const NODE_MODULES_FOLDER = ensureEndingSlash(
-  path.resolve(__dirname, "../../node_modules")
-);
 
 export const prepareConfigFile = async (
   app: App,
