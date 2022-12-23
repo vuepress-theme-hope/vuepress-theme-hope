@@ -65,17 +65,7 @@ export const getDocumentOptions = (
   OutputJax:
     options.output === "chtml"
       ? new CHTML<LiteElement, string, HTMLElement>({
-          // fontURL: "~mathjax-full/es5/output/chtml/fonts/woff-v2",
-          // fontURL: `file:///${resolve(
-          //   createRequire(import.meta.url).resolve("mathjax-full"),
-          //   "es5/output/chtml/fonts/woff-v2"
-          // )}`,
-          // fontURL: `file:///${resolve(
-          //   createRequire(import.meta.url).resolve("mathjax-full"),
-          //   "es5/output/chtml/fonts/woff-v2"
-          // )}`,
-          fontURL:
-            "http://fastly.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2",
+          fontURL: "%%LOCALE%%", // will replace at prepareMathjaxStyleFile
           adaptiveCSS: true,
           ...options.chtml,
         })

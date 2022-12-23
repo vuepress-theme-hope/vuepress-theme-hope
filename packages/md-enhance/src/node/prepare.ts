@@ -9,6 +9,9 @@ import type { RevealPlugin } from "./typings/index.js";
 
 const __dirname = getDirname(import.meta.url);
 const CLIENT_FOLDER = ensureEndingSlash(path.resolve(__dirname, "../client"));
+const NODE_MODULES_FOLDER = ensureEndingSlash(
+  path.resolve(__dirname, "../../node_modules")
+);
 
 export const prepareConfigFile = async (
   app: App,
@@ -183,12 +186,17 @@ export const prepareMathjaxStyleFile = async (
 ): Promise<void> => {
   await app.writeTemp(
     "md-enhance/mathjax.css",
-    adaptor.innerHTML(
-      documentOptions.OutputJax.styleSheet(
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-        MathJax.document("", documentOptions)
+    adaptor
+      .innerHTML(
+        documentOptions.OutputJax.styleSheet(
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+          MathJax.document("", documentOptions)
+        )
       )
-    )
+      .replace(
+        /%%LOCALE%%/g,
+        `${NODE_MODULES_FOLDER}mathjax-full/es5/output/chtml/fonts/woff-v2`
+      )
   );
 };
 

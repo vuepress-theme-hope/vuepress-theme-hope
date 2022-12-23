@@ -182,7 +182,8 @@ export interface MathjaxCommonHTMLOutputOptions
   /**
    * The URL where the fonts are found
    *
-   * @default "[mathjax]/components/output/chtml/fonts/woff-v2"
+   * @default "%%LOCALE%%"
+   * default value will be replaced at prepareMathjaxStyleFile
    */
   fontURL?: string;
 
