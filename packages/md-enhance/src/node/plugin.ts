@@ -192,8 +192,11 @@ export const mdEnhancePlugin =
 
         if (katexEnable && katexOptions.output !== "html")
           addCustomElement({ app, config }, MATHML_TAGS);
-        else if (mathjaxEnable) addCustomElement({ app, config }, /^mjx-/);
-
+        else if (mathjaxEnable) {
+          addCustomElement({ app, config }, /^mjx-/);
+          if (mathjaxUtils?.documentOptions.enableAssistiveMml)
+            addCustomElement({ app, config }, MATHML_TAGS);
+        }
         if (chartEnable) {
           addViteOptimizeDepsExclude({ app, config }, "chart.js/auto/auto.mjs");
           addViteSsrExternal({ app, config }, "chart.js");
