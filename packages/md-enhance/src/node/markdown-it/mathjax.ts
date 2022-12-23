@@ -62,7 +62,7 @@ export const getDocumentOptions = (
   OutputJax:
     options.output === "chtml"
       ? new CHTML<LiteElement, string, HTMLElement>({
-          fontURL: "%%LOCALE%%", // will replace at prepareMathjaxStyleFile
+          fontURL: "%%LOCAL%%", // will replace at prepareMathjaxStyleFile
           adaptiveCSS: true,
           ...options.chtml,
         })

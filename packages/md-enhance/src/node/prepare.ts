@@ -194,7 +194,7 @@ export const prepareMathjaxStyleFile = async (
         )
       )
       .replace(
-        /%%LOCALE%%/g,
+        /%%LOCAL%%/g,
         `${NODE_MODULES_FOLDER}mathjax-full/es5/output/chtml/fonts/woff-v2`
       )
   );
