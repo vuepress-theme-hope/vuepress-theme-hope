@@ -182,8 +182,7 @@ export interface MathjaxCommonHTMLOutputOptions
   /**
    * The URL where the fonts are found
    *
-   * @default "%%LOCAL%%"
-   * default value will be replaced at prepareMathjaxStyleFile
+   * @default local form mathjax-full
    */
   fontURL?: string;
 

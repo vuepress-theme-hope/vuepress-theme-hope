@@ -24,6 +24,8 @@
  * SOFTWARE.
  */
 
+import { createRequire } from "node:module";
+import { resolve } from "node:path";
 import { mathjax as MathJax } from "mathjax-full/js/mathjax.js";
 import { TeX } from "mathjax-full/js/input/tex.js";
 import { CHTML } from "mathjax-full/js/output/chtml.js";
@@ -62,7 +64,10 @@ export const getDocumentOptions = (
   OutputJax:
     options.output === "chtml"
       ? new CHTML<LiteElement, string, HTMLElement>({
-          fontURL: "%%LOCAL%%", // will replace at prepareMathjaxStyleFile
+          fontURL: resolve(
+            createRequire(import.meta.url).resolve("mathjax-full"),
+            "../../../../es5/output/chtml/fonts/woff-v2"
+          ),
           adaptiveCSS: true,
           ...options.chtml,
         })

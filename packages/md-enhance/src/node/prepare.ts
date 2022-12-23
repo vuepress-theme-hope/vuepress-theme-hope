@@ -186,17 +186,12 @@ export const prepareMathjaxStyleFile = async (
 ): Promise<void> => {
   await app.writeTemp(
     "md-enhance/mathjax.css",
-    adaptor
-      .innerHTML(
-        documentOptions.OutputJax.styleSheet(
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-          MathJax.document("", documentOptions)
-        )
+    adaptor.innerHTML(
+      documentOptions.OutputJax.styleSheet(
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+        MathJax.document("", documentOptions)
       )
-      .replace(
-        /%%LOCAL%%/g,
-        `${NODE_MODULES_FOLDER}mathjax-full/es5/output/chtml/fonts/woff-v2`
-      )
+    )
   );
 };
 
