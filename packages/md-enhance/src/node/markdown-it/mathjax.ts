@@ -24,9 +24,6 @@
  * SOFTWARE.
  */
 
-// import { createRequire } from "node:module";
-// import { resolve } from "node:path";
-// import juice from "juice";
 import { mathjax as MathJax } from "mathjax-full/js/mathjax.js";
 import { TeX } from "mathjax-full/js/input/tex.js";
 import { CHTML } from "mathjax-full/js/output/chtml.js";
