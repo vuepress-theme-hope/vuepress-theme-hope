@@ -76,7 +76,7 @@
     "rimraf": "3.0.2",
     "rollup": "3.8.0",
     "rollup-plugin-copy": "3.4.0",
-    "rollup-plugin-dts": "5.0.0",
+    "rollup-plugin-dts": "5.1.0",
     "rollup-plugin-esbuild": "5.0.0",
     "sort-package-json": "2.1.0",
     "stylelint": "14.16.0",
