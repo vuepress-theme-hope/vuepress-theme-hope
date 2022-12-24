@@ -182,7 +182,7 @@ export interface MathjaxCommonHTMLOutputOptions
   /**
    * The URL where the fonts are found
    *
-   * @default "[mathjax]/components/output/chtml/fonts/woff-v2"
+   * @default local form mathjax-full
    */
   fontURL?: string;
 
@@ -218,7 +218,6 @@ export interface MathjaxSVGOutputOptions extends MathjaxCommonOutputOptions {
   titleID?: number;
 }
 
-// TODO: Add mathjax options
 export interface MathJaxOptions {
   /**
    * Output syntax
@@ -227,6 +226,13 @@ export interface MathJaxOptions {
    */
 
   output?: "chtml" | "svg";
+
+  /**
+   * Enable A11y
+   *
+   * @default true
+   */
+  a11y?: boolean;
 
   /**
    * Tex input options
