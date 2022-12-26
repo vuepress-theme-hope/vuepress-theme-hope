@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.145](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.144...v2.0.0-beta.145) (2022-12-26)
+
+### Features
+
+- improve style ([a511df4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a511df4e2397081748c08b5965fe19b3658d77b1))
+- **theme:** improve docsearch style ([37e409e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/37e409ef8bcca05749bbb4bbe1dd992c46417403))
+
+### Bug Fixes
+
+- **components:** remove unused deps nad files ([828aab4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/828aab4835584305ecc7e18b3e98a338f26fa0d7))
+- **theme:** fix blog hero padding ([e208738](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e2087388d0e7bb7f94d85f10cf9dc3be86534cc2))
+
 ## [2.0.0-beta.144](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.143...v2.0.0-beta.144) (2022-12-26)
 
 ### Features
