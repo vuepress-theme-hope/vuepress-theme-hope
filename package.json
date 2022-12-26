@@ -74,7 +74,7 @@
     "picocolors": "1.0.0",
     "prettier": "2.8.1",
     "rimraf": "3.0.2",
-    "rollup": "3.8.0",
+    "rollup": "3.8.1",
     "rollup-plugin-copy": "3.4.0",
     "rollup-plugin-dts": "5.1.0",
     "rollup-plugin-esbuild": "5.0.0",
@@ -89,7 +89,7 @@
     "typescript": "4.9.4",
     "vitest": "0.26.2"
   },
-  "packageManager": "pnpm@7.19.0",
+  "packageManager": "pnpm@7.20.0",
   "engines": {
     "node": "^14.18.0 || >=16.0.0",
     "npm": ">=8",
@@ -141,8 +141,8 @@
       ]
     },
     "patchedDependencies": {
-      "@types/katex@0.14.0": "patches/@types__katex@0.14.0.patch",
-      "mitt@3.0.0": "patches/mitt@3.0.0.patch"
+      "mitt@3.0.0": "patches/mitt@3.0.0.patch",
+      "@types/katex@0.16.0": "patches/@types__katex@0.16.0.patch"
     }
   }
 }
