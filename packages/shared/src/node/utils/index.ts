@@ -1,5 +1,6 @@
 export { default as stripTags } from "striptags";
 export * from "./date.js";
+export * from "./dir.js";
 export * from "./encode.js";
 export * from "./logger.js";
 export * from "./md2text.js";

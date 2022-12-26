@@ -6,25 +6,7 @@
   border-radius: 8px;
 }
 
-.pdf-open-button {
-  @include reset.button;
-  position: absolute;
-  top: 8px;
-  right: 8px;
-
-  padding: 8px;
-  border-radius: 8px;
-
-  background: var(--c-bg, #fff);
-
-  transition: background var(--color-transition);
-
-  &:hover {
-    background: var(--c-bg-light, #f3f4f5);
-  }
-}
-
-.pdf-iframe {
+.pdf-viewer {
   width: 100%;
   height: 100%;
 }

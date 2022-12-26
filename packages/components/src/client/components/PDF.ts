@@ -1,14 +1,10 @@
 /* eslint-disable vue/no-unused-properties */
 import { withBase } from "@vuepress/client";
 import { isLinkHttp } from "@vuepress/shared";
-import { computed, defineComponent, h, onMounted, ref } from "vue";
-import {
-  checkIsMobile,
-  checkIsiPad,
-  checkIsiPhone,
-  checkIsSafari,
-} from "vuepress-shared/client";
+import { defineComponent, h, onMounted } from "vue";
+
 import { useSize } from "../composables/index.js";
+import { viewPDF } from "../utils/pdf.js";
 
 import type { VNode } from "vue";
 
@@ -29,6 +25,16 @@ export default defineComponent({
     url: {
       type: String,
       required: true,
+    },
+
+    /**
+     * PDF title
+     *
+     * PDF 标题
+     */
+    title: {
+      type: String,
+      default: "",
     },
 
     /**
@@ -95,70 +101,33 @@ export default defineComponent({
 
   setup(props) {
     const { el, width, height } = useSize<HTMLDivElement>(props);
-    const isChrome = ref(true);
-    const isMobile = ref(false);
-
-    const hash = computed(
-      () =>
-        `#page=${props.page}&toolbar=${props.noToolbar ? 0 : 1}&zoom=${
-          props.zoom
-        }`
-    );
 
     onMounted(() => {
-      const { userAgent } = navigator;
-
-      // chrome mobile
-      if (checkIsMobile(userAgent)) isMobile.value = true;
-      else if (
-        checkIsSafari(userAgent) &&
-        (checkIsiPad(userAgent) || checkIsiPhone(userAgent))
-      ) {
-        isChrome.value = false;
-
-        if (checkIsiPad(userAgent) || checkIsiPhone(userAgent))
-          isMobile.value = true;
-      }
-    });
-
-    return (): VNode => {
       const fullLink = isLinkHttp(props.url)
         ? props.url
         : __VUEPRESS_SSR__
         ? ""
         : `${window?.location.origin || ""}${withBase(props.url)}`;
 
-      return h(
-        "div",
-        {
-          class: "pdf-preview",
-          ref: el,
-          style: {
-            width: width.value,
-            height: height.value,
-          },
+      viewPDF(fullLink, el.value, {
+        title: props.title,
+        options: {
+          page: props.page,
+          noToolbar: props.noToolbar,
+          zoom: props.zoom,
         },
-        [
-          h("iframe", {
-            class: "pdf-iframe",
-            src: isMobile.value
-              ? `https://drive.google.com/viewerng/viewer?embedded=true&url=${encodeURI(
-                  fullLink
-                )}`
-              : `${withBase(props.url)}${isChrome.value ? hash.value : ""}`,
-          }),
-          h(
-            "button",
-            {
-              class: "pdf-open-button",
-              onClick: () => {
-                window.open(fullLink);
-              },
-            },
-            "Open"
-          ),
-        ]
-      );
+      });
+    });
+
+    return (): VNode => {
+      return h("div", {
+        class: "pdf-preview",
+        ref: el,
+        style: {
+          width: width.value,
+          height: height.value,
+        },
+      });
     };
   },
 });

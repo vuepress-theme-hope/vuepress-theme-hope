@@ -1,0 +1,14 @@
+// Vitest Snapshot v1
+
+exports[`should list dir correctly 1`] = `
+[
+  "database.ts",
+  "src/README.md",
+  "src/component.md",
+  "src/cut.md",
+  "src/demo.md",
+  "src/example.md",
+  "src/link.md",
+  "theme/empty.ts",
+]
+`;
