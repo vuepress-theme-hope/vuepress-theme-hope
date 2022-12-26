@@ -18,9 +18,32 @@
   }
 }
 
-// TODO: Add it upstream
-.external-link-icon {
-  @media print {
-    display: none;
+@media (min-width: 719px) {
+  #docsearch-container {
+    min-width: 145.7px !important;
   }
 }
+
+// stylelint-disable selector-class-pattern
+.DocSearch {
+  .DocSearch-Button-Placeholder {
+    display: inline-block;
+    padding: 4px 12px 4px 6px;
+    font-size: 14px;
+
+    @media (max-width: 719px) {
+      display: none;
+    }
+  }
+
+  .DocSearch-Search-Icon {
+    width: 1.25em;
+    height: 1.25em;
+  }
+
+  .DocSearch-Button-Key {
+    background: var(--bg-color);
+    box-shadow: none;
+  }
+}
+// stylelint-enable selector-class-pattern
