@@ -68,7 +68,4 @@ export default [
     external: ["@vueuse/core", "plyr", "vue", /\.s?css$/],
     dtsExternal: ["@vueuse/core", /\.s?css$/],
   }),
-  ...rollupTypescript("client/vueuse", {
-    external: ["@vueuse/core"],
-  }),
 ];

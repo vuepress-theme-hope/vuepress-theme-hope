@@ -1,19 +1,10 @@
-import { CLIENT_FOLDER, logger } from "./utils.js";
+import { createRequire } from "node:module";
+import { AVAILABLE_COMPONENTS, CLIENT_FOLDER, logger } from "./utils.js";
 
 import type { App } from "@vuepress/core";
-import type { AvailableComponent, ComponentOptions } from "./options.js";
+import type { ComponentOptions } from "./options.js";
 
-const availableComponents: AvailableComponent[] = [
-  "AudioPlayer",
-  "Badge",
-  "BiliBili",
-  "CodePen",
-  "FontIcon",
-  "PDF",
-  "StackBlitz",
-  "VideoPlayer",
-  "YouTube",
-];
+const require = createRequire(import.meta.url);
 
 const getIconLink = (
   iconLink?: string
@@ -70,7 +61,7 @@ export const prepareConfigFile = (
   let shouldImportUseStyleTag = false;
 
   components.forEach((item) => {
-    if (availableComponents.includes(item)) {
+    if (AVAILABLE_COMPONENTS.includes(item)) {
       configImport += `\
 import ${item} from "${CLIENT_FOLDER}components/${item}.js";
 `;
@@ -146,14 +137,14 @@ import { h } from "vue";
 ${
   shouldImportUseScriptTag
     ? `\
-import { useScriptTag } from "${CLIENT_FOLDER}vueuse.js";
+import { useScriptTag } from "${require.resolve("@vuepress/core")}";
 `
     : ""
 }\
 ${
   shouldImportUseStyleTag
     ? `\
-import { useStyleTag } from "${CLIENT_FOLDER}vueuse.js";
+import { useStyleTag } from "${require.resolve("@vuepress/core")}";
 `
     : ""
 }\
