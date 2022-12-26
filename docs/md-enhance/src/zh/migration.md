@@ -95,6 +95,10 @@ icon: change
   - `@include(filename{start-})`
   - `@include(filename{-end})`
 
+  同时你也可以导入文件区域:
+
+  - `@include(filename#region)`
+
 - 选项卡支持
 
   新增 `tabs` 选项通过 `tabs` 容器创建选项卡。

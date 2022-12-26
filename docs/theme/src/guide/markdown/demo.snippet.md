@@ -1,6 +1,10 @@
 ## Heading 2
 
-Contents containing **bolded text** and some Markdown Enhance features:
+<!-- #region snippet -->
+
+Contents containing **bolded text** and some markdown enhance features:
+
+<!-- #endregion snippet -->
 
 ::: tip
 

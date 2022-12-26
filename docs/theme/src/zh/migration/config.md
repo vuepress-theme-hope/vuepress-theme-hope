@@ -321,6 +321,10 @@ tag:
     - `@include(filename{start-})`
     - `@include(filename{-end})`
 
+    同时你也可以导入文件区域:
+
+    - `@include(filename#region)`
+
   - 选项卡支持 ![新增](https://img.shields.io/badge/-新增-brightgreen)
 
     新增 `plugins.mdEnhance.tabs` 选项通过 `tabs` 容器创建选项卡。

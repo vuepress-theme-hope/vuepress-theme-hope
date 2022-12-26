@@ -95,6 +95,10 @@ You can pass the second argument `true` to enable legacy mode when calling `mdEn
   - `@include(filename{start-})`
   - `@include(filename{-end})`
 
+  Also you can include file region:
+
+  - `@include(filename#region)`
+
 - tabs support
 
   Use `tabs` container to create tabs via `tabs` option.

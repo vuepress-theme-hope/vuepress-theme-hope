@@ -323,6 +323,10 @@ Move all plugin related options under `plugins`.
     - `@include(filename{start-})`
     - `@include(filename{-end})`
 
+    Also you can include file region:
+
+    - `@include(filename#region)`
+
   - tabs support ![New](https://img.shields.io/badge/-New-brightgreen)
 
     Use `tabs` container to create tabs via `plugins.mdEnhance.tabs` option.

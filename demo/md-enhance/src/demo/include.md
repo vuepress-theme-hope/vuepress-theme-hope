@@ -8,6 +8,10 @@ title: Include Files
 
 @include(./demo.snippet.md)
 
-`@include(./demo.snippet.md{5-9})`:
+`@include(./demo.snippet.md{9-13})`:
 
-@include(./demo.snippet.md{5-9})
+@include(./demo.snippet.md{9-13})
+
+`@include(./demo.snippet.md#snippet)`:
+
+@include(./demo.snippet.md#snippet)

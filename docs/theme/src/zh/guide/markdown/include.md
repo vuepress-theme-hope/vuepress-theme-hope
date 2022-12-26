@@ -62,15 +62,23 @@ export default {
 - `@include(filename{start-})`
 - `@include(filename{-end})`
 
+同时你也可以导入文件区域:
+
+- `@include(filename#region)`
+
 ## 演示
 
 `@include(./demo.snippet.md)`:
 
 @include(./demo.snippet.md)
 
-`@include(./demo.snippet.md{5-9})`:
+`@include(./demo.snippet.md{9-13})`:
 
-@include(./demo.snippet.md{5-9})
+@include(./demo.snippet.md{9-13})
+
+`@include(./demo.snippet.md#snippet)`:
+
+@include(./demo.snippet.md#snippet)
 
 ## 高级用法
 

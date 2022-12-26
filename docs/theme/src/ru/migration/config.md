@@ -323,6 +323,10 @@ tag:
     - `@include(filename{start-})`
     - `@include(filename{-end})`
 
+    Also you can include file region:
+
+    - `@include(filename#region)`
+
   - поддержка вкладок ![New](https://img.shields.io/badge/-New-brightgreen)
 
     Использует контейнер `tabs` для создания вкладок через опцию `plugins.mdEnhance.tabs`.

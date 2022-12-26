@@ -56,7 +56,7 @@ describe("include", () => {
       const expected = `\
 <h2>Heading 2</h2>
 <!-- #region snippet -->
-<p>Contents containing bolded text and some markdown enhance features:</p>
+<p>Contents containing <strong>bolded text</strong> and some markdown enhance features:</p>
 <!-- #endregion snippet -->
 <div class="tip">
 <p>Hey how are <strong>you</strong>? :smile:</p>
@@ -87,7 +87,7 @@ describe("include", () => {
         `\
 <h2>Heading 2</h2>
 <!-- #region snippet -->
-<p>Contents containing bolded text and some markdown enhance features:</p>
+<p>Contents containing <strong>bolded text</strong> and some markdown enhance features:</p>
 <!-- #endregion snippet -->
 <div class="tip">
 <p>Hey how are <strong>you</strong>? :smile:</p>
@@ -96,7 +96,7 @@ describe("include", () => {
         `\
 <h2>Heading 2</h2>
 <!-- #region snippet -->
-<p>Contents containing bolded text and some markdown enhance features:</p>
+<p>Contents containing <strong>bolded text</strong> and some markdown enhance features:</p>
 <!-- #endregion snippet -->
 `,
         `\
@@ -112,13 +112,13 @@ describe("include", () => {
         `\
 <h2>Heading 2</h2>
 <!-- #region snippet -->
-<p>Contents containing bolded text and some markdown enhance features:</p>
+<p>Contents containing <strong>bolded text</strong> and some markdown enhance features:</p>
 <!-- #endregion snippet -->
 `,
         `\
 <h2>Heading 2</h2>
 <!-- #region snippet -->
-<p>Contents containing bolded text and some markdown enhance features:</p>
+<p>Contents containing <strong>bolded text</strong> and some markdown enhance features:</p>
 <!-- #endregion snippet -->
 <div class="tip">
 <p>Hey how are <strong>you</strong>? :smile:</p>
@@ -127,7 +127,7 @@ describe("include", () => {
         `\
 <h2>Heading 2</h2>
 <!-- #region snippet -->
-<p>Contents containing bolded text and some markdown enhance features:</p>
+<p>Contents containing <strong>bolded text</strong> and some markdown enhance features:</p>
 <!-- #endregion snippet -->
 <div class="tip">
 <p>Hey how are <strong>you</strong>? :smile:</p>
@@ -150,7 +150,7 @@ describe("include", () => {
       const source = `@include(${mdFixturePathRelative}#snippet)`;
 
       const expected = `\
-<p>Contents containing bolded text and some markdown enhance features:</p>
+<p>Contents containing <strong>bolded text</strong> and some markdown enhance features:</p>
 `;
 
       const env: IncludeEnv = {
@@ -195,7 +195,7 @@ describe("include", () => {
 <p>File not found</p>
 <h2>Heading 2</h2>
 <!-- #region snippet -->
-<p>Contents containing bolded text and some markdown enhance features:</p>
+<p>Contents containing <strong>bolded text</strong> and some markdown enhance features:</p>
 <!-- #endregion snippet -->
 <div class="tip">
 <p>Hey how are <strong>you</strong>? :smile:</p>
@@ -235,7 +235,7 @@ describe("include", () => {
       const expected = `\
 <h2>Heading 2</h2>
 <!-- #region snippet -->
-<p>Contents containing bolded text and some markdown enhance features:</p>
+<p>Contents containing <strong>bolded text</strong> and some markdown enhance features:</p>
 <!-- #endregion snippet -->
 <div class="tip">
 <p>Hey how are <strong>you</strong>? :smile:</p>
@@ -329,7 +329,7 @@ foo
 <h3>Heading 3</h3>
 <h2>Heading 2</h2>
 <!-- #region snippet -->
-<p>Contents containing bolded text and some markdown enhance features:</p>
+<p>Contents containing <strong>bolded text</strong> and some markdown enhance features:</p>
 <!-- #endregion snippet -->
 <div class="tip">
 <p>Hey how are <strong>you</strong>? :smile:</p>
@@ -343,7 +343,7 @@ foo
 <h3>Heading 3</h3>
 <h2>Heading 2</h2>
 <!-- #region snippet -->
-<p>Contents containing bolded text and some markdown enhance features:</p>
+<p>Contents containing <strong>bolded text</strong> and some markdown enhance features:</p>
 <!-- #endregion snippet -->
 <div class="tip">
 <p>Hey how are <strong>you</strong>? :smile:</p>
