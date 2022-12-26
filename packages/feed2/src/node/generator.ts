@@ -1,5 +1,4 @@
-import { colors, fs } from "@vuepress/utils";
-import { dirname } from "node:path";
+import { colors, fs, path } from "@vuepress/utils";
 
 import { Feed } from "./feed.js";
 import { getFeedChannelOption, getFilename, getFeedLinks } from "./options.js";
@@ -102,7 +101,7 @@ export class FeedGenerator {
 
           // generate atom files
           if (localeOptions.atom) {
-            await fs.ensureDir(dirname(dest(atomOutputFilename)));
+            await fs.ensureDir(path.dirname(dest(atomOutputFilename)));
             await fs.outputFile(dest(atomOutputFilename), feed.atom());
 
             logger.succeed(
@@ -114,7 +113,7 @@ export class FeedGenerator {
 
           // generate json files
           if (localeOptions.json) {
-            await fs.ensureDir(dirname(dest(jsonOutputFilename)));
+            await fs.ensureDir(path.dirname(dest(jsonOutputFilename)));
             await fs.outputFile(dest(jsonOutputFilename), feed.json());
 
             logger.succeed(
@@ -126,7 +125,7 @@ export class FeedGenerator {
 
           // generate rss files
           if (localeOptions.rss) {
-            await fs.ensureDir(dirname(dest(rssOutputFilename)));
+            await fs.ensureDir(path.dirname(dest(rssOutputFilename)));
             await fs.outputFile(dest(rssOutputFilename), feed.rss());
 
             logger.succeed(

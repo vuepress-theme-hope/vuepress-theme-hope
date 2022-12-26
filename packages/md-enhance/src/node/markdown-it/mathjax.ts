@@ -25,7 +25,7 @@
  */
 
 import { createRequire } from "node:module";
-import { dirname } from "node:path";
+import { path } from "@vuepress/utils";
 import { mathjax as MathJax } from "mathjax-full/js/mathjax.js";
 import { TeX } from "mathjax-full/js/input/tex.js";
 import { CHTML } from "mathjax-full/js/output/chtml.js";
@@ -64,7 +64,7 @@ export const getDocumentOptions = (
   OutputJax:
     options.output === "chtml"
       ? new CHTML<LiteElement, string, HTMLElement>({
-          fontURL: dirname(
+          fontURL: path.dirname(
             createRequire(import.meta.url).resolve(
               "mathjax-full/es5/output/chtml/fonts/woff-v2/MathJax_Zero.woff"
             )

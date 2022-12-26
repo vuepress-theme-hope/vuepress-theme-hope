@@ -1,5 +1,4 @@
-import { resolve } from "node:path";
-import { fs } from "@vuepress/utils";
+import { fs, path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   getDirContents,
@@ -65,7 +64,7 @@ export const componentsPlugin =
                   else if (file.endsWith(".svg"))
                     response.setHeader("Content-Type", "image/svg+xml");
 
-                  return fs.readFile(resolve(PDFJS_DIR, file));
+                  return fs.readFile(path.resolve(PDFJS_DIR, file));
                 },
               }
             );

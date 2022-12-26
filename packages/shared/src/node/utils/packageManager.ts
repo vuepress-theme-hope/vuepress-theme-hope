@@ -1,5 +1,4 @@
-import { existsSync } from "node:fs";
-import { dirname, resolve } from "node:path";
+import { fs, path } from "@vuepress/utils";
 import { execaSync } from "execa";
 
 export type PackageManager = "npm" | "yarn" | "pnpm";
@@ -49,19 +48,19 @@ export const getTypeofLockFile = (
 
   if (status !== undefined) return status;
 
-  if (existsSync(resolve(cwd, "pnpm-lock.yaml"))) {
+  if (fs.existsSync(path.resolve(cwd, "pnpm-lock.yaml"))) {
     localCache.set(key, "pnpm");
 
     return "pnpm";
   }
 
-  if (existsSync(resolve(cwd, "yarn.lock"))) {
+  if (fs.existsSync(path.resolve(cwd, "yarn.lock"))) {
     localCache.set(key, "yarn");
 
     return "yarn";
   }
 
-  if (existsSync(resolve(cwd, "package-lock.json"))) {
+  if (fs.existsSync(path.resolve(cwd, "package-lock.json"))) {
     localCache.set(key, "npm");
 
     return "npm";
@@ -69,22 +68,22 @@ export const getTypeofLockFile = (
 
   let dir = cwd;
 
-  while (deep && dir !== dirname(dir)) {
-    dir = dirname(dir);
+  while (deep && dir !== path.dirname(dir)) {
+    dir = path.dirname(dir);
 
-    if (existsSync(resolve(dir, "pnpm-lock.yaml"))) {
+    if (fs.existsSync(path.resolve(dir, "pnpm-lock.yaml"))) {
       localCache.set(key, "pnpm");
 
       return "pnpm";
     }
 
-    if (existsSync(resolve(dir, "yarn.lock"))) {
+    if (fs.existsSync(path.resolve(dir, "yarn.lock"))) {
       localCache.set(key, "yarn");
 
       return "yarn";
     }
 
-    if (existsSync(resolve(dir, "package-lock.json"))) {
+    if (fs.existsSync(path.resolve(dir, "package-lock.json"))) {
       localCache.set(key, "npm");
 
       return "npm";
