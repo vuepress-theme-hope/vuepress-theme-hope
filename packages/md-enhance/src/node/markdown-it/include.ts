@@ -8,11 +8,18 @@ import type { RuleCore } from "markdown-it/lib/parser_core.js";
 import type Token from "markdown-it/lib/token.js";
 import type { IncludeOptions } from "../typings/index.js";
 
-interface ImportFileInfo {
+interface ImportFileLineInfo {
   filePath: string;
   lineStart: number;
   lineEnd: number | undefined;
 }
+
+interface ImportFileRegionInfo {
+  filePath: string;
+  region: string;
+}
+
+type ImportFileInfo = ImportFileLineInfo | ImportFileRegionInfo;
 
 interface IncludeInfo {
   cwd: string | null;
@@ -27,13 +34,93 @@ interface IncludeEnv extends MarkdownEnv {
   includedFiles?: string[];
 }
 
+const INDENT_RE = /^([ \t]*)(.*)\n/gm;
+const REGIONS_RE = [
+  /^<!-- ?#?((?:end)?region) ([\w*-]+) ?-->$/, // markdown
+  /^\/\/ ?#?((?:end)?region) ([\w*-]+)$/, // javascript, typescript, java
+  /^\/\* ?#((?:end)?region) ([\w*-]+) ?\*\/$/, // css, less, scss
+  /^#pragma ((?:end)?region) ([\w*-]+)$/, // C, C++
+  /^<!-- #?((?:end)?region) ([\w*-]+) -->$/, // HTML, markdown
+  /^#((?:End )Region) ([\w*-]+)$/, // Visual Basic
+  /^::#((?:end)region) ([\w*-]+)$/, // Bat
+  /^# ?((?:end)?region) ([\w*-]+)$/, // C#, PHP, Powershell, Python, perl & misc
+];
+
 // regexp to match the import syntax
-const SYNTAX_RE = /^@include\(([^)]*?)(?:\{(\d+)?-(\d+)?\})?\)$/;
+const INCLUDE_RE =
+  /^@include\(([^)]+(?:\.[a-z0-9]+))(?:#([\w-]+))?(?:\{(\d+)?-(\d+)?\})?\)$/;
+
+const dedent = (text: string): string => {
+  let match: RegExpMatchArray | null;
+  let minIndentLength = null;
+
+  while ((match = INDENT_RE.exec(text)) !== null) {
+    const [indentation, content] = match.slice(1);
+
+    if (!content) continue;
+
+    const indentLength = indentation.length;
+
+    if (indentLength > 0) {
+      minIndentLength =
+        minIndentLength !== null
+          ? Math.min(minIndentLength, indentLength)
+          : indentLength;
+    } else break;
+  }
+
+  if (minIndentLength) {
+    text = text.replace(
+      new RegExp(`^[ \t]{${minIndentLength}}(.*)`, "gm"),
+      "$1"
+    );
+  }
+
+  return text;
+};
+
+const testLine = (
+  line: string,
+  regexp: RegExp,
+  regionName: string,
+  end = false
+): boolean => {
+  const [full, tag, name] = regexp.exec(line.trim()) || [];
+
+  return Boolean(
+    full &&
+      tag &&
+      name === regionName &&
+      tag.match(end ? /^[Ee]nd ?[rR]egion$/ : /^[rR]egion$/)
+  );
+};
+
+const findRegion = (
+  lines: string[],
+  regionName: string
+): { lineStart: number; lineEnd: number } | null => {
+  let regexp = null;
+  let lineStart = -1;
+
+  for (const [lineId, line] of lines.entries())
+    if (regexp === null) {
+      for (const reg of REGIONS_RE)
+        if (testLine(line, reg, regionName)) {
+          lineStart = lineId + 1;
+          regexp = reg;
+          break;
+        }
+    } else if (testLine(line, regexp, regionName, true))
+      return { lineStart, lineEnd: lineId };
+
+  return null;
+};
 
 export const handleInclude = (
-  { filePath, lineStart, lineEnd }: ImportFileInfo,
+  info: ImportFileInfo,
   { cwd, includedFiles, resolvedPath }: IncludeInfo
 ): string => {
+  const { filePath } = info;
   let realPath = filePath;
 
   if (!path.isAbsolute(filePath)) {
@@ -60,20 +147,29 @@ export const handleInclude = (
   // read file content
   const fileContent = fs.readFileSync(realPath).toString();
 
-  // return content
-  const result = fileContent
-    .replace(NEWLINES_RE, "\n")
-    .split("\n")
-    .slice(lineStart ? lineStart - 1 : lineStart, lineEnd);
+  const lines = fileContent.replace(NEWLINES_RE, "\n").split("\n");
+  let results: string[] = [];
+
+  if ("region" in info) {
+    const region = findRegion(lines, info.region);
+
+    console.log(info.region, region);
+
+    if (region) results = lines.slice(region.lineStart, region.lineEnd);
+  } else {
+    const { lineStart, lineEnd } = info;
+
+    results = lines.slice(lineStart ? lineStart - 1 : lineStart, lineEnd);
+  }
 
   if (resolvedPath && realPath.endsWith(".md")) {
     const dirName = path.dirname(realPath);
 
-    result.unshift(`@include-push(${dirName})`);
-    result.push("@include-pop()");
+    results.unshift(`@include-push(${dirName})`);
+    results.push("@include-pop()");
   }
 
-  return result.join("\n").replace(/\n?$/, "\n");
+  return dedent(results.join("\n").replace(/\n?$/, "\n"));
 };
 
 export const resolveInclude = (
@@ -86,10 +182,10 @@ export const resolveInclude = (
     .map((line) => {
       if (line.startsWith("@include")) {
         // check if it’s matched the syntax
-        const match = line.match(SYNTAX_RE);
+        const result = line.match(INCLUDE_RE);
 
-        if (match) {
-          const [, includePath, lineStart, lineEnd] = match;
+        if (result) {
+          const [, includePath, region, lineStart, lineEnd] = result;
           const actualPath = options.getPath(includePath);
           const resolvedPath =
             options.resolveImagePath || options.resolveLinkPath;
@@ -97,8 +193,12 @@ export const resolveInclude = (
           const content = handleInclude(
             {
               filePath: actualPath,
-              lineStart: lineStart ? Number.parseInt(lineStart, 10) : 0,
-              lineEnd: lineEnd ? Number.parseInt(lineEnd, 10) : undefined,
+              ...(region
+                ? { region }
+                : {
+                    lineStart: lineStart ? Number(lineStart) : 0,
+                    lineEnd: lineEnd ? Number(lineEnd) : undefined,
+                  }),
             },
             { cwd, includedFiles, resolvedPath }
           );
@@ -155,7 +255,7 @@ const includePushRule: RuleBlock = (state, startLine, _, silent): boolean => {
 
       token.map = [startLine, state.line];
       token.info = includePath;
-      token.markup = "incPush";
+      token.markup = "include_push";
     } else {
       result = false;
     }
@@ -181,7 +281,7 @@ const includePopRule: RuleBlock = (state, startLine, _, silent): boolean => {
       const token = state.push("include_pop", "", 0);
 
       token.map = [startLine, state.line];
-      token.markup = "incPop";
+      token.markup = "include_pop";
     } else result = false;
   }
 
