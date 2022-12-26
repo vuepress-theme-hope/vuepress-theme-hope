@@ -83,13 +83,6 @@ export default defineUserConfig({
       mathjax: {
         output: "chtml",
       },
-      // mathjax: {
-      //   output: "chtml",
-      // },
-      // mathjax: {
-      //   output: "svg",
-      // },
-      // mathjax: true,
       presentation: {
         plugins: ["highlight", "math", "search", "notes", "zoom"],
       },
