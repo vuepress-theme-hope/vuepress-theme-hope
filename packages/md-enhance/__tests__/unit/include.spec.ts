@@ -17,7 +17,9 @@ const mdFixtureDeepIncludePath = path.resolve(
   mdFixtureDeepIncludeRelative
 );
 
-const md = MarkdownIt().use(include).use(container, { name: "tip" });
+const md = MarkdownIt({ html: true })
+  .use(include)
+  .use(container, { name: "tip" });
 
 describe("include", () => {
   it("should not be parsed as import markdown syntax", () => {
@@ -45,7 +47,7 @@ describe("include", () => {
     expect(env.includedFiles).toEqual([]);
   });
 
-  describe("lines range", () => {
+  describe("should include file content correctly", () => {
     it("should import all lines", () => {
       const source = `\
 @include(${mdFixturePathRelative})
@@ -53,7 +55,9 @@ describe("include", () => {
 
       const expected = `\
 <h2>Heading 2</h2>
+<!-- #region snippet -->
 <p>Contents containing bolded text and some markdown enhance features:</p>
+<!-- #endregion snippet -->
 <div class="tip">
 <p>Hey how are <strong>you</strong>? :smile:</p>
 </div>
@@ -69,20 +73,84 @@ describe("include", () => {
     });
 
     it("should import partial lines", () => {
-      const source = `\
-@include(${mdFixturePathRelative}{5-9})
-@include(${mdFixturePathRelative}{-9})
-`;
+      const source = [
+        `@include(${mdFixturePathRelative}{1-13})`,
+        `@include(${mdFixturePathRelative}{1-8})`,
+        `@include(${mdFixturePathRelative}{9-13})`,
+        `@include(${mdFixturePathRelative}{9-})`,
+        `@include(${mdFixturePathRelative}{-8})`,
+        `@include(${mdFixturePathRelative}{1-})`,
+        `@include(${mdFixturePathRelative}{-13})`,
+      ];
+
+      const expected = [
+        `\
+<h2>Heading 2</h2>
+<!-- #region snippet -->
+<p>Contents containing bolded text and some markdown enhance features:</p>
+<!-- #endregion snippet -->
+<div class="tip">
+<p>Hey how are <strong>you</strong>? :smile:</p>
+</div>
+`,
+        `\
+<h2>Heading 2</h2>
+<!-- #region snippet -->
+<p>Contents containing bolded text and some markdown enhance features:</p>
+<!-- #endregion snippet -->
+`,
+        `\
+<div class="tip">
+<p>Hey how are <strong>you</strong>? :smile:</p>
+</div>
+`,
+        `\
+<div class="tip">
+<p>Hey how are <strong>you</strong>? :smile:</p>
+</div>
+`,
+        `\
+<h2>Heading 2</h2>
+<!-- #region snippet -->
+<p>Contents containing bolded text and some markdown enhance features:</p>
+<!-- #endregion snippet -->
+`,
+        `\
+<h2>Heading 2</h2>
+<!-- #region snippet -->
+<p>Contents containing bolded text and some markdown enhance features:</p>
+<!-- #endregion snippet -->
+<div class="tip">
+<p>Hey how are <strong>you</strong>? :smile:</p>
+</div>
+`,
+        `\
+<h2>Heading 2</h2>
+<!-- #region snippet -->
+<p>Contents containing bolded text and some markdown enhance features:</p>
+<!-- #endregion snippet -->
+<div class="tip">
+<p>Hey how are <strong>you</strong>? :smile:</p>
+</div>
+`,
+      ];
+
+      source.forEach((item, index) => {
+        const env: IncludeEnv = {
+          filePath: __filename,
+        };
+        const rendered = md.render(item, env);
+
+        expect(rendered).toEqual(expected[index]);
+        expect(env.includedFiles).toEqual([mdFixturePath]);
+      });
+    });
+
+    it("should import snippet", () => {
+      const source = `@include(${mdFixturePathRelative}#snippet)`;
 
       const expected = `\
-<div class="tip">
-<p>Hey how are <strong>you</strong>? :smile:</p>
-</div>
-<h2>Heading 2</h2>
 <p>Contents containing bolded text and some markdown enhance features:</p>
-<div class="tip">
-<p>Hey how are <strong>you</strong>? :smile:</p>
-</div>
 `;
 
       const env: IncludeEnv = {
@@ -91,7 +159,7 @@ describe("include", () => {
       const rendered = md.render(source, env);
 
       expect(rendered).toEqual(expected);
-      expect(env.includedFiles).toEqual([mdFixturePath, mdFixturePath]);
+      expect(env.includedFiles).toEqual([mdFixturePath]);
     });
   });
 
@@ -126,7 +194,9 @@ describe("include", () => {
       const expected = `\
 <p>File not found</p>
 <h2>Heading 2</h2>
+<!-- #region snippet -->
 <p>Contents containing bolded text and some markdown enhance features:</p>
+<!-- #endregion snippet -->
 <div class="tip">
 <p>Hey how are <strong>you</strong>? :smile:</p>
 </div>
@@ -164,13 +234,15 @@ describe("include", () => {
 `;
       const expected = `\
 <h2>Heading 2</h2>
+<!-- #region snippet -->
 <p>Contents containing bolded text and some markdown enhance features:</p>
+<!-- #endregion snippet -->
 <div class="tip">
 <p>Hey how are <strong>you</strong>? :smile:</p>
 </div>
 `;
 
-      const mdWithOptions = MarkdownIt()
+      const mdWithOptions = MarkdownIt({ html: true })
         .use(include, {
           getPath: (str: string): string =>
             str.replace(
@@ -230,6 +302,25 @@ foo
       expect(env.includedFiles).toEqual(["/path/to/foo.md"]);
     });
 
+    it("should terminate comment", () => {
+      const source = `\
+<!-- comment -->
+@include(/path/to/foo.md)
+`;
+      const expected = `\
+<!-- comment -->
+<p>File not found</p>
+`;
+
+      const env: IncludeEnv = {
+        filePath: __filename,
+      };
+      const rendered = md.render(source, env);
+
+      expect(rendered).toEqual(expected);
+      expect(env.includedFiles).toEqual(["/path/to/foo.md"]);
+    });
+
     it("should support deep import", () => {
       const source1 = `\
 @include(${mdFixtureDeepIncludeRelative})
@@ -237,7 +328,9 @@ foo
       const expected1 = `\
 <h3>Heading 3</h3>
 <h2>Heading 2</h2>
+<!-- #region snippet -->
 <p>Contents containing bolded text and some markdown enhance features:</p>
+<!-- #endregion snippet -->
 <div class="tip">
 <p>Hey how are <strong>you</strong>? :smile:</p>
 </div>
@@ -249,13 +342,15 @@ foo
       const expected2 = `\
 <h3>Heading 3</h3>
 <h2>Heading 2</h2>
+<!-- #region snippet -->
 <p>Contents containing bolded text and some markdown enhance features:</p>
+<!-- #endregion snippet -->
 <div class="tip">
 <p>Hey how are <strong>you</strong>? :smile:</p>
 </div>
 `;
 
-      const mdWithOptions = MarkdownIt()
+      const mdWithOptions = MarkdownIt({ html: true })
         .use(include, { deep: true })
         .use(container, { name: "tip" });
       const env1: IncludeEnv = {
