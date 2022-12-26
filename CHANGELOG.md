@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.144](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.143...v2.0.0-beta.144) (2022-12-26)
+
+### Features
+
+- **components:** improve font-icon ([259a7fe](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/259a7fe6bef2daba586213698691c3eeb0a93ea8))
+- **components:** rebuild pdf ([#2580](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2580)) ([5425ba0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5425ba0fea2fbf93ef271b36e6b09c3e8f0e3a51))
+- **components:** support string value for number props ([8e84095](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8e84095ba9fd81953701777b866143a77d9dfe7f))
+- **md-enhance:** support region in include feature ([#2579](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2579)) ([718eaaa](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/718eaaac8839c1821fdba1643ea7543261ee042d))
+
+### Bug Fixes
+
+- **deps:** update dependency three to v0.148.0 ([#2573](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2573)) ([cfe992e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cfe992edc30034a266f67cbca207dc70473c1973))
+- **md-enhance:** fix mathjax chtml output and add a11y option, close [#2231](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2231) ([#2566](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2566)) ([e7bebb7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e7bebb7a73f5542fa716ee9ac6ce3382bef2047a))
+- **md-enhance:** fix mathjax type ([a3ed068](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a3ed06868a86094675161f73a25b4e4d56a7021e))
+- **md-enhance:** fix playground vue preset ssr ([8be7852](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8be7852ea9628448081ff775d15fb1adeef6a424))
+- **shared:** fix code in table ([bcc8c25](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/bcc8c25bcd0fb0f8dc436ebb6b7c399756ba1c1c))
+- **theme:** fix article list padding when hero and project panel is disabled ([a62ee0b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a62ee0b52ec64f3bd32981dde5e52c8dd41d3c68))
+
 ## [2.0.0-beta.143](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.142...v2.0.0-beta.143) (2022-12-14)
 
 ### ⚠ BREAKING CHANGES
