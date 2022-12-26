@@ -59,21 +59,6 @@ code {
   }
 }
 
-blockquote {
-  margin: 1rem 0;
-  padding: 0.25rem 0 0.25rem 1rem;
-  border-left: 0.2rem solid #ddd;
-
-  color: #666;
-
-  font-size: 1rem;
-}
-
-ul,
-ol {
-  padding-left: 1.2em;
-}
-
 strong {
   font-weight: 600;
 }
@@ -86,6 +71,7 @@ h5,
 h6 {
   font-weight: 500;
   line-height: 1.25;
+  overflow-wrap: break-word;
 
   &:hover .header-anchor {
     opacity: 1;
@@ -149,14 +135,31 @@ p,
 ul,
 ol {
   line-height: 1.7;
+  overflow-wrap: break-word;
 
   @media print {
     line-height: 1.5;
   }
 }
 
-blockquote > p {
-  margin: 0;
+ul,
+ol {
+  padding-left: 1.2em;
+}
+
+blockquote {
+  margin: 1rem 0;
+  padding: 0.25rem 0 0.25rem 1rem;
+  border-left: 0.2rem solid #ddd;
+
+  color: #666;
+
+  font-size: 1rem;
+  overflow-wrap: break-word;
+
+  > p {
+    margin: 0;
+  }
 }
 
 hr {
