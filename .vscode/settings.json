@@ -124,5 +124,9 @@
     "vmatrix"
   ],
   "markdown.validate.enabled": true,
+  "search.exclude": {
+    "**/node_modules": true,
+    "packages/components/assets/pdfjs-*/**": true
+  },
   "typescript.tsdk": "node_modules/typescript/lib"
 }
