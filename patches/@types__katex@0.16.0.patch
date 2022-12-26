@@ -1,15 +1,24 @@
 diff --git a/package.json b/package.json
-index 7ef84ce1f1b6a48fcb007f8f56dc50f93b60eb0e..cb04c7b4f3edacd078931422a98e74b7dc2c9508 100755
+index 7ef84ce1f1b6a48fcb007f8f56dc50f93b60eb0e..4d8c4f36f137a8e433ac1ef86a46f961de542388 100755
 --- a/package.json
 +++ b/package.json
-@@ -38,6 +38,11 @@
+@@ -4,6 +4,7 @@
+     "description": "TypeScript definitions for KaTeX",
+     "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/katex",
+     "license": "MIT",
++    "type": "module",
+     "contributors": [
+         {
+             "name": "Michael Randolph",
+@@ -38,6 +39,12 @@
      ],
      "main": "",
      "types": "index.d.ts",
 +    "exports": {
-+      ".": {
-+        "types": "./index.d.ts"
-+      }
++        ".": {
++            "import": "./index.d.ts",
++            "require": "./index.d.ts"
++        }
 +    },
      "repository": {
          "type": "git",

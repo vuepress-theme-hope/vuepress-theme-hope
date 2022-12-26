@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 patchedDependencies:
   '@types/katex@0.16.0':
-    hash: i7lmlch52umavncuus5yzlffj4
+    hash: dnsp5eyvz2stjhzcvnk27ztvmm
     path: patches/@types__katex@0.16.0.patch
   mitt@3.0.0:
     hash: qzs7n5sruuzja7qoe6i43clpfe
