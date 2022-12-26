@@ -43,7 +43,6 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@types/body-scroll-lock": "^3.1.0",
     "@vuepress/client": "2.0.0-beta.59",
     "@vuepress/utils": "2.0.0-beta.59",
     "@vueuse/core": "^9.9.0",
@@ -57,6 +56,7 @@
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
+    "@types/body-scroll-lock": "^3.1.0",
     "@vuepress/core": "2.0.0-beta.59"
   },
   "peerDependencies": {

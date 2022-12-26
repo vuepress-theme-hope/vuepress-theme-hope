@@ -31,7 +31,10 @@ export interface CustomServerOptions {
   /**
    * Respond function
    */
-  response: (request?: IncomingMessage) => Promise<string | Buffer>;
+  response: (
+    request: IncomingMessage,
+    response: ServerResponse
+  ) => Promise<string | Buffer>;
 
   /**
    * error msg
@@ -68,7 +71,7 @@ export const useCustomDevServer = (
         request: IncomingMessage,
         response: ServerResponse
       ) => {
-        responseHandler(request)
+        responseHandler(request, response)
           .then((data) => {
             response.statusCode = 200;
             response.end(data);
@@ -105,7 +108,7 @@ export const useCustomDevServer = (
         server.app?.get(
           `${base}${removeLeadingSlash(path)}`,
           (request, response) => {
-            responseHandler(request)
+            responseHandler(request, response)
               .then((data) => response.status(200).send(data))
               .catch(() => response.status(500).send(errMsg));
           }

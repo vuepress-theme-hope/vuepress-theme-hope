@@ -29,6 +29,7 @@ ignorePatterns:
   - ".temp/**"
   - "coverage/**"
   - "docs-shared/lib/**"
+  - "packages/*/assets/**"
   - "packages/*/lib/**"
   - "!.vuepress/**"
 

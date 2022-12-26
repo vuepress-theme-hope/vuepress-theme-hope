@@ -63,7 +63,11 @@ export const pwaPlugin =
           { app, config },
           {
             path: "/manifest.webmanifest",
-            response: async () => JSON.stringify(await manifest),
+            response: async (_, response) => {
+              response.setHeader("Content-Type", "application/manifest+json");
+
+              return JSON.stringify(await manifest);
+            },
             errMsg: "Unexpected manifest generate error",
           }
         );

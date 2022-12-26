@@ -13,6 +13,7 @@ coverage/
 
 # Dist files
 docs-shared/lib/
+packages/*/assets/
 packages/*/lib/
 
 # Rollup cache
