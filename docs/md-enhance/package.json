@@ -19,7 +19,7 @@
     "docs:webpack-dev": "vuepress-webpack dev src"
   },
   "dependencies": {
-    "@types/katex": "0.14.0",
+    "@types/katex": "0.16.0",
     "@vuepress/client": "2.0.0-beta.59",
     "@vuepress/utils": "2.0.0-beta.59",
     "docs-shared": "workspace:*",

@@ -1,0 +1,16 @@
+diff --git a/package.json b/package.json
+index 7ef84ce1f1b6a48fcb007f8f56dc50f93b60eb0e..cb04c7b4f3edacd078931422a98e74b7dc2c9508 100755
+--- a/package.json
++++ b/package.json
+@@ -38,6 +38,11 @@
+     ],
+     "main": "",
+     "types": "index.d.ts",
++    "exports": {
++      ".": {
++        "types": "./index.d.ts"
++      }
++    },
+     "repository": {
+         "type": "git",
+         "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
