@@ -26,6 +26,68 @@ PDF 预览组件。
 <PDF url="/sample.pdf" page="2" no-toolbar />
 ```
 
+## PDFJS 查看器
+
+并非所有浏览器都支持嵌入 PDF 查看器 (如: 现在没有移动浏览器支持此功能)，因此我们添加了对 PDFJS 查看器的支持。
+
+由于 PDFJS 查看器 很大，您需要从 [Github](https://github.com/mozilla/pdf.js/releases) 手动下载它：
+
+- 如果您只想在移动设备上添加对现代浏览器的支持，请下载 `pdfjs-3.1.81-dist.zip`
+- 如果你想添加对大多数浏览器的支持，请下载 `pdfjs-3.1.81-legacy-dist.zip`
+
+下载完成后，请在 `.vuepress/public` 文件夹中解压到你想要的位置，然后在组件选项中将 `componentOptions.pdf.pdfjs` 设置为相对于 `.vuepress/public` 的路径。
+
+::: details 示例
+
+如果你下载 `pdfjs-3.1.81-legacy-dist.zip` 并解压到 `.vuepress/public/assets/lib/pdfjs` ，你应该设置：
+
+```ts
+// .vuepress/config.ts
+import { componentsPlugin } from "vuepress-plugin-components";
+
+export default {
+  plugins: [
+    componentsPlugin({
+      componentOptions: {
+        pdf: {
+          pdfjs: "/assets/lib/pdfjs",
+        },
+      },
+    }),
+  ],
+};
+```
+
+::::
+
+::: details noToolbar 支持
+
+默认的 PDFJS 查看器不支持自定义工具栏，如果你想添加这个功能的支持，你应该手动将以下代码添加到在 `pdfjs` 文件夹中的 `web/viewer.html` 的 `<script src="viewer.js"></script>` 行之前：
+
+```html
+<!-- ... -->
+<script src="../build/pdf.js"></script>
+
+<!-- ========== 下面是你应该添加的内容 ============= -->
+
+<!-- 添加对 toolbar=0 的支持 -->
+<script>
+  if (location.hash.contains("toolbar=0")) {
+    const style = document.createElement("style");
+
+    style.textContent = "#toolbarContainer { display: none; }";
+    document.head.append(style);
+  }
+</script>
+
+<!-- ========== 以上是你应该添加的 ============= -->
+
+<script src="viewer.js"></script>
+<!-- ... -->
+```
+
+::::
+
 ## 属性
 
 ### url

@@ -58,6 +58,15 @@ Link of font icon asset, `'iconfont'` and `'fontawesome'` keywords are supported
 
 Class prefix of font icon
 
+### componentsOptions.pdf.pdfjs
+
+- Type: `string`
+- Required: No
+- Details:
+  - [Guide → PDF → PDFJS](./guide/pdf.md#pdfjs-viewer)
+
+Location to pdfjs viewer.
+
 ## rootComponents
 
 Components to be mounted at root.

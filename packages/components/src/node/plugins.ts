@@ -1,16 +1,10 @@
-import { fs, path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
-import {
-  getDirContents,
-  getLocales,
-  mergeViteConfig,
-  useCustomDevServer,
-} from "vuepress-shared/node";
+import { getLocales, mergeViteConfig } from "vuepress-shared/node";
 
 import { convertOptions } from "./convert/index.js";
 import { backToTopLocales } from "./locales.js";
 import { prepareConfigFile } from "./prepare.js";
-import { PDFJS_DIR, getIconPrefix, logger } from "./utils.js";
+import { getIconPrefix, logger } from "./utils.js";
 
 import type { PluginFunction } from "@vuepress/core";
 import type { ViteBundlerOptions } from "@vuepress/bundler-vite";
@@ -27,8 +21,6 @@ export const componentsPlugin =
 
     useSassPalettePlugin(app, { id: "hope" });
 
-    const enablePDF = options.components?.includes("PDF");
-
     return {
       name: "vuepress-plugin-components",
 
@@ -44,6 +36,7 @@ export const componentsPlugin =
           }),
           ICON_PREFIX:
             typeof prefix === "string" ? prefix : getIconPrefix(assets),
+          PDFJS_URL: options.componentOptions?.pdf?.pdfjs || null,
         };
       },
 
@@ -76,38 +69,8 @@ export const componentsPlugin =
             }
           );
         }
-
-        if (enablePDF)
-          getDirContents(PDFJS_DIR).forEach((file) => {
-            useCustomDevServer(
-              { app, config },
-              {
-                path: `/assets/lib/pdfjs/${file}`,
-                response: (_, response) => {
-                  if (file.endsWith(".html"))
-                    response.setHeader("Content-Type", "text/html");
-                  else if (file.endsWith(".css"))
-                    response.setHeader("Content-Type", "text/css");
-                  else if (file.endsWith(".js"))
-                    response.setHeader(
-                      "Content-Type",
-                      "application/javascript"
-                    );
-                  else if (file.endsWith(".svg"))
-                    response.setHeader("Content-Type", "image/svg+xml");
-
-                  return fs.readFile(path.resolve(PDFJS_DIR, file));
-                },
-              }
-            );
-          });
       },
 
       clientConfigFile: (app) => prepareConfigFile(app, options),
-
-      onGenerated: async (app): Promise<void> => {
-        if (enablePDF)
-          await fs.copy(PDFJS_DIR, app.dir.dest("assets/lib/pdfjs"));
-      },
     };
   };

@@ -76,6 +76,12 @@ export default hopeTheme({
         "VideoPlayer",
         "YouTube",
       ],
+
+      componentOptions: {
+        pdf: {
+          pdfjs: "/assets/lib/pdfjs/",
+        },
+      },
     },
 
     comment: {

@@ -1,4 +1,5 @@
 import { withBase } from "@vuepress/client";
+import { ensureEndingSlash } from "@vuepress/shared";
 import { checkIsMobile, checkIsSafari } from "vuepress-shared/client";
 
 /**
@@ -15,7 +16,7 @@ import { checkIsMobile, checkIsSafari } from "vuepress-shared/client";
  * THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-const PDFJS_URL = "/assets/lib/pdfjs/web/viewer.html";
+declare const PDFJS_URL: string | null;
 
 export interface Options {
   title: string;
@@ -79,12 +80,13 @@ const addPDFViewer = (
   let source = url;
 
   if (embedType === "pdfjs") {
-    source =
-      withBase(PDFJS_URL) +
-      "?" +
-      "file=" +
-      encodeURIComponent(url) + // Stringify optional Adobe params for opening document (as fragment identifier)
-      buildURLFragmentString(options);
+    const pdfjsURL = `${ensureEndingSlash(
+      withBase(PDFJS_URL!)
+    )}web/viewer.html`;
+
+    source = `${pdfjsURL}?file=${encodeURIComponent(
+      url
+    )}${buildURLFragmentString(options)}`;
   }
 
   const elementType =
@@ -183,5 +185,16 @@ export const viewPDF = (
     return addPDFViewer(embedType, targetNode, url, options, pdfTitle);
   }
 
-  return addPDFViewer("pdfjs", targetNode, url, options, pdfTitle);
+  if (PDFJS_URL)
+    return addPDFViewer("pdfjs", targetNode, url, options, pdfTitle);
+
+  targetNode.innerHTML =
+    "<p>This browser does not support inline PDFs. Please download the PDF to view it: <a href='[url]' target='_blank'>Download PDF</a></p>".replace(
+      /\[url\]/g,
+      url
+    );
+
+  logError("This browser does not support embedded PDFs");
+
+  return null;
 };

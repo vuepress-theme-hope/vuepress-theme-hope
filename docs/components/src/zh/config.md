@@ -58,6 +58,15 @@ icon: config
 
 字体图标的 Class 前缀
 
+### componentsOptions.pdf.pdfjs
+
+- 类型: `string`
+- 必填: 否
+- 详情:
+  - [指南 → PDF → PDFJS](./guide/pdf.md#pdfjs-查看器)
+
+PDFJS 查看器的路径
+
 ## rootComponents
 
 会被挂载到根节点的组件。

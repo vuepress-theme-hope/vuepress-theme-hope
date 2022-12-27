@@ -83,6 +83,12 @@ export default theme("components", {
         "YouTube",
       ],
 
+      componentOptions: {
+        pdf: {
+          pdfjs: "/assets/lib/pdfjs/",
+        },
+      },
+
       rootComponents: {
         addThis: "ra-5f829c59e6c6bc9a",
       },

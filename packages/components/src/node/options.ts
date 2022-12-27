@@ -29,6 +29,8 @@ export interface ComponentOptions {
    */
   componentOptions?: {
     /**
+     * FontIcon config
+     *
      * 图标配置
      */
     fontIcon?: {
@@ -54,6 +56,20 @@ export interface ComponentOptions {
        * @default ''
        */
       prefix?: string;
+    };
+
+    /**
+     * PDF viewer config
+     *
+     * PDF 阅读器配置
+     */
+    pdf?: {
+      /**
+       * Location of pdfjs
+       *
+       * pdfjs 的位置
+       */
+      pdfjs?: string;
     };
   };
 
