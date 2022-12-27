@@ -27,7 +27,7 @@ export const useNavbarLanguageDropdown =
       // do not display language selection dropdown if there is only one language
       if (localePaths.length < 2) return null;
 
-      const { path, hash } = router.currentRoute.value;
+      const { path, fullPath } = router.currentRoute.value;
       const { navbarLocales } = themeLocale.value;
 
       const languageDropdown: NavGroup<AutoLinkOptions> = {
@@ -60,7 +60,7 @@ export const useNavbarLanguageDropdown =
               // try to link to the corresponding page of current page
               router.getRoutes().some((item) => item.path === targetLocalePage)
                 ? // try to keep current hash across languages
-                  `${targetLocalePage}${hash}`
+                  fullPath.replace(path, targetLocalePage)
                 : // or fallback to homepage
                   targetThemeLocale.home ?? targetLocalePath;
           }
