@@ -103,5 +103,12 @@ export const pwa = ({
       ],
       shortcuts,
     },
+
+    generateSWConfig: {
+      globIgnores: [
+        // ignore pdfjs
+        "assets/lib/pdfjs/**",
+      ],
+    },
   };
 };
