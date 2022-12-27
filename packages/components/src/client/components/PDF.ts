@@ -8,9 +8,6 @@ import type { VNode } from "vue";
 
 import "../styles/pdf.scss";
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
-declare const __VUEPRESS_SSR__: boolean;
-
 export default defineComponent({
   name: "PDF",
 
