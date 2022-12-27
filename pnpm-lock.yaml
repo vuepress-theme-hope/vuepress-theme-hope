@@ -900,6 +900,7 @@ importers:
 
   packages/components:
     specifiers:
+      '@vuepress/bundler-vite': 2.0.0-beta.59
       '@vuepress/client': 2.0.0-beta.59
       '@vuepress/core': 2.0.0-beta.59
       '@vuepress/shared': 2.0.0-beta.59
@@ -925,6 +926,7 @@ importers:
       vuepress-plugin-sass-palette: link:../sass-palette
       vuepress-shared: link:../shared
     devDependencies:
+      '@vuepress/bundler-vite': 2.0.0-beta.59
       '@vuepress/core': 2.0.0-beta.59
 
   packages/copy-code2:

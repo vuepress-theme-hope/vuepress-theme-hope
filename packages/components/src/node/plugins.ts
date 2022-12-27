@@ -3,6 +3,7 @@ import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   getDirContents,
   getLocales,
+  mergeViteConfig,
   useCustomDevServer,
 } from "vuepress-shared/node";
 
@@ -12,6 +13,8 @@ import { prepareConfigFile } from "./prepare.js";
 import { PDFJS_DIR, getIconPrefix, logger } from "./utils.js";
 
 import type { PluginFunction } from "@vuepress/core";
+import type { ViteBundlerOptions } from "@vuepress/bundler-vite";
+import type { RollupWarning } from "rollup";
 import type { ComponentOptions } from "./options.js";
 
 export const componentsPlugin =
@@ -45,6 +48,35 @@ export const componentsPlugin =
       },
 
       extendsBundlerOptions: (config: unknown, app): void => {
+        const { bundler } = app.options;
+
+        if (bundler.name.endsWith("vite")) {
+          const bundlerConfig = <ViteBundlerOptions>config;
+
+          bundlerConfig.viteOptions = mergeViteConfig(
+            bundlerConfig.viteOptions || {},
+            {
+              build: {
+                rollupOptions: {
+                  onwarn(
+                    warning: RollupWarning,
+                    warn: (warning: RollupWarning) => void
+                  ) {
+                    if (
+                      warning.message.includes(
+                        'is imported from external module "@vueuse/core" but never used in '
+                      )
+                    )
+                      return;
+
+                    warn(warning);
+                  },
+                },
+              },
+            }
+          );
+        }
+
         if (enablePDF)
           getDirContents(PDFJS_DIR).forEach((file) => {
             useCustomDevServer(
