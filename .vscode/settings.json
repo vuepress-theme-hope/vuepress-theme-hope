@@ -65,6 +65,7 @@
     "npmmirror",
     "nprogress",
     "pandoc",
+    "pdfjs",
     "photoswipe",
     "picocolors",
     "pinterest",
@@ -126,7 +127,7 @@
   "markdown.validate.enabled": true,
   "search.exclude": {
     "**/node_modules": true,
-    "packages/components/assets/pdfjs-*/**": true
+    "../.vuepress/assets/lib/**": true
   },
   "typescript.tsdk": "node_modules/typescript/lib"
 }
