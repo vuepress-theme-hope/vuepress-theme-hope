@@ -33,7 +33,7 @@ export default defineUserConfig({
   theme: hopeTheme({
     plugins: {
       comment: {
-        provider: "waline",
+        provider: "Waline",
 
         // waline 模式下
         serverURL: "...", // your serverURL
@@ -53,7 +53,7 @@ export default {
   theme: hopeTheme({
     plugins: {
       comment: {
-        provider: "waline",
+        provider: "Waline",
 
         // waline 模式下
         serverURL: "...", // your serverURL
@@ -128,7 +128,7 @@ export default defineUserConfig({
   theme: hopeTheme({
     plugins: {
       comment: {
-        provider: "waline",
+        provider: "Waline",
         serverURL: "YOUR_SERVER_URL", // your server url
       },
     },
@@ -146,7 +146,7 @@ export default {
   theme: hopeTheme({
     plugins: {
       comment: {
-        provider: "waline",
+        provider: "Waline",
         serverURL: "YOUR_SERVER_URL", // your server url
       },
     },

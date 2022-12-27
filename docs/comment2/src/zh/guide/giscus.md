@@ -17,7 +17,7 @@ Giscus 是一个基于 GitHub Discussion 的评论系统，启用简便。
 
 ## 配置
 
-请将 `data-repo`, `data-repo-id`, `data-category` 和 `data-category-id` 作为插件选项传入 `repo`, `repoId`, `category` `categoryId`。
+请配置 `provider: "Giscus"` 并将 `data-repo`, `data-repo-id`, `data-category` 和 `data-category-id` 作为插件选项传入 `repo`, `repoId`, `category` `categoryId`。
 
 其他的配置项详见 [Giscus 配置](../config/giscus.md)。
 

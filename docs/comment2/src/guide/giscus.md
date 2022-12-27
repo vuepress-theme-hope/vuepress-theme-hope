@@ -17,7 +17,7 @@ Giscus is a commenting system based on GitHub Discussion that is easy to start.
 
 ## Config
 
-Please pass `data-repo`, `data-repo-id`, `data-category` and `data-category-id` as plugin options as `repo`, `repoId`, `category` `categoryId`.
+Please set `provider: "Giscus"` and pass `data-repo`, `data-repo-id`, `data-category` and `data-category-id` as plugin options as `repo`, `repoId`, `category` `categoryId`.
 
 For other options, see [Giscus Config](../config/giscus.md).
 
