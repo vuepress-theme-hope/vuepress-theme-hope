@@ -1,10 +1,8 @@
 /* eslint-disable vue/no-unused-properties */
-import { withBase } from "@vuepress/client";
-import { isLinkHttp } from "@vuepress/shared";
 import { defineComponent, h, onMounted } from "vue";
 
 import { useSize } from "../composables/index.js";
-import { viewPDF } from "../utils/pdf.js";
+import { getLink, viewPDF } from "../utils/index.js";
 
 import type { VNode } from "vue";
 
@@ -103,13 +101,7 @@ export default defineComponent({
     const { el, width, height } = useSize<HTMLDivElement>(props);
 
     onMounted(() => {
-      const fullLink = isLinkHttp(props.url)
-        ? props.url
-        : __VUEPRESS_SSR__
-        ? ""
-        : `${window?.location.origin || ""}${withBase(props.url)}`;
-
-      viewPDF(fullLink, el.value, {
+      viewPDF(getLink(props.url), el.value, {
         title: props.title,
         options: {
           page: props.page,

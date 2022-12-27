@@ -10,23 +10,23 @@ Embed audios in Markdown files.
 
 An audio player:
 
-<AudioPlayer :src="$withBase('/sample.mp3')" />
+<AudioPlayer src="/sample.mp3" />
 
 ```md
-<AudioPlayer :src="$withBase('/sample.mp3')" />
+<AudioPlayer src="/sample.mp3" />
 ```
 
 An audio player with poster and title:
 
 <AudioPlayer
-  :src="$withBase('/sample.mp3')"
+  src="/sample.mp3"
   title="A Sample Audio"
   poster="/logo.svg"
 />
 
 ```md
 <AudioPlayer
-  :src="$withBase('/sample.mp3')"
+  src="/sample.mp3"
   title="A Sample Audio"
   poster="/logo.svg"
 />

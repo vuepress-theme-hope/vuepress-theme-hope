@@ -8,13 +8,13 @@
   :tracks="[
     {
       default: true,
-      src: $withBase('/en.vtt'),
+      src: '/en.vtt',
       kind: 'subtitles',
       label: 'English',
       srcLang: 'en',
     },
     {
-      src: $withBase('//fr.vtt'),
+      src: '//fr.vtt',
       kind: 'subtitles',
       label: 'French',
       srcLang: 'fr',

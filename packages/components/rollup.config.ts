@@ -12,7 +12,13 @@ export default [
     copy: [["client/styles", "client"]],
   }),
   ...rollupTypescript("client/components/AudioPlayer", {
-    external: ["plyr", "vue", /\.s?css$/],
+    external: [
+      "@vuepress/client",
+      "@vuepress/shared",
+      "plyr",
+      "vue",
+      /\.s?css$/,
+    ],
     dtsExternal: [/\.s?css$/],
   }),
   ...rollupTypescript("client/components/Badge", {
@@ -65,7 +71,14 @@ export default [
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/VideoPlayer", {
-    external: ["@vueuse/core", "plyr", "vue", /\.s?css$/],
+    external: [
+      "@vuepress/client",
+      "@vuepress/shared",
+      "@vueuse/core",
+      "plyr",
+      "vue",
+      /\.s?css$/,
+    ],
     dtsExternal: ["@vueuse/core", /\.s?css$/],
   }),
   ...rollupTypescript("client/vueuse", {

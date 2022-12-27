@@ -24,13 +24,13 @@ title: VideoPlayer
   :tracks="[
     {
       default: true,
-      src: $withBase('/assets/subtitles/en.vtt'),
+      src: '/assets/subtitles/en.vtt',
       kind: 'subtitles',
       label: 'English',
       srcLang: 'en',
     },
     {
-      src: $withBase('/assets/subtitles/fr.vtt'),
+      src: '/assets/subtitles/fr.vtt',
       kind: 'subtitles',
       label: 'French',
       srcLang: 'fr',
@@ -45,13 +45,13 @@ title: VideoPlayer
   :tracks="[
     {
       default: true,
-      src: $withBase('/assets/subtitles/en.vtt'),
+      src: '/assets/subtitles/en.vtt',
       kind: 'subtitles',
       label: 'English',
       srcLang: 'en',
     },
     {
-      src: $withBase('/assets/subtitles/fr.vtt'),
+      src: '/assets/subtitles/fr.vtt',
       kind: 'subtitles',
       label: 'French',
       srcLang: 'fr',

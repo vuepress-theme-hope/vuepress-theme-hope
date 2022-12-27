@@ -91,23 +91,23 @@ export default {
 
 一个音频播放器:
 
-<AudioPlayer :src="$withBase('/assets/sample.mp3')" />
+<AudioPlayer src="/assets/sample.mp3" />
 
 ```md
-<AudioPlayer :src="$withBase('/assets/sample.mp3')" />
+<AudioPlayer src="/assets/sample.mp3" />
 ```
 
 一个拥有标题和封面的音频播放器:
 
 <AudioPlayer
-  :src="$withBase('/assets/sample.mp3')"
+  src="/assets/sample.mp3"
   title="A Sample Audio"
   poster="/logo.svg"
 />
 
 ```md
 <AudioPlayer
-  :src="$withBase('/assets/sample.mp3')"
+  src="/assets/sample.mp3"
   title="A Sample Audio"
   poster="/logo.svg"
 />
@@ -283,13 +283,13 @@ PDF 浏览器组件。
   :tracks="[
     {
       default: true,
-      src: $withBase('/assets/subtitles/en.vtt'),
+      src: '/assets/subtitles/en.vtt',
       kind: 'subtitles',
       label: 'English',
       srcLang: 'en',
     },
     {
-      src: $withBase('/assets/subtitles/fr.vtt'),
+      src: '/assets/subtitles/fr.vtt',
       kind: 'subtitles',
       label: 'French',
       srcLang: 'fr',
@@ -304,13 +304,13 @@ PDF 浏览器组件。
   :tracks="[
     {
       default: true,
-      src: $withBase('/assets/subtitles/en.vtt'),
+      src: '/assets/subtitles/en.vtt',
       kind: 'subtitles',
       label: 'English',
       srcLang: 'en',
     },
     {
-      src: $withBase('/assets/subtitles/fr.vtt'),
+      src: '/assets/subtitles/fr.vtt',
       kind: 'subtitles',
       label: 'French',
       srcLang: 'fr',

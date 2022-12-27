@@ -6,6 +6,7 @@ import {
   onMounted,
   ref,
 } from "vue";
+import { getLink } from "../utils/index.js";
 
 import type { UseMediaTextTrackSource } from "@vueuse/core";
 import type { Options as PlyrOptions } from "plyr";
@@ -133,21 +134,27 @@ export default defineComponent({
               },
             },
             [
-              h("a", { class: "sr-only", href: props.src }, props.title),
+              h(
+                "a",
+                { class: "sr-only", href: getLink(props.src) },
+                props.title
+              ),
               h(
                 "video",
                 {
                   ref: video,
                   title: props.title,
                   crossorigin: "anonymous",
-                  poster: props.poster,
+                  poster: getLink(props.poster),
                   preload: "metadata",
                   controls: "",
                   ...(props.loop ? { loop: "" } : {}),
                 },
                 [
-                  ...props.tracks.map((track) => h("track", track)),
-                  h("source", { src: props.src, type: props.type }),
+                  ...props.tracks.map((track) =>
+                    h("track", { ...track, src: getLink(track.src) })
+                  ),
+                  h("source", { src: getLink(props.src), type: props.type }),
                 ]
               ),
             ]

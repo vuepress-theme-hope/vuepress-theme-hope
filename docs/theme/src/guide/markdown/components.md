@@ -91,23 +91,23 @@ export default {
 
 An audio player:
 
-<AudioPlayer :src="$withBase('/assets/sample.mp3')" />
+<AudioPlayer src="/sample.mp3" />
 
 ```md
-<AudioPlayer :src="$withBase('/assets/sample.mp3')" />
+<AudioPlayer src="/sample.mp3" />
 ```
 
 An audio player with poster and title:
 
 <AudioPlayer
-  :src="$withBase('/assets/sample.mp3')"
+  src="/sample.mp3"
   title="A Sample Audio"
   poster="/logo.svg"
 />
 
 ```md
 <AudioPlayer
-  :src="$withBase('/assets/sample.mp3')"
+  src="/sample.mp3"
   title="A Sample Audio"
   poster="/logo.svg"
 />
@@ -282,13 +282,13 @@ A video player with tracks and poster:
   :tracks="[
     {
       default: true,
-      src: $withBase('/assets/subtitles/en.vtt'),
+      src: '/assets/subtitles/en.vtt',
       kind: 'subtitles',
       label: 'English',
       srcLang: 'en',
     },
     {
-      src: $withBase('/assets/subtitles/fr.vtt'),
+      src: '/assets/subtitles/fr.vtt',
       kind: 'subtitles',
       label: 'French',
       srcLang: 'fr',
@@ -303,13 +303,13 @@ A video player with tracks and poster:
   :tracks="[
     {
       default: true,
-      src: $withBase('/assets/subtitles/en.vtt'),
+      src: '/assets/subtitles/en.vtt',
       kind: 'subtitles',
       label: 'English',
       srcLang: 'en',
     },
     {
-      src: $withBase('/assets/subtitles/fr.vtt'),
+      src: '/assets/subtitles/fr.vtt',
       kind: 'subtitles',
       label: 'French',
       srcLang: 'fr',

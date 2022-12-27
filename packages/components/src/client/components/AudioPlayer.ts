@@ -6,6 +6,7 @@ import {
   onMounted,
   ref,
 } from "vue";
+import { getLink } from "../utils/index.js";
 
 import type { Options as PlyrOptions } from "plyr";
 import type { PropType, VNode } from "vue";
@@ -107,11 +108,14 @@ export default defineComponent({
             h("div", { class: "audio-wrapper" }, [
               h(
                 "a",
-                { class: "audio-print", href: props.src },
+                { class: "audio-print", href: getLink(props.src) },
                 props.title || "An audio"
               ),
               props.poster
-                ? h("img", { class: "audio-poster", src: props.poster })
+                ? h("img", {
+                    class: "audio-poster",
+                    src: getLink(props.poster),
+                  })
                 : null,
               h("div", { class: "audio-info" }, [
                 props.title
@@ -126,7 +130,7 @@ export default defineComponent({
                     controls: "",
                     ...(props.loop ? { loop: "" } : {}),
                   },
-                  h("source", { src: props.src, type: props.type })
+                  h("source", { src: getLink(props.src), type: props.type })
                 ),
               ]),
             ]),
