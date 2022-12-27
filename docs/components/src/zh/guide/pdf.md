@@ -72,7 +72,7 @@ export default {
 
 <!-- 添加对 toolbar=0 的支持 -->
 <script>
-  if (location.hash.contains("toolbar=0")) {
+  if (location.hash.includes("toolbar=0")) {
     const style = document.createElement("style");
 
     style.textContent = "#toolbarContainer { display: none; }";

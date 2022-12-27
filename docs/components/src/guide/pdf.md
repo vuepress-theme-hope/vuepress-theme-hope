@@ -72,7 +72,7 @@ The default PDFJS viewer does not support toolbar customization, if you want to 
 
 <!-- add support for toolbar=0 -->
 <script>
-  if (location.hash.contains("toolbar=0")) {
+  if (location.hash.includes("toolbar=0")) {
     const style = document.createElement("style");
 
     style.textContent = "#toolbarContainer { display: none; }";
