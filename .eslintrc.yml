@@ -25,13 +25,13 @@ parserOptions:
 ignorePatterns:
   - "**/dist/**"
   - "**/node_modules/**"
-  - ".cache/**"
-  - ".temp/**"
   - "coverage/**"
   - "docs-shared/lib/**"
   - "packages/*/assets/**"
   - "packages/*/lib/**"
   - "!.vuepress/**"
+  - "**/.vuepress/.cache/**"
+  - "**/.vuepress/.temp/**"
 
 rules:
   padding-line-between-statements:

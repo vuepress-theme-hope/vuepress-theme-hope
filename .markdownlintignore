@@ -1,6 +1,7 @@
 **/node_modules/**
 **/__tests__/**
 CHANGELOG.md
+LICENSE
 
 # markdown import demo
 demo.snippet.md
