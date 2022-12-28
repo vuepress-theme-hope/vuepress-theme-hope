@@ -43,8 +43,8 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@vuepress/client": "2.0.0-beta.59",
-    "@vuepress/utils": "2.0.0-beta.59",
+    "@vuepress/client": "2.0.0-beta.60",
+    "@vuepress/utils": "2.0.0-beta.60",
     "@vueuse/core": "^9.9.0",
     "body-scroll-lock": "^3.1.5",
     "cheerio": "1.0.0-rc.12",
@@ -57,13 +57,13 @@
   },
   "devDependencies": {
     "@types/body-scroll-lock": "^3.1.0",
-    "@vuepress/core": "2.0.0-beta.59"
+    "@vuepress/core": "2.0.0-beta.60"
   },
   "peerDependencies": {
     "sass-loader": "^13.2.0",
-    "vuepress": "2.0.0-beta.59",
-    "vuepress-vite": "2.0.0-beta.59",
-    "vuepress-webpack": "2.0.0-beta.59"
+    "vuepress": "2.0.0-beta.60",
+    "vuepress-vite": "2.0.0-beta.60",
+    "vuepress-webpack": "2.0.0-beta.60"
   },
   "engines": {
     "node": "^14.18.0 || >=16.0.0",
