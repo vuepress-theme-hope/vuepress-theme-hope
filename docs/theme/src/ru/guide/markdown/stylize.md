@@ -197,7 +197,7 @@ export default {
 
 :::
 
-Если вы хотите пропустить некоторые слова на некоторых страницах, вы можете установить `noStylize` во вступительной части страницы с массивом содержимого, которое вы не хотите стилизовать.
+Also, you can use `stylize` in frontmatter to provide extra stylize rules for content of the page.
 
 ::: info Производительность
 

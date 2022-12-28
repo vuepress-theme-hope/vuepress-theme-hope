@@ -134,7 +134,7 @@ tag:
 
 Включить ли поддержку выделения.
 
-### imageLazyload
+### imgLazyload
 
 - Тип: `boolean`
 - По умолчанию: `false`
@@ -148,7 +148,7 @@ tag:
 
 Включить ли поддержку названия изображения.
 
-### imageMark
+### imgMark
 
 - Тип: `ImageMarkOptions | boolean`
 - По умолчанию: `false`
@@ -164,7 +164,7 @@ interface ImageMarkOptions {
 }
 ```
 
-### imageSize
+### imgSize
 
 - Тип: `boolean`
 - По умолчанию: `false`

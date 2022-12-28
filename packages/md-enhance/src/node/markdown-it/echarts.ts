@@ -1,5 +1,5 @@
+import { container } from "@mdit/plugin-container";
 import { utoa } from "vuepress-shared/node";
-import { container } from "./container.js";
 import type Token from "markdown-it/lib/token.js";
 
 import type { PluginSimple } from "markdown-it";

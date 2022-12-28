@@ -87,7 +87,7 @@ app.component("FlowChart", FlowChart);
 import "${CLIENT_FOLDER}styles/footnote.scss";
 `;
 
-  if (getStatus("imageMark", true))
+  if (getStatus("imgMark", true))
     configImport += `\
 import "${CLIENT_FOLDER}styles/image-mark.scss";
 `;

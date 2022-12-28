@@ -17,7 +17,7 @@ You can pass the second argument `true` to enable legacy mode when calling `mdEn
 
 - image mark support
 
-  Use `#light` and `#dark` suffix to mark images to display them in light mode or dark mode via `imageMark` option.
+  Use `#light` and `#dark` suffix to mark images to display them in light mode or dark mode via `imgMark` option.
 
 - `v-pre` support
 

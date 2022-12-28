@@ -255,7 +255,7 @@ tag:
 
   - 图像标记支持 ![新增](https://img.shields.io/badge/-新增-brightgreen)
 
-    通过 `plugins.mdEnhance.imageMark` 使用 `#light` 和 `#dark` 后缀标记图像以在日间模式或夜间模式下显示它们。
+    通过 `plugins.mdEnhance.imgMark` 使用 `#light` 和 `#dark` 后缀标记图像以在日间模式或夜间模式下显示它们。
 
   - Chart.js 支持 ![新增](https://img.shields.io/badge/-新增-brightgreen)
 
@@ -347,7 +347,7 @@ tag:
 
   - `mdEnhance.codegroup` 重命名为 `plugins.mdEnhance.codetabs` ![警告](https://img.shields.io/badge/-warning-yellow)
 
-  - `plugins.mdEnhance.lazyLoad` 改为 `plugins.mdEnhance.imageLazyload`，默认值由 `true` 改为 `false` ![警告](https://img.shields.io/badge/-warning-yellow)
+  - `plugins.mdEnhance.lazyLoad` 改为 `plugins.mdEnhance.imgLazyload`，默认值由 `true` 改为 `false` ![警告](https://img.shields.io/badge/-warning-yellow)
 
   - 移除 `plugins.mdEnhance.enableAll` ![移除](https://img.shields.io/badge/-removed-red)
 

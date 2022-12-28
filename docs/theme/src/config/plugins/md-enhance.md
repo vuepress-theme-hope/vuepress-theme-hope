@@ -147,7 +147,7 @@ Whether to enable mark support.
 
 Whether enable figure support.
 
-### imageMark
+### imgMark
 
 - Type: `ImageMarkOptions | boolean`
 - Default: `false`
@@ -163,7 +163,7 @@ interface ImageMarkOptions {
 }
 ```
 
-### imageSize
+### imgSize
 
 - Type: `boolean`
 - Default: `false`

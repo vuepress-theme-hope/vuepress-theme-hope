@@ -1,6 +1,5 @@
+import { container } from "@mdit/plugin-container";
 import { ensureLeadingSlash, resolveLocalePath } from "@vuepress/shared";
-
-import { container } from "./container.js";
 
 import type { MarkdownEnv } from "@vuepress/markdown";
 import type { PluginWithOptions } from "markdown-it";

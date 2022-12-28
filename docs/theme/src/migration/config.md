@@ -257,7 +257,7 @@ Move all plugin related options under `plugins`.
 
   - image mark support ![New](https://img.shields.io/badge/-New-brightgreen)
 
-    Use `#light` and `#dark` suffix to mark images to display them in light mode or dark mode via `plugins.mdEnhance.imageMark` option
+    Use `#light` and `#dark` suffix to mark images to display them in light mode or dark mode via `plugins.mdEnhance.imgMark` option
 
   - Chart.js support ![New](https://img.shields.io/badge/-New-brightgreen)
 

@@ -1,4 +1,4 @@
-import { container } from "./container.js";
+import { container } from "@mdit/plugin-container";
 
 import type { PluginSimple } from "markdown-it";
 

@@ -257,7 +257,7 @@ tag:
 
   - поддержка метки изображения ![New](https://img.shields.io/badge/-New-brightgreen)
 
-    Используйте суффикс `#light` и `#dark`, чтобы пометить изображения, чтобы отображать их в светлом или темном режиме с помощью опции `plugins.mdEnhance.imageMark`
+    Используйте суффикс `#light` и `#dark`, чтобы пометить изображения, чтобы отображать их в светлом или темном режиме с помощью опции `plugins.mdEnhance.imgMark`
 
   - Поддержка chart.js ![New](https://img.shields.io/badge/-New-brightgreen)
 
@@ -347,7 +347,7 @@ tag:
 
   - переименован `mdEnhance.codegroup` в `plugins.mdEnhance.codetabs` ![changed](https://img.shields.io/badge/-changed-yellow)
 
-  - переименован `mdEnhance.lazyload` в `plugins.mdEnhance.imageLazyload` изменение значение по умолчанию с `true` на `false` ![changed](https://img.shields.io/badge/-changed-yellow)
+  - переименован `mdEnhance.lazyload` в `plugins.mdEnhance.imgLazyload` изменение значение по умолчанию с `true` на `false` ![changed](https://img.shields.io/badge/-changed-yellow)
 
   - удалено `plugins.mdEnhance.lineNumbers` ![removed](https://img.shields.io/badge/-removed-red)
 

@@ -181,7 +181,7 @@ export default {
 
 :::
 
-If you want to skip some words in some pages, you can set `noStylize` in page frontmatter with an array containing content you don’t want to stylize.
+Also, you can use `stylize` in frontmatter to provide extra stylize rules for content of the page.
 
 ::: info Performance
 

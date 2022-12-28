@@ -13,7 +13,22 @@ export const convertOptions = (
   deprecatedLogger({
     options,
     deprecatedOption: "lazyload",
-    newOption: "imageLazyload",
+    newOption: "imgLazyload",
+  });
+  deprecatedLogger({
+    options,
+    deprecatedOption: "imageLazyload",
+    newOption: "imgLazyload",
+  });
+  deprecatedLogger({
+    options,
+    deprecatedOption: "imageMark",
+    newOption: "imgMark",
+  });
+  deprecatedLogger({
+    options,
+    deprecatedOption: "imageSize",
+    newOption: "imgSize",
   });
   deprecatedLogger({
     options,

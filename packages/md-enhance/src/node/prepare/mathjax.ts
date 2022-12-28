@@ -1,19 +1,14 @@
-import { MathJax } from "../markdown-it/mathjax.js";
+import { generateMathjaxStyle } from "@mdit/plugin-mathjax";
 
 import type { App } from "@vuepress/core";
-import type { MathJaxUtils } from "../markdown-it/mathjax.js";
+import type { MathjaxInstance } from "@mdit/plugin-mathjax";
 
 export const prepareMathjaxStyleFile = async (
   app: App,
-  { adaptor, documentOptions }: MathJaxUtils
+  mathjaxInstance: MathjaxInstance
 ): Promise<void> => {
   await app.writeTemp(
     "md-enhance/mathjax.css",
-    adaptor.innerHTML(
-      documentOptions.OutputJax.styleSheet(
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-        MathJax.document("", documentOptions)
-      )
-    )
+    generateMathjaxStyle(mathjaxInstance)
   );
 };

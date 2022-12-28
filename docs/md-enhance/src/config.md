@@ -166,14 +166,14 @@ Whether to enable mark support.
 
 Whether enable figure support.
 
-## imageLazyload
+## imgLazyload
 
 - Type: `boolean`
 - Default: `false`
 
 Whether to lazy load every images in page in native way.
 
-## imageMark
+## imgMark
 
 - Type: `ImageMarkOptions | boolean`
 - Default: `false`
@@ -189,7 +189,7 @@ interface ImageMarkOptions {
 }
 ```
 
-## imageSize
+## imgSize
 
 - Type: `boolean`
 - Default: `false`

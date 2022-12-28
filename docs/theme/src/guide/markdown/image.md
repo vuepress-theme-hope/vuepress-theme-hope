@@ -30,11 +30,11 @@ export default defineUserConfig({
         // Enable figure
         figure: true,
         // Enable image lazyload
-        imageLazyload: true,
+        imgLazyload: true,
         // Enable image mark
-        imageMark: true,
+        imgMark: true,
         // Enable image size
-        imageSize: true,
+        imgSize: true,
       },
     },
   }),
@@ -54,11 +54,11 @@ export default {
         // Enable figure
         figure: true,
         // Enable image lazyload
-        imageLazyload: true,
+        imgLazyload: true,
         // Enable image mark
-        imageMark: true,
+        imgMark: true,
         // Enable image size
-        imageSize: true,
+        imgSize: true,
       },
     },
   }),
@@ -69,7 +69,7 @@ export default {
 
 ## Image Lazyload
 
-If you want to lazyload images in your pages, you can set `imageLazyload: true` in plugin options.
+If you want to lazyload images in your pages, you can set `imgLazyload: true` in plugin options.
 
 ::: note
 
@@ -81,7 +81,7 @@ We are enabling lazyload using native HTML5 features, so your browser must suppo
 
 GFM supports marking pictures by ID suffix so that pictures are only displayed in a specific mode. We support both GitHub’s markup and the easy markup `#light` and `#dark`.
 
-You can enable it by setting `plugins.mdEnhance.imageMark: true` in theme options.
+You can enable it by setting `plugins.mdEnhance.imgMark: true` in theme options.
 
 ```md
 ![GitHub Light](/assets/icon/github-light.png#gh-dark-mode-only)
@@ -107,7 +107,7 @@ The above demo will render the following result
 
 ### Advanced
 
-You can pass an object to `imageMark` to config ID marks, available options are:
+You can pass an object to `imgMark` to config ID marks, available options are:
 
 ```ts
 interface ImageMarkOptions {
@@ -120,7 +120,7 @@ interface ImageMarkOptions {
 
 ## Image Size
 
-You can use `=widthxheight` to specify the image size when setting `plugins.mdEnhance.imageSize: true` in theme options.
+You can use `=widthxheight` to specify the image size when setting `plugins.mdEnhance.imgSize: true` in theme options.
 
 ```md
 ![Alt](/example.png =200x300)

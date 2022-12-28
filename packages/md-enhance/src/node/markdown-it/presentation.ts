@@ -1,5 +1,5 @@
+import { uml } from "@mdit/plugin-uml";
 import { utoa } from "vuepress-shared/node";
-import { uml } from "./uml.js";
 
 import type { PluginSimple } from "markdown-it";
 

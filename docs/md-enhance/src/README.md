@@ -177,26 +177,3 @@ export default {
 ## Migrating from V1
 
 For details, see [Migration Guide](./migration.md).
-
-## Advanced
-
-This plugin exports the following Markdown-it plugin, and you can use them in other projects.
-
-- align
-- attrs
-- container
-- figure
-- footnote
-- imageLazyload
-- imageMark
-- imageSize
-- include
-- mathjax
-- katex
-- mark
-- stylize
-- sub
-- sup
-- tasklist
-- tex
-- uml

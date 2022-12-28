@@ -1,3 +1,18 @@
+import { align } from "@mdit/plugin-align";
+import { attrs } from "@mdit/plugin-attrs";
+import { figure } from "@mdit/plugin-figure";
+import { footnote } from "@mdit/plugin-footnote";
+import { imgLazyload } from "@mdit/plugin-img-lazyload";
+import { imgMark } from "@mdit/plugin-img-mark";
+import { imgSize } from "@mdit/plugin-img-size";
+import { include } from "@mdit/plugin-include";
+import { katex } from "@mdit/plugin-katex";
+import { createMathjaxInstance, mathjax } from "@mdit/plugin-mathjax";
+import { mark } from "@mdit/plugin-mark";
+import { stylize } from "@mdit/plugin-stylize";
+import { sub } from "@mdit/plugin-sub";
+import { sup } from "@mdit/plugin-sup";
+import { tasklist } from "@mdit/plugin-tasklist";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   addCustomElement,
@@ -24,33 +39,17 @@ import { markdownEnhanceLocales } from "./locales.js";
 import {
   CODE_DEMO_DEFAULT_SETTING,
   DEFAULT_VUE_PLAYGROUND_OPTIONS,
-  align,
-  attrs,
   chart,
   codeTabs,
   echarts,
-  figure,
   flowchart,
-  footnote,
   hint,
-  imageLazyload,
-  imageMark,
-  imageSize,
-  include,
-  katex,
-  mathjax,
-  initMathjax,
-  mark,
   mermaid,
   normalDemo,
   playground,
   presentation,
   reactDemo,
-  stylize,
-  sub,
-  sup,
   tabs,
-  tasklist,
   vPre,
   vueDemo,
   vuePlayground,
@@ -65,10 +64,11 @@ import {
 import { MATHML_TAGS } from "./utils.js";
 
 import type { PluginFunction } from "@vuepress/core";
+import type { MarkdownEnv } from "@vuepress/markdown";
 import type { ViteBundlerOptions } from "@vuepress/bundler-vite";
 import type { RollupWarning } from "rollup";
-import type { KatexOptions } from "katex";
 import type { MarkdownEnhanceOptions } from "./options.js";
+import type { KatexOptions } from "./typings/index.js";
 
 export const mdEnhancePlugin =
   (
@@ -102,7 +102,7 @@ export const mdEnhancePlugin =
     const echartsEnable = getStatus("echarts");
     const flowchartEnable = getStatus("flowchart");
     const footnoteEnable = getStatus("footnote", true);
-    const imageMarkEnable = getStatus("imageMark", true);
+    const imgMarkEnable = getStatus("imgMark", true);
     const tasklistEnable = getStatus("tasklist", true);
     const mermaidEnable = getStatus("mermaid");
     const presentationEnable = getStatus("presentation");
@@ -125,7 +125,12 @@ export const mdEnhancePlugin =
       ...(typeof options.katex === "object" ? options.katex : {}),
     };
 
-    const mathjaxUtils = initMathjax(options.mathjax);
+    const mathjaxInstance =
+      options.mathjax === false
+        ? null
+        : createMathjaxInstance(
+            typeof options.mathjax === "object" ? options.mathjax : {}
+          );
 
     const revealPlugins =
       typeof options.presentation === "object" &&
@@ -194,7 +199,7 @@ export const mdEnhancePlugin =
           addCustomElement({ app, config }, MATHML_TAGS);
         else if (mathjaxEnable) {
           addCustomElement({ app, config }, /^mjx-/);
-          if (mathjaxUtils?.documentOptions.enableAssistiveMml)
+          if (mathjaxInstance?.documentOptions.enableAssistiveMml)
             addCustomElement({ app, config }, MATHML_TAGS);
         }
         if (chartEnable) {
@@ -251,14 +256,14 @@ export const mdEnhancePlugin =
           md.use(attrs, typeof options.attrs === "object" ? options.attrs : {});
         if (getStatus("align")) md.use(align);
         if (getStatus("container")) md.use(hint, locales);
-        if (getStatus("imageLazyload")) md.use(imageLazyload);
+        if (getStatus("imgLazyload")) md.use(imgLazyload);
         if (getStatus("figure")) md.use(figure);
-        if (imageMarkEnable)
+        if (imgMarkEnable)
           md.use(
-            imageMark,
-            typeof options.imageMark === "object" ? options.imageMark : {}
+            imgMark,
+            typeof options.imgMark === "object" ? options.imgMark : {}
           );
-        if (getStatus("imageSize")) md.use(imageSize);
+        if (getStatus("imgSize")) md.use(imgSize);
         if (getStatus("sup")) md.use(sup);
         if (getStatus("sub")) md.use(sub);
         if (footnoteEnable) md.use(footnote);
@@ -276,14 +281,19 @@ export const mdEnhancePlugin =
         )
           md.use(vPre);
         if (katexEnable) md.use(katex, katexOptions);
-        else if (mathjaxEnable) md.use(mathjax, mathjaxUtils!);
+        else if (mathjaxEnable) md.use(mathjax, mathjaxInstance!);
 
         if (getStatus("include"))
-          md.use(
-            include,
-            typeof options.include === "object" ? options.include : {}
-          );
-        if (getStatus("stylize")) md.use(stylize, options.stylize);
+          md.use(include, {
+            getCurrentPath: (env: MarkdownEnv) => env.filePath,
+            ...(typeof options.include === "object" ? options.include : {}),
+          });
+        if (getStatus("stylize"))
+          md.use(stylize, {
+            config: options.stylize,
+            localConfigGetter: (env: MarkdownEnv) =>
+              env.frontmatter?.["stylize"] || null,
+          });
 
         // features
         if (getStatus("codetabs")) {
@@ -335,7 +345,7 @@ export const mdEnhancePlugin =
       onPrepared: async (app): Promise<void> =>
         Promise.all([
           mathjaxEnable
-            ? prepareMathjaxStyleFile(app, mathjaxUtils!)
+            ? prepareMathjaxStyleFile(app, mathjaxInstance!)
             : Promise.resolve(),
           prepareRevealPluginFile(app, revealPlugins),
         ]).then(() => void 0),

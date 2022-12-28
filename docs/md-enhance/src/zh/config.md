@@ -166,14 +166,14 @@ icon: config
 
 是否启用图片 Figure 支持。
 
-## imageLazyload
+## imgLazyload
 
 - 类型: `boolean`
 - 默认值: `false`
 
 是否使用原生方式懒加载页面图片。
 
-## imageMark
+## imgMark
 
 - 类型: `ImageMarkOptions | boolean`
 - 默认值: `false`
@@ -189,7 +189,7 @@ interface ImageMarkOptions {
 }
 ```
 
-## imageSize
+## imgSize
 
 - 类型: `boolean`
 - 默认值: `false`

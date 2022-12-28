@@ -23,11 +23,11 @@ export default {
       // 启用 figure
       figure: true,
       // 启用图片懒加载
-      imageLazyload: true,
+      imgLazyload: true,
       // 启用图片标记
-      imageMark: true,
+      imgMark: true,
       // 启用图片大小
-      imageSize: true,
+      imgSize: true,
     }),
   ],
 };
@@ -45,11 +45,11 @@ export default {
       // 启用 figure
       figure: true,
       // 启用图片懒加载
-      imageLazyload: true,
+      imgLazyload: true,
       // 启用图片标记
-      imageMark: true,
+      imgMark: true,
       // 启用图片大小
-      imageSize: true,
+      imgSize: true,
     }),
   ],
 };
@@ -59,7 +59,7 @@ export default {
 
 ## 图片懒加载
 
-如果你想在你的页面中延迟加载图片，你可以在插件选项中设置 `imageLazyload: true`。
+如果你想在你的页面中延迟加载图片，你可以在插件选项中设置 `imgLazyload: true`。
 
 ::: note
 
@@ -71,7 +71,7 @@ export default {
 
 GFM 支持通过 ID 标记图片，使得图片只在特定的模式显示。我们同时支持 GitHub 的标记与简易标记 `#light` 和 `#dark`。
 
-你可以通过 `imageMark` 选项控制它。
+你可以通过 `imgMark` 选项控制它。
 
 ```md
 ![GitHub Light](/assets/icon/github-light.png#gh-dark-mode-only)
@@ -97,7 +97,7 @@ GFM 支持通过 ID 标记图片，使得图片只在特定的模式显示。我
 
 ### 高级用法
 
-你可以将对象传递给 `imageMark` 以配置 ID 标记，可用选项有:
+你可以将对象传递给 `imgMark` 以配置 ID 标记，可用选项有:
 
 ```ts
 interface ImageMarkOptions {
@@ -110,7 +110,7 @@ interface ImageMarkOptions {
 
 ## 图片尺寸
 
-当你在插件选项中设置 `imageSize: true` 时，可以使用 `=widthxheight` 指定图像大小。
+当你在插件选项中设置 `imgSize: true` 时，可以使用 `=widthxheight` 指定图像大小。
 
 ```md
 ![Alt](/example.png =200x300)

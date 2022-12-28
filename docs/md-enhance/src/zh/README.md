@@ -179,26 +179,3 @@ export default {
 ## 从 V1 迁移
 
 详见 [迁移指南](./migration.md)。
-
-## 高级用法
-
-这个插件导出了以下 markdown-it 插件，你可以在其他项目中使用它们。
-
-- align
-- attrs
-- container
-- figure
-- footnote
-- imageLazyload
-- imageMark
-- imageSize
-- include
-- mathjax
-- katex
-- mark
-- stylize
-- sub
-- sup
-- tasklist
-- tex
-- uml

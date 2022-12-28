@@ -17,7 +17,7 @@ icon: change
 
 - 图像标记支持
 
-  通过 `imageMark` 选项使用 `#light` 和 `#dark` 后缀标记图像以在日间模式或夜间模式下显示它们。
+  通过 `imgMark` 选项使用 `#light` 和 `#dark` 后缀标记图像以在日间模式或夜间模式下显示它们。
 
 - `v-pre` 支持
 

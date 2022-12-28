@@ -4,13 +4,13 @@ export default [
   ...rollupTypescript("node/index", {
     external: [
       "node:module",
+      /^@mdit\/plugin-/,
       "@vuepress/plugin-container",
       "@vuepress/shared",
       "@vuepress/utils",
       "markdown-it/lib/token.js",
       "markdown-it/lib/helpers/parse_link_label.js",
       /^mathjax-full\//,
-      "katex",
       "vuepress-plugin-sass-palette",
       "vuepress-shared/node",
     ],
