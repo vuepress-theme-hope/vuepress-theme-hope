@@ -42,7 +42,7 @@ export const hint: PluginWithOptions<MarkdownItHintOptions> = (
           info = options[localePath]?.[name];
         }
 
-        return `<div class="custom-container ${name}">\n<p class="custom-container-title">${
+        return `<div class="hint-container ${name}">\n<p class="hint-container-title">${
           info || name
         }</p>\n`;
       },
@@ -74,7 +74,7 @@ export const hint: PluginWithOptions<MarkdownItHintOptions> = (
           info = options[localePath]?.details;
         }
 
-        return `<details class="custom-container details"><summary>${
+        return `<details class="hint-container details"><summary>${
           info || "Details"
         }</summary>\n`;
       },

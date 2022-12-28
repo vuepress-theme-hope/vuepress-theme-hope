@@ -60,7 +60,7 @@
   --detail-text-color: #a8a8a8;
 }
 
-.custom-container {
+.hint-container {
   position: relative;
   transition: background var(--color-transition),
     border-color var(--color-transition), color var(--color-transition);
@@ -69,7 +69,7 @@
     page-break-inside: avoid;
   }
 
-  .custom-container-title {
+  .hint-container-title {
     position: relative;
     font-weight: 600;
     line-height: 1.25;
@@ -88,7 +88,7 @@
 
     color: inherit;
 
-    .custom-container-title {
+    .hint-container-title {
       padding-left: 1.5rem;
 
       @media print {
@@ -126,7 +126,7 @@
     border-color: var(--info-border-color);
     background: var(--info-bg-color);
 
-    .custom-container-title {
+    .hint-container-title {
       color: var(--info-title-color);
 
       &::before {
@@ -143,7 +143,7 @@
     border-color: var(--note-border-color);
     background: var(--note-bg-color);
 
-    .custom-container-title {
+    .hint-container-title {
       color: var(--note-title-color);
 
       &::before {
@@ -160,7 +160,7 @@
     border-color: var(--tip-border-color);
     background: var(--tip-bg-color);
 
-    .custom-container-title {
+    .hint-container-title {
       color: var(--tip-title-color);
 
       &::before {
@@ -177,7 +177,7 @@
     border-color: var(--warning-border-color);
     background: var(--warning-bg-color);
 
-    .custom-container-title {
+    .hint-container-title {
       color: var(--warning-title-color);
 
       &::before {
@@ -194,7 +194,7 @@
     border-color: var(--danger-border-color);
     background: var(--danger-bg-color);
 
-    .custom-container-title {
+    .hint-container-title {
       color: var(--danger-title-color);
 
       &::before {
@@ -208,7 +208,7 @@
   }
 }
 
-.custom-container.details {
+.hint-container.details {
   position: relative;
 
   display: block;
