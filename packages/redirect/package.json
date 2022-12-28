@@ -53,7 +53,7 @@
   "peerDependencies": {
     "vuepress": "2.0.0-beta.59",
     "vuepress-vite": "2.0.0-beta.59",
-    "vuepress-webpack": "2.0.0-beta.59"
+    "vuepress-webpack": "2.0.0-beta.60"
   },
   "engines": {
     "node": "^14.18.0 || >=16.0.0",
