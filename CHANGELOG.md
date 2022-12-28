@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.146](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.145...v2.0.0-beta.146) (2022-12-28)
+
+### ⚠ BREAKING CHANGES
+
+- **md-enhance:** `imageLazyload` is renamed to `imgLazyload`
+  `imageSize` is renamed to `imgSize`
+  `imageMark` is renamed to `imgMark`
+- **components:** all pathname will be append with base
+
+### Features
+
+- **components:** all pathname will be append with base ([d69e5ed](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d69e5ed909ad3721742cb8ef4a49f6700e6ab6c7))
+- **components:** split pdfjs files out of repo ([aafb111](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/aafb111b7dd5ba8a2fac747a15c924e57434c191))
+- **md-enhance:** extract plugins and use @mdit/plugin-xxx ([6e91afe](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6e91afe1c1e385913d30f1a3a129674c62244958))
+- **md-enhance:** render tabs in ssr ([73900e3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/73900e3b8ee530b51a1a76e2b6c7e2fb6d12dfd7))
+
+### Bug Fixes
+
+- **components:** fix vite warning ([eb34cea](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/eb34ceab1b147e8bf3974a44b5aa5d0d40aa2f16))
+- **md-enhance:** add missing package ([a099e37](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a099e373de7108900cfd1dab467334a3c68b793f))
+- **theme:** fix article list style ([5b0fcf2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5b0fcf254c1f5c038c144bbfa44565068bc90d03))
+- **theme:** preserver url params when switching language ([75b43a5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/75b43a5f9529b21b3e0629fabf0436d15fab839a))
+
 ## [2.0.0-beta.145](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.144...v2.0.0-beta.145) (2022-12-26)
 
 ### Features
