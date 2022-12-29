@@ -63,7 +63,7 @@ export default {
 
 ::: note
 
-我们正在使用原生 HTML5 功能启用延迟加载，因此您的浏览器必须支持 [loading=lazy 属性](https://caniuse.com/loading-lazy-attr)。
+我们正在使用原生 HTML5 功能启用延迟加载，因此你的浏览器必须支持 [loading=lazy 属性](https://caniuse.com/loading-lazy-attr)。
 
 :::
 
@@ -129,9 +129,9 @@ interface ImageMarkOptions {
 
 ## 图片 Figure
 
-有时，您可能希望为图像添加描述，并将其单独展示在上下文中，在这种情况下，您应该在插件选项中设置 `figure: true`。
+有时，你可能希望为图像添加描述，并将其单独展示在上下文中，在这种情况下，你应该在插件选项中设置 `figure: true`。
 
-这样当您单独将图片至于一行 (也可同时嵌套链接)，图像将显示为 `<figure>` ，标题或图片替代文字将显示为 `<figcaption>`。
+这样当你单独将图片至于一行 (也可同时嵌套链接)，图像将显示为 `<figure>` ，标题或图片替代文字将显示为 `<figcaption>`。
 
 ```md
 ![VuePress Hope 图标](/favicon.ico)

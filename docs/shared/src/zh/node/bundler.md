@@ -2,7 +2,7 @@
 title: 打包器相关
 ---
 
-打包器相关函数仅在 Node 端可用，您应该仅在 Node 侧代码中从 `vuepress-shared/node` 导入它们。
+打包器相关函数仅在 Node 端可用，你应该仅在 Node 侧代码中从 `vuepress-shared/node` 导入它们。
 
 所有函数都应在 `extendsBundlerOptions` 生命周期挂钩中调用。
 
@@ -273,7 +273,7 @@ addViteSsrExternal({ app, config }, "packageA");
 
 - mergeViteConfig
 
-  无需导入 vite 即可合并 vite 配置的功能 (您的用户可能选择使用其他 b 打包器!)
+  无需导入 vite 即可合并 vite 配置的功能 (你的用户可能选择使用其他 b 打包器!)
 
   ```ts
   export const mergeViteConfig: (

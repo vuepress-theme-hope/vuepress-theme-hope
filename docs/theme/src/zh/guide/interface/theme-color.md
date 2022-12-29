@@ -9,13 +9,13 @@ tag:
   - 主题色
 ---
 
-主题允许您自定义主题颜色，甚至提供选择器。
+主题允许你自定义主题颜色，甚至提供选择器。
 
 <!-- more -->
 
 ## 设置默认主题色
 
-您应该在 `.vuepress/styles/palette.scss` 中设置站点的默认主题颜色：
+你应该在 `.vuepress/styles/palette.scss` 中设置站点的默认主题颜色：
 
 ```scss
 $theme-color: #f00;

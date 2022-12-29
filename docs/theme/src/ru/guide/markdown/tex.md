@@ -65,7 +65,7 @@ export default {
 
 ### Инлайновый синтаксис
 
-Использование `$codes$`.
+Использование `$tex expression$`.
 
 ```md
 Euler’s identity $e^{i\pi}+1=0$ is a beautiful formula in $\mathbb{R}^2$.
@@ -75,7 +75,7 @@ Euler’s identity $e^{i\pi}+1=0$ is a beautiful formula in $\mathbb{R}^2$.
 
 ### Блочный синтаксис
 
-Использование `$$codes$$`.
+Использование `$$tex expression$$`.
 
 ```md
 $$

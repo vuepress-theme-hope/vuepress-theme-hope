@@ -531,7 +531,7 @@ export default {
 
 ## 布局配置
 
-主题允许您自定义导航栏布局。 您可以在 `navbarLayout` 选项下的 `left`、`center` 和 `right` 键中添加组件。
+主题允许你自定义导航栏布局。 你可以在 `navbarLayout` 选项下的 `left`、`center` 和 `right` 键中添加组件。
 
 可用组件:
 
