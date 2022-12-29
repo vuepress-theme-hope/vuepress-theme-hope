@@ -1,4 +1,4 @@
-import { defineComponent, h, ref, watch } from "vue";
+import { defineComponent, h, onMounted, ref, watch } from "vue";
 import { useRoute } from "vue-router";
 import type { VNode } from "vue";
 
@@ -20,12 +20,7 @@ export default defineComponent({
   setup(props) {
     const route = useRoute();
     const themeLocale = useThemeLocaleData();
-    const backToTop = ref<HTMLSpanElement>();
-
-    watch(
-      () => route.path,
-      () => backToTop.value!.focus()
-    );
+    const skipToMainContent = ref<HTMLSpanElement>();
 
     const focusMainContent = ({ target }: Event): void => {
       const el = document.querySelector(
@@ -45,9 +40,16 @@ export default defineComponent({
       }
     };
 
+    onMounted(() => {
+      watch(
+        () => route.path,
+        () => skipToMainContent.value!.focus()
+      );
+    });
+
     return (): VNode[] => [
       h("span", {
-        ref: backToTop,
+        ref: skipToMainContent,
         tabindex: "-1",
       }),
       h(

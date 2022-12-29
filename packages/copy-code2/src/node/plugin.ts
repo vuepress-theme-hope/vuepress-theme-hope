@@ -28,7 +28,7 @@ export const copyCodePlugin =
       name: "vuepress-plugin-copy-code2",
 
       define: (): Record<string, unknown> => ({
-        COPY_CODE_DELAY: options.delay || 500,
+        COPY_CODE_DELAY: options.delay || 800,
         COPY_CODE_DURATION: options.duration || 2000,
         COPY_CODE_PURE: options.pure || false,
         COPY_CODE_SHOW_IN_MOBILE: options.showInMobile || false,

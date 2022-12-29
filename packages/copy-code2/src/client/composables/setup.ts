@@ -150,12 +150,12 @@ export const setupCopyCode = (): void => {
         if (preBlock) copy(codeContainer, preBlock, buttonElement);
       }
     });
-  });
 
-  watch(
-    () => route.path,
-    () => {
-      if (!isMobile() || copyCodeShowInMobile) generateCopyButton();
-    }
-  );
+    watch(
+      () => route.path,
+      () => {
+        if (!isMobile() || copyCodeShowInMobile) generateCopyButton();
+      }
+    );
+  });
 };

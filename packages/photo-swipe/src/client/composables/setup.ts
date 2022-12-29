@@ -83,10 +83,12 @@ export const setupPhotoSwipe = (): void => {
     });
   };
 
-  watch(
-    () => route.path,
-    () => initPhotoSwipe()
-  );
+  onMounted(() => {
+    initPhotoSwipe();
 
-  onMounted(() => initPhotoSwipe());
+    watch(
+      () => route.path,
+      () => initPhotoSwipe()
+    );
+  });
 };

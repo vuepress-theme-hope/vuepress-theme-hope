@@ -17,7 +17,7 @@ icon: config
 ## delay
 
 - 类型: `number`
-- 默认值: `500`
+- 默认值: `800`
 
 操作页面 DOM 的延时，单位 ms。
 

@@ -42,7 +42,7 @@ Whether generate a small simple button with pure style.
 ## delay
 
 - Type: `number`
-- Default: `500`
+- Default: `800`
 
 The delay of registering copy code buttons, in ms.
 

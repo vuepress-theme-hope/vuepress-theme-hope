@@ -35,7 +35,7 @@ You can pass options to [`photo-swipe`](http://photoswipe.com/) via `options`.
 
 ## Operation Delay
 
-If your theme adds animations when switching pages, you may need to delay when photo-swipe re-finds page images. You can configure this delay via the `delay` option, the default value is `500` (in milliseconds).
+If your theme adds animations when switching pages, you may need to delay when photo-swipe re-finds page images. You can configure this delay via the `delay` option, the default value is `800` (in milliseconds).
 
 ## Locale Customization
 

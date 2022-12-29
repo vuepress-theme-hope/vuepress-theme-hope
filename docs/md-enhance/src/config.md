@@ -667,7 +667,7 @@ Config which you want to pass to reveal.js.
 ## delay
 
 - Type: `number`
-- Default: `500`
+- Default: `800`
 
 The delay of operating dom, in ms.
 

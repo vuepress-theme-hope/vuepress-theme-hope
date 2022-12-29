@@ -17,7 +17,7 @@ Options passed to [`photo-swipe`](http://photoswipe.com/)
 ## delay
 
 - Type: `number`
-- Default: `500`
+- Default: `800`
 
 The delay of operating dom, in ms.
 

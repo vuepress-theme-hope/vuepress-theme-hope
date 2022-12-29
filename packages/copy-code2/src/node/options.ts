@@ -42,7 +42,7 @@ export interface CopyCodeOptions {
    *
    * 如果你使用的主题有切换动画，建议配置此选项为 `切换动画时长 + 200`
    *
-   * @default 500
+   * @default 800
    */
   delay?: number;
 

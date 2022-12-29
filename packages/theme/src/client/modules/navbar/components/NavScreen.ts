@@ -6,6 +6,7 @@ import {
   ref,
   onBeforeUnmount,
   watch,
+  onMounted,
 } from "vue";
 import { useRoute } from "vue-router";
 
@@ -38,20 +39,22 @@ export default defineComponent({
     const isMobile = useMobile();
     const screen = ref<HTMLElement>();
 
-    watch(isMobile, (value) => {
-      if (!value && props.show) {
-        clearAllBodyScrollLocks();
-        emit("close");
-      }
-    });
+    onMounted(() => {
+      watch(isMobile, (value) => {
+        if (!value && props.show) {
+          clearAllBodyScrollLocks();
+          emit("close");
+        }
+      });
 
-    watch(
-      () => route.path,
-      () => {
-        clearAllBodyScrollLocks();
-        emit("close");
-      }
-    );
+      watch(
+        () => route.path,
+        () => {
+          clearAllBodyScrollLocks();
+          emit("close");
+        }
+      );
+    });
 
     onBeforeUnmount(() => {
       clearAllBodyScrollLocks();

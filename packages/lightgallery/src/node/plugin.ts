@@ -24,7 +24,7 @@ export const lightgalleryPlugin =
       define: (): Record<string, unknown> => ({
         IMAGE_SELECTOR:
           options.selector || ".theme-default-content :not(a) > img",
-        LIGHT_GALLERY_DELAY: options.delay || 500,
+        LIGHT_GALLERY_DELAY: options.delay || 800,
         LIGHT_GALLERY_OPTIONS: options.options || {},
         LIGHT_GALLERY_AUTOPLAY: plugins.includes("autoplay"),
         LIGHT_GALLERY_FULLSCREEN: plugins.includes("fullscreen"),

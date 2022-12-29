@@ -61,17 +61,6 @@ export default defineComponent({
       void router.push({ path: route.path, query });
     };
 
-    watch(currentPage, () => {
-      // list top border distance
-      const distance =
-        document.querySelector("#article-list")!.getBoundingClientRect().top +
-        window.scrollY;
-
-      setTimeout(() => {
-        window.scrollTo(0, distance);
-      }, 100);
-    });
-
     onMounted(() => {
       const { page } = route.query;
 
@@ -83,6 +72,17 @@ export default defineComponent({
             updatePageview();
           }
         );
+
+      watch(currentPage, () => {
+        // list top border distance
+        const distance =
+          document.querySelector("#article-list")!.getBoundingClientRect().top +
+          window.scrollY;
+
+        setTimeout(() => {
+          window.scrollTo(0, distance);
+        }, 100);
+      });
     });
 
     return (): VNode =>

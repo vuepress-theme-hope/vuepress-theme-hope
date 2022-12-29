@@ -146,7 +146,7 @@ export const mdEnhancePlugin =
       name: "vuepress-plugin-md-enhance",
 
       define: (): Record<string, unknown> => ({
-        MARKDOWN_ENHANCE_DELAY: options.delay || 500,
+        MARKDOWN_ENHANCE_DELAY: options.delay || 800,
         CODE_DEMO_OPTIONS: {
           ...CODE_DEMO_DEFAULT_SETTING,
           ...(typeof options.demo === "object" ? options.demo : {}),
