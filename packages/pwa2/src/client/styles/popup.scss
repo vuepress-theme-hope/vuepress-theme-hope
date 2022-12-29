@@ -43,6 +43,10 @@
 
   cursor: pointer;
 
+  @media print {
+    display: none;
+  }
+
   .icon-wrapper {
     display: inline-block;
     vertical-align: middle;

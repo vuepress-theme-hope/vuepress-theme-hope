@@ -57,6 +57,10 @@
   }
   // stylelint-enable media-feature-name-no-unknown
 
+  @media print {
+    display: none;
+  }
+
   &:hover,
   &:active {
     background: var(--c-brand-light, #4abf8a);
@@ -77,6 +81,10 @@
 
   width: 100vw;
   height: 100vh;
+
+  @media print {
+    display: none;
+  }
 
   button {
     @include reset.button;
