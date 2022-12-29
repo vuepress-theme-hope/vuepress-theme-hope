@@ -45,7 +45,7 @@ features:
     link: /guide/sup-sub.html
 
   - title: Footnote support
-    icon: footnote
+    icon: quote
     details: Your Markdown now support footnotes
     link: /guide/footnote.html
 

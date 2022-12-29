@@ -45,7 +45,7 @@ features:
     link: /zh/guide/sup-sub.html
 
   - title: 脚注
-    icon: footnote
+    icon: quote
     details: 你的 Markdown 现在将支持脚注
     link: /zh/guide/footnote.html
 

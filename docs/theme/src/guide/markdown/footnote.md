@@ -1,6 +1,6 @@
 ---
 title: Footnote
-icon: footnote
+icon: quote
 category:
   - Markdown
 tag:
