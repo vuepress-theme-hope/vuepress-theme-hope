@@ -138,7 +138,6 @@ exports[`tabs > Should support tabs id 4`] = `
 
 exports[`tabs > should ignore other items 1`] = `
 "<Tabs id=\\"0\\" :data='[{\\"title\\":\\"js\\"}]' :active=\\"0\\">
-
 <template #tab0=\\"{ title, value, isActive }\\">
 <pre><code class=\\"language-js\\">const a = 1;
 </code></pre>
@@ -151,7 +150,6 @@ exports[`tabs > should ignore other items 1`] = `
 
 exports[`tabs > should ignore other items 2`] = `
 "<Tabs id=\\"0\\" :data='[{\\"title\\":\\"js\\"}]' :active=\\"0\\">
-
 <template #tab0=\\"{ title, value, isActive }\\">
 <pre><code class=\\"language-js\\">const a = 1;
 </code></pre>

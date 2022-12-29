@@ -285,7 +285,7 @@ export const mdEnhancePlugin =
 
         if (getStatus("include"))
           md.use(include, {
-            getCurrentPath: (env: MarkdownEnv) => env.filePath,
+            currentPath: (env: MarkdownEnv) => env.filePath,
             ...(typeof options.include === "object" ? options.include : {}),
           });
         if (getStatus("stylize"))

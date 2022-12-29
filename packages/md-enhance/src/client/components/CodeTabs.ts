@@ -66,7 +66,7 @@ export default defineComponent({
     // update store
     const updateStore = (): void => {
       if (props.tabId) {
-        const { title, value = title } = props.data[activeIndex.value];
+        const { title, id: value = title } = props.data[activeIndex.value];
 
         codeTabStore.value[props.tabId] = value;
       }
@@ -98,7 +98,7 @@ export default defineComponent({
       }
 
       if (props.tabId) {
-        const { title, value = title } = props.data[activeIndex.value];
+        const { title, id: value = title } = props.data[activeIndex.value];
 
         codeTabStore.value[props.tabId] = value;
       }
@@ -107,7 +107,7 @@ export default defineComponent({
     const getInitialIndex = (): number => {
       if (props.tabId) {
         const valueIndex = props.data.findIndex(
-          ({ title, value = title }) =>
+          ({ title, id: value = title }) =>
             codeTabStore.value[props.tabId] === value
         );
 
@@ -125,7 +125,7 @@ export default defineComponent({
         (newValue, oldValue) => {
           if (props.tabId && newValue !== oldValue) {
             const index = props.data.findIndex(
-              ({ title, value = title }) => value === newValue
+              ({ title, id: value = title }) => value === newValue
             );
 
             if (index !== -1) activeIndex.value = index;
@@ -165,7 +165,7 @@ export default defineComponent({
                 );
               })
             ),
-            props.data.map(({ title, value = title }, index) => {
+            props.data.map(({ title, id: value = title }, index) => {
               const isActive = index === activeIndex.value;
 
               return h(
