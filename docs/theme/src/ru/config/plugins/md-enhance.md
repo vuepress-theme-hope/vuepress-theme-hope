@@ -225,7 +225,7 @@ interface TaskListOptions {
 
 ### mermaid
 
-- Тип: `boolean`
+- Тип: `MermaidConfig | boolean`
 - По умолчанию: `false`
 
 Включить ли поддержку [Mermaid](https://mermaid-js.github.io/mermaid/#/).

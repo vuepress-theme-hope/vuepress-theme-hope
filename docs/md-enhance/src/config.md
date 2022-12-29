@@ -290,7 +290,7 @@ Whether to enable flowchart support
 
 ## mermaid
 
-- Type: `boolean`
+- Type: `MermaidConfig | boolean`
 - Default: `false`
 
 Whether to enable [Mermaid](https://mermaid-js.github.io/mermaid/#/) support.
