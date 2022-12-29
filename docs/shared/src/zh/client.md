@@ -81,7 +81,7 @@ export const usePageTitle: () => PageTitleRef;
 
 可以通过函数名称轻松推断出功能。
 
-ua 参数是 `navigator.userAgent`，因为它在 SSR 中不可用，所以您应该在 `onMounted` 生命周期中调用这些函数。
+ua 参数是 `navigator.userAgent`，因为它在 SSR 中不可用，所以你应该在 `onMounted` 生命周期中调用这些函数。
 
 ```ts
 export const checkIsMobile: (ua: string) => boolean;

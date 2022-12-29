@@ -95,37 +95,37 @@ export default {
 
 ## 使用
 
-您应该通过插件选项中的 `playground.presets` 添加预设。
+你应该通过插件选项中的 `playground.presets` 添加预设。
 
-要使用交互演示，您应该使用一个名为 `playground#preset` 的容器。
+要使用交互演示，你应该使用一个名为 `playground#preset` 的容器。
 
-在其中，您可以使用 3 个指令：
+在其中，你可以使用 3 个指令：
 
 - `@file fileName` 紧跟文件的代码块
 - `@import importMapFileName` 紧跟一个自定义“导入映射”的 json 代码块
 - `@setting` 紧跟一个自定义设置的 json 代码块
 
-您可以查看以下演示以查看更多详细信息。
+你可以查看以下演示以查看更多详细信息。
 
 ## 可用预设
 
 目前，我们支持 `ts` 和 `vue` 预设，我们期待更多来自 PR 的预设。
 
-如果您想添加自己的交互演示，可以在 [高级用法](#高级用法) 中添加您自己的预设。同时我们欢迎为您的精彩预设创建 PR。
+如果你想添加自己的交互演示，可以在 [高级用法](#高级用法) 中添加你自己的预设。同时我们欢迎为你的精彩预设创建 PR。
 
 ::: info TS 预设
 
 TS 预设默认使用官方交互演示，不支持多个 ts 文件，所以你需要做的就是通过 `@file xxx.ts` 指令添加一个 ts 文件 (文件名不重要，但需要 `.ts` 文件扩展名)。
 
-要使用定制化的编译器选项，您可以通过 `@setting` 指令提供一个。但请注意，官方 TS Playground 并不支持所有的编译器。
+要使用定制化的编译器选项，你可以通过 `@setting` 指令提供一个。但请注意，官方 TS Playground 并不支持所有的编译器。
 
-同时，您可以通过插件选项中的 `playground.config.ts` 自定义默认的 compilerOption，通过 `service` 选项可以使用官方交互演示之外的其他服务，以防你想部署自己的交互演示站点。
+同时，你可以通过插件选项中的 `playground.config.ts` 自定义默认的 compilerOption，通过 `service` 选项可以使用官方交互演示之外的其他服务，以防你想部署自己的交互演示站点。
 
 :::
 
 ::: info Vue 预设
 
-Vue 预设默认使用官方 playground，并不像 [Vue Playground](./vue-playground.md) 支持自定义选项。因此，如果您严重依赖 Vue 交互演示，我们建议您改用 [Vue 交互演示](./vue-playground.md)。
+Vue 预设默认使用官方 playground，并不像 [Vue Playground](./vue-playground.md) 支持自定义选项。因此，如果你严重依赖 Vue 交互演示，我们建议你改用 [Vue 交互演示](./vue-playground.md)。
 
 但是如果你只想要几个演示而不是捆绑整个 Vue 交互演示，你可以使用这个预设来创建一个 `<iframe>`。
 
@@ -373,7 +373,7 @@ const msg = ref("Hello Playground!");
 
 ## 高级用法
 
-您可以提供自己的预设。
+你可以提供自己的预设。
 
 ```ts
 interface PlaygroundCodeConfig {

@@ -5,7 +5,7 @@ icon: change
 
 ## 传统模式
 
-您可以在调用 `mdEnhancePlugin` 时传递第二个参数 `true` 以启用传统模式，插件将尝试以 V1 行为运行。
+你可以在调用 `mdEnhancePlugin` 时传递第二个参数 `true` 以启用传统模式，插件将尝试以 V1 行为运行。
 
 ## 新功能
 

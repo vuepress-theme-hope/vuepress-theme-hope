@@ -269,12 +269,12 @@ export default {
 
 摘要生成器将尝试从 Frontmatter 内容中找到有效的摘要分隔符，如果找到，它将使用分隔符之前的内容，分隔符默认为 `<!-- more -->`，并且你可以通过 `excerptSeparator` 选项来自定义它。
 
-如果找不到有效的分隔符，它将从 Markdown 文件的开头开始解析内容，直到长度达到预设值时停止。该值默认为 `300`，您可以通过设置 `excerptLength` 选项来自定义它。
+如果找不到有效的分隔符，它将从 Markdown 文件的开头开始解析内容，直到长度达到预设值时停止。该值默认为 `300`，你可以通过设置 `excerptLength` 选项来自定义它。
 
-要选择哪个页面应该生成摘要，您可以使用 `excerptFilter` 选项。
+要选择哪个页面应该生成摘要，你可以使用 `excerptFilter` 选项。
 
 ::: tip 示例
 
-通常，如果用户设置了 `frontmatter.description`，您可能希望使用它们，因此如果 `frontmatter.description` 不为空，您可以让过滤器函数返回 `false`。
+通常，如果用户设置了 `frontmatter.description`，你可能希望使用它们，因此如果 `frontmatter.description` 不为空，你可以让过滤器函数返回 `false`。
 
 ::::

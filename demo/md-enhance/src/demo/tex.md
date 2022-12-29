@@ -6,7 +6,7 @@ title: Tex
 
 ### Inline Syntax
 
-Use `$codes$`.
+Use `$tex expression$`.
 
 ```md
 Euler’s identity $e^{i\pi}+1=0$ is a beautiful formula in $\mathbb{R}^2$.
@@ -16,7 +16,7 @@ Euler’s identity $e^{i\pi}+1=0$ is a beautiful formula in $\mathbb{R}^2$.
 
 ### Block Syntax
 
-Use `$$codes$$`.
+Use `$$tex expression$$`.
 
 ```md
 $$

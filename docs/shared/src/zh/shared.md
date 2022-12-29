@@ -8,9 +8,9 @@ title: 共享
 
 编码并压缩 / 解码并解压缩 属性。
 
-当您想对字符串内容进行编码并通过 props 将其传递给组件时，这在 markdown 插件中很有用。
+当你想对字符串内容进行编码并通过 props 将其传递给组件时，这在 markdown 插件中很有用。
 
-您可以使用 `encodeURIComponent` 和 `decodeURIComponent` 简单地实现这一点，但如果内容包含很多特殊字符，它可能会非常大。
+你可以使用 `encodeURIComponent` 和 `decodeURIComponent` 简单地实现这一点，但如果内容包含很多特殊字符，它可能会非常大。
 
 所以我们提供 `utoa` 和 `atou` 来压缩和编码内容。
 

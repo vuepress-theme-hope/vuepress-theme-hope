@@ -41,7 +41,7 @@ npm i -D vuepress-shared@next
 
 VuePress 同时运行在 Node.js 端和浏览器端，我们称之为 `node` 和 `client`。
 
-因此，您应该注意导入正确的文件，因为 Node.js 具有内置模块并能够访问文件系统，并且浏览器具有全局变量，如 `window` 或 `navigator`。
+因此，你应该注意导入正确的文件，因为 Node.js 具有内置模块并能够访问文件系统，并且浏览器具有全局变量，如 `window` 或 `navigator`。
 
 :::
 

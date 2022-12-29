@@ -2,7 +2,7 @@
 title: 内容相关
 ---
 
-与内容相关的函数应该在 Node 侧被调用，您应该仅在 Node 端代码中从 `vuepress-shared/node` 导入它们。
+与内容相关的函数应该在 Node 侧被调用，你应该仅在 Node 端代码中从 `vuepress-shared/node` 导入它们。
 
 ## getPageExcerpt
 

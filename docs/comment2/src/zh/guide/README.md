@@ -12,19 +12,19 @@ icon: creative
 
 ## 评论状态
 
-默认情况下，`<CommentService />` 组件是全局启用的，您可以在插件选项和页面 frontmatter 中使用 `comment` 选项来控制它。
+默认情况下，`<CommentService />` 组件是全局启用的，你可以在插件选项和页面 frontmatter 中使用 `comment` 选项来控制它。
 
-- 您可以通过在页面 frontmatter 中设置 `comment: false` 在本地禁用它。
+- 你可以通过在页面 frontmatter 中设置 `comment: false` 在本地禁用它。
 
 - 要使其全局禁用，请在插件选项中将 `comment` 设置为 `false`。 然后你可以在页面 frontmatter 中设置 comment: true 以在局部启用它。
 
 ## 评论服务
 
-目前您可以选择 Giscus、Waline 和 Twikoo。
+目前你可以选择 Giscus、Waline 和 Twikoo。
 
 ::: tip 选择评论服务
 
-您的博客或文档的目标人群:
+你的博客或文档的目标人群:
 
 - 程序员和开发人员: Giscus
 - 公众: Waline

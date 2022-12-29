@@ -49,13 +49,13 @@ export default {
 
 :::
 
-您只能启用其中一个，并且 katex 具有更高的优先级。
+你只能启用其中一个，并且 katex 具有更高的优先级。
 
 ## 语法
 
 ### 行内语法
 
-使用 `$codes$` 来表示。
+使用 `$tex expression$` 来表示。
 
 ```md
 Euler’s identity $e^{i\pi}+1=0$ is a beautiful formula in $\mathbb{R}^2$.
@@ -65,7 +65,7 @@ Euler’s identity $e^{i\pi}+1=0$ is a beautiful formula in $\mathbb{R}^2$.
 
 ### 块语法
 
-使用 `$$codes$$` 来表示。
+使用 `$$tex expression$$` 来表示。
 
 ```md
 $$
@@ -98,19 +98,19 @@ Mathjax:
 
 ::: info KaTeX
 
-使用 KaTeX 时，您可以将对象作为 `KatexOptions` 传递给 `katex`。 它将被传递给 KaTeX 有关可用选项，请参阅 [KaTeX Docs](https://katex.org/docs/options.html)。
+使用 KaTeX 时，你可以将对象作为 `KatexOptions` 传递给 `katex`。 它将被传递给 KaTeX 有关可用选项，请参阅 [KaTeX Docs](https://katex.org/docs/options.html)。
 
-此外，我们还支持一个特殊选项 `mhchem`，您可以通过将其设置为 `true` 来启用 mhchem 扩展。
+此外，我们还支持一个特殊选项 `mhchem`，你可以通过将其设置为 `true` 来启用 mhchem 扩展。
 
 :::
 
 ::: info Mathjax
 
-使用 mathjax 时，您可以将对象传递给 `mathjax`。
+使用 mathjax 时，你可以将对象传递给 `mathjax`。
 
-您可以将 `output` 选项设置为 `svg` (默认) 或 `chtml` 以更改 SVG 和 HTML 输出。
+你可以将 `output` 选项设置为 `svg` (默认) 或 `chtml` 以更改 SVG 和 HTML 输出。
 
-此外，您可以通过 `tex` 选项将设置传递给 TeX 输入解析器，并且可以根据出书格式，通过 `chtml` 或 `svg` 选项传递给通用 HTML 输出解析器和 SVG 输出解析器的输出语法设置 。
+此外，你可以通过 `tex` 选项将设置传递给 TeX 输入解析器，并且可以根据出书格式，通过 `chtml` 或 `svg` 选项传递给通用 HTML 输出解析器和 SVG 输出解析器的输出语法设置 。
 
 :::
 
