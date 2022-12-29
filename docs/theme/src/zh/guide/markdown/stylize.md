@@ -150,7 +150,7 @@ export default defineUserConfig({
       mdEnhance: {
         stylize: [
           {
-            matcher: /n’t$/,
+            matcher: /^不/,
             replacer: ({ tag, attrs, content }) => {
               if (tag === "em")
                 return {
@@ -178,7 +178,7 @@ export default {
     mdEnhancePlugin({
       stylize: [
         {
-          matcher: /n’t$/,
+          matcher: /^不/,
           replacer: ({ tag, attrs, content }) => {
             if (tag === "em")
               return {

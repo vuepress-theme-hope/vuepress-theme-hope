@@ -443,7 +443,7 @@ x,\quad x>0
 $$
 ```
 
-## Text
+### Text
 
 To insert text in TeX, you should use `\text{}` to wrap them.
 

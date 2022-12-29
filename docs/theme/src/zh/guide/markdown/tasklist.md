@@ -60,10 +60,10 @@ export default {
 
 ## 例子
 
-- [ ] Plan A
-- [x] Plan B
+- [ ] 计划 A
+- [x] 计划 B
 
 ```md
-- [ ] Plan A
-- [x] Plan B
+- [ ] 计划 A
+- [x] 计划 B
 ```
