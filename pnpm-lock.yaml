@@ -1025,7 +1025,7 @@ importers:
   packages/md-enhance:
     specifiers:
       '@babel/core': ^7.20.7
-      '@mdit/plugin-align': ^0.1.0
+      '@mdit/plugin-align': ^0.2.0
       '@mdit/plugin-attrs': ^0.1.0
       '@mdit/plugin-container': ^0.1.0
       '@mdit/plugin-figure': ^0.1.0
@@ -1069,7 +1069,7 @@ importers:
       vuepress-shared: workspace:*
     dependencies:
       '@babel/core': 7.20.7
-      '@mdit/plugin-align': 0.1.0
+      '@mdit/plugin-align': 0.2.1
       '@mdit/plugin-attrs': 0.1.0
       '@mdit/plugin-container': 0.1.0
       '@mdit/plugin-figure': 0.1.0
@@ -3181,11 +3181,11 @@ packages:
   /@mdit-vue/types/0.11.0:
     resolution: {integrity: sha512-ygCGP7vFpqS02hpZwEe1uz8cfImWX06+zRs08J+tCZRKb6k+easIaIHFtY9ZSxt7j9L/gAPLDo/5RmOT6z0DPQ==}
 
-  /@mdit/plugin-align/0.1.0:
-    resolution: {integrity: sha512-zSWWRgeufXCfIMfNRCl3vWHGCPtr8USBOYnApTYVa1WURbTi9pyUx9BESDEVF2urYo3RppeSuZ8/wXg4P5mJfA==}
+  /@mdit/plugin-align/0.2.1:
+    resolution: {integrity: sha512-vsMRqvep/OXz7cJiQ/L7UJ+b9Vr5WrpI4TDxPT4Wmlg0g5djGdy8gBc2ZBM1un3RZjJ90nJwq0tArLnRalfBTg==}
     engines: {node: '>= 14'}
     dependencies:
-      '@mdit/plugin-container': 0.1.0
+      '@mdit/plugin-container': 0.2.1
       '@types/markdown-it': 12.2.3
       markdown-it: 13.0.1
     dev: false
@@ -3200,6 +3200,14 @@ packages:
 
   /@mdit/plugin-container/0.1.0:
     resolution: {integrity: sha512-YpSiQGWsfRGciYaLP1TR75PS7wdPSL/OEcMYskO0LUAgGKQ9oNjonpxJ5DvBfwnw3yWYgymdoLBiciWNeE3m5Q==}
+    engines: {node: '>= 14'}
+    dependencies:
+      '@types/markdown-it': 12.2.3
+      markdown-it: 13.0.1
+    dev: false
+
+  /@mdit/plugin-container/0.2.1:
+    resolution: {integrity: sha512-THPOBSyXssHG0NvhN4TIS36WYuzGFoIPdiYf2fShUYo549cFAc+l+nW20BSSrwmDO0gnh5O786YZNzLDqMFxZg==}
     engines: {node: '>= 14'}
     dependencies:
       '@types/markdown-it': 12.2.3
