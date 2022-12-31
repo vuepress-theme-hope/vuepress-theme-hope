@@ -17,6 +17,7 @@ export default [
       "@vuepress/shared",
       "plyr",
       "vue",
+      "vuepress-shared/client",
       /\.s?css$/,
     ],
     dtsExternal: [/\.s?css$/],
@@ -37,6 +38,10 @@ export default [
       "vuepress-shared/client",
       /\.scss$/,
     ],
+    dtsExternal: [/\.scss$/],
+  }),
+  ...rollupTypescript("client/components/Catalog", {
+    external: ["vue", "vue-router", /\.scss$/],
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/CodePen", {
@@ -77,11 +82,17 @@ export default [
       "@vueuse/core",
       "plyr",
       "vue",
+      "vuepress-shared/client",
       /\.s?css$/,
     ],
     dtsExternal: ["@vueuse/core", /\.s?css$/],
   }),
+  ...rollupTypescript("client/shared", {
+    external: ["vuepress-shared/client"],
+    dtsExternal: ["vuepress-shared/client"],
+  }),
   ...rollupTypescript("client/vueuse", {
     external: ["@vueuse/core"],
+    dtsExternal: ["@vueuse/core"],
   }),
 ];

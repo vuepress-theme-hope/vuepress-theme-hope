@@ -1,7 +1,7 @@
 ---
 title: 首页
 icon: home
-order: 6
+order: 7
 category:
   - 布局
 tag:

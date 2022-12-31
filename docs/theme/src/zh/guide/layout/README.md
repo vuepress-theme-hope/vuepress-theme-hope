@@ -18,6 +18,8 @@ dir:
 
 - [页面](page.md)
 
+- [目录页](catalog.md)
+
 - [主页](home.md)
 
 - [幻灯片页面](slides.md)

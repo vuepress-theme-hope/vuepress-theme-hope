@@ -17,6 +17,5 @@ export default [
       /.scss$/u,
     ],
     dtsExternal: [/.scss$/u],
-    resolve: true,
   }),
 ];

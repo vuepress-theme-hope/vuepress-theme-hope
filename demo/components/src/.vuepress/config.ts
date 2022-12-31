@@ -41,6 +41,7 @@ export default defineUserConfig({
         "AudioPlayer",
         "Badge",
         "BiliBili",
+        "Catalog",
         "CodePen",
         "FontIcon",
         "PDF",

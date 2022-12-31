@@ -3,6 +3,7 @@ import { nprogressPlugin } from "@vuepress/plugin-nprogress";
 import { prismjsPlugin } from "@vuepress/plugin-prismjs";
 import { themeDataPlugin } from "@vuepress/plugin-theme-data";
 import { getActiveHeaderLinksPlugin } from "./activeHeaderLinks.js";
+import { getAutoCatalogPlugin } from "./autoCatalog.js";
 import { getBlogPlugin } from "./blog/index.js";
 import { getCommentPlugin } from "./comment.js";
 import { getComponentsPlugin } from "./components.js";
@@ -35,6 +36,7 @@ export const getPluginConfig = (
   const pluginConfig = [
     getComponentsPlugin(options, plugins.components, legacy),
     getActiveHeaderLinksPlugin(plugins.activeHeaderLinks),
+    getAutoCatalogPlugin(plugins.autoCatalog),
     plugins.externalLinkIcon === false ? null : externalLinkIconPlugin(),
     plugins.nprogress === false ? null : nprogressPlugin(),
     plugins.prismjs === false ? null : prismjsPlugin(),

@@ -63,6 +63,9 @@ export const componentsPlugin =
                     if (
                       warning.message.includes(
                         'is imported from external module "@vueuse/core" but never used in '
+                      ) ||
+                      warning.message.includes(
+                        'is imported from external module "vuepress-shared/client" but never used in '
                       )
                     )
                       return;

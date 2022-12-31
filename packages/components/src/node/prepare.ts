@@ -7,6 +7,7 @@ const availableComponents: AvailableComponent[] = [
   "AudioPlayer",
   "Badge",
   "BiliBili",
+  "Catalog",
   "CodePen",
   "FontIcon",
   "PDF",
@@ -75,7 +76,7 @@ export const prepareConfigFile = (
 import ${item} from "${CLIENT_FOLDER}components/${item}.js";
 `;
       enhance += `\
-app.component("${item}", ${item});
+if(!hasGlobalComponent("${item}")) app.component("${item}", ${item});
 `;
     }
 
@@ -136,6 +137,7 @@ import Notice from "${CLIENT_FOLDER}components/Notice.js";
     `components/config.js`,
     `\
 import { defineClientConfig } from "@vuepress/client";
+import { hasGlobalComponent } from "${CLIENT_FOLDER}shared.js";
 ${
   shouldImportH
     ? `\

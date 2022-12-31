@@ -86,6 +86,7 @@
     "gray-matter": "^4.0.3",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6",
+    "vuepress-plugin-auto-catalog": "workspace:*",
     "vuepress-plugin-blog2": "workspace:*",
     "vuepress-plugin-comment2": "workspace:*",
     "vuepress-plugin-components": "workspace:*",

@@ -1,4 +1,5 @@
 import type { GitPluginOptions } from "@vuepress/plugin-git";
+import type { AutoCatalogOptions } from "vuepress-plugin-auto-catalog";
 import type { CommentOptions } from "vuepress-plugin-comment2";
 import type { ComponentOptions } from "vuepress-plugin-components";
 import type { CopyCodeOptions } from "vuepress-plugin-copy-code2";
@@ -22,6 +23,15 @@ export interface PluginsOptions {
    * @default true
    */
   activeHeaderLinks?: boolean;
+
+  /**
+   * Auto catalog plugin Options
+   *
+   * 自动目录插件选项
+   *
+   * @default true
+   */
+  autoCatalog?: AutoCatalogOptions | boolean;
 
   /**
    * Blog plugin options
