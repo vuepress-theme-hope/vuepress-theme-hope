@@ -1374,6 +1374,7 @@ importers:
       gray-matter: ^4.0.3
       vue: ^3.2.45
       vue-router: ^4.1.6
+      vuepress-plugin-auto-catalog: workspace:*
       vuepress-plugin-blog2: workspace:*
       vuepress-plugin-comment2: workspace:*
       vuepress-plugin-components: workspace:*
@@ -1412,6 +1413,7 @@ importers:
       gray-matter: 4.0.3
       vue: 3.2.45
       vue-router: 4.1.6_vue@3.2.45
+      vuepress-plugin-auto-catalog: link:../auto-catalog
       vuepress-plugin-blog2: link:../blog2
       vuepress-plugin-comment2: link:../comment2
       vuepress-plugin-components: link:../components
