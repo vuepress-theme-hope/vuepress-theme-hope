@@ -2,6 +2,14 @@ import { rollupTypescript } from "../../scripts/rollup.js";
 
 export default [
   ...rollupTypescript("node/index", {
-    external: ["@vuepress/core", "vuepress-shared/node"],
+    external: [
+      "@vuepress/core",
+      "@vuepress/shared",
+      "@vuepress/utils",
+      "vuepress-shared/node",
+    ],
+  }),
+  ...rollupTypescript("client/config", {
+    external: ["@vuepress/client", /^@vuepress-plugin-components\/client\//],
   }),
 ];
