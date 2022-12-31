@@ -25,7 +25,7 @@ pnpm i
 
 ```sh
 corepack enable
-corepack prepare pnpm@7.18.2 --activate
+corepack prepare pnpm@7.21.0 --activate
 ```
 
 :::
@@ -46,6 +46,7 @@ corepack prepare pnpm@7.18.2 --activate
 ├── demo → 演示项目
 │
 ├── docs → 文档目录
+│ ├── auto-catalog → auto-catalog 插件文档
 │ ├── blog → blog2 插件文档
 │ ├── comment → comment2 插件文档
 │ ├── components → components 插件文档
@@ -66,6 +67,7 @@ corepack prepare pnpm@7.18.2 --activate
 ├── docs-shared → 文档的通用文件
 |
 ├── packages → 项目源代码
+│ ├── auto-catalog → auto-catalog 插件
 │ ├── blog2 → blog2 插件
 │ ├── comment2 → comment2 插件
 │ ├── components → components 插件

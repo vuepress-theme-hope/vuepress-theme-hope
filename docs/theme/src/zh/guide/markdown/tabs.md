@@ -137,7 +137,7 @@ npm 应该与 Node.js 被一同安装。
 如果你使用的是 Node.js v16+，你可以使用 corepack 来启用 pnpm:
 
 ```bash
-corepack prepare pnpm@7.18.2 --activated
+corepack prepare pnpm@7.21.0 --activated
 ```
 
 否则，你可以使用 npm 安装它:

@@ -18,16 +18,12 @@ git clone git@github.com:vuepress-theme-hope/vuepress-theme-hope.git
 pnpm i
 ```
 
-::: tip
-
 If you have not installed pnpm, please install it using the following command.
 
 ```sh
 corepack enable
-corepack prepare pnpm@7.18.2 --activate
+corepack prepare pnpm@7.21.0 --activate
 ```
-
-:::
 
 ## Project File Structure
 
@@ -102,13 +98,11 @@ You can find the corresponding project in the docs directory so you can modify t
 
 After ensuring that the `pnpm lint` and `pnpm lint:md` commands emit no errors, you can commit to GitHub to open a PR.
 
-::: tip Preview Docs
+### Preview Docs
 
 Since the docs are using local themes and plugins, you need to build the local project through `pnpm build` first.
 
 To start previewing, cd to the right project under `docs` directory, then run `pnpm docs:vite-dev` (using vite) or `pnpm docs:webpack-dev` (using webpack).
-
-:::
 
 ## Project Modification
 
@@ -157,13 +151,9 @@ For better performance, all plugins are packed and minified using rollup when th
 
    If you modify Markdown, you also need to run the `pnpm lint:md` command.
 
-::: warning
-
 Please do not mix build and dev commands as they compile in completely different ways.
 
 You may need to execute the `pnpm clean` command to clear previous command result.
-
-:::
 
 ## Commit
 
@@ -177,10 +167,6 @@ The project uses `husky` to add Git Hooks for verification:
 
   This means that you need to ensure that your commit comments comply with Semantic
 
-::: tip
-
 If you cannot pass the above Git Hooks, you will not be able to complete `git commit`.
 
 If you have already contributed something, but cannot make a commit and don’t know how to fix it, you can add the `--no-verify` flag when committing to bypass Git Hooks.
-
-:::

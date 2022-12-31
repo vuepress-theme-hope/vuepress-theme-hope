@@ -23,6 +23,11 @@ export const enNavbarConfig = navbar([
         icon: "plugin",
         children: [
           {
+            text: "Auto catalog Plugin",
+            icon: "tree",
+            link: "https://vuepress-theme-hope.github.io/v2/auto-catalog/",
+          },
+          {
             text: "Blog Plugin",
             icon: "blog",
             link: "https://vuepress-theme-hope.github.io/v2/blog/",

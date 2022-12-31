@@ -25,7 +25,7 @@ If you have not installed pnpm, please install it using the following command.
 
 ```sh
 corepack enable
-corepack prepare pnpm@7.18.2 --activate
+corepack prepare pnpm@7.21.0 --activate
 ```
 
 :::
@@ -46,6 +46,7 @@ The project is a monorepo, managed by pnpm.
 ├── demo → Demo projects
 │
 ├── docs → document directory
+│ ├── auto-catalog → auto-catalog plugin document
 │ ├── blog → blog2 plugin document
 │ ├── comment → comment2 plugin document
 │ ├── components → components plugin document
@@ -66,6 +67,7 @@ The project is a monorepo, managed by pnpm.
 ├── docs-shared → common files for docs
 |
 ├── packages → project source code
+│ ├── auto-catalog → auto-catalog plugin
 │ ├── blog2 → blog2 plugin
 │ ├── comment2 → comment2 plugin
 │ ├── components → components plugin
