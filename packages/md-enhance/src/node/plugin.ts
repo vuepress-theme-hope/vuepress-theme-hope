@@ -22,6 +22,7 @@ import {
   addViteSsrNoExternal,
   chainWebpack,
   deepMerge,
+  getBundlerName,
   getLocales,
   mergeViteConfig,
 } from "vuepress-shared/node";
@@ -169,10 +170,11 @@ export const mdEnhancePlugin =
       }),
 
       extendsBundlerOptions: (config: unknown, app): void => {
-        const { bundler } = app.options;
-
-        if (bundler.name.endsWith("vite")) {
+        if (getBundlerName(app) === "vite") {
           const bundlerConfig = <ViteBundlerOptions>config;
+
+          const originalOnWarn =
+            bundlerConfig.viteOptions?.build?.rollupOptions?.onwarn;
 
           bundlerConfig.viteOptions = mergeViteConfig(
             bundlerConfig.viteOptions || {},
@@ -185,7 +187,7 @@ export const mdEnhancePlugin =
                   ) {
                     if (warning.message.includes("Use of eval")) return;
 
-                    warn(warning);
+                    originalOnWarn?.(warning, warn);
                   },
                 },
               },

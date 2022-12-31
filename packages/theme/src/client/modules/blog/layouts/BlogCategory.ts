@@ -74,9 +74,11 @@ export default defineComponent({
                   ? h(resolveComponent(componentName.value))
                   : null
               ),
-              h(DropTransition, { appear: true, delay: 0.24 }, () =>
-                h(ArticleList, { key: route.path, items: items.value })
-              ),
+              blogOptions.value.name
+                ? h(DropTransition, { appear: true, delay: 0.24 }, () =>
+                    h(ArticleList, { key: route.path, items: items.value })
+                  )
+                : null,
             ]),
             h(DropTransition, { delay: 0.16 }, () => h(InfoPanel)),
           ])
