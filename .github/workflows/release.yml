@@ -30,13 +30,9 @@ jobs:
           NODE_OPTIONS: --max_old_space_size=8192
         run: pnpm run build
 
-      - name: Set Token
-        run: |-
-          echo "registry=https://registry.npmjs.org/
-          //registry.npmjs.org/:always-auth=true
-          //registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}"
-
       - name: Publish packages
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: pnpm publish -r --tag next --no-git-checks
 
       - name: Sync npmmirror
