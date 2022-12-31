@@ -192,8 +192,6 @@ export default defineComponent({
           }
         });
 
-      console.log(result);
-
       return result;
     };
 
