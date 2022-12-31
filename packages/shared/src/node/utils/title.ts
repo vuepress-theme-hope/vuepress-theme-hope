@@ -13,8 +13,8 @@ const EN_PREPOSITION = [
   "into",
 ];
 
-export const getTitle = (dirname: string): string => {
-  const words = dirname
+export const getTitleFromFilename = (filename: string): string => {
+  const words = filename
     .replace(/([A-Z])/g, "-$1")
     .replace(/[-_]/g, " ")
     .replace(/ +/g, " ")

@@ -3,7 +3,7 @@ import theme from "./theme.js";
 
 export default config(
   {
-    base: `sitemap`,
+    base: "sitemap",
     indexName: "vuepress-theme-hope-sitemap2",
   },
   {

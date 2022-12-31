@@ -4,7 +4,7 @@ import theme from "./theme.js";
 
 export default config(
   {
-    base: `lightgallery`,
+    base: "lightgallery",
     indexName: "vuepress-theme-hope-lightgallery",
   },
   {

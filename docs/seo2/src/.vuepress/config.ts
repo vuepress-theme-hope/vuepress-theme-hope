@@ -3,7 +3,7 @@ import theme from "./theme.js";
 
 export default config(
   {
-    base: `seo`,
+    base: "seo",
     indexName: "vuepress-theme-hope-seo2",
   },
   {

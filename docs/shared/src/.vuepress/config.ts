@@ -3,7 +3,7 @@ import theme from "./theme.js";
 
 export default config(
   {
-    base: `shared`,
+    base: "shared",
     indexName: "vuepress-theme-hope-shared",
   },
   {

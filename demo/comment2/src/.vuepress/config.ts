@@ -16,7 +16,7 @@ export default defineUserConfig({
 
     repo: "vuepress-theme-hope/vuepress-theme-hope/tree/main/demo/comment2/",
 
-    navbar: ["README.md", "test.md"],
+    navbar: ["/", "/test"],
   }),
 
   plugins: [

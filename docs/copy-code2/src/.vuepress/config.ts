@@ -3,7 +3,7 @@ import theme from "./theme.js";
 
 export default config(
   {
-    base: `copy-code`,
+    base: "copy-code",
     indexName: "vuepress-theme-hope-copy-code2",
   },
   {

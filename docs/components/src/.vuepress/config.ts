@@ -3,7 +3,7 @@ import theme from "./theme.js";
 
 export default config(
   {
-    base: `components`,
+    base: "components",
     indexName: "vuepress-theme-hope-components",
   },
   {
