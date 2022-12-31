@@ -19,10 +19,12 @@ export const generateCatalog = async (
 
   const pathToBeGenerated = new Set<string>();
 
-  pages.map(({ path: pagePath, pathLocale }) => {
-    let catalogPath = pagePath.replace(/\/(?:[^/]+\/?)$/, "/");
+  pages.forEach(({ path: pagePath, pathLocale }) => {
+    let catalogPath = pagePath;
 
     while (catalogPath !== pathLocale) {
+      catalogPath = catalogPath.replace(/\/(?:[^/]+\/?)$/, "/");
+
       if (
         // not discovered yet
         !pathToBeGenerated.has(catalogPath) &&
@@ -35,8 +37,6 @@ export const generateCatalog = async (
 
         pathToBeGenerated.add(catalogPath);
       }
-
-      catalogPath = catalogPath.replace(/\/[^/]+\/?$/, "/");
     }
   });
 
