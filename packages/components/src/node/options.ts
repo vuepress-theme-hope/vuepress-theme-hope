@@ -5,6 +5,7 @@ export type AvailableComponent =
   | "AudioPlayer"
   | "Badge"
   | "BiliBili"
+  | "Catalog"
   | "CodePen"
   | "FontIcon"
   | "PDF"

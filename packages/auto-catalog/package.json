@@ -1,0 +1,54 @@
+{
+  "name": "vuepress-plugin-auto-catalog",
+  "version": "2.0.0-beta.146",
+  "description": "Generate catalog for VuePress2",
+  "keywords": [
+    "vuepress",
+    "vuepress2",
+    "vuepress-plugin",
+    "auto-catalog",
+    "catalog",
+    "readme"
+  ],
+  "homepage": "https://github.com/vuepress-theme-hope/vuepress-theme-hope/packages/auto-catalog#readme",
+  "bugs": {
+    "url": "https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuepress-theme-hope/vuepress-theme-hope.git",
+    "directory": "packages/auto-catalog"
+  },
+  "license": "MIT",
+  "author": {
+    "email": "mister-hope@outlook.com",
+    "name": "Mr.Hope",
+    "url": "https://mrhope.site"
+  },
+  "type": "module",
+  "exports": {
+    ".": "./lib/node/index.js",
+    "./package.json": "./package.json"
+  },
+  "main": "lib/node/index.js",
+  "types": "lib/node/index.d.ts",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "clean": "rimraf ./lib ./*.tsbuildinfo",
+    "dev": "pnpm dev:ts",
+    "dev:ts": "tsc -b tsconfig.build.json --watch"
+  },
+  "dependencies": {
+    "@vuepress/client": "2.0.0-beta.60",
+    "@vuepress/core": "2.0.0-beta.60",
+    "vuepress-plugin-components": "workspace:*",
+    "vuepress-shared": "workspace:*"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
