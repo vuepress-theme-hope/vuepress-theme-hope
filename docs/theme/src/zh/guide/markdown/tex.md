@@ -97,8 +97,8 @@ $$
 
 Katex:
 
-- [$\KaTeX$ 支持功能](https://katex.org/docs/supported.html)
-- [$\KaTeX$ 支持列表](https://katex.org/docs/support_table.html)
+- [KaTeX 支持功能](https://katex.org/docs/supported.html)
+- [KaTeX 支持列表](https://katex.org/docs/support_table.html)
 
 Mathjax:
 
@@ -156,14 +156,12 @@ Mathjax:
 - 多重积分:
   - `\iint`: $\iint$
   - `\iiint`: $\iiint$
-  - `\liiiint`: $\liiiint$ (块级公式正常使用 `\iiiint`)
+  - `\iiiint`: $\iiiint$
   - `\idotsint` $\idotsint$
 
 ::: tip
 
 连加、连乘、极限、积分等大型运算符可以用 `\limits` 和 `\nolimits` 来强制显式地指定是否压缩这些上下标。
-
-`\iiiint`($\liiiint$) 是使用 hack 实现的，由于间距问题对于行公式需要使用 `\liiiint` 命令。
 
 `\varoiint`, `\sqint`, `\sqiint`, `\ointctrclockwise`, `\ointclockwise`, `\varointclockwise`, `\varointctrclockwise`, `\fint`, `\landupint`, `\landdownint` 目前不被支持。
 
@@ -177,9 +175,9 @@ $\sum_{i=1}^n i\; \prod_{i=1}^n$
 
 $\sum\limits _{i=1}^n i\; \prod\limits_{i=1}^n$
 
-$\iint_1^2 x^2\; \iiint_1^2 x^2\; \liiiint_1^2 x^2\; \idotsint_1^2 x^2$
+$\iint_1^2 x^2\; \iiint_1^2 x^2\; \iiiint_1^2 x^2\; \idotsint_1^2 x^2$
 
-$\iint\limits_1^2 x^2\; \iiint\limits_1^2 x^2\; \liiiint\limits_1^2 x^2\; \idotsint\limits_1^2 x^2$
+$\iint\limits_1^2 x^2\; \iiint\limits_1^2 x^2\; \iiiint\limits_1^2 x^2\; \idotsint\limits_1^2 x^2$
 
 $$
 \iint_1^2 x^2\; \iiint_1^2 x^2\; \iiiint_1^2 x^2\; \idotsint_1^2 x^2
@@ -192,9 +190,9 @@ $\sum_{i=1}^n i\; \prod_{i=1}^n$
 
 $\sum\limits _{i=1}^n i\; \prod\limits _{i=1}^n$
 
-$\iint_1^2 x^2\; \iiint_1^2 x^2\; \liiiint_1^2 x^2\; \idotsint_1^2 x^2$
+$\iint_1^2 x^2\; \iiint_1^2 x^2\; \iiiint_1^2 x^2\; \idotsint_1^2 x^2$
 
-$\iint\limits_1^2 x^2\; \iiint\limits_1^2 x^2\; \liiiint\limits_1^2 x^2\; \idotsint\limits_1^2 x^2$
+$\iint\limits_1^2 x^2\; \iiint\limits_1^2 x^2\; \iiiint\limits_1^2 x^2\; \idotsint\limits_1^2 x^2$
 
 $$\iint_1^2 x^2\; \iiint_1^2 x^2\; \iiiint_1^2 x^2\; \idotsint_1^2 x^2$$
 ```

@@ -109,7 +109,7 @@ export default hopeTheme({
       imgMark: true,
       imgSize: true,
       include: true,
-      katex: true,
+      mathjax: true,
       mark: true,
       mermaid: true,
       playground: {

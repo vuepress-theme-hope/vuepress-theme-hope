@@ -101,8 +101,8 @@ $$
 
 Katex:
 
-- [Функции поддержки $\KaTeX$](https://katex.org/docs/supported.html)
-- [Список поддержки $\KaTeX$](https://katex.org/docs/support_table.html)
+- [Функции поддержки KaTeX](https://katex.org/docs/supported.html)
+- [Список поддержки KaTeX](https://katex.org/docs/support_table.html)
 
 Mathjax:
 
@@ -164,14 +164,12 @@ Mathjax:
 - Мультиточки:
   - `\iint`: $\iint$
   - `\iiint`: $\iiint$
-  - `\liiiint`: $\liiiint$ (Use `\iiiint` for block as normal)
+  - `\iiiint`: $\iiiint$
   - `\idotsint` $\idotsint$
 
 ::: tip
 
 Большие операторы, такие как непрерывное сложение, умножение, пределы и интегралы, могут использовать `\limits` и `\nolimits`, чтобы явно указать сжимать эти верхние индексы или нет.
-
-`\iiiint`($\liiiint$) поддерживается хаком, поэтому для встроенного отображения вы должны использовать `\liiiint`.
 
 `\varoiint`, `\sqint`, `\sqiint`, `\ointctrclockwise`, `\ointclockwise`, `\varointclockwise`, `\varointctrclockwise`, `\fint`, `\landupint`, `\landdownint` в настоящее время не поддерживается.
 
@@ -185,9 +183,9 @@ $\sum_{i=1}^n i\; \prod_{i=1}^n$
 
 $\sum\limits _{i=1}^n i\; \prod\limits_{i=1}^n$
 
-$\iint_1^2 x^2\; \iiint_1^2 x^2\; \liiiint_1^2 x^2\; \idotsint_1^2 x^2$
+$\iint_1^2 x^2\; \iiint_1^2 x^2\; \iiiint_1^2 x^2\; \idotsint_1^2 x^2$
 
-$\iint\limits_1^2 x^2\; \iiint\limits_1^2 x^2\; \liiiint\limits_1^2 x^2\; \idotsint\limits_1^2 x^2$
+$\iint\limits_1^2 x^2\; \iiint\limits_1^2 x^2\; \iiiint\limits_1^2 x^2\; \idotsint\limits_1^2 x^2$
 
 $$
 \iint_1^2 x^2\; \iiint_1^2 x^2\; \iiiint_1^2 x^2\; \idotsint_1^2 x^2
@@ -200,9 +198,9 @@ $\sum_{i=1}^n i\; \prod_{i=1}^n$
 
 $\sum\limits _{i=1}^n i\; \prod\limits _{i=1}^n$
 
-$\iint_1^2 x^2\; \iiint_1^2 x^2\; \liiiint_1^2 x^2\; \idotsint_1^2 x^2$
+$\iint_1^2 x^2\; \iiint_1^2 x^2\; \iiiint_1^2 x^2\; \idotsint_1^2 x^2$
 
-$\iint\limits_1^2 x^2\; \iiint\limits_1^2 x^2\; \liiiint\limits_1^2 x^2\; \idotsint\limits_1^2 x^2$
+$\iint\limits_1^2 x^2\; \iiint\limits_1^2 x^2\; \iiiint\limits_1^2 x^2\; \idotsint\limits_1^2 x^2$
 
 $$\iint_1^2 x^2\; \iiint_1^2 x^2\; \iiiint_1^2 x^2\; \idotsint_1^2 x^2$$
 ```

@@ -200,7 +200,7 @@ interface TaskListOptions {
 - Type: `KatexOptions & { mhchem?: boolean } | boolean`
 - Default: `false`
 
-Whether to enable $\TeX$ syntax support through $\KaTeX$. You can pass an object to config $\KaTeX$.
+Whether to enable $\TeX$ syntax support through KaTeX. You can pass an object to config KaTeX.
 
 In particular, you can enable the mhchem extension with `katex.mhchem: true`.
 
