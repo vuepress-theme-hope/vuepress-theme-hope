@@ -1,7 +1,7 @@
 ---
 title: Главная страница
 icon: home
-order: 6
+order: 7
 category:
   - Макет
 tag:

@@ -1,7 +1,7 @@
 ---
 title: 幻灯片
 icon: slides
-order: 7
+order: 8
 category:
   - 布局
 tag:

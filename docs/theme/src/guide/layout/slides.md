@@ -1,7 +1,7 @@
 ---
 title: Slide
 icon: slides
-order: 7
+order: 8
 category:
   - Layout
 tag:

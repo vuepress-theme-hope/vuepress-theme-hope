@@ -17,6 +17,8 @@ dir:
 
 - [Страница](page.md)
 
+- [Catalog](catalog.md)
+
 - [Главная страница](home.md)
 
 - [Слайды](slides.md)

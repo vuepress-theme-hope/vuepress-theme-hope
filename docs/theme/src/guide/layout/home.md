@@ -1,7 +1,7 @@
 ---
 title: Home Page
 icon: home
-order: 6
+order: 7
 category:
   - Layout
 tag:

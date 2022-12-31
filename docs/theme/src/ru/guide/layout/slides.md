@@ -1,7 +1,7 @@
 ---
 title: Слайд
 icon: slides
-order: 7
+order: 8
 category:
   - Макет
 tag:
