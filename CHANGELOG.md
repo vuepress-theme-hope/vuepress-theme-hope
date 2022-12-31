@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-beta.147](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.146...v2.0.0-beta.147) (2022-12-31)
+
+### Features
+
+- add auto catalog plugin and Catalog component ([#2339](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2339)) ([d651a89](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d651a8946792587caa30dc28ece89e284aafd736))
+- **components:** update icon ([edfb097](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/edfb097b206b66579427c64f0674bbdcb1af98bf))
+- improve code block print style ([d4b6b12](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d4b6b12e44bb91f53f8f80f1b53ebecffbcf862b))
+- **md-enhance:** use `@mdit/plugin-tab` ([f86b34a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f86b34a34e36f48514b7ecb8cdc0d4a7733cc44f))
+- **pwa2:** improve print style ([7d2a5f5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7d2a5f5d317b834b2bb898ae97851d6d55492962))
+- **theme:** hide empty icon with no category selected, close [#2598](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2598) ([219e82b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/219e82b6a2b2c318ddd1f483dc03d958e0d62ca2))
+
+### Bug Fixes
+
+- **components:** correct icon asset link ([ed684b1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ed684b1acbff69325d9c9b1a10bbdc18d4b4591c))
+- **deps:** update dependency axios to v1.2.2 ([#2593](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2593)) ([cd3471a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cd3471aa81f827b4755eef086f7e08c2619573f0))
+- fix viteConfig function merging ([53b92e6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/53b92e694150cdf797b18e23171a9174659ea3f5))
+- **md-enhance:** fix `mermaid` option type ([#2594](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2594)) ([c5742a2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c5742a290adcb81aa8c3283e88daaf82bdbaa386))
+- **md-enhance:** fix code tab style, close [#2595](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2595) ([0b0c09b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0b0c09b99495ac2c414f192028fcb11900bb09d8))
+
 ## [2.0.0-beta.146](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.145...v2.0.0-beta.146) (2022-12-28)
 
 ### ⚠ BREAKING CHANGES
