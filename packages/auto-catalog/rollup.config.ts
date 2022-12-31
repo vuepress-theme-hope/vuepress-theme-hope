@@ -11,6 +11,10 @@ export default [
     ],
   }),
   ...rollupTypescript("client/config", {
-    external: ["@vuepress/client", /^@vuepress-plugin-components\/client\//],
+    external: [
+      "@vuepress/client",
+      "vuepress-shared/client",
+      /^vuepress-plugin-components\/client\//,
+    ],
   }),
 ];
