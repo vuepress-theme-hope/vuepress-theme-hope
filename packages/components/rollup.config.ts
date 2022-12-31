@@ -17,6 +17,7 @@ export default [
       "@vuepress/shared",
       "plyr",
       "vue",
+      "vuepress-shared/client",
       /\.s?css$/,
     ],
     dtsExternal: [/\.s?css$/],
@@ -81,14 +82,17 @@ export default [
       "@vueuse/core",
       "plyr",
       "vue",
+      "vuepress-shared/client",
       /\.s?css$/,
     ],
     dtsExternal: ["@vueuse/core", /\.s?css$/],
   }),
   ...rollupTypescript("client/shared", {
     external: ["vuepress-shared/client"],
+    dtsExternal: ["vuepress-shared/client"],
   }),
   ...rollupTypescript("client/vueuse", {
     external: ["@vueuse/core"],
+    dtsExternal: ["@vueuse/core"],
   }),
 ];

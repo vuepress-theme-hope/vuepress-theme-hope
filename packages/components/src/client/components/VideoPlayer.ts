@@ -6,7 +6,7 @@ import {
   onMounted,
   ref,
 } from "vue";
-import { getLink } from "../utils/index.js";
+import { getLink } from "../utils/getLink.js";
 
 import type { UseMediaTextTrackSource } from "@vueuse/core";
 import type { Options as PlyrOptions } from "plyr";

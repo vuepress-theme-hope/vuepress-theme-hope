@@ -13,7 +13,6 @@ export default [
     dtsExternal: ["vuepress-shared"],
   }),
   ...rollupTypescript("client/components/SearchResult", {
-    resolve: true,
     external: [
       "@vuepress/client",
       "@vueuse/core",
@@ -28,7 +27,6 @@ export default [
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/config", {
-    resolve: true,
     external: [
       /^@temp\//,
       "@vuepress/client",
