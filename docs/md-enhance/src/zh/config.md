@@ -252,7 +252,7 @@ interface TaskListOptions {
 - 类型: `KatexOptions | boolean`
 - 默认值: `false`
 
-是否通过 $\KaTeX$ 启用 $\TeX$ 语法支持。你可以传入一个对象作为 $\KaTeX$ 的配置选项。
+是否通过 KaTeX 启用 $\TeX$ 语法支持。你可以传入一个对象作为 KaTeX 的配置选项。
 
 特别低，你可以通过 `katex.mhchem: true` 来启用 mhchem 扩展。
 

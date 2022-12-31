@@ -4,6 +4,7 @@ import { defineComponent, h, ref, watch } from "vue";
 
 import type { VNode } from "vue";
 
+import "katex/dist/katex.css";
 import "./katex-playground.scss";
 
 const locales = {
