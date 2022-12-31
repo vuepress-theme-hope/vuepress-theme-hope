@@ -4,10 +4,10 @@ import { Transition, computed, defineComponent, h, onMounted, ref } from "vue";
 import { useLocaleConfig } from "vuepress-shared/client";
 import { BackToTopIcon } from "./icons.js";
 
-import "../styles/back-to-top.scss";
-
 import type { VNode } from "vue";
 import type { BackToTopLocaleConfig } from "../../shared/index.js";
+
+import "../styles/back-to-top.scss";
 
 declare const BACK_TO_TOP_LOCALES: BackToTopLocaleConfig;
 

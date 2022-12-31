@@ -195,6 +195,27 @@ Component locales.
 
 Locales config for BackToTop button.
 
+### locales.catalog
+
+- Type: `CatalogLocaleConfig`
+
+  ```ts
+  interface CatalogLocaleData {
+    /**
+     * Catalog title
+     */
+    title: string;
+  }
+
+  interface CatalogLocaleConfig {
+    [localePath: string]: CatalogLocaleData;
+  }
+  ```
+
+- Required: No
+
+Locales config for catalog component.
+
 ::: details Built-in Supported Languages
 
 - **Simplified Chinese** (zh-CN)

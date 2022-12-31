@@ -1,12 +1,16 @@
 import { computed, defineComponent, h } from "vue";
 import { RouterLink, useRoute, useRouter } from "vue-router";
+import { useLocaleConfig } from "vuepress-shared/client";
 
 import FontIcon from "./FontIcon.js";
 
 import type { PropType, VNode } from "vue";
 import type { RouteMeta } from "vue-router";
+import type { CatalogLocaleConfig } from "../../shared/locales.js";
 
 import "../styles/catalog.scss";
+
+declare const CATALOG_LOCALES: CatalogLocaleConfig;
 
 interface CatalogInfo {
   title: string;
@@ -88,6 +92,7 @@ export default defineComponent({
   },
 
   setup(props) {
+    const locale = useLocaleConfig(CATALOG_LOCALES);
     const route = useRoute();
     const router = useRouter();
 
@@ -200,8 +205,7 @@ export default defineComponent({
     return (): VNode | null => {
       return isEnabled.value
         ? h("div", { class: "catalog-wrapper" }, [
-            // TODO: Add locale
-            h("h2", { class: "main-title" }, "Catalog"),
+            h("h2", { class: "main-title" }, locale.value.title),
 
             ...info.value.map(
               ({ children = [], icon, path, title }, mainIndex) => [

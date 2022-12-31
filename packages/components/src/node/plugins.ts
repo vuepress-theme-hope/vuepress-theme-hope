@@ -6,7 +6,7 @@ import {
 } from "vuepress-shared/node";
 
 import { convertOptions } from "./convert/index.js";
-import { backToTopLocales } from "./locales.js";
+import { backToTopLocales, catalogLocales } from "./locales.js";
 import { prepareConfigFile } from "./prepare.js";
 import { getIconPrefix, logger } from "./utils.js";
 
@@ -37,6 +37,12 @@ export const componentsPlugin =
             name: "backToTop",
             default: backToTopLocales,
             config: options.locales?.backToTop,
+          }),
+          CATALOG_LOCALES: getLocales({
+            app,
+            name: "catalog",
+            default: catalogLocales,
+            config: options.locales?.catalog,
           }),
           ICON_PREFIX:
             typeof prefix === "string" ? prefix : getIconPrefix(assets),

@@ -195,6 +195,27 @@ AddThis 的公开 ID。
 
 返回顶部按钮国际化配置。
 
+### locales.catalog
+
+- 类型: `CatalogLocaleConfig`
+
+  ```ts
+  interface CatalogLocaleData {
+    /**
+     * 目录标题
+     */
+    title: string;
+  }
+
+  interface CatalogLocaleConfig {
+    [localePath: string]: CatalogLocaleData;
+  }
+  ```
+
+- 必填: 否
+
+目录组件国际化配置。
+
 ::: details 内置支持语言
 
 - **简体中文** (zh-CN)

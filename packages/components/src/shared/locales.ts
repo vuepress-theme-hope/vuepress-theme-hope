@@ -10,3 +10,14 @@ export interface BackToTopLocaleData {
 }
 
 export type BackToTopLocaleConfig = RequiredLocaleConfig<BackToTopLocaleData>;
+
+export interface CatalogLocaleData {
+  /**
+   * Catalog title text
+   *
+   * 目录标题文字
+   */
+  title: string;
+}
+
+export type CatalogLocaleConfig = RequiredLocaleConfig<CatalogLocaleData>;
