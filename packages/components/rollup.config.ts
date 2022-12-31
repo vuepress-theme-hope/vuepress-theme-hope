@@ -85,6 +85,9 @@ export default [
     ],
     dtsExternal: ["@vueuse/core", /\.s?css$/],
   }),
+  ...rollupTypescript("client/shared", {
+    external: ["vuepress-shared/client"],
+  }),
   ...rollupTypescript("client/vueuse", {
     external: ["@vueuse/core"],
   }),
