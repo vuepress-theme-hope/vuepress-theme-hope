@@ -3,7 +3,7 @@ import theme from "./theme.js";
 
 export default config(
   {
-    base: `comment`,
+    base: "comment",
     indexName: "vuepress-theme-hope-comment2",
   },
   {

@@ -3,7 +3,7 @@ import theme from "./theme.js";
 
 export default config(
   {
-    base: `blog`,
+    base: "blog",
     indexName: "vuepress-theme-hope-blog2",
   },
   {

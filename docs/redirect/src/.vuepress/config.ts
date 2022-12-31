@@ -3,7 +3,7 @@ import theme from "./theme.js";
 
 export default config(
   {
-    base: `redirect`,
+    base: "redirect",
     indexName: "vuepress-theme-hope-redirect",
   },
   {

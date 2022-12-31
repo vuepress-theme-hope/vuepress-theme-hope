@@ -4,7 +4,7 @@ import theme from "./theme.js";
 
 export default config(
   {
-    base: `search-pro`,
+    base: "search-pro",
     indexName: false,
   },
   {

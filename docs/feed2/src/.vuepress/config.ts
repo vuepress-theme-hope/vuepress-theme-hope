@@ -3,7 +3,7 @@ import theme from "./theme.js";
 
 export default config(
   {
-    base: `feed`,
+    base: "feed",
     indexName: "vuepress-theme-hope-feed2",
   },
   {

@@ -3,7 +3,7 @@ import theme from "./theme.js";
 
 export default config(
   {
-    base: `sass-palette`,
+    base: "sass-palette",
     indexName: "vuepress-theme-hope-sass-palette",
   },
   {

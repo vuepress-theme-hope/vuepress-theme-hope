@@ -9,12 +9,7 @@ export const generateCatalog = async (
   app: App,
   {
     exclude = [],
-    getFrontmatter = (path): PageFrontmatter => {
-      const [, basename] = /\/([^/]+\/?)$/.exec(path) || [];
-      const title = getTitleFromFilename(basename);
-
-      return { title };
-    },
+    frontmatter = (): PageFrontmatter => ({}),
   }: AutoCatalogOptions
 ): Promise<void> => {
   const {
@@ -47,12 +42,18 @@ export const generateCatalog = async (
 
   await Promise.all(
     Array.from(pathToBeGenerated).map(async (catalogPath) => {
+      const [, basename] = /\/([^/]+)\/?$/.exec(catalogPath) || [];
+      const title = getTitleFromFilename(basename);
+
       app.pages.push(
         await createPage(app, {
           content: `\
-<Catalog />
+<AutoCatalog />
 `,
-          frontmatter: getFrontmatter(catalogPath),
+          frontmatter: {
+            title,
+            ...(frontmatter(catalogPath) || {}),
+          },
           path: catalogPath,
         })
       );

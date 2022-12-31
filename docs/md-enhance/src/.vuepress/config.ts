@@ -6,7 +6,7 @@ const __dirname = getDirname(import.meta.url);
 
 export default config(
   {
-    base: `md-enhance`,
+    base: "md-enhance",
     indexName: "vuepress-theme-hope-md-enhance",
   },
   {

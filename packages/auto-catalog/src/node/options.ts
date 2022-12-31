@@ -21,5 +21,5 @@ export interface AutoCatalogOptions {
    * @param path 当前生成的路径名称
    * @returns 页面 Frontmatter
    */
-  getFrontmatter?: (path: string) => PageFrontmatter;
+  frontmatter?: (path: string) => PageFrontmatter;
 }

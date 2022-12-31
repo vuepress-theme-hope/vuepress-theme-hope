@@ -77,6 +77,7 @@ jobs:
 
       - name: Combine output
         run: |
+          pnpm cpx "docs/auto-catalog/dist/**" dist/auto-catalog
           pnpm cpx "docs/blog2/dist/**" dist/blog
           pnpm cpx "docs/comment2/dist/**" dist/comment
           pnpm cpx "docs/components/dist/**" dist/components
@@ -142,6 +143,7 @@ jobs:
 
       - name: Combine output
         run: |
+          pnpm cpx "docs/auto-catalog/dist/**" dist/auto-catalog
           pnpm cpx "docs/blog2/dist/**" dist/blog
           pnpm cpx "docs/comment2/dist/**" dist/comment
           pnpm cpx "docs/components/dist/**" dist/components
@@ -238,6 +240,7 @@ jobs:
       fail-fast: false
       matrix:
         plugin-name:
+          - auto-catalog
           - blog2
           - comment2
           - components

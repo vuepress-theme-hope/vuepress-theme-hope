@@ -3,7 +3,7 @@ import theme from "./theme.js";
 
 export default config(
   {
-    base: `copyright`,
+    base: "copyright",
     indexName: "vuepress-theme-hope-copyright2",
   },
   {
