@@ -41,22 +41,22 @@ export const generateCatalog = async (
   });
 
   await Promise.all(
-    Array.from(pathToBeGenerated).map(async (catalogPath) => {
+    Array.from(pathToBeGenerated).map((catalogPath) => {
       const [, basename] = /\/([^/]+)\/?$/.exec(catalogPath) || [];
       const title = getTitleFromFilename(basename);
 
-      app.pages.push(
-        await createPage(app, {
-          content: `\
+      return createPage(app, {
+        content: `\
 <AutoCatalog />
 `,
-          frontmatter: {
-            title,
-            ...(frontmatter(catalogPath) || {}),
-          },
-          path: catalogPath,
-        })
-      );
+        frontmatter: {
+          title,
+          ...(frontmatter(catalogPath) || {}),
+        },
+        path: catalogPath,
+      });
     })
-  );
+  ).then((pages) => {
+    app.pages.push(...pages);
+  });
 };
