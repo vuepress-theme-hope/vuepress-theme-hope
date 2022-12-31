@@ -1,5 +1,9 @@
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
-import { getLocales, mergeViteConfig } from "vuepress-shared/node";
+import {
+  getBundlerName,
+  getLocales,
+  mergeViteConfig,
+} from "vuepress-shared/node";
 
 import { convertOptions } from "./convert/index.js";
 import { backToTopLocales } from "./locales.js";
@@ -41,10 +45,11 @@ export const componentsPlugin =
       },
 
       extendsBundlerOptions: (config: unknown, app): void => {
-        const { bundler } = app.options;
-
-        if (bundler.name.endsWith("vite")) {
+        if (getBundlerName(app) === "vite") {
           const bundlerConfig = <ViteBundlerOptions>config;
+
+          const originalOnWarn =
+            bundlerConfig.viteOptions?.build?.rollupOptions?.onwarn;
 
           bundlerConfig.viteOptions = mergeViteConfig(
             bundlerConfig.viteOptions || {},
@@ -62,7 +67,7 @@ export const componentsPlugin =
                     )
                       return;
 
-                    warn(warning);
+                    originalOnWarn?.(warning, warn);
                   },
                 },
               },

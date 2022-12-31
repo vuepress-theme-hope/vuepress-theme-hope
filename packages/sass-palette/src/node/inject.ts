@@ -1,4 +1,4 @@
-import { mergeViteConfig } from "vuepress-shared/node";
+import { getBundlerName, mergeViteConfig } from "vuepress-shared/node";
 
 import type { App } from "@vuepress/core";
 import type { ViteBundlerOptions } from "@vuepress/bundler-vite";
@@ -26,10 +26,10 @@ export const injectConfigModule = (
   app: App,
   id: string
 ): void => {
-  const { bundler } = app.options;
+  const bundlerName = getBundlerName(app);
 
   // for vite
-  if (bundler.name.endsWith("vite")) {
+  if (bundlerName === "vite") {
     const viteBundlerConfig = <ViteBundlerOptions>config;
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
@@ -74,7 +74,7 @@ export const injectConfigModule = (
   }
 
   // for webpack
-  if (bundler.name.endsWith("webpack")) {
+  else if (bundlerName === "webpack") {
     const webpackBundlerConfig = <WebpackBundlerOptions>config;
 
     if (!webpackBundlerConfig.scss) webpackBundlerConfig.scss = {};
