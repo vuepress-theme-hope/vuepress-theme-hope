@@ -1,6 +1,7 @@
 import {
   addViteOptimizeDepsExclude,
   addViteOptimizeDepsInclude,
+  getBundlerName,
   tagHint,
 } from "vuepress-shared/node";
 
@@ -16,10 +17,10 @@ import type { WebpackBundlerOptions } from "@vuepress/bundler-webpack";
  * @param customElements tags recognized as custom element
  */
 export const checkTag = (config: unknown, app: App): void => {
-  const { bundler } = app.options;
+  const bundlerName = getBundlerName(app);
 
   // for vite
-  if (bundler.name.endsWith("vite")) {
+  if (bundlerName === "vite") {
     const viteBundlerConfig = config as ViteBundlerOptions;
 
     if (!viteBundlerConfig.vuePluginOptions)
@@ -49,7 +50,7 @@ export const checkTag = (config: unknown, app: App): void => {
   }
 
   // for webpack
-  if (bundler.name.endsWith("webpack")) {
+  else if (bundlerName === "webpack") {
     const webpackBundlerConfig = config as WebpackBundlerOptions;
 
     if (!webpackBundlerConfig.vue) webpackBundlerConfig.vue = {};

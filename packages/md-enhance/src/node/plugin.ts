@@ -22,6 +22,7 @@ import {
   addViteSsrNoExternal,
   chainWebpack,
   deepMerge,
+  getBundlerName,
   getLocales,
   mergeViteConfig,
 } from "vuepress-shared/node";
@@ -169,9 +170,7 @@ export const mdEnhancePlugin =
       }),
 
       extendsBundlerOptions: (config: unknown, app): void => {
-        const { bundler } = app.options;
-
-        if (bundler.name.endsWith("vite")) {
+        if (getBundlerName(app) === "vite") {
           const bundlerConfig = <ViteBundlerOptions>config;
 
           bundlerConfig.viteOptions = mergeViteConfig(

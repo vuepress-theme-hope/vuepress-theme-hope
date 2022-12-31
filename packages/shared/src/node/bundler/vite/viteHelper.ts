@@ -23,14 +23,11 @@ export const addViteOptimizeDepsInclude = (
   { app, config }: ViteCommonOptions,
   module: string | string[]
 ): void => {
-  const bundlerName = getBundlerName(app);
-  const manager = detectPackageManager();
-
   if (
-    bundlerName === "vite" &&
+    getBundlerName(app) === "vite" &&
     ("OPTIMIZE_DEPS" in process.env
       ? Boolean(process.env["OPTIMIZE_DEPS"])
-      : manager !== "pnpm")
+      : detectPackageManager() !== "pnpm")
   ) {
     const bundlerConfig = <ViteBundlerOptions>config;
 
