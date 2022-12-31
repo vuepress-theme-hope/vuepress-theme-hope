@@ -3,6 +3,26 @@ title: 选项
 icon: config
 ---
 
+## component
+
+- 类型: `string`
+- 默认值: `"AutoCatalog"`
+
+目录组件名称。
+
+## level
+
+- 类型: `1 | 2 | 3`
+- 默认值: `3`
+
+目录项级别的最大深度。
+
+::: note
+
+仅在你使用内置目录组件时可用。
+
+:::
+
 ## exclude
 
 - 类型: `(RegExp | string)[]`

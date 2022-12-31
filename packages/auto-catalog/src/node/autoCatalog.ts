@@ -8,8 +8,10 @@ import type { AutoCatalogOptions } from "./options.js";
 export const generateCatalog = async (
   app: App,
   {
+    component = "AutoCatalog",
     exclude = [],
     frontmatter = (): PageFrontmatter => ({}),
+    level = 3,
   }: AutoCatalogOptions
 ): Promise<void> => {
   const {
@@ -18,6 +20,9 @@ export const generateCatalog = async (
   } = app;
 
   const pathToBeGenerated = new Set<string>();
+  const content = `\
+<${component}${[1, 2].includes(level) ? ` :level="${level}"` : ""} />
+`;
 
   pages.forEach(({ path: pagePath, pathLocale }) => {
     let catalogPath = pagePath;
@@ -46,13 +51,11 @@ export const generateCatalog = async (
       const title = getTitleFromFilename(basename);
 
       return createPage(app, {
-        content: `\
-<AutoCatalog />
-`,
         frontmatter: {
           title,
           ...(frontmatter(catalogPath) || {}),
         },
+        content,
         path: catalogPath,
       });
     })

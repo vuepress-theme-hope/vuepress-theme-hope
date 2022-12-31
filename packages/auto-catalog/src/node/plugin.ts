@@ -13,6 +13,11 @@ export const autoCatalogPlugin =
     return {
       name: "vuepress-plugin-auto-catalog",
 
+      define: (): Record<string, unknown> => ({
+        SHOULD_REGISTER_AUTO_CATALOG_COMPONENT:
+          options.component === "AutoCatalog" || !options.component,
+      }),
+
       onInitialized: async (app): Promise<void> =>
         generateCatalog(app, options),
 

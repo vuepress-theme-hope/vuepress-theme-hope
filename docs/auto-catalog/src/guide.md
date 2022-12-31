@@ -5,6 +5,12 @@ icon: creative
 
 With `vuepress-plugin-auto-catalog`, you can easily gets automatically generated catalog pages for your theme.
 
+## Catalog Component
+
+The plugin register and use `<AutoCatalog />` component by default, if you want to use your own component, you can set `component` option with your component name.
+
+The default `<AutoCatalog />` will render 3 levels of pages as catalog items, and you can change the level depth by setting `level` option (Only `1` `2` and `3` are supported).
+
 ## Excluding pages
 
 There may be some cases you have a `/foo/bar.md`, but do not want to generate a catalog page at `/foo/`, in this case, you can use `exclude` option to exclude the page.
