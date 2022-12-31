@@ -48,6 +48,9 @@ export const componentsPlugin =
         if (getBundlerName(app) === "vite") {
           const bundlerConfig = <ViteBundlerOptions>config;
 
+          const originalOnWarn =
+            bundlerConfig.viteOptions?.build?.rollupOptions?.onwarn;
+
           bundlerConfig.viteOptions = mergeViteConfig(
             bundlerConfig.viteOptions || {},
             {
@@ -64,7 +67,7 @@ export const componentsPlugin =
                     )
                       return;
 
-                    warn(warning);
+                    originalOnWarn?.(warning, warn);
                   },
                 },
               },
