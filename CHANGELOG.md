@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<!-- #region recent-beta -->
+
 ## [2.0.0-beta.147](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.146...v2.0.0-beta.147) (2022-12-31)
 
 ### Features
@@ -736,6 +738,8 @@ All notable changes to this project will be documented in this file. See [Conven
 ### Bug Fixes
 
 - **md-enhance:** fix playground style with theme default ([dfc534c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/dfc534cc9d3174ec269d7564a4500cc058de3248))
+
+<!-- #endregion recent-beta -->
 
 ## [2.0.0-beta.99](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.98...v2.0.0-beta.99) (2022-09-13)
 

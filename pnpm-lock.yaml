@@ -1083,25 +1083,25 @@ importers:
   packages/md-enhance:
     specifiers:
       '@babel/core': ^7.20.7
-      '@mdit/plugin-align': ^0.2.2
-      '@mdit/plugin-attrs': ^0.2.2
-      '@mdit/plugin-container': ^0.2.2
-      '@mdit/plugin-figure': ^0.2.2
-      '@mdit/plugin-footnote': ^0.2.2
-      '@mdit/plugin-img-lazyload': ^0.2.2
-      '@mdit/plugin-img-mark': ^0.2.2
-      '@mdit/plugin-img-size': ^0.2.2
-      '@mdit/plugin-include': ^0.2.2
-      '@mdit/plugin-katex': ^0.2.2
-      '@mdit/plugin-mark': ^0.2.2
-      '@mdit/plugin-mathjax': ^0.2.2
-      '@mdit/plugin-stylize': ^0.2.2
-      '@mdit/plugin-sub': ^0.2.2
-      '@mdit/plugin-sup': ^0.2.2
-      '@mdit/plugin-tab': ^0.2.2
-      '@mdit/plugin-tasklist': ^0.2.2
-      '@mdit/plugin-tex': ^0.2.2
-      '@mdit/plugin-uml': ^0.2.2
+      '@mdit/plugin-align': ^0.2.3
+      '@mdit/plugin-attrs': ^0.2.3
+      '@mdit/plugin-container': ^0.2.3
+      '@mdit/plugin-figure': ^0.2.3
+      '@mdit/plugin-footnote': ^0.2.3
+      '@mdit/plugin-img-lazyload': ^0.2.3
+      '@mdit/plugin-img-mark': ^0.2.3
+      '@mdit/plugin-img-size': ^0.2.3
+      '@mdit/plugin-include': ^0.2.3
+      '@mdit/plugin-katex': ^0.2.3
+      '@mdit/plugin-mark': ^0.2.3
+      '@mdit/plugin-mathjax': ^0.2.3
+      '@mdit/plugin-stylize': ^0.2.3
+      '@mdit/plugin-sub': ^0.2.3
+      '@mdit/plugin-sup': ^0.2.3
+      '@mdit/plugin-tab': ^0.2.3
+      '@mdit/plugin-tasklist': ^0.2.3
+      '@mdit/plugin-tex': ^0.2.3
+      '@mdit/plugin-uml': ^0.2.3
       '@mermaid-js/mermaid-mindmap': ^9.3.0
       '@types/babel__core': 7.1.20
       '@types/markdown-it': ^12.2.3
@@ -1128,25 +1128,25 @@ importers:
       vuepress-shared: workspace:*
     dependencies:
       '@babel/core': 7.20.7
-      '@mdit/plugin-align': 0.2.2
-      '@mdit/plugin-attrs': 0.2.2
-      '@mdit/plugin-container': 0.2.2
-      '@mdit/plugin-figure': 0.2.2
-      '@mdit/plugin-footnote': 0.2.2
-      '@mdit/plugin-img-lazyload': 0.2.2
-      '@mdit/plugin-img-mark': 0.2.2
-      '@mdit/plugin-img-size': 0.2.2
-      '@mdit/plugin-include': 0.2.2
-      '@mdit/plugin-katex': 0.2.2
-      '@mdit/plugin-mark': 0.2.2
-      '@mdit/plugin-mathjax': 0.2.2
-      '@mdit/plugin-stylize': 0.2.2
-      '@mdit/plugin-sub': 0.2.2
-      '@mdit/plugin-sup': 0.2.2
-      '@mdit/plugin-tab': 0.2.2
-      '@mdit/plugin-tasklist': 0.2.2
-      '@mdit/plugin-tex': 0.2.2
-      '@mdit/plugin-uml': 0.2.2
+      '@mdit/plugin-align': 0.2.3
+      '@mdit/plugin-attrs': 0.2.3
+      '@mdit/plugin-container': 0.2.3
+      '@mdit/plugin-figure': 0.2.3
+      '@mdit/plugin-footnote': 0.2.3
+      '@mdit/plugin-img-lazyload': 0.2.3
+      '@mdit/plugin-img-mark': 0.2.3
+      '@mdit/plugin-img-size': 0.2.3
+      '@mdit/plugin-include': 0.2.3
+      '@mdit/plugin-katex': 0.2.3
+      '@mdit/plugin-mark': 0.2.3
+      '@mdit/plugin-mathjax': 0.2.3
+      '@mdit/plugin-stylize': 0.2.3
+      '@mdit/plugin-sub': 0.2.3
+      '@mdit/plugin-sup': 0.2.3
+      '@mdit/plugin-tab': 0.2.3
+      '@mdit/plugin-tasklist': 0.2.3
+      '@mdit/plugin-tex': 0.2.3
+      '@mdit/plugin-uml': 0.2.3
       '@mermaid-js/mermaid-mindmap': 9.3.0
       '@types/markdown-it': 12.2.3
       '@vue/repl': 1.3.2_vue@3.2.45
@@ -3243,158 +3243,158 @@ packages:
   /@mdit-vue/types/0.11.0:
     resolution: {integrity: sha512-ygCGP7vFpqS02hpZwEe1uz8cfImWX06+zRs08J+tCZRKb6k+easIaIHFtY9ZSxt7j9L/gAPLDo/5RmOT6z0DPQ==}
 
-  /@mdit/plugin-align/0.2.2:
-    resolution: {integrity: sha512-4+rMHLopg6n2r51BMosQcTWPFsJPQJwbbYWgIIGZXhK9u55C/jXmrB3U6yC3I+BgGe59h1xyIcY07YnXVyS/Rg==}
+  /@mdit/plugin-align/0.2.3:
+    resolution: {integrity: sha512-TR4bR8qIg7tYSa62XspVzJKfUCCBJBiwTIAfKWtmeQALtDBClCZa26bL2EJnmdY5EdQVzU9sTHXWcR/p3AnVaw==}
     engines: {node: '>= 14'}
     dependencies:
-      '@mdit/plugin-container': 0.2.2
+      '@mdit/plugin-container': 0.2.3
       '@types/markdown-it': 12.2.3
       markdown-it: 13.0.1
     dev: false
 
-  /@mdit/plugin-attrs/0.2.2:
-    resolution: {integrity: sha512-hkAPCNm+7t5YnpZn05wIGZ6MntyITuE/zwsfZLxfv7wBUtgIYq2xYPjopBUHRLbWn0PhggtYimsYsOQVVrVKJQ==}
-    engines: {node: '>= 14'}
-    dependencies:
-      '@types/markdown-it': 12.2.3
-      markdown-it: 13.0.1
-    dev: false
-
-  /@mdit/plugin-container/0.2.2:
-    resolution: {integrity: sha512-r0Ba9uYh1795rpz2lpUWrBGzCrhFOR503pIMh9dIasiNgUv3ouX+o//e2FJgH/zntP/FY3EzCYBll48O4sJa+g==}
+  /@mdit/plugin-attrs/0.2.3:
+    resolution: {integrity: sha512-iTqwXOAscDXL20Lt4do3wI6+MQz/iqvSqETpR57M20yl2L/rM02RdVex5BWbxdhqFtDylh+/qtI4X2H6JFv/OQ==}
     engines: {node: '>= 14'}
     dependencies:
       '@types/markdown-it': 12.2.3
       markdown-it: 13.0.1
     dev: false
 
-  /@mdit/plugin-figure/0.2.2:
-    resolution: {integrity: sha512-Zf8CSAiJkhCkFPvI5hS3XFbrOLbdjy7jBiAHHPxFmy0l2U7PDNEsJ6p6ZhSTkewYkmfAPdNUl6sFTg7QsMpcVQ==}
+  /@mdit/plugin-container/0.2.3:
+    resolution: {integrity: sha512-psgaYyBX6Pq56R5S+NOIWhk8nz73LBaoputKq2NjQadIUgYlN7CmwOJeUjyg4ZK0wwBg1HzFFD5JaJ+C2jVssA==}
     engines: {node: '>= 14'}
     dependencies:
       '@types/markdown-it': 12.2.3
       markdown-it: 13.0.1
     dev: false
 
-  /@mdit/plugin-footnote/0.2.2:
-    resolution: {integrity: sha512-Xq6DeuEAu2JTF95xsTxUMuSCS+ZD9VkGmP4VniEt51Hzx+n0T7RSR3C6ICL2fL5yOdR6CvZSVCREzGFv7MK2HA==}
+  /@mdit/plugin-figure/0.2.3:
+    resolution: {integrity: sha512-d1KMMkQq9+0SxVMssnm28KDm1JVxozA8lh9fecKRlMnvN7B7NCnLbQZEe/l8Tj2yesOEgzSGL98+gfu/wdJimA==}
     engines: {node: '>= 14'}
     dependencies:
       '@types/markdown-it': 12.2.3
       markdown-it: 13.0.1
     dev: false
 
-  /@mdit/plugin-img-lazyload/0.2.2:
-    resolution: {integrity: sha512-todLX52l/g3fwEsKrbcYqrHNY5YXkDCMh+zyx7RyrPwFvg+Nh/31p4tIl8BgfKEW5S74oUMwS05xTJ7BHQLzpQ==}
+  /@mdit/plugin-footnote/0.2.3:
+    resolution: {integrity: sha512-LiSxbIu5PJTEj+qUcULQViLvyLyDjmnyM/iRdN4Y2biZ2Is/iVsHfhrrOFoqfTIRUqMwZwvbNJdyFPNheTCQfg==}
     engines: {node: '>= 14'}
     dependencies:
       '@types/markdown-it': 12.2.3
       markdown-it: 13.0.1
     dev: false
 
-  /@mdit/plugin-img-mark/0.2.2:
-    resolution: {integrity: sha512-9mWi2ovn6UMszBksih4XRX45J7FUvYS3t5xGTzmHULuuK6W1Oe1w6CbF0F4UVwhaGTtsow+GDIoGPAIHdIDhVQ==}
+  /@mdit/plugin-img-lazyload/0.2.3:
+    resolution: {integrity: sha512-LQJ+mEDiRVyyUYIv4V5NXb3H8Mxp58OLEGJAyM5GV30ZnlsNQV/eyqLvrkaI/zzr0AULaI4RnwtZrUthsxmQZA==}
     engines: {node: '>= 14'}
     dependencies:
       '@types/markdown-it': 12.2.3
       markdown-it: 13.0.1
     dev: false
 
-  /@mdit/plugin-img-size/0.2.2:
-    resolution: {integrity: sha512-0SUldpodhxq7VNSqBOtYh0lTQpdZURfQP5hVFEZ82q3ZSEF0/q6wMF2nkj78/B+ZasDR/jNxlS5xaGCTx/KiRA==}
+  /@mdit/plugin-img-mark/0.2.3:
+    resolution: {integrity: sha512-bQyCeF1DH06MTb+bpjja5As/mkDMShoEWaZ2inc9knphkLA3EHYuHo+DU72RlhXvYv9AaUmlFl870Wu5OeNvZw==}
     engines: {node: '>= 14'}
     dependencies:
       '@types/markdown-it': 12.2.3
       markdown-it: 13.0.1
     dev: false
 
-  /@mdit/plugin-include/0.2.2:
-    resolution: {integrity: sha512-vZ898+QzWAKOJ6VfS8n38dnK12rthHDbKBc2E6lAw5/htqWkMNGBjts5nKMc6DfHEMIp3kTC37/E63c9XkBx2g==}
+  /@mdit/plugin-img-size/0.2.3:
+    resolution: {integrity: sha512-oIBWHMIqlMRp4ns/AQC9DwluV2x/aG+vnu1QhIBaUeuLcwZKp4IdmdDDMTqzASpvMpwqe+wRt4aVnyOmOzRF+w==}
+    engines: {node: '>= 14'}
+    dependencies:
+      '@types/markdown-it': 12.2.3
+      markdown-it: 13.0.1
+    dev: false
+
+  /@mdit/plugin-include/0.2.3:
+    resolution: {integrity: sha512-ZCNKi5w+FYkwXXoaFyRqfohBz1uxkwCOWjuF8iHtI8PCXJrquoQz4ynXpLCtMXkg2ohgrcHcQriTOwoGM7xusA==}
     dependencies:
       '@types/markdown-it': 12.2.3
       markdown-it: 13.0.1
       upath: 2.0.1
     dev: false
 
-  /@mdit/plugin-katex/0.2.2:
-    resolution: {integrity: sha512-vgE2q0PazWNyLKsWtGHEaxXJBB9+VYqx8NLJ0sx/oF9mPlOIIdGGv1oAG9DrJEDB288yRsZywty7FhSUiAY4yA==}
+  /@mdit/plugin-katex/0.2.3:
+    resolution: {integrity: sha512-BBeLtivXoGsxHLXqM6h0G661E3amnFBqGX3OuUO3pgVL/IU+yVkn1tFu6D0eFZkyN4juHHrqa1RP2MLQSlziug==}
     engines: {node: '>= 14'}
     dependencies:
-      '@mdit/plugin-tex': 0.2.2
+      '@mdit/plugin-tex': 0.2.3
       '@types/katex': 0.16.0_dnsp5eyvz2stjhzcvnk27ztvmm
       '@types/markdown-it': 12.2.3
       katex: 0.16.4
       markdown-it: 13.0.1
     dev: false
 
-  /@mdit/plugin-mark/0.2.2:
-    resolution: {integrity: sha512-pPgviXqgB2eyFqZVmnR8EVTdAfHAwZM48Do+ukmg9mNdj3LSs9cdnGEFpCxxxpOj8RyVbR57w+cUL01nu45SEw==}
+  /@mdit/plugin-mark/0.2.3:
+    resolution: {integrity: sha512-ppGqi3hCV0yeswAK8K4mmTXrzLU/skBjzDQx8q02Ixt7ppE+T8Sh6A9Pir7pPDqhDTE5MHKWxl//KlUfyPQPMw==}
     engines: {node: '>= 14'}
     dependencies:
       '@types/markdown-it': 12.2.3
       markdown-it: 13.0.1
     dev: false
 
-  /@mdit/plugin-mathjax/0.2.2:
-    resolution: {integrity: sha512-R25A4wF+v1GIW7ZT1vxpzSLymdEhpWZK96cZsA/qf8P0R3TFOVw6eJdMALLPLOTgspzCJ4xvIjt2VVYoWC5lnQ==}
+  /@mdit/plugin-mathjax/0.2.3:
+    resolution: {integrity: sha512-8P5SqRQuyEQ2JBzIGG+Cl93eZU0rx+i1asELRDnz7t1NCTyIkyLCA57utZx5kC3UcuBo7Nog4N2L04zKup2AxQ==}
     engines: {node: '>= 14'}
     dependencies:
-      '@mdit/plugin-tex': 0.2.2
+      '@mdit/plugin-tex': 0.2.3
       '@types/markdown-it': 12.2.3
       markdown-it: 13.0.1
       mathjax-full: 3.2.2
       upath: 2.0.1
     dev: false
 
-  /@mdit/plugin-stylize/0.2.2:
-    resolution: {integrity: sha512-yeKlDX2hBE5x0VTsOSW0XqmPrzM2IvjilFDmv/P/akQcSe6dnk26ze4VBMjUU2rItGeewiSV6dMjkALWBqxH8Q==}
+  /@mdit/plugin-stylize/0.2.3:
+    resolution: {integrity: sha512-EeRLwmEDwxB7NaF91OAqIJ5uUKHoPyZie4zFLbA3gKwqVXa6OC1XG1k3S8w9GuRnep/K7+e/5gPGFM68tI7v8g==}
     engines: {node: '>= 14'}
     dependencies:
       '@types/markdown-it': 12.2.3
       markdown-it: 13.0.1
     dev: false
 
-  /@mdit/plugin-sub/0.2.2:
-    resolution: {integrity: sha512-BAfg/jFIhrOEhp7v8IfFRKLfpaSnqUVwPIloFqVuVUeYrYtEymTtxOQ0LvebGwY8y4onlx91/F7BNts8/ov+RA==}
+  /@mdit/plugin-sub/0.2.3:
+    resolution: {integrity: sha512-eWCOxASIU/Y1efzhJkb1y0XWa0yGVdtYm4SKfUd73rF4dNEYIYJiNKkQfefrGtMuQdeM7iBqBZfYtcq/nipkzg==}
     engines: {node: '>= 14'}
     dependencies:
       '@types/markdown-it': 12.2.3
       markdown-it: 13.0.1
     dev: false
 
-  /@mdit/plugin-sup/0.2.2:
-    resolution: {integrity: sha512-hkw16dyNV0NtMVpFAICXF2rgcX8mj3NRImG0EhGGKSzLiAcEIVaBfv4nvGzW24hjJBpYRmU5PlF4AZme1MBToA==}
+  /@mdit/plugin-sup/0.2.3:
+    resolution: {integrity: sha512-gqOOQo6lE2e8SFHpXhKCKiFGoVIO1JUDA97Ol5iIFZtXJ4lbObWKxtYa63KH+kOVwDUUGSojQ6s8+oGMxmtIDA==}
     engines: {node: '>= 14'}
     dependencies:
       '@types/markdown-it': 12.2.3
       markdown-it: 13.0.1
     dev: false
 
-  /@mdit/plugin-tab/0.2.2:
-    resolution: {integrity: sha512-/KsokNesc3zgC3TwsWz8fYWtbc6XGuq8f6fIaQsQTK1yCTv20urQEdnkI8iYV/ABSyGEG/2FTzUhiOX9Naq9gQ==}
+  /@mdit/plugin-tab/0.2.3:
+    resolution: {integrity: sha512-J0LkcQ2Kb2fm+8Gnd1Ke8rKfJXMQPqwx3ZDa2AtLCcBEf5hWAKbLoc/cWjDVXiHjsdOklIs5AtCyNUkR5YbyOA==}
     dependencies:
       '@types/markdown-it': 12.2.3
       markdown-it: 13.0.1
     dev: false
 
-  /@mdit/plugin-tasklist/0.2.2:
-    resolution: {integrity: sha512-4r/eTmTX8VOTzhmSM1lFtD9jFegLw1N2YaCW7Y7madgks8AOzJnH/Duhi40UxzTVaqSwYihgiilqYRrIn9hogA==}
+  /@mdit/plugin-tasklist/0.2.3:
+    resolution: {integrity: sha512-szYn7pyaozAPhilrNeC5PNLR+Rm9qlPvRQsxMK88Sa4seSdDhQnPkDb+407QYtYdYpyrn0ZKCvnmuXc9CLlhmQ==}
     engines: {node: '>= 14'}
     dependencies:
       '@types/markdown-it': 12.2.3
       markdown-it: 13.0.1
     dev: false
 
-  /@mdit/plugin-tex/0.2.2:
-    resolution: {integrity: sha512-U1Q9Wm17nu34q1w/oBzwaS4ISgqhBbtVdaeyuXW6nmagx1AF9wSwT5zmvyolTgr1ueYlyY1U2Gj2eJzezbJ+vA==}
+  /@mdit/plugin-tex/0.2.3:
+    resolution: {integrity: sha512-sD7dILLqwdPA3B89W5Ezj2vMjrYZKBFICLvPmp49crdAW51tcLUtjKK5nF86fUY7VULlsDG9h5+lQV9wc/HNYA==}
     engines: {node: '>= 14'}
     dependencies:
       '@types/markdown-it': 12.2.3
       markdown-it: 13.0.1
     dev: false
 
-  /@mdit/plugin-uml/0.2.2:
-    resolution: {integrity: sha512-voCYq0+Fhg6UDp/SPvN7Uf2B4JQjTggV+4N+WJ0zWfweQEubVgwbGaiT30GexZuG1nFij6ph6pZJGbqVqCN66w==}
+  /@mdit/plugin-uml/0.2.3:
+    resolution: {integrity: sha512-bLo1R4f6xaXtToLLP4+7+x/i9p815NnuS+l63RkhE2juEagQYKaB2Ytw/91K0/sprWrrvOL3ESRlgFK14MAmHQ==}
     engines: {node: '>= 14'}
     dependencies:
       '@types/markdown-it': 12.2.3

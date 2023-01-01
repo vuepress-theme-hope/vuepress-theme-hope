@@ -95,37 +95,6 @@
     "npm": ">=8",
     "pnpm": ">=7"
   },
-  "commit-and-tag-version": {
-    "skip": {
-      "bump": true,
-      "commit": true,
-      "tag": true
-    }
-  },
-  "nano-staged": {
-    "*.vue": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.{js,ts}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.md": [
-      "markdownlint",
-      "prettier --write"
-    ],
-    "*.{json,yml}": [
-      "prettier --write"
-    ],
-    "*.scss": [
-      "stylelint --fix",
-      "prettier --write"
-    ],
-    "package.json": [
-      "sort-package-json"
-    ]
-  },
   "pnpm": {
     "peerDependencyRules": {
       "ignoreMissing": [

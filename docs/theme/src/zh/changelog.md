@@ -7,4 +7,10 @@ icon: time
 
 <!-- more -->
 
-@include(../../../../CHANGELOG.md{5-})
+@include(../../../../CHANGELOG.md#recent-beta)
+
+::: info
+
+对于发布早于 `2.0.0-beta.100` 的历史版本，详见 [Github 仓库](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/CHANGELOG.md)。
+
+:::

@@ -1,5 +1,5 @@
 {
-  "header": "# Change Log\n\nAll notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.\n",
+  "header": "# Change Log\n\nAll notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.\n\n<!-- #region recent-beta -->\n",
 
   "releaseCommitMessageFormat": "chore(release): publish v{{currentTag}}",
 
@@ -16,5 +16,11 @@
     { "type": "test", "section": "Tests", "hidden": true },
     { "type": "build", "section": "Build System", "hidden": true },
     { "type": "ci", "section": "Continuous Integration", "hidden": true }
-  ]
+  ],
+
+  "skip": {
+    "bump": true,
+    "commit": true,
+    "tag": true
+  }
 }
