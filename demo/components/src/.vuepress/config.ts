@@ -22,6 +22,7 @@ export default defineUserConfig({
       "/demo/audioplayer",
       "/demo/badge",
       "/demo/bilibili",
+      "/demo/catalog",
       "/demo/codepen",
       "/demo/fonticon",
       "/demo/pdf",

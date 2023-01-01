@@ -1,3 +1,4 @@
+import { useSiteData } from "@vuepress/client";
 import { computed, defineComponent, h } from "vue";
 import { RouterLink, useRoute, useRouter } from "vue-router";
 import { useLocaleConfig } from "vuepress-shared/client";
@@ -28,6 +29,18 @@ export default defineComponent({
 
   props: {
     /**
+     * Catalog Base
+     *
+     * 目录的基础路径
+     *
+     * @default current route base
+     */
+    base: {
+      type: String,
+      default: "",
+    },
+
+    /**
      * Max level of catalog
      *
      * @description only 1,2,3 are supported
@@ -42,13 +55,6 @@ export default defineComponent({
       type: Number,
       default: 3,
     },
-
-    /**
-     * Whether to hide icon
-     *
-     * 是否隐藏图标
-     */
-    hideIcon: Boolean,
 
     /**
      * Page title getter
@@ -81,9 +87,9 @@ export default defineComponent({
     },
 
     /**
-     * Page should be indexed getter
+     * Whether page should be indexed
      *
-     * 页面是否应该被索引的获取器
+     * 页面是否应该被索引
      */
     shouldIndex: {
       type: Function as PropType<(meta: RouteMeta) => boolean>,
@@ -95,29 +101,41 @@ export default defineComponent({
     const locale = useLocaleConfig(CATALOG_LOCALES);
     const route = useRoute();
     const router = useRouter();
-
-    const isEnabled = computed(() => route.path.endsWith("/"));
+    const siteData = useSiteData();
 
     const getCatalogInfo = (): CatalogInfo[] => {
+      const base = props.base || route.path.replace(/\/[^/]+$/, "/");
       const routes = router.getRoutes();
       const result: CatalogInfo[] = [];
 
       routes
-        .filter(
-          ({ meta, path }) =>
+        .filter(({ meta, path }) => {
+          // filter those under current base
+          if (!path.startsWith(base) || path === base) return false;
+
+          if (base === "/") {
+            const otherLocales = Object.keys(siteData.value.locales).filter(
+              (item) => item !== "/"
+            );
+
+            // exclude 404 page and other locales
+            if (
+              path === "/404.html" ||
+              otherLocales.some((localePath) => path.startsWith(localePath))
+            )
+              return false;
+          }
+
+          return (
             // filter real page
             ((path.endsWith(".html") && !path.endsWith("/index.html")) ||
               path.endsWith("/")) &&
-            // exclude 404 page and current page
-            path !== "/404.html" &&
-            path !== route.path &&
-            // path starts with current path
-            path.startsWith(route.path) &&
             // page should be indexed
             props.shouldIndex(meta)
-        )
+          );
+        })
         .map(({ path, meta }) => {
-          const level = path.substring(route.path.length).split("/").length;
+          const level = path.substring(base.length).split("/").length;
 
           return {
             title: props.titleGetter(meta),
@@ -202,94 +220,83 @@ export default defineComponent({
 
     const info = computed(() => getCatalogInfo());
 
-    return (): VNode | null => {
-      return isEnabled.value
-        ? h("div", { class: "catalog-wrapper" }, [
-            h("h2", { class: "main-title" }, locale.value.title),
+    return (): VNode =>
+      h("div", { class: "catalog-wrapper" }, [
+        h("h2", { class: "main-title" }, locale.value.title),
 
-            ...info.value.map(
-              ({ children = [], icon, path, title }, mainIndex) => [
-                h(
-                  "h3",
-                  {
-                    id: title,
-                    class: ["child-title", { "has-children": children.length }],
-                  },
-                  [
-                    h("a", { href: `#${title}`, class: "header-anchor" }, "#"),
-                    h(RouterLink, { class: "catalog-title", to: path }, () => [
-                      !props.hideIcon && icon ? h(FontIcon, { icon }) : null,
-                      `${mainIndex + 1}. ${title || "Unknown"}`,
-                    ]),
-                  ]
-                ),
-                children.length
-                  ? h(
-                      "ul",
-                      { class: "child-catalog-wrapper" },
-                      children.map(
-                        ({ children = [], icon, path, title }, index) =>
-                          h("li", { class: "catalog-item" }, [
+        ...info.value.map(({ children = [], icon, path, title }, mainIndex) => [
+          h(
+            "h3",
+            {
+              id: title,
+              class: ["child-title", { "has-children": children.length }],
+            },
+            [
+              h("a", { href: `#${title}`, class: "header-anchor" }, "#"),
+              h(RouterLink, { class: "catalog-title", to: path }, () => [
+                icon ? h(FontIcon, { icon }) : null,
+                `${mainIndex + 1}. ${title || "Unknown"}`,
+              ]),
+            ]
+          ),
+          children.length
+            ? h(
+                "ul",
+                { class: "child-catalog-wrapper" },
+                children.map(({ children = [], icon, path, title }, index) =>
+                  h("li", { class: "catalog-item" }, [
+                    h(
+                      "div",
+                      {
+                        class: [
+                          "sub-title",
+                          { "has-children": children.length },
+                        ],
+                      },
+                      [
+                        h(
+                          "a",
+                          { href: `#${title}`, class: "header-anchor" },
+                          "#"
+                        ),
+                        h(
+                          RouterLink,
+                          { class: "catalog-title", to: path },
+                          () => [
+                            icon ? h(FontIcon, { icon }) : null,
+                            `${mainIndex + 1}.${index + 1} ${
+                              title || "Unknown"
+                            }`,
+                          ]
+                        ),
+                      ]
+                    ),
+                    children.length
+                      ? h(
+                          "div",
+                          { class: "sub-catalog-wrapper" },
+                          children.map(({ icon, path, title }, subIndex) =>
                             h(
-                              "div",
+                              RouterLink,
                               {
-                                class: [
-                                  "sub-title",
-                                  { "has-children": children.length },
-                                ],
+                                class: "sub-catalog-item",
+                                to: path,
                               },
-                              [
-                                h(
-                                  "a",
-                                  { href: `#${title}`, class: "header-anchor" },
-                                  "#"
-                                ),
-                                h(
-                                  RouterLink,
-                                  { class: "catalog-title", to: path },
-                                  () => [
-                                    !props.hideIcon && icon
-                                      ? h(FontIcon, { icon })
-                                      : null,
-                                    `${mainIndex + 1}.${index + 1} ${
-                                      title || "Unknown"
-                                    }`,
-                                  ]
-                                ),
+                              () => [
+                                icon ? h(FontIcon, { icon }) : null,
+                                `${mainIndex + 1}.${index + 1}.${
+                                  subIndex + 1
+                                } ${title || "Unknown"}`,
                               ]
-                            ),
-                            children.length
-                              ? h(
-                                  "div",
-                                  { class: "sub-catalog-wrapper" },
-                                  children.map(
-                                    ({ icon, path, title }, subIndex) =>
-                                      h(
-                                        RouterLink,
-                                        {
-                                          class: "sub-catalog-item",
-                                          to: path,
-                                        },
-                                        () => [
-                                          !props.hideIcon && icon
-                                            ? h(FontIcon, { icon })
-                                            : null,
-                                          `${mainIndex + 1}.${index + 1}.${
-                                            subIndex + 1
-                                          } ${title || "Unknown"}`,
-                                        ]
-                                      )
-                                  )
-                                )
-                              : null,
-                          ])
-                      )
-                    )
-                  : null,
-              ]
-            ),
-          ])
-        : null;
-    };
+                            )
+                          )
+                        )
+                      : null,
+                  ])
+                )
+              )
+            : null,
+        ]),
+      ]);
   },
 });

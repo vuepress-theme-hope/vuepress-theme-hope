@@ -41,7 +41,13 @@ export default [
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/Catalog", {
-    external: ["vue", "vue-router", "vuepress-shared/client", /\.scss$/],
+    external: [
+      "@vuepress/client",
+      "vue",
+      "vue-router",
+      "vuepress-shared/client",
+      /\.scss$/,
+    ],
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/CodePen", {

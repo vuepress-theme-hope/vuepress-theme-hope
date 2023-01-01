@@ -14,13 +14,15 @@ For example, if you call this plugin with `{ globalComponents: { backToTop: true
 
 :::
 
-This plugin support 8 components:
+This plugin support 10 components:
 
 - [AudioPlayer](audioplayer.md)
 
 - [Badge](badge.md)
 
 - [BiliBili](bilibili.md)
+
+- [Catalog](catalog.md)
 
 - [CodePen](codepen.md)
 

@@ -15,6 +15,7 @@ tag:
 - AudioPlayer
 - Badge
 - BiliBili
+- Catalog
 - CodePen
 - FontIcon
 - PDF
@@ -46,6 +47,7 @@ export default defineUserConfig({
           "AudioPlayer",
           "Badge",
           "BiliBili",
+          "Catalog",
           "CodePen",
           "PDF",
           "StackBlitz",
@@ -73,6 +75,7 @@ export default {
           "AudioPlayer",
           "Badge",
           "BiliBili",
+          "Catalog",
           "CodePen",
           "PDF",
           "StackBlitz",
@@ -156,6 +159,20 @@ export default {
 ```
 
 有关可用属性，请参阅 [BiliBili][bilibili] 页面。
+
+## Catalog
+
+一个展示目录的组件。
+
+主页目录:
+
+<Catalog base='/zh/' />
+
+```md
+<Catalog base='/zh/' />
+```
+
+有关可用属性，请参阅 [Catalog][catalog] 页面。
 
 ## CodePen
 
@@ -354,6 +371,7 @@ PDF 浏览器组件。
 [audioplayer]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/audioplayer.html
 [badge]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/badge.html
 [bilibili]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/bilibili.html
+[catalog]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/catalog.html
 [codepen]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/codepen.html
 [fonticon]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/fonticon.html
 [pdf]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/pdf.html

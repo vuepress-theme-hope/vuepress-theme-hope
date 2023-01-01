@@ -76,6 +76,7 @@ export default theme("components", {
         "AudioPlayer",
         "Badge",
         "BiliBili",
+        "Catalog",
         "CodePen",
         "PDF",
         "StackBlitz",

@@ -15,6 +15,7 @@ tag:
 - AudioPlayer
 - Badge
 - BiliBili
+- Catalog
 - CodePen
 - FontIcon
 - PDF
@@ -46,6 +47,7 @@ export default defineUserConfig({
           "AudioPlayer",
           "Badge",
           "BiliBili",
+          "Catalog",
           "CodePen",
           "PDF",
           "StackBlitz",
@@ -73,6 +75,7 @@ export default {
           "AudioPlayer",
           "Badge",
           "BiliBili",
+          "Catalog",
           "CodePen",
           "PDF",
           "StackBlitz",
@@ -156,6 +159,20 @@ See [AudioPlayer][audioplayer] page for available props.
 ```
 
 Смотрите страницу [BiliBili][bilibili] для доступных свойств.
+
+## Catalog
+
+A component which display catalog.
+
+Home page catalog:
+
+<Catalog base='/ru/' />
+
+```md
+<Catalog base='/ru/' />
+```
+
+See [Catalog][catalog] page for available props.
 
 ## CodePen
 
@@ -353,6 +370,7 @@ See [AudioPlayer][audioplayer] page for available props.
 [audioplayer]: https://vuepress-theme-hope.github.io/v2/components/guide/audioplayer.html
 [badge]: https://vuepress-theme-hope.github.io/v2/components/guide/badge.html
 [bilibili]: https://vuepress-theme-hope.github.io/v2/components/guide/bilibili.html
+[catalog]: https://vuepress-theme-hope.github.io/v2/components/guide/catalog.html
 [codepen]: https://vuepress-theme-hope.github.io/v2/components/guide/codepen.html
 [fonticon]: https://vuepress-theme-hope.github.io/v2/components/guide/fonticon.html
 [pdf]: https://vuepress-theme-hope.github.io/v2/components/guide/pdf.html

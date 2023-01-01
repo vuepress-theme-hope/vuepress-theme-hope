@@ -14,13 +14,15 @@ index: false
 
 :::
 
-此插件支持 9 个组件:
+此插件支持 10 个组件:
 
 - [AudioPlayer](audioplayer.md)
 
 - [BiliBili](bilibili.md)
 
 - [Badge](badge.md)
+
+- [Catalog](catalog.md)
 
 - [CodePen](codepen.md)
 
