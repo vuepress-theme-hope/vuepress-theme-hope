@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.148](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.147...v2.0.0-beta.148) (2023-01-01)
+
+### Features
+
+- **auto-catalog:** add component and level option ([20a1b40](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/20a1b401037c7a14b59787c91ea8c472a3da9392))
+- **components:** support locale options for catalog ([20622d4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/20622d41bf3cdc9471da77e618a3c9eb89c1f3d6))
+
 ## [2.0.0-beta.147](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.146...v2.0.0-beta.147) (2022-12-31)
 
 ### Features
