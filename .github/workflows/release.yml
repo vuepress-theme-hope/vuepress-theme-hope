@@ -32,7 +32,7 @@ jobs:
 
       - name: Publish packages
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          npm_config_//registry.npmjs.org/:_authToken: ${{ secrets.NPM_TOKEN }}
         run: pnpm publish -r --tag next --no-git-checks
 
       - name: Sync npmmirror
