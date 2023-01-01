@@ -46,7 +46,7 @@ Added more syntax to Markdown, enriching documentation and blog writing:
 - [Playground](markdown/playground.md)
 - [Vue Playground](markdown/vue-playground.md)
 - [Components out of box](markdown/components.md)
-- [Customize Themes](interface/code-theme.md)
+- [Customized Themes](interface/code-theme.md)
 
 ### Layout
 
@@ -130,6 +130,8 @@ Layout Optimization:
 
 The theme includes the following plugins, you can use them in other themes or directly.
 
+- [vuepress-plugin-auto-catalog][auto-catalog]: Catalog automatically generation for VuePress2
+
 - [vuepress-plugin-blog2][blog2]: Blog plugin for VuePress2
 
 - [vuepress-plugin-comment2][comment2]: Comment and pageviews
@@ -170,6 +172,7 @@ Here are some other plugins that are not bundled by the theme, you can enable th
 
 :::
 
+[auto-catalog]: https://vuepress-theme-hope.github.io/v2/auto-catalog/
 [blog2]: https://vuepress-theme-hope.github.io/v2/blog/
 [comment2]: https://vuepress-theme-hope.github.io/v2/comment/
 [components]: https://vuepress-theme-hope.github.io/v2/components/

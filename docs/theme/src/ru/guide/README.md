@@ -130,6 +130,8 @@ tag:
 
 Тема включает в себя следующие плагины, вы можете использовать их в других темах или напрямую.
 
+- [vuepress-plugin-auto-catalog][auto-catalog]: Catalog automatically generation for VuePress2
+
 - [vuepress-plugin-blog2][blog2]: Плагин блога для VuePress2
 
 - [vuepress-plugin-comment2][comment2]: Комментарии и просмотры страниц
@@ -170,6 +172,7 @@ tag:
 
 :::
 
+[auto-catalog]: https://vuepress-theme-hope.github.io/v2/auto-catalog/
 [blog2]: https://vuepress-theme-hope.github.io/v2/blog/
 [comment2]: https://vuepress-theme-hope.github.io/v2/comment/
 [components]: https://vuepress-theme-hope.github.io/v2/components/

@@ -84,6 +84,12 @@ date: 2020-01-01
 ---
 ```
 
+::: note
+
+When running in a Git-based project, the writing date will fallback to first commit date of current file.
+
+:::
+
 ### Категория и Теги
 
 Подробности смотрите в [разделе блога](../blog/category-and-tags.md)

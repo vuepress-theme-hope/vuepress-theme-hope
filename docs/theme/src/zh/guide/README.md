@@ -130,6 +130,8 @@ tag:
 
 本主题包含了以下内建插件，如果有需要，你也可以单独进行使用或搭配其他主题。
 
+- [vuepress-plugin-auto-catalog][auto-catalog]: VuePress2 的目录自动生成插件
+
 - [vuepress-plugin-blog2][blog2]: VuePress2 的博客插件
 
 - [vuepress-plugin-comment2][comment2]: 评论与浏览量功能
@@ -170,6 +172,7 @@ tag:
 
 :::
 
+[auto-catalog]: https://vuepress-theme-hope.github.io/v2/auto-catalog/zh/
 [blog2]: https://vuepress-theme-hope.github.io/v2/blog/zh/
 [comment2]: https://vuepress-theme-hope.github.io/v2/comment/zh/
 [components]: https://vuepress-theme-hope.github.io/v2/components/zh/

@@ -47,6 +47,8 @@ For example:
 
 ### Plugins provided by Mr.Hope
 
+- [vuepress-plugin-auto-catalog][auto-catalog]: Catalog automatically generation for VuePress2
+
 - [vuepress-plugin-blog2][blog2]: Blog plugin for VuePress2
 
 - [vuepress-plugin-comment2][comment2]: Provides comment and pageview function
@@ -103,6 +105,7 @@ Here are some other plugins that are not bundled by the theme, you can enable th
 
 - [@vuepress/plugin-theme-data][theme-data]: Composition API plugin for theme data
 
+[auto-catalog]: https://vuepress-theme-hope.github.io/v2/auto-catalog/
 [blog2]: https://vuepress-theme-hope.github.io/v2/blog/
 [comment2]: https://vuepress-theme-hope.github.io/v2/comment/
 [components]: https://vuepress-theme-hope.github.io/v2/components/

@@ -47,6 +47,8 @@ tag:
 
 ### Mr.Hope 提供的插件
 
+- [vuepress-plugin-auto-catalog][auto-catalog]: VuePress2 的目录自动生成插件
+
 - [vuepress-plugin-blog2][blog2]: VuePress2 的博客插件
 
 - [vuepress-plugin-comment2][comment2]: 提供评论与浏览量功能
@@ -103,6 +105,7 @@ tag:
 
 - [@vuepress/plugin-theme-data][theme-data]: 主题配置的 Composition API 插件
 
+[auto-catalog]: https://vuepress-theme-hope.github.io/v2/auto-catalog/zh/
 [blog2]: https://vuepress-theme-hope.github.io/v2/blog/zh/
 [comment2]: https://vuepress-theme-hope.github.io/v2/comment/zh/
 [components]: https://vuepress-theme-hope.github.io/v2/components/zh/
