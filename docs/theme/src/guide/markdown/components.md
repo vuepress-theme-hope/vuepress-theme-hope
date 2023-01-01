@@ -94,23 +94,23 @@ export default {
 
 An audio player:
 
-<AudioPlayer src="/sample.mp3" />
+<AudioPlayer src="/assets/sample.mp3" />
 
 ```md
-<AudioPlayer src="/sample.mp3" />
+<AudioPlayer src="/assets/sample.mp3" />
 ```
 
 An audio player with poster and title:
 
 <AudioPlayer
-  src="/sample.mp3"
+  src="/assets/sample.mp3"
   title="A Sample Audio"
   poster="/logo.svg"
 />
 
 ```md
 <AudioPlayer
-  src="/sample.mp3"
+  src="/assets/sample.mp3"
   title="A Sample Audio"
   poster="/logo.svg"
 />
@@ -166,7 +166,13 @@ A component which display catalog.
 
 Home page catalog:
 
-<Catalog base='/' />
+<!-- markdownlint-disable MD033 -->
+
+<div class="catalog-display-container">
+  <Catalog base='/' />
+</div>
+
+<!-- markdownlint-enable MD033 -->
 
 ```md
 <Catalog base='/' />
@@ -241,18 +247,18 @@ PDF viewer component.
 
 Default PDF viewer:
 
-<PDF url="/sample.pdf" />
+<PDF url="/assets/sample.pdf" />
 
 ```md
-<PDF url="/sample.pdf" />
+<PDF url="/assets/sample.pdf" />
 ```
 
 PDF viewer starting with page 2 and without toolbar:
 
-<PDF url="/sample.pdf" page="2" no-toolbar />
+<PDF url="/assets/sample.pdf" page="2" no-toolbar />
 
 ```md
-<PDF url="/sample.pdf" page="2" no-toolbar />
+<PDF url="/assets/sample.pdf" page="2" no-toolbar />
 ```
 
 See [PDF][pdf] page for available props.
@@ -295,7 +301,7 @@ A video player with tracks and poster:
 
 <VideoPlayer
   src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm"
-  poster="/poster.svg"
+  poster="/assets/poster.svg"
   :tracks="[
     {
       default: true,
@@ -316,7 +322,7 @@ A video player with tracks and poster:
 ```md
 <VideoPlayer
   src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm"
-  poster="/poster.svg"
+  poster="/assets/poster.svg"
   :tracks="[
     {
       default: true,

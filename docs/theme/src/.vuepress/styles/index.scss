@@ -148,3 +148,13 @@
     content: "\e77c";
   }
 }
+
+.catalog-display-container {
+  overflow-y: auto;
+
+  max-height: 75vh;
+  margin: 8px;
+  border-radius: 8px;
+
+  overflow-wrap: break-word;
+}

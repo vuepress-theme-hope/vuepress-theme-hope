@@ -94,23 +94,23 @@ export default {
 
 An audio player:
 
-<AudioPlayer src="/assets/sample.mp3" />
+<AudioPlayer src="/assets/assets/sample.mp3" />
 
 ```md
-<AudioPlayer src="/assets/sample.mp3" />
+<AudioPlayer src="/assets/assets/sample.mp3" />
 ```
 
 An audio player with poster and title:
 
 <AudioPlayer
-  src="/assets/sample.mp3"
+  src="/assets/assets/sample.mp3"
   title="A Sample Audio"
   poster="/logo.svg"
 />
 
 ```md
 <AudioPlayer
-  src="/assets/sample.mp3"
+  src="/assets/assets/sample.mp3"
   title="A Sample Audio"
   poster="/logo.svg"
 />
@@ -166,7 +166,13 @@ A component which display catalog.
 
 Home page catalog:
 
-<Catalog base='/ru/' />
+<!-- markdownlint-disable MD033 -->
+
+<div class="catalog-display-container">
+  <Catalog base='/ru/' />
+</div>
+
+<!-- markdownlint-enable MD033 -->
 
 ```md
 <Catalog base='/ru/' />
@@ -241,18 +247,18 @@ See [Catalog][catalog] page for available props.
 
 Средство просмотра PDF по умолчанию:
 
-<PDF url="/sample.pdf" />
+<PDF url="/assets/sample.pdf" />
 
 ```md
-<PDF url="/sample.pdf" />
+<PDF url="/assets/sample.pdf" />
 ```
 
 Просмотрщик PDF без панели инструментов, Просмотрщик PDF с начальной страницей 2:
 
-<PDF url="/sample.pdf" page="2" no-toolbar />
+<PDF url="/assets/sample.pdf" page="2" no-toolbar />
 
 ```md
-<PDF url="/sample.pdf" page="2" no-toolbar />
+<PDF url="/assets/sample.pdf" page="2" no-toolbar />
 ```
 
 Доступные свойства смотрите на странице [PDF][pdf].
@@ -295,7 +301,7 @@ See [Catalog][catalog] page for available props.
 
 <VideoPlayer
   src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm"
-  poster="/poster.svg"
+  poster="/assets/poster.svg"
   :tracks="[
     {
       default: true,
@@ -316,7 +322,7 @@ See [Catalog][catalog] page for available props.
 ```md
 <VideoPlayer
   src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.1080p.vp9.webm"
-  poster="/poster.svg"
+  poster="/assets/poster.svg"
   :tracks="[
     {
       default: true,
