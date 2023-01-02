@@ -1,4 +1,5 @@
-import { PageFrontmatter } from "@vuepress/core";
+import type { LocaleConfig, PageFrontmatter } from "@vuepress/core";
+import type { CatalogLocaleData } from "vuepress-plugin-components";
 
 export interface AutoCatalogOptions {
   /**
@@ -48,4 +49,11 @@ export interface AutoCatalogOptions {
    * @default 'AutoCatalog'
    */
   component?: string;
+
+  /**
+   * Catalog locales
+   *
+   * 目录组件国际化配置
+   */
+  locales?: LocaleConfig<CatalogLocaleData>;
 }

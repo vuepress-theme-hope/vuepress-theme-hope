@@ -1,4 +1,5 @@
 import { defineClientConfig } from "@vuepress/client";
+import { defineAsyncComponent } from "vue";
 import { hasGlobalComponent } from "vuepress-shared/client";
 
 declare const SHOULD_REGISTER_AUTO_CATALOG_COMPONENT: boolean;
@@ -11,7 +12,10 @@ export default defineClientConfig({
     )
       app.component(
         "AutoCatalog",
-        () => import("vuepress-plugin-components/client/components/Catalog.js")
+        defineAsyncComponent(
+          () =>
+            import("vuepress-plugin-components/client/components/Catalog.js")
+        )
       );
   },
 });

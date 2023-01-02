@@ -1,3 +1,5 @@
+import { catalogLocales } from "vuepress-plugin-components";
+import { getLocales } from "vuepress-shared/node";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import { generateCatalog } from "./autoCatalog.js";
 import { CLIENT_FOLDER } from "./utils.js";
@@ -14,6 +16,12 @@ export const autoCatalogPlugin =
       name: "vuepress-plugin-auto-catalog",
 
       define: (): Record<string, unknown> => ({
+        CATALOG_LOCALES: getLocales({
+          app,
+          name: "catalog",
+          default: catalogLocales,
+          config: options.locales,
+        }),
         SHOULD_REGISTER_AUTO_CATALOG_COMPONENT:
           options.component === "AutoCatalog" || !options.component,
       }),
