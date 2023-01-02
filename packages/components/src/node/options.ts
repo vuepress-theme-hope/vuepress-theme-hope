@@ -3,6 +3,7 @@ import type {
   BackToTopLocaleData,
   CatalogLocaleData,
   NoticeOptions,
+  PDFLocaleData,
 } from "../shared/index.js";
 
 export type AvailableComponent =
@@ -120,5 +121,12 @@ export interface ComponentOptions {
      * 目录组件国际化配置
      */
     catalog?: LocaleConfig<CatalogLocaleData>;
+
+    /**
+     * PDF Locales config
+     *
+     * PDF 组件国际化配置
+     */
+    pdf?: LocaleConfig<PDFLocaleData>;
   };
 }

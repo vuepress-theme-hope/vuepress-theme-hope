@@ -216,6 +216,30 @@ Locales config for BackToTop button.
 
 Locales config for catalog component.
 
+### locales.pdf
+
+- Type: `PDFLocaleConfig`
+
+  ```ts
+  interface PDFLocaleData {
+    /**
+     * PDF hint text
+     *
+     * @description Only used if the browser does not support embedding PDF and no PDFJS URL is provided.
+     * [url] will be replaced by actual PDF link.
+     */
+    hint: string;
+  }
+
+  interface PDFLocaleConfig {
+    [localePath: string]: CatalogLocaleData;
+  }
+  ```
+
+- Required: No
+
+Locales config for pdf component.
+
 ::: details Built-in Supported Languages
 
 - **Simplified Chinese** (zh-CN)

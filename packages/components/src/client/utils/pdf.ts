@@ -18,8 +18,12 @@ import { checkIsMobile, checkIsSafari } from "vuepress-shared/client";
 
 declare const PDFJS_URL: string | null;
 
-export interface Options {
+export interface ViewPDFOptions {
+  /**
+   * title of pdf
+   */
   title: string;
+  hint: string;
   options: Record<string, string | number | boolean> | undefined;
 }
 
@@ -110,7 +114,7 @@ const addPDFViewer = (
 export const viewPDF = (
   url: string,
   targetSelector: string | HTMLElement | null = null,
-  { title, options = {} }: Options
+  { title, hint, options = {} }: ViewPDFOptions
 ): HTMLElement | null => {
   if (
     typeof window === "undefined" ||
@@ -188,11 +192,7 @@ export const viewPDF = (
   if (PDFJS_URL)
     return addPDFViewer("pdfjs", targetNode, url, options, pdfTitle);
 
-  targetNode.innerHTML =
-    "<p>This browser does not support inline PDFs. Please download the PDF to view it: <a href='[url]' target='_blank'>Download PDF</a></p>".replace(
-      /\[url\]/g,
-      url
-    );
+  targetNode.innerHTML = hint.replace(/\[url\]/g, url);
 
   logError("This browser does not support embedded PDFs");
 

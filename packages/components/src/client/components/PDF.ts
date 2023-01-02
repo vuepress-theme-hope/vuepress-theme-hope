@@ -1,12 +1,16 @@
 /* eslint-disable vue/no-unused-properties */
 import { defineComponent, h, onMounted } from "vue";
+import { useLocaleConfig } from "vuepress-shared/client";
 
 import { useSize } from "../composables/index.js";
 import { getLink, viewPDF } from "../utils/index.js";
 
 import type { VNode } from "vue";
+import type { PDFLocaleConfig } from "../../shared/locales.js";
 
 import "../styles/pdf.scss";
+
+declare const PDF_LOCALES: PDFLocaleConfig;
 
 export default defineComponent({
   name: "PDF",
@@ -96,10 +100,12 @@ export default defineComponent({
 
   setup(props) {
     const { el, width, height } = useSize<HTMLDivElement>(props);
+    const locales = useLocaleConfig(PDF_LOCALES);
 
     onMounted(() => {
       viewPDF(getLink(props.url), el.value, {
         title: props.title,
+        hint: locales.value.hint,
         options: {
           page: props.page,
           noToolbar: props.noToolbar,

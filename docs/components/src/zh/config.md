@@ -216,6 +216,30 @@ AddThis 的公开 ID。
 
 目录组件国际化配置。
 
+### locales.pdf
+
+- 类型: `PDFLocaleConfig`
+
+  ```ts
+  interface PDFLocaleData {
+    /**
+     * PDF 提示文字
+     *
+     * @description 只有在浏览器不支持嵌入 PDF 且没有提供 PDFJS URL 时才会使用
+     * [url] 会被实际 PDF 链接替换
+     */
+    hint: string;
+  }
+
+  interface PDFLocaleConfig {
+    [localePath: string]: PDFLocaleData;
+  }
+  ```
+
+- 必填: 否
+
+PDF 组件国际化配置。
+
 ::: details 内置支持语言
 
 - **简体中文** (zh-CN)
