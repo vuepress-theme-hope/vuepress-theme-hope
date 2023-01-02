@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.149](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.148...v2.0.0-beta.149) (2023-01-02)
+
+### Features
+
+- **components:** style improvements on catalog ([b3fd854](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b3fd854a21e5aa6ea9dd571d798aa7a05eaea46e))
+- **components:** support locales in PDF ([7cd5626](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7cd56260673883801c2ee83c6419a992fb856d5b))
+- **sass-palette:** use default theme variable if possible ([1c98543](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1c9854311bd9844e17f95f8ec89f8a1a9a9eb0fa))
+
+### Bug Fixes
+
+- add missing fallback css vars ([8e379be](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8e379be571c4293e87e03b389b8450a97491f59f))
+- **auto-catalog:** fix component ([6547aca](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6547aca9d4b80d69af68cc091dfebd69250b8b81))
+- **auto-catalog:** fix issues with cjk path ([d193982](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d19398288f00eb49375dece70828543595feb85f))
+- **theme:** fix component options ([60c019b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/60c019b99be1414c88975b5441784800ff996516))
+
 ## [2.0.0-beta.148](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.147...v2.0.0-beta.148) (2023-01-01)
 
 ### Features
