@@ -7,8 +7,8 @@ const base = <"/" | `/${string}/`>process.env.BASE || "/";
 export default defineUserConfig({
   base,
 
-  title: "Comment Plugin",
-  description: "Comment Plugin for VuePress2",
+  title: "Auto Catalog Plugin",
+  description: "Auto generating catalog pages for VuePress2",
 
   // we are using a custom theme adding this plugin
   theme: defaultTheme({

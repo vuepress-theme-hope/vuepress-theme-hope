@@ -46,19 +46,21 @@ export const generateCatalog = async (
   });
 
   await Promise.all(
-    Array.from(pathToBeGenerated).map((catalogPath) => {
-      const [, basename] = /\/([^/]+)\/?$/.exec(catalogPath) || [];
-      const title = getTitleFromFilename(basename);
+    Array.from(pathToBeGenerated)
+      .map((path) => decodeURI(path))
+      .map((path) => {
+        const [, basename] = /\/([^/]+)\/?$/.exec(path) || [];
+        const title = getTitleFromFilename(basename);
 
-      return createPage(app, {
-        frontmatter: {
-          title,
-          ...(frontmatter(catalogPath) || {}),
-        },
-        content,
-        path: catalogPath,
-      });
-    })
+        return createPage(app, {
+          frontmatter: {
+            title,
+            ...(frontmatter(path) || {}),
+          },
+          content,
+          path,
+        });
+      })
   ).then((pages) => {
     app.pages.push(...pages);
   });
