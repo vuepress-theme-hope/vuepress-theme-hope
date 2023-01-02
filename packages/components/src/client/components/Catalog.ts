@@ -244,7 +244,7 @@ export default defineComponent({
                 "ul",
                 { class: "child-catalog-wrapper" },
                 children.map(({ children = [], icon, path, title }, index) =>
-                  h("li", { class: "catalog-item" }, [
+                  h("li", { class: "child-catalog-item" }, [
                     h(
                       "div",
                       {
