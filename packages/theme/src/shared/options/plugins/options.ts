@@ -54,8 +54,6 @@ export interface PluginsOptions {
    * @description FontIcon 被内部使用，所以它无论如何都会被注册。
    *
    * @see https://vuepress-theme-hope.github.io/v2/zh/components/config.html
-   *
-   * @default ['Badge', 'FontIcon']
    */
   components?: ComponentOptions;
 

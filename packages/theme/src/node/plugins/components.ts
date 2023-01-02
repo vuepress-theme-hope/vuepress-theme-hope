@@ -11,6 +11,7 @@ export const getComponentsPlugin = (
   >,
   {
     components = ["Badge", "FontIcon"],
+    componentOptions = {},
     rootComponents = {},
   }: ComponentOptions = {},
   legacy = false
@@ -28,13 +29,14 @@ export const getComponentsPlugin = (
         ...(typeof options.iconPrefix === "string"
           ? { prefix: options.iconPrefix }
           : {}),
+        ...componentOptions,
       },
       rootComponents: {
-        ...rootComponents,
         backToTop:
           typeof options.backToTop === "number"
             ? options.backToTop
             : options.backToTop !== false,
+        ...rootComponents,
       },
     },
     legacy
