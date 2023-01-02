@@ -32,9 +32,9 @@
   .main-title,
   .child-title,
   .sub-title {
-    margin-top: calc(0.5rem - var(--navbar-height));
+    margin-top: calc(0.5rem - var(--navbar-height, 3.6rem));
     margin-bottom: 0.5rem;
-    padding-top: calc(var(--navbar-height));
+    padding-top: var(--navbar-height, 3.6rem);
     font-weight: 500;
 
     &:first-child {

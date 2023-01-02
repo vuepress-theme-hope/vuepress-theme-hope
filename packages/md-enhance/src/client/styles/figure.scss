@@ -10,7 +10,7 @@
 
     text-align: center;
 
-    transition: transform var(--transform-transition);
+    transition: transform var(--t-transform, 0.3s ease);
 
     img {
       overflow: hidden;

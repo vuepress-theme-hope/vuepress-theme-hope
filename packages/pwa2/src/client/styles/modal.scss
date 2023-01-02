@@ -49,7 +49,8 @@
   font-weight: 600;
   line-height: 2.2rem;
 
-  transition: background var(--color-transition), color var(--color-transition);
+  transition: background var(--t-color, 0.3s ease),
+    color var(--t-color, 0.3s ease);
 
   // stylelint-disable media-feature-name-no-unknown
   @media (display-mode: standalone) {
@@ -115,7 +116,7 @@
 
     background: var(--c-bg, #fff);
 
-    transition: background var(--color-transition);
+    transition: background var(--t-color, 0.3s ease);
     animation: 0.15s pwa-opened;
 
     @media (max-width: hope-config.$laptop) {
@@ -148,7 +149,7 @@
       @include reset.button;
       float: right;
       color: var(--grey3);
-      transition: color var(--color-transition);
+      transition: color var(--t-color, 0.3s ease);
 
       &:hover,
       &:focus {
@@ -184,7 +185,7 @@
 
       background: #eee;
 
-      transition: background var(--color-transition);
+      transition: background var(--t-color, 0.3s ease);
 
       @media (max-width: hope-config.$pad) {
         width: 60px;
@@ -288,7 +289,7 @@
       font-size: 16px;
       line-height: 29px;
 
-      transition: color var(--color-transition);
+      transition: color var(--t-color, 0.3s ease);
     }
   }
 
@@ -304,7 +305,7 @@
     button {
       @include reset.button;
       width: 4em;
-      transition: background var(--color-transition);
+      transition: background var(--t-color, 0.3s ease);
 
       &:hover,
       &:focus {
@@ -396,7 +397,7 @@
   .install-button {
     background: var(--c-brand, #3eaf7c);
     color: var(--white);
-    transition: color var(--color-transition);
+    transition: color var(--t-color, 0.3s ease);
 
     @media (max-width: hope-config.$mobile) {
       span {
@@ -439,8 +440,8 @@
     font-size: 14px;
     text-align: center;
 
-    transition: background var(--color-transition),
-      box-shadow var(--color-transition);
+    transition: background var(--t-color, 0.3s ease),
+      box-shadow var(--t-color, 0.3s ease);
 
     &::after {
       content: " ";
@@ -455,7 +456,7 @@
       border-right: 0.8em solid transparent;
       border-left: 0.8em solid transparent;
 
-      transition: border-color var(--color-transition);
+      transition: border-color var(--t-color, 0.3s ease);
     }
 
     p {
@@ -472,7 +473,7 @@
       background: #07c160;
       color: var(--white);
 
-      transition: color var(--color-transition);
+      transition: color var(--t-color, 0.3s ease);
     }
   }
 }

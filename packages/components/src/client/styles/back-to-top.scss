@@ -17,8 +17,8 @@
   color: var(--c-brand, #3eaf7c);
   box-shadow: 2px 2px 10px 0 var(--card-shadow);
 
-  transition: background var(--color-transition), color var(--color-transition),
-    box-shadow var(--color-transition);
+  transition: background var(--t-color, 0.3s ease),
+    color var(--t-color, 0.3s ease), box-shadow var(--t-color, 0.3s ease);
 
   @media (max-width: hope-config.$tablet) {
     width: 2.25rem;
@@ -45,7 +45,7 @@
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity var(--color-transition);
+  transition: opacity var(--t-color, 0.3s ease);
 }
 
 .fade-enter,

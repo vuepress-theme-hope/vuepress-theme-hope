@@ -73,8 +73,8 @@
 
     font-weight: 500;
 
-    transition: background var(--color-transition) border-color
-      var(--color-transition);
+    transition: background var(--t-color, 0.3s ease) border-color
+      var(--t-color, 0.3s ease);
   }
 
   .title {
@@ -121,7 +121,7 @@
 
     background: var(--grey15);
 
-    transition: background var(--color-transition);
+    transition: background var(--t-color, 0.3s ease);
 
     .loading-icon {
       width: 4em;
@@ -130,7 +130,7 @@
 
       color: var(--c-brand, #3eaf7c);
 
-      transition: color var(--color-transition);
+      transition: color var(--t-color, 0.3s ease);
     }
   }
 
@@ -154,7 +154,7 @@
 
     background: var(--c-bg, #fff);
 
-    transition: background var(--color-transition);
+    transition: background var(--t-color, 0.3s ease);
 
     @media (max-width: hope-config.$tablet) {
       &.show-code {

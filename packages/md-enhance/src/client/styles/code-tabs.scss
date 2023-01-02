@@ -12,7 +12,7 @@
 
   white-space: nowrap;
 
-  transition: background var(--color-transition);
+  transition: background var(--t-color, 0.3s ease);
 
   @media (max-width: hope-config.$mobile) {
     margin-right: -1.5rem;
@@ -40,7 +40,8 @@
 
   cursor: pointer;
 
-  transition: background var(--color-transition), color var(--color-transition);
+  transition: background var(--t-color, 0.3s ease),
+    color var(--t-color, 0.3s ease);
 
   &:hover {
     background: var(--code-tabs-nav-hover-color, #434a57);

@@ -61,7 +61,7 @@
   background: var(--c-bg, #fff);
   box-shadow: 2px 2px 10px 0 var(--card-shadow);
 
-  transition: background var(--color-transition);
+  transition: background var(--t-color, 0.3s ease);
   animation: 0.15s pwa-opened;
 
   @media (max-width: hope-config.$laptop) {

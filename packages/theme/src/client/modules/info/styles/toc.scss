@@ -5,7 +5,7 @@ $headings: (2, 3, 4, 5, 6);
   top: calc(var(--navbar-height) + 2rem);
   z-index: 99;
 
-  max-width: var(--content-width);
+  max-width: var(--content-width, 740px);
   margin: 0 auto;
 
   + #{hope-config.$content-class}:not(.custom) {

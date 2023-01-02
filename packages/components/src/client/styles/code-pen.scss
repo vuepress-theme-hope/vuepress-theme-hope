@@ -5,7 +5,8 @@
 
   text-align: center;
 
-  transition: background var(--color-transition), border var(--color-transition);
+  transition: background var(--t-color, 0.3s ease),
+    border var(--t-color, 0.3s ease);
 
   .codepen-button {
     display: block;
@@ -22,8 +23,8 @@
 
     cursor: pointer;
 
-    transition: background var(--color-transition),
-      border var(--color-transition), color var(--color-transition);
+    transition: background var(--t-color, 0.3s ease),
+      border var(--t-color, 0.3s ease), color var(--t-color, 0.3s ease);
 
     &:hover {
       background: var(--c-brand-light, #4abf8a);

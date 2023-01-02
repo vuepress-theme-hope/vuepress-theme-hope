@@ -1,2 +1,43 @@
-@forward "color";
-@forward "layout";
+@use "sass:color";
+@use "sass:list";
+@use "sass:map";
+
+/** shadow */
+$box-shadow: (
+  light: #f0f1f2,
+  dark: #0f0e0d,
+) !default;
+$card-shadow: (
+  light: rgb(0 0 0 / 15%),
+  dark: rgb(0 0 0 / 30%),
+) !default;
+
+/* constants */
+$black: (
+  light: #000,
+  dark: #fff,
+) !default;
+$dark-grey: (
+  light: #666,
+  dark: #999,
+) !default;
+$light-grey: (
+  light: #999,
+  dark: #666,
+) !default;
+$white: (
+  light: #fff,
+  dark: #000,
+) !default;
+$grey3: (
+  light: #333,
+  dark: #bbb,
+) !default;
+$grey12: (
+  light: #bbb,
+  dark: #333,
+) !default;
+$grey14: (
+  light: #eee,
+  dark: #111,
+) !default;
