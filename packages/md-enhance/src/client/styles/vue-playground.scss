@@ -152,7 +152,7 @@
 
     height: auto;
 
-    background: var(--c-bg);
+    background: var(--c-bg, #fff);
 
     transition: background var(--color-transition);
 
