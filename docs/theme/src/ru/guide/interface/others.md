@@ -64,6 +64,24 @@ export default defineUserConfig({
 
 Вы можете установить `backToTop: false` в параметрах темы, чтобы отключить его, или установить его на число, чтобы изменить расстояние срабатывания по умолчанию.
 
+## RTL Layout
+
+`vuepress-theme-hope` basically supports RTL layout. Just add the following style to `.vuepress/style/index.scss`
+
+```scss
+html {
+  direction: rtl;
+}
+```
+
+You will see that almost everything works fine.
+
+::: note
+
+As we mention above, the theme **basically** supports RTL layout, because not every css property has a "direction adaptive" value, e.g.: `float: left|right`, so you may still need to handle some layouts yourself.
+
+:::
+
 <script setup lang="ts">
 import ToggleFullScreenButton from "@theme-hope/modules/outlook/components/ToggleFullScreenButton";
 </script>
