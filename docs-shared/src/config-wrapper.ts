@@ -6,20 +6,26 @@ import type { UserConfig } from "@vuepress/cli";
 
 const __dirname = getDirname(import.meta.url);
 
-const BASE = <"/" | `/${string}/`>process.env["BASE"] || "/";
+const IS_GITEE = "GITEE" in process.env;
+const IS_NETLIFY = "NETLIFY" in process.env;
+const IS_GITHUB = !IS_GITEE && !IS_NETLIFY;
+
+export interface ConfigOptions {
+  name: string;
+  base?: string;
+  indexName?: string | false;
+}
 
 export const config = (
-  {
-    base = "",
-    indexName,
-  }: {
-    base?: string;
-    indexName: string | false;
-  },
+  { name, base = name.replace(/\d+$/, ""), indexName }: ConfigOptions,
   { alias = {}, plugins = [], ...config }: UserConfig
-): UserConfig =>
-  defineUserConfig({
-    base: base ? `${BASE}${base}/` : BASE,
+): UserConfig => {
+  const docsBase = IS_NETLIFY ? "/" : <`/${string}/`>`/v2/${base}`;
+  const docsearchIndexName =
+    indexName === false ? false : `vuepress-theme-hope-${indexName || name}`;
+
+  return defineUserConfig({
+    base: docsBase,
 
     dest: "./dist",
 
@@ -30,12 +36,12 @@ export const config = (
     },
 
     plugins: [
-      ...(indexName
+      ...(docsearchIndexName
         ? [
             docsearchPlugin({
               appId: "VXIEHELDL1",
               apiKey: "595796f71b6ba14326719682c3738c0c",
-              indexName,
+              indexName: docsearchIndexName,
               locales: {
                 "/zh/": {
                   placeholder: "搜索文档",
@@ -87,12 +93,15 @@ export const config = (
     ],
 
     alias: {
+      "@NetlifyBadge": path.resolve(__dirname, "./components/NetlifyBadge.js"),
       "@theme-hope/components/HomeHero": path.resolve(
         __dirname,
         "./components/HopeHero.js"
       ),
       ...alias,
     },
+
+    define: () => ({ IS_GITEE, IS_GITHUB, IS_NETLIFY }),
 
     extendsBundlerOptions: (config: unknown, app): void => {
       addViteOptimizeDepsInclude({ app, config }, [
@@ -104,5 +113,8 @@ export const config = (
 
     shouldPrefetch: false,
 
+    clientConfigFile: path.resolve(__dirname, "./client.js"),
+
     ...config,
   });
+};

@@ -3,8 +3,7 @@ import theme from "./theme.js";
 
 export default config(
   {
-    base: "remove-pwa",
-    indexName: "vuepress-theme-hope-remove-pwa",
+    name: "remove-pwa",
   },
   {
     locales: {

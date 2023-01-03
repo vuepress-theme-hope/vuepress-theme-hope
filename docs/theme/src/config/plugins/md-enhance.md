@@ -26,7 +26,7 @@ If you don’t need this feature, please set to `false`.
 
 `vuepress-theme-hope` will set the `container` option to `true` by default.
 
-See the [md-enhance documentation][md-enhance-config] for more details.
+See <ProjectLink name="md-enhance" path="/config.html">Plugin documentation</ProjectLink> for more details.
 
 :::
 
@@ -656,5 +656,3 @@ If the theme you are using has a switching animation, it is recommended to confi
 - Required: No
 
 Locales config for Markdown Enhance Plugin.
-
-[md-enhance-config]: https://vuepress-theme-hope.github.io/v2/md-enhance/config.html

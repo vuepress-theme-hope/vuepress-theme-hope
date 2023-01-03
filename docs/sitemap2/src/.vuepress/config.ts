@@ -3,8 +3,7 @@ import theme from "./theme.js";
 
 export default config(
   {
-    base: "sitemap",
-    indexName: "vuepress-theme-hope-sitemap2",
+    name: "sitemap2",
   },
   {
     locales: {

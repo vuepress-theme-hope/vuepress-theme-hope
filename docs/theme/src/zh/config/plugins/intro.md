@@ -47,45 +47,45 @@ tag:
 
 ### Mr.Hope 提供的插件
 
-- [vuepress-plugin-auto-catalog][auto-catalog]: VuePress2 的目录自动生成插件
+- <ProjectLink name="auto-catalog" path="/zh/">vuepress-plugin-auto-catalog</ProjectLink>: VuePress2 的目录自动生成插件
 
-- [vuepress-plugin-blog2][blog2]: VuePress2 的博客插件
+- <ProjectLink name="blog2" path="/zh/">vuepress-plugin-blog2</ProjectLink>: VuePress2 的博客插件
 
-- [vuepress-plugin-comment2][comment2]: 提供评论与浏览量功能
+- <ProjectLink name="comment2" path="/zh/">vuepress-plugin-comment2</ProjectLink>: 提供评论与浏览量功能
 
-- [vuepress-plugin-components][components]: 提供一些开箱即用的插件
+- <ProjectLink name="components" path="/zh/">vuepress-plugin-components</ProjectLink>: 提供一些开箱即用的插件
 
-- [vuepress-plugin-copy-code2][copy-code2]: 提供一键复制代码块功能。
+- <ProjectLink name="copy-code2" path="/zh/">vuepress-plugin-copy-code2</ProjectLink>: 提供一键复制代码块功能。
 
-- [vuepress-plugin-copyright2][copyright2]: 在用户复制时追加版权信息，或禁用站点的复制与选择。
+- <ProjectLink name="copyright2" path="/zh/">vuepress-plugin-copyright2</ProjectLink>: 在用户复制时追加版权信息，或禁用站点的复制与选择。
 
-- [vuepress-plugin-feed2][feed2]: Feed 支持
+- <ProjectLink name="feed2" path="/zh/">vuepress-plugin-feed2</ProjectLink>: Feed 支持
 
-- [vuepress-plugin-md-enhance][md-enhance]: 提供更多 Markdown 语法
+- <ProjectLink name="md-enhance" path="/zh/">vuepress-plugin-md-enhance</ProjectLink>: 提供更多 Markdown 语法
 
-- [vuepress-plugin-photo-swipe][photo-swipe]: 基于 Photo Swipe 的图片浏览插件
+- <ProjectLink name="photo-swipe" path="/zh/">vuepress-plugin-photo-swipe</ProjectLink>: 基于 Photo Swipe 的图片浏览插件
 
-- [vuepress-plugin-pwa2][pwa2]: 增强的 PWA 支持
+- <ProjectLink name="pwa2" path="/zh/">vuepress-plugin-pwa2</ProjectLink>: 增强的 PWA 支持
 
-- [vuepress-plugin-reading-time2][reading-time2]: 阅读时间与字数统计
+- <ProjectLink name="reading-time2" path="/zh/">vuepress-plugin-reading-time2</ProjectLink>: 阅读时间与字数统计
 
-- [vuepress-plugin-sass-palette][sass-palette]: 面向全部插件和主题的 Sass 配置插件
+- <ProjectLink name="sass-palette" path="/zh/">vuepress-plugin-sass-palette</ProjectLink>: 面向全部插件和主题的 Sass 配置插件
 
-- [vuepress-plugin-seo2][seo2]: SEO 增强插件
+- <ProjectLink name="seo2" path="/zh/">vuepress-plugin-seo2</ProjectLink>: SEO 增强插件
 
-- [vuepress-plugin-sitemap2][sitemap2]: Sitemap 插件
+- <ProjectLink name="sitemap2" path="/zh/">vuepress-plugin-sitemap2</ProjectLink>: Sitemap 插件
 
 ::: tip
 
 这里还有一些其他没有被主题捆绑的插件，你可以根据自己的需求自行启用。
 
-- [vuepress-plugin-lightgallery][lightgallery]: 基于 lightgallery 图片浏览插件
+- <ProjectLink name="lightgallery" path="/zh/">vuepress-plugin-lightgallery</ProjectLink>: 基于 lightgallery 图片浏览插件
 
-- [vuepress-plugin-redirect][redirect]: 重定向插件
+- <ProjectLink name="redirect" path="/zh/">vuepress-plugin-redirect</ProjectLink>: 重定向插件
 
-- [vuepress-plugin-remove-pwa][remove-pwa]: 移除 PWA 插件
+- <ProjectLink name="remove-pwa" path="/zh/">vuepress-plugin-remove-pwa</ProjectLink>: 移除 PWA 插件
 
-- [vuepress-plugin-search-pro][search-pro]: 客户端搜索插件
+- <ProjectLink name="search-pro" path="/zh/">vuepress-plugin-search-pro</ProjectLink>: 客户端搜索插件
 
 :::
 
@@ -105,24 +105,6 @@ tag:
 
 - [@vuepress/plugin-theme-data][theme-data]: 主题配置的 Composition API 插件
 
-[auto-catalog]: https://vuepress-theme-hope.github.io/v2/auto-catalog/zh/
-[blog2]: https://vuepress-theme-hope.github.io/v2/blog/zh/
-[comment2]: https://vuepress-theme-hope.github.io/v2/comment/zh/
-[components]: https://vuepress-theme-hope.github.io/v2/components/zh/
-[copy-code2]: https://vuepress-theme-hope.github.io/v2/copy-code/zh/
-[copyright2]: https://vuepress-theme-hope.github.io/v2/copyright/zh/
-[feed2]: https://vuepress-theme-hope.github.io/v2/feed/zh/
-[lightgallery]: https://vuepress-theme-hope.github.io/v2/lightgallery/zh/
-[md-enhance]: https://vuepress-theme-hope.github.io/v2/md-enhance/zh/
-[photo-swipe]: https://vuepress-theme-hope.github.io/v2/photo-swipe/zh/
-[pwa2]: https://vuepress-theme-hope.github.io/v2/pwa/zh/
-[reading-time2]: https://vuepress-theme-hope.github.io/v2/reading-time/zh/
-[redirect]: https://vuepress-theme-hope.github.io/v2/redirect/zh/
-[remove-pwa]: https://vuepress-theme-hope.github.io/v2/remove-pwa/zh/
-[sass-palette]: https://vuepress-theme-hope.github.io/v2/sass-palette/zh/
-[search-pro]: https://vuepress-theme-hope.github.io/v2/search-pro/zh/
-[seo2]: https://vuepress-theme-hope.github.io/v2/seo/zh/
-[sitemap2]: https://vuepress-theme-hope.github.io/v2/sitemap/zh/
 [active-header-links]: https://v2.vuepress.vuejs.org/zh/reference/plugin/active-header-links.html
 [container]: https://v2.vuepress.vuejs.org/zh/reference/plugin/container.html
 [external-link-icon]: https://v2.vuepress.vuejs.org/zh/reference/plugin/external-link-icon.html

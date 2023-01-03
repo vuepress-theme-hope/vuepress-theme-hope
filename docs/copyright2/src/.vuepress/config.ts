@@ -3,8 +3,7 @@ import theme from "./theme.js";
 
 export default config(
   {
-    base: "copyright",
-    indexName: "vuepress-theme-hope-copyright2",
+    name: "copyright2",
   },
   {
     locales: {

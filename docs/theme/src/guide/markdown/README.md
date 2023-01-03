@@ -6,7 +6,7 @@ dir:
   order: 3
 ---
 
-Besides Markdown syntaxes VuePress itself adds, `vuepress-theme-hope` enables more syntax in Markdown via [vuepress-plugin-md-enhance][md-enhance] plugin.
+Besides Markdown syntaxes VuePress itself adds, `vuepress-theme-hope` enables more syntax in Markdown via <ProjectLink name="md-enhance">vuepress-plugin-md-enhance</ProjectLink> plugin.
 
 <!-- more -->
 
@@ -65,5 +65,3 @@ Besides Markdown syntaxes VuePress itself adds, `vuepress-theme-hope` enables mo
 ## Others
 
 - [External Import](external.md)
-
-[md-enhance]: https://vuepress-theme-hope.github.io/v2/md-enhance/

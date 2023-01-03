@@ -109,7 +109,7 @@ features:
     details: 你可以直接在 Markdown 中插入幻灯片
     link: /zh/guide/presentation/
 
-footer: 使用 <a href="https://vuepress-theme-hope.github.io/v2/" target="_blank">VuePress Theme Hope</a> 主题 | MIT 协议, 版权所有 © 2019-present Mr.Hope
+footer: 使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">VuePress Theme Hope</a> 主题 | MIT 协议, 版权所有 © 2019-present Mr.Hope
 
 copyright: false
 ---
@@ -179,3 +179,9 @@ export default {
 ## 从 V1 迁移
 
 详见 [迁移指南](./migration.md)。
+
+<NetlifyBadge />
+
+<script setup lang="ts">
+import NetlifyBadge from "@NetlifyBadge";
+</script>

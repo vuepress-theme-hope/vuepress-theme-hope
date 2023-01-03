@@ -7,7 +7,7 @@ icon: creative
 
 :::tip 如果你启用过 PWA，为什么需要这个插件？
 
-PWA 插件，如 [`@vuepress/plugin-pwa`][official-pwa] 和 [`vuepress-plugin-pwa2`][pwa2] 将 Service Worker 注册到你的站点，这将缓存你的站点并使其离线可用。
+PWA 插件，如 [`@vuepress/plugin-pwa`][official-pwa] 和 <ProjectLink name="pwa2" path="/zh/">`vuepress-plugin-pwa2`</ProjectLink> 将 Service Worker 注册到你的站点，这将缓存你的站点并使其离线可用。
 
 但是，如果你删除 PWA 插件，先前的 Service Worker 仍将在那里，但它们永远无法获得更新，因为他们永远无法找到要更新的新 Service Worker。 因此，用户将继续使用你网站的旧版本。
 
@@ -20,4 +20,3 @@ PWA 插件，如 [`@vuepress/plugin-pwa`][official-pwa] 和 [`vuepress-plugin-pw
 :::
 
 [official-pwa]: https://v2.vuepress.vuejs.org/zh/reference/plugin/pwa.html
-[pwa2]: https://vuepress-theme-hope.github.io/v2/pwa/zh/

@@ -3,8 +3,7 @@ import theme from "./theme.js";
 
 export default config(
   {
-    base: "feed",
-    indexName: "vuepress-theme-hope-feed2",
+    name: "feed2",
   },
   {
     locales: {

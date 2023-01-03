@@ -17,7 +17,7 @@ But PLEASE DO AWARE that organizational license can only be used on one product.
 
 YOU ARE WARNED!
 
-If you are worried about this, please consider using [photo-swipe](https://vuepress-theme-hope.github.io/v2/photo-swipe/) instead.
+If you are worried about this, please consider using <ProjectLink name="photo-swipe">vuepress-plugin-photo-swipe</ProjectLink> instead.
 
 :::
 

@@ -10,7 +10,7 @@ tag:
 
 Если вы программист, вы можете захотеть, чтобы ваши пользователи могли копировать код, который вы показываете в тексте, одним щелчком мыши.
 
-Для этого `vuepress-theme-hope` используйте [vuepress-plugin-copy-code2][copy-code2], чтобы предоставить кнопку копирования на блоках кода.
+Для этого `vuepress-theme-hope` используйте <ProjectLink name="copy-code2">vuepress-plugin-copy-code2</ProjectLink>, чтобы предоставить кнопку копирования на блоках кода.
 
 ::: info
 
@@ -42,5 +42,3 @@ export default {
   }),
 };
 ```
-
-[copy-code2]: https://vuepress-theme-hope.github.io/v2/copy-code/

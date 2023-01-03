@@ -9,7 +9,7 @@ tag:
   - Markdown
 ---
 
-Помимо синтаксисов Markdown, добавленных самим VuePress, `vuepress-theme-hope` включает дополнительный синтаксис в Markdown с помощью плагина [vuepress-plugin-md-enhance][md-enhance].
+Помимо синтаксисов Markdown, добавленных самим VuePress, `vuepress-theme-hope` включает дополнительный синтаксис в Markdown с помощью плагина <ProjectLink name="md-enhance">vuepress-plugin-md-enhance</ProjectLink>.
 
 <!-- more -->
 
@@ -21,12 +21,10 @@ VuePress поставляется с таблицами в стиле GitHub, Em
 
 ## Включить улучшение разметки
 
-`plugin.mdEnhance` в параметрах темы будет передан плагину как опция плагина. Посетите [документацию плагина][md-enhance], чтобы узнать об использовании.
+`plugin.mdEnhance` в параметрах темы будет передан плагину как опция плагина. Посетите <ProjectLink name="md-enhance">документацию плагина</ProjectLink>, чтобы узнать об использовании.
 
 ::: tip
 
 Не беспокойтесь о размере вашего сайта. Если вы не включите связанные функции, окончательный код не будет включать код для этих функций.
 
 :::
-
-[md-enhance]: https://vuepress-theme-hope.github.io/v2/md-enhance/

@@ -28,6 +28,4 @@ If you don’t need comment feature, ignore this option.
 
 ## Options
 
-For details of each comment service options, please refer to [vuepress-plugin-comment2 documentation][comment-config].
-
-[comment-config]: https://vuepress-theme-hope.github.io/v2/comment/config/
+For details of each comment service options, please refer to <ProjectLink name="comment2" path="/config/">vuepress-plugin-comment2 documentation</ProjectLink>.

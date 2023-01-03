@@ -3,8 +3,7 @@ import theme from "./theme.js";
 
 export default config(
   {
-    base: "comment",
-    indexName: "vuepress-theme-hope-comment2",
+    name: "comment2",
   },
   {
     locales: {

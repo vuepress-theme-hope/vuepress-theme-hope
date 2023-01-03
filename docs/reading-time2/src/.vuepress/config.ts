@@ -3,8 +3,7 @@ import theme from "./theme.js";
 
 export default config(
   {
-    base: "reading-time",
-    indexName: "vuepress-theme-hope-reading-time2",
+    name: "reading-time2",
   },
   {
     dest: "./dist",

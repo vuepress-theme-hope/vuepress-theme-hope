@@ -3,8 +3,7 @@ import theme from "./theme.js";
 
 export default config(
   {
-    base: "photo-swipe",
-    indexName: "vuepress-theme-hope-photo-swipe",
+    name: "photo-swipe",
   },
   {
     locales: {

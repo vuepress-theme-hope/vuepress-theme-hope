@@ -25,6 +25,6 @@ export const enNavbar = navbar([
   {
     text: "V2 Docs",
     icon: "note",
-    link: "https://vuepress-theme-hope.github.io/v2/",
+    link: "https://theme-hope.vuejs.press/",
   },
 ]);

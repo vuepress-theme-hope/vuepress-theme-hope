@@ -6,7 +6,7 @@ dir:
   order: 3
 ---
 
-除了 VuePress 本身新增了一些 Markdown 语法外，`vuepress-theme-hope` 通过 [vuepress-plugin-md-enhance][md-enhance]，在 Markdown 中启用了更多的语法与新功能。
+除了 VuePress 本身新增了一些 Markdown 语法外，`vuepress-theme-hope` 通过 <ProjectLink name="md-enhance">vuepress-plugin-md-enhance</ProjectLink>，在 Markdown 中启用了更多的语法与新功能。
 
 <!-- more -->
 
@@ -67,5 +67,3 @@ dir:
 ## 其他
 
 - [外部引入](external.md)
-
-[md-enhance]: https://vuepress-theme-hope.github.io/v2/md-enhance/
