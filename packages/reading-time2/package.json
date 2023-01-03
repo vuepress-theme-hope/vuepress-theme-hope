@@ -40,21 +40,28 @@
     "dev": "pnpm dev:ts",
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
-  "dependencies": {
-    "vuepress-shared": "workspace:*"
-  },
-  "peerDependencies": {
-    "vuepress": "2.0.0-beta.60",
-    "vuepress-vite": "2.0.0-beta.60",
-    "vuepress-webpack": "2.0.0-beta.60"
-  },
   "engines": {
     "node": "^14.18.0 || >=16.0.0",
     "npm": ">=8",
     "pnpm": ">=7"
   },
+  "dependencies": {
+    "vuepress-shared": "workspace:*"
+  },
+  "peerDependencies": {
+    "vuepress": "2.0.0-beta.60",
+    "vuepress-shared": "workspace:*",
+    "vuepress-vite": "2.0.0-beta.60",
+    "vuepress-webpack": "2.0.0-beta.60"
+  },
+  "devDependencies": {
+    "@vuepress/core": "2.0.0-beta.60"
+  },
   "peerDependenciesMeta": {
     "vuepress": {
+      "optional": true
+    },
+    "vuepress-shared": {
       "optional": true
     },
     "vuepress-vite": {
@@ -63,8 +70,5 @@
     "vuepress-webpack": {
       "optional": true
     }
-  },
-  "devDependencies": {
-    "@vuepress/core": "2.0.0-beta.60"
   }
 }

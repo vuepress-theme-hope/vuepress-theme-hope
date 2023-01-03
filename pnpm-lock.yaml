@@ -1298,7 +1298,6 @@ importers:
       chokidar: ^3.5.3
       vue: ^3.2.45
       vue-router: ^4.1.6
-      vuepress-plugin-blog2: workspace:*
       vuepress-plugin-sass-palette: workspace:*
       vuepress-shared: workspace:*
     dependencies:
@@ -1310,7 +1309,6 @@ importers:
       chokidar: 3.5.3
       vue: 3.2.45
       vue-router: 4.1.6_vue@3.2.45
-      vuepress-plugin-blog2: link:../blog2
       vuepress-plugin-sass-palette: link:../sass-palette
       vuepress-shared: link:../shared
     devDependencies:

@@ -43,6 +43,11 @@
     "dev:copy": "pnpm copy -w",
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
+  "engines": {
+    "node": "^14.18.0 || >=16.0.0",
+    "npm": ">=8",
+    "pnpm": ">=7"
+  },
   "dependencies": {
     "@vuepress/client": "2.0.0-beta.60",
     "@vuepress/utils": "2.0.0-beta.60",
@@ -56,21 +61,28 @@
     "@vuepress/core": "2.0.0-beta.60"
   },
   "peerDependencies": {
+    "@vuepress/client": "2.0.0-beta.60",
     "sass-loader": "^13.2.0",
     "vuepress": "2.0.0-beta.60",
+    "vuepress-plugin-sass-palette": "workspace:*",
+    "vuepress-shared": "workspace:*",
     "vuepress-vite": "2.0.0-beta.60",
     "vuepress-webpack": "2.0.0-beta.60"
   },
-  "engines": {
-    "node": "^14.18.0 || >=16.0.0",
-    "npm": ">=8",
-    "pnpm": ">=7"
-  },
   "peerDependenciesMeta": {
+    "@vuepress/client": {
+      "optional": true
+    },
     "sass-loader": {
       "optional": true
     },
     "vuepress": {
+      "optional": true
+    },
+    "vuepress-plugin-sass-palette": {
+      "optional": true
+    },
+    "vuepress-shared": {
       "optional": true
     },
     "vuepress-vite": {
