@@ -88,17 +88,17 @@
   &.danger {
     margin: 1rem 0;
     padding: 0.25rem 1rem;
-    border-left-width: 0.3rem;
-    border-left-style: solid;
+    border-inline-start-width: 0.3rem;
+    border-inline-start-style: solid;
     border-radius: 0.5rem;
 
     color: inherit;
 
     .hint-container-title {
-      padding-left: 1.75rem;
+      padding-inline-start: 1.75rem;
 
       @media print {
-        padding-left: 0;
+        padding-inline-start: 0;
       }
 
       &::before {
@@ -106,7 +106,7 @@
 
         position: absolute;
         top: calc(50% - 0.6125em);
-        left: 0;
+        inset-inline-start: 0;
 
         width: 1.25em;
         height: 1.25em;
@@ -258,7 +258,10 @@
     position: relative;
 
     margin: -1.5rem;
-    padding: 1.5rem 1.5rem 1.5rem 4rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-inline-start: 4rem;
+    padding-inline-end: 1.5rem;
 
     list-style: none;
 
@@ -277,7 +280,7 @@
 
       position: absolute;
       top: calc(50% - 0.75rem);
-      left: 1.5rem;
+      inset-inline-start: 1.5rem;
 
       width: 1.5rem;
       height: 1.5rem;

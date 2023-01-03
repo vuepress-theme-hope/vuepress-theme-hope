@@ -17,7 +17,7 @@
 .outlook-dropdown {
   position: absolute;
   top: 100%;
-  right: 0;
+  inset-inline-end: 0;
 
   overflow-y: auto;
   box-sizing: border-box;

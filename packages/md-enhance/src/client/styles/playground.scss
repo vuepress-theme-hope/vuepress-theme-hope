@@ -58,7 +58,7 @@
 
   .action {
     display: inline-flex;
-    margin-left: 10px;
+    margin-inline-start: 10px;
 
     &:hover .icon {
       transition: transform 0.15s cubic-bezier(0.2, 0, 0.13, 2);

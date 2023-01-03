@@ -82,7 +82,7 @@
   .search-icon {
     position: absolute;
     top: calc(50% - 0.75rem);
-    left: 0.5rem;
+    inset-inline-start: 0.5rem;
 
     width: 1.5rem;
     height: 1.5rem;
@@ -93,7 +93,11 @@
 
     min-width: 0;
     margin: 0;
-    padding: 0.25rem 1rem 0.3rem 2.5rem;
+    padding-inline: 2.5rem 1rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+
+    // padding: 0.25rem 1rem 0.3rem 2.5rem;
     border: 0;
     border: 1px solid var(--c-brand, #3eaf7c);
     border-radius: 8px;
@@ -164,7 +168,7 @@
     box-shadow: 1px 1px 4px 0 var(--card-shadow);
 
     + kbd {
-      margin-left: -0.25rem;
+      margin-inline-start: -0.25rem;
     }
   }
 

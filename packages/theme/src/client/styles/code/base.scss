@@ -3,6 +3,7 @@
 /* Code blocks */
 pre[class*="language-"] {
   overflow: auto;
+  direction: ltr;
 
   > code {
     background: none;

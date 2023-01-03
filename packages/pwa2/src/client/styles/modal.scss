@@ -35,8 +35,8 @@
 .modal-button {
   @include reset.button;
   position: fixed;
-  right: 1rem;
   bottom: 1rem;
+  inset-inline-end: 1rem;
   z-index: 50;
 
   padding: 0 16px;
@@ -179,7 +179,7 @@
     img {
       width: 122px;
       height: 122px;
-      margin-right: 24px;
+      margin-inline-end: 24px;
       padding: 12px;
       border-radius: 24px;
 
@@ -193,7 +193,7 @@
       }
 
       @media (max-width: hope-config.$tablet) {
-        margin-right: 12px;
+        margin-inline-end: 12px;
         padding: 8px;
       }
 
@@ -248,12 +248,12 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin-right: 20px;
+    margin-inline-end: 20px;
 
     @media (max-width: hope-config.$tablet) {
       flex-direction: column;
       align-items: flex-start;
-      margin-right: 0;
+      margin-inline-end: 0;
     }
 
     h3 {
@@ -271,7 +271,7 @@
 
   .feature-wrapper {
     overflow: hidden;
-    padding-right: 2em;
+    padding-inline-end: 2em;
 
     ul {
       margin-block-start: 12px;
@@ -371,7 +371,7 @@
   .button-wrapper {
     width: 100%;
     padding: 1rem 0;
-    text-align: right;
+    text-align: end;
 
     @media (max-width: hope-config.$tablet) {
       text-align: center;

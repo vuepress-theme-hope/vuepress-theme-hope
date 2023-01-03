@@ -65,12 +65,12 @@
 
       position: absolute;
       top: 14px;
-      left: 0;
+      inset-inline-start: 0;
       z-index: -1;
 
       width: 4px;
       height: calc(100% - 14px);
-      margin-left: -2px;
+      margin-inline-start: -2px;
 
       background: var(--dot-bar-color);
 
@@ -92,17 +92,17 @@
       @include dot;
 
       top: 50%;
-      left: -20px;
+      inset-inline-start: -20px;
 
       width: 8px;
       height: 8px;
       margin-top: -4px;
-      margin-left: -4px;
+      margin-inline-start: -4px;
     }
   }
 
   .timeline-year-wrapper {
-    padding-left: 0 !important;
+    padding-inline-start: 0 !important;
   }
 
   .timeline-date {
@@ -119,11 +119,11 @@
     &::before {
       @include dot;
       top: 24px;
-      left: -19px;
+      inset-inline-start: -19px;
 
       width: 6px;
       height: 6px;
-      margin-left: -4px;
+      margin-inline-start: -4px;
     }
   }
 

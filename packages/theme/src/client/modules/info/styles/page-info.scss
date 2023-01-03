@@ -20,7 +20,7 @@
     flex-shrink: 0;
     align-items: center;
 
-    margin-right: 0.5em;
+    margin-inline-end: 0.5em;
 
     line-height: 2;
 
@@ -29,7 +29,7 @@
     }
 
     @media (max-width: hope-config.$mobile) {
-      margin-right: 0.3em;
+      margin-inline-end: 0.3em;
       font-size: 0.875em;
     }
 
@@ -64,7 +64,7 @@
 
     width: 1em;
     height: 1em;
-    margin-right: 0.25em;
+    margin-inline-end: 0.25em;
   }
 
   a {

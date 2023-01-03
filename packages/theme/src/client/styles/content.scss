@@ -4,8 +4,7 @@
 #{hope-config.$content-class} {
   @media print {
     margin: 0 !important;
-    padding-right: 0 !important;
-    padding-left: 0 !important;
+    padding-inline: 0 !important;
   }
 
   &.custom {
@@ -48,7 +47,7 @@
         hyphens: auto;
 
         @media (max-width: hope-config.$mobile) {
-          text-align: left;
+          text-align: start;
         }
       }
     }

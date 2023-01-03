@@ -99,18 +99,13 @@
   }
 
   .action {
+    @include reset.button;
+
     display: inline-flex;
-    margin-left: 10px;
+    margin-inline-start: 10px;
 
-    &:hover .icon {
-      transition: transform 0.15s cubic-bezier(0.2, 0, 0.13, 2);
-      transform: scale(1.2);
-    }
-
-    &.code {
-      @media (max-width: hope-config.$tablet) {
-        display: none;
-      }
+    @media (max-width: hope-config.$tablet) {
+      display: none;
     }
   }
 
