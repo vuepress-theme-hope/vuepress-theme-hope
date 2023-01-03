@@ -116,7 +116,7 @@ export default {
 />
 ```
 
-有关可用属性，请参阅 [AudioPlayer][audioplayer] 页面。
+有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/audioplayer.html">AudioPlayer</ProjectLink> 页面。
 
 ## Badge
 
@@ -128,7 +128,7 @@ export default {
 - <Badge text="info" type="info" vertical="middle" />
 - <Badge text="note" type="note" vertical="middle" />
 
-有关可用属性，请参阅 [Badge][badge] 页面。
+有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/badge.html">Badge</ProjectLink> 页面。
 
 ## BiliBili
 
@@ -158,7 +158,7 @@ export default {
 <BiliBili bvid="BV1kt411o7C3" low-quality no-danmaku />
 ```
 
-有关可用属性，请参阅 [BiliBili][bilibili] 页面。
+有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/bilibili.html">BiliBili</ProjectLink> 页面。
 
 ## Catalog
 
@@ -178,7 +178,7 @@ export default {
 <Catalog base='/zh/' />
 ```
 
-有关可用属性，请参阅 [Catalog][catalog] 页面。
+有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/catalog.html">Catalog</ProjectLink> 页面。
 
 ## CodePen
 
@@ -224,7 +224,7 @@ export default {
 />
 ```
 
-有关可用属性，请参阅 [CodePen][codepen] 页面。
+有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/codepen.html">CodePen</ProjectLink> 页面。
 
 ## FontIcon
 
@@ -240,7 +240,7 @@ export default {
 - 一个大红 Markdown 图标: <FontIcon icon="markdown" color="red" size="32" />
 ```
 
-有关可用属性，请参阅 [FontIcon][fonticon] 页面。
+有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/fonticon.html">FontIcon</ProjectLink> 页面。
 
 ## PDF
 
@@ -262,7 +262,7 @@ PDF 浏览器组件。
 <PDF url="/assets/sample.pdf" page="2" no-toolbar />
 ```
 
-有关可用属性，请参阅 [PDF][pdf] 页面。
+有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/pdf.html">PDF</ProjectLink> 页面。
 
 ## StackBlitz
 
@@ -284,7 +284,7 @@ PDF 浏览器组件。
 <StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hideDevtools />
 ```
 
-有关可用属性，请参阅 [StackBlitz][stackblitz] 页面。
+有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/stackblitz.html">StackBlitz</ProjectLink> 页面。
 
 ## VideoPlayer
 
@@ -342,7 +342,7 @@ PDF 浏览器组件。
 />
 ```
 
-有关可用属性，请参阅 [VideoPlayer][videoplayer] 页面。
+有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/videoplayer.html">VideoPlayer</ProjectLink> 页面。
 
 ## YouTube
 
@@ -372,15 +372,4 @@ PDF 浏览器组件。
 <YouTube list-type="playlist" list="PLJNLwTPak6dhCRzVelZIs2-DfBp01NX_1" />
 ```
 
-有关可用属性，请参阅 [YouTube][youtube] 页面。
-
-[audioplayer]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/audioplayer.html
-[badge]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/badge.html
-[bilibili]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/bilibili.html
-[catalog]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/catalog.html
-[codepen]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/codepen.html
-[fonticon]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/fonticon.html
-[pdf]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/pdf.html
-[stackblitz]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/stackblitz.html
-[videoplayer]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/videoplayer.html
-[youtube]: https://vuepress-theme-hope.github.io/v2/components/zh/guide/youtube.html
+有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/youtube.html">YouTube</ProjectLink> 页面。

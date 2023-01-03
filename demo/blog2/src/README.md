@@ -6,7 +6,7 @@ heroText: vuepress-plugin-blog2
 tagline: Add blog support for VuePress2
 actions:
   - text: Docs
-    link: https://vuepress-theme-hope.github.io/v2/blog/
+    link: https://plugin-blog2.vuejs.press
 
 footer: MIT Licensed | Copyright © 2021-present Mr.Hope
 ---

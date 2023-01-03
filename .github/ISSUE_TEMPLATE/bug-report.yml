@@ -24,7 +24,7 @@ body:
         - label: I am following the docs and I am sure I am using the correct configuration.
           required: true
 
-        - label: I have searched [FAQ](https://vuepress-theme-hope.github.io/v2/faq/)
+        - label: I have searched [FAQ](https://theme-hope.vuejs.press/faq/)
           required: true
 
   - type: input

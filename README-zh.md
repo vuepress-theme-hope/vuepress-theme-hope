@@ -1,6 +1,6 @@
 <!-- markdownlint-disable -->
 <p align="center">
-  <img width="240" src="https://vuepress-theme-hope.github.io/v2/logo.svg" style="text-align: center;">
+  <img width="240" src="https://theme-hope.vuejs.press/logo.svg" style="text-align: center;">
 </p>
 <h1 align="center">vuepress-theme-hope</h1>
 <h4 align="center">一个具有强大功能的 VuePress 主题✨</h4>
@@ -9,7 +9,7 @@
 [![License](https://img.shields.io/npm/l/vuepress-theme-hope.svg?style=for-the-badge)](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/LICENSE)
 [![Open in Visual Studio Code](https://img.shields.io/badge/-在%20vscode%20中打开-blue?style=for-the-badge&logo=visualstudiocode)](https://open.vscode.dev/vuepress-theme-hope/vuepress-theme-hope)
 
-## [中文文档](https://vuepress-theme-hope.github.io/v2/zh/)
+## [中文文档](https://theme-hope.vuejs.press/zh/)
 
 ## [在线案例](https://stackblitz.com/fork/vuepress-theme-hope)
 

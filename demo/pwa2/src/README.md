@@ -6,7 +6,7 @@ heroText: vuepress-plugin-pwa2
 tagline: Turning on Progressive Web App Support
 actions:
   - text: Docs
-    link: https://vuepress-theme-hope.github.io/v2/pwa/
+    link: https://plugin-pwa2.vuejs.press
 
 footer: MIT Licensed, Copyright © 2019-present Mr.Hope
 ---

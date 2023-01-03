@@ -16,7 +16,7 @@ You should create and write Markdown files, so that VuePress can convert them to
 
 ## Markdown Introduction
 
-If you are a new learner and don’t know how to write Markdown, please read [Markdown Intro](https://vuepress-theme-hope.github.io/v2/cookbook/markdown/) and [Markdown Demo](https://vuepress-theme-hope.github.io/v2/cookbook/markdown/demo.html).
+If you are a new learner and don’t know how to write Markdown, please read [Markdown Intro](https://theme-hope.vuejs.press/cookbook/markdown/) and [Markdown Demo](https://theme-hope.vuejs.press/cookbook/markdown/demo.html).
 
 ## Markdown Config
 
@@ -24,7 +24,7 @@ VuePress introduce configuration for each markdown page using Frontmatter.
 
 ::: info
 
-Frontmatter is a important concept in VuePress. If you don’t know it, you need to read [Frontmatter Introduction](https://vuepress-theme-hope.github.io/v2/cookbook/vuepress/page.html#front-matter).
+Frontmatter is a important concept in VuePress. If you don’t know it, you need to read [Frontmatter Introduction](https://theme-hope.vuejs.press/cookbook/vuepress/page.html#front-matter).
 
 :::
 
@@ -36,7 +36,7 @@ The Markdown content in VuePress will be parsed by [markdown-it](https://github.
 
 To enrich document writing, VuePress has extended Markdown syntax.
 
-For these extensions, please read [Markdown extensions in VuePress](https://vuepress-theme-hope.github.io/v2/basic/vuepress/markdown.html).
+For these extensions, please read [Markdown extensions in VuePress](https://theme-hope.vuejs.press/basic/vuepress/markdown.html).
 
 ### Theme Enhancement
 
@@ -84,7 +84,7 @@ A custom details container
 
 :::
 
-- [View Detail](https://vuepress-theme-hope.github.io/v2/guide/markdown/container.html)
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/container.html)
 
 #### Tabs
 
@@ -104,7 +104,7 @@ Orange
 
 :::
 
-- [View Detail](https://vuepress-theme-hope.github.io/v2/guide/markdown/tabs.html)
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/tabs.html)
 
 #### Code Tabs
 
@@ -130,13 +130,13 @@ npm i -D vuepress-theme-hope
 
 :::
 
-- [View Detail](https://vuepress-theme-hope.github.io/v2/guide/markdown/code-tabs.html)
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/code-tabs.html)
 
 #### Superscript and Subscript
 
 19^th^ H~2~O
 
-- [View Detail](https://vuepress-theme-hope.github.io/v2/guide/markdown/sup-sub.html)
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/sup-sub.html)
 
 #### Align
 
@@ -152,13 +152,13 @@ I am right align
 
 :::
 
-- [View Detail](https://vuepress-theme-hope.github.io/v2/guide/markdown/align.html)
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/align.html)
 
 #### Attrs
 
 A **word**{#word} having id.
 
-- [View Detail](https://vuepress-theme-hope.github.io/v2/guide/markdown/attrs.html)
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/attrs.html)
 
 #### Footnote
 
@@ -166,26 +166,26 @@ This text has footnote[^first].
 
 [^first]: This is footnote content
 
-- [View Detail](https://vuepress-theme-hope.github.io/v2/guide/markdown/footnote.html)
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/footnote.html)
 
 #### Mark
 
 You can mark ==important words== .
 
-- [View Detail](https://vuepress-theme-hope.github.io/v2/guide/markdown/mark.html)
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/mark.html)
 
 #### Tasklist
 
 - [x] Plan A
 - [ ] Plan B
 
-- [View Detail](https://vuepress-theme-hope.github.io/v2/guide/markdown/tasklist.html)
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/tasklist.html)
 
 #### Image Enhancement
 
 Support setting color scheme and size
 
-- [View Detail](https://vuepress-theme-hope.github.io/v2/guide/markdown/image.html)
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/image.html)
 
 #### Chart
 
@@ -221,7 +221,7 @@ Support setting color scheme and size
 
 :::
 
-- [View Detail](https://vuepress-theme-hope.github.io/v2/guide/markdown/chart.html)
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/chart.html)
 
 #### Echarts
 
@@ -247,7 +247,7 @@ Support setting color scheme and size
 
 :::
 
-- [View Detail](https://vuepress-theme-hope.github.io/v2/guide/markdown/echarts.html)
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/echarts.html)
 
 #### Flowchart
 
@@ -260,7 +260,7 @@ cond(yes)->process->e
 cond(no)->e
 ```
 
-- [View Detail](https://vuepress-theme-hope.github.io/v2/guide/markdown/flowchart.html)
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/flowchart.html)
 
 #### Mermaid
 
@@ -281,7 +281,7 @@ flowchart TB
     two --> c2
 ```
 
-- [View Detail](https://vuepress-theme-hope.github.io/v2/guide/markdown/mermaid.html)
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/mermaid.html)
 
 #### Tex
 
@@ -290,13 +290,13 @@ $$
 = \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^i r \cdots (r-i+1) (\log y)^{r-i}} {\omega^i} \right\}
 $$
 
-- [View Detail](https://vuepress-theme-hope.github.io/v2/guide/markdown/tex.html)
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/tex.html)
 
 #### Include files
 
 @include(./README.md{11-17})
 
-- [View Detail](https://vuepress-theme-hope.github.io/v2/guide/markdown/include.html)
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/include.html)
 
 #### Code Demo
 
@@ -321,13 +321,13 @@ span {
 
 :::
 
-- [View Detail](https://vuepress-theme-hope.github.io/v2/guide/markdown/demo.html)
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/demo.html)
 
 #### Stylize
 
 Donate Mr.Hope a cup of coffee. _Recommended_
 
-- [View Detail](https://vuepress-theme-hope.github.io/v2/guide/markdown/stylize.html)
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/stylize.html)
 
 #### Playground
 
@@ -345,7 +345,7 @@ speak(msg);
 
 :::
 
-- [View Detail](https://vuepress-theme-hope.github.io/v2/guide/markdown/playground.html)
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/playground.html)
 
 #### Vue Playground
 
@@ -368,7 +368,7 @@ const msg = ref("Hello World!");
 
 :::
 
-- [View Detail](https://vuepress-theme-hope.github.io/v2/guide/markdown/vue-playground.html)
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/vue-playground.html)
 
 #### Presentation
 
@@ -403,6 +403,6 @@ $$
 
 @slideend
 
-- [View Detail](https://vuepress-theme-hope.github.io/v2/guide/markdown/presentation.html)
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/presentation.html)
 
-[md-enhance]: https://vuepress-theme-hope.github.io/v2/md-enhance/
+[md-enhance]: https://plugin-md-enhance.vuejs.press/

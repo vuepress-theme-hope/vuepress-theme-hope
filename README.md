@@ -1,6 +1,6 @@
 <!-- markdownlint-disable -->
 <p align="center">
-  <img width="240" src="https://vuepress-theme-hope.github.io/v2/logo.svg" style="text-align: center;">
+  <img width="240" src="https://theme-hope.vuejs.press/logo.svg" style="text-align: center;">
 </p>
 <h1 align="center">vuepress-theme-hope</h1>
 <h4 align="center">A VuePress theme with tons of features✨</h4>
@@ -28,7 +28,7 @@
 
 A VuePress theme with tons of features✨
 
-## [English Docs](https://vuepress-theme-hope.github.io/v2/)
+## [English Docs](https://theme-hope.vuejs.press/)
 
 ## [Online Demo](https://stackblitz.com/fork/vuepress-theme-hope)
 

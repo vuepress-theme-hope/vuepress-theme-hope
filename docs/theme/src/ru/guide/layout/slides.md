@@ -17,7 +17,7 @@ tag:
 
 ## Демо
 
-[Вот демонстрация, содержащая все функции слайда](https://vuepress-theme-hope.github.io/v2/md-enhance/guide/presentation/demo.html).
+<ProjectLink name="md-enhance" path="/guide/presentation/demo.html">Вот демонстрация, содержащая все функции слайда</ProjectLink>.
 
 ![Скриншот страницы слайда](./assets/slides-light.png#light)
 ![Скриншот страницы слайда](./assets/slides-dark.png#dark)
