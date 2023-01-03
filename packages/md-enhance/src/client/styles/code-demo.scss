@@ -45,7 +45,7 @@
 
   background: var(--code-demo-header-bg-color);
 
-  text-align: left;
+  text-align: start;
 
   .toggle-button {
     @include reset.button;

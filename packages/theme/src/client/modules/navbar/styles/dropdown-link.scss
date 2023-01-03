@@ -28,12 +28,8 @@
       border-color: transparent;
     }
 
-    &::after {
-      border-left: 5px solid var(--theme-color);
-    }
-
     .icon {
-      margin-right: 0.25em;
+      margin-inline-end: 0.25em;
       font-size: 1em;
     }
 
@@ -52,7 +48,7 @@
   .nav-dropdown {
     position: absolute;
     top: 100%;
-    right: 0;
+    inset-inline-end: 0;
 
     overflow-y: auto;
     box-sizing: border-box;
@@ -66,7 +62,7 @@
     background: var(--bg-color);
     box-shadow: 2px 2px 10px var(--card-shadow);
 
-    text-align: left;
+    text-align: start;
     white-space: nowrap;
 
     opacity: 0;

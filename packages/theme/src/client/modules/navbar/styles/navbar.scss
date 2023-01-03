@@ -50,7 +50,7 @@
     }
 
     .icon {
-      margin-right: 0.25em;
+      margin-inline-end: 0.25em;
       font-size: 1em;
     }
   }
@@ -68,11 +68,11 @@
     margin: 0 0.25rem !important;
 
     &:first-child {
-      margin-left: 0 !important;
+      margin-inline-start: 0 !important;
     }
 
     &:last-child {
-      margin-right: 0 !important;
+      margin-inline-end: 0 !important;
     }
   }
 }

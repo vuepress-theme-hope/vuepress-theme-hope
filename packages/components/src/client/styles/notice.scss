@@ -43,7 +43,7 @@
 .notice-wrapper {
   position: fixed;
   top: 80px;
-  right: 20px;
+  inset-inline-end: 20px;
   z-index: 1500;
 
   overflow: hidden;
@@ -76,6 +76,7 @@
   color: var(--white);
 
   font-weight: 500;
+  text-align: left;
 
   .close-icon {
     vertical-align: middle;

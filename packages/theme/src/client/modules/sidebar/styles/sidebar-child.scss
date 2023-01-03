@@ -12,9 +12,11 @@
 
   width: 100%;
   margin: 0;
-  padding: 0.35rem 1rem 0.35rem 1.25rem;
+  padding-inline: 1.25rem 1rem;
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
   border-width: 0;
-  border-left: 0.25rem solid transparent;
+  border-inline-start: 0.25rem solid transparent;
 
   background: transparent;
   color: var(--text-color);
@@ -36,7 +38,7 @@
     }
 
     &.exact {
-      border-left-color: var(--theme-color);
+      border-inline-start-color: var(--theme-color);
       color: var(--theme-color);
 
       a {
@@ -46,7 +48,7 @@
   }
 
   .icon {
-    margin-right: 0.25em;
+    margin-inline-end: 0.25em;
   }
 
   .title {
@@ -65,7 +67,7 @@ button.sidebar-heading {
 
   font-weight: inherit;
   line-height: inherit;
-  text-align: left;
+  text-align: start;
 
   cursor: pointer;
 }
@@ -77,7 +79,7 @@ button.sidebar-heading {
 
   width: 100%;
   padding: 0.35rem 1rem 0.35rem 1.25rem;
-  border-left: 0.2rem solid transparent;
+  border-inline-start: 0.2rem solid transparent;
 
   color: var(--text-color);
 
@@ -86,7 +88,7 @@ button.sidebar-heading {
   line-height: 1.5;
 
   .icon {
-    margin-right: 0.25em;
+    margin-inline-end: 0.25em;
   }
 
   &:hover {
@@ -94,7 +96,7 @@ button.sidebar-heading {
   }
 
   &.active {
-    border-left-color: var(--theme-color);
+    border-inline-color: var(--theme-color);
     background: var(--theme-color-mask);
     color: var(--theme-color);
     font-weight: 500;
@@ -107,7 +109,7 @@ button.sidebar-heading {
   .sidebar-sub-headers & {
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
-    border-left: none;
+    border-inline-start: none;
 
     &.active {
       background: transparent;

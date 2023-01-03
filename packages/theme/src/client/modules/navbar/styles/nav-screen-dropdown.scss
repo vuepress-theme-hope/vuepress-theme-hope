@@ -16,7 +16,7 @@
 
   font-size: inherit;
   font-family: inherit;
-  text-align: left;
+  text-align: start;
 
   cursor: pointer;
 
@@ -57,7 +57,7 @@
 
     display: block;
 
-    padding-left: 0.5rem;
+    padding-inline-start: 0.5rem;
 
     font-weight: 400;
     line-height: 2;
@@ -82,7 +82,7 @@
 
   .dropdown-subtitle {
     margin: 0;
-    padding-left: 0.25rem;
+    padding-inline-start: 0.25rem;
 
     color: var(--light-grey);
 
@@ -105,7 +105,7 @@
   }
 
   .dropdown-subitem {
-    padding-left: 0.5rem;
+    padding-inline-start: 0.5rem;
     font-size: 0.9em;
   }
 }

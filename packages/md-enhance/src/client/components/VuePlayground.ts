@@ -75,8 +75,8 @@ export default defineComponent({
             ? h("div", { class: "title" }, decodeURIComponent(props.title))
             : null,
           h("div", { class: "actions" }, [
-            h("action", {
-              class: "button",
+            h("button", {
+              class: "action",
               innerHTML: CODE_SVG,
               onClick: () => {
                 showCode.value = !showCode.value;

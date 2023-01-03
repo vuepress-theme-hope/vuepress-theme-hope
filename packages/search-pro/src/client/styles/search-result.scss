@@ -1,6 +1,7 @@
 .search-pro-result {
   scrollbar-color: var(--c-brand, #3aa675) var(--c-border, #eaecef);
   scrollbar-width: thin;
+
   @media (max-width: hope-config.$mobile) {
     font-size: 13px;
   }
@@ -56,12 +57,12 @@
 
 .search-pro-result-type {
   display: block;
-  margin-left: -0.5rem;
+  margin-inline-start: -0.5rem;
 }
 
 .search-pro-close-icon {
   box-sizing: content-box;
-  margin-right: -0.5rem;
+  margin-inline-end: -0.5rem;
   border-radius: 50%;
 
   svg {

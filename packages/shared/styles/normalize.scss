@@ -144,13 +144,13 @@ ol {
 
 ul,
 ol {
-  padding-left: 1.2em;
+  padding-inline-start: 1.2em;
 }
 
 blockquote {
   margin: 1rem 0;
   padding: 0.25rem 0 0.25rem 1rem;
-  border-left: 0.2rem solid #ddd;
+  border-inline-start: 0.2rem solid #ddd;
 
   color: #666;
 
@@ -241,7 +241,7 @@ td {
   }
 
   blockquote {
-    border-left: 0.2rem solid #ddd;
+    border-inline-start: 0.2rem solid #ddd;
     color: inherit;
   }
 

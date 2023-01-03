@@ -28,7 +28,7 @@
   }
 
   .icon {
-    margin-right: 0.25em;
+    margin-inline-end: 0.25em;
   }
 
   a {
@@ -39,7 +39,7 @@
     &::before {
       position: relative;
       bottom: 0.125rem;
-      margin-right: 0.25em;
+      margin-inline-end: 0.25em;
     }
 
     &:hover {
@@ -49,7 +49,7 @@
 
   ol {
     margin: 0;
-    padding-left: 0;
+    padding-inline-start: 0;
     list-style: none;
   }
 
@@ -57,11 +57,11 @@
     display: inline-block;
 
     &:first-child a {
-      padding-left: 0;
+      padding-inline-start: 0;
     }
 
     &:last-child a {
-      padding-right: 0;
+      padding-inline-end: 0;
     }
 
     &.is-active a {

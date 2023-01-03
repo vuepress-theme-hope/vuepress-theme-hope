@@ -24,7 +24,7 @@
     color var(--t-color, 0.3s ease);
 
   & + & {
-    margin-left: 5px;
+    margin-inline-start: 5px;
   }
 
   // compatible with toc

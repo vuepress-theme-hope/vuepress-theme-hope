@@ -64,6 +64,24 @@ export default defineUserConfig({
 
 你可以在主题选项中设置 `backToTop: false` 来禁用它，或者是设置为一个数字以更改默认的触发距离。
 
+## RTL 布局
+
+`vuepress-theme-hope` 基本支持 RTL 布局。只需将以下样式添加到 `.vuepress/style/index.scss` 中
+
+```scss
+html {
+  direction: rtl;
+}
+```
+
+您会发现几乎一切正常。
+
+::: note
+
+正如我们上面提到的，主题**基本上**支持 RTL 布局，因为并不是每个 css 属性都有“方向自适应”值，例如：`float: left|right`，所以您可能仍然需要自己处理一些布局。
+
+:::
+
 <script setup lang="ts">
 import ToggleFullScreenButton from "@theme-hope/modules/outlook/components/ToggleFullScreenButton";
 </script>
