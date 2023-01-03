@@ -8,7 +8,7 @@ tag:
   - SEO
 ---
 
-`vuepress-theme-hope` 通过内置 [`vuepress-plugin-seo2`][seo2] 为提供 SEO 增强功能。
+`vuepress-theme-hope` 通过内置 <ProjectLink name="seo2" path="/zh/">`vuepress-plugin-seo2`</ProjectLink> 为提供 SEO 增强功能。
 
 为了使插件能够更好的工作，你可能需要查看一下 [页面配置](../../config/frontmatter/info.md) 并合理的配置它们。
 
@@ -123,7 +123,7 @@ function ogp<
 ): SeoContent;
 ```
 
-详细的参数结构详见 [配置][seo2-config]。
+详细的参数结构详见 <ProjectLink name="seo2" path="/zh/config.html">配置</ProjectLink>。
 
 比如你在使用某个第三方主题，并按照主题要求为每篇文章在 front matter 中设置了 `banner`，那你可以传入这样的 `ogp`:
 
@@ -251,6 +251,3 @@ function customHead<
 ## 相关工具
 
 - [Google 富媒体结构测试工具](https://search.google.com/test/rich-results)
-
-[seo2]: https://vuepress-theme-hope.github.io/v2/seo/zh/
-[seo2-config]: https://vuepress-theme-hope.github.io/v2/seo/zh/config.html

@@ -41,7 +41,7 @@ For these extended syntax, please see [Built-in Markdown Features](../../cookboo
 
 ### Theme Enhancement
 
-By using [`vuepress-plugin-md-enhance`][md-enhance], the theme extends more Markdown syntax and provides richer writing functions.
+By using <ProjectLink name="md-enhance">`vuepress-plugin-md-enhance`</ProjectLink>, the theme extends more Markdown syntax and provides richer writing functions.
 
 #### Custom Container
 
@@ -441,5 +441,3 @@ $$
 @slideend
 
 - [View Detail](../markdown/presentation.md)
-
-[md-enhance]: https://vuepress-theme-hope.github.io/v2/md-enhance/

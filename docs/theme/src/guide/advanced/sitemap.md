@@ -8,7 +8,7 @@ tag:
   - Sitemap
 ---
 
-`vuepress-theme-hope` provide Sitemap generation by including [`vuepress-plugin-sitemap2`][sitemap2].
+`vuepress-theme-hope` provide Sitemap generation by including <ProjectLink name="sitemap2">`vuepress-plugin-sitemap2`</ProjectLink>.
 
 The plugin will automatically generate the last update time of the page based on the Git timestamp of the page, and will also declare the alternative version link of the page in other languages according to the locales config.
 
@@ -53,5 +53,3 @@ For use by search engines and other crawlers, there is a structured format, the 
 Google introduced the Sitemaps protocol so web developers can publish lists of links from across their sites.
 
 :::
-
-[sitemap2]: https://vuepress-theme-hope.github.io/v2/sitemap/

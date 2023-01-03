@@ -8,7 +8,7 @@ tag:
   - Feature
 ---
 
-`vuepress-theme-hope` implements the comment feature with built-in [`vuepress-plugin-comment2`][comment2].
+`vuepress-theme-hope` implements the comment feature with built-in <ProjectLink name="comment2">`vuepress-plugin-comment2`</ProjectLink>.
 
 ::: info
 
@@ -69,7 +69,7 @@ Comment feature is enabled globally by default, controlled by `plugins.comment.c
 
 ::: tip
 
-For the complete config item of the plugin ,please see [plugin documentation][comment2].
+For the complete config item of the plugin ,please see <ProjectLink name="comment2">plugin documentation</ProjectLink>.
 
 :::
 
@@ -99,7 +99,7 @@ After completing the above steps, please go to the [Giscus page](https://giscus.
 
 Please pass `data-repo`, `data-repo-id`, `data-category` and `data-category-id` as plugin options as `repo`, `repoId`, `category` `categoryId`.
 
-For other options, see [Giscus Config][comment2-giscus-config].
+For other options, see <ProjectLink name="comment2" path="/config/giscus.html">Giscus Config</ProjectLink>.
 
 ## Waline
 
@@ -158,7 +158,7 @@ export default {
 
 ::: tip
 
-Config will be listed on [Plugin Config][comment2-waline-config].
+Config will be listed on <ProjectLink name="comment2" path="/config/waline.html">Waline Config</ProjectLink>.
 
 For more details, please see [Waline Docs](https://waline.js.org/en/)。
 
@@ -179,7 +179,3 @@ For more details, please see [Waline Docs](https://waline.js.org/en/)。
 1. Go to Settings - Environment Variables, add the environment variable `MONGODB_URI`, the value is the database connection string in step 3
 1. Go to Overview, click the link under Domains, if the environment configuration is correct, you can see the prompt "Twikoo cloud function is running normally"
 1. Vercel Domains (with `https://` prefix, for example `https://xxx.vercel.app`) is your environment ID
-
-[comment2]: https://vuepress-theme-hope.github.io/v2/comment/
-[comment2-giscus-config]: https://vuepress-theme-hope.github.io/v2/comment/config/giscus.html
-[comment2-waline-config]: https://vuepress-theme-hope.github.io/v2/comment/config/waline.html

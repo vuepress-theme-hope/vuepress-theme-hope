@@ -37,6 +37,6 @@ category:
 
 - Не стесняйтесь добавлять свои
 
-[vuepress-theme-hope]: https://vuepress-theme-hope.github.io/v2/
+[vuepress-theme-hope]: https://theme-hope.vuejs.press/
 [waline]: https://waline.js.org/en/
 [fast-request]: https://dromara.org/fast-request/en/

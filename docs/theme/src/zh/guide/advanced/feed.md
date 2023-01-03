@@ -8,7 +8,7 @@ tag:
   - Feed
 ---
 
-`vuepress-theme-hope` 通过内置 [`vuepress-plugin-feed2`][feed2] 插件来为你提供 feed 支持。
+`vuepress-theme-hope` 通过内置 <ProjectLink name="feed2" path="/zh/">`vuepress-plugin-feed2`</ProjectLink> 插件来为你提供 feed 支持。
 
 ::: info
 
@@ -65,7 +65,7 @@ Atom 和 JSON 是为了提供更多 Feed 软件的适配而提供的。
 
 :::
 
-详细的选项及其默认值详见 [配置 → 频道设置][feed2-channel]
+详细的选项及其默认值详见 <ProjectLink name="feed2" path="/zh/config/channel.html">配置 → 频道设置]</ProjectLink>。
 
 ## 生成控制
 
@@ -73,27 +73,22 @@ Atom 和 JSON 是为了提供更多 Feed 软件的适配而提供的。
 
 默认情况下，所有文章均会被添加至 feed 流。
 
-关于默认情况下读取的内容，详见 [配置 → 项目控制][feed2-item]
+关于默认情况下读取的内容，详见 <ProjectLink name="feed2" path="/zh/config/item.html">配置 → 项目控制</ProjectLink>。
 
 ### 自定义页面
 
 你可以通过配置 frontmatter 中的 `feed` 选项，对特定文章的 feed 项目生成的内容进行控制。
 
-详细的选项及其默认值详见 [配置 → 项目设置][feed2-item]
+详细的选项及其默认值详见 <ProjectLink name="feed2" path="/zh/config/item.html">配置 → 项目设置</ProjectLink>。
 
 ### 自定义 Feed 生成
 
 你可以通过配置插件选项中的 `getter`，完全控制 Feed 项目的生成逻辑。
 
-详细的选项及其默认值详见 [配置 → Feed 获取器][feed2-getter]
+详细的选项及其默认值详见 <ProjectLink name="feed2" path="/zh/config/getter.html">配置 → Feed 获取器</ProjectLink>。
 
 ### 多语言配置
 
 插件会针对每个语言生成单独的 Feed。
 
 你可以通过插件选项中的 `locales` 分别对不同语言提供不同的默认设置。
-
-[feed2]: https://vuepress-theme-hope.github.io/v2/feed/zh/
-[feed2-channel]: https://vuepress-theme-hope.github.io/v2/feed/zh/config/channel.html
-[feed2-item]: https://vuepress-theme-hope.github.io/v2/feed/zh/config/item.html
-[feed2-getter]: https://vuepress-theme-hope.github.io/v2/feed/zh/config/getter.html

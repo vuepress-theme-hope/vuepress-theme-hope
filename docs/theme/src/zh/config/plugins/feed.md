@@ -34,7 +34,7 @@ Atom 和 JSON 是为了提供更多 Feed 软件的适配而提供的。
 
 ::: info
 
-有关更多详细信息，请参见 [feed2 插件文档][feed-config]。
+有关更多详细信息，请参见 <ProjectLink name="feed2" path="/zh/config/">feed2 插件文档</ProjectLink>。
 
 :::
 
@@ -126,7 +126,7 @@ Atom 和 JSON 是为了提供更多 Feed 软件的适配而提供的。
 
 `channel` 选项用于配置 Feed 频道。
 
-可用选项详见 [配置 → 频道设置][feed-config-channel]
+可用选项详见 <ProjectLink name="feed2" path="/config/channel.html">配置 → 频道设置</ProjectLink>。
 
 ### atomOutputFilename
 
@@ -159,7 +159,7 @@ Feed 生成控制器
 
 :::
 
-详见 [Feed 生成器][feed-config-getter].
+详见 <ProjectLink name="feed2" path="/zh/config/getter.html">Feed 生成器</ProjectLink>.
 
 ### locales
 
@@ -169,7 +169,3 @@ Feed 生成控制器
 你可以将它用于每个语言环境的特定选项。
 
 除 `hostname` 外，上述任何选项均受支持。
-
-[feed-config]: https://vuepress-theme-hope.github.io/v2/feed/zh/config/
-[feed-config-channel]: https://vuepress-theme-hope.github.io/v2/feed/zh/config/channel.html
-[feed-config-getter]: https://vuepress-theme-hope.github.io/v2/feed/zh/config/getter.html
