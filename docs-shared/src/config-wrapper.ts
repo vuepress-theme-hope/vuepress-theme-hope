@@ -20,7 +20,7 @@ export const config = (
   { name, base = name.replace(/\d+$/, ""), indexName }: ConfigOptions,
   { alias = {}, plugins = [], ...config }: UserConfig
 ): UserConfig => {
-  const docsBase = IS_NETLIFY ? "/" : <`/${string}/`>`/v2/${base}`;
+  const docsBase = IS_NETLIFY ? "/" : <`/${string}/`>`/v2/${base}/`;
   const docsearchIndexName =
     indexName === false ? false : `vuepress-theme-hope-${indexName || name}`;
 

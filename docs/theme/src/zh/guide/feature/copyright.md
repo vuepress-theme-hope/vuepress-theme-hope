@@ -54,4 +54,4 @@ copy:
 
 ## 更多
 
-关于插件文档，请参见 <ProjectLink name="copyright2" path="/zh/">vuepress-plugin-copyright2 文档/ProjectLink>。
+关于插件文档，请参见 <ProjectLink name="copyright2" path="/zh/">vuepress-plugin-copyright2 文档</ProjectLink>。
