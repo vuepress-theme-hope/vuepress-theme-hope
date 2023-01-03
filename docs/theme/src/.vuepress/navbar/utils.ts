@@ -10,4 +10,4 @@ export const getLinkHelper =
       ? `https://plugin-${name}.vuejs.press${localePath}`
       : `https://vuepress-theme-hope.${
           IS_GITEE ? "gitee" : "github"
-        }.io/v2$/${name.replace(/\d+$/, "")}${localePath}`;
+        }.io/v2/${name.replace(/\d+$/, "")}${localePath}`;
