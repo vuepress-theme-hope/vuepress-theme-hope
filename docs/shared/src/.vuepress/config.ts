@@ -3,8 +3,7 @@ import theme from "./theme.js";
 
 export default config(
   {
-    base: "shared",
-    indexName: "vuepress-theme-hope-shared",
+    name: "shared",
   },
   {
     locales: {

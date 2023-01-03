@@ -3,8 +3,7 @@ import theme from "./theme.js";
 
 export default config(
   {
-    base: "components",
-    indexName: "vuepress-theme-hope-components",
+    name: "components",
   },
   {
     locales: {

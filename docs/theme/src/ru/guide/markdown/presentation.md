@@ -113,7 +113,7 @@ Reveal.js также предоставляет [больше плагинов](
 - `blood`
 - `moon`
 
-Для получения дополнительной информации смотрите [Демо темы][theme-demo].
+Для получения дополнительной информации смотрите <ProjectLink name="md-enhance" path="/guide/presentation/themes.html">Демо темы</ProjectLink>.
 
 ## Демо
 
@@ -183,7 +183,7 @@ $$
 
 ::: info
 
-Подробную демонстрацию смотрите в разделе [Демонстрационная презентация][presentation-demo]
+Подробную демонстрацию смотрите в разделе <ProjectLink name="md-enhance" path="/guide/presentation/demo.html">Демонстрационная презентация</ProjectLink>.
 
 :::
 
@@ -192,6 +192,3 @@ $$
 Вы можете установить `reveal` для передачи параметров в reveal.js для каждой страницы во фронтмейтере, вы также можете установить `presentation` в параметрах плагина, чтобы установить reveal.js глобально.
 
 Дополнительные параметры смотрите в [конфигурации reveal.js](https://revealjs.com/config/). Дополнительные сведения об использовании смотрите в [документации reveal.js](https://revealjs.com/)
-
-[theme-demo]: https://vuepress-theme-hope.github.io/v2/md-enhance/guide/presentation/themes.html
-[presentation-demo]: https://vuepress-theme-hope.github.io/v2/md-enhance/guide/presentation/demo.html

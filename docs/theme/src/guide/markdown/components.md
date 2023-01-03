@@ -116,7 +116,7 @@ An audio player with poster and title:
 />
 ```
 
-See [AudioPlayer][audioplayer] page for available props.
+See <ProjectLink name="components" path="/guide/audioplayer.html">AudioPlayer</ProjectLink> page for available props.
 
 ## Badge
 
@@ -128,7 +128,7 @@ A badge component.
 - <Badge text="info" type="info" vertical="middle" />
 - <Badge text="note" type="note" vertical="middle" />
 
-See [Badge][badge] page for available props.
+See <ProjectLink name="components" path="/guide/badge.html">Badge</ProjectLink> page for available props.
 
 ## BiliBili
 
@@ -158,7 +158,7 @@ A bilibili video with custom settings:
 <BiliBili bvid="BV1kt411o7C3" low-quality no-danmaku />
 ```
 
-See [BiliBili][bilibili] page for available props.
+See <ProjectLink name="components" path="/guide/bilibili.html">BiliBili</ProjectLink> page for available props.
 
 ## Catalog
 
@@ -178,7 +178,7 @@ Home page catalog:
 <Catalog base='/' />
 ```
 
-See [Catalog][catalog] page for available props.
+See <ProjectLink name="components" path="/guide/catalog.html">Catalog</ProjectLink> page for available props.
 
 ## CodePen
 
@@ -225,7 +225,7 @@ A click to run demo:
 />
 ```
 
-See [CodePen][codepen] page for available props.
+See <ProjectLink name="components" path="/guide/codepen.html">CodePen</ProjectLink> page for available props.
 
 ## FontIcon
 
@@ -239,7 +239,7 @@ Component which allows you to display font icons.
 - A big and red markdown icon: <FontIcon icon="markdown" color="red" size="32" />
 ```
 
-See [FontIcon][fonticon] page for available props.
+See <ProjectLink name="components" path="/guide/fonticon.html">FontIcon</ProjectLink> page for available props.
 
 ## PDF
 
@@ -261,7 +261,7 @@ PDF viewer starting with page 2 and without toolbar:
 <PDF url="/assets/sample.pdf" page="2" no-toolbar />
 ```
 
-See [PDF][pdf] page for available props.
+See <ProjectLink name="components" path="/guide/pdf.html">PDF</ProjectLink> page for available props.
 
 ## StackBlitz
 
@@ -283,7 +283,7 @@ A StackBlitz project with custom settings:
 <StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hideDevtools />
 ```
 
-See [StackBlitz][stackblitz] page for available props.
+See <ProjectLink name="components" path="/guide/stackblitz.html">StackBlitz</ProjectLink> page for available props.
 
 ## VideoPlayer
 
@@ -341,7 +341,7 @@ A video player with tracks and poster:
 />
 ```
 
-See [VideoPlayer][videoplayer] page for available props.
+See <ProjectLink name="components" path="/guide/videoplayer.html">VideoPlayer</ProjectLink> page for available props.
 
 ## YouTube
 
@@ -371,15 +371,4 @@ A YouTube play list:
 <YouTube list-type="playlist" list="PLJNLwTPak6dhCRzVelZIs2-DfBp01NX_1" />
 ```
 
-See [YouTube][youtube] page for available props.
-
-[audioplayer]: https://vuepress-theme-hope.github.io/v2/components/guide/audioplayer.html
-[badge]: https://vuepress-theme-hope.github.io/v2/components/guide/badge.html
-[bilibili]: https://vuepress-theme-hope.github.io/v2/components/guide/bilibili.html
-[catalog]: https://vuepress-theme-hope.github.io/v2/components/guide/catalog.html
-[codepen]: https://vuepress-theme-hope.github.io/v2/components/guide/codepen.html
-[fonticon]: https://vuepress-theme-hope.github.io/v2/components/guide/fonticon.html
-[pdf]: https://vuepress-theme-hope.github.io/v2/components/guide/pdf.html
-[stackblitz]: https://vuepress-theme-hope.github.io/v2/components/guide/stackblitz.html
-[videoplayer]: https://vuepress-theme-hope.github.io/v2/components/guide/videoplayer.html
-[youtube]: https://vuepress-theme-hope.github.io/v2/components/guide/youtube.html
+See <ProjectLink name="components" path="/guide/youtube.html">YouTube</ProjectLink> page for available props.

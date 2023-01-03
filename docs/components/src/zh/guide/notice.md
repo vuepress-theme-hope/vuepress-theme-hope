@@ -46,7 +46,7 @@ export default {
               actions: [
                 {
                   text: "Check it now",
-                  link: "https://vuepress-theme-hope.github.io/v2/components/notice.html",
+                  link: "https://plugin-components.vuejs.press/components/notice.html",
                   type: "primary",
                 },
                 { text: "Later" },
@@ -58,7 +58,7 @@ export default {
               actions: [
                 {
                   text: "现在查看",
-                  link: "https://vuepress-theme-hope.github.io/v2/components/notice.html",
+                  link: "https://plugin-components.vuejs.press/zh/components/notice.html",
                   type: "primary",
                 },
                 { text: "稍后" },

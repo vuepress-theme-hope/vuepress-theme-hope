@@ -27,7 +27,7 @@ tag:
 
 `vuepress-theme-hope` установит для параметра `container` значение `true` по умолчанию.
 
-Подробнее смотрите в [документации по md-enhance][md-enhance-config].
+Подробнее смотрите в <ProjectLink name="md-enhance" path="/config.html">документации по md-enhance</ProjectLink>.
 
 :::
 
@@ -657,5 +657,3 @@ CodePen, JsFiddle нужна внешняя библиотека CSS для зн
 - Обязательный: Нет
 
 Конфигурация локалей для плагина Расширения Markdown.
-
-[md-enhance-config]: https://vuepress-theme-hope.github.io/v2/md-enhance/config.html

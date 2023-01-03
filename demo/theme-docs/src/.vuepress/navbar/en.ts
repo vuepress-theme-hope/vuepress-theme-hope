@@ -29,7 +29,7 @@ export const enNavbar = navbar([
     children: [
       {
         text: "V2 Docs",
-        link: "https://vuepress-theme-hope.github.io/v2/",
+        link: "https://theme-hope.vuejs.press/",
       },
       {
         text: "V2 Blog Demo",

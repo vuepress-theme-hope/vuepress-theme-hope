@@ -8,7 +8,7 @@ tag:
   - Sitemap
 ---
 
-`vuepress-theme-hope` 通过内置 [vuepress-plugin-sitemap2`][sitemap2] 为你提供 Sitemap 生成。
+`vuepress-theme-hope` 通过内置 <ProjectLink name="sitemap2" path="/zh/">`vuepress-plugin-sitemap2`</ProjectLink> 为你提供 Sitemap 生成。
 
 插件会为你的网站自动生成 Sitemap，它会自动根据页面的 Git 的时间戳生成页面的最后更新时间，同时会根据站点的多语言配置声明页面的其他语言替代版本地址。
 
@@ -55,5 +55,3 @@ Sitemaps 是站点管理员向搜索引擎爬虫公布站点可被抓取页面�
 Google 引入了 Google 网站地图使得网页开发者可以发布整个站点的链接列表。网站地图文件可以被用来指引网络蜘蛛如何找到这类页面。
 
 :::
-
-[sitemap2]: https://vuepress-theme-hope.github.io/v2/sitemap/zh/

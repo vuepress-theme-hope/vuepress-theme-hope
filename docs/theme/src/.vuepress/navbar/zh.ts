@@ -1,4 +1,7 @@
 import { navbar } from "docs-shared";
+import { getLinkHelper } from "./utils.js";
+
+const linkHelper = getLinkHelper("/zh/");
 
 export const zhNavbarConfig = navbar([
   "/zh/guide/",
@@ -26,97 +29,97 @@ export const zhNavbarConfig = navbar([
           {
             text: "自动目录插件",
             icon: "tree",
-            link: "https://vuepress-theme-hope.github.io/v2/auto-catalog/zh/",
+            link: linkHelper("auto-catalog"),
           },
           {
             text: "博客插件",
             icon: "blog",
-            link: "https://vuepress-theme-hope.github.io/v2/blog/zh/",
+            link: linkHelper("blog2"),
           },
           {
             text: "评论插件",
             icon: "comment",
-            link: "https://vuepress-theme-hope.github.io/v2/comment/zh/",
+            link: linkHelper("comment2"),
           },
           {
             text: "组件库",
             icon: "plugin",
-            link: "https://vuepress-theme-hope.github.io/v2/components/zh/",
+            link: linkHelper("components"),
           },
           {
             text: "代码复制插件",
             icon: "copy",
-            link: "https://vuepress-theme-hope.github.io/v2/copy-code/zh/",
+            link: linkHelper("copy-code2"),
           },
           {
             text: "版权信息插件",
             icon: "copyright",
-            link: "https://vuepress-theme-hope.github.io/v2/copyright/zh/",
+            link: linkHelper("copyright"),
           },
           {
             text: "Feed 插件",
             icon: "rss",
-            link: "https://vuepress-theme-hope.github.io/v2/feed/zh/",
+            link: linkHelper("feed2"),
           },
           {
             text: "LightGallery 插件",
             icon: "pic",
-            link: "https://vuepress-theme-hope.github.io/v2/lightgallery/zh/",
+            link: linkHelper("lightgallery"),
           },
           {
             text: "Markdown 增强插件",
             icon: "markdown",
-            link: "https://vuepress-theme-hope.github.io/v2/md-enhance/zh/",
+            link: linkHelper("md-enhance"),
           },
           {
             text: "图片预览插件",
             icon: "pic",
-            link: "https://vuepress-theme-hope.github.io/v2/photo-swipe/zh/",
+            link: linkHelper("photo-swipe"),
           },
           {
             text: "PWA 插件",
             icon: "app",
-            link: "https://vuepress-theme-hope.github.io/v2/pwa/zh/",
+            link: linkHelper("pwa2"),
           },
           {
             text: "阅读时间插件",
             icon: "read",
-            link: "https://vuepress-theme-hope.github.io/v2/reading-time/zh/",
+            link: linkHelper("reading-time2"),
           },
           {
             text: "移除 PWA 插件",
             icon: "app",
-            link: "https://vuepress-theme-hope.github.io/v2/remove-pwa/zh/",
+            link: linkHelper("remove-pwa"),
           },
           {
             text: "重定向插件",
             icon: "navigation",
-            link: "https://vuepress-theme-hope.github.io/v2/redirect/zh/",
+            link: linkHelper("redirect"),
           },
           {
             text: "Sass 调色板插件",
             icon: "palette",
-            link: "https://vuepress-theme-hope.github.io/v2/sass-palette/zh/",
+            link: linkHelper("sass-palette"),
           },
           {
             text: "客户端搜索插件",
             icon: "search",
-            link: "https://vuepress-theme-hope.github.io/v2/search-pro/zh/",
+            link: linkHelper("search-pro"),
           },
           {
             text: "Seo 插件",
             icon: "strong",
-            link: "https://vuepress-theme-hope.github.io/v2/seo/zh/",
+            link: linkHelper("seo2"),
           },
           {
             text: "VuePress 工具函数",
             icon: "app",
-            link: "https://vuepress-theme-hope.github.io/v2/shared/zh/",
+            link: linkHelper("shared"),
           },
           {
             text: "Sitemap 插件",
             icon: "sitemap",
-            link: "https://vuepress-theme-hope.github.io/v2/sitemap/zh/",
+            link: linkHelper("sitemap2"),
           },
         ],
       },

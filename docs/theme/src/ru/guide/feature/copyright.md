@@ -12,7 +12,7 @@ copy:
 
 Иногда вы можете не хотеть, чтобы некоторые из ваших статей копировались другими, или вы хотите, чтобы другие автоматически генерировали часть информации об авторских правах в буфер обмена при копировании.
 
-`vuepress-theme-hope` использует [vuepress-plugin-copyright2][copyright2] для предоставления связанных функций.
+`vuepress-theme-hope` использует <ProjectLink name="copyright2">vuepress-plugin-copyright2</ProjectLink> для предоставления связанных функций.
 
 ::: info
 
@@ -54,6 +54,4 @@ copy:
 
 ## Еще
 
-Для получения документации по плагину посетите [документации vuepress-plugin-copyright2][copyright2].
-
-[copyright2]: https://vuepress-theme-hope.github.io/v2/copyright/zh/
+Для получения документации по плагину посетите <ProjectLink name="copyright2">документации vuepress-plugin-copyright2</ProjectLink>.

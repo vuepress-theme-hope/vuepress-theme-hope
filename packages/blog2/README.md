@@ -1,6 +1,6 @@
 <!-- markdownlint-disable -->
 <p align="center">
-  <img width="240" src="https://vuepress-theme-hope.github.io/v2/logo.svg" style="text-align: center;">
+  <img width="240" src="https://plugin-blog2.vuejs.press/logo.svg" style="text-align: center;">
 </p>
 <h1 align="center">vuepress-plugin-blog2</h1>
 <h4 align="center">VuePress2 Blog plugin📝 / VuePress2 Blog 插件📝</h4>
@@ -11,7 +11,7 @@
 
 VuePress2 Blog plugin📝 / VuePress2 Blog 插件 📝
 
-## [Official Docs](https://vuepress-theme-hope.github.io/v2/blog/) / [官方文档](https://vuepress-theme-hope.gitee.io/v2/blog/zh/)
+## [Official Docs](https://plugin-blog2.vuejs.press/) / [官方文档](https://plugin-blog2.vuejs.press/zh/)
 
 ## Install
 

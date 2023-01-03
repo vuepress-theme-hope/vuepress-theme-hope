@@ -7,7 +7,7 @@ heroText: vuepress-plugin-search-pro
 tagline: Client search plugin for VuePress2
 actions:
   - text: Docs
-    link: https://vuepress-theme-hope.github.io/v2/search-pro/
+    link: https://plugin-search-pro.vuejs.press
 
 footer: MIT Licensed, Copyright © 2019-present Mr.Hope
 ---

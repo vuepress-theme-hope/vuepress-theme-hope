@@ -9,7 +9,7 @@ tag:
   - SEO
 ---
 
-`vuepress-theme-hope` обеспечивает улучшения SEO с помощью встроенного [`vuepress-plugin-seo2`][seo2].
+`vuepress-theme-hope` обеспечивает улучшения SEO с помощью встроенного <ProjectLink name="seo2">`vuepress-plugin-seo2`</ProjectLink>.
 
 Чтобы плагин работал лучше, вам может потребоваться проверить [конфигурацию страницы](../../config/frontmatter/info.md) и настроить их правильно.
 
@@ -127,7 +127,7 @@ function ogp<
 ): SeoContent;
 ```
 
-Подробную структуру параметров смотрите в [Конфиге][seo2-config].
+Подробную структуру параметров смотрите в <ProjectLink name="seo2" path="/config.html">Конфиге</ProjectLink>.
 
 Например, если вы используете стороннюю тему и устанавливаете `banner` на главной странице для каждой статьи в соответствии с требованиями темы, вы можете передать следующий `ogp`:
 
@@ -258,6 +258,3 @@ function customHead<
 ## Связанные инструменты
 
 - [Инструмент тестирования мультимедийной структуры Google](https://search.google.com/test/rich-results)
-
-[seo2]: https://vuepress-theme-hope.github.io/v2/seo/
-[seo2-config]: https://vuepress-theme-hope.github.io/v2/seo/config.html

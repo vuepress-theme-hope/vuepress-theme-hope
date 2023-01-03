@@ -130,63 +130,44 @@ Layout Optimization:
 
 The theme includes the following plugins, you can use them in other themes or directly.
 
-- [vuepress-plugin-auto-catalog][auto-catalog]: Catalog automatically generation for VuePress2
+- <ProjectLink name="auto-catalog">vuepress-plugin-auto-catalog</ProjectLink>: Catalog automatically generation for VuePress2
 
-- [vuepress-plugin-blog2][blog2]: Blog plugin for VuePress2
+- <ProjectLink name="blog2">vuepress-plugin-blog2</ProjectLink>: Blog plugin for VuePress2
 
-- [vuepress-plugin-comment2][comment2]: Comment and pageviews
+- <ProjectLink name="comment2">vuepress-plugin-comment2</ProjectLink>: Comment and pageviews
 
-- [vuepress-plugin-components][components]: Provide some out of box plugins
+- <ProjectLink name="components">vuepress-plugin-components</ProjectLink>: Provide some out of box plugins
 
-- [vuepress-plugin-copy-code2][copy-code2]: Provide copy button for code blocks
+- <ProjectLink name="copy-code2">vuepress-plugin-copy-code2</ProjectLink>: Provide copy button for code blocks
 
-- [vuepress-plugin-copyright2][copyright2]: Append copyright information when copying or disable copy and selection.
+- <ProjectLink name="copyright2">vuepress-plugin-copyright2</ProjectLink>: Append copyright information when copying or disable copy and selection.
 
-- [vuepress-plugin-feed2][feed2]: Feed support
+- <ProjectLink name="feed2">vuepress-plugin-feed2</ProjectLink>: Feed support
 
-- [vuepress-plugin-md-enhance][md-enhance]: Provide more Markdown syntax
+- <ProjectLink name="md-enhance">vuepress-plugin-md-enhance</ProjectLink>: Provide more Markdown syntax
 
-- [vuepress-plugin-photo-swipe][photo-swipe]: Make the site’s picture support click zoom
+- <ProjectLink name="photo-swipe">vuepress-plugin-photo-swipe</ProjectLink>: Make the site’s picture support click zoom
 
-- [vuepress-plugin-pwa2][pwa2]: Enhanced PWA support
+- <ProjectLink name="pwa2">vuepress-plugin-pwa2</ProjectLink>: Enhanced PWA support
 
-- [vuepress-plugin-reading-time2][reading-time2]: Expect reading time and words count
+- <ProjectLink name="reading-time2">vuepress-plugin-reading-time2</ProjectLink>: Expect reading time and words count
 
-- [vuepress-plugin-sass-palette][sass-palette]: Sass style plugin for all plugins and themes
+- <ProjectLink name="sass-palette">vuepress-plugin-sass-palette</ProjectLink>: Sass style plugin for all plugins and themes
 
-- [vuepress-plugin-seo2][seo2]: SEO Enhancement Plugin
+- <ProjectLink name="seo2">vuepress-plugin-seo2</ProjectLink>: SEO Enhancement Plugin
 
-- [vuepress-plugin-sitemap2][sitemap2]: Sitemap plugin
+- <ProjectLink name="sitemap2">vuepress-plugin-sitemap2</ProjectLink>: Sitemap plugin
 
 ::: tip
 
 Here are some other plugins that are not bundled by the theme, you can enable them according to your own needs.
 
-- [vuepress-plugin-lightgallery][lightgallery]: Image preview plugin based on lightgallery
+- <ProjectLink name="lightgallery">vuepress-plugin-lightgallery</ProjectLink>: Image preview plugin based on lightgallery
 
-- [vuepress-plugin-redirect][redirect]: Redirect pages
+- <ProjectLink name="redirect">vuepress-plugin-redirect</ProjectLink>: Redirect pages
 
-- [vuepress-plugin-remove-pwa][remove-pwa]: Plugins to remove pwa
+- <ProjectLink name="remove-pwa">vuepress-plugin-remove-pwa</ProjectLink>: Plugins to remove pwa
 
-- [vuepress-plugin-search-pro][search-pro]: Client search plugin
+- <ProjectLink name="search-pro">vuepress-plugin-search-pro</ProjectLink>: Client search plugin
 
 :::
-
-[auto-catalog]: https://vuepress-theme-hope.github.io/v2/auto-catalog/
-[blog2]: https://vuepress-theme-hope.github.io/v2/blog/
-[comment2]: https://vuepress-theme-hope.github.io/v2/comment/
-[components]: https://vuepress-theme-hope.github.io/v2/components/
-[copy-code2]: https://vuepress-theme-hope.github.io/v2/copy-code/
-[copyright2]: https://vuepress-theme-hope.github.io/v2/copyright/
-[feed2]: https://vuepress-theme-hope.github.io/v2/feed/
-[lightgallery]: https://vuepress-theme-hope.github.io/v2/lightgallery/
-[md-enhance]: https://vuepress-theme-hope.github.io/v2/md-enhance/
-[photo-swipe]: https://vuepress-theme-hope.github.io/v2/photo-swipe/
-[pwa2]: https://vuepress-theme-hope.github.io/v2/pwa/
-[reading-time2]: https://vuepress-theme-hope.github.io/v2/reading-time/
-[redirect]: https://vuepress-theme-hope.github.io/v2/redirect/
-[remove-pwa]: https://vuepress-theme-hope.github.io/v2/remove-pwa/
-[sass-palette]: https://vuepress-theme-hope.github.io/v2/sass-palette/
-[search-pro]: https://vuepress-theme-hope.github.io/v2/search-pro/
-[seo2]: https://vuepress-theme-hope.github.io/v2/seo/
-[sitemap2]: https://vuepress-theme-hope.github.io/v2/sitemap/

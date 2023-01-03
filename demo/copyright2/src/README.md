@@ -6,7 +6,7 @@ heroText: vuepress-plugin-copyright2
 tagline: Append copyright information when copying
 actions:
   - text: Docs
-    link: https://vuepress-theme-hope.github.io/v2/copyright/
+    link: https://plugin-copyright2.vuejs.press
 
 footer: MIT Licensed, Copyright © 2019-present Mr.Hope
 ---

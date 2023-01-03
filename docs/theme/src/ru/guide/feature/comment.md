@@ -8,7 +8,7 @@ tag:
   - Функция
 ---
 
-`vuepress-theme-hope` реализует функцию комментариев со встроенным [`vuepress-plugin-comment2`][comment2].
+`vuepress-theme-hope` реализует функцию комментариев со встроенным <ProjectLink name="comment2">`vuepress-plugin-comment2`</ProjectLink>.
 
 ::: info
 
@@ -69,7 +69,7 @@ export default {
 
 ::: tip
 
-Полный элемент конфигурации плагина смотрите в [документации по плагину][comment2].
+Полный элемент конфигурации плагина смотрите в <ProjectLink name="comment2">документации по плагину</ProjectLink>.
 
 :::
 
@@ -99,7 +99,7 @@ Giscus — это система комментариев на основе GitH
 
 Пожалуйста, передайте `data-repo`, `data-repo-id`, `data-category` и `data-category-id` в качестве параметров плагина как `repo`, `repoId`, `category` `categoryId`.
 
-Другие параметры смотрите в [Конфиге Giscus][comment2-giscus-config].
+Другие параметры смотрите в <ProjectLink name="comment2" path="/config/giscus.html">Конфиге Giscus</ProjectLink>.
 
 ## Waline
 
@@ -158,7 +158,7 @@ export default {
 
 ::: tip
 
-Конфигурация будет указана в [Конфигурация плагина][comment2-waline-config].
+Конфигурация будет указана в <ProjectLink name="comment2" path="/config/waline.html">Конфигурация плагина</ProjectLink>.
 
 Для получения более подробной информации смотрите [Документацию Waline Docs](https://waline.js.org/en/)。
 
@@ -179,7 +179,3 @@ export default {
 1. Перейдите в Settings - Environment Variables, добавьте переменную среды `MONGODB_URI`, значением является строка подключения к базе данных на шаге 3.
 1. Перейдите в Overview, щелкните ссылку в разделе Domains, если конфигурация среды верна, вы увидите сообщение "Twikoo cloud function is running normally"
 1. Домены Vercel (с префиксом `https://`, например, `https://xxx.vercel.app`) – это идентификатор вашей среды
-
-[comment2]: https://vuepress-theme-hope.github.io/v2/comment/
-[comment2-giscus-config]: https://vuepress-theme-hope.github.io/v2/comment/config/giscus.html
-[comment2-waline-config]: https://vuepress-theme-hope.github.io/v2/comment/config/waline.html

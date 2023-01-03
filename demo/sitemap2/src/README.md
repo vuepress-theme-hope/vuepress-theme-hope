@@ -7,7 +7,7 @@ heroText: vuepress-plugin-sitemap2
 tagline: Sitemap generation for VuePress2
 actions:
   - text: Docs
-    link: https://vuepress-theme-hope.github.io/v2/sitemap/
+    link: https://plugin-sitemap2.vuejs.press
 
 footer: MIT Licensed, Copyright © 2019-present Mr.Hope
 ---

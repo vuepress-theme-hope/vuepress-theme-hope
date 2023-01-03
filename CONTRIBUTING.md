@@ -4,9 +4,9 @@ We always welcome everyone to contribute! Here is a guide for you.
 
 ## Docs
 
-- [English](https://vuepress-theme-hope.github.io/v2/contribution.html)
-- [简体中文](https://vuepress-theme-hope.github.io/v2/zh/contribution.html)
-- [Русский](https://vuepress-theme-hope.github.io/v2/ru/contribution.html)
+- [English](https://theme-hope.vuejs.press/contribution.html)
+- [简体中文](https://theme-hope.vuejs.press/zh/contribution.html)
+- [Русский](https://theme-hope.vuejs.press/ru/contribution.html)
 
 ## Clone and Install Project
 

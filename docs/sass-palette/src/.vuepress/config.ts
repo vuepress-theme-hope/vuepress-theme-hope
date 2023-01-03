@@ -3,8 +3,7 @@ import theme from "./theme.js";
 
 export default config(
   {
-    base: "sass-palette",
-    indexName: "vuepress-theme-hope-sass-palette",
+    name: "sass-palette",
   },
   {
     locales: {

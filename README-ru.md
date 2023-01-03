@@ -1,6 +1,6 @@
 <!-- markdownlint-disable -->
 <p align="center">
-  <img width="240" src="https://vuepress-theme-hope.github.io/v2/logo.svg" style="text-align: center;">
+  <img width="240" src="https://theme-hope.vuejs.press/logo.svg" style="text-align: center;">
 </p>
 <h1 align="center">vuepress-theme-hope</h1>
 <h4 align="center">Тема VuePress с множеством функций✨</h4>
@@ -9,7 +9,7 @@
 [![Лицензия](https://img.shields.io/npm/l/vuepress-theme-hope.svg?style=for-the-badge)](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/LICENSE)
 [![Открыть в Visual Studio Code](https://img.shields.io/badge/-open%20in%20vscode-blue?style=for-the-badge&logo=visualstudiocode)](https://open.vscode.dev/vuepress-theme-hope/vuepress-theme-hope)
 
-## [Русская документация](https://vuepress-theme-hope.github.io/v2/ru/)
+## [Русская документация](https://theme-hope.vuejs.press/ru/)
 
 ## [Онлайн демо](https://stackblitz.com/fork/vuepress-theme-hope)
 

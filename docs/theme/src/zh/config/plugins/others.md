@@ -30,7 +30,7 @@ tag:
 
 ::: info
 
-插件选项请参见 [components 插件选项][components-config].
+插件选项请参见 <ProjectLink name="components" path="/zh/config.html">components 插件选项</ProjectLink>。
 
 :::
 
@@ -42,7 +42,7 @@ tag:
 
 ::: info
 
-插件选项请参见 [copy-code2 插件选项][copy-code-config]。
+插件选项请参见 <ProjectLink name="copy-code2" path="/zh/config.html">copy-code2 插件选项</ProjectLink>。
 
 :::
 
@@ -84,7 +84,7 @@ tag:
 
 ::: info
 
-插件选项请参见 [photo-swipe 插件选项][photo-swipe-config]。
+插件选项请参见 <ProjectLink name="photo-swipe" path="/zh/config.html">photo-swipe 插件选项</ProjectLink>。
 
 :::
 
@@ -101,7 +101,7 @@ tag:
 
 ::: info
 
-更多插件选项请参见 [reading-time2 插件文档][reading-time]。
+更多插件选项请参见 <ProjectLink name="reading-time2" path="/zh/config.html">reading-time2 插件文档</ProjectLink>。
 
 :::
 
@@ -113,7 +113,7 @@ tag:
 
 ::: info
 
-插件选项请参见 [seo2 插件选项][seo-config]。
+插件选项请参见 <ProjectLink name="seo2" path="/zh/config.html">seo2 插件选项</ProjectLink>。
 
 :::
 
@@ -125,15 +125,9 @@ tag:
 
 ::: info
 
-插件选项请参见 [sitemap2 插件选项][sitemap-config]。
+插件选项请参见 <ProjectLink name="sitemap2" path="/zh/config.html">sitemap2 插件选项</ProjectLink>。
 
 :::
 
-[components-config]: https://vuepress-theme-hope.github.io/v2/components/zh/config.html
-[copy-code-config]: https://vuepress-theme-hope.github.io/v2/copy-code/zh/config.html
 [git-config]: https://v2.vuepress.vuejs.org/zh/reference/plugin/git.html
 [prismjs-config]: https://v2.vuepress.vuejs.org/zh/reference/plugin/prismjs.html
-[photo-swipe-config]: https://vuepress-theme-hope.github.io/v2/photo-swipe/zh/config.html
-[reading-time]: https://vuepress-theme-hope.github.io/v2/reading-time/zh/
-[seo-config]: https://vuepress-theme-hope.github.io/v2/seo/zh/config.html
-[sitemap-config]: https://vuepress-theme-hope.github.io/v2/sitemap/zh/config.html

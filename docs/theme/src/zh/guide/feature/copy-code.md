@@ -10,7 +10,7 @@ tag:
 
 如果你是一个程序员，你可能希望你的用户能够一键复制你在正文中展示的代码。
 
-针对这一情况，`vuepress-theme-hope` 内置了 [vuepress-plugin-copy-code2][copy-code2]，提供了一个复制按钮。
+针对这一情况，`vuepress-theme-hope` 内置了 <ProjectLink name="copy-code2" path="/zh/">vuepress-plugin-copy-code2</ProjectLink>，提供了一个复制按钮。
 
 ::: info
 
@@ -42,5 +42,3 @@ export default {
   }),
 };
 ```
-
-[copy-code2]: https://vuepress-theme-hope.github.io/v2/copy-code/zh/

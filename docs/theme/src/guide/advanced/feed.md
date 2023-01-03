@@ -8,7 +8,7 @@ tag:
   - Feed
 ---
 
-The theme adds feed support using [`vuepress-plugin-feed2`][feed2].
+The theme adds feed support using <ProjectLink name="feed2">`vuepress-plugin-feed2`</ProjectLink>.
 
 ::: info
 
@@ -63,7 +63,7 @@ We recommend the following settings:
 
 :::
 
-For detailed options and their default values, see [Feed Channel Config][feed2-channel]
+For detailed options and their default values, see <ProjectLink name="feed2" path="/config/channel.html">Feed Channel Config</ProjectLink>.
 
 ## Generation Control
 
@@ -71,27 +71,22 @@ For detailed options and their default values, see [Feed Channel Config][feed2-c
 
 By default, all articles are added to the feed stream.
 
-For the content read by default, see [Configuration → Item Control][feed2-item]
+For the content read by default, see <ProjectLink name="feed2" path="/config/item.html">Configuration → Item Control</ProjectLink>.
 
 ### Customize Feed item
 
 You can control how feed item is generated in specific article by configuring the `feed` option in frontmatter.
 
-For detailed options and their default values, see [Configuration → Project Settings][feed2-item].
+For detailed options and their default values, see <ProjectLink name="feed2" path="/config/item.html">Configuration → Project Settings</ProjectLink>.
 
 ### Customize Feed Generation
 
 You can take full control of feed items generation by configuring the `plugins.feed.getter`.
 
-For detailed options and their default values, see [Configuration → Feed Getter][feed2-getter].
+For detailed options and their default values, see <ProjectLink name="feed2" path="/config/getter.html">Configuration → Feed Getter</ProjectLink>.
 
 ### I18n Config
 
 The plugin generates separate feeds for each language.
 
 You can provide different settings for different languages via `plugins.feed.locales`.
-
-[feed2]: https://vuepress-theme-hope.github.io/v2/feed/
-[feed2-channel]: https://vuepress-theme-hope.github.io/v2/feed/config/channel.html
-[feed2-item]: https://vuepress-theme-hope.github.io/v2/feed/config/item.html
-[feed2-getter]: https://vuepress-theme-hope.github.io/v2/feed/config/getter.html

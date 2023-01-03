@@ -3,8 +3,7 @@ import theme from "./theme.js";
 
 export default config(
   {
-    base: "seo",
-    indexName: "vuepress-theme-hope-seo2",
+    name: "seo2",
   },
   {
     locales: {

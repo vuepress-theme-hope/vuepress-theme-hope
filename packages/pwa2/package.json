@@ -11,7 +11,7 @@
     "workbox",
     "service worker"
   ],
-  "homepage": "https://vuepress-theme-hope.github.io/v2/pwa/",
+  "homepage": "https://plugin-pwa2.vuejs.press/",
   "bugs": {
     "url": "https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues"
   },

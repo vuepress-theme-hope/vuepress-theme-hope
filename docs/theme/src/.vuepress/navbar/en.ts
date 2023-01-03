@@ -1,4 +1,7 @@
 import { navbar } from "docs-shared";
+import { getLinkHelper } from "./utils.js";
+
+const linkHelper = getLinkHelper();
 
 export const enNavbarConfig = navbar([
   "/guide/",
@@ -25,97 +28,97 @@ export const enNavbarConfig = navbar([
           {
             text: "Auto catalog Plugin",
             icon: "tree",
-            link: "https://vuepress-theme-hope.github.io/v2/auto-catalog/",
+            link: linkHelper("auto-catalog"),
           },
           {
             text: "Blog Plugin",
             icon: "blog",
-            link: "https://vuepress-theme-hope.github.io/v2/blog/",
+            link: linkHelper("blog2"),
           },
           {
             text: "Comment Plugin",
             icon: "comment",
-            link: "https://vuepress-theme-hope.github.io/v2/comment/",
+            link: linkHelper("comment2"),
           },
           {
             text: "Components Plugin",
             icon: "plugin",
-            link: "https://vuepress-theme-hope.github.io/v2/components/",
+            link: linkHelper("components"),
           },
           {
             text: "Copy Code Plugin",
             icon: "copy",
-            link: "https://vuepress-theme-hope.github.io/v2/copy-code/",
+            link: linkHelper("copy-code2"),
           },
           {
             text: "Copyright Plugin",
             icon: "copyright",
-            link: "https://vuepress-theme-hope.github.io/v2/copyright/",
+            link: linkHelper("copyright"),
           },
           {
             text: "Feed Plugin",
             icon: "rss",
-            link: "https://vuepress-theme-hope.github.io/v2/feed/",
+            link: linkHelper("feed2"),
           },
           {
             text: "LightGallery Plugin",
             icon: "pic",
-            link: "https://vuepress-theme-hope.github.io/v2/lightgallery/",
+            link: linkHelper("lightgallery"),
           },
           {
             text: "Markdown Enhance Plugin",
             icon: "markdown",
-            link: "https://vuepress-theme-hope.github.io/v2/md-enhance/",
+            link: linkHelper("md-enhance"),
           },
           {
             text: "Photo Swipe Plugin",
             icon: "pic",
-            link: "https://vuepress-theme-hope.github.io/v2/photo-swipe/",
+            link: linkHelper("photo-swipe"),
           },
           {
             text: "PWA Plugin",
             icon: "app",
-            link: "https://vuepress-theme-hope.github.io/v2/pwa/",
+            link: linkHelper("pwa2"),
           },
           {
             text: "Reading Time Plugin",
             icon: "read",
-            link: "https://vuepress-theme-hope.github.io/v2/reading-time/",
+            link: linkHelper("reading-time2"),
           },
           {
             text: "Remove PWA Plugin",
             icon: "app",
-            link: "https://vuepress-theme-hope.github.io/v2/remove-pwa/",
+            link: linkHelper("remove-pwa"),
           },
           {
             text: "Redirect Plugin",
             icon: "navigation",
-            link: "https://vuepress-theme-hope.github.io/v2/redirect/",
+            link: linkHelper("redirect"),
           },
           {
             text: "Sass Palette Plugin",
             icon: "palette",
-            link: "https://vuepress-theme-hope.github.io/v2/sass-palette/",
+            link: linkHelper("sass-palette"),
           },
           {
             text: "Client Search Plugin",
             icon: "search",
-            link: "https://vuepress-theme-hope.github.io/v2/search-pro/",
+            link: linkHelper("search-pro"),
           },
           {
             text: "Seo Plugin",
             icon: "strong",
-            link: "https://vuepress-theme-hope.github.io/v2/seo/",
+            link: linkHelper("seo2"),
           },
           {
             text: "VuePress shared",
             icon: "app",
-            link: "https://vuepress-theme-hope.github.io/v2/shared/",
+            link: linkHelper("shared"),
           },
           {
             text: "Sitemap Plugin",
             icon: "sitemap",
-            link: "https://vuepress-theme-hope.github.io/v2/sitemap/",
+            link: linkHelper("sitemap2"),
           },
         ],
       },

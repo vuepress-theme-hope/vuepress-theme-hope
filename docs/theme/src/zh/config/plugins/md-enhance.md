@@ -26,7 +26,7 @@ tag:
 
 `vuepress-theme-hope` 会默认将 `container` 选项设置为 `true`。
 
-有关更多详细信息，请参见 [md-enhance 文档][md-enhance-config]。
+有关更多详细信息，请参见 <ProjectLink name="md-enhance" path="/zh/config.html">md-enhance 文档</ProjectLink>。
 
 :::
 
@@ -667,5 +667,3 @@ CodePen 编辑器显示情况，第一位代表 HTML ，第二位代表 JS，第
 - 必填: 否
 
 Markdown 增强插件的国际化配置。
-
-[md-enhance-config]: https://vuepress-theme-hope.github.io/v2/md-enhance/zh/config.html

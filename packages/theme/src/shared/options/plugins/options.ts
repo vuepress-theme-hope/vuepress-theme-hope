@@ -47,46 +47,46 @@ export interface PluginsOptions {
    *
    * @description FontIcon is used internally, so it will be registered anyway.
    *
-   * @see https://vuepress-theme-hope.github.io/v2/components/config.html
+   * @see https://plugin-components.vuejs.press/config.html
    *
    * 需要启用的插件
    *
    * @description FontIcon 被内部使用，所以它无论如何都会被注册。
    *
-   * @see https://vuepress-theme-hope.github.io/v2/zh/components/config.html
+   * @see https://plugin-components.vuejs.press/zh/config.html
    */
   components?: ComponentOptions;
 
   /**
    * Comment plugin options
    *
-   * @see http://vuepress-theme-hope.github.io/v2/comment/config/
+   * @see https://plugin-comment2.vuejs.press/config/
    *
    * 评论插件配置
    *
-   * @see http://vuepress-theme-hope.github.io/v2/comment/zh/config/
+   * @see https://plugin-comment2.vuejs.press/zh/config/
    */
   comment?: CommentOptions | false;
 
   /**
    * code copy plugin options
    *
-   * @see http://vuepress-theme-hope.github.io/v2/copy-code/config/
+   * @see https://plugin-copy-code2.vuejs.press/config/
    *
    * 代码复制插件配置
    *
-   * @see http://vuepress-theme-hope.github.io/v2/copy-code/zh/config/
+   * @see https://plugin-copy-code2.vuejs.press/zh/config/
    */
   copyCode?: CopyCodeOptions | false;
 
   /**
    * Copyright Plugin options
    *
-   * @see http://vuepress-theme-hope.github.io/v2/copyright/config.html
+   * @see https://plugin-copyright2.vuejs.press/config.html
    *
    * 代码复制插件配置
    *
-   * @see http://vuepress-theme-hope.github.io/v2/copyright/zh/config.html
+   * @see https://plugin-copyright2.vuejs.press/zh/config.html
    *
    * @default false
    */
@@ -104,11 +104,11 @@ export interface PluginsOptions {
   /**
    * Feed plugin options
    *
-   * @see http://vuepress-theme-hope.github.io/v2/feed/config/
+   * @see https://plugin-feed2.vuejs.press/config/
    *
    * Feed 插件配置
    *
-   * @see http://vuepress-theme-hope.github.io/v2/feed/zh/config/
+   * @see https://plugin-feed2.vuejs.press/zh/config/
    */
   feed?: Omit<FeedOptions, "hostname">;
 
@@ -130,11 +130,11 @@ export interface PluginsOptions {
   /**
    * md-enhance plugin options
    *
-   * @see http://vuepress-theme-hope.github.io/v2/md-enhance/config/
+   * @see https://plugin-md-enhance.vuejs.press/config/
    *
    * md-enhance 插件配置
    *
-   * @see http://vuepress-theme-hope.github.io/v2/md-enhance/zh/config/
+   * @see https://plugin-md-enhance.vuejs.press/zh/config/
    */
   mdEnhance?: MarkdownEnhanceOptions | false;
 
@@ -152,11 +152,11 @@ export interface PluginsOptions {
    *
    * @description This plugin is enabled by default
    *
-   * @see http://vuepress-theme-hope.github.io/v2/photo-swipe/config/
+   * @see https://plugin-photo-swipe.vuejs.press/config/
    *
    * 图片预览插件配置
    *
-   * @see http://vuepress-theme-hope.github.io/v2/photo-swipe/zh/config/
+   * @see https://plugin-photo-swipe.vuejs.press/zh/config/
    *
    * @default true
    */
@@ -174,11 +174,11 @@ export interface PluginsOptions {
   /**
    * PWA plugin options
    *
-   * @see http://vuepress-theme-hope.github.io/v2/pwa/config/
+   * @see https://plugin-pwa2.vuejs.press/config/
    *
    * PWA 插件配置
    *
-   * @see http://vuepress-theme-hope.github.io/v2/pwa/zh/config/
+   * @see https://plugin-pwa2.vuejs.press/zh/config/
    *
    * @default false
    */
@@ -187,11 +187,11 @@ export interface PluginsOptions {
   /**
    * ReadingTime options
    *
-   * @see http://vuepress-theme-hope.github.io/v2/reading-time/
+   * @see https://plugin-reading-time2.vuejs.press/
    *
    * 阅读时间插件配置
    *
-   * @see http://vuepress-theme-hope.github.io/v2/reading-time/zh/
+   * @see https://plugin-reading-time2.vuejs.press/zh/
    *
    * @default true
    */
@@ -200,11 +200,11 @@ export interface PluginsOptions {
   /**
    * SEO plugin options
    *
-   * @see http://vuepress-theme-hope.github.io/v2/seo/config/
+   * @see https://plugin-seo2.vuejs.press/config/
    *
    * SEO 插件配置
    *
-   * @see http://vuepress-theme-hope.github.io/v2/seo/zh/config/
+   * @see https://plugin-seo2.vuejs.press/zh/config/
    *
    * @default true
    */
@@ -213,11 +213,11 @@ export interface PluginsOptions {
   /**
    * Sitemap plugin options
    *
-   * @see http://vuepress-theme-hope.github.io/v2/sitemap/config/
+   * @see https://plugin-sitemap2.vuejs.press/config/
    *
    * Sitemap 插件配置
    *
-   * @see http://vuepress-theme-hope.github.io/v2/sitemap/zh/config/
+   * @see https://plugin-sitemap2.vuejs.press/zh/config/
    *
    * @default true
    */

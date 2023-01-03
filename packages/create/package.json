@@ -9,7 +9,7 @@
     "vuepress-theme",
     "vuepress-theme-hope"
   ],
-  "homepage": "https://vuepress-theme-hope.github.io/v2/",
+  "homepage": "https://theme-hope.vuejs.vuepress/",
   "bugs": {
     "url": "https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues"
   },

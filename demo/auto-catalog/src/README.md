@@ -6,7 +6,7 @@ heroText: vuepress-plugin-auto-catalog
 tagline: Plugin to generate catalog page for VuePress2
 actions:
   - text: Docs
-    link: https://vuepress-theme-hope.github.io/v2/auto-catalog/
+    link: https://plugin-auto-catalog.vuejs.press
 ---
 
 <AutoCatalog />

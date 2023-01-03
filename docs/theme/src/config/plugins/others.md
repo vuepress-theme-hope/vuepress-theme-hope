@@ -30,7 +30,7 @@ Also, you can set `plugin.components.rootComponents` to enable some root compone
 
 ::: info
 
-For plugin options, please refer to [components plugin options][components-config].
+For plugin options, please refer to <ProjectLink name="components" path="/config.html">components plugin options</ProjectLink>.
 
 :::
 
@@ -42,7 +42,7 @@ By default, no config is required. If you don’t need this feature, please set 
 
 ::: info
 
-For plugin options, please refer to [copy-code2 plugin options][copy-code-config].
+For plugin options, please refer to <ProjectLink name="copy-code2" path="/config.html">copy-code2 plugin options</ProjectLink>.
 
 :::
 
@@ -84,7 +84,7 @@ By default, no config is required. If you don’t need this feature, please set 
 
 ::: info
 
-For plugin options, please refer to [photo-swipe plugin options][photo-swipe-config].
+For plugin options, please refer to <ProjectLink name="photo-swipe" path="/config.html">photo-swipe plugin options</ProjectLink>.
 
 :::
 
@@ -101,7 +101,7 @@ Words read per minute.
 
 ::: info
 
-For more plugin options, see [reading-time2 plugin docs][reading-time].
+For more plugin options, see <ProjectLink name="photo-swipe" path="/config.html">reading-time2 plugin options</ProjectLink>.
 
 :::
 
@@ -113,7 +113,7 @@ By default, no config is required. If you don’t need this feature, please set 
 
 ::: info
 
-For plugin config, see [seo2 plugin options][seo-config].
+For plugin config, see <ProjectLink name="seo2" path="/config.html">seo2 plugin options</ProjectLink>.
 
 :::
 
@@ -125,15 +125,9 @@ By default, no config is required. If you don’t need this feature, please set 
 
 ::: info
 
-For plugin config, please refer to [sitemap2 plugin options][sitemap-config].
+For plugin config, please refer to <ProjectLink name="sitemap2" path="/config.html">sitemap2 plugin options</ProjectLink>.
 
 :::
 
-[components-config]: https://vuepress-theme-hope.github.io/v2/components/config.html
-[copy-code-config]: https://vuepress-theme-hope.github.io/v2/copy-code/config.html
 [git-config]: https://v2.vuepress.vuejs.org/reference/plugin/git.html
 [prismjs-config]: https://v2.vuepress.vuejs.org/reference/plugin/prismjs.html
-[photo-swipe-config]: https://vuepress-theme-hope.github.io/v2/photo-swipe/config.html
-[reading-time]: https://vuepress-theme-hope.github.io/v2/reading-time/
-[seo-config]: https://vuepress-theme-hope.github.io/v2/seo/config.html
-[sitemap-config]: https://vuepress-theme-hope.github.io/v2/sitemap/config.html

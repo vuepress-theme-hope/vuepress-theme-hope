@@ -28,6 +28,4 @@ tag:
 
 ## Опции
 
-Для получения подробной информации о каждом параметре сервиса комментариев обратитесь к [документации vuepress-plugin-comment2][comment-config].
-
-[comment-config]: https://vuepress-theme-hope.github.io/v2/comment/config/
+Для получения подробной информации о каждом параметре сервиса комментариев обратитесь к <ProjectLink name="comment2" path="/config/">документации vuepress-plugin-comment2</ProjectLink>.
