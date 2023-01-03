@@ -19,7 +19,7 @@
     "docs:webpack-dev": "vuepress-webpack dev src"
   },
   "dependencies": {
-    "@vuepress/client": "2.0.0-beta.60",
+    "@vuepress/client": "2.0.0-beta.50-pre.1",
     "docs-shared": "workspace:*",
     "sass-loader": "13.2.0",
     "vue": "3.2.45",

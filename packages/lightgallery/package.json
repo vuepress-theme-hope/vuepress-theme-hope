@@ -50,7 +50,7 @@
     "pnpm": ">=7"
   },
   "dependencies": {
-    "@vuepress/client": "2.0.0-beta.60",
+    "@vuepress/client": "2.0.0-beta.50-pre.1",
     "@vuepress/utils": "2.0.0-beta.60",
     "lightgallery": "^2.7.0",
     "vue": "^3.2.45",
@@ -62,7 +62,7 @@
     "@vuepress/core": "2.0.0-beta.60"
   },
   "peerDependencies": {
-    "@vuepress/client": "2.0.0-beta.60",
+    "@vuepress/client": "2.0.0-beta.50-pre.1",
     "sass-loader": "^13.2.0",
     "vuepress": "2.0.0-beta.60",
     "vuepress-plugin-sass-palette": "workspace:*",

@@ -81,7 +81,7 @@
     "@mermaid-js/mermaid-mindmap": "^9.3.0",
     "@types/markdown-it": "^12.2.3",
     "@vue/repl": "^1.3.2",
-    "@vuepress/client": "2.0.0-beta.60",
+    "@vuepress/client": "2.0.0-beta.50-pre.1",
     "@vuepress/shared": "2.0.0-beta.60",
     "@vuepress/utils": "2.0.0-beta.60",
     "@vueuse/core": "^9.9.0",
@@ -106,7 +106,7 @@
     "typescript": "4.9.4"
   },
   "peerDependencies": {
-    "@vuepress/client": "2.0.0-beta.60",
+    "@vuepress/client": "2.0.0-beta.50-pre.1",
     "sass-loader": "^13.2.0",
     "vuepress": "2.0.0-beta.60",
     "vuepress-plugin-sass-palette": "workspace:*",
