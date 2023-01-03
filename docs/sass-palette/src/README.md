@@ -13,7 +13,7 @@ actions:
   - text: Config 🛠
     link: /config.html
 
-footer: Theme by <a href="https://vuepress-theme-hope.github.io/v2/" target="_blank">VuePress Theme Hope</a> | MIT Licensed, Copyright © 2019-present Mr.Hope
+footer: Theme by <a href="https://theme-hope.vuejs.press" target="_blank">VuePress Theme Hope</a> | MIT Licensed, Copyright © 2019-present Mr.Hope
 
 copyright: false
 ---
@@ -88,3 +88,9 @@ export const yourPlugin = (options) => (app) => {
 ```
 
 :::
+
+<NetlifyBadge />
+
+<script setup lang="ts">
+import NetlifyBadge from "@NetlifyBadge";
+</script>

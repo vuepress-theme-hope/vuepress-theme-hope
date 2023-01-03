@@ -7,7 +7,7 @@ heroText: vuepress-plugin-feed2
 tagline: 为 VuePress2 提供 Feed 生成
 actions:
   - text: 文档
-    link: https://vuepress-theme-hope.github.io/v2/feed/zh/
+    link: https://plugin-feed2.vuejs.press/zh/
 
 footer: MIT 协议, 版权所有 © 2019-present Mr.Hope
 ---

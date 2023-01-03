@@ -6,7 +6,7 @@ heroText: vuepress-plugin-copy-code2
 tagline: Code Copy plugin for VuePress2
 actions:
   - text: Docs
-    link: https://vuepress-theme-hope.github.io/v2/copy-code/
+    link: https://plugin-copy-code2.vuejs.press
 
 footer: MIT Licensed, Copyright © 2019-present Mr.Hope
 ---

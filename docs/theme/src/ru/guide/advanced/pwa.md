@@ -8,7 +8,7 @@ tag:
   - PWA
 ---
 
-Тема обеспечивает прогрессивную поддержку веб-приложений [^pwa-intro] через встроенный [`vuepress-plugin-pwa2`][pwa2], и по умолчанию он отключен.
+Тема обеспечивает прогрессивную поддержку веб-приложений [^pwa-intro] через встроенный <ProjectLink name="pwa2">`vuepress-plugin-pwa2`</ProjectLink>, и по умолчанию он отключен.
 
 [^pwa-intro]: **Введение в PWA**
 
@@ -222,9 +222,7 @@ VuePress — это, по сути, SPA. Это означает, что вам 
 
 Для получения более подробной информации смотрите:
 
-- [Документация по плагину PWA][pwa2]
+- <ProjectLink name="pwa2">Документация по плагину PWA</ProjectLink>
 - [Google PWA](https://web.dev/progressive-web-apps/)
 - [MDN PWA](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)
 - [Спецификация манифеста W3C](https://w3c.github.io/manifest/)
-
-[pwa2]: https://vuepress-theme-hope.github.io/v2/pwa/

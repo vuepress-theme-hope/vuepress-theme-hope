@@ -35,7 +35,7 @@ Atom и JSON предназначены для обеспечения допол
 
 ::: info
 
-Подробнее смотрите в [документации плагина feed2][feed-config].
+Подробнее смотрите в <ProjectLink name="feed2" path="/config/">документации плагина feed2</ProjectLink>.
 
 :::
 
@@ -125,7 +125,7 @@ Atom и JSON предназначены для обеспечения допол
 
 Параметр `channel` используется для настройки _Каналов подачи_.
 
-Доступные параметры см. в разделе [Конфигурация → Канал][feed-config-channel]
+Доступные параметры см. в разделе <ProjectLink name="feed2" path="/config/channel.html">Конфигурация → Канал</ProjectLink>.
 
 ### atomOutputFilename
 
@@ -158,7 +158,7 @@ Atom и JSON предназначены для обеспечения допол
 
 :::
 
-Подробности смотрите в разделе [Получатель потока][feed-config-getter].
+Подробности смотрите в разделе <ProjectLink name="feed2" path="/config/getter.html">Получатель потока</ProjectLink>.
 
 ### locales
 
@@ -168,7 +168,3 @@ Atom и JSON предназначены для обеспечения допол
 Вы можете использовать его для определенных параметров для каждой локали.
 
 Поддерживаются любые указанные выше параметры, кроме `hostname`.
-
-[feed-config]: https://vuepress-theme-hope.github.io/v2/feed/config/
-[feed-config-channel]: https://vuepress-theme-hope.github.io/v2/feed/config/channel.html
-[feed-config-getter]: https://vuepress-theme-hope.github.io/v2/feed/config/getter.html

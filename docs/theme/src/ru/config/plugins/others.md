@@ -29,7 +29,7 @@ Also, you can set `plugin.components.rootComponents` to enable some root compone
 
 ::: info
 
-For plugin options, please refer to [components plugin options][components-config].
+For plugin options, please refer to <ProjectLink name="components" path="/config.html">components plugin options</ProjectLink>.
 
 :::
 
@@ -41,7 +41,7 @@ For plugin options, please refer to [components plugin options][components-confi
 
 ::: info
 
-Параметры плагина см. в разделе [параметры плагина copy-code2][copy-code-config].
+Параметры плагина см. в разделе <ProjectLink name="copy-code2" path="/config.html">параметры плагина copy-code2</ProjectLink>.
 
 :::
 
@@ -83,7 +83,7 @@ For plugin options, please refer to [components plugin options][components-confi
 
 ::: info
 
-Параметры плагина смотрите в разделе [параметры плагина photo-swipe][photo-swipe-config].
+Параметры плагина смотрите в разделе <ProjectLink name="photo-swipe" path="/config.html">параметры плагина photo-swipe</ProjectLink>.
 
 :::
 
@@ -100,7 +100,7 @@ For plugin options, please refer to [components plugin options][components-confi
 
 ::: info
 
-Дополнительные параметры плагина смотрите в [документации плагина reading-time2][reading-time].
+Дополнительные параметры плагина смотрите в <ProjectLink name="reading-time2" path="/config.html">документации плагина reading-time2</ProjectLink>.
 
 :::
 
@@ -112,7 +112,7 @@ For plugin options, please refer to [components plugin options][components-confi
 
 ::: info
 
-Конфигурацию плагина см. в разделе [параметры плагина seo2][seo-config].
+Конфигурацию плагина см. в разделе <ProjectLink name="seo2" path="/config.html">параметры плагина seo2</ProjectLink>.
 
 :::
 
@@ -124,15 +124,9 @@ For plugin options, please refer to [components plugin options][components-confi
 
 ::: info
 
-Конфигурацию плагина смотрите в разделе [параметры плагина sitemap2][sitemap-config].
+Конфигурацию плагина смотрите в разделе <ProjectLink name="sitemap2" path="/config.html">параметры плагина sitemap2</ProjectLink>.
 
 :::
 
-[components-config]: https://vuepress-theme-hope.github.io/v2/components/config.html
-[copy-code-config]: https://vuepress-theme-hope.github.io/v2/copy-code/config.html
 [git-config]: https://v2.vuepress.vuejs.org/reference/plugin/git.html
 [prismjs-config]: https://v2.vuepress.vuejs.org/reference/plugin/prismjs.html
-[photo-swipe-config]: https://vuepress-theme-hope.github.io/v2/photo-swipe/config.html
-[reading-time]: https://vuepress-theme-hope.github.io/v2/reading-time/
-[seo-config]: https://vuepress-theme-hope.github.io/v2/seo/config.html
-[sitemap-config]: https://vuepress-theme-hope.github.io/v2/sitemap/config.html

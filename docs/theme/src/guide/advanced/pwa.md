@@ -8,7 +8,7 @@ tag:
   - PWA
 ---
 
-The theme provides progressive web app support [^pwa-intro] via built-in [`vuepress-plugin-pwa2`][pwa2], and it’s disabled by default.
+The theme provides progressive web app support [^pwa-intro] via built-in <ProjectLink name="pwa2">`vuepress-plugin-pwa2`</ProjectLink>, and it’s disabled by default.
 
 [^pwa-intro]: **PWA introduction**
 
@@ -222,9 +222,7 @@ You can set them as needed. For detailed options, please see [PWA config](../../
 
 For more details, please see:
 
-- [PWA plugin docs][pwa2]
+- <ProjectLink name="pwa2">PWA plugin docs</ProjectLink>
 - [Google PWA](https://web.dev/progressive-web-apps/)
 - [MDN PWA](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)
 - [W3C Manifest Specification](https://w3c.github.io/manifest/)
-
-[pwa2]: https://vuepress-theme-hope.github.io/v2/pwa/

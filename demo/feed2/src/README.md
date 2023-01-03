@@ -7,7 +7,7 @@ heroText: vuepress-plugin-feed2
 tagline: Feed plugin for VuePress2
 actions:
   - text: Docs
-    link: https://vuepress-theme-hope.github.io/v2/feed/
+    link: https://plugin-feed2.vuejs.press
 
 footer: MIT Licensed, Copyright © 2019-present Mr.Hope
 ---

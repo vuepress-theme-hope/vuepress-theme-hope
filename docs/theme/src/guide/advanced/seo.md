@@ -8,7 +8,8 @@ tag:
   - SEO
 ---
 
-`vuepress-theme-hope` provides SEO enhancements via built-in [`vuepress-plugin-seo2`][seo2].
+`vuepress-theme-hope` provides SEO enhancements via built-in <ProjectLink name="seo2">`vuepress-plugin-seo2`</ProjectLink>
+.
 
 To make the plugin work better, you may need to check the [page config](../../config/frontmatter/info.md) and configure them properly.
 
@@ -126,7 +127,7 @@ function ogp<
 ): SeoContent;
 ```
 
-For detailed parameter structure, see [Config][seo2-config].
+For detailed parameter structure, see <ProjectLink name="seo2" path="/config.html">config</ProjectLink>.
 
 For example, if you are using a third-party theme and set a `banner` in frontmatter for each article according to the theme requirements, then you can pass in the following `ogp`:
 
@@ -186,7 +187,7 @@ If your sites are deploy under docs folder in `example.com`, but available in:
 - `http://www.example.com/docs/xxx`
 - `https://www.example.com/docs/xxx` (primary)
 
-To let search engine results always be the primary choice, you may need to set `plugins.seo.canonical` to `https://www.example.com/docs/`, so that search engine will know that the fourth URl is prefered to be indexed.
+To let search engine results always be the primary choice, you may need to set `plugins.seo.canonical` to `https://www.example.com/docs/`, so that search engine will know that the fourth URl is preferred to be indexed.
 
 :::
 
@@ -257,6 +258,3 @@ As an internet marketing strategy, SEO considers how search engines work, the co
 ## Related Tools
 
 - [Google Rich Media Structure Test Tool](https://search.google.com/test/rich-results)
-
-[seo2]: https://vuepress-theme-hope.github.io/v2/seo/
-[seo2-config]: https://vuepress-theme-hope.github.io/v2/seo/config.html

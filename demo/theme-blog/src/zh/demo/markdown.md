@@ -16,7 +16,7 @@ VuePress 主要从 Markdown 文件生成页面。因此，你可以使用它轻�
 
 ## Markdown 介绍
 
-如果你是一个新手，还不会编写 Markdown，请先阅读 [Markdown 介绍](https://vuepress-theme-hope.github.io/v2/zh/cookbook/markdown/) 和 [Markdown 演示](https://vuepress-theme-hope.github.io/v2/zh/cookbook/markdown/demo.html)。
+如果你是一个新手，还不会编写 Markdown，请先阅读 [Markdown 介绍](https://theme-hope.vuejs.press/zh/cookbook/markdown/) 和 [Markdown 演示](https://theme-hope.vuejs.press/zh/cookbook/markdown/demo.html)。
 
 ## Markdown 配置
 
@@ -24,7 +24,7 @@ VuePress 通过 Frontmatter 为每个 Markdown 页面引入配置。
 
 ::: info
 
-Frontmatter 是 VuePress 中很重要的一个概念，如果你不了解它，你需要阅读 [Frontmatter 介绍](https://vuepress-theme-hope.github.io/v2/zh/cookbook/vuepress/page.html#front-matter)。
+Frontmatter 是 VuePress 中很重要的一个概念，如果你不了解它，你需要阅读 [Frontmatter 介绍](https://theme-hope.vuejs.press/zh/cookbook/vuepress/page.html#front-matter)。
 
 :::
 
@@ -36,7 +36,7 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
 
 为了丰富文档写作，VuePress 对 Markdown 语法进行了扩展。
 
-关于这些扩展，请阅读 [VuePress 中的 Markdown 扩展](https://vuepress-theme-hope.github.io/v2/zh/cookbook/vuepress/markdown.html)。
+关于这些扩展，请阅读 [VuePress 中的 Markdown 扩展](https://theme-hope.vuejs.press/zh/cookbook/vuepress/markdown.html)。
 
 ### 主题扩展
 
@@ -84,7 +84,7 @@ const a = 1;
 
 :::
 
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/container.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/container.html)
 
 #### 代码块
 
@@ -110,13 +110,13 @@ npm i -D vuepress-theme-hope
 
 :::
 
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/code-tabs.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/code-tabs.html)
 
 #### 上下角标
 
 19^th^ H~2~O
 
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/sup-sub.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/sup-sub.html)
 
 #### 自定义对齐
 
@@ -132,13 +132,13 @@ npm i -D vuepress-theme-hope
 
 :::
 
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/align.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/align.html)
 
 #### Attrs
 
 一个拥有 ID 的 **单次**{#word}。
 
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/attrs.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/attrs.html)
 
 #### 脚注
 
@@ -146,26 +146,26 @@ npm i -D vuepress-theme-hope
 
 [^first]: 这是脚注内容
 
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/footnote.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/footnote.html)
 
 #### 标记
 
 你可以标记 ==重要的内容== 。
 
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/mark.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/mark.html)
 
 #### 任务列表
 
 - [x] 计划 1
 - [ ] 计划 2
 
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/tasklist.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/tasklist.html)
 
 ### 图片增强
 
 支持为图片设置颜色模式和大小
 
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/image.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/image.html)
 
 #### 图表
 
@@ -201,7 +201,7 @@ npm i -D vuepress-theme-hope
 
 :::
 
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/chart.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/chart.html)
 
 #### Echarts
 
@@ -227,7 +227,7 @@ npm i -D vuepress-theme-hope
 
 :::
 
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/echarts.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/echarts.html)
 
 #### 流程图
 
@@ -240,7 +240,7 @@ cond(yes)->process->e
 cond(no)->e
 ```
 
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/flowchart.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/flowchart.html)
 
 #### Mermaid
 
@@ -261,7 +261,7 @@ flowchart TB
     two --> c2
 ```
 
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/mermaid.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/mermaid.html)
 
 #### Tex 语法
 
@@ -270,13 +270,13 @@ $$
 = \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^i r \cdots (r-i+1) (\log y)^{r-i}} {\omega^i} \right\}
 $$
 
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/tex.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/tex.html)
 
 #### 导入文件
 
 @include(./README.md{11-17})
 
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/include.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/include.html)
 
 #### 代码演示
 
@@ -301,13 +301,13 @@ span {
 
 :::
 
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/demo.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/demo.html)
 
 #### 样式化
 
 向 Mr.Hope 捐赠一杯咖啡。 _Recommended_
 
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/stylize.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/stylize.html)
 
 #### 交互演示
 
@@ -325,7 +325,7 @@ speak(msg);
 
 :::
 
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/playground.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/playground.html)
 
 #### Vue 交互演示
 
@@ -348,7 +348,7 @@ const msg = ref("Hello World!");
 
 :::
 
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/vue-playground.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/vue-playground.html)
 
 #### 幻灯片
 
@@ -383,6 +383,6 @@ $$
 
 @slideend
 
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/presentation.html)
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/presentation.html)
 
-[md-enhance]: https://vuepress-theme-hope.github.io/v2/md-enhance/zh/
+[md-enhance]: https://plugin-md-enhance.vuejs.press/zh/

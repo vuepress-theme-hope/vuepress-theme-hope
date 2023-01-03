@@ -51,7 +51,7 @@ export const zhNavbar = navbar([
     children: [
       {
         text: "V2 文档",
-        link: "https://vuepress-theme-hope.github.io/v2/zh/",
+        link: "https://theme-hope.vuejs.press/zh/",
       },
       {
         text: "V2 文档案例o",

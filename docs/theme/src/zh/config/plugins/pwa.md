@@ -24,7 +24,7 @@ tag:
 
 ::: info
 
-有关更多详细信息，请参见 [pwa2 插件文档][pwa-config]。
+有关更多详细信息，请参见 <ProjectLink name="pwa2" path="/zh/config.html">pwa2 插件文档</ProjectLink>。
 
 :::
 
@@ -308,5 +308,3 @@ Safari 图标
 - 必填: 否
 
 PWA 插件的国际化配置。
-
-[pwa-config]: https://vuepress-theme-hope.github.io/v2/pwa/zh/config.html

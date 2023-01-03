@@ -116,7 +116,7 @@ An audio player with poster and title:
 />
 ```
 
-See [AudioPlayer][audioplayer] page for available props.
+See <ProjectLink name="components" path="/guide/audioplayer.html">AudioPlayer</ProjectLink> page for available props.
 
 ## Значок
 
@@ -128,7 +128,7 @@ See [AudioPlayer][audioplayer] page for available props.
 - <Badge text="info" type="info" vertical="middle" />
 - <Badge text="note" type="note" vertical="middle" />
 
-Доступные свойства смотрите на странице [Значок][badge].
+Доступные свойства смотрите на странице <ProjectLink name="components" path="/guide/badge.html">Значок</ProjectLink>.
 
 ## BiliBili
 
@@ -158,7 +158,7 @@ See [AudioPlayer][audioplayer] page for available props.
 <BiliBili bvid="BV1kt411o7C3" low-quality no-danmaku />
 ```
 
-Смотрите страницу [BiliBili][bilibili] для доступных свойств.
+Смотрите страницу <ProjectLink name="components" path="/guide/bilibili.html">BiliBili</ProjectLink> для доступных свойств.
 
 ## Catalog
 
@@ -178,7 +178,7 @@ Home page catalog:
 <Catalog base='/ru/' />
 ```
 
-See [Catalog][catalog] page for available props.
+See <ProjectLink name="components" path="/guide/catalog.html">Catalog</ProjectLink> page for available props.
 
 ## CodePen
 
@@ -225,7 +225,7 @@ See [Catalog][catalog] page for available props.
 />
 ```
 
-Доступные свойства смотрите на странице [CodePen][codepen].
+Доступные свойства смотрите на странице <ProjectLink name="components" path="/guide/codepen.html">CodePen</ProjectLink>.
 
 ## FontIcon
 
@@ -239,7 +239,7 @@ See [Catalog][catalog] page for available props.
 - A big and red markdown icon: <FontIcon icon="markdown" color="red" size="32" />
 ```
 
-Доступные свойства смотрите на странице [FontIcon][fonticon].
+Доступные свойства смотрите на странице <ProjectLink name="components" path="/guide/fonticon.html">FontIcon</ProjectLink>.
 
 ## PDF
 
@@ -261,7 +261,7 @@ See [Catalog][catalog] page for available props.
 <PDF url="/assets/sample.pdf" page="2" no-toolbar />
 ```
 
-Доступные свойства смотрите на странице [PDF][pdf].
+Доступные свойства смотрите на странице <ProjectLink name="components" path="/guide/pdf.html">PDF</ProjectLink>.
 
 ## StackBlitz
 
@@ -283,7 +283,7 @@ See [Catalog][catalog] page for available props.
 <StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hideDevtools />
 ```
 
-Доступные свойства смотрите на странице [StackBlitz][stackblitz].
+Доступные свойства смотрите на странице <ProjectLink name="components" path="/guide/stackblitz.html">StackBlitz</ProjectLink>.
 
 ## VideoPlayer
 
@@ -341,7 +341,7 @@ See [Catalog][catalog] page for available props.
 />
 ```
 
-Смотрите страницу [VideoPlayer][videoplayer] для доступных свойств.
+Смотрите страницу <ProjectLink name="components" path="/guide/videoplayer.html">VideoPlayer</ProjectLink> для доступных свойств.
 
 ## YouTube
 
@@ -371,15 +371,4 @@ See [Catalog][catalog] page for available props.
 <YouTube list-type="playlist" list="PLJNLwTPak6dhCRzVelZIs2-DfBp01NX_1" />
 ```
 
-Доступные свойства смотрите на странице [YouTube][youtube].
-
-[audioplayer]: https://vuepress-theme-hope.github.io/v2/components/guide/audioplayer.html
-[badge]: https://vuepress-theme-hope.github.io/v2/components/guide/badge.html
-[bilibili]: https://vuepress-theme-hope.github.io/v2/components/guide/bilibili.html
-[catalog]: https://vuepress-theme-hope.github.io/v2/components/guide/catalog.html
-[codepen]: https://vuepress-theme-hope.github.io/v2/components/guide/codepen.html
-[fonticon]: https://vuepress-theme-hope.github.io/v2/components/guide/fonticon.html
-[pdf]: https://vuepress-theme-hope.github.io/v2/components/guide/pdf.html
-[stackblitz]: https://vuepress-theme-hope.github.io/v2/components/guide/stackblitz.html
-[videoplayer]: https://vuepress-theme-hope.github.io/v2/components/guide/videoplayer.html
-[youtube]: https://vuepress-theme-hope.github.io/v2/components/guide/youtube.html
+Доступные свойства смотрите на странице <ProjectLink name="components" path="/guide/youtube.html">YouTube</ProjectLink>.

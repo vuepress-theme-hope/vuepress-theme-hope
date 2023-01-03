@@ -10,8 +10,17 @@ import {
   ruSidebarConfig,
 } from "./sidebar/index.js";
 
-const hostname =
-  process.env.HOSTNAME || "https://vuepress-theme-hope-v2.netlify.app";
+const IS_GITEE = "GITEE" in process.env;
+const IS_NETLIFY = "NETLIFY" in process.env;
+const IS_GITHUB = !IS_GITEE && !IS_NETLIFY;
+
+const canonical = `https://theme-hope.vuejs.press`;
+
+const hostname = IS_GITHUB
+  ? "https://vuepress-theme-hope.github.io"
+  : IS_GITEE
+  ? "https://vuepress-theme-hope.gitee.io"
+  : canonical;
 
 export default hopeTheme({
   hostname,
@@ -239,9 +248,6 @@ export default hopeTheme({
       },
     },
 
-    seo:
-      hostname === "https://vuepress-theme-hope.github.io"
-        ? {}
-        : { canonical: "https://vuepress-theme-hope.github.io/v2/" },
+    seo: hostname === canonical ? {} : { canonical },
   },
 });

@@ -8,7 +8,7 @@ tag:
   - Поиск
 ---
 
-В тему добавлена встроенная поддержка [`vuepress-plugin-search-pro`][search-pro], [`@vuepress/plugin-docsearch`][docsearch] и [`@vuepress/plugin-search`][search]. Просто установите нужный плагин и настройте его, и вы получите окно поиска на панели навигации.
+В тему добавлена встроенная поддержка <ProjectLink name="search-pro">`vuepress-plugin-search-pro`</ProjectLink>, [`@vuepress/plugin-docsearch`][docsearch] и [`@vuepress/plugin-search`][search]. Просто установите нужный плагин и настройте его, и вы получите окно поиска на панели навигации.
 
 Чтобы использовать поисковый плагин, вам нужно применить его через `plugins` в [**файле конфигурации VuePress**](../../cookbook/vuepress/config.md).
 
@@ -117,7 +117,7 @@ tag:
 
 ::: info Еще
 
-Смотрите [Документацию по Плагинам][search-pro] для доступных опций.
+Смотрите <ProjectLink name="search-pro">Документацию по Плагинам</ProjectLink> для доступных опций.
 
 :::
 
@@ -411,4 +411,3 @@ tag:
 
 [docsearch]: https://v2.vuepress.vuejs.org/reference/plugin/docsearch.html
 [search]: https://v2.vuepress.vuejs.org/reference/plugin/search.html
-[search-pro]: https://vuepress-theme-hope.github.io/v2/search-pro/

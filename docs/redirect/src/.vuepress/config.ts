@@ -3,8 +3,7 @@ import theme from "./theme.js";
 
 export default config(
   {
-    base: "redirect",
-    indexName: "vuepress-theme-hope-redirect",
+    name: "redirect",
   },
   {
     locales: {

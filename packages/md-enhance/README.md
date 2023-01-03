@@ -1,6 +1,6 @@
 <!-- markdownlint-disable -->
 <p align="center">
-  <img width="240" src="https://vuepress-theme.mrhope.site/logo.svg" style="text-align: center;">
+  <img width="240" src="https://plugin-md-enhance.vuejs.press/logo.svg" style="text-align: center;">
 </p>
 <h1 align="center">vuepress-plugin-md-enhance</h1>
 <h4 align="center">Markdown enhancement plugin📄 / Markdown 增强插件📄</h4>
@@ -13,7 +13,7 @@
 
 Markdown enhancement plugin📄 / Markdown 增强插件 📄
 
-## [Official Docs](https://vuepress-theme-hope.github.io/v2/md-enhance/) | [官方文档](https://vuepress-theme-hope.gitee.io/v2/md-enhance/zh/)
+## [Official Docs](https://plugin-md-enhance.vuejs.press/) | [官方文档](https://plugin-md-enhance.vuejs.press/zh/)
 
 ## Install
 

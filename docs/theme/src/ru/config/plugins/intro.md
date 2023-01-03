@@ -47,45 +47,45 @@ tag:
 
 ### Плагины предоставлены Mr.Hope
 
-- [vuepress-plugin-auto-catalog][auto-catalog]: Catalog automatically generation for VuePress2
+- <ProjectLink name="auto-catalog" path="/ru/">vuepress-plugin-auto-catalog</ProjectLink>: Catalog automatically generation for VuePress2
 
-- [vuepress-plugin-blog2][blog2]: Плагин блога для VuePress2
+- <ProjectLink name="blog2" path="/ru/">vuepress-plugin-blog2</ProjectLink>: Плагин блога для VuePress2
 
-- [vuepress-plugin-comment2][comment2]: Обеспечивает функцию комментариев и просмотра страниц
+- <ProjectLink name="comment2" path="/ru/">vuepress-plugin-comment2</ProjectLink>: Обеспечивает функцию комментариев и просмотра страниц
 
-- [vuepress-plugin-components][components]: Предоставляет некоторые плагины из коробки
+- <ProjectLink name="components" path="/ru/">vuepress-plugin-components</ProjectLink>: Предоставляет некоторые плагины из коробки
 
-- [vuepress-plugin-copy-code2][copy-code2]: Обеспечивает функцию блокировки кода копирования одним щелчком мыши.
+- <ProjectLink name="copy-code2" path="/ru/">vuepress-plugin-copy-code2</ProjectLink>: Обеспечивает функцию блокировки кода копирования одним щелчком мыши.
 
-- [vuepress-plugin-copyright2][copyright2]: Добавление информации об авторских правах при копировании или отключении копирования и выбора.
+- <ProjectLink name="copyright2" path="/ru/">vuepress-plugin-copyright2</ProjectLink>: Добавление информации об авторских правах при копировании или отключении копирования и выбора.
 
-- [vuepress-plugin-feed2][feed2]: Поддержка каналов
+- <ProjectLink name="feed2" path="/ru/">vuepress-plugin-feed2</ProjectLink>: Поддержка каналов
 
-- [vuepress-plugin-md-enhance][md-enhance]: Предоставляет больше синтаксиса Markdown
+- <ProjectLink name="md-enhance" path="/ru/">vuepress-plugin-md-enhance</ProjectLink>: Предоставляет больше синтаксиса Markdown
 
-- [vuepress-plugin-photo-swipe][photo-swipe]: Плагин предварительного просмотра изображений, основанный на фотопролистывании
+- <ProjectLink name="photo-swipe" path="/ru/">vuepress-plugin-photo-swipe</ProjectLink>: Плагин предварительного просмотра изображений, основанный на фотопролистывании
 
-- [vuepress-plugin-pwa2][pwa2]: Расширенная поддержка PWA
+- <ProjectLink name="pwa2" path="/ru/">vuepress-plugin-pwa2</ProjectLink>: Расширенная поддержка PWA
 
-- [vuepress-plugin-reading-time2][reading-time2]: Время чтения и количество слов
+- <ProjectLink name="reading-time2" path="/ru/">vuepress-plugin-reading-time2</ProjectLink>: Время чтения и количество слов
 
-- [vuepress-plugin-sass-palette][sass-palette]: Плагин в стиле Sass для всех плагинов и тем
+- <ProjectLink name="sass-palette" path="/ru/">vuepress-plugin-sass-palette</ProjectLink>: Плагин в стиле Sass для всех плагинов и тем
 
-- [vuepress-plugin-seo2][seo2]: Плагин для улучшения SEO
+- <ProjectLink name="seo2" path="/ru/">vuepress-plugin-seo2</ProjectLink>: Плагин для улучшения SEO
 
-- [vuepress-plugin-sitemap2][sitemap2]: Плагин карты сайта
+- <ProjectLink name="sitemap2" path="/ru/">vuepress-plugin-sitemap2</ProjectLink>: Плагин карты сайта
 
 ::: tip
 
 Вот некоторые другие плагины, которые по умолчанию не включены в тему, вы можете включить их в соответствии со своими потребностями.
 
-- [vuepress-plugin-lightgallery][lightgallery]: Плагин предварительного просмотра изображений на основе lightgallery
+- <ProjectLink name="lightgallery" path="/ru/">vuepress-plugin-lightgallery</ProjectLink>: Плагин предварительного просмотра изображений на основе lightgallery
 
-- [vuepress-plugin-redirect][redirect]: Перенаправления страницы
+- <ProjectLink name="redirect" path="/ru/">vuepress-plugin-redirect</ProjectLink>: Перенаправления страницы
 
-- [vuepress-plugin-remove-pwa][remove-pwa]: Plugins to remove pwa
+- <ProjectLink name="remove-pwa" path="/ru/">vuepress-plugin-remove-pwa</ProjectLink>: Plugins to remove pwa
 
-- [vuepress-plugin-search-pro][search-pro]: Client search plugin
+- <ProjectLink name="search-pro" path="/ru/">vuepress-plugin-search-pro</ProjectLink>: Client search plugin
 
 :::
 
@@ -105,24 +105,6 @@ tag:
 
 - [@vuepress/plugin-theme-data][theme-data]: Плагин Composition API для данных темы
 
-[auto-catalog]: https://vuepress-theme-hope.github.io/v2/auto-catalog/
-[blog2]: https://vuepress-theme-hope.github.io/v2/blog/
-[comment2]: https://vuepress-theme-hope.github.io/v2/comment/
-[components]: https://vuepress-theme-hope.github.io/v2/components/
-[copy-code2]: https://vuepress-theme-hope.github.io/v2/copy-code/
-[copyright2]: https://vuepress-theme-hope.github.io/v2/copyright/
-[feed2]: https://vuepress-theme-hope.github.io/v2/feed/
-[lightgallery]: https://vuepress-theme-hope.github.io/v2/lightgallery/
-[md-enhance]: https://vuepress-theme-hope.github.io/v2/md-enhance/
-[photo-swipe]: https://vuepress-theme-hope.github.io/v2/photo-swipe/
-[pwa2]: https://vuepress-theme-hope.github.io/v2/pwa/
-[reading-time2]: https://vuepress-theme-hope.github.io/v2/reading-time/
-[redirect]: https://vuepress-theme-hope.github.io/v2/redirect/
-[remove-pwa]: https://vuepress-theme-hope.github.io/v2/remove-pwa/
-[sass-palette]: https://vuepress-theme-hope.github.io/v2/sass-palette/
-[search-pro]: https://vuepress-theme-hope.github.io/v2/search-pro/
-[seo2]: https://vuepress-theme-hope.github.io/v2/seo/
-[sitemap2]: https://vuepress-theme-hope.github.io/v2/sitemap/
 [active-header-links]: https://v2.vuepress.vuejs.org/reference/plugin/active-header-links.html
 [container]: https://v2.vuepress.vuejs.org/reference/plugin/container.html
 [external-link-icon]: https://v2.vuepress.vuejs.org/reference/plugin/external-link-icon.html

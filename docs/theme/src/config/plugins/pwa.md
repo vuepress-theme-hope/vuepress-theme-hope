@@ -24,7 +24,7 @@ To simply enable this feature, you can set `pwa: true`. <Badge text="Quick Enabl
 
 ::: info
 
-See the [pwa2 plugin documentation][pwa-config] for more details.
+See the <ProjectLink name="pwa2" path="/config.html">pwa2 plugin documentation</ProjectLink> for more details.
 
 :::
 
@@ -302,5 +302,3 @@ Options passed to `workbox-build`, for details, see [Workbox documentation](http
 - Required: No
 
 Locales config for pwa plugin.
-
-[pwa-config]: https://vuepress-theme-hope.github.io/v2/pwa/config.html

@@ -3,8 +3,7 @@ import theme from "./theme.js";
 
 export default config(
   {
-    base: "auto-catalog",
-    indexName: "vuepress-theme-hope-auto-catalog",
+    name: "auto-catalog",
   },
   {
     locales: {

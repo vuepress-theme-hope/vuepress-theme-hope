@@ -57,12 +57,12 @@ export interface SidebarLocaleOptions {
    * sidebar config
    *
    * @description Set to `false` to disable sidebar in current locale
-   * @see https://vuepress-theme-hope.github.io/v2/guide/layout/sidebar.html
+   * @see https://theme-hope.vuejs.vuepress/guide/layout/sidebar.html
    *
    * 侧边栏配置
    *
    * @description 设置为 `false` 以在当前语言中禁用侧边栏
-   * @see https://vuepress-theme-hope.gitee.io/v2/zh/guide/layout/sidebar.html
+   * @see https://theme-hope.vuejs.vuepress/zh/guide/layout/sidebar.html
    */
   sidebar?: SidebarOptions | "structure" | "heading" | false;
 

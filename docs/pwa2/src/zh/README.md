@@ -13,7 +13,7 @@ actions:
   - text: 配置 🛠
     link: /zh/config.html
 
-footer: 使用 <a href="https://vuepress-theme-hope.github.io/v2/" target="_blank">VuePress Theme Hope</a> 主题 | MIT 协议, 版权所有 © 2019-present Mr.Hope
+footer: 使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">VuePress Theme Hope</a> 主题 | MIT 协议, 版权所有 © 2019-present Mr.Hope
 
 copyright: false
 ---
@@ -85,3 +85,9 @@ export default {
 如果你正在使用本插件，我们推荐在你的 VuePress 配置文件中设置 `shouldPrefetch: false`。
 
 :::
+
+<NetlifyBadge />
+
+<script setup lang="ts">
+import NetlifyBadge from "@NetlifyBadge";
+</script>

@@ -34,7 +34,7 @@ If possible, use RSS as first choice.
 
 ::: info
 
-See the [feed2 plugin documentation][feed-config] for more details.
+See the <ProjectLink name="feed2" path="/config/">feed2 plugin documentation</ProjectLink> for more details.
 
 :::
 
@@ -124,7 +124,7 @@ You can sort the pages in the site according to your needs.
 
 `channel` option is used to config _Feed Channels_.
 
-For available options, please see [Config → Channel][feed-config-channel]
+For available options, please see <ProjectLink name="feed2" path="/config/channel.html">Config → Channel</ProjectLink>.
 
 ### atomOutputFilename
 
@@ -157,7 +157,7 @@ The plugin is providing a reasonable getter by default, if you want full control
 
 :::
 
-For details, see [Feed Getter][feed-config-getter].
+For details, see <ProjectLink name="feed2" path="/config/getter.html">Feed Getter</ProjectLink>.
 
 ### locales
 
@@ -167,7 +167,3 @@ For details, see [Feed Getter][feed-config-getter].
 You can use it to specific options for each locale.
 
 Any options above are supported except `hostname`.
-
-[feed-config]: https://vuepress-theme-hope.github.io/v2/feed/config/
-[feed-config-channel]: https://vuepress-theme-hope.github.io/v2/feed/config/channel.html
-[feed-config-getter]: https://vuepress-theme-hope.github.io/v2/feed/config/getter.html

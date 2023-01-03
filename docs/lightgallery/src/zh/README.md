@@ -13,7 +13,7 @@ actions:
   - text: 配置 🛠
     link: /zh/config.html
 
-footer: 使用 <a href="https://vuepress-theme-hope.github.io/v2/" target="_blank">VuePress Theme Hope</a> 主题 | MIT 协议, 版权所有 © 2019-present Mr.Hope
+footer: 使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">VuePress Theme Hope</a> 主题 | MIT 协议, 版权所有 © 2019-present Mr.Hope
 
 copyright: false
 ---
@@ -90,6 +90,12 @@ export default {
 
 你被警告了！
 
-如果你对此表示担忧，你可以考虑使用 [vuepress-plugin-photo-swipe](https://vuepress-theme-hope.github.io/v2/photo-swipe/zh/)。
+如果你对此表示担忧，你可以考虑使用 <ProjectLink name="photo-swipe" path="/zh/">vuepress-plugin-photo-swipe</ProjectLink>。
 
 :::
+
+<NetlifyBadge />
+
+<script setup lang="ts">
+import NetlifyBadge from "@NetlifyBadge";
+</script>

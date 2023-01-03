@@ -7,7 +7,7 @@ heroText: vuepress-plugin-redirect
 tagline: Redirect plugin for VuePress2
 actions:
   - text: Docs
-    link: https://vuepress-theme-hope.github.io/v2/redirect/
+    link: https://plugin-redirect.vuejs.press
 
 footer: MIT Licensed | Copyright © 2022-present Mr.Hope
 ---

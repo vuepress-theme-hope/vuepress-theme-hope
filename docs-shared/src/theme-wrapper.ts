@@ -2,14 +2,23 @@ import { hopeTheme } from "vuepress-theme-hope";
 import type { ThemeFunction } from "@vuepress/core";
 import type { ThemeOptions } from "vuepress-theme-hope";
 
-const hostname =
-  process.env["HOSTNAME"] || "https://vuepress-theme-hope-v2.netlify.app";
+const IS_GITEE = "GITEE" in process.env;
+const IS_NETLIFY = "NETLIFY" in process.env;
+const IS_GITHUB = !IS_GITEE && !IS_NETLIFY;
 
 export const theme = (
   name: string,
   { plugins = {}, ...options }: ThemeOptions
-): ThemeFunction =>
-  hopeTheme({
+): ThemeFunction => {
+  const canonical = `https://plugin-${name}.vuejs.press`;
+
+  const hostname = IS_GITHUB
+    ? "https://vuepress-theme-hope.github.io"
+    : IS_GITEE
+    ? "https://vuepress-theme-hope.gitee.io"
+    : canonical;
+
+  return hopeTheme({
     hostname,
 
     author: {
@@ -40,17 +49,11 @@ export const theme = (
         categoryId: "DIC_kwDOG_Pt2M4COD69",
       },
 
-      seo:
-        hostname === "https://vuepress-theme-hope.github.io"
-          ? {}
-          : {
-              canonical: `https://vuepress-theme-hope.github.io/v2/${
-                name.endsWith("2") ? name.substring(0, name.length - 1) : name
-              }/`,
-            },
+      seo: hostname === canonical ? {} : { canonical },
 
       ...plugins,
     },
 
     ...options,
   });
+};

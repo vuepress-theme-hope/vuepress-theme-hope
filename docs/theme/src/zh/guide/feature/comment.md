@@ -8,7 +8,7 @@ tag:
   - 评论
 ---
 
-通过内置 [`vuepress-plugin-comment2`][comment2]，`vuepress-theme-hope` 实现了评论功能。
+通过内置 <ProjectLink name="comment2" path="/zh/">`vuepress-plugin-comment2`</ProjectLink>，`vuepress-theme-hope` 实现了评论功能。
 
 ::: info
 
@@ -69,7 +69,7 @@ export default {
 
 ::: info
 
-受篇幅限制，完整的评论插件配置，详见 [插件文档][comment2]。
+受篇幅限制，完整的评论插件配置，详见 <ProjectLink name="comment2" path="/zh/">插件文档</ProjectLink>。
 
 :::
 
@@ -101,7 +101,7 @@ Giscus 是一个基于 GitHub Discussion 的评论系统，启用简便。
 
 请将 `data-repo`, `data-repo-id`, `data-category` 和 `data-category-id` 作为插件选项传入 `repo`, `repoId`, `category` `categoryId`。
 
-其他的配置项详见 [Giscus 配置][comment2-giscus-config]。
+其他的配置项详见 <ProjectLink name="comment2" path="/zh/config/giscus.html">Giscus 配置</ProjectLink>。
 
 ## Waline
 
@@ -158,7 +158,7 @@ export default {
 
 :::
 
-Waline 评论的其他配置将在 [Waline 配置][comment2-waline-config] 中列出。
+Waline 评论的其他配置将在 <ProjectLink name="comment2" path="/zh/config/waline.html">Waline 配置</ProjectLink> 中列出。
 
 ::: tip
 
@@ -183,7 +183,3 @@ Waline 评论的其他配置将在 [Waline 配置][comment2-waline-config] 中�
 1. 进入 Settings - Environment Variables，添加环境变量 `MONGODB_URI`，值为第 3 步的数据库连接字符串
 1. 进入 Overview，点击 Domains 下方的链接，如果环境配置正确，可以看到 “Twikoo 云函数运行正常” 的提示
 1. Vercel Domains (包含 `https://` 前缀，例如 `https://xxx.vercel.app`) 即为你的环境 ID
-
-[comment2]: https://vuepress-theme-hope.github.io/v2/comment/zh/
-[comment2-giscus-config]: https://vuepress-theme-hope.github.io/v2/comment/zh/config/giscus.html
-[comment2-waline-config]: https://vuepress-theme-hope.github.io/v2/comment/zh/config/waline.html

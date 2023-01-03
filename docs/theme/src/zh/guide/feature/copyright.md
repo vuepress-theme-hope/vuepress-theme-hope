@@ -12,7 +12,7 @@ copy:
 
 有些时候，你可能不想让你的某些文章被他人复制，或者你想让他人在复制时，自动生成一段版权信息到剪切板中。
 
-`vuepress-theme-hope` 为应对此场景引入了 [vuepress-plugin-copyright2][copyright2]。
+`vuepress-theme-hope` 为应对此场景引入了 <ProjectLink name="copyright2" path="/zh/">vuepress-plugin-copyright2</ProjectLink>。
 
 ::: info
 
@@ -54,6 +54,4 @@ copy:
 
 ## 更多
 
-关于插件文档，请参见 [vuepress-plugin-copyright2 文档][copyright2]。
-
-[copyright2]: https://vuepress-theme-hope.github.io/v2/copyright/zh/
+关于插件文档，请参见 <ProjectLink name="copyright2" path="/zh/">vuepress-plugin-copyright2 文档</ProjectLink>。

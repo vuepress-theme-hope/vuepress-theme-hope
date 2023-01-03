@@ -71,7 +71,7 @@ export default defineUserConfig({
               actions: [
                 {
                   text: "Primary Action",
-                  link: "https://vuepress-theme-hope.github.io/",
+                  link: "https://theme-hope.vuejs.press/",
                   type: "primary",
                 },
                 { text: "Default Action" },

@@ -136,11 +136,11 @@ If the image is standalone in a line, wrapped or not wrapped by link, it will be
 ```md
 ![VuePress Hope Logo](/favicon.ico)
 
-[![VuePress Hope Logo](/favicon.ico)](https://vuepress-theme-hope.github.io/)
+[![VuePress Hope Logo](/favicon.ico)](https://theme-hope.vuejs.press/)
 
 ![VuePress Hope Logo](/favicon.ico "VuePress Hope Logo")
 
-[![VuePress Hope Logo](/favicon.ico "VuePress Hope Logo")](https://vuepress-theme-hope.github.io/)
+[![VuePress Hope Logo](/favicon.ico "VuePress Hope Logo")](https://theme-hope.vuejs.press/)
 
 ![VuePress Hope Logo](/logo.svg "VuePress Hope Logo" =300x300)
 ```
@@ -149,11 +149,11 @@ Will be rendered as:
 
 ![VuePress Hope Logo](/favicon.ico)
 
-[![VuePress Hope Logo](/favicon.ico)](https://vuepress-theme-hope.github.io/)
+[![VuePress Hope Logo](/favicon.ico)](https://theme-hope.vuejs.press/)
 
 ![VuePress Hope Logo](/favicon.ico "VuePress Hope Logo")
 
-[![VuePress Hope Logo](/favicon.ico "VuePress Hope Logo")](https://vuepress-theme-hope.github.io/)
+[![VuePress Hope Logo](/favicon.ico "VuePress Hope Logo")](https://theme-hope.vuejs.press/)
 
 ![VuePress Hope Logo](/logo.svg "VuePress Hope Logo" =300x300)
 

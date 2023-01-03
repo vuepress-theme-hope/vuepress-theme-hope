@@ -7,7 +7,7 @@ heroText: vuepress-plugin-seo2
 tagline: Full SEO enhance of your site
 actions:
   - text: Docs
-    link: https://vuepress-theme-hope.github.io/v2/seo/
+    link: https://plugin-seo2.vuejs.press
 
 footer: MIT Licensed, Copyright © 2019-present Mr.Hope
 ---

@@ -8,7 +8,7 @@ tag:
   - Превью изображения
 ---
 
-Включив [vuepress-plugin-photo-swipe][photo-swipe], vuepress-theme-hope заставит изображения в теле страницы переходить в режим предварительного просмотра при нажатии.
+Включив <ProjectLink name="photo-swipe">vuepress-plugin-photo-swipe</ProjectLink>, vuepress-theme-hope заставит изображения в теле страницы переходить в режим предварительного просмотра при нажатии.
 
 Если вам не нужна эта функция, вы можете установить `plugins.photoSwipe: false` в настройках темы, чтобы отключить ее.
 
@@ -40,7 +40,7 @@ tag:
 
 ## Настроить конфигурацию
 
-Вы можете проверить [документацию плагина][photo-swipe] ля расширенной настройки.
+Вы можете проверить <ProjectLink name="photo-swipe">документацию плагина</ProjectLink> ля расширенной настройки.
 
 ## Демо
 
@@ -81,5 +81,3 @@ tag:
 </style>
 
 <!-- markdownlint-restore -->
-
-[photo-swipe]: https://vuepress-theme-hope.github.io/v2/photo-swipe/

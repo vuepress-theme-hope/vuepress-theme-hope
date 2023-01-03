@@ -7,7 +7,7 @@ This plugin removes any related service worker from your VuePress site, so that 
 
 ::: tip Why this plugin is needed if you used PWA plugin once?
 
-PWA plugins like [`@vuepress/plugin-pwa`][official-pwa] and [`vuepress-plugin-pwa2`][pwa2] register service worker to your site, which will cache your site and make it available offline.
+PWA plugins like [`@vuepress/plugin-pwa`][official-pwa] and <ProjectLink name="pwa2">`vuepress-plugin-pwa2`</ProjectLink> register service worker to your site, which will cache your site and make it available offline.
 
 However, if you remove pwa plugin, the old service worker will still be there, but they can never get an update because they can never found a new service worker to update to. So users will stay with the old version of your site.
 
@@ -19,4 +19,3 @@ To solve this problem:
 :::
 
 [official-pwa]: https://v2.vuepress.vuejs.org/reference/plugin/pwa.html
-[pwa2]: https://vuepress-theme-hope.github.io/v2/pwa/

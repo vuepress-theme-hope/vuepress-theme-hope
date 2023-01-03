@@ -3,8 +3,7 @@ import theme from "./theme.js";
 
 export default config(
   {
-    base: "pwa",
-    indexName: "vuepress-theme-hope-pwa2",
+    name: "pwa2",
   },
   {
     locales: {

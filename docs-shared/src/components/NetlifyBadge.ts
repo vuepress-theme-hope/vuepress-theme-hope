@@ -1,4 +1,5 @@
 import { defineComponent, h } from "vue";
+// @ts-ignore
 import { useDarkMode } from "@theme-hope/modules/outlook/composables/index";
 import type { VNode } from "vue";
 
@@ -7,14 +8,7 @@ declare const IS_NETLIFY: boolean;
 export default defineComponent({
   name: "NetlifyBadge",
 
-  props: {
-    alt: {
-      type: String,
-      default: "Deploys by Netlify",
-    },
-  },
-
-  setup(props) {
+  setup() {
     const { isDarkMode } = useDarkMode();
 
     return (): VNode | null =>
@@ -26,7 +20,7 @@ export default defineComponent({
               src: `https://www.netlify.com/img/global/badges/netlify-${
                 isDarkMode.value ? "dark" : "light"
               }.svg`,
-              alt: props.alt,
+              alt: "Deploys by Netlify",
             })
           )
         : null;
