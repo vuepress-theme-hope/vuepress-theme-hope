@@ -30,9 +30,11 @@ jobs:
           NODE_OPTIONS: --max_old_space_size=8192
         run: pnpm run build
 
+      - name: Update npmrc
+        run: |
+          "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
+
       - name: Publish packages
-        env:
-          npm_config_//registry.npmjs.org/:_authToken: ${{ secrets.NPM_TOKEN }}
         run: pnpm publish -r --tag next --no-git-checks
 
       - name: Sync npmmirror
