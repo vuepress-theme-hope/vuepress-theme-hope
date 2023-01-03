@@ -32,7 +32,7 @@ jobs:
 
       - name: Update npmrc
         run: |
-          "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
 
       - name: Publish packages
         run: pnpm publish -r --tag next --no-git-checks
