@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.150](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.149...v2.0.0-beta.150) (2023-01-03)
+
+### Features
+
+- improve rtl layout ([992bb89](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/992bb8905472d441f5eebc5305991895e7e8bb5f))
+- **md-enhance:** improve container style ([b1e9846](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b1e98469d51ec1aaa386bc0c1347dc5d0b073405))
+
+### Bug Fixes
+
+- **theme:** fix dev command ([b9615c6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b9615c627862bc77f7a1e3aa721ddac6ee48a5aa))
+
 ## [2.0.0-beta.149](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.148...v2.0.0-beta.149) (2023-01-02)
 
 ### Features
