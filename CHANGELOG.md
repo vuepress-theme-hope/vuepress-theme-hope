@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.151](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.150...v2.0.0-beta.151) (2023-01-04)
+
+### Features
+
+- **create:** add new command add ([8c34064](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8c34064e18003a976fac314d27227cd833750a48))
+- **search-pro:** improve search button a11y ([8629ee5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8629ee556954d59d2b1e58482b3f5d4f620ffc5c))
+- **theme:** improve home features ([f853aa4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f853aa45849437d1f6f1225b07086a8f2c0b7706))
+- **theme:** rebuild home page related components ([3f76b8d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3f76b8d960a3cfc0b6a854289a733ca1c3a91364))
+
+### Bug Fixes
+
+- **deps:** update dependency @types/three to v0.148.0 ([#2626](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2626)) ([ba86d46](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ba86d46dd2ddd3787b7bb47ad7693ea6cad4d865))
+- **md-enhance:** fix nesting container icon issue ([33b0e69](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/33b0e6907ea403b0f5ecea787c53096633578e6f))
+
+### Performance Improvements
+
+- use util functions ([2e364a9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2e364a925cbdb1896add00c2eddb41b4cf414d4c))
+
 ## [2.0.0-beta.150](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.149...v2.0.0-beta.150) (2023-01-03)
 
 ### Features
