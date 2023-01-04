@@ -133,7 +133,7 @@
     border-color: var(--info-border-color);
     background: var(--info-bg-color);
 
-    .hint-container-title {
+    > .hint-container-title {
       color: var(--info-title-color);
 
       &::before {
@@ -150,7 +150,7 @@
     border-color: var(--note-border-color);
     background: var(--note-bg-color);
 
-    .hint-container-title {
+    > .hint-container-title {
       color: var(--note-title-color);
 
       &::before {
@@ -167,7 +167,7 @@
     border-color: var(--tip-border-color);
     background: var(--tip-bg-color);
 
-    .hint-container-title {
+    > .hint-container-title {
       color: var(--tip-title-color);
 
       &::before {
@@ -184,7 +184,7 @@
     border-color: var(--warning-border-color);
     background: var(--warning-bg-color);
 
-    .hint-container-title {
+    > .hint-container-title {
       color: var(--warning-title-color);
 
       &::before {
@@ -201,7 +201,7 @@
     border-color: var(--danger-border-color);
     background: var(--danger-bg-color);
 
-    .hint-container-title {
+    > .hint-container-title {
       color: var(--danger-title-color);
 
       &::before {
