@@ -3,10 +3,10 @@ import { createRequire } from "node:module";
 import { createBuildApp } from "@vuepress/core";
 import {
   loadUserConfig,
-  transformUserConfigToPlugin,
   resolveAppConfig,
   resolveCliAppConfig,
   resolveUserConfigConventionalPath,
+  transformUserConfigToPlugin,
 } from "@vuepress/cli";
 import { removeEndingSlash, removeLeadingSlash } from "@vuepress/shared";
 import { fs, logger, path } from "@vuepress/utils";

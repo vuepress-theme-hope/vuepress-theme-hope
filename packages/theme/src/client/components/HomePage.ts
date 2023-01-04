@@ -10,8 +10,8 @@ import { usePure } from "@theme-hope/composables/index";
 
 import type { VNode } from "vue";
 import type {
-  ThemeProjectHomeFeatureOptions,
   ThemeProjectHomeFeatureItemOptions,
+  ThemeProjectHomeFeatureOptions,
   ThemeProjectHomePageFrontmatter,
 } from "../../shared/index.js";
 

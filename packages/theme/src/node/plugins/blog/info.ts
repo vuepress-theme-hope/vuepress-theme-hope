@@ -4,10 +4,10 @@ import { ArticleInfoType } from "../../../shared/index.js";
 
 import type { Page } from "@vuepress/core";
 import type {
-  ThemePageData,
   ThemeBlogHomePageFrontmatter,
-  ThemeProjectHomePageFrontmatter,
   ThemeNormalPageFrontmatter,
+  ThemePageData,
+  ThemeProjectHomePageFrontmatter,
 } from "../../../shared/index.js";
 
 export const injectBasicInfo = (

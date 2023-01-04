@@ -7,9 +7,9 @@ import type { ComputedRef } from "vue";
 import type { ResolvedThemeNavbarItem } from "../utils/index.js";
 import type {
   AutoLinkOptions,
-  NavbarItem,
-  NavbarGroup,
   NavGroup,
+  NavbarGroup,
+  NavbarItem,
 } from "../../../../shared/index.js";
 
 export const resolveNavbarItem = (

@@ -1,4 +1,4 @@
-import { useStorage, useSessionStorage } from "@vueuse/core";
+import { useSessionStorage, useStorage } from "@vueuse/core";
 import { compareSync } from "bcrypt-ts/browser";
 import { computed } from "vue";
 

@@ -7,8 +7,8 @@ import { isActiveSidebarItem } from "@theme-hope/modules/sidebar/utils/index";
 
 import type { VNode } from "vue";
 import type {
-  ResolvedSidebarItem,
   ResolvedSidebarHeaderItem,
+  ResolvedSidebarItem,
 } from "../utils/index.js";
 import type { AutoLinkOptions as AutoLinkType } from "../../../../shared/index.js";
 

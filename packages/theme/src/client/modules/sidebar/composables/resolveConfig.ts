@@ -18,16 +18,16 @@ import { resolvePrefix } from "./utils.js";
 
 import type { PageHeader } from "@vuepress/client";
 import type {
-  ResolvedSidebarItem,
-  ResolvedSidebarHeaderItem,
-  ResolvedSidebarPageItem,
   ResolvedSidebarGroupItem,
+  ResolvedSidebarHeaderItem,
+  ResolvedSidebarItem,
+  ResolvedSidebarPageItem,
 } from "../utils/index.js";
 import type {
-  ThemeNormalPageFrontmatter,
   SidebarArrayOptions,
-  SidebarObjectOptions,
   SidebarItem,
+  SidebarObjectOptions,
+  ThemeNormalPageFrontmatter,
 } from "../../../../shared/index.js";
 
 /**

@@ -1,10 +1,10 @@
 import {
   TransitionGroup,
-  defineComponent,
-  onMounted,
-  h,
-  ref,
   computed,
+  defineComponent,
+  h,
+  onMounted,
+  ref,
 } from "vue";
 import { useRouter } from "vue-router";
 import { useLocaleConfig } from "vuepress-shared/client";

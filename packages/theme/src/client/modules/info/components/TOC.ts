@@ -1,5 +1,5 @@
 import { usePageData } from "@vuepress/client";
-import { defineComponent, h, onMounted, watch, ref } from "vue";
+import { defineComponent, h, onMounted, ref, watch } from "vue";
 import { RouterLink, useRoute } from "vue-router";
 import { isActiveLink } from "vuepress-shared/client";
 

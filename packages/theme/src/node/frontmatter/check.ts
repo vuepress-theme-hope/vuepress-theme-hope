@@ -5,8 +5,8 @@ import { getCategory, getTag } from "vuepress-shared/node";
 import type { Page } from "@vuepress/core";
 import type {
   ThemeBlogHomePageFrontmatter,
-  ThemeProjectHomePageFrontmatter,
   ThemeNormalPageFrontmatter,
+  ThemeProjectHomePageFrontmatter,
 } from "../../shared/index.js";
 
 export const checkFrontmatter = (page: Page, isDebug: boolean): void => {

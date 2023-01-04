@@ -15,8 +15,8 @@ import {
 
 import type { VNode } from "vue";
 import type {
-  BlogTypeFrontmatterOptions,
   BlogPluginFrontmatter,
+  BlogTypeFrontmatterOptions,
 } from "vuepress-plugin-blog2";
 import type { ArticleInfo } from "../../../../shared/index.js";
 

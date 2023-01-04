@@ -3,12 +3,12 @@ import { getStructure } from "./structure.js";
 
 import type { Page } from "@vuepress/core";
 import type {
-  ThemeNormalPageFrontmatter,
-  ThemePageData,
   SidebarDirInfo,
   SidebarFileInfo,
   SidebarInfo,
   SidebarSorterFunction,
+  ThemeNormalPageFrontmatter,
+  ThemePageData,
 } from "../../../shared/index.js";
 import type { StructureInfo } from "./structure.js";
 

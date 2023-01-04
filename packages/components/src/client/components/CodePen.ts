@@ -1,5 +1,5 @@
 import { useScriptTag } from "@vueuse/core";
-import { computed, defineComponent, onMounted, h } from "vue";
+import { computed, defineComponent, h, onMounted } from "vue";
 
 import type { PropType, VNode } from "vue";
 

@@ -9,9 +9,9 @@ import type { ThemeFunction } from "@vuepress/core";
 import type { UserConfig } from "@vuepress/cli";
 import type {
   NavbarOptions,
-  SidebarOptions,
   SidebarArrayOptions,
   SidebarObjectOptions,
+  SidebarOptions,
   ThemeOptions,
 } from "../../shared/index.js";
 

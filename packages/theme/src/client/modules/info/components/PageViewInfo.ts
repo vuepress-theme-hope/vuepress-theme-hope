@@ -1,6 +1,6 @@
 import { withBase } from "@vuepress/client";
 import { isString } from "@vuepress/shared";
-import { defineComponent, h, onMounted, watch, ref } from "vue";
+import { defineComponent, h, onMounted, ref, watch } from "vue";
 import { useRoute } from "vue-router";
 
 import { EyeIcon, FireIcon } from "@theme-hope/modules/info/components/icons";

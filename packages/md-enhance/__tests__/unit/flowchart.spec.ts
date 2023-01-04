@@ -1,5 +1,5 @@
 import MarkdownIt from "markdown-it";
-import { describe, it, expect } from "vitest";
+import { describe, expect, it } from "vitest";
 import { flowchart } from "../../src/node/markdown-it/index.js";
 
 const demo = `st=>start: Start|past:>http://www.google.com[blank]

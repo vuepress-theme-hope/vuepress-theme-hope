@@ -1,7 +1,7 @@
 import { colors, fs, path } from "@vuepress/utils";
 
 import { Feed } from "./feed.js";
-import { getFeedChannelOption, getFilename, getFeedLinks } from "./options.js";
+import { getFeedChannelOption, getFeedLinks, getFilename } from "./options.js";
 import { FeedPage } from "./page.js";
 import { compareDate, logger } from "./utils.js";
 

@@ -6,9 +6,9 @@ import { ArticleInfoType, PageType } from "../../shared/index.js";
 import type { App, Page, PluginObject } from "@vuepress/core";
 import type {
   ThemeBlogHomePageFrontmatter,
+  ThemeNormalPageFrontmatter,
   ThemePageData,
   ThemeProjectHomePageFrontmatter,
-  ThemeNormalPageFrontmatter,
 } from "../../shared/index.js";
 
 export const injectPageInfo = (page: Page<ThemePageData>): void => {

@@ -8,11 +8,11 @@ import type {
   KatexOptions,
   MarkdownEnhanceLocaleData,
   MathjaxOptions,
-  StylizeOptions,
   PlaygroundOptions,
   PresentationOptions,
-  TasklistOptions,
+  StylizeOptions,
   TSPresetPlaygroundOptions,
+  TasklistOptions,
   VuePresetPlaygroundOptions,
 } from "./typings/index.js";
 import type { CodeDemoOptions, VuePlaygroundOptions } from "../shared/index.js";

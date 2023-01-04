@@ -1,5 +1,6 @@
 import { provide, ref } from "vue";
-import { InjectionKey, Ref } from "vue";
+
+import type { InjectionKey, Ref } from "vue";
 
 export const searchModalSymbol: InjectionKey<Ref<boolean>> =
   Symbol.for("search-pro");

@@ -8,8 +8,8 @@ import type {
 } from "./feature/index.js";
 import type { LocaleDataToOption } from "./helpers.js";
 import type {
-  LayoutLocaleData,
   LayoutLocaleConfig,
+  LayoutLocaleData,
   LayoutLocaleOptions,
 } from "./layout/index.js";
 

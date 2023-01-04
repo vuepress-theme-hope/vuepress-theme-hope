@@ -1,5 +1,5 @@
 import { atou } from "vuepress-shared";
-import { describe, it, expect } from "vitest";
+import { describe, expect, it } from "vitest";
 import MarkdownIt from "markdown-it";
 import { mermaid } from "../../src/node/markdown-it/index.js";
 

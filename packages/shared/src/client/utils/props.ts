@@ -1,4 +1,4 @@
-import { zlibSync, unzlibSync, strToU8, strFromU8 } from "fflate/browser";
+import { strFromU8, strToU8, unzlibSync, zlibSync } from "fflate/browser";
 import type { DeflateOptions } from "fflate";
 
 // eslint-disable-next-line @typescript-eslint/naming-convention

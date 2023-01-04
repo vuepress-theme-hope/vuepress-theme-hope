@@ -1,4 +1,4 @@
-import { existsSync, writeFileSync, readdirSync } from "node:fs";
+import { existsSync, readdirSync, writeFileSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { version } from "../package.json";
 

@@ -1,4 +1,4 @@
-import { defineComponent, h, VNode } from "vue";
+import { defineComponent, h } from "vue";
 
 import ArticleList from "@theme-hope/modules/blog/components/ArticleList";
 import BlogHero from "@theme-hope/modules/blog/components/BlogHero";
@@ -9,6 +9,8 @@ import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import MarkdownContent from "@theme-hope/components/MarkdownContent";
 
 import { useArticles } from "@theme-hope/modules/blog/composables/index";
+
+import type { VNode } from "vue";
 
 import "../styles/home.scss";
 

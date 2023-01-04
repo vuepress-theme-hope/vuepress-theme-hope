@@ -1,6 +1,6 @@
 import type { FooterLocaleOptions } from "./footer.js";
 import type { DocsRepoLocaleOptions } from "./info.js";
-import type { MetaLocateData, MetaLocaleOptions } from "./meta.js";
+import type { MetaLocaleOptions, MetaLocateData } from "./meta.js";
 import type { NavbarLocaleData, NavbarLocaleOptions } from "./navbar.js";
 import type { SidebarLocaleOptions, SidebarSorter } from "./sidebar.js";
 import type { RouteLocaleData } from "./route.js";

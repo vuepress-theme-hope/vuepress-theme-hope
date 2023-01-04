@@ -2,9 +2,9 @@ import { getDirname, path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   addCustomElement,
-  addViteSsrExternal,
   addViteOptimizeDepsExclude,
   addViteOptimizeDepsInclude,
+  addViteSsrExternal,
   getLocales,
   noopModule,
 } from "vuepress-shared/node";

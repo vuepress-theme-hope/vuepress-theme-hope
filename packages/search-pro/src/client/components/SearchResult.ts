@@ -1,7 +1,7 @@
 import { useRouteLocale } from "@vuepress/client";
 import { isPlainObject, isString } from "@vuepress/shared";
 import { useEventListener } from "@vueuse/core";
-import { disableBodyScroll, clearAllBodyScrollLocks } from "body-scroll-lock";
+import { clearAllBodyScrollLocks, disableBodyScroll } from "body-scroll-lock";
 import {
   computed,
   defineComponent,

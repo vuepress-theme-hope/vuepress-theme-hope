@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vitest";
+import { describe, expect, it } from "vitest";
 import { getBundlerName } from "../../src/node/bundler/getBundler.js";
 import type { App } from "@vuepress/core";
 

@@ -1,9 +1,9 @@
 import { useDebounceFn, useEventListener } from "@vueuse/core";
-import { defineComponent, h, onMounted, onBeforeUnmount, ref } from "vue";
+import { defineComponent, h, onBeforeUnmount, onMounted, ref } from "vue";
 import { atou } from "vuepress-shared/client";
 import { LoadingIcon } from "./icons.js";
 
-import type { EChartsType, EChartsOption } from "echarts";
+import type { EChartsOption, EChartsType } from "echarts";
 import type { PropType, VNode } from "vue";
 
 import "../styles/echarts.scss";

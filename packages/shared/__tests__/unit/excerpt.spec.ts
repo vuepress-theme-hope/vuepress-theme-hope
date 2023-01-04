@@ -1,6 +1,6 @@
 import { createBaseApp } from "@vuepress/core";
 import { path } from "@vuepress/utils";
-import { describe, it, expect } from "vitest";
+import { describe, expect, it } from "vitest";
 
 import { emptyTheme } from "./__fixtures__/theme/empty.js";
 import { getPageExcerpt } from "../../src/node/page/excerpt.js";

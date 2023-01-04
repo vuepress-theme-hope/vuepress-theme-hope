@@ -1,4 +1,4 @@
-import { defineComponent, resolveComponent, h } from "vue";
+import { defineComponent, h, resolveComponent } from "vue";
 
 import { usePure } from "@theme-hope/composables/index";
 

@@ -6,7 +6,7 @@ import {
 } from "vuepress-shared/node";
 
 import { convertOptions } from "./compact/index.js";
-import { getManifest, generateManifest } from "./generateManifest.js";
+import { generateManifest, getManifest } from "./generateManifest.js";
 import { generateServiceWorker } from "./generateServiceWorker.js";
 import { appendBase } from "./helper.js";
 import { injectLinksToHead } from "./injectHead.js";

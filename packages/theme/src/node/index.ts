@@ -1,22 +1,23 @@
 // TODO: Remove this in v2 stable
 import {
   // v1
+  config,
   convertFrontmatter,
   convertNavbarOptions,
   convertSidebarOptions,
   convertThemeOptions,
-  config,
   navbarConfig,
   sidebarConfig,
   themeConfig,
 
   // v2
+  // eslint-disable-next-line sort-imports
   defineHopeConfig,
-  defineThemeConfig,
   defineNavbarConfig,
   defineSidebarArrayConfig,
   defineSidebarConfig,
   defineSidebarObjectConfig,
+  defineThemeConfig,
 } from "./compact/index.js";
 
 export {

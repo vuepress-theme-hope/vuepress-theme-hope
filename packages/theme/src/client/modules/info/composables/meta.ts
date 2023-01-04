@@ -11,8 +11,8 @@ import type { GitContributor } from "@vuepress/plugin-git";
 import type { ComputedRef } from "vue";
 import type {
   AutoLinkOptions,
-  ThemePageData,
   ThemeNormalPageFrontmatter,
+  ThemePageData,
 } from "../../../../shared/index.js";
 
 export const useEditLink = (): ComputedRef<null | AutoLinkOptions> => {

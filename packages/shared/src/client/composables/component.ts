@@ -1,5 +1,5 @@
 import { isPlainObject } from "@vuepress/shared";
-import { capitalize, camelize, getCurrentInstance } from "vue";
+import { camelize, capitalize, getCurrentInstance } from "vue";
 
 import type { App } from "vue";
 

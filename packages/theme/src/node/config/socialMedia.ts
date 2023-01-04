@@ -1,6 +1,6 @@
 import { isArray, isString } from "@vuepress/shared";
 import { fs } from "@vuepress/utils";
-import { logger, TEMPLATE_FOLDER } from "../utils.js";
+import { TEMPLATE_FOLDER, logger } from "../utils.js";
 
 import type { ThemeData } from "../../shared/index.js";
 

@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vitest";
+import { describe, expect, it } from "vitest";
 import { md2text } from "../../src/node/utils/md2text.js";
 
 describe("md2text", () => {

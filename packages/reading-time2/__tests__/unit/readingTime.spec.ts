@@ -1,5 +1,5 @@
-import { describe, it, expect } from "vitest";
-import { getWordNumber, getReadingTime } from "../../src/node/readingTime";
+import { describe, expect, it } from "vitest";
+import { getReadingTime, getWordNumber } from "../../src/node/readingTime";
 
 describe("Words test", () => {
   describe("Should handle english", () => {

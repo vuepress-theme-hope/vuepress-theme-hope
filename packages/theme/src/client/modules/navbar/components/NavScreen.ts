@@ -1,12 +1,12 @@
-import { disableBodyScroll, clearAllBodyScrollLocks } from "body-scroll-lock";
+import { clearAllBodyScrollLocks, disableBodyScroll } from "body-scroll-lock";
 import {
   Transition,
   defineComponent,
   h,
-  ref,
   onBeforeUnmount,
-  watch,
   onMounted,
+  ref,
+  watch,
 } from "vue";
 import { useRoute } from "vue-router";
 

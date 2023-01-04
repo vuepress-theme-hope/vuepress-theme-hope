@@ -18,9 +18,9 @@ import { getSEOPlugin } from "./seo.js";
 
 import type { App, PluginConfig } from "@vuepress/core";
 import type {
+  PluginsOptions,
   ThemeData,
   ThemeOptions,
-  PluginsOptions,
 } from "../../shared/index.js";
 
 export const getPluginConfig = (

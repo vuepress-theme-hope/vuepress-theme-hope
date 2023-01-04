@@ -1,9 +1,9 @@
-import { describe, it, expect } from "vitest";
+import { describe, expect, it } from "vitest";
 import MarkdownIt from "markdown-it";
 import {
   normalDemo,
-  vueDemo,
   reactDemo,
+  vueDemo,
 } from "../../src/node/markdown-it/index.js";
 
 describe("demo", () => {

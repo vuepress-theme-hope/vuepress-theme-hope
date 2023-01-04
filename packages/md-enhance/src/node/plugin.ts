@@ -45,6 +45,8 @@ import {
   codeTabs,
   echarts,
   flowchart,
+  getTSPlaygroundPreset,
+  getVuePlaygroundPreset,
   hint,
   mermaid,
   normalDemo,
@@ -55,8 +57,6 @@ import {
   vPre,
   vueDemo,
   vuePlayground,
-  getVuePlaygroundPreset,
-  getTSPlaygroundPreset,
 } from "./markdown-it/index.js";
 import {
   prepareConfigFile,

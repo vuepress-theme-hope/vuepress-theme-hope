@@ -1,4 +1,4 @@
-import { useEventListener, useDebounceFn } from "@vueuse/core";
+import { useDebounceFn, useEventListener } from "@vueuse/core";
 import { atou } from "vuepress-shared/client";
 import { computed, defineComponent, h, onMounted, ref } from "vue";
 import { LoadingIcon } from "./icons.js";

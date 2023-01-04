@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { describe, it, expect } from "vitest";
+import { describe, expect, it } from "vitest";
 import { deepMerge } from "../../src/shared/utils/deepMerge.js";
 
 describe("deep merge", () => {

@@ -1,6 +1,6 @@
 import { usePageFrontmatter } from "@vuepress/client";
 import { computed, defineComponent, h, resolveComponent } from "vue";
-import { hasGlobalComponent, RenderDefault } from "vuepress-shared/client";
+import { RenderDefault, hasGlobalComponent } from "vuepress-shared/client";
 
 import BreadCrumb from "@theme-hope/components/BreadCrumb";
 import MarkdownContent from "@theme-hope/components/MarkdownContent";

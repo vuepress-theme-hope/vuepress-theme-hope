@@ -1,7 +1,7 @@
 import { categoryMap } from "@temp/blog/category";
 import { usePageFrontmatter, useRouteLocale } from "@vuepress/client";
 import { computed, ref } from "vue";
-import { useRouter, useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 import { resolveRouteWithRedirect } from "vuepress-shared/client";
 
 import type { ComputedRef } from "vue";

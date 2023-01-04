@@ -4,8 +4,8 @@ import { watch } from "chokidar";
 import { injectConfigModule } from "./inject.js";
 import {
   prepareConfigFile,
-  prepareInjectSass,
   prepareConfigSass,
+  prepareInjectSass,
   preparePaletteSass,
   prepareStyleSass,
 } from "./prepare.js";

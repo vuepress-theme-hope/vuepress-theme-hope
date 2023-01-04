@@ -1,4 +1,4 @@
-import { useEventListener, useDebounceFn } from "@vueuse/core";
+import { useDebounceFn, useEventListener } from "@vueuse/core";
 import { usePageFrontmatter } from "@vuepress/client";
 import { Transition, computed, defineComponent, h, onMounted, ref } from "vue";
 import { useLocaleConfig } from "vuepress-shared/client";

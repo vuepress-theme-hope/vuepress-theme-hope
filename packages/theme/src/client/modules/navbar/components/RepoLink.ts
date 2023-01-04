@@ -2,8 +2,8 @@ import { defineComponent, h, resolveComponent } from "vue";
 
 import {
   BitbucketIcon,
-  GiteeIcon,
   GitHubIcon,
+  GiteeIcon,
   GitlabIcon,
   SourceIcon,
 } from "@theme-hope/modules/navbar/components/icons/index";

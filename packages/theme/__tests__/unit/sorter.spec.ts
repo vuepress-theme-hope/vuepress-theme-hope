@@ -1,12 +1,12 @@
-import { describe, it, expect } from "vitest";
+import { describe, expect, it } from "vitest";
 
 import {
-  orderSorter,
   dateDescSorter,
   dateSorter,
-  titleSorter,
-  readmeSorter,
   filenameSorter,
+  orderSorter,
+  readmeSorter,
+  titleSorter,
 } from "../../src/node/prepare/index.js";
 
 it("should handle readme", () => {

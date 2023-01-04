@@ -5,7 +5,7 @@ import { cac } from "cac";
 import { execaCommand, execaCommandSync } from "execa";
 import inquirer from "inquirer";
 
-import { getLanguage, generateTemplate, version } from "./config/index.js";
+import { generateTemplate, getLanguage, version } from "./config/index.js";
 import { createPackageJson } from "./packageJson.js";
 import { getRegistry } from "./registry.js";
 import { ensureDirExistSync, getPackageManager } from "./utils/index.js";

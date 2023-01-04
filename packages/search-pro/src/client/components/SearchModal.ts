@@ -1,7 +1,7 @@
 import { useEventListener } from "@vueuse/core";
 import {
-  defineComponent,
   defineAsyncComponent,
+  defineComponent,
   h,
   inject,
   onMounted,

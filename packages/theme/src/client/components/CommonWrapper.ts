@@ -12,7 +12,7 @@ import {
   watch,
 } from "vue";
 import { useRouter } from "vue-router";
-import { hasGlobalComponent, RenderDefault } from "vuepress-shared/client";
+import { RenderDefault, hasGlobalComponent } from "vuepress-shared/client";
 
 import PageFooter from "@theme-hope/components/PageFooter";
 import { useMobile, useThemeLocaleData } from "@theme-hope/composables/index";

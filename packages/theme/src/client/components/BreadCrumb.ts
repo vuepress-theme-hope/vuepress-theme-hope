@@ -1,5 +1,5 @@
 import { usePageFrontmatter, useRouteLocale } from "@vuepress/client";
-import { computed, defineComponent, h, onMounted, watch, ref } from "vue";
+import { computed, defineComponent, h, onMounted, ref, watch } from "vue";
 import { RouterLink, useRoute, useRouter } from "vue-router";
 import { resolveRouteWithRedirect } from "vuepress-shared/client";
 

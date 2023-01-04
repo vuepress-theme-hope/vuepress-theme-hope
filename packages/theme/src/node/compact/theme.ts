@@ -2,7 +2,7 @@ import { isArray, isPlainObject } from "@vuepress/shared";
 
 import { convertNavbarOptions } from "./navbar.js";
 import { convertSidebarOptions } from "./sidebar.js";
-import { droppedLogger, deprecatedLogger } from "./utils.js";
+import { deprecatedLogger, droppedLogger } from "./utils.js";
 import { logger } from "../utils.js";
 
 import type { ThemeOptions } from "../../shared/index.js";

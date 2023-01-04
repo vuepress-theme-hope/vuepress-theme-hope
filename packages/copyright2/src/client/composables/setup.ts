@@ -1,4 +1,4 @@
-import { usePageFrontmatter, usePageData } from "@vuepress/client";
+import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import { isLinkHttp, isPlainObject, removeEndingSlash } from "@vuepress/shared";
 import { useEventListener } from "@vueuse/core";
 import { computed, onMounted, watchEffect } from "vue";

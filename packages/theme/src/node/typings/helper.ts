@@ -12,9 +12,9 @@ import type { SeoOptions } from "vuepress-plugin-seo2";
 import type {
   BlogPluginOptions,
   NavbarOptions,
-  SidebarOptions,
   SidebarArrayOptions,
   SidebarObjectOptions,
+  SidebarOptions,
 } from "../../shared/index.js";
 
 type Helper<T> = (options: T) => T;

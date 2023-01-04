@@ -1,5 +1,5 @@
 import { isPlainObject } from "@vuepress/shared";
-import { useStorage, useSessionStorage } from "@vueuse/core";
+import { useSessionStorage, useStorage } from "@vueuse/core";
 import { computed } from "vue";
 import { useRoute } from "vue-router";
 

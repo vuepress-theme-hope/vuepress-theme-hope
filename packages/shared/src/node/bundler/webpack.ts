@@ -2,8 +2,8 @@ import { getBundlerName } from "./getBundler.js";
 
 import type { App } from "@vuepress/core";
 import type {
-  WebpackChainConfig,
   WebpackBundlerOptions,
+  WebpackChainConfig,
 } from "@vuepress/bundler-webpack";
 
 export interface WebpackCommonOptions {

@@ -2,7 +2,7 @@
 import { defineComponent, h } from "vue";
 import { useSize } from "../composables/index.js";
 
-import type { VNode, PropType } from "vue";
+import type { PropType, VNode } from "vue";
 
 import "../styles/stack-blitz.scss";
 export default defineComponent({

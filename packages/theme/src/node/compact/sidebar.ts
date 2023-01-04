@@ -1,11 +1,11 @@
 import { isArray, isPlainObject, isString } from "@vuepress/shared";
-import { droppedLogger, deprecatedLogger } from "./utils.js";
+import { deprecatedLogger, droppedLogger } from "./utils.js";
 import { logger } from "../utils.js";
 
 import type {
-  SidebarOptions,
   SidebarArrayOptions,
   SidebarItem,
+  SidebarOptions,
 } from "../../shared/index.js";
 
 const handleArraySidebarOptions = (config: unknown[]): SidebarArrayOptions =>

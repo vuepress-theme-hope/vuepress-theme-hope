@@ -18,10 +18,10 @@ import type {
   FeedCategory,
   FeedContributor,
   FeedEnclosure,
+  FeedFrontmatterOption,
   FeedGetter,
   FeedItemOption,
   FeedOptions,
-  FeedFrontmatterOption,
   FeedPluginFrontmatter,
 } from "./typings/index.js";
 

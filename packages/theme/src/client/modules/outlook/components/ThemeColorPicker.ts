@@ -1,6 +1,6 @@
-import { defineComponent, h, onMounted, PropType } from "vue";
+import { defineComponent, h, onMounted } from "vue";
 
-import type { VNode } from "vue";
+import type { PropType, VNode } from "vue";
 
 import "../styles/theme-color-picker.scss";
 

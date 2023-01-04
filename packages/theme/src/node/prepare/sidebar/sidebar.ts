@@ -11,12 +11,12 @@ import { logger } from "../../utils.js";
 
 import type { App } from "@vuepress/core";
 import type {
-  ThemeData,
   SidebarArrayOptions,
-  SidebarOptions,
   SidebarGroupItem,
-  SidebarSorter,
   SidebarInfo,
+  SidebarOptions,
+  SidebarSorter,
+  ThemeData,
 } from "../../../shared/index.js";
 
 const getGeneratePaths = (

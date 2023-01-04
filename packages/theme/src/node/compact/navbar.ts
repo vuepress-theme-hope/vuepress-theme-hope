@@ -3,9 +3,9 @@ import { deprecatedLogger } from "./utils.js";
 import { logger } from "../utils.js";
 
 import type {
-  NavbarOptions,
-  NavbarItem,
   NavbarGroup,
+  NavbarItem,
+  NavbarOptions,
 } from "../../shared/index.js";
 
 const handleNavbarOptions = (config: unknown[]): NavbarOptions =>

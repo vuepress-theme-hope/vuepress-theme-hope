@@ -1,4 +1,4 @@
-import { isArray, isString, isPlainObject } from "@vuepress/shared";
+import { isArray, isPlainObject, isString } from "@vuepress/shared";
 
 import type { Author, AuthorInfo } from "../types/index.js";
 
