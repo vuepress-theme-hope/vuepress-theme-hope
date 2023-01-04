@@ -141,10 +141,11 @@ cli
   );
 
 cli
-  .command("inject [dir]", "Add vuepress template to dir")
+  .command("add [dir]", "Add vuepress template to dir")
+  .alias("inject")
   .option("-p, --preset <preset>", "Choose preset to use")
   .usage(
-    "pnpm create vuepress-theme-hope@next inject [dir] / npm init vuepress-theme-hope@next inject [dir]"
+    "pnpm create vuepress-theme-hope@next add [dir] / npm init vuepress-theme-hope@next add [dir]"
   )
   .example("docs")
   .action(
