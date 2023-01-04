@@ -1,4 +1,5 @@
 import { withBase } from "@vuepress/client";
+import { isString } from "@vuepress/shared";
 import { defineComponent, h, onMounted, watch, ref } from "vue";
 import { useRoute } from "vue-router";
 
@@ -78,10 +79,9 @@ export default defineComponent({
                 {
                   class: "waline-pageview-count",
                   /** visitorID */
-                  "data-path":
-                    typeof props.pageview === "string"
-                      ? props.pageview
-                      : withBase(route.path),
+                  "data-path": isString(props.pageview)
+                    ? props.pageview
+                    : withBase(route.path),
                 },
                 "..."
               ),

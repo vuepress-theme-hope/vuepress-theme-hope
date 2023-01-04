@@ -1,3 +1,4 @@
+import { isPlainObject } from "@vuepress/shared";
 import { copyrightPlugin } from "vuepress-plugin-copyright2";
 import { getAuthor } from "vuepress-shared/node";
 
@@ -21,6 +22,6 @@ export const getCopyrightPlugin = (
       getAuthor(page.frontmatter.author)?.[0]?.name ||
       getAuthor(themeData.author)?.[0]?.name ||
       "",
-    ...(typeof options === "object" ? options : { global: true }),
+    ...(isPlainObject(options) ? options : { global: true }),
   });
 };

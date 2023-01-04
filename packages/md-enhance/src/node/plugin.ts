@@ -13,6 +13,7 @@ import { stylize } from "@mdit/plugin-stylize";
 import { sub } from "@mdit/plugin-sub";
 import { sup } from "@mdit/plugin-sup";
 import { tasklist } from "@mdit/plugin-tasklist";
+import { isArray, isPlainObject } from "@vuepress/shared";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   addCustomElement,
@@ -123,19 +124,19 @@ export const mdEnhancePlugin =
         // eslint-disable-next-line @typescript-eslint/naming-convention
         "\\idotsint": "\\int\\!\\cdots\\!\\int",
       },
-      ...(typeof options.katex === "object" ? options.katex : {}),
+      ...(isPlainObject(options.katex) ? options.katex : {}),
     };
 
     const mathjaxInstance =
       options.mathjax === false
         ? null
         : createMathjaxInstance(
-            typeof options.mathjax === "object" ? options.mathjax : {}
+            isPlainObject(options.mathjax) ? options.mathjax : {}
           );
 
     const revealPlugins =
-      typeof options.presentation === "object" &&
-      Array.isArray(options.presentation.plugins)
+      isPlainObject(options.presentation) &&
+      isArray(options.presentation.plugins)
         ? options.presentation.plugins
         : [];
 
@@ -150,23 +151,17 @@ export const mdEnhancePlugin =
         MARKDOWN_ENHANCE_DELAY: options.delay || 800,
         CODE_DEMO_OPTIONS: {
           ...CODE_DEMO_DEFAULT_SETTING,
-          ...(typeof options.demo === "object" ? options.demo : {}),
+          ...(isPlainObject(options.demo) ? options.demo : {}),
         },
-        MERMAID_OPTIONS:
-          typeof options.mermaid === "object" ? options.mermaid : {},
+        MERMAID_OPTIONS: isPlainObject(options.mermaid) ? options.mermaid : {},
         REVEAL_CONFIG:
-          typeof options.presentation === "object" &&
-          typeof options.presentation.revealConfig === "object"
+          isPlainObject(options.presentation) &&
+          isPlainObject(options.presentation.revealConfig)
             ? options.presentation.revealConfig
             : {},
-        VUE_PLAYGROUND_OPTIONS:
-          typeof options.vuePlayground === "object"
-            ? deepMerge(
-                {},
-                DEFAULT_VUE_PLAYGROUND_OPTIONS,
-                options.vuePlayground
-              )
-            : DEFAULT_VUE_PLAYGROUND_OPTIONS,
+        VUE_PLAYGROUND_OPTIONS: isPlainObject(options.vuePlayground)
+          ? deepMerge({}, DEFAULT_VUE_PLAYGROUND_OPTIONS, options.vuePlayground)
+          : DEFAULT_VUE_PLAYGROUND_OPTIONS,
       }),
 
       extendsBundlerOptions: (config: unknown, app): void => {
@@ -255,7 +250,7 @@ export const mdEnhancePlugin =
         // syntax
         if (getStatus("gfm")) md.options.linkify = true;
         if (getStatus("attrs"))
-          md.use(attrs, typeof options.attrs === "object" ? options.attrs : {});
+          md.use(attrs, isPlainObject(options.attrs) ? options.attrs : {});
         if (getStatus("align")) md.use(align);
         if (getStatus("container")) md.use(hint, locales);
         if (getStatus("imgLazyload")) md.use(imgLazyload);
@@ -263,7 +258,7 @@ export const mdEnhancePlugin =
         if (imgMarkEnable)
           md.use(
             imgMark,
-            typeof options.imgMark === "object" ? options.imgMark : {}
+            isPlainObject(options.imgMark) ? options.imgMark : {}
           );
         if (getStatus("imgSize")) md.use(imgSize);
         if (getStatus("sup")) md.use(sup);
@@ -272,7 +267,7 @@ export const mdEnhancePlugin =
         if (getStatus("mark")) md.use(mark);
         if (tasklistEnable)
           md.use(tasklist, [
-            typeof options.tasklist === "object" ? options.tasklist : {},
+            isPlainObject(options.tasklist) ? options.tasklist : {},
           ]);
 
         // additional functions
@@ -288,7 +283,7 @@ export const mdEnhancePlugin =
         if (getStatus("include"))
           md.use(include, {
             currentPath: (env: MarkdownEnv) => env.filePath,
-            ...(typeof options.include === "object" ? options.include : {}),
+            ...(isPlainObject(options.include) ? options.include : {}),
           });
         if (getStatus("stylize"))
           md.use(stylize, {
@@ -320,7 +315,7 @@ export const mdEnhancePlugin =
         }
         if (mermaidEnable) md.use(mermaid);
         if (presentationEnable) md.use(presentation);
-        if (typeof options.playground === "object") {
+        if (isPlainObject(options.playground)) {
           const { presets = [], config = {} } = options.playground;
 
           presets.forEach((preset) => {
@@ -328,7 +323,7 @@ export const mdEnhancePlugin =
               md.use(playground, getTSPlaygroundPreset(config.ts || {}));
             else if (preset === "vue")
               md.use(playground, getVuePlaygroundPreset(config.vue || {}));
-            else if (typeof preset === "object") md.use(playground, preset);
+            else if (isPlainObject(preset)) md.use(playground, preset);
           });
         }
         if (vuePlaygroundEnable) md.use(vuePlayground);

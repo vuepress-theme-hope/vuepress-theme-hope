@@ -1,5 +1,10 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { removeEndingSlash } from "@vuepress/shared";
+import {
+  isArray,
+  isFunction,
+  isString,
+  removeEndingSlash,
+} from "@vuepress/shared";
 import { getAuthor, getDate } from "vuepress-shared/node";
 
 import { getCover, getImages, getLocales, resolveUrl } from "./utils.js";
@@ -42,9 +47,9 @@ export const getOGP = (
   const { updatedTime } = git;
 
   const modifiedTime = updatedTime ? new Date(updatedTime).toISOString() : "";
-  const articleTags: string[] = Array.isArray(tags)
+  const articleTags: string[] = isArray(tags)
     ? tags
-    : typeof tag === "string"
+    : isString(tag)
     ? [tag]
     : [];
 
@@ -148,9 +153,9 @@ export const getCanonicalLink = (
   page: ExtendPage,
   options: SeoOptions
 ): string | null =>
-  typeof options.canonical === "function"
+  isFunction(options.canonical)
     ? options.canonical(page)
-    : typeof options.canonical === "string"
+    : isString(options.canonical)
     ? `${removeEndingSlash(options.canonical)}${page.path}`
     : null;
 

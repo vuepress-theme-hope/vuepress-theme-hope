@@ -1,3 +1,4 @@
+import { isFunction, isString } from "@vuepress/shared";
 import { getBundlerName, mergeViteConfig } from "vuepress-shared/node";
 
 import type { App } from "@vuepress/core";
@@ -53,12 +54,11 @@ export const injectConfigModule = (
                 source: string,
                 file: string
               ): Promise<string> => {
-                const originalContent =
-                  typeof originalAdditionalData === "string"
-                    ? `${originalAdditionalData}${source}`
-                    : typeof originalAdditionalData === "function"
-                    ? await originalAdditionalData(source, file)
-                    : source;
+                const originalContent = isString(originalAdditionalData)
+                  ? `${originalAdditionalData}${source}`
+                  : isFunction(originalAdditionalData)
+                  ? await originalAdditionalData(source, file)
+                  : source;
 
                 return originalContent.match(
                   new RegExp(`@use\\s+["']@sass-palette\\/${id}-config["'];`)
@@ -85,12 +85,11 @@ export const injectConfigModule = (
       content: string,
       loaderContext: LoaderContext
     ): string => {
-      const originalContent =
-        typeof additionalData === "string"
-          ? `${additionalData}${content}`
-          : typeof additionalData === "function"
-          ? additionalData(content, loaderContext)
-          : content;
+      const originalContent = isString(additionalData)
+        ? `${additionalData}${content}`
+        : isFunction(additionalData)
+        ? additionalData(content, loaderContext)
+        : content;
 
       return originalContent.match(
         new RegExp(`@use\\s+["']@sass-palette\\/${id}-config["'];`)

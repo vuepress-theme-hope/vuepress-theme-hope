@@ -1,4 +1,5 @@
 import { useRouteLocale } from "@vuepress/client";
+import { isPlainObject, isString } from "@vuepress/shared";
 import { useEventListener } from "@vueuse/core";
 import { disableBodyScroll, clearAllBodyScrollLocks } from "body-scroll-lock";
 import {
@@ -106,19 +107,16 @@ export default defineComponent({
     };
 
     const getVNodes = (display: Word[]): (VNode | string)[] =>
-      display.map((word) =>
-        typeof word === "string" ? word : h(word[0], word[1])
-      );
+      display.map((word) => (isString(word) ? word : h(word[0], word[1])));
 
     const getDisplay = (matchedItem: MatchedItem): (VNode | string)[] => {
       if (matchedItem.type === "custom") {
         const formatterConfig =
           searchProClientCustomFiledConfig[matchedItem.index] || "$content";
 
-        const [prefix, suffix = ""] =
-          typeof formatterConfig === "object"
-            ? formatterConfig[routeLocale.value].split("$content")
-            : formatterConfig.split("$content");
+        const [prefix, suffix = ""] = isPlainObject(formatterConfig)
+          ? formatterConfig[routeLocale.value].split("$content")
+          : formatterConfig.split("$content");
 
         return getVNodes([prefix, ...matchedItem.display, suffix]);
       }

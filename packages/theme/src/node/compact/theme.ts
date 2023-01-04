@@ -1,3 +1,5 @@
+import { isArray, isPlainObject } from "@vuepress/shared";
+
 import { convertNavbarOptions } from "./navbar.js";
 import { convertSidebarOptions } from "./sidebar.js";
 import { droppedLogger, deprecatedLogger } from "./utils.js";
@@ -101,7 +103,7 @@ const handleBlogOptions = (blogOptions: Record<string, unknown>): void => {
  * @deprecated You should use V2 standard options and avoid using it
  */
 const handleFooterOptions = (options: Record<string, unknown>): void => {
-  if (typeof options["footer"] === "object" && options["footer"]) {
+  if (isPlainObject(options["footer"]) && options["footer"]) {
     const footer = options["footer"];
 
     if ("copyright" in footer) {
@@ -165,13 +167,13 @@ export const convertThemeOptions = (
   handleFooterOptions(themeOptions);
 
   // handle blog
-  if (typeof themeOptions["blog"] === "object" && themeOptions["blog"]) {
+  if (isPlainObject(themeOptions["blog"]) && themeOptions["blog"]) {
     handleBlogOptions(themeOptions["blog"] as Record<string, unknown>);
     if (!plugins["blog"]) plugins["blog"] = true;
   }
 
   // handle component
-  if (Array.isArray(plugins["components"])) {
+  if (isArray(plugins["components"])) {
     logger.warn(
       '"plugins.components" no longer accpets array, please set it to "plugin.components.components" instead.'
     );
@@ -190,7 +192,7 @@ export const convertThemeOptions = (
       scope: "themeConfig",
     });
 
-  if (typeof themeOptions["encrypt"] === "object" && themeOptions["encrypt"]) {
+  if (isPlainObject(themeOptions["encrypt"]) && themeOptions["encrypt"]) {
     // handle encrypt
     const encrypt = themeOptions["encrypt"] as Record<string, unknown>;
 
@@ -212,10 +214,7 @@ export const convertThemeOptions = (
     }
   }
 
-  if (
-    "locales" in themeOptions &&
-    typeof themeOptions["locales"] === "object"
-  ) {
+  if ("locales" in themeOptions && isPlainObject(themeOptions["locales"])) {
     Object.values(themeOptions["locales"]!).forEach(
       (localeConfig: Record<string, unknown>) => {
         DEPRECATED_THEME_OPTIONS.forEach(([deprecatedOption, newOption]) =>
@@ -244,7 +243,7 @@ export const convertThemeOptions = (
         handleFooterOptions(localeConfig);
 
         // handle blog
-        if (typeof localeConfig["blog"] === "object" && localeConfig["blog"]) {
+        if (isPlainObject(localeConfig["blog"]) && localeConfig["blog"]) {
           handleBlogOptions(localeConfig["blog"] as Record<string, unknown>);
           if (!plugins["blog"]) plugins["blog"] = true;
         }

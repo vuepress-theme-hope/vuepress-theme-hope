@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
+import { isArray } from "@vuepress/shared";
 import { stripTags } from "vuepress-shared/node";
 
 import type { Feed } from "../feed.js";
@@ -65,7 +66,7 @@ export const renderJSON = (feed: Feed): string => {
       feedItem.date_modified = item.lastUpdated.toISOString();
 
     // author
-    if (Array.isArray(item.author))
+    if (isArray(item.author))
       feedItem.authors = item.author
         .filter((author) => author.name)
         .map((author) => formatAuthor(author));

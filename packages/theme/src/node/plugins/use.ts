@@ -1,3 +1,4 @@
+import { isPlainObject } from "@vuepress/shared";
 import { useReadingTimePlugin } from "vuepress-plugin-reading-time2";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
@@ -39,7 +40,7 @@ export const usePlugin = (
   if (plugins.readingTime !== false)
     useReadingTimePlugin(
       app,
-      typeof plugins.readingTime === "object" ? plugins.readingTime : {}
+      isPlainObject(plugins.readingTime) ? plugins.readingTime : {}
     );
 
   useSassPalettePlugin(app, {

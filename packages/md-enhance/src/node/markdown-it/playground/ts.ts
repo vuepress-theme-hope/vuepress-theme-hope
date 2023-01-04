@@ -1,3 +1,4 @@
+import { isPlainObject } from "@vuepress/shared";
 import { deepMerge } from "vuepress-shared/node";
 import { compressToEncodedURIComponent } from "./ventors/lzstring.js";
 import { optionDeclarations } from "./ventors/optionDelcarations.js";
@@ -24,7 +25,7 @@ export const getURL = (
 
       const { type } = item;
 
-      if (typeof type === "object") {
+      if (isPlainObject(type)) {
         const result = type[value as keyof typeof type];
 
         return result?.toString() || "";

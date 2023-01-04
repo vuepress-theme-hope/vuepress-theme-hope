@@ -1,3 +1,4 @@
+import { isString } from "@vuepress/shared";
 import { colors } from "@vuepress/utils";
 import { getBundlerName } from "./getBundler.js";
 import { HTML_TAGS, SVG_TAGS } from "../utils/index.js";
@@ -43,8 +44,9 @@ export const addCustomElement = (
   { app, config }: CustomElementCommonOptions,
   customElement: string[] | string | RegExp
 ): void => {
-  const customElements =
-    typeof customElement === "string" ? [customElement] : customElement;
+  const customElements = isString(customElement)
+    ? [customElement]
+    : customElement;
   const bundlerName = getBundlerName(app);
 
   // for vite

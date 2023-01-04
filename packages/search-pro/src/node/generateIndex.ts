@@ -1,3 +1,4 @@
+import { isArray } from "@vuepress/shared";
 import { load } from "cheerio";
 
 import type { Page } from "@vuepress/core";
@@ -118,7 +119,7 @@ export const generatePageIndex = (
       .map(({ getter }, index) => {
         const result = getter(page);
 
-        return Array.isArray(result)
+        return isArray(result)
           ? [index.toString(), result]
           : result
           ? [index.toString(), [result]]

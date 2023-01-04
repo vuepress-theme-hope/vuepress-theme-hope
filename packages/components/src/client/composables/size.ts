@@ -1,10 +1,12 @@
+import { isString } from "@vuepress/shared";
 import { useEventListener } from "@vueuse/core";
 import { computed, onMounted, isRef, ref, unref, watch } from "vue";
+
 import type { MaybeRef } from "@vueuse/core";
 import type { Ref } from "vue";
 
 const getValue = (value: string | number): string =>
-  typeof value === "string" ? value : `${value}px`;
+  isString(value) ? value : `${value}px`;
 
 export interface SizeOptions {
   width: string | number | undefined;
@@ -27,7 +29,7 @@ export const useSize = <E extends HTMLElement>(
   const height = ref("auto");
 
   const getRadio = (radio: number | string | undefined): number => {
-    if (typeof radio === "string") {
+    if (isString(radio)) {
       const [width, height] = radio.split(":");
       const parsedRadio = Number(width) / Number(height);
 

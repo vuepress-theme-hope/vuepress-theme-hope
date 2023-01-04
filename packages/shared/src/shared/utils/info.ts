@@ -1,3 +1,5 @@
+import { isArray, isString, isPlainObject } from "@vuepress/shared";
+
 import type { Author, AuthorInfo } from "../types/index.js";
 
 export const getAuthor = (
@@ -5,15 +7,13 @@ export const getAuthor = (
   canDisable = false
 ): AuthorInfo[] => {
   if (author) {
-    if (Array.isArray(author)) {
-      return author.map((item) =>
-        typeof item === "string" ? { name: item } : item
-      );
+    if (isArray(author)) {
+      return author.map((item) => (isString(item) ? { name: item } : item));
     }
 
-    if (typeof author === "string") return [{ name: author }];
+    if (isString(author)) return [{ name: author }];
 
-    if (typeof author === "object" && author.name) return [author];
+    if (isPlainObject(author) && author.name) return [author];
 
     console.error(
       `Expect 'author' to be \`AuthorInfo[] | AuthorInfo | string[] | string ${
@@ -33,8 +33,8 @@ export const getStringArray = (
   optionName?: string
 ): string[] => {
   if (value) {
-    if (Array.isArray(value)) return value;
-    if (typeof value === "string") return [value];
+    if (isArray(value)) return value;
+    if (isString(value)) return [value];
 
     console.error(
       `Expect ${

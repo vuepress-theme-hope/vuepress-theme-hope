@@ -1,3 +1,5 @@
+import { isString } from "@vuepress/shared";
+
 import type { DataSourceItem } from "photoswipe";
 
 export const getImageInfo = (image: HTMLImageElement): DataSourceItem => ({
@@ -15,14 +17,13 @@ export interface PhotoSwipeImages {
 export const getImages = (
   selector: string | string[]
 ): Promise<PhotoSwipeImages> => {
-  const images =
-    typeof selector === "string"
-      ? Array.from(document.querySelectorAll<HTMLImageElement>(selector))
-      : selector
-          .map((item) =>
-            Array.from(document.querySelectorAll<HTMLImageElement>(item))
-          )
-          .flat();
+  const images = isString(selector)
+    ? Array.from(document.querySelectorAll<HTMLImageElement>(selector))
+    : selector
+        .map((item) =>
+          Array.from(document.querySelectorAll<HTMLImageElement>(item))
+        )
+        .flat();
 
   return Promise.all(
     images.map(

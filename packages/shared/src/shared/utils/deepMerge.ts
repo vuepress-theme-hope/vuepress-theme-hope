@@ -1,3 +1,5 @@
+import { isArray, isPlainObject } from "@vuepress/shared";
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type IAnyObject = Record<string, any>;
 
@@ -17,14 +19,14 @@ export const deepMerge = <
 
   Object.keys(assignObject).forEach((property) => {
     if (
-      typeof originObject[property] === "object" &&
-      !Array.isArray(originObject[property]) &&
-      typeof assignObject[property] === "object" &&
-      !Array.isArray(assignObject[property])
+      isPlainObject(originObject[property]) &&
+      !isArray(originObject[property]) &&
+      isPlainObject(assignObject[property]) &&
+      !isArray(assignObject[property])
     )
       deepMerge(originObject[property], assignObject[property]);
-    else if (typeof assignObject[property] === "object")
-      if (Array.isArray(assignObject[property]))
+    else if (isPlainObject(assignObject[property]))
+      if (isArray(assignObject[property]))
         (originObject as IAnyObject)[property] = [
           ...(assignObject[property] as unknown[]),
         ];

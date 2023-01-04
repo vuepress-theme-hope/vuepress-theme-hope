@@ -1,3 +1,4 @@
+import { isFunction } from "@vuepress/shared";
 import { getDirname, path } from "@vuepress/utils";
 import { getLocales } from "vuepress-shared/node";
 
@@ -45,10 +46,9 @@ export const copyrightPlugin =
       }),
 
       extendsPage: (page: Page<Partial<CopyrightPluginPageData>>): void => {
-        const authorText = typeof author === "function" ? author(page) : author;
+        const authorText = isFunction(author) ? author(page) : author;
 
-        const licenseText =
-          typeof license === "function" ? license(page) : license;
+        const licenseText = isFunction(license) ? license(page) : license;
 
         page.data.copyright = {
           ...(authorText ? { author: authorText } : {}),

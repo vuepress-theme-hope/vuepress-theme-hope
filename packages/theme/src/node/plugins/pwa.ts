@@ -1,3 +1,4 @@
+import { isPlainObject } from "@vuepress/shared";
 import { pwaPlugin } from "vuepress-plugin-pwa2";
 
 import type { Plugin } from "@vuepress/core";
@@ -9,5 +10,5 @@ export const getPWAPlugin = (
 ): Plugin | null => {
   if (!options) return null;
 
-  return pwaPlugin(typeof options === "object" ? options : {}, legacy);
+  return pwaPlugin(isPlainObject(options) ? options : {}, legacy);
 };

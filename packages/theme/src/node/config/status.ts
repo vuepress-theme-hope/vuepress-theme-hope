@@ -1,3 +1,5 @@
+import { isPlainObject } from "@vuepress/shared";
+
 import type { App } from "@vuepress/core";
 import type { ThemeOptions } from "../../shared/index.js";
 
@@ -26,13 +28,12 @@ export const getStatus = (
     ),
     enableSlide: Boolean(plugins.mdEnhance && plugins.mdEnhance.presentation),
     enableReadingTime: plugins.readingTime !== false,
-    blogType:
-      typeof plugins.blog === "object"
-        ? plugins.blog?.type?.map(({ key, path }) => ({
-            key,
-            path: path || `/${key}/`,
-          })) || []
-        : [],
+    blogType: isPlainObject(plugins.blog)
+      ? plugins.blog?.type?.map(({ key, path }) => ({
+          key,
+          path: path || `/${key}/`,
+        })) || []
+      : [],
     hasMultipleLanguages: Object.keys(locales).length > 1,
     supportPageview: Boolean(
       plugins.comment && plugins.comment.provider === "Waline"

@@ -27,7 +27,13 @@ export default [
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/BiliBili", {
-    external: ["@vueuse/core", "vue", "vuepress-shared/client", /\.scss$/],
+    external: [
+      "@vueuse/core",
+      "@vuepress/shared",
+      "vue",
+      "vuepress-shared/client",
+      /\.scss$/,
+    ],
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/BackToTop", {
@@ -74,11 +80,17 @@ export default [
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/StackBlitz", {
-    external: ["@vueuse/core", "vue", /\.scss$/],
+    external: ["@vueuse/core", "@vuepress/shared", "vue", /\.scss$/],
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/YouTube", {
-    external: ["@vueuse/core", "@vuepress/client", "vue", /\.scss$/],
+    external: [
+      "@vueuse/core",
+      "@vuepress/shared",
+      "@vuepress/client",
+      "vue",
+      /\.scss$/,
+    ],
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/VideoPlayer", {

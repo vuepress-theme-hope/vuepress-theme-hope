@@ -51,6 +51,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+import { isArray, isString } from "@vuepress/shared";
+
 interface Alias {
   find: string | RegExp;
   replacement: string;
@@ -75,18 +77,14 @@ const isObject = (value: unknown): value is Record<string, any> =>
   Object.prototype.toString.call(value) === "[object Object]";
 
 const arraify = <T>(target: T | T[]): T[] =>
-  Array.isArray(target) ? target : [target];
+  isArray(target) ? target : [target];
 
 const normalizeSingleAlias = ({
   find,
   replacement,
   customResolver,
 }: Alias): Alias => {
-  if (
-    typeof find === "string" &&
-    find.endsWith("/") &&
-    replacement.endsWith("/")
-  ) {
+  if (isString(find) && find.endsWith("/") && replacement.endsWith("/")) {
     find = find.slice(0, find.length - 1);
     replacement = replacement.slice(0, replacement.length - 1);
   }
@@ -102,7 +100,7 @@ const normalizeSingleAlias = ({
 };
 
 const normalizeAlias = (aliasOption: AliasOptions): Alias[] =>
-  Array.isArray(aliasOption)
+  isArray(aliasOption)
     ? aliasOption.map(normalizeSingleAlias)
     : Object.keys(aliasOption).map((find) =>
         normalizeSingleAlias({
@@ -163,7 +161,7 @@ const mergeConfigRecursively = (
       continue;
     }
 
-    if (Array.isArray(existing) || Array.isArray(value)) {
+    if (isArray(existing) || isArray(value)) {
       merged[key] = [...arraify(existing), ...arraify(value)];
       continue;
     }

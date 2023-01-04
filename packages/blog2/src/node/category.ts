@@ -1,5 +1,5 @@
 import { createPage } from "@vuepress/core";
-import { removeLeadingSlash } from "@vuepress/shared";
+import { isFunction, isString, removeLeadingSlash } from "@vuepress/shared";
 import { logger } from "./utils.js";
 
 import type { App, Page } from "@vuepress/core";
@@ -52,13 +52,13 @@ export const prepareCategory = (
         },
         index
       ) => {
-        if (typeof key !== "string" || !key) {
+        if (!isString(key) || !key) {
           logger.error(`Invalid 'key' option ${key} in 'category[${index}]'`);
 
           return null;
         }
 
-        if (typeof getter !== "function") {
+        if (!isFunction(getter)) {
           logger.error(
             `Invalid 'getter' option in 'category[${index}]', it should be a function!`
           );
@@ -70,13 +70,12 @@ export const prepareCategory = (
 
         const categoryMap: CategoryMap = {};
         const pageKeys: string[] = [];
-        const getItemPath =
-          typeof itemPath === "function"
-            ? itemPath
-            : (name: string): string =>
-                (itemPath || "")
-                  .replace(/:key/g, slugify(key))
-                  .replace(/:name/g, slugify(name));
+        const getItemPath = isFunction(itemPath)
+          ? itemPath
+          : (name: string): string =>
+              (itemPath || "")
+                .replace(/:key/g, slugify(key))
+                .replace(/:name/g, slugify(name));
 
         for (const localePath in pageMap) {
           if (path) {

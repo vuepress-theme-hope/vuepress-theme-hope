@@ -1,3 +1,4 @@
+import { isString } from "@vuepress/shared";
 import { logger } from "@vuepress/utils";
 import { getCategory, getTag } from "vuepress-shared/node";
 
@@ -59,7 +60,7 @@ export const checkFrontmatter = (page: Page, isDebug: boolean): void => {
 
     // check string values
     ["title", "shortTitle", "containerClass"].forEach((key) => {
-      if (key in frontmatter && typeof frontmatter[key] !== "string") {
+      if (key in frontmatter && !isString(frontmatter[key])) {
         logger.warn(
           `"${key}" property in Page FrontMatter should be string.${
             filePathRelative ? `\nFound in ${filePathRelative}` : ""

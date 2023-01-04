@@ -1,3 +1,4 @@
+import { isArray, isFunction, isPlainObject, isString } from "@vuepress/shared";
 import { colors } from "@vuepress/utils";
 import { defineHopeConfig } from "./helper-v2.js";
 import { convertThemeOptions } from "./theme.js";
@@ -67,7 +68,7 @@ const checkMarkdownOptions = (
 
     options.code = options.code ?? {};
 
-    if (typeof options.code === "object")
+    if (isPlainObject(options.code))
       options.code.lineNumbers = options["lineNumbers"] as boolean;
 
     delete options["lineNumbers"];
@@ -130,15 +131,15 @@ If you want to change the slugify function anyway, set the following options sep
 
 const checkPluginOptions = (plugins: unknown): PluginConfig => {
   // check plugin array
-  if (Array.isArray(plugins))
+  if (isArray(plugins))
     return plugins.flat().filter((item): item is Plugin => {
-      if (typeof item === "function") return true;
+      if (isFunction(item)) return true;
 
-      if (typeof item === "object") {
+      if (isPlainObject(item)) {
         const { name } = item as Plugin & Record<string, unknown>;
 
         // check name
-        if (typeof name !== "string") {
+        if (!isString(name)) {
           logger.error(
             'VuePress2 requires "name" option in plugins and it should strict equal it\'s package name.'
           );
@@ -225,7 +226,7 @@ const checkPluginOptions = (plugins: unknown): PluginConfig => {
     });
 
   // check whether plugins is an object
-  if (typeof plugins === "object") {
+  if (isPlainObject(plugins)) {
     logger.error(
       `${colors.magenta('object format "plugins"')} is ${colors.red(
         "no longer supported"

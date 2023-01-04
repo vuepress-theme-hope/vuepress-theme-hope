@@ -1,7 +1,3 @@
-import { withBase } from "@vuepress/client";
-import { ensureEndingSlash } from "@vuepress/shared";
-import { checkIsMobile, checkIsSafari } from "vuepress-shared/client";
-
 /**
  * Fork and edited from https://github.com/pipwerks/PDFObject/blob/master/pdfobject.js
  *
@@ -15,6 +11,10 @@ import { checkIsMobile, checkIsSafari } from "vuepress-shared/client";
  *
  * THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
+
+import { withBase } from "@vuepress/client";
+import { ensureEndingSlash, isString } from "@vuepress/shared";
+import { checkIsMobile, checkIsSafari } from "vuepress-shared/client";
 
 declare const PDFJS_URL: string | null;
 
@@ -164,7 +164,7 @@ export const viewPDF = (
       // Modern versions of Firefox come bundled with PDFJS
       isFirefoxWithPDFJS);
 
-  if (typeof url !== "string") {
+  if (!isString(url)) {
     logError("URL is not valid");
 
     return null;

@@ -1,5 +1,5 @@
 import { usePageFrontmatter, usePageData } from "@vuepress/client";
-import { isLinkHttp, removeEndingSlash } from "@vuepress/shared";
+import { isLinkHttp, isPlainObject, removeEndingSlash } from "@vuepress/shared";
 import { useEventListener } from "@vueuse/core";
 import { computed, onMounted, watchEffect } from "vue";
 import { useRoute } from "vue-router";
@@ -39,7 +39,7 @@ export const setupCopyright = (): void => {
     if (!enabled.value) return false;
 
     if (
-      typeof frontmatterOptions === "object" &&
+      isPlainObject(frontmatterOptions) &&
       "disableCopy" in frontmatterOptions
     )
       return frontmatterOptions.disableCopy;
@@ -53,7 +53,7 @@ export const setupCopyright = (): void => {
     if (!enabled.value) return false;
 
     if (
-      typeof frontmatterOptions === "object" &&
+      isPlainObject(frontmatterOptions) &&
       "disableSelection" in frontmatterOptions
     )
       return frontmatterOptions.disableSelection;

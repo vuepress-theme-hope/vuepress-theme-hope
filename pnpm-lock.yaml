@@ -995,6 +995,7 @@ importers:
     specifiers:
       '@vuepress/client': 2.0.0-beta.60
       '@vuepress/core': 2.0.0-beta.60
+      '@vuepress/shared': 2.0.0-beta.60
       '@vuepress/utils': 2.0.0-beta.60
       balloon-css: ^1.2.0
       vue: ^3.2.45
@@ -1003,6 +1004,7 @@ importers:
       vuepress-shared: workspace:*
     dependencies:
       '@vuepress/client': 2.0.0-beta.60
+      '@vuepress/shared': 2.0.0-beta.60
       '@vuepress/utils': 2.0.0-beta.60
       balloon-css: 1.2.0
       vue: 3.2.45
@@ -1181,6 +1183,7 @@ importers:
     specifiers:
       '@vuepress/client': 2.0.0-beta.60
       '@vuepress/core': 2.0.0-beta.60
+      '@vuepress/shared': 2.0.0-beta.60
       '@vuepress/utils': 2.0.0-beta.60
       '@vueuse/core': ^9.9.0
       photoswipe: ^5.3.4
@@ -1190,6 +1193,7 @@ importers:
       vuepress-shared: workspace:*
     dependencies:
       '@vuepress/client': 2.0.0-beta.60
+      '@vuepress/shared': 2.0.0-beta.60
       '@vuepress/utils': 2.0.0-beta.60
       '@vueuse/core': 9.9.0_vue@3.2.45
       photoswipe: 5.3.4
@@ -1274,11 +1278,13 @@ importers:
       '@vuepress/bundler-vite': 2.0.0-beta.60
       '@vuepress/bundler-webpack': 2.0.0-beta.60
       '@vuepress/core': 2.0.0-beta.60
+      '@vuepress/shared': 2.0.0-beta.60
       '@vuepress/utils': 2.0.0-beta.60
       chokidar: ^3.5.3
       sass: ^1.57.1
       vuepress-shared: workspace:*
     dependencies:
+      '@vuepress/shared': 2.0.0-beta.60
       '@vuepress/utils': 2.0.0-beta.60
       chokidar: 3.5.3
       sass: 1.57.1
@@ -1293,6 +1299,7 @@ importers:
       '@types/body-scroll-lock': ^3.1.0
       '@vuepress/client': 2.0.0-beta.60
       '@vuepress/core': 2.0.0-beta.60
+      '@vuepress/shared': 2.0.0-beta.60
       '@vuepress/utils': 2.0.0-beta.60
       '@vueuse/core': ^9.9.0
       body-scroll-lock: ^3.1.5
@@ -1304,6 +1311,7 @@ importers:
       vuepress-shared: workspace:*
     dependencies:
       '@vuepress/client': 2.0.0-beta.60
+      '@vuepress/shared': 2.0.0-beta.60
       '@vuepress/utils': 2.0.0-beta.60
       '@vueuse/core': 9.9.0_vue@3.2.45
       body-scroll-lock: 3.1.5

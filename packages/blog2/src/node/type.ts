@@ -1,5 +1,5 @@
 import { createPage } from "@vuepress/core";
-import { removeLeadingSlash } from "@vuepress/shared";
+import { isString, removeLeadingSlash } from "@vuepress/shared";
 import { logger } from "./utils.js";
 
 import type { App } from "@vuepress/core";
@@ -48,7 +48,7 @@ export const prepareType = (
         },
         index
       ) => {
-        if (typeof key !== "string" || !key) {
+        if (!isString(key) || !key) {
           logger.error(`Invalid 'key' option ${key} in 'category[${index}]'`);
 
           return null;

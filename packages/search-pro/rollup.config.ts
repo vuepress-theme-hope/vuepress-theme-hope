@@ -15,6 +15,7 @@ export default [
   ...rollupTypescript("client/components/SearchResult", {
     external: [
       "@vuepress/client",
+      "@vuepress/shared",
       "@vueuse/core",
       "body-scroll-lock",
       "vue",
@@ -30,6 +31,7 @@ export default [
     external: [
       /^@temp\//,
       "@vuepress/client",
+      "@vueuse/core",
       "vue",
       "vuepress-plugin-search-pro/result",
       "vuepress-shared/client",

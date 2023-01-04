@@ -14,6 +14,7 @@ export default [
   ...rollupTypescript("client/config", {
     external: [
       "@vuepress/client",
+      "@vuepress/shared",
       "balloon-css/balloon.css",
       "vue",
       "vue-router",

@@ -1,3 +1,4 @@
+import { isString } from "@vuepress/shared";
 import { mergeViteConfig } from "./mergeViteConfig.js";
 import { getBundlerName } from "../getBundler.js";
 import { detectPackageManager } from "../../utils/index.js";
@@ -35,7 +36,7 @@ export const addViteOptimizeDepsInclude = (
       bundlerConfig.viteOptions || {},
       {
         optimizeDeps: {
-          include: typeof module === "string" ? [module] : module,
+          include: isString(module) ? [module] : module,
         },
       }
     );
@@ -60,7 +61,7 @@ export const addViteOptimizeDepsExclude = (
       bundlerConfig.viteOptions || {},
       {
         optimizeDeps: {
-          exclude: typeof module === "string" ? [module] : module,
+          exclude: isString(module) ? [module] : module,
         },
       }
     );
@@ -85,7 +86,7 @@ export const addViteSsrExternal = (
       bundlerConfig.viteOptions || {},
       {
         ssr: {
-          external: typeof module === "string" ? [module] : module,
+          external: isString(module) ? [module] : module,
         },
       }
     );
@@ -106,7 +107,7 @@ export const addViteSsrNoExternal = (
       bundlerConfig.viteOptions || {},
       {
         ssr: {
-          noExternal: typeof module === "string" ? [module] : module,
+          noExternal: isString(module) ? [module] : module,
         },
       }
     );

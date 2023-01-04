@@ -1,3 +1,4 @@
+import { isString } from "@vuepress/shared";
 import { usePageFrontmatter } from "@vuepress/client";
 import { computed, defineComponent, h } from "vue";
 
@@ -33,7 +34,7 @@ export default defineComponent({
 
       return footer === false
         ? false
-        : typeof footer === "string"
+        : isString(footer)
         ? footer
         : themeLocale.value.footer || "";
     });

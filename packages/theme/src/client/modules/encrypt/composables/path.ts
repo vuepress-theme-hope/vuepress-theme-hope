@@ -1,3 +1,4 @@
+import { isPlainObject } from "@vuepress/shared";
 import { useStorage, useSessionStorage } from "@vueuse/core";
 import { computed } from "vue";
 import { useRoute } from "vue-router";
@@ -26,7 +27,7 @@ export const usePathEncrypt = (): PathEncrypt => {
   );
 
   const getPathMatchedKeys = (path: string): string[] =>
-    typeof encryptData.value.config === "object"
+    isPlainObject(encryptData.value.config)
       ? Object.keys(encryptData.value.config)
           .filter((key) => decodeURI(path).startsWith(key))
           .sort((a, b) => b.length - a.length)

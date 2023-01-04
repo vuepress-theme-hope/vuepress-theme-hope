@@ -1,3 +1,4 @@
+import { isString } from "@vuepress/shared";
 import { componentsPlugin } from "vuepress-plugin-components";
 
 import type { ComponentOptions } from "vuepress-plugin-components";
@@ -26,9 +27,7 @@ export const getComponentsPlugin = (
         fontIcon: {
           ...(options.iconAssets ? { assets: options.iconAssets } : {}),
         },
-        ...(typeof options.iconPrefix === "string"
-          ? { prefix: options.iconPrefix }
-          : {}),
+        ...(isString(options.iconPrefix) ? { prefix: options.iconPrefix } : {}),
         ...componentOptions,
       },
       rootComponents: {

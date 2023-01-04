@@ -7,6 +7,7 @@ export default [
       "@vuepress/shared",
       "@vuepress/utils",
       "vuepress-shared/node",
+      "vuepress-plugin-components",
       "vuepress-plugin-sass-palette",
     ],
   }),

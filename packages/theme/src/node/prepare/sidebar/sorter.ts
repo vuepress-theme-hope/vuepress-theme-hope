@@ -1,3 +1,5 @@
+import { isArray, isFunction, isString } from "@vuepress/shared";
+
 import type {
   SidebarInfo,
   SidebarSorter,
@@ -122,15 +124,15 @@ const sortKeyMap: Record<string, SidebarSorterFunction> = {
 const availableKeywords = Object.keys(sortKeyMap);
 
 export const getSorter = (sorter?: SidebarSorter): SidebarSorterFunction[] => {
-  if (typeof sorter === "string" && availableKeywords.includes(sorter))
+  if (isString(sorter) && availableKeywords.includes(sorter))
     return [sortKeyMap[sorter]];
 
-  if (typeof sorter === "function") return [sorter];
+  if (isFunction(sorter)) return [sorter];
 
-  if (Array.isArray(sorter)) {
+  if (isArray(sorter)) {
     const result = sorter
-      .map((item) => (typeof item === "string" ? sortKeyMap[item] : item))
-      .filter((item) => typeof item === "function");
+      .map((item) => (isString(item) ? sortKeyMap[item] : item))
+      .filter((item) => isFunction(item));
 
     if (result.length) return result;
   }

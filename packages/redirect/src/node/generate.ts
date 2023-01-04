@@ -1,4 +1,6 @@
 import {
+  isArray,
+  isFunction,
   isLinkHttp,
   removeEndingSlash,
   removeLeadingSlash,
@@ -20,15 +22,14 @@ export const generateHTML = async (
     pages,
   } = app;
 
-  const config =
-    typeof options.config === "function"
-      ? options.config(app)
-      : options.config || {};
+  const config = isFunction(options.config)
+    ? options.config(app)
+    : options.config || {};
 
   const redirectMap = Object.fromEntries(
     (<Page<Record<string, never>, RedirectPluginFrontmatterOption>[]>pages)
       .map<[string, string][]>(({ frontmatter, path }) =>
-        Array.isArray(frontmatter.redirectFrom)
+        isArray(frontmatter.redirectFrom)
           ? frontmatter.redirectFrom.map((from) => [
               from.replace(/\/$/, "/index.html"),
               path,

@@ -1,5 +1,6 @@
 import {
   isLinkHttp,
+  isString,
   removeEndingSlash,
   removeLeadingSlash,
 } from "@vuepress/shared";
@@ -23,8 +24,7 @@ export const getLocales = (
   Object.entries(locales)
     .map(([localePath, value]) => ({ localePath, lang: value.lang }))
     .filter(
-      (item): item is LocaleConfig =>
-        typeof item.lang === "string" && item.lang !== lang
+      (item): item is LocaleConfig => isString(item.lang) && item.lang !== lang
     );
 
 export const getCover = (

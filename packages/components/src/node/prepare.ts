@@ -1,3 +1,4 @@
+import { isPlainObject, isString } from "@vuepress/shared";
 import { CLIENT_FOLDER, logger } from "./utils.js";
 
 import type { App } from "@vuepress/core";
@@ -101,7 +102,7 @@ useStyleTag(\`${content}\`, { id: "icon-assets" });
     }
   });
 
-  if (typeof rootComponents.addThis === "string") {
+  if (isString(rootComponents.addThis)) {
     shouldImportUseScriptTag = true;
     setup += `\
 useScriptTag(\`//s7.addthis.com/js/300/addthis_widget.js#pubid=${rootComponents.addThis}\`);
@@ -122,7 +123,7 @@ import BackToTop from "${CLIENT_FOLDER}components/BackToTop.js";
 `;
   }
 
-  if (typeof rootComponents.notice === "object") {
+  if (isPlainObject(rootComponents.notice)) {
     shouldImportH = true;
     configImport += `\
 import Notice from "${CLIENT_FOLDER}components/Notice.js";

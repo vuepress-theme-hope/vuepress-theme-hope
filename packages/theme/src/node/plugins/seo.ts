@@ -1,3 +1,4 @@
+import { isPlainObject } from "@vuepress/shared";
 import { seoPlugin } from "vuepress-plugin-seo2";
 
 import type { Page, Plugin } from "@vuepress/core";
@@ -10,7 +11,7 @@ export const getSEOPlugin = (
   legacy = false
 ): Plugin | null => {
   if (seo === false) return null;
-  const seoOptions = typeof seo === "object" ? seo : {};
+  const seoOptions = isPlainObject(seo) ? seo : {};
 
   // disable seo if `hostname` is not set and no options for seo plugin
   if (!Object.keys(seoOptions).length && !hostname) return null;

@@ -1,3 +1,4 @@
+import { isArray, isFunction, isPlainObject } from "@vuepress/shared";
 import {
   getAuthor,
   getCategory,
@@ -46,22 +47,20 @@ export class FeedPage {
   }
 
   get title(): string {
-    if (typeof this.getter.title === "function")
-      return this.getter.title(this.page);
+    if (isFunction(this.getter.title)) return this.getter.title(this.page);
 
     return this.pageFeedOptions.title || this.page.title;
   }
 
   /** real url */
   get link(): string {
-    if (typeof this.getter.link === "function")
-      return this.getter.link(this.page);
+    if (isFunction(this.getter.link)) return this.getter.link(this.page);
 
     return resolveUrl(this.options.hostname, this.base, this.page.path);
   }
 
   get description(): string | null {
-    if (typeof this.getter.description === "function")
+    if (isFunction(this.getter.description))
       return this.getter.description(this.page);
 
     if (this.pageFeedOptions.description)
@@ -75,13 +74,12 @@ export class FeedPage {
   }
 
   get author(): FeedAuthor[] {
-    if (typeof this.getter.author === "function")
-      return this.getter.author(this.page);
+    if (isFunction(this.getter.author)) return this.getter.author(this.page);
 
-    if (Array.isArray(this.pageFeedOptions.author))
+    if (isArray(this.pageFeedOptions.author))
       return this.pageFeedOptions.author;
 
-    if (typeof this.pageFeedOptions.author === "object")
+    if (isPlainObject(this.pageFeedOptions.author))
       return [this.pageFeedOptions.author];
 
     return this.frontmatter.author === false
@@ -94,13 +92,13 @@ export class FeedPage {
   }
 
   get category(): FeedCategory[] | null {
-    if (typeof this.getter.category === "function")
+    if (isFunction(this.getter.category))
       return this.getter.category(this.page);
 
-    if (Array.isArray(this.pageFeedOptions.category))
+    if (isArray(this.pageFeedOptions.category))
       return this.pageFeedOptions.category;
 
-    if (typeof this.pageFeedOptions.category === "object")
+    if (isPlainObject(this.pageFeedOptions.category))
       return [this.pageFeedOptions.category];
 
     const { categories, category = categories } = this.frontmatter;
@@ -109,7 +107,7 @@ export class FeedPage {
   }
 
   get enclosure(): FeedEnclosure | null {
-    if (typeof this.getter.enclosure === "function")
+    if (isFunction(this.getter.enclosure))
       return this.getter.enclosure(this.page);
 
     if (this.image)
@@ -126,7 +124,7 @@ export class FeedPage {
   }
 
   get pubDate(): Date | null {
-    if (typeof this.getter.publishDate === "function")
+    if (isFunction(this.getter.publishDate))
       return this.getter.publishDate(this.page);
 
     const { time, date = time } = this.page.frontmatter;
@@ -141,7 +139,7 @@ export class FeedPage {
   }
 
   get lastUpdated(): Date {
-    if (typeof this.getter.lastUpdateDate === "function")
+    if (isFunction(this.getter.lastUpdateDate))
       return this.getter.lastUpdateDate(this.page);
 
     const { updatedTime } = this.page.data.git || {};
@@ -150,8 +148,7 @@ export class FeedPage {
   }
 
   get content(): string {
-    if (typeof this.getter.content === "function")
-      return this.getter.content(this.page);
+    if (isFunction(this.getter.content)) return this.getter.content(this.page);
 
     if (this.pageFeedOptions.content) return this.pageFeedOptions.content;
 
@@ -159,8 +156,7 @@ export class FeedPage {
   }
 
   get image(): string | null {
-    if (typeof this.getter.image === "function")
-      return this.getter.image(this.page);
+    if (isFunction(this.getter.image)) return this.getter.image(this.page);
 
     const { banner, cover } = this.frontmatter;
 
@@ -195,20 +191,20 @@ export class FeedPage {
   }
 
   get contributor(): FeedContributor[] {
-    if (typeof this.getter.contributor === "function")
+    if (isFunction(this.getter.contributor))
       return this.getter.contributor(this.page);
 
-    if (Array.isArray(this.pageFeedOptions.contributor))
+    if (isArray(this.pageFeedOptions.contributor))
       return this.pageFeedOptions.contributor;
 
-    if (typeof this.pageFeedOptions.contributor === "object")
+    if (isPlainObject(this.pageFeedOptions.contributor))
       return [this.pageFeedOptions.contributor];
 
     return this.author;
   }
 
   get copyright(): string | null {
-    if (typeof this.getter.copyright === "function")
+    if (isFunction(this.getter.copyright))
       return this.getter.copyright(this.page);
 
     if (this.frontmatter.copyright) return this.frontmatter.copyright;

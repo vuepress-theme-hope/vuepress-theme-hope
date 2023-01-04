@@ -1,3 +1,4 @@
+import { isArray, isString } from "@vuepress/shared";
 import { fs } from "@vuepress/utils";
 import { logger, TEMPLATE_FOLDER } from "../utils.js";
 
@@ -12,7 +13,7 @@ export const checkSocialMediaIcons = (
     key: string,
     value: string | [string, string]
   ): string | false => {
-    if (typeof value === "string") {
+    if (isString(value)) {
       const templatePath = `${TEMPLATE_FOLDER}socialMediaIcons/${key.toLocaleLowerCase()}.svg`;
 
       if (fs.existsSync(templatePath)) {
@@ -26,7 +27,7 @@ export const checkSocialMediaIcons = (
       return false;
     }
 
-    if (Array.isArray(value)) {
+    if (isArray(value)) {
       // it’s a svg string
       if (value[1].startsWith("<svg")) {
         icons[key] = value[1];

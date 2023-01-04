@@ -1,4 +1,6 @@
 // German (Austria) [de-at]
+import { isArray } from "@vuepress/shared";
+
 import type dayjs from "dayjs";
 import type { Locale } from "./locale.js";
 
@@ -23,7 +25,7 @@ const relativeTimeFormatter = (
 ): string => {
   let l = texts[key];
 
-  if (Array.isArray(l)) l = l[withoutSuffix ? 0 : 1];
+  if (isArray(l)) l = l[withoutSuffix ? 0 : 1];
 
   return l.replace("%d", number);
 };

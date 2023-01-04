@@ -1,3 +1,4 @@
+import { isPlainObject } from "@vuepress/shared";
 import { autoCatalogPlugin } from "vuepress-plugin-auto-catalog";
 
 import type { Plugin } from "@vuepress/core";
@@ -11,5 +12,5 @@ export const getAutoCatalogPlugin = (
 ): Plugin | null => {
   if (autoCatalog === false) return null;
 
-  return autoCatalogPlugin(typeof autoCatalog === "object" ? autoCatalog : {});
+  return autoCatalogPlugin(isPlainObject(autoCatalog) ? autoCatalog : {});
 };

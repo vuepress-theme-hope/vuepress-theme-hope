@@ -1,4 +1,4 @@
-import { isLinkHttp, removeEndingSlash } from "@vuepress/shared";
+import { isArray, isLinkHttp, removeEndingSlash } from "@vuepress/shared";
 import { load } from "cheerio";
 import matter from "gray-matter";
 import { HTML_TAGS, SVG_TAGS } from "../utils/index.js";
@@ -113,7 +113,7 @@ const handleNodes = (
   base: string,
   isCustomElement: (tagName: string) => boolean
 ): AnyNode[] =>
-  Array.isArray(nodes)
+  isArray(nodes)
     ? nodes
         .map((node) => handleNode(node, base, isCustomElement))
         .filter((node): node is AnyNode => node !== null)
