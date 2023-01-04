@@ -10,13 +10,13 @@ export const theme = (
   name: string,
   { plugins = {}, ...options }: ThemeOptions
 ): ThemeFunction => {
-  const canonical = `https://${
+  const subdomain =
     name === "theme"
       ? "theme-hope"
       : name === "shared"
       ? "shared"
-      : `plugin-${name}`
-  }.vuejs.press`;
+      : `plugin-${name}`;
+  const canonical = `https://${subdomain}.vuejs.press`;
 
   const hostname = IS_GITHUB
     ? "https://vuepress-theme-hope.github.io"
@@ -54,6 +54,38 @@ export const theme = (
         category: "Announcements",
         categoryId: "DIC_kwDOG_Pt2M4COD69",
       },
+
+      components: IS_NETLIFY
+        ? {}
+        : {
+            rootComponents: {
+              notice: {
+                locales: {
+                  // eslint-disable-next-line @typescript-eslint/naming-convention
+                  "/": {
+                    title: "New docs location",
+                    content: "Our docs has moved to a new domain vuejs.press",
+                    actions: [
+                      {
+                        text: "Visit Now",
+                        link: canonical,
+                      },
+                    ],
+                  },
+                  "/zh/": {
+                    title: "新的文档地址",
+                    content: "我们的文档已经迁移至新域名 vuejs.press 下。",
+                    actions: [
+                      {
+                        text: "立即访问",
+                        link: `${canonical}/zh/`,
+                      },
+                    ],
+                  },
+                },
+              },
+            },
+          },
 
       seo: hostname === canonical ? {} : { canonical },
 
