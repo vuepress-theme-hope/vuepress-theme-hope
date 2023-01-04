@@ -75,6 +75,15 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
           single-commit: true
 
+      - name: Deploy copy-code2 docs
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          repository-name: vuepress-theme-hope/copy-code2-docs
+          branch: netlify
+          folder: docs/copy-code2/dist
+          token: ${{ secrets.ACCESS_TOKEN }}
+          single-commit: true
+
       - name: Deploy copyright2 docs
         uses: JamesIves/github-pages-deploy-action@v4
         with:
@@ -383,18 +392,14 @@ jobs:
         run: pnpm run build
 
       - name: Build ${{ matrix.plugin-name }} demo
-        env:
-          BASE: /${{ matrix.plugin-name }}-demo/
-          HOSTNAME: https://vuepress-theme-hope.github.io/
         run: |-
           pnpm --filter ${{ matrix.plugin-name }}-demo demo:vite-build
-          > demo/${{ matrix.plugin-name }}/src/.vuepress/dist/.nojekyll
 
       - name: Deploy ${{ matrix.plugin-name }} demo
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           repository-name: vuepress-theme-hope/${{ matrix.plugin-name }}-demo
-          branch: gh-pages
+          branch: netlify
           folder: demo/${{ matrix.plugin-name }}/src/.vuepress/dist
           token: ${{ secrets.ACCESS_TOKEN }}
           single-commit: true

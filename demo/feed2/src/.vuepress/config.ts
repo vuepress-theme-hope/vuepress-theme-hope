@@ -40,7 +40,7 @@ export default defineUserConfig({
 
   plugins: [
     feedPlugin({
-      hostname: "https://vuepress-theme-hope.github.io",
+      hostname: "https://plugin-feed2-demo.vuejs.press",
       atom: true,
       rss: true,
       json: true,

@@ -22,7 +22,7 @@ export default defineUserConfig({
     copyrightPlugin({
       author: "Mr.Hope",
       license: "MIT",
-      canonical: "https://vuepress-theme-hope.github.io",
+      canonical: "https://plugin-copyright2.vuejs.press",
       global: true,
     }),
   ],

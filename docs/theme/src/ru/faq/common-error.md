@@ -47,8 +47,8 @@ Using object format sidebar config means you want to set different sidebar based
 
 - If you want to avoid this warning, you need to add sidebar config for rootLocale path, since all pages will fallback to that.
 - If you want to disable sidebar in current route, set `sidebar: false` in frontmatter.
-- If you want to disable sidebar in current folder, add `currentFolderRoute: false` in sidebar config.
-- If you want to tell theme that you only want sidebar in routes you set, add `rootLocalePath: false` in sidebar config to tell theme sidebar config is disabled by default.
+- If you want to disable sidebar in current folder, add `[currentFolderRoute]: false` in sidebar config.
+- If you want to tell theme that you only want sidebar in routes you set, add `[rootLocalePath]: false` in sidebar config to tell theme sidebar config is disabled by default.
 
 ## `useXXX() is called without provider`
 

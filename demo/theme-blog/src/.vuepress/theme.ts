@@ -4,7 +4,7 @@ import { enNavbar, zhNavbar } from "./navbar/index.js";
 import { enSidebar, zhSidebar } from "./sidebar/index.js";
 
 const hostname =
-  process.env.HOSTNAME || "https://vuepress-theme-hope-blog-demo.netlify.app";
+  process.env.HOSTNAME || "https://theme-hope-blog-demo.vuejs.press";
 
 export default hopeTheme({
   hostname,
@@ -275,8 +275,8 @@ export default hopeTheme({
     },
 
     seo:
-      hostname === "https://vuepress-theme-hope.github.io"
+      hostname === "https://theme-hope-blog-demo.vuejs.press"
         ? {}
-        : { canonical: "https://vuepress-theme-hope.github.io/blog-demo/" },
+        : { canonical: "https://theme-hope-blog-demo.vuejs.press" },
   },
 });

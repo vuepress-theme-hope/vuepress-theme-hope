@@ -19,7 +19,7 @@ export default defineUserConfig({
 
   plugins: [
     sitemapPlugin({
-      hostname: "https://vuepress-theme-hope.github.io",
+      hostname: "https://plugin-sitemap2-demo.vuejs.press",
     }),
   ],
 });

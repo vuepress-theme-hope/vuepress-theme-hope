@@ -1,4 +1,4 @@
-import { hopeTheme } from "vuepress-theme-hope";
+import { theme } from "docs-shared";
 import {
   enNavbarConfig,
   zhNavbarConfig,
@@ -10,39 +10,8 @@ import {
   ruSidebarConfig,
 } from "./sidebar/index.js";
 
-const IS_GITEE = "GITEE" in process.env;
-const IS_NETLIFY = "NETLIFY" in process.env;
-const IS_GITHUB = !IS_GITEE && !IS_NETLIFY;
-
-const canonical = `https://theme-hope.vuejs.press`;
-
-const hostname = IS_GITHUB
-  ? "https://vuepress-theme-hope.github.io"
-  : IS_GITEE
-  ? "https://vuepress-theme-hope.gitee.io"
-  : canonical;
-
-export default hopeTheme({
-  hostname,
-
-  author: {
-    name: "Mr.Hope",
-    url: "https://mrhope.site",
-  },
-
-  iconAssets: "iconfont",
-
+export default theme("theme", {
   repo: "vuepress-theme-hope/vuepress-theme-hope",
-
-  docsDir: "docs/theme/src",
-
-  logo: "/logo.svg",
-
-  footer: "MIT Licensed | Copyright © 2019-present Mr.Hope",
-  copyright: false,
-  displayFooter: true,
-
-  pageInfo: ["Category", "Tag", "ReadingTime"],
 
   blog: {
     name: "VuePress Theme Hope",
@@ -54,6 +23,7 @@ export default hopeTheme({
     green: "#3eaf7c",
     orange: "#fb9b5f",
   },
+
   fullscreen: true,
 
   locales: {
@@ -92,14 +62,6 @@ export default hopeTheme({
           pdfjs: "/assets/lib/pdfjs/",
         },
       },
-    },
-
-    comment: {
-      provider: "Giscus",
-      repo: "vuepress-theme-hope/giscus-discussions",
-      repoId: "R_kgDOG_Pt2A",
-      category: "Announcements",
-      categoryId: "DIC_kwDOG_Pt2M4COD69",
     },
 
     copyright: true,
@@ -247,7 +209,5 @@ export default hopeTheme({
         ],
       },
     },
-
-    seo: hostname === canonical ? {} : { canonical },
   },
 });

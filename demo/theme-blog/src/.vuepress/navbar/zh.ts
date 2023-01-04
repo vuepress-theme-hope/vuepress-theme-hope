@@ -54,8 +54,8 @@ export const zhNavbar = navbar([
         link: "https://theme-hope.vuejs.press/zh/",
       },
       {
-        text: "V2 文档案例o",
-        link: "https://vuepress-theme-hope.github.io/docs-demo/zh/",
+        text: "V2 文档案例",
+        link: "https://theme-hope-docs-demo.vuejs.press/zh/",
       },
       {
         text: "V1 文档",

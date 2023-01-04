@@ -10,7 +10,13 @@ export const theme = (
   name: string,
   { plugins = {}, ...options }: ThemeOptions
 ): ThemeFunction => {
-  const canonical = `https://plugin-${name}.vuejs.press`;
+  const canonical = `https://${
+    name === "theme"
+      ? "theme-hope"
+      : name === "shared"
+      ? "shared"
+      : `plugin-${name}`
+  }.vuejs.press`;
 
   const hostname = IS_GITHUB
     ? "https://vuepress-theme-hope.github.io"

@@ -33,7 +33,7 @@ export const enNavbar = navbar([
       },
       {
         text: "V2 Blog Demo",
-        link: "https://vuepress-theme-hope.github.io/blog-demo/",
+        link: "https://theme-hope-blog-demo.vuejs.press/",
       },
       {
         text: "V1 Docs",

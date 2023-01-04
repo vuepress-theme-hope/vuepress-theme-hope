@@ -21,7 +21,7 @@ export default defineUserConfig({
 
   plugins: [
     seoPlugin({
-      hostname: "https://vuepress-theme-hope.github.io",
+      hostname: "https://plugin-seo2-demo.vuejs.press",
     }),
   ],
 });
