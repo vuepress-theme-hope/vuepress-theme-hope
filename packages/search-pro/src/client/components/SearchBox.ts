@@ -37,7 +37,7 @@ export default defineComponent({
 
     return (): (VNode | null)[] => [
       h(
-        "div",
+        "button",
         {
           class: "search-pro-button",
           role: "search",
