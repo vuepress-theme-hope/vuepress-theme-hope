@@ -21,7 +21,7 @@ export const useSearchResults = (query: Ref<string>): Ref<Result[]> => {
   }, searchProDelay);
 
   watch([query, routeLocale], () => {
-    updateResults(query.value);
+    void updateResults(query.value);
   });
 
   return results;
