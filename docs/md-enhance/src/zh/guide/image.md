@@ -160,7 +160,3 @@ interface ImageMarkOptions {
 <script setup lang="ts">
 import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch"
 </script>
-
-```
-
-```

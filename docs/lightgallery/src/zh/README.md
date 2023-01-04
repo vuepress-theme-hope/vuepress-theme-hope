@@ -94,7 +94,7 @@ export default {
 
 :::
 
-<NetlifyBadge />
+<NetlifyBadge alt="通过 Netlify 部署" />
 
 <script setup lang="ts">
 import NetlifyBadge from "@NetlifyBadge";
