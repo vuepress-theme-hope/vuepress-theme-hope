@@ -36,7 +36,7 @@ export default defineComponent({
         ? h(
             "div",
             { class: "features" },
-            props.items?.map((feature) => {
+            props.items.map((feature) => {
               const children = [
                 h("h2", [
                   h(Icon, { icon: feature.icon }),
