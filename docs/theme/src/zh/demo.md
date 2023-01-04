@@ -104,6 +104,11 @@ blog:
     url: https://whitechen233.github.io/
     source: https://github.com/whiteChen233/whitechen233.github.io
     preview: /assets/image/white.jpg
+    
+  - name: MW Blog
+    url: https://blog.sherry4869.com/
+    source: https://github.com/SherryMW/Blog
+    preview: /assets/image/mw.jpg    
 ---
 
 ## 在线案例
