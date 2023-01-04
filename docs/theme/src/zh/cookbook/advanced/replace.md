@@ -82,8 +82,8 @@ export default {
 - `@theme-hope/components/AutoLink` 基础链接
 - `@theme-hope/components/BreadCrumb` 路径导航
 - `@theme-hope/components/CommonWrapper` 基本布局整合
-- `@theme-hope/components/HomeFeatures` 主页特性
-- `@theme-hope/components/HomeHero` 主页 Logo 及介绍
+- `@theme-hope/components/FeaturePanel` 主页特性
+- `@theme-hope/components/HeroInfo` 主页 Logo 及介绍
 - `@theme-hope/components/HomePage` 主页
 - `@theme-hope/components/Icon` 图标
 - `@theme-hope/components/MarkdownContent` Markdown 内容
@@ -286,7 +286,7 @@ import HopeHomePage from "vuepress-theme-hope/components/HomePage.js";
 
 - `AutoLink`: `default`, `before`, `after`
 - `CommonWrapper`: `default`, `navbarLeftStart`, `navbarLeftEnd`, `navbarCenterStart`, `navbarCenterEnd`, `navbarRightStart`, `navbarRightEnd`, `navScreenTop`, `navScreenBottom`, `sidebar`, `sidebarTop`, `sidebarBottom`
-- `HomeHero`: `heroImage`, `heroInfo`
+- `HeroInfo`: `heroImage`, `heroInfo`
 - `HomePage`: `top`, `center`, `bottom`
 - `NormalPage`: `top`, `contentBefore`, `contentAfter`, `bottom`
 

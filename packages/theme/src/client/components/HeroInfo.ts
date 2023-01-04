@@ -11,8 +11,10 @@ import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import type { VNode } from "vue";
 import type { ThemeProjectHomePageFrontmatter } from "../../shared/index.js";
 
+import "../styles/hero-info.scss";
+
 export default defineComponent({
-  name: "HomeHero",
+  name: "HeroInfo",
 
   setup(_props, { slots }) {
     const frontmatter = usePageFrontmatter<ThemeProjectHomePageFrontmatter>();
@@ -53,7 +55,7 @@ export default defineComponent({
     const actions = computed(() => frontmatter.value.actions ?? []);
 
     return (): VNode =>
-      h("header", { class: "hero" }, [
+      h("header", { class: "hero-info-wrapper" }, [
         slots["heroImage"]?.() ||
           h(DropTransition, { appear: true, type: "group" }, () => [
             heroImage.value

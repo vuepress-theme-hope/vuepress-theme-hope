@@ -1,0 +1,155 @@
+@keyframes bounce {
+  0% {
+    transform: scale(1) translateY(0);
+  }
+
+  10% {
+    transform: scale(
+        var(--bounce-start-scale-x, 1.1),
+        var(--bounce-start-scale-y, 0.9)
+      )
+      translateY(0);
+  }
+
+  30% {
+    transform: scale(
+        var(--bounce-jump-scale-x, 0.9),
+        var(--bounce-jump-scale-y, 1.1)
+      )
+      translateY(var(--bounce-height, -0.5em));
+  }
+
+  50% {
+    transform: scale(
+        var(--bounce-land-scale-x, 1.05),
+        var(--bounce-land-scale-y, 0.95)
+      )
+      translateY(0);
+  }
+
+  57% {
+    transform: scale(1) translateY(var(--bounce-rebound, -0.125em));
+  }
+
+  64% {
+    transform: scale(1) translateY(0);
+  }
+
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+
+.feature-panel {
+  margin: 0 -1rem;
+  padding: 1.2rem 0;
+
+  @media (max-width: hope-config.$mobile) {
+    margin: 0 -0.5rem;
+  }
+
+  .feature-header {
+    margin: 0 1.75rem;
+  }
+
+  .features {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+    align-items: stretch;
+    justify-content: center;
+
+    @media print {
+      display: block;
+    }
+
+    &:first-child {
+      border-top: 1px solid var(--border-color);
+      transition: border-color var(--color-transition);
+    }
+  }
+
+  .feature {
+    position: relative;
+
+    flex-basis: calc(33% - 3rem);
+
+    margin: 0.5rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+
+    transition: background var(--color-transition),
+      box-shadow var(--color-transition), transform var(--transform-transition);
+
+    @media (min-width: hope-config.$pc) {
+      flex-basis: calc(25% - 3rem);
+    }
+
+    @media (max-width: hope-config.$pad) {
+      flex-basis: calc(50% - 3rem);
+    }
+
+    @media (max-width: hope-config.$tablet) {
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: hope-config.$mobile) {
+      flex-basis: calc(100%);
+      margin: 0.5rem 0;
+      font-size: 0.9rem;
+    }
+
+    &.link {
+      cursor: pointer;
+
+      @media print {
+        text-decoration: none;
+      }
+    }
+
+    .icon {
+      display: inline-block;
+      margin-inline-end: 0.5rem;
+      color: var(--theme-color);
+      font-size: 1.1em;
+    }
+
+    &:hover {
+      background-color: var(--bg-color-secondary);
+      box-shadow: 0 2px 12px 0 var(--card-shadow);
+      transform: scale(1.05);
+
+      // stylelint-disable-next-line
+      .home.project:not(.pure) & {
+        // stylelint-disable-next-line
+        .icon {
+          animation-name: bounce;
+          animation-duration: var(--fa-animation-duration, 1s);
+          animation-timing-function: var(
+            --fa-animation-timing,
+            cubic-bezier(0.28, 0.84, 0.42, 1)
+          );
+          animation-delay: var(--fa-animation-delay, 0s);
+          animation-direction: var(--fa-animation-direction, normal);
+        }
+      }
+    }
+
+    h3 {
+      margin: 0.25rem 0 0.5rem;
+      color: var(--text-color-light);
+      font-weight: bold;
+      font-size: 1.3rem;
+
+      @media (max-width: hope-config.$mobile) {
+        font-size: 1.2rem;
+      }
+    }
+
+    p {
+      margin: 0;
+      color: var(--text-color-lighter);
+      line-height: 1.4;
+    }
+  }
+}

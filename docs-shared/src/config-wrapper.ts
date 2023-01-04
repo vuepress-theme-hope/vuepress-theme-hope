@@ -98,7 +98,7 @@ export const config = (
 
     alias: {
       "@NetlifyBadge": path.resolve(__dirname, "./components/NetlifyBadge.js"),
-      "@theme-hope/components/HomeHero": path.resolve(
+      "@theme-hope/components/HeroInfo": path.resolve(
         __dirname,
         "./components/HopeHero.js"
       ),

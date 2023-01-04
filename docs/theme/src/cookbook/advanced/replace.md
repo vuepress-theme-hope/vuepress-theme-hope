@@ -80,8 +80,8 @@ Components:
 - `@theme-hope/components/AutoLink`: basic link
 - `@theme-hope/components/BreadCrumb`: breadcrumb
 - `@theme-hope/components/CommonWrapper`: basic layout integration
-- `@theme-hope/components/HomeFeatures`: homepage features
-- `@theme-hope/components/HomeHero`: homepage logo and introduction
+- `@theme-hope/components/FeaturePanel`: homepage features
+- `@theme-hope/components/HeroInfo`: homepage logo and introduction
 - `@theme-hope/components/HomePage`: home page
 - `@theme-hope/components/Icon`: icon
 - `@theme-hope/components/MarkdownContent`: Markdown content
@@ -283,7 +283,7 @@ Components that provide slots are as follows:
 
 - `AutoLink`: `default`, `before`, `after`
 - `CommonWrapper`: `default`, `navbarLeftStart`, `navbarLeftEnd`, `navbarCenterStart`, `navbarCenterEnd`, `navbarRightStart`, `navbarRightEnd`, `navScreenTop`, `navScreenBottom`, `sidebar`, `sidebarTop`, `sidebarBottom`
-- `HomeHero`: `heroImage`, `heroInfo`
+- `HeroInfo`: `heroImage`, `heroInfo`
 - `HomePage`: `top`, `center`, `bottom`
 - `NormalPage`: `top`, `contentBefore`, `contentAfter`, `bottom`
 

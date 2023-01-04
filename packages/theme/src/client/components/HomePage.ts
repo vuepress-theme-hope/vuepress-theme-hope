@@ -3,9 +3,9 @@ import { usePageFrontmatter } from "@vuepress/client";
 import { isArray } from "@vuepress/shared";
 
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
-import HomeFeatures from "@theme-hope/components/HomeFeatures";
+import FeaturePanel from "@theme-hope/components/FeaturePanel";
+import HeroInfo from "@theme-hope/components/HeroInfo";
 import MarkdownContent from "@theme-hope/components/MarkdownContent";
-import HomeHero from "@theme-hope/components/HomeHero";
 import { usePure } from "@theme-hope/composables/index";
 
 import type { VNode } from "vue";
@@ -46,12 +46,12 @@ export default defineComponent({
         },
         [
           slots["top"]?.(),
-          h(HomeHero),
+          h(HeroInfo),
           features.value.map(({ header = "", items }, index) =>
             h(
               DropTransition,
               { appear: true, delay: 0.16 + index * 0.08 },
-              () => h(HomeFeatures, { header, items })
+              () => h(FeaturePanel, { header, items })
             )
           ),
           slots["center"]?.(),
