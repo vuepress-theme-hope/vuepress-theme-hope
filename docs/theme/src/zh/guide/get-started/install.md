@@ -30,6 +30,24 @@ npm init vuepress-theme-hope@next [dir]
 
 :::
 
+要将 vuepress-theme-hope 作为文档构建器添加到现有项目中，请在项目根目录中运行以下命令:
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm create vuepress-theme-hope@next add [dir]
+```
+
+@tab npm
+
+```bash
+npm init vuepress-theme-hope@next add [dir]
+```
+
+:::
+
 ::: note
 
 这里的 `[dir]` 是一个参数，你需要使用真实的文件夹名称替换它，例如 `docs`、`blog` 或其他你喜欢的名称。

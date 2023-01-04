@@ -30,6 +30,24 @@ npm init vuepress-theme-hope@next [dir]
 
 :::
 
+To add vuepress-theme-hope as docs builder to an existing project, run the following command in the project root directory:
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm create vuepress-theme-hope@next add [dir]
+```
+
+@tab npm
+
+```bash
+npm init vuepress-theme-hope@next add [dir]
+```
+
+:::
+
 ::: note
 
 `[dir]` здесь является параметром, замените его реальными именами папок, такими как `docs`, `blog` или другим именем, которое вам нравится.
