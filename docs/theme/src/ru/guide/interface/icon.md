@@ -169,7 +169,7 @@ export default defineUserConfig({
 
 :::
 
-<IconDisplay link="//at.alicdn.com/t/c/font_2410206_s76eeqysx0t.css" />
+<IconDisplay link="//at.alicdn.com/t/c/font_2410206_5vb9zlyghj.css" />
 
 <script setup lang="ts">
 import IconDisplay from '@IconDisplay';

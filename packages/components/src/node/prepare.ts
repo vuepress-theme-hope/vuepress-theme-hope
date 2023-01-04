@@ -31,7 +31,7 @@ const getIconLink = (
   if (iconLink === "iconfont")
     return {
       type: "style",
-      content: `@import url("//at.alicdn.com/t/c/font_2410206_s76eeqysx0t.css");`,
+      content: `@import url("//at.alicdn.com/t/c/font_2410206_5vb9zlyghj.css");`,
     };
 
   const actualLink = iconLink.match(/^(?:https?:)?\/\//g)

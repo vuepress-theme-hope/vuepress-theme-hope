@@ -14,6 +14,16 @@ docs:
     source: https://github.com/walinejs/waline
     preview: /assets/image/waline.jpg
 
+  - name: bitsail
+    url: https://bytedance.github.io/bitsail/
+    source: https://github.com/bytedance/bitsail
+    preview: /assets/image/bitsail.jpg
+
+  - name: ct.js
+    url: https://docs.ctjs.rocks/
+    source: https://github.com/ct-js/docs.ctjs.rocks
+    preview: /assets/image/ctjs.jpg
+
   - name: ALIST
     url: https://alist.nn.ci/
     source: https://github.com/alist-org/docs

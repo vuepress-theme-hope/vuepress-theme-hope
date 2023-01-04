@@ -29,6 +29,11 @@ docs:
     source: https://github.com/Snailclimb/JavaGuide
     preview: /assets/image/java-guide.jpg
 
+  - name: IDEA 高效使用指南
+    url: https://idea.javaguide.cn/
+    source: https://github.com/CodingDocs/awesome-idea
+    preview: /assets/image/idea-guide.jpg
+
   - name: Java 程序员进阶之路
     url: https://tobebetterjavaer.com/
     source: https://github.com/itwanger/toBeBetterJavaer
@@ -59,10 +64,20 @@ docs:
     source: https://github.com/cunyu1943/JavaPark
     preview: /assets/image/java-park.jpg
 
-  - name: IDEA 高效使用指南
-    url: https://idea.javaguide.cn/
-    source: https://github.com/CodingDocs/awesome-idea
-    preview: /assets/image/idea-guide.jpg
+  - name: 鲤鱼监控
+    url: https://dunhuixiao.github.io/LiyuTargetMon/
+    source: https://github.com/dunhuixiao/LiyuTargetMon
+    preview: /assets/image/liyu.jpg
+
+  - name: 云崽 Yunzai-Bot
+    url: https://docs.yunzai.org/
+    source: https://github.com/Xm798/Yunzai-Bot-Docs
+    preview: /assets/image/yunzai.jpg
+
+  - name: VOJ
+    url: https://docs.voj.mobi/
+    source: https://github.com/simplefanC/voj
+    preview: /assets/image/voj.jpg
 
 blog:
   - name: Mr.Hope’s Blog
@@ -100,6 +115,11 @@ blog:
     source: https://github.com/xwzbupt/personal-site
     preview: /assets/image/weiser.jpg
 
+  - name: https://topjavaer.cn/
+    url: https://topjavaer.cn/
+    source: https://github.com/Tyson0314/Java-learning
+    preview: /assets/image/dabin.jpg
+
   - name: White's Blog
     url: https://whitechen233.github.io/
     source: https://github.com/whiteChen233/whitechen233.github.io
@@ -131,11 +151,6 @@ blog:
   :source="item.source"
   :preview="item.preview"
 />
-
-### xlc520 博客
-
-- [网站链接](https://blog.ciberviler.top/)
-- [源码地址](https://github.com/xlc520/xlc520.github.io)
 
 ## 更多
 
