@@ -1,6 +1,6 @@
 import type { ThemePageFrontmatter } from "./base.js";
 
-export interface ThemeHomeActionOptions {
+export interface ThemeProjectHomeActionOptions {
   /**
    * Action name
    *
@@ -25,7 +25,7 @@ export interface ThemeHomeActionOptions {
   type?: "primary" | "default";
 }
 
-export interface ThemeHomeFeatureOptions {
+export interface ThemeProjectHomeFeatureItemOptions {
   /**
    * Feature name
    *
@@ -59,6 +59,22 @@ export interface ThemeHomeFeatureOptions {
   link?: string;
 }
 
+export interface ThemeProjectHomeFeatureOptions {
+  /**
+   * Feature header
+   *
+   * 功能标题
+   */
+  header?: string;
+
+  /**
+   * Feature config
+   *
+   * 功能配置
+   */
+  items: ThemeProjectHomeFeatureItemOptions[];
+}
+
 export interface ThemeProjectHomePageFrontmatter extends ThemePageFrontmatter {
   home: true;
   heroImage?: string;
@@ -67,6 +83,8 @@ export interface ThemeProjectHomePageFrontmatter extends ThemePageFrontmatter {
   heroText?: string | false;
   tagline?: string | false;
 
-  actions?: ThemeHomeActionOptions[];
-  features?: ThemeHomeFeatureOptions[];
+  actions?: ThemeProjectHomeActionOptions[];
+  features?:
+    | ThemeProjectHomeFeatureItemOptions[]
+    | ThemeProjectHomeFeatureOptions[];
 }

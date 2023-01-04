@@ -1,32 +1,42 @@
-import { usePageFrontmatter } from "@vuepress/client";
-import { isArray, isLinkExternal } from "@vuepress/shared";
-import { computed, defineComponent, h } from "vue";
+import { isLinkExternal } from "@vuepress/shared";
+import { defineComponent, h } from "vue";
 import { RouterLink } from "vue-router";
 
 import Icon from "@theme-hope/components/Icon";
 
-import type { VNode } from "vue";
-import type { ThemeProjectHomePageFrontmatter } from "../../shared/index.js";
+import type { PropType, VNode } from "vue";
+import type { ThemeProjectHomeFeatureItemOptions } from "../../shared/index.js";
 
 export default defineComponent({
   name: "HomeFeatures",
 
-  setup() {
-    const frontmatter = usePageFrontmatter<ThemeProjectHomePageFrontmatter>();
+  props: {
+    /**
+     * Feature config
+     */
+    items: {
+      type: Object as PropType<ThemeProjectHomeFeatureItemOptions[]>,
+      default: (): ThemeProjectHomeFeatureItemOptions[] =>
+        [] as ThemeProjectHomeFeatureItemOptions[],
+    },
 
-    const features = computed(() => {
-      if (isArray(frontmatter.value.features))
-        return frontmatter.value.features;
+    /**
+     * Feature header
+     */
+    header: {
+      type: String,
+      default: "",
+    },
+  },
 
-      return [];
-    });
-
-    return (): VNode | null =>
-      features.value.length
+  setup(props) {
+    return (): (VNode | null)[] => [
+      props.header ? h("h3", props.header) : null,
+      props.items.length
         ? h(
             "div",
             { class: "features" },
-            frontmatter.value.features?.map((feature) => {
+            props.items?.map((feature) => {
               const children = [
                 h("h2", [
                   h(Icon, { icon: feature.icon }),
@@ -61,6 +71,7 @@ export default defineComponent({
                 : h("div", { class: "feature" }, children);
             })
           )
-        : null;
+        : null,
+    ];
   },
 });
