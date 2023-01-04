@@ -75,7 +75,8 @@ $pc: 1920px;
 - `$theme-color`: 主题色
 - `$text-color`: 字体颜色
 - `$bg-color`: 背景色
-- `$bg-color-secondary`: 另一套更浅的背景色
+- `$bg-color-secondary`: 另一个浅背景色
+- `$bg-color-tertiary`: 另一个更浅的背景色
 - `$border-color`: 边框颜色
 - `$box-shadow`: 元素阴影色
 - `$card-shadow`: 卡片阴影色

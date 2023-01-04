@@ -75,7 +75,8 @@ Available color variables:
 - `$theme-color`: theme color
 - `$text-color`: text color
 - `$bg-color`: background color
-- `$bg-color-secondary`: another "lighter" background color
+- `$bg-color-secondary`: another "light" background color
+- `$bg-color-tertiary`: another "lighter" background color
 - `$border-color`: border color
 - `$box-shadow`: shadow color using on elements
 - `$card-shadow`: shadow color using on cards
