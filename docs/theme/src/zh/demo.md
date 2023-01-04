@@ -3,6 +3,107 @@ title: 项目案例
 icon: discover
 category:
   - 案例
+docs:
+  - name: Fast Request
+    url: https://dromara.org/fast-request/en/
+    source: https://github.com/dromara/fast-request
+    preview: /assets/image/fast-request.jpg
+
+  - name: Waline
+    url: https://waline.js.org/
+    source: https://github.com/walinejs/waline
+    preview: /assets/image/waline.jpg
+
+  - name: VanBlog
+    url: https://vanblog.mereith.com/
+    source: https://github.com/Mereithhh/vanblog/tree/master/docs
+    preview: /assets/image/vanblog.jpg
+
+  - name: DynamicTp
+    url: https://dynamictp.cn/
+    source: https://github.com/dromara/dynamic-tp/tree/master/docs
+    preview: /assets/image/dynamic-tp.jpg
+
+  - name: JavaGuide
+    url: https://javaguide.cn/
+    source: https://github.com/Snailclimb/JavaGuide
+    preview: /assets/image/java-guide.jpg
+
+  - name: Java 程序员进阶之路
+    url: https://tobebetterjavaer.com/
+    source: https://github.com/itwanger/toBeBetterJavaer
+    preview: /assets/image/to-be-better-javaer.jpg
+
+  - name: Java 学习笔记
+    url: https://java.isture.com/
+    source: https://github.com/zszdevelop/java-study-gitbook
+    preview: /assets/image/java-note.jpg
+
+  - name: FreeSql
+    url: https://freesql.net/
+    source: https://github.com/dotnetcore/FreeSql/tree/master/docs
+    preview: /assets/image/free-sql.jpg
+
+  - name: 胡桃工具箱
+    url: https://hut.ao/
+    source: https://github.com/DGP-Studio/Snap.Hutao
+    preview: /assets/image/hu-tao.jpg
+
+  - name: WingsBoot
+    url: https://wings.fessional.pro/
+    source: https://github.com/trydofor/pro.fessional.wings
+    preview: /assets/image/winds-boot.jpg
+
+  - name: JavaPark
+    url: https://cunyu1943.site/JavaPark/
+    source: https://github.com/cunyu1943/JavaPark
+    preview: /assets/image/java-park.jpg
+
+  - name: IDEA 高效使用指南
+    url: https://idea.javaguide.cn/
+    source: https://github.com/CodingDocs/awesome-idea
+    preview: /assets/image/idea-guide.jpg
+
+blog:
+  - name: Mr.Hope’s Blog
+    url: https://mrhope.site
+    source: https://github.com/Mister-Hope/Mister-Hope.github.io
+    preview: /assets/image/mrhope.jpg
+
+  - name: Learn Data
+    url: https://newzone.top/
+    source: https://github.com/rockbenben/LearnData
+    preview: /assets/image/newzone.jpg
+
+  - name: 回归线
+    url: https://aneot.terrach.net/
+    source: https://github.com/Nemo1166/aneot
+    preview: /assets/image/return-line.jpg
+
+  - name: TrystanLei
+    url: https://timpcfan.site/
+    source: https://github.com/timpcfan/timpcfan.github.io
+    preview: /assets/image/transtan-lei.jpg
+
+  - name: someone blog
+    url: https://weigao.cc
+    source: https://github.com/chenweigao/blogv2
+    preview: /assets/image/someone.jpg
+
+  - name: zfh's blog
+    url: https://zfhblog.top
+    source: https://github.com/zhangfanhang/zfhblog
+    preview: /assets/image/zfh.jpg
+
+  - name: weiser's blog
+    url: https://weiser.fun/
+    source: https://github.com/xwzbupt/personal-site
+    preview: /assets/image/weiser.jpg
+
+  - name: White's Blog
+    url: https://whitechen233.github.io/
+    source: https://github.com/whiteChen233/whitechen233.github.io
+    preview: /assets/image/white.jpg
 ---
 
 ## 在线案例
@@ -11,140 +112,35 @@ category:
 
 ## 文档类
 
-### Waline
-
-- [网站链接][waline]
-- [源码地址](https://github.com/walinejs/waline)
-
-### Fast Request
-
-- [网站链接][fast-request]
-- [源码地址](https://github.com/dromara/fast-request)
-
-### VanBlog
-
-- [网站链接][van-blog]
-- [源码地址](https://github.com/Mereithhh/vanblog/tree/master/docs)
-
-### DynamicTp
-
-- [网站链接][dynamic-tp]
-- [源码地址](https://github.com/dromara/dynamic-tp/tree/master/docs)
-
-### JavaGuide
-
-- [网站链接][java-guide]
-- [源码地址](https://github.com/Snailclimb/JavaGuide)
-
-### Java 程序员进阶之路
-
-- [网站链接][to-be-better-javaer]
-- [源码地址](https://github.com/itwanger/toBeBetterJavaer)
-
-### Java 学习笔记
-
-- [网站链接][java-note]
-- [源码地址](https://github.com/zszdevelop/java-study-gitbook)
-
-### 中国科大夏令营指南与答疑汇总
-
-- [网站链接][ustc]
-- [源码地址](https://github.com/666hsy/USTC-Summer-Camp-Guide)
-
-### FreeSql
-
-- [网站链接](https://freesql.net/)
-- [源码地址](https://github.com/dotnetcore/FreeSql/tree/master/docs)
-
-### 胡桃工具箱
-
-- [网站链接][hutao]
-- [源码地址](https://github.com/DGP-Studio/Snap.Hutao)
-
-### WingsBoot
-
-- [网站链接][wings-boot]
-- [源码地址](https://github.com/trydofor/pro.fessional.wings)
-
-### ScriptCat
-
-- [网站链接](https://docs.scriptcat.org/)
-- [源码地址](https://github.com/scriptscat/scriptcat.org)
-
-### JavaPark
-
-- [网站链接](https://cunyu1943.site/JavaPark/)
-- [源码地址](https://github.com/cunyu1943/JavaPark)
-
-### IDEA 高效使用指南
-
-- [网站链接](https://idea.javaguide.cn/)
-- [源码地址](https://github.com/CodingDocs/awesome-idea)
+<DemoProject
+  v-for="item in $frontmatter.docs"
+  :key="item.link"
+  :name="item.name"
+  :url="item.url"
+  :source="item.source"
+  :preview="item.preview"
+/>
 
 ## 博客
 
-### Mr.Hope 的个人博客
-
-- [网站链接][mrhope]
-- [源码地址](https://github.com/Mister-Hope/Mister-Hope.github.io)
-
-### Learn Data
-
-- [网站链接][learn-data]
-- [源码地址](https://github.com/rockbenben/LearnData)
-
-### White's Blog
-
-- [网站链接][white-blog]
-- [源码地址](https://github.com/whiteChen233/whitechen233.github.io)
-
-### 回归线
-
-- [网站链接][return-line]
-- [源码地址](https://github.com/Nemo1166/aneot)
-
-### TrystanLei
-
-- [网站链接][trystan-lei]
-- [源码地址](https://github.com/timpcfan/timpcfan.github.io)
+<DemoProject
+  v-for="item in $frontmatter.blog"
+  :key="item.link"
+  :name="item.name"
+  :url="item.url"
+  :source="item.source"
+  :preview="item.preview"
+/>
 
 ### xlc520 博客
 
 - [网站链接](https://blog.ciberviler.top/)
 - [源码地址](https://github.com/xlc520/xlc520.github.io)
 
-### someone blog
-
-- [网站链接](https://weigao.cc)
-- [源码地址](https://github.com/chenweigao/blogv2)
-
-### zfh's blog
-
-- [网站链接](https://zfhblog.top)
-- [源码地址](https://github.com/zhangfanhang/zfhblog)
-
-### weiser's blog
-
-- [网站链接][weiser-blog]
-- [源码地址](https://github.com/xwzbupt/personal-site)
-
 ## 更多
 
 - 随时随地通过 PR 添加你的博客或文档至此。
 
-[fast-request]: https://dromara.org/fast-request/
-[van-blog]: https://vanblog.mereith.com/
-[waline]: https://waline.js.org
-[java-guide]: https://javaguide.cn/
-[to-be-better-javaer]: https://tobebetterjavaer.com/
-[mrhope]: https://mrhope.site
-[ustc]: https://ustc.gleamoe.com/
-[return-line]: https://aneot.terrach.net/
-[java-note]: http://java.isture.com/
-[trystan-lei]: https://timpcfan.site/
-[white-blog]: https://whitechen233.github.io/
-[learn-data]: https://newzone.top/
-[hutao]: https://hut.ao/
-[wings-boot]: https://wings.fessional.pro/
-[dynamic-tp]: https://dynamictp.cn/
-[weiser-blog]: https://weiser.fun/
+<script setup lang="ts">
+import DemoProject from '@DemoProject';
+</script>

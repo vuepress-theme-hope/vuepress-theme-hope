@@ -869,6 +869,7 @@ importers:
     specifiers:
       '@types/katex': 0.16.0
       '@vuepress/client': 2.0.0-beta.60
+      '@vuepress/shared': 2.0.0-beta.60
       '@vuepress/utils': 2.0.0-beta.60
       axios: 1.2.2
       docs-shared: workspace:*
@@ -883,6 +884,7 @@ importers:
     dependencies:
       '@types/katex': 0.16.0_dnsp5eyvz2stjhzcvnk27ztvmm
       '@vuepress/client': 2.0.0-beta.60
+      '@vuepress/shared': 2.0.0-beta.60
       '@vuepress/utils': 2.0.0-beta.60
       axios: 1.2.2
       docs-shared: link:../../docs-shared

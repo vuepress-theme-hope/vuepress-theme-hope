@@ -1,0 +1,88 @@
+.demo-project {
+  position: relative;
+
+  display: inline-block;
+
+  width: calc(50% - 24px);
+  margin: 8px 11px;
+  border-radius: 8px;
+
+  color: inherit;
+  box-shadow: 1px 1px 8px var(--card-shadow);
+
+  cursor: pointer;
+
+  transition: box-shadow var(--transform-transition);
+
+  @media (max-width: hope-config.$laptop) {
+    width: calc(100% - 24px);
+  }
+
+  &:hover {
+    box-shadow: 1px 4px 16px var(--card-shadow);
+  }
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 0;
+    padding-top: 55%;
+  }
+}
+
+.demo-project-info {
+  position: absolute;
+  bottom: calc(50% + 11px);
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+.demo-project-name {
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--dark-grey);
+
+  color: var(--black);
+
+  font-weight: bold;
+  font-size: 20px;
+  text-shadow: 1px 1px 1px var(--white), -1px -1px 1px var(--white),
+    -1px 1px 1px var(--white), 1px -1px 1px var(--white);
+}
+
+.demo-project-desc {
+  font-size: 15px;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.demo-project-source {
+  position: absolute;
+  bottom: 16px;
+  inset-inline-end: 16px;
+
+  display: inline-block;
+
+  width: 20px;
+  height: 20px;
+  padding: 4px;
+  border-radius: 50%;
+
+  background: var(--dark-grey);
+
+  transition: transform var(--transform-transition);
+
+  &::before {
+    display: none;
+  }
+
+  &:hover {
+    background: var(--theme-color);
+    transform: scale(1.05);
+  }
+
+  .icon {
+    width: 100%;
+    height: 100%;
+    color: var(--white);
+  }
+}
