@@ -1,5 +1,5 @@
 import { createRequire } from "node:module";
-import { fs, pwa, theme } from "docs-shared";
+import { fs, theme } from "docs-shared";
 
 const { version } = fs.readJsonSync(
   createRequire(import.meta.url).resolve(
@@ -122,11 +122,5 @@ export default theme("components", {
     mdEnhance: {
       codetabs: true,
     },
-
-    pwa: pwa({
-      name: "vuepress-plugin-components",
-      shortName: "VuePress2 Components Lib",
-      guide: "/guide/",
-    }),
   },
 });

@@ -1,4 +1,4 @@
-import { pwa, theme } from "docs-shared";
+import { theme } from "docs-shared";
 
 export default theme("blog2", {
   locales: {
@@ -17,10 +17,5 @@ export default theme("blog2", {
       codetabs: true,
       mermaid: true,
     },
-
-    pwa: pwa({
-      name: "vuepress-plugin-blog2",
-      shortName: "VuePress2 Blog plugin",
-    }),
   },
 });

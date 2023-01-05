@@ -1,4 +1,4 @@
-import { pwa, theme } from "docs-shared";
+import { theme } from "docs-shared";
 
 export default theme("blog2", {
   locales: {
@@ -16,10 +16,5 @@ export default theme("blog2", {
     mdEnhance: {
       codetabs: true,
     },
-
-    pwa: pwa({
-      name: "vuepress-plugin-auto-catalog",
-      shortName: "Auto Catalog",
-    }),
   },
 });

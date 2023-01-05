@@ -514,6 +514,7 @@ importers:
       '@vuepress/utils': 2.0.0-beta.60
       three: 0.148.0
       vue: 3.2.45
+      vuepress-plugin-remove-pwa: workspace:*
       vuepress-shared: workspace:*
       vuepress-theme-hope: workspace:*
     dependencies:
@@ -526,6 +527,7 @@ importers:
       '@vuepress/utils': 2.0.0-beta.60
       three: 0.148.0
       vue: 3.2.45
+      vuepress-plugin-remove-pwa: link:../packages/remove-pwa
       vuepress-shared: link:../packages/shared
       vuepress-theme-hope: link:../packages/theme
     devDependencies:

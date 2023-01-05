@@ -1,4 +1,4 @@
-import { pwa, theme } from "docs-shared";
+import { theme } from "docs-shared";
 
 export default theme("remove-pwa", {
   locales: {
@@ -19,10 +19,5 @@ export default theme("remove-pwa", {
       codetabs: true,
       container: true,
     },
-
-    pwa: pwa({
-      name: "vuepress-plugin-remove-pwa",
-      shortName: "VuePress2 Remove PWA plugin",
-    }),
   },
 });

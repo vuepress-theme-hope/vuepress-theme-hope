@@ -1,4 +1,4 @@
-import { pwa, theme } from "docs-shared";
+import { theme } from "docs-shared";
 
 export default theme("redirect", {
   locales: {
@@ -18,10 +18,5 @@ export default theme("redirect", {
     mdEnhance: {
       codetabs: true,
     },
-
-    pwa: pwa({
-      name: "vuepress-plugin-redirect",
-      shortName: "VuePress2 Redirect plugin",
-    }),
   },
 });

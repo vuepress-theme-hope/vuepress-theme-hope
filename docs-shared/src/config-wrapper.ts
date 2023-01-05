@@ -1,8 +1,11 @@
 import { defineUserConfig } from "@vuepress/cli";
 import { docsearchPlugin } from "@vuepress/plugin-docsearch";
 import { getDirname, path } from "@vuepress/utils";
+import { removePWAPlugin } from "vuepress-plugin-remove-pwa";
 import { addViteOptimizeDepsInclude } from "vuepress-shared/node";
+
 import type { UserConfig } from "@vuepress/cli";
+import type { HeadConfig } from "@vuepress/core";
 
 const __dirname = getDirname(import.meta.url);
 
@@ -14,11 +17,17 @@ export interface ConfigOptions {
   name: string;
   base?: string;
   indexName?: string | false;
+  pwa?: boolean;
 }
 
 export const config = (
-  { name, base = name.replace(/\d+$/, ""), indexName }: ConfigOptions,
-  { alias = {}, plugins = [], ...config }: UserConfig
+  {
+    name,
+    base = name.replace(/\d+$/, ""),
+    indexName,
+    pwa = false,
+  }: ConfigOptions,
+  { alias = {}, head = [], plugins = [], ...config }: UserConfig
 ): UserConfig => {
   const docsBase = IS_NETLIFY
     ? "/"
@@ -33,6 +42,65 @@ export const config = (
 
     dest: "./dist",
 
+    head: [
+      ...(pwa === false
+        ? <HeadConfig[]>[
+            ["link", { rel: "icon", href: `${docsBase}favicon` }],
+            [
+              "link",
+              {
+                rel: "icon",
+                href: `${docsBase}assets/icon/chrome-mask-512.png`,
+                type: "image/png",
+                sizes: "512x512",
+              },
+            ],
+            [
+              "link",
+              {
+                rel: "icon",
+                href: `${docsBase}assets/icon/chrome-mask-192.png`,
+                type: "image/png",
+                sizes: "512x512",
+              },
+            ],
+            [
+              "link",
+              {
+                rel: "icon",
+                href: `${docsBase}assets/icon/chrome-512.png`,
+                type: "image/png",
+                sizes: "192x192",
+              },
+            ],
+            [
+              "link",
+              {
+                rel: "icon",
+                href: `${docsBase}assets/icon/chrome-192.png`,
+                type: "image/png",
+                sizes: "192x192",
+              },
+            ],
+            ["meta", { name: "theme-color", content: "#46bd87" }],
+            [
+              "link",
+              {
+                rel: "apple-touch-icon",
+                href: `${docsBase}assets/icon/apple-icon-152.png`,
+              },
+            ],
+            [
+              "meta",
+              {
+                name: "apple-mobile-web-app-status-bar-style",
+                content: "black",
+              },
+            ],
+          ]
+        : []),
+      ...head,
+    ],
     markdown: {
       code: {
         lineNumbers: 10,
@@ -92,6 +160,7 @@ export const config = (
             }),
           ]
         : []),
+      ...(pwa === false ? [removePWAPlugin()] : []),
 
       ...plugins,
     ],
@@ -115,7 +184,7 @@ export const config = (
       ]);
     },
 
-    shouldPrefetch: false,
+    ...(pwa ? { shouldPrefetch: false } : {}),
 
     clientConfigFile: path.resolve(__dirname, "./client.js"),
 

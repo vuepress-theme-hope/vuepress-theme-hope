@@ -4,6 +4,7 @@ import theme from "./theme.js";
 export default config(
   {
     name: "pwa2",
+    pwa: true,
   },
   {
     locales: {

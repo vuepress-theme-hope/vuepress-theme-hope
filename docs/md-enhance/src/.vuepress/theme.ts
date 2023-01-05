@@ -1,4 +1,4 @@
-import { pwa, theme } from "docs-shared";
+import { theme } from "docs-shared";
 import { enNavbarConfig, zhNavbarConfig } from "./navbar.js";
 import { enSidebarConfig, zhSidebarConfig } from "./sidebar.js";
 
@@ -59,11 +59,5 @@ export default theme("md-enhance", {
       vPre: true,
       vuePlayground: true,
     },
-
-    pwa: pwa({
-      name: "vuepress-plugin-md-enhance",
-      shortName: "VuePress2 Markdown Enhance plugin",
-      guide: "/guide/",
-    }),
   },
 });

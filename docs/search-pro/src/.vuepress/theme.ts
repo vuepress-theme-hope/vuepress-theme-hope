@@ -1,4 +1,4 @@
-import { pwa, theme } from "docs-shared";
+import { theme } from "docs-shared";
 
 export default theme("search-pro", {
   locales: {
@@ -18,10 +18,5 @@ export default theme("search-pro", {
     mdEnhance: {
       codetabs: true,
     },
-
-    pwa: pwa({
-      name: "vuepress-plugin-search-pro",
-      shortName: "VuePress2 Search plugin",
-    }),
   },
 });

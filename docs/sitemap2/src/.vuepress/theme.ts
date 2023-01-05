@@ -1,5 +1,5 @@
 import { createRequire } from "node:module";
-import { fs, pwa, theme } from "docs-shared";
+import { fs, theme } from "docs-shared";
 
 const { version } = fs.readJsonSync(
   createRequire(import.meta.url).resolve(
@@ -55,11 +55,5 @@ export default theme("sitemap2", {
     mdEnhance: {
       codetabs: true,
     },
-
-    pwa: pwa({
-      name: "vuepress-plugin-sitemap2",
-      shortName: "VuePress2 Sitemap plugin",
-      guide: "/guide/",
-    }),
   },
 });

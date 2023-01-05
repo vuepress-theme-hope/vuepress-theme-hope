@@ -1,4 +1,4 @@
-import { pwa, theme } from "docs-shared";
+import { theme } from "docs-shared";
 
 export default theme("lightgallery", {
   locales: {
@@ -21,10 +21,5 @@ export default theme("lightgallery", {
     },
 
     photoSwipe: false,
-
-    pwa: pwa({
-      name: "vuepress-plugin-lightgallery",
-      shortName: "VuePress2 lightgallery plugin",
-    }),
   },
 });

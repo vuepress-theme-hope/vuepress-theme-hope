@@ -1,4 +1,4 @@
-import { pwa, theme } from "docs-shared";
+import { theme } from "docs-shared";
 
 export default theme("seo2", {
   locales: {
@@ -33,10 +33,5 @@ export default theme("seo2", {
     mdEnhance: {
       codetabs: true,
     },
-
-    pwa: pwa({
-      name: "vuepress-shared",
-      shortName: "VuePress2 Shared utils",
-    }),
   },
 });
