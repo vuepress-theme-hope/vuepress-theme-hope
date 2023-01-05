@@ -262,12 +262,6 @@ export default hopeTheme({
                 purpose: "maskable",
                 type: "image/png",
               },
-              {
-                src: "/assets/icon/guide-monochrome.png",
-                sizes: "192x192",
-                purpose: "monochrome",
-                type: "image/png",
-              },
             ],
           },
         ],

@@ -197,12 +197,6 @@ export default theme("theme", {
                 purpose: "maskable",
                 type: "image/png",
               },
-              {
-                src: "/assets/icon/guide-monochrome.png",
-                sizes: "192x192",
-                purpose: "monochrome",
-                type: "image/png",
-              },
             ],
           },
           {
@@ -216,12 +210,6 @@ export default theme("theme", {
                 purpose: "maskable",
                 type: "image/png",
               },
-              {
-                src: "/assets/icon/config-monochrome.png",
-                sizes: "192x192",
-                purpose: "monochrome",
-                type: "image/png",
-              },
             ],
           },
           {
@@ -233,12 +221,6 @@ export default theme("theme", {
                 src: "/assets/icon/basic-maskable.png",
                 sizes: "192x192",
                 purpose: "maskable",
-                type: "image/png",
-              },
-              {
-                src: "/assets/icon/basic-monochrome.png",
-                sizes: "192x192",
-                purpose: "monochrome",
                 type: "image/png",
               },
             ],
