@@ -1,7 +1,7 @@
 import { withBase } from "@vuepress/client";
 import { isLinkHttp } from "@vuepress/shared";
+import { computed, defineComponent, h } from "vue";
 import { useLocaleConfig } from "vuepress-shared/client";
-import { computed, defineComponent, h, ref, watch } from "vue";
 
 import { SourceIcon } from "@theme-hope/modules/navbar/components/icons";
 
