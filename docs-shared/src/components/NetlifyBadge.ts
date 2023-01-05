@@ -10,7 +10,17 @@ declare const IS_NETLIFY: boolean;
 export default defineComponent({
   name: "NetlifyBadge",
 
-  setup() {
+  props: {
+    /**
+     * Badge alt
+     */
+    alt: {
+      type: String,
+      default: "Deploys by Netlify",
+    },
+  },
+
+  setup(props) {
     const { isDarkMode } = useDarkMode();
 
     return (): VNode | null =>
@@ -23,7 +33,7 @@ export default defineComponent({
                 src: `https://www.netlify.com/img/global/badges/netlify-${
                   isDarkMode.value ? "dark" : "light"
                 }.svg`,
-                alt: "Deploys by Netlify",
+                alt: props.alt,
               })
             )
           )
