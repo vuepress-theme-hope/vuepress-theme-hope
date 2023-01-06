@@ -49,6 +49,11 @@ blog:
     url: https://mrhope.site
     source: https://github.com/Mister-Hope/Mister-Hope.github.io
     preview: /assets/image/mrhope.jpg
+    
+  - name: heStudio
+    url: https://www.hestudio.org/
+    source: https://gitee.com/heStudio/blog-source.git
+    preview: /assets/image/hestudio.png
 ---
 
 ## Living Demo
