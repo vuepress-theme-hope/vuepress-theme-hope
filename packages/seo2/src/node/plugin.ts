@@ -1,8 +1,8 @@
 import { colors } from "@vuepress/utils";
-import { getPageText, stripTags } from "vuepress-shared/node";
 
 import { convertOptions } from "./compact/index.js";
 import { appendSEO, generateRobotsTxt } from "./seo.js";
+import { generateDescription } from "./description.js";
 import { logger } from "./utils.js";
 
 import type { Plugin, PluginFunction } from "@vuepress/core";
@@ -27,30 +27,12 @@ export const seoPlugin =
     return {
       ...plugin,
 
-      extendsPage: (page: ExtendPage, app): void => {
-        // generate description
-        if (
-          !page.frontmatter.description &&
-          options.autoDescription !== false
-        ) {
-          if (page.data.excerpt)
-            page.frontmatter.description = stripTags(page.data.excerpt)
-              // convert link breaks into spaces
-              .replace(/(?:\r?\n)+/g, " ")
-              // convert 2 or more spaces into 1
-              .replace(/ +/g, " ")
-              .trim();
-          else {
-            const pageText = getPageText(page);
+      extendsPage: (page: ExtendPage): void => {
+        generateDescription(page, options.autoDescription !== false);
+      },
 
-            page.frontmatter.description =
-              pageText.length > 180 ? `${pageText.slice(0, 177)}...` : pageText;
-          }
-
-          page.data.autoDesc = true;
-        }
-
-        appendSEO(page, options, app);
+      onInitialized: (app): void => {
+        appendSEO(app, options);
       },
 
       onGenerated: (app): Promise<void> => generateRobotsTxt(app.dir),

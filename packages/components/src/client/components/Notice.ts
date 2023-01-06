@@ -1,3 +1,4 @@
+import { isLinkHttp } from "@vuepress/shared";
 import {
   TransitionGroup,
   computed,

@@ -150,7 +150,7 @@ Components:
 - `@theme-hope/modules/info/components/AuthorInfo` 作者信息
 - `@theme-hope/modules/info/components/CategoryInfo` 分类信息
 - `@theme-hope/modules/info/components/DateInfo` 写作日期信息
-- `@theme-hope/modules/info/components/OriginalMark` 原创标识
+- `@theme-hope/modules/info/components/OriginalInfo` 原创标识
 - `@theme-hope/modules/info/components/PageInfo` 页面信息
 - `@theme-hope/modules/info/components/PageMeta` 页面元数据 information
 - `@theme-hope/modules/info/components/PageViewInfo` 浏览量信息 information

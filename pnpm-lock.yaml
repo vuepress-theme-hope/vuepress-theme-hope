@@ -51,10 +51,7 @@ importers:
       rollup-plugin-esbuild: 5.0.0
       sort-package-json: 2.1.0
       stylelint: 14.16.1
-      stylelint-config-prettier: 9.0.4
-      stylelint-config-standard: 29.0.0
-      stylelint-config-standard-scss: 6.1.0
-      stylelint-order: 6.0.0
+      stylelint-config-hope: 1.0.1
       tslib: 2.4.1
       tsx: 3.12.1
       typescript: 4.9.4
@@ -99,10 +96,7 @@ importers:
       rollup-plugin-esbuild: 5.0.0_2quxkyungzb4t3y6fnerqxxdya
       sort-package-json: 2.1.0
       stylelint: 14.16.1
-      stylelint-config-prettier: 9.0.4_stylelint@14.16.1
-      stylelint-config-standard: 29.0.0_stylelint@14.16.1
-      stylelint-config-standard-scss: 6.1.0_stylelint@14.16.1
-      stylelint-order: 6.0.0_stylelint@14.16.1
+      stylelint-config-hope: 1.0.1_stylelint@14.16.1
       tslib: 2.4.1
       tsx: 3.12.1
       typescript: 4.9.4
@@ -2834,9 +2828,6 @@ packages:
     peerDependencies:
       postcss: ^8.2
       postcss-selector-parser: ^6.0.10
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       postcss: 8.4.20
       postcss-selector-parser: 6.0.11
@@ -5020,9 +5011,6 @@ packages:
     hasBin: true
     peerDependencies:
       postcss: ^8.1.0
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       browserslist: 4.21.4
       caniuse-lite: 1.0.30001441
@@ -8067,9 +8055,6 @@ packages:
     engines: {node: ^10 || ^12 || >= 14}
     peerDependencies:
       postcss: ^8.1.0
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       postcss: 8.4.20
 
@@ -9596,9 +9581,6 @@ packages:
     engines: {node: ^12.20.0 || ^14.13.0 || >=15.0.0, npm: '>=7.0.0'}
     peerDependencies:
       postcss: ^8.0.0
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       csso: 5.0.5
       postcss: 8.4.20
@@ -9626,8 +9608,6 @@ packages:
       postcss: ^7.0.0 || ^8.0.1
       webpack: ^5.0.0
     peerDependenciesMeta:
-      postcss:
-        optional: true
       webpack:
         optional: true
     dependencies:
@@ -9646,9 +9626,6 @@ packages:
     engines: {node: ^10 || ^12 || >= 14}
     peerDependencies:
       postcss: ^8.1.0
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       postcss: 8.4.20
 
@@ -9657,9 +9634,6 @@ packages:
     engines: {node: ^10 || ^12 || >= 14}
     peerDependencies:
       postcss: ^8.1.0
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       icss-utils: 5.1.0_postcss@8.4.20
       postcss: 8.4.20
@@ -9671,9 +9645,6 @@ packages:
     engines: {node: ^10 || ^12 || >= 14}
     peerDependencies:
       postcss: ^8.1.0
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       postcss: 8.4.20
       postcss-selector-parser: 6.0.11
@@ -9683,9 +9654,6 @@ packages:
     engines: {node: ^10 || ^12 || >= 14}
     peerDependencies:
       postcss: ^8.1.0
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       icss-utils: 5.1.0_postcss@8.4.20
       postcss: 8.4.20
@@ -9699,21 +9667,17 @@ packages:
     engines: {node: '>=12.0'}
     peerDependencies:
       postcss: ^8.3.3
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       postcss: 8.4.20
     dev: true
 
-  /postcss-scss/4.0.6:
+  /postcss-scss/4.0.6_postcss@8.4.20:
     resolution: {integrity: sha512-rLDPhJY4z/i4nVFZ27j9GqLxj1pwxE80eAzUNRMXtcpipFYIeowerzBgG3yJhMtObGEXidtIgbUpQ3eLDsf5OQ==}
     engines: {node: '>=12.0'}
     peerDependencies:
       postcss: ^8.4.19
-    peerDependenciesMeta:
-      postcss:
-        optional: true
+    dependencies:
+      postcss: 8.4.20
     dev: true
 
   /postcss-selector-parser/6.0.11:
@@ -9727,9 +9691,6 @@ packages:
     resolution: {integrity: sha512-jM5m9ko8XAP1clKldYqDeVQHsr9O1/SsnMWWHYpHJ2FzoiFHySIzqyuvDo8Zo+ovuCZfu/ViDlBgIUXmcDtyUw==}
     peerDependencies:
       postcss: ^8.4.20
-    peerDependenciesMeta:
-      postcss:
-        optional: true
     dependencies:
       postcss: 8.4.20
     dev: true
@@ -10675,6 +10636,19 @@ packages:
     resolution: {integrity: sha512-Dj1Okke1C3uKKwQcetra4jSuk0DqbzbYtXipzFlFMZtowbF1x7BKJwB9AayVMyFARvU8EDrZdcax4At/452cAg==}
     dev: true
 
+  /stylelint-config-hope/1.0.1_stylelint@14.16.1:
+    resolution: {integrity: sha512-2QF2f557gtXaQDSKmCP1SZswL7lAYsN1KaL3Z9f7htTdvHpMZjaU4/Eof9KT/G2dEVLbzQEPUadfXLm8QXBQfg==}
+    peerDependencies:
+      stylelint: ^14.16.1
+    dependencies:
+      postcss: 8.4.20
+      stylelint: 14.16.1
+      stylelint-config-prettier: 9.0.4_stylelint@14.16.1
+      stylelint-config-standard: 29.0.0_stylelint@14.16.1
+      stylelint-config-standard-scss: 6.1.0_vitr26fcqo6sphdfxyxll4n2gy
+      stylelint-order: 6.0.0_stylelint@14.16.1
+    dev: true
+
   /stylelint-config-prettier/9.0.4_stylelint@14.16.1:
     resolution: {integrity: sha512-38nIGTGpFOiK5LjJ8Ma1yUgpKENxoKSOhbDNSemY7Ep0VsJoXIW9Iq/2hSt699oB9tReynfWicTAoIHiq8Rvbg==}
     engines: {node: '>= 12'}
@@ -10685,7 +10659,7 @@ packages:
       stylelint: 14.16.1
     dev: true
 
-  /stylelint-config-recommended-scss/8.0.0_stylelint@14.16.1:
+  /stylelint-config-recommended-scss/8.0.0_vitr26fcqo6sphdfxyxll4n2gy:
     resolution: {integrity: sha512-BxjxEzRaZoQb7Iinc3p92GS6zRdRAkIuEu2ZFLTxJK2e1AIcCb5B5MXY9KOXdGTnYFZ+KKx6R4Fv9zU6CtMYPQ==}
     peerDependencies:
       postcss: ^8.3.3
@@ -10694,7 +10668,8 @@ packages:
       postcss:
         optional: true
     dependencies:
-      postcss-scss: 4.0.6
+      postcss: 8.4.20
+      postcss-scss: 4.0.6_postcss@8.4.20
       stylelint: 14.16.1
       stylelint-config-recommended: 9.0.0_stylelint@14.16.1
       stylelint-scss: 4.3.0_stylelint@14.16.1
@@ -10708,7 +10683,7 @@ packages:
       stylelint: 14.16.1
     dev: true
 
-  /stylelint-config-standard-scss/6.1.0_stylelint@14.16.1:
+  /stylelint-config-standard-scss/6.1.0_vitr26fcqo6sphdfxyxll4n2gy:
     resolution: {integrity: sha512-iZ2B5kQT2G3rUzx+437cEpdcnFOQkwnwqXuY8Z0QUwIHQVE8mnYChGAquyKFUKZRZ0pRnrciARlPaR1RBtPb0Q==}
     peerDependencies:
       postcss: ^8.3.3
@@ -10717,8 +10692,9 @@ packages:
       postcss:
         optional: true
     dependencies:
+      postcss: 8.4.20
       stylelint: 14.16.1
-      stylelint-config-recommended-scss: 8.0.0_stylelint@14.16.1
+      stylelint-config-recommended-scss: 8.0.0_vitr26fcqo6sphdfxyxll4n2gy
       stylelint-config-standard: 29.0.0_stylelint@14.16.1
     dev: true
 

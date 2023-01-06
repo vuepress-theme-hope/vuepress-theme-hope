@@ -6,31 +6,37 @@ import {
 } from "@vuepress/shared";
 import { Logger, isAbsoluteUrl, isUrl } from "vuepress-shared/node";
 
-import type { App, SiteLocaleConfig } from "@vuepress/core";
+import type { App, Page } from "@vuepress/core";
 import type { SeoOptions } from "./options.js";
 import type { ExtendPage } from "./typings/index.js";
 
 export const logger = new Logger("vuepress-plugin-seo2");
 
-export interface LocaleConfig {
-  localePath: string;
+export interface AlternateInfo {
+  path: string;
   lang: string;
 }
 
-export const getLocales = (
-  lang: string,
-  locales: SiteLocaleConfig
-): LocaleConfig[] =>
-  Object.entries(locales)
-    .map(([localePath, value]) => ({ localePath, lang: value.lang }))
+export const getAlternateInfo = (
+  { lang, path, pathLocale }: Page,
+  { pages, siteData }: App
+): AlternateInfo[] =>
+  Object.entries(siteData.locales)
+    .map(([localePath, { lang }]) => ({
+      path: `${localePath}${path.replace(pathLocale, "")}`,
+      lang,
+    }))
     .filter(
-      (item): item is LocaleConfig => isString(item.lang) && item.lang !== lang
+      (item): item is AlternateInfo =>
+        isString(item.lang) &&
+        item.lang !== lang &&
+        pages.some(({ path }) => path === item.path)
     );
 
 export const getCover = (
   { frontmatter }: ExtendPage,
-  { hostname }: SeoOptions,
-  { options: { base } }: App
+  { options: { base } }: App,
+  { hostname }: SeoOptions
 ): string | null => {
   const { banner, cover } = frontmatter;
 
@@ -51,8 +57,8 @@ export const getCover = (
 
 export const getImages = (
   { content }: ExtendPage,
-  { hostname }: SeoOptions,
-  { options: { base } }: App
+  { options: { base } }: App,
+  { hostname }: SeoOptions
 ): string[] => {
   const result = /!\[.*?\]\((.*?)\)/giu.exec(content);
 

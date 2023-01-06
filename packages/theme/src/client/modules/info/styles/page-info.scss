@@ -17,9 +17,11 @@
 
   > span {
     display: flex;
-    flex-shrink: 0;
+
+    // flex-shrink: 0;
     align-items: center;
 
+    max-width: 100%;
     margin-inline-end: 0.5em;
 
     line-height: 2;
@@ -36,24 +38,6 @@
     @media print {
       display: flex !important;
     }
-  }
-
-  .origin {
-    position: relative;
-
-    display: inline-block;
-    vertical-align: middle;
-
-    overflow: hidden;
-
-    padding: 0 0.5em;
-    border: 0.5px solid var(--dark-grey);
-    border-radius: 0.75em;
-
-    background: var(--bg-color);
-
-    font-size: 0.75em;
-    line-height: 1.5;
   }
 
   .icon {
@@ -74,11 +58,5 @@
     &:active {
       color: var(--theme-color);
     }
-  }
-
-  .author-item {
-    display: inline-block;
-    margin: 0 4px;
-    font-weight: normal;
   }
 }

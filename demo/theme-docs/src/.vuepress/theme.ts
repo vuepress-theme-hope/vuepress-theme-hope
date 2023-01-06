@@ -21,8 +21,6 @@ export default hopeTheme({
 
   docsDir: "demo/theme-docs/src",
 
-  pageInfo: ["Author", "Original", "Date", "Category", "Tag", "ReadingTime"],
-
   locales: {
     "/": {
       // navbar

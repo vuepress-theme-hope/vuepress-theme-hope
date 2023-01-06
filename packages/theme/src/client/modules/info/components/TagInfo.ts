@@ -8,7 +8,7 @@ import { useMetaLocale } from "@theme-hope/modules/info/composables/index";
 import type { PropType, VNode } from "vue";
 import type { PageTag } from "@theme-hope/modules/info/utils/index";
 
-import "../styles/tag.scss";
+import "../styles/tag-info.scss";
 
 export default defineComponent({
   name: "TagInfo",
@@ -51,7 +51,7 @@ export default defineComponent({
         ? h(
             "span",
             {
-              class: "tag-info",
+              class: "page-tag-info",
               "aria-label": `${metaLocale.value.tag}${props.pure ? "" : "🏷"}`,
               ...(props.pure ? {} : { "data-balloon-pos": "down" }),
             },
@@ -63,11 +63,10 @@ export default defineComponent({
                   "span",
                   {
                     class: [
-                      "tag-item",
+                      "page-tag-item",
                       {
                         // TODO: magic number 9 is tricky here
-                        [`tag-item${generateIndexFromHash(name, 9)}`]:
-                          !props.pure,
+                        [`tag${generateIndexFromHash(name, 9)}`]: !props.pure,
                         clickable: path,
                       },
                     ],

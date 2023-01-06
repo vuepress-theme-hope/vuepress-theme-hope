@@ -1,49 +1,50 @@
 @use "sass:color";
 @use "sass:list";
 
-.tag-info {
-  .tag-item {
-    position: relative;
+.page-tag-info {
+  flex-wrap: wrap;
+}
 
-    display: inline-block;
-    vertical-align: middle;
+.page-tag-item {
+  position: relative;
 
-    overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
 
-    min-width: 1.5rem;
-    margin: 0 0.125rem;
-    padding: 0.125rem 0.25rem 0.125rem 0.625rem;
+  overflow: hidden;
 
-    font-weight: bold;
-    font-size: 0.625rem;
-    line-height: 1.5;
-    text-align: center;
+  min-width: 1.5rem;
+  margin: 0.125rem;
+  padding: 0.125rem 0.25rem 0.125rem 0.625rem;
 
-    transition: background var(--color-transition),
-      color var(--color-transition);
+  font-weight: bold;
+  font-size: 0.625rem;
+  line-height: 1.5;
+  text-align: center;
 
-    @media print {
-      padding: 0;
-      font-weight: normal;
+  transition: background var(--color-transition), color var(--color-transition);
 
-      &::after {
-        content: ", ";
-      }
+  @media print {
+    padding: 0;
+    font-weight: normal;
 
-      &:last-of-type::after {
-        content: "";
-      }
+    &::after {
+      content: ", ";
     }
 
-    &.clickable:hover {
-      cursor: pointer;
+    &:last-of-type::after {
+      content: "";
     }
+  }
+
+  &.clickable:hover {
+    cursor: pointer;
   }
 
   @each $color in hope-config.$colors {
     $index: list.index(hope-config.$colors, $color) - 1;
 
-    .tag-item#{$index} {
+    &.tag#{$index} {
       background: color.scale($color, $lightness: 90%);
       background: linear-gradient(
             135deg,

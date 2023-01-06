@@ -150,7 +150,7 @@ export default {
 - `@theme-hope/modules/info/components/AuthorInfo`: информация об авторе
 - `@theme-hope/modules/info/components/CategoryInfo`: информация о категории
 - `@theme-hope/modules/info/components/DateInfo`: информация о дате
-- `@theme-hope/modules/info/components/OriginalMark`: оригинальное выделение
+- `@theme-hope/modules/info/components/OriginalInfo`: оригинальное выделение
 - `@theme-hope/modules/info/components/PageInfo`: информация о странице
 - `@theme-hope/modules/info/components/PageMeta`: метаинформация страницы
 - `@theme-hope/modules/info/components/PageViewInfo`: информация о просмотрах страниц

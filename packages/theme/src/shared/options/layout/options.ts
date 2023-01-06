@@ -78,7 +78,7 @@ export interface LayoutLocaleOptions
    *
    * @see https://theme-hope.vuejs.vuepress/zh/guide/feature/page-info.html
    *
-   * @default ["Author", "Original", "Date", "Category", "Tag", "ReadingTime"]
+   * @default ["Author", "Original", "Date", "PageView", "ReadingTime", "Category", "Tag"]
    */
   pageInfo?: PageInfo[] | false;
 

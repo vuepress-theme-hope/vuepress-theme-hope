@@ -57,7 +57,7 @@ export default defineComponent({
         ? h(
             "span",
             {
-              class: "reading-time-info",
+              class: "page-reading-time-info",
               "aria-label": `${metaLocale.value.readingTime}${
                 props.pure ? "" : "⌛"
               }`,

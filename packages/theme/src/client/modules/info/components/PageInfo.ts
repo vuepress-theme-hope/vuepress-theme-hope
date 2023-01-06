@@ -8,7 +8,7 @@ import DateInfo from "@theme-hope/modules/info/components/DateInfo";
 import PageViewInfo from "@theme-hope/modules/info/components/PageViewInfo";
 import ReadingTimeInfo from "@theme-hope/modules/info/components/ReadingTimeInfo";
 import TagInfo from "@theme-hope/modules/info/components/TagInfo";
-import OriginalInfo from "@theme-hope/modules/info/components/OriginalMark";
+import OriginalInfo from "@theme-hope/modules/info/components/OriginalInfo";
 import WordInfo from "@theme-hope/modules/info/components/WordInfo";
 
 import type { PropType, VNode } from "vue";
@@ -117,9 +117,10 @@ export default defineComponent({
         "Author",
         "Original",
         "Date",
+        "PageView",
+        "ReadingTime",
         "Category",
         "Tag",
-        "ReadingTime",
       ],
     },
 

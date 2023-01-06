@@ -1,6 +1,12 @@
 import type { App, HeadConfig, Page } from "@vuepress/core";
 import type { Author } from "vuepress-shared/node";
-import type { ArticleJSONLD, ExtendPage, SeoContent } from "./typings/index.js";
+import type {
+  ArticleSchema,
+  BlogPostingSchema,
+  ExtendPage,
+  SeoContent,
+  WebPageSchema,
+} from "./typings/index.js";
 
 export interface SeoOptions {
   /**
@@ -136,7 +142,7 @@ export interface SeoOptions {
      *
      * 由插件推断出的 JSON-LD 对象
      */
-    jsonLD: ArticleJSONLD | null,
+    jsonLD: ArticleSchema | BlogPostingSchema | WebPageSchema,
     /**
      * Page Object
      *
@@ -145,7 +151,7 @@ export interface SeoOptions {
     page: ExtendPage<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>,
     /** VuePress App */
     app: App
-  ) => ArticleJSONLD | null;
+  ) => ArticleSchema | BlogPostingSchema | WebPageSchema;
 
   /**
    * Custom head tags

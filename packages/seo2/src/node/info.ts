@@ -7,11 +7,17 @@ import {
 } from "@vuepress/shared";
 import { getAuthor, getDate } from "vuepress-shared/node";
 
-import { getCover, getImages, getLocales, resolveUrl } from "./utils.js";
+import { getAlternateInfo, getCover, getImages, resolveUrl } from "./utils.js";
 
 import type { App } from "@vuepress/core";
 import type { SeoOptions } from "./options.js";
-import type { ArticleJSONLD, ExtendPage, SeoContent } from "./typings/index.js";
+import type {
+  ArticleSchema,
+  BlogPostingSchema,
+  ExtendPage,
+  SeoContent,
+  WebPageSchema,
+} from "./typings/index.js";
 
 export const getOGP = (
   page: ExtendPage,
@@ -21,6 +27,7 @@ export const getOGP = (
   const {
     isArticle = (page): boolean =>
       Boolean(page.filePathRelative && !page.frontmatter["home"]),
+    author: globalAuthor,
   } = options;
   const {
     options: { base },
@@ -43,30 +50,16 @@ export const getOGP = (
     siteData.locales["/"]?.title ||
     "";
   const author =
-    pageAuthor === false ? [] : getAuthor(pageAuthor || options.author);
-  const { updatedTime } = git;
-
-  const modifiedTime = updatedTime ? new Date(updatedTime).toISOString() : "";
-  const articleTags: string[] = isArray(tags)
-    ? tags
-    : isString(tag)
-    ? [tag]
-    : [];
-
+    pageAuthor === false ? [] : getAuthor(pageAuthor || globalAuthor);
+  const modifiedTime = git.updatedTime
+    ? new Date(git.updatedTime).toISOString()
+    : null;
+  const articleTags = isArray(tags) ? tags : isString(tag) ? [tag] : [];
   const articleTitle = page.title;
-  const cover = getCover(page, options, app);
-  const images = getImages(page, options, app);
-  const locales = getLocales(page.lang, siteData.locales);
-
-  let publishedTime = "";
-
-  if (date instanceof Date) publishedTime = new Date(date).toISOString();
-  else if (date) {
-    const dateInfo = getDate(date);
-
-    if (dateInfo && dateInfo.value)
-      publishedTime = dateInfo.value.toISOString();
-  }
+  const cover = getCover(page, app, options);
+  const images = getImages(page, app, options);
+  const locales = getAlternateInfo(page, app);
+  const publishedTime = getDate(date)?.value?.toISOString();
 
   const ogImage = cover || images[0] || options.fallBackImage || "";
 
@@ -77,9 +70,9 @@ export const getOGP = (
     "og:description": page.frontmatter.description || "",
     "og:type": isArticle(page) ? "article" : "website",
     "og:image": ogImage,
-    "og:updated_time": modifiedTime,
     "og:locale": page.lang,
     "og:locale:alternate": locales.map(({ lang }) => lang),
+    ...(modifiedTime ? { "og:updated_time": modifiedTime } : {}),
     ...(options.restrictions
       ? { "og:restrictions:age": options.restrictions }
       : {}),
@@ -94,8 +87,8 @@ export const getOGP = (
 
     "article:author": author[0]?.name,
     "article:tag": articleTags,
-    "article:published_time": publishedTime,
-    "article:modified_time": modifiedTime,
+    ...(publishedTime ? { "article:published_time": publishedTime } : {}),
+    ...(modifiedTime ? { "article:modified_time": modifiedTime } : {}),
   };
 
   return defaultOGP;
@@ -105,48 +98,44 @@ export const getJSONLD = (
   page: ExtendPage,
   options: SeoOptions,
   app: App
-): ArticleJSONLD | null => {
+): ArticleSchema | BlogPostingSchema | WebPageSchema => {
   const {
     isArticle = (page): boolean =>
       Boolean(page.filePathRelative && !page.frontmatter["home"]),
+    author: globalAuthor,
   } = options;
 
   const {
-    frontmatter: { author: pageAuthor, time, date = time },
+    title,
+    frontmatter: { author: pageAuthor, description, time, date = time },
     data: { git = {} },
   } = page;
 
   const author =
-    pageAuthor === false ? [] : getAuthor(pageAuthor || options.author);
-  const { updatedTime } = git;
-
-  const modifiedTime = updatedTime ? new Date(updatedTime).toISOString() : "";
-
-  const articleTitle = page.title;
-  const cover = getCover(page, options, app);
-  const images = getImages(page, options, app);
-
-  let publishedTime = "";
-
-  if (date instanceof Date) publishedTime = new Date(date).toISOString();
-  else if (date) {
-    const dateInfo = getDate(date);
-
-    if (dateInfo && dateInfo.value)
-      publishedTime = dateInfo.value.toISOString();
-  }
+    pageAuthor === false ? [] : getAuthor(pageAuthor || globalAuthor);
+  const datePublished = getDate(date)?.value?.toISOString();
+  const dateModified = git.updatedTime
+    ? new Date(git.updatedTime).toISOString()
+    : null;
+  const cover = getCover(page, app, options);
+  const images = getImages(page, app, options);
 
   return isArticle(page)
     ? {
         "@context": "https://schema.org",
-        "@type": "NewsArticle",
-        headline: articleTitle,
+        "@type": "Article",
+        headline: title,
         image: images.length ? images : [cover || options.fallBackImage || ""],
-        datePublished: publishedTime,
-        dateModified: modifiedTime,
+        datePublished,
+        dateModified,
         author: author.map((item) => ({ "@type": "Person", ...item })),
       }
-    : null;
+    : {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        name: title,
+        ...(description ? { description } : {}),
+      };
 };
 
 export const getCanonicalLink = (
@@ -162,13 +151,9 @@ export const getCanonicalLink = (
 export const getAlternateLinks = (
   page: ExtendPage,
   { hostname }: SeoOptions,
-  { options, siteData }: App
+  app: App
 ): { lang: string; path: string }[] =>
-  getLocales(page.lang, siteData.locales).map(({ lang, localePath }) => ({
+  getAlternateInfo(page, app).map(({ lang, path }) => ({
     lang,
-    path: resolveUrl(
-      hostname,
-      options.base,
-      `${localePath}${page.path.replace(page.pathLocale, "")}`
-    ),
+    path: resolveUrl(hostname, app.options.base, path),
   }));
