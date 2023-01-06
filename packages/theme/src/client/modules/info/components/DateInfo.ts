@@ -50,7 +50,7 @@ export default defineComponent({
         ? h(
             "span",
             {
-              class: "date-info",
+              class: "page-date-info",
               "aria-label": `${metaLocale.value.date}${props.pure ? "" : "📅"}`,
               ...(props.pure ? {} : { "data-balloon-pos": "down" }),
             },

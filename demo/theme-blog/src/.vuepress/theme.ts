@@ -22,8 +22,6 @@ export default hopeTheme({
 
   docsDir: "demo/theme-blog/src",
 
-  pageInfo: ["Author", "Original", "Date", "Category", "Tag", "ReadingTime"],
-
   hotReload: true,
 
   blog: {

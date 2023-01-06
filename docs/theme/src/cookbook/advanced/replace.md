@@ -148,7 +148,7 @@ Components:
 - `@theme-hope/modules/info/components/AuthorInfo`: author information
 - `@theme-hope/modules/info/components/CategoryInfo`: category information
 - `@theme-hope/modules/info/components/DateInfo`: date information
-- `@theme-hope/modules/info/components/OriginalMark`: original mark
+- `@theme-hope/modules/info/components/OriginalInfo`: original mark
 - `@theme-hope/modules/info/components/PageInfo`: page information
 - `@theme-hope/modules/info/components/PageMeta`: page meta information
 - `@theme-hope/modules/info/components/PageViewInfo`: page views information

@@ -66,7 +66,7 @@ export default defineComponent({
         ? h(
             "span",
             {
-              class: "visitor-info",
+              class: "page-pageview-info",
               "aria-label": `${metaLocale.value.views}${
                 props.pure ? "" : "🔢"
               }`,

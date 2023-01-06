@@ -47,7 +47,7 @@ export default defineComponent({
         ? h(
             "span",
             {
-              class: "words-info",
+              class: "page-word-info",
               "aria-label": `${metaLocale.value.words}${
                 props.pure ? "" : "🔠"
               }`,

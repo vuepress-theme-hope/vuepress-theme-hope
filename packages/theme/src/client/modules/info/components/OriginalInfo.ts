@@ -4,8 +4,10 @@ import { useMetaLocale } from "@theme-hope/modules/info/composables/index";
 
 import type { VNode } from "vue";
 
+import "../styles/original-info.scss";
+
 export default defineComponent({
-  name: "OriginalMark",
+  name: "OriginalInfo",
 
   inheritAttrs: false,
 
@@ -23,7 +25,7 @@ export default defineComponent({
 
     return (): VNode | null =>
       props.isOriginal
-        ? h("span", { class: "origin" }, metaLocale.value.origin)
+        ? h("span", { class: "page-original-info" }, metaLocale.value.origin)
         : null;
   },
 });

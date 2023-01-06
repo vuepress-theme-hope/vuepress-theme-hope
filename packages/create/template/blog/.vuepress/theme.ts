@@ -18,8 +18,6 @@ export default hopeTheme({
 
   docsDir: "docs",
 
-  pageInfo: ["Author", "Original", "Date", "Category", "Tag", "ReadingTime"],
-
   blog: {
     medias: {
       Baidu: "https://example.com",

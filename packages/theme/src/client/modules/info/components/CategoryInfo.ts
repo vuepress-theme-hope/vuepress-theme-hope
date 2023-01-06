@@ -8,7 +8,7 @@ import { useMetaLocale } from "@theme-hope/modules/info/composables/index";
 import type { PropType, VNode } from "vue";
 import type { PageCategory } from "@theme-hope/modules/info/utils/index";
 
-import "../styles/category.scss";
+import "../styles/category-info.scss";
 
 export default defineComponent({
   name: "CategoryInfo",
@@ -51,7 +51,7 @@ export default defineComponent({
         ? h(
             "span",
             {
-              class: "category-info",
+              class: "page-category-info",
               "aria-label": `${metaLocale.value.category}${
                 props.pure ? "" : "🌈"
               }`,
@@ -65,7 +65,7 @@ export default defineComponent({
                   "span",
                   {
                     class: [
-                      "category-item",
+                      "page-category-item",
                       {
                         // TODO: magic number 9 is tricky here
                         [`category${generateIndexFromHash(name, 9)}`]:

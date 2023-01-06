@@ -6,6 +6,8 @@ import { useMetaLocale } from "@theme-hope/modules/info/composables/index";
 import type { PropType, VNode } from "vue";
 import type { AuthorInfo } from "vuepress-shared/client";
 
+import "../styles/author-info.scss";
+
 export default defineComponent({
   name: "AuthorInfo",
 
@@ -38,7 +40,7 @@ export default defineComponent({
         ? h(
             "span",
             {
-              class: "author-info",
+              class: "page-author-info",
               "aria-label": `${metaLocale.value.author}${
                 props.pure ? "" : "🖊"
               }`,
@@ -53,14 +55,14 @@ export default defineComponent({
                     ? h(
                         "a",
                         {
-                          class: "author-item",
+                          class: "page-author-item",
                           href: item.url,
                           target: "_blank",
                           rel: "noopener noreferrer",
                         },
                         item.name
                       )
-                    : h("span", { class: "author-item" }, item.name)
+                    : h("span", { class: "page-author-item" }, item.name)
                 )
               ),
               h("span", {

@@ -44,7 +44,7 @@ export const theme = (
     copyright: false,
     displayFooter: true,
 
-    pageInfo: ["Category", "Tag", "ReadingTime"],
+    pageInfo: ["ReadingTime", "Category", "Tag"],
 
     plugins: {
       comment: {
