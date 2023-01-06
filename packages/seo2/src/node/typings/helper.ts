@@ -1,6 +1,6 @@
 import type { Page, PageFrontmatter } from "@vuepress/core";
 import type { GitData } from "@vuepress/plugin-git";
-import type { BasePageFrontMatter } from "vuepress-shared";
+import type { BasePageFrontMatter } from "vuepress-shared/node";
 
 export interface SeoPluginPageData {
   autoDesc?: boolean;

@@ -16,6 +16,10 @@ div[class*="language-"] {
     outline: none;
     cursor: pointer;
 
+    @media print {
+      display: none;
+    }
+
     .copy-icon {
       background: currentcolor;
 
@@ -132,11 +136,5 @@ div[class*="language-"] {
   &:hover > button.copy-code-button.pure,
   > button.copy-code-button.pure:focus {
     opacity: 1;
-  }
-}
-
-@media print {
-  div[class*="language-"] > button.copy-code-button {
-    display: none;
   }
 }

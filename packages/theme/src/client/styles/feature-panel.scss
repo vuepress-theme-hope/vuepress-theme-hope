@@ -109,11 +109,14 @@
 
     .icon {
       display: inline-block;
-      margin-inline-end: 0.5rem;
-      color: var(--theme-color);
+
       width: 1.1em;
-      font-size: 1.1em;
+      margin-inline-end: 0.5rem;
+
+      color: var(--theme-color);
+
       font-weight: normal;
+      font-size: 1.1em;
     }
 
     &:hover {

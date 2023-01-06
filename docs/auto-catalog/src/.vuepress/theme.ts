@@ -1,6 +1,6 @@
 import { theme } from "docs-shared";
 
-export default theme("blog2", {
+export default theme("auto-catalog", {
   locales: {
     "/": {
       navbar: ["/", "/guide", "/config", "/demo"],

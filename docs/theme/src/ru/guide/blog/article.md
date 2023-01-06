@@ -108,7 +108,7 @@ You shall set the following options:
 ```ts
 import { defineUserConfig } from "vuepress";
 // you may need to install vuepress-shared to use its `compareDate`
-import { compareDate } from "vuepress-shared";
+import { compareDate } from "vuepress-shared/node";
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default defineUserConfig({

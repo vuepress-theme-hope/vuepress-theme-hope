@@ -1,4 +1,4 @@
-import type { BasePageFrontMatter } from "vuepress-shared";
+import type { BasePageFrontMatter } from "vuepress-shared/node";
 import type { FeedAuthor, FeedCategory, FeedContributor } from "./feed.js";
 
 export interface FeedFrontmatterOption {
