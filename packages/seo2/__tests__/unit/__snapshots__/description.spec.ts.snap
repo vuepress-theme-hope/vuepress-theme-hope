@@ -38,6 +38,13 @@ exports[`Should generate seo information > Should contain basic properties 1`] =
     },
   ],
   [
+    "script",
+    {
+      "type": "application/ld+json",
+    },
+    "{\\"@context\\":\\"https://schema.org\\",\\"@type\\":\\"WebPage\\",\\"name\\":\\"\\",\\"description\\":\\"This is a home page.\\"}",
+  ],
+  [
     "link",
     {
       "href": "https://exmaple.com/",
@@ -98,6 +105,13 @@ exports[`Should generate seo information > Should contain basic properties 2`] =
       "content": "zh-CN",
       "property": "og:locale:alternate",
     },
+  ],
+  [
+    "script",
+    {
+      "type": "application/ld+json",
+    },
+    "{\\"@context\\":\\"https://schema.org\\",\\"@type\\":\\"Article\\",\\"headline\\":\\"Description Test\\",\\"image\\":[\\"\\"],\\"dateModified\\":null,\\"author\\":[]}",
   ],
   [
     "link",
@@ -162,6 +176,13 @@ exports[`Should generate seo information > Should contain basic properties 3`] =
     },
   ],
   [
+    "script",
+    {
+      "type": "application/ld+json",
+    },
+    "{\\"@context\\":\\"https://schema.org\\",\\"@type\\":\\"Article\\",\\"headline\\":\\"Heading 1\\",\\"image\\":[\\"\\"],\\"dateModified\\":null,\\"author\\":[]}",
+  ],
+  [
     "link",
     {
       "href": "https://exmaple.com/example.html",
@@ -215,6 +236,13 @@ exports[`Should generate seo information > Should contain basic properties 4`] =
       "content": "en-US",
       "property": "og:locale:alternate",
     },
+  ],
+  [
+    "script",
+    {
+      "type": "application/ld+json",
+    },
+    "{\\"@context\\":\\"https://schema.org\\",\\"@type\\":\\"WebPage\\",\\"name\\":\\"\\",\\"description\\":\\"这是一个主页。\\"}",
   ],
   [
     "link",
@@ -279,6 +307,13 @@ exports[`Should generate seo information > Should contain basic properties 5`] =
     },
   ],
   [
+    "script",
+    {
+      "type": "application/ld+json",
+    },
+    "{\\"@context\\":\\"https://schema.org\\",\\"@type\\":\\"Article\\",\\"headline\\":\\"描述测试\\",\\"image\\":[\\"\\"],\\"dateModified\\":null,\\"author\\":[]}",
+  ],
+  [
     "link",
     {
       "href": "https://exmaple.com/zh/description.html",
@@ -341,6 +376,13 @@ exports[`Should generate seo information > Should contain basic properties 6`] =
     },
   ],
   [
+    "script",
+    {
+      "type": "application/ld+json",
+    },
+    "{\\"@context\\":\\"https://schema.org\\",\\"@type\\":\\"Article\\",\\"headline\\":\\"一级标题\\",\\"image\\":[\\"\\"],\\"dateModified\\":null,\\"author\\":[]}",
+  ],
+  [
     "link",
     {
       "href": "https://exmaple.com/zh/example.html",
@@ -382,25 +424,17 @@ exports[`Should generate seo information > Should contain basic properties 7`] =
     },
   ],
   [
-    "meta",
+    "script",
     {
-      "content": "zh-CN",
-      "property": "og:locale:alternate",
+      "type": "application/ld+json",
     },
+    "{\\"@context\\":\\"https://schema.org\\",\\"@type\\":\\"WebPage\\",\\"name\\":\\"\\"}",
   ],
   [
     "link",
     {
       "href": "https://exmaple.com/404.html",
       "rel": "canonical",
-    },
-  ],
-  [
-    "link",
-    {
-      "href": "https://exmaple.com/zh/404.html",
-      "hreflang": "zh-cn",
-      "rel": "alternate",
     },
   ],
 ]
