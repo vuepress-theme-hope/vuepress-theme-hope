@@ -7,7 +7,7 @@ import {
   ref,
 } from "vue";
 import { useRouter } from "vue-router";
-import { useLocaleConfig } from "vuepress-shared/client";
+import { isAbsoluteUrl, useLocaleConfig } from "vuepress-shared/client";
 
 import { CloseIcon } from "./icons.js";
 
@@ -15,6 +15,7 @@ import type { PropType, VNode } from "vue";
 import type { NoticeLocaleOptions } from "../../shared/index.js";
 
 import "../styles/notice.scss";
+import { isLinkHttp } from "@vuepress/shared";
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names
@@ -93,8 +94,8 @@ export default defineComponent({
 
     const openLink = (link?: string): void => {
       if (link) {
-        if (link.startsWith("/")) void router.push(link);
-        else window.open(link);
+        if (isAbsoluteUrl(link)) void router.push(link);
+        else if (isLinkHttp(link)) window.open(link);
       }
       close();
     };

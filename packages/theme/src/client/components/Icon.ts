@@ -1,6 +1,7 @@
 import { withBase } from "@vuepress/client";
 import { isLinkHttp } from "@vuepress/shared";
 import { h, resolveComponent } from "vue";
+import { isAbsoluteUrl } from "vuepress-shared/client";
 
 import type { FunctionalComponent } from "vue";
 
@@ -15,7 +16,7 @@ const Icon: FunctionalComponent<IconProps> = (props) => {
 
   return isLinkHttp(icon)
     ? h("img", { class: "icon", src: icon })
-    : icon.startsWith("/")
+    : isAbsoluteUrl(icon)
     ? h("img", { class: "icon", src: withBase(icon) })
     : h(resolveComponent("FontIcon"), props);
 };

@@ -16,7 +16,7 @@ import type { ReadingTime } from "vuepress-plugin-reading-time2";
 import type {
   AuthorInfo as AuthorInfoType,
   DateInfo as DateInfoType,
-} from "vuepress-shared";
+} from "vuepress-shared/client";
 import type {
   PageCategory,
   PageTag,

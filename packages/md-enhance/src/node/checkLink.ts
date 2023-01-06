@@ -1,4 +1,5 @@
 import { logger } from "@vuepress/utils";
+import { isAbsoluteUrl } from "vuepress-shared/node";
 
 import type { App, Page } from "@vuepress/core";
 import type { MarkdownEnhanceOptions } from "./options.js";
@@ -31,7 +32,7 @@ export const checkLinks = (page: Page, app: App): void => {
   const brokenLinks = [
     ...markdownLinks
       // relative markdown links
-      .filter(({ raw }) => !raw.startsWith("/"))
+      .filter(({ raw }) => !isAbsoluteUrl(raw))
       .filter(({ relative }) =>
         // check whether the page exists
         pages.every(
@@ -40,7 +41,7 @@ export const checkLinks = (page: Page, app: App): void => {
       ),
     ...markdownLinks
       // absolute markdown links
-      .filter(({ raw }) => raw.startsWith("/"))
+      .filter(({ raw }) => isAbsoluteUrl(raw))
       .filter(({ absolute }) =>
         // check whether the page exists
         pages.every(

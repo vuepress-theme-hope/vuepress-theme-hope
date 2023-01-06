@@ -117,7 +117,7 @@ tag:
 ```ts
 import { defineUserConfig } from "vuepress";
 // 你可能需要安装 vuepress-shared 来使用它的 `compareDate`
-import { compareDate } from "vuepress-shared";
+import { compareDate } from "vuepress-shared/node";
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default defineUserConfig({

@@ -4,7 +4,7 @@ import { AuthorIcon } from "@theme-hope/modules/info/components/icons";
 import { useMetaLocale } from "@theme-hope/modules/info/composables/index";
 
 import type { PropType, VNode } from "vue";
-import type { AuthorInfo } from "vuepress-shared";
+import type { AuthorInfo } from "vuepress-shared/client";
 
 export default defineComponent({
   name: "AuthorInfo",
