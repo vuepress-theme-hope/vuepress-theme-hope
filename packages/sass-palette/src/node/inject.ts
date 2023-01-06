@@ -92,7 +92,7 @@ export const injectConfigModule = (
         : content;
 
       return originalContent.match(
-        new RegExp(`@use\\s+["']@sass-palette\\/${id}-config["'];`)
+        new RegExp(`@use\\s+(["'])@sass-palette\\/${id}-config\\1;`)
       )
         ? originalContent
         : `@use "@sass-palette/${id}-config";\n${originalContent}`;
