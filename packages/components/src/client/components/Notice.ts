@@ -16,7 +16,6 @@ import type { PropType, VNode } from "vue";
 import type { NoticeLocaleOptions } from "../../shared/index.js";
 
 import "../styles/notice.scss";
-import { isLinkHttp } from "@vuepress/shared";
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names
