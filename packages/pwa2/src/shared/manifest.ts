@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 
 /**
- * @spec https://www.w3.org/TR/mediaqueries-5/#display-mode
+ * @see https://www.w3.org/TR/mediaqueries-5/#display-mode
  */
 export type DisplayMode =
   | "fullscreen"
@@ -10,7 +10,7 @@ export type DisplayMode =
   | "browser";
 
 /**
- * @spec https://github.com/w3c/manifest/wiki/Categories
+ * @see https://github.com/w3c/manifest/wiki/Categories
  */
 export type ManifestCategory =
   | "books"
@@ -43,7 +43,7 @@ export type ManifestCategory =
   | "weather";
 
 /**
- * @spec https://www.w3.org/TR/screen-orientation/#dom-orientationlocktype
+ * @see https://www.w3.org/TR/screen-orientation/#dom-orientationlocktype
  */
 export type OrientationLockType =
   | "any"
@@ -56,7 +56,7 @@ export type OrientationLockType =
   | "landscape-secondary";
 
 /**
- * @spec https://www.w3.org/TR/appmanifest/#manifest-image-resources
+ * @see https://www.w3.org/TR/appmanifest/#manifest-image-resources
  */
 export interface ManifestImageResource {
   src: string;
@@ -69,11 +69,11 @@ export interface ManifestIcon extends ManifestImageResource {
 }
 
 /**
- * @spec https://www.w3.org/TR/appmanifest/#external-application-resource
+ * @see https://www.w3.org/TR/appmanifest/#external-application-resource
  */
 export interface ManifestExternalApplicationResource {
   /**
-   * @spec https://github.com/w3c/manifest/wiki/Platforms
+   * @see https://github.com/w3c/manifest/wiki/Platforms
    */
   platform:
     | "chrome_web_store"
@@ -96,7 +96,7 @@ export interface ManifestExternalApplicationResource {
 }
 
 /**
- * @spec https://www.w3.org/TR/appmanifest/#shortcut-items
+ * @see https://www.w3.org/TR/appmanifest/#shortcut-items
  */
 export interface ManifestShortCutItem {
   name: string;
@@ -107,46 +107,46 @@ export interface ManifestShortCutItem {
 }
 
 /**
- * @spec https://www.w3.org/TR/appmanifest/
+ * @see https://www.w3.org/TR/appmanifest/
  */
 export interface ManifestOption extends Record<string, unknown> {
   /**
-   * @spec https://www.w3.org/TR/appmanifest/#name-member
+   * @see https://www.w3.org/TR/appmanifest/#name-member
    *
    * The name of the web application as it is usually displayed to the user
    */
   name?: string;
 
   /**
-   * @spec https://www.w3.org/TR/appmanifest/#short_name-member
+   * @see https://www.w3.org/TR/appmanifest/#short_name-member
    *
    * A short version of the name of the web application
    */
   short_name?: string;
 
   /**
-   * @spec https://www.w3.org/TR/appmanifest/#dfn-background_color
+   * @see https://www.w3.org/TR/appmanifest/#dfn-background_color
    *
    * The expected background color of the web application
    */
   background_color?: string;
 
   /**
-   * @spec https://www.w3.org/TR/appmanifest/#dir-member
+   * @see https://www.w3.org/TR/appmanifest/#dir-member
    *
    * The base direction for the localizable members of the manifest.
    */
   dir?: "ltr" | "rtl" | "auto";
 
   /**
-   * @spec https://www.w3.org/TR/appmanifest/#lang-member
+   * @see https://www.w3.org/TR/appmanifest/#lang-member
    *
    * specifies the primary language for the values of the manifest's localizable members
    */
   lang?: string;
 
   /**
-   * @spec https://www.w3.org/TR/appmanifest/#dfn-display
+   * @see https://www.w3.org/TR/appmanifest/#dfn-display
    *
    * The developer's preferred display mode for the web application
    */
@@ -155,35 +155,35 @@ export interface ManifestOption extends Record<string, unknown> {
   icons?: ManifestIcon[];
 
   /**
-   * @spec https://www.w3.org/TR/appmanifest/#orientation-member
+   * @see https://www.w3.org/TR/appmanifest/#orientation-member
    *
    * Serves as the default screen orientation for all top-level browsing contexts of the web application
    */
   orientation?: OrientationLockType;
 
   /**
-   * @spec https://www.w3.org/TR/appmanifest/#scope-member
+   * @see https://www.w3.org/TR/appmanifest/#scope-member
    *
    * The navigation scope of this web application's application context.
    */
   scope?: string;
 
   /**
-   * @spec https://www.w3.org/TR/appmanifest/#start_url-member
+   * @see https://www.w3.org/TR/appmanifest/#start_url-member
    *
    * Start URL
    */
   start_url?: string;
 
   /**
-   * @spec https://www.w3.org/TR/appmanifest/#id-member
+   * @see https://www.w3.org/TR/appmanifest/#id-member
    *
    * Identity for the application
    */
   id?: string;
 
   /**
-   * @spec https://www.w3.org/TR/appmanifest/#theme_color-member
+   * @see https://www.w3.org/TR/appmanifest/#theme_color-member
    *
    * Default theme color for an application context
    */
