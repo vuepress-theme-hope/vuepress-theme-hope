@@ -1,5 +1,5 @@
 import type { App, HeadConfig, Page } from "@vuepress/core";
-import type { Author } from "vuepress-shared";
+import type { Author } from "vuepress-shared/node";
 import type { ArticleJSONLD, ExtendPage, SeoContent } from "./typings/index.js";
 
 export interface SeoOptions {

@@ -79,9 +79,9 @@ If you have small sites, and would like to make document fully offline available
 
 ::: tip Why only home and 404 page been cached by default?
 
-Though VuePress generates HTML files through SSR[^ssr] for all pages, these files are mainly used for SEO[^seo] and allow you to directly configure the backend without SPA[^spa] Visit any link.
+Though VuePress generates HTML files through SSG[^ssg] for all pages, these files are mainly used for SEO[^seo] and allow you to directly configure the backend without SPA[^spa] Visit any link.
 
-[^ssr]: **SSR**: **S**erver **S**ide **R**endering,
+[^ssg]: **SSG**: **S**tatic **S**ite **G**neration,
 [^seo]: **SEO**: **S**earch **E**ngine **O**ptimization.
 [^spa]: **SPA**: **S**ingle **P**age **A**pplication, most of them only have the homepage, and use history mode to handle routing instead of actually navigating between pages.
 

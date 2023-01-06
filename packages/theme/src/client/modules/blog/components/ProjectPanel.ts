@@ -1,5 +1,7 @@
 import { usePageFrontmatter, withBase } from "@vuepress/client";
+import { isLinkHttp } from "@vuepress/shared";
 import { defineComponent, h, resolveComponent } from "vue";
+import { isAbsoluteUrl } from "vuepress-shared/client";
 
 import Icon from "@theme-hope/components/Icon";
 import {
@@ -40,11 +42,10 @@ export default defineComponent({
         return h(resolveComponent(`${icon}-icon`));
 
       // it’s a full image link
-      if (icon.match(/^https?:\/\//))
-        return h("img", { src: icon, alt, class: "image" });
+      if (isLinkHttp(icon)) return h("img", { src: icon, alt, class: "image" });
 
       // it’s an absolute image link
-      if (icon.startsWith("/"))
+      if (isAbsoluteUrl(icon))
         return h("img", { src: withBase(icon), alt, class: "image" });
 
       // render as icon font

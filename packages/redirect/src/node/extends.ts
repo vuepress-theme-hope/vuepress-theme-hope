@@ -1,4 +1,5 @@
 import { isLinkHttp, removeEndingSlash } from "@vuepress/shared";
+import { isAbsoluteUrl } from "vuepress-shared/node";
 
 import type { App, Page } from "@vuepress/core";
 import type { RedirectOptions } from "./options.js";
@@ -15,7 +16,7 @@ export const handleRedirect = (
 
   if (redirectTo) {
     const redirectUrl = (
-      options.hostname && redirectTo.startsWith("/")
+      options.hostname && isAbsoluteUrl(redirectTo)
         ? `${
             isLinkHttp(options.hostname)
               ? removeEndingSlash(options.hostname)

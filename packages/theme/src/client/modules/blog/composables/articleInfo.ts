@@ -14,7 +14,7 @@ import { ArticleInfoType } from "../../../../shared/index.js";
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 
 import type { ComputedRef, Ref } from "vue";
-import type { AuthorInfo, DateInfo } from "vuepress-shared";
+import type { AuthorInfo, DateInfo } from "vuepress-shared/client";
 import type { PageInfoProps } from "@theme-hope/modules/info/components/PageInfo";
 import type {
   PageCategory,

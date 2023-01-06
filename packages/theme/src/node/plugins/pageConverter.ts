@@ -1,4 +1,4 @@
-import { injectLocalizedDate } from "vuepress-shared";
+import { injectLocalizedDate } from "vuepress-shared/node";
 import { convertFrontmatter } from "../compact/index.js";
 import { checkFrontmatter } from "../frontmatter/check.js";
 import { ArticleInfoType, PageType } from "../../shared/index.js";

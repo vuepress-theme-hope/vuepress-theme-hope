@@ -5,7 +5,7 @@ import {
 import { computed } from "vue";
 import { getAuthor } from "vuepress-shared/client";
 
-import type { AuthorInfo } from "vuepress-shared";
+import type { AuthorInfo } from "vuepress-shared/client";
 import type {
   ThemeDataRef,
   ThemeLocaleDataRef,

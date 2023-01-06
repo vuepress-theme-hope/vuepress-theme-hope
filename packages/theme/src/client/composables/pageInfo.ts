@@ -13,7 +13,7 @@ import type {
   AuthorInfo,
   BasePageFrontMatter,
   DateInfo,
-} from "vuepress-shared";
+} from "vuepress-shared/client";
 import type { GitData } from "@vuepress/plugin-git";
 import type { ComputedRef } from "vue";
 import type { ReadingTime } from "vuepress-plugin-reading-time2";
