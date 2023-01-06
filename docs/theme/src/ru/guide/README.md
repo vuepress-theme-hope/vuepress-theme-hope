@@ -130,44 +130,44 @@ tag:
 
 Тема включает в себя следующие плагины, вы можете использовать их в других темах или напрямую.
 
-- <ProjectLink name="auto-catalog" path="/ru/">vuepress-plugin-auto-catalog</ProjectLink>: Catalog automatically generation for VuePress2
+- <ProjectLink name="auto-catalog">vuepress-plugin-auto-catalog</ProjectLink>: Catalog automatically generation for VuePress2
 
-- <ProjectLink name="blog2" path="/ru/">vuepress-plugin-blog2</ProjectLink>: Плагин блога для VuePress2
+- <ProjectLink name="blog2">vuepress-plugin-blog2</ProjectLink>: Плагин блога для VuePress2
 
-- <ProjectLink name="comment2" path="/ru/">vuepress-plugin-comment2</ProjectLink>: Комментарии и просмотры страниц
+- <ProjectLink name="comment2">vuepress-plugin-comment2</ProjectLink>: Комментарии и просмотры страниц
 
-- <ProjectLink name="components" path="/ru/">vuepress-plugin-components</ProjectLink>: Предоставляет некоторые готовые плагины
+- <ProjectLink name="components">vuepress-plugin-components</ProjectLink>: Предоставляет некоторые готовые плагины
 
-- <ProjectLink name="copy-code2" path="/ru/">vuepress-plugin-copy-code2</ProjectLink>: Предоставляет кнопку копирования для блоков кода
+- <ProjectLink name="copy-code2">vuepress-plugin-copy-code2</ProjectLink>: Предоставляет кнопку копирования для блоков кода
 
-- <ProjectLink name="copyright2" path="/ru/">vuepress-plugin-copyright2</ProjectLink>: Добавляет информацию об авторских правах при копировании или отключении копирования и выбора
+- <ProjectLink name="copyright2">vuepress-plugin-copyright2</ProjectLink>: Добавляет информацию об авторских правах при копировании или отключении копирования и выбора
 
-- <ProjectLink name="feed2" path="/ru/">vuepress-plugin-feed2</ProjectLink>: Поддержка потоков
+- <ProjectLink name="feed2">vuepress-plugin-feed2</ProjectLink>: Поддержка потоков
 
-- <ProjectLink name="md-enhance" path="/ru/">vuepress-plugin-md-enhance</ProjectLink>: Предоставляет больше синтаксиса Markdown
+- <ProjectLink name="md-enhance">vuepress-plugin-md-enhance</ProjectLink>: Предоставляет больше синтаксиса Markdown
 
-- <ProjectLink name="photo-swipe" path="/ru/">vuepress-plugin-photo-swipe</ProjectLink>: Делает так, чтобы изображение на сайте поддерживало увеличение масштаба
+- <ProjectLink name="photo-swipe">vuepress-plugin-photo-swipe</ProjectLink>: Делает так, чтобы изображение на сайте поддерживало увеличение масштаба
 
-- <ProjectLink name="pwa2" path="/ru/">vuepress-plugin-pwa2</ProjectLink>: Расширенная поддержка PWA
+- <ProjectLink name="pwa2">vuepress-plugin-pwa2</ProjectLink>: Расширенная поддержка PWA
 
-- <ProjectLink name="reading-time2" path="/ru/">vuepress-plugin-reading-time2</ProjectLink>: Ожидаемое время чтения и количество слов
+- <ProjectLink name="reading-time2">vuepress-plugin-reading-time2</ProjectLink>: Ожидаемое время чтения и количество слов
 
-- <ProjectLink name="sass-palette" path="/ru/">vuepress-plugin-sass-palette</ProjectLink>: Плагин в стиле Sass для всех плагинов и тем
+- <ProjectLink name="sass-palette">vuepress-plugin-sass-palette</ProjectLink>: Плагин в стиле Sass для всех плагинов и тем
 
-- <ProjectLink name="seo2" path="/ru/">vuepress-plugin-seo2</ProjectLink>: Плагин для улучшения СЕО
+- <ProjectLink name="seo2">vuepress-plugin-seo2</ProjectLink>: Плагин для улучшения СЕО
 
-- <ProjectLink name="sitemap2" path="/ru/">vuepress-plugin-sitemap2</ProjectLink>: Плагин карты сайта
+- <ProjectLink name="sitemap2">vuepress-plugin-sitemap2</ProjectLink>: Плагин карты сайта
 
 ::: tip
 
 Вот некоторые другие плагины, которые по умолчанию не включены в тему, вы можете включить их в соответствии со своими потребностями
 
-- <ProjectLink name="lightgallery" path="/ru/">vuepress-plugin-lightgallery</ProjectLink>: Плагин предварительного просмотра фотографий на основе lightgallery
+- <ProjectLink name="lightgallery">vuepress-plugin-lightgallery</ProjectLink>: Плагин предварительного просмотра фотографий на основе lightgallery
 
-- <ProjectLink name="redirect" path="/ru/">vuepress-plugin-redirect</ProjectLink>: Редирект страниц
+- <ProjectLink name="redirect">vuepress-plugin-redirect</ProjectLink>: Редирект страниц
 
-- <ProjectLink name="remove-pwa" path="/ru/">vuepress-plugin-remove-pwa</ProjectLink>: Plugins to remove pwa
+- <ProjectLink name="remove-pwa">vuepress-plugin-remove-pwa</ProjectLink>: Plugins to remove pwa
 
-- <ProjectLink name="search-pro" path="/ru/">vuepress-plugin-search-pro</ProjectLink>: Client search plugin
+- <ProjectLink name="search-pro">vuepress-plugin-search-pro</ProjectLink>: Client search plugin
 
 :::
