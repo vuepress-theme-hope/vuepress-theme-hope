@@ -7,6 +7,14 @@ Let you insert code demos in your Markdown file.
 
 <!-- more -->
 
+::: info What's Code Demo
+
+Code demo is a feature that let you insert code snippets in your Markdown file, and the plugin will render the source code and run the code on the browser for you. If users like to try it, they can click CodePen or JSFiddle button to open the demo in CodePen or JSFiddle and edit them online.
+
+So, this means you do not have access to internal components in your project. Neither can we read your local file system in users' browser, nor can Codepen and JSFiddle access Vue components in your project.
+
+:::
+
 ## Config
 
 ::: code-tabs#language
