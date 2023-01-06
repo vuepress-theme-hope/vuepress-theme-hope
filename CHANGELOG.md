@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.152](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.151...v2.0.0-beta.152) (2023-01-06)
+
+### Features
+
+- **pwa2:** update manifest type to latest spec ([99326e5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/99326e5fae8f0cc5989550520be4b2780291ae1d))
+- **theme:** improve layout, close [#2639](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2639) ([42b11aa](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/42b11aa5f169a2d7cd99e11b0b224af131918a58))
+
+### Bug Fixes
+
+- **remove-pwa:** make options optional ([3338c68](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3338c6888d984df94f0a652f06451c9cd0be8ad9))
+- **seo2:** fix json-ld generation and fix alternate links ([11a3223](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/11a3223ab5e843cbc87d1648d54232b2c7a92e16))
+- **theme:** fix homepage icon font-weight ([f5e7006](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f5e7006ba78806a8894b4b152cfd8987f892ec98))
+- **theme:** fix homepage image icon ([0d16588](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0d165884594cbdbc51a49a101025f6d3e6890caf))
+- **theme:** fix notice button color on darkmode ([bbdf500](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/bbdf500678bc3e67609dfc823c7f86a0fae50f1b))
+
 ## [2.0.0-beta.151](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.150...v2.0.0-beta.151) (2023-01-04)
 
 ### Features
