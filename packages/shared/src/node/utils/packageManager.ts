@@ -66,27 +66,29 @@ export const getTypeofLockFile = (
     return "npm";
   }
 
-  let dir = cwd;
+  if (deep) {
+    let dir = cwd;
 
-  while (deep && dir !== path.dirname(dir)) {
-    dir = path.dirname(dir);
+    while (dir !== path.dirname(dir)) {
+      dir = path.dirname(dir);
 
-    if (fs.existsSync(path.resolve(dir, "pnpm-lock.yaml"))) {
-      localCache.set(key, "pnpm");
+      if (fs.existsSync(path.resolve(dir, "pnpm-lock.yaml"))) {
+        localCache.set(key, "pnpm");
 
-      return "pnpm";
-    }
+        return "pnpm";
+      }
 
-    if (fs.existsSync(path.resolve(dir, "yarn.lock"))) {
-      localCache.set(key, "yarn");
+      if (fs.existsSync(path.resolve(dir, "yarn.lock"))) {
+        localCache.set(key, "yarn");
 
-      return "yarn";
-    }
+        return "yarn";
+      }
 
-    if (fs.existsSync(path.resolve(dir, "package-lock.json"))) {
-      localCache.set(key, "npm");
+      if (fs.existsSync(path.resolve(dir, "package-lock.json"))) {
+        localCache.set(key, "npm");
 
-      return "npm";
+        return "npm";
+      }
     }
   }
 

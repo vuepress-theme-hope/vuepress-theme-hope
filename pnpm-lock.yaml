@@ -1354,7 +1354,7 @@ importers:
       fflate: ^0.7.4
       gray-matter: ^4.0.3
       ora: 6.1.2
-      striptags: 3.2.0
+      striptags: ^3.2.0
       vite: 4.0.4
       vue: ^3.2.45
       vue-router: ^4.1.6

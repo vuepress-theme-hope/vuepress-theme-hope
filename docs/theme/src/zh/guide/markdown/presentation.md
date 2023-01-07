@@ -117,7 +117,7 @@ Reveal.js 还提供了[更多的插件](https://github.com/hakimel/reveal.js/wik
 - `blood`
 - `moon`
 
-主题演示，请详见 <ProjectLink name="md-enhance" path="/zh/guide/presentation/theme.html">幻灯片主题</ProjectLink>。
+主题演示，请详见 <ProjectLink name="md-enhance" path="/zh/guide/presentation/themes.html">幻灯片主题</ProjectLink>。
 
 ## 演示
 

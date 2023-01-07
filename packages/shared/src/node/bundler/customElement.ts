@@ -53,18 +53,10 @@ export const addCustomElement = (
   if (bundlerName === "vite") {
     const viteBundlerConfig = <ViteBundlerOptions>config;
 
-    if (!viteBundlerConfig.vuePluginOptions)
-      viteBundlerConfig.vuePluginOptions = {};
-
-    if (!viteBundlerConfig.vuePluginOptions.template)
-      viteBundlerConfig.vuePluginOptions.template = {};
-
-    if (!viteBundlerConfig.vuePluginOptions.template.compilerOptions)
-      viteBundlerConfig.vuePluginOptions.template.compilerOptions = {};
-
     const {
       isCustomElement = (tag: string): void => tagHint(tag, app.env.isDebug),
-    } = viteBundlerConfig.vuePluginOptions.template.compilerOptions;
+    } = (((viteBundlerConfig.vuePluginOptions ??= {}).template ??=
+      {}).compilerOptions ??= {});
 
     viteBundlerConfig.vuePluginOptions.template.compilerOptions.isCustomElement =
       (tag: string): boolean | void => {
@@ -83,13 +75,9 @@ export const addCustomElement = (
   else if (bundlerName === "webpack") {
     const webpackBundlerConfig = <WebpackBundlerOptions>config;
 
-    if (!webpackBundlerConfig.vue) webpackBundlerConfig.vue = {};
-    if (!webpackBundlerConfig.vue.compilerOptions)
-      webpackBundlerConfig.vue.compilerOptions = {};
-
     const {
       isCustomElement = (tag: string): void => tagHint(tag, app.env.isDebug),
-    } = webpackBundlerConfig.vue.compilerOptions;
+    } = ((webpackBundlerConfig.vue ??= {}).compilerOptions ??= {});
 
     webpackBundlerConfig.vue.compilerOptions.isCustomElement = (
       tag: string
