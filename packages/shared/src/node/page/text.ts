@@ -1,5 +1,5 @@
 import matter from "gray-matter";
-import { md2text } from "../utils/index.js";
+import { md2text } from "../markdown/index.js";
 
 import type { Page } from "@vuepress/core";
 
