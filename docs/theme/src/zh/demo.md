@@ -124,7 +124,6 @@ blog:
     url: https://whitechen233.github.io/
     source: https://github.com/whiteChen233/whitechen233.github.io
     preview: /assets/image/white.jpg
-    
   - name: heStudio
     url: https://www.hestudio.org/
     source: https://gitee.com/heStudio/blog-source.git
