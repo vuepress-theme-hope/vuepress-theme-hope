@@ -8,7 +8,7 @@ import {
   getStatus,
   getThemeData,
 } from "./config/index.js";
-import { getPluginConfig, usePlugin } from "./plugins/index.js";
+import { checkPlugins, getPluginConfig, usePlugin } from "./plugins/index.js";
 import {
   prepareConfigFile,
   prepareSidebarData,
@@ -42,6 +42,8 @@ export const hopeTheme =
       : options;
 
     if (legacy) checkStyle(app);
+
+    checkPlugins(app, plugins);
 
     const status = getStatus(app, options);
     const themeConfig = getThemeData(app, themeOptions, status);
