@@ -1,5 +1,6 @@
 @use "sass:color";
 @use "sass:list";
+@use "vuepress-shared/styles/shining";
 
 .hero-info-wrapper {
   @media (min-width: hope-config.$pad) {
@@ -102,7 +103,6 @@
 
     margin: 0.5rem;
     padding: 0.5em 1.5rem;
-    border: 1px solid var(--text-color);
     border-radius: 2rem;
 
     background: var(--bg-color-secondary);
@@ -127,8 +127,7 @@
     }
 
     &:hover {
-      border-color: var(--text-color-bright);
-      color: var(--text-color-bright);
+      background: var(--bg-color-tertiary);
     }
 
     &.primary {

@@ -40,7 +40,7 @@ export default defineComponent({
         props.items.length
           ? h(
               "div",
-              { class: "features" },
+              { class: "feature-wrapper" },
               props.items.map((feature) => {
                 const children = [
                   h("h3", [
@@ -55,7 +55,7 @@ export default defineComponent({
                     ? h(
                         "a",
                         {
-                          class: "feature link",
+                          class: "feature-item link",
                           href: feature.link,
                           role: "navigation",
                           "aria-label": feature.title,
@@ -66,14 +66,14 @@ export default defineComponent({
                     : h(
                         RouterLink,
                         {
-                          class: "feature link",
+                          class: "feature-item link",
                           to: feature.link,
                           role: "navigation",
                           "aria-label": feature.title,
                         },
                         () => children
                       )
-                  : h("div", { class: "feature" }, children);
+                  : h("div", { class: "feature-item" }, children);
               })
             )
           : null,

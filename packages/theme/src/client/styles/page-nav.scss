@@ -4,8 +4,8 @@
 .page-nav {
   @include wrapper.horizontal-wrapper;
 
-  // clear float
-  overflow: auto;
+  display: flex;
+  flex-wrap: wrap;
 
   min-height: 2rem;
   margin-top: 0;
@@ -21,7 +21,16 @@
 
   .nav-link {
     display: inline-block;
-    padding: 0.25rem;
+    flex-grow: 1;
+
+    margin: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.25rem;
+
+    &:hover {
+      background: var(--bg-color-secondary);
+    }
 
     .hint {
       color: var(--light-grey);
@@ -37,7 +46,7 @@
   }
 
   .prev {
-    text-align: left;
+    text-align: start;
 
     .icon {
       margin-inline-end: 0.25em;
@@ -45,11 +54,10 @@
   }
 
   .next {
-    float: right;
-    text-align: right;
+    text-align: end;
 
     .icon {
-      margin-left: 0.25em;
+      margin-inline-start: 0.25em;
     }
   }
 }

@@ -17,6 +17,19 @@
   margin: 0.125rem;
   padding: 0.125rem 0.25rem 0.125rem 0.625rem;
 
+  background: var(--bg-color-secondary);
+  background: linear-gradient(
+        135deg,
+        transparent 0.75em,
+        var(--bg-color-secondary) 0
+      )
+      top,
+    linear-gradient(45deg, transparent 0.75em, var(--bg-color-secondary) 0)
+      bottom;
+  background-size: 100% 52% !important;
+  background-repeat: no-repeat !important;
+  color: var(--text-color-light);
+
   font-weight: bold;
   font-size: 0.625rem;
   line-height: 1.5;
@@ -58,8 +71,6 @@
             color.scale($color, $lightness: 90%) 0
           )
           bottom;
-      background-size: 100% 52% !important;
-      background-repeat: no-repeat !important;
       color: color.scale($color, $lightness: 20%);
 
       #{hope-config.$dark-selector} & {

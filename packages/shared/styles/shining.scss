@@ -1,0 +1,34 @@
+@use "@sass-palette/hope-config";
+
+@mixin shining() {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: " ";
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+
+    width: 300%;
+    height: 300%;
+
+    background: rgb(255 255 255 / 50%);
+
+    transition: transform 0.6s;
+    transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg)
+      translate3d(0, -125%, 0);
+
+    #{hope-config.$dark-selector} & {
+      background: rgb(255 255 255 / 15%);
+    }
+  }
+
+  &:hover {
+    &::before {
+      transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg)
+        translate3d(0, 125%, 0);
+    }
+  }
+}

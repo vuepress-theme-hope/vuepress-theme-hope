@@ -2,7 +2,13 @@
 
 .page-meta {
   @include wrapper.horizontal-wrapper;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
   overflow: auto;
+
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 
@@ -12,8 +18,12 @@
     padding-left: 0 !important;
   }
 
+  @media (max-width: hope-config.$tablet) {
+    display: block;
+  }
+
   .meta-item {
-    margin-top: 0.5rem;
+    flex-grow: 1;
 
     .label {
       font-weight: 500;
@@ -29,14 +39,15 @@
     }
   }
 
-  .edit-link {
-    display: inline-block;
-    margin-right: 0.25rem;
-    font-size: 14px;
+  .git-info {
+    text-align: end;
+  }
 
-    @media (max-width: hope-config.$tablet) {
-      margin-bottom: 8px;
-    }
+  .edit-link {
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+    margin-inline-end: 0.5rem;
+    font-size: 14px;
 
     @media print {
       display: none;
@@ -52,24 +63,11 @@
     }
   }
 
-  .update-time {
-    float: right;
-    font-size: 14px;
-
-    @media (max-width: hope-config.$tablet) {
-      float: none;
-      font-size: 13px;
-      text-align: left;
-    }
-
-    &:first-child {
-      float: left;
-    }
-  }
-
+  .update-time,
   .contributors {
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
     font-size: 14px;
-    text-align: right;
 
     @media (max-width: hope-config.$tablet) {
       font-size: 13px;

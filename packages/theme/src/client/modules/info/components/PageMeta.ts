@@ -38,27 +38,29 @@ export default defineComponent({
               )
             )
           : null,
-        updateTime.value
-          ? h("div", { class: "meta-item update-time" }, [
-              h("span", { class: "label" }, `${metaLocales.lastUpdated}: `),
-              h(ClientOnly, () =>
-                h("span", { class: "info" }, <string>updateTime.value)
-              ),
-            ])
-          : null,
-        contributors.value && contributors.value.length
-          ? h("div", { class: "meta-item contributors" }, [
-              h("span", { class: "label" }, `${metaLocales.contributors}: `),
-              contributors.value.map(({ email, name }, index) => [
-                h(
-                  "span",
-                  { class: "contributor", title: `email: ${email}` },
-                  name
+        h("div", { class: "meta-item git-info" }, [
+          updateTime.value
+            ? h("div", { class: "update-time" }, [
+                h("span", { class: "label" }, `${metaLocales.lastUpdated}: `),
+                h(ClientOnly, () =>
+                  h("span", { class: "info" }, <string>updateTime.value)
                 ),
-                index !== contributors.value!.length - 1 ? "," : "",
-              ]),
-            ])
-          : null,
+              ])
+            : null,
+          contributors.value && contributors.value.length
+            ? h("div", { class: "contributors" }, [
+                h("span", { class: "label" }, `${metaLocales.contributors}: `),
+                contributors.value.map(({ email, name }, index) => [
+                  h(
+                    "span",
+                    { class: "contributor", title: `email: ${email}` },
+                    name
+                  ),
+                  index !== contributors.value!.length - 1 ? "," : "",
+                ]),
+              ])
+            : null,
+        ]),
       ]);
     };
   },
