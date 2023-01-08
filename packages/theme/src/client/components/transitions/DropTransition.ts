@@ -9,11 +9,16 @@ export default defineComponent({
     /**
      * @description Transition type
      */
-    type: { type: String as PropType<"single" | "group">, default: "single" },
+    type: {
+      type: String as PropType<"single" | "group">,
+      default: "single",
+    },
+
     /**
      * @description Transition delay
      */
     delay: { type: Number, default: 0 },
+
     /**
      * @description Transition duration
      */

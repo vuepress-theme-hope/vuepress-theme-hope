@@ -88,17 +88,3 @@
 .navbar-right {
   justify-content: end;
 }
-
-// docsearch fix
-// stylelint-disable selector-class-pattern
-.DocSearch {
-  &.DocSearch-Button {
-    margin-left: 0;
-  }
-}
-
-#docsearch-container {
-  @media (max-width: 750px) {
-    min-width: 36px !important;
-  }
-}

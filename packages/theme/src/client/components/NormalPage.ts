@@ -35,13 +35,11 @@ export default defineComponent({
 
     return (): VNode =>
       h(
-        "main",
-        { class: "page", id: "main-content" },
-        h(
-          hasGlobalComponent("LocalEncrypt")
-            ? <DefineComponent>resolveComponent("LocalEncrypt")
-            : RenderDefault,
-          () => [
+        hasGlobalComponent("LocalEncrypt")
+          ? <DefineComponent>resolveComponent("LocalEncrypt")
+          : RenderDefault,
+        () =>
+          h("main", { class: "page", id: "main-content" }, [
             slots["top"]?.(),
             h(BreadCrumb),
             h(PageTitle),
@@ -64,8 +62,7 @@ export default defineComponent({
                 })
               : null,
             slots["bottom"]?.(),
-          ]
-        )
+          ])
       );
   },
 });

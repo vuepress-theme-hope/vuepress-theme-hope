@@ -173,96 +173,100 @@ export default defineComponent({
 
     return (): VNode =>
       h(
-        "div",
-        {
-          class: [
-            "theme-container",
-            // classes
+        hasGlobalComponent("GlobalEncrypt")
+          ? <DefineComponent>resolveComponent("GlobalEncrypt")
+          : RenderDefault,
+        () =>
+          h(
+            "div",
             {
-              "no-navbar": !enableNavbar.value,
-              "no-sidebar":
-                !enableSidebar.value &&
-                !(
-                  slots["sidebar"] ||
-                  slots["sidebarTop"] ||
-                  slots["sidebarBottom"]
-                ),
-              "has-toc": enableToc.value,
-              "hide-navbar": hideNavbar.value,
-              "sidebar-collapsed":
-                !isMobile.value && isDesktopSidebarCollapsed.value,
-              "sidebar-open": isMobile.value && isMobileSidebarOpen.value,
+              class: [
+                "theme-container",
+                // classes
+                {
+                  "no-navbar": !enableNavbar.value,
+                  "no-sidebar":
+                    !enableSidebar.value &&
+                    !(
+                      slots["sidebar"] ||
+                      slots["sidebarTop"] ||
+                      slots["sidebarBottom"]
+                    ),
+                  "has-toc": enableToc.value,
+                  "hide-navbar": hideNavbar.value,
+                  "sidebar-collapsed":
+                    !isMobile.value && isDesktopSidebarCollapsed.value,
+                  "sidebar-open": isMobile.value && isMobileSidebarOpen.value,
+                },
+                frontmatter.value.containerClass || "",
+              ],
+              onTouchStart,
+              onTouchEnd,
             },
-            frontmatter.value.containerClass || "",
-          ],
-          onTouchStart,
-          onTouchEnd,
-        },
-        h(
-          hasGlobalComponent("GlobalEncrypt")
-            ? <DefineComponent>resolveComponent("GlobalEncrypt")
-            : RenderDefault,
-          () => [
-            // navbar
-            enableNavbar.value
-              ? h(
-                  Navbar,
-                  { onToggleSidebar: () => toggleMobileSidebar() },
-                  {
-                    leftStart: () => slots["navbarLeftStart"]?.(),
-                    leftEnd: () => slots["navbarLeftEnd"]?.(),
-                    centerStart: () => slots["navbarCenterStart"]?.(),
-                    centerEnd: () => slots["navbarCenterEnd"]?.(),
-                    rightStart: () => slots["navbarRightStart"]?.(),
-                    rightEnd: () => slots["navbarRightEnd"]?.(),
-                    screenTop: () => slots["navScreenTop"]?.(),
-                    screenBottom: () => slots["navScreenBottom"]?.(),
-                  }
-                )
-              : null,
-            // sidebar mask
-            h(Transition, { name: "fade" }, () =>
-              isMobileSidebarOpen.value
-                ? h("div", {
-                    class: "sidebar-mask",
-                    onClick: () => toggleMobileSidebar(false),
-                  })
-                : null
-            ),
-            // toggle sidebar button
-            h(Transition, { name: "fade" }, () =>
-              isMobile.value
-                ? null
-                : h(
-                    "div",
+            [
+              // navbar
+              enableNavbar.value
+                ? h(
+                    Navbar,
+                    { onToggleSidebar: () => toggleMobileSidebar() },
                     {
-                      class: "toggle-sidebar-wrapper",
-                      onClick: () => toggleDesktopSidebar(),
-                    },
-                    h("span", {
-                      class: [
-                        "arrow",
-                        isDesktopSidebarCollapsed.value ? "right" : "left",
-                      ],
-                    })
+                      leftStart: () => slots["navbarLeftStart"]?.(),
+                      leftEnd: () => slots["navbarLeftEnd"]?.(),
+                      centerStart: () => slots["navbarCenterStart"]?.(),
+                      centerEnd: () => slots["navbarCenterEnd"]?.(),
+                      rightStart: () => slots["navbarRightStart"]?.(),
+                      rightEnd: () => slots["navbarRightEnd"]?.(),
+                      screenTop: () => slots["navScreenTop"]?.(),
+                      screenBottom: () => slots["navScreenBottom"]?.(),
+                    }
                   )
-            ),
-            // sidebar
-            h(
-              Sidebar,
-              {},
-              {
-                ...(slots["sidebar"]
-                  ? { default: (): VNode[] | undefined => slots["sidebar"]?.() }
-                  : {}),
-                top: () => slots["sidebarTop"]?.(),
-                bottom: () => slots["sidebarBottom"]?.(),
-              }
-            ),
-            slots["default"]?.(),
-            h(PageFooter),
-          ]
-        )
+                : null,
+              // sidebar mask
+              h(Transition, { name: "fade" }, () =>
+                isMobileSidebarOpen.value
+                  ? h("div", {
+                      class: "sidebar-mask",
+                      onClick: () => toggleMobileSidebar(false),
+                    })
+                  : null
+              ),
+              // toggle sidebar button
+              h(Transition, { name: "fade" }, () =>
+                isMobile.value
+                  ? null
+                  : h(
+                      "div",
+                      {
+                        class: "toggle-sidebar-wrapper",
+                        onClick: () => toggleDesktopSidebar(),
+                      },
+                      h("span", {
+                        class: [
+                          "arrow",
+                          isDesktopSidebarCollapsed.value ? "right" : "left",
+                        ],
+                      })
+                    )
+              ),
+              // sidebar
+              h(
+                Sidebar,
+                {},
+                {
+                  ...(slots["sidebar"]
+                    ? {
+                        default: (): VNode[] | undefined =>
+                          slots["sidebar"]?.(),
+                      }
+                    : {}),
+                  top: () => slots["sidebarTop"]?.(),
+                  bottom: () => slots["sidebarBottom"]?.(),
+                }
+              ),
+              slots["default"]?.(),
+              h(PageFooter),
+            ]
+          )
       );
   },
 });

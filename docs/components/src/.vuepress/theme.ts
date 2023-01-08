@@ -7,6 +7,8 @@ const { version } = fs.readJsonSync(
   )
 );
 
+const IS_NETLIFY = "NETLIFY" in process.env;
+
 export default theme("components", {
   locales: {
     "/": {
@@ -92,30 +94,34 @@ export default theme("components", {
 
       rootComponents: {
         addThis: "ra-5f829c59e6c6bc9a",
-        notice: {
-          locales: {
-            "/": {
-              title: "New docs location",
-              content: "Our docs has moved to a new domain vuejs.press",
-              actions: [
-                {
-                  text: "Visit Now",
-                  link: "https://plugin-components.vuejs.press",
+        ...(IS_NETLIFY
+          ? {}
+          : {
+              notice: {
+                locales: {
+                  "/": {
+                    title: "New docs location",
+                    content: "Our docs has moved to a new domain vuejs.press",
+                    actions: [
+                      {
+                        text: "Visit Now",
+                        link: "https://plugin-components.vuejs.press",
+                      },
+                    ],
+                  },
+                  "/zh/": {
+                    title: "新的文档地址",
+                    content: "我们的文档已经迁移至新域名 vuejs.press 下。",
+                    actions: [
+                      {
+                        text: "立即访问",
+                        link: "https://plugin-components.vuejs.press/zh/",
+                      },
+                    ],
+                  },
                 },
-              ],
-            },
-            "/zh/": {
-              title: "新的文档地址",
-              content: "我们的文档已经迁移至新域名 vuejs.press 下。",
-              actions: [
-                {
-                  text: "立即访问",
-                  link: "https://plugin-components.vuejs.press/zh/",
-                },
-              ],
-            },
-          },
-        },
+              },
+            }),
       },
     },
 

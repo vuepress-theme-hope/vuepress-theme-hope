@@ -18,14 +18,25 @@
   }
 }
 
-@media (min-width: 719px) {
-  #docsearch-container {
-    min-width: 145.7px !important;
+// docsearch fix
+// stylelint-disable selector-class-pattern
+#docsearch-container {
+  min-width: 145.7px !important;
+
+  @media (max-width: hope-config.$pad) {
+    min-width: 36px !important;
+
+    .DocSearch-Button-Keys {
+      display: none;
+    }
   }
 }
 
-// stylelint-disable selector-class-pattern
 .DocSearch {
+  &.DocSearch-Button {
+    margin-left: 0;
+  }
+
   .DocSearch-Button-Placeholder {
     display: inline-block;
     padding: 4px 12px 4px 6px;
