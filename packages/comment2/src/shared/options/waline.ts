@@ -11,7 +11,7 @@ export interface WalineOptions
   extends BaseCommentOptions,
     Omit<
       WalineInitOptions,
-      "el" | "comment" | "search" | "imageUploader" | "texRenderer"
+      "el" | "comment" | "locale" | "search" | "imageUploader" | "texRenderer"
     > {
   provider: "Waline";
 
@@ -45,5 +45,5 @@ export interface WalineOptions
   /**
    * Locale config for waline
    */
-  walineLocales?: LocaleConfig<WalineLocaleData>;
+  locales?: LocaleConfig<WalineLocaleData>;
 }

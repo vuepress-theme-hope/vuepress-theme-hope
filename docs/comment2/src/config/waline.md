@@ -119,3 +119,17 @@ reCAPTCHA V3 is a captcha service provided by Google. You can add reCAPTCHA V3 s
 - Default: `false`
 
 Add emoji interaction function to the article, set it to `true` to provide the default emoji, you can also customize the emoji image by setting the emoji url array, and supports a maximum of 8 emojis.
+
+## locales
+
+- Type: `WalineLocales`
+
+  ```ts
+  interface WalineLocales {
+    [localePath: string]: WalineLocale;
+  }
+  ```
+
+- Details: [Waline Locales](https://waline.js.org/en/cookbook/customize/locale.html)
+
+Waline locales.

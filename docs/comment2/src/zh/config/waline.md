@@ -123,3 +123,17 @@ reCAPTCHA V3 是 Google 提供的验证码服务，配置 reCAPTCHA V3 网站密
 - 默认值: `false`
 
 为文章增加表情互动功能，设置为 `true` 提供默认表情，也可以通过设置表情地址数组来自定义表情图片，最大支持 8 个表情。
+
+## locales
+
+- 类型: `WalineLocales`
+
+  ```ts
+  interface WalineLocales {
+    [localePath: string]: WalineLocale;
+  }
+  ```
+
+- 详情: [Waline 多语言配置](https://waline.js.org/cookbook/customize/locale.html)
+
+Waline 多语言配置

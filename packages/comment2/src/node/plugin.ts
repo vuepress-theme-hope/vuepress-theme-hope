@@ -39,12 +39,13 @@ export const commentPlugin =
             app,
             name: "waline",
             default: walineLocales,
-            config: options.walineLocales,
+            config: options.locales,
           })
         : {};
 
     // remove locales so that they won’t be injected in client twice
-    if ("walineLocales" in options) delete options.walineLocales;
+    if (options.provider === "Waline" && "locales" in options)
+      delete options.locales;
 
     useSassPalettePlugin(app, { id: "hope" });
 
