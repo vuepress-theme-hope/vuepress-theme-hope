@@ -1,4 +1,27 @@
-export interface NoticeLocaleOptions {
+export interface NoticeActionOption {
+  /**
+   * Action text
+   *
+   * 操作文字
+   */
+  text: string;
+  /**
+   * Action link
+   *
+   * 操作链接
+   */
+  link?: string;
+  /**
+   * Action type
+   *
+   * 操作类型
+   *
+   * @default 'default
+   */
+  type?: "primary" | "default";
+}
+
+export interface NoticeItemOptions {
   /**
    * Notice title
    *
@@ -14,43 +37,6 @@ export interface NoticeLocaleOptions {
   content: string;
 
   /**
-   * Notice footer
-   *
-   * 通知操作
-   */
-  actions: {
-    /**
-     * Action text
-     *
-     * 操作文字
-     */
-    text: string;
-    /**
-     * Action link
-     *
-     * 操作链接
-     */
-    link?: string;
-    /**
-     * Action type
-     *
-     * 操作类型
-     *
-     * @default 'default
-     */
-    type?: "primary" | "default";
-  }[];
-}
-
-export interface NoticeOptions {
-  /**
-   * Notice locales Options
-   *
-   * Notice 多语言选项
-   */
-  locales: Record<string, NoticeLocaleOptions>;
-
-  /**
    * Notice key
    *
    * @description Used to identify and store the notice status
@@ -64,15 +50,11 @@ export interface NoticeOptions {
   /**
    * Whether show notice only once or show it in every visit
    *
-   * @description If `key` is not provided, this option will be ignored
-   *
    * 是否只显示一次通知
-   *
-   * @description 如果没有提供 `key`，此选项将被忽略
    *
    * @default false
    */
-  showOnce?: string;
+  showOnce?: boolean;
 
   /**
    * Whether the notice shall be confirmed
@@ -91,4 +73,18 @@ export interface NoticeOptions {
    * @default false
    */
   fullscreen?: boolean;
+
+  /**
+   * Notice actions
+   *
+   * 通知操作
+   */
+  actions?: NoticeActionOption[];
 }
+
+export type NoticeOptions = NoticeItemOptions &
+  ({ path: string } | { match: RegExp });
+
+export type NoticeClientOptions = Omit<NoticeItemOptions, "key"> & {
+  noticeKey?: string;
+} & ({ path: string } | { match: string });

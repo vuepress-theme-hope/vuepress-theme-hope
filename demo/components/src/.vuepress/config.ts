@@ -63,23 +63,22 @@ export default defineUserConfig({
       rootComponents: {
         addThis: "ra-5f829c59e6c6bc9a",
         backToTop: true,
-        notice: {
-          locales: {
-            "/": {
-              title: "Notice Title",
-              content: "Notice Content",
-              actions: [
-                {
-                  text: "Primary Action",
-                  link: "https://theme-hope.vuejs.press/",
-                  type: "primary",
-                },
-                { text: "Default Action" },
-              ],
-            },
+        notice: [
+          {
+            match: /^\/$/,
+            title: "Notice Title",
+            content: "Notice Content",
+            actions: [
+              {
+                text: "Primary Action",
+                link: "https://theme-hope.vuejs.press/",
+                type: "primary",
+              },
+              { text: "Default Action" },
+            ],
+            fullscreen: true,
           },
-          fullscreen: true,
-        },
+        ],
       },
     }),
   ],

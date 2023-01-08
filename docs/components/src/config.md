@@ -94,7 +94,24 @@ Whether enabling backToTop button. When setting a number, it will be used as Bac
 - Type: `NoticeOptions`
 
   ```ts
-  interface NoticeLocaleOptions {
+  interface NoticeActionOption {
+    /**
+     * Action text
+     */
+    text: string;
+    /**
+     * Action link
+     */
+    link?: string;
+    /**
+     * Action type
+     *
+     * @default 'default
+     */
+    type?: "primary" | "default";
+  }
+
+  interface NoticeItemOptions {
     /**
      * Notice title
      */
@@ -104,33 +121,6 @@ Whether enabling backToTop button. When setting a number, it will be used as Bac
      * Notice content
      */
     content: string;
-
-    /**
-     * Notice footer
-     */
-    actions: {
-      /**
-       * Action text
-       */
-      text: string;
-      /**
-       * Action link
-       */
-      link?: string;
-      /**
-       * Action type
-       *
-       * @default 'default
-       */
-      type?: "primary" | "default";
-    }[];
-  }
-
-  interface NoticeOptions {
-    /**
-     * Notice locales Options
-     */
-    locales: Record<string, NoticeLocaleOptions>;
 
     /**
      * Notice key
@@ -146,12 +136,12 @@ Whether enabling backToTop button. When setting a number, it will be used as Bac
      *
      * @default false
      */
-    showOnce?: string;
+    showOnce?: boolean;
 
     /**
      * Whether the notice shall be confirmed
      *
-     * @default true
+     * @default false
      */
     confirm?: boolean;
 
@@ -161,7 +151,15 @@ Whether enabling backToTop button. When setting a number, it will be used as Bac
      * @default false
      */
     fullscreen?: boolean;
+
+    /**
+     * Notice actions
+     */
+    actions?: NoticeActionOption[];
   }
+
+  type NoticeOptions = NoticeItemOptions &
+    ({ path: string } | { match: RegExp });
   ```
 
 - Required: No

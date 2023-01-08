@@ -1,8 +1,9 @@
-import { isPlainObject, isString } from "@vuepress/shared";
+import { isArray, isString } from "@vuepress/shared";
 import { CLIENT_FOLDER, logger } from "./utils.js";
 
 import type { App } from "@vuepress/core";
 import type { AvailableComponent, ComponentOptions } from "./options.js";
+import type { NoticeClientOptions, NoticeOptions } from "../shared/index.js";
 
 const availableComponents: AvailableComponent[] = [
   "AudioPlayer",
@@ -54,6 +55,26 @@ const getIconLink = (
 
   return null;
 };
+
+const getNoticeOptions = (options: NoticeOptions[]): NoticeClientOptions[] =>
+  options
+    .map(
+      ({ key, ...item }) =>
+        <NoticeClientOptions>{
+          noticeKey: key,
+          ...item,
+          ...("match" in item ? { match: item.match.toString() } : {}),
+        }
+    )
+    .sort((a, b) =>
+      "match" in a
+        ? "match" in b
+          ? b.match.localeCompare(a.match)
+          : -1
+        : "match" in b
+        ? 1
+        : (b.path || "").localeCompare(a.path || "")
+    );
 
 export const prepareConfigFile = (
   app: App,
@@ -123,14 +144,16 @@ import BackToTop from "${CLIENT_FOLDER}components/BackToTop.js";
 `;
   }
 
-  if (isPlainObject(rootComponents.notice)) {
+  if (isArray(rootComponents.notice)) {
     shouldImportH = true;
     configImport += `\
 import Notice from "${CLIENT_FOLDER}components/Notice.js";
 `;
 
     configRootComponents += `\
-() => h(Notice, ${JSON.stringify(rootComponents.notice)}),
+() => h(Notice, { config: ${JSON.stringify(
+      getNoticeOptions(rootComponents.notice)
+    )} }),
 `;
   }
 

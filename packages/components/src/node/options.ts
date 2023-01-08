@@ -104,7 +104,7 @@ export interface ComponentOptions {
      *
      * 全局通知配置
      */
-    notice?: NoticeOptions;
+    notice?: NoticeOptions[];
   };
 
   locales?: {
