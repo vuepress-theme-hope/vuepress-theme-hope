@@ -47,7 +47,7 @@ docs:
   - name: Gorse
     url: https://gorse.io
     source: https://github.com/gorse-io/docs
-    preview: /assets/image/gorse.png
+    preview: /assets/image/gorse.jpg
 
 blog:
   - name: Mr.Hope’s Blog

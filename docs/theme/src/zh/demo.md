@@ -128,7 +128,7 @@ blog:
   - name: heStudio
     url: https://www.hestudio.org/
     source: https://gitee.com/heStudio/blog-source.git
-    preview: /assets/image/hestudio.png
+    preview: /assets/image/hestudio.jpg
 ---
 
 ## 在线案例
