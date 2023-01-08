@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.154](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.153...v2.0.0-beta.154) (2023-01-08)
+
+### Bug Fixes
+
+- **comment2:** fix waline locale config ([2277200](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/227720035f56e236badda8399527107bb84c6704))
+
 ## [2.0.0-beta.153](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.152...v2.0.0-beta.153) (2023-01-08)
 
 ### ⚠ BREAKING CHANGES
