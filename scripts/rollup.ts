@@ -5,7 +5,12 @@ import dts from "rollup-plugin-dts";
 import esbuild from "rollup-plugin-esbuild";
 import { shebangPlugin } from "./shebang.js";
 
-import type { ModuleFormat, Plugin, RollupOptions } from "rollup";
+import type {
+  ModuleFormat,
+  Plugin,
+  RollupOptions,
+  RollupWarning,
+} from "rollup";
 
 const isProduction = process.env["NODE_ENV"] === "production";
 
@@ -72,6 +77,15 @@ export const rollupTypescript = (
     external,
     treeshake: {
       unknownGlobalSideEffects: false,
+    },
+
+    onwarn(
+      warning: RollupWarning,
+      warn: (warning: RollupWarning) => void
+    ): void {
+      if (warning.message.includes("Use of eval")) return;
+
+      warn(warning);
     },
   },
   ...(enableDts

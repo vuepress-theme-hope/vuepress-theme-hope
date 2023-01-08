@@ -14,7 +14,7 @@ export default [
       "vuepress-plugin-sass-palette",
       "vuepress-shared/node",
     ],
-    dtsExternal: ["vuepress-shared"],
+    dtsExternal: ["vuepress-shared", "vuepress-shared/node"],
     copy: [["client/styles", "client"]],
   }),
   ...rollupTypescript("client/compact/index", {

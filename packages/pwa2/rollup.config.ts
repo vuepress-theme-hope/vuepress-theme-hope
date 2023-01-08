@@ -45,7 +45,13 @@ export default [
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/composables/setup", {
-    external: ["@vuepress/client", "mitt", "vue", /\.scss$/],
+    external: [
+      "@vuepress/client",
+      "mitt",
+      "register-service-worker",
+      "vue",
+      /\.scss$/,
+    ],
     dtsExternal: [/\.scss$/],
     copy: [["client/styles", "client"]],
   }),
