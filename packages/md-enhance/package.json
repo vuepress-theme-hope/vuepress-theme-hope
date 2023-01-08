@@ -58,7 +58,7 @@
     "pnpm": ">=7"
   },
   "dependencies": {
-    "@babel/core": "^7.20.7",
+    "@babel/core": "^7.20.12",
     "@mdit/plugin-align": "^0.2.3",
     "@mdit/plugin-attrs": "^0.2.3",
     "@mdit/plugin-container": "^0.2.3",
@@ -86,7 +86,7 @@
     "@vuepress/utils": "2.0.0-beta.60",
     "@vueuse/core": "^9.10.0",
     "balloon-css": "^1.2.0",
-    "chart.js": "^4.1.1",
+    "chart.js": "^4.1.2",
     "echarts": "^5.4.1",
     "flowchart.js": "^1.17.1",
     "katex": "^0.16.4",
