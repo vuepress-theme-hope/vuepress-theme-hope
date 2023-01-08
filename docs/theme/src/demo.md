@@ -44,6 +44,11 @@ docs:
     source: https://github.com/pulsar-edit/pulsar-edit.github.io
     preview: /assets/image/plusar.jpg
 
+  - name: Gorse
+    url: https://gorse.io
+    source: https://github.com/gorse-io/docs
+    preview: /assets/image/gorse.png
+
 blog:
   - name: Mr.Hope’s Blog
     url: https://mrhope.site
