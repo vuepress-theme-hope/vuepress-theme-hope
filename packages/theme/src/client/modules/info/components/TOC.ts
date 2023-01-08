@@ -3,6 +3,8 @@ import { defineComponent, h, onMounted, ref, watch } from "vue";
 import { RouterLink, useRoute } from "vue-router";
 import { isActiveLink } from "vuepress-shared/client";
 
+import { PrintIcon } from "@theme-hope/modules/info/components/icons";
+import { useThemeData } from "@theme-hope/composables/index";
 import { useMetaLocale } from "@theme-hope/modules/info/composables/index";
 
 import type { PageHeader } from "@vuepress/shared";
@@ -76,6 +78,7 @@ export default defineComponent({
     const route = useRoute();
     const page = usePageData();
     const metaLocale = useMetaLocale();
+    const themeData = useThemeData();
     const toc = ref<HTMLElement>();
 
     const scrollTo = (top: number): void => {
@@ -122,6 +125,10 @@ export default defineComponent({
           }
         }
       );
+
+      window.addEventListener("beforeprint", (a) => {
+        console.log(a);
+      });
     });
 
     return (): VNode | null => {
@@ -134,7 +141,22 @@ export default defineComponent({
       return tocHeaders
         ? h("div", { class: "toc-place-holder" }, [
             h("aside", { id: "toc" }, [
-              h("div", { class: "toc-header" }, metaLocale.value.toc),
+              h("div", { class: "toc-header" }, [
+                metaLocale.value.toc,
+                themeData.value.print
+                  ? h(
+                      "button",
+                      {
+                        class: "print-button",
+                        title: "print",
+                        onClick: () => {
+                          window.print();
+                        },
+                      },
+                      h(PrintIcon)
+                    )
+                  : null,
+              ]),
               h("div", { class: "toc-wrapper", ref: toc }, [tocHeaders]),
             ]),
           ])

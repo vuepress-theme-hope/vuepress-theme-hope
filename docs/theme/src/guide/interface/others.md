@@ -14,11 +14,17 @@ The theme allows you to set variables in `.vuepress/styles/config.scss` and `.vu
 
 For detailed info, please see [Config → Style Customize](../../config/style.md)
 
+## Print Button
+
+The theme fully optimize style for print, and there will be a print button at toc in desktop mode by default.
+
+To hide print button, you should set `print: false` in theme options.
+
 ## Fullscreen Button
 
 <ToggleFullScreenButton />
 
-If you need it, you can enable it by setting `fullscreen: true` in the theme options.
+If you need it, you can enable it by setting `fullscreen: true` in theme options.
 
 ::: tip
 
@@ -78,7 +84,7 @@ You will see that almost everything works fine.
 
 ::: note
 
-As we mention above, the theme **basically** supports RTL layout, because not every css property has a "direction adaptive" value, e.g.: `float: left|right`, so you may still need to handle some layouts yourself.
+As we mention above, the theme **basically** supports RTL layout, because not every css property has a "direction adaptive" value, e.g.: `float: right` `transform: translateX(10px)`, so you may still need to handle some layouts yourself.
 
 :::
 

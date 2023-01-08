@@ -49,6 +49,10 @@
         @media (max-width: hope-config.$mobile) {
           text-align: start;
         }
+
+        @media print {
+          text-align: start;
+        }
       }
     }
   }

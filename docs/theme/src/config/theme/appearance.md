@@ -102,6 +102,13 @@ Useful when you want to provide "A pure document site".
 
 :::
 
+## print <Badge text="Root only" type="warning" />
+
+- Type: `boolean`
+- Default: `true`
+
+Whether display print icon in desktop mode.
+
 ## iconPrefix <Badge text="Root only" type="warning" />
 
 - Type: `string`

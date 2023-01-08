@@ -14,6 +14,12 @@ tag:
 
 Для получения подробной информации смотрите [Конфиг → Настройка стиля](../../config/style.md)
 
+## Print Button
+
+The theme fully optimize style for print, and there will be a print button at toc in desktop mode by default.
+
+To hide print button, you should set `print: false` in theme options.
+
 ## Полноэкранная кнопка
 
 <ToggleFullScreenButton />

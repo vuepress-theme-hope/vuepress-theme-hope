@@ -102,6 +102,13 @@ tag:
 
 :::
 
+## print <Badge text="Root only" type="warning" />
+
+- Type: `boolean`
+- Default: `true`
+
+Whether display print icon in desktop mode.
+
 ## iconPrefix <Badge text="Только root" type="warning" />
 
 - Тип: `string`

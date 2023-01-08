@@ -14,6 +14,7 @@ import {
 const rootAllowConfig = [
   "blog",
   "encrypt",
+  "print",
   "pure",
   "darkmode",
   "themeColor",
@@ -27,6 +28,7 @@ const defaultRootOptions: Omit<ThemeData, "locales"> = {
   encrypt: {},
 
   // appearance
+  print: true,
   pure: false,
   darkmode: "switch",
   themeColor: false,

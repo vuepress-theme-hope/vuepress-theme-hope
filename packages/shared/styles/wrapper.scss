@@ -12,6 +12,10 @@
   @media (max-width: $mobile) {
     padding: 1rem 1.5rem;
   }
+
+  @media print {
+    max-width: unset;
+  }
 }
 
 @mixin horizontal-wrapper($pad: hope-config.$pad) {
@@ -21,5 +25,9 @@
 
   @media (max-width: $pad) {
     padding-inline: 1.5rem;
+  }
+
+  @media print {
+    max-width: unset;
   }
 }

@@ -19,7 +19,7 @@ body {
   -webkit-tap-highlight-color: transparent;
 
   @media print {
-    font-size: 10pt !important;
+    font-size: 12pt;
   }
 }
 
@@ -186,6 +186,12 @@ th,
 td {
   padding: 0.6em 1em;
   border: 1px solid #dfe2e5;
+}
+
+@page {
+  margin: 2cm;
+  font-size: 12pt;
+  size: a4;
 }
 
 @media print {

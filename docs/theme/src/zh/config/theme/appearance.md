@@ -101,6 +101,13 @@ tag:
 
 :::
 
+## print <Badge text="仅限 Root" type="warning" />
+
+- 类型: `boolean`
+- 默认值: `true`
+
+是否在桌面模式下显示打印按钮。
+
 ## iconPrefix <Badge text="仅限 Root" type="warning" />
 
 - 类型: `string`

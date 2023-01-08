@@ -91,6 +91,15 @@ export interface AppearanceOptions {
   themeColor?: Record<string, string> | false;
 
   /**
+   * Whether display print button in desktop mode
+   *
+   * 是否在桌面模式下显示打印按钮
+   *
+   * @default true
+   */
+  print?: boolean;
+
+  /**
    * Full screen button
    *
    * 全屏按钮
