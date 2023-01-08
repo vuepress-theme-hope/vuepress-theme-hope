@@ -1,6 +1,5 @@
 import { defineComponent, h } from "vue";
 
-import FadeSlideY from "@theme-hope/components/transitions/FadeSlideY";
 import PasswordModal from "@theme-hope/modules/encrypt/components/PasswordModal";
 import { usePathEncrypt } from "@theme-hope/modules/encrypt/composables/index";
 
@@ -12,18 +11,9 @@ export default defineComponent({
   setup(_props, { slots }) {
     const { isEncrypted, validateToken } = usePathEncrypt();
 
-    return (): VNode =>
-      h(FadeSlideY, () =>
-        isEncrypted.value
-          ? h(
-              "main",
-              { class: "page", id: "main-content" },
-              h(PasswordModal, {
-                full: true,
-                onVerify: validateToken,
-              })
-            )
-          : slots["default"]?.() || null
-      );
+    return (): VNode | null =>
+      isEncrypted.value
+        ? h(PasswordModal, { full: true, onVerify: validateToken })
+        : ((slots["default"]?.() || null) as VNode | null);
   },
 });
