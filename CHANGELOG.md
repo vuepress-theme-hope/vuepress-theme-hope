@@ -4,6 +4,32 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.153](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.152...v2.0.0-beta.153) (2023-01-08)
+
+### ⚠ BREAKING CHANGES
+
+- **components:** rebuild notice options, support notice per path
+
+### Features
+
+- **comment2:** support locale for Waline ([7a54ad7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7a54ad794a14035c566c45a0af6651c860e3c98c))
+- **components:** add compact code for notice breaking changes ([69de6be](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/69de6be9a6f97d949474b77f5d95ef2a6a1dcc99))
+- **components:** rebuild notice options, support notice per path ([15ee5cd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/15ee5cdc9f8972fa55a54c1320c2e33cad82d526))
+- **theme:** add plugins check to warn noob users ([1d72c77](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1d72c774656f360475048970a9e99542da030fab))
+- **theme:** add print button ([b26fcf5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b26fcf56a11bca97894b7e90eeb360cf14dfa20e))
+- **theme:** appearance improvement ([7df314c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7df314ca3552cc1301e6a22bfdc2634f2a355633))
+- **theme:** improve homepage appearance ([f0fbfec](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f0fbfec4a3387e22c1c13f252e3d32e9ac49032f))
+
+### Bug Fixes
+
+- **md-enhance:** fix code demo copy button, close [#2647](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2647) ([818fe70](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/818fe70b4c8e694e53080637106e1b4864662eee))
+- **theme:** fix highlight lines, close [#2646](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2646) ([ad4ff9a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ad4ff9a8542489da81778f07ed75cc69cf6d7c98))
+- **theme:** fix print button style ([2f77ab9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2f77ab900aa850737720e1dff72ee478a014e6ce))
+
+### Reverts
+
+- **theme:** revert transition improve ([03042fc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/03042fc4dabcf2b73c062d52fa17ec60d99144b3))
+
 ## [2.0.0-beta.152](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.151...v2.0.0-beta.152) (2023-01-06)
 
 ### Features
