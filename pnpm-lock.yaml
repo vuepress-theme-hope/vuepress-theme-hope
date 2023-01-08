@@ -47,7 +47,7 @@ importers:
       rimraf: 3.0.2
       rollup: 3.9.1
       rollup-plugin-copy: 3.4.0
-      rollup-plugin-dts: 5.1.0
+      rollup-plugin-dts: 5.1.1
       rollup-plugin-esbuild: 5.0.0
       sort-package-json: 2.1.0
       stylelint: 14.16.1
@@ -92,7 +92,7 @@ importers:
       rimraf: 3.0.2
       rollup: 3.9.1
       rollup-plugin-copy: 3.4.0
-      rollup-plugin-dts: 5.1.0_esmavzhadgk2idmxtiodxm33ma
+      rollup-plugin-dts: 5.1.1_esmavzhadgk2idmxtiodxm33ma
       rollup-plugin-esbuild: 5.0.0_2quxkyungzb4t3y6fnerqxxdya
       sort-package-json: 2.1.0
       stylelint: 14.16.1
@@ -8817,13 +8817,6 @@ packages:
     dependencies:
       sourcemap-codec: 1.4.8
 
-  /magic-string/0.26.7:
-    resolution: {integrity: sha512-hX9XH3ziStPoPhJxLq1syWuZMxbDvGNbVchfrdCtanC7D13888bMFow61x8axrx+GfHLtVeAx2kxL7tTGRl+Ow==}
-    engines: {node: '>=12'}
-    dependencies:
-      sourcemap-codec: 1.4.8
-    dev: true
-
   /magic-string/0.27.0:
     resolution: {integrity: sha512-8UnnX2PeRAPZuN12svgR9j7M1uWMovg/CEnIwIG0LFkXSJJe4PdfUGiTGl8V9bsBHFUtfVINcSyYxd7q+kx9fA==}
     engines: {node: '>=12'}
@@ -10042,14 +10035,14 @@ packages:
       is-plain-object: 3.0.1
     dev: true
 
-  /rollup-plugin-dts/5.1.0_esmavzhadgk2idmxtiodxm33ma:
-    resolution: {integrity: sha512-R+4cVEhu9LfAlR1hqp1D67nO5hsiYFSsbVa2Uj/xchN6WxN4Ct9VjuEP1mw7f4dKJR5rj+OtjUz5cVINX51eFA==}
+  /rollup-plugin-dts/5.1.1_esmavzhadgk2idmxtiodxm33ma:
+    resolution: {integrity: sha512-zpgo52XmnLg8w4k3MScinFHZK1+ro6r7uVe34fJ0Ee8AM45FvgvTuvfWWaRgIpA4pQ1BHJuu2ospncZhkcJVeA==}
     engines: {node: '>=v14'}
     peerDependencies:
       rollup: ^3.0.0
       typescript: ^4.1
     dependencies:
-      magic-string: 0.26.7
+      magic-string: 0.27.0
       rollup: 3.9.1
       typescript: 4.9.4
     optionalDependencies:
