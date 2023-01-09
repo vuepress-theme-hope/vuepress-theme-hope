@@ -67,4 +67,10 @@ export const copyrightLocales: CopyrightLocaleConfig = {
     license: ":license 프로토콜에 따라",
     link: ":link",
   },
+
+  "/fi/": {
+    author: "Tekijänoikeus :author",
+    license: "Lisenssi :license",
+    link: ":link",
+  },
 };

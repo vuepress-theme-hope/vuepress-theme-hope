@@ -135,4 +135,13 @@ export const photoSwipeLocales: PhotoSwipeLocaleConfig = {
     arrowPrev: "이전 (왼쪽 화살표)",
     arrowNext: "다음 (오른쪽 화살표)",
   },
+
+  "/fi/": {
+    close: "Sulje",
+    download: "Lataa kuva",
+    fullscreen: "Vaihda kokoruututilaan",
+    zoom: "Lähennä/Työnnä",
+    arrowPrev: "Edellinen (Vasen nuoli)",
+    arrowNext: "Seuraava (Oikea nuoli)",
+  },
 };

@@ -234,4 +234,15 @@ export const pwaLocales: PWALocaleConfig = {
     hint: "새로운 콘텐츠를 찾았습니다.",
     update: "새로운 콘텐츠가 있습니다.",
   },
+
+  "/fi/": {
+    install: "Asenna",
+    iOSInstall: "Jaa-painiketta ja sitten 'Lisää kotiin'-painiketta",
+    cancel: "Peruuta",
+    close: "Sulje",
+    prevImage: "Edellinen kuva",
+    nextImage: "Seuraava kuva",
+    desc: "Kuvaus",
+    // TODO:
+  },
 };

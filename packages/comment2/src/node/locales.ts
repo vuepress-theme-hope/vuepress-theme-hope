@@ -76,4 +76,9 @@ export const walineLocales: WalineLocaleConfig = {
     placeholder:
       "댓글을 남겨주세요 (답변이 있을 경우 이메일로 알림을 받으려면 이메일 주소를 입력하세요)",
   },
+
+  "/fi/": {
+    placeholder:
+      "Kirjoita kommentti tähän (täytä sähköpostiosoite saadaksesi sähköposti-ilmoituksen vastauksesta)",
+  },
 };

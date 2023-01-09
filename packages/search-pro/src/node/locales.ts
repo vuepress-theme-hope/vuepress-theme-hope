@@ -196,4 +196,8 @@ export const searchProLocales: SearchProLocaleConfig = {
     emptyResult: "결과를 찾을 수 없습니다",
     loading: "검색 인덱스를 로드하는 중...",
   },
+
+  "/fi/": {
+    // TODO:
+  },
 };

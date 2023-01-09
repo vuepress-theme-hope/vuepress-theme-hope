@@ -60,4 +60,8 @@ export const backToTopLocales: BackToTopLocaleConfig = {
   "/ko/": {
     backToTop: "맨 위로",
   },
+
+  "/fi/": {
+    backToTop: "Takaisin ylös",
+  },
 };
