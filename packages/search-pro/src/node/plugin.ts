@@ -55,8 +55,11 @@ export const searchProPlugin =
 
       clientConfigFile: path.resolve(__dirname, "../client/config.js"),
 
-      extendsBundlerOptions: (config: unknown, app): void => {
-        addViteSsrNoExternal({ app, config }, ["fflate", "vuepress-shared"]);
+      extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
+        addViteSsrNoExternal(bundlerOptions, app, [
+          "fflate",
+          "vuepress-shared",
+        ]);
       },
 
       onPrepared: (app): Promise<void> =>

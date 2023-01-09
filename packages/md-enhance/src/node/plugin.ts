@@ -16,16 +16,16 @@ import { tasklist } from "@mdit/plugin-tasklist";
 import { isArray, isPlainObject } from "@vuepress/shared";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
+  addChainWebpack,
   addCustomElement,
+  addViteConfig,
   addViteOptimizeDepsExclude,
   addViteOptimizeDepsInclude,
   addViteSsrExternal,
   addViteSsrNoExternal,
-  chainWebpack,
   deepMerge,
   getBundlerName,
   getLocales,
-  mergeViteConfig,
 } from "vuepress-shared/node";
 
 import { logger } from "./utils.js";
@@ -164,66 +164,71 @@ export const mdEnhancePlugin =
           : DEFAULT_VUE_PLAYGROUND_OPTIONS,
       }),
 
-      extendsBundlerOptions: (config: unknown, app): void => {
+      extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
         if (getBundlerName(app) === "vite") {
-          const bundlerConfig = <ViteBundlerOptions>config;
+          const bundlerConfig = <ViteBundlerOptions>bundlerOptions;
 
           const originalOnWarn =
             bundlerConfig.viteOptions?.build?.rollupOptions?.onwarn;
 
-          bundlerConfig.viteOptions = mergeViteConfig(
-            bundlerConfig.viteOptions || {},
-            {
-              build: {
-                rollupOptions: {
-                  onwarn(
-                    warning: RollupWarning,
-                    warn: (warning: RollupWarning) => void
-                  ) {
-                    if (warning.message.includes("Use of eval")) return;
+          addViteConfig(bundlerOptions, app, {
+            build: {
+              rollupOptions: {
+                onwarn(
+                  warning: RollupWarning,
+                  warn: (warning: RollupWarning) => void
+                ) {
+                  if (warning.message.includes("Use of eval")) return;
 
-                    originalOnWarn?.(warning, warn);
-                  },
+                  originalOnWarn?.(warning, warn);
                 },
               },
-            }
-          );
+            },
+          });
         }
 
-        addViteSsrNoExternal({ app, config }, ["fflate", "vuepress-shared"]);
+        addViteSsrNoExternal(bundlerOptions, app, [
+          "fflate",
+          "vuepress-shared",
+        ]);
 
         if (katexEnable && katexOptions.output !== "html")
-          addCustomElement({ app, config }, MATHML_TAGS);
+          addCustomElement(bundlerOptions, app, MATHML_TAGS);
         else if (mathjaxEnable) {
-          addCustomElement({ app, config }, /^mjx-/);
+          addCustomElement(bundlerOptions, app, /^mjx-/);
           if (mathjaxInstance?.documentOptions.enableAssistiveMml)
-            addCustomElement({ app, config }, MATHML_TAGS);
+            addCustomElement(bundlerOptions, app, MATHML_TAGS);
         }
         if (chartEnable) {
-          addViteOptimizeDepsExclude({ app, config }, "chart.js/auto/auto.mjs");
-          addViteSsrExternal({ app, config }, "chart.js");
+          addViteOptimizeDepsExclude(
+            bundlerOptions,
+            app,
+            "chart.js/auto/auto.mjs"
+          );
+          addViteSsrExternal(bundlerOptions, app, "chart.js");
         }
 
         if (echartsEnable) {
-          addViteOptimizeDepsExclude({ app, config }, "echarts");
-          addViteSsrExternal({ app, config }, "echarts");
+          addViteOptimizeDepsExclude(bundlerOptions, app, "echarts");
+          addViteSsrExternal(bundlerOptions, app, "echarts");
         }
 
         if (flowchartEnable) {
           addViteOptimizeDepsInclude(
-            { app, config },
+            bundlerOptions,
+            app,
             "flowchart.js/src/flowchart.parse.js"
           );
-          addViteSsrExternal({ app, config }, "flowchart.js");
+          addViteSsrExternal(bundlerOptions, app, "flowchart.js");
         }
 
         if (mermaidEnable) {
-          addViteOptimizeDepsExclude({ app, config }, "mermaid");
-          addViteSsrExternal({ app, config }, "mermaid");
+          addViteOptimizeDepsExclude(bundlerOptions, app, "mermaid");
+          addViteSsrExternal(bundlerOptions, app, "mermaid");
         }
 
         if (presentationEnable) {
-          addViteOptimizeDepsExclude({ app, config }, [
+          addViteOptimizeDepsExclude(bundlerOptions, app, [
             "reveal.js/dist/reveal.esm.js",
             "reveal.js/plugin/markdown/markdown.esm.js",
             ...revealPlugins.map(
@@ -231,15 +236,15 @@ export const mdEnhancePlugin =
             ),
           ]);
 
-          addViteSsrExternal({ app, config }, "reveal.js");
+          addViteSsrExternal(bundlerOptions, app, "reveal.js");
         }
 
         if (vuePlaygroundEnable) {
-          addViteOptimizeDepsInclude({ app, config }, "@vue/repl");
-          addViteSsrExternal({ app, config }, "@vue/repl");
+          addViteOptimizeDepsInclude(bundlerOptions, app, "@vue/repl");
+          addViteSsrExternal(bundlerOptions, app, "@vue/repl");
 
           // hide webpack warnings
-          chainWebpack({ app, config }, (config) => {
+          addChainWebpack(bundlerOptions, app, (config) => {
             config.module.set("exprContextCritical", false);
             config.module.set("unknownContextCritical", false);
           });

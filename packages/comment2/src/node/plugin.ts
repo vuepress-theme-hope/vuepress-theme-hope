@@ -70,21 +70,21 @@ export const commentPlugin =
           : {}),
       }),
 
-      extendsBundlerOptions: (config: unknown, app): void => {
+      extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
         if (provider === "Giscus") {
-          addCustomElement({ app, config }, "GiscusWidget");
-          addViteSsrExternal({ app, config }, "giscus");
+          addCustomElement(bundlerOptions, app, "GiscusWidget");
+          addViteSsrExternal(bundlerOptions, app, "giscus");
         }
 
         if (provider === "Waline") {
-          addViteOptimizeDepsInclude({ app, config }, "autosize");
-          addViteOptimizeDepsExclude({ app, config }, "@waline/client");
-          addViteSsrExternal({ app, config }, "@waline/client");
+          addViteOptimizeDepsInclude(bundlerOptions, app, "autosize");
+          addViteOptimizeDepsExclude(bundlerOptions, app, "@waline/client");
+          addViteSsrExternal(bundlerOptions, app, "@waline/client");
         }
 
         if (provider === "Twikoo") {
-          addViteOptimizeDepsInclude({ app, config }, "twikoo");
-          addViteSsrExternal({ app, config }, "twikoo");
+          addViteOptimizeDepsInclude(bundlerOptions, app, "twikoo");
+          addViteSsrExternal(bundlerOptions, app, "twikoo");
         }
       },
 

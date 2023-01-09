@@ -53,24 +53,21 @@ export const pwaPlugin =
         SW_PATH: options.swPath || "service-worker.js",
       }),
 
-      extendsBundlerOptions: (config: unknown, app): void => {
-        addViteOptimizeDepsExclude({ app, config }, [
+      extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
+        addViteOptimizeDepsExclude(bundlerOptions, app, [
           "mitt",
           "register-service-worker",
         ]);
 
-        useCustomDevServer(
-          { app, config },
-          {
-            path: "/manifest.webmanifest",
-            response: async (_, response) => {
-              response.setHeader("Content-Type", "application/manifest+json");
+        useCustomDevServer(bundlerOptions, app, {
+          path: "/manifest.webmanifest",
+          response: async (_, response) => {
+            response.setHeader("Content-Type", "application/manifest+json");
 
-              return JSON.stringify(await manifest);
-            },
-            errMsg: "Unexpected manifest generate error",
-          }
-        );
+            return JSON.stringify(await manifest);
+          },
+          errMsg: "Unexpected manifest generate error",
+        });
       },
 
       onGenerated: async (app): Promise<void> => {

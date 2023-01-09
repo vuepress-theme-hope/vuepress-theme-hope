@@ -38,8 +38,8 @@ export const copyCodePlugin =
           '.theme-default-content div[class*="language-"] pre',
       }),
 
-      extendsBundlerOptions: (config: unknown, app): void => {
-        addViteSsrNoExternal({ app, config }, "vuepress-shared");
+      extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
+        addViteSsrNoExternal(bundlerOptions, app, "vuepress-shared");
       },
 
       clientConfigFile: path.resolve(__dirname, "../client/config.js"),
