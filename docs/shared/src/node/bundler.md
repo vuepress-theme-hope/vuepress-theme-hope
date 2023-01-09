@@ -14,9 +14,9 @@ import { addCustomElement } from "vuepress-shared/node";
 
 const plugin = {
   // ...
-  extendsBundlerOptions: (app, config) => {
+  extendsBundlerOptions: (bundlerOptions, app) => {
     // add them here
-    addCustomElement({ app, config }, "my-custom-element");
+    addCustomElement(bundlerOptions, app, "my-custom-element");
   },
 };
 
@@ -47,19 +47,16 @@ getBundleName(app) === "webpack"; // true
 Add a custom element declaration to the current bundler.
 
 ```ts
-interface CustomElementCommonOptions {
-  app: App;
-  config: unknown;
-}
 /**
  * Add tags as customElement
  *
- * @param config VuePress Bundler config
+ * @param bundlerOptions VuePress Bundler config
  * @param app VuePress Node App
  * @param customElements tags recognized as custom element
  */
-export const addCustomElement: (
-  { app, config }: CustomElementCommonOptions,
+export const addCustomElement = (
+  bundlerOptions: unknown,
+  app: App,
   customElement: string[] | string | RegExp
 ) => void;
 ```
@@ -69,8 +66,8 @@ export const addCustomElement: (
 ```ts
 import { addCustomElement } from "vuepress-shared/node";
 
-addCustomElement(app, "my-custom-element");
-addCustomElement(app, [
+addCustomElement(bundlerConfig, app, "my-custom-element");
+addCustomElement(bundlerOptions, app, [
   "custom-element1",
   "custom-element2",
   // all tags start with `math-`
@@ -85,18 +82,6 @@ addCustomElement(app, [
 Provides contents for specific path in dev server.
 
 ```ts
-
-export interface CustomServerCommonOptions {
-  /**
-   * VuePress Node App
-   */
-  app: App;
-  /**
-   * VuePress Bundler config
-   */
-  config: unknown;
-}
-
 export interface CustomServerOptions {
   /**
    * Path to be responded
@@ -116,14 +101,15 @@ export interface CustomServerOptions {
 /**
  * Handle specific path when running VuePress Dev Server
  *
- * @param config VuePress Bundler config
+ * @param bundlerOptions VuePress Bundler config
  * @param app VuePress Node App
  * @param path Path to be responded
  * @param response respond function
  * @param errMsg error msg
  */
 export const useCustomDevServer: (
-  { app, config }: CustomServerCommonOptions,
+  bundlerOptions: unknown,
+  app: App,
   {
     errMsg:"The server encountered an error",
     response: responseHandler,
@@ -138,38 +124,25 @@ export const useCustomDevServer: (
 import { useCustomDevServer } from "vuepress-shared/node";
 
 // handle `/api/` path
-useCustomDevServer(
-  { app, config },
-  {
-    path: "/api/",
-    response: async () => getData(),
-    errMsg: "Unexpected api error",
-  }
-);
+useCustomDevServer(bundlerOptions, app, {
+  path: "/api/",
+  response: async () => getData(),
+  errMsg: "Unexpected api error",
+});
 ```
 
 :::
 
 ## Webpack Related
 
-- chainWebpack
+- addChainWebpack
 
   Chain webpack config.
 
   ```ts
-  export interface WebpackCommonOptions {
-    /**
-     * VuePress Node App
-     */
-    app: App;
-    /**
-     * VuePress Bundler config
-     */
-    config: unknown;
-  }
-
-  export const chainWebpack: (
-    { app, config }: WebpackCommonOptions,
+  export const addChainWebpack: (
+    bundlerOptions: unknown,
+    app: App,
     chainWebpack: (
       config: WebpackChainConfig,
       isServer: boolean,
@@ -181,9 +154,9 @@ useCustomDevServer(
   ::: details Example
 
   ```ts
-  import { chainWebpack } from "vuepress-shared/node";
+  import { addChainWebpack } from "vuepress-shared/node";
 
-  chainWebpack({ app, config }, (config, isServer, isBuild) => {
+  addChainWebpack(bundlerOptions, app, (config, isServer, isBuild) => {
     // do some customize here
   });
   ```
@@ -209,22 +182,12 @@ useCustomDevServer(
   Add modules to Vite `ssr.noExternal` list
 
 ```ts
-export interface ViteCommonOptions {
-  /**
-   * VuePress Node App
-   */
-  app: App;
-  /**
-   * VuePress Bundler config
-   */
-  config: unknown;
-}
-
 /**
  * Add modules to Vite `optimizeDeps.include` list
  */
 export const addViteOptimizeDepsInclude: (
-  { app, config }: ViteCommonOptions,
+  bundlerOptions: unknown,
+  app: App,
   module: string | string[]
 ) => void;
 
@@ -232,7 +195,8 @@ export const addViteOptimizeDepsInclude: (
  * Add modules to Vite `optimizeDeps.exclude` list
  */
 export const addViteOptimizeDepsExclude: (
-  { app, config }: ViteCommonOptions,
+  bundlerOptions: unknown,
+  app: App,
   module: string | string[]
 ) => void;
 
@@ -240,7 +204,8 @@ export const addViteOptimizeDepsExclude: (
  * Add modules to Vite `ssr.external` list
  */
 export const addViteSsrExternal: (
-  { app, config }: ViteCommonOptions,
+  bundlerOptions: unknown,
+  app: App,
   module: string | string[]
 ) => void;
 
@@ -248,7 +213,8 @@ export const addViteSsrExternal: (
  * Add modules to Vite `ssr.noExternal` list
  */
 export const addViteSsrNoExternal: (
-  { app, config }: ViteCommonOptions,
+  bundlerOptions: unknown,
+  app: App,
   module: string | string[]
 ) => void;
 ```
@@ -263,13 +229,39 @@ import {
   addViteSsrNoExternal,
 } from "vuepress-shared/node";
 
-addViteOptimizeDepsInclude({ app, config }, ["vue", "vue-router"]);
-addViteOptimizeDepsExclude({ app, config }, "packageA");
-addViteSsrNoExternal({ app, config }, ["vue", "vue-router"]);
-addViteSsrExternal({ app, config }, "packageA");
+addViteOptimizeDepsInclude(bundlerOptions, app, ["vue", "vue-router"]);
+addViteOptimizeDepsExclude(bundlerOptions, app, "packageA");
+addViteSsrNoExternal(bundlerOptions, app, ["vue", "vue-router"]);
+addViteSsrExternal(bundlerOptions, app, "packageA");
 ```
 
 :::
+
+- addViteConfig
+
+  A function for you to add vite config
+
+  ```ts
+  export const addViteConfig: (
+    bundlerOptions: unknown,
+    app: App,
+    config: Record<string, unknown>
+  ) => void;
+  ```
+
+  ::: details Example
+
+  ```ts
+  import { addViteConfig } from "vuepress-shared/node";
+
+  addViteConfig(bundlerOptions, app, {
+    build: {
+      charset: "utf8",
+    },
+  });
+  ```
+
+  :::
 
 - mergeViteConfig
 
@@ -287,7 +279,7 @@ addViteSsrExternal({ app, config }, "packageA");
   ```ts
   import { mergeViteConfig } from "vuepress-shared/node";
 
-  config.viteOptions mergeViteConfig(config.viteOptions, {
+  config.viteOptions = mergeViteConfig(config.viteOptions, {
     build: {
       charset: "utf8",
     },

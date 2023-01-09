@@ -28,15 +28,15 @@ export const useSize = <E extends HTMLElement>(
   const width = computed(() => getValue(unref(options.width) || "100%"));
   const height = ref("auto");
 
-  const getRadio = (radio: number | string | undefined): number => {
-    if (isString(radio)) {
-      const [width, height] = radio.split(":");
+  const getRadio = (ratio: number | string | undefined): number => {
+    if (isString(ratio)) {
+      const [width, height] = ratio.split(":");
       const parsedRadio = Number(width) / Number(height);
 
       if (!Number.isNaN(parsedRadio)) return parsedRadio;
     }
 
-    return typeof radio === "number" ? radio : 16 / 9;
+    return typeof ratio === "number" ? ratio : 16 / 9;
   };
 
   const getHeight = (width: number): string => {

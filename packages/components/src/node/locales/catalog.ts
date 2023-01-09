@@ -60,4 +60,8 @@ export const catalogLocales: CatalogLocaleConfig = {
   "/ko/": {
     title: "목차",
   },
+
+  "/fi/": {
+    title: "Luettelo",
+  },
 };

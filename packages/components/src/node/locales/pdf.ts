@@ -60,4 +60,8 @@ export const pdfLocaleConfig: PDFLocaleConfig = {
   "/ko/": {
     hint: "<p>이 브라우저는 PDF를 포함할 수 없습니다. PDF를 보려면 다운로드하십시오: <a href='[url]' target='_blank'>PDF 다운로드</a></p>",
   },
+
+  "/fi/": {
+    hint: "<p>Tämä selain ei tue PDF-tiedostojen upottamista. Lataa PDF-tiedosto nähdäksesi sen: <a href='[url]' target='_blank'>Lataa PDF</a></p>",
+  },
 };

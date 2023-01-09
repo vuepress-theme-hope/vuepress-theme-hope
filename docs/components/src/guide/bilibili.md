@@ -16,7 +16,7 @@ A bilibili video:
 <BiliBili bvid="BV1kt411o7C3" />
 ```
 
-A bilibili video with radio, start time and page:
+A bilibili video with ratio, start time and page:
 
 <BiliBili bvid="BV1kt411o7C3" ratio="16:9" time="60" page="2" />
 
@@ -26,10 +26,10 @@ A bilibili video with radio, start time and page:
 
 A bilibili video with custom settings:
 
-<BiliBili bvid="BV1kt411o7C3" :ratio="[9 / 16, 20]" low-quality no-danmaku />
+<BiliBili bvid="BV1kt411o7C3" ratio="16:9" low-quality no-danmaku />
 
 ```md
-<BiliBili bvid="BV1kt411o7C3" :ratio="[9 / 16, 20]" low-quality no-danmaku />
+<BiliBili bvid="BV1kt411o7C3" ratio="16:9" low-quality no-danmaku />
 ```
 
 ## Props
@@ -62,12 +62,12 @@ BiliBili component width.
 
 BiliBili component height
 
-### radio
+### ratio
 
 - Type: `number`
 - Default: `16 / 9`
 
-BiliBili component radio, ONLY valid when `height` not set.
+BiliBili component ratio, ONLY valid when `height` not set.
 
 ### time
 

@@ -196,4 +196,17 @@ export const searchProLocales: SearchProLocaleConfig = {
     emptyResult: "결과를 찾을 수 없습니다",
     loading: "검색 인덱스를 로드하는 중...",
   },
+
+  "/fi/": {
+    cancel: "Peruuta",
+    placeholder: "Etsi",
+    search: "Etsi",
+    select: "valitaksesi",
+    navigate: "navigoidaksesi",
+    exit: "poistuaksesi",
+    history: "Hakuhistoria",
+    emptyHistory: "Tyhjennä hakuhistoria",
+    emptyResult: "Tuloksia ei löytynyt",
+    loading: "Ladataan hakuindeksiä...",
+  },
 };

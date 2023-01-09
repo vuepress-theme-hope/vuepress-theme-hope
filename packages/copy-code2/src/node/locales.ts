@@ -91,4 +91,10 @@ export const copyCodeLocales: CopyCodeLocaleConfig = {
     copied: "복사됨",
     hint: "성공적으로 복사됨",
   },
+
+  "/fi/": {
+    copy: "Kopioi koodi",
+    copied: "Kopioitu",
+    hint: "Kopioitu onnistuneesti",
+  },
 };

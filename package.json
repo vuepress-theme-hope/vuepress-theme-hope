@@ -82,11 +82,11 @@
     "stylelint": "14.16.1",
     "stylelint-config-hope": "1.0.1",
     "tslib": "2.4.1",
-    "tsx": "3.12.1",
+    "tsx": "3.12.2",
     "typescript": "4.9.4",
     "vitest": "0.26.3"
   },
-  "packageManager": "pnpm@7.22.0",
+  "packageManager": "pnpm@7.23.0",
   "engines": {
     "node": "^14.18.0 || >=16.0.0",
     "npm": ">=8",

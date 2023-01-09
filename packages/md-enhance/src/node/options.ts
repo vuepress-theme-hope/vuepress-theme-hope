@@ -199,7 +199,7 @@ export interface MarkdownEnhanceOptions {
    *
    * @default false
    */
-  include?: IncludeOptions | boolean;
+  include?: Partial<IncludeOptions> | boolean;
 
   /**
    * Whether to enable katex support

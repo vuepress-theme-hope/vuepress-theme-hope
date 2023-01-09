@@ -176,8 +176,8 @@ export const config = (
 
     define: () => ({ IS_GITEE, IS_GITHUB, IS_NETLIFY }),
 
-    extendsBundlerOptions: (config: unknown, app): void => {
-      addViteOptimizeDepsInclude({ app, config }, [
+    extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
+      addViteOptimizeDepsInclude(bundlerOptions, app, [
         "three",
         "three/examples/jsm/controls/OrbitControls",
         "three/examples/jsm/loaders/STLLoader",

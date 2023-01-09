@@ -93,4 +93,10 @@ export const readingTimeLocales: ReadingTimeLocaleConfig = {
     less1Minute: "1분 미만",
     time: "약 $time 분",
   },
+
+  "/fi/": {
+    word: "Noin $word sanaa",
+    less1Minute: "Alle minuutti",
+    time: "Noin $time minuuttia",
+  },
 };

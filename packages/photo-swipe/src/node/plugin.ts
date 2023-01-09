@@ -45,8 +45,8 @@ export const photoSwipePlugin =
         PHOTO_SWIPE_OPTIONS: options.options || {},
       }),
 
-      extendsBundlerOptions: (config: unknown, app): void => {
-        addViteOptimizeDepsExclude({ app, config }, "photoswipe");
+      extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
+        addViteOptimizeDepsExclude(bundlerOptions, app, "photoswipe");
       },
 
       clientConfigFile: path.resolve(__dirname, "../client/config.js"),

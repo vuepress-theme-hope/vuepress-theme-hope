@@ -47,12 +47,12 @@ Stackblitz component width.
 
 Stackblitz component height
 
-### radio
+### ratio
 
 - Type: `number`
 - Default: `16 / 9`
 
-Stackblitz component radio, ONLY valid when `height` not set.
+Stackblitz component ratio, ONLY valid when `height` not set.
 
 ### file
 
