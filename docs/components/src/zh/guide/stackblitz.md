@@ -47,7 +47,7 @@ StackBlitz 组件宽度。
 
 StackBlitz 组件高度
 
-### radio
+### ratio
 
 - 类型: `number`
 - 默认值: `16 / 9`

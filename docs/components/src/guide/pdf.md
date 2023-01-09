@@ -111,12 +111,12 @@ PDF viewer width.
 
 PDF viewer height
 
-### radio
+### ratio
 
 - Type: `number`
 - Default: `16 / 9`
 
-PDF viewer radio, ONLY valid when `height` not set.
+PDF viewer ratio, ONLY valid when `height` not set.
 
 ### page
 

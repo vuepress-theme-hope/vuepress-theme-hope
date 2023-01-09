@@ -61,12 +61,12 @@ YouTube component width.
 
 YouTube component height
 
-### radio
+### ratio
 
 - Type: `number`
 - Default: `16 / 9`
 
-YouTube component radio, ONLY valid when `height` not set.
+YouTube component ratio, ONLY valid when `height` not set.
 
 ### autoplay
 

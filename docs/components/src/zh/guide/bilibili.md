@@ -26,10 +26,10 @@ title: BiliBili
 
 一个自定义设置的 B 站视频:
 
-<BiliBili bvid="BV1kt411o7C3" :ratio="[9 / 16, 20]" low-quality no-danmaku />
+<BiliBili bvid="BV1kt411o7C3" ratio="16:9" low-quality no-danmaku />
 
 ```md
-<BiliBili bvid="BV1kt411o7C3" :ratio="[9 / 16, 20]" low-quality no-danmaku />
+<BiliBili bvid="BV1kt411o7C3" ratio="16:9" low-quality no-danmaku />
 ```
 
 ## 属性
@@ -62,7 +62,7 @@ B 站组件宽度。
 
 B 站组件高度
 
-### radio
+### ratio
 
 - 类型: `number`
 - 默认值: `16 / 9`
