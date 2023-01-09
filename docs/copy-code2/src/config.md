@@ -91,5 +91,6 @@ Locales config for copy code plugin.
 - **Japanese** (ja-JP)
 - **Turkish** (tr-TR)
 - **Korean** (ko-KR)
+- **Finnish** (fi-FI)
 
 :::

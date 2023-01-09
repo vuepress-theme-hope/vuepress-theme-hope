@@ -740,5 +740,6 @@ Locales config for Markdown Enhance Plugin.
 - **Japanese** (ja-JP)
 - **Turkish** (tr-TR)
 - **Korean** (ko-KR)
+- **Finnish** (fi-FI)
 
 :::
