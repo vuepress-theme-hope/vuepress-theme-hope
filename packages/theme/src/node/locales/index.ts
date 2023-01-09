@@ -2,6 +2,7 @@ import { brLocale } from "./br.js";
 import { deLocale } from "./de.js";
 import { enLocale } from "./en.js";
 import { esLocale } from "./es.js";
+import { fiLocale } from "./fi.js";
 import { frLocale } from "./fr.js";
 import { jaLocale } from "./ja.js";
 import { koLocale } from "./ko.js";
@@ -43,4 +44,6 @@ export const themeLocalesData: Record<string, ThemeLocaleData> = {
   "/tr/": trLocale,
 
   "/ko/": koLocale,
+
+  "/fi/": fiLocale,
 };
