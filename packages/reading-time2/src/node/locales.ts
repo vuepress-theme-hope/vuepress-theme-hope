@@ -95,6 +95,8 @@ export const readingTimeLocales: ReadingTimeLocaleConfig = {
   },
 
   "/fi/": {
-    // TODO:
+    word: "Noin $word sanaa",
+    less1Minute: "Alle minuutti",
+    time: "Noin $time minuuttia",
   },
 };

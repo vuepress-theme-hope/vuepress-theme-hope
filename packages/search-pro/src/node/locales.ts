@@ -198,6 +198,15 @@ export const searchProLocales: SearchProLocaleConfig = {
   },
 
   "/fi/": {
-    // TODO:
+    cancel: "Peruuta",
+    placeholder: "Etsi",
+    search: "Etsi",
+    select: "valitaksesi",
+    navigate: "navigoidaksesi",
+    exit: "poistuaksesi",
+    history: "Hakuhistoria",
+    emptyHistory: "Tyhjennä hakuhistoria",
+    emptyResult: "Tuloksia ei löytynyt",
+    loading: "Ladataan hakuindeksiä...",
   },
 };

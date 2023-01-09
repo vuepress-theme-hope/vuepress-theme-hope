@@ -237,12 +237,16 @@ export const pwaLocales: PWALocaleConfig = {
 
   "/fi/": {
     install: "Asenna",
-    iOSInstall: "Jaa-painiketta ja sitten 'Lisää kotiin'-painiketta",
+    iOSInstall: "Paina Jaa-painiketta ja sitten 'Lisää kotiin'-painiketta",
     cancel: "Peruuta",
     close: "Sulje",
     prevImage: "Edellinen kuva",
     nextImage: "Seuraava kuva",
     desc: "Kuvaus",
-    // TODO:
+    feature: "Avainominaisuudet",
+    explain:
+      "Tämä sovellus on asennettavissa tietokoneelle tai mobiililaitteelle. Tämä mahdollistaa sovelluksen toiminnan tietokoneohjelmana. Löydät sen sovelluslistasta ja voit kiinnittää sen työpöydälle, kotinäytölle, tehtäväpalkkiin tai muulle listalle. Asennettu sovellus voi turvallisesti olla vuorovaikutuksessa muiden sovellusten ja käyttöjärjestelmäsi kanssa.",
+    hint: "Uutta sisältöä.",
+    update: "Uutta sisältöä on saatavilla.",
   },
 };
