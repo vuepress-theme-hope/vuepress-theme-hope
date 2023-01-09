@@ -59,11 +59,11 @@ main {
   --color-fg-default: #c9d1d9;
   --color-fg-muted: #8b949e;
   --color-fg-subtle: #6e7681;
-  --color-canvas-default: #272930;
+  --color-canvas-default: #272829;
   --color-canvas-overlay: #1d1e1f;
   --color-canvas-inset: #191b1f;
   --color-canvas-subtle: #1d1e1f;
-  --color-border-default: #30363d;
+  --color-border-default: #302d28;
   --color-border-muted: #21262d;
   --color-neutral-muted: rgb(110 118 129 / 40%);
   --color-accent-fg: #58a6ff;
