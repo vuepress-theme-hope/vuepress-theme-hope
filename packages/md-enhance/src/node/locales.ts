@@ -135,4 +135,13 @@ export const markdownEnhanceLocales: MarkdownEnhanceLocaleConfig = {
     danger: "위험",
     details: "세부사항",
   },
+
+  "/fi/": {
+    info: "Tietoa",
+    note: "Huomautus",
+    tip: "Vinkki",
+    warning: "Varoitus",
+    danger: "Vaara",
+    details: "Yksityiskohdat",
+  },
 };
