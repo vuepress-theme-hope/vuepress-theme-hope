@@ -12,7 +12,7 @@ importers:
 
   .:
     specifiers:
-      '@commitlint/cli': 17.4.0
+      '@commitlint/cli': 17.4.1
       '@commitlint/config-conventional': 17.4.0
       '@rollup/plugin-commonjs': 24.0.0
       '@rollup/plugin-node-resolve': 15.0.1
@@ -57,7 +57,7 @@ importers:
       typescript: 4.9.4
       vitest: 0.27.0
     devDependencies:
-      '@commitlint/cli': 17.4.0_@types+node@18.11.18
+      '@commitlint/cli': 17.4.1
       '@commitlint/config-conventional': 17.4.0
       '@rollup/plugin-commonjs': 24.0.0_rollup@3.9.1
       '@rollup/plugin-node-resolve': 15.0.1_rollup@3.9.1
@@ -69,7 +69,7 @@ importers:
       '@vue/eslint-config-typescript': 11.0.2_6bpdc6aekjtktp4whh3ygv32oi
       bumpp: 8.2.1
       commit-and-tag-version: 10.1.0
-      commitizen: 4.2.6_@types+node@18.11.18
+      commitizen: 4.2.6
       concurrently: 7.6.0
       cpx2: 4.2.0
       cross-env: 7.0.3
@@ -2647,14 +2647,14 @@ packages:
     resolution: {integrity: sha512-Tbsj02wXCbqGmzdnXNk0SOF19ChhRU70BsroIi4Pm6Ehp56in6vch94mfbdQ17DozxkL3BAVjbZ4Qc1a0HFRAg==}
     dev: false
 
-  /@commitlint/cli/17.4.0_@types+node@18.11.18:
-    resolution: {integrity: sha512-SEY4sYe8yVlgxPP7X0wJb96DBAGBPsCsy6QbqJt/UECbIAjDeDV5xXBV4jnS7T/qMC10sk6Ub9kDhEX0VWvblw==}
+  /@commitlint/cli/17.4.1:
+    resolution: {integrity: sha512-W8OJwz+izY+fVwyUt1HveCDmABMZNRVZHSVPw/Bh9Y62tp11SmmQaycgbsYLMiMy7JGn4mAJqEGlSHS9Uti9ZQ==}
     engines: {node: '>=v14'}
     hasBin: true
     dependencies:
       '@commitlint/format': 17.4.0
       '@commitlint/lint': 17.4.0
-      '@commitlint/load': 17.4.0_@types+node@18.11.18
+      '@commitlint/load': 17.4.1
       '@commitlint/read': 17.4.0
       '@commitlint/types': 17.4.0
       execa: 5.1.1
@@ -2665,7 +2665,6 @@ packages:
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
-      - '@types/node'
     dev: true
 
   /@commitlint/config-conventional/17.4.0:
@@ -2726,14 +2725,15 @@ packages:
       '@commitlint/types': 17.4.0
     dev: true
 
-  /@commitlint/load/17.4.0_@types+node@18.11.18:
-    resolution: {integrity: sha512-wDKNvAJqukqZqKmhRlf3KNo/12QGo1AQcd80EbV01SxtGvyHOsJ/g+/IbrZpopZv8rvzmEVktcpfDYH6ITepFA==}
+  /@commitlint/load/17.4.1:
+    resolution: {integrity: sha512-6A7/LhIaQpL4ieciIDcVvK2d5z/UI1GBrtDaHm6sQSCL0265clB2/F7XKQNTJHXv9yG4LByT2r+QCpM4GugIfw==}
     engines: {node: '>=v14'}
     dependencies:
       '@commitlint/config-validator': 17.4.0
       '@commitlint/execute-rule': 17.4.0
       '@commitlint/resolve-extends': 17.4.0
       '@commitlint/types': 17.4.0
+      '@types/node': 18.11.18
       chalk: 4.1.2
       cosmiconfig: 8.0.0
       cosmiconfig-typescript-loader: 4.3.0_bxtyj3et3xbsdyxhh3oblnfbj4
@@ -2746,7 +2746,6 @@ packages:
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
-      - '@types/node'
     dev: true
 
   /@commitlint/message/17.4.0:
@@ -5521,13 +5520,13 @@ packages:
       yargs: 17.6.2
     dev: true
 
-  /commitizen/4.2.6_@types+node@18.11.18:
+  /commitizen/4.2.6:
     resolution: {integrity: sha512-RyTM+EiD9GO01DJUn9MRRAet3XUHGfoUZoksLfr+1ym1Xt2q5EYJs9Fg2BtKSb5Mo53i0BtMBmWMHQXVlZ/L9w==}
     engines: {node: '>= 12'}
     hasBin: true
     dependencies:
       cachedir: 2.3.0
-      cz-conventional-changelog: 3.3.0_@types+node@18.11.18
+      cz-conventional-changelog: 3.3.0
       dedent: 0.7.0
       detect-indent: 6.1.0
       find-node-modules: 2.1.3
@@ -5543,7 +5542,6 @@ packages:
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
-      - '@types/node'
     dev: true
 
   /common-tags/1.8.2:
@@ -6038,22 +6036,21 @@ packages:
       lodash: 4.17.21
     dev: false
 
-  /cz-conventional-changelog/3.3.0_@types+node@18.11.18:
+  /cz-conventional-changelog/3.3.0:
     resolution: {integrity: sha512-U466fIzU5U22eES5lTNiNbZ+d8dfcHcssH4o7QsdWaCcRs/feIPCxKYSWkYBNs5mny7MvEfwpTLWjvbm94hecw==}
     engines: {node: '>= 10'}
     dependencies:
       chalk: 2.4.2
-      commitizen: 4.2.6_@types+node@18.11.18
+      commitizen: 4.2.6
       conventional-commit-types: 3.0.0
       lodash.map: 4.6.0
       longest: 2.0.1
       word-wrap: 1.2.3
     optionalDependencies:
-      '@commitlint/load': 17.4.0_@types+node@18.11.18
+      '@commitlint/load': 17.4.1
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
-      - '@types/node'
     dev: true
 
   /cz-git/1.4.1:
