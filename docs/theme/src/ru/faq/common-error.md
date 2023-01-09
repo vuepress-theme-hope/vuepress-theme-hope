@@ -64,7 +64,7 @@ Using object format sidebar config means you want to set different sidebar based
 @tab pnpm
 
 ```bash
-pnpm add vuepress@next vuepress-theme-hope@next
+pnpm add @vuepress/client@next vuepress@next vuepress-theme-hope@next vue@latest
 ```
 
 @tab yarn
@@ -104,6 +104,12 @@ npm i && npm update
 ```
 
 :::
+
+## HotReload not working in DevServer
+
+Some configuration has high performance impact on dev server, so their hot reload are disabled by default. You can enable it manually via `hotReload: true` in theme options.
+
+These include categories and tags for blog, structured sidebar and git-based information.
 
 ## Некоторые настройки страницы недействительны
 

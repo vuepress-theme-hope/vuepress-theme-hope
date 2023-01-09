@@ -16,7 +16,7 @@ You can update to the latest version by executing the following commands.
 @tab pnpm
 
 ```bash
-pnpm add vuepress@next vuepress-theme-hope@next
+pnpm add @vuepress/client@next vuepress@next vuepress-theme-hope@next vue@latest
 ```
 
 @tab yarn

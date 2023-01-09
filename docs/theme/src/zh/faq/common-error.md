@@ -64,7 +64,7 @@ CloudFlare 的 Auto Minify 会错误的对 HTML 的空格和换行进行处理�
 @tab pnpm
 
 ```bash
-pnpm add vuepress@next vuepress-theme-hope@next
+pnpm add @vuepress/client@next vuepress@next vuepress-theme-hope@next vue@latest
 ```
 
 @tab yarn
@@ -104,6 +104,12 @@ npm i && npm update
 ```
 
 :::
+
+## 热更新在开发服务器中不工作
+
+某些配置对开发服务器有高性能影响，因此默认情况下禁用它们的热重载，你可以通过在主题选项中设置 `hotReload: true` 手动开启。
+
+其中包括博客的类别和标签、结构化侧边栏和基于 git 的信息。
 
 ## 部分页面设置无效
 
