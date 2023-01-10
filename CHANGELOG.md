@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.155](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.154...v2.0.0-beta.155) (2023-01-10)
+
+### Features
+
+- Add Finnish language support ([#2652](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2652)) ([c896228](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c8962280c42573a8e82f904def997308b77b0112))
+- **theme:** improve comment color ([b822c6d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b822c6d5665ad9c368c171a079845e213aab863b))
+
+### Bug Fixes
+
+- **md-enhance:** fix option types ([9a8f324](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9a8f32470024b8ae21d5da2e5abdc730de890fe7))
+- **theme:** fix text color ([615e329](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/615e3290d1c19ac16422853ab7692237c7fb301b))
+- **theme:** fix themeData generation and some options ([db8a002](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/db8a002c23e4a4fa62168315ae8ce45a885fbe5c))
+- **theme:** Improve footer transition ([#2651](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2651)) ([91c067c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/91c067c1c043c58015e5986c70cbb6cf85b669ed))
+
 ## [2.0.0-beta.154](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.153...v2.0.0-beta.154) (2023-01-08)
 
 ### Bug Fixes
