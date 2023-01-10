@@ -39,7 +39,7 @@ export const injectDarkMode = (app: App): void => {
   );
 
   const isDarkMode = computed<boolean>(() => {
-    const { darkmode } = themeData.value;
+    const { darkmode = "switch" } = themeData.value;
 
     // disable darkmode
     return darkmode === "disable"

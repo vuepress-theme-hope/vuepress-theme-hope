@@ -132,7 +132,4 @@ export interface AppearanceOptions {
   iconPrefix?: string;
 }
 
-export type AppearanceConfig = AppearanceOptions &
-  Required<
-    Pick<AppearanceOptions, "darkmode" | "fullscreen" | "pure" | "themeColor">
-  >;
+export type AppearanceConfig = AppearanceOptions;

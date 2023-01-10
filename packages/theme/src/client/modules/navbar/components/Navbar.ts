@@ -35,7 +35,7 @@ export default defineComponent({
     const showScreen = ref(false);
 
     const autoHide = computed(() => {
-      const { navbarAutoHide } = themeLocale.value;
+      const { navbarAutoHide = "mobile" } = themeLocale.value;
 
       return (
         navbarAutoHide !== "none" &&
@@ -78,7 +78,7 @@ export default defineComponent({
               "navbar",
               {
                 "auto-hide": autoHide.value,
-                "hide-icon": !themeLocale.value.navbarIcon,
+                "hide-icon": themeLocale.value.navbarIcon === false,
               },
             ],
           },

@@ -12,7 +12,7 @@ export const getCopyCodePlugin = (
 
   return copyCodePlugin({
     selector: '.theme-hope-content div[class*="language-"] pre',
-    pure: themeData.pure,
+    pure: themeData.pure || false,
     ...options,
   });
 };

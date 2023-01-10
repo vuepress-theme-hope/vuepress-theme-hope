@@ -43,7 +43,7 @@ export interface FeatureLocaleOptions {
 }
 
 export interface FeatureLocaleConfig {
-  blog: BlogLocaleConfig;
+  blog?: BlogLocaleConfig;
 }
 
 /**
@@ -71,15 +71,8 @@ export interface FeatureOptions {
   hotReload?: boolean;
 }
 
-export interface FeatureConfig {
-  /**
-   * Blog feature options
-   *
-   * 博客功能配置
-   */
-  // for config size consideration, blog options can be held in root and merged in client side
-  blog: BlogLocaleConfig;
-
+// for config size consideration, blog options can be held in root and merged in client side
+export interface FeatureConfig extends FeatureLocaleConfig {
   /**
    * Encrypt config
    *

@@ -25,4 +25,4 @@ export const useThemeAuthor = (): ComputedRef<AuthorInfo[]> => {
 };
 
 export const usePure = (): ComputedRef<boolean> =>
-  computed(() => Boolean(useThemeData().value.pure));
+  computed(() => useThemeData().value.pure !== false);

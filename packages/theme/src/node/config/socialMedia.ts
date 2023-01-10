@@ -55,8 +55,8 @@ export const checkSocialMediaIcons = (
   Object.entries(themeData.blog?.medias || {}).forEach(([key, value]) => {
     const result = checkIcon(key, value);
 
-    if (result) themeData.blog.medias![key] = result;
-    else delete themeData.blog.medias![key];
+    if (result) themeData.blog!.medias![key] = result;
+    else delete themeData.blog!.medias![key];
   });
 
   if (themeData.locales)
@@ -65,8 +65,8 @@ export const checkSocialMediaIcons = (
         ([key, value]) => {
           const result = checkIcon(key, value);
 
-          if (result) localeConfig.blog.medias![key] = result;
-          else delete localeConfig.blog.medias![key];
+          if (result) localeConfig.blog!.medias![key] = result;
+          else delete localeConfig.blog!.medias![key];
         }
       );
     });

@@ -28,11 +28,12 @@ export default defineComponent({
     const frontmatter = usePageFrontmatter<ThemePageFrontmatter>();
     const isMobile = useMobile();
 
-    const sidebarDisplay = computed(
-      () =>
-        themeLocale.value.blog.sidebarDisplay ||
-        themeData.value.blog.sidebarDisplay ||
-        "mobile"
+    const sidebarDisplay = computed(() =>
+      ENABLE_BLOG
+        ? themeLocale.value.blog?.sidebarDisplay ||
+          themeData.value.blog?.sidebarDisplay ||
+          "mobile"
+        : "none"
     );
 
     return (): VNode[] => [
@@ -45,12 +46,10 @@ export default defineComponent({
             frontmatter.value.home
               ? h(HomePage)
               : h(FadeSlideY, () => h(NormalPage, { key: page.value.path })),
-          ...(ENABLE_BLOG && sidebarDisplay.value !== "none"
+          ...(sidebarDisplay.value !== "none"
             ? { navScreenBottom: () => h(resolveComponent("BloggerInfo")) }
             : {}),
-          ...(ENABLE_BLOG &&
-          !isMobile.value &&
-          sidebarDisplay.value === "always"
+          ...(!isMobile.value && sidebarDisplay.value === "always"
             ? { sidebar: () => h(resolveComponent("BloggerInfo")) }
             : {}),
         }

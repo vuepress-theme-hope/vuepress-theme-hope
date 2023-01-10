@@ -80,7 +80,8 @@ export const getSidebarData = (
             ...getGeneratePaths(config).map((item) => `${prefix}${item}`)
           );
       });
-    else if (sidebar === "structure") generatePaths.push(localePath);
+    // sidebar is default "structure"
+    else if (sidebar !== false) generatePaths.push(localePath);
   });
 
   const sidebarData = Object.fromEntries(

@@ -56,7 +56,10 @@ export default defineComponent({
       h(
         "aside",
         {
-          class: ["sidebar", { "hide-icon": !themeLocale.value.sidebarIcon }],
+          class: [
+            "sidebar",
+            { "hide-icon": themeLocale.value.sidebarIcon === false },
+          ],
           ref: sidebar,
         },
         [

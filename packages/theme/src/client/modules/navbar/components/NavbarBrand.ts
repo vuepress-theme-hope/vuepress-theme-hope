@@ -49,7 +49,16 @@ export default defineComponent({
         siteBrandTitle.value
           ? h(
               "span",
-              { class: ["site-name", { "hide-in-pad": siteBrandLogo.value }] },
+              {
+                class: [
+                  "site-name",
+                  {
+                    "hide-in-pad":
+                      siteBrandLogo.value &&
+                      themeLocale.value.hideSiteNameOnMobile !== false,
+                  },
+                ],
+              },
               siteBrandTitle.value
             )
           : null,

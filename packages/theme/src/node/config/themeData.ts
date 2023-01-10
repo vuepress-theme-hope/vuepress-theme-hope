@@ -22,32 +22,6 @@ const rootAllowConfig = [
   "mobileBreakPoint",
 ];
 
-const defaultRootOptions: Omit<ThemeData, "locales"> = {
-  // features
-  blog: {},
-  encrypt: {},
-
-  // appearance
-  print: true,
-  pure: false,
-  darkmode: "switch",
-  themeColor: false,
-  fullscreen: false,
-};
-
-const defaultLocaleOptions: ThemeLocaleOptions = {
-  // features
-  blog: {},
-  // layouts
-  repoDisplay: true,
-  navbarIcon: true,
-  navbarAutoHide: "mobile",
-  hideSiteNameOnMobile: true,
-  sidebar: "structure",
-  sidebarIcon: true,
-  headerDepth: 2,
-};
-
 /**
  * Get client-side `themeData`
  */
@@ -57,8 +31,9 @@ export const getThemeData = (
   { enableBlog }: ThemeStatus
 ): ThemeData => {
   const themeData: ThemeData = {
-    ...defaultRootOptions,
+    encrypt: {},
     ...Object.fromEntries(
+      // only remain root allowed config
       Object.entries(themeOptions).filter(([key]) =>
         rootAllowConfig.includes(key)
       )
@@ -70,6 +45,7 @@ export const getThemeData = (
         name: "vuepress-theme-hope",
         default: Object.fromEntries(
           Object.entries(themeLocalesData).map(([locale, config]) => {
+            // remove blog locales if blog is not enabled
             if (!enableBlog) {
               // @ts-ignore
               delete config.blogLocales;
@@ -78,22 +54,17 @@ export const getThemeData = (
               delete config.paginationLocales;
             }
 
-            return [
-              locale,
-              <ThemeLocaleConfig>{
-                // default config
-                ...defaultLocaleOptions,
-                ...config,
-              },
-            ];
+            return [locale, <ThemeLocaleConfig>config];
           })
         ),
         // extract localeConfig
         config: Object.fromEntries(
-          [
-            <[string, ThemeLocaleOptions]>["/", {}],
-            ...Object.entries(themeOptions.locales || {}),
-          ].map<[string, ThemeLocaleConfig]>(([localePath, localeConfig]) => [
+          Object.entries<ThemeLocaleOptions>({
+            // ensure default locale
+            // eslint-disable-next-line @typescript-eslint/naming-convention
+            "/": {},
+            ...(themeOptions.locales || {}),
+          }).map(([localePath, localeConfig]) => [
             localePath,
             <ThemeLocaleConfig>{
               // root config

@@ -2,21 +2,15 @@
 
 exports[`should generate themeData correctly > Should contain basic properties 1`] = `
 {
-  "blog": {},
-  "darkmode": "switch",
   "encrypt": {},
-  "fullscreen": false,
   "locales": {
     "/": {
-      "blog": {},
       "encryptLocales": {
         "errorHint": "Please enter the correct password!",
         "iconLabel": "Page Encrypted",
         "placeholder": "Enter password",
         "remember": "Remember password",
       },
-      "headerDepth": 2,
-      "hideSiteNameOnMobile": true,
       "lang": "en-US",
       "metaLocales": {
         "author": "Author",
@@ -34,8 +28,6 @@ exports[`should generate themeData correctly > Should contain basic properties 1
         "views": "Page views",
         "words": "Words",
       },
-      "navbarAutoHide": "mobile",
-      "navbarIcon": true,
       "navbarLocales": {
         "langName": "English",
         "selectLangAriaLabel": "Select language",
@@ -45,7 +37,6 @@ exports[`should generate themeData correctly > Should contain basic properties 1
         "fullscreen": "Full Screen",
         "themeColor": "Theme Color",
       },
-      "repoDisplay": true,
       "routeLocales": {
         "back": "Go back",
         "home": "Take me home",
@@ -58,300 +49,7 @@ exports[`should generate themeData correctly > Should contain basic properties 1
         "openInNewWindow": "Open in new window",
         "skipToContent": "Skip to main content",
       },
-      "sidebar": "structure",
-      "sidebarIcon": true,
     },
   },
-  "print": true,
-  "pure": false,
-  "themeColor": false,
-}
-`;
-
-exports[`should generate themeData correctly > Should handle single language 1`] = `
-{
-  "blog": {},
-  "darkmode": "switch",
-  "encrypt": {},
-  "fullscreen": false,
-  "locales": {
-    "/": {
-      "blog": {},
-      "encryptLocales": {
-        "errorHint": "Please enter the correct password!",
-        "iconLabel": "Page Encrypted",
-        "placeholder": "Enter password",
-        "remember": "Remember password",
-      },
-      "headerDepth": 2,
-      "hideSiteNameOnMobile": true,
-      "lang": "en-US",
-      "metaLocales": {
-        "author": "Author",
-        "category": "Category",
-        "contributors": "Contributors",
-        "date": "Writing Date",
-        "editLink": "Edit this page",
-        "lastUpdated": "Last update",
-        "next": "Next",
-        "origin": "Original",
-        "prev": "Prev",
-        "readingTime": "Reading Time",
-        "tag": "Tag",
-        "toc": "On This Page",
-        "views": "Page views",
-        "words": "Words",
-      },
-      "navbar": [
-        "/",
-        "/about",
-      ],
-      "navbarAutoHide": "mobile",
-      "navbarIcon": true,
-      "navbarLocales": {
-        "langName": "English",
-        "selectLangAriaLabel": "Select language",
-      },
-      "outlookLocales": {
-        "darkmode": "Theme Mode",
-        "fullscreen": "Full Screen",
-        "themeColor": "Theme Color",
-      },
-      "repoDisplay": true,
-      "routeLocales": {
-        "back": "Go back",
-        "home": "Take me home",
-        "notFoundMsg": [
-          "There’s nothing here.",
-          "How did we get here?",
-          "That’s a Four-Oh-Four.",
-          "Looks like we've got some broken links.",
-        ],
-        "openInNewWindow": "Open in new window",
-        "skipToContent": "Skip to main content",
-      },
-      "sidebar": [
-        "/",
-        "/about",
-      ],
-      "sidebarIcon": true,
-    },
-  },
-  "print": true,
-  "pure": false,
-  "themeColor": false,
-}
-`;
-
-exports[`should generate themeData correctly > locale should have higher property 1`] = `
-{
-  "blog": {},
-  "darkmode": "switch",
-  "encrypt": {},
-  "fullscreen": false,
-  "locales": {
-    "/": {
-      "blog": {},
-      "encryptLocales": {
-        "errorHint": "Please enter the correct password!",
-        "iconLabel": "Page Encrypted",
-        "placeholder": "Enter password",
-        "remember": "Remember password",
-      },
-      "headerDepth": 2,
-      "hideSiteNameOnMobile": true,
-      "lang": "en-US",
-      "metaLocales": {
-        "author": "Author",
-        "category": "Category",
-        "contributors": "Contributors",
-        "date": "Writing Date",
-        "editLink": "Edit this page",
-        "lastUpdated": "Last update",
-        "next": "Next",
-        "origin": "Original",
-        "prev": "Prev",
-        "readingTime": "Reading Time",
-        "tag": "Tag",
-        "toc": "On This Page",
-        "views": "Page views",
-        "words": "Words",
-      },
-      "navbar": [
-        "/",
-        "/guide",
-        "/about",
-      ],
-      "navbarAutoHide": "mobile",
-      "navbarIcon": true,
-      "navbarLocales": {
-        "langName": "English",
-        "selectLangAriaLabel": "Select language",
-      },
-      "outlookLocales": {
-        "darkmode": "Theme Mode",
-        "fullscreen": "Full Screen",
-        "themeColor": "Theme Color",
-      },
-      "repoDisplay": true,
-      "routeLocales": {
-        "back": "Go back",
-        "home": "Take me home",
-        "notFoundMsg": [
-          "There’s nothing here.",
-          "How did we get here?",
-          "That’s a Four-Oh-Four.",
-          "Looks like we've got some broken links.",
-        ],
-        "openInNewWindow": "Open in new window",
-        "skipToContent": "Skip to main content",
-      },
-      "sidebar": "structure",
-      "sidebarIcon": true,
-    },
-  },
-  "print": true,
-  "pure": false,
-  "themeColor": false,
-}
-`;
-
-exports[`should generate themeData correctly > root only option should not appear in locales 1`] = `
-{
-  "blog": {},
-  "darkmode": "disable",
-  "encrypt": {},
-  "fullscreen": false,
-  "locales": {
-    "/": {
-      "blog": {},
-      "encryptLocales": {
-        "errorHint": "Please enter the correct password!",
-        "iconLabel": "Page Encrypted",
-        "placeholder": "Enter password",
-        "remember": "Remember password",
-      },
-      "headerDepth": 2,
-      "hideSiteNameOnMobile": true,
-      "lang": "en-US",
-      "metaLocales": {
-        "author": "Author",
-        "category": "Category",
-        "contributors": "Contributors",
-        "date": "Writing Date",
-        "editLink": "Edit this page",
-        "lastUpdated": "Last update",
-        "next": "Next",
-        "origin": "Original",
-        "prev": "Prev",
-        "readingTime": "Reading Time",
-        "tag": "Tag",
-        "toc": "On This Page",
-        "views": "Page views",
-        "words": "Words",
-      },
-      "navbarAutoHide": "mobile",
-      "navbarIcon": true,
-      "navbarLocales": {
-        "langName": "English",
-        "selectLangAriaLabel": "Select language",
-      },
-      "outlookLocales": {
-        "darkmode": "Theme Mode",
-        "fullscreen": "Full Screen",
-        "themeColor": "Theme Color",
-      },
-      "repoDisplay": true,
-      "routeLocales": {
-        "back": "Go back",
-        "home": "Take me home",
-        "notFoundMsg": [
-          "There’s nothing here.",
-          "How did we get here?",
-          "That’s a Four-Oh-Four.",
-          "Looks like we've got some broken links.",
-        ],
-        "openInNewWindow": "Open in new window",
-        "skipToContent": "Skip to main content",
-      },
-      "sidebar": "structure",
-      "sidebarIcon": true,
-    },
-  },
-  "print": true,
-  "pure": true,
-  "themeColor": false,
-}
-`;
-
-exports[`should generate themeData correctly > should fallback to root if locale config is missing 1`] = `
-{
-  "blog": {},
-  "darkmode": "switch",
-  "encrypt": {},
-  "fullscreen": false,
-  "locales": {
-    "/": {
-      "blog": {},
-      "encryptLocales": {
-        "errorHint": "Please enter the correct password!",
-        "iconLabel": "Page Encrypted",
-        "placeholder": "Enter password",
-        "remember": "Remember password",
-      },
-      "headerDepth": 2,
-      "hideSiteNameOnMobile": true,
-      "lang": "en-US",
-      "metaLocales": {
-        "author": "Author",
-        "category": "Category",
-        "contributors": "Contributors",
-        "date": "Writing Date",
-        "editLink": "Edit this page",
-        "lastUpdated": "Last update",
-        "next": "Next",
-        "origin": "Original",
-        "prev": "Prev",
-        "readingTime": "Reading Time",
-        "tag": "Tag",
-        "toc": "On This Page",
-        "views": "Page views",
-        "words": "Words",
-      },
-      "navbar": [
-        "/",
-        "/about",
-      ],
-      "navbarAutoHide": "mobile",
-      "navbarIcon": true,
-      "navbarLocales": {
-        "langName": "English",
-        "selectLangAriaLabel": "Select language",
-      },
-      "outlookLocales": {
-        "darkmode": "Theme Mode",
-        "fullscreen": "Full Screen",
-        "themeColor": "Theme Color",
-      },
-      "repoDisplay": true,
-      "routeLocales": {
-        "back": "Go back",
-        "home": "Take me home",
-        "notFoundMsg": [
-          "There’s nothing here.",
-          "How did we get here?",
-          "That’s a Four-Oh-Four.",
-          "Looks like we've got some broken links.",
-        ],
-        "openInNewWindow": "Open in new window",
-        "skipToContent": "Skip to main content",
-      },
-      "sidebar": "structure",
-      "sidebarIcon": true,
-    },
-  },
-  "print": true,
-  "pure": false,
-  "themeColor": false,
 }
 `;
