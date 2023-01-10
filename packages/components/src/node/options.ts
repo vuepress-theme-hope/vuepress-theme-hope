@@ -2,11 +2,13 @@ import type { LocaleConfig } from "@vuepress/core";
 import type {
   BackToTopLocaleData,
   CatalogLocaleData,
+  ComponentsArtPlayerOptions,
   NoticeOptions,
   PDFLocaleData,
 } from "../shared/index.js";
 
 export type AvailableComponent =
+  | "ArtPlayer"
   | "AudioPlayer"
   | "Badge"
   | "BiliBili"
@@ -34,6 +36,13 @@ export interface ComponentOptions {
    * 组件全局配置
    */
   componentOptions?: {
+    /**
+     * ArtPlayer config
+     *
+     * ArtPlayer 配置
+     */
+    ArtPlayer?: ComponentsArtPlayerOptions;
+
     /**
      * FontIcon config
      *
