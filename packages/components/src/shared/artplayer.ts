@@ -1,9 +1,8 @@
 import type artplayer from "artplayer/dist/artplayer.js";
+import type { Option as ArtPlayerPluginDanmukuOption } from "artplayer-plugin-danmuku";
 
 export type ArtPlayer = artplayer;
 export type ArtPlayerOptions = typeof artplayer.option;
-
-type ArtPlayerCustomType = typeof artplayer.option.customType;
 
 export interface CustomArtPlayerOptions
   extends Omit<ArtPlayerOptions, "container" | "url" | "customType"> {
@@ -26,13 +25,13 @@ export interface CustomArtPlayerOptions
     url: string;
     type?: string;
   }[];
-  customType?:
-    | Record<string, ArtPlayerCustomType>
-    | {
-        [key: string]: ArtPlayerCustomType;
-      }
-    | any;
+  customType?: Record<string, unknown>;
 }
+
+export type UserArtPlayerSrcOptions = Omit<
+  CustomArtPlayerOptions,
+  "container" | "url" | "customType"
+>;
 
 export interface ComponentsArtPlayerOptions {
   /**
@@ -40,14 +39,14 @@ export interface ComponentsArtPlayerOptions {
    *
    * src 默认配置, 全局效果，会被组件内配置覆盖
    */
-  src?: CustomArtPlayerOptions;
+  src?: UserArtPlayerSrcOptions;
 
   /**
    * danmu config
    *
-   * 弹幕插件默认配置, 全局效果，会被组件内配置覆盖
+   * 弹幕插件默认配置, 全局效果，相同项会被组件内配置覆盖
    */
-  pluginDanmuKu: object;
+  pluginDanmuKu?: ArtPlayerPluginDanmukuOption;
 
   /**
    * default width

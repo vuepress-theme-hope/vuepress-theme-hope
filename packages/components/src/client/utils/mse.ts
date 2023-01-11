@@ -1,78 +1,66 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
+export const videoTypes = (
+  customTypes: Record<string, unknown>
+): Array<string> => {
+  return [
+    ...["mp4", "mp3", "webm", "ogg"],
+    ...["m3u8", "hls", "ts", "flv", "mpd"],
+    ...Object.keys(customTypes),
+  ];
+};
 
-export const autoType = (url: string): string | undefined => {
+export const getTypeByUrl = (url: string): string | undefined => {
   if (url) {
-    switch (true) {
-      case url.endsWith(".m3u8"):
-        return "m3u8";
-      case url.endsWith(".flv"):
-        return "flv";
-      case url.endsWith(".mpd"):
-        return "mpd";
-      default:
-        return "mp4";
-    }
+    return url.split(".").pop();
   }
 
   return undefined;
 };
 
-export const Hls = async () => {
-  const { default: Hls } = await import("hls.js/dist/hls.min.js");
-
-  return Hls;
-};
-
-export const MpegTs = async () => {
-  const { default: mpegts } = await import("mpegts.js/dist/mpegts.js");
-
-  return mpegts;
-};
-
-export const Dash = async () => {
-  const { default: dashjs } = await import("dashjs/dist/dash.all.min.js");
-
-  return dashjs;
-};
-
-export const m3u8 = async (
+export const useMseHls = async (
   mediaElement: HTMLMediaElement,
   src: string,
-  player: any,
-  onDestroy = "destroy"
-) => {
-  const hlsjs = await Hls();
+  player: unknown,
+  registerDestroy = (destroy: () => void): void => {
+    //@ts-ignore
+    player?.on("destroy", destroy);
+  }
+): Promise<void> => {
+  const { default: Hls } = await import(
+    /* webpackChunkName: "hls.js"  */ "hls.js/dist/hls.min.js"
+  );
 
   if (
     mediaElement.canPlayType("application/x-mpegURL") ||
     mediaElement.canPlayType("application/vnd.apple.mpegURL")
   ) {
     mediaElement.src = src;
-  } else if (hlsjs.isSupported()) {
-    const hls = new hlsjs();
+  } else if (Hls.isSupported()) {
+    const hls = new Hls();
 
     hls.attachMedia(mediaElement);
-    hls.on(hlsjs.Events.MEDIA_ATTACHED, function () {
+    hls.on(Hls.Events.MEDIA_ATTACHED, function () {
       hls.loadSource(src);
     });
 
-    player?.on(onDestroy, function () {
-      hls.destroy();
-    });
-
-    return hls;
+    registerDestroy(() => hls.destroy());
   }
-
-  return undefined;
 };
 
-export const flv = async (
+export const useMseFlv = async (
   mediaElement: HTMLMediaElement,
   src: string,
-  player: any,
-  onDestroy = "destroy"
-) => {
-  const mpegts = await MpegTs();
+  player: unknown,
+  registerDestroy = (destroy: () => void): void => {
+    //@ts-ignore
+    player?.on("destroy", destroy);
+  }
+): Promise<void> => {
+  const { default: mpegts } = await import(
+    /* webpackChunkName: "mpegts.js"  */ "mpegts.js/dist/mpegts.js"
+  );
+
+  console.log(mpegts, mediaElement, src, player);
 
   if (mpegts.isSupported()) {
     const flvPlayer = mpegts.createPlayer({
@@ -83,37 +71,30 @@ export const flv = async (
     flvPlayer.attachMediaElement(mediaElement);
     flvPlayer.load();
 
-    player?.on(onDestroy, function () {
-      flvPlayer.destroy();
-    });
-
-    return flvPlayer;
+    registerDestroy(() => flvPlayer.destroy());
   }
-
-  return undefined;
 };
 
-export const mpd = async (
+export const useMseDash = async (
   mediaElement: HTMLMediaElement,
   src: string,
-  player: any,
-  onDestroy = "destroy",
+  player: unknown,
+  registerDestroy = (destroy: () => void): void => {
+    //@ts-ignore
+    player?.on("destroy", destroy);
+  },
   autoPlay = false,
   startTime = 0
-) => {
-  const dashjs = await Dash();
+): Promise<void> => {
+  const { default: dashjs } = await import(
+    /* webpackChunkName: "dashjs"  */ "dashjs/dist/dash.all.min.js"
+  );
 
   if (dashjs.supportsMediaSource()) {
     const dashPlayer = dashjs.MediaPlayer().create();
 
     dashPlayer.initialize(mediaElement, src, autoPlay, startTime);
 
-    player?.on(onDestroy, function () {
-      dashPlayer.destroy();
-    });
-
-    return dashPlayer;
+    registerDestroy(() => dashPlayer.destroy());
   }
-
-  return undefined;
 };

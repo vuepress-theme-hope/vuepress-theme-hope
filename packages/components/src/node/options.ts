@@ -41,7 +41,7 @@ export interface ComponentOptions {
      *
      * ArtPlayer 配置
      */
-    ArtPlayer?: ComponentsArtPlayerOptions;
+    artPlayer?: ComponentsArtPlayerOptions;
 
     /**
      * FontIcon config

@@ -1,11 +1,18 @@
 /* eslint-disable vue/no-unused-properties */
+/* eslint-disable vue/require-default-prop */
 import { PropType, defineComponent, h, onBeforeUnmount, onMounted } from "vue";
 import { deepMerge } from "vuepress-shared/client";
 import { useSize } from "../composables/index.js";
-import { autoType, flv, m3u8, mpd } from "../utils/index.js";
+import {
+  getTypeByUrl,
+  useMseDash,
+  useMseFlv,
+  useMseHls,
+  videoTypes,
+} from "../utils/index.js";
 
+import type { Option as ArtPlayerPluginDanmukuOption } from "artplayer-plugin-danmuku";
 import type { VNode } from "vue";
-
 import type {
   ArtPlayer,
   ArtPlayerOptions,
@@ -13,18 +20,24 @@ import type {
   CustomArtPlayerOptions,
 } from "../../shared/index.js";
 
-declare const ART_PLAYER: ComponentsArtPlayerOptions;
+declare const ART_PLAYER_OPTIONS: ComponentsArtPlayerOptions;
 
-const optionsDefault = {
-  width: "100%",
-  ratio: 16 / 9,
-  src: {
-    fullscreen: true,
-    autoSize: true,
-    setting: true,
-    whitelist: ["*"],
+const artplayerDefaultOptions = deepMerge(
+  {
+    width: "100%",
+    ratio: 16 / 9,
+    src: {
+      fullscreen: true,
+      autoSize: true,
+      setting: true,
+      whitelist: ["*"],
+      title: "",
+      poster: "",
+      muted: false,
+    },
   },
-};
+  ART_PLAYER_OPTIONS
+);
 
 export default defineComponent({
   name: "ArtPlayer",
@@ -35,61 +48,45 @@ export default defineComponent({
      */
     src: {
       type: Object as PropType<CustomArtPlayerOptions>,
-      default: optionsDefault.src,
+      default: artplayerDefaultOptions.src,
       required: false,
     },
 
     /**
      * artplayer src.url
      */
-    url: {
-      type: String,
-      default: "",
-      required: false,
-    },
+    url: String,
 
     /**
      * artplayer src.poster
      */
-    poster: {
-      type: String,
-      default: "",
-      required: false,
-    },
+    poster: String,
 
     /**
      * artplayer src.title
      */
-    title: {
-      type: String,
-      default: "",
-      required: false,
-    },
+    title: String,
 
     /**
      * artplayer src.muted
      */
     muted: {
       type: Boolean,
-      default: false,
-      required: false,
+      // eslint-disable-next-line vue/no-boolean-default
+      default: undefined,
     },
 
     /**
      *  return artplayer
      */
-    player: {
-      type: Function,
-      default: undefined,
-      required: false,
-    },
+    player: Function,
 
     /**
-     * artplayer danmuku
+     * artplayer danmuku plugin
      */
     pluginDanmuKu: {
-      type: Object,
-      default: () => ART_PLAYER.pluginDanmuKu || {},
+      type: Object as PropType<ArtPlayerPluginDanmukuOption>,
+      default: () => artplayerDefaultOptions.pluginDanmuKu,
       required: false,
     },
 
@@ -100,7 +97,7 @@ export default defineComponent({
      */
     width: {
       type: [String, Number],
-      default: ART_PLAYER?.width || optionsDefault.width || undefined,
+      default: artplayerDefaultOptions?.width,
       required: false,
     },
 
@@ -111,7 +108,7 @@ export default defineComponent({
      */
     height: {
       type: [String, Number],
-      default: ART_PLAYER?.height || undefined,
+      default: artplayerDefaultOptions?.height,
       required: false,
     },
 
@@ -122,62 +119,71 @@ export default defineComponent({
      */
     ratio: {
       type: [String, Number],
-      default: ART_PLAYER?.ratio || optionsDefault.ratio || undefined,
+      default: artplayerDefaultOptions.ratio,
       required: false,
     },
   },
 
   setup(props) {
     const option = {
-      ...deepMerge(ART_PLAYER, props),
+      ...deepMerge(artplayerDefaultOptions, props),
     };
 
-    option.src ??= {};
+    const src: CustomArtPlayerOptions = option.src!;
 
-    const src = {
-      ...deepMerge(optionsDefault.src, option.src),
-    };
-
-    src.url = option.url ?? src.url ?? "";
-    src.poster = option.poster ?? src.poster ?? "";
-    src.title = option.title ?? src.title ?? "";
-    src.muted = option.muted ?? src.muted ?? false;
+    src.url = option.url ?? src.url!;
+    src.poster = option.poster ?? src.poster!;
+    src.title = option.title ?? src.title!;
+    src.muted = option.muted ?? src.muted!;
 
     const { el, width, height } = useSize<HTMLDivElement>(props, 0);
 
     let artplayer: ArtPlayer;
 
-    const initArtPlayer = async (): Promise<void> => {
-      const { default: art } = await import("artplayer/dist/artplayer.js");
+    onMounted(async () => {
+      const { default: art } = await import(
+        /* webpackChunkName: "artplayer"  */ "artplayer/dist/artplayer.js"
+      );
 
       src.container = el.value!;
-      src.customType ??= {};
-      src.type ??= autoType(src.url!) || "";
+      src.type ??= getTypeByUrl(src.url!) ?? "";
 
+      // auto config mse
       if (src.type) {
-        switch (src.type) {
-          case "m3u8":
-          case "hls":
-            src.customType[src.type] = m3u8;
-            break;
-          case "flv":
-            src.customType[src.type] = flv;
-            break;
-          case "mpd":
-          case "dash":
-            src.customType[src.type] = mpd;
-            break;
+        const customType: Record<string, unknown> = {};
+
+        if (videoTypes(customType).includes(src.type.toLowerCase())) {
+          switch (src.type) {
+            case "m3u8":
+            case "hls":
+              customType[src.type] = useMseHls;
+              break;
+            case "flv":
+              customType[src.type] = useMseFlv;
+              break;
+            case "mpd":
+            case "dash":
+              customType[src.type] = useMseDash;
+              break;
+          }
+
+          src.customType = {
+            ...customType,
+            ...src.customType,
+          };
+        } else {
+          // throw warning???
         }
       }
 
+      // config danmaku plugin
       if (props.pluginDanmuKu) {
         const { default: artplayerPluginDanmuku } = await import(
-          "artplayer-plugin-danmuku"
+          /* webpackChunkName: "artplayer-plugin-danmuku"  */ "artplayer-plugin-danmuku"
         );
 
-        src.plugins ??= [];
         // @ts-ignore
-        src.plugins?.push(artplayerPluginDanmuku(option.pluginDanmuKu));
+        (src.plugins ??= []).push(artplayerPluginDanmuku(option.pluginDanmuKu));
       }
 
       artplayer = new art(src as ArtPlayerOptions);
@@ -185,27 +191,19 @@ export default defineComponent({
       if (props.player) {
         props.player(artplayer);
       }
-    };
-
-    const destroyArtPlayer = (): void => {
-      artplayer.destroy();
-    };
-
-    onMounted(async () => {
-      await initArtPlayer();
     });
+
     onBeforeUnmount(() => {
-      destroyArtPlayer();
+      artplayer?.destroy();
     });
 
-    return (): VNode[] => [
+    return (): VNode =>
       h("div", {
         ref: el,
         style: {
           width: width.value,
           height: height.value,
         },
-      }),
-    ];
+      });
   },
 });
