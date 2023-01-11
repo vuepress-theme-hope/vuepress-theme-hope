@@ -125,10 +125,6 @@ export default defineComponent({
           }
         }
       );
-
-      window.addEventListener("beforeprint", (a) => {
-        console.log(a);
-      });
     });
 
     return (): VNode | null => {
