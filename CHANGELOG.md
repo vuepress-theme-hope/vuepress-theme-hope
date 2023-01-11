@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.156](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.155...v2.0.0-beta.156) (2023-01-11)
+
+### Features
+
+- **components:** add SiteInfo ([#2661](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2661)) ([5412c76](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5412c7693cf444aa918354b4fffd91d33d60c119))
+- **shared:** rebuild deepMerge as deepAssign ([c1d34ab](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c1d34ab5d0add3705a8db63e3b89043e05f8aab9))
+- **theme:** rebuild layout ([4f091a4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4f091a40cf8c3837b36cbcdd053c03dcae91551f))
+
+### Bug Fixes
+
+- **theme:** fix pure default value ([2996958](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/29969589fcc82078f15bf07b88cd6e6d2bcf07f4))
+
 ## [2.0.0-beta.155](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.154...v2.0.0-beta.155) (2023-01-10)
 
 ### Features
