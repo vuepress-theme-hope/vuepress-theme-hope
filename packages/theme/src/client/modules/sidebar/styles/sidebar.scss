@@ -6,25 +6,26 @@
   z-index: 125;
 
   overflow-y: auto;
-  box-sizing: border-box;
 
   width: var(--sidebar-width);
   margin: 0;
+  padding-left: calc(var(--sidebar-space) - var(--sidebar-width));
 
   background: var(--sidebar-bg-color);
   box-shadow: 2px 0 8px var(--card-shadow);
 
-  font-size: 16px;
+  font-size: 14px;
 
   transition: background var(--color-transition),
-    box-shadow var(--color-transition), transform var(--transform-transition);
+    box-shadow var(--color-transition), padding var(--transform-transition),
+    transform var(--transform-transition);
 
   backdrop-filter: saturate(150%) blur(12px);
   scrollbar-color: var(--theme-color) var(--border-color);
   scrollbar-width: thin;
 
   @media (max-width: hope-config.$pad) {
-    font-size: 15px;
+    font-size: 13px;
   }
 
   // on mobile

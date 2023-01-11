@@ -9,7 +9,6 @@
   ul {
     margin: 0;
     padding: 0;
-    list-style-type: none;
 
     &.sidebar-sub-headers {
       padding-inline-start: 0.75rem;
@@ -23,6 +22,10 @@
     }
   }
 
+  li {
+    list-style-type: none;
+  }
+
   .sidebar > & {
     padding: 1.5rem 0;
 
@@ -34,7 +37,6 @@
       // stylelint-disable selector-max-compound-selectors
       > .sidebar-link {
         font-size: 1.1em;
-        line-height: 1.7;
       }
 
       &:not(:first-child) {

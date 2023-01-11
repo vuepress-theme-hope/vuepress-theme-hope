@@ -63,6 +63,13 @@
   --code-tabs-nav-bg-color: var(--code-border-color);
   --code-tabs-nav-hover-color: var(--code-highlight-line-color);
 
+  // sidebar space
+  --sidebar-space: clamp(
+    var(--sidebar-width),
+    calc(max(0px, calc((100vw - var(--content-width)) / 2 - 2rem))),
+    100vw
+  );
+
   // override mobile variables
   @media (max-width: hope-config.$pad) {
     --navbar-height: var(--navbar-mobile-height);

@@ -1,14 +1,15 @@
 @use "vuepress-shared/styles/reset";
+@use "vuepress-shared/styles/wrapper";
 
 $headings: (2, 3, 4, 5, 6);
 
 .toc-place-holder {
+  @include wrapper.horizontal-wrapper;
+
   position: sticky;
   top: calc(var(--navbar-height) + 2rem);
   z-index: 99;
-
   max-width: var(--content-width, 740px);
-  margin: 0 auto;
 
   + #{hope-config.$content-class}:not(.custom) {
     padding-top: 0;

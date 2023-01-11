@@ -5,7 +5,7 @@
   position: fixed;
   top: var(--navbar-height);
   bottom: 0;
-  left: var(--sidebar-width);
+  left: var(--sidebar-space);
   z-index: 100;
 
   display: flex;
@@ -34,12 +34,16 @@
   .page {
     // leave space for navbar
     padding-top: var(--navbar-height);
+    padding-right: calc(
+      100vw - var(--content-width) - var(--sidebar-space) - 6rem
+    );
 
     // leave space for sidebar
-    padding-left: calc(var(--sidebar-width) + 2rem);
+    padding-left: calc(var(--sidebar-space) + 2rem);
 
     // do not leave space for sidebar on wide mobile
     @media (max-width: hope-config.$tablet) {
+      padding-right: 0;
       padding-left: 0;
     }
   }
@@ -75,10 +79,44 @@
     }
   }
 
+  // close state on desktop
+  &.sidebar-collapsed {
+    .page {
+      // spaces for toggle button
+      padding-left: calc(
+        100vw - var(--content-width) - var(--sidebar-space) - 6rem
+      );
+    }
+
+    .sidebar {
+      // hide box shadow
+      box-shadow: none;
+
+      // collapse sidebar
+      transform: translateX(-100%);
+    }
+
+    .toggle-sidebar-wrapper {
+      left: 0;
+    }
+  }
+
+  // sidebar is disabled
   &.no-sidebar {
     .page {
+      padding-right: 0;
+
       // clear space for sidebar
       padding-left: 0;
+    }
+
+    &.has-toc {
+      .page {
+        // add padding for anchor
+        @media (min-width: hope-config.$pc) {
+          padding-right: 16rem;
+        }
+      }
     }
 
     // hide toggle button
@@ -101,35 +139,6 @@
 
       // show sidebar
       transform: translateX(0);
-    }
-  }
-
-  // close state on desktop
-  &.sidebar-collapsed {
-    .page {
-      // spaces for toggle button
-      padding-left: 2rem;
-    }
-
-    .sidebar {
-      // hide box shadow
-      box-shadow: none;
-
-      // collapse sidebar
-      transform: translateX(-100%);
-    }
-
-    .toggle-sidebar-wrapper {
-      left: 0;
-    }
-  }
-
-  &.has-toc {
-    .page {
-      // add padding for anchor
-      @media (min-width: hope-config.$pc) {
-        padding-right: 16rem;
-      }
     }
   }
 }
