@@ -1,149 +1,52 @@
 diff --git a/lib/client/composables/useDocsearchShim.js b/lib/client/composables/useDocsearchShim.js
-index 7ee04844efd953af77719e87bc8003adcb2d3fbd..2c636ceebbe150ebb33b2d9401b9989346dcce60 100644
+index 7ee04844efd953af77719e87bc8003adcb2d3fbd..574bd234567b49c2bdffe8a023aee8388e03032b 100644
 --- a/lib/client/composables/useDocsearchShim.js
 +++ b/lib/client/composables/useDocsearchShim.js
-@@ -1,51 +1,52 @@
--import { resolveRoutePathFromUrl } from '@vuepress/shared';
--import { debounce } from 'ts-debounce';
--import { useRouter } from 'vue-router';
--const isSpecialClick = (event) => event.button === 1 ||
--    event.altKey ||
--    event.ctrlKey ||
--    event.metaKey ||
--    event.shiftKey;
-+import { resolveRoutePathFromUrl } from "@vuepress/shared";
-+import { debounce } from "ts-debounce";
-+import { useRouter } from "vue-router";
-+const isSpecialClick = (event) =>
-+  event.button === 1 ||
-+  event.altKey ||
-+  event.ctrlKey ||
-+  event.metaKey ||
-+  event.shiftKey;
- /**
-  * Get docsearch options to be compatible with VuePress
-  */
- export const useDocsearchShim = () => {
--    const router = useRouter();
--    return {
--        // render the hit component with custom `onClick` handler
--        hitComponent: ({ hit, children }) => ({
--            type: 'a',
--            ref: undefined,
--            constructor: undefined,
--            key: undefined,
--            props: {
--                href: hit.url,
--                // handle `onClick` by `router.push`
--                onClick: (event) => {
--                    if (isSpecialClick(event)) {
--                        return;
--                    }
--                    event.preventDefault();
+@@ -26,7 +26,7 @@ export const useDocsearchShim = () => {
+                         return;
+                     }
+                     event.preventDefault();
 -                    router.push(resolveRoutePathFromUrl(hit.url, __VUEPRESS_BASE__));
--                },
--                children,
--            },
--            __v: null,
--        }),
--        // navigation behavior triggered by `onKeyDown` internally
--        navigator: {
--            // when pressing Enter without metaKey
--            navigate: ({ itemUrl }) => {
++                    router.push(resolveRoutePathFromUrl(hit.url, __DOCSEARCH_BASE__));
+                 },
+                 children,
+             },
+@@ -36,7 +36,7 @@ export const useDocsearchShim = () => {
+         navigator: {
+             // when pressing Enter without metaKey
+             navigate: ({ itemUrl }) => {
 -                router.push(resolveRoutePathFromUrl(itemUrl, __VUEPRESS_BASE__));
--            },
-+  const router = useRouter();
-+  return {
-+    // render the hit component with custom `onClick` handler
-+    hitComponent: ({ hit, children }) => ({
-+      type: "a",
-+      ref: undefined,
-+      constructor: undefined,
-+      key: undefined,
-+      props: {
-+        href: hit.url,
-+        // handle `onClick` by `router.push`
-+        onClick: (event) => {
-+          if (isSpecialClick(event)) {
-+            return;
-+          }
-+          event.preventDefault();
-+          router.push(resolveRoutePathFromUrl(hit.url, __DOCSEARCH_BASE__));
++                router.push(resolveRoutePathFromUrl(itemUrl, __DOCSEARCH_BASE__));
+             },
          },
--        // add search debounce
--        transformSearchClient: (searchClient) => {
--            const searchWithDebounce = debounce(searchClient.search, 500);
--            return {
--                ...searchClient,
--                search: async (...args) => searchWithDebounce(...args),
--            };
--        },
--    };
-+        children,
-+      },
-+      __v: null,
-+    }),
-+    // navigation behavior triggered by `onKeyDown` internally
-+    navigator: {
-+      // when pressing Enter without metaKey
-+      navigate: ({ itemUrl }) => {
-+        router.push(resolveRoutePathFromUrl(itemUrl, __DOCSEARCH_BASE__));
-+      },
-+    },
-+    // add search debounce
-+    transformSearchClient: (searchClient) => {
-+      const searchWithDebounce = debounce(searchClient.search, 500);
-+      return {
-+        ...searchClient,
-+        search: async (...args) => searchWithDebounce(...args),
-+      };
-+    },
-+  };
- };
+         // add search debounce
 diff --git a/lib/node/docsearchPlugin.d.ts b/lib/node/docsearchPlugin.d.ts
-index c03da98424d08a05ccf250ba6471d234b56d76b4..5556f72a2197e1bc84e465654877cc34a02da9f4 100644
+index c03da98424d08a05ccf250ba6471d234b56d76b4..da82395ec6ff07170093de2ac0da9244052d036a 100644
 --- a/lib/node/docsearchPlugin.d.ts
 +++ b/lib/node/docsearchPlugin.d.ts
-@@ -1,6 +1,10 @@
--import type { Plugin } from '@vuepress/core';
--import type { DocsearchOptions } from '../shared/index.js';
-+import type { Plugin } from "@vuepress/core";
-+import type { DocsearchOptions } from "../shared/index.js";
+@@ -2,5 +2,6 @@ import type { Plugin } from '@vuepress/core';
+ import type { DocsearchOptions } from '../shared/index.js';
  export interface DocsearchPluginOptions extends DocsearchOptions {
--    injectStyles?: boolean;
-+  injectStyles?: boolean;
-+  indexBase?: string;
+     injectStyles?: boolean;
++    indexBase?: string;
  }
--export declare const docsearchPlugin: ({ injectStyles, ...options }: DocsearchPluginOptions) => Plugin;
-+export declare const docsearchPlugin: ({
-+  injectStyles,
-+  ...options
-+}: DocsearchPluginOptions) => Plugin;
+ export declare const docsearchPlugin: ({ injectStyles, ...options }: DocsearchPluginOptions) => Plugin;
 diff --git a/lib/node/docsearchPlugin.js b/lib/node/docsearchPlugin.js
-index 5f226a7e69b4bbd92e03f96c9d089986c3315985..eceb50909366ffebed01da126c1ae8929fd0af2b 100644
+index 5f226a7e69b4bbd92e03f96c9d089986c3315985..2b118cb7892d7de98c99c5c84dcb7d8a823d7ba0 100644
 --- a/lib/node/docsearchPlugin.js
 +++ b/lib/node/docsearchPlugin.js
-@@ -1,10 +1,15 @@
--import { getDirname, path } from '@vuepress/utils';
-+import { getDirname, path } from "@vuepress/utils";
+@@ -1,10 +1,11 @@
+ import { getDirname, path } from '@vuepress/utils';
  const __dirname = getDirname(import.meta.url);
 -export const docsearchPlugin = ({ injectStyles = true, ...options }) => ({
--    name: '@vuepress/plugin-docsearch',
--    clientConfigFile: path.resolve(__dirname, '../client/config.js'),
++export const docsearchPlugin = ({ injectStyles = true, indexBase = "", ...options }) => ({
+     name: '@vuepress/plugin-docsearch',
+     clientConfigFile: path.resolve(__dirname, '../client/config.js'),
 -    define: {
--        __DOCSEARCH_OPTIONS__: options,
--        __DOCSEARCH_INJECT_STYLES__: injectStyles,
++    define: (app) => ({
++        __DOCSEARCH_BASE__: indexBase || app.options.base,
+         __DOCSEARCH_OPTIONS__: options,
+         __DOCSEARCH_INJECT_STYLES__: injectStyles,
 -    },
-+export const docsearchPlugin = ({
-+  injectStyles = true,
-+  indexBase = "",
-+  ...options
-+}) => ({
-+  name: "@vuepress/plugin-docsearch",
-+  clientConfigFile: path.resolve(__dirname, "../client/config.js"),
-+  define: (app) => ({
-+    __DOCSEARCH_BASE: indexBase || app.options.base,
-+    __DOCSEARCH_OPTIONS__: options,
-+    __DOCSEARCH_INJECT_STYLES__: injectStyles,
-+  }),
++    }),
  });

@@ -1,15 +1,15 @@
 lockfileVersion: 5.4
 
 patchedDependencies:
-  mitt@3.0.0:
-    hash: qzs7n5sruuzja7qoe6i43clpfe
-    path: patches/mitt@3.0.0.patch
   '@types/katex@0.16.0':
     hash: dnsp5eyvz2stjhzcvnk27ztvmm
     path: patches/@types__katex@0.16.0.patch
   '@vuepress/plugin-docsearch@2.0.0-beta.60':
-    hash: nfr4dy3d35kdla7gjiy3hcwsvm
+    hash: isjzrkrqrwnbp3bxyrv6tl6zgm
     path: patches/@vuepress__plugin-docsearch@2.0.0-beta.60.patch
+  mitt@3.0.0:
+    hash: qzs7n5sruuzja7qoe6i43clpfe
+    path: patches/mitt@3.0.0.patch
 
 importers:
 
