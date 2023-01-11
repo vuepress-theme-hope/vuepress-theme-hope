@@ -1,5 +1,5 @@
 import { isPlainObject } from "@vuepress/shared";
-import { deepMerge } from "vuepress-shared/node";
+import { deepAssign } from "vuepress-shared/node";
 import { compressToEncodedURIComponent } from "./ventors/lzstring.js";
 import { optionDeclarations } from "./ventors/optionDelcarations.js";
 
@@ -57,7 +57,7 @@ export const getTSPlaygroundPreset = ({
 
     const link = `${service}${getURL(
       files[tsfiles[0]].content,
-      deepMerge(
+      deepAssign(
         {},
         <CompilerOptions>settings || {},
         <CompilerOptions>compilerOptions

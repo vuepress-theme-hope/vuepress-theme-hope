@@ -1,5 +1,5 @@
 import { feedPlugin } from "vuepress-plugin-feed2";
-import { deepMerge } from "vuepress-shared/node";
+import { deepAssign } from "vuepress-shared/node";
 
 import type { Plugin } from "@vuepress/core";
 import type { FeedOptions } from "vuepress-plugin-feed2";
@@ -16,7 +16,7 @@ export const getFeedPlugin = (
 
   return feedPlugin(
     // @ts-ignore
-    deepMerge(
+    deepAssign(
       {
         hostname,
         ...(themeData.author ? { author: themeData.author } : {}),

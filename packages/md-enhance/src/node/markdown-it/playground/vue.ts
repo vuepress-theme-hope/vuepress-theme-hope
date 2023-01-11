@@ -1,4 +1,4 @@
-import { deepMerge } from "vuepress-shared/node";
+import { deepAssign } from "vuepress-shared/node";
 import type {
   PlaygroundData,
   PlaygroundOptions,
@@ -49,7 +49,7 @@ export const getVuePlaygroundPreset = (
             return [
               key,
               JSON.stringify(
-                deepMerge(
+                deepAssign(
                   {
                     imports: {
                       // insure vue exists

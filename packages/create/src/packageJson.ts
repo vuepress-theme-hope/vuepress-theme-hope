@@ -3,7 +3,7 @@ import { resolve } from "node:path";
 import inquirer from "inquirer";
 
 import { version } from "./config/index.js";
-import { deepMerge } from "./utils/index.js";
+import { deepAssign } from "./utils/index.js";
 
 import type { CreateI18n } from "./config/index.js";
 
@@ -42,7 +42,7 @@ export const createPackageJson = async (
       readFileSync(packageJsonPath, { encoding: "utf-8" })
     );
 
-    deepMerge(packageContent, { scripts, devDependencies });
+    deepAssign(packageContent, { scripts, devDependencies });
 
     writeFileSync(
       packageJsonPath,

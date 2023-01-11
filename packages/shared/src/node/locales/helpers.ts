@@ -1,5 +1,5 @@
 import { lang2PathConfig, path2langConfig } from "./config.js";
-import { deepMerge } from "../../shared/index.js";
+import { deepAssign } from "../../shared/index.js";
 import { Logger } from "../utils/index.js";
 
 import type { App, LocaleConfig } from "@vuepress/core";
@@ -98,7 +98,7 @@ export const getLocales = <T extends LocaleData>({
 
         return [
           localePath,
-          deepMerge(
+          deepAssign(
             {},
             defaultLocaleData || defaultLocalesConfig[rootPath] || {},
             userLocalesConfig[localePath] || {}
@@ -107,7 +107,7 @@ export const getLocales = <T extends LocaleData>({
       }),
     [
       "/",
-      deepMerge(
+      deepAssign(
         {},
         defaultLocalesConfig[rootPath],
         userLocalesConfig["/"] || userLocalesConfig[rootPath] || {}

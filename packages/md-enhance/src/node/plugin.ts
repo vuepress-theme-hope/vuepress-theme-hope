@@ -23,7 +23,7 @@ import {
   addViteOptimizeDepsInclude,
   addViteSsrExternal,
   addViteSsrNoExternal,
-  deepMerge,
+  deepAssign,
   getBundlerName,
   getLocales,
 } from "vuepress-shared/node";
@@ -160,7 +160,11 @@ export const mdEnhancePlugin =
             ? options.presentation.revealConfig
             : {},
         VUE_PLAYGROUND_OPTIONS: isPlainObject(options.vuePlayground)
-          ? deepMerge({}, DEFAULT_VUE_PLAYGROUND_OPTIONS, options.vuePlayground)
+          ? deepAssign(
+              {},
+              DEFAULT_VUE_PLAYGROUND_OPTIONS,
+              options.vuePlayground
+            )
           : DEFAULT_VUE_PLAYGROUND_OPTIONS,
       }),
 
