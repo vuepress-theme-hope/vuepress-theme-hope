@@ -177,7 +177,7 @@ export default defineComponent({
       }
 
       // config danmaku plugin
-      if (props.pluginDanmuKu) {
+      if (option?.pluginDanmuKu?.danmuku) {
         const { default: artplayerPluginDanmuku } = await import(
           /* webpackChunkName: "artplayer-plugin-danmuku"  */ "artplayer-plugin-danmuku"
         );
