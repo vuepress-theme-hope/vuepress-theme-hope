@@ -54,6 +54,7 @@ export default theme("theme", {
         "Catalog",
         "CodePen",
         "PDF",
+        "SiteInfo",
         "StackBlitz",
         "VideoPlayer",
         "YouTube",

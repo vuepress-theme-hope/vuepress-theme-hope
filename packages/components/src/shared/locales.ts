@@ -38,3 +38,14 @@ export interface PDFLocaleData {
 }
 
 export type PDFLocaleConfig = RequiredLocaleConfig<PDFLocaleData>;
+
+export interface SiteInfoLocaleData {
+  /**
+   * Source text
+   *
+   * 源代码文字
+   */
+  source: string;
+}
+
+export type SiteInfoLocaleConfig = RequiredLocaleConfig<SiteInfoLocaleData>;

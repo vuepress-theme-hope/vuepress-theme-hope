@@ -4,6 +4,7 @@ import type {
   CatalogLocaleData,
   NoticeOptions,
   PDFLocaleData,
+  SiteInfoLocaleData,
 } from "../shared/index.js";
 
 export type AvailableComponent =
@@ -15,6 +16,7 @@ export type AvailableComponent =
   | "FontIcon"
   | "PDF"
   | "StackBlitz"
+  | "SiteInfo"
   | "VideoPlayer"
   | "YouTube";
 
@@ -128,5 +130,12 @@ export interface ComponentOptions {
      * PDF 组件国际化配置
      */
     pdf?: LocaleConfig<PDFLocaleData>;
+
+    /**
+     * SiteInfo Locales config
+     *
+     * 站点信息 组件国际化配置
+     */
+    siteInfo?: LocaleConfig<SiteInfoLocaleData>;
   };
 }

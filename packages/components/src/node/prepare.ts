@@ -13,6 +13,7 @@ const availableComponents: AvailableComponent[] = [
   "CodePen",
   "FontIcon",
   "PDF",
+  "SiteInfo",
   "StackBlitz",
   "VideoPlayer",
   "YouTube",

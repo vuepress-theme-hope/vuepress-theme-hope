@@ -85,6 +85,16 @@ export default [
     ],
     dtsExternal: [/\.scss$/],
   }),
+  ...rollupTypescript("client/components/SiteInfo", {
+    external: [
+      "@vuepress/client",
+      "@vuepress/shared",
+      "vue",
+      "vuepress-shared/client",
+      /\.scss$/,
+    ],
+    dtsExternal: [/\.scss$/],
+  }),
   ...rollupTypescript("client/components/StackBlitz", {
     external: ["@vueuse/core", "@vuepress/shared", "vue", /\.scss$/],
     dtsExternal: [/\.scss$/],

@@ -49,7 +49,6 @@ export default config(
     ],
 
     alias: {
-      "@DemoProject": path.resolve(__dirname, "./components/DemoProject"),
       "@IconDisplay": path.resolve(__dirname, "./components/IconDisplay"),
       "@KatexPlayground": path.resolve(
         __dirname,

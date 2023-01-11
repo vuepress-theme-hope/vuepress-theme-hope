@@ -81,6 +81,7 @@ export default theme("components", {
         "Catalog",
         "CodePen",
         "PDF",
+        "SiteInfo",
         "StackBlitz",
         "VideoPlayer",
         "YouTube",

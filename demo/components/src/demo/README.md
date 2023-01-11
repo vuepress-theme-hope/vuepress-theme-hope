@@ -20,6 +20,8 @@
 
 - [PDF](pdf.md)
 
+- [SiteInfo](siteinfo.md)
+
 - [StackBlitz](stackblitz.md)
 
 - [VideoPlayer](videoplayer.md)

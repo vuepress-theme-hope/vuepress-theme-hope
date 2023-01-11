@@ -6,7 +6,7 @@ title: StackBlitz
 
 <!-- more -->
 
-## 演示
+## 示例
 
 一个 StackBlitz 项目:
 

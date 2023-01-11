@@ -1,5 +1,5 @@
 import { h } from "vue";
-import { IconBase } from "vuepress-shared/client";
+import { IconBase } from "./IconBase.js";
 
 import type { FunctionalComponent } from "vue";
 

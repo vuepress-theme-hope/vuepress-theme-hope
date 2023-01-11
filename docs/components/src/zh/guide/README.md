@@ -10,11 +10,11 @@ index: false
 
 这意味着你可以自由选择你喜欢的任何组件，并不捆绑其他组件。
 
-例如，如果你使用 `{ globalComponents: { backToTop: true } }` 调用此插件，则仅注入 `<BackToTop />` 组件。
+例如，如果你使用 `{ rootComponents: { backToTop: true } }` 调用此插件，则仅注入 `<BackToTop />` 组件。
 
 :::
 
-此插件支持 10 个组件:
+此插件支持 11 个组件:
 
 - [AudioPlayer](audioplayer.md)
 
@@ -29,6 +29,8 @@ index: false
 - [FontIcon](fonticon.md)
 
 - [PDF](pdf.md)
+
+- [SiteInfo](siteinfo.md)
 
 - [StackBlitz](stackblitz.md)
 

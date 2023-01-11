@@ -8,7 +8,7 @@ title: FontIcon
 
 <!-- more -->
 
-## Demo
+## 示例
 
 - 主页图标: <FontIcon icon="home" />
 
