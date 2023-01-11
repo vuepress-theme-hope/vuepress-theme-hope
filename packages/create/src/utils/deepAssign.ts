@@ -23,6 +23,7 @@ export const deepAssign = <
 
   if (assignObject)
     Object.entries(assignObject).forEach(([property, value]) => {
+      if (property === "__proto__" || property === "constructor") return;
       if (isPlainObject(originObject[property]) && isPlainObject(value))
         deepAssign(originObject[property], value);
       else if (isArray(value))
