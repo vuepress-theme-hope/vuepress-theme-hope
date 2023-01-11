@@ -6,7 +6,7 @@ title: AudioPlayer
 
 <!-- more -->
 
-## 案例
+## 示例
 
 一个音频播放器:
 

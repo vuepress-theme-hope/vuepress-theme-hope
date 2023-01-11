@@ -6,7 +6,7 @@ title: VideoPlayer
 
 <!-- more -->
 
-## 案例
+## 示例
 
 一个视频播放器:
 

@@ -6,7 +6,7 @@ title: YouTube
 
 <!-- more -->
 
-## 演示
+## 示例
 
 一个 YouTube 视频:
 

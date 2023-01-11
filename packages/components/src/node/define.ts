@@ -4,6 +4,7 @@ import {
   backToTopLocales,
   catalogLocales,
   pdfLocaleConfig,
+  siteInfoLocaleConfig,
 } from "./locales/index.js";
 import { getIconPrefix } from "./utils.js";
 
@@ -36,6 +37,14 @@ export const getDefine =
       });
       result["PDFJS_URL"] = options.componentOptions?.pdf?.pdfjs || null;
     }
+
+    if (options.components?.includes("SiteInfo"))
+      result["SITE_INFO_LOCALES"] = getLocales({
+        app,
+        name: "siteInfo",
+        default: siteInfoLocaleConfig,
+        config: options.locales?.siteInfo,
+      });
 
     if (options.rootComponents?.backToTop)
       result["BACK_TO_TOP_LOCALES"] = getLocales({

@@ -76,7 +76,7 @@ encodeURIComponent(content); // '%0A%7B%0A%20%20%22type%22%3A%20%22bar%22%2C%0A%
 
 ### deepAssign
 
-将多个对象深度合并到第一个对象，对于将用户选项与默认选项合并很有用。
+`Object.assign` 的深度版本，对于将用户选项与默认选项合并很有用。
 
 ```ts
 /**
