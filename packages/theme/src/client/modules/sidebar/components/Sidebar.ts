@@ -60,6 +60,7 @@ export default defineComponent({
             "sidebar",
             { "hide-icon": themeLocale.value.sidebarIcon === false },
           ],
+          id: "sidebar",
           ref: sidebar,
         },
         [

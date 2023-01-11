@@ -81,6 +81,7 @@ export default defineComponent({
                 "hide-icon": themeLocale.value.navbarIcon === false,
               },
             ],
+            id: "navbar",
           },
           [
             h("div", { class: "navbar-left" }, [
