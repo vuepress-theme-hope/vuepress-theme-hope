@@ -30,6 +30,7 @@ const artplayerDefaultOptions = deepMerge(
       fullscreen: true,
       autoSize: true,
       setting: true,
+      playbackRate: true,
       whitelist: ["*"],
       title: "",
       poster: "",
