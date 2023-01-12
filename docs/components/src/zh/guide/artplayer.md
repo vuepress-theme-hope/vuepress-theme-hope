@@ -6,8 +6,10 @@ title: ArtPlayer
 
 <!-- more -->
 
-:::tip
+::: tip
+
 `ArtPlayer` 组件仅提供快速插入 [ArtPlayer](https://github.com/zhw2590582/ArtPlayer) 播放器的能力，使用全局配置和高级用法前请详细阅读[文档](https://artplayer.org/document/)。
+
 :::
 
 ## 案例
@@ -54,8 +56,10 @@ ArtPlayer 除 `container` 外的所有选项均可传入，详见 [相关文档]
 
 `src.url` 快捷配置项，同时配置时会覆盖 `src.url`
 
-:::warning
+::: warning
+
 `url` 和 `src.url` 不能同时不做配置。
+
 :::
 
 ### poster
@@ -114,8 +118,10 @@ ArtPlayer 除 `container` 外的所有选项均可传入，详见 [相关文档]
 
 ## 全局配置
 
-:::tip
+::: tip
+
 全局配置会作为默认配置传入组件，当组件属性含有相同配置项时，会通过深度合并覆盖全局配置。
+
 :::
 
 `componentsOptions.artPlayer`
@@ -161,7 +167,7 @@ artPlayer: {
 - 必填: 否
 - 默认值: `undefined`
 
-`artplayer-plugin-danmuku` 所有选项均可传入，详见[相关文档](https://artplayer.org/document/plugin/danmuku.html)。
+`artplayer-plugin-danmuku` 所有选项均可传入，详见 [相关文档](https://artplayer.org/document/plugin/danmuku.html)。
 
 ### width
 
@@ -198,7 +204,7 @@ MSE 全称 Media Source Extensions， 详见 [Media Source Extensions API](https
 />
 ```
 
-:::tip
+::: tip
 
 组件可以将 `.m3u8` 结尾的连接自动识别为 hls 格式，其他情况均需手动配置 `src.type`
 
@@ -217,7 +223,7 @@ MSE 全称 Media Source Extensions， 详见 [Media Source Extensions API](https
 />
 ```
 
-:::tip
+::: tip
 
 组件可以将 `.flv` 结尾的连接自动识别为 hls 格式，其他情况均需手动配置 `src.type`
 
@@ -233,12 +239,13 @@ MSE 全称 Media Source Extensions， 详见 [Media Source Extensions API](https
 />
 
 或
+
 <ArtPlayer
-  :src="{url:'https://mse-demo.u2sb.com/dash/caminandes_03_llamigos_720p.mpd', type:'dash'}"
+  :src="{ url: 'https://mse-demo.u2sb.com/dash/caminandes_03_llamigos_720p.mpd', type: 'dash' }"
 />
 ```
 
-:::tip
+::: tip
 
 组件可以将 `.mpd` 结尾的连接自动识别为 hls 格式，其他情况均需手动配置 `src.type`
 

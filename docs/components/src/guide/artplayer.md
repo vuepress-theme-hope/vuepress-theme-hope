@@ -6,8 +6,10 @@ Embed [ArtPlayer](https://github.com/zhw2590582/ArtPlayer) in Markdown files.
 
 <!-- more -->
 
-:::tip
+::: tip
+
 `ArtPlayer` components Only provides the ability to quickly insert the [ArtPlayer](https://github.com/zhw2590582/ArtPlayer) player, please read the [document](https://artplayer.org/document/) carefully before using the global configuration and advanced usage.
+
 :::
 
 ## Demo
@@ -52,8 +54,10 @@ Special note: `customType` is special, see [CustomType](#customtype) for details
 
 `src.url` shortcut configuration item, and `src.url` will be overwritten when configured at the same time.
 
-:::warning
+::: warning
+
 `url` and `src.url` cannot be unconfigured at the same time.
+
 :::
 
 ### poster
@@ -112,8 +116,10 @@ Video component ratio
 
 ## GlobalConfiguration
 
-:::tip
+::: tip
+
 The global configuration will be passed into the component as the default configuration. When the component properties contain the same configuration item, the global configuration will be overwritten by deep merging.
+
 :::
 
 `componentsOptions.artPlayer`
@@ -194,7 +200,7 @@ or
 />
 ```
 
-:::tip
+::: tip
 
 The component can automatically recognize the connection ending with `.m3u8` as hls format, and manually configure `src.type` in other cases.
 
@@ -214,7 +220,7 @@ or
 />
 ```
 
-:::tip
+::: tip
 
 The component can automatically recognize the connection at the end of `.flv` as hls format, and manually configure `src.type` in other cases.
 
@@ -236,7 +242,7 @@ or
 />
 ```
 
-:::tip
+::: tip
 
 The component can automatically recognize the connection ending in `.mpd` as hls format, otherwise you need to manually configure `src.type`
 
