@@ -9,6 +9,7 @@ icon: config
 
   ```ts
   type AvailableComponent =
+    | "ArtPlayer"
     | "AudioPlayer"
     | "Badge"
     | "BiliBili"
@@ -26,6 +27,7 @@ Components to be registered.
 
 Available component names:
 
+- `"ArtPlayer"`
 - `"AudioPlayer"`
 - `"Badge"`
 - `"BiliBili"`
@@ -39,6 +41,13 @@ Available component names:
 ## componentsOptions
 
 Global config for components.
+
+### componentsOptions.artPlayer
+
+- Type: `ComponentsArtPlayerOptions`
+- Required: No
+- Details:
+  - [Guide → ArtPlayer](./guide/artplayer.md#GlobalConfiguration)
 
 ### componentsOptions.fontIcon.assets
 

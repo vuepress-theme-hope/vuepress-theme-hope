@@ -9,6 +9,7 @@ icon: config
 
   ```ts
   type AvailableComponent =
+    | "ArtPlayer"
     | "AudioPlayer"
     | "Badge"
     | "BiliBili"
@@ -26,6 +27,7 @@ icon: config
 
 可接受的组件名称为:
 
+- `"ArtPlayer"`
 - `"AudioPlayer"`
 - `"Badge"`
 - `"BiliBili"`
@@ -39,6 +41,13 @@ icon: config
 ## componentsOptions
 
 组件的全局配置
+
+### componentsOptions.artPlayer
+
+- 类型: `ComponentsArtPlayerOptions`
+- 默认值: `{}`
+- 详情:
+  - [指南 → ArtPlayer](./guide/artplayer.md#全局配置)
 
 ### componentsOptions.fontIcon.assets
 

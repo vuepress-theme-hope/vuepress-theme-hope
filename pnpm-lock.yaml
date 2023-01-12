@@ -459,7 +459,7 @@ importers:
     devDependencies:
       '@vuepress/cli': 2.0.0-beta.60
       '@vuepress/client': 2.0.0-beta.60
-      '@vuepress/plugin-docsearch': 2.0.0-beta.60
+      '@vuepress/plugin-docsearch': 2.0.0-beta.60_nfr4dy3d35kdla7gjiy3hcwsvm
       '@vuepress/plugin-pwa': 2.0.0-beta.60
       '@vuepress/plugin-pwa-popup': 2.0.0-beta.60
       '@vuepress/utils': 2.0.0-beta.60
@@ -488,7 +488,7 @@ importers:
     devDependencies:
       '@vuepress/cli': 2.0.0-beta.60
       '@vuepress/client': 2.0.0-beta.60
-      '@vuepress/plugin-docsearch': 2.0.0-beta.60
+      '@vuepress/plugin-docsearch': 2.0.0-beta.60_nfr4dy3d35kdla7gjiy3hcwsvm
       '@vuepress/plugin-pwa': 2.0.0-beta.60
       '@vuepress/plugin-pwa-popup': 2.0.0-beta.60
       '@vuepress/utils': 2.0.0-beta.60
@@ -519,7 +519,7 @@ importers:
       '@vuepress/cli': 2.0.0-beta.60
       '@vuepress/client': 2.0.0-beta.60
       '@vuepress/core': 2.0.0-beta.60
-      '@vuepress/plugin-docsearch': 2.0.0-beta.60
+      '@vuepress/plugin-docsearch': 2.0.0-beta.60_nfr4dy3d35kdla7gjiy3hcwsvm
       '@vuepress/shared': 2.0.0-beta.60
       '@vuepress/utils': 2.0.0-beta.60
       three: 0.148.0
@@ -584,6 +584,7 @@ importers:
     specifiers:
       '@vuepress/client': 2.0.0-beta.60
       docs-shared: workspace:*
+      hls.js: ^1.2.9
       sass-loader: 13.2.0
       vue: 3.2.45
       vuepress-plugin-components: workspace:*
@@ -592,6 +593,7 @@ importers:
     dependencies:
       '@vuepress/client': 2.0.0-beta.60
       docs-shared: link:../../docs-shared
+      hls.js: 1.2.9
       sass-loader: 13.2.0
       vue: 3.2.45
       vuepress-plugin-components: link:../../packages/components
@@ -4492,7 +4494,7 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@vuepress/plugin-docsearch/2.0.0-beta.60:
+  /@vuepress/plugin-docsearch/2.0.0-beta.60_nfr4dy3d35kdla7gjiy3hcwsvm:
     resolution: {integrity: sha512-4aquipHuEd87KdFh2ufh5OTeU5qaREer4DqJShpXemY5JiJqvGpda5KmLUTkAis/WPo44GWeFsgtgOqiHevqcA==}
     dependencies:
       '@docsearch/css': 3.3.1
@@ -4511,6 +4513,7 @@ packages:
       - react
       - react-dom
       - supports-color
+    patched: true
 
   /@vuepress/plugin-external-link-icon/2.0.0-beta.60:
     resolution: {integrity: sha512-We4YmS4G7sWoOec/FKYhTM86qRCMBbDThcxOiPm6sWHrhTdxk3bFgJq/DfqJU/ply1ta72AWep0rEY6fj6JJ2A==}
