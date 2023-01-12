@@ -75,6 +75,7 @@ export default theme("components", {
   plugins: {
     components: {
       components: [
+        "ArtPlayer",
         "AudioPlayer",
         "Badge",
         "BiliBili",
@@ -128,6 +129,7 @@ export default theme("components", {
 
     mdEnhance: {
       codetabs: true,
+      include: true,
     },
   },
 });

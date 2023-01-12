@@ -6,6 +6,7 @@ import type { AvailableComponent, ComponentOptions } from "./options.js";
 import type { NoticeClientOptions, NoticeOptions } from "../shared/index.js";
 
 const availableComponents: AvailableComponent[] = [
+  "ArtPlayer",
   "AudioPlayer",
   "Badge",
   "BiliBili",

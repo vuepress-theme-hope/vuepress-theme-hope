@@ -16,6 +16,8 @@ index: false
 
 此插件支持 11 个组件:
 
+- [ArtPlayer](artplayer.md)
+
 - [AudioPlayer](audioplayer.md)
 
 - [BiliBili](bilibili.md)

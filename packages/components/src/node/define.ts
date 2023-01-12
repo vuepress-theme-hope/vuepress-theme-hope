@@ -28,6 +28,9 @@ export const getDefine =
     if (options.components?.includes("FontIcon"))
       result["ICON_PREFIX"] = isString(prefix) ? prefix : getIconPrefix(assets);
 
+    if (options.components?.includes("ArtPlayer"))
+      result["ART_PLAYER_OPTIONS"] = options.componentOptions?.artPlayer || {};
+
     if (options.components?.includes("PDF")) {
       result["PDF_LOCALES"] = getLocales({
         app,
