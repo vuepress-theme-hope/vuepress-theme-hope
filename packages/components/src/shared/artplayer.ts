@@ -30,7 +30,7 @@ export interface CustomArtPlayerOptions
 
 export type UserArtPlayerSrcOptions = Omit<
   CustomArtPlayerOptions,
-  "container" | "url" | "customType"
+  "container" | "url"
 >;
 
 export interface ComponentsArtPlayerOptions {
