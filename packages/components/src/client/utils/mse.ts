@@ -1,10 +1,9 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
 export const videoTypes = (
   customTypes: Record<string, unknown>
 ): Array<string> => {
   return [
     ...["mp4", "mp3", "webm", "ogg"],
-    ...["m3u8", "hls", "ts", "flv", "mpd"],
+    ...["m3u8", "hls", "ts", "flv", "mpd", "dash"],
     ...Object.keys(customTypes),
   ];
 };
@@ -20,14 +19,10 @@ export const getTypeByUrl = (url: string): string | undefined => {
 export const useMseHls = async (
   mediaElement: HTMLMediaElement,
   src: string,
-  player: unknown,
-  registerDestroy = (destroy: () => void): void => {
-    //@ts-ignore
-    player?.on("destroy", destroy);
-  }
+  registerDestroy: (destroy: () => void) => void
 ): Promise<void> => {
   const { default: Hls } = await import(
-    /* webpackChunkName: "hls.js"  */ "hls.js/dist/hls.min.js"
+    /* webpackChunkName: "hls.js" */ "hls.js/dist/hls.min.js"
   );
 
   if (
@@ -50,17 +45,11 @@ export const useMseHls = async (
 export const useMseFlv = async (
   mediaElement: HTMLMediaElement,
   src: string,
-  player: unknown,
-  registerDestroy = (destroy: () => void): void => {
-    //@ts-ignore
-    player?.on("destroy", destroy);
-  }
+  registerDestroy: (destroy: () => void) => void
 ): Promise<void> => {
   const { default: mpegts } = await import(
-    /* webpackChunkName: "mpegts.js"  */ "mpegts.js/dist/mpegts.js"
+    /* webpackChunkName: "mpegts.js" */ "mpegts.js/dist/mpegts.js"
   );
-
-  console.log(mpegts, mediaElement, src, player);
 
   if (mpegts.isSupported()) {
     const flvPlayer = mpegts.createPlayer({
@@ -78,16 +67,12 @@ export const useMseFlv = async (
 export const useMseDash = async (
   mediaElement: HTMLMediaElement,
   src: string,
-  player: unknown,
-  registerDestroy = (destroy: () => void): void => {
-    //@ts-ignore
-    player?.on("destroy", destroy);
-  },
+  registerDestroy: (destroy: () => void) => void,
   autoPlay = false,
   startTime = 0
 ): Promise<void> => {
   const { default: dashjs } = await import(
-    /* webpackChunkName: "dashjs"  */ "dashjs/dist/dash.all.min.js"
+    /* webpackChunkName: "dashjs" */ "dashjs/dist/dash.all.min.js"
   );
 
   if (dashjs.supportsMediaSource()) {

@@ -47,7 +47,7 @@ export default defineComponent({
      * artplayer src
      */
     src: {
-      type: Object as PropType<CustomArtPlayerOptions>,
+      type: Object as PropType<Omit<CustomArtPlayerOptions, "container">>,
       default: artplayerDefaultOptions.src,
       required: false,
     },
@@ -87,7 +87,6 @@ export default defineComponent({
     pluginDanmuKu: {
       type: Object as PropType<ArtPlayerPluginDanmukuOption>,
       default: () => artplayerDefaultOptions.pluginDanmuKu,
-      required: false,
     },
 
     /**
@@ -98,7 +97,6 @@ export default defineComponent({
     width: {
       type: [String, Number],
       default: artplayerDefaultOptions?.width,
-      required: false,
     },
 
     /**
@@ -109,7 +107,6 @@ export default defineComponent({
     height: {
       type: [String, Number],
       default: artplayerDefaultOptions?.height,
-      required: false,
     },
 
     /**
@@ -120,7 +117,6 @@ export default defineComponent({
     ratio: {
       type: [String, Number],
       default: artplayerDefaultOptions.ratio,
-      required: false,
     },
   },
 
@@ -129,12 +125,13 @@ export default defineComponent({
       ...deepMerge(artplayerDefaultOptions, props),
     };
 
-    const src: CustomArtPlayerOptions = option.src!;
-
-    src.url = option.url ?? src.url!;
-    src.poster = option.poster ?? src.poster!;
-    src.title = option.title ?? src.title!;
-    src.muted = option.muted ?? src.muted!;
+    const src: CustomArtPlayerOptions = {
+      ...option.src,
+      url: option.url ?? option.src!.url!,
+      poster: option.poster ?? option.src!.poster,
+      title: option.title ?? option.src!.title,
+      muted: option.muted ?? option.src!.muted,
+    };
 
     const { el, width, height } = useSize<HTMLDivElement>(props, 0);
 
@@ -142,7 +139,7 @@ export default defineComponent({
 
     onMounted(async () => {
       const { default: art } = await import(
-        /* webpackChunkName: "artplayer"  */ "artplayer/dist/artplayer.js"
+        /* webpackChunkName: "artplayer" */ "artplayer/dist/artplayer.js"
       );
 
       src.container = el.value!;
@@ -156,33 +153,52 @@ export default defineComponent({
           switch (src.type) {
             case "m3u8":
             case "hls":
-              customType[src.type] = useMseHls;
+              customType[src.type] = (
+                video: HTMLVideoElement,
+                src: string,
+                player: ArtPlayer
+              ): Promise<unknown> =>
+                useMseHls(video, src, (d) => {
+                  player.on("destroy", d);
+                });
               break;
             case "flv":
-              customType[src.type] = useMseFlv;
+              customType[src.type] = (
+                video: HTMLVideoElement,
+                src: string,
+                player: ArtPlayer
+              ): Promise<unknown> =>
+                useMseFlv(video, src, (d) => {
+                  player.on("destroy", d);
+                });
               break;
             case "mpd":
             case "dash":
-              customType[src.type] = useMseDash;
+              customType[src.type] = customType[src.type] = (
+                video: HTMLVideoElement,
+                src: string,
+                player: ArtPlayer
+              ): Promise<unknown> =>
+                useMseDash(video, src, (d) => {
+                  player.on("destroy", d);
+                });
               break;
           }
 
-          src.customType = {
-            ...customType,
-            ...src.customType,
-          };
+          src.customType = src.customType
+            ? deepMerge(src.customType, customType)
+            : customType;
         } else {
-          // throw warning???
+          // throw warning ???
         }
       }
 
       // config danmaku plugin
       if (option?.pluginDanmuKu?.danmuku) {
         const { default: artplayerPluginDanmuku } = await import(
-          /* webpackChunkName: "artplayer-plugin-danmuku"  */ "artplayer-plugin-danmuku"
+          /* webpackChunkName: "artplayer-plugin-danmuku" */ "artplayer-plugin-danmuku"
         );
 
-        // @ts-ignore
         (src.plugins ??= []).push(artplayerPluginDanmuku(option.pluginDanmuKu));
       }
 
