@@ -22,6 +22,12 @@ export const readingTimeLocales: ReadingTimeLocaleConfig = {
     time: "大约 $time 分鐘",
   },
 
+  "/de/": {
+    word: "Ungefähr $word Wörter",
+    less1Minute: "Weniger als eine Minute",
+    time: "Ungefähr $time min",
+  },
+
   "/de-at/": {
     word: "Um die $word Wörter",
     less1Minute: "Weniger als eine Minute",
