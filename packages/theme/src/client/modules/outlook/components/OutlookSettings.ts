@@ -15,12 +15,6 @@ export default defineComponent({
     const themeData = useThemeData();
     const pure = usePure();
 
-    const enableDarkmode = computed(
-      () =>
-        themeData.value.darkmode !== "disable" &&
-        themeData.value.darkmode !== "enable"
-    );
-
     const enableThemeColor = computed(
       () => !pure.value && Boolean(themeData.value.themeColor)
     );
@@ -32,7 +26,7 @@ export default defineComponent({
     return (): VNode =>
       h(ClientOnly, () => [
         enableThemeColor.value ? h(ThemeColor) : null,
-        enableDarkmode.value ? h(AppearanceMode) : null,
+        h(AppearanceMode),
         enableFullScreen.value ? h(ToggleFullScreenButton) : null,
       ]);
   },

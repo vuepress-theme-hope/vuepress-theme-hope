@@ -12,7 +12,7 @@ import { useThemeLocaleData } from "@theme-hope/composables/index";
 import PageMeta from "@theme-hope/modules/info/components/PageMeta";
 import TOC from "@theme-hope/modules/info/components/TOC";
 
-import { useDarkMode } from "@theme-hope/modules/outlook/composables/index";
+import { useDarkmode } from "@theme-hope/modules/outlook/composables/index";
 
 import type { DefineComponent, VNode } from "vue";
 import type { ThemeNormalPageFrontmatter } from "../../shared/index.js";
@@ -24,7 +24,7 @@ export default defineComponent({
 
   setup(_props, { slots }) {
     const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();
-    const { isDarkMode } = useDarkMode();
+    const { isDarkMode } = useDarkmode();
     const themeLocale = useThemeLocaleData();
 
     const tocEnable = computed(

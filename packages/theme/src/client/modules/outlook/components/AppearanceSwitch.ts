@@ -1,12 +1,11 @@
-import { computed, defineComponent, h } from "vue";
+import { defineComponent, h } from "vue";
 
 import {
   AutoIcon,
   DarkIcon,
   LightIcon,
 } from "@theme-hope/modules/outlook/components/icons/index";
-import { useThemeData } from "@theme-hope/composables/index";
-import { useDarkMode } from "@theme-hope/modules/outlook/composables/index";
+import { useDarkmode } from "@theme-hope/modules/outlook/composables/index";
 
 import type { VNode } from "vue";
 import type { DarkmodeStatus } from "@theme-hope/modules/outlook/composables/index";
@@ -17,19 +16,15 @@ export default defineComponent({
   name: "AppearanceSwitch",
 
   setup() {
-    const themeData = useThemeData();
-    const { status } = useDarkMode();
-
-    const darkmode = computed(() => themeData.value.darkmode);
+    const { config, status } = useDarkmode();
 
     const toggleDarkMode = (): void => {
-      if (darkmode.value === "switch") {
-        status.value = (
-          { light: "dark", dark: "auto", auto: "light" } as Record<
-            DarkmodeStatus,
-            DarkmodeStatus
-          >
-        )[status.value];
+      if (config.value === "switch") {
+        status.value = (<Record<DarkmodeStatus, DarkmodeStatus>>{
+          light: "dark",
+          dark: "auto",
+          auto: "light",
+        })[status.value];
       } else status.value = status.value === "light" ? "dark" : "light";
     };
 

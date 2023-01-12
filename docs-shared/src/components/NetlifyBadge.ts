@@ -1,7 +1,7 @@
 import { ClientOnly } from "@vuepress/client";
 import { defineComponent, h } from "vue";
 // @ts-ignore
-import { useDarkMode } from "@theme-hope/modules/outlook/composables/index";
+import { useDarkmode } from "@theme-hope/modules/outlook/composables/index";
 
 import type { VNode } from "vue";
 
@@ -21,7 +21,7 @@ export default defineComponent({
   },
 
   setup(props) {
-    const { isDarkMode } = useDarkMode();
+    const { isDarkMode } = useDarkmode();
 
     return (): VNode | null =>
       IS_NETLIFY

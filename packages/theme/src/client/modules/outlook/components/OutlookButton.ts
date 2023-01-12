@@ -7,6 +7,7 @@ import ToggleFullScreenButton from "@theme-hope/modules/outlook/components/Toggl
 import OutlookSettings from "@theme-hope/modules/outlook/components/OutlookSettings";
 import { OutlookIcon } from "@theme-hope/modules/outlook/components/icons/index";
 import { usePure, useThemeData } from "@theme-hope/composables/index";
+import { useDarkmode } from "@theme-hope/modules/outlook/composables/index";
 
 import type { VNode } from "vue";
 
@@ -20,13 +21,9 @@ export default defineComponent({
     const themeData = useThemeData();
     const pure = usePure();
     const route = useRoute();
-    const open = ref(false);
+    const { canToggle } = useDarkmode();
 
-    const enableDarkmode = computed(
-      () =>
-        themeData.value.darkmode !== "disable" &&
-        themeData.value.darkmode !== "enable"
-    );
+    const open = ref(false);
 
     const enableThemeColor = computed(
       () => !pure.value && Boolean(themeData.value.themeColor)
@@ -44,18 +41,18 @@ export default defineComponent({
     );
 
     return (): VNode | null =>
-      enableDarkmode.value || enableFullScreen.value || enableThemeColor.value
+      canToggle.value || enableFullScreen.value || enableThemeColor.value
         ? h(
             "div",
             { class: "nav-item hide-in-mobile" },
             // only AppearanceSwitch is enabled
-            enableDarkmode.value &&
+            canToggle.value &&
               !enableFullScreen.value &&
               !enableThemeColor.value
               ? h(AppearanceSwitch)
               : // only FullScreen is enabled
               enableFullScreen.value &&
-                !enableDarkmode.value &&
+                !canToggle.value &&
                 !enableThemeColor.value
               ? h(ToggleFullScreenButton)
               : h(

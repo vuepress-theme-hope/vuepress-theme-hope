@@ -1,4 +1,4 @@
-export type DarkmodeConfig =
+export type DarkmodeOptions =
   | "switch"
   | "auto"
   | "toggle"
@@ -79,7 +79,7 @@ export interface AppearanceOptions {
    *
    * @default 'auto-switch'
    */
-  darkmode?: DarkmodeConfig;
+  darkmode?: DarkmodeOptions;
 
   /**
    * Theme color picker configuration

@@ -2,10 +2,8 @@ import { computed, defineComponent, h } from "vue";
 
 import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch";
 
-import {
-  useThemeData,
-  useThemeLocaleData,
-} from "@theme-hope/composables/index";
+import { useThemeLocaleData } from "@theme-hope/composables/index";
+import { useDarkmode } from "@theme-hope/modules/outlook/composables/index";
 
 import type { VNode } from "vue";
 
@@ -15,19 +13,13 @@ export default defineComponent({
   name: "AppearanceMode",
 
   setup() {
-    const themeData = useThemeData();
     const themeLocale = useThemeLocaleData();
+    const { canToggle } = useDarkmode();
 
     const locale = computed(() => themeLocale.value.outlookLocales.darkmode);
 
-    const darkmode = computed(() => themeData.value.darkmode);
-
-    const enable = computed(
-      () => darkmode.value === "switch" || darkmode.value === "toggle"
-    );
-
     return (): VNode | null =>
-      enable.value
+      canToggle.value
         ? h("div", { class: "appearance-wrapper" }, [
             h(
               "label",
