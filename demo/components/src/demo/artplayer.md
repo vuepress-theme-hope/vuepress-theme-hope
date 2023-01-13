@@ -77,7 +77,7 @@ const artPlayerConfig = {
         const hls = new HLS();
 
         hls.attachMedia(mediaElement);
-        hls.on(Hls.Events.MEDIA_ATTACHED, () => {
+        hls.on(HLS.Events.MEDIA_ATTACHED, () => {
           hls.loadSource(src);
         });
         player.on("destroy", () => {
