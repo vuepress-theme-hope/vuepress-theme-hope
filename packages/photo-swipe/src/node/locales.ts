@@ -28,6 +28,15 @@ export const photoSwipeLocales: PhotoSwipeLocaleConfig = {
     arrowNext: "下一個 (右箭頭)",
   },
 
+  "/de/": {
+    close: "Schließen",
+    download: "Download",
+    fullscreen: "Vollbild aktivieren",
+    zoom: "Rein / rauszoomen",
+    arrowPrev: "Zurück (Pfeil links)",
+    arrowNext: "Weiter (Pfeil rechts)",
+  },
+
   "/de-at/": {
     close: "Schließen",
     download: "Download",

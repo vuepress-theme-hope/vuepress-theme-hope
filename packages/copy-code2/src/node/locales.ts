@@ -20,6 +20,12 @@ export const copyCodeLocales: CopyCodeLocaleConfig = {
     hint: "複製成功",
   },
 
+  "/de/": {
+    copy: "Kopiere den Code.",
+    copied: "Kopiert",
+    hint: "Kopieren erfolgreich",
+  },
+
   "/de-at/": {
     copy: "Kopiere den Code.",
     copied: "Kopierter",

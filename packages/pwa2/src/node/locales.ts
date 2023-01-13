@@ -47,6 +47,21 @@ export const pwaLocales: PWALocaleConfig = {
     update: "新内容已就绪",
   },
 
+  "/de/": {
+    install: "Installieren",
+    iOSInstall: "Drucke den Share-Button und dann 'zu Homescreen hinzufügen'",
+    cancel: "Abbrechen",
+    close: "Schließen",
+    prevImage: "Vorheriges Bild",
+    nextImage: "Nächstes Bild",
+    desc: "Berschreibung",
+    feature: "Funktionen",
+    explain:
+      "Diese App kann auf Ihrem PC oder Mobilgerät installiert werden. Dadurch sieht diese Web-App aus und verhält sich wie jede andere installierte App. Sie finden sie in Ihren App-Listen und können sie an den Startbildschirm, die Startmenüs oder die Taskleisten anheften. Diese installierte Web-App kann auch sicher mit anderen Apps und Ihrem Betriebssystem interagieren.",
+    hint: "Neuer Inhalt gefunden.",
+    update: "Neue Inhalte sind verfügbar.",
+  },
+
   "/de-at/": {
     install: "Installieren",
     iOSInstall: "Drucke den Share-Button und dan 'zu Homescreen hinzufügen'",

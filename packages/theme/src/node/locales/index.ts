@@ -1,5 +1,6 @@
 import { brLocale } from "./br.js";
 import { deLocale } from "./de.js";
+import { deATLocale } from "./deAT.js";
 import { enLocale } from "./en.js";
 import { esLocale } from "./es.js";
 import { fiLocale } from "./fi.js";
@@ -23,7 +24,9 @@ export const themeLocalesData: Record<string, ThemeLocaleData> = {
 
   "/zh-tw/": zhTWLocale,
 
-  "/de-at/": deLocale,
+  "/de/": deLocale,
+
+  "/de-at/": deATLocale,
 
   "/vi/": viLocale,
 

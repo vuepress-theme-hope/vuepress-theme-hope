@@ -28,6 +28,15 @@ export const markdownEnhanceLocales: MarkdownEnhanceLocaleConfig = {
     details: "詳情",
   },
 
+  "/de/": {
+    info: "Information",
+    note: "Notiz",
+    tip: "Tips",
+    warning: "Warnung",
+    danger: "Gefahr",
+    details: "Details",
+  },
+
   "/de-at/": {
     info: "Information",
     note: "Note",

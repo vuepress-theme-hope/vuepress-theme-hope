@@ -1,10 +1,10 @@
 import type { ThemeLocaleData } from "../../shared/index.js";
 
-export const deLocale: ThemeLocaleData = {
-  lang: "de",
+export const deATLocale: ThemeLocaleData = {
+  lang: "de-AT",
 
   navbarLocales: {
-    langName: "Deutsch",
+    langName: "Deutsch (Österreich)",
     selectLangAriaLabel: "Sprache wählen",
   },
 
@@ -17,9 +17,9 @@ export const deLocale: ThemeLocaleData = {
     tag: "Tag",
     readingTime: "Lesezeit",
     words: "Wörter",
-    toc: "Auf dieser Seite",
-    prev: "Vorherige",
-    next: "Nächste",
+    toc: "On This Page",
+    prev: "Prev",
+    next: "Next",
     lastUpdated: "Zuletzt geändert",
     contributors: "Mitwirkende",
     editLink: "Diese Seite barbeiten",
@@ -38,8 +38,8 @@ export const deLocale: ThemeLocaleData = {
   },
 
   paginationLocales: {
-    prev: "Vorherige",
-    next: "Nächste",
+    prev: "Vorheriges",
+    next: "Nächstes",
     navigate: "Springe zu",
     action: "Los",
     errorText: "Bitte gib eine Nummer zwischen 1 und $page ein!",
@@ -48,13 +48,13 @@ export const deLocale: ThemeLocaleData = {
   outlookLocales: {
     themeColor: "Design-Farbe",
     darkmode: "Design-Modus",
-    fullscreen: "Vollbild",
+    fullscreen: "Full Screen",
   },
 
   encryptLocales: {
-    iconLabel: "Seite verschlüsselt",
-    placeholder: "Passwort eingeben",
-    remember: "Passwort merken",
+    iconLabel: "Page Encrypted",
+    placeholder: "Entre a senha",
+    remember: "Remember password",
     errorHint: "Bitte das korrekte Passwort eingeben!",
   },
 
@@ -68,6 +68,6 @@ export const deLocale: ThemeLocaleData = {
     ],
     back: "Zurück",
     home: "Zur Startseite",
-    openInNewWindow: "In neuem Fenster öffnen",
+    openInNewWindow: "Open in new window",
   },
 };
