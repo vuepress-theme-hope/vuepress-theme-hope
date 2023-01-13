@@ -24,7 +24,7 @@ export default defineComponent({
 
   setup(_props, { slots }) {
     const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();
-    const { isDarkMode } = useDarkmode();
+    const { isDarkmode } = useDarkmode();
     const themeLocale = useThemeLocaleData();
 
     const tocEnable = computed(
@@ -60,7 +60,7 @@ export default defineComponent({
             h(PageNav),
             hasGlobalComponent("CommentService")
               ? h(resolveComponent("CommentService"), {
-                  darkmode: isDarkMode.value,
+                  darkmode: isDarkmode.value,
                 })
               : null,
             slots["bottom"]?.(),

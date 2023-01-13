@@ -33,7 +33,7 @@ tag:
 
 ## Глобальные переменные
 
-`$isDarkMode` доступен во всех маркдаун файлах.
+`$isDarkmode` доступен во всех маркдаун файлах.
 
 <script setup lang="ts">
 import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch"

@@ -12,7 +12,7 @@ export type DarkModeRef = ComputedRef<boolean>;
 export type DarkModeStatusRef = Ref<DarkmodeStatus>;
 
 export interface DarkMode {
-  isDarkMode: DarkModeRef;
+  isDarkmode: DarkModeRef;
   config: ComputedRef<DarkmodeOptions>;
   status: DarkModeStatusRef;
   canToggle: ComputedRef<boolean>;
@@ -43,7 +43,7 @@ export const injectDarkMode = (app: App): void => {
 
   const config = computed(() => themeData.value.darkmode || "switch");
 
-  const isDarkMode = computed<boolean>(() => {
+  const isDarkmode = computed<boolean>(() => {
     const darkmode = config.value;
 
     // disable darkmode
@@ -72,32 +72,32 @@ export const injectDarkMode = (app: App): void => {
   app.provide(darkModeSymbol, {
     canToggle,
     config,
-    isDarkMode,
+    isDarkmode,
     status,
   });
 
   // provide global helpers
   Object.defineProperties(app.config.globalProperties, {
-    $isDarkMode: { get: () => isDarkMode.value },
+    $isDarkmode: { get: () => isDarkmode.value },
   });
 };
 
 export const setupDarkMode = (): void => {
-  const { isDarkMode } = useDarkmode();
+  const { isDarkmode } = useDarkmode();
 
-  const updateDOM = (isDark = isDarkMode.value): void => {
+  const updateDOM = (isDark = isDarkmode.value): void => {
     const html = window?.document.querySelector("html");
 
     html?.setAttribute("data-theme", isDark ? "dark" : "light");
   };
 
   onMounted(() => {
-    watch(isDarkMode, updateDOM, { immediate: true });
+    watch(isDarkmode, updateDOM, { immediate: true });
   });
 };
 
 declare module "vue" {
   export interface ComponentCustomProperties {
-    $isDarkMode: boolean;
+    $isDarkmode: boolean;
   }
 }

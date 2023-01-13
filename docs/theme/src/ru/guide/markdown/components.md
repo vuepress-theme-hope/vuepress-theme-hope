@@ -258,7 +258,7 @@ See <ProjectLink name="components" path="/guide/catalog.html">Catalog</ProjectLi
 
 Демонстрация с пользователем и слаг-хешем:
 
-<CodePen user="kowlor" slug-hash="ZYYQoy" title="Solar System animation - Pure CSS" :default-tab="['css','result']" :theme="$isDarkMode? 'dark': 'light'" />
+<CodePen user="kowlor" slug-hash="ZYYQoy" title="Solar System animation - Pure CSS" :default-tab="['css','result']" :theme="$isDarkmode? 'dark': 'light'" />
 
 ```md
 <CodePen
@@ -266,26 +266,26 @@ See <ProjectLink name="components" path="/guide/catalog.html">Catalog</ProjectLi
   slug-hash="ZYYQoy"
   title="Solar System animation - Pure CSS"
   :default-tab="['css','result']"
-  :theme="$isDarkMode? 'dark': 'light'"
+  :theme="$isDarkmode? 'dark': 'light'"
 />
 ```
 
 Демо со ссылкой:
 
-<CodePen link="https://codepen.io/kowlor/pen/ZYYQoy" title="Solar System animation - Pure CSS" :default-tab="['css','result']" :theme="$isDarkMode? 'dark': 'light'" />
+<CodePen link="https://codepen.io/kowlor/pen/ZYYQoy" title="Solar System animation - Pure CSS" :default-tab="['css','result']" :theme="$isDarkmode? 'dark': 'light'" />
 
 ```md
 <CodePen
   link="https://codepen.io/kowlor/pen/ZYYQoy"
   title="Solar System animation - Pure CSS"
   :default-tab="['css','result']"
-  :theme="$isDarkMode? 'dark': 'light'"
+  :theme="$isDarkmode? 'dark': 'light'"
 />
 ```
 
 Нажмите, чтобы запустить демонстрацию:
 
-<CodePen link="https://codepen.io/keginaring/pen/XWZazwW" title="Solar System animation - Pure CSS" status="clicktorun" :theme="$isDarkMode? 'dark': 'light'" />
+<CodePen link="https://codepen.io/keginaring/pen/XWZazwW" title="Solar System animation - Pure CSS" status="clicktorun" :theme="$isDarkmode? 'dark': 'light'" />
 
 ```md
 <CodePen
@@ -293,7 +293,7 @@ See <ProjectLink name="components" path="/guide/catalog.html">Catalog</ProjectLi
   title="Envelope w/ Hearts"
   status="clicktorun"
   :default-tab="['css','result']"
-  :theme="$isDarkMode? 'dark': 'light'"
+  :theme="$isDarkmode? 'dark': 'light'"
 />
 ```
 

@@ -21,7 +21,7 @@ export default defineComponent({
   },
 
   setup(props) {
-    const { isDarkMode } = useDarkmode();
+    const { isDarkmode } = useDarkmode();
 
     return (): VNode | null =>
       IS_NETLIFY
@@ -31,7 +31,7 @@ export default defineComponent({
               { href: "https://www.netlify.com", target: "_blank" },
               h("img", {
                 src: `https://www.netlify.com/img/global/badges/netlify-${
-                  isDarkMode.value ? "dark" : "light"
+                  isDarkmode.value ? "dark" : "light"
                 }.svg`,
                 alt: props.alt,
               })

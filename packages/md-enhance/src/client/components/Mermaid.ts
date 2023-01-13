@@ -18,41 +18,41 @@ import "../styles/mermaid.scss";
 declare const MARKDOWN_ENHANCE_DELAY: number;
 declare const MERMAID_OPTIONS: MermaidConfig;
 
-const getThemeVariables = (isDarkMode: boolean): Record<string, unknown> => {
+const getThemeVariables = (isDarkmode: boolean): Record<string, unknown> => {
   return {
-    dark: isDarkMode,
-    background: isDarkMode ? "#1e1e1e" : "#fff",
+    dark: isDarkmode,
+    background: isDarkmode ? "#1e1e1e" : "#fff",
 
-    primaryColor: isDarkMode ? "#389d70" : "#4abf8a",
-    primaryBorderColor: isDarkMode ? "#389d70" : "#4abf8a",
+    primaryColor: isDarkmode ? "#389d70" : "#4abf8a",
+    primaryBorderColor: isDarkmode ? "#389d70" : "#4abf8a",
     primaryTextColor: "#fff",
 
     secondaryColor: "#ffb500",
-    secondaryBorderColor: isDarkMode ? "#fff" : "#000",
-    secondaryTextColor: isDarkMode ? "#ddd" : "#333",
+    secondaryBorderColor: isDarkmode ? "#fff" : "#000",
+    secondaryTextColor: isDarkmode ? "#ddd" : "#333",
 
-    tertiaryColor: isDarkMode ? "#282828" : "#efeef4",
-    tertiaryBorderColor: isDarkMode ? "#bbb" : "#242424",
-    tertiaryTextColor: isDarkMode ? "#ddd" : "#333",
+    tertiaryColor: isDarkmode ? "#282828" : "#efeef4",
+    tertiaryBorderColor: isDarkmode ? "#bbb" : "#242424",
+    tertiaryTextColor: isDarkmode ? "#ddd" : "#333",
 
     // note
-    noteBkgColor: isDarkMode ? "#f6d365" : "#fff5ad",
+    noteBkgColor: isDarkmode ? "#f6d365" : "#fff5ad",
     noteTextColor: "#242424",
-    noteBorderColor: isDarkMode ? "#f6d365" : "#333",
+    noteBorderColor: isDarkmode ? "#f6d365" : "#333",
 
-    lineColor: isDarkMode ? "#d3d3d3" : "#333",
-    textColor: isDarkMode ? "#fff" : "#242424",
+    lineColor: isDarkmode ? "#d3d3d3" : "#333",
+    textColor: isDarkmode ? "#fff" : "#242424",
 
-    mainBkg: isDarkMode ? "#389d70" : "#4abf8a",
+    mainBkg: isDarkmode ? "#389d70" : "#4abf8a",
     errorBkgColor: "#eb4d5d",
     errorTextColor: "#fff",
 
     // flowchart
-    nodeBorder: isDarkMode ? "#389d70" : "#4abf8a",
-    nodeTextColor: isDarkMode ? "#fff" : "#242424",
+    nodeBorder: isDarkmode ? "#389d70" : "#4abf8a",
+    nodeTextColor: isDarkmode ? "#fff" : "#242424",
 
     // sequence
-    signalTextColor: isDarkMode ? "#9e9e9e" : "#242424",
+    signalTextColor: isDarkmode ? "#9e9e9e" : "#242424",
 
     // class
     classText: "#fff",
@@ -61,7 +61,7 @@ const getThemeVariables = (isDarkMode: boolean): Record<string, unknown> => {
     labelColor: "#fff",
 
     // colors
-    fillType0: isDarkMode ? "#cf1322" : "#f1636e",
+    fillType0: isDarkmode ? "#cf1322" : "#f1636e",
     fillType1: "#f39c12",
     fillType2: "#2ecc71",
     fillType3: "#fa541c",
