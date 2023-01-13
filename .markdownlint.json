@@ -14,6 +14,7 @@
     "allowed_elements": [
       "br",
       "script",
+      "ArtPlayer",
       "AudioPlayer",
       "AutoCatalog",
       "Badge",
@@ -33,8 +34,7 @@
       "KatexPlayground",
       "NetlifyBadge",
       "ThemeColorPicker",
-      "ToggleFullScreenButton",
-      "ArtPlayer"
+      "ToggleFullScreenButton"
     ]
   },
   "MD035": {
