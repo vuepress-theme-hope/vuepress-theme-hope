@@ -22,9 +22,9 @@ export default defineComponent({
     return (): VNode =>
       h("div", { class: "page-title" }, [
         h("h1", [
-          themeLocale.value.titleIcon !== false
-            ? h(Icon, { icon: frontmatter.value.icon })
-            : null,
+          themeLocale.value.titleIcon === false
+            ? null
+            : h(Icon, { icon: frontmatter.value.icon }),
           page.value.title,
         ]),
         h(PageInfo, {

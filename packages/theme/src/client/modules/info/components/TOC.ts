@@ -139,8 +139,9 @@ export default defineComponent({
             h("aside", { id: "toc" }, [
               h("div", { class: "toc-header" }, [
                 metaLocale.value.toc,
-                themeData.value.print
-                  ? h(
+                themeData.value.print === false
+                  ? null
+                  : h(
                       "button",
                       {
                         class: "print-button",
@@ -150,8 +151,7 @@ export default defineComponent({
                         },
                       },
                       h(PrintIcon)
-                    )
-                  : null,
+                    ),
               ]),
               h("div", { class: "toc-wrapper", ref: toc }, [tocHeaders]),
             ]),

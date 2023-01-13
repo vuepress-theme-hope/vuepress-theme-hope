@@ -63,8 +63,9 @@ export default defineComponent({
     });
 
     return (): VNode | null =>
-      frontmatter.value.hero !== false
-        ? h(
+      frontmatter.value.hero === false
+        ? null
+        : h(
             "div",
             {
               ref: hero,
@@ -91,9 +92,9 @@ export default defineComponent({
                   : null
               ),
               h(DropTransition, { appear: true, delay: 0.08 }, () =>
-                frontmatter.value.heroText !== false
-                  ? h("h1", frontmatter.value.heroText || title.value)
-                  : null
+                frontmatter.value.heroText === false
+                  ? null
+                  : h("h1", frontmatter.value.heroText || title.value)
               ),
               h(DropTransition, { appear: true, delay: 0.12 }, () =>
                 frontmatter.value.tagline
@@ -119,7 +120,6 @@ export default defineComponent({
                   )
                 : null,
             ]
-          )
-        : null;
+          );
   },
 });
