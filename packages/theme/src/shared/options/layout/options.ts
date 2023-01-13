@@ -141,6 +141,19 @@ export interface LayoutOptions {
   mobileBreakPoint?: number;
 
   /**
+   * Window width detecting wide screen in pixels.
+   *
+   * @description This should be the same value with `$pc` value in `config.scss`.
+   *
+   * 切换宽屏的窗口宽度，单位像素。
+   *
+   * @description 该值应与 `config.scss` 中的 `$pc` 值相同。
+   *
+   * @default 1440
+   */
+  wideBreakPoint?: number;
+
+  /**
    * Sorter of structure sidebar
    *
    * 结构化侧边栏排序器
@@ -150,4 +163,7 @@ export interface LayoutOptions {
   sidebarSorter?: SidebarSorter;
 }
 
-export type LayoutConfig = Pick<LayoutOptions, "mobileBreakPoint">;
+export type LayoutConfig = Pick<
+  LayoutOptions,
+  "mobileBreakPoint" | "wideBreakPoint"
+>;

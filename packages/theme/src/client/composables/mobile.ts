@@ -4,20 +4,31 @@ import { useThemeData } from "./themeData.js";
 
 import type { Ref } from "vue";
 
-export const useMobile = (): Ref<boolean> => {
+export interface WindowSizeRef {
+  isMobile: Ref<boolean>;
+  isWide: Ref<boolean>;
+}
+
+export const useWindowSize = (): WindowSizeRef => {
   const themeData = useThemeData();
   const isMobile = ref(false);
+  const isWide = ref(false);
 
-  const mobileHandler = (): void => {
+  const windowSizeHandler = (): void => {
     isMobile.value =
-      window.innerWidth < (themeData.value.mobileBreakPoint || 719);
+      window.innerWidth <= (themeData.value.mobileBreakPoint || 719);
+    isWide.value =
+      window.innerWidth >= (themeData.value.wideBreakPoint || 1440);
   };
 
   onMounted(() => {
-    mobileHandler();
-    useEventListener("resize", mobileHandler, false);
-    useEventListener("orientationchange", mobileHandler, false);
+    windowSizeHandler();
+    useEventListener("resize", windowSizeHandler, false);
+    useEventListener("orientationchange", windowSizeHandler, false);
   });
 
-  return isMobile;
+  return {
+    isMobile,
+    isWide,
+  };
 };

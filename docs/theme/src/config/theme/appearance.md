@@ -86,6 +86,19 @@ You should keep this option same value with `$tablet` in `.vuepress/config.scss`
 
 :::
 
+## wideBreakPoint <Badge text="Root only" type="warning" />
+
+- Type: `number`
+- Default: `1440`
+
+Window width switching wide screen view and desktop view in pixels
+
+::: warning
+
+You should keep this option same value with `$pc` in `.vuepress/config.scss`
+
+:::
+
 ## pure <Badge text="Root only" type="warning" />
 
 - Type: `boolean`

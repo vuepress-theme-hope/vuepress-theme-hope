@@ -15,7 +15,10 @@ import { useRouter } from "vue-router";
 import { RenderDefault, hasGlobalComponent } from "vuepress-shared/client";
 
 import PageFooter from "@theme-hope/components/PageFooter";
-import { useMobile, useThemeLocaleData } from "@theme-hope/composables/index";
+import {
+  useThemeLocaleData,
+  useWindowSize,
+} from "@theme-hope/composables/index";
 import Navbar from "@theme-hope/modules/navbar/components/Navbar";
 import Sidebar from "@theme-hope/modules/sidebar/components/Sidebar";
 import { useSidebarItems } from "@theme-hope/modules/sidebar/composables/index";
@@ -54,7 +57,7 @@ export default defineComponent({
       ThemeProjectHomePageFrontmatter | ThemeNormalPageFrontmatter
     >();
     const themeLocale = useThemeLocaleData();
-    const isMobile = useMobile();
+    const { isMobile, isWide } = useWindowSize();
 
     // navbar
     const hideNavbar = ref(false);
@@ -195,7 +198,9 @@ export default defineComponent({
                   "has-toc": enableToc.value,
                   "hide-navbar": hideNavbar.value,
                   "sidebar-collapsed":
-                    !isMobile.value && isDesktopSidebarCollapsed.value,
+                    !isMobile.value &&
+                    !isWide.value &&
+                    isDesktopSidebarCollapsed.value,
                   "sidebar-open": isMobile.value && isMobileSidebarOpen.value,
                 },
                 frontmatter.value.containerClass || "",

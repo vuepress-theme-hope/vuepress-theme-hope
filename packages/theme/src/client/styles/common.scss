@@ -20,6 +20,10 @@
     display: none;
   }
 
+  @media (min-width: hope-config.$pc) {
+    display: none;
+  }
+
   &:hover {
     background: rgb(127 127 127 / 5%);
     cursor: pointer;
@@ -34,17 +38,19 @@
   .page {
     // leave space for navbar
     padding-top: var(--navbar-height);
-    padding-right: calc(
-      100vw - var(--content-width) - var(--sidebar-space) - 6rem
-    );
 
     // leave space for sidebar
     padding-left: calc(var(--sidebar-space) + 2rem);
 
     // do not leave space for sidebar on wide mobile
     @media (max-width: hope-config.$tablet) {
-      padding-right: 0;
-      padding-left: 0;
+      padding-inline: 0;
+    }
+
+    @media (min-width: hope-config.$pc) {
+      padding-right: calc(
+        100vw - var(--content-width) - var(--sidebar-space) - 6rem
+      );
     }
   }
 
@@ -82,7 +88,6 @@
   // close state on desktop
   &.sidebar-collapsed {
     .page {
-      // spaces for toggle button
       padding-left: calc(
         100vw - var(--content-width) - var(--sidebar-space) - 6rem
       );
@@ -104,10 +109,7 @@
   // sidebar is disabled
   &.no-sidebar {
     .page {
-      padding-right: 0;
-
-      // clear space for sidebar
-      padding-left: 0;
+      padding-inline: 0;
     }
 
     &.has-toc {

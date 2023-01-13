@@ -86,6 +86,19 @@ tag:
 
 :::
 
+## wideBreakPoint <Badge text="Только root" type="warning" />
+
+- Тип: `number`
+- По умолчанию: `1440`
+
+Window width switching wide screen view and desktop view in pixels
+
+::: warning
+
+Вы должны оставить для этой опции то же значение, что и для `$pc` в `.vuepress/config.scss`
+
+:::
+
 ## pure <Badge text="Только root" type="warning" />
 
 - Тип: `boolean`

@@ -6,7 +6,7 @@ import FadeSlideY from "@theme-hope/components/transitions/FadeSlideY";
 import HomePage from "@theme-hope/components/HomePage";
 import NormalPage from "@theme-hope/components/NormalPage";
 import SkipLink from "@theme-hope/components/SkipLink";
-import { useMobile } from "@theme-hope/composables/index";
+import { useWindowSize } from "@theme-hope/composables/index";
 import {
   useThemeData,
   useThemeLocaleData,
@@ -26,7 +26,7 @@ export default defineComponent({
     const themeLocale = useThemeLocaleData();
     const page = usePageData();
     const frontmatter = usePageFrontmatter<ThemePageFrontmatter>();
-    const isMobile = useMobile();
+    const { isMobile } = useWindowSize();
 
     const sidebarDisplay = computed(() =>
       ENABLE_BLOG

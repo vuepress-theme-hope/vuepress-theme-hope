@@ -85,6 +85,19 @@ tag:
 
 :::
 
+## wideBreakPoint <Badge text="仅限 Root" type="warning" />
+
+- 类型: `number`
+- 默认值: `1440`
+
+切换桌面布局和宽屏布局的窗口宽度，单位像素。
+
+::: warning
+
+你需要将此选项和 `.vuepress/config.scss` 中的 `$pc` 保持一致。
+
+:::
+
 ## pure <Badge text="仅限 Root" type="warning" />
 
 - 类型: `boolean`
