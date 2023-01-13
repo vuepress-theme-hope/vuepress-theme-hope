@@ -52,7 +52,7 @@
   "dependencies": {
     "@vuepress/client": "2.0.0-beta.60",
     "@vuepress/utils": "2.0.0-beta.60",
-    "lightgallery": "^2.7.0",
+    "lightgallery": "^2.7.1",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6",
     "vuepress-plugin-sass-palette": "workspace:*",

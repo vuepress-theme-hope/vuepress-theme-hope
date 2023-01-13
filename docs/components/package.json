@@ -22,7 +22,7 @@
     "@vuepress/client": "2.0.0-beta.60",
     "docs-shared": "workspace:*",
     "artplayer-plugin-danmuku": "4.4.11",
-    "hls.js": "1.2.9",
+    "hls.js": "1.3.0",
     "sass-loader": "13.2.0",
     "vue": "3.2.45",
     "vuepress-plugin-components": "workspace:*",
