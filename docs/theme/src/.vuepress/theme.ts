@@ -48,6 +48,7 @@ export default theme("theme", {
 
     components: {
       components: [
+        "ArtPlayer",
         "AudioPlayer",
         "Badge",
         "BiliBili",
