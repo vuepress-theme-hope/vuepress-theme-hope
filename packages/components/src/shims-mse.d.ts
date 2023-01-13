@@ -3,11 +3,14 @@ declare module "dashjs/dist/dash.all.min.js" {
   export = dashjs;
 }
 declare module "hls.js/dist/hls.min.js" {
-  import Hls from "hls.js";
-  export = Hls;
+  import HLS from "hls.js";
+
+  export * from "hls.js";
+  export default HLS;
 }
 
 declare module "mpegts.js/dist/mpegts.js" {
   import mpegts from "mpegts.js";
-  export = mpegts;
+  export * from "mpegts.js";
+  export default mpegts;
 }

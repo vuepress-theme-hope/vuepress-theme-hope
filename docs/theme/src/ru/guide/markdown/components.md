@@ -12,6 +12,7 @@ tag:
 
 Доступные компоненты:
 
+- ArtPlayer
 - AudioPlayer
 - Badge
 - BiliBili
@@ -19,6 +20,7 @@ tag:
 - CodePen
 - FontIcon
 - PDF
+- SiteInfo
 - StackBlitz
 - VideoPlayer
 - YouTube
@@ -89,6 +91,76 @@ export default {
 ```
 
 :::
+
+## ArtPlayer
+
+A video player:
+
+<ArtPlayer src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4" />
+
+```md
+<ArtPlayer src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4" />
+```
+
+A video player with poster:
+
+<ArtPlayer
+  src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4"
+  poster="/poster.svg"
+/>
+
+```md
+<ArtPlayer
+  src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4"
+  poster="/poster.svg"
+/>
+```
+
+A video player with custom settings:
+
+<ArtPlayer
+  src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4"
+  airplay
+  aspect-ratio
+  auto-size
+  auto-orientation
+  auto-playback
+  fast-forward
+  flip
+  fullscreen-web
+  lock
+  loop
+  is-live
+  muted
+  mini-progress-bar
+  pip
+  screenshot
+  subtitle-offset
+/>
+
+```md
+<ArtPlayer
+  src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4"
+  airplay
+  aspect-ratio
+  auto-size
+  auto-orientation
+  auto-playback
+  fast-forward
+  flip
+  fullscreen-web
+  lock
+  loop
+  is-live
+  muted
+  mini-progress-bar
+  pip
+  screenshot
+  subtitle-offset
+/>
+```
+
+See <ProjectLink name="components" path="/guide/artplayer.html">ArtPlayer</ProjectLink> page for available props.
 
 ## AudioPlayer
 

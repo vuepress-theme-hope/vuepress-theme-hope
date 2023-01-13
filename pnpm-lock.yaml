@@ -185,7 +185,7 @@ importers:
       '@vuepress/client': 2.0.0-beta.60
       '@vuepress/theme-default': 2.0.0-beta.60
       artplayer-plugin-danmuku: 4.4.11
-      hls.js: ^1.2.9
+      hls.js: 1.2.9
       sass-loader: 13.2.0
       vue: 3.2.45
       vuepress-plugin-components: workspace:*
@@ -587,8 +587,9 @@ importers:
   docs/components:
     specifiers:
       '@vuepress/client': 2.0.0-beta.60
+      artplayer-plugin-danmuku: 4.4.11
       docs-shared: workspace:*
-      hls.js: ^1.2.9
+      hls.js: 1.2.9
       sass-loader: 13.2.0
       vue: 3.2.45
       vuepress-plugin-components: workspace:*
@@ -596,6 +597,7 @@ importers:
       vuepress-webpack: 2.0.0-beta.60
     dependencies:
       '@vuepress/client': 2.0.0-beta.60
+      artplayer-plugin-danmuku: 4.4.11
       docs-shared: link:../../docs-shared
       hls.js: 1.2.9
       sass-loader: 13.2.0
@@ -4999,7 +5001,6 @@ packages:
 
   /artplayer-plugin-danmuku/4.4.11:
     resolution: {integrity: sha512-/4F8IyB29Bdr1LV1RM3FM7CdiAMsVNOOJ/HY4jaJCXnMAKThQiGa++0PhCJ07nhyGvDcZGRL2/UWJRz9zZJFNw==}
-    dev: true
 
   /artplayer/4.6.0:
     resolution: {integrity: sha512-dv93RmpMzb9VIfKsvjlmp6zbnLD9gPcMDkJ1aQGGczU+F5Jly0h249HtEsgnr8hc00c8YQp7GeAJsuMu9vwI4w==}
