@@ -1,13 +1,5 @@
-declare module "artplayer/dist/artplayer.js" {
-  import Artplayer from "artplayer";
-  export = Artplayer;
-}
-
 declare module "artplayer-plugin-danmuku" {
   import type Artplayer from "artplayer";
-
-  export = artplayerPluginDanmuku;
-  export as namespace artplayerPluginDanmuku;
 
   export type Danmu = {
     /**
@@ -16,7 +8,9 @@ declare module "artplayer-plugin-danmuku" {
     text: string;
 
     /**
-     * 弹幕发送模式，0为滚动，1为静止
+     * 弹幕发送模式
+     *
+     * @description 0为滚动，1为静止
      */
     mode?: 0 | 1;
 
@@ -32,11 +26,13 @@ declare module "artplayer-plugin-danmuku" {
 
     /**
      * 弹幕是否有描边
+     *
+     * @default false
      */
     border?: boolean;
   };
 
-  export type Option = {
+  export type ArtPlayerDanmukuOptions = {
     /**
      * 弹幕源，可以是弹幕数组，xml 地址或者一个返回 Promise 的函数
      */
@@ -128,33 +124,33 @@ declare module "artplayer-plugin-danmuku" {
     beforeEmit?: (danmu: Danmu) => boolean;
   };
 
-  export type Danmuku = {
+  export type ArtPlayerDanmukuPlugin = {
     name: "artplayerPluginDanmuku";
 
     /**
      * 发送一条实时弹幕
      */
-    emit: (danmu: Danmu) => Danmuku;
+    emit: (danmu: Danmu) => ArtPlayerDanmukuPlugin;
 
     /**
      * 重载弹幕源，或者切换新弹幕
      */
-    load: () => Promise<Danmuku>;
+    load: () => Promise<ArtPlayerDanmukuPlugin>;
 
     /**
      * 实时改变弹幕配置
      */
-    config: (option: Option) => Danmuku;
+    config: (option: ArtPlayerDanmukuOptions) => ArtPlayerDanmukuPlugin;
 
     /**
      * 隐藏弹幕层
      */
-    hide: () => Danmuku;
+    hide: () => ArtPlayerDanmukuPlugin;
 
     /**
      * 显示弹幕层
      */
-    show: () => Danmuku;
+    show: () => ArtPlayerDanmukuPlugin;
 
     /**
      * 是否隐藏弹幕层
@@ -168,6 +164,8 @@ declare module "artplayer-plugin-danmuku" {
   };
 
   declare const artplayerPluginDanmuku: (
-    option: Option
-  ) => (art: Artplayer) => Danmuku;
+    option: ArtPlayerDanmukuOptions
+  ) => (art: Artplayer) => ArtPlayerDanmukuPlugin;
+
+  export = artplayerPluginDanmuku;
 }

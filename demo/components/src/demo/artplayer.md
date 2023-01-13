@@ -1,0 +1,114 @@
+# ArtPlayer
+
+## Demo
+
+A video player:
+
+<ArtPlayer src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4" />
+
+A video player with poster:
+
+<ArtPlayer
+  src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4"
+  poster="/poster.svg"
+/>
+
+HLS:
+
+<ArtPlayer src="https://mse-demo.u2sb.com/dash/master.m3u8" />
+
+FLV:
+
+<ArtPlayer src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.flv" />
+
+DASH:
+
+<ArtPlayer src="https://mse-demo.u2sb.com/dash/caminandes_03_llamigos_720p.mpd" />
+
+CustomType:
+
+<ArtPlayer src="https://mse-demo.u2sb.com/dash/master.m3u8" :config="artCustomType" />
+
+DanMuKu plugin：
+
+<ArtPlayer
+  src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4"
+  :customPlayerOptions="customPlayerOptions"
+  :customPlayer="customPlayer"
+/>
+
+<script setup>
+import artplayerPluginDanmuku from "artplayer-plugin-danmuku";
+
+const artCustomType = {
+  type: "customHLS",
+  customType: {
+    customHLS: async (mediaElement, src, player) => {
+      if (
+        mediaElement.canPlayType("application/x-mpegURL") ||
+        mediaElement.canPlayType("application/vnd.apple.mpegURL")
+      ) {
+        mediaElement.src = src;
+      } else {
+        const { default: Hls } = await import("hls.js/dist/hls.min.js");
+        const hls = new Hls();
+        hls.attachMedia(mediaElement);
+        hls.on(Hls.Events.MEDIA_ATTACHED, function () {
+          hls.loadSource(src);
+        });
+        player.on("destroy", function () {
+          hls.destroy();
+        });
+      }
+    },
+  },
+};
+
+const DANMAKU_API = "https://danmu.u2sb.com/api/artplayer/v1";
+const DANMAKU_ID = "jsdKLNMks21NMij";
+const bilibiliDanmaku = `${DANMAKU_API}/bilibili/BV1cs411Q7Ng/3.json`;
+
+const danmukuOptions = {
+  danmuku: () =>
+    Promise.allSettled([
+      fetch(bilibiliDanmaku).then((res) => res.json()),
+      fetch(`${DANMAKU_API}/${DANMAKU_ID}.json`).then((res) => res.json()),
+    ])
+      .then((res) =>
+        res.filter((r) => r.status === "fulfilled").map((r) => r.value)
+      )
+      .then((res) =>
+        res
+          .filter(
+            (r) =>
+              r["code"] !== undefined &&
+              r["code"] === 0 &&
+              r["data"] !== undefined &&
+              r["data"].length > 0
+          )
+          .reduce((acc, cur) => acc.concat(cur["data"]), [])
+      ),
+};
+
+const customPlayerOptions = (playerOptions) => {
+  (playerOptions.plugins ??= []).push(artplayerPluginDanmuku(danmukuOptions));
+};
+
+const customPlayer = (player) => {
+  player.on("artplayerPluginDanmuku:emit", (danmu) => {
+    console.log(danmu);
+    fetch(DANMAKU_API, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        Id: DANMAKU_ID,
+        Referer: window.location.origin + window.location.pathname,
+        ...danmu,
+      }),
+    });
+  });
+};
+</script>

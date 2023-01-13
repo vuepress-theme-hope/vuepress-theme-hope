@@ -19,6 +19,7 @@ export default defineUserConfig({
 
     sidebar: [
       "/demo/",
+      "/demo/artplayer",
       "/demo/audioplayer",
       "/demo/badge",
       "/demo/bilibili",
@@ -40,6 +41,7 @@ export default defineUserConfig({
   plugins: [
     componentsPlugin({
       components: [
+        "ArtPlayer",
         "AudioPlayer",
         "Badge",
         "BiliBili",

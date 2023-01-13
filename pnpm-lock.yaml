@@ -184,6 +184,8 @@ importers:
       '@vuepress/cli': 2.0.0-beta.60
       '@vuepress/client': 2.0.0-beta.60
       '@vuepress/theme-default': 2.0.0-beta.60
+      artplayer-plugin-danmuku: 4.4.11
+      hls.js: ^1.2.9
       sass-loader: 13.2.0
       vue: 3.2.45
       vuepress-plugin-components: workspace:*
@@ -193,6 +195,8 @@ importers:
       '@vuepress/cli': 2.0.0-beta.60
       '@vuepress/client': 2.0.0-beta.60
       '@vuepress/theme-default': 2.0.0-beta.60_sass-loader@13.2.0
+      artplayer-plugin-danmuku: 4.4.11
+      hls.js: 1.2.9
       sass-loader: 13.2.0
       vue: 3.2.45
       vuepress-plugin-components: link:../../packages/components
@@ -459,7 +463,7 @@ importers:
     devDependencies:
       '@vuepress/cli': 2.0.0-beta.60
       '@vuepress/client': 2.0.0-beta.60
-      '@vuepress/plugin-docsearch': 2.0.0-beta.60_nfr4dy3d35kdla7gjiy3hcwsvm
+      '@vuepress/plugin-docsearch': 2.0.0-beta.60_isjzrkrqrwnbp3bxyrv6tl6zgm
       '@vuepress/plugin-pwa': 2.0.0-beta.60
       '@vuepress/plugin-pwa-popup': 2.0.0-beta.60
       '@vuepress/utils': 2.0.0-beta.60
@@ -488,7 +492,7 @@ importers:
     devDependencies:
       '@vuepress/cli': 2.0.0-beta.60
       '@vuepress/client': 2.0.0-beta.60
-      '@vuepress/plugin-docsearch': 2.0.0-beta.60_nfr4dy3d35kdla7gjiy3hcwsvm
+      '@vuepress/plugin-docsearch': 2.0.0-beta.60_isjzrkrqrwnbp3bxyrv6tl6zgm
       '@vuepress/plugin-pwa': 2.0.0-beta.60
       '@vuepress/plugin-pwa-popup': 2.0.0-beta.60
       '@vuepress/utils': 2.0.0-beta.60
@@ -519,7 +523,7 @@ importers:
       '@vuepress/cli': 2.0.0-beta.60
       '@vuepress/client': 2.0.0-beta.60
       '@vuepress/core': 2.0.0-beta.60
-      '@vuepress/plugin-docsearch': 2.0.0-beta.60_nfr4dy3d35kdla7gjiy3hcwsvm
+      '@vuepress/plugin-docsearch': 2.0.0-beta.60_isjzrkrqrwnbp3bxyrv6tl6zgm
       '@vuepress/shared': 2.0.0-beta.60
       '@vuepress/utils': 2.0.0-beta.60
       three: 0.148.0
@@ -972,7 +976,6 @@ importers:
       '@vuepress/utils': 2.0.0-beta.60
       '@vueuse/core': ^9.10.0
       artplayer: ^4.6.0
-      artplayer-plugin-danmuku: ^4.4.11
       balloon-css: ^1.2.0
       dashjs: ^4.5.2
       hls.js: ^1.2.9
@@ -989,7 +992,6 @@ importers:
       '@vuepress/utils': 2.0.0-beta.60
       '@vueuse/core': 9.10.0_vue@3.2.45
       artplayer: 4.6.0
-      artplayer-plugin-danmuku: 4.4.11
       balloon-css: 1.2.0
       dashjs: 4.5.2
       hls.js: 1.2.9
@@ -4494,7 +4496,7 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@vuepress/plugin-docsearch/2.0.0-beta.60_nfr4dy3d35kdla7gjiy3hcwsvm:
+  /@vuepress/plugin-docsearch/2.0.0-beta.60_isjzrkrqrwnbp3bxyrv6tl6zgm:
     resolution: {integrity: sha512-4aquipHuEd87KdFh2ufh5OTeU5qaREer4DqJShpXemY5JiJqvGpda5KmLUTkAis/WPo44GWeFsgtgOqiHevqcA==}
     dependencies:
       '@docsearch/css': 3.3.1
@@ -4997,7 +4999,7 @@ packages:
 
   /artplayer-plugin-danmuku/4.4.11:
     resolution: {integrity: sha512-/4F8IyB29Bdr1LV1RM3FM7CdiAMsVNOOJ/HY4jaJCXnMAKThQiGa++0PhCJ07nhyGvDcZGRL2/UWJRz9zZJFNw==}
-    dev: false
+    dev: true
 
   /artplayer/4.6.0:
     resolution: {integrity: sha512-dv93RmpMzb9VIfKsvjlmp6zbnLD9gPcMDkJ1aQGGczU+F5Jly0h249HtEsgnr8hc00c8YQp7GeAJsuMu9vwI4w==}
@@ -7962,7 +7964,6 @@ packages:
 
   /hls.js/1.2.9:
     resolution: {integrity: sha512-SPjm8ix0xe6cYzwDvdVGh2QvQPDkCYrGWpZu6bRaKNNVyEGWM9uF0pooh/Lqj/g8QBQgPFEx1vHzW8SyMY9rqg==}
-    dev: false
 
   /homedir-polyfill/1.0.3:
     resolution: {integrity: sha512-eSmmWE5bZTK2Nou4g0AI3zZ9rswp7GRKoKXS1BLUkvPviOqs4YTN1djQIqrXy9k5gEtdLPy86JjRwsNM9tnDcA==}

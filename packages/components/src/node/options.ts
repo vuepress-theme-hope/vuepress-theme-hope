@@ -1,8 +1,8 @@
 import type { LocaleConfig } from "@vuepress/core";
 import type {
+  ArtPlayerOptions,
   BackToTopLocaleData,
   CatalogLocaleData,
-  ComponentsArtPlayerOptions,
   NoticeOptions,
   PDFLocaleData,
   SiteInfoLocaleData,
@@ -43,7 +43,7 @@ export interface ComponentOptions {
      *
      * ArtPlayer 配置
      */
-    artPlayer?: ComponentsArtPlayerOptions;
+    artPlayer?: ArtPlayerOptions;
 
     /**
      * FontIcon config

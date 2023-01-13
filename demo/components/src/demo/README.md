@@ -6,6 +6,8 @@
 
 - Notice (Root Components)
 
+- [ArtPlayer](artplayer.md)
+
 - [AudioPlayer](audioplayer.md)
 
 - [Badge](badge.md)

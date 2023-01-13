@@ -53,7 +53,6 @@
     "@vuepress/utils": "2.0.0-beta.60",
     "@vueuse/core": "^9.10.0",
     "artplayer": "^4.6.0",
-    "artplayer-plugin-danmuku": "^4.4.11",
     "balloon-css": "^1.2.0",
     "dashjs": "^4.5.2",
     "hls.js": "^1.2.9",

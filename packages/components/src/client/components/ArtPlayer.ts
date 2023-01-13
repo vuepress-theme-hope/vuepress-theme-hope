@@ -1,39 +1,42 @@
 /* eslint-disable vue/no-unused-properties */
-/* eslint-disable vue/require-default-prop */
-import { PropType, defineComponent, h, onBeforeUnmount, onMounted } from "vue";
-import { deepMerge } from "vuepress-shared/client";
+import Artplayer from "artplayer";
+import { camelize, defineComponent, h, onBeforeUnmount, onMounted } from "vue";
+import { deepAssign } from "vuepress-shared/client";
+
 import { useSize } from "../composables/index.js";
 import {
+  SUPPORTED_VIDEO_TYPES,
   getTypeByUrl,
-  useMseDash,
-  useMseFlv,
-  useMseHls,
-  videoTypes,
+  registerMseDash,
+  registerMseFlv,
+  registerMseHls,
 } from "../utils/index.js";
 
-import type { Option as ArtPlayerPluginDanmukuOption } from "artplayer-plugin-danmuku";
-import type { VNode } from "vue";
-import type {
-  ArtPlayer,
-  ArtPlayerOptions,
-  ComponentsArtPlayerOptions,
-  CustomArtPlayerOptions,
-} from "../../shared/index.js";
+import type { Option as ArtPlayerInitOptions } from "artplayer/types/option.js";
+import type { PropType, VNode } from "vue";
+import type { ArtPlayerOptions } from "../../shared/index.js";
 
-declare const ART_PLAYER_OPTIONS: ComponentsArtPlayerOptions;
+type SupportedAttrs =
+  | "airplay"
+  | "autoOrientation"
+  | "autoPlayback"
+  | "fastForward"
+  | "fullscreen"
+  | "lock"
+  | "muted"
+  | "miniProgressBar"
+  | "playbackRate";
 
-const artplayerDefaultOptions = deepMerge(
+declare const ART_PLAYER_OPTIONS: ArtPlayerOptions;
+
+const artplayerDefaultOptions: ArtPlayerOptions = deepAssign(
   {
-    width: "100%",
-    ratio: 16 / 9,
-    src: {
+    config: {
       fullscreen: true,
       autoSize: true,
       setting: true,
       playbackRate: true,
       whitelist: ["*"],
-      title: "",
-      poster: "",
       muted: false,
     },
   },
@@ -45,49 +48,35 @@ export default defineComponent({
 
   props: {
     /**
-     * artplayer src
+     * Video Source
      */
     src: {
-      type: Object as PropType<Omit<CustomArtPlayerOptions, "container">>,
-      default: artplayerDefaultOptions.src,
-      required: false,
+      type: String,
+      required: true,
     },
 
     /**
-     * artplayer src.url
+     * artplayer src
      */
-    url: String,
-
-    /**
-     * artplayer src.poster
-     */
-    poster: String,
-
-    /**
-     * artplayer src.title
-     */
-    title: String,
-
-    /**
-     * artplayer src.muted
-     */
-    muted: {
-      type: Boolean,
-      // eslint-disable-next-line vue/no-boolean-default
-      default: undefined,
+    config: {
+      type: Object as PropType<Omit<ArtPlayerOptions, "container">>,
+      default: null,
     },
 
     /**
-     *  return artplayer
+     * ArtPlayer src.poster
      */
-    player: Function,
+    poster: {
+      type: String,
+      default: "",
+    },
 
     /**
-     * artplayer danmuku plugin
+     * ArtPlayer src.title
      */
-    pluginDanmuKu: {
-      type: Object as PropType<ArtPlayerPluginDanmukuOption>,
-      default: () => artplayerDefaultOptions.pluginDanmuKu,
+    title: {
+      type: String,
+      default: "",
     },
 
     /**
@@ -97,7 +86,7 @@ export default defineComponent({
      */
     width: {
       type: [String, Number],
-      default: artplayerDefaultOptions?.width,
+      default: "100%",
     },
 
     /**
@@ -107,7 +96,7 @@ export default defineComponent({
      */
     height: {
       type: [String, Number],
-      default: artplayerDefaultOptions?.height,
+      default: undefined,
     },
 
     /**
@@ -117,101 +106,145 @@ export default defineComponent({
      */
     ratio: {
       type: [String, Number],
-      default: artplayerDefaultOptions.ratio,
+      default: 16 / 9,
+    },
+
+    /**
+     * Customize Artplayer options
+     *
+     * 对 Artplayer 选项进行自定义
+     */
+    customPlayerOptions: {
+      type: Function as PropType<
+        (
+          options: ArtPlayerInitOptions
+        ) =>
+          | ArtPlayerInitOptions
+          | void
+          | Promise<ArtPlayerInitOptions>
+          | Promise<void>
+      >,
+
+      default: (options: ArtPlayerInitOptions) => options,
+    },
+
+    /**
+     * Customize Artplayer
+     *
+     * 对 Artplayer 进行自定义
+     */
+    customPlayer: {
+      type: Function as PropType<
+        (
+          player: Artplayer
+        ) => Artplayer | void | Promise<Artplayer> | Promise<void>
+      >,
+
+      default: (player: Artplayer) => player,
     },
   },
 
-  setup(props) {
-    const option = {
-      ...deepMerge(artplayerDefaultOptions, props),
-    };
-
-    const src: CustomArtPlayerOptions = {
-      ...option.src,
-      url: option.url ?? option.src!.url!,
-      poster: option.poster ?? option.src!.poster,
-      title: option.title ?? option.src!.title,
-      muted: option.muted ?? option.src!.muted,
-    };
-
+  setup(props, { attrs }) {
     const { el, width, height } = useSize<HTMLDivElement>(props, 0);
 
-    let artplayer: ArtPlayer;
+    let artPlayerInstance: Artplayer;
 
-    onMounted(async () => {
-      const { default: art } = await import(
-        /* webpackChunkName: "artplayer" */ "artplayer/dist/artplayer.js"
-      );
+    const getInitOptions = async (): Promise<ArtPlayerInitOptions> => {
+      const initOptions: ArtPlayerInitOptions = {
+        ...artplayerDefaultOptions,
+        container: el.value!,
+        title: props.title,
+        poster: props.poster,
+        url: props.src,
+        ...props.config,
+      };
 
-      src.container = el.value!;
-      src.type ??= getTypeByUrl(src.url!) ?? "";
+      const attrsKeys = Object.keys(attrs);
+
+      [
+        "airplay",
+        "auto-orientation",
+        "auto-playback",
+        "fast-forward",
+        "lock",
+        "muted",
+        "mini-progress-bar",
+      ].forEach((config) => {
+        if (attrsKeys.includes(config))
+          initOptions[<SupportedAttrs>camelize(config)] = true;
+      });
+
+      ["no-fullscreen", "no-playback-rate"].forEach((config) => {
+        if (attrsKeys.includes(config))
+          initOptions[<SupportedAttrs>camelize(config.replace(/^no-/, ""))] =
+            false;
+      });
+
+      initOptions.type ??= getTypeByUrl(initOptions.url);
 
       // auto config mse
-      if (src.type) {
-        const customType: Record<string, unknown> = {};
+      if (initOptions.type) {
+        const customType = (initOptions.customType ??= {});
 
-        if (videoTypes(customType).includes(src.type.toLowerCase())) {
-          switch (src.type) {
+        if (SUPPORTED_VIDEO_TYPES.includes(initOptions.type.toLowerCase())) {
+          switch (initOptions.type) {
             case "m3u8":
             case "hls":
-              customType[src.type] = (
+              customType[initOptions.type] ??= (
                 video: HTMLVideoElement,
                 src: string,
-                player: ArtPlayer
-              ): Promise<unknown> =>
-                useMseHls(video, src, (d) => {
-                  player.on("destroy", d);
+                player: Artplayer
+              ): Promise<void> =>
+                registerMseHls(video, src, (destroy) => {
+                  player.on("destroy", destroy);
                 });
               break;
+
             case "flv":
-              customType[src.type] = (
+              customType[initOptions.type] ??= (
                 video: HTMLVideoElement,
                 src: string,
-                player: ArtPlayer
-              ): Promise<unknown> =>
-                useMseFlv(video, src, (d) => {
-                  player.on("destroy", d);
+                player: Artplayer
+              ): Promise<void> =>
+                registerMseFlv(video, src, (destroy) => {
+                  player.on("destroy", destroy);
                 });
               break;
+
             case "mpd":
             case "dash":
-              customType[src.type] = customType[src.type] = (
+              customType[initOptions.type] ??= (
                 video: HTMLVideoElement,
                 src: string,
-                player: ArtPlayer
-              ): Promise<unknown> =>
-                useMseDash(video, src, (d) => {
-                  player.on("destroy", d);
+                player: Artplayer
+              ): Promise<void> =>
+                registerMseDash(video, src, (destroy) => {
+                  player.on("destroy", destroy);
                 });
               break;
           }
-
-          src.customType = src.customType
-            ? deepMerge(src.customType, customType)
-            : customType;
-        } else {
-          // throw warning ???
-        }
+        } else
+          console.warn(
+            `[components]: ArtPlayer does not support current file type ${initOptions.type}!`
+          );
       }
 
-      // config danmaku plugin
-      if (option?.pluginDanmuKu?.danmuku) {
-        const { default: artplayerPluginDanmuku } = await import(
-          /* webpackChunkName: "artplayer-plugin-danmuku" */ "artplayer-plugin-danmuku"
-        );
+      return {
+        ...((await props.customPlayerOptions(initOptions)) || initOptions),
+        // this option must be set true to avoid problems
+        useSSR: true,
+      };
+    };
 
-        (src.plugins ??= []).push(artplayerPluginDanmuku(option.pluginDanmuKu));
-      }
+    onMounted(async () => {
+      const initOptions = await getInitOptions();
+      const player = new Artplayer(initOptions);
 
-      artplayer = new art(src as ArtPlayerOptions);
-
-      if (props.player) {
-        props.player(artplayer);
-      }
+      artPlayerInstance = (await props.customPlayer(player)) || player;
     });
 
     onBeforeUnmount(() => {
-      artplayer?.destroy();
+      artPlayerInstance?.destroy();
     });
 
     return (): VNode =>
@@ -221,6 +254,7 @@ export default defineComponent({
           width: width.value,
           height: height.value,
         },
+        innerHTML: Artplayer.html,
       });
   },
 });
