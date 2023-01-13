@@ -13,6 +13,10 @@ export const catalogLocales: CatalogLocaleConfig = {
     title: "目錄",
   },
 
+  "/de/": {
+    title: "Katalog",
+  },
+
   "/de-at/": {
     title: "Katalog",
   },

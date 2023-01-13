@@ -17,9 +17,14 @@ export const walineLocales: WalineLocaleConfig = {
     placeholder: "請留言。(填寫信箱可在被回覆時收到郵件提醒)",
   },
 
+  "/de/": {
+    placeholder:
+      "Schreibe ein Kommentar (Geben Sie die E-Mail-Adresse ein, um eine E-Mail-Benachrichtigung zu erhalten, wenn Sie eine Antwort erhalten)",
+  },
+
   "/de-at/": {
     placeholder:
-      "Schreibe ein Kommentar (Geben Sie die E-Mail-Adresse ein, um eine E-Mail-Benachrichtigung zu erhalten, wenn Sie geantwortet werden)",
+      "Schreibe ein Kommentar (Geben Sie die E-Mail-Adresse ein, um eine E-Mail-Benachrichtigung zu erhalten, wenn Sie eine Antwort erhalten)",
   },
 
   "/vi/": {

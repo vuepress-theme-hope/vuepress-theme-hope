@@ -13,6 +13,10 @@ export const pdfLocaleConfig: PDFLocaleConfig = {
     hint: "<p>此瀏覽器不支援嵌入式 PDF。請下載 PDF 查看：<a href='[url]' target='_blank'>下載 PDF</a></p>",
   },
 
+  "/de/": {
+    hint: "<p>Dieser Browser unterstützt das Einbetten von PDFs nicht. Laden Sie die PDF herunter, um sie anzuzeigen: <a href='[url]' target='_blank'>PDF herunterladen</a></p>",
+  },
+
   "/de-at/": {
     hint: "<p>Dieser Browser unterstützt das Einbetten von PDFs nicht. Laden Sie die PDF herunter, um sie anzuzeigen: <a href='[url]' target='_blank'>PDF herunterladen</a></p>",
   },

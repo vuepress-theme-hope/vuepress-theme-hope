@@ -41,6 +41,19 @@ export const searchProLocales: SearchProLocaleConfig = {
     loading: "正在加載搜索索引...",
   },
 
+  "/de/": {
+    cancel: "Abbrechen",
+    placeholder: "Suche",
+    search: "Suche",
+    select: "auswählen",
+    navigate: "wechseln",
+    exit: "schließen",
+    history: "Suchverlauf",
+    emptyHistory: "Suchverlauf leeren",
+    emptyResult: "Keine Ergebnisse gefunden",
+    loading: "Suchindex wird geladen...",
+  },
+
   "/de-at/": {
     cancel: "Abbrechen",
     placeholder: "Suche",

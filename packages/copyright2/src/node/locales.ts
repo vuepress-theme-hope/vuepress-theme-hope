@@ -73,4 +73,16 @@ export const copyrightLocales: CopyrightLocaleConfig = {
     license: "Lisenssi :license",
     link: ":link",
   },
+
+  "/de/": {
+    author: "Copyright by :author",
+    license: "Lizenziert unter :license",
+    link: ":link",
+  },
+
+  "/de-AT/": {
+    author: "Copyright by :author",
+    license: "Lizenziert unter :license",
+    link: ":link",
+  },
 };
