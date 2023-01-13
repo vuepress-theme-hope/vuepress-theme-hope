@@ -14,7 +14,9 @@ index: false
 
 :::
 
-此插件支持 11 个组件:
+此插件支持 12 个组件:
+
+- [ArtPlayer](artplayer.md)
 
 - [AudioPlayer](audioplayer.md)
 

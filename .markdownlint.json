@@ -14,6 +14,7 @@
     "allowed_elements": [
       "br",
       "script",
+      "ArtPlayer",
       "AudioPlayer",
       "AutoCatalog",
       "Badge",

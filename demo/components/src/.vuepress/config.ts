@@ -1,6 +1,7 @@
 import { defineUserConfig } from "@vuepress/cli";
 import { defaultTheme } from "@vuepress/theme-default";
 import { componentsPlugin } from "vuepress-plugin-components";
+import { addViteSsrNoExternal } from "vuepress-shared";
 
 const base = <"/" | `/${string}/`>process.env.BASE || "/";
 
@@ -19,6 +20,7 @@ export default defineUserConfig({
 
     sidebar: [
       "/demo/",
+      "/demo/artplayer",
       "/demo/audioplayer",
       "/demo/badge",
       "/demo/bilibili",
@@ -37,9 +39,14 @@ export default defineUserConfig({
     },
   }),
 
+  extendsBundlerOptions: (bundlerOptions, app) => {
+    addViteSsrNoExternal(bundlerOptions, app, "artplayer-plugin-danmuku");
+  },
+
   plugins: [
     componentsPlugin({
       components: [
+        "ArtPlayer",
         "AudioPlayer",
         "Badge",
         "BiliBili",

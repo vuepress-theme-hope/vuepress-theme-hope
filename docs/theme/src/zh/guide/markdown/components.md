@@ -12,6 +12,7 @@ tag:
 
 可用组件:
 
+- ArtPlayer
 - AudioPlayer
 - Badge
 - BiliBili
@@ -19,6 +20,7 @@ tag:
 - CodePen
 - FontIcon
 - PDF
+- SiteInfo
 - StackBlitz
 - VideoPlayer
 - YouTube
@@ -89,6 +91,76 @@ export default {
 ```
 
 :::
+
+## ArtPlayer
+
+一个视频播放器:
+
+<ArtPlayer src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4" />
+
+```md
+<ArtPlayer src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4" />
+```
+
+一个包含了封面的播放器:
+
+<ArtPlayer
+  src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4"
+  poster="/poster.svg"
+/>
+
+```md
+<ArtPlayer
+  src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4"
+  poster="/poster.svg"
+/>
+```
+
+一个包含自定义设置的播放器:
+
+<ArtPlayer
+  src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4"
+  airplay
+  aspect-ratio
+  auto-size
+  auto-orientation
+  auto-playback
+  fast-forward
+  flip
+  fullscreen-web
+  lock
+  loop
+  is-live
+  muted
+  mini-progress-bar
+  pip
+  screenshot
+  subtitle-offset
+/>
+
+```md
+<ArtPlayer
+  src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4"
+  airplay
+  aspect-ratio
+  auto-size
+  auto-orientation
+  auto-playback
+  fast-forward
+  flip
+  fullscreen-web
+  lock
+  loop
+  is-live
+  muted
+  mini-progress-bar
+  pip
+  screenshot
+  subtitle-offset
+/>
+```
+
+有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/artplayer.html">ArtPlayer</ProjectLink> 页面。
 
 ## AudioPlayer
 

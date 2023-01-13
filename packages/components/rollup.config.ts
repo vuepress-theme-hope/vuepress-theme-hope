@@ -11,6 +11,20 @@ export default [
     ],
     copy: [["client/styles", "client"]],
   }),
+  ...rollupTypescript("client/components/ArtPlayer", {
+    external: [
+      "@vuepress/client",
+      "@vuepress/shared",
+      "@vueuse/core",
+      "artplayer",
+      "dashjs/dist/dash.all.min.js",
+      "hls.js/dist/hls.min.js",
+      "mpegts.js/dist/mpegts.js",
+      "vue",
+      /\.s?css$/,
+    ],
+    dtsExternal: [/\.s?css$/],
+  }),
   ...rollupTypescript("client/components/AudioPlayer", {
     external: [
       "@vuepress/client",

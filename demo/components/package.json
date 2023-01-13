@@ -18,9 +18,12 @@
     "@vuepress/cli": "2.0.0-beta.60",
     "@vuepress/client": "2.0.0-beta.60",
     "@vuepress/theme-default": "2.0.0-beta.60",
+    "artplayer-plugin-danmuku": "4.4.11",
+    "hls.js": "1.2.9",
     "sass-loader": "13.2.0",
     "vue": "3.2.45",
     "vuepress-plugin-components": "workspace:*",
+    "vuepress-shared": "workspace:*",
     "vuepress-vite": "2.0.0-beta.60",
     "vuepress-webpack": "2.0.0-beta.60"
   }
