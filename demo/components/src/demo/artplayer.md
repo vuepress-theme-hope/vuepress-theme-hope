@@ -10,7 +10,32 @@ A video player with poster:
 
 <ArtPlayer
   src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4"
+  title="ArtPlayer"
   poster="/poster.svg"
+/>
+
+A video player with custom settings:
+
+<ArtPlayer
+  src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4"
+  airplay
+  autoplay
+  aspect-ratio
+  auto-mini
+  auto-size
+  auto-orientation
+  auto-playback
+  fast-forward
+  flip
+  fullscreen-web
+  lock
+  loop
+  is-live
+  muted
+  mini-progress-bar
+  pip
+  screenshot
+  subtitle-offset
 />
 
 HLS:
@@ -34,7 +59,6 @@ With DanMuKu plugin：
 <ArtPlayer
   src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4"
   :config="artDanmukuConfig"
-  :customPlayerOptions="customPlayerOptions"
   :customPlayer="customPlayer"
 />
 

@@ -1,7 +1,7 @@
 /* eslint-disable vue/no-unused-properties */
 import Artplayer from "artplayer";
+import { usePageLang } from "@vuepress/client";
 import { camelize, defineComponent, h, onBeforeUnmount, onMounted } from "vue";
-import { deepAssign } from "vuepress-shared/client";
 
 import { useSize } from "../composables/index.js";
 import {
@@ -16,32 +16,77 @@ import type { Option as ArtPlayerInitOptions } from "artplayer/types/option.js";
 import type { PropType, VNode } from "vue";
 import type { ArtPlayerOptions } from "../../shared/index.js";
 
-type SupportedAttrs =
-  | "airplay"
-  | "autoOrientation"
-  | "autoPlayback"
-  | "fastForward"
-  | "fullscreen"
-  | "lock"
-  | "muted"
-  | "miniProgressBar"
-  | "playbackRate";
+const BOOLEAN_TRUE_ATTRS = [
+  "no-fullscreen",
+  "no-hotkey",
+  "no-playback-rate",
+  "no-setting",
+  "no-mutex",
+  "no-plays-inline",
+] as const;
+
+const BOOLEAN_FALSE_ATTRS = [
+  "airplay",
+  "autoplay",
+  "aspect-ratio",
+  "auto-mini",
+  "auto-size",
+  "auto-orientation",
+  "auto-playback",
+  "fast-forward",
+  "flip",
+  "fullscreen-web",
+  "lock",
+  "loop",
+  "is-live",
+  "muted",
+  "mini-progress-bar",
+  "pip",
+  "screenshot",
+  "subtitle-offset",
+] as const;
+
+const SUPPORTED_LANG_NAME = ["en", "pl", "cs", "es", "fa"];
+const SUPPORTED_LANG_CODE = ["zh-cn", "zh-tw"];
+
+type KebabCaseToCamelCase<
+  S extends string,
+  Cap extends boolean = false
+> = S extends `${infer Head}-${infer Tail}`
+  ? `${Cap extends true ? Capitalize<Head> : Head}${KebabCaseToCamelCase<
+      Tail,
+      true
+    >}`
+  : Cap extends true
+  ? Capitalize<S>
+  : S;
+
+type RemoveNo<S extends string> = S extends `no-${infer Key}`
+  ? KebabCaseToCamelCase<Key>
+  : never;
+
+type ArtPlayerBooleanOptionKey =
+  | (typeof BOOLEAN_TRUE_ATTRS extends readonly (infer T extends string)[]
+      ? RemoveNo<T>
+      : never)
+  | (typeof BOOLEAN_FALSE_ATTRS extends readonly (infer T extends string)[]
+      ? KebabCaseToCamelCase<T>
+      : never);
 
 declare const ART_PLAYER_OPTIONS: ArtPlayerOptions;
 
-const artplayerDefaultOptions: ArtPlayerOptions = deepAssign(
-  {
-    config: {
-      fullscreen: true,
-      autoSize: true,
-      setting: true,
-      playbackRate: true,
-      whitelist: ["*"],
-      muted: false,
-    },
-  },
-  ART_PLAYER_OPTIONS
-);
+const getLang = (lang: string): string => {
+  const langCode = lang.toLowerCase();
+  const langName = lang.split("-")[0]!;
+
+  return SUPPORTED_LANG_NAME.includes(langName)
+    ? langName
+    : SUPPORTED_LANG_CODE.includes(langCode)
+    ? langCode
+    : langCode === "zh"
+    ? "zh-cn"
+    : "en";
+};
 
 export default defineComponent({
   name: "ArtPlayer",
@@ -134,41 +179,33 @@ export default defineComponent({
   },
 
   setup(props, { attrs }) {
+    const lang = usePageLang();
     const { el, width, height } = useSize<HTMLDivElement>(props, 0);
 
     let artPlayerInstance: Artplayer;
 
     const getInitOptions = (): ArtPlayerInitOptions => {
       const initOptions: ArtPlayerInitOptions = {
-        ...artplayerDefaultOptions,
+        theme: "#3eaf7c",
+        ...ART_PLAYER_OPTIONS,
         container: el.value!,
         title: props.title,
         poster: props.poster,
         url: props.src,
-        ...props.config,
-        // this option must be set true to avoid problems
-        useSSR: true,
       };
 
       const attrsKeys = Object.keys(attrs);
 
-      [
-        "airplay",
-        "auto-orientation",
-        "auto-playback",
-        "fast-forward",
-        "lock",
-        "muted",
-        "mini-progress-bar",
-      ].forEach((config) => {
+      BOOLEAN_FALSE_ATTRS.forEach((config) => {
         if (attrsKeys.includes(config))
-          initOptions[<SupportedAttrs>camelize(config)] = true;
+          initOptions[<ArtPlayerBooleanOptionKey>camelize(config)] = true;
       });
 
       ["no-fullscreen", "no-playback-rate"].forEach((config) => {
         if (attrsKeys.includes(config))
-          initOptions[<SupportedAttrs>camelize(config.replace(/^no-/, ""))] =
-            false;
+          initOptions[
+            <ArtPlayerBooleanOptionKey>camelize(config.replace(/^no-/, ""))
+          ] = false;
       });
 
       initOptions.type ??= getTypeByUrl(initOptions.url);
@@ -220,7 +257,13 @@ export default defineComponent({
           );
       }
 
-      return initOptions;
+      return {
+        ...initOptions,
+        ...props.config,
+        lang: getLang(lang.value),
+        // this option must be set true to avoid problems
+        useSSR: true,
+      };
     };
 
     onMounted(async () => {

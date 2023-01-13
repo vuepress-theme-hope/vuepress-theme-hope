@@ -29,7 +29,12 @@ export const getDefine =
       result["ICON_PREFIX"] = isString(prefix) ? prefix : getIconPrefix(assets);
 
     if (options.components?.includes("ArtPlayer"))
-      result["ART_PLAYER_OPTIONS"] = options.componentOptions?.artPlayer || {};
+      result["ART_PLAYER_OPTIONS"] = {
+        fullscreen: true,
+        playbackRate: true,
+        setting: true,
+        ...(options.componentOptions?.artPlayer || {}),
+      };
 
     if (options.components?.includes("PDF")) {
       result["PDF_LOCALES"] = getLocales({
