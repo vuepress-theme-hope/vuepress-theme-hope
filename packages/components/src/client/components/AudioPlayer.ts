@@ -106,11 +106,11 @@ export default defineComponent({
       props.src
         ? [
             h("div", { class: "audio-wrapper" }, [
-              h(
-                "a",
-                { class: "audio-print", href: getLink(props.src) },
-                props.title || "An audio"
-              ),
+              h("a", {
+                class: "audio-print",
+                href: getLink(props.src),
+                innerHTML: props.title || "An audio",
+              }),
               props.poster
                 ? h("img", {
                     class: "audio-poster",
@@ -119,7 +119,7 @@ export default defineComponent({
                 : null,
               h("div", { class: "audio-info" }, [
                 props.title
-                  ? h("div", { class: "audio-title" }, props.title)
+                  ? h("div", { class: "audio-title", innerHTML: props.title })
                   : null,
                 h(
                   "audio",

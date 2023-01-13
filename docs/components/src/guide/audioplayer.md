@@ -61,6 +61,13 @@ If your server cannot return a correct mime type for your audio files, you shoul
 
 :::
 
+### title
+
+- Type: `string`
+- Required: No
+
+Audio title
+
 ### poster
 
 - Type: `string`

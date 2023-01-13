@@ -61,6 +61,13 @@ title: AudioPlayer
 
 :::
 
+### title
+
+- 类型: `string`
+- 必填: 否
+
+音频标题
+
 ### poster
 
 - 类型: `string`
