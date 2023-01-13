@@ -5,7 +5,7 @@ icon: creative
 
 此插件从你的 VuePress 站点中删除任何相关的 Service Worker，因此如果你在启用后任何 PWA 插件后移除它们，用户仍然可以获得更新。
 
-:::tip 如果你启用过 PWA，为什么需要这个插件？
+::: tip 如果你启用过 PWA，为什么需要这个插件？
 
 PWA 插件，如 [`@vuepress/plugin-pwa`][official-pwa] 和 <ProjectLink name="pwa2" path="/zh/">`vuepress-plugin-pwa2`</ProjectLink> 将 Service Worker 注册到你的站点，这将缓存你的站点并使其离线可用。
 
