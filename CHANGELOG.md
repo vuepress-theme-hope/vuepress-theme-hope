@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.157](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.156...v2.0.0-beta.157) (2023-01-13)
+
+### Features
+
+- added german language, as the current "de-AT" language is for German (Austria) ([#2666](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2666)) ([21e092a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/21e092aabf30a403b39b0fb1c7e15d30769a2a6d))
+- **components:** add Artplayer component ([#2670](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2670)) ([3cdacaa](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3cdacaa543fd325d1ce73ed7ee445af842cb1aa5))
+- **components:** add type prop for artplayer ([cd6cca3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cd6cca367d1970946f8af7f5c467ff55ccd3bd2e))
+- **theme:** improve layout ([b1ca618](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b1ca6187677694a74db5614489b658a872f21486))
+
+### Bug Fixes
+
+- **theme:** fix darkmode ([c0ffa8c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c0ffa8cbab8e9bc4e80dbf0c6a93abf9a3438c5a))
+
 ## [2.0.0-beta.156](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.155...v2.0.0-beta.156) (2023-01-11)
 
 ### Features
