@@ -89,6 +89,13 @@ title: ArtPlayer
 
 视频源文件地址
 
+### type
+
+- 类型: `string`
+- 必填: 否
+
+视频类型
+
 ### title
 
 - 类型: `string`
@@ -260,14 +267,21 @@ MSE 全称 Media Source Extensions， 详见 [Media Source Extensions API](https
 
 您可以通过 `config` 属性在 ArtPlayer 选项中使用 `customType` 选项支持其他格式的视频。
 
-<ArtPlayer src="https://mse-demo.u2sb.com/dash/master.m3u8" :config="artCustomType" />
+<ArtPlayer
+  src="https://mse-demo.u2sb.com/dash/master.m3u8"
+  type="customHLS"
+  :config="artPlayerConfig"
+/>
 
 ```md
-<ArtPlayer src="https://mse-demo.u2sb.com/dash/master.m3u8" :config="artCustomType" />
+<ArtPlayer
+  src="https://mse-demo.u2sb.com/dash/master.m3u8"
+  type="customHLS"
+  :config="artPlayerConfig"
+/>
 
 <script setup>
-const artCustomType = {
-  type: "customHLS",
+const artPlayerConfig = {
   customType: {
     customHLS: async (mediaElement, src, player) => {
       if (
@@ -299,14 +313,14 @@ const artCustomType = {
 
 <ArtPlayer
   src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4"
-  :config="artDanmukuConfig"
+  :config="artPlayerDanmukuConfig"
   :customPlayer="customPlayer"
 />
 
 ```md
 <ArtPlayer
   src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4"
-  :config="artDanmukuConfig"
+  :config="artPlayerDanmukuConfig"
   :customPlayer="customPlayer"
 />
 
@@ -339,7 +353,7 @@ const danmukuOptions = {
       ),
 };
 
-const artDanmukuConfig = {
+const artPlayerDanmukuConfig = {
   plugins: [artplayerPluginDanmuku(danmukuOptions)],
 };
 
@@ -366,8 +380,7 @@ const customPlayer = (player) => {
 <script setup>
 import artplayerPluginDanmuku from "artplayer-plugin-danmuku";
 
-const artCustomType = {
-  type: "customHLS",
+const artPlayerConfig = {
   customType: {
     customHLS: async (mediaElement, src, player) => {
       if (
@@ -417,7 +430,7 @@ const danmukuOptions = {
       ),
 };
 
-const artDanmukuConfig = {
+const artPlayerDanmukuConfig = {
   plugins: [artplayerPluginDanmuku(danmukuOptions)],
 };
 

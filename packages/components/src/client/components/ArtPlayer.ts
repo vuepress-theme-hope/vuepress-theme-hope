@@ -61,13 +61,11 @@ type KebabCaseToCamelCase<
   ? Capitalize<S>
   : S;
 
-type RemoveNo<S extends string> = S extends `no-${infer Key}`
-  ? KebabCaseToCamelCase<Key>
-  : never;
-
 type ArtPlayerBooleanOptionKey =
   | (typeof BOOLEAN_TRUE_ATTRS extends readonly (infer T extends string)[]
-      ? RemoveNo<T>
+      ? T extends `no-${infer Key}`
+        ? KebabCaseToCamelCase<Key>
+        : never
       : never)
   | (typeof BOOLEAN_FALSE_ATTRS extends readonly (infer T extends string)[]
       ? KebabCaseToCamelCase<T>
@@ -100,6 +98,16 @@ export default defineComponent({
     src: {
       type: String,
       required: true,
+    },
+
+    /**
+     * Video Type
+     *
+     * 视频类型
+     */
+    type: {
+      type: String,
+      default: "",
     },
 
     /**
@@ -192,23 +200,25 @@ export default defineComponent({
         title: props.title,
         poster: props.poster,
         url: props.src,
+        type: props.type || getTypeByUrl(props.src),
+        lang: getLang(lang.value),
+        ...props.config,
+        // this option must be set true to avoid problems
+        useSSR: true,
       };
 
       const attrsKeys = Object.keys(attrs);
 
-      BOOLEAN_FALSE_ATTRS.forEach((config) => {
-        if (attrsKeys.includes(config))
-          initOptions[<ArtPlayerBooleanOptionKey>camelize(config)] = true;
-      });
-
-      ["no-fullscreen", "no-playback-rate"].forEach((config) => {
+      BOOLEAN_TRUE_ATTRS.forEach((config) => {
         if (attrsKeys.includes(config))
           initOptions[
             <ArtPlayerBooleanOptionKey>camelize(config.replace(/^no-/, ""))
           ] = false;
       });
-
-      initOptions.type ??= getTypeByUrl(initOptions.url);
+      BOOLEAN_FALSE_ATTRS.forEach((config) => {
+        if (attrsKeys.includes(config))
+          initOptions[<ArtPlayerBooleanOptionKey>camelize(config)] = true;
+      });
 
       // auto config mse
       if (initOptions.type) {
@@ -257,13 +267,7 @@ export default defineComponent({
           );
       }
 
-      return {
-        ...initOptions,
-        ...props.config,
-        lang: getLang(lang.value),
-        // this option must be set true to avoid problems
-        useSSR: true,
-      };
+      return initOptions;
     };
 
     onMounted(async () => {

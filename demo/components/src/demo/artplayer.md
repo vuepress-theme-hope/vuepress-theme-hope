@@ -50,20 +50,20 @@ DASH:
 
 CustomType:
 
-<ArtPlayer src="https://mse-demo.u2sb.com/dash/master.m3u8" :config="artCustomType" />
+<ArtPlayer src="https://mse-demo.u2sb.com/dash/master.m3u8" :config="artPlayerConfig" />
 
 With DanMuKu plugin:
 
 <ArtPlayer
   src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4"
-  :config="artDanmukuConfig"
+  :config="artPlayerDanmukuConfig"
   :customPlayer="customPlayer"
 />
 
 <script setup>
 import artplayerPluginDanmuku from "artplayer-plugin-danmuku";
 
-const artCustomType = {
+const artPlayerConfig = {
   type: "customHLS",
   customType: {
     customHLS: async (mediaElement, src, player) => {
@@ -114,7 +114,7 @@ const danmukuOptions = {
       ),
 };
 
-const artDanmukuConfig = {
+const artPlayerDanmukuConfig = {
   plugins: [artplayerPluginDanmuku(danmukuOptions)],
 };
 

@@ -5,6 +5,7 @@ export type ArtPlayerOptions = Partial<
     ArtPlayerInitOptions,
     | "container"
     | "url"
+    | "type"
     | "customType"
     | "plugins"
     | "contextmenu"

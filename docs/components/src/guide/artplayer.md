@@ -89,6 +89,13 @@ A video player with custom settings:
 
 Video source link.
 
+### type
+
+- Type: `string`
+- Required: No
+
+Video type
+
 ### title
 
 - Type: `string`
@@ -262,14 +269,21 @@ In other cases, you shall manually set `type` to one of them above.
 
 You can support other format videos with `customType` option in ArtPlayer options via `config` prop.
 
-<ArtPlayer src="https://mse-demo.u2sb.com/dash/master.m3u8" :config="artCustomType" />
+<ArtPlayer
+  src="https://mse-demo.u2sb.com/dash/master.m3u8"
+  type="customHLS"
+  :config="artPlayerConfig"
+/>
 
 ```md
-<ArtPlayer src="https://mse-demo.u2sb.com/dash/master.m3u8" :config="artCustomType" />
+<ArtPlayer
+  src="https://mse-demo.u2sb.com/dash/master.m3u8"
+  type="customHLS"
+  :config="artPlayerConfig"
+/>
 
 <script setup>
-const artCustomType = {
-  type: "customHLS",
+const artPlayerConfig = {
   customType: {
     customHLS: async (mediaElement, src, player) => {
       if (
@@ -301,14 +315,14 @@ Here is a demo adding DanMuKu plugin:
 
 <ArtPlayer
   src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4"
-  :config="artDanmukuConfig"
+  :config="artPlayerDanmukuConfig"
   :customPlayer="customPlayer"
 />
 
 ```md
 <ArtPlayer
   src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4"
-  :config="artDanmukuConfig"
+  :config="artPlayerDanmukuConfig"
   :customPlayer="customPlayer"
 />
 
@@ -341,7 +355,7 @@ const danmukuOptions = {
       ),
 };
 
-const artDanmukuConfig = {
+const artPlayerDanmukuConfig = {
   plugins: [artplayerPluginDanmuku(danmukuOptions)],
 };
 
@@ -368,8 +382,7 @@ const customPlayer = (player) => {
 <script setup>
 import artplayerPluginDanmuku from "artplayer-plugin-danmuku";
 
-const artCustomType = {
-  type: "customHLS",
+const artPlayerConfig = {
   customType: {
     customHLS: async (mediaElement, src, player) => {
       if (
@@ -419,7 +432,7 @@ const danmukuOptions = {
       ),
 };
 
-const artDanmukuConfig = {
+const artPlayerDanmukuConfig = {
   plugins: [artplayerPluginDanmuku(danmukuOptions)],
 };
 
