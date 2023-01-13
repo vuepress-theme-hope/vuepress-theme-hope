@@ -48,7 +48,9 @@ export default defineComponent({
 
   props: {
     /**
-     * Video Source
+     * Video Source URL
+     *
+     * 视频源文件地址
      */
     src: {
       type: String,
@@ -56,15 +58,9 @@ export default defineComponent({
     },
 
     /**
-     * artplayer src
-     */
-    config: {
-      type: Object as PropType<Omit<ArtPlayerOptions, "container">>,
-      default: null,
-    },
-
-    /**
-     * ArtPlayer src.poster
+     * Video poster
+     *
+     * 视频封面
      */
     poster: {
       type: String,
@@ -72,7 +68,9 @@ export default defineComponent({
     },
 
     /**
-     * ArtPlayer src.title
+     * Video title
+     *
+     * 视频标题
      */
     title: {
       type: String,
@@ -110,22 +108,13 @@ export default defineComponent({
     },
 
     /**
-     * Customize Artplayer options
+     * ArtPlayer config
      *
-     * 对 Artplayer 选项进行自定义
+     * ArtPlayer 配置
      */
-    customPlayerOptions: {
-      type: Function as PropType<
-        (
-          options: ArtPlayerInitOptions
-        ) =>
-          | ArtPlayerInitOptions
-          | void
-          | Promise<ArtPlayerInitOptions>
-          | Promise<void>
-      >,
-
-      default: (options: ArtPlayerInitOptions) => options,
+    config: {
+      type: Object as PropType<Omit<ArtPlayerOptions, "container">>,
+      default: null,
     },
 
     /**
@@ -149,7 +138,7 @@ export default defineComponent({
 
     let artPlayerInstance: Artplayer;
 
-    const getInitOptions = async (): Promise<ArtPlayerInitOptions> => {
+    const getInitOptions = (): ArtPlayerInitOptions => {
       const initOptions: ArtPlayerInitOptions = {
         ...artplayerDefaultOptions,
         container: el.value!,
@@ -157,6 +146,8 @@ export default defineComponent({
         poster: props.poster,
         url: props.src,
         ...props.config,
+        // this option must be set true to avoid problems
+        useSSR: true,
       };
 
       const attrsKeys = Object.keys(attrs);
@@ -229,16 +220,11 @@ export default defineComponent({
           );
       }
 
-      return {
-        ...((await props.customPlayerOptions(initOptions)) || initOptions),
-        // this option must be set true to avoid problems
-        useSSR: true,
-      };
+      return initOptions;
     };
 
     onMounted(async () => {
-      const initOptions = await getInitOptions();
-      const player = new Artplayer(initOptions);
+      const player = new Artplayer(getInitOptions());
 
       artPlayerInstance = (await props.customPlayer(player)) || player;
     });

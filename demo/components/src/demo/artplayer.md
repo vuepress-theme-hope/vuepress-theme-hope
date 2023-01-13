@@ -29,10 +29,11 @@ CustomType:
 
 <ArtPlayer src="https://mse-demo.u2sb.com/dash/master.m3u8" :config="artCustomType" />
 
-DanMuKu plugin：
+With DanMuKu plugin：
 
 <ArtPlayer
   src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4"
+  :config="artDanmukuConfig"
   :customPlayerOptions="customPlayerOptions"
   :customPlayer="customPlayer"
 />
@@ -66,12 +67,12 @@ const artCustomType = {
 
 const DANMAKU_API = "https://danmu.u2sb.com/api/artplayer/v1";
 const DANMAKU_ID = "jsdKLNMks21NMij";
-const bilibiliDanmaku = `${DANMAKU_API}/bilibili/BV1cs411Q7Ng/3.json`;
+const BILIBILI_DANMAKU = `${DANMAKU_API}/bilibili/BV1cs411Q7Ng/3.json`;
 
 const danmukuOptions = {
   danmuku: () =>
     Promise.allSettled([
-      fetch(bilibiliDanmaku).then((res) => res.json()),
+      fetch(BILIBILI_DANMAKU).then((res) => res.json()),
       fetch(`${DANMAKU_API}/${DANMAKU_ID}.json`).then((res) => res.json()),
     ])
       .then((res) =>
@@ -90,8 +91,8 @@ const danmukuOptions = {
       ),
 };
 
-const customPlayerOptions = (playerOptions) => {
-  (playerOptions.plugins ??= []).push(artplayerPluginDanmuku(danmukuOptions));
+const artDanmukuConfig = {
+  plugins: [artplayerPluginDanmuku(danmukuOptions)],
 };
 
 const customPlayer = (player) => {
