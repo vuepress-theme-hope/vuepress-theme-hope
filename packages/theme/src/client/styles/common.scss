@@ -88,9 +88,7 @@
   // close state on desktop
   &.sidebar-collapsed {
     .page {
-      padding-left: calc(
-        100vw - var(--content-width) - var(--sidebar-space) - 6rem
-      );
+      padding-left: 0;
     }
 
     .sidebar {
