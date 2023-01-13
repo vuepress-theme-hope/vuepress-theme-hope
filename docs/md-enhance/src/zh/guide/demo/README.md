@@ -9,9 +9,9 @@ icon: discover
 
 ::: info 什么是代码演示
 
-代码演示是一项功能，可让您在 Markdown 文件中插入代码片段，插件将为您呈现源代码并在浏览器上运行代码。 如果用户喜欢尝试，可以点击 CodePen 或 JSFiddle 按钮，在 CodePen 或 JSFiddle 中打开 demo，在线编辑。
+代码演示是一项功能，可让你在 Markdown 文件中插入代码片段，插件将为你呈现源代码并在浏览器上运行代码。 如果用户喜欢尝试，可以点击 CodePen 或 JSFiddle 按钮，在 CodePen 或 JSFiddle 中打开 demo，在线编辑。
 
-因此，这意味着您无权访问项目中的内部组件。我们既不能在用户的浏览器中读取您本地的文件系统， Codepen 和 JSFiddle 也不能访问项目中的 Vue 组件。
+因此，这意味着你无权访问项目中的内部组件。我们既不能在用户的浏览器中读取你本地的文件系统， Codepen 和 JSFiddle 也不能访问项目中的 Vue 组件。
 
 :::
 

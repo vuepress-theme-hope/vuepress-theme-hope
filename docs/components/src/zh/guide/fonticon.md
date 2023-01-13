@@ -42,3 +42,9 @@ Icon name
 - 默认值: `当前字体大小`
 
 图标大小。
+
+## 全局设置
+
+你可以通过 `componentsOptions.fontIcon.assets` 和 `componentsOptions.fontIcon.prefix` 全局设置图标资源 url 和图标前缀。
+
+除了支持 URL 链接外，`componentsOptions.fontIcon.assets` 还支持 `'iconfont'` 和 `'fontawesome'` 关键字。

@@ -19,9 +19,7 @@ A video player with custom settings:
 <ArtPlayer
   src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4"
   airplay
-  autoplay
   aspect-ratio
-  auto-mini
   auto-size
   auto-orientation
   auto-playback
@@ -54,7 +52,7 @@ CustomType:
 
 <ArtPlayer src="https://mse-demo.u2sb.com/dash/master.m3u8" :config="artCustomType" />
 
-With DanMuKu plugin：
+With DanMuKu plugin:
 
 <ArtPlayer
   src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4"
@@ -75,13 +73,14 @@ const artCustomType = {
       ) {
         mediaElement.src = src;
       } else {
-        const { default: Hls } = await import("hls.js/dist/hls.min.js");
-        const hls = new Hls();
+        const HLS = (await import("hls.js/dist/hls.min.js")).default;
+        const hls = new HLS();
+
         hls.attachMedia(mediaElement);
-        hls.on(Hls.Events.MEDIA_ATTACHED, function () {
+        hls.on(Hls.Events.MEDIA_ATTACHED, () => {
           hls.loadSource(src);
         });
-        player.on("destroy", function () {
+        player.on("destroy", () => {
           hls.destroy();
         });
       }

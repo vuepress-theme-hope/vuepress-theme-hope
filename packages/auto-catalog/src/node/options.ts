@@ -44,7 +44,7 @@ export interface AutoCatalogOptions {
    *
    * 用作目录的组件名称
    *
-   * @description 默认情况下，插件将注册一个 `<AutoCatalog />` 组件并使用该组件。如果您想使用自己的组件，可以将此选项设置为您的组件的名称。
+   * @description 默认情况下，插件将注册一个 `<AutoCatalog />` 组件并使用该组件。如果你想使用自己的组件，可以将此选项设置为你的组件的名称。
    *
    * @default 'AutoCatalog'
    */

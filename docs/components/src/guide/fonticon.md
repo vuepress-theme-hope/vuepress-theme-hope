@@ -42,3 +42,9 @@ Color used for icon.
 - Default: `Current font size`
 
 Icon size.
+
+## Global Settings
+
+You can set icon assets url and icon prefix globally via `componentsOptions.fontIcon.assets` and `componentsOptions.fontIcon.prefix`.
+
+Besides supporting url links, `'iconfont'` and `'fontawesome'` keywords are supported in `componentsOptions.fontIcon.assets`.
