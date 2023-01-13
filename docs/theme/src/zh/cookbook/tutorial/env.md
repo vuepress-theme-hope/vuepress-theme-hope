@@ -95,5 +95,5 @@ pnpm 的一些功能可以保证你拥有正确的依赖，并且它能加速安
 
 ```sh
 corepack enable
-corepack prepare pnpm@7.23.0 --activate
+corepack prepare pnpm@7.24.3 --activate
 ```

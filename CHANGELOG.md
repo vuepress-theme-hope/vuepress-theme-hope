@@ -595,6 +595,8 @@ All notable changes to this project will be documented in this file. See [Conven
 - **md-enhance:** fix mermaid issue in dev mode ([26b57c0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/26b57c09f2f666f3e8ed7e8c9b58b5e144f6ef58))
 - **md-enhance:** fix type issue ([4b32b67](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4b32b67ede8c64a0fd6be8aedc4ab0b08ede3e8d))
 
+<!-- #endregion recent-beta -->
+
 ## [2.0.0-beta.121](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.120...v2.0.0-beta.121) (2022-11-05)
 
 ### Bug Fixes
@@ -875,8 +877,6 @@ All notable changes to this project will be documented in this file. See [Conven
 ### Bug Fixes
 
 - **md-enhance:** fix playground style with theme default ([dfc534c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/dfc534cc9d3174ec269d7564a4500cc058de3248))
-
-<!-- #endregion recent-beta -->
 
 ## [2.0.0-beta.99](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.98...v2.0.0-beta.99) (2022-09-13)
 
