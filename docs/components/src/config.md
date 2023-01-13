@@ -47,7 +47,7 @@ Global config for components.
 - Type: `ComponentsArtPlayerOptions`
 - Required: No
 - Details:
-  - [Guide → ArtPlayer](./guide/artplayer.md#GlobalConfiguration)
+  - [Guide → ArtPlayer](./guide/artplayer.md#global-config)
 
 ### componentsOptions.fontIcon.assets
 
