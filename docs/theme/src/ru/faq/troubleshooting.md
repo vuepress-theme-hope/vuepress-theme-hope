@@ -5,6 +5,32 @@ category:
   - FAQ
 ---
 
+## Ensure You have correct Environment
+
+`vuepress-theme-hope` only supports node version of `^14.18.0 || >=16.0.0`.
+
+If the ouput of `node -v` doesnot satisfy the requirement, you should [download and install the LTS version of Node.js](../cookbook/tutorial/env.md#nodejs).
+
+Also, you should use package manger satisfying the following requirements:
+
+- npm: >= 8
+
+  Check: `npm -v`
+
+  Install: `npm i -g npm`
+
+- yarn: >= 1.22.15
+
+  Check: `yarn -v`
+
+  Install: `npm i -g yarn`
+
+- pnpm: >= 7
+
+  Check: `yarn -v`
+
+  Install: `npm i -g pnpm`
+
 ## Убедитесь, что используете последнюю версию
 
 Пожалуйста, убедитесь, что вы используете последнюю версию 2 `vuepress` и `vuepress-theme-hope`, потому что некоторые ошибки, с которыми вы столкнулись, могли быть исправлены в новых версиях.
@@ -16,36 +42,32 @@ category:
 @tab pnpm
 
 ```bash
-pnpm add @vuepress/client@next vuepress@next vuepress-theme-hope@next vue@latest
+pnpm add @vuepress/client@next vuepress@next vuepress-theme-hope@next vue@latest -E
 ```
 
 @tab yarn
 
 ```bash
-yarn add vuepress@next vuepress-theme-hope@next
+yarn add vuepress@next vuepress-theme-hope@next -E
 ```
 
 @tab npm
 
 ```bash
-npm i vuepress@next vuepress-theme-hope@next
+npm i vuepress@next vuepress-theme-hope@next -E
 ```
 
 :::
 
 ::: warning
 
-Any official plugins starting with `@vuepress/plugin-` should be the same version as VuePress.
+Any official packages starting with `@vuepress/` should be upgrade to the same version as VuePress.
 
-If you're using another third-party plugin, make sure it's compatible with the version of VuePress you're upgrading to.
+I.E.: if you are using `@vuepress/plugin-search` and `@vuepress/utils` , you should ensure they have the same version number as `vuepress`.
+
+Also, if you're using another third-party plugin, make sure it's compatible with the version of VuePress you're upgrading to.
 
 :::
-
-## Убедитесь в версии Node
-
-`vuepress-theme-hope` поддерживает только LTS-версию Node.js, то есть в настоящее время поддерживаются только последние версии v14, v16, v18.
-
-Вы можете проверить его версию с помощью `node -v`. Если первая цифра номера версии не соответствует требованиям, [загрузите и установите LTS-версию Node.js](../cookbook/tutorial/env.md#nodejs).
 
 ## Убедитесь, что у вас есть правильное дерево зависимостей
 

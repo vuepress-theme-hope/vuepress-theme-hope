@@ -55,27 +55,29 @@ tag:
 @tab pnpm
 
 ```bash
-pnpm add @vuepress/client@next vue vuepress@next vuepress-theme-hope@next && pnpm i && pnpm up
+pnpm add @vuepress/client@next vue vuepress@next vuepress-theme-hope@next -E && pnpm i && pnpm up
 ```
 
 @tab yarn
 
 ```bash
-yarn add vuepress@next vuepress-theme-hope@next && yarn install && yarn upgrade
+yarn add vuepress@next vuepress-theme-hope@next -E && yarn install && yarn upgrade
 ```
 
 @tab npm
 
 ```bash
-npm i vuepress@next vuepress-theme-hope@next && npm install && npm update
+npm i vuepress@next vuepress-theme-hope@next -E && npm install && npm update
 ```
 
 :::
 
 ::: warning
 
-任何以 `@vuepress/plugin-` 开头的官方插件应该和 VuePress 保持相同版本。
+任何以 `@vuepress/` 开头的官方包应该和 VuePress 保持相同版本。
 
-如果你使用了其他第三方插件，请确保它兼容你要升级到的 VuePress 版本。
+比如，如果你正在使用 `@vuepress/plugin-search` 和 `@vuepress/utils`，你应该确保他们和 `vuepress` 版本相同
+
+另外，如果你使用了其他第三方插件，请确保它兼容你要升级到的 VuePress 版本。
 
 :::

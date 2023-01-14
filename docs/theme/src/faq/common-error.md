@@ -64,19 +64,19 @@ Make sure you are using the latest `vuepress` and `vuepress-theme-hope` versions
 @tab pnpm
 
 ```bash
-pnpm add @vuepress/client@next vuepress@next vuepress-theme-hope@next vue@latest
+pnpm add @vuepress/client@next vuepress@next vuepress-theme-hope@next vue@latest -E
 ```
 
 @tab yarn
 
 ```bash
-yarn add vuepress@next vuepress-theme-hope@next
+yarn add vuepress@next vuepress-theme-hope@next -E
 ```
 
 @tab npm
 
 ```bash
-npm i vuepress@next vuepress-theme-hope@next
+npm i vuepress@next vuepress-theme-hope@next -E
 ```
 
 :::
@@ -102,6 +102,16 @@ yarn && yarn upgrade
 ```bash
 npm i && npm update
 ```
+
+:::
+
+::: warning
+
+Any official packages starting with `@vuepress/` should be upgrade to the same version as VuePress.
+
+I.E.: if you are using `@vuepress/plugin-search` and `@vuepress/utils` , you should ensure they have the same version number as `vuepress`.
+
+Also, if you're using another third-party plugin, make sure it's compatible with the version of VuePress you're upgrading to.
 
 :::
 

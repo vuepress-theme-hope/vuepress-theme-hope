@@ -5,6 +5,32 @@ category:
   - FAQ
 ---
 
+## 确认使用正确的环境
+
+`vuepress-theme-hope` 仅支持 `^14.18.0 || >=16.0.0` 版本的 Node.js。
+
+你可以通过 `node -v` 查看它的版本，如果不满足要求，请 [下载并安装 LTS 版本的 Node.js](../cookbook/tutorial/env.md#nodejs)。
+
+同时，你应该使用满足下方要求的包管理器:
+
+- npm: >= 8
+
+  检查: `npm -v`
+
+  安装: `npm i -g npm`
+
+- yarn: >= 1.22.15
+
+  检查: `yarn -v`
+
+  安装: `npm i -g yarn`
+
+- pnpm: >= 7
+
+  检查: `yarn -v`
+
+  安装: `npm i -g pnpm`
+
 ## 确定使用最新版本
 
 请确保你在使用最新的 `vuepress` 和 `vuepress-theme-hope` V2 版本，因为一些你遇到的 bug 可能已经在新版本中修复。
@@ -16,36 +42,32 @@ category:
 @tab pnpm
 
 ```bash
-pnpm add @vuepress/client@next vuepress@next vuepress-theme-hope@next vue@latest
+pnpm add @vuepress/client@next vuepress@next vuepress-theme-hope@next vue@latest -E
 ```
 
 @tab yarn
 
 ```bash
-yarn add vuepress@next vuepress-theme-hope@next
+yarn add vuepress@next vuepress-theme-hope@next -E
 ```
 
 @tab npm
 
 ```bash
-npm i vuepress@next vuepress-theme-hope@next
+npm i vuepress@next vuepress-theme-hope@next -E
 ```
 
 :::
 
 ::: warning
 
-任何以 `@vuepress/plugin-` 开头的官方插件应该和 VuePress 保持相同版本。
+任何以 `@vuepress/` 开头的官方包应该和 VuePress 保持相同版本。
 
-如果你使用了其他第三方插件，请确保它兼容你要升级到的 VuePress 版本。
+比如，如果你正在使用 `@vuepress/plugin-search` 和 `@vuepress/utils`，你应该确保他们和 `vuepress` 版本相同
+
+另外，如果你使用了其他第三方插件，请确保它兼容你要升级到的 VuePress 版本。
 
 :::
-
-## 确认 Node 版本
-
-`vuepress-theme-hope` 仅支持 LTS 版本的 Node.js，也就是目前来说，只有最新的 v14, v16, v18 版本受到支持。
-
-你可以通过 `node -v` 查看它的版本，如果版本号第一位不满足要求，请 [下载并安装 LTS 版本的 Node.js](../cookbook/tutorial/env.md#nodejs)。
 
 ## 确认依赖树正确
 
@@ -74,14 +96,6 @@ yarn && yarn upgrade
 ```bash
 npm i && npm update
 ```
-
-:::
-
-::: tip npm 版本
-
-如果你在使用 npm，请确定你在使用 npm v8 版本。你可以通过运行 `npm -v` 命令得到 npm 版本号。
-
-如果主版本号小于 8 (即版本号并非 `8.x.x`)，请运行 `npm i -g npm` 命令更新 npm 至 v8 版本之后重新运行上述命令。
 
 :::
 

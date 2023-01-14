@@ -64,19 +64,19 @@ CloudFlare 的 Auto Minify 会错误的对 HTML 的空格和换行进行处理�
 @tab pnpm
 
 ```bash
-pnpm add @vuepress/client@next vuepress@next vuepress-theme-hope@next vue@latest
+pnpm add @vuepress/client@next vuepress@next vuepress-theme-hope@next vue@latest -E
 ```
 
 @tab yarn
 
 ```bash
-yarn add vuepress@next vuepress-theme-hope@next
+yarn add vuepress@next vuepress-theme-hope@next -E
 ```
 
 @tab npm
 
 ```bash
-npm i vuepress@next vuepress-theme-hope@next
+npm i vuepress@next vuepress-theme-hope@next -E
 ```
 
 :::
@@ -102,6 +102,16 @@ yarn && yarn upgrade
 ```bash
 npm i && npm update
 ```
+
+:::
+
+::: warning
+
+任何以 `@vuepress/` 开头的官方包应该和 VuePress 保持相同版本。
+
+比如，如果你正在使用 `@vuepress/plugin-search` 和 `@vuepress/utils`，你应该确保他们和 `vuepress` 版本相同
+
+另外，如果你使用了其他第三方插件，请确保它兼容你要升级到的 VuePress 版本。
 
 :::
 

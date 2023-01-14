@@ -5,6 +5,32 @@ category:
   - FAQ
 ---
 
+## Ensure You have correct Environment
+
+`vuepress-theme-hope` only supports node version of `^14.18.0 || >=16.0.0`.
+
+If the ouput of `node -v` doesnot satisfy the requirement, you should [download and install the LTS version of Node.js](../cookbook/tutorial/env.md#nodejs).
+
+Also, you should use a package manger satisfying the following requirements:
+
+- npm: >= 8
+
+  Check: `npm -v`
+
+  Install: `npm i -g npm`
+
+- yarn: >= 1.22.15
+
+  Check: `yarn -v`
+
+  Install: `npm i -g yarn`
+
+- pnpm: >= 7
+
+  Check: `yarn -v`
+
+  Install: `npm i -g pnpm`
+
 ## Ensure using latest version
 
 Please make sure you are using the latest `vuepress` and `vuepress-theme-hope` V2 version, because some bugs you encountered may have been fixed in new versions.
@@ -16,42 +42,38 @@ You can update to the latest version by executing the following commands.
 @tab pnpm
 
 ```bash
-pnpm add @vuepress/client@next vuepress@next vuepress-theme-hope@next vue@latest
+pnpm add @vuepress/client@next vuepress@next vuepress-theme-hope@next vue@latest -E
 ```
 
 @tab yarn
 
 ```bash
-yarn add vuepress@next vuepress-theme-hope@next
+yarn add vuepress@next vuepress-theme-hope@next -E
 ```
 
 @tab npm
 
 ```bash
-npm i vuepress@next vuepress-theme-hope@next
+npm i vuepress@next vuepress-theme-hope@next -E
 ```
 
 :::
 
 ::: warning
 
-Any official plugins starting with `@vuepress/plugin-` should be the same version as VuePress.
+Any official packages starting with `@vuepress/` should be upgrade to the same version as VuePress.
 
-If you're using another third-party plugin, make sure it's compatible with the version of VuePress you're upgrading to.
+I.E.: if you are using `@vuepress/plugin-search` and `@vuepress/utils` , you should ensure they have the same version number as `vuepress`.
+
+Also, if you're using another third-party plugin, make sure it's compatible with the version of VuePress you're upgrading to.
 
 :::
 
-## Ensure Node version
-
-`vuepress-theme-hope` only supports LTS version of Node.js, that is, currently, only the latest v14, v16, v18 versions are supported.
-
-You can check its version with `node -v`. If the first digit of the version number does not meet the requirements, please [download and install the LTS version of Node.js](../cookbook/tutorial/env.md#nodejs).
-
 ## Ensure having correct deps tree
 
-In some cases, you may generate incorrect dependency tree after upgrading some dependencies, this is because both `vuepress` and `vue` consist of many packages named `@vuepress/xxx` and `@vue/xxx` constitute.
+In some cases, you may generate incorrect dependency tree after upgrading some dependencies, this is because both `vuepress` and `vue` have many packages named `@vuepress/xxx` and `@vue/xxx`.
 
-For VuePress to work correctly, there should only be one version of `@vuepress/xxx` `@vue/xxx` `vue` and `vue-router` in the whole project. Multiple versions of a package can cause different parts of the application to use different instances of Vue and the corresponding package, resulting in errors like `useXXX() is called without provider`.
+To let VuePress work correctly, there should only be one version of `@vuepress/xxx` `@vue/xxx` `vue` and `vue-router` in the whole project. Multiple versions of a package can cause different parts of the application to use different instances of Vue and the corresponding package, resulting in errors like `useXXX() is called without provider`.
 
 Please run the following command to make sure your dependency tree is correct.
 
@@ -74,14 +96,6 @@ yarn && yarn upgrade
 ```bash
 npm i && npm update
 ```
-
-:::
-
-::: tip npm version
-
-If you're using npm, make sure you're using npm v8. You can get the npm version number by running the `npm -v` command.
-
-If the major version number is less than 8 (i.e. the version number is not `8.x.x`), please run the `npm i -g npm` command to update npm to v8 and rerun the above command.
 
 :::
 
