@@ -1298,8 +1298,8 @@ importers:
         specifier: 2.0.0-beta.60
         version: 2.0.0-beta.60
       '@waline/client':
-        specifier: ^2.14.6
-        version: 2.14.6
+        specifier: ^2.14.7
+        version: 2.14.7
       giscus:
         specifier: ^1.2.6
         version: 1.2.6
@@ -5062,8 +5062,8 @@ packages:
       - '@vue/composition-api'
       - vue
 
-  /@waline/client@2.14.6:
-    resolution: {integrity: sha512-u5wGEnTxIKXiFk4Te94cso8vtfGwWshMpo8OR4PyRoybpiHJqBD5+4Gr4/gaTDRG+DhVASaGnK1Nv5YdGNG7Zw==}
+  /@waline/client@2.14.7:
+    resolution: {integrity: sha512-hTfh2AbWQCX/oS4Hgr0W9cf79pHYf7X6Km5AcBDAmOL6AI7a5kP9qo9y2mcEzdfn9LK06P5Uuk8HY8vxQbgcrA==}
     engines: {node: '>=14'}
     dependencies:
       '@vueuse/core': 9.10.0(vue@3.2.45)
