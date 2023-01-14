@@ -31,6 +31,14 @@ export const getBlogPlugin = (
   return blogPlugin(<BlogOptions>{
     excerpt: blogOptions.excerpt !== false,
 
+    ...("excerptLength" in blogOptions
+      ? { excerptLength: blogOptions.excerptLength }
+      : {}),
+
+    ...("excerptSeparator" in blogOptions
+      ? { excerptSeparator: blogOptions.excerptSeparator }
+      : {}),
+
     excerptFilter: (page) => {
       const isEncrypted = isPageEncrypted(page);
 

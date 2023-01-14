@@ -4,7 +4,11 @@ export interface BlogPluginOptions
   extends Partial<
     Pick<
       BlogOptions,
-      "excerptFilter" | "excerptLength" | "filter" | "hotReload"
+      | "excerptFilter"
+      | "excerptLength"
+      | "excerptSeparator"
+      | "filter"
+      | "hotReload"
     >
   > {
   /**
