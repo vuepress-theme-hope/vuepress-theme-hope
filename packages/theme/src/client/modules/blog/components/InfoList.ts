@@ -39,7 +39,7 @@ export default defineComponent({
     const tagNumber = computed(() => Object.keys(tagMap.value.map).length);
     const navigate = useNavigate();
 
-    const active = ref("article");
+    const active = ref<"article" | "category" | "tag" | "timeline">("article");
 
     const locale = computed(() => themeLocale.value.blogLocales);
 
@@ -80,10 +80,10 @@ export default defineComponent({
           )
         ),
 
-        // article
-        active.value === "article"
-          ? h(DropTransition, () => [
-              h("div", { class: "sticky-article-wrapper" }, [
+        h(DropTransition, () =>
+          // article
+          active.value === "article"
+            ? h("div", { class: "sticky-article-wrapper" }, [
                 h(
                   "div",
                   {
@@ -113,14 +113,9 @@ export default defineComponent({
                     )
                   )
                 ),
-              ]),
-            ])
-          : null,
-
-        // category
-        active.value === "category"
-          ? h(DropTransition, () => [
-              h("div", { class: "category-wrapper" }, [
+              ])
+            : active.value === "category"
+            ? h("div", { class: "category-wrapper" }, [
                 categoryNumber.value
                   ? h(
                       "div",
@@ -137,14 +132,9 @@ export default defineComponent({
                   : null,
                 h("hr"),
                 h(DropTransition, { delay: 0.04 }, () => h(CategoryList)),
-              ]),
-            ])
-          : null,
-
-        // tag
-        active.value === "tag"
-          ? h(DropTransition, () => [
-              h("div", { class: "tag-wrapper" }, [
+              ])
+            : active.value === "tag"
+            ? h("div", { class: "tag-wrapper" }, [
                 tagNumber.value
                   ? h(
                       "div",
@@ -161,14 +151,9 @@ export default defineComponent({
                   : null,
                 h("hr"),
                 h(DropTransition, { delay: 0.04 }, () => h(TagList)),
-              ]),
-            ])
-          : null,
-
-        // timeline
-        active.value === "timeline"
-          ? h(DropTransition, () => h(TimelineList))
-          : null,
+              ])
+            : h(DropTransition, () => h(TimelineList))
+        ),
       ]);
   },
 });

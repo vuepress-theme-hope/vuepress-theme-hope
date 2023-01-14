@@ -57,6 +57,8 @@
   .title {
     position: relative;
 
+    display: inline-block;
+
     color: var(--text-color);
 
     font-size: 1.25rem;
@@ -110,6 +112,10 @@
       margin-inline-end: 0.25em;
 
       color: var(--theme-color);
+    }
+
+    > span {
+      word-break: break-word;
     }
   }
 
