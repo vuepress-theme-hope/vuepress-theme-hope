@@ -74,6 +74,69 @@ tag:
 
 Глубина рендеринга заголовка боковой панели страницы.
 
+## order
+
+- Type: `number`
+
+Page order in sidebar.
+
+- By filling in a positive number, the page will appear in the front, while the smaller number comes to the front.
+- By filling in a negative number, the page will appear in the end, while the greater number comes to the front. (e.g. -1 is after -2)
+
+## dir
+
+Sidebar group information used for [structure sidebar](../../guide/layout/sidebar.md#auto-sidebar).
+
+### dir.text
+
+- Type: `string`
+- Default: title of `README.md`
+
+Group title.
+
+### dir.icon
+
+- Type: `string`
+- Default: icon of `README.md`
+
+Group icon.
+
+### dir.collapsible
+
+- Type: `boolean`
+- Default: `true`
+
+Whether group is collapsible
+
+### dir.link
+
+- Type: `boolean`
+- Default: `false`
+
+Whether Dir is clickable.
+
+::: note
+
+Setting to `true` means setting group link to link of `README.md`.
+
+:::
+
+### dir.index
+
+- Type: `boolean`
+- Default: `true`
+
+Whether index current dir
+
+## dir.order
+
+- Type: `number`
+
+Group order in sidebar.
+
+- By filling in a positive number, the page will appear in the front, while the smaller number comes to the front.
+- By filling in a negative number, the page will appear in the end, while the greater number comes to the front. (e.g. -1 is after -2)
+
 ## comment
 
 - Тип: `boolean`
