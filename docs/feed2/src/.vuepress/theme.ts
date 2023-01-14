@@ -81,6 +81,12 @@ export default theme("feed2", {
   },
 
   plugins: {
+    feed: {
+      atom: true,
+      json: true,
+      rss: true,
+    },
+
     mdEnhance: {
       codetabs: true,
     },
