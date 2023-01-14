@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.158](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.157...v2.0.0-beta.158) (2023-01-14)
+
+### Features
+
+- **components:** use innerHTML in audio title ([564d165](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/564d165633a381c17ac8cbf6261c18578b4de7d6))
+- **theme:** hide footer in print mode ([e9b2019](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e9b2019bb461b388b7a862882dfd7b80ed1494a3))
+
+### Bug Fixes
+
+- **comment2:** fix waline style ([c99c8cf](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c99c8cf8fc528601513291b176c7854845dbc814))
+- **feed2:** ensure xml is encoded ([5069bc9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5069bc904a49522049e874f980ddbc30ce028a59))
+- **theme:** fix article header ([75a1c83](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/75a1c83dbd63c195909968dc0c17e9ec034c5230))
+- **theme:** fix article list ([77d8059](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/77d80590fba3527683229ea77fbbfa9e4589b13a))
+- **theme:** fix page padding ([680ab50](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/680ab50ce6102c75b99296e80f0c108f0a346523))
+- **theme:** fix print default value ([6ff551c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6ff551cac2a238baa6e9c3f9e572166746e577c7))
+- **theme:** fix style ([73cda73](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/73cda73d4af7a703154476e7788ca5e507a28c42))
+- **theme:** support excerptLength and excerptSeparator ([7faad88](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7faad88d76c209fa140d566a46bee77566c1cfe9))
+
 ## [2.0.0-beta.157](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.156...v2.0.0-beta.157) (2023-01-13)
 
 ### Features
