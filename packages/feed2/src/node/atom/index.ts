@@ -1,6 +1,5 @@
-import { encodeCDATA, encodeXML } from "vuepress-shared/node";
 import { js2xml } from "xml-js";
-import { FEED_GENERATOR } from "../utils.js";
+import { FEED_GENERATOR, encodeXML } from "../utils.js";
 
 import type { Feed } from "../feed.js";
 import type { FeedAuthor, FeedCategory } from "../typings/index.js";
@@ -17,7 +16,7 @@ const getAuthor = (author: FeedAuthor): AtomAuthor => {
   return {
     name,
     ...(email ? { email } : {}),
-    ...(url ? { uri: encodeXML(url) } : {}),
+    ...(url ? { uri: url } : {}),
   };
 };
 
@@ -64,18 +63,18 @@ export const renderAtom = (feed: Feed): string => {
         ? channel.lastUpdated.toISOString()
         : new Date().toISOString(),
       generator: FEED_GENERATOR,
-      link: [{ _attributes: { rel: "self", href: encodeXML(links.atom) } }],
+      link: [{ _attributes: { rel: "self", href: links.atom } }],
     },
   };
 
   if (channel.link)
     content.feed.link.push({
-      _attributes: { rel: "alternate", href: encodeXML(channel.link) },
+      _attributes: { rel: "alternate", href: channel.link },
     });
 
   if (channel.hub)
     content.feed.link.push({
-      _attributes: { rel: "hub", href: encodeXML(channel.hub) },
+      _attributes: { rel: "hub", href: channel.hub },
     });
 
   if (channel.image) content.feed.logo = channel.image;
@@ -98,9 +97,9 @@ export const renderAtom = (feed: Feed): string => {
   content.feed.entry = feed.items.map((item) => {
     // entry: required elements
     const entry: AtomEntry = {
-      title: { _attributes: { type: "html" }, _text: encodeXML(item.title) },
-      id: encodeXML(item.guid || item.link),
-      link: { _attributes: { href: encodeXML(item.link) } },
+      title: { _attributes: { type: "html" }, _text: item.title },
+      id: item.guid || item.link,
+      link: { _attributes: { href: item.link } },
       updated: item.lastUpdated.toISOString(),
     };
 
@@ -109,7 +108,7 @@ export const renderAtom = (feed: Feed): string => {
       entry.summary = item.description.startsWith("html:")
         ? {
             _attributes: { type: "html" },
-            _cdata: encodeCDATA(item.description.substring(5)),
+            _cdata: item.description.substring(5),
           }
         : {
             _attributes: { type: "html" },
@@ -120,7 +119,7 @@ export const renderAtom = (feed: Feed): string => {
     if (item.content)
       entry.content = {
         _attributes: { type: "html" },
-        _cdata: encodeCDATA(item.content),
+        _cdata: item.content,
       };
 
     // author(s)
@@ -148,7 +147,7 @@ export const renderAtom = (feed: Feed): string => {
     return entry;
   });
 
-  return js2xml(content, {
+  return js2xml(encodeXML(content), {
     compact: true,
     ignoreComment: true,
     spaces: 2,

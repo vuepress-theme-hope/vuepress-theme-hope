@@ -1,6 +1,6 @@
-import { encodeCDATA, encodeXML, isUrl, stripTags } from "vuepress-shared/node";
+import { isUrl, stripTags } from "vuepress-shared/node";
 import { js2xml } from "xml-js";
-import { FEED_GENERATOR } from "../utils.js";
+import { FEED_GENERATOR, encodeXML } from "../utils.js";
 
 import type {
   RSSCategory,
@@ -26,14 +26,14 @@ const genCategory = (category: FeedCategory): RSSCategory => {
 };
 
 const genGuid = (item: FeedItemOption): RSSGuid => {
-  const guid = item.guid || encodeXML(item.link);
+  const guid = item.guid || item.link;
 
   return {
     ...(isUrl(guid)
       ? {}
       : {
           _attributes: {
-            isPermaLink: false,
+            isPermaLink: "false",
           },
         }),
     _text: guid,
@@ -78,9 +78,9 @@ export const renderRSS = (feed: Feed): string => {
           },
         },
         title: { _text: channel.title },
-        link: { _text: encodeXML(channel.link) },
+        link: { _text: channel.link },
         description: { _text: channel.description },
-        language: { _text: encodeXML(channel.language) },
+        language: { _text: channel.language },
         pubDate: {
           _text: channel.pubDate
             ? channel.pubDate.toUTCString()
@@ -108,7 +108,7 @@ export const renderRSS = (feed: Feed): string => {
     content.rss.channel.image = {
       title: { _text: channel.title },
       url: { _text: channel.image },
-      link: { _text: encodeXML(channel.link) },
+      link: { _text: channel.link },
     };
 
   /**
@@ -127,8 +127,8 @@ export const renderRSS = (feed: Feed): string => {
    */
   content.rss.channel.item = feed.items.map((entry) => {
     const item: RSSItem = {
-      title: { _text: encodeXML(entry.title) },
-      link: { _text: encodeXML(entry.link) },
+      title: { _text: entry.title },
+      link: { _text: entry.link },
       guid: genGuid(entry),
       source: {
         _attributes: { url: links.rss },
@@ -165,13 +165,13 @@ export const renderRSS = (feed: Feed): string => {
         .filter((category) => category.name)
         .map((category) => genCategory(category));
 
-    if (entry.comments) item.comments = { _text: encodeXML(entry.link) };
+    if (entry.comments) item.comments = { _text: entry.link };
 
     if (entry.pubDate) item.pubDate = { _text: entry.pubDate.toUTCString() };
 
     if (entry.content) {
       hasContent = true;
-      item["content:encoded"] = { _cdata: encodeCDATA(entry.content) };
+      item["content:encoded"] = { _cdata: entry.content };
     }
 
     /**
@@ -190,7 +190,7 @@ export const renderRSS = (feed: Feed): string => {
     content.rss._attributes["xmlns:dc"] = "http://purl.org/dc/elements/1.1/";
   }
 
-  return js2xml(content, {
+  return js2xml(encodeXML(content), {
     compact: true,
     ignoreComment: true,
     spaces: 2,

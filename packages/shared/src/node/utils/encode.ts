@@ -4,7 +4,7 @@
 export const encodeCDATA = (content: string): string =>
   content.replace(/]]>/g, "]]]]><![CDATA[>");
 
-export const encodeXML = (content: string): string =>
+export const encodeXMLContent = (content: string): string =>
   content
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
