@@ -4,6 +4,9 @@
   @include reset.button;
 
   position: fixed !important;
+
+  // NOTE: Compatible with Android Wechat
+  right: 1rem;
   bottom: 4rem;
   inset-inline-end: 1rem;
   z-index: 100;

@@ -57,6 +57,9 @@
 
       position: absolute;
       top: 14px;
+
+      // NOTE: Compatible with Android Wechat
+      left: 64px;
       inset-inline-start: 64px;
       z-index: -1;
 
@@ -82,6 +85,9 @@
 
     &::before {
       @include dot;
+
+      // NOTE: Compatible with Android Wechat
+      left: -12px;
       inset-inline-start: -12px;
       width: 8px;
       height: 8px;
@@ -106,6 +112,9 @@
 
       &::before {
         @include dot;
+
+        // NOTE: Compatible with Android Wechat
+        left: -12px;
         inset-inline-start: -12px;
         width: 8px;
         height: 8px;
@@ -119,6 +128,9 @@
 
   .timeline-date {
     position: absolute;
+
+    // NOTE: Compatible with Android Wechat
+    right: calc(100% + 24px);
     inset-inline-end: calc(100% + 24px);
 
     width: 40px;
@@ -129,6 +141,9 @@
 
     &::before {
       @include dot;
+
+      // NOTE: Compatible with Android Wechat
+      right: -16px;
       inset-inline-end: -16px;
       width: 6px;
       height: 6px;

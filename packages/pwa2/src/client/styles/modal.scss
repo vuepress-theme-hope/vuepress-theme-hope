@@ -35,6 +35,9 @@
 .modal-button {
   @include reset.button;
   position: fixed;
+
+  // NOTE: Compatible with Android Wechat
+  right: 1rem;
   bottom: 1rem;
   inset-inline-end: 1rem;
   z-index: 50;

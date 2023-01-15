@@ -46,6 +46,9 @@
   .sticky-icon {
     position: absolute;
     top: 0;
+
+    // NOTE: Compatible with Android Wechat
+    right: 0;
     inset-inline-end: 0;
 
     width: 1.5rem;

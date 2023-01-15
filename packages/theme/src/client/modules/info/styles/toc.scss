@@ -105,6 +105,9 @@ $headings: (2, 3, 4, 5, 6);
       position: absolute;
       top: 0;
       bottom: 0;
+
+      // NOTE: Compatible with Android Wechat
+      left: -8px;
       inset-inline-start: -8px;
       z-index: -1;
 
@@ -155,6 +158,9 @@ $headings: (2, 3, 4, 5, 6);
       position: absolute;
       top: 0;
       bottom: 0;
+
+      // NOTE: Compatible with Android Wechat
+      left: -8px;
       inset-inline-start: -8px;
       z-index: 2;
 

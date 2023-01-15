@@ -82,6 +82,9 @@
   .search-icon {
     position: absolute;
     top: calc(50% - 0.75rem);
+
+    // NOTE: Compatible with Android Wechat
+    left: 0.5rem;
     inset-inline-start: 0.5rem;
 
     width: 1.5rem;
@@ -93,11 +96,13 @@
 
     min-width: 0;
     margin: 0;
-    padding-inline: 2.5rem 1rem;
+
+    // NOTE: Compatible with Android Wechat
+    // padding-inline: 2.5rem 1rem;
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
-
-    // padding: 0.25rem 1rem 0.3rem 2.5rem;
+    padding-inline-start: 2.5rem;
+    padding-inline-end: 1rem;
     border: 0;
     border: 1px solid var(--c-brand, #3eaf7c);
     border-radius: 8px;

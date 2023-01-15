@@ -43,6 +43,9 @@
 .notice-wrapper {
   position: fixed;
   top: 80px;
+
+  // NOTE: Compatible with Android Wechat
+  right: 20px;
   inset-inline-end: 20px;
   z-index: 1500;
 

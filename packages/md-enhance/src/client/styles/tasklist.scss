@@ -61,6 +61,9 @@ input[type="checkbox"].task-list-item-checkbox {
 
       position: absolute;
       top: 0.1em;
+
+      // NOTE: Compatible with Android Wechat
+      left: 0.4em;
       inset-inline-start: 0.4em;
       z-index: 1;
 

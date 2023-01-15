@@ -44,7 +44,10 @@
 
     // do not leave space for sidebar on wide mobile
     @media (max-width: hope-config.$tablet) {
-      padding-inline: 0;
+      // NOTE: Compatible with Android Wechat
+      // padding-inline: 0;
+      padding-inline-start: 0;
+      padding-inline-end: 0;
     }
 
     @media (min-width: hope-config.$pc) {
@@ -107,7 +110,10 @@
   // sidebar is disabled
   &.no-sidebar {
     .page {
-      padding-inline: 0;
+      // NOTE: Compatible with Android Wechat
+      // padding-inline: 0;
+      padding-inline-start: 0;
+      padding-inline-end: 0;
     }
 
     &.has-toc {

@@ -7,7 +7,10 @@
   padding: var(--navbar-height) 2rem 0;
 
   @media (max-width: hope-config.$mobile) {
-    padding-inline: 1.5rem;
+    // NOTE: Compatible with Android Wechat
+    // padding-inline: 1.5rem;
+    padding-inline-start: 1.5rem;
+    padding-inline-end: 1.5rem;
   }
 
   #{hope-config.$content-class} {

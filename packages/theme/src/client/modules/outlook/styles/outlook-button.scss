@@ -17,6 +17,9 @@
 .outlook-dropdown {
   position: absolute;
   top: 100%;
+
+  // NOTE: Compatible with Android Wechat
+  right: 0;
   inset-inline-end: 0;
 
   overflow-y: auto;

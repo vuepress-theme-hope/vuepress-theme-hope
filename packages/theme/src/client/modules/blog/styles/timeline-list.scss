@@ -65,6 +65,9 @@
 
       position: absolute;
       top: 14px;
+
+      // NOTE: Compatible with Android Wechat
+      left: 0;
       inset-inline-start: 0;
       z-index: -1;
 
@@ -92,6 +95,9 @@
       @include dot;
 
       top: 50%;
+
+      // NOTE: Compatible with Android Wechat
+      left: -20px;
       inset-inline-start: -20px;
 
       width: 8px;
@@ -119,6 +125,9 @@
     &::before {
       @include dot;
       top: 24px;
+
+      // NOTE: Compatible with Android Wechat
+      left: -19px;
       inset-inline-start: -19px;
 
       width: 6px;

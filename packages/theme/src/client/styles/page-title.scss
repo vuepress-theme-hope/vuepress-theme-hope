@@ -29,7 +29,10 @@ h6 {
   padding-bottom: 0;
 
   @media print {
-    padding-inline: 0 !important;
+    // NOTE: Compatible with Android Wechat
+    // padding-inline: 0!important;
+    padding-inline-start: 0 !important;
+    padding-inline-end: 0 !important;
   }
 
   h1 {

@@ -106,6 +106,9 @@
 
         position: absolute;
         top: calc(50% - 0.6125em);
+
+        // NOTE: Compatible with Android Wechat
+        left: 0;
         inset-inline-start: 0;
 
         width: 1.25em;
@@ -280,6 +283,9 @@
 
       position: absolute;
       top: calc(50% - 0.75rem);
+
+      // NOTE: Compatible with Android Wechat
+      left: 1.5rem;
       inset-inline-start: 1.5rem;
 
       width: 1.5rem;

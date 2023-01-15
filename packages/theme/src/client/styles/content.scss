@@ -4,7 +4,11 @@
 #{hope-config.$content-class} {
   @media print {
     margin: 0 !important;
-    padding-inline: 0 !important;
+
+    // NOTE: Compatible with Android Wechat
+    // padding-inline: 0!important;
+    padding-inline-start: 0 !important;
+    padding-inline-end: 0 !important;
   }
 
   &.custom {

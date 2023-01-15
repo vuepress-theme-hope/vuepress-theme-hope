@@ -20,11 +20,21 @@
 
 @mixin horizontal-wrapper($pad: hope-config.$pad) {
   max-width: var(--content-width, 740px);
-  padding-inline: 2.5rem;
-  margin-inline: auto;
+
+  // margin-inline: auto;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+
+  // NOTE: Compatible with Android Wechat
+  // padding-inline: 2.5rem;
+  padding-inline-start: 2.5rem;
+  padding-inline-end: 2.5rem;
 
   @media (max-width: $pad) {
-    padding-inline: 1.5rem;
+    // NOTE: Compatible with Android Wechat
+    // padding-inline: 1.5rem;
+    padding-inline-start: 1.5rem;
+    padding-inline-end: 1.5rem;
   }
 
   @media print {

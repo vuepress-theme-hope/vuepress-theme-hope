@@ -112,6 +112,9 @@
 
 .site-info-source-wrapper {
   position: absolute;
+
+  // NOTE: Compatible with Android Wechat
+  right: 16px;
   bottom: 16px;
   inset-inline-end: 16px;
 }
