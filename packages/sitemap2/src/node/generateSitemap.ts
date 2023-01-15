@@ -5,7 +5,7 @@ import {
 } from "@vuepress/shared";
 import { colors, fs } from "@vuepress/utils";
 import { SitemapStream } from "sitemap";
-import { logger } from "./utils.js";
+import { TEMPLATE_FOLDER, logger } from "./utils.js";
 
 import type { App, Page } from "@vuepress/core";
 import type { GitData } from "@vuepress/plugin-git";
@@ -47,7 +47,7 @@ const generatePageMap = (
   options: SitemapOptions
 ): Map<string, SitemapPageInfo> => {
   const {
-    changefreq,
+    changefreq = "daily",
     excludeUrls = ["/404.html"],
     modifyTimeGetter = <ModifyTimeGetter>(
       ((page: Page<{ git: GitData }>): string =>
@@ -156,6 +156,12 @@ export const generateSiteMap = async (
   const sitemapFilename = options.sitemapFilename
     ? removeLeadingSlash(options.sitemapFilename)
     : "sitemap.xml";
+  const sitemapXSLFilename = options.sitemapXSLFilename
+    ? removeLeadingSlash(options.sitemapXSLFilename)
+    : "sitemap.xsl";
+  const sitemapXSLTemplate =
+    options.sitemapXSLTemplate ?? `${TEMPLATE_FOLDER}sitemap.xsl`;
+
   const {
     dir,
     options: { base },
@@ -170,6 +176,7 @@ export const generateSiteMap = async (
     });
     const pagesMap = generatePageMap(app, options);
     const sitemapXMLPath = dir.dest(sitemapFilename);
+    const sitemapXSLPath = dir.dest(sitemapXSLFilename);
     const writeStream = fs.createWriteStream(sitemapXMLPath);
 
     sitemap.pipe(writeStream);
@@ -181,12 +188,31 @@ export const generateSiteMap = async (
       })
     );
 
+    writeStream.on("finish", () => {
+      const content = fs.readFileSync(sitemapXMLPath, {
+        encoding: "utf-8",
+      });
+
+      fs.writeFileSync(
+        sitemapXMLPath,
+        content.replace(
+          '<?xml version="1.0" encoding="UTF-8"?>',
+          `\
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type='text/xsl' href='${base}${sitemapXSLFilename}'?>
+`
+        )
+      );
+
+      fs.copySync(sitemapXSLTemplate, sitemapXSLPath);
+
+      resolve();
+    });
+
     extraUrls.forEach((item) =>
       sitemap.write({ url: `${base}${removeLeadingSlash(item)}` })
     );
-    sitemap.end(() => {
-      resolve();
-    });
+    sitemap.end();
   });
 
   logger.succeed();

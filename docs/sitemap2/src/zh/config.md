@@ -39,6 +39,20 @@ icon: config
 
 输出的文件名，相对于输出目录。
 
+### sitemapXSLFilename
+
+- 类型: `string`
+- 默认值: `"sitemap.xsl"`
+
+输出的 xsl 文件名，相对于输出目录。
+
+### sitemapXSLTemplate
+
+- 类型: `string`
+- 默认值: `"vuepress-plugin-sitemap2/template/sitemap.xsl"`
+
+用作模板的 XSL 文件路径
+
 ### changefreq
 
 - 类型: `"always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never"`

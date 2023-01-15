@@ -49,6 +49,24 @@ export interface SitemapOptions {
   sitemapFilename?: string;
 
   /**
+   * Output xsl filename, relative to dest folder
+   *
+   * 输出的 xsl 文件名，相对于输出目录
+   *
+   * @default 'sitemap.xsl'
+   */
+  sitemapXSLFilename?: string;
+
+  /**
+   * XSL file path used as template
+   *
+   * 用作模板的 XSL 文件路径
+   *
+   * @default 'vuepress-plugin-sitemap2/template/sitemap.xsl'
+   */
+  sitemapXSLTemplate?: string;
+
+  /**
    * Page default update frequency
    *
    * 页面默认更新频率

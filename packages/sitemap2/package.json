@@ -26,12 +26,14 @@
   "type": "module",
   "exports": {
     ".": "./lib/node/index.js",
+    "./template/*": "./template/*",
     "./package.json": "./package.json"
   },
   "main": "lib/node/index.js",
   "types": "lib/node/index.d.ts",
   "files": [
-    "lib"
+    "lib",
+    "template"
   ],
   "scripts": {
     "build": "rollup -c rollup.config.ts --configPlugin esbuild",
