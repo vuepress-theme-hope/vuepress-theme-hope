@@ -117,8 +117,8 @@ export class FeedGenerator {
             await fs.outputFile(dest(jsonOutputFilename), feed.json());
 
             logger.succeed(
-              `JSON feed file generated and saved to /${colors.cyan(
-                `${jsonOutputFilename}`
+              `JSON feed file generated and saved to ${colors.cyan(
+                `/${jsonOutputFilename}`
               )}`
             );
           }
@@ -129,8 +129,8 @@ export class FeedGenerator {
             await fs.outputFile(dest(rssOutputFilename), feed.rss());
 
             logger.succeed(
-              `RSS feed file generated and saved to /${colors.cyan(
-                `${rssOutputFilename}`
+              `RSS feed file generated and saved to ${colors.cyan(
+                `/${rssOutputFilename}`
               )}`
             );
           }
