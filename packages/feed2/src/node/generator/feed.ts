@@ -5,11 +5,11 @@ import { renderRSS } from "./rss/index.js";
 import type {
   FeedContributor,
   FeedInitOptions,
-  FeedItemOption,
-} from "./typings/index.js";
+  FeedItemInformation,
+} from "../typings/index.js";
 
 export class Feed {
-  items: FeedItemOption[] = [];
+  items: FeedItemInformation[] = [];
 
   categories = new Set<string>();
 
@@ -22,7 +22,7 @@ export class Feed {
   /**
    * Add a feed item
    */
-  public addItem = (item: FeedItemOption): void => {
+  public addItem = (item: FeedItemInformation): void => {
     this.items.push(item);
   };
 

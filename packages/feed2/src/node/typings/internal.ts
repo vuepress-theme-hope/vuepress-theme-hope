@@ -5,7 +5,7 @@ import type {
   FeedEnclosure,
 } from "./feed.js";
 
-export interface FeedItemOption {
+export interface FeedItemInformation {
   /**
    * The title of the item.
    */
@@ -20,6 +20,11 @@ export interface FeedItemOption {
    * The item synopsis.
    */
   description?: string;
+
+  /**
+   * The item summary.
+   */
+  summary?: string;
 
   /**
    * A string that uniquely identifies the item.

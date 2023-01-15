@@ -7,12 +7,12 @@ import {
   isAbsoluteUrl,
   isUrl,
 } from "vuepress-shared/node";
-import { getImageMineType, resolveUrl } from "./utils.js";
+import { getImageMineType, resolveUrl } from "../utils/index.js";
 
 import type { AuthorInfo } from "vuepress-shared";
 import type { App, Page, PageFrontmatter } from "@vuepress/core";
 import type { GitData } from "@vuepress/plugin-git";
-import type { Feed } from "./feed.js";
+import type { Feed } from "../generator/feed.js";
 import type {
   FeedAuthor,
   FeedCategory,
@@ -20,16 +20,18 @@ import type {
   FeedEnclosure,
   FeedFrontmatterOption,
   FeedGetter,
-  FeedItemOption,
+  FeedItemInformation,
   FeedOptions,
   FeedPluginFrontmatter,
-} from "./typings/index.js";
+} from "../typings/index.js";
+import { getPageRenderContent } from "./content.js";
 
 export class FeedPage {
   private pageFeedOptions: FeedFrontmatterOption;
   private frontmatter: PageFrontmatter<FeedPluginFrontmatter>;
   private base: string;
   private getter: FeedGetter;
+  private shouldRemoveElement: (tagName: string) => boolean;
 
   constructor(
     private app: App,
@@ -44,6 +46,17 @@ export class FeedPage {
     this.frontmatter = page.frontmatter;
     this.getter = options.getter || {};
     this.pageFeedOptions = this.frontmatter.feed || {};
+    this.shouldRemoveElement = (tagName): boolean => {
+      const { removedElements } = this.options;
+
+      return isArray(removedElements)
+        ? removedElements.some((item) =>
+            item instanceof RegExp ? item.test(tagName) : item === tagName
+          )
+        : isFunction(removedElements)
+        ? removedElements(tagName)
+        : false;
+    };
   }
 
   get title(): string {
@@ -147,12 +160,22 @@ export class FeedPage {
     return updatedTime ? new Date(updatedTime) : new Date();
   }
 
+  get excerpt(): string | null {
+    if (isFunction(this.getter.excerpt)) return this.getter.excerpt(this.page);
+
+    if (this.pageFeedOptions.summary) return this.pageFeedOptions.summary;
+
+    return getPageExcerpt(this.app, this.page, {
+      isCustomElement: this.shouldRemoveElement,
+    });
+  }
+
   get content(): string {
     if (isFunction(this.getter.content)) return this.getter.content(this.page);
 
     if (this.pageFeedOptions.content) return this.pageFeedOptions.content;
 
-    return getPageExcerpt(this.app, this.page, { excerptLength: Infinity });
+    return getPageRenderContent(this.app, this.page, this.shouldRemoveElement);
   }
 
   get image(): string | null {
@@ -215,7 +238,7 @@ export class FeedPage {
     return null;
   }
 
-  getFeedItem(): FeedItemOption | null {
+  getFeedItem(): FeedItemInformation | null {
     const {
       author,
       category,
@@ -224,6 +247,7 @@ export class FeedPage {
       copyright,
       description,
       enclosure,
+      excerpt,
       guid,
       image,
       lastUpdated,
@@ -251,6 +275,7 @@ export class FeedPage {
       author,
       contributor,
       ...(description ? { description } : {}),
+      ...(excerpt ? { summary: excerpt } : {}),
       ...(category ? { category } : {}),
       ...(enclosure ? { enclosure } : {}),
       ...(pubDate ? { pubDate } : {}),

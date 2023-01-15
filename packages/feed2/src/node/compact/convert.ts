@@ -1,4 +1,4 @@
-import { droppedLogger } from "./utils.js";
+import { deprecatedLogger, droppedLogger } from "./utils.js";
 
 import type { FeedOptions } from "../typings/index.js";
 
@@ -29,6 +29,12 @@ export const convertOptions = (
   // @ts-ignore
   // eslint-disable-next-line
   options.jsonOutputFilename = options["output"]?.rss?.path ?? "rss.xml";
+
+  deprecatedLogger({
+    options,
+    deprecatedOption: "customElements",
+    newOption: "removedElements",
+  });
 
   droppedLogger(options, "output");
 };

@@ -9,8 +9,17 @@ export interface FeedFrontmatterOption {
 
   /**
    * Feed description
+   *
+   * @description Should be plain text
    */
   description?: string;
+
+  /**
+   * Feed summary
+   *
+   * @description Should be html content
+   */
+  summary?: string;
 
   /**
    * Feed content

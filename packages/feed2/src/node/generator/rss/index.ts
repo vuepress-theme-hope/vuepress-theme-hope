@@ -1,6 +1,6 @@
-import { isUrl, stripTags } from "vuepress-shared/node";
+import { isUrl } from "vuepress-shared/node";
 import { js2xml } from "xml-js";
-import { FEED_GENERATOR, encodeXML } from "../utils.js";
+import { FEED_GENERATOR, encodeXML } from "../../utils/index.js";
 
 import type {
   RSSCategory,
@@ -13,8 +13,8 @@ import type { Feed } from "../feed.js";
 import type {
   FeedCategory,
   FeedEnclosure,
-  FeedItemOption,
-} from "../typings/index.js";
+  FeedItemInformation,
+} from "../../typings/index.js";
 
 const genCategory = (category: FeedCategory): RSSCategory => {
   const { name, domain } = category;
@@ -25,7 +25,7 @@ const genCategory = (category: FeedCategory): RSSCategory => {
   };
 };
 
-const genGuid = (item: FeedItemOption): RSSGuid => {
+const genGuid = (item: FeedItemInformation): RSSGuid => {
   const guid = item.guid || item.link;
 
   return {
@@ -138,9 +138,7 @@ export const renderRSS = (feed: Feed): string => {
 
     if (entry.description)
       item.description = {
-        _text: entry.description.startsWith("html:")
-          ? stripTags(entry.description.substring(5))
-          : entry.description,
+        _text: entry.description,
       };
 
     /**

@@ -1,10 +1,9 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { isArray } from "@vuepress/shared";
-import { stripTags } from "vuepress-shared/node";
 
 import type { Feed } from "../feed.js";
 import type { JSONAuthor, JSONContent, JSONItem } from "./typings.js";
-import type { FeedAuthor } from "../typings/index.js";
+import type { FeedAuthor } from "../../typings/index.js";
 
 const formatAuthor = (author: FeedAuthor): JSONAuthor => ({
   name: author.name!,
@@ -45,13 +44,7 @@ export const renderJSON = (feed: Feed): string => {
       title: item.title,
       url: item.link,
       id: item.guid || item.link,
-      ...(item.description
-        ? {
-            summary: item.description.startsWith("html:")
-              ? stripTags(item.description.substring(5))
-              : item.description,
-          }
-        : {}),
+      ...(item.description ? { summary: item.description } : {}),
 
       // json_feed distinguishes between html and text content
       // but since we only take a single type, we'll assume HTML

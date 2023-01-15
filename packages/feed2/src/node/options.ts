@@ -5,7 +5,7 @@ import {
 } from "@vuepress/shared";
 import { deepAssign } from "vuepress-shared/node";
 
-import { compareDate, resolveUrl } from "./utils.js";
+import { compareDate, resolveUrl } from "./utils/index.js";
 
 import type { App, Page } from "@vuepress/core";
 import type { GitData } from "@vuepress/plugin-git";

@@ -240,6 +240,28 @@ export interface FeedGetter {
   ) => string | null;
 
   /**
+   * Item excerpt getter
+   *
+   * 项目摘要获取器
+   */
+  excerpt?: <
+    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
+      never,
+      never
+    >,
+    ExtraPageFrontmatter extends Record<
+      string | number | symbol,
+      unknown
+    > = Record<string, unknown>,
+    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
+      never,
+      never
+    >
+  >(
+    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+  ) => string | null;
+
+  /**
    * Item content getter
    *
    * 项目内容获取器

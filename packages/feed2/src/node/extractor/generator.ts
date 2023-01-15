@@ -1,14 +1,14 @@
 import { colors, fs, path } from "@vuepress/utils";
 
-import { Feed } from "./feed.js";
-import { getFeedChannelOption, getFeedLinks, getFilename } from "./options.js";
-import { FeedPage } from "./page.js";
-import { compareDate, logger } from "./utils.js";
+import { Feed } from "../generator/feed.js";
+import { getFeedChannelOption, getFeedLinks, getFilename } from "../options.js";
+import { FeedPage } from "./getter.js";
+import { compareDate, logger } from "../utils/index.js";
 
 import type { App, Page } from "@vuepress/core";
 import type { GitData } from "@vuepress/plugin-git";
-import type { ResolvedFeedOptionsMap } from "./options.js";
-import type { FeedPluginFrontmatter } from "./typings/index.js";
+import type { ResolvedFeedOptionsMap } from "../options.js";
+import type { FeedPluginFrontmatter } from "../typings/index.js";
 
 export class FeedGenerator {
   /** feed 生成器 */
@@ -117,7 +117,7 @@ export class FeedGenerator {
             await fs.outputFile(dest(jsonOutputFilename), feed.json());
 
             logger.succeed(
-              `JSON feed file generated and saved to ${colors.cyan(
+              `JSON feed file generated and saved to /${colors.cyan(
                 `${jsonOutputFilename}`
               )}`
             );
@@ -129,7 +129,7 @@ export class FeedGenerator {
             await fs.outputFile(dest(rssOutputFilename), feed.rss());
 
             logger.succeed(
-              `RSS feed file generated and saved to ${colors.cyan(
+              `RSS feed file generated and saved to /${colors.cyan(
                 `${rssOutputFilename}`
               )}`
             );

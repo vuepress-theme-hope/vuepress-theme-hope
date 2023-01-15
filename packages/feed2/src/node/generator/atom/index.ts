@@ -1,8 +1,8 @@
 import { js2xml } from "xml-js";
-import { FEED_GENERATOR, encodeXML } from "../utils.js";
+import { FEED_GENERATOR, encodeXML } from "../../utils/index.js";
 
 import type { Feed } from "../feed.js";
-import type { FeedAuthor, FeedCategory } from "../typings/index.js";
+import type { FeedAuthor, FeedCategory } from "../../typings/index.js";
 import type {
   AtomAuthor,
   AtomCategory,
@@ -104,17 +104,16 @@ export const renderAtom = (feed: Feed): string => {
     };
 
     // entry: recommended elements
-    if (item.description) {
-      entry.summary = item.description.startsWith("html:")
-        ? {
-            _attributes: { type: "html" },
-            _cdata: item.description.substring(5),
-          }
-        : {
-            _attributes: { type: "html" },
-            _text: item.description,
-          };
-    }
+    if (item.summary)
+      entry.summary = {
+        _attributes: { type: "html" },
+        _cdata: item.summary,
+      };
+    else if (item.description)
+      entry.summary = {
+        _attributes: { type: "html" },
+        _text: item.description,
+      };
 
     if (item.content)
       entry.content = {

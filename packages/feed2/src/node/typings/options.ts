@@ -59,7 +59,7 @@ export interface BaseFeedOptions {
    *
    * @default ['ExternalLinkIcon']
    */
-  customElements?: string[];
+  removedElements?: (string | RegExp)[] | ((tagName: string) => boolean);
 
   /**
    * A custom filter function, used to filter feed items.

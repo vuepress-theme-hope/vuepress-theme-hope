@@ -1,5 +1,5 @@
 import { getFilename } from "./options.js";
-import { resolveUrl } from "./utils.js";
+import { resolveUrl } from "./utils/index.js";
 
 import type { App, HeadConfig } from "@vuepress/core";
 import type { ResolvedFeedOptionsMap } from "./options.js";
