@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.159](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.158...v2.0.0-beta.159) (2023-01-15)
+
+### Features
+
+- **feed2:** rebuild feed2 ([580c11a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/580c11a330ede9a1f224477a005de932e18d52f4))
+- **sitemap2:** add xsl template for sitemap ([03032b6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/03032b656f80b8970dc1784e6568c3cc1429c78f))
+
+### Bug Fixes
+
+- add support for android wechat browser ([7f31681](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7f31681d6a74d319d8e5a538e9eb5820a4ac718c))
+- **theme:** exclude blog pages for feed ([68cb531](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/68cb531ed6475d07f124bd43c879b800bed15e90))
+
 ## [2.0.0-beta.158](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.157...v2.0.0-beta.158) (2023-01-14)
 
 ### Features
