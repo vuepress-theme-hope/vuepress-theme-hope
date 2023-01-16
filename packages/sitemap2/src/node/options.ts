@@ -62,7 +62,7 @@ export interface SitemapOptions {
    *
    * 用作模板的 XSL 文件路径
    *
-   * @default "vuepress-plugin-sitemap2/template/sitemap.xsl"
+   * @default "vuepress-plugin-sitemap2/templates/sitemap.xsl"
    */
   sitemapXSLTemplate?: string;
 
