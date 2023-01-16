@@ -24,9 +24,9 @@ export interface MarkdownEnhanceOptions {
   /**
    * Whether check dead links in markdown
    *
-   * @description `true` equals to `'always'`, `false` equals to `'never'`
+   * @description `true` equals to `"always"`, `false` equals to `"never"`
    *
-   * @default 'dev'
+   * @default "dev"
    */
   linkCheck?: "always" | "dev" | "build" | "never" | boolean;
 

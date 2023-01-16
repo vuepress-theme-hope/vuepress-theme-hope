@@ -84,7 +84,7 @@ export interface BlogOptions extends PageExcerptOptions {
    *
    * 注入文章信息至路由元数据时使用的键名。
    *
-   * @default '_blog'
+   * @default "_blog"
    */
   metaScope?: string;
 
@@ -93,7 +93,7 @@ export interface BlogOptions extends PageExcerptOptions {
    *
    * Slugify 函数
    *
-   * @default (name) => name.replace(/ _/g, '-').toLowerCase()
+   * @default (name) => name.replace(/ _/g, "-").toLowerCase()
    */
   slugify?: (name: string) => string;
 

@@ -16,7 +16,7 @@ type LoaderContext = Exclude<
   : never;
 
 /**
- * Use 'additionalData' to make `${id}-config` available in scss
+ * Use "additionalData" to make `${id}-config` available in scss
  *
  * @param config VuePress Bundler config
  * @param app VuePress Node App

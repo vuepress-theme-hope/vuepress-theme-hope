@@ -73,7 +73,7 @@ export interface SearchProOptions {
    *
    * @description 当热键被按下时，搜索框的输入框会被聚焦，设置为空数组以禁用热键
    *
-   * @default [{key: 'k', ctrl: true}]
+   * @default [{key: "k", ctrl: true}]
    */
   hotKeys?: SearchProHotKeyOptions[];
 

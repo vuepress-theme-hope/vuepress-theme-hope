@@ -46,7 +46,7 @@ export interface AutoCatalogOptions {
    *
    * @description 默认情况下，插件将注册一个 `<AutoCatalog />` 组件并使用该组件。如果你想使用自己的组件，可以将此选项设置为你的组件的名称。
    *
-   * @default 'AutoCatalog'
+   * @default "AutoCatalog"
    */
   component?: string;
 

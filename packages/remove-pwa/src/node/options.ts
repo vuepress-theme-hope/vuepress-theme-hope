@@ -4,7 +4,7 @@ export interface RemovePWAOptions {
    *
    * 原始 service worker 缓存前缀
    *
-   * @default 'workbox'
+   * @default "workbox"
    */
   cachePrefix?: string;
 
@@ -13,7 +13,7 @@ export interface RemovePWAOptions {
    *
    * 相对于 dest 文件夹的原始 service worker 位置
    *
-   * @default 'service-worker.js'
+   * @default "service-worker.js"
    */
   swLocation?: string;
 }

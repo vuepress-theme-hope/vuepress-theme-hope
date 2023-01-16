@@ -107,6 +107,8 @@ tag:
 
 - удален `displayAllHeaders`
 
+- support generating sidebar automatically from file structure
+
 ### Конфигурация боковой панели навигации унифицирована
 
 - изменено `items` в конфигурации панели навигации на `children`
@@ -219,7 +221,9 @@ tag:
 
 - перемещен `feed` в `plugins.feed`
 
-  - Поддерживает удаление пользовательских компонентов и элементов с помощью параметров `plugins.feed.customElements` ![NEW](https://img.shields.io/badge/-new-brightgreen)
+  - Поддерживает удаление пользовательских компонентов и элементов с помощью параметров `plugins.feed.removedElements` ![NEW](https://img.shields.io/badge/-new-brightgreen)
+
+  - Visualized atom and rss feeds, configurable with `plugins.feed.atomXslFilename` `plugins.feed.atomXslTemplate` `plugins.feed.rssXslFilename` and `plugins.feed.rssXslTemplate` ![NEW](https://img.shields.io/badge/-new-brightgreen)
 
   - Настройте генерацию ленты с помощью опцию `plugins.feed.getter` ![NEW](https://img.shields.io/badge/-new-brightgreen)
 
@@ -407,6 +411,8 @@ tag:
     развернуты в нескольких местах.
 
 - перемещен `sitemap` в `plugins.sitemap`
+
+  - Visualized sitemap, configurable with `plugins.sitemap.sitemapXSLFilename` and `plugins.sitemap.sitemapXSLTemplate` ![New](https://img.shields.io/badge/-New-brightgreen)
 
   - `plugin.sitemap.priority` ![New](https://img.shields.io/badge/-New-brightgreen): установка значения по умолчанию для приоритета
 

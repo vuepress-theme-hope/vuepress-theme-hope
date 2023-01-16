@@ -20,7 +20,7 @@ export interface ThemeProjectHomeActionOptions {
    *
    * 操作类型
    *
-   * @default 'default'
+   * @default "default"
    */
   type?: "primary" | "default";
 }

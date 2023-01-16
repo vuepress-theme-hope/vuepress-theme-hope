@@ -13,7 +13,7 @@ export interface TwikooInitOptions {
    *
    * 腾讯云区域
    *
-   * @default 'ap-shanghai'
+   * @default "ap-shanghai"
    */
   region?: string;
 }

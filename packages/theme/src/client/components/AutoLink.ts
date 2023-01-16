@@ -59,7 +59,7 @@ export default defineComponent({
         : config.value.target || (hasHttpProtocol.value ? "_blank" : undefined)
     );
 
-    // if the `target` attr is '_blank'
+    // if the `target` attr is "_blank"
     const isBlankTarget = computed(() => linkTarget.value === "_blank");
 
     // render `<RouterLink>` or not

@@ -158,7 +158,7 @@ export interface LayoutOptions {
    *
    * 结构化侧边栏排序器
    *
-   * @default 'order'
+   * @default "order"
    */
   sidebarSorter?: SidebarSorter;
 }

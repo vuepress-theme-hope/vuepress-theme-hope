@@ -107,6 +107,8 @@ tag:
 
 - remove `displayAllHeaders`
 
+- support generating sidebar automatically from file structure
+
 ### Navbar Sidebar Config Unified
 
 - change `items` in navbar config to `children`
@@ -219,7 +221,9 @@ Move all plugin related options under `plugins`.
 
 - move `feed` to `plugins.feed`
 
-  - Supports removing custom components and elements through `plugins.feed.customElements` options ![NEW](https://img.shields.io/badge/-new-brightgreen)
+  - Supports removing custom components and elements through `plugins.feed.removedElements` options ![NEW](https://img.shields.io/badge/-new-brightgreen)
+
+  - Visualized atom and rss feeds, configurable with `plugins.feed.atomXslFilename` `plugins.feed.atomXslTemplate` `plugins.feed.rssXslFilename` and `plugins.feed.rssXslTemplate` ![NEW](https://img.shields.io/badge/-new-brightgreen)
 
   - Customize feed generation via `plugins.feed.getter` option ![NEW](https://img.shields.io/badge/-new-brightgreen)
 
@@ -411,6 +415,8 @@ Move all plugin related options under `plugins`.
     are deployed in several places.
 
 - move `sitemap` to `plugins.sitemap`
+
+  - Visualized sitemap, configurable with `plugins.sitemap.sitemapXSLFilename` and `plugins.sitemap.sitemapXSLTemplate` ![New](https://img.shields.io/badge/-New-brightgreen)
 
   - `plugin.sitemap.priority` ![New](https://img.shields.io/badge/-New-brightgreen): setting default value for priority
 

@@ -85,7 +85,7 @@ export interface VuePlaygroundOptions {
    *
    * 布局
    *
-   * @default 'vertical'
+   * @default "vertical"
    */
   layout?: "vertical" | "horizontal";
 

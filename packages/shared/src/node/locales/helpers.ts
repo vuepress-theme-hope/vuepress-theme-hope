@@ -13,7 +13,7 @@ export const path2Lang = (path = "", debug = false): HopeLang => {
 
   if (debug)
     console.warn(
-      `${path} isn’t assign with a lang, and will return 'en-US' instead.`
+      `${path} isn’t assign with a lang, and will return "en-US" instead.`
     );
 
   return "en-US";
@@ -24,7 +24,7 @@ export const lang2Path = (lang = "", debug = false): string => {
   if (lang in lang2PathConfig) return lang2PathConfig[lang as HopeLang];
 
   if (debug)
-    console.warn(`${lang} has no path config, and will return '/' instead.`);
+    console.warn(`${lang} has no path config, and will return "/" instead.`);
 
   return "/";
 };

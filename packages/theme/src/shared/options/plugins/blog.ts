@@ -16,7 +16,7 @@ export interface BlogPluginOptions
    *
    * 文章列表的路径
    *
-   * @default '/article/'
+   * @default "/article/"
    */
   article?: string;
 
@@ -25,7 +25,7 @@ export interface BlogPluginOptions
    *
    * 分类地图页的地址
    *
-   * @default '/category/'
+   * @default "/category/"
    */
   category?: string;
 
@@ -38,7 +38,7 @@ export interface BlogPluginOptions
    *
    * 其中 `:name` 会被自动替换为当前分类名称
    *
-   * @default '/category/:name/'
+   * @default "/category/:name/"
    */
   categoryItem?: string;
 
@@ -47,7 +47,7 @@ export interface BlogPluginOptions
    *
    * 标签地图页的地址
    *
-   * @default '/tag/'
+   * @default "/tag/"
    */
   tag?: string;
 
@@ -60,7 +60,7 @@ export interface BlogPluginOptions
    *
    * 其中 `:name` 会被自动替换为当前分类名称
    *
-   * @default '/tag/:name/'
+   * @default "/tag/:name/"
    */
   tagItem?: string;
 
@@ -69,7 +69,7 @@ export interface BlogPluginOptions
    *
    * 星标文章列表的路径
    *
-   * @default '/star/''
+   * @default "/star/""
    */
   star?: string;
 
@@ -78,7 +78,7 @@ export interface BlogPluginOptions
    *
    * 时间线路径
    *
-   * @default '/timeline/'
+   * @default "/timeline/"
    */
   timeline?: string;
 

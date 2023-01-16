@@ -20,5 +20,5 @@ export const generateEmptyServiceWorker = (
   fs.writeFile(
     app.dir.dest(removeLeadingSlash(swLocation)),
     getEmptyServiceWorker(cachePrefix),
-    { encoding: "utf-8" }
+    "uft-8"
   );

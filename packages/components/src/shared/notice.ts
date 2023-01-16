@@ -16,7 +16,7 @@ export interface NoticeActionOption {
    *
    * 操作类型
    *
-   * @default 'default
+   * @default "default"
    */
   type?: "primary" | "default";
 }

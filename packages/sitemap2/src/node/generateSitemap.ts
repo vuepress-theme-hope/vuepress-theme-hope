@@ -108,7 +108,7 @@ const generatePageMap = (
             !locales[localePrefix].lang &&
             !reportedLocales.includes(localePrefix)
           ) {
-            logger.warn(`'lang' option for ${localePrefix} is missing`);
+            logger.warn(`"lang" option for ${localePrefix} is missing`);
             reportedLocales.push(localePrefix);
           }
         });

@@ -241,11 +241,11 @@ declare module "photoswipe" {
     /**
      * Element container, possible values:
      *
-     * - 'bar'  (top toolbar, .pswp__top-bar, default value),
-     * - 'wrapper' (scroll viewport wrapper, .pswp__scroll-wrap),
-     * - 'root' (root element of the dialog, .pswp)
+     * - "bar"  (top toolbar, .pswp__top-bar, default value),
+     * - "wrapper" (scroll viewport wrapper, .pswp__scroll-wrap),
+     * - "root" (root element of the dialog, .pswp)
      *
-     * @description If you add a text inside 'wrapper' - it won’t be selectable, as PhotoSwipe intersects all touch events there.
+     * @description If you add a text inside "wrapper" - it won’t be selectable, as PhotoSwipe intersects all touch events there.
      */
     appendTo?: "bar" | "wrapper" | "root";
 

@@ -37,7 +37,7 @@ export interface BlogTypeOptions<
    *
    * 待注册的页面路径
    *
-   * @default '/:key/'
+   * @default "/:key/"
    */
   path?: string | false;
 
@@ -46,7 +46,7 @@ export interface BlogTypeOptions<
    *
    * 页面布局组件名称
    *
-   * @default 'Layout'
+   * @default "Layout"
    */
   layout?: string;
 

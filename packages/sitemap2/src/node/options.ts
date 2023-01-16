@@ -44,7 +44,7 @@ export interface SitemapOptions {
    *
    * 输出的文件名，相对于输出目录
    *
-   * @default 'sitemap.xml'
+   * @default "sitemap.xml"
    */
   sitemapFilename?: string;
 
@@ -53,7 +53,7 @@ export interface SitemapOptions {
    *
    * 输出的 xsl 文件名，相对于输出目录
    *
-   * @default 'sitemap.xsl'
+   * @default "sitemap.xsl"
    */
   sitemapXSLFilename?: string;
 
@@ -62,7 +62,7 @@ export interface SitemapOptions {
    *
    * 用作模板的 XSL 文件路径
    *
-   * @default 'vuepress-plugin-sitemap2/template/sitemap.xsl'
+   * @default "vuepress-plugin-sitemap2/template/sitemap.xsl"
    */
   sitemapXSLTemplate?: string;
 

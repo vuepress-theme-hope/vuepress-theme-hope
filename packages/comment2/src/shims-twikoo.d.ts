@@ -10,7 +10,7 @@ declare module "twikoo" {
     /**
      * Tencloud region
      *
-     * @default 'ap-shanghai'
+     * @default "ap-shanghai"
      */
     region?: string;
 
@@ -47,7 +47,7 @@ declare module "twikoo" {
     /**
      * Tencloud region
      *
-     * @default 'ap-shanghai'
+     * @default "ap-shanghai"
      */
     region?: string;
 
@@ -79,7 +79,7 @@ declare module "twikoo" {
     /**
      * Tencloud region
      *
-     * @default 'ap-shanghai'
+     * @default "ap-shanghai"
      */
     region?: string;
 

@@ -4,7 +4,7 @@ export interface DocsRepoLocaleOptions {
    *
    * 编辑链接的匹配，我们已经为 GitHub、Gitlab、Gitee 和 Bitbucket 提供了内置支持
    *
-   * @example ':repo/edit/:branch/:path'
+   * @example ":repo/edit/:branch/:path"
    */
   editLinkPattern?: string;
 
@@ -22,7 +22,7 @@ export interface DocsRepoLocaleOptions {
    *
    * 文档所在分支
    *
-   * @default 'main'
+   * @default "main"
    */
   docsBranch?: string;
 
@@ -31,7 +31,7 @@ export interface DocsRepoLocaleOptions {
    *
    * 文档在仓库中的目录
    *
-   * @default ''
+   * @default ""
    */
   docsDir?: string;
 }

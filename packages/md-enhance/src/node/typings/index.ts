@@ -1,6 +1,7 @@
 import type { MarkdownItIncludeOptions } from "@mdit/plugin-include";
 import type { MarkdownItStylizeConfig } from "@mdit/plugin-stylize";
 
+export type { MarkdownItAttrsOptions as AttrsOptions } from "@mdit/plugin-attrs";
 export type { MarkdownItFigureOptions as FigureOptions } from "@mdit/plugin-figure";
 export type { MarkdownItImgMarkOptions as ImgMarkOptions } from "@mdit/plugin-img-mark";
 export type { MarkdownItMathjaxOptions as MathjaxOptions } from "@mdit/plugin-mathjax";
@@ -10,7 +11,6 @@ export type { MarkdownItTaskListOptions as TasklistOptions } from "@mdit/plugin-
 export type IncludeOptions = Omit<MarkdownItIncludeOptions, "getCurrentPath">;
 export type StylizeOptions = MarkdownItStylizeConfig[];
 
-export * from "./attrs.js";
 export * from "./hint.js";
 export * from "./locales.js";
 export * from "./playground.js";

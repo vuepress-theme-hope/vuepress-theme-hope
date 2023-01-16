@@ -113,6 +113,8 @@ tag:
 
 - 移除 `displayAllHeaders`
 
+- 支持从文件结构中生成侧边栏
+
 ### 导航栏侧边栏配置统一
 
 - 导航栏配置中的 `items` 改为 `children`
@@ -217,7 +219,9 @@ tag:
 
 - `feed` 移动至 `plugins.feed`
 
-  - 支持通过 `plugins.feed.customElements` 选项移除自定义组件和元素 ![新增](https://img.shields.io/badge/-新增-brightgreen)
+  - 支持通过 `plugins.feed.removedElements` 选项移除自定义组件和元素 ![新增](https://img.shields.io/badge/-新增-brightgreen)
+
+  - 可视化的 Atom 和 RSS 流，支持通过 `plugins.feed.atomXslFilename` `plugins.feed.atomXslTemplate` `plugins.feed.rssXslFilename` 和 `plugins.feed.rssXslTemplate` 配置 ![新增](https://img.shields.io/badge/-新增-brightgreen)
 
   - 通过 `plugins.feed.getter` 选项完全自定义 Feed 生成 ![新增](https://img.shields.io/badge/-新增-brightgreen)
 
@@ -412,6 +416,8 @@ tag:
     现在你可以编辑所有 `<head>` 标签，而不是仅 `<meta>` 标签。
 
 - `sitemap` 移动至 `plugins.sitemap`
+
+  - 可视化的站点地图，支持通过 `plugins.sitemap.sitemapXSLFilename` 和 `plugins.sitemap.sitemapXSLTemplate` 配置 ![新增](https://img.shields.io/badge/-新增-brightgreen)
 
   - `plugins.sitemap.priority` ![新增](https://img.shields.io/badge/-新增-brightgreen): 设置优先级的默认值
 

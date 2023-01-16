@@ -50,7 +50,7 @@ export interface BlogCategoryOptions<
    *
    * 页面布局组件名称
    *
-   * @default 'Layout'
+   * @default "Layout"
    */
   layout?: string;
 
@@ -79,7 +79,7 @@ export interface BlogCategoryOptions<
    *
    * 项目页面布局组件名称
    *
-   * @default 'Layout'
+   * @default "Layout"
    */
   itemLayout?: string;
 

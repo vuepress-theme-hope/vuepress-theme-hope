@@ -8,8 +8,8 @@ import type { AutoLinkOptions } from "../../shared/index.js";
  * Resolve AutoLink props from string
  *
  * @example
- * - Input: '/README.md'
- * - Output: { text: 'Home', link: '/' }
+ * - Input: "/README.md"
+ * - Output: { text: "Home", link: "/" }
  */
 export const useAutoLink = (
   item: string,

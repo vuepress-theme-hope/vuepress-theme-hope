@@ -115,7 +115,7 @@ export interface NavbarLocaleOptions {
    *
    * 是否在向下滚动时自动隐藏导航栏
    *
-   * @default 'mobile'
+   * @default "mobile"
    */
   navbarAutoHide?: "always" | "mobile" | "none";
 

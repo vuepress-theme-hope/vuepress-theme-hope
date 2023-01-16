@@ -100,7 +100,7 @@ export interface RevealOptions {
   /**
    * Optional function that blocks keyboard events when retuning false
    *
-   * If you set this to 'focused', we will only capture keyboard events
+   * If you set this to "focused", we will only capture keyboard events
    * for embedded decks when they are in focus
    */
   // Function is not supported here

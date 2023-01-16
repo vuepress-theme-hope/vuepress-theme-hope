@@ -6,12 +6,12 @@ import type { GitPluginPageData } from "@vuepress/plugin-git";
 
 export interface DateOptions {
   /**
-   * @default 'en'
+   * @default "en"
    */
   lang?: string;
   timezone?: string;
   /**
-   * @default 'full'
+   * @default "full"
    */
   type?: "date" | "time" | "full";
 }

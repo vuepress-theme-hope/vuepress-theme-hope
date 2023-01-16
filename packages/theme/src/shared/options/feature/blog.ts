@@ -136,7 +136,7 @@ export interface BlogLocaleOptions {
    *
    * 是否在侧边栏展示博主信息
    *
-   * @default 'mobile'
+   * @default "mobile"
    */
   sidebarDisplay?: "mobile" | "none" | "always";
 
@@ -145,7 +145,7 @@ export interface BlogLocaleOptions {
    *
    * 时间轴自定义文字
    *
-   * @default 'Yesterday once more'
+   * @default "Yesterday once more"
    */
   timeline?: string;
 

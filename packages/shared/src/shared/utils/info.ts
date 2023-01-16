@@ -16,7 +16,7 @@ export const getAuthor = (
     if (isPlainObject(author) && author.name) return [author];
 
     console.error(
-      `Expect 'author' to be \`AuthorInfo[] | AuthorInfo | string[] | string ${
+      `Expect "author" to be \`AuthorInfo[] | AuthorInfo | string[] | string ${
         canDisable ? "" : "| false"
       } | undefined\`, but got`,
       author

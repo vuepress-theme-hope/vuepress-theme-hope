@@ -15,7 +15,7 @@ export interface PageExcerptOptions {
    *
    * 摘要分隔符
    *
-   * @default '<!-- more -->'
+   * @default "<!-- more -->"
    */
   excerptSeparator?: string;
 

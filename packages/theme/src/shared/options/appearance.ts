@@ -77,7 +77,7 @@ export interface AppearanceOptions {
    * - `"enable"`: 强制深色模式
    * - `"disable"`: 禁用深色模式
    *
-   * @default 'auto-switch'
+   * @default "auto-switch"
    */
   darkmode?: DarkmodeOptions;
 
@@ -113,7 +113,7 @@ export interface AppearanceOptions {
    *
    * 字体图标资源链接
    *
-   * @description `'iconfont'` and `'fontawesome'` keywords are supported
+   * @description `"iconfont"` and `"fontawesome"` keywords are supported
    */
   iconAssets?:
     | "iconfont"
@@ -127,7 +127,7 @@ export interface AppearanceOptions {
    *
    * 字体图标 class 前缀
    *
-   * @default ''
+   * @default ""
    */
   iconPrefix?: string;
 }

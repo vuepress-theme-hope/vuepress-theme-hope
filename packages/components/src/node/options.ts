@@ -56,7 +56,7 @@ export interface ComponentOptions {
        *
        * 字体图标资源链接
        *
-       * @description `'iconfont'` and `'fontawesome'` keywords are supported
+       * @description `"iconfont"` and `"fontawesome"` keywords are supported
        */
       assets?:
         | "iconfont"
@@ -70,7 +70,7 @@ export interface ComponentOptions {
        *
        * 字体图标的 Class 前缀
        *
-       * @default ''
+       * @default ""
        */
       prefix?: string;
     };

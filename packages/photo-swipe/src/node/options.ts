@@ -10,7 +10,7 @@ export interface PhotoSwipeOptions {
    *
    * 图片选择器
    *
-   * @default '.theme-default-content :not(a) > img'
+   * @default ".theme-default-content :not(a) > img"
    */
   selector?: string | string[];
 
