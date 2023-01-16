@@ -1,12 +1,16 @@
 import {
+  ensureEndingSlash,
   isArray,
   isLinkHttp,
   removeEndingSlash,
   removeLeadingSlash,
 } from "@vuepress/shared";
+import { getDirname, path } from "@vuepress/utils";
 import { deepAssign } from "vuepress-shared/node";
 
-import { TEMPLATE_FOLDER, compareDate, resolveUrl } from "./utils/index.js";
+const __dirname = getDirname(import.meta.url);
+
+import { compareDate, resolveUrl } from "./utils/index.js";
 
 import type { App, Page } from "@vuepress/core";
 import type { GitData } from "@vuepress/plugin-git";
@@ -16,6 +20,10 @@ import type {
   FeedLinks,
   FeedOptions,
 } from "./typings/index.js";
+
+const TEMPLATE_FOLDER = ensureEndingSlash(
+  path.resolve(__dirname, "../../templates")
+);
 
 export type ResolvedFeedOptions = BaseFeedOptions & { hostname: string };
 
