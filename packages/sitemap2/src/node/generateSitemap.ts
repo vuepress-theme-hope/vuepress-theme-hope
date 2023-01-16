@@ -11,10 +11,10 @@ import type { App, Page } from "@vuepress/core";
 import type { GitData } from "@vuepress/plugin-git";
 import type { ModifyTimeGetter, SitemapOptions } from "./options.js";
 import type {
-  SitemapFrontmatterOption,
   SitemapImageOption,
   SitemapLinkOption,
   SitemapNewsOption,
+  SitemapPluginFrontmatter,
   SitemapVideoOption,
 } from "./typings/index.js";
 
@@ -77,70 +77,75 @@ const generatePageMap = (
 
   const pagesMap = new Map<string, SitemapPageInfo>();
 
-  pages.forEach((page) => {
-    const frontmatterOptions: SitemapFrontmatterOption =
-      <SitemapFrontmatterOption>page.frontmatter["sitemap"] || {};
+  pages.forEach(
+    (page: Page<Record<never, never>, SitemapPluginFrontmatter>) => {
+      const frontmatterOptions = page.frontmatter.sitemap;
 
-    const metaRobotTags = (page.frontmatter.head || []).find(
-      (head) => head[1]["name"] === "robots"
-    );
+      if (frontmatterOptions === false) return;
 
-    const excludePage = metaRobotTags
-      ? (<string>metaRobotTags[1]["content"] || "")
+      const metaRobotTags = (page.frontmatter.head || []).find(
+        (head) => head[1]["name"] === "robots"
+      );
+
+      if (
+        // meta tags do not allow index
+        (<string>metaRobotTags?.[1]["content"] || "")
           .split(/,/u)
           .map((content) => content.trim())
-          .includes("noindex")
-      : frontmatterOptions.exclude;
+          .includes("noindex") ||
+        // exclude in plugin options
+        excludeUrls.includes(page.path)
+      )
+        return;
 
-    if (excludePage || excludeUrls.includes(page.path)) return;
+      const lastModifyTime = modifyTimeGetter(page);
+      const { defaultPath } = stripLocalePrefix(page);
+      const relatedLocales = pageLocalesMap.get(defaultPath) || [];
 
-    const lastModifyTime = modifyTimeGetter(page);
-    const { defaultPath } = stripLocalePrefix(page);
-    const relatedLocales = pageLocalesMap.get(defaultPath) || [];
+      let links: SitemapLinkOption[] = [];
 
-    let links: SitemapLinkOption[] = [];
+      if (relatedLocales.length > 1) {
+        // warnings for missing `locale[path].lang` in debug mode
+        if (app.env.isDebug)
+          relatedLocales.forEach((localePrefix) => {
+            if (
+              !locales[localePrefix].lang &&
+              !reportedLocales.includes(localePrefix)
+            ) {
+              logger.warn(`"lang" option for ${localePrefix} is missing`);
+              reportedLocales.push(localePrefix);
+            }
+          });
 
-    if (relatedLocales.length > 1) {
-      // warnings for missing `locale[path].lang` in debug mode
-      if (app.env.isDebug)
-        relatedLocales.forEach((localePrefix) => {
-          if (
-            !locales[localePrefix].lang &&
-            !reportedLocales.includes(localePrefix)
-          ) {
-            logger.warn(`"lang" option for ${localePrefix} is missing`);
-            reportedLocales.push(localePrefix);
-          }
-        });
+        links = relatedLocales.map((localePrefix) => ({
+          lang: locales[localePrefix]?.lang || "en",
+          url: `${base}${removeLeadingSlash(
+            defaultPath.replace(/^\//u, localePrefix)
+          )}`,
+        }));
+      }
 
-      links = relatedLocales.map((localePrefix) => ({
-        lang: locales[localePrefix]?.lang || "en",
-        url: `${base}${removeLeadingSlash(
-          defaultPath.replace(/^\//u, localePrefix)
-        )}`,
-      }));
+      const sitemapInfo: SitemapPageInfo = {
+        ...(changefreq ? { changefreq } : {}),
+        links,
+        ...(lastModifyTime ? { lastmod: lastModifyTime } : {}),
+        ...frontmatterOptions,
+      };
+
+      // log sitemap info in debug mode
+      if (app.env.isDebug) {
+        logger.info(
+          `sitemap option for ${page.path}: ${JSON.stringify(
+            sitemapInfo,
+            null,
+            2
+          )}`
+        );
+      }
+
+      pagesMap.set(page.path, sitemapInfo);
     }
-
-    const sitemapInfo: SitemapPageInfo = {
-      ...(changefreq ? { changefreq } : {}),
-      links,
-      ...(lastModifyTime ? { lastmod: lastModifyTime } : {}),
-      ...frontmatterOptions,
-    };
-
-    // log sitemap info in debug mode
-    if (app.env.isDebug) {
-      logger.info(
-        `sitemap option for ${page.path}: ${JSON.stringify(
-          sitemapInfo,
-          null,
-          2
-        )}`
-      );
-    }
-
-    pagesMap.set(page.path, sitemapInfo);
-  });
+  );
 
   return pagesMap;
 };

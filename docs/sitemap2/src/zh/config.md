@@ -81,6 +81,13 @@ icon: config
 
 ## Frontmatter 选项
 
+### sitemap
+
+- 类型: `SitemapFrontmatterOptions | false`
+- 必填: 否
+
+`false` 代表不输出此页面到 Sitemap
+
 ### sitemap.changefreq
 
 - 类型: `"always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never"`
@@ -92,8 +99,6 @@ icon: config
 
 - 类型: `boolean`
 - 默认值: `false`
-
-是否不输出此页面到 Sitemap
 
 ### sitemap.priority
 

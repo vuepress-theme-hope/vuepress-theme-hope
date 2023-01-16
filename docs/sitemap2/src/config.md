@@ -82,19 +82,19 @@ Last modify time getter. By default, the plugin will use the timestamp generated
 
 ## Frontmatter Options
 
+### sitemap
+
+- Type: `SitemapFrontmatterOptions | false`
+- Required: No
+
+`false` means exclude the page from sitemap.
+
 ### sitemap.changefreq
 
 - Type: `"always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never"`
 - Default: `"daily"`
 
 Page default update frequency. This will override [changefreq](#changefreq) in Plugin Options.
-
-### sitemap.exclude
-
-- Type: `boolean`
-- Default: `false`
-
-Whether exclude the page from sitemap
 
 ### sitemap.priority
 
