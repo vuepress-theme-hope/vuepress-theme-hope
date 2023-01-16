@@ -14,11 +14,22 @@
             font-size: 14px;
           }
 
+          a {
+            color: inherit;
+          }
+
           table {
             width: 100%;
             border-radius: 8px;
             border-collapse: collapse;
             overflow: hidden;
+            text-align: center;
+          }
+
+          caption {
+            font-weight: bold;
+            font-size: 1.5rem;
+            line-height: 2;
           }
 
           th {
@@ -29,14 +40,17 @@
             color: #fff;
 
             font-weight: bold;
-            font-size: 14px;
-            text-align: left;
+            font-size: 16px;
           }
 
-          td {
-            padding: 4px;
-            border: 1px solid black;
-            font-size: 12px;
+          @media (max-width: 719px) {
+            th {
+              font-size: 14px;
+            }
+          }
+
+          th:first-child {
+            text-align: start;
           }
 
           tr:nth-child(even) {
@@ -47,8 +61,19 @@
             background-color: #e8e8e8;
           }
 
-          a {
-            color: inherit;
+          td {
+            padding: 4px;
+            font-size: 14px;
+          }
+
+          @media (max-width: 719px) {
+            td {
+              font-size: 12px;
+            }
+          }
+
+          td:first-child {
+            text-align: start;
           }
 
           footer {
@@ -63,26 +88,25 @@
         </style>
       </head>
       <body>
-        <h1>Sitemap</h1>
+        <h1>XML Sitemap</h1>
         <div id="content">
           <table>
-            <tbody>
+            <caption>URLs list</caption>
+            <thead>
               <tr>
-                <th>URL</th>
+                <th>
+                  <xsl:value-of select="concat('URL (', count(sitemap:urlset/sitemap:url), ')')" />
+                </th>
                 <th>Priority</th>
                 <th>Change Frequency</th>
                 <th>Last Updated Time</th>
               </tr>
+            </thead>
+            <tbody>
               <xsl:variable name="lower" select="'abcdefghijklmnopqrstuvwxyz'" />
               <xsl:variable name="upper" select="'ABCDEFGHIJKLMNOPQRSTUVWXYZ'" />
               <xsl:for-each select="sitemap:urlset/sitemap:url">
                 <tr>
-                  <xsl:if test="position() mod 2 != 0">
-                    <xsl:attribute name="class">ood</xsl:attribute>
-                  </xsl:if>
-                  <xsl:if test="position() mod 2 != 1">
-                    <xsl:attribute name="class">even</xsl:attribute>
-                  </xsl:if>
                   <td>
                     <xsl:variable name="itemURL">
                       <xsl:value-of select="sitemap:loc" />
