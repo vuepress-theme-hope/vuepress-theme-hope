@@ -26,6 +26,7 @@
   "type": "module",
   "exports": {
     ".": "./lib/node/index.js",
+    "./templates/*": "./templates/*",
     "./package.json": "./package.json"
   },
   "main": "lib/node/index.js",
