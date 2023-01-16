@@ -178,10 +178,12 @@
           th,
           td {
             padding: 0.6em 1em;
-            border: 1px solid #dfe2e5; } div[class*="language-"] {
+            border: 1px solid #dfe2e5;
+          } div[class*="language-"] {
             position: relative;
             border-radius: 6px;
-            background: #ecf4fa; } div[class*="language-"]::before {
+            background: #ecf4fa; 
+          } div[class*="language-"]::before {
             content: attr(data-ext);
 
             position: absolute;
@@ -196,6 +198,7 @@
 
           .rss-info {
             margin-top: 1rem;
+            padding: 0 2rem;
             text-align: center;
           }
 
@@ -212,7 +215,7 @@
             display: inline-block;
 
             max-width: 960px;
-            margin: 8px auto;
+            margin: 0.5rem auto;
             border-collapse: collapse;
 
             text-align: start;
@@ -225,8 +228,12 @@
 
           .rss-info th,
           .rss-info td {
-            padding: 8px 4px;
+            padding: 0.5rem 0.25rem;
             border: none;
+          }
+
+          .rss-info td:first-child {
+            font-weight: bold;
           }
 
           .rss-logo {
@@ -235,8 +242,8 @@
 
           .visit-button {
             display: inline-block;
-            padding: 8px 16px;
-            border-radius: 8px;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
 
             background: #339af0;
             color: #fff;
@@ -326,16 +333,18 @@
                   <xsl:value-of select="/rss/channel/language" />
                 </td>
               </tr>
-              <tr>
-                <td>Published Date:</td>
-                <td>
-                  <xsl:value-of select="/rss/channel/pubDate" />
-                </td>
-              </tr>
+              <xsl:if test="/rss/channel/pubDate and /rss/channel/pubDate != /rss/channel/lastBuildDate">
+                <tr>
+                  <td>Published Date:</td>
+                  <td>
+                    <xsl:value-of select="substring-before(/rss/channel/pubDate,' GMT')" />
+                  </td>
+                </tr>
+              </xsl:if>
               <tr>
                 <td>Last Build Date:</td>
                 <td>
-                  <xsl:value-of select="/rss/channel/lastBuildDate" />
+                  <xsl:value-of select="substring-before(/rss/channel/lastBuildDate,' GMT')" />
                 </td>
               </tr>
               <xsl:if test="/rss/channel/copyright">
@@ -343,6 +352,19 @@
                   <td>Copyright:</td>
                   <td>
                     <xsl:value-of select="/rss/channel/copyright" />
+                  </td>
+                </tr>
+              </xsl:if>
+              <xsl:if test="/rss/channel/category">
+                <tr>
+                  <td>
+                    Catetory:
+                  </td>
+                  <td>
+                    <xsl:for-each select="/rss/channel/category">
+                      <xsl:if test="position() != 1">, </xsl:if>
+                      <xsl:value-of select="current()" />
+                    </xsl:for-each>
                   </td>
                 </tr>
               </xsl:if>
@@ -366,13 +388,16 @@
                   </xsl:if>
                   <xsl:if test="category">
                     <span>
-                      <b>Author: </b>
-                      <xsl:value-of select="author" />
+                      <b>Catetory: </b>
+                      <xsl:for-each select="category">
+                        <xsl:if test="position() != 1">, </xsl:if>
+                        <xsl:value-of select="current()" />
+                      </xsl:for-each>
                     </span>
                   </xsl:if>
                   <span>
                     <b>Date: </b>
-                    <xsl:value-of select="pubDate" />
+                    <xsl:value-of select="substring-before(pubDate,' GMT')" />
                   </span>
                 </div>
               </div>

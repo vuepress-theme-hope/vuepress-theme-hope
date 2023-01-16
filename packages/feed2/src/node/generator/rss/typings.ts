@@ -99,6 +99,9 @@ export interface RSSItem {
   "content:encoded"?: RSSCDATA;
 }
 
+/**
+ * @see https://validator.w3.org/feed/docs/rss2.html
+ */
 export interface RSSContent {
   _declaration: {
     _attributes: {

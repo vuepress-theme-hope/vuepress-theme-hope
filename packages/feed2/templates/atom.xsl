@@ -196,6 +196,7 @@
 
           .atom-info {
             margin-top: 1rem;
+            padding: 0 2rem;
             text-align: center;
           }
 
@@ -212,7 +213,7 @@
             display: inline-block;
 
             max-width: 960px;
-            margin: 8px auto;
+            margin: 0.5rem auto;
             border-collapse: collapse;
 
             text-align: start;
@@ -225,8 +226,12 @@
 
           .atom-info th,
           .atom-info td {
-            padding: 8px 4px;
+            padding: 0.5rem 0.25rem;
             border: none;
+          }
+
+          .atom-info td:first-child {
+            font-weight: bold;
           }
 
           .atom-logo {
@@ -248,7 +253,7 @@
 
             max-width: 960px;
             margin: 16px auto;
-            border-radius: 8px;
+            border-radius: 0.5rem;
 
             background: #fff;
             box-shadow: 2px 4px 8px rgba(0 0 0 / 15%);
