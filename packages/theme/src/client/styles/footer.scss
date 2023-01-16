@@ -1,4 +1,6 @@
 .footer-wrapper {
+  position: relative;
+
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -16,6 +18,11 @@
     background var(--color-transition), padding var(--transform-transition);
 
   @media (max-width: hope-config.$tablet) {
+    padding-left: 2rem;
+  }
+
+  @media (min-width: hope-config.$pc) {
+    z-index: 150;
     padding-left: 2rem;
   }
 

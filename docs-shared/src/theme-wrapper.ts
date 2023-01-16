@@ -42,8 +42,7 @@ export const theme = (
 
     logo: "/logo.svg",
 
-    footer: "MIT Licensed | Copyright © 2019-present Mr.Hope",
-    copyright: false,
+    copyright: "MIT Licensed | Copyright © 2019-present Mr.Hope",
     displayFooter: true,
 
     pageInfo: ["ReadingTime", "Category", "Tag"],
