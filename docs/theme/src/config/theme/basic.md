@@ -61,6 +61,13 @@ It should contain full protocol (eg: `https://example.com`).
 
 Global default author.
 
+## favicon
+
+- Type: `string`
+- Required: No
+
+Site favicon.
+
 ## navbar
 
 - Type: `NavbarConfig`

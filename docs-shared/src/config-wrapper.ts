@@ -45,7 +45,6 @@ export const config = (
     head: [
       ...(pwa === false
         ? <HeadConfig[]>[
-            ["link", { rel: "icon", href: `${docsBase}favicon` }],
             [
               "link",
               {

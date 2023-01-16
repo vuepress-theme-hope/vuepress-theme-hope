@@ -61,6 +61,13 @@ tag:
 
 Глобальный автор по умолчанию.
 
+## favicon
+
+- Type: `string`
+- Required: No
+
+Site favicon.
+
 ## navbar
 
 - Тип: `NavbarConfig`

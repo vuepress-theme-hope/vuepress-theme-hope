@@ -32,6 +32,8 @@ export const theme = (
       url: "https://mrhope.site",
     },
 
+    favicon: "/favicon.ico",
+
     iconAssets: "iconfont",
 
     repo: `vuepress-theme-hope/vuepress-theme-hope/tree/main/packages/${name}/`,

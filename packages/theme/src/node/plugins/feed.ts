@@ -41,10 +41,11 @@ export const getFeedPlugin = (
   themeData: ThemeData,
   options: Omit<FeedOptions, "hostname"> = {},
   hostname?: string,
+  favicon?: string,
   legacy = false
 ): Plugin | null => {
   // disable feed if no options for feed plugin
-  if (!Object.keys(options || {}).length) return null;
+  if (!Object.keys(options).length) return null;
 
   const { removedElements } = options;
 
@@ -54,9 +55,9 @@ export const getFeedPlugin = (
     // @ts-expect-error
     hostname,
     channel: {
+      ...(favicon ? { icon: favicon } : {}),
       ...(themeData.locales["/"].logo
         ? {
-            icon: themeData.locales["/"].logo,
             image: themeData.locales["/"].logo,
           }
         : {}),
@@ -71,7 +72,8 @@ export const getFeedPlugin = (
             localePath,
             {
               channel: {
-                ...(logo ? { icon: logo, image: logo } : {}),
+                ...(favicon ? { icon: favicon } : {}),
+                ...(logo ? { image: logo } : {}),
                 ...(localeAuthor.length ? { author: localeAuthor[0] } : {}),
                 ...(typeof copyright === "string" ? { copyright } : {}),
               },

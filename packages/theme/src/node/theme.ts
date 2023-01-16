@@ -29,6 +29,7 @@ export const hopeTheme =
   (app) => {
     const { isDebug } = app.env;
     const {
+      favicon,
       hotReload = isDebug,
       plugins = {},
       hostname,
@@ -67,6 +68,26 @@ export const hopeTheme =
       }),
 
       extendsBundlerOptions,
+
+      onInitialized: (): void => {
+        if (favicon) {
+          const { base, head } = app.options;
+          const faviconLink = favicon.replace(/^\/?/, base);
+
+          // ensure favicon is not injected
+          if (
+            head.every(
+              ([tag, attrs]) =>
+                !(
+                  tag === "link" &&
+                  attrs["rel"] === "icon" &&
+                  attrs["href"] === faviconLink
+                )
+            )
+          )
+            head.push(["link", { rel: "icon", href: faviconLink }]);
+        }
+      },
 
       onPrepared: (): Promise<void> =>
         Promise.all([
@@ -109,6 +130,7 @@ export const hopeTheme =
           hotReload,
           iconAssets,
           iconPrefix,
+          favicon,
         },
         legacy
       ),
