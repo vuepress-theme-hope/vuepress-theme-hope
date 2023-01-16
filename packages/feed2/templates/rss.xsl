@@ -215,13 +215,32 @@
             margin: 8px auto;
             border-collapse: collapse;
 
-            background: #fff;
-
             text-align: start;
+          }
+
+          .rss-info tr {
+            background: transparent;
+            border: none;
+          }
+
+          .rss-info th,
+          .rss-info td {
+            padding: 8px 4px;
+            border: none;
           }
 
           .rss-logo {
             height: 8rem;
+          }
+
+          .visit-button {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 8px;
+
+            background: #339af0;
+            color: #fff;
+            font-weight: bold;
           }
 
           .rss-item-wrapper {
@@ -242,14 +261,26 @@
             text-align: start;
           }
 
-          .rss-title {
+          .rss-header {
             padding: 8px 12px;
-
             background-color: #339af0;
             color: #fff;
+          }
 
+          .rss-item-title {
+            border-bottom: 1px solid #fff;
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
+            line-height: 1.75;
+          }
+
+          .rss-item-info > span {
+            display: inline-block;
+            margin: 4px 0;
+          }
+
+          .rss-item-info > span + span {
+            margin-inline-start: 8px;
           }
 
           .rss-body {
@@ -283,8 +314,7 @@
             <xsl:value-of select="/rss/channel/description" />
           </h2>
           <div>
-
-            <a href="{rss/channel/link}" target="_blank">
+            <a class="visit-button" href="{rss/channel/link}" target="_blank">
               Visit Website
             </a>
           </div>
@@ -308,40 +338,6 @@
                   <xsl:value-of select="/rss/channel/lastBuildDate" />
                 </td>
               </tr>
-              <xsl:if test="atom:author/atom:name">
-                <tr>
-                  <td>Author:</td>
-                  <td>
-                    <xsl:for-each select="atom:author/atom:name">
-                      <xsl:if test="position() != 1">, </xsl:if>
-                      <xsl:value-of select="current()" />
-                    </xsl:for-each>
-                  </td>
-                </tr>
-              </xsl:if>
-              <xsl:if test="atom:contributor/atom:name">
-                <tr>
-                  <td>Contributor:</td>
-                  <td>
-                    <xsl:for-each select="atom:contributor/atom:name">
-                      <xsl:if test="position() != 1">, </xsl:if>
-                      <xsl:value-of select="current()" />
-                    </xsl:for-each>
-
-                  </td>
-                </tr>
-              </xsl:if>
-              <xsl:if test="atom:category">
-                <tr>
-                  <td>Categories:</td>
-                  <td>
-                    <xsl:for-each select="atom:category">
-                      <xsl:if test="position() != 1">, </xsl:if>
-                      <xsl:value-of select="current()/@term" />
-                    </xsl:for-each>
-                  </td>
-                </tr>
-              </xsl:if>
               <xsl:if test="/rss/channel/copyright">
                 <tr>
                   <td>Copyright:</td>
@@ -357,17 +353,34 @@
         <div class="rss-item-wrapper">
           <xsl:for-each select="/rss/channel/item">
             <div class="rss-item">
-              <div class="rss-title">
-                <xsl:value-of select="/rss/channel/item/title" />
+              <div class="rss-header">
+                <div class="rss-item-title">
+                  <xsl:value-of select="title" />
+                </div>
+                <div class="rss-item-info">
+                  <xsl:if test="author">
+                    <span>
+                      <b>Author: </b>
+                      <xsl:value-of select="author" />
+                    </span>
+                  </xsl:if>
+                  <xsl:if test="category">
+                    <span>
+                      <b>Author: </b>
+                      <xsl:value-of select="author" />
+                    </span>
+                  </xsl:if>
+                  <span>
+                    <b>Date: </b>
+                    <xsl:value-of select="pubDate" />
+                  </span>
+                </div>
               </div>
               <div class="rss-body">
-                <p>
-                  Date: <xsl:value-of select="/rss/channel/item/pubDate" />
-                </p>
-                <xsl:value-of select="/rss/channel/item/*[name()='content:encoded']" disable-output-escaping="yes" />
+                <xsl:value-of select="*[name()='content:encoded']" disable-output-escaping="yes" />
               </div>
               <div class="rss-footer">
-                <a href="{/rss/channel/item/link}" target="_blank">See Details</a>
+                <a href="{link}" target="_blank">See Details</a>
               </div>
             </div>
           </xsl:for-each>

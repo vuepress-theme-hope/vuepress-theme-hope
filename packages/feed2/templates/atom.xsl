@@ -215,9 +215,18 @@
             margin: 8px auto;
             border-collapse: collapse;
 
-            background: #fff;
-
             text-align: start;
+          }
+
+          .atom-info tr {
+            background: transparent;
+            border: none;
+          }
+
+          .atom-info th,
+          .atom-info td {
+            padding: 8px 4px;
+            border: none;
           }
 
           .atom-logo {
@@ -247,21 +256,35 @@
             text-align: start;
           }
 
-          .atom-title {
+          .atom-header {
             padding: 8px 12px;
-
             background-color: #339af0;
             color: #fff;
-
-            font-weight: bold;
-            font-size: 1.2rem;
           }
 
+          .atom-item-title {
+            border-bottom: 1px solid #fff;
+            font-weight: bold;
+            font-size: 1.5rem;
+            line-height: 1.75;
+          }
+
+          .atom-item-info > span {
+            display: inline-block;
+            margin: 4px 0;
+          }
+
+          .atom-item-info > span + span {
+            margin-inline-start: 8px;
+          }
+          
           .atom-body {
             padding: 4px 16px;
           }
 
           .atom-footer {
+            display: flex;
+            justify-content: space-between;
             padding: 12px 16px;
           }
 
@@ -348,17 +371,56 @@
         <div class="atom-item-wrapper">
           <xsl:for-each select="atom:entry">
             <div class="atom-item">
-              <div class="atom-title">
-                <xsl:value-of select="atom:title" />
+              <div class="atom-header">
+                <div class="atom-item-title">
+                  <xsl:value-of select="atom:title" />
+                </div>
+                <div class="atom-item-info">
+                  <xsl:if test="atom:author">
+                    <span>
+                      <b>Author: </b>
+                      <xsl:for-each select="atom:author">
+                        <xsl:if test="position() != 1">, </xsl:if>
+                        <xsl:value-of select="current()/atom:name" />
+                      </xsl:for-each>
+                    </span>
+                  </xsl:if>
+                  <xsl:if test="atom:contributor">
+                    <span>
+                      <b>Contributor: </b>
+                      <xsl:for-each select="atom:contributor">
+                        <xsl:if test="position() != 1">, </xsl:if>
+                        <xsl:value-of select="current()/atom:name" />
+                      </xsl:for-each>
+                    </span>
+                  </xsl:if>
+                  <xsl:if test="atom:published">
+                    <span>
+                      <b>Date: </b>
+                      <xsl:value-of select="concat(substring(atom:updated,0,11),concat(' ', substring(atom:updated,12,5)))" />
+                    </span>
+                  </xsl:if>
+                  <xsl:if test="atom:updated">
+                    <span>
+                      <b>Updated time: </b>
+                      <xsl:value-of select="concat(substring(atom:updated,0,11),concat(' ', substring(atom:updated,12,5)))" />
+                    </span>
+                  </xsl:if>
+                </div>
               </div>
               <div class="atom-body">
-                <p>
-                  <xsl:value-of select="concat(substring(atom:updated,0,11),concat(' ', substring(atom:updated,12,5)))" />
-                </p>
                 <xsl:value-of select="atom:summary" disable-output-escaping="yes" />
               </div>
               <div class="atom-footer">
-                <a href="{atom:link/@href}" target="_blank">See Details</a>
+                <a href="{atom:link/@href}" target="_blank">
+                  See Details
+                </a>
+                <span>
+                  <xsl:if test="atom:rights">
+                    <b>Copyright: </b>
+                    <xsl:value-of select="atom:rights" />
+                  </xsl:if>
+                </span>
               </div>
             </div>
           </xsl:for-each>
