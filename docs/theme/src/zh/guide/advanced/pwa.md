@@ -10,12 +10,6 @@ tag:
 
 该主题将通过内置 <ProjectLink name="pwa2" path="/zh/">`vuepress-plugin-pwa2`</ProjectLink> 提供渐进式 Web 应用程序支持[^pwa-intro]，该功能默认禁用。
 
-[^pwa-intro]: **PWA 介绍**
-
-    PWA 全称 Progressive Web app，即渐进式网络应用程序，标准由 W3C 规定。
-
-    它允许网站通过支持该特性的浏览器将网站作为 App 安装在对应平台上。
-
 ::: info
 
 `vuepress-theme-hope` 将主题选项中的 `plugins.pwa` 作为插件选项提供给 `vuepress-plugin-pwa2`。
@@ -25,6 +19,12 @@ tag:
 :::
 
 <!-- more -->
+
+[^pwa-intro]: **PWA 介绍**
+
+    PWA 全称 Progressive Web app，即渐进式网络应用程序，标准由 W3C 规定。
+
+    它允许网站通过支持该特性的浏览器将网站作为 App 安装在对应平台上。
 
 ## 快速启用 <Badge text="不推荐" type="warning" />
 

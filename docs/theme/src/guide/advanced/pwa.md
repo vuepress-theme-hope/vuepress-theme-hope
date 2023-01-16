@@ -10,12 +10,6 @@ tag:
 
 The theme provides progressive web app support [^pwa-intro] via built-in <ProjectLink name="pwa2">`vuepress-plugin-pwa2`</ProjectLink>, and it’s disabled by default.
 
-[^pwa-intro]: **PWA introduction**
-
-    PWA, full name Progressive Web app. PWA standard is stipulated by W3C.
-
-    It allows sites to install the site as an App on supported platform through a browser that supports this feature.
-
 ::: info
 
 `vuepress-theme-hope` passes `plugins.pwa` in theme options as plugin options to `vuepress-plugin-pwa2`.
@@ -25,6 +19,12 @@ If you are using this plugin, we recommend you to set `shouldPrefetch: false` in
 :::
 
 <!-- more -->
+
+[^pwa-intro]: **PWA introduction**
+
+    PWA, full name Progressive Web app. PWA standard is stipulated by W3C.
+
+    It allows sites to install the site as an App on supported platform through a browser that supports this feature.
 
 ## Direct Enable <Badge text="Not recommended" type="warning" />
 

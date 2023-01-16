@@ -44,7 +44,9 @@ export default theme("theme", {
   },
 
   plugins: {
-    blog: true,
+    blog: {
+      excerptLength: 0,
+    },
 
     components: {
       components: [
