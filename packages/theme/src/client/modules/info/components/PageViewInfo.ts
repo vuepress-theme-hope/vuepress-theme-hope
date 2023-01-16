@@ -55,9 +55,9 @@ export default defineComponent({
     });
 
     watch(
-      () => route.path,
-      (newValue: string, oldValue: string) => {
-        if (newValue !== oldValue) setTimeout(getCount, 500);
+      () => [route.path, route.query],
+      () => {
+        setTimeout(getCount, 500);
       }
     );
 
