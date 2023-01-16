@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.161](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.160...v2.0.0-beta.161) (2023-01-16)
+
+### Features
+
+- **components:** tree-shake artplayer ([e8c5b1b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e8c5b1b093fe3c355d0329ee91229056e0adde95))
+- **feed2:** improve xsl template ([3758cd2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3758cd23316aa3d3234c5693e179ff1a6f9d1633))
+- **sitemap2:** improve sitemap template ([26cd4dd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/26cd4dd752a256260d6b94b43e17196cd565b7c6))
+
+### Bug Fixes
+
+- **feed2:** add missing export ([566fb01](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/566fb013716fb247f3aea0c280be8230682a11ea))
+- **feed2:** fix rss template ([2910236](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2910236bbfcb1ede3bb7a326c50418439bcb78bf))
+- **theme:** fix blog page layout ([9bc8a9a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9bc8a9ac77ae97c8c5bdf20a3fa32cb2a28674ce))
+- **theme:** fix footer ([aeb0bc8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/aeb0bc81d93cd3aa89c664c1fa8c0bcf258c458a))
+
 ## [2.0.0-beta.160](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.159...v2.0.0-beta.160) (2023-01-16)
 
 ### Features
