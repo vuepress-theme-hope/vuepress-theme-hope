@@ -153,16 +153,16 @@ export interface FeedChannelOption {
   image?: string;
 
   /**
-   * icon of the channel
+   * Icon of the channel
    *
    * Probably your favicon
    */
   icon?: string;
 
   /**
-   * GLobal Author
+   * Global Author
    */
-  author?: FeedAuthor;
+  author?: FeedAuthor[] | FeedAuthor;
 
   /**
    * Link for websub

@@ -1,11 +1,12 @@
 import {
+  isArray,
   isLinkHttp,
   removeEndingSlash,
   removeLeadingSlash,
 } from "@vuepress/shared";
 import { deepAssign } from "vuepress-shared/node";
 
-import { compareDate, resolveUrl } from "./utils/index.js";
+import { TEMPLATE_FOLDER, compareDate, resolveUrl } from "./utils/index.js";
 
 import type { App, Page } from "@vuepress/core";
 import type { GitData } from "@vuepress/plugin-git";
@@ -91,8 +92,10 @@ export const getFeedChannelOption = (
 ): FeedChannelOption => {
   const { base } = app.options;
   const { title, description, lang, locales } = app.siteData;
-  const { hostname, icon, image } = options;
-  const author = options.channel?.author?.name;
+  const { channel = {}, hostname, icon, image } = options;
+  const authorName = isArray(options.channel?.author)
+    ? options.channel?.author[0]?.name
+    : options.channel?.author?.name;
 
   const defaultChannelOption: FeedChannelOption = {
     title: locales[localePath]?.title || title || locales["/"]?.title || "",
@@ -103,47 +106,89 @@ export const getFeedChannelOption = (
       locales["/"]?.description ||
       "",
     language: locales[localePath]?.lang || lang,
-    copyright: author ? `Copyright by ${author}` : "",
+    copyright: authorName ? `Copyright by ${authorName}` : "",
     pubDate: new Date(),
     lastUpdated: new Date(),
-    ...(icon ? { icon } : {}),
-    ...(image ? { image } : {}),
-    ...(author ? { author: { name: author } } : {}),
+    ...(icon
+      ? { icon: isLinkHttp(icon) ? icon : resolveUrl(hostname, base, icon) }
+      : {}),
+    ...(image
+      ? { image: isLinkHttp(image) ? image : resolveUrl(hostname, base, image) }
+      : {}),
   };
 
-  return deepAssign(defaultChannelOption, options.channel || {});
+  return deepAssign(defaultChannelOption, channel, {
+    ...(channel.icon
+      ? {
+          icon: isLinkHttp(channel.icon)
+            ? channel.icon
+            : resolveUrl(hostname, base, channel.icon),
+        }
+      : {}),
+    ...(channel.image
+      ? {
+          image: isLinkHttp(channel.image)
+            ? channel.image
+            : resolveUrl(hostname, base, channel.image),
+        }
+      : {}),
+  });
 };
 
 export const getFilename = (
   options: ResolvedFeedOptions,
   prefix = "/"
-): {
-  atomOutputFilename: string;
-  jsonOutputFilename: string;
-  rssOutputFilename: string;
-} => ({
+): Required<
+  Pick<
+    FeedOptions,
+    | "atomOutputFilename"
+    | "atomXslFilename"
+    | "atomXslTemplate"
+    | "jsonOutputFilename"
+    | "rssOutputFilename"
+    | "rssXslFilename"
+    | "rssXslTemplate"
+  >
+> => ({
   atomOutputFilename: `${removeLeadingSlash(prefix)}${
     options.atomOutputFilename || "atom.xml"
   }`,
+  atomXslFilename: `${removeLeadingSlash(prefix)}${
+    options.atomXslFilename || "atom.xsl"
+  }`,
+  atomXslTemplate: options.atomXslTemplate || `${TEMPLATE_FOLDER}atom.xsl`,
   jsonOutputFilename: `${removeLeadingSlash(prefix)}${
     options.jsonOutputFilename || "feed.json"
   }`,
   rssOutputFilename: `${removeLeadingSlash(prefix)}${
     options.rssOutputFilename || "rss.xml"
   }`,
+  rssXslFilename: `${removeLeadingSlash(prefix)}${
+    options.rssXslFilename || "rss.xsl"
+  }`,
+  rssXslTemplate: options.rssXslTemplate || `${TEMPLATE_FOLDER}atom.xsl`,
 });
 
 export const getFeedLinks = (
   { options: { base } }: App,
-  options: FeedOptions
+  options: FeedOptions,
+  localePath: string
 ): FeedLinks => {
   const { hostname } = options;
-  const { atomOutputFilename, jsonOutputFilename, rssOutputFilename } =
-    getFilename(options);
+  const {
+    atomOutputFilename,
+    atomXslFilename,
+    jsonOutputFilename,
+    rssOutputFilename,
+    rssXslFilename,
+  } = getFilename(options, localePath);
 
   return {
+    localePath,
     atom: resolveUrl(hostname, base, atomOutputFilename),
+    atomXsl: resolveUrl(hostname, base, atomXslFilename),
     json: resolveUrl(hostname, base, jsonOutputFilename),
     rss: resolveUrl(hostname, base, rssOutputFilename),
+    rssXsl: resolveUrl(hostname, base, rssXslFilename),
   };
 };

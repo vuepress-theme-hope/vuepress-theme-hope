@@ -199,7 +199,7 @@ export const generateSiteMap = async (
           '<?xml version="1.0" encoding="UTF-8"?>',
           `\
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type='text/xsl' href='${base}${sitemapXSLFilename}'?>
+<?xml-stylesheet type="text/xsl" href="${base}${sitemapXSLFilename}"?>
 `
         )
       );

@@ -9,6 +9,7 @@ import type {
   AtomContent,
   AtomEntry,
 } from "./typings.js";
+import { isArray } from "@vuepress/shared";
 
 const getAuthor = (author: FeedAuthor): AtomAuthor => {
   const { name = "Unknown", email, url } = author;
@@ -46,6 +47,9 @@ export const renderAtom = (feed: Feed): string => {
         encoding: "utf-8",
       },
     },
+    _instruction: {
+      "xml-stylesheet": `type="text/xsl" href="${links.atomXsl}"`,
+    },
     feed: {
       _attributes: {
         xmlns: "http://www.w3.org/2005/Atom",
@@ -56,8 +60,16 @@ export const renderAtom = (feed: Feed): string => {
       title: channel.title,
 
       ...(channel.description ? { subtitle: channel.description } : {}),
-
-      ...(channel.author ? { author: getAuthor(channel.author) } : {}),
+      ...(channel.author
+        ? {
+            author: isArray(channel.author)
+              ? channel.author.map((author) => getAuthor(author))
+              : [getAuthor(channel.author)],
+          }
+        : {}),
+      ...(channel.icon ? { icon: channel.icon } : {}),
+      ...(channel.image ? { logo: channel.image } : {}),
+      ...(channel.copyright ? { rights: channel.copyright } : {}),
 
       updated: channel.lastUpdated
         ? channel.lastUpdated.toISOString()
@@ -97,7 +109,7 @@ export const renderAtom = (feed: Feed): string => {
   content.feed.entry = feed.items.map((item) => {
     // entry: required elements
     const entry: AtomEntry = {
-      title: { _attributes: { type: "html" }, _text: item.title },
+      title: { _attributes: { type: "text" }, _text: item.title },
       id: item.guid || item.link,
       link: { _attributes: { href: item.link } },
       updated: item.lastUpdated.toISOString(),
@@ -111,7 +123,7 @@ export const renderAtom = (feed: Feed): string => {
       };
     else if (item.description)
       entry.summary = {
-        _attributes: { type: "html" },
+        _attributes: { type: "text" },
         _text: item.description,
       };
 

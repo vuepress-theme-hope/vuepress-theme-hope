@@ -59,6 +59,9 @@ export const renderRSS = (feed: Feed): string => {
 
   const content: RSSContent = {
     _declaration: { _attributes: { version: "1.0", encoding: "utf-8" } },
+    _instruction: {
+      "xml-stylesheet": `type="text/xsl" href="${links.rssXsl}"`,
+    },
     rss: {
       _attributes: {
         version: "2.0",

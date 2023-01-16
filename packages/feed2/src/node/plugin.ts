@@ -1,7 +1,7 @@
 import { colors } from "@vuepress/utils";
 import { convertOptions } from "./compact/index.js";
 import { checkOutput, ensureHostName, getFeedOptions } from "./options.js";
-import { FeedGenerator } from "./extractor/generator.js";
+import { FeedGenerator } from "./generator/index.js";
 import { injectLinksToHead } from "./injectHead.js";
 import { logger } from "./utils/index.js";
 

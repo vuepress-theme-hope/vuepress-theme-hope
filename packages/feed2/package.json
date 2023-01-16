@@ -31,7 +31,8 @@
   "main": "lib/node/index.js",
   "types": "lib/node/index.d.ts",
   "files": [
-    "lib"
+    "lib",
+    "template"
   ],
   "scripts": {
     "build": "rollup -c rollup.config.ts --configPlugin esbuild",

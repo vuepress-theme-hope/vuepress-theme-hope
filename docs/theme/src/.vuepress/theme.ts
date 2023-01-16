@@ -111,6 +111,12 @@ export default theme("theme", {
 
     copyright: true,
 
+    feed: {
+      atom: true,
+      json: true,
+      rss: true,
+    },
+
     mdEnhance: {
       align: true,
       attrs: true,

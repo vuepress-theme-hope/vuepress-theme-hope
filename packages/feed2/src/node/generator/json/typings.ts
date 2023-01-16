@@ -81,6 +81,6 @@ export interface JSONContent {
   /**
    * specifies one or more feed authors
    */
-  author?: JSONAuthor;
+  authors?: JSONAuthor[];
   items?: JSONItem[];
 }

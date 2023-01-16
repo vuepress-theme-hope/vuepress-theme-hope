@@ -106,6 +106,9 @@ export interface RSSContent {
       encoding: string;
     };
   };
+  _instruction: {
+    "xml-stylesheet": `type="text/xsl" href="${string}"`;
+  };
   rss: {
     _attributes: {
       version: string;

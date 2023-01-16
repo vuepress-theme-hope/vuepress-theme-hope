@@ -88,9 +88,12 @@ export interface FeedItemInformation {
 }
 
 export interface FeedLinks {
+  localePath: string;
   atom: string;
+  atomXsl: string;
   json: string;
   rss: string;
+  rssXsl: string;
 }
 
 export interface FeedInitOptions {

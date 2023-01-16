@@ -1,5 +1,5 @@
 import { feedPlugin } from "vuepress-plugin-feed2";
-import { deepAssign } from "vuepress-shared/node";
+import { deepAssign, getAuthor } from "vuepress-shared/node";
 
 import type { Plugin } from "@vuepress/core";
 import type { FeedOptions } from "vuepress-plugin-feed2";
@@ -39,36 +39,57 @@ const themeComponents = [
 
 export const getFeedPlugin = (
   themeData: ThemeData,
-  options?: Omit<FeedOptions, "hostname">,
+  options: Omit<FeedOptions, "hostname"> = {},
   hostname?: string,
   legacy = false
 ): Plugin | null => {
   // disable feed if no options for feed plugin
   if (!Object.keys(options || {}).length) return null;
 
-  const { removedElements } = options || {};
+  const { removedElements } = options;
+
+  const globalAuthor = getAuthor(themeData.author);
+
+  const defaultOptions: FeedOptions = {
+    // @ts-expect-error
+    hostname,
+    channel: {
+      ...(themeData.locales["/"].logo
+        ? {
+            icon: themeData.locales["/"].logo,
+            image: themeData.locales["/"].logo,
+          }
+        : {}),
+      ...(globalAuthor.length ? { author: globalAuthor[0] } : {}),
+    },
+    locales: Object.fromEntries(
+      Object.entries(themeData.locales).map(
+        ([localePath, { logo, author, copyright }]) => {
+          const localeAuthor = getAuthor(author);
+
+          return [
+            localePath,
+            {
+              channel: {
+                ...(logo ? { icon: logo, image: logo } : {}),
+                ...(localeAuthor.length ? { author: localeAuthor[0] } : {}),
+                ...(typeof copyright === "string" ? { copyright } : {}),
+              },
+            },
+          ];
+        }
+      )
+    ),
+  };
 
   return feedPlugin(
-    // @ts-ignore
-    deepAssign(
-      {
-        hostname,
-        ...(themeData.author ? { author: themeData.author } : {}),
-        locales: Object.entries(themeData.locales).map(
-          ([localePath, { author, copyright }]) => [
-            localePath,
-            { author, channel: { copyright } },
-          ]
-        ),
-      },
-      options || {},
-      {
-        removedElements: isFunction(removedElements)
-          ? (tagName: string): boolean =>
-              themeComponents.includes(tagName) || removedElements(tagName)
-          : [...themeComponents, ...(removedElements || [])],
-      }
-    ),
+    deepAssign(defaultOptions, options, {
+      // merge removedElements
+      removedElements: isFunction(removedElements)
+        ? (tagName: string): boolean =>
+            themeComponents.includes(tagName) || removedElements(tagName)
+        : [...themeComponents, ...(removedElements || [])],
+    }),
     legacy
   );
 };

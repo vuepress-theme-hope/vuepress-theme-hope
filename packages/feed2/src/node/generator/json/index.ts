@@ -31,13 +31,16 @@ export const renderJSON = (feed: Feed): string => {
   if (channel.image) content.icon = channel.image;
   if (channel.icon) content.favicon = channel.icon;
 
-  if (channel.author?.name) {
-    content.author = {
-      name: channel.author.name,
-      ...(channel.author.url ? { url: channel.author.url } : {}),
-      ...(channel.author.avatar ? { avatar: channel.author.avatar } : {}),
-    };
-  }
+  const channelAuthors = (
+    isArray(channel.author)
+      ? channel.author
+      : channel.author
+      ? [channel.author]
+      : []
+  ).filter((author) => Boolean(author?.name));
+
+  if (channelAuthors.length)
+    content.authors = channelAuthors.map((author) => formatAuthor(author));
 
   content.items = feed.items.map((item) => {
     const feedItem: JSONItem = {

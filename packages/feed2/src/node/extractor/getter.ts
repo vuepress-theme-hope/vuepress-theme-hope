@@ -26,7 +26,7 @@ import type {
 } from "../typings/index.js";
 import { getPageRenderContent } from "./content.js";
 
-export class FeedPage {
+export class FeedInfo {
   private pageFeedOptions: FeedFrontmatterOption;
   private frontmatter: PageFrontmatter<FeedPluginFrontmatter>;
   private base: string;

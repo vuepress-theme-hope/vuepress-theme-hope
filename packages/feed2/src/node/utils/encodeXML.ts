@@ -21,6 +21,7 @@ export const encodeXML = (content: ElementCompact): ElementCompact =>
       if (key === "_text")
         return [key, encodeXMLContent((value as string | number).toString())];
       if (key === "_cdata") return [key, encodeCDATA(value as string)];
+      if (key === "_comment" || key === "_instruction") return [key, value];
 
       if (isArray(value))
         return [key, value.map((item) => encodeXML(item as ElementCompact))];

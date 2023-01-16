@@ -1,11 +1,19 @@
 import {
+  ensureEndingSlash,
   isLinkHttp,
   removeEndingSlash,
   removeLeadingSlash,
 } from "@vuepress/shared";
+import { getDirname, path } from "@vuepress/utils";
 import { Logger } from "vuepress-shared/node";
 
+const __dirname = getDirname(import.meta.url);
+
 export const FEED_GENERATOR = "vuepress-plugin-feed2";
+
+export const TEMPLATE_FOLDER = ensureEndingSlash(
+  path.resolve(__dirname, "../../../templates")
+);
 
 export const logger = new Logger(FEED_GENERATOR);
 

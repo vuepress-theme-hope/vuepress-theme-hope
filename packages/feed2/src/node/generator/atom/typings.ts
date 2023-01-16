@@ -1,6 +1,6 @@
 export interface AtomText {
   _attributes: {
-    type: "html";
+    type: "text";
   };
   _text: string;
 }
@@ -112,6 +112,9 @@ export interface AtomContent {
       encoding: string;
     };
   };
+  _instruction: {
+    "xml-stylesheet": `type="text/xsl" href="${string}"`;
+  };
   feed: {
     _attributes: {
       xmlns: string;
@@ -135,7 +138,7 @@ export interface AtomContent {
      *
      * A feed must contain at least one author element unless all of the entry elements contain at least one author element.
      */
-    author?: AtomAuthor;
+    author?: AtomAuthor[];
     /**
      * 	Identifies a related Web page. The type of relation is defined by the rel attribute. A feed is limited to one alternate per type and hreflang. A feed should contain a link back to the feed itself.
      */
@@ -155,7 +158,15 @@ export interface AtomContent {
     /**
      * 	Identifies the software used to generate the feed
      */
-    generator: string;
+    generator:
+      | {
+          _attributes?: {
+            uri?: string;
+            version?: string;
+          };
+          _text: string;
+        }
+      | string;
     /**
      * Identifies a small image which provides iconic visual identification for the feed. Icons should be square.
      */
