@@ -1,7 +1,13 @@
 /* eslint-disable vue/no-unused-properties */
 import { usePageLang } from "@vuepress/client";
-import Artplayer from "artplayer";
-import { camelize, defineComponent, h, onBeforeUnmount, onMounted } from "vue";
+import {
+  camelize,
+  defineComponent,
+  h,
+  onBeforeUnmount,
+  onMounted,
+  ref,
+} from "vue";
 
 import { useSize } from "../composables/size.js";
 import {
@@ -12,6 +18,7 @@ import {
   registerMseHls,
 } from "../utils/mse.js";
 
+import type Artplayer from "artplayer";
 import type { Option as ArtPlayerInitOptions } from "artplayer/types/option.js";
 import type { PropType, VNode } from "vue";
 import type { ArtPlayerOptions } from "../../shared/index.js";
@@ -190,6 +197,8 @@ export default defineComponent({
     const lang = usePageLang();
     const { el, width, height } = useSize<HTMLDivElement>(props, 0);
 
+    const template = ref("Loading...");
+
     let artPlayerInstance: Artplayer;
 
     const getInitOptions = (): ArtPlayerInitOptions => {
@@ -270,10 +279,15 @@ export default defineComponent({
       return initOptions;
     };
 
-    onMounted(async () => {
-      const player = new Artplayer(getInitOptions());
+    // FIXME: Related issue https://github.com/zhw2590582/ArtPlayer/issues/450
+    onMounted(() => {
+      void import("artplayer").then(async ({ default: Artplayer }) => {
+        template.value = Artplayer.html;
 
-      artPlayerInstance = (await props.customPlayer(player)) || player;
+        const player = new Artplayer(getInitOptions());
+
+        artPlayerInstance = (await props.customPlayer(player)) || player;
+      });
     });
 
     onBeforeUnmount(() => {
@@ -287,7 +301,7 @@ export default defineComponent({
           width: width.value,
           height: height.value,
         },
-        innerHTML: Artplayer.html,
+        innerHTML: template.value,
       });
   },
 });
