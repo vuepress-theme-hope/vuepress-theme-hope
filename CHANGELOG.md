@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.160](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.159...v2.0.0-beta.160) (2023-01-16)
+
+### Features
+
+- **feed2:** add xsl for atom and feed ([4a60d0f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4a60d0f7ca6abb4c5e695f53c7c85e520d277b1f))
+- **theme:** add favicon option ([abff7df](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/abff7df79c4eaacf22847614fc9b4e11e61f45ea))
+
+### Bug Fixes
+
+- **remove-pwa:** fix typos ([36abb4f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/36abb4f7844f2e5e6113f28e03d8dc9e5427f1d0))
+- **theme:** fix pageview info not refresh ([00cd4bd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/00cd4bda589911499fc980d07230feda0de74589))
+
 ## [2.0.0-beta.159](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.158...v2.0.0-beta.159) (2023-01-15)
 
 ### Features
