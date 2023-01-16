@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.162](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.161...v2.0.0-beta.162) (2023-01-16)
+
+### Bug Fixes
+
+- **feed2:** fix package files ([5ffe692](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5ffe692de025002c9a97c01e5a67dfbde4b7b981))
+
 ## [2.0.0-beta.161](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.160...v2.0.0-beta.161) (2023-01-16)
 
 ### Features
