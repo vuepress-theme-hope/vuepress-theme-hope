@@ -13,6 +13,7 @@
   "MD033": {
     "allowed_elements": [
       "br",
+      "template",
       "script",
       "ArtPlayer",
       "AudioPlayer",

@@ -12,6 +12,14 @@ actions:
 footer: MIT 协议, 版权所有 © 2019-present Mr.Hope
 ---
 
+<template v-if="!isDev">
+
+- [Atom Feed](/zh/atom.xml)
+- [JSON Feed](/zh/feed.json)
+- [RSS Feed](/zh/rss.xml)
+
+</template>
+
 ## 使用插件
 
 ### 安装
@@ -34,3 +42,7 @@ export default {
   ],
 };
 ```
+
+<script setup>
+const isDev = __VUEPRESS_DEV__;
+</script>

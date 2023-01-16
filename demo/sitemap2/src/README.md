@@ -12,6 +12,12 @@ actions:
 footer: MIT Licensed, Copyright © 2019-present Mr.Hope
 ---
 
+<template v-if="!isDev">
+
+[Sitemap](/sitemap.xml)
+
+</template>
+
 ## How to use
 
 ### Install
@@ -34,3 +40,7 @@ export default {
   ],
 };
 ```
+
+<script setup>
+const isDev = __VUEPRESS_DEV__;
+</script>

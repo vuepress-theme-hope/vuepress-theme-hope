@@ -12,6 +12,14 @@ actions:
 footer: MIT Licensed, Copyright © 2019-present Mr.Hope
 ---
 
+<template v-if="!isDev">
+
+- [Atom Feed](/atom.xml)
+- [JSON Feed](/feed.json)
+- [RSS Feed](/rss.xml)
+
+</template>
+
 ## How to use
 
 ### Install
@@ -34,3 +42,7 @@ export default {
   ],
 };
 ```
+
+<script setup>
+const isDev = __VUEPRESS_DEV__;
+</script>
