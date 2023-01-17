@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.163](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.162...v2.0.0-beta.163) (2023-01-17)
+
+### Bug Fixes
+
+- fix importing sitemap template ([#2680](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2680)) ([6a9c4a0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6a9c4a03c6bcbfd49f1b120c5a715843ae5b83dc))
+
 ## [2.0.0-beta.162](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.161...v2.0.0-beta.162) (2023-01-16)
 
 ### Bug Fixes
