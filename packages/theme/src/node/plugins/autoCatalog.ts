@@ -12,5 +12,9 @@ export const getAutoCatalogPlugin = (
 ): Plugin | null => {
   if (autoCatalog === false) return null;
 
-  return autoCatalogPlugin(isPlainObject(autoCatalog) ? autoCatalog : {});
+  return autoCatalogPlugin({
+    // exclude auto generated page from articles
+    frontmatter: () => ({ article: false }),
+    ...(isPlainObject(autoCatalog) ? autoCatalog : {}),
+  });
 };
