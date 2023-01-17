@@ -1,6 +1,7 @@
 ---
 title: Using Components
 icon: plugin
+order: 1
 category:
   - Tutorial
   - Customize

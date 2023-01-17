@@ -39,3 +39,13 @@ Here is a step by step tutorial for newcomers:
 - [Replacing Component](advanced/replace.md)
 
 - [Theme Extending](advanced/extend.md)
+
+## Customizing
+
+- [Customizing layouts](customize/layout.md)
+
+- [Customizing colors](customize/color.md)
+
+- [Customizing fonts](customize/font.md)
+
+- [Customizing effects](customize/effect.md)

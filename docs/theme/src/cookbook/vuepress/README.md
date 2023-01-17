@@ -1,6 +1,8 @@
 ---
 title: About VuePress
 icon: vue
+dir:
+  order: 3
 category:
   - Cookbook
   - VuePress

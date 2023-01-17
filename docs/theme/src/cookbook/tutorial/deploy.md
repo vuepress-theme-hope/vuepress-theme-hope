@@ -1,6 +1,7 @@
 ---
 title: Project Deployment
 icon: launch
+order: 7
 category:
   - Cookbook
   - Tutorial

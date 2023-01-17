@@ -1,6 +1,7 @@
 ---
 title: 插件
 icon: plugin
+order: 5
 category:
   - 教程知识
   - VuePress

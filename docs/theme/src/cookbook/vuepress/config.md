@@ -1,6 +1,7 @@
 ---
 title: VuePress Config
 icon: config
+order: 4
 category:
   - Cookbook
   - VuePress
@@ -22,7 +23,7 @@ Without any configuration, the VuePress site is pretty minimal. To customize you
 └─ package.json
 ```
 
-The essential file for configuring a VuePress site is `.vuepress/config.js`, while TypeScript config file is also supported. You can use `.vuepress/config.ts` instead to get better types hint for VuePress Config.
+The essential file for configuring a VuePress site is `.vuepress/config.js`, while TypeScript config file is also supported. You can use `.vuepress/config.ts` instead to get better types hint for VuePress config.
 
 A basic config file looks like this:
 
@@ -90,5 +91,39 @@ To use `vuepress-theme-hope`, you should import `hopeTheme` from it, passing in 
 ::: warning
 
 If you don’t specify the `theme` option of VuePress config, the default theme will be used.
+
+:::
+
+## Client Config File
+
+In most cases, the config file is sufficient to configure your VuePress site. However, sometimes users may want to add some client-side code directly. To help with this, VuePress also supports a client config file:
+
+```
+├─ docs
+│  ├─ .vuepress
+│  │  ├─ client.js   <--- client config file
+│  │  └─ config.js   <--- config file
+│  └─ README.md
+├─ .gitignore
+└─ package.json
+```
+
+A basic client config file looks like this:
+
+```ts
+import { defineClientConfig } from "@vuepress/client";
+
+export default defineClientConfig({
+  enhance({ app, router, siteData }) {},
+  setup() {},
+  rootComponents: [],
+});
+```
+
+::: tip
+
+Unlike config file, client config file could not be specified via CLI options.
+
+To learn more about client config file, see [Advanced > Cookbook > Usage of Client Config](https://v2.vuepress.vuejs.org/advanced/cookbook/usage-of-client-config.html)
 
 :::

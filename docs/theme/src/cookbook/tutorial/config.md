@@ -1,6 +1,7 @@
 ---
 title: Project Config
 icon: config
+order: 5
 category:
   - Cookbook
   - Tutorial

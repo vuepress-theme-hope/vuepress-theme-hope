@@ -1,6 +1,7 @@
 ---
 title: Замена компонентов темы
 icon: customize
+order: 3
 category:
   - Продвинутый
 tag:

@@ -1,6 +1,7 @@
 ---
 title: 项目命令
 icon: command
+order: 3
 category:
   - 快速上手
   - 基础知识

@@ -1,6 +1,7 @@
 ---
 title: Markdown DEMO
 icon: markdown
+order: 2
 category:
   - Cookbook
   - Markdown

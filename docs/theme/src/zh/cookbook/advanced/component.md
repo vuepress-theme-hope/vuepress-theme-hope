@@ -1,6 +1,7 @@
 ---
 title: 使用组件
 icon: plugin
+order: 1
 category:
   - 教程知识
   - 自定义

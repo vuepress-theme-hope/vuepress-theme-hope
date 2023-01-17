@@ -1,6 +1,8 @@
 ---
 title: Продвинутый
 icon: advance
+dir:
+  order: 4
 category:
   - Учебник с примерами
   - Продвинутый

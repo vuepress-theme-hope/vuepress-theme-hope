@@ -34,7 +34,13 @@ export const zhSidebarConfig = sidebar({
       text: "教程",
       icon: "guide",
       prefix: "cookbook/",
-      children: ["tutorial/", "markdown/", "vuepress/", "advanced/"],
+      children: [
+        "tutorial/",
+        "markdown/",
+        "vuepress/",
+        "advanced/",
+        "customize/",
+      ],
     },
     {
       text: "迁移",
@@ -57,52 +63,5 @@ export const zhSidebarConfig = sidebar({
 
   "/zh/config/": "structure",
 
-  "/zh/cookbook/": [
-    {
-      text: "教程",
-      icon: "guide",
-      prefix: "tutorial/",
-      children: [
-        "env",
-        "create",
-        "command",
-        "content",
-        "config",
-        "structure",
-        "deploy",
-      ],
-    },
-    {
-      text: "Markdown",
-      icon: "markdown",
-      prefix: "markdown/",
-      collapsible: true,
-      children: [
-        "",
-        "demo",
-        {
-          text: "Emoji",
-          icon: "emoji",
-          link: "emoji/",
-          prefix: "emoji/",
-          collapsible: true,
-          children: "structure",
-        },
-      ],
-    },
-    {
-      text: "VuePress",
-      icon: "vue",
-      prefix: "vuepress/",
-      collapsible: true,
-      children: ["", "file", "markdown", "config", "plugin", "theme"],
-    },
-    {
-      text: "高级",
-      icon: "advance",
-      prefix: "advanced/",
-      collapsible: true,
-      children: ["component", "style", "replace", "extend"],
-    },
-  ],
+  "/zh/cookbook/": "structure",
 });

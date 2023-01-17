@@ -1,6 +1,8 @@
 ---
 title: 高级
 icon: advance
+dir:
+  order: 4
 category:
   - 教程知识
   - 高级

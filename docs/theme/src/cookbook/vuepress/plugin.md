@@ -1,6 +1,7 @@
 ---
 title: Plugins
 icon: plugin
+order: 5
 category:
   - Cookbook
   - VuePress

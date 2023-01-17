@@ -1,6 +1,7 @@
 ---
 title: VuePress Page
 icon: page
+order: 1
 category:
   - Cookbook
   - VuePress

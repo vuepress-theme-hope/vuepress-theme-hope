@@ -39,3 +39,13 @@ article: false
 - [替换主题组件](advanced/replace.md)
 
 - [主题继承](advanced/extend.md)
+
+## 自定义
+
+- [修改布局](customize/layout.md)
+
+- [修改颜色](customize/color.md)
+
+- [自定义字体](customize/font.md)
+
+- [修改特效](customize/effect.md)

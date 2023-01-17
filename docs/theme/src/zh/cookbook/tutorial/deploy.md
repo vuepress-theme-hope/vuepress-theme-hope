@@ -1,6 +1,7 @@
 ---
 title: 部署项目
 icon: launch
+order: 7
 category:
   - 快速上手
   - 基础知识

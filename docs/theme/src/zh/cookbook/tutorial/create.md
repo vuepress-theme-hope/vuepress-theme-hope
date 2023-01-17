@@ -1,6 +1,7 @@
 ---
 title: 创建项目
 icon: add
+order: 2
 category:
   - 快速上手
   - 基础知识

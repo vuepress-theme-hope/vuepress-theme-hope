@@ -1,6 +1,7 @@
 ---
 title: 主题继承
 icon: extend
+order: 4
 category:
   - 高级
 tag:

@@ -1,6 +1,7 @@
 ---
 title: File Structure
 icon: folder
+order: 3
 category:
   - Cookbook
   - VuePress

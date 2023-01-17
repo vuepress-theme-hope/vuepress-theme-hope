@@ -1,6 +1,7 @@
 ---
 title: Создание проекта
 icon: creative
+order: 2
 category:
   - Учебник с примерами
   - Руководство

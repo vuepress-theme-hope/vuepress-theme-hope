@@ -1,6 +1,7 @@
 ---
 title: 准备运行环境
 icon: leaf
+order: 1
 category:
   - 快速上手
   - 基础知识

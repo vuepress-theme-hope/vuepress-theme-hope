@@ -1,6 +1,8 @@
 ---
 title: Advanced
 icon: advance
+dir:
+  order: 4
 category:
   - Cookbook
   - Advanced

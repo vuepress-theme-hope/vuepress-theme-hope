@@ -1,6 +1,7 @@
 ---
 title: 主题配置
 icon: palette
+order: 6
 category:
   - 教程知识
   - VuePress

@@ -1,6 +1,7 @@
 ---
 title: Project Structure
 icon: tree
+order: 6
 category:
   - Cookbook
   - Tutorial

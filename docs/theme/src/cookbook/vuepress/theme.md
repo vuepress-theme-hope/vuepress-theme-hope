@@ -1,6 +1,7 @@
 ---
 title: Theme Config
 icon: palette
+order: 6
 category:
   - Cookbook
   - VuePress

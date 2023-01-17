@@ -1,6 +1,7 @@
 ---
 title: 替换主题组件
 icon: customize
+order: 3
 category:
   - 高级
 tag:

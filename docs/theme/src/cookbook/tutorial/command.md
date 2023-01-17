@@ -1,6 +1,7 @@
 ---
 title: Project Command
 icon: command
+order: 3
 category:
   - Cookbook
   - Tutorial

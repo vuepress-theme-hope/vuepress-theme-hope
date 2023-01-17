@@ -1,6 +1,7 @@
 ---
 title: 配置项目
 icon: config
+order: 5
 category:
   - 快速上手
   - 基础知识

@@ -1,6 +1,7 @@
 ---
 title: Theme Extending
 icon: extend
+order: 4
 category:
   - Advanced
 tag:

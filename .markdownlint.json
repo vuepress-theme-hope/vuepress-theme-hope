@@ -15,6 +15,7 @@
       "br",
       "template",
       "script",
+      "style",
       "ArtPlayer",
       "AudioPlayer",
       "AutoCatalog",

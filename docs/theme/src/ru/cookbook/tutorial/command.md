@@ -1,6 +1,7 @@
 ---
 title: Команды проекта
 icon: command
+order: 3
 category:
   - Учебник с примерами
   - Руководство

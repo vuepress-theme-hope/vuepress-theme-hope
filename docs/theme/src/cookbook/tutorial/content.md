@@ -1,6 +1,7 @@
 ---
 title: Project Content
 icon: page
+order: 4
 category:
   - Cookbook
   - Tutorial

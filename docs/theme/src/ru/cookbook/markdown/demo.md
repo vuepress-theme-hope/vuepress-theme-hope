@@ -1,6 +1,7 @@
 ---
 title: ДЕМО Разметки
 icon: markdown
+order: 2
 category:
   - Учебник с примерами
   - Разметка

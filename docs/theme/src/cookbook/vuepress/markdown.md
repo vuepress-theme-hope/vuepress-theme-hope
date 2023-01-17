@@ -1,6 +1,7 @@
 ---
 title: Builtin Markdown features
 icon: markdown
+order: 2
 category:
   - Cookbook
   - VuePress

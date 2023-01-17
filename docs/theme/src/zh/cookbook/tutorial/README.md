@@ -1,6 +1,8 @@
 ---
 title: 小白教程
 icon: creative
+dir:
+  order: 1
 category:
   - 快速上手
   - 基础知识

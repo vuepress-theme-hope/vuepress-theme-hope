@@ -1,6 +1,8 @@
 ---
 title: Markdown 介绍
 icon: markdown
+dir:
+  order: 2
 category:
   - 教程知识
   - Markdown

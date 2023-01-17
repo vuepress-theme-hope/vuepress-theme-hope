@@ -1,6 +1,7 @@
 ---
 title: Деплой проекта
 icon: launch
+order: 7
 category:
   - Учебник с примерами
   - Руководство

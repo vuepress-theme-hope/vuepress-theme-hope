@@ -1,6 +1,7 @@
 ---
 title: Setting Environment
 icon: leaf
+order: 1
 category:
   - Cookbook
   - Tutorial

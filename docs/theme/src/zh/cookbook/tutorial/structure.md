@@ -1,6 +1,7 @@
 ---
 title: 项目结构
 icon: tree
+order: 6
 category:
   - 快速上手
   - 基础知识
@@ -15,13 +16,7 @@ tag:
 
 ## VuePress 项目结构
 
-VuePress 只控制 VuePress 项目文件夹中的文件，也就是上一章中的参数，你所使用文件夹的其他文件不受 VuePress 控制。
-
-::: note
-
-如果你按照之前教程的指引使用 `docs`，那么 `docs` 就是你的 VuePress 项目文件夹。
-
-:::
+VuePress 只控制 VuePress 项目文件夹中的文件，也就是默认模板生成的 `src` 文件夹，项目下的其他文件不受 VuePress 控制。
 
 一个基本的项目结构如下:
 

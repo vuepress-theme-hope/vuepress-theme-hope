@@ -1,6 +1,7 @@
 ---
 title: Replacing Theme Components
 icon: customize
+order: 3
 category:
   - Advanced
 tag:

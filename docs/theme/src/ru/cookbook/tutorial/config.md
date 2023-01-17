@@ -1,6 +1,7 @@
 ---
 title: Конфиг проекта
 icon: config
+order: 5
 category:
   - Учебник с примерами
   - Руководство

@@ -1,6 +1,7 @@
 ---
 title: Create Project
 icon: creative
+order: 2
 category:
   - Cookbook
   - Tutorial

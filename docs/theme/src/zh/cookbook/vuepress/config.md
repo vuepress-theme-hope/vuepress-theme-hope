@@ -1,6 +1,7 @@
 ---
 title: VuePress 配置
 icon: config
+order: 4
 category:
   - 教程知识
   - VuePress
@@ -92,5 +93,39 @@ export default {
 ::: warning
 
 如果你没有设置 VuePress 配置的 `theme` 配置项，则代表使用的是默认主题。
+
+:::
+
+## 客户端配置文件
+
+在大多数情况下，配置文件已经足够帮助你配置好你的 VuePress 站点。不过，有些时候用户们可能希望直接添加一些客户端代码。 VuePress 通过客户端配置文件来支持这种需求：
+
+```
+├─ docs
+│  ├─ .vuepress
+│  │  ├─ client.js   <--- 客户端配置文件
+│  │  └─ config.js   <--- 配置文件
+│  └─ README.md
+├─ .gitignore
+└─ package.json
+```
+
+一个基础的客户端配置文件是这样的：
+
+```ts
+import { defineClientConfig } from "@vuepress/client";
+
+export default defineClientConfig({
+  enhance({ app, router, siteData }) {},
+  setup() {},
+  rootComponents: [],
+});
+```
+
+::: tip
+
+和配置文件不同，客户端配置文件不能通过命令行接口的选项来指定。
+
+可以前往 [深入 > Cookbook > 客户端配置的使用方法](https://v2.vuepress.vuejs.org/zh/advanced/cookbook/usage-of-client-config.html) 来了解更多信息。
 
 :::

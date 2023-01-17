@@ -34,7 +34,13 @@ export const ruSidebarConfig = sidebar({
       text: "Учебник с примерами",
       icon: "guide",
       prefix: "cookbook/",
-      children: ["tutorial/", "markdown/", "vuepress/", "advanced/"],
+      children: [
+        "tutorial/",
+        "markdown/",
+        "vuepress/",
+        "advanced/",
+        "customize/",
+      ],
     },
     {
       text: "Миграция",
@@ -57,52 +63,5 @@ export const ruSidebarConfig = sidebar({
 
   "/ru/config/": "structure",
 
-  "/ru/cookbook/": [
-    {
-      text: "Руководство",
-      icon: "guide",
-      prefix: "tutorial/",
-      children: [
-        "env",
-        "create",
-        "command",
-        "content",
-        "config",
-        "structure",
-        "deploy",
-      ],
-    },
-    {
-      text: "Markdown",
-      icon: "markdown",
-      prefix: "markdown/",
-      collapsible: true,
-      children: [
-        "",
-        "demo",
-        {
-          text: "Emoji",
-          icon: "emoji",
-          link: "emoji/",
-          prefix: "emoji/",
-          collapsible: true,
-          children: "structure",
-        },
-      ],
-    },
-    {
-      text: "VuePress",
-      icon: "vue",
-      prefix: "vuepress/",
-      collapsible: true,
-      children: ["", "page", "markdown", "file", "config", "plugin", "theme"],
-    },
-    {
-      text: "Продвинутый",
-      icon: "advance",
-      prefix: "advanced/",
-      collapsible: true,
-      children: ["component", "style", "replace", "extend"],
-    },
-  ],
+  "/ru/cookbook/": "structure",
 });

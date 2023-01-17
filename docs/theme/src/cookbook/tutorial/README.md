@@ -1,6 +1,8 @@
 ---
 title: Step by Step Tutorial
 icon: guide
+dir:
+  order: 1
 category:
   - Cookbook
   - Tutorial

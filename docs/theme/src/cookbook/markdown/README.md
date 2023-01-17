@@ -1,6 +1,8 @@
 ---
 title: Markdown Introduction
 icon: markdown
+dir:
+  order: 2
 category:
   - Cookbook
   - Markdown

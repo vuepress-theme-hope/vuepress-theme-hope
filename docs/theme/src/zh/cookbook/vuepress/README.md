@@ -1,6 +1,8 @@
 ---
 title: VuePress
 icon: vue
+dir:
+  order: 3
 category:
   - 教程知识
   - VuePress
