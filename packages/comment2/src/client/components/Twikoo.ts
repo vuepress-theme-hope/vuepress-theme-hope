@@ -61,6 +61,7 @@ export default defineComponent({
         "div",
         {
           class: "twikoo-wrapper",
+          id: "comment",
           style: { display: enableComment.value ? "block" : "none" },
         },
         h("div", { id: "twikoo-comment" })

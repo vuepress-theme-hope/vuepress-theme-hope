@@ -155,6 +155,7 @@ export default defineComponent({
             "giscus-wrapper",
             { "input-top": giscusOption.inputPosition !== "bottom" },
           ],
+          id: "comment",
           style: {
             display: enableComment.value ? "block" : "none",
           },
