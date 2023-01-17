@@ -33,7 +33,7 @@
   "types": "lib/node/index.d.ts",
   "files": [
     "lib",
-    "template"
+    "templates"
   ],
   "scripts": {
     "build": "rollup -c rollup.config.ts --configPlugin esbuild",
