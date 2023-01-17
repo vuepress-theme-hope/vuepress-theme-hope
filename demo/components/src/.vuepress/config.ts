@@ -62,7 +62,7 @@ export default defineUserConfig({
 
       componentOptions: {
         fontIcon: {
-          assets: "iconfont",
+          assets: "fontawesome",
         },
         pdf: {
           pdfjs: "/assets/lib/pdfjs/",

@@ -304,11 +304,11 @@ See <ProjectLink name="components" path="/guide/catalog.html">Catalog</ProjectLi
 Компонент, который позволяет отображать иконки шрифтов.
 
 - Home icon: <FontIcon icon="home" />
-- A big and red markdown icon: <FontIcon icon="markdown" color="red" size="32" />
+- A big and green share icon: <FontIcon icon="share" color="#3eaf7c" size="32" />
 
 ```md
 - Home icon: <FontIcon icon="home" />
-- A big and red markdown icon: <FontIcon icon="markdown" color="red" size="32" />
+- A big and green share icon: <FontIcon icon="share" color="#3eaf7c" size="32" />
 ```
 
 Доступные свойства смотрите на странице <ProjectLink name="components" path="/guide/fonticon.html">FontIcon</ProjectLink>.

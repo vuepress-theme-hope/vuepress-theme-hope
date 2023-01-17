@@ -1,4 +1,4 @@
-import { isArray, isString } from "@vuepress/shared";
+import { isArray, isLinkHttp, isString } from "@vuepress/shared";
 import { CLIENT_FOLDER, logger } from "./utils.js";
 
 import type { App } from "@vuepress/core";
@@ -20,42 +20,49 @@ const availableComponents: AvailableComponent[] = [
   "YouTube",
 ];
 
-const getIconLink = (
-  iconLink?: string
-): { type: string; content: string } | null => {
-  if (!iconLink) return null;
+interface LinkInfo {
+  type: string;
+  content: string;
+}
+
+const getIconLink = (iconLink?: string[] | string): LinkInfo[] => {
+  if (!iconLink) return [];
 
   if (iconLink === "fontawesome")
-    return {
+    return ["solid", "fontawesome"].map((item) => ({
       type: "script",
-      content: "https://kit.fontawesome.com/ca37c296c5.js",
-    };
+      content: `https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/js/${item}.min.js`,
+    }));
 
   if (iconLink === "iconfont")
-    return {
-      type: "style",
-      content: `@import url("//at.alicdn.com/t/c/font_2410206_5vb9zlyghj.css");`,
-    };
+    return [
+      {
+        type: "style",
+        content: `@import url("//at.alicdn.com/t/c/font_2410206_5vb9zlyghj.css");`,
+      },
+    ];
 
-  const actualLink = iconLink.match(/^(?:https?:)?\/\//g)
-    ? iconLink
-    : `//${iconLink}`;
+  return (isArray(iconLink) ? iconLink : [iconLink])
+    .map((item) => {
+      const actualLink = isLinkHttp(item) ? item : `//${item}`;
 
-  if (actualLink.endsWith(".css"))
-    return {
-      type: "style",
-      content: `@import url("${iconLink}");`,
-    };
+      if (actualLink.endsWith(".css"))
+        return {
+          type: "style",
+          content: `@import url("${actualLink}");`,
+        };
 
-  if (actualLink.endsWith(".js"))
-    return {
-      type: "script",
-      content: iconLink,
-    };
+      if (actualLink.endsWith(".js"))
+        return {
+          type: "script",
+          content: actualLink,
+        };
 
-  logger.error(`Can not recognize icon link: "${iconLink}"`);
+      logger.error(`Can not recognize icon link: "${item}"`);
 
-  return null;
+      return null;
+    })
+    .filter((item): item is LinkInfo => item !== null);
 };
 
 const getNoticeOptions = (options: NoticeOptions[]): NoticeClientOptions[] =>
@@ -104,11 +111,9 @@ if(!hasGlobalComponent("${item}")) app.component("${item}", ${item});
 `;
     }
 
-    if (item === "FontIcon") {
-      const result = getIconLink(componentOptions.fontIcon?.assets);
-
-      if (result) {
-        const { type, content } = result;
+    if (item === "FontIcon")
+      getIconLink(componentOptions.fontIcon?.assets).forEach((item, index) => {
+        const { type, content } = item;
 
         if (type === "script") {
           shouldImportUseScriptTag = true;
@@ -118,11 +123,10 @@ useScriptTag(\`${content}\`);
         } else {
           shouldImportUseStyleTag = true;
           setup += `\
-useStyleTag(\`${content}\`, { id: "icon-assets" });
+useStyleTag(\`${content}\`, { id: "icon-assets-${index}" });
 `;
         }
-      }
-    }
+      });
   });
 
   if (isString(rootComponents.addThis)) {

@@ -12,12 +12,12 @@ title: FontIcon
 
 - 主页图标: <FontIcon icon="home" />
 
-- 一个大红 Markdown 图标: <FontIcon icon="markdown" color="red" size="32" />
+- 一个大绿分享图标: <FontIcon icon="share" color="#3eaf7c" size="32" />
 
 ```md
 - 主页图标: <FontIcon icon="home" />
 
-- 一个大红 Markdown 图标: <FontIcon icon="markdown" color="red" size="32" />
+- 一个大绿分享图标: <FontIcon icon="share" color="#3eaf7c" size="32" />
 ```
 
 ## 属性

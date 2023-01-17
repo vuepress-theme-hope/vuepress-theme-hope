@@ -63,7 +63,9 @@ export interface ComponentOptions {
         | "fontawesome"
         | `//${string}`
         | `http://${string}`
-        | `https://${string}`;
+        | `http://${string}`[]
+        | `https://${string}`
+        | `https://${string}`[];
 
       /**
        * Class prefix of font icon

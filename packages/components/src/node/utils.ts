@@ -9,17 +9,20 @@ export const CLIENT_FOLDER = ensureEndingSlash(
   path.resolve(__dirname, "../client")
 );
 
-export const getIconPrefix = (assets = ""): string => {
-  if (
-    assets === "fontawesome" ||
-    assets.match(/^(?:https:)?\/\/kit\.fontawesome\.com\//)
-  )
-    return "fas fa-";
-  if (
-    assets === "iconfont" ||
-    assets.match(/^(?:https:)?\/\/at\.alicdn\.com\/t\//)
-  )
-    return "iconfont icon-";
+const isFontAwesomeLink = (link: string): boolean =>
+  /^(?:https:)?\/\/kit\.fontawesome\.com\//.test(link) ||
+  link.includes("@fortawesome/fontawesome-free");
+
+export const getIconPrefix = (assets?: string | string[]): string => {
+  if (typeof assets === "string") {
+    if (assets === "fontawesome" || isFontAwesomeLink(assets)) return "fas fa-";
+
+    if (
+      assets === "iconfont" ||
+      assets.match(/^(?:https:)?\/\/at\.alicdn\.com\/t\//)
+    )
+      return "iconfont icon-";
+  }
 
   return "";
 };
