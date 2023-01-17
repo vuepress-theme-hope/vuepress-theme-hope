@@ -1,6 +1,6 @@
 ---
 title: 频道设置
-icon: config
+icon: clapperboard
 ---
 
 `channel` 选项用于配置 feed 的频道。可以配置的选项与默认值如下:

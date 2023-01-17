@@ -1,6 +1,6 @@
 ---
 title: Flowchart
-icon: tree
+icon: route
 ---
 
 Let the Markdown file support flow chart in your VuePress site.

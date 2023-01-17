@@ -1,6 +1,6 @@
 ---
 title: V2 Migration
-icon: change
+icon: code-compare
 ---
 
 ## New Features

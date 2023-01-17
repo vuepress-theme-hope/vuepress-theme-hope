@@ -1,6 +1,6 @@
 ---
 title: Demo
-icon: discover
+icon: laptop-code
 layout: Slide
 ---
 

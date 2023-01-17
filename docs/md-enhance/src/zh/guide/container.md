@@ -1,6 +1,6 @@
 ---
 title: 自定义容器
-icon: customize
+icon: box-archive
 ---
 
 插件可以为你添加提示、注释、信息、注意、警告和详情自定义容器的支持。

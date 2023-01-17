@@ -1,6 +1,6 @@
 ---
 title: Waline 选项
-icon: waline
+icon: w
 ---
 
 ## serverURL

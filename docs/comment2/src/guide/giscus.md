@@ -1,6 +1,6 @@
 ---
 title: Giscus
-icon: github
+icon: fab fa-github
 ---
 
 Giscus is a commenting system based on GitHub Discussion that is easy to start.

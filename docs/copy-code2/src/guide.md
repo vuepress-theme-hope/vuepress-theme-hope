@@ -1,6 +1,6 @@
 ---
 title: Guide
-icon: creative
+icon: lightbulb
 ---
 
 This plugin will automatically add a copy button to the bottom right corner of each code block.

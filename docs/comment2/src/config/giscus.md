@@ -1,6 +1,6 @@
 ---
 title: Giscus Options
-icon: github
+icon: fab fa-github
 ---
 
 ## repo

@@ -1,6 +1,6 @@
 ---
 title: Guide
-icon: creative
+icon: lightbulb
 ---
 
 ## Usage

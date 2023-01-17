@@ -1,6 +1,6 @@
 ---
 title: Guide
-icon: creative
+icon: lightbulb
 ---
 
 `vuepress-plugin-search-pro` is a powerful client-side search plugin that can support custom indexing and full-text search.

@@ -1,6 +1,6 @@
 ---
 title: React Code Demo
-icon: react
+icon: fab fa-react
 ---
 
 ## Syntax

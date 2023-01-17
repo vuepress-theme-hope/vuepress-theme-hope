@@ -1,6 +1,6 @@
 ---
 title: Guide
-icon: creative
+icon: lightbulb
 ---
 
 This plugin can automatically append copyright information when visitors copy content from your site, and can also prohibit site copying or selection.

@@ -1,6 +1,6 @@
 ---
 title: 其他
-icon: more
+icon: ellipsis
 ---
 
 ## 链接检查

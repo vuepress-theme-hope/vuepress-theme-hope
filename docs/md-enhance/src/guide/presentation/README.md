@@ -1,6 +1,6 @@
 ---
 title: Presentation
-icon: slides
+icon: person-chalkboard
 ---
 
 Let the Markdown file in your VuePress site support presentation.

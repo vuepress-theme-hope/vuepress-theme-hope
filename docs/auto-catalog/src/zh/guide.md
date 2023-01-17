@@ -1,6 +1,6 @@
 ---
 title: Guide
-icon: creative
+icon: lightbulb
 ---
 
 使用 `vuepress-plugin-auto-catalog`，你可以轻松地为你的主题自动生成目录页面。

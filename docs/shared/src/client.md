@@ -1,5 +1,6 @@
 ---
 title: Client
+icon: fab fa-chrome
 ---
 
 ## Composables

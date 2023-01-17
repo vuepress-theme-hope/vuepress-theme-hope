@@ -1,6 +1,6 @@
 ---
 title: 指南
-icon: creative
+icon: lightbulb
 ---
 
 这个插件将会向页面数据注入预计阅读时间与字数统计。

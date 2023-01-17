@@ -1,6 +1,6 @@
 ---
 title: Waline
-icon: waline
+icon: w
 ---
 
 Welcome to Waline. In just a few steps, you can enable Waline to provide comments and page views on your site.

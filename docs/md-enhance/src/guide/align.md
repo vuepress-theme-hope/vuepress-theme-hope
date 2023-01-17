@@ -1,6 +1,6 @@
 ---
 title: Alignment
-icon: align
+icon: align-center
 ---
 
 By injecting configuration into vuepress-plugin-container, you can use

@@ -1,6 +1,6 @@
 ---
 title: V2 Migration
-icon: change
+icon: code-compare
 ---
 
 Name changed from `@mr-hope/vuepress-feed` to `vuepress-plugin-feed2`. ⚠

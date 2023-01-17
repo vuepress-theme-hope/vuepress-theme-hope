@@ -1,6 +1,6 @@
 ---
 title: 指南
-icon: creative
+icon: lightbulb
 ---
 
 插件为 VuePress 带来了增强的 PWA 支持[^pwa-intro]。

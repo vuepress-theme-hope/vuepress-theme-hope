@@ -1,6 +1,6 @@
 ---
 title: Image
-icon: pic
+icon: image
 ---
 
 Improve image syntax in Markdown to support color scheme and size.

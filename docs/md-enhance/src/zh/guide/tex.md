@@ -1,6 +1,6 @@
 ---
 title: Tex 语法
-icon: tex
+icon: square-root-variable
 ---
 
 让你的 VuePress 站点中的 Markdown 文件支持 $\TeX$ 语法。

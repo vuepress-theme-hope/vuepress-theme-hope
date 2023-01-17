@@ -15,12 +15,12 @@ actions:
 
 features:
   - title: 自定义容器支持
-    icon: box
+    icon: box-archive
     details: 用样式装饰 Markdown 内容
     link: /zh/guide/container.html
 
   - title: 选项卡
-    icon: tab
+    icon: table-columns
     details: 使用选项卡对相似内容进行分组
     link: /zh/guide/tabs.html
 
@@ -30,7 +30,7 @@ features:
     link: /zh/guide/code-tabs.html
 
   - title: 自定义对齐支持
-    icon: align
+    icon: align-center
     details: 让你在 Markdown 中对段落进行对齐
     link: /zh/guide/align.html
 
@@ -45,47 +45,47 @@ features:
     link: /zh/guide/sup-sub.html
 
   - title: 脚注
-    icon: quote
+    icon: quote-left
     details: 你的 Markdown 现在将支持脚注
     link: /zh/guide/footnote.html
 
   - title: 标记支持
-    icon: write
+    icon: marker
     details: 让你在 Markdown 中对词句进行标记
     link: /zh/guide/mark.html
 
   - title: 任务列表
-    icon: check
+    icon: square-check
     details: 在 Markdown 中使用任务列表
     link: /zh/guide/tasklist.html
 
   - title: 图片语法
-    icon: pic
+    icon: image
     details: 使用改进的语法指定图片大小与颜色模式
     link: /zh/guide/image.html
 
   - title: 图表支持
-    icon: rank
+    icon: chart-simple
     details: 在 Markdown 中展示图表
     link: /zh/guide/chart.html
 
   - title: 流程图支持
-    icon: tree
+    icon: route
     details: 可以在 Markdown 中直接写出流程图
     link: /zh/guide/flowchart.html
 
   - title: Mermaid 支持
-    icon: diagram
+    icon: chart-pie
     details: 可以在 Markdown 中添加 Mermaid 图例
     link: /zh/guide/mermaid.html
 
   - title: Tex 支持
-    icon: tex
+    icon: square-root-variable
     details: Markdown 现在也可以支持 Tex 语法以显示公式
     link: /zh/guide/tex.html
 
   - title: 导入文件支持
-    icon: markdown
+    icon: fab fa-markdown
     details: 将你的文档分段，并在 Markdown 中导入
     link: /zh/guide/include.html
 
@@ -95,17 +95,17 @@ features:
     link: /zh/guide/playground.html
 
   - title: Vue 交互演示支持
-    icon: code
+    icon: fab fa-vuejs
     details: 在交互演示中展示 Vue 组件
     link: /zh/guide/vue-playground.html
 
   - title: 代码案例支持
-    icon: discover
+    icon: laptop-code
     details: 你可以很方便的插入代码案例
     link: /zh/guide/demo/
 
   - title: 幻灯片支持
-    icon: slides
+    icon: person-chalkboard
     details: 你可以直接在 Markdown 中插入幻灯片
     link: /zh/guide/presentation/
 

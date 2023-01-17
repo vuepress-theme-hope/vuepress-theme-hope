@@ -1,6 +1,6 @@
 ---
 title: 配置
-icon: config
+icon: gears
 ---
 
 你可以设置以下插件选项来启用或禁用一些功能。

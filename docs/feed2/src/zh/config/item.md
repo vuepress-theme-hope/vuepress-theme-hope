@@ -1,6 +1,6 @@
 ---
 title: 页面设置
-icon: config
+icon: file-lines
 ---
 
 你可以通过配置每个页面的 Frontmatter，来对每个 Feed 项目生成进行单独的控制。

@@ -1,6 +1,6 @@
 ---
 title: Include Files
-icon: markdown
+icon: fab fa-markdown
 ---
 
 Let the Markdown file in your VuePress site support including other files.

@@ -1,6 +1,6 @@
 ---
 title: Others
-icon: more
+icon: ellipsis
 ---
 
 ## Link check

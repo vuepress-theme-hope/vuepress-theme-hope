@@ -1,6 +1,6 @@
 ---
 title: Waline Config
-icon: waline
+icon: w
 ---
 
 ## serverURL

@@ -120,7 +120,9 @@ export interface AppearanceOptions {
     | "fontawesome"
     | `//${string}`
     | `http://${string}`
-    | `https://${string}`;
+    | `http://${string}`[]
+    | `https://${string}`
+    | `https://${string}`[];
 
   /**
    * Font Icon class prefix

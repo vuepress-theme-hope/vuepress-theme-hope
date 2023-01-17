@@ -1,6 +1,6 @@
 ---
 title: 插件选项
-icon: config
+icon: gears
 ---
 
 ## id

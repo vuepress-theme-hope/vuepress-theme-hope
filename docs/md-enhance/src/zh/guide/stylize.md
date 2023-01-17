@@ -1,6 +1,6 @@
 ---
 title: 样式化
-icon: style
+icon: wand-magic-sparkles
 ---
 
 该插件可以对内联标记进行样式化，包括更改标签、添加属性和修改内容。

@@ -1,6 +1,6 @@
 ---
 title: Guide
-icon: creative
+icon: lightbulb
 ---
 
 This plugin removes any related service worker from your VuePress site, so that users can still get updates if you removed any PWA plugin after enabling it.

@@ -1,6 +1,6 @@
 ---
 title: Guide
-icon: creative
+icon: lightbulb
 ---
 
 The plugin brings enhanced PWA support to VuePress [^pwa-intro].

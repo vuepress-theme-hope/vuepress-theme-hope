@@ -1,6 +1,6 @@
 ---
 title: 迁移至 V2
-icon: change
+icon: code-compare
 ---
 
 从 `@mr-hope/vuepress-plugin-comment` 重命名为 `vuepress-plugin-comment2`。 ⚠

@@ -1,6 +1,6 @@
 ---
 title: Chart
-icon: rank
+icon: chart-simple
 ---
 
 让你 VuePress 站点中的 Markdown 文件支持图表。

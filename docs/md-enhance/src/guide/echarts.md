@@ -1,6 +1,6 @@
 ---
 title: ECharts
-icon: rank
+icon: chart-simple
 ---
 
 Let the Markdown file support chart in your VuePress site.

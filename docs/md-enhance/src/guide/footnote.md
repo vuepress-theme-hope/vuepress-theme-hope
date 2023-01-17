@@ -1,6 +1,6 @@
 ---
 title: Footnote
-icon: quote
+icon: quote-left
 ---
 
 Let the Markdown file in your VuePress site support footnotes.

@@ -1,6 +1,6 @@
 ---
 title: 任务列表
-icon: check
+icon: square-check
 ---
 
 让你的 VuePress 站点中的 Markdown 文件支持任务列表。

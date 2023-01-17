@@ -1,6 +1,6 @@
 ---
 title: 幻灯片演示
-icon: discover
+icon: laptop-code
 layout: Slide
 ---
 

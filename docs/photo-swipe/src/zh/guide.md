@@ -1,6 +1,6 @@
 ---
 title: 指南
-icon: creative
+icon: lightbulb
 ---
 
 此插件会使页面正文内的图片在点击时进入浏览模式浏览。

@@ -1,6 +1,6 @@
 ---
 title: V2 迁移指南
-icon: change
+icon: code-compare
 ---
 
 ## 新选项

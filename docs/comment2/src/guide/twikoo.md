@@ -1,6 +1,6 @@
 ---
 title: Twikoo
-icon: comment
+icon: t
 ---
 
 A concise, safe and free static site commenting system, based on [Tencent Cloud Development](https://curl.qcloud.com/KnnJtUom).

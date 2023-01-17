@@ -1,6 +1,6 @@
 ---
 title: Channel Config
-icon: config
+icon: clapperboard
 ---
 
 The channel option is used to config the feed channel.

@@ -1,6 +1,6 @@
 ---
 title: V2 Migration
-icon: change
+icon: code-compare
 ---
 
 Renamed from `@mr-hope/vuepress-plugin-copy-code` to `vuepress-plugin-copy-code2`. ⚠

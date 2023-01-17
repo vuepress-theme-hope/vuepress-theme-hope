@@ -1,6 +1,6 @@
 ---
 title: Demo
-icon: discover
+icon: laptop-code
 ---
 
 We provide a demo using `vuepress-plugin-sass-palette` and `@vuepress/theme-default` for you to better understand how to use the plugin.

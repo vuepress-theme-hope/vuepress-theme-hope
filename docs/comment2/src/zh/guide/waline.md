@@ -1,6 +1,6 @@
 ---
 title: Waline
-icon: waline
+icon: w
 ---
 
 欢迎使用 Waline，只需几个步骤，你就可以在你的网站中启用 Waline 提供评论与浏览量服务。

@@ -1,6 +1,6 @@
 ---
 title: Config
-icon: config
+icon: gears
 ---
 
 ## cachePrefix

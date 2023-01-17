@@ -1,6 +1,6 @@
 ---
 title: Plugin Config
-icon: config
+icon: gears
 ---
 
 ## hostname

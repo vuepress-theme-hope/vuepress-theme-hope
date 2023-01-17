@@ -1,6 +1,6 @@
 ---
 title: Stylize
-icon: style
+icon: wand-magic-sparkles
 ---
 
 This plugin can stylize inline tokens including changing tags, adding attributes and modifying content.

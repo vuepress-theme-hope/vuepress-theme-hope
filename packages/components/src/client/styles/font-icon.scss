@@ -1,6 +1,12 @@
 .font-icon {
   display: inline-block;
 
+  // ensure fontawesome icon is not too large comparing with text
+  &.svg-inline--fa {
+    width: 0.9em;
+    height: 0.9em;
+  }
+
   #{hope-config.$content-class} & {
     vertical-align: middle;
   }

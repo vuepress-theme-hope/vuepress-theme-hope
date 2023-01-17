@@ -1,6 +1,6 @@
 ---
 title: Custom container
-icon: customize
+icon: box-archive
 ---
 
 The plugin adds tip, note, info, warning, danger and detail container.

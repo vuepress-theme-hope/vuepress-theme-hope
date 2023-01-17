@@ -1,6 +1,6 @@
 ---
 title: Task list
-icon: check
+icon: square-check
 ---
 
 Let the Markdown file in your VuePress site support task list.

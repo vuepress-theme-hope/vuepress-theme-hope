@@ -1,6 +1,6 @@
 ---
 title: 选项卡
-icon: tab
+icon: table-columns
 ---
 
 让你的 VuePress 站点中的 Markdown 文件支持选项卡。

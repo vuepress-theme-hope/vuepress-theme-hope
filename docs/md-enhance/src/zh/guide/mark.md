@@ -1,6 +1,6 @@
 ---
 title: 标记
-icon: write
+icon: marker
 ---
 
 让你的 VuePress 站点中的 Markdown 文件支持标记。

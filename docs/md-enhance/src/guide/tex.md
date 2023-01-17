@@ -1,6 +1,6 @@
 ---
 title: TeX
-icon: tex
+icon: square-root-variable
 ---
 
 Let the Markdown file in your VuePress site support the $\TeX$ syntax.

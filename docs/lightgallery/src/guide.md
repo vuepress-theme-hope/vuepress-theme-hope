@@ -1,6 +1,6 @@
 ---
 title: Guide
-icon: creative
+icon: lightbulb
 ---
 
 This plugin will use lightgallery make the pictures in the body of the page enter the preview mode when clicked.

@@ -26,8 +26,10 @@ export const getComponentsPlugin = (
       componentOptions: {
         fontIcon: {
           ...(options.iconAssets ? { assets: options.iconAssets } : {}),
+          ...(isString(options.iconPrefix)
+            ? { prefix: options.iconPrefix }
+            : {}),
         },
-        ...(isString(options.iconPrefix) ? { prefix: options.iconPrefix } : {}),
         ...componentOptions,
       },
       rootComponents: {

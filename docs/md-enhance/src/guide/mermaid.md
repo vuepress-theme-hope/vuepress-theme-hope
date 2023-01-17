@@ -1,6 +1,6 @@
 ---
 title: Mermaid
-icon: diagram
+icon: chart-pie
 ---
 
 Let the Markdown file support [mermaid](https://mermaid-js.github.io/mermaid/#/) in your VuePress site.

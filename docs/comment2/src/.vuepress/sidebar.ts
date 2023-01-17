@@ -4,13 +4,13 @@ export const enSidebarConfig = sidebar({
   "/": [
     {
       text: "Guide",
-      icon: "creative",
+      icon: "lightbulb",
       prefix: "guide/",
       children: ["", "giscus", "waline", "twikoo"],
     },
     {
       text: "Config",
-      icon: "config",
+      icon: "gears",
       prefix: "config/",
       children: ["", "giscus", "waline", "twikoo"],
     },
@@ -23,13 +23,13 @@ export const zhSidebarConfig = sidebar({
   "/zh/": [
     {
       text: "指南",
-      icon: "creative",
+      icon: "lightbulb",
       prefix: "guide/",
       children: ["", "giscus", "waline", "twikoo"],
     },
     {
       text: "配置",
-      icon: "config",
+      icon: "gears",
       prefix: "config/",
       children: ["", "giscus", "waline", "twikoo"],
     },

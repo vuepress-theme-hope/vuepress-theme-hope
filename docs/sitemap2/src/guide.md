@@ -1,6 +1,6 @@
 ---
 title: Guide
-icon: creative
+icon: lightbulb
 ---
 
 This plugin will automatically generate a Sitemap for your site. To let this plugin work, you need to pass the deployed domain name to the `hostname` option of the plugin.

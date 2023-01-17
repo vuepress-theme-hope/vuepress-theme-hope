@@ -1,6 +1,6 @@
 ---
 title: React 代码演示
-icon: react
+icon: fab fa-react
 ---
 
 ## 格式

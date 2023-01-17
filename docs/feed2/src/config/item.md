@@ -1,6 +1,6 @@
 ---
 title: Page Config
-icon: config
+icon: file-lines
 ---
 
 You can have individual control over each feed item generation by configuring Frontmatter for each page.

@@ -1,6 +1,6 @@
 ---
 title: 图片
-icon: pic
+icon: image
 ---
 
 改进 Markdown 中的图像语法以支持颜色方案和大小。

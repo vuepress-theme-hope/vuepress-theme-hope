@@ -1,6 +1,6 @@
 ---
 title: Feed 获取器
-icon: customize
+icon: shapes
 ---
 
 你可以通过控制插件选项中的 `getter` 来完全控制 Feed 项目的生成。

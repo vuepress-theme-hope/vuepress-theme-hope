@@ -1,6 +1,6 @@
 ---
 title: Guide
-icon: creative
+icon: lightbulb
 ---
 
 With `vuepress-plugin-auto-catalog`, you can easily gets automatically generated catalog pages for your theme.

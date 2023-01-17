@@ -1,6 +1,6 @@
 ---
 title: Plugin options
-icon: config
+icon: gears
 ---
 
 ## selector

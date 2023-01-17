@@ -1,6 +1,6 @@
 ---
 title: Feed Getter
-icon: customize
+icon: shapes
 ---
 
 You can take full control of feed items generation by setting `getter` in the plugin options.

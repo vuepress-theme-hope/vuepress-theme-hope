@@ -19,7 +19,7 @@ export default theme("components", {
         "/demo",
         {
           text: version,
-          icon: "note",
+          icon: "bookmark",
           children: [
             {
               text: "V1 Docs",
@@ -32,7 +32,7 @@ export default theme("components", {
       sidebar: [
         "/",
         {
-          icon: "plugin",
+          icon: "puzzle-piece",
           text: "Components",
           prefix: "/guide/",
           children: "structure",
@@ -49,7 +49,7 @@ export default theme("components", {
         "/zh/demo",
         {
           text: version,
-          icon: "note",
+          icon: "bookmark",
           children: [
             {
               text: "V1 文档",
@@ -62,7 +62,7 @@ export default theme("components", {
       sidebar: [
         "/zh/",
         {
-          icon: "plugin",
+          icon: "puzzle-piece",
           text: "组件",
           prefix: "/zh/guide/",
           children: "structure",

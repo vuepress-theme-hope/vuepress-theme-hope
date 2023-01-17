@@ -1,6 +1,6 @@
 ---
 title: Vue Playground
-icon: code
+icon: fab fa-vuejs
 ---
 
 The plugin provides you vue playground support.

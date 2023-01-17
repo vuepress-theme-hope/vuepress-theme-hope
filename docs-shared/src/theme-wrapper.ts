@@ -34,7 +34,12 @@ export const theme = (
 
     favicon: "/favicon.ico",
 
-    iconAssets: "iconfont",
+    iconAssets: [
+      "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/js/brands.min.js",
+      "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/js/solid.min.js",
+      "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/js/fontawesome.min.js",
+    ],
+    iconPrefix: "fas fa-",
 
     repo: `vuepress-theme-hope/vuepress-theme-hope/tree/main/packages/${name}/`,
     docsRepo: "vuepress-theme-hope/vuepress-theme-hope",

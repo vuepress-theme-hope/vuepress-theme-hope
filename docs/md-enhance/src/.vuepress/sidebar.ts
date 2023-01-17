@@ -5,7 +5,7 @@ export const enSidebarConfig = sidebar({
     "",
     {
       text: "Guide",
-      icon: "creative",
+      icon: "lightbulb",
       prefix: "guide/",
       children: [
         "",
@@ -29,14 +29,14 @@ export const enSidebarConfig = sidebar({
         "vue-playground",
         {
           text: "Code Demo",
-          icon: "discover",
+          icon: "laptop-code",
           prefix: "demo/",
           collapsible: true,
           children: ["", "normal", "vue", "react"],
         },
         {
           text: "Presentation",
-          icon: "slides",
+          icon: "person-chalkboard",
           prefix: "presentation/",
           collapsible: true,
           children: ["", "demo", "themes"],
@@ -72,14 +72,14 @@ export const enSidebarConfig = sidebar({
     "vue-playground",
     {
       text: "Code Demo",
-      icon: "discover",
+      icon: "laptop-code",
       prefix: "demo/",
       collapsible: true,
       children: ["", "normal", "vue", "react"],
     },
     {
       text: "Presentation",
-      icon: "slides",
+      icon: "person-chalkboard",
       prefix: "presentation/",
       collapsible: true,
       children: ["", "demo", "themes"],
@@ -94,7 +94,7 @@ export const zhSidebarConfig = sidebar({
     "",
     {
       text: "指南",
-      icon: "creative",
+      icon: "lightbulb",
       prefix: "guide/",
       children: [
         "",
@@ -118,14 +118,14 @@ export const zhSidebarConfig = sidebar({
         "vue-playground",
         {
           text: "代码演示",
-          icon: "discover",
+          icon: "laptop-code",
           prefix: "demo/",
           collapsible: true,
           children: ["", "normal", "vue", "react"],
         },
         {
           text: "幻灯片",
-          icon: "slides",
+          icon: "person-chalkboard",
           prefix: "presentation/",
           collapsible: true,
           children: ["", "demo", "themes"],
@@ -161,14 +161,14 @@ export const zhSidebarConfig = sidebar({
     "vue-playground",
     {
       text: "代码演示",
-      icon: "discover",
+      icon: "laptop-code",
       prefix: "demo/",
       collapsible: true,
       children: ["", "normal", "vue", "react"],
     },
     {
       text: "幻灯片",
-      icon: "slides",
+      icon: "person-chalkboard",
       prefix: "presentation/",
       collapsible: true,
       children: ["", "demo", "themes"],

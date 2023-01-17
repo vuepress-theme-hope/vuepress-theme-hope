@@ -1,6 +1,6 @@
 ---
 title: Config
-icon: config
+icon: gears
 ---
 
 You can pass these options to the plugin:

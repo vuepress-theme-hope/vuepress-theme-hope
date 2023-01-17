@@ -15,7 +15,7 @@ export const enNavbarConfig = navbar([
   "/demo",
   {
     text: version,
-    icon: "note",
+    icon: "bookmark",
     children: [
       {
         text: "V1 Docs",
@@ -33,7 +33,7 @@ export const zhNavbarConfig = navbar([
   "/zh/demo",
   {
     text: version,
-    icon: "note",
+    icon: "bookmark",
     children: [
       {
         text: "V1 文档",

@@ -1,6 +1,6 @@
 ---
 title: 指南
-icon: guide
+icon: lightbulb
 ---
 
 本插件会通过向网站 `<head>` 注入标签，让你的网站完全支持 [开放内容协议 OGP](https://ogp.me/) 和 [JSON-LD 1.1](https://www.w3.org/TR/json-ld-api/)，以全面增强站点的搜索引擎优化性。

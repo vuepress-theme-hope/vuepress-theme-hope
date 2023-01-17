@@ -1,6 +1,6 @@
 ---
 title: 插件配置
-icon: config
+icon: gears
 ---
 
 ## hostname

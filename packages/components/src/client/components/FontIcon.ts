@@ -53,7 +53,12 @@ export default defineComponent({
     return (): VNode | null =>
       props.icon
         ? h("span", {
-            class: ["font-icon icon", `${ICON_PREFIX}${props.icon}`],
+            class: [
+              "font-icon icon",
+              props.icon.includes(" ")
+                ? props.icon
+                : `${ICON_PREFIX}${props.icon}`,
+            ],
             style: style.value,
           })
         : null;
