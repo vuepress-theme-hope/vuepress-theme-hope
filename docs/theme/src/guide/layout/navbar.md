@@ -360,6 +360,41 @@ navbar: false
 ---
 ```
 
+## Disable Navbar Icon
+
+To disable the navbar icon, set `navbarIcon: false` in theme options:
+
+::: code-tabs#language
+
+@tab TS
+
+```ts
+// .vuepress/config.ts
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default defineUserConfig({
+  theme: hopeTheme({
+    navbarIcon: false,
+  }),
+});
+```
+
+@tab JS
+
+```js
+// .vuepress/config.js
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default {
+  theme: hopeTheme({
+    navbarIcon: false,
+  }),
+};
+```
+
+:::
+
 ## Site Logo
 
 You can use `logo` options to set site logo displayed in navbar.
@@ -535,7 +570,7 @@ The following three functions are provided:
 
 ## Layout config
 
-`vuepress-theme-hope` allows you to customize navbar layout. You can add components in `left`, `center` and `right` keys under `navbarLayout` options.
+`vuepress-theme-hope` allows you to customize navbar layout. You can add components in `start`, `center` and `end` keys under `navbarLayout` options.
 
 Available components:
 
@@ -560,9 +595,9 @@ import { hopeTheme } from "vuepress-theme-hope";
 export default defineUserConfig({
   theme: hopeTheme({
     navbarLayout: {
-      left: ["Brand"],
+      start: ["Brand"],
       center: ["Links"],
-      right: ["Language", "Repo", "Outlook", "Search"],
+      end: ["Language", "Repo", "Outlook", "Search"],
     },
   }),
 });
@@ -577,9 +612,9 @@ import { hopeTheme } from "vuepress-theme-hope";
 export default {
   theme: hopeTheme({
     navbarLayout: {
-      left: ["Brand"],
+      start: ["Brand"],
       center: ["Links"],
-      right: ["Language", "Repo", "Outlook", "Search"],
+      end: ["Language", "Repo", "Outlook", "Search"],
     },
   }),
 };

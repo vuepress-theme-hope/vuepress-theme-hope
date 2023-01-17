@@ -35,9 +35,9 @@ export type NavbarComponent =
  * 导航栏布局选项
  */
 export interface NavbarLayoutOptions {
-  left: NavbarComponent[];
+  start: NavbarComponent[];
   center: NavbarComponent[];
-  right: NavbarComponent[];
+  end: NavbarComponent[];
 }
 
 export interface NavbarLocaleOptions {
@@ -124,7 +124,7 @@ export interface NavbarLocaleOptions {
    *
    * 导航栏布局设置
    *
-   * @default { left: ["Brand"], center: ["Links"], right: ["Language", "Repo", "Outlook", "Search"] }
+   * @default { start: ["Brand"], center: ["Links"], end: ["Language", "Repo", "Outlook", "Search"] }
    */
   navbarLayout?: NavbarLayoutOptions;
 

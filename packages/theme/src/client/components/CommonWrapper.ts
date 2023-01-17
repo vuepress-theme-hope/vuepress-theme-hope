@@ -215,12 +215,12 @@ export default defineComponent({
                     Navbar,
                     { onToggleSidebar: () => toggleMobileSidebar() },
                     {
-                      leftStart: () => slots["navbarLeftStart"]?.(),
-                      leftEnd: () => slots["navbarLeftEnd"]?.(),
-                      centerStart: () => slots["navbarCenterStart"]?.(),
-                      centerEnd: () => slots["navbarCenterEnd"]?.(),
-                      rightStart: () => slots["navbarRightStart"]?.(),
-                      rightEnd: () => slots["navbarRightEnd"]?.(),
+                      startBefore: () => slots["navbarStartBefore"]?.(),
+                      startAfter: () => slots["navbarStartAfter"]?.(),
+                      centerBefore: () => slots["navbarCenterBefore"]?.(),
+                      centerAfter: () => slots["navbarCenterAfter"]?.(),
+                      endBegin: () => slots["navbarEndBegin"]?.(),
+                      endAfter: () => slots["navbarEndAfter"]?.(),
                       screenTop: () => slots["navScreenTop"]?.(),
                       screenBottom: () => slots["navScreenBottom"]?.(),
                     }

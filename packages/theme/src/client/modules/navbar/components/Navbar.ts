@@ -51,9 +51,9 @@ export default defineComponent({
     >(
       () =>
         themeLocale.value.navbarLayout || {
-          left: ["Brand"],
+          start: ["Brand"],
           center: ["Links"],
-          right: ["Language", "Repo", "Outlook", "Search"],
+          end: ["Language", "Repo", "Outlook", "Search"],
         }
     );
 
@@ -87,7 +87,7 @@ export default defineComponent({
             id: "navbar",
           },
           [
-            h("div", { class: "navbar-left" }, [
+            h("div", { class: "navbar-start" }, [
               // @ts-ignore
               h(ToggleSidebarButton, {
                 onToggle: () => {
@@ -95,21 +95,21 @@ export default defineComponent({
                   emit("toggleSidebar");
                 },
               }),
-              slots["leftStart"]?.(),
-              ...navbarLayout.value.left.map((item) => map[item]),
-              slots["leftEnd"]?.(),
+              slots["startBefore"]?.(),
+              ...navbarLayout.value.start.map((item) => map[item]),
+              slots["startAfter"]?.(),
             ]),
 
             h("div", { class: "navbar-center" }, [
-              slots["centerStart"]?.(),
+              slots["centerBefore"]?.(),
               ...navbarLayout.value.center.map((item) => map[item]),
-              slots["centerEnd"]?.(),
+              slots["centerAfter"]?.(),
             ]),
 
-            h("div", { class: "navbar-right" }, [
-              slots["rightStart"]?.(),
-              ...navbarLayout.value.right.map((item) => map[item]),
-              slots["rightEnd"]?.(),
+            h("div", { class: "navbar-end" }, [
+              slots["endBegin"]?.(),
+              ...navbarLayout.value.end.map((item) => map[item]),
+              slots["endAfter"]?.(),
 
               h(ToggleNavbarButton, {
                 active: showScreen.value,

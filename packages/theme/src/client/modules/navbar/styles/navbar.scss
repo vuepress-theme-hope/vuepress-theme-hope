@@ -56,8 +56,8 @@
   }
 }
 
-.navbar-left,
-.navbar-right,
+.navbar-start,
+.navbar-end,
 .navbar-center {
   display: flex;
   flex: 1;
@@ -77,7 +77,7 @@
   }
 }
 
-.navbar-left {
+.navbar-start {
   justify-content: start;
 }
 
@@ -85,6 +85,6 @@
   justify-content: center;
 }
 
-.navbar-right {
+.navbar-end {
   justify-content: end;
 }

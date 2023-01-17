@@ -360,6 +360,41 @@ navbar: false
 ---
 ```
 
+## Disable Navbar Icon
+
+To disable the navbar icon, set `navbarIcon: false` in theme options:
+
+::: code-tabs#language
+
+@tab TS
+
+```ts
+// .vuepress/config.ts
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default defineUserConfig({
+  theme: hopeTheme({
+    navbarIcon: false,
+  }),
+});
+```
+
+@tab JS
+
+```js
+// .vuepress/config.js
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default {
+  theme: hopeTheme({
+    navbarIcon: false,
+  }),
+};
+```
+
+:::
+
 ## Логотип сайта
 
 Вы можете использовать опции `logo`, чтобы установить логотип сайта, отображаемый на панели навигации.
@@ -535,7 +570,7 @@ export default {
 
 ## Конфигурация макета
 
-`vuepress-theme-hope` позволяет настроить макет панели навигации. Вы можете добавлять компоненты в `left`, `center` и `right` клавиши в параметрах `navbarLayout`.
+`vuepress-theme-hope` позволяет настроить макет панели навигации. Вы можете добавлять компоненты в `start`, `center` и `end` клавиши в параметрах `navbarLayout`.
 
 Доступные компоненты:
 
@@ -560,9 +595,9 @@ import { hopeTheme } from "vuepress-theme-hope";
 export default defineUserConfig({
   theme: hopeTheme({
     navbarLayout: {
-      left: ["Brand"],
+      start: ["Brand"],
       center: ["Links"],
-      right: ["Language", "Repo", "Outlook", "Search"],
+      end: ["Language", "Repo", "Outlook", "Search"],
     },
   }),
 });
@@ -577,9 +612,9 @@ import { hopeTheme } from "vuepress-theme-hope";
 export default {
   theme: hopeTheme({
     navbarLayout: {
-      left: ["Brand"],
+      start: ["Brand"],
       center: ["Links"],
-      right: ["Language", "Repo", "Outlook", "Search"],
+      end: ["Language", "Repo", "Outlook", "Search"],
     },
   }),
 };
