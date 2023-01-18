@@ -812,8 +812,8 @@ importers:
         specifier: 4.4.11
         version: 4.4.11
       axios:
-        specifier: 1.2.2
-        version: 1.2.2
+        specifier: 1.2.3
+        version: 1.2.3
       docs-shared:
         specifier: workspace:*
         version: link:../../docs-shared
@@ -1205,8 +1205,8 @@ importers:
         specifier: 9.10.0
         version: 9.10.0(vue@3.2.45)
       axios:
-        specifier: 1.2.2
-        version: 1.2.2
+        specifier: 1.2.3
+        version: 1.2.3
       docs-shared:
         specifier: workspace:*
         version: link:../../docs-shared
@@ -5624,8 +5624,8 @@ packages:
     resolution: {integrity: sha512-DMD0KiN46eipeziST1LPP/STfDU0sufISXmjSgvVsoU2tqxctQeASejWcfNtxYKqETM1UxQ8sp2OrSBWpHY6sw==}
     engines: {node: '>= 0.4'}
 
-  /axios@1.2.2:
-    resolution: {integrity: sha512-bz/J4gS2S3I7mpN/YZfGFTqhXTYzRho8Ay38w2otuuDR322KzFIWm/4W2K6gIwvWaws5n+mnb7D1lN9uD+QH6Q==}
+  /axios@1.2.3:
+    resolution: {integrity: sha512-pdDkMYJeuXLZ6Xj/Q5J3Phpe+jbGdsSzlQaFVkMQzRUL05+6+tetX8TV3p4HrU4kzuO9bt+io/yGQxuyxA/xcw==}
     dependencies:
       follow-redirects: 1.15.2
       form-data: 4.0.0
