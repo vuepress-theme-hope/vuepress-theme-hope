@@ -7,6 +7,10 @@ category:
 tag:
   - Icon
   - Interface
+head:
+  - - "link"
+    - rel: stylesheet
+      href: //at.alicdn.com/t/c/font_2410206_5vb9zlyghj.css
 ---
 
 The entire theme adds FontClass / Picture format icon support in multiple places.
@@ -34,7 +38,43 @@ You can use icon in multiple places.
 
 - HomePage: set `icon` option in feature item
 
-## Iconfont
+## Global Settings
+
+You can set icon assets url and icon prefix globally via `iconAssets` and `iconPrefix`.
+
+### Setting Icon Assets
+
+You should set icon related assets to `iconAssets`, where you can set one url or an array of urls of icon resources in format of css and js.
+
+For example, you may use [iconfont.cn](https://www.iconfont.cn/?lang=en-us) and [fontawesome](https://fontawesome.com) to generate your own assets.
+
+To keep it simple, we add built-in keywords `"iconfont"` and `"fontawesome"` support for you to get started easily.
+
+::: tip
+
+To get better performance, you should try to replace above keywords to your own assets link to avoid loading unnecessary icons.
+
+Creating your own assets links means that the assets link can only contains icons you used in the project.
+
+:::
+
+::: danger
+
+If you use this plugin for commercial project documentation, iconfont is **not recommended** as iconfont itself is a study/share platform for designers and developers.
+
+Every icon is uploaded by users and you must get authorized from the author for commercial usage. Also there could be chance where the uploader obeys usage term. and upload icons where its copyright is at 3rd party.
+
+:::
+
+### Setting Icon Prefix
+
+`iconPrefix` is the icon prefix where you want to set,
+
+Normally, there should be a common prefix for your icon class, for `iconfont` icon classes are `iconfont icon-<ICON-NAME>` and for fontawesome free icon classes are `fas fa-<icon-name>`. So when you are setting the above `assets` option with keywords or a single link generated from iconfont website, fontawesome kit or fontawesome CDN, the plugin recognize those and set prefix as `"iconfont icon-"` and `"fas fa-"` automatically for you.
+
+In other cases where you use your own url or you are setting multiple urls, you can manually set this options yourself. After all writing `icon: code` is always better then something like `icon: iconfont icon-code` or `icon: fa-solid fa-code`.
+
+## Generate your own iconfont assets
 
 [Iconfont](https://iconfont.cn) is a vector icon management and communication platform created by Alimama MUX.
 
@@ -74,19 +114,27 @@ On the project page, you can edit the icons in the project, including adjustment
 
 1. Set the css link to `iconAssets` in theme options.
 
+### Tips
+
 ::: tip
 
 If you add a new icon in the future, please regenerate the new CSS address and set it to `iconAssets` in theme options.
 
 :::
 
-## Fontawesome
+::: warning Conflicts with private character
 
-This theme has built-in Fontawesome support.
+Font Icon associate each icon with a character in unicode private character scope, the character used by iconfont is randomly.
 
-### Import
+Iconfont will try to solve conflicts by assigning a new character if a new icon's default character is already used in current project, however different projects may have conflicts.
 
-You need to set `iconAssets: "fontawesome"` in theme options.
+So we do not recommend you to use multiple iconfont links as assets, if you ready want to do so, check the icons to ensure every former project icon is not covered by those in latter ones.
+
+:::
+
+## Using Fontawesome Kits
+
+By default, we use jsdelivr CDN to load V6 version of fontawesome free icons. This should be enough for most open source projects. All you need is to set `iconAssets: "fontawesome"` in theme options:
 
 ::: code-tabs#language
 
@@ -120,20 +168,20 @@ export default defineUserConfig({
 
 :::
 
+Besides, you can purchase at [fontawesome.com](https://fontawesome.com) to use kits or import brand icons.
+
+Fontawesome kits with pro features support pro icons, more icon styles and uploading your own icons.
+
 ::: note
 
-Font-awesome current version is V6
-
-:::
-
-### Usage
-
-Please follow [fontawesome document](https://fontawesome.com/).
+For details, please follow [fontawesome document](https://fontawesome.com/).
 
 - [Usage Instructions](https://fontawesome.com/docs/web/add-icons/how-to)
 - [Icon List](https://fontawesome.com/icons)
 
-## IconFont Featured Icons
+:::
+
+## Featured Icons with `iconfont`
 
 You can set `iconAssets` to `"iconfont"` to use the following IconFont featured icons:
 

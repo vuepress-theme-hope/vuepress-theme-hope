@@ -83,7 +83,7 @@ Icon name
 
 在你使用自己的 url 或设置多个 url 的其他情况下，你可以自己手动设置此选项。毕竟输入 `icon: code` 总是比 `icon: iconfont icon-code` 或 `icon: fa-solid fa-code` 更好。
 
-## 声称自己的 Iconfont 资源
+## 生成自己的 Iconfont 资源
 
 [Iconfont](https://iconfont.cn) 是阿里妈妈 MUX 倾力打造的矢量图标管理、交流平台。
 
@@ -139,9 +139,9 @@ Icon name
 
 所以我们不建议你使用多个 iconfont 链接作为资源，如果你准备这样做，请检查图标以确保每个先前的项目图标都不会被后来的图标覆盖。
 
-::::
+:::
 
-## 使用 Fontawesome 套件
+## 使用 Fontawesome
 
 我们默认使用 jsdelivr CDN 加载 fontawesome 免费图标的 V6 版本。 对于大多数开源项目来说，这应该足够了。
 
