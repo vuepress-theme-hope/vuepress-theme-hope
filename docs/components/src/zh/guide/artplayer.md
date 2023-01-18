@@ -198,11 +198,11 @@ ArtPlayer 组件还支持布尔属性。
 - 类型: `(player: ArtPlayer) => Artplayer | void | Promise<Artplayer> | Promise<void>`
 - 必填: 否
 
-该函数接收当前 ArtPlayer 实例作为参数，因此您可以通过它进行自定义。
+该函数接收当前 ArtPlayer 实例作为参数，因此你可以通过它进行自定义。
 
 ## 全局配置
 
-您可以通过插件选项中的 `componentOptions.artPlayer` 为所有 ArtPlayer 组件设置全局配置。
+你可以通过插件选项中的 `componentOptions.artPlayer` 为所有 ArtPlayer 组件设置全局配置。
 
 这是一个例子：
 
@@ -257,7 +257,7 @@ MSE 全称 Media Source Extensions， 详见 [Media Source Extensions API](https
 
 该组件可以自动识别具有 `m3u8`、`flv` 或 `mpd` 扩展名的链接。
 
-在其他情况下，您应该手动将 `type` 设置为上述其中之一。
+在其他情况下，你应该手动将 `type` 设置为上述其中之一。
 
 :::
 
@@ -265,7 +265,7 @@ MSE 全称 Media Source Extensions， 详见 [Media Source Extensions API](https
 
 ### 额外的格式支持
 
-您可以通过 `config` 属性在 ArtPlayer 选项中使用 `customType` 选项支持其他格式的视频。
+你可以通过 `config` 属性在 ArtPlayer 选项中使用 `customType` 选项支持其他格式的视频。
 
 <ArtPlayer
   src="https://mse-demo.u2sb.com/dash/master.m3u8"

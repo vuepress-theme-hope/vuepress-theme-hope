@@ -1,5 +1,3 @@
-import {} from "./utils.js";
-
 const IS_GITEE = "GITEE" in process.env;
 const IS_NETLIFY = "NETLIFY" in process.env;
 
