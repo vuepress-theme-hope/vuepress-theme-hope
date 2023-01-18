@@ -49,8 +49,8 @@ importers:
         specifier: 8.2.1
         version: 8.2.1
       commit-and-tag-version:
-        specifier: 10.1.0
-        version: 10.1.0
+        specifier: 11.0.0
+        version: 11.0.0
       commitizen:
         specifier: 4.2.6
         version: 4.2.6
@@ -6118,15 +6118,15 @@ packages:
     engines: {node: ^12.20.0 || >=14}
     dev: true
 
-  /commit-and-tag-version@10.1.0:
-    resolution: {integrity: sha512-np3lR90bqFfOmxJtgqQc5UVBKFNdO06fRRTZm128QhEQ/ilXm3s/PXxZWheq2PUn5Qac2z+dWJJa+OqjxYsOpA==}
+  /commit-and-tag-version@11.0.0:
+    resolution: {integrity: sha512-HcIvYG5dmJk99PyPegdAzMfa1Es6t/FCAfJDQP+5xN+3R3t4qCG/kz704kQv1e6YgHyNk4MwRiGfN/kAua8k+Q==}
     engines: {node: '>=14'}
     hasBin: true
     dependencies:
       chalk: 2.4.2
       conventional-changelog: 3.1.25
       conventional-changelog-config-spec: 2.1.0
-      conventional-changelog-conventionalcommits: 4.6.3
+      conventional-changelog-conventionalcommits: 5.0.0
       conventional-recommended-bump: 6.1.0
       detect-indent: 6.1.0
       detect-newline: 3.1.0
