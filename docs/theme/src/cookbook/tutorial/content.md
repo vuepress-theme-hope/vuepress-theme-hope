@@ -1,6 +1,6 @@
 ---
 title: Project Content
-icon: page
+icon: file
 order: 4
 category:
   - Cookbook

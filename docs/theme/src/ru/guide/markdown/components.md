@@ -1,6 +1,6 @@
 ---
 title: Компоненты
-icon: plugin
+icon: puzzle-piece
 category:
   - Markdown
 tag:

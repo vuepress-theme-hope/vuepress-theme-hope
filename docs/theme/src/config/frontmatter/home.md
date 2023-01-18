@@ -1,6 +1,6 @@
 ---
 title: Home Frontmatter Config
-icon: config
+icon: gears
 order: 4
 category:
   - Config

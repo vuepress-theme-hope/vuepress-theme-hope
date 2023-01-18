@@ -5,7 +5,7 @@ export const ruSidebarConfig = sidebar({
     "",
     {
       text: "Руководство",
-      icon: "creative",
+      icon: "lightbulb",
       prefix: "guide/",
       children: [
         "get-started/",
@@ -19,7 +19,7 @@ export const ruSidebarConfig = sidebar({
     },
     {
       text: "Конфиг",
-      icon: "config",
+      icon: "gears",
       prefix: "config/",
       children: [
         "intro",
@@ -32,7 +32,7 @@ export const ruSidebarConfig = sidebar({
     },
     {
       text: "Учебник с примерами",
-      icon: "guide",
+      icon: "signs-post",
       prefix: "cookbook/",
       children: [
         "tutorial/",
@@ -44,13 +44,13 @@ export const ruSidebarConfig = sidebar({
     },
     {
       text: "Миграция",
-      icon: "change",
+      icon: "code-compare",
       prefix: "migration/",
       children: ["highlight", "config", "page", "style"],
     },
     {
       text: "Часто задаваемые вопросы",
-      icon: "question",
+      icon: "circle-question",
       prefix: "faq/",
       children: ["", "troubleshooting", "common-error", "vite", "safari"],
     },

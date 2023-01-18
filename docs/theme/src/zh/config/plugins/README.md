@@ -1,6 +1,6 @@
 ---
 title: 插件配置
-icon: config
+icon: puzzle-piece
 index: false
 dir:
   order: 4

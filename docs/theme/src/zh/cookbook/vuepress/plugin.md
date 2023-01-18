@@ -1,6 +1,6 @@
 ---
 title: 插件
-icon: plugin
+icon: puzzle-piece
 order: 5
 category:
   - 教程知识

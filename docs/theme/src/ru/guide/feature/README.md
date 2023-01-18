@@ -1,6 +1,6 @@
 ---
 title: Функции
-icon: discover
+icon: icons
 index: false
 dir:
   order: 5

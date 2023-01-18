@@ -1,6 +1,6 @@
 ---
 title: Customize
-icon: setting
+icon: gear
 dir:
   order: 5
 category:

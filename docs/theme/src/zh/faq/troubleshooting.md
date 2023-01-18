@@ -1,6 +1,6 @@
 ---
 title: 故障排查
-icon: check
+icon: square-check
 category:
   - FAQ
 ---

@@ -1,6 +1,6 @@
 ---
 title: PWA Plugin Config
-icon: app
+icon: mobile-screen
 order: 7
 category:
   - Config

@@ -1,6 +1,6 @@
 ---
 title: 配置介绍
-icon: config
+icon: gears
 order: 1
 category:
   - 配置

@@ -1,6 +1,6 @@
 ---
 title: 主题配置
-icon: config
+icon: gears
 index: false
 dir:
   order: 3

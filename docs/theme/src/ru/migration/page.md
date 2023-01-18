@@ -1,6 +1,6 @@
 ---
 title: Руководство по миграции страницы
-icon: page
+icon: file
 category:
   - Миграция
 tag:

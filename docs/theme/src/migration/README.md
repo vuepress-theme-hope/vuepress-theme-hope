@@ -1,6 +1,6 @@
 ---
 title: V2 Migration
-icon: change
+icon: code-compare
 ---
 
 This guide helps you migrate from V1 to V2.

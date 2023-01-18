@@ -1,6 +1,6 @@
 ---
 title: Tabs
-icon: tab
+icon: table-columns
 index: 2
 category:
   - Markdown

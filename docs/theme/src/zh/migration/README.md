@@ -1,6 +1,6 @@
 ---
 title: V2 迁移指南
-icon: change
+icon: code-compare
 ---
 
 本指南帮助你从 V1 迁移至 V2。

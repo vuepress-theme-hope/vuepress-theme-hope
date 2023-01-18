@@ -1,6 +1,6 @@
 ---
 title: 博客主页 Frontmatter 配置
-icon: config
+icon: gears
 order: 5
 category:
   - 配置

@@ -1,6 +1,6 @@
 ---
 title: Vite FAQ
-icon: question
+icon: circle-question
 category:
   - FAQ
 ---

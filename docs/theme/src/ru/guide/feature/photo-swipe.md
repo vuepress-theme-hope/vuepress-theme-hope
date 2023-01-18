@@ -1,6 +1,6 @@
 ---
 title: Превью изображения
-icon: preview
+icon: image
 category:
   - Функция
 tag:

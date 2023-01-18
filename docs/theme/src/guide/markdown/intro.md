@@ -1,6 +1,6 @@
 ---
 title: Enable Enhance
-icon: enable
+icon: toggle-on
 order: 1
 category:
   - Markdown

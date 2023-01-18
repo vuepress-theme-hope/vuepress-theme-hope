@@ -1,6 +1,6 @@
 ---
 title: 其他插件选项
-icon: more
+icon: ellipsis
 order: 8
 category:
   - 配置

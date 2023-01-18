@@ -1,6 +1,6 @@
 ---
 title: Markup
-icon: write
+icon: highlighter
 category:
   - Markdown
 tag:

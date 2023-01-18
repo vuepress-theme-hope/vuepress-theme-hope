@@ -1,6 +1,6 @@
 ---
 title: 小白教程
-icon: creative
+icon: lightbulb
 dir:
   order: 1
 category:

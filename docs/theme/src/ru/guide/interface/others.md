@@ -1,6 +1,6 @@
 ---
 title: Другие функции
-icon: others
+icon: ellipsis
 order: 5
 category:
   - Интерфейс

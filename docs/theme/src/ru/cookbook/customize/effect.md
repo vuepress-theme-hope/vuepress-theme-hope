@@ -1,6 +1,6 @@
 ---
 title: Customize Effects
-icon: style
+icon: wand-magic-sparkles
 category:
   - Cookbook
   - Customize

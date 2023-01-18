@@ -1,6 +1,6 @@
 ---
 title: Page Meta
-icon: time
+icon: clock
 category:
   - Feature
 tag:

@@ -1,6 +1,6 @@
 ---
 title: 插件说明
-icon: info
+icon: circle-info
 order: 1
 category:
   - 配置

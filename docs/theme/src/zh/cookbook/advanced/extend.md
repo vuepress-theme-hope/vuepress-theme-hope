@@ -1,6 +1,6 @@
 ---
 title: 主题继承
-icon: extend
+icon: clone
 order: 4
 category:
   - 高级

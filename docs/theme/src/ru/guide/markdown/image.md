@@ -1,6 +1,6 @@
 ---
 title: Изображение
-icon: pic
+icon: image
 category:
   - Markdown
 tag:

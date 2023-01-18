@@ -1,6 +1,6 @@
 ---
 title: Темный режим
-icon: contrast
+icon: circle-half-stroke
 order: 1
 category:
   - Интерфейс

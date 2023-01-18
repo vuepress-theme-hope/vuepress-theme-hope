@@ -1,6 +1,6 @@
 ---
 title: 样式迁移指南
-icon: style
+icon: wand-magic-sparkles
 category:
   - 迁移
 tag:

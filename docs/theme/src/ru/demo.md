@@ -1,6 +1,6 @@
 ---
 title: Демоверсии
-icon: discover
+icon: icons
 category:
   - Демо
 docs:

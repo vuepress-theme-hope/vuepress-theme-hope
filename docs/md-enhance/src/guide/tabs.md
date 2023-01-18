@@ -1,6 +1,6 @@
 ---
 title: Tabs
-icon: table-columns
+icon: table-columnsle-columns
 ---
 
 Let the Markdown file in your VuePress site support tabs.

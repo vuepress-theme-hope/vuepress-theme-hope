@@ -1,6 +1,6 @@
 ---
 title: Выделение
-icon: write
+icon: highlighter
 category:
   - Markdown
 tag:

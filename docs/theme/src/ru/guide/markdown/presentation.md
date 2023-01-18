@@ -1,6 +1,6 @@
 ---
 title: Презентация
-icon: slides
+icon: person-chalkboard
 category:
   - Markdown
 tag:

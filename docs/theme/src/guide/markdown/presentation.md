@@ -1,6 +1,6 @@
 ---
 title: Presentation
-icon: slides
+icon: person-chalkboard
 category:
   - Markdown
 tag:

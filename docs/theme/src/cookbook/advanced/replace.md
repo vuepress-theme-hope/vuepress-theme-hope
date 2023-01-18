@@ -1,6 +1,6 @@
 ---
 title: Replacing Theme Components
-icon: customize
+icon: boxes-packing
 order: 3
 category:
   - Advanced

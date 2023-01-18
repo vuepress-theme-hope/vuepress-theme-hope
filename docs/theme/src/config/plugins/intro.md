@@ -1,6 +1,6 @@
 ---
 title: Plugin Intro
-icon: info
+icon: circle-info
 order: 1
 category:
   - Config

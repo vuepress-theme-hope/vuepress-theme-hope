@@ -1,6 +1,6 @@
 ---
 title: Comment Plugin Config
-icon: comment
+icon: comment-dots
 order: 3
 category:
   - Config

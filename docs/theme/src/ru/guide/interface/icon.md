@@ -1,6 +1,6 @@
 ---
 title: Поддержка иконок
-icon: discover
+icon: icons
 order: 3
 category:
   - Интерфейс

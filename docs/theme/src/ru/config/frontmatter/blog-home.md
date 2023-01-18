@@ -1,6 +1,6 @@
 ---
 title: Конфигурация главной страницы блога Frontmatter
-icon: config
+icon: gears
 order: 5
 category:
   - Config

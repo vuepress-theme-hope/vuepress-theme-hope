@@ -1,6 +1,6 @@
 ---
 title: Навигация по пути
-icon: navigation
+icon: bars-progress
 order: 3
 category:
   - Макет

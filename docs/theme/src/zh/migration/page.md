@@ -1,6 +1,6 @@
 ---
 title: 页面迁移指南
-icon: page
+icon: file
 category:
   - 迁移
 tag:

@@ -1,6 +1,6 @@
 ---
 title: VuePress 配置
-icon: config
+icon: gears
 order: 4
 category:
   - 教程知识

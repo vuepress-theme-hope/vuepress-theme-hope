@@ -1,6 +1,6 @@
 ---
 title: 主题介绍
-icon: info
+icon: circle-info
 order: 1
 category:
   - 快速上手

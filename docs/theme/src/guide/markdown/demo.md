@@ -1,6 +1,6 @@
 ---
 title: Code Demo
-icon: discover
+icon: splotch
 category:
   - Markdown
 tag:

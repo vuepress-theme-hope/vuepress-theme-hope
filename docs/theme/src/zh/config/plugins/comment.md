@@ -1,6 +1,6 @@
 ---
 title: 评论插件配置
-icon: comment
+icon: comment-dots
 order: 3
 category:
   - 配置

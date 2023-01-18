@@ -1,6 +1,6 @@
 ---
 title: Эмодзи люди
-icon: emoji
+icon: person
 category:
   - Учебник с примерами
 tag:

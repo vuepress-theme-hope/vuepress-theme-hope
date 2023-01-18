@@ -1,6 +1,6 @@
 ---
 title: Распространенные ошибки
-icon: warn
+icon: triangle-exclamation
 category:
   - FAQ
 ---

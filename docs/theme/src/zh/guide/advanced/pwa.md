@@ -1,6 +1,6 @@
 ---
 title: PWA
-icon: app
+icon: mobile-screen
 category:
   - 高级
 tag:

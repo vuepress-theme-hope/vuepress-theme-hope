@@ -20,7 +20,7 @@ features:
     link: /guide/container.html
 
   - title: Tabs
-    icon: table-columns
+    icon: table-columnsle-columns
     details: Group similar content with tabs and switch them together
     link: /guide/tabs.html
 
@@ -50,7 +50,7 @@ features:
     link: /guide/footnote.html
 
   - title: Mark Support
-    icon: marker
+    icon: highlighter
     details: Mark words and sentences in Markdown
     link: /guide/mark.html
 

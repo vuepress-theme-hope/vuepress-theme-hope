@@ -1,6 +1,6 @@
 ---
 title: Layout Frontmatter Config
-icon: config
+icon: gears
 order: 2
 category:
   - Config

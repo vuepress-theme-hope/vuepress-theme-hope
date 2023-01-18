@@ -1,6 +1,6 @@
 ---
 title: Эмодзи объект
-icon: emoji
+icon: object-group
 category:
   - Учебник с примерами
 tag:

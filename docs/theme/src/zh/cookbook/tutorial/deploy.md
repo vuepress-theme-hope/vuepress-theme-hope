@@ -1,6 +1,6 @@
 ---
 title: 部署项目
-icon: launch
+icon: rocket
 order: 7
 category:
   - 快速上手

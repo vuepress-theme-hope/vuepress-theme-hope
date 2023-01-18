@@ -1,6 +1,6 @@
 ---
 title: 修改布局
-icon: layout
+icon: object-group
 category:
   - 教程知识
   - 自定义

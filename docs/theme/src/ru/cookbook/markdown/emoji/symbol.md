@@ -1,6 +1,6 @@
 ---
 title: Эмодзи символа
-icon: emoji
+icon: circle-right
 category:
   - Учебник с примерами
 tag:

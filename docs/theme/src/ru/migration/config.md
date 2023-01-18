@@ -1,6 +1,6 @@
 ---
 title: Руководство по миграции конфигурации
-icon: config
+icon: gears
 category:
   - Миграция
 tag:

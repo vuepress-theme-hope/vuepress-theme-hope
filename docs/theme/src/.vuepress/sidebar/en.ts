@@ -5,7 +5,7 @@ export const enSidebarConfig = sidebar({
     "",
     {
       text: "Guide",
-      icon: "creative",
+      icon: "lightbulb",
       prefix: "guide/",
       children: [
         "get-started/",
@@ -19,7 +19,7 @@ export const enSidebarConfig = sidebar({
     },
     {
       text: "Config",
-      icon: "config",
+      icon: "gears",
       prefix: "config/",
       children: [
         "intro",
@@ -32,7 +32,7 @@ export const enSidebarConfig = sidebar({
     },
     {
       text: "Cookbook",
-      icon: "guide",
+      icon: "signs-post",
       prefix: "cookbook/",
       children: [
         "tutorial/",
@@ -44,13 +44,13 @@ export const enSidebarConfig = sidebar({
     },
     {
       text: "Migration",
-      icon: "change",
+      icon: "code-compare",
       prefix: "migration/",
       children: ["highlight", "config", "page", "style"],
     },
     {
       text: "FAQ",
-      icon: "question",
+      icon: "circle-question",
       prefix: "faq/",
       children: ["", "troubleshooting", "common-error", "vite", "safari"],
     },

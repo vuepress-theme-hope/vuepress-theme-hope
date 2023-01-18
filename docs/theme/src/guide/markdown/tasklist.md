@@ -1,6 +1,6 @@
 ---
 title: Task list
-icon: check
+icon: square-check
 category:
   - Markdown
 tag:

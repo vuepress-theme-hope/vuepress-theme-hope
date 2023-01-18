@@ -1,6 +1,6 @@
 ---
 title: Plugin Config
-icon: config
+icon: puzzle-piece
 index: false
 dir:
   order: 4

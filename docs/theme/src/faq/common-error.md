@@ -1,6 +1,6 @@
 ---
 title: Common Errors
-icon: warn
+icon: triangle-exclamation
 category:
   - FAQ
 ---

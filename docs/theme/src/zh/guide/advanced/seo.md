@@ -1,6 +1,6 @@
 ---
 title: SEO
-icon: config
+icon: gears
 category:
   - 高级
 tag:

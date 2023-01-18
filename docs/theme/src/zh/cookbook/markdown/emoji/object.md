@@ -1,6 +1,6 @@
 ---
 title: 对象 Emoji
-icon: emoji
+icon: object-group
 category:
   - 教程知识
   - Markdown

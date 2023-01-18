@@ -1,6 +1,6 @@
 ---
 title: 项目命令
-icon: command
+icon: flag
 order: 3
 category:
   - 快速上手

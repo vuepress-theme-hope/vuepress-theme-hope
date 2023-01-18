@@ -1,6 +1,6 @@
 ---
 title: Опции макета темы
-icon: config
+icon: gears
 order: 4
 category:
   - Конфиг

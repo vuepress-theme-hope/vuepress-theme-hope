@@ -1,6 +1,6 @@
 ---
 title: VuePress 页面
-icon: page
+icon: file
 order: 1
 category:
   - 教程知识

@@ -1,6 +1,6 @@
 ---
 title: 配置项目
-icon: config
+icon: gears
 order: 5
 category:
   - 快速上手

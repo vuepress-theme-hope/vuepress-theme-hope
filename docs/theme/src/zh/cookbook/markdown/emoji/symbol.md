@@ -1,6 +1,6 @@
 ---
 title: 符号 Emoji
-icon: emoji
+icon: circle-right
 category:
   - 教程知识
   - Markdown

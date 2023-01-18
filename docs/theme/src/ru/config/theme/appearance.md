@@ -1,6 +1,6 @@
 ---
 title: Опции внешнего вида темы
-icon: config
+icon: gears
 order: 5
 category:
   - Конфиг

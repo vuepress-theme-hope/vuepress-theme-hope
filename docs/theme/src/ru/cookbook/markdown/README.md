@@ -1,6 +1,6 @@
 ---
 title: Введение в Markdown
-icon: markdown
+icon: fab fa-markdown
 category:
   - Учебник с примерами
   - Разметка

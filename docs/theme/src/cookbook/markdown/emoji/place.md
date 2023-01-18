@@ -1,6 +1,6 @@
 ---
 title: Place Emoji
-icon: emoji
+icon: city
 category:
   - Cookbook
 tag:

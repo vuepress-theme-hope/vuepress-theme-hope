@@ -1,6 +1,6 @@
 ---
 title: Конфиг стиля
-icon: style
+icon: wand-magic-sparkles
 order: 6
 category:
   - Конфиг

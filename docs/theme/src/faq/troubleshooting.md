@@ -1,6 +1,6 @@
 ---
 title: Troubleshooting
-icon: check
+icon: square-check
 category:
   - FAQ
 ---

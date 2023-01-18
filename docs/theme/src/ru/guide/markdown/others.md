@@ -1,6 +1,6 @@
 ---
 title: Другие
-icon: more
+icon: ellipsis
 order: -2
 category:
   - Markdown

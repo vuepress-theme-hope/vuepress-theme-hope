@@ -1,6 +1,6 @@
 ---
 title: Project Deployment
-icon: launch
+icon: rocket
 order: 7
 category:
   - Cookbook

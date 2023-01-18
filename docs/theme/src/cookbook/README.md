@@ -1,6 +1,6 @@
 ---
 title: Cookbook
-icon: guide
+icon: signs-post
 article: false
 ---
 

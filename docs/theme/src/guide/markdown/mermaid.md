@@ -1,6 +1,6 @@
 ---
 title: Mermaid
-icon: diagram
+icon: chart-pie
 category:
   - Markdown
 tag:

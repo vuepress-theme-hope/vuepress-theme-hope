@@ -1,6 +1,6 @@
 ---
 title: Вкладки
-icon: tab
+icon: table-columns
 index: 2
 category:
   - Markdown

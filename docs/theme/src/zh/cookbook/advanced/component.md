@@ -1,6 +1,6 @@
 ---
 title: 使用组件
-icon: plugin
+icon: puzzle-piece
 order: 1
 category:
   - 教程知识

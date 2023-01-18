@@ -1,6 +1,6 @@
 ---
 title: Учебник с примерами
-icon: guide
+icon: signs-post
 article: false
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Руководство по миграции стилей
-icon: style
+icon: wand-magic-sparkles
 category:
   - Миграция
 tag:

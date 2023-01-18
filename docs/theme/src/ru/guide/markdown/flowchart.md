@@ -1,6 +1,7 @@
 ---
 title: Flowchart
-icon: tree
+icon: route
+category:
   - Markdown
 tag:
   - Flowchart

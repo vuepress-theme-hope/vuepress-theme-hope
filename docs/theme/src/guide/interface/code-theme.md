@@ -1,6 +1,6 @@
 ---
 title: Code Themes
-icon: style
+icon: wand-magic-sparkles
 order: 4
 category:
   - Interface

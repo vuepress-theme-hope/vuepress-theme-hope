@@ -19,9 +19,6 @@ export default theme("theme", {
     name: "VuePress Theme Hope",
   },
 
-  iconAssets: "iconfont",
-  iconPrefix: "iconfont icon-",
-
   themeColor: {
     blue: "#2196f3",
     red: "#f26d6d",

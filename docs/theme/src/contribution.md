@@ -1,6 +1,6 @@
 ---
 title: Contribution Guide
-icon: creative
+icon: lightbulb
 category:
   - FAQ
 ---

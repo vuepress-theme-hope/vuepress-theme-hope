@@ -1,6 +1,6 @@
 ---
 title: Page information
-icon: info
+icon: circle-info
 category:
   - Feature
 tag:

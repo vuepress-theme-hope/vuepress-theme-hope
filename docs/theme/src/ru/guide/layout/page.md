@@ -1,6 +1,6 @@
 ---
 title: Страница
-icon: page
+icon: file
 order: 5
 category:
   - Макет

@@ -1,6 +1,6 @@
 ---
 title: Symbol Emoji
-icon: emoji
+icon: circle-right
 category:
   - Cookbook
 tag:

@@ -1,6 +1,6 @@
 ---
 title: FAQ
-icon: question
+icon: circle-question
 category:
   - FAQ
 ---

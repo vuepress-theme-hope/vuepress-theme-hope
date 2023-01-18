@@ -1,6 +1,6 @@
 ---
 title: 主题外观选项
-icon: config
+icon: gears
 order: 4
 category:
   - 配置

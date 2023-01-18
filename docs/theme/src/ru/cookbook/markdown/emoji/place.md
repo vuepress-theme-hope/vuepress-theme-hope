@@ -1,6 +1,6 @@
 ---
 title: Эмодзи размещения
-icon: emoji
+icon: city
 category:
   - Учебник с примерами
 tag:

@@ -1,6 +1,6 @@
 ---
 title: Vue 交互演示
-icon: code
+icon: fab fa-vuejs
 ---
 
 让你的 VuePress 站点中的 Markdown 文件支持 vue 交互演示。

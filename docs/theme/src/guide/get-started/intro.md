@@ -1,6 +1,6 @@
 ---
 title: Theme intro
-icon: info
+icon: circle-info
 order: 1
 category:
   - Get Started

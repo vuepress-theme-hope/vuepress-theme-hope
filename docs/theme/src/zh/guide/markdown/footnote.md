@@ -1,6 +1,6 @@
 ---
 title: 脚注
-icon: quote
+icon: quote-left
 category:
   - Markdown
 tag:

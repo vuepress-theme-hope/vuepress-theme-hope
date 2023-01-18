@@ -1,6 +1,6 @@
 ---
 title: Layout
-icon: layout
+icon: object-group
 dir:
   order: 4
 ---

@@ -1,6 +1,6 @@
 ---
 title: Установка / Использование
-icon: install
+icon: download
 order: 2
 category:
   - Начало работы

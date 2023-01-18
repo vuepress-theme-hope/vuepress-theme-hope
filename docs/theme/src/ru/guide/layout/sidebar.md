@@ -1,6 +1,6 @@
 ---
 title: Боковая панель
-icon: sidebar
+icon: fas fa-window-maximize fa-rotate-270
 order: 2
 category:
   - Макет
@@ -84,7 +84,7 @@ export default defineUserConfig({
       {
         text: "Guide",
         link: "/guide/README.md",
-        icon: "creative",
+        icon: "lightbulb",
         // only active in `/guide/`
         activeMatch: "^/guide/$",
       },
@@ -92,7 +92,7 @@ export default defineUserConfig({
       {
         text: "FAQ",
         link: "/faq.md",
-        icon: "question",
+        icon: "circle-question",
         // active in path starting with `/faq`
         // so it will active in path like `/faq/xxx.html`
         activeMatch: "^/zh/faq/",
@@ -114,7 +114,7 @@ export default {
       {
         text: "Guide",
         link: "/guide/README.md",
-        icon: "creative",
+        icon: "lightbulb",
         // only active in `/guide/`
         activeMatch: "^/guide/$",
       },
@@ -122,7 +122,7 @@ export default {
       {
         text: "FAQ",
         link: "/faq.md",
-        icon: "question",
+        icon: "circle-question",
         // active in path starting with `/faq`
         // so it will active in path like `/faq/xxx.html`
         activeMatch: "^/zh/faq/",

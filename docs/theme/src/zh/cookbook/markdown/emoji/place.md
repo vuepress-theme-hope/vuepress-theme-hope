@@ -1,6 +1,6 @@
 ---
 title: 地点 Emoji
-icon: emoji
+icon: city
 category:
   - 教程知识
   - Markdown

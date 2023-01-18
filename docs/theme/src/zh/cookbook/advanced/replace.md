@@ -1,6 +1,6 @@
 ---
 title: 替换主题组件
-icon: customize
+icon: boxes-packing
 order: 3
 category:
   - 高级

@@ -1,6 +1,6 @@
 ---
 title: Слайд
-icon: slides
+icon: person-chalkboard
 order: 8
 category:
   - Макет

@@ -1,6 +1,6 @@
 ---
 title: Замена компонентов темы
-icon: customize
+icon: boxes-packing
 order: 3
 category:
   - Продвинутый

@@ -1,6 +1,6 @@
 ---
 title: Контент проекта
-icon: page
+icon: file
 order: 4
 category:
   - Учебник с примерами

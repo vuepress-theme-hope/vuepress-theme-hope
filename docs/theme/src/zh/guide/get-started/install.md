@@ -1,6 +1,6 @@
 ---
 title: 安装/使用
-icon: install
+icon: download
 order: 2
 category:
   - 快速上手

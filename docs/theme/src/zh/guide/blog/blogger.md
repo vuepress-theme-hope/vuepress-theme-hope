@@ -1,6 +1,6 @@
 ---
 title: 博主信息
-icon: blog
+icon: circle-info
 order: 2
 category:
   - 博客

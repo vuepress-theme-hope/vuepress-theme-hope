@@ -1,6 +1,6 @@
 ---
 title: Исправление проблем
-icon: check
+icon: square-check
 category:
   - FAQ
 ---

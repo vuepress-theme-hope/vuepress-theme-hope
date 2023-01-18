@@ -1,6 +1,6 @@
 ---
 title: 修改特效
-icon: style
+icon: wand-magic-sparkles
 category:
   - 教程知识
   - 自定义

@@ -1,6 +1,6 @@
 ---
 title: Path Navigation
-icon: navigation
+icon: bars-progress
 order: 3
 category:
   - Layout

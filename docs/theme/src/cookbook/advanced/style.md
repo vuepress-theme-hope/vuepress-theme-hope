@@ -1,6 +1,6 @@
 ---
 title: Style Customization
-icon: style
+icon: wand-magic-sparkles
 order: 2
 category:
   - Cookbook

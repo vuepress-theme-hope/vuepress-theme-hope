@@ -1,6 +1,6 @@
 ---
 title: 标记
-icon: write
+icon: highlighter
 category:
   - Markdown
 tag:

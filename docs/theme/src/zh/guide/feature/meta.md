@@ -1,6 +1,6 @@
 ---
 title: 页面元数据
-icon: time
+icon: clock
 category:
   - 功能
 tag:

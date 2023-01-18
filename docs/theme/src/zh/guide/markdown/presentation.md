@@ -1,6 +1,6 @@
 ---
 title: 幻灯片
-icon: slides
+icon: person-chalkboard
 category:
   - Markdown
 tag:

@@ -1,6 +1,6 @@
 ---
 title: 基础教程
-icon: guide
+icon: signs-post
 article: false
 ---
 

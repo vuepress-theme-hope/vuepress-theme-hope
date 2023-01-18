@@ -1,6 +1,6 @@
 ---
 title: Список статей
-icon: article
+icon: clipboard-list
 order: 3
 category:
   - Блог

@@ -20,7 +20,7 @@ features:
     link: /zh/guide/container.html
 
   - title: 选项卡
-    icon: table-columns
+    icon: table-columnsle-columns
     details: 使用选项卡对相似内容进行分组
     link: /zh/guide/tabs.html
 
@@ -50,7 +50,7 @@ features:
     link: /zh/guide/footnote.html
 
   - title: 标记支持
-    icon: marker
+    icon: highlighter
     details: 让你在 Markdown 中对词句进行标记
     link: /zh/guide/mark.html
 

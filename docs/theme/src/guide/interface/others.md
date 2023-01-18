@@ -1,6 +1,6 @@
 ---
 title: Other features
-icon: others
+icon: ellipsis
 order: 5
 category:
   - Interface

@@ -1,6 +1,6 @@
 ---
 title: Вступление к теме
-icon: info
+icon: circle-info
 order: 1
 category:
   - Начало работы

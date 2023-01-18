@@ -1,6 +1,6 @@
 ---
 title: Changelog
-icon: time
+icon: clock
 ---
 
 This file contains all notable changes to `vuepress-theme-hope` and its plugins.

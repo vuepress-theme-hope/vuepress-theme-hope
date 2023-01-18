@@ -1,6 +1,6 @@
 ---
 title: Install / Usage
-icon: install
+icon: download
 order: 2
 category:
   - Get Started

@@ -1,6 +1,6 @@
 ---
 title: 组件
-icon: plugin
+icon: puzzle-piece
 category:
   - Markdown
 tag:

@@ -1,6 +1,6 @@
 ---
 title: Theme Extending
-icon: extend
+icon: clone
 order: 4
 category:
   - Advanced

@@ -1,6 +1,6 @@
 ---
 title: 布局 Frontmatter 配置
-icon: config
+icon: gears
 order: 2
 category:
   - 配置

@@ -1,6 +1,6 @@
 ---
 title: Icon support
-icon: discover
+icon: icons
 order: 3
 category:
   - Interface

@@ -1,6 +1,6 @@
 ---
 title: Theme Layout Options
-icon: config
+icon: gears
 order: 4
 category:
   - Config

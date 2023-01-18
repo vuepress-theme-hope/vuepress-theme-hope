@@ -1,6 +1,6 @@
 ---
 title: 评论
-icon: comment
+icon: comment-dots
 category:
   - 功能
 tag:

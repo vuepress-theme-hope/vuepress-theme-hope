@@ -1,6 +1,6 @@
 ---
 title: Конфиг VuePress
-icon: config
+icon: gears
 category:
   - Учебник с примерами
   - VuePress

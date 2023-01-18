@@ -1,6 +1,6 @@
 ---
 title: TeX
-icon: tex
+icon: square-root-variable
 category:
   - Markdown
 tag:

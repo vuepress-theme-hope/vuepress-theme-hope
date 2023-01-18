@@ -1,6 +1,6 @@
 ---
 title: 快速上手
-icon: creative
+icon: lightbulb
 index: false
 dir:
   order: 1

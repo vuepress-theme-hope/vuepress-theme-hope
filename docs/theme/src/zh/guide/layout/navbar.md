@@ -1,6 +1,6 @@
 ---
 title: 导航栏
-icon: navbar
+icon: window-maximize
 order: 1
 category:
   - 布局
@@ -82,7 +82,7 @@ export default defineUserConfig({
       {
         text: "指南",
         link: "/zh/guide/README.md",
-        icon: "creative",
+        icon: "lightbulb",
         // 仅在 `/zh/guide/` 激活
         activeMatch: "^/zh/guide/$",
       },
@@ -90,7 +90,7 @@ export default defineUserConfig({
       {
         text: "常见问题",
         link: "/zh/faq.md",
-        icon: "question",
+        icon: "circle-question",
         // 会在 `/zh/faq` 开头的路径激活
         // 所以当你前往 `/zh/faq/xxx.html` 时也会激活
         activeMatch: "^/zh/faq",
@@ -112,7 +112,7 @@ export default {
       {
         text: "指南",
         link: "/zh/guide/README.md",
-        icon: "creative",
+        icon: "lightbulb",
         // 仅在 `/zh/guide/` 激活
         activeMatch: "^/zh/guide/$",
       },
@@ -120,7 +120,7 @@ export default {
       {
         text: "常见问题",
         link: "/zh/faq.md",
-        icon: "question",
+        icon: "circle-question",
         // 会在 `/zh/faq` 开头的路径激活
         // 所以当你前往 `/zh/faq/xxx.html` 时也会激活
         activeMatch: "^/zh/faq",
@@ -164,7 +164,7 @@ export default defineUserConfig({
     navbar: [
       {
         text: "基础",
-        icon: "info",
+        icon: "circle-info",
         children: ["/zh/basic/markdown.md", "/zh/basic/vuepress.md"],
       },
     ],
@@ -183,7 +183,7 @@ export default {
     navbar: [
       {
         text: "基础",
-        icon: "info",
+        icon: "circle-info",
         children: ["/zh/basic/markdown.md", "/zh/basic/vuepress.md"],
       },
     ],
@@ -211,7 +211,7 @@ export default defineUserConfig({
     navbar: [
       {
         text: "基础",
-        icon: "info",
+        icon: "circle-info",
         prefix: "/zh/basic/",
         children: ["markdown.md", "vuepress.md"],
       },
@@ -231,7 +231,7 @@ export default {
     navbar: [
       {
         text: "基础",
-        icon: "info",
+        icon: "circle-info",
         prefix: "/zh/basic/",
         children: ["markdown.md", "vuepress.md"],
       },
@@ -258,7 +258,7 @@ export default defineUserConfig({
     navbar: [
       {
         text: "插件列表",
-        icon: "plugin",
+        icon: "puzzle-piece",
         children: [
           {
             text: "内置插件",
@@ -290,7 +290,7 @@ export default {
     navbar: [
       {
         text: "插件列表",
-        icon: "plugin",
+        icon: "puzzle-piece",
         children: [
           {
             text: "内置插件",

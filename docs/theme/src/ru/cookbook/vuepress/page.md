@@ -1,6 +1,6 @@
 ---
 title: Страница VuePress
-icon: page
+icon: file
 category:
   - Учебник с примерами
   - VuePress

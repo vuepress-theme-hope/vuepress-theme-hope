@@ -1,6 +1,6 @@
 ---
 title: 路径导航
-icon: navigation
+icon: bars-progress
 order: 3
 category:
   - 布局

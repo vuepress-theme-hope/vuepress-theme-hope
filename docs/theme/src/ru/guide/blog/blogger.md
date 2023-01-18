@@ -1,6 +1,6 @@
 ---
 title: Информация о блогере
-icon: blog
+icon: circle-info
 order: 2
 category:
   - Блог

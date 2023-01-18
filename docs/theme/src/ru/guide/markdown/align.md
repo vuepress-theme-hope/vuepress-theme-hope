@@ -1,6 +1,6 @@
 ---
 title: Пользовательское выравнивание
-icon: align
+icon: align-center
 category:
   - Markdown
 tag:

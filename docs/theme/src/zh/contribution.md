@@ -1,6 +1,6 @@
 ---
 title: 贡献指南
-icon: creative
+icon: lightbulb
 category:
   - FAQ
 ---

@@ -1,6 +1,6 @@
 ---
 title: Информация о странице
-icon: info
+icon: circle-info
 category:
   - Функция
 tag:

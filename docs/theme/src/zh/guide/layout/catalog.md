@@ -1,6 +1,6 @@
 ---
 title: 目录页面
-icon: tree
+icon: network-wired
 order: 6
 category:
   - 布局

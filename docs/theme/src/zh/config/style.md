@@ -1,6 +1,6 @@
 ---
 title: 样式配置
-icon: style
+icon: wand-magic-sparkles
 order: 6
 category:
   - 配置

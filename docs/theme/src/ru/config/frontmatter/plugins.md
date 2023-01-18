@@ -1,6 +1,6 @@
 ---
 title: Конфиг плагина Frontmatter
-icon: config
+icon: gears
 order: 3
 category:
   - Конфиг

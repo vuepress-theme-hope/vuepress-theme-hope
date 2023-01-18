@@ -1,6 +1,6 @@
 ---
 title: 插件 Frontmatter 配置
-icon: config
+icon: gears
 order: 3
 category:
   - 配置

@@ -1,6 +1,6 @@
 ---
 title: Demos
-icon: discover
+icon: icons
 category:
   - Demo
 docs:

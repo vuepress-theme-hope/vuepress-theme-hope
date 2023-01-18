@@ -1,6 +1,6 @@
 ---
 title: Page Migration Guide
-icon: page
+icon: file
 category:
   - Migration
 tag:

@@ -1,6 +1,6 @@
 ---
 title: Style Migration Guide
-icon: style
+icon: wand-magic-sparkles
 category:
   - Migration
 tag:

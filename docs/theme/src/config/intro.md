@@ -1,6 +1,6 @@
 ---
 title: Config Intro
-icon: config
+icon: gears
 order: 1
 category:
   - Config

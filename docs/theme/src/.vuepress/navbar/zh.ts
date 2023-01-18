@@ -9,14 +9,14 @@ export const zhNavbarConfig = navbar([
   "/zh/faq/",
   {
     text: "教程",
-    icon: "guide",
+    icon: "signs-post",
     prefix: "/zh/cookbook/",
     children: ["tutorial/", "markdown/", "vuepress/", "advanced/"],
   },
   "/zh/migration/",
   {
     text: "项目",
-    icon: "info",
+    icon: "circle-info",
     prefix: "/zh/",
     children: [
       "changelog",
@@ -24,11 +24,11 @@ export const zhNavbarConfig = navbar([
       "contribution",
       {
         text: "插件",
-        icon: "plugin",
+        icon: "puzzle-piece",
         children: [
           {
             text: "自动目录插件",
-            icon: "tree",
+            icon: "network-wired",
             link: linkHelper("auto-catalog"),
           },
           {
@@ -43,7 +43,7 @@ export const zhNavbarConfig = navbar([
           },
           {
             text: "组件库",
-            icon: "plugin",
+            icon: "puzzle-piece",
             link: linkHelper("components"),
           },
           {
@@ -63,37 +63,37 @@ export const zhNavbarConfig = navbar([
           },
           {
             text: "LightGallery 插件",
-            icon: "pic",
+            icon: "image",
             link: linkHelper("lightgallery"),
           },
           {
             text: "Markdown 增强插件",
-            icon: "markdown",
+            icon: "fab fa-markdown",
             link: linkHelper("md-enhance"),
           },
           {
             text: "图片预览插件",
-            icon: "pic",
+            icon: "image",
             link: linkHelper("photo-swipe"),
           },
           {
             text: "PWA 插件",
-            icon: "app",
+            icon: "mobile",
             link: linkHelper("pwa2"),
           },
           {
             text: "阅读时间插件",
-            icon: "read",
+            icon: "readme",
             link: linkHelper("reading-time2"),
           },
           {
             text: "移除 PWA 插件",
-            icon: "app",
+            icon: "trash-can",
             link: linkHelper("remove-pwa"),
           },
           {
             text: "重定向插件",
-            icon: "navigation",
+            icon: "fas fa-eject fa-rotate-90",
             link: linkHelper("redirect"),
           },
           {
@@ -108,12 +108,12 @@ export const zhNavbarConfig = navbar([
           },
           {
             text: "Seo 插件",
-            icon: "strong",
+            icon: "wrench",
             link: linkHelper("seo2"),
           },
           {
             text: "VuePress 工具函数",
-            icon: "app",
+            icon: "toolbox",
             link: linkHelper("shared"),
           },
           {

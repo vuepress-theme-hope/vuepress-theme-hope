@@ -1,6 +1,6 @@
 ---
 title: 高级
-icon: advance
+icon: gem
 index: false
 dir:
   order: 7

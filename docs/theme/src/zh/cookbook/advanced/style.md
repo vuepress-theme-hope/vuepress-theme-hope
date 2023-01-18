@@ -1,6 +1,6 @@
 ---
 title: 如何自定义样式
-icon: style
+icon: wand-magic-sparkles
 order: 2
 category:
   - 教程知识

@@ -1,6 +1,6 @@
 ---
 title: 自定义
-icon: setting
+icon: gear
 dir:
   order: 5
 category:

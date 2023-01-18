@@ -1,6 +1,6 @@
 ---
 title: 项目结构
-icon: tree
+icon: folder-tree
 order: 6
 category:
   - 快速上手

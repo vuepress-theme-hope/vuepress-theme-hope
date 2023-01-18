@@ -1,6 +1,6 @@
 ---
 title: Project Command
-icon: command
+icon: flag
 order: 3
 category:
   - Cookbook

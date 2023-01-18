@@ -1,6 +1,6 @@
 ---
 title: Основные опции темы
-icon: config
+icon: gears
 order: 2
 category:
   - Конфиг

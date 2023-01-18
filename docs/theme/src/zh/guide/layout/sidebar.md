@@ -1,6 +1,6 @@
 ---
 title: 侧边栏
-icon: sidebar
+icon: fas fa-window-maximize fa-rotate-270
 order: 2
 category:
   - 布局
@@ -84,7 +84,7 @@ export default defineUserConfig({
       {
         text: "指南",
         link: "/zh/guide/README.md",
-        icon: "creative",
+        icon: "lightbulb",
         // 仅在 `/zh/guide/` 激活
         activeMatch: "^/zh/guide/$",
       },
@@ -92,7 +92,7 @@ export default defineUserConfig({
       {
         text: "常见问题",
         link: "/zh/faq.md",
-        icon: "question",
+        icon: "circle-question",
         // 会在 `/zh/faq` 开头的路径激活
         // 所以当你前往 `/zh/faq/xxx.html` 时也会激活
         activeMatch: "^/zh/faq",
@@ -114,7 +114,7 @@ export default {
       {
         text: "指南",
         link: "/zh/guide/README.md",
-        icon: "creative",
+        icon: "lightbulb",
         // 仅在 `/zh/guide/` 激活
         activeMatch: "^/zh/guide/$",
       },
@@ -122,7 +122,7 @@ export default {
       {
         text: "常见问题",
         link: "/zh/faq.md",
-        icon: "question",
+        icon: "circle-question",
         // 会在 `/zh/faq` 开头的路径激活
         // 所以当你前往 `/zh/faq/xxx.html` 时也会激活
         activeMatch: "^/zh/faq",

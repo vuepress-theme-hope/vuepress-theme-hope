@@ -1,6 +1,6 @@
 ---
 title: 页面
-icon: page
+icon: file
 order: 5
 category:
   - 布局

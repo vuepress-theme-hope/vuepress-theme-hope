@@ -1,6 +1,6 @@
 ---
 title: 页脚支持
-icon: footer
+icon: fas fa-window-maximize fa-rotate-180
 category:
   - 布局
 order: 4

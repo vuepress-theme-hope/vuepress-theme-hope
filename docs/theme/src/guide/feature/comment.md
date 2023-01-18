@@ -1,6 +1,6 @@
 ---
 title: Comment Service
-icon: comment
+icon: comment-dots
 category:
   - Feature
 tag:

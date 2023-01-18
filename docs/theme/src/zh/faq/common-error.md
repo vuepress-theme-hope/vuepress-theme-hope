@@ -1,6 +1,6 @@
 ---
 title: 常见错误
-icon: warn
+icon: triangle-exclamation
 category:
   - FAQ
 ---

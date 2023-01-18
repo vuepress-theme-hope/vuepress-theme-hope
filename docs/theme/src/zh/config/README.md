@@ -1,6 +1,6 @@
 ---
 title: 配置
-icon: config
+icon: gears
 index: false
 category:
   - 配置

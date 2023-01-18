@@ -1,6 +1,6 @@
 ---
 title: Object Emoji
-icon: emoji
+icon: object-group
 category:
   - Cookbook
 tag:

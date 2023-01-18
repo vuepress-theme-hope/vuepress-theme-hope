@@ -1,6 +1,6 @@
 ---
 title: Image Preview
-icon: preview
+icon: image
 category:
   - Feature
 tag:

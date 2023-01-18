@@ -1,6 +1,6 @@
 ---
 title: Timeline
-icon: time
+icon: clock
 order: 5
 category:
   - Blog

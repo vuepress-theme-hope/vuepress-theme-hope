@@ -1,6 +1,6 @@
 ---
 title: 图片预览
-icon: preview
+icon: image
 category:
   - 功能
 tag:

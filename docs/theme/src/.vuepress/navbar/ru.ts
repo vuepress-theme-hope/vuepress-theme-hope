@@ -9,14 +9,14 @@ export const ruNavbarConfig = navbar([
   "/ru/faq/",
   {
     text: "Учебник с примерами",
-    icon: "guide",
+    icon: "signs-post",
     prefix: "/ru/cookbook/",
     children: ["tutorial/", "markdown/", "vuepress/", "advanced/"],
   },
   "/ru/migration/",
   {
     text: "Проект",
-    icon: "info",
+    icon: "circle-info",
     prefix: "/ru/",
     children: [
       "changelog",
@@ -24,11 +24,11 @@ export const ruNavbarConfig = navbar([
       "contribution",
       {
         text: "Плагины",
-        icon: "plugin",
+        icon: "puzzle-piece",
         children: [
           {
             text: "Auto catalog Plugin",
-            icon: "tree",
+            icon: "network-wired",
             link: linkHelper("auto-catalog"),
           },
           {
@@ -43,7 +43,7 @@ export const ruNavbarConfig = navbar([
           },
           {
             text: "Плагин компонентов",
-            icon: "plugin",
+            icon: "puzzle-piece",
             link: linkHelper("components"),
           },
           {
@@ -63,37 +63,37 @@ export const ruNavbarConfig = navbar([
           },
           {
             text: "Плагин галереи",
-            icon: "pic",
+            icon: "image",
             link: linkHelper("lightgallery"),
           },
           {
             text: "Плагин улучшения разметки",
-            icon: "markdown",
+            icon: "fab fa-markdown",
             link: linkHelper("md-enhance"),
           },
           {
             text: "Плагин свайпа фото",
-            icon: "pic",
+            icon: "image",
             link: linkHelper("photo-swipe"),
           },
           {
             text: "Плагин PWA",
-            icon: "app",
+            icon: "mobile",
             link: linkHelper("pwa2"),
           },
           {
             text: "Плагин время чтения",
-            icon: "read",
+            icon: "readme",
             link: linkHelper("reading-time2"),
           },
           {
             text: "Remove PWA Plugin",
-            icon: "app",
+            icon: "trash-can",
             link: linkHelper("remove-pwa"),
           },
           {
             text: "Плагин редиректа",
-            icon: "navigation",
+            icon: "fas fa-eject fa-rotate-90",
             link: linkHelper("redirect"),
           },
           {
@@ -108,12 +108,12 @@ export const ruNavbarConfig = navbar([
           },
           {
             text: "Плагин СЕО",
-            icon: "strong",
+            icon: "wrench",
             link: linkHelper("seo2"),
           },
           {
             text: "VuePress shared",
-            icon: "app",
+            icon: "toolbox",
             link: linkHelper("shared"),
           },
           {

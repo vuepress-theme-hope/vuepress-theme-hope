@@ -1,6 +1,7 @@
 ---
 title: 代码演示
-icon: discover
+icon: splotch
+category:
   - Markdown
 tag:
   - Markdown

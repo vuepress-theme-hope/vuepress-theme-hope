@@ -1,6 +1,6 @@
 ---
 title: Code Demo
-icon: laptop-code
+icon: splotch
 ---
 
 Let you insert code demos in your Markdown file.

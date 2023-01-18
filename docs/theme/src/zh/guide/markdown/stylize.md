@@ -1,6 +1,6 @@
 ---
 title: 样式化
-icon: style
+icon: wand-magic-sparkles
   - Markdown
 tag:
   - 样式化

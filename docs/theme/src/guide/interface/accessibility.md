@@ -1,6 +1,6 @@
 ---
 title: A11y
-icon: support
+icon: universal-access
 order: 6
 category:
   - Interface

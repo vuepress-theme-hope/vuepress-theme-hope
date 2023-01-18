@@ -1,6 +1,6 @@
 ---
 title: Стилизация
-icon: style
+icon: wand-magic-sparkles
 category:
   - Markdown
 tag:

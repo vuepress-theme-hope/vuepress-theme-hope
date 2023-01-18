@@ -1,6 +1,6 @@
 ---
 title: Конфиг других плагинов
-icon: more
+icon: ellipsis
 order: 8
 category:
   - Конфиг

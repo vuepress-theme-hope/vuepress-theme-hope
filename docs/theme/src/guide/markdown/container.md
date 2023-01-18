@@ -1,6 +1,6 @@
 ---
 title: Custom container
-icon: customize
+icon: boxes-packing
 category:
   - Markdown
 tag:

@@ -1,6 +1,6 @@
 ---
 title: Конфиг Frontmatter
-icon: config
+icon: gears
 index: false
 dir:
   order: 5

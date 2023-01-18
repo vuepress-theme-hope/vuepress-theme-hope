@@ -1,6 +1,6 @@
 ---
 title: Конфиг
-icon: config
+icon: gears
 index: false
 category:
   - Конфиг

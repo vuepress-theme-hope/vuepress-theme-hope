@@ -1,6 +1,6 @@
 ---
 title: Список эмодзи
-icon: emoji
+icon: face-smile
 dir:
   order: 3
 article: false

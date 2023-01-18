@@ -1,6 +1,6 @@
 ---
 title: Markdown
-icon: markdown
+icon: fab fa-markdown
 order: 3
 category:
   - 快速上手

@@ -1,6 +1,6 @@
 ---
 title: Мета страницы
-icon: time
+icon: clock
 category:
   - Функция
 tag:

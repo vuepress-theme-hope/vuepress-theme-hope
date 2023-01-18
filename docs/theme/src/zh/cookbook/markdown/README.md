@@ -1,6 +1,6 @@
 ---
 title: Markdown 介绍
-icon: markdown
+icon: fab fa-markdown
 dir:
   order: 2
 category:

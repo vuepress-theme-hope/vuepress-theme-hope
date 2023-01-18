@@ -1,6 +1,6 @@
 ---
 title: Включение файлов
-icon: markdown
+icon: fab fa-markdown
 category:
   - Markdown
 tag:

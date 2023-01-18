@@ -1,6 +1,6 @@
 ---
 title: Plugin Frontmatter Config
-icon: config
+icon: gears
 order: 3
 category:
   - Config

@@ -1,6 +1,6 @@
 ---
 title: 项目案例
-icon: discover
+icon: icons
 category:
   - 案例
 docs:

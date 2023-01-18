@@ -1,6 +1,6 @@
 ---
 title: Advanced
-icon: advance
+icon: gem
 dir:
   order: 4
 category:

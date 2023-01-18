@@ -1,6 +1,6 @@
 ---
 title: Tex 语法
-icon: tex
+icon: square-root-variable
 category:
   - Markdown
 tag:

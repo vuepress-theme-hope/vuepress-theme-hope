@@ -1,6 +1,6 @@
 ---
 title: People Emoji
-icon: emoji
+icon: person
 category:
   - Cookbook
 tag:

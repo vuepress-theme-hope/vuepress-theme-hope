@@ -1,6 +1,6 @@
 ---
 title: 代码主题
-icon: style
+icon: wand-magic-sparkles
 order: 4
 category:
   - 界面

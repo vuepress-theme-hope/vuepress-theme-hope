@@ -1,6 +1,6 @@
 ---
 title: VuePress Config
-icon: config
+icon: gears
 order: 4
 category:
   - Cookbook

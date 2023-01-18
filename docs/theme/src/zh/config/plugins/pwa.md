@@ -1,6 +1,6 @@
 ---
 title: PWA 插件配置
-icon: app
+icon: mobile-screen
 order: 7
 category:
   - 配置

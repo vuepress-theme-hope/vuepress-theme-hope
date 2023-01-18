@@ -1,6 +1,6 @@
 ---
 title: Create Project
-icon: creative
+icon: folder-plus
 order: 2
 category:
   - Cookbook

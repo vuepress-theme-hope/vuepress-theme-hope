@@ -1,6 +1,6 @@
 ---
 title: 主题基本选项
-icon: config
+icon: gears
 order: 1
 category:
   - 配置

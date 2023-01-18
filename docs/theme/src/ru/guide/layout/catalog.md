@@ -1,6 +1,6 @@
 ---
 title: Catalog Page
-icon: tree
+icon: network-wired
 order: 6
 category:
   - Layout

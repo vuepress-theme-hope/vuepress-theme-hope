@@ -5,7 +5,7 @@ export const zhSidebarConfig = sidebar({
     "",
     {
       text: "指南",
-      icon: "creative",
+      icon: "lightbulb",
       prefix: "guide/",
       children: [
         "get-started/",
@@ -19,7 +19,7 @@ export const zhSidebarConfig = sidebar({
     },
     {
       text: "配置",
-      icon: "config",
+      icon: "gears",
       prefix: "config/",
       children: [
         "intro",
@@ -32,7 +32,7 @@ export const zhSidebarConfig = sidebar({
     },
     {
       text: "教程",
-      icon: "guide",
+      icon: "signs-post",
       prefix: "cookbook/",
       children: [
         "tutorial/",
@@ -44,13 +44,13 @@ export const zhSidebarConfig = sidebar({
     },
     {
       text: "迁移",
-      icon: "change",
+      icon: "code-compare",
       prefix: "migration/",
       children: ["highlight", "config", "page", "style"],
     },
     {
       text: "常见问题",
-      icon: "question",
+      icon: "circle-question",
       prefix: "faq/",
       children: ["", "troubleshooting", "common-error", "vite", "safari"],
     },

@@ -1,6 +1,6 @@
 ---
 title: Customizing layout
-icon: layout
+icon: object-group
 category:
   - Cookbook
   - Customize

@@ -1,6 +1,6 @@
 ---
 title: 功能
-icon: discover
+icon: icons
 index: false
 dir:
   order: 5

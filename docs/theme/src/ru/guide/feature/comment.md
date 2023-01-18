@@ -1,6 +1,6 @@
 ---
 title: Сервис комментариев
-icon: comment
+icon: comment-dots
 category:
   - Функция
 tag:

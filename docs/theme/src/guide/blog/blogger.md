@@ -1,6 +1,6 @@
 ---
 title: Blogger Info
-icon: blog
+icon: circle-info
 order: 2
 category:
   - Blog

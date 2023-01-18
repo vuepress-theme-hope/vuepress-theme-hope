@@ -1,6 +1,6 @@
 ---
 title: Опции функции темы
-icon: config
+icon: gears
 order: 3
 category:
   - Конфиг

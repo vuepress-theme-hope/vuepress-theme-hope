@@ -1,6 +1,6 @@
 ---
 title: Руководство по вкладу
-icon: creative
+icon: lightbulb
 category:
   - FAQ
 ---

@@ -1,6 +1,6 @@
 ---
 title: Image
-icon: pic
+icon: image
 category:
   - Markdown
 tag:

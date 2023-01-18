@@ -1,6 +1,6 @@
 ---
 title: Article List
-icon: article
+icon: clipboard-list
 order: 3
 category:
   - Blog

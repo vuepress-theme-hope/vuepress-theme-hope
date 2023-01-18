@@ -1,6 +1,6 @@
 ---
 title: Футер
-icon: footer
+icon: fas fa-window-maximize fa-rotate-180
 order: 4
 category:
   - Макет

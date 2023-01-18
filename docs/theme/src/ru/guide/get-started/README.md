@@ -1,6 +1,6 @@
 ---
 title: Начало работы
-icon: creative
+icon: lightbulb
 index: false
 dir:
   order: 1

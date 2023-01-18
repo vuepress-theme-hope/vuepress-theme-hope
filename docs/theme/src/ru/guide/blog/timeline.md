@@ -1,6 +1,6 @@
 ---
 title: Таймлайн
-icon: time
+icon: clock
 order: 5
 category:
   - Блог

@@ -1,6 +1,6 @@
 ---
 title: Введение в конфиг
-icon: config
+icon: gears
 order: 1
 category:
   - Конфиг

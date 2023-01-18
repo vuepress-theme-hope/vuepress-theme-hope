@@ -1,6 +1,6 @@
 ---
 title: V2 Highlights
-icon: hot
+icon: fire
 ---
 
 We strongly recommend you to switch to V2 version, as V2 version provides the following improvements.

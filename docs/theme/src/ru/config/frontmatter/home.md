@@ -1,6 +1,6 @@
 ---
 title: Конфигурация главной страницы Frontmatter
-icon: config
+icon: gears
 order: 4
 category:
   - Конфиг

@@ -1,6 +1,6 @@
 ---
 title: Custom alignment
-icon: align
+icon: align-center
 category:
   - Markdown
 tag:

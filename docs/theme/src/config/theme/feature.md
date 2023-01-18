@@ -1,6 +1,6 @@
 ---
 title: Theme Feature Options
-icon: config
+icon: gears
 order: 3
 category:
   - Config

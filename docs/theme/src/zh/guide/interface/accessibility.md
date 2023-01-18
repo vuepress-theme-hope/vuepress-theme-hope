@@ -1,6 +1,6 @@
 ---
 title: 无障碍
-icon: support
+icon: universal-access
 order: 6
 category:
   - 界面

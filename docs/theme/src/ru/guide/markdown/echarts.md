@@ -1,6 +1,6 @@
 ---
 title: ECharts
-icon: rank
+icon: chart-simple
 category:
   - Markdown
 tag:

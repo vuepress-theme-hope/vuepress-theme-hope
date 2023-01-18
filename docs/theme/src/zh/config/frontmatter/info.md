@@ -1,6 +1,6 @@
 ---
 title: 信息 Frontmatter 配置
-icon: config
+icon: gears
 order: 1
 category:
   - 配置

@@ -1,6 +1,6 @@
 ---
 title: Конфигурация темы
-icon: config
+icon: gears
 order: 1
 dir:
   order: 3

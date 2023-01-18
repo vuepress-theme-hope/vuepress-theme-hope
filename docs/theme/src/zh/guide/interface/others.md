@@ -1,6 +1,6 @@
 ---
 title: 其他界面功能
-icon: others
+icon: ellipsis
 order: 5
 category:
   - 界面

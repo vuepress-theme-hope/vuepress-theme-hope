@@ -1,6 +1,6 @@
 ---
 title: 图标支持
-icon: discover
+icon: icons
 order: 3
 category:
   - 界面

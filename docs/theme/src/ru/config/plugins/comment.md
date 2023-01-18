@@ -1,6 +1,6 @@
 ---
 title: Конфиг плагина комментариев
-icon: comment
+icon: comment-dots
 order: 3
 category:
   - Конфиг

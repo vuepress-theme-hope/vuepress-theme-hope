@@ -1,6 +1,6 @@
 ---
 title: Эмодзи природа
-icon: emoji
+icon: tree
 category:
   - Учебник с примерами
 tag:

@@ -1,6 +1,6 @@
 ---
 title: О VuePress
-icon: vue
+icon: fab fa-vuejs
 category:
   - Учебник с примерами
   - VuePress

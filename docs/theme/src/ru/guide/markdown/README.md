@@ -1,6 +1,6 @@
 ---
 title: Расширение Markdown
-icon: markdown
+icon: fab fa-markdown
 index: false
 dir:
   order: 3

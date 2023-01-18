@@ -1,6 +1,6 @@
 ---
 title: Создание проекта
-icon: creative
+icon: folder-plus
 order: 2
 category:
   - Учебник с примерами

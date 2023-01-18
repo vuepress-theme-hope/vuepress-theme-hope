@@ -1,6 +1,6 @@
 ---
 title: Команды проекта
-icon: command
+icon: flag
 order: 3
 category:
   - Учебник с примерами

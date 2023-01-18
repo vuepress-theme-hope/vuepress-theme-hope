@@ -1,6 +1,6 @@
 ---
 title: Get Started
-icon: creative
+icon: lightbulb
 index: false
 dir:
   order: 1

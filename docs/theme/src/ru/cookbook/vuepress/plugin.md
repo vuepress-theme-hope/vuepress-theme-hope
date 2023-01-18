@@ -1,6 +1,6 @@
 ---
 title: Плагины
-icon: plugin
+icon: puzzle-piece
 category:
   - Учебник с примерами
   - VuePress

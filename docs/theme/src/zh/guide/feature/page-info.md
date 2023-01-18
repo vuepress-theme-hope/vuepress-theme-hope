@@ -1,6 +1,6 @@
 ---
 title: 页面信息
-icon: info
+icon: circle-info
 category:
   - 功能
 tag:

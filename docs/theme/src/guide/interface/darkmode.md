@@ -1,6 +1,6 @@
 ---
 title: Darkmode
-icon: contrast
+icon: circle-half-stroke
 order: 1
 category:
   - Interface

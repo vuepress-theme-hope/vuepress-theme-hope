@@ -1,6 +1,6 @@
 ---
 title: Style config
-icon: style
+icon: wand-magic-sparkles
 order: 6
 category:
   - Config

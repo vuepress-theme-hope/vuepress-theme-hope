@@ -1,6 +1,6 @@
 ---
 title: Пошаговое руководство
-icon: guide
+icon: signs-post
 dir:
   order: 1
 category:

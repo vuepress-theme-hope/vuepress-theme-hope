@@ -1,6 +1,6 @@
 ---
 title: График
-icon: rank
+icon: chart-simple
 category:
   - Markdown
 tag:

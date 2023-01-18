@@ -21,27 +21,27 @@ actions:
 
 features:
   - title: Markdown Enhance
-    icon: markdown
+    icon: fab fa-markdown
     details: Add align, sup/sub script, footnote, tasklist, tex, flowchart, diagram, mark and presentation support in Markdown
     link: /guide/markdown/
 
   - title: Slide Page
-    icon: slides
+    icon: person-chalkboard
     details: Adding slide pages to display things you like
     link: /guide/layout/slides
 
   - title: Layout Enhancement
-    icon: layout
+    icon: object-group
     details: Adding breadcrumb, footer, improved navbar, improved page nav and etc.
     link: /guide/layout/
 
   - title: Pageviews and Comments
-    icon: comment
+    icon: comment-dots
     details: Start pageview statistics and comment support with Waline
     link: /guide/feature/comment.html
 
   - title: Article Information
-    icon: info
+    icon: circle-info
     details: Add author, writing date, reading time, word count and other information to your article
     link: /guide/feature/page-info.html
 
@@ -56,12 +56,12 @@ features:
     link: /guide/interface/theme-color.html
 
   - title: Dark Mode
-    icon: contrast
+    icon: circle-half-stroke
     details: Switch between light and dark modes freely
     link: /guide/interface/darkmode.html
 
   - title: Full A11y support
-    icon: support
+    icon: universal-access
     details: Full support of accessibility in your site
     link: /guide/interface/accessibility.html
 
@@ -81,12 +81,12 @@ features:
     link: /guide/feature/copy-code.html
 
   - title: Image Preview
-    icon: pic
+    icon: image
     details: Support viewing, zooming, sharing your page images like a gallery
     link: /guide/feature/photo-swipe.html
 
   - title: SEO Enhancement
-    icon: config
+    icon: gears
     details: Optimize pages for search engines
     link: /guide/advanced/seo.html
 
@@ -101,12 +101,12 @@ features:
     link: /guide/advanced/feed.html
 
   - title: PWA
-    icon: mobile
+    icon: mobile-screen
     details: Make your site more like an APP
     link: /guide/advanced/pwa.html
 
   - title: More New Features
-    icon: more
+    icon: ellipsis
     details: Including icon support, fullscreen button, etc.
     link: /guide/feature/
 

@@ -1,6 +1,6 @@
 ---
 title: 创建项目
-icon: add
+icon: folder-plus
 order: 2
 category:
   - 快速上手

@@ -1,6 +1,6 @@
 ---
 title: Руководство
-icon: creative
+icon: lightbulb
 index: false
 category:
   - Вступление

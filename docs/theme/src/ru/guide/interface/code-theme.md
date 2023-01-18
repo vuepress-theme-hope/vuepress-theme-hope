@@ -1,6 +1,6 @@
 ---
 title: Темы кода
-icon: style
+icon: wand-magic-sparkles
 order: 4
 category:
   - Интерфейс

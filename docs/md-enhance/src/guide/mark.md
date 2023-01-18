@@ -1,6 +1,6 @@
 ---
 title: Markup
-icon: marker
+icon: highlighter
 ---
 
 Make Markdown files in your VuePress site support markup.

@@ -1,6 +1,6 @@
 ---
 title: Список заданий
-icon: check
+icon: square-check
 category:
   - Markdown
 tag:

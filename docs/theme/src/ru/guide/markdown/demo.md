@@ -1,6 +1,6 @@
 ---
 title: Демонстрация кода
-icon: discover
+icon: splotch
 category:
   - Markdown
 tag:

@@ -1,6 +1,6 @@
 ---
 title: Other Plugin Config
-icon: more
+icon: ellipsis
 order: 8
 category:
   - Config

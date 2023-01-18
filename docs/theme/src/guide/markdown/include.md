@@ -1,6 +1,6 @@
 ---
 title: Include Files
-icon: markdown
+icon: fab fa-markdown
 category:
   - Markdown
 tag:

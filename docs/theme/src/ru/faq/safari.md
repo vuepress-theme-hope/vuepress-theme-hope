@@ -1,6 +1,6 @@
 ---
 title: Safari FAQ
-icon: safari
+icon: fab fa-safari
 category:
   - FAQ
 ---

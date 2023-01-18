@@ -1,6 +1,6 @@
 ---
 title: Панель навигации
-icon: navbar
+icon: window-maximize
 order: 1
 category:
   - Макет
@@ -82,7 +82,7 @@ export default defineUserConfig({
       {
         text: "Guide",
         link: "/guide/README.md",
-        icon: "creative",
+        icon: "lightbulb",
         // only active in `/guide/`
         activeMatch: "^/guide/$",
       },
@@ -90,7 +90,7 @@ export default defineUserConfig({
       {
         text: "FAQ",
         link: "/faq.md",
-        icon: "question",
+        icon: "circle-question",
         // active in path starting with `/faq`
         // so it will active in path like `/faq/xxx.html`
         activeMatch: "^/zh/faq/",
@@ -112,7 +112,7 @@ export default {
       {
         text: "Guide",
         link: "/guide/README.md",
-        icon: "creative",
+        icon: "lightbulb",
         // only active in `/guide/`
         activeMatch: "^/guide/$",
       },
@@ -120,7 +120,7 @@ export default {
       {
         text: "FAQ",
         link: "/faq.md",
-        icon: "question",
+        icon: "circle-question",
         // active in path starting with `/faq`
         // so it will active in path like `/faq/xxx.html`
         activeMatch: "^/zh/faq/",
@@ -164,7 +164,7 @@ export default defineUserConfig({
     navbar: [
       {
         text: "Basic",
-        icon: "info",
+        icon: "circle-info",
         children: ["/basic/markdown.md", "/basic/vuepress.md"],
       },
     ],
@@ -183,7 +183,7 @@ export default {
     navbar: [
       {
         text: "Basic",
-        icon: "info",
+        icon: "circle-info",
         children: ["/basic/markdown.md", "/basic/vuepress.md"],
       },
     ],
@@ -211,7 +211,7 @@ export default defineUserConfig({
     navbar: [
       {
         text: "Basic",
-        icon: "info",
+        icon: "circle-info",
         prefix: "/basic/",
         children: ["markdown.md", "vuepress.md"],
       },
@@ -231,7 +231,7 @@ export default {
     navbar: [
       {
         text: "Basic",
-        icon: "info",
+        icon: "circle-info",
         prefix: "/basic/",
         children: ["markdown.md", "vuepress.md"],
       },
@@ -258,18 +258,18 @@ export default defineUserConfig({
     navbar: [
       {
         text: "Project",
-        icon: "info",
+        icon: "circle-info",
         children: [
           {
             text: "Built in Plugins",
-            icon: "plugin",
+            icon: "puzzle-piece",
             children: [
               /* Some items */
             ],
           },
           {
             text: "Third party Plugins",
-            icon: "plugin",
+            icon: "puzzle-piece",
             children: [
               /* Some items */
             ],
@@ -292,18 +292,18 @@ export default {
     navbar: [
       {
         text: "Project",
-        icon: "info",
+        icon: "circle-info",
         children: [
           {
             text: "Built in Plugins",
-            icon: "plugin",
+            icon: "puzzle-piece",
             children: [
               /* Some items */
             ],
           },
           {
             text: "Third party Plugins",
-            icon: "plugin",
+            icon: "puzzle-piece",
             children: [
               /* Some items */
             ],

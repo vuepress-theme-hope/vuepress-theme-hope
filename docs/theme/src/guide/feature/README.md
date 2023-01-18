@@ -1,6 +1,6 @@
 ---
 title: Features
-icon: discover
+icon: icons
 index: false
 dir:
   order: 5

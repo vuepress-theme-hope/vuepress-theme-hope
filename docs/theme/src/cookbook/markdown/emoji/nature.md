@@ -1,6 +1,6 @@
 ---
 title: Nature Emoji
-icon: emoji
+icon: tree
 category:
   - Cookbook
 tag:

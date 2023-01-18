@@ -1,6 +1,6 @@
 ---
 title: 深色模式
-icon: contrast
+icon: circle-half-stroke
 order: 1
 category:
   - 界面

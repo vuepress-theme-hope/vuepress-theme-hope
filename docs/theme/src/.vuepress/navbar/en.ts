@@ -9,25 +9,25 @@ export const enNavbarConfig = navbar([
   "/faq/",
   {
     text: "Cookbook",
-    icon: "guide",
+    icon: "signs-post",
     prefix: "/cookbook/",
     children: ["tutorial/", "markdown/", "vuepress/", "advanced/"],
   },
   "/migration/",
   {
     text: "Project",
-    icon: "info",
+    icon: "circle-info",
     children: [
       "/changelog",
       "/demo",
       "/contribution",
       {
         text: "Plugins",
-        icon: "plugin",
+        icon: "puzzle-piece",
         children: [
           {
             text: "Auto catalog Plugin",
-            icon: "tree",
+            icon: "network-wired",
             link: linkHelper("auto-catalog"),
           },
           {
@@ -42,7 +42,7 @@ export const enNavbarConfig = navbar([
           },
           {
             text: "Components Plugin",
-            icon: "plugin",
+            icon: "puzzle-piece",
             link: linkHelper("components"),
           },
           {
@@ -62,37 +62,37 @@ export const enNavbarConfig = navbar([
           },
           {
             text: "LightGallery Plugin",
-            icon: "pic",
+            icon: "image",
             link: linkHelper("lightgallery"),
           },
           {
             text: "Markdown Enhance Plugin",
-            icon: "markdown",
+            icon: "fab fa-markdown",
             link: linkHelper("md-enhance"),
           },
           {
             text: "Photo Swipe Plugin",
-            icon: "pic",
+            icon: "image",
             link: linkHelper("photo-swipe"),
           },
           {
             text: "PWA Plugin",
-            icon: "app",
+            icon: "mobile",
             link: linkHelper("pwa2"),
           },
           {
             text: "Reading Time Plugin",
-            icon: "read",
+            icon: "readme",
             link: linkHelper("reading-time2"),
           },
           {
             text: "Remove PWA Plugin",
-            icon: "app",
+            icon: "trash-can",
             link: linkHelper("remove-pwa"),
           },
           {
             text: "Redirect Plugin",
-            icon: "navigation",
+            icon: "fas fa-eject fa-rotate-90",
             link: linkHelper("redirect"),
           },
           {
@@ -107,12 +107,12 @@ export const enNavbarConfig = navbar([
           },
           {
             text: "Seo Plugin",
-            icon: "strong",
+            icon: "wrench",
             link: linkHelper("seo2"),
           },
           {
             text: "VuePress shared",
-            icon: "app",
+            icon: "toolbox",
             link: linkHelper("shared"),
           },
           {

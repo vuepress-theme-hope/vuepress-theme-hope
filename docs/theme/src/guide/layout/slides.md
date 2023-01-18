@@ -1,6 +1,6 @@
 ---
 title: Slide
-icon: slides
+icon: person-chalkboard
 order: 8
 category:
   - Layout

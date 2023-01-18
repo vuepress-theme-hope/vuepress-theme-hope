@@ -1,6 +1,6 @@
 ---
 title: Конфиг макета Frontmatter
-icon: config
+icon: gears
 order: 2
 category:
   - Конфиг

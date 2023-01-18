@@ -1,6 +1,6 @@
 ---
 title: Введение в плагины
-icon: info
+icon: circle-info
 order: 1
 category:
   - Конфиг

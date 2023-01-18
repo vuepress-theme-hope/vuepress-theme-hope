@@ -1,6 +1,6 @@
 ---
 title: Info Frontmatter Config
-icon: config
+icon: gears
 order: 1
 category:
   - Config
