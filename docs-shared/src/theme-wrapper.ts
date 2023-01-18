@@ -35,9 +35,9 @@ export const theme = (
     favicon: "/favicon.ico",
 
     iconAssets: [
-      "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/js/brands.min.js",
-      "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/js/solid.min.js",
-      "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/js/fontawesome.min.js",
+      "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/brands.min.css",
+      "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/solid.min.css",
+      "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/fontawesome.min.css",
     ],
     iconPrefix: "fas fa-",
 

@@ -7,6 +7,15 @@
     height: 0.9em;
   }
 
+  &.fas,
+  &.fa-solid,
+  &.fab,
+  &.fa-brands {
+    &::before {
+      font-size: 0.9em;
+    }
+  }
+
   #{hope-config.$content-class} & {
     vertical-align: middle;
   }

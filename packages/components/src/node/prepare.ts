@@ -30,8 +30,8 @@ const getIconLink = (iconLink?: string[] | string): LinkInfo[] => {
 
   if (iconLink === "fontawesome")
     return ["solid", "fontawesome"].map((item) => ({
-      type: "script",
-      content: `https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/js/${item}.min.js`,
+      type: "style",
+      content: `@import url("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/${item}.min.css)`,
     }));
 
   if (iconLink === "iconfont")
