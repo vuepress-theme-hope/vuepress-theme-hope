@@ -99,7 +99,7 @@
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "@types/babel__core": "7.1.20",
+    "@types/babel__core": "7.20.0",
     "@vuepress/bundler-vite": "2.0.0-beta.60",
     "@vuepress/core": "2.0.0-beta.60",
     "@vuepress/markdown": "2.0.0-beta.60",

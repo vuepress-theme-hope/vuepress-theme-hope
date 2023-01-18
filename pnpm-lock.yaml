@@ -1627,8 +1627,8 @@ importers:
         version: link:../shared
     devDependencies:
       '@types/babel__core':
-        specifier: 7.1.20
-        version: 7.1.20
+        specifier: 7.20.0
+        version: 7.20.0
       '@vuepress/bundler-vite':
         specifier: 2.0.0-beta.60
         version: 2.0.0-beta.60
@@ -4346,8 +4346,8 @@ packages:
     resolution: {integrity: sha512-yOlFc+7UtL/89t2ZhjPvvB/DeAr3r+Dq58IgzsFkOAvVC6NMJXmCGjbptdXdR9qsX7pKcTL+s87FtYREi2dEEQ==}
     dev: true
 
-  /@types/babel__core@7.1.20:
-    resolution: {integrity: sha512-PVb6Bg2QuscZ30FvOU7z4guG6c926D9YRvOxEaelzndpMsvP+YM74Q/dAFASpg2l6+XLalxSGxcq/lrgYWZtyQ==}
+  /@types/babel__core@7.20.0:
+    resolution: {integrity: sha512-+n8dL/9GWblDO0iU6eZAwEIJVr5DWigtle+Q6HLOrh/pdbXOhOtqzq8VPPE2zvNJzSKY4vH/z3iT3tn0A3ypiQ==}
     dependencies:
       '@babel/parser': 7.20.7
       '@babel/types': 7.20.7
