@@ -4,6 +4,26 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.164](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.163...v2.0.0-beta.164) (2023-01-19)
+
+### ⚠ BREAKING CHANGES
+
+- **theme:** left/right options in navbarLayout renamed to start/end and slot name changes as well
+
+### Features
+
+- **components:** add `fontawesome-with-brands` keyword ([869de33](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/869de33b62742c19a1d22e96ace55e430d36bc49))
+- **components:** update fontawesome assets ([9100f28](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9100f28abd6913ccb8551dee104836e479a74a21))
+- **theme:** exclude auto catalog page from articles ([8b2fd20](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8b2fd20ca8a8b161b27bdddbf47e6f59c9b6baeb))
+- **theme:** update default value of $content-width ([aa6ebbc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/aa6ebbc0d6a451df03b7a79dbcbe6d09e18a534d))
+- **theme:** update navbarLayout option and slot names ([aafa6f8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/aafa6f838bf3febce52cb902198854f2f2f1e1ce))
+
+### Bug Fixes
+
+- **components:** fix fontawesome for font-icon ([88e602e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/88e602e23edb1ddc9faadea8e4631fe661370b3d))
+- **deps:** update dependency axios to v1.2.3 ([#2685](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2685)) ([3358d2c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3358d2c3c87b293ceb77849c7fb38e4005ae52de))
+- **theme:** fix footer layout, close [#2687](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2687) ([c05f113](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c05f11311153cf9d02927db228a0400ac2344b4f))
+
 ## [2.0.0-beta.163](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.162...v2.0.0-beta.163) (2023-01-17)
 
 ### Bug Fixes

@@ -1,6 +1,6 @@
 {
   "name": "auto-catalog-demo",
-  "version": "2.0.0-beta.163",
+  "version": "2.0.0-beta.164",
   "private": true,
   "description": "Demo for vuepress-plugin-auto-catalog",
   "license": "MIT",
