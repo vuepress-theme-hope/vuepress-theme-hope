@@ -1,6 +1,6 @@
 ---
 title: 客户端
-icon: fab fa-fw fa-chrome
+icon: fab fa-chrome
 ---
 
 ## Composables

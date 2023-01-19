@@ -67,7 +67,7 @@ export const enNavbarConfig = navbar([
           },
           {
             text: "Markdown Enhance Plugin",
-            icon: "fab fa-fw fa-markdown",
+            icon: "fab fa-markdown",
             link: linkHelper("md-enhance"),
           },
           {

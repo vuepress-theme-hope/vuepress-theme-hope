@@ -3,9 +3,9 @@ import { logger } from "../utils.js";
 
 import type { FontIconAssets } from "../options/index.js";
 
-const FONT_AWESOME_PREFIX = "fas fa-sm fa-fw fa-";
+export const FONT_AWESOME_PREFIX = "fas fa-";
 
-const ICON_FONT_PREFIX = "iconfont icon-";
+export const ICON_FONT_PREFIX = "iconfont icon-";
 
 const isFontAwesomeLink = (link: string): boolean =>
   /^(?:https:)?\/\/kit\.fontawesome\.com\//.test(link) ||
@@ -14,26 +14,30 @@ const isFontAwesomeLink = (link: string): boolean =>
 const isIconFontLink = (link: string): boolean =>
   /^(?:https:)?\/\/at\.alicdn\.com\/t\//.test(link);
 
-export const getIconPrefix = (assets?: FontIconAssets): string => {
-  if (Array.isArray(assets)) {
-    if (assets.every(isFontAwesomeLink)) return FONT_AWESOME_PREFIX;
-    if (assets.every(isIconFontLink)) return ICON_FONT_PREFIX;
-  } else if (typeof assets === "string") {
-    if (
-      assets === "fontawesome" ||
+export const isFrontAwesomeAssets = (assets: FontIconAssets): boolean =>
+  isArray(assets)
+    ? assets.every(isFontAwesomeLink)
+    : assets === "fontawesome" ||
       assets === "fontawesome-with-brands" ||
-      isFontAwesomeLink(assets)
-    )
-      return FONT_AWESOME_PREFIX;
+      isFontAwesomeLink(assets);
 
-    if (
-      assets === "iconfont" ||
-      assets.match(/^(?:https:)?\/\/at\.alicdn\.com\/t\//)
-    )
-      return ICON_FONT_PREFIX;
+export const isIconFontAssets = (assets: FontIconAssets): boolean =>
+  isArray(assets)
+    ? assets.every(isIconFontLink)
+    : assets === "iconfont" || isIconFontLink(assets);
+
+export const getIconInfo = (
+  assets?: FontIconAssets,
+  prefix?: string
+): { type: "fontawesome" | "iconfont" | "custom"; prefix: string } => {
+  if (assets) {
+    if (isFrontAwesomeAssets(assets))
+      return { type: "fontawesome", prefix: prefix ?? FONT_AWESOME_PREFIX };
+    if (isIconFontAssets(assets))
+      return { type: "iconfont", prefix: prefix ?? ICON_FONT_PREFIX };
   }
 
-  return "";
+  return { type: "custom", prefix: prefix ?? "" };
 };
 
 export interface LinkInfo {

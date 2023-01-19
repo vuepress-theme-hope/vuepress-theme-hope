@@ -68,7 +68,7 @@ export const ruNavbarConfig = navbar([
           },
           {
             text: "Плагин улучшения разметки",
-            icon: "fab fa-fw fa-markdown",
+            icon: "fab fa-markdown",
             link: linkHelper("md-enhance"),
           },
           {

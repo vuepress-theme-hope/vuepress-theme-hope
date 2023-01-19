@@ -1,6 +1,6 @@
 ---
 title: Plugin Frontmatter Config
-icon: gears
+icon: puzzle-piece
 order: 3
 category:
   - Config

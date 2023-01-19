@@ -1,6 +1,6 @@
 ---
 title: Blog Home Frontmatter Config
-icon: gears
+icon: blog
 order: 5
 category:
   - Config

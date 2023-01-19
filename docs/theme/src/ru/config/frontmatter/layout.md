@@ -1,6 +1,6 @@
 ---
 title: Конфиг макета Frontmatter
-icon: gears
+icon: object-group
 order: 2
 category:
   - Конфиг
@@ -128,7 +128,7 @@ Setting to `true` means setting group link to link of `README.md`.
 
 Whether index current dir
 
-## dir.order
+### dir.order
 
 - Type: `number`
 

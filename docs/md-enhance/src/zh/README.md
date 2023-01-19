@@ -85,7 +85,7 @@ features:
     link: /zh/guide/tex.html
 
   - title: 导入文件支持
-    icon: fab fa-fw fa-markdown
+    icon: fab fa-markdown
     details: 将你的文档分段，并在 Markdown 中导入
     link: /zh/guide/include.html
 
@@ -95,7 +95,7 @@ features:
     link: /zh/guide/playground.html
 
   - title: Vue 交互演示支持
-    icon: fab fa-fw fa-vuejs
+    icon: fab fa-vuejs
     details: 在交互演示中展示 Vue 组件
     link: /zh/guide/vue-playground.html
 

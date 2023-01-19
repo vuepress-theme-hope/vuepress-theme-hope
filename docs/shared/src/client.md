@@ -1,6 +1,6 @@
 ---
 title: Client
-icon: fab fa-fw fa-chrome
+icon: fab fa-chrome
 ---
 
 ## Composables

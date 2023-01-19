@@ -1,6 +1,6 @@
 ---
 title: 导入文件
-icon: fab fa-fw fa-markdown
+icon: fab fa-markdown
   - Markdown
 tag:
   - Markdown

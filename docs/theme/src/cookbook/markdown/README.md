@@ -1,6 +1,6 @@
 ---
 title: Markdown Introduction
-icon: fab fa-fw fa-markdown
+icon: fab fa-markdown
 dir:
   order: 2
 category:

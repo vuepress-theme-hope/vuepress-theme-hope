@@ -1,6 +1,6 @@
 ---
 title: Конфиг плагина Frontmatter
-icon: gears
+icon: puzzle-piece
 order: 3
 category:
   - Конфиг

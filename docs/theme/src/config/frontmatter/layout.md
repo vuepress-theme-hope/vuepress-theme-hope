@@ -1,6 +1,6 @@
 ---
 title: Layout Frontmatter Config
-icon: gears
+icon: object-group
 order: 2
 category:
   - Config
@@ -135,7 +135,7 @@ Setting to `true` means setting group link to link of `README.md`.
 
 Whether index current dir
 
-## dir.order
+### dir.order
 
 - Type: `number`
 

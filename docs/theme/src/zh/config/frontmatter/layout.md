@@ -1,6 +1,6 @@
 ---
 title: 布局 Frontmatter 配置
-icon: gears
+icon: object-group
 order: 2
 category:
   - 配置
@@ -138,7 +138,7 @@ Page order in sidebar.
 
 是否索引当前目录
 
-## dir.order
+### dir.order
 
 - 类型: `number`
 

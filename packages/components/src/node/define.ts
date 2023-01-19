@@ -1,4 +1,3 @@
-import { isString } from "@vuepress/shared";
 import { getLocales } from "vuepress-shared/node";
 import {
   backToTopLocales,
@@ -6,7 +5,7 @@ import {
   pdfLocaleConfig,
   siteInfoLocaleConfig,
 } from "./locales/index.js";
-import { getIconPrefix } from "./components/index.js";
+import { getIconInfo } from "./components/index.js";
 
 import type { App } from "@vuepress/core";
 import type { ComponentOptions } from "./options/index.js";
@@ -25,8 +24,12 @@ export const getDefine =
         config: options.locales?.catalog,
       });
 
-    if (options.components?.includes("FontIcon"))
-      result["ICON_PREFIX"] = isString(prefix) ? prefix : getIconPrefix(assets);
+    if (options.components?.includes("FontIcon")) {
+      const { type, prefix: iconPrefix } = getIconInfo(assets, prefix);
+
+      result["FONT_ICON_TYPE"] = type;
+      result["FONT_ICON_PREFIX"] = iconPrefix;
+    }
 
     if (options.components?.includes("ArtPlayer"))
       result["ART_PLAYER_OPTIONS"] = {

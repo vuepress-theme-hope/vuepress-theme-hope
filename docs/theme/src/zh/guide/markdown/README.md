@@ -1,6 +1,6 @@
 ---
 title: Markdown 增强
-icon: fab fa-fw fa-markdown
+icon: fab fa-markdown
 index: false
 dir:
   order: 3

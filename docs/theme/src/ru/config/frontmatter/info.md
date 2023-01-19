@@ -1,6 +1,6 @@
 ---
 title: Конфиг инфо Frontmatter
-icon: gears
+icon: circle-info
 order: 1
 category:
   - Конфиг

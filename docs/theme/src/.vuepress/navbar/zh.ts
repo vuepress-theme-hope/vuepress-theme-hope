@@ -68,7 +68,7 @@ export const zhNavbarConfig = navbar([
           },
           {
             text: "Markdown 增强插件",
-            icon: "fab fa-fw fa-markdown",
+            icon: "fab fa-markdown",
             link: linkHelper("md-enhance"),
           },
           {

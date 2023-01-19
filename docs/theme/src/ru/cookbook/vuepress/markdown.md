@@ -1,6 +1,6 @@
 ---
 title: Встроенные функции разметки
-icon: fab fa-fw fa-markdown
+icon: fab fa-markdown
 category:
   - Учебник с примерами
   - VuePress
