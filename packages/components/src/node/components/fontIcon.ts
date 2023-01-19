@@ -1,6 +1,8 @@
 import { isArray, isLinkHttp } from "@vuepress/shared";
 import { logger } from "../utils.js";
 
+import type { FontIconAssets } from "../options/index.js";
+
 const FONT_AWESOME_PREFIX = "fas fa-sm fa-fw fa-";
 
 const ICON_FONT_PREFIX = "iconfont icon-";
@@ -12,14 +14,14 @@ const isFontAwesomeLink = (link: string): boolean =>
 const isIconFontLink = (link: string): boolean =>
   /^(?:https:)?\/\/at\.alicdn\.com\/t\//.test(link);
 
-export const getIconPrefix = (assets?: string | string[]): string => {
+export const getIconPrefix = (assets?: FontIconAssets): string => {
   if (Array.isArray(assets)) {
     if (assets.every(isFontAwesomeLink)) return FONT_AWESOME_PREFIX;
     if (assets.every(isIconFontLink)) return ICON_FONT_PREFIX;
   } else if (typeof assets === "string") {
     if (
       assets === "fontawesome" ||
-      assets === "fontawesome-with-brands " ||
+      assets === "fontawesome-with-brands" ||
       isFontAwesomeLink(assets)
     )
       return FONT_AWESOME_PREFIX;
@@ -51,13 +53,13 @@ useScriptTag(
 `,
   }));
 
-export const getIconLink = (iconLink?: string[] | string): LinkInfo[] => {
+export const getIconLink = (iconLink?: FontIconAssets): LinkInfo[] => {
   if (!iconLink) return [];
 
   if (iconLink === "fontawesome")
     return getFontAwesomeLink(["solid", "fontawesome"]);
 
-  if (iconLink === "fontawesome-with-brands ")
+  if (iconLink === "fontawesome-with-brands")
     return getFontAwesomeLink(["brands", "solid", "fontawesome"]);
 
   if (iconLink === "iconfont")

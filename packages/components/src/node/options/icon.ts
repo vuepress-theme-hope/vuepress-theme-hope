@@ -3,7 +3,7 @@ type Link = `//${string}` | `http://${string}` | `https://${string}`;
 export type FontIconAssets =
   | "iconfont"
   | "fontawesome"
-  | "fontawesome-with-brands "
+  | "fontawesome-with-brands"
   | Link
   | Link[];
 

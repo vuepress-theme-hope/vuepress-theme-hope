@@ -59,7 +59,7 @@ Global config for components.
   type FontIconAssets =
     | "iconfont"
     | "fontawesome"
-    | "fontawesome-with-brands "
+    | "fontawesome-with-brands"
     | Link
     | Link[];
   ```
