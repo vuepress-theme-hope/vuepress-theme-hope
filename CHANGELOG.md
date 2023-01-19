@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.165](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.164...v2.0.0-beta.165) (2023-01-19)
+
+### Features
+
+- **components:** make `fa-fw fa-sm` class built-in for font-icon ([8618022](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/861802299e4b4fad13e7489f23ba127890f1f8ae))
+
+### Bug Fixes
+
+- **components:** fix typos in config ([27c6a1d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/27c6a1df294f98d28647bf8d9388af3e4d2533b2))
+
 ## [2.0.0-beta.164](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.163...v2.0.0-beta.164) (2023-01-19)
 
 ### ⚠ BREAKING CHANGES
