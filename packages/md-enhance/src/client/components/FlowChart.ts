@@ -4,7 +4,7 @@ import { computed, defineComponent, h, onMounted, ref } from "vue";
 import { LoadingIcon } from "./icons.js";
 import presets from "../flowchart-preset/index.js";
 
-import type * as Flowchart from "flowchart.js";
+import type { Chart } from "flowchart.ts";
 import type { PropType, VNode } from "vue";
 
 import "../styles/flowchart.scss";
@@ -41,7 +41,7 @@ export default defineComponent({
   },
 
   setup(props) {
-    let svg: Flowchart.Instance;
+    let flowchart: Chart;
     const element = ref<HTMLDivElement>();
 
     const loading = ref(true);
@@ -64,13 +64,11 @@ export default defineComponent({
 
     onMounted(() => {
       void Promise.all([
-        import(
-          /* webpackChunkName: "flowchart" */ "flowchart.js/src/flowchart.parse.js"
-        ),
+        import(/* webpackChunkName: "flowchart" */ "flowchart.ts"),
         // delay
         new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
-      ]).then(([{ default: parse }]) => {
-        svg = parse(atou(props.code));
+      ]).then(([{ parse }]) => {
+        flowchart = parse(atou(props.code));
 
         // update scale
         scale.value = getScale(window.innerWidth);
@@ -78,7 +76,7 @@ export default defineComponent({
         loading.value = false;
 
         // draw svg to #id
-        svg.drawSVG(props.id, { ...preset.value, scale: scale.value });
+        flowchart.draw(props.id, { ...preset.value, scale: scale.value });
 
         useEventListener(
           "resize",
@@ -88,7 +86,7 @@ export default defineComponent({
             if (scale.value !== newScale) {
               scale.value = newScale;
 
-              svg.drawSVG(props.id, { ...preset.value, scale: newScale });
+              flowchart.draw(props.id, { ...preset.value, scale: newScale });
             }
           }, 100)
         );

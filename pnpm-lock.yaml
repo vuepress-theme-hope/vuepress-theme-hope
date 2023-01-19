@@ -1598,9 +1598,9 @@ importers:
       echarts:
         specifier: ^5.4.1
         version: 5.4.1
-      flowchart.js:
-        specifier: ^1.17.1
-        version: 1.17.1
+      flowchart.ts:
+        specifier: ^0.1.2
+        version: 0.1.2
       katex:
         specifier: ^0.16.4
         version: 0.16.4
@@ -4550,6 +4550,10 @@ packages:
 
   /@types/range-parser@1.2.4:
     resolution: {integrity: sha512-EEhsLsD6UsDM1yFhAvy0Cjr6VwmpMWqFBCb9w07wVugF7w9nfajxLuVmngTIpgS6svCnm6Vaw+MZhoDCKnOfsw==}
+
+  /@types/raphael@2.3.3:
+    resolution: {integrity: sha512-Rhvq0q6wzyvipejki/9w87/pgapyE+s3gO66tdl1oD3qDrow+ek+4vVYAbRkeL58HCCK9EOZKwyjqYJ/TFkmtQ==}
+    dev: false
 
   /@types/resolve@1.17.1:
     resolution: {integrity: sha512-yy7HuzQhj0dhGpD8RLXSZWEkLsV9ibvxvi6EiJ3bkqLAO1RGo0WbkWQiwpRlSFymTJRz0d3k5LM3kkx8ArDbLw==}
@@ -8076,11 +8080,12 @@ packages:
     resolution: {integrity: sha512-5nqDSxl8nn5BSNxyR3n4I6eDmbolI6WT+QqR547RwxQapgjQBmtktdP+HTBb/a/zLsbzERTONyUB5pefh5TtjQ==}
     dev: true
 
-  /flowchart.js@1.17.1:
-    resolution: {integrity: sha512-zphTaxdyqvHHu+8Cdf6HvamhArXpq9SyNe1zQ61maCIfTenaj3cMvjS1e/0gfPj7QTLTx3HroSzVqDXpL8naoQ==}
-    engines: {node: '>=4.0.0'}
+  /flowchart.ts@0.1.2:
+    resolution: {integrity: sha512-4N8U2gXTkWUYh57SkCYwnSBM2B9Djia+JjClx/rLA13m0xz2S5BZht/9DvTZH5yXGZkmk7NGxGB15tnbUSI6mg==}
     dependencies:
+      '@types/raphael': 2.3.3
       raphael: 2.3.0
+      tslib: 2.4.1
     dev: false
 
   /follow-redirects@1.15.2:

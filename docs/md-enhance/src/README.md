@@ -20,7 +20,7 @@ features:
     link: /guide/container.html
 
   - title: Tabs
-    icon: table-columnsle-columns
+    icon: table-columns
     details: Group similar content with tabs and switch them together
     link: /guide/tabs.html
 

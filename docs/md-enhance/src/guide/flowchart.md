@@ -7,7 +7,7 @@ Let the Markdown file support flow chart in your VuePress site.
 
 <!-- more -->
 
-This plugin is using [flowchart.js](https://github.com/adrai/flowchart.js) to support this feature.
+This plugin is using [flowchart.js](http://flowchart.js.org/) to support this feature.
 
 ## Config
 

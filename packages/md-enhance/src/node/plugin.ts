@@ -218,12 +218,8 @@ export const mdEnhancePlugin =
         }
 
         if (flowchartEnable) {
-          addViteOptimizeDepsInclude(
-            bundlerOptions,
-            app,
-            "flowchart.js/src/flowchart.parse.js"
-          );
-          addViteSsrExternal(bundlerOptions, app, "flowchart.js");
+          addViteOptimizeDepsExclude(bundlerOptions, app, "flowchart.ts");
+          addViteSsrExternal(bundlerOptions, app, "flowchart.ts");
         }
 
         if (mermaidEnable) {

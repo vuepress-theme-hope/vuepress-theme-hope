@@ -20,7 +20,7 @@ features:
     link: /zh/guide/container.html
 
   - title: 选项卡
-    icon: table-columnsle-columns
+    icon: table-columns
     details: 使用选项卡对相似内容进行分组
     link: /zh/guide/tabs.html
 

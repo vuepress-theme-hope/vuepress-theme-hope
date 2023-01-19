@@ -52,7 +52,7 @@ export default [
   ...rollupTypescript("client/components/FlowChart", {
     external: [
       "@vueuse/core",
-      "flowchart.js/src/flowchart.parse.js",
+      "flowchart.ts",
       "vue",
       "vuepress-shared/client",
       /\.scss$/,
