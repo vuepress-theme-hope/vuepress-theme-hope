@@ -21,7 +21,7 @@ actions:
 
 features:
   - title: Улучшение разметки
-    icon: fab fa-markdown
+    icon: fab fa-fw fa-markdown
     details: Добавление выравнивания, надстрочного/подстрочного скрипта, сноски, списка задач, текста, блок-схемы, диаграммы, выделения и поддержка презентации в Markdown
     link: /ru/guide/markdown/
 

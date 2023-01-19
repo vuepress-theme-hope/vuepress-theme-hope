@@ -1,6 +1,6 @@
 ---
 title: Giscus
-icon: fab fa-github
+icon: fab fa-fw fa-github
 ---
 
 Giscus 是一个基于 GitHub Discussion 的评论系统，启用简便。

@@ -8,7 +8,7 @@ export default theme("seo2", {
         "/shared",
         {
           text: "Node",
-          icon: "fab fa-node-js",
+          icon: "fab fa-fw fa-node-js",
           prefix: "/node/",
           children: ["bundler", "content"],
         },
@@ -24,7 +24,7 @@ export default theme("seo2", {
         "/zh/shared",
         {
           text: "Node",
-          icon: "fab fa-node-js",
+          icon: "fab fa-fw fa-node-js",
           prefix: "/zh/node/",
           children: ["bundler", "content"],
         },

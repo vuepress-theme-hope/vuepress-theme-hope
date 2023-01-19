@@ -1,6 +1,6 @@
 ---
 title: About VuePress
-icon: fab fa-vuejs
+icon: fab fa-fw fa-vuejs
 dir:
   order: 3
 category:

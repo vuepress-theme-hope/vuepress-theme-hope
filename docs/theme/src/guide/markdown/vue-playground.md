@@ -1,6 +1,6 @@
 ---
 title: Vue Playground
-icon: fab fa-vuejs
+icon: fab fa-fw fa-vuejs
 category:
   - Markdown
 tag:

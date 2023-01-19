@@ -85,7 +85,7 @@ features:
     link: /guide/tex.html
 
   - title: Include snippet Support
-    icon: fab fa-markdown
+    icon: fab fa-fw fa-markdown
     details: split your docs with different parts and import them in Markdown
     link: /guide/include.html
 
@@ -95,7 +95,7 @@ features:
     link: /guide/playground.html
 
   - title: Vue playground Support
-    icon: fab fa-vuejs
+    icon: fab fa-fw fa-vuejs
     details: Show living vue component in playground
     link: /guide/vue-playground.html
 

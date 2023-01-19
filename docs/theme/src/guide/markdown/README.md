@@ -1,6 +1,6 @@
 ---
 title: Markdown Enhance
-icon: fab fa-markdown
+icon: fab fa-fw fa-markdown
 index: false
 dir:
   order: 3
