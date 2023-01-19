@@ -48,7 +48,7 @@ You should set icon related assets to `iconAssets`, where you can set one url or
 
 For example, you may use [iconfont.cn](https://www.iconfont.cn/?lang=en-us) and [fontawesome](https://fontawesome.com) to generate your own assets.
 
-To keep it simple, we add built-in keywords `"iconfont"` and `"fontawesome"` support for you to get started easily.
+To keep it simple, we add built-in keywords `"iconfont"`, `"fontawesome"` and `"fontawesome-with-brand` support for you to get started easily.
 
 ::: tip
 
@@ -140,13 +140,16 @@ By default, we use jsdelivr CDN to load V6 version of fontawesome free icons. Th
 
 @tab TS
 
-```ts {7}
+@tab TS
+
+```ts {8}
 // .vuepress/config.ts
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default defineUserConfig({
   theme: hopeTheme({
+    // Or "fontawesome-with-brands"
     iconAssets: "fontawesome",
   }),
 });
@@ -154,13 +157,14 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {7}
+```js {8}
 // .vuepress/config.ts
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default defineUserConfig({
   theme: hopeTheme({
+    // OR "fontawesome-with-brands"
     iconAssets: "fontawesome",
   }),
 });

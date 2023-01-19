@@ -21,7 +21,19 @@ These options are only valid when setting directly under the theme options, sett
 
 ## iconAssets <Badge text="Root only" type="warning" />
 
-- Type: `` "iconfont" | "fontawesome" | `//${string}` | `http://${string}` | `https://${string}`  ``
+- Type: `FontIconAssets`
+
+  ```ts
+  type Link = `//${string}` | `http://${string}` | `https://${string}`;
+
+  export type FontIconAssets =
+    | "iconfont"
+    | "fontawesome"
+    | "fontawesome-with-brand"
+    | Link
+    | Link[];
+  ```
+
 - Required: No
 - Details: [Interface → Icon](../../guide/interface/icon.md)
 

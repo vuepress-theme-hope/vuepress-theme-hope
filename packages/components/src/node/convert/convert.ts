@@ -3,7 +3,7 @@ import { colors } from "@vuepress/utils";
 import { deprecatedLogger, droppedLogger } from "./utils.js";
 import { logger } from "../utils.js";
 
-import type { ComponentOptions } from "../options.js";
+import type { ComponentOptions } from "../options/index.js";
 
 /** @deprecated */
 export const convertOptions = (

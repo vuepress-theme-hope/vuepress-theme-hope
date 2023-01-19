@@ -1,3 +1,5 @@
+import type { FontIconAssets } from "vuepress-plugin-components";
+
 export type DarkmodeOptions =
   | "switch"
   | "auto"
@@ -115,14 +117,7 @@ export interface AppearanceOptions {
    *
    * @description `"iconfont"` and `"fontawesome"` keywords are supported
    */
-  iconAssets?:
-    | "iconfont"
-    | "fontawesome"
-    | `//${string}`
-    | `http://${string}`
-    | `http://${string}`[]
-    | `https://${string}`
-    | `https://${string}`[];
+  iconAssets?: FontIconAssets;
 
   /**
    * Font Icon class prefix

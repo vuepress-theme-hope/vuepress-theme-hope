@@ -51,7 +51,19 @@ icon: gears
 
 ### componentsOptions.fontIcon.assets
 
-- 类型: `` "iconfont" | "fontawesome" | `//${string}` | `http://${string}` | `https://${string}`  ``
+- 类型: `FontIconAssets`
+
+  ```ts
+  type Link = `//${string}` | `http://${string}` | `https://${string}`;
+
+  export type FontIconAssets =
+    | "iconfont"
+    | "fontawesome"
+    | "fontawesome-with-brand"
+    | Link
+    | Link[];
+  ```
+
 - 必填: 否
 - 详情:
   - [指南 → FontIcon](./guide/fonticon.md)

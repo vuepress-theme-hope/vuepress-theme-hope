@@ -21,7 +21,19 @@ tag:
 
 ## iconAssets <Badge text="仅限 Root" type="warning" />
 
-- 类型: `` "iconfont" | "fontawesome" | `//${string}` | `http://${string}` | `https://${string}`  ``
+- 类型: `FontIconAssets`
+
+  ```ts
+  type Link = `//${string}` | `http://${string}` | `https://${string}`;
+
+  export type FontIconAssets =
+    | "iconfont"
+    | "fontawesome"
+    | "fontawesome-with-brand"
+    | Link
+    | Link[];
+  ```
+
 - 必填: 否
 - 详情: [界面 → 图标](../../guide/interface/icon.md)
 

@@ -8,7 +8,7 @@ import { logger } from "./utils.js";
 
 import type { PluginFunction } from "@vuepress/core";
 
-import type { ComponentOptions } from "./options.js";
+import type { ComponentOptions } from "./options/index.js";
 
 export const componentsPlugin =
   (options: ComponentOptions, legacy = false): PluginFunction =>

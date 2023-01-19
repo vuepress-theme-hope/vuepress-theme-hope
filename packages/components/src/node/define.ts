@@ -6,10 +6,10 @@ import {
   pdfLocaleConfig,
   siteInfoLocaleConfig,
 } from "./locales/index.js";
-import { getIconPrefix } from "./utils.js";
+import { getIconPrefix } from "./components/index.js";
 
 import type { App } from "@vuepress/core";
-import type { ComponentOptions } from "./options.js";
+import type { ComponentOptions } from "./options/index.js";
 
 export const getDefine =
   (options: ComponentOptions): ((app: App) => Record<string, unknown>) =>

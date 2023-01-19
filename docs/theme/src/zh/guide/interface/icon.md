@@ -48,7 +48,7 @@ head:
 
 例如，你可以使用 [iconfont.cn](https://www.iconfont.cn/?lang=zh-cn) 和 [fontawesome](https://fontawesome.com) 来生成你自己的资源
 
-为了便于上手，我们添加了内置关键字 `"iconfont"` 和 `"fontawesome"` 支持。
+为了便于上手，我们添加了内置关键字 `"iconfont"`、`"fontawesome"` 和 `"fontawesome-with-brand` 支持。
 
 ::: tip
 
@@ -146,13 +146,14 @@ head:
 
 @tab TS
 
-```ts {7}
+```ts {8}
 // .vuepress/config.ts
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default defineUserConfig({
   theme: hopeTheme({
+    // 或 "fontawesome-with-brands"
     iconAssets: "fontawesome",
   }),
 });
@@ -160,13 +161,14 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {7}
+```js {8}
 // .vuepress/config.ts
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default defineUserConfig({
   theme: hopeTheme({
+    // 或 "fontawesome-with-brands"
     iconAssets: "fontawesome",
   }),
 });

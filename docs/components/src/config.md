@@ -51,7 +51,19 @@ Global config for components.
 
 ### componentsOptions.fontIcon.assets
 
-- Type: `` "iconfont" | "fontawesome" | `//${string}` | `http://${string}` | `https://${string}`  ``
+- Type: `FontIconAssets`
+
+  ```ts
+  type Link = `//${string}` | `http://${string}` | `https://${string}`;
+
+  type FontIconAssets =
+    | "iconfont"
+    | "fontawesome"
+    | "fontawesome-with-brands "
+    | Link
+    | Link[];
+  ```
+
 - Required: No
 - Details:
   - [Guide → FontIcon](./guide/fonticon.md)

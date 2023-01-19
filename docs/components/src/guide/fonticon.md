@@ -57,7 +57,7 @@ You should set icon related assets to `componentsOptions.fontIcon.assets`, where
 
 For example, you may use [iconfont.cn](https://www.iconfont.cn/?lang=en-us) and [fontawesome](https://fontawesome.com) to generate your own assets.
 
-To keep it simple, we add built-in keywords `"iconfont"` and `"fontawesome"` support for you to get started easily.
+To keep it simple, we add built-in keywords `"iconfont"`, `"fontawesome"` and `"fontawesome-with-brand` support for you to get started easily.
 
 ::: tip
 

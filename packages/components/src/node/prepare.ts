@@ -1,89 +1,9 @@
-import { isArray, isLinkHttp, isString } from "@vuepress/shared";
-import { CLIENT_FOLDER, logger } from "./utils.js";
+import { isArray, isString } from "@vuepress/shared";
+import { AVAILABLE_COMPONENTS, CLIENT_FOLDER } from "./utils.js";
+import { getIconLink, getNoticeOptions } from "./components/index.js";
 
 import type { App } from "@vuepress/core";
-import type { AvailableComponent, ComponentOptions } from "./options.js";
-import type { NoticeClientOptions, NoticeOptions } from "../shared/index.js";
-
-const availableComponents: AvailableComponent[] = [
-  "ArtPlayer",
-  "AudioPlayer",
-  "Badge",
-  "BiliBili",
-  "Catalog",
-  "CodePen",
-  "FontIcon",
-  "PDF",
-  "SiteInfo",
-  "StackBlitz",
-  "VideoPlayer",
-  "YouTube",
-];
-
-interface LinkInfo {
-  type: string;
-  content: string;
-}
-
-const getIconLink = (iconLink?: string[] | string): LinkInfo[] => {
-  if (!iconLink) return [];
-
-  if (iconLink === "fontawesome")
-    return ["solid", "fontawesome"].map((item) => ({
-      type: "style",
-      content: `@import url("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/${item}.min.css)`,
-    }));
-
-  if (iconLink === "iconfont")
-    return [
-      {
-        type: "style",
-        content: `@import url("//at.alicdn.com/t/c/font_2410206_5vb9zlyghj.css");`,
-      },
-    ];
-
-  return (isArray(iconLink) ? iconLink : [iconLink])
-    .map((item) => {
-      const actualLink = isLinkHttp(item) ? item : `//${item}`;
-
-      if (actualLink.endsWith(".css"))
-        return {
-          type: "style",
-          content: `@import url("${actualLink}");`,
-        };
-
-      if (actualLink.endsWith(".js"))
-        return {
-          type: "script",
-          content: actualLink,
-        };
-
-      logger.error(`Can not recognize icon link: "${item}"`);
-
-      return null;
-    })
-    .filter((item): item is LinkInfo => item !== null);
-};
-
-const getNoticeOptions = (options: NoticeOptions[]): NoticeClientOptions[] =>
-  options
-    .map(
-      ({ key, ...item }) =>
-        <NoticeClientOptions>{
-          noticeKey: key,
-          ...item,
-          ...("match" in item ? { match: item.match.toString() } : {}),
-        }
-    )
-    .sort((a, b) =>
-      "match" in a
-        ? "match" in b
-          ? b.match.localeCompare(a.match)
-          : -1
-        : "match" in b
-        ? 1
-        : (b.path || "").localeCompare(a.path || "")
-    );
+import type { ComponentOptions } from "./options/index.js";
 
 export const prepareConfigFile = (
   app: App,
@@ -102,7 +22,7 @@ export const prepareConfigFile = (
   let shouldImportUseStyleTag = false;
 
   components.forEach((item) => {
-    if (availableComponents.includes(item)) {
+    if (AVAILABLE_COMPONENTS.includes(item)) {
       configImport += `\
 import ${item} from "${CLIENT_FOLDER}components/${item}.js";
 `;
@@ -112,20 +32,16 @@ if(!hasGlobalComponent("${item}")) app.component("${item}", ${item});
     }
 
     if (item === "FontIcon")
-      getIconLink(componentOptions.fontIcon?.assets).forEach((item, index) => {
+      getIconLink(componentOptions.fontIcon?.assets).forEach((item) => {
         const { type, content } = item;
 
         if (type === "script") {
           shouldImportUseScriptTag = true;
-          setup += `\
-useScriptTag(\`${content}\`);
-`;
         } else {
           shouldImportUseStyleTag = true;
-          setup += `\
-useStyleTag(\`${content}\`, { id: "icon-assets-${index}" });
-`;
         }
+
+        setup += content;
       });
   });
 
