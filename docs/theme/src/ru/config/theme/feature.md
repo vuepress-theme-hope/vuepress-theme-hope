@@ -1,6 +1,6 @@
 ---
 title: Опции функции темы
-icon: gears
+icon: splotch
 order: 3
 category:
   - Конфиг

@@ -1,6 +1,6 @@
 ---
 title: Theme Feature Options
-icon: gears
+icon: splotch
 order: 3
 category:
   - Config

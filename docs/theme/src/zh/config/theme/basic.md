@@ -1,6 +1,6 @@
 ---
 title: 主题基本选项
-icon: gears
+icon: circle-info
 order: 1
 category:
   - 配置

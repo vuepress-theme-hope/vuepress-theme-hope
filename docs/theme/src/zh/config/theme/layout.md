@@ -1,6 +1,6 @@
 ---
 title: 主题布局选项
-icon: gears
+icon: object-group
 order: 3
 category:
   - 配置

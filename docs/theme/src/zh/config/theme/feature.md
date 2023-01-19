@@ -1,6 +1,6 @@
 ---
 title: 主题功能选项
-icon: gears
+icon: splotch
 order: 2
 category:
   - 配置

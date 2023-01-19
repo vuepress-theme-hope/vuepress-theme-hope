@@ -1,6 +1,6 @@
 ---
 title: Theme Appearance Options
-icon: gears
+icon: palette
 order: 5
 category:
   - Config

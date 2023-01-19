@@ -1,6 +1,6 @@
 ---
 title: Theme Basic Options
-icon: gears
+icon: circle-info
 order: 2
 category:
   - Config
