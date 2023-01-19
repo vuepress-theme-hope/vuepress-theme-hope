@@ -1,6 +1,6 @@
 ---
 title: СЕО
-icon: gears
+icon: dumbbell
 category:
   - Продвинутые
 tag:

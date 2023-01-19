@@ -86,7 +86,7 @@ features:
     link: /guide/feature/photo-swipe.html
 
   - title: SEO Enhancement
-    icon: gears
+    icon: dumbbell
     details: Optimize pages for search engines
     link: /guide/advanced/seo.html
 

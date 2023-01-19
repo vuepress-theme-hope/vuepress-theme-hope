@@ -1,6 +1,6 @@
 ---
 title: 功能
-icon: icons
+icon: splotch
 index: false
 dir:
   order: 5

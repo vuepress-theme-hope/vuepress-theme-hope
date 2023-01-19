@@ -1,6 +1,6 @@
 ---
 title: 项目案例
-icon: icons
+icon: splotch
 category:
   - 案例
 docs:

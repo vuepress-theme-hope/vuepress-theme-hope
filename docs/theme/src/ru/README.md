@@ -86,7 +86,7 @@ features:
     link: /ru/guide/feature/photo-swipe.html
 
   - title: СЕО-улучшения
-    icon: gears
+    icon: dumbbell
     details: Оптимизация страниц для поисковых систем
     link: /ru/guide/advanced/seo.html
 

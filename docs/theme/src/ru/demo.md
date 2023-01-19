@@ -1,6 +1,6 @@
 ---
 title: Демоверсии
-icon: icons
+icon: splotch
 category:
   - Демо
 docs:

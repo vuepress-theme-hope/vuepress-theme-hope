@@ -1,6 +1,6 @@
 ---
 title: Функции
-icon: icons
+icon: splotch
 index: false
 dir:
   order: 5

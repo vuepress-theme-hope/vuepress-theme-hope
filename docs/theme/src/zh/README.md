@@ -86,7 +86,7 @@ features:
     link: /zh/guide/feature/photo-swipe.html
 
   - title: SEO 增强
-    icon: gears
+    icon: dumbbell
     details: 将最终生成的网页针对搜索引擎进行优化。
     link: /zh/guide/advanced/seo.html
 

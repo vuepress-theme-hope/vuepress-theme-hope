@@ -1,6 +1,6 @@
 ---
 title: SEO
-icon: gears
+icon: dumbbell
 category:
   - Advanced
 tag:

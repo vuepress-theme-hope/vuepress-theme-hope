@@ -1,6 +1,6 @@
 ---
 title: Demos
-icon: icons
+icon: splotch
 category:
   - Demo
 docs:
