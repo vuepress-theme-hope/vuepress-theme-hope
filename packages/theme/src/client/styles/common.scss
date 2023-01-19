@@ -35,6 +35,11 @@
 }
 
 .theme-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+
   .page {
     // leave space for navbar
     padding-top: var(--navbar-height);

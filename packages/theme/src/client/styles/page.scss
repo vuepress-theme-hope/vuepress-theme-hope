@@ -1,5 +1,6 @@
 .page {
   display: block;
+  flex-grow: 1;
   padding-bottom: 2rem;
   transition: padding var(--transform-transition);
 
