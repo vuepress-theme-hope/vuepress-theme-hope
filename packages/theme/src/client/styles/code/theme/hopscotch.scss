@@ -18,7 +18,6 @@ pre[class*="language-"] {
   background: #322931;
   color: #b9b5b8;
 
-  font-size: 16px;
   font-family: "Fira Mono", Menlo, Monaco, "Lucida Console", "Courier New",
     Courier, monospace;
   line-height: 1.375;
@@ -31,12 +30,6 @@ pre[class*="language-"] {
   -moz-tab-size: 4;
   -o-tab-size: 4;
   tab-size: 4;
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
-  hyphens: none;
-
-  direction: ltr;
 }
 
 .token.comment,

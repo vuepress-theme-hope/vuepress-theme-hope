@@ -7,16 +7,16 @@
     box-sizing: border-box;
 
     width: 20%;
-    padding: 16px 10px;
-    border-radius: 6px;
+    padding: 1rem 0.5rem;
+    border-radius: 0.375rem;
 
     text-align: center;
 
-    @media (max-width: 768px) {
+    @media (max-width: hope-config.$tablet) {
       width: 25%;
     }
 
-    @media (max-width: 412px) {
+    @media (max-width: hope-config.$mobile) {
       width: 33.333%;
     }
 
@@ -27,7 +27,7 @@
 
     .iconfont {
       color: var(--dark-grey);
-      font-size: 32px;
+      font-size: 2rem;
     }
 
     .text {
