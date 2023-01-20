@@ -27,7 +27,7 @@ Also, you should use package manger satisfying the following requirements:
 
 - pnpm: >= 7
 
-  Check: `yarn -v`
+  Check: `pnpm -v`
 
   Install: `npm i -g pnpm`
 

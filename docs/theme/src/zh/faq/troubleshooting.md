@@ -27,7 +27,7 @@ category:
 
 - pnpm: >= 7
 
-  检查: `yarn -v`
+  检查: `pnpm -v`
 
   安装: `npm i -g pnpm`
 
