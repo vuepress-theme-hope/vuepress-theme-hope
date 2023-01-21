@@ -35,21 +35,23 @@ export default defineComponent({
         h("main", { class: "page not-found", id: "main-content" }, [
           h(NotFoundIcon),
           h("blockquote", getMsg()),
-          h(
-            "button",
-            {
-              class: "action-button",
-              onClick: () => {
-                window.history.go(-1);
+          h("div", { class: "actions" }, [
+            h(
+              "button",
+              {
+                class: "action-button",
+                onClick: () => {
+                  window.history.go(-1);
+                },
               },
-            },
-            themeLocale.value.routeLocales.back
-          ),
-          h(
-            "button",
-            { class: "action-button", onClick: () => navigate() },
-            themeLocale.value.routeLocales.home
-          ),
+              themeLocale.value.routeLocales.back
+            ),
+            h(
+              "button",
+              { class: "action-button", onClick: () => navigate() },
+              themeLocale.value.routeLocales.home
+            ),
+          ]),
         ])
       ),
     ];

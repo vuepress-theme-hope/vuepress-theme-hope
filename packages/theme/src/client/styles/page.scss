@@ -4,11 +4,6 @@
   padding-bottom: 2rem;
   transition: padding var(--transform-transition);
 
-  // page should at least one screen length
-  @media (max-width: hope-config.$tablet) {
-    min-height: 100vh;
-  }
-
   // ensure page margin
   @media print {
     min-height: auto !important;
