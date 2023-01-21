@@ -1,23 +1,23 @@
 @use "vuepress-shared/styles/wrapper";
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  #{hope-config.$content-class}:not(.custom) &:first-child {
-    margin-top: calc(0.5rem - var(--navbar-height)) !important;
-    padding-top: var(--navbar-height) !important;
-  }
-}
-
 #{hope-config.$content-class}:not(.custom) {
   padding-top: 0 !important;
-}
 
-#{hope-config.$content-class}:not(.custom) > h1:first-child {
-  display: none;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    &:first-child {
+      margin-top: calc(0.5rem - var(--navbar-height)) !important;
+      padding-top: var(--navbar-height) !important;
+    }
+  }
+
+  > h1:first-child {
+    display: none;
+  }
 }
 
 .page-title {

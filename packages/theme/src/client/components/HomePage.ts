@@ -58,7 +58,7 @@ export default defineComponent({
           h(
             DropTransition,
             { appear: true, delay: 0.16 + features.value.length * 0.08 },
-            () => h(MarkdownContent, { custom: true })
+            () => h(MarkdownContent)
           ),
           slots["bottom"]?.(),
         ]

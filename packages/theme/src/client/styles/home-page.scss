@@ -1,16 +1,24 @@
 .home.project {
   display: block;
+  flex: 1;
 
   max-width: var(--home-page-width);
   min-height: calc(100vh - var(--navbar-height));
   margin: 0 auto;
   padding: var(--navbar-height) 2rem 0;
 
-  @media (max-width: hope-config.$mobile) {
+  @media (max-width: hope-config.$tablet) {
     // NOTE: Compatible with Android Wechat
     // padding-inline: 1.5rem;
     padding-inline-start: 1.5rem;
     padding-inline-end: 1.5rem;
+  }
+
+  @media (max-width: hope-config.$mobile) {
+    // NOTE: Compatible with Android Wechat
+    // padding-inline: 1.5rem;
+    padding-inline-start: 1rem;
+    padding-inline-end: 1rem;
   }
 
   #{hope-config.$content-class} {
