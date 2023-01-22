@@ -35,6 +35,7 @@ export default [
       external: [
         "@mermaid",
         "@vue/repl",
+        "vue-router",
         "balloon-css/balloon.css",
         "chart.js/auto",
         "echarts",

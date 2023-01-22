@@ -10,6 +10,7 @@ import {
   shallowRef,
   watch,
 } from "vue";
+import { onBeforeRouteUpdate, useRoute } from "vue-router";
 
 import "../styles/tabs.scss";
 
@@ -81,6 +82,9 @@ export default defineComponent({
     // refs of the tab buttons
     const tabRefs = shallowRef<HTMLUListElement[]>([]);
 
+    // stores anchors for each tab, non-reactive
+    const tabContentAnchors: Set<string>[] = [];
+
     // update store
     const updateStore = (): void => {
       if (props.tabId) {
@@ -118,6 +122,26 @@ export default defineComponent({
       updateStore();
     };
 
+    // find tab index for a URL hash
+    const findAnchorIndex = (hash: string): number => {
+      hash = hash?.substring(1);
+
+      if (hash) {
+        // match tab id first
+        let index = props.data.findIndex(
+          ({ title, id: value = title }) => hash === value
+        );
+
+        if (index !== -1) return index;
+
+        // if not found, try to match anchor inside tabs
+        index = tabContentAnchors.findIndex((set) => set.has(hash));
+        if (index !== -1) return index;
+      }
+
+      return -1;
+    };
+
     const getInitialIndex = (): number => {
       if (props.tabId) {
         const valueIndex = props.data.findIndex(
@@ -128,8 +152,25 @@ export default defineComponent({
         if (valueIndex !== -1) return valueIndex;
       }
 
+      const anchorIndex = findAnchorIndex(useRoute()?.hash);
+
+      if (anchorIndex !== -1) return anchorIndex;
+
       return props.active;
     };
+
+    onBeforeRouteUpdate((to, _, next) => {
+      const anchorIndex = findAnchorIndex(to.hash);
+
+      if (anchorIndex !== -1) {
+        activeIndex.value = anchorIndex;
+
+        // wait one tick for vue-router to scroll properly
+        void nextTick().then(next);
+      } else {
+        next();
+      }
+    });
 
     onMounted(() => {
       activeIndex.value = getInitialIndex();
@@ -154,7 +195,7 @@ export default defineComponent({
             h(
               "div",
               { class: "tab-list-nav", role: "tablist" },
-              props.data.map(({ title }, index) => {
+              props.data.map(({ title, id: value = title }, index) => {
                 const isActive = index === activeIndex.value;
 
                 return h(
@@ -165,6 +206,7 @@ export default defineComponent({
                       if (element)
                         tabRefs.value[index] = <HTMLUListElement>element;
                     },
+                    id: value, // set id for vue-router to scroll, avoid the warning
                     class: ["tab-list-nav-item", { active: isActive }],
                     role: "tab",
                     "aria-controls": `tab-${props.id}-${index}`,
@@ -190,6 +232,20 @@ export default defineComponent({
                   id: `tab-${props.id}-${index}`,
                   role: "tabpanel",
                   "aria-expanded": isActive,
+                  onVnodeMounted(vnode) {
+                    const anchors = new Set<string>();
+
+                    // select and cache anchors inside the tab
+                    (vnode.el as HTMLUListElement)
+                      ?.querySelectorAll("a.header-anchor[href]")
+                      .forEach((e) => {
+                        const href = e.getAttribute("href");
+
+                        if (href?.startsWith("#"))
+                          anchors.add(href.substring(1));
+                      });
+                    tabContentAnchors[index] = anchors;
+                  },
                 },
                 slots[`tab${index}`]({ title, value, isActive })
               );
