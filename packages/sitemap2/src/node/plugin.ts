@@ -7,7 +7,7 @@ import type { PluginFunction, PluginObject } from "@vuepress/core";
 import type { SitemapOptions } from "./options.js";
 
 export const sitemapPlugin =
-  (options: SitemapOptions, legacy = false): PluginFunction =>
+  (options: SitemapOptions, legacy = true): PluginFunction =>
   (app) => {
     // TODO: Remove this in v2 stable
     if (legacy)

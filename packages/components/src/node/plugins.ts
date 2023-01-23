@@ -11,7 +11,7 @@ import type { PluginFunction } from "@vuepress/core";
 import type { ComponentOptions } from "./options/index.js";
 
 export const componentsPlugin =
-  (options: ComponentOptions, legacy = false): PluginFunction =>
+  (options: ComponentOptions, legacy = true): PluginFunction =>
   (app) => {
     // TODO: Remove this in v2 stable
     if (legacy)

@@ -175,7 +175,7 @@ export const convertThemeOptions = (
   // handle component
   if (isArray(plugins["components"])) {
     logger.warn(
-      '"plugins.components" no longer accpets array, please set it to "plugin.components.components" instead.'
+      '"plugins.components" no longer accepts array, please set it to "plugin.components.components" instead.'
     );
 
     plugins["components"] = {
@@ -233,6 +233,27 @@ export const convertThemeOptions = (
         if ("navbar" in localeConfig)
           localeConfig["navbar"] = convertNavbarOptions(localeConfig["navbar"]);
 
+        // handle navbar layout
+        if (isPlainObject(localeConfig["navbarLayout"])) {
+          if ("left" in localeConfig["navbarLayout"]) {
+            logger.warn(
+              'To have better meaning under RTL layout, "left" option is deprecated, please usee "start" instead'
+            );
+            localeConfig["navbarLayout"]["start"] = localeConfig[
+              "navbarLayout"
+            ]["left"] as string[];
+          }
+
+          if ("right" in localeConfig["navbarLayout"]) {
+            logger.warn(
+              'To have better meaning under RTL layout, "right" option is deprecated, please usee "end" instead'
+            );
+            localeConfig["navbarLayout"]["end"] = localeConfig["navbarLayout"][
+              "right"
+            ] as string[];
+          }
+        }
+
         // handle sidebar
         if ("sidebar" in localeConfig)
           localeConfig["sidebar"] = convertSidebarOptions(
@@ -245,7 +266,11 @@ export const convertThemeOptions = (
         // handle blog
         if (isPlainObject(localeConfig["blog"]) && localeConfig["blog"]) {
           handleBlogOptions(localeConfig["blog"] as Record<string, unknown>);
-          if (!plugins["blog"]) plugins["blog"] = true;
+
+          if (!plugins["blog"])
+            logger.warn(
+              'Blog feature is tree-shakable in v2, you should set "plugins.blog: true" in theme options to enable it.'
+            );
         }
       }
     );

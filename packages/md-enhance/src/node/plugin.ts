@@ -75,7 +75,7 @@ import type { KatexOptions } from "./typings/index.js";
 export const mdEnhancePlugin =
   (
     options: MarkdownEnhanceOptions = { gfm: true },
-    legacy = false
+    legacy = true
   ): PluginFunction =>
   (app) => {
     // TODO: Remove this in v2 stable

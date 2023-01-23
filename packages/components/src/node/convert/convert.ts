@@ -36,7 +36,7 @@ export const convertOptions = (
     logger.error(
       `"${colors.magenta(
         "rootComponents.notice"
-      )}" no longer support object config, please check the docs.`
+      )}" no longer support object config, please check the docs at https://plugin-components.vuejs.press/guide/notice.html.`
     );
     delete options.rootComponents?.notice;
   }

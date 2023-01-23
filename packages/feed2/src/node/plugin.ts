@@ -9,7 +9,7 @@ import type { PluginFunction, PluginObject } from "@vuepress/core";
 import type { FeedOptions } from "./typings/index.js";
 
 export const feedPlugin =
-  (options: FeedOptions, legacy = false): PluginFunction =>
+  (options: FeedOptions, legacy = true): PluginFunction =>
   (app) => {
     // TODO: Remove this in v2 stable
     if (legacy)

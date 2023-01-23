@@ -5,7 +5,7 @@ import type { MarkdownEnhanceOptions } from "vuepress-plugin-md-enhance";
 
 export const getMdEnhancePlugin = (
   options?: Partial<MarkdownEnhanceOptions> | false,
-  legacy = false
+  legacy = true
 ): Plugin | null => {
   if (options === false) return null;
 

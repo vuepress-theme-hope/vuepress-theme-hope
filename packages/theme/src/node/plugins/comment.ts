@@ -5,7 +5,7 @@ import type { CommentOptions } from "vuepress-plugin-comment2";
 
 export const getCommentPlugin = (
   options?: Partial<CommentOptions> | false,
-  legacy = false
+  legacy = true
 ): PluginObject | null => {
   if (options === false || !options?.provider) return null;
 

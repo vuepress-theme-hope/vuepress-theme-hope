@@ -8,7 +8,7 @@ export const getSEOPlugin = (
   themeData: ThemeData,
   { seo }: PluginsOptions,
   hostname = "",
-  legacy = false
+  legacy = true
 ): Plugin | null => {
   if (seo === false) return null;
   const seoOptions = isPlainObject(seo) ? seo : {};

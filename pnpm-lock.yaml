@@ -1294,6 +1294,9 @@ importers:
       '@vuepress/client':
         specifier: 2.0.0-beta.60
         version: 2.0.0-beta.60
+      '@vuepress/shared':
+        specifier: 2.0.0-beta.60
+        version: 2.0.0-beta.60
       '@vuepress/utils':
         specifier: 2.0.0-beta.60
         version: 2.0.0-beta.60

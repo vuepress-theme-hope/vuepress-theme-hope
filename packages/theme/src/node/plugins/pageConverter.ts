@@ -47,7 +47,7 @@ export const injectPageInfo = (page: Page<ThemePageData>): void => {
     page.routeMeta[ArticleInfoType.shortTitle] = frontmatter.shortTitle;
 };
 
-export const extendsPagePlugin = (legacy = false): PluginObject => ({
+export const extendsPagePlugin = (legacy = true): PluginObject => ({
   name: "vuepress-theme-hope-extends-page",
 
   extendsPage: (page, app): void => {
@@ -63,6 +63,6 @@ export const extendsPagePlugin = (legacy = false): PluginObject => ({
   },
 });
 
-export const useExtendsPagePlugin = (app: App, legacy = false): void => {
+export const useExtendsPagePlugin = (app: App, legacy = true): void => {
   app.use(extendsPagePlugin(legacy));
 };

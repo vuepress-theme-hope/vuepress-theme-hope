@@ -10,7 +10,7 @@ import type { SeoOptions } from "./options.js";
 import type { ExtendPage } from "./typings/index.js";
 
 export const seoPlugin =
-  (options: SeoOptions, legacy = false): PluginFunction =>
+  (options: SeoOptions, legacy = true): PluginFunction =>
   (app) => {
     // TODO: Remove this in v2 stable
     if (legacy) convertOptions(options as SeoOptions & Record<string, unknown>);
