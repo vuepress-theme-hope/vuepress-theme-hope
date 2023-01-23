@@ -7,7 +7,7 @@ import type { SitemapOptions } from "vuepress-plugin-sitemap2";
 export const getSitemapPlugin = (
   options?: Omit<SitemapOptions, "hostname"> | boolean,
   hostname?: string,
-  legacy = false
+  legacy = true
 ): Plugin | null => {
   if (options === false) return null;
 

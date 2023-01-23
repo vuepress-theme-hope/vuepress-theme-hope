@@ -36,7 +36,7 @@ export const getPluginConfig = (
     | "iconPrefix"
     | "favicon"
   >,
-  legacy = false
+  legacy = true
 ): PluginConfig => {
   const pluginConfig = [
     getComponentsPlugin(options, plugins.components, legacy),
@@ -48,7 +48,7 @@ export const getPluginConfig = (
     themeDataPlugin({ themeData }),
     getBlogPlugin(app, themeData, plugins.blog, options.hotReload),
     getCommentPlugin(plugins.comment, legacy),
-    getCopyCodePlugin(themeData, plugins.copyCode),
+    getCopyCodePlugin(plugins.copyCode),
     getCopyrightPlugin(themeData, plugins.copyright, options.hostname),
     // seo should work before feed
     getSEOPlugin(themeData, plugins, options.hostname, legacy),

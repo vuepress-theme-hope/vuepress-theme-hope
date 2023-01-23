@@ -24,7 +24,7 @@ export const hopeTheme =
   (
     options: ThemeOptions,
     // TODO: Remove this in v2 stable
-    legacy = false
+    legacy = true
   ): ThemeFunction =>
   (app) => {
     const { isDebug } = app.env;

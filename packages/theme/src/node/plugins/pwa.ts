@@ -7,7 +7,7 @@ import type { PWAOptions } from "vuepress-plugin-pwa2";
 export const getPWAPlugin = (
   options?: PWAOptions | boolean,
   favicon?: string,
-  legacy = false
+  legacy = true
 ): Plugin | null => {
   if (!options) return null;
 

@@ -127,8 +127,8 @@ importers:
         specifier: 5.0.0
         version: 5.0.0(esbuild@0.17.4)(rollup@3.10.1)
       sort-package-json:
-        specifier: 2.1.0
-        version: 2.1.0
+        specifier: 2.2.0
+        version: 2.2.0
       stylelint:
         specifier: 14.16.1
         version: 14.16.1
@@ -1294,6 +1294,9 @@ importers:
       '@vuepress/client':
         specifier: 2.0.0-beta.60
         version: 2.0.0-beta.60
+      '@vuepress/shared':
+        specifier: 2.0.0-beta.60
+        version: 2.0.0-beta.60
       '@vuepress/utils':
         specifier: 2.0.0-beta.60
         version: 2.0.0-beta.60
@@ -1335,8 +1338,8 @@ importers:
         specifier: 2.0.0-beta.60
         version: 2.0.0-beta.60
       '@vueuse/core':
-        specifier: ^9.11.0
-        version: 9.11.0(vue@3.2.45)
+        specifier: ^9.11.1
+        version: 9.11.1(vue@3.2.45)
       artplayer:
         specifier: ^4.6.1
         version: 4.6.1
@@ -1421,8 +1424,8 @@ importers:
         specifier: 2.0.0-beta.60
         version: 2.0.0-beta.60
       '@vueuse/core':
-        specifier: ^9.11.0
-        version: 9.11.0(vue@3.2.45)
+        specifier: ^9.11.1
+        version: 9.11.1(vue@3.2.45)
       vue:
         specifier: ^3.2.45
         version: 3.2.45
@@ -1587,8 +1590,8 @@ importers:
         specifier: 2.0.0-beta.60
         version: 2.0.0-beta.60
       '@vueuse/core':
-        specifier: ^9.11.0
-        version: 9.11.0(vue@3.2.45)
+        specifier: ^9.11.1
+        version: 9.11.1(vue@3.2.45)
       balloon-css:
         specifier: ^1.2.0
         version: 1.2.0
@@ -1654,8 +1657,8 @@ importers:
         specifier: 2.0.0-beta.60
         version: 2.0.0-beta.60
       '@vueuse/core':
-        specifier: ^9.11.0
-        version: 9.11.0(vue@3.2.45)
+        specifier: ^9.11.1
+        version: 9.11.1(vue@3.2.45)
       photoswipe:
         specifier: ^5.3.4
         version: 5.3.4
@@ -1688,8 +1691,8 @@ importers:
         specifier: 2.0.0-beta.60
         version: 2.0.0-beta.60
       '@vueuse/core':
-        specifier: ^9.11.0
-        version: 9.11.0(vue@3.2.45)
+        specifier: ^9.11.1
+        version: 9.11.1(vue@3.2.45)
       mitt:
         specifier: ^3.0.0
         version: 3.0.0_qzs7n5sruuzja7qoe6i43clpfe
@@ -1806,8 +1809,8 @@ importers:
         specifier: 2.0.0-beta.60
         version: 2.0.0-beta.60
       '@vueuse/core':
-        specifier: ^9.11.0
-        version: 9.11.0(vue@3.2.45)
+        specifier: ^9.11.1
+        version: 9.11.1(vue@3.2.45)
       body-scroll-lock:
         specifier: ^3.1.5
         version: 3.1.5
@@ -1981,8 +1984,8 @@ importers:
         specifier: 2.0.0-beta.60
         version: 2.0.0-beta.60
       '@vueuse/core':
-        specifier: ^9.11.0
-        version: 9.11.0(vue@3.2.45)
+        specifier: ^9.11.1
+        version: 9.11.1(vue@3.2.45)
       balloon-css:
         specifier: ^1.2.0
         version: 1.2.0
@@ -11158,8 +11161,8 @@ packages:
     resolution: {integrity: sha512-855pvK+VkU7PaKYPc+Jjnmt4EzejQHyhhF33q31qG8x7maDzkeFhAAThdCYay11CISO+qAMwjOBP+fPZe0IPyg==}
     dev: true
 
-  /sort-package-json@2.1.0:
-    resolution: {integrity: sha512-M5ctkdnn7znAkoVQJ0Y+PHDUieyXMhydPyW7r2J9ZM0Iwc3BTyEf5cmoSRfHNo07FEvzWwnphcP7GlrAX164UQ==}
+  /sort-package-json@2.2.0:
+    resolution: {integrity: sha512-ux712xsrPqkW+0b51GdmC8QTvImM3wsdip9mNVSQTY9ZV3/1eTAK6jIcQ8Vz9kfN1WHL4wv/pLn89mrqeyQu6A==}
     hasBin: true
     dependencies:
       detect-indent: 7.0.1

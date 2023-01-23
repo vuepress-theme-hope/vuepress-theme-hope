@@ -6,9 +6,9 @@ import {
   addViteOptimizeDepsInclude,
   addViteSsrExternal,
   getLocales,
-  noopModule,
 } from "vuepress-shared/node";
 
+import { getProvider } from "./alias.js";
 import { convertOptions } from "./compact.js";
 import { walineLocales } from "./locales.js";
 import { logger } from "./utils.js";
@@ -20,7 +20,7 @@ const __dirname = getDirname(import.meta.url);
 
 /** Comment Plugin */
 export const commentPlugin =
-  (options: CommentOptions, legacy = false): PluginFunction =>
+  (options: CommentOptions, legacy = true): PluginFunction =>
   (app) => {
     // TODO: Remove this in v2 stable
     if (legacy)
@@ -54,10 +54,7 @@ export const commentPlugin =
 
       alias: {
         // eslint-disable-next-line @typescript-eslint/naming-convention
-        "vuepress-plugin-comment2/provider":
-          provider === "None"
-            ? noopModule
-            : path.resolve(__dirname, `../client/components/${provider}.js`),
+        "vuepress-plugin-comment2/provider": getProvider(options.provider),
       },
 
       define: () => ({

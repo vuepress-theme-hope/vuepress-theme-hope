@@ -84,17 +84,28 @@ export const convertFrontmatter = (
     delete frontmatter["canonicalUrl"];
   }
 
-  // check homepage
-  if (frontmatter["home"] === true && !("layout" in frontmatter)) {
-    DEPRECATED_HOME_FRONTMATTER_OPTIONS.forEach(
-      ([deprecatedOption, newOption]) =>
-        deprecatedLogger({
-          options: frontmatter,
-          deprecatedOption,
-          newOption,
-          scope: `${filePathRelative || ""} frontmatter`,
-        })
-    );
+  if (frontmatter["home"] === true) {
+    if (frontmatter["layout"] === "Blog") {
+      logger.warn(
+        `"layout: Blog" in frontmatter is deprecated, please use "layout: BlogHome" instead.${
+          filePathRelative ? `Found in ${filePathRelative}` : ""
+        }`
+      );
+
+      frontmatter["layout"] = "BlogHome";
+    }
+
+    // check project homepage
+    if (!("layout" in frontmatter))
+      DEPRECATED_HOME_FRONTMATTER_OPTIONS.forEach(
+        ([deprecatedOption, newOption]) =>
+          deprecatedLogger({
+            options: frontmatter,
+            deprecatedOption,
+            newOption,
+            scope: `${filePathRelative || ""} frontmatter`,
+          })
+      );
   }
 
   return frontmatter;

@@ -18,7 +18,7 @@ import type { PluginFunction } from "@vuepress/core";
 import type { PWAOptions } from "./options.js";
 
 export const pwaPlugin =
-  (options: PWAOptions = {}, legacy = false): PluginFunction =>
+  (options: PWAOptions = {}, legacy = true): PluginFunction =>
   (app) => {
     // TODO: Remove this in v2 stable
     if (legacy) convertOptions(options as PWAOptions & Record<string, unknown>);

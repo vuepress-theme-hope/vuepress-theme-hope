@@ -6,7 +6,7 @@ import type { MarkdownEnhanceOptions } from "../options.js";
 export const prepareConfigFile = async (
   app: App,
   options: MarkdownEnhanceOptions,
-  legacy = false
+  legacy = true
 ): Promise<string> => {
   let configImport = "";
   let enhance = "";
