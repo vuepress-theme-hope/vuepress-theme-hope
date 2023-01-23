@@ -5,6 +5,13 @@ export interface RouteLocaleData {
   skipToContent: string;
 
   /**
+   * 404 page title
+   *
+   * 404 页面的标题
+   */
+  notFoundTitle: string;
+
+  /**
    * 404 page msgs
    *
    * 404 页面的提示信息

@@ -60,6 +60,7 @@ export const koLocale: ThemeLocaleData = {
 
   routeLocales: {
     skipToContent: "본문으로 건너뛰기",
+    notFoundTitle: "페이지를 찾을 수 없습니다.",
     notFoundMsg: [
       "여기에는 아무것도 없습니다.",
       "어떻게 여기까지 왔어?",

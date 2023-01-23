@@ -5,7 +5,7 @@ import type { Mesh } from "three";
 import type { VNode } from "vue";
 import type { ThemeProjectHomePageFrontmatter } from "vuepress-theme-hope";
 
-import "./hope-logo.scss";
+import "../styles/hope-logo.scss";
 
 export default defineComponent({
   name: "HopeLogo",

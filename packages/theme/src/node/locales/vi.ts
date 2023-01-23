@@ -60,6 +60,7 @@ export const viLocale: ThemeLocaleData = {
 
   routeLocales: {
     skipToContent: "Bỏ qua nội dung chính",
+    notFoundTitle: "Trang không tìm thấy",
     notFoundMsg: [
       "Ở đây chẳng có gì cả.",
       "Sao chúng ta lại đến đây?",

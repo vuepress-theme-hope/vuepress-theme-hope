@@ -171,6 +171,10 @@ export const config = (
         __dirname,
         "./components/HopeHero.js"
       ),
+      "@theme-hope/components/NotFoundHint": path.resolve(
+        __dirname,
+        "./components/HopeNotFoundHint.js"
+      ),
       ...alias,
     },
 

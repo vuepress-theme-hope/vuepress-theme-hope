@@ -59,7 +59,8 @@ export const brLocale: ThemeLocaleData = {
   },
 
   routeLocales: {
-    skipToContent: "Pular para o conteúdo principal",
+    notFoundTitle: "Não Encontrado",
+    skipToContent: "Pular para o conteúdo",
     notFoundMsg: [
       "Não há nada aqui.",
       "Como chegou até aqui?",

@@ -60,6 +60,7 @@ export const jaLocale: ThemeLocaleData = {
 
   routeLocales: {
     skipToContent: "メインコンテンツへスキップ",
+    notFoundTitle: "ページが見つかりません",
     notFoundMsg: [
       "ここには何もありません。",
       "どうやってここにたどり着いたのか?",

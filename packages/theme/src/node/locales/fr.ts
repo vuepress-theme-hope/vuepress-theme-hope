@@ -60,6 +60,7 @@ export const frLocale: ThemeLocaleData = {
 
   routeLocales: {
     skipToContent: "Aller au contenu principal",
+    notFoundTitle: "Page non trouvée",
     notFoundMsg: [
       "Il n'y a rien ici.",
       "Comment êtes vous arrivés ici ?",

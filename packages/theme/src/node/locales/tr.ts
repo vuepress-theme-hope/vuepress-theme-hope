@@ -60,6 +60,7 @@ export const trLocale: ThemeLocaleData = {
 
   routeLocales: {
     skipToContent: "Ana içeriğe atla",
+    notFoundTitle: "Sayfa bulunamadı",
     notFoundMsg: [
       "Burada hiçbir şey yok.",
       "Bu sayfaya nasıl geldik?",

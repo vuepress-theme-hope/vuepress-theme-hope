@@ -60,6 +60,7 @@ export const zhTWLocale: ThemeLocaleData = {
 
   routeLocales: {
     skipToContent: "跳至主要內容",
+    notFoundTitle: "頁面不存在",
     notFoundMsg: [
       "這裡什麼也沒有",
       "我們是怎麼來到這兒的？",

@@ -60,6 +60,7 @@ export const fiLocale: ThemeLocaleData = {
 
   routeLocales: {
     skipToContent: "Hyppää sisältöön",
+    notFoundTitle: "Sivua ei löytynyt",
     notFoundMsg: [
       "Täällä ei olekkaan mitään!",
       "Miten päädyimme tänne?",

@@ -60,6 +60,7 @@ export const deATLocale: ThemeLocaleData = {
 
   routeLocales: {
     skipToContent: "Zum Hauptinhalt springen",
+    notFoundTitle: "Seite nicht gefunden",
     notFoundMsg: [
       "Hier gibt es nichts.",
       "Wie sind wir hier hergekommen?",

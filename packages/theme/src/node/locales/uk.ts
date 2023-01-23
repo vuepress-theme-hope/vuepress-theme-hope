@@ -60,6 +60,7 @@ export const ukLocale: ThemeLocaleData = {
 
   routeLocales: {
     skipToContent: "Перейти до основного вмісту",
+    notFoundTitle: "Сторінка не знайдена",
     notFoundMsg: [
       "Тут немає нічого.",
       "Як ми сюди потрапили?",

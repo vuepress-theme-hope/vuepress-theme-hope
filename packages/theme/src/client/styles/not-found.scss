@@ -4,21 +4,14 @@
   align-items: center;
   justify-content: center;
 
+  box-sizing: border-box;
+
   width: 100vw;
   max-width: var(--home-page-width);
   margin: 0 auto;
-  padding: calc(var(--navbar-height) + 1rem) 2rem 0 2rem !important;
+  padding: calc(var(--navbar-height) + 1rem) 1rem 1rem !important;
 
   text-align: center;
-
-  .not-found-icon {
-    max-width: 600px;
-    margin: 0 1.5rem;
-
-    #{hope-config.$dark-selector} & {
-      filter: invert(70%);
-    }
-  }
 
   .action-button {
     display: inline-block;
@@ -26,10 +19,10 @@
     box-sizing: border-box;
 
     margin: 0.25rem;
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1rem;
     border-width: 0;
     border-bottom: 1px solid var(--theme-color-dark);
-    border-radius: 0.25rem;
+    border-radius: 3rem;
 
     background: var(--theme-color);
     color: var(--white);

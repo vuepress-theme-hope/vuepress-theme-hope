@@ -60,6 +60,7 @@ export const ruLocale: ThemeLocaleData = {
 
   routeLocales: {
     skipToContent: "Перейти к основному содержанию",
+    notFoundTitle: "Страница не найдена",
     notFoundMsg: [
       "Здесь ничего нет.",
       "Как мы сюда попали?",

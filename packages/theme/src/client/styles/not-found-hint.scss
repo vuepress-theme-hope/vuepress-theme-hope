@@ -1,0 +1,24 @@
+.not-found-hint {
+  padding: 2rem;
+
+  .error-code {
+    margin: 0;
+    font-weight: bold;
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+
+  .error-title {
+    font-weight: bold;
+  }
+
+  .error-hint {
+    margin: 0;
+    padding: 12px 0;
+
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 20px;
+    letter-spacing: 2px;
+  }
+}

@@ -60,6 +60,7 @@ export const enLocale: ThemeLocaleData = {
 
   routeLocales: {
     skipToContent: "Skip to main content",
+    notFoundTitle: "Page not found",
     notFoundMsg: [
       "There’s nothing here.",
       "How did we get here?",

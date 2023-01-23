@@ -60,6 +60,7 @@ export const skLocale: ThemeLocaleData = {
 
   routeLocales: {
     skipToContent: "Preskočiť na hlavný obsah",
+    notFoundTitle: "Stránka nenájdená",
     notFoundMsg: [
       "Nič tu nieje.",
       "Ako si sa sem dostal?",
