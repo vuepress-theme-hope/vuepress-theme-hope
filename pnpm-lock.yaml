@@ -127,8 +127,8 @@ importers:
         specifier: 5.0.0
         version: 5.0.0(esbuild@0.17.4)(rollup@3.10.1)
       sort-package-json:
-        specifier: 2.1.0
-        version: 2.1.0
+        specifier: 2.2.0
+        version: 2.2.0
       stylelint:
         specifier: 14.16.1
         version: 14.16.1
@@ -11161,8 +11161,8 @@ packages:
     resolution: {integrity: sha512-855pvK+VkU7PaKYPc+Jjnmt4EzejQHyhhF33q31qG8x7maDzkeFhAAThdCYay11CISO+qAMwjOBP+fPZe0IPyg==}
     dev: true
 
-  /sort-package-json@2.1.0:
-    resolution: {integrity: sha512-M5ctkdnn7znAkoVQJ0Y+PHDUieyXMhydPyW7r2J9ZM0Iwc3BTyEf5cmoSRfHNo07FEvzWwnphcP7GlrAX164UQ==}
+  /sort-package-json@2.2.0:
+    resolution: {integrity: sha512-ux712xsrPqkW+0b51GdmC8QTvImM3wsdip9mNVSQTY9ZV3/1eTAK6jIcQ8Vz9kfN1WHL4wv/pLn89mrqeyQu6A==}
     hasBin: true
     dependencies:
       detect-indent: 7.0.1
