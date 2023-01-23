@@ -164,6 +164,11 @@ div[class*="language-"] {
       vertical-align: middle;
       margin-left: var(--line-numbers-width);
       padding-left: 0.5rem;
+
+      @media print {
+        margin-left: 0;
+        padding-left: 1rem;
+      }
     }
 
     .line-numbers {
@@ -186,6 +191,10 @@ div[class*="language-"] {
 
       // This is a hacky fix to align line number with code line
       transform: translateY(1px);
+
+      @media print {
+        display: none;
+      }
     }
 
     .line-number {
