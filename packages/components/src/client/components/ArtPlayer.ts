@@ -4,6 +4,7 @@ import {
   camelize,
   defineComponent,
   h,
+  nextTick,
   onBeforeUnmount,
   onMounted,
   ref,
@@ -284,9 +285,11 @@ export default defineComponent({
       void import("artplayer").then(async ({ default: Artplayer }) => {
         template.value = Artplayer.html;
 
-        const player = new Artplayer(getInitOptions());
+        return nextTick().then(async () => {
+          const player = new Artplayer(getInitOptions());
 
-        artPlayerInstance = (await props.customPlayer(player)) || player;
+          artPlayerInstance = (await props.customPlayer(player)) || player;
+        });
       });
     });
 
