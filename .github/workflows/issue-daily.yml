@@ -38,5 +38,5 @@ jobs:
         with:
           actions: close-issues
           token: ${{ secrets.GITHUB_TOKEN }}
-          labels: need reproduction
+          labels: needs reproduction
           inactive-day: 3
