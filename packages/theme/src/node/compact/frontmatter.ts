@@ -2,6 +2,7 @@ import { deprecatedLogger, droppedLogger } from "./utils.js";
 import { logger } from "../utils.js";
 
 import type { ThemePageFrontmatter } from "../../shared/index.js";
+import { colors } from "@vuepress/utils";
 
 const DEPRECATED_FRONTMATTER_OPTIONS: [string, string][] = [
   ["authors", "author"],
@@ -18,7 +19,6 @@ const DEPRECATED_FRONTMATTER_OPTIONS: [string, string][] = [
 ];
 
 const DEPRECATED_HOME_FRONTMATTER_OPTIONS: [string, string][] = [
-  ["title", "heroText"],
   ["darkHeroImage", "heroImageDark"],
   ["action", "actions"],
 ];
@@ -56,9 +56,11 @@ export const convertFrontmatter = (
 
   if ("meta" in frontmatter) {
     logger.warn(
-      `"meta" in frontmatter is deprecated in V2, please use "head" instead.${
-        filePathRelative ? `Found in ${filePathRelative}` : ""
-      }`
+      `${colors.magenta(
+        "meta"
+      )} in frontmatter is deprecated in V2, please use ${colors.magenta(
+        "head"
+      )} instead.${filePathRelative ? `Found in ${filePathRelative}` : ""}`
     );
 
     frontmatter["head"] = [
@@ -71,9 +73,11 @@ export const convertFrontmatter = (
 
   if ("canonicalUrl" in frontmatter) {
     logger.warn(
-      `"canonicalUrl" in frontmatter is deprecated, please use "head" instead.${
-        filePathRelative ? `Found in ${filePathRelative}` : ""
-      }`
+      `${colors.magenta(
+        "canonicalUrl"
+      )} in frontmatter is deprecated, please use ${colors.magenta(
+        "head"
+      )} instead.${filePathRelative ? `Found in ${filePathRelative}` : ""}`
     );
 
     frontmatter["head"] = [
@@ -87,16 +91,18 @@ export const convertFrontmatter = (
   if (frontmatter["home"] === true) {
     if (frontmatter["layout"] === "Blog") {
       logger.warn(
-        `"layout: Blog" in frontmatter is deprecated, please use "layout: BlogHome" instead.${
-          filePathRelative ? `Found in ${filePathRelative}` : ""
-        }`
+        `${colors.magenta(
+          "layout: Blog"
+        )} in frontmatter is deprecated, please use ${colors.magenta(
+          "layout: BlogHome"
+        )} instead.${filePathRelative ? `Found in ${filePathRelative}` : ""}`
       );
 
       frontmatter["layout"] = "BlogHome";
     }
 
     // check project homepage
-    if (!("layout" in frontmatter))
+    if (!("layout" in frontmatter)) {
       DEPRECATED_HOME_FRONTMATTER_OPTIONS.forEach(
         ([deprecatedOption, newOption]) =>
           deprecatedLogger({
@@ -106,6 +112,19 @@ export const convertFrontmatter = (
             scope: `${filePathRelative || ""} frontmatter`,
           })
       );
+
+      if ("title" in frontmatter && !("heroText" in frontmatter)) {
+        logger.warn(
+          `${colors.magenta(
+            "title"
+          )} in frontmatter is deprecated, please use ${colors.magenta(
+            "heroText"
+          )} instead.${filePathRelative ? `Found in ${filePathRelative}` : ""}`
+        );
+
+        frontmatter["heroText"] = frontmatter["title"];
+      }
+    }
   }
 
   return frontmatter;
