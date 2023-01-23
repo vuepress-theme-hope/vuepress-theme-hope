@@ -24,7 +24,7 @@ export const theme = (
     ? "https://vuepress-theme-hope.gitee.io"
     : canonical;
 
-  return hopeTheme({
+  const themeOptions: ThemeOptions = {
     hostname,
 
     author: {
@@ -93,5 +93,7 @@ export const theme = (
     },
 
     ...options,
-  });
+  };
+
+  return hopeTheme(themeOptions, false);
 };
