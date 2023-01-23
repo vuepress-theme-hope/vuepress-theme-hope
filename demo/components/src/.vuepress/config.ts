@@ -31,6 +31,7 @@ export default defineUserConfig({
       "/demo/siteinfo",
       "/demo/stackblitz",
       "/demo/videoplayer",
+      "/demo/xigua",
       "/demo/youtube",
     ],
 
@@ -57,6 +58,7 @@ export default defineUserConfig({
         "SiteInfo",
         "StackBlitz",
         "VideoPlayer",
+        "XiGua",
         "YouTube",
       ],
 

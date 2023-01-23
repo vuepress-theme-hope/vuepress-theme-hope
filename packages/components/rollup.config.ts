@@ -113,16 +113,6 @@ export default [
     external: ["@vueuse/core", "@vuepress/shared", "vue", /\.scss$/],
     dtsExternal: [/\.scss$/],
   }),
-  ...rollupTypescript("client/components/YouTube", {
-    external: [
-      "@vueuse/core",
-      "@vuepress/shared",
-      "@vuepress/client",
-      "vue",
-      /\.scss$/,
-    ],
-    dtsExternal: [/\.scss$/],
-  }),
   ...rollupTypescript("client/components/VideoPlayer", {
     external: [
       "@vuepress/client",
@@ -134,6 +124,26 @@ export default [
       /\.s?css$/,
     ],
     dtsExternal: ["@vueuse/core", /\.s?css$/],
+  }),
+  ...rollupTypescript("client/components/XiGua", {
+    external: [
+      "@vueuse/core",
+      "@vuepress/shared",
+      "@vuepress/client",
+      "vue",
+      /\.scss$/,
+    ],
+    dtsExternal: [/\.scss$/],
+  }),
+  ...rollupTypescript("client/components/YouTube", {
+    external: [
+      "@vueuse/core",
+      "@vuepress/shared",
+      "@vuepress/client",
+      "vue",
+      /\.scss$/,
+    ],
+    dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/shared", {
     external: ["vuepress-shared/client"],

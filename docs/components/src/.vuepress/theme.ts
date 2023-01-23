@@ -85,6 +85,7 @@ export default theme("components", {
         "SiteInfo",
         "StackBlitz",
         "VideoPlayer",
+        "XiGua",
         "YouTube",
       ],
 

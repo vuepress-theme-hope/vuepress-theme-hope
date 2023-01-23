@@ -47,6 +47,13 @@ YouTube 视频 ID
 
 :::
 
+### title
+
+- 类型: `string`
+- 必填: 否
+
+YouTube 视频标题
+
 ### width
 
 - 类型: `string | number`

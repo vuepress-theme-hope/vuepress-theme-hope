@@ -41,6 +41,13 @@ A bilibili video with custom settings:
 
 BiliBili video id.
 
+### title
+
+- Type: `string`
+- Required: No
+
+BiliBili video title
+
 ### page
 
 - Type: `number`

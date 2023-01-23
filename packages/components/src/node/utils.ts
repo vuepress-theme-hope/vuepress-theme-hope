@@ -19,6 +19,7 @@ export const AVAILABLE_COMPONENTS: AvailableComponent[] = [
   "SiteInfo",
   "StackBlitz",
   "VideoPlayer",
+  "XiGua",
   "YouTube",
 ];
 

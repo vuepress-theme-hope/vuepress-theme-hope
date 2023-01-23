@@ -14,7 +14,7 @@ index: false
 
 :::
 
-此插件支持 12 个组件:
+此插件支持 13 个组件:
 
 - [ArtPlayer](artplayer.md)
 
@@ -35,6 +35,8 @@ index: false
 - [SiteInfo](siteinfo.md)
 
 - [StackBlitz](stackblitz.md)
+
+- [XiGua](xigua.md)
 
 - [VideoPlayer](videoplayer.md)
 

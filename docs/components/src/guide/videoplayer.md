@@ -96,6 +96,13 @@ If your server cannot return a correct mime type for your video files, you shoul
 
 Video poster
 
+### title
+
+- Type: `string`
+- Required: No
+
+Video title
+
 ### tracks
 
 - Type: `UseMediaTextTrackSource[]`

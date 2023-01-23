@@ -41,6 +41,13 @@ title: BiliBili
 
 B 站视频 bvid。
 
+### title
+
+- 类型: `string`
+- 必填: 否
+
+B 站视频标题
+
 ### page
 
 - 类型: `number`

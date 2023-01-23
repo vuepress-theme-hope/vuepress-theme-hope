@@ -47,6 +47,13 @@ It is ONLY not required, when you are setting `listType` to `"playlist"` and pro
 
 :::
 
+### title
+
+- Type: `string`
+- Required: No
+
+YouTube video title
+
 ### width
 
 - Type: `string | number`

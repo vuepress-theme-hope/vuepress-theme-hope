@@ -13,11 +13,14 @@ icon: gears
     | "AudioPlayer"
     | "Badge"
     | "BiliBili"
+    | "Catalog"
     | "CodePen"
     | "FontIcon"
     | "PDF"
     | "StackBlitz"
+    | "SiteInfo"
     | "VideoPlayer"
+    | "XiGua"
     | "YouTube";
   ```
 
@@ -31,11 +34,14 @@ Available component names:
 - `"AudioPlayer"`
 - `"Badge"`
 - `"BiliBili"`
+- `"Catalog"`
 - `"CodePen"`
 - `"FontIcon"`
 - `"PDF"`
 - `"StackBlitz"`
+- `"SiteInfo"`
 - `"VideoPlayer"`
+- `"XiGua"`
 - `"YouTube"`
 
 ## componentsOptions

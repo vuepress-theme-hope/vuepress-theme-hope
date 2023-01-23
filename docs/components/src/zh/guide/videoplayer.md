@@ -89,6 +89,13 @@ title: VideoPlayer
 
 :::
 
+### title
+
+- 类型: `string`
+- 必填: 否
+
+视频标题
+
 ### poster
 
 - 类型: `string`

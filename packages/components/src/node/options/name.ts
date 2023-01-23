@@ -10,4 +10,5 @@ export type AvailableComponent =
   | "StackBlitz"
   | "SiteInfo"
   | "VideoPlayer"
+  | "XiGua"
   | "YouTube";

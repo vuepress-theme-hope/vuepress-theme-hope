@@ -28,4 +28,6 @@
 
 - [VideoPlayer](videoplayer.md)
 
+- [XiGua](xigua.md)
+
 - [YouTube](youtube.md)
