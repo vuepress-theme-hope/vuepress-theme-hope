@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.166](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.165...v2.0.0-beta.166) (2023-01-23)
+
+### Features
+
+- **components:** add xigua ([8902d5f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8902d5fed3a0bf112dd4865132175cf4cfbbab98))
+- **components:** use flowchart.ts, fix [#2429](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2429) ([25019ca](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/25019cacdf70b6f6277a89c74f404b3a66d81f7e))
+- enable legacy by default ([c829376](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c829376401813c7b6aee2a5bf1b9c73de09b6831))
+- **theme:** improve homepage layout ([339b94c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/339b94cc4f6468de67cc0311b8afa6d04a5d9a20))
+- **theme:** improve navbarLayout ([6a42c4a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6a42c4a901d90131fe494626500029a5dcc7c124))
+
+### Bug Fixes
+
+- **components:** fix artplayer ([4651b45](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4651b45b3929348708112ed768bf9c58fb836d78))
+- **deps:** update dependency @vueuse/core to v9.11.1 ([#2684](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2684)) ([98e176c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/98e176c03d053f7a3d1d3ac886b01d70d39d8b17))
+- **theme:** fix not found layout ([b7dc23c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b7dc23c0307be79e3d52cf4865213099f96b5b71))
+
 ## [2.0.0-beta.165](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.164...v2.0.0-beta.165) (2023-01-19)
 
 ### Features
