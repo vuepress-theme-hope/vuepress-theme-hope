@@ -96,19 +96,19 @@ export default defineComponent({
                 },
               }),
               slots["startBefore"]?.(),
-              ...navbarLayout.value.start.map((item) => map[item]),
+              ...(navbarLayout.value.start || []).map((item) => map[item]),
               slots["startAfter"]?.(),
             ]),
 
             h("div", { class: "navbar-center" }, [
               slots["centerBefore"]?.(),
-              ...navbarLayout.value.center.map((item) => map[item]),
+              ...(navbarLayout.value.center || []).map((item) => map[item]),
               slots["centerAfter"]?.(),
             ]),
 
             h("div", { class: "navbar-end" }, [
               slots["endBegin"]?.(),
-              ...navbarLayout.value.end.map((item) => map[item]),
+              ...(navbarLayout.value.end || []).map((item) => map[item]),
               slots["endAfter"]?.(),
 
               h(ToggleNavbarButton, {
