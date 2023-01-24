@@ -19,13 +19,25 @@
 
   &.down {
     transform: rotate(180deg);
+
+    #{hope-config.$rtl-selector} & {
+      transform: rotate(-180deg);
+    }
   }
 
-  &.right {
+  &.end {
     transform: rotate(90deg);
+
+    #{hope-config.$rtl-selector} & {
+      transform: rotate(-90deg);
+    }
   }
 
-  &.left {
+  &.start {
     transform: rotate(-90deg);
+
+    #{hope-config.$rtl-selector} & {
+      transform: rotate(90deg);
+    }
   }
 }

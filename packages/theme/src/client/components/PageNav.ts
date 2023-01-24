@@ -126,7 +126,7 @@ export default defineComponent({
                   { class: "prev", config: prevNavLink.value },
                   () => [
                     h("div", { class: "hint" }, [
-                      h("span", { class: "arrow left" }),
+                      h("span", { class: "arrow start" }),
                       themeLocale.value.metaLocales.prev,
                     ]),
                     h("div", { class: "link" }, [
@@ -145,7 +145,7 @@ export default defineComponent({
                   () => [
                     h("div", { class: "hint" }, [
                       themeLocale.value.metaLocales.next,
-                      h("span", { class: "arrow right" }),
+                      h("span", { class: "arrow end" }),
                     ]),
                     h("div", { class: "link" }, [
                       nextNavLink.value?.text,

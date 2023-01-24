@@ -48,13 +48,18 @@
     top: 0;
 
     // NOTE: Compatible with Android Wechat
+    // inset-inline-end: 0;
     right: 0;
-    inset-inline-end: 0;
 
     width: 1.5rem;
     height: 1.5rem;
 
     color: var(--theme-color);
+
+    #{hope-config.$rtl-selector} & {
+      right: unset;
+      left: 0;
+    }
   }
 
   .title {

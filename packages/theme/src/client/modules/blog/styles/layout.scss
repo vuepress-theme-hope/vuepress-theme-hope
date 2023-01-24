@@ -17,7 +17,7 @@
   &.has-toc .page.blog {
     @media (min-width: hope-config.$pc) {
       // fix toc padding
-      padding-right: 0;
+      padding-inline-end: 0;
     }
   }
 }

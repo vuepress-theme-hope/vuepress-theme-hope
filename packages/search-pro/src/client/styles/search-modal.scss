@@ -84,11 +84,16 @@
     top: calc(50% - 0.75rem);
 
     // NOTE: Compatible with Android Wechat
+    // inset-inline-start: 0.5rem;
     left: 0.5rem;
-    inset-inline-start: 0.5rem;
 
     width: 1.5rem;
     height: 1.5rem;
+
+    #{hope-config.$rtl-selector} & {
+      right: 0.5rem;
+      left: unset;
+    }
   }
 
   input {

@@ -63,7 +63,7 @@ export default defineComponent({
             h(Icon, { icon: config.value.icon }),
             props.config.text,
           ]),
-          h("span", { class: ["arrow", open.value ? "down" : "right"] }),
+          h("span", { class: ["arrow", open.value ? "down" : "end"] }),
         ]
       ),
       h(

@@ -28,9 +28,9 @@
   position: fixed;
 
   // NOTE: Compatible with Android Wechat
+  // inset-inline-end: 1rem;
   right: 1rem;
   bottom: 1rem;
-  inset-inline-end: 1rem;
   z-index: 300;
 
   padding: 0.5rem 0.75rem;
@@ -48,6 +48,11 @@
 
   @media print {
     display: none;
+  }
+
+  #{hope-config.$rtl-selector} & {
+    right: unset;
+    left: 1rem;
   }
 
   .icon-wrapper {

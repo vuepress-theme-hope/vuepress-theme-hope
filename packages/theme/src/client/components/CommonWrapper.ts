@@ -248,7 +248,7 @@ export default defineComponent({
                       h("span", {
                         class: [
                           "arrow",
-                          isDesktopSidebarCollapsed.value ? "right" : "left",
+                          isDesktopSidebarCollapsed.value ? "end" : "start",
                         ],
                       })
                     )

@@ -2,6 +2,9 @@
   position: fixed;
   top: 0;
   bottom: 0;
+
+  // NOTE: Compatible with Android Wechat
+  // inset-inline-start: 0;
   left: 0;
   z-index: 125;
 
@@ -9,7 +12,7 @@
 
   width: var(--sidebar-width);
   margin: 0;
-  padding-left: calc(var(--sidebar-space) - var(--sidebar-width));
+  padding-inline-start: calc(var(--sidebar-space) - var(--sidebar-width));
 
   background: var(--sidebar-bg-color);
   box-shadow: 2px 0 8px var(--card-shadow);
@@ -35,6 +38,10 @@
 
     // sidebar should be collapsed by default
     transform: translateX(-100%);
+
+    #{hope-config.$rtl-selector} & {
+      transform: translateX(100%);
+    }
   }
 
   @media (min-width: hope-config.$pc) {
@@ -43,6 +50,11 @@
 
   @media print {
     display: none;
+  }
+
+  #{hope-config.$rtl-selector} & {
+    right: 0;
+    left: unset;
   }
 
   a {

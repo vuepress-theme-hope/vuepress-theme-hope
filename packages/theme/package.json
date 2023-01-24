@@ -102,6 +102,7 @@
     "vuepress-plugin-photo-swipe": "workspace:*",
     "vuepress-plugin-pwa2": "workspace:*",
     "vuepress-plugin-reading-time2": "workspace:*",
+    "vuepress-plugin-rtl": "workspace:*",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-plugin-seo2": "workspace:*",
     "vuepress-plugin-sitemap2": "workspace:*",
@@ -135,6 +136,7 @@
     "vuepress-plugin-photo-swipe": "workspace:*",
     "vuepress-plugin-pwa2": "workspace:*",
     "vuepress-plugin-reading-time2": "workspace:*",
+    "vuepress-plugin-rtl": "workspace:*",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-plugin-seo2": "workspace:*",
     "vuepress-plugin-sitemap2": "workspace:*",
@@ -207,6 +209,9 @@
       "optional": true
     },
     "vuepress-plugin-reading-time2": {
+      "optional": true
+    },
+    "vuepress-plugin-rtl": {
       "optional": true
     },
     "vuepress-plugin-sass-palette": {

@@ -13,6 +13,7 @@ import { getFeedPlugin } from "./feed.js";
 import { getMdEnhancePlugin } from "./mdEnhance.js";
 import { getPhotoSwipePlugin } from "./photoSwipe.js";
 import { getPWAPlugin } from "./pwa.js";
+import { getRtlPlugin } from "./rtl.js";
 import { getSitemapPlugin } from "./sitemap.js";
 import { getSEOPlugin } from "./seo.js";
 
@@ -63,6 +64,7 @@ export const getPluginConfig = (
     getPhotoSwipePlugin(plugins.photoSwipe),
     getPWAPlugin(plugins.pwa, options.favicon, legacy),
     getSitemapPlugin(plugins.sitemap, options.hostname, legacy),
+    getRtlPlugin(themeData),
   ].filter((item) => item !== null) as PluginConfig;
 
   return pluginConfig;

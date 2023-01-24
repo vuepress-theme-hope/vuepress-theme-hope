@@ -37,9 +37,9 @@
   position: fixed;
 
   // NOTE: Compatible with Android Wechat
+  // inset-inline-end: 1rem;
   right: 1rem;
   bottom: 1rem;
-  inset-inline-end: 1rem;
   z-index: 50;
 
   padding: 0 16px;
@@ -63,6 +63,11 @@
 
   @media print {
     display: none;
+  }
+
+  #{hope-config.$rtl-selector} & {
+    right: unset;
+    left: 1rem;
   }
 
   &:hover,
@@ -153,6 +158,10 @@
       float: right;
       color: var(--grey3);
       transition: color var(--t-color, 0.3s ease);
+
+      #{hope-config.$rtl-selector} & {
+        float: left;
+      }
 
       &:hover,
       &:focus {

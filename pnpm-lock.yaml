@@ -1769,6 +1769,25 @@ importers:
         specifier: 2.0.0-beta.60
         version: 2.0.0-beta.60
 
+  packages/rtl:
+    dependencies:
+      '@vuepress/client':
+        specifier: 2.0.0-beta.60
+        version: 2.0.0-beta.60
+      '@vuepress/shared':
+        specifier: 2.0.0-beta.60
+        version: 2.0.0-beta.60
+      '@vuepress/utils':
+        specifier: 2.0.0-beta.60
+        version: 2.0.0-beta.60
+      vue:
+        specifier: ^3.2.45
+        version: 3.2.45
+    devDependencies:
+      '@vuepress/core':
+        specifier: 2.0.0-beta.60
+        version: 2.0.0-beta.60
+
   packages/sass-palette:
     dependencies:
       '@vuepress/shared':
@@ -2043,6 +2062,9 @@ importers:
       vuepress-plugin-reading-time2:
         specifier: workspace:*
         version: link:../reading-time2
+      vuepress-plugin-rtl:
+        specifier: workspace:*
+        version: link:../rtl
       vuepress-plugin-sass-palette:
         specifier: workspace:*
         version: link:../sass-palette

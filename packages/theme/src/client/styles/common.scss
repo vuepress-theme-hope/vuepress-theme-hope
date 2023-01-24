@@ -5,6 +5,9 @@
   position: fixed;
   top: var(--navbar-height);
   bottom: 0;
+
+  // NOTE: Compatible with Android Wechat
+  // inset-inline-start: 0;
   left: var(--sidebar-space);
   z-index: 100;
 
@@ -22,6 +25,11 @@
 
   @media (min-width: hope-config.$pc) {
     display: none;
+  }
+
+  #{hope-config.$rtl-selector} & {
+    right: var(--sidebar-space);
+    left: unset;
   }
 
   &:hover {
@@ -45,7 +53,7 @@
     padding-top: var(--navbar-height);
 
     // leave space for sidebar
-    padding-left: calc(var(--sidebar-space) + 2rem);
+    padding-inline-start: calc(var(--sidebar-space) + 2rem);
 
     // do not leave space for sidebar on wide mobile
     @media (max-width: hope-config.$tablet) {
@@ -56,7 +64,7 @@
     }
 
     @media (min-width: hope-config.$pc) {
-      padding-right: calc(
+      padding-inline-end: calc(
         100vw - var(--content-width) - var(--sidebar-space) - 6rem
       );
     }
@@ -96,7 +104,7 @@
   // close state on desktop
   &.sidebar-collapsed {
     .page {
-      padding-left: 0;
+      padding-inline-start: 0;
     }
 
     .sidebar {
@@ -105,10 +113,21 @@
 
       // collapse sidebar
       transform: translateX(-100%);
+
+      #{hope-config.$rtl-selector} & {
+        transform: translateX(100%);
+      }
     }
 
     .toggle-sidebar-wrapper {
+      // NOTE: Compatible with Android Wechat
+      // inset-inline-start: 0;
       left: 0;
+
+      #{hope-config.$rtl-selector} & {
+        right: 0;
+        left: unset;
+      }
     }
   }
 
@@ -125,7 +144,7 @@
       .page {
         // add padding for anchor
         @media (min-width: hope-config.$pc) {
-          padding-right: 16rem;
+          padding-inline-end: 16rem;
         }
       }
     }

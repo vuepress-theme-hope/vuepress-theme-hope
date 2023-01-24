@@ -90,6 +90,13 @@ export interface LayoutLocaleOptions
   toc?: boolean;
 
   /**
+   * Whether rtl layout should be used
+   *
+   * 是否使用 rtl 布局
+   */
+  rtl?: boolean;
+
+  /**
    * Whether display nextLink
    *
    * 是否显示 下一篇 链接

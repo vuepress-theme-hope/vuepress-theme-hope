@@ -72,21 +72,7 @@ export default defineUserConfig({
 
 ## RTL 布局
 
-`vuepress-theme-hope` 基本支持 RTL 布局。只需将以下样式添加到 `.vuepress/style/index.scss` 中
-
-```scss
-html {
-  direction: rtl;
-}
-```
-
-你会发现几乎一切正常。
-
-::: note
-
-正如我们上面提到的，主题**基本上**支持 RTL 布局，因为并不是每个 css 属性都有“方向自适应”值，例如：`float: left|right`，所以你可能仍然需要自己处理一些布局。
-
-:::
+`vuepress-theme-hope` 完全支持 RTL 布局。只需在 RTL 多语言配置内设置 `rtl: false`
 
 <script setup lang="ts">
 import ToggleFullScreenButton from "@theme-hope/modules/outlook/components/ToggleFullScreenButton";

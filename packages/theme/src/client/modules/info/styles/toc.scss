@@ -35,6 +35,11 @@ $headings: (2, 3, 4, 5, 6);
     display: none !important;
   }
 
+  #{hope-config.$rtl-selector} & {
+    right: calc(100% + 1rem);
+    left: unset;
+  }
+
   .toc-header {
     margin-bottom: 0.75rem;
     margin-inline-start: 0.5rem;
@@ -107,13 +112,18 @@ $headings: (2, 3, 4, 5, 6);
       bottom: 0;
 
       // NOTE: Compatible with Android Wechat
+      // inset-inline-start: -8px;
       left: -8px;
-      inset-inline-start: -8px;
       z-index: -1;
 
       width: 2px;
 
       background: var(--border-color);
+
+      #{hope-config.$rtl-selector} & {
+        right: -8px;
+        left: unset;
+      }
     }
   }
 
@@ -160,13 +170,18 @@ $headings: (2, 3, 4, 5, 6);
       bottom: 0;
 
       // NOTE: Compatible with Android Wechat
+      // inset-inline-start: -8px;
       left: -8px;
-      inset-inline-start: -8px;
       z-index: 2;
 
       width: 2px;
 
       background: transparent;
+
+      #{hope-config.$rtl-selector} & {
+        right: -8px;
+        left: unset;
+      }
     }
 
     &:hover {

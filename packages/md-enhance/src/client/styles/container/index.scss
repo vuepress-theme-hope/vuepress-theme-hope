@@ -108,8 +108,8 @@
         top: calc(50% - 0.6125em);
 
         // NOTE: Compatible with Android Wechat
+        // inset-inline-start: 0;
         left: 0;
-        inset-inline-start: 0;
 
         width: 1.25em;
         height: 1.25em;
@@ -119,6 +119,11 @@
 
         @media print {
           display: none;
+        }
+
+        #{hope-config.$rtl-selector} & {
+          right: 0;
+          left: unset;
         }
       }
     }
@@ -285,14 +290,19 @@
       top: calc(50% - 0.75rem);
 
       // NOTE: Compatible with Android Wechat
+      // inset-inline-start: 1.5rem;
       left: 1.5rem;
-      inset-inline-start: 1.5rem;
 
       width: 1.5rem;
       height: 1.5rem;
 
       @media print {
         display: block;
+      }
+
+      #{hope-config.$rtl-selector} & {
+        right: 1.5rem;
+        left: unset;
       }
     }
 

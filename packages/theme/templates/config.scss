@@ -1,5 +1,8 @@
 @import "vuepress-plugin-sass-palette/styles/default/palette";
 
+/* rtl */
+$rtl-selector: 'html[dir="rtl"]' !default;
+
 /** dark mode selector */
 $light-selector: 'html[data-theme="light"]';
 $dark-selector: 'html[data-theme="dark"]';

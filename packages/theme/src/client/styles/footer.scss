@@ -18,12 +18,12 @@
     background var(--color-transition), padding var(--transform-transition);
 
   @media (max-width: hope-config.$tablet) {
-    padding-left: 2rem;
+    padding-inline-start: 2rem;
   }
 
   @media (min-width: hope-config.$pc) {
     z-index: 150;
-    padding-left: 2rem;
+    padding-inline-start: 2rem;
   }
 
   @media print {
@@ -33,7 +33,7 @@
 
   .no-sidebar &,
   .sidebar-collapsed & {
-    padding-left: 2rem;
+    padding-inline-start: 2rem;
   }
 
   > div {

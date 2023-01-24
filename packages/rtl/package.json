@@ -1,0 +1,73 @@
+{
+  "name": "vuepress-plugin-rtl",
+  "version": "2.0.0-beta.166",
+  "description": "rtl plugin for VuePress",
+  "keywords": [
+    "vuepress",
+    "vuepress2",
+    "vuepress-plugin",
+    "rtl",
+    "mr-hope"
+  ],
+  "homepage": "https://github.com/vuepress-theme-hope/vuepress-theme-hope/packages/rtl#readme",
+  "bugs": {
+    "url": "https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuepress-theme-hope/vuepress-theme-hope.git",
+    "directory": "packages/rtl"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Mr.Hope",
+    "email": "mister-hope@outlook.com",
+    "url": "https://mrhope.site"
+  },
+  "type": "module",
+  "exports": {
+    ".": "./lib/node/index.js",
+    "./package.json": "./package.json"
+  },
+  "main": "lib/node/index.js",
+  "types": "lib/node/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "rollup -c rollup.config.ts --configPlugin esbuild",
+    "clean": "rimraf ./lib ./*.tsbuildinfo",
+    "dev": "pnpm dev:ts",
+    "dev:ts": "tsc -b tsconfig.build.json --watch"
+  },
+  "engines": {
+    "node": "^14.18.0 || >=16.0.0",
+    "npm": ">=8",
+    "pnpm": ">=7"
+  },
+  "dependencies": {
+    "@vuepress/client": "2.0.0-beta.60",
+    "@vuepress/utils": "2.0.0-beta.60",
+    "@vuepress/shared": "2.0.0-beta.60",
+    "vue": "^3.2.45"
+  },
+  "devDependencies": {
+    "@vuepress/core": "2.0.0-beta.60"
+  },
+  "peerDependencies": {
+    "vuepress": "2.0.0-beta.60",
+    "vuepress-vite": "2.0.0-beta.60",
+    "vuepress-webpack": "2.0.0-beta.60"
+  },
+  "peerDependenciesMeta": {
+    "vuepress": {
+      "optional": true
+    },
+    "vuepress-vite": {
+      "optional": true
+    },
+    "vuepress-webpack": {
+      "optional": true
+    }
+  }
+}

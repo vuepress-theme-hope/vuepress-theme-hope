@@ -114,9 +114,14 @@
   position: absolute;
 
   // NOTE: Compatible with Android Wechat
+  // inset-inline-end: 16px;
   right: 16px;
   bottom: 16px;
-  inset-inline-end: 16px;
+
+  #{hope-config.$rtl-selector} & {
+    right: unset;
+    left: 16px;
+  }
 }
 
 .site-info-source {

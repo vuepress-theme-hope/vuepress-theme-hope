@@ -14,8 +14,8 @@
 
   @media print {
     margin: 0 !important;
-    padding-right: 0 !important;
-    padding-left: 0 !important;
+    padding-inline-start: 0 !important;
+    padding-inline-end: 0 !important;
   }
 
   @media (max-width: hope-config.$tablet) {

@@ -87,7 +87,7 @@ export default defineComponent({
               : h("span", { class: "title" }, text),
             // arrow
             collapsible
-              ? h("span", { class: ["arrow", props.open ? "down" : "right"] })
+              ? h("span", { class: ["arrow", props.open ? "down" : "end"] })
               : null,
           ]
         ),

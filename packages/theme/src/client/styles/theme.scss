@@ -18,6 +18,11 @@
   }
 }
 
+// rtl
+#{hope-config.$rtl-selector} a.header-anchor {
+  float: right;
+}
+
 // docsearch fix
 // stylelint-disable selector-class-pattern
 #docsearch-container {
