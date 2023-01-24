@@ -268,6 +268,7 @@ jobs:
           pnpm cpx "docs/reading-time2/dist/**" dist/reading-time
           pnpm cpx "docs/remove-pwa/dist/**" dist/remove-pwa
           pnpm cpx "docs/redirect/dist/**" dist/redirect
+          pnpm cpx "docs/rtl/dist/**" dist/rtl
           pnpm cpx "docs/sass-palette/dist/**" dist/sass-palette
           pnpm cpx "docs/search-pro/dist/**" dist/search-pro
           pnpm cpx "docs/seo2/dist/**" dist/seo

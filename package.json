@@ -47,9 +47,9 @@
     "@rollup/plugin-node-resolve": "15.0.1",
     "@types/inquirer": "9.0.3",
     "@types/node": "18.11.18",
-    "@typescript-eslint/eslint-plugin": "5.48.2",
-    "@typescript-eslint/parser": "5.48.2",
-    "@vitest/coverage-c8": "0.27.3",
+    "@typescript-eslint/eslint-plugin": "5.49.0",
+    "@typescript-eslint/parser": "5.49.0",
+    "@vitest/coverage-c8": "0.28.1",
     "@vue/eslint-config-typescript": "11.0.2",
     "bumpp": "8.2.1",
     "commit-and-tag-version": "11.0.0",
@@ -73,7 +73,7 @@
     "ora": "6.1.2",
     "picocolors": "1.0.0",
     "prettier": "2.8.3",
-    "rimraf": "4.1.1",
+    "rimraf": "4.1.2",
     "rollup": "3.10.1",
     "rollup-plugin-copy": "3.4.0",
     "rollup-plugin-dts": "5.1.1",
@@ -84,7 +84,7 @@
     "tslib": "2.4.1",
     "tsx": "3.12.2",
     "typescript": "4.9.4",
-    "vitest": "0.27.3"
+    "vitest": "0.28.1"
   },
   "packageManager": "pnpm@7.26.0",
   "engines": {
