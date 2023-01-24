@@ -46,6 +46,7 @@ exports[`should generate themeData correctly > Should contain basic properties 1
           "That’s a Four-Oh-Four.",
           "Looks like we've got some broken links.",
         ],
+        "notFoundTitle": "Page not found",
         "openInNewWindow": "Open in new window",
         "skipToContent": "Skip to main content",
       },
