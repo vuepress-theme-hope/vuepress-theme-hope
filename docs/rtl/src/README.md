@@ -19,19 +19,19 @@ copyright: false
 @tab pnpm
 
 ```bash
-pnpm add -D vuepress-plugin-rtl@next
+pnpm add -D vuepress-plugin-rtl
 ```
 
 @tab yarn
 
 ```bash
-yarn add -D vuepress-plugin-rtl@next
+yarn add -D vuepress-plugin-rtl
 ```
 
 @tab npm
 
 ```bash
-npm i -D vuepress-plugin-rtl@next
+npm i -D vuepress-plugin-rtl
 ```
 
 :::

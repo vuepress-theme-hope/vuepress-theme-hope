@@ -17,7 +17,7 @@ footer: MIT Licensed, Copyright © 2019-present Mr.Hope
 ### Install
 
 ```bash
-pnpm add -D vuepress-plugin-search-pro@next
+pnpm add -D vuepress-plugin-search-pro
 ```
 
 ### Usage

@@ -8,11 +8,11 @@ remove-pwa plugin for VuePress.
 
 ```bash
 # pnpm
-pnpm add -D vuepress-plugin-remove-pwa@next
+pnpm add -D vuepress-plugin-remove-pwa
 # npm
-npm i -D vuepress-plugin-remove-pwa@next
+npm i -D vuepress-plugin-remove-pwa
 # yarn
-yarn add -D vuepress-plugin-remove-pwa@next
+yarn add -D vuepress-plugin-remove-pwa
 ```
 
 ---
@@ -21,9 +21,9 @@ yarn add -D vuepress-plugin-remove-pwa@next
 
 ```bash
 # pnpm
-pnpm add -D vuepress-plugin-remove-pwa@next
+pnpm add -D vuepress-plugin-remove-pwa
 # npm
-npm i -D vuepress-plugin-remove-pwa@next
+npm i -D vuepress-plugin-remove-pwa
 # yarn
-yarn add -D vuepress-plugin-remove-pwa@next
+yarn add -D vuepress-plugin-remove-pwa
 ```

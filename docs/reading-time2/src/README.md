@@ -27,19 +27,19 @@ copyright: false
 @tab pnpm
 
 ```bash
-pnpm add -D vuepress-plugin-reading-time2@next
+pnpm add -D vuepress-plugin-reading-time2
 ```
 
 @tab yarn
 
 ```bash
-yarn add -D vuepress-plugin-reading-time2@next
+yarn add -D vuepress-plugin-reading-time2
 ```
 
 @tab npm
 
 ```bash
-npm i -D vuepress-plugin-reading-time2@next
+npm i -D vuepress-plugin-reading-time2
 ```
 
 :::

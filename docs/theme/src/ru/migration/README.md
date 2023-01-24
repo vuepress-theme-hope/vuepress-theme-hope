@@ -23,7 +23,7 @@ icon: code-compare
 
 Все, что вам нужно сделать, это:
 
-1. Установите `vuepress@next` и `vuepress-theme-hope@next`;
+1. Установите `vuepress@next` и `vuepress-theme-hope`;
 
 1. Попробуйте запустить проект и прочитать логи;
 

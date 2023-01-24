@@ -144,13 +144,13 @@ Install `vuepress-plugin-md-enhance`:
 @tab Using npm#npm
 
 ```bash
-npm i -D vuepress-plugin-md-enhance@next
+npm i -D vuepress-plugin-md-enhance
 ```
 
 @tab Using pnpm#pnpm
 
 ```bash
-pnpm add -D vuepress-plugin-md-enhance@next
+pnpm add -D vuepress-plugin-md-enhance
 ```
 
 :::

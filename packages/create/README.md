@@ -7,7 +7,7 @@ Create template shortcut for vuepress-theme-hope.
 ## Usage
 
 ```bash
-npm init vuepress-theme-hope@next <dir>
+npm init vuepress-theme-hope <dir>
 ```
 
 <!-- Or
@@ -23,7 +23,7 @@ yarn create vuepress-theme-hope <dir>
 ## 使用
 
 ```bash
-npm init vuepress-theme-hope@next <dir>
+npm init vuepress-theme-hope <dir>
 ```
 
 <!-- 或

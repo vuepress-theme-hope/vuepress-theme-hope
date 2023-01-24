@@ -19,11 +19,11 @@ Markdown enhancement plugin📄 / Markdown 增强插件 📄
 
 ```bash
 # pnpm
-pnpm add -D vuepress-plugin-md-enhance@next
+pnpm add -D vuepress-plugin-md-enhance
 # npm
-npm i -D vuepress-plugin-md-enhance@next
+npm i -D vuepress-plugin-md-enhance
 # yarn
-yarn add -D vuepress-plugin-md-enhance@next
+yarn add -D vuepress-plugin-md-enhance
 ```
 
 ## Migrating from V1
@@ -54,11 +54,11 @@ yarn add -D vuepress-plugin-md-enhance@next
 
 ```bash
 # pnpm
-pnpm add -D vuepress-plugin-md-enhance@next
+pnpm add -D vuepress-plugin-md-enhance
 # npm
-npm i -D vuepress-plugin-md-enhance@next
+npm i -D vuepress-plugin-md-enhance
 # yarn
-yarn add -D vuepress-plugin-md-enhance@next
+yarn add -D vuepress-plugin-md-enhance
 ```
 
 ## 从 V1 迁移

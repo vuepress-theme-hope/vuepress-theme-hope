@@ -33,11 +33,11 @@ tag:
 在终端中执行下列命令:
 
 ```sh
-pnpm create vuepress-theme-hope@next my-docs
+pnpm create vuepress-theme-hope my-docs
 
 # 或
 
-npm create vuepress-theme-hope@next my-docs
+npm init vuepress-theme-hope my-docs
 ```
 
 ::: tip 文件夹参数

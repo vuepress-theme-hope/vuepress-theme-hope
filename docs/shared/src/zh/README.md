@@ -18,19 +18,19 @@ copyright: false
 @tab pnpm
 
 ```bash
-pnpm add -D vuepress-shared@next
+pnpm add -D vuepress-shared
 ```
 
 @tab yarn
 
 ```bash
-yarn add -D vuepress-shared@next
+yarn add -D vuepress-shared
 ```
 
 @tab npm
 
 ```bash
-npm i -D vuepress-shared@next
+npm i -D vuepress-shared
 ```
 
 :::

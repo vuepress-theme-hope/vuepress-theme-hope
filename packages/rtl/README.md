@@ -8,11 +8,11 @@ rtl plugin for VuePress.
 
 ```bash
 # pnpm
-pnpm add -D vuepress-plugin-rtl@next
+pnpm add -D vuepress-plugin-rtl
 # npm
-npm i -D vuepress-plugin-rtl@next
+npm i -D vuepress-plugin-rtl
 # yarn
-yarn add -D vuepress-plugin-rtl@next
+yarn add -D vuepress-plugin-rtl
 ```
 
 ---
@@ -21,9 +21,9 @@ yarn add -D vuepress-plugin-rtl@next
 
 ```bash
 # pnpm
-pnpm add -D vuepress-plugin-rtl@next
+pnpm add -D vuepress-plugin-rtl
 # npm
-npm i -D vuepress-plugin-rtl@next
+npm i -D vuepress-plugin-rtl
 # yarn
-yarn add -D vuepress-plugin-rtl@next
+yarn add -D vuepress-plugin-rtl
 ```

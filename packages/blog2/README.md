@@ -17,11 +17,11 @@ VuePress2 Blog plugin📝 / VuePress2 Blog 插件 📝
 
 ```bash
 # pnpm
-pnpm add -D vuepress-plugin-blog2@next
+pnpm add -D vuepress-plugin-blog2
 # npm
-npm i -D vuepress-plugin-blog2@next
+npm i -D vuepress-plugin-blog2
 # yarn
-yarn add -D vuepress-plugin-blog2@next
+yarn add -D vuepress-plugin-blog2
 ```
 
 ---
@@ -30,9 +30,9 @@ yarn add -D vuepress-plugin-blog2@next
 
 ```bash
 # pnpm
-pnpm add -D vuepress-plugin-blog2@next
+pnpm add -D vuepress-plugin-blog2
 # npm
-npm i -D vuepress-plugin-blog2@next
+npm i -D vuepress-plugin-blog2
 # yarn
-yarn add -D vuepress-plugin-blog2@next
+yarn add -D vuepress-plugin-blog2
 ```

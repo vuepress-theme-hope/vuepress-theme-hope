@@ -27,19 +27,19 @@ copyright: false
 @tab pnpm
 
 ```bash
-pnpm add -D vuepress-plugin-pwa2@next
+pnpm add -D vuepress-plugin-pwa2
 ```
 
 @tab yarn
 
 ```bash
-yarn add -D vuepress-plugin-pwa2@next
+yarn add -D vuepress-plugin-pwa2
 ```
 
 @tab npm
 
 ```bash
-npm i -D vuepress-plugin-pwa2@next
+npm i -D vuepress-plugin-pwa2
 ```
 
 :::

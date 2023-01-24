@@ -16,7 +16,7 @@ footer: MIT Licensed | Copyright © 2021-present Mr.Hope
 ### 安装
 
 ```bash
-pnpm add -D vuepress-plugin-sass-palette@next
+pnpm add -D vuepress-plugin-sass-palette
 ```
 
 ### Usage

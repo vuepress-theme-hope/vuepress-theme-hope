@@ -16,7 +16,7 @@ footer: MIT Licensed | Copyright © 2021-present Mr.Hope
 ### Install
 
 ```bash
-pnpm add -D vuepress-plugin-blog2@next
+pnpm add -D vuepress-plugin-blog2
 ```
 
 ### Usage

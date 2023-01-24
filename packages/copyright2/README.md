@@ -8,11 +8,11 @@ Copyright plugin for VuePress.
 
 ```bash
 # pnpm
-pnpm add -D vuepress-plugin-copyright2@next
+pnpm add -D vuepress-plugin-copyright2
 # npm
-npm i -D vuepress-plugin-copyright2@next
+npm i -D vuepress-plugin-copyright2
 # yarn
-yarn add -D vuepress-plugin-copyright2@next
+yarn add -D vuepress-plugin-copyright2
 ```
 
 ---
@@ -23,9 +23,9 @@ VuePress 的复制版权插件。
 
 ```bash
 # pnpm
-pnpm add -D vuepress-plugin-copyright2@next
+pnpm add -D vuepress-plugin-copyright2
 # npm
-npm i -D vuepress-plugin-copyright2@next
+npm i -D vuepress-plugin-copyright2
 # yarn
-yarn add -D vuepress-plugin-copyright2@next
+yarn add -D vuepress-plugin-copyright2
 ```

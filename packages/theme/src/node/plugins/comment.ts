@@ -1,4 +1,5 @@
 import { commentPlugin } from "vuepress-plugin-comment2";
+import { VERSION } from "../utils.js";
 
 import type { PluginObject } from "@vuepress/core";
 import type { CommentOptions } from "vuepress-plugin-comment2";
@@ -14,10 +15,8 @@ export const getCommentPlugin = (
       provider: "None",
       ...(options?.provider === "Giscus"
         ? {
-            lightTheme:
-              "https://unpkg.com/vuepress-theme-hope@next/templates/giscus/light.css",
-            darkTheme:
-              "https://unpkg.com/vuepress-theme-hope@next/templates/giscus/dark.css",
+            lightTheme: `https://unpkg.com/vuepress-theme-hope@${VERSION}/templates/giscus/light.css`,
+            darkTheme: `https://unpkg.com/vuepress-theme-hope@${VERSION}/templates/giscus/dark.css`,
           }
         : {}),
       ...(options?.provider === "Waline"

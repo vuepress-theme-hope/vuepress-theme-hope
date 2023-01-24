@@ -27,19 +27,19 @@ copyrightText: false
 @tab pnpm
 
 ```bash
-pnpm add -D vuepress-plugin-redirect@next
+pnpm add -D vuepress-plugin-redirect
 ```
 
 @tab yarn
 
 ```bash
-yarn add -D vuepress-plugin-redirect@next
+yarn add -D vuepress-plugin-redirect
 ```
 
 @tab npm
 
 ```bash
-npm i -D vuepress-plugin-redirect@next
+npm i -D vuepress-plugin-redirect
 ```
 
 :::

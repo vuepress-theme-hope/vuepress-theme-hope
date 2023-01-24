@@ -17,11 +17,11 @@ VuePress SEO plugin🛠 / VuePress SEO 插件 🛠
 
 ```bash
 # pnpm
-pnpm add -D vuepress-plugin-seo2@next
+pnpm add -D vuepress-plugin-seo2
 # npm
-npm i -D vuepress-plugin-seo2@next
+npm i -D vuepress-plugin-seo2
 # yarn
-yarn add -D vuepress-plugin-seo2@next
+yarn add -D vuepress-plugin-seo2
 ```
 
 ---
@@ -30,9 +30,9 @@ yarn add -D vuepress-plugin-seo2@next
 
 ```bash
 # pnpm
-pnpm add -D vuepress-plugin-seo2@next
+pnpm add -D vuepress-plugin-seo2
 # npm
-npm i -D vuepress-plugin-seo2@next
+npm i -D vuepress-plugin-seo2
 # yarn
-yarn add -D vuepress-plugin-seo2@next
+yarn add -D vuepress-plugin-seo2
 ```

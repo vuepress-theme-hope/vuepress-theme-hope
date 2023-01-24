@@ -82,11 +82,11 @@ ${desc}.
 
 \`\`\`bash
 # pnpm
-pnpm add -D vuepress-plugin-${pkgName}@next
+pnpm add -D vuepress-plugin-${pkgName}
 # npm
-npm i -D vuepress-plugin-${pkgName}@next
+npm i -D vuepress-plugin-${pkgName}
 # yarn
-yarn add -D vuepress-plugin-${pkgName}@next
+yarn add -D vuepress-plugin-${pkgName}
 \`\`\`
 
 ---
@@ -95,11 +95,11 @@ yarn add -D vuepress-plugin-${pkgName}@next
 
 \`\`\`bash
 # pnpm
-pnpm add -D vuepress-plugin-${pkgName}@next
+pnpm add -D vuepress-plugin-${pkgName}
 # npm
-npm i -D vuepress-plugin-${pkgName}@next
+npm i -D vuepress-plugin-${pkgName}
 # yarn
-yarn add -D vuepress-plugin-${pkgName}@next
+yarn add -D vuepress-plugin-${pkgName}
 \`\`\`
 `
     );

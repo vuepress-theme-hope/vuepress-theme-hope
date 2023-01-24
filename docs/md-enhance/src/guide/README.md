@@ -42,19 +42,19 @@ Orange
 @tab pnpm
 
 ```bash
-pnpm add -D vuepress-plugin-md-enhance@next
+pnpm add -D vuepress-plugin-md-enhance
 ```
 
 @tab yarn
 
 ```bash
-yarn add -D vuepress-plugin-md-enhance@next
+yarn add -D vuepress-plugin-md-enhance
 ```
 
 @tab:active npm
 
 ```bash
-npm i -D vuepress-plugin-md-enhance@next
+npm i -D vuepress-plugin-md-enhance
 ```
 
 :::

@@ -17,11 +17,11 @@ VuePress copy code plugin📋 / VuePress 代码复制插件 📋
 
 ```bash
 # pnpm
-pnpm add -D vuepress-plugin-copy-code2@next
+pnpm add -D vuepress-plugin-copy-code2
 # npm
-npm i -D vuepress-plugin-copy-code2@next
+npm i -D vuepress-plugin-copy-code2
 # yarn
-yarn add -D vuepress-plugin-copy-code2@next
+yarn add -D vuepress-plugin-copy-code2
 ```
 
 ---
@@ -30,9 +30,9 @@ yarn add -D vuepress-plugin-copy-code2@next
 
 ```bash
 # pnpm
-pnpm add -D vuepress-plugin-copy-code2@next
+pnpm add -D vuepress-plugin-copy-code2
 # npm
-npm i -D vuepress-plugin-copy-code2@next
+npm i -D vuepress-plugin-copy-code2
 # yarn
-yarn add -D vuepress-plugin-copy-code2@next
+yarn add -D vuepress-plugin-copy-code2
 ```

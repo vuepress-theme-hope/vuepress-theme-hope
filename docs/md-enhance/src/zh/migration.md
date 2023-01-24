@@ -165,7 +165,7 @@ icon: code-compare
   ::: code-group-item pnpm
 
   ```bash
-  pnpm create vuepress-theme-hope@next [dir]
+  pnpm create vuepress-theme-hope [dir]
   ```
 
   :::
@@ -173,7 +173,7 @@ icon: code-compare
   ::: code-group-item npm:active
 
   ```bash
-  npm init vuepress-theme-hope@next [dir]
+  npm init vuepress-theme-hope [dir]
   ```
 
   :::
@@ -189,13 +189,13 @@ icon: code-compare
   @tab pnpm
 
   ```bash
-  pnpm create vuepress-theme-hope@next [dir]
+  pnpm create vuepress-theme-hope [dir]
   ```
 
   @tab:active npm
 
   ```bash
-  npm init vuepress-theme-hope@next [dir]
+  npm init vuepress-theme-hope [dir]
   ```
 
   :::

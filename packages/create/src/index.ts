@@ -108,7 +108,7 @@ cli
   .command("[dir]", "Generate a new vuepress-theme-hope project")
   .option("-p, --preset <preset>", "Choose preset to use")
   .usage(
-    "pnpm create vuepress-theme-hope@next [dir] / npm init vuepress-theme-hope@next [dir]"
+    "pnpm create vuepress-theme-hope [dir] / npm init vuepress-theme-hope [dir]"
   )
   .example("docs")
   .action(
@@ -145,7 +145,7 @@ cli
   .alias("inject")
   .option("-p, --preset <preset>", "Choose preset to use")
   .usage(
-    "pnpm create vuepress-theme-hope@next add [dir] / npm init vuepress-theme-hope@next add [dir]"
+    "pnpm create vuepress-theme-hope add [dir] / npm init vuepress-theme-hope add [dir]"
   )
   .example("docs")
   .action(
@@ -179,12 +179,12 @@ cli
 cli.help(() => [
   {
     title:
-      "pnpm create vuepress-theme-hope@next [dir] / npm init vuepress-theme-hope@next [dir]",
+      "pnpm create vuepress-theme-hope [dir] / npm init vuepress-theme-hope [dir]",
     body: "Create a vuepress-theme-hope template in [dir]",
   },
   {
     title:
-      "pnpm create vuepress-theme-hope@next inject [dir] / npm init vuepress-theme-hope@next inject [dir]",
+      "pnpm create vuepress-theme-hope inject [dir] / npm init vuepress-theme-hope inject [dir]",
     body: "Add vuepress-theme-hope template in [dir] under current project",
   },
 ]);

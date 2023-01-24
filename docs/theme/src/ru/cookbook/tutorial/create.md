@@ -37,11 +37,11 @@ tag:
 Выполните следующую команду в терминале:
 
 ```sh
-pnpm create vuepress-theme-hope@next my-docs
+pnpm create vuepress-theme-hope my-docs
 
 # Or
 
-npm create vuepress-theme-hope@next my-docs
+npm init vuepress-theme-hope my-docs
 ```
 
 ::: tip Аргумент папки

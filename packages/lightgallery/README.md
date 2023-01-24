@@ -15,11 +15,11 @@ Light Gallery plugin for VuePress🖼️ / VuePress 的 lightgallery 插件 🖼
 
 ```bash
 # pnpm
-pnpm add -D vuepress-plugin-lightgallery@next
+pnpm add -D vuepress-plugin-lightgallery
 # npm
-npm i -D vuepress-plugin-lightgallery@next
+npm i -D vuepress-plugin-lightgallery
 # yarn
-yarn add -D vuepress-plugin-lightgallery@next
+yarn add -D vuepress-plugin-lightgallery
 ```
 
 ---
@@ -28,9 +28,9 @@ yarn add -D vuepress-plugin-lightgallery@next
 
 ```bash
 # pnpm
-pnpm add -D vuepress-plugin-lightgallery@next
+pnpm add -D vuepress-plugin-lightgallery
 # npm
-npm i -D vuepress-plugin-lightgallery@next
+npm i -D vuepress-plugin-lightgallery
 # yarn
-yarn add -D vuepress-plugin-lightgallery@next
+yarn add -D vuepress-plugin-lightgallery
 ```

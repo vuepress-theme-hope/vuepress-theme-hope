@@ -25,7 +25,7 @@ footer: MIT 协议, 版权所有 © 2019-present Mr.Hope
 ### 安装
 
 ```bash
-pnpm add -D vuepress-plugin-feed2@next
+pnpm add -D vuepress-plugin-feed2
 ```
 
 ### 使用

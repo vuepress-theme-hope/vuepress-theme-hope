@@ -29,19 +29,19 @@ Let your images support preview, zoom, share, swipe view and download.
 @tab pnpm
 
 ```bash
-pnpm add -D vuepress-plugin-photo-swipe@next
+pnpm add -D vuepress-plugin-photo-swipe
 ```
 
 @tab yarn
 
 ```bash
-yarn add -D vuepress-plugin-photo-swipe@next
+yarn add -D vuepress-plugin-photo-swipe
 ```
 
 @tab npm
 
 ```bash
-npm i -D vuepress-plugin-photo-swipe@next
+npm i -D vuepress-plugin-photo-swipe
 ```
 
 :::

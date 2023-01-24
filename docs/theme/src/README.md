@@ -123,13 +123,13 @@ Create a new vuepress-theme-hope project in `[dir]` directory under the current 
 @tab pnpm
 
 ```bash
-pnpm create vuepress-theme-hope@next [dir]
+pnpm create vuepress-theme-hope [dir]
 ```
 
 @tab npm
 
 ```bash
-npm init vuepress-theme-hope@next [dir]
+npm init vuepress-theme-hope [dir]
 ```
 
 :::
@@ -141,13 +141,13 @@ To add vuepress-theme-hope as docs builder to an existing project, run the follo
 @tab pnpm
 
 ```bash
-pnpm create vuepress-theme-hope@next add [dir]
+pnpm create vuepress-theme-hope add [dir]
 ```
 
 @tab npm
 
 ```bash
-npm init vuepress-theme-hope@next add [dir]
+npm init vuepress-theme-hope add [dir]
 ```
 
 :::

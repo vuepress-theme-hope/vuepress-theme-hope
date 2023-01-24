@@ -23,7 +23,7 @@ V2 带来了很大的性能提升与很多新功能，详见 [V2 亮点](./highl
 
 你需要做的就是:
 
-1. 安装 `vuepress@next` 和 `vuepress-theme-hope@next`;
+1. 安装 `vuepress@next` 和 `vuepress-theme-hope`;
 
 1. 尝试启动项目，阅读日志;
 

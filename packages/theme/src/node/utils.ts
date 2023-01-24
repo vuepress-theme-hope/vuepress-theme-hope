@@ -1,3 +1,4 @@
+import { createRequire } from "node:module";
 import { getDirname, path } from "@vuepress/utils";
 import { ensureEndingSlash } from "@vuepress/shared";
 import { Logger } from "vuepress-shared/node";
@@ -12,3 +13,7 @@ export const CLIENT_FOLDER = ensureEndingSlash(
 export const TEMPLATE_FOLDER = ensureEndingSlash(
   path.resolve(__dirname, "../../templates")
 );
+
+export const VERSION = (<Record<string, unknown> & { version: string }>(
+  createRequire(import.meta.url)("vuepress-theme-hope/package.json")
+)).version;

@@ -25,19 +25,19 @@ copyright: false
 @tab pnpm
 
 ```bash
-pnpm add -D vuepress-plugin-comment2@next
+pnpm add -D vuepress-plugin-comment2
 ```
 
 @tab yarn
 
 ```bash
-yarn add -D vuepress-plugin-comment2@next
+yarn add -D vuepress-plugin-comment2
 ```
 
 @tab npm
 
 ```bash
-npm i -D vuepress-plugin-comment2@next
+npm i -D vuepress-plugin-comment2
 ```
 
 :::

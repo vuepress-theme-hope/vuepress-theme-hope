@@ -17,11 +17,11 @@ VuePress reading time plugin⏳ / VuePress 阅读时间插件 ⏳
 
 ```bash
 # pnpm
-pnpm add -D vuepress-plugin-reading-time2@next
+pnpm add -D vuepress-plugin-reading-time2
 # npm
-npm i -D vuepress-plugin-reading-time2@next
+npm i -D vuepress-plugin-reading-time2
 # yarn
-yarn add -D vuepress-plugin-reading-time2@next
+yarn add -D vuepress-plugin-reading-time2
 ```
 
 ---
@@ -30,9 +30,9 @@ yarn add -D vuepress-plugin-reading-time2@next
 
 ```bash
 # pnpm
-pnpm add -D vuepress-plugin-reading-time2@next
+pnpm add -D vuepress-plugin-reading-time2
 # npm
-npm i -D vuepress-plugin-reading-time2@next
+npm i -D vuepress-plugin-reading-time2
 # yarn
-yarn add -D vuepress-plugin-reading-time2@next
+yarn add -D vuepress-plugin-reading-time2
 ```

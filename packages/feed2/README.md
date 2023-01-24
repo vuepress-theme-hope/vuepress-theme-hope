@@ -17,11 +17,11 @@ VuePress2 feed plugin 📡 / VuePress2 Feed 插件 📡
 
 ```bash
 # pnpm
-pnpm add -D vuepress-plugin-feed2@next
+pnpm add -D vuepress-plugin-feed2
 # npm
-npm i -D vuepress-plugin-feed2@next
+npm i -D vuepress-plugin-feed2
 # yarn
-yarn add -D vuepress-plugin-feed2@next
+yarn add -D vuepress-plugin-feed2
 ```
 
 ---
@@ -30,9 +30,9 @@ yarn add -D vuepress-plugin-feed2@next
 
 ```bash
 # pnpm
-pnpm add -D vuepress-plugin-feed2@next
+pnpm add -D vuepress-plugin-feed2
 # npm
-npm i -D vuepress-plugin-feed2@next
+npm i -D vuepress-plugin-feed2
 # yarn
-yarn add -D vuepress-plugin-feed2@next
+yarn add -D vuepress-plugin-feed2
 ```

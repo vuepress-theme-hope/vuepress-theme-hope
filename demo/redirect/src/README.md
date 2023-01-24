@@ -17,7 +17,7 @@ footer: MIT Licensed | Copyright © 2022-present Mr.Hope
 ### Install
 
 ```bash
-pnpm add -D vuepress-plugin-redirect@next
+pnpm add -D vuepress-plugin-redirect
 ```
 
 ### Usage

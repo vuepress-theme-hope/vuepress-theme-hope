@@ -17,11 +17,11 @@ VuePress Sitemap plugin🗺️ / VuePress Sitemap 插件 🗺️
 
 ```bash
 # pnpm
-pnpm add -D vuepress-plugin-sitemap2@next
+pnpm add -D vuepress-plugin-sitemap2
 # npm
-npm i -D vuepress-plugin-sitemap2@next
+npm i -D vuepress-plugin-sitemap2
 # yarn
-yarn add -D vuepress-plugin-sitemap2@next
+yarn add -D vuepress-plugin-sitemap2
 ```
 
 ---
@@ -30,9 +30,9 @@ yarn add -D vuepress-plugin-sitemap2@next
 
 ```bash
 # pnpm
-pnpm add -D vuepress-plugin-sitemap2@next
+pnpm add -D vuepress-plugin-sitemap2
 # npm
-npm i -D vuepress-plugin-sitemap2@next
+npm i -D vuepress-plugin-sitemap2
 # yarn
-yarn add -D vuepress-plugin-sitemap2@next
+yarn add -D vuepress-plugin-sitemap2
 ```

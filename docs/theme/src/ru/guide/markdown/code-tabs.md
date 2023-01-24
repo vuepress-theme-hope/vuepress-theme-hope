@@ -69,19 +69,19 @@ export default {
 @tab pnpm
 
 ```bash
-pnpm add -D vuepress-theme-hope@next
+pnpm add -D vuepress-theme-hope
 ```
 
 @tab yarn
 
 ```bash
-yarn add -D vuepress-theme-hope@next
+yarn add -D vuepress-theme-hope
 ```
 
 @tab:active npm
 
 ```bash
-npm i -D vuepress-theme-hope@next
+npm i -D vuepress-theme-hope
 ```
 
 :::
@@ -120,19 +120,19 @@ Install VuePress Theme Hope:
 @tab pnpm
 
 ```bash
-pnpm add -D vuepress-theme-hope@next
+pnpm add -D vuepress-theme-hope
 ```
 
 @tab yarn
 
 ```bash
-yarn add -D vuepress-theme-hope@next
+yarn add -D vuepress-theme-hope
 ```
 
 @tab:active npm
 
 ```bash
-npm i -D vuepress-theme-hope@next
+npm i -D vuepress-theme-hope
 ```
 
 :::

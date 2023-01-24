@@ -27,19 +27,19 @@ copyright: false
 @tab pnpm
 
 ```bash
-pnpm add -D vuepress-plugin-sass-palette@next
+pnpm add -D vuepress-plugin-sass-palette
 ```
 
 @tab yarn
 
 ```bash
-yarn add -D vuepress-plugin-sass-palette@next
+yarn add -D vuepress-plugin-sass-palette
 ```
 
 @tab npm
 
 ```bash
-npm i -D vuepress-plugin-sass-palette@next
+npm i -D vuepress-plugin-sass-palette
 ```
 
 :::

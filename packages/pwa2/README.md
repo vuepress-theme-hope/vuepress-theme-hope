@@ -17,11 +17,11 @@ VuePress PWA plugin📦 / VuePress PWA 插件 📦
 
 ```bash
 # pnpm
-pnpm add -D vuepress-plugin-pwa2@next
+pnpm add -D vuepress-plugin-pwa2
 # npm
-npm i -D vuepress-plugin-pwa2@next
+npm i -D vuepress-plugin-pwa2
 # yarn
-yarn add -D vuepress-plugin-pwa2@next
+yarn add -D vuepress-plugin-pwa2
 ```
 
 ---
@@ -30,9 +30,9 @@ yarn add -D vuepress-plugin-pwa2@next
 
 ```bash
 # pnpm
-pnpm add -D vuepress-plugin-pwa2@next
+pnpm add -D vuepress-plugin-pwa2
 # npm
-npm i -D vuepress-plugin-pwa2@next
+npm i -D vuepress-plugin-pwa2
 # yarn
-yarn add -D vuepress-plugin-pwa2@next
+yarn add -D vuepress-plugin-pwa2
 ```

@@ -17,11 +17,11 @@ VuePress palette plugin 🎨 / VuePress 样式配置插件 🎨
 
 ```bash
 # pnpm
-pnpm add -D vuepress-plugin-sass-palette@next
+pnpm add -D vuepress-plugin-sass-palette
 # npm
-npm i -D vuepress-plugin-sass-palette@next
+npm i -D vuepress-plugin-sass-palette
 # yarn
-yarn add -D vuepress-plugin-sass-palette@next
+yarn add -D vuepress-plugin-sass-palette
 ```
 
 ---
@@ -30,9 +30,9 @@ yarn add -D vuepress-plugin-sass-palette@next
 
 ```bash
 # pnpm
-pnpm add -D vuepress-plugin-sass-palette@next
+pnpm add -D vuepress-plugin-sass-palette
 # npm
-npm i -D vuepress-plugin-sass-palette@next
+npm i -D vuepress-plugin-sass-palette
 # yarn
-yarn add -D vuepress-plugin-sass-palette@next
+yarn add -D vuepress-plugin-sass-palette
 ```

@@ -15,11 +15,11 @@ Components for vuepress-theme-hope.
 
 ```bash
 # pnpm
-pnpm add -D vuepress-plugin-components@next
+pnpm add -D vuepress-plugin-components
 # npm
-npm i -D vuepress-plugin-components@next
+npm i -D vuepress-plugin-components
 # yarn
-yarn add -D vuepress-plugin-components@next
+yarn add -D vuepress-plugin-components
 ```
 
 ---
@@ -30,9 +30,9 @@ vuepress-theme-hope 的组件。
 
 ```bash
 # pnpm
-pnpm add -D vuepress-plugin-components@next
+pnpm add -D vuepress-plugin-components
 # npm
-npm i -D vuepress-plugin-components@next
+npm i -D vuepress-plugin-components
 # yarn
-yarn add -D vuepress-plugin-components@next
+yarn add -D vuepress-plugin-components
 ```

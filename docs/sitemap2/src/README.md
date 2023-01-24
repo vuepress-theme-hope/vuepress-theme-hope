@@ -27,19 +27,19 @@ copyrightText: false
 @tab pnpm
 
 ```bash
-pnpm add -D vuepress-plugin-sitemap2@next
+pnpm add -D vuepress-plugin-sitemap2
 ```
 
 @tab yarn
 
 ```bash
-yarn add -D vuepress-plugin-sitemap2@next
+yarn add -D vuepress-plugin-sitemap2
 ```
 
 @tab npm
 
 ```bash
-npm i -D vuepress-plugin-sitemap2@next
+npm i -D vuepress-plugin-sitemap2
 ```
 
 :::

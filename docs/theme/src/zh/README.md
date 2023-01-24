@@ -123,13 +123,13 @@ footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 @tab pnpm
 
 ```bash
-pnpm create vuepress-theme-hope@next [dir]
+pnpm create vuepress-theme-hope [dir]
 ```
 
 @tab npm
 
 ```bash
-npm init vuepress-theme-hope@next [dir]
+npm init vuepress-theme-hope [dir]
 ```
 
 :::
@@ -141,13 +141,13 @@ npm init vuepress-theme-hope@next [dir]
 @tab pnpm
 
 ```bash
-pnpm create vuepress-theme-hope@next add [dir]
+pnpm create vuepress-theme-hope add [dir]
 ```
 
 @tab npm
 
 ```bash
-npm init vuepress-theme-hope@next add [dir]
+npm init vuepress-theme-hope add [dir]
 ```
 
 :::

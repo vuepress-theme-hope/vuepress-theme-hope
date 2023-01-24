@@ -17,11 +17,11 @@ VuePress2 comment plugin💬 / VuePress2 评论插件 💬
 
 ```bash
 # pnpm
-pnpm add -D vuepress-plugin-comment2@next
+pnpm add -D vuepress-plugin-comment2
 # npm
-npm i -D vuepress-plugin-comment2@next
+npm i -D vuepress-plugin-comment2
 # yarn
-yarn add -D vuepress-plugin-comment2@next
+yarn add -D vuepress-plugin-comment2
 ```
 
 ## Feature
@@ -35,11 +35,11 @@ yarn add -D vuepress-plugin-comment2@next
 
 ```bash
 # pnpm
-pnpm add -D vuepress-plugin-comment2@next
+pnpm add -D vuepress-plugin-comment2
 # npm
-npm i -D vuepress-plugin-comment2@next
+npm i -D vuepress-plugin-comment2
 # yarn
-yarn add -D vuepress-plugin-comment2@next
+yarn add -D vuepress-plugin-comment2
 ```
 
 ## 特性

@@ -17,11 +17,11 @@ VuePress client search plugin 🔍 / VuePress 客户端搜索插件 🔍
 
 ```bash
 # pnpm
-pnpm add -D vuepress-plugin-search-pro@next
+pnpm add -D vuepress-plugin-search-pro
 # npm
-npm i -D vuepress-plugin-search-pro@next
+npm i -D vuepress-plugin-search-pro
 # yarn
-yarn add -D vuepress-plugin-search-pro@next
+yarn add -D vuepress-plugin-search-pro
 ```
 
 ---
@@ -30,9 +30,9 @@ yarn add -D vuepress-plugin-search-pro@next
 
 ```bash
 # pnpm
-pnpm add -D vuepress-plugin-search-pro@next
+pnpm add -D vuepress-plugin-search-pro
 # npm
-npm i -D vuepress-plugin-search-pro@next
+npm i -D vuepress-plugin-search-pro
 # yarn
-yarn add -D vuepress-plugin-search-pro@next
+yarn add -D vuepress-plugin-search-pro
 ```

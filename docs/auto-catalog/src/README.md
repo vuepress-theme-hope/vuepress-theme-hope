@@ -27,19 +27,19 @@ copyright: false
 @tab pnpm
 
 ```bash
-pnpm add -D vuepress-plugin-auto-catalog@next
+pnpm add -D vuepress-plugin-auto-catalog
 ```
 
 @tab yarn
 
 ```bash
-yarn add -D vuepress-plugin-auto-catalog@next
+yarn add -D vuepress-plugin-auto-catalog
 ```
 
 @tab npm
 
 ```bash
-npm i -D vuepress-plugin-auto-catalog@next
+npm i -D vuepress-plugin-auto-catalog
 ```
 
 :::

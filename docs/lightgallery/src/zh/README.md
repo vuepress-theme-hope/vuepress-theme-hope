@@ -27,19 +27,19 @@ copyright: false
 @tab pnpm
 
 ```bash
-pnpm add -D vuepress-plugin-lightgallery@next
+pnpm add -D vuepress-plugin-lightgallery
 ```
 
 @tab yarn
 
 ```bash
-yarn add -D vuepress-plugin-lightgallery@next
+yarn add -D vuepress-plugin-lightgallery
 ```
 
 @tab npm
 
 ```bash
-npm i -D vuepress-plugin-lightgallery@next
+npm i -D vuepress-plugin-lightgallery
 ```
 
 :::

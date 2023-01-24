@@ -15,11 +15,11 @@
 
 ```bash
 # pnpm
-pnpm add -D vuepress-plugin-photo-swipe@next
+pnpm add -D vuepress-plugin-photo-swipe
 # npm
-npm i -D vuepress-plugin-photo-swipe@next
+npm i -D vuepress-plugin-photo-swipe
 # yarn
-yarn add -D vuepress-plugin-photo-swipe@next
+yarn add -D vuepress-plugin-photo-swipe
 ```
 
 ## Migrating from V1
@@ -34,11 +34,11 @@ yarn add -D vuepress-plugin-photo-swipe@next
 
 ```bash
 # pnpm
-pnpm add -D vuepress-plugin-photo-swipe@next
+pnpm add -D vuepress-plugin-photo-swipe
 # npm
-npm i -D vuepress-plugin-photo-swipe@next
+npm i -D vuepress-plugin-photo-swipe
 # yarn
-yarn add -D vuepress-plugin-photo-swipe@next
+yarn add -D vuepress-plugin-photo-swipe
 ```
 
 ## 从 V1 迁移

@@ -23,7 +23,7 @@ footer: MIT Licensed, Copyright © 2019-present Mr.Hope
 ### Install
 
 ```bash
-pnpm add -D vuepress-plugin-sitemap2@next
+pnpm add -D vuepress-plugin-sitemap2
 ```
 
 ### Usage

@@ -25,19 +25,19 @@ copyright: false
 @tab pnpm
 
 ```bash
-pnpm add -D vuepress-plugin-components@next
+pnpm add -D vuepress-plugin-components
 ```
 
 @tab yarn
 
 ```bash
-yarn add -D vuepress-plugin-components@next
+yarn add -D vuepress-plugin-components
 ```
 
 @tab npm
 
 ```bash
-npm i -D vuepress-plugin-components@next
+npm i -D vuepress-plugin-components
 ```
 
 :::

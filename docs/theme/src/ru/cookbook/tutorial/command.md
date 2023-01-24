@@ -54,19 +54,19 @@ tag:
 ::: code-tabs#shell
 
 ```bash
-pnpm add @vuepress/client@next vue vuepress@next vuepress-theme-hope@next -E && pnpm i && pnpm up
+pnpm add @vuepress/client@next vue vuepress@next vuepress-theme-hope -E && pnpm i && pnpm up
 ```
 
 @tab yarn
 
 ```bash
-yarn add vuepress@next vuepress-theme-hope@next -E && yarn install && yarn upgrade
+yarn add vuepress@next vuepress-theme-hope -E && yarn install && yarn upgrade
 ```
 
 @tab npm
 
 ```bash
-npm i vuepress@next vuepress-theme-hope@next -E && npm install && npm update
+npm i vuepress@next vuepress-theme-hope -E && npm install && npm update
 ```
 
 :::

@@ -42,19 +42,19 @@ You can update to the latest version by executing the following commands.
 @tab pnpm
 
 ```bash
-pnpm add @vuepress/client@next vuepress@next vuepress-theme-hope@next vue@latest -E
+pnpm add @vuepress/client@next vuepress@next vuepress-theme-hope vue@latest -E
 ```
 
 @tab yarn
 
 ```bash
-yarn add vuepress@next vuepress-theme-hope@next -E
+yarn add vuepress@next vuepress-theme-hope -E
 ```
 
 @tab npm
 
 ```bash
-npm i vuepress@next vuepress-theme-hope@next -E
+npm i vuepress@next vuepress-theme-hope -E
 ```
 
 :::

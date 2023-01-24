@@ -17,11 +17,11 @@ VuePress Redirect plugin🗺️ / VuePress 重定向插件 🗺️
 
 ```bash
 # pnpm
-pnpm add -D vuepress-plugin-redirect@next
+pnpm add -D vuepress-plugin-redirect
 # npm
-npm i -D vuepress-plugin-redirect@next
+npm i -D vuepress-plugin-redirect
 # yarn
-yarn add -D vuepress-plugin-redirect@next
+yarn add -D vuepress-plugin-redirect
 ```
 
 ---
@@ -30,9 +30,9 @@ yarn add -D vuepress-plugin-redirect@next
 
 ```bash
 # pnpm
-pnpm add -D vuepress-plugin-redirect@next
+pnpm add -D vuepress-plugin-redirect
 # npm
-npm i -D vuepress-plugin-redirect@next
+npm i -D vuepress-plugin-redirect
 # yarn
-yarn add -D vuepress-plugin-redirect@next
+yarn add -D vuepress-plugin-redirect
 ```
