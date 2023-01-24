@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.167](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.166...v2.0.0-beta.167) (2023-01-24)
+
+### Features
+
+- add rtl plugin, theme fully support rtl ([85668b8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/85668b835b0844409397e05437efc49e918de190))
+- **theme:** update NotFound layout appearance ([4a37928](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4a37928037f0e724c823a2808dd525b882ac9bb1))
+
+### Bug Fixes
+
+- **deps:** update dependency axios to v1.2.4 ([#2704](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2704)) ([d10adc3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d10adc334cd0fbebc028e49ae64fe9e901530b40))
+- **theme:** fix dropped logger ([cfe7381](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cfe73812917239172a411cc1ec8a07cb0d41e763))
+- **theme:** hide line-numbers on print mode ([0b39671](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0b396712c004d85be55e5150c8c2a2524cdd3647))
+- **theme:** improve legacy logger ([cb449e4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cb449e467cda6b5596e97dbb4b2a797e2e92f25d))
+
 ## [2.0.0-beta.166](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.165...v2.0.0-beta.166) (2023-01-23)
 
 ### Features
