@@ -35,7 +35,7 @@ jobs:
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
 
       - name: Publish packages
-        run: pnpm publish -r --tag next --no-git-checks
+        run: pnpm publish -r --no-git-checks
 
       - name: Sync npmmirror
         run: pnpm release:sync
