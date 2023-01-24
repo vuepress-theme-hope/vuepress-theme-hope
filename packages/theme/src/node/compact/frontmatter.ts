@@ -49,8 +49,8 @@ export const convertFrontmatter = (
   DROPPED_FRONTMATTER_OPTIONS.forEach((item) =>
     droppedLogger(
       frontmatter,
-      ...item,
-      `${filePathRelative ? `Found in ${filePathRelative}` : ""}`
+      item[0],
+      `${item[1]}${filePathRelative ? ` (found in ${filePathRelative})` : ""}`
     )
   );
 
