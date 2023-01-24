@@ -73,7 +73,7 @@
     "ora": "6.1.2",
     "picocolors": "1.0.0",
     "prettier": "2.8.3",
-    "rimraf": "4.1.1",
+    "rimraf": "4.1.2",
     "rollup": "3.10.1",
     "rollup-plugin-copy": "3.4.0",
     "rollup-plugin-dts": "5.1.1",
