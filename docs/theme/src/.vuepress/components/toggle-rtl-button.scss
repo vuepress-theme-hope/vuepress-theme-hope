@@ -1,0 +1,7 @@
+@use "vuepress-shared/styles/reset";
+
+.toggle-rtl-button {
+  @include reset.button;
+
+  color: var(--text-color);
+}

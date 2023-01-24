@@ -355,6 +355,13 @@ tag:
 
 当前语言的主页路径，用于导航栏图标和返回主页按钮的链接。
 
+### rtl
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否使用 RTL 布局
+
 ### toc {#toc-heading}
 
 - 类型: `boolean`

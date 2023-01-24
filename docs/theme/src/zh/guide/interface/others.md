@@ -16,6 +16,8 @@ tag:
 
 ## 打印按钮
 
+试一试: <PrintButton />
+
 主题对打印样式进行了全面优化，默认在桌面模式的目录下会有一个打印按钮。
 
 要隐藏打印按钮，你应该在主题选项中设置 `print: false`。
@@ -74,6 +76,10 @@ export default defineUserConfig({
 
 `vuepress-theme-hope` 完全支持 RTL 布局。只需在 RTL 多语言配置内设置 `rtl: false`
 
+试一试: <ToggleRTLButton />
+
 <script setup lang="ts">
+import PrintButton from "@theme-hope/modules/info/components/PrintButton";
+import ToggleRTLButton from "@ToggleRTLButton";
 import ToggleFullScreenButton from "@theme-hope/modules/outlook/components/ToggleFullScreenButton";
 </script>

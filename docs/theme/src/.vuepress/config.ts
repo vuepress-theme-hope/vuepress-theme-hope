@@ -53,6 +53,10 @@ export default config(
         __dirname,
         "./components/KatexPlayground"
       ),
+      "@ToggleRTLButton": path.resolve(
+        __dirname,
+        "./components/ToggleRTLButton"
+      ),
     },
   }
 );

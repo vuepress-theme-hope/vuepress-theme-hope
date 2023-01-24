@@ -1,6 +1,7 @@
 ---
 title: Chart
 icon: chart-simple
+category:
   - Markdown
 tag:
   - 图表

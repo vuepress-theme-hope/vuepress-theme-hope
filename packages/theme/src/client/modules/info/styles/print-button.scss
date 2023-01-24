@@ -1,0 +1,21 @@
+@use "vuepress-shared/styles/reset";
+
+.print-button {
+  @include reset.button;
+  box-sizing: content-box;
+
+  width: 1rem;
+  height: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.25em;
+
+  color: inherit;
+
+  font-size: 1rem;
+
+  transform: translateY(0.25rem);
+
+  @media print {
+    display: none;
+  }
+}

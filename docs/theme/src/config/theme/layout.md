@@ -355,6 +355,13 @@ Whether to display footer by default.
 
 Home path of current locale, used as the link of back-to-home and navbar logo.
 
+### rtl
+
+- Type: `boolean`
+- Default: `false`
+
+Whether use RTL layout.
+
 ### toc {#toc-heading}
 
 - Type: `boolean`

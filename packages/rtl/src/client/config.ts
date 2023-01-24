@@ -30,7 +30,7 @@ export default defineClientConfig({
               else element.setAttribute(attr, value);
             });
         });
-        document.documentElement.style.direction = "rtl";
+        document.documentElement.style.setProperty("direction", "rtl");
       } else {
         Object.entries(_RTL_SELECTOR_).forEach(([selector, attrs]) => {
           const element = getElement(selector);

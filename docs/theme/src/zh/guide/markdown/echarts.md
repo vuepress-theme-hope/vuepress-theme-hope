@@ -1,6 +1,7 @@
 ---
 title: ECharts
 icon: chart-simple
+category:
   - Markdown
 tag:
   - ECharts

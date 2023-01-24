@@ -1,6 +1,6 @@
 ---
 title: Пользовательский контейнер
-icon: boxes-packing
+icon: box-open
 category:
   - Markdown
 tag:

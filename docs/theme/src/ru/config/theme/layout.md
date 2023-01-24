@@ -355,6 +355,13 @@ tag:
 
 Домашний путь текущей локали, используемый в качестве ссылки для возврата домой и логотипа панели навигации.
 
+### rtl
+
+- Type: `boolean`
+- Default: `false`
+
+Whether use RTL layout.
+
 ### toc {#toc-heading}
 
 - Тип: `boolean`

@@ -3,8 +3,7 @@ import { defineComponent, h, onMounted, ref, watch } from "vue";
 import { RouterLink, useRoute } from "vue-router";
 import { isActiveLink } from "vuepress-shared/client";
 
-import { PrintIcon } from "@theme-hope/modules/info/components/icons";
-import { useThemeData } from "@theme-hope/composables/index";
+import PrintButton from "@theme-hope/modules/info/components/PrintButton";
 import { useMetaLocale } from "@theme-hope/modules/info/composables/index";
 
 import type { PageHeader } from "@vuepress/shared";
@@ -78,7 +77,6 @@ export default defineComponent({
     const route = useRoute();
     const page = usePageData();
     const metaLocale = useMetaLocale();
-    const themeData = useThemeData();
     const toc = ref<HTMLElement>();
 
     const scrollTo = (top: number): void => {
@@ -139,19 +137,7 @@ export default defineComponent({
             h("aside", { id: "toc" }, [
               h("div", { class: "toc-header" }, [
                 metaLocale.value.toc,
-                themeData.value.print === false
-                  ? null
-                  : h(
-                      "button",
-                      {
-                        class: "print-button",
-                        title: "print",
-                        onClick: () => {
-                          window.print();
-                        },
-                      },
-                      h(PrintIcon)
-                    ),
+                h(PrintButton),
               ]),
               h("div", { class: "toc-wrapper", ref: toc }, [tocHeaders]),
             ]),

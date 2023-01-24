@@ -16,6 +16,8 @@ tag:
 
 ## Print Button
 
+Try it: <PrintButton />
+
 The theme fully optimize style for print, and there will be a print button at toc in desktop mode by default.
 
 To hide print button, you should set `print: false` in theme options.
@@ -74,6 +76,10 @@ export default defineUserConfig({
 
 `vuepress-theme-hope` fully supports RTL layout. Just set `rtl: true` in rtl locales.
 
+Try it: <ToggleRTLButton />
+
 <script setup lang="ts">
+import PrintButton from "@theme-hope/modules/info/components/PrintButton";
+import ToggleRTLButton from "@ToggleRTLButton";
 import ToggleFullScreenButton from "@theme-hope/modules/outlook/components/ToggleFullScreenButton";
 </script>
