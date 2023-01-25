@@ -22,6 +22,7 @@
   }
 
   #{hope-config.$content-class} {
+    max-width: var(--home-page-width);
     padding-bottom: 1.5rem;
   }
 }
