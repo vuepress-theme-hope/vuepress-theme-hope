@@ -33,7 +33,7 @@ export const useDarkmode = (): DarkMode => {
   return darkmode;
 };
 
-export const injectDarkMode = (app: App): void => {
+export const injectDarkmode = (app: App): void => {
   const themeData = useThemeData();
   const isDarkPreferred = usePreferredDark();
   const status = useStorage<DarkmodeStatus>(
@@ -82,7 +82,7 @@ export const injectDarkMode = (app: App): void => {
   });
 };
 
-export const setupDarkMode = (): void => {
+export const setupDarkmode = (): void => {
   const { isDarkmode } = useDarkmode();
 
   const updateDOM = (isDark = isDarkmode.value): void => {

@@ -68,7 +68,7 @@ import Layout from "${CLIENT_FOLDER}layouts/Layout.js";
 import NotFound from "${CLIENT_FOLDER}layouts/NotFound.js";
 
 import { useScrollPromise } from "@theme-hope/composables/index";
-import { injectDarkMode, setupDarkMode } from "@theme-hope/modules/outlook/composables/index";
+import { injectDarkmode, setupDarkmode } from "@theme-hope/modules/outlook/composables/index";
 import { setupSidebarItems } from "@theme-hope/modules/sidebar/composables/index";
 
 import "${CLIENT_FOLDER}styles/index.scss";
@@ -86,7 +86,7 @@ export default defineClientConfig({
     };
 
     // inject global properties
-    injectDarkMode(app);
+    injectDarkmode(app);
 
 ${enhance
   .split("\n")
@@ -94,7 +94,7 @@ ${enhance
   .join("\n")}
   },
   setup: () => {
-    setupDarkMode();
+    setupDarkmode();
     setupSidebarItems();
 ${setup
   .split("\n")
