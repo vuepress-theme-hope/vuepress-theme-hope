@@ -6,7 +6,10 @@
   align-items: center;
   justify-content: space-evenly;
 
-  padding: 0.75rem 2rem 0.75rem calc(var(--sidebar-space) + 2rem);
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-inline-start: calc(var(--sidebar-space) + 2rem);
+  padding-inline-end: 2rem;
   border-top: 1px solid var(--border-color);
 
   background: var(--bg-color);
