@@ -165,6 +165,15 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
           single-commit: true
 
+      - name: Deploy rtl docs
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          repository-name: vuepress-theme-hope/rtl-docs
+          branch: netlify
+          folder: docs/rtl/dist
+          token: ${{ secrets.ACCESS_TOKEN }}
+          single-commit: true
+
       - name: Deploy sass-palette docs
         uses: JamesIves/github-pages-deploy-action@v4
         with:
