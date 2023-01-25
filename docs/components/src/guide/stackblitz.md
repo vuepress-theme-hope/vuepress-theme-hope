@@ -33,6 +33,13 @@ A StackBlitz project with custom settings:
 
 StackBlitz id
 
+### type
+
+- Type: `"project" | "github"`
+- Default: `"project"`
+
+Type of StackBlitz project.
+
 ### width
 
 - Type: `string | number`
@@ -56,7 +63,7 @@ Stackblitz component ratio, ONLY valid when `height` not set.
 
 ### file
 
-- Type: `string`
+- Type: `string[] | string`
 - Required: No
 
 The default file to have open in the editor.
@@ -73,18 +80,32 @@ The initial URL path the preview should open.
 - Type: `boolean`
 - Default: `false`
 
-Force embed view regardless of screen size.
+Embed StackBlitz editor instead of displaying a button.
 
 ### load
 
 - Type: `boolean`
 - Default: `false`
 
-RWhether load embed demo directly.
+Whether load embed demo directly. (Only available with `embed`)
+
+### theme
+
+- Type: `"dark" | "light"`
+- Default: `"dark"`
+
+Editor theme. (Only available with `embed`)
+
+### text
+
+- Type: `string`
+- Default: `"Open in StackBlitz"`
+
+Text to display on the button. (Only available without `embed`)
 
 ### view
 
-- Type: `"editor" | "preview"`
+- Type: `"default" | "editor" | "preview"`
 - Default: `"preview"`
 
 Which view to open by default.

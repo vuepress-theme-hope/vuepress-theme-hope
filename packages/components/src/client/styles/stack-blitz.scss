@@ -1,5 +1,27 @@
-.stack-blitz-iframe {
+@use "vuepress-shared/styles/reset";
+
+.stackblitz-container {
   margin: 8px 0;
-  border: none;
   border-radius: 8px;
+  text-align: center;
+}
+
+.stackblitz-button {
+  @include reset.button;
+
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+
+  background: var(--c-bg-light);
+  color: var(--c-text);
+
+  font-weight: 600;
+
+  transition: background var(--t-color), color var(--t-color);
+
+  &:hover {
+    background: var(--c-brand);
+    color: var(--white);
+  }
 }

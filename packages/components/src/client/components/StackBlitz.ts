@@ -1,10 +1,18 @@
 /* eslint-disable vue/no-unused-properties */
-import { defineComponent, h } from "vue";
+/**
+ * @see https://developer.stackblitz.com/platform/api/javascript-sdk
+ */
+import sdk, { UiThemeOption } from "@stackblitz/sdk";
+import { computed, defineComponent, h, onMounted } from "vue";
 import { useSize } from "../composables/index.js";
 
+import type { UiViewOption } from "@stackblitz/sdk";
 import type { PropType, VNode } from "vue";
 
 import "../styles/stack-blitz.scss";
+
+const stackblitzSDK = sdk as unknown as typeof sdk.default;
+
 export default defineComponent({
   name: "StackBlitz",
 
@@ -21,6 +29,16 @@ export default defineComponent({
     id: {
       type: String,
       required: true,
+    },
+
+    /**
+     * StackBlitz type
+     *
+     * StackBlitz 类型
+     */
+    type: {
+      type: String as PropType<"project" | "github">,
+      default: "project",
     },
 
     /**
@@ -59,7 +77,7 @@ export default defineComponent({
      * 默认打开的文件
      */
     file: {
-      type: String,
+      type: [String, Array] as PropType<string | string[]>,
       default: "",
     },
 
@@ -74,9 +92,9 @@ export default defineComponent({
     },
 
     /**
-     * Force embed view regardless of screen size
+     * embed editor
      *
-     * 强制嵌入视图，无论屏幕尺寸如何
+     * 嵌入编辑器
      */
     embed: Boolean,
 
@@ -93,7 +111,7 @@ export default defineComponent({
      * 默认打开的视图
      */
     view: {
-      type: String as PropType<"editor" | "preview">,
+      type: String as PropType<UiViewOption>,
       default: "preview",
     },
 
@@ -117,31 +135,93 @@ export default defineComponent({
      * 隐藏编辑器预览中的调试控制台
      */
     hideDevtools: Boolean,
+
+    /**
+     * Height of the Terminal panel below the editor (as a percentage number).
+     */
+    terminalHeight: {
+      type: [String, Number],
+      default: 30,
+    },
+
+    /**
+     * Height of the Terminal panel below the editor (as a percentage number).
+     */
+    devToolsHeight: {
+      type: [String, Number],
+      default: 30,
+    },
+
+    /**
+     * Button text
+     *
+     * 按钮文字
+     */
+    text: {
+      type: String,
+      default: "Open in StackBlitz",
+    },
+
+    /**
+     * Theme
+     *
+     * 主题
+     */
+    theme: {
+      type: String as PropType<UiThemeOption>,
+      default: "dark",
+    },
   },
 
   setup(props) {
     const { el, width, height } = useSize<HTMLIFrameElement>(props);
 
+    const options = computed(() => ({
+      openFile: props.file,
+      view: props.view,
+      theme: props.theme,
+      clickToLoad: props.load,
+      hideExplorer: props.hideExplorer,
+      hideNavigation: props.hideNavigation,
+      hideDevTools: props.hideDevtools,
+      initialPath: props.initialPath,
+    }));
+
+    onMounted(() => {
+      if (props.embed) {
+        void stackblitzSDK[
+          props.type === "github" ? "embedGithubProject" : "embedProjectId"
+        ](el.value!, props.id, options.value);
+      }
+    });
+
     return (): VNode =>
-      h("iframe", {
-        ref: el,
-        class: "stack-blitz-iframe",
-        src: `https://stackblitz.com/edit/${props.id}?embed=${
-          props.embed ? 1 : 0
-        }${props.file ? `&file=${props.file}` : ""}${
-          props.initialPath
-            ? `&initialpath=${encodeURI(props.initialPath)}`
-            : ""
-        }&ctl=${props.load ? 0 : 1}&view=${props.view}${
-          props.hideExplorer ? "&hideExplorer=1" : ""
-        }${props.hideNavigation ? "&hideNavigation=1" : ""}${
-          props.hideDevtools ? "&hidedevtools=1" : ""
-        }`,
-        allow: "clipboard-write",
-        style: {
-          width: width.value,
-          height: height.value,
-        },
-      });
+      props.embed
+        ? h("div", {
+            ref: el,
+            class: "stackblitz-container",
+            style: {
+              width: width.value,
+              height: height.value,
+            },
+          })
+        : h(
+            "div",
+            { class: "stackblitz-container" },
+            h(
+              "button",
+              {
+                class: "stackblitz-button",
+                onClick: () => {
+                  stackblitzSDK[
+                    props.type === "github"
+                      ? "openGithubProject"
+                      : "openProjectId"
+                  ](props.id, options.value);
+                },
+              },
+              props.text
+            )
+          );
   },
 });

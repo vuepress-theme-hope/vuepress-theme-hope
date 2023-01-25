@@ -21,7 +21,6 @@
     "@vuepress/plugin-pwa": "2.0.0-beta.60",
     "@vuepress/plugin-pwa-popup": "2.0.0-beta.60",
     "@vuepress/utils": "2.0.0-beta.60",
-    "cross-env": "7.0.3",
     "sass-loader": "13.2.0",
     "vue": "3.2.45",
     "vuepress-shared": "workspace:*",

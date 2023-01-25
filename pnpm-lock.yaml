@@ -1,15 +1,15 @@
 lockfileVersion: '6.0'
 
 patchedDependencies:
-  '@types/katex@0.16.0':
-    hash: dnsp5eyvz2stjhzcvnk27ztvmm
-    path: patches/@types__katex@0.16.0.patch
-  mitt@3.0.0:
-    hash: qzs7n5sruuzja7qoe6i43clpfe
-    path: patches/mitt@3.0.0.patch
   '@vuepress/plugin-docsearch@2.0.0-beta.60':
     hash: isjzrkrqrwnbp3bxyrv6tl6zgm
     path: patches/@vuepress__plugin-docsearch@2.0.0-beta.60.patch
+  mitt@3.0.0:
+    hash: qzs7n5sruuzja7qoe6i43clpfe
+    path: patches/mitt@3.0.0.patch
+  '@types/katex@0.16.0':
+    hash: dnsp5eyvz2stjhzcvnk27ztvmm
+    path: patches/@types__katex@0.16.0.patch
 
 importers:
 
@@ -633,9 +633,6 @@ importers:
       '@vuepress/utils':
         specifier: 2.0.0-beta.60
         version: 2.0.0-beta.60
-      cross-env:
-        specifier: 7.0.3
-        version: 7.0.3
       sass-loader:
         specifier: 13.2.0
         version: 13.2.0
@@ -675,9 +672,6 @@ importers:
       '@vuepress/utils':
         specifier: 2.0.0-beta.60
         version: 2.0.0-beta.60
-      cross-env:
-        specifier: 7.0.3
-        version: 7.0.3
       sass-loader:
         specifier: 13.2.0
         version: 13.2.0
@@ -1349,6 +1343,9 @@ importers:
 
   packages/components:
     dependencies:
+      '@stackblitz/sdk':
+        specifier: ^1.8.1
+        version: 1.8.1
       '@vuepress/client':
         specifier: 2.0.0-beta.60
         version: 2.0.0-beta.60
@@ -4367,6 +4364,10 @@ packages:
       picomatch: 2.3.1
       rollup: 3.10.1
     dev: true
+
+  /@stackblitz/sdk@1.8.1:
+    resolution: {integrity: sha512-hjYfjOLQBNDzqPD5AkGJOD7j+uvFwGocDTmwNqmLCWR5EY7BDtcOtDY2M+91v/twYWWNvI7N8UNIgojCPNgzMA==}
+    dev: false
 
   /@surma/rollup-plugin-off-main-thread@2.2.3:
     resolution: {integrity: sha512-lR8q/9W7hZpMWweNiAKU7NQerBnzQQLvi8qnTDU/fxItPhtZVMbPV3lbCwjhIlNBe9Bbr5V+KHshvWmVSG9cxQ==}
