@@ -18,14 +18,6 @@
 我们建议你使用 [issues](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues) 和 [discussions](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions) 联系，但也欢迎你加入我们的 [QQ 群](https://jq.qq.com/?_wv=1027&k=rATJyxGK) (群号: 1003437555)
 。
 
-## 注意
-
-当前分支基于 VuePress@v2，仍处于 Beta。
-
-这意味着功能和 API 尚未固定，在未来的更新中仍有概率出现破坏性更改。
-
-虽然该项目有 V1 的稳定版本，并且存放在 [V1 仓库](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/) 中，但我们不推荐你在新项目中继续使用 V1。 有关详细信息，请参阅 [V1 结束支持通告](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions/1535)。
-
 ## 详情
 
 V2 基于 _VuePress2_， 带有 _Vite2_ / _Webpack5_ 和 _Vue3_ 的强大功能。

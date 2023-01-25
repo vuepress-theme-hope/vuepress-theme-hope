@@ -36,14 +36,6 @@ A VuePress theme with tons of features✨
 
 We recommend you to contact using [issues](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues) and [discussions](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions), but you are welcome to join our [telegram group!](https://t.me/vuepressthemehope).
 
-## Note
-
-Current branch is based on VuePress@v2, and it’s still in beta.
-
-This means that features and API are not solid, and there might be BREAKING CHANGES in future releases.
-
-Though the project has stable release of V1, and are held in [V1 Repo](https://github.com/vuepress-theme-hope/vuepress-theme-hope-v1/), but we do not recommend you to keep using V1 in new projects. See [V1 end of support Announcement](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions/1535) for more details.
-
 ## Details
 
 V2 is coming come together with _VuePress2_, with the power of _Vite2_ / _Webpack5_ and _Vue3_.
