@@ -84,7 +84,7 @@ export interface PluginsOptions {
    *
    * @see https://plugin-copyright2.vuejs.press/config.html
    *
-   * 代码复制插件配置
+   * 版权信息插件配置
    *
    * @see https://plugin-copyright2.vuejs.press/zh/config.html
    *
