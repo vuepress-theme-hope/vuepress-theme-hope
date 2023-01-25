@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.168](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.167...v2.0.0-beta.168) (2023-01-25)
+
+### Features
+
+- **components:** update stackblitz component ([737eb71](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/737eb7155aa9cc14b5211abc233490f898af8a91))
+
+### Bug Fixes
+
+- improve rtl layout ([933c473](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/933c473482aa12244d80caf818d65fe6f9b6fb70))
+- **theme:** fix catalog order ([fc6c9a6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fc6c9a625d2d82552a1078e2bdb3f6429579ffc3))
+- **theme:** fix footer padding in rtl ([9dd5dd4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9dd5dd498306228146a64f9f2224cdea35324a49))
+- **theme:** fix footer z-index on desktop ([29e612a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/29e612a684ce960b81741194370d3a46527ec6fc))
+- **theme:** fix homepage width ([7be8584](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7be8584e91bf479efb48b0ca51bc5e98cf946597))
+- **theme:** fix legacy compact for copyright ([1cbcdd8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1cbcdd851ee1f7c48ed24cbbe6e2615729627877))
+- **theme:** fix sidebar root structure support with legacy ([beabe53](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/beabe53f70393469ed75e0002d7aaad0f6a124d8))
+
 ## [2.0.0-beta.167](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.166...v2.0.0-beta.167) (2023-01-24)
 
 ### Features
