@@ -112,18 +112,6 @@ export const convertFrontmatter = (
             scope: `${filePathRelative || ""} frontmatter`,
           })
       );
-
-      if ("title" in frontmatter && !("heroText" in frontmatter)) {
-        logger.warn(
-          `${colors.magenta(
-            "title"
-          )} in frontmatter is deprecated, please use ${colors.magenta(
-            "heroText"
-          )} instead.${filePathRelative ? `Found in ${filePathRelative}` : ""}`
-        );
-
-        frontmatter["heroText"] = frontmatter["title"];
-      }
     }
   }
 
