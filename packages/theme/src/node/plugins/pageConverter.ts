@@ -42,6 +42,8 @@ export const injectPageInfo = (page: Page<ThemePageData>): void => {
   if ("icon" in frontmatter)
     page.routeMeta[ArticleInfoType.icon] = frontmatter.icon;
 
+  if ("order" in frontmatter) page.routeMeta["order"] = frontmatter.order;
+
   // resolve shortTitle
   if ("shortTitle" in frontmatter)
     page.routeMeta[ArticleInfoType.shortTitle] = frontmatter.shortTitle;
