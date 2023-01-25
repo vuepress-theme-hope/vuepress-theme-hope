@@ -1,4 +1,5 @@
 import { isArray, isPlainObject } from "@vuepress/shared";
+import { colors } from "@vuepress/utils";
 
 import { convertNavbarOptions } from "./navbar.js";
 import { convertSidebarOptions } from "./sidebar.js";
@@ -22,7 +23,6 @@ const DEPRECATED_THEME_OPTIONS: [string, string][] = [
   ["activeHash", "plugins.activeHeaderLinks"],
   ["comment", "plugins.comment"],
   ["copyCode", "plugins.copyCode"],
-  ["copyright", "plugins.copyright"],
   ["feed", "plugins.feed"],
   ["git", "plugins.git"],
   ["mdEnhance", "plugins.mdEnhance"],
@@ -142,8 +142,7 @@ export const convertThemeOptions = (
   themeOptions: Record<string, unknown>
 ): ThemeOptions => {
   // ensure plugins
-  const plugins = (themeOptions["plugins"] =
-    (themeOptions["plugins"] as Record<string, unknown>) || {});
+  const plugins = (themeOptions["plugins"] ??= {}) as Record<string, unknown>;
 
   DEPRECATED_THEME_OPTIONS.forEach(([deprecatedOption, newOption]) =>
     deprecatedLogger({
@@ -159,28 +158,77 @@ export const convertThemeOptions = (
   if ("navbar" in themeOptions)
     themeOptions["navbar"] = convertNavbarOptions(themeOptions["navbar"]);
 
+  // handle navbar layout
+  if (isPlainObject(themeOptions["navbarLayout"])) {
+    if ("left" in themeOptions["navbarLayout"]) {
+      logger.warn(
+        `To have better meaning under RTL layout, ${colors.magenta(
+          "navbarLayout.left"
+        )}" option is deprecated, please use ${colors.magenta(
+          "navbarLayout.start"
+        )} instead`
+      );
+      themeOptions["navbarLayout"]["start"] = themeOptions["navbarLayout"][
+        "left"
+      ] as string[];
+    }
+
+    if ("right" in themeOptions["navbarLayout"]) {
+      logger.warn(
+        `To have better meaning under RTL layout, ${colors.magenta(
+          "navbarLayout.right"
+        )}" option is deprecated, please use ${colors.magenta(
+          "navbarLayout.end"
+        )} instead`
+      );
+      themeOptions["navbarLayout"]["end"] = themeOptions["navbarLayout"][
+        "right"
+      ] as string[];
+    }
+  }
+
   // handle sidebar
   if ("sidebar" in themeOptions)
     themeOptions["sidebar"] = convertSidebarOptions(themeOptions["sidebar"]);
 
-  // handle footer
-  handleFooterOptions(themeOptions);
-
   // handle blog
   if (isPlainObject(themeOptions["blog"]) && themeOptions["blog"]) {
     handleBlogOptions(themeOptions["blog"] as Record<string, unknown>);
-    if (!plugins["blog"]) plugins["blog"] = true;
+
+    logger.warn(
+      `Blog feature is tree-shakable in v2, you should set ${colors.magenta(
+        "plugins.blog: true"
+      )} in theme options to enable it.`
+    );
   }
 
   // handle component
   if (isArray(plugins["components"])) {
     logger.warn(
-      '"plugins.components" no longer accepts array, please set it to "plugin.components.components" instead.'
+      `${colors.magenta(
+        "plugins.components"
+      )} no longer accepts array, please set it to ${colors.magenta(
+        "plugin.components.components"
+      )} instead.`
     );
 
     plugins["components"] = {
       components: plugins["components"],
     };
+  }
+
+  // handle copyright plugin
+  if (
+    isPlainObject(themeOptions["copyright"]) ||
+    typeof themeOptions["copyright"] === "boolean"
+  ) {
+    logger.warn(
+      `${colors.magenta(
+        "copyright"
+      )} is deprecated in V2, please use ${colors.magenta(
+        "plugins.copyright"
+      )} instead.`
+    );
   }
 
   // handle addThis
@@ -192,13 +240,17 @@ export const convertThemeOptions = (
       scope: "themeConfig",
     });
 
+  // handle encrypt
   if (isPlainObject(themeOptions["encrypt"]) && themeOptions["encrypt"]) {
-    // handle encrypt
     const encrypt = themeOptions["encrypt"] as Record<string, unknown>;
 
     if ("global" in encrypt && typeof encrypt["global"] !== "boolean") {
       logger.warn(
-        'Setting admin password with "encrypt.global" in V1 is deprecated in V2, please use "encrypt.admin" instead.'
+        `${colors.magenta(
+          "encrypt.global"
+        )} is deprecated in V2, please use ${colors.magenta(
+          "encrypt.admin"
+        )} instead.`
       );
 
       encrypt["admin"] = encrypt["global"];
@@ -206,7 +258,11 @@ export const convertThemeOptions = (
 
     if ("status" in encrypt) {
       logger.warn(
-        '"encrypt.status" is deprecated, please use "encrypt.global" instead.'
+        `${colors.magenta(
+          "encrypt.status"
+        )} is deprecated, please use ${colors.magenta(
+          "encrypt.global"
+        )} instead.`
       );
 
       encrypt["global"] = encrypt["status"] === "global";
@@ -214,6 +270,10 @@ export const convertThemeOptions = (
     }
   }
 
+  // handle footer
+  handleFooterOptions(themeOptions);
+
+  // handle each locale
   if ("locales" in themeOptions && isPlainObject(themeOptions["locales"])) {
     Object.values(themeOptions["locales"]!).forEach(
       (localeConfig: Record<string, unknown>) => {
@@ -237,7 +297,11 @@ export const convertThemeOptions = (
         if (isPlainObject(localeConfig["navbarLayout"])) {
           if ("left" in localeConfig["navbarLayout"]) {
             logger.warn(
-              'To have better meaning under RTL layout, "left" option is deprecated, please usee "start" instead'
+              `To have better meaning under RTL layout, ${colors.magenta(
+                "navbarLayout.left"
+              )}" option is deprecated, please use ${colors.magenta(
+                "navbarLayout.start"
+              )} instead`
             );
             localeConfig["navbarLayout"]["start"] = localeConfig[
               "navbarLayout"
@@ -246,7 +310,11 @@ export const convertThemeOptions = (
 
           if ("right" in localeConfig["navbarLayout"]) {
             logger.warn(
-              'To have better meaning under RTL layout, "right" option is deprecated, please usee "end" instead'
+              `To have better meaning under RTL layout, ${colors.magenta(
+                "navbarLayout.right"
+              )}" option is deprecated, please use ${colors.magenta(
+                "navbarLayout.end"
+              )} instead`
             );
             localeConfig["navbarLayout"]["end"] = localeConfig["navbarLayout"][
               "right"
