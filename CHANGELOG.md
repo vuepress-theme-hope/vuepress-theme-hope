@@ -446,7 +446,7 @@ All notable changes to this project will be documented in this file. See [Conven
 
 ### ⚠ BREAKING CHANGES
 
-- **theme:** plugin.components no longer accpet an array
+- **theme:** plugin.components no longer accepts an array
 - **components:** rebuild component options
 
 ### Features

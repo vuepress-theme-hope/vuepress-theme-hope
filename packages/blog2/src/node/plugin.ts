@@ -14,10 +14,15 @@ import { getPageMap, logger } from "./utils.js";
 
 import type { PluginFunction } from "@vuepress/core";
 import type { BlogOptions, PageWithExcerpt } from "./options.js";
+import { convertOptions } from "./compact.js";
 
 export const blogPlugin =
-  (options: BlogOptions): PluginFunction =>
+  (options: BlogOptions, legacy = true): PluginFunction =>
   (app) => {
+    // TODO: remove in V2 Stable
+    if (legacy)
+      convertOptions(options as BlogOptions & Record<string, unknown>);
+
     const {
       getInfo = (): Record<string, never> => ({}),
       filter = (page): boolean =>

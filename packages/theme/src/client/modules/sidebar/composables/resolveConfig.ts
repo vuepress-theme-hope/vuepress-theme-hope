@@ -147,7 +147,11 @@ export const resolveMultiSidebarItems = (
 
       return matchedConfig
         ? resolveArraySidebarItems(
-            matchedConfig === "structure" ? sidebarData[base] : matchedConfig,
+            matchedConfig === "structure"
+              ? sidebarData[base]
+              : matchedConfig === "heading"
+              ? resolveHeadingSidebarItems(headerDepth)
+              : matchedConfig,
             headerDepth,
             base
           )
