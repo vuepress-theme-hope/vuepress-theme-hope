@@ -6,7 +6,6 @@
   // NOTE: Compatible with Android Wechat
   // inset-inline-start: 0;
   left: 0;
-  z-index: 125;
 
   overflow-y: auto;
 
@@ -33,6 +32,8 @@
 
   // on mobile
   @media (max-width: hope-config.$tablet) {
+    z-index: 125;
+
     // a collapsed sidebar should not have box shadow
     box-shadow: none;
 
