@@ -7,7 +7,7 @@ import { colors } from "@vuepress/utils";
 const DEPRECATED_FRONTMATTER_OPTIONS: [string, string][] = [
   ["authors", "author"],
   ["categories", "category"],
-  ["tags", "tags"],
+  ["tags", "tag"],
   ["time", "date"],
   ["visitor", "pageview"],
   ["sidebarDepth", "headerDepth"],
