@@ -1,3 +1,4 @@
+import { isPlainObject } from "@vuepress/shared";
 import { injectLocalizedDate } from "vuepress-shared/node";
 import { convertFrontmatter } from "../compact/index.js";
 import { checkFrontmatter } from "../frontmatter/check.js";
@@ -42,7 +43,14 @@ export const injectPageInfo = (page: Page<ThemePageData>): void => {
   if ("icon" in frontmatter)
     page.routeMeta[ArticleInfoType.icon] = frontmatter.icon;
 
-  if ("order" in frontmatter) page.routeMeta["order"] = frontmatter.order;
+  // catalog related
+  if (isPlainObject(frontmatter.dir) && "order" in frontmatter.dir)
+    page.routeMeta["order"] = (
+      frontmatter as ThemeNormalPageFrontmatter
+    ).dir!.order;
+  else if ("order" in frontmatter) page.routeMeta["order"] = frontmatter.order;
+  if ("index" in frontmatter && frontmatter.index === false)
+    page.routeMeta["index"] === false;
 
   // resolve shortTitle
   if ("shortTitle" in frontmatter)
