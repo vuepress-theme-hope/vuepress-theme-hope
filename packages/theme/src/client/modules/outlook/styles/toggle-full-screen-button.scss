@@ -1,5 +1,11 @@
 @use "vuepress-shared/styles/reset";
 
+.full-screen-wrapper {
+  @media print {
+    display: none;
+  }
+}
+
 .full-screen-title {
   display: block;
 

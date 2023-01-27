@@ -23,7 +23,7 @@ export default defineComponent({
 
     return (): VNode | null =>
       isSupported
-        ? h("div", { class: "fullscreen-wrapper" }, [
+        ? h("div", { class: "full-screen-wrapper" }, [
             h(
               "label",
               { class: "full-screen-title", for: "full-screen-switch" },
