@@ -1,7 +1,10 @@
+import { createRequire } from "node:module";
 import { CLIENT_FOLDER } from "../utils.js";
 
 import type { App } from "@vuepress/core";
 import type { MarkdownEnhanceOptions } from "../options.js";
+
+const require = createRequire(import.meta.url);
 
 export const prepareConfigFile = async (
   app: App,
@@ -36,11 +39,16 @@ app.component("CodeTabs", CodeTabs);
     // TODO: Remove this in v2 stable
     if (legacy) {
       configImport += `\
+import { hasGlobalComponent } from "${require.resolve(
+        "vuepress-shared/client"
+      )}";
 import { CodeGroup, CodeGroupItem } from "${CLIENT_FOLDER}compact/index.js";
 `;
       enhance += `\
-app.component("CodeGroup", CodeGroup);
-app.component("CodeGroupItem", CodeGroupItem);
+if(!hasGlobalComponent("CodeGroup", app))
+  app.component("CodeGroup", CodeGroup);
+if(!hasGlobalComponent("CodeGroupItem", app))
+  app.component("CodeGroupItem", CodeGroupItem);
 `;
     }
   }
