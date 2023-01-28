@@ -46,4 +46,15 @@ export const convertOptions = (
     deprecatedOption: "backToTopLocales",
     newOption: "locales.backToTop",
   });
+
+  if ((options.components as unknown[])?.includes("Catalog"))
+    logger.warn(
+      `${colors.cyan(
+        "Catalog"
+      )} component is deprecated, please use ${colors.cyan(
+        "AutoCatalog"
+      )} component from ${colors.magenta(
+        "vuepress-plugin-auto-catalog"
+      )} instead.`
+    );
 };

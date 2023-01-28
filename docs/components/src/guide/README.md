@@ -14,7 +14,7 @@ For example, if you call this plugin with `{ rootComponents: { backToTop: true }
 
 :::
 
-This plugin support 13 components:
+This plugin support 12 components:
 
 - [ArtPlayer](artplayer.md)
 
@@ -23,8 +23,6 @@ This plugin support 13 components:
 - [Badge](badge.md)
 
 - [BiliBili](bilibili.md)
-
-- [Catalog](catalog.md)
 
 - [CodePen](codepen.md)
 

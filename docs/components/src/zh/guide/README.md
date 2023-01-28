@@ -14,7 +14,7 @@ index: false
 
 :::
 
-此插件支持 13 个组件:
+此插件支持 12 个组件:
 
 - [ArtPlayer](artplayer.md)
 
@@ -23,8 +23,6 @@ index: false
 - [BiliBili](bilibili.md)
 
 - [Badge](badge.md)
-
-- [Catalog](catalog.md)
 
 - [CodePen](codepen.md)
 

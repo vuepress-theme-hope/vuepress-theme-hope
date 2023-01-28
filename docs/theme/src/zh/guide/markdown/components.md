@@ -16,7 +16,6 @@ tag:
 - AudioPlayer
 - Badge
 - BiliBili
-- Catalog
 - CodePen
 - FontIcon
 - PDF
@@ -49,7 +48,6 @@ export default defineUserConfig({
           "AudioPlayer",
           "Badge",
           "BiliBili",
-          "Catalog",
           "CodePen",
           "PDF",
           "StackBlitz",
@@ -77,7 +75,6 @@ export default {
           "AudioPlayer",
           "Badge",
           "BiliBili",
-          "Catalog",
           "CodePen",
           "PDF",
           "StackBlitz",
@@ -231,26 +228,6 @@ export default {
 ```
 
 有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/bilibili.html">BiliBili</ProjectLink> 页面。
-
-## Catalog
-
-一个展示目录的组件。
-
-主页目录:
-
-<!-- markdownlint-disable MD033 -->
-
-<div class="catalog-display-container">
-  <Catalog base='/zh/' />
-</div>
-
-<!-- markdownlint-enable MD033 -->
-
-```md
-<Catalog base='/zh/' />
-```
-
-有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/catalog.html">Catalog</ProjectLink> 页面。
 
 ## CodePen
 

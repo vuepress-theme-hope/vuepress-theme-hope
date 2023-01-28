@@ -1,7 +1,7 @@
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
 import { extendsBundlerOptions } from "./bundler.js";
-import { convertOptions } from "./convert/index.js";
+import { convertOptions } from "./compact/index.js";
 import { getDefine } from "./define.js";
 import { prepareConfigFile } from "./prepare.js";
 import { logger } from "./utils.js";
@@ -23,10 +23,10 @@ export const componentsPlugin =
     return {
       name: "vuepress-plugin-components",
 
-      define: getDefine(options),
+      define: getDefine(options, legacy),
 
       extendsBundlerOptions,
 
-      clientConfigFile: (app) => prepareConfigFile(app, options),
+      clientConfigFile: (app) => prepareConfigFile(app, options, legacy),
     };
   };

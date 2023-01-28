@@ -54,7 +54,6 @@ export default theme("theme", {
         "AudioPlayer",
         "Badge",
         "BiliBili",
-        "Catalog",
         "CodePen",
         "PDF",
         "SiteInfo",

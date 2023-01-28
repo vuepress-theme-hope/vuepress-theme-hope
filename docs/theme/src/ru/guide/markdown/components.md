@@ -16,7 +16,6 @@ tag:
 - AudioPlayer
 - Badge
 - BiliBili
-- Catalog
 - CodePen
 - FontIcon
 - PDF
@@ -49,7 +48,6 @@ export default defineUserConfig({
           "AudioPlayer",
           "Badge",
           "BiliBili",
-          "Catalog",
           "CodePen",
           "PDF",
           "StackBlitz",
@@ -77,7 +75,6 @@ export default {
           "AudioPlayer",
           "Badge",
           "BiliBili",
-          "Catalog",
           "CodePen",
           "PDF",
           "StackBlitz",
@@ -231,26 +228,6 @@ See <ProjectLink name="components" path="/guide/audioplayer.html">AudioPlayer</P
 ```
 
 Смотрите страницу <ProjectLink name="components" path="/guide/bilibili.html">BiliBili</ProjectLink> для доступных свойств.
-
-## Catalog
-
-A component which display catalog.
-
-Home page catalog:
-
-<!-- markdownlint-disable MD033 -->
-
-<div class="catalog-display-container">
-  <Catalog base='/ru/' />
-</div>
-
-<!-- markdownlint-enable MD033 -->
-
-```md
-<Catalog base='/ru/' />
-```
-
-See <ProjectLink name="components" path="/guide/catalog.html">Catalog</ProjectLink> page for available props.
 
 ## CodePen
 

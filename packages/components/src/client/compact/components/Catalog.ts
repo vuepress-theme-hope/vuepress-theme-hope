@@ -3,11 +3,11 @@ import { computed, defineComponent, h } from "vue";
 import { RouterLink, useRoute, useRouter } from "vue-router";
 import { useLocaleConfig } from "vuepress-shared/client";
 
-import FontIcon from "./FontIcon.js";
+import FontIcon from "../../components/FontIcon.js";
 
 import type { PropType, VNode } from "vue";
 import type { RouteMeta } from "vue-router";
-import type { CatalogLocaleConfig } from "../../shared/locales.js";
+import type { CatalogLocaleConfig } from "../../../shared/index.js";
 
 import "../styles/catalog.scss";
 

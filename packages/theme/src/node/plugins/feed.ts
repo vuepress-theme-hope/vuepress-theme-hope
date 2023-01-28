@@ -10,12 +10,14 @@ const themeComponents = [
   // @vuepress/plugin-external-link
   "ExternalLinkIcon",
 
+  // vuepress-plugin-auto-catalog
+  "AutoCatalog",
+
   // vuepress-plugin-components
   "ArtPlayer",
   "AudioPlayer",
   "Badge",
   "BiliBili",
-  "Catalog",
   "CodePen",
   "FontIcon",
   "PDF",

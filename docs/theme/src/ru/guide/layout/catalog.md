@@ -20,3 +20,19 @@ You can use `plugin.autoCatalog` in theme options to control this feature. If yo
 You can use `plugin.autoCatalog.exclude` to exclude some folders from catalog generation, and you can use `plugin.autoCatalog.frontmatter` to control frontmatter generation.
 
 For more details, see <ProjectLink name="auto-catalog">Auto Catalog Plugin Docs</ProjectLink>.
+
+## Demo
+
+Home page catalog:
+
+<!-- markdownlint-disable MD033 -->
+
+<div class="catalog-display-container">
+  <Catalog base='/' />
+</div>
+
+<!-- markdownlint-enable MD033 -->
+
+```md
+<Catalog base='/' />
+```

@@ -1267,6 +1267,9 @@ importers:
       vue:
         specifier: 3.2.45
         version: 3.2.45
+      vue-router:
+        specifier: 4.1.6
+        version: 4.1.6(vue@3.2.45)
       vuepress-plugin-components:
         specifier: workspace:*
         version: link:../components

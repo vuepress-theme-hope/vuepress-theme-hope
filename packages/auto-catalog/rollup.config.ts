@@ -12,4 +12,15 @@ export default [
       "vuepress-plugin-sass-palette",
     ],
   }),
+  ...rollupTypescript("client/config", {
+    external: [
+      "@vuepress/client",
+      "vue",
+      "vue-router",
+      "vuepress-shared/client",
+      /^vuepress-plugin-components\/client\//,
+      /\.scss$/,
+    ],
+    copy: [["client/styles", "client"]],
+  }),
 ];

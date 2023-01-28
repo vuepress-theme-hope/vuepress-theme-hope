@@ -13,7 +13,6 @@ icon: gears
     | "AudioPlayer"
     | "Badge"
     | "BiliBili"
-    | "Catalog"
     | "CodePen"
     | "FontIcon"
     | "PDF"
@@ -34,7 +33,6 @@ Available component names:
 - `"AudioPlayer"`
 - `"Badge"`
 - `"BiliBili"`
-- `"Catalog"`
 - `"CodePen"`
 - `"FontIcon"`
 - `"PDF"`
@@ -219,27 +217,6 @@ Component locales.
 - Required: No
 
 Locales config for BackToTop button.
-
-### locales.catalog
-
-- Type: `CatalogLocaleConfig`
-
-  ```ts
-  interface CatalogLocaleData {
-    /**
-     * Catalog title
-     */
-    title: string;
-  }
-
-  interface CatalogLocaleConfig {
-    [localePath: string]: CatalogLocaleData;
-  }
-  ```
-
-- Required: No
-
-Locales config for catalog component.
 
 ### locales.pdf
 

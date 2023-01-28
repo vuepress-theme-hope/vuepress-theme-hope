@@ -11,6 +11,17 @@ export default [
     ],
     copy: [["client/styles", "client"]],
   }),
+  ...rollupTypescript("client/compact/components/Catalog", {
+    external: [
+      "@vuepress/client",
+      "vue",
+      "vue-router",
+      "vuepress-shared/client",
+      /\.scss$/,
+    ],
+    copy: [["client/compact/styles", "client/compact"]],
+    dtsExternal: [/\.scss$/],
+  }),
   ...rollupTypescript("client/components/ArtPlayer", {
     external: [
       "@vuepress/client",
@@ -60,16 +71,7 @@ export default [
     ],
     dtsExternal: [/\.scss$/],
   }),
-  ...rollupTypescript("client/components/Catalog", {
-    external: [
-      "@vuepress/client",
-      "vue",
-      "vue-router",
-      "vuepress-shared/client",
-      /\.scss$/,
-    ],
-    dtsExternal: [/\.scss$/],
-  }),
+
   ...rollupTypescript("client/components/CodePen", {
     external: ["@vueuse/core", "vue", /\.scss$/],
     dtsExternal: [/\.scss$/],

@@ -3,14 +3,9 @@ title: Options
 icon: gears
 ---
 
-## component
+## Plugin Options
 
-- Type: `string`
-- Default: `"AutoCatalog"`
-
-Catalog component name.
-
-## level
+### level
 
 - Type: `1 | 2 | 3`
 - Default: `3`
@@ -23,34 +18,41 @@ Only available when you use the built-in catalog component.
 
 :::
 
-## exclude
+### exclude
 
 - Type: `(RegExp | string)[]`
 - Default: `[]`
 
 Page paths excluding from auto generation.
 
-## frontmatter
+### frontmatter
 
 - Type: `(path: string) => Record<string, any>`
 - Required: No
 
 Page Frontmatter generator.
 
+### component
+
+- Type: `string`
+- Required: No
+
+Catalog component name.
+
 ### locales
 
-- Type: `CatalogLocaleConfig`
+- Type: `AutoCatalogLocaleConfig`
 
   ```ts
-  interface CatalogLocaleData {
+  interface AutoCatalogLocaleData {
     /**
      * Catalog title
      */
     title: string;
   }
 
-  interface CatalogLocaleConfig {
-    [localePath: string]: CatalogLocaleData;
+  interface AutoCatalogLocaleConfig {
+    [localePath: string]: AutoCatalogLocaleData;
   }
   ```
 
@@ -79,3 +81,47 @@ Locales config for catalog component.
 - **Finnish** (fi-FI)
 
 :::
+
+## AutoCatalog Component Props
+
+### base
+
+- Type: `string`
+- Default: `Current route path base`
+
+Catalog Base
+
+### level
+
+- Type: `1 | 2 | 3`
+- Default: `3`
+
+Max level of catalog.
+
+### titleGetter
+
+- Type: `(meta: RouteMeta) => string`
+- Default: `(meta: RouteMeta) => meta["title"]`
+
+Page title getter
+
+### iconGetter
+
+- Type: `(meta: RouteMeta) => string`
+- Default: `(meta: RouteMeta) => meta["icon"]`
+
+Page icon getter
+
+### orderGetter
+
+- Type: `(meta: RouteMeta) => string`
+- Default: `(meta: RouteMeta) => meta["order"]`
+
+Page order getter
+
+### shouldIndex
+
+- Type: `(meta: RouteMeta) => boolean`
+- Default: `(meta: RouteMeta) => meta["index"] !== false`
+
+Whether page should be indexed getter

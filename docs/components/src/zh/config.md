@@ -13,7 +13,6 @@ icon: gears
     | "AudioPlayer"
     | "Badge"
     | "BiliBili"
-    | "Catalog"
     | "CodePen"
     | "FontIcon"
     | "PDF"
@@ -34,7 +33,6 @@ icon: gears
 - `"AudioPlayer"`
 - `"Badge"`
 - `"BiliBili"`
-- `"Catalog"`
 - `"CodePen"`
 - `"FontIcon"`
 - `"PDF"`
@@ -217,27 +215,6 @@ AddThis 的公开 ID。
 - 必填: 否
 
 返回顶部按钮国际化配置。
-
-### locales.catalog
-
-- 类型: `CatalogLocaleConfig`
-
-  ```ts
-  interface CatalogLocaleData {
-    /**
-     * 目录标题
-     */
-    title: string;
-  }
-
-  interface CatalogLocaleConfig {
-    [localePath: string]: CatalogLocaleData;
-  }
-  ```
-
-- 必填: 否
-
-目录组件国际化配置。
 
 ### locales.pdf
 

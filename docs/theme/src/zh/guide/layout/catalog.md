@@ -20,3 +20,19 @@ VuePress Theme Hope 默认使用 <ProjectLink name="auto-catalog" path="/zh/">`v
 你可以使用 `plugin.autoCatalog.exclude` 从目录生成中排除一些文件夹，也可以使用 `plugin.autoCatalog.frontmatter` 来控制 frontmatter 的生成。
 
 有关详细信息，请参阅 <ProjectLink name="auto-catalog" path="/zh/">Auto Catalog 插件文档</ProjectLink>。
+
+## 示例
+
+主页目录:
+
+<!-- markdownlint-disable MD033 -->
+
+<div class="catalog-display-container">
+  <Catalog base='/zh/' />
+</div>
+
+<!-- markdownlint-enable MD033 -->
+
+```md
+<Catalog base='/zh/' />
+```

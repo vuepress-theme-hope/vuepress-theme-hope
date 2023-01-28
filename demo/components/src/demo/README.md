@@ -14,8 +14,6 @@
 
 - [BiliBili](bilibili.md)
 
-- [Catalog](catalog.md)
-
 - [CodePen](codepen.md)
 
 - [FontIcon](fonticon.md)

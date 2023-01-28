@@ -1,6 +1,6 @@
-import type { CatalogLocaleConfig } from "../../shared/index.js";
+import type { AutoCatalogLocaleConfig } from "../shared/index.js";
 
-export const catalogLocales: CatalogLocaleConfig = {
+export const locales: AutoCatalogLocaleConfig = {
   "/en/": {
     title: "Catalog",
   },

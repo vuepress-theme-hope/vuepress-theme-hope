@@ -1,5 +1,5 @@
 import type { LocaleConfig, Page, PageFrontmatter } from "@vuepress/core";
-import type { CatalogLocaleData } from "vuepress-plugin-components";
+import type { AutoCatalogLocaleData } from "../shared/index.js";
 
 export interface AutoCatalogOptions {
   /**
@@ -157,8 +157,6 @@ export interface AutoCatalogOptions {
    * 用作目录的组件名称
    *
    * @description 默认情况下，插件将注册一个 `<AutoCatalog />` 组件并使用该组件。如果你想使用自己的组件，可以将此选项设置为你的组件的名称。
-   *
-   * @default "AutoCatalog"
    */
   component?: string;
 
@@ -167,5 +165,5 @@ export interface AutoCatalogOptions {
    *
    * 目录组件国际化配置
    */
-  locales?: LocaleConfig<CatalogLocaleData>;
+  locales?: LocaleConfig<AutoCatalogLocaleData>;
 }

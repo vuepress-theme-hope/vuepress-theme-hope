@@ -11,7 +11,8 @@ export const prepareConfigFile = (
     components = [],
     componentOptions = {},
     rootComponents = {},
-  }: ComponentOptions
+  }: ComponentOptions,
+  legacy: boolean
 ): Promise<string> => {
   let configImport = "";
   let enhance = "";
@@ -43,6 +44,15 @@ if(!hasGlobalComponent("${item}")) app.component("${item}", ${item});
 
         setup += content;
       });
+
+    if (legacy && (item as unknown) === "Catalog") {
+      configImport += `\
+import Catalog from "${CLIENT_FOLDER}compact/components/Catalog.js";
+`;
+      enhance += `\
+if(!hasGlobalComponent("Catalog")) app.component("Catalog", Catalog);
+`;
+    }
   });
 
   if (isString(rootComponents.addThis)) {

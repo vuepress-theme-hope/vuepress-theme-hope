@@ -3,14 +3,9 @@ title: 选项
 icon: gears
 ---
 
-## component
+## 插件选项
 
-- 类型: `string`
-- 默认值: `"AutoCatalog"`
-
-目录组件名称。
-
-## level
+### level
 
 - 类型: `1 | 2 | 3`
 - 默认值: `3`
@@ -23,34 +18,41 @@ icon: gears
 
 :::
 
-## exclude
+### exclude
 
 - 类型: `(RegExp | string)[]`
 - 默认值: `[]`
 
 不会自动生成的页面路径。
 
-## frontmatter
+### frontmatter
 
 - 类型: `(path: string) => Record<string, any>`
 - 必填: 否
 
 控制页面 Frontmatter。
 
+### component
+
+- 类型: `string`
+- 必填: 否
+
+使用的目录组件名称。
+
 ### locales
 
-- 类型: `CatalogLocaleConfig`
+- 类型: `AutoCatalogLocaleConfig`
 
   ```ts
-  interface CatalogLocaleData {
+  interface AutoCatalogLocaleData {
     /**
      * 目录标题
      */
     title: string;
   }
 
-  interface CatalogLocaleConfig {
-    [localePath: string]: CatalogLocaleData;
+  interface AutoCatalogLocaleConfig {
+    [localePath: string]: AutoCatalogLocaleData;
   }
   ```
 
@@ -79,3 +81,47 @@ icon: gears
 - **芬兰语** (fi-FI)
 
 :::
+
+## AutoCatalog 组件属性
+
+### base
+
+- 类型: `string`
+- 必填: `当前路由的基础路径`
+
+目录基础路径
+
+### level
+
+- 类型: `1 | 2 | 3`
+- 默认值: `3`
+
+Catalog 的最大层级
+
+### titleGetter
+
+- 类型: `(meta: RouteMeta) => string`
+- 默认值: `(meta: RouteMeta) => meta["title"]`
+
+页面标题获取器
+
+### iconGetter
+
+- 类型: `(meta: RouteMeta) => string`
+- 默认值: `(meta: RouteMeta) => meta["icon"]`
+
+页面图标获取器
+
+### orderGetter
+
+- 类型: `(meta: RouteMeta) => string`
+- 默认值: `(meta: RouteMeta) => meta["order"]`
+
+页面顺序获取器
+
+### shouldIndex
+
+- 类型: `(meta: RouteMeta) => boolean`
+- 默认值: `(meta: RouteMeta) => meta["index"] !== false`
+
+页面是否应该被索引
