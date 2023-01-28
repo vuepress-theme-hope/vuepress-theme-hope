@@ -84,11 +84,11 @@
   }
 
   @media (max-width: hope-config.$tablet) {
+    flex-basis: calc(100%);
     font-size: 0.95rem;
   }
 
   @media (max-width: hope-config.$mobile) {
-    flex-basis: calc(100%);
     margin: 0.5rem 0;
     font-size: 0.9rem;
   }
