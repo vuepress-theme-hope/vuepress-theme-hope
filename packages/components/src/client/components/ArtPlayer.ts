@@ -83,13 +83,13 @@ declare const ART_PLAYER_OPTIONS: ArtPlayerOptions;
 
 const getLang = (lang: string): string => {
   const langCode = lang.toLowerCase();
-  const langName = lang.split("-")[0]!;
+  const langName = langCode.split("-")[0]!;
 
-  return SUPPORTED_LANG_NAME.includes(langName)
-    ? langName
-    : SUPPORTED_LANG_CODE.includes(langCode)
+  return SUPPORTED_LANG_CODE.includes(langCode)
     ? langCode
-    : langCode === "zh"
+    : SUPPORTED_LANG_NAME.includes(langName)
+    ? langName
+    : langName === "zh"
     ? "zh-cn"
     : "en";
 };

@@ -3,7 +3,10 @@ import type { CommentOptions } from "../shared/index.js";
 
 /** @deprecated */
 export const convertOptions = (
-  options: CommentOptions & Record<string, unknown>
+  options: CommentOptions & {
+    /** @deprecated */
+    type?: "waline" | "giscus" | "twikoo" | "none";
+  }
 ): void => {
   // v2 changes
   if ("type" in options) {

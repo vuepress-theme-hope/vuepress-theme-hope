@@ -31,4 +31,4 @@ export const encodeXML = (content: ElementCompact): ElementCompact =>
 
       return [key, encodeXMLContent(String(value))];
     })
-  ) as ElementCompact;
+  ) satisfies ElementCompact;

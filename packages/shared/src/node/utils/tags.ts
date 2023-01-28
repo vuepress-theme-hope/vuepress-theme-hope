@@ -2,7 +2,9 @@
  * Copied from https://github.com/vuejs/core/blob/b2bac9fa1763ab895f9bea18ef83d58673e1a4ec/packages/shared/src/domTagConfig.ts#L6-L28
  */
 
-// https://developer.mozilla.org/en-US/docs/Web/HTML/Element
+/**
+ * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element
+ */
 export const HTML_TAGS = (
   "html,body,base,head,link,meta,style,title,address,article,aside,footer," +
   "header,h1,h2,h3,h4,h5,h6,nav,section,div,dd,dl,dt,figcaption," +
@@ -15,7 +17,9 @@ export const HTML_TAGS = (
   "summary,template,blockquote,iframe,tfoot"
 ).split(",");
 
-// https://developer.mozilla.org/en-US/docs/Web/SVG/Element
+/**
+ * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Element
+ */
 export const SVG_TAGS = (
   "svg,animate,animateMotion,animateTransform,circle,clipPath,color-profile," +
   "defs,desc,discard,ellipse,feBlend,feColorMatrix,feComponentTransfer," +
@@ -27,4 +31,15 @@ export const SVG_TAGS = (
   "mesh,meshgradient,meshpatch,meshrow,metadata,mpath,path,pattern," +
   "polygon,polyline,radialGradient,rect,set,solidcolor,stop,switch,symbol," +
   "text,textPath,title,tspan,unknown,use,view"
+).split(",");
+
+/**
+ * @see https://developer.mozilla.org/en-US/docs/Web/MathML/Element
+ */
+export const MATHML_TAGS = (
+  "math,maction,maligngroup,malignmark,menclose,merror,mfenced,mfrac,mglyph," +
+  "mi,mlabeledtr,mlongdiv,mmutiscripts,mn,mo,mover,mpadded,mphantom,mroot," +
+  "mrow,ms,mscarries,mscarry,msgroup,msline,mspace,msqrt,msrow,mstack,mstyle," +
+  "msub,msup,msubsup,mtable,mtd,mtext,mtr,munder,munderover,semantics," +
+  "annotation,annotation-xml"
 ).split(",");

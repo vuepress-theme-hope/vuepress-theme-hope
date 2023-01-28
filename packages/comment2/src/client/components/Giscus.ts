@@ -16,25 +16,28 @@ import "../styles/giscus.scss";
 
 declare const COMMENT_OPTIONS: GiscusOptions;
 
+const SUPPORTED_LANGUAGES = [
+  "de",
+  "gsw",
+  "en",
+  "es",
+  "fr",
+  "id",
+  "it",
+  "ja",
+  "ko",
+  "pl",
+  "ro",
+  "ru",
+  "tr",
+  "vi",
+  "zh-CN",
+  "zh-TW",
+] as const;
+
 type BooleanString = "0" | "1";
 
-export type GiscusLang =
-  | "de"
-  | "gsw"
-  | "en"
-  | "es"
-  | "fr"
-  | "id"
-  | "it"
-  | "ja"
-  | "ko"
-  | "pl"
-  | "ro"
-  | "ru"
-  | "tr"
-  | "vi"
-  | "zh-CN"
-  | "zh-TW";
+export type GiscusLang = (typeof SUPPORTED_LANGUAGES)[number];
 
 export type GiscusLoading = "lazy" | "eager";
 
@@ -62,25 +65,6 @@ const enableGiscus = Boolean(
     giscusOption.category &&
     giscusOption.categoryId
 );
-
-const SUPPORTED_LANGUAGES: GiscusLang[] = [
-  "de",
-  "gsw",
-  "en",
-  "es",
-  "fr",
-  "id",
-  "it",
-  "ja",
-  "ko",
-  "pl",
-  "ro",
-  "ru",
-  "tr",
-  "vi",
-  "zh-CN",
-  "zh-TW",
-];
 
 export default defineComponent({
   name: "GiscusComment",

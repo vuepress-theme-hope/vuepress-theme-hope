@@ -18,8 +18,10 @@ export const shebangPlugin = (): Plugin => {
       const match = hashBangRegex.exec(code);
 
       if (match) {
-        // @ts-ignore
-        const str = new MagicString(code) as MagicString.default;
+        // FIXME: This is an issue of ts NodeNext
+        const str = new (MagicString as unknown as typeof MagicString.default)(
+          code
+        );
 
         str.remove(match.index, match[1].length);
         shebangMap.set(id, match[1]);
@@ -40,8 +42,9 @@ export const shebangPlugin = (): Plugin => {
         );
 
         if (key) {
-          // @ts-ignore
-          const str = new MagicString(code) as MagicString.default;
+          // FIXME: This is an issue of ts NodeNext
+          const str =
+            new (MagicString as unknown as typeof MagicString.default)(code);
 
           str.prepend(`${shebangMap.get(key)!}\n`);
 

@@ -12,38 +12,38 @@ declare const COMMENT_OPTIONS: CommentOptions;
 
 const enableComment = COMMENT_OPTIONS.comment !== false;
 
-export default defineClientConfig({
-  enhance: ({ app }) => {
-    const CommentService = defineComponent({
-      name: "CommentService",
+const CommentService = defineComponent({
+  name: "CommentService",
 
-      props: {
-        /**
-         * Whether the component is in darkmode
-         *
-         * 组件是否处于夜间模式
-         */
-        darkmode: Boolean,
-      },
+  props: {
+    /**
+     * Whether the component is in darkmode
+     *
+     * 组件是否处于夜间模式
+     */
+    darkmode: Boolean,
+  },
 
-      setup(props) {
-        const frontmatter = usePageFrontmatter<CommentPluginFrontmatter>();
+  setup(props) {
+    const frontmatter = usePageFrontmatter<CommentPluginFrontmatter>();
 
-        const enabled = computed(() => {
-          return (
-            frontmatter.value.comment ||
-            (enableComment && frontmatter.value.comment !== false)
-          );
-        });
-
-        return (): VNode | null =>
-          h(CommentProvider, {
-            darkmode: props.darkmode,
-            style: { display: enabled.value ? "block" : "none" },
-          });
-      },
+    const enabled = computed(() => {
+      return (
+        frontmatter.value.comment ||
+        (enableComment && frontmatter.value.comment !== false)
+      );
     });
 
+    return (): VNode | null =>
+      h(CommentProvider, {
+        darkmode: props.darkmode,
+        style: { display: enabled.value ? "block" : "none" },
+      });
+  },
+});
+
+export default defineClientConfig({
+  enhance: ({ app }) => {
     app.component("CommentService", CommentService);
   },
 });

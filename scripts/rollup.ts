@@ -5,12 +5,7 @@ import dts from "rollup-plugin-dts";
 import esbuild from "rollup-plugin-esbuild";
 import { shebangPlugin } from "./shebang.js";
 
-import type {
-  ModuleFormat,
-  Plugin,
-  RollupOptions,
-  RollupWarning,
-} from "rollup";
+import type { RollupOptions, RollupWarning } from "rollup";
 
 const isProduction = process.env["NODE_ENV"] === "production";
 
@@ -55,22 +50,26 @@ export const rollupTypescript = (
       ...(resolve
         ? [
             nodeResolve({ preferBuiltins: true }),
-            // @ts-ignore
-            commonjs() as Plugin,
+            // FIXME: This is an issue of ts NodeNext
+            (commonjs as unknown as typeof commonjs.default)(),
           ]
         : []),
-      // @ts-ignore
-      esbuild({ charset: "utf8", minify: isProduction, target: "node14" }),
+      // FIXME: This is an issue of ts NodeNext
+      (esbuild as unknown as typeof esbuild.default)({
+        charset: "utf8",
+        minify: isProduction,
+        target: "node14",
+      }),
       ...(copyOptions.length
         ? [
-            // @ts-ignore
-            copy({
+            // FIXME: This is an issue of ts NodeNext
+            (copy as unknown as typeof copy.default)({
               targets: copyOptions.map((item) =>
                 typeof item === "string"
                   ? { src: `./src/${item}`, dest: `./lib/${item}` }
                   : { src: `./src/${item[0]}`, dest: `./lib/${item[1]}` }
               ),
-            }) as Plugin,
+            }),
           ]
         : []),
     ],
@@ -92,9 +91,7 @@ export const rollupTypescript = (
     ? [
         {
           input: `./src/${filePath}.ts`,
-          output: [
-            { file: `./lib/${filePath}.d.ts`, format: "esm" as ModuleFormat },
-          ],
+          output: [{ file: `./lib/${filePath}.d.ts`, format: "esm" }],
           plugins: [
             dts({
               compilerOptions: {
@@ -103,7 +100,7 @@ export const rollupTypescript = (
             }),
           ],
           external: dtsExternal,
-        },
+        } satisfies RollupOptions,
       ]
     : []),
 ];

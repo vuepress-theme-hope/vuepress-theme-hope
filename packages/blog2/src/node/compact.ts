@@ -1,16 +1,22 @@
+import { colors } from "@vuepress/utils";
 import { logger } from "./utils.js";
 import type { BlogOptions } from "./options.js";
 
 /** @deprecated */
 export const convertOptions = (
-  options: BlogOptions & Record<string, unknown>
+  options: BlogOptions & {
+    /** @deprecated */
+    customElement?: (tagName: string) => boolean;
+  }
 ): void => {
   // v2 changes
   if ("customElement" in options) {
-    logger.warn(`"customElement" is deprecated, please use "isCustomElement".`);
+    logger.warn(
+      `${colors.magenta(
+        "customElement"
+      )} is deprecated, please use ${colors.magenta("isCustomElement")}.`
+    );
 
-    options["isCustomElement"] = options["customElement"] as (
-      tagName: string
-    ) => boolean;
+    options["isCustomElement"] = options["customElement"];
   }
 };

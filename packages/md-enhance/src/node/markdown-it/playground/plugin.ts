@@ -6,7 +6,7 @@ import type { RuleBlock } from "markdown-it/lib/parser_block.js";
 import type { PlaygroundData, PlaygroundOptions } from "../../typings/index.js";
 
 const AT_MARKER = `@`;
-const VALID_MARKERS = ["file", "import", "setting"];
+const VALID_MARKERS = ["file", "import", "setting"] as const;
 
 const getPlaygroundRule =
   (name: string): RuleBlock =>

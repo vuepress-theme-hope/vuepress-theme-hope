@@ -11,6 +11,7 @@ import type { PropType, VNode } from "vue";
 
 import "../styles/stack-blitz.scss";
 
+// FIXME: This is an issue of ts NodeNext
 const stackblitzSDK = sdk as unknown as typeof sdk.default;
 
 export default defineComponent({

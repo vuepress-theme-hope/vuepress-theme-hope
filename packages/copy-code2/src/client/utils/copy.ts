@@ -3,7 +3,8 @@ export const copyToClipboard = async (text: string): Promise<void> => {
     return navigator.clipboard.writeText(text);
   } catch {
     const element = document.createElement("textarea");
-    const previouslyFocusedElement = document.activeElement;
+    const previouslyFocusedElement =
+      document.activeElement as HTMLElement | null;
 
     element.value = text;
 
@@ -36,8 +37,6 @@ export const copyToClipboard = async (text: string): Promise<void> => {
     }
 
     // Get the focus back on the previously focused element, if any
-    if (previouslyFocusedElement) {
-      (previouslyFocusedElement as HTMLElement).focus();
-    }
+    if (previouslyFocusedElement) previouslyFocusedElement.focus();
   }
 };

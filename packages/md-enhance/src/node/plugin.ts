@@ -16,6 +16,7 @@ import { tasklist } from "@mdit/plugin-tasklist";
 import { isArray, isPlainObject } from "@vuepress/shared";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
+  MATHML_TAGS,
   addChainWebpack,
   addCustomElement,
   addViteConfig,
@@ -63,7 +64,6 @@ import {
   prepareMathjaxStyleFile,
   prepareRevealPluginFile,
 } from "./prepare/index.js";
-import { MATHML_TAGS } from "./utils.js";
 
 import type { PluginFunction } from "@vuepress/core";
 import type { MarkdownEnv } from "@vuepress/markdown";
