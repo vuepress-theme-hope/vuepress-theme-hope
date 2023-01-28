@@ -25,7 +25,7 @@ export const useAutoLink = (
     text:
       !preferFull && meta[ArticleInfoType.shortTitle]
         ? meta[ArticleInfoType.shortTitle]
-        : meta.title || item,
+        : meta[ArticleInfoType.title] || item,
     link: name === "404" ? item : fullPath,
     ...(meta[ArticleInfoType.icon] ? { icon: meta[ArticleInfoType.icon] } : {}),
   };

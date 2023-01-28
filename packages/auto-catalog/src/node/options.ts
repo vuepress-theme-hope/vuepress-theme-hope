@@ -1,4 +1,4 @@
-import type { LocaleConfig, PageFrontmatter } from "@vuepress/core";
+import type { LocaleConfig, Page, PageFrontmatter } from "@vuepress/core";
 import type { CatalogLocaleData } from "vuepress-plugin-components";
 
 export interface AutoCatalogOptions {
@@ -36,6 +36,118 @@ export interface AutoCatalogOptions {
    * @default 3
    */
   level?: number;
+
+  /**
+   * Page title getter
+   *
+   * 页面标题获取器
+   */
+  getTitle?: <
+    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
+      never,
+      never
+    >,
+    ExtraPageFrontmatter extends Record<
+      string | number | symbol,
+      unknown
+    > = Record<string, unknown>,
+    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
+      never,
+      never
+    >
+  >(
+    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+  ) => string;
+
+  /**
+   * @default 'title'
+   */
+  titleRouteMetaKey?: string;
+
+  /**
+   * Page icon getter
+   *
+   * 页面图标获取器
+   */
+  getIcon?: <
+    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
+      never,
+      never
+    >,
+    ExtraPageFrontmatter extends Record<
+      string | number | symbol,
+      unknown
+    > = Record<string, unknown>,
+    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
+      never,
+      never
+    >
+  >(
+    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+  ) => string | null | undefined;
+
+  /**
+   * @default 'i'
+   */
+  iconRouteMetaKey?: string;
+
+  /**
+   * Page order getter
+   *
+   * 页面顺序获取器
+   */
+  getOrder?: <
+    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
+      never,
+      never
+    >,
+    ExtraPageFrontmatter extends Record<
+      string | number | symbol,
+      unknown
+    > = Record<string, unknown>,
+    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
+      never,
+      never
+    >
+  >(
+    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+  ) => number | null | undefined;
+
+  /**
+   * @default 'O'
+   */
+  orderRouteMetaKey?: string;
+
+  /**
+   * Page index getter
+   *
+   * @description Returning a boolean value to indicate whether the page should be included in the catalog
+   *
+   * 页面索引获取器
+   *
+   * @description 返回一个布尔值，用于指示页面是否应该包含在目录中
+   */
+  getIndex?: <
+    ExtraPageData extends Record<string | number | symbol, unknown> = Record<
+      never,
+      never
+    >,
+    ExtraPageFrontmatter extends Record<
+      string | number | symbol,
+      unknown
+    > = Record<string, unknown>,
+    ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
+      never,
+      never
+    >
+  >(
+    page: Page<ExtraPageData, ExtraPageFrontmatter, ExtraPageFields>
+  ) => boolean;
+
+  /**
+   * @default 'I'
+   */
+  indexRouteMetaKey?: string;
 
   /**
    * Component name to use as catalog

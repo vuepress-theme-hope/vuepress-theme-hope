@@ -13,8 +13,13 @@ export const getAutoCatalogPlugin = (
   if (autoCatalog === false) return null;
 
   return autoCatalogPlugin({
-    // exclude auto generated page from articles
-    frontmatter: () => ({ article: false }),
+    // exclude auto generated page from articles, feed and sitemaps
+    frontmatter: () => ({ article: false, feed: false, sitemap: false }),
     ...(isPlainObject(autoCatalog) ? autoCatalog : {}),
+    // inject info
+    titleRouteMetaKey: "t",
+    iconRouteMetaKey: "i",
+    indexRouteMetaKey: "I",
+    orderRouteMetaKey: "O",
   });
 };

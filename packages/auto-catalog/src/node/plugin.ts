@@ -2,15 +2,31 @@ import { catalogLocales } from "vuepress-plugin-components";
 import { getLocales } from "vuepress-shared/node";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import { generateCatalog } from "./autoCatalog.js";
-import { CLIENT_FOLDER } from "./utils.js";
 
-import type { PluginFunction } from "@vuepress/core";
+import type { PageFrontmatter, PluginFunction } from "@vuepress/core";
 import type { AutoCatalogOptions } from "./options.js";
+import { prepareConfigFile } from "./prepare.js";
 
 export const autoCatalogPlugin =
-  (options: AutoCatalogOptions = {}): PluginFunction =>
+  ({
+    component = "AutoCatalog",
+    exclude = [],
+    frontmatter = (): PageFrontmatter => ({}),
+    getIcon,
+    iconRouteMetaKey = "i",
+    getIndex,
+    indexRouteMetaKey = "I",
+    level = 3,
+    locales,
+    getOrder,
+    orderRouteMetaKey = "O",
+    getTitle,
+    titleRouteMetaKey = "title",
+  }: AutoCatalogOptions = {}): PluginFunction =>
   (app) => {
     useSassPalettePlugin(app, { id: "hope" });
+
+    const shouldRegisterComponent = component === "AutoCatalog" || !component;
 
     return {
       name: "vuepress-plugin-auto-catalog",
@@ -20,15 +36,39 @@ export const autoCatalogPlugin =
           app,
           name: "catalog",
           default: catalogLocales,
-          config: options.locales,
+          config: locales,
         }),
-        SHOULD_REGISTER_AUTO_CATALOG_COMPONENT:
-          options.component === "AutoCatalog" || !options.component,
       }),
 
-      onInitialized: async (app): Promise<void> =>
-        generateCatalog(app, options),
+      extendsPage: (page): void => {
+        const data: Record<string, unknown> = {};
 
-      clientConfigFile: `${CLIENT_FOLDER}config.js`,
+        const pageTitle = getTitle?.(page);
+        const pageIcon = getIcon?.(page);
+        const pageOrder = getOrder?.(page);
+        const pageIndex = getIndex?.(page);
+
+        if (pageTitle) data[titleRouteMetaKey] = pageTitle;
+        if (pageIcon) data[iconRouteMetaKey] = pageIcon;
+        if (pageIndex !== false) data[indexRouteMetaKey] = 1;
+        if (pageOrder !== null) data[orderRouteMetaKey] = pageOrder;
+
+        page.routeMeta = { ...page.routeMeta, ...data };
+      },
+
+      onInitialized: async (app): Promise<void> =>
+        generateCatalog(app, { component, exclude, frontmatter, level }),
+
+      ...(shouldRegisterComponent
+        ? {
+            clientConfigFile: () =>
+              prepareConfigFile(app, {
+                titleRouteMetaKey,
+                iconRouteMetaKey,
+                indexRouteMetaKey,
+                orderRouteMetaKey,
+              }),
+          }
+        : {}),
     };
   };

@@ -5,6 +5,7 @@ import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import { TimelineIcon } from "@theme-hope/modules/blog/components/icons/index";
 import { useTimelines } from "@theme-hope/modules/blog/composables/index";
 import { useNavigate, useThemeLocaleData } from "@theme-hope/composables/index";
+import { ArticleInfoType } from "../../../../shared/index.js";
 
 import type { VNode } from "vue";
 
@@ -60,7 +61,7 @@ export default defineComponent({
                               class: "timeline-title",
                               to: path,
                             },
-                            () => info.title
+                            () => info[ArticleInfoType.title]
                           ),
                         ])
                       )

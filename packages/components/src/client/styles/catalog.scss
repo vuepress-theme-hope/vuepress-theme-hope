@@ -12,7 +12,7 @@
   }
 
   .main-title {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
   }
 
   .child-title {
@@ -40,6 +40,11 @@
     &:first-child {
       margin-bottom: 0.5rem;
     }
+  }
+
+  .font-icon {
+    vertical-align: baseline;
+    margin-inline-end: 0.25rem;
   }
 
   .child-catalog-wrapper {

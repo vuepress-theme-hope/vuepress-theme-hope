@@ -17,6 +17,8 @@ export const enum ArticleInfoType {
   excerpt = "e",
   sticky = "u",
   cover = "v",
+  index = "I",
+  order = "O",
 }
 
 export const enum PageType {
@@ -35,7 +37,7 @@ export interface ArticleInfo extends Record<string, unknown> {
   /**
    * Article title
    */
-  title: string;
+  [ArticleInfoType.title]: string;
 
   /**
    * Article short title
@@ -52,12 +54,12 @@ export interface ArticleInfo extends Record<string, unknown> {
    *
    * used in other functions, e.g.: sidebar and catalog
    */
-  index?: boolean;
+  [ArticleInfoType.index]?: boolean;
 
   /**
    * The order of this page in same directory
    */
-  order?: number;
+  [ArticleInfoType.order]?: number;
 
   /**
    * Article author

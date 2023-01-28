@@ -38,19 +38,28 @@ export const injectPageInfo = (page: Page<ThemePageData>): void => {
   // save relative file path into page data to generate edit link
   page.data.filePathRelative = filePathRelative;
 
-  page.routeMeta["title"] = page.title;
+  page.routeMeta[ArticleInfoType.title] = page.title;
 
   if ("icon" in frontmatter)
     page.routeMeta[ArticleInfoType.icon] = frontmatter.icon;
 
   // catalog related
-  if (isPlainObject(frontmatter.dir) && "order" in frontmatter.dir)
-    page.routeMeta["order"] = (
-      frontmatter as ThemeNormalPageFrontmatter
-    ).dir!.order;
-  else if ("order" in frontmatter) page.routeMeta["order"] = frontmatter.order;
-  if ("index" in frontmatter && frontmatter.index === false)
-    page.routeMeta["index"] === false;
+  if (isPlainObject(frontmatter.dir)) {
+    if ("order" in frontmatter.dir)
+      page.routeMeta[ArticleInfoType.order] = (
+        frontmatter as ThemeNormalPageFrontmatter
+      ).dir!.order;
+    if (
+      "index" in frontmatter.dir &&
+      (frontmatter as ThemeNormalPageFrontmatter).dir!.index === false
+    )
+      page.routeMeta[ArticleInfoType.index] === 0;
+  } else {
+    if ("order" in frontmatter)
+      page.routeMeta[ArticleInfoType.order] = frontmatter.order;
+    if ("index" in frontmatter && frontmatter.index === false)
+      page.routeMeta[ArticleInfoType.index] === 0;
+  }
 
   // resolve shortTitle
   if ("shortTitle" in frontmatter)
