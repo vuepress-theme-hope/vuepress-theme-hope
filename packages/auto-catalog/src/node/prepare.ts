@@ -1,4 +1,5 @@
 import { createRequire } from "node:module";
+import { path } from "@vuepress/utils";
 
 import type { App } from "@vuepress/core";
 
@@ -27,8 +28,10 @@ export default defineClientConfig({
         h(
           defineAsyncComponent(
             () =>
-              import("${require.resolve(
-                "vuepress-plugin-components/client/components/Catalog.js"
+              import("${path.resolve(
+                require.resolve(
+                  "vuepress-plugin-components/client/components/Catalog.js"
+                )
               )}")
           ),
           {

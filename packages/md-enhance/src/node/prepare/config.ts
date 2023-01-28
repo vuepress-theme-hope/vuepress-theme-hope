@@ -1,4 +1,5 @@
 import { createRequire } from "node:module";
+import { path } from "@vuepress/utils";
 import { CLIENT_FOLDER } from "../utils.js";
 
 import type { App } from "@vuepress/core";
@@ -39,8 +40,8 @@ app.component("CodeTabs", CodeTabs);
     // TODO: Remove this in v2 stable
     if (legacy) {
       configImport += `\
-import { hasGlobalComponent } from "${require.resolve(
-        "vuepress-shared/client"
+import { hasGlobalComponent } from "${path.resolve(
+        require.resolve("vuepress-shared/client")
       )}";
 import { CodeGroup, CodeGroupItem } from "${CLIENT_FOLDER}compact/index.js";
 `;
