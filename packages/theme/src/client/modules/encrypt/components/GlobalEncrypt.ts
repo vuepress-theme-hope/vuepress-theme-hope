@@ -1,4 +1,4 @@
-import { defineComponent, h } from "vue";
+import { defineComponent, h, onMounted, ref } from "vue";
 
 import FadeSlideY from "@theme-hope/components/transitions/FadeSlideY";
 import PasswordModal from "@theme-hope/modules/encrypt/components/PasswordModal";
@@ -10,13 +10,21 @@ export default defineComponent({
   name: "GlobalEncrypt",
 
   setup(_props, { slots }) {
-    const { isGlobalEncrypted, validateGlobalToken } = useGlobalEncrypt();
+    const { isEncrypted, validate } = useGlobalEncrypt();
+
+    const isMounted = ref(false);
+
+    onMounted(() => {
+      isMounted.value = true;
+    });
 
     return (): VNode =>
       h(FadeSlideY, () =>
-        isGlobalEncrypted.value
-          ? h(PasswordModal, { full: true, onVerify: validateGlobalToken })
-          : slots["default"]?.()
+        isMounted.value
+          ? isEncrypted.value
+            ? h(PasswordModal, { full: true, onVerify: validate })
+            : slots["default"]?.()
+          : null
       );
   },
 });

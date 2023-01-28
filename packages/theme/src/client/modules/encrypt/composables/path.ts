@@ -12,8 +12,8 @@ const STORAGE_KEY = "VUEPRESS_HOPE_PATH_TOKEN";
 
 export interface PathEncrypt {
   isEncrypted: ComputedRef<boolean>;
-  getPathEncryptStatus: (path: string) => boolean;
-  validateToken: (token: string, keep?: boolean) => void;
+  getStatus: (path: string) => boolean;
+  validate: (token: string, keep?: boolean) => void;
 }
 
 export const usePathEncrypt = (): PathEncrypt => {
@@ -33,7 +33,7 @@ export const usePathEncrypt = (): PathEncrypt => {
           .sort((a, b) => b.length - a.length)
       : [];
 
-  const getPathEncryptStatus = (path: string): boolean => {
+  const getStatus = (path: string): boolean => {
     const matchedKeys = getPathMatchedKeys(path);
 
     if (matchedKeys.length !== 0) {
@@ -55,9 +55,9 @@ export const usePathEncrypt = (): PathEncrypt => {
     return false;
   };
 
-  const isEncrypted = computed(() => getPathEncryptStatus(route.path));
+  const isEncrypted = computed(() => getStatus(route.path));
 
-  const validateToken = (inputToken: string, keep = false): void => {
+  const validate = (inputToken: string, keep = false): void => {
     const { config = {} } = encryptData.value;
     const matchedKeys = getPathMatchedKeys(route.path);
 
@@ -73,7 +73,7 @@ export const usePathEncrypt = (): PathEncrypt => {
 
   return {
     isEncrypted,
-    getPathEncryptStatus,
-    validateToken,
+    getStatus,
+    validate,
   };
 };
