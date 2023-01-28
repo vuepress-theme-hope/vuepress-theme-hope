@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.169](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.168...v2.0.0-beta.169) (2023-01-28)
+
+### Features
+
+- **theme:** hide fullscreen button on print mode ([cf39b6d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cf39b6dabb318ef0b07fbffd5d392eb235ab4d0d))
+
+### Bug Fixes
+
+- **md-enhance:** fix legacy mode for md-enhance ([953ecae](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/953ecae32ac8b532d525c57530ea2b5b224f2a8f))
+- **theme:** ensure nothing is rendered in ssr, fix [#2716](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2716) ([c1f2291](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c1f22911656f9fa01dff5d5e0d62f8e1b0521fc2))
+- **theme:** fix article order ([29a6839](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/29a68391c775147166b8112429e77c09466828c6))
+- **theme:** fix catalog issue ([2af65a8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2af65a88248ec48d2d786ea7edf01aabcf7f8189))
+- **theme:** fix deprecate msg ([c6bbf2b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c6bbf2b7ba132bc96e30755a6d285e6f33fd83ef))
+- **theme:** fix legacy homepage check ([c38b06c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c38b06cbe85591a21b23619aa2d5ed9e06e05972))
+- **theme:** fix sidebar z-index ([55d5424](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/55d54243e985236f58de0ec39684f380dc3f1bee))
+- **theme:** fix typos in meta inject ([7a8337c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7a8337c9b4b7e4a79088a2de20e5a530d1904241))
+- **theme:** improve homepage ([136f3cc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/136f3ccc0063f150085413c612ac4c0ae9917fb1))
+
 ## [2.0.0-beta.168](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.167...v2.0.0-beta.168) (2023-01-25)
 
 ### Features
