@@ -140,8 +140,6 @@ By default, we use jsdelivr CDN to load V6 version of fontawesome free icons. Th
 
 @tab TS
 
-@tab TS
-
 ```ts {8}
 // .vuepress/config.ts
 import { defineUserConfig } from "vuepress";
