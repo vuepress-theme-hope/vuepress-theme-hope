@@ -195,11 +195,12 @@ export const convertThemeOptions = (
   if (isPlainObject(themeOptions["blog"]) && themeOptions["blog"]) {
     handleBlogOptions(themeOptions["blog"] as Record<string, unknown>);
 
-    logger.warn(
-      `Blog feature is tree-shakable in v2, you should set ${colors.magenta(
-        "plugins.blog: true"
-      )} in theme options to enable it.`
-    );
+    if (!plugins["blog"])
+      logger.warn(
+        `Blog feature is tree-shakable in v2, you should set ${colors.magenta(
+          "plugins.blog: true"
+        )} in theme options to enable it.`
+      );
   }
 
   // handle component
