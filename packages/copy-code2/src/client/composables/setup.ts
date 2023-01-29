@@ -25,7 +25,6 @@
  * © 2019 GitHub, Inc.
  */
 
-import { isArray, isString } from "@vuepress/shared";
 import { onMounted, watch } from "vue";
 import { useRoute } from "vue-router";
 import { Message, useLocaleConfig } from "vuepress-shared/client";
@@ -82,16 +81,9 @@ export const setupCopyCode = (): void => {
 
   const generateCopyButton = (): void => {
     setTimeout(() => {
-      if (isString(copyCodeSelector))
-        document
-          .querySelectorAll<HTMLElement>(copyCodeSelector)
-          .forEach(insertCopyButton);
-      else if (isArray(copyCodeSelector))
-        copyCodeSelector.forEach((item) => {
-          document
-            .querySelectorAll<HTMLElement>(item)
-            .forEach(insertCopyButton);
-        });
+      copyCodeSelector.forEach((item) => {
+        document.querySelectorAll<HTMLElement>(item).forEach(insertCopyButton);
+      });
     }, copyCodeDelay || 500);
   };
 

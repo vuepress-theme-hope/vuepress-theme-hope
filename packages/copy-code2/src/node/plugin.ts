@@ -7,6 +7,7 @@ import { logger } from "./utils.js";
 
 import type { PluginFunction } from "@vuepress/core";
 import type { CopyCodeOptions } from "./options.js";
+import { isArray, isString } from "@vuepress/shared";
 
 const __dirname = getDirname(import.meta.url);
 
@@ -33,9 +34,11 @@ export const copyCodePlugin =
         COPY_CODE_FANCY: options.fancy || false,
         COPY_CODE_SHOW_IN_MOBILE: options.showInMobile || false,
         COPY_CODE_LOCALES: userCopyCodeLocales,
-        COPY_CODE_SELECTOR:
-          options.selector ||
-          '.theme-default-content div[class*="language-"] pre',
+        COPY_CODE_SELECTOR: isArray(options.selector)
+          ? options.selector
+          : isString(options.selector)
+          ? [options.selector]
+          : ['.theme-default-content div[class*="language-"] pre'],
       }),
 
       extendsBundlerOptions: (bundlerOptions: unknown, app): void => {

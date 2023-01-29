@@ -4,7 +4,7 @@ declare const COPY_CODE_FANCY: boolean;
 declare const COPY_CODE_DELAY: number;
 declare const COPY_CODE_DURATION: number;
 declare const COPY_CODE_LOCALES: CopyCodeLocaleConfig;
-declare const COPY_CODE_SELECTOR: string | string[];
+declare const COPY_CODE_SELECTOR: string[];
 declare const COPY_CODE_SHOW_IN_MOBILE: boolean;
 
 export const copyCodeDelay = COPY_CODE_DELAY;
