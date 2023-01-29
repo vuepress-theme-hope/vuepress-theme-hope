@@ -7,7 +7,6 @@ import {
   nextTick,
   onBeforeUnmount,
   onMounted,
-  ref,
 } from "vue";
 
 import { useSize } from "../composables/size.js";
@@ -198,8 +197,6 @@ export default defineComponent({
     const lang = usePageLang();
     const { el, width, height } = useSize<HTMLDivElement>(props, 0);
 
-    const template = ref("Loading...");
-
     let artPlayerInstance: Artplayer;
 
     const getInitOptions = (): ArtPlayerInitOptions => {
@@ -213,8 +210,8 @@ export default defineComponent({
         type: props.type || getTypeByUrl(props.src),
         lang: getLang(lang.value),
         ...props.config,
-        // this option must be set true to avoid problems
-        useSSR: true,
+        // this option must be set false to avoid problems
+        useSSR: false,
       };
 
       const attrsKeys = Object.keys(attrs);
@@ -282,15 +279,13 @@ export default defineComponent({
 
     // FIXME: Related issue https://github.com/zhw2590582/ArtPlayer/issues/450
     onMounted(() => {
-      void import("artplayer").then(async ({ default: Artplayer }) => {
-        template.value = Artplayer.html;
-
-        return nextTick().then(async () => {
+      void import("artplayer").then(async ({ default: Artplayer }) =>
+        nextTick().then(async () => {
           const player = new Artplayer(getInitOptions());
 
           artPlayerInstance = (await props.customPlayer(player)) || player;
-        });
-      });
+        })
+      );
     });
 
     onBeforeUnmount(() => {
@@ -298,13 +293,16 @@ export default defineComponent({
     });
 
     return (): VNode =>
-      h("div", {
-        ref: el,
-        style: {
-          width: width.value,
-          height: height.value,
+      h(
+        "div",
+        {
+          ref: el,
+          style: {
+            width: width.value,
+            height: height.value,
+          },
         },
-        innerHTML: template.value,
-      });
+        "Loading..."
+      );
   },
 });
