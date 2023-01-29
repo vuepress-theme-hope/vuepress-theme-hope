@@ -4,6 +4,26 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.170](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.169...v2.0.0-beta.170) (2023-01-29)
+
+### ⚠ BREAKING CHANGES
+
+- Catalog component is now inside auto-catalog plugin with name AutoCatalog
+
+### Features
+
+- catalog component is now inside auto-catalog plugin ([760c686](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/760c686a9719e7cad4304e4168ffc02f83988b34))
+
+### Bug Fixes
+
+- **create:** fix zh blog template ([ae89ecc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ae89ecc1bb6476c7d1dc9eb858950a85e6ca55fc))
+- **deps:** update dependency axios to v1.2.6 ([#2708](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2708)) ([a356113](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a356113d8b1b598e65261ee9e8126432df32bb8f))
+- fix path in windows, close [#2718](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2718) ([90d3a8d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/90d3a8d62ff09945addcffe5887aa4a94d4b65b5))
+- **theme:** fix blog legacy logger ([25be101](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/25be101f416f982012ea78d18852fd9ac7e6418d))
+- **theme:** fix project home padding ([0ff661a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0ff661a3f1996fc2db32ae84c685246dc9600f1e))
+- **theme:** fix text color with no bg on blog hero ([281573d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/281573df99d3c8238999e98c1368d2498dcb4bd2))
+- **theme:** improve blog homepage ([cc3d4bc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cc3d4bcb6fa84d890fb6c045e16c9d2cf0289a6b))
+
 ## [2.0.0-beta.169](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.168...v2.0.0-beta.169) (2023-01-28)
 
 ### Features
