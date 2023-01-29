@@ -6,8 +6,8 @@ export const zhSidebar = sidebar({
     {
       text: "如何使用",
       icon: "creative",
-      prefix: "guide/",
-      link: "guide/",
+      prefix: "demo/",
+      link: "demo/",
       children: "structure",
     },
     {
