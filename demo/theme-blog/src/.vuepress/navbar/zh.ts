@@ -57,14 +57,6 @@ export const zhNavbar = navbar([
         text: "V2 文档案例",
         link: "https://theme-hope-docs-demo.vuejs.press/zh/",
       },
-      {
-        text: "V1 文档",
-        link: "https://vuepress-theme-hope.github.io/v1/zh/",
-      },
-      {
-        text: "V1 演示",
-        link: "https://vuepress-theme-hope.github.io/v1-demo/zh/",
-      },
     ],
   },
 ]);
