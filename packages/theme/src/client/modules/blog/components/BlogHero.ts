@@ -28,21 +28,6 @@ export default defineComponent({
       () => frontmatter.value.heroFullScreen || false
     );
 
-    const heroImageStyle = computed(() => {
-      const defaultStyle = {
-        maxHeight: "180px",
-        margin:
-          frontmatter.value.heroText === false
-            ? "6rem auto 1.5rem"
-            : "1rem auto",
-      };
-
-      return {
-        ...defaultStyle,
-        ...frontmatter.value.heroImageStyle,
-      };
-    });
-
     const bgImage = computed(() =>
       frontmatter.value.bgImage
         ? withBase(frontmatter.value.bgImage)
@@ -85,7 +70,7 @@ export default defineComponent({
                 heroImage.value
                   ? h("img", {
                       class: "hero-image",
-                      style: heroImageStyle.value,
+                      style: frontmatter.value.heroImageStyle,
                       src: withBase(heroImage.value),
                       alt: frontmatter.value.heroAlt || "hero image",
                     })

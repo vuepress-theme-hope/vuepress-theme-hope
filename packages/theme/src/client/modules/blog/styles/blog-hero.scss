@@ -54,18 +54,26 @@
 
   h1 {
     margin: 0.5rem auto;
+    font-weight: bold;
     font-size: 2rem;
 
-    @media (max-width: hope-config.$pad) {
-      font-size: 1.875rem;
+    @media (min-width: hope-config.$pc) {
+      font-size: 2.25rem;
     }
 
     @media (max-width: hope-config.$tablet) {
-      font-size: 2rem;
+      font-size: 1.75rem;
     }
+  }
 
-    @media (max-width: hope-config.$mobile) {
-      font-size: 1.875rem;
+  .hero-image {
+    display: block;
+    max-width: 100%;
+    max-height: 15rem;
+    margin: 1.5rem auto;
+
+    @media (max-width: hope-config.$tablet) {
+      max-height: 12rem;
     }
   }
 
@@ -75,18 +83,10 @@
 
   .description {
     margin: 1.2rem auto 0;
-    font-size: 20px;
-
-    @media (max-width: hope-config.$pad) {
-      font-size: 18px;
-    }
+    font-size: 1.5rem;
 
     @media (max-width: hope-config.$tablet) {
-      font-size: 20px;
-    }
-
-    @media (max-width: hope-config.$mobile) {
-      font-size: 18px;
+      font-size: 1.25rem;
     }
   }
 
