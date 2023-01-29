@@ -4,13 +4,14 @@
   --content-width: var(--home-page-width);
   display: block;
   flex: 1;
+  padding-top: var(--navbar-height);
 
   .hero-info-wrapper {
-    @include wrapper.wrapper;
+    @include wrapper.horizontal-wrapper;
   }
 
   .feature-panel {
-    @include wrapper.wrapper;
+    @include wrapper.horizontal-wrapper;
   }
 
   #{hope-config.$content-class} {
