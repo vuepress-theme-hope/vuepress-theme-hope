@@ -1,4 +1,5 @@
 import { isArray, isFunction, isString } from "@vuepress/shared";
+import { keys } from "vuepress-shared/node";
 
 import type {
   SidebarInfo,
@@ -121,7 +122,7 @@ const sortKeyMap: Record<string, SidebarSorterFunction> = {
   title: titleSorter,
 };
 
-const availableKeywords = Object.keys(sortKeyMap);
+const availableKeywords = keys(sortKeyMap);
 
 export const getSorter = (sorter?: SidebarSorter): SidebarSorterFunction[] => {
   if (isString(sorter) && availableKeywords.includes(sorter))

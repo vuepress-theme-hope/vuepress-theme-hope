@@ -1,7 +1,11 @@
 import { getDirname, path } from "@vuepress/utils";
 import { watch } from "chokidar";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
-import { addViteSsrNoExternal, getLocales } from "vuepress-shared/node";
+import {
+  addViteSsrNoExternal,
+  fromEntries,
+  getLocales,
+} from "vuepress-shared/node";
 import { searchProLocales } from "./locales.js";
 import {
   prepareSearchIndex,
@@ -35,7 +39,7 @@ export const searchProPlugin =
       },
 
       define: {
-        SEARCH_PRO_CUSTOM_FIELDS: Object.fromEntries(
+        SEARCH_PRO_CUSTOM_FIELDS: fromEntries(
           (options.customFields || [])
             .map(({ formatter }, index) =>
               formatter ? [index.toString(), formatter] : null

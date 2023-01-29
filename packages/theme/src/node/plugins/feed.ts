@@ -1,5 +1,11 @@
 import { feedPlugin } from "vuepress-plugin-feed2";
-import { deepAssign, getAuthor } from "vuepress-shared/node";
+import {
+  deepAssign,
+  entries,
+  fromEntries,
+  getAuthor,
+  keys,
+} from "vuepress-shared/node";
 
 import type { Plugin } from "@vuepress/core";
 import type { FeedOptions } from "vuepress-plugin-feed2";
@@ -47,7 +53,7 @@ export const getFeedPlugin = (
   legacy = true
 ): Plugin | null => {
   // disable feed if no options for feed plugin
-  if (!Object.keys(options).length) return null;
+  if (!keys(options).length) return null;
 
   const { removedElements } = options;
 
@@ -65,8 +71,8 @@ export const getFeedPlugin = (
         : {}),
       ...(globalAuthor.length ? { author: globalAuthor[0] } : {}),
     },
-    locales: Object.fromEntries(
-      Object.entries(themeData.locales).map(
+    locales: fromEntries(
+      entries(themeData.locales).map(
         ([localePath, { logo, author, copyright }]) => {
           const localeAuthor = getAuthor(author);
 

@@ -6,10 +6,7 @@ import {
   removeLeadingSlash,
 } from "@vuepress/shared";
 import { getDirname, path } from "@vuepress/utils";
-import { deepAssign } from "vuepress-shared/node";
-
-const __dirname = getDirname(import.meta.url);
-
+import { deepAssign, fromEntries, keys, values } from "vuepress-shared/node";
 import { compareDate, resolveUrl } from "./utils/index.js";
 
 import type { App, Page } from "@vuepress/core";
@@ -20,6 +17,8 @@ import type {
   FeedLinks,
   FeedOptions,
 } from "./typings/index.js";
+
+const __dirname = getDirname(import.meta.url);
 
 const TEMPLATE_FOLDER = ensureEndingSlash(
   path.resolve(__dirname, "../../templates")
@@ -45,8 +44,8 @@ export const ensureHostName = (options: Partial<FeedOptions>): boolean => {
 export const checkOutput = (options: Partial<FeedOptions>): boolean =>
   // some locales request output
   (options.locales &&
-    Object.entries(options.locales).some(
-      ([, { atom, json, rss }]) => atom || json || rss
+    values(options.locales).some(
+      ({ atom, json, rss }) => atom || json || rss
     )) ||
   // root option requests output
   Boolean(options.atom || options.json || options.rss);
@@ -55,8 +54,8 @@ export const getFeedOptions = (
   { siteData }: App,
   options: FeedOptions
 ): ResolvedFeedOptionsMap =>
-  Object.fromEntries(
-    Object.keys({
+  fromEntries(
+    keys({
       // root locale must exists
       // eslint-disable-next-line @typescript-eslint/naming-convention
       "/": {},

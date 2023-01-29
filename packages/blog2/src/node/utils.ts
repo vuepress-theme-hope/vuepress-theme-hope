@@ -1,4 +1,4 @@
-import { Logger } from "vuepress-shared/node";
+import { Logger, keys } from "vuepress-shared/node";
 
 import type { App, Page } from "@vuepress/core";
 import type { PageMap } from "./typings/index.js";
@@ -12,7 +12,7 @@ export const getPageMap = (
   const pageMap: PageMap = {};
 
   // initialize pageMap
-  Object.keys({
+  keys({
     // make sure root locale exists
     // eslint-disable-next-line @typescript-eslint/naming-convention
     "/": {},

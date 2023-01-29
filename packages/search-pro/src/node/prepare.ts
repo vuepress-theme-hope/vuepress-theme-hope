@@ -1,4 +1,4 @@
-import { getPageExcerpt, utoa } from "vuepress-shared/node";
+import { fromEntries, getPageExcerpt, keys, utoa } from "vuepress-shared/node";
 import { generatePageIndex } from "./generateIndex.js";
 
 import type { App, Page } from "@vuepress/core";
@@ -52,14 +52,14 @@ export const prepareSearchIndex = async (
         item !== null
     );
 
-  const searchIndex = Object.fromEntries(
-    Object.keys(
+  const searchIndex = fromEntries(
+    keys(
       // locales should at least have root locales
       // eslint-disable-next-line @typescript-eslint/naming-convention
       { "/": {}, ...app.options.locales }
     ).map((localePath) => [
       localePath,
-      Object.fromEntries(
+      fromEntries(
         pagesSearchIndex
           .filter((item) => item.localePath === localePath)
           .map((item) => [item.path, item.index])

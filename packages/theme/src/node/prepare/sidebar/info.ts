@@ -1,4 +1,4 @@
-import { getTitleFromFilename } from "vuepress-shared/node";
+import { getTitleFromFilename, startsWith } from "vuepress-shared/node";
 import { getStructure } from "./structure.js";
 
 import type { Page } from "@vuepress/core";
@@ -81,7 +81,7 @@ const getInfoFromStructure = (
 
   // performance improvements
   const relatedPages = pages.filter(({ filePathRelative }) =>
-    filePathRelative?.startsWith(`${scope}${info.path}/`)
+    startsWith(filePathRelative, `${scope}${info.path}/`)
   );
   const READMEFile = info.children.find(
     (info) =>

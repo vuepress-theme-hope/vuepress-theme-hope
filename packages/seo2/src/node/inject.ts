@@ -1,4 +1,5 @@
 import type { HeadConfig } from "@vuepress/core";
+import { startsWith } from "vuepress-shared/node";
 import type {
   ArticleSchema,
   ArticleSeoContent,
@@ -18,7 +19,7 @@ const appendMetaToHead = (
   {
     name,
     content,
-    attribute = ["article:", "og:"].some((type) => name.startsWith(type))
+    attribute = ["article:", "og:"].some((type) => startsWith(name, type))
       ? "property"
       : "name",
   }: MetaOptions

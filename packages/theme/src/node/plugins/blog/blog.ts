@@ -1,4 +1,5 @@
 import { blogPlugin } from "vuepress-plugin-blog2";
+import { keys, startsWith } from "vuepress-shared/node";
 
 import { getCategoryCategory, getTagCategory } from "./category.js";
 import { filter } from "./filter.js";
@@ -24,9 +25,9 @@ export const getBlogPlugin = (
   if (!options) return null;
 
   const blogOptions = options === true ? {} : options;
-  const encryptedPaths = Object.keys(themeData.encrypt.config || {});
+  const encryptedPaths = keys(themeData.encrypt.config || {});
   const isPageEncrypted = ({ path }: Page): boolean =>
-    encryptedPaths.some((key) => decodeURI(path).startsWith(key));
+    encryptedPaths.some((key) => startsWith(decodeURI(path), key));
 
   return blogPlugin(<BlogOptions>{
     excerpt: blogOptions.excerpt !== false,

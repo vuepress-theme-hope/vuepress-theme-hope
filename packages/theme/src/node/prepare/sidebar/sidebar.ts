@@ -4,6 +4,7 @@ import {
   isPlainObject,
   removeLeadingSlash,
 } from "@vuepress/shared";
+import { entries, fromEntries } from "vuepress-shared/node";
 
 import { getSidebarInfo } from "./info.js";
 import { getSorter } from "./sorter.js";
@@ -70,10 +71,10 @@ export const getSidebarData = (
   const sorters = getSorter(sorter);
 
   // exact generate sidebar paths
-  Object.entries(themeData.locales).forEach(([localePath, { sidebar }]) => {
+  entries(themeData.locales).forEach(([localePath, { sidebar }]) => {
     if (isArray(sidebar)) generatePaths.push(...getGeneratePaths(sidebar));
     else if (isPlainObject(sidebar))
-      Object.entries(sidebar).forEach(([prefix, config]) => {
+      entries(sidebar).forEach(([prefix, config]) => {
         if (config === "structure") generatePaths.push(prefix);
         else if (isArray(config))
           generatePaths.push(
@@ -84,7 +85,7 @@ export const getSidebarData = (
     else if (sidebar !== false) generatePaths.push(localePath);
   });
 
-  const sidebarData = Object.fromEntries(
+  const sidebarData = fromEntries(
     generatePaths.map((path) => [
       path,
       getSidebarItems(

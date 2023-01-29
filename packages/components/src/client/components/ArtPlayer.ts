@@ -8,6 +8,7 @@ import {
   onBeforeUnmount,
   onMounted,
 } from "vue";
+import { keys } from "vuepress-shared/client";
 
 import { useSize } from "../composables/size.js";
 import {
@@ -214,7 +215,7 @@ export default defineComponent({
         useSSR: false,
       };
 
-      const attrsKeys = Object.keys(attrs);
+      const attrsKeys = keys(attrs);
 
       BOOLEAN_TRUE_ATTRS.forEach((config) => {
         if (attrsKeys.includes(config))

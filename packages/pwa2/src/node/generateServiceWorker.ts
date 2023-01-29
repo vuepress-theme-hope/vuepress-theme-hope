@@ -1,4 +1,5 @@
 import { colors, fs, path } from "@vuepress/utils";
+import { endsWith } from "vuepress-shared/node";
 import { generateSW } from "workbox-build";
 import { logger } from "./utils.js";
 
@@ -21,7 +22,7 @@ const imageFilter =
     const imageExtensions = [".png", ".jpg", ".jpeg", "webp", "bmp", "gif"];
 
     for (const entry of manifestEntries)
-      if (imageExtensions.some((ext) => entry.url.endsWith(ext))) {
+      if (imageExtensions.some((ext) => endsWith(entry.url, ext))) {
         const stats = fs.statSync(path.resolve(outDir, entry.url));
 
         if (stats.size > maxSize * 1024)

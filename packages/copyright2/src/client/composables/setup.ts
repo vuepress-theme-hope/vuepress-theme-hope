@@ -89,11 +89,7 @@ export const setupCopyright = (): void => {
       const textRange = selection.getRangeAt(0);
 
       if (enabled.value) {
-        if (disableCopy.value) {
-          event.preventDefault();
-
-          return;
-        }
+        if (disableCopy.value) return event.preventDefault();
 
         if (textRange.toString().length >= COPYRIGHT_TRIGGER_WORDS) {
           event.preventDefault();

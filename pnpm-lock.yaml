@@ -1804,6 +1804,9 @@ importers:
       vue:
         specifier: ^3.2.45
         version: 3.2.45
+      vuepress-shared:
+        specifier: workspace:*
+        version: link:../shared
     devDependencies:
       '@vuepress/core':
         specifier: 2.0.0-beta.60

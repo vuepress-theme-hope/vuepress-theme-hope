@@ -52,6 +52,7 @@ SOFTWARE.
 */
 
 import { isArray, isString } from "@vuepress/shared";
+import { endsWith, keys } from "../../../shared/index.js";
 
 interface Alias {
   find: string | RegExp;
@@ -84,7 +85,7 @@ const normalizeSingleAlias = ({
   replacement,
   customResolver,
 }: Alias): Alias => {
-  if (isString(find) && find.endsWith("/") && replacement.endsWith("/")) {
+  if (isString(find) && endsWith(find, "/") && endsWith(replacement, "/")) {
     find = find.slice(0, find.length - 1);
     replacement = replacement.slice(0, replacement.length - 1);
   }
@@ -102,7 +103,7 @@ const normalizeSingleAlias = ({
 const normalizeAlias = (aliasOption: AliasOptions): Alias[] =>
   isArray(aliasOption)
     ? aliasOption.map(normalizeSingleAlias)
-    : Object.keys(aliasOption).map((find) =>
+    : keys(aliasOption).map((find) =>
         normalizeSingleAlias({
           find,
           replacement: (<Record<string, string>>aliasOption)[find],

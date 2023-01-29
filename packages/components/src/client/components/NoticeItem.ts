@@ -8,7 +8,7 @@ import {
   ref,
 } from "vue";
 import { useRoute, useRouter } from "vue-router";
-import { isAbsoluteUrl } from "vuepress-shared/client";
+import { isAbsoluteUrl, startsWith } from "vuepress-shared/client";
 
 import { CloseIcon } from "./icons.js";
 
@@ -118,7 +118,7 @@ export default defineComponent({
     const isMatched = computed(() =>
       props.match
         ? new RegExp(props.match).test(route.path)
-        : route.path.startsWith(props.path)
+        : startsWith(route.path, props.path)
     );
 
     onMounted(() => {

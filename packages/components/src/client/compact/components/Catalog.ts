@@ -1,7 +1,12 @@
 import { useSiteData } from "@vuepress/client";
 import { computed, defineComponent, h } from "vue";
 import { RouterLink, useRoute, useRouter } from "vue-router";
-import { useLocaleConfig } from "vuepress-shared/client";
+import {
+  endsWith,
+  keys,
+  startsWith,
+  useLocaleConfig,
+} from "vuepress-shared/client";
 
 import FontIcon from "../../components/FontIcon.js";
 
@@ -111,25 +116,25 @@ export default defineComponent({
       routes
         .filter(({ meta, path }) => {
           // filter those under current base
-          if (!path.startsWith(base) || path === base) return false;
+          if (!startsWith(path, base) || path === base) return false;
 
           if (base === "/") {
-            const otherLocales = Object.keys(siteData.value.locales).filter(
+            const otherLocales = keys(siteData.value.locales).filter(
               (item) => item !== "/"
             );
 
             // exclude 404 page and other locales
             if (
               path === "/404.html" ||
-              otherLocales.some((localePath) => path.startsWith(localePath))
+              otherLocales.some((localePath) => startsWith(path, localePath))
             )
               return false;
           }
 
           return (
             // filter real page
-            ((path.endsWith(".html") && !path.endsWith("/index.html")) ||
-              path.endsWith("/")) &&
+            ((endsWith(path, ".html") && !endsWith(path, "/index.html")) ||
+              endsWith(path, "/")) &&
             // page should be indexed
             props.shouldIndex(meta)
           );
@@ -142,48 +147,53 @@ export default defineComponent({
             icon: props.iconGetter(meta),
             base: path.replace(/\/[^/]+\/?$/, "/"),
             order: props.orderGetter(meta),
-            level: path.endsWith("/") ? level - 1 : level,
+            level: endsWith(path, "/") ? level - 1 : level,
             path,
           };
         })
         .filter(({ title, level }) => level <= props.level || !title)
-        .sort((infoA, infoB) => {
-          const level = infoA.level - infoB.level;
+        .sort(
+          (
+            { title: titleA, level: levelA, path: pathA, order: orderA },
+            { title: titleB, level: levelB, path: pathB, order: orderB }
+          ) => {
+            const level = levelA - levelB;
 
-          if (level) return level;
+            if (level) return level;
 
-          // check README.md, it should be first one
-          if (infoA.path.endsWith("/index.html")) return -1;
-          if (infoB.path.endsWith("/index.html")) return 1;
+            // check README.md, it should be first one
+            if (endsWith(pathA, "/index.html")) return -1;
+            if (endsWith(pathB, "/index.html")) return 1;
 
-          // infoA order is absent
-          if (infoA.order === null) {
+            // infoA order is absent
+            if (orderA === null) {
+              // infoB order is absent
+              if (orderB === null)
+                // compare title
+                return titleA.localeCompare(titleB);
+
+              // infoB order is present
+              return orderB;
+            }
+
             // infoB order is absent
-            if (infoB.order === null)
-              // compare title
-              return infoA.title.localeCompare(infoB.title);
+            if (orderB === null) return orderA;
 
-            // infoB order is present
-            return infoB.order;
+            // now we are sure both order exist
+
+            // infoA order is positive
+            if (orderA > 0) {
+              if (orderB > 0) return orderA - orderB;
+
+              return -1;
+            }
+
+            // both order are negative
+            if (orderB < 0) return orderA - orderB;
+
+            return 1;
           }
-
-          // infoB order is absent
-          if (infoB.order === null) return infoA.order;
-
-          // now we are sure both order exist
-
-          // infoA order is positive
-          if (infoA.order > 0) {
-            if (infoB.order > 0) return infoA.order - infoB.order;
-
-            return -1;
-          }
-
-          // both order are negative
-          if (infoB.order < 0) return infoA.order - infoB.order;
-
-          return 1;
-        })
+        )
         .forEach((info) => {
           const { base, level } = info;
 

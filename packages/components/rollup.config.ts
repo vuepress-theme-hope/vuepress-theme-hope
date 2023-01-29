@@ -32,6 +32,7 @@ export default [
       "hls.js/dist/hls.min.js",
       "mpegts.js/dist/mpegts.js",
       "vue",
+      "vuepress-shared/client",
       /\.s?css$/,
     ],
     dtsExternal: [/\.s?css$/],
@@ -77,7 +78,7 @@ export default [
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/FontIcon", {
-    external: ["vue", /\.scss$/],
+    external: ["vue", "vuepress-shared/client", /\.scss$/],
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/Notice", {
@@ -112,7 +113,13 @@ export default [
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/StackBlitz", {
-    external: ["@vueuse/core", "@vuepress/shared", "vue", /\.scss$/],
+    external: [
+      "@stackblitz/sdk",
+      "@vueuse/core",
+      "@vuepress/shared",
+      "vue",
+      /\.scss$/,
+    ],
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/VideoPlayer", {
@@ -143,6 +150,7 @@ export default [
       "@vuepress/shared",
       "@vuepress/client",
       "vue",
+      "vuepress-shared/client",
       /\.scss$/,
     ],
     dtsExternal: [/\.scss$/],

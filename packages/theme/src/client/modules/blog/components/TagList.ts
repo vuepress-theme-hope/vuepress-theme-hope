@@ -1,7 +1,7 @@
 import { usePageFrontmatter } from "@vuepress/client";
 import { defineComponent, h } from "vue";
 import { RouterLink } from "vue-router";
-import { generateIndexFromHash } from "vuepress-shared/client";
+import { entries, generateIndexFromHash } from "vuepress-shared/client";
 
 import { useTagMap } from "@theme-hope/modules/blog/composables/index";
 
@@ -24,7 +24,7 @@ export default defineComponent({
       h(
         "ul",
         { class: "tag-list-wrapper" },
-        Object.entries(tagMap.value.map).map(([tag, { path, items }]) =>
+        entries(tagMap.value.map).map(([tag, { path, items }]) =>
           h(
             "li",
             {

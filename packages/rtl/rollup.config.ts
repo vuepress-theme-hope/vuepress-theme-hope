@@ -6,6 +6,6 @@ export default [
     dtsExternal: ["@vuepress/core"],
   }),
   ...rollupTypescript("client/config", {
-    external: ["@vuepress/client", "vue"],
+    external: ["@vuepress/client", "vue", "vuepress-shared/client"],
   }),
 ];

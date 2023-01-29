@@ -13,7 +13,7 @@ export interface RTLOptions {
    */
   selector?: {
     [element: string]: {
-      [attrs: string]: string;
+      [attr: string]: string;
     };
   };
 }

@@ -27,7 +27,7 @@ import type {
 import { getPageRenderContent } from "./content.js";
 
 export class FeedInfo {
-  private pageFeedOptions: FeedFrontmatterOption;
+  private pageOptions: FeedFrontmatterOption;
   private frontmatter: PageFrontmatter<FeedPluginFrontmatter>;
   private base: string;
   private getter: FeedGetter;
@@ -45,7 +45,7 @@ export class FeedInfo {
     this.base = this.app.options.base;
     this.frontmatter = page.frontmatter;
     this.getter = options.getter || {};
-    this.pageFeedOptions = this.frontmatter.feed || {};
+    this.pageOptions = this.frontmatter.feed || {};
     this.shouldRemoveElement = (tagName): boolean => {
       const { removedElements } = this.options;
 
@@ -62,7 +62,7 @@ export class FeedInfo {
   get title(): string {
     if (isFunction(this.getter.title)) return this.getter.title(this.page);
 
-    return this.pageFeedOptions.title || this.page.title;
+    return this.pageOptions.title || this.page.title;
   }
 
   /** real url */
@@ -76,8 +76,7 @@ export class FeedInfo {
     if (isFunction(this.getter.description))
       return this.getter.description(this.page);
 
-    if (this.pageFeedOptions.description)
-      return this.pageFeedOptions.description;
+    if (this.pageOptions.description) return this.pageOptions.description;
 
     if (this.frontmatter.description) return this.frontmatter.description;
 
@@ -89,11 +88,10 @@ export class FeedInfo {
   get author(): FeedAuthor[] {
     if (isFunction(this.getter.author)) return this.getter.author(this.page);
 
-    if (isArray(this.pageFeedOptions.author))
-      return this.pageFeedOptions.author;
+    if (isArray(this.pageOptions.author)) return this.pageOptions.author;
 
-    if (isPlainObject(this.pageFeedOptions.author))
-      return [this.pageFeedOptions.author];
+    if (isPlainObject(this.pageOptions.author))
+      return [this.pageOptions.author];
 
     return this.frontmatter.author === false
       ? []
@@ -108,11 +106,10 @@ export class FeedInfo {
     if (isFunction(this.getter.category))
       return this.getter.category(this.page);
 
-    if (isArray(this.pageFeedOptions.category))
-      return this.pageFeedOptions.category;
+    if (isArray(this.pageOptions.category)) return this.pageOptions.category;
 
-    if (isPlainObject(this.pageFeedOptions.category))
-      return [this.pageFeedOptions.category];
+    if (isPlainObject(this.pageOptions.category))
+      return [this.pageOptions.category];
 
     const { categories, category = categories } = this.frontmatter;
 
@@ -133,7 +130,7 @@ export class FeedInfo {
   }
 
   get guid(): string {
-    return this.pageFeedOptions.guid || this.link;
+    return this.pageOptions.guid || this.link;
   }
 
   get pubDate(): Date | null {
@@ -163,7 +160,7 @@ export class FeedInfo {
   get excerpt(): string | null {
     if (isFunction(this.getter.excerpt)) return this.getter.excerpt(this.page);
 
-    if (this.pageFeedOptions.summary) return this.pageFeedOptions.summary;
+    if (this.pageOptions.summary) return this.pageOptions.summary;
 
     return getPageExcerpt(this.app, this.page, {
       isCustomElement: this.shouldRemoveElement,
@@ -173,7 +170,7 @@ export class FeedInfo {
   get content(): string {
     if (isFunction(this.getter.content)) return this.getter.content(this.page);
 
-    if (this.pageFeedOptions.content) return this.pageFeedOptions.content;
+    if (this.pageOptions.content) return this.pageOptions.content;
 
     return getPageRenderContent(this.app, this.page, this.shouldRemoveElement);
   }
@@ -217,11 +214,11 @@ export class FeedInfo {
     if (isFunction(this.getter.contributor))
       return this.getter.contributor(this.page);
 
-    if (isArray(this.pageFeedOptions.contributor))
-      return this.pageFeedOptions.contributor;
+    if (isArray(this.pageOptions.contributor))
+      return this.pageOptions.contributor;
 
-    if (isPlainObject(this.pageFeedOptions.contributor))
-      return [this.pageFeedOptions.contributor];
+    if (isPlainObject(this.pageOptions.contributor))
+      return [this.pageOptions.contributor];
 
     return this.author;
   }

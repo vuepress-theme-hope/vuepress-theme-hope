@@ -1,4 +1,4 @@
-import { getLocales } from "vuepress-shared/node";
+import { entries, fromEntries, getLocales } from "vuepress-shared/node";
 import { getEncryptConfig } from "./encrypt.js";
 import { themeLocalesData } from "../locales/index.js";
 
@@ -32,19 +32,17 @@ export const getThemeData = (
 ): ThemeData => {
   const themeData: ThemeData = {
     encrypt: {},
-    ...Object.fromEntries(
+    ...fromEntries(
       // only remain root allowed config
-      Object.entries(themeOptions).filter(([key]) =>
-        rootAllowConfig.includes(key)
-      )
+      entries(themeOptions).filter(([key]) => rootAllowConfig.includes(key))
     ),
     locales:
       // assign locale data to `themeConfig`
       getLocales({
         app,
         name: "vuepress-theme-hope",
-        default: Object.fromEntries(
-          Object.entries(themeLocalesData).map(([locale, config]) => {
+        default: fromEntries(
+          entries(themeLocalesData).map(([locale, config]) => {
             // remove blog locales if blog is not enabled
             if (!enableBlog) {
               // @ts-ignore
@@ -58,8 +56,8 @@ export const getThemeData = (
           })
         ),
         // extract localeConfig
-        config: Object.fromEntries(
-          Object.entries<ThemeLocaleOptions>({
+        config: fromEntries(
+          entries<ThemeLocaleOptions>({
             // ensure default locale
             // eslint-disable-next-line @typescript-eslint/naming-convention
             "/": {},
@@ -68,8 +66,8 @@ export const getThemeData = (
             localePath,
             <ThemeLocaleConfig>{
               // root config
-              ...Object.fromEntries(
-                Object.entries(themeOptions).filter(
+              ...fromEntries(
+                entries(themeOptions).filter(
                   ([key]) => key !== "locales" && !rootAllowConfig.includes(key)
                 )
               ),

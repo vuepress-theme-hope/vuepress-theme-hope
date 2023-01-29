@@ -1,5 +1,6 @@
 import { isArray, isPlainObject } from "@vuepress/shared";
 import { colors } from "@vuepress/utils";
+import { values } from "vuepress-shared/node";
 
 import { convertNavbarOptions } from "./navbar.js";
 import { convertSidebarOptions } from "./sidebar.js";
@@ -276,7 +277,7 @@ export const convertThemeOptions = (
 
   // handle each locale
   if ("locales" in themeOptions && isPlainObject(themeOptions["locales"])) {
-    Object.values(themeOptions["locales"]!).forEach(
+    values(themeOptions["locales"]!).forEach(
       (localeConfig: Record<string, unknown>) => {
         DEPRECATED_THEME_OPTIONS.forEach(([deprecatedOption, newOption]) =>
           deprecatedLogger({

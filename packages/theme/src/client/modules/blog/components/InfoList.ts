@@ -1,5 +1,6 @@
 import { computed, defineComponent, h, ref } from "vue";
 import { RouterLink } from "vue-router";
+import { keys } from "vuepress-shared/client";
 
 import CategoryList from "@theme-hope/modules/blog/components/CategoryList";
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
@@ -32,12 +33,10 @@ export default defineComponent({
     const themeLocale = useThemeLocaleData();
     const articles = useArticles();
     const categoryMap = useCategoryMap();
-    const categoryNumber = computed(
-      () => Object.keys(categoryMap.value.map).length
-    );
+    const categoryNumber = computed(() => keys(categoryMap.value.map).length);
     const stars = useStars();
     const tagMap = useTagMap();
-    const tagNumber = computed(() => Object.keys(tagMap.value.map).length);
+    const tagNumber = computed(() => keys(tagMap.value.map).length);
     const navigate = useNavigate();
 
     const active = ref<"article" | "category" | "tag" | "timeline">("article");

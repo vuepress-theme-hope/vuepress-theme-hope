@@ -1,4 +1,6 @@
 import { fs, path } from "@vuepress/utils";
+import { endsWith, fromEntries } from "vuepress-shared/node";
+
 import { CLIENT_FOLDER } from "./utils.js";
 
 const getDirAlias = (dir: string): [string, string][] =>
@@ -7,7 +9,7 @@ const getDirAlias = (dir: string): [string, string][] =>
     .filter(
       (file) =>
         // js files
-        file.endsWith(".js") ||
+        endsWith(file, ".js") ||
         // folder
         !file.includes(".")
     )
@@ -26,7 +28,7 @@ const getEntryAlias = (entry: string): [string, string] | null =>
 
 export const resolveAlias = (isDebug: boolean): Record<string, string> => {
   // use alias to make all components replaceable
-  const alias = Object.fromEntries([
+  const alias = fromEntries([
     // define components
     ...getDirAlias("components"),
     // define composables and utils

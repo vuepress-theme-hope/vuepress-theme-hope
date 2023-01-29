@@ -1,7 +1,7 @@
 import { computed, defineComponent, h, onMounted, ref, shallowRef } from "vue";
 
 import { CODE_SVG, LoadingIcon } from "./icons.js";
-import { getVuePlaygroundSettings } from "../utils/index.js";
+import { getVuePlaygroundSettings } from "../utils/playground.js";
 
 import type { Repl, ReplProps, ReplStore } from "@vue/repl";
 import type { VNode } from "vue";

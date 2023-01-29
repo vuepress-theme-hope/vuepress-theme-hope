@@ -1,4 +1,5 @@
 import { isString } from "@vuepress/shared";
+import { startsWith } from "./helper.js";
 
 /**
  * check if a variable is a valid url
@@ -26,5 +27,4 @@ export const isUrl = (test: unknown): boolean => {
 /**
  * Whether a variable is a valid absolute url
  */
-export const isAbsoluteUrl = (test: unknown): boolean =>
-  isString(test) && test.startsWith("/");
+export const isAbsoluteUrl = (test: unknown): boolean => startsWith(test, "/");

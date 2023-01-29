@@ -12,6 +12,7 @@ import {
   isString,
 } from "@vuepress/shared";
 import { useRoute } from "vue-router";
+import { keys, startsWith } from "vuepress-shared/client";
 
 import { useAutoLink, useThemeLocaleData } from "@theme-hope/composables/index";
 import { resolvePrefix } from "./utils.js";
@@ -138,11 +139,11 @@ export const resolveMultiSidebarItems = (
   headerDepth: number
 ): ResolvedSidebarItem[] => {
   const route = useRoute();
-  const keys = Object.keys(sidebarConfig).sort((x, y) => y.length - x.length);
+  const sidebarRoutes = keys(sidebarConfig).sort((x, y) => y.length - x.length);
 
   // find matching config
-  for (const base of keys) {
-    if (decodeURI(route.path).startsWith(base)) {
+  for (const base of sidebarRoutes) {
+    if (startsWith(decodeURI(route.path), base)) {
       const matchedConfig = sidebarConfig[base];
 
       return matchedConfig

@@ -1,6 +1,7 @@
 import { useRouteLocale, useSiteLocaleData } from "@vuepress/client";
 import { computed } from "vue";
 import { useRouter } from "vue-router";
+import { keys } from "vuepress-shared/client";
 
 import {
   useThemeData,
@@ -22,7 +23,7 @@ export const useNavbarLanguageDropdown =
     const themeLocale = useThemeLocaleData();
 
     return computed<NavGroup<AutoLinkOptions> | null>(() => {
-      const localePaths = Object.keys(siteLocale.value.locales);
+      const localePaths = keys(siteLocale.value.locales);
 
       // do not display language selection dropdown if there is only one language
       if (localePaths.length < 2) return null;

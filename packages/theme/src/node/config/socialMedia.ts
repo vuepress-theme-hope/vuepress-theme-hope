@@ -1,5 +1,7 @@
 import { isArray, isString } from "@vuepress/shared";
 import { fs } from "@vuepress/utils";
+import { entries, startsWith, values } from "vuepress-shared/node";
+
 import { TEMPLATE_FOLDER, logger } from "../utils.js";
 
 import type { ThemeData } from "../../shared/index.js";
@@ -29,7 +31,7 @@ export const checkSocialMediaIcons = (
 
     if (isArray(value)) {
       // it’s a svg string
-      if (value[1].startsWith("<svg")) {
+      if (startsWith(value[1], "<svg")) {
         icons[key] = value[1];
 
         return value[0];
@@ -52,7 +54,7 @@ export const checkSocialMediaIcons = (
     return false;
   };
 
-  Object.entries(themeData.blog?.medias || {}).forEach(([key, value]) => {
+  entries(themeData.blog?.medias || {}).forEach(([key, value]) => {
     const result = checkIcon(key, value);
 
     if (result) themeData.blog!.medias![key] = result;
@@ -60,15 +62,13 @@ export const checkSocialMediaIcons = (
   });
 
   if (themeData.locales)
-    Object.entries(themeData.locales).forEach(([, localeConfig]) => {
-      Object.entries(localeConfig.blog?.medias || {}).forEach(
-        ([key, value]) => {
-          const result = checkIcon(key, value);
+    values(themeData.locales).forEach((localeConfig) => {
+      entries(localeConfig.blog?.medias || {}).forEach(([key, value]) => {
+        const result = checkIcon(key, value);
 
-          if (result) localeConfig.blog!.medias![key] = result;
-          else delete localeConfig.blog!.medias![key];
-        }
-      );
+        if (result) localeConfig.blog!.medias![key] = result;
+        else delete localeConfig.blog!.medias![key];
+      });
     });
 
   return icons;

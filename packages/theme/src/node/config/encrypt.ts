@@ -1,5 +1,7 @@
 import { isArray, isString } from "@vuepress/shared";
 import { hashSync } from "bcrypt-ts/node";
+import { entries, fromEntries } from "vuepress-shared/node";
+
 import { logger } from "../utils.js";
 
 import type { EncryptConfig, EncryptOptions } from "../../shared/index.js";
@@ -34,8 +36,8 @@ export const getEncryptConfig = (
       );
 
   if (encrypt.config)
-    result.config = Object.fromEntries(
-      Object.entries(encrypt.config)
+    result.config = fromEntries(
+      entries(encrypt.config)
         .map<[string, string[]] | null>(([key, tokens]) => {
           if (isString(tokens)) return [key, [hashSync(tokens)]];
 

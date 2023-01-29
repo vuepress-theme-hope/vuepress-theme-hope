@@ -1,4 +1,5 @@
 import { path } from "@vuepress/utils";
+import { startsWith } from "vuepress-shared/node";
 
 import type { App, Page } from "@vuepress/core";
 import type { SidebarSorterFunction } from "../../../shared/index.js";
@@ -28,7 +29,7 @@ export const getStructure = (pages: Page[], scope: string): StructureInfo[] => {
   const relatedPages = pages.filter(
     ({ filePathRelative, pathLocale }) =>
       // generated from file and inside current scope
-      filePathRelative?.startsWith(scope) &&
+      startsWith(filePathRelative, scope) &&
       // root dir should filter other locales
       (scope !== "" || pathLocale === "/")
   );

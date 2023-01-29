@@ -1,4 +1,5 @@
 import { colors } from "@vuepress/utils";
+import { keys } from "vuepress-shared/node";
 import { logger } from "../utils.js";
 
 import type { App } from "@vuepress/core";
@@ -63,7 +64,7 @@ export const checkPlugins = (app: App, plugins: PluginsOptions): void => {
       );
   });
 
-  Object.keys(plugins).forEach((key) => {
+  keys(plugins).forEach((key) => {
     if (!KNOWN_THEME_PLUGINS.includes(key))
       logger.warn(
         `You are setting "${colors.magenta(

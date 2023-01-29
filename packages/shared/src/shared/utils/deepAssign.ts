@@ -1,4 +1,5 @@
 import { isArray, isPlainObject } from "@vuepress/shared";
+import { entries } from "./helper.js";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type IAnyObject = Record<string, any>;
@@ -18,7 +19,7 @@ export const deepAssign = <
   const assignObject = overrideObjects.shift() || null;
 
   if (assignObject)
-    Object.entries(assignObject).forEach(([property, value]) => {
+    entries(assignObject).forEach(([property, value]) => {
       if (property === "__proto__" || property === "constructor") return;
       if (isPlainObject(originObject[property]) && isPlainObject(value))
         deepAssign(originObject[property], value);

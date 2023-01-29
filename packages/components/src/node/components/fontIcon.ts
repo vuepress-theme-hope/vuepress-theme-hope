@@ -1,4 +1,5 @@
 import { isArray, isLinkHttp } from "@vuepress/shared";
+import { endsWith } from "vuepress-shared/node";
 import { logger } from "../utils.js";
 
 import type { FontIconAssets } from "../options/index.js";
@@ -81,7 +82,7 @@ export const getIconLink = (iconLink?: FontIconAssets): LinkInfo[] => {
     .map((item) => {
       const actualLink = isLinkHttp(item) ? item : `//${item}`;
 
-      if (actualLink.endsWith(".css"))
+      if (endsWith(actualLink, ".css"))
         return {
           type: "style",
           content: `\
@@ -90,7 +91,7 @@ export const getIconLink = (iconLink?: FontIconAssets): LinkInfo[] => {
   \`);`,
         };
 
-      if (actualLink.endsWith(".js"))
+      if (endsWith(actualLink, ".js"))
         return {
           type: "script",
           content: `\

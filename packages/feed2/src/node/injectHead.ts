@@ -1,3 +1,5 @@
+import { keys } from "vuepress-shared/node";
+
 import { getFilename } from "./options.js";
 import { resolveUrl } from "./utils/index.js";
 
@@ -10,7 +12,7 @@ export const injectLinksToHead = (
 ): void => {
   const { base } = app.options;
   const { siteData } = app;
-  const localePaths = Object.keys(options);
+  const localePaths = keys(options);
 
   // there is only one language, so we append it to siteData
   if (localePaths.length === 1) {

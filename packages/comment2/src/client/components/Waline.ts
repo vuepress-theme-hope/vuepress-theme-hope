@@ -68,10 +68,6 @@ export default defineComponent({
     const walineProps = computed(() => ({
       lang: lang.value === "zh-CN" ? "zh-CN" : "en",
       locale: walineLocale.value,
-      emoji: [
-        "//unpkg.com/@waline/emojis@1.1.0/weibo",
-        "//unpkg.com/@waline/emojis@1.1.0/bilibili",
-      ],
       dark: "html.dark",
       ...walineOption,
       path: withBase(route.path),

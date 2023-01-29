@@ -1,3 +1,4 @@
+import { entries, keys } from "vuepress-shared/client";
 import { getMatchedContent } from "./matchContent.js";
 
 import type { Word } from "./matchContent.js";
@@ -60,7 +61,7 @@ export const getResults = (
 ): Result[] => {
   const suggestions = <Record<string, MatchedItem[]>>{};
 
-  for (const [path, pageIndex] of Object.entries(localeIndex)) {
+  for (const [path, pageIndex] of entries(localeIndex)) {
     const parentPageTitle =
       localeIndex[path.replace(/\/[^\\]*$/, "")]?.title || "";
     const title = `${parentPageTitle ? `${parentPageTitle} > ` : ""}${
@@ -81,27 +82,25 @@ export const getResults = (
     }
 
     if (pageIndex.customFields)
-      Object.entries(pageIndex.customFields).forEach(
-        ([index, customFields]) => {
-          customFields.forEach((customField) => {
-            const customFieldContent = getMatchedContent(
-              customField,
-              queryString
-            );
+      entries(pageIndex.customFields).forEach(([index, customFields]) => {
+        customFields.forEach((customField) => {
+          const customFieldContent = getMatchedContent(
+            customField,
+            queryString
+          );
 
-            if (customFieldContent)
-              suggestions[title] = [
-                ...(suggestions[title] || []),
-                {
-                  type: "custom",
-                  path,
-                  index,
-                  display: customFieldContent,
-                },
-              ];
-          });
-        }
-      );
+          if (customFieldContent)
+            suggestions[title] = [
+              ...(suggestions[title] || []),
+              {
+                type: "custom",
+                path,
+                index,
+                display: customFieldContent,
+              },
+            ];
+        });
+      });
 
     for (const headerIndex of pageIndex.contents) {
       const headerContent = getMatchedContent(headerIndex.header, queryString);
@@ -135,7 +134,7 @@ export const getResults = (
     }
   }
 
-  return Object.keys(suggestions)
+  return keys(suggestions)
     .sort(
       (titleA, titleB) =>
         getResultsWeight(suggestions[titleA]) -

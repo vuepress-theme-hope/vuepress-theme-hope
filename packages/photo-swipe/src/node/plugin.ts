@@ -1,6 +1,11 @@
 import { getDirname, path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
-import { addViteOptimizeDepsExclude, getLocales } from "vuepress-shared/node";
+import {
+  addViteOptimizeDepsExclude,
+  entries,
+  fromEntries,
+  getLocales,
+} from "vuepress-shared/node";
 
 import { photoSwipeLocales } from "./locales.js";
 import { logger } from "./utils.js";
@@ -24,8 +29,8 @@ export const photoSwipePlugin =
         PHOTO_SWIPE_SELECTOR:
           options.selector || ".theme-default-content :not(a) > img",
         PHOTO_SWIPE_DELAY: options.delay || 800,
-        PHOTO_SWIPE_LOCALES: Object.fromEntries(
-          Object.entries(
+        PHOTO_SWIPE_LOCALES: fromEntries(
+          entries(
             getLocales({
               app,
               name: "photo-swipe",
@@ -34,8 +39,8 @@ export const photoSwipePlugin =
             })
           ).map(([localePath, localeOptions]) => [
             localePath,
-            Object.fromEntries(
-              Object.entries(localeOptions).map(([key, value]) => [
+            fromEntries(
+              entries(localeOptions).map(([key, value]) => [
                 `${key}Title`,
                 value,
               ])

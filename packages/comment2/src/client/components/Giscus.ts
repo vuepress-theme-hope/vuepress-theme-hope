@@ -66,6 +66,8 @@ const enableGiscus = Boolean(
     giscusOption.categoryId
 );
 
+const { repo, repoId, category, categoryId } = giscusOption;
+
 export default defineComponent({
   name: "GiscusComment",
 
@@ -109,20 +111,20 @@ export default defineComponent({
     });
 
     const config = computed<GiscusProps>(() => ({
-      repo: giscusOption.repo,
-      repoId: giscusOption.repoId,
-      category: giscusOption.category,
-      categoryId: giscusOption.categoryId,
+      repo,
+      repoId,
+      category,
+      categoryId,
       lang: giscusLang.value,
       theme: props.darkmode
-        ? giscusOption.darkTheme ?? "dark"
-        : giscusOption.lightTheme ?? "light",
+        ? giscusOption.darkTheme || "dark"
+        : giscusOption.lightTheme || "light",
       mapping: giscusOption.mapping || "pathname",
       term: withBase(route.path),
       inputPosition: giscusOption.inputPosition || "top",
-      reactionsEnabled: giscusOption.reactionsEnabled !== false ? "1" : "0",
-      strict: giscusOption.strict !== false ? "1" : "0",
-      loading: giscusOption.lazyLoading !== false ? "lazy" : "eager",
+      reactionsEnabled: giscusOption.reactionsEnabled === false ? "0" : "1",
+      strict: giscusOption.strict === false ? "0" : "1",
+      loading: giscusOption.lazyLoading === false ? "eager" : "lazy",
       emitMetadata: "0",
     }));
 

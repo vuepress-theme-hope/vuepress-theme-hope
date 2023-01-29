@@ -1,3 +1,4 @@
+import { keys } from "vuepress-shared/client";
 import { getConfig, preProcessorConfig } from "./utils.js";
 
 import type Babel from "@babel/core";
@@ -12,7 +13,7 @@ declare global {
 }
 
 export const getCode = (code: Record<string, string>): CodeType => {
-  const languages = Object.keys(code);
+  const languages = keys(code);
   const result: CodeType = {
     html: [],
     js: [],

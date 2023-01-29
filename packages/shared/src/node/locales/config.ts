@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
+import { fromEntries, keys } from "../../shared/index.js";
 import type { HopeLang } from "./types.js";
 
 export const lang2PathConfig = {
@@ -21,8 +22,8 @@ export const lang2PathConfig = {
   "zh-TW": "/zh-tw/",
 };
 
-export const supportedLangs = Object.keys(lang2PathConfig);
+export const supportedLangs = keys(lang2PathConfig);
 
-export const path2langConfig = Object.fromEntries(
+export const path2langConfig = fromEntries(
   (supportedLangs as HopeLang[]).map((lang) => [lang2PathConfig[lang], lang])
 );

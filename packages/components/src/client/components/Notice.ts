@@ -1,5 +1,6 @@
 import { h } from "vue";
 import { useRoute } from "vue-router";
+import { startsWith } from "vuepress-shared/client";
 
 import NoticeItem from "./NoticeItem.js";
 
@@ -20,7 +21,7 @@ const Notice: FunctionalComponent<{
   const item = config.find((item) =>
     "match" in item
       ? new RegExp(item.match).test(route.path)
-      : route.path.startsWith(item.path)
+      : startsWith(route.path, item.path)
   );
 
   return item ? h(NoticeItem, item) : null;

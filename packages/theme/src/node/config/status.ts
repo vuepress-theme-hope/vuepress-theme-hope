@@ -1,4 +1,5 @@
 import { isPlainObject } from "@vuepress/shared";
+import { keys } from "vuepress-shared/node";
 
 import type { App } from "@vuepress/core";
 import type { ThemeOptions } from "../../shared/index.js";
@@ -34,7 +35,7 @@ export const getStatus = (
           path: path || `/${key}/`,
         })) || []
       : [],
-    hasMultipleLanguages: Object.keys(locales).length > 1,
+    hasMultipleLanguages: keys(locales).length > 1,
     supportPageview: Boolean(
       plugins.comment && plugins.comment.provider === "Waline"
     ),

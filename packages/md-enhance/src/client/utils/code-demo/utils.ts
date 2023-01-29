@@ -1,3 +1,6 @@
+import { isPlainObject } from "@vuepress/shared";
+import { keys } from "vuepress-shared/client";
+
 import type { Code } from "./typings.js";
 import type { CodeDemoOptions } from "../../../shared/index.js";
 
@@ -52,13 +55,13 @@ export const preProcessorConfig: Record<
 
 export const h = (
   tag: string,
-  attrs: Record<string, string>,
+  attrs?: Record<string, string>,
   children?: HTMLElement[]
 ): HTMLElement => {
   const node = document.createElement(tag);
 
-  attrs &&
-    Object.keys(attrs).forEach((key) => {
+  if (isPlainObject(attrs))
+    keys(attrs).forEach((key) => {
       if (!key.indexOf("data")) {
         const k = key.replace("data", "");
 

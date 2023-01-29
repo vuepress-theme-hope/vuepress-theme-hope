@@ -4,7 +4,7 @@ import {
   removeEndingSlash,
   removeLeadingSlash,
 } from "@vuepress/shared";
-import { Logger, isAbsoluteUrl, isUrl } from "vuepress-shared/node";
+import { Logger, entries, isAbsoluteUrl, isUrl } from "vuepress-shared/node";
 
 import type { App, Page } from "@vuepress/core";
 import type { SeoOptions } from "./options.js";
@@ -21,7 +21,7 @@ export const getAlternateInfo = (
   { lang, path, pathLocale }: Page,
   { pages, siteData }: App
 ): AlternateInfo[] =>
-  Object.entries(siteData.locales)
+  entries(siteData.locales)
     .map(([localePath, { lang }]) => ({
       path: `${localePath}${path.replace(pathLocale, "")}`,
       lang,

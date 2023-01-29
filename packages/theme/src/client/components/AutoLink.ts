@@ -3,6 +3,7 @@ import { RouterLink, useRoute } from "vue-router";
 import { useSiteData } from "@vuepress/client";
 import { ExternalLinkIcon } from "@vuepress/plugin-external-link-icon/client";
 import { isLinkHttp, isLinkMailto, isLinkTel } from "@vuepress/shared";
+import { keys, startsWith } from "vuepress-shared/client";
 
 import Icon from "@theme-hope/components/Icon";
 
@@ -88,7 +89,7 @@ export default defineComponent({
       // should not be active in `exact` mode
       if (props.exact) return false;
 
-      const localeKeys = Object.keys(siteData.value.locales);
+      const localeKeys = keys(siteData.value.locales);
 
       return localeKeys.length
         ? // check all the locales
@@ -105,7 +106,7 @@ export default defineComponent({
           : // if this link is active in subpath
           !shouldBeActiveInSubpath.value
           ? route.path === config.value.link
-          : route.path.startsWith(config.value.link)
+          : startsWith(route.path, config.value.link)
         : false
     );
 

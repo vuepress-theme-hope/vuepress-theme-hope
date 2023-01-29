@@ -6,7 +6,7 @@ import {
   removeLeadingSlash,
 } from "@vuepress/shared";
 import { fs, path, withSpinner } from "@vuepress/utils";
-import { isAbsoluteUrl } from "vuepress-shared/node";
+import { entries, fromEntries, isAbsoluteUrl } from "vuepress-shared/node";
 import { getRedirectHTML } from "./typings/index.js";
 
 import type { App, Page } from "@vuepress/core";
@@ -27,7 +27,7 @@ export const generateHTML = async (
     ? options.config(app)
     : options.config || {};
 
-  const redirectMap = Object.fromEntries(
+  const redirectMap = fromEntries(
     (<Page<Record<string, never>, RedirectPluginFrontmatterOption>[]>pages)
       .map<[string, string][]>(({ frontmatter, path }) =>
         isArray(frontmatter.redirectFrom)
@@ -50,7 +50,7 @@ export const generateHTML = async (
 
   await withSpinner("Generating redirect files")(() =>
     Promise.all(
-      Object.entries({ ...config, ...redirectMap }).map(([from, to]) => {
+      entries({ ...config, ...redirectMap }).map(([from, to]) => {
         const filePath = dir.dest(removeLeadingSlash(from));
         const redirectUrl = isAbsoluteUrl(to)
           ? `${hostname}${base}${removeLeadingSlash(to)}`

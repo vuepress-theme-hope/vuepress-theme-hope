@@ -1,6 +1,7 @@
 /* eslint-disable vue/no-unused-properties */
 import { usePageLang } from "@vuepress/client";
 import { computed, defineComponent, h } from "vue";
+import { startsWith } from "vuepress-shared/client";
 
 import { useSize } from "../composables/index.js";
 
@@ -191,7 +192,7 @@ export default defineComponent({
         ? `${props.id}?`
         : props.listType === "playlist" && props.list
         ? `?listType=playlist&list=${
-            props.list.startsWith("PL") ? props.list : `PL${props.list}`
+            startsWith(props.list, "PL") ? props.list : `PL${props.list}`
           }&`
         : null
     );

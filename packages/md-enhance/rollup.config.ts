@@ -28,6 +28,7 @@ export default [
   }),
   ...rollupTypescript("client/components/CodeDemo", {
     external: [
+      "@vuepress/shared",
       "balloon-css/balloon.css",
       "vue",
       "vuepress-shared/client",

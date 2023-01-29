@@ -1,21 +1,26 @@
 import { isArray, isPlainObject } from "@vuepress/shared";
-import { encodeCDATA, encodeXMLContent } from "vuepress-shared/node";
+import {
+  encodeCDATA,
+  encodeXMLContent,
+  entries,
+  fromEntries,
+} from "vuepress-shared/node";
 
 import type { ElementCompact } from "xml-js";
 
 export const encodeXML = (content: ElementCompact): ElementCompact =>
-  Object.fromEntries(
-    Object.entries(content).map(([key, value]) => {
+  fromEntries(
+    entries(content).map(([key, value]) => {
       if (key === "_attributes" && value)
         return [
           key,
-          Object.fromEntries(
-            Object.entries(
-              value as Record<string, string | number | undefined>
-            ).map(([key, value]) => [
-              key,
-              value ? encodeXMLContent(value.toString()) : undefined,
-            ])
+          fromEntries(
+            entries(value as Record<string, string | number | undefined>).map(
+              ([key, value]) => [
+                key,
+                value ? encodeXMLContent(value.toString()) : undefined,
+              ]
+            )
           ),
         ];
       if (key === "_text")

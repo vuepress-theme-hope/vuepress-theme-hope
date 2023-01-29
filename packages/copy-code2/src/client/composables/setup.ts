@@ -27,7 +27,11 @@
 
 import { onMounted, watch } from "vue";
 import { useRoute } from "vue-router";
-import { Message, useLocaleConfig } from "vuepress-shared/client";
+import {
+  Message,
+  checkIsMobile,
+  useLocaleConfig,
+} from "vuepress-shared/client";
 
 import {
   copyCodeDelay,
@@ -40,13 +44,6 @@ import {
 import { CHECK_ICON, copyToClipboard } from "../utils/index.js";
 
 import "vuepress-shared/client/styles/message.scss";
-
-const isMobile = (): boolean =>
-  navigator
-    ? /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/iu.test(
-        navigator.userAgent
-      )
-    : false;
 
 const timeoutIdMap: Map<HTMLElement, NodeJS.Timeout> = new Map();
 
@@ -123,9 +120,11 @@ export const setupCopyCode = (): void => {
   };
 
   onMounted(() => {
+    const { userAgent } = navigator;
+
     message = new Message();
 
-    if (!isMobile() || copyCodeShowInMobile) generateCopyButton();
+    if (!checkIsMobile(userAgent) || copyCodeShowInMobile) generateCopyButton();
 
     window.addEventListener("click", (event) => {
       const el = event.target as HTMLElement;
@@ -149,7 +148,8 @@ export const setupCopyCode = (): void => {
     watch(
       () => route.path,
       () => {
-        if (!isMobile() || copyCodeShowInMobile) generateCopyButton();
+        if (!checkIsMobile(userAgent) || copyCodeShowInMobile)
+          generateCopyButton();
       }
     );
   });

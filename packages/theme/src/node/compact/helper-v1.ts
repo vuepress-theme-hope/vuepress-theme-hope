@@ -148,10 +148,7 @@ const checkPluginOptions = (plugins: unknown): PluginConfig => {
         }
 
         // check name
-        if (
-          !name.startsWith("vuepress-plugin-") &&
-          !name.match(/@.*\/vuepress-plugin-/)
-        ) {
+        if (!/^(@.*\/)?vuepress-plugin-/.test(name)) {
           logger.error(
             "VuePress2 requires plugin name to strict equal a package name, you should fix it"
           );

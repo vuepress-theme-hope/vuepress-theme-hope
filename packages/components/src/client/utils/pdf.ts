@@ -14,7 +14,7 @@
 
 import { withBase } from "@vuepress/client";
 import { ensureEndingSlash, isString } from "@vuepress/shared";
-import { checkIsMobile, checkIsSafari } from "vuepress-shared/client";
+import { checkIsMobile, checkIsSafari, entries } from "vuepress-shared/client";
 
 declare const PDFJS_URL: string | null;
 
@@ -51,7 +51,7 @@ const buildURLFragmentString = (
   let url = "";
 
   if (options) {
-    url += Object.entries(options)
+    url += entries(options)
       .map(([key, value]) =>
         key === "noToolbar"
           ? `toolbar=${value ? 0 : 1}`

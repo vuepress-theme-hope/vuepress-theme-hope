@@ -1,4 +1,6 @@
 import { computed, defineComponent, h } from "vue";
+import { keys } from "vuepress-shared/client";
+
 import type { VNode } from "vue";
 
 import "../styles/font-icon.scss";
@@ -48,7 +50,7 @@ export default defineComponent({
           : `${props.size}px`;
       }
 
-      return Object.keys(styleObject).length ? styleObject : null;
+      return keys(styleObject).length ? styleObject : null;
     });
 
     return (): VNode | null =>

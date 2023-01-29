@@ -25,6 +25,8 @@
  * © 2019 GitHub, Inc.
  */
 
+import { keys } from "../../shared/index.js";
+
 export class Message {
   private containerElement: HTMLElement;
   private messageElements: Record<number, HTMLDivElement> = {};
@@ -72,8 +74,7 @@ export class Message {
         messageElement.remove();
         delete this.messageElements[messageId];
       });
-    } else
-      Object.keys(this.messageElements).forEach((id) => this.close(Number(id)));
+    } else keys(this.messageElements).forEach((id) => this.close(Number(id)));
   }
 
   destroy(): void {

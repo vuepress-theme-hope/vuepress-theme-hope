@@ -1,5 +1,6 @@
 import { isArray } from "@vuepress/shared";
 import { load } from "cheerio";
+import { fromEntries, keys } from "vuepress-shared/node";
 
 import type { Page } from "@vuepress/core";
 import type { AnyNode } from "cheerio";
@@ -114,7 +115,7 @@ export const generatePageIndex = (
   const nodes = $.parseHTML(page.contentRendered);
 
   // get custom fields
-  const customFields = Object.fromEntries(
+  const customFields = fromEntries(
     customFieldsGetter
       .map(({ getter }, index) => {
         const result = getter(page);
@@ -129,7 +130,7 @@ export const generatePageIndex = (
   );
 
   // no content in page and no customFields
-  if (!nodes?.length && !Object.keys(customFields).length) return null;
+  if (!nodes?.length && !keys(customFields).length) return null;
 
   // walk through nodes and extract indexes
   nodes?.forEach((node) => {
@@ -146,6 +147,6 @@ export const generatePageIndex = (
 
   return {
     ...result,
-    ...(Object.keys(customFields).length ? { customFields } : {}),
+    ...(keys(customFields).length ? { customFields } : {}),
   };
 };

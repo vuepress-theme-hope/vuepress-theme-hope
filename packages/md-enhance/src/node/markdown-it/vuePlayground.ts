@@ -1,3 +1,4 @@
+import { entries, fromEntries } from "vuepress-shared/node";
 import { playground } from "./playground/index.js";
 
 import type { PluginSimple } from "markdown-it";
@@ -26,8 +27,8 @@ const VUE_SUPPORTED_EXTENSIONS = [
 const encodeFiles = (files: PlaygroundData["files"]): string =>
   Buffer.from(
     JSON.stringify(
-      Object.fromEntries(
-        Object.entries(files)
+      fromEntries(
+        entries(files)
           .filter(([, { ext }]) => VUE_SUPPORTED_EXTENSIONS.includes(ext))
           .map(([key, config]) => [key, config.content])
       )

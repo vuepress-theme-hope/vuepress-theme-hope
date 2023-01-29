@@ -1,6 +1,6 @@
 import { lang2PathConfig, path2langConfig } from "./config.js";
-import { deepAssign } from "../../shared/index.js";
 import { Logger } from "../utils/index.js";
+import { deepAssign, fromEntries, keys } from "../../shared/index.js";
 
 import type { App, LocaleConfig } from "@vuepress/core";
 import type { LocaleData } from "@vuepress/shared";
@@ -55,7 +55,7 @@ export const getRootLangPath = (app: App): string =>
   lang2Path(getRootLang(app), app.env.isDebug);
 
 export const getLocalePaths = (app: App): string[] =>
-  Array.from(new Set([...Object.keys(app.siteData.locales)]));
+  Array.from(new Set(keys(app.siteData.locales)));
 
 export interface GetLocalesOptions<T extends LocaleData> {
   app: App;
@@ -81,7 +81,7 @@ export const getLocales = <T extends LocaleData>({
   const rootPath = getRootLangPath(app);
   const logger = new Logger(name);
 
-  return Object.fromEntries([
+  return fromEntries([
     ...getLocalePaths(app)
       .filter((localePath) => localePath !== "/")
       .map<[string, T]>((localePath) => {

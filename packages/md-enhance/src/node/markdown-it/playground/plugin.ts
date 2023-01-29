@@ -1,4 +1,5 @@
 import { hash } from "@vuepress/utils";
+import { entries } from "vuepress-shared/node";
 import { escapeHtml } from "../utils.js";
 
 import type { PluginWithOptions } from "markdown-it";
@@ -312,7 +313,7 @@ export const playground: PluginWithOptions<PlaygroundOptions> = (
 
     const props = propsGetter(playgroundData);
 
-    return `<${component} ${Object.entries(props)
+    return `<${component} ${entries(props)
       .map(([attr, value]) => `${attr}="${escapeHtml(value)}"`)
       .join(" ")}>\n`;
   };

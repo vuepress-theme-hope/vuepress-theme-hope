@@ -2,6 +2,7 @@ import { isPlainObject } from "@vuepress/shared";
 import { useSessionStorage, useStorage } from "@vueuse/core";
 import { computed } from "vue";
 import { useRoute } from "vue-router";
+import { keys, startsWith } from "vuepress-shared/client";
 
 import { useEncryptData } from "./utils.js";
 import { checkToken } from "@theme-hope/modules/encrypt/utils/index";
@@ -28,8 +29,8 @@ export const usePathEncrypt = (): PathEncrypt => {
 
   const getPathMatchedKeys = (path: string): string[] =>
     isPlainObject(encryptData.value.config)
-      ? Object.keys(encryptData.value.config)
-          .filter((key) => decodeURI(path).startsWith(key))
+      ? keys(encryptData.value.config)
+          .filter((key) => startsWith(decodeURI(path), key))
           .sort((a, b) => b.length - a.length)
       : [];
 
