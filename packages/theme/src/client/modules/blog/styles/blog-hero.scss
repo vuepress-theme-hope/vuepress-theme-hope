@@ -22,6 +22,10 @@
     margin: 0 0 1rem;
   }
 
+  &.no-bg {
+    color: var(--text-color);
+  }
+
   .mask {
     position: absolute;
     top: 0;

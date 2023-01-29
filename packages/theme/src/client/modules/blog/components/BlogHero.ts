@@ -34,19 +34,6 @@ export default defineComponent({
         : frontmatter.value.bgImage ?? defaultHeroBgImagePath
     );
 
-    const bgImageStyle = computed(() => {
-      const defaultStyle = {
-        height: "350px",
-        textAlign: "center",
-        overflow: "hidden",
-      };
-
-      return {
-        ...defaultStyle,
-        ...frontmatter.value.bgImageStyle,
-      };
-    });
-
     return (): VNode | null =>
       frontmatter.value.hero === false
         ? null
@@ -54,8 +41,13 @@ export default defineComponent({
             "div",
             {
               ref: hero,
-              class: ["blog-hero", { fullscreen: isFullScreen.value }],
-              style: bgImageStyle.value,
+              class: [
+                "blog-hero",
+                {
+                  fullscreen: isFullScreen.value,
+                  "no-bg": !bgImage.value,
+                },
+              ],
             },
             [
               bgImage.value
@@ -63,6 +55,7 @@ export default defineComponent({
                     class: "mask",
                     style: {
                       background: `url(${bgImage.value}) center/cover no-repeat`,
+                      ...frontmatter.value.bgImageStyle,
                     },
                   })
                 : null,
