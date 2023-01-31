@@ -100,13 +100,13 @@
       @include dot;
 
       // NOTE: Compatible with Android Wechat
-      // inset-inline-start: -12px;
-      left: -12px;
+      // inset-inline-start: -10px;
+      left: -10px;
       width: 8px;
       height: 8px;
 
       #{hope-config.$rtl-selector} & {
-        right: -12px;
+        right: -10px;
         left: unset;
       }
     }
@@ -132,13 +132,13 @@
         @include dot;
 
         // NOTE: Compatible with Android Wechat
-        // inset-inline-start: -12px;
-        left: -12px;
+        // inset-inline-start: -10px;
+        left: -10px;
         width: 8px;
         height: 8px;
 
         #{hope-config.$rtl-selector} & {
-          right: -12px;
+          right: -10px;
           left: unset;
         }
       }
@@ -171,14 +171,14 @@
       @include dot;
 
       // NOTE: Compatible with Android Wechat
-      // inset-inline-end: -16px;
-      right: -16px;
+      // inset-inline-end: -19px;
+      right: -19px;
       width: 6px;
       height: 6px;
 
       #{hope-config.$rtl-selector} & {
         right: unset;
-        left: -16px;
+        left: -19px;
       }
     }
   }
