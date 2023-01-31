@@ -56,19 +56,19 @@ If you need to upgrade your theme and VuePress version, execute the following co
 @tab pnpm
 
 ```bash
-pnpm add @vuepress/client@next vue vuepress@next vuepress-theme-hope -E && pnpm i && pnpm up
+pnpm add @vuepress/client@next vue@latest vuepress@next vuepress-theme-hope@latest  -E && pnpm i && pnpm up
 ```
 
 @tab yarn
 
 ```bash
-yarn add vuepress@next vuepress-theme-hope -E && yarn install && yarn upgrade
+yarn add vuepress@next vuepress-theme-hope@latest -E && yarn install && yarn upgrade
 ```
 
 @tab npm
 
 ```bash
-npm i vuepress@next vuepress-theme-hope -E && npm install && npm update
+npm i vuepress@next vuepress-theme-hope@latest -E && npm install && npm update
 ```
 
 :::

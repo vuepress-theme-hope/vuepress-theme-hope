@@ -70,13 +70,13 @@ pnpm add @vuepress/client@next vuepress@next vuepress-theme-hope vue@latest -E
 @tab yarn
 
 ```bash
-yarn add vuepress@next vuepress-theme-hope -E
+yarn add vuepress@next vuepress-theme-hope@latest -E
 ```
 
 @tab npm
 
 ```bash
-npm i vuepress@next vuepress-theme-hope -E
+npm i vuepress@next vuepress-theme-hope@latest -E
 ```
 
 :::
