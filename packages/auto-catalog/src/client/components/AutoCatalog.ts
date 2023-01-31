@@ -18,11 +18,20 @@ import "../styles/auto-catalog.scss";
 
 declare const AUTO_CATALOG_LOCALES: AutoCatalogLocaleConfig;
 
+export interface AutoCatalogProps {
+  base?: string;
+  level?: 1 | 2 | 3;
+  titleGetter?: (meta: RouteMeta) => string;
+  iconGetter?: (meta: RouteMeta) => string | null | undefined;
+  orderGetter?: (meta: RouteMeta) => number | null | undefined;
+  shouldIndex?: (meta: RouteMeta) => boolean;
+}
+
 interface CatalogInfo {
   title: string;
-  icon: string;
+  icon: string | null | undefined;
   base: string;
-  order: number;
+  order: number | null | undefined;
   level: number;
   path: string;
   children?: CatalogInfo[];
@@ -67,6 +76,7 @@ export default defineComponent({
      */
     titleGetter: {
       type: Function as PropType<(meta: RouteMeta) => string>,
+
       default: (meta: RouteMeta) => meta["title"],
     },
 
@@ -76,7 +86,10 @@ export default defineComponent({
      * 页面图标获取器
      */
     iconGetter: {
-      type: Function as PropType<(meta: RouteMeta) => string>,
+      type: Function as PropType<
+        (meta: RouteMeta) => string | null | undefined
+      >,
+
       default: (meta: RouteMeta) => meta["icon"],
     },
 
@@ -86,7 +99,10 @@ export default defineComponent({
      * 页面排序获取器
      */
     orderGetter: {
-      type: Function as PropType<(meta: RouteMeta) => number>,
+      type: Function as PropType<
+        (meta: RouteMeta) => number | null | undefined
+      >,
+
       default: (meta: RouteMeta) => meta["order"] || 0,
     },
 
@@ -145,7 +161,7 @@ export default defineComponent({
             title: props.titleGetter(meta),
             icon: props.iconGetter(meta),
             base: path.replace(/\/[^/]+\/?$/, "/"),
-            order: props.orderGetter(meta),
+            order: props.orderGetter(meta) || null,
             level: endsWith(path, "/") ? level - 1 : level,
             path,
           };

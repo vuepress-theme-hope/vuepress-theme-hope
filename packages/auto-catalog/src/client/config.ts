@@ -4,6 +4,8 @@ import { hasGlobalComponent } from "vuepress-shared/client";
 
 import AutoCatalog from "./components/AutoCatalog.js";
 
+import type { AutoCatalogProps } from "./components/AutoCatalog.js";
+
 declare const AUTO_CATALOG_TITLE_META_KEY: string;
 declare const AUTO_CATALOG_ICON_META_KEY: string;
 declare const AUTO_CATALOG_ORDER_META_KEY: string;
@@ -12,7 +14,7 @@ declare const AUTO_CATALOG_INDEX_META_KEY: string;
 export default defineClientConfig({
   enhance: ({ app }) => {
     if (!hasGlobalComponent("AutoCatalog", app))
-      app.component("AutoCatalog", () =>
+      app.component("AutoCatalog", (props: AutoCatalogProps) =>
         h(AutoCatalog, {
           titleGetter: (meta): string =>
             meta[AUTO_CATALOG_TITLE_META_KEY] as string,
@@ -22,6 +24,7 @@ export default defineClientConfig({
             meta[AUTO_CATALOG_ORDER_META_KEY] as number,
           shouldIndex: (meta): boolean =>
             Boolean(meta[AUTO_CATALOG_INDEX_META_KEY]),
+          ...props,
         })
       );
   },

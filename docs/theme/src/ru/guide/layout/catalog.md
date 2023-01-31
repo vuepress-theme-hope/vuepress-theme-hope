@@ -28,11 +28,11 @@ Home page catalog:
 <!-- markdownlint-disable MD033 -->
 
 <div class="catalog-display-container">
-  <Catalog base='/' />
+  <AutoCatalog base='/' />
 </div>
 
 <!-- markdownlint-enable MD033 -->
 
 ```md
-<Catalog base='/' />
+<AutoCatalog base='/' />
 ```

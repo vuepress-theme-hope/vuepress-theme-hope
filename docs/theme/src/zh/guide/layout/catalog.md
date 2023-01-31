@@ -28,11 +28,11 @@ VuePress Theme Hope 默认使用 <ProjectLink name="auto-catalog" path="/zh/">`v
 <!-- markdownlint-disable MD033 -->
 
 <div class="catalog-display-container">
-  <Catalog base='/zh/' />
+  <AutoCatalog base='/zh/' />
 </div>
 
 <!-- markdownlint-enable MD033 -->
 
 ```md
-<Catalog base='/zh/' />
+<AutoCatalog base='/zh/' />
 ```
