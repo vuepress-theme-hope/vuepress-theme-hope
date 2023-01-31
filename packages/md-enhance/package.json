@@ -103,7 +103,7 @@
     "@vuepress/bundler-vite": "2.0.0-beta.60",
     "@vuepress/core": "2.0.0-beta.60",
     "@vuepress/markdown": "2.0.0-beta.60",
-    "typescript": "4.9.4"
+    "typescript": "4.9.5"
   },
   "peerDependencies": {
     "@vuepress/client": "2.0.0-beta.60",
