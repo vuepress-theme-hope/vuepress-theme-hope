@@ -9,7 +9,7 @@ export default defineComponent({
   name: "LocalEncrypt",
 
   setup(_props, { slots }) {
-    const { isEncrypted, validate } = usePathEncrypt();
+    const { status, validate } = usePathEncrypt();
 
     const isMounted = ref(false);
 
@@ -17,11 +17,16 @@ export default defineComponent({
       isMounted.value = true;
     });
 
-    return (): VNode | null =>
-      isMounted.value
-        ? isEncrypted.value
-          ? h(PasswordModal, { full: true, onVerify: validate })
-          : ((slots["default"]?.() || null) as VNode | null)
-        : null;
+    return (): VNode[] | VNode | null => {
+      const { isEncrypted, isDecrypted } = status.value;
+
+      return isEncrypted
+        ? isMounted.value
+          ? isDecrypted
+            ? slots["default"]?.() || null
+            : h(PasswordModal, { full: true, onVerify: validate })
+          : null
+        : slots["default"]?.() || null;
+    };
   },
 });

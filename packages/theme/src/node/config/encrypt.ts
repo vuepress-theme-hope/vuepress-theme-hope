@@ -11,10 +11,10 @@ export const getEncryptConfig = (
 ): EncryptConfig => {
   const result: EncryptConfig = {};
 
-  if (encrypt.global) result.global = true;
-
   // handle global token
-  if (encrypt.admin)
+  if (encrypt.admin) {
+    if (encrypt.global) result.global = true;
+
     if (isString(encrypt.admin)) result.admin = [hashSync(encrypt.admin)];
     else if (isArray(encrypt.admin))
       result.admin = encrypt.admin
@@ -34,6 +34,7 @@ export const getEncryptConfig = (
         
         Please check "admin" in your "themeConfig.encrypt" config. It can be string or string[], but you are providing ${typeof encrypt.admin}. Please fix it!`
       );
+  }
 
   if (encrypt.config)
     result.config = fromEntries(

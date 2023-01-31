@@ -10,6 +10,7 @@ const STORAGE_KEY = "VUEPRESS_HOPE_GLOBAL_TOKEN";
 
 export interface GlobalEncrypt {
   isEncrypted: ComputedRef<boolean>;
+  isDecrypted: ComputedRef<boolean>;
   validate: (token: string, keep?: boolean) => void;
 }
 
@@ -19,22 +20,27 @@ export const useGlobalEncrypt = (): GlobalEncrypt => {
   const localToken = useStorage(STORAGE_KEY, "");
   const sessionToken = useSessionStorage(STORAGE_KEY, "");
 
+  // is globally encrypted
   const isEncrypted = computed(() => {
-    // is globally encrypted
-    if (encryptData.value.global && encryptData.value.admin) {
+    const { global = false, admin = [] } = encryptData.value;
+
+    return global && admin.length > 0;
+  });
+
+  // valid token exists
+  const isDecrypted = computed(() => {
+    if (isEncrypted.value) {
       if (localToken.value)
         // none of the token matches
-        return encryptData.value.admin.every(
-          (hash) => !compareSync(localToken.value, hash)
+        return encryptData.value.admin!.some((hash) =>
+          compareSync(localToken.value, hash)
         );
 
       if (sessionToken.value)
         // none of the token matches
-        return encryptData.value.admin.every(
-          (hash) => !compareSync(sessionToken.value, hash)
+        return encryptData.value.admin!.some((hash) =>
+          compareSync(sessionToken.value, hash)
         );
-
-      return true;
     }
 
     return false;
@@ -46,6 +52,7 @@ export const useGlobalEncrypt = (): GlobalEncrypt => {
 
   return {
     isEncrypted,
+    isDecrypted,
     validate,
   };
 };

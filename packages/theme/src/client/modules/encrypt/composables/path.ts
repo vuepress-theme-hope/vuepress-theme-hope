@@ -11,9 +11,14 @@ import type { ComputedRef } from "vue";
 
 const STORAGE_KEY = "VUEPRESS_HOPE_PATH_TOKEN";
 
+export interface EncryptStatus {
+  isEncrypted: boolean;
+  isDecrypted: boolean;
+}
+
 export interface PathEncrypt {
-  isEncrypted: ComputedRef<boolean>;
-  getStatus: (path: string) => boolean;
+  status: ComputedRef<EncryptStatus>;
+  getStatus: (path: string) => EncryptStatus;
   validate: (token: string, keep?: boolean) => void;
 }
 
@@ -34,29 +39,35 @@ export const usePathEncrypt = (): PathEncrypt => {
           .sort((a, b) => b.length - a.length)
       : [];
 
-  const getStatus = (path: string): boolean => {
+  const getStatus = (path: string): EncryptStatus => {
     const matchedKeys = getPathMatchedKeys(path);
 
-    if (matchedKeys.length !== 0) {
+    if (matchedKeys.length > 0) {
       const { config = {} } = encryptData.value;
 
-      return !matchedKeys.some(
-        (key) =>
-          (localToken.value[key] &&
-            config[key].some((token) =>
-              checkToken(localToken.value[key], token)
-            )) ||
-          (sessionToken.value[key] &&
-            config[key].some((token) =>
-              checkToken(sessionToken.value[key], token)
-            ))
-      );
+      return {
+        isEncrypted: true,
+        isDecrypted: matchedKeys.some(
+          (key) =>
+            (localToken.value[key] &&
+              config[key].some((token) =>
+                checkToken(localToken.value[key], token)
+              )) ||
+            (sessionToken.value[key] &&
+              config[key].some((token) =>
+                checkToken(sessionToken.value[key], token)
+              ))
+        ),
+      };
     }
 
-    return false;
+    return {
+      isDecrypted: false,
+      isEncrypted: false,
+    };
   };
 
-  const isEncrypted = computed(() => getStatus(route.path));
+  const status = computed(() => getStatus(route.path));
 
   const validate = (inputToken: string, keep = false): void => {
     const { config = {} } = encryptData.value;
@@ -73,7 +84,7 @@ export const usePathEncrypt = (): PathEncrypt => {
   };
 
   return {
-    isEncrypted,
+    status,
     getStatus,
     validate,
   };
