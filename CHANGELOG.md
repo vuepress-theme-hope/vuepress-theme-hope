@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.171](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.170...v2.0.0-beta.171) (2023-01-31)
+
+### Bug Fixes
+
+- **auto-catalog:** fix props dropping, close [#2727](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2727) ([d966080](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d9660801f9f03b54eb5e76416cc03db2a73ff8ae))
+- **theme:** improve encrypt ssr ([9436b7e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9436b7e862e9ddc674b69338cb0aba5bf179b825))
+
 ## [2.0.0-beta.170](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.169...v2.0.0-beta.170) (2023-01-29)
 
 ### ⚠ BREAKING CHANGES
