@@ -691,8 +691,8 @@ importers:
   docs-shared:
     dependencies:
       '@types/three':
-        specifier: 0.148.1
-        version: 0.148.1
+        specifier: 0.149.0
+        version: 0.149.0
       '@vuepress/cli':
         specifier: 2.0.0-beta.60
         version: 2.0.0-beta.60
@@ -4646,8 +4646,8 @@ packages:
     dependencies:
       '@types/node': 18.11.18
 
-  /@types/three@0.148.1:
-    resolution: {integrity: sha512-gZwIyTBMxKXqJHXmZ0dzvDieuQ4hz8MPNHtkRrAwER/xPlAh9eP2WIfaolvQY+wJAzlNV5a9ceS4JT+i/jybsw==}
+  /@types/three@0.149.0:
+    resolution: {integrity: sha512-fgNBm9LWc65ER/W0cvoXdC0iMy7Ke9e2CONmEr6Jt8sDSY3sw4DgOubZfmdZ747dkPhbQrgRQAWwDEr2S/7IEg==}
     dependencies:
       '@types/webxr': 0.5.1
     dev: false
