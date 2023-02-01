@@ -7,8 +7,7 @@ import {
   ref,
   watch,
 } from "vue";
-import { atou } from "vuepress-shared/client";
-import { LoadingIcon } from "./icons.js";
+import { LoadingIcon, atou } from "vuepress-shared/client";
 
 import type { MermaidConfig } from "mermaid";
 import type { VNode } from "vue";
@@ -185,13 +184,13 @@ export default defineComponent({
         "div",
         {
           ref: mermaidElement,
-          class: ["mermaid-wrapper", { loading: !svgCode.value }],
+          class: "mermaid-wrapper",
         },
         svgCode.value
           ? // mermaid
             h("div", { class: "content", innerHTML: svgCode.value })
           : // loading
-            h(LoadingIcon)
+            h(LoadingIcon, { class: "mermaid-loading", height: 96 })
       );
   },
 });

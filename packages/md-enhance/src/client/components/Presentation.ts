@@ -1,8 +1,7 @@
 import { useReveal } from "@temp/md-enhance/reveal";
 import { usePageFrontmatter } from "@vuepress/client";
 import { defineComponent, h, onBeforeUnmount, onMounted, ref } from "vue";
-import { atou } from "vuepress-shared/client";
-import { LoadingIcon } from "./icons.js";
+import { LoadingIcon, atou } from "vuepress-shared/client";
 
 import type { PropType, VNode } from "vue";
 import type Reveal from "reveal.js/dist/reveal.esm.js";
@@ -59,18 +58,19 @@ export default defineComponent({
   setup(props) {
     const frontmatter = usePageFrontmatter<{ reveal: RevealOptions }>();
     const code = ref("");
-    const loading = ref(false);
+    const loading = ref(true);
     const presentationContainer = ref<HTMLElement>();
-    const presentationElement = ref<HTMLElement>();
 
     let reveal: Reveal;
 
     onMounted(() => {
-      if (presentationElement.value) {
+      const container = presentationContainer.value;
+
+      if (container) {
         code.value = atou(props.code);
 
-        presentationElement.value.setAttribute("id", props.id);
-        presentationElement.value.setAttribute("data-theme", props.theme);
+        container.setAttribute("id", props.id);
+        container.setAttribute("data-theme", props.theme);
 
         const promises: [
           Promise<void>,
@@ -81,7 +81,7 @@ export default defineComponent({
         ];
 
         void Promise.all(promises).then(([, revealJS, ...plugins]) => {
-          reveal = new revealJS.default(presentationElement.value!, {
+          reveal = new revealJS.default(container, {
             plugins: plugins.map((plugin) => plugin.default),
           });
 
@@ -109,30 +109,22 @@ export default defineComponent({
     });
 
     return (): VNode =>
-      h(
-        "div",
-        {
-          ref: presentationContainer,
-          class: {
-            "md-enhance-presentation": true,
-            loading: loading.value,
+      h("div", { class: "presentation-wrapper" }, [
+        h(
+          "div",
+          {
+            ref: presentationContainer,
+            class: ["reveal", "reveal-viewport"],
           },
-        },
-        [
-          loading.value ? h(LoadingIcon) : null,
-          h(
-            "div",
-            {
-              ref: presentationElement,
-              class: ["reveal", "reveal-viewport"],
-            },
-            h("div", {
-              class: "slides",
-              style: { display: loading.value ? "none" : "block" },
-              innerHTML: `<section data-markdown data-separator="^\\r?\\n---\\r?\\n$" data-separator-vertical="^\\r?\\n--\\r?\\n$"><script type="text/template">${code.value}</script></section>`,
-            })
-          ),
-        ]
-      );
+          h("div", {
+            class: "slides",
+            // style: { display: loading.value ? "none" : "block" },
+            innerHTML: `<section data-markdown data-separator="^\\r?\\n---\\r?\\n$" data-separator-vertical="^\\r?\\n--\\r?\\n$"><script type="text/template">${code.value}</script></section>`,
+          })
+        ),
+        loading.value
+          ? h(LoadingIcon, { class: "reveal-loading", height: 400 })
+          : null,
+      ]);
   },
 });

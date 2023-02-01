@@ -1,6 +1,7 @@
 import { usePageFrontmatter, usePageLang, withBase } from "@vuepress/client";
 import { computed, defineComponent, h, onMounted, ref } from "vue";
 import { useRoute } from "vue-router";
+import { LoadingIcon } from "vuepress-shared/client";
 
 import type { VNode } from "vue";
 import type {
@@ -146,9 +147,7 @@ export default defineComponent({
             display: enableComment.value ? "block" : "none",
           },
         },
-        loaded.value
-          ? h("giscus-widget", config.value)
-          : h("div", { style: "text-align:center" }, "Loading...")
+        loaded.value ? h("giscus-widget", config.value) : h(LoadingIcon)
       );
   },
 });

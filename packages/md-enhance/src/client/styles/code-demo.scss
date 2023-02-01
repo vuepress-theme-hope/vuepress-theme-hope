@@ -9,6 +9,10 @@
   --code-demo-header-bg-color: #333;
 }
 
+.code-demo-loading {
+  color: var(--c-brand, #3eaf7c);
+}
+
 .code-demo-wrapper {
   margin: 10px 0;
   border: 1px solid var(--c-border, #eaecef);
@@ -17,19 +21,6 @@
 
   &:hover {
     box-shadow: 0 2px 12px var(--card-shadow);
-  }
-
-  .loading {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .loading-icon {
-    width: 4em;
-    height: 4em;
-    margin: 2.5em auto;
-    color: var(--c-brand, #3eaf7c);
   }
 }
 

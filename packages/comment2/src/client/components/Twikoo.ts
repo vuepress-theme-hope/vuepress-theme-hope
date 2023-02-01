@@ -1,5 +1,5 @@
 import { usePageFrontmatter, usePageLang } from "@vuepress/client";
-import { computed, defineComponent, h, onMounted } from "vue";
+import { computed, defineComponent, h, onMounted, ref } from "vue";
 
 import type { VNode } from "vue";
 import type {
@@ -8,6 +8,7 @@ import type {
 } from "../../shared/index.js";
 
 import "../styles/twikoo.scss";
+import { LoadingIcon } from "packages/shared/lib/client/index.js";
 
 declare const COMMENT_OPTIONS: TwikooOptions;
 
@@ -20,6 +21,7 @@ export default defineComponent({
   setup() {
     const frontmatter = usePageFrontmatter<CommentPluginFrontmatter>();
     const lang = usePageLang();
+    const loaded = ref(false);
 
     let id: number;
 
@@ -43,6 +45,7 @@ export default defineComponent({
         import("twikoo"),
         new Promise<void>((resolve) => setTimeout(resolve, twikooOption.delay)),
       ]).then(([{ init }]) => {
+        loaded.value = true;
         if (timeID === id)
           void init({
             lang: lang.value === "zh-CN" ? "zh-CN" : "en",
@@ -64,7 +67,7 @@ export default defineComponent({
           id: "comment",
           style: { display: enableComment.value ? "block" : "none" },
         },
-        h("div", { id: "twikoo-comment" })
+        loaded.value ? h("div", { id: "twikoo-comment" }) : h(LoadingIcon)
       );
   },
 });

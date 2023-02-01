@@ -1,6 +1,7 @@
 import { computed, defineComponent, h, onMounted, ref, shallowRef } from "vue";
+import { LoadingIcon } from "vuepress-shared/client";
 
-import { CODE_SVG, LoadingIcon } from "./icons.js";
+import { CODE_SVG } from "./icons.js";
 import { getVuePlaygroundSettings } from "../utils/playground.js";
 
 import type { Repl, ReplProps, ReplStore } from "@vue/repl";
@@ -94,7 +95,7 @@ export default defineComponent({
           },
           [
             loading.value
-              ? h("div", { class: "preview-loading-wrapper" }, h(LoadingIcon))
+              ? h(LoadingIcon, { class: "preview-loading", height: 192 })
               : null,
             component.value
               ? h(component.value, <ReplProps>{

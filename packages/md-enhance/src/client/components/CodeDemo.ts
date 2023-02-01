@@ -1,6 +1,7 @@
 import { computed, defineComponent, h, onMounted, ref } from "vue";
-import { atou } from "vuepress-shared/client";
-import { CODEPEN_SVG, JSFIDDLE_SVG, LoadingIcon } from "./icons.js";
+import { LoadingIcon, atou } from "vuepress-shared/client";
+
+import { CODEPEN_SVG, JSFIDDLE_SVG } from "./icons.js";
 import { loadNormal, loadReact, loadVue } from "../composables/index.js";
 import {
   getCode,
@@ -147,7 +148,6 @@ export default defineComponent({
 
     return (): VNode =>
       h("div", { class: "code-demo-wrapper", id: props.id }, [
-        loaded.value ? null : h("div", { class: "loading" }, h(LoadingIcon)),
         h("div", { class: "code-demo-header" }, [
           code.value.isLegal
             ? h("button", {
@@ -259,7 +259,7 @@ export default defineComponent({
               )
             : null,
         ]),
-
+        loaded.value ? null : h(LoadingIcon, { class: "code-demo-loading" }),
         h("div", {
           ref: demoWrapper,
           class: "code-demo-container",

@@ -9,7 +9,7 @@ import {
   watch,
 } from "vue";
 import { useRoute } from "vue-router";
-import { useLocaleConfig } from "vuepress-shared/client";
+import { LoadingIcon, useLocaleConfig } from "vuepress-shared/client";
 
 import type { VNode } from "vue";
 import type {
@@ -108,7 +108,7 @@ export default defineComponent({
                     loader: async () =>
                       (await import("@waline/client/dist/component.mjs"))
                         .Waline,
-                    loadingComponent: () => h("Loading..."),
+                    loadingComponent: () => h(LoadingIcon),
                   }),
                   walineProps.value
                 )

@@ -17,45 +17,6 @@ export const HomeIcon: FunctionalComponent = () =>
     })
   );
 
-export const LoadingIcon: FunctionalComponent = () =>
-  h(IconBase, { name: "loading" }, () =>
-    ["0s", "-0.333s", "-0.667s"].map((item) =>
-      h(
-        "circle",
-        {
-          cx: 512,
-          cy: 512,
-          r: 0,
-          fill: "none",
-          stroke: "currentColor",
-          "stroke-width": "20",
-        },
-        [
-          h("animate", {
-            attributeName: "r",
-            repeatCount: "indefinite",
-            dur: "1s",
-            values: "0;400",
-            keyTimes: "0;1",
-            keySplines: "0 0.2 0.8 1",
-            calcMode: "spline",
-            begin: item,
-          }),
-          h("animate", {
-            attributeName: "opacity",
-            repeatCount: "indefinite",
-            dur: "1s",
-            values: "1;0",
-            keyTimes: "0;1",
-            keySplines: "0.2 0 0.8 1",
-            calcMode: "spline",
-            begin: item,
-          }),
-        ]
-      )
-    )
-  );
-
 export const CODEPEN_SVG =
   '<svg class="codepen-icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="200" height="200"><path d="M123.429 668L468 897.714V692.571L277.143 565.143zM88 585.714L198.286 512 88 438.286v147.428zm468 312L900.571 668 746.857 565.143 556 692.57v205.143zM512 616l155.429-104L512 408 356.571 512zM277.143 458.857L468 331.43V126.286L123.429 356zM825.714 512L936 585.714V438.286zm-78.857-53.143L900.571 356 556 126.286v205.143zM1024 356v312q0 23.429-19.429 36.571l-468 312Q524.571 1024 512 1024t-24.571-7.429l-468-312Q0 691.43 0 668V356q0-23.429 19.429-36.571l468-312Q499.429 0 512 0t24.571 7.429l468 312Q1024 332.57 1024 356z"/></svg>';
 
