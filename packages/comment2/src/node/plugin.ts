@@ -29,7 +29,7 @@ export const commentPlugin =
 
     const provider =
       options.provider &&
-      ["Giscus", "Waline", "Twikoo"].includes(options.provider)
+      ["Artalk", "Giscus", "Waline", "Twikoo"].includes(options.provider)
         ? options.provider
         : "None";
 
@@ -68,6 +68,11 @@ export const commentPlugin =
       }),
 
       extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
+        if (provider === "Artalk") {
+          addViteOptimizeDepsInclude(bundlerOptions, app, "artalk");
+          addViteSsrExternal(bundlerOptions, app, "artalk");
+        }
+
         if (provider === "Giscus") {
           addCustomElement(bundlerOptions, app, "GiscusWidget");
           addViteSsrExternal(bundlerOptions, app, "giscus");
