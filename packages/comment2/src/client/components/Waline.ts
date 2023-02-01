@@ -1,7 +1,13 @@
 import { usePageFrontmatter, usePageLang, withBase } from "@vuepress/client";
-import { Waline } from "@waline/client/dist/component.mjs";
 import { pageviewCount } from "@waline/client/dist/pageview.mjs";
-import { computed, defineComponent, h, onMounted, watch } from "vue";
+import {
+  computed,
+  defineAsyncComponent,
+  defineComponent,
+  h,
+  onMounted,
+  watch,
+} from "vue";
 import { useRoute } from "vue-router";
 import { useLocaleConfig } from "vuepress-shared/client";
 
@@ -96,7 +102,17 @@ export default defineComponent({
         ? h(
             "div",
             { class: "waline-wrapper", id: "comment" },
-            enableWaline ? h(Waline, walineProps.value) : []
+            enableWaline
+              ? h(
+                  defineAsyncComponent({
+                    loader: async () =>
+                      (await import("@waline/client/dist/component.mjs"))
+                        .Waline,
+                    loadingComponent: () => h("Loading..."),
+                  }),
+                  walineProps.value
+                )
+              : []
           )
         : null;
   },
