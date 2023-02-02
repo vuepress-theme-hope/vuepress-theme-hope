@@ -1,5 +1,6 @@
 declare module "@temp/theme-hope/sidebar" {
-  import type { ThemeSidebarGroupItem } from "vuepress-theme-hope/src/shared";
+  import { ThemeSidebarGroupItem } from "vuepress-theme-hope/src/shared";
 
+  type;
   export const sidebarData: Record<string, (ThemeSidebarGroupItem | string)[]>;
 }

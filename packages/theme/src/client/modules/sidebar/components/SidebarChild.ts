@@ -1,15 +1,15 @@
-import { defineComponent } from "vue";
+import { type PropType, type VNode, defineComponent } from "vue";
 import { useRoute } from "vue-router";
+
 import {
   renderChildren,
   renderItem,
 } from "@theme-hope/modules/sidebar/composables/index";
 import { isActiveSidebarItem } from "@theme-hope/modules/sidebar/utils/index";
 
-import type { PropType, VNode } from "vue";
-import type {
-  ResolvedSidebarHeaderItem,
-  ResolvedSidebarPageItem,
+import {
+  type ResolvedSidebarHeaderItem,
+  type ResolvedSidebarPageItem,
 } from "../utils/index.js";
 
 import "../styles/sidebar-child.scss";

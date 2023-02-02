@@ -1,9 +1,9 @@
+import { type App } from "@vuepress/core";
 import { colors } from "@vuepress/utils";
 import { keys } from "vuepress-shared/node";
-import { logger } from "../utils.js";
 
-import type { App } from "@vuepress/core";
-import type { PluginsOptions } from "../../shared/index.js";
+import { type PluginsOptions } from "../../shared/index.js";
+import { logger } from "../utils.js";
 
 const PLUGIN_CHECKLIST = [
   ["@vuepress/plugin-active-header-links", "activeHeaderLinks"],

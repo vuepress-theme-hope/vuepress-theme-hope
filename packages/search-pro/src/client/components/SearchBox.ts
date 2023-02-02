@@ -1,13 +1,11 @@
 import { useEventListener } from "@vueuse/core";
-import { defineComponent, h, inject } from "vue";
+import { type VNode, defineComponent, h, inject } from "vue";
 import { useLocaleConfig } from "vuepress-shared/client";
 
 import { SearchIcon } from "./icons.js";
 import { searchModalSymbol } from "../composables/setup.js";
 import { searchProLocales } from "../define.js";
 import { isFocusingTextControl, isKeyMatched } from "../utils/index.js";
-
-import type { VNode } from "vue";
 
 import "../styles/search-box.scss";
 

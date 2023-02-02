@@ -1,13 +1,12 @@
 import { isPlainObject } from "@vuepress/shared";
 import { useSessionStorage, useStorage } from "@vueuse/core";
-import { computed } from "vue";
+import { type ComputedRef, computed } from "vue";
 import { useRoute } from "vue-router";
 import { keys, startsWith } from "vuepress-shared/client";
 
-import { useEncryptData } from "./utils.js";
 import { checkToken } from "@theme-hope/modules/encrypt/utils/index";
 
-import type { ComputedRef } from "vue";
+import { useEncryptData } from "./utils.js";
 
 const STORAGE_KEY = "VUEPRESS_HOPE_PATH_TOKEN";
 

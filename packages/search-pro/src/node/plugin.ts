@@ -1,3 +1,4 @@
+import { type PluginFunction } from "@vuepress/core";
 import { getDirname, path } from "@vuepress/utils";
 import { watch } from "chokidar";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
@@ -6,15 +7,14 @@ import {
   fromEntries,
   getLocales,
 } from "vuepress-shared/node";
+
 import { searchProLocales } from "./locales.js";
+import { type SearchProOptions } from "./options.js";
 import {
   prepareSearchIndex,
   removeSearchIndex,
   updateSearchIndex,
 } from "./prepare.js";
-
-import type { PluginFunction } from "@vuepress/core";
-import type { SearchProOptions } from "./options.js";
 
 const __dirname = getDirname(import.meta.url);
 

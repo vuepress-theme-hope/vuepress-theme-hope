@@ -1,8 +1,7 @@
 import { entries, keys } from "vuepress-shared/client";
-import { getMatchedContent } from "./matchContent.js";
 
-import type { Word } from "./matchContent.js";
-import type { LocaleIndex } from "../../shared/index.js";
+import { type Word, getMatchedContent } from "./matchContent.js";
+import { type LocaleIndex } from "../../shared/index.js";
 
 export interface TitleMatchedItem {
   type: "title";

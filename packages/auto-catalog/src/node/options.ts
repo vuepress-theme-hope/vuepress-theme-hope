@@ -1,5 +1,10 @@
-import type { LocaleConfig, Page, PageFrontmatter } from "@vuepress/core";
-import type { AutoCatalogLocaleData } from "../shared/index.js";
+import {
+  type LocaleConfig,
+  type Page,
+  type PageFrontmatter,
+} from "@vuepress/core";
+
+import { type AutoCatalogLocaleData } from "../shared/index.js";
 
 export interface AutoCatalogOptions {
   /**

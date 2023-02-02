@@ -1,11 +1,17 @@
-import { computed, defineComponent, h, onMounted, ref, shallowRef } from "vue";
+import { type Repl, type ReplProps, type ReplStore } from "@vue/repl";
+import {
+  type VNode,
+  computed,
+  defineComponent,
+  h,
+  onMounted,
+  ref,
+  shallowRef,
+} from "vue";
 import { LoadingIcon } from "vuepress-shared/client";
 
 import { CODE_SVG } from "./icons.js";
 import { getVuePlaygroundSettings } from "../utils/playground.js";
-
-import type { Repl, ReplProps, ReplStore } from "@vue/repl";
-import type { VNode } from "vue";
 
 import "@vue/repl/style.css";
 import "../styles/vue-playground.scss";
@@ -52,7 +58,9 @@ export default defineComponent({
     const showCode = ref(playgroundOptions.value.showCode || false);
 
     const setupRepl = async (): Promise<void> => {
-      const { ReplStore, Repl } = await import("@vue/repl");
+      const { ReplStore, Repl } = await import(
+        /* webpackChunkName: "vue-repl" */ "@vue/repl"
+      );
 
       component.value = Repl;
       store.value = new ReplStore({

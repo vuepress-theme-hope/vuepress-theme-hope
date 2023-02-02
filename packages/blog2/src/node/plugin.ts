@@ -1,20 +1,19 @@
 import {
+  type PluginFunction,
   preparePageComponent,
   preparePageData,
   preparePagesComponents,
   preparePagesData,
   preparePagesRoutes,
 } from "@vuepress/core";
-import { getPageExcerpt } from "vuepress-shared/node";
 import { watch } from "chokidar";
+import { getPageExcerpt } from "vuepress-shared/node";
 
 import { prepareCategory } from "./category.js";
+import { convertOptions } from "./compact.js";
+import { type BlogOptions, type PageWithExcerpt } from "./options.js";
 import { prepareType } from "./type.js";
 import { getPageMap, logger } from "./utils.js";
-
-import type { PluginFunction } from "@vuepress/core";
-import type { BlogOptions, PageWithExcerpt } from "./options.js";
-import { convertOptions } from "./compact.js";
 
 export const blogPlugin =
   (options: BlogOptions, legacy = true): PluginFunction =>

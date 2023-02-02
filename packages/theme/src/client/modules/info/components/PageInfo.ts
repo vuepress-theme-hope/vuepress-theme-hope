@@ -1,27 +1,31 @@
-import { defineComponent, h, resolveComponent } from "vue";
+import {
+  type PropType,
+  type VNode,
+  defineComponent,
+  h,
+  resolveComponent,
+} from "vue";
+import { type ReadingTime } from "vuepress-plugin-reading-time2";
+import {
+  type AuthorInfo as AuthorInfoType,
+  type DateInfo as DateInfoType,
+} from "vuepress-shared/client";
 
 import { usePure } from "@theme-hope/composables/index";
-
 import AuthorInfo from "@theme-hope/modules/info/components/AuthorInfo";
 import CategoryInfo from "@theme-hope/modules/info/components/CategoryInfo";
 import DateInfo from "@theme-hope/modules/info/components/DateInfo";
+import OriginalInfo from "@theme-hope/modules/info/components/OriginalInfo";
 import PageViewInfo from "@theme-hope/modules/info/components/PageViewInfo";
 import ReadingTimeInfo from "@theme-hope/modules/info/components/ReadingTimeInfo";
 import TagInfo from "@theme-hope/modules/info/components/TagInfo";
-import OriginalInfo from "@theme-hope/modules/info/components/OriginalInfo";
 import WordInfo from "@theme-hope/modules/info/components/WordInfo";
-
-import type { PropType, VNode } from "vue";
-import type { ReadingTime } from "vuepress-plugin-reading-time2";
-import type {
-  AuthorInfo as AuthorInfoType,
-  DateInfo as DateInfoType,
-} from "vuepress-shared/client";
-import type {
-  PageCategory,
-  PageTag,
+import {
+  type PageCategory,
+  type PageTag,
 } from "@theme-hope/modules/info/utils/index";
-import type { PageInfo } from "../../../../shared/index.js";
+
+import { type PageInfo } from "../../../../shared/index.js";
 
 import "balloon-css/balloon.css";
 import "../styles/page-info.scss";

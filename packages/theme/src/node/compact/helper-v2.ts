@@ -1,19 +1,19 @@
+import { type UserConfig } from "@vuepress/cli";
+import { type ThemeFunction } from "@vuepress/core";
 import { isFunction, isPlainObject } from "@vuepress/shared";
 import { colors } from "@vuepress/utils";
+
 import { convertThemeOptions } from "./theme.js";
 import { deprecatedMsg } from "./utils.js";
+import {
+  type NavbarOptions,
+  type SidebarArrayOptions,
+  type SidebarObjectOptions,
+  type SidebarOptions,
+  type ThemeOptions,
+} from "../../shared/index.js";
 import { hopeTheme } from "../theme.js";
 import { logger } from "../utils.js";
-
-import type { ThemeFunction } from "@vuepress/core";
-import type { UserConfig } from "@vuepress/cli";
-import type {
-  NavbarOptions,
-  SidebarArrayOptions,
-  SidebarObjectOptions,
-  SidebarOptions,
-  ThemeOptions,
-} from "../../shared/index.js";
 
 /**
  * import and use `hopeTheme` instead

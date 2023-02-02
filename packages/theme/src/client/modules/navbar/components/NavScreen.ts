@@ -1,6 +1,7 @@
 import { clearAllBodyScrollLocks, disableBodyScroll } from "body-scroll-lock";
 import {
   Transition,
+  type VNode,
   defineComponent,
   h,
   onBeforeUnmount,
@@ -13,8 +14,6 @@ import { useRoute } from "vue-router";
 import { useWindowSize } from "@theme-hope/composables/index";
 import NavScreenLinks from "@theme-hope/modules/navbar/components/NavScreenLinks";
 import OutlookSettings from "@theme-hope/modules/outlook/components/OutlookSettings";
-
-import type { VNode } from "vue";
 
 import "../styles/nav-screen.scss";
 

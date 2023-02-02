@@ -1,5 +1,5 @@
-import type { FontIconOptions } from "./icon.js";
-import type { ArtPlayerOptions } from "../../shared/index.js";
+import { type FontIconOptions } from "./icon.js";
+import { type ArtPlayerOptions } from "../../shared/index.js";
 
 export interface ComponentGlobalOptions {
   /**

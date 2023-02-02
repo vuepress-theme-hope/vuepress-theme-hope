@@ -1,13 +1,12 @@
+import { type PluginFunction } from "@vuepress/core";
+import { isArray, isString } from "@vuepress/shared";
 import { getDirname, path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import { addViteSsrNoExternal, getLocales } from "vuepress-shared/node";
 
 import { copyCodeLocales } from "./locales.js";
+import { type CopyCodeOptions } from "./options.js";
 import { logger } from "./utils.js";
-
-import type { PluginFunction } from "@vuepress/core";
-import type { CopyCodeOptions } from "./options.js";
-import { isArray, isString } from "@vuepress/shared";
 
 const __dirname = getDirname(import.meta.url);
 

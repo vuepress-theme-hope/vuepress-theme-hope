@@ -1,12 +1,11 @@
-import { computed, defineComponent, h } from "vue";
+import { type PropType, type VNode, computed, defineComponent, h } from "vue";
 import { RouterLink, useRoute } from "vue-router";
 
 import Icon from "@theme-hope/components/Icon";
 import SidebarLinks from "@theme-hope/modules/sidebar/components/SidebarLinks";
 import { isActiveSidebarItem } from "@theme-hope/modules/sidebar/utils/index";
 
-import type { PropType, VNode } from "vue";
-import type { ResolvedSidebarGroupItem } from "../utils/index.js";
+import { type ResolvedSidebarGroupItem } from "../utils/index.js";
 
 import "../styles/sidebar-group.scss";
 

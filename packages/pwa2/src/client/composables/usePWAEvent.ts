@@ -1,6 +1,5 @@
-import { inject } from "vue";
-import type { Emitter } from "mitt";
-import type { InjectionKey } from "vue";
+import { type Emitter } from "mitt";
+import { type InjectionKey, inject } from "vue";
 
 export type PWAEvent = Emitter<{
   ready: ServiceWorkerRegistration;

@@ -1,6 +1,7 @@
 import { useSiteData } from "@vuepress/client";
-import { computed, defineComponent, h } from "vue";
-import { RouterLink, useRoute, useRouter } from "vue-router";
+import { type PropType, type VNode, computed, defineComponent, h } from "vue";
+import { type RouteMeta, RouterLink, useRoute, useRouter } from "vue-router";
+import FontIcon from "vuepress-plugin-components/client/components/FontIcon.js";
 import {
   endsWith,
   keys,
@@ -8,11 +9,7 @@ import {
   useLocaleConfig,
 } from "vuepress-shared/client";
 
-import FontIcon from "vuepress-plugin-components/client/components/FontIcon.js";
-
-import type { PropType, VNode } from "vue";
-import type { RouteMeta } from "vue-router";
-import type { AutoCatalogLocaleConfig } from "../../shared/index.js";
+import { type AutoCatalogLocaleConfig } from "../../shared/index.js";
 
 import "../styles/auto-catalog.scss";
 

@@ -1,6 +1,6 @@
 import { isArray, isPlainObject, isString } from "@vuepress/shared";
 
-import type { Author, AuthorInfo } from "../types/index.js";
+import { type Author, type AuthorInfo } from "../types/index.js";
 
 export const getAuthor = (
   author: Author | false | undefined,

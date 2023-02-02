@@ -59,8 +59,8 @@
     "@waline/client": "^2.14.7",
     "artalk": "^2.4.4",
     "giscus": "^1.2.6",
-    "twikoo": "^1.6.8",
-    "vue": "^3.2.45",
+    "twikoo": "^1.6.9",
+    "vue": "^3.2.46",
     "vue-router": "^4.1.6",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*"

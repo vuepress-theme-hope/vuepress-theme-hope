@@ -1,6 +1,10 @@
 /* eslint-disable vue/no-unused-properties */
 import { usePageLang } from "@vuepress/client";
+import type Artplayer from "artplayer";
+import { type Option as ArtPlayerInitOptions } from "artplayer/types/option.js";
 import {
+  type PropType,
+  type VNode,
   camelize,
   defineComponent,
   h,
@@ -10,6 +14,7 @@ import {
 } from "vue";
 import { keys } from "vuepress-shared/client";
 
+import { type ArtPlayerOptions } from "../../shared/index.js";
 import { useSize } from "../composables/size.js";
 import {
   SUPPORTED_VIDEO_TYPES,
@@ -18,11 +23,6 @@ import {
   registerMseFlv,
   registerMseHls,
 } from "../utils/mse.js";
-
-import type Artplayer from "artplayer";
-import type { Option as ArtPlayerInitOptions } from "artplayer/types/option.js";
-import type { PropType, VNode } from "vue";
-import type { ArtPlayerOptions } from "../../shared/index.js";
 
 const BOOLEAN_TRUE_ATTRS = [
   "no-fullscreen",
@@ -280,12 +280,13 @@ export default defineComponent({
 
     // FIXME: Related issue https://github.com/zhw2590582/ArtPlayer/issues/450
     onMounted(() => {
-      void import("artplayer").then(async ({ default: Artplayer }) =>
-        nextTick().then(async () => {
-          const player = new Artplayer(getInitOptions());
+      void import(/* webpackChunkName: "artplayer" */ "artplayer").then(
+        async ({ default: Artplayer }) =>
+          nextTick().then(async () => {
+            const player = new Artplayer(getInitOptions());
 
-          artPlayerInstance = (await props.customPlayer(player)) || player;
-        })
+            artPlayerInstance = (await props.customPlayer(player)) || player;
+          })
       );
     });
 

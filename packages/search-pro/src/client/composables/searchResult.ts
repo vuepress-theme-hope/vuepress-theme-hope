@@ -1,13 +1,10 @@
-import { useDebounceFn } from "@vueuse/core";
 import { useRouteLocale } from "@vuepress/client";
-import { computed, ref, watch } from "vue";
+import { useDebounceFn } from "@vueuse/core";
+import { type Ref, computed, ref, watch } from "vue";
 
 import { searchIndex } from "./searchIndex.js";
 import { searchProDelay } from "../define.js";
-import { getResults } from "../utils/index.js";
-
-import type { Ref } from "vue";
-import type { Result } from "../utils/index.js";
+import { type Result, getResults } from "../utils/index.js";
 
 export const useSearchResults = (query: Ref<string>): Ref<Result[]> => {
   const routeLocale = useRouteLocale();

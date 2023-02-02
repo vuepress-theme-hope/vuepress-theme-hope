@@ -1,11 +1,18 @@
-import { useDebounceFn, useEventListener } from "@vueuse/core";
 import { usePageFrontmatter } from "@vuepress/client";
-import { Transition, computed, defineComponent, h, onMounted, ref } from "vue";
+import { useDebounceFn, useEventListener } from "@vueuse/core";
+import {
+  Transition,
+  type VNode,
+  computed,
+  defineComponent,
+  h,
+  onMounted,
+  ref,
+} from "vue";
 import { useLocaleConfig } from "vuepress-shared/client";
-import { BackToTopIcon } from "./icons.js";
 
-import type { VNode } from "vue";
-import type { BackToTopLocaleConfig } from "../../shared/index.js";
+import { BackToTopIcon } from "./icons.js";
+import { type BackToTopLocaleConfig } from "../../shared/index.js";
 
 import "../styles/back-to-top.scss";
 

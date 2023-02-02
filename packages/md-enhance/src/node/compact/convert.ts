@@ -1,5 +1,5 @@
 import { deprecatedLogger, droppedLogger } from "./utils.js";
-import type { MarkdownEnhanceOptions } from "../options.js";
+import { type MarkdownEnhanceOptions } from "../options.js";
 
 /** @deprecated */
 export const convertOptions = (

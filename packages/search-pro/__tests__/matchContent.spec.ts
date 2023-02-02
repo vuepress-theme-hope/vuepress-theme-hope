@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+
 import { getMatchedContent } from "../src/client/utils/matchContent";
 
 describe("matchContent", () => {

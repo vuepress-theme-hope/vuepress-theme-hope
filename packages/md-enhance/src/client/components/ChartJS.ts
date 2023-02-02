@@ -1,8 +1,13 @@
-import { defineComponent, h, onMounted, ref } from "vue";
+import { type ChartConfiguration } from "chart.js";
+import {
+  type PropType,
+  type VNode,
+  defineComponent,
+  h,
+  onMounted,
+  ref,
+} from "vue";
 import { LoadingIcon, atou } from "vuepress-shared/client";
-
-import type { ChartConfiguration } from "chart.js";
-import type { PropType, VNode } from "vue";
 
 import "../styles/chart.scss";
 
@@ -19,6 +24,7 @@ const parseChartConfig = (
 
   eval(config);
 
+  // eslint-disable-next-line import/no-commonjs
   return <ChartConfiguration>module.exports;
 };
 

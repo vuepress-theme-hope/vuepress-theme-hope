@@ -1,13 +1,13 @@
 import { isPlainObject } from "@vuepress/shared";
+import { type CompilerOptions } from "typescript";
 import { deepAssign, endsWith, entries, keys } from "vuepress-shared/node";
-import { compressToEncodedURIComponent } from "./ventors/lzstring.js";
-import { optionDeclarations } from "./ventors/optionDelcarations.js";
 
-import type { CompilerOptions } from "typescript";
-import type {
-  PlaygroundData,
-  PlaygroundOptions,
-  TSPresetPlaygroundOptions,
+import { compressToEncodedURIComponent } from "./ventors/lzstring.js";
+import { optionDeclarations } from "./ventors/optionDeclarations.js";
+import {
+  type PlaygroundData,
+  type PlaygroundOptions,
+  type TSPresetPlaygroundOptions,
 } from "../../typings/index.js";
 
 /** Gets a query string representation (hash + queries) */

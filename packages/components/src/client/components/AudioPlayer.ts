@@ -1,4 +1,7 @@
+import { type Options as PlyrOptions } from "plyr";
 import {
+  type PropType,
+  type VNode,
   computed,
   defineComponent,
   h,
@@ -6,10 +9,8 @@ import {
   onMounted,
   ref,
 } from "vue";
-import { getLink } from "../utils/getLink.js";
 
-import type { Options as PlyrOptions } from "plyr";
-import type { PropType, VNode } from "vue";
+import { getLink } from "../utils/getLink.js";
 
 import "plyr/dist/plyr.css";
 import "../styles/audio-player.scss";
@@ -82,9 +83,11 @@ export default defineComponent({
     }));
 
     onMounted(() => {
-      void import("plyr").then(({ default: Plyr }) => {
-        if (audio.value) player = new Plyr(audio.value, plyrOptions.value);
-      });
+      void import(/* webpackChunkName: "plyr" */ "plyr").then(
+        ({ default: Plyr }) => {
+          if (audio.value) player = new Plyr(audio.value, plyrOptions.value);
+        }
+      );
     });
 
     onBeforeMount(() => {

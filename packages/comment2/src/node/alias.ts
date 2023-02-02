@@ -1,5 +1,6 @@
-import { CLIENT_FOLDER, logger } from "./utils.js";
 import { noopModule } from "vuepress-shared/node";
+
+import { CLIENT_FOLDER, logger } from "./utils.js";
 
 export const getProvider = (provider = "None"): string => {
   if (["Waline", "Giscus", "Twikoo"].includes(provider))

@@ -1,11 +1,9 @@
 import { ClientOnly, usePageLang } from "@vuepress/client";
-import { defineComponent, h } from "vue";
+import { type PropType, type VNode, defineComponent, h } from "vue";
+import { type DateInfo } from "vuepress-shared/client";
 
 import { CalendarIcon } from "@theme-hope/modules/info/components/icons";
 import { useMetaLocale } from "@theme-hope/modules/info/composables/index";
-
-import type { PropType, VNode } from "vue";
-import type { DateInfo } from "vuepress-shared/client";
 
 export default defineComponent({
   name: "DateInfo",

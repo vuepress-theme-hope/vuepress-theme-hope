@@ -1,4 +1,4 @@
-import type { ReadingTime } from "./typings/index.js";
+import { type ReadingTime } from "./typings/index.js";
 
 /**
  * Extract Latin words from content

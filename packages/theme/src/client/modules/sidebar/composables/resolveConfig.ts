@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
-import { sidebarData } from "@temp/theme-hope/sidebar";
 import {
+  type PageHeader,
   usePageData,
   usePageFrontmatter,
   useRouteLocale,
@@ -14,22 +14,22 @@ import {
 import { useRoute } from "vue-router";
 import { keys, startsWith } from "vuepress-shared/client";
 
+import { sidebarData } from "@temp/theme-hope/sidebar";
 import { useAutoLink, useThemeLocaleData } from "@theme-hope/composables/index";
-import { resolvePrefix } from "./utils.js";
 
-import type { PageHeader } from "@vuepress/client";
-import type {
-  ResolvedSidebarGroupItem,
-  ResolvedSidebarHeaderItem,
-  ResolvedSidebarItem,
-  ResolvedSidebarPageItem,
-} from "../utils/index.js";
-import type {
-  SidebarArrayOptions,
-  SidebarItem,
-  SidebarObjectOptions,
-  ThemeNormalPageFrontmatter,
+import { resolvePrefix } from "./utils.js";
+import {
+  type SidebarArrayOptions,
+  type SidebarItem,
+  type SidebarObjectOptions,
+  type ThemeNormalPageFrontmatter,
 } from "../../../../shared/index.js";
+import {
+  type ResolvedSidebarGroupItem,
+  type ResolvedSidebarHeaderItem,
+  type ResolvedSidebarItem,
+  type ResolvedSidebarPageItem,
+} from "../utils/index.js";
 
 /**
  * Util to transform page header to sidebar item

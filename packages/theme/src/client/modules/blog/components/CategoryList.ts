@@ -1,10 +1,8 @@
-import { defineComponent, h } from "vue";
+import { type VNode, defineComponent, h } from "vue";
 import { RouterLink, useRoute } from "vue-router";
 import { entries, generateIndexFromHash } from "vuepress-shared/client";
 
 import { useCategoryMap } from "@theme-hope/modules/blog/composables/index";
-
-import type { VNode } from "vue";
 
 import "../styles/category-list.scss";
 

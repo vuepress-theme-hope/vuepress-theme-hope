@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { describe, expect, it } from "vitest";
+
 import { deepAssign } from "../../src/shared/utils/deepAssign.js";
 
 describe("deep merge", () => {

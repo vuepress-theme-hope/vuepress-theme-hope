@@ -1,5 +1,5 @@
 import { ClientOnly } from "@vuepress/client";
-import { defineComponent, h } from "vue";
+import { type VNode, defineComponent, h } from "vue";
 
 import AutoLink from "@theme-hope/components/AutoLink";
 import { EditIcon } from "@theme-hope/components/icons/index";
@@ -9,8 +9,6 @@ import {
   useEditLink,
   useUpdateTime,
 } from "@theme-hope/modules/info/composables/index";
-
-import type { VNode } from "vue";
 
 import "../styles/page-meta.scss";
 

@@ -1,11 +1,8 @@
-import { computed, defineComponent, h } from "vue";
-
-import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch";
+import { type VNode, computed, defineComponent, h } from "vue";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";
+import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch";
 import { useDarkmode } from "@theme-hope/modules/outlook/composables/index";
-
-import type { VNode } from "vue";
 
 import "../styles/appearance-switch.scss";
 

@@ -1,15 +1,15 @@
+import { type App } from "@vuepress/core";
 import { entries, fromEntries, getLocales } from "vuepress-shared/node";
-import { getEncryptConfig } from "./encrypt.js";
-import { themeLocalesData } from "../locales/index.js";
 
-import type { App } from "@vuepress/core";
-import type { ThemeStatus } from "./status.js";
+import { getEncryptConfig } from "./encrypt.js";
+import { type ThemeStatus } from "./status.js";
 import {
-  ThemeData,
-  ThemeLocaleConfig,
-  ThemeLocaleOptions,
-  ThemeOptions,
+  type ThemeData,
+  type ThemeLocaleConfig,
+  type ThemeLocaleOptions,
+  type ThemeOptions,
 } from "../../shared/index.js";
+import { themeLocalesData } from "../locales/index.js";
 
 const rootAllowConfig = [
   "blog",

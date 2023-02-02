@@ -1,16 +1,17 @@
-import type { LocaleData } from "@vuepress/shared";
-import type { Author } from "vuepress-shared";
-import type { AppearanceLocaleData } from "./appearance.js";
-import type {
-  FeatureLocaleConfig,
-  FeatureLocaleData,
-  FeatureLocaleOptions,
+import { type LocaleData } from "@vuepress/shared";
+import { type Author } from "vuepress-shared";
+
+import { type AppearanceLocaleData } from "./appearance.js";
+import {
+  type FeatureLocaleConfig,
+  type FeatureLocaleData,
+  type FeatureLocaleOptions,
 } from "./feature/index.js";
-import type { LocaleDataToOption } from "./helpers.js";
-import type {
-  LayoutLocaleConfig,
-  LayoutLocaleData,
-  LayoutLocaleOptions,
+import { type LocaleDataToOption } from "./helpers.js";
+import {
+  type LayoutLocaleConfig,
+  type LayoutLocaleData,
+  type LayoutLocaleOptions,
 } from "./layout/index.js";
 
 export interface ThemeLocaleData

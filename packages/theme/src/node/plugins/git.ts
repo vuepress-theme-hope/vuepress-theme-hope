@@ -1,7 +1,5 @@
-import { gitPlugin } from "@vuepress/plugin-git";
-
-import type { App } from "@vuepress/core";
-import type { GitPluginOptions } from "@vuepress/plugin-git";
+import { type App } from "@vuepress/core";
+import { type GitPluginOptions, gitPlugin } from "@vuepress/plugin-git";
 
 /**
  * Composition Api to use `@vuepress/plugin-git`

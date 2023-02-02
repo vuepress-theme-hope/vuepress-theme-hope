@@ -1,19 +1,18 @@
+import { type UserConfig } from "@vuepress/cli";
+import { type Plugin, type PluginConfig } from "@vuepress/core";
+import { type MarkdownOptions } from "@vuepress/markdown";
 import { isArray, isFunction, isPlainObject, isString } from "@vuepress/shared";
 import { colors } from "@vuepress/utils";
+
 import { defineHopeConfig } from "./helper-v2.js";
 import { convertThemeOptions } from "./theme.js";
 import { deprecatedMsg } from "./utils.js";
-
-import { logger } from "../utils.js";
-
-import type { Plugin, PluginConfig } from "@vuepress/core";
-import type { UserConfig } from "@vuepress/cli";
-import type { MarkdownOptions } from "@vuepress/markdown";
-import type {
-  NavbarOptions,
-  SidebarOptions,
-  ThemeOptions,
+import {
+  type NavbarOptions,
+  type SidebarOptions,
+  type ThemeOptions,
 } from "../../shared/index.js";
+import { logger } from "../utils.js";
 
 /**
  * @deprecated use `import { navbar } from "vuepress-theme-hope";` instead

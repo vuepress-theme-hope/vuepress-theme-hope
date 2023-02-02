@@ -3,14 +3,13 @@ import {
   usePageHeadTitle,
   withBase,
 } from "@vuepress/client";
-import { computed, defineComponent, h, ref } from "vue";
+import { type VNode, computed, defineComponent, h, ref } from "vue";
 
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
-import { SlideDownIcon } from "./icons/icons.js";
-import defaultHeroBgImagePath from "../assets/hero.jpg";
 
-import type { VNode } from "vue";
-import type { ThemeBlogHomePageFrontmatter } from "../../../../shared/index.js";
+import { SlideDownIcon } from "./icons/icons.js";
+import { type ThemeBlogHomePageFrontmatter } from "../../../../shared/index.js";
+import defaultHeroBgImagePath from "../assets/hero.jpg";
 
 import "../styles/blog-hero.scss";
 

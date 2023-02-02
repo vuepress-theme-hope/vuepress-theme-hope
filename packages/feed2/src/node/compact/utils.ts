@@ -1,4 +1,5 @@
 import { colors } from "@vuepress/utils";
+
 import { logger } from "../utils/index.js";
 
 export interface DeprecatedLoggerOptions {

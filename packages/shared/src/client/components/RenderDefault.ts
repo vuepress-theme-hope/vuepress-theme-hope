@@ -1,4 +1,4 @@
-import type { FunctionalComponent } from "vue";
+import { type FunctionalComponent } from "vue";
 
 export const RenderDefault: FunctionalComponent = (_props, { slots }) =>
   slots["default"]?.() || null;

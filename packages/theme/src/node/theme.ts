@@ -1,3 +1,4 @@
+import { type ThemeFunction } from "@vuepress/core";
 import { watch } from "chokidar";
 
 import { resolveAlias } from "./alias.js";
@@ -16,9 +17,7 @@ import {
   prepareThemeColorScss,
 } from "./prepare/index.js";
 import { TEMPLATE_FOLDER } from "./utils.js";
-
-import type { ThemeFunction } from "@vuepress/core";
-import type { ThemeOptions } from "../shared/index.js";
+import { type ThemeOptions } from "../shared/index.js";
 
 export const hopeTheme =
   (
