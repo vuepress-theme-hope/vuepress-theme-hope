@@ -4,6 +4,7 @@ import { type VNode, computed, defineComponent, h } from "vue";
 import { startsWith } from "vuepress-shared/client";
 
 import { useSize } from "../composables/index.js";
+import { videoIframeAllow } from "../utils/iframeAllow.js";
 
 import "../styles/youtube.scss";
 
@@ -238,8 +239,7 @@ export default defineComponent({
               src: videoLink.value,
               title: props.title,
               class: "youtube-iframe",
-              allow:
-                "accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture",
+              allow: videoIframeAllow,
               style: {
                 width: width.value,
                 height: height.value,

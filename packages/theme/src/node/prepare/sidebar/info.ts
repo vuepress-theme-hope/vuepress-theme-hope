@@ -127,7 +127,7 @@ const getInfoFromStructure = (
       groupInfo: {
         ...(collapsible ? { collapsible } : {}),
         ...(icon ? { icon } : {}),
-        ...(dirOptions?.link ? { link: readmePage.path } : {}),
+        ...(dirOptions?.link ? { link: "" } : {}),
       },
 
       frontmatter: readmePage.frontmatter,

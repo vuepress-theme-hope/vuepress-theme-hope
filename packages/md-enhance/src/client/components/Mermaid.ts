@@ -131,17 +131,18 @@ export default defineComponent({
             svgCode.value = code;
             document.body.removeChild(container);
           };
+          const chartOptions = { useMaxWidth: false };
 
           mermaid.initialize({
             // @ts-ignore
             theme: "base",
             themeVariables: getThemeVariables(isDarkmode.value),
-            flowchart: { useMaxWidth: false },
-            sequence: { useMaxWidth: false },
-            journey: { useMaxWidth: false },
-            gantt: { useMaxWidth: false },
-            er: { useMaxWidth: false },
-            pie: { useMaxWidth: false },
+            flowchart: chartOptions,
+            sequence: chartOptions,
+            journey: chartOptions,
+            gantt: chartOptions,
+            er: chartOptions,
+            pie: chartOptions,
 
             ...MERMAID_OPTIONS,
             startOnLoad: false,

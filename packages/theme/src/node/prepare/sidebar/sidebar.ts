@@ -19,6 +19,9 @@ import {
 } from "../../../shared/index.js";
 import { logger } from "../../utils.js";
 
+const removeExtension = (path: string): string =>
+  path.replace(/README\.md$/, "").replace(/\.md$/, "");
+
 const getGeneratePaths = (
   sidebarConfig: SidebarArrayOptions,
   prefix = ""
@@ -51,7 +54,7 @@ const getGeneratePaths = (
 
 const getSidebarItems = (infos: SidebarInfo[]): (SidebarGroupItem | string)[] =>
   infos.map((info) => {
-    if (info.type === "file") return info.filename;
+    if (info.type === "file") return removeExtension(info.filename);
 
     return {
       text: info.title,
