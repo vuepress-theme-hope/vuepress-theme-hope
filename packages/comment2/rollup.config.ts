@@ -23,15 +23,22 @@ export default [
     copy: [["client/styles", "client"]],
   }),
   ...rollupTypescript("client/components/Artalk", {
-    external: ["@vuepress/client", "artalk", "vue", "vue-router", /\.scss$/],
-    dtsExternal: [/\.scss$/],
+    external: ["@vuepress/client", "artalk", "vue", "vue-router", /\.s?css$/],
+    dtsExternal: [/\.s?css$/],
   }),
   ...rollupTypescript("client/components/Giscus", {
     external: ["@vuepress/client", "giscus", "vue", "vue-router", /\.scss$/],
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/Twikoo", {
-    external: ["@vuepress/client", "twikoo", "vue", "vue-router", /\.scss$/],
+    external: [
+      "@vuepress/client",
+      "twikoo",
+      "vue",
+      "vue-router",
+      "vuepress-shared/client",
+      /\.scss$/,
+    ],
     dtsExternal: [/\.scss$/],
   }),
   ...rollupTypescript("client/components/Waline", {
