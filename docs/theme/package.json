@@ -27,7 +27,7 @@
     "docs-shared": "workspace:*",
     "katex": "0.16.4",
     "sass-loader": "13.2.0",
-    "vue": "3.2.46",
+    "vue": "3.2.47",
     "vuepress-plugin-copy-code2": "workspace:*",
     "vuepress-shared": "workspace:*",
     "vuepress-theme-hope": "workspace:*",

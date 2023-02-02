@@ -93,7 +93,7 @@
     "markdown-it": "^13.0.1",
     "mermaid": "^9.3.0",
     "reveal.js": "^4.4.0",
-    "vue": "^3.2.46",
+    "vue": "^3.2.47",
     "vue-router": "^4.1.6",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*"
