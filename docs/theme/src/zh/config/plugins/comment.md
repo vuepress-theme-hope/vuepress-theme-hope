@@ -16,6 +16,7 @@ tag:
 
 `vuepress-plugin-comment2` 目前支持 3 种评论服务:
 
+- Artalk
 - Giscus
 - Twikoo
 - Waline

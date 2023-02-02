@@ -41,6 +41,12 @@ export default defineUserConfig({
        */
       // provider: "Waline",
       // serverURL: "https://vuepress-theme-hope-comment.vercel.app",
+
+      /**
+       * Using artalk
+       */
+      // provider: "Artalk",
+      // server: "https://jjdxb.top/api/comment/",
     }),
   ],
 });

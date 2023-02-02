@@ -26,8 +26,7 @@ yarn add -D vuepress-plugin-comment2
 
 ## Feature
 
-- PageInfo components
-- Support Giscus, Twikoo and Waline.
+- Support Artalk, Giscus, Twikoo and Waline.
 
 ---
 
@@ -44,5 +43,4 @@ yarn add -D vuepress-plugin-comment2
 
 ## 特性
 
-- 页面信息组件
-- 支持 Giscus, Twikoo 和 Waline
+- 支持 Artalk, Giscus, Twikoo 和 Waline

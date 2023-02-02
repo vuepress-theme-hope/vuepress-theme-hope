@@ -91,6 +91,12 @@ export default hopeTheme({
        */
       // provider: "Waline",
       // serverURL: "https://vuepress-theme-hope-comment.vercel.app",
+
+      /**
+       * Using artalk
+       */
+      // provider: "Artalk",
+      // server: "https://jjdxb.top/api/comment/",
     },
 
     // Disable features you don’t want here

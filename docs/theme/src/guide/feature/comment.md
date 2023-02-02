@@ -75,7 +75,7 @@ For the complete config item of the plugin ,please see <ProjectLink name="commen
 
 ## Comment Provider
 
-Currently you can choose from Giscus, Waline and Twikoo.
+Currently you can choose from Giscus, Waline, Twikoo and Artalk.
 
 ::: tip Comment service selection
 
@@ -179,3 +179,23 @@ For more details, please see [Waline Docs](https://waline.js.org/en/)。
 1. Go to Settings - Environment Variables, add the environment variable `MONGODB_URI`, the value is the database connection string in step 3
 1. Go to Overview, click the link under Domains, if the environment configuration is correct, you can see the prompt "Twikoo cloud function is running normally"
 1. Vercel Domains (with `https://` prefix, for example `https://xxx.vercel.app`) is your environment ID
+
+## Artalk
+
+### Deploy Artalk Server
+
+See the [Artalk documentation](https://artalk.js.org/guide/deploy.html) for deploying artalk server.
+
+### Artalk Configuration
+
+Please set `provider: "Artalk"` and pass your server link to `server` in the plugin options.
+
+For other configuration items, see [Artalk Configuration](https://artalk.js.org/guide/frontend/config.html).
+
+::: note
+
+The plugin retains the `el` option and inserts Artalk itself on the page. At the same time, the plugin will automatically set the `pageTitle`, `pageKey` and `site` options for you according to the VuePress information.
+
+Before VuePress2 provides client configuration, the two function options `imgUploader` and `avatarURLBuilder` are not supported.
+
+:::
