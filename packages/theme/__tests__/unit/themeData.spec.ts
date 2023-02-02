@@ -82,8 +82,6 @@ describe("should generate themeData correctly", () => {
 
     const result = getThemeData(app, themeOptions, getStatus(app, {}));
 
-    console.log(result);
-
     expect(result.locales).toBeTypeOf("object");
     expect(new Set(Object.keys(result.locales))).toEqual(
       new Set(["/", "/zh/"])
