@@ -145,7 +145,8 @@ export default hopeTheme({
        * Using artalk
        */
       // provider: "Artalk",
-      // server: "https://jjdxb.top/api/comment/",
+      // site: "artalk-demo",
+      // server: "https://demo-artalk.jjdxb.top/",
     },
 
     // Disable features you don’t want here

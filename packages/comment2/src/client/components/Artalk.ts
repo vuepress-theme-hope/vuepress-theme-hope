@@ -33,9 +33,11 @@ export default defineComponent({
 
     onMounted(() => {
       void import(/* webpackChunkName: "artalk" */ "artalk").then(
-        ({ default: Artalk }) => {
+        ({ default: _Artalk }) => {
           // FIXME: Typescript type issues
-          const artalk = new (Artalk as unknown as typeof Artalk.default)({
+          const Artalk = _Artalk as unknown as typeof _Artalk.default;
+
+          let artalk = new Artalk({
             site: site.value.title,
             ...artalkOptions,
             el: artalkContainer.value!,
@@ -54,8 +56,7 @@ export default defineComponent({
           watch(
             () => route.path,
             (value) => {
-              // FIXME: Typescript type issues
-              new (Artalk as unknown as typeof Artalk.default)({
+              artalk = new Artalk({
                 site: site.value.title,
                 ...artalkOptions,
                 el: artalkContainer.value!,
