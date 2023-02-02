@@ -195,7 +195,6 @@ export default defineComponent({
                           },
                         ],
                         onClick: () => {
-                          console.log("click");
                           resetSearchResult();
                         },
                       },
