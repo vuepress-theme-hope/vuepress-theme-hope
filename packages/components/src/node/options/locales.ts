@@ -1,9 +1,10 @@
-import type { LocaleConfig } from "@vuepress/core";
-import type {
-  BackToTopLocaleData,
-  CatalogLocaleData,
-  PDFLocaleData,
-  SiteInfoLocaleData,
+import { type LocaleConfig } from "@vuepress/core";
+
+import {
+  type BackToTopLocaleData,
+  type CatalogLocaleData,
+  type PDFLocaleData,
+  type SiteInfoLocaleData,
 } from "../../shared/index.js";
 
 export interface ComponentLocaleOptions {
@@ -15,6 +16,8 @@ export interface ComponentLocaleOptions {
   backToTop?: LocaleConfig<BackToTopLocaleData>;
 
   /**
+   * @deprecated
+   *
    * Catalog Locales config
    *
    * 目录组件国际化配置

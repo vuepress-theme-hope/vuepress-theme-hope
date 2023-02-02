@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
+import { type App, type AppDir } from "@vuepress/core";
 import { fs } from "@vuepress/utils";
+
 import {
   getAlternateLinks,
   getCanonicalLink,
@@ -12,10 +14,8 @@ import {
   appendCanonical,
   appendJSONLD,
 } from "./inject.js";
+import { type SeoOptions } from "./options.js";
 import { logger } from "./utils.js";
-
-import type { App, AppDir } from "@vuepress/core";
-import type { SeoOptions } from "./options.js";
 
 export const appendSEO = (app: App, options: SeoOptions): void => {
   app.pages.forEach((page) => {

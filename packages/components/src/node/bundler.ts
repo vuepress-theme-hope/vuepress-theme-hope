@@ -1,8 +1,7 @@
+import { type ViteBundlerOptions } from "@vuepress/bundler-vite";
+import { type App } from "@vuepress/core";
+import { type RollupWarning } from "rollup";
 import { getBundlerName, mergeViteConfig } from "vuepress-shared/node";
-
-import type { ViteBundlerOptions } from "@vuepress/bundler-vite";
-import type { App } from "@vuepress/core";
-import type { RollupWarning } from "rollup";
 
 export const extendsBundlerOptions = (config: unknown, app: App): void => {
   if (getBundlerName(app) === "vite") {

@@ -1,7 +1,9 @@
-import { useEventListener, useThrottleFn } from "@vueuse/core";
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
+import { useEventListener, useThrottleFn } from "@vueuse/core";
 import {
+  type DefineComponent,
   Transition,
+  type VNode,
   computed,
   defineComponent,
   h,
@@ -23,10 +25,9 @@ import Navbar from "@theme-hope/modules/navbar/components/Navbar";
 import Sidebar from "@theme-hope/modules/sidebar/components/Sidebar";
 import { useSidebarItems } from "@theme-hope/modules/sidebar/composables/index";
 
-import type { DefineComponent, VNode } from "vue";
-import type {
-  ThemeNormalPageFrontmatter,
-  ThemeProjectHomePageFrontmatter,
+import {
+  type ThemeNormalPageFrontmatter,
+  type ThemeProjectHomePageFrontmatter,
 } from "../../shared/index.js";
 
 import "../styles/common.scss";

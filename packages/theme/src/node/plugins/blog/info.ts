@@ -1,13 +1,12 @@
+import { type Page } from "@vuepress/core";
 import { getDate, timeTransformer } from "vuepress-shared/node";
 
-import { ArticleInfoType } from "../../../shared/index.js";
-
-import type { Page } from "@vuepress/core";
-import type {
-  ThemeBlogHomePageFrontmatter,
-  ThemeNormalPageFrontmatter,
-  ThemePageData,
-  ThemeProjectHomePageFrontmatter,
+import {
+  ArticleInfoType,
+  type ThemeBlogHomePageFrontmatter,
+  type ThemeNormalPageFrontmatter,
+  type ThemePageData,
+  type ThemeProjectHomePageFrontmatter,
 } from "../../../shared/index.js";
 
 export const injectBasicInfo = (

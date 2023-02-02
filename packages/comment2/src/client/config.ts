@@ -1,11 +1,10 @@
 import { defineClientConfig, usePageFrontmatter } from "@vuepress/client";
-import { computed, defineComponent, h } from "vue";
+import { type VNode, computed, defineComponent, h } from "vue";
 import CommentProvider from "vuepress-plugin-comment2/provider";
 
-import type { VNode } from "vue";
-import type {
-  CommentOptions,
-  CommentPluginFrontmatter,
+import {
+  type CommentOptions,
+  type CommentPluginFrontmatter,
 } from "../shared/index.js";
 
 declare const COMMENT_OPTIONS: CommentOptions;

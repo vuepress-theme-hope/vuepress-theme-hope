@@ -1,12 +1,10 @@
-import { defineComponent, h } from "vue";
+import { type PropType, type VNode, defineComponent, h } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { generateIndexFromHash } from "vuepress-shared/client";
 
 import { TagIcon } from "@theme-hope/modules/info/components/icons";
 import { useMetaLocale } from "@theme-hope/modules/info/composables/index";
-
-import type { PropType, VNode } from "vue";
-import type { PageTag } from "@theme-hope/modules/info/utils/index";
+import { type PageTag } from "@theme-hope/modules/info/utils/index";
 
 import "../styles/tag-info.scss";
 

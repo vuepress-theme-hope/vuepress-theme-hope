@@ -1,8 +1,8 @@
+import { type Page } from "@vuepress/core";
+import { type GitPluginPageData } from "@vuepress/plugin-git";
+
 import { dayjs, getLocale } from "./dayjs/index.js";
 import { getDate } from "../../shared/index.js";
-
-import type { Page } from "@vuepress/core";
-import type { GitPluginPageData } from "@vuepress/plugin-git";
 
 export interface DateOptions {
   /**

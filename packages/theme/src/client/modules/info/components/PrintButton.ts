@@ -1,9 +1,7 @@
-import { defineComponent, h } from "vue";
+import { type VNode, defineComponent, h } from "vue";
 
-import { PrintIcon } from "@theme-hope/modules/info/components/icons";
 import { useThemeData } from "@theme-hope/composables/index";
-
-import type { VNode } from "vue";
+import { PrintIcon } from "@theme-hope/modules/info/components/icons";
 
 import "../styles/print-button.scss";
 

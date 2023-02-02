@@ -1,4 +1,8 @@
+import { type UseMediaTextTrackSource } from "@vueuse/core";
+import { type Options as PlyrOptions } from "plyr";
 import {
+  type PropType,
+  type VNode,
   computed,
   defineComponent,
   h,
@@ -6,11 +10,8 @@ import {
   onMounted,
   ref,
 } from "vue";
-import { getLink } from "../utils/getLink.js";
 
-import type { UseMediaTextTrackSource } from "@vueuse/core";
-import type { Options as PlyrOptions } from "plyr";
-import type { PropType, VNode } from "vue";
+import { getLink } from "../utils/getLink.js";
 
 import "plyr/dist/plyr.css";
 import "../styles/video-player.scss";
@@ -103,9 +104,11 @@ export default defineComponent({
     }));
 
     onMounted(() => {
-      void import("plyr").then(({ default: Plyr }) => {
-        if (video.value) player = new Plyr(video.value, plyrOptions.value);
-      });
+      void import(/* webpackChunkName: "plyr" */ "plyr").then(
+        ({ default: Plyr }) => {
+          if (video.value) player = new Plyr(video.value, plyrOptions.value);
+        }
+      );
     });
 
     onBeforeMount(() => {

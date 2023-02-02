@@ -1,11 +1,9 @@
-import { computed, defineComponent, h } from "vue";
+import { type VNode, computed, defineComponent, h } from "vue";
 import { entries } from "vuepress-shared/client";
 
 import { icons } from "@temp/theme-hope/socialMedia";
 import { usePure } from "@theme-hope/composables/index";
 import { useBlogOptions } from "@theme-hope/modules/blog/composables/index";
-
-import type { VNode } from "vue";
 
 import "../styles/social-media.scss";
 

@@ -1,11 +1,10 @@
 import { isLinkExternal } from "@vuepress/shared";
-import { defineComponent, h } from "vue";
+import { type PropType, type VNode, defineComponent, h } from "vue";
 import { RouterLink } from "vue-router";
 
 import Icon from "@theme-hope/components/Icon";
 
-import type { PropType, VNode } from "vue";
-import type { ThemeProjectHomeFeatureItemOptions } from "../../shared/index.js";
+import { type ThemeProjectHomeFeatureItemOptions } from "../../shared/index.js";
 
 import "../styles/feature-panel.scss";
 

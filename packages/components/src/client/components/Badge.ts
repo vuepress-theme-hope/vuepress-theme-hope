@@ -1,6 +1,4 @@
-import { h } from "vue";
-
-import type { FunctionalComponent } from "vue";
+import { type FunctionalComponent, h } from "vue";
 
 import "../styles/badge.scss";
 

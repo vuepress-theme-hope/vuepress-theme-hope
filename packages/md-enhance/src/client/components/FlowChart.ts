@@ -1,10 +1,17 @@
 import { useDebounceFn, useEventListener } from "@vueuse/core";
+import { type Chart } from "flowchart.ts";
+import {
+  type PropType,
+  type VNode,
+  computed,
+  defineComponent,
+  h,
+  onMounted,
+  ref,
+} from "vue";
 import { LoadingIcon, atou } from "vuepress-shared/client";
-import { computed, defineComponent, h, onMounted, ref } from "vue";
-import presets from "../flowchart-preset/index.js";
 
-import type { Chart } from "flowchart.ts";
-import type { PropType, VNode } from "vue";
+import presets from "../flowchart-preset/index.js";
 
 import "../styles/flowchart.scss";
 

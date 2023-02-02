@@ -1,16 +1,17 @@
+import { type App, type Page, type PluginObject } from "@vuepress/core";
 import { isPlainObject } from "@vuepress/shared";
 import { injectLocalizedDate } from "vuepress-shared/node";
+
+import {
+  ArticleInfoType,
+  PageType,
+  type ThemeBlogHomePageFrontmatter,
+  type ThemeNormalPageFrontmatter,
+  type ThemePageData,
+  type ThemeProjectHomePageFrontmatter,
+} from "../../shared/index.js";
 import { convertFrontmatter } from "../compact/index.js";
 import { checkFrontmatter } from "../frontmatter/check.js";
-import { ArticleInfoType, PageType } from "../../shared/index.js";
-
-import type { App, Page, PluginObject } from "@vuepress/core";
-import type {
-  ThemeBlogHomePageFrontmatter,
-  ThemeNormalPageFrontmatter,
-  ThemePageData,
-  ThemeProjectHomePageFrontmatter,
-} from "../../shared/index.js";
 
 export const injectPageInfo = (page: Page<ThemePageData>): void => {
   const { filePathRelative } = page;

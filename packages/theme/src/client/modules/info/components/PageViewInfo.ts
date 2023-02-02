@@ -1,12 +1,10 @@
 import { withBase } from "@vuepress/client";
 import { isString } from "@vuepress/shared";
-import { defineComponent, h, onMounted, ref, watch } from "vue";
+import { type VNode, defineComponent, h, onMounted, ref, watch } from "vue";
 import { useRoute } from "vue-router";
 
 import { EyeIcon, FireIcon } from "@theme-hope/modules/info/components/icons";
 import { useMetaLocale } from "@theme-hope/modules/info/composables/index";
-
-import type { VNode } from "vue";
 
 export default defineComponent({
   name: "PageViewInfo",

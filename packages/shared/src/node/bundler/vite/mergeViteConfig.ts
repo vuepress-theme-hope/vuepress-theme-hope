@@ -52,6 +52,7 @@ SOFTWARE.
 */
 
 import { isArray, isString } from "@vuepress/shared";
+
 import { endsWith, keys } from "../../../shared/index.js";
 
 interface Alias {

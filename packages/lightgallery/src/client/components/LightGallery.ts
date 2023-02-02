@@ -1,5 +1,10 @@
+import { type LightGallerySettings } from "lightgallery/lg-settings.js";
+import { type GalleryItem } from "lightgallery/lg-utils.js";
+import { type LgQuery } from "lightgallery/lgQuery.js";
 import lightGallery from "lightgallery/lightgallery.es5.js";
+import { type LightGallery } from "lightgallery/lightgallery.js";
 import {
+  type VNode,
   defineComponent,
   h,
   onBeforeUnmount,
@@ -8,12 +13,6 @@ import {
   watch,
 } from "vue";
 import { useRoute } from "vue-router";
-
-import type { LightGallery } from "lightgallery/lightgallery.js";
-import type { LightGallerySettings } from "lightgallery/lg-settings.js";
-import type { LgQuery } from "lightgallery/lgQuery.js";
-import type { GalleryItem } from "lightgallery/lg-utils.js";
-import type { VNode } from "vue";
 
 import "lightgallery/scss/lightgallery.scss";
 
@@ -59,64 +58,106 @@ export default defineComponent({
     if (LIGHT_GALLERY_AUTOPLAY) {
       plugins.push(
         <Promise<LightGalleryPlugin>>(
-          import("lightgallery/plugins/autoplay/lg-autoplay.es5.js")
+          import(
+            /* webpackChunkName: "lightgallery" */ "lightgallery/plugins/autoplay/lg-autoplay.es5.js"
+          )
         )
       );
-      pluginsStyles.push(import("lightgallery/scss/lg-autoplay.scss"));
+      pluginsStyles.push(
+        import(
+          /* webpackChunkName: "lightgallery" */ "lightgallery/scss/lg-autoplay.scss"
+        )
+      );
     }
 
     if (LIGHT_GALLERY_FULLSCREEN) {
       plugins.push(
         <Promise<LightGalleryPlugin>>(
-          import("lightgallery/plugins/fullscreen/lg-fullscreen.es5.js")
+          import(
+            /* webpackChunkName: "lightgallery" */ "lightgallery/plugins/fullscreen/lg-fullscreen.es5.js"
+          )
         )
       );
-      pluginsStyles.push(import("lightgallery/scss/lg-fullscreen.scss"));
+      pluginsStyles.push(
+        import(
+          /* webpackChunkName: "lightgallery" */ "lightgallery/scss/lg-fullscreen.scss"
+        )
+      );
     }
 
     if (LIGHT_GALLERY_PAGER) {
       plugins.push(
         <Promise<LightGalleryPlugin>>(
-          import("lightgallery/plugins/pager/lg-pager.es5.js")
+          import(
+            /* webpackChunkName: "lightgallery" */ "lightgallery/plugins/pager/lg-pager.es5.js"
+          )
         )
       );
-      pluginsStyles.push(import("lightgallery/scss/lg-pager.scss"));
+      pluginsStyles.push(
+        import(
+          /* webpackChunkName: "lightgallery" */ "lightgallery/scss/lg-pager.scss"
+        )
+      );
     }
 
     if (LIGHT_GALLERY_ROTATE) {
       plugins.push(
         <Promise<LightGalleryPlugin>>(
-          import("lightgallery/plugins/rotate/lg-rotate.es5.js")
+          import(
+            /* webpackChunkName: "lightgallery" */ "lightgallery/plugins/rotate/lg-rotate.es5.js"
+          )
         )
       );
-      pluginsStyles.push(import("lightgallery/scss/lg-rotate.scss"));
+      pluginsStyles.push(
+        import(
+          /* webpackChunkName: "lightgallery" */ "lightgallery/scss/lg-rotate.scss"
+        )
+      );
     }
 
     if (LIGHT_GALLERY_SHARE) {
       plugins.push(
         <Promise<LightGalleryPlugin>>(
-          import("lightgallery/plugins/share/lg-share.es5.js")
+          import(
+            /* webpackChunkName: "lightgallery" */ "lightgallery/plugins/share/lg-share.es5.js"
+          )
         )
       );
-      pluginsStyles.push(import("lightgallery/scss/lg-share.scss"));
+      pluginsStyles.push(
+        import(
+          /* webpackChunkName: "lightgallery" */ "lightgallery/scss/lg-share.scss"
+        )
+      );
     }
 
     if (LIGHT_GALLERY_THUMBNAIL) {
       plugins.push(
         <Promise<LightGalleryPlugin>>(
-          import("lightgallery/plugins/thumbnail/lg-thumbnail.es5.js")
+          import(
+            /* webpackChunkName: "lightgallery" */ "lightgallery/plugins/thumbnail/lg-thumbnail.es5.js"
+          )
         )
       );
-      pluginsStyles.push(import("lightgallery/scss/lg-thumbnail.scss"));
+      pluginsStyles.push(
+        import(
+          /* webpackChunkName: "lightgallery" */ "lightgallery/scss/lg-thumbnail.scss"
+        )
+      );
     }
 
     if (LIGHT_GALLERY_ZOOM) {
       plugins.push(
         <Promise<LightGalleryPlugin>>(
-          import("lightgallery/plugins/zoom/lg-zoom.es5.js")
+          import(
+            /* webpackChunkName: "lightgallery" */ "lightgallery/plugins/zoom/lg-zoom.es5.js"
+          )
         )
       );
-      pluginsStyles.push(import("lightgallery/scss/lg-zoom.scss"));
+      pluginsStyles.push(
+        import(
+          /* webpackChunkName: "lightgallery" */ "lightgallery/scss/lg-zoom.scss"
+        )
+      );
     }
 
     const initLightGallery = (): void => {

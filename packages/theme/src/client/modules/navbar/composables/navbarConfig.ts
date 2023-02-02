@@ -1,16 +1,15 @@
 import { isLinkExternal, isString } from "@vuepress/shared";
-import { computed } from "vue";
+import { type ComputedRef, computed } from "vue";
 
 import { useAutoLink, useThemeLocaleData } from "@theme-hope/composables/index";
 
-import type { ComputedRef } from "vue";
-import type { ResolvedThemeNavbarItem } from "../utils/index.js";
-import type {
-  AutoLinkOptions,
-  NavGroup,
-  NavbarGroup,
-  NavbarItem,
+import {
+  type AutoLinkOptions,
+  type NavGroup,
+  type NavbarGroup,
+  type NavbarItem,
 } from "../../../../shared/index.js";
+import { type ResolvedThemeNavbarItem } from "../utils/index.js";
 
 export const resolveNavbarItem = (
   item: NavbarItem | NavbarGroup | string,

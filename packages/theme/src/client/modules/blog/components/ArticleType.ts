@@ -1,5 +1,5 @@
 import { useRouteLocale } from "@vuepress/client";
-import { computed, defineComponent, h } from "vue";
+import { type VNode, computed, defineComponent, h } from "vue";
 import { RouterLink, useRoute } from "vue-router";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";
@@ -7,8 +7,6 @@ import {
   useArticles,
   useStars,
 } from "@theme-hope/modules/blog/composables/index";
-
-import type { VNode } from "vue";
 
 import "../styles/article-type.scss";
 

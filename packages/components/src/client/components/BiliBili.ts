@@ -1,10 +1,9 @@
 /* eslint-disable vue/no-unused-properties */
 import { useEventListener } from "@vueuse/core";
+import { type VNode, computed, defineComponent, h, onMounted, ref } from "vue";
 import { checkIsMobile } from "vuepress-shared/client";
-import { computed, defineComponent, h, onMounted, ref } from "vue";
-import { useSize } from "../composables/index.js";
 
-import type { VNode } from "vue";
+import { useSize } from "../composables/index.js";
 
 import "../styles/bili-bili.scss";
 

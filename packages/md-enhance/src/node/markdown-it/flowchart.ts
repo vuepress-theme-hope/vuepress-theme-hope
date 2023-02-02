@@ -1,6 +1,6 @@
-import { utoa } from "vuepress-shared/node";
-import type { PluginSimple } from "markdown-it";
+import { type PluginSimple } from "markdown-it";
 import type Token from "markdown-it/lib/token.js";
+import { utoa } from "vuepress-shared/node";
 
 const flowchartRender = (tokens: Token[], index: number): string => {
   const token = tokens[index];

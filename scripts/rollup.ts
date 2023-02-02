@@ -1,11 +1,11 @@
 import commonjs from "@rollup/plugin-commonjs";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
+import { type RollupOptions, type RollupWarning } from "rollup";
 import copy from "rollup-plugin-copy";
 import dts from "rollup-plugin-dts";
 import esbuild from "rollup-plugin-esbuild";
-import { shebangPlugin } from "./shebang.js";
 
-import type { RollupOptions, RollupWarning } from "rollup";
+import { shebangPlugin } from "./shebang.js";
 
 const isProduction = process.env["NODE_ENV"] === "production";
 

@@ -1,4 +1,6 @@
+import { type MermaidConfig } from "mermaid";
 import {
+  type VNode,
   defineComponent,
   h,
   nextTick,
@@ -8,9 +10,6 @@ import {
   watch,
 } from "vue";
 import { LoadingIcon, atou } from "vuepress-shared/client";
-
-import type { MermaidConfig } from "mermaid";
-import type { VNode } from "vue";
 
 import "../styles/mermaid.scss";
 

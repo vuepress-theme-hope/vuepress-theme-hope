@@ -1,9 +1,15 @@
 import { useDebounceFn, useEventListener } from "@vueuse/core";
-import { defineComponent, h, onBeforeUnmount, onMounted, ref } from "vue";
+import { type EChartsOption, type EChartsType } from "echarts";
+import {
+  type PropType,
+  type VNode,
+  defineComponent,
+  h,
+  onBeforeUnmount,
+  onMounted,
+  ref,
+} from "vue";
 import { LoadingIcon, atou } from "vuepress-shared/client";
-
-import type { EChartsOption, EChartsType } from "echarts";
-import type { PropType, VNode } from "vue";
 
 import "../styles/echarts.scss";
 
@@ -19,6 +25,7 @@ const parseEChartsConfig = (
 
     eval(config);
 
+    // eslint-disable-next-line import/no-commonjs
     return <EChartsOption>module.exports;
   }
 

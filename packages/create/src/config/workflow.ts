@@ -1,7 +1,7 @@
 import { join } from "node:path";
 
-import type { Lang } from "./i18n.js";
-import type { PackageManager } from "../utils/index.js";
+import { type Lang } from "./i18n.js";
+import { type PackageManager } from "../utils/index.js";
 
 export const getWorkflowContent = (
   packageManager: PackageManager,

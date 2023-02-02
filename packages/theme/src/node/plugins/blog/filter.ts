@@ -1,9 +1,10 @@
-import type { Page } from "@vuepress/core";
-import type {
-  ThemeBlogHomePageFrontmatter,
-  ThemeNormalPageFrontmatter,
-  ThemePageData,
-  ThemeProjectHomePageFrontmatter,
+import { type Page } from "@vuepress/core";
+
+import {
+  type ThemeBlogHomePageFrontmatter,
+  type ThemeNormalPageFrontmatter,
+  type ThemePageData,
+  type ThemeProjectHomePageFrontmatter,
 } from "../../../shared/index.js";
 
 export const filter = ({

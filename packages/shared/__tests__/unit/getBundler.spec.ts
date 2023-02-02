@@ -1,6 +1,7 @@
+import { type App } from "@vuepress/core";
 import { describe, expect, it } from "vitest";
+
 import { getBundlerName } from "../../src/node/bundler/getBundler.js";
-import type { App } from "@vuepress/core";
 
 describe("Should get bundler name", () => {
   it("Official bundler", () => {

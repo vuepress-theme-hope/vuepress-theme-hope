@@ -1,12 +1,10 @@
-import { computed, defineComponent, h } from "vue";
+import { type PropType, type VNode, computed, defineComponent, h } from "vue";
+import { type ReadingTime } from "vuepress-plugin-reading-time2";
 import { useLocaleConfig } from "vuepress-shared/client";
 
 import { WordIcon } from "@theme-hope/modules/info/components/icons";
 import { useMetaLocale } from "@theme-hope/modules/info/composables/index";
 import { readingTimeLocales } from "@theme-hope/modules/info/utils/index";
-
-import type { PropType, VNode } from "vue";
-import type { ReadingTime } from "vuepress-plugin-reading-time2";
 
 export default defineComponent({
   name: "ReadTimeInfo",

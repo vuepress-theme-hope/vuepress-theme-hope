@@ -1,8 +1,8 @@
+import { type HeadConfig } from "@vuepress/core";
 import { describe, expect, it } from "vitest";
-import { injectLinksToHead } from "../../src/node/injectHead";
 
-import type { HeadConfig } from "@vuepress/core";
-import type { PWAOptions } from "../../src/shared";
+import { type PWAOptions } from "../../src/node/index.js";
+import { injectLinksToHead } from "../../src/node/injectHead.js";
 
 const options: PWAOptions = {
   favicon: "/favicon.ico",

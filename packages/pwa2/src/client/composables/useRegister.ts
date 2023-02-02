@@ -1,11 +1,13 @@
 import { withBase } from "@vuepress/client";
 
-import type { PWAEvent } from "./usePWAEvent.js";
+import { type PWAEvent } from "./usePWAEvent.js";
 
 declare const SW_PATH: string;
 
 export const useRegister = async (event: PWAEvent): Promise<void> => {
-  const { register } = await import("register-service-worker");
+  const { register } = await import(
+    /* webpackChunkName: "register-service-worker" */ "register-service-worker"
+  );
 
   // Register service worker
   register(withBase(SW_PATH), {

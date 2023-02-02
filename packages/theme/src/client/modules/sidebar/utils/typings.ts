@@ -1,6 +1,6 @@
-import type {
-  SidebarGroupItem,
-  SidebarPageItem,
+import {
+  type SidebarGroupItem,
+  type SidebarPageItem,
 } from "../../../../shared/index.js";
 
 export interface ResolvedSidebarHeaderItem extends SidebarPageItem {

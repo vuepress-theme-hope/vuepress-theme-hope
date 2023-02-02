@@ -1,5 +1,6 @@
 import { existsSync, readdirSync, writeFileSync } from "node:fs";
 import { join, resolve } from "node:path";
+
 import { version } from "../package.json";
 
 const packagesDir = resolve(process.cwd(), "packages");

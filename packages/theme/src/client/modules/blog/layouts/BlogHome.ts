@@ -1,9 +1,7 @@
-import { defineComponent, h } from "vue";
+import { type VNode, defineComponent, h } from "vue";
 
-import BlogWrapper from "@theme-hope/modules/blog/components/BlogWrapper";
 import BlogHome from "@theme-hope/modules/blog/components/BlogHome";
-
-import type { VNode } from "vue";
+import BlogWrapper from "@theme-hope/modules/blog/components/BlogWrapper";
 
 export default defineComponent({
   name: "BlogHome",

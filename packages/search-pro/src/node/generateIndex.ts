@@ -1,11 +1,10 @@
+import { type Page } from "@vuepress/core";
 import { isArray } from "@vuepress/shared";
-import { load } from "cheerio";
+import { type AnyNode, load } from "cheerio";
 import { fromEntries, keys } from "vuepress-shared/node";
 
-import type { Page } from "@vuepress/core";
-import type { AnyNode } from "cheerio";
-import type { SearchProCustomFieldOptions } from "./options.js";
-import type { PageHeaderContent, PageIndex } from "../shared/index.js";
+import { type SearchProCustomFieldOptions } from "./options.js";
+import { type PageHeaderContent, type PageIndex } from "../shared/index.js";
 
 /**
  * These tags are valid HTML tags which can contain content.

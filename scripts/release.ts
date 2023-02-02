@@ -1,7 +1,8 @@
-import pc from "picocolors";
 import { execaCommand } from "execa";
-import ora from "ora";
 import inquirer from "inquirer";
+import ora from "ora";
+import pc from "picocolors";
+
 import pkg from "../package.json" assert { type: "json" };
 
 const { version: currentVersion } = pkg;

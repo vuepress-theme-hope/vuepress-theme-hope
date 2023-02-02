@@ -1,31 +1,28 @@
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
-import { computed, inject } from "vue";
+import { type GitData } from "@vuepress/plugin-git";
+import { type ComputedRef, computed, inject } from "vue";
+import { type ReadingTime } from "vuepress-plugin-reading-time2";
 import {
+  type AuthorInfo,
+  type BasePageFrontMatter,
+  type DateInfo,
   getAuthor,
   getCategory,
   getDate,
   getTag,
 } from "vuepress-shared/client";
 
-import { useThemeLocaleData } from "./themeData.js";
-
-import type {
-  AuthorInfo,
-  BasePageFrontMatter,
-  DateInfo,
-} from "vuepress-shared/client";
-import type { GitData } from "@vuepress/plugin-git";
-import type { ComputedRef } from "vue";
-import type { ReadingTime } from "vuepress-plugin-reading-time2";
-import type { CategoryMapRef } from "@theme-hope/modules/blog/composables/index";
-import type { PageInfoProps } from "@theme-hope/modules/info/components/PageInfo";
-import type {
-  PageCategory,
-  PageTag,
+import { type CategoryMapRef } from "@theme-hope/modules/blog/composables/index";
+import { type PageInfoProps } from "@theme-hope/modules/info/components/PageInfo";
+import {
+  type PageCategory,
+  type PageTag,
 } from "@theme-hope/modules/info/utils/index";
-import type {
-  PageInfo,
-  ThemeNormalPageFrontmatter,
+
+import { useThemeLocaleData } from "./themeData.js";
+import {
+  type PageInfo,
+  type ThemeNormalPageFrontmatter,
 } from "../../shared/index.js";
 
 declare const ENABLE_BLOG: boolean;

@@ -11,7 +11,18 @@ extends:
   - plugin:@typescript-eslint/recommended-requiring-type-checking
   - plugin:prettier/recommended
 
+settings:
+  # import/resolver:
+  #   # You will also need to install and configure the TypeScript resolver
+  #   # See also https://github.com/import-js/eslint-import-resolver-typescript#configuration
+  #   typescript: true
+  #   node: true
+  import/internal-regex: ^@(?:internal|temp|theme-hope)/
+
 parser: vue-eslint-parser
+
+plugins:
+  - import
 
 parserOptions:
   parser: "@typescript-eslint/parser"
@@ -34,27 +45,6 @@ ignorePatterns:
   - "**/.vuepress/.temp/**"
 
 rules:
-  padding-line-between-statements:
-    - error
-    - blankLine: always
-      prev:
-        - const
-        - let
-      next:
-        - "*"
-    - blankLine: any
-      prev:
-        - const
-        - let
-      next:
-        - const
-        - let
-    - blankLine: always
-      prev:
-        - "*"
-      next:
-        - return
-
   "@typescript-eslint/ban-ts-comment":
     - off
 
@@ -121,12 +111,86 @@ rules:
   "@typescript-eslint/no-unsafe-member-access":
     - warn
 
+  import/consistent-type-specifier-style:
+    - error
+    - prefer-inline
+
+  import/dynamic-import-chunkname:
+    - error
+
+  import/first:
+    - error
+
+  import/newline-after-import:
+    - error
+
+  import/no-commonjs:
+    - error
+
+  import/no-cycle:
+    - error
+
+  import/no-duplicates:
+    - error
+    - considerQueryString: true
+      prefer-inline: true
+
+  import/no-named-default:
+    - error
+
+  import/no-restricted-paths:
+    - error
+    - zones:
+        - target: packages/*/src/client/**
+          from: packages/*/src/node/**
+        - target: packages/*/src/node/**
+          from: packages/*/src/client/**
+
+  import/order:
+    - error
+    - alphabetize:
+        order: asc
+        orderImportKind: asc
+      groups:
+        - builtin
+        - external
+        - internal
+        - - parent
+          - sibling
+        - index
+        - object
+      newlines-between: always
+
+  no-duplicate-imports:
+    - error
+
   no-unmodified-loop-condition:
     - error
 
+  padding-line-between-statements:
+    - error
+    - blankLine: always
+      prev:
+        - const
+        - let
+      next:
+        - "*"
+    - blankLine: any
+      prev:
+        - const
+        - let
+      next:
+        - const
+        - let
+    - blankLine: always
+      prev:
+        - "*"
+      next:
+        - return
+
   sort-imports:
     - error
-    - allowSeparatedGroups: true
+    - allowSeparatedGroups: false
       ignoreDeclarationSort: true
 
   vue/block-lang:

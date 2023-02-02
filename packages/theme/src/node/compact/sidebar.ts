@@ -1,15 +1,14 @@
 import { isArray, isPlainObject, isString } from "@vuepress/shared";
+import { colors } from "@vuepress/utils";
 import { entries, fromEntries } from "vuepress-shared/node";
 
-import { colors } from "@vuepress/utils";
 import { deprecatedLogger, droppedLogger } from "./utils.js";
-import { logger } from "../utils.js";
-
-import type {
-  SidebarArrayOptions,
-  SidebarItem,
-  SidebarOptions,
+import {
+  type SidebarArrayOptions,
+  type SidebarItem,
+  type SidebarOptions,
 } from "../../shared/index.js";
+import { logger } from "../utils.js";
 
 const handleArraySidebarOptions = (
   config: SidebarArrayOptions

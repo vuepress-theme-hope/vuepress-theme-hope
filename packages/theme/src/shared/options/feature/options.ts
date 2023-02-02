@@ -1,13 +1,13 @@
-import type {
-  BlogLocaleConfig,
-  BlogLocaleData,
-  BlogLocaleOptions,
-  PaginationLocaleData,
+import {
+  type BlogLocaleConfig,
+  type BlogLocaleData,
+  type BlogLocaleOptions,
+  type PaginationLocaleData,
 } from "./blog.js";
-import type {
-  EncryptConfig,
-  EncryptLocaleData,
-  EncryptOptions,
+import {
+  type EncryptConfig,
+  type EncryptLocaleData,
+  type EncryptOptions,
 } from "./encrypt.js";
 
 export interface FeatureLocaleData {

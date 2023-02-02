@@ -1,7 +1,5 @@
 import { Content } from "@vuepress/client";
-import { h } from "vue";
-
-import type { FunctionalComponent, VNode } from "vue";
+import { type FunctionalComponent, type VNode, h } from "vue";
 
 const MarkdownContent: FunctionalComponent<{ custom?: boolean }> = ({
   custom,

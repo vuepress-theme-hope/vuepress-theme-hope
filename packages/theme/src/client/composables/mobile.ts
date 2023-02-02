@@ -1,8 +1,7 @@
 import { useEventListener } from "@vueuse/core";
-import { onMounted, ref } from "vue";
-import { useThemeData } from "./themeData.js";
+import { type Ref, onMounted, ref } from "vue";
 
-import type { Ref } from "vue";
+import { useThemeData } from "./themeData.js";
 
 export interface WindowSizeRef {
   isMobile: Ref<boolean>;

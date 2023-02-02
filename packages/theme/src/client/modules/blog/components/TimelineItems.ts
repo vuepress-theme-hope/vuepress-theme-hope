@@ -1,4 +1,5 @@
-import { computed, defineComponent, h } from "vue";
+import { type PageHeader } from "@vuepress/client";
+import { type VNode, computed, defineComponent, h } from "vue";
 import { RouterLink } from "vue-router";
 
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
@@ -8,10 +9,8 @@ import {
   useTimelines,
 } from "@theme-hope/modules/blog/composables/index";
 import TOC from "@theme-hope/modules/info/components/TOC";
-import { ArticleInfoType } from "../../../../shared/index.js";
 
-import type { VNode } from "vue";
-import type { PageHeader } from "@vuepress/shared";
+import { ArticleInfoType } from "../../../../shared/index.js";
 
 import "../styles/timeline-items.scss";
 

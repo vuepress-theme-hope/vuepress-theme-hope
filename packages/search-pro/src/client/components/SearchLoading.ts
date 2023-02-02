@@ -1,8 +1,7 @@
-import { defineComponent, h } from "vue";
+import { type FunctionalComponent, type VNode, defineComponent, h } from "vue";
 import { useLocaleConfig } from "vuepress-shared/client";
-import { searchProLocales } from "../define.js";
 
-import type { FunctionalComponent, VNode } from "vue";
+import { searchProLocales } from "../define.js";
 
 const LoadingIcon: FunctionalComponent = (): VNode =>
   h(

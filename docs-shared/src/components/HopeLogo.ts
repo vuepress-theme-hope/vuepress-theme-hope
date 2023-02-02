@@ -1,15 +1,20 @@
 import { usePageFrontmatter, withBase } from "@vuepress/client";
-import { computed, defineComponent, h, onMounted, ref, watch } from "vue";
+import { type Mesh, type default as Three } from "three";
+import { type OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+import { type STLLoader } from "three/examples/jsm/loaders/STLLoader.js";
+import {
+  type VNode,
+  computed,
+  defineComponent,
+  h,
+  onMounted,
+  ref,
+  watch,
+} from "vue";
+import { type ThemeProjectHomePageFrontmatter } from "vuepress-theme-hope";
 
 // @ts-ignore
 import { useWindowSize } from "@theme-hope/composables/index";
-
-import type Three from "three";
-import type { Mesh } from "three";
-import type { STLLoader } from "three/examples/jsm/loaders/STLLoader.js";
-import type { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-import type { VNode } from "vue";
-import type { ThemeProjectHomePageFrontmatter } from "vuepress-theme-hope";
 
 import "../styles/hope-logo.scss";
 
@@ -164,14 +169,14 @@ export default defineComponent({
 
     onMounted(() =>
       Promise.all([
-        import("three" /* webpackChunkName: "hope-logo" */).then(
+        import(/* webpackChunkName: "hope-logo" */ "three").then(
           (m) => m.default || m
         ),
         import(
-          "three/examples/jsm/controls/OrbitControls.js" /* webpackChunkName: "hope-logo" */
+          /* webpackChunkName: "hope-logo" */ "three/examples/jsm/controls/OrbitControls.js"
         ).then((m) => m.default || m),
         import(
-          "three/examples/jsm/loaders/STLLoader.js" /* webpackChunkName: "hope-logo" */
+          /* webpackChunkName: "hope-logo" */ "three/examples/jsm/loaders/STLLoader.js"
         ).then((m) => m.default || m),
       ]).then(([THREE, { OrbitControls }, { STLLoader }]) => {
         renderLogo(THREE, STLLoader, OrbitControls);

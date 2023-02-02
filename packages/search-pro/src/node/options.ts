@@ -1,8 +1,9 @@
-import type { LocaleConfig, Page } from "@vuepress/core";
-import type {
-  SearchProCustomFieldFormatter,
-  SearchProHotKeyOptions,
-  SearchProLocaleData,
+import { type LocaleConfig, type Page } from "@vuepress/core";
+
+import {
+  type SearchProCustomFieldFormatter,
+  type SearchProHotKeyOptions,
+  type SearchProLocaleData,
 } from "../shared/index.js";
 
 export interface SearchProCustomFieldOptions {

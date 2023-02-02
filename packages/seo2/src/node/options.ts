@@ -1,11 +1,12 @@
-import type { App, HeadConfig, Page } from "@vuepress/core";
-import type { Author } from "vuepress-shared/node";
-import type {
-  ArticleSchema,
-  BlogPostingSchema,
-  ExtendPage,
-  SeoContent,
-  WebPageSchema,
+import { type App, type HeadConfig, type Page } from "@vuepress/core";
+import { type Author } from "vuepress-shared/node";
+
+import {
+  type ArticleSchema,
+  type BlogPostingSchema,
+  type ExtendPage,
+  type SeoContent,
+  type WebPageSchema,
 } from "./typings/index.js";
 
 export interface SeoOptions {

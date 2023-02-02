@@ -1,14 +1,22 @@
-import { computed, defineComponent, h, onMounted, ref, watch } from "vue";
+import {
+  type PropType,
+  type VNode,
+  computed,
+  defineComponent,
+  h,
+  onMounted,
+  ref,
+  watch,
+} from "vue";
 import { useRoute, useRouter } from "vue-router";
 
+import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import ArticleItem from "@theme-hope/modules/blog/components/ArticleItem";
 import Pagination from "@theme-hope/modules/blog/components/Pagination";
-import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import { EmptyIcon } from "@theme-hope/modules/blog/components/icons/index";
 import { useBlogOptions } from "@theme-hope/modules/blog/composables/index";
 
-import type { PropType, VNode } from "vue";
-import type { ArticleInfo } from "../../../../shared/index.js";
+import { type ArticleInfo } from "../../../../shared/index.js";
 
 import "../styles/article-list.scss";
 
@@ -67,11 +75,11 @@ export default defineComponent({
       updatePage(page ? Number(page) : 1);
 
       if (SUPPORT_PAGEVIEW)
-        void import("vuepress-plugin-comment2/client/pageview.js").then(
-          ({ updatePageview }) => {
-            updatePageview();
-          }
-        );
+        void import(
+          /* webpackChunkName: "pageview" */ "vuepress-plugin-comment2/client/pageview.js"
+        ).then(({ updatePageview }) => {
+          updatePageview();
+        });
 
       watch(currentPage, () => {
         // list top border distance

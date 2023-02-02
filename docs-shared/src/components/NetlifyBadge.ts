@@ -1,9 +1,8 @@
 import { ClientOnly } from "@vuepress/client";
-import { defineComponent, h } from "vue";
+import { type VNode, defineComponent, h } from "vue";
+
 // @ts-ignore
 import { useDarkmode } from "@theme-hope/modules/outlook/composables/index";
-
-import type { VNode } from "vue";
 
 declare const IS_NETLIFY: boolean;
 
