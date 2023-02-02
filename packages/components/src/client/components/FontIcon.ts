@@ -1,7 +1,5 @@
-import { computed, defineComponent, h } from "vue";
+import { type VNode, computed, defineComponent, h } from "vue";
 import { keys } from "vuepress-shared/client";
-
-import type { VNode } from "vue";
 
 import "../styles/font-icon.scss";
 

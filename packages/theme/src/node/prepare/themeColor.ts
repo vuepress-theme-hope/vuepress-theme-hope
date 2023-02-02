@@ -1,7 +1,7 @@
+import { type App } from "@vuepress/core";
 import { entries } from "vuepress-shared/node";
 
-import type { App } from "@vuepress/core";
-import type { ThemeData } from "../../shared/index.js";
+import { type ThemeData } from "../../shared/index.js";
 
 export const prepareThemeColorScss = async (
   app: App,

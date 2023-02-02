@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+
 import { getDate } from "../../src/shared/utils/date.js";
 
 const getCurrentDate = (date: Date): Date =>

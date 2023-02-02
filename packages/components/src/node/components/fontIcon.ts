@@ -1,8 +1,8 @@
 import { isArray, isLinkHttp } from "@vuepress/shared";
 import { endsWith } from "vuepress-shared/node";
-import { logger } from "../utils.js";
 
-import type { FontIconAssets } from "../options/index.js";
+import { type FontIconAssets } from "../options/index.js";
+import { logger } from "../utils.js";
 
 export const FONT_AWESOME_PREFIX = "fas fa-";
 

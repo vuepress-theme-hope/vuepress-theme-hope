@@ -1,8 +1,8 @@
 // German (Austria) [de-at]
 import { isArray } from "@vuepress/shared";
-
 import type dayjs from "dayjs";
-import type { Locale } from "./locale.js";
+
+import { type Locale } from "./locale.js";
 
 const texts = {
   s: "ein paar Sekunden",

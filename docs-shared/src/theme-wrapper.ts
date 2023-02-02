@@ -1,6 +1,5 @@
-import { hopeTheme } from "vuepress-theme-hope";
-import type { ThemeFunction } from "@vuepress/core";
-import type { ThemeOptions } from "vuepress-theme-hope";
+import { type ThemeFunction } from "@vuepress/core";
+import { type ThemeOptions, hopeTheme } from "vuepress-theme-hope";
 
 const IS_GITEE = "GITEE" in process.env;
 const IS_NETLIFY = "NETLIFY" in process.env;

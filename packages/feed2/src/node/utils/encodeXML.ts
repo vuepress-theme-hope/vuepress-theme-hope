@@ -5,8 +5,7 @@ import {
   entries,
   fromEntries,
 } from "vuepress-shared/node";
-
-import type { ElementCompact } from "xml-js";
+import { type ElementCompact } from "xml-js";
 
 export const encodeXML = (content: ElementCompact): ElementCompact =>
   fromEntries(

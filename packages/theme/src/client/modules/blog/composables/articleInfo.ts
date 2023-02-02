@@ -1,26 +1,28 @@
-import { computed, toRef } from "vue";
+import { type ComputedRef, type Ref, computed, toRef } from "vue";
 import {
+  type AuthorInfo,
+  type DateInfo,
   getAuthor,
   getCategory,
   getDate,
   getTag,
 } from "vuepress-shared/client";
 
+import { useThemeLocaleData } from "@theme-hope/composables/index";
+import { type PageInfoProps } from "@theme-hope/modules/info/components/PageInfo";
+import {
+  type PageCategory,
+  type PageTag,
+} from "@theme-hope/modules/info/utils/index";
+
 import { useCategoryMap } from "./categoryMap.js";
 import { useBlogOptions } from "./options.js";
 import { useTagMap } from "./tagMap.js";
-import { ArticleInfoType } from "../../../../shared/index.js";
-
-import { useThemeLocaleData } from "@theme-hope/composables/index";
-
-import type { ComputedRef, Ref } from "vue";
-import type { AuthorInfo, DateInfo } from "vuepress-shared/client";
-import type { PageInfoProps } from "@theme-hope/modules/info/components/PageInfo";
-import type {
-  PageCategory,
-  PageTag,
-} from "@theme-hope/modules/info/utils/index";
-import type { ArticleInfo, PageInfo } from "../../../../shared/index.js";
+import {
+  type ArticleInfo,
+  ArticleInfoType,
+  type PageInfo,
+} from "../../../../shared/index.js";
 
 export type AuthorRef = ComputedRef<AuthorInfo[]>;
 

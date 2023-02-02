@@ -1,6 +1,5 @@
 import { isString } from "@vuepress/shared";
-
-import type { DataSourceItem } from "photoswipe";
+import { type DataSourceItem } from "photoswipe";
 
 export const getImageInfo = (image: HTMLImageElement): DataSourceItem => ({
   src: image.src,

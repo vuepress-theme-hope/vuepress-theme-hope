@@ -1,14 +1,13 @@
-import { isString } from "@vuepress/shared";
 import { usePageFrontmatter } from "@vuepress/client";
-import { computed, defineComponent, h } from "vue";
+import { isString } from "@vuepress/shared";
+import { type VNode, computed, defineComponent, h } from "vue";
 
 import {
   usePageAuthor,
   useThemeLocaleData,
 } from "@theme-hope/composables/index";
 
-import type { VNode } from "vue";
-import type { ThemeNormalPageFrontmatter } from "../../shared/index.js";
+import { type ThemeNormalPageFrontmatter } from "../../shared/index.js";
 
 import "../styles/footer.scss";
 

@@ -1,10 +1,17 @@
+import {
+  Transition,
+  type VNode,
+  computed,
+  defineComponent,
+  h,
+  onMounted,
+  ref,
+} from "vue";
 import { useLocaleConfig } from "vuepress-shared/client";
-import { Transition, computed, defineComponent, h, onMounted, ref } from "vue";
-import { locales } from "../define.js";
+
 import { UpdateIcon } from "../components/icons.js";
 import { usePWAEvent, useSkipWaiting } from "../composables/index.js";
-
-import type { VNode } from "vue";
+import { locales } from "../define.js";
 
 import "../styles/popup.scss";
 

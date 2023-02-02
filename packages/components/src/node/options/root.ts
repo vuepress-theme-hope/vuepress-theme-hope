@@ -1,4 +1,4 @@
-import type { NoticeOptions } from "../../shared/index.js";
+import { type NoticeOptions } from "../../shared/index.js";
 
 export interface RootComponentOptions {
   /**

@@ -1,12 +1,11 @@
 import { useFullscreen } from "@vueuse/core";
-import { computed, defineComponent, h } from "vue";
+import { type VNode, computed, defineComponent, h } from "vue";
+
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 import {
   CancelFullScreenIcon,
   EnterFullScreenIcon,
 } from "@theme-hope/modules/outlook/components/icons/index";
-
-import type { VNode } from "vue";
 
 import "../styles/toggle-full-screen-button.scss";
 

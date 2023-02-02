@@ -1,14 +1,20 @@
-import { computed, defineComponent, h, toRef } from "vue";
-import { RouterLink, useRoute } from "vue-router";
 import { useSiteData } from "@vuepress/client";
 import { ExternalLinkIcon } from "@vuepress/plugin-external-link-icon/client";
 import { isLinkHttp, isLinkMailto, isLinkTel } from "@vuepress/shared";
+import {
+  type PropType,
+  type VNode,
+  computed,
+  defineComponent,
+  h,
+  toRef,
+} from "vue";
+import { RouterLink, useRoute } from "vue-router";
 import { keys, startsWith } from "vuepress-shared/client";
 
 import Icon from "@theme-hope/components/Icon";
 
-import type { PropType, VNode } from "vue";
-import type { AutoLinkOptions } from "../../shared/index.js";
+import { type AutoLinkOptions } from "../../shared/index.js";
 
 export default defineComponent({
   name: "AutoLink",

@@ -1,9 +1,9 @@
+import { type App } from "@vuepress/core";
 import { isArray, isString } from "@vuepress/shared";
-import { AVAILABLE_COMPONENTS, CLIENT_FOLDER } from "./utils.js";
-import { getIconLink, getNoticeOptions } from "./components/index.js";
 
-import type { App } from "@vuepress/core";
-import type { ComponentOptions } from "./options/index.js";
+import { getIconLink, getNoticeOptions } from "./components/index.js";
+import { type ComponentOptions } from "./options/index.js";
+import { AVAILABLE_COMPONENTS, CLIENT_FOLDER } from "./utils.js";
 
 export const prepareConfigFile = (
   app: App,
@@ -97,7 +97,7 @@ import { hasGlobalComponent } from "${CLIENT_FOLDER}shared.js";
 ${
   shouldImportH
     ? `\
-import { h } from "vue";
+import { type VNode, h } from "vue";
 `
     : ""
 }

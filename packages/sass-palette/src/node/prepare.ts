@@ -1,6 +1,6 @@
-import { getPath } from "./utils.js";
+import { type App } from "@vuepress/core";
 
-import type { App } from "@vuepress/core";
+import { getPath } from "./utils.js";
 
 export const prepareConfigFile = (app: App, id: string): Promise<string> =>
   app.writeTemp(

@@ -1,4 +1,5 @@
 import { isString } from "@vuepress/shared";
+
 import { startsWith } from "./helper.js";
 
 /**

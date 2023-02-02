@@ -1,8 +1,6 @@
-import { defineComponent, h } from "vue";
+import { type VNode, defineComponent, h } from "vue";
 
 import { PLAY_SVG } from "./icons.js";
-
-import type { VNode } from "vue";
 
 import "../styles/playground.scss";
 

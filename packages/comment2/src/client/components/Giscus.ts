@@ -1,16 +1,15 @@
 import { usePageFrontmatter, usePageLang, withBase } from "@vuepress/client";
-import { computed, defineComponent, h, onMounted, ref } from "vue";
+import { type VNode, computed, defineComponent, h, onMounted, ref } from "vue";
 import { useRoute } from "vue-router";
 import { LoadingIcon } from "vuepress-shared/client";
 
-import type { VNode } from "vue";
-import type {
-  CommentPluginFrontmatter,
-  GiscusInputPosition,
-  GiscusMapping,
-  GiscusOptions,
-  GiscusRepo,
-  GiscusTheme,
+import {
+  type CommentPluginFrontmatter,
+  type GiscusInputPosition,
+  type GiscusMapping,
+  type GiscusOptions,
+  type GiscusRepo,
+  type GiscusTheme,
 } from "../../shared/index.js";
 
 import "../styles/giscus.scss";
@@ -130,7 +129,7 @@ export default defineComponent({
     }));
 
     onMounted(async () => {
-      await import("giscus");
+      await import(/* webpackChunkName: "giscus" */ "giscus");
       loaded.value = true;
     });
 

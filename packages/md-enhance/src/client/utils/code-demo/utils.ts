@@ -1,8 +1,8 @@
 import { isPlainObject } from "@vuepress/shared";
 import { keys } from "vuepress-shared/client";
 
-import type { Code } from "./typings.js";
-import type { CodeDemoOptions } from "../../../shared/index.js";
+import { type Code } from "./typings.js";
+import { type CodeDemoOptions } from "../../../shared/index.js";
 
 declare const CODE_DEMO_OPTIONS: CodeDemoOptions;
 

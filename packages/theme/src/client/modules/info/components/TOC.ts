@@ -1,13 +1,18 @@
-import { usePageData } from "@vuepress/client";
-import { defineComponent, h, onMounted, ref, watch } from "vue";
+import { type PageHeader, usePageData } from "@vuepress/client";
+import {
+  type PropType,
+  type VNode,
+  defineComponent,
+  h,
+  onMounted,
+  ref,
+  watch,
+} from "vue";
 import { RouterLink, useRoute } from "vue-router";
 import { isActiveLink } from "vuepress-shared/client";
 
 import PrintButton from "@theme-hope/modules/info/components/PrintButton";
 import { useMetaLocale } from "@theme-hope/modules/info/composables/index";
-
-import type { PageHeader } from "@vuepress/shared";
-import type { PropType, VNode } from "vue";
 
 import "../styles/toc.scss";
 

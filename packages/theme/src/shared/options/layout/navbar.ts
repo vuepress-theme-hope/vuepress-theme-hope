@@ -1,4 +1,4 @@
-import type { NavbarOptions } from "../../navbar.js";
+import { type NavbarOptions } from "../../navbar.js";
 
 export interface NavbarLocaleData {
   /**

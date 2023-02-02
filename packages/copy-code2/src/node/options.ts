@@ -1,5 +1,6 @@
-import type { LocaleConfig } from "@vuepress/core";
-import type { CopyCodeLocaleData } from "../shared/index.js";
+import { type LocaleConfig } from "@vuepress/core";
+
+import { type CopyCodeLocaleData } from "../shared/index.js";
 
 export interface CopyCodeOptions {
   /**

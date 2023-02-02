@@ -1,13 +1,13 @@
-import { defaultPageSorter } from "./utils.js";
-import { ArticleInfoType } from "../../../shared/index.js";
+import { type GitData } from "@vuepress/plugin-git";
+import { type BlogCategoryOptions } from "vuepress-plugin-blog2";
 
-import type { BlogCategoryOptions } from "vuepress-plugin-blog2";
-import type { GitData } from "@vuepress/plugin-git";
-import type {
-  ArticleInfo,
-  BlogPluginOptions,
-  ThemeData,
-  ThemeNormalPageFrontmatter,
+import { defaultPageSorter } from "./utils.js";
+import {
+  type ArticleInfo,
+  ArticleInfoType,
+  type BlogPluginOptions,
+  type ThemeData,
+  type ThemeNormalPageFrontmatter,
 } from "../../../shared/index.js";
 
 export const getCategoryCategory = (

@@ -1,10 +1,8 @@
 import { useSessionStorage, useStorage } from "@vueuse/core";
 import { compareSync } from "bcrypt-ts/browser";
-import { computed } from "vue";
+import { type ComputedRef, computed } from "vue";
 
 import { useEncryptData } from "./utils.js";
-
-import type { ComputedRef } from "vue";
 
 const STORAGE_KEY = "VUEPRESS_HOPE_GLOBAL_TOKEN";
 

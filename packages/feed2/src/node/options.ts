@@ -1,3 +1,5 @@
+import { type App, type Page } from "@vuepress/core";
+import { type GitData } from "@vuepress/plugin-git";
 import {
   ensureEndingSlash,
   isArray,
@@ -7,16 +9,14 @@ import {
 } from "@vuepress/shared";
 import { getDirname, path } from "@vuepress/utils";
 import { deepAssign, fromEntries, keys, values } from "vuepress-shared/node";
-import { compareDate, resolveUrl } from "./utils/index.js";
 
-import type { App, Page } from "@vuepress/core";
-import type { GitData } from "@vuepress/plugin-git";
-import type {
-  BaseFeedOptions,
-  FeedChannelOption,
-  FeedLinks,
-  FeedOptions,
+import {
+  type BaseFeedOptions,
+  type FeedChannelOption,
+  type FeedLinks,
+  type FeedOptions,
 } from "./typings/index.js";
+import { compareDate, resolveUrl } from "./utils/index.js";
 
 const __dirname = getDirname(import.meta.url);
 

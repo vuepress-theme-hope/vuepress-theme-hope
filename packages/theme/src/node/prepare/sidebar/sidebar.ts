@@ -1,3 +1,4 @@
+import { type App } from "@vuepress/core";
 import {
   ensureEndingSlash,
   isArray,
@@ -8,17 +9,15 @@ import { entries, fromEntries } from "vuepress-shared/node";
 
 import { getSidebarInfo } from "./info.js";
 import { getSorter } from "./sorter.js";
-import { logger } from "../../utils.js";
-
-import type { App } from "@vuepress/core";
-import type {
-  SidebarArrayOptions,
-  SidebarGroupItem,
-  SidebarInfo,
-  SidebarOptions,
-  SidebarSorter,
-  ThemeData,
+import {
+  type SidebarArrayOptions,
+  type SidebarGroupItem,
+  type SidebarInfo,
+  type SidebarOptions,
+  type SidebarSorter,
+  type ThemeData,
 } from "../../../shared/index.js";
+import { logger } from "../../utils.js";
 
 const getGeneratePaths = (
   sidebarConfig: SidebarArrayOptions,

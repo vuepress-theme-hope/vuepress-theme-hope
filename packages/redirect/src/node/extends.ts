@@ -1,9 +1,9 @@
+import { type App, type Page } from "@vuepress/core";
 import { isLinkHttp, removeEndingSlash } from "@vuepress/shared";
 import { isAbsoluteUrl } from "vuepress-shared/node";
 
-import type { App, Page } from "@vuepress/core";
-import type { RedirectOptions } from "./options.js";
-import type { RedirectPluginFrontmatterOption } from "./typings/index.js";
+import { type RedirectOptions } from "./options.js";
+import { type RedirectPluginFrontmatterOption } from "./typings/index.js";
 
 export const handleRedirect = (
   { frontmatter }: Page<Record<string, never>, RedirectPluginFrontmatterOption>,

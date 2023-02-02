@@ -1,13 +1,12 @@
+import { type App } from "@vuepress/core";
 import { isPlainObject } from "@vuepress/shared";
 import { useReadingTimePlugin } from "vuepress-plugin-reading-time2";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
 import { useGitPlugin } from "./git.js";
 import { useExtendsPagePlugin } from "./pageConverter.js";
+import { type PluginsOptions } from "../../shared/index.js";
 import { TEMPLATE_FOLDER } from "../utils.js";
-
-import type { App } from "@vuepress/core";
-import type { PluginsOptions } from "../../shared/index.js";
 
 export const usePlugin = (
   app: App,

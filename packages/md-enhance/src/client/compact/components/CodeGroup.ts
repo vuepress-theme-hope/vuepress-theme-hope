@@ -1,10 +1,17 @@
-import { defineComponent, h, onBeforeUpdate, ref } from "vue";
-import type { Component, FunctionalComponent, VNode } from "vue";
+import {
+  type Component,
+  type FunctionalComponent,
+  type VNode,
+  defineComponent,
+  h,
+  onBeforeUpdate,
+  ref,
+} from "vue";
+
+import "../styles/code-group.scss";
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 declare const __VUEPRESS_DEV__: boolean;
-
-import "../styles/code-group.scss";
 
 export interface CodeGroupItemProps {
   title: string;

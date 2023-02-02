@@ -1,15 +1,24 @@
 import { usePageFrontmatter, useRouteLocale } from "@vuepress/client";
-import { computed, defineComponent, h, onMounted, ref, watch } from "vue";
+import {
+  type VNode,
+  computed,
+  defineComponent,
+  h,
+  onMounted,
+  ref,
+  watch,
+} from "vue";
 import { RouterLink, useRoute, useRouter } from "vue-router";
 import { resolveRouteWithRedirect } from "vuepress-shared/client";
 
 import Icon from "@theme-hope/components/Icon";
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 import { getAncestorLinks } from "@theme-hope/utils/index";
-import { ArticleInfoType } from "../../shared/index.js";
 
-import type { VNode } from "vue";
-import type { ThemeNormalPageFrontmatter } from "../../shared/index.js";
+import {
+  ArticleInfoType,
+  type ThemeNormalPageFrontmatter,
+} from "../../shared/index.js";
 
 import "../styles/breadcrumb.scss";
 

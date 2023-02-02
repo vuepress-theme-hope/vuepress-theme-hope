@@ -1,23 +1,27 @@
 import { usePageFrontmatter } from "@vuepress/client";
-import { computed, defineComponent, h, resolveComponent } from "vue";
+import {
+  type VNode,
+  computed,
+  defineComponent,
+  h,
+  resolveComponent,
+} from "vue";
 import { useRoute } from "vue-router";
+import {
+  type BlogCategoryFrontmatterOptions,
+  type BlogPluginFrontmatter,
+} from "vuepress-plugin-blog2";
 
+import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import ArticleList from "@theme-hope/modules/blog/components/ArticleList";
 import BlogWrapper from "@theme-hope/modules/blog/components/BlogWrapper";
 import CategoryList from "@theme-hope/modules/blog/components/CategoryList";
 import InfoPanel from "@theme-hope/modules/blog/components/InfoPanel";
 import TagList from "@theme-hope/modules/blog/components/TagList";
-import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import {
   useCategoryMap,
   useTagMap,
 } from "@theme-hope/modules/blog/composables/index";
-
-import type { VNode } from "vue";
-import type {
-  BlogCategoryFrontmatterOptions,
-  BlogPluginFrontmatter,
-} from "vuepress-plugin-blog2";
 
 import "../styles/page.scss";
 

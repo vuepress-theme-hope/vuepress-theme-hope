@@ -4,6 +4,7 @@ type LightGalleryPlugin<T = unknown> = {
 
 declare module "lightgallery/lightgallery.es5.js" {
   import { LightGallery } from "lightgallery/lightgallery.js";
+
   export default LightGallery;
 }
 

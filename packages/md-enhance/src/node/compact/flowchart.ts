@@ -1,7 +1,6 @@
 import { uml } from "@mdit/plugin-uml";
+import { type PluginSimple } from "markdown-it";
 import { utoa } from "vuepress-shared/node";
-
-import type { PluginSimple } from "markdown-it";
 
 /** @deprecated */
 export const legacyFlowchart: PluginSimple = (md) => {

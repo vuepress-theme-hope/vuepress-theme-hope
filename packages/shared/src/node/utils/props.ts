@@ -1,5 +1,5 @@
+import { type DeflateOptions } from "fflate";
 import { strFromU8, strToU8, unzlibSync, zlibSync } from "fflate/node";
-import type { DeflateOptions } from "fflate";
 
 export const utoa = (
   data: string,

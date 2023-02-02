@@ -1,6 +1,7 @@
 import { usePageFrontmatter, usePageLang, withBase } from "@vuepress/client";
 import { pageviewCount } from "@waline/client/dist/pageview.mjs";
 import {
+  type VNode,
   computed,
   defineAsyncComponent,
   defineComponent,
@@ -11,11 +12,10 @@ import {
 import { useRoute } from "vue-router";
 import { LoadingIcon, useLocaleConfig } from "vuepress-shared/client";
 
-import type { VNode } from "vue";
-import type {
-  CommentPluginFrontmatter,
-  WalineLocaleConfig,
-  WalineOptions,
+import {
+  type CommentPluginFrontmatter,
+  type WalineLocaleConfig,
+  type WalineOptions,
 } from "../../shared/index.js";
 
 import "@waline/client/dist/waline.css";
@@ -30,7 +30,10 @@ const walineOption = COMMENT_OPTIONS;
 const walineLocales = WALINE_LOCALES;
 const enableWaline = Boolean(walineOption.serverURL);
 
-if (WALINE_META) import("@waline/client/dist/waline-meta.css");
+if (WALINE_META)
+  import(
+    /* webpackChunkName: "waline" */ "@waline/client/dist/waline-meta.css"
+  );
 
 export { pageviewCount };
 
@@ -106,8 +109,11 @@ export default defineComponent({
               ? h(
                   defineAsyncComponent({
                     loader: async () =>
-                      (await import("@waline/client/dist/component.mjs"))
-                        .Waline,
+                      (
+                        await import(
+                          /* webpackChunkName: "waline" */ "@waline/client/dist/component.mjs"
+                        )
+                      ).Waline,
                     loadingComponent: () => h(LoadingIcon),
                   }),
                   walineProps.value

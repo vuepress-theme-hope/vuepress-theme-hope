@@ -1,4 +1,7 @@
-import type { NoticeClientOptions, NoticeOptions } from "../../shared/index.js";
+import {
+  type NoticeClientOptions,
+  type NoticeOptions,
+} from "../../shared/index.js";
 
 export const getNoticeOptions = (
   options: NoticeOptions[]

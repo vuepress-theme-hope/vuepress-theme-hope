@@ -1,8 +1,9 @@
+import { type Plugin } from "@vuepress/core";
 import { isPlainObject } from "@vuepress/shared";
-import { autoCatalogPlugin } from "vuepress-plugin-auto-catalog";
-
-import type { Plugin } from "@vuepress/core";
-import type { AutoCatalogOptions } from "vuepress-plugin-auto-catalog";
+import {
+  type AutoCatalogOptions,
+  autoCatalogPlugin,
+} from "vuepress-plugin-auto-catalog";
 
 /**
  * Resolve options for vuepress-plugin-auto-catalog

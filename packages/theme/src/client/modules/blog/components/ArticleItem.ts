@@ -1,18 +1,20 @@
 import { withBase } from "@vuepress/client";
-import { defineComponent, h, toRef } from "vue";
+import { type PropType, type VNode, defineComponent, h, toRef } from "vue";
 import { RouterLink } from "vue-router";
 
-import PageInfo from "@theme-hope/modules/info/components/PageInfo";
 import {
   SlideIcon,
   StickyIcon,
 } from "@theme-hope/modules/blog/components/icons/index";
 import { useArticleInfo } from "@theme-hope/modules/blog/composables/index";
 import { LockIcon } from "@theme-hope/modules/encrypt/components/icons";
-import { ArticleInfoType, PageType } from "../../../../shared/index.js";
+import PageInfo from "@theme-hope/modules/info/components/PageInfo";
 
-import type { PropType, VNode } from "vue";
-import type { ArticleInfo } from "../../../../shared/index.js";
+import {
+  type ArticleInfo,
+  ArticleInfoType,
+  PageType,
+} from "../../../../shared/index.js";
 
 import "../styles/article-item.scss";
 

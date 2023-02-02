@@ -1,6 +1,7 @@
+import { type App } from "@vuepress/core";
+
+import { type ReadingTimeOptions } from "./options.js";
 import { readingTimePlugin } from "./plugin.js";
-import type { App } from "@vuepress/core";
-import type { ReadingTimeOptions } from "./options.js";
 
 /**
  * Composition Api to use `vuepress-plugin-reading-time2`

@@ -1,4 +1,4 @@
-import type { RequiredLocaleConfig } from "vuepress-shared/node";
+import { type RequiredLocaleConfig } from "vuepress-shared/node";
 
 /**
  * Multi language config for `vuepress-plugin-reading-time2` plugin

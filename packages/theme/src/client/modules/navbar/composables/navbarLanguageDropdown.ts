@@ -1,5 +1,5 @@
 import { useRouteLocale, useSiteLocaleData } from "@vuepress/client";
-import { computed } from "vue";
+import { type ComputedRef, computed } from "vue";
 import { useRouter } from "vue-router";
 import { keys } from "vuepress-shared/client";
 
@@ -8,8 +8,10 @@ import {
   useThemeLocaleData,
 } from "@theme-hope/composables/index";
 
-import type { ComputedRef } from "vue";
-import type { AutoLinkOptions, NavGroup } from "../../../../shared/index.js";
+import {
+  type AutoLinkOptions,
+  type NavGroup,
+} from "../../../../shared/index.js";
 
 /**
  * Get navbar config of select language dropdown

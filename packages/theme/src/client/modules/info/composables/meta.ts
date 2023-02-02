@@ -1,18 +1,18 @@
-import { computed } from "vue";
 import {
   usePageData,
   usePageFrontmatter,
   useSiteLocaleData,
 } from "@vuepress/client";
+import { type GitContributor } from "@vuepress/plugin-git";
+import { type ComputedRef, computed } from "vue";
+
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 import { resolveEditLink } from "@theme-hope/modules/info/utils/index";
 
-import type { GitContributor } from "@vuepress/plugin-git";
-import type { ComputedRef } from "vue";
-import type {
-  AutoLinkOptions,
-  ThemeNormalPageFrontmatter,
-  ThemePageData,
+import {
+  type AutoLinkOptions,
+  type ThemeNormalPageFrontmatter,
+  type ThemePageData,
 } from "../../../../shared/index.js";
 
 export const useEditLink = (): ComputedRef<null | AutoLinkOptions> => {

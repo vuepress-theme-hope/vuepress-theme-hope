@@ -1,6 +1,5 @@
-import { defineComponent, h, onMounted, ref, watch } from "vue";
+import { type VNode, defineComponent, h, onMounted, ref, watch } from "vue";
 import { useRoute } from "vue-router";
-import type { VNode } from "vue";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 

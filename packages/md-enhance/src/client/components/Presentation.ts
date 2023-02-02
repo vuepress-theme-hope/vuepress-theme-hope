@@ -1,11 +1,24 @@
-import { useReveal } from "@temp/md-enhance/reveal";
 import { usePageFrontmatter } from "@vuepress/client";
-import { defineComponent, h, onBeforeUnmount, onMounted, ref } from "vue";
+import {
+  type default as Reveal,
+  type RevealOptions,
+} from "reveal.js/dist/reveal.esm.js";
+import {
+  type PropType,
+  type VNode,
+  defineComponent,
+  h,
+  onBeforeUnmount,
+  onMounted,
+  ref,
+} from "vue";
 import { LoadingIcon, atou } from "vuepress-shared/client";
 
-import type { PropType, VNode } from "vue";
-import type Reveal from "reveal.js/dist/reveal.esm.js";
-import type { RevealOptions } from "reveal.js/dist/reveal.esm.js";
+import { useReveal } from "@temp/md-enhance/reveal";
+
+import "../styles/slides/index.scss";
+import "../styles/slides/theme/fonts/league-gothic/league-gothic.css";
+import "../styles/slides/theme/fonts/source-sans-pro/source-sans-pro.css";
 
 declare const MARKDOWN_ENHANCE_DELAY: number;
 declare const REVEAL_CONFIG: Partial<RevealOptions>;
@@ -23,10 +36,6 @@ type ThemeType =
   | "solarized"
   | "blood"
   | "moon";
-
-import "../styles/slides/index.scss";
-import "../styles/slides/theme/fonts/league-gothic/league-gothic.css";
-import "../styles/slides/theme/fonts/source-sans-pro/source-sans-pro.css";
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names

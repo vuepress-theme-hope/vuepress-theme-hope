@@ -1,6 +1,11 @@
-import { Transition, TransitionGroup, defineComponent, h } from "vue";
-
-import type { PropType, VNode } from "vue";
+import {
+  type PropType,
+  Transition,
+  TransitionGroup,
+  type VNode,
+  defineComponent,
+  h,
+} from "vue";
 
 export default defineComponent({
   name: "DropTransition",

@@ -1,8 +1,7 @@
 /* eslint-disable vue/no-unused-properties */
-import { computed, defineComponent, h } from "vue";
-import { useSize } from "../composables/index.js";
+import { type VNode, computed, defineComponent, h } from "vue";
 
-import type { VNode } from "vue";
+import { useSize } from "../composables/index.js";
 
 import "../styles/xi-gua.scss";
 

@@ -1,11 +1,9 @@
 /* eslint-disable vue/no-unused-properties */
 import { usePageLang } from "@vuepress/client";
-import { computed, defineComponent, h } from "vue";
+import { type VNode, computed, defineComponent, h } from "vue";
 import { startsWith } from "vuepress-shared/client";
 
 import { useSize } from "../composables/index.js";
-
-import type { VNode } from "vue";
 
 import "../styles/youtube.scss";
 

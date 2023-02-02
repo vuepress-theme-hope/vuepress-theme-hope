@@ -1,8 +1,6 @@
 import { useRouteLocale } from "@vuepress/client";
 import katex from "katex";
-import { defineComponent, h, ref, watch } from "vue";
-
-import type { VNode } from "vue";
+import { type VNode, defineComponent, h, ref, watch } from "vue";
 
 import "katex/dist/katex.css";
 import "./katex-playground.scss";

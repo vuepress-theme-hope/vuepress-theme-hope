@@ -7,13 +7,17 @@ import { imgMark } from "@mdit/plugin-img-mark";
 import { imgSize } from "@mdit/plugin-img-size";
 import { include } from "@mdit/plugin-include";
 import { katex } from "@mdit/plugin-katex";
-import { createMathjaxInstance, mathjax } from "@mdit/plugin-mathjax";
 import { mark } from "@mdit/plugin-mark";
+import { createMathjaxInstance, mathjax } from "@mdit/plugin-mathjax";
 import { stylize } from "@mdit/plugin-stylize";
 import { sub } from "@mdit/plugin-sub";
 import { sup } from "@mdit/plugin-sup";
 import { tasklist } from "@mdit/plugin-tasklist";
+import { type ViteBundlerOptions } from "@vuepress/bundler-vite";
+import { type PluginFunction } from "@vuepress/core";
+import { type MarkdownEnv } from "@vuepress/markdown";
 import { isArray, isPlainObject } from "@vuepress/shared";
+import { type RollupWarning } from "rollup";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   MATHML_TAGS,
@@ -28,8 +32,6 @@ import {
   getBundlerName,
   getLocales,
 } from "vuepress-shared/node";
-
-import { logger } from "./utils.js";
 
 import { checkLinks, getCheckLinksStatus } from "./checkLink.js";
 import {
@@ -59,18 +61,14 @@ import {
   vueDemo,
   vuePlayground,
 } from "./markdown-it/index.js";
+import { type MarkdownEnhanceOptions } from "./options.js";
 import {
   prepareConfigFile,
   prepareMathjaxStyleFile,
   prepareRevealPluginFile,
 } from "./prepare/index.js";
-
-import type { PluginFunction } from "@vuepress/core";
-import type { MarkdownEnv } from "@vuepress/markdown";
-import type { ViteBundlerOptions } from "@vuepress/bundler-vite";
-import type { RollupWarning } from "rollup";
-import type { MarkdownEnhanceOptions } from "./options.js";
-import type { KatexOptions } from "./typings/index.js";
+import { type KatexOptions } from "./typings/index.js";
+import { logger } from "./utils.js";
 
 export const mdEnhancePlugin =
   (

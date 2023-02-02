@@ -1,10 +1,10 @@
+import { type ViteBundlerOptions } from "@vuepress/bundler-vite";
+import { type App } from "@vuepress/core";
 import { isString } from "@vuepress/shared";
-import { mergeViteConfig } from "./mergeViteConfig.js";
-import { getBundlerName } from "../getBundler.js";
-import { detectPackageManager } from "../../utils/index.js";
 
-import type { App } from "@vuepress/core";
-import type { ViteBundlerOptions } from "@vuepress/bundler-vite";
+import { mergeViteConfig } from "./mergeViteConfig.js";
+import { detectPackageManager } from "../../utils/index.js";
+import { getBundlerName } from "../getBundler.js";
 
 /**
  * Add modules to Vite `optimizeDeps.include` list

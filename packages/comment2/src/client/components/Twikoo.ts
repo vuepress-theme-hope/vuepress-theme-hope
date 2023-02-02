@@ -1,14 +1,13 @@
 import { usePageFrontmatter, usePageLang } from "@vuepress/client";
-import { computed, defineComponent, h, onMounted, ref } from "vue";
+import { type VNode, computed, defineComponent, h, onMounted, ref } from "vue";
+import { LoadingIcon } from "vuepress-shared/client";
 
-import type { VNode } from "vue";
-import type {
-  CommentPluginFrontmatter,
-  TwikooOptions,
+import {
+  type CommentPluginFrontmatter,
+  type TwikooOptions,
 } from "../../shared/index.js";
 
 import "../styles/twikoo.scss";
-import { LoadingIcon } from "packages/shared/lib/client/index.js";
 
 declare const COMMENT_OPTIONS: TwikooOptions;
 
@@ -42,7 +41,7 @@ export default defineComponent({
       const timeID = (id = new Date().getTime());
 
       void Promise.all([
-        import("twikoo"),
+        import(/* webpackChunkName: "twikoo" */ "twikoo"),
         new Promise<void>((resolve) => setTimeout(resolve, twikooOption.delay)),
       ]).then(([{ init }]) => {
         loaded.value = true;

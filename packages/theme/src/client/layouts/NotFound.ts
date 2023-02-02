@@ -1,14 +1,11 @@
-import { defineComponent, h } from "vue";
-import { useLink } from "vue-router";
 import { useRouteLocale } from "@vuepress/client";
+import { type VNode, defineComponent, h } from "vue";
+import { useLink } from "vue-router";
 
 import CommonWrapper from "@theme-hope/components/CommonWrapper";
 import NotFoundHint from "@theme-hope/components/NotFoundHint";
 import SkipLink from "@theme-hope/components/SkipLink";
-
 import { useThemeLocaleData } from "@theme-hope/composables/index";
-
-import type { VNode } from "vue";
 
 import "../styles/not-found.scss";
 

@@ -3,6 +3,7 @@ import { isPlainObject, isString } from "@vuepress/shared";
 import { useEventListener } from "@vueuse/core";
 import { clearAllBodyScrollLocks, disableBodyScroll } from "body-scroll-lock";
 import {
+  type VNode,
   computed,
   defineComponent,
   h,
@@ -26,9 +27,7 @@ import {
   searchProClientCustomFiledConfig,
   searchProLocales,
 } from "../define.js";
-
-import type { VNode } from "vue";
-import type { MatchedItem, Word } from "../utils/index.js";
+import { type MatchedItem, type Word } from "../utils/index.js";
 
 import "../styles/search-result.scss";
 

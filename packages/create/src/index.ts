@@ -1,17 +1,25 @@
 #!/usr/bin/env node
 import { existsSync, readdirSync } from "node:fs";
 import { resolve } from "node:path";
+
 import { cac } from "cac";
 import { execaCommand, execaCommandSync } from "execa";
 import inquirer from "inquirer";
 
-import { generateTemplate, getLanguage, version } from "./config/index.js";
+import {
+  type CreateI18n,
+  type Lang,
+  generateTemplate,
+  getLanguage,
+  version,
+} from "./config/index.js";
 import { createPackageJson } from "./packageJson.js";
 import { getRegistry } from "./registry.js";
-import { ensureDirExistSync, getPackageManager } from "./utils/index.js";
-
-import type { CreateI18n, Lang } from "./config/index.js";
-import type { PackageManager } from "./utils/index.js";
+import {
+  type PackageManager,
+  ensureDirExistSync,
+  getPackageManager,
+} from "./utils/index.js";
 
 const preAction = async (
   targetDir: string,
