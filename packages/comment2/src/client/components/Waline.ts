@@ -114,7 +114,7 @@ export default defineComponent({
                           /* webpackChunkName: "waline" */ "@waline/client/dist/component.mjs"
                         )
                       ).Waline,
-                    loadingComponent: () => h(LoadingIcon),
+                    loadingComponent: LoadingIcon,
                   }),
                   walineProps.value
                 )

@@ -16,7 +16,7 @@ export default defineUserConfig({
 
     repo: "vuepress-theme-hope/vuepress-theme-hope/tree/main/demo/comment2/",
 
-    navbar: ["/", "/test"],
+    navbar: ["/", "/test", "/test2"],
   }),
 
   plugins: [
@@ -24,11 +24,11 @@ export default defineUserConfig({
       /**
        * Using Giscus
        */
-      provider: "Giscus",
-      repo: "vuepress-theme-hope/giscus-discussions",
-      repoId: "R_kgDOG_Pt2A",
-      category: "Announcements",
-      categoryId: "DIC_kwDOG_Pt2M4COD69",
+      // provider: "Giscus",
+      // repo: "vuepress-theme-hope/giscus-discussions",
+      // repoId: "R_kgDOG_Pt2A",
+      // category: "Announcements",
+      // categoryId: "DIC_kwDOG_Pt2M4COD69",
 
       /**
        * Using twikoo
@@ -45,9 +45,9 @@ export default defineUserConfig({
       /**
        * Using artalk
        */
-      // provider: "Artalk",
-      // site: "artalk-demo",
-      // server: "https://demo-artalk.jjdxb.top/",
+      provider: "Artalk",
+      site: "artalk-demo",
+      server: "https://demo-artalk.jjdxb.top/",
     }),
   ],
 });

@@ -1,8 +1,21 @@
-import { usePageData, useSiteData } from "@vuepress/client";
-import { type VNode, defineComponent, h, onMounted, ref, watch } from "vue";
+import { usePageData, usePageFrontmatter, useSiteData } from "@vuepress/client";
+import type Artalk from "artalk";
+import {
+  type VNode,
+  computed,
+  defineComponent,
+  h,
+  nextTick,
+  onMounted,
+  ref,
+  watch,
+} from "vue";
 import { useRoute } from "vue-router";
 
-import { type ArtalkOptions } from "../../shared/index.js";
+import {
+  type ArtalkOptions,
+  type CommentPluginFrontmatter,
+} from "../../shared/index.js";
 
 import "artalk/dist/Artalk.css";
 import "../styles/artalk.scss";
@@ -10,6 +23,8 @@ import "../styles/artalk.scss";
 declare const COMMENT_OPTIONS: ArtalkOptions;
 
 const artalkOptions = COMMENT_OPTIONS;
+
+const enableArtalk = Boolean(artalkOptions.server);
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names
@@ -25,20 +40,41 @@ export default defineComponent({
   },
 
   setup: (props) => {
+    const frontmatter = usePageFrontmatter<CommentPluginFrontmatter>();
     const page = usePageData();
     const route = useRoute();
     const site = useSiteData();
 
     const artalkContainer = ref<HTMLDivElement>();
 
-    onMounted(() => {
-      void import(/* webpackChunkName: "artalk" */ "artalk").then(
-        ({ default: _Artalk }) => {
-          // FIXME: Typescript type issues
-          const Artalk = _Artalk as unknown as typeof _Artalk.default;
+    let artalk: Artalk.default | null = null;
 
-          let artalk = new Artalk({
+    const enableComment = computed(() => {
+      if (!enableArtalk) return false;
+      const pluginConfig = artalkOptions.comment !== false;
+      const pageConfig = frontmatter.value.comment;
+
+      return (
+        // Enable in page
+        Boolean(pageConfig) ||
+        // not disabled in anywhere
+        (pluginConfig !== false && pageConfig !== false)
+      );
+    });
+
+    const initArtalk = async (): Promise<void> => {
+      if (enableComment.value) {
+        const { default: _Artalk } = await import(
+          /* webpackChunkName: "artalk" */ "artalk"
+        );
+
+        // FIXME: Typescript type issues
+        const Artalk = _Artalk as unknown as typeof _Artalk.default;
+
+        try {
+          artalk = new Artalk({
             site: site.value.title,
+            useBackendConf: false,
             ...artalkOptions,
             el: artalkContainer.value!,
             pageTitle: page.value.title,
@@ -46,31 +82,42 @@ export default defineComponent({
             pageKey: route.path,
           });
 
-          watch(
-            () => props.darkmode,
-            (value) => {
-              artalk.setDarkMode(value);
-            }
-          );
+          if (artalkOptions.useBackendConf)
+            artalk.on("conf-loaded", () => {
+              artalk!.setDarkMode(props.darkmode);
+            });
+        } catch (err) {
+          // FIXME: Not sure what the issue is, relevant issue:
+          // https://github.com/vuepress/vuepress-next/issues/1249
+          // https://github.com/ArtalkJS/Artalk/discussions/367
+        }
+      }
+    };
 
-          watch(
-            () => route.path,
-            (value) => {
-              artalk = new Artalk({
-                site: site.value.title,
-                ...artalkOptions,
-                el: artalkContainer.value!,
-                darkMode: props.darkmode,
-                pageTitle: page.value.title,
-                pageKey: value,
-              });
-            }
-          );
+    onMounted(() => {
+      watch(
+        () => [enableComment.value, route.path],
+        () => {
+          void nextTick().then(() => initArtalk());
+        },
+        { immediate: true }
+      );
+
+      watch(
+        () => props.darkmode,
+        (value) => {
+          artalk?.setDarkMode(value);
         }
       );
     });
 
-    return (): VNode =>
-      h("div", { class: "artalk-wrapper" }, h("div", { ref: artalkContainer }));
+    return (): VNode | null =>
+      enableComment.value
+        ? h(
+            "div",
+            { class: "artalk-wrapper" },
+            h("div", { ref: artalkContainer })
+          )
+        : null;
   },
 });
