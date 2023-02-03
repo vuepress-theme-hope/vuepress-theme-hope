@@ -1,6 +1,7 @@
 import { type Page, type PageFrontmatter } from "@vuepress/core";
 import { type GitData } from "@vuepress/plugin-git";
-import { type BasePageFrontMatter } from "vuepress-shared/node";
+
+import { SEOPluginFrontmatter } from "./frontmatter.js";
 
 export interface SeoPluginPageData {
   autoDesc?: boolean;
@@ -12,9 +13,7 @@ export type ExtendPage<
     excerpt?: string;
     git?: GitData;
   } = { autoDesc?: true; excerpt?: string; git?: GitData },
-  ExtraPageFrontmatter extends PageFrontmatter<
-    BasePageFrontMatter & { banner: string; cover: string }
-  > = PageFrontmatter<BasePageFrontMatter & { banner: string; cover: string }>,
+  ExtraPageFrontmatter extends PageFrontmatter<SEOPluginFrontmatter> = PageFrontmatter<SEOPluginFrontmatter>,
   ExtraPageFields extends Record<string | number | symbol, unknown> = Record<
     never,
     never

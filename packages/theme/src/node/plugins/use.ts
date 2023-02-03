@@ -5,11 +5,12 @@ import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
 import { useGitPlugin } from "./git.js";
 import { useExtendsPagePlugin } from "./pageConverter.js";
-import { type PluginsOptions } from "../../shared/index.js";
+import { type PluginsOptions, type ThemeData } from "../../shared/index.js";
 import { TEMPLATE_FOLDER } from "../utils.js";
 
 export const usePlugin = (
   app: App,
+  themeData: ThemeData,
   plugins: PluginsOptions,
   legacy: boolean,
   hotReload: boolean
@@ -52,5 +53,5 @@ export const usePlugin = (
     style: ".vuepress/styles/index.scss",
   });
 
-  useExtendsPagePlugin(app, legacy);
+  useExtendsPagePlugin(app, themeData, legacy);
 };

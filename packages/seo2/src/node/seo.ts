@@ -21,26 +21,29 @@ export const appendSEO = (app: App, options: SeoOptions): void => {
   app.pages.forEach((page) => {
     const head = page.frontmatter.head || [];
 
-    const defaultOGP = getOGP(page, options, app);
-    const defaultJSONLD = getJSONLD(page, options, app);
-
-    const ogpContent = options.ogp
-      ? options.ogp(defaultOGP, page, app)
-      : defaultOGP;
-
-    const jsonLDContent = options.jsonLd
-      ? options.jsonLd(defaultJSONLD, page, app)
-      : defaultJSONLD;
-
     const canonicalLink = getCanonicalLink(page, options);
     const alternateLinks = getAlternateLinks(page, options, app);
 
-    addOGP(head, ogpContent);
-    appendJSONLD(head, jsonLDContent);
     appendCanonical(head, canonicalLink);
     appendAlternate(head, alternateLinks);
 
-    if (options.customHead) options.customHead(head, page, app);
+    if (page.frontmatter["seo"] !== false) {
+      const defaultOGP = getOGP(page, options, app);
+      const defaultJSONLD = getJSONLD(page, options, app);
+
+      const ogpContent = options.ogp
+        ? options.ogp(defaultOGP, page, app)
+        : defaultOGP;
+
+      const jsonLDContent = options.jsonLd
+        ? options.jsonLd(defaultJSONLD, page, app)
+        : defaultJSONLD;
+
+      addOGP(head, ogpContent);
+      appendJSONLD(head, jsonLDContent);
+
+      if (options.customHead) options.customHead(head, page, app);
+    }
 
     page.frontmatter.head = head;
   });

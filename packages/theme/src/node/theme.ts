@@ -46,10 +46,10 @@ export const hopeTheme =
     checkPlugins(app, plugins);
 
     const status = getStatus(app, options);
-    const themeConfig = getThemeData(app, themeOptions, status);
-    const icons = status.enableBlog ? checkSocialMediaIcons(themeConfig) : {};
+    const themeData = getThemeData(app, themeOptions, status);
+    const icons = status.enableBlog ? checkSocialMediaIcons(themeData) : {};
 
-    usePlugin(app, plugins, legacy, hotReload);
+    usePlugin(app, themeData, plugins, legacy, hotReload);
 
     if (isDebug) console.log("Theme plugin options:", plugins);
 
@@ -68,7 +68,7 @@ export const hopeTheme =
 
       extendsBundlerOptions,
 
-      onInitialized: (): void => {
+      onInitialized: (app): void => {
         if (favicon) {
           const { base, head } = app.options;
           const faviconLink = favicon.replace(/^\/?/, base);
@@ -88,10 +88,10 @@ export const hopeTheme =
         }
       },
 
-      onPrepared: (): Promise<void> =>
+      onPrepared: (app): Promise<void> =>
         Promise.all([
-          prepareSidebarData(app, themeConfig, sidebarSorter),
-          prepareThemeColorScss(app, themeConfig),
+          prepareSidebarData(app, themeData, sidebarSorter),
+          prepareThemeColorScss(app, themeData),
           prepareSocialMediaIcons(app, icons),
         ]).then(() => void 0),
 
@@ -104,13 +104,13 @@ export const hopeTheme =
           });
 
           structureSidebarWatcher.on("add", () => {
-            void prepareSidebarData(app, themeConfig, sidebarSorter);
+            void prepareSidebarData(app, themeData, sidebarSorter);
           });
           structureSidebarWatcher.on("change", () => {
-            void prepareSidebarData(app, themeConfig, sidebarSorter);
+            void prepareSidebarData(app, themeData, sidebarSorter);
           });
           structureSidebarWatcher.on("unlink", () => {
-            void prepareSidebarData(app, themeConfig, sidebarSorter);
+            void prepareSidebarData(app, themeData, sidebarSorter);
           });
 
           watchers.push(structureSidebarWatcher);
@@ -120,7 +120,7 @@ export const hopeTheme =
       plugins: getPluginConfig(
         app,
         plugins,
-        themeConfig,
+        themeData,
 
         // @ts-ignore
         {
