@@ -72,6 +72,7 @@ export const setupCopyCode = (): void => {
           copyElement,
           codeBlockElement
         );
+
       codeBlockElement.setAttribute("copy-code-registered", "");
     }
   };

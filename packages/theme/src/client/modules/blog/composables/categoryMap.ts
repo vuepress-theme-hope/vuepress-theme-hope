@@ -17,9 +17,8 @@ export const categoryMapSymbol: InjectionKey<CategoryMapRef> =
 export const useCategoryMap = (): CategoryMapRef => {
   const categoryMap = inject(categoryMapSymbol);
 
-  if (!categoryMap) {
+  if (!categoryMap)
     throw new Error("useCategoryMap() is called without provider.");
-  }
 
   return categoryMap;
 };

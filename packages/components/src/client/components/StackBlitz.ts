@@ -194,11 +194,10 @@ export default defineComponent({
     }));
 
     onMounted(() => {
-      if (props.embed) {
+      if (props.embed)
         void stackblitzSDK[
           props.type === "github" ? "embedGithubProject" : "embedProjectId"
         ](el.value!, props.id, options.value);
-      }
     });
 
     return (): VNode =>

@@ -102,10 +102,11 @@ export const CodeGroup = defineComponent({
         if (activeIndex.value === -1) activeIndex.value = 0;
       }
       // set the active item
-      else
+      else {
         items.forEach((vnode, index) => {
           vnode.props["active"] = index === activeIndex.value;
         });
+      }
 
       return h("div", { class: "code-group" }, [
         h(

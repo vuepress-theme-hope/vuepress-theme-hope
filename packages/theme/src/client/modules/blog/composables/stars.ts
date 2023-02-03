@@ -13,9 +13,7 @@ export const starsSymbol: InjectionKey<StarsRef> = Symbol.for("stars");
 export const useStars = (): StarsRef => {
   const stars = inject(starsSymbol);
 
-  if (!stars) {
-    throw new Error("useStars() is called without provider.");
-  }
+  if (!stars) throw new Error("useStars() is called without provider.");
 
   return stars;
 };

@@ -66,9 +66,10 @@ export const h = (
         const k = key.replace("data", "");
 
         node.dataset[k] = attrs[key];
-
+      } else {
         // @ts-ignore
-      } else node[key] = attrs[key];
+        node[key] = attrs[key];
+      }
     });
 
   if (children)

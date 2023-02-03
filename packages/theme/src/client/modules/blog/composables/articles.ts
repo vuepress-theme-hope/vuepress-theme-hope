@@ -13,9 +13,7 @@ export const articlesSymbol: InjectionKey<ArticlesRef> = Symbol.for("articles");
 export const useArticles = (): ArticlesRef => {
   const articles = inject(articlesSymbol);
 
-  if (!articles) {
-    throw new Error("useArticles() is called without provider.");
-  }
+  if (!articles) throw new Error("useArticles() is called without provider.");
 
   return articles;
 };

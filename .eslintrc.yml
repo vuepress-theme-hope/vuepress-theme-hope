@@ -111,6 +111,12 @@ rules:
   "@typescript-eslint/no-unsafe-member-access":
     - warn
 
+  curly:
+    - error
+    - multi
+    # - multi-or-nest
+    - consistent
+
   import/consistent-type-specifier-style:
     - error
     - prefer-inline

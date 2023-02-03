@@ -7,7 +7,7 @@ export const useNavigate = (): ((url: string) => void) => {
   const route = useRoute();
 
   return (url) => {
-    if (url) {
+    if (url)
       if (isAbsoluteUrl(url)) {
         // Inner absolute path
         if (route.path !== url) void router.push(url);
@@ -20,6 +20,5 @@ export const useNavigate = (): ((url: string) => void) => {
 
         void router.push(`${base}/${encodeURI(url)}`);
       }
-    }
   };
 };

@@ -69,7 +69,7 @@ export const getResults = (
 
     const titleContent = getMatchedContent(pageIndex.title, queryString);
 
-    if (titleContent) {
+    if (titleContent)
       suggestions[title] = [
         ...(suggestions[title] || []),
         {
@@ -78,7 +78,6 @@ export const getResults = (
           display: titleContent,
         },
       ];
-    }
 
     if (pageIndex.customFields)
       entries(pageIndex.customFields).forEach(([index, customFields]) => {
@@ -104,7 +103,7 @@ export const getResults = (
     for (const headerIndex of pageIndex.contents) {
       const headerContent = getMatchedContent(headerIndex.header, queryString);
 
-      if (headerContent) {
+      if (headerContent)
         suggestions[title] = [
           ...(suggestions[title] || []),
           {
@@ -113,12 +112,11 @@ export const getResults = (
             display: headerContent,
           },
         ];
-      }
 
       for (const content of headerIndex.contents) {
         const matchedContent = getMatchedContent(content, queryString);
 
-        if (matchedContent) {
+        if (matchedContent)
           suggestions[title] = [
             ...(suggestions[title] || []),
             {
@@ -128,7 +126,6 @@ export const getResults = (
               display: matchedContent,
             },
           ];
-        }
       }
     }
   }

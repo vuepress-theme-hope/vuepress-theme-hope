@@ -51,13 +51,13 @@ export const echarts: PluginSimple = (md) => {
         if (type === "container_echarts_close") break;
 
         if (!content) continue;
-        if (type === "fence") {
-          if (info === "json") config = content;
-          else if (info === "js" || info === "javascript") {
+        if (type === "fence")
+          if (info === "json") {
+            config = content;
+          } else if (info === "js" || info === "javascript") {
             config = content;
             isJavaScript = true;
           }
-        }
 
         // set to an unexist token type
         tokens[i].type = "echarts_empty";

@@ -121,11 +121,10 @@ export const blogPlugin =
               );
 
               if (pagesToBeAdded.length) {
-                if (app.env.isDebug) {
+                if (app.env.isDebug)
                   logger.info(
                     `New pages detected: ${pagesToBeAdded.toString()}`
                   );
-                }
 
                 // prepare page files
                 await Promise.all(
@@ -144,11 +143,10 @@ export const blogPlugin =
 
               // remove pages
               if (pagesToBeRemoved.length) {
-                if (app.env.isDebug) {
+                if (app.env.isDebug)
                   logger.info(
                     `Removing following pages: ${pagesToBeRemoved.toString()}`
                   );
-                }
 
                 pagesToBeRemoved.forEach((pageKey) => {
                   app.pages.splice(

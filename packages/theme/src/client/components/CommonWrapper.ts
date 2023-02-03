@@ -117,10 +117,9 @@ export default defineComponent({
         // horizontal swipe
         Math.abs(dx) > Math.abs(dy) * 1.5 &&
         Math.abs(dx) > 40
-      ) {
+      )
         if (dx > 0 && touchStart.x <= 80) toggleMobileSidebar(true);
         else toggleMobileSidebar(false);
-      }
     };
 
     const enableToc = computed(() =>
@@ -152,7 +151,9 @@ export default defineComponent({
             if (!isMobileSidebarOpen.value) hideNavbar.value = true;
           }
           // scroll up
-          else hideNavbar.value = false;
+          else {
+            hideNavbar.value = false;
+          }
 
           lastDistance = distance;
         },

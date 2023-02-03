@@ -81,6 +81,7 @@ export const mdEnhancePlugin =
       convertOptions(
         options as MarkdownEnhanceOptions & Record<string, unknown>
       );
+
     if (app.env.isDebug) logger.info("Options:", options);
 
     const getStatus = (
@@ -194,9 +195,9 @@ export const mdEnhancePlugin =
           "vuepress-shared",
         ]);
 
-        if (katexEnable && katexOptions.output !== "html")
+        if (katexEnable && katexOptions.output !== "html") {
           addCustomElement(bundlerOptions, app, MATHML_TAGS);
-        else if (mathjaxEnable) {
+        } else if (mathjaxEnable) {
           addCustomElement(bundlerOptions, app, /^mjx-/);
           if (mathjaxInstance?.documentOptions.enableAssistiveMml)
             addCustomElement(bundlerOptions, app, MATHML_TAGS);
@@ -263,6 +264,7 @@ export const mdEnhancePlugin =
             imgMark,
             isPlainObject(options.imgMark) ? options.imgMark : {}
           );
+
         if (getStatus("imgSize")) md.use(imgSize);
         if (getStatus("sup")) md.use(sup);
         if (getStatus("sub")) md.use(sub);
@@ -288,6 +290,7 @@ export const mdEnhancePlugin =
             currentPath: (env: MarkdownEnv) => env.filePath,
             ...(isPlainObject(options.include) ? options.include : {}),
           });
+
         if (getStatus("stylize"))
           md.use(stylize, {
             config: options.stylize,

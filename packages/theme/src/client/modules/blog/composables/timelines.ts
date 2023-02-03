@@ -30,9 +30,7 @@ export const timelinesSymbol: InjectionKey<TimelinesRef> =
 export const useTimelines = (): TimelinesRef => {
   const timelines = inject(timelinesSymbol);
 
-  if (!timelines) {
-    throw new Error("useTimelines() is called without provider.");
-  }
+  if (!timelines) throw new Error("useTimelines() is called without provider.");
 
   return timelines;
 };

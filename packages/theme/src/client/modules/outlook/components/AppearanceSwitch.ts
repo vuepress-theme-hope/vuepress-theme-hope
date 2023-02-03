@@ -19,13 +19,13 @@ export default defineComponent({
     const { config, status } = useDarkmode();
 
     const toggleDarkMode = (): void => {
-      if (config.value === "switch") {
+      if (config.value === "switch")
         status.value = (<Record<DarkmodeStatus, DarkmodeStatus>>{
           light: "dark",
           dark: "auto",
           auto: "light",
         })[status.value];
-      } else status.value = status.value === "light" ? "dark" : "light";
+      else status.value = status.value === "light" ? "dark" : "light";
     };
 
     return (): VNode =>

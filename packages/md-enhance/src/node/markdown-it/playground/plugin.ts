@@ -278,8 +278,9 @@ export const playground: PluginWithOptions<PlaygroundOptions> = (
           // File rule must contain a valid file name
           if (!info) continue;
           currentKey = info;
-        } else if (type === "import_open")
+        } else if (type === "import_open") {
           playgroundData.importMap = currentKey = info || "import-map.json";
+        }
 
         if (type === "setting_open") foundSettings = true;
         if (type === "setting_close") foundSettings = false;
@@ -303,11 +304,12 @@ export const playground: PluginWithOptions<PlaygroundOptions> = (
             );
         }
         // add code block content
-        else if (type === "fence" && currentKey)
+        else if (type === "fence" && currentKey) {
           playgroundData.files[currentKey] = {
             ext: info,
             content: content,
           };
+        }
 
         tokens[i].type = `${name}_empty`;
         tokens[i].hidden = true;

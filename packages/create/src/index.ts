@@ -107,7 +107,9 @@ const postAction = async ({
       cwd,
       stdout: "inherit",
     });
-  } else console.log(message.hint.devServer(packageManager));
+  } else {
+    console.log(message.hint.devServer(packageManager));
+  }
 };
 
 const cli = cac("vuepress-theme-hope");

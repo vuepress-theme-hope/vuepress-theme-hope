@@ -50,6 +50,7 @@ export const injectPageInfo = (page: Page<ThemePageData>): void => {
       page.routeMeta[ArticleInfoType.order] = (
         frontmatter as ThemeNormalPageFrontmatter
       ).dir!.order;
+
     if (
       "index" in frontmatter.dir &&
       (frontmatter as ThemeNormalPageFrontmatter).dir!.index === false

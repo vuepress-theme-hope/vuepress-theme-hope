@@ -14,12 +14,11 @@ export const tagHint = (tag: string, isDebug = false): void => {
     !SVG_TAGS.includes(tag) &&
     tag === tag.toLowerCase() &&
     !tag.includes("-")
-  ) {
+  )
     console.warn(
       colors.yellow("warning: "),
       `${tag} is used and it’s not a standard tag or standard custom element name`
     );
-  }
 };
 
 /**

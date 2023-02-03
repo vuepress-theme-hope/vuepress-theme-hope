@@ -62,7 +62,7 @@ export const getImages = (
 ): string[] => {
   const result = /!\[.*?\]\((.*?)\)/giu.exec(content);
 
-  if (result) {
+  if (result)
     return result
       .map(([, link]) => {
         if (isAbsoluteUrl(link)) return resolveUrl(hostname, base, link);
@@ -72,7 +72,6 @@ export const getImages = (
         return null;
       })
       .filter((item): item is string => item !== null);
-  }
 
   return [];
 };

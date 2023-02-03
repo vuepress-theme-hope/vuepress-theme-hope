@@ -29,7 +29,9 @@ const imageFilter =
             `Skipped ${entry.url}, as it's ${Math.ceil(stats.size / 1024)} KB.`
           );
         else manifest.push(entry);
-      } else manifest.push(entry);
+      } else {
+        manifest.push(entry);
+      }
 
     return { warnings, manifest };
   };

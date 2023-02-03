@@ -23,7 +23,7 @@ export const chart: PluginSimple = (md) => {
         if (type === "container_chart_close") break;
 
         if (!content) continue;
-        if (type === "fence") {
+        if (type === "fence")
           if (info === "json") {
             config = utoa(content);
             configType = "json";
@@ -31,7 +31,6 @@ export const chart: PluginSimple = (md) => {
             config = utoa(content);
             configType = "js";
           }
-        }
 
         // set to an unexist token type
         tokens[i].type = "chart_empty";

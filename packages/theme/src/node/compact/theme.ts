@@ -131,7 +131,9 @@ const handleFooterOptions = (options: Record<string, unknown>): void => {
 
       // @ts-ignore
       options["footer"] = footer["content"];
-    } else delete options["footer"];
+    } else {
+      delete options["footer"];
+    }
   }
 };
 
@@ -222,7 +224,7 @@ export const convertThemeOptions = (
   if (
     isPlainObject(themeOptions["copyright"]) ||
     typeof themeOptions["copyright"] === "boolean"
-  ) {
+  )
     logger.warn(
       `${colors.magenta(
         "copyright"
@@ -230,7 +232,6 @@ export const convertThemeOptions = (
         "plugins.copyright"
       )} instead.`
     );
-  }
 
   // handle addThis
   if (themeOptions["addThis"])
@@ -275,7 +276,7 @@ export const convertThemeOptions = (
   handleFooterOptions(themeOptions);
 
   // handle each locale
-  if ("locales" in themeOptions && isPlainObject(themeOptions["locales"])) {
+  if ("locales" in themeOptions && isPlainObject(themeOptions["locales"]))
     values(themeOptions["locales"]!).forEach(
       (localeConfig: Record<string, unknown>) => {
         DEPRECATED_THEME_OPTIONS.forEach(([deprecatedOption, newOption]) =>
@@ -343,7 +344,6 @@ export const convertThemeOptions = (
         }
       }
     );
-  }
 
   return themeOptions;
 };

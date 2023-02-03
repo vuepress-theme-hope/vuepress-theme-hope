@@ -93,19 +93,17 @@ export const prepareType = (
 
             typeMap[localePath] = { path: page.path, keys };
 
-            if (app.env.isDebug) {
+            if (app.env.isDebug)
               logger.info(
                 `Route ${localePath} in ${key} type: path: ${page.path}; items: ${keys.length}\n`
               );
-            }
           } else {
             typeMap[localePath] = { path: "", keys };
 
-            if (app.env.isDebug) {
+            if (app.env.isDebug)
               logger.info(
                 `Route ${localePath} in ${key} type: items: ${keys.length}\n`
               );
-            }
           }
         }
 

@@ -43,7 +43,7 @@ export const injectLocalizedDate = (
   page: Page<{ localizedDate?: string | null } & Partial<GitPluginPageData>>,
   timezone?: string
 ): void => {
-  if (!page.data.localizedDate) {
+  if (!page.data.localizedDate)
     if (page.frontmatter.date) {
       const date = getDate(page.frontmatter.date, timezone)?.value;
 
@@ -52,7 +52,7 @@ export const injectLocalizedDate = (
           lang: page.lang,
           type: "date",
         });
-    } else if (page.data.git?.createdTime)
+    } else if (page.data.git?.createdTime) {
       page.data.localizedDate = timeTransformer(
         new Date(page.data.git?.createdTime),
         {
@@ -60,5 +60,5 @@ export const injectLocalizedDate = (
           type: "date",
         }
       );
-  }
+    }
 };

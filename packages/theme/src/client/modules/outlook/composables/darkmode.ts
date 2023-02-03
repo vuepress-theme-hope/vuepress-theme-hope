@@ -35,9 +35,7 @@ export const darkModeSymbol: InjectionKey<DarkMode> = Symbol.for("darkMode");
 export const useDarkmode = (): DarkMode => {
   const darkmode = inject(darkModeSymbol);
 
-  if (!darkmode) {
-    throw new Error("useDarkmode() is called without provider.");
-  }
+  if (!darkmode) throw new Error("useDarkmode() is called without provider.");
 
   return darkmode;
 };

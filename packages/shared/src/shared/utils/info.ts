@@ -7,9 +7,8 @@ export const getAuthor = (
   canDisable = false
 ): AuthorInfo[] => {
   if (author) {
-    if (isArray(author)) {
+    if (isArray(author))
       return author.map((item) => (isString(item) ? { name: item } : item));
-    }
 
     if (isString(author)) return [{ name: author }];
 

@@ -138,10 +138,10 @@ export default defineComponent({
     };
 
     const openLink = (link?: string): void => {
-      if (link) {
+      if (link)
         if (isAbsoluteUrl(link)) void router.push(link);
         else if (isLinkHttp(link)) window.open(link);
-      }
+
       close();
     };
 

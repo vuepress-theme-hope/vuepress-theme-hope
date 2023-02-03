@@ -33,10 +33,9 @@ const getPlugin =
 
           if (type === `container_${name}_close`) break;
           if (!content) continue;
-          if (type === "fence") {
+          if (type === "fence")
             if (info === "json") config = utoa(content);
             else code[info] = content;
-          }
         }
 
         return `

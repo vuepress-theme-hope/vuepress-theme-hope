@@ -54,8 +54,9 @@ export const getStructure = (pages: Page[], scope: string): StructureInfo[] => {
 
     levels.forEach((level, index) => {
       // already gets filename
-      if (index === levels.length - 1)
+      if (index === levels.length - 1) {
         currentDir.push({ type: "file", filename, path: relativePath });
+      }
       // still generating dir
       else {
         const result = currentDir.find<DirInfo>(
@@ -63,7 +64,9 @@ export const getStructure = (pages: Page[], scope: string): StructureInfo[] => {
             item.type === "dir" && item.dirname === level
         );
 
-        if (result) currentDir = result.children;
+        if (result) {
+          currentDir = result.children;
+        }
         // we shall create this dir
         else {
           const dirInfo: DirInfo = {

@@ -133,7 +133,7 @@ const generatePageMap = (
       };
 
       // log sitemap info in debug mode
-      if (app.env.isDebug) {
+      if (app.env.isDebug)
         logger.info(
           `sitemap option for ${page.path}: ${JSON.stringify(
             sitemapInfo,
@@ -141,7 +141,6 @@ const generatePageMap = (
             2
           )}`
         );
-      }
 
       pagesMap.set(page.path, sitemapInfo);
     }

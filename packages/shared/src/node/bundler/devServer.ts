@@ -54,7 +54,7 @@ export const useCustomDevServer = (
   const bundlerName = getBundlerName(app);
 
   // in dev
-  if (app.env.isDev) {
+  if (app.env.isDev)
     if (bundlerName === "vite") {
       // for vite
       const viteBundlerOptions = <ViteBundlerOptions>bundlerOptions;
@@ -110,5 +110,4 @@ export const useCustomDevServer = (
           : middlewares;
       };
     }
-  }
 };

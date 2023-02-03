@@ -126,7 +126,9 @@ export default defineComponent({
         injectScript(props.id, shadowRoot, code.value);
 
         height.value = "0";
-      } else height.value = "auto";
+      } else {
+        height.value = "auto";
+      }
 
       loaded.value = true;
     };

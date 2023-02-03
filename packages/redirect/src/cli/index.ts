@@ -57,9 +57,8 @@ cli
     ) => {
       if (!sourceDir) return cli.outputHelp();
 
-      if (process.env["NODE_ENV"] === undefined) {
+      if (process.env["NODE_ENV"] === undefined)
         process.env["NODE_ENV"] = "production";
-      }
 
       // resolve app config from cli options
       const cliAppConfig = resolveCliAppConfig(sourceDir, {});

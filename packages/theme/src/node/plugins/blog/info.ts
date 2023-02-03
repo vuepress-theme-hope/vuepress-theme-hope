@@ -35,7 +35,9 @@ export const injectBasicInfo = (
         type: "date",
       });
     }
-  } else if (createdTime) info[ArticleInfoType.date] = new Date(createdTime);
+  } else if (createdTime) {
+    info[ArticleInfoType.date] = new Date(createdTime);
+  }
 
   // resolve category
   if ("category" in frontmatter)

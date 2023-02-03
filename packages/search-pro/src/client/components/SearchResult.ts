@@ -134,9 +134,11 @@ export default defineComponent({
       useEventListener("keydown", (event: KeyboardEvent) => {
         if (!hasResults.value) return;
 
-        if (event.key === "ArrowUp") activePreviousResultContent();
-        else if (event.key === "ArrowDown") activeNextResultContent();
-        else if (event.key === "Enter") {
+        if (event.key === "ArrowUp") {
+          activePreviousResultContent();
+        } else if (event.key === "ArrowDown") {
+          activeNextResultContent();
+        } else if (event.key === "Enter") {
           const item =
             activatedResult.value.contents[activatedResultContentIndex.value];
 

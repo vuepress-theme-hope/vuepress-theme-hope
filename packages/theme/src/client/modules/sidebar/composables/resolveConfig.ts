@@ -142,7 +142,7 @@ export const resolveMultiSidebarItems = (
   const sidebarRoutes = keys(sidebarConfig).sort((x, y) => y.length - x.length);
 
   // find matching config
-  for (const base of sidebarRoutes) {
+  for (const base of sidebarRoutes)
     if (startsWith(decodeURI(route.path), base)) {
       const matchedConfig = sidebarConfig[base];
 
@@ -158,7 +158,6 @@ export const resolveMultiSidebarItems = (
           )
         : [];
     }
-  }
 
   console.warn(`${route.path} is missing sidebar config.`);
 

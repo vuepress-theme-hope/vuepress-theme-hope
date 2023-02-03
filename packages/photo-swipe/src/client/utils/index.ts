@@ -28,8 +28,9 @@ export const getImages = (
     images.map(
       (image) =>
         new Promise<DataSourceItem>((resolve, reject) => {
-          if (image.complete) resolve(getImageInfo(image));
-          else {
+          if (image.complete) {
+            resolve(getImageInfo(image));
+          } else {
             image.onload = (): void => resolve(getImageInfo(image));
             image.onerror = (err): void => reject(err);
           }

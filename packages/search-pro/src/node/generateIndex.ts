@@ -75,7 +75,9 @@ export const generatePageIndex = (
             result.contents.push(currentHeaderContent);
 
           isContentBeforeFirstHeader = false;
-        } else result.contents.push(currentHeaderContent);
+        } else {
+          result.contents.push(currentHeaderContent);
+        }
 
         // update header
         currentHeaderContent = {
@@ -95,11 +97,12 @@ export const generatePageIndex = (
           currentContent = "";
         }
         node.childNodes.forEach(render);
-      } else if (CONTENT_INLINE_TAGS.includes(node.name))
+      } else if (CONTENT_INLINE_TAGS.includes(node.name)) {
         node.childNodes.forEach(render);
-    } else if (node.type === "text")
+      }
+    } else if (node.type === "text") {
       currentContent += node.data.trim() ? node.data : "";
-    else if (
+    } else if (
       // we are expecting to stop at excerpt marker
       hasExcerpt &&
       !indexContent &&

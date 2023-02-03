@@ -101,7 +101,7 @@ export default defineComponent({
     });
 
     useEventListener("keydown", (event): void => {
-      if (event.altKey) {
+      if (event.altKey)
         if (event.key === "ArrowRight") {
           if (nextNavLink.value) {
             navigate(nextNavLink.value.link);
@@ -113,7 +113,6 @@ export default defineComponent({
             event.preventDefault();
           }
         }
-      }
     });
 
     return (): VNode | null =>

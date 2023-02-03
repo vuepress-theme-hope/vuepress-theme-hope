@@ -70,10 +70,9 @@ export const useBlogType = <
 };
 
 // @ts-ignore
-if (__VUEPRESS_DEV__ && (import.meta.webpackHot || import.meta.hot)) {
+if (__VUEPRESS_DEV__ && (import.meta.webpackHot || import.meta.hot))
   __VUE_HMR_RUNTIME__["updateBlogType"] = (
     map: Record<string, TypeMap>
   ): void => {
     blogTypeMap.value = map;
   };
-}

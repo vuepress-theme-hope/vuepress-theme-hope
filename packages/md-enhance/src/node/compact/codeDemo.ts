@@ -20,10 +20,9 @@ export const legacyCodeDemo: PluginSimple = (md) => {
 
         if (type === `container_demo_close`) break;
         if (!content) continue;
-        if (type === "fence") {
+        if (type === "fence")
           if (info === "json") config = utoa(content);
           else code[info] = content;
-        }
       }
 
       return `

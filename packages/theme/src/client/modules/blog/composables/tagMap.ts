@@ -16,9 +16,7 @@ export const tagMapSymbol: InjectionKey<TagMapRef> = Symbol.for("tagMap");
 export const useTagMap = (): TagMapRef => {
   const tagMap = inject(tagMapSymbol);
 
-  if (!tagMap) {
-    throw new Error("useTagMap() is called without provider.");
-  }
+  if (!tagMap) throw new Error("useTagMap() is called without provider.");
 
   return tagMap;
 };

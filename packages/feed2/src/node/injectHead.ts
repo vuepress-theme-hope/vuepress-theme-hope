@@ -58,7 +58,7 @@ export const injectLinksToHead = (
       );
   }
   // there are multiple languages, so we should append to page
-  else
+  else {
     app.pages.forEach((page) => {
       const { pathLocale } = page;
       const localeOptions = options[pathLocale]!;
@@ -110,4 +110,5 @@ export const injectLinksToHead = (
           );
       }
     });
+  }
 };

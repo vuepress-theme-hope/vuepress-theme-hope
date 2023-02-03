@@ -50,9 +50,8 @@ export const md2text = (content: string): string => {
       /(?:^|\n).*?(:{3,})\s*(?:.+?)(?:\s+(.*))?\n([\s\S]*?)\1\n/gm,
       "$2\n$3"
     )) !== text
-  ) {
+  )
     text = removedContainerText;
-  }
 
   // remove contents
   text = removals.reduce(

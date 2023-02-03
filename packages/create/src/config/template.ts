@@ -98,8 +98,9 @@ export const generateTemplate = async (
   // git related
   const isGitRepo = checkGitRepo(cwd);
 
-  if (isGitRepo) updateGitIgnore(targetDir, cwd);
-  else if (checkGitInstalled()) {
+  if (isGitRepo) {
+    updateGitIgnore(targetDir, cwd);
+  } else if (checkGitInstalled()) {
     const { git } = await inquirer.prompt<{
       git: boolean;
     }>([

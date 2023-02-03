@@ -119,9 +119,8 @@ export default {
   );
 
   // check themeConfig
-  if ("themeConfig" in config && isPlainObject(config["themeConfig"])) {
+  if ("themeConfig" in config && isPlainObject(config["themeConfig"]))
     config.theme = hopeThemeLegacy(config["themeConfig"] as ThemeOptions);
-  }
 
   // check theme
   if (!isFunction(config.theme)) config.theme = hopeThemeLegacy({});

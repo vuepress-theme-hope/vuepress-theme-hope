@@ -102,7 +102,7 @@ export const convertFrontmatter = (
     }
 
     // check project homepage
-    if (!("layout" in frontmatter)) {
+    if (!("layout" in frontmatter))
       DEPRECATED_HOME_FRONTMATTER_OPTIONS.forEach(
         ([deprecatedOption, newOption]) =>
           deprecatedLogger({
@@ -112,7 +112,6 @@ export const convertFrontmatter = (
             scope: `${filePathRelative || ""} frontmatter`,
           })
       );
-    }
   }
 
   return frontmatter;
