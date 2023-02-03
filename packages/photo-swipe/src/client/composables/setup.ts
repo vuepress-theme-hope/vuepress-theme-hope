@@ -13,8 +13,8 @@ export const setupPhotoSwipe = (): void => {
   const locale = useLocaleConfig(locales);
   const route = useRoute();
 
-  const initPhotoSwipe = (): void => {
-    void Promise.all([
+  const initPhotoSwipe = (): Promise<void> =>
+    Promise.all([
       import(/* webpackChunkName: "photo-swipe" */ "photoswipe"),
       new Promise<void>((resolve) => setTimeout(resolve, delay)).then(() =>
         getImages(imageSelector)
@@ -81,10 +81,9 @@ export const setupPhotoSwipe = (): void => {
         });
       });
     });
-  };
 
   onMounted(() => {
-    initPhotoSwipe();
+    void initPhotoSwipe();
 
     watch(
       () => route.path,

@@ -8,7 +8,6 @@ import {
   camelize,
   defineComponent,
   h,
-  nextTick,
   onBeforeUnmount,
   onMounted,
 } from "vue";
@@ -279,15 +278,13 @@ export default defineComponent({
     };
 
     // FIXME: Related issue https://github.com/zhw2590582/ArtPlayer/issues/450
-    onMounted(() => {
-      void import(/* webpackChunkName: "artplayer" */ "artplayer").then(
-        async ({ default: Artplayer }) =>
-          nextTick().then(async () => {
-            const player = new Artplayer(getInitOptions());
-
-            artPlayerInstance = (await props.customPlayer(player)) || player;
-          })
+    onMounted(async () => {
+      const { default: Artplayer } = await import(
+        /* webpackChunkName: "artplayer" */ "artplayer"
       );
+      const player = new Artplayer(getInitOptions());
+
+      artPlayerInstance = (await props.customPlayer(player)) || player;
     });
 
     onBeforeUnmount(() => {

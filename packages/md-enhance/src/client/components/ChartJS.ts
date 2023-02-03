@@ -79,21 +79,21 @@ export default defineComponent({
 
     const loading = ref(true);
 
-    onMounted(() => {
-      void Promise.all([
+    onMounted(async () => {
+      const [{ default: Chart }] = await Promise.all([
         import(/* webpackChunkName: "chart" */ "chart.js/auto"),
         // delay
         new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
-      ]).then(([{ default: Chart }]) => {
-        Chart.defaults.maintainAspectRatio = false;
+      ]);
 
-        const data = parseChartConfig(atou(props.config), props.type);
-        const ctx = chartCanvasElement.value!.getContext("2d")!;
+      Chart.defaults.maintainAspectRatio = false;
 
-        new Chart(ctx, data);
+      const data = parseChartConfig(atou(props.config), props.type);
+      const ctx = chartCanvasElement.value!.getContext("2d")!;
 
-        loading.value = false;
-      });
+      new Chart(ctx, data);
+
+      loading.value = false;
     });
 
     return (): (VNode | null)[] => [

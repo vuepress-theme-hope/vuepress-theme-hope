@@ -66,6 +66,16 @@ export default defineComponent({
     },
 
     /**
+     * Component width
+     *
+     * 组件宽度
+     */
+    width: {
+      type: [String, Number],
+      default: "100%",
+    },
+
+    /**
      * Whether to loop the video
      *
      * 是否循环播放
@@ -82,62 +92,60 @@ export default defineComponent({
       ...props.options,
     }));
 
-    onMounted(() => {
-      void import(/* webpackChunkName: "plyr" */ "plyr").then(
-        ({ default: Plyr }) => {
-          if (audio.value) player = new Plyr(audio.value, plyrOptions.value);
-        }
+    onMounted(async () => {
+      const { default: Plyr } = await import(
+        /* webpackChunkName: "plyr" */ "plyr"
       );
+
+      player = new Plyr(audio.value!, plyrOptions.value);
     });
 
     onBeforeMount(() => {
       try {
         player?.destroy();
       } catch (err: unknown) {
-        if (
-          !(
-            plyrOptions.value.hideYouTubeDOMError &&
-            (<Error>err).message ===
-              "The YouTube player is not attached to the DOM."
-          )
-        )
-          console.error(err);
+        // do nothing
       }
     });
 
-    return (): VNode[] | null =>
-      props.src
-        ? [
-            h("div", { class: "audio-wrapper" }, [
-              h("a", {
-                class: "audio-print",
-                href: getLink(props.src),
-                innerHTML: props.title || "An audio",
-              }),
-              props.poster
-                ? h("img", {
-                    class: "audio-poster",
-                    src: getLink(props.poster),
-                  })
-                : null,
-              h("div", { class: "audio-info" }, [
-                props.title
-                  ? h("div", { class: "audio-title", innerHTML: props.title })
-                  : null,
-                h(
-                  "audio",
-                  {
-                    ref: audio,
-                    crossorigin: "anonymous",
-                    preload: "metadata",
-                    controls: "",
-                    ...(props.loop ? { loop: "" } : {}),
-                  },
-                  h("source", { src: getLink(props.src), type: props.type })
-                ),
-              ]),
-            ]),
-          ]
-        : null;
+    return (): VNode =>
+      h(
+        "div",
+        {
+          class: "audio-player-wrapper",
+          style: {
+            width: props.width,
+          },
+        },
+        [
+          h("a", {
+            class: "audio-print",
+            href: getLink(props.src),
+            innerHTML: props.title || "An audio",
+          }),
+          props.poster
+            ? h("img", {
+                class: "audio-poster",
+                src: getLink(props.poster),
+              })
+            : null,
+          h("div", { class: "audio-info" }, [
+            props.title
+              ? h("div", { class: "audio-title", innerHTML: props.title })
+              : null,
+            h(
+              "audio",
+              {
+                ref: audio,
+                crossorigin: "anonymous",
+                preload: "metadata",
+                controls: "",
+                ...(props.loop ? { loop: "" } : {}),
+              },
+              h("source", { src: getLink(props.src), type: props.type })
+            ),
+          ]),
+        ]
+      );
   },
 });

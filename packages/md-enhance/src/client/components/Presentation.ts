@@ -70,7 +70,36 @@ export default defineComponent({
     const loading = ref(true);
     const presentationContainer = ref<HTMLElement>();
 
-    let reveal: Reveal;
+    let reveal: Reveal | null = null;
+
+    const initRevealJS = async (container: HTMLElement): Promise<void> => {
+      const promises: [
+        Promise<void>,
+        ...Promise<typeof import("reveal.js/dist/reveal.esm.js")>[]
+      ] = [
+        new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
+        ...useReveal(),
+      ];
+
+      const [, revealJS, ...plugins] = await Promise.all(promises);
+
+      reveal = new revealJS.default(container, {
+        plugins: plugins.map(({ default: plugin }) => plugin),
+      });
+
+      await reveal.initialize({
+        backgroundTransition: "slide",
+        hash: frontmatter.value.layout === "Slide",
+        mouseWheel: frontmatter.value.layout === "Slide",
+        transition: "slide",
+        slideNumber: true,
+        ...REVEAL_CONFIG,
+        ...(frontmatter.value.reveal || {}),
+        embedded: frontmatter.value.layout !== "Slide",
+      });
+
+      reveal.configure({ backgroundTransition: "slide" });
+    };
 
     onMounted(() => {
       const container = presentationContainer.value;
@@ -81,34 +110,8 @@ export default defineComponent({
         container.setAttribute("id", props.id);
         container.setAttribute("data-theme", props.theme);
 
-        const promises: [
-          Promise<void>,
-          ...Promise<typeof import("reveal.js/dist/reveal.esm.js")>[]
-        ] = [
-          new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
-          ...useReveal(),
-        ];
-
-        void Promise.all(promises).then(([, revealJS, ...plugins]) => {
-          reveal = new revealJS.default(container, {
-            plugins: plugins.map((plugin) => plugin.default),
-          });
-
-          void reveal
-            .initialize({
-              backgroundTransition: "slide",
-              hash: frontmatter.value.layout === "Slide",
-              mouseWheel: frontmatter.value.layout === "Slide",
-              transition: "slide",
-              slideNumber: true,
-              ...REVEAL_CONFIG,
-              ...(frontmatter.value.reveal || {}),
-              embedded: frontmatter.value.layout !== "Slide",
-            })
-            .then(() => {
-              loading.value = false;
-              reveal.configure({ backgroundTransition: "slide" });
-            });
+        void initRevealJS(container).then(() => {
+          loading.value = false;
         });
       }
     });
@@ -127,7 +130,6 @@ export default defineComponent({
           },
           h("div", {
             class: "slides",
-            // style: { display: loading.value ? "none" : "block" },
             innerHTML: `<section data-markdown data-separator="^\\r?\\n---\\r?\\n$" data-separator-vertical="^\\r?\\n--\\r?\\n$"><script type="text/template">${code.value}</script></section>`,
           })
         ),

@@ -47,7 +47,7 @@ export default defineComponent({
   },
 
   setup(props) {
-    let flowchart: Chart;
+    let flowchart: Chart | null = null;
     const element = ref<HTMLDivElement>();
 
     const loading = ref(true);
@@ -83,10 +83,12 @@ export default defineComponent({
 
         // draw svg to #id
         flowchart.draw(props.id, { ...preset.value, scale: scale.value });
+      });
 
-        useEventListener(
-          "resize",
-          useDebounceFn(() => {
+      useEventListener(
+        "resize",
+        useDebounceFn(() => {
+          if (flowchart) {
             const newScale = getScale(window.innerWidth);
 
             if (scale.value !== newScale) {
@@ -94,9 +96,9 @@ export default defineComponent({
 
               flowchart.draw(props.id, { ...preset.value, scale: newScale });
             }
-          }, 100)
-        );
-      });
+          }
+        }, 100)
+      );
     });
 
     return (): (VNode | null)[] => [

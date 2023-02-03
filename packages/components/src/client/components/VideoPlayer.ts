@@ -103,65 +103,52 @@ export default defineComponent({
       ...props.options,
     }));
 
-    onMounted(() => {
-      void import(/* webpackChunkName: "plyr" */ "plyr").then(
-        ({ default: Plyr }) => {
-          if (video.value) player = new Plyr(video.value, plyrOptions.value);
-        }
+    onMounted(async () => {
+      const { default: Plyr } = await import(
+        /* webpackChunkName: "plyr" */ "plyr"
       );
+
+      player = new Plyr(video.value!, plyrOptions.value);
     });
 
     onBeforeMount(() => {
       try {
         player?.destroy();
       } catch (err: unknown) {
-        if (
-          !(
-            plyrOptions.value.hideYouTubeDOMError &&
-            (<Error>err).message ===
-              "The YouTube player is not attached to the DOM."
-          )
-        )
-          console.error(err);
+        // do nothing
       }
     });
 
-    return (): VNode | null =>
-      props.src
-        ? h(
-            "div",
+    return (): VNode =>
+      h(
+        "div",
+        {
+          class: "video-player-wrapper",
+          style: {
+            width: props.width,
+          },
+        },
+        [
+          h("a", { class: "sr-only", href: getLink(props.src) }, props.title),
+          h(
+            "video",
             {
-              class: "video-wrapper",
-              style: {
-                width: props.width,
-              },
+              ref: video,
+              title: props.title,
+              crossorigin: "anonymous",
+              poster: getLink(props.poster),
+              preload: "metadata",
+              controls: "",
+              ...(props.loop ? { loop: "" } : {}),
             },
             [
-              h(
-                "a",
-                { class: "sr-only", href: getLink(props.src) },
-                props.title
+              ...props.tracks.map((track) =>
+                h("track", { ...track, src: getLink(track.src) })
               ),
-              h(
-                "video",
-                {
-                  ref: video,
-                  title: props.title,
-                  crossorigin: "anonymous",
-                  poster: getLink(props.poster),
-                  preload: "metadata",
-                  controls: "",
-                  ...(props.loop ? { loop: "" } : {}),
-                },
-                [
-                  ...props.tracks.map((track) =>
-                    h("track", { ...track, src: getLink(track.src) })
-                  ),
-                  h("source", { src: getLink(props.src), type: props.type }),
-                ]
-              ),
+              h("source", { src: getLink(props.src), type: props.type }),
             ]
-          )
-        : null;
+          ),
+        ]
+      );
   },
 });
