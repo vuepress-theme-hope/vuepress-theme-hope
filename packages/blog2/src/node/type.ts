@@ -22,20 +22,11 @@ if (import.meta.hot)
 
 export const prepareType = (
   app: App,
-  options: Partial<BlogOptions>,
+  { type, slugify }: Required<Pick<BlogOptions, "type" | "slugify">>,
   pageMap: PageMap,
   init = false
-): Promise<string[]> => {
-  const {
-    type = [],
-    slugify = (name: string): string =>
-      name
-        .replace(/[ _]/g, "-")
-        .replace(/[:?*|\\/<>]/g, "")
-        .toLowerCase(),
-  } = options;
-
-  return Promise.all(
+): Promise<string[]> =>
+  Promise.all(
     type.map(
       async (
         {
@@ -48,7 +39,7 @@ export const prepareType = (
         },
         index
       ) => {
-        if (!isString(key) || !key) {
+        if (!isString(key) || !key.length) {
           logger.error(
             `Invalid ${colors.magenta("key")} option ${colors.cyan(
               key
@@ -89,8 +80,9 @@ export const prepareType = (
 
             const index = app.pages.findIndex(({ path }) => path === pagePath);
 
-            if (index === -1) app.pages.push(page);
-            else if (app.pages[index].key !== page.key) {
+            if (index === -1) {
+              app.pages.push(page);
+            } else if (app.pages[index].key !== page.key) {
               app.pages.splice(index, 1, page);
 
               if (init)
@@ -101,17 +93,19 @@ export const prepareType = (
 
             typeMap[localePath] = { path: page.path, keys };
 
-            if (app.env.isDebug)
+            if (app.env.isDebug) {
               logger.info(
                 `Route ${localePath} in ${key} type: path: ${page.path}; items: ${keys.length}\n`
               );
+            }
           } else {
             typeMap[localePath] = { path: "", keys };
 
-            if (app.env.isDebug)
+            if (app.env.isDebug) {
               logger.info(
                 `Route ${localePath} in ${key} type: items: ${keys.length}\n`
               );
+            }
           }
         }
 
@@ -153,4 +147,3 @@ ${app.env.isDev ? HMR_CODE : ""}
 
     return keys;
   });
-};

@@ -23,20 +23,11 @@ if (import.meta.hot)
 
 export const prepareCategory = (
   app: App,
-  options: Partial<BlogOptions>,
+  { category, slugify }: Required<Pick<BlogOptions, "category" | "slugify">>,
   pageMap: PageMap,
   init = false
-): Promise<string[]> => {
-  const {
-    category = [],
-    slugify = (name: string): string =>
-      name
-        .replace(/[ _]/g, "-")
-        .replace(/[:?*|\\/<>]/g, "")
-        .toLowerCase(),
-  } = options;
-
-  return Promise.all(
+): Promise<string[]> =>
+  Promise.all(
     category.map(
       async (
         {
@@ -52,7 +43,7 @@ export const prepareCategory = (
         },
         index
       ) => {
-        if (!isString(key) || !key) {
+        if (!isString(key) || !key.length) {
           logger.error(
             `Invalid ${colors.magenta("key")} option ${colors.cyan(
               key
@@ -104,8 +95,9 @@ export const prepareCategory = (
 
             const index = app.pages.findIndex(({ path }) => path === pagePath);
 
-            if (index === -1) app.pages.push(mainPage);
-            else if (app.pages[index].key !== mainPage.key) {
+            if (index === -1) {
+              app.pages.push(mainPage);
+            } else if (app.pages[index].key !== mainPage.key) {
               app.pages.splice(index, 1, mainPage);
 
               if (init)
@@ -156,8 +148,9 @@ export const prepareCategory = (
                     ({ path }) => path === pagePath
                   );
 
-                  if (index === -1) app.pages.push(page);
-                  else if (app.pages[index].key !== page.key) {
+                  if (index === -1) {
+                    app.pages.push(page);
+                  } else if (app.pages[index].key !== page.key) {
                     app.pages.splice(index, 1, page);
 
                     if (init)
@@ -242,4 +235,3 @@ ${app.env.isDev ? HMR_CODE : ""}
 
     return keys;
   });
-};
