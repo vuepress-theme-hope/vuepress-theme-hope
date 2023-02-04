@@ -2,7 +2,6 @@ import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import { isLinkHttp, isPlainObject, removeEndingSlash } from "@vuepress/shared";
 import { useEventListener } from "@vueuse/core";
 import { computed, onMounted, watchEffect } from "vue";
-import { useRoute } from "vue-router";
 import {
   type RequiredLocaleConfig,
   useLocaleConfig,
@@ -27,7 +26,6 @@ export const setupCopyright = (): void => {
   const frontmatter = usePageFrontmatter<CopyrightPluginFrontmatter>();
   const locale = useLocaleConfig(COPYRIGHT_LOCALES);
   const page = usePageData<CopyrightPluginPageData>();
-  const route = useRoute();
 
   const enabled = computed(
     () =>
@@ -76,7 +74,7 @@ export const setupCopyright = (): void => {
         canonical
           ? `${removeEndingSlash(
               isLinkHttp(canonical) ? canonical : `https://${canonical}`
-            )}${route.path}`
+            )}${page.value.path}`
           : window.location.href
       ),
     ]

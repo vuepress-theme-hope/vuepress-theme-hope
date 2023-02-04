@@ -1,4 +1,4 @@
-import { useRouteLocale } from "@vuepress/client";
+import { usePageData, useRouteLocale } from "@vuepress/client";
 import { isPlainObject, isString } from "@vuepress/shared";
 import { useEventListener } from "@vueuse/core";
 import { clearAllBodyScrollLocks, disableBodyScroll } from "body-scroll-lock";
@@ -12,7 +12,7 @@ import {
   ref,
   toRef,
 } from "vue";
-import { RouterLink, useRoute, useRouter } from "vue-router";
+import { RouterLink, useRouter } from "vue-router";
 import { useLocaleConfig } from "vuepress-shared/client";
 
 import {
@@ -53,8 +53,8 @@ export default defineComponent({
   },
 
   setup(props, { emit }) {
+    const page = usePageData();
     const router = useRouter();
-    const route = useRoute();
     const routeLocale = useRouteLocale();
     const locale = useLocaleConfig(searchProLocales);
     const { history, addHistory, removeHistory } = useSearchHistory();
@@ -142,7 +142,7 @@ export default defineComponent({
           const item =
             activatedResult.value.contents[activatedResultContentIndex.value];
 
-          if (route.path !== item.path) {
+          if (page.value.path !== item.path) {
             addHistory(item);
             void router.push(item.path);
             resetSearchResult();

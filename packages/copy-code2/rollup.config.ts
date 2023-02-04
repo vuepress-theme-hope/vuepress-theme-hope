@@ -15,6 +15,7 @@ export default [
     external: [
       "@vuepress/client",
       "@vuepress/shared",
+      "@vueuse/core",
       "balloon-css/balloon.css",
       "vue",
       "vue-router",

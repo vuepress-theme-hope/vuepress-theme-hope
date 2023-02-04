@@ -1,6 +1,10 @@
-import { usePageFrontmatter, usePageLang, withBase } from "@vuepress/client";
+import {
+  usePageData,
+  usePageFrontmatter,
+  usePageLang,
+  withBase,
+} from "@vuepress/client";
 import { type VNode, computed, defineComponent, h, onMounted, ref } from "vue";
-import { useRoute } from "vue-router";
 import { LoadingIcon } from "vuepress-shared/client";
 
 import {
@@ -82,7 +86,7 @@ export default defineComponent({
 
   setup(props) {
     const frontmatter = usePageFrontmatter<CommentPluginFrontmatter>();
-    const route = useRoute();
+    const page = usePageData();
     const loaded = ref(false);
 
     const giscusLang = computed(() => {
@@ -120,7 +124,7 @@ export default defineComponent({
         ? giscusOptions.darkTheme || "dark"
         : giscusOptions.lightTheme || "light",
       mapping: giscusOptions.mapping || "pathname",
-      term: withBase(route.path),
+      term: withBase(page.value.path),
       inputPosition: giscusOptions.inputPosition || "top",
       reactionsEnabled: giscusOptions.reactionsEnabled === false ? "0" : "1",
       strict: giscusOptions.strict === false ? "0" : "1",

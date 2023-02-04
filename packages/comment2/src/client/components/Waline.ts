@@ -1,4 +1,9 @@
-import { usePageFrontmatter, usePageLang, withBase } from "@vuepress/client";
+import {
+  usePageData,
+  usePageFrontmatter,
+  usePageLang,
+  withBase,
+} from "@vuepress/client";
 import { pageviewCount } from "@waline/client/dist/pageview.mjs";
 import {
   type VNode,
@@ -6,10 +11,10 @@ import {
   defineAsyncComponent,
   defineComponent,
   h,
+  nextTick,
   onMounted,
   watch,
 } from "vue";
-import { useRoute } from "vue-router";
 import { LoadingIcon, useLocaleConfig } from "vuepress-shared/client";
 
 import {
@@ -41,7 +46,7 @@ export default defineComponent({
   name: "WalineComment",
 
   setup() {
-    const route = useRoute();
+    const page = usePageData();
     const frontmatter = usePageFrontmatter<CommentPluginFrontmatter>();
     const lang = usePageLang();
     const walineLocale = useLocaleConfig(walineLocales);
@@ -79,22 +84,24 @@ export default defineComponent({
       locale: walineLocale.value,
       dark: "html.dark",
       ...walineOption,
-      path: withBase(route.path),
+      path: withBase(page.value.path),
     }));
 
     onMounted(() => {
       watch(
-        () => route.path,
+        () => page.value.path,
         () => {
           abort?.();
 
           if (enablePageViews.value)
-            setTimeout(() => {
-              abort = pageviewCount({
-                serverURL: walineOption.serverURL,
-                path: withBase(route.path),
-              });
-            }, walineOption.delay || 800);
+            void nextTick().then(() => {
+              setTimeout(() => {
+                abort = pageviewCount({
+                  serverURL: walineOption.serverURL,
+                  path: withBase(page.value.path),
+                });
+              }, walineOption.delay || 800);
+            });
         },
         { immediate: true }
       );

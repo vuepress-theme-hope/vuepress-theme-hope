@@ -1,3 +1,4 @@
+import { usePageData } from "@vuepress/client";
 import {
   type PropType,
   type VNode,
@@ -8,7 +9,6 @@ import {
   toRef,
   watch,
 } from "vue";
-import { useRoute } from "vue-router";
 
 import AutoLink from "@theme-hope/components/AutoLink";
 import Icon from "@theme-hope/components/Icon";
@@ -36,7 +36,7 @@ export default defineComponent({
   },
 
   setup(props, { slots }) {
-    const route = useRoute();
+    const page = usePageData();
     const config = toRef(props, "config");
 
     const dropdownAriaLabel = computed(
@@ -46,7 +46,7 @@ export default defineComponent({
     const open = ref(false);
 
     watch(
-      () => route.path,
+      () => page.value.path,
       () => {
         open.value = false;
       }

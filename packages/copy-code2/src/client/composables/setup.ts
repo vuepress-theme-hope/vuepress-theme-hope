@@ -25,8 +25,9 @@
  * © 2019 GitHub, Inc.
  */
 
-import { onMounted, watch } from "vue";
-import { useRoute } from "vue-router";
+import { usePageData } from "@vuepress/client";
+import { useEventListener } from "@vueuse/core";
+import { nextTick, onMounted, watch } from "vue";
 import {
   Message,
   checkIsMobile,
@@ -48,8 +49,8 @@ import "vuepress-shared/client/styles/message.scss";
 const timeoutIdMap: Map<HTMLElement, NodeJS.Timeout> = new Map();
 
 export const setupCopyCode = (): void => {
-  const route = useRoute();
   const locale = useLocaleConfig(copyCodeLocales);
+  const page = usePageData();
 
   let message: Message;
 
@@ -77,13 +78,20 @@ export const setupCopyCode = (): void => {
     }
   };
 
-  const generateCopyButton = (): void => {
-    setTimeout(() => {
-      copyCodeSelector.forEach((item) => {
-        document.querySelectorAll<HTMLElement>(item).forEach(insertCopyButton);
-      });
-    }, copyCodeDelay || 500);
-  };
+  const generateCopyButton = (): Promise<void> =>
+    nextTick().then(
+      () =>
+        new Promise((resolve) => {
+          setTimeout(() => {
+            copyCodeSelector.forEach((item) => {
+              document
+                .querySelectorAll<HTMLElement>(item)
+                .forEach(insertCopyButton);
+            });
+            resolve();
+          }, copyCodeDelay || 500);
+        })
+    );
 
   const copy = (
     codeContainer: HTMLDivElement,
@@ -125,9 +133,10 @@ export const setupCopyCode = (): void => {
 
     message = new Message();
 
-    if (!checkIsMobile(userAgent) || copyCodeShowInMobile) generateCopyButton();
+    if (!checkIsMobile(userAgent) || copyCodeShowInMobile)
+      void generateCopyButton();
 
-    window.addEventListener("click", (event) => {
+    useEventListener("click", (event) => {
       const el = event.target as HTMLElement;
 
       if (el.matches('div[class*="language-"] > button.copy')) {
@@ -147,10 +156,10 @@ export const setupCopyCode = (): void => {
     });
 
     watch(
-      () => route.path,
+      () => page.value.path,
       () => {
         if (!checkIsMobile(userAgent) || copyCodeShowInMobile)
-          generateCopyButton();
+          void generateCopyButton();
       }
     );
   });

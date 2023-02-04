@@ -31,11 +31,11 @@ export default defineComponent({
       isMobile.value ? { width: 220, height: 220 } : { width: 300, height: 300 }
     );
 
-    const renderLogo = (
+    const renderLogo = async (
       three: typeof Three,
       STLLoaderConstructor: typeof STLLoader,
       OrbitControlsConstructor: typeof OrbitControls
-    ): void => {
+    ): Promise<void> => {
       const { width, height } = sizes.value;
 
       // Canvas
@@ -51,57 +51,6 @@ export default defineComponent({
       // Models
       let logo1: Mesh;
       let logo2: Mesh;
-
-      void Promise.all([
-        new Promise<void>((resolve) =>
-          stlLoader.load(withBase("/assets/model/logo1.stl"), (geometry) => {
-            const material = new three.MeshPhysicalMaterial({
-              color: 0x284c39,
-              metalness: 0.45,
-              roughness: 0.5,
-              roughnessMap: roughnessTexture,
-              displacementScale: 0.15,
-              emissiveIntensity: 0.4,
-              reflectivity: 1,
-            });
-
-            logo1 = new three.Mesh(geometry, material);
-            logo1.castShadow = true;
-            logo1.receiveShadow = true;
-            logo1.rotation.z = 0;
-            logo1.scale.set(0.3, 0.3, 0.3);
-
-            scene.add(logo1);
-
-            resolve();
-          })
-        ),
-        new Promise<void>((resolve) =>
-          stlLoader.load(withBase("/assets/model/logo2.stl"), (geometry) => {
-            const material = new three.MeshPhysicalMaterial({
-              color: 0x35495e,
-              metalness: 0.7,
-              roughness: 0.5,
-              roughnessMap: roughnessTexture,
-              displacementScale: 0.15,
-              emissiveIntensity: 0.4,
-              reflectivity: 1,
-            });
-
-            logo2 = new three.Mesh(geometry, material);
-            logo2.castShadow = true;
-            logo2.receiveShadow = true;
-            logo2.rotation.z = 0;
-            logo2.scale.set(0.3, 0.3, 0.3);
-
-            scene.add(logo2);
-
-            resolve();
-          })
-        ),
-      ]).then(() => {
-        ready.value = true;
-      });
 
       // Lights
       const ambientLight = new three.AmbientLight(0xffffff, 2);
@@ -165,6 +114,57 @@ export default defineComponent({
       };
 
       tick();
+
+      await Promise.all([
+        new Promise<void>((resolve) =>
+          stlLoader.load(withBase("/assets/model/logo1.stl"), (geometry) => {
+            const material = new three.MeshPhysicalMaterial({
+              color: 0x284c39,
+              metalness: 0.45,
+              roughness: 0.5,
+              roughnessMap: roughnessTexture,
+              displacementScale: 0.15,
+              emissiveIntensity: 0.4,
+              reflectivity: 1,
+            });
+
+            logo1 = new three.Mesh(geometry, material);
+            logo1.castShadow = true;
+            logo1.receiveShadow = true;
+            logo1.rotation.z = 0;
+            logo1.scale.set(0.3, 0.3, 0.3);
+
+            scene.add(logo1);
+
+            resolve();
+          })
+        ),
+        new Promise<void>((resolve) =>
+          stlLoader.load(withBase("/assets/model/logo2.stl"), (geometry) => {
+            const material = new three.MeshPhysicalMaterial({
+              color: 0x35495e,
+              metalness: 0.7,
+              roughness: 0.5,
+              roughnessMap: roughnessTexture,
+              displacementScale: 0.15,
+              emissiveIntensity: 0.4,
+              reflectivity: 1,
+            });
+
+            logo2 = new three.Mesh(geometry, material);
+            logo2.castShadow = true;
+            logo2.receiveShadow = true;
+            logo2.rotation.z = 0;
+            logo2.scale.set(0.3, 0.3, 0.3);
+
+            scene.add(logo2);
+
+            resolve();
+          })
+        ),
+      ]);
+
+      ready.value = true;
     };
 
     onMounted(() =>
@@ -179,11 +179,9 @@ export default defineComponent({
           /* webpackChunkName: "hope-logo" */ "three/examples/jsm/loaders/STLLoader.js"
         ).then((m) => m.default || m),
       ]).then(([THREE, { OrbitControls }, { STLLoader }]) => {
-        renderLogo(THREE, STLLoader, OrbitControls);
+        void renderLogo(THREE, STLLoader, OrbitControls);
 
-        watch(isMobile, () => {
-          renderLogo(THREE, STLLoader, OrbitControls);
-        });
+        watch(isMobile, () => renderLogo(THREE, STLLoader, OrbitControls));
       })
     );
 

@@ -1,5 +1,14 @@
-import { usePageFrontmatter, usePageLang } from "@vuepress/client";
-import { type VNode, computed, defineComponent, h, onMounted, ref } from "vue";
+import { usePageData, usePageFrontmatter, usePageLang } from "@vuepress/client";
+import {
+  type VNode,
+  computed,
+  defineComponent,
+  h,
+  nextTick,
+  onMounted,
+  ref,
+  watch,
+} from "vue";
 import { LoadingIcon } from "vuepress-shared/client";
 
 import {
@@ -20,9 +29,9 @@ export default defineComponent({
   setup() {
     const frontmatter = usePageFrontmatter<CommentPluginFrontmatter>();
     const lang = usePageLang();
-    const loaded = ref(false);
+    const page = usePageData();
 
-    let id: number;
+    const loaded = ref(false);
 
     const enableComment = computed(() => {
       if (!enableTwikoo) return false;
@@ -37,25 +46,33 @@ export default defineComponent({
       );
     });
 
-    const initTwikoo = (): void => {
-      const timeID = (id = new Date().getTime());
+    const initTwikoo = async (): Promise<void> => {
+      if (enableComment.value) {
+        const [{ init }] = await Promise.all([
+          import(/* webpackChunkName: "twikoo" */ "twikoo"),
+          new Promise<void>((resolve) => {
+            setTimeout(() => {
+              void nextTick().then(resolve);
+            }, twikooOption.delay);
+          }),
+        ]);
 
-      void Promise.all([
-        import(/* webpackChunkName: "twikoo" */ "twikoo"),
-        new Promise<void>((resolve) => setTimeout(resolve, twikooOption.delay)),
-      ]).then(([{ init }]) => {
         loaded.value = true;
-        if (timeID === id)
-          void init({
-            lang: lang.value === "zh-CN" ? "zh-CN" : "en",
-            ...twikooOption,
-            el: "#twikoo-comment",
-          });
-      });
+
+        await init({
+          lang: lang.value === "zh-CN" ? "zh-CN" : "en",
+          ...twikooOption,
+          el: "#twikoo-comment",
+        });
+      }
     };
 
     onMounted(() => {
-      if (enableTwikoo) initTwikoo();
+      watch(
+        () => [enableComment.value, page.value.path],
+        () => initTwikoo(),
+        { immediate: true }
+      );
     });
 
     return (): VNode =>

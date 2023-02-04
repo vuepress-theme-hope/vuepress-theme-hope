@@ -1,5 +1,6 @@
+import { usePageData } from "@vuepress/client";
 import { type VNode, defineComponent, h } from "vue";
-import { RouterLink, useRoute } from "vue-router";
+import { RouterLink } from "vue-router";
 import { entries, generateIndexFromHash } from "vuepress-shared/client";
 
 import { useCategoryMap } from "@theme-hope/modules/blog/composables/index";
@@ -10,7 +11,7 @@ export default defineComponent({
   name: "CategoryList",
 
   setup() {
-    const route = useRoute();
+    const page = usePageData();
     const categoryMap = useCategoryMap();
 
     return (): VNode =>
@@ -25,7 +26,7 @@ export default defineComponent({
                 "category",
                 // TODO: magic number 9 is tricky here
                 `category${generateIndexFromHash(category, 9)}`,
-                { active: path === route.path },
+                { active: path === page.value.path },
               ],
             },
             h(RouterLink, { to: path }, () => [

@@ -1,6 +1,6 @@
-import { useRouteLocale } from "@vuepress/client";
+import { usePageData, useRouteLocale } from "@vuepress/client";
 import { type VNode, computed, defineComponent, h } from "vue";
-import { RouterLink, useRoute } from "vue-router";
+import { RouterLink } from "vue-router";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 import {
@@ -16,9 +16,9 @@ export default defineComponent({
   name: "ArticleType",
 
   setup() {
+    const page = usePageData();
     const localePath = useRouteLocale();
     const themeLocale = useThemeLocaleData();
-    const route = useRoute();
     const articles = useArticles();
     const stars = useStars();
 
@@ -46,7 +46,10 @@ export default defineComponent({
           h(
             "li",
             {
-              class: ["article-type", { active: type.path === route.path }],
+              class: [
+                "article-type",
+                { active: type.path === page.value.path },
+              ],
             },
             h(RouterLink, { to: type.path }, () => type.text)
           )
