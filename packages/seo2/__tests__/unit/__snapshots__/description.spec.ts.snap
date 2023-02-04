@@ -3,6 +3,21 @@
 exports[`Should generate seo information > Should contain basic properties 1`] = `
 [
   [
+    "link",
+    {
+      "href": "https://exmaple.com/",
+      "rel": "canonical",
+    },
+  ],
+  [
+    "link",
+    {
+      "href": "https://exmaple.com/zh/",
+      "hreflang": "zh-cn",
+      "rel": "alternate",
+    },
+  ],
+  [
     "meta",
     {
       "content": "https://exmaple.com/",
@@ -44,26 +59,26 @@ exports[`Should generate seo information > Should contain basic properties 1`] =
     },
     "{\\"@context\\":\\"https://schema.org\\",\\"@type\\":\\"WebPage\\",\\"name\\":\\"\\",\\"description\\":\\"This is a home page.\\"}",
   ],
+]
+`;
+
+exports[`Should generate seo information > Should contain basic properties 2`] = `
+[
   [
     "link",
     {
-      "href": "https://exmaple.com/",
+      "href": "https://exmaple.com/description.html",
       "rel": "canonical",
     },
   ],
   [
     "link",
     {
-      "href": "https://exmaple.com/zh/",
+      "href": "https://exmaple.com/zh/description.html",
       "hreflang": "zh-cn",
       "rel": "alternate",
     },
   ],
-]
-`;
-
-exports[`Should generate seo information > Should contain basic properties 2`] = `
-[
   [
     "meta",
     {
@@ -113,26 +128,26 @@ exports[`Should generate seo information > Should contain basic properties 2`] =
     },
     "{\\"@context\\":\\"https://schema.org\\",\\"@type\\":\\"Article\\",\\"headline\\":\\"Description Test\\",\\"image\\":[\\"\\"],\\"dateModified\\":null,\\"author\\":[]}",
   ],
+]
+`;
+
+exports[`Should generate seo information > Should contain basic properties 3`] = `
+[
   [
     "link",
     {
-      "href": "https://exmaple.com/description.html",
+      "href": "https://exmaple.com/example.html",
       "rel": "canonical",
     },
   ],
   [
     "link",
     {
-      "href": "https://exmaple.com/zh/description.html",
+      "href": "https://exmaple.com/zh/example.html",
       "hreflang": "zh-cn",
       "rel": "alternate",
     },
   ],
-]
-`;
-
-exports[`Should generate seo information > Should contain basic properties 3`] = `
-[
   [
     "meta",
     {
@@ -182,26 +197,26 @@ exports[`Should generate seo information > Should contain basic properties 3`] =
     },
     "{\\"@context\\":\\"https://schema.org\\",\\"@type\\":\\"Article\\",\\"headline\\":\\"Heading 1\\",\\"image\\":[\\"\\"],\\"dateModified\\":null,\\"author\\":[]}",
   ],
+]
+`;
+
+exports[`Should generate seo information > Should contain basic properties 4`] = `
+[
   [
     "link",
     {
-      "href": "https://exmaple.com/example.html",
+      "href": "https://exmaple.com/zh/",
       "rel": "canonical",
     },
   ],
   [
     "link",
     {
-      "href": "https://exmaple.com/zh/example.html",
-      "hreflang": "zh-cn",
+      "href": "https://exmaple.com/",
+      "hreflang": "en-us",
       "rel": "alternate",
     },
   ],
-]
-`;
-
-exports[`Should generate seo information > Should contain basic properties 4`] = `
-[
   [
     "meta",
     {
@@ -244,26 +259,26 @@ exports[`Should generate seo information > Should contain basic properties 4`] =
     },
     "{\\"@context\\":\\"https://schema.org\\",\\"@type\\":\\"WebPage\\",\\"name\\":\\"\\",\\"description\\":\\"这是一个主页。\\"}",
   ],
+]
+`;
+
+exports[`Should generate seo information > Should contain basic properties 5`] = `
+[
   [
     "link",
     {
-      "href": "https://exmaple.com/zh/",
+      "href": "https://exmaple.com/zh/description.html",
       "rel": "canonical",
     },
   ],
   [
     "link",
     {
-      "href": "https://exmaple.com/",
+      "href": "https://exmaple.com/description.html",
       "hreflang": "en-us",
       "rel": "alternate",
     },
   ],
-]
-`;
-
-exports[`Should generate seo information > Should contain basic properties 5`] = `
-[
   [
     "meta",
     {
@@ -313,26 +328,26 @@ exports[`Should generate seo information > Should contain basic properties 5`] =
     },
     "{\\"@context\\":\\"https://schema.org\\",\\"@type\\":\\"Article\\",\\"headline\\":\\"描述测试\\",\\"image\\":[\\"\\"],\\"dateModified\\":null,\\"author\\":[]}",
   ],
+]
+`;
+
+exports[`Should generate seo information > Should contain basic properties 6`] = `
+[
   [
     "link",
     {
-      "href": "https://exmaple.com/zh/description.html",
+      "href": "https://exmaple.com/zh/example.html",
       "rel": "canonical",
     },
   ],
   [
     "link",
     {
-      "href": "https://exmaple.com/description.html",
+      "href": "https://exmaple.com/example.html",
       "hreflang": "en-us",
       "rel": "alternate",
     },
   ],
-]
-`;
-
-exports[`Should generate seo information > Should contain basic properties 6`] = `
-[
   [
     "meta",
     {
@@ -382,26 +397,18 @@ exports[`Should generate seo information > Should contain basic properties 6`] =
     },
     "{\\"@context\\":\\"https://schema.org\\",\\"@type\\":\\"Article\\",\\"headline\\":\\"一级标题\\",\\"image\\":[\\"\\"],\\"dateModified\\":null,\\"author\\":[]}",
   ],
-  [
-    "link",
-    {
-      "href": "https://exmaple.com/zh/example.html",
-      "rel": "canonical",
-    },
-  ],
-  [
-    "link",
-    {
-      "href": "https://exmaple.com/example.html",
-      "hreflang": "en-us",
-      "rel": "alternate",
-    },
-  ],
 ]
 `;
 
 exports[`Should generate seo information > Should contain basic properties 7`] = `
 [
+  [
+    "link",
+    {
+      "href": "https://exmaple.com/404.html",
+      "rel": "canonical",
+    },
+  ],
   [
     "meta",
     {
@@ -429,13 +436,6 @@ exports[`Should generate seo information > Should contain basic properties 7`] =
       "type": "application/ld+json",
     },
     "{\\"@context\\":\\"https://schema.org\\",\\"@type\\":\\"WebPage\\",\\"name\\":\\"\\"}",
-  ],
-  [
-    "link",
-    {
-      "href": "https://exmaple.com/404.html",
-      "rel": "canonical",
-    },
   ],
 ]
 `;
