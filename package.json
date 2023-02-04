@@ -79,7 +79,7 @@
     "rollup-plugin-copy": "3.4.0",
     "rollup-plugin-dts": "5.1.1",
     "rollup-plugin-esbuild": "5.0.0",
-    "sort-package-json": "2.4.0",
+    "sort-package-json": "2.4.1",
     "stylelint": "14.16.1",
     "stylelint-config-hope": "1.0.1",
     "tslib": "2.5.0",
