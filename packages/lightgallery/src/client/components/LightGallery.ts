@@ -1,3 +1,4 @@
+import { usePageData } from "@vuepress/client";
 import { type LightGallerySettings } from "lightgallery/lg-settings.js";
 import { type GalleryItem } from "lightgallery/lg-utils.js";
 import { type LgQuery } from "lightgallery/lgQuery.js";
@@ -7,12 +8,12 @@ import {
   type VNode,
   defineComponent,
   h,
+  nextTick,
   onBeforeUnmount,
   onMounted,
   ref,
   watch,
 } from "vue";
-import { useRoute } from "vue-router";
 
 import "lightgallery/scss/lightgallery.scss";
 
@@ -47,8 +48,10 @@ export default defineComponent({
   name: "LightGallery",
 
   setup(_props, { slots }) {
-    const route = useRoute();
+    const page = usePageData();
+
     const container = ref<HTMLElement>();
+
     let instance: LightGallery | null = null;
     let id: number;
 
@@ -160,47 +163,52 @@ export default defineComponent({
       );
     }
 
-    const initLightGallery = (): void => {
+    const initLightGallery = async (): Promise<void> => {
       const timeID = (id = new Date().getTime());
 
-      void Promise.all([
+      const [lightGalleryPlugins] = await Promise.all([
         Promise.all(plugins),
         Promise.all(pluginsStyles),
-        new Promise<void>((resolve) =>
-          setTimeout(resolve, LIGHT_GALLERY_DELAY)
+        nextTick().then(
+          () =>
+            new Promise<void>((resolve) =>
+              setTimeout(resolve, LIGHT_GALLERY_DELAY)
+            )
         ),
-      ]).then(([plugins]) => {
-        if (timeID === id) {
-          instance?.destroy();
+      ]);
 
-          const images = Array.from(
-            document.querySelectorAll<HTMLImageElement>(IMAGE_SELECTOR)
-          );
+      if (timeID === id) {
+        instance?.destroy();
 
-          instance = new lightGallery(container.value!, {
-            ...LIGHT_GALLERY_OPTIONS,
-            dynamic: true,
-            dynamicEl: getImages(images),
-            // this is a licenseKey to make this project under MIT, special thanks to @Sachin
-            licenseKey: "VSY7R-J@WED-CJY76-UMDXQ",
-            plugins: plugins.map(({ default: plugin }) => plugin),
+        const images = Array.from(
+          document.querySelectorAll<HTMLImageElement>(IMAGE_SELECTOR)
+        );
+
+        instance = new lightGallery(container.value!, {
+          ...LIGHT_GALLERY_OPTIONS,
+          dynamic: true,
+          dynamicEl: getImages(images),
+          // this is a licenseKey to make this project under MIT, special thanks to @Sachin
+          licenseKey: "VSY7R-J@WED-CJY76-UMDXQ",
+          plugins: lightGalleryPlugins.map(({ default: plugin }) => plugin),
+        });
+
+        images.forEach((image, index) => {
+          image.addEventListener("click", () => {
+            instance?.openGallery(index);
           });
-
-          images.forEach((image, index) => {
-            image.addEventListener("click", () => {
-              instance?.openGallery(index);
-            });
-          });
-        }
-      });
+        });
+      }
     };
 
-    watch(
-      () => route.path,
-      () => initLightGallery()
-    );
+    onMounted(() => {
+      void initLightGallery();
 
-    onMounted(() => initLightGallery());
+      watch(
+        () => page.value.path,
+        () => initLightGallery()
+      );
+    });
 
     onBeforeUnmount(() => instance?.destroy());
 

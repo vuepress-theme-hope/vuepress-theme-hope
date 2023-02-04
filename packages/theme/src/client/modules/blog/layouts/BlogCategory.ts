@@ -1,4 +1,4 @@
-import { usePageFrontmatter } from "@vuepress/client";
+import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import {
   type VNode,
   computed,
@@ -6,7 +6,6 @@ import {
   h,
   resolveComponent,
 } from "vue";
-import { useRoute } from "vue-router";
 import {
   type BlogCategoryFrontmatterOptions,
   type BlogPluginFrontmatter,
@@ -34,8 +33,8 @@ export default defineComponent({
   },
 
   setup() {
+    const page = usePageData();
     const frontmatter = usePageFrontmatter<BlogPluginFrontmatter>();
-    const route = useRoute();
     const categoryMap = useCategoryMap();
     const tagMap = useTagMap();
     const blogOptions = computed(
@@ -80,7 +79,7 @@ export default defineComponent({
               ),
               blogOptions.value.name
                 ? h(DropTransition, { appear: true, delay: 0.24 }, () =>
-                    h(ArticleList, { key: route.path, items: items.value })
+                    h(ArticleList, { key: page.value.path, items: items.value })
                   )
                 : null,
             ]),

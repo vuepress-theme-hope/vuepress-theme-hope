@@ -10,7 +10,6 @@ import {
   ref,
   watch,
 } from "vue";
-import { useRoute } from "vue-router";
 
 import {
   type ArtalkOptions,
@@ -42,7 +41,6 @@ export default defineComponent({
   setup: (props) => {
     const frontmatter = usePageFrontmatter<CommentPluginFrontmatter>();
     const page = usePageData();
-    const route = useRoute();
     const site = useSiteData();
 
     const artalkContainer = ref<HTMLDivElement>();
@@ -63,43 +61,45 @@ export default defineComponent({
     });
 
     const initArtalk = async (): Promise<void> => {
-      if (enableComment.value) {
-        const { default: _Artalk } = await import(
-          /* webpackChunkName: "artalk" */ "artalk"
-        );
+      if (enableComment.value)
+        await Promise.all([
+          import(/* webpackChunkName: "artalk" */ "artalk"),
+          new Promise<void>((resolve) => {
+            setTimeout(() => {
+              void nextTick().then(resolve);
+            }, artalkOptions.delay);
+          }),
+        ]).then(([{ default: _Artalk }]) => {
+          // FIXME: Typescript type issues
+          const Artalk = _Artalk as unknown as typeof _Artalk.default;
 
-        // FIXME: Typescript type issues
-        const Artalk = _Artalk as unknown as typeof _Artalk.default;
-
-        try {
-          artalk = new Artalk({
-            site: site.value.title,
-            useBackendConf: false,
-            ...artalkOptions,
-            el: artalkContainer.value!,
-            pageTitle: page.value.title,
-            darkMode: props.darkmode,
-            pageKey: route.path,
-          });
-
-          if (artalkOptions.useBackendConf)
-            artalk.on("conf-loaded", () => {
-              artalk!.setDarkMode(props.darkmode);
+          try {
+            artalk = new Artalk({
+              site: site.value.title,
+              useBackendConf: false,
+              ...artalkOptions,
+              el: artalkContainer.value!,
+              pageTitle: page.value.title,
+              darkMode: props.darkmode,
+              pageKey: page.value.path,
             });
-        } catch (err) {
-          // FIXME: Not sure what the issue is, relevant issue:
-          // https://github.com/vuepress/vuepress-next/issues/1249
-          // https://github.com/ArtalkJS/Artalk/discussions/367
-        }
-      }
+
+            if (artalkOptions.useBackendConf)
+              artalk.on("conf-loaded", () => {
+                artalk!.setDarkMode(props.darkmode);
+              });
+          } catch (err) {
+            // FIXME: Not sure what the issue is, relevant issue:
+            // https://github.com/vuepress/vuepress-next/issues/1249
+            // https://github.com/ArtalkJS/Artalk/discussions/367
+          }
+        });
     };
 
     onMounted(() => {
       watch(
-        () => [enableComment.value, route.path],
-        () => {
-          void nextTick().then(() => initArtalk());
-        },
+        () => [enableComment.value, page.value.path],
+        () => initArtalk(),
         { immediate: true }
       );
 

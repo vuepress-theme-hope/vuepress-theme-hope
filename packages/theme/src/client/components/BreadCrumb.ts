@@ -1,4 +1,8 @@
-import { usePageFrontmatter, useRouteLocale } from "@vuepress/client";
+import {
+  usePageData,
+  usePageFrontmatter,
+  useRouteLocale,
+} from "@vuepress/client";
 import {
   type VNode,
   computed,
@@ -8,7 +12,7 @@ import {
   ref,
   watch,
 } from "vue";
-import { RouterLink, useRoute, useRouter } from "vue-router";
+import { RouterLink, useRouter } from "vue-router";
 import { resolveRouteWithRedirect } from "vuepress-shared/client";
 
 import Icon from "@theme-hope/components/Icon";
@@ -33,7 +37,7 @@ export default defineComponent({
 
   setup() {
     const router = useRouter();
-    const route = useRoute();
+    const page = usePageData();
     const routeLocale = useRouteLocale();
     const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();
     const themeLocale = useThemeLocaleData();
@@ -59,7 +63,10 @@ export default defineComponent({
     const getBreadCrumbConfig = (): void => {
       const routes = router.getRoutes();
 
-      const breadcrumbConfig = getAncestorLinks(route, routeLocale.value)
+      const breadcrumbConfig = getAncestorLinks(
+        page.value.path,
+        routeLocale.value
+      )
         .map<BreadCrumbConfig | null>((link) => {
           const route = routes.find((route) => route.path === link);
 
@@ -84,8 +91,9 @@ export default defineComponent({
     };
 
     onMounted(() => {
-      void getBreadCrumbConfig();
-      watch(() => route.path, getBreadCrumbConfig);
+      getBreadCrumbConfig();
+
+      watch(() => page.value.path, getBreadCrumbConfig);
     });
 
     return (): VNode =>

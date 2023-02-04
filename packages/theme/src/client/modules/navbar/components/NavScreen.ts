@@ -1,3 +1,4 @@
+import { usePageData } from "@vuepress/client";
 import { clearAllBodyScrollLocks, disableBodyScroll } from "body-scroll-lock";
 import {
   Transition,
@@ -9,7 +10,6 @@ import {
   ref,
   watch,
 } from "vue";
-import { useRoute } from "vue-router";
 
 import { useWindowSize } from "@theme-hope/composables/index";
 import NavScreenLinks from "@theme-hope/modules/navbar/components/NavScreenLinks";
@@ -34,7 +34,7 @@ export default defineComponent({
   },
 
   setup(props, { emit, slots }) {
-    const route = useRoute();
+    const page = usePageData();
     const { isMobile } = useWindowSize();
 
     const screen = ref<HTMLElement>();
@@ -48,7 +48,7 @@ export default defineComponent({
       });
 
       watch(
-        () => route.path,
+        () => page.value.path,
         () => {
           clearAllBodyScrollLocks();
           emit("close");

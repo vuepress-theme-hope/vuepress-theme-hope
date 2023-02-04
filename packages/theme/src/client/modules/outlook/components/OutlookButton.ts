@@ -1,6 +1,6 @@
+import { usePageData } from "@vuepress/client";
 import { useFullscreen } from "@vueuse/core";
 import { type VNode, computed, defineComponent, h, ref, watch } from "vue";
-import { useRoute } from "vue-router";
 
 import { usePure, useThemeData } from "@theme-hope/composables/index";
 import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch";
@@ -18,7 +18,7 @@ export default defineComponent({
     const { isSupported } = useFullscreen();
     const themeData = useThemeData();
     const pure = usePure();
-    const route = useRoute();
+    const page = usePageData();
     const { canToggle } = useDarkmode();
 
     const open = ref(false);
@@ -32,7 +32,7 @@ export default defineComponent({
     );
 
     watch(
-      () => route.path,
+      () => page.value.path,
       () => {
         open.value = false;
       }

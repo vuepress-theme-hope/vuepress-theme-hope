@@ -1,5 +1,6 @@
+import { usePageData } from "@vuepress/client";
 import { type PropType, type VNode, defineComponent, h } from "vue";
-import { useRoute, useRouter } from "vue-router";
+import { useRouter } from "vue-router";
 import { generateIndexFromHash } from "vuepress-shared/client";
 
 import { CategoryIcon } from "@theme-hope/modules/info/components/icons";
@@ -34,11 +35,11 @@ export default defineComponent({
 
   setup(props) {
     const router = useRouter();
-    const route = useRoute();
+    const page = usePageData();
     const metaLocale = useMetaLocale();
 
     const navigate = (event: Event, path = ""): void => {
-      if (path && route.path !== path) {
+      if (path && page.value.path !== path) {
         event.preventDefault();
         void router.push(path);
       }

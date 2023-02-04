@@ -1,7 +1,7 @@
+import { usePageData } from "@vuepress/client";
 import { isPlainObject } from "@vuepress/shared";
 import { useSessionStorage, useStorage } from "@vueuse/core";
 import { type ComputedRef, computed } from "vue";
-import { useRoute } from "vue-router";
 import { keys, startsWith } from "vuepress-shared/client";
 
 import { checkToken } from "@theme-hope/modules/encrypt/utils/index";
@@ -22,7 +22,7 @@ export interface PathEncrypt {
 }
 
 export const usePathEncrypt = (): PathEncrypt => {
-  const route = useRoute();
+  const page = usePageData();
   const encryptData = useEncryptData();
 
   const localToken = useStorage<Record<string, string>>(STORAGE_KEY, {});
@@ -66,11 +66,11 @@ export const usePathEncrypt = (): PathEncrypt => {
     };
   };
 
-  const status = computed(() => getStatus(route.path));
+  const status = computed(() => getStatus(page.value.path));
 
   const validate = (inputToken: string, keep = false): void => {
     const { config = {} } = encryptData.value;
-    const matchedKeys = getPathMatchedKeys(route.path);
+    const matchedKeys = getPathMatchedKeys(page.value.path);
 
     // some of the tokens matches
     for (const hitKey of matchedKeys)

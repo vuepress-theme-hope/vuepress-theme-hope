@@ -1,6 +1,5 @@
-import { usePageFrontmatter } from "@vuepress/client";
+import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import { type VNode, computed, defineComponent, h } from "vue";
-import { useRoute } from "vue-router";
 import {
   type BlogPluginFrontmatter,
   type BlogTypeFrontmatterOptions,
@@ -27,7 +26,7 @@ export default defineComponent({
   setup() {
     const blogType = useBlogType<ArticleInfo>();
     const frontmatter = usePageFrontmatter<BlogPluginFrontmatter>();
-    const route = useRoute();
+    const page = usePageData();
     const articles = useArticles();
     const stars = useStars();
 
@@ -51,7 +50,7 @@ export default defineComponent({
             h("main", { class: "blog-main", id: "main-content" }, [
               h(DropTransition, () => h(ArticleType)),
               h(DropTransition, { appear: true, delay: 0.24 }, () =>
-                h(ArticleList, { key: route.path, items: items.value })
+                h(ArticleList, { key: page.value.path, items: items.value })
               ),
             ]),
             h(DropTransition, { delay: 0.16 }, () => h(InfoPanel)),

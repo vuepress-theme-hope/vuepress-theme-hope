@@ -1,4 +1,8 @@
-import { usePageFrontmatter, useRouteLocale } from "@vuepress/client";
+import {
+  usePageData,
+  usePageFrontmatter,
+  useRouteLocale,
+} from "@vuepress/client";
 import { type ComputedRef, computed, ref } from "vue";
 import { useRouter } from "vue-router";
 import { resolveRouteWithRedirect } from "vuepress-shared/client";
@@ -22,6 +26,7 @@ export const useBlogType = <
 >(
   key = ""
 ): ComputedRef<BlogTypeData<T>> => {
+  const page = usePageData();
   const router = useRouter();
   const routeLocale = useRouteLocale();
 
@@ -53,7 +58,7 @@ export const useBlogType = <
       const route = routes.find(({ name }) => name === pageKey);
 
       if (route) {
-        const finalRoute = resolveRouteWithRedirect(router, route.path);
+        const finalRoute = resolveRouteWithRedirect(router, page.value.path);
 
         result.items.push({
           path: finalRoute.path,

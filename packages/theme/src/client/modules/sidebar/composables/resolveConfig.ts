@@ -11,7 +11,6 @@ import {
   isPlainObject,
   isString,
 } from "@vuepress/shared";
-import { useRoute } from "vue-router";
 import { keys, startsWith } from "vuepress-shared/client";
 
 import { sidebarData } from "@temp/theme-hope/sidebar";
@@ -76,7 +75,6 @@ export const resolveArraySidebarItems = (
   prefix = ""
 ): ResolvedSidebarItem[] => {
   const page = usePageData();
-  const route = useRoute();
 
   const handleChildItem = (
     item: SidebarItem,
@@ -116,7 +114,7 @@ export const resolveArraySidebarItems = (
       children:
         // if the sidebar item is current page and children is not set
         // use headers of current page as children
-        childItem.link === route.path
+        childItem.link === page.value.path
           ? headersToSidebarItemChildren(
               // skip h1 header
               page.value.headers[0]?.level === 1
@@ -138,12 +136,12 @@ export const resolveMultiSidebarItems = (
   sidebarConfig: SidebarObjectOptions,
   headerDepth: number
 ): ResolvedSidebarItem[] => {
-  const route = useRoute();
+  const page = usePageData();
   const sidebarRoutes = keys(sidebarConfig).sort((x, y) => y.length - x.length);
 
   // find matching config
   for (const base of sidebarRoutes)
-    if (startsWith(decodeURI(route.path), base)) {
+    if (startsWith(decodeURI(page.value.path), base)) {
       const matchedConfig = sidebarConfig[base];
 
       return matchedConfig
@@ -159,7 +157,7 @@ export const resolveMultiSidebarItems = (
         : [];
     }
 
-  console.warn(`${route.path} is missing sidebar config.`);
+  console.warn(`${page.value.path} is missing sidebar config.`);
 
   return [];
 };

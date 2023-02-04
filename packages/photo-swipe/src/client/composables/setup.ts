@@ -1,6 +1,6 @@
+import { usePageData } from "@vuepress/client";
 import { useFullscreen } from "@vueuse/core";
-import { onMounted, watch } from "vue";
-import { useRoute } from "vue-router";
+import { nextTick, onMounted, watch } from "vue";
 import { useLocaleConfig } from "vuepress-shared/client";
 
 import { delay, imageSelector, locales, options } from "../define.js";
@@ -11,13 +11,15 @@ import "photoswipe/dist/photoswipe.css";
 export const setupPhotoSwipe = (): void => {
   const { isSupported, toggle } = useFullscreen();
   const locale = useLocaleConfig(locales);
-  const route = useRoute();
+  const page = usePageData();
 
   const initPhotoSwipe = (): Promise<void> =>
     Promise.all([
       import(/* webpackChunkName: "photo-swipe" */ "photoswipe"),
-      new Promise<void>((resolve) => setTimeout(resolve, delay)).then(() =>
-        getImages(imageSelector)
+      nextTick().then(() =>
+        new Promise<void>((resolve) => setTimeout(resolve, delay)).then(() =>
+          getImages(imageSelector)
+        )
       ),
     ]).then(([photoSwipe, images]) => {
       images.elements.forEach((image, index) => {
@@ -86,7 +88,7 @@ export const setupPhotoSwipe = (): void => {
     void initPhotoSwipe();
 
     watch(
-      () => route.path,
+      () => page.value.path,
       () => initPhotoSwipe()
     );
   });

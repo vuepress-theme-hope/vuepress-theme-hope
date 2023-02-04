@@ -1,8 +1,7 @@
-import { usePageFrontmatter } from "@vuepress/client";
+import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import { isPlainObject, isString } from "@vuepress/shared";
 import { useEventListener } from "@vueuse/core";
 import { type VNode, computed, defineComponent, h } from "vue";
-import { useRoute } from "vue-router";
 
 import AutoLink from "@theme-hope/components/AutoLink";
 import Icon from "@theme-hope/components/Icon";
@@ -75,7 +74,7 @@ export default defineComponent({
     const themeLocale = useThemeLocaleData();
     const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();
     const sidebarItems = useSidebarItems();
-    const route = useRoute();
+    const page = usePageData();
     const navigate = useNavigate();
 
     const prevNavLink = computed(() => {
@@ -86,7 +85,11 @@ export default defineComponent({
         : prevConfig ||
             (themeLocale.value.prevLink === false
               ? null
-              : resolveFromSidebarItems(sidebarItems.value, route.path, -1));
+              : resolveFromSidebarItems(
+                  sidebarItems.value,
+                  page.value.path,
+                  -1
+                ));
     });
 
     const nextNavLink = computed(() => {
@@ -97,7 +100,11 @@ export default defineComponent({
         : nextConfig ||
             (themeLocale.value.nextLink === false
               ? null
-              : resolveFromSidebarItems(sidebarItems.value, route.path, 1));
+              : resolveFromSidebarItems(
+                  sidebarItems.value,
+                  page.value.path,
+                  1
+                ));
     });
 
     useEventListener("keydown", (event): void => {

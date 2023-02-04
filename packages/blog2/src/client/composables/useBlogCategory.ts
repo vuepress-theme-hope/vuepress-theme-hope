@@ -1,6 +1,10 @@
-import { usePageFrontmatter, useRouteLocale } from "@vuepress/client";
+import {
+  usePageData,
+  usePageFrontmatter,
+  useRouteLocale,
+} from "@vuepress/client";
 import { type ComputedRef, computed, ref } from "vue";
-import { useRoute, useRouter } from "vue-router";
+import { useRouter } from "vue-router";
 import { resolveRouteWithRedirect } from "vuepress-shared/client";
 
 import { categoryMap } from "@temp/blog/category";
@@ -23,8 +27,8 @@ export const useBlogCategory = <
 >(
   key = ""
 ): ComputedRef<BlogCategoryData<T>> => {
+  const page = usePageData();
   const router = useRouter();
-  const route = useRoute();
   const routeLocale = useRouteLocale();
 
   return computed(() => {
@@ -61,7 +65,7 @@ export const useBlogCategory = <
         const route = routes.find(({ name }) => name === pageKey);
 
         if (route) {
-          const finalRoute = resolveRouteWithRedirect(router, route.path);
+          const finalRoute = resolveRouteWithRedirect(router, page.value.path);
 
           result.map[category].items.push({
             path: finalRoute.path,
@@ -73,7 +77,7 @@ export const useBlogCategory = <
         }
       }
 
-      if (route.path === categoryMap.path)
+      if (page.value.path === categoryMap.path)
         result.currentItems = result.map[category].items;
     }
 
