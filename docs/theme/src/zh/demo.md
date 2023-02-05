@@ -116,6 +116,13 @@ docs:
     repo: https://github.com/CMHopeSunshine/LittlePaimon-Docs
     preview: /assets/image/paimon.jpg
 
+  - name: SForum
+    desc: 基于 PHP Swoole 开发的高性能组件化论坛程序
+    logo: https://www.sforum.cn/logo.svg
+    url: https:/www.sforum.cn
+    repo: https://github.com/zhuchunshu/sforum-docs
+    preview: /assets/image/sforum.png
+
 blog:
   - name: Mr.Hope’s Blog
     desc: Where there is light, there is hope
