@@ -1,5 +1,5 @@
 import { fs, path } from "@vuepress/utils";
-import { execaSync } from "execa";
+import { execaCommandSync } from "execa";
 
 export type PackageManager = "npm" | "yarn" | "pnpm";
 
@@ -13,8 +13,8 @@ const PNPM_LOCK = "pnpm-lock.yaml";
 const isInstalled = (packageManager: PackageManager): boolean => {
   try {
     return (
-      execaSync(`${packageManager} --version`, { stdio: "ignore" }).exitCode ===
-      0
+      execaCommandSync(`${packageManager} --version`, { stdio: "ignore" })
+        .exitCode === 0
     );
   } catch (e) {
     return false;
