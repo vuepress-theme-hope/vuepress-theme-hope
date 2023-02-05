@@ -40,13 +40,7 @@ export default defineClientConfig({
 
 ## Using Vue syntax and components in Markdown
 
-You can use Vue syntax directly in Markdown.
-
-::: info
-
-For the specific usage, see [VuePress → Markdown](../vuepress/markdown.md#Use -vue in -markdown-)
-
-:::
+You can use Vue syntax directly in Markdown, for details see [VuePress → Markdown](../vuepress/markdown.md#using-vue-in-markdown).
 
 If you need to import Vue components in Markdown, please note that you cannot use relative paths to import, nor write multiple `<script>` blocks.
 
