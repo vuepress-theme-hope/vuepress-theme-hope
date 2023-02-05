@@ -40,6 +40,10 @@
 
   transition: background var(--t-color, 0.3s ease);
 
+  @media print {
+    display: none;
+  }
+
   @media (max-width: hope-config.$mobile) {
     border-radius: 0;
   }
