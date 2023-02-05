@@ -1,8 +1,7 @@
-import { useRouteLocale } from "@vuepress/client";
 import axios from "axios";
 import { type VNode, defineComponent, h, onMounted, ref } from "vue";
-import { CopyCodeLocaleConfig } from "vuepress-plugin-copy-code2";
-import { Message } from "vuepress-shared/client";
+import { type CopyCodeLocaleConfig } from "vuepress-plugin-copy-code2";
+import { Message, useLocaleConfig } from "vuepress-shared/client";
 
 import "./icon-display.scss";
 
@@ -29,7 +28,7 @@ export default defineComponent({
   },
 
   setup(props) {
-    const routeLocale = useRouteLocale();
+    const locale = useLocaleConfig(COPY_CODE_LOCALES);
     const icons = ref<string[]>([]);
 
     const copyToClipboard = (content: string) => {
@@ -50,11 +49,7 @@ export default defineComponent({
       textAreaElement.select();
       document.execCommand("copy");
 
-      message.pop(
-        `${CHECK_ICON}<span>${
-          COPY_CODE_LOCALES[routeLocale.value].hint
-        } 🎉</span>`
-      );
+      message.pop(`${CHECK_ICON}<span>${locale.value.hint} 🎉</span>`);
 
       document.body.removeChild(textAreaElement);
 
