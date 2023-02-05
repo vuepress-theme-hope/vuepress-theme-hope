@@ -223,7 +223,7 @@ export const convertThemeOptions = (
   // handle copyright plugin
   if (
     isPlainObject(themeOptions["copyright"]) ||
-    typeof themeOptions["copyright"] === "boolean"
+    themeOptions["copyright"] === true
   )
     logger.warn(
       `${colors.magenta(
