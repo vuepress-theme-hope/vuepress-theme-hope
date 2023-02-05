@@ -57,50 +57,26 @@ Using object format sidebar config means you want to set different sidebar based
 
 Such errors are usually caused by incorrectly containing multiple versions of `@vue/xxx`, `@vuepress/xxx`, `vue` or `vue-router` in the project.
 
-Make sure you are using the latest `vuepress` and `vuepress-theme-hope` versions:
+Make sure you are using the latest `vuepress` and `vuepress-theme-hope` versions and all related packages. You can use `vp-update` helper for that
 
 ::: code-tabs#shell
 
 @tab pnpm
 
 ```bash
-pnpm add @vuepress/client@next vuepress@next vuepress-theme-hope vue@latest -E
+pnpm dlx vp-helper
 ```
 
 @tab yarn
 
 ```bash
-yarn add vuepress@next vuepress-theme-hope@latest -E
+yarn dlx vp-helper
 ```
 
 @tab npm
 
 ```bash
-npm i vuepress@next vuepress-theme-hope@latest -E
-```
-
-:::
-
-Also, upgrade dependencies to ensure your project only contains a single version of the relevant package:
-
-::: code-tabs#shell
-
-@tab pnpm
-
-```bash
-pnpm i && pnpm up
-```
-
-@tab yarn
-
-```bash
-yarn && yarn upgrade
-```
-
-@tab npm
-
-```bash
-npm i && npm update
+npx vp-helper
 ```
 
 :::
@@ -111,7 +87,9 @@ Any official packages starting with `@vuepress/` should be upgrade to the same v
 
 I.E.: if you are using `@vuepress/plugin-search` and `@vuepress/utils` , you should ensure they have the same version number as `vuepress`.
 
-Also, if you're using another third-party plugin, make sure it's compatible with the version of VuePress you're upgrading to.
+Besides, any plugin inside `vuepress-theme-hope` should be the same version as vuepress-theme-hope.
+
+Further more, if you're using another third-party plugin, make sure it's compatible with the version of VuePress you're upgrading to.
 
 :::
 

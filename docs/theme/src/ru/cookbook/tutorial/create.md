@@ -37,10 +37,13 @@ tag:
 Выполните следующую команду в терминале:
 
 ```sh
+# pnpm
 pnpm create vuepress-theme-hope my-docs
 
-# Or
+# yarn
+yarn create vuepress-theme-hope my-docs
 
+# npm
 npm init vuepress-theme-hope my-docs
 ```
 

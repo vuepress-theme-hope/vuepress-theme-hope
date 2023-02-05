@@ -5,7 +5,7 @@ category:
   - FAQ
 ---
 
-## Ensure You have correct Environment
+## Ensure running under correct environment
 
 `vuepress-theme-hope` only supports node version of `^14.18.0 || >=16.0.0`.
 
@@ -31,33 +31,13 @@ Also, you should use package manger satisfying the following requirements:
 
   Install: `npm i -g pnpm`
 
-## Убедитесь, что используете последнюю версию
+## Ensure using latest version and having correct deps tree
 
-Пожалуйста, убедитесь, что вы используете последнюю версию 2 `vuepress` и `vuepress-theme-hope`, потому что некоторые ошибки, с которыми вы столкнулись, могли быть исправлены в новых версиях.
+Please make sure you are using the latest `vuepress` and `vuepress-theme-hope` V2 version, because some bugs you encountered may have been fixed in new versions.
 
-Вы можете обновиться до последней версии, выполнив следующие команды.
+Also in some cases, you may generate incorrect dependency tree after upgrading some dependencies, this is because both `vuepress` and `vue` have many packages named `@vuepress/xxx` and `@vue/xxx`.
 
-::: code-tabs#shell
-
-@tab pnpm
-
-```bash
-pnpm add @vuepress/client@next vuepress@next vuepress-theme-hope vue@latest -E
-```
-
-@tab yarn
-
-```bash
-yarn add vuepress@next vuepress-theme-hope@latest -E
-```
-
-@tab npm
-
-```bash
-npm i vuepress@next vuepress-theme-hope@latest -E
-```
-
-:::
+To let VuePress work correctly, there should only be one version of `@vuepress/xxx` `@vue/xxx` `vue` and `vue-router` in the whole project. Multiple versions of a package can cause different parts of the application to use different instances of Vue and the corresponding package, resulting in errors like `useXXX() is called without provider`.
 
 ::: warning
 
@@ -65,45 +45,33 @@ Any official packages starting with `@vuepress/` should be upgrade to the same v
 
 I.E.: if you are using `@vuepress/plugin-search` and `@vuepress/utils` , you should ensure they have the same version number as `vuepress`.
 
-Also, if you're using another third-party plugin, make sure it's compatible with the version of VuePress you're upgrading to.
+Besides, any plugin inside `vuepress-theme-hope` should be the same version as vuepress-theme-hope.
+
+Further more, if you're using another third-party plugin, make sure it's compatible with the version of VuePress you're upgrading to.
 
 :::
 
-## Убедитесь, что у вас есть правильное дерево зависимостей
-
-В некоторых случаях вы можете сгенерировать неправильное дерево зависимостей после обновления некоторых зависимостей, потому что и `vuepress` и `vue` состоят из множества пакетов с именами `@vuepress/xxx` и `@vue/xxx`.
-
-Для правильной работы VuePress во всем проекте должна быть только одна версия `@vuepress/xxx`, `@vue/xxx`, `vue` и `vue-router`. Наличие нескольких версий пакета может привести к тому, что разные части приложения будут использовать разные экземпляры Vue и соответствующий пакет, что приведет к таким ошибкам, как `useXXX() is called without provider`.
-
-Выполните следующую команду, чтобы убедиться, что ваше дерево зависимостей правильное.
+You can execute the following command to make sure you are using the latest version and having correct deps tree.
 
 ::: code-tabs#shell
 
 @tab pnpm
 
 ```bash
-pnpm i && pnpm up
+pnpm dlx vp-helper
 ```
 
 @tab yarn
 
 ```bash
-yarn && yarn upgrade
+yarn dlx vp-helper
 ```
 
 @tab npm
 
 ```bash
-npm i && npm update
+npx vp-helper
 ```
-
-:::
-
-::: tip версия npm
-
-Если вы используете npm, убедитесь, что вы используете npm v8. Вы можете получить номер версии npm, выполнив команду `npm -v`.
-
-Если основной номер версии меньше 8 (т. е. номер версии не `8.x.x`), запустите команду `npm i -g npm`, чтобы обновить npm до v8, и повторите приведенную выше команду.
 
 :::
 

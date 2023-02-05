@@ -22,6 +22,12 @@ tag:
 pnpm create vuepress-theme-hope [dir]
 ```
 
+@tab yarn
+
+```bash
+yarn create vuepress-theme-hope [dir]
+```
+
 @tab npm
 
 ```bash
@@ -38,6 +44,12 @@ npm init vuepress-theme-hope [dir]
 
 ```bash
 pnpm create vuepress-theme-hope add [dir]
+```
+
+@tab yarn
+
+```bash
+yarn create vuepress-theme-hope add [dir]
 ```
 
 @tab npm
