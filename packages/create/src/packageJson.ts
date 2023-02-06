@@ -4,18 +4,26 @@ import { resolve } from "node:path";
 import inquirer from "inquirer";
 
 import { type CreateI18n, version } from "./config/index.js";
-import { deepAssign } from "./utils/index.js";
+import { type PackageManager, deepAssign } from "./utils/index.js";
 
-const getScript = (dir: string): Record<string, string> => ({
+const getScript = (
+  packageManager: PackageManager,
+  dir: string
+): Record<string, string> => ({
   // eslint-disable-next-line @typescript-eslint/naming-convention
   "docs:build": `vuepress build ${dir}`,
   // eslint-disable-next-line @typescript-eslint/naming-convention
   "docs:clean-dev": `vuepress dev ${dir} --clean-cache`,
   // eslint-disable-next-line @typescript-eslint/naming-convention
   "docs:dev": `vuepress dev ${dir}`,
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  "docs:update-package": `${
+    packageManager === "npm" ? "npx" : `${packageManager} dlx`
+  } vp-update`,
 });
 
 export const createPackageJson = async (
+  packageManager: PackageManager,
   message: CreateI18n,
   source: string,
   cwd = process.cwd()
@@ -25,7 +33,7 @@ export const createPackageJson = async (
    */
 
   const packageJsonPath = resolve(cwd, "package.json");
-  const scripts = getScript(source);
+  const scripts = getScript(packageManager, source);
   const devDependencies = {
     "@vuepress/client": "2.0.0-beta.60",
     vue: "^3.2.47",
