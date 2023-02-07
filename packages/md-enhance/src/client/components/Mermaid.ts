@@ -5,8 +5,8 @@ import {
   defineComponent,
   h,
   nextTick,
-  onBeforeUnmount,
   onMounted,
+  onUnmounted,
   ref,
   watch,
 } from "vue";
@@ -90,7 +90,6 @@ export default defineComponent({
   },
 
   setup(props) {
-    let observer: MutationObserver | null = null;
     const mermaidElement = ref<HTMLElement>();
 
     const svgCode = ref("");
@@ -170,7 +169,7 @@ export default defineComponent({
       void renderMermaid();
 
       // watch darkmode change
-      observer = new MutationObserver(() => {
+      const observer = new MutationObserver(() => {
         isDarkmode.value = getDarkmodeStatus();
       });
 
@@ -180,10 +179,10 @@ export default defineComponent({
       });
 
       watch(isDarkmode, () => renderMermaid());
-    });
 
-    onBeforeUnmount(() => {
-      observer?.disconnect();
+      onUnmounted(() => {
+        observer.disconnect();
+      });
     });
 
     return (): VNode =>

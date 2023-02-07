@@ -9,9 +9,8 @@ export default defineComponent({
 
   setup(_props, { slots }) {
     // handle scrollBehavior with transition
-    const scrollPromise = useScrollPromise();
-    const onBeforeEnter = scrollPromise.resolve;
-    const onBeforeLeave = scrollPromise.pending;
+    const { resolve: onBeforeEnter, pending: onBeforeLeave } =
+      useScrollPromise();
 
     return (): VNode =>
       h(

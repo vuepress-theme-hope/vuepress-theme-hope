@@ -7,8 +7,8 @@ import {
   computed,
   defineComponent,
   h,
-  onBeforeUnmount,
   onMounted,
+  onUnmounted,
   ref,
   resolveComponent,
   watch,
@@ -137,7 +137,6 @@ export default defineComponent({
       0;
 
     // close sidebar after navigation
-    let unregisterRouterHook: () => void;
     let lastDistance = 0;
 
     useEventListener(
@@ -167,13 +166,13 @@ export default defineComponent({
     });
 
     onMounted(() => {
-      unregisterRouterHook = router.afterEach((): void => {
+      const unregisterRouterHook = router.afterEach((): void => {
         toggleMobileSidebar(false);
       });
-    });
 
-    onBeforeUnmount(() => {
-      unregisterRouterHook();
+      onUnmounted(() => {
+        unregisterRouterHook();
+      });
     });
 
     return (): VNode =>

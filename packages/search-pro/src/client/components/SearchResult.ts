@@ -7,8 +7,8 @@ import {
   computed,
   defineComponent,
   h,
-  onBeforeUnmount,
   onMounted,
+  onUnmounted,
   ref,
   toRef,
 } from "vue";
@@ -153,7 +153,7 @@ export default defineComponent({
       disableBodyScroll(searchResult.value!, { reserveScrollBarGap: true });
     });
 
-    onBeforeUnmount(() => {
+    onUnmounted(() => {
       clearAllBodyScrollLocks();
     });
 

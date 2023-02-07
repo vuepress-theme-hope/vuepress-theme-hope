@@ -8,8 +8,8 @@ import {
   type VNode,
   defineComponent,
   h,
-  onBeforeUnmount,
   onMounted,
+  onUnmounted,
   ref,
 } from "vue";
 import { LoadingIcon, atou } from "vuepress-shared/client";
@@ -72,7 +72,7 @@ export default defineComponent({
 
     let reveal: Reveal | null = null;
 
-    const initRevealJS = async (container: HTMLElement): Promise<void> => {
+    const initRevealJS = async (container: HTMLElement): Promise<Reveal> => {
       const promises: [
         Promise<void>,
         ...Promise<typeof import("reveal.js/dist/reveal.esm.js")>[]
@@ -83,7 +83,7 @@ export default defineComponent({
 
       const [, revealJS, ...plugins] = await Promise.all(promises);
 
-      reveal = new revealJS.default(container, {
+      const reveal = new revealJS.default(container, {
         plugins: plugins.map(({ default: plugin }) => plugin),
       });
 
@@ -99,9 +99,11 @@ export default defineComponent({
       });
 
       reveal.configure({ backgroundTransition: "slide" });
+
+      return reveal;
     };
 
-    onMounted(() => {
+    onMounted(async () => {
       const container = presentationContainer.value;
 
       if (container) {
@@ -110,13 +112,13 @@ export default defineComponent({
         container.setAttribute("id", props.id);
         container.setAttribute("data-theme", props.theme);
 
-        void initRevealJS(container).then(() => {
-          loading.value = false;
-        });
+        reveal = await initRevealJS(container);
+
+        loading.value = false;
       }
     });
 
-    onBeforeUnmount(() => {
+    onUnmounted(() => {
       reveal?.destroy();
     });
 

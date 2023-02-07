@@ -5,8 +5,8 @@ import {
   type VNode,
   defineComponent,
   h,
-  onBeforeUnmount,
   onMounted,
+  onUnmounted,
   ref,
 } from "vue";
 import { LoadingIcon, atou } from "vuepress-shared/client";
@@ -71,6 +71,11 @@ export default defineComponent({
 
     const loading = ref(true);
 
+    useEventListener(
+      "resize",
+      useDebounceFn(() => chart?.resize(), 100)
+    );
+
     onMounted(() => {
       void Promise.all([
         import(/* webpackChunkName: "echarts" */ "echarts"),
@@ -84,14 +89,9 @@ export default defineComponent({
 
         loading.value = false;
       });
-
-      useEventListener(
-        "resize",
-        useDebounceFn(() => chart?.resize(), 100)
-      );
     });
 
-    onBeforeUnmount(() => {
+    onUnmounted(() => {
       chart?.dispose();
     });
 

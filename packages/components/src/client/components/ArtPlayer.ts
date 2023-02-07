@@ -8,8 +8,8 @@ import {
   camelize,
   defineComponent,
   h,
-  onBeforeUnmount,
   onMounted,
+  onUnmounted,
 } from "vue";
 import { keys } from "vuepress-shared/client";
 
@@ -287,7 +287,7 @@ export default defineComponent({
       artPlayerInstance = (await props.customPlayer(player)) || player;
     });
 
-    onBeforeUnmount(() => {
+    onUnmounted(() => {
       artPlayerInstance?.destroy();
     });
 

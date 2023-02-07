@@ -9,8 +9,8 @@ import {
   defineComponent,
   h,
   nextTick,
-  onBeforeUnmount,
   onMounted,
+  onUnmounted,
   ref,
   watch,
 } from "vue";
@@ -210,7 +210,7 @@ export default defineComponent({
       );
     });
 
-    onBeforeUnmount(() => instance?.destroy());
+    onUnmounted(() => instance?.destroy());
 
     return (): VNode =>
       h(

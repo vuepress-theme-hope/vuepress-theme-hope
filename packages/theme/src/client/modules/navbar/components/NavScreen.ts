@@ -5,8 +5,8 @@ import {
   type VNode,
   defineComponent,
   h,
-  onBeforeUnmount,
   onMounted,
+  onUnmounted,
   ref,
   watch,
 } from "vue";
@@ -56,7 +56,7 @@ export default defineComponent({
       );
     });
 
-    onBeforeUnmount(() => {
+    onUnmounted(() => {
       clearAllBodyScrollLocks();
     });
 
