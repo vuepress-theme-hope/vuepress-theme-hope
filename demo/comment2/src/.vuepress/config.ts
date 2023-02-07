@@ -16,7 +16,7 @@ export default defineUserConfig({
 
     repo: "vuepress-theme-hope/vuepress-theme-hope/tree/main/demo/comment2/",
 
-    navbar: ["/", "/test"],
+    navbar: ["/", "/test", "/test2"],
   }),
 
   plugins: [
@@ -39,8 +39,15 @@ export default defineUserConfig({
       /**
        * Using Waline
        */
-      provider: "Waline",
-      serverURL: "https://vuepress-theme-hope-comment.vercel.app",
+      // provider: "Waline",
+      // serverURL: "https://vuepress-theme-hope-comment.vercel.app",
+
+      /**
+       * Using artalk
+       */
+      provider: "Artalk",
+      site: "artalk-demo",
+      server: "https://demo-artalk.jjdxb.top/",
     }),
   ],
 });

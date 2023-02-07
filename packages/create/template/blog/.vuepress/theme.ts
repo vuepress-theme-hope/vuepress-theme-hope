@@ -140,6 +140,13 @@ export default hopeTheme({
        */
       // provider: "Waline",
       // serverURL: "https://vuepress-theme-hope-comment.vercel.app",
+
+      /**
+       * Using artalk
+       */
+      // provider: "Artalk",
+      // site: "artalk-demo",
+      // server: "https://demo-artalk.jjdxb.top/",
     },
 
     // Disable features you don’t want here

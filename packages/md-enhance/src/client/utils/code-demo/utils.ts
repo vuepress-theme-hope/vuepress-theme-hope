@@ -1,8 +1,8 @@
 import { isPlainObject } from "@vuepress/shared";
 import { keys } from "vuepress-shared/client";
 
-import type { Code } from "./typings.js";
-import type { CodeDemoOptions } from "../../../shared/index.js";
+import { type Code } from "./typings.js";
+import { type CodeDemoOptions } from "../../../shared/index.js";
 
 declare const CODE_DEMO_OPTIONS: CodeDemoOptions;
 
@@ -66,9 +66,10 @@ export const h = (
         const k = key.replace("data", "");
 
         node.dataset[k] = attrs[key];
-
+      } else {
         // @ts-ignore
-      } else node[key] = attrs[key];
+        node[key] = attrs[key];
+      }
     });
 
   if (children)

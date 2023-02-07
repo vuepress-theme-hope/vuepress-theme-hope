@@ -1,15 +1,20 @@
 import { usePageFrontmatter, withBase } from "@vuepress/client";
-import { computed, defineComponent, h, onMounted, ref, watch } from "vue";
+import { type Mesh, type default as Three } from "three";
+import { type OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+import { type STLLoader } from "three/examples/jsm/loaders/STLLoader.js";
+import {
+  type VNode,
+  computed,
+  defineComponent,
+  h,
+  onMounted,
+  ref,
+  watch,
+} from "vue";
+import { type ThemeProjectHomePageFrontmatter } from "vuepress-theme-hope";
 
 // @ts-ignore
 import { useWindowSize } from "@theme-hope/composables/index";
-
-import type Three from "three";
-import type { Mesh } from "three";
-import type { STLLoader } from "three/examples/jsm/loaders/STLLoader.js";
-import type { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-import type { VNode } from "vue";
-import type { ThemeProjectHomePageFrontmatter } from "vuepress-theme-hope";
 
 import "../styles/hope-logo.scss";
 
@@ -26,11 +31,11 @@ export default defineComponent({
       isMobile.value ? { width: 220, height: 220 } : { width: 300, height: 300 }
     );
 
-    const renderLogo = (
+    const renderLogo = async (
       three: typeof Three,
       STLLoaderConstructor: typeof STLLoader,
       OrbitControlsConstructor: typeof OrbitControls
-    ): void => {
+    ): Promise<void> => {
       const { width, height } = sizes.value;
 
       // Canvas
@@ -46,57 +51,6 @@ export default defineComponent({
       // Models
       let logo1: Mesh;
       let logo2: Mesh;
-
-      void Promise.all([
-        new Promise<void>((resolve) =>
-          stlLoader.load(withBase("/assets/model/logo1.stl"), (geometry) => {
-            const material = new three.MeshPhysicalMaterial({
-              color: 0x284c39,
-              metalness: 0.45,
-              roughness: 0.5,
-              roughnessMap: roughnessTexture,
-              displacementScale: 0.15,
-              emissiveIntensity: 0.4,
-              reflectivity: 1,
-            });
-
-            logo1 = new three.Mesh(geometry, material);
-            logo1.castShadow = true;
-            logo1.receiveShadow = true;
-            logo1.rotation.z = 0;
-            logo1.scale.set(0.3, 0.3, 0.3);
-
-            scene.add(logo1);
-
-            resolve();
-          })
-        ),
-        new Promise<void>((resolve) =>
-          stlLoader.load(withBase("/assets/model/logo2.stl"), (geometry) => {
-            const material = new three.MeshPhysicalMaterial({
-              color: 0x35495e,
-              metalness: 0.7,
-              roughness: 0.5,
-              roughnessMap: roughnessTexture,
-              displacementScale: 0.15,
-              emissiveIntensity: 0.4,
-              reflectivity: 1,
-            });
-
-            logo2 = new three.Mesh(geometry, material);
-            logo2.castShadow = true;
-            logo2.receiveShadow = true;
-            logo2.rotation.z = 0;
-            logo2.scale.set(0.3, 0.3, 0.3);
-
-            scene.add(logo2);
-
-            resolve();
-          })
-        ),
-      ]).then(() => {
-        ready.value = true;
-      });
 
       // Lights
       const ambientLight = new three.AmbientLight(0xffffff, 2);
@@ -160,25 +114,74 @@ export default defineComponent({
       };
 
       tick();
+
+      await Promise.all([
+        new Promise<void>((resolve) =>
+          stlLoader.load(withBase("/assets/model/logo1.stl"), (geometry) => {
+            const material = new three.MeshPhysicalMaterial({
+              color: 0x284c39,
+              metalness: 0.45,
+              roughness: 0.5,
+              roughnessMap: roughnessTexture,
+              displacementScale: 0.15,
+              emissiveIntensity: 0.4,
+              reflectivity: 1,
+            });
+
+            logo1 = new three.Mesh(geometry, material);
+            logo1.castShadow = true;
+            logo1.receiveShadow = true;
+            logo1.rotation.z = 0;
+            logo1.scale.set(0.3, 0.3, 0.3);
+
+            scene.add(logo1);
+
+            resolve();
+          })
+        ),
+        new Promise<void>((resolve) =>
+          stlLoader.load(withBase("/assets/model/logo2.stl"), (geometry) => {
+            const material = new three.MeshPhysicalMaterial({
+              color: 0x35495e,
+              metalness: 0.7,
+              roughness: 0.5,
+              roughnessMap: roughnessTexture,
+              displacementScale: 0.15,
+              emissiveIntensity: 0.4,
+              reflectivity: 1,
+            });
+
+            logo2 = new three.Mesh(geometry, material);
+            logo2.castShadow = true;
+            logo2.receiveShadow = true;
+            logo2.rotation.z = 0;
+            logo2.scale.set(0.3, 0.3, 0.3);
+
+            scene.add(logo2);
+
+            resolve();
+          })
+        ),
+      ]);
+
+      ready.value = true;
     };
 
     onMounted(() =>
       Promise.all([
-        import("three" /* webpackChunkName: "hope-logo" */).then(
+        import(/* webpackChunkName: "hope-logo" */ "three").then(
           (m) => m.default || m
         ),
         import(
-          "three/examples/jsm/controls/OrbitControls.js" /* webpackChunkName: "hope-logo" */
+          /* webpackChunkName: "hope-logo" */ "three/examples/jsm/controls/OrbitControls.js"
         ).then((m) => m.default || m),
         import(
-          "three/examples/jsm/loaders/STLLoader.js" /* webpackChunkName: "hope-logo" */
+          /* webpackChunkName: "hope-logo" */ "three/examples/jsm/loaders/STLLoader.js"
         ).then((m) => m.default || m),
       ]).then(([THREE, { OrbitControls }, { STLLoader }]) => {
-        renderLogo(THREE, STLLoader, OrbitControls);
+        void renderLogo(THREE, STLLoader, OrbitControls);
 
-        watch(isMobile, () => {
-          renderLogo(THREE, STLLoader, OrbitControls);
-        });
+        watch(isMobile, () => renderLogo(THREE, STLLoader, OrbitControls));
       })
     );
 

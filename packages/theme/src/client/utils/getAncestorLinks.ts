@@ -1,11 +1,10 @@
 import { removeEndingSlash } from "@vuepress/shared";
-import type { RouteLocation } from "vue-router";
 
 export const getAncestorLinks = (
-  route: RouteLocation,
+  path: string,
   routeLocale: string
 ): string[] => {
-  const routePaths = route.path.replace(routeLocale, "/").split("/");
+  const routePaths = path.replace(routeLocale, "/").split("/");
   const links: string[] = [];
   let link = removeEndingSlash(routeLocale);
 

@@ -1,20 +1,19 @@
+import { usePageData } from "@vuepress/client";
 import { clearAllBodyScrollLocks, disableBodyScroll } from "body-scroll-lock";
 import {
   Transition,
+  type VNode,
   defineComponent,
   h,
-  onBeforeUnmount,
   onMounted,
+  onUnmounted,
   ref,
   watch,
 } from "vue";
-import { useRoute } from "vue-router";
 
 import { useWindowSize } from "@theme-hope/composables/index";
 import NavScreenLinks from "@theme-hope/modules/navbar/components/NavScreenLinks";
 import OutlookSettings from "@theme-hope/modules/outlook/components/OutlookSettings";
-
-import type { VNode } from "vue";
 
 import "../styles/nav-screen.scss";
 
@@ -35,7 +34,7 @@ export default defineComponent({
   },
 
   setup(props, { emit, slots }) {
-    const route = useRoute();
+    const page = usePageData();
     const { isMobile } = useWindowSize();
 
     const screen = ref<HTMLElement>();
@@ -49,7 +48,7 @@ export default defineComponent({
       });
 
       watch(
-        () => route.path,
+        () => page.value.path,
         () => {
           clearAllBodyScrollLocks();
           emit("close");
@@ -57,7 +56,7 @@ export default defineComponent({
       );
     });
 
-    onBeforeUnmount(() => {
+    onUnmounted(() => {
       clearAllBodyScrollLocks();
     });
 

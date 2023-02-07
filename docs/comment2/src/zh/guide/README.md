@@ -20,7 +20,7 @@ icon: lightbulb
 
 ## 评论服务
 
-目前你可以选择 Giscus、Waline 和 Twikoo。
+目前你可以选择 Giscus、Waline、 Twikoo 和 Artalk。
 
 ::: tip 选择评论服务
 
@@ -36,3 +36,5 @@ icon: lightbulb
 - [Waline 指南](waline.md)
 
 - [Twikoo 指南](twikoo.md)
+
+- [Artalk 指南](artalk.md)

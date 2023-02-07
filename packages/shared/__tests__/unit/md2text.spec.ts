@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+
 import { md2text } from "../../src/node/markdown/md2text.js";
 
 describe("md2text", () => {

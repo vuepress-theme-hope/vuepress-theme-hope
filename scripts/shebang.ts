@@ -1,9 +1,9 @@
 import MagicString from "magic-string";
-import type {
-  Plugin,
-  RenderedChunk,
-  SourceMapInput,
-  TransformResult,
+import {
+  type Plugin,
+  type RenderedChunk,
+  type SourceMapInput,
+  type TransformResult,
 } from "rollup";
 
 const hashBangRegex = /^\s*(#!.*)/;

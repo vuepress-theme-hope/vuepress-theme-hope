@@ -1,8 +1,8 @@
 /* eslint-disable vue/no-unused-properties */
-import { computed, defineComponent, h } from "vue";
-import { useSize } from "../composables/index.js";
+import { type VNode, computed, defineComponent, h } from "vue";
 
-import type { VNode } from "vue";
+import { useSize } from "../composables/index.js";
+import { videoIframeAllow } from "../utils/iframeAllow.js";
 
 import "../styles/xi-gua.scss";
 
@@ -99,8 +99,7 @@ export default defineComponent({
         src: videoLink.value,
         title: props.title,
         class: "xi-gua-iframe",
-        allow:
-          "accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture",
+        allow: videoIframeAllow,
         style: {
           width: width.value,
           height: height.value,

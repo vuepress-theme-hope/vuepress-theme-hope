@@ -1,10 +1,10 @@
-import { getBundlerName } from "./getBundler.js";
-
-import type { App } from "@vuepress/core";
-import type {
-  WebpackBundlerOptions,
-  WebpackChainConfig,
+import {
+  type WebpackBundlerOptions,
+  type WebpackChainConfig,
 } from "@vuepress/bundler-webpack";
+import { type App } from "@vuepress/core";
+
+import { getBundlerName } from "./getBundler.js";
 
 export const addChainWebpack = (
   bundlerOptions: unknown,

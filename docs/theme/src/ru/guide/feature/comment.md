@@ -75,7 +75,7 @@ export default {
 
 ## Поставщик комментариев
 
-В настоящее время вы можете выбирать из Giscus, Waline и Twikoo.
+В настоящее время вы можете выбирать из Giscus, Waline, Twikoo и Artalk.
 
 ::: tip Выбор службы комментариев
 
@@ -179,3 +179,23 @@ export default {
 1. Перейдите в Settings - Environment Variables, добавьте переменную среды `MONGODB_URI`, значением является строка подключения к базе данных на шаге 3.
 1. Перейдите в Overview, щелкните ссылку в разделе Domains, если конфигурация среды верна, вы увидите сообщение "Twikoo cloud function is running normally"
 1. Домены Vercel (с префиксом `https://`, например, `https://xxx.vercel.app`) – это идентификатор вашей среды
+
+## Artalk
+
+### Deploy Artalk Server
+
+See the [Artalk documentation](https://artalk.js.org/guide/deploy.html) for deploying artalk server.
+
+### Artalk Configuration
+
+Please set `provider: "Artalk"` and pass your server link to `server` in the plugin options.
+
+For other configuration items, see [Artalk Configuration](https://artalk.js.org/guide/frontend/config.html).
+
+::: note
+
+The plugin retains the `el` option and inserts Artalk itself on the page. At the same time, the plugin will automatically set the `pageTitle`, `pageKey` and `site` options for you according to the VuePress information.
+
+Before VuePress2 provides client configuration, the two function options `imgUploader` and `avatarURLBuilder` are not supported.
+
+:::

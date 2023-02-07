@@ -1,14 +1,12 @@
-import { defineComponent, h } from "vue";
+import { type VNode, defineComponent, h } from "vue";
 
+import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import ArticleType from "@theme-hope/modules/blog/components/ArticleType";
 import BlogWrapper from "@theme-hope/modules/blog/components/BlogWrapper";
 import CategoryList from "@theme-hope/modules/blog/components/CategoryList";
 import InfoPanel from "@theme-hope/modules/blog/components/InfoPanel";
 import TagList from "@theme-hope/modules/blog/components/TagList";
 import TimelineItems from "@theme-hope/modules/blog/components/TimelineItems";
-import DropTransition from "@theme-hope/components/transitions/DropTransition";
-
-import type { VNode } from "vue";
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names

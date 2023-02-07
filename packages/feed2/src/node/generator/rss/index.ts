@@ -1,20 +1,20 @@
 import { isUrl } from "vuepress-shared/node";
 import { js2xml } from "xml-js";
-import { FEED_GENERATOR, encodeXML } from "../../utils/index.js";
 
-import type {
-  RSSCategory,
-  RSSContent,
-  RSSEnclosure,
-  RSSGuid,
-  RSSItem,
+import {
+  type RSSCategory,
+  type RSSContent,
+  type RSSEnclosure,
+  type RSSGuid,
+  type RSSItem,
 } from "./typings.js";
-import type { Feed } from "../feed.js";
-import type {
-  FeedCategory,
-  FeedEnclosure,
-  FeedItemInformation,
+import {
+  type FeedCategory,
+  type FeedEnclosure,
+  type FeedItemInformation,
 } from "../../typings/index.js";
+import { FEED_GENERATOR, encodeXML } from "../../utils/index.js";
+import { type Feed } from "../feed.js";
 
 const genCategory = (category: FeedCategory): RSSCategory => {
   const { name, domain } = category;

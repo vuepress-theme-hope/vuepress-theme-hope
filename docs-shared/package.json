@@ -28,7 +28,7 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@types/three": "0.148.1",
+    "@types/three": "0.149.0",
     "@vuepress/cli": "2.0.0-beta.60",
     "@vuepress/client": "2.0.0-beta.60",
     "@vuepress/core": "2.0.0-beta.60",
@@ -36,7 +36,7 @@
     "@vuepress/shared": "2.0.0-beta.60",
     "@vuepress/utils": "2.0.0-beta.60",
     "three": "0.149.0",
-    "vue": "3.2.45",
+    "vue": "3.2.47",
     "vuepress-plugin-remove-pwa": "workspace:*",
     "vuepress-shared": "workspace:*",
     "vuepress-theme-hope": "workspace:*"

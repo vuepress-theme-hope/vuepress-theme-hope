@@ -1,6 +1,7 @@
 import { colors } from "@vuepress/utils";
+
+import { type BlogOptions } from "./options.js";
 import { logger } from "./utils.js";
-import type { BlogOptions } from "./options.js";
 
 /** @deprecated */
 export const convertOptions = (

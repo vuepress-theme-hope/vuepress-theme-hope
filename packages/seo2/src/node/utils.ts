@@ -1,3 +1,4 @@
+import { type App, type Page } from "@vuepress/core";
 import {
   isLinkHttp,
   isString,
@@ -6,9 +7,8 @@ import {
 } from "@vuepress/shared";
 import { Logger, entries, isAbsoluteUrl, isUrl } from "vuepress-shared/node";
 
-import type { App, Page } from "@vuepress/core";
-import type { SeoOptions } from "./options.js";
-import type { ExtendPage } from "./typings/index.js";
+import { type SeoOptions } from "./options.js";
+import { type ExtendPage } from "./typings/index.js";
 
 export const logger = new Logger("vuepress-plugin-seo2");
 
@@ -62,7 +62,7 @@ export const getImages = (
 ): string[] => {
   const result = /!\[.*?\]\((.*?)\)/giu.exec(content);
 
-  if (result) {
+  if (result)
     return result
       .map(([, link]) => {
         if (isAbsoluteUrl(link)) return resolveUrl(hostname, base, link);
@@ -72,7 +72,6 @@ export const getImages = (
         return null;
       })
       .filter((item): item is string => item !== null);
-  }
 
   return [];
 };

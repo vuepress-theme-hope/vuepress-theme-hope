@@ -1,9 +1,6 @@
 import { isString } from "@vuepress/shared";
-import { useEventListener } from "@vueuse/core";
-import { computed, isRef, onMounted, ref, unref, watch } from "vue";
-
-import type { MaybeRef } from "@vueuse/core";
-import type { Ref } from "vue";
+import { type MaybeRef, useEventListener } from "@vueuse/core";
+import { type Ref, computed, isRef, onMounted, ref, unref, watch } from "vue";
 
 const getValue = (value: string | number): string =>
   isString(value) ? value : `${value}px`;

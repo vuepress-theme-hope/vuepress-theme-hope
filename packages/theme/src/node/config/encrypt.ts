@@ -2,9 +2,8 @@ import { isArray, isString } from "@vuepress/shared";
 import { hashSync } from "bcrypt-ts/node";
 import { entries, fromEntries } from "vuepress-shared/node";
 
+import { type EncryptConfig, type EncryptOptions } from "../../shared/index.js";
 import { logger } from "../utils.js";
-
-import type { EncryptConfig, EncryptOptions } from "../../shared/index.js";
 
 export const getEncryptConfig = (
   encrypt: EncryptOptions = {}

@@ -1,10 +1,9 @@
+import { type Page, type Plugin } from "@vuepress/core";
 import { isPlainObject } from "@vuepress/shared";
+import { seoPlugin } from "vuepress-plugin-seo2";
 import { keys } from "vuepress-shared/node";
 
-import { seoPlugin } from "vuepress-plugin-seo2";
-
-import type { Page, Plugin } from "@vuepress/core";
-import type { PluginsOptions, ThemeData } from "../../shared/index.js";
+import { type PluginsOptions, type ThemeData } from "../../shared/index.js";
 
 export const getSEOPlugin = (
   themeData: ThemeData,

@@ -1,9 +1,10 @@
-import { inject, provide } from "vue";
-import { useBlogCategory } from "vuepress-plugin-blog2/client";
+import { type ComputedRef, type InjectionKey, inject, provide } from "vue";
+import {
+  type BlogCategoryData,
+  useBlogCategory,
+} from "vuepress-plugin-blog2/client";
 
-import type { ComputedRef, InjectionKey } from "vue";
-import type { BlogCategoryData } from "vuepress-plugin-blog2/client";
-import type { ArticleInfo } from "../../../../shared/index.js";
+import { type ArticleInfo } from "../../../../shared/index.js";
 
 export type CategoryMapRef = ComputedRef<BlogCategoryData<ArticleInfo>>;
 
@@ -16,9 +17,8 @@ export const categoryMapSymbol: InjectionKey<CategoryMapRef> =
 export const useCategoryMap = (): CategoryMapRef => {
   const categoryMap = inject(categoryMapSymbol);
 
-  if (!categoryMap) {
+  if (!categoryMap)
     throw new Error("useCategoryMap() is called without provider.");
-  }
 
   return categoryMap;
 };

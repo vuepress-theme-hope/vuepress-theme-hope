@@ -2,8 +2,9 @@
 import { createBaseApp } from "@vuepress/core";
 import { path } from "@vuepress/utils";
 import { describe, expect, it } from "vitest";
-import { getLocales } from "../../src/node/locales/index.js";
+
 import { emptyTheme } from "./__fixtures__/theme/empty.js";
+import { getLocales } from "../../src/node/locales/helpers.js";
 
 const defaultLocaleConfig = {
   "/en/": {

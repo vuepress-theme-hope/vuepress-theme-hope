@@ -1,20 +1,19 @@
 import {
+  type PluginFunction,
   preparePageComponent,
   preparePageData,
   preparePagesComponents,
   preparePagesData,
   preparePagesRoutes,
 } from "@vuepress/core";
-import { getPageExcerpt } from "vuepress-shared/node";
 import { watch } from "chokidar";
+import { getPageExcerpt } from "vuepress-shared/node";
 
 import { prepareCategory } from "./category.js";
+import { convertOptions } from "./compact.js";
+import { type BlogOptions, type PageWithExcerpt } from "./options.js";
 import { prepareType } from "./type.js";
 import { getPageMap, logger } from "./utils.js";
-
-import type { PluginFunction } from "@vuepress/core";
-import type { BlogOptions, PageWithExcerpt } from "./options.js";
-import { convertOptions } from "./compact.js";
 
 export const blogPlugin =
   (options: BlogOptions, legacy = true): PluginFunction =>
@@ -33,6 +32,13 @@ export const blogPlugin =
       excerptLength = 300,
       excerptFilter = filter,
       isCustomElement = (): boolean => false,
+      category = [],
+      type = [],
+      slugify = (name: string): string =>
+        name
+          .replace(/[ _]/g, "-")
+          .replace(/[:?*|\\/<>]/g, "")
+          .toLowerCase(),
     } = options;
 
     let generatePageKeys: string[] = [];
@@ -47,34 +53,36 @@ export const blogPlugin =
       }),
 
       extendsPage: (page): void => {
-        if (excerpt && excerptFilter(page)) {
+        if (excerpt && excerptFilter(page))
           (<PageWithExcerpt>page).data["excerpt"] = getPageExcerpt(app, page, {
             isCustomElement,
             excerptSeparator,
             excerptLength,
           });
-        }
 
-        if (filter(page)) {
+        if (filter(page))
           page.routeMeta = {
             ...(metaScope === ""
               ? getInfo(page)
               : { [metaScope]: getInfo(page) }),
             ...page.routeMeta,
           };
-        }
       },
 
       onInitialized: (app): Promise<void> => {
         const pageMap = getPageMap(filter, app);
 
         return Promise.all([
-          prepareCategory(app, options, pageMap, true).then((pageKeys) => {
-            generatePageKeys.push(...pageKeys);
-          }),
-          prepareType(app, options, pageMap, true).then((pageKeys) => {
-            generatePageKeys.push(...pageKeys);
-          }),
+          prepareCategory(app, { category, slugify }, pageMap, true).then(
+            (pageKeys) => {
+              generatePageKeys.push(...pageKeys);
+            }
+          ),
+          prepareType(app, { type, slugify }, pageMap, true).then(
+            (pageKeys) => {
+              generatePageKeys.push(...pageKeys);
+            }
+          ),
         ]).then(() => {
           if (app.env.isDebug) logger.info("temp file generated");
         });
@@ -96,10 +104,12 @@ export const blogPlugin =
             const pageMap = getPageMap(filter, app);
 
             return Promise.all([
-              prepareCategory(app, options, pageMap).then((pageKeys) => {
-                newGeneratedPageKeys.push(...pageKeys);
-              }),
-              prepareType(app, options, pageMap).then((pageKeys) => {
+              prepareCategory(app, { category, slugify }, pageMap).then(
+                (pageKeys) => {
+                  newGeneratedPageKeys.push(...pageKeys);
+                }
+              ),
+              prepareType(app, { type, slugify }, pageMap).then((pageKeys) => {
                 newGeneratedPageKeys.push(...pageKeys);
               }),
             ]).then(async () => {

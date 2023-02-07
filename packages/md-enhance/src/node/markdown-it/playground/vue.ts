@@ -1,8 +1,9 @@
 import { deepAssign, entries, fromEntries } from "vuepress-shared/node";
-import type {
-  PlaygroundData,
-  PlaygroundOptions,
-  VuePresetPlaygroundOptions,
+
+import {
+  type PlaygroundData,
+  type PlaygroundOptions,
+  type VuePresetPlaygroundOptions,
 } from "../../typings/index.js";
 
 const VUE_SUPPORTED_EXTENSIONS = [

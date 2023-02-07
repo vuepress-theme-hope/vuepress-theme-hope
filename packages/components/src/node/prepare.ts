@@ -1,9 +1,9 @@
+import { type App } from "@vuepress/core";
 import { isArray, isString } from "@vuepress/shared";
-import { AVAILABLE_COMPONENTS, CLIENT_FOLDER } from "./utils.js";
-import { getIconLink, getNoticeOptions } from "./components/index.js";
 
-import type { App } from "@vuepress/core";
-import type { ComponentOptions } from "./options/index.js";
+import { getIconLink, getNoticeOptions } from "./components/index.js";
+import { type ComponentOptions } from "./options/index.js";
+import { AVAILABLE_COMPONENTS, CLIENT_FOLDER } from "./utils.js";
 
 export const prepareConfigFile = (
   app: App,
@@ -36,11 +36,8 @@ if(!hasGlobalComponent("${item}")) app.component("${item}", ${item});
       getIconLink(componentOptions.fontIcon?.assets).forEach((item) => {
         const { type, content } = item;
 
-        if (type === "script") {
-          shouldImportUseScriptTag = true;
-        } else {
-          shouldImportUseStyleTag = true;
-        }
+        if (type === "script") shouldImportUseScriptTag = true;
+        else shouldImportUseStyleTag = true;
 
         setup += content;
       });

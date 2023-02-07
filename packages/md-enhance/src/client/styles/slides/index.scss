@@ -2,32 +2,24 @@
 @use "highlight";
 @use "theme";
 
-.md-enhance-presentation {
+.presentation-wrapper {
+  position: relative;
   width: 100%;
   height: 400px;
   min-height: 400px;
-  transition: all 1s;
 
   @media (max-width: hope-config.$mobile) {
     width: calc(100% + 3rem);
     min-height: 300px;
     margin: 0 -1.5rem;
   }
+}
 
-  &.loading {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.reveal-loading {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
 
-    svg {
-      width: 2.5em;
-      height: 2.5em;
-      margin: 2.5em auto;
-      fill: var(--c-brand, #3eaf7c);
-    }
-  }
-
-  .content {
-    height: 100%;
-  }
+  color: var(--c-brand, #3eaf7c);
 }

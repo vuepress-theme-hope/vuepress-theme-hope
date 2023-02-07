@@ -1,17 +1,18 @@
-import { useRouteLocale } from "@vuepress/client";
+import { usePageData, useRouteLocale } from "@vuepress/client";
 import { isPlainObject, isString } from "@vuepress/shared";
 import { useEventListener } from "@vueuse/core";
 import { clearAllBodyScrollLocks, disableBodyScroll } from "body-scroll-lock";
 import {
+  type VNode,
   computed,
   defineComponent,
   h,
-  onBeforeUnmount,
   onMounted,
+  onUnmounted,
   ref,
   toRef,
 } from "vue";
-import { RouterLink, useRoute, useRouter } from "vue-router";
+import { RouterLink, useRouter } from "vue-router";
 import { useLocaleConfig } from "vuepress-shared/client";
 
 import {
@@ -26,9 +27,7 @@ import {
   searchProClientCustomFiledConfig,
   searchProLocales,
 } from "../define.js";
-
-import type { VNode } from "vue";
-import type { MatchedItem, Word } from "../utils/index.js";
+import { type MatchedItem, type Word } from "../utils/index.js";
 
 import "../styles/search-result.scss";
 
@@ -54,8 +53,8 @@ export default defineComponent({
   },
 
   setup(props, { emit }) {
+    const page = usePageData();
     const router = useRouter();
-    const route = useRoute();
     const routeLocale = useRouteLocale();
     const locale = useLocaleConfig(searchProLocales);
     const { history, addHistory, removeHistory } = useSearchHistory();
@@ -135,13 +134,15 @@ export default defineComponent({
       useEventListener("keydown", (event: KeyboardEvent) => {
         if (!hasResults.value) return;
 
-        if (event.key === "ArrowUp") activePreviousResultContent();
-        else if (event.key === "ArrowDown") activeNextResultContent();
-        else if (event.key === "Enter") {
+        if (event.key === "ArrowUp") {
+          activePreviousResultContent();
+        } else if (event.key === "ArrowDown") {
+          activeNextResultContent();
+        } else if (event.key === "Enter") {
           const item =
             activatedResult.value.contents[activatedResultContentIndex.value];
 
-          if (route.path !== item.path) {
+          if (page.value.path !== item.path) {
             addHistory(item);
             void router.push(item.path);
             resetSearchResult();
@@ -152,7 +153,7 @@ export default defineComponent({
       disableBodyScroll(searchResult.value!, { reserveScrollBarGap: true });
     });
 
-    onBeforeUnmount(() => {
+    onUnmounted(() => {
       clearAllBodyScrollLocks();
     });
 
@@ -196,7 +197,6 @@ export default defineComponent({
                           },
                         ],
                         onClick: () => {
-                          console.log("click");
                           resetSearchResult();
                         },
                       },

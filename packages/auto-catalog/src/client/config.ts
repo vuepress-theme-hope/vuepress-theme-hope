@@ -2,9 +2,9 @@ import { defineClientConfig } from "@vuepress/client";
 import { h } from "vue";
 import { hasGlobalComponent } from "vuepress-shared/client";
 
-import AutoCatalog from "./components/AutoCatalog.js";
-
-import type { AutoCatalogProps } from "./components/AutoCatalog.js";
+import AutoCatalog, {
+  type AutoCatalogProps,
+} from "./components/AutoCatalog.js";
 
 declare const AUTO_CATALOG_TITLE_META_KEY: string;
 declare const AUTO_CATALOG_ICON_META_KEY: string;

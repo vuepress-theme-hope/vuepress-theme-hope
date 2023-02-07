@@ -1,6 +1,5 @@
 import { tab } from "@mdit/plugin-tab";
-
-import type { PluginSimple } from "markdown-it";
+import { type PluginSimple } from "markdown-it";
 
 export const tabs: PluginSimple = (md) => {
   tab(md, {

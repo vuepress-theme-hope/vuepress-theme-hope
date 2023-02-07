@@ -5,9 +5,7 @@
  * in a `select` element, etc.
  */
 export const isFocusingTextControl = (target: EventTarget): boolean => {
-  if (!(target instanceof Element)) {
-    return false;
-  }
+  if (!(target instanceof Element)) return false;
 
   return (
     document.activeElement === target &&

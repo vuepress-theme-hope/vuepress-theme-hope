@@ -1,6 +1,7 @@
-import { atou } from "vuepress-shared";
-import { describe, expect, it } from "vitest";
 import MarkdownIt from "markdown-it";
+import { describe, expect, it } from "vitest";
+import { atou } from "vuepress-shared";
+
 import { mermaid } from "../../src/node/markdown-it/index.js";
 
 const demo = `flowchart TB

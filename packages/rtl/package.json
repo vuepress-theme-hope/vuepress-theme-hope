@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-rtl",
-  "version": "2.0.0-beta.171",
+  "version": "2.0.0-beta.172",
   "description": "rtl plugin for VuePress",
   "keywords": [
     "vuepress",
@@ -50,7 +50,7 @@
     "@vuepress/utils": "2.0.0-beta.60",
     "@vuepress/shared": "2.0.0-beta.60",
     "vuepress-shared": "workspace:*",
-    "vue": "^3.2.45"
+    "vue": "^3.2.47"
   },
   "devDependencies": {
     "@vuepress/core": "2.0.0-beta.60"

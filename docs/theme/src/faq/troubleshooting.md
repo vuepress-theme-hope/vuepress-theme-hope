@@ -5,7 +5,7 @@ category:
   - FAQ
 ---
 
-## Ensure You have correct Environment
+## Ensure running under correct environment
 
 `vuepress-theme-hope` only supports node version of `^14.18.0 || >=16.0.0`.
 
@@ -31,33 +31,13 @@ Also, you should use a package manger satisfying the following requirements:
 
   Install: `npm i -g pnpm`
 
-## Ensure using latest version
+## Ensure using latest version and having correct deps tree
 
 Please make sure you are using the latest `vuepress` and `vuepress-theme-hope` V2 version, because some bugs you encountered may have been fixed in new versions.
 
-You can update to the latest version by executing the following commands.
+Also in some cases, you may generate incorrect dependency tree after upgrading some dependencies, this is because both `vuepress` and `vue` have many packages named `@vuepress/xxx` and `@vue/xxx`.
 
-::: code-tabs#shell
-
-@tab pnpm
-
-```bash
-pnpm add @vuepress/client@next vuepress@next vuepress-theme-hope vue@latest -E
-```
-
-@tab yarn
-
-```bash
-yarn add vuepress@next vuepress-theme-hope@latest -E
-```
-
-@tab npm
-
-```bash
-npm i vuepress@next vuepress-theme-hope@latest -E
-```
-
-:::
+To let VuePress work correctly, there should only be one version of `@vuepress/xxx` `@vue/xxx` `vue` and `vue-router` in the whole project. Multiple versions of a package can cause different parts of the application to use different instances of Vue and the corresponding package, resulting in errors like `useXXX() is called without provider`.
 
 ::: warning
 
@@ -65,36 +45,32 @@ Any official packages starting with `@vuepress/` should be upgrade to the same v
 
 I.E.: if you are using `@vuepress/plugin-search` and `@vuepress/utils` , you should ensure they have the same version number as `vuepress`.
 
-Also, if you're using another third-party plugin, make sure it's compatible with the version of VuePress you're upgrading to.
+Besides, any plugin inside `vuepress-theme-hope` should be the same version as vuepress-theme-hope.
+
+Further more, if you're using another third-party plugin, make sure it's compatible with the version of VuePress you're upgrading to.
 
 :::
 
-## Ensure having correct deps tree
-
-In some cases, you may generate incorrect dependency tree after upgrading some dependencies, this is because both `vuepress` and `vue` have many packages named `@vuepress/xxx` and `@vue/xxx`.
-
-To let VuePress work correctly, there should only be one version of `@vuepress/xxx` `@vue/xxx` `vue` and `vue-router` in the whole project. Multiple versions of a package can cause different parts of the application to use different instances of Vue and the corresponding package, resulting in errors like `useXXX() is called without provider`.
-
-Please run the following command to make sure your dependency tree is correct.
+You can execute the following command to make sure you are using the latest version and having correct deps tree.
 
 ::: code-tabs#shell
 
 @tab pnpm
 
 ```bash
-pnpm i && pnpm up
+pnpm dlx vp-helper
 ```
 
 @tab yarn
 
 ```bash
-yarn && yarn upgrade
+yarn dlx vp-helper
 ```
 
 @tab npm
 
 ```bash
-npm i && npm update
+npx vp-helper
 ```
 
 :::

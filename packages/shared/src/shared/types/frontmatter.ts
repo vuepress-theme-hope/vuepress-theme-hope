@@ -1,5 +1,6 @@
-import type { PageFrontmatter } from "@vuepress/core";
-import type { Author } from "./author.js";
+import { type PageFrontmatter } from "@vuepress/core";
+
+import { type Author } from "./author.js";
 
 export interface BasePageFrontMatter extends PageFrontmatter {
   /**

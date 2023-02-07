@@ -1,4 +1,4 @@
-import type { LightGallerySettings } from "lightgallery/lg-settings.js";
+import { type LightGallerySettings } from "lightgallery/lg-settings.js";
 
 /**
  * LightGallery plugins

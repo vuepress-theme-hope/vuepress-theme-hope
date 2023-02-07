@@ -1,6 +1,5 @@
 import { tab } from "@mdit/plugin-tab";
-
-import type { PluginSimple } from "markdown-it";
+import { type PluginSimple } from "markdown-it";
 
 export const codeTabs: PluginSimple = (md) => {
   tab(md, {
@@ -36,9 +35,7 @@ export const codeTabs: PluginSimple = (md) => {
         const { block, type } = tokens[i];
 
         if (block) {
-          if (type === "code-tabs_tab_close") {
-            break;
-          }
+          if (type === "code-tabs_tab_close") break;
 
           if (type === "fence" && !foundFence) {
             foundFence = true;

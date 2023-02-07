@@ -3,8 +3,8 @@ import { createBaseApp } from "@vuepress/core";
 import { path } from "@vuepress/utils";
 import { describe, expect, it } from "vitest";
 
-import { seoPlugin } from "../../src/node";
 import { emptyTheme } from "./__fixtures__/theme/empty.js";
+import { seoPlugin } from "../../src/node";
 
 const app = createBaseApp({
   bundler: {} as any,

@@ -88,19 +88,19 @@ npm i vuepress@next vuepress-theme-hope@latest -E
 @tab pnpm
 
 ```bash
-pnpm i && pnpm up
+pnpm dlx vp-helper
 ```
 
 @tab yarn
 
 ```bash
-yarn && yarn upgrade
+yarn dlx vp-helper
 ```
 
 @tab npm
 
 ```bash
-npm i && npm update
+npx vp-helper
 ```
 
 :::

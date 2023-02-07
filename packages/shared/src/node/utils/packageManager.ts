@@ -1,16 +1,20 @@
 import { fs, path } from "@vuepress/utils";
-import { execaSync } from "execa";
+import { execaCommandSync } from "execa";
 
 export type PackageManager = "npm" | "yarn" | "pnpm";
 
 const globalCache = new Map<string, boolean>();
 const localCache = new Map<string, PackageManager>();
 
+const NPM_LOCK = "package-lock.json";
+const YARN_LOCK = "yarn.lock";
+const PNPM_LOCK = "pnpm-lock.yaml";
+
 const isInstalled = (packageManager: PackageManager): boolean => {
   try {
     return (
-      execaSync(`${packageManager} --version`, { stdio: "ignore" }).exitCode ===
-      0
+      execaCommandSync(`${packageManager} --version`, { stdio: "ignore" })
+        .exitCode === 0
     );
   } catch (e) {
     return false;
@@ -48,19 +52,19 @@ export const getTypeofLockFile = (
 
   if (status !== undefined) return status;
 
-  if (fs.existsSync(path.resolve(cwd, "pnpm-lock.yaml"))) {
+  if (fs.existsSync(path.resolve(cwd, PNPM_LOCK))) {
     localCache.set(key, "pnpm");
 
     return "pnpm";
   }
 
-  if (fs.existsSync(path.resolve(cwd, "yarn.lock"))) {
+  if (fs.existsSync(path.resolve(cwd, YARN_LOCK))) {
     localCache.set(key, "yarn");
 
     return "yarn";
   }
 
-  if (fs.existsSync(path.resolve(cwd, "package-lock.json"))) {
+  if (fs.existsSync(path.resolve(cwd, NPM_LOCK))) {
     localCache.set(key, "npm");
 
     return "npm";
@@ -72,19 +76,19 @@ export const getTypeofLockFile = (
     while (dir !== path.dirname(dir)) {
       dir = path.dirname(dir);
 
-      if (fs.existsSync(path.resolve(dir, "pnpm-lock.yaml"))) {
+      if (fs.existsSync(path.resolve(dir, PNPM_LOCK))) {
         localCache.set(key, "pnpm");
 
         return "pnpm";
       }
 
-      if (fs.existsSync(path.resolve(dir, "yarn.lock"))) {
+      if (fs.existsSync(path.resolve(dir, YARN_LOCK))) {
         localCache.set(key, "yarn");
 
         return "yarn";
       }
 
-      if (fs.existsSync(path.resolve(dir, "package-lock.json"))) {
+      if (fs.existsSync(path.resolve(dir, NPM_LOCK))) {
         localCache.set(key, "npm");
 
         return "npm";

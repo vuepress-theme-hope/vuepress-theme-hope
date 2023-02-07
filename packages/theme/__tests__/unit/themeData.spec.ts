@@ -5,8 +5,7 @@ import { describe, expect, it } from "vitest";
 
 import { emptyTheme } from "./__fixtures__/theme/empty.js";
 import { getStatus, getThemeData } from "../../src/node/config/index.js";
-
-import type { ThemeOptions } from "../../src/shared/index.js";
+import { type ThemeOptions } from "../../src/shared/index.js";
 
 describe("should generate themeData correctly", () => {
   it("Should contain basic properties", () => {
@@ -82,8 +81,6 @@ describe("should generate themeData correctly", () => {
     };
 
     const result = getThemeData(app, themeOptions, getStatus(app, {}));
-
-    console.log(result);
 
     expect(result.locales).toBeTypeOf("object");
     expect(new Set(Object.keys(result.locales))).toEqual(

@@ -1,6 +1,6 @@
-import type { ThemeNormalPageFrontmatter } from "../../frontmatter/index.js";
-import type { SidebarOptions } from "../../sidebar.js";
-import type { ThemePageData } from "../../page.js";
+import { type ThemeNormalPageFrontmatter } from "../../frontmatter/index.js";
+import { type ThemePageData } from "../../page.js";
+import { type SidebarOptions } from "../../sidebar.js";
 
 export interface SidebarFileInfo {
   type: "file";

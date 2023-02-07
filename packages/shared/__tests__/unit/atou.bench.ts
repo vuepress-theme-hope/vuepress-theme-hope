@@ -1,6 +1,7 @@
 import { bench } from "vitest";
-import { atou, utoa } from "../../src/node/utils/props.js";
+
 import { database } from "./__fixtures__/database.js";
+import { atou, utoa } from "../../src/node/utils/props.js";
 
 const originalContent = atou(database);
 

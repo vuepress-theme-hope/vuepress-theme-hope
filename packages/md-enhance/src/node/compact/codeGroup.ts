@@ -1,8 +1,8 @@
 import { container } from "@mdit/plugin-container";
-import { logger } from "../utils.js";
+import { type MarkdownEnv } from "@vuepress/markdown";
+import { type PluginSimple } from "markdown-it";
 
-import type { MarkdownEnv } from "@vuepress/markdown";
-import type { PluginSimple } from "markdown-it";
+import { logger } from "../utils.js";
 
 /** @deprecated */
 export const legacyCodeGroup: PluginSimple = (md) => {

@@ -1,6 +1,12 @@
 import { withBase } from "@vuepress/client";
 import { isLinkHttp } from "@vuepress/shared";
-import { computed, defineComponent, h, resolveComponent } from "vue";
+import {
+  type VNode,
+  computed,
+  defineComponent,
+  h,
+  resolveComponent,
+} from "vue";
 import {
   BitbucketIcon,
   GitHubIcon,
@@ -11,8 +17,7 @@ import {
   useLocaleConfig,
 } from "vuepress-shared/client";
 
-import type { VNode } from "vue";
-import type { SiteInfoLocaleConfig } from "../../shared/index.js";
+import { type SiteInfoLocaleConfig } from "../../shared/index.js";
 
 import "../styles/site-info.scss";
 

@@ -1,9 +1,8 @@
-import { createPage } from "@vuepress/core";
+import { type App, type PageFrontmatter, createPage } from "@vuepress/core";
 import { getTitleFromFilename } from "vuepress-shared/node";
-import { logger } from "./utils.js";
 
-import type { App, PageFrontmatter } from "@vuepress/core";
-import type { AutoCatalogOptions } from "./options.js";
+import { type AutoCatalogOptions } from "./options.js";
+import { logger } from "./utils.js";
 
 export const generateCatalog = async (
   app: App,

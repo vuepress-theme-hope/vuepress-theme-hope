@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { compareSync } from "bcrypt-ts";
 import { describe, expect, it } from "vitest";
+
 import { getEncryptConfig } from "../../src/node/config/index.js";
 
 const adminSinglePassword = "1234";

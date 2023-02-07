@@ -1,19 +1,24 @@
-import { computed, defineComponent, h, resolveComponent } from "vue";
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
+import {
+  type VNode,
+  computed,
+  defineComponent,
+  h,
+  resolveComponent,
+} from "vue";
 
 import CommonWrapper from "@theme-hope/components/CommonWrapper";
-import FadeSlideY from "@theme-hope/components/transitions/FadeSlideY";
 import HomePage from "@theme-hope/components/HomePage";
 import NormalPage from "@theme-hope/components/NormalPage";
 import SkipLink from "@theme-hope/components/SkipLink";
-import { useWindowSize } from "@theme-hope/composables/index";
+import FadeSlideY from "@theme-hope/components/transitions/FadeSlideY";
 import {
   useThemeData,
   useThemeLocaleData,
+  useWindowSize,
 } from "@theme-hope/composables/index";
 
-import type { VNode } from "vue";
-import type { ThemePageFrontmatter } from "../../shared/index.js";
+import { type ThemePageFrontmatter } from "../../shared/index.js";
 
 declare const ENABLE_BLOG: boolean;
 

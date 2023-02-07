@@ -30,13 +30,16 @@ Please use file explorer to open that folder, then enter `cmd` in the address ba
 
 :::
 
-Execute the following command in terminal:
+Execute one of the following command in terminal:
 
 ```sh
+# pnpm
 pnpm create vuepress-theme-hope my-docs
 
-# Or
+# yarn
+yarn create vuepress-theme-hope my-docs
 
+# npm
 npm init vuepress-theme-hope my-docs
 ```
 

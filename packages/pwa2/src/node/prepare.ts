@@ -1,7 +1,7 @@
-import { CLIENT_FOLDER } from "./utils.js";
+import { type App } from "@vuepress/core";
 
-import type { App } from "@vuepress/core";
-import type { PWAOptions } from "./options.js";
+import { type PWAOptions } from "./options.js";
+import { CLIENT_FOLDER } from "./utils.js";
 
 export const prepareConfigFile = (
   app: App,

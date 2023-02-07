@@ -1,14 +1,14 @@
-import { defaultPageSorter } from "./utils.js";
+import { type GitData } from "@vuepress/plugin-git";
+import { type BlogTypeOptions } from "vuepress-plugin-blog2";
 import { compareDate } from "vuepress-shared/node";
-import { ArticleInfoType } from "../../../shared/index.js";
 
-import type { BlogTypeOptions } from "vuepress-plugin-blog2";
-import type { GitData } from "@vuepress/plugin-git";
-import type {
-  ArticleInfo,
-  BlogPluginOptions,
-  ThemeData,
-  ThemeNormalPageFrontmatter,
+import { defaultPageSorter } from "./utils.js";
+import {
+  type ArticleInfo,
+  ArticleInfoType,
+  type BlogPluginOptions,
+  type ThemeData,
+  type ThemeNormalPageFrontmatter,
 } from "../../../shared/index.js";
 
 export const getArticleType = (
@@ -39,6 +39,7 @@ export const getArticleType = (
     layout: "BlogType",
     frontmatter: (localePath) => ({
       title: themeData.locales[localePath].blogLocales.article,
+      index: false,
       feed: false,
       sitemap: false,
     }),
@@ -80,6 +81,7 @@ export const getStarType = (
     layout: "BlogType",
     frontmatter: (localePath) => ({
       title: themeData.locales[localePath].blogLocales.star,
+      index: false,
       feed: false,
       sitemap: false,
     }),
@@ -112,6 +114,7 @@ export const getTimelineType = (
     layout: "Timeline",
     frontmatter: (localePath) => ({
       title: themeData.locales[localePath].blogLocales.timeline,
+      index: false,
       feed: false,
       sitemap: false,
     }),

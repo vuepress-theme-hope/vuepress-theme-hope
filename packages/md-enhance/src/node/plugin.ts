@@ -7,13 +7,17 @@ import { imgMark } from "@mdit/plugin-img-mark";
 import { imgSize } from "@mdit/plugin-img-size";
 import { include } from "@mdit/plugin-include";
 import { katex } from "@mdit/plugin-katex";
-import { createMathjaxInstance, mathjax } from "@mdit/plugin-mathjax";
 import { mark } from "@mdit/plugin-mark";
+import { createMathjaxInstance, mathjax } from "@mdit/plugin-mathjax";
 import { stylize } from "@mdit/plugin-stylize";
 import { sub } from "@mdit/plugin-sub";
 import { sup } from "@mdit/plugin-sup";
 import { tasklist } from "@mdit/plugin-tasklist";
+import { type ViteBundlerOptions } from "@vuepress/bundler-vite";
+import { type PluginFunction } from "@vuepress/core";
+import { type MarkdownEnv } from "@vuepress/markdown";
 import { isArray, isPlainObject } from "@vuepress/shared";
+import { type RollupWarning } from "rollup";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   MATHML_TAGS,
@@ -28,8 +32,6 @@ import {
   getBundlerName,
   getLocales,
 } from "vuepress-shared/node";
-
-import { logger } from "./utils.js";
 
 import { checkLinks, getCheckLinksStatus } from "./checkLink.js";
 import {
@@ -59,18 +61,14 @@ import {
   vueDemo,
   vuePlayground,
 } from "./markdown-it/index.js";
+import { type MarkdownEnhanceOptions } from "./options.js";
 import {
   prepareConfigFile,
   prepareMathjaxStyleFile,
   prepareRevealPluginFile,
 } from "./prepare/index.js";
-
-import type { PluginFunction } from "@vuepress/core";
-import type { MarkdownEnv } from "@vuepress/markdown";
-import type { ViteBundlerOptions } from "@vuepress/bundler-vite";
-import type { RollupWarning } from "rollup";
-import type { MarkdownEnhanceOptions } from "./options.js";
-import type { KatexOptions } from "./typings/index.js";
+import { type KatexOptions } from "./typings/index.js";
+import { logger } from "./utils.js";
 
 export const mdEnhancePlugin =
   (
@@ -83,6 +81,7 @@ export const mdEnhancePlugin =
       convertOptions(
         options as MarkdownEnhanceOptions & Record<string, unknown>
       );
+
     if (app.env.isDebug) logger.info("Options:", options);
 
     const getStatus = (
@@ -196,9 +195,9 @@ export const mdEnhancePlugin =
           "vuepress-shared",
         ]);
 
-        if (katexEnable && katexOptions.output !== "html")
+        if (katexEnable && katexOptions.output !== "html") {
           addCustomElement(bundlerOptions, app, MATHML_TAGS);
-        else if (mathjaxEnable) {
+        } else if (mathjaxEnable) {
           addCustomElement(bundlerOptions, app, /^mjx-/);
           if (mathjaxInstance?.documentOptions.enableAssistiveMml)
             addCustomElement(bundlerOptions, app, MATHML_TAGS);
@@ -265,6 +264,7 @@ export const mdEnhancePlugin =
             imgMark,
             isPlainObject(options.imgMark) ? options.imgMark : {}
           );
+
         if (getStatus("imgSize")) md.use(imgSize);
         if (getStatus("sup")) md.use(sup);
         if (getStatus("sub")) md.use(sub);
@@ -290,6 +290,7 @@ export const mdEnhancePlugin =
             currentPath: (env: MarkdownEnv) => env.filePath,
             ...(isPlainObject(options.include) ? options.include : {}),
           });
+
         if (getStatus("stylize"))
           md.use(stylize, {
             config: options.stylize,

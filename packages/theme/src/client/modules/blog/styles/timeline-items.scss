@@ -192,6 +192,9 @@
 
     font-size: 16px;
     line-height: 30px;
+
+    transition: color var(--color-transition),
+      font-size var(--transform-transition);
   }
 
   .timeline-item {
@@ -229,8 +232,6 @@
       .timeline-title {
         color: var(--theme-color);
         font-size: 18px;
-        transition: color var(--color-transition),
-          font-size var(--transform-transition);
       }
     }
   }

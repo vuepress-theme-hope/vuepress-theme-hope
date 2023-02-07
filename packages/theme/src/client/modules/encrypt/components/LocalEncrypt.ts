@@ -1,9 +1,7 @@
-import { defineComponent, h, onMounted, ref } from "vue";
+import { type VNode, defineComponent, h, onMounted, ref } from "vue";
 
 import PasswordModal from "@theme-hope/modules/encrypt/components/PasswordModal";
 import { usePathEncrypt } from "@theme-hope/modules/encrypt/composables/index";
-
-import type { VNode } from "vue";
 
 export default defineComponent({
   name: "LocalEncrypt",

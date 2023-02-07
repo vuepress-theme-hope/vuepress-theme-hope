@@ -5,7 +5,7 @@ icon: gears
 
 ## provider
 
-- Type: `"Giscus" | "Twikoo" | "Waline" | "None"`
+- Type: `"Artalk" | "Giscus" | "Twikoo" | "Waline" | "None"`
 - Default: `"None"`
 
 Comment service provider.
@@ -19,12 +19,16 @@ Whether to enable comment feature by default.
 
 ## Giscus config
 
-- [See here](giscus.md)
+- [Check details](giscus.md)
 
 ## Waline config
 
-- [See here](waline.md)
+- [Check details](waline.md)
 
 ## Twikoo config
 
-- [See here](twikoo.md)
+- [Check details](twikoo.md)
+
+## Artalk Config
+
+- [Check details](artalk.md)

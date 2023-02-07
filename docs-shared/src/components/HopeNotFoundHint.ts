@@ -1,9 +1,7 @@
-import { defineComponent, h } from "vue";
+import { type VNode, defineComponent, h } from "vue";
 
 // @ts-ignore
 import { useThemeLocaleData } from "@theme-hope/composables/index";
-
-import type { VNode } from "vue";
 
 import "../styles/hope-not-found-hint.scss";
 

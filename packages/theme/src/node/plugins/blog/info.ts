@@ -1,13 +1,12 @@
+import { type Page } from "@vuepress/core";
 import { getDate, timeTransformer } from "vuepress-shared/node";
 
-import { ArticleInfoType } from "../../../shared/index.js";
-
-import type { Page } from "@vuepress/core";
-import type {
-  ThemeBlogHomePageFrontmatter,
-  ThemeNormalPageFrontmatter,
-  ThemePageData,
-  ThemeProjectHomePageFrontmatter,
+import {
+  ArticleInfoType,
+  type ThemeBlogHomePageFrontmatter,
+  type ThemeNormalPageFrontmatter,
+  type ThemePageData,
+  type ThemeProjectHomePageFrontmatter,
 } from "../../../shared/index.js";
 
 export const injectBasicInfo = (
@@ -36,7 +35,9 @@ export const injectBasicInfo = (
         type: "date",
       });
     }
-  } else if (createdTime) info[ArticleInfoType.date] = new Date(createdTime);
+  } else if (createdTime) {
+    info[ArticleInfoType.date] = new Date(createdTime);
+  }
 
   // resolve category
   if ("category" in frontmatter)

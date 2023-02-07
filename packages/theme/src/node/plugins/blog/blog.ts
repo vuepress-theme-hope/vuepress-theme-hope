@@ -1,20 +1,18 @@
-import { blogPlugin } from "vuepress-plugin-blog2";
+import { type App, type Page, type Plugin } from "@vuepress/core";
+import { type BlogOptions, blogPlugin } from "vuepress-plugin-blog2";
 import { keys, startsWith } from "vuepress-shared/node";
 
 import { getCategoryCategory, getTagCategory } from "./category.js";
 import { filter } from "./filter.js";
 import { injectBasicInfo } from "./info.js";
 import { getArticleType, getStarType, getTimelineType } from "./type.js";
-import { checkFrontmatter } from "../../frontmatter/check.js";
-import { ArticleInfoType } from "../../../shared/index.js";
-
-import type { App, Page, Plugin } from "@vuepress/core";
-import type { BlogOptions } from "vuepress-plugin-blog2";
-import type {
-  BlogPluginOptions,
-  ThemeData,
-  ThemePageData,
+import {
+  ArticleInfoType,
+  type BlogPluginOptions,
+  type ThemeData,
+  type ThemePageData,
 } from "../../../shared/index.js";
+import { checkFrontmatter } from "../../frontmatter/check.js";
 
 export const getBlogPlugin = (
   app: App,

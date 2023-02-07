@@ -1,14 +1,14 @@
-import { defineComponent, h } from "vue";
+import { type VNode, defineComponent, h } from "vue";
 
 import {
   AutoIcon,
   DarkIcon,
   LightIcon,
 } from "@theme-hope/modules/outlook/components/icons/index";
-import { useDarkmode } from "@theme-hope/modules/outlook/composables/index";
-
-import type { VNode } from "vue";
-import type { DarkmodeStatus } from "@theme-hope/modules/outlook/composables/index";
+import {
+  type DarkmodeStatus,
+  useDarkmode,
+} from "@theme-hope/modules/outlook/composables/index";
 
 import "../styles/appearance-switch.scss";
 
@@ -19,13 +19,13 @@ export default defineComponent({
     const { config, status } = useDarkmode();
 
     const toggleDarkMode = (): void => {
-      if (config.value === "switch") {
+      if (config.value === "switch")
         status.value = (<Record<DarkmodeStatus, DarkmodeStatus>>{
           light: "dark",
           dark: "auto",
           auto: "light",
         })[status.value];
-      } else status.value = status.value === "light" ? "dark" : "light";
+      else status.value = status.value === "light" ? "dark" : "light";
     };
 
     return (): VNode =>

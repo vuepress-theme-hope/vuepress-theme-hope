@@ -1,16 +1,16 @@
+import { type App } from "@vuepress/core";
 import { isPlainObject } from "@vuepress/shared";
 import { useReadingTimePlugin } from "vuepress-plugin-reading-time2";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
 import { useGitPlugin } from "./git.js";
 import { useExtendsPagePlugin } from "./pageConverter.js";
+import { type PluginsOptions, type ThemeData } from "../../shared/index.js";
 import { TEMPLATE_FOLDER } from "../utils.js";
-
-import type { App } from "@vuepress/core";
-import type { PluginsOptions } from "../../shared/index.js";
 
 export const usePlugin = (
   app: App,
+  themeData: ThemeData,
   plugins: PluginsOptions,
   legacy: boolean,
   hotReload: boolean
@@ -53,5 +53,5 @@ export const usePlugin = (
     style: ".vuepress/styles/index.scss",
   });
 
-  useExtendsPagePlugin(app, legacy);
+  useExtendsPagePlugin(app, themeData, legacy);
 };

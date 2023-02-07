@@ -20,7 +20,7 @@ By default, `<CommentService />` component is enabled globally, and you can use 
 
 ## Comment Services
 
-Currently you can choose from Giscus, Waline and Twikoo.
+Currently you can choose from Giscus, Waline, Twikoo and Artalk.
 
 ::: tip Choosing from comment services
 
@@ -36,3 +36,5 @@ People who your blog or documentation are targeting:
 - [Waline Guide](waline.md)
 
 - [Twikoo Guide](twikoo.md)
+
+- [Artalk Guide](artalk.md)

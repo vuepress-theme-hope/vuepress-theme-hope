@@ -1,16 +1,18 @@
+import { type App, type Page, type PluginObject } from "@vuepress/core";
 import { isPlainObject } from "@vuepress/shared";
-import { injectLocalizedDate } from "vuepress-shared/node";
+import { injectLocalizedDate, keys, startsWith } from "vuepress-shared/node";
+
+import {
+  ArticleInfoType,
+  PageType,
+  type ThemeBlogHomePageFrontmatter,
+  type ThemeData,
+  type ThemeNormalPageFrontmatter,
+  type ThemePageData,
+  type ThemeProjectHomePageFrontmatter,
+} from "../../shared/index.js";
 import { convertFrontmatter } from "../compact/index.js";
 import { checkFrontmatter } from "../frontmatter/check.js";
-import { ArticleInfoType, PageType } from "../../shared/index.js";
-
-import type { App, Page, PluginObject } from "@vuepress/core";
-import type {
-  ThemeBlogHomePageFrontmatter,
-  ThemeNormalPageFrontmatter,
-  ThemePageData,
-  ThemeProjectHomePageFrontmatter,
-} from "../../shared/index.js";
 
 export const injectPageInfo = (page: Page<ThemePageData>): void => {
   const { filePathRelative } = page;
@@ -49,6 +51,7 @@ export const injectPageInfo = (page: Page<ThemePageData>): void => {
       page.routeMeta[ArticleInfoType.order] = (
         frontmatter as ThemeNormalPageFrontmatter
       ).dir!.order;
+
     if (
       "index" in frontmatter.dir &&
       (frontmatter as ThemeNormalPageFrontmatter).dir!.index === false
@@ -66,22 +69,40 @@ export const injectPageInfo = (page: Page<ThemePageData>): void => {
     page.routeMeta[ArticleInfoType.shortTitle] = frontmatter.shortTitle;
 };
 
-export const extendsPagePlugin = (legacy = true): PluginObject => ({
-  name: "vuepress-theme-hope-extends-page",
+export const extendsPagePlugin = (
+  themeData: ThemeData,
+  legacy = true
+): PluginObject => {
+  const encryptedPaths = keys(themeData.encrypt.config || {});
+  const isPageEncrypted = ({ path }: Page): boolean =>
+    encryptedPaths.some((key) => startsWith(decodeURI(path), key));
 
-  extendsPage: (page, app): void => {
-    if (legacy)
-      page.frontmatter = convertFrontmatter(
-        page.frontmatter,
-        page.filePathRelative || ""
-      );
+  return {
+    name: "vuepress-theme-hope-extends-page",
 
-    checkFrontmatter(page, app.env.isDebug);
-    injectPageInfo(<Page<ThemePageData>>page);
-    injectLocalizedDate(page);
-  },
-});
+    extendsPage: (page, app): void => {
+      if (legacy)
+        page.frontmatter = convertFrontmatter(
+          page.frontmatter,
+          page.filePathRelative || ""
+        );
 
-export const useExtendsPagePlugin = (app: App, legacy = true): void => {
-  app.use(extendsPagePlugin(legacy));
+      const isEncrypted = isPageEncrypted(page);
+
+      // encrypt page shall not have seo
+      if (isEncrypted) page.frontmatter["seo"] = false;
+
+      checkFrontmatter(page, app.env.isDebug);
+      injectPageInfo(<Page<ThemePageData>>page);
+      injectLocalizedDate(page);
+    },
+  };
+};
+
+export const useExtendsPagePlugin = (
+  app: App,
+  themeData: ThemeData,
+  legacy = true
+): void => {
+  app.use(extendsPagePlugin(themeData, legacy));
 };

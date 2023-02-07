@@ -3,21 +3,22 @@ import localizedFormat from "dayjs/plugin/localizedFormat.js";
 import objectSupport from "dayjs/plugin/objectSupport.js";
 import timezone from "dayjs/plugin/timezone.js";
 import utc from "dayjs/plugin/utc.js";
-import { loadDeLocale } from "./de.js";
+
 import { loadDeAtLocale } from "./de-at.js";
+import { loadDeLocale } from "./de.js";
 import { loadEnLocale } from "./en.js";
 import { loadEsLocale } from "./es.js";
 import { loadFrLocale } from "./fr.js";
+import { loadJaLocale } from "./ja.js";
 import { loadPlLocale } from "./pl.js";
 import { loadPtBrLocale } from "./pt-br.js";
 import { loadRuLocale } from "./ru.js";
 import { loadSkLocale } from "./sk.js";
+import { loadTrLocale } from "./tr.js";
 import { loadUkLocale } from "./uk.js";
 import { loadViLocale } from "./vi.js";
-import { loadZhLocale } from "./zh.js";
 import { loadZhTWLocale } from "./zh-tw.js";
-import { loadJaLocale } from "./ja.js";
-import { loadTrLocale } from "./tr.js";
+import { loadZhLocale } from "./zh.js";
 
 dayjs.extend(localizedFormat);
 dayjs.extend(objectSupport);

@@ -334,7 +334,7 @@ The default content for the footer, can accept HTMLString.
 
 ### copyright
 
-- Type: `string | boolean`
+- Type: `string | false`
 - Default: `"Copyright © <author>"`
 
 The default copyright info, set it to `false` to disable it by default.

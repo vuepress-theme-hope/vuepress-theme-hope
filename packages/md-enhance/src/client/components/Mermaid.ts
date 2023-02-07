@@ -1,17 +1,16 @@
+import { type MermaidConfig } from "mermaid";
 import {
+  type VNode,
+  computed,
   defineComponent,
   h,
   nextTick,
-  onBeforeUnmount,
   onMounted,
+  onUnmounted,
   ref,
   watch,
 } from "vue";
-import { atou } from "vuepress-shared/client";
-import { LoadingIcon } from "./icons.js";
-
-import type { MermaidConfig } from "mermaid";
-import type { VNode } from "vue";
+import { LoadingIcon, atou } from "vuepress-shared/client";
 
 import "../styles/mermaid.scss";
 
@@ -91,23 +90,15 @@ export default defineComponent({
   },
 
   setup(props) {
-    const svgCode = ref("");
     const mermaidElement = ref<HTMLElement>();
+
+    const svgCode = ref("");
     const isDarkmode = ref(false);
-    let observer: MutationObserver | null = null;
 
-    onMounted(() => {
-      const html = document.querySelector("html")!;
-      const code = atou(props.code);
+    const code = computed(() => atou(props.code));
 
-      const getDarkmodeStatus = (): boolean =>
-        html.classList.contains("dark") ||
-        html.getAttribute("data-theme") === "dark";
-
-      // FIXME: Should correct handle dark selector
-      isDarkmode.value = getDarkmodeStatus();
-
-      void Promise.all([
+    const renderMermaid = async (): Promise<void> =>
+      Promise.all([
         import(
           /* webpackChunkName: "mermaid" */ "mermaid/dist/mermaid.esm.min.mjs"
         ),
@@ -122,62 +113,76 @@ export default defineComponent({
           // mermaid does not provide a api to get registered diagrams
         }
 
-        const renderMermaid = async (): Promise<void> => {
-          // generate a invisible container
-          const container = document.createElement("div");
+        // generate a invisible container
+        const container = document.createElement("div");
 
-          container.style.position = "relative";
-          container.style.top = "-9999px";
+        container.style.position = "relative";
+        container.style.top = "-9999px";
 
-          const renderCallback = (code: string): void => {
-            svgCode.value = code;
-            document.body.removeChild(container);
-          };
-
-          mermaid.initialize({
-            // @ts-ignore
-            theme: "base",
-            themeVariables: getThemeVariables(isDarkmode.value),
-            flowchart: { useMaxWidth: false },
-            sequence: { useMaxWidth: false },
-            journey: { useMaxWidth: false },
-            gantt: { useMaxWidth: false },
-            er: { useMaxWidth: false },
-            pie: { useMaxWidth: false },
-
-            ...MERMAID_OPTIONS,
-            startOnLoad: false,
-          });
-
-          // clear SVG Code
-          svgCode.value = "";
-
-          document.body.appendChild(container);
-
-          // make sure dom is refreshed
-          await nextTick();
-
-          await mermaid.renderAsync(props.id, code, renderCallback, container);
+        const renderCallback = (code: string): void => {
+          svgCode.value = code;
+          document.body.removeChild(container);
         };
+        const chartOptions = { useMaxWidth: false };
 
-        await renderMermaid();
+        mermaid.initialize({
+          // @ts-ignore
+          theme: "base",
+          themeVariables: getThemeVariables(isDarkmode.value),
+          flowchart: chartOptions,
+          sequence: chartOptions,
+          journey: chartOptions,
+          gantt: chartOptions,
+          er: chartOptions,
+          pie: chartOptions,
 
-        // watch darkmode change
-        observer = new MutationObserver(() => {
-          isDarkmode.value = getDarkmodeStatus();
+          ...MERMAID_OPTIONS,
+          startOnLoad: false,
         });
 
-        observer.observe(html, {
-          attributeFilter: ["class", "data-theme"],
-          attributes: true,
-        });
+        // clear SVG Code
+        svgCode.value = "";
 
-        watch(isDarkmode, renderMermaid);
+        document.body.appendChild(container);
+
+        // make sure dom is refreshed
+        await nextTick();
+
+        await mermaid.renderAsync(
+          props.id,
+          code.value,
+          renderCallback,
+          container
+        );
       });
-    });
 
-    onBeforeUnmount(() => {
-      observer?.disconnect();
+    onMounted(() => {
+      const html = document.querySelector("html")!;
+
+      const getDarkmodeStatus = (): boolean =>
+        html.classList.contains("dark") ||
+        html.getAttribute("data-theme") === "dark";
+
+      // FIXME: Should correct handle dark selector
+      isDarkmode.value = getDarkmodeStatus();
+
+      void renderMermaid();
+
+      // watch darkmode change
+      const observer = new MutationObserver(() => {
+        isDarkmode.value = getDarkmodeStatus();
+      });
+
+      observer.observe(html, {
+        attributeFilter: ["class", "data-theme"],
+        attributes: true,
+      });
+
+      watch(isDarkmode, () => renderMermaid());
+
+      onUnmounted(() => {
+        observer.disconnect();
+      });
     });
 
     return (): VNode =>
@@ -185,13 +190,13 @@ export default defineComponent({
         "div",
         {
           ref: mermaidElement,
-          class: ["mermaid-wrapper", { loading: !svgCode.value }],
+          class: "mermaid-wrapper",
         },
         svgCode.value
           ? // mermaid
             h("div", { class: "content", innerHTML: svgCode.value })
           : // loading
-            h(LoadingIcon)
+            h(LoadingIcon, { class: "mermaid-loading", height: 96 })
       );
   },
 });

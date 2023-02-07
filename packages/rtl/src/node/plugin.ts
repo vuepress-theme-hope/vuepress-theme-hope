@@ -1,8 +1,8 @@
+import { type PluginObject } from "@vuepress/core";
 import { isArray } from "@vuepress/shared";
-import { CLIENT_FOLDER } from "./utils.js";
 
-import type { PluginObject } from "@vuepress/core";
-import type { RTLOptions } from "./options.js";
+import { type RTLOptions } from "./options.js";
+import { CLIENT_FOLDER } from "./utils.js";
 
 export const rltPlugin = (options: RTLOptions = {}): PluginObject => ({
   name: "vuepress-plugin-rtl",

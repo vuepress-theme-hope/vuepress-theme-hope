@@ -1,12 +1,11 @@
+import { type ViteBundlerOptions } from "@vuepress/bundler-vite";
+import {
+  type LoaderOptions,
+  type WebpackBundlerOptions,
+} from "@vuepress/bundler-webpack";
+import { type App } from "@vuepress/core";
 import { isFunction, isString } from "@vuepress/shared";
 import { getBundlerName, mergeViteConfig } from "vuepress-shared/node";
-
-import type { App } from "@vuepress/core";
-import type { ViteBundlerOptions } from "@vuepress/bundler-vite";
-import type {
-  LoaderOptions,
-  WebpackBundlerOptions,
-} from "@vuepress/bundler-webpack";
 
 type LoaderContext = Exclude<
   LoaderOptions["additionalData"],

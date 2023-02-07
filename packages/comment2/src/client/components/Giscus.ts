@@ -1,15 +1,19 @@
-import { usePageFrontmatter, usePageLang, withBase } from "@vuepress/client";
-import { computed, defineComponent, h, onMounted, ref } from "vue";
-import { useRoute } from "vue-router";
+import {
+  usePageData,
+  usePageFrontmatter,
+  usePageLang,
+  withBase,
+} from "@vuepress/client";
+import { type VNode, computed, defineComponent, h, onMounted, ref } from "vue";
+import { LoadingIcon } from "vuepress-shared/client";
 
-import type { VNode } from "vue";
-import type {
-  CommentPluginFrontmatter,
-  GiscusInputPosition,
-  GiscusMapping,
-  GiscusOptions,
-  GiscusRepo,
-  GiscusTheme,
+import {
+  type CommentPluginFrontmatter,
+  type GiscusInputPosition,
+  type GiscusMapping,
+  type GiscusOptions,
+  type GiscusRepo,
+  type GiscusTheme,
 } from "../../shared/index.js";
 
 import "../styles/giscus.scss";
@@ -58,15 +62,15 @@ export interface GiscusProps {
   loading?: GiscusLoading | undefined;
 }
 
-const giscusOption = COMMENT_OPTIONS;
+const giscusOptions = COMMENT_OPTIONS;
 const enableGiscus = Boolean(
-  giscusOption.repo &&
-    giscusOption.repoId &&
-    giscusOption.category &&
-    giscusOption.categoryId
+  giscusOptions.repo &&
+    giscusOptions.repoId &&
+    giscusOptions.category &&
+    giscusOptions.categoryId
 );
 
-const { repo, repoId, category, categoryId } = giscusOption;
+const { repo, repoId, category, categoryId } = giscusOptions;
 
 export default defineComponent({
   name: "GiscusComment",
@@ -82,7 +86,7 @@ export default defineComponent({
 
   setup(props) {
     const frontmatter = usePageFrontmatter<CommentPluginFrontmatter>();
-    const route = useRoute();
+    const page = usePageData();
     const loaded = ref(false);
 
     const giscusLang = computed(() => {
@@ -99,7 +103,7 @@ export default defineComponent({
 
     const enableComment = computed(() => {
       if (!enableGiscus) return false;
-      const pluginConfig = giscusOption.comment !== false;
+      const pluginConfig = giscusOptions.comment !== false;
       const pageConfig = frontmatter.value.comment;
 
       return (
@@ -117,19 +121,19 @@ export default defineComponent({
       categoryId,
       lang: giscusLang.value,
       theme: props.darkmode
-        ? giscusOption.darkTheme || "dark"
-        : giscusOption.lightTheme || "light",
-      mapping: giscusOption.mapping || "pathname",
-      term: withBase(route.path),
-      inputPosition: giscusOption.inputPosition || "top",
-      reactionsEnabled: giscusOption.reactionsEnabled === false ? "0" : "1",
-      strict: giscusOption.strict === false ? "0" : "1",
-      loading: giscusOption.lazyLoading === false ? "eager" : "lazy",
+        ? giscusOptions.darkTheme || "dark"
+        : giscusOptions.lightTheme || "light",
+      mapping: giscusOptions.mapping || "pathname",
+      term: withBase(page.value.path),
+      inputPosition: giscusOptions.inputPosition || "top",
+      reactionsEnabled: giscusOptions.reactionsEnabled === false ? "0" : "1",
+      strict: giscusOptions.strict === false ? "0" : "1",
+      loading: giscusOptions.lazyLoading === false ? "eager" : "lazy",
       emitMetadata: "0",
     }));
 
     onMounted(async () => {
-      await import("giscus");
+      await import(/* webpackChunkName: "giscus" */ "giscus");
       loaded.value = true;
     });
 
@@ -139,16 +143,14 @@ export default defineComponent({
         {
           class: [
             "giscus-wrapper",
-            { "input-top": giscusOption.inputPosition !== "bottom" },
+            { "input-top": giscusOptions.inputPosition !== "bottom" },
           ],
           id: "comment",
           style: {
             display: enableComment.value ? "block" : "none",
           },
         },
-        loaded.value
-          ? h("giscus-widget", config.value)
-          : h("div", { style: "text-align:center" }, "Loading...")
+        loaded.value ? h("giscus-widget", config.value) : h(LoadingIcon)
       );
   },
 });

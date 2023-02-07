@@ -1,12 +1,12 @@
+import { type Page } from "@vuepress/core";
 import { isString } from "@vuepress/shared";
 import { logger } from "@vuepress/utils";
 import { getCategory, getTag } from "vuepress-shared/node";
 
-import type { Page } from "@vuepress/core";
-import type {
-  ThemeBlogHomePageFrontmatter,
-  ThemeNormalPageFrontmatter,
-  ThemeProjectHomePageFrontmatter,
+import {
+  type ThemeBlogHomePageFrontmatter,
+  type ThemeNormalPageFrontmatter,
+  type ThemeProjectHomePageFrontmatter,
 } from "../../shared/index.js";
 
 export const checkFrontmatter = (page: Page, isDebug: boolean): void => {

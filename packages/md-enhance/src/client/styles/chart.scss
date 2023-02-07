@@ -5,17 +5,8 @@
   text-align: center;
 }
 
-.chart-loading-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  .loading-icon {
-    width: 4em;
-    height: 4em;
-    margin: 2.5em auto;
-    color: var(--c-brand, #3eaf7c);
-  }
+.chart-loading {
+  color: var(--c-brand, #3eaf7c);
 }
 
 .chart-wrapper {

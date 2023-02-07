@@ -1,11 +1,10 @@
+import { type App, type Page } from "@vuepress/core";
 import { isArray, isLinkHttp, removeEndingSlash } from "@vuepress/shared";
-import { load } from "cheerio";
+import { type AnyNode, load } from "cheerio";
 import matter from "gray-matter";
-import { HTML_TAGS, SVG_TAGS } from "../utils/index.js";
-import { isAbsoluteUrl } from "../../shared/index.js";
 
-import type { App, Page } from "@vuepress/core";
-import type { AnyNode } from "cheerio";
+import { isAbsoluteUrl } from "../../shared/index.js";
+import { HTML_TAGS, SVG_TAGS } from "../utils/index.js";
 
 const HEADING_TAGS = ["h1", "h2", "h3", "h4", "h5", "h6"];
 

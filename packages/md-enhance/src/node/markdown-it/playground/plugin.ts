@@ -1,10 +1,13 @@
 import { hash } from "@vuepress/utils";
+import { type PluginWithOptions } from "markdown-it";
+import { type RuleBlock } from "markdown-it/lib/parser_block.js";
 import { entries } from "vuepress-shared/node";
-import { escapeHtml } from "../utils.js";
 
-import type { PluginWithOptions } from "markdown-it";
-import type { RuleBlock } from "markdown-it/lib/parser_block.js";
-import type { PlaygroundData, PlaygroundOptions } from "../../typings/index.js";
+import {
+  type PlaygroundData,
+  type PlaygroundOptions,
+} from "../../typings/index.js";
+import { escapeHtml } from "../utils.js";
 
 const AT_MARKER = `@`;
 const VALID_MARKERS = ["file", "import", "setting"] as const;
@@ -275,8 +278,9 @@ export const playground: PluginWithOptions<PlaygroundOptions> = (
           // File rule must contain a valid file name
           if (!info) continue;
           currentKey = info;
-        } else if (type === "import_open")
+        } else if (type === "import_open") {
           playgroundData.importMap = currentKey = info || "import-map.json";
+        }
 
         if (type === "setting_open") foundSettings = true;
         if (type === "setting_close") foundSettings = false;
@@ -300,11 +304,12 @@ export const playground: PluginWithOptions<PlaygroundOptions> = (
             );
         }
         // add code block content
-        else if (type === "fence" && currentKey)
+        else if (type === "fence" && currentKey) {
           playgroundData.files[currentKey] = {
             ext: info,
             content: content,
           };
+        }
 
         tokens[i].type = `${name}_empty`;
         tokens[i].hidden = true;

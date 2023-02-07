@@ -5,9 +5,8 @@ import { values } from "vuepress-shared/node";
 import { convertNavbarOptions } from "./navbar.js";
 import { convertSidebarOptions } from "./sidebar.js";
 import { deprecatedLogger, droppedLogger } from "./utils.js";
+import { type ThemeOptions } from "../../shared/index.js";
 import { logger } from "../utils.js";
-
-import type { ThemeOptions } from "../../shared/index.js";
 
 const DEPRECATED_THEME_OPTIONS: [string, string][] = [
   // v1
@@ -132,7 +131,9 @@ const handleFooterOptions = (options: Record<string, unknown>): void => {
 
       // @ts-ignore
       options["footer"] = footer["content"];
-    } else delete options["footer"];
+    } else {
+      delete options["footer"];
+    }
   }
 };
 
@@ -222,8 +223,8 @@ export const convertThemeOptions = (
   // handle copyright plugin
   if (
     isPlainObject(themeOptions["copyright"]) ||
-    typeof themeOptions["copyright"] === "boolean"
-  ) {
+    themeOptions["copyright"] === true
+  )
     logger.warn(
       `${colors.magenta(
         "copyright"
@@ -231,7 +232,6 @@ export const convertThemeOptions = (
         "plugins.copyright"
       )} instead.`
     );
-  }
 
   // handle addThis
   if (themeOptions["addThis"])
@@ -276,7 +276,7 @@ export const convertThemeOptions = (
   handleFooterOptions(themeOptions);
 
   // handle each locale
-  if ("locales" in themeOptions && isPlainObject(themeOptions["locales"])) {
+  if ("locales" in themeOptions && isPlainObject(themeOptions["locales"]))
     values(themeOptions["locales"]!).forEach(
       (localeConfig: Record<string, unknown>) => {
         DEPRECATED_THEME_OPTIONS.forEach(([deprecatedOption, newOption]) =>
@@ -344,7 +344,6 @@ export const convertThemeOptions = (
         }
       }
     );
-  }
 
   return themeOptions;
 };

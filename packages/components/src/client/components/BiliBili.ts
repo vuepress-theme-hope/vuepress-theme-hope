@@ -1,10 +1,10 @@
 /* eslint-disable vue/no-unused-properties */
 import { useEventListener } from "@vueuse/core";
+import { type VNode, computed, defineComponent, h, onMounted, ref } from "vue";
 import { checkIsMobile } from "vuepress-shared/client";
-import { computed, defineComponent, h, onMounted, ref } from "vue";
-import { useSize } from "../composables/index.js";
 
-import type { VNode } from "vue";
+import { useSize } from "../composables/index.js";
+import { videoIframeAllow } from "../utils/iframeAllow.js";
 
 import "../styles/bili-bili.scss";
 
@@ -136,15 +136,10 @@ export default defineComponent({
       h("iframe", {
         ref: el,
         // Tip: `https://www.bilibili.com/blackboard/newplayer.html?bvid=${props.bvid}&as_wide=1&page=1` only support whitelist sites now
-        src: `https://player.bilibili.com/player.html?bvid=${props.bvid}&t=${
-          props.time
-        }&high_quality=${props.lowQuality ? 0 : 1}&page=${props.page}&danmaku=${
-          props.noDanmaku ? 0 : 1
-        }`,
+        src: videoLink.value,
         title: props.title,
         class: "bili-iframe",
-        allow:
-          "accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture",
+        allow: videoIframeAllow,
         style: {
           width: width.value,
           height: height.value,

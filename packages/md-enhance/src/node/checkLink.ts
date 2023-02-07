@@ -1,8 +1,8 @@
+import { type App, type Page } from "@vuepress/core";
 import { logger } from "@vuepress/utils";
 import { isAbsoluteUrl } from "vuepress-shared/node";
 
-import type { App, Page } from "@vuepress/core";
-import type { MarkdownEnhanceOptions } from "./options.js";
+import { type MarkdownEnhanceOptions } from "./options.js";
 
 export const getCheckLinksStatus = (
   app: App,

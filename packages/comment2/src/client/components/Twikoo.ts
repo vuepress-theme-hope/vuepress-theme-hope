@@ -1,10 +1,19 @@
-import { usePageFrontmatter, usePageLang } from "@vuepress/client";
-import { computed, defineComponent, h, onMounted } from "vue";
+import { usePageData, usePageFrontmatter, usePageLang } from "@vuepress/client";
+import {
+  type VNode,
+  computed,
+  defineComponent,
+  h,
+  nextTick,
+  onMounted,
+  ref,
+  watch,
+} from "vue";
+import { LoadingIcon } from "vuepress-shared/client";
 
-import type { VNode } from "vue";
-import type {
-  CommentPluginFrontmatter,
-  TwikooOptions,
+import {
+  type CommentPluginFrontmatter,
+  type TwikooOptions,
 } from "../../shared/index.js";
 
 import "../styles/twikoo.scss";
@@ -20,8 +29,9 @@ export default defineComponent({
   setup() {
     const frontmatter = usePageFrontmatter<CommentPluginFrontmatter>();
     const lang = usePageLang();
+    const page = usePageData();
 
-    let id: number;
+    const loaded = ref(false);
 
     const enableComment = computed(() => {
       if (!enableTwikoo) return false;
@@ -36,24 +46,33 @@ export default defineComponent({
       );
     });
 
-    const initTwikoo = (): void => {
-      const timeID = (id = new Date().getTime());
+    const initTwikoo = async (): Promise<void> => {
+      if (enableComment.value) {
+        const [{ init }] = await Promise.all([
+          import(/* webpackChunkName: "twikoo" */ "twikoo"),
+          new Promise<void>((resolve) => {
+            setTimeout(() => {
+              void nextTick().then(resolve);
+            }, twikooOption.delay);
+          }),
+        ]);
 
-      void Promise.all([
-        import("twikoo"),
-        new Promise<void>((resolve) => setTimeout(resolve, twikooOption.delay)),
-      ]).then(([{ init }]) => {
-        if (timeID === id)
-          void init({
-            lang: lang.value === "zh-CN" ? "zh-CN" : "en",
-            ...twikooOption,
-            el: "#twikoo-comment",
-          });
-      });
+        loaded.value = true;
+
+        await init({
+          lang: lang.value === "zh-CN" ? "zh-CN" : "en",
+          ...twikooOption,
+          el: "#twikoo-comment",
+        });
+      }
     };
 
     onMounted(() => {
-      if (enableTwikoo) initTwikoo();
+      watch(
+        () => [enableComment.value, page.value.path],
+        () => initTwikoo(),
+        { immediate: true }
+      );
     });
 
     return (): VNode =>
@@ -64,7 +83,7 @@ export default defineComponent({
           id: "comment",
           style: { display: enableComment.value ? "block" : "none" },
         },
-        h("div", { id: "twikoo-comment" })
+        loaded.value ? h("div", { id: "twikoo-comment" }) : h(LoadingIcon)
       );
   },
 });

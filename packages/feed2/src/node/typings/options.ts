@@ -1,5 +1,6 @@
-import type { Page } from "@vuepress/core";
-import type { FeedChannelOption, FeedGetter } from "./feed.js";
+import { type Page } from "@vuepress/core";
+
+import { type FeedChannelOption, type FeedGetter } from "./feed.js";
 
 export interface BaseFeedOptions {
   /**

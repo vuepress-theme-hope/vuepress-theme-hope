@@ -1,12 +1,14 @@
-import { useEventListener, useThrottleFn } from "@vueuse/core";
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
+import { useEventListener, useThrottleFn } from "@vueuse/core";
 import {
+  type DefineComponent,
   Transition,
+  type VNode,
   computed,
   defineComponent,
   h,
-  onBeforeUnmount,
   onMounted,
+  onUnmounted,
   ref,
   resolveComponent,
   watch,
@@ -23,10 +25,9 @@ import Navbar from "@theme-hope/modules/navbar/components/Navbar";
 import Sidebar from "@theme-hope/modules/sidebar/components/Sidebar";
 import { useSidebarItems } from "@theme-hope/modules/sidebar/composables/index";
 
-import type { DefineComponent, VNode } from "vue";
-import type {
-  ThemeNormalPageFrontmatter,
-  ThemeProjectHomePageFrontmatter,
+import {
+  type ThemeNormalPageFrontmatter,
+  type ThemeProjectHomePageFrontmatter,
 } from "../../shared/index.js";
 
 import "../styles/common.scss";
@@ -116,10 +117,9 @@ export default defineComponent({
         // horizontal swipe
         Math.abs(dx) > Math.abs(dy) * 1.5 &&
         Math.abs(dx) > 40
-      ) {
+      )
         if (dx > 0 && touchStart.x <= 80) toggleMobileSidebar(true);
         else toggleMobileSidebar(false);
-      }
     };
 
     const enableToc = computed(() =>
@@ -137,7 +137,6 @@ export default defineComponent({
       0;
 
     // close sidebar after navigation
-    let unregisterRouterHook: () => void;
     let lastDistance = 0;
 
     useEventListener(
@@ -151,7 +150,9 @@ export default defineComponent({
             if (!isMobileSidebarOpen.value) hideNavbar.value = true;
           }
           // scroll up
-          else hideNavbar.value = false;
+          else {
+            hideNavbar.value = false;
+          }
 
           lastDistance = distance;
         },
@@ -165,13 +166,13 @@ export default defineComponent({
     });
 
     onMounted(() => {
-      unregisterRouterHook = router.afterEach((): void => {
+      const unregisterRouterHook = router.afterEach((): void => {
         toggleMobileSidebar(false);
       });
-    });
 
-    onBeforeUnmount(() => {
-      unregisterRouterHook();
+      onUnmounted(() => {
+        unregisterRouterHook();
+      });
     });
 
     return (): VNode =>

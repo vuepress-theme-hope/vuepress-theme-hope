@@ -1,9 +1,9 @@
+import { type App, type Page } from "@vuepress/core";
 import { fromEntries, getPageExcerpt, keys, utoa } from "vuepress-shared/node";
-import { generatePageIndex } from "./generateIndex.js";
 
-import type { App, Page } from "@vuepress/core";
-import type { SearchProOptions } from "./options.js";
-import type { PageIndex, SearchIndex } from "../shared/index.js";
+import { generatePageIndex } from "./generateIndex.js";
+import { type SearchProOptions } from "./options.js";
+import { type PageIndex, type SearchIndex } from "../shared/index.js";
 
 const HMR_CODE = `
 if (import.meta.webpackHot) {

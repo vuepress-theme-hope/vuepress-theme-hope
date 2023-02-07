@@ -1,6 +1,6 @@
 import { getPageText, stripTags } from "vuepress-shared/node";
 
-import type { ExtendPage } from "./typings/index.js";
+import { type ExtendPage } from "./typings/index.js";
 
 export const generateDescription = (
   page: ExtendPage,
@@ -8,14 +8,14 @@ export const generateDescription = (
 ): void => {
   // generate description
   if (!page.frontmatter.description && autoDescription) {
-    if (page.data.excerpt)
+    if (page.data.excerpt) {
       page.frontmatter.description = stripTags(page.data.excerpt)
         // convert link breaks into spaces
         .replace(/(?:\r?\n)+/g, " ")
         // convert 2 or more spaces into 1
         .replace(/ +/g, " ")
         .trim();
-    else {
+    } else {
       const pageText = getPageText(page);
 
       page.frontmatter.description =

@@ -1,10 +1,8 @@
-import { defineComponent, h } from "vue";
+import { type VNode, defineComponent, h } from "vue";
 
 import AutoLink from "@theme-hope/components/AutoLink";
 import NavScreenDropdown from "@theme-hope/modules/navbar/components/NavScreenDropdown";
 import { useNavbarConfig } from "@theme-hope/modules/navbar/composables/index";
-
-import type { VNode } from "vue";
 
 import "../styles/nav-screen-links.scss";
 

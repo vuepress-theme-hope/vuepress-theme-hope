@@ -30,13 +30,16 @@ tag:
 
 :::
 
-在终端中执行下列命令:
+在终端中执行下列命令之一:
 
 ```sh
+# pnpm
 pnpm create vuepress-theme-hope my-docs
 
-# 或
+# yarn
+yarn create vuepress-theme-hope my-docs
 
+# npm
 npm init vuepress-theme-hope my-docs
 ```
 

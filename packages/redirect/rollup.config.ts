@@ -10,6 +10,7 @@ export default [
       "@vuepress/shared",
       "@vuepress/utils",
       "cac",
+      "vuepress-shared/node",
     ],
     preserveShebang: true,
   }),

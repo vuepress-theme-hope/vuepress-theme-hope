@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-copyright2",
-  "version": "2.0.0-beta.171",
+  "version": "2.0.0-beta.172",
   "description": "Copyright plugin for VuePress",
   "keywords": [
     "vuepress",
@@ -51,8 +51,8 @@
     "@vuepress/client": "2.0.0-beta.60",
     "@vuepress/shared": "2.0.0-beta.60",
     "@vuepress/utils": "2.0.0-beta.60",
-    "@vueuse/core": "^9.11.1",
-    "vue": "^3.2.45",
+    "@vueuse/core": "^9.12.0",
+    "vue": "^3.2.47",
     "vue-router": "^4.1.6",
     "vuepress-shared": "workspace:*"
   },

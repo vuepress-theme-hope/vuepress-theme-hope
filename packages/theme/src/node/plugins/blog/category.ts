@@ -1,13 +1,13 @@
-import { defaultPageSorter } from "./utils.js";
-import { ArticleInfoType } from "../../../shared/index.js";
+import { type GitData } from "@vuepress/plugin-git";
+import { type BlogCategoryOptions } from "vuepress-plugin-blog2";
 
-import type { BlogCategoryOptions } from "vuepress-plugin-blog2";
-import type { GitData } from "@vuepress/plugin-git";
-import type {
-  ArticleInfo,
-  BlogPluginOptions,
-  ThemeData,
-  ThemeNormalPageFrontmatter,
+import { defaultPageSorter } from "./utils.js";
+import {
+  type ArticleInfo,
+  ArticleInfoType,
+  type BlogPluginOptions,
+  type ThemeData,
+  type ThemeNormalPageFrontmatter,
 } from "../../../shared/index.js";
 
 export const getCategoryCategory = (
@@ -32,12 +32,14 @@ export const getCategoryCategory = (
     layout: "BlogCategory",
     frontmatter: (localePath) => ({
       title: themeData.locales[localePath].blogLocales.category,
+      index: false,
       feed: false,
       sitemap: false,
     }),
     itemPath: options.categoryItem,
     itemFrontmatter: (name, localePath) => ({
       title: `${name} ${themeData.locales[localePath].blogLocales.category}`,
+      index: false,
       feed: false,
       sitemap: false,
     }),
@@ -66,6 +68,7 @@ export const getTagCategory = (
     layout: "BlogCategory",
     frontmatter: (localePath) => ({
       title: themeData.locales[localePath].blogLocales.tag,
+      index: false,
       feed: false,
       sitemap: false,
     }),
@@ -73,6 +76,7 @@ export const getTagCategory = (
     itemLayout: "BlogCategory",
     itemFrontmatter: (name, localePath) => ({
       title: `${name} ${themeData.locales[localePath].blogLocales.tag}`,
+      index: false,
       feed: false,
       sitemap: false,
     }),

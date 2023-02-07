@@ -1,9 +1,13 @@
-import { defineComponent, h, onMounted, ref } from "vue";
-import { atou } from "vuepress-shared/client";
-import { LoadingIcon } from "./icons.js";
-
-import type { ChartConfiguration } from "chart.js";
-import type { PropType, VNode } from "vue";
+import { type ChartConfiguration } from "chart.js";
+import {
+  type PropType,
+  type VNode,
+  defineComponent,
+  h,
+  onMounted,
+  ref,
+} from "vue";
+import { LoadingIcon, atou } from "vuepress-shared/client";
 
 import "../styles/chart.scss";
 
@@ -20,6 +24,7 @@ const parseChartConfig = (
 
   eval(config);
 
+  // eslint-disable-next-line import/no-commonjs
   return <ChartConfiguration>module.exports;
 };
 
@@ -74,21 +79,21 @@ export default defineComponent({
 
     const loading = ref(true);
 
-    onMounted(() => {
-      void Promise.all([
+    onMounted(async () => {
+      const [{ default: Chart }] = await Promise.all([
         import(/* webpackChunkName: "chart" */ "chart.js/auto"),
         // delay
         new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
-      ]).then(([{ default: Chart }]) => {
-        Chart.defaults.maintainAspectRatio = false;
+      ]);
 
-        const data = parseChartConfig(atou(props.config), props.type);
-        const ctx = chartCanvasElement.value!.getContext("2d")!;
+      Chart.defaults.maintainAspectRatio = false;
 
-        new Chart(ctx, data);
+      const data = parseChartConfig(atou(props.config), props.type);
+      const ctx = chartCanvasElement.value!.getContext("2d")!;
 
-        loading.value = false;
-      });
+      new Chart(ctx, data);
+
+      loading.value = false;
     });
 
     return (): (VNode | null)[] => [
@@ -96,7 +101,7 @@ export default defineComponent({
         ? h("div", { class: "chart-title" }, decodeURIComponent(props.title))
         : null,
       loading.value
-        ? h("div", { class: "chart-loading-wrapper" }, h(LoadingIcon))
+        ? h(LoadingIcon, { class: "chart-loading", height: 192 })
         : null,
       h(
         "div",

@@ -1,16 +1,15 @@
+import { type Page } from "@vuepress/core";
 import { getTitleFromFilename, startsWith } from "vuepress-shared/node";
-import { getStructure } from "./structure.js";
 
-import type { Page } from "@vuepress/core";
-import type {
-  SidebarDirInfo,
-  SidebarFileInfo,
-  SidebarInfo,
-  SidebarSorterFunction,
-  ThemeNormalPageFrontmatter,
-  ThemePageData,
+import { type StructureInfo, getStructure } from "./structure.js";
+import {
+  type SidebarDirInfo,
+  type SidebarFileInfo,
+  type SidebarInfo,
+  type SidebarSorterFunction,
+  type ThemeNormalPageFrontmatter,
+  type ThemePageData,
 } from "../../../shared/index.js";
-import type { StructureInfo } from "./structure.js";
 
 export interface FileInfo {
   type: "file";
@@ -128,7 +127,7 @@ const getInfoFromStructure = (
       groupInfo: {
         ...(collapsible ? { collapsible } : {}),
         ...(icon ? { icon } : {}),
-        ...(dirOptions?.link ? { link: readmePage.path } : {}),
+        ...(dirOptions?.link ? { link: "" } : {}),
       },
 
       frontmatter: readmePage.frontmatter,

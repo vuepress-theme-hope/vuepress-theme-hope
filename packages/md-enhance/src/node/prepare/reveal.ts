@@ -1,7 +1,7 @@
-import { CLIENT_FOLDER } from "../utils.js";
+import { type App } from "@vuepress/core";
 
-import type { App } from "@vuepress/core";
-import type { RevealPlugin } from "../typings/index.js";
+import { type RevealPlugin } from "../typings/index.js";
+import { CLIENT_FOLDER } from "../utils.js";
 
 export const prepareRevealPluginFile = async (
   app: App,

@@ -1,14 +1,12 @@
+import { type PluginFunction } from "@vuepress/core";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
 import { extendsBundlerOptions } from "./bundler.js";
 import { convertOptions } from "./compact/index.js";
 import { getDefine } from "./define.js";
+import { type ComponentOptions } from "./options/index.js";
 import { prepareConfigFile } from "./prepare.js";
 import { logger } from "./utils.js";
-
-import type { PluginFunction } from "@vuepress/core";
-
-import type { ComponentOptions } from "./options/index.js";
 
 export const componentsPlugin =
   (options: ComponentOptions, legacy = true): PluginFunction =>

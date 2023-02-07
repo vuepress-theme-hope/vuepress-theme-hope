@@ -6,12 +6,10 @@
   </ParentLayout>
 </template>
 <script setup lang="ts">
-import { onBeforeUnmount, onMounted, ref } from "vue";
+import { onUnmounted, onMounted, ref } from "vue";
 import ParentLayout from "@vuepress/theme-default/layouts/Layout.vue";
 
 const isDarkMode = ref(false);
-
-let observer;
 
 onMounted(() => {
   const html = document.querySelector("html") as HTMLElement;
@@ -19,7 +17,7 @@ onMounted(() => {
   isDarkMode.value = html.classList.contains("dark");
 
   // watch theme change
-  observer = new MutationObserver(() => {
+  const observer = new MutationObserver(() => {
     isDarkMode.value = html.classList.contains("dark");
   });
 
@@ -27,9 +25,9 @@ onMounted(() => {
     attributeFilter: ["class"],
     attributes: true,
   });
-});
 
-onBeforeUnmount(() => {
-  observer.disconnect();
+  onUnmounted(() => {
+    observer.disconnect();
+  });
 });
 </script>

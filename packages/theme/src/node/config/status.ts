@@ -1,8 +1,8 @@
+import { type App } from "@vuepress/core";
 import { isPlainObject } from "@vuepress/shared";
 import { keys } from "vuepress-shared/node";
 
-import type { App } from "@vuepress/core";
-import type { ThemeOptions } from "../../shared/index.js";
+import { type ThemeOptions } from "../../shared/index.js";
 
 export interface ThemeStatus {
   enableBlog: boolean;

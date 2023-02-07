@@ -4,6 +4,29 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.172](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.171...v2.0.0-beta.172) (2023-02-04)
+
+### Features
+
+- **comment2:** add Artalk support ([94a1488](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/94a14888346ad92ce6d7c9f8bf88f9901077e7b4))
+- **comment2:** mark Waline async ([8849137](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8849137836b615b9e2a6a58fae3aed8053ac08e8))
+- **seo2:** add seo option in frontmatter ([7a0ed6e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7a0ed6ef188a27ce4cb3473a0b9f00e11097725f))
+- **theme:** improve homepage ([831c6f8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/831c6f84dc652f63235c59bc77a65147fd9673f2))
+- **theme:** improve mobile appearance ([8a3f975](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8a3f9756b87b0c4d2fa8d98c79f8ea90bd304273))
+
+### Bug Fixes
+
+- **comment2:** fix artalk ([6122c25](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6122c253b3f8107360456e22c925f5abd1d944f3))
+- **deps:** update dependency hls.js to v1.3.2 ([#2731](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2731)) ([8fcd842](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8fcd84274841e9cd7c33a400e6e5813cc3c60dc9))
+- fix async mounted scope ([d7eaaf4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d7eaaf486cfed79577999bbceee9556afa48713e))
+- **theme:** fix timeline dot position ([#2729](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2729)) ([6f54a0d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6f54a0d23b0751e12a93903bd2bc33ac9d7ef65f))
+- **theme:** fix timeline transition ([331c251](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/331c251d4059e857bc443226f0e5bfb4ef50bb1d))
+
+### Performance Improvements
+
+- rebuild loading icon ([bf64273](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/bf64273795faac9196ea14217aa7e305a42cee2d))
+- tweaks ([d276e94](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d276e94c0603c46506187182f1f25b82342e879f))
+
 ## [2.0.0-beta.171](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.170...v2.0.0-beta.171) (2023-01-31)
 
 ### Bug Fixes

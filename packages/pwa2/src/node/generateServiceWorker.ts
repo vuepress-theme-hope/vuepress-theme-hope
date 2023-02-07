@@ -1,16 +1,15 @@
+import { type App } from "@vuepress/core";
 import { colors, fs, path } from "@vuepress/utils";
 import { endsWith } from "vuepress-shared/node";
-import { generateSW } from "workbox-build";
-import { logger } from "./utils.js";
-
-import type {
-  ManifestEntry,
-  ManifestTransform,
-  ManifestTransformResult,
+import {
+  type ManifestEntry,
+  type ManifestTransform,
+  type ManifestTransformResult,
+  generateSW,
 } from "workbox-build";
 
-import type { App } from "@vuepress/core";
-import type { PWAOptions } from "./options.js";
+import { type PWAOptions } from "./options.js";
+import { logger } from "./utils.js";
 
 const imageFilter =
   (outDir: string, maxSize = 1024): ManifestTransform =>
@@ -30,7 +29,9 @@ const imageFilter =
             `Skipped ${entry.url}, as it's ${Math.ceil(stats.size / 1024)} KB.`
           );
         else manifest.push(entry);
-      } else manifest.push(entry);
+      } else {
+        manifest.push(entry);
+      }
 
     return { warnings, manifest };
   };

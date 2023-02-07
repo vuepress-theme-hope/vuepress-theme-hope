@@ -1,6 +1,6 @@
 {
   "name": "lightgallery-demo",
-  "version": "2.0.0-beta.171",
+  "version": "2.0.0-beta.172",
   "private": true,
   "description": "Demo for vuepress-plugin-lightgallery",
   "license": "MIT",
@@ -19,7 +19,7 @@
     "@vuepress/client": "2.0.0-beta.60",
     "@vuepress/theme-default": "2.0.0-beta.60",
     "sass-loader": "13.2.0",
-    "vue": "3.2.45",
+    "vue": "3.2.47",
     "vuepress-plugin-lightgallery": "workspace:*",
     "vuepress-vite": "2.0.0-beta.60",
     "vuepress-webpack": "2.0.0-beta.60"

@@ -359,7 +359,6 @@ MSE 全称 Media Source Extensions， 详见 [Media Source Extensions API](https
 
   const customPlayer = (player) => {
     player.on("artplayerPluginDanmuku:emit", (danmu) => {
-      console.log(danmu);
       fetch(DANMAKU_API, {
         method: "POST",
         headers: {
@@ -436,7 +435,6 @@ const artPlayerDanmukuConfig = {
 
 const customPlayer = (player) => {
   player.on("artplayerPluginDanmuku:emit", (danmu) => {
-    console.log(danmu);
     fetch(DANMAKU_API, {
       method: "POST",
       headers: {

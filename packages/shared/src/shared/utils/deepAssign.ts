@@ -1,4 +1,5 @@
 import { isArray, isPlainObject } from "@vuepress/shared";
+
 import { entries } from "./helper.js";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

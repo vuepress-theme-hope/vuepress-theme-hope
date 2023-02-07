@@ -1,6 +1,6 @@
-import type {
-  DataSourceItem,
-  PhotoSwipeInitOptions,
+import {
+  type DataSourceItem,
+  type PhotoSwipeInitOptions,
 } from "../../shared/index.js";
 
 export interface PhotoSwipePoint {
