@@ -100,7 +100,7 @@ const __dirname = getDirname(import.meta.url);
 export default defineUserConfig({
   theme: hopeTheme({
     blog: {
-      media: {
+      medias: {
         // GitHub 已经内置了图标
         GitHub: "https://github.com/Mister-Hope",
         // 一个自定义媒体 MediaX (仅作示例)
@@ -135,7 +135,7 @@ const __dirname = getDirname(import.meta.url);
 export default {
   theme: hopeTheme({
     blog: {
-      media: {
+      medias: {
         // GitHub 已经内置了图标
         GitHub: "https://github.com/Mister-Hope",
         // 一个自定义媒体 MediaX (仅作示例)
