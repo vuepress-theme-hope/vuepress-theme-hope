@@ -74,6 +74,13 @@ blog:
     url: https://mrhope.site
     repo: https://github.com/Mister-Hope/Mister-Hope.github.io
     preview: /assets/image/mrhope.jpg
+
+  - name: Bin’s Blog
+    desc: Bin’s blog and notes
+    logo: https://zhaobc.site/logo.svg
+    url: https://zhaobc.site
+    repo: https://github.com/FuckDoctors/notes2
+    preview: /assets/image/zhaobc.png
 ---
 
 ## Living Demo
