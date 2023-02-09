@@ -1,11 +1,17 @@
 import { useDebounceFn, useEventListener } from "@vueuse/core";
-import { atou } from "vuepress-shared/client";
-import { computed, defineComponent, h, onMounted, ref } from "vue";
-import { LoadingIcon } from "./icons.js";
-import presets from "../flowchart-preset/index.js";
+import { type Chart } from "flowchart.ts";
+import {
+  type PropType,
+  type VNode,
+  computed,
+  defineComponent,
+  h,
+  onMounted,
+  ref,
+} from "vue";
+import { LoadingIcon, atou } from "vuepress-shared/client";
 
-import type { Chart } from "flowchart.ts";
-import type { PropType, VNode } from "vue";
+import presets from "../flowchart-preset/index.js";
 
 import "../styles/flowchart.scss";
 
@@ -41,7 +47,7 @@ export default defineComponent({
   },
 
   setup(props) {
-    let flowchart: Chart;
+    let flowchart: Chart | null = null;
     const element = ref<HTMLDivElement>();
 
     const loading = ref(true);
@@ -77,10 +83,12 @@ export default defineComponent({
 
         // draw svg to #id
         flowchart.draw(props.id, { ...preset.value, scale: scale.value });
+      });
 
-        useEventListener(
-          "resize",
-          useDebounceFn(() => {
+      useEventListener(
+        "resize",
+        useDebounceFn(() => {
+          if (flowchart) {
             const newScale = getScale(window.innerWidth);
 
             if (scale.value !== newScale) {
@@ -88,14 +96,14 @@ export default defineComponent({
 
               flowchart.draw(props.id, { ...preset.value, scale: newScale });
             }
-          }, 100)
-        );
-      });
+          }
+        }, 100)
+      );
     });
 
     return (): (VNode | null)[] => [
       loading.value
-        ? h("div", { class: "flowchart-loading-wrapper" }, h(LoadingIcon))
+        ? h(LoadingIcon, { class: "flowchart-loading", height: 192 })
         : null,
       h("div", {
         ref: element,

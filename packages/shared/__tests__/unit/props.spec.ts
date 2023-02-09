@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+
 import { atou, utoa } from "../../src/client/utils/props.js";
 
 const words = [

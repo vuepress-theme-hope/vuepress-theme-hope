@@ -1,12 +1,10 @@
 import { usePageFrontmatter } from "@vuepress/client";
-import { defineComponent, h } from "vue";
+import { type VNode, defineComponent, h } from "vue";
 import { RouterLink } from "vue-router";
+import { type BlogPluginCategoryFrontmatter } from "vuepress-plugin-blog2";
 import { entries, generateIndexFromHash } from "vuepress-shared/client";
 
 import { useTagMap } from "@theme-hope/modules/blog/composables/index";
-
-import type { VNode } from "vue";
-import type { BlogPluginCategoryFrontmatter } from "vuepress-plugin-blog2";
 
 import "../styles/tag-list.scss";
 

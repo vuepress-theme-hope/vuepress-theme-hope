@@ -5,7 +5,7 @@ icon: gears
 
 ## provider
 
-- 类型: `"Giscus" | "Twikoo" | "Waline" | "None"`
+- 类型: `"Artalk" | "Giscus" | "Twikoo" | "Waline" | "None"`
 - 默认值: `"None"`
 
 评论服务提供者。
@@ -28,3 +28,7 @@ icon: gears
 ## Twikoo 选项
 
 - [点击查看](twikoo.md)
+
+## Artalk 选项
+
+- [点击查看](artalk.md)

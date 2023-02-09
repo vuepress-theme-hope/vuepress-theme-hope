@@ -1,13 +1,21 @@
-import { computed, defineComponent, h, ref, toRef, watch } from "vue";
-import { useRoute } from "vue-router";
+import { usePageData } from "@vuepress/client";
+import {
+  type PropType,
+  type VNode,
+  computed,
+  defineComponent,
+  h,
+  ref,
+  toRef,
+  watch,
+} from "vue";
 
 import AutoLink from "@theme-hope/components/AutoLink";
 import Icon from "@theme-hope/components/Icon";
 
-import type { PropType, VNode } from "vue";
-import type {
-  AutoLinkOptions as AutoLinkType,
-  NavGroup,
+import {
+  type AutoLinkOptions as AutoLinkType,
+  type NavGroup,
 } from "../../../../shared/index.js";
 
 import "../styles/nav-screen-dropdown.scss";
@@ -28,7 +36,7 @@ export default defineComponent({
   },
 
   setup(props) {
-    const route = useRoute();
+    const page = usePageData();
     const config = toRef(props, "config");
 
     const dropdownAriaLabel = computed(
@@ -38,7 +46,7 @@ export default defineComponent({
     const open = ref(false);
 
     watch(
-      () => route.path,
+      () => page.value.path,
       () => {
         open.value = false;
       }

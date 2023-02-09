@@ -201,7 +201,7 @@ tag:
 
 - `comment` 移动至 `plugins.comment`
 
-  - 添加 `twikoo` 和 `giscus` 评论服务的支持 ![新增](https://img.shields.io/badge/-New-brightgreen)
+  - 添加 `artalk`、`twikoo` 和 `giscus` 评论服务的支持 ![新增](https://img.shields.io/badge/-New-brightgreen)
 
   - Vssue 目前缺失 ![警告](https://img.shields.io/badge/-warning-yellow)
 

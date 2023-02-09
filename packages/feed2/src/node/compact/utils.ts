@@ -1,4 +1,5 @@
 import { colors } from "@vuepress/utils";
+
 import { logger } from "../utils/index.js";
 
 export interface DeprecatedLoggerOptions {
@@ -35,9 +36,13 @@ export const deprecatedLogger = ({
           temp[key] = temp[key] || {};
 
           temp = temp[key] as Record<string, unknown>;
-        } else temp[key] = options[deprecatedOption];
+        } else {
+          temp[key] = options[deprecatedOption];
+        }
       });
-    } else options[newOption] = options[deprecatedOption];
+    } else {
+      options[newOption] = options[deprecatedOption];
+    }
 
     delete options[deprecatedOption];
   }

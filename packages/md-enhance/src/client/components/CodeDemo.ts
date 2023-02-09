@@ -1,6 +1,16 @@
-import { computed, defineComponent, h, onMounted, ref } from "vue";
-import { atou } from "vuepress-shared/client";
-import { CODEPEN_SVG, JSFIDDLE_SVG, LoadingIcon } from "./icons.js";
+import {
+  type PropType,
+  type VNode,
+  computed,
+  defineComponent,
+  h,
+  onMounted,
+  ref,
+} from "vue";
+import { LoadingIcon, atou } from "vuepress-shared/client";
+
+import { CODEPEN_SVG, JSFIDDLE_SVG } from "./icons.js";
+import { type CodeDemoOptions } from "../../shared/index.js";
 import { loadNormal, loadReact, loadVue } from "../composables/index.js";
 import {
   getCode,
@@ -10,9 +20,6 @@ import {
   injectCSS,
   injectScript,
 } from "../utils/index.js";
-
-import type { PropType, VNode } from "vue";
-import type { CodeDemoOptions } from "../../shared/index.js";
 
 import "balloon-css/balloon.css";
 import "../styles/code-demo.scss";
@@ -119,7 +126,9 @@ export default defineComponent({
         injectScript(props.id, shadowRoot, code.value);
 
         height.value = "0";
-      } else height.value = "auto";
+      } else {
+        height.value = "auto";
+      }
 
       loaded.value = true;
     };
@@ -147,7 +156,6 @@ export default defineComponent({
 
     return (): VNode =>
       h("div", { class: "code-demo-wrapper", id: props.id }, [
-        loaded.value ? null : h("div", { class: "loading" }, h(LoadingIcon)),
         h("div", { class: "code-demo-header" }, [
           code.value.isLegal
             ? h("button", {
@@ -259,7 +267,7 @@ export default defineComponent({
               )
             : null,
         ]),
-
+        loaded.value ? null : h(LoadingIcon, { class: "code-demo-loading" }),
         h("div", {
           ref: demoWrapper,
           class: "code-demo-container",

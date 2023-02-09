@@ -1,14 +1,14 @@
 import { isArray, isPlainObject, isString } from "@vuepress/shared";
 import { colors } from "@vuepress/utils";
-import { deprecatedLogger } from "./utils.js";
-import { logger } from "../utils.js";
 
-import type {
-  AutoLinkOptions,
-  NavbarGroup,
-  NavbarItem,
-  NavbarOptions,
+import { deprecatedLogger } from "./utils.js";
+import {
+  type AutoLinkOptions,
+  type NavbarGroup,
+  type NavbarItem,
+  type NavbarOptions,
 } from "../../shared/index.js";
+import { logger } from "../utils.js";
 
 type LegacyNavbarOptions = (
   | string

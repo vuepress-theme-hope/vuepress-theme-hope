@@ -1,13 +1,11 @@
-import { useEventListener } from "@vueuse/core";
 import { withBase } from "@vuepress/client";
-import { defineComponent, h, onMounted, ref } from "vue";
+import { useEventListener } from "@vueuse/core";
+import { type VNode, defineComponent, h, onMounted, ref } from "vue";
 import { useLocaleConfig } from "vuepress-shared/client";
 
 import { ArrowLeftIcon, ArrowRightIcon, CloseIcon } from "./icons.js";
+import { type ManifestOption } from "../../shared/index.js";
 import { locales } from "../define.js";
-
-import type { VNode } from "vue";
-import type { ManifestOption } from "../../shared/index.js";
 
 interface InstallPromptEvent extends Event {
   readonly platforms: string;

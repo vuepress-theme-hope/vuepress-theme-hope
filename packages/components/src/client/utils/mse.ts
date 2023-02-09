@@ -68,9 +68,9 @@ export const registerMseHls = async (
   if (
     mediaElement.canPlayType("application/x-mpegURL") ||
     mediaElement.canPlayType("application/vnd.apple.mpegURL")
-  )
+  ) {
     mediaElement.src = src;
-  else if (hls.isSupported()) {
+  } else if (hls.isSupported()) {
     const hlsInstance = new hls();
 
     hlsInstance.attachMedia(mediaElement);

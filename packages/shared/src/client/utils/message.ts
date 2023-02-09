@@ -36,8 +36,9 @@ export class Message {
     const containerId = "message-container";
     const containerElement = document.getElementById(containerId);
 
-    if (containerElement) this.containerElement = containerElement;
-    else {
+    if (containerElement) {
+      this.containerElement = containerElement;
+    } else {
       this.containerElement = document.createElement("div");
       this.containerElement.id = containerId;
       document.body.appendChild(this.containerElement);
@@ -74,7 +75,9 @@ export class Message {
         messageElement.remove();
         delete this.messageElements[messageId];
       });
-    } else keys(this.messageElements).forEach((id) => this.close(Number(id)));
+    } else {
+      keys(this.messageElements).forEach((id) => this.close(Number(id)));
+    }
   }
 
   destroy(): void {

@@ -1,5 +1,6 @@
 import { useEventListener } from "@vueuse/core";
 import {
+  type VNode,
   defineAsyncComponent,
   defineComponent,
   h,
@@ -14,8 +15,6 @@ import { SearchLoading } from "./SearchLoading.js";
 import { SearchIcon } from "./icons.js";
 import { searchModalSymbol } from "../composables/setup.js";
 import { searchProLocales } from "../define.js";
-
-import type { VNode } from "vue";
 
 import "../styles/search-modal.scss";
 

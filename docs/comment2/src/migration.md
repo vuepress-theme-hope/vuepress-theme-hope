@@ -7,7 +7,7 @@ Renamed from `@mr-hope/vuepress-plugin-comment` to `vuepress-plugin-comment2`. â
 
 ## New Features
 
-- Adds support for `twikoo` and `giscus` ![New](https://img.shields.io/badge/-New-brightgreen)
+- Adds support for `artalk`, `twikoo` and `giscus` ![New](https://img.shields.io/badge/-New-brightgreen)
 
 ## Removed
 

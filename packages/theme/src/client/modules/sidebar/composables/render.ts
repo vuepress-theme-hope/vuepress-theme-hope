@@ -1,16 +1,15 @@
-import { h } from "vue";
+import { type VNode, h } from "vue";
 import { useRoute } from "vue-router";
 
 import AutoLink from "@theme-hope/components/AutoLink";
 import Icon from "@theme-hope/components/Icon";
 import { isActiveSidebarItem } from "@theme-hope/modules/sidebar/utils/index";
 
-import type { VNode } from "vue";
-import type {
-  ResolvedSidebarHeaderItem,
-  ResolvedSidebarItem,
+import { type AutoLinkOptions as AutoLinkType } from "../../../../shared/index.js";
+import {
+  type ResolvedSidebarHeaderItem,
+  type ResolvedSidebarItem,
 } from "../utils/index.js";
-import type { AutoLinkOptions as AutoLinkType } from "../../../../shared/index.js";
 
 export const renderItem = (
   config: ResolvedSidebarItem,

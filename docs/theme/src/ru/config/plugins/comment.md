@@ -16,6 +16,7 @@ tag:
 
 `vuepress-plugin-comment2` в настоящее время поддерживает 3 службы комментариев:
 
+- Artalk
 - Giscus
 - Twikoo
 - Waline

@@ -1,4 +1,4 @@
-import type { PWAEvent } from "./usePWAEvent.js";
+import { type PWAEvent } from "./usePWAEvent.js";
 
 export const useForceUpdate = (event: PWAEvent): void => {
   event.on("updatefound", () => {

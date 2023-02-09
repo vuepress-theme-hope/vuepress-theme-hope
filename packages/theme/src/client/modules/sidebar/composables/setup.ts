@@ -1,8 +1,13 @@
-import { computed, inject, provide } from "vue";
-import { resolveSidebarItems } from "./resolveConfig.js";
+import {
+  type ComputedRef,
+  type InjectionKey,
+  computed,
+  inject,
+  provide,
+} from "vue";
 
-import type { ComputedRef, InjectionKey } from "vue";
-import type { ResolvedSidebarItem } from "../utils/index.js";
+import { resolveSidebarItems } from "./resolveConfig.js";
+import { type ResolvedSidebarItem } from "../utils/index.js";
 
 export type SidebarItemsRef = ComputedRef<ResolvedSidebarItem[]>;
 
@@ -24,9 +29,8 @@ export const setupSidebarItems = (): void => {
 export const useSidebarItems = (): SidebarItemsRef => {
   const sidebarItems = inject(sidebarItemsSymbol);
 
-  if (!sidebarItems) {
+  if (!sidebarItems)
     throw new Error("useSidebarItems() is called without provider.");
-  }
 
   return sidebarItems;
 };

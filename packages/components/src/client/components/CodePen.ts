@@ -1,7 +1,12 @@
 import { useScriptTag } from "@vueuse/core";
-import { computed, defineComponent, h, onMounted } from "vue";
-
-import type { PropType, VNode } from "vue";
+import {
+  type PropType,
+  type VNode,
+  computed,
+  defineComponent,
+  h,
+  onMounted,
+} from "vue";
 
 import "../styles/code-pen.scss";
 

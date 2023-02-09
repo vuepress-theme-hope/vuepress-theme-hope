@@ -1,11 +1,10 @@
+import { type Page } from "@vuepress/core";
 import { isArray } from "@vuepress/shared";
-import { load } from "cheerio";
+import { type AnyNode, load } from "cheerio";
 import { fromEntries, keys } from "vuepress-shared/node";
 
-import type { Page } from "@vuepress/core";
-import type { AnyNode } from "cheerio";
-import type { SearchProCustomFieldOptions } from "./options.js";
-import type { PageHeaderContent, PageIndex } from "../shared/index.js";
+import { type SearchProCustomFieldOptions } from "./options.js";
+import { type PageHeaderContent, type PageIndex } from "../shared/index.js";
 
 /**
  * These tags are valid HTML tags which can contain content.
@@ -76,7 +75,9 @@ export const generatePageIndex = (
             result.contents.push(currentHeaderContent);
 
           isContentBeforeFirstHeader = false;
-        } else result.contents.push(currentHeaderContent);
+        } else {
+          result.contents.push(currentHeaderContent);
+        }
 
         // update header
         currentHeaderContent = {
@@ -96,11 +97,12 @@ export const generatePageIndex = (
           currentContent = "";
         }
         node.childNodes.forEach(render);
-      } else if (CONTENT_INLINE_TAGS.includes(node.name))
+      } else if (CONTENT_INLINE_TAGS.includes(node.name)) {
         node.childNodes.forEach(render);
-    } else if (node.type === "text")
+      }
+    } else if (node.type === "text") {
       currentContent += node.data.trim() ? node.data : "";
-    else if (
+    } else if (
       // we are expecting to stop at excerpt marker
       hasExcerpt &&
       !indexContent &&

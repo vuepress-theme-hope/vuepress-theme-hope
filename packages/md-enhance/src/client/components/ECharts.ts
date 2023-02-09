@@ -1,10 +1,15 @@
 import { useDebounceFn, useEventListener } from "@vueuse/core";
-import { defineComponent, h, onBeforeUnmount, onMounted, ref } from "vue";
-import { atou } from "vuepress-shared/client";
-import { LoadingIcon } from "./icons.js";
-
-import type { EChartsOption, EChartsType } from "echarts";
-import type { PropType, VNode } from "vue";
+import { type EChartsOption, type EChartsType } from "echarts";
+import {
+  type PropType,
+  type VNode,
+  defineComponent,
+  h,
+  onMounted,
+  onUnmounted,
+  ref,
+} from "vue";
+import { LoadingIcon, atou } from "vuepress-shared/client";
 
 import "../styles/echarts.scss";
 
@@ -20,6 +25,7 @@ const parseEChartsConfig = (
 
     eval(config);
 
+    // eslint-disable-next-line import/no-commonjs
     return <EChartsOption>module.exports;
   }
 
@@ -60,10 +66,15 @@ export default defineComponent({
   },
 
   setup(props) {
-    const echartsWrapper = ref<HTMLElement>();
+    const echartsContainer = ref<HTMLElement>();
     let chart: EChartsType;
 
     const loading = ref(true);
+
+    useEventListener(
+      "resize",
+      useDebounceFn(() => chart?.resize(), 100)
+    );
 
     onMounted(() => {
       void Promise.all([
@@ -73,21 +84,14 @@ export default defineComponent({
       ]).then(([echarts]) => {
         const options = parseEChartsConfig(atou(props.config), props.type);
 
-        chart = echarts.init(echartsWrapper.value!);
-        chart.showLoading();
+        chart = echarts.init(echartsContainer.value!);
         chart.setOption(options);
-        chart.hideLoading();
 
         loading.value = false;
       });
-
-      useEventListener(
-        "resize",
-        useDebounceFn(() => chart?.resize(), 100)
-      );
     });
 
-    onBeforeUnmount(() => {
+    onUnmounted(() => {
       chart?.dispose();
     });
 
@@ -95,14 +99,16 @@ export default defineComponent({
       props.title
         ? h("div", { class: "echarts-title" }, decodeURIComponent(props.title))
         : null,
-      loading.value
-        ? h("div", { class: "echarts-loading-wrapper" }, h(LoadingIcon))
-        : null,
-      h("div", {
-        ref: echartsWrapper,
-        class: "echarts-wrapper",
-        id: props.id,
-      }),
+      h("div", { class: "echarts-wrapper" }, [
+        h("div", {
+          ref: echartsContainer,
+          class: "echarts-container",
+          id: props.id,
+        }),
+        loading.value
+          ? h(LoadingIcon, { class: "echarts-loading", height: 360 })
+          : null,
+      ]),
     ];
   },
 });

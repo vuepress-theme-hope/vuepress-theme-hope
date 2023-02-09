@@ -1,15 +1,14 @@
 import { isArray, isPlainObject, isString } from "@vuepress/shared";
 
-import type { Author, AuthorInfo } from "../types/index.js";
+import { type Author, type AuthorInfo } from "../types/index.js";
 
 export const getAuthor = (
   author: Author | false | undefined,
   canDisable = false
 ): AuthorInfo[] => {
   if (author) {
-    if (isArray(author)) {
+    if (isArray(author))
       return author.map((item) => (isString(item) ? { name: item } : item));
-    }
 
     if (isString(author)) return [{ name: author }];
 

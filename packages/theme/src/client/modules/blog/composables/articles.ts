@@ -1,9 +1,7 @@
-import { inject, provide } from "vue";
-import { useBlogType } from "vuepress-plugin-blog2/client";
+import { type ComputedRef, type InjectionKey, inject, provide } from "vue";
+import { type BlogTypeData, useBlogType } from "vuepress-plugin-blog2/client";
 
-import type { ComputedRef, InjectionKey } from "vue";
-import type { BlogTypeData } from "vuepress-plugin-blog2/client";
-import type { ArticleInfo } from "../../../../shared/index.js";
+import { type ArticleInfo } from "../../../../shared/index.js";
 
 export type ArticlesRef = ComputedRef<BlogTypeData<ArticleInfo>>;
 
@@ -15,9 +13,7 @@ export const articlesSymbol: InjectionKey<ArticlesRef> = Symbol.for("articles");
 export const useArticles = (): ArticlesRef => {
   const articles = inject(articlesSymbol);
 
-  if (!articles) {
-    throw new Error("useArticles() is called without provider.");
-  }
+  if (!articles) throw new Error("useArticles() is called without provider.");
 
   return articles;
 };

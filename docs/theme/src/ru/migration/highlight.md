@@ -66,7 +66,7 @@ VuePressThemeHope@v2 переписан с composition API, а его систе
 
 Valine и Vssue больше не поддерживаются.
 
-Вместо этого мы добавляем поддержку Giscus и Twikoo помимо Waline.
+Вместо этого мы добавляем поддержку Artalk, Giscus и Twikoo помимо Waline.
 
 #### Шифрование
 

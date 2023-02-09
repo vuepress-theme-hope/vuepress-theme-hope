@@ -4,6 +4,45 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.173](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.172...v2.0.0-beta.173) (2023-02-08)
+
+### Features
+
+- **create:** add update command in template ([5f8ed1d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5f8ed1d68a7625f11e203506fe381734a74c920a))
+- **md-enhance:** hide tab on print mode ([78abb60](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/78abb6090cbf6532a6e26400e17e26a6bd5ea820))
+- **sass-palette:** improve variable injecting ([2014142](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/20141425d2d7f912b2f1c72efdb7cd4da0ea6e51))
+
+### Bug Fixes
+
+- **shared:** a workaround for vuepress/vuepress[#1252](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1252) ([84f55cf](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/84f55cf39a743f2400a57f3557201751733084ae))
+- **shared:** fix packageManager ([044598b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/044598b1e163db3d5254251c76e5e25212980b47))
+- **theme:** add pl locale, fix [#2751](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2751) ([6d2e95c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6d2e95ce5c9b4db809889ec03523333a80e985a0))
+- **theme:** exclude blog pages from sidebar and catalog ([a668e06](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a668e0623d321d895fda3b6ef31da56709bf4e1d))
+- **theme:** fix copyright legacy ([78b3cf2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/78b3cf21bb695a295a22715d5e41eb47037b7eee))
+
+## [2.0.0-beta.172](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.171...v2.0.0-beta.172) (2023-02-04)
+
+### Features
+
+- **comment2:** add Artalk support ([94a1488](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/94a14888346ad92ce6d7c9f8bf88f9901077e7b4))
+- **comment2:** mark Waline async ([8849137](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8849137836b615b9e2a6a58fae3aed8053ac08e8))
+- **seo2:** add seo option in frontmatter ([7a0ed6e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7a0ed6ef188a27ce4cb3473a0b9f00e11097725f))
+- **theme:** improve homepage ([831c6f8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/831c6f84dc652f63235c59bc77a65147fd9673f2))
+- **theme:** improve mobile appearance ([8a3f975](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8a3f9756b87b0c4d2fa8d98c79f8ea90bd304273))
+
+### Bug Fixes
+
+- **comment2:** fix artalk ([6122c25](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6122c253b3f8107360456e22c925f5abd1d944f3))
+- **deps:** update dependency hls.js to v1.3.2 ([#2731](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2731)) ([8fcd842](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8fcd84274841e9cd7c33a400e6e5813cc3c60dc9))
+- fix async mounted scope ([d7eaaf4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d7eaaf486cfed79577999bbceee9556afa48713e))
+- **theme:** fix timeline dot position ([#2729](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2729)) ([6f54a0d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6f54a0d23b0751e12a93903bd2bc33ac9d7ef65f))
+- **theme:** fix timeline transition ([331c251](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/331c251d4059e857bc443226f0e5bfb4ef50bb1d))
+
+### Performance Improvements
+
+- rebuild loading icon ([bf64273](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/bf64273795faac9196ea14217aa7e305a42cee2d))
+- tweaks ([d276e94](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d276e94c0603c46506187182f1f25b82342e879f))
+
 ## [2.0.0-beta.171](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.170...v2.0.0-beta.171) (2023-01-31)
 
 ### Bug Fixes

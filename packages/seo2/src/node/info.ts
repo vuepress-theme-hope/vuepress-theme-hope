@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
+import { type App } from "@vuepress/core";
 import {
   isArray,
   isFunction,
@@ -7,17 +8,15 @@ import {
 } from "@vuepress/shared";
 import { getAuthor, getDate } from "vuepress-shared/node";
 
-import { getAlternateInfo, getCover, getImages, resolveUrl } from "./utils.js";
-
-import type { App } from "@vuepress/core";
-import type { SeoOptions } from "./options.js";
-import type {
-  ArticleSchema,
-  BlogPostingSchema,
-  ExtendPage,
-  SeoContent,
-  WebPageSchema,
+import { type SeoOptions } from "./options.js";
+import {
+  type ArticleSchema,
+  type BlogPostingSchema,
+  type ExtendPage,
+  type SeoContent,
+  type WebPageSchema,
 } from "./typings/index.js";
+import { getAlternateInfo, getCover, getImages, resolveUrl } from "./utils.js";
 
 export const getOGP = (
   page: ExtendPage,

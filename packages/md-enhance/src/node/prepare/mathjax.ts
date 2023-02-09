@@ -1,7 +1,8 @@
-import { generateMathjaxStyle } from "@mdit/plugin-mathjax";
-
-import type { App } from "@vuepress/core";
-import type { MathjaxInstance } from "@mdit/plugin-mathjax";
+import {
+  type MathjaxInstance,
+  generateMathjaxStyle,
+} from "@mdit/plugin-mathjax";
+import { type App } from "@vuepress/core";
 
 // prevent mathjax breaking mobile layout
 const style = `\

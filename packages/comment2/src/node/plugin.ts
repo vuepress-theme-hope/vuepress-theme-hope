@@ -1,3 +1,4 @@
+import { type PluginFunction } from "@vuepress/core";
 import { getDirname, path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
@@ -11,10 +12,8 @@ import {
 import { getProvider } from "./alias.js";
 import { convertOptions } from "./compact.js";
 import { walineLocales } from "./locales.js";
-import { logger } from "./utils.js";
-
-import type { CommentOptions } from "../shared/index.js";
-import type { PluginFunction } from "@vuepress/core";
+import { COMMENT_PROVIDERS, logger } from "./utils.js";
+import { type CommentOptions } from "../shared/index.js";
 
 const __dirname = getDirname(import.meta.url);
 
@@ -28,8 +27,7 @@ export const commentPlugin =
     if (app.env.isDebug) logger.info("Options:", options);
 
     const provider =
-      options.provider &&
-      ["Giscus", "Waline", "Twikoo"].includes(options.provider)
+      options.provider && COMMENT_PROVIDERS.includes(options.provider)
         ? options.provider
         : "None";
 
@@ -68,6 +66,11 @@ export const commentPlugin =
       }),
 
       extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
+        if (provider === "Artalk") {
+          addViteOptimizeDepsInclude(bundlerOptions, app, "artalk");
+          addViteSsrExternal(bundlerOptions, app, "artalk");
+        }
+
         if (provider === "Giscus") {
           addCustomElement(bundlerOptions, app, "GiscusWidget");
           addViteSsrExternal(bundlerOptions, app, "giscus");

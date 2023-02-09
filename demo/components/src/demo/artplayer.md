@@ -120,7 +120,6 @@ const artPlayerDanmukuConfig = {
 
 const customPlayer = (player) => {
   player.on("artplayerPluginDanmuku:emit", (danmu) => {
-    console.log(danmu);
     fetch(DANMAKU_API, {
       method: "POST",
       headers: {

@@ -16,6 +16,7 @@ The theme provide comment support using `vuepress-plugin-comment2`, and it pass 
 
 `vuepress-plugin-comment2` currently supports 3 comment services:
 
+- Artalk
 - Giscus
 - Twikoo
 - Waline

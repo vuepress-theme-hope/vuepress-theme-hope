@@ -37,19 +37,19 @@ The theme can ONLY apply plugins it bundles, so `plugins` field in theme options
    @tab pnpm
 
    ```bash
-   pnpm add -D vuepress-plugin-search-pro@next
+   pnpm add -D vuepress-plugin-search-pro
    ```
 
    @tab yarn
 
    ```bash
-   yarn add -D vuepress-plugin-search-pro@next
+   yarn add -D vuepress-plugin-search-pro
    ```
 
    @tab npm
 
    ```bash
-   npm i -D vuepress-plugin-search-pro@next
+   npm i -D vuepress-plugin-search-pro
    ```
 
    :::

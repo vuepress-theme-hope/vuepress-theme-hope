@@ -63,21 +63,55 @@
   @return false;
 }
 
-@function get-color($color, $isDark: false) {
+@function get-color($color, $is-dark: false) {
   @if meta.type-of($color) == color {
     @return $color;
   }
 
-  $lightColor: map.get($color, "light");
-  $darkColor: map.get($color, "dark");
+  $light-color: map.get($color, "light");
+  $dark-color: map.get($color, "dark");
 
-  @if $lightColor and $darkColor {
-    @return if($isDark, $darkColor, $lightColor);
+  @if $light-color and $dark-color {
+    @return if($is-dark, $dark-color, $light-color);
   }
 
   @warn "Unexpected color: getting #{$color}";
 
   @return transparent;
+}
+
+@function get-dark-color($color) {
+  @return get-color($color, $is-dark: true);
+}
+
+@function get-variables($variables, $dark-selector: "") {
+  $root-variables: ();
+  $dark-variables: ();
+  @each $name, $value in $variables {
+    $key: camel-to-kebab($name);
+
+    @if meta.type-of($value) == number or meta.type-of($value) == string {
+      $root-variables: map.set($root-variables, $key, $value);
+    } @else if color-is-legal($value) {
+      $light-color: get-color($value, false);
+
+      $root-variables: map.set($root-variables, $key, $light-color);
+
+      @if ($dark-selector) {
+        $dark-color: get-color($value, true);
+
+        @if $light-color != $dark-color {
+          $dark-variables: map.set(
+            $dark-variables,
+            $key,
+            get-color($value, true)
+          );
+        }
+      }
+    }
+  }
+
+  @return ("root": $root-variables, "dark": $dark-variables);
 }
 
 @mixin inject-color($key, $config, $dark-selector: "") {
@@ -86,18 +120,39 @@
       #{$key}: #{$config};
     }
   } @else {
-    $lightColor: map.get($config, "light");
-    $darkColor: map.get($config, "dark");
+    $light-color: map.get($config, "light");
+    $dark-color: map.get($config, "dark");
 
-    @if $lightColor and $darkColor {
+    @if $light-color and $dark-color {
       :root {
-        #{$key}: #{$lightColor};
+        #{$key}: #{$light-color};
       }
 
-      @if $lightColor != $darkColor and $dark-selector {
+      @if $light-color != $dark-color and $dark-selector {
         #{$dark-selector} {
-          #{$key}: #{$darkColor};
+          #{$key}: #{$dark-color};
         }
+      }
+    }
+  }
+}
+
+@mixin inject($variables, $dark-selector: "") {
+  $result: get-variables($variables, $dark-selector);
+
+  $root-variables: map.get($result, "root");
+  $dark-variables: map.get($result, "dark");
+
+  :root {
+    @each $key, $value in $root-variables {
+      #{$key}: #{$value};
+    }
+  }
+
+  @if ($dark-selector) {
+    #{$dark-selector} {
+      @each $key, $value in $dark-variables {
+        #{$key}: #{$value};
       }
     }
   }

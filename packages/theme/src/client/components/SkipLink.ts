@@ -1,6 +1,5 @@
-import { defineComponent, h, onMounted, ref, watch } from "vue";
-import { useRoute } from "vue-router";
-import type { VNode } from "vue";
+import { usePageData } from "@vuepress/client";
+import { type VNode, defineComponent, h, onMounted, ref, watch } from "vue";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 
@@ -18,8 +17,9 @@ export default defineComponent({
   },
 
   setup(props) {
-    const route = useRoute();
+    const page = usePageData();
     const themeLocale = useThemeLocaleData();
+
     const skipToMainContent = ref<HTMLSpanElement>();
 
     const focusMainContent = ({ target }: Event): void => {
@@ -42,7 +42,7 @@ export default defineComponent({
 
     onMounted(() => {
       watch(
-        () => route.path,
+        () => page.value.path,
         () => skipToMainContent.value!.focus()
       );
     });

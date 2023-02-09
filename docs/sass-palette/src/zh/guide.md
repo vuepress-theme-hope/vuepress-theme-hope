@@ -244,10 +244,8 @@ $moveTransition: "width 0.3s ease";
 @use "@sass-palette/helper";
 
 $theme-color-light: (
-  light: color.scale(helper.get-color($theme-color, $isDark: false), $lightness:
-        10%),
-  dark: color.scale(helper.get-color($theme-color, $isDark: true), $lightness:
-        10%),
+  light: color.scale(helper.get-color($theme-color), $lightness: 10%),
+  dark: color.scale(helper.get-dark-color($theme-color), $lightness: 10%),
 ) !default;
 ```
 

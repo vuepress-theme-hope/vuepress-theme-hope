@@ -1,13 +1,12 @@
+import { usePageData } from "@vuepress/client";
 import { isPlainObject } from "@vuepress/shared";
 import { useSessionStorage, useStorage } from "@vueuse/core";
-import { computed } from "vue";
-import { useRoute } from "vue-router";
+import { type ComputedRef, computed } from "vue";
 import { keys, startsWith } from "vuepress-shared/client";
 
-import { useEncryptData } from "./utils.js";
 import { checkToken } from "@theme-hope/modules/encrypt/utils/index";
 
-import type { ComputedRef } from "vue";
+import { useEncryptData } from "./utils.js";
 
 const STORAGE_KEY = "VUEPRESS_HOPE_PATH_TOKEN";
 
@@ -23,7 +22,7 @@ export interface PathEncrypt {
 }
 
 export const usePathEncrypt = (): PathEncrypt => {
-  const route = useRoute();
+  const page = usePageData();
   const encryptData = useEncryptData();
 
   const localToken = useStorage<Record<string, string>>(STORAGE_KEY, {});
@@ -67,20 +66,19 @@ export const usePathEncrypt = (): PathEncrypt => {
     };
   };
 
-  const status = computed(() => getStatus(route.path));
+  const status = computed(() => getStatus(page.value.path));
 
   const validate = (inputToken: string, keep = false): void => {
     const { config = {} } = encryptData.value;
-    const matchedKeys = getPathMatchedKeys(route.path);
+    const matchedKeys = getPathMatchedKeys(page.value.path);
 
-    for (const hitKey of matchedKeys) {
-      // some of the tokens matches
+    // some of the tokens matches
+    for (const hitKey of matchedKeys)
       if (config[hitKey].filter((token) => checkToken(inputToken, token))) {
         (keep ? localToken : sessionToken).value[hitKey] = inputToken;
 
         break;
       }
-    }
   };
 
   return {

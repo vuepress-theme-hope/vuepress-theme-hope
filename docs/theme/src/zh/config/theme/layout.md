@@ -334,7 +334,7 @@ tag:
 
 ### copyright
 
-- 类型: `string | boolean`
+- 类型: `string | false`
 - 默认值: `"Copyright © <作者>"`
 
 默认的版权信息，设置为 `false` 来默认禁用它。

@@ -1,6 +1,6 @@
-import type { ThemePageFrontmatter } from "./base.js";
-import type { PageInfo } from "../info.js";
-import type { AutoLinkOptions } from "../utils.js";
+import { type ThemePageFrontmatter } from "./base.js";
+import { type PageInfo } from "../info.js";
+import { type AutoLinkOptions } from "../utils.js";
 
 export interface ThemeNormalPageFrontmatter extends ThemePageFrontmatter {
   /**
@@ -187,11 +187,11 @@ export interface ThemeNormalPageFrontmatter extends ThemePageFrontmatter {
    *
    * Whether enable pageviews
    *
-   * @description Only available when using waline comment service
+   * @description Only available when using artalk or waline comment service
    *
    * 是否启用访问量
    *
-   * @description 仅在使用 Waline 评论服务时有效
+   * @description 仅在使用 Artalk 或 Waline 评论服务时有效
    *
    * @default true
    */

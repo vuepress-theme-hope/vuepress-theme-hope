@@ -1,12 +1,12 @@
+import { type PluginFunction, type PluginObject } from "@vuepress/core";
 import { colors } from "@vuepress/utils";
+
 import { convertOptions } from "./compact/index.js";
-import { checkOutput, ensureHostName, getFeedOptions } from "./options.js";
 import { FeedGenerator } from "./generator/index.js";
 import { injectLinksToHead } from "./injectHead.js";
+import { checkOutput, ensureHostName, getFeedOptions } from "./options.js";
+import { type FeedOptions } from "./typings/index.js";
 import { logger } from "./utils/index.js";
-
-import type { PluginFunction, PluginObject } from "@vuepress/core";
-import type { FeedOptions } from "./typings/index.js";
 
 export const feedPlugin =
   (options: FeedOptions, legacy = true): PluginFunction =>

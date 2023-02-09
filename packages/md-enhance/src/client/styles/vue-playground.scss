@@ -109,24 +109,8 @@
     }
   }
 
-  .preview-loading-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: var(--grey15);
-
-    transition: background var(--t-color, 0.3s ease);
-
-    .loading-icon {
-      width: 4em;
-      height: 4em;
-      margin: 2.5em auto;
-
-      color: var(--c-brand, #3eaf7c);
-
-      transition: color var(--t-color, 0.3s ease);
-    }
+  .preview-loading {
+    color: var(--c-brand, #3eaf7c);
   }
 
   .source-container {

@@ -1,7 +1,9 @@
+import { type App, type PluginConfig } from "@vuepress/core";
 import { externalLinkIconPlugin } from "@vuepress/plugin-external-link-icon";
 import { nprogressPlugin } from "@vuepress/plugin-nprogress";
 import { prismjsPlugin } from "@vuepress/plugin-prismjs";
 import { themeDataPlugin } from "@vuepress/plugin-theme-data";
+
 import { getActiveHeaderLinksPlugin } from "./activeHeaderLinks.js";
 import { getAutoCatalogPlugin } from "./autoCatalog.js";
 import { getBlogPlugin } from "./blog/index.js";
@@ -14,14 +16,12 @@ import { getMdEnhancePlugin } from "./mdEnhance.js";
 import { getPhotoSwipePlugin } from "./photoSwipe.js";
 import { getPWAPlugin } from "./pwa.js";
 import { getRtlPlugin } from "./rtl.js";
-import { getSitemapPlugin } from "./sitemap.js";
 import { getSEOPlugin } from "./seo.js";
-
-import type { App, PluginConfig } from "@vuepress/core";
-import type {
-  PluginsOptions,
-  ThemeData,
-  ThemeOptions,
+import { getSitemapPlugin } from "./sitemap.js";
+import {
+  type PluginsOptions,
+  type ThemeData,
+  type ThemeOptions,
 } from "../../shared/index.js";
 
 export const getPluginConfig = (

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { createRequire } from "node:module";
-import { createBuildApp } from "@vuepress/core";
+
 import {
   loadUserConfig,
   resolveAppConfig,
@@ -8,11 +8,12 @@ import {
   resolveUserConfigConventionalPath,
   transformUserConfigToPlugin,
 } from "@vuepress/cli";
+import { createBuildApp } from "@vuepress/core";
 import { removeEndingSlash, removeLeadingSlash } from "@vuepress/shared";
 import { fs, logger, path } from "@vuepress/utils";
 import { cac } from "cac";
 
-import { getRedirectHTML } from "../node/typings/index.js";
+import { getRedirectHTML } from "../node/utils.js";
 
 const require = createRequire(import.meta.url);
 
@@ -56,9 +57,8 @@ cli
     ) => {
       if (!sourceDir) return cli.outputHelp();
 
-      if (process.env["NODE_ENV"] === undefined) {
+      if (process.env["NODE_ENV"] === undefined)
         process.env["NODE_ENV"] = "production";
-      }
 
       // resolve app config from cli options
       const cliAppConfig = resolveCliAppConfig(sourceDir, {});

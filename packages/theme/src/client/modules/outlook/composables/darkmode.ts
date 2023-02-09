@@ -1,9 +1,18 @@
 import { usePreferredDark, useStorage } from "@vueuse/core";
-import { computed, inject, onMounted, watch } from "vue";
+import {
+  type App,
+  type ComputedRef,
+  type InjectionKey,
+  type Ref,
+  computed,
+  inject,
+  onMounted,
+  watch,
+} from "vue";
+
 import { useThemeData } from "@theme-hope/composables/index";
 
-import type { App, ComputedRef, InjectionKey, Ref } from "vue";
-import type { DarkmodeOptions } from "../../../../shared/index.js";
+import { type DarkmodeOptions } from "../../../../shared/index.js";
 
 export type DarkmodeStatus = "light" | "dark" | "auto";
 
@@ -26,9 +35,7 @@ export const darkModeSymbol: InjectionKey<DarkMode> = Symbol.for("darkMode");
 export const useDarkmode = (): DarkMode => {
   const darkmode = inject(darkModeSymbol);
 
-  if (!darkmode) {
-    throw new Error("useDarkmode() is called without provider.");
-  }
+  if (!darkmode) throw new Error("useDarkmode() is called without provider.");
 
   return darkmode;
 };

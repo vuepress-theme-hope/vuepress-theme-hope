@@ -1,8 +1,7 @@
 import { container } from "@mdit/plugin-container";
-import { utoa } from "vuepress-shared/node";
+import { type PluginSimple } from "markdown-it";
 import type Token from "markdown-it/lib/token.js";
-
-import type { PluginSimple } from "markdown-it";
+import { utoa } from "vuepress-shared/node";
 
 const echartsRender = (tokens: Token[], index: number): string => {
   const token = tokens[index];
@@ -52,13 +51,13 @@ export const echarts: PluginSimple = (md) => {
         if (type === "container_echarts_close") break;
 
         if (!content) continue;
-        if (type === "fence") {
-          if (info === "json") config = content;
-          else if (info === "js" || info === "javascript") {
+        if (type === "fence")
+          if (info === "json") {
+            config = content;
+          } else if (info === "js" || info === "javascript") {
             config = content;
             isJavaScript = true;
           }
-        }
 
         // set to an unexist token type
         tokens[i].type = "echarts_empty";

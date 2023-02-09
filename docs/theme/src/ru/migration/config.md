@@ -203,7 +203,7 @@ tag:
 
 - перемещен `comment` в `plugins.comment`
 
-  - Добавлена поддержка `twikoo` и `giscus` ![New](https://img.shields.io/badge/-New-brightgreen)
+  - Добавлена поддержка `artalk`, `twikoo` и `giscus` ![New](https://img.shields.io/badge/-New-brightgreen)
 
   - Vssue в настоящее время отсутствует ![warning](https://img.shields.io/badge/-warning-yellow)
 

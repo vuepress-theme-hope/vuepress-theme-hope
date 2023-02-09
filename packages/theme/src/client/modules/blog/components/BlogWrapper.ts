@@ -1,12 +1,10 @@
-import { defineComponent, h } from "vue";
+import { type VNode, defineComponent, h } from "vue";
 
-import BloggerInfo from "@theme-hope/modules/blog/components/BloggerInfo";
-import InfoList from "@theme-hope/modules/blog/components/InfoList";
 import CommonWrapper from "@theme-hope/components/CommonWrapper";
 import SkipLink from "@theme-hope/components/SkipLink";
 import { useWindowSize } from "@theme-hope/composables/index";
-
-import type { VNode } from "vue";
+import BloggerInfo from "@theme-hope/modules/blog/components/BloggerInfo";
+import InfoList from "@theme-hope/modules/blog/components/InfoList";
 
 import "../styles/page.scss";
 

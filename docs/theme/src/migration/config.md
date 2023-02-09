@@ -203,7 +203,7 @@ Move all plugin related options under `plugins`.
 
 - move `comment` moved to `plugins.comment`
 
-  - Adds support for `twikoo` and `giscus` ![New](https://img.shields.io/badge/-New-brightgreen)
+  - Adds support for `artalk`, `twikoo` and `giscus` ![New](https://img.shields.io/badge/-New-brightgreen)
 
   - Vssue is currently missing ![warning](https://img.shields.io/badge/-warning-yellow)
 

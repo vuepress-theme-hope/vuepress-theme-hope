@@ -1,13 +1,12 @@
+import { type Plugin, type PluginFunction } from "@vuepress/core";
 import { colors } from "@vuepress/utils";
 
 import { convertOptions } from "./compact/index.js";
-import { appendSEO, generateRobotsTxt } from "./seo.js";
 import { generateDescription } from "./description.js";
+import { type SeoOptions } from "./options.js";
+import { appendSEO, generateRobotsTxt } from "./seo.js";
+import { type ExtendPage } from "./typings/index.js";
 import { logger } from "./utils.js";
-
-import type { Plugin, PluginFunction } from "@vuepress/core";
-import type { SeoOptions } from "./options.js";
-import type { ExtendPage } from "./typings/index.js";
 
 export const seoPlugin =
   (options: SeoOptions, legacy = true): PluginFunction =>
@@ -28,7 +27,8 @@ export const seoPlugin =
       ...plugin,
 
       extendsPage: (page: ExtendPage): void => {
-        generateDescription(page, options.autoDescription !== false);
+        if (page.frontmatter.seo !== false)
+          generateDescription(page, options.autoDescription !== false);
       },
 
       onInitialized: (app): void => {

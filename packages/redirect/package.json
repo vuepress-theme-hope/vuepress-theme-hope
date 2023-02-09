@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-redirect",
-  "version": "2.0.0-beta.171",
+  "version": "2.0.0-beta.173",
   "description": "Redirect plugin for vuepress",
   "keywords": [
     "vuepress",
@@ -8,7 +8,7 @@
     "vuepress-plugin",
     "redirect"
   ],
-  "homepage": "https://plugin-redirect2.vuejs.press/",
+  "homepage": "https://plugin-redirect.vuejs.press/",
   "bugs": {
     "url": "https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues"
   },

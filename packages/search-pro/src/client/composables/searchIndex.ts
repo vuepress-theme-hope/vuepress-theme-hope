@@ -1,8 +1,9 @@
-import { database } from "@temp/search-pro/index";
-import { atou } from "vuepress-shared/client";
 import { computed, ref } from "vue";
+import { atou } from "vuepress-shared/client";
 
-import type { SearchIndex } from "../../shared/index.js";
+import { database } from "@temp/search-pro/index";
+
+import { type SearchIndex } from "../../shared/index.js";
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 declare const __VUEPRESS_DEV__: boolean;

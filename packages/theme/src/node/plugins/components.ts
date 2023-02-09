@@ -1,9 +1,11 @@
+import { type Plugin } from "@vuepress/core";
 import { isString } from "@vuepress/shared";
-import { componentsPlugin } from "vuepress-plugin-components";
+import {
+  type ComponentOptions,
+  componentsPlugin,
+} from "vuepress-plugin-components";
 
-import type { ComponentOptions } from "vuepress-plugin-components";
-import type { Plugin } from "@vuepress/core";
-import type { ThemeOptions } from "../../shared/index.js";
+import { type ThemeOptions } from "../../shared/index.js";
 
 export const getComponentsPlugin = (
   options: Pick<

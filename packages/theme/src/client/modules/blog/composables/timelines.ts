@@ -1,12 +1,14 @@
-import { computed, inject, provide } from "vue";
-import { useBlogType } from "vuepress-plugin-blog2/client";
+import {
+  type ComputedRef,
+  type InjectionKey,
+  computed,
+  inject,
+  provide,
+} from "vue";
+import { type Article, useBlogType } from "vuepress-plugin-blog2/client";
 import { getDate } from "vuepress-shared/client";
 
-import { ArticleInfoType } from "../../../../shared/index.js";
-
-import type { ComputedRef, InjectionKey } from "vue";
-import type { Article } from "vuepress-plugin-blog2/client";
-import type { ArticleInfo } from "../../../../shared/index.js";
+import { type ArticleInfo, ArticleInfoType } from "../../../../shared/index.js";
 
 export interface TimelineItem {
   year: number;
@@ -28,9 +30,7 @@ export const timelinesSymbol: InjectionKey<TimelinesRef> =
 export const useTimelines = (): TimelinesRef => {
   const timelines = inject(timelinesSymbol);
 
-  if (!timelines) {
-    throw new Error("useTimelines() is called without provider.");
-  }
+  if (!timelines) throw new Error("useTimelines() is called without provider.");
 
   return timelines;
 };

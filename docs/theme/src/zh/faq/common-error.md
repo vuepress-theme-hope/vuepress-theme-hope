@@ -88,19 +88,19 @@ npm i vuepress@next vuepress-theme-hope@latest -E
 @tab pnpm
 
 ```bash
-pnpm i && pnpm up
+pnpm dlx vp-helper
 ```
 
 @tab yarn
 
 ```bash
-yarn && yarn upgrade
+yarn dlx vp-helper
 ```
 
 @tab npm
 
 ```bash
-npm i && npm update
+npx vp-helper
 ```
 
 :::
@@ -109,9 +109,11 @@ npm i && npm update
 
 任何以 `@vuepress/` 开头的官方包应该和 VuePress 保持相同版本。
 
-比如，如果你正在使用 `@vuepress/plugin-search` 和 `@vuepress/utils`，你应该确保他们和 `vuepress` 版本相同
+比如，如果你正在使用 `@vuepress/plugin-search` 和 `@vuepress/utils`，你应该确保他们和 `vuepress` 版本相同。
 
-另外，如果你使用了其他第三方插件，请确保它兼容你要升级到的 VuePress 版本。
+另外，`vuepress-theme-hope` 仓库的插件应与 `vuepress-theme-hope` 版本相同。
+
+此外，如果你使用了其他第三方插件，请确保它兼容你要升级到的 VuePress 版本。
 
 :::
 

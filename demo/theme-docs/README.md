@@ -8,6 +8,9 @@ You can use this demo directly via:
 # npm
 npm init vuepress-theme-hope [dir]
 
+# yarn
+yarn create vuepress-theme-hope [dir]
+
 # pnpm
 pnpm create vuepress-theme-hope [dir]
 ```

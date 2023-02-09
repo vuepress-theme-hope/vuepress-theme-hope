@@ -98,7 +98,7 @@ const __dirname = getDirname(import.meta.url);
 export default defineUserConfig({
   theme: hopeTheme({
     blog: {
-      media: {
+      medias: {
         // GitHub Icon is available
         GitHub: "https://github.com/Mister-Hope",
         // A custom Media called "MediaX" (just an example)
@@ -133,7 +133,7 @@ const __dirname = getDirname(import.meta.url);
 export default {
   theme: hopeTheme({
     blog: {
-      media: {
+      medias: {
         // GitHub Icon is available
         GitHub: "https://github.com/Mister-Hope",
         // A custom Media called "MediaX" (just an example)

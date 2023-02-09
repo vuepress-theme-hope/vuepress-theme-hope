@@ -1,7 +1,7 @@
-import type {
-  AutoLinkOptions,
-  NavGroup,
-  NavbarItem,
+import {
+  type AutoLinkOptions,
+  type NavGroup,
+  type NavbarItem,
 } from "../../../../shared/index.js";
 
 // resolved

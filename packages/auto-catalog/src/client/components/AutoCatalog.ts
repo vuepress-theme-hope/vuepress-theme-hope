@@ -1,6 +1,7 @@
-import { useSiteData } from "@vuepress/client";
-import { computed, defineComponent, h } from "vue";
-import { RouterLink, useRoute, useRouter } from "vue-router";
+import { usePageData, useSiteData } from "@vuepress/client";
+import { type PropType, type VNode, computed, defineComponent, h } from "vue";
+import { type RouteMeta, RouterLink, useRouter } from "vue-router";
+import FontIcon from "vuepress-plugin-components/client/components/FontIcon.js";
 import {
   endsWith,
   keys,
@@ -8,11 +9,7 @@ import {
   useLocaleConfig,
 } from "vuepress-shared/client";
 
-import FontIcon from "vuepress-plugin-components/client/components/FontIcon.js";
-
-import type { PropType, VNode } from "vue";
-import type { RouteMeta } from "vue-router";
-import type { AutoCatalogLocaleConfig } from "../../shared/index.js";
+import { type AutoCatalogLocaleConfig } from "../../shared/index.js";
 
 import "../styles/auto-catalog.scss";
 
@@ -119,12 +116,12 @@ export default defineComponent({
 
   setup(props) {
     const locale = useLocaleConfig(AUTO_CATALOG_LOCALES);
-    const route = useRoute();
+    const page = usePageData();
     const router = useRouter();
     const siteData = useSiteData();
 
     const getCatalogInfo = (): CatalogInfo[] => {
-      const base = props.base || route.path.replace(/\/[^/]+$/, "/");
+      const base = props.base || page.value.path.replace(/\/[^/]+$/, "/");
       const routes = router.getRoutes();
       const result: CatalogInfo[] = [];
 

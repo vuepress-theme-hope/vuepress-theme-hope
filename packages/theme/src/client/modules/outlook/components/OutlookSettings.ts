@@ -1,12 +1,10 @@
 import { ClientOnly } from "@vuepress/client";
-import { computed, defineComponent, h } from "vue";
+import { type VNode, computed, defineComponent, h } from "vue";
 
+import { usePure, useThemeData } from "@theme-hope/composables/index";
 import AppearanceMode from "@theme-hope/modules/outlook/components/AppearanceMode";
 import ThemeColor from "@theme-hope/modules/outlook/components/ThemeColor";
 import ToggleFullScreenButton from "@theme-hope/modules/outlook/components/ToggleFullScreenButton";
-import { usePure, useThemeData } from "@theme-hope/composables/index";
-
-import type { VNode } from "vue";
 
 export default defineComponent({
   name: "OutlookSettings",

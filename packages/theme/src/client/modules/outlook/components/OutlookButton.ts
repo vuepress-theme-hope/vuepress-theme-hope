@@ -1,15 +1,13 @@
+import { usePageData } from "@vuepress/client";
 import { useFullscreen } from "@vueuse/core";
-import { computed, defineComponent, h, ref, watch } from "vue";
-import { useRoute } from "vue-router";
+import { type VNode, computed, defineComponent, h, ref, watch } from "vue";
 
-import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch";
-import ToggleFullScreenButton from "@theme-hope/modules/outlook/components/ToggleFullScreenButton";
-import OutlookSettings from "@theme-hope/modules/outlook/components/OutlookSettings";
-import { OutlookIcon } from "@theme-hope/modules/outlook/components/icons/index";
 import { usePure, useThemeData } from "@theme-hope/composables/index";
+import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch";
+import OutlookSettings from "@theme-hope/modules/outlook/components/OutlookSettings";
+import ToggleFullScreenButton from "@theme-hope/modules/outlook/components/ToggleFullScreenButton";
+import { OutlookIcon } from "@theme-hope/modules/outlook/components/icons/index";
 import { useDarkmode } from "@theme-hope/modules/outlook/composables/index";
-
-import type { VNode } from "vue";
 
 import "../styles/outlook-button.scss";
 
@@ -20,7 +18,7 @@ export default defineComponent({
     const { isSupported } = useFullscreen();
     const themeData = useThemeData();
     const pure = usePure();
-    const route = useRoute();
+    const page = usePageData();
     const { canToggle } = useDarkmode();
 
     const open = ref(false);
@@ -34,7 +32,7 @@ export default defineComponent({
     );
 
     watch(
-      () => route.path,
+      () => page.value.path,
       () => {
         open.value = false;
       }

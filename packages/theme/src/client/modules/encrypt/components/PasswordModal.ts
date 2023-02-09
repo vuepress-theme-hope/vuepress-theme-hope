@@ -1,10 +1,9 @@
 import { usePageFrontmatter } from "@vuepress/client";
-import { computed, defineComponent, h, nextTick, ref } from "vue";
+import { type VNode, computed, defineComponent, h, nextTick, ref } from "vue";
 
-import { LockIcon } from "./icons.js";
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 
-import type { VNode } from "vue";
+import { LockIcon } from "./icons.js";
 
 import "../styles/password-modal.scss";
 

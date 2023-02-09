@@ -1,15 +1,26 @@
-import { usePageFrontmatter, usePageLang, withBase } from "@vuepress/client";
-import { Waline } from "@waline/client/dist/component.mjs";
+import {
+  usePageData,
+  usePageFrontmatter,
+  usePageLang,
+  withBase,
+} from "@vuepress/client";
 import { pageviewCount } from "@waline/client/dist/pageview.mjs";
-import { computed, defineComponent, h, onMounted, watch } from "vue";
-import { useRoute } from "vue-router";
-import { useLocaleConfig } from "vuepress-shared/client";
+import {
+  type VNode,
+  computed,
+  defineAsyncComponent,
+  defineComponent,
+  h,
+  nextTick,
+  onMounted,
+  watch,
+} from "vue";
+import { LoadingIcon, useLocaleConfig } from "vuepress-shared/client";
 
-import type { VNode } from "vue";
-import type {
-  CommentPluginFrontmatter,
-  WalineLocaleConfig,
-  WalineOptions,
+import {
+  type CommentPluginFrontmatter,
+  type WalineLocaleConfig,
+  type WalineOptions,
 } from "../../shared/index.js";
 
 import "@waline/client/dist/waline.css";
@@ -24,7 +35,10 @@ const walineOption = COMMENT_OPTIONS;
 const walineLocales = WALINE_LOCALES;
 const enableWaline = Boolean(walineOption.serverURL);
 
-if (WALINE_META) import("@waline/client/dist/waline-meta.css");
+if (WALINE_META)
+  import(
+    /* webpackChunkName: "waline" */ "@waline/client/dist/waline-meta.css"
+  );
 
 export { pageviewCount };
 
@@ -32,7 +46,7 @@ export default defineComponent({
   name: "WalineComment",
 
   setup() {
-    const route = useRoute();
+    const page = usePageData();
     const frontmatter = usePageFrontmatter<CommentPluginFrontmatter>();
     const lang = usePageLang();
     const walineLocale = useLocaleConfig(walineLocales);
@@ -70,22 +84,24 @@ export default defineComponent({
       locale: walineLocale.value,
       dark: "html.dark",
       ...walineOption,
-      path: withBase(route.path),
+      path: withBase(page.value.path),
     }));
 
     onMounted(() => {
       watch(
-        () => route.path,
+        () => page.value.path,
         () => {
           abort?.();
 
           if (enablePageViews.value)
-            setTimeout(() => {
-              abort = pageviewCount({
-                serverURL: walineOption.serverURL,
-                path: withBase(route.path),
-              });
-            }, walineOption.delay || 800);
+            void nextTick().then(() => {
+              setTimeout(() => {
+                abort = pageviewCount({
+                  serverURL: walineOption.serverURL,
+                  path: withBase(page.value.path),
+                });
+              }, walineOption.delay || 800);
+            });
         },
         { immediate: true }
       );
@@ -96,7 +112,20 @@ export default defineComponent({
         ? h(
             "div",
             { class: "waline-wrapper", id: "comment" },
-            enableWaline ? h(Waline, walineProps.value) : []
+            enableWaline
+              ? h(
+                  defineAsyncComponent({
+                    loader: async () =>
+                      (
+                        await import(
+                          /* webpackChunkName: "waline" */ "@waline/client/dist/component.mjs"
+                        )
+                      ).Waline,
+                    loadingComponent: LoadingIcon,
+                  }),
+                  walineProps.value
+                )
+              : []
           )
         : null;
   },

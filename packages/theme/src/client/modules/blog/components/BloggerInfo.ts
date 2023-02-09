@@ -1,10 +1,9 @@
 import { useSiteLocaleData, withBase } from "@vuepress/client";
-import { computed, defineComponent, h } from "vue";
+import { type VNode, computed, defineComponent, h } from "vue";
 import { getAuthor, keys } from "vuepress-shared/client";
 
-import SocialMedia from "@theme-hope/modules/blog/components/SocialMedia";
 import { useNavigate, useThemeLocaleData } from "@theme-hope/composables/index";
-
+import SocialMedia from "@theme-hope/modules/blog/components/SocialMedia";
 import {
   useArticles,
   useBlogOptions,
@@ -12,8 +11,6 @@ import {
   useTagMap,
   useTimelines,
 } from "@theme-hope/modules/blog/composables/index";
-
-import type { VNode } from "vue";
 
 import "../styles/blogger-info.scss";
 

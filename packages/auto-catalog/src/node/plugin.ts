@@ -1,12 +1,11 @@
-import { getLocales } from "vuepress-shared/node";
+import { type PageFrontmatter, type PluginFunction } from "@vuepress/core";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
+import { getLocales } from "vuepress-shared/node";
 
 import { generateCatalog } from "./autoCatalog.js";
 import { locales as defaultLocales } from "./locales.js";
+import { type AutoCatalogOptions } from "./options.js";
 import { CLIENT_FOLDER, logger } from "./utils.js";
-
-import type { PageFrontmatter, PluginFunction } from "@vuepress/core";
-import type { AutoCatalogOptions } from "./options.js";
 
 export const autoCatalogPlugin =
   (options: AutoCatalogOptions = {}): PluginFunction =>

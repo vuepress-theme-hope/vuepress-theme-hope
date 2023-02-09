@@ -1,11 +1,11 @@
+import { type ViteBundlerOptions } from "@vuepress/bundler-vite";
+import { type WebpackBundlerOptions } from "@vuepress/bundler-webpack";
+import { type App } from "@vuepress/core";
 import { isString } from "@vuepress/shared";
 import { colors } from "@vuepress/utils";
+
 import { getBundlerName } from "./getBundler.js";
 import { HTML_TAGS, SVG_TAGS } from "../utils/index.js";
-
-import type { App } from "@vuepress/core";
-import type { ViteBundlerOptions } from "@vuepress/bundler-vite";
-import type { WebpackBundlerOptions } from "@vuepress/bundler-webpack";
 
 export const tagHint = (tag: string, isDebug = false): void => {
   if (
@@ -14,12 +14,11 @@ export const tagHint = (tag: string, isDebug = false): void => {
     !SVG_TAGS.includes(tag) &&
     tag === tag.toLowerCase() &&
     !tag.includes("-")
-  ) {
+  )
     console.warn(
       colors.yellow("warning: "),
       `${tag} is used and it’s not a standard tag or standard custom element name`
     );
-  }
 };
 
 /**

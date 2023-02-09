@@ -1,6 +1,6 @@
 import { deepAssign } from "vuepress-shared/client";
 
-import type { VuePlaygroundOptions } from "../../shared/index.js";
+import { type VuePlaygroundOptions } from "../../shared/index.js";
 
 declare const VUE_PLAYGROUND_OPTIONS: VuePlaygroundOptions;
 

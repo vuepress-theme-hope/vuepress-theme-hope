@@ -1,14 +1,14 @@
+import { type App } from "@vuepress/core";
 import { getLocales } from "vuepress-shared/node";
+
 import { catalogLocales } from "./compact/index.js";
+import { getIconInfo } from "./components/index.js";
 import {
   backToTopLocales,
   pdfLocaleConfig,
   siteInfoLocaleConfig,
 } from "./locales/index.js";
-import { getIconInfo } from "./components/index.js";
-
-import type { App } from "@vuepress/core";
-import type { ComponentOptions } from "./options/index.js";
+import { type ComponentOptions } from "./options/index.js";
 
 export const getDefine =
   (

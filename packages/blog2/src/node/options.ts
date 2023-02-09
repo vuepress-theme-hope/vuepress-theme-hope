@@ -1,7 +1,10 @@
-import type { Page } from "@vuepress/core";
-import type { PageExcerptOptions } from "vuepress-shared/node";
+import { type Page } from "@vuepress/core";
+import { type PageExcerptOptions } from "vuepress-shared/node";
 
-import type { BlogCategoryOptions, BlogTypeOptions } from "./typings/index.js";
+import {
+  type BlogCategoryOptions,
+  type BlogTypeOptions,
+} from "./typings/index.js";
 
 export interface BlogPluginPageData {
   /**

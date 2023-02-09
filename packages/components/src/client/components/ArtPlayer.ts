@@ -1,15 +1,19 @@
 /* eslint-disable vue/no-unused-properties */
 import { usePageLang } from "@vuepress/client";
+import type Artplayer from "artplayer";
+import { type Option as ArtPlayerInitOptions } from "artplayer/types/option.js";
 import {
+  type PropType,
+  type VNode,
   camelize,
   defineComponent,
   h,
-  nextTick,
-  onBeforeUnmount,
   onMounted,
+  onUnmounted,
 } from "vue";
 import { keys } from "vuepress-shared/client";
 
+import { type ArtPlayerOptions } from "../../shared/index.js";
 import { useSize } from "../composables/size.js";
 import {
   SUPPORTED_VIDEO_TYPES,
@@ -18,11 +22,6 @@ import {
   registerMseFlv,
   registerMseHls,
 } from "../utils/mse.js";
-
-import type Artplayer from "artplayer";
-import type { Option as ArtPlayerInitOptions } from "artplayer/types/option.js";
-import type { PropType, VNode } from "vue";
-import type { ArtPlayerOptions } from "../../shared/index.js";
 
 const BOOLEAN_TRUE_ATTRS = [
   "no-fullscreen",
@@ -232,7 +231,7 @@ export default defineComponent({
       if (initOptions.type) {
         const customType = (initOptions.customType ??= {});
 
-        if (SUPPORTED_VIDEO_TYPES.includes(initOptions.type.toLowerCase())) {
+        if (SUPPORTED_VIDEO_TYPES.includes(initOptions.type.toLowerCase()))
           switch (initOptions.type) {
             case "m3u8":
             case "hls":
@@ -269,7 +268,7 @@ export default defineComponent({
                 });
               break;
           }
-        } else
+        else
           console.warn(
             `[components]: ArtPlayer does not support current file type ${initOptions.type}!`
           );
@@ -279,17 +278,16 @@ export default defineComponent({
     };
 
     // FIXME: Related issue https://github.com/zhw2590582/ArtPlayer/issues/450
-    onMounted(() => {
-      void import("artplayer").then(async ({ default: Artplayer }) =>
-        nextTick().then(async () => {
-          const player = new Artplayer(getInitOptions());
-
-          artPlayerInstance = (await props.customPlayer(player)) || player;
-        })
+    onMounted(async () => {
+      const { default: Artplayer } = await import(
+        /* webpackChunkName: "artplayer" */ "artplayer"
       );
+      const player = new Artplayer(getInitOptions());
+
+      artPlayerInstance = (await props.customPlayer(player)) || player;
     });
 
-    onBeforeUnmount(() => {
+    onUnmounted(() => {
       artPlayerInstance?.destroy();
     });
 

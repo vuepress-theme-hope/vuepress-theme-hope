@@ -1,9 +1,7 @@
+import { type Plugin } from "@vuepress/core";
 import { isPlainObject } from "@vuepress/shared";
-import { sitemapPlugin } from "vuepress-plugin-sitemap2";
+import { type SitemapOptions, sitemapPlugin } from "vuepress-plugin-sitemap2";
 import { keys } from "vuepress-shared/node";
-
-import type { Plugin } from "@vuepress/core";
-import type { SitemapOptions } from "vuepress-plugin-sitemap2";
 
 export const getSitemapPlugin = (
   options?: Omit<SitemapOptions, "hostname"> | boolean,

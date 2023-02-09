@@ -1,6 +1,7 @@
 // Slovak [sk]
 import type dayjs from "dayjs";
-import type { Locale } from "./locale.js";
+
+import { type Locale } from "./locale.js";
 
 const plural = (n: number): boolean => n > 1 && n < 5 && ~~(n / 10) !== 1;
 
@@ -20,9 +21,8 @@ const translate = (
       return withoutSuffix ? "minúta" : isFuture ? "minútu" : "minútou";
 
     case "mm": // 9 minutes / in 9 minutes / 9 minutes ago
-      if (withoutSuffix || isFuture) {
+      if (withoutSuffix || isFuture)
         return result + (plural(number) ? "minúty" : "minút");
-      }
 
       return `${result}minútami`;
 
@@ -30,9 +30,8 @@ const translate = (
       return withoutSuffix ? "hodina" : isFuture ? "hodinu" : "hodinou";
 
     case "hh": // 9 hours / in 9 hours / 9 hours ago
-      if (withoutSuffix || isFuture) {
+      if (withoutSuffix || isFuture)
         return result + (plural(number) ? "hodiny" : "hodín");
-      }
 
       return `${result}hodinami`;
 
@@ -40,9 +39,8 @@ const translate = (
       return withoutSuffix || isFuture ? "deň" : "dňom";
 
     case "dd": // 9 days / in 9 days / 9 days ago
-      if (withoutSuffix || isFuture) {
+      if (withoutSuffix || isFuture)
         return result + (plural(number) ? "dni" : "dní");
-      }
 
       return `${result}dňami`;
 
@@ -50,9 +48,8 @@ const translate = (
       return withoutSuffix || isFuture ? "mesiac" : "mesiacom";
 
     case "MM": // 9 months / in 9 months / 9 months ago
-      if (withoutSuffix || isFuture) {
+      if (withoutSuffix || isFuture)
         return result + (plural(number) ? "mesiace" : "mesiacov");
-      }
 
       return `${result}mesiacmi`;
 
@@ -60,9 +57,8 @@ const translate = (
       return withoutSuffix || isFuture ? "rok" : "rokom";
 
     case "yy": // 9 years / in 9 years / 9 years ago
-      if (withoutSuffix || isFuture) {
+      if (withoutSuffix || isFuture)
         return result + (plural(number) ? "roky" : "rokov");
-      }
 
       return `${result}rokmi`;
   }

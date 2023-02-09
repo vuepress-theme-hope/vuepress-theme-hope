@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+
 import { getReadingTime, getWordNumber } from "../../src/node/readingTime";
 
 describe("Words test", () => {

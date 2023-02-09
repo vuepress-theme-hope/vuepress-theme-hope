@@ -1,12 +1,15 @@
 import { writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+
 import { execaCommandSync } from "execa";
 import inquirer from "inquirer";
 
 import { updateGitIgnore } from "./gitignore.js";
+import { type CreateI18n, type Lang } from "./i18n.js";
 import { getWorkflowContent } from "./workflow.js";
 import {
+  type PackageManager,
   checkGitInstalled,
   checkGitRepo,
   copy,
@@ -17,9 +20,6 @@ import {
 const __filename = fileURLToPath(import.meta.url);
 // eslint-disable-next-line @typescript-eslint/naming-convention
 const __dirname = dirname(__filename);
-
-import type { CreateI18n, Lang } from "./i18n.js";
-import type { PackageManager } from "../utils/index.js";
 
 export const generateTemplate = async (
   targetDir: string,
@@ -98,8 +98,9 @@ export const generateTemplate = async (
   // git related
   const isGitRepo = checkGitRepo(cwd);
 
-  if (isGitRepo) updateGitIgnore(targetDir, cwd);
-  else if (checkGitInstalled()) {
+  if (isGitRepo) {
+    updateGitIgnore(targetDir, cwd);
+  } else if (checkGitInstalled()) {
     const { git } = await inquirer.prompt<{
       git: boolean;
     }>([

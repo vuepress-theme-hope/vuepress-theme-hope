@@ -75,7 +75,7 @@ export default {
 
 ## 评论服务
 
-目前可以从 Giscus、Waline 和 Twikoo 中选择。
+目前可以从 Giscus、Waline、Twikoo 和 Artalk 中选择。
 
 ::: tip 评论服务选择
 
@@ -183,3 +183,23 @@ Waline 评论的其他配置将在 <ProjectLink name="comment2" path="/zh/config
 1. 进入 Settings - Environment Variables，添加环境变量 `MONGODB_URI`，值为第 3 步的数据库连接字符串
 1. 进入 Overview，点击 Domains 下方的链接，如果环境配置正确，可以看到 “Twikoo 云函数运行正常” 的提示
 1. Vercel Domains (包含 `https://` 前缀，例如 `https://xxx.vercel.app`) 即为你的环境 ID
+
+## Artalk
+
+### 部署 Artalk 服务端
+
+请参见 [Artalk 文档](https://artalk.js.org/guide/deploy.html)。
+
+### Artalk 配置
+
+请配置 `provider: "Artalk"` 并将你的服务端地址传入插件选项中的 `server`。
+
+其他的配置项详见 [Artalk 配置](https://artalk.js.org/guide/frontend/config.html)。
+
+::: note
+
+插件保留 `el` 选项在页面自行插入 Artalk。同时插件会自动根据 VuePress 信息为你自动设置 `pageTitle`, `pageKey` 和 `site` 选项。
+
+在 VuePress2 提供客户端配置前，暂不支持 `imgUploader` 和 `avatarURLBuilder` 这两个函数选项。
+
+:::

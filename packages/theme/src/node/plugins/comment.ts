@@ -1,8 +1,7 @@
-import { commentPlugin } from "vuepress-plugin-comment2";
-import { VERSION } from "../utils.js";
+import { type PluginObject } from "@vuepress/core";
+import { type CommentOptions, commentPlugin } from "vuepress-plugin-comment2";
 
-import type { PluginObject } from "@vuepress/core";
-import type { CommentOptions } from "vuepress-plugin-comment2";
+import { VERSION } from "../utils.js";
 
 export const getCommentPlugin = (
   options?: Partial<CommentOptions> | false,

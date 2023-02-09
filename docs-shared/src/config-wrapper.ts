@@ -1,11 +1,9 @@
-import { defineUserConfig } from "@vuepress/cli";
+import { type UserConfig, defineUserConfig } from "@vuepress/cli";
+import { type HeadConfig } from "@vuepress/core";
 import { docsearchPlugin } from "@vuepress/plugin-docsearch";
 import { getDirname, path } from "@vuepress/utils";
 import { removePWAPlugin } from "vuepress-plugin-remove-pwa";
 import { addViteOptimizeDepsInclude } from "vuepress-shared/node";
-
-import type { UserConfig } from "@vuepress/cli";
-import type { HeadConfig } from "@vuepress/core";
 
 const __dirname = getDirname(import.meta.url);
 

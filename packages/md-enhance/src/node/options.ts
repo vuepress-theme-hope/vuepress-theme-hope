@@ -1,21 +1,25 @@
-import type { LocaleConfig } from "@vuepress/core";
-import type { MermaidConfig } from "mermaid";
-import type {
-  AttrsOptions,
-  FigureOptions,
-  ImgMarkOptions,
-  IncludeOptions,
-  KatexOptions,
-  MarkdownEnhanceLocaleData,
-  MathjaxOptions,
-  PlaygroundOptions,
-  PresentationOptions,
-  StylizeOptions,
-  TSPresetPlaygroundOptions,
-  TasklistOptions,
-  VuePresetPlaygroundOptions,
+import { type LocaleConfig } from "@vuepress/core";
+import { type MermaidConfig } from "mermaid";
+
+import {
+  type AttrsOptions,
+  type FigureOptions,
+  type ImgMarkOptions,
+  type IncludeOptions,
+  type KatexOptions,
+  type MarkdownEnhanceLocaleData,
+  type MathjaxOptions,
+  type PlaygroundOptions,
+  type PresentationOptions,
+  type StylizeOptions,
+  type TSPresetPlaygroundOptions,
+  type TasklistOptions,
+  type VuePresetPlaygroundOptions,
 } from "./typings/index.js";
-import type { CodeDemoOptions, VuePlaygroundOptions } from "../shared/index.js";
+import {
+  type CodeDemoOptions,
+  type VuePlaygroundOptions,
+} from "../shared/index.js";
 
 /**
  * md-enhance plugin configuration

@@ -1,3 +1,4 @@
+import { type App, type Page } from "@vuepress/core";
 import {
   isArray,
   isFunction,
@@ -7,11 +8,10 @@ import {
 } from "@vuepress/shared";
 import { fs, path, withSpinner } from "@vuepress/utils";
 import { entries, fromEntries, isAbsoluteUrl } from "vuepress-shared/node";
-import { getRedirectHTML } from "./typings/index.js";
 
-import type { App, Page } from "@vuepress/core";
-import type { RedirectOptions } from "./options.js";
-import type { RedirectPluginFrontmatterOption } from "./typings/index.js";
+import { type RedirectOptions } from "./options.js";
+import { type RedirectPluginFrontmatterOption } from "./typings/index.js";
+import { getRedirectHTML } from "./utils.js";
 
 export const generateHTML = async (
   app: App,

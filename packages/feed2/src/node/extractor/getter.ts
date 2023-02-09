@@ -1,5 +1,8 @@
+import { type App, type Page, type PageFrontmatter } from "@vuepress/core";
+import { type GitData } from "@vuepress/plugin-git";
 import { isArray, isFunction, isPlainObject } from "@vuepress/shared";
 import {
+  type AuthorInfo,
   getAuthor,
   getCategory,
   getPageExcerpt,
@@ -7,24 +10,21 @@ import {
   isAbsoluteUrl,
   isUrl,
 } from "vuepress-shared/node";
-import { getImageMineType, resolveUrl } from "../utils/index.js";
 
-import type { AuthorInfo } from "vuepress-shared";
-import type { App, Page, PageFrontmatter } from "@vuepress/core";
-import type { GitData } from "@vuepress/plugin-git";
-import type { Feed } from "../generator/feed.js";
-import type {
-  FeedAuthor,
-  FeedCategory,
-  FeedContributor,
-  FeedEnclosure,
-  FeedFrontmatterOption,
-  FeedGetter,
-  FeedItemInformation,
-  FeedOptions,
-  FeedPluginFrontmatter,
-} from "../typings/index.js";
 import { getPageRenderContent } from "./content.js";
+import { type Feed } from "../generator/feed.js";
+import {
+  type FeedAuthor,
+  type FeedCategory,
+  type FeedContributor,
+  type FeedEnclosure,
+  type FeedFrontmatterOption,
+  type FeedGetter,
+  type FeedItemInformation,
+  type FeedOptions,
+  type FeedPluginFrontmatter,
+} from "../typings/index.js";
+import { getImageMineType, resolveUrl } from "../utils/index.js";
 
 export class FeedInfo {
   private pageOptions: FeedFrontmatterOption;

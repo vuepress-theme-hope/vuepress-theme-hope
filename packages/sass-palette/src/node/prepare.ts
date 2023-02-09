@@ -1,6 +1,6 @@
-import { getPath } from "./utils.js";
+import { type App } from "@vuepress/core";
 
-import type { App } from "@vuepress/core";
+import { getPath } from "./utils.js";
 
 export const prepareConfigFile = (app: App, id: string): Promise<string> =>
   app.writeTemp(
@@ -15,39 +15,25 @@ export const prepareInjectSass = (app: App, id: string): Promise<string> =>
   app.writeTemp(
     `sass-palette/${id}-inject.scss`,
     `\
-@use "sass:color";
-@use "sass:list";
-@use "sass:math";
-@use "sass:map";
 @use "sass:meta";
 
 @use "@sass-palette/helper";
 @use "@sass-palette/${id}-palette";
 
-$variables: meta.module-variables("${id}-palette");
+$palette-variables: meta.module-variables("${id}-palette");
 ${
   app.env.isDebug
     ? `
-@debug "${id} palette variables: #{meta.inspect($variables)}";
+@debug "${id} palette variables: #{meta.inspect($palette-variables)}";
 @debug "${id} config variables: #{meta.inspect(meta.module-variables("${id}-config"))}";
 `
     : ""
 }
 
-@each $name, $value in $variables {
-  $key: helper.camel-to-kebab($name);
-
-  @if meta.type-of($value) == number or meta.type-of($value) == string {
-    :root {
-      #{$key}: #{$value};
-    }
-  } @else if helper.color-is-legal($value) {
-    @if meta.global-variable-exists("dark-selector", $module: "${id}-config") {
-      @include helper.inject-color($key, $value, $dark-selector: ${id}-config.$dark-selector);
-    } @else {
-      @include helper.inject-color($key, $value);
-    }
-  }
+@if meta.global-variable-exists("dark-selector", $module: "${id}-config") {
+  @include helper.inject($palette-variables, ${id}-config.$dark-selector);
+} @else {
+  @include helper.inject($palette-variables);
 }
 `
   );

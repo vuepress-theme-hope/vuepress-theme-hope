@@ -1,10 +1,17 @@
-import { defineComponent, h, onBeforeUpdate, ref } from "vue";
-import type { Component, FunctionalComponent, VNode } from "vue";
+import {
+  type Component,
+  type FunctionalComponent,
+  type VNode,
+  defineComponent,
+  h,
+  onBeforeUpdate,
+  ref,
+} from "vue";
+
+import "../styles/code-group.scss";
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 declare const __VUEPRESS_DEV__: boolean;
-
-import "../styles/code-group.scss";
 
 export interface CodeGroupItemProps {
   title: string;
@@ -95,10 +102,11 @@ export const CodeGroup = defineComponent({
         if (activeIndex.value === -1) activeIndex.value = 0;
       }
       // set the active item
-      else
+      else {
         items.forEach((vnode, index) => {
           vnode.props["active"] = index === activeIndex.value;
         });
+      }
 
       return h("div", { class: "code-group" }, [
         h(

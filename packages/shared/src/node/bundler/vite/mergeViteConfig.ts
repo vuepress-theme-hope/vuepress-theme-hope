@@ -52,6 +52,7 @@ SOFTWARE.
 */
 
 import { isArray, isString } from "@vuepress/shared";
+
 import { endsWith, keys } from "../../../shared/index.js";
 
 interface Alias {
@@ -135,9 +136,7 @@ const mergeConfigRecursively = (
   for (const key in overrides) {
     const value = overrides[key];
 
-    if (value == null) {
-      continue;
-    }
+    if (value == null) continue;
 
     const existing = merged[key];
 

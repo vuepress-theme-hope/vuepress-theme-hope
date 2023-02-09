@@ -1,7 +1,7 @@
+import { type Page } from "@vuepress/core";
 import matter from "gray-matter";
-import { md2text } from "../markdown/index.js";
 
-import type { Page } from "@vuepress/core";
+import { md2text } from "../markdown/index.js";
 
 export const getPageText = ({ content }: Page): string =>
   md2text(

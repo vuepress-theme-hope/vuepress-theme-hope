@@ -1,8 +1,7 @@
-import { usePageFrontmatter } from "@vuepress/client";
+import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import { isPlainObject, isString } from "@vuepress/shared";
 import { useEventListener } from "@vueuse/core";
-import { computed, defineComponent, h } from "vue";
-import { useRoute } from "vue-router";
+import { type VNode, computed, defineComponent, h } from "vue";
 
 import AutoLink from "@theme-hope/components/AutoLink";
 import Icon from "@theme-hope/components/Icon";
@@ -12,12 +11,11 @@ import {
   useThemeLocaleData,
 } from "@theme-hope/composables/index";
 import { useSidebarItems } from "@theme-hope/modules/sidebar/composables/index";
+import { type ResolvedSidebarItem } from "@theme-hope/modules/sidebar/utils/index";
 
-import type { VNode } from "vue";
-import type { ResolvedSidebarItem } from "../modules/sidebar/utils/index.js";
-import type {
-  AutoLinkOptions,
-  ThemeNormalPageFrontmatter,
+import {
+  type AutoLinkOptions,
+  type ThemeNormalPageFrontmatter,
 } from "../../shared/index.js";
 
 import "../styles/page-nav.scss";
@@ -76,7 +74,7 @@ export default defineComponent({
     const themeLocale = useThemeLocaleData();
     const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();
     const sidebarItems = useSidebarItems();
-    const route = useRoute();
+    const page = usePageData();
     const navigate = useNavigate();
 
     const prevNavLink = computed(() => {
@@ -87,7 +85,11 @@ export default defineComponent({
         : prevConfig ||
             (themeLocale.value.prevLink === false
               ? null
-              : resolveFromSidebarItems(sidebarItems.value, route.path, -1));
+              : resolveFromSidebarItems(
+                  sidebarItems.value,
+                  page.value.path,
+                  -1
+                ));
     });
 
     const nextNavLink = computed(() => {
@@ -98,11 +100,15 @@ export default defineComponent({
         : nextConfig ||
             (themeLocale.value.nextLink === false
               ? null
-              : resolveFromSidebarItems(sidebarItems.value, route.path, 1));
+              : resolveFromSidebarItems(
+                  sidebarItems.value,
+                  page.value.path,
+                  1
+                ));
     });
 
     useEventListener("keydown", (event): void => {
-      if (event.altKey) {
+      if (event.altKey)
         if (event.key === "ArrowRight") {
           if (nextNavLink.value) {
             navigate(nextNavLink.value.link);
@@ -114,7 +120,6 @@ export default defineComponent({
             event.preventDefault();
           }
         }
-      }
     });
 
     return (): VNode | null =>

@@ -1,9 +1,7 @@
-import { computed, defineComponent, h, onMounted, ref } from "vue";
+import { type VNode, computed, defineComponent, h, onMounted, ref } from "vue";
 import { Message } from "vuepress-shared/client";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";
-
-import type { VNode } from "vue";
 
 import "../styles/pagination.scss";
 
