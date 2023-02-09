@@ -192,6 +192,13 @@ blog:
     url: https://www.hestudio.org/
     repo: https://gitee.com/heStudio/blog-source.git
     preview: /assets/image/hestudio.jpg
+
+  - name: 赵斌的小站
+    desc: 赵斌的博客和笔记
+    logo: https://zhaobc.site/logo.svg
+    url: https://zhaobc.site
+    repo: https://github.com/FuckDoctors/notes2
+    preview: /assets/image/zhaobc.jpg
 ---
 
 ## 在线案例
