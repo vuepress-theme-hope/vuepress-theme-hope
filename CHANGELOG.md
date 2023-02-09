@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.173](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.172...v2.0.0-beta.173) (2023-02-08)
+
+### Features
+
+- **create:** add update command in template ([5f8ed1d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5f8ed1d68a7625f11e203506fe381734a74c920a))
+- **md-enhance:** hide tab on print mode ([78abb60](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/78abb6090cbf6532a6e26400e17e26a6bd5ea820))
+- **sass-palette:** improve variable injecting ([2014142](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/20141425d2d7f912b2f1c72efdb7cd4da0ea6e51))
+
+### Bug Fixes
+
+- **shared:** a workaround for vuepress/vuepress[#1252](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1252) ([84f55cf](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/84f55cf39a743f2400a57f3557201751733084ae))
+- **shared:** fix packageManager ([044598b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/044598b1e163db3d5254251c76e5e25212980b47))
+- **theme:** add pl locale, fix [#2751](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2751) ([6d2e95c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6d2e95ce5c9b4db809889ec03523333a80e985a0))
+- **theme:** exclude blog pages from sidebar and catalog ([a668e06](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a668e0623d321d895fda3b6ef31da56709bf4e1d))
+- **theme:** fix copyright legacy ([78b3cf2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/78b3cf21bb695a295a22715d5e41eb47037b7eee))
+
 ## [2.0.0-beta.172](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.171...v2.0.0-beta.172) (2023-02-04)
 
 ### Features
