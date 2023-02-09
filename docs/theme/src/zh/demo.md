@@ -198,7 +198,7 @@ blog:
     logo: https://zhaobc.site/logo.svg
     url: https://zhaobc.site
     repo: https://github.com/FuckDoctors/notes2
-    preview: /assets/image/zhaobc.png
+    preview: /assets/image/zhaobc.jpg
 ---
 
 ## 在线案例
