@@ -1,7 +1,7 @@
 import { type ThemeLocaleData } from "../../shared/index.js";
 
 export const deLocale: ThemeLocaleData = {
-  lang: "de",
+  lang: "de-DE",
 
   navbarLocales: {
     langName: "Deutsch",
