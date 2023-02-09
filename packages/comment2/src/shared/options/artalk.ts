@@ -7,12 +7,7 @@ export interface ArtalkOptions
     Partial<
       Omit<
         ArtalkConfig.default,
-        | "el"
-        | "imgUploader"
-        | "avatarURLBuilder"
-        | "pageKey"
-        | "pageTitle"
-        | "site"
+        "el" | "imgUploader" | "avatarURLBuilder" | "pageKey"
       >
     > {
   provider: "Artalk";

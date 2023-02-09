@@ -75,13 +75,13 @@ export default defineComponent({
 
           try {
             artalk = new Artalk({
-              site: site.value.title,
               useBackendConf: false,
+              site: site.value.title,
+              pageTitle: page.value.title,
               ...artalkOptions,
               el: artalkContainer.value!,
-              pageTitle: page.value.title,
-              darkMode: props.darkmode,
               pageKey: page.value.path,
+              darkMode: props.darkmode,
             });
 
             if (artalkOptions.useBackendConf)

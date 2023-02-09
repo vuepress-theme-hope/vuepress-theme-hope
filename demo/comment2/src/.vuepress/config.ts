@@ -20,34 +20,9 @@ export default defineUserConfig({
   }),
 
   plugins: [
+    // @ts-ignore
     commentPlugin({
-      /**
-       * Using Giscus
-       */
-      // provider: "Giscus",
-      // repo: "vuepress-theme-hope/giscus-discussions",
-      // repoId: "R_kgDOG_Pt2A",
-      // category: "Announcements",
-      // categoryId: "DIC_kwDOG_Pt2M4COD69",
-
-      /**
-       * Using twikoo
-       */
-      // provider: "Twikoo",
-      // envId: "https://twikoo.ccknbc.vercel.app",
-
-      /**
-       * Using Waline
-       */
-      // provider: "Waline",
-      // serverURL: "https://vuepress-theme-hope-comment.vercel.app",
-
-      /**
-       * Using artalk
-       */
-      provider: "Artalk",
-      site: "artalk-demo",
-      server: "https://demo-artalk.jjdxb.top/",
+      provider: "Giscus",
     }),
   ],
 });

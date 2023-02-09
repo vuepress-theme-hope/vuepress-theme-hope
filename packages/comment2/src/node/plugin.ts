@@ -12,7 +12,8 @@ import {
 import { getProvider } from "./alias.js";
 import { convertOptions } from "./compact.js";
 import { walineLocales } from "./locales.js";
-import { COMMENT_PROVIDERS, logger } from "./utils.js";
+import { applyDemo } from "./options.js";
+import { logger } from "./utils.js";
 import { type CommentOptions } from "../shared/index.js";
 
 const __dirname = getDirname(import.meta.url);
@@ -26,10 +27,7 @@ export const commentPlugin =
       convertOptions(options as CommentOptions & Record<string, unknown>);
     if (app.env.isDebug) logger.info("Options:", options);
 
-    const provider =
-      options.provider && COMMENT_PROVIDERS.includes(options.provider)
-        ? options.provider
-        : "None";
+    applyDemo(options, app);
 
     const userWalineLocales =
       options.provider === "Waline"
@@ -66,25 +64,31 @@ export const commentPlugin =
       }),
 
       extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
-        if (provider === "Artalk") {
-          addViteOptimizeDepsInclude(bundlerOptions, app, "artalk");
-          addViteSsrExternal(bundlerOptions, app, "artalk");
-        }
+        switch (options.provider) {
+          case "Artalk": {
+            addViteOptimizeDepsInclude(bundlerOptions, app, "artalk");
+            addViteSsrExternal(bundlerOptions, app, "artalk");
+            break;
+          }
 
-        if (provider === "Giscus") {
-          addCustomElement(bundlerOptions, app, "GiscusWidget");
-          addViteSsrExternal(bundlerOptions, app, "giscus");
-        }
+          case "Giscus": {
+            addCustomElement(bundlerOptions, app, "GiscusWidget");
+            addViteSsrExternal(bundlerOptions, app, "giscus");
+            break;
+          }
 
-        if (provider === "Waline") {
-          addViteOptimizeDepsInclude(bundlerOptions, app, "autosize");
-          addViteOptimizeDepsExclude(bundlerOptions, app, "@waline/client");
-          addViteSsrExternal(bundlerOptions, app, "@waline/client");
-        }
+          case "Waline": {
+            addViteOptimizeDepsInclude(bundlerOptions, app, "autosize");
+            addViteOptimizeDepsExclude(bundlerOptions, app, "@waline/client");
+            addViteSsrExternal(bundlerOptions, app, "@waline/client");
+            break;
+          }
 
-        if (provider === "Twikoo") {
-          addViteOptimizeDepsInclude(bundlerOptions, app, "twikoo");
-          addViteSsrExternal(bundlerOptions, app, "twikoo");
+          case "Twikoo": {
+            addViteOptimizeDepsInclude(bundlerOptions, app, "twikoo");
+            addViteSsrExternal(bundlerOptions, app, "twikoo");
+            break;
+          }
         }
       },
 
