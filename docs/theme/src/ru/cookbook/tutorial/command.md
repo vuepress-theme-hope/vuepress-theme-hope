@@ -56,19 +56,19 @@ tag:
 @tab pnpm
 
 ```bash
-pnpm dlx vp-helper
+pnpm dlx vp-update
 ```
 
 @tab yarn
 
 ```bash
-yarn dlx vp-helper
+yarn dlx vp-update
 ```
 
 @tab npm
 
 ```bash
-npx vp-helper
+npx vp-update
 ```
 
 :::

@@ -64,19 +64,19 @@ Make sure you are using the latest `vuepress` and `vuepress-theme-hope` versions
 @tab pnpm
 
 ```bash
-pnpm dlx vp-helper
+pnpm dlx vp-update
 ```
 
 @tab yarn
 
 ```bash
-yarn dlx vp-helper
+yarn dlx vp-update
 ```
 
 @tab npm
 
 ```bash
-npx vp-helper
+npx vp-update
 ```
 
 :::
