@@ -10,7 +10,7 @@ import {
   ref,
 } from "vue";
 
-import { getLink } from "../utils/getLink.js";
+import { getLink } from "../utils/index.js";
 
 import "plyr/dist/plyr.css";
 import "../styles/audio-player.scss";

@@ -4,7 +4,7 @@ import { type VNode, computed, defineComponent, h } from "vue";
 import { startsWith } from "vuepress-shared/client";
 
 import { useSize } from "../composables/index.js";
-import { videoIframeAllow } from "../utils/iframeAllow.js";
+import { videoIframeAllow } from "../utils/index.js";
 
 import "../styles/youtube.scss";
 

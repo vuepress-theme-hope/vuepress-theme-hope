@@ -4,7 +4,7 @@ import { type VNode, computed, defineComponent, h, onMounted, ref } from "vue";
 import { checkIsMobile } from "vuepress-shared/client";
 
 import { useSize } from "../composables/index.js";
-import { videoIframeAllow } from "../utils/iframeAllow.js";
+import { videoIframeAllow } from "../utils/index.js";
 
 import "../styles/bili-bili.scss";
 

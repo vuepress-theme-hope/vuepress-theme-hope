@@ -3,9 +3,8 @@ import { type VNode, defineComponent, h, onMounted } from "vue";
 import { useLocaleConfig } from "vuepress-shared/client";
 
 import { type PDFLocaleConfig } from "../../shared/locales.js";
-import { useSize } from "../composables/size.js";
-import { getLink } from "../utils/getLink.js";
-import { viewPDF } from "../utils/pdf.js";
+import { useSize } from "../composables/index.js";
+import { getLink, viewPDF } from "../utils/index.js";
 
 import "../styles/pdf.scss";
 

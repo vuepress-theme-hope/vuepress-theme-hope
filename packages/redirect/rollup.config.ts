@@ -14,12 +14,5 @@ export default [
     ],
     preserveShebang: true,
   }),
-  ...rollupTypescript("node/index", {
-    external: [
-      "@vuepress/core",
-      "@vuepress/shared",
-      "@vuepress/utils",
-      "vuepress-shared/node",
-    ],
-  }),
+  ...rollupTypescript("node/index", {}),
 ];

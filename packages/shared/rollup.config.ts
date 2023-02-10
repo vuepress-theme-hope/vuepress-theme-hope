@@ -6,8 +6,6 @@ export default [
     external: [
       "node:http",
       "@vuepress/plugin-git",
-      "@vuepress/utils",
-      "@vuepress/shared",
       "cheerio",
       "execa",
       "gray-matter",
@@ -18,18 +16,8 @@ export default [
   }),
   ...rollupTypescript("client/index", {
     resolve: true,
-    external: [
-      "@vuepress/client",
-      "@vuepress/shared",
-      "fflate/browser",
-      "vue",
-      "vue-router",
-      /\.scss$/,
-    ],
-    dtsExternal: [/\.scss$/],
+    external: ["fflate/browser"],
     copy: [["client/styles", "client"]],
   }),
-  ...rollupTypescript("client/noopModule", {
-    external: ["vue"],
-  }),
+  ...rollupTypescript("client/noopModule", {}),
 ];
