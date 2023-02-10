@@ -6,7 +6,7 @@
 
 <ReplIt user="FuckDoctors" repl="Java-Test" file="Main.java" />
 
-<ReplIt user="FuckDoctors" repl="Java-Test" is-link />
+<ReplIt user="FuckDoctors" repl="Java-Test" plain />
 
 <ReplIt link="https://replit.com/@FuckDoctors/Java-Test" />
 

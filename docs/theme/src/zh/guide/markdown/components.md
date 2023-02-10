@@ -336,10 +336,10 @@ PDF 浏览器组件。
 
 一个 repl 链接:
 
-<ReplIt user="FuckDoctors" repl="Java-Test" is-link />
+<ReplIt user="FuckDoctors" repl="Java-Test" plain />
 
 ```md
-<ReplIt user="FuckDoctors" repl="Java-Test" is-link />
+<ReplIt user="FuckDoctors" repl="Java-Test" plain />
 ```
 
 ## SiteInfo

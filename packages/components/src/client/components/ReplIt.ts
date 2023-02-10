@@ -93,7 +93,7 @@ export default defineComponent({
      *
      * 显示 repl 链接
      */
-    isLink: Boolean,
+    plain: Boolean,
 
     /**
      * Button text
@@ -156,7 +156,7 @@ export default defineComponent({
           user: props.user,
         },
         [
-          props.isLink
+          props.plain
             ? h("div", [
                 h(
                   "a",

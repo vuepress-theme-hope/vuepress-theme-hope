@@ -26,10 +26,10 @@ title: ReplIt
 
 一个 repl 链接:
 
-<ReplIt user="FuckDoctors" repl="Java-Test" is-link />
+<ReplIt user="FuckDoctors" repl="Java-Test" plain />
 
 ```md
-<ReplIt user="FuckDoctors" repl="Java-Test" is-link />
+<ReplIt user="FuckDoctors" repl="Java-Test" plain />
 ```
 
 另一个 repl 链接:
@@ -105,7 +105,7 @@ Replit 主题。(仅在嵌入视图中有效)
 
 在 repl 中打开的默认文件。
 
-### isLink
+### plain
 
 - 类型: `boolean`
 - 默认值: `false`

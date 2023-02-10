@@ -26,10 +26,10 @@ An embedded repl with opening file:
 
 A repl link:
 
-<ReplIt user="FuckDoctors" repl="Java-Test" is-link />
+<ReplIt user="FuckDoctors" repl="Java-Test" plain />
 
 ```md
-<ReplIt user="FuckDoctors" repl="Java-Test" is-link />
+<ReplIt user="FuckDoctors" repl="Java-Test" plain />
 ```
 
 Another repl link:
@@ -96,7 +96,7 @@ ReplIt component ratio, ONLY valid when `height` not set.
 - Type: `string`
 - Default: `"light"`
 
-Replit theme. (Only available without `isLink`)
+Replit theme. (Only available without `plain`)
 
 ### file
 
@@ -105,7 +105,7 @@ Replit theme. (Only available without `isLink`)
 
 The default file to have open in the editor.
 
-### isLink
+### plain
 
 - Type: `boolean`
 - Default: `false`
@@ -117,4 +117,4 @@ Display Replit as a button instead of an iframe.
 - Type: `string`
 - Default: `"Open on Replit"`
 
-Text to display on the button. (Only available with `isLink`)
+Text to display on the button. (Only available with `plain`)

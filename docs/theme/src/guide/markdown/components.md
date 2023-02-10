@@ -335,10 +335,10 @@ An embedded repl with opening file:
 
 A repl link:
 
-<ReplIt user="FuckDoctors" repl="Java-Test" is-link />
+<ReplIt user="FuckDoctors" repl="Java-Test" plain />
 
 ```md
-<ReplIt user="FuckDoctors" repl="Java-Test" is-link />
+<ReplIt user="FuckDoctors" repl="Java-Test" plain />
 ```
 
 ## SiteInfo
