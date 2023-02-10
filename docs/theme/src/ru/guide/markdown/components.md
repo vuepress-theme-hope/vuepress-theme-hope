@@ -19,6 +19,7 @@ tag:
 - CodePen
 - FontIcon
 - PDF
+- ReplIt
 - SiteInfo
 - StackBlitz
 - VideoPlayer
@@ -50,6 +51,7 @@ export default defineUserConfig({
           "BiliBili",
           "CodePen",
           "PDF",
+          "ReplIt",
           "StackBlitz",
           "VideoPlayer",
           "YouTube",
@@ -77,6 +79,7 @@ export default {
           "BiliBili",
           "CodePen",
           "PDF",
+          "ReplIt",
           "StackBlitz",
           "VideoPlayer",
           "YouTube",
@@ -311,6 +314,32 @@ See <ProjectLink name="components" path="/guide/audioplayer.html">AudioPlayer</P
 ```
 
 Доступные свойства смотрите на странице <ProjectLink name="components" path="/guide/pdf.html">PDF</ProjectLink>.
+
+## ReplIt
+
+An embedded repl:
+
+<ReplIt user="FuckDoctors" repl="Java-Test" />
+
+```md
+<ReplIt user="FuckDoctors" repl="Java-Test" />
+```
+
+An embedded repl with opening file:
+
+<ReplIt user="FuckDoctors" repl="Java-Test" file="Main.java" />
+
+```md
+<ReplIt user="FuckDoctors" repl="Java-Test" file="Main.java" />
+```
+
+A repl link:
+
+<ReplIt user="FuckDoctors" repl="Java-Test" is-link />
+
+```md
+<ReplIt user="FuckDoctors" repl="Java-Test" is-link />
+```
 
 ## SiteInfo
 

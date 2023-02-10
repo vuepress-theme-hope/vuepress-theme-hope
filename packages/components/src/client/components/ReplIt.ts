@@ -89,11 +89,11 @@ export default defineComponent({
     },
 
     /**
-     * embed repl
+     * show repl link
      *
-     * 嵌入 repl
+     * 显示 repl 链接
      */
-    embed: Boolean,
+    isLink: Boolean,
 
     /**
      * Button text
@@ -115,14 +115,14 @@ export default defineComponent({
       file: string | undefined;
     } => {
       const result =
-        /(?:^(?:https?:)?\/\/replit.com\/|^\/|^)(.*?)\/(.*?)\/(?:embed.*)(#.*)$/.exec(
+        /(?:^(?:https?:)?\/\/replit.com\/|^)@(.*)\/(.*?)(?:embed.*)?(#.*)?$/.exec(
           props.link
         );
 
       return {
         user: result?.[1],
         repl: result?.[2],
-        file: result?.[2],
+        file: result?.[3]?.replace("#", ""),
       };
     };
 
@@ -156,19 +156,8 @@ export default defineComponent({
           user: props.user,
         },
         [
-          props.embed
-            ? h("iframe", {
-                ref: el,
-                src: replEmbedLink.value,
-                title: props.title,
-                class: "replit-iframe",
-                allow: videoIframeAllow,
-                style: {
-                  width: width.value,
-                  height: height.value,
-                },
-              })
-            : h("div", [
+          props.isLink
+            ? h("div", [
                 h(
                   "a",
                   {
@@ -179,7 +168,18 @@ export default defineComponent({
                   },
                   [props.text]
                 ),
-              ]),
+              ])
+            : h("iframe", {
+                ref: el,
+                src: replEmbedLink.value,
+                title: props.title,
+                class: "replit-iframe",
+                allow: videoIframeAllow,
+                style: {
+                  width: width.value,
+                  height: height.value,
+                },
+              }),
         ]
       );
   },

@@ -8,6 +8,9 @@
 
   .replit-button {
     @include reset.button;
+
+    display: inline-block;
+
     margin: 0 auto;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;

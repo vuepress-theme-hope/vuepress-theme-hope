@@ -10,26 +10,26 @@ title: ReplIt
 
 一个嵌入的 repl:
 
-<ReplIt user="FuckDoctors" repl="Java-Test" embed />
+<ReplIt user="FuckDoctors" repl="Java-Test" />
 
 ```md
-<ReplIt user="FuckDoctors" repl="Java-Test" embed />
+<ReplIt user="FuckDoctors" repl="Java-Test" />
 ```
 
 一个嵌入的 repl，并且显示指定的文件:
 
-<ReplIt user="FuckDoctors" repl="Java-Test" embed file="Main.java" />
+<ReplIt user="FuckDoctors" repl="Java-Test" file="Main.java" />
 
 ```md
-<ReplIt user="FuckDoctors" repl="Java-Test" embed file="Main.java" />
+<ReplIt user="FuckDoctors" repl="Java-Test" file="Main.java" />
 ```
 
 一个 repl 链接:
 
-<ReplIt user="FuckDoctors" repl="Java-Test" />
+<ReplIt user="FuckDoctors" repl="Java-Test" is-link />
 
 ```md
-<ReplIt user="FuckDoctors" repl="Java-Test" />
+<ReplIt user="FuckDoctors" repl="Java-Test" is-link />
 ```
 
 另一个 repl 链接:
@@ -105,12 +105,12 @@ Replit 主题。(仅在嵌入视图中有效)
 
 在 repl 中打开的默认文件。
 
-### embed
+### isLink
 
 - 类型: `boolean`
 - 默认值: `false`
 
-嵌入 Replit 而不是显示一个按钮。
+显示一个按钮，而不是视图。
 
 ### text
 
