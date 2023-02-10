@@ -102,6 +102,10 @@ export default [
     ],
     dtsExternal: [/\.scss$/],
   }),
+  ...rollupTypescript("client/components/ReplIt", {
+    external: ["@vueuse/core", "@vuepress/shared", "vue", /\.scss$/],
+    dtsExternal: [/\.scss$/],
+  }),
   ...rollupTypescript("client/components/SiteInfo", {
     external: [
       "@vuepress/client",

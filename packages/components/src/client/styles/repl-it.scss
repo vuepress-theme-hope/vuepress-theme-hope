@@ -1,0 +1,32 @@
+@use "vuepress-shared/styles/reset";
+
+.replit-wrapper {
+  margin: 1rem auto;
+  border: none;
+  text-align: center;
+  transition: background var(--t-color, 0.3s ease);
+
+  .replit-button {
+    @include reset.button;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+
+    background: var(--c-bg-light);
+    color: var(--c-text);
+
+    font-weight: 600;
+    text-decoration: none;
+
+    transition: background var(--t-color), color var(--t-color);
+
+    &:hover {
+      background: var(--c-brand);
+      color: var(--white);
+    }
+  }
+}
+
+iframe[src*="replit.com"] {
+  border: none;
+}
