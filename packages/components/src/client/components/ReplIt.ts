@@ -147,13 +147,6 @@ export default defineComponent({
         "div",
         {
           class: ["replit-wrapper"],
-          "data-height": props.height,
-          "data-theme": props.theme,
-          "data-user": user.value,
-          "data-repl": repl.value,
-          "data-file": file.value,
-          "data-repl-title": props.title,
-          user: props.user,
         },
         [
           props.plain

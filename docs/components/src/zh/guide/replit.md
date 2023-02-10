@@ -47,28 +47,28 @@ title: ReplIt
 - 类型: `string`
 - 必填: 是
 
-Replit 链接.
+Replit 链接。
 
 ### user
 
 - 类型: `string`
 - 必填: 是
 
-Replit 用户名.
+Replit 用户名。
 
 ### repl
 
 - 类型: `string`
 - 必填: 是
 
-Replit repl 名.
+Replit repl 名。
 
 ### title
 
 - 类型: `string`
 - 必填: 是
 
-Replit 标题.
+Replit 标题。
 
 ### width
 
@@ -116,3 +116,5 @@ Replit 主题。(仅在嵌入视图中有效)
 
 - 类型: `string`
 - 默认值: `"Open on Replit"`
+
+打开 Replit 按钮的文本。
