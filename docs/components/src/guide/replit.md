@@ -1,8 +1,8 @@
 ---
-title: ReplIt
+title: Replit
 ---
 
-Embed ReplIt demo in Markdown files.
+Embed Replit demo in Markdown files.
 
 <!-- more -->
 
@@ -10,34 +10,34 @@ Embed ReplIt demo in Markdown files.
 
 An embedded repl:
 
-<ReplIt user="FuckDoctors" repl="Java-Test" />
+<Replit user="FuckDoctors" repl="Java-Test" />
 
 ```md
-<ReplIt user="FuckDoctors" repl="Java-Test" />
+<Replit user="FuckDoctors" repl="Java-Test" />
 ```
 
 An embedded repl with opening file:
 
-<ReplIt user="FuckDoctors" repl="Java-Test" file="Main.java" />
+<Replit user="FuckDoctors" repl="Java-Test" file="Main.java" />
 
 ```md
-<ReplIt user="FuckDoctors" repl="Java-Test" file="Main.java" />
+<Replit user="FuckDoctors" repl="Java-Test" file="Main.java" />
 ```
 
 A repl link:
 
-<ReplIt user="FuckDoctors" repl="Java-Test" plain />
+<Replit user="FuckDoctors" repl="Java-Test" plain />
 
 ```md
-<ReplIt user="FuckDoctors" repl="Java-Test" plain />
+<Replit user="FuckDoctors" repl="Java-Test" plain />
 ```
 
 Another repl link:
 
-<ReplIt link="https://replit.com/@FuckDoctors/Java-Test" />
+<Replit link="https://replit.com/@FuckDoctors/Java-Test" />
 
 ```md
-<ReplIt link="https://replit.com/@FuckDoctors/Java-Test" />
+<Replit link="https://replit.com/@FuckDoctors/Java-Test" />
 ```
 
 ## Props
@@ -75,21 +75,21 @@ Replit title.
 - Type: `string | number`
 - Default: `100%`
 
-ReplIt component width.
+Replit component width.
 
 ### height
 
 - Type: `string | number`
 - Required: No
 
-ReplIt component height.
+Replit component height.
 
 ### ratio
 
 - Type: `number`
 - Default: `16 / 9`
 
-ReplIt component ratio, ONLY valid when `height` not set.
+Replit component ratio, ONLY valid when `height` not set.
 
 ### theme
 

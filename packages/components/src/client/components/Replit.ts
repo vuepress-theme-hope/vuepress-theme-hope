@@ -6,13 +6,14 @@ import { useSize } from "../composables/index.js";
 import "../styles/repl-it.scss";
 
 export default defineComponent({
-  name: "ReplIt",
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: "Replit",
 
   props: {
     /**
-     * ReplIt link
+     * Replit link
      *
-     * ReplIt 链接
+     * Replit 链接
      */
     link: {
       type: String,
@@ -20,9 +21,9 @@ export default defineComponent({
     },
 
     /**
-     * ReplIt username
+     * Replit username
      *
-     * ReplIt 用户名
+     * Replit 用户名
      */
     user: {
       type: String,
@@ -30,9 +31,9 @@ export default defineComponent({
     },
 
     /**
-     * ReplIt repl name
+     * Replit repl name
      *
-     * ReplIt repl 名
+     * Replit repl 名
      */
     repl: {
       type: String,
@@ -70,9 +71,9 @@ export default defineComponent({
     },
 
     /**
-     * ReplIt theme
+     * Replit theme
      *
-     * ReplIt 主题
+     * Replit 主题
      */
     theme: {
       type: String,

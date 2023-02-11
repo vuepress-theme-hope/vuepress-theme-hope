@@ -1,13 +1,13 @@
-# ReplIt
+# Replit
 
 ## Demo
 
-<ReplIt user="FuckDoctors" repl="Java-Test" />
+<Replit user="FuckDoctors" repl="Java-Test" />
 
-<ReplIt user="FuckDoctors" repl="Java-Test" file="Main.java" />
+<Replit user="FuckDoctors" repl="Java-Test" file="Main.java" />
 
-<ReplIt user="FuckDoctors" repl="Java-Test" plain />
+<Replit user="FuckDoctors" repl="Java-Test" plain />
 
-<ReplIt link="https://replit.com/@FuckDoctors/Java-Test" />
+<Replit link="https://replit.com/@FuckDoctors/Java-Test" />
 
-<ReplIt link="https://replit.com/@FuckDoctors/Java-Test#Main.java" />
+<Replit link="https://replit.com/@FuckDoctors/Java-Test#Main.java" />

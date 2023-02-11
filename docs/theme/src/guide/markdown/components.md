@@ -19,7 +19,7 @@ Available components:
 - CodePen
 - FontIcon
 - PDF
-- ReplIt
+- Replit
 - SiteInfo
 - StackBlitz
 - VideoPlayer
@@ -51,7 +51,7 @@ export default defineUserConfig({
           "BiliBili",
           "CodePen",
           "PDF",
-          "ReplIt",
+          "Replit",
           "StackBlitz",
           "VideoPlayer",
           "YouTube",
@@ -79,7 +79,7 @@ export default {
           "BiliBili",
           "CodePen",
           "PDF",
-          "ReplIt",
+          "Replit",
           "StackBlitz",
           "VideoPlayer",
           "YouTube",
@@ -315,30 +315,30 @@ PDF viewer starting with page 2 and without toolbar:
 
 See <ProjectLink name="components" path="/guide/pdf.html">PDF</ProjectLink> page for available props.
 
-## ReplIt
+## Replit
 
 An embedded repl:
 
-<ReplIt user="FuckDoctors" repl="Java-Test" />
+<Replit user="FuckDoctors" repl="Java-Test" />
 
 ```md
-<ReplIt user="FuckDoctors" repl="Java-Test" />
+<Replit user="FuckDoctors" repl="Java-Test" />
 ```
 
 An embedded repl with opening file:
 
-<ReplIt user="FuckDoctors" repl="Java-Test" file="Main.java" />
+<Replit user="FuckDoctors" repl="Java-Test" file="Main.java" />
 
 ```md
-<ReplIt user="FuckDoctors" repl="Java-Test" file="Main.java" />
+<Replit user="FuckDoctors" repl="Java-Test" file="Main.java" />
 ```
 
 A repl link:
 
-<ReplIt user="FuckDoctors" repl="Java-Test" plain />
+<Replit user="FuckDoctors" repl="Java-Test" plain />
 
 ```md
-<ReplIt user="FuckDoctors" repl="Java-Test" plain />
+<Replit user="FuckDoctors" repl="Java-Test" plain />
 ```
 
 ## SiteInfo

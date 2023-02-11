@@ -1,5 +1,5 @@
 ---
-title: ReplIt
+title: Replit
 ---
 
 在 Markdown 文件中嵌入 Replit 演示。
@@ -10,34 +10,34 @@ title: ReplIt
 
 一个嵌入的 repl:
 
-<ReplIt user="FuckDoctors" repl="Java-Test" />
+<Replit user="FuckDoctors" repl="Java-Test" />
 
 ```md
-<ReplIt user="FuckDoctors" repl="Java-Test" />
+<Replit user="FuckDoctors" repl="Java-Test" />
 ```
 
 一个嵌入的 repl，并且显示指定的文件:
 
-<ReplIt user="FuckDoctors" repl="Java-Test" file="Main.java" />
+<Replit user="FuckDoctors" repl="Java-Test" file="Main.java" />
 
 ```md
-<ReplIt user="FuckDoctors" repl="Java-Test" file="Main.java" />
+<Replit user="FuckDoctors" repl="Java-Test" file="Main.java" />
 ```
 
 一个 repl 链接:
 
-<ReplIt user="FuckDoctors" repl="Java-Test" plain />
+<Replit user="FuckDoctors" repl="Java-Test" plain />
 
 ```md
-<ReplIt user="FuckDoctors" repl="Java-Test" plain />
+<Replit user="FuckDoctors" repl="Java-Test" plain />
 ```
 
 另一个 repl 链接:
 
-<ReplIt link="https://replit.com/@FuckDoctors/Java-Test" />
+<Replit link="https://replit.com/@FuckDoctors/Java-Test" />
 
 ```md
-<ReplIt link="https://replit.com/@FuckDoctors/Java-Test" />
+<Replit link="https://replit.com/@FuckDoctors/Java-Test" />
 ```
 
 ## Props
@@ -75,21 +75,21 @@ Replit 标题。
 - 类型: `string | number`
 - 默认值: `100%`
 
-ReplIt 组件宽度。
+Replit 组件宽度。
 
 ### height
 
 - 类型: `string | number`
 - 必填: 否
 
-ReplIt 组件高度。
+Replit 组件高度。
 
 ### ratio
 
 - 类型: `number`
 - 默认值: `16 / 9`
 
-ReplIt 组件高度宽高比，只有当未指定 `height` 时有效。
+Replit 组件高度宽高比，只有当未指定 `height` 时有效。
 
 ### theme
 

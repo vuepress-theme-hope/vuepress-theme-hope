@@ -54,7 +54,7 @@ export default defineUserConfig({
         "CodePen",
         "FontIcon",
         "PDF",
-        "ReplIt",
+        "Replit",
         "SiteInfo",
         "StackBlitz",
         "VideoPlayer",

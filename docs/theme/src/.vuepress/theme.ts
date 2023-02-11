@@ -56,7 +56,7 @@ export default theme("theme", {
         "BiliBili",
         "CodePen",
         "PDF",
-        "ReplIt",
+        "Replit",
         "SiteInfo",
         "StackBlitz",
         "VideoPlayer",
