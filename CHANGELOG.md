@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.174](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.173...v2.0.0-beta.174) (2023-02-11)
+
+### Features
+
+- **comment2:** apply fallback demo in development ([79ee6b7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/79ee6b71726b9c48bb0c73f5c213afcc46742f0d))
+- **components:** add Replit component ([#2764](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2764)) ([9b72fb6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9b72fb6c1bcf2df8e69496607467e2d573f4442b))
+- improve print style ([7bc27b0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7bc27b03fe45b0a7b08a69d75c65216f9d597eb2))
+- **theme:** improve pageview detect ([c486f95](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c486f9541310f4c5507d0a2f5c95b622b554d8ef))
+
+### Bug Fixes
+
+- **components:** fix SiteInfo ssr, fix [#2765](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2765) ([9ff243f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9ff243fdd029b56505563047edbc65f22d0ba82f))
+- locale configuration for de-DE ([#2755](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2755)) ([1591f3b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1591f3bbd92dc4323ac04f250439b11ab9a1589b))
+
 ## [2.0.0-beta.173](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.172...v2.0.0-beta.173) (2023-02-08)
 
 ### Features
