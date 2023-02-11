@@ -1,0 +1,192 @@
+/**
+ * One Light theme for prism.js
+ * Based on Atom's One Light theme: https://github.com/atom/atom/tree/master/packages/one-light-syntax
+ * Copied from https://github.com/PrismJS/prism-themes/blob/master/themes/prism-one-light.css
+ */
+
+@use "../../var";
+
+#app {
+  @include var.color($code-color: #383a42, $code-bg-color: #ecf4fa);
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  // tab size
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
+
+  // Selection
+  &::selection,
+  ::selection {
+    background: #e5e5e6;
+    color: inherit;
+  }
+}
+
+.token.comment,
+.token.prolog,
+.token.cdata {
+  color: #a0a1a7;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.entity {
+  color: #383a42;
+}
+
+.token.attr-name,
+.token.class-name,
+.token.boolean,
+.token.constant,
+.token.number,
+.token.atrule {
+  color: #b76b01;
+}
+
+.token.keyword {
+  color: #a626a4;
+}
+
+.token.property,
+.token.tag,
+.token.symbol,
+.token.deleted,
+.token.important {
+  color: #e45649;
+}
+
+.token.selector,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted,
+.token.regex,
+.token.attr-value,
+.token.attr-value > .token.punctuation {
+  color: #50a14f;
+}
+
+.token.variable,
+.token.operator,
+.token.function {
+  color: #4078f2;
+}
+
+.token.url {
+  color: #0184bc;
+}
+
+/* HTML overrides */
+.token.attr-value > .token.punctuation.attr-equals,
+.token.special-attr > .token.attr-value > .token.value.css {
+  color: #383a42;
+}
+
+/* CSS overrides */
+.language-css .token.selector {
+  color: #e45649;
+}
+
+.language-css .token.property {
+  color: #383a42;
+}
+
+.language-css .token.function,
+.language-css .token.url > .token.function {
+  color: #0184bc;
+}
+
+.language-css .token.url > .token.string.url {
+  color: #50a14f;
+}
+
+.language-css .token.important,
+.language-css .token.atrule .token.rule {
+  color: #a626a4;
+}
+
+/* JS overrides */
+.language-javascript .token.operator {
+  color: #a626a4;
+}
+
+// stylelint-disable selector-max-compound-selectors
+.language-javascript
+  .token.template-string
+  > .token.interpolation
+  > .token.interpolation-punctuation.punctuation {
+  color: #ca1243;
+}
+
+// stylelint-enable selector-max-compound-selectors
+
+/* JSON overrides */
+.language-json .token.operator {
+  color: #383a42;
+}
+
+.language-json .token.null.keyword {
+  color: #b76b01;
+}
+
+/* MD overrides */
+.language-markdown .token.url,
+.language-markdown .token.url > .token.operator,
+.language-markdown .token.url-reference.url > .token.string {
+  color: #383a42;
+}
+
+.language-markdown .token.url > .token.content {
+  color: #4078f2;
+}
+
+.language-markdown .token.url > .token.url,
+.language-markdown .token.url-reference.url {
+  color: #0184bc;
+}
+
+.language-markdown .token.blockquote.punctuation,
+.language-markdown .token.hr.punctuation {
+  color: #a0a1a7;
+  font-style: italic;
+}
+
+.language-markdown .token.code-snippet {
+  color: #50a14f;
+}
+
+.language-markdown .token.bold .token.content {
+  color: #b76b01;
+}
+
+.language-markdown .token.italic .token.content {
+  color: #a626a4;
+}
+
+.language-markdown .token.strike .token.content,
+.language-markdown .token.strike .token.punctuation,
+.language-markdown .token.list.punctuation,
+.language-markdown .token.title.important > .token.punctuation {
+  color: #e45649;
+}
+
+/* General */
+.token.bold {
+  font-weight: bold;
+}
+
+.token.comment,
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.namespace {
+  opacity: 0.8;
+}

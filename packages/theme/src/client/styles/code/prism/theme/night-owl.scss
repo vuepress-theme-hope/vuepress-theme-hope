@@ -1,0 +1,115 @@
+/**
+ * MIT License
+ * Copyright (c) 2018 Sarah Drasner
+ * Sarah Drasner's[@sdras] Night Owl
+ * Ported by Sara vieria [@SaraVieira]
+ * Added by Souvik Mandal [@SimpleIndian]
+ * Copied from https://github.com/PrismJS/prism-themes/blob/master/themes/prism-night-owl.css
+ */
+
+@use "../../var";
+
+#app {
+  @include var.color($code-color: #fff, $code-bg-color: #011627);
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  // tab size
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  // Selection
+  &::selection,
+  ::selection {
+    background: rgb(29 59 83 / 99%);
+  }
+}
+
+.token.comment,
+.token.prolog,
+.token.cdata {
+  color: rgb(99 119 119);
+  font-style: italic;
+}
+
+.token.punctuation {
+  color: rgb(199 146 234);
+}
+
+.namespace {
+  color: rgb(178 204 214);
+}
+
+.token.deleted {
+  color: rgb(239 83 80 / 56%);
+  font-style: italic;
+}
+
+.token.symbol,
+.token.property {
+  color: rgb(128 203 196);
+}
+
+.token.tag,
+.token.operator,
+.token.keyword {
+  color: rgb(127 219 202);
+}
+
+.token.boolean {
+  color: rgb(255 88 116);
+}
+
+.token.number {
+  color: rgb(247 140 108);
+}
+
+.token.constant,
+.token.function,
+.token.builtin,
+.token.char {
+  color: rgb(130 170 255);
+}
+
+.token.selector,
+.token.doctype {
+  color: rgb(199 146 234);
+  font-style: italic;
+}
+
+.token.attr-name,
+.token.inserted {
+  color: rgb(173 219 103);
+  font-style: italic;
+}
+
+.token.string,
+.token.url,
+.token.entity,
+.language-css .token.string,
+.style .token.string {
+  color: rgb(173 219 103);
+}
+
+.token.class-name,
+.token.atrule,
+.token.attr-value {
+  color: rgb(255 203 139);
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: rgb(214 222 235);
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}

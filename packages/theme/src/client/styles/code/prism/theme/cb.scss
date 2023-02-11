@@ -1,0 +1,94 @@
+/*
+ * Based on Plugin: Syntax Highlighter CB
+ * Plugin URI: http://wp.tutsplus.com/tutorials/plugins/adding-a-syntax-highlighter-shortcode-using-prism-js
+ * Description: Highlight your code snippets with an easy to use shortcode based on Lea Verou's Prism.js.
+ * Version: 1.0.0
+ * Author: c.bavota
+ * Author URI: http://bavotasan.comhttp://wp.tutsplus.com/tutorials/plugins/adding-a-syntax-highlighter-shortcode-using-prism-js/
+ * Copied from https://github.com/PrismJS/prism-themes/blob/master/themes/prism-night-owl.css
+ */
+
+/* http://cbavota.bitbucket.org/syntax-highlighter/  */
+
+@use "../../var";
+
+#app {
+  @include var.color($code-color: #fff, $code-bg-color: #222);
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  // tab size
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  // Selection
+  &::selection,
+  ::selection {
+    background: rgb(29 59 83 / 99%);
+  }
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #797979;
+}
+
+.token.selector,
+.token.operator,
+.token.punctuation {
+  color: #fff;
+}
+
+.token.namespace {
+  opacity: 0.7;
+}
+
+.token.tag,
+.token.boolean {
+  color: #ffd893;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.hex,
+.token.string {
+  color: #b0c975;
+}
+
+.token.property,
+.token.entity,
+.token.url,
+.token.attr-name,
+.token.keyword {
+  color: #c27628;
+}
+
+.token.regex {
+  color: #9b71c6;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.function,
+.token.constant {
+  color: #e5a638;
+}
+
+.token.variable {
+  color: #fdfba8;
+}
+
+.token.number {
+  color: #8799b0;
+}
+
+.token.important,
+.token.deliminator {
+  color: #e45734;
+}

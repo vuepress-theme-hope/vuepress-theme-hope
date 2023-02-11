@@ -1,0 +1,88 @@
+/**
+ * MIT License
+ * Copyright (c) 2021 Ayush Saini
+ * Holi Theme for prism.js
+ * @author Ayush Saini <@AyushCodes on Twitter>
+ * Copied from https://github.com/PrismJS/prism-themes/blob/master/themes/prism-holi-theme.css
+ */
+
+@use "../../var";
+
+#app {
+  @include var.color($code-color: #d6e7ff, $code-bg-color: #2a4555);
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  // tab size
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  // Selection
+  &::selection,
+  ::selection {
+    background: #1d3b54;
+    color: inherit;
+    text-shadow: none;
+  }
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #446e69;
+}
+
+.token.punctuation {
+  color: #d6b007;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #d6e7ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.builtin,
+.token.inserted {
+  color: #e60067;
+}
+
+.token.string,
+.token.char {
+  color: #49c6ec;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  background: transparent;
+  color: #ec8e01;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #0fe468;
+}
+
+.token.function,
+.token.class-name {
+  color: #78f3e9;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: #d6e7ff;
+}

@@ -1,0 +1,17 @@
+@use "sass:color";
+
+@mixin color($code-color, $code-bg-color) {
+  --code-color: #{$code-color};
+  --code-line-color: #{color.scale($code-color, $alpha: -33%)};
+  --code-bg-color: #{$code-bg-color};
+  --code-border-color: #{color.scale(
+      $code-bg-color,
+      $saturation: if(color.whiteness($code-bg-color) < 50%, 10%, 20%),
+      $lightness: if(color.whiteness($code-bg-color) < 50%, 10%, -10%)
+    )};
+  --code-highlight-line-color: #{color.scale(
+      $code-bg-color,
+      $saturation: if(color.whiteness($code-bg-color) < 50%, 5%, 10%),
+      $lightness: if(color.whiteness($code-bg-color) < 50%, 5%, -5%)
+    )};
+}

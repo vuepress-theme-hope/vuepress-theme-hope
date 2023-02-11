@@ -1,0 +1,103 @@
+/**
+ * prism.js Dark theme for JavaScript, CSS and HTML
+ * Based on the slides of the talk “/Reg(exp){2}lained/”
+ * @author Lea Verou
+ * Copied from https://github.com/PrismJS/prism/blob/master/themes/prism-dark.css
+ */
+
+@use "../../var";
+
+#app {
+  @include var.color($code-color: #fff, $code-bg-color: #4d4033);
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  text-shadow: 0 -0.1em 0.2em #000;
+
+  // tab size
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  @media print {
+    text-shadow: none;
+  }
+
+  // Selection
+  &::selection,
+  ::selection {
+    background: rgb(29 59 83 / 99%);
+    text-shadow: none;
+  }
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: hsl(30deg 20% 50%);
+}
+
+.token.punctuation {
+  opacity: 0.7;
+}
+
+.token.namespace {
+  opacity: 0.7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol {
+  color: hsl(350deg 40% 70%);
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: hsl(75deg 70% 60%);
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+  color: hsl(40deg 90% 60%);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: hsl(350deg 40% 70%);
+}
+
+.token.regex,
+.token.important {
+  color: #e90;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.deleted {
+  color: #f00;
+}

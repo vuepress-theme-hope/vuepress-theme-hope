@@ -1,0 +1,137 @@
+/**
+ * VS theme by Andrew Lock (https://andrewlock.net)
+ * Inspired by Visual Studio syntax coloring
+ * Copied from  https://github.com/PrismJS/prism-themes/blob/master/themes/prism-vs.css
+ */
+
+@use "../../var";
+
+#app {
+  @include var.color($code-color: #393a34, $code-bg-color: #fff);
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  // tab size
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  // Selection
+  &::selection,
+  ::selection {
+    background: #c1def1;
+  }
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #008000;
+  font-style: italic;
+}
+
+.token.namespace {
+  opacity: 0.7;
+}
+
+.token.string {
+  color: #a31515;
+}
+
+.token.punctuation,
+.token.operator {
+  color: #393a34; /* no highlight */
+}
+
+.token.url,
+.token.symbol,
+.token.number,
+.token.boolean,
+.token.variable,
+.token.constant,
+.token.inserted {
+  color: #36acaa;
+}
+
+.token.atrule,
+.token.keyword,
+.token.attr-value {
+  color: #00f;
+}
+
+.token.function {
+  color: #393a34;
+}
+
+.token.deleted {
+  color: #9a050f;
+}
+
+.token.selector {
+  color: #00009f;
+}
+
+.token.important {
+  color: #e90;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.class-name {
+  color: #2b91af;
+}
+
+.token.tag,
+.token.selector {
+  color: #800000;
+}
+
+.token.attr-name,
+.token.property,
+.token.regex,
+.token.entity {
+  color: #f00;
+}
+
+.token.directive.tag .tag {
+  background: #ff0;
+  color: #393a34;
+}
+
+code[class*="language-css"] {
+  color: #00f;
+}
+
+.language-autohotkey {
+  .token.tag {
+    color: #9a050f;
+  }
+
+  .token.keyword {
+    color: #00009f;
+  }
+
+  .token.selector {
+    color: #00f;
+  }
+}
+
+.language-json {
+  .token.boolean,
+  .token.number {
+    color: #00f;
+  }
+
+  .token.property {
+    color: #2b91af;
+  }
+}

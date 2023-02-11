@@ -46,10 +46,10 @@ export const usePlugin = (
   useSassPalettePlugin(app, {
     id: "hope",
     config: ".vuepress/styles/config.scss",
-    defaultConfig: `${TEMPLATE_FOLDER}config.scss`,
-    defaultPalette: `${TEMPLATE_FOLDER}palette.scss`,
-    generator: `${TEMPLATE_FOLDER}generator.scss`,
+    defaultConfig: `${TEMPLATE_FOLDER}palette/config.scss`,
     palette: ".vuepress/styles/palette.scss",
+    defaultPalette: `${TEMPLATE_FOLDER}palette/palette.scss`,
+    generator: `${TEMPLATE_FOLDER}palette/generator.scss`,
     style: ".vuepress/styles/index.scss",
   });
 

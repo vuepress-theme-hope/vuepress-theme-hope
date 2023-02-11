@@ -1,0 +1,14 @@
+@use "sass:meta";
+@use "@sass-palette/hope-config";
+
+@if hope-config.$code-light-theme == hope-config.$code-dark-theme {
+  @include meta.load-css("theme/#{hope-config.$code-light-theme}");
+} @else {
+  #{hope-config.$light-selector} {
+    @include meta.load-css("theme/#{hope-config.$code-light-theme}");
+  }
+
+  #{hope-config.$dark-selector} {
+    @include meta.load-css("theme/#{hope-config.$code-dark-theme}");
+  }
+}

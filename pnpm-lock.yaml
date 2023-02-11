@@ -708,6 +708,9 @@ importers:
       '@vuepress/plugin-docsearch':
         specifier: 2.0.0-beta.60
         version: 2.0.0-beta.60(patch_hash=isjzrkrqrwnbp3bxyrv6tl6zgm)
+      '@vuepress/plugin-shiki':
+        specifier: 2.0.0-beta.60
+        version: 2.0.0-beta.60
       '@vuepress/shared':
         specifier: 2.0.0-beta.60
         version: 2.0.0-beta.60
@@ -5286,6 +5289,15 @@ packages:
       - supports-color
     dev: true
 
+  /@vuepress/plugin-shiki@2.0.0-beta.60:
+    resolution: {integrity: sha512-ENUZnuLPnXKqozA0sr2xrVuTWFBziYcXIi9sL6Dc1x3+AdBHxXA0oinPioJ/TJ5qgUF8rAFMZnUR/uwZQV+KQQ==}
+    dependencies:
+      '@vuepress/core': 2.0.0-beta.60
+      shiki: 0.12.1
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
   /@vuepress/plugin-theme-data@2.0.0-beta.60:
     resolution: {integrity: sha512-3b34sXEAzShvUzeEMA/0JE4VrLxoMqGJOGMl0I9m0DKg2apgjRG6nYYq6gUnJW0gcUVK+tOOOHsMT6mTMs3xdA==}
     dependencies:
@@ -9549,7 +9561,6 @@ packages:
 
   /jsonc-parser@3.2.0:
     resolution: {integrity: sha512-gfFQZrcTc8CnKXp6Y4/CBT3fTc0OVuDofpre4aEeEpSBPV5X5v4+Vmx+8snU7RLPrNHPKSgLxGo9YuQzz20o+w==}
-    dev: true
 
   /jsonfile@4.0.0:
     resolution: {integrity: sha512-m6F1R3z8jjlf2imQHS2Qez5sjKWQzbuuhuJ/FKYFRZvPE3PuHcSMVZzfsLhGVOkfd20obL5SWEBew5ShlquNxg==}
@@ -11387,6 +11398,14 @@ packages:
     resolution: {integrity: sha512-QHsz8GgQIGKlRi24yFc6a6lN69Idnx634w49ay6+jA5yFh7a1UY+4Rp6HPx/L/1zcEDPEij8cIsiqR6bQsE5VQ==}
     dev: true
 
+  /shiki@0.12.1:
+    resolution: {integrity: sha512-aieaV1m349rZINEBkjxh2QbBvFFQOlgqYTNtCal82hHj4dDZ76oMlQIX+C7ryerBTDiga3e5NfH6smjdJ02BbQ==}
+    dependencies:
+      jsonc-parser: 3.2.0
+      vscode-oniguruma: 1.7.0
+      vscode-textmate: 8.0.0
+    dev: false
+
   /side-channel@1.0.4:
     resolution: {integrity: sha512-q5XPytqFEIKHkGdiMIrY10mvLRvnQh42/+GoBlFW3b2LXLE2xxJpZFdm94we0BaoV3RwJyGqg5wS7epxTv0Zvw==}
     dependencies:
@@ -12550,6 +12569,14 @@ packages:
       - supports-color
       - terser
     dev: true
+
+  /vscode-oniguruma@1.7.0:
+    resolution: {integrity: sha512-L9WMGRfrjOhgHSdOYgCt/yRMsXzLDJSL7BPrOZt73gU0iWO4mpqzqQzOz5srxqTvMBaR0XZTSrVWo4j55Rc6cA==}
+    dev: false
+
+  /vscode-textmate@8.0.0:
+    resolution: {integrity: sha512-AFbieoL7a5LMqcnOF04ji+rpXadgOXnZsxQr//r83kLPr7biP7am3g9zbaZIaBGwBRWeSvoMD4mgPdX3e4NWBg==}
+    dev: false
 
   /vue-demi@0.13.11(vue@3.2.47):
     resolution: {integrity: sha512-IR8HoEEGM65YY3ZJYAjMlKygDQn25D5ajNFNoKh9RSDMQtlzCxtfQjdQgv9jjK+m3377SsJXY8ysq8kLCZL25A==}

@@ -1,0 +1,123 @@
+/**
+ * xonokai theme for JavaScript, CSS and HTML
+ * based on: https://github.com/MoOx/sass-prism-theme-base by Maxime Thirouin ~ MoOx --> http://moox.fr/ , which is Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * license: MIT; http://moox.mit-license.org/
+ * Copied from  https://github.com/PrismJS/prism-themes/blob/master/themes/prism-duotone-forest.css
+ */
+
+@use "../../var";
+
+#app {
+  @include var.color($code-color: #76d9e6, $code-bg-color: #2a2a2a);
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  box-shadow: 1px 1px 0.3em -0.1em #000 inset;
+
+  // tab size
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
+
+  // Selection
+  &::selection,
+  ::selection {
+    background: #435643;
+  }
+}
+
+.token.namespace {
+  opacity: 0.7;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #6f705e;
+}
+
+.token.operator,
+.token.boolean,
+.token.number {
+  color: #a77afe;
+}
+
+.token.attr-name,
+.token.string {
+  color: #e6d06c;
+}
+
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #e6d06c;
+}
+
+.token.selector,
+.token.inserted {
+  color: #a6e22d;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword,
+.token.important,
+.token.deleted {
+  color: #ef3b7d;
+}
+
+.token.regex,
+.token.statement {
+  color: #76d9e6;
+}
+
+.token.placeholder,
+.token.variable {
+  color: #fff;
+}
+
+.token.important,
+.token.statement,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.punctuation {
+  color: #bebec5;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.language-markup {
+  color: #f9f9f9;
+}
+
+.language-markup .token.tag {
+  color: #ef3b7d;
+}
+
+.language-markup .token.attr-name {
+  color: #a6e22d;
+}
+
+.language-markup .token.attr-value {
+  color: #e6d06c;
+}
+
+.language-markup .token.style,
+.language-markup .token.script {
+  color: #76d9e6;
+}
+
+.language-markup .token.script .token.keyword {
+  color: #76d9e6;
+}
