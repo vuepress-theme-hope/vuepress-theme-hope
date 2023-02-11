@@ -19,5 +19,5 @@ export default [
     external: ["fflate/browser"],
     copy: [["client/styles", "client"]],
   }),
-  ...rollupTypescript("client/noopModule", {}),
+  ...rollupTypescript("client/noopModule"),
 ];

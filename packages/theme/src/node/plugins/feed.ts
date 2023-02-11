@@ -26,6 +26,7 @@ const themeComponents = [
   "CodePen",
   "FontIcon",
   "PDF",
+  "Replit",
   "SiteInfo",
   "StackBlitz",
   "VideoPlayer",

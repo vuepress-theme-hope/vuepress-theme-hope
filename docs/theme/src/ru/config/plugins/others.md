@@ -19,6 +19,7 @@ Available component which can be used in markdown files are:
 - `"BiliBili"`
 - `"CodePen"`
 - `"PDF"`
+- `"Replit"`
 - `"StackBlitz"`
 - `"VideoPlayer"`
 - `"YouTube"`

@@ -24,7 +24,7 @@ export default [
       "mpegts.js/dist/mpegts.js",
     ],
   }),
-  ...rollupTypescript("client/components/Badge", {}),
+  ...rollupTypescript("client/components/Badge"),
   ...rollupTypescript("client/components/BiliBili", {
     external: [
       "dashjs/dist/dash.all.min.js",
@@ -32,11 +32,11 @@ export default [
       "mpegts.js/dist/mpegts.js",
     ],
   }),
-  ...rollupTypescript("client/components/BackToTop", {}),
+  ...rollupTypescript("client/components/BackToTop"),
 
-  ...rollupTypescript("client/components/CodePen", {}),
-  ...rollupTypescript("client/components/FontIcon", {}),
-  ...rollupTypescript("client/components/Notice", {}),
+  ...rollupTypescript("client/components/CodePen"),
+  ...rollupTypescript("client/components/FontIcon"),
+  ...rollupTypescript("client/components/Notice"),
   ...rollupTypescript("client/components/PDF", {
     external: [
       "dashjs/dist/dash.all.min.js",
@@ -44,7 +44,8 @@ export default [
       "mpegts.js/dist/mpegts.js",
     ],
   }),
-  ...rollupTypescript("client/components/SiteInfo", {}),
+  ...rollupTypescript("client/components/Replit"),
+  ...rollupTypescript("client/components/SiteInfo"),
   ...rollupTypescript("client/components/StackBlitz", {
     external: ["@stackblitz/sdk"],
   }),
@@ -70,6 +71,6 @@ export default [
       "mpegts.js/dist/mpegts.js",
     ],
   }),
-  ...rollupTypescript("client/shared", {}),
-  ...rollupTypescript("client/vueuse", {}),
+  ...rollupTypescript("client/shared"),
+  ...rollupTypescript("client/vueuse"),
 ];

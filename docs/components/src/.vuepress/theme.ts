@@ -81,6 +81,7 @@ export default theme("components", {
         "BiliBili",
         "CodePen",
         "PDF",
+        "Replit",
         "SiteInfo",
         "StackBlitz",
         "VideoPlayer",

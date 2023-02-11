@@ -30,6 +30,8 @@ This plugin support 12 components:
 
 - [PDF](pdf.md)
 
+- [Replit](replit.md)
+
 - [SiteInfo](siteinfo.md)
 
 - [StackBlitz](stackblitz.md)

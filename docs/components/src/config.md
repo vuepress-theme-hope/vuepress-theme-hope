@@ -16,6 +16,7 @@ icon: gears
     | "CodePen"
     | "FontIcon"
     | "PDF"
+    | "Replit"
     | "StackBlitz"
     | "SiteInfo"
     | "VideoPlayer"
@@ -36,6 +37,7 @@ Available component names:
 - `"CodePen"`
 - `"FontIcon"`
 - `"PDF"`
+- `"Replit"`
 - `"StackBlitz"`
 - `"SiteInfo"`
 - `"VideoPlayer"`

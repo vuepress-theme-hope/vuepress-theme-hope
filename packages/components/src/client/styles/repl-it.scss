@@ -1,0 +1,36 @@
+@use "vuepress-shared/styles/reset";
+
+.replit-wrapper {
+  margin: 8px 0;
+  border: none;
+  text-align: center;
+
+  .replit-button {
+    @include reset.button;
+
+    display: inline-block;
+
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+
+    background: var(--c-bg-light, #f3f4f5);
+    color: var(--c-text, #2c3e50);
+
+    font-weight: 600;
+    font-size: 18;
+    line-height: 1.5;
+
+    transition: background 0.3s ease, color 0.3s ease;
+
+    &:hover {
+      background: var(--c-brand, #3eaf7c);
+      color: var(--white, #fff);
+    }
+  }
+}
+
+.replit-iframe {
+  border: none;
+  border-radius: 8px;
+}

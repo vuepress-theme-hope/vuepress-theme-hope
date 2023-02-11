@@ -52,7 +52,7 @@ StackBlitz 组件宽度。
 - 类型: `string | number`
 - 必填：否
 
-StackBlitz 组件高度
+StackBlitz 组件高度。
 
 ### ratio
 

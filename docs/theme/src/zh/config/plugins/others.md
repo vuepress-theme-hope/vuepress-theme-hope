@@ -20,6 +20,7 @@ tag:
 - `"BiliBili"`
 - `"CodePen"`
 - `"PDF"`
+- `"Replit"`
 - `"StackBlitz"`
 - `"VideoPlayer"`
 - `"YouTube"`
