@@ -4,5 +4,5 @@ export default [
   ...rollupTypescript("node/index", {
     dtsExternal: ["vuepress-shared"],
   }),
-  ...rollupTypescript("client/config", {}),
+  ...rollupTypescript("client/config"),
 ];

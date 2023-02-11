@@ -23,7 +23,7 @@ export default [
   ...rollupTypescript("client/components/CodeDemo", {
     external: ["balloon-css/balloon.css"],
   }),
-  ...rollupTypescript("client/components/CodeTabs", {}),
+  ...rollupTypescript("client/components/CodeTabs"),
   ...rollupTypescript("client/components/ECharts", {
     external: ["echarts"],
   }),
@@ -36,14 +36,14 @@ export default [
       "mermaid/dist/mermaid.esm.min.mjs",
     ],
   }),
-  ...rollupTypescript("client/components/Playground", {}),
+  ...rollupTypescript("client/components/Playground"),
   ...rollupTypescript("client/components/VuePlayground", {
     external: ["@vue/repl", "@vue/repl/style.css"],
     dtsExternal: ["@vue/repl/style.css"],
   }),
-  ...rollupTypescript("client/components/Presentation", {}),
-  ...rollupTypescript("client/components/Tabs", {}),
-  ...rollupTypescript("client/SlidePage", {}),
+  ...rollupTypescript("client/components/Presentation"),
+  ...rollupTypescript("client/components/Tabs"),
+  ...rollupTypescript("client/SlidePage"),
   ...rollupTypescript("client/reveal/index", {
     external: [/^reveal\.js/],
   }),

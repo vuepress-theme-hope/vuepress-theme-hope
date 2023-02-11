@@ -14,5 +14,5 @@ export default [
     ],
     preserveShebang: true,
   }),
-  ...rollupTypescript("node/index", {}),
+  ...rollupTypescript("node/index"),
 ];

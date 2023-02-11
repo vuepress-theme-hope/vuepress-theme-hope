@@ -35,6 +35,7 @@ export const rollupTypescript = (
 ): RollupOptions[] => [
   {
     input: `./src/${filePath}.ts`,
+
     output: [
       {
         file: `./lib/${filePath}.js`,
@@ -45,6 +46,7 @@ export const rollupTypescript = (
         ...output,
       },
     ],
+
     plugins: [
       ...(preserveShebang ? [shebangPlugin()] : []),
       ...(resolve
@@ -73,6 +75,7 @@ export const rollupTypescript = (
           ]
         : []),
     ],
+
     external: [
       ...(filePath.startsWith("client/")
         ? [
@@ -95,6 +98,7 @@ export const rollupTypescript = (
         : []),
       ...external,
     ],
+
     treeshake: {
       moduleSideEffects: (id) => id.endsWith(".css") || id.endsWith(".scss"),
       preset: "smallest",

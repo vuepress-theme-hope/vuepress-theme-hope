@@ -5,5 +5,5 @@ export default [
     external: ["chokidar"],
     dtsExternal: ["vuepress-shared"],
   }),
-  ...rollupTypescript("client/index", {}),
+  ...rollupTypescript("client/index"),
 ];
