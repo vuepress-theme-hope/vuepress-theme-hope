@@ -16,6 +16,7 @@ icon: gears
     | "CodePen"
     | "FontIcon"
     | "PDF"
+    | "ReplIt"
     | "StackBlitz"
     | "SiteInfo"
     | "VideoPlayer"
@@ -36,6 +37,7 @@ icon: gears
 - `"CodePen"`
 - `"FontIcon"`
 - `"PDF"`
+- `"ReplIt"`
 - `"StackBlitz"`
 - `"SiteInfo"`
 - `"VideoPlayer"`

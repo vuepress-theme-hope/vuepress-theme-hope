@@ -30,6 +30,8 @@ index: false
 
 - [PDF](pdf.md)
 
+- [ReplIt](replit.md)
+
 - [SiteInfo](siteinfo.md)
 
 - [StackBlitz](stackblitz.md)

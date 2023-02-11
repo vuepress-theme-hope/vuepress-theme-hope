@@ -19,6 +19,7 @@ tag:
 - CodePen
 - FontIcon
 - PDF
+- ReplIt
 - SiteInfo
 - StackBlitz
 - VideoPlayer
@@ -50,6 +51,7 @@ export default defineUserConfig({
           "BiliBili",
           "CodePen",
           "PDF",
+          "ReplIt",
           "StackBlitz",
           "VideoPlayer",
           "YouTube",
@@ -77,6 +79,7 @@ export default {
           "BiliBili",
           "CodePen",
           "PDF",
+          "ReplIt",
           "StackBlitz",
           "VideoPlayer",
           "YouTube",
@@ -312,6 +315,32 @@ PDF 浏览器组件。
 ```
 
 有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/pdf.html">PDF</ProjectLink> 页面。
+
+## ReplIt
+
+一个嵌入的 repl:
+
+<ReplIt user="FuckDoctors" repl="Java-Test" />
+
+```md
+<ReplIt user="FuckDoctors" repl="Java-Test" />
+```
+
+一个嵌入的 repl，并且显示指定的文件:
+
+<ReplIt user="FuckDoctors" repl="Java-Test" file="Main.java" />
+
+```md
+<ReplIt user="FuckDoctors" repl="Java-Test" file="Main.java" />
+```
+
+一个 repl 链接:
+
+<ReplIt user="FuckDoctors" repl="Java-Test" plain />
+
+```md
+<ReplIt user="FuckDoctors" repl="Java-Test" plain />
+```
 
 ## SiteInfo
 

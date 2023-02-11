@@ -6,6 +6,7 @@ export type AvailableComponent =
   | "CodePen"
   | "FontIcon"
   | "PDF"
+  | "ReplIt"
   | "StackBlitz"
   | "SiteInfo"
   | "VideoPlayer"

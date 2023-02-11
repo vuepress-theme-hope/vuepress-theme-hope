@@ -44,6 +44,7 @@ export default [
       "mpegts.js/dist/mpegts.js",
     ],
   }),
+  ...rollupTypescript("client/components/ReplIt", {}),
   ...rollupTypescript("client/components/SiteInfo", {}),
   ...rollupTypescript("client/components/StackBlitz", {
     external: ["@stackblitz/sdk"],
