@@ -1,8 +1,7 @@
 /* eslint-disable vue/no-unused-properties */
 import { type VNode, computed, defineComponent, h } from "vue";
 
-import { useSize } from "../composables/size.js";
-import { videoIframeAllow } from "../utils/iframeAllow.js";
+import { useSize } from "../composables/index.js";
 
 import "../styles/repl-it.scss";
 
@@ -15,28 +14,30 @@ export default defineComponent({
      *
      * ReplIt 链接
      */
-    link: { type: String, default: "" },
+    link: {
+      type: String,
+      default: "",
+    },
 
     /**
      * ReplIt username
      *
      * ReplIt 用户名
      */
-    user: { type: String, default: "" },
+    user: {
+      type: String,
+      default: "",
+    },
 
     /**
      * ReplIt repl name
      *
      * ReplIt repl 名
      */
-    repl: { type: String, default: "" },
-
-    /**
-     * ReplIt title
-     *
-     * ReplIt 标题
-     */
-    title: { type: String, default: "" },
+    repl: {
+      type: String,
+      default: "",
+    },
 
     /**
      * Component width
@@ -109,71 +110,49 @@ export default defineComponent({
   setup(props) {
     const { el, width, height } = useSize<HTMLDivElement>(props);
 
-    const getInfo = (): {
-      user: string | undefined;
-      repl: string | undefined;
-      file: string | undefined;
-    } => {
-      const result =
-        /(?:^(?:https?:)?\/\/replit.com\/|^)@(.*)\/(.*?)(?:embed.*)?(#.*)?$/.exec(
-          props.link
-        );
+    const replLink = computed(() => {
+      if (props.link) {
+        const url = new URL(props.link);
 
-      return {
-        user: result?.[1],
-        repl: result?.[2],
-        file: result?.[3]?.replace("#", ""),
-      };
-    };
+        if (props.plain) url.searchParams.delete("embed");
+        else url.searchParams.set("embed", "true");
 
-    const user = computed(() => getInfo().user || props.user);
-    const repl = computed(() => getInfo().repl || props.repl);
-    const file = computed(() => getInfo().file || props.file);
-    const replLink = computed(
-      () =>
-        `https://replit.com/@${user.value}/${repl.value}${
-          file.value && file.value.length > 0 ? "#" + file.value : ""
-        }`
-    );
-    const replEmbedLink = computed(
-      () =>
-        `https://replit.com/@${user.value}/${repl.value}?embed=true${
-          file.value && file.value.length > 0 ? "#" + file.value : ""
-        }`
-    );
+        return url.toString();
+      }
 
-    return (): VNode =>
-      h(
-        "div",
-        {
-          class: ["replit-wrapper"],
-        },
-        [
-          props.plain
-            ? h("div", [
-                h(
-                  "a",
+      return props.user && props.repl
+        ? `https://replit.com/@${props.user}/${props.repl}${
+            props.plain ? "" : "?embed=true"
+          }${props.file?.length ? `#${props.file}` : ""}`
+        : null;
+    });
+
+    return (): VNode | null =>
+      replLink.value
+        ? h(
+            "div",
+            { class: "replit-wrapper" },
+            props.plain
+              ? h(
+                  "button",
                   {
-                    href: replLink.value,
-                    target: "_blank",
-                    title: props.title || repl.value,
-                    class: ["replit-button"],
+                    class: "replit-button",
+                    onClick: () => {
+                      window.open(replLink.value!, "_blank");
+                    },
                   },
-                  [props.text]
-                ),
-              ])
-            : h("iframe", {
-                ref: el,
-                src: replEmbedLink.value,
-                title: props.title,
-                class: "replit-iframe",
-                allow: videoIframeAllow,
-                style: {
-                  width: width.value,
-                  height: height.value,
-                },
-              }),
-        ]
-      );
+                  props.text
+                )
+              : h("iframe", {
+                  ref: el,
+                  class: "replit-iframe",
+                  src: replLink.value,
+                  style: {
+                    width: width.value,
+                    height: height.value,
+                  },
+                })
+          )
+        : null;
   },
 });
