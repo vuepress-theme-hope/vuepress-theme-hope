@@ -72,7 +72,7 @@ export const applyDemo = (options: CommentOptions, app: App): void => {
     case "Waline":
       if (!options.serverURL)
         if (isDev) {
-          options.serverURL = "https://vuepress-theme-hope-comment.vercel.app";
+          options.serverURL = "https://waline-comment.vuejs.press";
 
           logger.info(
             `A fallback Waline server is used ${colors.red(

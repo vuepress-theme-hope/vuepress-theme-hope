@@ -8,6 +8,10 @@
   height: 400px;
   min-height: 400px;
 
+  @media print {
+    page-break-inside: avoid;
+  }
+
   @media (max-width: hope-config.$mobile) {
     width: calc(100% + 3rem);
     min-height: 300px;

@@ -14,7 +14,7 @@ import {
 import { keys } from "vuepress-shared/client";
 
 import { type ArtPlayerOptions } from "../../shared/index.js";
-import { useSize } from "../composables/size.js";
+import { useSize } from "../composables/index.js";
 import {
   SUPPORTED_VIDEO_TYPES,
   getTypeByUrl,

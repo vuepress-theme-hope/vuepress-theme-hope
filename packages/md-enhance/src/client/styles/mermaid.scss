@@ -22,3 +22,9 @@
 .mermaid-loading {
   color: var(--c-brand, #3eaf7c);
 }
+
+.mermaid-content {
+  @media print {
+    page-break-inside: avoid;
+  }
+}

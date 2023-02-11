@@ -252,9 +252,14 @@ td {
   }
 
   blockquote,
+  pre {
+    orphans: 5;
+    widows: 5;
+  }
+
   img,
-  pre,
-  tr {
+  tr,
+  canvas {
     page-break-inside: avoid;
   }
 }

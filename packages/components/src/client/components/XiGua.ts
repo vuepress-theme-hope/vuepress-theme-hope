@@ -2,7 +2,7 @@
 import { type VNode, computed, defineComponent, h } from "vue";
 
 import { useSize } from "../composables/index.js";
-import { videoIframeAllow } from "../utils/iframeAllow.js";
+import { videoIframeAllow } from "../utils/index.js";
 
 import "../styles/xi-gua.scss";
 

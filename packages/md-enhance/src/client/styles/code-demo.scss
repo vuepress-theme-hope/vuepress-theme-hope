@@ -146,6 +146,10 @@
   max-height: 400px;
   padding: 20px;
   border-bottom: 1px solid var(--c-border, #eaecef);
+
+  @media print {
+    page-break-inside: avoid;
+  }
 }
 
 .code-demo-code-wrapper {

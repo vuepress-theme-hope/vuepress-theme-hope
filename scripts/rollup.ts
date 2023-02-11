@@ -73,9 +73,31 @@ export const rollupTypescript = (
           ]
         : []),
     ],
-    external,
+    external: [
+      ...(filePath.startsWith("client/")
+        ? [
+            /^@temp/,
+            "@vueuse/core",
+            "@vuepress/client",
+            "@vuepress/shared",
+            "vue",
+            "vue-router",
+            "vuepress-shared/client",
+            /\.s?css$/,
+          ]
+        : filePath.startsWith("node/")
+        ? [
+            "@vuepress/core",
+            "@vuepress/shared",
+            "@vuepress/utils",
+            "vuepress-shared/node",
+          ]
+        : []),
+      ...external,
+    ],
     treeshake: {
-      unknownGlobalSideEffects: false,
+      moduleSideEffects: (id) => id.endsWith(".css") || id.endsWith(".scss"),
+      preset: "smallest",
     },
 
     onwarn(
@@ -99,7 +121,14 @@ export const rollupTypescript = (
               },
             }),
           ],
-          external: dtsExternal,
+          external: [
+            ...(filePath.startsWith("client/")
+              ? [/^@temp/, "vuepress-shared/client", /\.s?css$/]
+              : filePath.startsWith("node/")
+              ? ["vuepress-shared/node"]
+              : []),
+            ...dtsExternal,
+          ],
         } satisfies RollupOptions,
       ]
     : []),

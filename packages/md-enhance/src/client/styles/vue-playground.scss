@@ -135,6 +135,10 @@
 
     transition: background var(--t-color, 0.3s ease);
 
+    @media print {
+      page-break-inside: avoid;
+    }
+
     @media (max-width: hope-config.$tablet) {
       &.show-code {
         .vue-repl {

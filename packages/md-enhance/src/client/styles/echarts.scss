@@ -16,6 +16,10 @@
 
   .echarts-container {
     min-height: 360px;
+
+    @media print {
+      page-break-inside: avoid;
+    }
   }
 
   .echarts-loading {
