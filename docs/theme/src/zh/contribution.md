@@ -57,7 +57,8 @@ corepack prepare pnpm@7.24.3 --activate
 │ ├── photo-swipe → photo-swipe 文档
 │ ├── pwa → pwa2 插件文档
 │ ├── reading-time → reading-time2 插件文档
-│ ├── remove-pwa →remove-pwa 插件文档
+│ ├── remove-pwa → remove-pwa 插件文档
+│ ├── rtl → rtl 插件文档
 │ ├── sass-palette → sass-palette 插件文档
 │ ├── shared → vuepress-shared 文档
 │ ├── search-pro → search-pro 插件文档
@@ -79,7 +80,8 @@ corepack prepare pnpm@7.24.3 --activate
 │ ├── photo-swipe → photo-swipe 插件
 │ ├── pwa2 → pwa2 插件
 │ ├── reading-time2 → reading-time2 插件
-│ ├── remove-pwa →remove-pwa 插件
+│ ├── remove-pwa → remove-pwa 插件
+│ ├── rtl → rtl 插件
 │ ├── sass-palette → sass-palette 插件
 │ ├── search-pro → search-pro 插件
 │ ├── seo2 → seo2 插件

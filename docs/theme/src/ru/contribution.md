@@ -57,6 +57,7 @@ corepack prepare pnpm@7.24.3 --activate
 │ ├── photo-swipe → photo-swipe document
 │ ├── pwa → pwa2 plugin document
 │ ├── reading-time → reading-time2 plugin document
+│ ├── rtl → rtl plugin document
 │ ├── remove-pwa → remove-pwa plugin document
 │ ├── sass-palette → sass-palette plugin document
 │ ├── search-pro → search-pro plugin document
@@ -77,6 +78,7 @@ corepack prepare pnpm@7.24.3 --activate
 │ ├── pwa2 → pwa2 plugin
 │ ├── reading-time2 → reading-time2 plugin
 │ ├── remove-pwa → remove-pwa plugin
+│ ├── rtl → rtl plugin
 │ ├── sass-palette → sass-palette plugin
 │ ├── search-pro → search-pro plugin
 │ ├── seo2 → seo2 plugin

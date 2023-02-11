@@ -57,15 +57,13 @@ The project is a monorepo, managed by pnpm.
 │ ├── photo-swipe → photo-swipe document
 │ ├── pwa → pwa2 plugin document
 │ ├── reading-time → reading-time2 plugin document
+│ ├── rtl → rtl plugin document
 │ ├── remove-pwa → remove-pwa plugin document
 │ ├── sass-palette → sass-palette plugin document
-│ ├── shared → vuepress-shared document
 │ ├── search-pro → search-pro plugin document
 │ ├── seo → seo2 plugin document
 │ └── theme → theme document
 │
-├── docs-shared → common files for docs
-|
 ├── packages → project source code
 │ ├── auto-catalog → auto-catalog plugin
 │ ├── blog2 → blog2 plugin
@@ -80,6 +78,7 @@ The project is a monorepo, managed by pnpm.
 │ ├── pwa2 → pwa2 plugin
 │ ├── reading-time2 → reading-time2 plugin
 │ ├── remove-pwa → remove-pwa plugin
+│ ├── rtl → rtl plugin
 │ ├── sass-palette → sass-palette plugin
 │ ├── search-pro → search-pro plugin
 │ ├── seo2 → seo2 plugin
