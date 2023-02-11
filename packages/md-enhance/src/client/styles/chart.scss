@@ -15,6 +15,10 @@
   text-align: center;
   transition: all 1s;
 
+  @media print {
+    page-break-inside: avoid;
+  }
+
   @media (max-width: hope-config.$tablet) {
     margin: 0 -1rem;
     padding: 0.6em 0;

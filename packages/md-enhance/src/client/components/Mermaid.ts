@@ -194,7 +194,7 @@ export default defineComponent({
         },
         svgCode.value
           ? // mermaid
-            h("div", { class: "content", innerHTML: svgCode.value })
+            h("div", { class: "mermaid-content", innerHTML: svgCode.value })
           : // loading
             h(LoadingIcon, { class: "mermaid-loading", height: 96 })
       );

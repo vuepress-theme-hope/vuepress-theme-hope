@@ -42,9 +42,8 @@ export default defineComponent({
         ]),
         h(
           "div",
-          { class: "preview-container" },
+          { class: "playground-container" },
           h("iframe", {
-            class: "iframe-preview",
             src: decodeURIComponent(props.link),
           })
         ),
