@@ -107,11 +107,12 @@ export default defineComponent({
 
     return (): VNode =>
       h(
-        "a",
+        "div",
         {
           class: "site-info",
-          href: props.url,
-          target: "_blank",
+          onClick: () => {
+            window.open(props.url, "_blank");
+          },
         },
         [
           h("div", {
