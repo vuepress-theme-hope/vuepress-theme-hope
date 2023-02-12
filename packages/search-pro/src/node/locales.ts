@@ -235,5 +235,4 @@ export const searchProLocales: SearchProLocaleConfig = {
     emptyResult: "Nincs találat",
     loading: "A keresési indexek betöltése...",
   },
-
 };

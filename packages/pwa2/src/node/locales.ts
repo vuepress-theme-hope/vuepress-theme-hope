@@ -267,7 +267,8 @@ export const pwaLocales: PWALocaleConfig = {
 
   "/hu/": {
     install: "Telepítés",
-    iOSInstall: "Nyomd meg a megosztás gombot, majd a 'Hozzáadás a kezdőképernyőhöz' opciót",
+    iOSInstall:
+      "Nyomd meg a megosztás gombot, majd a 'Hozzáadás a kezdőképernyőhöz' opciót",
     cancel: "Mégse",
     close: "Bezárás",
     prevImage: "Előző kép",
@@ -275,7 +276,7 @@ export const pwaLocales: PWALocaleConfig = {
     desc: "Leírás",
     feature: "Főbb jellemzők",
     explain:
-    "Ez az alkalmazás telepíthető PC-re vagy mobil eszközre. Ez lehetővé teszi, hogy ez a webalkalmazás úgy nézzen ki és viselkedjen, mint bármely más telepített alkalmazás. Az alkalmazáslistában találod majd, és hozzáadhatod a kezdőképernyőhöz, indító menühöz vagy a feladatok sávjához. Az telepített webalkalmazás biztonságosan interakcióba léphet más alkalmazásokkal és az operációs rendszerrel.",
+      "Ez az alkalmazás telepíthető PC-re vagy mobil eszközre. Ez lehetővé teszi, hogy ez a webalkalmazás úgy nézzen ki és viselkedjen, mint bármely más telepített alkalmazás. Az alkalmazáslistában találod majd, és hozzáadhatod a kezdőképernyőhöz, indító menühöz vagy a feladatok sávjához. Az telepített webalkalmazás biztonságosan interakcióba léphet más alkalmazásokkal és az operációs rendszerrel.",
     hint: "Új tartalom érhető el.",
     update: "Új tartalom érhető el.",
   },
