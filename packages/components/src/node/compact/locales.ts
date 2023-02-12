@@ -71,4 +71,8 @@ export const catalogLocales: CatalogLocaleConfig = {
   "/fi/": {
     title: "Luettelo",
   },
+
+  "/hu/": {
+    title: "Katalógus",
+  },
 };

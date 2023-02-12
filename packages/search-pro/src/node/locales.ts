@@ -222,4 +222,18 @@ export const searchProLocales: SearchProLocaleConfig = {
     emptyResult: "Tuloksia ei löytynyt",
     loading: "Ladataan hakuindeksiä...",
   },
+
+  "/hu/": {
+    cancel: "Mégse",
+    placeholder: "Keresés",
+    search: "Keresés",
+    select: "kiválasztáshoz",
+    navigate: "navigáláshoz",
+    exit: "kilépéshez",
+    history: "Keresési előzmények",
+    emptyHistory: "Üres keresési előzmények",
+    emptyResult: "Nincs találat",
+    loading: "A keresési indexek betöltése...",
+  },
+
 };
