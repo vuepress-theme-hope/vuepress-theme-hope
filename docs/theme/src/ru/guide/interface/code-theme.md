@@ -13,16 +13,13 @@ tag:
 
 `vuepress-theme-hope` bundles `@vuepress/plugin-prismjs` to support code highlighting by default, and we allow you to set code block themes for lightmode and darkmode globally.
 
+By default, we use `one-light` and `one-dark` for lightmode and darkmode respectively, and you can change them by setting `light` and `dark` in `plugin.prismjs`.
+
 ::: tip
 
 Из-за соображений размера вывода мы не будем импортировать все стили глобально, чтобы поддерживать настройку темы кода для каждого блока кода.
 
 :::
-
-Вы должны настроить следующие переменные в `.vuepress/styles/config.scss`, чтобы установить темы кода.
-
-- `$code-light-theme`: тема кода, используемая в облегченном режиме, по умолчанию `"one-light"`
-- `$code-dark-theme`: тема кода, используемая в темном режиме, по умолчанию `"one-dark"`
 
 ### Доступные темы
 

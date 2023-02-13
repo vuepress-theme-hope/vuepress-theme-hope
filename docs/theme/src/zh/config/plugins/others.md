@@ -71,11 +71,21 @@ tag:
 
 默认情况下，主题会启用此插件，你可以设置 `false` 禁用它并自行高亮代码块。
 
-::: info
+### prismjs.light
 
-插件选项请参见 [prismjs 插件选项][prismjs-config]。
+- 类型: `PrismjsTheme`
+- 默认值: `"one-light"`
+- 详情: [界面 → 代码主题](../../guide/interface/code-theme.md)
 
-:::
+日间模式使用的 Prism.js 主题
+
+### prismjs.dark
+
+- 类型: `PrismjsTheme`
+- 默认值: `"one-dark"`
+- 详情: [界面 → 代码主题](../../guide/interface/code-theme.md)
+
+夜间模式使用的 Prism.js 主题
 
 ## photoSwipe <Badge text="默认启用" />
 
@@ -131,4 +141,3 @@ tag:
 :::
 
 [git-config]: https://v2.vuepress.vuejs.org/zh/reference/plugin/git.html
-[prismjs-config]: https://v2.vuepress.vuejs.org/zh/reference/plugin/prismjs.html

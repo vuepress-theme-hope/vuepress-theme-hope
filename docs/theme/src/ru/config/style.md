@@ -27,21 +27,10 @@ tag:
 - `$tablet`
 - `$mobile`
 
-Блок кода:
-
-::: tabs#highlighter
-
-@tab prismjs
-
-- `$code-light-theme`: тема блока кода в светлом режиме
-- `$code-dark-theme`: тема блока кода в темном режиме
-
-@tab shiki
+Блок кода (shiki only):
 
 - `$code-bg-color`: background color for code blocks
 - `$code-color`: font color for code blocks
-
-:::
 
 Класс контента: `$content-class`
 
@@ -50,9 +39,6 @@ tag:
 ::: details Демо
 
 ```scss
-// modify code theme in lightmode
-$code-light-theme: "coy";
-
 // update pc breakpoint
 $pc: 1920px;
 ```

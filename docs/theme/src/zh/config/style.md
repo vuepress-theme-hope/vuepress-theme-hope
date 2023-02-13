@@ -27,21 +27,10 @@ tag:
 - `$tablet`
 - `$mobile`
 
-代码块:
-
-::: tabs#highlighter
-
-@tab prismjs
-
-- `$code-light-theme`: 日间模式代码块主题
-- `$code-dark-theme`: 夜间模式代码块主题
-
-@tab shiki
+代码块 (仅限 shiki):
 
 - `$code-bg-color`: 代码块的背景颜色
 - `$code-color`: 代码块的字体颜色
-
-:::
 
 内容类名: `$content-class`
 
@@ -50,9 +39,6 @@ tag:
 ::: details 例子
 
 ```scss
-// 修改日间模式代码主题
-$code-light-theme: "coy";
-
 // 修改电脑响应式布局断点
 $pc: 1920px;
 ```

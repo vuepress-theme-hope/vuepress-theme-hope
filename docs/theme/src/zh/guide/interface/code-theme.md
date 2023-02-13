@@ -13,16 +13,13 @@ tag:
 
 `vuepress-theme-hope` 捆绑了 `@vuepress/plugin-prismjs` 以默认支持代码高亮，我们允许您全局设置日间模式和夜间模式的代码块主题。
 
+默认情况下，我们分别为在日间模式和夜间模式使用 `one-light` 和 `one-dark` 主题，您可以通过在 `plugin.prismjs` 中设置 `light` 和 `dark` 来更改它们。
+
 ::: tip
 
 处于对输出样式大小的考量，我们不会全局引入所有样式。所以我们不支持在代码块单独配置主题。
 
 :::
-
-请在 `.vuepress/styles/config.scss` 中设置以下变量来控制代码块主题。
-
-- `$code-light-theme`: 浅色模式下代码主题，默认为 `"one-light"`
-- `$code-dark-theme`: 深色模式下代码主题，默认为 `"one-dark"`
 
 ### 可用的主题
 

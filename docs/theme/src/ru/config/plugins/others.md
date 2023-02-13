@@ -70,11 +70,21 @@ For plugin options, please refer to <ProjectLink name="components" path="/config
 
 По умолчанию тема включает этот плагин, вы можете установить `false`, чтобы отключить его и самостоятельно выделять блоки кода.
 
-::: info
+### prismjs.light
 
-Смотрите [Параметры плагина prismjs][prismjs-config] для опций плагина.
+- Type: `PrismjsTheme`
+- Default: `"one-light"`
+- Details: [Interface → Code Themes](../../guide/interface/code-theme.md)
 
-:::
+Prism.js theme used in lightmode.
+
+### prismjs.dark
+
+- Type: `PrismjsTheme`
+- Default: `"one-dark"`
+- Details: [Interface → Code Themes](../../guide/interface/code-theme.md)
+
+Prism.js theme used in darkmode.
 
 ## photoSwipe <Badge text="включено по умолчанию" />
 
@@ -130,4 +140,3 @@ For plugin options, please refer to <ProjectLink name="components" path="/config
 :::
 
 [git-config]: https://v2.vuepress.vuejs.org/reference/plugin/git.html
-[prismjs-config]: https://v2.vuepress.vuejs.org/reference/plugin/prismjs.html
