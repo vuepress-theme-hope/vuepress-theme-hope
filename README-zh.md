@@ -20,7 +20,7 @@
 
 ## 详情
 
-V2 基于 _VuePress2_， 带有 _Vite2_ / _Webpack5_ 和 _Vue3_ 的强大功能。
+V2 基于 [_VuePress2_](https://v2.vuepress.vuejs.org/zh/)， 带有 [_Vite4_](https://cn.vitejs.dev/) / [_Webpack5_](https://webpack.docschina.org/) 和 [_Vue3_](https://cn.vuejs.org/) 的强大功能。
 
 V2 完全重写，包括:
 

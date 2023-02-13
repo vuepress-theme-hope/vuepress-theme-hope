@@ -38,7 +38,7 @@ We recommend you to contact using [issues](https://github.com/vuepress-theme-hop
 
 ## Details
 
-V2 is coming come together with _VuePress2_, with the power of _Vite2_ / _Webpack5_ and _Vue3_.
+V2 is coming come together with [_VuePress2_](https://v2.vuepress.vuejs.org), with the power of [_Vite4_](https://vitejs.dev) / [_Webpack5_](https://webpack.js.org) and [_Vue3_](https://vuejs.org).
 
 V2 is a full rewrite including:
 
