@@ -29,8 +29,19 @@ tag:
 
 代码块:
 
+::: tabs#highlighter
+
+@tab prismjs
+
 - `$code-light-theme`: 日间模式代码块主题
 - `$code-dark-theme`: 夜间模式代码块主题
+
+@tab shiki
+
+- `$code-bg-color`: 代码块的背景颜色
+- `$code-color`: 代码块的字体颜色
+
+:::
 
 内容类名: `$content-class`
 

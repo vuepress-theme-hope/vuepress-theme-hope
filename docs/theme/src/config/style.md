@@ -29,8 +29,19 @@ Responsive breakpoints:
 
 Code block:
 
+::: tabs#highlighter
+
+@tab prismjs
+
 - `$code-light-theme`: code block theme in lightmode
 - `$code-dark-theme`: code block theme in darkmode
+
+@tab shiki
+
+- `$code-bg-color`: background color for code blocks
+- `$code-color`: font color for code blocks
+
+:::
 
 Content class: `$content-class`
 

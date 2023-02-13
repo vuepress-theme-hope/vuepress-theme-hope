@@ -29,8 +29,19 @@ tag:
 
 Блок кода:
 
+::: tabs#highlighter
+
+@tab prismjs
+
 - `$code-light-theme`: тема блока кода в светлом режиме
 - `$code-dark-theme`: тема блока кода в темном режиме
+
+@tab shiki
+
+- `$code-bg-color`: background color for code blocks
+- `$code-color`: font color for code blocks
+
+:::
 
 Класс контента: `$content-class`
 
