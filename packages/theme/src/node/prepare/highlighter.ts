@@ -1,11 +1,13 @@
 import { type App } from "@vuepress/core";
 import { isPlainObject } from "@vuepress/shared";
+import { colors } from "@vuepress/utils";
 
 import {
   type PluginsOptions,
   type PrismjsOptions,
   type PrismjsTheme,
 } from "../../shared/index.js";
+import { logger } from "../utils.js";
 
 const PRISMJS_THEMES: readonly PrismjsTheme[] = [
   "ateliersulphurpool-light",
@@ -45,6 +47,9 @@ const PRISMJS_THEMES: readonly PrismjsTheme[] = [
   "z-touch",
 ] as const;
 
+const DEFAULT_PRISMJS_LIGHT_THEME: PrismjsTheme = "one-light";
+const DEFAULT_PRISMJS_DARK_THEME: PrismjsTheme = "one-dark";
+
 export const prepareHighLighterScss = async (
   app: App,
   { prismjs }: PluginsOptions
@@ -60,26 +65,37 @@ export const prepareHighLighterScss = async (
     ? "shiki"
     : "none";
 
-  await app.writeTemp(
-    "theme-hope/highlighter.scss",
-    `\
-$highlighter: "${highlighter}";\
-${
-  highlighter === "prismjs"
-    ? `
-$light-theme: "${
-        prismjsOptions.light && PRISMJS_THEMES.includes(prismjsOptions.light)
-          ? prismjsOptions.light
-          : "one-light"
-      }";
-$dark-theme: "${
-        prismjsOptions.dark && PRISMJS_THEMES.includes(prismjsOptions.dark)
-          ? prismjsOptions.dark
-          : "one-dark"
-      }";
-`
-    : ""
-}
-`
-  );
+  let content = `\
+$highlighter: "${highlighter}";
+`;
+
+  if (highlighter === "prismjs") {
+    const lightTheme = prismjsOptions.light
+      ? PRISMJS_THEMES.includes(prismjsOptions.light)
+        ? prismjsOptions.light
+        : (logger.warn(
+            `Unsupported code theme ${
+              prismjsOptions.light
+            } found in ${colors.magenta("plugins.prismjs.light")}`
+          ),
+          DEFAULT_PRISMJS_LIGHT_THEME)
+      : DEFAULT_PRISMJS_LIGHT_THEME;
+    const darkTheme = prismjsOptions.dark
+      ? PRISMJS_THEMES.includes(prismjsOptions.dark)
+        ? prismjsOptions.dark
+        : (logger.warn(
+            `Unsupported code theme ${
+              prismjsOptions.dark
+            } found in ${colors.magenta("plugins.prismjs.dark")}`
+          ),
+          DEFAULT_PRISMJS_DARK_THEME)
+      : DEFAULT_PRISMJS_DARK_THEME;
+
+    content += `\
+$light-theme: "${lightTheme}";
+$dark-theme: "${darkTheme}";
+`;
+  }
+
+  await app.writeTemp("theme-hope/highlighter.scss", content);
 };
