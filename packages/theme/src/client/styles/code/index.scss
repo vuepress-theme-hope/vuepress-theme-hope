@@ -1,5 +1,8 @@
 @use "sass:meta";
 @use "@sass-palette/hope-config";
+@use "@temp/theme-hope/highlighter";
 @use "base";
 
-@include meta.load-css(hope-config.$code-highlighter);
+@if highlighter.$highlighter != "none" {
+  @include meta.load-css(highlighter.$highlighter);
+}

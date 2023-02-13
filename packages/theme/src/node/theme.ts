@@ -12,6 +12,7 @@ import {
 import { checkPlugins, getPluginConfig, usePlugin } from "./plugins/index.js";
 import {
   prepareConfigFile,
+  prepareHighLighterScss,
   prepareSidebarData,
   prepareSocialMediaIcons,
   prepareThemeColorScss,
@@ -91,6 +92,7 @@ export const hopeTheme =
       onPrepared: (app): Promise<void> =>
         Promise.all([
           prepareSidebarData(app, themeData, sidebarSorter),
+          prepareHighLighterScss(app),
           prepareThemeColorScss(app, themeData),
           prepareSocialMediaIcons(app, icons),
         ]).then(() => void 0),
