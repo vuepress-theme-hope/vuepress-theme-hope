@@ -68,4 +68,8 @@ export const locales: AutoCatalogLocaleConfig = {
   "/fi/": {
     title: "Luettelo",
   },
+
+  "/hu/": {
+    title: "Katalógus",
+  },
 };

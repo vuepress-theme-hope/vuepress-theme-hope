@@ -85,4 +85,10 @@ export const copyrightLocales: CopyrightLocaleConfig = {
     license: "Lizenziert unter :license",
     link: ":link",
   },
+
+  "/hu/": {
+    author: "Szerzői jog :author",
+    license: "Licensz: :license",
+    link: ":link",
+  },
 };

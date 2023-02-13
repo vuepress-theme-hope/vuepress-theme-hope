@@ -103,4 +103,10 @@ export const copyCodeLocales: CopyCodeLocaleConfig = {
     copied: "Kopioitu",
     hint: "Kopioitu onnistuneesti",
   },
+
+  "/hu/": {
+    copy: "Kód másolása",
+    copied: "Másolva",
+    hint: "Sikeres másolás",
+  },
 };

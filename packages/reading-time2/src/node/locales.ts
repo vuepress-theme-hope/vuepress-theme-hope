@@ -105,4 +105,10 @@ export const readingTimeLocales: ReadingTimeLocaleConfig = {
     less1Minute: "Alle minuutti",
     time: "Noin $time minuuttia",
   },
+
+  "/hu/": {
+    word: "Körülbelül $word szó",
+    less1Minute: "Kevesebb, mint 1 perc",
+    time: "Körülbelül $time perc",
+  },
 };
