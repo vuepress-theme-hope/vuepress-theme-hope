@@ -19,7 +19,7 @@
 
 ## Подробности
 
-V2 появится вместе с _VuePress2_, с мощью _Vite2_ / _Webpack5_ и _Vue3_.
+V2 появится вместе с [_VuePress2_](https://v2.vuepress.vuejs.org), с мощью [_Vite4_](https://vitejs.dev) / [_Webpack5_](https://webpack.js.org) и [_Vue3_](https://vuejs.org).
 
 V2 полностью переписан, включая:
 
