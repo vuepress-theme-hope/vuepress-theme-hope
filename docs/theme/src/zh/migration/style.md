@@ -60,7 +60,7 @@ tag:
 
   现在你只需要在主题选项中设置主题色
 
-- `$codeBgColor`, `$darkCodeBgColor` 移除，请在 `config.scss` 中配置 `$code-light-theme` 和 `$code-dark-theme`。
+- `$codeBgColor`, `$darkCodeBgColor` 移除，请在主题选项中设置 `plugins.prismjs` (prismjs)，或在 `config.scss` 中配置 `$code-bg-color` (shiki)。
 
 ### 字体
 

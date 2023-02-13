@@ -70,11 +70,21 @@ Controls `@vuepress/plugin-prismjs` to provide code block highlighting via Prism
 
 By default, the theme will enable this plugin, you can set `false` to disable it and highlight code blocks yourself.
 
-::: info
+### prismjs.light
 
-See [prismjs plugin options][prismjs-config] for plugin options.
+- Type: `PrismjsTheme`
+- Default: `"one-light"`
+- Details: [Interface → Code Themes](../../guide/interface/code-theme.md)
 
-:::
+Prism.js theme used in lightmode.
+
+### prismjs.dark
+
+- Type: `PrismjsTheme`
+- Default: `"one-dark"`
+- Details: [Interface → Code Themes](../../guide/interface/code-theme.md)
+
+Prism.js theme used in darkmode.
 
 ## photoSwipe <Badge text="enabled by default" />
 
@@ -130,4 +140,3 @@ For plugin config, please refer to <ProjectLink name="sitemap2" path="/config.ht
 :::
 
 [git-config]: https://v2.vuepress.vuejs.org/reference/plugin/git.html
-[prismjs-config]: https://v2.vuepress.vuejs.org/reference/plugin/prismjs.html

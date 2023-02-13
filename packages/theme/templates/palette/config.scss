@@ -1,0 +1,43 @@
+@import "vuepress-plugin-sass-palette/styles/default/palette";
+
+/* rtl */
+$rtl-selector: 'html[dir="rtl"]' !default;
+
+/** dark mode selector */
+$light-selector: 'html[data-theme="light"]';
+$dark-selector: 'html[data-theme="dark"]';
+
+/* responsive breakpoints */
+
+// wide screen
+$pc: 1440px !default;
+
+// desktop
+$laptop: 1280px !default;
+
+// narrow desktop / iPad
+$pad: 959px !default;
+
+// wide mobile
+$tablet: 719px !default;
+
+// narrow mobile
+$mobile: 419px !default;
+
+/* Content Class */
+$content-class: ".theme-hope-content" !default;
+
+/* Color list */
+$colors: #cf1322, #fa541c, #f39c12, #2ecc71, #25a55b, #10a5a5, #096dd9, #aa6fe9,
+  #eb2f96 !default;
+
+/* Code Block */
+// only available with shiki highlighter
+$code-color: (
+  light: #383a42,
+  dark: #abb2bf,
+) !default;
+$code-bg-color: (
+  light: #ecf4fa,
+  dark: #282c34,
+) !default;

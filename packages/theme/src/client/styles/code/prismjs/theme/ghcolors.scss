@@ -1,0 +1,100 @@
+/**
+ * GHColors theme by Avi Aryan (http://aviaryan.in)
+ * Inspired by GitHub syntax coloring
+ * Copied from https://github.com/PrismJS/prism-themes/blob/master/themes/prism-ghcolors.css
+ */
+
+@use "../../var";
+
+#app {
+  @include var.color($code-color: #393a34, $code-bg-color: #f8f8f8);
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  // tab size
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  // Selection
+  &::selection,
+  ::selection {
+    background: #b3d4fc;
+  }
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #998;
+  font-style: italic;
+}
+
+.token.namespace {
+  opacity: 0.7;
+}
+
+.token.string,
+.token.attr-value {
+  color: #e3116c;
+}
+
+.token.punctuation,
+.token.operator {
+  color: #393a34; /* no highlight */
+}
+
+.token.entity,
+.token.url,
+.token.symbol,
+.token.number,
+.token.boolean,
+.token.variable,
+.token.constant,
+.token.property,
+.token.regex,
+.token.inserted {
+  color: #36acaa;
+}
+
+.token.atrule,
+.token.keyword,
+.token.attr-name {
+  color: #00a4db;
+}
+
+.token.function,
+.token.deleted {
+  color: #9a050f;
+}
+
+.token.tag,
+.token.selector {
+  color: #00009f;
+}
+
+.token.important,
+.token.function,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.language-autohotkey {
+  .token.selector {
+    color: #00a4db;
+  }
+
+  .token.tag {
+    color: #9a050f;
+  }
+
+  .token.keyword {
+    color: #00009f;
+  }
+}

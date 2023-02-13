@@ -1,42 +1,8 @@
 @use "@sass-palette/hope-config";
 
-/* Code blocks */
-pre[class*="language-"] {
-  overflow: auto;
-  direction: ltr;
-
-  > code {
-    background: none;
-    color: var(--code-color);
-
-    font-family: var(--font-family-code);
-    text-align: left;
-    white-space: pre;
-    word-spacing: normal;
-    word-wrap: normal;
-    word-break: normal;
-    -webkit-hyphens: none;
-    -moz-hyphens: none;
-    hyphens: none;
-
-    transition: color var(--color-transition);
-
-    @media print {
-      white-space: pre-wrap;
-    }
-  }
-}
-
-/* Inline code */
-:not(pre) > code[class*="language-"] {
-  padding: 0.1em;
-  border-radius: 0.3em;
-  white-space: normal;
-}
-
 #{hope-config.$content-class} {
-  pre,
-  pre[class*="language-"] {
+  /* Code blocks */
+  pre {
     overflow: auto;
 
     margin: 0.85rem 0;
@@ -52,11 +18,27 @@ pre[class*="language-"] {
       border-radius: 0;
 
       background: transparent !important;
+      color: var(--code-color);
 
+      font-family: var(--font-family-code);
+      text-align: left;
+      white-space: pre;
+      word-spacing: normal;
+      word-wrap: normal;
+      word-break: normal;
       overflow-wrap: unset;
+      -webkit-hyphens: none;
+      -moz-hyphens: none;
+      hyphens: none;
+
+      transition: color var(--color-transition);
 
       -webkit-font-smoothing: auto;
       -moz-osx-font-smoothing: auto;
+
+      @media print {
+        white-space: pre-wrap;
+      }
     }
   }
 
@@ -94,13 +76,9 @@ div[class*="language-"] {
     transition: color var(--color-transition);
   }
 
-  pre,
-  pre[class*="language-"] {
+  pre {
     position: relative;
     z-index: 1;
-
-    // WARNING: force override the background color to be compatible with shiki
-    background: transparent !important;
   }
 
   .highlight-lines {

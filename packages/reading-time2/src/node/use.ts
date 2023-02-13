@@ -5,8 +5,6 @@ import { readingTimePlugin } from "./plugin.js";
 
 /**
  * Composition Api to use `vuepress-plugin-reading-time2`
- *
- * @description Should be invoke on node side
  */
 export const useReadingTimePlugin = (
   app: App,
@@ -22,8 +20,6 @@ export const useReadingTimePlugin = (
 
 /**
  * Composition Api to remove `vuepress-plugin-reading-time2`
- *
- * @description Should be invoke on node side
  */
 export const removeReadingTimePlugin = (app: App): void => {
   const { plugins } = app.pluginApi;

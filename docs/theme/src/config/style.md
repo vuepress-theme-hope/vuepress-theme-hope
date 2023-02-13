@@ -27,10 +27,12 @@ Responsive breakpoints:
 - `$tablet`
 - `$mobile`
 
-Code block:
+Code block (Only available with shiki):
 
-- `$code-light-theme`: code block theme in lightmode
-- `$code-dark-theme`: code block theme in darkmode
+- `$code-bg-color`: background color for code blocks
+- `$code-color`: font color for code blocks
+
+:::
 
 Content class: `$content-class`
 
@@ -39,9 +41,6 @@ Color list: `$colors`
 ::: details Demo
 
 ```scss
-// modify code theme in lightmode
-$code-light-theme: "coy";
-
 // update pc breakpoint
 $pc: 1920px;
 ```

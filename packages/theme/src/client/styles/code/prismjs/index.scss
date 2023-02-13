@@ -1,0 +1,15 @@
+@use "sass:meta";
+@use "@sass-palette/hope-config";
+@use "@temp/theme-hope/highlighter";
+
+@if highlighter.$light-theme == highlighter.$dark-theme {
+  @include meta.load-css("theme/#{highlighter.$light-theme}");
+} @else {
+  #{hope-config.$light-selector} {
+    @include meta.load-css("theme/#{highlighter.$light-theme}");
+  }
+
+  #{hope-config.$dark-selector} {
+    @include meta.load-css("theme/#{highlighter.$dark-theme}");
+  }
+}

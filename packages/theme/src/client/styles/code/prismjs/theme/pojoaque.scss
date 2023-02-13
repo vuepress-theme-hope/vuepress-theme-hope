@@ -1,0 +1,108 @@
+/**
+ * Pojoaque Style by Jason Tate
+ * http://web-cms-designs.com/ftopict-10-pojoaque-style-for-highlight-js-code-highlighter.html
+ * Based on Solarized Style from http://ethanschoonover.com/solarized
+ * http://softwaremaniacs.org/media/soft/highlight/test.html
+ * Copied from https://github.com/PrismJS/prism-themes/blob/master/themes/prism-pojoaque.css
+ */
+
+@use "../../var";
+
+#app {
+  @include var.color($code-color: #dccf8f, $code-bg-color: #181914);
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  // tab size
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+}
+
+.token.namespace {
+  opacity: 0.7;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #586e75;
+  font-style: italic;
+}
+
+.token.number,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #468966;
+}
+
+.token.attr-name {
+  color: #b89859;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #dccf8f;
+}
+
+.token.selector,
+.token.regex {
+  color: #859900;
+}
+
+.token.atrule,
+.token.keyword {
+  color: #cb4b16;
+}
+
+.token.attr-value {
+  color: #468966;
+}
+
+.token.function,
+.token.variable,
+.token.placeholder {
+  color: #b58900;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol {
+  color: #b89859;
+}
+
+.token.tag {
+  color: #ffb03b;
+}
+
+.token.important,
+.token.statement,
+.token.deleted {
+  color: #dc322f;
+}
+
+.token.punctuation {
+  color: #dccf8f;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}

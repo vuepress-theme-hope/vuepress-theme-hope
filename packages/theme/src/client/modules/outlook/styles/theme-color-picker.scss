@@ -49,8 +49,8 @@
   }
 }
 
-@each $colorName, $value in theme-color.$picker {
-  :root.theme-#{$colorName} {
+@each $color-name, $value in theme-color.$picker {
+  :root.theme-#{$color-name} {
     --theme-color: #{$value};
     --theme-color-light: #{color.scale($value, $lightness: 10%)};
     --theme-color-dark: #{color.scale($value, $lightness: -10%)};

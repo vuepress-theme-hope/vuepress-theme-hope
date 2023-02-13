@@ -1,0 +1,110 @@
+/**
+ * Gruvbox dark theme
+ *
+ * Adapted from a theme based on:
+ * Vim Gruvbox dark Theme (https://github.com/morhetz/gruvbox)
+ *
+ * @author Azat S. <to@azat.io>
+ * @version 1.0
+ * Copied from https://github.com/PrismJS/prism-themes/blob/master/themes/prism-gruvbox-dark.css
+ */
+
+@use "../../var";
+
+#app {
+  @include var.color($code-color: #ebdbb2, $code-bg-color: #1d2021);
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  // tab size
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  // Selection
+  &::selection,
+  ::selection {
+    background: #7c6f64;
+    color: #fbf1c7;
+  }
+}
+
+.token.comment,
+.token.prolog,
+.token.cdata {
+  color: #a89984;
+}
+
+.token.delimiter,
+.token.boolean,
+.token.keyword,
+.token.selector,
+.token.important,
+.token.atrule {
+  color: #fb4934;
+}
+
+.token.operator,
+.token.punctuation,
+.token.attr-name {
+  color: #a89984;
+}
+
+.token.tag,
+.token.tag .punctuation,
+.token.doctype,
+.token.builtin {
+  color: #fabd2f;
+}
+
+.token.entity,
+.token.number,
+.token.symbol {
+  color: #d3869b;
+}
+
+.token.property,
+.token.constant,
+.token.variable {
+  color: #fb4934;
+}
+
+.token.string,
+.token.char {
+  color: #b8bb26;
+}
+
+.token.attr-value,
+.token.attr-value .punctuation {
+  color: #a89984;
+}
+
+.token.url {
+  color: #b8bb26;
+  text-decoration: underline;
+}
+
+.token.function {
+  color: #fabd2f;
+}
+
+.token.regex {
+  background: #b8bb26;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.inserted {
+  background: #a89984;
+}
+
+.token.deleted {
+  background: #fb4934;
+}

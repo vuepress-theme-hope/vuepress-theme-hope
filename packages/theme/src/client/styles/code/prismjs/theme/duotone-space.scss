@@ -1,0 +1,115 @@
+/*
+ * Name:   Duotone Forest
+ * Author: by Simurai, adapted from DuoTone themes for Atom (http://simurai.com/projects/2016/01/01/duotone-themes)
+ * Conversion: Bram de Haan (http://atelierbram.github.io/Base2Tone-prism/output/prism/prism-base2tone-forest-dark.css)
+ * Generated with Base16 Builder (https://github.com/base16-builder/base16-builder)
+ * Copied from  https://github.com/PrismJS/prism-themes/blob/master/themes/prism-duotone-space.css
+ */
+
+@use "../../var";
+
+#app {
+  @include var.color($code-color: #767693, $code-bg-color: #24242e);
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  // tab size
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  // Selection
+  &::selection,
+  ::selection {
+    background: #5151e6;
+  }
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #5b5b76;
+}
+
+.token.punctuation {
+  color: #5b5b76;
+}
+
+.token.namespace {
+  opacity: 0.7;
+}
+
+.token.tag,
+.token.operator,
+.token.number {
+  color: #dd672c;
+}
+
+.token.property,
+.token.function {
+  color: #767693;
+}
+
+.token.tag-id,
+.token.selector,
+.token.atrule-id {
+  color: #ebebff;
+}
+
+.language-javascript,
+.token.attr-name {
+  color: #aaaaca;
+}
+
+.language-css,
+.language-scss,
+.token.boolean,
+.token.string,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.language-scss .token.string,
+.style .token.string,
+.token.attr-value,
+.token.keyword,
+.token.control,
+.token.directive,
+.token.unit,
+.token.statement,
+.token.regex,
+.token.atrule {
+  color: #fe8c52;
+}
+
+.token.placeholder,
+.token.variable {
+  color: #fe8c52;
+}
+
+.token.deleted {
+  text-decoration: line-through;
+}
+
+.token.inserted {
+  border-bottom: 1px dotted #ebebff;
+  text-decoration: none;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.important {
+  color: #aaaaca;
+}
+
+.token.entity {
+  cursor: help;
+}

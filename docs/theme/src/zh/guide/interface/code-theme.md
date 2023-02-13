@@ -9,9 +9,11 @@ tag:
   - 代码主题
 ---
 
-`vuepress-theme-hope` 允许你全局为代码块在日间模式和夜间模式下配置不同主题。
+## 使用 Prism.js 高亮
 
-<!-- more -->
+`vuepress-theme-hope` 捆绑了 `@vuepress/plugin-prismjs` 以默认支持代码高亮，我们允许您全局设置日间模式和夜间模式的代码块主题。
+
+默认情况下，我们分别为在日间模式和夜间模式使用 `one-light` 和 `one-dark` 主题，您可以通过在 `plugin.prismjs` 中设置 `light` 和 `dark` 来更改它们。
 
 ::: tip
 
@@ -19,14 +21,7 @@ tag:
 
 :::
 
-## 设置方式
-
-请在 `.vuepress/styles/config.scss` 中设置以下变量来控制代码块主题。
-
-- `$code-light-theme`: 浅色模式下代码主题，默认为 `"one-light"`
-- `$code-dark-theme`: 深色模式下代码主题，默认为 `"one-dark"`
-
-## 可用的主题
+### 可用的主题
 
 ::: info 浅色主题
 
@@ -72,3 +67,67 @@ tag:
 - z-touch
 
 :::
+
+## 使用 Shiki 高亮器
+
+Prism.js 快速且轻量，但它无法正确高亮所有语法。 如果你想要更准确的高亮结果，可以安装 `@vuepress/plugin-shiki` 并导入使用:
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D @vuepress/plugin-shiki@next
+```
+
+@tab yarn
+
+```bash
+yarn add -D @vuepress/plugin-shiki@next
+```
+
+@tab npm
+
+```bash
+npm i -D @vuepress/plugin-shiki@next
+```
+
+::: code-tabs#language
+
+@tab TS
+
+```ts
+// .vuepress/config.ts
+import { shikiPlugin } from "@vuepress/plugin-shiki";
+import { defineUserConfig } from "vuepress";
+
+export default defineUserConfig({
+  plugins: [
+    shikiPlugin({
+      // 你的选项
+    }),
+  ],
+});
+```
+
+@tab JS
+
+```js
+// .vuepress/config.js
+import { shikiPlugin } from "@vuepress/plugin-shiki";
+
+export default {
+  plugins: [
+    shikiPlugin({
+      // 你的选项
+    }),
+  ],
+};
+```
+
+:::
+
+为了让样式正常工作，您应该在 `.vuepress/styles/config.scss 中配置以下变量来设置代码主题。
+
+- `$code-bg-color`: 代码块的背景颜色
+- `$code-color`: 代码块的字体颜色

@@ -60,7 +60,7 @@ Move to `palette.scss`.
 
   Now you just need to set the theme color in theme options
 
-- `$codeBgColor`, `$darkCodeBgColor` removed, set `$code-light-theme` and `$code-dark-theme` in `config.scss` instead.
+- `$codeBgColor`, `$darkCodeBgColor` removed, please set `plugins.prismjs` (prismjs) in theme options, or configure `$code-bg-color` (shiki) in `config.scss`.
 
 ### Font
 
