@@ -345,7 +345,7 @@ export const mdEnhancePlugin =
           app.pages.forEach((page) => checkLinks(page, app));
       },
 
-      onPrepared: async (app): Promise<void> =>
+      onPrepared: (app): Promise<void> =>
         Promise.all([
           mathjaxEnable
             ? prepareMathjaxStyleFile(app, mathjaxInstance!)

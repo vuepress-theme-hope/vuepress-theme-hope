@@ -64,7 +64,7 @@ export const autoCatalogPlugin =
         }
       },
 
-      onInitialized: async (app): Promise<void> =>
+      onInitialized: (app): Promise<void> =>
         generateCatalog(app, { exclude, frontmatter, level }),
 
       ...(component ? {} : { clientConfigFile: `${CLIENT_FOLDER}config.js` }),

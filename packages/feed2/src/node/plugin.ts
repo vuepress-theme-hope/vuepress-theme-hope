@@ -39,8 +39,7 @@ export const feedPlugin =
 
       onPrepared: (app): void => injectLinksToHead(app, feedOptions),
 
-      onGenerated: async (app): Promise<void> => {
-        await new FeedGenerator(app, feedOptions).generateFeed();
-      },
+      onGenerated: (app): Promise<void> =>
+        new FeedGenerator(app, feedOptions).generateFeed(),
     };
   };
