@@ -10,7 +10,7 @@ $headings: (2, 3, 4, 5, 6);
   z-index: 99;
   max-width: var(--content-width, 740px);
 
-  + #{hope-config.$content-class}:not(.custom) {
+  + .theme-hope-content:not(.custom) {
     padding-top: 0;
   }
 }

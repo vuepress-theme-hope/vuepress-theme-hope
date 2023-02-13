@@ -1,7 +1,7 @@
 @use "vuepress-shared/styles/wrapper";
 @use "@sass-palette/hope-config";
 
-#{hope-config.$content-class} {
+.theme-hope-content {
   @media print {
     margin: 0 !important;
 

@@ -5,7 +5,7 @@
     max-width: 780px;
   }
 
-  #{hope-config.$content-class}:empty {
+  .theme-hope-content:empty {
     padding: 0;
   }
 }

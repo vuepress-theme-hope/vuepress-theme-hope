@@ -34,8 +34,6 @@ Code block (Only available with shiki):
 
 :::
 
-Content class: `$content-class`
-
 Color list: `$colors`
 
 ::: details Demo

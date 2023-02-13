@@ -32,8 +32,6 @@ tag:
 - `$code-bg-color`: 代码块的背景颜色
 - `$code-color`: 代码块的字体颜色
 
-内容类名: `$content-class`
-
 颜色列表: `$colors`
 
 ::: details 例子

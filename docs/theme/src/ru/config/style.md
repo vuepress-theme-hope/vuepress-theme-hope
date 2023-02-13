@@ -32,8 +32,6 @@ tag:
 - `$code-bg-color`: background color for code blocks
 - `$code-color`: font color for code blocks
 
-Класс контента: `$content-class`
-
 Список цветов: `$colors`
 
 ::: details Демо
