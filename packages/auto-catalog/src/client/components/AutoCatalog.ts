@@ -74,7 +74,7 @@ export default defineComponent({
     titleGetter: {
       type: Function as PropType<(meta: RouteMeta) => string>,
 
-      default: (meta: RouteMeta) => meta["title"],
+      default: (meta: RouteMeta) => meta["title"] || "",
     },
 
     /**
@@ -163,7 +163,10 @@ export default defineComponent({
             path,
           };
         })
-        .filter(({ title, level }) => level <= props.level || !title)
+        .filter(
+          ({ title, level }) =>
+            typeof title === "string" && title && level <= props.level
+        )
         .sort(
           (
             { title: titleA, level: levelA, path: pathA, order: orderA },
