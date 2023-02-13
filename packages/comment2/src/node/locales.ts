@@ -86,4 +86,8 @@ export const walineLocales: WalineLocaleConfig = {
     placeholder:
       "Kirjoita kommentti tähän (täytä sähköpostiosoite saadaksesi sähköposti-ilmoituksen vastauksesta)",
   },
+  "/hu/": {
+    placeholder:
+      "Írj kommentet itt! (Töltsd ki az email címet, hogy értesítést kapj, amikor válaszolnak.)",
+  },
 };

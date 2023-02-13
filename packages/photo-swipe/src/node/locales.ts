@@ -153,4 +153,13 @@ export const photoSwipeLocales: PhotoSwipeLocaleConfig = {
     arrowPrev: "Edellinen (Vasen nuoli)",
     arrowNext: "Seuraava (Oikea nuoli)",
   },
+
+  "/hu/": {
+    close: "Bezárás",
+    download: "Kép letöltése",
+    fullscreen: "Váltás teljes képernyőre",
+    zoom: "Nagyítás/kicsinyítés",
+    arrowPrev: "Előző (Balra nyíl)",
+    arrowNext: "Következő (Jobbra nyíl)",
+  },
 };

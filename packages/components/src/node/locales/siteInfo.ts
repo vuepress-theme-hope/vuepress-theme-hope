@@ -32,4 +32,6 @@ export const siteInfoLocaleConfig: SiteInfoLocaleConfig = {
   "/ko/": { source: "소스 코드" },
 
   "/fi/": { source: "Lähdekoodi" },
+
+  "/hu/": { source: "Forrás" },
 };

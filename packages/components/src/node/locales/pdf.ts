@@ -68,4 +68,8 @@ export const pdfLocaleConfig: PDFLocaleConfig = {
   "/fi/": {
     hint: "<p>Tämä selain ei tue PDF-tiedostojen upottamista. Lataa PDF-tiedosto nähdäksesi sen: <a href='[url]' target='_blank'>Lataa PDF</a></p>",
   },
+
+  "/hu/": {
+    hint: "<p>Ez a böngésző nem támogatja a PDF beágyazását. Kérlek töltsd le a PDF-et megtekintéshez: <a href='[url]' target='_blank'>PDF letöltése</a></p>",
+  },
 };

@@ -153,4 +153,13 @@ export const markdownEnhanceLocales: MarkdownEnhanceLocaleConfig = {
     danger: "Vaara",
     details: "Yksityiskohdat",
   },
+
+  "/hu/": {
+    info: "Információ",
+    note: "Megjegyzés",
+    tip: "Tipp",
+    warning: "Figyelem",
+    danger: "Veszély",
+    details: "Részletek",
+  },
 };
