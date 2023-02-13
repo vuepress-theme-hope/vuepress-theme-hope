@@ -5,6 +5,7 @@ import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 
 import { useGitPlugin } from "./git.js";
 import { useExtendsPagePlugin } from "./pageConverter.js";
+import { usePrismPlugin } from "./prism.js";
 import { type PluginsOptions, type ThemeData } from "../../shared/index.js";
 import { TEMPLATE_FOLDER } from "../utils.js";
 
@@ -42,6 +43,8 @@ export const usePlugin = (
       app,
       isPlainObject(plugins.readingTime) ? plugins.readingTime : {}
     );
+
+  if (plugins.prismjs !== false) usePrismPlugin(app);
 
   useSassPalettePlugin(app, {
     id: "hope",

@@ -1,7 +1,6 @@
 import { type App, type PluginConfig } from "@vuepress/core";
 import { externalLinkIconPlugin } from "@vuepress/plugin-external-link-icon";
 import { nprogressPlugin } from "@vuepress/plugin-nprogress";
-import { prismjsPlugin } from "@vuepress/plugin-prismjs";
 import { themeDataPlugin } from "@vuepress/plugin-theme-data";
 
 import { getActiveHeaderLinksPlugin } from "./activeHeaderLinks.js";
@@ -45,7 +44,6 @@ export const getPluginConfig = (
     getAutoCatalogPlugin(plugins.autoCatalog),
     plugins.externalLinkIcon === false ? null : externalLinkIconPlugin(),
     plugins.nprogress === false ? null : nprogressPlugin(),
-    plugins.prismjs === false ? null : prismjsPlugin(),
     themeDataPlugin({ themeData }),
     getBlogPlugin(app, themeData, plugins.blog, options.hotReload),
     getCommentPlugin(plugins.comment, legacy),

@@ -3,8 +3,6 @@ import { type GitPluginOptions, gitPlugin } from "@vuepress/plugin-git";
 
 /**
  * Composition Api to use `@vuepress/plugin-git`
- *
- * @description Should be invoke on node side
  */
 export const useGitPlugin = (
   app: App,
@@ -21,8 +19,6 @@ export const useGitPlugin = (
 
 /**
  * Composition Api to remove `@vuepress/plugin-git`
- *
- * @description Should be invoke on node side
  */
 export const removeGitPlugin = (app: App): void => {
   const { plugins } = app.pluginApi;

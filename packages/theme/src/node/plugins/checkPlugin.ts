@@ -43,8 +43,6 @@ const KNOWN_THEME_PLUGINS = [
 
 /**
  * Check plugin options for noob users
- *
- * @description Should be invoke on node side
  */
 export const checkPlugins = (app: App, plugins: PluginsOptions): void => {
   PLUGIN_CHECKLIST.forEach(([pluginName, optionName = ""]) => {
@@ -80,8 +78,6 @@ export const checkPlugins = (app: App, plugins: PluginsOptions): void => {
 
 /**
  * Composition Api to remove `@vuepress/plugin-git`
- *
- * @description Should be invoke on node side
  */
 export const removeGitPlugin = (app: App): void => {
   const { plugins } = app.pluginApi;
