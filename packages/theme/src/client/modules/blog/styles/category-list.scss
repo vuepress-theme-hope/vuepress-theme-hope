@@ -28,6 +28,8 @@
     color: var(--dark-grey);
     box-shadow: 0 1px 4px 0 var(--card-shadow);
 
+    word-break: break-word;
+
     cursor: pointer;
 
     transition: background var(--color-transition),
