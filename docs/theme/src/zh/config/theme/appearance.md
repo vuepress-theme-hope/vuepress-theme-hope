@@ -24,7 +24,11 @@ tag:
 - 类型: `FontIconAssets`
 
   ```ts
-  type Link = `//${string}` | `http://${string}` | `https://${string}`;
+  type Link =
+    | `/${string}`
+    | `//${string}`
+    | `http://${string}`
+    | `https://${string}`;
 
   export type FontIconAssets =
     | "iconfont"

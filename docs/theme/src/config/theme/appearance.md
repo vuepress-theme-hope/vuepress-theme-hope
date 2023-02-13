@@ -24,7 +24,11 @@ These options are only valid when setting directly under the theme options, sett
 - Type: `FontIconAssets`
 
   ```ts
-  type Link = `//${string}` | `http://${string}` | `https://${string}`;
+  type Link =
+    | `/${string}`
+    | `//${string}`
+    | `http://${string}`
+    | `https://${string}`;
 
   export type FontIconAssets =
     | "iconfont"

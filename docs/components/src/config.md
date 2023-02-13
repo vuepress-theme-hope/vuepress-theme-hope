@@ -60,7 +60,11 @@ Global config for components.
 - Type: `FontIconAssets`
 
   ```ts
-  type Link = `//${string}` | `http://${string}` | `https://${string}`;
+  type Link =
+    | `/${string}`
+    | `//${string}`
+    | `http://${string}`
+    | `https://${string}`;
 
   type FontIconAssets =
     | "iconfont"
