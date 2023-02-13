@@ -13,6 +13,7 @@ import { type SeoOptions } from "vuepress-plugin-seo2";
 import { type SitemapOptions } from "vuepress-plugin-sitemap2";
 
 import { type BlogPluginOptions } from "./blog.js";
+import { type PrismjsOptions } from "./prism.js";
 
 export interface PluginsOptions {
   /**
@@ -169,7 +170,7 @@ export interface PluginsOptions {
    *
    * @default true
    */
-  prismjs?: boolean;
+  prismjs?: PrismjsOptions | boolean;
 
   /**
    * PWA plugin options

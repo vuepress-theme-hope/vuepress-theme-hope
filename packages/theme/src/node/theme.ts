@@ -92,7 +92,7 @@ export const hopeTheme =
       onPrepared: (app): Promise<void> =>
         Promise.all([
           prepareSidebarData(app, themeData, sidebarSorter),
-          prepareHighLighterScss(app),
+          prepareHighLighterScss(app, plugins),
           prepareThemeColorScss(app, themeData),
           prepareSocialMediaIcons(app, icons),
         ]).then(() => void 0),
