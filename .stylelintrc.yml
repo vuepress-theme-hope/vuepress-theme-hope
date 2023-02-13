@@ -1,4 +1,4 @@
 extends:
   - stylelint-config-hope
-ignoreFiles:
-  - packages/md-enhance/src/client/styles/slides/theme/**/*.scss
+# ignoreFiles:
+#   - packages/md-enhance/src/client/styles/slides/theme/**/*.scss
