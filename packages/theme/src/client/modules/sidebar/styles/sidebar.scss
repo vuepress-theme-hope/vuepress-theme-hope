@@ -46,6 +46,8 @@
   }
 
   @media (min-width: hope-config.$pc) {
+    // this value should be greater than footer height, and users should manually override it
+    padding-bottom: 3rem;
     box-shadow: none;
   }
 
