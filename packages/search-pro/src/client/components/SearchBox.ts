@@ -1,13 +1,28 @@
 import { useEventListener } from "@vueuse/core";
-import { type VNode, defineComponent, h, inject } from "vue";
-import { useLocaleConfig } from "vuepress-shared/client";
+import {
+  type VNode,
+  computed,
+  defineComponent,
+  h,
+  inject,
+  onMounted,
+  ref,
+} from "vue";
+import {
+  checkIsIOS,
+  checkIsMacOS,
+  checkIsiPad,
+  useLocaleConfig,
+} from "vuepress-shared/client";
 
 import { SearchIcon } from "./icons.js";
 import { searchModalSymbol } from "../composables/setup.js";
-import { searchProLocales } from "../define.js";
+import { searchProHotKeys, searchProLocales } from "../define.js";
 import { isFocusingTextControl, isKeyMatched } from "../utils/index.js";
 
 import "../styles/search-box.scss";
+
+const primaryKey = searchProHotKeys[0];
 
 export default defineComponent({
   name: "SearchBox",
@@ -15,6 +30,22 @@ export default defineComponent({
   setup() {
     const locale = useLocaleConfig(searchProLocales);
     const isActive = inject(searchModalSymbol)!;
+    const isMacOS = ref(false);
+
+    const controlKeys = computed(() =>
+      primaryKey
+        ? [
+            ...(isMacOS.value
+              ? ["⌘", "⇧", "⌥"]
+              : ["Ctrl", "Shift", "Alt"]
+            ).filter(
+              (_, index) =>
+                primaryKey[(["ctrl", "shift", "alt"] as const)[index]]
+            ),
+            primaryKey.key.toUpperCase(),
+          ]
+        : null
+    );
 
     const onKeydown = (event: KeyboardEvent): void => {
       if (
@@ -33,6 +64,15 @@ export default defineComponent({
 
     useEventListener("keydown", onKeydown);
 
+    onMounted(() => {
+      const { userAgent } = navigator;
+
+      isMacOS.value =
+        checkIsMacOS(userAgent) ||
+        checkIsIOS(userAgent) ||
+        checkIsiPad(userAgent);
+    });
+
     return (): (VNode | null)[] => [
       h(
         "button",
@@ -44,7 +84,17 @@ export default defineComponent({
             isActive.value = true;
           },
         },
-        h(SearchIcon)
+        [
+          h(SearchIcon),
+          h("div", { class: "placeholder" }, locale.value.search),
+          controlKeys.value
+            ? h(
+                "div",
+                { class: "key-hints" },
+                controlKeys.value.map((key) => h("kbd", { class: "key" }, key))
+              )
+            : null,
+        ]
       ),
     ];
   },

@@ -2,20 +2,22 @@
 
 .search-pro-button {
   @include reset.button;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
 
   box-sizing: content-box;
 
-  width: 20px;
-  height: 20px;
-  margin-inline: 16px 0;
+  height: 1.25rem;
+  margin-inline: 1rem 0;
   margin-top: 0;
   margin-bottom: 0;
-  padding: 8px;
+  padding: 0.5rem;
   border: 0;
-  border-radius: 50%;
+  border: 1px solid var(--c-bg-light, #f3f4f5);
+  border-radius: 1rem;
 
   background: var(--c-bg-light, #f3f4f5);
+  color: var(--c-text, #2c3e50);
 
   font-weight: 500;
 
@@ -28,9 +30,46 @@
     display: none;
   }
 
+  &:hover {
+    border: 1px solid var(--c-brand, #3aa675);
+    background-color: var(--c-bg-lighter, #eaecef);
+    color: var(--c-text-lighter, #3a5169);
+  }
+
   .search-icon {
-    display: block;
-    width: 20px;
-    height: 20px;
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .placeholder {
+    margin-inline: 0.25rem;
+    font-size: 1rem;
+
+    @media (max-width: hope-config.$pad) {
+      display: none;
+    }
+  }
+
+  .key-hints {
+    font-size: 0.75rem;
+
+    @media (max-width: hope-config.$pad) {
+      display: none;
+    }
+
+    .key {
+      display: inline-block;
+
+      min-width: 1em;
+      margin-inline: 0.125rem;
+      padding: 0.25rem;
+      border: 1px solid var(--c-border, #eaecef);
+      border-radius: 4px;
+
+      box-shadow: 1px 1px 4px 0 var(--card-shadow);
+
+      line-height: 1;
+      letter-spacing: -0.1em;
+    }
   }
 }
