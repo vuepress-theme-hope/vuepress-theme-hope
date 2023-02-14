@@ -136,8 +136,8 @@ importers:
         specifier: 15.1.0
         version: 15.1.0
       stylelint-config-hope:
-        specifier: 2.0.0
-        version: 2.0.0(stylelint@15.1.0)
+        specifier: 2.0.1
+        version: 2.0.1(stylelint@15.1.0)
       tslib:
         specifier: 2.5.0
         version: 2.5.0
@@ -11809,8 +11809,8 @@ packages:
     resolution: {integrity: sha512-Dj1Okke1C3uKKwQcetra4jSuk0DqbzbYtXipzFlFMZtowbF1x7BKJwB9AayVMyFARvU8EDrZdcax4At/452cAg==}
     dev: true
 
-  /stylelint-config-hope@2.0.0(stylelint@15.1.0):
-    resolution: {integrity: sha512-DhqJ+jeBmHO2xfLdwA/y5/HwRO++aebB+PCMsyOCClb77C3QCWabGwjNQI3CjH7ReYanV+tMc964H8cjXbITMA==}
+  /stylelint-config-hope@2.0.1(stylelint@15.1.0):
+    resolution: {integrity: sha512-nNHBSiGg0OwwrBe0kvsJx5+RcKSdTF8C3ZHbjKlkijhA/sZBnUj/FLZEc7nnredo4hDBvSccjgxmw6QiCqZNeA==}
     peerDependencies:
       stylelint: ^15.0.0
     dependencies:

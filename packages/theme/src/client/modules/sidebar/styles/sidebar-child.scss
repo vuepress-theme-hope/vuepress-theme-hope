@@ -12,6 +12,7 @@
 
   width: calc(100% - 1rem);
   margin: 0;
+  margin-inline: 0.5rem;
   padding: 0.25rem 0.5rem;
   border-width: 0;
   border-radius: 0.375rem;
@@ -25,8 +26,6 @@
 
   transition: color 0.15s ease;
   transform: rotate(0);
-
-  margin-inline: 0.5rem;
 
   &.open {
     color: inherit;
@@ -78,6 +77,7 @@ button.sidebar-heading {
   box-sizing: border-box;
 
   width: calc(100% - 1rem);
+  margin-inline: 0.5rem;
   padding: 0.25rem 0.5rem;
   border-radius: 0.375rem;
 
@@ -86,8 +86,6 @@ button.sidebar-heading {
   font-weight: 400;
   font-size: 1em;
   line-height: 1.5;
-
-  margin-inline: 0.5rem;
 
   .icon {
     margin-inline-end: 0.25em;

@@ -8,6 +8,7 @@
 
   width: 20px;
   height: 20px;
+  margin-inline: 16px 0;
   margin-top: 0;
   margin-bottom: 0;
   padding: 8px;
@@ -22,8 +23,6 @@
 
   transition: background var(--t-color, 0.3s ease),
     color var(--t-color, 0.3s ease);
-
-  margin-inline: 16px 0;
 
   @media print {
     display: none;
