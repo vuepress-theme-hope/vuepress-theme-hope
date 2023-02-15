@@ -15,7 +15,7 @@ const isFontAwesomeLink = (link: string): boolean =>
 const isIconFontLink = (link: string): boolean =>
   /^(?:https:)?\/\/at\.alicdn\.com\/t\//.test(link);
 
-export const isFrontAwesomeAssets = (assets: FontIconAssets): boolean =>
+export const isFontAwesomeAssets = (assets: FontIconAssets): boolean =>
   isArray(assets)
     ? assets.every(isFontAwesomeLink)
     : assets === "fontawesome" ||
@@ -32,7 +32,7 @@ export const getIconInfo = (
   prefix?: string
 ): { type: "fontawesome" | "iconfont" | "custom"; prefix: string } => {
   if (assets) {
-    if (isFrontAwesomeAssets(assets))
+    if (isFontAwesomeAssets(assets))
       return { type: "fontawesome", prefix: prefix ?? FONT_AWESOME_PREFIX };
     if (isIconFontAssets(assets))
       return { type: "iconfont", prefix: prefix ?? ICON_FONT_PREFIX };
