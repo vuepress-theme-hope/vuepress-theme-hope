@@ -43,6 +43,15 @@ export interface AutoCatalogOptions {
   level?: number;
 
   /**
+   * Whether show index for catalog
+   *
+   * 目录是否显示索引
+   *
+   * @default false
+   */
+  index?: boolean;
+
+  /**
    * Page title getter
    *
    * 页面标题获取器

@@ -18,6 +18,13 @@ icon: gears
 
 :::
 
+### index
+
+- 类型: `boolean`
+- 默认值: `false`
+
+目录是否显示索引
+
 ### exclude
 
 - 类型: `(RegExp | string)[]`

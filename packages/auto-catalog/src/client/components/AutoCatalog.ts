@@ -70,6 +70,13 @@ export default defineComponent({
     },
 
     /**
+     * Whether show index for catalog
+     *
+     * 目录是否显示索引
+     */
+    index: Boolean,
+
+    /**
      * Page title getter
      *
      * 页面标题获取器
@@ -266,8 +273,9 @@ export default defineComponent({
             [
               h("a", { href: `#${title}`, class: "header-anchor" }, "#"),
               h(RouterLink, { class: "catalog-title", to: path }, () => [
+                props.index ? `${mainIndex + 1}.` : null,
                 icon && slots["icon"] ? slots["icon"]({ icon }) : null,
-                `${mainIndex + 1}. ${title || "Unknown"}`,
+                title || "Unknown",
               ]),
             ]
           ),
@@ -295,12 +303,13 @@ export default defineComponent({
                           RouterLink,
                           { class: "catalog-title", to: path },
                           () => [
+                            props.index
+                              ? `${mainIndex + 1}.${index + 1}`
+                              : null,
                             icon && slots["icon"]
                               ? slots["icon"]({ icon })
                               : null,
-                            `${mainIndex + 1}.${index + 1} ${
-                              title || "Unknown"
-                            }`,
+                            title || "Unknown",
                           ]
                         ),
                       ]
@@ -317,12 +326,15 @@ export default defineComponent({
                                 to: path,
                               },
                               () => [
+                                props.index
+                                  ? `${mainIndex + 1}.${index + 1}.${
+                                      subIndex + 1
+                                    }`
+                                  : null,
                                 icon && slots["icon"]
                                   ? slots["icon"]({ icon })
                                   : null,
-                                `${mainIndex + 1}.${index + 1}.${
-                                  subIndex + 1
-                                } ${title || "Unknown"}`,
+                                title || "Unknown",
                               ]
                             )
                           )

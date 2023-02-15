@@ -6,7 +6,7 @@ import AutoCatalog, {
   type AutoCatalogProps,
 } from "./components/AutoCatalog.js";
 
-declare const AUTO_CATALOG_ICON_COMPONENT: string | undefined;
+declare const AUTO_CATALOG_ICON_COMPONENT: string;
 
 export default defineClientConfig({
   enhance: ({ app }) => {
