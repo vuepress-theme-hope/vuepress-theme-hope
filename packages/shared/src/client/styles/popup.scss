@@ -1,0 +1,57 @@
+@keyframes popup-appear {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes popup-disappear {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+
+#popup-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 75;
+
+  .popup-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgb(0 0 0 / 10%);
+
+    .popup-container {
+      &.appear {
+        animation: popup-appear 0.3s ease-in-out;
+      }
+
+      &.disappear {
+        animation: popup-disappear 0.3s ease-in-out;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+}
