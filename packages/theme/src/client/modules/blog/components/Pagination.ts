@@ -3,6 +3,7 @@ import { Message } from "vuepress-shared/client";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 
+import "vuepress-shared/client/styles/message.scss";
 import "../styles/pagination.scss";
 
 export default defineComponent({
