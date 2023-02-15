@@ -8,18 +8,27 @@ Share component, can be used to share page to other services.
 
 Basic share:
 
-<Share services="baidu,buffer,douban,evernote,facebook,flipboard,line,qq,qrcode,reddit,skype,telegram,twitter,whatsapp,weibo" />
+<Share />
+
+```md
+<Share />
+```
+
+Custom services:
+
+<Share services="qq,weibo" />
 <Share :services="['qq','weibo']" />
 
 ```md
-<Share services="baidu,buffer,douban,evernote,facebook,flipboard,line,qq,qrcode,reddit,skype,telegram,twitter,whatsapp,weibo" />
+<Share />
+<Share services="qq,weibo" />
 <Share :services="['qq','weibo']" />
 ```
 
-Colorful share:
+Colorful icon:
 
-<Share services="baidu,buffer,douban,evernote,facebook,flipboard,line,qq,qrcode,reddit,skype,telegram,twitter,whatsapp,weibo" colorful />
+<Share colorful />
 
 ```md
-<Share services="baidu,buffer,douban,evernote,facebook,flipboard,line,qq,qrcode,reddit,skype,telegram,twitter,whatsapp,weibo" colorful />
+<Share colorful />
 ```

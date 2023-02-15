@@ -1,8 +1,8 @@
 import { keys } from "vuepress-shared/node";
 
-import { baidu } from "./baidu.js";
 import { buffer } from "./buffer.js";
 import { douban } from "./douban.js";
+import { email } from "./email.js";
 import { evernote } from "./evernote.js";
 import { facebook } from "./facebook.js";
 import { flipboard } from "./flipboard.js";
@@ -21,9 +21,9 @@ import {
 } from "../../../shared/index.js";
 
 export const SHARE_CONFIG: Record<BuiltInShareService, ShareServiceConfig> = {
-  baidu,
   buffer,
   douban,
+  email,
   evernote,
   facebook,
   flipboard,

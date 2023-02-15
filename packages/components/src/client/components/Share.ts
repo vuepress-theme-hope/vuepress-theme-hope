@@ -24,7 +24,7 @@ export default defineComponent({
         string | (ShareServiceOptions | string)[]
       >,
 
-      required: true,
+      default: () => shareServices.map(({ name }) => name),
     },
 
     /**
@@ -39,8 +39,16 @@ export default defineComponent({
      * Getter for page description
      */
     descriptionGetter: {
-      type: Function as PropType<(page: PageData) => string>,
-      default: (page: PageData) => page.title,
+      type: Function as PropType<(page: PageData) => string | undefined | null>,
+      default: (page: PageData) => page.frontmatter.description,
+    },
+
+    /**
+     * Getter for page summary
+     */
+    summaryGetter: {
+      type: Function as PropType<(page: PageData) => string | undefined | null>,
+      default: (page: PageData<{ summary?: string }>) => page.summary,
     },
 
     /**
@@ -51,19 +59,6 @@ export default defineComponent({
 
   setup(props) {
     const page = usePageData();
-
-    // FIXME:
-    console.log(
-      (isString(props.services) ? props.services.split(",") : props.services)
-        .map((item) =>
-          isPlainObject(item)
-            ? item.name && item.link
-              ? item
-              : null
-            : shareServices.find(({ name }) => name === item)
-        )
-        .filter((item): item is ShareServiceOptions => item != null)
-    );
 
     const service = computed(() => {
       const services = isString(props.services)
@@ -82,12 +77,17 @@ export default defineComponent({
     });
 
     const shareData = computed(() => {
-      const result: { title?: string; description?: string } = {};
+      const result: Record<string, string> = {};
 
-      if (isFunction(props.titleGetter))
-        result.title = props.titleGetter(page.value);
-      if (isFunction(props.descriptionGetter))
-        result.description = props.descriptionGetter(page.value);
+      (["titleGetter", "descriptionGetter", "summaryGetter"] as const).forEach(
+        (item) => {
+          if (isFunction(props[item])) {
+            const value = props[item](page.value);
+
+            if (value) result[item.replace("Getter", "")] = value;
+          }
+        }
+      );
 
       return result;
     });
