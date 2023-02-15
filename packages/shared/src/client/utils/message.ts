@@ -66,11 +66,8 @@ export class Message {
     if (messageId) {
       const messageElement = this.messageElements[messageId];
 
-      messageElement.className = messageElement.className.replace(
-        "move-in",
-        ""
-      );
-      messageElement.className += "move-out";
+      messageElement.classList.remove("move-in");
+      messageElement.classList.add("move-out");
       messageElement.addEventListener("animationend", () => {
         messageElement.remove();
         delete this.messageElements[messageId];
