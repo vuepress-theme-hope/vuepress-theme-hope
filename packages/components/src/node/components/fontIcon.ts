@@ -1,4 +1,4 @@
-import { isArray, isLinkHttp } from "@vuepress/shared";
+import { isArray, isLinkHttp, isString } from "@vuepress/shared";
 import { endsWith } from "vuepress-shared/node";
 
 import { type FontIconAssets } from "../options/index.js";
@@ -7,6 +7,10 @@ import { logger } from "../utils.js";
 export const FONT_AWESOME_PREFIX = "fas fa-";
 
 export const ICON_FONT_PREFIX = "iconfont icon-";
+
+const isIconifyLink = (link: string): boolean =>
+  /^(?:https:)?\/\/kit\.fontawesome\.com\//.test(link) ||
+  /\/iconify-icon(?:[@/]|$)/.test(link);
 
 const isFontAwesomeLink = (link: string): boolean =>
   /^(?:https:)?\/\/kit\.fontawesome\.com\//.test(link) ||
@@ -27,15 +31,23 @@ export const isIconFontAssets = (assets: FontIconAssets): boolean =>
     ? assets.every(isIconFontLink)
     : assets === "iconfont" || isIconFontLink(assets);
 
+export const isIconifyAssets = (assets: FontIconAssets): boolean =>
+  isString(assets) && (isIconifyLink(assets) || assets === "iconify");
+
 export const getIconInfo = (
   assets?: FontIconAssets,
   prefix?: string
-): { type: "fontawesome" | "iconfont" | "custom"; prefix: string } => {
+): {
+  type: "iconfont" | "iconify" | "fontawesome" | "custom";
+  prefix: string;
+} => {
   if (assets) {
     if (isFontAwesomeAssets(assets))
       return { type: "fontawesome", prefix: prefix ?? FONT_AWESOME_PREFIX };
     if (isIconFontAssets(assets))
       return { type: "iconfont", prefix: prefix ?? ICON_FONT_PREFIX };
+    if (isIconifyAssets(assets))
+      return { type: "iconify", prefix: prefix ?? "" };
   }
 
   return { type: "custom", prefix: prefix ?? "" };
@@ -75,6 +87,18 @@ export const getIconLink = (iconLink?: FontIconAssets): LinkInfo[] => {
   useStyleTag(\`\\
   @import url("//at.alicdn.com/t/c/font_2410206_5vb9zlyghj.css");
   \`);`,
+      },
+    ];
+
+  if (iconLink === "iconify")
+    return [
+      {
+        type: "script",
+        content: `\
+useScriptTag(
+  \`//cdn.jsdelivr.net/npm/iconify-icon@1\`
+);
+`,
       },
     ];
 

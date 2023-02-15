@@ -68,6 +68,7 @@ Global config for components.
 
   type FontIconAssets =
     | "iconfont"
+    | "iconify"
     | "fontawesome"
     | "fontawesome-with-brands"
     | Link

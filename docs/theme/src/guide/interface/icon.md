@@ -13,16 +13,27 @@ head:
       href: //at.alicdn.com/t/c/font_2410206_5vb9zlyghj.css
 ---
 
-The entire theme adds FontClass / Picture format icon support in multiple places.
+The entire theme adds FontClass / Image format icon support in multiple places.
 
-You can use iconfont and fontawesome to add icons to your project.
+You can use iconfont, iconify and fontawesome to add icons to your project, and you can also use your own icon assets.
 
-- For china users, iconfont is recommended
-- For overseas users, fontawesome is recommended
+Also, png/svg format icon is supported. You can use full links or pathname to add icons.
 
-Also, png/svg format icon is supported. You can use absolute path or pathname to add icons.
+We recommend you to use iconify or fontawesome.
 
 <!-- more -->
+
+## Browsing Icons
+
+- Iconify: <https://icon-sets.iconify.design/>
+- Iconfont: <https://www.iconfont.cn/en/>
+- Fontawesome: <https://fontawesome.com/icons>
+
+::: details Featured Icons with iconfont keyword
+
+<IconDisplay link="//at.alicdn.com/t/c/font_2410206_5vb9zlyghj.css" />
+
+:::
 
 ## Setting Icons
 
@@ -44,23 +55,65 @@ You can set icon assets url and icon prefix globally via `iconAssets` and `iconP
 
 ### Setting Icon Assets
 
-You should set icon related assets to `iconAssets`, where you can set one url or an array of urls of icon resources in format of css and js.
+You should set icon related assets to `iconAssets`, where you can set:
 
-For example, you may use [iconfont.cn](https://www.iconfont.cn/?lang=en-us) and [fontawesome](https://fontawesome.com) to generate your own assets.
+- icon assets keywords
+- icon resource in format of css and js
+- array of above
 
-To keep it simple, we add built-in keywords `"iconfont"`, `"fontawesome"` and `"fontawesome-with-brand` support for you to get started easily.
+::: code-tabs#language
 
-::: tip
+@tab TS
 
-To get better performance, you should try to replace above keywords to your own assets link to avoid loading unnecessary icons.
+```ts {8}
+// .vuepress/config.ts
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
 
-Creating your own assets links means that the assets link can only contains icons you used in the project.
+export default defineUserConfig({
+  theme: hopeTheme({
+    // keywords: "iconfont", "iconify", "fontawesome", "fontawesome-with-brands"
+    iconAssets: "fontawesome",
+
+    // an url you like
+    iconAssets: "<my/font-icon/resource.js>",
+
+    // an array of above
+    iconAssets: ["<my/font-icon/resource.js>", "fontawesome"],
+  }),
+});
+```
+
+@tab JS
+
+```js {8}
+// .vuepress/config.ts
+import { defineUserConfig } from "vuepress";
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default defineUserConfig({
+  theme: hopeTheme({
+    // keywords: "iconfont", "iconify", "fontawesome", "fontawesome-with-brands"
+    iconAssets: "fontawesome",
+
+    // an url you like
+    iconAssets: "<my/font-icon/resource.js>",
+
+    // an array of above
+    iconAssets: ["<my/font-icon/resource.js>", "fontawesome"],
+  }),
+});
+```
 
 :::
 
+For example, you may use [iconfont.cn](https://www.iconfont.cn/?lang=en-us) and [fontawesome](https://fontawesome.com) to generate your own assets.
+
+To keep it simple, we add built-in keywords `"iconfont"`, `"iconify"`, `"fontawesome"` and `"fontawesome-with-brand` support for you to get started easily.
+
 ::: danger
 
-If you use this plugin for commercial project documentation, iconfont is **not recommended** as iconfont itself is a study/share platform for designers and developers.
+If you use this plugin for commercial project documentation, `iconfont` is **not recommended** as iconfont itself is a study/share platform for designers and developers.
 
 Every icon is uploaded by users and you must get authorized from the author for commercial usage. Also there could be chance where the uploader obeys usage term. and upload icons where its copyright is at 3rd party.
 
@@ -72,15 +125,36 @@ Every icon is uploaded by users and you must get authorized from the author for 
 
 Normally, there should be a common prefix for your icon class, for `iconfont` icon classes are `iconfont icon-<ICON-NAME>` and for fontawesome free icon classes are `fas fa-<icon-name>`. So when you are setting the above `assets` option with keywords or a single link generated from iconfont website, fontawesome kit or fontawesome CDN, the plugin recognize those and set prefix as `"iconfont icon-"` and `"fas fa-"` automatically for you.
 
-In other cases where you use your own url or you are setting multiple urls, you can manually set this options yourself. After all writing `icon: code` is always better then something like `icon: iconfont icon-code` or `icon: fa-solid fa-code`.
+In other cases where you use iconify or your own url, you can manually set this options yourself. After all writing `icon: apple` is always better then something like `icon: iconfont icon-apple`, `icon: mdi:icon-apple` or `icon: fa-solid fa-apple`.
 
-## Generate your own iconfont assets
+## Advanced
+
+### Using Fontawesome Kits
+
+You can purchase at [fontawesome.com](https://fontawesome.com) to use kits or import brand icons.
+
+Fontawesome kits with pro features support pro icons, more icon styles and uploading your own icons.
+
+::: note
+
+For details, please follow [fontawesome document](https://fontawesome.com/).
+
+- [Usage Instructions](https://fontawesome.com/docs/web/add-icons/how-to)
+- [Icon List](https://fontawesome.com/icons)
+
+:::
+
+### Generate your own iconfont assets
+
+::: info Iconfont
 
 [Iconfont](https://iconfont.cn) is a vector icon management and communication platform created by Alimama MUX.
 
 The designer uploads the icon to the Iconfont platform, and the user can customize the download of icons in a variety of formats. Users can also convert the icon into a font.
 
-### How to use
+:::
+
+#### How to use
 
 First, you need to create a new project to set and manage your website’s icons:
 
@@ -92,7 +166,7 @@ First, you need to create a new project to set and manage your website’s icons
 
 ![New Project](./assets/iconfont-new.png)
 
-### Import Icon
+#### Import Icon
 
 1. Search freely through iconfont to find the icon you want to use, and click the "Add to Library" button on the icon
 
@@ -100,13 +174,13 @@ First, you need to create a new project to set and manage your website’s icons
 
 1. After searching for all the icons, click the "Add to Library" icon in the upper right corner, click "Add to Project" below and select the project you created then confirm.
 
-### Edit Icon
+#### Edit Icon
 
 On the project page, you can edit the icons in the project, including adjustments with position, size, rotate, color, Unicode number and Font Class / Symbol.
 
 ![Edit icon](./assets/iconfont-edit.png)
 
-### Generate Icon Files
+#### Generate Icon Files
 
 1. Please click the "Font Class" button above the project and click Generate.
 
@@ -114,7 +188,7 @@ On the project page, you can edit the icons in the project, including adjustment
 
 1. Set the css link to `iconAssets` in theme options.
 
-### Tips
+#### Tips
 
 ::: tip
 
@@ -131,95 +205,6 @@ Iconfont will try to solve conflicts by assigning a new character if a new icon'
 So we do not recommend you to use multiple iconfont links as assets, if you ready want to do so, check the icons to ensure every former project icon is not covered by those in latter ones.
 
 :::
-
-## Using Fontawesome Kits
-
-By default, we use jsdelivr CDN to load V6 version of fontawesome free icons. This should be enough for most open source projects. All you need is to set `iconAssets: "fontawesome"` in theme options:
-
-::: code-tabs#language
-
-@tab TS
-
-```ts {8}
-// .vuepress/config.ts
-import { defineUserConfig } from "vuepress";
-import { hopeTheme } from "vuepress-theme-hope";
-
-export default defineUserConfig({
-  theme: hopeTheme({
-    // Or "fontawesome-with-brands"
-    iconAssets: "fontawesome",
-  }),
-});
-```
-
-@tab JS
-
-```js {8}
-// .vuepress/config.ts
-import { defineUserConfig } from "vuepress";
-import { hopeTheme } from "vuepress-theme-hope";
-
-export default defineUserConfig({
-  theme: hopeTheme({
-    // OR "fontawesome-with-brands"
-    iconAssets: "fontawesome",
-  }),
-});
-```
-
-:::
-
-Besides, you can purchase at [fontawesome.com](https://fontawesome.com) to use kits or import brand icons.
-
-Fontawesome kits with pro features support pro icons, more icon styles and uploading your own icons.
-
-::: note
-
-For details, please follow [fontawesome document](https://fontawesome.com/).
-
-- [Usage Instructions](https://fontawesome.com/docs/web/add-icons/how-to)
-- [Icon List](https://fontawesome.com/icons)
-
-:::
-
-## Featured Icons with `iconfont`
-
-You can set `iconAssets` to `"iconfont"` to use the following IconFont featured icons:
-
-::: code-tabs#language
-
-@tab TS
-
-```ts {7}
-// .vuepress/config.ts
-import { defineUserConfig } from "vuepress";
-import { hopeTheme } from "vuepress-theme-hope";
-
-export default defineUserConfig({
-  theme: hopeTheme({
-    iconAssets: "iconfont",
-  }),
-});
-```
-
-@tab JS
-
-```js {7}
-// .vuepress/config.ts
-import { defineUserConfig } from "vuepress";
-import { hopeTheme } from "vuepress-theme-hope";
-
-export default defineUserConfig({
-  theme: hopeTheme({
-    iconAssets: "iconfont",
-  }),
-});
-```
-
-:::
-
-<IconDisplay link="//at.alicdn.com/t/c/font_2410206_5vb9zlyghj.css" />
 
 <script setup lang="ts">
 import IconDisplay from '@IconDisplay';

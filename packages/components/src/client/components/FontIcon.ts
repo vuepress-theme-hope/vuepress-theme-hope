@@ -6,6 +6,9 @@ import "../styles/font-icon.scss";
 declare const FONT_ICON_TYPE: string;
 declare const FONT_ICON_PREFIX: string;
 
+const isIconify = FONT_ICON_TYPE === "iconify";
+const isFontAwesome = FONT_ICON_TYPE === "fontawesome";
+
 export default defineComponent({
   name: "FontIcon",
 
@@ -35,6 +38,19 @@ export default defineComponent({
   },
 
   setup(props) {
+    const classNames = computed(() => {
+      const classList = ["font-icon icon"];
+      const iconClass = `${FONT_ICON_PREFIX}${props.icon}`;
+
+      if (isFontAwesome) classList.push("fa-fw fa-sm");
+
+      if (isFontAwesome)
+        classList.push(props.icon.includes(" ") ? props.icon : iconClass);
+      else if (!isIconify) classList.push(iconClass);
+
+      return classList;
+    });
+
     const style = computed(() => {
       const styleObject: Record<string, string> = {};
 
@@ -50,16 +66,13 @@ export default defineComponent({
 
     return (): VNode | null =>
       props.icon
-        ? h("span", {
+        ? h(isIconify ? "iconify-icon" : "span", {
             key: props.icon,
-            class: [
-              "font-icon icon",
-              FONT_ICON_TYPE === "fontawesome" ? "fa-fw fa-sm" : "",
-              props.icon.includes(" ")
-                ? props.icon
-                : `${FONT_ICON_PREFIX}${props.icon}`,
-            ],
+            class: classNames.value,
             style: style.value,
+            ...(isIconify
+              ? { inline: "", icon: `${FONT_ICON_PREFIX}${props.icon}` }
+              : {}),
           })
         : null;
   },

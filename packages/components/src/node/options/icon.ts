@@ -4,12 +4,13 @@ type Link =
   | `http://${string}`
   | `https://${string}`;
 
-export type FontIconAssets =
+export type BuiltInFontIcon =
+  | "iconify"
   | "iconfont"
   | "fontawesome"
-  | "fontawesome-with-brands"
-  | Link
-  | Link[];
+  | "fontawesome-with-brands";
+
+export type FontIconAssets = BuiltInFontIcon | Link | Link[];
 
 export interface FontIconOptions {
   /**
@@ -17,7 +18,7 @@ export interface FontIconOptions {
    *
    * 字体图标资源链接
    *
-   * @description `"iconfont"` and `"fontawesome"` keywords are supported
+   * @description `"iconify"`, `"iconfont"`, `"fontawesome"` and `"fontawesome-with-brands"` keywords are supported
    */
   assets?: FontIconAssets;
 
