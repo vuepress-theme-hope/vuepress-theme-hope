@@ -23,32 +23,28 @@
 }
 
 #popup-container {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 75;
-
   .popup-wrapper {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
+    z-index: 200;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    background: rgb(0 0 0 / 10%);
+    background: rgb(0 0 0 / 20%);
 
-    .popup-container {
-      &.appear {
+    &.appear {
+      .popup-container {
         animation: popup-appear 0.3s ease-in-out;
       }
+    }
 
-      &.disappear {
+    &.disappear {
+      .popup-container {
         animation: popup-disappear 0.3s ease-in-out;
         animation-fill-mode: forwards;
       }

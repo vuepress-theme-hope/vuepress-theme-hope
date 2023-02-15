@@ -18,7 +18,7 @@ export class Popup {
     }
   }
 
-  emit(html: string, duration = 500): number {
+  emit(html: string, duration?: number): number {
     const popupWrapperElement = document.createElement("div");
     const popupElement = document.createElement("div");
     const popupId = Date.now();
@@ -31,7 +31,7 @@ export class Popup {
     popupElement.className = "popup-container";
     popupElement.innerHTML = html;
 
-    if (duration > 0)
+    if (typeof duration === "number")
       setTimeout(() => {
         this.close(popupId);
       }, duration);
@@ -41,12 +41,12 @@ export class Popup {
 
   close(popupId?: number): void {
     if (popupId) {
-      const popupElement = this.popupElements[popupId];
+      const popupWrapperElement = this.popupElements[popupId];
 
-      popupElement.className = popupElement.className.replace("appear", "");
-      popupElement.className += "disappear";
-      popupElement.addEventListener("animationend", () => {
-        popupElement.remove();
+      popupWrapperElement.classList.replace("appear", "disappear");
+
+      popupWrapperElement.children[0].addEventListener("animationend", () => {
+        popupWrapperElement.remove();
         delete this.popupElements[popupId];
       });
     } else {
