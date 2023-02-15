@@ -45,6 +45,7 @@ export default [
     ],
   }),
   ...rollupTypescript("client/components/Replit"),
+  ...rollupTypescript("client/components/Share"),
   ...rollupTypescript("client/components/SiteInfo"),
   ...rollupTypescript("client/components/StackBlitz", {
     external: ["@stackblitz/sdk"],

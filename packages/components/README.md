@@ -36,3 +36,7 @@ npm i -D vuepress-plugin-components
 # yarn
 yarn add -D vuepress-plugin-components
 ```
+
+## Copyright
+
+Share component is licensed under MIT license, copyright (c) 2019 - PRESENT [ntnyq](https://github.com/ntnyq).
