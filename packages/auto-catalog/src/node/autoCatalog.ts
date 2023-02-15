@@ -12,6 +12,7 @@ export const generateCatalog = async (
     frontmatter = (): PageFrontmatter => ({}),
     iconComponent,
     level = 3,
+    index = false,
   }: AutoCatalogOptions
 ): Promise<void> => {
   const {
@@ -21,7 +22,9 @@ export const generateCatalog = async (
 
   const pathToBeGenerated = new Set<string>();
   const content = `\
-<${component}${[1, 2].includes(level) ? ` :level="${level}"` : ""}>\
+<${component}${[1, 2].includes(level) ? ` :level="${level}"` : ""}${
+    index ? " index" : ""
+  }>\
 ${
   iconComponent
     ? `

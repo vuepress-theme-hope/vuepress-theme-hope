@@ -18,6 +18,13 @@ Only available when you use the built-in catalog component.
 
 :::
 
+### index
+
+- Type: `boolean`
+- Default: `false`
+
+Whether show index for catalog
+
 ### exclude
 
 - Type: `(RegExp | string)[]`

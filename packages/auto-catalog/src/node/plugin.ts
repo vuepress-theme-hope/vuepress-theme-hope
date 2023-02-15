@@ -1,4 +1,4 @@
-import { type PageFrontmatter, type PluginFunction } from "@vuepress/core";
+import { type PluginFunction } from "@vuepress/core";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import { getLocales } from "vuepress-shared/node";
 
@@ -17,13 +17,10 @@ export const autoCatalogPlugin =
     const {
       component,
       iconComponent,
-      exclude = [],
-      frontmatter = (): PageFrontmatter => ({}),
       getIcon,
       iconRouteMetaKey = "i",
       getIndex,
       indexRouteMetaKey = "I",
-      level = 3,
       locales,
       getOrder,
       orderRouteMetaKey = "O",
@@ -68,8 +65,7 @@ export const autoCatalogPlugin =
         }
       },
 
-      onInitialized: (app): Promise<void> =>
-        generateCatalog(app, { exclude, frontmatter, level }),
+      onInitialized: (app): Promise<void> => generateCatalog(app, options),
 
       ...(component ? {} : { clientConfigFile: `${CLIENT_FOLDER}config.js` }),
     };
