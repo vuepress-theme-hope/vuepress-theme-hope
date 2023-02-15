@@ -57,19 +57,11 @@ Icon name
 
 例如，你可以使用 [iconfont.cn](https://www.iconfont.cn/?lang=zh-cn) 和 [fontawesome](https://fontawesome.com) 来生成你自己的资源
 
-为了便于上手，我们添加了内置关键字 `"iconfont"`、`"fontawesome"` 和 `"fontawesome-with-brand` 支持。
-
-::: tip
-
-为了获得更好的性能，你应该尝试将上述关键字替换为你自己的资源链接，以避免加载不必要的图标。
-
-创建自己的资源链接意味着资源链接可以只包含你在项目中使用的图标。
-
-:::
+为了便于上手，我们添加了内置关键字 `"iconfont"`、`"iconify"`、`"fontawesome"` 和 `"fontawesome-with-brand` 支持。
 
 ::: danger
 
-如果你将此插件用于商业项目文档，则**不推荐**使用 iconfont，因为 iconfont 本身是设计人员和开发人员的学习/共享平台。
+如果你将此插件用于商业项目文档，则**不推荐**使用 `iconfont`，因为 iconfont 本身是设计人员和开发人员的学习/共享平台。
 
 每个图标都是用户上传的，你必须获得作者的授权才能用于商业用途。上传者也有可能违背用户协议，上传版权在第三方的非原创图标。
 
@@ -81,15 +73,33 @@ Icon name
 
 通常，你的图标类应该有一个通用前缀，对于 `iconfont`，图标类名为`iconfont icon-<ICON-NAME>`，对于 fontawesome free，图标类名为 `fas fa-<icon-name>`。 因此，当你使用关键字或从 iconfont 网站、fontawesome kit 或 fontawesome CDN 生成的单个链接设置上述 `asset` 选项时，插件会识别它们并自动为你设置前缀为 `iconfont icon-` 和 `fas fa-`.
 
-在你使用自己的 url 或设置多个 url 的其他情况下，你可以自己手动设置此选项。毕竟输入 `icon: code` 总是比 `icon: iconfont icon-code` 或 `icon: fa-solid fa-code` 更好。
+在你使用 iconify 或自定义 url 的情况下，你可以自己手动设置此选项。毕竟输入 `icon: apple` 总是比 `icon: iconfont icon-apple`、`icon: mdi:icon-apple` 或 `icon: fa-solid fa-apple` 更好。
 
-## 生成自己的 Iconfont 资源
+## 浏览图标
+
+- Iconify: <https://icon-sets.iconify.design/>
+- Iconfont: <https://www.iconfont.cn/>
+- Fontawesome: <https://fontawesome.com/icons>
+
+::: details iconfont 精选图标
+
+<IconDisplay link="//at.alicdn.com/t/c/font_2410206_5vb9zlyghj.css" />
+
+:::
+
+## 高级
+
+### 生成自己的 Iconfont 资源
+
+::: info Iconfont
 
 [Iconfont](https://iconfont.cn) 是阿里妈妈 MUX 倾力打造的矢量图标管理、交流平台。
 
 设计师将图标上传到 Iconfont 平台，用户可以自定义下载多种格式的 icon，平台也可将图标转换为字体，便于前端工程师自由调整与调用。
 
-### 使用方式
+:::
+
+#### 使用方式
 
 首先你需要新建一个项目，对你网站的图标进行设置与管理:
 
@@ -101,7 +111,7 @@ Icon name
 
 ![新建项目](./assets/iconfont-new.png)
 
-### 导入图标
+#### 导入图标
 
 1. 请自行在 iconfont 自由搜索寻找你想要使用的图标，并点击图标上的 “添加入库” 按钮
 
@@ -109,13 +119,13 @@ Icon name
 
 1. 在寻找完所有图标后，请点击右上角的 “添加入库” 图标，点击下方的 “添加至项目” 并选择你刚刚创建好的项目进行确定。
 
-### 编辑图标
+#### 编辑图标
 
 在项目页面，你可以对项目内的图标进行简单的编辑，包括位置、缩放、旋转、颜色以及 Unicode 编号与 Font Class / Symbol 的调整。
 
 ![编辑图标](./assets/iconfont-edit.png)
 
-### 生成图标文件
+#### 生成图标文件
 
 1. 请点击项目上方的 “Font Class” 按钮，并点击生成。
 
@@ -123,7 +133,7 @@ Icon name
 
 1. 将 css 地址设置到主题选项的 `iconAssets` 中。
 
-### 提示
+#### 提示
 
 ::: tip
 
@@ -141,7 +151,7 @@ Icon name
 
 :::
 
-## 使用 Fontawesome
+### 使用 Fontawesome
 
 我们默认使用 jsdelivr CDN 加载 fontawesome 免费图标的 V6 版本。 对于大多数开源项目来说，这应该足够了。
 
@@ -157,10 +167,6 @@ Icon name
 - [图标列表](https://fontawesome.com/icons)
 
 :::
-
-## `iconfont` 精选图标
-
-<IconDisplay link="//at.alicdn.com/t/c/font_2410206_5vb9zlyghj.css" />
 
 <script setup lang="ts">
 import IconDisplay from '@IconDisplay';
