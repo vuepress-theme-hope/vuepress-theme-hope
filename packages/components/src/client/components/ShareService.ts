@@ -95,7 +95,9 @@ export default defineComponent({
     const description = computed(
       () => props.description ?? page.value.frontmatter.description ?? null
     );
-    const url = computed(() => props.url ?? page.value.path ?? null);
+    const url = computed(() =>
+      props.url ?? typeof window === "undefined" ? null : window.location.href
+    );
 
     const shareLink = computed(() =>
       props.config.link.replace(
