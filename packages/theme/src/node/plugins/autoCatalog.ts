@@ -18,6 +18,7 @@ export const getAutoCatalogPlugin = (
     frontmatter: () => ({ article: false, feed: false, sitemap: false }),
     ...(isPlainObject(autoCatalog) ? autoCatalog : {}),
     // inject info
+    iconComponent: "Icon",
     titleRouteMetaKey: "t",
     iconRouteMetaKey: "i",
     indexRouteMetaKey: "I",

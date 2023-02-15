@@ -16,6 +16,7 @@ export const autoCatalogPlugin =
 
     const {
       component,
+      iconComponent,
       exclude = [],
       frontmatter = (): PageFrontmatter => ({}),
       getIcon,
@@ -41,6 +42,7 @@ export const autoCatalogPlugin =
           config: locales,
         }),
         AUTO_CATALOG_TITLE_META_KEY: titleRouteMetaKey,
+        AUTO_CATALOG_ICON_COMPONENT: iconComponent,
         AUTO_CATALOG_ICON_META_KEY: iconRouteMetaKey,
         AUTO_CATALOG_ORDER_META_KEY: orderRouteMetaKey,
         AUTO_CATALOG_INDEX_META_KEY: indexRouteMetaKey,

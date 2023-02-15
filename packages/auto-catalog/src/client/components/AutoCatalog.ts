@@ -1,7 +1,6 @@
 import { usePageData, useSiteData } from "@vuepress/client";
 import { type PropType, type VNode, computed, defineComponent, h } from "vue";
 import { type RouteMeta, RouterLink, useRouter } from "vue-router";
-import FontIcon from "vuepress-plugin-components/client/components/FontIcon.js";
 import {
   endsWith,
   keys,
@@ -114,7 +113,7 @@ export default defineComponent({
     },
   },
 
-  setup(props) {
+  setup(props, { slots }) {
     const locale = useLocaleConfig(AUTO_CATALOG_LOCALES);
     const page = usePageData();
     const router = useRouter();
@@ -259,7 +258,7 @@ export default defineComponent({
             [
               h("a", { href: `#${title}`, class: "header-anchor" }, "#"),
               h(RouterLink, { class: "catalog-title", to: path }, () => [
-                icon ? h(FontIcon, { icon }) : null,
+                icon && slots["icon"] ? slots["icon"]({ icon }) : null,
                 `${mainIndex + 1}. ${title || "Unknown"}`,
               ]),
             ]
@@ -288,7 +287,9 @@ export default defineComponent({
                           RouterLink,
                           { class: "catalog-title", to: path },
                           () => [
-                            icon ? h(FontIcon, { icon }) : null,
+                            icon && slots["icon"]
+                              ? slots["icon"]({ icon })
+                              : null,
                             `${mainIndex + 1}.${index + 1} ${
                               title || "Unknown"
                             }`,
@@ -308,7 +309,9 @@ export default defineComponent({
                                 to: path,
                               },
                               () => [
-                                icon ? h(FontIcon, { icon }) : null,
+                                icon && slots["icon"]
+                                  ? slots["icon"]({ icon })
+                                  : null,
                                 `${mainIndex + 1}.${index + 1}.${
                                   subIndex + 1
                                 } ${title || "Unknown"}`,
