@@ -1,7 +1,6 @@
 import { usePageData, useSiteData } from "@vuepress/client";
 import { type PropType, type VNode, computed, defineComponent, h } from "vue";
 import { type RouteMeta, RouterLink, useRouter } from "vue-router";
-import FontIcon from "vuepress-plugin-components/client/components/FontIcon.js";
 import {
   endsWith,
   keys,
@@ -14,6 +13,10 @@ import { type AutoCatalogLocaleConfig } from "../../shared/index.js";
 import "../styles/auto-catalog.scss";
 
 declare const AUTO_CATALOG_LOCALES: AutoCatalogLocaleConfig;
+declare const AUTO_CATALOG_TITLE_META_KEY: string;
+declare const AUTO_CATALOG_ICON_META_KEY: string;
+declare const AUTO_CATALOG_ORDER_META_KEY: string;
+declare const AUTO_CATALOG_INDEX_META_KEY: string;
 
 export interface AutoCatalogProps {
   base?: string;
@@ -74,7 +77,7 @@ export default defineComponent({
     titleGetter: {
       type: Function as PropType<(meta: RouteMeta) => string>,
 
-      default: (meta: RouteMeta) => meta["title"] || "",
+      default: (meta: RouteMeta) => meta[AUTO_CATALOG_TITLE_META_KEY] || "",
     },
 
     /**
@@ -87,7 +90,7 @@ export default defineComponent({
         (meta: RouteMeta) => string | null | undefined
       >,
 
-      default: (meta: RouteMeta) => meta["icon"],
+      default: (meta: RouteMeta) => meta[AUTO_CATALOG_ICON_META_KEY],
     },
 
     /**
@@ -100,7 +103,7 @@ export default defineComponent({
         (meta: RouteMeta) => number | null | undefined
       >,
 
-      default: (meta: RouteMeta) => meta["order"] || 0,
+      default: (meta: RouteMeta) => meta[AUTO_CATALOG_ORDER_META_KEY] || 0,
     },
 
     /**
@@ -110,11 +113,15 @@ export default defineComponent({
      */
     shouldIndex: {
       type: Function as PropType<(meta: RouteMeta) => boolean>,
-      default: (meta: RouteMeta) => meta["index"] !== false,
+      default: (meta: RouteMeta) => {
+        const index = meta[AUTO_CATALOG_INDEX_META_KEY];
+
+        return index === undefined || index;
+      },
     },
   },
 
-  setup(props) {
+  setup(props, { slots }) {
     const locale = useLocaleConfig(AUTO_CATALOG_LOCALES);
     const page = usePageData();
     const router = useRouter();
@@ -259,7 +266,7 @@ export default defineComponent({
             [
               h("a", { href: `#${title}`, class: "header-anchor" }, "#"),
               h(RouterLink, { class: "catalog-title", to: path }, () => [
-                icon ? h(FontIcon, { icon }) : null,
+                icon && slots["icon"] ? slots["icon"]({ icon }) : null,
                 `${mainIndex + 1}. ${title || "Unknown"}`,
               ]),
             ]
@@ -288,7 +295,9 @@ export default defineComponent({
                           RouterLink,
                           { class: "catalog-title", to: path },
                           () => [
-                            icon ? h(FontIcon, { icon }) : null,
+                            icon && slots["icon"]
+                              ? slots["icon"]({ icon })
+                              : null,
                             `${mainIndex + 1}.${index + 1} ${
                               title || "Unknown"
                             }`,
@@ -308,7 +317,9 @@ export default defineComponent({
                                 to: path,
                               },
                               () => [
-                                icon ? h(FontIcon, { icon }) : null,
+                                icon && slots["icon"]
+                                  ? slots["icon"]({ icon })
+                                  : null,
                                 `${mainIndex + 1}.${index + 1}.${
                                   subIndex + 1
                                 } ${title || "Unknown"}`,

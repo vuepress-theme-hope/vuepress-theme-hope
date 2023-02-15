@@ -1,7 +1,7 @@
 import { type PropType, type VNode, computed, defineComponent, h } from "vue";
 import { RouterLink, useRoute } from "vue-router";
 
-import Icon from "@theme-hope/components/Icon";
+import HopeIcon from "@theme-hope/components/HopeIcon";
 import SidebarLinks from "@theme-hope/modules/sidebar/components/SidebarLinks";
 import { isActiveSidebarItem } from "@theme-hope/modules/sidebar/utils/index";
 
@@ -79,7 +79,7 @@ export default defineComponent({
           },
           [
             // icon
-            h(Icon, { icon }),
+            h(HopeIcon, { icon }),
             // title
             link
               ? h(RouterLink, { to: link, class: "title" }, () => text)

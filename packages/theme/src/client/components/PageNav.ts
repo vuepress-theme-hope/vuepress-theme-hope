@@ -4,7 +4,7 @@ import { useEventListener } from "@vueuse/core";
 import { type VNode, computed, defineComponent, h } from "vue";
 
 import AutoLink from "@theme-hope/components/AutoLink";
-import Icon from "@theme-hope/components/Icon";
+import HopeIcon from "@theme-hope/components/HopeIcon";
 import {
   useAutoLink,
   useNavigate,
@@ -135,7 +135,7 @@ export default defineComponent({
                       themeLocale.value.metaLocales.prev,
                     ]),
                     h("div", { class: "link" }, [
-                      h(Icon, {
+                      h(HopeIcon, {
                         icon: prevNavLink.value?.icon,
                       }),
                       prevNavLink.value?.text,
@@ -154,7 +154,7 @@ export default defineComponent({
                     ]),
                     h("div", { class: "link" }, [
                       nextNavLink.value?.text,
-                      h(Icon, {
+                      h(HopeIcon, {
                         icon: nextNavLink.value?.icon,
                       }),
                     ]),
