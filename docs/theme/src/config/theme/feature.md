@@ -82,6 +82,7 @@ The following social medias has built-in icons:
 - `"Bitbucket"`
 - `"Dingding"`
 - `"Discord"`
+- `"Douban"`
 - `"Dribbble"`
 - `"Email"`
 - `"Evernote"`
@@ -102,6 +103,8 @@ The following social medias has built-in icons:
 - `"Reddit"`
 - `"Rss"`
 - `"Steam"`
+- `"Skype"`
+- `"Telegram"`
 - `"Twitter"`
 - `"Wechat"`
 - `"Weibo"`

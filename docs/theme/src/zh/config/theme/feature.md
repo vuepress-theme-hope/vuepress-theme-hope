@@ -82,6 +82,7 @@ tag:
 - `"Bitbucket"`: Bitbucket
 - `"Dingding"`: 钉钉
 - `"Discord"`: Discord
+- `"Douban"`: 豆瓣
 - `"Dribbble"`: Dribbble
 - `"Email"`: 邮件
 - `"Evernote"`: 印象笔记
@@ -102,6 +103,8 @@ tag:
 - `"Reddit"`: 红迪
 - `"Rss"`: RSS 地址
 - `"Steam"`: 蒸汽
+- `"Skype"`: Skype
+- `"Telegram"`: 电报
 - `"Twitter"`: 推特
 - `"Wechat"`: 微信
 - `"Weibo"`: 微博
