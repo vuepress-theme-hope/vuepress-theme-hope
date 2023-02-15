@@ -84,7 +84,7 @@ export default {
 - `@theme-hope/components/FeaturePanel`: функции главной страницы
 - `@theme-hope/components/HeroInfo`: логотип главной страницы и введение
 - `@theme-hope/components/HomePage`: главная страница
-- `@theme-hope/components/Icon`: иконка
+- `@theme-hope/components/HopeIcon`: иконка
 - `@theme-hope/components/MarkdownContent`: контент разметки
 - `@theme-hope/components/NormalPage`: обычная страница
 - `@theme-hope/components/PageFooter`: футер страницы

@@ -2,7 +2,7 @@ import { isLinkExternal } from "@vuepress/shared";
 import { type PropType, type VNode, defineComponent, h } from "vue";
 import { RouterLink } from "vue-router";
 
-import Icon from "@theme-hope/components/Icon";
+import HopeIcon from "@theme-hope/components/HopeIcon";
 
 import { type ThemeProjectHomeFeatureItemOptions } from "../../shared/index.js";
 
@@ -43,7 +43,7 @@ export default defineComponent({
               props.items.map((feature) => {
                 const children = [
                   h("h3", [
-                    h(Icon, { icon: feature.icon }),
+                    h(HopeIcon, { icon: feature.icon }),
                     h("span", { innerHTML: feature.title }),
                   ]),
                   h("p", { innerHTML: feature.details }),

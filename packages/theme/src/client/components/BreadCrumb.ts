@@ -15,7 +15,7 @@ import {
 import { RouterLink, useRouter } from "vue-router";
 import { resolveRouteWithRedirect } from "vuepress-shared/client";
 
-import Icon from "@theme-hope/components/Icon";
+import HopeIcon from "@theme-hope/components/HopeIcon";
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 import { getAncestorLinks } from "@theme-hope/utils/index";
 
@@ -125,7 +125,9 @@ export default defineComponent({
                       },
                       () => [
                         // icon
-                        iconEnable.value ? h(Icon, { icon: item.icon }) : null,
+                        iconEnable.value
+                          ? h(HopeIcon, { icon: item.icon })
+                          : null,
                         // text
                         h(
                           "span",

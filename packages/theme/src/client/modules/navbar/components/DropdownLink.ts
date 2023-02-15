@@ -11,7 +11,7 @@ import {
 } from "vue";
 
 import AutoLink from "@theme-hope/components/AutoLink";
-import Icon from "@theme-hope/components/Icon";
+import HopeIcon from "@theme-hope/components/HopeIcon";
 
 import {
   type AutoLinkOptions as AutoLinkType,
@@ -79,7 +79,7 @@ export default defineComponent({
           [
             slots["title"]?.() ||
               h("span", { class: "title" }, [
-                h(Icon, { icon: config.value.icon }),
+                h(HopeIcon, { icon: config.value.icon }),
                 props.config.text,
               ]),
             h("span", { class: "arrow" }),
