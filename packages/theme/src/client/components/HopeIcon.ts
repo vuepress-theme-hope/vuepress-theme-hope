@@ -9,7 +9,7 @@ export interface IconProps {
   size?: number | undefined;
 }
 
-const Icon: FunctionalComponent<IconProps> = (props) => {
+const HopeIcon: FunctionalComponent<IconProps> = (props) => {
   const { icon = "" } = props;
 
   return isLinkHttp(icon)
@@ -19,6 +19,6 @@ const Icon: FunctionalComponent<IconProps> = (props) => {
     : h(resolveComponent("FontIcon"), props);
 };
 
-Icon.displayName = "Icon";
+HopeIcon.displayName = "HopeIcon";
 
-export default Icon;
+export default HopeIcon;

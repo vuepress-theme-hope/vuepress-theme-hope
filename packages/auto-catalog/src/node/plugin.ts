@@ -54,13 +54,15 @@ export const autoCatalogPlugin =
 
           const pageTitle = getTitle?.(page);
           const pageIcon = getIcon?.(page);
-          const pageOrder = getOrder?.(page);
-          const pageIndex = getIndex?.(page);
+          const pageIndex = getIndex?.(page) ?? null;
+          const pageOrder = getOrder?.(page) ?? null;
 
           if (pageTitle) data[titleRouteMetaKey] = pageTitle;
           if (pageIcon) data[iconRouteMetaKey] = pageIcon;
-          if (pageIndex !== false) data[indexRouteMetaKey] = 1;
-          if (pageOrder !== null) data[orderRouteMetaKey] = pageOrder;
+          if (typeof pageIndex === "boolean")
+            data[indexRouteMetaKey] = pageIndex ? 1 : 0;
+          if (typeof pageOrder === "number")
+            data[orderRouteMetaKey] = pageOrder;
 
           page.routeMeta = { ...page.routeMeta, ...data };
         }

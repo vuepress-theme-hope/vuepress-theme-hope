@@ -59,11 +59,7 @@ app.component("LocalEncrypt", LocalEncrypt);
     `theme-hope/config.js`,
     `import { defineClientConfig } from "@vuepress/client";
 
-import CommonWrapper from "@theme-hope/components/CommonWrapper";
-import HomePage from "@theme-hope/components/HomePage";
-import NormalPage from "@theme-hope/components/NormalPage";
-import Navbar from "@theme-hope/modules/navbar/components/Navbar";
-import Sidebar from "@theme-hope/modules/sidebar/components/Sidebar";
+import HopeIcon from "@theme-hope/components/HopeIcon";
 import Layout from "${CLIENT_FOLDER}layouts/Layout.js";
 import NotFound from "${CLIENT_FOLDER}layouts/NotFound.js";
 
@@ -73,7 +69,7 @@ import { setupSidebarItems } from "@theme-hope/modules/sidebar/composables/index
 
 import "${CLIENT_FOLDER}styles/index.scss";
 
-${configImport}
+${configImport}\
 
 export default defineClientConfig({
   enhance: ({ app, router }) => {
@@ -87,6 +83,9 @@ export default defineClientConfig({
 
     // inject global properties
     injectDarkmode(app);
+
+    // render icon for auto-catalog
+    app.component("HopeIcon", HopeIcon);
 
 ${enhance
   .split("\n")
@@ -107,7 +106,7 @@ ${setup
 ${layout
   .split("\n")
   .map((item) => `    ${item}`)
-  .join("\n")}
+  .join("\n")}\
   }
 });`
   );

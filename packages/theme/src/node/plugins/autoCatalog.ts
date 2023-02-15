@@ -18,7 +18,7 @@ export const getAutoCatalogPlugin = (
     frontmatter: () => ({ article: false, feed: false, sitemap: false }),
     ...(isPlainObject(autoCatalog) ? autoCatalog : {}),
     // inject info
-    iconComponent: "Icon",
+    iconComponent: "HopeIcon",
     titleRouteMetaKey: "t",
     iconRouteMetaKey: "i",
     indexRouteMetaKey: "I",

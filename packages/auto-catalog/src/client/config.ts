@@ -6,11 +6,7 @@ import AutoCatalog, {
   type AutoCatalogProps,
 } from "./components/AutoCatalog.js";
 
-declare const AUTO_CATALOG_TITLE_META_KEY: string;
 declare const AUTO_CATALOG_ICON_COMPONENT: string | undefined;
-declare const AUTO_CATALOG_ICON_META_KEY: string;
-declare const AUTO_CATALOG_ORDER_META_KEY: string;
-declare const AUTO_CATALOG_INDEX_META_KEY: string;
 
 export default defineClientConfig({
   enhance: ({ app }) => {
@@ -18,17 +14,7 @@ export default defineClientConfig({
       app.component("AutoCatalog", (props: AutoCatalogProps) =>
         h(
           AutoCatalog,
-          {
-            titleGetter: (meta): string =>
-              meta[AUTO_CATALOG_TITLE_META_KEY] as string,
-            iconGetter: (meta): string =>
-              meta[AUTO_CATALOG_ICON_META_KEY] as string,
-            orderGetter: (meta): number =>
-              meta[AUTO_CATALOG_ORDER_META_KEY] as number,
-            shouldIndex: (meta): boolean =>
-              Boolean(meta[AUTO_CATALOG_INDEX_META_KEY]),
-            ...props,
-          },
+          props,
           AUTO_CATALOG_ICON_COMPONENT
             ? {
                 icon: ({ icon }: { icon: string }): VNode =>

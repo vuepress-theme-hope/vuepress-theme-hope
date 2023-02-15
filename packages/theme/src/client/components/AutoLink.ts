@@ -12,7 +12,7 @@ import {
 import { RouterLink, useRoute } from "vue-router";
 import { keys, startsWith } from "vuepress-shared/client";
 
-import Icon from "@theme-hope/components/Icon";
+import HopeIcon from "@theme-hope/components/HopeIcon";
 
 import { type AutoLinkOptions } from "../../shared/index.js";
 
@@ -132,7 +132,7 @@ export default defineComponent({
             },
             () =>
               slots["default"]?.() || [
-                slots["before"]?.() || h(Icon, { icon }),
+                slots["before"]?.() || h(HopeIcon, { icon }),
                 text,
                 slots["after"]?.(),
               ]
@@ -150,7 +150,7 @@ export default defineComponent({
               onFocusout: () => emit("focusout"),
             },
             slots["default"]?.() || [
-              slots["before"]?.() || h(Icon, { icon }),
+              slots["before"]?.() || h(HopeIcon, { icon }),
               text,
               props.noExternalLinkIcon ? null : h(ExternalLinkIcon),
               slots["after"]?.(),
