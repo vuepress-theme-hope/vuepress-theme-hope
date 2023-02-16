@@ -332,7 +332,7 @@ interface IncludeOptions {
    *
    * @default (path) => path
    */
-  getPath?: (path: string) => string;
+  resolvePath?: (path: string, cwd: string) => string;
 
   /**
    * 是否深度导入包含的 Markdown 文件
