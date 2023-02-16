@@ -7,6 +7,7 @@ export type AvailableComponent =
   | "FontIcon"
   | "PDF"
   | "Replit"
+  | "Share"
   | "StackBlitz"
   | "SiteInfo"
   | "VideoPlayer"

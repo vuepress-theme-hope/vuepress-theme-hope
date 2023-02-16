@@ -17,6 +17,7 @@ icon: gears
     | "FontIcon"
     | "PDF"
     | "Replit"
+    | "Share"
     | "StackBlitz"
     | "SiteInfo"
     | "VideoPlayer"
@@ -38,6 +39,7 @@ icon: gears
 - `"FontIcon"`
 - `"PDF"`
 - `"Replit"`
+- `"Share"`
 - `"StackBlitz"`
 - `"SiteInfo"`
 - `"VideoPlayer"`
@@ -97,6 +99,21 @@ icon: gears
   - [指南 → PDF → PDFJS](./guide/pdf.md#pdfjs-查看器)
 
 PDFJS 查看器的路径
+
+### componentsOptions.share.services
+
+- 类型: `(string | ShareService)[]`
+- 详情:
+  - [指南 → Share → 设置组件](./guide/share.md#设置组件)
+
+分享服务
+
+### componentsOptions.share.twitterUserName
+
+- 类型: `string`
+- 必填: 否
+
+Twitter 用户名。
 
 ## rootComponents
 

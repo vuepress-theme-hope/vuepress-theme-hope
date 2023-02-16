@@ -8,7 +8,7 @@ tag:
   - Markdown
 ---
 
-Пусть файл Markdown поддерживает [mermaid](https://mermaid-js.github.io/mermaid/#/) на вашем сайте VuePress.
+Пусть файл Markdown поддерживает [mermaid](https://mermaid.js.org/) на вашем сайте VuePress.
 
 <!-- more -->
 
@@ -65,7 +65,7 @@ export default {
 
 ## Использование
 
-Пожалуйста, смотрите [mermaid](https://mermaid-js.github.io/mermaid/#/).
+Пожалуйста, смотрите [mermaid](https://mermaid.js.org/).
 
 ## Демо
 

@@ -196,6 +196,13 @@ interface ImageMarkOptions {
 
 是否启用图片尺寸支持。
 
+## obsidianImgSize
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否启用 obsidian 图片尺寸支持。
+
 ## tasklist
 
 - 类型: `TaskListOptions | boolean`
@@ -232,7 +239,7 @@ interface TaskListOptions {
      *
      * @default (path) => path
      */
-    getPath?: (path: string) => string;
+    resolvePath?: (path: string, cwd: string) => string;
 
     /**
      * 是否深度导入包含的 Markdown 文件
@@ -293,7 +300,7 @@ interface TaskListOptions {
 - 类型: `MermaidConfig | boolean`
 - 默认值: `false`
 
-是否启用 [Mermaid](https://mermaid-js.github.io/mermaid/#/) 支持。
+是否启用 [Mermaid](https://mermaid.js.org/) 支持。
 
 ## stylize
 

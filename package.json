@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-hope-root",
-  "version": "2.0.0-beta.174",
+  "version": "2.0.0-beta.175",
   "private": true,
   "description": "A VuePress theme with tons of features",
   "type": "module",
@@ -105,6 +105,9 @@
         "react-dom",
         "webpack"
       ]
+    },
+    "overrides": {
+      "esquery": "1.4.0"
     },
     "patchedDependencies": {
       "@types/katex@0.16.0": "patches/@types__katex@0.16.0.patch",

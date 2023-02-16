@@ -2,7 +2,7 @@ import { type App } from "@vuepress/core";
 import { getLocales } from "vuepress-shared/node";
 
 import { catalogLocales } from "./compact/index.js";
-import { getIconInfo } from "./components/index.js";
+import { getIconInfo, getShareServiceConfig } from "./components/index.js";
 import {
   backToTopLocales,
   pdfLocaleConfig,
@@ -50,6 +50,13 @@ export const getDefine =
         config: options.locales?.pdf,
       });
       result["PDFJS_URL"] = options.componentOptions?.pdf?.pdfjs || null;
+    }
+
+    if (options.components?.includes("Share")) {
+      result["SHARE_CONTENT_SELECTOR"] =
+        options.componentOptions?.share?.contentSelector ??
+        ".theme-default-content";
+      result["SHARE_SERVICES"] = getShareServiceConfig(options);
     }
 
     if (options.components?.includes("SiteInfo"))

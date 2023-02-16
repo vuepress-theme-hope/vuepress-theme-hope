@@ -19,6 +19,7 @@ import {
 
 import { type SiteInfoLocaleConfig } from "../../shared/index.js";
 
+import "balloon-css/balloon.css";
 import "../styles/site-info.scss";
 
 declare const SITE_INFO_LOCALES: SiteInfoLocaleConfig;

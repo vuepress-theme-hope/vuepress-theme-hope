@@ -171,6 +171,13 @@ interface ImageMarkOptions {
 
 Включить ли поддержку размера изображения.
 
+### obsidianImgSize
+
+- Тип: `boolean`
+- По умолчанию: `false`
+
+Включить ли obsidian поддержку размера изображения.
+
 ### tasklist
 
 - Тип: `TaskListOptions | boolean`
@@ -228,7 +235,7 @@ interface TaskListOptions {
 - Тип: `MermaidConfig | boolean`
 - По умолчанию: `false`
 
-Включить ли поддержку [Mermaid](https://mermaid-js.github.io/mermaid/#/).
+Включить ли поддержку [Mermaid](https://mermaid.js.org/).
 
 ### stylize
 

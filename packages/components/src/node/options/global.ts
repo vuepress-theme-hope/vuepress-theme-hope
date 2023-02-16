@@ -1,4 +1,5 @@
 import { type FontIconOptions } from "./icon.js";
+import { type ShareOptions } from "./share.js";
 import { type ArtPlayerOptions } from "../../shared/index.js";
 
 export interface ComponentGlobalOptions {
@@ -29,4 +30,11 @@ export interface ComponentGlobalOptions {
      */
     pdfjs?: string;
   };
+
+  /**
+   * Share config
+   *
+   * 分享配置
+   */
+  share?: ShareOptions;
 }

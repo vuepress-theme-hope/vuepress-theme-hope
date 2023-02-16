@@ -4,7 +4,7 @@ import { figure } from "@mdit/plugin-figure";
 import { footnote } from "@mdit/plugin-footnote";
 import { imgLazyload } from "@mdit/plugin-img-lazyload";
 import { imgMark } from "@mdit/plugin-img-mark";
-import { imgSize } from "@mdit/plugin-img-size";
+import { imgSize, obsidianImageSize } from "@mdit/plugin-img-size";
 import { include } from "@mdit/plugin-include";
 import { katex } from "@mdit/plugin-katex";
 import { mark } from "@mdit/plugin-mark";
@@ -266,6 +266,7 @@ export const mdEnhancePlugin =
           );
 
         if (getStatus("imgSize")) md.use(imgSize);
+        if (getStatus("obsidianImgSize")) md.use(obsidianImageSize);
         if (getStatus("sup")) md.use(sup);
         if (getStatus("sub")) md.use(sub);
         if (footnoteEnable) md.use(footnote);

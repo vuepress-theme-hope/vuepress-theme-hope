@@ -82,6 +82,7 @@ export default theme("components", {
         "CodePen",
         "PDF",
         "Replit",
+        "Share",
         "SiteInfo",
         "StackBlitz",
         "VideoPlayer",

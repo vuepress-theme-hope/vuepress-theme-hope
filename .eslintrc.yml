@@ -114,7 +114,6 @@ rules:
   curly:
     - error
     - multi
-    # - multi-or-nest
     - consistent
 
   import/consistent-type-specifier-style:
@@ -201,6 +200,8 @@ rules:
 
   vue/block-lang:
     - error
+    - script:
+        lang: ts
 
   vue/block-tag-newline:
     - error
