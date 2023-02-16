@@ -97,8 +97,6 @@ export interface ShareServiceConfig {
    * Colorful icon
    *
    * 彩色图标
-   *
-   * @default shape
    */
   icon?: string;
 }

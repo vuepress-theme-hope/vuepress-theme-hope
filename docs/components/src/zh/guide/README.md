@@ -14,7 +14,7 @@ index: false
 
 :::
 
-此插件支持 12 个组件:
+此插件支持 13 个组件:
 
 - [ArtPlayer](artplayer.md)
 
@@ -31,6 +31,8 @@ index: false
 - [PDF](pdf.md)
 
 - [Replit](replit.md)
+
+- [Share](share.md)
 
 - [SiteInfo](siteinfo.md)
 

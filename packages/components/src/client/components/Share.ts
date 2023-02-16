@@ -67,12 +67,12 @@ export default defineComponent({
         (page: PageData) => string | string[] | undefined | null
       >,
 
-      default: (
-        page: PageData<
-          Record<never, never>,
-          { tag?: string | string[]; tags?: string | string[] }
-        >
-      ) => page.frontmatter["tag"] || page.frontmatter["tags"],
+      default: ({
+        frontmatter,
+      }: PageData<
+        Record<never, never>,
+        { tag?: string | string[]; tags?: string | string[] }
+      >) => frontmatter["tag"] || frontmatter["tags"],
     },
 
     /**

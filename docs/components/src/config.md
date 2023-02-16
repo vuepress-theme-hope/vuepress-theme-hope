@@ -17,6 +17,7 @@ icon: gears
     | "FontIcon"
     | "PDF"
     | "Replit"
+    | "Share"
     | "StackBlitz"
     | "SiteInfo"
     | "VideoPlayer"
@@ -38,6 +39,7 @@ Available component names:
 - `"FontIcon"`
 - `"PDF"`
 - `"Replit"`
+- `"Share"`
 - `"StackBlitz"`
 - `"SiteInfo"`
 - `"VideoPlayer"`
@@ -54,6 +56,21 @@ Global config for components.
 - Required: No
 - Details:
   - [Guide → ArtPlayer](./guide/artplayer.md#global-config)
+
+### componentsOptions.share.services
+
+- Type: `(string | ShareService)[]`
+- Details:
+  - [Guide → Share → Setting component](./guide/share.md#setting-component)
+
+Share services
+
+### componentsOptions.share.twitterUserName
+
+- Type: `string`
+- Required: No
+
+Twitter username.
 
 ### componentsOptions.fontIcon.assets
 
