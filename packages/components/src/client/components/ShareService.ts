@@ -20,6 +20,7 @@ import {
 import { type ShareServiceOptions } from "../../shared/share.js";
 import { getMetaContent } from "../utils/index.js";
 
+import "balloon-css/balloon.css";
 import "vuepress-shared/client/styles/popup.scss";
 import "../styles/share-service.scss";
 

@@ -14,6 +14,7 @@ import { useLocaleConfig } from "vuepress-shared/client";
 import { BackToTopIcon } from "./icons.js";
 import { type BackToTopLocaleConfig } from "../../shared/index.js";
 
+import "balloon-css/balloon.css";
 import "../styles/back-to-top.scss";
 
 declare const BACK_TO_TOP_LOCALES: BackToTopLocaleConfig;
