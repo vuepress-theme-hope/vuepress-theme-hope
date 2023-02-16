@@ -192,3 +192,17 @@ description: 分享组件，将页面内容分享到社交媒体。
 - 默认值: `({ frontmatter }) => frontmatter["tag"] || frontmatter["tags"]`
 
 标签获取器
+
+### inline
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否内联显示
+
+### colorful
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否使用彩色图标

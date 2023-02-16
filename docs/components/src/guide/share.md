@@ -193,3 +193,17 @@ Cover getter.
 - Default: `({ frontmatter }) => frontmatter["tag"] || frontmatter["tags"]`
 
 Tag getter.
+
+### inline
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to display inline.
+
+### colorful
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to use colorful icon.

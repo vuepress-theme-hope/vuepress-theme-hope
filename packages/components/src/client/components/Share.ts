@@ -76,6 +76,11 @@ export default defineComponent({
     },
 
     /**
+     * Whether to display the share component inline
+     */
+    inline: Boolean,
+
+    /**
      * Use colorful icon
      */
     colorful: Boolean,
@@ -127,6 +132,7 @@ export default defineComponent({
         "div",
         {
           class: "share-wrapper",
+          style: props.inline ? { display: "inline-block" } : {},
         },
         service.value.map((item) =>
           h(ShareService, {
