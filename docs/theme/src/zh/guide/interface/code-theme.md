@@ -70,64 +70,74 @@ tag:
 
 ## 使用 Shiki 高亮器
 
-Prism.js 快速且轻量，但它无法正确高亮所有语法。 如果你想要更准确的高亮结果，可以安装 `@vuepress/plugin-shiki` 并导入使用:
+Prism.js 快速且轻量，但它无法正确高亮所有语法。如果你想要更准确的高亮结果，可以使用 `@vuepress/plugin-shiki`。
 
-::: code-tabs#shell
+1. 通过在主题选项中设置 `plugins.prismjs: false` 来禁用 `@vuepress/plugin-prismjs` 插件。
 
-@tab pnpm
+1. 安装插件:
 
-```bash
-pnpm add -D @vuepress/plugin-shiki@next
-```
+   ::: code-tabs#shell
 
-@tab yarn
+   @tab pnpm
 
-```bash
-yarn add -D @vuepress/plugin-shiki@next
-```
+   ```bash
+   pnpm add -D @vuepress/plugin-shiki@next
+   ```
 
-@tab npm
+   @tab yarn
 
-```bash
-npm i -D @vuepress/plugin-shiki@next
-```
+   ```bash
+   yarn add -D @vuepress/plugin-shiki@next
+   ```
 
-::: code-tabs#language
+   @tab npm
 
-@tab TS
+   ```bash
+   npm i -D @vuepress/plugin-shiki@next
+   ```
 
-```ts
-// .vuepress/config.ts
-import { shikiPlugin } from "@vuepress/plugin-shiki";
-import { defineUserConfig } from "vuepress";
+   :::
 
-export default defineUserConfig({
-  plugins: [
-    shikiPlugin({
-      // 你的选项
-    }),
-  ],
-});
-```
+1. 导入 shiki 插件并使用:
 
-@tab JS
+   ::: code-tabs#language
 
-```js
-// .vuepress/config.js
-import { shikiPlugin } from "@vuepress/plugin-shiki";
+   @tab TS
 
-export default {
-  plugins: [
-    shikiPlugin({
-      // 你的选项
-    }),
-  ],
-};
-```
+   ```ts
+   // .vuepress/config.ts
+   import { shikiPlugin } from "@vuepress/plugin-shiki";
+   import { defineUserConfig } from "vuepress";
 
-:::
+   export default defineUserConfig({
+     plugins: [
+       shikiPlugin({
+         // 你的选项
+         theme: "one-dark-pro",
+       }),
+     ],
+   });
+   ```
 
-为了让样式正常工作，您应该在 `.vuepress/styles/config.scss 中配置以下变量来设置代码主题。
+   @tab JS
 
-- `$code-bg-color`: 代码块的背景颜色
-- `$code-color`: 代码块的字体颜色
+   ```js
+   // .vuepress/config.js
+   import { shikiPlugin } from "@vuepress/plugin-shiki";
+
+   export default {
+     plugins: [
+       shikiPlugin({
+         // 你的选项
+         theme: "one-dark-pro",
+       }),
+     ],
+   };
+   ```
+
+   :::
+
+1. 根据您要使用的主题，通过在 `.vuepress/styles/config.scss` 中添加这些变量来设置代码块的背景颜色和字体颜色：
+
+   - `$code-bg-color`: 代码块的背景颜色
+   - `$code-color`: 代码块的字体颜色

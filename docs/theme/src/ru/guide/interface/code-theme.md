@@ -70,64 +70,74 @@ By default, we use `one-light` and `one-dark` for lightmode and darkmode respect
 
 ## With Shiki Highlighter
 
-Prism.js is fast and lightweight, but it can not highlight all syntax correctly. If you want a more accurate highlight result, you can install `@vuepress/plugin-shiki` and import to use it:
+Prism.js is fast and lightweight, but it can not highlight all syntax correctly. If you want a more accurate highlight result, you can use `@vuepress/plugin-shiki`.
 
-::: code-tabs#shell
+1. Disable `@vuepress/plugin-prismjs` plugin by setting `plugins.prismjs: false` in theme options.
 
-@tab pnpm
+1. Install the plugin:
 
-```bash
-pnpm add -D @vuepress/plugin-shiki@next
-```
+   ::: code-tabs#shell
 
-@tab yarn
+   @tab pnpm
 
-```bash
-yarn add -D @vuepress/plugin-shiki@next
-```
+   ```bash
+   pnpm add -D @vuepress/plugin-shiki@next
+   ```
 
-@tab npm
+   @tab yarn
 
-```bash
-npm i -D @vuepress/plugin-shiki@next
-```
+   ```bash
+   yarn add -D @vuepress/plugin-shiki@next
+   ```
 
-::: code-tabs#language
+   @tab npm
 
-@tab TS
+   ```bash
+   npm i -D @vuepress/plugin-shiki@next
+   ```
 
-```ts
-// .vuepress/config.ts
-import { shikiPlugin } from "@vuepress/plugin-shiki";
-import { defineUserConfig } from "vuepress";
+   :::
 
-export default defineUserConfig({
-  plugins: [
-    shikiPlugin({
-      // your options
-    }),
-  ],
-});
-```
+1. Import shiki plugin and use it:
 
-@tab JS
+   ::: code-tabs#language
 
-```js
-// .vuepress/config.js
-import { shikiPlugin } from "@vuepress/plugin-shiki";
+   @tab TS
 
-export default {
-  plugins: [
-    shikiPlugin({
-      // your options
-    }),
-  ],
-};
-```
+   ```ts
+   // .vuepress/config.ts
+   import { shikiPlugin } from "@vuepress/plugin-shiki";
+   import { defineUserConfig } from "vuepress";
 
-:::
+   export default defineUserConfig({
+     plugins: [
+       shikiPlugin({
+         // your options
+         theme: "one-dark-pro",
+       }),
+     ],
+   });
+   ```
 
-To let styles work correctly, you should configure following variables in `.vuepress/styles/config.scss` to set code themes.
+   @tab JS
 
-- `$code-bg-color`: background color for code blocks
-- `$code-color`: font color for code blocks
+   ```js
+   // .vuepress/config.js
+   import { shikiPlugin } from "@vuepress/plugin-shiki";
+
+   export default {
+     plugins: [
+       shikiPlugin({
+         // your options
+         theme: "one-dark-pro",
+       }),
+     ],
+   };
+   ```
+
+   :::
+
+1. Set background color and font color for code blocks according to theme you want to use by adding these variables in `.vuepress/styles/config.scss`:.
+
+   - `$code-bg-color`: background color for code blocks
+   - `$code-color`: font color for code blocks
