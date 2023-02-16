@@ -22,6 +22,8 @@
 
 - [Replit](replit.md)
 
+- [Share](share.md)
+
 - [SiteInfo](siteinfo.md)
 
 - [StackBlitz](stackblitz.md)
