@@ -1,10 +1,9 @@
 /* eslint-disable vue/require-default-prop */
-import { usePageData } from "@vuepress/client";
-import { isLinkHttp } from "@vuepress/shared";
+import { usePageData, usePageFrontmatter } from "@vuepress/client";
+import { isArray, isLinkHttp, isString } from "@vuepress/shared";
 import {
   type PropType,
   type VNode,
-  computed,
   defineComponent,
   h,
   onMounted,
@@ -18,13 +17,13 @@ import {
   startsWith,
 } from "vuepress-shared/client";
 
-import {
-  type ShareAction,
-  type ShareServiceOptions,
-} from "../../shared/share.js";
+import { type ShareServiceOptions } from "../../shared/share.js";
+import { getMetaContent } from "../utils/index.js";
 
 import "vuepress-shared/client/styles/popup.scss";
 import "../styles/share-service.scss";
+
+declare const SHARE_CONTENT_SELECTOR: string;
 
 const renderIcon = (content: string, contentClass = ""): VNode => {
   const className = ["share-icon", contentClass];
@@ -61,7 +60,7 @@ export default defineComponent({
     plain: Boolean,
 
     /**
-     * Shared title
+     * Share title
      */
     title: {
       type: String,
@@ -69,7 +68,7 @@ export default defineComponent({
     },
 
     /**
-     * Shared description
+     * Share description
      */
     description: {
       type: String,
@@ -77,10 +76,34 @@ export default defineComponent({
     },
 
     /**
-     * Shared url
+     * Share url
      */
     url: {
       type: String,
+      required: false,
+    },
+
+    /**
+     * Share summary
+     */
+    summary: {
+      type: String,
+      required: false,
+    },
+
+    /**
+     * Share image
+     */
+    cover: {
+      type: String,
+      required: false,
+    },
+
+    /**
+     * Share tag
+     */
+    tag: {
+      type: [Array, String] as PropType<string | string[]>,
       required: false,
     },
   },
@@ -88,37 +111,60 @@ export default defineComponent({
   setup(props) {
     let popup: Popup;
     const page = usePageData();
+    const frontmatter = usePageFrontmatter();
 
     const showPopup = ref(false);
 
-    const title = computed(() => props.title ?? page.value.title);
-    const description = computed(
-      () => props.description ?? page.value.frontmatter.description ?? null
-    );
-    const url = computed(() =>
-      props.url ?? typeof window === "undefined" ? null : window.location.href
-    );
+    const getShareLink = (): string => {
+      const title = props.title ?? page.value.title;
+      const description =
+        props.description ??
+        frontmatter.value.description ??
+        getMetaContent("description") ??
+        getMetaContent("og:description") ??
+        getMetaContent("twitter:description");
+      const url =
+        props.url ?? typeof window === "undefined"
+          ? null
+          : window.location.href;
+      const cover = props.cover ?? getMetaContent("og:image");
+      const image = document
+        .querySelector<HTMLImageElement>(
+          `${SHARE_CONTENT_SELECTOR} :not(a) > img`
+        )
+        ?.getAttribute("src");
+      const tags =
+        props.tag ?? frontmatter.value["tag"] ?? frontmatter.value["tags"];
+      const tag = isArray(tags)
+        ? tags.filter(isString).join(",")
+        : isString(tags)
+        ? tags
+        : null;
 
-    const shareLink = computed(() =>
-      props.config.link.replace(
+      return props.config.link.replace(
         /\[([^\]]+)\]/g,
         (_, config: string): string => {
           const keys = config.split("|");
 
           for (const key of keys) {
-            if (key === "url" && url.value) return url.value;
-            if (key === "title" && title.value) return title.value;
-            if (key === "description" && description.value)
-              return description.value;
+            if (key === "url" && url) return url;
+            if (key === "title" && title) return title;
+            if (key === "description" && description) return description;
+            if (key === "summary" && props.summary) return props.summary;
+            if (key === "cover" && cover) return cover;
+            if (key === "image" && image) return image;
+            if (key === "tags" && tag) return tag;
           }
 
           return "";
         }
-      )
-    );
+      );
+    };
 
-    const share = (link: string, action?: ShareAction): void => {
-      switch (action) {
+    const share = (): void => {
+      const link = getShareLink();
+
+      switch (props.config.action) {
         case "navigate":
           window.open(link);
           break;
@@ -137,9 +183,9 @@ export default defineComponent({
                 margin: 1.5,
               })
             )
-            .then((dataUrl) => {
+            .then((dataURL) => {
               popup.emit(
-                `<img src="${dataUrl}" alt="qrcode" class="share-qrcode" />`
+                `<img src="${dataURL}" alt="qrcode" class="share-qrcode" />`
               );
             });
           break;
@@ -156,7 +202,7 @@ export default defineComponent({
 
     return (): (VNode | null)[] => {
       const {
-        config: { name, action, icon, shape, color },
+        config: { name, icon, shape, color },
         plain,
       } = props;
 
@@ -167,7 +213,7 @@ export default defineComponent({
             class: ["share-button", { plain }],
             "aria-label": name,
             "data-balloon-pos": "up",
-            onClick: () => share(shareLink.value, action),
+            onClick: () => share(),
           },
           plain
             ? renderIcon(shape, "plain")

@@ -56,8 +56,6 @@ export interface ShareServiceConfig {
    */
   link: string;
 
-  params?: Record<string, string>;
-
   /**
    * Action of share button
    *

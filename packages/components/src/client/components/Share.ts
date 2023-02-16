@@ -52,6 +52,30 @@ export default defineComponent({
     },
 
     /**
+     * Getter for page summary
+     */
+    coverGetter: {
+      type: Function as PropType<(page: PageData) => string | undefined | null>,
+      default: (page: PageData<{ cover?: string }>) => page.cover,
+    },
+
+    /**
+     * Getter for page summary
+     */
+    tagGetter: {
+      type: Function as PropType<
+        (page: PageData) => string | string[] | undefined | null
+      >,
+
+      default: (
+        page: PageData<
+          Record<never, never>,
+          { tag?: string | string[]; tags?: string | string[] }
+        >
+      ) => page.frontmatter["tag"] || page.frontmatter["tags"],
+    },
+
+    /**
      * Use colorful icon
      */
     colorful: Boolean,
@@ -77,17 +101,23 @@ export default defineComponent({
     });
 
     const shareData = computed(() => {
-      const result: Record<string, string> = {};
+      const result: Record<string, string | string[]> = {};
 
-      (["titleGetter", "descriptionGetter", "summaryGetter"] as const).forEach(
-        (item) => {
-          if (isFunction(props[item])) {
-            const value = props[item](page.value);
+      (
+        [
+          "titleGetter",
+          "descriptionGetter",
+          "summaryGetter",
+          "coverGetter",
+          "tagGetter",
+        ] as const
+      ).forEach((item) => {
+        if (isFunction(props[item])) {
+          const value = props[item](page.value);
 
-            if (value) result[item.replace("Getter", "")] = value;
-          }
+          if (value) result[item.replace("Getter", "")] = value;
         }
-      );
+      });
 
       return result;
     });

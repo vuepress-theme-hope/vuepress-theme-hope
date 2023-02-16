@@ -52,8 +52,12 @@ export const getDefine =
       result["PDFJS_URL"] = options.componentOptions?.pdf?.pdfjs || null;
     }
 
-    if (options.components?.includes("Share"))
+    if (options.components?.includes("Share")) {
+      result["SHARE_CONTENT_SELECTOR"] =
+        options.componentOptions?.share?.contentSelector ??
+        ".theme-default-content";
       result["SHARE_SERVICES"] = getShareServiceConfig(options);
+    }
 
     if (options.components?.includes("SiteInfo"))
       result["SITE_INFO_LOCALES"] = getLocales({
