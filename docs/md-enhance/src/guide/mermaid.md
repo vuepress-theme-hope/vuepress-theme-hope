@@ -3,7 +3,7 @@ title: Mermaid
 icon: chart-pie
 ---
 
-Let the Markdown file support [mermaid](https://mermaid-js.github.io/mermaid/#/) in your VuePress site.
+Let the Markdown file support [mermaid](https://mermaid.js.org/) in your VuePress site.
 
 <!-- more -->
 
@@ -57,7 +57,7 @@ export default {
 
 ## Usage
 
-Please see [mermaid](https://mermaid-js.github.io/mermaid/#/).
+Please see [mermaid](https://mermaid.js.org/).
 
 ## Demo
 

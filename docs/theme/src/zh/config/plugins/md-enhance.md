@@ -227,7 +227,7 @@ interface TaskListOptions {
 - 类型: `boolean`
 - 默认值: `false`
 
-是否启用 [Mermaid](https://mermaid-js.github.io/mermaid/#/) 支持。
+是否启用 [Mermaid](https://mermaid.js.org/) 支持。
 
 ### stylize
 
