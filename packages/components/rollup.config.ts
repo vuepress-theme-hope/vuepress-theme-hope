@@ -45,7 +45,14 @@ export default [
     ],
   }),
   ...rollupTypescript("client/components/Replit"),
-  ...rollupTypescript("client/components/Share"),
+  ...rollupTypescript("client/components/Share", {
+    external: [
+      "dashjs/dist/dash.all.min.js",
+      "hls.js/dist/hls.min.js",
+      "mpegts.js/dist/mpegts.js",
+      "qrcode",
+    ],
+  }),
   ...rollupTypescript("client/components/SiteInfo"),
   ...rollupTypescript("client/components/StackBlitz", {
     external: ["@stackblitz/sdk"],
