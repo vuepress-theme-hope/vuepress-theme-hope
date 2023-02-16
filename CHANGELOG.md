@@ -4,6 +4,32 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.175](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.174...v2.0.0-beta.175) (2023-02-16)
+
+### Features
+
+- **auto-catalog:** add icon slot ([bade3f9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/bade3f996923042981a1969db0b072280c177428))
+- **auto-catalog:** add index option ([6612d19](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6612d19d23fe707e88e561179ec921507e25b5a1))
+- **components:** add iconify support, close [#2785](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2785) ([#2786](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2786)) ([addb627](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/addb627f6fe4e090642850a85cb659db1fada584))
+- **components:** add share component ([#2783](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2783)) ([e08cc34](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e08cc34f92b033ea02dbd0e3a8737208c35d43f8))
+- **search-pro:** add key hints on desktop ([0921f50](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0921f506a53ad77cbd8138a1935ea61b09ee54a5))
+- **shared:** add openPopupWindow ([8481435](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8481435efc31023804e19aa797124f8ade61447b))
+- **shared:** add popup ([6132635](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/61326357717c33a398557935d4081ba0e36a38a6))
+- **theme:** Add Hungarian language support ([#2772](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2772)) ([4ac9a36](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4ac9a3634584039825c3fb0fffbedfd9e29e9494))
+- **theme:** add social media icon ([ae95e35](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ae95e3529f035b90e0468994c9934203f2792aeb))
+- **theme:** improve sidebar on desktop ([e042d13](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e042d13d5d2383dd40f7b76331dce21b096adf8e))
+- **theme:** support shiki ([#2769](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2769)) ([eb2530b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/eb2530b739e66f3c585dbaa82e1ee3d0ebefc1a9))
+
+### Bug Fixes
+
+- **auto-catalog:** ensure title ([566793d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/566793d9cc84eab1ba0e2b27ed837b8d88aac215))
+- **deps:** update dependency axios to v1.3.3 ([#2779](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2779)) ([ee21a9e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ee21a9e4ee0a1d1daab0d183b669c17d3ecc1bad))
+- **shared:** fix popup ([b925455](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b9254557ecb599b85a9619db0430a872f5902af5))
+- **theme:** add missing style import ([3117f6e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3117f6e89b19cf2a451d956f03a4aa78c2326772))
+- **theme:** fix `$content-class` ([928d394](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/928d394d4c0a9d2673927386e7966e9d8eaf19ce))
+- **theme:** improve password modal ([cf9cc49](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cf9cc49185a76e5a8e123209988505acfe423d25))
+- **theme:** limit list height in InfoList, close [#2771](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2771) ([bbf11b6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/bbf11b6e1ae2dad9a34e402d1b3c945cf51bc4d8))
+
 ## [2.0.0-beta.174](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.173...v2.0.0-beta.174) (2023-02-11)
 
 ### Features
