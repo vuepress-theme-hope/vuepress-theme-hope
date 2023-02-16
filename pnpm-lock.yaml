@@ -49,8 +49,8 @@ importers:
         specifier: 8.2.1
         version: 8.2.1
       commit-and-tag-version:
-        specifier: 11.0.0
-        version: 11.0.0
+        specifier: 11.1.0
+        version: 11.1.0
       commitizen:
         specifier: 4.3.0
         version: 4.3.0
@@ -1337,8 +1337,8 @@ importers:
         specifier: ^1.2.6
         version: 1.2.6
       twikoo:
-        specifier: ^1.6.9
-        version: 1.6.9
+        specifier: ^1.6.10
+        version: 1.6.10
       vue:
         specifier: ^3.2.47
         version: 3.2.47
@@ -1653,7 +1653,7 @@ importers:
         specifier: ^13.0.1
         version: 13.0.1
       mermaid:
-        specifier: ^9.3.0
+        specifier: ~9.3.0
         version: 9.3.0
       reveal.js:
         specifier: ^4.4.0
@@ -1845,15 +1845,15 @@ importers:
         specifier: ^3.5.3
         version: 3.5.3
       sass:
-        specifier: ^1.58.0
-        version: 1.58.0
+        specifier: ^1.58.1
+        version: 1.58.1
       vuepress-shared:
         specifier: workspace:*
         version: link:../shared
     devDependencies:
       '@vuepress/bundler-vite':
         specifier: 2.0.0-beta.60
-        version: 2.0.0-beta.60(sass@1.58.0)
+        version: 2.0.0-beta.60(sass@1.58.1)
       '@vuepress/bundler-webpack':
         specifier: 2.0.0-beta.60
         version: 2.0.0-beta.60
@@ -5059,7 +5059,7 @@ packages:
       - terser
       - ts-node
 
-  /@vuepress/bundler-vite@2.0.0-beta.60(sass@1.58.0):
+  /@vuepress/bundler-vite@2.0.0-beta.60(sass@1.58.1):
     resolution: {integrity: sha512-nf+UAKNlAEZXZqu2Ztvr8Hg/5CtevWxvQGfYKV4lhw8UmoDjKKHoHPpPhF1QTUbnZ8W+jPLzIVz+hjunzsxl/A==}
     dependencies:
       '@vitejs/plugin-vue': 4.0.0(vite@4.0.4)(vue@3.2.47)
@@ -5072,7 +5072,7 @@ packages:
       postcss: 8.4.21
       postcss-load-config: 4.0.1(postcss@8.4.21)
       rollup: 3.15.0
-      vite: 4.0.4(sass@1.58.0)
+      vite: 4.0.4(sass@1.58.1)
       vue: 3.2.47
       vue-router: 4.1.6(vue@3.2.47)
     transitivePeerDependencies:
@@ -6351,8 +6351,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /commit-and-tag-version@11.0.0:
-    resolution: {integrity: sha512-HcIvYG5dmJk99PyPegdAzMfa1Es6t/FCAfJDQP+5xN+3R3t4qCG/kz704kQv1e6YgHyNk4MwRiGfN/kAua8k+Q==}
+  /commit-and-tag-version@11.1.0:
+    resolution: {integrity: sha512-sVia6zoGNJGC69KhGEautLrShVhuYMhLGKt56mRzIkFJob78n+9DWNZEc7D7nZ1gjXJiAMgIqn2qHk/p3FuIPw==}
     engines: {node: '>=14'}
     hasBin: true
     dependencies:
@@ -11354,6 +11354,15 @@ packages:
       immutable: 4.2.4
       source-map-js: 1.0.2
 
+  /sass@1.58.1:
+    resolution: {integrity: sha512-bnINi6nPXbP1XNRaranMFEBZWUfdW/AF16Ql5+ypRxfTvCRTTKrLsMIakyDcayUt2t/RZotmL4kgJwNH5xO+bg==}
+    engines: {node: '>=12.0.0'}
+    hasBin: true
+    dependencies:
+      chokidar: 3.5.3
+      immutable: 4.2.4
+      source-map-js: 1.0.2
+
   /sax@1.2.1:
     resolution: {integrity: sha512-8I2a3LovHTOpm7NV5yOyO8IHqgVsfK4+UuySrXU8YXkSRX7k6hCV9b3HrkKCr3nMpgj+0bmocaJJWpvp1oc7ZA==}
     dev: false
@@ -12258,8 +12267,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /twikoo@1.6.9:
-    resolution: {integrity: sha512-Umm2kqj4gPkTqxCbHpLO8QLq+T3fn4OPIa5hqW7amYj2aBVVOIdd3dsBbvE1sYT94GFu+Ivea/L41nR1g4lqqw==}
+  /twikoo@1.6.10:
+    resolution: {integrity: sha512-5CPfRUzd8kHvNB6ekYXvgEbsIEQuySBOm47VkMh3nI4rj79crT+2v9aCDVuson+KorEngdGfe5MOni0VKNblmQ==}
     dev: false
 
   /type-check@0.4.0:
@@ -12575,7 +12584,7 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vite@4.0.4(sass@1.58.0):
+  /vite@4.0.4(sass@1.58.1):
     resolution: {integrity: sha512-xevPU7M8FU0i/80DMR+YhgrzR5KS2ORy1B4xcX/cXLsvnUWvfHuqMmVU6N0YiJ4JWGRJJsLCgjEzKjG9/GKoSw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -12604,7 +12613,7 @@ packages:
       postcss: 8.4.21
       resolve: 1.22.1
       rollup: 3.15.0
-      sass: 1.58.0
+      sass: 1.58.1
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
