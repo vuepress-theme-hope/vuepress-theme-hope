@@ -370,7 +370,7 @@ export default defineUserConfig({
       mdEnhance: {
         // 添加 `@src` 别名支持
         include: {
-          getPath: (file) => {
+          resolvePath: (file) => {
             if (file.startsWith("@src"))
               return file.replace("@src", path.resolve(__dirname, ".."));
 
@@ -398,7 +398,7 @@ export default {
       mdEnhance: {
         // 添加 `@src` 别名支持
         include: {
-          getPath: (file) => {
+          resolvePath: (file) => {
             if (file.startsWith("@src"))
               return file.replace("@src", path.resolve(__dirname, ".."));
 
