@@ -17,6 +17,7 @@ export const AVAILABLE_COMPONENTS: AvailableComponent[] = [
   "FontIcon",
   "PDF",
   "Replit",
+  "Share",
   "SiteInfo",
   "StackBlitz",
   "VideoPlayer",
