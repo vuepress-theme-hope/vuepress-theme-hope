@@ -170,6 +170,13 @@ interface ImageMarkOptions {
 
 Whether enable image size support.
 
+### obsidianImgSize
+
+- Type: `boolean`
+- Default: `false`
+
+Whether enable obsidian image size support.
+
 ### tasklist
 
 - Type: `TaskListOptions | boolean`

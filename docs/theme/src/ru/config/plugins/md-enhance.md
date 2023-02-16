@@ -171,6 +171,13 @@ interface ImageMarkOptions {
 
 Включить ли поддержку размера изображения.
 
+### obsidianImgSize
+
+- Тип: `boolean`
+- По умолчанию: `false`
+
+Включить ли obsidian поддержку размера изображения.
+
 ### tasklist
 
 - Тип: `TaskListOptions | boolean`

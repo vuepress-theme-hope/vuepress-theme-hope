@@ -179,6 +179,15 @@ export interface MarkdownEnhanceOptions {
   imgSize?: boolean;
 
   /**
+   * Whether to enable obsidian image size mark support
+   *
+   * 是否启用 obsidian 图片大小标记支持。
+   *
+   * @default false
+   */
+  obsidianImgSize?: boolean;
+
+  /**
    * Whether to enable mark format support
    *
    * 是否启用标注支持。

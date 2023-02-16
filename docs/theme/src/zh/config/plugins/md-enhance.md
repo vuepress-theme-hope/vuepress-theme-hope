@@ -170,6 +170,13 @@ interface ImageMarkOptions {
 
 是否启用图片尺寸支持。
 
+### obsidianImgSize
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否启用 obsidian 图片尺寸支持。
+
 ### tasklist
 
 - 类型: `TaskListOptions | boolean`
