@@ -51,6 +51,8 @@ export const mermaid: PluginSimple = (md) => {
       return mermaidHackRender("C4Context", content, index);
     if (info.trim() === "mindmap")
       return mermaidHackRender("mindmap", content, index);
+    if (info.trim() === "timeline")
+      return mermaidHackRender("timeline", content, index);
 
     return fence!(...args);
   };

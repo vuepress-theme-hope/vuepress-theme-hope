@@ -31,10 +31,7 @@ export default [
     external: ["flowchart.ts"],
   }),
   ...rollupTypescript("client/components/Mermaid", {
-    external: [
-      "@mermaid-js/mermaid-mindmap/dist/mermaid-mindmap.esm.min.mjs",
-      "mermaid/dist/mermaid.esm.min.mjs",
-    ],
+    external: ["mermaid/dist/mermaid.esm.min.mjs"],
   }),
   ...rollupTypescript("client/components/Playground"),
   ...rollupTypescript("client/components/VuePlayground", {

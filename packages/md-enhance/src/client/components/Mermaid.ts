@@ -4,7 +4,6 @@ import {
   computed,
   defineComponent,
   h,
-  nextTick,
   onMounted,
   onUnmounted,
   ref,
@@ -102,27 +101,8 @@ export default defineComponent({
         import(
           /* webpackChunkName: "mermaid" */ "mermaid/dist/mermaid.esm.min.mjs"
         ),
-        import(
-          /* webpackChunkName: "mermaid" */ "@mermaid-js/mermaid-mindmap/dist/mermaid-mindmap.esm.min.mjs"
-        ),
         new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
-      ]).then(async ([{ default: mermaid }, { default: mindmap }]) => {
-        try {
-          await mermaid.registerExternalDiagrams([mindmap]);
-        } catch (err) {
-          // mermaid does not provide a api to get registered diagrams
-        }
-
-        // generate a invisible container
-        const container = document.createElement("div");
-
-        container.style.position = "relative";
-        container.style.top = "-9999px";
-
-        const renderCallback = (code: string): void => {
-          svgCode.value = code;
-          document.body.removeChild(container);
-        };
+      ]).then(async ([{ default: mermaid }]) => {
         const chartOptions = { useMaxWidth: false };
 
         mermaid.initialize({
@@ -140,19 +120,13 @@ export default defineComponent({
           startOnLoad: false,
         });
 
-        // clear SVG Code
-        svgCode.value = "";
+        const result = await mermaid.renderAsync(props.id, code.value);
 
-        document.body.appendChild(container);
-
-        // make sure dom is refreshed
-        await nextTick();
-
-        await mermaid.renderAsync(
-          props.id,
-          code.value,
-          renderCallback,
-          container
+        // this is a workaround to inject svg contents with innerHTML
+        // @see https://stackoverflow.com/questions/59936358/trying-to-add-svg-data-with-innerhtml
+        svgCode.value = result.replace(
+          ' xmlns="http://www.w3.org/2000/svg"',
+          ""
         );
       });
 
