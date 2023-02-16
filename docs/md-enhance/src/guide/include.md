@@ -332,7 +332,7 @@ interface IncludeOptions {
    *
    * @default (path) => path
    */
-  getPath?: (path: string) => string;
+  resolvePath?: (path: string, cwd: string | null) => string;
 
   /**
    * Whether deep include files in included Markdown files
