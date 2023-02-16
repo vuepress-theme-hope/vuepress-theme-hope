@@ -332,7 +332,7 @@ interface IncludeOptions {
    *
    * @default (path) => path
    */
-  getPath?: (path: string) => string;
+  resolvePath?: (path: string, cwd: string) => string;
 
   /**
    * 是否深度导入包含的 Markdown 文件
@@ -361,7 +361,7 @@ export default {
     mdEnhancePlugin({
       // 添加 `@src` 别名支持
       include: {
-        getPath: (file) => {
+        resolvePath: (file) => {
           if (file.startsWith("@src"))
             return file.replace("@src", path.resolve(__dirname, ".."));
 
@@ -387,7 +387,7 @@ export default {
     mdEnhancePlugin({
       // 添加 `@src` 别名支持
       include: {
-        getPath: (file) => {
+        resolvePath: (file) => {
           if (file.startsWith("@src"))
             return file.replace("@src", path.resolve(__dirname, ".."));
 

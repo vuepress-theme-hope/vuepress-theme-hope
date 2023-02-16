@@ -332,7 +332,7 @@ interface IncludeOptions {
    *
    * @default (path) => path
    */
-  getPath?: (path: string) => string;
+  resolvePath?: (path: string, cwd: string) => string;
 
   /**
    * Whether deep include files in included Markdown files
@@ -361,7 +361,7 @@ export default {
     mdEnhancePlugin({
       // Add `@src` alias support
       include: {
-        getPath: (file) => {
+        resolvePath: (file) => {
           if (file.startsWith("@src"))
             return file.replace("@src", path.resolve(__dirname, ".."));
 
@@ -387,7 +387,7 @@ export default {
     mdEnhancePlugin({
       // Add `@src` alias support
       include: {
-        getPath: (file) => {
+        resolvePath: (file) => {
           if (file.startsWith("@src"))
             return file.replace("@src", path.resolve(__dirname, ".."));
 
