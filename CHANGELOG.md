@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.176](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.175...v2.0.0-beta.176) (2023-02-17)
+
+### Features
+
+- add no-view attr support ([772c5d1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/772c5d1bb73b7bf725e8d7eb132f87bd3c0c6297))
+- add no-view to img ([d5b0725](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d5b0725175207ec7790df6f89f176ab1096bb737))
+- **md-enhance:** add obsidianImgSize option ([d0c2512](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d0c25121dd5f9fe9a199cf52d14f7924135c0183))
+- **search-pro:** improve style ([29c69d8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/29c69d8b39f08c3a0f3914d57e420e6ddc134469))
+- **theme:** improve dropdown link ([7f17033](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7f170330e2077d14f4cdc38d8bf1586b814e8bd6))
+- **theme:** improve scrollbar style ([2038f22](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2038f22d60e45746dad812536b2e763ab9ef2a68))
+
+### Bug Fixes
+
+- **md-enhance:** bump mathjax plugin, close [#2790](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2790) ([0f0aeef](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0f0aeef363585ad2e9b8fd2388b9ad675d678c64))
+- **theme:** fix mobile footer ([44a838f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/44a838fd2852ce4d12564d975e3da65ee0d12583))
+
 ## [2.0.0-beta.175](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.174...v2.0.0-beta.175) (2023-02-16)
 
 ### Features
