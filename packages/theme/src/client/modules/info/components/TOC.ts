@@ -78,7 +78,7 @@ export default defineComponent({
     },
   },
 
-  setup(props) {
+  setup(props, { slots }) {
     const route = useRoute();
     const page = usePageData();
     const metaLocale = useMetaLocale();
@@ -140,11 +140,13 @@ export default defineComponent({
       return tocHeaders
         ? h("div", { class: "toc-place-holder" }, [
             h("aside", { id: "toc" }, [
+              slots["before"]?.(),
               h("div", { class: "toc-header" }, [
                 metaLocale.value.toc,
                 h(PrintButton),
               ]),
-              h("div", { class: "toc-wrapper", ref: toc }, [tocHeaders]),
+              h("div", { class: "toc-wrapper", ref: toc }, tocHeaders),
+              slots["after"]?.(),
             ]),
           ])
         : null;

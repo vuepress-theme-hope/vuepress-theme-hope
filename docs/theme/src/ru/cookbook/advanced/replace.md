@@ -288,7 +288,7 @@ import HopeHomePage from "vuepress-theme-hope/components/HomePage.js";
 - `CommonWrapper`: `default`, `navbarStartBefore`, `navbarStartAfter`, `navbarCenterBefore`, `navbarCenterAfter`, `navbarEndBegin`, `navbarEndAfter`, `navScreenTop`, `navScreenBottom`, `sidebar`, `sidebarTop`, `sidebarBottom`
 - `HeroInfo`: `heroImage`, `heroInfo`
 - `HomePage`: `top`, `center`, `bottom`
-- `NormalPage`: `top`, `contentBefore`, `contentAfter`, `bottom`
+- `NormalPage`: `top`, `contentBefore`, `contentAfter`, `bottom`, `tocBefore`, `tocAfter`
 
 **Панель навигации**:
 
@@ -302,6 +302,10 @@ import HopeHomePage from "vuepress-theme-hope/components/HomePage.js";
 **Боковая панель**:
 
 - `Sidebar`: `top`, `default`, `bottom`
+
+**TOC**:
+
+- `TOC`: `before`, `after`
 
 ::: tip
 
