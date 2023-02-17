@@ -34,15 +34,13 @@
     padding: 0 !important;
   }
 
+  @media (max-width: hope-config.$mobile) {
+    display: block;
+  }
+
   .no-sidebar &,
   .sidebar-collapsed & {
     padding-inline-start: 2rem;
-  }
-
-  > div {
-    @media (max-width: hope-config.$mobile) {
-      width: 100%;
-    }
   }
 
   .footer {
