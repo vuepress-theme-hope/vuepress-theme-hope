@@ -133,7 +133,7 @@ export const rollupTypescript = (
               : []),
             ...dtsExternal,
           ],
-        } satisfies RollupOptions,
+        } as RollupOptions,
       ]
     : []),
 ];
