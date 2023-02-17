@@ -142,6 +142,8 @@ export default defineUserConfig({
 - [使用说明](https://fontawesome.com/docs/web/add-icons/how-to)
 - [图标列表](https://fontawesome.com/icons)
 
+:::
+
 ### 生成自己的 Iconfont 资源
 
 [Iconfont](https://iconfont.cn) 是阿里妈妈 MUX 倾力打造的矢量图标管理、交流平台。
