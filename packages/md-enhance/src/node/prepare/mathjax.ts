@@ -1,7 +1,4 @@
-import {
-  type MathjaxInstance,
-  generateMathjaxStyle,
-} from "@mdit/plugin-mathjax";
+import { type MathjaxInstance } from "@mdit/plugin-mathjax";
 import { type App } from "@vuepress/core";
 
 // prevent mathjax breaking mobile layout
@@ -17,6 +14,6 @@ export const prepareMathjaxStyleFile = async (
 ): Promise<void> => {
   await app.writeTemp(
     "md-enhance/mathjax.css",
-    `${generateMathjaxStyle(mathjaxInstance)}\n${style}`
+    `${mathjaxInstance.outputStyle()}\n${style}`
   );
 };
