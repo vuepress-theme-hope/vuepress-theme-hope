@@ -53,9 +53,8 @@
   display: flex;
   flex-direction: column;
 
-  width: 92%;
-  max-width: 56em;
-  padding: 0.75rem;
+  width: calc(100% - 6rem);
+  max-width: 50em;
   border-radius: 10px;
 
   background: var(--c-bg, #fff);
@@ -68,7 +67,7 @@
     animation: 0.25s pwa-mobile;
   }
 
-  @media (max-width: hope-config.$pad) {
+  @media (max-width: hope-config.$tablet) {
     width: calc(100% - 1.5rem);
     max-width: unset;
     height: calc(100% - 1.5rem);
@@ -78,21 +77,25 @@
 .search-pro-box {
   position: relative;
   display: flex;
+  margin: 1rem;
 
-  .search-icon {
+  label {
     position: absolute;
     top: calc(50% - 0.75rem);
 
     // NOTE: Compatible with Android Wechat
     // inset-inline-start: 0.5rem;
     left: 0.5rem;
-
-    width: 1.5rem;
-    height: 1.5rem;
+    color: var(--c-brand, #3eaf7c);
 
     #{hope-config.$rtl-selector} & {
       right: 0.5rem;
       left: unset;
+    }
+
+    .search-icon {
+      width: 1.5rem;
+      height: 1.5rem;
     }
   }
 
@@ -109,15 +112,43 @@
     padding-inline-start: 2.5rem;
     padding-inline-end: 1rem;
     border: 0;
-    border: 1px solid var(--c-brand, #3eaf7c);
+    border: 2px solid var(--c-brand, #3eaf7c);
     border-radius: 8px;
 
-    background-color: var(--c-bg-light, #f3f4f5);
     color: var(--c-text, #2c3e50);
     outline: none;
 
     font-size: 1.25rem;
-    line-height: 2;
+    line-height: 2.5;
+  }
+
+  .clear-button {
+    @include reset.button;
+    position: absolute;
+    top: calc(50% - 0.75rem);
+
+    // NOTE: Compatible with Android Wechat
+    // inset-inline-end: 0.5rem;
+    right: 0.5rem;
+
+    padding: 0;
+
+    color: var(--dark-grey);
+
+    #{hope-config.$rtl-selector} & {
+      right: 0.5rem;
+      left: unset;
+    }
+
+    &:hover {
+      border-radius: 50%;
+      background-color: rgb(0 0 0 / 10%);
+    }
+
+    .close-icon {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
   }
 
   .close-button {
@@ -125,7 +156,7 @@
     display: none;
     color: var(--grey3);
 
-    @media (max-width: hope-config.$pad) {
+    @media (max-width: hope-config.$tablet) {
       display: block;
     }
   }
@@ -137,10 +168,10 @@
   overflow-y: auto;
 
   min-height: 40vh;
-  max-height: calc(90vh - 8rem);
-  margin: 0.5rem 0;
+  max-height: calc(80vh - 10rem);
+  padding: 0 1rem;
 
-  @media (max-width: hope-config.$pad) {
+  @media (max-width: hope-config.$tablet) {
     min-height: unset;
     max-height: unset;
   }
@@ -160,6 +191,9 @@
 }
 
 .search-pro-hints {
+  margin-top: 1rem;
+  padding: 0.75rem 0.5rem;
+  box-shadow: 0 -1px 4px 0 var(--card-shadow);
   line-height: 1;
 }
 
