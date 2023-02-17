@@ -640,6 +640,8 @@ All notable changes to this project will be documented in this file. See [Conven
 - **deps:** update dependency axios to v1.2.1 ([#2491](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2491)) ([275bb68](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/275bb68c6d7e3369c6ffa2ca39b223d782d51a1c))
 - **md-enhance:** fix imageTitle ([3e003a6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3e003a6c3df64e727512315eb7fef21a19ac9ac4))
 
+<!-- #endregion recent-beta -->
+
 ## [2.0.0-beta.133](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.132...v2.0.0-beta.133) (2022-12-04)
 
 ### Features
@@ -879,8 +881,6 @@ All notable changes to this project will be documented in this file. See [Conven
 - **md-enhance:** fix loading icon ([6542578](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/65425782cbcfd1efabd73281871ef49df08ba850))
 - **md-enhance:** fix mermaid issue in dev mode ([26b57c0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/26b57c09f2f666f3e8ed7e8c9b58b5e144f6ef58))
 - **md-enhance:** fix type issue ([4b32b67](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4b32b67ede8c64a0fd6be8aedc4ab0b08ede3e8d))
-
-<!-- #endregion recent-beta -->
 
 ## [2.0.0-beta.121](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.120...v2.0.0-beta.121) (2022-11-05)
 
