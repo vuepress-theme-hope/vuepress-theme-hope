@@ -18,6 +18,8 @@
 }
 
 ::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
   background: var(--theme-color);
 
   &:active {
