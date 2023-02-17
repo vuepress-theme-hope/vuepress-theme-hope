@@ -1,5 +1,5 @@
 .search-pro-result {
-  scrollbar-color: var(--c-brand, #3aa675) var(--c-border, #eaecef);
+  scrollbar-color: var(--vp-tc) var(--vp-brc);
   scrollbar-width: thin;
 
   @media (max-width: hope-config.$mobile) {
@@ -20,10 +20,10 @@
   &::-webkit-scrollbar-thumb {
     -webkit-border-radius: 6px;
     border-radius: 6px;
-    background: var(--c-brand, #3aa675);
+    background: var(--vp-tc);
 
     &:active {
-      background: var(--c-brand-light, #4abf8a);
+      background: var(--vp-tcl);
     }
   }
 }
@@ -47,8 +47,8 @@
   margin-bottom: 0.25rem;
   padding: 4px;
 
-  background: var(--c-bg, #fff);
-  color: var(--c-brand, #3aa675);
+  background: var(--vp-bg);
+  color: var(--vp-tc);
 
   font-weight: 600;
   font-size: 0.85em;
@@ -56,7 +56,7 @@
   text-indent: 0.5em;
 
   .search-pro-result-item.active & {
-    color: var(--c-brand, #3aa675);
+    color: var(--vp-tc);
   }
 }
 
@@ -68,7 +68,7 @@
   margin-inline-start: -0.5rem;
   padding: 0.5rem;
 
-  color: var(--c-brand, #3aa675);
+  color: var(--vp-tc);
 }
 
 .search-pro-close-icon {
@@ -78,7 +78,7 @@
   padding: 0;
   border-radius: 50%;
 
-  color: var(--c-brand, #3aa675);
+  color: var(--vp-tc);
 
   svg {
     width: 1.5rem;
@@ -122,12 +122,12 @@
   word-wrap: break-word;
 
   strong {
-    color: var(--c-brand, #3aa675);
+    color: var(--vp-tc);
   }
 
   &:hover,
   &.active {
-    background-color: var(--c-brand-light, #4abf8a);
+    background-color: var(--vp-tcl);
     color: var(--white);
     cursor: pointer;
 

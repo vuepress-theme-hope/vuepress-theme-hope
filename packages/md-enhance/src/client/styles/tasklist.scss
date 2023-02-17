@@ -26,11 +26,10 @@ input[type="checkbox"].task-list-item-checkbox {
 
     visibility: visible;
 
-    transition: background var(--t-color, 0.3s ease),
-      border-color var(--t-color, 0.3s ease);
+    transition: background var(--vp-ct), border-color var(--vp-ct);
 
     @media print {
-      border-color: var(--c-text, #2c3e50);
+      border-color: var(--vp-c);
     }
 
     #{hope-config.$dark-selector} & {
@@ -42,17 +41,17 @@ input[type="checkbox"].task-list-item-checkbox {
   &:checked {
     &::after {
       content: "";
-      border-color: var(--c-brand, #3eaf7c);
-      background: var(--c-brand, #3eaf7c);
+      border-color: var(--vp-tc);
+      background: var(--vp-tc);
 
       @media print {
-        border-color: var(--c-text, #2c3e50);
+        border-color: var(--vp-c);
         background: transparent;
       }
 
       #{hope-config.$dark-selector} & {
-        border-color: var(--c-brand, #3eaf7c);
-        background: var(--c-brand, #3eaf7c);
+        border-color: var(--vp-tc);
+        background: var(--vp-tc);
       }
     }
 
@@ -75,7 +74,7 @@ input[type="checkbox"].task-list-item-checkbox {
       transform: rotate(45deg);
 
       @media print {
-        border-color: var(--c-text, #2c3e50);
+        border-color: var(--vp-c);
       }
 
       #{hope-config.$rtl-selector} & {

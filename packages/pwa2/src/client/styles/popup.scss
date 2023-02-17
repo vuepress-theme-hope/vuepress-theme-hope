@@ -37,8 +37,8 @@
   border-width: 0;
   border-radius: 0.5rem;
 
-  background: var(--c-bg, #fff);
-  color: var(--c-text, #2c3e50);
+  background: var(--vp-bg);
+  color: var(--vp-c);
   box-shadow: 0 2px 12px 0 var(--card-shadow);
 
   font-size: 1rem;
@@ -64,7 +64,7 @@
     margin-left: 0.4rem;
     border-radius: 0.75rem;
 
-    background: var(--c-brand, #3eaf7c);
+    background: var(--vp-tc);
 
     svg {
       width: 1.2rem;

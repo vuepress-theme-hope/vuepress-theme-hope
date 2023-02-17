@@ -11,7 +11,7 @@
   width: 2em;
   height: 2em;
   color: #fff;
-  transition: transform var(--t-transform, 0.3s ease);
+  transition: transform var(--vp-tt);
 
   &.plain {
     width: 1.5em;
@@ -19,7 +19,7 @@
     color: var(--dark-grey);
 
     :hover {
-      color: var(--c-brand, #3eaf7c);
+      color: var(--vp-tc);
     }
   }
 

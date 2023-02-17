@@ -54,7 +54,7 @@
   width: var(--notice-width);
   border-radius: 8px;
 
-  background: var(--c-bg, #fff);
+  background: var(--vp-bg);
   box-shadow: 0 2px 6px 0 var(--card-shadow);
 
   @media print {
@@ -82,7 +82,7 @@
   margin: 0;
   padding: 8px 12px;
 
-  background: var(--c-brand, #3eaf7c);
+  background: var(--vp-tc);
   color: var(--white);
 
   font-weight: 500;
@@ -133,20 +133,20 @@
   border-radius: 8px;
 
   background-color: var(--c-bg-lighter, #eaecef);
-  color: var(--c-text, #2c3e50);
+  color: var(--vp-c);
 
   cursor: pointer;
 
   &:hover {
-    background-color: var(--c-bg-light, #f3f4f5);
+    background-color: var(--vp-bgl);
   }
 
   &.primary {
-    background-color: var(--c-brand, #3eaf7c);
+    background-color: var(--vp-tc);
     color: var(--white);
 
     &:hover {
-      background-color: var(--c-brand-light, #4abf8a);
+      background-color: var(--vp-tcl);
     }
   }
 }

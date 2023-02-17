@@ -57,10 +57,10 @@
   max-width: 50em;
   border-radius: 10px;
 
-  background: var(--c-bg, #fff);
+  background: var(--vp-bg);
   box-shadow: 2px 2px 10px 0 var(--card-shadow);
 
-  transition: background var(--t-color, 0.3s ease);
+  transition: background var(--vp-ct);
   animation: 0.15s pwa-opened;
 
   @media (max-width: hope-config.$laptop) {
@@ -86,7 +86,7 @@
     // NOTE: Compatible with Android Wechat
     // inset-inline-start: 0.5rem;
     left: 0.5rem;
-    color: var(--c-brand, #3eaf7c);
+    color: var(--vp-tc);
 
     #{hope-config.$rtl-selector} & {
       right: 0.5rem;
@@ -112,10 +112,10 @@
     padding-inline-start: 2.5rem;
     padding-inline-end: 1rem;
     border: 0;
-    border: 2px solid var(--c-brand, #3eaf7c);
+    border: 2px solid var(--vp-tc);
     border-radius: 8px;
 
-    color: var(--c-text, #2c3e50);
+    color: var(--vp-c);
     outline: none;
 
     font-size: 1.25rem;
@@ -207,7 +207,7 @@
     height: 15px;
     margin: 0 0.5rem;
     padding: 2px;
-    border: 1px solid var(--c-border, #eaecef);
+    border: 1px solid var(--vp-brc);
     border-radius: 4px;
 
     box-shadow: 1px 1px 4px 0 var(--card-shadow);

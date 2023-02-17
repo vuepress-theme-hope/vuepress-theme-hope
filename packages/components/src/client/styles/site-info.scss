@@ -19,7 +19,7 @@
   }
 
   &:hover {
-    background: var(--c-bg-light);
+    background: var(--vp-bgl);
     box-shadow: 1px 4px 16px var(--card-shadow);
   }
 
@@ -68,7 +68,7 @@
     bottom: 0;
     left: 0;
 
-    background-color: var(--c-bg, #fff);
+    background-color: var(--vp-bg);
 
     opacity: 0.75;
   }
