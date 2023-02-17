@@ -128,6 +128,7 @@ export default defineComponent({
                   class: "site-info-logo",
                   src: props.logo,
                   loading: "lazy",
+                  "no-view": "",
                 })
               : null,
             h("div", { class: "site-info-name" }, props.name),

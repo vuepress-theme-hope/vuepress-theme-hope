@@ -127,6 +127,7 @@ export default defineComponent({
             ? h("img", {
                 class: "audio-poster",
                 src: getLink(props.poster),
+                "no-view": "",
               })
             : null,
           h("div", { class: "audio-info" }, [
