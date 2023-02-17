@@ -10,7 +10,7 @@ export const getPhotoSwipePlugin = (
   if (options === false) return null;
 
   return photoSwipePlugin({
-    selector: ".theme-hope-content :not(a) > img",
+    selector: ".theme-hope-content :not(a) > img:not(no-view)",
     ...(options === true ? {} : options),
   });
 };

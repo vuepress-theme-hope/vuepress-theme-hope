@@ -22,7 +22,8 @@ export const lightgalleryPlugin =
 
       define: (): Record<string, unknown> => ({
         IMAGE_SELECTOR:
-          options.selector || ".theme-default-content :not(a) > img",
+          options.selector ||
+          ".theme-default-content :not(a) > img:not(no-view)",
         LIGHT_GALLERY_DELAY: options.delay || 800,
         LIGHT_GALLERY_OPTIONS: options.options || {},
         LIGHT_GALLERY_AUTOPLAY: plugins.includes("autoplay"),
