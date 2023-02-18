@@ -1414,7 +1414,7 @@ importers:
         version: link:../shared
     devDependencies:
       '@types/qrcode':
-        specifier: ^1.5.0
+        specifier: 1.5.0
         version: 1.5.0
       '@vuepress/bundler-vite':
         specifier: 2.0.0-beta.60
@@ -1901,7 +1901,7 @@ importers:
         version: link:../shared
     devDependencies:
       '@types/body-scroll-lock':
-        specifier: ^3.1.0
+        specifier: 3.1.0
         version: 3.1.0
       '@vuepress/core':
         specifier: 2.0.0-beta.60
@@ -4685,7 +4685,7 @@ packages:
   /@types/sax@1.2.4:
     resolution: {integrity: sha512-pSAff4IAxJjfAXUG6tFkO7dsSbTmf8CtUpfhhZ5VhkRpC4628tJhh3+V6H1E+/Gs9piSzYKT5yzHO5M4GG9jkw==}
     dependencies:
-      '@types/node': 17.0.45
+      '@types/node': 18.13.0
     dev: false
 
   /@types/semver@7.3.13:
