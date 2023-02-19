@@ -8,6 +8,7 @@ export interface SidebarFileInfo {
 
   title: string;
   order: number | null;
+  permalink?: string | null;
 
   frontmatter: ThemeNormalPageFrontmatter;
   pageData: ThemePageData;
