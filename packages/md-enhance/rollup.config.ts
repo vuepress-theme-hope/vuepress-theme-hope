@@ -17,6 +17,7 @@ export default [
         "components/ChartJS",
         "components/CodeDemo",
         "components/CodeTabs",
+        "components/ECharts",
         "components/FlowChart",
         "components/Mermaid",
         "components/Playground",
