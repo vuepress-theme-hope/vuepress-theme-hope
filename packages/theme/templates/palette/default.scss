@@ -1,0 +1,26 @@
+/** ensure default theme color */
+
+// background
+$vp-bg: "var(--c-bg, #fff)";
+
+// background light
+$vp-bgl: "var(--c-bg-light, #f3f4f5)";
+
+// color
+$vp-c: "var(--c-text, #2c3e50)";
+
+// color lighter
+$vp-clt: "var(--c-text-lighter, #3a5169)";
+
+// border-color
+$vp-brc: "var(--c-border, #eaecef)";
+
+// theme color
+$vp-tc: "var(--c-brand, #3eaf7c)";
+$vp-tcl: "var(--c-brand-light, #4abf8a)";
+
+// color transition
+$vp-ct: "var(--t-color, 0.3s ease)";
+
+// transform transition
+$vp-tt: "var(--t-transform, 0.3s ease)";
