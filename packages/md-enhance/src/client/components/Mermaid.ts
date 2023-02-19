@@ -1,3 +1,4 @@
+import { useMutationObserver } from "@vueuse/core";
 import { type MermaidConfig } from "mermaid";
 import {
   type VNode,
@@ -6,7 +7,6 @@ import {
   h,
   nextTick,
   onMounted,
-  onUnmounted,
   ref,
   watch,
 } from "vue";
@@ -157,7 +157,7 @@ export default defineComponent({
       });
 
     onMounted(() => {
-      const html = document.querySelector("html")!;
+      const html = document.documentElement;
 
       const getDarkmodeStatus = (): boolean =>
         html.classList.contains("dark") ||
@@ -169,20 +169,18 @@ export default defineComponent({
       void renderMermaid();
 
       // watch darkmode change
-      const observer = new MutationObserver(() => {
-        isDarkmode.value = getDarkmodeStatus();
-      });
-
-      observer.observe(html, {
-        attributeFilter: ["class", "data-theme"],
-        attributes: true,
-      });
+      useMutationObserver(
+        html,
+        () => {
+          isDarkmode.value = getDarkmodeStatus();
+        },
+        {
+          attributeFilter: ["class", "data-theme"],
+          attributes: true,
+        }
+      );
 
       watch(isDarkmode, () => renderMermaid());
-
-      onUnmounted(() => {
-        observer.disconnect();
-      });
     });
 
     return (): VNode =>

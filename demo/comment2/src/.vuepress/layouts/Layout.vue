@@ -12,7 +12,7 @@ import ParentLayout from "@vuepress/theme-default/layouts/Layout.vue";
 const isDarkMode = ref(false);
 
 onMounted(() => {
-  const html = document.querySelector("html") as HTMLElement;
+  const html = document.documentElement;
 
   isDarkMode.value = html.classList.contains("dark");
 

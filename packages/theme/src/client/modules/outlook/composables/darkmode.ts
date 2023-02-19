@@ -92,11 +92,11 @@ export const injectDarkmode = (app: App): void => {
 export const setupDarkmode = (): void => {
   const { isDarkmode } = useDarkmode();
 
-  const updateDOM = (isDark = isDarkmode.value): void => {
-    const html = window?.document.querySelector("html");
-
-    html?.setAttribute("data-theme", isDark ? "dark" : "light");
-  };
+  const updateDOM = (isDark = isDarkmode.value): void =>
+    document.documentElement.setAttribute(
+      "data-theme",
+      isDark ? "dark" : "light"
+    );
 
   onMounted(() => {
     watch(isDarkmode, updateDOM, { immediate: true });

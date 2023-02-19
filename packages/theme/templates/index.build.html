@@ -27,7 +27,7 @@
         window.matchMedia("(prefers-color-scheme: dark)").matches;
 
       if (userMode === "dark" || (userMode !== "light" && systemDarkMode)) {
-        document.querySelector("html").setAttribute("data-theme", "dark");
+        document.documentElement.setAttribute("data-theme", "dark");
       }
     </script>
     <!--vuepress-ssr-styles-->
