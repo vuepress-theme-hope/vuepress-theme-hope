@@ -9,7 +9,12 @@ import { shebangPlugin } from "./shebang.js";
 
 const isProduction = process.env["NODE_ENV"] === "production";
 
-export interface RollupTypescriptOptions {
+export interface FileInfo {
+  base: string;
+  files: string[];
+}
+
+export interface BundleOptions {
   dts?: boolean;
   external?: (RegExp | string)[];
   dtsExternal?: (RegExp | string)[];
@@ -20,25 +25,39 @@ export interface RollupTypescriptOptions {
   preserveShebang?: boolean;
 }
 
-export const rollupTypescript = (
-  filePath: string,
+export const bundle = (
+  filePath: string | FileInfo,
   {
-    dts: enableDts = true,
+    dts: enableDts = typeof filePath === "object"
+      ? !filePath.base.startsWith("cli/") && filePath.base !== "cli"
+      : !filePath.startsWith("cli/"),
     external = [],
     dtsExternal = [],
     resolve = false,
     copy: copyOptions = [],
     output = {},
-    inlineDynamicImports = true,
-    preserveShebang = false,
-  }: RollupTypescriptOptions = {}
+    inlineDynamicImports = typeof filePath !== "object",
+    preserveShebang = typeof filePath === "object"
+      ? filePath.base.startsWith("cli")
+      : filePath.startsWith("cli/"),
+  }: BundleOptions = {}
 ): RollupOptions[] => [
   {
-    input: `./src/${filePath}.ts`,
+    input:
+      typeof filePath === "object"
+        ? Object.fromEntries(
+            filePath.files.map((item) => [
+              item,
+              `./src/${filePath.base}/${item}.ts`,
+            ])
+          )
+        : `./src/${filePath}.ts`,
 
     output: [
       {
-        file: `./lib/${filePath}.js`,
+        ...(typeof filePath === "object"
+          ? { dir: `./lib/${filePath.base}`, entryFileNames: "[name].js" }
+          : { file: `./lib/${filePath}.js` }),
         format: "esm",
         sourcemap: true,
         exports: "named",
@@ -77,7 +96,11 @@ export const rollupTypescript = (
     ],
 
     external: [
-      ...(filePath.startsWith("client/")
+      ...((
+        typeof filePath === "object"
+          ? filePath.base.startsWith("client")
+          : filePath.startsWith("client/")
+      )
         ? [
             /^@temp/,
             "@vueuse/core",
@@ -88,11 +111,19 @@ export const rollupTypescript = (
             "vuepress-shared/client",
             /\.s?css$/,
           ]
-        : filePath.startsWith("node/")
+        : (
+            typeof filePath === "object"
+              ? filePath.base.startsWith("node") ||
+                filePath.base.startsWith("cli")
+              : filePath.startsWith("node/") || filePath.startsWith("cli/")
+          )
         ? [
+            /^node:/,
             "@vuepress/core",
             "@vuepress/shared",
+            /^@vuepress\/plugin-/,
             "@vuepress/utils",
+            /^vuepress-plugin-/,
             "vuepress-shared/node",
           ]
         : []),
@@ -116,8 +147,27 @@ export const rollupTypescript = (
   ...(enableDts
     ? [
         {
-          input: `./src/${filePath}.ts`,
-          output: [{ file: `./lib/${filePath}.d.ts`, format: "esm" }],
+          input:
+            typeof filePath === "object"
+              ? Object.fromEntries(
+                  filePath.files.map((item) => [
+                    item,
+                    `./src/${filePath.base}/${item}.ts`,
+                  ])
+                )
+              : `./src/${filePath}.ts`,
+          output: [
+            {
+              ...(typeof filePath === "object"
+                ? {
+                    dir: `./lib/${filePath.base}`,
+                    entryFileNames: "[name].d.ts",
+                  }
+                : { file: `./lib/${filePath}.d.ts` }),
+
+              format: "esm",
+            },
+          ],
           plugins: [
             dts({
               compilerOptions: {
@@ -126,10 +176,18 @@ export const rollupTypescript = (
             }),
           ],
           external: [
-            ...(filePath.startsWith("client/")
+            ...((
+              typeof filePath === "object"
+                ? filePath.base.startsWith("client")
+                : filePath.startsWith("client/")
+            )
               ? [/^@temp/, "vuepress-shared/client", /\.s?css$/]
-              : filePath.startsWith("node/")
-              ? ["vuepress-shared/node"]
+              : (
+                  typeof filePath === "object"
+                    ? filePath.base.startsWith("node")
+                    : filePath.startsWith("node/")
+                )
+              ? [/^node:/, "vuepress-shared/node"]
               : []),
             ...dtsExternal,
           ],

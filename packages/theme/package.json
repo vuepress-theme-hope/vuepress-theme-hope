@@ -54,7 +54,8 @@
     "templates"
   ],
   "scripts": {
-    "build": "pnpm build:ts && pnpm copy",
+    "build": "pnpm build:rollup && pnpm build:ts && pnpm copy",
+    "build:rollup": "rollup -c rollup.config.ts --configPlugin esbuild",
     "build:ts": "tsc -b tsconfig.release.json",
     "clean": "rimraf ./lib ./*.tsbuildinfo",
     "copy": "cpx \"src/client/**/*.{css,scss,jpg,vue}\" lib/client",

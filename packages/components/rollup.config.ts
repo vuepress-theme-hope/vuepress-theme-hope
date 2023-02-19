@@ -1,84 +1,47 @@
-import { rollupTypescript } from "../../scripts/rollup.js";
+import { bundle } from "../../scripts/rollup.js";
 
 export default [
-  ...rollupTypescript("node/index", {
-    external: ["vuepress-plugin-reading-time2", "vuepress-plugin-sass-palette"],
-    copy: [["client/styles", "client"]],
-  }),
-  ...rollupTypescript("client/compact/components/Catalog", {
-    copy: [["client/compact/styles", "client/compact"]],
-  }),
-  ...rollupTypescript("client/components/ArtPlayer", {
-    external: [
-      "artplayer",
-      "dashjs/dist/dash.all.min.js",
-      "hls.js/dist/hls.min.js",
-      "mpegts.js/dist/mpegts.js",
-    ],
-  }),
-  ...rollupTypescript("client/components/AudioPlayer", {
-    external: [
-      "plyr",
-      "dashjs/dist/dash.all.min.js",
-      "hls.js/dist/hls.min.js",
-      "mpegts.js/dist/mpegts.js",
-    ],
-  }),
-  ...rollupTypescript("client/components/Badge"),
-  ...rollupTypescript("client/components/BiliBili", {
-    external: [
-      "dashjs/dist/dash.all.min.js",
-      "hls.js/dist/hls.min.js",
-      "mpegts.js/dist/mpegts.js",
-    ],
-  }),
-  ...rollupTypescript("client/components/BackToTop"),
+  ...bundle("node/index"),
+  ...bundle(
+    {
+      base: "client",
+      files: [
+        "compact/components/Catalog",
+        "components/ArtPlayer",
+        "components/AudioPlayer",
+        "components/Badge",
+        "components/BiliBili",
+        "components/BackToTop",
+        "components/CodePen",
+        "components/FontIcon",
+        "components/Notice",
+        "components/PDF",
+        "components/Replit",
+        "components/Share",
+        "components/SiteInfo",
+        "components/StackBlitz",
+        "components/VideoPlayer",
+        "components/XiGua",
+        "components/YouTube",
+        "shared",
+        "vueuse",
+      ],
+    },
 
-  ...rollupTypescript("client/components/CodePen"),
-  ...rollupTypescript("client/components/FontIcon"),
-  ...rollupTypescript("client/components/Notice"),
-  ...rollupTypescript("client/components/PDF", {
-    external: [
-      "dashjs/dist/dash.all.min.js",
-      "hls.js/dist/hls.min.js",
-      "mpegts.js/dist/mpegts.js",
-    ],
-  }),
-  ...rollupTypescript("client/components/Replit"),
-  ...rollupTypescript("client/components/Share", {
-    external: [
-      "dashjs/dist/dash.all.min.js",
-      "hls.js/dist/hls.min.js",
-      "mpegts.js/dist/mpegts.js",
-      "qrcode",
-    ],
-  }),
-  ...rollupTypescript("client/components/SiteInfo"),
-  ...rollupTypescript("client/components/StackBlitz", {
-    external: ["@stackblitz/sdk"],
-  }),
-  ...rollupTypescript("client/components/VideoPlayer", {
-    external: [
-      "dashjs/dist/dash.all.min.js",
-      "hls.js/dist/hls.min.js",
-      "mpegts.js/dist/mpegts.js",
-      "plyr",
-    ],
-  }),
-  ...rollupTypescript("client/components/XiGua", {
-    external: [
-      "dashjs/dist/dash.all.min.js",
-      "hls.js/dist/hls.min.js",
-      "mpegts.js/dist/mpegts.js",
-    ],
-  }),
-  ...rollupTypescript("client/components/YouTube", {
-    external: [
-      "dashjs/dist/dash.all.min.js",
-      "hls.js/dist/hls.min.js",
-      "mpegts.js/dist/mpegts.js",
-    ],
-  }),
-  ...rollupTypescript("client/shared"),
-  ...rollupTypescript("client/vueuse"),
+    {
+      external: [
+        "@stackblitz/sdk",
+        "artplayer",
+        "dashjs/dist/dash.all.min.js",
+        "hls.js/dist/hls.min.js",
+        "mpegts.js/dist/mpegts.js",
+        "plyr",
+        "qrcode",
+      ],
+      copy: [
+        ["client/styles", "client"],
+        ["client/compact/styles", "client/compact"],
+      ],
+    }
+  ),
 ];

@@ -1,5 +1,5 @@
 import { bundle } from "../../scripts/rollup.js";
 
 export default bundle("node/index", {
-  external: ["gray-matter"],
+  external: ["bcrypt-ts/node", "chokidar"],
 });
