@@ -121,6 +121,16 @@ exports[`should generate structure info correctly > Should generate structure in
         "type": "file",
       },
       {
+        "filename": "permalink.md",
+        "path": "dir/permalink.md",
+        "type": "file",
+      },
+      {
+        "filename": "permalinkpattern.md",
+        "path": "dir/permalinkpattern.md",
+        "type": "file",
+      },
+      {
         "filename": "README.md",
         "path": "dir/README.md",
         "type": "file",
@@ -431,6 +441,16 @@ exports[`should generate structure info correctly > Should resolve structure in 
   {
     "filename": "file4.md",
     "path": "file4.md",
+    "type": "file",
+  },
+  {
+    "filename": "permalink.md",
+    "path": "permalink.md",
+    "type": "file",
+  },
+  {
+    "filename": "permalinkpattern.md",
+    "path": "permalinkpattern.md",
     "type": "file",
   },
   {
