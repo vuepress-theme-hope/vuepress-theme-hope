@@ -23,6 +23,7 @@ export default [
         "components/Playground",
         "components/Presentation",
         "components/Tabs",
+        "components/VuePlayground",
         "SlidePage",
         "reveal/index",
       ],
