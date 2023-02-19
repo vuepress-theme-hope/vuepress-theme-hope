@@ -2,7 +2,7 @@ import { bundle } from "../../scripts/rollup.js";
 
 export default [
   ...bundle("node/index", {
-    external: ["cheerio", "chokidar", "vuepress-plugin-sass-palette"],
+    external: ["cheerio", "chokidar"],
     dtsExternal: ["vuepress-shared"],
   }),
   ...bundle(

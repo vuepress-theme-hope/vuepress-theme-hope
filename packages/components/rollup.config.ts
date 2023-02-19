@@ -1,9 +1,7 @@
 import { bundle } from "../../scripts/rollup.js";
 
 export default [
-  ...bundle("node/index", {
-    external: ["vuepress-plugin-reading-time2", "vuepress-plugin-sass-palette"],
-  }),
+  ...bundle("node/index"),
   ...bundle(
     {
       base: "client",

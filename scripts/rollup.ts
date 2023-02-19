@@ -118,9 +118,12 @@ export const bundle = (
               : filePath.startsWith("node/") || filePath.startsWith("cli/")
           )
         ? [
+            /^node:/,
             "@vuepress/core",
             "@vuepress/shared",
+            /^@vuepress\/plugin-/,
             "@vuepress/utils",
+            /^vuepress-plugin-/,
             "vuepress-shared/node",
           ]
         : []),
@@ -184,7 +187,7 @@ export const bundle = (
                     ? filePath.base.startsWith("node")
                     : filePath.startsWith("node/")
                 )
-              ? ["vuepress-shared/node"]
+              ? [/^node:/, "vuepress-shared/node"]
               : []),
             ...dtsExternal,
           ],

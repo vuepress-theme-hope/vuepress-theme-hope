@@ -2,7 +2,7 @@ import { bundle } from "../../scripts/rollup.js";
 
 export default [
   ...bundle("node/index", {
-    external: ["workbox-build", "vuepress-plugin-sass-palette"],
+    external: ["workbox-build"],
     dtsExternal: ["vuepress-shared"],
   }),
   ...bundle(

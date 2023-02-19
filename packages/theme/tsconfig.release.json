@@ -10,5 +10,5 @@
       "@theme-hope/*": ["./src/client/*.js"]
     }
   },
-  "include": ["./src", "./src/*.d.ts"]
+  "include": ["./src/client", "./src/shared", "./src/*.d.ts"]
 }

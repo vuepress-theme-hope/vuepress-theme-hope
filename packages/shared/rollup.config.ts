@@ -3,16 +3,7 @@ import { bundle } from "../../scripts/rollup.js";
 export default [
   ...bundle("node/index", {
     resolve: true,
-    external: [
-      "node:http",
-      "@vuepress/plugin-git",
-      "cheerio",
-      "execa",
-      "gray-matter",
-      "fflate/node",
-      "striptags",
-    ],
-    dtsExternal: ["node:http"],
+    external: ["cheerio", "execa", "gray-matter", "fflate/node", "striptags"],
   }),
   ...bundle(
     { base: "client", files: ["index", "noopModule"] },

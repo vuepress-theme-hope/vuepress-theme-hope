@@ -3,12 +3,9 @@ import { bundle } from "../../scripts/rollup.js";
 export default [
   ...bundle("node/index", {
     external: [
-      "node:module",
       /^@mdit\/plugin-/,
-      "@vuepress/plugin-container",
       "markdown-it/lib/token.js",
       "markdown-it/lib/helpers/parse_link_label.js",
-      "vuepress-plugin-sass-palette",
     ],
     dtsExternal: ["vuepress-shared"],
   }),
