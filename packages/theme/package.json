@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-hope",
-  "version": "2.0.0-beta.175",
+  "version": "2.0.0-beta.177",
   "description": "A light vuepress theme with tons of features",
   "keywords": [
     "vuepress",
@@ -54,7 +54,8 @@
     "templates"
   ],
   "scripts": {
-    "build": "pnpm build:ts && pnpm copy",
+    "build": "pnpm build:rollup && pnpm build:ts && pnpm copy",
+    "build:rollup": "rollup -c rollup.config.ts --configPlugin esbuild",
     "build:ts": "tsc -b tsconfig.release.json",
     "clean": "rimraf ./lib ./*.tsbuildinfo",
     "copy": "cpx \"src/client/**/*.{css,scss,jpg,vue}\" lib/client",
@@ -82,7 +83,7 @@
     "@vuepress/plugin-theme-data": "2.0.0-beta.60",
     "@vuepress/shared": "2.0.0-beta.60",
     "@vuepress/utils": "2.0.0-beta.60",
-    "@vueuse/core": "^9.12.0",
+    "@vueuse/core": "^9.13.0",
     "balloon-css": "^1.2.0",
     "bcrypt-ts": "^3.0.0",
     "body-scroll-lock": "^3.1.5",

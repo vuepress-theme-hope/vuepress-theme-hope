@@ -20,6 +20,8 @@ exports[`should generate sidebarData correctly > Should resolve structure in dir
     "",
     "file2",
     "file4",
+    "/permalink.html",
+    "/2000/01/01/permalinkpattern/",
     "file1",
   ],
   "/link/": [
@@ -167,6 +169,8 @@ exports[`should generate sidebarData correctly > Should resolve structure in roo
         "",
         "file2",
         "file4",
+        "/permalink.html",
+        "/2000/01/01/permalinkpattern/",
         "file1",
       ],
       "collapsible": true,

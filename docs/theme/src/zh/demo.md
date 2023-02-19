@@ -190,7 +190,7 @@ blog:
     desc: Welcome to the pit!
     logo: https://www.hestudio.org/logo.svg
     url: https://www.hestudio.org/
-    repo: https://gitee.com/heStudio/blog-source.git
+    repo: https://gitlab.com/heStudio/blog-source.git
     preview: /assets/image/hestudio.jpg
 
   - name: 赵斌的小站

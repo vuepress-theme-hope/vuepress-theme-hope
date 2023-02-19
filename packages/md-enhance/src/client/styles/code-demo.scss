@@ -10,12 +10,12 @@
 }
 
 .code-demo-loading {
-  color: var(--c-brand, #3eaf7c);
+  color: var(--vp-tc);
 }
 
 .code-demo-wrapper {
   margin: 10px 0;
-  border: 1px solid var(--c-border, #eaecef);
+  border: 1px solid var(--vp-brc);
   border-radius: 8px;
   transition: all 0.2s;
 
@@ -145,7 +145,7 @@
 
   max-height: 400px;
   padding: 20px;
-  border-bottom: 1px solid var(--c-border, #eaecef);
+  border-bottom: 1px solid var(--vp-brc);
 
   @media print {
     page-break-inside: avoid;

@@ -13,7 +13,7 @@
 
   margin-top: 1rem;
   margin-bottom: 1rem;
-  border: 1px solid var(--c-border, #ddd);
+  border: 1px solid var(--vp-brc);
   border-radius: 6px;
 
   @media print {
@@ -25,14 +25,13 @@
     flex-flow: row wrap;
 
     padding: 8px 10px;
-    border-bottom: 1px solid var(--c-border, #ddd);
+    border-bottom: 1px solid var(--vp-brc);
 
     background: var(--playground-header-bg-color, #eee);
 
     font-weight: 500;
 
-    transition: background var(--t-color, 0.3s ease),
-      border-color var(--t-color, 0.3s ease);
+    transition: background var(--vp-ct), border-color var(--vp-ct);
   }
 
   .title {
@@ -70,8 +69,8 @@
 .playground-container {
   position: relative;
   overflow: hidden;
-  background: var(--c-bg, #fff);
-  transition: background var(--t-color, 0.3s ease);
+  background: var(--vp-bg);
+  transition: background var(--vp-ct);
 
   @media print {
     page-break-inside: avoid;

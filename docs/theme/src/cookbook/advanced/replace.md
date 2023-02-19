@@ -280,15 +280,15 @@ import HopeHomePage from "vuepress-theme-hope/components/HomePage.js";
 
 Components that provide slots are as follows:
 
-**theme**:
+**Theme**:
 
 - `AutoLink`: `default`, `before`, `after`
 - `CommonWrapper`: `default`, `navbarStartBefore`, `navbarStartAfter`, `navbarCenterBefore`, `navbarCenterAfter`, `navbarEndBegin`, `navbarEndAfter`, `navScreenTop`, `navScreenBottom`, `sidebar`, `sidebarTop`, `sidebarBottom`
 - `HeroInfo`: `heroImage`, `heroInfo`
 - `HomePage`: `top`, `center`, `bottom`
-- `NormalPage`: `top`, `contentBefore`, `contentAfter`, `bottom`
+- `NormalPage`: `top`, `contentBefore`, `contentAfter`, `bottom`, `tocBefore`, `tocAfter`
 
-**Navigation Bar**:
+**NavBar**:
 
 - `DropdownLink`: `title`
 - `NavActions`: `before`, `after`
@@ -297,9 +297,13 @@ Components that provide slots are as follows:
 - `NavScreen`: `before`, `after`
 - `NavScreenDropdown`: `before`, `after`
 
-**Sidebar**:
+**SideBar**:
 
 - `Sidebar`: `top`, `default`, `bottom`
+
+**TOC**:
+
+- `TOC`: `before`, `after`
 
 ::: tip
 

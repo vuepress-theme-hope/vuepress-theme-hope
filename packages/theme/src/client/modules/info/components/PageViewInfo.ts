@@ -1,13 +1,7 @@
 import { withBase } from "@vuepress/client";
 import { isString } from "@vuepress/shared";
-import {
-  type VNode,
-  defineComponent,
-  h,
-  onMounted,
-  onUnmounted,
-  ref,
-} from "vue";
+import { useMutationObserver } from "@vueuse/core";
+import { type VNode, defineComponent, h, ref } from "vue";
 import { useRoute } from "vue-router";
 
 import { EyeIcon, FireIcon } from "@theme-hope/modules/info/components/icons";
@@ -44,21 +38,15 @@ export default defineComponent({
     const pageviewElement = ref<HTMLSpanElement>();
     const pageViews = ref(0);
 
-    onMounted(() => {
-      const observer = new MutationObserver(() => {
+    useMutationObserver(
+      pageviewElement,
+      () => {
         const count = pageviewElement.value!.textContent;
 
         if (count && !isNaN(Number(count))) pageViews.value = Number(count);
-      });
-
-      observer.observe(pageviewElement.value!, {
-        childList: true,
-      });
-
-      onUnmounted(() => {
-        observer.disconnect();
-      });
-    });
+      },
+      { childList: true }
+    );
 
     return (): VNode | null =>
       props.pageview

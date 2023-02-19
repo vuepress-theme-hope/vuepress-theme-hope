@@ -49,12 +49,19 @@ export default defineComponent({
             h(BreadCrumb),
             h(PageTitle),
             tocEnable.value
-              ? h(TOC, {
-                  headerDepth:
-                    frontmatter.value.headerDepth ??
-                    themeLocale.value.headerDepth ??
-                    2,
-                })
+              ? h(
+                  TOC,
+                  {
+                    headerDepth:
+                      frontmatter.value.headerDepth ??
+                      themeLocale.value.headerDepth ??
+                      2,
+                  },
+                  {
+                    before: () => slots["tocBefore"]?.(),
+                    after: () => slots["tocAfter"]?.(),
+                  }
+                )
               : null,
             slots["contentBefore"]?.(),
             h(MarkdownContent),

@@ -12,7 +12,7 @@
 
   white-space: nowrap;
 
-  transition: background var(--t-color, 0.3s ease);
+  transition: background var(--vp-ct);
 
   @media print {
     display: none;
@@ -44,8 +44,7 @@
 
   cursor: pointer;
 
-  transition: background var(--t-color, 0.3s ease),
-    color var(--t-color, 0.3s ease);
+  transition: background var(--vp-ct), color var(--vp-ct);
 
   &:hover {
     background: var(--code-tabs-nav-hover-color, #434a57);

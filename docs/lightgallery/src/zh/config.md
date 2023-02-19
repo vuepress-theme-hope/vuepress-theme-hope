@@ -6,7 +6,7 @@ icon: gears
 ## selector
 
 - 类型: `string`
-- 默认值: `".theme-default-content :not(a) > img"`
+- 默认值: `".theme-default-content :not(a) > img:not(no-view)"`
 
 图片选择器
 

@@ -283,8 +283,23 @@ export const mdEnhancePlugin =
           legacy
         )
           md.use(vPre);
-        if (katexEnable) md.use(katex, katexOptions);
-        else if (mathjaxEnable) md.use(mathjax, mathjaxInstance!);
+        if (katexEnable) {
+          md.use(katex, katexOptions);
+        } else if (mathjaxEnable) {
+          md.use(mathjax, mathjaxInstance!);
+          // reset after each render
+          md.use((md) => {
+            const originalRender = md.render.bind(md);
+
+            md.render = (src: string, env: unknown): string => {
+              const result = originalRender(src, env);
+
+              mathjaxInstance!.reset();
+
+              return result;
+            };
+          });
+        }
 
         if (getStatus("include"))
           md.use(include, {

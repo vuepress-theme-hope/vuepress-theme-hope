@@ -67,8 +67,8 @@
 
 .hint-container {
   position: relative;
-  transition: background var(--t-color, 0.3s ease),
-    border-color var(--t-color, 0.3s ease), color var(--t-color, 0.3s ease);
+  transition: background var(--vp-ct), border-color var(--vp-ct),
+    color var(--vp-ct);
 
   @media print {
     page-break-inside: avoid;
@@ -132,7 +132,7 @@
     }
 
     a {
-      color: var(--c-brand, #3eaf7c);
+      color: var(--vp-tc);
     }
   }
 
@@ -234,8 +234,7 @@
   background: var(--detail-bg-color);
   color: var(--detail-text-color);
 
-  transition: background var(--t-transform, 0.3s ease),
-    color var(--t-transform, 0.3s ease);
+  transition: background var(--vp-tt), color var(--vp-tt);
 
   @media print {
     display: none;
@@ -254,7 +253,7 @@
   }
 
   a {
-    color: var(--c-brand, #3eaf7c);
+    color: var(--vp-tc);
   }
 
   code {
@@ -308,8 +307,7 @@
     &::before {
       border-radius: 50%;
       background: #ccc;
-      transition: background var(--t-color, 0.3s ease),
-        transform var(--t-transform, 0.3s ease);
+      transition: background var(--vp-ct), transform var(--vp-tt);
 
       #{hope-config.$dark-selector} & {
         background: #555;
@@ -319,7 +317,7 @@
     &::after {
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='rgba(0,0,0,0.5)' d='M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z'/%3E%3C/svg%3E");
       line-height: normal;
-      transition: transform var(--t-transform, 0.3s ease);
+      transition: transform var(--vp-tt);
       transform: rotate(90deg);
 
       #{hope-config.$dark-selector} & {

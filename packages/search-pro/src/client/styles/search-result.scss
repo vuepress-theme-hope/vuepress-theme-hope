@@ -1,5 +1,5 @@
 .search-pro-result {
-  scrollbar-color: var(--c-brand, #3aa675) var(--c-border, #eaecef);
+  scrollbar-color: var(--vp-tc) var(--vp-brc);
   scrollbar-width: thin;
 
   @media (max-width: hope-config.$mobile) {
@@ -18,10 +18,12 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background: var(--c-brand, #3aa675);
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    background: var(--vp-tc);
 
     &:active {
-      background: var(--c-brand-light, #4abf8a);
+      background: var(--vp-tcl);
     }
   }
 }
@@ -33,41 +35,54 @@
 
 .search-pro-result-list-item {
   display: block;
-  margin: 0.5rem 0;
   list-style: none;
 }
 
 .search-pro-result-title {
+  position: sticky;
+  top: -2px;
+  z-index: 10;
+
+  margin: -4px;
   margin-bottom: 0.25rem;
-  font-size: 0.85rem;
+  padding: 4px;
+
+  background: var(--vp-bg);
+  color: var(--vp-tc);
+
+  font-weight: 600;
+  font-size: 0.85em;
+  line-height: 2rem;
   text-indent: 0.5em;
 
   .search-pro-result-item.active & {
-    color: var(--c-brand, #3aa675);
+    color: var(--vp-tc);
   }
-}
-
-.search-pro-result-type,
-.search-pro-close-icon {
-  width: 1rem;
-  height: 1rem;
-  padding: 0.5rem;
-  color: var(--c-brand, #3aa675);
 }
 
 .search-pro-result-type {
   display: block;
+
+  width: 1rem;
+  height: 1rem;
   margin-inline-start: -0.5rem;
+  padding: 0.5rem;
+
+  color: var(--vp-tc);
 }
 
 .search-pro-close-icon {
   box-sizing: content-box;
-  margin-inline-end: -0.5rem;
+
+  height: 1.5rem;
+  padding: 0;
   border-radius: 50%;
 
+  color: var(--vp-tc);
+
   svg {
-    width: 1rem;
-    height: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
   }
 
   &:hover {
@@ -87,7 +102,7 @@
   .content-header {
     margin-bottom: 0.25rem;
     border-bottom: 1px solid var(--c-border-dark, #dfe2e5);
-    font-size: 1.1em;
+    font-size: 0.9em;
   }
 }
 
@@ -99,20 +114,20 @@
   padding: 0.5rem 0.75rem;
   border-radius: 0.25rem;
 
-  background-color: var(--c-bg-light, #f3f4f5);
   color: inherit;
+  box-shadow: 0 1px 3px 0 var(--card-shadow);
 
   font-weight: normal;
   white-space: pre-wrap;
   word-wrap: break-word;
 
   strong {
-    color: var(--c-brand, #3aa675);
+    color: var(--vp-tc);
   }
 
   &:hover,
   &.active {
-    background-color: var(--c-brand-light, #4abf8a);
+    background-color: var(--vp-tcl);
     color: var(--white);
     cursor: pointer;
 

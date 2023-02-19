@@ -12,7 +12,7 @@ import {
 import { checkIsMobile, useLocaleConfig } from "vuepress-shared/client";
 
 import { SearchLoading } from "./SearchLoading.js";
-import { SearchIcon } from "./icons.js";
+import { CloseIcon, SearchIcon } from "./icons.js";
 import { searchModalSymbol } from "../composables/setup.js";
 import { searchProLocales } from "../define.js";
 
@@ -59,11 +59,16 @@ export default defineComponent({
             }),
             h("div", { class: "search-pro-modal" }, [
               h("div", { class: "search-pro-box" }, [
-                h(SearchIcon),
+                h(
+                  "label",
+                  { for: "search-pro", "aria-label": locale.value.search },
+                  h(SearchIcon)
+                ),
                 h("input", {
                   ref: inputElement,
                   type: "text",
                   class: "search-pro-input",
+                  id: "search-pro",
                   placeholder: locale.value.placeholder,
                   spellcheck: "false",
                   value: input.value,
@@ -71,6 +76,17 @@ export default defineComponent({
                     input.value = (<HTMLInputElement>target).value;
                   },
                 }),
+                h(
+                  "button",
+                  {
+                    type: "reset",
+                    class: "clear-button",
+                    onClick: () => {
+                      input.value = "";
+                    },
+                  },
+                  h(CloseIcon)
+                ),
                 h(
                   "button",
                   {

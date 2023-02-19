@@ -6,7 +6,7 @@ icon: gears
 ## selector
 
 - Type: `string | string[]`
-- Default: `".theme-default-content :not(a) > img"`
+- Default: `".theme-default-content :not(a) > img:not(no-view)"`
 
 Image selector
 

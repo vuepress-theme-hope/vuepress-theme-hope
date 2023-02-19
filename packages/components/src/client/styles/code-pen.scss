@@ -1,34 +1,32 @@
 .codepen-wrapper {
   margin: 1rem auto;
   padding: 1rem;
-  border: 1px solid var(--c-border, #eaecef);
+  border: 1px solid var(--vp-brc);
 
   text-align: center;
 
-  transition: background var(--t-color, 0.3s ease),
-    border var(--t-color, 0.3s ease);
+  transition: background var(--vp-ct), border var(--vp-ct);
 
   .codepen-button {
     display: block;
 
     margin: 16px auto;
     padding: 8px 16px;
-    border: 1px solid var(--c-brand, #3eaf7c);
+    border: 1px solid var(--vp-tc);
     border-radius: 4px;
 
     background: transparent;
-    color: var(--c-brand, #3eaf7c);
+    color: var(--vp-tc);
 
     font-size: 16px;
 
     cursor: pointer;
 
-    transition: background var(--t-color, 0.3s ease),
-      border var(--t-color, 0.3s ease), color var(--t-color, 0.3s ease);
+    transition: background var(--vp-ct), border var(--vp-ct), color var(--vp-ct);
 
     &:hover {
-      background: var(--c-brand-light, #4abf8a);
-      color: var(--c-bg, #fff);
+      background: var(--vp-tcl);
+      color: var(--vp-bg);
     }
   }
 }

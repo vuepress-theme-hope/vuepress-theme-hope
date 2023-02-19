@@ -13,17 +13,17 @@
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
 
-  background: var(--c-bg-light);
-  color: var(--c-text);
+  background: var(--vp-bgl);
+  color: var(--vp-c);
 
   font-weight: 600;
   font-size: 18;
   line-height: 1.5;
 
-  transition: background var(--t-color), color var(--t-color);
+  transition: background var(--vp-ct), color var(--vp-ct);
 
   &:hover {
-    background: var(--c-brand);
+    background: var(--vp-tc);
     color: var(--white);
   }
 }

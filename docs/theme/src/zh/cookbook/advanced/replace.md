@@ -289,7 +289,7 @@ import HopeHomePage from "vuepress-theme-hope/components/HomePage.js";
 - `CommonWrapper`: `default`, `navbarStartBefore`, `navbarStartAfter`, `navbarCenterBefore`, `navbarCenterAfter`, `navbarEndBegin`, `navbarEndAfter`, `navScreenTop`, `navScreenBottom`, `sidebar`, `sidebarTop`, `sidebarBottom`
 - `HeroInfo`: `heroImage`, `heroInfo`
 - `HomePage`: `top`, `center`, `bottom`
-- `NormalPage`: `top`, `contentBefore`, `contentAfter`, `bottom`
+- `NormalPage`: `top`, `contentBefore`, `contentAfter`, `bottom`, `tocBefore`, `tocAfter`
 
 **导航栏**:
 
@@ -303,6 +303,10 @@ import HopeHomePage from "vuepress-theme-hope/components/HomePage.js";
 **侧边栏**:
 
 - `Sidebar`: `top`, `default`, `bottom`
+
+**TOC**:
+
+- `TOC`: `before`, `after`
 
 ::: tip
 

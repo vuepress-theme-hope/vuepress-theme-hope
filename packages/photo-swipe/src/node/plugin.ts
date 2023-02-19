@@ -26,7 +26,8 @@ export const photoSwipePlugin =
 
       define: (app): Record<string, unknown> => ({
         PHOTO_SWIPE_SELECTOR:
-          options.selector || ".theme-default-content :not(a) > img",
+          options.selector ||
+          ".theme-default-content :not(a) > img:not(no-view)",
         PHOTO_SWIPE_DELAY: options.delay || 800,
         PHOTO_SWIPE_LOCALES: fromEntries(
           entries(

@@ -13,9 +13,9 @@ const HopeIcon: FunctionalComponent<IconProps> = (props) => {
   const { icon = "" } = props;
 
   return isLinkHttp(icon)
-    ? h("img", { class: "icon", src: icon })
+    ? h("img", { class: "icon", src: icon, "no-view": "" })
     : isAbsoluteUrl(icon)
-    ? h("img", { class: "icon", src: withBase(icon) })
+    ? h("img", { class: "icon", src: withBase(icon), "no-view": "" })
     : h(resolveComponent("FontIcon"), props);
 };
 

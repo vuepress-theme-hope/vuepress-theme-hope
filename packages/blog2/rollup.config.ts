@@ -1,9 +1,9 @@
-import { rollupTypescript } from "../../scripts/rollup.js";
+import { bundle } from "../../scripts/rollup.js";
 
 export default [
-  ...rollupTypescript("node/index", {
+  ...bundle("node/index", {
     external: ["chokidar"],
     dtsExternal: ["vuepress-shared"],
   }),
-  ...rollupTypescript("client/index"),
+  ...bundle("client/index"),
 ];

@@ -14,14 +14,13 @@
   padding: 0 6px;
   border-radius: 3px;
 
-  background: var(--c-brand, #3eaf7c);
+  background: var(--vp-tc);
   color: var(--white);
 
   font-size: 14px;
   line-height: 18px;
 
-  transition: background var(--t-color, 0.3s ease),
-    color var(--t-color, 0.3s ease);
+  transition: background var(--vp-ct), color var(--vp-ct);
 
   & + & {
     margin-inline-start: 5px;

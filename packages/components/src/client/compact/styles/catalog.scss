@@ -7,7 +7,7 @@
     text-decoration: none;
 
     &:hover {
-      color: var(--c-brand, #3eaf7c);
+      color: var(--vp-tc);
     }
   }
 
@@ -19,13 +19,13 @@
     font-size: 1.3rem;
 
     &.has-children {
-      border-bottom: 1px solid var(--c-border, #eaecef);
-      transition: border-color var(--t-color, 0.3s ease);
+      border-bottom: 1px solid var(--vp-brc);
+      transition: border-color var(--vp-ct);
     }
   }
 
   .sub-title {
-    color: var(--c-text-lighter, #3a5169);
+    color: var(--vp-clt);
     font-size: 1.1rem;
   }
 
@@ -52,7 +52,7 @@
   }
 
   .child-catalog-item::marker {
-    color: var(--c-text-lighter, #3a5169);
+    color: var(--vp-clt);
   }
 
   .sub-catalog-wrapper {
@@ -67,17 +67,16 @@
     padding: 4px 8px;
     border-radius: 6px;
 
-    background-color: var(--c-bg-light, #f3f4f5);
+    background-color: var(--vp-bgl);
 
     line-height: 1.5;
     overflow-wrap: break-word;
 
-    transition: background-color var(--t-color, 0.3s ease),
-      color var(--t-color, 0.3s ease);
+    transition: background-color var(--vp-ct), color var(--vp-ct);
 
     &:hover {
-      background-color: var(--c-brand-light, #4abf8a);
-      color: var(--c-bg, #fff);
+      background-color: var(--vp-tcl);
+      color: var(--vp-bg);
       text-decoration: none;
     }
   }

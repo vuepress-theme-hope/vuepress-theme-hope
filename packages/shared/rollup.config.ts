@@ -1,23 +1,16 @@
-import { rollupTypescript } from "../../scripts/rollup.js";
+import { bundle } from "../../scripts/rollup.js";
 
 export default [
-  ...rollupTypescript("node/index", {
+  ...bundle("node/index", {
     resolve: true,
-    external: [
-      "node:http",
-      "@vuepress/plugin-git",
-      "cheerio",
-      "execa",
-      "gray-matter",
-      "fflate/node",
-      "striptags",
-    ],
-    dtsExternal: ["node:http"],
+    external: ["cheerio", "execa", "gray-matter", "fflate/node", "striptags"],
   }),
-  ...rollupTypescript("client/index", {
-    resolve: true,
-    external: ["fflate/browser"],
-    copy: [["client/styles", "client"]],
-  }),
-  ...rollupTypescript("client/noopModule"),
+  ...bundle(
+    { base: "client", files: ["index", "noopModule"] },
+    {
+      resolve: true,
+      external: ["fflate/browser"],
+      copy: [["client/styles", "client"]],
+    }
+  ),
 ];

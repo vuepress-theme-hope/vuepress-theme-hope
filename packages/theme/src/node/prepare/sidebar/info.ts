@@ -68,6 +68,7 @@ const getInfoFromStructure = (
 
       title: page.frontmatter.shortTitle || page.title,
       order: "order" in page.frontmatter ? page.frontmatter.order : null,
+      permalink: page.permalink,
 
       frontmatter: page.frontmatter,
       pageData: page.data,

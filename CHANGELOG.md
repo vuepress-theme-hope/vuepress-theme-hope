@@ -4,6 +4,34 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.177](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.176...v2.0.0-beta.177) (2023-02-19)
+
+### Features
+
+- **theme:** add before and after slot for toc ([74d2f0c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/74d2f0c18e35e0dec81aa907970ad3fff7bb6bbd))
+
+### Bug Fixes
+
+- **components:** fix notice match ([e339db5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e339db5d139ae90cfe1f535e473d0310b904a81a))
+- **theme:** fix color palette ([d58f777](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d58f7773443392859c4b8e1cf5929091194cf740))
+- **theme:** support permalink in structured sidebar, close [#2800](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2800) ([#2806](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2806)) ([1973fde](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1973fde98f2d115f5eb2a49b3c9850f9e01ec1c1))
+
+## [2.0.0-beta.176](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.175...v2.0.0-beta.176) (2023-02-17)
+
+### Features
+
+- add no-view attr support ([772c5d1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/772c5d1bb73b7bf725e8d7eb132f87bd3c0c6297))
+- add no-view to img ([d5b0725](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d5b0725175207ec7790df6f89f176ab1096bb737))
+- **md-enhance:** add obsidianImgSize option ([d0c2512](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d0c25121dd5f9fe9a199cf52d14f7924135c0183))
+- **search-pro:** improve style ([29c69d8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/29c69d8b39f08c3a0f3914d57e420e6ddc134469))
+- **theme:** improve dropdown link ([7f17033](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7f170330e2077d14f4cdc38d8bf1586b814e8bd6))
+- **theme:** improve scrollbar style ([2038f22](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2038f22d60e45746dad812536b2e763ab9ef2a68))
+
+### Bug Fixes
+
+- **md-enhance:** bump mathjax plugin, close [#2790](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2790) ([0f0aeef](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0f0aeef363585ad2e9b8fd2388b9ad675d678c64))
+- **theme:** fix mobile footer ([44a838f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/44a838fd2852ce4d12564d975e3da65ee0d12583))
+
 ## [2.0.0-beta.175](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.174...v2.0.0-beta.175) (2023-02-16)
 
 ### Features
@@ -624,6 +652,8 @@ All notable changes to this project will be documented in this file. See [Conven
 - **deps:** update dependency axios to v1.2.1 ([#2491](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2491)) ([275bb68](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/275bb68c6d7e3369c6ffa2ca39b223d782d51a1c))
 - **md-enhance:** fix imageTitle ([3e003a6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3e003a6c3df64e727512315eb7fef21a19ac9ac4))
 
+<!-- #endregion recent-beta -->
+
 ## [2.0.0-beta.133](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.132...v2.0.0-beta.133) (2022-12-04)
 
 ### Features
@@ -863,8 +893,6 @@ All notable changes to this project will be documented in this file. See [Conven
 - **md-enhance:** fix loading icon ([6542578](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/65425782cbcfd1efabd73281871ef49df08ba850))
 - **md-enhance:** fix mermaid issue in dev mode ([26b57c0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/26b57c09f2f666f3e8ed7e8c9b58b5e144f6ef58))
 - **md-enhance:** fix type issue ([4b32b67](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4b32b67ede8c64a0fd6be8aedc4ab0b08ede3e8d))
-
-<!-- #endregion recent-beta -->
 
 ## [2.0.0-beta.121](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.120...v2.0.0-beta.121) (2022-11-05)
 
