@@ -66,7 +66,7 @@ export interface SassPaletteOptions {
    *
    * 自定义的生成器，用于生成调色板配置的衍生值。
    *
-   * 如: 你可能想要根据 `$themeColor` 的值提供一个 `themeColorLight`。
+   * 如: 你可能想要根据 `$theme-color` 的值提供一个 `$theme-color-light`。
    */
   generator?: string;
 
