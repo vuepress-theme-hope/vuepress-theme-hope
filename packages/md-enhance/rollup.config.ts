@@ -31,7 +31,6 @@ export default [
 
     {
       external: [
-        "@mermaid-js/mermaid-mindmap/dist/mermaid-mindmap.esm.min.mjs",
         "@vue/repl",
         "balloon-css/balloon.css",
         "chart.js/auto",
