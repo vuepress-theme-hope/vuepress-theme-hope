@@ -1,5 +1,5 @@
-import { rollupTypescript } from "../../scripts/rollup.js";
+import { bundle } from "../../scripts/rollup.js";
 
-export default rollupTypescript("node/index", {
+export default bundle("node/index", {
   external: ["chokidar"],
 });

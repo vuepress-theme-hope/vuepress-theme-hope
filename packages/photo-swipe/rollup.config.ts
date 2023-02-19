@@ -1,11 +1,10 @@
-import { rollupTypescript } from "../../scripts/rollup.js";
+import { bundle } from "../../scripts/rollup.js";
 
 export default [
-  ...rollupTypescript("node/index", {
-    external: ["vuepress-plugin-sass-palette"],
+  ...bundle("node/index", {
     dtsExternal: ["vuepress-shared"],
   }),
-  ...rollupTypescript("client/config", {
+  ...bundle("client/config", {
     external: ["photoswipe"],
   }),
 ];

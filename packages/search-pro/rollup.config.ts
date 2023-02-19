@@ -1,16 +1,15 @@
-import { rollupTypescript } from "../../scripts/rollup.js";
+import { bundle } from "../../scripts/rollup.js";
 
 export default [
-  ...rollupTypescript("node/index", {
-    external: ["cheerio", "chokidar", "vuepress-plugin-sass-palette"],
+  ...bundle("node/index", {
+    external: ["cheerio", "chokidar"],
     dtsExternal: ["vuepress-shared"],
   }),
-  ...rollupTypescript("client/components/SearchResult", {
-    external: ["body-scroll-lock"],
-    copy: [["client/styles", "client"]],
-  }),
-  ...rollupTypescript("client/config", {
-    external: ["vuepress-plugin-search-pro/result"],
-    copy: [["client/styles", "client"]],
-  }),
+  ...bundle(
+    { base: "client", files: ["components/SearchResult", "config"] },
+    {
+      external: ["body-scroll-lock", "vuepress-plugin-search-pro/result"],
+      copy: [["client/styles", "client"]],
+    }
+  ),
 ];

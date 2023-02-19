@@ -1,21 +1,23 @@
-import { rollupTypescript } from "../../scripts/rollup.js";
+import { bundle } from "../../scripts/rollup.js";
 
 export default [
-  ...rollupTypescript("node/index", {
-    external: ["workbox-build", "vuepress-plugin-sass-palette"],
+  ...bundle("node/index", {
+    external: ["workbox-build"],
     dtsExternal: ["vuepress-shared"],
   }),
-  ...rollupTypescript("client/components/PWAInstall", {
-    external: ["mitt"],
-  }),
-  ...rollupTypescript("client/components/SWUpdatePopup", {
-    external: ["mitt", "register-service-worker"],
-  }),
-  ...rollupTypescript("client/components/SWHintPopup", {
-    external: ["mitt", "register-service-worker"],
-  }),
-  ...rollupTypescript("client/composables/setup", {
-    external: ["mitt", "register-service-worker"],
-    copy: [["client/styles", "client"]],
-  }),
+  ...bundle(
+    {
+      base: "client",
+      files: [
+        "components/PWAInstall",
+        "components/SWUpdatePopup",
+        "components/SWHintPopup",
+        "composables/setup",
+      ],
+    },
+    {
+      external: ["mitt", "register-service-worker"],
+      copy: [["client/styles", "client"]],
+    }
+  ),
 ];
