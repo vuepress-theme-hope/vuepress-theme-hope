@@ -1,6 +1,6 @@
-import { rollupTypescript } from "../../scripts/rollup.js";
+import { bundle } from "../../scripts/rollup.js";
 
-export default rollupTypescript("index", {
+export default bundle("index", {
   dts: false,
   resolve: true,
   external: ["node:module", "cac", "execa", "inquirer"],

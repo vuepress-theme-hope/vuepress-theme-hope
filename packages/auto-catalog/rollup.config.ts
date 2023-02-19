@@ -1,14 +1,14 @@
-import { rollupTypescript } from "../../scripts/rollup.js";
+import { bundle } from "../../scripts/rollup.js";
 
 export default [
-  ...rollupTypescript("node/index", {
+  ...bundle("node/index", {
     external: [
       "node:module",
       "vuepress-plugin-components",
       "vuepress-plugin-sass-palette",
     ],
   }),
-  ...rollupTypescript("client/config", {
+  ...bundle("client/config", {
     external: [/^vuepress-plugin-components\/client\//],
     copy: [["client/styles", "client"]],
   }),
