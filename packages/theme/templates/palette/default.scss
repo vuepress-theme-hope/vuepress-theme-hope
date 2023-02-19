@@ -1,26 +1,36 @@
 /** ensure default theme color */
 
 // background
-$vp-bg: "var(--c-bg, #fff)";
+$vp-bg: "var(--bg-color)";
 
 // background light
-$vp-bgl: "var(--c-bg-light, #f3f4f5)";
+$vp-bgl: "var(--bg-color-light)";
+
+// background lighter
+$vp-bglt: "var(--bg-color-lighter)";
 
 // color
-$vp-c: "var(--c-text, #2c3e50)";
+$vp-c: "var(--text-color)";
+
+// color
+$vp-cl: "var(--text-color-light)";
 
 // color lighter
-$vp-clt: "var(--c-text-lighter, #3a5169)";
+$vp-clt: "var(--text-color-lighter)";
 
 // border-color
-$vp-brc: "var(--c-border, #eaecef)";
+$vp-brc: "var(--border-color)";
+
+// border-color dark
+// currently not used any where
+// $vp-brcd: "var(--border-color-dark)";
 
 // theme color
-$vp-tc: "var(--c-brand, #3eaf7c)";
-$vp-tcl: "var(--c-brand-light, #4abf8a)";
+$vp-tc: "var(--theme-color)";
+$vp-tcl: "var(--theme-color-light)";
 
 // color transition
-$vp-ct: "var(--t-color, 0.3s ease)";
+$vp-ct: "var(--color-transition)";
 
 // transform transition
-$vp-tt: "var(--t-transform, 0.3s ease)";
+$vp-tt: "var(--transform-transition)";
