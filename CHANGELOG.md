@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.177](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.176...v2.0.0-beta.177) (2023-02-19)
+
+### Features
+
+- **theme:** add before and after slot for toc ([74d2f0c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/74d2f0c18e35e0dec81aa907970ad3fff7bb6bbd))
+
+### Bug Fixes
+
+- **components:** fix notice match ([e339db5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e339db5d139ae90cfe1f535e473d0310b904a81a))
+- **theme:** fix color palette ([d58f777](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d58f7773443392859c4b8e1cf5929091194cf740))
+- **theme:** support permalink in structured sidebar, close [#2800](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2800) ([#2806](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2806)) ([1973fde](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1973fde98f2d115f5eb2a49b3c9850f9e01ec1c1))
+
 ## [2.0.0-beta.176](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.175...v2.0.0-beta.176) (2023-02-17)
 
 ### Features
