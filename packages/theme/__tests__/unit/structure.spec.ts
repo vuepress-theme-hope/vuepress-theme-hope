@@ -3,7 +3,7 @@ import { path } from "@vuepress/utils";
 import { describe, expect, it } from "vitest";
 
 import { emptyTheme } from "./__fixtures__/theme/empty.js";
-import { getStructure } from "../../src/node/prepare/index.js";
+import { getStructureInfo } from "../../src/node/prepare/index.js";
 
 describe("should generate structure info correctly", async () => {
   const app = createBaseApp({
@@ -15,10 +15,10 @@ describe("should generate structure info correctly", async () => {
   await app.init();
 
   it("Should generate structure info for whole dir", () => {
-    expect(getStructure(app.pages, "")).toMatchSnapshot();
+    expect(getStructureInfo(app.pages, "")).toMatchSnapshot();
   });
 
   it("Should resolve structure in dir", () => {
-    expect(getStructure(app.pages, "dir/")).toMatchSnapshot();
+    expect(getStructureInfo(app.pages, "dir/")).toMatchSnapshot();
   });
 });
