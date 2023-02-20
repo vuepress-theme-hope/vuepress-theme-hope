@@ -6,14 +6,11 @@ import { type VuePlaygroundOptions } from "../../shared/index.js";
 import { type PlaygroundData } from "../typings/index.js";
 
 export const DEFAULT_VUE_PLAYGROUND_OPTIONS: VuePlaygroundOptions = {
-  autoResize: true,
-  showCode: false,
   showCompileOutput: false,
-  showImportMap: true,
   clearConsole: false,
-  layout: "vertical",
   ssr: false,
 };
+
 const VUE_SUPPORTED_EXTENSIONS = [
   "html",
   "js",
