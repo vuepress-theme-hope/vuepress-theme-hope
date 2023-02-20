@@ -23,6 +23,8 @@ const rootAllowConfig = [
 ];
 
 /**
+ * @private
+ *
  * Get client-side `themeData`
  */
 export const getThemeData = (

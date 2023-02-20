@@ -11,7 +11,8 @@ import {
   type ThemeNormalPageFrontmatter,
 } from "../../../shared/index.js";
 
-export const getArticleType = (
+/** @private */
+export const getBlogArticleType = (
   options: BlogPluginOptions,
   themeData: ThemeData
 ): BlogTypeOptions<
@@ -45,7 +46,8 @@ export const getArticleType = (
     }),
   };
 
-export const getStarType = (
+/** @private */
+export const getBlogStarType = (
   options: BlogPluginOptions,
   themeData: ThemeData
 ): BlogTypeOptions<
@@ -87,7 +89,8 @@ export const getStarType = (
     }),
   };
 
-export const getTimelineType = (
+/** @private */
+export const getBlogTimelineType = (
   options: BlogPluginOptions,
   themeData: ThemeData
 ): BlogTypeOptions<

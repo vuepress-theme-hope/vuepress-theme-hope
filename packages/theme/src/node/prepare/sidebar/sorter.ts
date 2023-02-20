@@ -7,7 +7,7 @@ import {
   type SidebarSorterFunction,
 } from "../../../shared/index.js";
 
-export const readmeSorter = (
+export const sidebarReadmeSorter = (
   infoA: SidebarInfo,
   infoB: SidebarInfo
 ): number => {
@@ -20,7 +20,10 @@ export const readmeSorter = (
   return 0;
 };
 
-export const orderSorter = (infoA: SidebarInfo, infoB: SidebarInfo): number => {
+export const sidebarOrderSorter = (
+  infoA: SidebarInfo,
+  infoB: SidebarInfo
+): number => {
   // itemA order is absent
   if (infoA.order === null) {
     // both item do not have orders
@@ -51,7 +54,10 @@ export const orderSorter = (infoA: SidebarInfo, infoB: SidebarInfo): number => {
   return 1;
 };
 
-export const dateSorter = (infoA: SidebarInfo, infoB: SidebarInfo): number => {
+export const sidebarDateSorter = (
+  infoA: SidebarInfo,
+  infoB: SidebarInfo
+): number => {
   if (infoA.frontmatter?.date instanceof Date) {
     if (infoB.frontmatter?.date instanceof Date)
       return (
@@ -66,7 +72,7 @@ export const dateSorter = (infoA: SidebarInfo, infoB: SidebarInfo): number => {
   return 0;
 };
 
-export const dateDescSorter = (
+export const sidebarDateDescSorter = (
   infoA: SidebarInfo,
   infoB: SidebarInfo
 ): number => {
@@ -87,7 +93,7 @@ export const dateDescSorter = (
 const getFilename = (info: SidebarInfo): string =>
   info.type === "file" ? info.filename.replace(/\.md$/, "") : info.dirname;
 
-export const filenameSorter = (
+export const sidebarFilenameSorter = (
   infoA: SidebarInfo,
   infoB: SidebarInfo
 ): number => {
@@ -108,23 +114,29 @@ export const filenameSorter = (
   return 0;
 };
 
-export const titleSorter = (infoA: SidebarInfo, infoB: SidebarInfo): number =>
+export const sidebarTitleSorter = (
+  infoA: SidebarInfo,
+  infoB: SidebarInfo
+): number =>
   infoA.title.localeCompare(infoB.title, undefined, {
     numeric: true,
   });
 
 const sortKeyMap: Record<string, SidebarSorterFunction> = {
-  readme: readmeSorter,
-  order: orderSorter,
-  date: dateSorter,
-  "date-desc": dateDescSorter,
-  filename: filenameSorter,
-  title: titleSorter,
+  readme: sidebarReadmeSorter,
+  order: sidebarOrderSorter,
+  date: sidebarDateSorter,
+  "date-desc": sidebarDateDescSorter,
+  filename: sidebarFilenameSorter,
+  title: sidebarTitleSorter,
 };
 
 const availableKeywords = keys(sortKeyMap);
 
-export const getSorter = (sorter?: SidebarSorter): SidebarSorterFunction[] => {
+/** @private */
+export const getSidebarSorter = (
+  sorter?: SidebarSorter
+): SidebarSorterFunction[] => {
   if (isString(sorter) && availableKeywords.includes(sorter))
     return [sortKeyMap[sorter]];
 
@@ -138,5 +150,10 @@ export const getSorter = (sorter?: SidebarSorter): SidebarSorterFunction[] => {
     if (result.length) return result;
   }
 
-  return [readmeSorter, orderSorter, titleSorter, filenameSorter];
+  return [
+    sidebarReadmeSorter,
+    sidebarOrderSorter,
+    sidebarTitleSorter,
+    sidebarFilenameSorter,
+  ];
 };

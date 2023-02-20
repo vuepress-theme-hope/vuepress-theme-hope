@@ -1,7 +1,7 @@
 import { type Page } from "@vuepress/core";
 import { getTitleFromFilename, startsWith } from "vuepress-shared/node";
 
-import { type StructureInfo, getStructure } from "./structure.js";
+import { type StructureInfo, getStructureInfo } from "./structure.js";
 import {
   type SidebarDirInfo,
   type SidebarFileInfo,
@@ -30,12 +30,15 @@ export interface ThemeSidebarInfoOptions {
   scope: string;
 }
 
-const getChildrenInfo = (
+/**
+ * @private
+ */
+const getSidebarChildrenInfo = (
   { scope, pages, sorters }: ThemeSidebarInfoOptions,
   children: StructureInfo[]
 ): SidebarInfo[] =>
   children
-    .map((item) => getInfoFromStructure({ pages, scope, sorters }, item))
+    .map((item) => getSidebarInfoFromStructure({ pages, scope, sorters }, item))
     .filter((item): item is SidebarInfo => item !== null)
     // sort items
     .sort((infoA, infoB) => {
@@ -48,7 +51,10 @@ const getChildrenInfo = (
       return 0;
     });
 
-const getInfoFromStructure = (
+/**
+ * @private
+ */
+const getSidebarInfoFromStructure = (
   { scope, pages, sorters }: ThemeSidebarInfoOptions,
   info: StructureInfo
 ): SidebarInfo | null => {
@@ -110,7 +116,7 @@ const getInfoFromStructure = (
     const dirInfo: SidebarDirInfo = {
       type: "dir",
       dirname: info.dirname,
-      children: getChildrenInfo(
+      children: getSidebarChildrenInfo(
         { pages: relatedPages, scope, sorters },
         dirOptions?.link
           ? // filter README.md
@@ -141,7 +147,7 @@ const getInfoFromStructure = (
   const dirInfo: SidebarDirInfo = {
     type: "dir",
     dirname: info.dirname,
-    children: getChildrenInfo(
+    children: getSidebarChildrenInfo(
       { pages: relatedPages, scope, sorters },
       info.children
     ),
@@ -162,14 +168,17 @@ const getInfoFromStructure = (
   return dirInfo;
 };
 
+/**
+ * @private
+ */
 export const getSidebarInfo = ({
   pages,
   sorters,
   scope,
 }: ThemeSidebarInfoOptions): // base = ""
 SidebarInfo[] =>
-  getStructure(pages, scope)
-    .map((info) => getInfoFromStructure({ scope, pages, sorters }, info))
+  getStructureInfo(pages, scope)
+    .map((info) => getSidebarInfoFromStructure({ scope, pages, sorters }, info))
     .filter((item): item is SidebarInfo => item !== null)
     // sort items
     .sort((infoA, infoB) => {

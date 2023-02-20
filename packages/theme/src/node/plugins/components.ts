@@ -7,6 +7,11 @@ import {
 
 import { type ThemeOptions } from "../../shared/index.js";
 
+/**
+ * @private
+ *
+ * Resolve options for vuepress-plugin-components
+ */
 export const getComponentsPlugin = (
   options: Pick<
     ThemeOptions,

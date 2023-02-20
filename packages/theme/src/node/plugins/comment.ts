@@ -3,6 +3,11 @@ import { type CommentOptions, commentPlugin } from "vuepress-plugin-comment2";
 
 import { VERSION } from "../utils.js";
 
+/**
+ * @private
+ *
+ * Resolve options for vuepress-plugin-comment2
+ */
 export const getCommentPlugin = (
   options?: Partial<CommentOptions> | false,
   legacy = true

@@ -42,6 +42,8 @@ const KNOWN_THEME_PLUGINS = [
 ];
 
 /**
+ * @private
+ *
  * Check plugin options for noob users
  */
 export const checkPlugins = (app: App, plugins: PluginsOptions): void => {
@@ -74,17 +76,4 @@ export const checkPlugins = (app: App, plugins: PluginsOptions): void => {
         )}" options in ${colors.cyan("vuepress config file")} directly.`
       );
   });
-};
-
-/**
- * Composition Api to remove `@vuepress/plugin-git`
- */
-export const removeGitPlugin = (app: App): void => {
-  const { plugins } = app.pluginApi;
-
-  const index = plugins.findIndex(
-    (plugin) => plugin.name === "@vuepress/plugin-git"
-  );
-
-  if (index !== -1) app.pluginApi.plugins.splice(index, 1);
 };

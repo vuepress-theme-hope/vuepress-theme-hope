@@ -5,6 +5,7 @@ import { entries, fromEntries } from "vuepress-shared/node";
 import { type EncryptConfig, type EncryptOptions } from "../../shared/index.js";
 import { logger } from "../utils.js";
 
+/** @private */
 export const getEncryptConfig = (
   encrypt: EncryptOptions = {}
 ): EncryptConfig => {

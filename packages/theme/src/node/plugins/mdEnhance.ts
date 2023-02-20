@@ -4,6 +4,11 @@ import {
   mdEnhancePlugin,
 } from "vuepress-plugin-md-enhance";
 
+/**
+ * @private
+ *
+ * Resolve options for vuepress-plugin-md-enhance
+ */
 export const getMdEnhancePlugin = (
   options?: Partial<MarkdownEnhanceOptions> | false,
   legacy = true

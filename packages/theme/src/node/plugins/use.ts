@@ -9,6 +9,11 @@ import { usePrismPlugin } from "./prism.js";
 import { type PluginsOptions, type ThemeData } from "../../shared/index.js";
 import { TEMPLATE_FOLDER } from "../utils.js";
 
+/**
+ * @private
+ *
+ * Use plugins to ensure they apply first
+ */
 export const usePlugin = (
   app: App,
   themeData: ThemeData,

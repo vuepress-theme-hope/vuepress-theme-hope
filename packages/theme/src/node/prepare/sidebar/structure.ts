@@ -25,7 +25,13 @@ export interface ThemeSidebarInfoOptions {
   nestingDepth?: number;
 }
 
-export const getStructure = (pages: Page[], scope: string): StructureInfo[] => {
+/**
+ * @private
+ */
+export const getStructureInfo = (
+  pages: Page[],
+  scope: string
+): StructureInfo[] => {
   const relatedPages = pages.filter(
     ({ filePathRelative, pathLocale }) =>
       // generated from file and inside current scope

@@ -14,6 +14,7 @@ export interface ThemeStatus {
   supportPageview: boolean;
 }
 
+/** @private */
 export const getStatus = (
   app: App,
   themeOptions: ThemeOptions

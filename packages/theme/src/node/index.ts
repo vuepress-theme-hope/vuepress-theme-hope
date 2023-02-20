@@ -1,53 +1,19 @@
-// TODO: Remove this in v2 stable
-import {
-  // v1
-  config,
-  convertFrontmatter,
-  convertNavbarOptions,
-  convertSidebarOptions,
-  convertThemeOptions,
-  navbarConfig,
-  sidebarConfig,
-  themeConfig,
-
-  // v2
-  // eslint-disable-next-line sort-imports
-  defineHopeConfig,
-  defineNavbarConfig,
-  defineSidebarArrayConfig,
-  defineSidebarConfig,
-  defineSidebarObjectConfig,
-  defineThemeConfig,
-} from "./compact/index.js";
-
-export {
-  config,
-  navbarConfig,
-  sidebarConfig,
-  themeConfig,
-  convertFrontmatter,
-  convertNavbarOptions,
-  convertSidebarOptions,
-  convertThemeOptions,
-  defineHopeConfig,
-  defineThemeConfig,
-  defineNavbarConfig,
-  defineSidebarArrayConfig,
-  defineSidebarConfig,
-  defineSidebarObjectConfig,
-};
 /** @deprecated */
 export { hopeTheme as hope } from "./theme.js";
 
-export default {
-  config,
-  navbarConfig,
-  sidebarConfig,
-  themeConfig,
-};
+// TODO: Remove this in v2 stable
+export * from "./compact/index.js";
 
-export * from "./config/index.js";
 export * from "./helpers.js";
 export * from "./locales/index.js";
 export * from "./theme.js";
+export * from "./typings/index.js";
 export * from "../shared/index.js";
+
+// internal
+export * from "./alias.js";
+export * from "./bundler.js";
+export * from "./config/index.js";
+export * from "./frontmatter/index.js";
+export * from "./plugins/index.js";
+export * from "./prepare/index.js";

@@ -7,7 +7,8 @@ import {
   type ThemeProjectHomePageFrontmatter,
 } from "../../../shared/index.js";
 
-export const filter = ({
+/** @private */
+export const blogFilter = ({
   frontmatter,
   filePathRelative,
 }: Page<ThemePageData>): boolean => {

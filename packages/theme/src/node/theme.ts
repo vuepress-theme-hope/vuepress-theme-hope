@@ -1,9 +1,9 @@
 import { type ThemeFunction } from "@vuepress/core";
 import { watch } from "chokidar";
 
-import { resolveAlias } from "./alias.js";
+import { getAlias } from "./alias.js";
 import { extendsBundlerOptions } from "./bundler.js";
-import { checkStyle, convertThemeOptions } from "./compact/index.js";
+import { checkLegacyStyle, convertThemeOptions } from "./compact/index.js";
 import {
   checkSocialMediaIcons,
   getStatus,
@@ -42,7 +42,7 @@ export const hopeTheme =
       ? convertThemeOptions(options as ThemeOptions & Record<string, unknown>)
       : options;
 
-    if (legacy) checkStyle(app);
+    if (legacy) checkLegacyStyle(app);
 
     checkPlugins(app, plugins);
 
@@ -57,7 +57,7 @@ export const hopeTheme =
     return {
       name: "vuepress-theme-hope",
 
-      alias: resolveAlias(isDebug),
+      alias: getAlias(isDebug),
 
       define: () => ({
         BLOG_TYPE_INFO: status.blogType,

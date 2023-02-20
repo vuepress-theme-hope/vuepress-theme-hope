@@ -5,6 +5,7 @@ import { entries, startsWith, values } from "vuepress-shared/node";
 import { type ThemeData } from "../../shared/index.js";
 import { TEMPLATE_FOLDER, logger } from "../utils.js";
 
+/** @private */
 export const checkSocialMediaIcons = (
   themeData: ThemeData
 ): Record<string, string> => {

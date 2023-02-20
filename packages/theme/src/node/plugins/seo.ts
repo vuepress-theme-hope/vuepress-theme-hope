@@ -5,6 +5,11 @@ import { keys } from "vuepress-shared/node";
 
 import { type PluginsOptions, type ThemeData } from "../../shared/index.js";
 
+/**
+ * @private
+ *
+ * Resolve options for vuepress-plugin-seo2
+ */
 export const getSEOPlugin = (
   themeData: ThemeData,
   { seo }: PluginsOptions,

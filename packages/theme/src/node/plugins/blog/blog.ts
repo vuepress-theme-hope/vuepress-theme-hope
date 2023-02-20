@@ -2,10 +2,14 @@ import { type App, type Page, type Plugin } from "@vuepress/core";
 import { type BlogOptions, blogPlugin } from "vuepress-plugin-blog2";
 import { keys, startsWith } from "vuepress-shared/node";
 
-import { getCategoryCategory, getTagCategory } from "./category.js";
-import { filter } from "./filter.js";
-import { injectBasicInfo } from "./info.js";
-import { getArticleType, getStarType, getTimelineType } from "./type.js";
+import { getBlogCategoryCategory, getBlogTagCategory } from "./category.js";
+import { blogFilter } from "./filter.js";
+import { injectBlogBasicInfo } from "./info.js";
+import {
+  getBlogArticleType,
+  getBlogStarType,
+  getBlogTimelineType,
+} from "./type.js";
 import {
   ArticleInfoType,
   type BlogPluginOptions,
@@ -14,6 +18,7 @@ import {
 } from "../../../shared/index.js";
 import { checkFrontmatter } from "../../frontmatter/check.js";
 
+/** @private */
 export const getBlogPlugin = (
   app: App,
   themeData: ThemeData,
@@ -44,14 +49,14 @@ export const getBlogPlugin = (
       return !isEncrypted && !("excerpt" in page.frontmatter);
     },
 
-    filter: blogOptions.filter || filter,
+    filter: blogOptions.filter || blogFilter,
 
     getInfo: (page: Page<ThemePageData>) => {
       const info: Record<string, unknown> = {};
       const isEncrypted = isPageEncrypted(page);
 
       checkFrontmatter(page, app.env.isDebug);
-      injectBasicInfo(page, info);
+      injectBlogBasicInfo(page, info);
 
       // resolve encrypted
       if (isEncrypted) info[ArticleInfoType.isEncrypted] = true;
@@ -71,14 +76,14 @@ export const getBlogPlugin = (
     },
 
     category: [
-      getCategoryCategory(blogOptions, themeData),
-      getTagCategory(blogOptions, themeData),
+      getBlogCategoryCategory(blogOptions, themeData),
+      getBlogTagCategory(blogOptions, themeData),
     ],
 
     type: [
-      getArticleType(blogOptions, themeData),
-      getStarType(blogOptions, themeData),
-      getTimelineType(blogOptions, themeData),
+      getBlogArticleType(blogOptions, themeData),
+      getBlogStarType(blogOptions, themeData),
+      getBlogTimelineType(blogOptions, themeData),
       ...(blogOptions.type?.map((type) => ({ layout: "BlogType", ...type })) ||
         []),
     ],

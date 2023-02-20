@@ -45,6 +45,11 @@ const themeComponents = [
   "VuePlayground",
 ];
 
+/**
+ * @private
+ *
+ * Resolve options for vuepress-plugin-feed2
+ */
 export const getFeedPlugin = (
   themeData: ThemeData,
   options: Omit<FeedOptions, "hostname"> = {},

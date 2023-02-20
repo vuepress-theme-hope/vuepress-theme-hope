@@ -75,6 +75,9 @@ export const checkTag = (bundlerOptions: unknown, app: App): void => {
   }
 };
 
+/**
+ * @private
+ */
 export const extendsBundlerOptions = (
   bundlerOptions: unknown,
   app: App

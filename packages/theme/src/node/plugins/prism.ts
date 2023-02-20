@@ -2,6 +2,8 @@ import { type App } from "@vuepress/core";
 import { prismjsPlugin } from "@vuepress/plugin-prismjs";
 
 /**
+ * @private
+ *
  * Composition Api to use `@vuepress/plugin-prismjs`
  */
 export const usePrismPlugin = (app: App): void => {
@@ -19,6 +21,8 @@ export const usePrismPlugin = (app: App): void => {
 };
 
 /**
+ * @private
+ *
  * Composition Api to remove `@vuepress/plugin-prismjs`
  */
 export const removePrismPlugin = (app: App): void => {

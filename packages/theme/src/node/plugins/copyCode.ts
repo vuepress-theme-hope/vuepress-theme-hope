@@ -4,6 +4,11 @@ import {
   copyCodePlugin,
 } from "vuepress-plugin-copy-code2";
 
+/**
+ * @private
+ *
+ * Resolve options for vuepress-plugin-copy-code2
+ */
 export const getCopyCodePlugin = (
   options?: CopyCodeOptions | false
 ): Plugin | null => {
