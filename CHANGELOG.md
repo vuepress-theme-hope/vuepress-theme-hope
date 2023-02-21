@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.179](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.178...v2.0.0-beta.179) (2023-02-21)
+
+### Features
+
+- **md-enhance:** use mermaid@v10 ([3d95f10](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3d95f10e0354b9d36d888f742892d1439ccfdd08))
+- **search-pro:** use worker to perform search ([#2818](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2818)) ([1fcae96](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1fcae96435f4ec699772f0c6f2a4e9d019ad4d53))
+- **theme:** lock body scroll while sidebar is open, close [#2816](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2816) ([fcd9671](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fcd967159044564718539fbeef5cc04dd3d42317))
+
+### Bug Fixes
+
+- **search-pro:** fix style ([55f5ecf](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/55f5ecf90dd7ccd15c1be259d7d8d40b01968254))
+- **search-pro:** improve style ([12f788f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/12f788fd8b856c24f38e3069ec80dc644de6644b))
+
 ## [2.0.0-beta.178](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.177...v2.0.0-beta.178) (2023-02-20)
 
 ### ⚠ BREAKING CHANGES
