@@ -5,7 +5,6 @@ import {
   computed,
   defineComponent,
   h,
-  nextTick,
   onMounted,
   ref,
   watch,
@@ -99,30 +98,9 @@ export default defineComponent({
 
     const renderMermaid = async (): Promise<void> =>
       Promise.all([
-        import(
-          /* webpackChunkName: "mermaid" */ "mermaid/dist/mermaid.esm.min.mjs"
-        ),
-        import(
-          /* webpackChunkName: "mermaid" */ "@mermaid-js/mermaid-mindmap/dist/mermaid-mindmap.esm.min.mjs"
-        ),
+        import(/* webpackChunkName: "mermaid" */ "mermaid"),
         new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
-      ]).then(async ([{ default: mermaid }, { default: mindmap }]) => {
-        try {
-          await mermaid.registerExternalDiagrams([mindmap]);
-        } catch (err) {
-          // mermaid does not provide a api to get registered diagrams
-        }
-
-        // generate a invisible container
-        const container = document.createElement("div");
-
-        container.style.position = "relative";
-        container.style.top = "-9999px";
-
-        const renderCallback = (code: string): void => {
-          svgCode.value = code;
-          document.body.removeChild(container);
-        };
+      ]).then(async ([{ default: mermaid }]) => {
         const chartOptions = { useMaxWidth: false };
 
         mermaid.initialize({
@@ -140,20 +118,8 @@ export default defineComponent({
           startOnLoad: false,
         });
 
-        // clear SVG Code
-        svgCode.value = "";
-
-        document.body.appendChild(container);
-
-        // make sure dom is refreshed
-        await nextTick();
-
-        await mermaid.renderAsync(
-          props.id,
-          code.value,
-          renderCallback,
-          container
-        );
+        // eslint-disable-next-line
+        svgCode.value = (await mermaid.render(props.id, code.value)).svg;
       });
 
     onMounted(() => {

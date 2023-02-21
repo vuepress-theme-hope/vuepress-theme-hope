@@ -222,7 +222,7 @@ export const mdEnhancePlugin =
         }
 
         if (mermaidEnable) {
-          addViteOptimizeDepsExclude(bundlerOptions, app, "mermaid");
+          addViteOptimizeDepsInclude(bundlerOptions, app, "mermaid");
           addViteSsrExternal(bundlerOptions, app, "mermaid");
         }
 
