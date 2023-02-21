@@ -65,7 +65,7 @@ Atom 和 JSON 是为了提供更多 Feed 软件的适配而提供的。
 
 :::
 
-详细的选项及其默认值详见 <ProjectLink name="feed2" path="/zh/config/channel.html">配置 → 频道设置]</ProjectLink>。
+详细的选项及其默认值详见 <ProjectLink name="feed2" path="/zh/config/channel.html">配置 → 频道设置</ProjectLink>。
 
 ## 生成控制
 
