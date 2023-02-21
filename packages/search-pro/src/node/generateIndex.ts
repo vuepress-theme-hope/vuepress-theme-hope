@@ -1,10 +1,17 @@
-import { type Page } from "@vuepress/core";
+import { type App, type Page } from "@vuepress/core";
 import { isArray } from "@vuepress/shared";
 import { type AnyNode, load } from "cheerio";
 import { fromEntries, keys } from "vuepress-shared/node";
 
-import { type SearchProCustomFieldOptions } from "./options.js";
-import { type PageHeaderContent, type PageIndex } from "../shared/index.js";
+import {
+  type SearchProCustomFieldOptions,
+  type SearchProOptions,
+} from "./options.js";
+import {
+  type PageHeaderContent,
+  type PageIndex,
+  type SearchIndex,
+} from "../shared/index.js";
 
 /**
  * These tags are valid HTML tags which can contain content.
@@ -151,4 +158,41 @@ export const generatePageIndex = (
     ...result,
     ...(keys(customFields).length ? { customFields } : {}),
   };
+};
+
+export const getSearchIndex = (
+  app: App,
+  options: SearchProOptions
+): SearchIndex => {
+  const pagesSearchIndex = app.pages
+    .map((page) => {
+      const pageIndex = generatePageIndex(
+        page,
+        options.customFields,
+        options.indexContent
+      );
+
+      return pageIndex
+        ? { path: page.path, index: pageIndex, localePath: page.pathLocale }
+        : null;
+    })
+    .filter(
+      (item): item is { path: string; index: PageIndex; localePath: string } =>
+        item !== null
+    );
+
+  return fromEntries(
+    keys(
+      // locales should at least have root locales
+      // eslint-disable-next-line @typescript-eslint/naming-convention
+      { "/": {}, ...app.options.locales }
+    ).map((localePath) => [
+      localePath,
+      fromEntries(
+        pagesSearchIndex
+          .filter((item) => item.localePath === localePath)
+          .map((item) => [item.path, item.index])
+      ),
+    ])
+  );
 };

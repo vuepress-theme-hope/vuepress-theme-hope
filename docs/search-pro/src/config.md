@@ -146,6 +146,13 @@ Performing client search with huge contents could be slow, so under this case yo
 
 :::
 
+## worker
+
+- Type: `string`
+- Default: `search-pro.worker.js`
+
+Output Worker filename
+
 ## hotReload
 
 - Type: `boolean`

@@ -15,6 +15,7 @@ import {
 import { RouterLink, useRouter } from "vue-router";
 import { useLocaleConfig } from "vuepress-shared/client";
 
+import { SearchLoading } from "./SearchLoading.js";
 import {
   CloseIcon,
   HeadingIcon,
@@ -22,7 +23,7 @@ import {
   HistoryIcon,
   TitleIcon,
 } from "./icons.js";
-import { useSearchHistory, useSearchResults } from "../composables/index.js";
+import { useSearchHistory, useWorkerSearch } from "../composables/index.js";
 import {
   searchProClientCustomFiledConfig,
   searchProLocales,
@@ -60,29 +61,29 @@ export default defineComponent({
     const { history, addHistory, removeHistory } = useSearchHistory();
 
     const query = toRef(props, "query");
-    const searchResults = useSearchResults(query);
+    const { results, searching } = useWorkerSearch(query);
 
     const activatedResultIndex = ref(0);
     const activatedResultContentIndex = ref(0);
     const searchResult = ref<HTMLElement>();
 
-    const hasResults = computed(() => searchResults.value.length > 0);
+    const hasResults = computed(() => results.value.length > 0);
     const activatedResult = computed(
-      () => searchResults.value[activatedResultIndex.value] || null
+      () => results.value[activatedResultIndex.value] || null
     );
 
     const activePreviousResult = (): void => {
       activatedResultIndex.value =
         activatedResultIndex.value > 0
           ? activatedResultIndex.value - 1
-          : searchResults.value.length - 1;
+          : results.value.length - 1;
       activatedResultContentIndex.value =
         activatedResult.value.contents.length - 1;
     };
 
     const activeNextResult = (): void => {
       activatedResultIndex.value =
-        activatedResultIndex.value < searchResults.value.length - 1
+        activatedResultIndex.value < results.value.length - 1
           ? activatedResultIndex.value + 1
           : 0;
       activatedResultContentIndex.value = 0;
@@ -226,11 +227,13 @@ export default defineComponent({
                 ])
               )
             : locale.value.emptyHistory
+          : searching.value
+          ? h(SearchLoading, { hint: locale.value.searching })
           : hasResults.value
           ? h(
               "ul",
               { class: "search-pro-result-list" },
-              searchResults.value.map(({ title, contents }, index) => {
+              results.value.map(({ title, contents }, index) => {
                 const isCurrentResultActive =
                   activatedResultIndex.value === index;
 

@@ -146,6 +146,13 @@ export default defineUserConfig({
 
 :::
 
+## worker
+
+- 类型: `string`
+- 默认值: `search-pro.worker.js`
+
+输出的 Worker 文件名称
+
 ## hotReload
 
 - 类型: `boolean`

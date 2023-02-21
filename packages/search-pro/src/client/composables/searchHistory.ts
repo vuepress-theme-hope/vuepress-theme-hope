@@ -1,8 +1,8 @@
 import { useLocalStorage } from "@vueuse/core";
 import { type Ref } from "vue";
 
-import { searchProHistoryCount } from "../define.js";
-import { type MatchedItem } from "../utils/result.js";
+import { searchProOptions } from "../define.js";
+import { type MatchedItem } from "../utils/index.js";
 
 const SEARCH_PRO_STORAGE = "search-pro-history-results";
 
@@ -15,13 +15,15 @@ export interface SearchHistory {
 const searchProStorage = useLocalStorage<MatchedItem[]>(SEARCH_PRO_STORAGE, []);
 
 export const useSearchHistory = (): SearchHistory => {
+  const { historyCount } = searchProOptions;
+
   const addHistory = (item: MatchedItem): void => {
-    if (searchProStorage.value.length < searchProHistoryCount)
+    if (searchProStorage.value.length < historyCount)
       searchProStorage.value = [item, ...searchProStorage.value];
     else
       searchProStorage.value = [
         item,
-        ...searchProStorage.value.slice(0, searchProHistoryCount - 1),
+        ...searchProStorage.value.slice(0, historyCount - 1),
       ];
   };
 

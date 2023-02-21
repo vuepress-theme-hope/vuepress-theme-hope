@@ -1,7 +1,7 @@
 export type Word = [tag: string, content: string] | string;
 
-const maxLength = 100;
-const suffixLength = 20;
+const MAX_LENGTH = 100;
+const SUFFIX_LENGTH = 20;
 
 export const getMatchedContent = (
   content: string,
@@ -20,22 +20,22 @@ export const getMatchedContent = (
     // a beginning of a long string
     if (contentLength === 0)
       text =
-        content.length > suffixLength
-          ? `… ${content.slice(-suffixLength)}`
+        content.length > SUFFIX_LENGTH
+          ? `… ${content.slice(-SUFFIX_LENGTH)}`
           : content;
     // already the last text
     else if (isEnd)
       text =
         // if the string will be longer than maxLength
-        content.length + contentLength > maxLength
-          ? `${content.slice(0, maxLength - contentLength)}… `
+        content.length + contentLength > MAX_LENGTH
+          ? `${content.slice(0, MAX_LENGTH - contentLength)}… `
           : content;
     // text is at the middle
     else
       text =
-        content.length > suffixLength
-          ? `${content.slice(0, suffixLength)} … ${content.slice(
-              -suffixLength
+        content.length > SUFFIX_LENGTH
+          ? `${content.slice(0, SUFFIX_LENGTH)} … ${content.slice(
+              -SUFFIX_LENGTH
             )}`
           : content;
 
@@ -46,7 +46,7 @@ export const getMatchedContent = (
       result.push(["strong", queryString]);
       contentLength += queryString.length;
 
-      if (contentLength >= maxLength) result.push(" …");
+      if (contentLength >= MAX_LENGTH) result.push(" …");
     }
   };
 
@@ -62,12 +62,12 @@ export const getMatchedContent = (
 
     startIndex = endIndex;
 
-    if (contentLength > maxLength) break;
+    if (contentLength > MAX_LENGTH) break;
 
     matchIndex = contentLowerCase.indexOf(queryStringLowerCase, startIndex);
   }
 
-  if (contentLength < maxLength) addResult(content.slice(startIndex), true);
+  if (contentLength < MAX_LENGTH) addResult(content.slice(startIndex), true);
 
   return result;
 };

@@ -1,5 +1,4 @@
 import { type PluginFunction } from "@vuepress/core";
-import { getDirname, path } from "@vuepress/utils";
 import { watch } from "chokidar";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
@@ -8,6 +7,8 @@ import {
   getLocales,
 } from "vuepress-shared/node";
 
+import { setPageExcerpt } from "./excerpt.js";
+import { generateWorker } from "./generateWorker.js";
 import { searchProLocales } from "./locales.js";
 import { type SearchProOptions } from "./options.js";
 import {
@@ -15,27 +16,19 @@ import {
   removeSearchIndex,
   updateSearchIndex,
 } from "./prepare.js";
-
-const __dirname = getDirname(import.meta.url);
+import { CLIENT_FOLDER } from "./utils.js";
 
 export const searchProPlugin =
   (options: SearchProOptions): PluginFunction =>
   (app) => {
     useSassPalettePlugin(app, { id: "hope" });
 
-    const isBlogPluginEnabled = app.pluginApi.plugins.some(
-      ({ name }) => name === "vuepress-plugin-blog2"
-    );
-
     return {
       name: "vuepress-plugin-search-pro",
 
       alias: {
         // eslint-disable-next-line @typescript-eslint/naming-convention
-        "vuepress-plugin-search-pro/result": path.resolve(
-          __dirname,
-          "../client/components/SearchResult.js"
-        ),
+        "vuepress-plugin-search-pro/result": `${CLIENT_FOLDER}components/SearchResult.js`,
       },
 
       define: {
@@ -46,18 +39,21 @@ export const searchProPlugin =
             )
             .filter((item): item is [string, string] => item !== null)
         ),
-        SEARCH_PRO_DELAY: options.delay || 300,
-        SEARCH_PRO_HISTORY_COUNT: options.historyCount || 5,
-        SEARCH_PRO_HOTKEYS: options.hotKeys || [{ key: "k", ctrl: true }],
         SEARCH_PRO_LOCALES: getLocales({
           app,
           name: "search-pro",
           config: options.locales,
           default: searchProLocales,
         }),
+        SEARCH_PRO_OPTIONS: {
+          delay: options.delay || 300,
+          historyCount: options.historyCount || 5,
+          hotKeys: options.hotKeys || [{ key: "k", ctrl: true }],
+          worker: options.worker || "search-pro.worker.js",
+        },
       },
 
-      clientConfigFile: path.resolve(__dirname, "../client/config.js"),
+      clientConfigFile: `${CLIENT_FOLDER}config.js`,
 
       extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
         addViteSsrNoExternal(bundlerOptions, app, [
@@ -66,8 +62,9 @@ export const searchProPlugin =
         ]);
       },
 
-      onPrepared: (app): Promise<void> =>
-        prepareSearchIndex(app, options, isBlogPluginEnabled),
+      onInitialized: (app): void => setPageExcerpt(app),
+
+      onPrepared: (app): Promise<void> => prepareSearchIndex(app, options),
 
       onWatched: (app, watchers): void => {
         const hotReload =
@@ -93,5 +90,7 @@ export const searchProPlugin =
           watchers.push(searchIndexWatcher);
         }
       },
+
+      onGenerated: (app) => generateWorker(app, options),
     };
   };
