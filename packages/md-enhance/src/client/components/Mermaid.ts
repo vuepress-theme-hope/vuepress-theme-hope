@@ -98,9 +98,7 @@ export default defineComponent({
 
     const renderMermaid = async (): Promise<void> =>
       Promise.all([
-        import(
-          /* webpackChunkName: "mermaid" */ "mermaid/dist/mermaid.esm.min.mjs"
-        ),
+        import(/* webpackChunkName: "mermaid" */ "mermaid"),
         new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
       ]).then(async ([{ default: mermaid }]) => {
         const chartOptions = { useMaxWidth: false };
@@ -120,14 +118,7 @@ export default defineComponent({
           startOnLoad: false,
         });
 
-        const result = await mermaid.renderAsync(props.id, code.value);
-
-        // this is a workaround to inject svg contents with innerHTML
-        // @see https://stackoverflow.com/questions/59936358/trying-to-add-svg-data-with-innerhtml
-        svgCode.value = result.replace(
-          ' xmlns="http://www.w3.org/2000/svg"',
-          ""
-        );
+        svgCode.value = (await mermaid.render(props.id, code.value)).svg;
       });
 
     onMounted(() => {
