@@ -79,6 +79,15 @@ export interface SearchProOptions {
   hotKeys?: SearchProHotKeyOptions[];
 
   /**
+   * Output worker filename
+   *
+   * Worker 输出文件名
+   *
+   * @default "search-pro.worker.js"
+   */
+  worker?: string;
+
+  /**
    * Whether enable hmr
    *
    * 是否启用 hmr

@@ -5,17 +5,19 @@ icon: lightbulb
 
 `vuepress-plugin-search-pro` is a powerful client-side search plugin that can support custom indexing and full-text search.
 
-::: danger Try not to use client-side search
+::: warning Avoid using client-side search
 
-You should use a service provider to provide search services for your site when possible, such as [Algolia](https://www.algolia.com/), especially for larger sites. The advantage of this is that the service provider indexes your website, and users get results through the search API when they search. Special reminder, [DocSearch](https://docsearch.algolia.com/) is a free search service provided by Algolia for open source projects. If you meet the conditions, you should try to apply for this service and use [`@vuepress/plugin-docsearch`](https://v2.vuepress.vuejs.org/reference/plugin/docsearch.html) plugin.
-
-You should only use client search if you are **using a free hosting service with sufficient traffic**, **not meeting DocSearch requirements**, and **refusing to pay for a service provider**.
-
-Using client-side search has the following disadvantages:
+Although client-side search does not require a backend and is easy to add to documents and blogs, for large sites it has a fatal disadvantage. Searching using the client means:
 
 1. You need to index your website during the build stage, which increases website deployment time and website bundle size.
 1. Users need to fetch the entire index database from your server before searching, which will bring additional traffic and bandwidth pressure to your server.
 1. The user must wait for the search index to be downloaded and parsed locally before traversing the index to search locally, which will consume unnecessary traffic for the user, and at the same time increase the client’s unnecessary calculation and power consumption.
+
+So you should choose a service provider to provide search services for your site if possible, such as [Algolia](https://www.algolia.com/), or choose an open source search crawler tool and host it on your own server to provide a search service and regularly craw your site. This is necessary for large sites because users send search terms to the search API via network requests and get search results directly.
+
+In particular, [DocSearch](https://docsearch.algolia.com/) is a free search service provided by Algolia for open source projects. If you are creating open source project documentation or an open source technical blog, you can [apply for it](https://docsearch.algolia.com/apply/), and use [`@vuepress/plugin-docsearch`](https://v2.vuepress.vuejs.org/reference/plugin/docsearch.html) plugin to provide search features.
+
+You should use client-side search only when you **do not meet the apply requirements for DocSearch** and **are not willing to pay for service providers**, **can not setup your own search service**.
 
 :::
 
@@ -129,9 +131,13 @@ export default defineUserConfig({
 
 By default, the search hotkey is `Ctrl + K`. You can customize search hotkeys via the `hotkeys` option, see [Config → Hot Keys](./config.md#hotkeys).
 
-## Hot Update
+## Limitations in DevServer
 
-If you are proofreading or refining your search results, you can enable hot reloading by setting the `hotReload: true` option, see [Config → Hot Reload](./config.md#hotreload).
+The search service is powered by a worker, and in dev mode we cannot bundle the work file.
+
+In order to load search indexes in dev mode, we are using a modern service worker with `type: "module"`, however currently this feature is only supported by Chrome, and not available in Firefox and Safari. So if you want to try searching in devServer, you should use Chrome, see [CanIUse](https://caniuse.com/mdn-api_worker_worker_options_type_parameter) for support details.
+
+For better performance, adding/editing/deleting markdown contents will not trigger update for search index in dev mode. If you are proofreading or refining your search results, you can enable hot reloading by setting the `hotReload: true` option, see [Config → Hot Reload](./config.md#hotreload).
 
 ## Locale Customization
 

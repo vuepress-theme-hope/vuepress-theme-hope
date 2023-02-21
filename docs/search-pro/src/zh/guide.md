@@ -5,17 +5,19 @@ icon: lightbulb
 
 `vuepress-plugin-search-pro` 是一个强大的客户端搜索插件，可以为你的站点添加自定义索引与全文搜索功能。
 
-::: danger 尽量不要使用客户端搜索
+::: warning 避免使用客户端搜索
 
-你应该在条件允许的情况下，使用服务提供商为你的站点提供搜索服务，例如 [Algolia](https://www.algolia.com/)，尤其是对于大型站点。这样做的好处是服务提供商为你的网站建立索引，用户搜索时通过搜素 API 得到结果。特别提示，[DocSearch](https://docsearch.algolia.com/) 是 Algolia 为开源项目提供的免费搜索服务，如果条件符合你应该尝试申请此服务，并使用 [`@vuepress/plugin-docsearch`](https://v2.vuepress.vuejs.org/zh/reference/plugin/docsearch.html) 插件提供搜索。
-
-只有当你在**使用不按流量计费且流量充足的托管服务**、**不满足 DocSearch 申请条件**且**不愿意付费使用服务提供商**时，你才应该使用客户端搜索。
-
-使用客户端搜素有以下缺点:
+尽管客户端搜索无需后端，易于在文档和博客中添加，但是对于大型站点来说，它会带来较为致命的缺点。使用客户端搜索意味着:
 
 1. 你需要在构建阶段为你的网站建立索引，这会增长网站部署时间与网站的构建体积。
 1. 用户在搜索前需要从你的服务器拉取整个索引，会为你的网站服务器带来额外的流量与带宽压力。
 1. 用户必须等待搜索索引下载并在本地解析完毕才可以在本地遍历索引搜索，这会为用户消耗不必要的流量、同时让客户端增加不必要的计算量增加耗电。
+
+所以你应该在条件允许的情况下，尽可能选择服务提供商为你的站点提供搜索服务，例如 [Algolia](https://www.algolia.com/)，或者选择开源工具在自己的服务器上加载搜索服务并定期为自己的网站生成索引。对于大型站点这很必要因为用户通过网络请求向搜索 API 发送搜索字词，并直接得到搜索结果。
+
+特别提示，[DocSearch](https://docsearch.algolia.com/) 是 Algolia 为开源项目提供的免费搜索服务。如果你在创建开源项目文档或开源技术博客，你可 [申请它](https://docsearch.algolia.com/apply/)，并使用 [`@vuepress/plugin-docsearch`](https://v2.vuepress.vuejs.org/zh/reference/plugin/docsearch.html) 插件提供搜索。
+
+只有当你在**不满足 DocSearch 申请条件**且**不愿意付费使用服务提供商**、**不具备自行构建搜索服务条件**时，你才应该使用客户端搜索。
 
 :::
 
@@ -128,6 +130,14 @@ export default defineUserConfig({
 ## 搜索快捷键
 
 默认情况下，搜索快捷键为 `Ctrl + K`。你可以通过 `hotkeys` 选项来自定义搜索快捷键，参见 [配置 → 快捷键](./config.md#hotkeys)。
+
+## 开发服务器中的限制
+
+搜索服务由 Worker 提供支持，在开发模式下我们无法捆绑 Worker 文件。
+
+为了在开发模式下加载搜索索引，我们使用了带有 `type: "module"` 的现代 Worker，但是目前只有 Chrome 支持此功能，Firefox 和 Safari 不支持。 因此，如果您想尝试在 devServer 中搜索，您应该使用 Chrome，请参阅 [CanIUse](https://caniuse.com/mdn-api_worker_worker_options_type_parameter) 了解支持详情。
+
+为了更好的性能，在开发模式下添加/编辑/删除 Markdown 内容不会触发搜索索引的更新。如果您正在校对或优化您的搜索结果，您可以通过设置 `hotReload: true` 选项来启用热重载，参见 [配置 → 热重载](./config.md#hotreload)。
 
 ## 热更新
 

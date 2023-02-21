@@ -21,6 +21,13 @@ export interface SearchProLocaleData {
   search: string;
 
   /**
+   * Searching text
+   *
+   * 搜素中文字
+   */
+  searching: string;
+
+  /**
    * Cancel text
    *
    * 取消文字
