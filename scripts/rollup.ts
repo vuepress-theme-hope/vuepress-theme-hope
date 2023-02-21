@@ -1,5 +1,6 @@
 import commonjs from "@rollup/plugin-commonjs";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
+import replace, { type RollupReplaceOptions } from "@rollup/plugin-replace";
 import { type RollupOptions, type RollupWarning } from "rollup";
 import copy from "rollup-plugin-copy";
 import dts from "rollup-plugin-dts";
@@ -23,6 +24,7 @@ export interface BundleOptions {
   output?: Record<string, unknown>;
   inlineDynamicImports?: boolean;
   preserveShebang?: boolean;
+  replace?: RollupReplaceOptions;
 }
 
 export const bundle = (
@@ -40,6 +42,7 @@ export const bundle = (
     preserveShebang = typeof filePath === "object"
       ? filePath.base.startsWith("cli")
       : filePath.startsWith("cli/"),
+    replace: replaceOptions,
   }: BundleOptions = {}
 ): RollupOptions[] => [
   {
@@ -67,6 +70,12 @@ export const bundle = (
     ],
 
     plugins: [
+      typeof replaceOptions === "object"
+        ? (replace as unknown as typeof replace.default)({
+            preventAssignment: true,
+            ...replaceOptions,
+          })
+        : null,
       ...(preserveShebang ? [shebangPlugin()] : []),
       ...(resolve
         ? [
@@ -96,11 +105,13 @@ export const bundle = (
     ],
 
     external: [
-      ...((
-        typeof filePath === "object"
-          ? filePath.base.startsWith("client")
-          : filePath.startsWith("client/")
-      )
+      ...(resolve
+        ? []
+        : (
+            typeof filePath === "object"
+              ? filePath.base.startsWith("client")
+              : filePath.startsWith("client/")
+          )
         ? [
             /^@temp/,
             "@vueuse/core",
@@ -176,11 +187,13 @@ export const bundle = (
             }),
           ],
           external: [
-            ...((
-              typeof filePath === "object"
-                ? filePath.base.startsWith("client")
-                : filePath.startsWith("client/")
-            )
+            ...(resolve
+              ? []
+              : (
+                  typeof filePath === "object"
+                    ? filePath.base.startsWith("client")
+                    : filePath.startsWith("client/")
+                )
               ? [/^@temp/, "vuepress-shared/client", /\.s?css$/]
               : (
                   typeof filePath === "object"
