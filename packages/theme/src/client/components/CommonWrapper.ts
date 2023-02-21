@@ -1,6 +1,8 @@
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import { useEventListener, useThrottleFn } from "@vueuse/core";
+import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import {
+  type ComponentPublicInstance,
   type DefineComponent,
   Transition,
   type VNode,
@@ -59,6 +61,7 @@ export default defineComponent({
     >();
     const themeLocale = useThemeLocaleData();
     const { isMobile, isWide } = useWindowSize();
+    const sidebar = ref<ComponentPublicInstance>();
 
     // navbar
     const hideNavbar = ref(false);
@@ -173,6 +176,16 @@ export default defineComponent({
       onUnmounted(() => {
         unregisterRouterHook();
       });
+
+      watch(isMobileSidebarOpen, (value) => {
+        const sidebarElement = sidebar.value!.$el as HTMLElement;
+
+        if (value)
+          disableBodyScroll(sidebarElement, {
+            reserveScrollBarGap: true,
+          });
+        else enableBodyScroll(sidebarElement);
+      });
     });
 
     return (): VNode =>
@@ -257,7 +270,7 @@ export default defineComponent({
               // sidebar
               h(
                 Sidebar,
-                {},
+                { ref: sidebar },
                 {
                   ...(slots["sidebar"]
                     ? {
