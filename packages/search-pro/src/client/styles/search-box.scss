@@ -69,6 +69,9 @@
 
       line-height: 1;
       letter-spacing: -0.1em;
+
+      transition: background var(--vp-ct), color var(--vp-ct),
+        border var(--vp-ct) box-shadow var(--vp-ct);
     }
   }
 }
