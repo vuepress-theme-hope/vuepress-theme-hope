@@ -1653,8 +1653,8 @@ importers:
         specifier: ^13.0.1
         version: 13.0.1
       mermaid:
-        specifier: ^9.4.2-rc.1
-        version: 9.4.2-rc.1
+        specifier: ^10.0.0
+        version: 10.0.0
       reveal.js:
         specifier: ^4.4.0
         version: 4.4.0
@@ -10111,8 +10111,8 @@ packages:
     resolution: {integrity: sha512-jz+Cfrg9GWOZbQAnDQ4hlVnQky+341Yk5ru8bZSe6sIDTCIg8n9i/u7hSQGSVOF3C7lH6mGtqjkiT9G4wFLL0w==}
     dev: true
 
-  /mermaid@9.4.2-rc.1:
-    resolution: {integrity: sha512-TWgp8Hl+sm/rmNjuwMBm8s1fES81bK7PyXmr5lSFS7YiHaIm6Xx+qG3pGFj47YqyJ4XEwcA3tZo6xLV9OYYwVg==}
+  /mermaid@10.0.0:
+    resolution: {integrity: sha512-syS1qyYCd3EPXCVSpYtefY4D9z9WZAK8hFgjeHR9PAtanybLO162Tu7o5i/nZkqRrJq0Rk8RqskQlhBPgT8eBw==}
     dependencies:
       '@braintree/sanitize-url': 6.0.2
       cytoscape: 3.23.0
