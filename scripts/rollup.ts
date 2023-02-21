@@ -90,18 +90,16 @@ export const bundle = (
         minify: isProduction,
         target: "node14",
       }),
-      ...(copyOptions.length
-        ? [
-            // FIXME: This is an issue of ts NodeNext
-            (copy as unknown as typeof copy.default)({
-              targets: copyOptions.map((item) =>
-                typeof item === "string"
-                  ? { src: `./src/${item}`, dest: `./lib/${item}` }
-                  : { src: `./src/${item[0]}`, dest: `./lib/${item[1]}` }
-              ),
-            }),
-          ]
-        : []),
+      copyOptions.length
+        ? // FIXME: This is an issue of ts NodeNext
+          (copy as unknown as typeof copy.default)({
+            targets: copyOptions.map((item) =>
+              typeof item === "string"
+                ? { src: `./src/${item}`, dest: `./lib/${item}` }
+                : { src: `./src/${item[0]}`, dest: `./lib/${item[1]}` }
+            ),
+          })
+        : null,
     ],
 
     external: [

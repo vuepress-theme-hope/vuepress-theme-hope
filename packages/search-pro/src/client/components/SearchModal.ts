@@ -26,7 +26,7 @@ const SearchResult = defineAsyncComponent({
   loadingComponent: () => {
     const localeConfig = useLocaleConfig(searchProLocales);
 
-    return h(SearchLoading, { hint: localeConfig.value.searching });
+    return h(SearchLoading, { hint: localeConfig.value.loading });
   },
 });
 

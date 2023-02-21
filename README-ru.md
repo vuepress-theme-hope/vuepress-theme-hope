@@ -15,11 +15,7 @@
 
 ## Special Sponsor
 
-<!-- markdownlint-disable MD033 -->
-
 [![Grey Software](https://vuepress-theme-hope.github.io/grey-software.svg)](https://grey.software/)
-
-<!-- markdownlint-restore -->
 
 ## Контакт
 
