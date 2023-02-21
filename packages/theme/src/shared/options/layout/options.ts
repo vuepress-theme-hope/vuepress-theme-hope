@@ -71,11 +71,11 @@ export interface LayoutLocaleOptions
   /**
    * Article Info display configuration
    *
-   * @see https://theme-hope.vuejs.vuepress/guide/feature/page-info.html
+   * @see https://theme-hope.vuejs.press/guide/feature/page-info.html
    *
    * 文章信息配置
    *
-   * @see https://theme-hope.vuejs.vuepress/zh/guide/feature/page-info.html
+   * @see https://theme-hope.vuejs.press/zh/guide/feature/page-info.html
    *
    * @default ["Author", "Original", "Date", "PageView", "ReadingTime", "Category", "Tag"]
    */
