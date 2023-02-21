@@ -10,7 +10,8 @@ import {
   type ThemeNormalPageFrontmatter,
 } from "../../../shared/index.js";
 
-export const getCategoryCategory = (
+/** @private */
+export const getBlogCategoryCategory = (
   options: BlogPluginOptions,
   themeData: ThemeData
 ): BlogCategoryOptions<
@@ -46,7 +47,8 @@ export const getCategoryCategory = (
     itemLayout: "BlogCategory",
   };
 
-export const getTagCategory = (
+/** @private */
+export const getBlogTagCategory = (
   options: BlogPluginOptions,
   themeData: ThemeData
 ): BlogCategoryOptions<

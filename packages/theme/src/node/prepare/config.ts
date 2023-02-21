@@ -3,6 +3,9 @@ import { type App } from "@vuepress/core";
 import { type ThemeStatus } from "../config/status.js";
 import { CLIENT_FOLDER } from "../utils.js";
 
+/**
+ * @private
+ */
 export const prepareConfigFile = (
   app: App,
   { enableBlog, enableEncrypt, enableSlide }: ThemeStatus

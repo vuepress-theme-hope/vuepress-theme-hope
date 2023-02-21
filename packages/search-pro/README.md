@@ -1,6 +1,6 @@
 <!-- markdownlint-disable -->
 <p align="center">
-  <img width="240" src="https://plugin-search-pro.vuejs.vuepress/logo.svg" style="text-align: center;">
+  <img width="240" src="https://plugin-search-pro.vuejs.press/logo.svg" style="text-align: center;">
 </p>
 <h1 align="center">vuepress-plugin-search-pro</h1>
 <h4 align="center">VuePress client search plugin 🔍 / VuePress 客户端搜索插件 🔍</h4>
@@ -11,7 +11,7 @@
 
 VuePress client search plugin 🔍 / VuePress 客户端搜索插件 🔍
 
-## [Official Docs](https://plugin-search-pro.vuejs.vuepress/) | [官方文档](https://plugin-search-pro.vuejs.vuepress/zh/)
+## [Official Docs](https://plugin-search-pro.vuejs.press/) | [官方文档](https://plugin-search-pro.vuejs.press/zh/)
 
 ## Install
 

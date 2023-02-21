@@ -3,6 +3,11 @@ import { isPlainObject } from "@vuepress/shared";
 import { type SitemapOptions, sitemapPlugin } from "vuepress-plugin-sitemap2";
 import { keys } from "vuepress-shared/node";
 
+/**
+ * @private
+ *
+ * Resolve options for vuepress-plugin-sitemap2
+ */
 export const getSitemapPlugin = (
   options?: Omit<SitemapOptions, "hostname"> | boolean,
   hostname?: string,

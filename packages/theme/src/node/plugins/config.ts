@@ -23,6 +23,11 @@ import {
   type ThemeOptions,
 } from "../../shared/index.js";
 
+/**
+ * @private
+ *
+ * Get theme plugins
+ */
 export const getPluginConfig = (
   app: App,
   plugins: PluginsOptions,

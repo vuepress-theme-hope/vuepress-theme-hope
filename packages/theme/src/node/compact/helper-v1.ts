@@ -235,7 +235,7 @@ const checkPluginOptions = (plugins: unknown): PluginConfig => {
   return [];
 };
 
-export const checkBundlerOptions = (config: Record<string, unknown>): void => {
+const checkBundlerOptions = (config: Record<string, unknown>): void => {
   [
     "postcss",
     "stylus",

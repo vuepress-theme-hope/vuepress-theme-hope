@@ -32,6 +32,14 @@ A VuePress theme with tons of features✨
 
 ## [Online Demo](https://stackblitz.com/fork/vuepress-theme-hope)
 
+## Special Sponsor
+
+<!-- markdownlint-disable MD033 -->
+
+[![Grey Software](https://vuepress-theme-hope.github.io/grey-software.svg)](https://grey.software/)
+
+<!-- markdownlint-restore -->
+
 ## Contact
 
 We recommend you to contact using [issues](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues) and [discussions](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions), but you are welcome to join our [telegram group!](https://t.me/vuepressthemehope).

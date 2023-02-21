@@ -14,6 +14,11 @@ import {
 import { convertFrontmatter } from "../compact/index.js";
 import { checkFrontmatter } from "../frontmatter/check.js";
 
+/**
+ * @private
+ *
+ * Inject basic page info
+ */
 export const injectPageInfo = (page: Page<ThemePageData>): void => {
   const { filePathRelative } = page;
   const frontmatter = page.frontmatter as

@@ -1,6 +1,6 @@
 <!-- markdownlint-disable -->
 <p align="center">
-  <img width="240" src="https://plugin-sitemap2.vuejs.vuepress/logo.svg" style="text-align: center;">
+  <img width="240" src="https://plugin-sitemap2.vuejs.press/logo.svg" style="text-align: center;">
 </p>
 <h1 align="center">vuepress-plugin-sitemap2</h1>
 <h4 align="center">VuePress Sitemap plugin🗺️ / VuePress Sitemap 插件🗺️</h4>
@@ -11,7 +11,7 @@
 
 VuePress Sitemap plugin🗺️ / VuePress Sitemap 插件 🗺️
 
-## [Official Docs](https://plugin-sitemap2.vuejs.vuepress/) | [官方文档](https://plugin-sitemap2.vuejs.vuepress/zh/)
+## [Official Docs](https://plugin-sitemap2.vuejs.press/) | [官方文档](https://plugin-sitemap2.vuejs.press/zh/)
 
 ## Install
 

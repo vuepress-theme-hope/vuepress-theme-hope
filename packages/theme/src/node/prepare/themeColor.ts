@@ -3,6 +3,9 @@ import { entries } from "vuepress-shared/node";
 
 import { type ThemeData } from "../../shared/index.js";
 
+/**
+ * @private
+ */
 export const prepareThemeColorScss = async (
   app: App,
   themeData: ThemeData

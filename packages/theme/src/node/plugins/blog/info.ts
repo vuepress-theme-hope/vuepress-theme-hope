@@ -9,7 +9,8 @@ import {
   type ThemeProjectHomePageFrontmatter,
 } from "../../../shared/index.js";
 
-export const injectBasicInfo = (
+/** @private */
+export const injectBlogBasicInfo = (
   page: Page<ThemePageData>,
   info: Record<string, unknown>
 ): void => {

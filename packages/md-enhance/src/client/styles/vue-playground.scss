@@ -62,50 +62,18 @@
   border: 1px solid var(--vp-brc);
   border-radius: 6px;
 
-  .title-wrapper {
-    display: flex;
-    flex-flow: row wrap;
-
-    padding: 8px 10px;
+  .header {
+    padding: 0.5rem 0.75rem;
     border-bottom: 1px solid var(--vp-brc);
 
     background: var(--playground-header-bg-color, #eee);
 
     font-weight: 500;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    overflow-wrap: break-word;
 
     transition: background var(--vp-ct) border-color var(--vp-ct);
-  }
-
-  .title {
-    flex: 1;
-
-    overflow: hidden;
-
-    font-size: 1.25rem;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
-  .actions {
-    display: flex;
-    align-items: center;
-  }
-
-  .icon {
-    width: 1.5rem;
-    height: 1.5rem;
-    fill: #777;
-  }
-
-  .action {
-    @include reset.button;
-
-    display: inline-flex;
-    margin-inline-start: 10px;
-
-    @media (max-width: hope-config.$tablet) {
-      display: none;
-    }
   }
 
   .preview-loading {
@@ -138,75 +106,8 @@
       page-break-inside: avoid;
     }
 
-    @media (max-width: hope-config.$tablet) {
-      &.show-code {
-        .vue-repl {
-          .split-pane.show-output {
-            .left {
-              display: none !important;
-            }
-          }
-
-          .split-pane:not(.show-output) {
-            .left {
-              display: block !important;
-            }
-          }
-        }
-      }
-
-      &.hide-code {
-        .vue-repl {
-          .split-pane.show-output {
-            .left {
-              display: none !important;
-            }
-          }
-
-          .split-pane:not(.show-output) {
-            .left {
-              display: block !important;
-            }
-          }
-        }
-      }
-    }
-
-    iframe {
-      display: block;
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
     .vue-repl {
-      .split-pane {
-        .left {
-          .editor-container {
-            height: 100% !important;
-          }
-        }
-      }
-    }
-
-    &.show-code {
-      .vue-repl {
-        .split-pane {
-          .left {
-            display: block !important;
-          }
-        }
-      }
-    }
-
-    &.hide-code {
-      .vue-repl {
-        .split-pane {
-          .left {
-            display: none !important;
-          }
-        }
-      }
+      height: 300px;
     }
 
     // reset pre

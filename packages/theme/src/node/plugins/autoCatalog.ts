@@ -6,6 +6,8 @@ import {
 } from "vuepress-plugin-auto-catalog";
 
 /**
+ * @private
+ *
  * Resolve options for vuepress-plugin-auto-catalog
  */
 export const getAutoCatalogPlugin = (

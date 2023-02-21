@@ -1,6 +1,6 @@
 {
   "name": "create-vuepress-theme-hope",
-  "version": "2.0.0-beta.177",
+  "version": "2.0.0-beta.178",
   "description": "Create vuepress-theme-hope demo project helper",
   "keywords": [
     "create",
@@ -9,7 +9,7 @@
     "vuepress-theme",
     "vuepress-theme-hope"
   ],
-  "homepage": "https://theme-hope.vuejs.vuepress/",
+  "homepage": "https://theme-hope.vuejs.press/",
   "bugs": {
     "url": "https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues"
   },

@@ -7,7 +7,7 @@ $vp-bg: "var(--bg-color)";
 $vp-bgl: "var(--bg-color-light)";
 
 // background lighter
-$vp-bglt: "var(--bg-color-lighter)";
+$vp-bglt: "var(--bg-color-tertiary)";
 
 // color
 $vp-c: "var(--text-color)";
@@ -22,8 +22,7 @@ $vp-clt: "var(--text-color-lighter)";
 $vp-brc: "var(--border-color)";
 
 // border-color dark
-// currently not used any where
-// $vp-brcd: "var(--border-color-dark)";
+$vp-brcd: "var(--border-color-dark)";
 
 // theme color
 $vp-tc: "var(--theme-color)";

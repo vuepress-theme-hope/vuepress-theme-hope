@@ -4,6 +4,11 @@ import {
   photoSwipePlugin,
 } from "vuepress-plugin-photo-swipe";
 
+/**
+ * @private
+ *
+ * Resolve options for vuepress-plugin-photo-swipe
+ */
 export const getPhotoSwipePlugin = (
   options?: PhotoSwipeOptions | boolean
 ): Plugin | null => {

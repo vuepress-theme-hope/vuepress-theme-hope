@@ -11,6 +11,11 @@ import {
   type ThemeNormalPageFrontmatter,
 } from "../../shared/index.js";
 
+/**
+ * @private
+ *
+ * Resolve options for vuepress-plugin-copyright
+ */
 export const getCopyrightPlugin = (
   themeData: ThemeData,
   options?: Partial<CopyrightOptions> | boolean,

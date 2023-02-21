@@ -23,7 +23,11 @@ const SearchResult = defineAsyncComponent({
     import(
       /* webpackChunkName: "search-pro-result" */ "vuepress-plugin-search-pro/result"
     ),
-  loadingComponent: SearchLoading,
+  loadingComponent: () => {
+    const localeConfig = useLocaleConfig(searchProLocales);
+
+    return h(SearchLoading, { hint: localeConfig.value.searching });
+  },
 });
 
 export default defineComponent({

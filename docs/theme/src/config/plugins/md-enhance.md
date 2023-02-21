@@ -412,13 +412,6 @@ Playground options.
   ```ts
   interface VuePlaygroundOptions {
     /**
-     * Whether to show code in playground
-     *
-     * @default false
-     */
-    showCode?: boolean;
-
-    /**
      * specify the version of vue
      */
     vueVersion?: string;
@@ -468,9 +461,9 @@ Playground options.
     /**
      * Layout
      *
-     * @default 'vertical'
+     * @default 'horizontal'
      */
-    layout?: "vertical" | "horizontal";
+    layout?: "vertical" |layout?: "horizontal" | "vertical";
 
     /**
      * Options to configure the `vue/compiler-sfc`

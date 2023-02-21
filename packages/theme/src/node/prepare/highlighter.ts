@@ -50,6 +50,9 @@ const PRISMJS_THEMES: readonly PrismjsTheme[] = [
 const DEFAULT_PRISMJS_LIGHT_THEME: PrismjsTheme = "one-light";
 const DEFAULT_PRISMJS_DARK_THEME: PrismjsTheme = "one-dark";
 
+/**
+ * @private
+ */
 export const prepareHighLighterScss = async (
   app: App,
   { prismjs }: PluginsOptions

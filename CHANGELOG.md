@@ -4,6 +4,27 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.178](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.177...v2.0.0-beta.178) (2023-02-20)
+
+### ⚠ BREAKING CHANGES
+
+- **md-enhance:** remove showCode option in vue playground, update layout default value
+
+closed 2811
+
+### Features
+
+- **md-enhance:** remove some customization with vue playground ([916792a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/916792a3a5e68484e3d1567645c697817db3ddcb))
+
+### Bug Fixes
+
+- fix color issue ([1549e51](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1549e515e9cf1c5b637fcae8667b5e5477951d39))
+
+### Performance Improvements
+
+- **copy-code2:** optimize dist size ([#2808](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2808)) ([6a0f532](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6a0f5321b8688b65605ebb1ac0812a941346df68))
+- optimize packing ([#2807](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2807)) ([1c04360](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1c043603388b588c97b37ad7af8fb9eb59fb40fa))
+
 ## [2.0.0-beta.177](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.176...v2.0.0-beta.177) (2023-02-19)
 
 ### Features
@@ -626,7 +647,7 @@ All notable changes to this project will be documented in this file. See [Conven
 - **theme:** rebuild excerpt generating ([79332d2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/79332d230784bfb8b8ebed0f8e3ed45ca47bb068))
 - **theme:** remove slots in BlogHero and correct docs, fix [#2503](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2503) ([8e2fc14](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8e2fc1447cf98d17b72df3c38254ebbe115fb882))
 - **theme:** support number value for autoExcerpt ([3cac1bf](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3cac1bf05d67716a07441c853148edd0a0c2b8ef))
-- **theme:** update comopnent settings ([c0c7e17](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c0c7e1719ffed03865e06fa145f39248cc5734ec))
+- **theme:** update component settings ([c0c7e17](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c0c7e1719ffed03865e06fa145f39248cc5734ec))
 
 ### Bug Fixes
 

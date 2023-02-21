@@ -11,15 +11,6 @@ import { type SFCOptions } from "@vue/repl";
  */
 export interface VuePlaygroundOptions {
   /**
-   * Whether to show code in playground
-   *
-   * 是否在交互演示中显示代码
-   *
-   * @default false
-   */
-  showCode?: boolean;
-
-  /**
    * specify the version of vue
    *
    * 指定 vue 版本
@@ -85,9 +76,9 @@ export interface VuePlaygroundOptions {
    *
    * 布局
    *
-   * @default "vertical"
+   * @default "horizontal"
    */
-  layout?: "vertical" | "horizontal";
+  layout?: "horizontal" | "vertical";
 
   /**
    * Options to configure the `vue/compiler-sfc`

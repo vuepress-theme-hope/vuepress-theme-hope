@@ -26,7 +26,10 @@ const getEntryAlias = (entry: string): [string, string] | null =>
       ]
     : null;
 
-export const resolveAlias = (isDebug: boolean): Record<string, string> => {
+/**
+ * @private
+ */
+export const getAlias = (isDebug: boolean): Record<string, string> => {
   // use alias to make all components replaceable
   const alias = fromEntries([
     // define components

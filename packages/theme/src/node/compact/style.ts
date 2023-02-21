@@ -4,7 +4,7 @@ import { fs, logger } from "@vuepress/utils";
 /**
  * @deprecated You should use scss style files in v2 and avoid using it
  */
-export const checkStyle = (app: App): void => {
+export const checkLegacyStyle = (app: App): void => {
   if (
     fs.existsSync(app.dir.source(".vuepress/styles/index.styl")) &&
     !fs.existsSync(app.dir.source(".vuepress/styles/index.scss"))

@@ -101,7 +101,7 @@
 
   .content-header {
     margin-bottom: 0.25rem;
-    border-bottom: 1px solid var(--c-border-dark, #dfe2e5);
+    border-bottom: 1px solid var(--vp-brcd);
     font-size: 0.9em;
   }
 }
@@ -114,6 +114,7 @@
   padding: 0.5rem 0.75rem;
   border-radius: 0.25rem;
 
+  background: var(--vp-bgl);
   color: inherit;
   box-shadow: 0 1px 3px 0 var(--card-shadow);
 

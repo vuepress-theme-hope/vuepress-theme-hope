@@ -482,13 +482,6 @@ interface TaskListOptions {
   ```ts
   interface VuePlaygroundOptions {
     /**
-     * 是否在交互演示中显示代码
-     *
-     * @default false
-     */
-    showCode?: boolean;
-
-    /**
      * 指定 vue 版本
      */
     vueVersion?: string;
@@ -538,9 +531,9 @@ interface TaskListOptions {
     /**
      * 布局
      *
-     * @default 'vertical'
+     * @default 'horizontal'
      */
-    layout?: "vertical" | "horizontal";
+    layout?: "vertical" |layout?: "horizontal" | "vertical";
 
     /**
      * `vue/compiler-sfc` 配置项

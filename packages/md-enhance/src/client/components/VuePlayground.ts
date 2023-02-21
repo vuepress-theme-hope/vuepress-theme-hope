@@ -10,7 +10,6 @@ import {
 } from "vue";
 import { LoadingIcon } from "vuepress-shared/client";
 
-import { CODE_SVG } from "./icons.js";
 import { getVuePlaygroundSettings } from "../utils/playground.js";
 
 import "@vue/repl/style.css";
@@ -54,9 +53,6 @@ export default defineComponent({
       getVuePlaygroundSettings(props.settings)
     );
 
-    // eslint-disable-next-line vue/no-ref-object-destructure
-    const showCode = ref(playgroundOptions.value.showCode || false);
-
     const setupRepl = async (): Promise<void> => {
       const { ReplStore, Repl } = await import(
         /* webpackChunkName: "vue-repl" */ "@vue/repl"
@@ -65,7 +61,6 @@ export default defineComponent({
       component.value = Repl;
       store.value = new ReplStore({
         serializedState: decodeURIComponent(props.files),
-        showOutput: true,
       });
 
       if (playgroundOptions.value.vueVersion)
@@ -79,27 +74,13 @@ export default defineComponent({
 
     return (): (VNode | null)[] => [
       h("div", { class: "vue-playground-wrapper" }, [
-        h("div", { class: "title-wrapper" }, [
-          props.title
-            ? h("div", { class: "title" }, decodeURIComponent(props.title))
-            : null,
-          h("div", { class: "actions" }, [
-            h("button", {
-              class: "action",
-              innerHTML: CODE_SVG,
-              onClick: () => {
-                showCode.value = !showCode.value;
-              },
-            }),
-          ]),
-        ]),
+        props.title
+          ? h("div", { class: "header" }, decodeURIComponent(props.title))
+          : null,
         h(
           "div",
           {
-            class: [
-              "repl-container",
-              showCode.value ? "show-code" : "hide-code",
-            ],
+            class: "repl-container",
           },
           [
             loading.value
@@ -108,7 +89,9 @@ export default defineComponent({
             component.value
               ? h(component.value, <ReplProps>{
                   store: store.value,
+                  autoResize: true,
                   ...playgroundOptions.value,
+                  layout: "horizontal",
                 })
               : null,
           ]

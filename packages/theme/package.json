@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-hope",
-  "version": "2.0.0-beta.177",
+  "version": "2.0.0-beta.178",
   "description": "A light vuepress theme with tons of features",
   "keywords": [
     "vuepress",
@@ -11,7 +11,7 @@
     "vuepress-blog",
     "vuepress-theme-blog"
   ],
-  "homepage": "https://theme-hope.vuejs.vuepress/",
+  "homepage": "https://theme-hope.vuejs.press/",
   "bugs": {
     "url": "https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues"
   },

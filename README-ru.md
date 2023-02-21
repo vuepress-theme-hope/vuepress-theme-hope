@@ -13,6 +13,14 @@
 
 ## [Онлайн демо](https://stackblitz.com/fork/vuepress-theme-hope)
 
+## Special Sponsor
+
+<!-- markdownlint-disable MD033 -->
+
+[![Grey Software](https://vuepress-theme-hope.github.io/grey-software.svg)](https://grey.software/)
+
+<!-- markdownlint-restore -->
+
 ## Контакт
 
 Мы рекомендуем вам связаться с помощью [issues](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues) и [дискуссий](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions), но вы можете присоединиться к нашей [группе telegram!](https://t.me/vuepressthemehope).

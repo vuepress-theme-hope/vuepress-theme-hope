@@ -2,6 +2,8 @@ import { type App } from "@vuepress/core";
 import { type GitPluginOptions, gitPlugin } from "@vuepress/plugin-git";
 
 /**
+ * @private
+ *
  * Composition Api to use `@vuepress/plugin-git`
  */
 export const useGitPlugin = (
@@ -18,6 +20,8 @@ export const useGitPlugin = (
 };
 
 /**
+ * @private
+ *
  * Composition Api to remove `@vuepress/plugin-git`
  */
 export const removeGitPlugin = (app: App): void => {

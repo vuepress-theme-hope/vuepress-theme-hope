@@ -8,7 +8,7 @@ import {
 import { entries, fromEntries } from "vuepress-shared/node";
 
 import { getSidebarInfo } from "./info.js";
-import { getSorter } from "./sorter.js";
+import { getSidebarSorter } from "./sorter.js";
 import {
   type SidebarArrayOptions,
   type SidebarGroupItem,
@@ -65,13 +65,16 @@ const getSidebarItems = (infos: SidebarInfo[]): (SidebarGroupItem | string)[] =>
     };
   });
 
+/**
+ * @private
+ */
 export const getSidebarData = (
   app: App,
   themeData: ThemeData,
   sorter?: SidebarSorter
 ): SidebarOptions => {
   const generatePaths: string[] = [];
-  const sorters = getSorter(sorter);
+  const sorters = getSidebarSorter(sorter);
 
   // exact generate sidebar paths
   entries(themeData.locales).forEach(([localePath, { sidebar }]) => {
@@ -109,6 +112,9 @@ export const getSidebarData = (
   return sidebarData;
 };
 
+/**
+ * @private
+ */
 export const prepareSidebarData = async (
   app: App,
   themeData: ThemeData,
