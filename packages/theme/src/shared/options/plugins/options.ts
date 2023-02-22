@@ -137,7 +137,36 @@ export interface PluginsOptions {
    *
    * @see https://plugin-md-enhance.vuejs.press/zh/config/
    */
-  mdEnhance?: MarkdownEnhanceOptions | false;
+  mdEnhance?:
+    | (Omit<MarkdownEnhanceOptions, "container"> & {
+        /**
+         * Whether to enable custom container including
+         *
+         * - info
+         * - note
+         * - tip
+         * - warning
+         * - danger
+         * - details
+         *
+         * ⚠ The last 4 items conflict with default theme and will override it’s style.
+         *
+         * 是否启用自定义容器
+         *
+         * - info
+         * - note
+         * - tip
+         * - warning
+         * - danger
+         * - details
+         *
+         * ⚠ 最后四个会和默认主题冲突，且会覆盖默认主题的样式与行为。
+         *
+         * @default true
+         */
+        container?: boolean;
+      })
+    | false;
 
   /**
    * Enable @vuepress/nprogress or not
