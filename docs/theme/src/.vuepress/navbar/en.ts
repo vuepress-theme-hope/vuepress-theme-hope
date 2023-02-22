@@ -82,7 +82,7 @@ export const enNavbarConfig = navbar([
           },
           {
             text: "Reading Time Plugin",
-            icon: "readme",
+            icon: "book-open",
             link: linkHelper("reading-time2"),
           },
           {

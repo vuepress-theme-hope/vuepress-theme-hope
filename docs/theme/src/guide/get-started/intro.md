@@ -9,7 +9,7 @@ tag:
   - Intro
 ---
 
-## Original intention
+## Original Intention
 
 The original intention of building this theme was to find that VuePress default theme is just a theme to provide basic documentation layout.
 

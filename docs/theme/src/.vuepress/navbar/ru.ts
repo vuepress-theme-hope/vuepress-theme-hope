@@ -83,7 +83,7 @@ export const ruNavbarConfig = navbar([
           },
           {
             text: "Плагин время чтения",
-            icon: "readme",
+            icon: "book-open",
             link: linkHelper("reading-time2"),
           },
           {
