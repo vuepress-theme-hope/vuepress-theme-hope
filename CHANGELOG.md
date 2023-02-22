@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.180](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.179...v2.0.0-beta.180) (2023-02-22)
+
+### Bug Fixes
+
+- **components:** fix iconify icon style ([3b854ad](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3b854ad50661075f8399481cd520f99ce08ec0ae))
+- **search-pro:** fix modal style ([efc8687](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/efc86873cade6eb7c879c374cda9bc34c878fc85))
+- **theme:** fix option js docs ([abd4157](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/abd4157da4108e142ab8e3944ebaf400085d1ced))
+
 ## [2.0.0-beta.179](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.178...v2.0.0-beta.179) (2023-02-21)
 
 ### Features
