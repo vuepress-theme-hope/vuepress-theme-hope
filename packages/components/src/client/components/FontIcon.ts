@@ -71,7 +71,13 @@ export default defineComponent({
             class: classNames.value,
             style: style.value,
             ...(isIconify
-              ? { inline: "", icon: `${FONT_ICON_PREFIX}${props.icon}` }
+              ? {
+                  mode: "style",
+                  inline: "",
+                  icon: `${FONT_ICON_PREFIX}${props.icon}`,
+                  width: "1em",
+                  height: "1em",
+                }
               : {}),
           })
         : null;
