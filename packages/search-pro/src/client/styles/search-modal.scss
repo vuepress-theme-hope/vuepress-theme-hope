@@ -68,16 +68,21 @@
   }
 
   @media (max-width: hope-config.$tablet) {
-    width: calc(100% - 1.5rem);
+    width: 100vw;
     max-width: unset;
-    height: calc(100% - 1.5rem);
+    height: 100vh;
   }
 }
 
 .search-pro-box {
-  position: relative;
   display: flex;
   margin: 1rem;
+
+  form {
+    position: relative;
+    display: flex;
+    flex: 1;
+  }
 
   label {
     position: absolute;
@@ -155,6 +160,11 @@
   .close-button {
     @include reset.button;
     display: none;
+
+    // NOTE: Compatible with Android Wechat
+    // margin-inline: 0.5rem -0.5rem;
+    margin-inline-start: 0.5rem;
+    margin-inline-end: -0.5rem;
     color: var(--grey3);
 
     @media (max-width: hope-config.$tablet) {

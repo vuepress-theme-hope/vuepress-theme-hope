@@ -29,6 +29,10 @@
     display: none;
   }
 
+  @media (max-width: hope-config.$pad) {
+    border-radius: 50%;
+  }
+
   &:hover {
     border: 1px solid var(--vp-tc);
     background-color: var(--vp-bglt);

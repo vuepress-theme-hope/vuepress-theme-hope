@@ -63,34 +63,38 @@ export default defineComponent({
             }),
             h("div", { class: "search-pro-modal" }, [
               h("div", { class: "search-pro-box" }, [
-                h(
-                  "label",
-                  { for: "search-pro", "aria-label": locale.value.search },
-                  h(SearchIcon)
-                ),
-                h("input", {
-                  ref: inputElement,
-                  type: "text",
-                  class: "search-pro-input",
-                  id: "search-pro",
-                  placeholder: locale.value.placeholder,
-                  spellcheck: "false",
-                  value: input.value,
-                  onInput: ({ target }: InputEvent) => {
-                    input.value = (<HTMLInputElement>target).value;
-                  },
-                }),
-                h(
-                  "button",
-                  {
-                    type: "reset",
-                    class: "clear-button",
-                    onClick: () => {
-                      input.value = "";
+                h("form", [
+                  h(
+                    "label",
+                    { for: "search-pro", "aria-label": locale.value.search },
+                    h(SearchIcon)
+                  ),
+                  h("input", {
+                    ref: inputElement,
+                    type: "text",
+                    class: "search-pro-input",
+                    id: "search-pro",
+                    placeholder: locale.value.placeholder,
+                    spellcheck: "false",
+                    value: input.value,
+                    onInput: ({ target }: InputEvent) => {
+                      input.value = (<HTMLInputElement>target).value;
                     },
-                  },
-                  h(CloseIcon)
-                ),
+                  }),
+                  input.value
+                    ? h(
+                        "button",
+                        {
+                          type: "reset",
+                          class: "clear-button",
+                          onClick: () => {
+                            input.value = "";
+                          },
+                        },
+                        h(CloseIcon)
+                      )
+                    : null,
+                ]),
                 h(
                   "button",
                   {
