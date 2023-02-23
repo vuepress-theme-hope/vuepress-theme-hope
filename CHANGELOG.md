@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.181](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.180...v2.0.0-beta.181) (2023-02-23)
+
+### Features
+
+- **theme:** update hero-info title ([b414cf1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b414cf1cf35e3b007b5fe76b14f940a7c96f8943))
+
+### Bug Fixes
+
+- **feed2:** fix legacy support ([fbbe80c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fbbe80c4d6c1b1794cc9a60bd608836454157a8a))
+- **photo-swipe:** dynamically loads image ([ab923cc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ab923ccb63910344cb8a62abac2a4e89816b5d6f))
+- **theme:** fix docsearch button on mobile ([d203a36](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d203a368ef9ad8fd12fdfbf329821b0c18a995a4))
+- **theme:** improve dropdown group ([3540a5e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3540a5ed72d27801301b6ea2b8be0d06e9640c9b))
+
 ## [2.0.0-beta.180](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.179...v2.0.0-beta.180) (2023-02-22)
 
 ### Bug Fixes
