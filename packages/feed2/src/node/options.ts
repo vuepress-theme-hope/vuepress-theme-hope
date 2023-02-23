@@ -173,7 +173,7 @@ export const getFilename = (
   rssXslFilename: `${removeLeadingSlash(prefix)}${
     options.rssXslFilename || "rss.xsl"
   }`,
-  rssXslTemplate: options.rssXslTemplate || `${TEMPLATE_FOLDER}atom.xsl`,
+  rssXslTemplate: options.rssXslTemplate || `${TEMPLATE_FOLDER}rss.xsl`,
 });
 
 export const getFeedLinks = (
