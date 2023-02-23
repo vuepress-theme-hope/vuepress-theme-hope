@@ -58,7 +58,7 @@
     "pnpm": ">=7"
   },
   "dependencies": {
-    "@babel/core": "^7.20.12",
+    "@babel/core": "^7.21.0",
     "@mdit/plugin-align": "^0.3.0",
     "@mdit/plugin-attrs": "^0.3.0",
     "@mdit/plugin-container": "^0.3.0",
