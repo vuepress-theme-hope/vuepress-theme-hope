@@ -2,7 +2,7 @@
 title: 高级
 icon: gem
 dir:
-  order: 4
+  order: 5
 category:
   - 教程知识
   - 高级

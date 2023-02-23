@@ -16,8 +16,8 @@ You need to set `layout: BlogHome` and `home: true` in the frontmatter of homepa
 
 <!-- more -->
 
-![Homepage screenshot](./assets/blog-light.png#light)
-![Homepage screenshot](./assets/blog-dark.png#dark)
+![Homepage screenshot](./assets/blog-light.jpg#light)
+![Homepage screenshot](./assets/blog-dark.jpg#dark)
 
 ## Homepage information
 

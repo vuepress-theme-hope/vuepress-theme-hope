@@ -146,7 +146,7 @@ export default {
 
 ::: details 信息组件别名
 
-Components:
+组件:
 
 - `@theme-hope/modules/info/components/AuthorInfo` 作者信息
 - `@theme-hope/modules/info/components/CategoryInfo` 分类信息
@@ -212,6 +212,8 @@ Components:
 :::
 
 ::: details 外观模块组件别名
+
+组件:
 
 - `@theme-hope/modules/outlook/components/AppearanceMode` 主题外观模式
 - `@theme-hope/modules/outlook/components/AppearanceSwitch` 主题外观开关

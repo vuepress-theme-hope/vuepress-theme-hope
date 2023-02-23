@@ -16,8 +16,8 @@ tag:
 
 <!-- more -->
 
-![Скриншот главной страницы](./assets/blog-light.png#light)
-![Скриншот главной страницы](./assets/blog-dark.png#dark)
+![Скриншот главной страницы](./assets/blog-light.jpg#light)
+![Скриншот главной страницы](./assets/blog-dark.jpg#dark)
 
 ## Информация о главной странице
 
