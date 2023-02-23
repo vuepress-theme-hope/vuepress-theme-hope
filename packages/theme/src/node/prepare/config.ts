@@ -10,52 +10,43 @@ export const prepareConfigFile = (
   app: App,
   { enableBlog, enableEncrypt, enableSlide }: ThemeStatus
 ): Promise<string> => {
-  let configImport = "";
-  let enhance = "";
-  let setup = "";
-  let layout = "";
+  const imports: string[] = [];
+  const enhances: string[] = [];
+  const setups: string[] = [];
+  const layouts = [];
 
   if (enableBlog) {
-    configImport += `\
-import BloggerInfo from "@theme-hope/modules/blog/components/BloggerInfo";
-import { setupBlog } from "@theme-hope/modules/blog/composables/index";
-import BlogCategory from "${CLIENT_FOLDER}modules/blog/layouts/BlogCategory.js";
-import BlogHome from "${CLIENT_FOLDER}modules/blog/layouts/BlogHome.js";
-import BlogType from "${CLIENT_FOLDER}modules/blog/layouts/BlogType.js";
-import Timeline from "${CLIENT_FOLDER}modules/blog/layouts/Timeline.js";
-import "${CLIENT_FOLDER}modules/blog/styles/layout.scss";
-`;
+    imports.push(
+      `import BloggerInfo from "@theme-hope/modules/blog/components/BloggerInfo";`,
+      `import { setupBlog } from "@theme-hope/modules/blog/composables/index";`,
+      `import BlogCategory from "${CLIENT_FOLDER}modules/blog/layouts/BlogCategory.js";`,
+      `import BlogHome from "${CLIENT_FOLDER}modules/blog/layouts/BlogHome.js";`,
+      `import BlogType from "${CLIENT_FOLDER}modules/blog/layouts/BlogType.js";`,
+      `import Timeline from "${CLIENT_FOLDER}modules/blog/layouts/Timeline.js";`,
+      `import "${CLIENT_FOLDER}modules/blog/styles/layout.scss";`
+    );
 
-    enhance += `\
-app.component("BloggerInfo", BloggerInfo);
-`;
+    enhances.push(`app.component("BloggerInfo", BloggerInfo);`);
 
-    setup += `\
-setupBlog();
-`;
+    setups.push("setupBlog();");
 
-    layout += `\
-BlogCategory,
-BlogHome,
-BlogType,
-Timeline,
-`;
+    layouts.push("BlogCategory,", "BlogHome,", "BlogType,", "Timeline,");
   }
 
   if (enableEncrypt) {
-    configImport += `\
-import GlobalEncrypt from "@theme-hope/modules/encrypt/components/GlobalEncrypt";
-import LocalEncrypt from "@theme-hope/modules/encrypt/components/LocalEncrypt";
-`;
-    enhance += `\
-app.component("GlobalEncrypt", GlobalEncrypt);
-app.component("LocalEncrypt", LocalEncrypt);
-`;
+    imports.push(
+      `import GlobalEncrypt from "@theme-hope/modules/encrypt/components/GlobalEncrypt";`,
+      `import LocalEncrypt from "@theme-hope/modules/encrypt/components/LocalEncrypt";`
+    );
+    enhances.push(
+      `app.component("GlobalEncrypt", GlobalEncrypt);`,
+      `app.component("LocalEncrypt", LocalEncrypt);`
+    );
   }
 
   if (enableSlide) {
-    configImport += `import Slide from "${CLIENT_FOLDER}layouts/Slide.js";\n`;
-    layout += "Slide,\n";
+    imports.push(`import Slide from "${CLIENT_FOLDER}layouts/Slide.js";`);
+    layouts.push("Slide,");
   }
 
   return app.writeTemp(
@@ -72,7 +63,7 @@ import { setupSidebarItems } from "@theme-hope/modules/sidebar/composables/index
 
 import "${CLIENT_FOLDER}styles/index.scss";
 
-${configImport}\
+${imports.join("\n")}
 
 export default defineClientConfig({
   enhance: ({ app, router }) => {
@@ -90,26 +81,17 @@ export default defineClientConfig({
     // render icon for auto-catalog
     app.component("HopeIcon", HopeIcon);
 
-${enhance
-  .split("\n")
-  .map((item) => `    ${item}`)
-  .join("\n")}
+${enhances.map((item) => `    ${item}`).join("\n")}
   },
   setup: () => {
     setupDarkmode();
     setupSidebarItems();
-${setup
-  .split("\n")
-  .map((item) => `    ${item}`)
-  .join("\n")}
+${setups.map((item) => `    ${item}`).join("\n")}
   },
   layouts: {
     Layout,
     NotFound,
-${layout
-  .split("\n")
-  .map((item) => `    ${item}`)
-  .join("\n")}\
+${layouts.map((item) => `    ${item}`).join("\n")}
   }
 });`
   );

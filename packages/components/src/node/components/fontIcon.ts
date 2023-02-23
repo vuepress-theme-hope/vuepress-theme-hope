@@ -86,7 +86,8 @@ export const getIconLink = (iconLink?: FontIconAssets): LinkInfo[] => {
         content: `\
   useStyleTag(\`\\
   @import url("//at.alicdn.com/t/c/font_2410206_5vb9zlyghj.css");
-  \`);`,
+  \`);\
+`,
       },
     ];
 
@@ -97,7 +98,7 @@ export const getIconLink = (iconLink?: FontIconAssets): LinkInfo[] => {
         content: `\
 useScriptTag(
   \`//cdn.jsdelivr.net/npm/iconify-icon@1\`
-);
+);\
 `,
       },
     ];
@@ -110,16 +111,17 @@ useScriptTag(
         return {
           type: "style",
           content: `\
-  useStyleTag(\`\\
-  @import url("${actualLink}");
-  \`);`,
+useStyleTag(\`\\
+@import url("${actualLink}");
+\`);\
+`,
         };
 
       if (endsWith(actualLink, ".js"))
         return {
           type: "script",
           content: `\
-useScriptTag(\`${actualLink}\`);
+useScriptTag(\`${actualLink}\`);\
 `,
         };
 

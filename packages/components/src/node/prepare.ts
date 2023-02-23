@@ -14,19 +14,20 @@ export const prepareConfigFile = (
   }: ComponentOptions,
   legacy: boolean
 ): Promise<string> => {
-  let configImport = "";
+  const imports: string[] = [];
   let enhance = "";
-  let setup = "";
-  let configRootComponents = "";
+  const setups: string[] = [];
+  const configRootComponents: string[] = [];
   let shouldImportH = false;
   let shouldImportUseScriptTag = false;
   let shouldImportUseStyleTag = false;
 
   components.forEach((item) => {
     if (AVAILABLE_COMPONENTS.includes(item)) {
-      configImport += `\
-import ${item} from "${CLIENT_FOLDER}components/${item}.js";
-`;
+      imports.push(
+        `import ${item} from "${CLIENT_FOLDER}components/${item}.js";`
+      );
+
       enhance += `\
 if(!hasGlobalComponent("${item}")) app.component("${item}", ${item});
 `;
@@ -39,13 +40,13 @@ if(!hasGlobalComponent("${item}")) app.component("${item}", ${item});
         if (type === "script") shouldImportUseScriptTag = true;
         else shouldImportUseStyleTag = true;
 
-        setup += content;
+        setups.push(content);
       });
 
     if (legacy && (item as unknown) === "Catalog") {
-      configImport += `\
-import Catalog from "${CLIENT_FOLDER}compact/components/Catalog.js";
-`;
+      imports.push(
+        `import Catalog from "${CLIENT_FOLDER}compact/components/Catalog.js";`
+      );
       enhance += `\
 if(!hasGlobalComponent("Catalog")) app.component("Catalog", Catalog);
 `;
@@ -54,36 +55,34 @@ if(!hasGlobalComponent("Catalog")) app.component("Catalog", Catalog);
 
   if (isString(rootComponents.addThis)) {
     shouldImportUseScriptTag = true;
-    setup += `\
-useScriptTag(\`//s7.addthis.com/js/300/addthis_widget.js#pubid=${rootComponents.addThis}\`);
-`;
+    setups.push(
+      `useScriptTag(\`//s7.addthis.com/js/300/addthis_widget.js#pubid=${rootComponents.addThis}\`);`
+    );
   }
 
   if (rootComponents.backToTop) {
     shouldImportH = true;
-    configImport += `\
-import BackToTop from "${CLIENT_FOLDER}components/BackToTop.js";
-`;
-    configRootComponents += `\
-() => h(BackToTop, { threshold: ${
-      typeof rootComponents.backToTop === "number"
-        ? rootComponents.backToTop
-        : 300
-    } }),
-`;
+    imports.push(
+      `import BackToTop from "${CLIENT_FOLDER}components/BackToTop.js";`
+    );
+    configRootComponents.push(
+      `() => h(BackToTop, { threshold: ${
+        typeof rootComponents.backToTop === "number"
+          ? rootComponents.backToTop
+          : 300
+      } }),`
+    );
   }
 
   if (isArray(rootComponents.notice)) {
     shouldImportH = true;
-    configImport += `\
-import Notice from "${CLIENT_FOLDER}components/Notice.js";
-`;
+    imports.push(`import Notice from "${CLIENT_FOLDER}components/Notice.js";`);
 
-    configRootComponents += `\
-() => h(Notice, { config: ${JSON.stringify(
-      getNoticeOptions(rootComponents.notice)
-    )} }),
-`;
+    configRootComponents.push(
+      `() => h(Notice, { config: ${JSON.stringify(
+        getNoticeOptions(rootComponents.notice)
+      )} }),`
+    );
   }
 
   return app.writeTemp(
@@ -112,7 +111,7 @@ import { useStyleTag } from "${CLIENT_FOLDER}vueuse.js";
 `
     : ""
 }\
-${configImport}
+${imports.join("\n")}
 
 import "${CLIENT_FOLDER}styles/sr-only.scss";
 
@@ -124,16 +123,10 @@ ${enhance
   .join("\n")}
   },
   setup: () => {
-${setup
-  .split("\n")
-  .map((item) => `    ${item}`)
-  .join("\n")}
+${setups.map((item) => `    ${item}`).join("\n")}
   },
   rootComponents: [
-${configRootComponents
-  .split("\n")
-  .map((item) => `    ${item}`)
-  .join("\n")}
+${configRootComponents.map((item) => `    ${item}`).join("\n")}
   ],
 });
 `
