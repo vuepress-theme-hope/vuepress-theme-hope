@@ -1981,8 +1981,8 @@ importers:
         specifier: 6.1.2
         version: 6.1.2
       vite:
-        specifier: 4.0.4
-        version: 4.0.4
+        specifier: 4.1.4
+        version: 4.1.4
 
   packages/sitemap2:
     dependencies:
@@ -12598,6 +12598,39 @@ packages:
       resolve: 1.22.1
       rollup: 3.17.2
       sass: 1.58.3
+    optionalDependencies:
+      fsevents: 2.3.2
+    dev: true
+
+  /vite@4.1.4:
+    resolution: {integrity: sha512-3knk/HsbSTKEin43zHu7jTwYWv81f8kgAL99G5NWBcA1LKvtvcVAC4JjBH1arBunO9kQka+1oGbrMKOjk4ZrBg==}
+    engines: {node: ^14.18.0 || >=16.0.0}
+    hasBin: true
+    peerDependencies:
+      '@types/node': '>= 14'
+      less: '*'
+      sass: '*'
+      stylus: '*'
+      sugarss: '*'
+      terser: ^5.4.0
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
+      less:
+        optional: true
+      sass:
+        optional: true
+      stylus:
+        optional: true
+      sugarss:
+        optional: true
+      terser:
+        optional: true
+    dependencies:
+      esbuild: 0.16.17
+      postcss: 8.4.21
+      resolve: 1.22.1
+      rollup: 3.17.2
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
