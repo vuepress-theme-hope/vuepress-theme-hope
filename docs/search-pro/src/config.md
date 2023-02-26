@@ -246,5 +246,6 @@ Multilingual configuration of the search plugin.
 - **Turkish** (tr-TR)
 - **Korean** (ko-KR)
 - **Finnish** (fi-FI)
+- **Indonesian** (id-ID)
 
 :::

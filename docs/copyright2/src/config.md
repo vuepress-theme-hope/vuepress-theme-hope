@@ -123,6 +123,7 @@ Locale config for copyright plugin.
 - **Turkish** (tr-TR)
 - **Korean** (ko-KR)
 - **Finnish** (fi-FI)
+- **Indonesian** (id-ID)
 
 :::
 

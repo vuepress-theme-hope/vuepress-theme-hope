@@ -742,5 +742,6 @@ Locales config for Markdown Enhance Plugin.
 - **Turkish** (tr-TR)
 - **Korean** (ko-KR)
 - **Finnish** (fi-FI)
+- **Indonesian** (id-ID)
 
 :::
