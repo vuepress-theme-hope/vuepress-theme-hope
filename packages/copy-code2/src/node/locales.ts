@@ -113,6 +113,6 @@ export const copyCodeLocales: CopyCodeLocaleConfig = {
   "/id/": {
     copy: "Salin kode",
     copied: "Disalin",
-    hint: "Kode berhasil disalin,
+    hint: "Kode berhasil disalin",
   },
 };
