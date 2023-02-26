@@ -22,7 +22,7 @@ If you have not installed pnpm, please install it using the following command.
 
 ```sh
 corepack enable
-corepack prepare pnpm@7.24.3 --activate
+corepack prepare pnpm@7.27.1 --activate
 ```
 
 ## Project File Structure

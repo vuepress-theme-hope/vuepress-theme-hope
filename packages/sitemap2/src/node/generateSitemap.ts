@@ -30,16 +30,17 @@ interface SitemapPageInfo {
 
 const reportedLocales: string[] = [];
 
-const stripLocalePrefix = (
-  page: Page
-): {
-  // path of root locale
+const stripLocalePrefix = ({
+  path,
+  pathLocale,
+}: Page): {
+  /** path of root locale */
   defaultPath: string;
-  // Locale path prefix of the page
+  /** Locale path prefix of the page */
   pathLocale: string;
 } => ({
-  defaultPath: page.path.replace(page.pathLocale, "/"),
-  pathLocale: page.pathLocale,
+  defaultPath: path.replace(pathLocale, "/"),
+  pathLocale: pathLocale,
 });
 
 const generatePageMap = (
@@ -58,8 +59,8 @@ const generatePageMap = (
   } = options;
 
   const {
-    pages,
     options: { base, locales },
+    pages,
   } = app;
 
   const pageLocalesMap = pages.reduce(

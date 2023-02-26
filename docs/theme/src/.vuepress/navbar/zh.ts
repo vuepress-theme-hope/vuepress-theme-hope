@@ -83,7 +83,7 @@ export const zhNavbarConfig = navbar([
           },
           {
             text: "阅读时间插件",
-            icon: "readme",
+            icon: "book-open",
             link: linkHelper("reading-time2"),
           },
           {

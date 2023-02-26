@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-md-enhance",
-  "version": "2.0.0-beta.180",
+  "version": "2.0.0-beta.181",
   "description": "Markdown enhancement plugin for vuepress",
   "keywords": [
     "vuepress",
@@ -58,7 +58,7 @@
     "pnpm": ">=7"
   },
   "dependencies": {
-    "@babel/core": "^7.20.12",
+    "@babel/core": "^7.21.0",
     "@mdit/plugin-align": "^0.3.0",
     "@mdit/plugin-attrs": "^0.3.0",
     "@mdit/plugin-container": "^0.3.0",

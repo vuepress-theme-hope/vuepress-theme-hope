@@ -30,16 +30,16 @@
 
   @media (max-width: hope-config.$pad) {
     min-width: 36px !important;
-
-    .DocSearch-Button-Keys {
-      display: none;
-    }
   }
 }
 
 .DocSearch {
   &.DocSearch-Button {
     margin-left: 0;
+
+    @media (max-width: hope-config.$pad) {
+      min-width: 36px !important;
+    }
   }
 
   .DocSearch-Button-Placeholder {
@@ -55,6 +55,12 @@
   .DocSearch-Search-Icon {
     width: 1.25em;
     height: 1.25em;
+  }
+
+  .DocSearch-Button-Keys {
+    @media (max-width: hope-config.$pad) {
+      display: none;
+    }
   }
 
   .DocSearch-Button-Key {

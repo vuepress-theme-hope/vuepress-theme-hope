@@ -2,7 +2,7 @@
 title: Advanced
 icon: gem
 dir:
-  order: 4
+  order: 5
 category:
   - Cookbook
   - Advanced
@@ -39,8 +39,6 @@ We do not want to "describe all the concepts involved and their usage to you" an
 ## Catalog
 
 - [Using Components](component.md)
-
-- [Customize Style](style.md)
 
 - [Replacing Component](replace.md)
 

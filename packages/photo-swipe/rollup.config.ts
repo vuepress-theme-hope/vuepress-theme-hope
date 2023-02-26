@@ -6,5 +6,6 @@ export default [
   }),
   ...bundle("client/config", {
     external: ["photoswipe"],
+    copy: [["client/styles", "client"]],
   }),
 ];

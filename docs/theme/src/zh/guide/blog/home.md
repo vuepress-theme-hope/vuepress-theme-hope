@@ -16,8 +16,8 @@ tag:
 
 <!-- more -->
 
-![首页截图](./assets/blog-light.png#light)
-![首页截图](./assets/blog-dark.png#dark)
+![首页截图](./assets/blog-light.jpg#light)
+![首页截图](./assets/blog-dark.jpg#dark)
 
 ## 主页信息
 

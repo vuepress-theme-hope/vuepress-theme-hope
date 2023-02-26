@@ -1,3 +1,5 @@
+import { isPlainObject } from "@vuepress/shared";
+
 import { deprecatedLogger, droppedLogger } from "./utils.js";
 import { type FeedOptions } from "../typings/index.js";
 
@@ -12,12 +14,16 @@ export const convertOptions = (
       };
     }
 ): void => {
-  options.atom = options["output"]?.atom?.enable ?? true;
-  options.json = options["output"]?.json?.enable ?? true;
-  options.rss = options["output"]?.rss?.enable ?? true;
-  options.atomOutputFilename = options["output"]?.atom?.path ?? "atom.xml";
-  options.jsonOutputFilename = options["output"]?.json?.path ?? "feed.json";
-  options.jsonOutputFilename = options["output"]?.rss?.path ?? "rss.xml";
+  const output = options["output"];
+
+  if (isPlainObject(output)) {
+    options.atom = output.atom?.enable ?? false;
+    options.json = output.json?.enable ?? false;
+    options.rss = output.rss?.enable ?? false;
+    options.atomOutputFilename = output.atom?.path ?? "atom.xml";
+    options.jsonOutputFilename = output.json?.path ?? "feed.json";
+    options.rssOutputFilename = output.rss?.path ?? "rss.xml";
+  }
 
   deprecatedLogger({
     options,

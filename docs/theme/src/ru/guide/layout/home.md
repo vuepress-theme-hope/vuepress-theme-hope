@@ -13,8 +13,8 @@ tag:
 
 Чтобы использовать его, установите `home: true` в frontmatter страницы. Любой дополнительный контент после `YAML front matter` будет проанализирован как обычный Markdown и отображен после раздела функций.
 
-![Скриншот](./assets/home-light.png#light)
-![Скриншот](./assets/home-dark.png#dark)
+![Скриншот](./assets/home-light.jpg#light)
+![Скриншот](./assets/home-dark.jpg#dark)
 
 <!-- more -->
 

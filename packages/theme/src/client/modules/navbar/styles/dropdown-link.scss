@@ -118,7 +118,7 @@
 
   .dropdown-subtitle {
     margin: 0;
-    padding: 0 0.25rem;
+    padding: 0.5rem 0.25rem 0;
 
     color: var(--light-grey);
 
@@ -131,8 +131,7 @@
   }
 
   .dropdown-subitem-wrapper {
-    padding: 0 0 0.5rem;
-    border-bottom: 1px solid var(--grey14);
+    padding: 0 0 0.25rem;
   }
 
   .dropdown-item {
@@ -141,7 +140,6 @@
 
     &:last-child .dropdown-subitem-wrapper {
       padding-bottom: 0;
-      border-bottom-width: 0;
     }
   }
 }

@@ -14,7 +14,12 @@
 
 import { withBase } from "@vuepress/client";
 import { ensureEndingSlash, isString } from "@vuepress/shared";
-import { checkIsMobile, checkIsSafari, entries } from "vuepress-shared/client";
+import {
+  checkIsMobile,
+  checkIsSafari,
+  checkIsiPad,
+  entries,
+} from "vuepress-shared/client";
 
 declare const PDFJS_URL: string | null;
 
@@ -60,12 +65,8 @@ const buildURLFragmentString = (
       .join("&");
 
     // The string will be empty if no PDF Params found
-    if (url) {
-      url = "#" + url;
-
-      // Remove last ampersand
-      url = url.slice(0, url.length - 1);
-    }
+    // Remove last ampersand
+    if (url) url = `#${url.slice(0, url.length - 1)}`;
   }
 
   return url;
@@ -116,16 +117,11 @@ export const viewPDF = (
   targetSelector: string | HTMLElement | null = null,
   { title, hint, options = {} }: ViewPDFOptions
 ): HTMLElement | null => {
-  if (
-    typeof window === "undefined" ||
-    window.navigator === undefined ||
-    window.navigator.userAgent === undefined ||
-    window.navigator.mimeTypes === undefined
-  )
+  if (typeof window === "undefined" || !window?.navigator?.userAgent)
     return null;
 
-  const nav = window.navigator;
-  const ua = window.navigator.userAgent;
+  const { navigator } = window;
+  const { userAgent } = navigator;
 
   // Time to jump through hoops -- browser vendors do not make it easy to detect PDF support.
 
@@ -136,23 +132,18 @@ export const viewPDF = (
    */
   const isModernBrowser = window.Promise !== undefined;
 
-  // Safari on iPadOS doesn't report as 'mobile' when requesting desktop site, yet still fails to embed PDFs
-  const isSafariIOSDesktopMode =
-    nav.platform !== undefined &&
-    nav.platform === "MacIntel" &&
-    nav.maxTouchPoints !== undefined &&
-    nav.maxTouchPoints > 1;
-
   // Quick test for mobile devices.
-  const isMobileDevice = isSafariIOSDesktopMode || checkIsMobile(ua);
+  const isMobileDevice = checkIsiPad(userAgent) || checkIsMobile(userAgent);
 
   // Safari desktop requires special handling
-  const isSafariDesktop = !isMobileDevice && checkIsSafari(ua);
+  const isSafariDesktop = !isMobileDevice && checkIsSafari(userAgent);
 
   // Firefox started shipping PDF.js in Firefox 19. If this is Firefox 19 or greater, assume PDF.js is available
   const isFirefoxWithPDFJS =
-    !isMobileDevice && /irefox/.test(ua) && ua.split("rv:").length > 1
-      ? parseInt(ua.split("rv:")[1].split(".")[0], 10) > 18
+    !isMobileDevice &&
+    /firefox/i.test(userAgent) &&
+    userAgent.split("rv:").length > 1
+      ? parseInt(userAgent.split("rv:")[1].split(".")[0], 10) > 18
       : false;
 
   // Determines whether PDF support is available

@@ -13,8 +13,8 @@ tag:
 
 如果想要使用它，请在 frontmatter 中设置 `home: true`。任何 frontmatter 之后的内容将会以普通的 Markdown 被渲染，并插入到主页渲染内容的底部。
 
-![首页截图](./assets/home-light.png#light)
-![首页截图](./assets/home-dark.png#dark)
+![首页截图](./assets/home-light.jpg#light)
+![首页截图](./assets/home-dark.jpg#dark)
 
 <!-- more -->
 

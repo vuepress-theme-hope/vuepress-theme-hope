@@ -1,6 +1,6 @@
 ---
 title: Vite 常见问题
-icon: light
+icon: circle-question
 category:
   - FAQ
 ---

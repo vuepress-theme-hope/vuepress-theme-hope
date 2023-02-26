@@ -4,9 +4,10 @@ import { nextTick, onMounted, watch } from "vue";
 import { useLocaleConfig } from "vuepress-shared/client";
 
 import { delay, imageSelector, locales, options } from "../define.js";
-import { getImages } from "../utils/index.js";
+import { getImageInfo, getImages } from "../utils/index.js";
 
 import "photoswipe/dist/photoswipe.css";
+import "../styles/photo-swipe.scss";
 
 export const setupPhotoSwipe = (): void => {
   const { isSupported, toggle } = useFullscreen();
@@ -21,20 +22,28 @@ export const setupPhotoSwipe = (): void => {
           getImages(imageSelector)
         )
       ),
-    ]).then(([photoSwipe, images]) => {
-      images.elements.forEach((image, index) => {
+    ]).then(([{ default: PhotoSwipe }, images]) => {
+      const LOADING_ICON =
+        '<div class="photo-swipe-loading"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" preserveAspectRatio="xMidYMid" viewBox="25 25 50 50"><animateTransform attributeName="transform" type="rotate" dur="2s" keyTimes="0;1" repeatCount="indefinite" values="0;360"></animateTransform><circle cx="50" cy="50" r="20" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"><animate attributeName="stroke-dasharray" dur="1.5s" keyTimes="0;0.5;1" repeatCount="indefinite" values="1,200;90,200;1,200"></animate><animate attributeName="stroke-dashoffset" dur="1.5s" keyTimes="0;0.5;1" repeatCount="indefinite" values="0;-35px;-125px"></animate></circle></svg></div>';
+
+      images.forEach((image, index) => {
         const handler = (): void => {
-          const gallery = new photoSwipe.default({
-            dataSource: images.infos,
+          const dataSource = Array(images.length).fill({
+            html: LOADING_ICON,
+          });
+
+          const photoSwipe = new PhotoSwipe({
+            dataSource,
+            preloaderDelay: 0,
             ...locale.value,
             ...options,
             index,
           });
 
-          gallery.on("uiRegister", () => {
+          photoSwipe.on("uiRegister", () => {
             if (isSupported)
               // add fullscreen button
-              gallery.ui.registerElement({
+              photoSwipe.ui.registerElement({
                 name: "fullscreen",
                 order: 7,
                 isButton: true,
@@ -47,7 +56,7 @@ export const setupPhotoSwipe = (): void => {
               });
 
             // add download button
-            gallery.ui.registerElement({
+            photoSwipe.ui.registerElement({
               name: "download",
               order: 8,
               isButton: true,
@@ -61,25 +70,34 @@ export const setupPhotoSwipe = (): void => {
                 outlineID: "pswp__icn-download",
               },
 
-              onInit: (el: HTMLAnchorElement, pswp) => {
+              onInit: (el: HTMLAnchorElement, photoSwipe) => {
                 el.setAttribute("download", "");
                 el.setAttribute("target", "_blank");
                 el.setAttribute("rel", "noopener");
 
-                pswp.on("change", () => {
-                  el.href = pswp.currSlide.data.src;
+                photoSwipe.on("change", () => {
+                  el.href = photoSwipe.currSlide.data.src;
                 });
               },
             });
           });
 
-          gallery.init();
+          photoSwipe.init();
+
+          images.forEach((image, index) => {
+            void getImageInfo(image).then((data) => {
+              dataSource.splice(index, 1, data);
+              photoSwipe.refreshSlideContent(index);
+            });
+          });
         };
 
         image.style.cursor = "zoom-in";
-        image.addEventListener("click", handler);
+        image.addEventListener("click", () => {
+          void handler();
+        });
         image.addEventListener("keypress", ({ key }) => {
-          if (key === "Enter") handler();
+          if (key === "Enter") void handler();
         });
       });
     });

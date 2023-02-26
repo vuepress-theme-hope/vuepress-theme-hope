@@ -42,8 +42,8 @@ export default defineUserConfig({
     feedPlugin({
       hostname: "https://plugin-feed2-demo.vuejs.press",
       atom: true,
-      rss: true,
       json: true,
+      rss: true,
     }),
   ],
 });
