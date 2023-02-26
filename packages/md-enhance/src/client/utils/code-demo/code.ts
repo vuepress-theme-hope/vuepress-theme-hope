@@ -2,11 +2,7 @@ import type Babel from "@babel/core";
 import { keys } from "vuepress-shared/client";
 
 import { type Code, type CodeType } from "./typings.js";
-import {
-  type PreProcessorType,
-  getConfig,
-  preProcessorConfig,
-} from "./utils.js";
+import { getConfig, preProcessorConfig } from "./utils.js";
 import { type CodeDemoOptions } from "../../../shared/index.js";
 
 declare global {
@@ -24,7 +20,7 @@ export const getCode = (code: Record<string, string>): CodeType => {
     isLegal: false,
   };
 
-  (<PreProcessorType[]>["html", "js", "css"]).forEach((type) => {
+  (["html", "js", "css"] as const).forEach((type) => {
     const match = languages.filter((language) =>
       preProcessorConfig[type].types.includes(language)
     );
