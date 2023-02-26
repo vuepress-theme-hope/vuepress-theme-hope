@@ -107,9 +107,6 @@
         "webpack"
       ]
     },
-    "overrides": {
-      "esquery": "1.4.0"
-    },
     "patchedDependencies": {
       "@types/katex@0.16.0": "patches/@types__katex@0.16.0.patch",
       "@vuepress/plugin-docsearch@2.0.0-beta.60": "patches/@vuepress__plugin-docsearch@2.0.0-beta.60.patch",
