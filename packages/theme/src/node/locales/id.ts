@@ -1,6 +1,6 @@
 import { type ThemeLocaleData } from "../../shared/index.js";
 
-export const enLocale: ThemeLocaleData = {
+export const idLocale: ThemeLocaleData = {
   lang: "id-ID",
 
   navbarLocales: {
