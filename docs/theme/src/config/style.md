@@ -32,8 +32,6 @@ Code block (Only available with shiki):
 - `$code-bg-color`: background color for code blocks
 - `$code-color`: font color for code blocks
 
-:::
-
 Color list: `$colors`
 
 ::: details Demo

@@ -1,4 +1,4 @@
-// Vitest Snapshot v1
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should generate sidebarData correctly > Should resolve structure in dir 1`] = `
 {
@@ -291,7 +291,7 @@ exports[`should generate sidebarData correctly > Should resolve structure in roo
       ],
       "collapsible": true,
       "icon": "my-icon",
-      "link": "",
+      "link": "link/",
       "prefix": "link/",
       "text": "Dir with link",
     },

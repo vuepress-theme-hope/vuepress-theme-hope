@@ -1,4 +1,4 @@
-// Vitest Snapshot v1
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Vue Playground > Should resolve playground info 1`] = `
 "<VuePlayground title=\\"Playground%20demo\\" key=\\"62b3bf5a\\" settings=\\"%7B%7D\\" files=\\"eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiB9IGZyb20gJ3Z1ZSdcbmNvbnN0IG1zZyA9IHJlZignSGVsbG8gV29ybGQhJylcbjwvc2NyaXB0PlxuPHRlbXBsYXRlPlxuICA8aDE%2Be3sgbXNnIH19PC9oMT5cbiAgPGlucHV0IHYtbW9kZWw9XCJtc2dcIiAvPlxuPC90ZW1wbGF0ZT5cbiIsIkNvbXAudnVlIjoiPHRlbXBsYXRlPlxuICA8ZGl2PkNvbXA8L2Rpdj5cbjwvdGVtcGxhdGU%2BXG4iLCJpbXBvcnQtbWFwLmpzb24iOiJ7XG4gIFwiaW1wb3J0c1wiOiB7XG4gICAgXCJ2dWVcIjogXCJodHRwczovL3NmYy52dWVqcy5vcmcvdnVlLnJ1bnRpbWUuZXNtLWJyb3dzZXIuanNcIlxuICB9XG59XG4ifQ%3D%3D\\">

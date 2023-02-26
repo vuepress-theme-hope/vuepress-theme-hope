@@ -30,12 +30,18 @@ const getPlugin =
 
         for (let i = index; i < tokens.length; i++) {
           const { type, content, info } = tokens[i];
+          const language = info
+            ? md.utils
+                .unescapeAll(info)
+                .trim()
+                .match(/^([^ :[{]+)/)?.[1] || "text"
+            : "";
 
           if (type === `container_${name}_close`) break;
           if (!content) continue;
           if (type === "fence")
-            if (info === "json") config = utoa(content);
-            else code[info] = content;
+            if (language === "json") config = utoa(content);
+            else code[language] = content;
         }
 
         return `
