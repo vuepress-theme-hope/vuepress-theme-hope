@@ -20,6 +20,7 @@ export default [
     dts: false,
     external: [/^@internal\//],
     replace: {
+      // eslint-disable-next-line @typescript-eslint/naming-convention
       __VUEPRESS_SSR__: false,
     },
   }),
