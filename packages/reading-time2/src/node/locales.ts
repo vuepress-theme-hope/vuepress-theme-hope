@@ -111,7 +111,7 @@ export const readingTimeLocales: ReadingTimeLocaleConfig = {
     less1Minute: "Kevesebb, mint 1 perc",
     time: "Körülbelül $time perc",
   },
-  
+
   "/id/": {
     word: "Sekitar $word kata",
     less1Minute: "Kurang dari 1 menit",

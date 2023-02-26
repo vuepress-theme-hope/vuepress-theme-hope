@@ -162,7 +162,7 @@ export const photoSwipeLocales: PhotoSwipeLocaleConfig = {
     arrowPrev: "Előző (Balra nyíl)",
     arrowNext: "Következő (Jobbra nyíl)",
   },
-  
+
   "/id/": {
     close: "Tutup",
     download: "Unduh gambar",

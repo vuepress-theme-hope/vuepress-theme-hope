@@ -90,7 +90,7 @@ export const walineLocales: WalineLocaleConfig = {
     placeholder:
       "Írj kommentet itt! (Töltsd ki az email címet, hogy értesítést kapj, amikor válaszolnak.)",
   },
-  
+
   "/id/": {
     placeholder:
       "Tulis komentar di sini (Isi alamat email untuk menerima notifikasi jika komentar kamu telah dibalas orang lain)",

@@ -72,7 +72,7 @@ export const pdfLocaleConfig: PDFLocaleConfig = {
   "/hu/": {
     hint: "<p>Ez a böngésző nem támogatja a PDF beágyazását. Kérlek töltsd le a PDF-et megtekintéshez: <a href='[url]' target='_blank'>PDF letöltése</a></p>",
   },
-  
+
   "/id/": {
     hint: "<p>Browser ini tidak mendukung penyematan PDF. Silakan unduh PDF untuk melihatnya: <a href='[url]' target='_blank'>Unduh PDF</a></p>",
   },

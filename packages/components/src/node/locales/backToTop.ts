@@ -71,7 +71,7 @@ export const backToTopLocales: BackToTopLocaleConfig = {
   "/hu/": {
     backToTop: "Vissza a tetejére",
   },
-  
+
   "/id/": {
     backToTop: "Kembali ke atas",
   },

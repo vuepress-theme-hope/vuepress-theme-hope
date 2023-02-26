@@ -253,7 +253,7 @@ export const searchProLocales: SearchProLocaleConfig = {
     emptyResult: "Nincs találat",
     loading: "A keresési indexek betöltése...",
   },
-  
+
   "/id/": {
     cancel: "Batal",
     placeholder: "Cari sesuatu 🔎",

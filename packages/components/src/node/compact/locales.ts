@@ -75,7 +75,7 @@ export const catalogLocales: CatalogLocaleConfig = {
   "/hu/": {
     title: "Katalógus",
   },
-  
+
   "/id/": {
     title: "Katalog",
   },

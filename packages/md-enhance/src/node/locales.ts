@@ -162,7 +162,7 @@ export const markdownEnhanceLocales: MarkdownEnhanceLocaleConfig = {
     danger: "Veszély",
     details: "Részletek",
   },
-  
+
   "/id/": {
     info: "Pemberitahuan",
     note: "Catatan",

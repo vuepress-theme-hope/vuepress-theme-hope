@@ -280,7 +280,7 @@ export const pwaLocales: PWALocaleConfig = {
     hint: "Új tartalom érhető el.",
     update: "Új tartalom érhető el.",
   },
-  
+
   "/id/": {
     install: "Install",
     iOSInstall: "Ketuk tombol bagikan, lalu 'Tambahkan ke Layar Utama'",

@@ -109,7 +109,7 @@ export const copyCodeLocales: CopyCodeLocaleConfig = {
     copied: "Másolva",
     hint: "Sikeres másolás",
   },
-  
+
   "/id/": {
     copy: "Salin kode",
     copied: "Disalin",
