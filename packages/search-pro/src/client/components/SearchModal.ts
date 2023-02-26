@@ -5,6 +5,7 @@ import {
   defineComponent,
   h,
   inject,
+  nextTick,
   onMounted,
   ref,
   watch,
@@ -47,7 +48,10 @@ export default defineComponent({
     onMounted(() => {
       isMobile.value = checkIsMobile(navigator.userAgent);
       watch(isActive, (value) => {
-        if (value) inputElement.value?.focus();
+        if (value)
+          void nextTick().then(() => {
+            inputElement.value?.focus();
+          });
       });
     });
 
