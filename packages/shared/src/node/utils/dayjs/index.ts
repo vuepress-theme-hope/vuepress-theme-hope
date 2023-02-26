@@ -9,6 +9,7 @@ import { loadDeLocale } from "./de.js";
 import { loadEnLocale } from "./en.js";
 import { loadEsLocale } from "./es.js";
 import { loadFrLocale } from "./fr.js";
+import { loadIdLocale } from "./id.js";
 import { loadJaLocale } from "./ja.js";
 import { loadPlLocale } from "./pl.js";
 import { loadPtBrLocale } from "./pt-br.js";
@@ -30,6 +31,7 @@ loadDeAtLocale(dayjs);
 loadEnLocale(dayjs);
 loadEsLocale(dayjs);
 loadFrLocale(dayjs);
+loadIdLocale(dayjs);
 loadPlLocale(dayjs);
 loadPtBrLocale(dayjs);
 loadRuLocale(dayjs);
@@ -51,6 +53,7 @@ export const getLocale = (lang = "en"): string => {
       "en",
       "es",
       "fr",
+      "id",
       "pl",
       "pt-br",
       "ru",
@@ -69,6 +72,7 @@ export const getLocale = (lang = "en"): string => {
   if (langCode === "de-de") return "de";
   if (langCode === "es-es") return "es";
   if (langCode === "fr-fr") return "fr";
+  if (langCode === "id-id") return "id";
   if (langCode === "pl-pl") return "pl";
   if (langCode === "ru-ru") return "ru";
   if (langCode === "uk-ua") return "uk";

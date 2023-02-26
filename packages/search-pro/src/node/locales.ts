@@ -253,4 +253,18 @@ export const searchProLocales: SearchProLocaleConfig = {
     emptyResult: "Nincs találat",
     loading: "A keresési indexek betöltése...",
   },
+  
+  "/id/": {
+    cancel: "Batal",
+    placeholder: "Cari sesuatu 🔎",
+    search: "Cari",
+    searching: "Sedang mencari",
+    select: "pilih",
+    navigate: "navigasi",
+    exit: "keluar",
+    history: "Riwayat Penelusuran",
+    emptyHistory: "Tidak ada riwayat penelusuran",
+    emptyResult: "Hasil penelusuran tidak tersedia",
+    loading: "Memuat indeks penelusuran...",
+  },
 };

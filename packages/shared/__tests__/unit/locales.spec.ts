@@ -23,6 +23,10 @@ const defaultLocaleConfig = {
     text: "Test",
     fallback: "Test",
   },
+  "/id/": {
+    text: "Indonesia",
+    fallback: "Indonesia",
+  },
 };
 
 describe("generate locale", () => {
@@ -32,6 +36,7 @@ describe("generate locale", () => {
         "/": { lang: "zh-CN" },
         "/en/": { lang: "en-US" },
         "/ja/": { lang: "ja-JP" },
+        "/id/": { lang: "id-ID" },
       },
       source: path.resolve(__dirname, "./__fixtures__/src"),
       bundler: {} as any,
@@ -51,6 +56,10 @@ describe("generate locale", () => {
         text: "日本",
         fallback: "日本",
       },
+      "/id/": {
+        text: "Indonesia",
+        fallback: "Indonesia",
+      },
     });
   });
 
@@ -60,6 +69,7 @@ describe("generate locale", () => {
         "/": { lang: "zh-CN" },
         "/en-us/": { lang: "en-US" },
         "/ja-jp/": { lang: "ja-JP" },
+        "/id-id/": { lang: "id-ID" },
       },
       source: path.resolve(__dirname, "./__fixtures__/src"),
       bundler: {} as any,
@@ -79,6 +89,10 @@ describe("generate locale", () => {
         text: "日本",
         fallback: "日本",
       },
+      "/id-id/": {
+        text: "Indonesia",
+        fallback: "Indonesia",
+      },
     });
   });
 
@@ -88,6 +102,7 @@ describe("generate locale", () => {
         "/": { lang: "zh-CN" },
         "/en/": { lang: "en-US" },
         "/ja/": { lang: "ja-JP" },
+        "/id/": { lang: "id-ID" },
       },
       source: path.resolve(__dirname, "./__fixtures__/src"),
       bundler: {} as any,
@@ -97,6 +112,7 @@ describe("generate locale", () => {
     const config = {
       "/": { text: "简体中文" },
       "/en/": { text: "English (US)" },
+      "/id/": { text: "Indonesia" },
     };
 
     const locales = getLocales({ app, default: defaultLocaleConfig, config });
@@ -114,6 +130,10 @@ describe("generate locale", () => {
         text: "日本",
         fallback: "日本",
       },
+      "/id/": {
+        text: "Indonesia",
+        fallback: "Indonesia",
+      },
     });
   });
 
@@ -124,6 +144,7 @@ describe("generate locale", () => {
           "/": { lang: "zh-CN" },
           "/en/": { lang: "en-US" },
           "/ja/": { lang: "ja-JP" },
+          "/id/": { lang: "id-ID" },
           "/unknown/": { lang: "unknown-Language" },
         },
         source: path.resolve(__dirname, "./__fixtures__/src"),
@@ -146,6 +167,10 @@ describe("generate locale", () => {
           text: "日本",
           fallback: "日本",
         },
+        "/id/": {
+          text: "Indonesia",
+          fallback: "Indonesia",
+        },
         "/unknown/": {
           text: "中文",
           fallback: "中文",
@@ -159,6 +184,7 @@ describe("generate locale", () => {
           "/en/": { lang: "en-US" },
           "/zh/": { lang: "zh-CN" },
           "/ja/": { lang: "ja-JP" },
+          "/id/": { lang: "id-ID" },
           "/unknown/": { lang: "unknown-Language" },
         },
         source: path.resolve(__dirname, "./__fixtures__/src"),
@@ -185,6 +211,10 @@ describe("generate locale", () => {
           text: "日本",
           fallback: "日本",
         },
+        "/id/": {
+          text: "Indonesia",
+          fallback: "Indonesia",
+        },
         "/unknown/": {
           text: "English",
           fallback: "English",
@@ -200,6 +230,7 @@ describe("generate locale", () => {
           "/": { lang: "zh-CN" },
           "/en/": { lang: "en-US" },
           "/ja/": { lang: "ja-JP" },
+          "/id/": { lang: "id-ID" },
           "/test/": { lang: "test-Language" },
         },
         source: path.resolve(__dirname, "./__fixtures__/src"),
@@ -222,6 +253,10 @@ describe("generate locale", () => {
           text: "日本",
           fallback: "日本",
         },
+        "/id/": {
+          text: "Indonesia",
+          fallback: "Indonesia",
+        },
         "/test/": {
           text: "Test",
           fallback: "Test",
@@ -235,6 +270,7 @@ describe("generate locale", () => {
           "/": { lang: "zh-CN" },
           "/en/": { lang: "en-US" },
           "/ja/": { lang: "ja-JP" },
+          "/id/": { lang: "id-ID" },
           "/unknown/": { lang: "unknown-Language" },
         },
         source: path.resolve(__dirname, "./__fixtures__/src"),
@@ -260,6 +296,10 @@ describe("generate locale", () => {
         "/ja/": {
           text: "日本",
           fallback: "日本",
+        },
+        "/id/": {
+          text: "Indonesia",
+          fallback: "Indonesia",
         },
         "/unknown/": {
           text: "Unknown",

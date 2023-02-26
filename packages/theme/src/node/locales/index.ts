@@ -5,6 +5,7 @@ import { enLocale } from "./en.js";
 import { esLocale } from "./es.js";
 import { fiLocale } from "./fi.js";
 import { frLocale } from "./fr.js";
+import { idLocale } from "./id.js";
 import { huLocale } from "./hu.js";
 import { jaLocale } from "./ja.js";
 import { koLocale } from "./ko.js";
@@ -54,4 +55,6 @@ export const themeLocalesData: Record<string, ThemeLocaleData> = {
   "/fi/": fiLocale,
 
   "/hu/": huLocale,
+
+  "/id/": idLocale,
 };
