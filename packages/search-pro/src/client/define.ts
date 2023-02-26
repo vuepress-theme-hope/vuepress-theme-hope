@@ -12,7 +12,8 @@ type SearchProClientCustomFiledConfig = Record<
 declare const SEARCH_PRO_CUSTOM_FIELDS: SearchProClientCustomFiledConfig;
 declare const SEARCH_PRO_OPTIONS: {
   delay: number;
-  historyCount: number;
+  queryHistoryCount: number;
+  resultHistoryCount: number;
   hotKeys: SearchProHotKeyOptions[];
   worker: string;
 };

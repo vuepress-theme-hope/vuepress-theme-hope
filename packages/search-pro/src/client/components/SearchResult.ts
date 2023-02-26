@@ -23,7 +23,11 @@ import {
   HistoryIcon,
   TitleIcon,
 } from "./icons.js";
-import { useSearchHistory, useWorkerSearch } from "../composables/index.js";
+import {
+  useSearchQueryHistory,
+  useSearchResultHistory,
+  useWorkerSearch,
+} from "../composables/index.js";
 import {
   searchProClientCustomFiledConfig,
   searchProLocales,
@@ -54,7 +58,9 @@ export default defineComponent({
     const router = useRouter();
     const routeLocale = useRouteLocale();
     const locale = useLocaleConfig(searchProLocales);
-    const { history, addHistory, removeHistory } = useSearchHistory();
+    const { addQueryHistory } = useSearchQueryHistory();
+    const { enabled, resultHistory, addResultHistory, removeResultHistory } =
+      useSearchResultHistory();
 
     const query = toRef(props, "query");
     const { results, searching } = useWorkerSearch(query);
@@ -63,6 +69,7 @@ export default defineComponent({
     const activatedResultContentIndex = ref(0);
     const searchResult = ref<HTMLElement>();
 
+    const hasHistory = computed(() => resultHistory.value.length > 0);
     const hasResults = computed(() => results.value.length > 0);
     const activatedResult = computed(
       () => results.value[activatedResultIndex.value] || null
@@ -140,7 +147,8 @@ export default defineComponent({
             activatedResult.value.contents[activatedResultContentIndex.value];
 
           if (page.value.path !== item.path) {
-            addHistory(item);
+            addQueryHistory(props.query);
+            addResultHistory(item);
             void router.push(item.path);
             resetSearchResult();
           }
@@ -161,16 +169,14 @@ export default defineComponent({
           class: [
             "search-pro-result",
             {
-              empty:
-                query.value === ""
-                  ? history.value.length === 0
-                  : !hasResults.value,
+              empty: query.value ? !hasResults.value : !hasHistory.value,
             },
           ],
+          id: "search-pro-results",
           ref: searchResult,
         },
         query.value === ""
-          ? history.value.length
+          ? hasHistory.value
             ? h(
                 "ul",
                 { class: "search-pro-result-list" },
@@ -180,7 +186,7 @@ export default defineComponent({
                     { class: "search-pro-result-title" },
                     locale.value.history
                   ),
-                  history.value.map((item, historyIndex) =>
+                  resultHistory.value.map((item, historyIndex) =>
                     h(
                       RouterLink,
                       {
@@ -212,7 +218,7 @@ export default defineComponent({
                             onClick: (event: Event) => {
                               event.preventDefault();
                               event.stopPropagation();
-                              removeHistory(historyIndex);
+                              removeResultHistory(historyIndex);
                             },
                           },
                           h(CloseIcon)
@@ -222,7 +228,9 @@ export default defineComponent({
                   ),
                 ])
               )
-            : locale.value.emptyHistory
+            : enabled
+            ? locale.value.emptyHistory
+            : locale.value.emptyResult
           : searching.value
           ? h(SearchLoading, { hint: locale.value.searching })
           : hasResults.value
@@ -264,7 +272,8 @@ export default defineComponent({
                             },
                           ],
                           onClick: () => {
-                            addHistory(item);
+                            addQueryHistory(props.query);
+                            addResultHistory(item);
                             resetSearchResult();
                           },
                         },

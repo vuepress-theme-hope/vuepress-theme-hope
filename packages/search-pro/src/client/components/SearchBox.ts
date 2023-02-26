@@ -16,7 +16,7 @@ import {
 } from "vuepress-shared/client";
 
 import { SearchIcon } from "./icons.js";
-import { searchModalSymbol } from "../composables/setup.js";
+import { searchModalSymbol } from "../composables/index.js";
 import { searchProHotKeys, searchProLocales } from "../define.js";
 import { isFocusingTextControl, isKeyMatched } from "../utils/index.js";
 

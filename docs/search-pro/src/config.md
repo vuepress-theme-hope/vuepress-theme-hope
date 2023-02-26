@@ -126,12 +126,19 @@ Specify the [event.key](http://keycode.info/) of the hotkeys.
 
 When hotkeys are pressed, the search box input will be focused. Set to an empty array to disable hotkeys.
 
-## historyCount
+## queryHistoryCount
 
 - Type: `number`
 - Default: `5`
 
-Max stored history item count.
+Max stored query history count, set `0` to disable it.
+
+## resultHistoryCount
+
+- Type: `number`
+- Default: `5`
+
+Max stored matched result history count, set `0` to disable it.
 
 ## delay
 

@@ -128,35 +128,6 @@
     line-height: 2.5;
   }
 
-  .clear-button {
-    @include reset.button;
-    position: absolute;
-    top: calc(50% - 0.75rem);
-
-    // NOTE: Compatible with Android Wechat
-    // inset-inline-end: 0.5rem;
-    right: 0.5rem;
-
-    padding: 0;
-
-    color: var(--dark-grey);
-
-    #{hope-config.$rtl-selector} & {
-      right: 0.5rem;
-      left: unset;
-    }
-
-    &:hover {
-      border-radius: 50%;
-      background-color: rgb(0 0 0 / 10%);
-    }
-
-    .close-icon {
-      width: 1.5rem;
-      height: 1.5rem;
-    }
-  }
-
   .close-button {
     @include reset.button;
     display: none;

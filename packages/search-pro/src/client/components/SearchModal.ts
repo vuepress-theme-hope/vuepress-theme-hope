@@ -1,3 +1,4 @@
+import { useSiteLocaleData } from "@vuepress/client";
 import { useEventListener } from "@vueuse/core";
 import {
   type VNode,
@@ -13,8 +14,11 @@ import {
 import { checkIsMobile, useLocaleConfig } from "vuepress-shared/client";
 
 import { SearchLoading } from "./SearchLoading.js";
-import { CloseIcon, SearchIcon } from "./icons.js";
-import { searchModalSymbol } from "../composables/setup.js";
+import { SearchIcon } from "./icons.js";
+import {
+  searchModalSymbol,
+  useSearchQueryHistory,
+} from "../composables/index.js";
 import { searchProLocales } from "../define.js";
 
 import "../styles/search-modal.scss";
@@ -36,10 +40,13 @@ export default defineComponent({
 
   setup() {
     const isActive = inject(searchModalSymbol)!;
+    const siteLocale = useSiteLocaleData();
     const locale = useLocaleConfig(searchProLocales);
     const input = ref("");
     const isMobile = ref(false);
     const inputElement = ref<HTMLInputElement>();
+
+    const { enabled, queryHistory } = useSearchQueryHistory();
 
     useEventListener("keydown", (event: KeyboardEvent) => {
       if (isActive.value && event.key === "Escape") isActive.value = false;
@@ -75,29 +82,29 @@ export default defineComponent({
                   ),
                   h("input", {
                     ref: inputElement,
-                    type: "text",
+                    type: "search",
                     class: "search-pro-input",
                     id: "search-pro",
                     placeholder: locale.value.placeholder,
                     spellcheck: "false",
+                    autocapitalize: "off",
+                    autocorrect: "off",
+                    autocomplete: enabled ? "on" : "off",
+                    name: `${siteLocale.value.title}-search`,
+                    list: "search-pro-dataset",
                     value: input.value,
+                    "aria-controls": "search-pro-results",
                     onInput: ({ target }: InputEvent) => {
                       input.value = (<HTMLInputElement>target).value;
                     },
                   }),
-                  input.value
-                    ? h(
-                        "button",
-                        {
-                          type: "reset",
-                          class: "clear-button",
-                          onClick: () => {
-                            input.value = "";
-                          },
-                        },
-                        h(CloseIcon)
-                      )
-                    : null,
+                  h(
+                    "dataset",
+                    { id: "search-pro-dataset" },
+                    queryHistory.value.map((item) =>
+                      h("options", { value: item })
+                    )
+                  ),
                 ]),
                 h(
                   "button",

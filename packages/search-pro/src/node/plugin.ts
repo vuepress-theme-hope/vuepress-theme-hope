@@ -7,6 +7,7 @@ import {
   getLocales,
 } from "vuepress-shared/node";
 
+import { convertOptions } from "./compact/index.js";
 import { setPageExcerpt } from "./excerpt.js";
 import { generateWorker } from "./generateWorker.js";
 import { searchProLocales } from "./locales.js";
@@ -19,8 +20,12 @@ import {
 import { CLIENT_FOLDER } from "./utils.js";
 
 export const searchProPlugin =
-  (options: SearchProOptions): PluginFunction =>
+  (options: SearchProOptions, legacy = true): PluginFunction =>
   (app) => {
+    // TODO: Remove it
+    if (legacy)
+      convertOptions(options as SearchProOptions & Record<string, unknown>);
+
     useSassPalettePlugin(app, { id: "hope" });
 
     return {
@@ -47,7 +52,8 @@ export const searchProPlugin =
         }),
         SEARCH_PRO_OPTIONS: {
           delay: options.delay || 300,
-          historyCount: options.historyCount || 5,
+          queryHistoryCount: options.queryHistoryCount || 5,
+          resultHistoryCount: options.resultHistoryCount || 5,
           hotKeys: options.hotKeys || [{ key: "k", ctrl: true }],
           worker: options.worker || "search-pro.worker.js",
         },
