@@ -41,6 +41,6 @@ const locale: Partial<Locale> = {
   ordinal: (n) => `${n}.`,
 };
 
-export const loadFrLocale = (extendedDayjs: typeof dayjs): void => {
+export const loadIdLocale = (extendedDayjs: typeof dayjs): void => {
   extendedDayjs.locale("id", locale);
 };
