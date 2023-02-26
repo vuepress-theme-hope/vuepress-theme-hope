@@ -58,14 +58,14 @@ export default defineComponent({
                       2,
                   },
                   {
-                    before: () => slots["tocBefore"]?.(),
-                    after: () => slots["tocAfter"]?.(),
+                    before: () => slots["toc-before"]?.(),
+                    after: () => slots["toc-after"]?.(),
                   }
                 )
               : null,
-            slots["contentBefore"]?.(),
+            slots["content-before"]?.(),
             h(MarkdownContent),
-            slots["contentAfter"]?.(),
+            slots["content-after"]?.(),
             h(PageMeta),
             h(PageNav),
             hasGlobalComponent("CommentService")

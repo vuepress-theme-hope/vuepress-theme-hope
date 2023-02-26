@@ -206,8 +206,8 @@ export default defineComponent({
                     !enableSidebar.value &&
                     !(
                       slots["sidebar"] ||
-                      slots["sidebarTop"] ||
-                      slots["sidebarBottom"]
+                      slots["sidebar-top"] ||
+                      slots["sidebar-bottom"]
                     ),
                   "has-toc": enableToc.value,
                   "hide-navbar": hideNavbar.value,
@@ -229,14 +229,14 @@ export default defineComponent({
                     Navbar,
                     { onToggleSidebar: () => toggleMobileSidebar() },
                     {
-                      startBefore: () => slots["navbarStartBefore"]?.(),
-                      startAfter: () => slots["navbarStartAfter"]?.(),
-                      centerBefore: () => slots["navbarCenterBefore"]?.(),
-                      centerAfter: () => slots["navbarCenterAfter"]?.(),
-                      endBegin: () => slots["navbarEndBegin"]?.(),
-                      endAfter: () => slots["navbarEndAfter"]?.(),
-                      screenTop: () => slots["navScreenTop"]?.(),
-                      screenBottom: () => slots["navScreenBottom"]?.(),
+                      "start-before": () => slots["navbar-start-before"]?.(),
+                      "start-after": () => slots["navbar-start-after"]?.(),
+                      "center-before": () => slots["navbar-center-before"]?.(),
+                      "center-after": () => slots["navbar-center-after"]?.(),
+                      "end-before": () => slots["navbar-end-before"]?.(),
+                      "end-after": () => slots["navbar-end-after"]?.(),
+                      "screen-top": () => slots["nav-screen-top"]?.(),
+                      "screen-bottom": () => slots["nav-screen-bottom"]?.(),
                     }
                   )
                 : null,
@@ -278,8 +278,8 @@ export default defineComponent({
                           slots["sidebar"]?.(),
                       }
                     : {}),
-                  top: () => slots["sidebarTop"]?.(),
-                  bottom: () => slots["sidebarBottom"]?.(),
+                  top: () => slots["sidebar-top"]?.(),
+                  bottom: () => slots["sidebar-bottom"]?.(),
                 }
               ),
               slots["default"]?.(),

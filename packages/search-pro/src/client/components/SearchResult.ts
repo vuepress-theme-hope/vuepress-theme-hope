@@ -47,11 +47,7 @@ export default defineComponent({
     },
   },
 
-  emits: {
-    close: () => true,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    updateQuery: (_query: string) => true,
-  },
+  emits: ["close", "updateQuery"],
 
   setup(props, { emit }) {
     const page = usePageData();

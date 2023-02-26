@@ -29,9 +29,7 @@ export default defineComponent({
     show: Boolean,
   },
 
-  emits: {
-    close: () => true,
-  },
+  emits: ["close"],
 
   setup(props, { emit, slots }) {
     const page = usePageData();

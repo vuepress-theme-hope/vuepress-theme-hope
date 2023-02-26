@@ -41,9 +41,7 @@ export default defineComponent({
     noExternalLinkIcon: Boolean,
   },
 
-  emits: {
-    focusout: () => true,
-  },
+  emits: ["focusout"],
 
   setup(props, { attrs, emit, slots }) {
     const route = useRoute();

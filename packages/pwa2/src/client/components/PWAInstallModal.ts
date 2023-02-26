@@ -25,13 +25,7 @@ export default defineComponent({
     useHint: Boolean,
   },
 
-  emits: {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    canInstall: (_status: boolean) => true,
-    hint: () => true,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    toggle: (_status: boolean) => true,
-  },
+  emits: ["canInstall", "hint", "toggle"],
 
   setup(props, { emit }) {
     const locale = useLocaleConfig(locales);

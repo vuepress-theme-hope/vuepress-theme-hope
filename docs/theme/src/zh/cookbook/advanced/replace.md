@@ -288,16 +288,16 @@ import HopeHomePage from "vuepress-theme-hope/components/HomePage.js";
 **主题**:
 
 - `AutoLink`: `default`, `before`, `after`
-- `CommonWrapper`: `default`, `navbarStartBefore`, `navbarStartAfter`, `navbarCenterBefore`, `navbarCenterAfter`, `navbarEndBegin`, `navbarEndAfter`, `navScreenTop`, `navScreenBottom`, `sidebar`, `sidebarTop`, `sidebarBottom`
-- `HeroInfo`: `heroImage`, `heroInfo`
+- `CommonWrapper`: `default`, `navbar-start-before`, `navbar-start-after`, `navbar-center-before`, `navbar-center-after`, `navbar-end-before`, `navbar-end-after`, `nav-screen-top`, `nav-screen-bottom`, `sidebar`, `sidebar-top`, `sidebar-bottom`
+- `HeroInfo`: `hero-image`, `hero-info`
 - `HomePage`: `top`, `center`, `bottom`
-- `NormalPage`: `top`, `contentBefore`, `contentAfter`, `bottom`, `tocBefore`, `tocAfter`
+- `NormalPage`: `top`, `content-before`, `content-after`, `bottom`, `toc-before`, `toc-after`
 
 **导航栏**:
 
 - `DropdownLink`: `title`
 - `NavActions`: `before`, `after`
-- `Navbar`: `startBefore`, `startAfter`, `centerBefore`, `centerAfter`, `endBegin`, `endAfter`
+- `Navbar`: `start-before`, `start-after`, `center-before`, `center-after`, `end-before`, `end-after`
 - `NavbarBrand`: `default`
 - `NavScreen`: `before`, `after`
 - `NavScreenDropdown`: `before`, `after`

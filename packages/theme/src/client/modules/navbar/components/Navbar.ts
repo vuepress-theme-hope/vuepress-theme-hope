@@ -33,9 +33,7 @@ declare const HAS_MULTIPLE_LANGUAGES: boolean;
 export default defineComponent({
   name: "NavBar",
 
-  emits: {
-    toggleSidebar: () => true,
-  },
+  emits: ["toggleSidebar"],
 
   setup(_props, { emit, slots }) {
     const themeLocale = useThemeLocaleData();
@@ -101,21 +99,21 @@ export default defineComponent({
                   emit("toggleSidebar");
                 },
               }),
-              slots["startBefore"]?.(),
+              slots["start-before"]?.(),
               ...(navbarLayout.value.start || []).map((item) => map[item]),
-              slots["startAfter"]?.(),
+              slots["start-after"]?.(),
             ]),
 
             h("div", { class: "navbar-center" }, [
-              slots["centerBefore"]?.(),
+              slots["center-before"]?.(),
               ...(navbarLayout.value.center || []).map((item) => map[item]),
-              slots["centerAfter"]?.(),
+              slots["center-after"]?.(),
             ]),
 
             h("div", { class: "navbar-end" }, [
-              slots["endBegin"]?.(),
+              slots["end-before"]?.(),
               ...(navbarLayout.value.end || []).map((item) => map[item]),
-              slots["endAfter"]?.(),
+              slots["end-after"]?.(),
 
               h(ToggleNavbarButton, {
                 active: showScreen.value,
@@ -135,8 +133,8 @@ export default defineComponent({
             },
           },
           {
-            before: () => slots["screenTop"]?.(),
-            after: () => slots["screenBottom"]?.(),
+            before: () => slots["screen-top"]?.(),
+            after: () => slots["screen-bottom"]?.(),
           }
         ),
       ];

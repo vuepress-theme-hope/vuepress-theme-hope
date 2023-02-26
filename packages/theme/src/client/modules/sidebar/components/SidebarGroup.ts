@@ -34,9 +34,7 @@ export default defineComponent({
     },
   },
 
-  emits: {
-    toggle: () => true,
-  },
+  emits: ["toggle"],
 
   setup(props, { emit }) {
     const route = useRoute();

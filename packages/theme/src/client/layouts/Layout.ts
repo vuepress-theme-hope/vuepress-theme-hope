@@ -52,7 +52,7 @@ export default defineComponent({
               ? h(HomePage)
               : h(FadeSlideY, () => h(NormalPage, { key: page.value.path })),
           ...(sidebarDisplay.value !== "none"
-            ? { navScreenBottom: () => h(resolveComponent("BloggerInfo")) }
+            ? { "nav-screen-bottom": () => h(resolveComponent("BloggerInfo")) }
             : {}),
           ...(!isMobile.value && sidebarDisplay.value === "always"
             ? { sidebar: () => h(resolveComponent("BloggerInfo")) }
