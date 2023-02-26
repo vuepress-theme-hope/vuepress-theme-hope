@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.182](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.181...v2.0.0-beta.182) (2023-02-26)
+
+### Features
+
+- add Indonesian language support ([#2828](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2828)) ([12ecd2d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/12ecd2de688f912e4e074077f8ad54f5b8d4f715))
+
+### Bug Fixes
+
+- **feed2:** fix rss template ([0c57549](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0c5754965bac0b2f45df7936027d1fd304a1ed40))
+- **md-enhance:** correctly get language from code fence, close [#2825](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2825) ([2bc7387](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2bc73871202ed28a7180c129fd206ef6265b0116))
+- **theme:** fix structure sidebar link, close [#2821](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2821) ([e5325a5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e5325a5b9db071fc913320a962ff6c105124d882))
+
 ## [2.0.0-beta.181](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.180...v2.0.0-beta.181) (2023-02-23)
 
 ### Features
