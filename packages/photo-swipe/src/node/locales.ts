@@ -165,7 +165,7 @@ export const photoSwipeLocales: PhotoSwipeLocaleConfig = {
   
   "/id/": {
     close: "Tutup",
-    download: "Unduh gambar,
+    download: "Unduh gambar",
     fullscreen: "Beralih ke layar penuh",
     zoom: "Perbesar/Perkecil",
     arrowPrev: "Sebelumnya (Panah kiri)",
