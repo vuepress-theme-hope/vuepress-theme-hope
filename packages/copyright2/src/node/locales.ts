@@ -91,4 +91,10 @@ export const copyrightLocales: CopyrightLocaleConfig = {
     license: "Licensz: :license",
     link: ":link",
   },
+
+  "/id/": {
+    author: "Hak cipta oleh :author",
+    license: "Dibawah Lisensi :license",
+    link: ":link",
+  },
 };

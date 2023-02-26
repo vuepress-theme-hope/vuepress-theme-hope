@@ -34,4 +34,6 @@ export const siteInfoLocaleConfig: SiteInfoLocaleConfig = {
   "/fi/": { source: "Lähdekoodi" },
 
   "/hu/": { source: "Forrás" },
+
+  "/id/": { source: "Sumber" },
 };

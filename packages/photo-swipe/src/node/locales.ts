@@ -162,4 +162,13 @@ export const photoSwipeLocales: PhotoSwipeLocaleConfig = {
     arrowPrev: "Előző (Balra nyíl)",
     arrowNext: "Következő (Jobbra nyíl)",
   },
+
+  "/id/": {
+    close: "Tutup",
+    download: "Unduh gambar",
+    fullscreen: "Beralih ke layar penuh",
+    zoom: "Perbesar/Perkecil",
+    arrowPrev: "Sebelumnya (Panah kiri)",
+    arrowNext: "Selanjutnya (Panah kanan)",
+  },
 };

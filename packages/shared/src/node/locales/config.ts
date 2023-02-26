@@ -10,6 +10,7 @@ export const lang2PathConfig = {
   "fi-FI": "/fi/",
   "fr-FR": "/fr/",
   "hu-HU": "/hu/",
+  "id-ID": "/id/",
   "ja-JP": "/ja/",
   "ko-KR": "/ko/",
   "pl-PL": "/pl/",

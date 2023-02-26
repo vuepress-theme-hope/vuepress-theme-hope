@@ -280,4 +280,19 @@ export const pwaLocales: PWALocaleConfig = {
     hint: "Új tartalom érhető el.",
     update: "Új tartalom érhető el.",
   },
+
+  "/id/": {
+    install: "Install",
+    iOSInstall: "Ketuk tombol bagikan, lalu 'Tambahkan ke Layar Utama'",
+    cancel: "Batal",
+    close: "Tutup",
+    prevImage: "Gambar sebelumnya",
+    nextImage: "Gambar selanjutnya",
+    desc: "Keterangan",
+    feature: "Fitur",
+    explain:
+      "Aplikasi ini dapat diinstal di PC atau perangkat seluler Anda.  Ini akan memungkinkan aplikasi web ini terlihat seperti aplikasi terpasang lainnya.  Anda bisa menemukannya di daftar aplikasi dan dapat menyematkannya ke layar beranda, menu start, atau menu ke taskbar.  Aplikasi web yang terinstal ini juga dapat berinteraksi dengan aplikasi lain dan dengan sistem operasi yang Anda gunakan. ",
+    hint: "Konten baru ditemukan.",
+    update: "Konten baru telah tersedia.",
+  },
 };
