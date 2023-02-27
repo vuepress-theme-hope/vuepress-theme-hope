@@ -45,7 +45,7 @@ $pc: 1920px;
 
 ::: details Значение по умолчанию
 
-@[code{7-}](../../../../packages/theme/templates/config.scss)
+@[code{7-}](../../../../../packages/theme/templates/palette/config.scss)
 
 :::
 
@@ -93,7 +93,7 @@ $border-color: (
 
 ::: details Значение по умолчанию
 
-@[code{4-60}](../../../../packages/theme/templates/color.scss)
+@[code{4-60}](../../../../../packages/theme/templates/palette/color.scss)
 
 :::
 
@@ -149,7 +149,7 @@ $font-family: 'Georgia, -apple-system, "Nimbus Roman No9 L", "PingFang SC", "Hir
 
 ::: details Значение по умолчанию
 
-@[code](../../../../packages/theme/templates/layout.scss)
+@[code](../../../../../packages/theme/templates/palette/layout.scss)
 
 :::
 
