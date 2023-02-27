@@ -7,7 +7,7 @@ import { FeedGenerator } from "./generator/index.js";
 import { injectLinksToHead } from "./injectHead.js";
 import { checkOutput, ensureHostName, getFeedOptions } from "./options.js";
 import { type FeedOptions } from "./typings/index.js";
-import { logger } from "./utils/index.js";
+import { FEED_GENERATOR, logger } from "./utils/index.js";
 
 export const feedPlugin =
   (options: FeedOptions, legacy = true): PluginFunction =>
@@ -15,16 +15,12 @@ export const feedPlugin =
     // TODO: Remove this in v2 stable
     if (legacy)
       convertOptions(options as FeedOptions & Record<string, unknown>);
-    if (!checkVersion(app, "2.0.0-beta.61"))
-      logger.error(
-        `VuePress version does not meet the requirement ${colors.cyan(
-          "2.0.0-beta.61"
-        )}`
-      );
+    checkVersion(app, FEED_GENERATOR, "2.0.0-beta.61");
+
     if (app.env.isDebug) logger.info("Options:", options);
 
     const plugin: PluginObject = {
-      name: "vuepress-plugin-feed2",
+      name: FEED_GENERATOR,
     };
 
     if (!ensureHostName(options)) {

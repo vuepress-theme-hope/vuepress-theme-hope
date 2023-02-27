@@ -7,22 +7,18 @@ import { generateDescription } from "./description.js";
 import { type SeoOptions } from "./options.js";
 import { appendSEO, generateRobotsTxt } from "./seo.js";
 import { type ExtendPage } from "./typings/index.js";
-import { logger } from "./utils.js";
+import { PLUGIN_NAME, logger } from "./utils.js";
 
 export const seoPlugin =
   (options: SeoOptions, legacy = true): PluginFunction =>
   (app) => {
     // TODO: Remove this in v2 stable
     if (legacy) convertOptions(options as SeoOptions & Record<string, unknown>);
-    if (!checkVersion(app, "2.0.0-beta.61"))
-      logger.error(
-        `VuePress version does not meet the requirement ${colors.cyan(
-          "2.0.0-beta.61"
-        )}`
-      );
+    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.61");
+
     if (app.env.isDebug) logger.info("Options:", options);
 
-    const plugin: Plugin = { name: "vuepress-plugin-seo2" };
+    const plugin: Plugin = { name: PLUGIN_NAME };
 
     if (!options.hostname) {
       logger.error(`Option ${colors.magenta("hostname")} is required!`);

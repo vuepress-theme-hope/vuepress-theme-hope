@@ -1,22 +1,18 @@
 import { type PluginFunction } from "@vuepress/core";
-import { colors, getDirname, path } from "@vuepress/utils";
+import { getDirname, path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import { addViteOptimizeDepsExclude, checkVersion } from "vuepress-shared/node";
 
 import { type LightGalleryOptions } from "./options.js";
-import { logger } from "./utils.js";
+import { PLUGIN_NAME, logger } from "./utils.js";
 
 const __dirname = getDirname(import.meta.url);
 
 export const lightgalleryPlugin =
   (options: LightGalleryOptions = {}): PluginFunction =>
   (app) => {
-    if (!checkVersion(app, "2.0.0-beta.61"))
-      logger.error(
-        `VuePress version does not meet the requirement ${colors.cyan(
-          "2.0.0-beta.61"
-        )}`
-      );
+    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.61");
+
     if (app.env.isDebug) logger.info("Options:", options);
 
     const plugins = options.plugins || ["pager", "share", "zoom"];
@@ -24,7 +20,7 @@ export const lightgalleryPlugin =
     useSassPalettePlugin(app, { id: "hope" });
 
     return {
-      name: "vuepress-plugin-lightgallery",
+      name: PLUGIN_NAME,
 
       define: (): Record<string, unknown> => ({
         IMAGE_SELECTOR:

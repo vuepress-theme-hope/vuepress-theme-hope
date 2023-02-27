@@ -1,3 +1,5 @@
 import { Logger } from "vuepress-shared/node";
 
-export const logger = new Logger("vuepress-plugin-copyright2");
+export const PLUGIN_NAME = "vuepress-plugin-photo-swipe";
+
+export const logger = new Logger(PLUGIN_NAME);

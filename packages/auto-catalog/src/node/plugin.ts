@@ -1,22 +1,17 @@
 import { type PluginFunction } from "@vuepress/core";
-import { colors } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import { checkVersion, getLocales } from "vuepress-shared/node";
 
 import { generateCatalog } from "./autoCatalog.js";
 import { locales as defaultLocales } from "./locales.js";
 import { type AutoCatalogOptions } from "./options.js";
-import { CLIENT_FOLDER, logger } from "./utils.js";
+import { CLIENT_FOLDER, PLUGIN_NAME, logger } from "./utils.js";
 
 export const autoCatalogPlugin =
   (options: AutoCatalogOptions = {}): PluginFunction =>
   (app) => {
-    if (!checkVersion(app, "2.0.0-beta.61"))
-      logger.error(
-        `VuePress version does not meet the requirement ${colors.cyan(
-          "2.0.0-beta.61"
-        )}`
-      );
+    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.61");
+
     if (app.env.isDebug) logger.info("Options:", options);
 
     useSassPalettePlugin(app, { id: "hope" });
@@ -36,12 +31,12 @@ export const autoCatalogPlugin =
     } = options;
 
     return {
-      name: "vuepress-plugin-auto-catalog",
+      name: PLUGIN_NAME,
 
       define: (): Record<string, unknown> => ({
         AUTO_CATALOG_LOCALES: getLocales({
           app,
-          name: "auto-catalog",
+          name: PLUGIN_NAME,
           default: defaultLocales,
           config: locales,
         }),

@@ -1,9 +1,10 @@
 import { createRequire } from "node:module";
 
 import { type App } from "@vuepress/core";
-import { fs, path } from "@vuepress/utils";
+import { colors, fs, path } from "@vuepress/utils";
 import semver from "semver";
 
+import { Logger } from "./logger.js";
 import { keys } from "../../shared/index.js";
 
 interface PackageJSON extends Record<string, unknown> {
@@ -12,9 +13,9 @@ interface PackageJSON extends Record<string, unknown> {
   devDependencies?: Record<string, string>;
 }
 
-export const checkVersion = (app: App, range = "v2"): boolean => {
+export const checkVersion = (app: App, name: string, range = "v2"): void => {
   const sourceFolderPath = app.dir.source();
-
+  const logger = new Logger(name);
   const require = createRequire(sourceFolderPath);
 
   let dir = sourceFolderPath;
@@ -45,8 +46,15 @@ export const checkVersion = (app: App, range = "v2"): boolean => {
   if (packageName) {
     const { version } = <PackageJSON>require(`${packageName}/package.json`);
 
-    return semver.satisfies(version, range);
+    if (!semver.satisfies(version, range))
+      logger.error(
+        `Package ${colors.magenta(name)} requires ${colors.cyan(
+          `vuepress@${range}`
+        )}, but found ${colors.cyan(version)}.`
+      );
+
+    return;
   }
 
-  return false;
+  logger.error("No VuePress package is found.");
 };

@@ -1,5 +1,5 @@
 import { type PluginFunction } from "@vuepress/core";
-import { colors, getDirname, path } from "@vuepress/utils";
+import { getDirname, path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   addCustomElement,
@@ -14,7 +14,7 @@ import { getProvider } from "./alias.js";
 import { convertOptions } from "./compact.js";
 import { walineLocales } from "./locales.js";
 import { applyDemo } from "./options.js";
-import { logger } from "./utils.js";
+import { PLUGIN_NAME, logger } from "./utils.js";
 import { type CommentOptions } from "../shared/index.js";
 
 const __dirname = getDirname(import.meta.url);
@@ -26,12 +26,8 @@ export const commentPlugin =
     // TODO: Remove this in v2 stable
     if (legacy)
       convertOptions(options as CommentOptions & Record<string, unknown>);
-    if (!checkVersion(app, "2.0.0-beta.61"))
-      logger.error(
-        `VuePress version does not meet the requirement ${colors.cyan(
-          "2.0.0-beta.61"
-        )}`
-      );
+    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.61");
+
     if (app.env.isDebug) logger.info("Options:", options);
 
     applyDemo(options, app);
@@ -53,11 +49,10 @@ export const commentPlugin =
     useSassPalettePlugin(app, { id: "hope" });
 
     return {
-      name: "vuepress-plugin-comment2",
+      name: PLUGIN_NAME,
 
       alias: {
-        // eslint-disable-next-line @typescript-eslint/naming-convention
-        "vuepress-plugin-comment2/provider": getProvider(options.provider),
+        [`${PLUGIN_NAME}/provider`]: getProvider(options.provider),
       },
 
       define: () => ({

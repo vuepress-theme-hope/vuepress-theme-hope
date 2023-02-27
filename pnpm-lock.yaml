@@ -1760,9 +1760,6 @@ importers:
 
   packages/reading-time2:
     dependencies:
-      '@vuepress/utils':
-        specifier: 2.0.0-beta.61
-        version: 2.0.0-beta.61
       vuepress-shared:
         specifier: workspace:*
         version: link:../shared

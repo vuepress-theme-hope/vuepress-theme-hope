@@ -1,6 +1,6 @@
 import { type PluginFunction } from "@vuepress/core";
 import { isArray, isString } from "@vuepress/shared";
-import { colors, getDirname, path } from "@vuepress/utils";
+import { getDirname, path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   addViteSsrNoExternal,
@@ -10,32 +10,28 @@ import {
 
 import { copyCodeLocales } from "./locales.js";
 import { type CopyCodeOptions } from "./options.js";
-import { logger } from "./utils.js";
+import { PLUGIN_NAME, logger } from "./utils.js";
 
 const __dirname = getDirname(import.meta.url);
 
 export const copyCodePlugin =
   (options: CopyCodeOptions = {}): PluginFunction =>
   (app) => {
-    if (!checkVersion(app, "2.0.0-beta.61"))
-      logger.error(
-        `VuePress version does not meet the requirement ${colors.cyan(
-          "2.0.0-beta.61"
-        )}`
-      );
+    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.61");
+
     if (app.env.isDebug) logger.info("Options:", options);
 
     useSassPalettePlugin(app, { id: "hope" });
 
     const userCopyCodeLocales = getLocales({
       app,
-      name: "copy-code",
+      name: PLUGIN_NAME,
       default: copyCodeLocales,
       config: options.locales,
     });
 
     return {
-      name: "vuepress-plugin-copy-code2",
+      name: PLUGIN_NAME,
 
       define: (): Record<string, unknown> => ({
         COPY_CODE_DELAY: options.delay || 800,

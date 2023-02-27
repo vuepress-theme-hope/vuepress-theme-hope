@@ -3,7 +3,9 @@ import { Logger, keys } from "vuepress-shared/node";
 
 import { type PageMap } from "./typings/index.js";
 
-export const logger = new Logger("vuepress-plugin-blog2");
+export const PLUGIN_NAME = "vuepress-plugin-blog2";
+
+export const logger = new Logger(PLUGIN_NAME);
 
 export const getPageMap = (
   filter: (page: Page) => boolean,

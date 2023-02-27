@@ -1,6 +1,8 @@
 import { Logger } from "vuepress-shared/node";
 
-export const logger = new Logger("vuepress-plugin-redirect");
+export const PLUGIN_NAME = "vuepress-plugin-redirect";
+
+export const logger = new Logger(PLUGIN_NAME);
 
 export const getRedirectHTML = (redirectUrl: string): string => `<!DOCTYPE html>
 <html lang="en">

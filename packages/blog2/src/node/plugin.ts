@@ -6,7 +6,6 @@ import {
   preparePagesData,
   preparePagesRoutes,
 } from "@vuepress/core";
-import { colors } from "@vuepress/utils";
 import { watch } from "chokidar";
 import { checkVersion, getPageExcerpt } from "vuepress-shared/node";
 
@@ -14,7 +13,7 @@ import { prepareCategory } from "./category.js";
 import { convertOptions } from "./compact.js";
 import { type BlogOptions, type PageWithExcerpt } from "./options.js";
 import { prepareType } from "./type.js";
-import { getPageMap, logger } from "./utils.js";
+import { PLUGIN_NAME, getPageMap, logger } from "./utils.js";
 
 export const blogPlugin =
   (options: BlogOptions, legacy = true): PluginFunction =>
@@ -23,12 +22,7 @@ export const blogPlugin =
     if (legacy)
       convertOptions(options as BlogOptions & Record<string, unknown>);
 
-    if (!checkVersion(app, "2.0.0-beta.61"))
-      logger.error(
-        `VuePress version does not meet the requirement ${colors.cyan(
-          "2.0.0-beta.61"
-        )}`
-      );
+    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.61");
 
     const {
       getInfo = (): Record<string, never> => ({}),
@@ -54,7 +48,7 @@ export const blogPlugin =
     if (app.env.isDebug) logger.info("Options:", options);
 
     return {
-      name: "vuepress-plugin-blog2",
+      name: PLUGIN_NAME,
 
       define: () => ({
         BLOG_META_SCOPE: metaScope,

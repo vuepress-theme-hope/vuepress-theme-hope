@@ -17,7 +17,6 @@ import { type ViteBundlerOptions } from "@vuepress/bundler-vite";
 import { type PluginFunction } from "@vuepress/core";
 import { type MarkdownEnv } from "@vuepress/markdown";
 import { isArray, isPlainObject } from "@vuepress/shared";
-import { colors } from "@vuepress/utils";
 import { type RollupWarning } from "rollup";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
@@ -70,7 +69,7 @@ import {
   prepareRevealPluginFile,
 } from "./prepare/index.js";
 import { type KatexOptions } from "./typings/index.js";
-import { logger } from "./utils.js";
+import { PLUGIN_NAME, logger } from "./utils.js";
 
 export const mdEnhancePlugin =
   (
@@ -84,12 +83,8 @@ export const mdEnhancePlugin =
         options as MarkdownEnhanceOptions & Record<string, unknown>
       );
 
-    if (!checkVersion(app, "2.0.0-beta.61"))
-      logger.error(
-        `VuePress version does not meet the requirement ${colors.cyan(
-          "2.0.0-beta.61"
-        )}`
-      );
+    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.61");
+
     if (app.env.isDebug) logger.info("Options:", options);
 
     const getStatus = (
@@ -102,7 +97,7 @@ export const mdEnhancePlugin =
 
     const locales = getLocales({
       app,
-      name: "md-enhance",
+      name: PLUGIN_NAME,
       default: markdownEnhanceLocales,
       config: options.locales,
     });
@@ -153,7 +148,7 @@ export const mdEnhancePlugin =
     let isAppInitialized = false;
 
     return {
-      name: "vuepress-plugin-md-enhance",
+      name: PLUGIN_NAME,
 
       define: (): Record<string, unknown> => ({
         MARKDOWN_ENHANCE_DELAY: options.delay || 800,

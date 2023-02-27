@@ -1,11 +1,11 @@
 import { type Page, type PluginFunction } from "@vuepress/core";
 import { isFunction } from "@vuepress/shared";
-import { colors, getDirname, path } from "@vuepress/utils";
+import { getDirname, path } from "@vuepress/utils";
 import { checkVersion, getLocales } from "vuepress-shared/node";
 
 import { copyrightLocales } from "./locales.js";
 import { type CopyrightOptions } from "./options.js";
-import { logger } from "./utils.js";
+import { PLUGIN_NAME, logger } from "./utils.js";
 import { type CopyrightPluginPageData } from "../shared/index.js";
 
 const __dirname = getDirname(import.meta.url);
@@ -13,12 +13,8 @@ const __dirname = getDirname(import.meta.url);
 export const copyrightPlugin =
   (options: CopyrightOptions): PluginFunction =>
   (app) => {
-    if (!checkVersion(app, "2.0.0-beta.61"))
-      logger.error(
-        `VuePress version does not meet the requirement ${colors.cyan(
-          "2.0.0-beta.61"
-        )}`
-      );
+    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.61");
+
     if (app.env.isDebug) logger.info("Options:", options);
 
     const {
@@ -33,13 +29,13 @@ export const copyrightPlugin =
 
     const locales = getLocales({
       app,
-      name: "copyright",
+      name: PLUGIN_NAME,
       default: copyrightLocales,
       config: options.locales,
     });
 
     return {
-      name: "vuepress-plugin-copyright2",
+      name: PLUGIN_NAME,
 
       define: (): Record<string, unknown> => ({
         COPYRIGHT_CANONICAL: canonical || "",

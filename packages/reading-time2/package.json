@@ -46,7 +46,6 @@
     "pnpm": ">=7"
   },
   "dependencies": {
-    "@vuepress/utils": "2.0.0-beta.61",
     "vuepress-shared": "workspace:*"
   },
   "peerDependencies": {

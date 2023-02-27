@@ -8,4 +8,6 @@ export const TEMPLATE_FOLDER = ensureEndingSlash(
   path.resolve(__dirname, "../../templates")
 );
 
-export const logger = new Logger("vuepress-plugin-sitemap2");
+export const PLUGIN_NAME = "vuepress-plugin-sitemap2";
+
+export const logger = new Logger(PLUGIN_NAME);

@@ -10,4 +10,6 @@ export const CLIENT_FOLDER = ensureEndingSlash(
 
 export const WORKER_PATH = path.resolve(__dirname, "../worker/index.js");
 
-export const logger = new Logger("vuepress-plugin-search-pro");
+export const PLUGIN_NAME = "vuepress-plugin-search-pro";
+
+export const logger = new Logger(PLUGIN_NAME);

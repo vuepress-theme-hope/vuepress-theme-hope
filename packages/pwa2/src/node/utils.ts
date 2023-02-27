@@ -8,4 +8,6 @@ export const CLIENT_FOLDER = ensureEndingSlash(
   path.resolve(__dirname, "../client")
 );
 
-export const logger = new Logger("vuepress-plugin-pwa2");
+export const PLUGIN_NAME = "vuepress-plugin-pwa2";
+
+export const logger = new Logger(PLUGIN_NAME);

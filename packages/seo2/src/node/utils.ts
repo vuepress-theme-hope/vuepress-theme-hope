@@ -10,7 +10,9 @@ import { Logger, entries, isAbsoluteUrl, isUrl } from "vuepress-shared/node";
 import { type SeoOptions } from "./options.js";
 import { type ExtendPage } from "./typings/index.js";
 
-export const logger = new Logger("vuepress-plugin-seo2");
+export const PLUGIN_NAME = "vuepress-plugin-seo2";
+
+export const logger = new Logger(PLUGIN_NAME);
 
 export interface AlternateInfo {
   path: string;

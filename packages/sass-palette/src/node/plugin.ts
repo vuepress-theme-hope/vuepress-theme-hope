@@ -1,5 +1,5 @@
 import { type PluginFunction } from "@vuepress/core";
-import { colors, getDirname, path } from "@vuepress/utils";
+import { getDirname, path } from "@vuepress/utils";
 import { watch } from "chokidar";
 import { checkVersion } from "vuepress-shared/node";
 
@@ -12,19 +12,15 @@ import {
   preparePaletteSass,
   prepareStyleSass,
 } from "./prepare.js";
-import { logger } from "./utils.js";
+import { PLUGIN_NAME, logger } from "./utils.js";
 
 const __dirname = getDirname(import.meta.url);
 
 export const sassPalettePlugin =
   (options: SassPaletteOptions): PluginFunction =>
   (app) => {
-    if (!checkVersion(app, "2.0.0-beta.61"))
-      logger.error(
-        `VuePress version does not meet the requirement ${colors.cyan(
-          "2.0.0-beta.61"
-        )}`
-      );
+    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.61");
+
     if (app.env.isDebug) logger.info("Options:", options);
 
     const {
@@ -48,7 +44,7 @@ export const sassPalettePlugin =
     const userStyle = style ? app.dir.source(style) : null;
 
     return {
-      name: `vuepress-plugin-sass-palette`,
+      name: PLUGIN_NAME,
 
       multiple: true,
 
@@ -103,12 +99,6 @@ export const sassPalettePlugin =
 
           prepareStyleSass(app, { id, userStyle }),
         ]).then(() => {
-          if (!checkVersion(app, "2.0.0-beta.61"))
-            logger.error(
-              `VuePress version does not meet the requirement ${colors.cyan(
-                "2.0.0-beta.61"
-              )}`
-            );
           if (app.env.isDebug) logger.info(`Style file for ${id} generated`);
         });
       },
@@ -128,12 +118,6 @@ export const sassPalettePlugin =
             userConfig,
             userPalette,
           }).then(() => {
-            if (!checkVersion(app, "2.0.0-beta.61"))
-              logger.error(
-                `VuePress version does not meet the requirement ${colors.cyan(
-                  "2.0.0-beta.61"
-                )}`
-              );
             if (app.env.isDebug) logger.info(`Style file for ${id} updated`);
           });
 
@@ -169,12 +153,6 @@ export const sassPalettePlugin =
               userPalette,
             }),
           ]).then(() => {
-            if (!checkVersion(app, "2.0.0-beta.61"))
-              logger.error(
-                `VuePress version does not meet the requirement ${colors.cyan(
-                  "2.0.0-beta.61"
-                )}`
-              );
             if (app.env.isDebug) logger.info(`Style file for ${id} updated`);
           });
 
@@ -195,12 +173,6 @@ export const sassPalettePlugin =
 
           const updateStyle = (): Promise<void> =>
             prepareStyleSass(app, { id, userStyle }).then(() => {
-              if (!checkVersion(app, "2.0.0-beta.61"))
-                logger.error(
-                  `VuePress version does not meet the requirement ${colors.cyan(
-                    "2.0.0-beta.61"
-                  )}`
-                );
               if (app.env.isDebug) logger.info(`Style file for ${id} updated`);
             });
 

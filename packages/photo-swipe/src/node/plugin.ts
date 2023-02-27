@@ -1,5 +1,5 @@
 import { type PluginFunction } from "@vuepress/core";
-import { colors, getDirname, path } from "@vuepress/utils";
+import { getDirname, path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   addViteOptimizeDepsExclude,
@@ -11,25 +11,21 @@ import {
 
 import { photoSwipeLocales } from "./locales.js";
 import { type PhotoSwipeOptions } from "./options.js";
-import { logger } from "./utils.js";
+import { PLUGIN_NAME, logger } from "./utils.js";
 
 const __dirname = getDirname(import.meta.url);
 
 export const photoSwipePlugin =
   (options: PhotoSwipeOptions = {}): PluginFunction =>
   (app) => {
-    if (!checkVersion(app, "2.0.0-beta.61"))
-      logger.error(
-        `VuePress version does not meet the requirement ${colors.cyan(
-          "2.0.0-beta.61"
-        )}`
-      );
+    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.61");
+
     if (app.env.isDebug) logger.info("Options:", options);
 
     useSassPalettePlugin(app, { id: "hope" });
 
     return {
-      name: "vuepress-plugin-photo-swipe",
+      name: PLUGIN_NAME,
 
       define: (app): Record<string, unknown> => ({
         PHOTO_SWIPE_SELECTOR:
@@ -40,7 +36,7 @@ export const photoSwipePlugin =
           entries(
             getLocales({
               app,
-              name: "photo-swipe",
+              name: PLUGIN_NAME,
               default: photoSwipeLocales,
               config: options.locales,
             })

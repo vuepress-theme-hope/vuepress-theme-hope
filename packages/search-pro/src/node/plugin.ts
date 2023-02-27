@@ -1,5 +1,4 @@
 import { type PluginFunction } from "@vuepress/core";
-import { colors } from "@vuepress/utils";
 import { watch } from "chokidar";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
@@ -19,7 +18,7 @@ import {
   removeSearchIndex,
   updateSearchIndex,
 } from "./prepare.js";
-import { CLIENT_FOLDER, logger } from "./utils.js";
+import { CLIENT_FOLDER, PLUGIN_NAME, logger } from "./utils.js";
 
 export const searchProPlugin =
   (options: SearchProOptions, legacy = true): PluginFunction =>
@@ -30,20 +29,15 @@ export const searchProPlugin =
 
     useSassPalettePlugin(app, { id: "hope" });
 
-    if (!checkVersion(app, "2.0.0-beta.61"))
-      logger.error(
-        `VuePress version does not meet the requirement ${colors.cyan(
-          "2.0.0-beta.61"
-        )}`
-      );
+    checkVersion(app, PLUGIN_NAME, "2.0.0-beta.61");
+
     if (app.env.isDebug) logger.info("Options:", options);
 
     return {
-      name: "vuepress-plugin-search-pro",
+      name: PLUGIN_NAME,
 
       alias: {
-        // eslint-disable-next-line @typescript-eslint/naming-convention
-        "vuepress-plugin-search-pro/result": `${CLIENT_FOLDER}components/SearchResult.js`,
+        [`${PLUGIN_NAME}/result`]: `${CLIENT_FOLDER}components/SearchResult.js`,
       },
 
       define: {
@@ -56,7 +50,7 @@ export const searchProPlugin =
         ),
         SEARCH_PRO_LOCALES: getLocales({
           app,
-          name: "search-pro",
+          name: PLUGIN_NAME,
           config: options.locales,
           default: searchProLocales,
         }),
