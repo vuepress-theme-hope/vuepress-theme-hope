@@ -11,6 +11,7 @@ import { loadEsLocale } from "./es.js";
 import { loadFrLocale } from "./fr.js";
 import { loadIdLocale } from "./id.js";
 import { loadJaLocale } from "./ja.js";
+import { loadKoLocale } from "./ko.js";
 import { loadPlLocale } from "./pl.js";
 import { loadPtBrLocale } from "./pt-br.js";
 import { loadRuLocale } from "./ru.js";
@@ -20,7 +21,6 @@ import { loadUkLocale } from "./uk.js";
 import { loadViLocale } from "./vi.js";
 import { loadZhTWLocale } from "./zh-tw.js";
 import { loadZhLocale } from "./zh.js";
-import { loadKoLocale } from "./ko.js";
 
 dayjs.extend(localizedFormat);
 dayjs.extend(objectSupport);
