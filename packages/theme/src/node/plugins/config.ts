@@ -6,6 +6,7 @@ import { themeDataPlugin } from "@vuepress/plugin-theme-data";
 import { getActiveHeaderLinksPlugin } from "./activeHeaderLinks.js";
 import { getAutoCatalogPlugin } from "./autoCatalog.js";
 import { getBlogPlugin } from "./blog/index.js";
+import { checkPluginOptions } from "./checkPlugin.js";
 import { getCommentPlugin } from "./comment.js";
 import { getComponentsPlugin } from "./components.js";
 import { getCopyCodePlugin } from "./copyCode.js";
@@ -43,6 +44,8 @@ export const getPluginConfig = (
   >,
   legacy = true
 ): PluginConfig => {
+  checkPluginOptions(plugins);
+
   const pluginConfig = [
     getComponentsPlugin(options, plugins.components, legacy),
     getActiveHeaderLinksPlugin(plugins.activeHeaderLinks),
