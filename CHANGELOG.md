@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.184](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.183...v2.0.0-beta.184) (2023-02-27)
+
+### Features
+
+- improve korean locale ([#2835](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2835)) ([43a53f2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/43a53f230d9a211addad93b3c566636a23c0a6f9))
+- **shared:** add checkVersion ([5520a12](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5520a12b0dc73d20a169679f347d30406a380c0d))
+- **theme:** improve check ([3e8f1c8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3e8f1c80253839c1b87f7571c30b65efd85b0102))
+
+### Bug Fixes
+
+- **md-enhance:** fix mermaid not working with pnpm ([21e6bfe](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/21e6bfeec32ac42c367e74584a10680e21601abb))
+- **theme): revert "fix(theme:** fix slots name" ([f143669](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f143669671124badc62ec2385e851c714c99d609))
+- **theme:** fix plugin check ([a7910fd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a7910fdc6480f253b4ddf0c236cf982ec0f4890a))
+- **theme:** improve structure sidebar generation ([f23085c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f23085c89ee667b4c0c77b6fd6439421a131bdc9))
+
 ## [2.0.0-beta.183](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.182...v2.0.0-beta.183) (2023-02-27)
 
 ### ⚠ BREAKING CHANGES
