@@ -1,7 +1,6 @@
 export * from "./activeHeaderLinks.js";
 export * from "./autoCatalog.js";
 export * from "./blog/index.js";
-export * from "./checkPlugin.js";
 export * from "./comment.js";
 export * from "./components.js";
 export * from "./config.js";

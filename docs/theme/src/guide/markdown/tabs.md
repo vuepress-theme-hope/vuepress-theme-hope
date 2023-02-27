@@ -1,7 +1,7 @@
 ---
 title: Tabs
 icon: table-columns
-index: 2
+order: 2
 category:
   - Markdown
 tag:

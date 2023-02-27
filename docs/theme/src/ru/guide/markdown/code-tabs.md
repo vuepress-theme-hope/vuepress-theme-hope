@@ -1,7 +1,7 @@
 ---
 title: Вкладки кода
 icon: code
-index: 3
+order: 3
 category:
   - Markdown
 tag:

@@ -16,7 +16,6 @@ import {
   type ThemeData,
   type ThemePageData,
 } from "../../../shared/index.js";
-import { checkFrontmatter } from "../../frontmatter/check.js";
 
 /** @private */
 export const getBlogPlugin = (
@@ -55,7 +54,6 @@ export const getBlogPlugin = (
       const info: Record<string, unknown> = {};
       const isEncrypted = isPageEncrypted(page);
 
-      checkFrontmatter(page, app.env.isDebug);
       injectBlogBasicInfo(page, info);
 
       // resolve encrypted

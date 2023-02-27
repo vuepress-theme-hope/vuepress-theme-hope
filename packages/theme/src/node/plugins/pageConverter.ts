@@ -11,8 +11,8 @@ import {
   type ThemePageData,
   type ThemeProjectHomePageFrontmatter,
 } from "../../shared/index.js";
+import { checkFrontmatter } from "../check/index.js";
 import { convertFrontmatter } from "../compact/index.js";
-import { checkFrontmatter } from "../frontmatter/check.js";
 
 /**
  * @private
@@ -85,19 +85,20 @@ export const extendsPagePlugin = (
   return {
     name: "vuepress-theme-hope-extends-page",
 
-    extendsPage: (page, app): void => {
+    extendsPage: (page): void => {
       if (legacy)
         page.frontmatter = convertFrontmatter(
           page.frontmatter,
           page.filePathRelative
         );
 
+      checkFrontmatter(page);
+
       const isEncrypted = isPageEncrypted(page);
 
       // encrypt page shall not have seo
       if (isEncrypted) page.frontmatter["seo"] = false;
 
-      checkFrontmatter(page, app.env.isDebug);
       injectPageInfo(<Page<ThemePageData>>page);
       injectLocalizedDate(page);
     },

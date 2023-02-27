@@ -30,16 +30,6 @@ article: false
 
 - [VuePress 介绍](vuepress/README.md)
 
-## 高级教程
-
-- [使用组件](advanced/component.md)
-
-- [自定义主题样式](advanced/style.md)
-
-- [替换主题组件](advanced/replace.md)
-
-- [主题继承](advanced/extend.md)
-
 ## 自定义
 
 - [修改布局](customize/layout.md)
@@ -49,3 +39,11 @@ article: false
 - [自定义字体](customize/font.md)
 
 - [修改特效](customize/effect.md)
+
+## 高级教程
+
+- [使用组件](advanced/component.md)
+
+- [替换主题组件](advanced/replace.md)
+
+- [主题继承](advanced/extend.md)

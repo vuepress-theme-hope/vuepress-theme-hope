@@ -6,7 +6,6 @@ import { themeDataPlugin } from "@vuepress/plugin-theme-data";
 import { getActiveHeaderLinksPlugin } from "./activeHeaderLinks.js";
 import { getAutoCatalogPlugin } from "./autoCatalog.js";
 import { getBlogPlugin } from "./blog/index.js";
-import { checkPluginOptions } from "./checkPlugin.js";
 import { getCommentPlugin } from "./comment.js";
 import { getComponentsPlugin } from "./components.js";
 import { getCopyCodePlugin } from "./copyCode.js";
@@ -23,6 +22,7 @@ import {
   type ThemeData,
   type ThemeOptions,
 } from "../../shared/index.js";
+import { checkPluginOptions } from "../check/index.js";
 
 /**
  * @private

@@ -14,6 +14,5 @@ export * from "../shared/index.js";
 export * from "./alias.js";
 export * from "./bundler.js";
 export * from "./config/index.js";
-export * from "./frontmatter/index.js";
 export * from "./plugins/index.js";
 export * from "./prepare/index.js";

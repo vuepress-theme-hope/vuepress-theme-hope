@@ -3,17 +3,14 @@ import { watch } from "chokidar";
 
 import { getAlias } from "./alias.js";
 import { extendsBundlerOptions } from "./bundler.js";
+import { checkUserPlugin, vuePressVersionCheck } from "./check/index.js";
 import { checkLegacyStyle, convertThemeOptions } from "./compact/index.js";
 import {
   checkSocialMediaIcons,
   getStatus,
   getThemeData,
 } from "./config/index.js";
-import {
-  checkUserPlugin,
-  getPluginConfig,
-  usePlugin,
-} from "./plugins/index.js";
+import { getPluginConfig, usePlugin } from "./plugins/index.js";
 import {
   prepareConfigFile,
   prepareHighLighterScss,
@@ -47,6 +44,8 @@ export const hopeTheme =
       : options;
 
     if (legacy) checkLegacyStyle(app);
+
+    vuePressVersionCheck(app);
 
     const status = getStatus(app, options);
     const themeData = getThemeData(app, themeOptions, status);

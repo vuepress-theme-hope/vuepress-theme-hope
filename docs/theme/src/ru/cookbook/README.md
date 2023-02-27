@@ -30,16 +30,6 @@ article: false
 
 - [Введение в VuePress](vuepress/README.md)
 
-## Расширенное руководство
-
-- [Использование компонентов](advanced/component.md)
-
-- [Кастомизация стиля](advanced/style.md)
-
-- [Замена компонента](advanced/replace.md)
-
-- [Расширение темы](advanced/extend.md)
-
 ## Customizing
 
 - [Customizing layouts](customize/layout.md)
@@ -49,3 +39,11 @@ article: false
 - [Customizing fonts](customize/font.md)
 
 - [Customizing effects](customize/effect.md)
+
+## Расширенное руководство
+
+- [Использование компонентов](advanced/component.md)
+
+- [Замена компонента](advanced/replace.md)
+
+- [Расширение темы](advanced/extend.md)

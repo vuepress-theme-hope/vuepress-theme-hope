@@ -30,16 +30,6 @@ Here is a step by step tutorial for newcomers:
 
 - [VuePress Intro](vuepress/README.md)
 
-## Advanced Tutorial
-
-- [Using Components](advanced/component.md)
-
-- [Customize Style](advanced/style.md)
-
-- [Replacing Component](advanced/replace.md)
-
-- [Theme Extending](advanced/extend.md)
-
 ## Customizing
 
 - [Customizing layouts](customize/layout.md)
@@ -49,3 +39,11 @@ Here is a step by step tutorial for newcomers:
 - [Customizing fonts](customize/font.md)
 
 - [Customizing effects](customize/effect.md)
+
+## Advanced Tutorial
+
+- [Using Components](advanced/component.md)
+
+- [Replacing Component](advanced/replace.md)
+
+- [Theme Extending](advanced/extend.md)
