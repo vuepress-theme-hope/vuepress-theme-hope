@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-hope-root",
-  "version": "2.0.0-beta.182",
+  "version": "2.0.0-beta.183",
   "private": true,
   "description": "A VuePress theme with tons of features",
   "type": "module",
@@ -109,7 +109,6 @@
     },
     "patchedDependencies": {
       "@types/katex@0.16.0": "patches/@types__katex@0.16.0.patch",
-      "@vuepress/plugin-docsearch@2.0.0-beta.60": "patches/@vuepress__plugin-docsearch@2.0.0-beta.60.patch",
       "mitt@3.0.0": "patches/mitt@3.0.0.patch"
     }
   }

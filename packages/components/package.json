@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-components",
-  "version": "2.0.0-beta.182",
+  "version": "2.0.0-beta.183",
   "description": "Components collection plugin for VuePress2",
   "keywords": [
     "vuepress",
@@ -49,9 +49,9 @@
   },
   "dependencies": {
     "@stackblitz/sdk": "^1.8.2",
-    "@vuepress/client": "2.0.0-beta.60",
-    "@vuepress/shared": "2.0.0-beta.60",
-    "@vuepress/utils": "2.0.0-beta.60",
+    "@vuepress/client": "2.0.0-beta.61",
+    "@vuepress/shared": "2.0.0-beta.61",
+    "@vuepress/utils": "2.0.0-beta.61",
     "@vueuse/core": "^9.13.0",
     "artplayer": "^4.6.2",
     "balloon-css": "^1.2.0",
@@ -68,18 +68,18 @@
   },
   "devDependencies": {
     "@types/qrcode": "1.5.0",
-    "@vuepress/bundler-vite": "2.0.0-beta.60",
-    "@vuepress/core": "2.0.0-beta.60"
+    "@vuepress/bundler-vite": "2.0.0-beta.61",
+    "@vuepress/core": "2.0.0-beta.61"
   },
   "peerDependencies": {
-    "@vuepress/client": "2.0.0-beta.60",
+    "@vuepress/client": "2.0.0-beta.61",
     "sass-loader": "^13.2.0",
-    "vuepress": "2.0.0-beta.60",
+    "vuepress": "2.0.0-beta.61",
     "vuepress-plugin-reading-time2": "workspace:*",
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-shared": "workspace:*",
-    "vuepress-vite": "2.0.0-beta.60",
-    "vuepress-webpack": "2.0.0-beta.60"
+    "vuepress-vite": "2.0.0-beta.61",
+    "vuepress-webpack": "2.0.0-beta.61"
   },
   "peerDependenciesMeta": {
     "@vuepress/client": {
