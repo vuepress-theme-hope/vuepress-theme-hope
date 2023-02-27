@@ -28,11 +28,7 @@
 import { usePageData } from "@vuepress/client";
 import { useClipboard, useEventListener } from "@vueuse/core";
 import { nextTick, onMounted, watch } from "vue";
-import {
-  Message,
-  checkIsMobile,
-  useLocaleConfig,
-} from "vuepress-shared/client";
+import { Message, useIsMobile, useLocaleConfig } from "vuepress-shared/client";
 
 import {
   copyCodeDelay,
@@ -54,6 +50,7 @@ export const setupCopyCode = (): void => {
   const { copy } = useClipboard({ legacy: true });
   const locale = useLocaleConfig(copyCodeLocales);
   const page = usePageData();
+  const isMobile = useIsMobile();
 
   let message: Message;
 
@@ -136,12 +133,9 @@ export const setupCopyCode = (): void => {
   };
 
   onMounted(() => {
-    const { userAgent } = navigator;
-
     if (copyCodeFancy) message = new Message();
 
-    if (!checkIsMobile(userAgent) || copyCodeShowInMobile)
-      void generateCopyButton();
+    if (!isMobile.value || copyCodeShowInMobile) void generateCopyButton();
 
     useEventListener("click", (event) => {
       const el = event.target as HTMLElement;
@@ -167,8 +161,7 @@ export const setupCopyCode = (): void => {
     watch(
       () => page.value.path,
       () => {
-        if (!checkIsMobile(userAgent) || copyCodeShowInMobile)
-          void generateCopyButton();
+        if (!isMobile.value || copyCodeShowInMobile) void generateCopyButton();
       }
     );
   });

@@ -1934,6 +1934,9 @@ importers:
       '@vuepress/utils':
         specifier: 2.0.0-beta.60
         version: 2.0.0-beta.60
+      '@vueuse/core':
+        specifier: ^9.13.0
+        version: 9.13.0(vue@3.2.47)
       cheerio:
         specifier: 1.0.0-rc.12
         version: 1.0.0-rc.12
