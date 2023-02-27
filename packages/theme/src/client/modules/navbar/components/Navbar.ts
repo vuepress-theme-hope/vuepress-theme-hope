@@ -99,21 +99,21 @@ export default defineComponent({
                   emit("toggleSidebar");
                 },
               }),
-              slots["start-before"]?.(),
+              slots["startBefore"]?.(),
               ...(navbarLayout.value.start || []).map((item) => map[item]),
-              slots["start-after"]?.(),
+              slots["startAfter"]?.(),
             ]),
 
             h("div", { class: "navbar-center" }, [
-              slots["center-before"]?.(),
+              slots["centerBefore"]?.(),
               ...(navbarLayout.value.center || []).map((item) => map[item]),
-              slots["center-after"]?.(),
+              slots["centerAfter"]?.(),
             ]),
 
             h("div", { class: "navbar-end" }, [
-              slots["end-before"]?.(),
+              slots["endBefore"]?.(),
               ...(navbarLayout.value.end || []).map((item) => map[item]),
-              slots["end-after"]?.(),
+              slots["endAfter"]?.(),
 
               h(ToggleNavbarButton, {
                 active: showScreen.value,
@@ -133,8 +133,8 @@ export default defineComponent({
             },
           },
           {
-            before: () => slots["screen-top"]?.(),
-            after: () => slots["screen-bottom"]?.(),
+            before: () => slots["screenTop"]?.(),
+            after: () => slots["screenBottom"]?.(),
           }
         ),
       ];

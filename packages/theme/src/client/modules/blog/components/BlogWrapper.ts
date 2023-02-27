@@ -21,7 +21,7 @@ export default defineComponent({
         { noSidebar: true },
         {
           default: () => slots["default"]?.(),
-          "nav-screen-bottom": () => h(BloggerInfo),
+          navScreenBottom: () => h(BloggerInfo),
           ...(isMobile.value ? { sidebar: () => h(InfoList) } : {}),
         }
       ),

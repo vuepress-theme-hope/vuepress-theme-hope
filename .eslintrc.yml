@@ -89,17 +89,6 @@ rules:
       trailingUnderscore: allow
 
     - selector:
-        - objectLiteralMethod
-      format: null
-      custom:
-        regex: ^[a-z]+(?:-[a-z]+)*?$
-        match: true
-      # allow slots name like `hero-image`
-      filter: ^[a-z]+(?:-[a-z]+)*?$
-      leadingUnderscore: allow
-      trailingUnderscore: allow
-
-    - selector:
         - property
       format:
         - camelCase
