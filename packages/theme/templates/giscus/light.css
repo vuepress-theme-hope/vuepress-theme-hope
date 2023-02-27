@@ -61,8 +61,8 @@ main {
   --color-fg-subtle: #6e7781;
   --color-canvas-default: #fff;
   --color-canvas-overlay: #fff;
-  --color-canvas-inset: #fafafa;
-  --color-canvas-subtle: #fafafa;
+  --color-canvas-inset: #f6f8fa;
+  --color-canvas-subtle: #f6f8fa;
   --color-border-default: #d0d7de;
   --color-border-muted: hsl(210deg 18% 87% / 100%);
   --color-neutral-muted: rgb(175 184 193 / 20%);
@@ -72,6 +72,8 @@ main {
   --color-accent-subtle: #ddf4ff;
   --color-success-fg: #1a7f37;
   --color-attention-fg: #9a6700;
+  --color-attention-muted: rgb(212 167 44 / 40%);
+  --color-attention-subtle: #fff8c5;
   --color-danger-fg: #cf222e;
   --color-danger-muted: rgb(255 129 130 / 40%);
   --color-danger-subtle: #ffebe9;
