@@ -10,6 +10,7 @@ export default [
       "execa",
       "fflate/node",
       "gray-matter",
+      "semver",
       "striptags",
     ],
     dtsExternal: ["node:http"],

@@ -1,11 +1,12 @@
 import { type PluginFunction } from "@vuepress/core";
-import { getDirname, path } from "@vuepress/utils";
+import { colors, getDirname, path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   addCustomElement,
   addViteOptimizeDepsExclude,
   addViteOptimizeDepsInclude,
   addViteSsrExternal,
+  checkVersion,
   getLocales,
 } from "vuepress-shared/node";
 
@@ -25,6 +26,12 @@ export const commentPlugin =
     // TODO: Remove this in v2 stable
     if (legacy)
       convertOptions(options as CommentOptions & Record<string, unknown>);
+    if (!checkVersion(app, "2.0.0-beta.61"))
+      logger.error(
+        `VuePress version does not meet the requirement ${colors.cyan(
+          "2.0.0-beta.61"
+        )}`
+      );
     if (app.env.isDebug) logger.info("Options:", options);
 
     applyDemo(options, app);

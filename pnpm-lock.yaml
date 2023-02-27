@@ -1760,6 +1760,9 @@ importers:
 
   packages/reading-time2:
     dependencies:
+      '@vuepress/utils':
+        specifier: 2.0.0-beta.61
+        version: 2.0.0-beta.61
       vuepress-shared:
         specifier: workspace:*
         version: link:../shared
@@ -1949,6 +1952,9 @@ importers:
       gray-matter:
         specifier: ^4.0.3
         version: 4.0.3
+      semver:
+        specifier: ^7.3.8
+        version: 7.3.8
       striptags:
         specifier: ^3.2.0
         version: 3.2.0
@@ -1962,6 +1968,9 @@ importers:
       '@types/connect':
         specifier: 3.4.35
         version: 3.4.35
+      '@types/semver':
+        specifier: 7.3.13
+        version: 7.3.13
       '@vuepress/bundler-vite':
         specifier: 2.0.0-beta.61
         version: 2.0.0-beta.61

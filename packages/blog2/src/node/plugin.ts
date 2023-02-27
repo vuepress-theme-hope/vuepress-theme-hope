@@ -6,8 +6,9 @@ import {
   preparePagesData,
   preparePagesRoutes,
 } from "@vuepress/core";
+import { colors } from "@vuepress/utils";
 import { watch } from "chokidar";
-import { getPageExcerpt } from "vuepress-shared/node";
+import { checkVersion, getPageExcerpt } from "vuepress-shared/node";
 
 import { prepareCategory } from "./category.js";
 import { convertOptions } from "./compact.js";
@@ -21,6 +22,13 @@ export const blogPlugin =
     // TODO: remove in V2 Stable
     if (legacy)
       convertOptions(options as BlogOptions & Record<string, unknown>);
+
+    if (!checkVersion(app, "2.0.0-beta.61"))
+      logger.error(
+        `VuePress version does not meet the requirement ${colors.cyan(
+          "2.0.0-beta.61"
+        )}`
+      );
 
     const {
       getInfo = (): Record<string, never> => ({}),

@@ -1,5 +1,6 @@
 import { type Page, type PluginFunction } from "@vuepress/core";
-import { getLocales } from "vuepress-shared/node";
+import { colors } from "@vuepress/utils";
+import { checkVersion, getLocales } from "vuepress-shared/node";
 
 import { readingTimeLocales } from "./locales.js";
 import { type ReadingTimeOptions } from "./options.js";
@@ -11,6 +12,12 @@ import { logger } from "./utils.js";
 export const readingTimePlugin =
   (options: ReadingTimeOptions): PluginFunction =>
   (app) => {
+    if (!checkVersion(app, "2.0.0-beta.61"))
+      logger.error(
+        `VuePress version does not meet the requirement ${colors.cyan(
+          "2.0.0-beta.61"
+        )}`
+      );
     if (app.env.isDebug) logger.info("Options:", options);
 
     return {

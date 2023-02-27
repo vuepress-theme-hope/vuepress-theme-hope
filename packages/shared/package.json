@@ -61,12 +61,14 @@
     "execa": "^7.0.0",
     "fflate": "^0.7.4",
     "gray-matter": "^4.0.3",
+    "semver": "^7.3.8",
     "striptags": "^3.2.0",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
     "@types/connect": "3.4.35",
+    "@types/semver": "7.3.13",
     "@vuepress/bundler-vite": "2.0.0-beta.61",
     "@vuepress/bundler-webpack": "2.0.0-beta.61",
     "@vuepress/core": "2.0.0-beta.61",

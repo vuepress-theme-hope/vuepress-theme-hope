@@ -17,6 +17,7 @@ import { type ViteBundlerOptions } from "@vuepress/bundler-vite";
 import { type PluginFunction } from "@vuepress/core";
 import { type MarkdownEnv } from "@vuepress/markdown";
 import { isArray, isPlainObject } from "@vuepress/shared";
+import { colors } from "@vuepress/utils";
 import { type RollupWarning } from "rollup";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
@@ -28,6 +29,7 @@ import {
   addViteOptimizeDepsInclude,
   addViteSsrExternal,
   addViteSsrNoExternal,
+  checkVersion,
   deepAssign,
   getBundlerName,
   getLocales,
@@ -82,6 +84,12 @@ export const mdEnhancePlugin =
         options as MarkdownEnhanceOptions & Record<string, unknown>
       );
 
+    if (!checkVersion(app, "2.0.0-beta.61"))
+      logger.error(
+        `VuePress version does not meet the requirement ${colors.cyan(
+          "2.0.0-beta.61"
+        )}`
+      );
     if (app.env.isDebug) logger.info("Options:", options);
 
     const getStatus = (

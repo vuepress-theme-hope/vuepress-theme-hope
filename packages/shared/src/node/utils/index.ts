@@ -7,3 +7,4 @@ export * from "./packageManager.js";
 export * from "./props.js";
 export * from "./tags.js";
 export * from "./title.js";
+export * from "./version.js";

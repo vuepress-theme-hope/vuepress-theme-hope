@@ -1,8 +1,10 @@
 import { type PluginFunction } from "@vuepress/core";
+import { colors } from "@vuepress/utils";
 import { watch } from "chokidar";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   addViteSsrNoExternal,
+  checkVersion,
   fromEntries,
   getLocales,
 } from "vuepress-shared/node";
@@ -17,7 +19,7 @@ import {
   removeSearchIndex,
   updateSearchIndex,
 } from "./prepare.js";
-import { CLIENT_FOLDER } from "./utils.js";
+import { CLIENT_FOLDER, logger } from "./utils.js";
 
 export const searchProPlugin =
   (options: SearchProOptions, legacy = true): PluginFunction =>
@@ -27,6 +29,14 @@ export const searchProPlugin =
       convertOptions(options as SearchProOptions & Record<string, unknown>);
 
     useSassPalettePlugin(app, { id: "hope" });
+
+    if (!checkVersion(app, "2.0.0-beta.61"))
+      logger.error(
+        `VuePress version does not meet the requirement ${colors.cyan(
+          "2.0.0-beta.61"
+        )}`
+      );
+    if (app.env.isDebug) logger.info("Options:", options);
 
     return {
       name: "vuepress-plugin-search-pro",

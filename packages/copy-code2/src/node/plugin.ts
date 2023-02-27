@@ -1,8 +1,12 @@
 import { type PluginFunction } from "@vuepress/core";
 import { isArray, isString } from "@vuepress/shared";
-import { getDirname, path } from "@vuepress/utils";
+import { colors, getDirname, path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
-import { addViteSsrNoExternal, getLocales } from "vuepress-shared/node";
+import {
+  addViteSsrNoExternal,
+  checkVersion,
+  getLocales,
+} from "vuepress-shared/node";
 
 import { copyCodeLocales } from "./locales.js";
 import { type CopyCodeOptions } from "./options.js";
@@ -13,6 +17,12 @@ const __dirname = getDirname(import.meta.url);
 export const copyCodePlugin =
   (options: CopyCodeOptions = {}): PluginFunction =>
   (app) => {
+    if (!checkVersion(app, "2.0.0-beta.61"))
+      logger.error(
+        `VuePress version does not meet the requirement ${colors.cyan(
+          "2.0.0-beta.61"
+        )}`
+      );
     if (app.env.isDebug) logger.info("Options:", options);
 
     useSassPalettePlugin(app, { id: "hope" });

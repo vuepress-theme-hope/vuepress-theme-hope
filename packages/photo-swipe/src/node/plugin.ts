@@ -1,8 +1,9 @@
 import { type PluginFunction } from "@vuepress/core";
-import { getDirname, path } from "@vuepress/utils";
+import { colors, getDirname, path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   addViteOptimizeDepsExclude,
+  checkVersion,
   entries,
   fromEntries,
   getLocales,
@@ -17,6 +18,12 @@ const __dirname = getDirname(import.meta.url);
 export const photoSwipePlugin =
   (options: PhotoSwipeOptions = {}): PluginFunction =>
   (app) => {
+    if (!checkVersion(app, "2.0.0-beta.61"))
+      logger.error(
+        `VuePress version does not meet the requirement ${colors.cyan(
+          "2.0.0-beta.61"
+        )}`
+      );
     if (app.env.isDebug) logger.info("Options:", options);
 
     useSassPalettePlugin(app, { id: "hope" });

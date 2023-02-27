@@ -1,7 +1,7 @@
 import { type PluginFunction } from "@vuepress/core";
-import { getDirname, path } from "@vuepress/utils";
+import { colors, getDirname, path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
-import { addViteOptimizeDepsExclude } from "vuepress-shared/node";
+import { addViteOptimizeDepsExclude, checkVersion } from "vuepress-shared/node";
 
 import { type LightGalleryOptions } from "./options.js";
 import { logger } from "./utils.js";
@@ -11,6 +11,12 @@ const __dirname = getDirname(import.meta.url);
 export const lightgalleryPlugin =
   (options: LightGalleryOptions = {}): PluginFunction =>
   (app) => {
+    if (!checkVersion(app, "2.0.0-beta.61"))
+      logger.error(
+        `VuePress version does not meet the requirement ${colors.cyan(
+          "2.0.0-beta.61"
+        )}`
+      );
     if (app.env.isDebug) logger.info("Options:", options);
 
     const plugins = options.plugins || ["pager", "share", "zoom"];
