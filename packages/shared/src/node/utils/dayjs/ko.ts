@@ -43,4 +43,3 @@ const locale: Partial<Locale> = {
 export const loadKoLocale = (extendedDayjs: typeof dayjs): void => {
   extendedDayjs.locale("ko", locale);
 };
-
