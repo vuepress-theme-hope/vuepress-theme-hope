@@ -1,5 +1,5 @@
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
-import { useEventListener, useThrottleFn } from "@vueuse/core";
+import { useEventListener, useThrottleFn, useToggle } from "@vueuse/core";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import {
   type ComponentPublicInstance,
@@ -96,16 +96,8 @@ export default defineComponent({
       );
     });
 
-    const isMobileSidebarOpen = ref(false);
-    const isDesktopSidebarCollapsed = ref(false);
-    const toggleMobileSidebar = (value?: boolean): void => {
-      isMobileSidebarOpen.value =
-        typeof value === "boolean" ? value : !isMobileSidebarOpen.value;
-    };
-    const toggleDesktopSidebar = (value?: boolean): void => {
-      isDesktopSidebarCollapsed.value =
-        typeof value === "boolean" ? value : !isDesktopSidebarCollapsed.value;
-    };
+    const [isMobileSidebarOpen, toggleMobileSidebar] = useToggle(false);
+    const [isDesktopSidebarCollapsed, toggleDesktopSidebar] = useToggle(false);
 
     const touchStart = { x: 0, y: 0 };
     const onTouchStart = (e: TouchEvent): void => {

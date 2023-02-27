@@ -1,3 +1,4 @@
+import { useToggle } from "@vueuse/core";
 import { type VNode, computed, defineComponent, h, onMounted, ref } from "vue";
 import { useLocaleConfig } from "vuepress-shared/client";
 
@@ -22,10 +23,10 @@ export default defineComponent({
 
   setup() {
     const locale = useLocaleConfig(locales);
+    const [isOpen, toggleIsOpen] = useToggle(false);
 
     const canInstall = ref(false);
     const hasRelatedApps = ref(false);
-    const isOpen = ref(false);
     const isIOS = ref(false);
     const isSafari = ref(false);
     const hinted = ref(false);
@@ -46,7 +47,7 @@ export default defineComponent({
     };
 
     const hint = (): void => {
-      isOpen.value = false;
+      toggleIsOpen(false);
       hinted.value = true;
       // do not notify again
       localStorage.setItem("iOS-pwa-hint", "hinted");
@@ -93,7 +94,7 @@ export default defineComponent({
                 class: "modal-button",
                 useHint: useHint.value,
                 onClick: () => {
-                  isOpen.value = true;
+                  toggleIsOpen(true);
                 },
               },
               locale.value.install
@@ -107,9 +108,7 @@ export default defineComponent({
             canInstall.value = value;
           },
           onHint: () => hint(),
-          onToggle: (value: boolean) => {
-            isOpen.value = value;
-          },
+          onToggle: toggleIsOpen,
         }),
       ]);
   },

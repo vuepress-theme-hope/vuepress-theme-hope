@@ -1,3 +1,4 @@
+import { useToggle } from "@vueuse/core";
 import {
   type PropType,
   type VNode,
@@ -82,7 +83,7 @@ export default defineComponent({
   },
 
   setup(props, { slots }) {
-    const isExpanded = ref(false);
+    const [isExpanded, toggleIsExpand] = useToggle(false);
     const demoWrapper = ref<HTMLDivElement>();
     const codeContainer = ref<HTMLDivElement>();
     const height = ref("0");
@@ -164,7 +165,7 @@ export default defineComponent({
                   height.value = isExpanded.value
                     ? "0"
                     : `${codeContainer.value!.clientHeight + 13.8}px`;
-                  isExpanded.value = !isExpanded.value;
+                  toggleIsExpand();
                 },
               })
             : null,
