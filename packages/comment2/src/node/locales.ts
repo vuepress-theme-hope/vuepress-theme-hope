@@ -79,7 +79,7 @@ export const walineLocales: WalineLocaleConfig = {
 
   "/ko/": {
     placeholder:
-      "댓글을 남겨주세요 (답변이 있을 경우 이메일로 알림을 받으려면 이메일 주소를 입력하세요)",
+      "댓글을 남겨주세요 (답글이 달렸을 때 이메일로 알림을 받으려면 이메일 주소를 입력하세요)",
   },
 
   "/fi/": {
