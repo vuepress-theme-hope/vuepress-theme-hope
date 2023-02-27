@@ -42,7 +42,11 @@ export const checkVersion = (app: App, range = "v2"): boolean => {
     if (packageName || dir === path.dirname(dir)) break;
   } while ((dir = path.dirname(dir)));
 
-  const { version } = <PackageJSON>require(`${packageName}/package.json`);
+  if (packageName) {
+    const { version } = <PackageJSON>require(`${packageName}/package.json`);
 
-  return semver.satisfies(version, range);
+    return semver.satisfies(version, range);
+  }
+
+  return false;
 };
