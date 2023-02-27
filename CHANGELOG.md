@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.183](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.182...v2.0.0-beta.183) (2023-02-27)
+
+### ⚠ BREAKING CHANGES
+
+- **search-pro:** rename historyCount option to resultHistoryCount option
+
+### Features
+
+- **search-pro:** add queryHistoryCount option ([670234c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/670234ca9e878f9c813e742ff4ba9bc9dc1d6337))
+- **theme:** update default bg-color ([08e1646](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/08e164642e8f659ffcb4753046225707f10771d5))
+
+### Bug Fixes
+
+- **search-pro:** correctly auto-focus input, close [#2830](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2830) ([1d2aed3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1d2aed35a1d3fa424bc3f72d71bfd7c5400ecec7))
+- **shared:** ensure getDate won't throw with invalid input ([4a136fd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4a136fd960e3b92f3695ffdb2280a6da4b849d9f))
+- **theme:** fix homepage button ([701aa7b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/701aa7bff409ccd6af3c440010c51e2a86cddd72))
+- **theme:** fix slots name ([96e0102](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/96e010246d6dc3f4fd6426ad569d157f0681c781))
+
 ## [2.0.0-beta.182](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.181...v2.0.0-beta.182) (2023-02-26)
 
 ### Features
