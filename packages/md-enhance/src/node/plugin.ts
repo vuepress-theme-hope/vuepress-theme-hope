@@ -104,6 +104,7 @@ export const mdEnhancePlugin =
     const flowchartEnable = getStatus("flowchart");
     const footnoteEnable = getStatus("footnote", true);
     const imgMarkEnable = getStatus("imgMark", true);
+    const includeEnable = getStatus("include");
     const tasklistEnable = getStatus("tasklist", true);
     const mermaidEnable = getStatus("mermaid");
     const presentationEnable = getStatus("presentation");
@@ -301,7 +302,7 @@ export const mdEnhancePlugin =
           });
         }
 
-        if (getStatus("include"))
+        if (includeEnable)
           md.use(include, {
             currentPath: (env: MarkdownEnv) => env.filePath,
             ...(isPlainObject(options.include) ? options.include : {}),
@@ -353,6 +354,8 @@ export const mdEnhancePlugin =
 
       extendsPage: (page, app): void => {
         if (shouldCheckLinks && isAppInitialized) checkLinks(page, app);
+        if (includeEnable)
+          page.deps.push(...(<string[]>page.markdownEnv["includedFiles"]));
       },
 
       onInitialized: (app): void => {
