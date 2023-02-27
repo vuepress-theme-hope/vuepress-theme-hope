@@ -89,7 +89,7 @@ export const extendsPagePlugin = (
       if (legacy)
         page.frontmatter = convertFrontmatter(
           page.frontmatter,
-          page.filePathRelative || ""
+          page.filePathRelative
         );
 
       const isEncrypted = isPageEncrypted(page);

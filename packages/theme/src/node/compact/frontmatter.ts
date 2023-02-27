@@ -35,7 +35,7 @@ const DROPPED_FRONTMATTER_OPTIONS: [string, string][] = [
  */
 export const convertFrontmatter = (
   frontmatter: Record<string, unknown>,
-  filePathRelative = ""
+  filePathRelative: string | null = null
 ): ThemePageFrontmatter & Record<string, unknown> => {
   DEPRECATED_FRONTMATTER_OPTIONS.forEach(([deprecatedOption, newOption]) =>
     deprecatedLogger({
