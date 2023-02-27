@@ -1,3 +1,4 @@
+import { isString } from "@vuepress/shared";
 import dayjs from "dayjs";
 import objectSupport from "dayjs/plugin/objectSupport.js";
 import timezone from "dayjs/plugin/timezone.js";
@@ -39,7 +40,9 @@ export const getDate = (
   timezone?: string
 ): DateInfo | null => {
   if (date) {
-    const time = dayjs(date instanceof Date ? date : date.trim());
+    const time = dayjs(
+      date instanceof Date ? date : isString(date) ? date.trim() : date
+    );
 
     if (time.isValid()) {
       const currentTime = timezone ? dayjs(date).tz(timezone) : dayjs(date);
