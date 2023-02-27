@@ -5,6 +5,7 @@ import {
   isPlainObject,
   removeLeadingSlash,
 } from "@vuepress/shared";
+import { sanitizeFileName } from "@vuepress/utils";
 import { entries, fromEntries } from "vuepress-shared/node";
 
 import { getSidebarInfo } from "./info.js";
@@ -55,11 +56,11 @@ const getGeneratePaths = (
 const getSidebarItems = (infos: SidebarInfo[]): (SidebarGroupItem | string)[] =>
   infos.map((info) => {
     if (info.type === "file")
-      return info.permalink ?? removeExtension(info.filename);
+      return info.permalink ?? removeExtension(sanitizeFileName(info.filename));
 
     return {
       text: info.title,
-      prefix: `${info.dirname}/`,
+      prefix: `${sanitizeFileName(info.dirname)}/`,
       ...info.groupInfo,
       children: getSidebarItems(info.children),
     };
