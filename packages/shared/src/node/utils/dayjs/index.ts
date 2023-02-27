@@ -20,6 +20,7 @@ import { loadUkLocale } from "./uk.js";
 import { loadViLocale } from "./vi.js";
 import { loadZhTWLocale } from "./zh-tw.js";
 import { loadZhLocale } from "./zh.js";
+import { loadKoLocale } from "./ko.js";
 
 dayjs.extend(localizedFormat);
 dayjs.extend(objectSupport);
@@ -42,6 +43,7 @@ loadZhLocale(dayjs);
 loadZhTWLocale(dayjs);
 loadJaLocale(dayjs);
 loadTrLocale(dayjs);
+loadKoLocale(dayjs);
 
 export const getLocale = (lang = "en"): string => {
   const langCode = lang.toLowerCase();
@@ -64,6 +66,7 @@ export const getLocale = (lang = "en"): string => {
       "zh-tw",
       "ja",
       "tr",
+      "ko",
     ].includes(langCode)
   )
     return langCode;
@@ -81,6 +84,7 @@ export const getLocale = (lang = "en"): string => {
   if (langCode === "zh-cn") return "zh";
   if (langCode === "ja-jp") return "ja";
   if (langCode === "tr-tr") return "tr";
+  if (langCode === "ko-kr") return "ko";
 
   console.warn(`${lang} locale missing in config`);
 
