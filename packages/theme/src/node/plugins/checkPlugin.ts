@@ -44,26 +44,9 @@ const KNOWN_THEME_PLUGINS = [
 /**
  * @private
  *
- * Check plugin options for noob users
+ * Check theme plugin options for noob users
  */
-export const checkPlugins = (app: App, plugins: PluginsOptions): void => {
-  PLUGIN_CHECKLIST.forEach(([pluginName, optionName = ""]) => {
-    if (app.pluginApi.plugins.some(({ name }) => name === pluginName))
-      logger.error(
-        `Plugin "${colors.magenta(
-          pluginName
-        )}" is used by theme, so you are not allowed to call this plugin yourself in ${colors.cyan(
-          "vuepress config file"
-        )} . ${
-          optionName
-            ? `Set "${colors.magenta(`plugin.${optionName}`)}" in ${colors.cyan(
-                "theme options"
-              )}, to customize it.`
-            : ""
-        }`
-      );
-  });
-
+export const checkPluginOptions = (plugins: PluginsOptions): void => {
   keys(plugins).forEach((key) => {
     if (!KNOWN_THEME_PLUGINS.includes(key))
       logger.warn(
@@ -74,6 +57,33 @@ export const checkPlugins = (app: App, plugins: PluginsOptions): void => {
         )}, but it's not supported by theme. You need to install the plugin yourself and import then call it manually in "${colors.magenta(
           "plugins"
         )}" options in ${colors.cyan("vuepress config file")} directly.`
+      );
+  });
+};
+
+/**
+ * @private
+ *
+ * Check user plugin options for noob users
+ */
+export const checkUserPlugin = (app: App): void => {
+  PLUGIN_CHECKLIST.forEach(([pluginName, optionName = ""]) => {
+    const themeIndex = app.pluginApi.plugins.findIndex(
+      (item) => item.name === "vuepress-theme-hope"
+    );
+    const pluginsAfterTheme = app.pluginApi.plugins.slice(themeIndex + 1);
+
+    if (pluginsAfterTheme.some(({ name }) => name === pluginName))
+      logger.error(
+        `You are not allowed to use plugin "${colors.magenta(
+          pluginName
+        )}" yourself in ${colors.cyan("vuepress config file")}. ${
+          optionName
+            ? `Set "${colors.magenta(`plugin.${optionName}`)}" in ${colors.cyan(
+                "theme options"
+              )} to customize it.`
+            : ""
+        }`
       );
   });
 };

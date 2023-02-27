@@ -9,7 +9,11 @@ import {
   getStatus,
   getThemeData,
 } from "./config/index.js";
-import { checkPlugins, getPluginConfig, usePlugin } from "./plugins/index.js";
+import {
+  checkUserPlugin,
+  getPluginConfig,
+  usePlugin,
+} from "./plugins/index.js";
 import {
   prepareConfigFile,
   prepareHighLighterScss,
@@ -43,8 +47,6 @@ export const hopeTheme =
       : options;
 
     if (legacy) checkLegacyStyle(app);
-
-    checkPlugins(app, plugins);
 
     const status = getStatus(app, options);
     const themeData = getThemeData(app, themeOptions, status);
@@ -87,6 +89,8 @@ export const hopeTheme =
           )
             head.push(["link", { rel: "icon", href: faviconLink }]);
         }
+
+        checkUserPlugin(app);
       },
 
       onPrepared: (app): Promise<void> =>
