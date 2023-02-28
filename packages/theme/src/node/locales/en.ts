@@ -23,6 +23,7 @@ export const enLocale: ThemeLocaleData = {
     lastUpdated: "Last update",
     contributors: "Contributors",
     editLink: "Edit this page",
+    print: "Print",
   },
 
   blogLocales: {

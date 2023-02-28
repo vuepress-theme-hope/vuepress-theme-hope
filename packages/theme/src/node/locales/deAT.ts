@@ -23,6 +23,7 @@ export const deATLocale: ThemeLocaleData = {
     lastUpdated: "Zuletzt geändert",
     contributors: "Mitwirkende",
     editLink: "Diese Seite barbeiten",
+    print: "Drucken",
   },
 
   blogLocales: {

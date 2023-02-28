@@ -23,6 +23,7 @@ export const trLocale: ThemeLocaleData = {
     lastUpdated: "Son Güncelleme",
     contributors: "Katkıda Bulunanlar",
     editLink: "Bu sayfayı düzenle",
+    print: "Yazdır",
   },
 
   blogLocales: {

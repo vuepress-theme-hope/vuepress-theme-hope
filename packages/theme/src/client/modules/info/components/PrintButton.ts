@@ -1,6 +1,9 @@
 import { type VNode, defineComponent, h } from "vue";
 
-import { useThemeData } from "@theme-hope/composables/index";
+import {
+  useThemeData,
+  useThemeLocaleData,
+} from "@theme-hope/composables/index";
 import { PrintIcon } from "@theme-hope/modules/info/components/icons";
 
 import "../styles/print-button.scss";
@@ -10,6 +13,7 @@ export default defineComponent({
 
   setup() {
     const themeData = useThemeData();
+    const themeLocale = useThemeLocaleData();
 
     return (): VNode | null =>
       themeData.value.print === false
@@ -18,7 +22,7 @@ export default defineComponent({
             "button",
             {
               class: "print-button",
-              title: "print",
+              title: themeLocale.value.metaLocales.print,
               onClick: () => {
                 window.print();
               },

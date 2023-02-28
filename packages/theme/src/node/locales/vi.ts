@@ -23,6 +23,7 @@ export const viLocale: ThemeLocaleData = {
     lastUpdated: "Cập nhật gần nhất lúc",
     contributors: "Người đóng góp",
     editLink: "Chỉnh sửa trang này",
+    print: "In",
   },
 
   blogLocales: {

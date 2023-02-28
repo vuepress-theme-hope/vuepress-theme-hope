@@ -23,6 +23,7 @@ export const huLocale: ThemeLocaleData = {
     lastUpdated: "Utoljára frissítve",
     contributors: "Közreműködők",
     editLink: "Oldal szerkesztése",
+    print: "Nyomtatás",
   },
 
   blogLocales: {

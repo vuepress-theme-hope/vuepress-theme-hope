@@ -96,6 +96,13 @@ export interface MetaLocateData {
    * 编辑此页
    */
   editLink: string;
+
+  /**
+   * Print button
+   *
+   * 打印按钮
+   */
+  print: string;
 }
 
 export interface MetaLocaleOptions {
