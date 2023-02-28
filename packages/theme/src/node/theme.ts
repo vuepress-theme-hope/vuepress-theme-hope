@@ -1,4 +1,5 @@
 import { type ThemeFunction } from "@vuepress/core";
+import { isLinkHttp } from "@vuepress/shared";
 import { watch } from "chokidar";
 
 import { getAlias } from "./alias.js";
@@ -73,7 +74,9 @@ export const hopeTheme =
       onInitialized: (app): void => {
         if (favicon) {
           const { base, head } = app.options;
-          const faviconLink = favicon.replace(/^\/?/, base);
+          const faviconLink = isLinkHttp(favicon)
+            ? favicon
+            : favicon.replace(/^\/?/, base);
 
           // ensure favicon is not injected
           if (
