@@ -55,7 +55,7 @@ import { searchProPlugin } from "vuepress-plugin-search-pro";
 
 export default {
   plugins: [
-    ssearchProPlugin({
+    searchProPlugin({
       // your options
     }),
   ],
