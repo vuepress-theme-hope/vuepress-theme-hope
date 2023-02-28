@@ -139,6 +139,7 @@ tag:
 
     title: string;
     order: number | null;
+    path?: string | null;
 
     frontmatter: ThemeNormalPageFrontmatter;
     pageData: ThemePageData;

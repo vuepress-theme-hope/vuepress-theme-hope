@@ -139,6 +139,7 @@ Whether show icons in the sidebar
 
     title: string;
     order: number | null;
+    path?: string | null;
 
     frontmatter: ThemeNormalPageFrontmatter;
     pageData: ThemePageData;
