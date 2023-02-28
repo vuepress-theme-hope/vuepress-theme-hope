@@ -1,4 +1,5 @@
 import { type Page } from "@vuepress/core";
+import { sanitizeFileName } from "@vuepress/utils";
 import { getTitleFromFilename, startsWith } from "vuepress-shared/node";
 
 import { type StructureInfo, getStructureInfo } from "./structure.js";
@@ -74,7 +75,7 @@ const getSidebarInfoFromStructure = (
 
       title: page.frontmatter.shortTitle || page.title,
       order: "order" in page.frontmatter ? page.frontmatter.order : null,
-      permalink: page.permalink,
+      path: page.pathInferred === page.path ? null : page.path,
 
       frontmatter: page.frontmatter,
       pageData: page.data,
@@ -134,7 +135,14 @@ const getSidebarInfoFromStructure = (
       groupInfo: {
         ...(collapsible ? { collapsible } : {}),
         ...(icon ? { icon } : {}),
-        ...(dirOptions?.link ? { link: `${info.dirname}/` } : {}),
+        ...(dirOptions?.link
+          ? {
+              link:
+                readmePage.pathInferred === readmePage.path
+                  ? `${sanitizeFileName(info.dirname)}/`
+                  : readmePage.path,
+            }
+          : {}),
       },
 
       frontmatter: readmePage.frontmatter,

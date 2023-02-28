@@ -56,7 +56,7 @@ const getGeneratePaths = (
 const getSidebarItems = (infos: SidebarInfo[]): (SidebarGroupItem | string)[] =>
   infos.map((info) => {
     if (info.type === "file")
-      return info.permalink ?? removeExtension(sanitizeFileName(info.filename));
+      return info.path ?? removeExtension(sanitizeFileName(info.filename));
 
     return {
       text: info.title,
