@@ -8,7 +8,9 @@ export const CLIENT_FOLDER = ensureEndingSlash(
   path.resolve(__dirname, "../client/")
 );
 
-export const WORKER_PATH = path.resolve(__dirname, "../worker/index.js");
+export const WORKER_FOLDER = ensureEndingSlash(
+  path.resolve(__dirname, "../worker/")
+);
 
 export const PLUGIN_NAME = "vuepress-plugin-search-pro";
 

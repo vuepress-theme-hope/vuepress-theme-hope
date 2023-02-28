@@ -4,21 +4,29 @@ import { utoa } from "vuepress-shared/node";
 
 import { getSearchIndex } from "./generateIndex.js";
 import { type SearchProOptions } from "./options.js";
-import { WORKER_PATH } from "./utils.js";
+import { WORKER_FOLDER } from "./utils.js";
+
+const CONTENT_THRESHOLD = 8192;
 
 export const generateWorker = async (
   app: App,
   options: SearchProOptions
 ): Promise<void> => {
   const workerFilePath = app.dir.dest(options.worker || "search-pro.worker.js");
-  const workerFileContent = await fs.readFile(WORKER_PATH, "utf8");
+  const searchIndexContent = JSON.stringify(getSearchIndex(app, options));
+  const shouldMinify = searchIndexContent.length > CONTENT_THRESHOLD;
+  const workerPath = `${WORKER_FOLDER}${
+    shouldMinify ? "minify" : "original"
+  }.js`;
+
+  const workerFileContent = await fs.readFile(workerPath, "utf8");
 
   await fs.ensureDir(path.dirname(workerFilePath));
   await fs.writeFile(
     workerFilePath,
     workerFileContent.replace(
       "SEARCH_PRO_INDEX",
-      `"${utoa(JSON.stringify(getSearchIndex(app, options)))}"`
+      `"${shouldMinify ? utoa(searchIndexContent) : searchIndexContent}"`
     )
   );
 };
