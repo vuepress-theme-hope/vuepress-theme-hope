@@ -11,6 +11,7 @@ import {
   onUnmounted,
   ref,
   toRef,
+  watch,
 } from "vue";
 import { RouterLink, useRouter } from "vue-router";
 import { useLocaleConfig } from "vuepress-shared/client";
@@ -134,27 +135,39 @@ export default defineComponent({
       emit("close");
     };
 
-    onMounted(() => {
-      useEventListener("keydown", (event: KeyboardEvent) => {
-        if (!hasResults.value) return;
+    useEventListener("keydown", (event: KeyboardEvent) => {
+      if (!hasResults.value) return;
 
-        if (event.key === "ArrowUp") {
-          activePreviousResultContent();
-        } else if (event.key === "ArrowDown") {
-          activeNextResultContent();
-        } else if (event.key === "Enter") {
-          const item =
-            activatedResult.value.contents[activatedResultContentIndex.value];
+      if (event.key === "ArrowUp") {
+        activePreviousResultContent();
+      } else if (event.key === "ArrowDown") {
+        activeNextResultContent();
+      } else if (event.key === "Enter") {
+        const item =
+          activatedResult.value.contents[activatedResultContentIndex.value];
 
-          if (page.value.path !== item.path) {
-            addQueryHistory(props.query);
-            addResultHistory(item);
-            void router.push(item.path);
-            resetSearchResult();
-          }
+        if (page.value.path !== item.path) {
+          addQueryHistory(props.query);
+          addResultHistory(item);
+          void router.push(item.path);
+          resetSearchResult();
         }
-      });
+      }
+    });
 
+    watch(
+      [activatedResultIndex, activatedResultContentIndex],
+      () => {
+        document
+          .querySelector(
+            ".search-pro-result-list-item.active .search-pro-result-item.active"
+          )
+          ?.scrollIntoView(false);
+      },
+      { flush: "post" }
+    );
+
+    onMounted(() => {
       disableBodyScroll(searchResult.value!, { reserveScrollBarGap: true });
     });
 
