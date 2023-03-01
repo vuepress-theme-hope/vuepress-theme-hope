@@ -18,8 +18,9 @@ import { getRedirectHTML } from "../node/utils.js";
 const require = createRequire(import.meta.url);
 
 const cli = cac("vp-redirect");
-// eslint-disable-next-line
-const version = <string>require("../../package.json").version;
+const version = <
+  string // eslint-disable-next-line
+>require("vuepress-plugin-redirect/package.json").version;
 
 cli
   .command(
