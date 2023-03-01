@@ -9,8 +9,10 @@ icon: clock
 
 @include(../../../../CHANGELOG.md#recent-beta)
 
+## 更多
+
 ::: info
 
-对于发布早于 `2.0.0-beta.122` 的历史版本，详见 [Github 仓库](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/CHANGELOG.md)。
+对于发布早于 `2.0.0-beta.142` 的历史版本，详见 [Github 仓库](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/CHANGELOG.md)。
 
 :::

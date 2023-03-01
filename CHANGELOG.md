@@ -29,7 +29,7 @@ All notable changes to this project will be documented in this file. See [Conven
 ### Bug Fixes
 
 - **md-enhance:** fix mermaid not working with pnpm ([21e6bfe](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/21e6bfeec32ac42c367e74584a10680e21601abb))
-- **theme): revert "fix(theme:** fix slots name" ([f143669](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f143669671124badc62ec2385e851c714c99d609))
+- **theme**: revert "fix(theme) fix slots name" ([f143669](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f143669671124badc62ec2385e851c714c99d609))
 - **theme:** fix plugin check ([a7910fd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a7910fdc6480f253b4ddf0c236cf982ec0f4890a))
 - **theme:** improve structure sidebar generation ([f23085c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f23085c89ee667b4c0c77b6fd6439421a131bdc9))
 
@@ -649,6 +649,8 @@ closed 2811
 - **theme:** correctly hide figcaption in excerpt ([39f5be0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/39f5be07cfbb225e17119305e11d794e63fd11bf))
 - **theme:** fix article list excerpt, fix [#2544](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2544) ([6853ad1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6853ad103bd2fc0c11de9f6fcc746a5551a2e29c))
 
+<!-- #endregion recent-beta -->
+
 ## [2.0.0-beta.141](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.140...v2.0.0-beta.141) (2022-12-11)
 
 ### ⚠ BREAKING CHANGES
@@ -765,8 +767,6 @@ closed 2811
 
 - **deps:** update dependency axios to v1.2.1 ([#2491](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2491)) ([275bb68](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/275bb68c6d7e3369c6ffa2ca39b223d782d51a1c))
 - **md-enhance:** fix imageTitle ([3e003a6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3e003a6c3df64e727512315eb7fef21a19ac9ac4))
-
-<!-- #endregion recent-beta -->
 
 ## [2.0.0-beta.133](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.132...v2.0.0-beta.133) (2022-12-04)
 
