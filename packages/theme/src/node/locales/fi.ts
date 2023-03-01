@@ -23,6 +23,7 @@ export const fiLocale: ThemeLocaleData = {
     lastUpdated: "Päivitetty",
     contributors: "Osallistujat",
     editLink: "Muokkaa tätä sivua",
+    print: "Tulosta",
   },
 
   blogLocales: {

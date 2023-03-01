@@ -23,6 +23,7 @@ export const idLocale: ThemeLocaleData = {
     lastUpdated: "Terakhir diperbarui",
     contributors: "Kontributor",
     editLink: "Edit halaman ini",
+    print: "Cetak",
   },
 
   blogLocales: {

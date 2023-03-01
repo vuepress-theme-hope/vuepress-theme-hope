@@ -23,6 +23,7 @@ export const ukLocale: ThemeLocaleData = {
     lastUpdated: "Останнє оновлення",
     contributors: "Автори",
     editLink: "Редагувати цю сторінку",
+    print: "Друк",
   },
 
   blogLocales: {

@@ -22,6 +22,7 @@ exports[`should generate themeData correctly > Should contain basic properties 1
         "next": "Next",
         "origin": "Original",
         "prev": "Prev",
+        "print": "Print",
         "readingTime": "Reading Time",
         "tag": "Tag",
         "toc": "On This Page",

@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.185](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.184...v2.0.0-beta.185) (2023-02-28)
+
+### Features
+
+- **search-pro:** improve worker, close [#2841](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2841) ([ef06dff](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ef06dff1c8db9eaf1e1b9ea5623a64b4e7e97b65))
+- **theme:** add locales for print button, close [#2838](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2838) ([089e7e2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/089e7e20d578fa1a2bc5d2ff5cf225e0af81b316))
+
+### Bug Fixes
+
+- **search-pro:** fix [#2840](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2840) ([cf4706f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cf4706f44d395ba4b4e43b4b20ebcc5e6ef6f689))
+- **theme:** fix blog issue ([403ae77](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/403ae771f3150135f1558365edc103a502494141))
+- **theme:** fix favicon. close [#2839](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2839) ([e0301d2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e0301d2540d409739b74fa61b4b548d29c9eef74))
+- **theme:** fix structure sidebar with special characters ([16cb3b7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/16cb3b7d652c7530e7ac98f6ce36171651834faa))
+
 ## [2.0.0-beta.184](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.183...v2.0.0-beta.184) (2023-02-27)
 
 ### Features

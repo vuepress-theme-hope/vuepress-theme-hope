@@ -23,6 +23,7 @@ export const plLocale: ThemeLocaleData = {
     lastUpdated: "Ostatnia akutalizacja",
     contributors: "Współtwórcy",
     editLink: "Edytuj tą stronę",
+    print: "Drukuj",
   },
 
   blogLocales: {

@@ -23,6 +23,7 @@ export const zhLocale: ThemeLocaleData = {
     lastUpdated: "上次编辑于",
     contributors: "贡献者",
     editLink: "编辑此页",
+    print: "打印",
   },
 
   blogLocales: {

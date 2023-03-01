@@ -23,6 +23,7 @@ export const ruLocale: ThemeLocaleData = {
     lastUpdated: "Последнее обновление",
     contributors: "Контрибьюторы",
     editLink: "Редактировать эту страницу",
+    print: "Печать",
   },
 
   blogLocales: {

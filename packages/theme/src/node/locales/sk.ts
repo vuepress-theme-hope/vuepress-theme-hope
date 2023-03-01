@@ -23,6 +23,7 @@ export const skLocale: ThemeLocaleData = {
     lastUpdated: "Posledná aktualizácia",
     contributors: "Prispievatelia",
     editLink: "Uprav túto stránku",
+    print: "Tlač",
   },
 
   blogLocales: {

@@ -23,6 +23,7 @@ export const koLocale: ThemeLocaleData = {
     lastUpdated: "마지막 수정",
     contributors: "기여자",
     editLink: "이 페이지 수정",
+    print: "인쇄",
   },
 
   blogLocales: {

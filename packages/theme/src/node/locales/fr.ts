@@ -23,6 +23,7 @@ export const frLocale: ThemeLocaleData = {
     lastUpdated: "Dernière mise à jour",
     contributors: "Contributeurs",
     editLink: "Modifier cette page",
+    print: "Imprimer",
   },
 
   blogLocales: {
