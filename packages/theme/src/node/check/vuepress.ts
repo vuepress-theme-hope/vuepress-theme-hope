@@ -15,7 +15,7 @@ export const vuePressVersionCheck = (app: App): boolean => {
   const mainPackages: string[] = [];
   const subPackages: string[] = [];
 
-  const require = createRequire(sourceFolderPath);
+  const require = createRequire(`${sourceFolderPath}/`);
 
   let dir = sourceFolderPath;
 
