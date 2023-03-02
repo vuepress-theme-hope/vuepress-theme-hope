@@ -98,9 +98,7 @@ export default defineComponent({
 
     const renderMermaid = async (): Promise<void> =>
       Promise.all([
-        import(
-          /* webpackChunkName: "mermaid" */ "mermaid/dist/mermaid.esm.min.mjs"
-        ),
+        import(/* webpackChunkName: "mermaid" */ "mermaid"),
         new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
       ]).then(async ([{ default: mermaid }]) => {
         const chartOptions = { useMaxWidth: false };
