@@ -15,6 +15,14 @@ $bg-color-float: (
   light: helper.get-color($bg-color),
   dark: color.scale(helper.get-dark-color($bg-color-secondary)),
 ) !default;
+$bg-color-blur: (
+  light: color.change(helper.get-color($bg-color), $alpha: 0.9),
+  dark: color.change(helper.get-dark-color($bg-color), $alpha: 0.9),
+) !default;
+$bg-color-float-blur: (
+  light: color.change(helper.get-color($bg-color-float), $alpha: 0.9),
+  dark: color.change(helper.get-dark-color($bg-color-float), $alpha: 0.9),
+) !default;
 $text-color-light: (
   light: color.scale(helper.get-color($text-color), $lightness: 10%),
   dark: color.scale(helper.get-dark-color($text-color), $lightness: 10%),
@@ -27,13 +35,13 @@ $text-color-bright: (
   light: color.scale(helper.get-color($text-color), $lightness: 40%),
   dark: color.scale(helper.get-dark-color($text-color), $lightness: 40%),
 ) !default;
-$bg-color-blur: (
-  light: color.change(helper.get-color($bg-color), $alpha: 0.9),
-  dark: color.change(helper.get-dark-color($bg-color), $alpha: 0.9),
+$border-color-light: (
+  light: color.scale(helper.get-color($border-color), $lightness: 10%),
+  dark: color.scale(helper.get-dark-color($border-color), $lightness: -5%),
 ) !default;
-$bg-color-float-blur: (
-  light: color.change(helper.get-color($bg-color-float), $alpha: 0.9),
-  dark: color.change(helper.get-dark-color($bg-color-float), $alpha: 0.9),
+$border-color-dark: (
+  light: color.scale(helper.get-color($border-color), $lightness: -10%),
+  dark: color.scale(helper.get-dark-color($border-color), $lightness: 5%),
 ) !default;
 $theme-color-dark: (
   light: color.scale(helper.get-color($theme-color), $lightness: -10%),

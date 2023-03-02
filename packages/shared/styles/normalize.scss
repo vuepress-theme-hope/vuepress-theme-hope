@@ -31,12 +31,19 @@ a {
 }
 
 kbd {
-  padding: 0 0.15em;
-  border: solid 0.15rem #ddd;
-  border-bottom: solid 0.25rem #ddd;
-  border-radius: 0.15rem;
+  display: inline-block;
 
-  background: #eee;
+  min-width: 1em;
+  margin-inline: 0.125rem;
+  padding: 0.25em;
+  border: 1px solid #eee;
+  border-radius: 0.25em;
+
+  box-shadow: 1px 1px 4px 0 rgb(0 0 0 / 15%);
+
+  line-height: 1;
+  letter-spacing: -0.1em;
+  text-align: center;
 }
 
 code {
@@ -174,12 +181,8 @@ table {
   border-collapse: collapse;
 }
 
-tr {
-  border-top: 1px solid #dfe2e5;
-
-  &:nth-child(2n) {
-    background: #f6f8fa;
-  }
+tr:nth-child(2n) {
+  background: #f6f8fa;
 }
 
 th,
