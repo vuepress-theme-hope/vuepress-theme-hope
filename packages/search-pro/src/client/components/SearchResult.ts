@@ -1,7 +1,6 @@
 import { usePageData, useRouteLocale } from "@vuepress/client";
 import { isPlainObject, isString } from "@vuepress/shared";
-import { useEventListener } from "@vueuse/core";
-import { clearAllBodyScrollLocks, disableBodyScroll } from "body-scroll-lock";
+import { useEventListener, useScrollLock } from "@vueuse/core";
 import {
   type VNode,
   computed,
@@ -63,12 +62,14 @@ export default defineComponent({
     const { enabled, resultHistory, addResultHistory, removeResultHistory } =
       useSearchResultHistory();
 
+    const body = ref<HTMLElement>();
+    const isLocked = useScrollLock(body);
+
     const query = toRef(props, "query");
     const { results, searching } = useWorkerSearch(query);
 
     const activatedResultIndex = ref(0);
     const activatedResultContentIndex = ref(0);
-    const searchResult = ref<HTMLElement>();
 
     const hasHistory = computed(() => resultHistory.value.length > 0);
     const hasResults = computed(() => results.value.length > 0);
@@ -168,11 +169,12 @@ export default defineComponent({
     );
 
     onMounted(() => {
-      disableBodyScroll(searchResult.value!, { reserveScrollBarGap: true });
+      body.value = document.body;
+      isLocked.value = true;
     });
 
     onUnmounted(() => {
-      clearAllBodyScrollLocks();
+      isLocked.value = false;
     });
 
     return (): VNode =>
@@ -186,7 +188,6 @@ export default defineComponent({
             },
           ],
           id: "search-pro-results",
-          ref: searchResult,
         },
         query.value === ""
           ? hasHistory.value

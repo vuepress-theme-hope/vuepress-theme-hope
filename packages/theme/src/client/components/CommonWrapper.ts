@@ -1,8 +1,11 @@
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
-import { useEventListener, useThrottleFn, useToggle } from "@vueuse/core";
-import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import {
-  type ComponentPublicInstance,
+  useEventListener,
+  useScrollLock,
+  useThrottleFn,
+  useToggle,
+} from "@vueuse/core";
+import {
   type DefineComponent,
   Transition,
   type VNode,
@@ -61,7 +64,14 @@ export default defineComponent({
     >();
     const themeLocale = useThemeLocaleData();
     const { isMobile, isWide } = useWindowSize();
-    const sidebar = ref<ComponentPublicInstance>();
+
+    const [isMobileSidebarOpen, toggleMobileSidebar] = useToggle(false);
+    const [isDesktopSidebarCollapsed, toggleDesktopSidebar] = useToggle(false);
+
+    const sidebarItems = useSidebarItems();
+
+    const body = ref<HTMLElement>();
+    const isLocked = useScrollLock(body);
 
     // navbar
     const hideNavbar = ref(false);
@@ -83,9 +93,6 @@ export default defineComponent({
       );
     });
 
-    // sidebar
-    const sidebarItems = useSidebarItems();
-
     const enableSidebar = computed(() => {
       if (props.noSidebar) return false;
 
@@ -95,9 +102,6 @@ export default defineComponent({
         !frontmatter.value.home
       );
     });
-
-    const [isMobileSidebarOpen, toggleMobileSidebar] = useToggle(false);
-    const [isDesktopSidebarCollapsed, toggleDesktopSidebar] = useToggle(false);
 
     const touchStart = { x: 0, y: 0 };
     const onTouchStart = (e: TouchEvent): void => {
@@ -140,14 +144,12 @@ export default defineComponent({
         () => {
           const distance = getScrollTop();
 
-          // scroll down
-          if (lastDistance < distance && distance > 58) {
-            if (!isMobileSidebarOpen.value) hideNavbar.value = true;
-          }
-          // scroll up
-          else {
+          // at top or scroll up > 40px
+          if (distance <= 58 || lastDistance - 40 < distance)
             hideNavbar.value = false;
-          }
+          // scroll down > 40 px and sidebar is not opened
+          else if (lastDistance + 40 < distance && !isMobileSidebarOpen.value)
+            hideNavbar.value = true;
 
           lastDistance = distance;
         },
@@ -156,27 +158,23 @@ export default defineComponent({
       )
     );
 
+    watch(isMobileSidebarOpen, (value) => {
+      isLocked.value = value;
+    });
+
     watch(isMobile, (value) => {
       if (!value) toggleMobileSidebar(false);
     });
 
     onMounted(() => {
+      body.value = document.body;
+
       const unregisterRouterHook = router.afterEach((): void => {
         toggleMobileSidebar(false);
       });
 
       onUnmounted(() => {
         unregisterRouterHook();
-      });
-
-      watch(isMobileSidebarOpen, (value) => {
-        const sidebarElement = sidebar.value!.$el as HTMLElement;
-
-        if (value)
-          disableBodyScroll(sidebarElement, {
-            reserveScrollBarGap: true,
-          });
-        else enableBodyScroll(sidebarElement);
       });
     });
 
@@ -262,7 +260,7 @@ export default defineComponent({
               // sidebar
               h(
                 Sidebar,
-                { ref: sidebar },
+                {},
                 {
                   ...(slots["sidebar"]
                     ? {

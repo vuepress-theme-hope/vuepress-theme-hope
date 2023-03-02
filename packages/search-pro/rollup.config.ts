@@ -11,7 +11,7 @@ export default [
       files: ["components/SearchResult", "config", "worker/index"],
     },
     {
-      external: ["body-scroll-lock", "vuepress-plugin-search-pro/result"],
+      external: ["vuepress-plugin-search-pro/result"],
       copy: [["client/styles", "client"]],
     }
   ),

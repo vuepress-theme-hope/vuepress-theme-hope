@@ -69,7 +69,6 @@
     "pnpm": ">=7"
   },
   "dependencies": {
-    "@types/body-scroll-lock": "^3.1.0",
     "@vuepress/cli": "2.0.0-beta.61",
     "@vuepress/client": "2.0.0-beta.61",
     "@vuepress/core": "2.0.0-beta.61",
@@ -86,7 +85,6 @@
     "@vueuse/core": "^9.13.0",
     "balloon-css": "^1.2.0",
     "bcrypt-ts": "^3.0.0",
-    "body-scroll-lock": "^3.1.5",
     "cheerio": "1.0.0-rc.12",
     "chokidar": "^3.5.3",
     "gray-matter": "^4.0.3",

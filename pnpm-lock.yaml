@@ -1872,9 +1872,6 @@ importers:
       '@vueuse/core':
         specifier: ^9.13.0
         version: 9.13.0(vue@3.2.47)
-      body-scroll-lock:
-        specifier: ^3.1.5
-        version: 3.1.5
       cheerio:
         specifier: 1.0.0-rc.12
         version: 1.0.0-rc.12
@@ -1894,9 +1891,6 @@ importers:
         specifier: workspace:*
         version: link:../shared
     devDependencies:
-      '@types/body-scroll-lock':
-        specifier: 3.1.0
-        version: 3.1.0
       '@vuepress/core':
         specifier: 2.0.0-beta.61
         version: 2.0.0-beta.61
@@ -2011,9 +2005,6 @@ importers:
 
   packages/theme:
     dependencies:
-      '@types/body-scroll-lock':
-        specifier: ^3.1.0
-        version: 3.1.0
       '@vuepress/cli':
         specifier: 2.0.0-beta.61
         version: 2.0.0-beta.61
@@ -2062,9 +2053,6 @@ importers:
       bcrypt-ts:
         specifier: ^3.0.0
         version: 3.0.0
-      body-scroll-lock:
-        specifier: ^3.1.5
-        version: 3.1.5
       cheerio:
         specifier: 1.0.0-rc.12
         version: 1.0.0-rc.12
@@ -4481,9 +4469,6 @@ packages:
       '@types/connect': 3.4.35
       '@types/node': 18.14.2
 
-  /@types/body-scroll-lock@3.1.0:
-    resolution: {integrity: sha512-3owAC4iJub5WPqRhxd8INarF2bWeQq1yQHBgYhN0XLBJMpd5ED10RrJ3aKiAwlTyL5wK7RkBD4SZUQz2AAAMdA==}
-
   /@types/bonjour@3.5.10:
     resolution: {integrity: sha512-p7ienRMiS41Nu2/igbJxxLDWrSZ0WxM8UQgCeO9KhoVF7cOVFkrKsiDr1EsJIla8vV3oEEjGcz11jc5yimhzZw==}
     dependencies:
@@ -5966,10 +5951,6 @@ packages:
       unpipe: 1.0.0
     transitivePeerDependencies:
       - supports-color
-
-  /body-scroll-lock@3.1.5:
-    resolution: {integrity: sha512-Yi1Xaml0EvNA0OYWxXiYNqY24AfWkbA6w5vxE7GWxtKfzIbZM+Qw+aSmkgsbWzbHiy/RCSkUZBplVxTA+E4jJg==}
-    dev: false
 
   /bonjour-service@1.1.0:
     resolution: {integrity: sha512-LVRinRB3k1/K0XzZ2p58COnWvkQknIY6sf0zF2rpErvcJXpMBttEPQSxK+HEXSS9VmpZlDoDnQWv8ftJT20B0Q==}

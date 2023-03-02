@@ -1,5 +1,5 @@
 import { usePageData } from "@vuepress/client";
-import { clearAllBodyScrollLocks, disableBodyScroll } from "body-scroll-lock";
+import { useScrollLock } from "@vueuse/core";
 import {
   Transition,
   type VNode,
@@ -35,27 +35,29 @@ export default defineComponent({
     const page = usePageData();
     const { isMobile } = useWindowSize();
 
-    const screen = ref<HTMLElement>();
+    const body = ref<HTMLElement>();
+    const isLocked = useScrollLock(body);
 
     onMounted(() => {
+      body.value = document.body;
+
       watch(isMobile, (value) => {
         if (!value && props.show) {
-          clearAllBodyScrollLocks();
+          isLocked.value = false;
           emit("close");
         }
       });
-
       watch(
         () => page.value.path,
         () => {
-          clearAllBodyScrollLocks();
+          isLocked.value = false;
           emit("close");
         }
       );
     });
 
     onUnmounted(() => {
-      clearAllBodyScrollLocks();
+      isLocked.value = false;
     });
 
     return (): VNode =>
@@ -63,15 +65,18 @@ export default defineComponent({
         Transition,
         {
           name: "fade",
-          onEnter: () =>
-            disableBodyScroll(screen.value!, { reserveScrollBarGap: true }),
-          onAfterLeave: () => clearAllBodyScrollLocks(),
+          onEnter: () => {
+            isLocked.value = true;
+          },
+          onAfterLeave: () => {
+            isLocked.value = false;
+          },
         },
         () =>
           props.show
             ? h(
                 "div",
-                { id: "nav-screen", ref: screen },
+                { id: "nav-screen" },
                 h("div", { class: "container" }, [
                   slots["before"]?.(),
                   h(NavScreenLinks),
