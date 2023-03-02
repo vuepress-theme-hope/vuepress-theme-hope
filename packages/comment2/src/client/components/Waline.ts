@@ -79,17 +79,19 @@ export default defineComponent({
       );
     });
 
+    const walineKey = computed(() => withBase(page.value.path));
+
     const walineProps = computed(() => ({
       lang: lang.value === "zh-CN" ? "zh-CN" : "en",
       locale: walineLocale.value,
       dark: "html.dark",
       ...walineOption,
-      path: withBase(page.value.path),
+      path: walineKey.value,
     }));
 
     onMounted(() => {
       watch(
-        () => page.value.path,
+        walineKey,
         () => {
           abort?.();
 
@@ -98,7 +100,7 @@ export default defineComponent({
               setTimeout(() => {
                 abort = pageviewCount({
                   serverURL: walineOption.serverURL,
-                  path: withBase(page.value.path),
+                  path: walineKey.value,
                 });
               }, walineOption.delay || 800);
             });
