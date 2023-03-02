@@ -75,7 +75,7 @@ export const getLocale = (lang = "en"): string => {
     return langCode;
 
   if (langCode === "en-us" || langCode === "en-uk") return "en";
-  if (langCode === "nl-NL" || langCode === "nl-BE") return "nl";
+  if (langCode === "nl-nl") return "nl";
   if (langCode === "de-de") return "de";
   if (langCode === "es-es") return "es";
   if (langCode === "fr-fr") return "fr";
