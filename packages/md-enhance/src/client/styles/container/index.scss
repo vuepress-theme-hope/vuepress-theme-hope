@@ -326,7 +326,7 @@
     }
   }
 
-  &[open] summary {
+  &[open] > summary {
     margin-bottom: 0.5em;
 
     &::after {
