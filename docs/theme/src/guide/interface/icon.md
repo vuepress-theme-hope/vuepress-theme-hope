@@ -76,10 +76,14 @@ export default defineUserConfig({
     iconAssets: "fontawesome",
 
     // an url you like
-    iconAssets: "<my/font-icon/resource.js>",
+    iconAssets: "/base/my/font-icon/resource.js",
 
     // an array of above
-    iconAssets: ["<my/font-icon/resource.js>", "fontawesome"],
+    iconAssets: [
+      "/base/my/font-icon/resource.js",
+      "https://example/my/fonr-icon/resouce.css",
+      "fontawesome",
+    ],
   }),
 });
 ```
@@ -97,10 +101,14 @@ export default defineUserConfig({
     iconAssets: "fontawesome",
 
     // an url you like
-    iconAssets: "<my/font-icon/resource.js>",
+    iconAssets: "/base/my/font-icon/resource.js",
 
     // an array of above
-    iconAssets: ["<my/font-icon/resource.js>", "fontawesome"],
+    iconAssets: [
+      "/base/my/font-icon/resource.js",
+      "https://example/my/fonr-icon/resouce.css",
+      "fontawesome",
+    ],
   }),
 });
 ```

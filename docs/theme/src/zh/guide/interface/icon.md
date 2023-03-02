@@ -76,10 +76,14 @@ export default defineUserConfig({
     iconAssets: "fontawesome",
 
     // 你想要的 URL
-    iconAssets: "<my/font-icon/resource.js>",
+    iconAssets: "/base/my/font-icon/resource.js",
 
     // 上述内容的数组
-    iconAssets: ["<my/font-icon/resource.js>", "fontawesome"],
+    iconAssets: [
+      "/base/my/font-icon/resource.js",
+      "https://example/my/fonr-icon/resouce.css",
+      "fontawesome",
+    ],
   }),
 });
 ```
@@ -97,10 +101,14 @@ export default defineUserConfig({
     iconAssets: "fontawesome",
 
     // 你想要的 URL
-    iconAssets: "<my/font-icon/resource.js>",
+    iconAssets: "/base/my/font-icon/resource.js",
 
     // 上述内容的数组
-    iconAssets: ["<my/font-icon/resource.js>", "fontawesome"],
+    iconAssets: [
+      "/base/my/font-icon/resource.js",
+      "https://example/my/fonr-icon/resouce.css",
+      "fontawesome",
+    ],
   }),
 });
 ```

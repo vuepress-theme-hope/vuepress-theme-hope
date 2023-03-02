@@ -9,7 +9,7 @@ icon: fire
 
 ## Обзор
 
-V2 работает на _VuePress2_ с использованием _Vite2_ / _Webpack5_ и _Vue3_.
+V2 is coming come together with [_VuePress2_](https://v2.vuepress.vuejs.org), with the power of [_Vite4_](https://vitejs.dev) / [_Webpack5_](https://webpack.js.org) and [_Vue3_](https://vuejs.org).
 
 V2 полностью переписан, включая:
 
@@ -21,14 +21,14 @@ V2 полностью переписан, включая:
 - Время холодного запуска DevServer уменьшено на **50%**
 - Использование памяти сборки уменьшено на **65%**
 - Время сборки уменьшено на **30%**
-- Размер вывода уменьшен на **25%**
+- Размер вывода уменьшен на **35%**
 - Производительность веб-страницы до **70%**
 
 ## Изменения Vue3
 
 Vue 3 использует прокси для обеспечения реактивности и поддержки совершенно нового composition api. Реактивность на основе прокси намного быстрее, чем реактивность в старом стиле, основанная на setter/getter.
 
-Кроме того, composition api дружелюбен к деревьям.
+Additionally, the Composition API is tree-shaking friendly, meaning features that are not enabled can be removed during the build process.
 
 ## Изменения VuePress2
 
@@ -60,7 +60,11 @@ VuePressThemeHope@v2 переписан с composition API, а его систе
 
 - Поддержка [настройки иконок для проектов](../guide/blog/home.md)
 
-- Поддержка [настройка пути к странице блога](../guide/blog/path.md)
+- Support [customizing blog page path](../guide/blog/path.md) now
+
+- Support [customizing blog post type](../guide/blog/article.md#other-types-of-articles)
+
+- Support [automatic abstract generation](../guide/blog/article.md#automatically-generate-excerpt)
 
 #### Комментарий
 
@@ -71,13 +75,11 @@ Valine и Vssue больше не поддерживаются.
 #### Шифрование
 
 - Теперь функция шифрования удобна для встряхивания дерева, а проверка шифрования выполняется только при необходимости.
-
 - Пароль во frontmatter удален.
 
 #### Поток
 
 - Поток больше не генерируется по умолчанию
-
 - Поддержка опции `getter`, чтобы вы могли полностью настроить генерацию потоков.
 
 #### PhotoSwipe
@@ -87,7 +89,6 @@ Valine и Vssue больше не поддерживаются.
 #### PWA
 
 - Поддержка контроля обновлений
-
 - Поддержка добавления базы для манифеста
 
 #### SEO
@@ -96,27 +97,37 @@ Valine и Vssue больше не поддерживаются.
 - Добавлена поддержка JSON-LD
 - Теперь поддерживается внедрение любых тегов заголовка в версии 2.
 
-### Макет
+#### Auto-generating Catalog Page
 
-#### Чистый режим
+- The new `auto-catalog` plugin can automatically generate catalog pages for you
 
-Тема теперь поддерживает [чистый режим](../guide/interface/pure.md) с менее причудливыми стилями.
+#### Others
 
-#### Тема блока кода
+- pure mode
 
-Теперь вы можете установить [разные темы для блоков кода](../guide/interface/code-theme.md) в темном и светлом режимах.
+  The theme now supports [pure mode](../guide/interface/pure.md) with less fancy styles and animations.
 
-#### Домашняя страница
+- RTL layout
 
-- Функции теперь могут иметь иконки
+  Themes now fully support RTL layouts
+
+- printing support
+
+  You can now print theme pages using the print button
+
+### Layout
+
+#### Home
+
+- New homepage style
+- Added multi-feature support
+- Feature added icon support
 
 #### Страница
 
 - Обновление внешнего вида
-
-- Перестроено оглавление, теперь оглавление автоматически прокручивается до активного заголовка
-
-- Поддержка компонентов `Badge`, `CodePen`, `FontIcon` и `PDF`
+- Перестроено оглавление, теперь оглавление а
+- Support for [more Markdown components](../guide/markdown/components.md)
 
 #### Панель навигации и боковая панель
 
@@ -129,6 +140,14 @@ Valine и Vssue больше не поддерживаются.
 - Поддержка нового ключевого слова `"structure"` для [создания боковой панели из файловой структуры](../guide/layout/sidebar.md#автоматическая-боковая-панель)
 
 - Боковая панель теперь автоматически открывается и прокручивается до активированного элемента.
+
+#### Print
+
+Now you can print website pages.
+
+#### Code Block Theme
+
+You can now [set different themes](../guide/interface/code-theme.md) for code blocks in dark mode and light mode.
 
 ### Markdown
 
