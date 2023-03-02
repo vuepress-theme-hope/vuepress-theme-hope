@@ -235,6 +235,135 @@ So you can invoke `useBlogCategory()` and `useBlogType()` directly, and the resu
 
 Also, you can pass `key` you want as argument, then you will get information bind to that key.
 
+So with node side settings above, you can get information about "tag" and "star" in client side:
+
+`TagMap` layout:
+
+```vue
+<template>
+  <div>
+    <h1>Tag page</h1>
+    <ul>
+      <li v-for="({ items, path }, name) in categoryMap.map">
+        <RouterLink :key="name" :to="path" class="category">
+          {{ name }}
+          <span class="category-num">
+            {{ items.length }}
+          </span>
+        </RouterLink>
+      </li>
+    </ul>
+  </div>
+</template>
+<script setup lang="ts">
+import { useBlogCategory } from "vuepress-plugin-blog2";
+
+const categoryMap = useBlogCategory("tag");
+</script>
+```
+
+`TagList` layout:
+
+```vue
+<template>
+  <div>
+    <h1>Tag page</h1>
+    <div class="category-wrapper">
+      <RouterLink
+        v-for="({ items, path }, name) in categoryMap.map"
+        :key="name"
+        :to="path"
+        class="category"
+      >
+        {{ name }}
+        <span class="category-num">
+          {{ items.length }}
+        </span>
+      </RouterLink>
+    </div>
+    <div class="article-wrapper" v-if="categoryMap.currentItems">
+      <div v-if="!categoryMap.currentItems.length">Nothing in here.</div>
+      <article
+        v-for="{ info, path } in categoryMap.currentItems"
+        class="article"
+        @click="$router.push(path)"
+      >
+        <header class="title">
+          {{
+            (isTimeline
+              ? `${new Date(info.date).toLocaleDateString()}: `
+              : "") + info.title
+          }}
+        </header>
+        <hr />
+        <div class="article-info">
+          <span v-if="info.author" class="author"
+            >Author: {{ info.author }}</span
+          >
+          <span v-if="info.date && !isTimeline" class="date"
+            >Date: {{ new Date(info.date).toLocaleDateString() }}</span
+          >
+          <span v-if="info.category" class="category"
+            >Category: {{ info.category.join(", ") }}</span
+          >
+          <span v-if="info.tag" class="tag"
+            >Tag: {{ info.tag.join(", ") }}</span
+          >
+        </div>
+        <div v-if="info.excerpt" class="excerpt" v-html="info.excerpt" />
+      </article>
+    </div>
+  </div>
+</template>
+<script setup lang="ts">
+import { useBlogCategory } from "vuepress-plugin-blog2";
+
+const categoryMap = useBlogCategory("tag");
+</script>
+```
+
+`StarList` layout:
+
+```vue
+<template>
+  <div class="article-wrapper" v-if="stars.items">
+    <div v-if="!stars.items.length">Nothing in here.</div>
+    <article
+      v-for="{ info, path } in stars.items"
+      class="article"
+      @click="$router.push(path)"
+    >
+      <header class="title">
+        {{
+          (isTimeline ? `${new Date(info.date).toLocaleDateString()}: ` : "") +
+          info.title
+        }}
+      </header>
+      <hr />
+      <div class="article-info">
+        <span v-if="info.author" class="author">Author: {{ info.author }}</span>
+        <span v-if="info.date && !isTimeline" class="date"
+          >Date: {{ new Date(info.date).toLocaleDateString() }}</span
+        >
+        <span v-if="info.category" class="category"
+          >Category: {{ info.category.join(", ") }}</span
+        >
+        <span v-if="info.tag" class="tag">Tag: {{ info.tag.join(", ") }}</span>
+      </div>
+      <div v-if="info.excerpt" class="excerpt" v-html="info.excerpt" />
+    </article>
+  </div>
+</template>
+<script setup lang="ts">
+import { useBlogType } from "vuepress-plugin-blog2/client";
+
+import ArticleList from "../components/ArticleList.vue";
+import ParentLayout from "@vuepress/theme-default/layouts/Layout.vue";
+
+const stars = useBlogType("star");
+</script>
+```
+
 For return types, please see [Composition API Return Types](./config.md#composition-api).
 
 ## I18n Support
