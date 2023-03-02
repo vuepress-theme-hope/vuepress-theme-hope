@@ -199,6 +199,13 @@ blog:
     url: https://zhaobc.site
     repo: https://github.com/FuckDoctors/notes2
     preview: /assets/image/zhaobc.jpg
+
+  - name: Bing🐣
+    desc: 记录日常开发问题。
+    logo: https://liubing.me/logo.svg
+    url: https://liubing.me/
+    repo: https://github.com/liub1934/liubing.me
+    preview: /assets/image/bing.jpg
 ---
 
 ## 在线案例
