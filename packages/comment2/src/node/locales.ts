@@ -95,4 +95,9 @@ export const walineLocales: WalineLocaleConfig = {
     placeholder:
       "Tulis komentar di sini (Isi alamat email untuk menerima notifikasi jika komentar kamu telah dibalas orang lain)",
   },
+
+  "/nl/": {
+    placeholder:
+      "Schrijf een opmerking hier (Vul je emailadres in om een email-notificatie te ontvangen wanneer er gereageerd wordt.",
+  },
 };

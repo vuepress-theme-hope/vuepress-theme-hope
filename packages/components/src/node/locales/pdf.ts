@@ -76,4 +76,8 @@ export const pdfLocaleConfig: PDFLocaleConfig = {
   "/id/": {
     hint: "<p>Browser ini tidak mendukung penyematan PDF. Silakan unduh PDF untuk melihatnya: <a href='[url]' target='_blank'>Unduh PDF</a></p>",
   },
+
+  "/nl/": {
+    hint: "<p>Deze browser ondersteunt geen embedded PDFs. Gelieve de PDF te downloaden om ze te bekjken: <a href='[url]' target='_blank'>Download PDF</a></p>",
+  },
 };

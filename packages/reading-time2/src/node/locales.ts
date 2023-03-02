@@ -117,4 +117,10 @@ export const readingTimeLocales: ReadingTimeLocaleConfig = {
     less1Minute: "Kurang dari 1 menit",
     time: "Sekitar $time menit",
   },
+
+  "/nl/": {
+    word: "Ongeveer $word woorden",
+    less1Minute: "Minder dan 1 minuut",
+    time: "Ongeveer $time minuten",
+  },
 };

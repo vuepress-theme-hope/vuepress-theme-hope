@@ -13,6 +13,7 @@ export const lang2PathConfig = {
   "id-ID": "/id/",
   "ja-JP": "/ja/",
   "ko-KR": "/ko/",
+  "nl-NL": "/nl/",
   "pl-PL": "/pl/",
   "pt-BR": "/br/",
   "ru-RU": "/ru/",

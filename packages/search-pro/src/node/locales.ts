@@ -267,4 +267,18 @@ export const searchProLocales: SearchProLocaleConfig = {
     emptyResult: "Hasil penelusuran tidak tersedia",
     loading: "Memuat indeks penelusuran...",
   },
+
+  "/nl/": {
+    cancel: "Annuleren",
+    placeholder: "Zoeken",
+    search: "Zoeken",
+    searching: "Zoeken",
+    select: "Selecteren",
+    navigate: "to navigate",
+    exit: "to exit",
+    history: "Zoekgeschiedenis",
+    emptyHistory: "Zoekgeschiedenis Leegmaken",
+    emptyResult: "Geen resultaten gevonden",
+    loading: "Laden van zoekindexen...",
+  },
 };

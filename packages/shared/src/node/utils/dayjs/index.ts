@@ -7,6 +7,7 @@ import utc from "dayjs/plugin/utc.js";
 import { loadDeAtLocale } from "./de-at.js";
 import { loadDeLocale } from "./de.js";
 import { loadEnLocale } from "./en.js";
+import { loadNlLocale } from "./nl.js";
 import { loadEsLocale } from "./es.js";
 import { loadFrLocale } from "./fr.js";
 import { loadIdLocale } from "./id.js";
@@ -33,6 +34,7 @@ loadEnLocale(dayjs);
 loadEsLocale(dayjs);
 loadFrLocale(dayjs);
 loadIdLocale(dayjs);
+loadNlLocale(dayjs);
 loadPlLocale(dayjs);
 loadPtBrLocale(dayjs);
 loadRuLocale(dayjs);
@@ -56,6 +58,7 @@ export const getLocale = (lang = "en"): string => {
       "es",
       "fr",
       "id",
+      "nl",
       "pl",
       "pt-br",
       "ru",
@@ -72,6 +75,7 @@ export const getLocale = (lang = "en"): string => {
     return langCode;
 
   if (langCode === "en-us" || langCode === "en-uk") return "en";
+  if (langCode === "nl-NL" || langCode === "nl-BE") return "nl";
   if (langCode === "de-de") return "de";
   if (langCode === "es-es") return "es";
   if (langCode === "fr-fr") return "fr";

@@ -171,4 +171,13 @@ export const markdownEnhanceLocales: MarkdownEnhanceLocaleConfig = {
     danger: "Peringatan",
     details: "Rincian",
   },
+
+  "/nl/": {
+    info: "Info",
+    note: "Notitie",
+    tip: "Tips",
+    warning: "Notitie",
+    danger: "Waarschuwing",
+    details: "Details",
+  },
 };

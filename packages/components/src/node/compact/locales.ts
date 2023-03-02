@@ -79,4 +79,8 @@ export const catalogLocales: CatalogLocaleConfig = {
   "/id/": {
     title: "Katalog",
   },
+
+  "/nl/": {
+    title: "Catalogus",
+  },
 };

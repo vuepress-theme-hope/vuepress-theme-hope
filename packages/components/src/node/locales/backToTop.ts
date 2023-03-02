@@ -75,4 +75,8 @@ export const backToTopLocales: BackToTopLocaleConfig = {
   "/id/": {
     backToTop: "Kembali ke atas",
   },
+
+  "/nl/": {
+    backToTop: "Ga terug naar boven",
+  },
 };
