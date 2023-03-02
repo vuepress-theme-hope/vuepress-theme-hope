@@ -11,7 +11,11 @@ export const ensureDirExistSync = (dirPath: string): void => {
   try {
     readdirSync(dirPath);
   } catch (err) {
-    mkdirSync(dirPath, { recursive: true });
+    try {
+      mkdirSync(dirPath, { recursive: true });
+    } catch (err) {
+      // this is the case where the directory already exists but can not read, e.g.: D:\
+    }
   }
 };
 

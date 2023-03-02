@@ -55,9 +55,14 @@ icon: gears
   ```ts
   interface CopyCodeLocaleData {
     /**
-     * 复制按钮文字
+     * 复制文字
      */
     copy: string;
+
+    /**
+     * 已复制文字
+     */
+    copied: string;
 
     /**
      * 复制成功提示消息文字
