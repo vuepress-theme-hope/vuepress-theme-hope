@@ -295,4 +295,19 @@ export const pwaLocales: PWALocaleConfig = {
     hint: "Konten baru ditemukan.",
     update: "Konten baru telah tersedia.",
   },
+
+  "/nl/": {
+    install: "Installeren",
+    iOSInstall: "Druk op de share button en dan op 'Add to Home Screen'",
+    cancel: "Annuleren",
+    close: "Sluiten",
+    prevImage: "Vorige Foto",
+    nextImage: "Volgende Foto",
+    desc: "Beschrijving",
+    feature: "Belangrijkste mogelijkheden",
+    explain:
+      "Deze app kan op uw PC of mobiel toestel geïnstalleerd worden. Dit laat toe om deze webapp er uit te laten alsof het een normale app is. Je kan het terugvinden in jouw applijsten en kan het op je homescreen, start menu of taakbalk vastzetten. Deze geïnstalleerde webapp zal ook veilig samenwerken met andere apps en uw besturingssysteem. ",
+    hint: "Nieuwe inhoud gevonden.",
+    update: "Nieuwe inhoud is beschikbaar.",
+  },
 };

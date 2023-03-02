@@ -97,4 +97,10 @@ export const copyrightLocales: CopyrightLocaleConfig = {
     license: "Dibawah Lisensi :license",
     link: ":link",
   },
+
+  "/nl/": {
+    author: "Auteursrecht van :author",
+    license: "Licentie onder :license",
+    link: ":link",
+  },
 };
