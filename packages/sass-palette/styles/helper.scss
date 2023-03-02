@@ -18,7 +18,6 @@
 
   @for $i from 1 through $length {
     $char: string.slice($string, $i, $i);
-
     $property: "#{$property}#{if(is-upper-case($char), "-#{string.to-lower-case(
         $char
       )}",$char)}";
@@ -34,32 +33,15 @@
   }
 
   // it’s a valid map color config
-  @if (meta.type-of($value) == map) {
-    @if (meta.type-of(map.get($value, "light")) == color) and
+  @if (
+    (meta.type-of($value) == map) and
+      (meta.type-of(map.get($value, "light")) == color) and
       (meta.type-of(map.get($value, "dark")) == color)
-    {
-      @return true;
-    }
-
-    @if (is-legal-config(map.get($value, "base"))) {
-      $scale: map.get($value, "scale");
-
-      @if (meta.type-of($scale) == map) {
-        @each $name, $amount in $scale {
-          @if (meta.type-of($amount) != number) {
-            @debug "Unexpected value: getting #{$value}";
-
-            @return false;
-          }
-        }
-
-        @return true;
-      }
-    }
+  ) {
+    @return true;
   }
 
-  @warn "Unexpected value: getting #{$value}";
-
+  @warn "Unexpected variable value: getting #{$value}";
   @return false;
 }
 
@@ -76,7 +58,6 @@
   }
 
   @warn "Unexpected color: getting #{$color}";
-
   @return transparent;
 }
 
@@ -87,6 +68,7 @@
 @function get-variables($variables, $dark-selector: "") {
   $root-variables: ();
   $dark-variables: ();
+
   @each $name, $value in $variables {
     $key: camel-to-kebab($name);
 
@@ -94,10 +76,9 @@
       $root-variables: map.set($root-variables, $key, $value);
     } @else if color-is-legal($value) {
       $light-color: get-color($value, false);
-
       $root-variables: map.set($root-variables, $key, $light-color);
 
-      @if ($dark-selector) {
+      @if $dark-selector {
         $dark-color: get-color($value, true);
 
         @if $light-color != $dark-color {
@@ -139,21 +120,20 @@
 
 @mixin inject($variables, $dark-selector: "") {
   $result: get-variables($variables, $dark-selector);
-
   $root-variables: map.get($result, "root");
   $dark-variables: map.get($result, "dark");
 
-  :root {
-    @each $key, $value in $root-variables {
-      #{$key}: #{$value};
-    }
-  }
-
-  @if ($dark-selector) {
+  @if $dark-selector {
     #{$dark-selector} {
       @each $key, $value in $dark-variables {
         #{$key}: #{$value};
       }
+    }
+  }
+
+  :root {
+    @each $key, $value in $root-variables {
+      #{$key}: #{$value};
     }
   }
 }
