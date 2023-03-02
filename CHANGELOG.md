@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.186](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.185...v2.0.0-beta.186) (2023-03-02)
+
+### Bug Fixes
+
+- **theme:** fix createRequire, close [#2847](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2847) ([e8dc4ff](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e8dc4ff853f5645218f1afd03625d8977c07bb3c))
+- **theme:** fix dropdown link ([29204b5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/29204b5c9f3a2a9cb5af13f4ce95f705fc12b453))
+- **theme:** fix kdb and table bgcolor ([491845c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/491845c4dcff29bff23f8050d47b4d2d7796a31c))
+
 ## [2.0.0-beta.185](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.184...v2.0.0-beta.185) (2023-02-28)
 
 ### Features
