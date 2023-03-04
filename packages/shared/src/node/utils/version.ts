@@ -16,7 +16,7 @@ interface PackageJSON extends Record<string, unknown> {
 export const checkVersion = (app: App, name: string, range = "v2"): void => {
   const sourceFolderPath = app.dir.source();
   const logger = new Logger(name);
-  const require = createRequire(sourceFolderPath);
+  const require = createRequire(`${sourceFolderPath}/`);
 
   let dir = sourceFolderPath;
   let packageName = "";
