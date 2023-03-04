@@ -1,13 +1,11 @@
 import { usePageData, useRouteLocale } from "@vuepress/client";
 import { isPlainObject, isString } from "@vuepress/shared";
-import { useEventListener, useScrollLock } from "@vueuse/core";
+import { useEventListener } from "@vueuse/core";
 import {
   type VNode,
   computed,
   defineComponent,
   h,
-  onMounted,
-  onUnmounted,
   ref,
   toRef,
   watch,
@@ -61,9 +59,6 @@ export default defineComponent({
     const { addQueryHistory } = useSearchQueryHistory();
     const { enabled, resultHistory, addResultHistory, removeResultHistory } =
       useSearchResultHistory();
-
-    const body = ref<HTMLElement>();
-    const isLocked = useScrollLock(body);
 
     const query = toRef(props, "query");
     const { results, searching } = useWorkerSearch(query);
@@ -167,15 +162,6 @@ export default defineComponent({
       },
       { flush: "post" }
     );
-
-    onMounted(() => {
-      body.value = document.body;
-      isLocked.value = true;
-    });
-
-    onUnmounted(() => {
-      isLocked.value = false;
-    });
 
     return (): VNode =>
       h(

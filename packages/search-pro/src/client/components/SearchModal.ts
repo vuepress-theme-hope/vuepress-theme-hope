@@ -1,5 +1,5 @@
 import { useSiteLocaleData } from "@vuepress/client";
-import { useEventListener } from "@vueuse/core";
+import { useEventListener, useScrollLock } from "@vueuse/core";
 import {
   type VNode,
   defineAsyncComponent,
@@ -7,6 +7,8 @@ import {
   h,
   inject,
   nextTick,
+  onMounted,
+  onUnmounted,
   ref,
   watch,
 } from "vue";
@@ -48,6 +50,9 @@ export default defineComponent({
     const input = ref("");
     const inputElement = ref<HTMLInputElement>();
 
+    const body = ref<HTMLElement>();
+    const isLocked = useScrollLock(body);
+
     watch(isActive, (value) => {
       if (value)
         void nextTick().then(() => {
@@ -57,6 +62,18 @@ export default defineComponent({
 
     useEventListener("keydown", (event: KeyboardEvent) => {
       if (isActive.value && event.key === "Escape") isActive.value = false;
+    });
+
+    onMounted(() => {
+      body.value = document.body;
+
+      watch(isActive, (value) => {
+        isLocked.value = value;
+      });
+    });
+
+    onUnmounted(() => {
+      isLocked.value = false;
     });
 
     return (): VNode | null =>
