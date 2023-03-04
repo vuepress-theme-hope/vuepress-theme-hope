@@ -11,7 +11,7 @@ export interface PhotoSwipeOptions {
    *
    * 图片选择器
    *
-   * @default ".theme-default-content :not(a) > img:not(no-view)"
+   * @default ".theme-default-content :not(a) > img:not([no-view])"
    */
   selector?: string | string[];
 
