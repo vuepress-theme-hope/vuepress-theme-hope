@@ -115,4 +115,10 @@ export const copyCodeLocales: CopyCodeLocaleConfig = {
     copied: "Disalin",
     hint: "Kode berhasil disalin",
   },
+
+  "/nl/": {
+    copy: "Kopieer code",
+    copied: "Gekopieerd",
+    hint: "Succesvol gekopieerd",
+  },
 };

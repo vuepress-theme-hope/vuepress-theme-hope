@@ -76,4 +76,8 @@ export const locales: AutoCatalogLocaleConfig = {
   "/id/": {
     title: "Katalog",
   },
+
+  "/nl/": {
+    title: "Catalogus",
+  },
 };

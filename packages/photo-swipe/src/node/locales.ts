@@ -171,4 +171,13 @@ export const photoSwipeLocales: PhotoSwipeLocaleConfig = {
     arrowPrev: "Sebelumnya (Panah kiri)",
     arrowNext: "Selanjutnya (Panah kanan)",
   },
+
+  "/nl/": {
+    close: "Sluiten",
+    download: "Download Image",
+    fullscreen: "Verander naar fullscreen",
+    zoom: "Zoom in/out",
+    arrowPrev: "Vorige (Pijl Links)",
+    arrowNext: "Volgende (Pijl Rechts)",
+  },
 };

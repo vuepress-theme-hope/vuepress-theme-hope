@@ -98,5 +98,6 @@ Locales config for photo-swipe plugin.
 - **Korean** (ko-KR)
 - **Finnish** (fi-FI)
 - **Indonesian** (id-ID)
+- **Dutch** (nl-NL)
 
 :::

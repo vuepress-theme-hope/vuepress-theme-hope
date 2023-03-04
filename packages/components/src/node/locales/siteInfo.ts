@@ -36,4 +36,6 @@ export const siteInfoLocaleConfig: SiteInfoLocaleConfig = {
   "/hu/": { source: "Forrás" },
 
   "/id/": { source: "Sumber" },
+
+  "/nl/": { source: "Bron" },
 };

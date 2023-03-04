@@ -743,5 +743,6 @@ Locales config for Markdown Enhance Plugin.
 - **Korean** (ko-KR)
 - **Finnish** (fi-FI)
 - **Indonesian** (id-ID)
+- **Dutch** (nl-NL)
 
 :::
