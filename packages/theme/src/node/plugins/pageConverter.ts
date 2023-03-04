@@ -108,7 +108,7 @@ export const extendsPagePlugin = (
 export const useExtendsPagePlugin = (
   app: App,
   themeData: ThemeData,
-  legacy = true
+  legacy = false
 ): void => {
   app.use(extendsPagePlugin(themeData, legacy));
 };

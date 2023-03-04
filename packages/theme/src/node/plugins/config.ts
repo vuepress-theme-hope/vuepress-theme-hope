@@ -42,7 +42,7 @@ export const getPluginConfig = (
     | "iconPrefix"
     | "favicon"
   >,
-  legacy = true
+  legacy = false
 ): PluginConfig => {
   checkPluginOptions(plugins);
 

@@ -1,20 +1,12 @@
 import { bundle } from "../../scripts/rollup.js";
 
 export default [
-  ...bundle(
-    {
-      base: "",
-      files: ["node/index", "perf/index"],
-    },
-    {
-      external: ["bcrypt-ts/node", "chokidar"],
-    }
-  ),
-
+  ...bundle("node/perf", {
+    external: ["bcrypt-ts/node", "chokidar"],
+  }),
   ...bundle(
     {
       base: "client",
-      target: "perf",
       files: [
         "components/HopeIcon",
         "modules/blog/components/BloggerInfo",

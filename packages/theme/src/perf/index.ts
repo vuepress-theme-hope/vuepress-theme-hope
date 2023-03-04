@@ -1,33 +1,25 @@
 import { type ThemeFunction } from "@vuepress/core";
-import { isLinkHttp } from "@vuepress/shared";
 import { watch } from "chokidar";
 
-import { getAlias } from "./alias.js";
-import { extendsBundlerOptions } from "./bundler.js";
-import { checkUserPlugin, vuePressVersionCheck } from "./check/index.js";
-import { checkLegacyStyle, convertThemeOptions } from "./compact/index.js";
+import { prepareConfigFile } from "./clientConfig.js";
+import { extendsBundlerOptions } from "../node/bundler.js";
 import {
   checkSocialMediaIcons,
   getStatus,
   getThemeData,
-} from "./config/index.js";
-import { getPluginConfig, usePlugin } from "./plugins/index.js";
+} from "../node/config/index.js";
+import { getPluginConfig, usePlugin } from "../node/plugins/index.js";
 import {
-  prepareConfigFile,
   prepareHighLighterScss,
   prepareSidebarData,
   prepareSocialMediaIcons,
   prepareThemeColorScss,
-} from "./prepare/index.js";
-import { TEMPLATE_FOLDER } from "./utils.js";
+} from "../node/prepare/index.js";
+import { TEMPLATE_FOLDER } from "../node/utils.js";
 import { type ThemeOptions } from "../shared/index.js";
 
 export const hopeTheme =
-  (
-    options: ThemeOptions,
-    // TODO: Remove this in v2 stable
-    legacy = true
-  ): ThemeFunction =>
+  (options: ThemeOptions): ThemeFunction =>
   (app) => {
     const { isDebug } = app.env;
     const {
@@ -40,26 +32,18 @@ export const hopeTheme =
       backToTop,
       sidebarSorter,
       ...themeOptions
-    } = legacy
-      ? convertThemeOptions(options as ThemeOptions & Record<string, unknown>)
-      : options;
-
-    if (legacy) checkLegacyStyle(app);
-
-    vuePressVersionCheck(app);
+    } = options;
 
     const status = getStatus(app, options);
     const themeData = getThemeData(app, themeOptions, status);
     const icons = status.enableBlog ? checkSocialMediaIcons(themeData) : {};
 
-    usePlugin(app, themeData, plugins, hotReload, legacy);
+    usePlugin(app, themeData, plugins, hotReload);
 
     if (isDebug) console.log("Theme plugin options:", plugins);
 
     return {
       name: "vuepress-theme-hope",
-
-      alias: getAlias(isDebug),
 
       define: () => ({
         BLOG_TYPE_INFO: status.blogType,
@@ -74,9 +58,7 @@ export const hopeTheme =
       onInitialized: (app): void => {
         if (favicon) {
           const { base, head } = app.options;
-          const faviconLink = isLinkHttp(favicon)
-            ? favicon
-            : favicon.replace(/^\/?/, base);
+          const faviconLink = favicon.replace(/^\/?/, base);
 
           // ensure favicon is not injected
           if (
@@ -91,8 +73,6 @@ export const hopeTheme =
           )
             head.push(["link", { rel: "icon", href: faviconLink }]);
         }
-
-        checkUserPlugin(app);
       },
 
       onPrepared: (app): Promise<void> =>
@@ -138,8 +118,7 @@ export const hopeTheme =
           iconAssets,
           iconPrefix,
           favicon,
-        },
-        legacy
+        }
       ),
 
       templateBuild: `${TEMPLATE_FOLDER}index.build.html`,
@@ -147,3 +126,7 @@ export const hopeTheme =
       clientConfigFile: (app) => prepareConfigFile(app, status),
     };
   };
+
+export * from "../node/helpers.js";
+export * from "../node/locales/index.js";
+export * from "../shared/index.js";

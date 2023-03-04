@@ -18,8 +18,8 @@ export const usePlugin = (
   app: App,
   themeData: ThemeData,
   plugins: PluginsOptions,
-  legacy: boolean,
-  hotReload: boolean
+  hotReload: boolean,
+  legacy = false
 ): void => {
   // respect git options
   if ("git" in plugins)
