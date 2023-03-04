@@ -124,6 +124,7 @@ Locale config for copyright plugin.
 - **Korean** (ko-KR)
 - **Finnish** (fi-FI)
 - **Indonesian** (id-ID)
+- **Dutch** (nl-NL)
 
 :::
 

@@ -286,5 +286,6 @@ Locales config for pdf component.
 - **Korean** (ko-KR)
 - **Finnish** (fi-FI)
 - **Indonesian** (id-ID)
+- **Dutch** (nl-NL)
 
 :::

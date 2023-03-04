@@ -38,5 +38,4 @@ export const siteInfoLocaleConfig: SiteInfoLocaleConfig = {
   "/id/": { source: "Sumber" },
 
   "/nl/": { source: "Bron" },
-
 };
