@@ -58,12 +58,10 @@
     "templates"
   ],
   "scripts": {
-    "build": "pnpm build:normal",
-    "build:old": "pnpm build:normal && pnpm build:perf",
-    "build:normal": "pnpm build:normal-node && pnpm build:normal-client && pnpm copy",
-    "build:perf": "rollup -c rollup.perf.ts --configPlugin esbuild",
-    "build:normal-node": "rollup -c rollup.config.ts --configPlugin esbuild",
-    "build:normal-client": "tsc -b tsconfig.release.json",
+    "build": "pnpm build:rollup && pnpm build:gulp && pnpm build:ts && pnpm copy",
+    "build:rollup": "rollup -c rollup.config.ts --configPlugin esbuild",
+    "build:gulp": "gulp -f gulpfile.cjs",
+    "build:ts": "tsc -b tsconfig.release.json",
     "clean": "rimraf ./lib ./*.tsbuildinfo",
     "copy": "cpx \"src/client/**/*.{css,scss,jpg,vue}\" lib/client",
     "dev": "concurrently \"pnpm dev:copy\" \"pnpm dev:ts\"",

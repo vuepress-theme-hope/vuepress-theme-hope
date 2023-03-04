@@ -2,7 +2,11 @@ import alias, { type Alias } from "@rollup/plugin-alias";
 import commonjs from "@rollup/plugin-commonjs";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
 import replace, { type RollupReplaceOptions } from "@rollup/plugin-replace";
-import { type RollupOptions, type RollupWarning } from "rollup";
+import {
+  type ModuleSideEffectsOption,
+  type RollupOptions,
+  type RollupWarning,
+} from "rollup";
 import copy from "rollup-plugin-copy";
 import dts from "rollup-plugin-dts";
 import esbuild from "rollup-plugin-esbuild";
@@ -28,6 +32,7 @@ export interface BundleOptions {
   preserveShebang?: boolean;
   replace?: RollupReplaceOptions;
   alias?: Alias[] | { [find: string]: string };
+  moduleSideEffects?: ModuleSideEffectsOption;
 }
 
 export const bundle = (
@@ -47,6 +52,8 @@ export const bundle = (
       : filePath.startsWith("cli/"),
     alias: entries,
     replace: replaceOptions,
+    moduleSideEffects = (id): boolean =>
+      id.endsWith(".css") || id.endsWith(".scss"),
   }: BundleOptions = {}
 ): RollupOptions[] => [
   {
@@ -153,7 +160,7 @@ export const bundle = (
     ],
 
     treeshake: {
-      moduleSideEffects: (id) => id.endsWith(".css") || id.endsWith(".scss"),
+      moduleSideEffects,
       preset: "smallest",
     },
 

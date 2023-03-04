@@ -20,7 +20,7 @@ import BlogCategory from "${CLIENT_FOLDER}modules/blog/layouts/BlogCategory.js";
 import BlogHome from "${CLIENT_FOLDER}modules/blog/layouts/BlogHome.js";
 import BlogType from "${CLIENT_FOLDER}modules/blog/layouts/BlogType.js";
 import Timeline from "${CLIENT_FOLDER}modules/blog/layouts/Timeline.js";
-import "${CLIENT_FOLDER}modules/blog/styles/layout.scss";
+import "${CLIENT_FOLDER}modules/blog/styles/all.scss";
 `;
 
     enhance += `\
@@ -43,6 +43,7 @@ Timeline,
     configImport += `\
 import GlobalEncrypt from "${CLIENT_FOLDER}modules/encrypt/components/GlobalEncrypt";
 import LocalEncrypt from "${CLIENT_FOLDER}modules/encrypt/components/LocalEncrypt";
+import "${CLIENT_FOLDER}modules/encrypt/styles/all.scss";
 `;
     enhance += `\
 app.component("GlobalEncrypt", GlobalEncrypt);
@@ -67,7 +68,7 @@ import { useScrollPromise } from "${CLIENT_FOLDER}composables/index";
 import { injectDarkmode, setupDarkmode } from "${CLIENT_FOLDER}modules/outlook/composables/index";
 import { setupSidebarItems } from "${CLIENT_FOLDER}modules/sidebar/composables/index";
 
-import "${CLIENT_FOLDER}styles/index.scss";
+import "${CLIENT_FOLDER}styles/all.scss";
 
 ${configImport}\
 
