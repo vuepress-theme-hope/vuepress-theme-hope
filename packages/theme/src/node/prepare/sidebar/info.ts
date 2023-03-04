@@ -75,7 +75,7 @@ const getSidebarInfoFromStructure = (
 
       title: page.frontmatter.shortTitle || page.title,
       order: "order" in page.frontmatter ? page.frontmatter.order : null,
-      path: page.pathInferred === page.path ? null : page.path,
+      path: decodeURI(page.path) === page.pathInferred ? null : page.path,
 
       frontmatter: page.frontmatter,
       pageData: page.data,
@@ -138,7 +138,7 @@ const getSidebarInfoFromStructure = (
         ...(dirOptions?.link
           ? {
               link:
-                readmePage.pathInferred === readmePage.path
+                readmePage.pathInferred === decodeURI(readmePage.path)
                   ? `${sanitizeFileName(info.dirname)}/`
                   : readmePage.path,
             }
