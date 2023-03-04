@@ -76,7 +76,7 @@ export default defineComponent({
 
       if (SUPPORT_PAGEVIEW)
         void import(
-          /* webpackChunkName: "pageview" */ "vuepress-plugin-comment2/client/pageview.js"
+          /* webpackChunkName: "pageview" */ "vuepress-plugin-comment2/pageview"
         ).then(({ updatePageview }) => {
           updatePageview();
         });
