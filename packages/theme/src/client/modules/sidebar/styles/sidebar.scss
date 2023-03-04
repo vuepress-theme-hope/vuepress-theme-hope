@@ -7,6 +7,9 @@
   // inset-inline-start: 0;
   left: 0;
 
+  // this prevents footer issue on tablet
+  z-index: 1;
+
   overflow-y: auto;
 
   width: var(--sidebar-width);
