@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.187](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.186...v2.0.0-beta.187) (2023-03-04)
+
+### Features
+
+- add Dutch language support ([#2852](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2852)) ([a7a284f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a7a284f55a42b00808979a858d3aef5534f5bcf3))
+
+### Bug Fixes
+
+- **create:** try not thrown on windows dist root ([7ac7bf8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7ac7bf8453e675bdcf3a62711eefcf8758b8e531))
+- **deps:** update dependency mermaid to v10.0.2 ([#2866](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2866)) ([a425be2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a425be2128759f6e978cbe88bae6d7026e1e769f))
+- **md-enhance:** fix arrows with nesting details ([2f1743b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2f1743b5faad89577a448eff5f53e3247a87b459))
+- **search-pro:** fix scroll issue, close [#2859](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2859) ([e0cea97](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e0cea974c6e185b9a1cfa80e45f4ef895ca3418a))
+- **theme:** fix sidebar with non-unicode characters, close [#2857](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2857) ([aa7ad44](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/aa7ad44f738749aa0b0ac0ca5b7d3bcc99f36586))
+
 ## [2.0.0-beta.186](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.185...v2.0.0-beta.186) (2023-03-02)
 
 ### Bug Fixes
