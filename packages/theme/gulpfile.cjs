@@ -1,7 +1,7 @@
-const { dest, src } = require("gulp");
+const { dest, parallel, src } = require("gulp");
 const through = require("through2");
 
-const generateStyle = () =>
+const generateSass = () =>
   src("src/client/**/*.scss")
     .pipe(
       through.obj((file, _encoding, callback) => {
@@ -16,5 +16,9 @@ const generateStyle = () =>
       })
     )
     .pipe(dest("lib/perf"));
+
+const copyCss = () => src("src/client/**/*.css").pipe(dest("lib/perf"));
+
+const generateStyle = parallel(copyCss, generateSass);
 
 exports.default = generateStyle;

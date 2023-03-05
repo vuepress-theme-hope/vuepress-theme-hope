@@ -11,6 +11,11 @@ export const logger = new Logger("vuepress-theme-hope");
 export const CLIENT_FOLDER = ensureEndingSlash(
   path.resolve(__dirname, "../client")
 );
+
+export const PERF_FOLDER = ensureEndingSlash(
+  path.resolve(__dirname, "../perf")
+);
+
 export const TEMPLATE_FOLDER = ensureEndingSlash(
   path.resolve(__dirname, "../../templates")
 );

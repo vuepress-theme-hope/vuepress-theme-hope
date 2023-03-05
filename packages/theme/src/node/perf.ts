@@ -1,7 +1,6 @@
 import { type ThemeFunction } from "@vuepress/core";
 import { watch } from "chokidar";
 
-import { prepareConfigFile } from "./clientConfig.js";
 import { extendsBundlerOptions } from "../node/bundler.js";
 import {
   checkSocialMediaIcons,
@@ -11,6 +10,7 @@ import {
 import { getPluginConfig, usePlugin } from "../node/plugins/index.js";
 import {
   prepareHighLighterScss,
+  preparePerformanceConfigFile,
   prepareSidebarData,
   prepareSocialMediaIcons,
   prepareThemeColorScss,
@@ -123,7 +123,7 @@ export const hopeTheme =
 
       templateBuild: `${TEMPLATE_FOLDER}index.build.html`,
 
-      clientConfigFile: (app) => prepareConfigFile(app, status),
+      clientConfigFile: (app) => preparePerformanceConfigFile(app, status),
     };
   };
 

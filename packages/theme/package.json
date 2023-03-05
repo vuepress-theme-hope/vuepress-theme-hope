@@ -30,8 +30,8 @@
   "exports": {
     ".": "./lib/node/index.js",
     "./perf": {
-      "types": "./lib/perf/index.d.ts",
-      "default": "./lib/perf/index.js"
+      "types": "./lib/node/perf.d.ts",
+      "default": "./lib/node/perf.js"
     },
     "./client": "./lib/client/index.js",
     "./client/*": "./lib/client/*",

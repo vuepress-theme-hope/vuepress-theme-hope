@@ -19,8 +19,8 @@
 @use "content";
 @use "theme";
 @use "layout";
-@use "../modules/info/styles/all";
-@use "../modules/navbar/styles/all";
-@use "../modules/outlook/styles/all";
-@use "../modules/sidebar/styles/all";
+@use "../modules/info/styles/all" as info;
+@use "../modules/navbar/styles/all" as navbar;
+@use "../modules/outlook/styles/all" as outlook;
+@use "../modules/sidebar/styles/all" as sidebar;
 @use "@sass-palette/hope-style";
