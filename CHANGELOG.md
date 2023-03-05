@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.188](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.187...v2.0.0-beta.188) (2023-03-05)
+
+### Features
+
+- **theme:** add performance mode ([#2871](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2871)) ([cb7f81c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cb7f81c352d990971e0ac2659c01209bad019eea))
+
+### Bug Fixes
+
+- **search-pro:** fix searchIndex, close [#2873](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2873) ([59ed994](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/59ed994d701793e615b7efcb7d434fca934de26f))
+- **shared:** fix createRequire ([#2870](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2870)) ([ee8b930](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ee8b9301a3b4b7880cd46f7b095b43677c5ec28f))
+- **theme:** fix sidebar display on tablet ([d25259d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d25259d3aacef4eafb33798f33200b62046d484c))
+
 ## [2.0.0-beta.187](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.186...v2.0.0-beta.187) (2023-03-04)
 
 ### Features
