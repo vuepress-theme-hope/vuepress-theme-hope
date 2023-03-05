@@ -13,6 +13,7 @@ import {
 } from "../../shared/index.js";
 import { checkFrontmatter } from "../check/index.js";
 import { convertFrontmatter } from "../compact/index.js";
+import { type HopeThemeBehaviorOptions } from "../typings/index.js";
 
 /**
  * @private
@@ -76,7 +77,7 @@ export const injectPageInfo = (page: Page<ThemePageData>): void => {
 
 export const extendsPagePlugin = (
   themeData: ThemeData,
-  legacy = true
+  behavior: HopeThemeBehaviorOptions
 ): PluginObject => {
   const encryptedPaths = keys(themeData.encrypt.config || {});
   const isPageEncrypted = ({ path }: Page): boolean =>
@@ -86,13 +87,12 @@ export const extendsPagePlugin = (
     name: "vuepress-theme-hope-extends-page",
 
     extendsPage: (page): void => {
-      if (legacy)
+      if (behavior.compact)
         page.frontmatter = convertFrontmatter(
           page.frontmatter,
           page.filePathRelative
         );
-
-      checkFrontmatter(page);
+      if (behavior.check) checkFrontmatter(page);
 
       const isEncrypted = isPageEncrypted(page);
 
@@ -108,7 +108,7 @@ export const extendsPagePlugin = (
 export const useExtendsPagePlugin = (
   app: App,
   themeData: ThemeData,
-  legacy = true
+  behavior: HopeThemeBehaviorOptions
 ): void => {
-  app.use(extendsPagePlugin(themeData, legacy));
+  app.use(extendsPagePlugin(themeData, behavior));
 };

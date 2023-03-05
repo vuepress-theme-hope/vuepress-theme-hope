@@ -2,7 +2,6 @@ import { type ThemeFunction } from "@vuepress/core";
 import { isPlainObject } from "@vuepress/shared";
 import { watch } from "chokidar";
 
-import { getAlias } from "./alias.js";
 import { extendsBundlerOptions } from "./bundler.js";
 import { checkUserPlugin, vuePressVersionCheck } from "./check/index.js";
 import { checkLegacyStyle, convertThemeOptions } from "./compact/index.js";
@@ -14,8 +13,8 @@ import {
 import { addFavicon } from "./init/index.js";
 import { getPluginConfig, usePlugin } from "./plugins/index.js";
 import {
-  prepareConfigFile,
   prepareHighLighterScss,
+  preparePerformanceConfigFile,
   prepareSidebarData,
   prepareSocialMediaIcons,
   prepareThemeColorScss,
@@ -28,7 +27,7 @@ export const hopeTheme =
   (
     options: ThemeOptions,
     // TODO: Change default value in v2 stable
-    behavior: HopeThemeBehaviorOptions | boolean = true
+    behavior: HopeThemeBehaviorOptions | boolean = false
   ): ThemeFunction =>
   (app) => {
     const behaviorOptions = isPlainObject(behavior)
@@ -56,7 +55,7 @@ export const hopeTheme =
 
     vuePressVersionCheck(app);
 
-    const status = getStatus(app, themeOptions);
+    const status = getStatus(app, options);
     const themeData = getThemeData(app, themeOptions, status);
     const icons = status.enableBlog ? checkSocialMediaIcons(themeData) : {};
 
@@ -66,8 +65,6 @@ export const hopeTheme =
 
     return {
       name: "vuepress-theme-hope",
-
-      alias: getAlias(isDebug),
 
       define: () => ({
         BLOG_TYPE_INFO: status.blogType,
@@ -133,6 +130,10 @@ export const hopeTheme =
 
       templateBuild: `${TEMPLATE_FOLDER}index.build.html`,
 
-      clientConfigFile: (app) => prepareConfigFile(app, status),
+      clientConfigFile: (app) => preparePerformanceConfigFile(app, status),
     };
   };
+
+export * from "../node/helpers.js";
+export * from "../node/locales/index.js";
+export * from "../shared/index.js";

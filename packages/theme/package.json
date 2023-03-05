@@ -29,6 +29,10 @@
   "type": "module",
   "exports": {
     ".": "./lib/node/index.js",
+    "./perf": {
+      "types": "./lib/node/perf.d.ts",
+      "default": "./lib/node/perf.js"
+    },
     "./client": "./lib/client/index.js",
     "./client/*": "./lib/client/*",
     "./components/*": "./lib/client/components/*",
@@ -54,8 +58,9 @@
     "templates"
   ],
   "scripts": {
-    "build": "pnpm build:rollup && pnpm build:ts && pnpm copy",
+    "build": "pnpm build:rollup && pnpm build:gulp && pnpm build:ts && pnpm copy",
     "build:rollup": "rollup -c rollup.config.ts --configPlugin esbuild",
+    "build:gulp": "gulp -f gulpfile.cjs",
     "build:ts": "tsc -b tsconfig.release.json",
     "clean": "rimraf ./lib ./*.tsbuildinfo",
     "copy": "cpx \"src/client/**/*.{css,scss,jpg,vue}\" lib/client",

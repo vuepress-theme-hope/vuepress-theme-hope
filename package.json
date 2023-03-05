@@ -43,6 +43,7 @@
   "devDependencies": {
     "@commitlint/cli": "17.4.4",
     "@commitlint/config-conventional": "17.4.4",
+    "@rollup/plugin-alias": "4.0.3",
     "@rollup/plugin-commonjs": "24.0.1",
     "@rollup/plugin-node-resolve": "15.0.1",
     "@rollup/plugin-replace": "5.0.2",
@@ -66,6 +67,7 @@
     "eslint-plugin-prettier": "4.2.1",
     "eslint-plugin-vue": "9.9.0",
     "execa": "7.0.0",
+    "gulp": "4.0.2",
     "http-server": "14.1.1",
     "husky": "8.0.3",
     "inquirer": "9.1.4",
@@ -83,6 +85,7 @@
     "sort-package-json": "2.4.1",
     "stylelint": "15.2.0",
     "stylelint-config-hope": "2.0.1",
+    "through2": "4.0.2",
     "tslib": "2.5.0",
     "tsx": "3.12.3",
     "typescript": "4.9.5",
@@ -95,6 +98,15 @@
     "pnpm": ">=7"
   },
   "pnpm": {
+    "overrides": {
+      "cacache": "^17.0.4",
+      "chokidar": "^3.5.3",
+      "css": "npm:@adobe/css-tools@^4.0.1",
+      "glob-stream": "^7.0.0",
+      "glob-parent": "^6.0.2",
+      "micromatch": "^4.0.5",
+      "yargs-parser": "^21.1.1"
+    },
     "peerDependencyRules": {
       "ignoreMissing": [
         "@algolia/client-search",

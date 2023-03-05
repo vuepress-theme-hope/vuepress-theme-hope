@@ -10,7 +10,7 @@ import { VERSION } from "../utils.js";
  */
 export const getCommentPlugin = (
   options?: Partial<CommentOptions> | false,
-  legacy = true
+  legacy = false
 ): PluginObject | null => {
   if (options === false || !options?.provider) return null;
 
