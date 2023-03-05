@@ -26,7 +26,9 @@ export const generateWorker = async (
     workerFilePath,
     workerFileContent.replace(
       "SEARCH_PRO_INDEX",
-      `"${shouldMinify ? utoa(searchIndexContent) : searchIndexContent}"`
+      `${JSON.stringify(
+        shouldMinify ? utoa(searchIndexContent) : searchIndexContent
+      )}`
     )
   );
 };

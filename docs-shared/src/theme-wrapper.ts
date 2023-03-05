@@ -53,6 +53,7 @@ export const theme = (
         repoId: "R_kgDOG_Pt2A",
         category: "Announcements",
         categoryId: "DIC_kwDOG_Pt2M4COD69",
+        mapping: "url",
       },
 
       components: IS_NETLIFY

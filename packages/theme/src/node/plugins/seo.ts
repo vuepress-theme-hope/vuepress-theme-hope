@@ -14,7 +14,7 @@ export const getSEOPlugin = (
   themeData: ThemeData,
   { seo }: PluginsOptions,
   hostname = "",
-  legacy = true
+  legacy = false
 ): Plugin | null => {
   if (seo === false) return null;
   const seoOptions = isPlainObject(seo) ? seo : {};
