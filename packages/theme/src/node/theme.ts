@@ -56,7 +56,7 @@ export const hopeTheme =
 
     vuePressVersionCheck(app);
 
-    const status = getStatus(app, themeOptions);
+    const status = getStatus(app, options);
     const themeData = getThemeData(app, themeOptions, status);
     const icons = status.enableBlog ? checkSocialMediaIcons(themeData) : {};
 
