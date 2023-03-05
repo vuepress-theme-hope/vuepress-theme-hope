@@ -11,7 +11,7 @@ import {
  */
 export const getMdEnhancePlugin = (
   options?: Partial<MarkdownEnhanceOptions> | false,
-  legacy = true
+  legacy = false
 ): Plugin | null => {
   if (options === false) return null;
 

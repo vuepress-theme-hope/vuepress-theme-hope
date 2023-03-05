@@ -7,6 +7,7 @@ import { useGitPlugin } from "./git.js";
 import { useExtendsPagePlugin } from "./pageConverter.js";
 import { usePrismPlugin } from "./prism.js";
 import { type PluginsOptions, type ThemeData } from "../../shared/index.js";
+import { type HopeThemeBehaviorOptions } from "../typings/index.js";
 import { TEMPLATE_FOLDER } from "../utils.js";
 
 /**
@@ -19,7 +20,7 @@ export const usePlugin = (
   themeData: ThemeData,
   plugins: PluginsOptions,
   hotReload: boolean,
-  legacy = false
+  behavior: HopeThemeBehaviorOptions
 ): void => {
   // respect git options
   if ("git" in plugins)
@@ -61,5 +62,5 @@ export const usePlugin = (
     style: ".vuepress/styles/index.scss",
   });
 
-  useExtendsPagePlugin(app, themeData, legacy);
+  useExtendsPagePlugin(app, themeData, behavior);
 };

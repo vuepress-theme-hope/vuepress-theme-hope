@@ -1,5 +1,5 @@
 import { type ThemeFunction } from "@vuepress/core";
-import { isLinkHttp } from "@vuepress/shared";
+import { isPlainObject } from "@vuepress/shared";
 import { watch } from "chokidar";
 
 import { getAlias } from "./alias.js";
@@ -11,6 +11,7 @@ import {
   getStatus,
   getThemeData,
 } from "./config/index.js";
+import { addFavicon } from "./init/index.js";
 import { getPluginConfig, usePlugin } from "./plugins/index.js";
 import {
   prepareConfigFile,
@@ -19,17 +20,24 @@ import {
   prepareSocialMediaIcons,
   prepareThemeColorScss,
 } from "./prepare/index.js";
+import { type HopeThemeBehaviorOptions } from "./typings/index.js";
 import { TEMPLATE_FOLDER } from "./utils.js";
 import { type ThemeOptions } from "../shared/index.js";
 
 export const hopeTheme =
   (
     options: ThemeOptions,
-    // TODO: Remove this in v2 stable
-    legacy = true
+    // TODO: Change default value in v2 stable
+    behavior: HopeThemeBehaviorOptions | boolean = true
   ): ThemeFunction =>
   (app) => {
-    const { isDebug } = app.env;
+    const behaviorOptions = isPlainObject(behavior)
+      ? behavior
+      : behavior
+      ? { compact: true, check: true }
+      : {};
+    const isDebug = behaviorOptions.debug ? (app.env.isDebug = true) : false;
+
     const {
       favicon,
       hotReload = isDebug,
@@ -40,19 +48,19 @@ export const hopeTheme =
       backToTop,
       sidebarSorter,
       ...themeOptions
-    } = legacy
+    } = behaviorOptions.compact
       ? convertThemeOptions(options as ThemeOptions & Record<string, unknown>)
       : options;
 
-    if (legacy) checkLegacyStyle(app);
+    if (behaviorOptions.compact) checkLegacyStyle(app);
 
     vuePressVersionCheck(app);
 
-    const status = getStatus(app, options);
+    const status = getStatus(app, themeOptions);
     const themeData = getThemeData(app, themeOptions, status);
     const icons = status.enableBlog ? checkSocialMediaIcons(themeData) : {};
 
-    usePlugin(app, themeData, plugins, hotReload, legacy);
+    usePlugin(app, themeData, plugins, hotReload, behaviorOptions);
 
     if (isDebug) console.log("Theme plugin options:", plugins);
 
@@ -72,27 +80,8 @@ export const hopeTheme =
       extendsBundlerOptions,
 
       onInitialized: (app): void => {
-        if (favicon) {
-          const { base, head } = app.options;
-          const faviconLink = isLinkHttp(favicon)
-            ? favicon
-            : favicon.replace(/^\/?/, base);
-
-          // ensure favicon is not injected
-          if (
-            head.every(
-              ([tag, attrs]) =>
-                !(
-                  tag === "link" &&
-                  attrs["rel"] === "icon" &&
-                  attrs["href"] === faviconLink
-                )
-            )
-          )
-            head.push(["link", { rel: "icon", href: faviconLink }]);
-        }
-
-        checkUserPlugin(app);
+        if (favicon) addFavicon(app, favicon);
+        if (behaviorOptions.check) checkUserPlugin(app);
       },
 
       onPrepared: (app): Promise<void> =>
@@ -139,7 +128,7 @@ export const hopeTheme =
           iconPrefix,
           favicon,
         },
-        legacy
+        behaviorOptions.compact
       ),
 
       templateBuild: `${TEMPLATE_FOLDER}index.build.html`,

@@ -11,7 +11,7 @@ import { keys } from "vuepress-shared/node";
 export const getSitemapPlugin = (
   options?: Omit<SitemapOptions, "hostname"> | boolean,
   hostname?: string,
-  legacy = true
+  legacy = false
 ): Plugin | null => {
   if (options === false) return null;
 
