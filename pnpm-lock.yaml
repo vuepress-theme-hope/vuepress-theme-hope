@@ -64,8 +64,8 @@ importers:
         specifier: 7.0.3
         version: 7.0.3
       cz-git:
-        specifier: 1.5.2
-        version: 1.5.2
+        specifier: 1.5.3
+        version: 1.5.3
       esbuild:
         specifier: 0.17.11
         version: 0.17.11
@@ -6893,8 +6893,8 @@ packages:
       - '@swc/wasm'
     dev: true
 
-  /cz-git@1.5.2:
-    resolution: {integrity: sha512-9B32lAt9f/JxprQyDVnfhg4cAHbpOYHtMuceH+FbkLQTN1UpS4KfbkFBOl86V7MXZfioI6gewPSw34wXioL2bA==}
+  /cz-git@1.5.3:
+    resolution: {integrity: sha512-AToFbLeqhPU/fNM6gH8dX4c5pIIFzHTUhS1FkDaNjsCylrjYPYAMyRUczn4eeAcxtqy1bctIQDOEOwPRTnUs5A==}
     dev: true
 
   /d3-array@3.2.2:
