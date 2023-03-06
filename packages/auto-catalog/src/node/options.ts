@@ -8,28 +8,6 @@ import { type AutoCatalogLocaleData } from "../shared/index.js";
 
 export interface AutoCatalogOptions {
   /**
-   * Exclude paths from being generated
-   *
-   * 排除需要生成的路径
-   *
-   * @default []
-   */
-  exclude?: (RegExp | string)[];
-
-  /**
-   * Frontmatter of the generated page
-   *
-   * @param path path to be generated
-   * @returns title of the generated page
-   *
-   * 页面 Frontmatter 获取器
-   *
-   * @param path 当前生成的路径名称
-   * @returns 页面 Frontmatter
-   */
-  frontmatter?: (path: string) => PageFrontmatter;
-
-  /**
    * The max level of the generated catalog
    *
    * @description Available with built-in component, only support 1,2,3
@@ -52,11 +30,33 @@ export interface AutoCatalogOptions {
   index?: boolean;
 
   /**
+   * Frontmatter of the generated page
+   *
+   * @param path path to be generated
+   * @returns title of the generated page
+   *
+   * 页面 Frontmatter 获取器
+   *
+   * @param path 当前生成的路径名称
+   * @returns 页面 Frontmatter
+   */
+  frontmatter?: (path: string) => PageFrontmatter;
+
+  /**
+   * Exclude paths from being generated
+   *
+   * 排除需要生成的路径
+   *
+   * @default []
+   */
+  exclude?: (RegExp | string)[];
+
+  /**
    * Page title getter
    *
    * 页面标题获取器
    */
-  getTitle?: <
+  titleGetter?: <
     ExtraPageData extends Record<string | number | symbol, unknown> = Record<
       never,
       never
@@ -83,7 +83,7 @@ export interface AutoCatalogOptions {
    *
    * 页面图标获取器
    */
-  getIcon?: <
+  iconGetter?: <
     ExtraPageData extends Record<string | number | symbol, unknown> = Record<
       never,
       never
@@ -119,7 +119,7 @@ export interface AutoCatalogOptions {
    *
    * 页面顺序获取器
    */
-  getOrder?: <
+  orderGetter?: <
     ExtraPageData extends Record<string | number | symbol, unknown> = Record<
       never,
       never
@@ -150,7 +150,7 @@ export interface AutoCatalogOptions {
    *
    * @description 返回一个布尔值，用于指示页面是否应该包含在目录中
    */
-  getIndex?: <
+  shouldIndex?: <
     ExtraPageData extends Record<string | number | symbol, unknown> = Record<
       never,
       never

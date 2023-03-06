@@ -1,5 +1,5 @@
 import { usePageData, useSiteData } from "@vuepress/client";
-import { type PropType, type VNode, computed, defineComponent, h } from "vue";
+import { type VNode, computed, defineComponent, h } from "vue";
 import { type RouteMeta, RouterLink, useRouter } from "vue-router";
 import {
   endsWith,
@@ -21,10 +21,6 @@ declare const AUTO_CATALOG_INDEX_META_KEY: string;
 export interface AutoCatalogProps {
   base?: string;
   level?: 1 | 2 | 3;
-  titleGetter?: (meta: RouteMeta) => string;
-  iconGetter?: (meta: RouteMeta) => string | null | undefined;
-  orderGetter?: (meta: RouteMeta) => number | null | undefined;
-  shouldIndex?: (meta: RouteMeta) => boolean;
 }
 
 interface CatalogInfo {
@@ -75,57 +71,6 @@ export default defineComponent({
      * 目录是否显示索引
      */
     index: Boolean,
-
-    /**
-     * Page title getter
-     *
-     * 页面标题获取器
-     */
-    titleGetter: {
-      type: Function as PropType<(meta: RouteMeta) => string>,
-
-      default: (meta: RouteMeta) => meta[AUTO_CATALOG_TITLE_META_KEY] || "",
-    },
-
-    /**
-     * Page icon getter
-     *
-     * 页面图标获取器
-     */
-    iconGetter: {
-      type: Function as PropType<
-        (meta: RouteMeta) => string | null | undefined
-      >,
-
-      default: (meta: RouteMeta) => meta[AUTO_CATALOG_ICON_META_KEY],
-    },
-
-    /**
-     * Page order getter
-     *
-     * 页面排序获取器
-     */
-    orderGetter: {
-      type: Function as PropType<
-        (meta: RouteMeta) => number | null | undefined
-      >,
-
-      default: (meta: RouteMeta) => meta[AUTO_CATALOG_ORDER_META_KEY] || 0,
-    },
-
-    /**
-     * Whether page should be indexed
-     *
-     * 页面是否应该被索引
-     */
-    shouldIndex: {
-      type: Function as PropType<(meta: RouteMeta) => boolean>,
-      default: (meta: RouteMeta) => {
-        const index = meta[AUTO_CATALOG_INDEX_META_KEY];
-
-        return index === undefined || index;
-      },
-    },
   },
 
   setup(props, { slots }) {
@@ -133,6 +78,12 @@ export default defineComponent({
     const page = usePageData();
     const router = useRouter();
     const siteData = useSiteData();
+
+    const shouldIndex = (meta: RouteMeta): boolean => {
+      const index = <boolean | undefined>meta[AUTO_CATALOG_INDEX_META_KEY];
+
+      return typeof index === "undefined" || index;
+    };
 
     const getCatalogInfo = (): CatalogInfo[] => {
       const base = props.base || page.value.path.replace(/\/[^/]+$/, "/");
@@ -162,17 +113,19 @@ export default defineComponent({
             ((endsWith(path, ".html") && !endsWith(path, "/index.html")) ||
               endsWith(path, "/")) &&
             // page should be indexed
-            props.shouldIndex(meta)
+            shouldIndex(meta)
           );
         })
         .map(({ path, meta }) => {
           const level = path.substring(base.length).split("/").length;
 
           return {
-            title: props.titleGetter(meta),
-            icon: props.iconGetter(meta),
+            title: <string>meta[AUTO_CATALOG_TITLE_META_KEY] || "",
+            icon: <string | null | undefined>meta[AUTO_CATALOG_ICON_META_KEY],
             base: path.replace(/\/[^/]+\/?$/, "/"),
-            order: props.orderGetter(meta) || null,
+            order:
+              <number | null | undefined>meta[AUTO_CATALOG_ORDER_META_KEY] ||
+              null,
             level: endsWith(path, "/") ? level - 1 : level,
             path,
           };

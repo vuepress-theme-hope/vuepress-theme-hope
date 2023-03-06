@@ -39,6 +39,34 @@ icon: gears
 
 控制页面 Frontmatter。
 
+### titleGetter
+
+- 类型: `(page: Page) => string`
+- 默认值: `(page: Page) => page.title`
+
+页面标题获取器
+
+### iconGetter
+
+- 类型: `(page: Page) => string`
+- 必填: 否
+
+页面图标获取器
+
+### orderGetter
+
+- 类型: `(page: Page) => string`
+- 必填: 否
+
+页面顺序获取器
+
+### shouldIndex
+
+- 类型: `(page: Page) => boolean`
+- 默认值: `() => true`
+
+页面是否应该被索引
+
 ### component
 
 - 类型: `string`
@@ -100,46 +128,35 @@ icon: gears
 
 :::
 
-## AutoCatalog 组件属性
+## AutoCatalog 组件
 
-### base
+### 组件属性
+
+#### base
 
 - 类型: `string`
 - 必填: `当前路由的基础路径`
 
 目录基础路径
 
-### level
+#### level
 
 - 类型: `1 | 2 | 3`
 - 默认值: `3`
 
 Catalog 的最大层级
 
-### titleGetter
+#### index
 
-- 类型: `(meta: RouteMeta) => string`
-- 默认值: `(meta: RouteMeta) => meta["title"]`
+- 类型: `boolean`
+- 默认值: `false`
 
-页面标题获取器
+是否在目录列表中显示索引
 
-### iconGetter
+### 组件插槽
 
-- 类型: `(meta: RouteMeta) => string`
-- 默认值: `(meta: RouteMeta) => meta["icon"]`
+#### icon
 
-页面图标获取器
+- 类型: `({ icon }: { icon: string }) => VNode`
 
-### orderGetter
-
-- 类型: `(meta: RouteMeta) => string`
-- 默认值: `(meta: RouteMeta) => meta["order"]`
-
-页面顺序获取器
-
-### shouldIndex
-
-- 类型: `(meta: RouteMeta) => boolean`
-- 默认值: `(meta: RouteMeta) => meta["index"] !== false`
-
-页面是否应该被索引
+图标插槽，用于为目录渲染图标。
