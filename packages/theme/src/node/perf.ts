@@ -26,7 +26,6 @@ import { type ThemeOptions } from "../shared/index.js";
 export const hopeTheme =
   (
     options: ThemeOptions,
-    // TODO: Change default value in v2 stable
     behavior: HopeThemeBehaviorOptions | boolean = false
   ): ThemeFunction =>
   (app) => {
