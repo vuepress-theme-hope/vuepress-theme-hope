@@ -63,7 +63,7 @@
     "build:gulp": "gulp -f gulpfile.cjs",
     "build:ts": "tsc -b tsconfig.release.json",
     "clean": "rimraf ./lib ./*.tsbuildinfo",
-    "copy": "cpx \"src/client/**/*.{css,scss,jpg,vue}\" lib/client",
+    "copy": "cpx \"src/client/**/*.{css,scss,jpg}\" lib/client && cpx \"src/client/**/*.{css,jpg}\" lib/perf",
     "dev": "concurrently \"pnpm dev:copy\" \"pnpm dev:ts\"",
     "dev:copy": "pnpm copy -w",
     "dev:ts": "tsc -b tsconfig.build.json --watch"

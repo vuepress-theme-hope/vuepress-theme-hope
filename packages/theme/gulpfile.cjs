@@ -17,8 +17,4 @@ const generateSass = () =>
     )
     .pipe(dest("lib/perf"));
 
-const copyCss = () => src("src/client/**/*.css").pipe(dest("lib/perf"));
-
-const generateStyle = parallel(copyCss, generateSass);
-
-exports.default = generateStyle;
+exports.default = generateSass;
