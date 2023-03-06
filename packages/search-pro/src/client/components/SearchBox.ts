@@ -36,11 +36,11 @@ export default defineComponent({
       primaryKey
         ? [
             ...(isMacOS.value
-              ? ["⌘", "⇧", "⌥"]
-              : ["Ctrl", "Shift", "Alt"]
+              ? ["⌃", "⇧", "⌥", "⌘"]
+              : ["Ctrl", "Shift", "Alt", "Win"]
             ).filter(
               (_, index) =>
-                primaryKey[(["ctrl", "shift", "alt"] as const)[index]]
+                primaryKey[(["ctrl", "shift", "alt", "meta"] as const)[index]]
             ),
             primaryKey.key.toUpperCase(),
           ]

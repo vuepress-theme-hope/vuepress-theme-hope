@@ -117,6 +117,13 @@ export default defineUserConfig({
      * @default false
      */
     shift?: boolean;
+
+    /**
+     * Whether to press `event.metaKey` at the same time
+     *
+     * @default false
+     */
+    meta?: boolean;
   }
   ```
 

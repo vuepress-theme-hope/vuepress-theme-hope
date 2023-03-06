@@ -32,4 +32,13 @@ export interface SearchProHotKeyOptions {
    * @default false
    */
   shift?: boolean;
+
+  /**
+   * Whether to press `event.metaKey` at the same time
+   *
+   * 是否同时按下 `event.metaKey`
+   *
+   * @default false
+   */
+  meta?: boolean;
 }
