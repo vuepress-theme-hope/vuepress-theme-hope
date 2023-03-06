@@ -144,11 +144,11 @@ export default defineComponent({
         () => {
           const distance = getScrollTop();
 
-          // at top or scroll up > 40px
-          if (distance <= 58 || lastDistance - 40 < distance)
+          // at top or scroll up
+          if (distance <= 58 || distance < lastDistance)
             hideNavbar.value = false;
-          // scroll down > 40 px and sidebar is not opened
-          else if (lastDistance + 40 < distance && !isMobileSidebarOpen.value)
+          // scroll down > 200px and sidebar is not opened
+          else if (lastDistance + 200 < distance && !isMobileSidebarOpen.value)
             hideNavbar.value = true;
 
           lastDistance = distance;
