@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.190](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.189...v2.0.0-beta.190) (2023-03-07)
+
+### Features
+
+- **auto-catalog:** refine props and update docs ([e0e43f5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e0e43f539f80fcb42257d20fcbed9e8beff3bfab))
+
+### Bug Fixes
+
+- **search-pro:** correctly extract header text ([7c37393](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7c37393b6c6578aa1294c84424054b838a5d13f8))
+- **search-pro:** fix key hint in macOS ([912658b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/912658be3fa307d50d4dd082360deed87aeda8cc))
+- **search-pro:** fix search icon on ios, close [#2879](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2879) ([2f2b6e4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2f2b6e41d0be39bfad02da581138eccd43c14385))
+- **search-pro:** improve cancel button ([818912f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/818912ffa5280200d1aae71d3dd11727ce146203))
+- **theme:** fix auto hide navbar ([817cb74](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/817cb7463d75315e954b4d2efc5d6cdb49f0220e))
+- **theme:** fix fade-slide-y with perf mode ([7ff1407](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7ff1407f03564293b4498402597187e8cdd51cde))
+- **theme:** fix perf ([2c92783](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2c927834b35cf6e4854677037be141bf2461816c))
+
 ## [2.0.0-beta.189](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.188...v2.0.0-beta.189) (2023-03-05)
 
 ### Bug Fixes
