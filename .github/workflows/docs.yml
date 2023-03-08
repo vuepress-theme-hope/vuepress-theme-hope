@@ -10,6 +10,7 @@ jobs:
   deploy-github-pages:
     name: Deploy V2 docs to GitHub pages
     runs-on: ubuntu-latest
+    if: github.repository == 'vuepress-theme-hope/vuepress-theme-hope'
     steps:
       - name: Checkout
         uses: actions/checkout@v3
