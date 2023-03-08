@@ -407,11 +407,13 @@ Also, to place your Markdown files directly besides your actual files, but donâ€
 
 @tab TS
 
-```ts {5}
+```ts {6-7}
 // .vuepress/config.ts
+import { defineConfig } from "vuepress";
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
-export default {
+export default defineConfig({
+  // now any file with `.snippet.md` extension will not be rendered as a page
   pagePatterns: ["**/*.md", "!*.snippet.md", "!.vuepress", "!node_modules"],
 
   plugins: [
@@ -419,16 +421,17 @@ export default {
       include: true,
     }),
   ],
-};
+});
 ```
 
 @tab JS
 
-```js {5}
+```js {5-6}
 // .vuepress/config.js
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
+  // now any file with `.snippet.md` extension will not be rendered as a page
   pagePatterns: ["**/*.md", "!*.snippet.md", "!.vuepress", "!node_modules"],
 
   plugins: [

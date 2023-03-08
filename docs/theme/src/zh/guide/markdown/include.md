@@ -419,14 +419,14 @@ export default {
 
 @tab TS
 
-```ts {6}
+```ts {6-7}
 // .vuepress/config.ts
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default defineUserConfig({
+  // 现在任何带有 `.snippet.md` 扩展名的文件都不会呈现为页面
   pagePatterns: ["**/*.md", "!*.snippet.md", "!.vuepress", "!node_modules"],
-
   theme: hopeTheme({
     plugins: {
       mdEnhance: {
@@ -439,11 +439,12 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {5}
+```js {5-6}
 // .vuepress/config.js
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
+  // 现在任何带有 `.snippet.md` 扩展名的文件都不会呈现为页面
   pagePatterns: ["**/*.md", "!*.snippet.md", "!.vuepress", "!node_modules"],
 
   theme: hopeTheme({
