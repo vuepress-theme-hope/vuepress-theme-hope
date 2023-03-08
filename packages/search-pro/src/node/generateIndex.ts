@@ -1,6 +1,6 @@
 import { type App, type Page } from "@vuepress/core";
 import { isArray } from "@vuepress/shared";
-import { type AnyNode, load } from "cheerio";
+import { type AnyNode, type Element, load } from "cheerio";
 import { fromEntries, keys } from "vuepress-shared/node";
 
 import {
@@ -86,12 +86,31 @@ export const generatePageIndex = (
           result.contents.push(currentHeaderContent);
         }
 
+        const renderHeader = (node: Element): string =>
+          node.children
+            .map((node) => {
+              if (node.type === "tag") {
+                // drop anchor
+                if (
+                  node.name === "a" &&
+                  node.attribs["class"] === "header-anchor"
+                )
+                  return "";
+
+                return renderHeader(node);
+              }
+
+              if (node.type === "text") return node.data;
+
+              return "";
+            })
+            .join(" ")
+            .replace(/\s+/gu, " ")
+            .trim();
+
         // update header
         currentHeaderContent = {
-          header: node.children
-            .map((node) => (node.type === "text" ? node.data : ""))
-            .join("")
-            .trim(),
+          header: renderHeader(node),
           slug: node.attribs["id"],
           contents: [],
         };

@@ -36,7 +36,7 @@ export default [
         "chart.js/auto",
         "echarts",
         "flowchart.ts",
-        "mermaid/dist/mermaid.esm.min.mjs",
+        "mermaid",
         /^reveal\.js/,
       ],
       copy: [

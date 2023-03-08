@@ -19,14 +19,14 @@ export const autoCatalogPlugin =
     const {
       component,
       iconComponent,
-      getIcon,
+      iconGetter,
       iconRouteMetaKey = "i",
-      getIndex,
+      shouldIndex,
       indexRouteMetaKey = "I",
       locales,
-      getOrder,
+      orderGetter,
       orderRouteMetaKey = "O",
-      getTitle,
+      titleGetter = (page): string => page.title,
       titleRouteMetaKey = "title",
     } = options;
 
@@ -51,10 +51,10 @@ export const autoCatalogPlugin =
         if (!component) {
           const data: Record<string, unknown> = {};
 
-          const pageTitle = getTitle?.(page);
-          const pageIcon = getIcon?.(page);
-          const pageIndex = getIndex?.(page) ?? null;
-          const pageOrder = getOrder?.(page) ?? null;
+          const pageTitle = titleGetter?.(page);
+          const pageIcon = iconGetter?.(page);
+          const pageIndex = shouldIndex?.(page) ?? null;
+          const pageOrder = orderGetter?.(page) ?? null;
 
           if (pageTitle) data[titleRouteMetaKey] = pageTitle;
           if (pageIcon) data[iconRouteMetaKey] = pageIcon;

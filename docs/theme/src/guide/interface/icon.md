@@ -26,7 +26,7 @@ We recommend you to use iconify or fontawesome.
 ## Browsing Icons
 
 - Iconify: <https://icon-sets.iconify.design/>
-- Iconfont: <https://www.iconfont.cn/en/>
+- Iconfont: <https://www.iconfont.cn/?lang=en-us>
 - Fontawesome: <https://fontawesome.com/icons>
 
 ::: details Featured Icons with iconfont keyword
@@ -156,7 +156,7 @@ For details, please follow [fontawesome document](https://fontawesome.com/).
 
 ::: info Iconfont
 
-[Iconfont](https://iconfont.cn) is a vector icon management and communication platform created by Alimama MUX.
+[Iconfont](https://www.iconfont.cn/?lang=en-us) is a vector icon management and communication platform created by Alimama MUX.
 
 The designer uploads the icon to the Iconfont platform, and the user can customize the download of icons in a variety of formats. Users can also convert the icon into a font.
 

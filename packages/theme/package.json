@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-hope",
-  "version": "2.0.0-beta.188",
+  "version": "2.0.0-beta.190",
   "description": "A light vuepress theme with tons of features",
   "keywords": [
     "vuepress",
@@ -63,7 +63,7 @@
     "build:gulp": "gulp -f gulpfile.cjs",
     "build:ts": "tsc -b tsconfig.release.json",
     "clean": "rimraf ./lib ./*.tsbuildinfo",
-    "copy": "cpx \"src/client/**/*.{css,scss,jpg,vue}\" lib/client",
+    "copy": "cpx \"src/client/**/*.{css,scss,jpg}\" lib/client && cpx \"src/client/**/*.{css,jpg}\" lib/perf",
     "dev": "concurrently \"pnpm dev:copy\" \"pnpm dev:ts\"",
     "dev:copy": "pnpm copy -w",
     "dev:ts": "tsc -b tsconfig.build.json --watch"

@@ -126,6 +126,9 @@
 
     font-size: 1.25rem;
     line-height: 2.5;
+
+    -webkit-appearance: none;
+    appearance: none;
   }
 
   .close-button {
@@ -136,6 +139,8 @@
     // margin-inline: 0.5rem -0.5rem;
     margin-inline-start: 0.5rem;
     margin-inline-end: -0.5rem;
+    padding: 0.5rem;
+
     color: var(--grey3);
 
     @media (max-width: hope-config.$tablet) {

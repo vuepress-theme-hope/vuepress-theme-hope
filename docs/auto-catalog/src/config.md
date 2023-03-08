@@ -39,6 +39,34 @@ Page paths excluding from auto generation.
 
 Page Frontmatter generator.
 
+### titleGetter
+
+- Type: `(page: Page) => string`
+- Default: `(page: Page) => page.title`
+
+Page title getter
+
+### iconGetter
+
+- Type: `(page: Page) => string`
+- Required: No
+
+Page icon getter
+
+### orderGetter
+
+- Type: `(page: Page) => string`
+- Required: No
+
+Page order getter
+
+### shouldIndex
+
+- Type: `(page: Page) => boolean`
+- Default: `() => true`
+
+Whether page should be indexed getter
+
 ### component
 
 - Type: `string`
@@ -98,46 +126,35 @@ Locales config for catalog component.
 
 :::
 
-## AutoCatalog Component Props
+## AutoCatalog Component
 
-### base
+### Component Props
+
+#### base
 
 - Type: `string`
 - Default: `Current route path base`
 
 Catalog Base
 
-### level
+#### level
 
 - Type: `1 | 2 | 3`
 - Default: `3`
 
 Max level of catalog.
 
-### titleGetter
+#### index
 
-- Type: `(meta: RouteMeta) => string`
-- Default: `(meta: RouteMeta) => meta["title"]`
+- Type: `boolean`
+- Default: `false`
 
-Page title getter
+Whether display index number for catalog.
 
-### iconGetter
+### Component Slots
 
-- Type: `(meta: RouteMeta) => string`
-- Default: `(meta: RouteMeta) => meta["icon"]`
+#### icon
 
-Page icon getter
+- Type: `({ icon }: { icon: string }) => VNode`
 
-### orderGetter
-
-- Type: `(meta: RouteMeta) => string`
-- Default: `(meta: RouteMeta) => meta["order"]`
-
-Page order getter
-
-### shouldIndex
-
-- Type: `(meta: RouteMeta) => boolean`
-- Default: `(meta: RouteMeta) => meta["index"] !== false`
-
-Whether page should be indexed getter
+Icon slot, used to render icon for catalog.

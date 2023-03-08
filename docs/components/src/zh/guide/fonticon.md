@@ -55,7 +55,7 @@ Icon name
 
 你应该将图标相关资源设置为 `componentsOptions.fontIcon.assets`。你需要设置一个 url 或者一组 url，它们是格式为 css 和 js 格式的图标资源。
 
-例如，你可以使用 [iconfont.cn](https://www.iconfont.cn/?lang=zh-cn) 和 [fontawesome](https://fontawesome.com) 来生成你自己的资源
+例如，你可以使用 [iconfont.cn](https://www.iconfont.cn/) 和 [fontawesome](https://fontawesome.com) 来生成你自己的资源
 
 为了便于上手，我们添加了内置关键字 `"iconfont"`、`"iconify"`、`"fontawesome"` 和 `"fontawesome-with-brand` 支持。
 
