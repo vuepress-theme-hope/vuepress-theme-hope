@@ -26,7 +26,7 @@ We recommend you to use iconify or fontawesome.
 ## Browsing Icons
 
 - Iconify: <https://icon-sets.iconify.design/>
-- Iconfont: <https://www.iconfont.cn/en/>
+- Iconfont: <https://www.iconfont.cn/?lang=en-us>
 - Fontawesome: <https://fontawesome.com/icons>
 
 ::: details Featured Icons with iconfont keyword
@@ -154,7 +154,7 @@ For details, please follow [fontawesome document](https://fontawesome.com/).
 
 ### Generate your own iconfont assets
 
-[Iconfont](https://iconfont.cn) — это платформа для управления векторными иконками и коммуникации, созданная Alimama MUX.
+[Iconfont](https://www.iconfont.cn/?lang=en-us) — это платформа для управления векторными иконками и коммуникации, созданная Alimama MUX.
 
 Дизайнер загружает иконку на платформу Iconfont, а пользователь может настроить загрузку иконок в различных форматах. Пользователи также могут преобразовать иконку в шрифт.
 

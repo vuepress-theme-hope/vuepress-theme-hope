@@ -78,7 +78,7 @@ In other cases where you use iconify or your own url, you can manually set this 
 ## Browsing Icons
 
 - Iconify: <https://icon-sets.iconify.design/>
-- Iconfont: <https://www.iconfont.cn/en/>
+- Iconfont: <https://www.iconfont.cn/?lang=en-us>
 - Fontawesome: <https://fontawesome.com/icons>
 
 ::: details Featured Icons with iconfont keyword

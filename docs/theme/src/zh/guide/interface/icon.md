@@ -26,7 +26,7 @@ head:
 ## 浏览图标
 
 - Iconify: <https://icon-sets.iconify.design/>
-- Iconfont: <https://www.iconfont.cn/en/>
+- Iconfont: <https://www.iconfont.cn/>
 - Fontawesome: <https://fontawesome.com/icons>
 
 ::: details iconfont 关键词精选图标
@@ -115,7 +115,7 @@ export default defineUserConfig({
 
 :::
 
-例如，你可以使用 [iconfont.cn](https://www.iconfont.cn/?lang=zh-cn) 和 [fontawesome](https://fontawesome.com) 来生成你自己的资源
+例如，你可以使用 [iconfont.cn](https://www.iconfont.cn/) 和 [fontawesome](https://fontawesome.com) 来生成你自己的资源
 
 为了便于上手，我们添加了内置关键字 `"iconfont"`、`"iconify"`、`"fontawesome"` 和 `"fontawesome-with-brand` 支持。
 
