@@ -81,6 +81,14 @@ blog:
     url: https://zhaobc.site
     repo: https://github.com/FuckDoctors/notes2
     preview: /assets/image/zhaobc.jpg
+    
+  - name: 墨七
+    desc: 简单快乐，理应如此。
+    logo: https://file.mo7.cc/static/lxh_gif/lxh_71.gif
+    url: https://blog.mo7.cc
+    repo: https://github.com/mo7cc/BlogSource.git
+    preview: https://file.mo7.cc/disk/blog_preview.png
+    
 ---
 
 ## Living Demo
