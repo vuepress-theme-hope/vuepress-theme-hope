@@ -9,6 +9,7 @@ on:
 jobs:
   deploy-demo:
     runs-on: ubuntu-latest
+    if: github.repository == 'vuepress-theme-hope/vuepress-theme-hope'
     strategy:
       fail-fast: false
       matrix:
