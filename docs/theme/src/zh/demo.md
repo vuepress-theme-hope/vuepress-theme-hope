@@ -212,7 +212,8 @@ blog:
     logo: https://file.mo7.cc/static/lxh_gif/lxh_71.gif
     url: https://blog.mo7.cc
     repo: https://github.com/mo7cc/BlogSource.git
-    preview: https://file.mo7.cc/api/public/bz?idx=1
+    preview: https://file.mo7.cc/disk/blog_preview.png
+    
 ---
 
 ## 在线案例
