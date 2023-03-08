@@ -17,7 +17,6 @@ export default theme("remove-pwa", {
   plugins: {
     mdEnhance: {
       codetabs: true,
-      container: true,
     },
   },
 });

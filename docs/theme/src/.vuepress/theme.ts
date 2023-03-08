@@ -127,7 +127,6 @@ export default theme("theme", {
       attrs: true,
       chart: true,
       codetabs: true,
-      container: true,
       demo: true,
       echarts: true,
       figure: true,
