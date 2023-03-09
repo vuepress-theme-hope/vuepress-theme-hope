@@ -40,6 +40,8 @@ export const getAlias = (isDebug: boolean): Record<string, string> => {
       .filter<[string, string]>(
         (item): item is [string, string] => item !== null
       ),
+    // define layouts
+    ...getDirAlias("layouts"),
     // define modules
     ...fs
       .readdirSync(path.resolve(CLIENT_FOLDER, "modules"))
@@ -54,6 +56,8 @@ export const getAlias = (isDebug: boolean): Record<string, string> => {
           .filter<[string, string]>(
             (item): item is [string, string] => item !== null
           ),
+        // define layouts
+        ...getDirAlias(`${file}/layouts`),
       ])
       .flat(),
   ]);
