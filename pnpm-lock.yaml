@@ -1407,8 +1407,8 @@ importers:
         specifier: ^1.7.2
         version: 1.7.2
       plyr:
-        specifier: ^3.7.3
-        version: 3.7.3
+        specifier: ^3.7.6
+        version: 3.7.6
       qrcode:
         specifier: ^1.5.1
         version: 1.5.1
@@ -11291,8 +11291,8 @@ packages:
       pathe: 1.1.0
     dev: true
 
-  /plyr@3.7.3:
-    resolution: {integrity: sha512-ORULENBvEvvzMYXRQBALDmEi8P+wZt1Hr/NvHqchu/t7E2xJKNkRYWx0qCA1HETIGZ6zobrOVgqeAUqWimS7fQ==}
+  /plyr@3.7.6:
+    resolution: {integrity: sha512-pHYiB+AT9E++Qr6YcFsj+iR5y+PsBJUQainH1YumVyOaEgGb+50X72xBoF1izT0jTP8q3gjcwcsc5pMyZZ648A==}
     dependencies:
       core-js: 3.29.0
       custom-event-polyfill: 1.0.7
