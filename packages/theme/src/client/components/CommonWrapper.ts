@@ -6,7 +6,7 @@ import {
   useToggle,
 } from "@vueuse/core";
 import {
-  type DefineComponent,
+  type ComponentOptions,
   Transition,
   type VNode,
   computed,
@@ -181,7 +181,7 @@ export default defineComponent({
     return (): VNode =>
       h(
         hasGlobalComponent("GlobalEncrypt")
-          ? <DefineComponent>resolveComponent("GlobalEncrypt")
+          ? <ComponentOptions>resolveComponent("GlobalEncrypt")
           : RenderDefault,
         () =>
           h(
