@@ -2,7 +2,7 @@ import { defineClientConfig } from "@vuepress/client";
 
 import SearchBox from "./components/SearchBox.js";
 import SearchModal from "./components/SearchModal.js";
-import { setupSearchModal } from "./composables/setup.js";
+import { setupSearchModal } from "./composables/index.js";
 
 export default defineClientConfig({
   enhance({ app }) {

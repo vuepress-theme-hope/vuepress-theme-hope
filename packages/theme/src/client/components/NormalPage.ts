@@ -1,6 +1,6 @@
 import { usePageFrontmatter } from "@vuepress/client";
 import {
-  type DefineComponent,
+  type ComponentOptions,
   type VNode,
   computed,
   defineComponent,
@@ -42,7 +42,7 @@ export default defineComponent({
         { class: "page", id: "main-content" },
         h(
           hasGlobalComponent("LocalEncrypt")
-            ? <DefineComponent>resolveComponent("LocalEncrypt")
+            ? <ComponentOptions>resolveComponent("LocalEncrypt")
             : RenderDefault,
           () => [
             slots["top"]?.(),
