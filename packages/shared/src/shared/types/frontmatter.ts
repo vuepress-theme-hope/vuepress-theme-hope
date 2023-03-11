@@ -22,7 +22,7 @@ export interface BasePageFrontMatter extends PageFrontmatter {
    *
    * 写作日期
    */
-  date?: Date;
+  date?: Date | string;
 
   /**
    * Page Category(ies)

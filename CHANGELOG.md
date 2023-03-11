@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.191](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.190...v2.0.0-beta.191) (2023-03-10)
+
 ## [2.0.0-beta.190](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.189...v2.0.0-beta.190) (2023-03-07)
 
 ### Features

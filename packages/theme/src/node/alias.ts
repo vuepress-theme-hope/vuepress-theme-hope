@@ -3,28 +3,33 @@ import { endsWith, fromEntries } from "vuepress-shared/node";
 
 import { CLIENT_FOLDER } from "./utils.js";
 
-const getDirAlias = (dir: string): [string, string][] =>
-  fs
-    .readdirSync(path.resolve(CLIENT_FOLDER, dir))
-    .filter(
-      (file) =>
-        // js files
-        endsWith(file, ".js") ||
-        // folder
-        !file.includes(".")
-    )
-    .map<[string, string]>((file) => [
-      `@theme-hope/${dir}/${file.replace(/\.js$/, "")}`,
-      path.resolve(CLIENT_FOLDER, dir, file),
-    ]);
+const getDirAlias = (dir: string): [string, string][] => {
+  const dirPath = path.resolve(CLIENT_FOLDER, dir);
 
-const getEntryAlias = (entry: string): [string, string] | null =>
-  fs.existsSync(path.resolve(CLIENT_FOLDER, entry, "index.js"))
-    ? [
-        `@theme-hope/${entry}/index`,
-        path.resolve(CLIENT_FOLDER, entry, "index.js"),
-      ]
+  return fs.existsSync(dirPath)
+    ? fs
+        .readdirSync(dirPath)
+        .filter(
+          (file) =>
+            // js files
+            endsWith(file, ".js") ||
+            // folder
+            !file.includes(".")
+        )
+        .map<[string, string]>((file) => [
+          `@theme-hope/${dir}/${file.replace(/\.js$/, "")}`,
+          path.resolve(CLIENT_FOLDER, dir, file),
+        ])
+    : [];
+};
+
+const getEntryAlias = (entry: string): [string, string] | null => {
+  const entryPath = path.resolve(CLIENT_FOLDER, entry, "index.js");
+
+  return fs.existsSync(entryPath)
+    ? [`@theme-hope/${entry}/index`, entryPath]
     : null;
+};
 
 /**
  * @private
@@ -40,6 +45,8 @@ export const getAlias = (isDebug: boolean): Record<string, string> => {
       .filter<[string, string]>(
         (item): item is [string, string] => item !== null
       ),
+    // define layouts
+    ...getDirAlias("layouts"),
     // define modules
     ...fs
       .readdirSync(path.resolve(CLIENT_FOLDER, "modules"))
@@ -54,6 +61,8 @@ export const getAlias = (isDebug: boolean): Record<string, string> => {
           .filter<[string, string]>(
             (item): item is [string, string] => item !== null
           ),
+        // define layouts
+        ...getDirAlias(`${file}/layouts`),
       ])
       .flat(),
   ]);
