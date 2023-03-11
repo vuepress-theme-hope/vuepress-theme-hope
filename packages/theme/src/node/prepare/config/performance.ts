@@ -1,7 +1,11 @@
+import { createRequire } from "node:module";
+
 import { type App } from "@vuepress/core";
 
 import { type ThemeStatus } from "../../config/index.js";
 import { PERF_FOLDER } from "../../utils.js";
+
+const require = createRequire(import.meta.url);
 
 /**
  * @private
@@ -17,12 +21,7 @@ export const preparePerformanceConfigFile = (
 
   if (enableBlog) {
     imports.push(
-      `import BloggerInfo from "${PERF_FOLDER}modules/blog/components/BloggerInfo";`,
-      `import { setupBlog } from "${PERF_FOLDER}modules/blog/composables/index";`,
-      `import BlogCategory from "${PERF_FOLDER}modules/blog/layouts/BlogCategory.js";`,
-      `import BlogHome from "${PERF_FOLDER}modules/blog/layouts/BlogHome.js";`,
-      `import BlogType from "${PERF_FOLDER}modules/blog/layouts/BlogType.js";`,
-      `import Timeline from "${PERF_FOLDER}modules/blog/layouts/Timeline.js";`,
+      `import { BlogCategory, BlogHome, BlogType, BloggerInfo, Timeline, setupBlog } from "${PERF_FOLDER}modules/blog/export";`,
       `import "${PERF_FOLDER}modules/blog/styles/all.scss";`
     );
 
@@ -35,8 +34,7 @@ export const preparePerformanceConfigFile = (
 
   if (enableEncrypt) {
     imports.push(
-      `import GlobalEncrypt from "${PERF_FOLDER}modules/encrypt/components/GlobalEncrypt";`,
-      `import LocalEncrypt from "${PERF_FOLDER}modules/encrypt/components/LocalEncrypt";`,
+      `import { GlobalEncrypt, LocalEncrypt } from "${PERF_FOLDER}modules/encrypt/export";`,
       `import "${PERF_FOLDER}modules/encrypt/styles/all.scss"`
     );
 
@@ -47,21 +45,20 @@ export const preparePerformanceConfigFile = (
   }
 
   if (enableSlide) {
-    imports.push(`import Slide from "${PERF_FOLDER}layouts/Slide.js";`);
+    imports.push(
+      `import Slide from "${require.resolve(
+        "vuepress-plugin-md-enhance/SlidePage"
+      )}";`
+    );
     layouts.push("Slide,");
   }
 
   return app.writeTemp(
     `theme-hope/config.js`,
-    `import { defineClientConfig } from "@vuepress/client";
+    `\
+import { defineClientConfig } from "@vuepress/client";
 
-import HopeIcon from "${PERF_FOLDER}components/HopeIcon";
-import Layout from "${PERF_FOLDER}layouts/Layout.js";
-import NotFound from "${PERF_FOLDER}layouts/NotFound.js";
-
-import { useScrollPromise } from "${PERF_FOLDER}composables/index";
-import { injectDarkmode, setupDarkmode } from "${PERF_FOLDER}modules/outlook/composables/index";
-import { setupSidebarItems } from "${PERF_FOLDER}modules/sidebar/composables/index";
+import { HopeIcon, Layout, NotFound, useScrollPromise, injectDarkmode, setupDarkmode, setupSidebarItems } from "${PERF_FOLDER}export.js";
 
 import "${PERF_FOLDER}styles/all.scss";
 

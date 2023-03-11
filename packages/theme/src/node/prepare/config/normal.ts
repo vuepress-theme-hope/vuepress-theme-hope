@@ -1,7 +1,11 @@
+import { createRequire } from "node:module";
+
 import { type App } from "@vuepress/core";
 
 import { type ThemeStatus } from "../../config/index.js";
 import { CLIENT_FOLDER } from "../../utils.js";
+
+const require = createRequire(import.meta.url);
 
 /**
  * @private
@@ -17,12 +21,7 @@ export const prepareConfigFile = (
 
   if (enableBlog) {
     imports.push(
-      `import BloggerInfo from "@theme-hope/modules/blog/components/BloggerInfo";`,
-      `import { setupBlog } from "@theme-hope/modules/blog/composables/index";`,
-      `import BlogCategory from "${CLIENT_FOLDER}modules/blog/layouts/BlogCategory.js";`,
-      `import BlogHome from "${CLIENT_FOLDER}modules/blog/layouts/BlogHome.js";`,
-      `import BlogType from "${CLIENT_FOLDER}modules/blog/layouts/BlogType.js";`,
-      `import Timeline from "${CLIENT_FOLDER}modules/blog/layouts/Timeline.js";`,
+      `import { BlogCategory, BlogHome, BlogType, BloggerInfo, Timeline, setupBlog } from "${CLIENT_FOLDER}modules/blog/export.js";`,
       `import "${CLIENT_FOLDER}modules/blog/styles/layout.scss";`
     );
 
@@ -35,8 +34,7 @@ export const prepareConfigFile = (
 
   if (enableEncrypt) {
     imports.push(
-      `import GlobalEncrypt from "@theme-hope/modules/encrypt/components/GlobalEncrypt";`,
-      `import LocalEncrypt from "@theme-hope/modules/encrypt/components/LocalEncrypt";`
+      `import { GlobalEncrypt, LocalEncrypt } from "${CLIENT_FOLDER}modules/encrypt/export.js";`
     );
     enhances.push(
       `app.component("GlobalEncrypt", GlobalEncrypt);`,
@@ -45,21 +43,20 @@ export const prepareConfigFile = (
   }
 
   if (enableSlide) {
-    imports.push(`import Slide from "${CLIENT_FOLDER}layouts/Slide.js";`);
+    imports.push(
+      `import Slide from "${require.resolve(
+        "vuepress-plugin-md-enhance/SlidePage"
+      )}";`
+    );
     layouts.push("Slide,");
   }
 
   return app.writeTemp(
     `theme-hope/config.js`,
-    `import { defineClientConfig } from "@vuepress/client";
+    `\
+import { defineClientConfig } from "@vuepress/client";
 
-import HopeIcon from "@theme-hope/components/HopeIcon";
-import Layout from "${CLIENT_FOLDER}layouts/Layout.js";
-import NotFound from "${CLIENT_FOLDER}layouts/NotFound.js";
-
-import { useScrollPromise } from "@theme-hope/composables/index";
-import { injectDarkmode, setupDarkmode } from "@theme-hope/modules/outlook/composables/index";
-import { setupSidebarItems } from "@theme-hope/modules/sidebar/composables/index";
+import { HopeIcon, Layout, NotFound, useScrollPromise, injectDarkmode, setupDarkmode, setupSidebarItems } from "${CLIENT_FOLDER}export.js";
 
 import "${CLIENT_FOLDER}styles/index.scss";
 
