@@ -99,7 +99,10 @@ export default defineComponent({
     onMounted(() => {
       watch(
         () => [enableComment.value, page.value.path],
-        () => initArtalk(),
+        async () => {
+          artalk?.destroy();
+          await initArtalk();
+        },
         { immediate: true }
       );
 
