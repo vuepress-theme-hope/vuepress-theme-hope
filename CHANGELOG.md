@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.192](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.190...v2.0.0-beta.192) (2023-03-11)
+
+### Features
+
+- **theme:** improve performance mode ([45514be](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/45514be38b04d83d2e4bf06d46653f79f81048d1))
+
 ## [2.0.0-beta.190](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.189...v2.0.0-beta.190) (2023-03-07)
 
 ### Features
