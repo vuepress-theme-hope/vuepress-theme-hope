@@ -59,7 +59,7 @@
     "concurrently": "7.6.0",
     "cpx2": "4.2.2",
     "cross-env": "7.0.3",
-    "cz-git": "1.5.3",
+    "cz-git": "1.6.0",
     "esbuild": "0.17.11",
     "eslint": "8.36.0",
     "eslint-config-prettier": "8.7.0",
