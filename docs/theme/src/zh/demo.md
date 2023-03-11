@@ -206,6 +206,13 @@ blog:
     url: https://liubing.me/
     repo: https://github.com/liub1934/liubing.me
     preview: /assets/image/bing.jpg
+
+  - name: 墨七
+    desc: 简单快乐，理应如此。
+    logo: https://file.mo7.cc/static/lxh_gif/lxh_71.gif
+    url: https://blog.mo7.cc
+    repo: https://github.com/mo7cc/BlogSource.git
+    preview: https://file.mo7.cc/disk/blog_preview.png
 ---
 
 ## 在线案例
