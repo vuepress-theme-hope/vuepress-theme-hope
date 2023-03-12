@@ -114,23 +114,27 @@ export default defineComponent({
       );
     });
 
-    const config = computed<GiscusProps>(() => ({
-      repo,
-      repoId,
-      category,
-      categoryId,
-      lang: giscusLang.value,
-      theme: props.darkmode
-        ? giscusOptions.darkTheme || "dark"
-        : giscusOptions.lightTheme || "light",
-      mapping: giscusOptions.mapping || "pathname",
-      term: withBase(page.value.path),
-      inputPosition: giscusOptions.inputPosition || "top",
-      reactionsEnabled: giscusOptions.reactionsEnabled === false ? "0" : "1",
-      strict: giscusOptions.strict === false ? "0" : "1",
-      loading: giscusOptions.lazyLoading === false ? "eager" : "lazy",
-      emitMetadata: "0",
-    }));
+    const config = computed(
+      () =>
+        <GiscusProps>{
+          repo,
+          repoId,
+          category,
+          categoryId,
+          lang: giscusLang.value,
+          theme: props.darkmode
+            ? giscusOptions.darkTheme || "dark"
+            : giscusOptions.lightTheme || "light",
+          mapping: giscusOptions.mapping || "pathname",
+          term: withBase(page.value.path),
+          inputPosition: giscusOptions.inputPosition || "top",
+          reactionsEnabled:
+            giscusOptions.reactionsEnabled === false ? "0" : "1",
+          strict: giscusOptions.strict === false ? "0" : "1",
+          loading: giscusOptions.lazyLoading === false ? "eager" : "lazy",
+          emitMetadata: "0",
+        }
+    );
 
     onMounted(async () => {
       await import(/* webpackChunkName: "giscus" */ "giscus");

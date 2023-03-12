@@ -23,7 +23,7 @@ import OutlookButton from "@theme-hope/modules/outlook/components/OutlookButton"
 
 import {
   type NavbarComponent,
-  type NavbarLocaleOptions,
+  type NavbarLayoutOptions,
 } from "../../../../shared/index.js";
 
 import "../styles/navbar.scss";
@@ -50,11 +50,10 @@ export default defineComponent({
       );
     });
 
-    const navbarLayout = computed<
-      Exclude<NavbarLocaleOptions["navbarLayout"], undefined>
-    >(
+    const navbarLayout = computed(
       () =>
-        themeLocale.value.navbarLayout || {
+        themeLocale.value.navbarLayout ||
+        <NavbarLayoutOptions>{
           start: ["Brand"],
           center: ["Links"],
           end: ["Language", "Repo", "Outlook", "Search"],

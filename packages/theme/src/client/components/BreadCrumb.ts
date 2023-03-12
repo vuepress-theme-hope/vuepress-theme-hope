@@ -44,14 +44,13 @@ export default defineComponent({
 
     const config = ref<BreadCrumbConfig[]>([]);
 
-    const enable = computed<boolean>(() => {
-      return (
+    const enable = computed(
+      () =>
         (frontmatter.value.breadcrumb ||
           (frontmatter.value.breadcrumb !== false &&
             themeLocale.value.breadcrumb !== false)) &&
         config.value.length > 1
-      );
-    });
+    );
 
     const iconEnable = computed(
       () =>

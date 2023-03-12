@@ -104,17 +104,20 @@ export const usePageInfo = (): {
   const tag = usePageTag();
   const date = usePageDate();
 
-  const info = computed<PageInfoProps>(() => ({
-    author: author.value,
-    category: category.value,
-    date: date.value,
-    localizedDate: page.value.localizedDate,
-    tag: tag.value,
-    isOriginal: frontmatter.value.isOriginal || false,
-    readingTime: page.value.readingTime || null,
-    pageview:
-      "pageview" in frontmatter.value ? frontmatter.value.pageview : true,
-  }));
+  const info = computed(
+    () =>
+      <PageInfoProps>{
+        author: author.value,
+        category: category.value,
+        date: date.value,
+        localizedDate: page.value.localizedDate,
+        tag: tag.value,
+        isOriginal: frontmatter.value.isOriginal || false,
+        readingTime: page.value.readingTime || null,
+        pageview:
+          "pageview" in frontmatter.value ? frontmatter.value.pageview : true,
+      }
+  );
 
   const items = computed(() =>
     "pageInfo" in frontmatter.value

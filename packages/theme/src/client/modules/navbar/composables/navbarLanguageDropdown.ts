@@ -24,7 +24,7 @@ export const useNavbarLanguageDropdown =
     const themeData = useThemeData();
     const themeLocale = useThemeLocaleData();
 
-    return computed<NavGroup<AutoLinkOptions> | null>(() => {
+    return computed(() => {
       const localePaths = keys(siteLocale.value.locales);
 
       // do not display language selection dropdown if there is only one language
