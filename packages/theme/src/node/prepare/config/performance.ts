@@ -22,7 +22,7 @@ export const preparePerformanceConfigFile = (
 
   if (enableBlog) {
     imports.push(
-      `import { BlogCategory, BlogHome, BlogType, BloggerInfo, Timeline, setupBlog } from "${PERF_FOLDER}modules/blog/export";`,
+      `import { BlogCategory, BlogHome, BlogType, BloggerInfo, Timeline, setupBlog } from "${PERF_FOLDER}modules/blog/export.js";`,
       `import "${PERF_FOLDER}modules/blog/styles/all.scss";`
     );
 
@@ -35,7 +35,7 @@ export const preparePerformanceConfigFile = (
 
   if (enableEncrypt) {
     imports.push(
-      `import { GlobalEncrypt, LocalEncrypt } from "${PERF_FOLDER}modules/encrypt/export";`,
+      `import { GlobalEncrypt, LocalEncrypt } from "${PERF_FOLDER}modules/encrypt/export.js";`,
       `import "${PERF_FOLDER}modules/encrypt/styles/all.scss"`
     );
 
