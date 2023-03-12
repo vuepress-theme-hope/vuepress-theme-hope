@@ -97,8 +97,8 @@ importers:
         specifier: 9.9.0
         version: 9.9.0(eslint@8.36.0)
       execa:
-        specifier: 7.0.0
-        version: 7.0.0
+        specifier: 7.1.0
+        version: 7.1.0
       gulp:
         specifier: 4.0.2
         version: 4.0.2
@@ -1506,8 +1506,8 @@ importers:
         specifier: 6.7.14
         version: 6.7.14
       execa:
-        specifier: 7.0.0
-        version: 7.0.0
+        specifier: 7.1.0
+        version: 7.1.0
       inquirer:
         specifier: 9.1.4
         version: 9.1.4
@@ -5279,7 +5279,7 @@ packages:
     dependencies:
       '@vuepress/core': 2.0.0-beta.61
       '@vuepress/utils': 2.0.0-beta.61
-      execa: 7.0.0
+      execa: 7.1.0
     transitivePeerDependencies:
       - supports-color
 
@@ -8311,6 +8311,21 @@ packages:
 
   /execa@7.0.0:
     resolution: {integrity: sha512-tQbH0pH/8LHTnwTrsKWideqi6rFB/QNUawEwrn+WHyz7PX1Tuz2u7wfTvbaNBdP5JD5LVWxNo8/A8CHNZ3bV6g==}
+    engines: {node: ^14.18.0 || ^16.14.0 || >=18.0.0}
+    dependencies:
+      cross-spawn: 7.0.3
+      get-stream: 6.0.1
+      human-signals: 4.3.0
+      is-stream: 3.0.0
+      merge-stream: 2.0.0
+      npm-run-path: 5.1.0
+      onetime: 6.0.0
+      signal-exit: 3.0.7
+      strip-final-newline: 3.0.0
+    dev: false
+
+  /execa@7.1.0:
+    resolution: {integrity: sha512-T6nIJO3LHxUZ6ahVRaxXz9WLEruXLqdcluA+UuTptXmLM7nDAn9lx9IfkxPyzEL21583qSt4RmL44pO71EHaJQ==}
     engines: {node: ^14.18.0 || ^16.14.0 || >=18.0.0}
     dependencies:
       cross-spawn: 7.0.3
