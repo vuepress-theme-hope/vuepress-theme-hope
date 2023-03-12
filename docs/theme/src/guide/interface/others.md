@@ -1,7 +1,7 @@
 ---
 title: Other features
 icon: ellipsis
-order: 5
+order: 6
 category:
   - Interface
 tag:

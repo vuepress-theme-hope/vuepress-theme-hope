@@ -1,7 +1,7 @@
 ---
 title: A11y
 icon: universal-access
-order: 6
+order: 7
 category:
   - Interface
 tag:

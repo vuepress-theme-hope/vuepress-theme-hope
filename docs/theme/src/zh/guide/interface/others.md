@@ -1,7 +1,7 @@
 ---
 title: 其他界面功能
 icon: ellipsis
-order: 5
+order: 6
 category:
   - 界面
 tag:

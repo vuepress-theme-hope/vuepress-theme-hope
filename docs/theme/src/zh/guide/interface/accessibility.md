@@ -1,7 +1,7 @@
 ---
 title: 无障碍
 icon: universal-access
-order: 6
+order: 7
 category:
   - 界面
 tag:

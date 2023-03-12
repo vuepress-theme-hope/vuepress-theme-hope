@@ -1,7 +1,11 @@
 ---
 title: 纯净模式
 icon: leaf
-order: 7
+order: 8
+category:
+  - 界面
+tag:
+  - 界面
 ---
 
 如果你的网站是一个纯文档站点，并且你更喜欢干净的样式，你可以在主题选项中设置 `pure: true` 启用纯净模式。

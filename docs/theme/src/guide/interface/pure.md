@@ -1,7 +1,11 @@
 ---
 title: Pure Mode
 icon: leaf
-order: 7
+order: 8
+category:
+  - Interface
+tag:
+  - Interface
 ---
 
 If your site is a documentation-only site and you prefer a clean style, you can enable pure mode by setting `pure: true` in theme options.
