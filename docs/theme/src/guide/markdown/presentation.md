@@ -12,8 +12,6 @@ Let the Markdown file in your VuePress site support presentation.
 
 <!-- more -->
 
-<!--lint disable no-duplicate-headings-->
-
 ## Config
 
 ::: code-tabs#language

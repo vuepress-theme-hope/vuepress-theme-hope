@@ -3,7 +3,7 @@ title: 幻灯片主题
 icon: palette
 ---
 
-<!--lint disable no-duplicate-headings-->
+<!--markdownlint-disable no-duplicate-header -->
 
 可用的主题:
 
@@ -19,8 +19,6 @@ icon: palette
 - `solarized`
 - `blood`
 - `moon`
-
-<!-- markdownlint-disable -->
 
 ## `auto`
 

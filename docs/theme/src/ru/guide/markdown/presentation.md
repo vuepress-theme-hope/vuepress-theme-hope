@@ -12,8 +12,6 @@ tag:
 
 <!-- more -->
 
-<!--lint disable no-duplicate-headings-->
-
 ## Конфиг
 
 ::: code-tabs#language

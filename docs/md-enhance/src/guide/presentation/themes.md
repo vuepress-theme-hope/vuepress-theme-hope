@@ -3,9 +3,9 @@ title: Themes
 icon: palette
 ---
 
-<!--lint disable no-duplicate-headings-->
+<!--markdownlint-disable no-duplicate-header -->
 
-Theme available:
+Available themes:
 
 - `auto` (Default)
 - `black`
@@ -19,8 +19,6 @@ Theme available:
 - `solarized`
 - `blood`
 - `moon`
-
-<!-- markdownlint-disable -->
 
 ## `auto`
 

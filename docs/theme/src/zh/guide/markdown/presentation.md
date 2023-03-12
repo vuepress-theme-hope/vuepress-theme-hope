@@ -14,8 +14,6 @@ tag:
 
 <!-- more -->
 
-<!--lint disable no-duplicate-headings-->
-
 ## 配置
 
 ::: code-tabs#language
