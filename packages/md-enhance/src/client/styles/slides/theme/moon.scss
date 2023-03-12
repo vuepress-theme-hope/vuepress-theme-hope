@@ -5,9 +5,7 @@
 
 @use "sass:color";
 @use "fonts/lato";
-@import "template/mixins";
-@import "template/settings";
-@import "template/theme";
+@use "helper/helper";
 
 // Solarized colors
 $base03: #002b36;
@@ -27,17 +25,17 @@ $blue: #268bd2;
 $cyan: #2aa198;
 $green: #859900;
 
-// Override theme settings (see ../template/settings.scss)
-$main-color: $base1;
-$heading-color: $base2;
-$heading-text-shadow: none;
-$background-color: $base03;
-$link-color: $blue;
-$link-color-hover: color.scale($link-color, $lightness: 20%);
-$selection-background-color: $magenta;
-
-.reveal[data-theme="moon"] {
-  @include light-bg-text-color(#222);
+@include helper.theme(
+  "moon",
+  (
+    main-color: $base1,
+    heading-color: $base2,
+    heading-text-shadow: none,
+    background-color: $base03,
+    link-color: $blue,
+    link-color-hover: color.scale($blue, $lightness: 20%),
+    selection-background-color: $magenta,
+  )
+) {
+  @include helper.lightmode-text-color(#222);
 }
-
-@include theme("[data-theme='moon']");

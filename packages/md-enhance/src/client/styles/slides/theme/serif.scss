@@ -6,27 +6,40 @@
  */
 
 @use "sass:color";
-@import "template/mixins";
-@import "template/settings";
-@import "template/theme";
+@use "helper/helper";
 
-$main-font: "Palatino Linotype", "Book Antiqua", palatino, freeserif, serif;
-$main-color: #000;
-$heading-font: "Palatino Linotype", "Book Antiqua", palatino, freeserif, serif;
-$heading-color: #383d3d;
-$heading-text-shadow: none;
-$heading-text-transform: none;
-$background-color: #f0f1eb;
 $link-color: #51483d;
-$link-color-hover: color.scale($link-color, $lightness: 20%);
-$selection-background-color: #26351c;
 
-.reveal[data-theme="serif"] {
-  @include dark-bg-text-color(#fff);
+@include helper.theme(
+  "serif",
+  (
+    main-font: (
+      "Palatino Linotype",
+      "Book Antiqua",
+      palatino,
+      freeserif,
+      serif,
+    ),
+    main-color: #000,
+    heading-font: (
+      "Palatino Linotype",
+      "Book Antiqua",
+      palatino,
+      freeserif,
+      serif,
+    ),
+    heading-color: #383d3d,
+    heading-text-shadow: none,
+    heading-text-transform: none,
+    background-color: #f0f1eb,
+    link-color: $link-color,
+    link-color-hover: color.scale($link-color, $lightness: 20%),
+    selection-background-color: #26351c,
+  )
+) {
+  @include helper.darkmode-text-color(#fff);
 
   a {
     line-height: 1.3em;
   }
 }
-
-@include theme("[data-theme='serif']");

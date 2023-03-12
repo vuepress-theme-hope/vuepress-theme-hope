@@ -1,6 +1,8 @@
 @use "reveal";
 @use "highlight";
 @use "theme";
+@use "template";
+@include template.template;
 
 .presentation-wrapper {
   position: relative;

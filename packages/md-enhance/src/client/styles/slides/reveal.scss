@@ -12,7 +12,13 @@
  * Copyright (C) Hakim El Hattab, https://hakim.se
  */
 
-@import "reveal.js/css/layout";
+@use "reveal.js/css/layout";
+
+/*********************************************
+ * PRINT STYLES
+ *********************************************/
+
+@use "reveal.js/css/print/pdf.scss";
 
 /*********************************************
  * GLOBAL STYLES
@@ -1916,9 +1922,3 @@ $notesWidthPercent: 25%;
 .zoomed .reveal .roll span:after {
   visibility: hidden;
 }
-
-/*********************************************
- * PRINT STYLES
- *********************************************/
-
-@import "reveal.js/css/print/pdf.scss";

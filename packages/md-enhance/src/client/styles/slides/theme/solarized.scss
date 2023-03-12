@@ -5,9 +5,7 @@
 
 @use "sass:color";
 @use "fonts/lato";
-@import "template/mixins";
-@import "template/settings";
-@import "template/theme";
+@use "helper/helper";
 
 // Solarized colors
 $base03: #002b36;
@@ -27,13 +25,15 @@ $blue: #268bd2;
 $cyan: #2aa198;
 $green: #859900;
 
-// Override theme settings (see ../template/settings.scss)
-$main-color: $base00;
-$heading-color: $base01;
-$heading-text-shadow: none;
-$background-color: $base3;
-$link-color: $blue;
-$link-color-hover: color.scale($link-color, $lightness: 20%);
-$selection-background-color: $magenta;
-
-@include theme("[data-theme='solarized']");
+@include helper.theme(
+  "solarized",
+  (
+    main-color: $base00,
+    heading-color: $base01,
+    heading-text-shadow: none,
+    background-color: $base3,
+    link-color: $blue,
+    link-color-hover: color.scale($blue, $lightness: 20%),
+    selection-background-color: $magenta,
+  )
+);

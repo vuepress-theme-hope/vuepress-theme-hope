@@ -9,23 +9,31 @@
 @use "sass:color";
 @use "fonts/news-cycle";
 @use "fonts/lato";
-@import "template/mixins";
-@import "template/settings";
-@import "template/theme";
+@use "helper/helper";
 
-$main-font: "Lato", sans-serif;
-$main-color: #000;
-$heading-font: "News Cycle", impact, sans-serif;
-$heading-color: #000;
-$heading-text-shadow: none;
-$heading-text-transform: none;
-$background-color: #fff;
 $link-color: #00008b;
-$link-color-hover: color.scale($link-color, $lightness: 20%);
-$selection-background-color: rgb(0 0 0 / 99%);
 
-.reveal[data-theme="simple"] {
-  @include dark-bg-text-color(#fff);
+@include helper.theme(
+  "simple",
+  (
+    main-font: (
+      "Lato",
+      sans-serif,
+    ),
+    main-color: #000,
+    heading-font: (
+      "News Cycle",
+      impact,
+      sans-serif,
+    ),
+    heading-color: #000,
+    heading-text-shadow: none,
+    heading-text-transform: none,
+    background-color: #fff,
+    link-color: $link-color,
+    link-color-hover: color.scale($link-color, $lightness: 20%),
+    selection-background-color: rgb(0 0 0 / 99%),
+  )
+) {
+  @include helper.darkmode-text-color(#fff);
 }
-
-@include theme("[data-theme='simple']");

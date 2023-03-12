@@ -6,35 +6,72 @@
 
 @use "sass:color";
 @use "@sass-palette/hope-config";
-@import "template/mixins";
-@import "template/settings";
-@import "template/theme";
+@use "helper/helper";
 
-// variable edit
-$background-color: #191919;
-$main-color: #fff;
-$heading-color: #fff;
-$main-font-size: 42px;
-$main-font: "Source Sans Pro", helvetica, sans-serif;
-$heading-font: "Source Sans Pro", helvetica, sans-serif;
-$heading-text-shadow: none;
-$heading-letter-spacing: normal;
-$heading-text-transform: uppercase;
-$heading-font-weight: 600;
 $link-color: #42affa;
-$link-color-hover: color.scale($link-color, $lightness: 15%);
-$selection-background-color: color.scale($link-color, $lightness: 25%);
-$heading1-size: 2.5em;
-$heading2-size: 1.6em;
-$heading3-size: 1.3em;
-$heading4-size: 1em;
 
-.reveal[theme="black"] {
-  @include light-bg-text-color(#222);
+@include helper.theme(
+  "black",
+  (
+    background-color: #191919,
+    main-color: #fff,
+    heading-color: #fff,
+    main-font-size: 42px,
+    main-font: (
+      "Source Sans Pro",
+      helvetica,
+      sans-serif,
+    ),
+    heading-font: (
+      "Source Sans Pro",
+      helvetica,
+      sans-serif,
+    ),
+    heading-text-shadow: none,
+    heading-letter-spacing: normal,
+    heading-text-transform: uppercase,
+    heading-font-weight: 600,
+    link-color: $link-color,
+    link-color-hover: color.scale($link-color, $lightness: 15%),
+    selection-background-color: color.scale($link-color, $lightness: 25%),
+    heading1-size: 2.5em,
+    heading2-size: 1.6em,
+    heading3-size: 1.3em,
+    heading4-size: 1em,
+  )
+) {
+  @include helper.lightmode-text-color(#222);
 }
 
-@include theme("[data-theme='black']");
-
 #{hope-config.$dark-selector} {
-  @include theme("[data-theme='auto']");
+  @include helper.theme(
+    "auto",
+    (
+      background-color: #191919,
+      main-color: #fff,
+      heading-color: #fff,
+      main-font-size: 42px,
+      main-font: (
+        "Source Sans Pro",
+        helvetica,
+        sans-serif,
+      ),
+      heading-font: (
+        "Source Sans Pro",
+        helvetica,
+        sans-serif,
+      ),
+      heading-text-shadow: none,
+      heading-letter-spacing: normal,
+      heading-text-transform: uppercase,
+      heading-font-weight: 600,
+      link-color: $link-color,
+      link-color-hover: color.scale($link-color, $lightness: 15%),
+      selection-background-color: color.scale($link-color, $lightness: 25%),
+      heading1-size: 2.5em,
+      heading2-size: 1.6em,
+      heading3-size: 1.3em,
+      heading4-size: 1em,
+    )
+  );
 }
