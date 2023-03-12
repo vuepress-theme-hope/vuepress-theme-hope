@@ -1,6 +1,7 @@
 import { createRequire } from "node:module";
 
 import { type App } from "@vuepress/core";
+import { path } from "@vuepress/utils";
 
 import { type ThemeStatus } from "../../config/index.js";
 import { CLIENT_FOLDER } from "../../utils.js";
@@ -44,8 +45,8 @@ export const prepareConfigFile = (
 
   if (enableSlide) {
     imports.push(
-      `import Slide from "${require.resolve(
-        "vuepress-plugin-md-enhance/SlidePage"
+      `import Slide from "${path.resolve(
+        require.resolve("vuepress-plugin-md-enhance/SlidePage")
       )}";`
     );
     layouts.push("Slide,");
