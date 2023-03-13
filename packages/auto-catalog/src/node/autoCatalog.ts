@@ -60,7 +60,7 @@ ${
     Array.from(pathToBeGenerated)
       .map((path) => decodeURI(path))
       .map((path) => {
-        const [, basename] = /\/([^/]+)\/?$/.exec(path) || [];
+        const [, basename = ""] = /\/([^/]+)\/?$/.exec(path) || [];
         const title = getTitleFromFilename(basename);
 
         return createPage(app, {
