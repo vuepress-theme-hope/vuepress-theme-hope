@@ -11,6 +11,7 @@ import {
   getThemeData,
 } from "./config/index.js";
 import { addFavicon } from "./init/index.js";
+import { extendsMarkdownOptions } from "./markdownOptions.js";
 import { getPluginConfig, usePlugin } from "./plugins/index.js";
 import {
   prepareHighLighterScss,
@@ -74,6 +75,11 @@ export const hopeTheme =
       }),
 
       extendsBundlerOptions,
+
+      extendsMarkdownOptions: (markdownOptions): void => {
+        if (behaviorOptions.check)
+          extendsMarkdownOptions(markdownOptions, themeData);
+      },
 
       onInitialized: (app): void => {
         if (favicon) addFavicon(app, favicon);
