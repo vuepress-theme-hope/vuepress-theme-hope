@@ -89,8 +89,6 @@ export const theme = (
             },
           },
 
-      prismjs: false,
-
       seo: hostname === canonical ? {} : { canonical },
 
       ...plugins,
