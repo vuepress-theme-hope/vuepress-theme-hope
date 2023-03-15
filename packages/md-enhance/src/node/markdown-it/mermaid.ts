@@ -2,13 +2,10 @@ import { type PluginSimple } from "markdown-it";
 import type Renderer from "markdown-it/lib/renderer.js";
 import { utoa } from "vuepress-shared/node";
 
-const mermaidRender: Renderer.RenderRule = (tokens, index) => {
-  const token = tokens[index];
-  const key = `mermaid-${index}`;
-  const { content } = token;
-
-  return `<Mermaid id="${key}" code="${utoa(content)}"></Mermaid>`;
-};
+const mermaidRender: Renderer.RenderRule = (tokens, index) =>
+  `<Mermaid id="mermaid-${index}" code="${utoa(
+    tokens[index].content
+  )}"></Mermaid>`;
 
 // a hack for sequenceDiagram
 const mermaidHackRender = (
