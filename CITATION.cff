@@ -3,7 +3,7 @@ message: If you use this software in your work, please cite it using the followi
 type: software
 title: VuePress Theme Hope
 authors:
- - name: Mr.Hope
+  - name: Mr.Hope
 url: https://theme-hope.vuejs.press
 repository: https://github.com/vuepress-theme-hope/vuepress-theme-hope
 repository-code: https://github.com/vuepress-theme-hope/vuepress-theme-hope
