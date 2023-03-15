@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: If you use this software in your work, please cite it using the following metadata
+type: software
+title: VuePress Theme Hope
+authors:
+ - name: Mr.Hope
+url: https://theme-hope.vuejs.press
+repository: https://github.com/vuepress-theme-hope/vuepress-theme-hope
+repository-code: https://github.com/vuepress-theme-hope/vuepress-theme-hope
+repository-artifact: https://github.com/vuepress-theme-hope/vuepress-theme-hope.github.io
+abstract: A powerful VuePress theme with tons of features
+keywords:
+  - VuePress
+  - Theme
+  - Blog Theme
+  - VuePress2
+license: MIT
