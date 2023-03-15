@@ -25,6 +25,13 @@ docs:
     repo: https://github.com/Mereithhh/vanblog/tree/master/docs
     preview: /assets/image/vanblog.jpg
 
+  - name: Crawlab
+    desc: 网络爬虫管理平台（WCMP）
+    logo: https://docs.crawlab.cn/logo.svg
+    url: https://docs.crawlab.cn/zh/guide/
+    repo: https://github.com/crawlab-team/crawlab-docs
+    preview: /assets/image/crawlab-zh.jpg
+
   - name: DynamicTp
     desc: 基于配置中心的轻量级动态可监控线程池
     logo: https://dynamictp.cn/logo.png
@@ -67,6 +74,13 @@ docs:
     repo: https://github.com/dotnetcore/FreeSql/tree/master/docs
     preview: /assets/image/free-sql.jpg
 
+  - name: JT-framework
+    desc: 基于 spring-boot-2.x 的 JT/T-808 服务端
+    logo: https://hylexus.github.io/jt-framework/logo-dark.png
+    url: https://hylexus.github.io/jt-framework/
+    repo: https://github.com/hylexus/jt-framework
+    preview: /assets/image/jt-framework.jpg
+
   - name: 胡桃工具箱
     desc: 一个实用的多功能原神工具箱
     url: https://hut.ao/
@@ -88,19 +102,53 @@ docs:
     repo: https://github.com/cunyu1943/JavaPark
     preview: /assets/image/java-park.jpg
 
+  - name: 计算机应试全家桶
+    desc: 磨刀不误砍柴工、读完硕士再打工...
+    logo: https://408.142vip.cn/assets/408_logo.png
+    url: https://408.142vip.cn/
+    repo: https://github.com/142vip/408CSFamily
+    preview: /assets/image/cs.jpg
+
+  - name: CSView
+    desc: 一个互联网面试内容汇总和八股文学习的网站，让互联网面试不再成为困难~
+    logo: https://www.csview.cn/logo.png
+    url: https://www.csview.cn/
+    repo: https://github.com/zijing2333/CSView
+    preview: /assets/image/csview.jpg
+
+  - name: LuckyTool
+    desc: 对 ColorOS 系统进行的扩展优化的 Xposed 模块
+    logo: https://luckyzyx.github.io/LuckyTool/logo.png
+    url: https://luckyzyx.github.io/LuckyTool/
+    repo: https://github.com/luckyzyx/LuckyTool
+    preview: /assets/image/lucky-tool.jpg
+
+  - name: 数据和计算科学知识库
+    desc: 分享机器学习系统、数据管理、数据科学原创内容
+    logo: https://lulaoshi.info/logo.svg
+    url: https://lulaoshi.info/
+    repo: https://github.com/luweizheng/lulaoshi.info
+    preview: /assets/image/lulaoshi.jpg
+
+  - name: MapstructPlus
+    desc: 分享机器学习系统、数据管理、数据科学原创内容
+    url: https://mapstruct.plus/
+    repo: https://github.com/linpeilie/mapstruct-plus
+    preview: /assets/image/mapstruct-plus.jpg
+
+  - name: 云崽 Yunzai-Bot
+    desc: 基于 nodejs 的原神 QQ 群机器人
+    logo: https://docs.yunzai.org/logo.png
+    url: https://docs.yunzai.org/
+    repo: https://github.com/Xm798/Yunzai-Bot-Docs
+    preview: /assets/image/yunzai.jpg
+
   - name: 鲤鱼监控
     desc: 基于茗伊监控的配置文件
     logo: https://gcore.jsdelivr.net/gh/dunhuixiao/LiyuTargetMon@docs/image/home.jpg
     url: https://dunhuixiao.github.io/LiyuTargetMon/
     repo: https://github.com/dunhuixiao/LiyuTargetMon
     preview: /assets/image/liyu.jpg
-
-  - name: 云崽 Yunzai-Bot
-    desc: 基于 nodejs 的原神 QQ 群机器人
-    logo: https://docs.yunzai.org/logo.webp
-    url: https://docs.yunzai.org/
-    repo: https://github.com/Xm798/Yunzai-Bot-Docs
-    preview: /assets/image/yunzai.jpg
 
   - name: VOJ
     desc: 基于分布式、前后端分离的高性能在线评测系统
@@ -111,7 +159,7 @@ docs:
 
   - name: 小派蒙
     desc: 基于 NoneBot2 的原神多功能QQ机器人
-    logo: https://static.cherishmoon.fun/paimon_logo.png
+    logo: https://s1.ax1x.com/2023/02/05/pS62DJK.png
     url: https://docs.paimon.cherishmoon.fun/
     repo: https://github.com/CMHopeSunshine/LittlePaimon-Docs
     preview: /assets/image/paimon.jpg

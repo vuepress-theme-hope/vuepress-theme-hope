@@ -66,3 +66,7 @@ Also V2 has a better performance:🚀
 Thanks to all the contributors!
 
 [![contributors](https://contrib.rocks/image?repo=vuepress-theme-hope/vuepress-theme-hope)](https://github.com/vuepress-theme-hope/vuepress-theme-hope/graphs/contributors)
+
+## Stargazers over time
+
+[![Stargazers over time](https://starchart.cc/vuepress-theme-hope/vuepress-theme-hope.svg)](https://starchart.cc/vuepress-theme-hope/vuepress-theme-hope)

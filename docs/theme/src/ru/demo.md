@@ -18,12 +18,33 @@ docs:
     repo: https://github.com/walinejs/waline
     preview: /assets/image/waline.jpg
 
+  - name: Apache IoTDB
+    desc: An IoT native database with high performance for data management and analysis
+    logo: https://iotdb.apache.org/logo.png
+    url: https://iotdb.apache.org/
+    repo: https://github.com/apache/iotdb
+    preview: /assets/image/iotdb.jpg
+
   - name: bitsail
     desc: A high-performance data integration engine based on distributed architecture, supporting data synchronization between multiple heterogeneous data sources.
     logo: https://bytedance.github.io/bitsail/bitsail_logo.png
     url: https://bytedance.github.io/bitsail/
     repo: https://github.com/bytedance/bitsail
     preview: /assets/image/bitsail.jpg
+
+  - name: Crawlab
+    desc: A powerful Web Crawler Management Platform (WCMP)
+    logo: https://docs.crawlab.cn/logo.svg
+    url: https://docs.crawlab.cn/en/guide/
+    repo: https://github.com/crawlab-team/crawlab-docs
+    preview: /assets/image/crawlab.jpg
+
+  - name: Pulsar
+    desc: A Community-led Hyper-Hackable Text Editor
+    logo: https://pulsar-edit.dev/logo-name-navbar-light.svg
+    url: https://pulsar-edit.dev/
+    repo: https://github.com/pulsar-edit/pulsar-edit.github.io
+    preview: /assets/image/plusar.jpg
 
   - name: ct.js
     desc: Learn ct.js, complete tutorials, and contribute to ct.js documentation
@@ -53,12 +74,12 @@ docs:
     repo: https://github.com/nosana-ci/docs.nosana.io
     preview: /assets/image/nosana.jpg
 
-  - name: Pulsar
-    desc: A Community-led Hyper-Hackable Text Editor
-    logo: https://pulsar-edit.dev/logo-name-navbar-light.svg
-    url: https://pulsar-edit.dev/
-    repo: https://github.com/pulsar-edit/pulsar-edit.github.io
-    preview: /assets/image/plusar.jpg
+  - name: zkSync Era
+    desc: A trustless protocol that uses cryptographic validity proofs to provide scalable and low-cost transactions on Ethereum
+    logo: https://era.zksync.io/docs/zk-sync-era-line-light.svg
+    url: https://era.zksync.io/docs/
+    repo: https://github.com/matter-labs/zksync-web-era-docs
+    preview: /assets/image/era.jpg
 
   - name: Gorse
     desc: An open-source recommender system service written in Go.
