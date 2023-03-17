@@ -27,6 +27,7 @@ export default [
   ...bundle("worker/original", {
     resolve: true,
     dts: false,
+    external: [/^@internal\//],
     replace: {
       // eslint-disable-next-line @typescript-eslint/naming-convention
       __VUEPRESS_SSR__: false,
