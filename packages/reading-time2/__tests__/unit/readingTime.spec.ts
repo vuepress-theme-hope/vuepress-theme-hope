@@ -6,16 +6,16 @@ describe("Words test", () => {
   describe("Should handle english", () => {
     it("Should count words", () => {
       expect(
-        getWordNumber("\n Mr.Hope is handsome, and he is a great man.")
-      ).toEqual(9);
+        getWordNumber("\n Mr. Hope is handsome, and he is a great man.")
+      ).toEqual(10);
     });
 
     it("Should ignore marks", () => {
       expect(
         getWordNumber(
-          "\n Mr.Hope ! is #$%^&* handsome, and %^&* he is a great man."
+          "\n Mr. Hope ! is #$%^&* handsome, and %^&* he is a great man."
         )
-      ).toEqual(9);
+      ).toEqual(10);
     });
   });
 
@@ -49,17 +49,17 @@ describe("Words test", () => {
     it("Should count words", () => {
       expect(
         getWordNumber(
-          "  春眠不觉晓，处处闻啼鸟。\n   Mr.Hope is handsome, and he is a great man."
+          "  春眠不觉晓，处处闻啼鸟。\n   Mr. Hope is handsome, and he is a great man."
         )
-      ).toEqual(19);
+      ).toEqual(20);
     });
 
     it("Should ignore marks", () => {
       expect(
         getWordNumber(
-          "春眠^&*(不觉晓，处处闻!#$%啼鸟。\n Mr.Hope ! is #$%^&* handsome, and %^&* he is a great man."
+          "春眠^&*(不觉晓，处处闻!#$%啼鸟。\n Mr. Hope ! is #$%^&* handsome, and %^&* he is a great man."
         )
-      ).toEqual(19);
+      ).toEqual(20);
     });
   });
 });
@@ -68,11 +68,11 @@ describe("Reading Time Test", () => {
   it("Reading Time", () => {
     expect(
       getReadingTime(
-        "\n Mr.Hope ! is #$%^&* handsome, and %^&* he is a great man."
+        "\n Mr. Hope ! is #$%^&* handsome, and %^&* he is a great man."
       )
     ).toEqual({
       minutes: 0.03,
-      words: 9,
+      words: 10,
     });
 
     expect(getReadingTime("春眠^&*(不觉晓，处处闻!#$%啼鸟。")).toEqual({
@@ -82,20 +82,20 @@ describe("Reading Time Test", () => {
 
     expect(
       getReadingTime(
-        "  春眠不觉晓，处处闻啼鸟。\n   Mr.Hope is handsome, and he is a great man."
+        "  春眠不觉晓，处处闻啼鸟。\n   Mr. Hope is handsome, and he is a great man."
       )
     ).toEqual({
-      minutes: 0.06,
-      words: 19,
+      minutes: 0.07,
+      words: 20,
     });
 
     expect(
       getReadingTime(
-        "\n  春眠不觉晓，处处闻啼鸟。\n   Mr.Hope is handsome, and he is a great man.\n  春眠不觉晓，处处闻啼鸟。\n   Mr.Hope is handsome, and he is a great man.\n  春眠不觉晓，处处闻啼鸟。\n   Mr.Hope is handsome, and he is a great man.\n  春眠不觉晓，处处闻啼鸟。\n   Mr.Hope is handsome, and he is a great man.\n  春眠不觉晓，处处闻啼鸟。\n   Mr.Hope is handsome, and he is a great man.\n  春眠不觉晓，处处闻啼鸟。\n   Mr.Hope is handsome, and he is a great man.\n  春眠不觉晓，处处闻啼鸟。\n   Mr.Hope is handsome, and he is a great man."
+        "\n  春眠不觉晓，处处闻啼鸟。\n   Mr. Hope is handsome, and he is a great man.\n  春眠不觉晓，处处闻啼鸟。\n   Mr. Hope is handsome, and he is a great man.\n  春眠不觉晓，处处闻啼鸟。\n   Mr. Hope is handsome, and he is a great man.\n  春眠不觉晓，处处闻啼鸟。\n   Mr. Hope is handsome, and he is a great man.\n  春眠不觉晓，处处闻啼鸟。\n   Mr. Hope is handsome, and he is a great man.\n  春眠不觉晓，处处闻啼鸟。\n   Mr. Hope is handsome, and he is a great man.\n  春眠不觉晓，处处闻啼鸟。\n   Mr. Hope is handsome, and he is a great man."
       )
     ).toEqual({
-      minutes: 0.44,
-      words: 133,
+      minutes: 0.47,
+      words: 140,
     });
   });
 });
