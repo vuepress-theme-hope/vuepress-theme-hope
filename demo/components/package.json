@@ -19,7 +19,7 @@
     "@vuepress/client": "2.0.0-beta.61",
     "@vuepress/theme-default": "2.0.0-beta.61",
     "artplayer-plugin-danmuku": "4.4.11",
-    "hls.js": "1.3.4",
+    "hls.js": "1.3.5",
     "sass-loader": "13.2.0",
     "vue": "3.2.47",
     "vuepress-plugin-components": "workspace:*",
