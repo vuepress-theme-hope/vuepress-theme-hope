@@ -1398,8 +1398,8 @@ importers:
         specifier: ^4.6.0
         version: 4.6.0
       hls.js:
-        specifier: ^1.3.4
-        version: 1.3.4
+        specifier: ^1.3.5
+        version: 1.3.5
       mpegts.js:
         specifier: ^1.7.2
         version: 1.7.2
@@ -3398,8 +3398,8 @@ packages:
       '@commitlint/types': 17.4.4
       '@types/node': 18.15.3
       chalk: 4.1.2
-      cosmiconfig: 8.1.0
-      cosmiconfig-typescript-loader: 4.3.0(@types/node@18.15.3)(cosmiconfig@8.1.0)(ts-node@10.9.1)(typescript@4.9.5)
+      cosmiconfig: 8.1.2
+      cosmiconfig-typescript-loader: 4.3.0(@types/node@18.15.3)(cosmiconfig@8.1.2)(ts-node@10.9.1)(typescript@4.9.5)
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
@@ -5130,7 +5130,7 @@ packages:
       vue-router: 4.1.6(vue@3.2.47)
       webpack: 5.76.2
       webpack-chain: 6.5.1
-      webpack-dev-server: 4.12.0(webpack@5.76.2)
+      webpack-dev-server: 4.13.0(webpack@5.76.2)
       webpack-merge: 5.8.0
     transitivePeerDependencies:
       - '@swc/core'
@@ -5950,7 +5950,7 @@ packages:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.21.5
-      caniuse-lite: 1.0.30001466
+      caniuse-lite: 1.0.30001467
       fraction.js: 4.2.0
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -6144,8 +6144,8 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001466
-      electron-to-chromium: 1.4.332
+      caniuse-lite: 1.0.30001467
+      electron-to-chromium: 1.4.333
       node-releases: 2.0.10
       update-browserslist-db: 1.0.10(browserslist@4.21.5)
 
@@ -6261,8 +6261,8 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /caniuse-lite@1.0.30001466:
-    resolution: {integrity: sha512-ewtFBSfWjEmxUgNBSZItFSmVtvk9zkwkl1OfRZlKA8slltRN+/C/tuGVrF9styXkN36Yu3+SeJ1qkXxDEyNZ5w==}
+  /caniuse-lite@1.0.30001467:
+    resolution: {integrity: sha512-cEdN/5e+RPikvl9AHm4uuLXxeCNq8rFsQ+lPHTfe/OtypP3WwnVVbjn+6uBV7PaFL6xUFzTh+sSCOz1rKhcO+Q==}
 
   /chai@4.3.7:
     resolution: {integrity: sha512-HLnAzZ2iupm25PlN0xFreAlBA5zaBSv3og0DdeGA4Ar6h6rJ3A0rolRUKJhSF2V10GZKDgWF/VmAEsNWjCRB+A==}
@@ -6924,7 +6924,7 @@ packages:
       layout-base: 2.0.1
     dev: false
 
-  /cosmiconfig-typescript-loader@4.3.0(@types/node@18.15.3)(cosmiconfig@8.1.0)(ts-node@10.9.1)(typescript@4.9.5):
+  /cosmiconfig-typescript-loader@4.3.0(@types/node@18.15.3)(cosmiconfig@8.1.2)(ts-node@10.9.1)(typescript@4.9.5):
     resolution: {integrity: sha512-NTxV1MFfZDLPiBMjxbHRwSh5LaLcPMwNdCutmnHJCKoVnlvldPWlllonKwrsRJ5pYZBIBGRWWU2tfvzxgeSW5Q==}
     engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
@@ -6934,13 +6934,13 @@ packages:
       typescript: '>=3'
     dependencies:
       '@types/node': 18.15.3
-      cosmiconfig: 8.1.0
+      cosmiconfig: 8.1.2
       ts-node: 10.9.1(@types/node@18.15.3)(typescript@4.9.5)
       typescript: 4.9.5
     dev: true
 
-  /cosmiconfig@8.1.0:
-    resolution: {integrity: sha512-0tLZ9URlPGU7JsKq0DQOQ3FoRsYX8xDZ7xMiATQfaiGMz7EHowNkbU9u1coAOmnh9p/1ySpm0RB3JNWRXM5GCg==}
+  /cosmiconfig@8.1.2:
+    resolution: {integrity: sha512-rmpUFKMZiawLfug8sP4NbpBSOpWftZB6UACOLEiNbnRAYM1TzgQuTWlMYFRuPgmoTCkcOxSMwQJQpJmiXv/eHw==}
     engines: {node: '>=14'}
     dependencies:
       import-fresh: 3.3.0
@@ -7745,8 +7745,8 @@ packages:
     dependencies:
       jake: 10.8.5
 
-  /electron-to-chromium@1.4.332:
-    resolution: {integrity: sha512-c1Vbv5tuUlBFp0mb3mCIjw+REEsgthRgNE8BlbEDKmvzb8rxjcVki6OkQP83vLN34s0XCxpSkq7AZNep1a6xhw==}
+  /electron-to-chromium@1.4.333:
+    resolution: {integrity: sha512-YyE8+GKyGtPEP1/kpvqsdhD6rA/TP1DUFDN4uiU/YI52NzDxmwHkEb3qjId8hLBa5siJvG0sfC3O66501jMruQ==}
 
   /elkjs@0.8.2:
     resolution: {integrity: sha512-L6uRgvZTH+4OF5NE/MBbzQx/WYpru1xCBE9respNj6qznEewGUIfhzmm7horWWxbNO2M0WckQypGctR8lH79xQ==}
@@ -9171,10 +9171,6 @@ packages:
 
   /heap@0.2.7:
     resolution: {integrity: sha512-2bsegYkkHO+h/9MGbn6KWcE45cHZgPANo5LXF7EvWdT0yT2EguSVO1nDgU5c8+ZOPwp2vMNa7YFsJhVcDR9Sdg==}
-    dev: false
-
-  /hls.js@1.3.4:
-    resolution: {integrity: sha512-iFEwVqtEDk6sKotcTwtJ5OMo/nuDTk9PrpB8FI2J2WYf8EriTVfR4FaK0aNyYtwbYeRSWCXJKlz23xeREdlNYg==}
     dev: false
 
   /hls.js@1.3.5:
@@ -11345,7 +11341,7 @@ packages:
       webpack:
         optional: true
     dependencies:
-      cosmiconfig: 8.1.0
+      cosmiconfig: 8.1.2
       klona: 2.0.6
       postcss: 8.4.21
       semver: 7.3.8
@@ -12683,7 +12679,7 @@ packages:
       '@csstools/selector-specificity': 2.1.1(postcss-selector-parser@6.0.11)(postcss@8.4.21)
       balanced-match: 2.0.0
       colord: 2.9.3
-      cosmiconfig: 8.1.0
+      cosmiconfig: 8.1.2
       css-functions-list: 3.1.0
       css-tree: 2.3.1
       debug: 4.3.4
@@ -13719,8 +13715,8 @@ packages:
       schema-utils: 4.0.0
       webpack: 5.76.2
 
-  /webpack-dev-server@4.12.0(webpack@5.76.2):
-    resolution: {integrity: sha512-XRN9YRnvOj3TQQ5w/0pR1y1xDcVnbWtNkTri46kuEbaWUPTHsWUvOyAAI7PZHLY+hsFki2kRltJjKMw7e+IiqA==}
+  /webpack-dev-server@4.13.0(webpack@5.76.2):
+    resolution: {integrity: sha512-1objTjwG2IaLNz0RjRQd41PjWOxHPc4I+1al4kmZu8J2nWcZcu1N1zlEWIJXTiYIkzhQ1RTrwjX4elnL+2e2GA==}
     engines: {node: '>= 12.13.0'}
     hasBin: true
     peerDependencies:
