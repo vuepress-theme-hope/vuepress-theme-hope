@@ -121,8 +121,8 @@ importers:
         specifier: 0.8.0
         version: 0.8.0
       ora:
-        specifier: 6.1.2
-        version: 6.1.2
+        specifier: 6.2.0
+        version: 6.2.0
       picocolors:
         specifier: 1.0.0
         version: 1.0.0
@@ -1990,8 +1990,8 @@ importers:
         specifier: 2.0.0-beta.61
         version: 2.0.0-beta.61
       ora:
-        specifier: 6.1.2
-        version: 6.1.2
+        specifier: 6.2.0
+        version: 6.2.0
       vite:
         specifier: 4.1.4
         version: 4.1.4
@@ -10985,6 +10985,21 @@ packages:
       strip-ansi: 7.0.1
       wcwidth: 1.0.1
 
+  /ora@6.2.0:
+    resolution: {integrity: sha512-c1qb/1rdE+EFDYiLXh10VY459uMh7DN9zlgd8mZJLoeiPpYllN8eAOiih2Rkah5ywxRm5tHN5C9zPheDq8d1MA==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dependencies:
+      chalk: 5.2.0
+      cli-cursor: 4.0.0
+      cli-spinners: 2.7.0
+      is-interactive: 2.0.0
+      is-unicode-supported: 1.3.0
+      log-symbols: 5.1.0
+      stdin-discarder: 0.1.0
+      strip-ansi: 7.0.1
+      wcwidth: 1.0.1
+    dev: true
+
   /ordered-read-streams@1.0.1:
     resolution: {integrity: sha512-Z87aSjx3r5c0ZB7bcJqIgIRX5bxR7A4aSzvIbaxd0oTkWBCOoKfuGHiKj60CHVUgg1Phm5yMZzBdt8XqRs73Mw==}
     dependencies:
@@ -12404,6 +12419,13 @@ packages:
 
   /std-env@3.3.2:
     resolution: {integrity: sha512-uUZI65yrV2Qva5gqE0+A7uVAvO40iPo6jGhs7s8keRfHCmtg+uB2X6EiLGCI9IgL1J17xGhvoOqSz79lzICPTA==}
+    dev: true
+
+  /stdin-discarder@0.1.0:
+    resolution: {integrity: sha512-xhV7w8S+bUwlPTb4bAOUQhv8/cSS5offJuX8GQGq32ONF0ZtDWKfkdomM3HMRA+LhX6um/FZ0COqlwsjD53LeQ==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dependencies:
+      bl: 5.1.0
     dev: true
 
   /stream-exhaust@1.0.2:
