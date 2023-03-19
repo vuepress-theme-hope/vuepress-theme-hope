@@ -131,7 +131,8 @@ docs:
     preview: /assets/image/lulaoshi.jpg
 
   - name: MapstructPlus
-    desc: 分享机器学习系统、数据管理、数据科学原创内容
+    desc: 可能是最简单最强大的 Java Bean 转换工具
+    logo: https://mapstruct.plus/logo.svg
     url: https://mapstruct.plus/
     repo: https://github.com/linpeilie/mapstruct-plus
     preview: /assets/image/mapstruct-plus.jpg
