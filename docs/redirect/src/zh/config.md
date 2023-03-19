@@ -19,6 +19,47 @@ icon: gears
 
 重定向到的域名。
 
+## locale
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否启用语言重定向
+
+## localeConfig
+
+- 类型: `Record<string, string | string[]>`
+- 必填: 否
+
+多语言语言配置
+
+## localeFallback
+
+- 类型: `boolean`
+- 默认值: `true`
+
+是否回退到用户定义的其他语言
+
+## defaultBehavior
+
+- 类型: `"defaultLocale" | "homepage" | "404"`
+- 默认值: `"defaultLocale"`
+
+当前链接没有可用的语言版本时的行为
+
+::: note
+
+只有当存在当前语言时，`"homepage"` 和 `"404"` 才可用。
+
+:::
+
+## defaultLocale
+
+- 类型: `string`
+- 默认值: 首个语言路径
+
+默认语言路径
+
 ## Frontmatter 选项
 
 ### redirectFrom

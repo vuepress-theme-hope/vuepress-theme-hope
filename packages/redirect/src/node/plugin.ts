@@ -2,7 +2,9 @@ import { type Page, type PluginFunction } from "@vuepress/core";
 import { checkVersion } from "vuepress-shared/node";
 
 import { handleRedirect } from "./extends.js";
-import { generateHTML } from "./generate.js";
+import { generateLocaleRedirects, generateRedirects } from "./generate.js";
+import { ensureRootHomePage } from "./homepage.js";
+import { getLocaleOptions } from "./locale.js";
 import { type RedirectOptions } from "./options.js";
 import { type RedirectPluginFrontmatterOption } from "./typings/index.js";
 import { PLUGIN_NAME, logger } from "./utils.js";
@@ -14,6 +16,8 @@ export const redirectPlugin =
 
     if (app.env.isDebug) logger.info("Options:", options);
 
+    const localeOptions = getLocaleOptions(app, options);
+
     return {
       name: PLUGIN_NAME,
 
@@ -24,6 +28,13 @@ export const redirectPlugin =
           options
         ),
 
-      onGenerated: (app): Promise<void> => generateHTML(app, options),
+      onInitialized: async (app): Promise<void> => {
+        if (localeOptions) await ensureRootHomePage(app, localeOptions);
+      },
+
+      onGenerated: async (app): Promise<void> => {
+        await generateRedirects(app, options);
+        if (localeOptions) await generateLocaleRedirects(app, localeOptions);
+      },
     };
   };
