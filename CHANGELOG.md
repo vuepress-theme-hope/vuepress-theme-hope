@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.194](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.193...v2.0.0-beta.194) (2023-03-19)
+
+### Features
+
+- **reading-time2:** improve word count ([a1f11ae](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a1f11aeeaeaa027a1d8a605921ad75aea00c2693))
+- **redirect:** add locale support, close [#2920](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2920) ([#2922](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2922)) ([180c858](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/180c858b88906320129445ed73436ead2ba884cd))
+- **theme:** check headerDepth, close [#2900](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2900) ([0a73353](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0a73353e73aba9466a410d637451f3b176cd5652))
+
+### Bug Fixes
+
+- **auto-catalog:** fix issue when homepage is missing ([2865679](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2865679029adf6edae3c43190142b45e4130a490))
+- **create:** theme mail address example ([#2908](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2908)) ([3c30592](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3c30592a551b21570940de4ac25294fcb969c6c1))
+- **deps:** update dependency execa to v7.1.1 ([#2903](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2903)) ([97f322e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/97f322e38d18160503494de77f2f2cd318e5c45b))
+- **deps:** update dependency hls.js to v1.3.5 ([#2912](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2912)) ([29f2729](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/29f2729b6c0a8fb5555ac54d5feeb115f3b60679))
+- **theme:** fix import ([22e6f69](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/22e6f690e0abaa8a694a58f90d50c6fcbd61f8e9))
+
 ## [2.0.0-beta.193](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.192...v2.0.0-beta.193) (2023-03-12)
 
 ### Features
