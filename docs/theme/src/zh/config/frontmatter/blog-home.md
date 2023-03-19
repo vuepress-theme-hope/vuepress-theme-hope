@@ -74,14 +74,14 @@ tag:
 
 ## bgImageStyle
 
-- 类型: `Record<string, string>`
+- 类型: `Record<string, string> | string`
 - 必填: 否
 
 背景图片的 CSS 样式。
 
 ## heroImageStyle
 
-- 类型: `Record<string, string>`
+- 类型: `Record<string, string> | string`
 - 必填: 否
 
 首页图标的 CSS 样式

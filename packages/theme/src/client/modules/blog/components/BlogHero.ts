@@ -3,6 +3,7 @@ import {
   usePageHeadTitle,
   withBase,
 } from "@vuepress/client";
+import { isString } from "@vuepress/shared";
 import { type VNode, computed, defineComponent, h, ref } from "vue";
 
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
@@ -27,11 +28,15 @@ export default defineComponent({
       () => frontmatter.value.heroFullScreen || false
     );
 
-    const bgImage = computed(() =>
-      frontmatter.value.bgImage
-        ? withBase(frontmatter.value.bgImage)
-        : frontmatter.value.bgImage ?? defaultHeroBgImagePath
-    );
+    const bgImage = computed(() => {
+      const { bgImage } = frontmatter.value;
+
+      return isString(bgImage)
+        ? withBase(bgImage)
+        : bgImage === false
+        ? null
+        : defaultHeroBgImagePath;
+    });
 
     return (): VNode | null =>
       frontmatter.value.hero === false
@@ -52,10 +57,12 @@ export default defineComponent({
               bgImage.value
                 ? h("div", {
                     class: "mask",
-                    style: {
-                      background: `url(${bgImage.value}) center/cover no-repeat`,
-                      ...frontmatter.value.bgImageStyle,
-                    },
+                    style: [
+                      {
+                        background: `url(${bgImage.value}) center/cover no-repeat`,
+                      },
+                      frontmatter.value.bgImageStyle,
+                    ],
                   })
                 : null,
               h(DropTransition, { appear: true, delay: 0.04 }, () =>

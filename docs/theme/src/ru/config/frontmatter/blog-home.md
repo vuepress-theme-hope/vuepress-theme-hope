@@ -67,14 +67,14 @@ tag:
 
 ## bgImageStyle
 
-- Тип: `Record<string, string>`
+- Тип: `Record<string, string> | string`
 - Обязательный: Нет
 
 Стиль CSS фонового изображения
 
 ## heroImageStyle
 
-- Тип: `Record<string, string>`
+- Тип: `Record<string, string> | string`
 - Обязательный: Нет
 
 Стиль CSS для иконки home

@@ -1,5 +1,4 @@
 import { withBase } from "@vuepress/client";
-import { isLinkHttp } from "@vuepress/shared";
 import {
   type VNode,
   computed,
@@ -99,9 +98,6 @@ export default defineComponent({
 
   setup(props) {
     const locale = useLocaleConfig(SITE_INFO_LOCALES);
-    const background = computed(() =>
-      isLinkHttp(props.preview) ? props.preview : withBase(props.preview)
-    );
     const repoType = computed(() =>
       props.repo ? resolveRepoType(props.repo) : null
     );
@@ -119,7 +115,9 @@ export default defineComponent({
           h("div", {
             class: "site-info-preview",
             style: {
-              background: `url(${background.value}) center/cover no-repeat`,
+              background: `url(${withBase(
+                props.preview
+              )}) center/cover no-repeat`,
             },
           }),
           h("div", { class: "site-info-detail" }, [

@@ -67,14 +67,14 @@ Link of background image, you must fill in absolute path of full path. If not fi
 
 ## bgImageStyle
 
-- Type: `Record<string, string>`
+- Type: `Record<string, string> | string`
 - Required: No
 
 The CSS style of the background image.
 
 ## heroImageStyle
 
-- Type: `Record<string, string>`
+- Type: `Record<string, string> | string`
 - Required: No
 
 CSS style for home icon
