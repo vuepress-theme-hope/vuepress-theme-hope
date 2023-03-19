@@ -10,6 +10,8 @@ actions:
     link: https://plugin-redirect.vuejs.press
 
 footer: MIT Licensed | Copyright © 2022-present Mr.Hope
+redirectFrom:
+  - /redirect-from.html
 ---
 
 ## How to use

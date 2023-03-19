@@ -29,9 +29,9 @@ export const handleRedirect = (
     (frontmatter.head ??= []).unshift([
       "script",
       {},
-      `{
-  const anchor = window.location.hash.substr(1);
-  location.href=\`${redirectUrl}\${anchor?\`#\${anchor}\`:""}\`;
+      `{\
+const anchor = window.location.hash.substr(1);\
+location.href=\`${redirectUrl}\${anchor?\`#\${anchor}\`:""}\`;\
 }`,
     ]);
   }
