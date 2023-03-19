@@ -11,7 +11,6 @@ export const handleRedirect = (
   options: RedirectOptions
 ): void => {
   const { base } = app.options;
-
   const { redirectTo } = frontmatter;
 
   if (redirectTo) {
@@ -27,14 +26,11 @@ export const handleRedirect = (
       .replace(/\.md$/, ".html")
       .replace(/\/(README|index)\.html/, "/");
 
-    // ensure head config
-    if (!frontmatter.head) frontmatter.head = [];
-
-    frontmatter.head.unshift([
+    (frontmatter.head ??= []).unshift([
       "script",
       {},
       `{
-  const anchor=window.location.hash.substr(1);
+  const anchor = window.location.hash.substr(1);
   location.href=\`${redirectUrl}\${anchor?\`#\${anchor}\`:""}\`;
 }`,
     ]);
