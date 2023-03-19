@@ -28,7 +28,7 @@ onMounted(() => {
   const { hash, origin } = window.location;
   const anchor = hash.substr(1);
 
-  const localeConfig = ${JSON.stringify(localeOptions.config)};
+  const localeConfig = ${JSON.stringify(localeOptions.localeConfig)};
   const availableLocales = ${JSON.stringify(availableLocales)};
   const defaultLocale = availableLocales.pop();
 
@@ -40,7 +40,7 @@ onMounted(() => {
       for (const [path, langs] of Object.entries(localeConfig))
         if (langs.includes(lang)) {
 ${
-  localeOptions.fallback
+  localeOptions.localeFallback
     ? `\
           if (!availableLocales.includes(path))
             continue;

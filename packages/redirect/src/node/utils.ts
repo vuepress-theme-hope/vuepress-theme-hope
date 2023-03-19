@@ -8,9 +8,10 @@ export const logger = new Logger(PLUGIN_NAME);
 
 export const getLocaleRedirectHTML = (
   {
-    config,
-    default: defaultBehavior,
-    fallback,
+    localeConfig,
+    defaultBehavior,
+    defaultLocale,
+    localeFallback,
   }: Required<RedirectLocaleOptions>,
   availableLocales: string[]
 ): string => `<!DOCTYPE html>
@@ -24,9 +25,13 @@ export const getLocaleRedirectHTML = (
     const { languages } = window.navigator;
     const anchor = hash.substr(1);
 
-    const localeConfig = ${JSON.stringify(config)};
+    const localeConfig = ${JSON.stringify(localeConfig)};
     const availableLocales = ${JSON.stringify(availableLocales)};
-    const defaultLocale = availableLocales.pop();
+    const defaultLocale = ${
+      availableLocales.includes(defaultLocale)
+        ? JSON.stringify(defaultLocale)
+        : "availableLocales.pop()"
+    };
     const defaultBehavior = ${JSON.stringify(defaultBehavior)}
 
     let localePath = null;
@@ -37,7 +42,7 @@ export const getLocaleRedirectHTML = (
         for (const [path, langs] of Object.entries(localeConfig))
           if (langs.includes(lang)) {
 ${
-  fallback
+  localeFallback
     ? `\
             if (!availableLocales.includes(path))
               continue;

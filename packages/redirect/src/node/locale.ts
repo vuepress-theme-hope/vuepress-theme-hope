@@ -15,10 +15,8 @@ export const getLocaleOptions = (
   const { locales } = app.options;
 
   if (options.locale) {
-    const localeOptions = isPlainObject(options.locale) ? options.locale : {};
-
-    const config = isPlainObject(localeOptions.config)
-      ? localeOptions.config
+    const localeConfig = isPlainObject(options.localeConfig)
+      ? options.localeConfig
       : fromEntries(
           entries(locales)
             .filter(([key, { lang }]) => {
@@ -38,16 +36,16 @@ export const getLocaleOptions = (
             })
             .map(([key, { lang }]) => [key, [lang!]])
         );
-    const defaultLocale = localeOptions.defaultLocale || keys(config).pop()!;
+    const defaultLocale = options.defaultLocale || keys(localeConfig).pop()!;
 
     return {
-      config,
+      localeConfig,
       defaultLocale,
-      fallback: localeOptions.fallback ?? true,
-      default:
-        localeOptions.default &&
-        AVAILABLE_FALLBACK.includes(localeOptions.default)
-          ? localeOptions.default
+      localeFallback: options.localeFallback ?? true,
+      defaultBehavior:
+        options.defaultBehavior &&
+        AVAILABLE_FALLBACK.includes(options.defaultBehavior)
+          ? options.defaultBehavior
           : "defaultLocale",
     };
   }

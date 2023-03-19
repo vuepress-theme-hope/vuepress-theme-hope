@@ -6,7 +6,7 @@ export interface RedirectLocaleOptions {
    *
    * 多语言语言配置
    */
-  config?: Record<string, string | string[]>;
+  localeConfig?: Record<string, string | string[]>;
 
   /**
    * Default locale
@@ -26,7 +26,7 @@ export interface RedirectLocaleOptions {
    *
    * @default true
    */
-  fallback?: boolean;
+  localeFallback?: boolean;
 
   /**
    * Behavior when a locale version is not available for current link
@@ -39,10 +39,10 @@ export interface RedirectLocaleOptions {
    *
    * @default "defaultLocale"
    */
-  default?: "defaultLocale" | "homepage" | "404";
+  defaultBehavior?: "defaultLocale" | "homepage" | "404";
 }
 
-export interface RedirectOptions {
+export interface RedirectOptions extends RedirectLocaleOptions {
   /**
    * Redirect mapping
    *
@@ -63,6 +63,8 @@ export interface RedirectOptions {
 
   /**
    * Redirect locales
+   *
+   * @default false
    */
-  locale?: boolean | RedirectLocaleOptions;
+  locale?: boolean;
 }
