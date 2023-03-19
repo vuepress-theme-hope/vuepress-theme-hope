@@ -1,5 +1,47 @@
 import { type App } from "@vuepress/core";
 
+export interface RedirectLocaleOptions {
+  /**
+   * Locale language config
+   *
+   * 多语言语言配置
+   */
+  config?: Record<string, string | string[]>;
+
+  /**
+   * Default locale
+   *
+   * @description the first locale will be used if absent
+   *
+   * 默认语言
+   *
+   * @description 如果缺失，则使用第一个语言
+   */
+  defaultLocale?: string;
+
+  /**
+   * Whether fallback to other locales user defined
+   *
+   * 是否回退到用户定义的其他语言
+   *
+   * @default true
+   */
+  fallback?: boolean;
+
+  /**
+   * Behavior when a locale version is not available for current link
+   *
+   * @description `"homepage"` and `"404"` is only available when a locale is assigned to current language
+   *
+   * 当前链接没有可用的语言版本时的行为
+   *
+   * @description 只有当语言分配给当前语言时，`"homepage"` 和 `"404"` 才可用
+   *
+   * @default "defaultLocale"
+   */
+  default?: "defaultLocale" | "homepage" | "404";
+}
+
 export interface RedirectOptions {
   /**
    * Redirect mapping
@@ -18,4 +60,9 @@ export interface RedirectOptions {
    * 重定向到的网站域名
    */
   hostname?: string;
+
+  /**
+   * Redirect locales
+   */
+  locale?: boolean | RedirectLocaleOptions;
 }
