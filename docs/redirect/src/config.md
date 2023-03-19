@@ -19,6 +19,47 @@ Redirect map.
 
 Domain name to redirect to.
 
+## locale
+
+- Type: `boolean`
+- Default: `false`
+
+Whether enable locales redirection.
+
+## localeConfig
+
+- Type: `Record<string, string | string[]>`
+- Required: No
+
+Locale language config
+
+## localeFallback
+
+- Type: `boolean`
+- Default: `true`
+
+Whether fallback to other locales user defined
+
+## defaultBehavior
+
+- Type: `"defaultLocale" | "homepage" | "404"`
+- Default: `"defaultLocale"`
+
+Behavior when a locale version is not available for current link.
+
+::: note
+
+`"homepage"` and `"404"` is only available when a locale is assigned to current language.
+
+:::
+
+## defaultLocale
+
+- Type: `string`
+- Default: the first locale
+
+Default locale path.
+
 ## Frontmatter options
 
 ### redirectFrom
