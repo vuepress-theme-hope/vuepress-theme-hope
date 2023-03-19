@@ -86,7 +86,8 @@ ${
 <body>
   <p>Redirecting...</p>
 </body>
-</html>`;
+</html>
+`;
 
 export const getRedirectHTML = (redirectUrl: string): string => `<!DOCTYPE html>
 <html lang="en">
@@ -104,4 +105,5 @@ export const getRedirectHTML = (redirectUrl: string): string => `<!DOCTYPE html>
 <body>
   <p>Redirecting...</p>
 </body>
-</html>`;
+</html>
+`;

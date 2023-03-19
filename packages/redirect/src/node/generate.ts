@@ -10,49 +10,46 @@ import {
 import { fs, path, withSpinner } from "@vuepress/utils";
 import { entries, fromEntries, isAbsoluteUrl } from "vuepress-shared/node";
 
-import { getLocaleOptions } from "./locale.js";
-import { type RedirectOptions } from "./options.js";
+import { type RedirectLocaleOptions, type RedirectOptions } from "./options.js";
 import { type RedirectPluginFrontmatterOption } from "./typings/index.js";
 import { getLocaleRedirectHTML, getRedirectHTML } from "./utils.js";
 
 export const generateLocaleRedirects = async (
   app: App,
-  options: RedirectOptions
+  localeOptions: Required<RedirectLocaleOptions>
 ): Promise<void> => {
-  const localeOptions = getLocaleOptions(app, options);
+  const rootPaths = app.pages
+    .filter(({ pathLocale }) => pathLocale === "/")
+    .map(({ path }) => path);
+  const localeRedirectMap: Record<string, string[]> = {};
 
-  if (localeOptions) {
-    const rootPaths = app.pages
-      .filter(({ pathLocale }) => pathLocale === "/")
-      .map(({ path }) => path);
-    const localeRedirectMap: Record<string, string[]> = {};
+  app.pages
+    .filter(({ pathLocale }) => pathLocale !== "/")
+    .forEach(({ path, pathLocale }) => {
+      const rootPath = path
+        .replace(pathLocale, "/")
+        .replace(/\/$/, "/index.html");
 
-    app.pages
-      .filter(({ pathLocale }) => pathLocale !== "/")
-      .forEach(({ path, pathLocale }) => {
-        const rootPath = path
-          .replace(pathLocale, "/")
-          .replace(/\/$/, "/index.html");
+      if (!rootPaths.includes(rootPath))
+        (localeRedirectMap[rootPath] ??= []).push(pathLocale);
+    });
 
-        if (!rootPaths.includes(rootPath))
-          (localeRedirectMap[rootPath] ??= []).push(pathLocale);
-      });
+  await withSpinner("Generating locale redirect files")(() =>
+    Promise.all(
+      entries(localeRedirectMap).map(([rootPath, availableLocales]) => {
+        const filePath = app.dir.dest(removeLeadingSlash(rootPath));
 
-    await withSpinner("Generating locale redirect files")(() =>
-      Promise.all(
-        entries(localeRedirectMap).map(([rootPath, availableLocales]) =>
-          fs
-            .ensureDir(path.dirname(rootPath))
-            .then(() =>
-              fs.writeFile(
-                rootPath,
-                getLocaleRedirectHTML(localeOptions, availableLocales)
-              )
+        return fs
+          .ensureDir(path.dirname(filePath))
+          .then(() =>
+            fs.writeFile(
+              filePath,
+              getLocaleRedirectHTML(localeOptions, availableLocales)
             )
-        )
-      )
-    );
-  }
+          );
+      })
+    )
+  );
 };
 
 export const generateRedirects = async (
