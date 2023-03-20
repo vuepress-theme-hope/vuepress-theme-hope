@@ -102,7 +102,7 @@ You should keep this option same value with `$tablet` in `.vuepress/config.scss`
 
 :::
 
-## wideBreakPoint <Badge text="Root only" type="warning" />
+## pcBreakPoint <Badge text="Root only" type="warning" />
 
 - Type: `number`
 - Default: `1440`

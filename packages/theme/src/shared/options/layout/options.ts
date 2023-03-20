@@ -157,7 +157,7 @@ export interface LayoutOptions {
    *
    * @default 1440
    */
-  wideBreakPoint?: number;
+  pcBreakPoint?: number;
 
   /**
    * Sorter of structure sidebar
@@ -171,5 +171,5 @@ export interface LayoutOptions {
 
 export type LayoutConfig = Pick<
   LayoutOptions,
-  "mobileBreakPoint" | "wideBreakPoint"
+  "mobileBreakPoint" | "pcBreakPoint"
 >;

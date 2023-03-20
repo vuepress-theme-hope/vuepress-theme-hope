@@ -102,7 +102,7 @@ tag:
 
 :::
 
-## wideBreakPoint <Badge text="Только root" type="warning" />
+## pcBreakPoint <Badge text="Только root" type="warning" />
 
 - Тип: `number`
 - По умолчанию: `1440`

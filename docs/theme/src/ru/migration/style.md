@@ -64,7 +64,7 @@ tag:
 
 ### Шрифт
 
-- Добавлено `$font-family`, `$font-family-fancy` и `$font-family-code`
+- Добавлено `$font-family`, `$font-family-heading` и `$font-family-mono`
 
 ### Переход
 

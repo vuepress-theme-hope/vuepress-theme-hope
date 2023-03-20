@@ -64,7 +64,7 @@ Move to `palette.scss`.
 
 ### Font
 
-- Add `$font-family`, `$font-family-fancy` and `$font-family-code`
+- Add `$font-family`, `$font-family-heading` and `$font-family-mono`
 
 ### Transition
 

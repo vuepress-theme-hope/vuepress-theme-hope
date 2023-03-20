@@ -20,7 +20,7 @@
       background: transparent !important;
       color: var(--code-color);
 
-      font-family: var(--font-family-code);
+      font-family: var(--font-family-mono);
       text-align: left;
       white-space: pre;
       word-spacing: normal;
@@ -43,7 +43,7 @@
   }
 
   .line-number {
-    font-family: var(--font-family-code);
+    font-family: var(--font-family-mono);
   }
 }
 

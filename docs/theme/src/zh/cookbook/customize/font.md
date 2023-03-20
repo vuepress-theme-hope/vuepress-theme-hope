@@ -24,11 +24,11 @@ tag:
 
 ## 修改主题字体
 
-主题在 `.vuepress/styles/palette.scss` 中提供了 `$font-family`、`$font-family-fancy` 和 `$font-family-code` 三个变量控制字体。
+主题在 `.vuepress/styles/palette.scss` 中提供了 `$font-family`、`$font-family-heading` 和 `$font-family-mono` 三个变量控制字体。
 
 - `$font-family`: 普通文本上使用的字体
-- `$font-family-fancy:` 用于花哨元素的字体
-- `$font-family-code`: 代码上使用的字体
+- `$font-family-heading:` 用于标题元素的字体
+- `$font-family-mono`: 代码上使用的字体
 
 默认情况下，主题在普通文本上使用无衬线体。
 

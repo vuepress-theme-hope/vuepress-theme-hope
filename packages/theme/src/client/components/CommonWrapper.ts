@@ -63,7 +63,7 @@ export default defineComponent({
       ThemeProjectHomePageFrontmatter | ThemeNormalPageFrontmatter
     >();
     const themeLocale = useThemeLocaleData();
-    const { isMobile, isWide } = useWindowSize();
+    const { isMobile, isPC } = useWindowSize();
 
     const [isMobileSidebarOpen, toggleMobileSidebar] = useToggle(false);
     const [isDesktopSidebarCollapsed, toggleDesktopSidebar] = useToggle(false);
@@ -203,7 +203,7 @@ export default defineComponent({
                   "hide-navbar": hideNavbar.value,
                   "sidebar-collapsed":
                     !isMobile.value &&
-                    !isWide.value &&
+                    !isPC.value &&
                     isDesktopSidebarCollapsed.value,
                   "sidebar-open": isMobile.value && isMobileSidebarOpen.value,
                 },

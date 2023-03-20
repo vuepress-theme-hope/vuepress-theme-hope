@@ -64,7 +64,7 @@ tag:
 
 ### 字体
 
-- 新增 `$font-family`, `$font-family-fancy` 和 `$font-family-code`
+- 新增 `$font-family`, `$font-family-heading` 和 `$font-family-mono`
 
 ### 动画
 

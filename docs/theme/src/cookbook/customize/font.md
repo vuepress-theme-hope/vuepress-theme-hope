@@ -18,11 +18,11 @@ For common font families, they can generally be divided into **serif**[^serif] a
 
 ## Modifying Fonts
 
-The theme provides `$font-family`, `$font-family-fancy` and `$font-family-code` three variables to control the font in `.vuepress/styles/palette.scss`.
+The theme provides `$font-family`, `$font-family-heading` and `$font-family-mono` three variables to control the font in `.vuepress/styles/palette.scss`.
 
 - `$font-family`: the font used on normal text
-- `$font-family-fancy:` font for fancy elements
-- `$font-family-code`: the font used in code block and inline codes
+- `$font-family-heading:` font for heading elements
+- `$font-family-mono`: the font used in code block and inline codes
 
 By default, the theme uses sans serif with normal text.
 

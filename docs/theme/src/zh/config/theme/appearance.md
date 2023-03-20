@@ -101,7 +101,7 @@ tag:
 
 :::
 
-## wideBreakPoint <Badge text="仅限 Root" type="warning" />
+## pcBreakPoint <Badge text="仅限 Root" type="warning" />
 
 - 类型: `number`
 - 默认值: `1440`

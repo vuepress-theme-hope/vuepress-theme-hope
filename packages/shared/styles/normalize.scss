@@ -48,8 +48,8 @@ kbd {
 
 code {
   margin: 0;
-  padding: 0.25rem 0.5rem;
-  border-radius: 3px;
+  padding: 0.2rem 0.4rem;
+  border-radius: 5px;
 
   background: rgba(127 127 127 / 12%);
 
@@ -141,7 +141,7 @@ a.header-anchor {
 p,
 ul,
 ol {
-  line-height: 1.7;
+  line-height: 1.6;
   overflow-wrap: break-word;
 
   @media print {

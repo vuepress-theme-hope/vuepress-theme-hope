@@ -123,11 +123,11 @@ $border-color: (
 字体:
 
 - `$font-family`: 普通文本上使用的字体
-- `$font-family-fancy:` 用于花哨元素的字体
+- `$font-family-heading:` 用于标题元素的字体
 
 代码:
 
-- `$font-family-code`: 代码上使用的字体
+- `$font-family-mono`: 代码上使用的字体
 - `$line-numbers-width`: 代码块中行号的宽度
 
 过渡:

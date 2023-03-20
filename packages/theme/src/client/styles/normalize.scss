@@ -19,6 +19,10 @@ body {
 body {
   color: var(--text-color);
   font-family: var(--font-family);
+
+  @media (min-width: hope-config.$pc) {
+    font-size: 18px;
+  }
 }
 
 a {
@@ -28,11 +32,11 @@ a {
 kbd {
   border-color: var(--border-color-dark);
   background: var(--bg-color-secondary);
-  font-family: var(--font-family-code);
+  font-family: var(--font-family-mono);
 }
 
 code {
-  font-family: var(--font-family-code);
+  font-family: var(--font-family-mono);
   transition: background var(--color-transition), color var(--color-transition);
 
   #{hope-config.$dark-selector} & {

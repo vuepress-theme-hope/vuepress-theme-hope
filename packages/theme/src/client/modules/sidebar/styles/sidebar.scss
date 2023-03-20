@@ -19,7 +19,7 @@
   background: var(--sidebar-bg-color);
   box-shadow: 2px 0 8px var(--card-shadow);
 
-  font-size: 15px;
+  font-size: 0.94rem;
 
   transition: background var(--color-transition),
     box-shadow var(--color-transition), padding var(--transform-transition),
@@ -30,7 +30,7 @@
   scrollbar-width: thin;
 
   @media (max-width: hope-config.$pad) {
-    font-size: 14px;
+    font-size: 0.86px;
   }
 
   // on mobile
@@ -52,6 +52,7 @@
     // this value should be greater than footer height, and users should manually override it
     padding-bottom: 3rem;
     box-shadow: none;
+    font-size: 1rem;
   }
 
   @media print {
