@@ -14,10 +14,6 @@ const locales = {
     input: "输入",
     output: "输出",
   },
-  "/ru/": {
-    input: "Ввод",
-    output: "Вывод",
-  },
 };
 
 export default defineComponent({

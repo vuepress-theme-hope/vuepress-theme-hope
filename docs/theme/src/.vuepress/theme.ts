@@ -1,14 +1,6 @@
 import { theme } from "docs-shared";
-import {
-  enNavbarConfig,
-  zhNavbarConfig,
-  ruNavbarConfig,
-} from "./navbar/index.js";
-import {
-  enSidebarConfig,
-  zhSidebarConfig,
-  ruSidebarConfig,
-} from "./sidebar/index.js";
+import { enNavbarConfig, zhNavbarConfig } from "./navbar/index.js";
+import { enSidebarConfig, zhSidebarConfig } from "./sidebar/index.js";
 
 const IS_NETLIFY = "NETLIFY" in process.env;
 
@@ -36,10 +28,6 @@ export default theme("theme", {
     "/zh/": {
       navbar: zhNavbarConfig,
       sidebar: zhSidebarConfig,
-    },
-    "/ru/": {
-      navbar: ruNavbarConfig,
-      sidebar: ruSidebarConfig,
     },
   },
 
@@ -95,18 +83,6 @@ export default theme("theme", {
                   {
                     text: "立即访问",
                     link: "https://theme-hope.vuejs.press/zh/",
-                  },
-                ],
-              },
-              {
-                path: "/ru/",
-                title: "Новое местоположение документации",
-                content:
-                  "Наша документация переехала на новый домен vuejs.press<br>Текущая документация построена на основе последнего коммита в главной ветке и может содержать <strong>неопубликованные изменения</strong>!",
-                actions: [
-                  {
-                    text: "Посетите сейчас",
-                    link: "https://theme-hope.vuejs.press/ru/",
                   },
                 ],
               },

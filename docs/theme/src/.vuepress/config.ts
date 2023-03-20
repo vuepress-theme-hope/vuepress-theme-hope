@@ -31,11 +31,6 @@ export default config(
         title: "vuepress-theme-hope",
         description: "一个具有强大功能的 vuepress 主题✨",
       },
-      "/ru/": {
-        lang: "ru-RU",
-        title: "vuepress-theme-hope",
-        description: "Тема vuepress с множеством функций✨",
-      },
     },
 
     theme,

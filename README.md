@@ -7,7 +7,7 @@
 
 <h4 align="center">
 
-[中文简介](README-zh.md) | [Russian README](README-ru.md)
+[中文简介](README-zh.md)
 
 </h4>
 

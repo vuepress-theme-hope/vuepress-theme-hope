@@ -6,7 +6,7 @@ We always welcome everyone to contribute! Here is a guide for you.
 
 - [English](https://theme-hope.vuejs.press/contribution.html)
 - [简体中文](https://theme-hope.vuejs.press/zh/contribution.html)
-- [Русский](https://theme-hope.vuejs.press/ru/contribution.html)
+- [Русский](https://theme-hope-ru.vuejs.press/contribution.html)
 
 ## Clone and Install Project
 
