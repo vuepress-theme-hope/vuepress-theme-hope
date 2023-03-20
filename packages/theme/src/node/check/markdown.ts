@@ -3,10 +3,10 @@ import { isArray } from "@vuepress/shared";
 import { colors } from "@vuepress/utils";
 import { values } from "vuepress-shared/node";
 
-import { logger } from "./utils.js";
-import { type ThemeData } from "../shared/index.js";
+import { type ThemeData } from "../../shared/index.js";
+import { logger } from "../utils.js";
 
-export const extendsMarkdownOptions = (
+export const checkHeader = (
   markdownOptions: MarkdownOptions,
   themeData: ThemeData
 ): void => {
@@ -37,7 +37,7 @@ export const extendsMarkdownOptions = (
         )}, which does not extract header level ${headerDepth}.`
       );
 
-      markdownOptions.anchor.level = new Array(headerDepth)
+      markdownOptions.anchor.level = new Array(headerDepth + 1)
         .fill(0)
         .map((_, index) => index + 1);
     }
@@ -57,7 +57,7 @@ export const extendsMarkdownOptions = (
       );
 
       markdownOptions.headers = {
-        level: new Array(headerDepth).fill(0).map((_, index) => index + 1),
+        level: new Array(headerDepth).fill(0).map((_, index) => index + 2),
       };
     }
   } else {
@@ -68,7 +68,7 @@ export const extendsMarkdownOptions = (
     if (
       new Array(headerDepth)
         .fill(0)
-        .some((_, index) => !level.includes(index + 1))
+        .some((_, index) => !level.includes(index + 2))
     ) {
       logger.warn(
         `Max ${colors.magenta(
@@ -82,7 +82,7 @@ export const extendsMarkdownOptions = (
 
       markdownOptions.headers.level = new Array(headerDepth)
         .fill(0)
-        .map((_, index) => index + 1);
+        .map((_, index) => index + 2);
     }
   }
 };

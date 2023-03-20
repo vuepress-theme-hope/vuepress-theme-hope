@@ -4,7 +4,11 @@ import { watch } from "chokidar";
 
 import { getAlias } from "./alias.js";
 import { extendsBundlerOptions } from "./bundler.js";
-import { checkUserPlugin, vuePressVersionCheck } from "./check/index.js";
+import {
+  checkHeader,
+  checkUserPlugin,
+  checkVuePressVersion,
+} from "./check/index.js";
 import { checkLegacyStyle, convertThemeOptions } from "./compact/index.js";
 import {
   checkSocialMediaIcons,
@@ -12,7 +16,6 @@ import {
   getThemeData,
 } from "./config/index.js";
 import { addFavicon } from "./init/index.js";
-import { extendsMarkdownOptions } from "./markdownOptions.js";
 import { getPluginConfig, usePlugin } from "./plugins/index.js";
 import {
   prepareConfigFile,
@@ -55,7 +58,7 @@ export const hopeTheme =
 
     if (behaviorOptions.compact) checkLegacyStyle(app);
 
-    vuePressVersionCheck(app);
+    checkVuePressVersion(app);
 
     const status = getStatus(app, options);
     const themeData = getThemeData(app, themeOptions, status);
@@ -81,8 +84,7 @@ export const hopeTheme =
       extendsBundlerOptions,
 
       extendsMarkdownOptions: (markdownOptions): void => {
-        if (behaviorOptions.check)
-          extendsMarkdownOptions(markdownOptions, themeData);
+        if (behaviorOptions.check) checkHeader(markdownOptions, themeData);
       },
 
       onInitialized: (app): void => {

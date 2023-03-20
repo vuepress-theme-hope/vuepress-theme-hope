@@ -10,7 +10,7 @@ interface PackageJSON extends Record<string, unknown> {
   devDependencies?: Record<string, string>;
 }
 
-export const vuePressVersionCheck = (app: App): boolean => {
+export const checkVuePressVersion = (app: App): boolean => {
   const sourceFolderPath = app.dir.source();
   const mainPackages: string[] = [];
   const subPackages: string[] = [];
