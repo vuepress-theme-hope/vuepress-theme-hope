@@ -1,13 +1,4 @@
-import { type Author } from "vuepress-shared";
-
 export interface BaseCommentOptions {
-  /**
-   * Default author
-   *
-   * 默认作者
-   */
-  author?: Author;
-
   /**
    * Whether enable comment by default
    *
