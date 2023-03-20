@@ -4,6 +4,26 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.196](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.195...v2.0.0-beta.196) (2023-03-20)
+
+### ⚠ BREAKING CHANGES
+
+- **redirect:** rename `locale` to `autoLocale`
+
+### Features
+
+- **components:** compact with new BiliBili player ([15f930b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/15f930b5dd966e7964b1b4a1fddff0cb50efcc56))
+- **redirect:** rename `locale` to `autoLocale` ([968bb6a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/968bb6a8f96a48e3ce63df5eb45f50e974d5bf16))
+
+### Bug Fixes
+
+- **comment2:** fix comment option types ([1cb3ee6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1cb3ee6efd066c7c0840127998cee071430f72a7))
+- **comment2:** fix delay options ([7a6e913](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7a6e913b9d75e75d9a71c0f7350868e671de7747))
+- **theme:** fix headerDepth check ([924ba7f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/924ba7f962a198545b344273a4c17fcb09e98dfb))
+- **theme:** fix sidebar font-size ([7938e79](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7938e793a456f4522dacec37188020dd98365678))
+- **theme:** fix timeline date appearance ([#2929](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2929)) ([2637e04](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2637e04c1bde27db49e4f6474a0a5a3fdc1df956))
+- **theme:** tweaks on check ([2eb51a0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2eb51a06f2fc2711d06914f912f449f9150fde11))
+
 ## [2.0.0-beta.195](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.194...v2.0.0-beta.195) (2023-03-20)
 
 ### Features
