@@ -44,4 +44,4 @@ Themes provide breakpoint variables for controlling responsive layout behavior. 
 - `$tablet`: Tablet responsive layout breakpoint, default is `768px`
 - `$mobile`: Mobile responsive layout breakpoint, default is `480px`
 
-In particular, the theme has a large layout change at `$tablet`, so `$tablet` will only be based on the pixel size, if you modify it, you need to also set [`mobileBreakPoint`](../../config/theme/appearance.md#mobilebreakpoint) option with the modified pixel size.
+In particular, `$tablet` and `$pc` will only be based on the pixel size, if you modify it, you need to also set [`mobileBreakPoint`](../../config/theme/appearance.md#mobilebreakpoint) and [`pcBreakPoint`](../../config/theme/appearance.md#mobilebreakpoint) options with the modified pixel size.
