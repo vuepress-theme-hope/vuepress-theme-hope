@@ -61,9 +61,9 @@ import { defineClientConfig } from "@vuepress/client";
 
 import { HopeIcon, Layout, NotFound, useScrollPromise, injectDarkmode, setupDarkmode, setupSidebarItems } from "${PERF_FOLDER}export.js";
 
-import "${PERF_FOLDER}styles/all.scss";
-
 ${imports.join("\n")}
+
+import "${PERF_FOLDER}styles/all.scss";
 
 export default defineClientConfig({
   enhance: ({ app, router }) => {
