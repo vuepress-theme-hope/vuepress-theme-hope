@@ -10,10 +10,11 @@ export const extendsMarkdownOptions = (
   markdownOptions: MarkdownOptions,
   themeData: ThemeData
 ): void => {
-  const headerDepth = values(themeData.locales)
-    .map(({ headerDepth }) => headerDepth)
-    .sort((a = 2, b = 2) => b - a)
-    .pop()!;
+  const headerDepth =
+    values(themeData.locales)
+      .map(({ headerDepth }) => headerDepth)
+      .sort((a = 2, b = 2) => b - a)
+      .pop() ?? 2;
 
   // check anchor level
   if (markdownOptions.anchor) {
