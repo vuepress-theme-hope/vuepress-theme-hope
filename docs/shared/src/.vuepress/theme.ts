@@ -10,12 +10,12 @@ export default theme("seo2", {
           text: "Node",
           icon: "fab fa-node-js",
           prefix: "/node/",
-          children: ["bundler", "content"],
+          children: ["bundler", "locale", "content"],
         },
         "/client",
       ],
 
-      sidebar: false,
+      sidebar: "structure",
     },
 
     "/zh/": {
@@ -26,12 +26,12 @@ export default theme("seo2", {
           text: "Node",
           icon: "fab fa-node-js",
           prefix: "/zh/node/",
-          children: ["bundler", "content"],
+          children: ["bundler", "locale", "content"],
         },
         "/zh/client",
       ],
 
-      sidebar: false,
+      sidebar: "structure",
     },
   },
 

@@ -58,22 +58,29 @@ export const getRootLang = (app: App): string => {
 export const getRootLangPath = (app: App): string =>
   lang2Path(getRootLang(app), app.env.isDebug);
 
+/**
+ * Get locale paths
+ *
+ * @param app VuePress Node app
+ * @returns locale paths
+ */
 export const getLocalePaths = (app: App): string[] =>
   Array.from(new Set(keys(app.siteData.locales)));
 
 export interface GetLocalesOptions<T extends LocaleData> {
+  /** VuePress Node app */
   app: App;
+  /** Default locale config */
   default: RequiredLocaleConfig<T>;
+  /** user locale config */
   config?: LocaleConfig<T> | undefined;
+  /** plugin name */
   name?: string;
 }
 
 /**
- * Get final locale config to passed to client
+ * Get final locale config for client
  *
- * @param app  VuePress Node App
- * @param defaultLocalesConfig default locale config
- * @param userLocalesConfig user locale config
  * @returns final locale config
  */
 export const getLocales = <T extends LocaleData>({
