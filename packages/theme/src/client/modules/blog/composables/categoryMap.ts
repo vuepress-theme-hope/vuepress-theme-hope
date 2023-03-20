@@ -9,7 +9,7 @@ import { type ArticleInfo } from "../../../../shared/index.js";
 export type CategoryMapRef = ComputedRef<BlogCategoryData<ArticleInfo>>;
 
 export const categoryMapSymbol: InjectionKey<CategoryMapRef> =
-  Symbol.for("categoryMap");
+  Symbol("categoryMap");
 
 /**
  * Inject categoryMap

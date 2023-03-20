@@ -21,8 +21,7 @@ export type TimelinesRef = ComputedRef<{
   items: Article<ArticleInfo>[];
 }>;
 
-export const timelinesSymbol: InjectionKey<TimelinesRef> =
-  Symbol.for("timelines");
+export const timelinesSymbol: InjectionKey<TimelinesRef> = Symbol("timelines");
 
 /**
  * Inject timelines

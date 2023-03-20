@@ -12,7 +12,7 @@ import { type ResolvedSidebarItem } from "../utils/index.js";
 export type SidebarItemsRef = ComputedRef<ResolvedSidebarItem[]>;
 
 export const sidebarItemsSymbol: InjectionKey<SidebarItemsRef> =
-  Symbol.for("sidebarItems");
+  Symbol("sidebarItems");
 
 /**
  * Create sidebar items ref and provide as global computed in setup

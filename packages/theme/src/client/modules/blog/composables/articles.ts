@@ -5,7 +5,7 @@ import { type ArticleInfo } from "../../../../shared/index.js";
 
 export type ArticlesRef = ComputedRef<BlogTypeData<ArticleInfo>>;
 
-export const articlesSymbol: InjectionKey<ArticlesRef> = Symbol.for("articles");
+export const articlesSymbol: InjectionKey<ArticlesRef> = Symbol("articles");
 
 /**
  * Inject articles

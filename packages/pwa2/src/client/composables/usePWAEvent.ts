@@ -11,7 +11,7 @@ export type PWAEvent = Emitter<{
   error: Error;
 }>;
 
-export const pwaEventSymbol: InjectionKey<PWAEvent> = Symbol.for("PWAEvent");
+export const pwaEventSymbol: InjectionKey<PWAEvent> = Symbol("PWAEvent");
 
 export const usePWAEvent = (): PWAEvent => {
   const pwaEvent = inject(pwaEventSymbol);

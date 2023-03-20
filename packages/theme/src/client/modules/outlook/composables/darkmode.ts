@@ -27,7 +27,7 @@ export interface DarkMode {
   canToggle: ComputedRef<boolean>;
 }
 
-export const darkModeSymbol: InjectionKey<DarkMode> = Symbol.for("darkMode");
+export const darkModeSymbol: InjectionKey<DarkMode> = Symbol("darkMode");
 
 /**
  * Inject dark mode global computed

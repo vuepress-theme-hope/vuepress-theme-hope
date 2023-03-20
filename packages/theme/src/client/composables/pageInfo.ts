@@ -49,7 +49,7 @@ export const usePageCategory = (): ComputedRef<PageCategory[]> => {
       name,
       // this is a hack
       path: ENABLE_BLOG
-        ? inject<CategoryMapRef>(Symbol.for("categoryMap"))?.value.map[name]
+        ? inject<CategoryMapRef>(Symbol("categoryMap"))?.value.map[name]
             ?.path || ""
         : "",
     }))
@@ -64,8 +64,7 @@ export const usePageTag = (): ComputedRef<PageTag[]> => {
       name,
       // this is a hack
       path: ENABLE_BLOG
-        ? inject<CategoryMapRef>(Symbol.for("tagMap"))?.value.map[name]?.path ||
-          ""
+        ? inject<CategoryMapRef>(Symbol("tagMap"))?.value.map[name]?.path || ""
         : "",
     }))
   );
