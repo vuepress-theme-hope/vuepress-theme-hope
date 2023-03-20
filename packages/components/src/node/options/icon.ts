@@ -10,7 +10,10 @@ export type BuiltInFontIcon =
   | "fontawesome"
   | "fontawesome-with-brands";
 
-export type FontIconAssets = BuiltInFontIcon | Link | Link[];
+export type FontIconAssets =
+  | BuiltInFontIcon
+  | Link
+  | (BuiltInFontIcon | Link)[];
 
 export interface FontIconOptions {
   /**

@@ -1,7 +1,7 @@
 import { type App } from "@vuepress/core";
 import { isArray, isString } from "@vuepress/shared";
 
-import { getIconLink, getNoticeOptions } from "./components/index.js";
+import { getIconLinks, getNoticeOptions } from "./components/index.js";
 import { type ComponentOptions } from "./options/index.js";
 import { AVAILABLE_COMPONENTS, CLIENT_FOLDER } from "./utils.js";
 
@@ -34,7 +34,7 @@ if(!hasGlobalComponent("${item}")) app.component("${item}", ${item});
     }
 
     if (item === "FontIcon")
-      getIconLink(componentOptions.fontIcon?.assets).forEach((item) => {
+      getIconLinks(componentOptions.fontIcon?.assets).forEach((item) => {
         const { type, content } = item;
 
         if (type === "script") shouldImportUseScriptTag = true;

@@ -83,13 +83,13 @@ Twitter username.
     | `http://${string}`
     | `https://${string}`;
 
-  type FontIconAssets =
-    | "iconfont"
+  type BuiltInFontIcon =
     | "iconify"
+    | "iconfont"
     | "fontawesome"
-    | "fontawesome-with-brands"
-    | Link
-    | Link[];
+    | "fontawesome-with-brands";
+
+  type FontIconAssets = BuiltInFontIcon | Link | (BuiltInFontIcon | Link)[];
   ```
 
 - Required: No
