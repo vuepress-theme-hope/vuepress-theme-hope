@@ -53,7 +53,7 @@ export default defineComponent({
           new Promise<void>((resolve) => {
             setTimeout(() => {
               void nextTick().then(resolve);
-            }, twikooOption.delay);
+            }, twikooOption.delay || 800);
           }),
         ]);
 

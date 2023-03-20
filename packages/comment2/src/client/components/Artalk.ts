@@ -67,7 +67,7 @@ export default defineComponent({
           new Promise<void>((resolve) => {
             setTimeout(() => {
               void nextTick().then(resolve);
-            }, artalkOptions.delay);
+            }, artalkOptions.delay || 800);
           }),
         ]).then(([{ default: _Artalk }]) => {
           // FIXME: Typescript type issues
