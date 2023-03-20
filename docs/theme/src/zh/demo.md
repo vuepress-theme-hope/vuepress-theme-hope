@@ -180,6 +180,13 @@ blog:
     repo: https://github.com/Mister-Hope/Mister-Hope.github.io
     preview: /assets/image/mrhope.jpg
 
+  - name: 墨七
+    desc: 简单快乐，理应如此。
+    logo: https://file.mo7.cc/static/lxh_gif/lxh_71.gif
+    url: https://blog.mo7.cc
+    repo: https://github.com/mo7cc/BlogSource.git
+    preview: https://file.mo7.cc/disk/blog_preview.png
+
   - name: Learn Data
     logo: https://newzone.top/logo.svg
     desc: 开源工具、效率方法、心理学探索的自我提升笔记
@@ -257,11 +264,11 @@ blog:
     preview: /assets/image/bing.jpg
 
   - name: Oragekk's Blog
-      desc: 到最后，竟庆幸于夕阳仍留在身上？无聊的思考总是能给人启发，多经历，多记录，多理解
-      logo: https://oragekk.me/logo.svg
-      url: https://oragekk.me/
-      repo: https://github.com/OrageKK/oragekk.github.io
-      preview: /assets/image/oragekk.jpg
+    desc: 到最后，竟庆幸于夕阳仍留在身上？无聊的思考总是能给人启发，多经历，多记录，多理解
+    logo: https://oragekk.me/logo.svg
+    url: https://oragekk.me/
+    repo: https://github.com/OrageKK/oragekk.github.io
+    preview: /assets/image/oragekk.jpg
 ---
 
 ## 在线案例

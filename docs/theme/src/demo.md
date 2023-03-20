@@ -96,6 +96,13 @@ blog:
     repo: https://github.com/Mister-Hope/Mister-Hope.github.io
     preview: /assets/image/mrhope.jpg
 
+  - name: Mo7's Blog
+    desc: Something wonderful is about to happen.
+    logo: https://file.mo7.cc/static/lxh_gif/lxh_71.gif
+    url: https://blog.mo7.cc/en/
+    repo: https://github.com/mo7cc/BlogSource.git
+    preview: https://file.mo7.cc/disk/blog_preview_en.png
+
   - name: Oragekk's Blog
     desc: I'm glad the sunset stays on me？Boring thinking can always inspire people, experience more, record more, and understand more
     logo: https://oragekk.me/logo.svg
