@@ -14,7 +14,7 @@ export const getLocaleOptions = (
 ): Required<RedirectLocaleOptions> | null => {
   const { locales } = app.options;
 
-  if (options.locale) {
+  if (options.autoLocale) {
     const localeConfig = isPlainObject(options.localeConfig)
       ? options.localeConfig
       : fromEntries(

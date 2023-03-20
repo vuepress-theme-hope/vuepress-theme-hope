@@ -68,5 +68,5 @@ export interface RedirectOptions extends RedirectLocaleOptions {
    *
    * @default false
    */
-  locale?: boolean;
+  autoLocale?: boolean;
 }

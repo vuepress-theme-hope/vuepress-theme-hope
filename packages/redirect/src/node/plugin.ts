@@ -1,6 +1,7 @@
 import { type Page, type PluginFunction } from "@vuepress/core";
 import { checkVersion } from "vuepress-shared/node";
 
+import { convertOptions } from "./compact/index.js";
 import { handleRedirect } from "./extends.js";
 import { generateLocaleRedirects, generateRedirects } from "./generate.js";
 import { ensureRootHomePage } from "./homepage.js";
@@ -10,8 +11,11 @@ import { type RedirectPluginFrontmatterOption } from "./typings/index.js";
 import { PLUGIN_NAME, logger } from "./utils.js";
 
 export const redirectPlugin =
-  (options: RedirectOptions = {}): PluginFunction =>
+  (options: RedirectOptions = {}, legacy = true): PluginFunction =>
   (app) => {
+    // TODO: Remove this in v2 stable
+    if (legacy)
+      convertOptions(options as RedirectOptions & Record<string, unknown>);
     checkVersion(app, PLUGIN_NAME, "2.0.0-beta.61");
 
     if (app.env.isDebug) logger.info("Options:", options);

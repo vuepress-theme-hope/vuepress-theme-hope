@@ -19,7 +19,7 @@ Redirect map.
 
 Domain name to redirect to.
 
-## locale
+## autoLocale
 
 - Type: `boolean`
 - Default: `false`

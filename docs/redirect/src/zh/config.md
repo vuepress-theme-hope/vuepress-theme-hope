@@ -19,7 +19,7 @@ icon: gears
 
 重定向到的域名。
 
-## locale
+## autoLocale
 
 - 类型: `boolean`
 - 默认值: `false`

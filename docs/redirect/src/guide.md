@@ -61,7 +61,7 @@ redirect({
 
 ## Redirecting Locales
 
-The plugin can automatically handle multilingual redirection for site. To achieve this, you need to leave the default language directory (`/`) blank and set `locale: true` in plugin options. The plugin will automatically redirect to the correct page according to the user's language.
+The plugin can automatically handle multilingual redirection for site. To achieve this, you need to leave the default language directory (`/`) blank and set `autoLocale: true` in plugin options. The plugin will automatically redirect to the correct page according to the user's language.
 
 I.E.: you need to set the following directory structure:
 
@@ -104,7 +104,7 @@ So when a user accesses `/` or `/page.html`, they are automatically redirected t
 
 ### Customizing Locale Settings
 
-By default, the plugin generates a locale setting by reading `localePath` and `lang` from the site's `locales` option. Sometimes, you may want multiple languages to hit the same path, in which case you should set `localeConfig` in plugin options.
+By default, the plugin generates a locale setting by reading `locale path` and `lang` from the site's `locales` option. Sometimes, you may want multiple languages to hit the same path, in which case you should set `localeConfig` in plugin options.
 
 For example, you might want all English users to match to `/en/` and Chinese Traditional users to `/zh/`, then you can set:
 
