@@ -95,6 +95,7 @@ blog:
     url: https://mrhope.site
     repo: https://github.com/Mister-Hope/Mister-Hope.github.io
     preview: /assets/image/mrhope.jpg
+
   - name: Oragekk's Blog
     desc: I'm glad the sunset stays on me？Boring thinking can always inspire people, experience more, record more, and understand more
     logo: https://oragekk.me/logo.svg
