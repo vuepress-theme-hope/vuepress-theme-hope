@@ -102,6 +102,14 @@ blog:
     url: https://oragekk.me/
     repo: https://github.com/OrageKK/oragekk.github.io
     preview: /assets/image/oragekk.jpg
+
+  - name: Mo7's Blog
+    desc: Something wonderful is about to happen.
+    logo: https://file.mo7.cc/static/lxh_gif/lxh_71.gif
+    url: https://blog.mo7.cc/en/
+    repo: https://github.com/mo7cc/BlogSource.git
+    preview: https://file.mo7.cc/disk/blog_preview_en.png
+
 ---
 
 ## Living Demo
