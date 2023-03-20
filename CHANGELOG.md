@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.195](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.194...v2.0.0-beta.195) (2023-03-20)
+
+### Features
+
+- **theme:** support string for styles ([6d4d99b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6d4d99ba0b4c8523b395633ccf602a26a71d2f81))
+- **theme:** update appearance ([934b4bd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/934b4bdbac6173eb0d431a4016161cee5cc7dab7))
+
+### Bug Fixes
+
+- **components:** fix iconAssets ([42090d2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/42090d2c0455201c9935202ad62920ab14fc5a84))
+- **theme:** ensure user style inject at last ([a8c3354](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a8c3354f86a7ac4101528b6ac4bab3f965c15cd7))
+
 ## [2.0.0-beta.194](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.193...v2.0.0-beta.194) (2023-03-19)
 
 ### Features
