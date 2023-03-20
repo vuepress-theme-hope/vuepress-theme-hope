@@ -1,7 +1,5 @@
 /* eslint-disable vue/no-unused-properties */
-import { useEventListener } from "@vueuse/core";
-import { type VNode, computed, defineComponent, h, onMounted, ref } from "vue";
-import { checkIsMobile } from "vuepress-shared/client";
+import { type VNode, computed, defineComponent, h } from "vue";
 
 import { useSize } from "../composables/index.js";
 import { videoIframeAllow } from "../utils/index.js";
@@ -98,19 +96,7 @@ export default defineComponent({
   },
 
   setup(props) {
-    const isMobile = ref(false);
-    // on pc with width >= 640, a 68px hint will be under video
-    const extraHeight = computed(() => (isMobile.value ? 0 : 68));
-
-    const updateMobile = (): void => {
-      isMobile.value =
-        checkIsMobile(navigator.userAgent) || el.value!.clientWidth < 640;
-    };
-
-    const { el, width, height } = useSize<HTMLIFrameElement>(
-      props,
-      extraHeight
-    );
+    const { el, width, height } = useSize<HTMLIFrameElement>(props);
 
     const videoLink = computed(
       () =>
@@ -120,12 +106,6 @@ export default defineComponent({
           props.noDanmaku ? 0 : 1
         }`
     );
-
-    onMounted(() => {
-      updateMobile();
-      useEventListener("orientationchange", () => updateMobile());
-      useEventListener("resize", () => updateMobile());
-    });
 
     return (): VNode[] => [
       h(
