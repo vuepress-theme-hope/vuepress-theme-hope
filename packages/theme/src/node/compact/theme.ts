@@ -37,6 +37,7 @@ const DEPRECATED_THEME_OPTIONS: [string, string][] = [
   ["hideSiteNameonMobile", "hideSiteNameOnMobile"],
   ["fullScreen", "fullscreen"],
   ["headingDepth", "headerDepth"],
+  ["wideBreakPoint", "pcBreakPoint"],
 ];
 
 const DROPPED_THEME_OPTIONS: [string, string?, string?][] = [
