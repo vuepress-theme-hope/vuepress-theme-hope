@@ -255,6 +255,13 @@ blog:
     url: https://liubing.me/
     repo: https://github.com/liub1934/liubing.me
     preview: /assets/image/bing.jpg
+
+  - name: Oragekk's Blog
+      desc: 到最后，竟庆幸于夕阳仍留在身上？无聊的思考总是能给人启发，多经历，多记录，多理解
+      logo: https://oragekk.me/logo.svg
+      url: https://oragekk.me/
+      repo: https://github.com/OrageKK/oragekk.github.io
+      preview: /assets/image/oragekk.jpg
 ---
 
 ## 在线案例
