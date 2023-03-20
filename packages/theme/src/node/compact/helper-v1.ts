@@ -83,7 +83,7 @@ ${colors.magenta("markdown.slugify")} is ${colors.red(
 If you want to change the slugify function anyway, set the following options separately:
 · ${colors.blue("markdown.anchor.slugify")}
 · ${colors.blue("markdown.toc.slugify")}
-· ${colors.blue("markdown.extractHeaders.slugify")}
+· ${colors.blue("markdown.headers.slugify")}
 `
     );
 

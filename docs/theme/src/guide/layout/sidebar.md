@@ -771,9 +771,9 @@ headerDepth: 2
 
 ::: note
 
-The valid maximum value depends on which levels of headers you have extracted via [markdown.extractHeaders.level](https://v2.vuepress.vuejs.org/reference/config.html#markdown-extractheaders).
+The valid maximum value depends on which levels of headers you have extracted via [markdown.headers.level](https://v2.vuepress.vuejs.org/reference/config.html#markdown-headers).
 
-Since the default value of [markdown.extractHeaders.level](https://v2.vuepress.vuejs.org/reference/config.html#markdown-extractheaders) is `[2, 3]`, so The default maximum value for `headerDepth` is `2`.
+Since the default value of [markdown.headers.level](https://v2.vuepress.vuejs.org/reference/config.html#markdown-headers) is `[2, 3]`, so The default maximum value for `headerDepth` is `2`.
 
 :::
 

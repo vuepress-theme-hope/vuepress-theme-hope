@@ -771,9 +771,9 @@ headerDepth: 2
 
 ::: note
 
-Допустимое максимальное значение зависит от того, какие уровни заголовков вы извлекли с помощью [markdown.extractHeaders.level](https://v2.vuepress.vuejs.org/reference/config.html#markdown-extractheaders).
+Допустимое максимальное значение зависит от того, какие уровни заголовков вы извлекли с помощью [markdown.headers.level](https://v2.vuepress.vuejs.org/reference/config.html#markdown-headers).
 
-Поскольку значение по умолчанию [markdown.extractHeaders.level](https://v2.vuepress.vuejs.org/reference/config.html#markdown-extractheaders) равно `[2, 3]`, поэтому максимальное значение по умолчанию для `headerDepth` равно `2`.
+Поскольку значение по умолчанию [markdown.headers.level](https://v2.vuepress.vuejs.org/reference/config.html#markdown-headers) равно `[2, 3]`, поэтому максимальное значение по умолчанию для `headerDepth` равно `2`.
 
 :::
 
