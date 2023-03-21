@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.197](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.196...v2.0.0-beta.197) (2023-03-21)
+
+### Features
+
+- **theme:** support extraLocales option ([e9f2615](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e9f2615c404aa140e68ab2bc3948c2688b84f9f9))
+
+### Bug Fixes
+
+- **theme:** improve theme data ([6bddfc9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6bddfc981e2e0d78f86e16df48194e88ae34484c))
+
+### Performance Improvements
+
+- use empty string for symbol if possible ([7b8ecf7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7b8ecf7a6bb12e4c20dc2f6a8aa2b73c4ffd2592))
+
 ## [2.0.0-beta.196](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.195...v2.0.0-beta.196) (2023-03-20)
 
 ### ⚠ BREAKING CHANGES
