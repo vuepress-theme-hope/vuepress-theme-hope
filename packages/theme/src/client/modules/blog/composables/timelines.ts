@@ -10,6 +10,8 @@ import { getDate } from "vuepress-shared/client";
 
 import { type ArticleInfo, ArticleInfoType } from "../../../../shared/index.js";
 
+declare const __VUEPRESS_DEV__: boolean;
+
 export interface TimelineItem {
   year: number;
   items: { date: string; path: string; info: ArticleInfo }[];
@@ -21,7 +23,9 @@ export type TimelinesRef = ComputedRef<{
   items: Article<ArticleInfo>[];
 }>;
 
-export const timelinesSymbol: InjectionKey<TimelinesRef> = Symbol("timelines");
+export const timelinesSymbol: InjectionKey<TimelinesRef> = Symbol(
+  __VUEPRESS_DEV__ ? "timelines" : ""
+);
 
 /**
  * Inject timelines

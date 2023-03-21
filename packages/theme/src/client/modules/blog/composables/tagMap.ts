@@ -8,7 +8,7 @@ import { type ArticleInfo } from "../../../../shared/index.js";
 
 export type TagMapRef = ComputedRef<BlogCategoryData<ArticleInfo>>;
 
-export const tagMapSymbol: InjectionKey<TagMapRef> = Symbol("tagMap");
+export const tagMapSymbol: InjectionKey<TagMapRef> = Symbol.for("tagMap");
 
 /**
  * Inject tagMap

@@ -12,7 +12,10 @@ import {
   getTag,
 } from "vuepress-shared/client";
 
-import { type CategoryMapRef } from "@theme-hope/modules/blog/composables/index";
+import {
+  type CategoryMapRef,
+  type TagMapRef,
+} from "@theme-hope/modules/blog/composables/index";
 import { type PageInfoProps } from "@theme-hope/modules/info/components/PageInfo";
 import {
   type PageCategory,
@@ -49,7 +52,7 @@ export const usePageCategory = (): ComputedRef<PageCategory[]> => {
       name,
       // this is a hack
       path: ENABLE_BLOG
-        ? inject<CategoryMapRef>(Symbol("categoryMap"))?.value.map[name]
+        ? inject<CategoryMapRef>(Symbol.for("categoryMap"))?.value.map[name]
             ?.path || ""
         : "",
     }))
@@ -64,7 +67,7 @@ export const usePageTag = (): ComputedRef<PageTag[]> => {
       name,
       // this is a hack
       path: ENABLE_BLOG
-        ? inject<CategoryMapRef>(Symbol("tagMap"))?.value.map[name]?.path || ""
+        ? inject<TagMapRef>(Symbol.for("tagMap"))?.value.map[name]?.path || ""
         : "",
     }))
   );
