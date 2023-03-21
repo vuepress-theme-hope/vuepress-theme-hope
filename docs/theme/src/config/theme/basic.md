@@ -254,7 +254,7 @@ Navbar config
 
 Sidebar config
 
-## locales
+## locales <Badge text="Root only" type="warning" />
 
 - Type: `Record<string, ThemeLocaleOptions>`
 - Details:
@@ -262,7 +262,13 @@ Sidebar config
 
 I18n config of the theme, where you can set options for each language separately.
 
-## hotReload
+## extraLocales <Badge text="Root only" type="warning" />
+
+- Type: `Record<string, string>`
+
+Extra locales for the site, where key is the language name and value is the site path, `:route` will be replaced by current route path.
+
+## hotReload <Badge text="Root only" type="warning" />
 
 - Type: `boolean`
 - Default: Whether using `--debug` flag

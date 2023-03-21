@@ -128,7 +128,7 @@ tag:
 
 是否在侧边栏显示图标。
 
-### sidebarSorter <Badge text="仅限 Root" />
+### sidebarSorter <Badge text="仅限 Root" type="warning" />
 
 - 类型: `SidebarSorter`
 

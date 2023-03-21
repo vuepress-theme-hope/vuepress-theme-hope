@@ -20,6 +20,10 @@ export default theme("theme", {
 
   fullscreen: true,
 
+  i18n: {
+    Русский: "https://theme-hope-ru.vuejs.press:route",
+  },
+
   locales: {
     "/": {
       navbar: enNavbarConfig,

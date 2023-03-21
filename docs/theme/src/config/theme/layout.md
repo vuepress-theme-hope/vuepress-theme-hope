@@ -128,7 +128,7 @@ Sidebar Config.
 
 Whether show icons in the sidebar
 
-### sidebarSorter <Badge text="Root Only" />
+### sidebarSorter <Badge text="Root only" type="warning" />
 
 - Type: `SidebarSorter`
 
