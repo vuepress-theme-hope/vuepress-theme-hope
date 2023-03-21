@@ -1,13 +1,14 @@
-name: Deploy Theme Demo
+name: Deploy GitHub Demo
 
 on:
-  push:
-    branches:
-      - main
-      - work
+  workflow_call:
+    secrets:
+      ACCESS_TOKEN:
+        required: true
 
 jobs:
-  deploy-demo:
+  deploy-demo-to-gh-pages:
+    name: Deploy demo to GitHub Pages
     runs-on: ubuntu-latest
     if: github.repository == 'vuepress-theme-hope/vuepress-theme-hope'
     strategy:
