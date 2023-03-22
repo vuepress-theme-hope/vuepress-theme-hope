@@ -78,10 +78,15 @@ export const useNavbarLanguageDropdown =
               link,
             };
           }),
-          ...entries(themeData.value.i18n || {}).map(([text, path]) => ({
-            text,
-            link: path.replace(":route", route.path),
-          })),
+          ...entries(themeData.value.extraLocales || {}).map(
+            ([text, path]) => ({
+              text,
+              link: path.replace(
+                ":route",
+                route.path.replace(routeLocale.value, "")
+              ),
+            })
+          ),
         ],
       };
 

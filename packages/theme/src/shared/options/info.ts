@@ -31,5 +31,5 @@ export interface InfoOptions {
    *
    * @description 键是语言的名称，值是站点的路径，`:route` 会被替换为当前路由
    */
-  i18n?: Record<string, string>;
+  extraLocales?: Record<string, string>;
 }

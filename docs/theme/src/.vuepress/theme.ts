@@ -20,8 +20,8 @@ export default theme("theme", {
 
   fullscreen: true,
 
-  i18n: {
-    Русский: "https://theme-hope-ru.vuejs.press:route",
+  extraLocales: {
+    Русский: "https://theme-hope-ru.vuejs.press/:route",
   },
 
   locales: {
