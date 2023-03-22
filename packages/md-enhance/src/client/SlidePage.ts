@@ -41,17 +41,17 @@ export default defineComponent({
         h("div", { ref: menu, class: ["menu", { active: showMenu.value }] }, [
           h(
             "button",
-            { class: "menu-button", onClick: () => toggle() },
+            { type: "button", class: "menu-button", onClick: () => toggle() },
             h("span", { class: "icon" })
           ),
           h(
             "button",
-            { class: "back-button", onClick: () => back() },
+            { type: "button", class: "back-button", onClick: () => back() },
             h(BackIcon)
           ),
           h(
             "button",
-            { class: "home-button", onClick: () => home() },
+            { type: "button", class: "home-button", onClick: () => home() },
             h(HomeIcon)
           ),
         ]),

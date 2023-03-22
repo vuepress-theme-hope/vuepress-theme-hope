@@ -77,6 +77,7 @@ export default defineComponent({
       h(
         "button",
         {
+          type: "button",
           class: "search-pro-button",
           role: "search",
           "aria-label": locale.value.search,

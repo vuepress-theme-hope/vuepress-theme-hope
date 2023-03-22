@@ -71,8 +71,8 @@ export default defineComponent({
         h(
           "button",
           {
-            class: "dropdown-title",
             type: "button",
+            class: "dropdown-title",
             "aria-label": dropdownAriaLabel.value,
             onClick: handleDropdown,
           },

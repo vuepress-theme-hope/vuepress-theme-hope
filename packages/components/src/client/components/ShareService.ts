@@ -211,6 +211,7 @@ export default defineComponent({
         h(
           "button",
           {
+            type: "button",
             class: ["share-button", { plain }],
             "aria-label": name,
             "data-balloon-pos": "up",

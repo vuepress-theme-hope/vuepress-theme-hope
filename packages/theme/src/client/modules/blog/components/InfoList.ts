@@ -67,6 +67,7 @@ export default defineComponent({
             h(
               "button",
               {
+                type: "button",
                 class: "blog-type-button",
                 onClick: () => {
                   active.value = key;

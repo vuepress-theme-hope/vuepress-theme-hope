@@ -31,6 +31,7 @@ export default defineComponent({
             h(
               "button",
               {
+                type: "button",
                 class: "full-screen",
                 id: "full-screen-switch",
                 ariaPressed: isFullscreen.value,

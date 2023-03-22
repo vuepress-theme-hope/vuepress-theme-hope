@@ -86,7 +86,11 @@ export default defineComponent({
             }),
             locale.value.remember,
           ]),
-          h("button", { class: "submit", onClick: () => verify() }, "OK"),
+          h(
+            "button",
+            { type: "button", class: "submit", onClick: () => verify() },
+            "OK"
+          ),
         ])
       );
   },

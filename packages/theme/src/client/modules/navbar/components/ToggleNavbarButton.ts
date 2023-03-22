@@ -13,6 +13,7 @@ const ToggleNavbarButton: FunctionalComponent<
   h(
     "button",
     {
+      type: "button",
       class: ["toggle-navbar-button", { "is-active": active }],
       "aria-label": "Toggle Navbar",
       "aria-expanded": active,

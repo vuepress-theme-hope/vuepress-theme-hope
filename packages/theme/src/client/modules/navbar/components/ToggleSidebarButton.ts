@@ -9,6 +9,7 @@ const ToggleSidebarButton: FunctionalComponent<
   h(
     "button",
     {
+      type: "button",
       class: "toggle-sidebar-button",
       title: "Toggle Sidebar",
       onClick: () => emit("toggle"),

@@ -21,6 +21,7 @@ export default defineComponent({
         : h(
             "button",
             {
+              type: "button",
               class: "print-button",
               title: themeLocale.value.metaLocales.print,
               onClick: () => {

@@ -68,6 +68,7 @@ export default defineComponent({
             ],
             ...(collapsible
               ? {
+                  type: "button",
                   onClick: () => emit("toggle"),
                   onKeydown: (event: KeyboardEvent): void => {
                     if (event.key === "Enter") emit("toggle");

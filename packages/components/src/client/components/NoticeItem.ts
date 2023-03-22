@@ -180,6 +180,7 @@ export default defineComponent({
                     { class: "notice-footer" },
                     props.actions.map(({ text, link, type = "" }) =>
                       h("button", {
+                        type: "button",
                         class: ["notice-footer-action", type],
                         onClick: () => openLink(link),
                         innerHTML: text,

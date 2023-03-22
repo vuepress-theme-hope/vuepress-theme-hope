@@ -32,6 +32,7 @@ export default defineComponent({
               h(
                 "button",
                 {
+                  type: "button",
                   class: "action-button",
                   onClick: () => {
                     window.history.go(-1);
@@ -41,7 +42,11 @@ export default defineComponent({
               ),
               h(
                 "button",
-                { class: "action-button", onClick: () => navigate() },
+                {
+                  type: "button",
+                  class: "action-button",
+                  onClick: () => navigate(),
+                },
                 themeLocale.value.routeLocales.home
               ),
             ]),

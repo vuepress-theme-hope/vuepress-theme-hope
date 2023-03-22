@@ -59,6 +59,7 @@ export default defineComponent({
             ? h(
                 "button",
                 {
+                  type: "button",
                   class: "sw-hint-popup",
                   tabindex: 0,
                   onClick: () => uninstall(),

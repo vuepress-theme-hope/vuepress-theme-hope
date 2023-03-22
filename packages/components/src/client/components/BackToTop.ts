@@ -45,6 +45,7 @@ export default defineComponent({
           ? h(
               "button",
               {
+                type: "button",
                 class: "back-to-top",
                 // hint text
                 "aria-label": locale.value.backToTop,

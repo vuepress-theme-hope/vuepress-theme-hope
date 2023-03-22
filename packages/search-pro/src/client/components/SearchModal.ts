@@ -123,6 +123,7 @@ export default defineComponent({
                 h(
                   "button",
                   {
+                    type: "button",
                     class: "close-button",
                     onClick: () => {
                       isActive.value = false;

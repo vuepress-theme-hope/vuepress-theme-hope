@@ -137,6 +137,7 @@ export default defineComponent({
               ? h(
                   "button",
                   {
+                    type: "button",
                     class: "replit-button",
                     onClick: () => {
                       window.open(replLink.value!, "_blank");

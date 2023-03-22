@@ -129,6 +129,7 @@ export default defineComponent({
             h(
               "button",
               {
+                type: "button",
                 class: "close-button",
                 "aria-label": locale.value.close,
                 onClick: () => emit("toggle", false),
@@ -167,6 +168,7 @@ export default defineComponent({
                     h(
                       "button",
                       {
+                        type: "button",
                         "aria-label": locale.value.prevImage,
                         onClick: scrollToLeft,
                       },
@@ -186,6 +188,7 @@ export default defineComponent({
                     h(
                       "button",
                       {
+                        type: "button",
                         "aria-label": locale.value.nextImage,
                         onClick: scrollToRight,
                       },
@@ -204,16 +207,18 @@ export default defineComponent({
           props.useHint
             ? h("div", { class: "ios-text", onClick: hint }, [
                 h("p", locale.value.iOSInstall),
-                h("button", { class: "success" }, "Got it!"),
+                h("button", { type: "button", class: "success" }, "Got it!"),
               ])
             : h("div", { class: "button-wrapper" }, [
-                h("button", { class: "install-button", onClick: install }, [
-                  locale.value.install,
-                  h("span", manifest.value.short_name),
-                ]),
+                h(
+                  "button",
+                  { type: "button", class: "install-button", onClick: install },
+                  [locale.value.install, h("span", manifest.value.short_name)]
+                ),
                 h(
                   "button",
                   {
+                    type: "button",
                     class: "cancel-button",
                     onClick: () => emit("toggle", false),
                   },

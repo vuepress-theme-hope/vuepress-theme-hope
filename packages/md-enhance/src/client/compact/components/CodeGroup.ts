@@ -118,6 +118,7 @@ export const CodeGroup = defineComponent({
             return h(
               "button",
               {
+                type: "button",
                 ref: (element) => {
                   if (element) tabRefs.value[index] = <HTMLUListElement>element;
                 },

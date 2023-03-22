@@ -56,9 +56,10 @@ export default defineComponent({
               : h(
                   "button",
                   {
+                    type: "button",
                     class: ["outlook-button", { open: open.value }],
                     tabindex: "-1",
-                    ariaHidden: true,
+                    "aria-hidden": true,
                   },
                   [
                     h(OutlookIcon),

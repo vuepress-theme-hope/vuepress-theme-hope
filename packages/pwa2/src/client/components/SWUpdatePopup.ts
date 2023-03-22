@@ -52,6 +52,7 @@ export default defineComponent({
             ? h(
                 "button",
                 {
+                  type: "button",
                   class: "sw-update-popup",
                   tabindex: 0,
                   onClick: () => reload(),

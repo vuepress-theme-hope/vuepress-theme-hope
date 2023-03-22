@@ -92,6 +92,7 @@ export default defineComponent({
                 ? h(
                     "button",
                     {
+                      type: "button",
                       class: "slide-down-button",
                       onClick: () => {
                         window.scrollTo({
