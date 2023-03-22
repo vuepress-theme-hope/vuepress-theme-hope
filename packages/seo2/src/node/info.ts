@@ -6,7 +6,7 @@ import {
   isString,
   removeEndingSlash,
 } from "@vuepress/shared";
-import { getAuthor, getDate } from "vuepress-shared/node";
+import { getAuthor, getDateInfo } from "vuepress-shared/node";
 
 import { type SeoOptions } from "./options.js";
 import {
@@ -58,7 +58,7 @@ export const getOGP = (
   const cover = getCover(page, app, options);
   const images = getImages(page, app, options);
   const locales = getAlternateInfo(page, app);
-  const publishedTime = getDate(date)?.value?.toISOString();
+  const publishedTime = getDateInfo(date)?.value?.toISOString();
 
   const ogImage = cover || images[0] || options.fallBackImage || "";
 
@@ -112,7 +112,7 @@ export const getJSONLD = (
 
   const author =
     pageAuthor === false ? [] : getAuthor(pageAuthor || globalAuthor);
-  const datePublished = getDate(date)?.value?.toISOString();
+  const datePublished = getDateInfo(date)?.value?.toISOString();
   const dateModified = git.updatedTime
     ? new Date(git.updatedTime).toISOString()
     : null;

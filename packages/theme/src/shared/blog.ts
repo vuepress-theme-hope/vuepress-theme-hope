@@ -69,7 +69,7 @@ export interface ArticleInfo extends Record<string, unknown> {
   /**
    * writing date info
    */
-  [ArticleInfoType.date]?: Date;
+  [ArticleInfoType.date]?: number;
 
   /**
    * writing date info in current language

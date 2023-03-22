@@ -1,7 +1,6 @@
 import { type ComputedRef, type Ref, computed, toRef } from "vue";
 import {
   type AuthorInfo,
-  type DateInfo,
   getAuthor,
   getCategory,
   getDate,
@@ -65,13 +64,13 @@ export const useArticleTag = (info: Ref<ArticleInfo>): TagRef => {
   );
 };
 
-export type DateRef = ComputedRef<DateInfo | null>;
+export type DateRef = ComputedRef<Date | null>;
 
 export const useArticleDate = (info: Ref<ArticleInfo>): DateRef =>
   computed(() => {
-    const { [ArticleInfoType.date]: date } = info.value;
+    const { [ArticleInfoType.date]: timestamp } = info.value;
 
-    return date ? getDate(date) : null;
+    return getDate(timestamp);
   });
 
 export const useArticleInfo = (props: {

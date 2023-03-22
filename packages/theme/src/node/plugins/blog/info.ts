@@ -1,5 +1,5 @@
 import { type Page } from "@vuepress/core";
-import { getDate, timeTransformer } from "vuepress-shared/node";
+import { getDateInfo, timeTransformer } from "vuepress-shared/node";
 
 import {
   ArticleInfoType,
@@ -26,10 +26,10 @@ export const injectBlogBasicInfo = (
 
   // resolve date
   if ("date" in frontmatter) {
-    const date = getDate(page.frontmatter.date)?.value;
+    const date = getDateInfo(page.frontmatter.date)?.value;
 
     if (date) {
-      info[ArticleInfoType.date] = frontmatter.date;
+      info[ArticleInfoType.date] = date.getTime();
 
       info[ArticleInfoType.localizedDate] = timeTransformer(date, {
         lang: page.lang,
@@ -37,7 +37,7 @@ export const injectBlogBasicInfo = (
       });
     }
   } else if (createdTime) {
-    info[ArticleInfoType.date] = new Date(createdTime);
+    info[ArticleInfoType.date] = createdTime;
   }
 
   // resolve category
