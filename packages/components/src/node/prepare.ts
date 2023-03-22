@@ -56,7 +56,7 @@ if(!hasGlobalComponent("Catalog")) app.component("Catalog", Catalog);
   if (isString(rootComponents.addThis)) {
     shouldImportUseScriptTag = true;
     setups.push(
-      `useScriptTag(\`//s7.addthis.com/js/300/addthis_widget.js#pubid=${rootComponents.addThis}\`);`
+      `useScriptTag(\`https://s7.addthis.com/js/300/addthis_widget.js#pubid=${rootComponents.addThis}\`);`
     );
   }
 
