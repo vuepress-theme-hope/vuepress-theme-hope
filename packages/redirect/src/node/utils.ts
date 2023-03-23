@@ -1,10 +1,59 @@
-import { Logger } from "vuepress-shared/node";
+import { type App, type Page } from "@vuepress/core";
+import {
+  ensureEndingSlash,
+  isArray,
+  isFunction,
+  isPlainObject,
+} from "@vuepress/shared";
+import { getDirname, path } from "@vuepress/utils";
+import { Logger, fromEntries } from "vuepress-shared/node";
 
-import { RedirectLocaleOptions } from "./options.js";
+import { type RedirectLocaleConfig, type RedirectOptions } from "./options.js";
+import { type RedirectPluginFrontmatterOption } from "./typings/index.js";
+
+const __dirname = getDirname(import.meta.url);
 
 export const PLUGIN_NAME = "vuepress-plugin-redirect";
 
+export const CLIENT_FOLDER = ensureEndingSlash(
+  path.resolve(__dirname, "../client")
+);
+
 export const logger = new Logger(PLUGIN_NAME);
+
+const normalizePath = (url: string): string =>
+  url.replace(/\/$/, "/index.html").replace(/(?:\.html)?$/, ".html");
+
+export const getRedirectMap = (
+  app: App,
+  options: RedirectOptions
+): Record<string, string> => {
+  const config = isFunction(options.config)
+    ? options.config(app)
+    : isPlainObject(options.config)
+    ? options.config
+    : {};
+
+  return {
+    ...fromEntries(
+      (<Page<Record<string, never>, RedirectPluginFrontmatterOption>[]>(
+        app.pages
+      ))
+        .map<[string, string][]>(({ frontmatter, path }) =>
+          isArray(frontmatter.redirectFrom)
+            ? frontmatter.redirectFrom.map((from) => [
+                normalizePath(from),
+                path,
+              ])
+            : frontmatter.redirectFrom
+            ? [[normalizePath(frontmatter.redirectFrom), path]]
+            : []
+        )
+        .flat()
+    ),
+    ...config,
+  };
+};
 
 export const getLocaleRedirectHTML = (
   {
@@ -12,7 +61,7 @@ export const getLocaleRedirectHTML = (
     defaultBehavior,
     defaultLocale,
     localeFallback,
-  }: Required<RedirectLocaleOptions>,
+  }: RedirectLocaleConfig,
   availableLocales: string[]
 ): string => `<!DOCTYPE html>
 <html lang="en">

@@ -7,8 +7,9 @@ import { generateLocaleRedirects, generateRedirects } from "./generate.js";
 import { ensureRootHomePage } from "./homepage.js";
 import { getLocaleOptions } from "./locale.js";
 import { type RedirectOptions } from "./options.js";
+import { prepareRedirects } from "./prepare.js";
 import { type RedirectPluginFrontmatterOption } from "./typings/index.js";
-import { PLUGIN_NAME, logger } from "./utils.js";
+import { CLIENT_FOLDER, PLUGIN_NAME, getRedirectMap, logger } from "./utils.js";
 
 export const redirectPlugin =
   (options: RedirectOptions = {}, legacy = true): PluginFunction =>
@@ -21,6 +22,7 @@ export const redirectPlugin =
     if (app.env.isDebug) logger.info("Options:", options);
 
     const localeOptions = getLocaleOptions(app, options);
+    let redirectMap: Record<string, string>;
 
     return {
       name: PLUGIN_NAME,
@@ -33,12 +35,21 @@ export const redirectPlugin =
         ),
 
       onInitialized: async (app): Promise<void> => {
+        redirectMap = getRedirectMap(app, options);
         if (localeOptions) await ensureRootHomePage(app, localeOptions);
       },
 
+      onPrepared: async (app): Promise<void> => {
+        if (app.env.isDev) await prepareRedirects(app, redirectMap);
+      },
+
       onGenerated: async (app): Promise<void> => {
-        await generateRedirects(app, options);
+        await generateRedirects(app, redirectMap);
         if (localeOptions) await generateLocaleRedirects(app, localeOptions);
       },
+
+      ...(app.env.isDev
+        ? { clientConfigFile: `${CLIENT_FOLDER}config.js` }
+        : {}),
     };
   };

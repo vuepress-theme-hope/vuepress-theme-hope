@@ -1,10 +1,10 @@
 import { type App, createPage } from "@vuepress/core";
 
-import { type RedirectLocaleOptions } from "./options.js";
+import { type RedirectLocaleConfig } from "./options.js";
 
 export const ensureRootHomePage = async (
   app: App,
-  localeOptions: Required<RedirectLocaleOptions>
+  localeOptions: RedirectLocaleConfig
 ): Promise<void> => {
   if (
     // homepage not exists
