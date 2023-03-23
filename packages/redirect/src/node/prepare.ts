@@ -7,7 +7,9 @@ export const prepareRedirects = async (
   await app.writeTemp(
     "redirect/config.js",
     `\
-export const redirectConfig = ${JSON.stringify(config, null, 2)};
+export const redirectConfig = ${
+      app.env.isDev ? JSON.stringify(config, null, 2) : "{}"
+    };
 `
   );
 };

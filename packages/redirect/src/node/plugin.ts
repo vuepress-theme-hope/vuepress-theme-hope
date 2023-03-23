@@ -39,9 +39,7 @@ export const redirectPlugin =
         if (localeOptions) await ensureRootHomePage(app, localeOptions);
       },
 
-      onPrepared: async (app): Promise<void> => {
-        if (app.env.isDev) await prepareRedirects(app, redirectMap);
-      },
+      onPrepared: (app): Promise<void> => prepareRedirects(app, redirectMap),
 
       onGenerated: async (app): Promise<void> => {
         await generateRedirects(app, redirectMap);
