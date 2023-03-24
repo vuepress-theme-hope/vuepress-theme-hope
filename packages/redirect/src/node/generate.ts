@@ -7,8 +7,8 @@ import {
 import { fs, path, withSpinner } from "@vuepress/utils";
 import { entries, isAbsoluteUrl } from "vuepress-shared/node";
 
-import { type RedirectLocaleConfig } from "./options.js";
 import { getLocaleRedirectHTML, getRedirectHTML } from "./utils.js";
+import { type RedirectLocaleConfig } from "../shared/index.js";
 
 export const generateLocaleRedirects = async (
   app: App,

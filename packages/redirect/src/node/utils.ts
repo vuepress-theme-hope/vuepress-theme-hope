@@ -8,8 +8,9 @@ import {
 import { getDirname, path } from "@vuepress/utils";
 import { Logger, fromEntries } from "vuepress-shared/node";
 
-import { type RedirectLocaleConfig, type RedirectOptions } from "./options.js";
+import { type RedirectOptions } from "./options.js";
 import { type RedirectPluginFrontmatterOption } from "./typings/index.js";
+import { type RedirectLocaleConfig } from "../shared/index.js";
 
 const __dirname = getDirname(import.meta.url);
 
@@ -72,7 +73,7 @@ export const getLocaleRedirectHTML = (
   <script>
     const { hash, origin, pathname } = window.location;
     const { languages } = window.navigator;
-    const anchor = hash.substr(1);
+    const anchor = hash.substring(1);
 
     const localeConfig = ${JSON.stringify(localeConfig)};
     const availableLocales = ${JSON.stringify(availableLocales)};
@@ -83,22 +84,22 @@ export const getLocaleRedirectHTML = (
     };
     const defaultBehavior = ${JSON.stringify(defaultBehavior)}
 
-    let localePath = null;
+    let matchedLocalePath = null;
 
     // get matched locale
     findLanguage:
       for (const lang of languages)
-        for (const [path, langs] of Object.entries(localeConfig))
+        for (const [localePath, langs] of Object.entries(localeConfig))
           if (langs.includes(lang)) {
 ${
   localeFallback
     ? `\
-            if (!availableLocales.includes(path))
+            if (!availableLocales.includes(localePath))
               continue;
 `
     : ``
 }\
-            localePath = path;
+            matchedLocalePath = localePath;
             break findLanguage;
           }
     
@@ -106,17 +107,17 @@ ${
     const defaultLink = defaultLocale? \`\${origin}\${defaultLocale}\${pathname.substring(1)}\${anchor?\`#\${anchor}\`:""}\`: null;
 
     // a locale matches
-    if (localePath) {
-      const localeLink = \`\${origin}\${localePath}\${pathname.substring(1)}\${anchor?\`#\${anchor}\`:""}\`;
+    if (matchedLocalePath) {
+      const localeLink = \`\${origin}\${matchedLocalePath}\${pathname.substring(1)}\${anchor?\`#\${anchor}\`:""}\`;
 
-      if (availableLocales.includes(localePath)) {
+      if (availableLocales.includes(matchedLocalePath)) {
         location.href = localeLink;
       }
       // the page does not exist
       else {
         // locale homepage
         if (defaultBehavior === "homepage") {
-          location.href = \`\${origin}\${localePath}\`;
+          location.href = \`\${origin}\${matchedLocalePath}\`;
         }
         // default locale page
         else if (defaultBehavior === "defaultLocale" && defaultLink) {

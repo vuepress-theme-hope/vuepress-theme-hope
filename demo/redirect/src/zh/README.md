@@ -4,19 +4,19 @@ title: Home
 icon: home
 heroImage: /logo.svg
 heroText: vuepress-plugin-redirect
-tagline: Redirect plugin for VuePress2
+tagline: VuePress2 的重定向插件
 actions:
-  - text: Docs
+  - text: 文档
     link: https://plugin-redirect.vuejs.press
 
-footer: MIT Licensed | Copyright © 2022-present Mr.Hope
+footer: MIT 协议 | 版权所有 © 2022-至今 Mr.Hope
 redirectFrom:
-  - /redirect-from.html
+  - /zh/redirect-from.html
 ---
 
-## How to use
+## 如何使用
 
-### Install
+### 安装
 
 ```bash
 pnpm add -D vuepress-plugin-redirect
@@ -31,7 +31,7 @@ import { redirectPlugin } from "vuepress-plugin-redirect";
 export default {
   plugins: [
     redirectPlugin({
-      // your options
+      // 你的选项
     }),
   ],
 };

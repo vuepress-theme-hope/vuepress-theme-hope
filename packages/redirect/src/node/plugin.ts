@@ -27,6 +27,10 @@ export const redirectPlugin =
     return {
       name: PLUGIN_NAME,
 
+      define: {
+        REDIRECT_LOCALE_CONFIG: localeOptions ?? null,
+      },
+
       extendsPage: (page, app) =>
         handleRedirect(
           <Page<Record<string, never>, RedirectPluginFrontmatterOption>>page,

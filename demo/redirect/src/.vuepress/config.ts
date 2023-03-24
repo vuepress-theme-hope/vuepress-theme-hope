@@ -11,6 +11,15 @@ export default defineUserConfig({
 
   description: "VuePress2 Redirect Plugin",
 
+  locales: {
+    "/en/": {
+      lang: "en-US",
+    },
+    "/zh/": {
+      lang: "zh-CN",
+    },
+  },
+
   theme: defaultTheme({
     logo: "/logo.svg",
 
@@ -19,6 +28,7 @@ export default defineUserConfig({
 
   plugins: [
     redirectPlugin({
+      autoLocale: true,
       config: {
         "/homepage.html": "/",
       },
