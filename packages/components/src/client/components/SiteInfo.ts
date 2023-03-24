@@ -9,8 +9,8 @@ import {
 import {
   BitbucketIcon,
   GitHubIcon,
+  GitLabIcon,
   GiteeIcon,
-  GitlabIcon,
   SourceIcon,
   resolveRepoType,
   useLocaleConfig,
@@ -30,7 +30,7 @@ export default defineComponent({
     BitbucketIcon,
     GiteeIcon,
     GitHubIcon,
-    GitlabIcon,
+    GitLabIcon,
     SourceIcon,
   },
 
