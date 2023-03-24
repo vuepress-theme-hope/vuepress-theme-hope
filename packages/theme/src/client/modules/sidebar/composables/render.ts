@@ -1,3 +1,4 @@
+import { isString } from "@vuepress/shared";
 import { type VNode, h } from "vue";
 import { useRoute } from "vue-router";
 
@@ -15,7 +16,7 @@ export const renderItem = (
   config: ResolvedSidebarItem,
   props: VNode["props"]
 ): VNode =>
-  config.link
+  isString(config.link)
     ? // if the item has link, render it as `<AutoLink>`
       h(AutoLink, {
         ...props,

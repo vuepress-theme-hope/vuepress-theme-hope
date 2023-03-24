@@ -11,14 +11,14 @@ export const GitHubIcon: FunctionalComponent = () =>
 
 GitHubIcon.displayName = "GitHubIcon";
 
-export const GitlabIcon: FunctionalComponent = () =>
+export const GitLabIcon: FunctionalComponent = () =>
   h(IconBase, { name: "gitlab" }, () =>
     h("path", {
       d: "M229.333 78.688C223.52 62 199.895 62 193.895 78.688L87.958 406.438h247.5c-.188 0-106.125-327.75-106.125-327.75zM33.77 571.438c-4.875 15 .563 31.687 13.313 41.25l464.812 345L87.77 406.438zm301.5-165 176.813 551.25 176.812-551.25zm655.125 165-54-165-424.312 551.25 464.812-345c12.938-9.563 18.188-26.25 13.5-41.25zM830.27 78.688c-5.812-16.688-29.437-16.688-35.437 0l-106.125 327.75h247.5z",
     })
   );
 
-GitlabIcon.displayName = "GitlabIcon";
+GitLabIcon.displayName = "GitLabIcon";
 
 export const GiteeIcon: FunctionalComponent = () =>
   h(IconBase, { name: "gitee" }, () =>

@@ -1,9 +1,10 @@
-name: Deploy production Docs and Demos
+name: Deploy Production Docs and Demos
 
 on:
-  push:
-    tags:
-      - v2.**
+  workflow_call:
+    secrets:
+      ACCESS_TOKEN:
+        required: true
 
 jobs:
   deploy-netlify-docs:
@@ -16,6 +17,11 @@ jobs:
           fetch-depth: 0
           submodules: true
 
+      - name: Restore Build Result
+        uses: actions/download-artifact@v3
+        with:
+          name: build-result
+
       - name: Install pnpm
         uses: pnpm/action-setup@v2
         with:
@@ -27,11 +33,6 @@ jobs:
         with:
           node-version: 18
           cache: pnpm
-
-      - name: Build project
-        env:
-          NODE_OPTIONS: --max_old_space_size=8192
-        run: pnpm run build
 
       - name: Docs build
         env:
@@ -238,6 +239,11 @@ jobs:
           fetch-depth: 0
           submodules: true
 
+      - name: Restore Build Result
+        uses: actions/download-artifact@v3
+        with:
+          name: build-result
+
       - name: Install pnpm
         uses: pnpm/action-setup@v2
         with:
@@ -249,11 +255,6 @@ jobs:
         with:
           node-version: 18
           cache: pnpm
-
-      - name: Build project
-        env:
-          NODE_OPTIONS: --max_old_space_size=8192
-        run: pnpm run build
 
       - name: Docs build
         env:
@@ -306,6 +307,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Restore Build Result
+        uses: actions/download-artifact@v3
+        with:
+          name: build-result
+
       - name: Install pnpm
         uses: pnpm/action-setup@v2
         with:
@@ -317,11 +323,6 @@ jobs:
         with:
           node-version: 18
           cache: pnpm
-
-      - name: Build project
-        env:
-          NODE_OPTIONS: --max_old_space_size=8192
-        run: pnpm run build
 
       - name: Build Netlify Demo
         env:
@@ -387,6 +388,11 @@ jobs:
         with:
           submodules: true
 
+      - name: Restore Build Result
+        uses: actions/download-artifact@v3
+        with:
+          name: build-result
+
       - name: Install pnpm
         uses: pnpm/action-setup@v2
         with:
@@ -398,11 +404,6 @@ jobs:
         with:
           node-version: 18
           cache: pnpm
-
-      - name: Build project
-        env:
-          NODE_OPTIONS: --max_old_space_size=8192
-        run: pnpm run build
 
       - name: Build ${{ matrix.plugin-name }} demo
         env:

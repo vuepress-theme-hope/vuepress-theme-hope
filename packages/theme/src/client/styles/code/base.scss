@@ -118,6 +118,10 @@ div[class*="language-"] {
       @media (max-width: hope-config.$mobile) {
         border-radius: 0;
       }
+
+      @media print {
+        display: none;
+      }
     }
 
     .highlight-line {

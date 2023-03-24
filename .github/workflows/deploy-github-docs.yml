@@ -18,6 +18,11 @@ jobs:
           fetch-depth: 0
           submodules: true
 
+      - name: Restore Build Result
+        uses: actions/download-artifact@v3
+        with:
+          name: build-result
+
       - name: Install pnpm
         uses: pnpm/action-setup@v2
         with:
@@ -29,11 +34,6 @@ jobs:
         with:
           node-version: 18
           cache: pnpm
-
-      - name: Build project
-        env:
-          NODE_OPTIONS: --max_old_space_size=8192
-        run: pnpm run build
 
       - name: Docs build
         env:
