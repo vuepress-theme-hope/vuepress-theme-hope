@@ -111,7 +111,7 @@ Words read per minute.
 
 ::: info
 
-For more plugin options, see <ProjectLink name="photo-swipe" path="/config.html">reading-time2 plugin options</ProjectLink>.
+For more plugin options, see <ProjectLink name="reading-time2" path="/config.html">reading-time2 plugin options</ProjectLink>.
 
 :::
 
