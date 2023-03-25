@@ -1,5 +1,23 @@
 export interface RedirectLocaleConfig {
   /**
+   * Whether enable locales redirection
+   *
+   * 是否启用语言重定向
+   *
+   * @default false
+   */
+  autoLocale: boolean;
+
+  /**
+   * Whether switch locales
+   *
+   * 是否启用重定向语言
+   *
+   * @default false
+   */
+  switchLocale: "direct" | "modal" | false;
+
+  /**
    * Locale language config
    *
    * 多语言语言配置

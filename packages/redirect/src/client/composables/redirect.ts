@@ -6,21 +6,16 @@ import { entries } from "vuepress-shared/client";
 
 import { redirectConfig } from "@temp/redirect/config.js";
 
-import { type RedirectLocaleConfig } from "../../shared/index.js";
+import { redirectLocaleConfig } from "../define.js";
 import { normalizePath } from "../utils/index.js";
 
-declare const REDIRECT_LOCALE_CONFIG: RedirectLocaleConfig | null;
-
-const enableLocaleRedirect = Boolean(REDIRECT_LOCALE_CONFIG);
-
 const {
+  autoLocale,
   defaultBehavior,
   defaultLocale: defaultLocalePath,
   localeConfig,
   localeFallback,
-} = enableLocaleRedirect
-  ? REDIRECT_LOCALE_CONFIG!
-  : ({} as RedirectLocaleConfig);
+} = redirectLocaleConfig;
 
 /**
  * @description devServer only function to handle redirects
@@ -35,15 +30,17 @@ export const setupRedirect = (): void => {
   const handleLocaleRedirect = (routes: RouteRecordNormalized[]): void => {
     const { languages } = window.navigator;
 
-    const defaultLocale = routes.some(
-      ({ path }) => path === route.path.replace("/", defaultLocalePath)
-    )
-      ? defaultLocalePath
-      : routes.find(
-          ({ path }) =>
-            route.path.split("/").length >= 3 &&
-            path === route.path.replace(/^\/[^/]+\//, "/")
-        )?.path;
+    const defaultLocale =
+      defaultLocalePath &&
+      routes.some(
+        ({ path }) => path === route.path.replace("/", defaultLocalePath)
+      )
+        ? defaultLocalePath
+        : routes.find(
+            ({ path }) =>
+              route.path.split("/").length >= 3 &&
+              path === route.path.replace(/^\/[^/]+\//, "/")
+          )?.path;
 
     let matchedLocalePath: string | null = null;
 
@@ -106,7 +103,7 @@ export const setupRedirect = (): void => {
           if (isLinkHttp(to)) window.open(to);
           else void router.replace(to);
 
-      if (enableLocaleRedirect && isRootLocale.value)
+      if (autoLocale && isRootLocale.value)
         handleLocaleRedirect(router.getRoutes());
     },
     { immediate: true }

@@ -10,7 +10,7 @@ import { entries, isAbsoluteUrl } from "vuepress-shared/node";
 import { getLocaleRedirectHTML, getRedirectHTML } from "./utils.js";
 import { type RedirectLocaleConfig } from "../shared/index.js";
 
-export const generateLocaleRedirects = async (
+export const generateAutoLocaleRedirects = async (
   app: App,
   localeOptions: RedirectLocaleConfig
 ): Promise<void> => {

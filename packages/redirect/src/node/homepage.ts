@@ -20,6 +20,8 @@ export const ensureRootHomePage = async (
         frontmatter: { title: "Home" },
         // set markdown content
         content: `\
+Redirecting to the correct locale...
+
 <script setup>
 import { onMounted } from "vue";
 

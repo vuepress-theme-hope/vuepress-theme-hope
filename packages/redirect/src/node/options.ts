@@ -23,15 +23,6 @@ export interface RedirectOptions
   hostname?: string;
 
   /**
-   * Whether enable locales redirection
-   *
-   * 是否启用语言重定向
-   *
-   * @default false
-   */
-  autoLocale?: boolean;
-
-  /**
    * Locale language config
    *
    * 多语言语言配置
