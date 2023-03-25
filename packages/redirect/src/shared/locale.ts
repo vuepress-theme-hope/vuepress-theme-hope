@@ -1,4 +1,4 @@
-export interface RedirectLocaleConfig {
+export interface LocaleConfig {
   /**
    * Whether enable locales redirection
    *

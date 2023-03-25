@@ -1,9 +1,9 @@
 import { type App } from "@vuepress/core";
 
-import { type RedirectLocaleConfig } from "../shared/index.js";
+import { type LocaleConfig } from "../shared/index.js";
 
 export interface RedirectOptions
-  extends Partial<Omit<RedirectLocaleConfig, "localeConfig">> {
+  extends Partial<Omit<LocaleConfig, "localeConfig">> {
   /**
    * Redirect mapping
    *

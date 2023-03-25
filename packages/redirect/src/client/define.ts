@@ -1,8 +1,10 @@
-import { type RedirectLocaleConfig } from "../shared/index.js";
+import {
+  type LocaleConfig,
+  type RedirectLocaleConfig,
+} from "../shared/index.js";
 
-declare const REDIRECT_LOCALE_CONFIG: RedirectLocaleConfig;
-declare const REDIRECT_LOCALE_SWITCH: "direct" | "modal" | false;
+declare const REDIRECT_LOCALE_CONFIG: LocaleConfig;
+declare const REDIRECT_LOCALES: RedirectLocaleConfig;
 
 export const redirectLocaleConfig = REDIRECT_LOCALE_CONFIG;
-
-export const redirectLocaleSwitch = REDIRECT_LOCALE_SWITCH;
+export const redirectLocales = REDIRECT_LOCALES;

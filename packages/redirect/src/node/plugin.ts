@@ -29,7 +29,6 @@ export const redirectPlugin =
 
       define: {
         REDIRECT_LOCALE_CONFIG: localeConfig,
-        REDIRECT_LOCALE_SWITCH: options.switchLocale ?? false,
       },
 
       extendsPage: (page, app) =>
