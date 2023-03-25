@@ -1788,6 +1788,9 @@ importers:
       '@vuepress/cli':
         specifier: 2.0.0-beta.61
         version: 2.0.0-beta.61
+      '@vuepress/client':
+        specifier: 2.0.0-beta.61
+        version: 2.0.0-beta.61
       '@vuepress/core':
         specifier: 2.0.0-beta.61
         version: 2.0.0-beta.61
@@ -1800,6 +1803,12 @@ importers:
       cac:
         specifier: ^6.7.14
         version: 6.7.14
+      vue:
+        specifier: ^3.2.47
+        version: 3.2.47
+      vue-router:
+        specifier: ^4.1.6
+        version: 4.1.6(vue@3.2.47)
       vuepress-shared:
         specifier: workspace:*
         version: link:../shared

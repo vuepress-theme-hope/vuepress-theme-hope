@@ -1,10 +1,60 @@
-import { Logger } from "vuepress-shared/node";
+import { type App, type Page } from "@vuepress/core";
+import {
+  ensureEndingSlash,
+  isArray,
+  isFunction,
+  isPlainObject,
+} from "@vuepress/shared";
+import { getDirname, path } from "@vuepress/utils";
+import { Logger, fromEntries } from "vuepress-shared/node";
 
-import { RedirectLocaleOptions } from "./options.js";
+import { type RedirectOptions } from "./options.js";
+import { type RedirectPluginFrontmatterOption } from "./typings/index.js";
+import { type RedirectLocaleConfig } from "../shared/index.js";
+
+const __dirname = getDirname(import.meta.url);
 
 export const PLUGIN_NAME = "vuepress-plugin-redirect";
 
+export const CLIENT_FOLDER = ensureEndingSlash(
+  path.resolve(__dirname, "../client")
+);
+
 export const logger = new Logger(PLUGIN_NAME);
+
+const normalizePath = (url: string): string =>
+  url.replace(/\/$/, "/index.html").replace(/(?:\.html)?$/, ".html");
+
+export const getRedirectMap = (
+  app: App,
+  options: RedirectOptions
+): Record<string, string> => {
+  const config = isFunction(options.config)
+    ? options.config(app)
+    : isPlainObject(options.config)
+    ? options.config
+    : {};
+
+  return {
+    ...fromEntries(
+      (<Page<Record<string, never>, RedirectPluginFrontmatterOption>[]>(
+        app.pages
+      ))
+        .map<[string, string][]>(({ frontmatter, path }) =>
+          isArray(frontmatter.redirectFrom)
+            ? frontmatter.redirectFrom.map((from) => [
+                normalizePath(from),
+                path,
+              ])
+            : frontmatter.redirectFrom
+            ? [[normalizePath(frontmatter.redirectFrom), path]]
+            : []
+        )
+        .flat()
+    ),
+    ...config,
+  };
+};
 
 export const getLocaleRedirectHTML = (
   {
@@ -12,7 +62,7 @@ export const getLocaleRedirectHTML = (
     defaultBehavior,
     defaultLocale,
     localeFallback,
-  }: Required<RedirectLocaleOptions>,
+  }: RedirectLocaleConfig,
   availableLocales: string[]
 ): string => `<!DOCTYPE html>
 <html lang="en">
@@ -23,7 +73,7 @@ export const getLocaleRedirectHTML = (
   <script>
     const { hash, origin, pathname } = window.location;
     const { languages } = window.navigator;
-    const anchor = hash.substr(1);
+    const anchor = hash.substring(1);
 
     const localeConfig = ${JSON.stringify(localeConfig)};
     const availableLocales = ${JSON.stringify(availableLocales)};
@@ -34,22 +84,22 @@ export const getLocaleRedirectHTML = (
     };
     const defaultBehavior = ${JSON.stringify(defaultBehavior)}
 
-    let localePath = null;
+    let matchedLocalePath = null;
 
     // get matched locale
     findLanguage:
       for (const lang of languages)
-        for (const [path, langs] of Object.entries(localeConfig))
+        for (const [localePath, langs] of Object.entries(localeConfig))
           if (langs.includes(lang)) {
 ${
   localeFallback
     ? `\
-            if (!availableLocales.includes(path))
+            if (!availableLocales.includes(localePath))
               continue;
 `
     : ``
 }\
-            localePath = path;
+            matchedLocalePath = localePath;
             break findLanguage;
           }
     
@@ -57,17 +107,17 @@ ${
     const defaultLink = defaultLocale? \`\${origin}\${defaultLocale}\${pathname.substring(1)}\${anchor?\`#\${anchor}\`:""}\`: null;
 
     // a locale matches
-    if (localePath) {
-      const localeLink = \`\${origin}\${localePath}\${pathname.substring(1)}\${anchor?\`#\${anchor}\`:""}\`;
+    if (matchedLocalePath) {
+      const localeLink = \`\${origin}\${matchedLocalePath}\${pathname.substring(1)}\${anchor?\`#\${anchor}\`:""}\`;
 
-      if (availableLocales.includes(localePath)) {
+      if (availableLocales.includes(matchedLocalePath)) {
         location.href = localeLink;
       }
       // the page does not exist
       else {
         // locale homepage
         if (defaultBehavior === "homepage") {
-          location.href = \`\${origin}\${localePath}\`;
+          location.href = \`\${origin}\${matchedLocalePath}\`;
         }
         // default locale page
         else if (defaultBehavior === "defaultLocale" && defaultLink) {
