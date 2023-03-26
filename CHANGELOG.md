@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.199](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.198...v2.0.0-beta.199) (2023-03-26)
+
+### Features
+
+- **redirect:** add `switchLocale` option ([#2937](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2937)) ([ee5d09c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ee5d09c0c3371de0afb43c21b44f976993124711))
+
+### Bug Fixes
+
+- **theme:** fix NavScreen ([432f95d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/432f95dc0fa494a15373e71b4b0f1a72b46c6a0a))
+- **theme:** fix TOC structure, fix [#2940](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2940) ([37f1e2d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/37f1e2dfca799754b381d97cbb945045a828dfd0))
+
 ## [2.0.0-beta.198](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.197...v2.0.0-beta.198) (2023-03-25)
 
 ### Features
