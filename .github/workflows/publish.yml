@@ -19,6 +19,12 @@ jobs:
         with:
           name: build-result
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7
+          run_install: true
+
       - name: Update npmrc
         run: |
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
