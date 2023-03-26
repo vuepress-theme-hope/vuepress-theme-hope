@@ -36,19 +36,23 @@ const renderChildren = (
     ? h(
         "ul",
         { class: "toc-list" },
-        headers.map((header) => [
-          h(
-            "li",
-            {
-              class: [
-                "toc-item",
-                { active: isActiveLink(route, `#${header.slug}`) },
-              ],
-            },
-            renderHeader(header)
-          ),
-          renderChildren(header.children, headerDepth - 1),
-        ])
+        headers.map((header) => {
+          const children = renderChildren(header.children, headerDepth - 1);
+
+          return [
+            h(
+              "li",
+              {
+                class: [
+                  "toc-item",
+                  { active: isActiveLink(route, `#${header.slug}`) },
+                ],
+              },
+              renderHeader(header)
+            ),
+            children ? h("li", children) : null,
+          ];
+        })
       )
     : null;
 };
