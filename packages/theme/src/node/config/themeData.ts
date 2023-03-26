@@ -46,10 +46,10 @@ export const getThemeData = (
           entries(themeLocalesData).map(([locale, config]) => {
             // remove blog locales if blog is not enabled
             if (!enableBlog) {
-              // @ts-ignore
+              // @ts-expect-error
               delete config.blogLocales;
 
-              // @ts-ignore
+              // @ts-expect-error
               delete config.paginationLocales;
             }
 

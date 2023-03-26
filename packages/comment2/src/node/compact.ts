@@ -69,7 +69,7 @@ export const convertOptions = (
           `"${option}" is no longer supported in @waline/client@v2.`
         );
 
-        // @ts-ignore
+        // @ts-expect-error
         delete options[option];
       }
     });

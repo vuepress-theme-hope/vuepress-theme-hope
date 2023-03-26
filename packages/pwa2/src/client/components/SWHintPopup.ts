@@ -24,7 +24,6 @@ export default defineComponent({
     const uninstall = (): void => {
       if (enabled.value) {
         // force refresh
-
         // @ts-ignore
         window.location.reload(true);
         enabled.value = false;

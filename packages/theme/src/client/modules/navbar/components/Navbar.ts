@@ -91,7 +91,6 @@ export default defineComponent({
           },
           [
             h("div", { class: "navbar-start" }, [
-              // @ts-ignore
               h(ToggleSidebarButton, {
                 onToggle: () => {
                   if (showScreen.value) showScreen.value = false;

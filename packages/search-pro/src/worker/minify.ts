@@ -3,9 +3,10 @@ import { atou } from "vuepress-shared/client";
 import { getResults } from "../client/utils/index.js";
 import { type SearchIndex } from "../shared/index.js";
 
-const searchIndex: SearchIndex = <SearchIndex>JSON.parse(
-  // @ts-ignore
-  atou(SEARCH_PRO_INDEX as string)
+declare const SEARCH_PRO_INDEX: string;
+
+const searchIndex: SearchIndex = <SearchIndex>(
+  JSON.parse(atou(SEARCH_PRO_INDEX))
 );
 
 self.onmessage = ({
