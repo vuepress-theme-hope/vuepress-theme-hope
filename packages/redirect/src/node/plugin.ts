@@ -1,11 +1,13 @@
 import { type Page, type PluginFunction } from "@vuepress/core";
-import { checkVersion } from "vuepress-shared/node";
+import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
+import { checkVersion, getLocales } from "vuepress-shared/node";
 
 import { convertOptions } from "./compact/index.js";
 import { handleRedirectTo } from "./extends.js";
 import { generateAutoLocaleRedirects, generateRedirects } from "./generate.js";
 import { ensureRootHomePage } from "./homepage.js";
 import { getLocaleConfig } from "./locale.js";
+import { redirectLocales } from "./locales.js";
 import { type RedirectOptions } from "./options.js";
 import { prepareRedirects } from "./prepare.js";
 import { type RedirectPluginFrontmatterOption } from "./typings/index.js";
@@ -24,11 +26,20 @@ export const redirectPlugin =
     const localeConfig = getLocaleConfig(app, options);
     let redirectMap: Record<string, string>;
 
+    useSassPalettePlugin(app, { id: "hope" });
+
     return {
       name: PLUGIN_NAME,
 
       define: {
         REDIRECT_LOCALE_CONFIG: localeConfig,
+        REDIRECT_LOCALE_SWITCH: Boolean(localeConfig.switchLocale),
+        REDIRECT_LOCALES: getLocales({
+          app,
+          name: "redirect",
+          config: options.locales,
+          default: redirectLocales,
+        }),
       },
 
       extendsPage: (page, app) =>

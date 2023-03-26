@@ -29,6 +29,7 @@ export default defineUserConfig({
   plugins: [
     redirectPlugin({
       autoLocale: true,
+      switchLocale: "modal",
       config: {
         "/homepage.html": "/",
       },
