@@ -73,8 +73,6 @@ jobs:
       - build-project
       - test-demos
       - linter-and-unit
-      - deploy-github-demo
-      - deploy-github-docs
       - deploy-production
     uses: ./.github/workflows/publish.yml
     secrets:
