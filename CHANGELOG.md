@@ -4,6 +4,26 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.198](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.197...v2.0.0-beta.198) (2023-03-25)
+
+### Features
+
+- improve a11y, close [#2943](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2943) ([e4cc387](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e4cc3878e92b412ec946ad65aa21849c5ee18970))
+- **redirect:** support redirect at devServer ([#2948](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2948)) ([349eab8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/349eab86afa923a26abe702187fcb50be45e2340))
+
+### Bug Fixes
+
+- **md-enhance:** fix demo compact ([7285d19](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7285d19f36131621992b8570104ef81d141cf59e))
+- **md-enhance:** improve figure print style ([db985e0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/db985e0953e679041462402efb605537f40becc7))
+- **theme:** fix code block in print mode ([fba37da](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fba37dae67fe23a0dc7d1cf6f6c59e9ccef1895b))
+- **theme:** fix extraLocales, fix [#2941](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2941) ([7315f22](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7315f220227d3f0349e137356d785fc580efff0e))
+- **theme:** fix repoIcon name ([8f71e75](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8f71e756b82d6376941306957ab6a23fa903d42f))
+- **theme:** fix sidebar link with empty string ([5982795](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5982795de0ff258b2e48b5bc07a3d4ef73142f32))
+
+### Performance Improvements
+
+- remove dayjs in client ([88b1722](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/88b17223e2968f3e77de29298338e4b6104f8332))
+
 ## [2.0.0-beta.197](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.196...v2.0.0-beta.197) (2023-03-21)
 
 ### Features
