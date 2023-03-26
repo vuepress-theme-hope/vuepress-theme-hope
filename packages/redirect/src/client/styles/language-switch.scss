@@ -39,7 +39,7 @@
   overflow: hidden;
 
   width: var(--lang-modal-width);
-  padding: 2rem;
+  padding: 1rem 2rem;
   border-radius: 8px;
 
   background: var(--vp-bg);
@@ -52,16 +52,12 @@
   }
 }
 
-.lang-modal-footer {
-  padding-top: 1rem;
-  text-align: center;
-}
+.lang-modal-action {
+  display: block;
 
-.lang-modal-footer-action {
-  display: inline-block;
-
-  margin: 4px;
-  padding: 8px 12px;
+  width: 100%;
+  margin: 1rem 0;
+  padding: 0.5rem 0.75rem;
   border: none;
   border-radius: 8px;
 

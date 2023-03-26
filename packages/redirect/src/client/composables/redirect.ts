@@ -1,19 +1,19 @@
 import { useRouteLocale } from "@vuepress/client";
 import { isLinkHttp } from "@vuepress/shared";
+import { usePreferredLanguages } from "@vueuse/core";
 import { computed, watch } from "vue";
 import { type RouteRecordNormalized, useRoute, useRouter } from "vue-router";
 import { entries } from "vuepress-shared/client";
 
 import { redirectConfig } from "@temp/redirect/config.js";
 
-import { redirectLocaleConfig } from "../define.js";
+import { redirectLocaleConfig, redirectLocaleEntries } from "../define.js";
 import { normalizePath } from "../utils/index.js";
 
 const {
   autoLocale,
   defaultBehavior,
   defaultLocale: defaultLocalePath,
-  localeConfig,
   localeFallback,
 } = redirectLocaleConfig;
 
@@ -21,15 +21,14 @@ const {
  * @description devServer only function to handle redirects
  */
 export const setupRedirect = (): void => {
-  const router = useRouter();
+  const languages = usePreferredLanguages();
   const route = useRoute();
+  const router = useRouter();
   const routeLocale = useRouteLocale();
 
   const isRootLocale = computed(() => routeLocale.value === "/");
 
   const handleLocaleRedirect = (routes: RouteRecordNormalized[]): void => {
-    const { languages } = window.navigator;
-
     const defaultLocale =
       defaultLocalePath &&
       routes.some(
@@ -45,8 +44,8 @@ export const setupRedirect = (): void => {
     let matchedLocalePath: string | null = null;
 
     // get matched locale
-    findLanguage: for (const lang of languages)
-      for (const [localePath, langs] of Object.entries(localeConfig))
+    findLanguage: for (const lang of languages.value)
+      for (const [localePath, langs] of redirectLocaleEntries)
         if (langs.includes(lang)) {
           if (
             localeFallback &&

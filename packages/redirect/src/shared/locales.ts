@@ -2,6 +2,11 @@ import { type RequiredLocaleConfig } from "vuepress-shared";
 
 export interface RedirectLocaleData {
   /**
+   * Language name
+   */
+  name: string;
+
+  /**
    * Switch hint
    *
    * 切换提示
