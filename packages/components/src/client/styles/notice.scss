@@ -2,16 +2,6 @@
   --notice-width: 250px;
 }
 
-@keyframes notice-fade-in {
-  from {
-    opacity: 0.2;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
 .notice-fade-enter-active,
 .notice-fade-leave-active {
   transition: opacity 0.5s;
@@ -30,8 +20,6 @@
 
   width: 100vw;
   height: 100vh;
-
-  animation: 0.25s notice-fade-in;
 
   backdrop-filter: blur(10px);
 
@@ -61,17 +49,15 @@
     display: none;
   }
 
-  #{hope-config.$rtl-selector} & {
+  #{hope-config.$rtl-selector} &:not(.fullscreen) {
     right: unset;
     left: 20px;
   }
 
   &.fullscreen {
-    position: fixed;
     top: 50vh;
     right: 50vw;
     left: unset;
-
     transform: translate(50%, -50%);
   }
 }
