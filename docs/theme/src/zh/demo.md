@@ -84,7 +84,7 @@ docs:
   - name: 胡桃工具箱
     desc: 一个实用的多功能原神工具箱
     url: https://hut.ao/
-    logo: https://hut.ao/images/202209/HeroImageLogo.png
+    logo: https://img.alicdn.com/imgextra/i4/1797064093/O1CN01oaGvKE1g6dut0pICS_!!1797064093.png
     repo: https://github.com/DGP-Studio/Snap.Hutao
     preview: /assets/image/hu-tao.jpg
 
