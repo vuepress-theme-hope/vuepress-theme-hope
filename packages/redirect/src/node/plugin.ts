@@ -1,11 +1,13 @@
 import { type Page, type PluginFunction } from "@vuepress/core";
-import { checkVersion } from "vuepress-shared/node";
+import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
+import { checkVersion, getLocales } from "vuepress-shared/node";
 
 import { convertOptions } from "./compact/index.js";
-import { handleRedirect } from "./extends.js";
-import { generateLocaleRedirects, generateRedirects } from "./generate.js";
+import { handleRedirectTo } from "./extends.js";
+import { generateAutoLocaleRedirects, generateRedirects } from "./generate.js";
 import { ensureRootHomePage } from "./homepage.js";
-import { getLocaleOptions } from "./locale.js";
+import { getLocaleConfig } from "./locale.js";
+import { redirectLocales } from "./locales.js";
 import { type RedirectOptions } from "./options.js";
 import { prepareRedirects } from "./prepare.js";
 import { type RedirectPluginFrontmatterOption } from "./typings/index.js";
@@ -21,18 +23,27 @@ export const redirectPlugin =
 
     if (app.env.isDebug) logger.info("Options:", options);
 
-    const localeOptions = getLocaleOptions(app, options);
+    const localeConfig = getLocaleConfig(app, options);
     let redirectMap: Record<string, string>;
+
+    useSassPalettePlugin(app, { id: "hope" });
 
     return {
       name: PLUGIN_NAME,
 
       define: {
-        REDIRECT_LOCALE_CONFIG: localeOptions ?? null,
+        REDIRECT_LOCALE_CONFIG: localeConfig,
+        REDIRECT_LOCALE_SWITCH: Boolean(localeConfig.switchLocale),
+        REDIRECT_LOCALES: getLocales({
+          app,
+          name: "redirect",
+          config: options.locales,
+          default: redirectLocales,
+        }),
       },
 
       extendsPage: (page, app) =>
-        handleRedirect(
+        handleRedirectTo(
           <Page<Record<string, never>, RedirectPluginFrontmatterOption>>page,
           app,
           options
@@ -40,18 +51,18 @@ export const redirectPlugin =
 
       onInitialized: async (app): Promise<void> => {
         redirectMap = getRedirectMap(app, options);
-        if (localeOptions) await ensureRootHomePage(app, localeOptions);
+        if (localeConfig.autoLocale)
+          await ensureRootHomePage(app, localeConfig);
       },
 
       onPrepared: (app): Promise<void> => prepareRedirects(app, redirectMap),
 
       onGenerated: async (app): Promise<void> => {
         await generateRedirects(app, redirectMap);
-        if (localeOptions) await generateLocaleRedirects(app, localeOptions);
+        if (localeConfig.autoLocale)
+          await generateAutoLocaleRedirects(app, localeConfig);
       },
 
-      ...(app.env.isDev
-        ? { clientConfigFile: `${CLIENT_FOLDER}config.js` }
-        : {}),
+      clientConfigFile: `${CLIENT_FOLDER}config.js`,
     };
   };

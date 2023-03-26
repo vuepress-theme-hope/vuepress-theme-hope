@@ -10,7 +10,7 @@ import { Logger, fromEntries } from "vuepress-shared/node";
 
 import { type RedirectOptions } from "./options.js";
 import { type RedirectPluginFrontmatterOption } from "./typings/index.js";
-import { type RedirectLocaleConfig } from "../shared/index.js";
+import { type LocaleRedirectConfig } from "../shared/index.js";
 
 const __dirname = getDirname(import.meta.url);
 
@@ -62,7 +62,7 @@ export const getLocaleRedirectHTML = (
     defaultBehavior,
     defaultLocale,
     localeFallback,
-  }: RedirectLocaleConfig,
+  }: LocaleRedirectConfig,
   availableLocales: string[]
 ): string => `<!DOCTYPE html>
 <html lang="en">

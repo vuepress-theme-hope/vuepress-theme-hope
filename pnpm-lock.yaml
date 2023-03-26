@@ -1800,6 +1800,9 @@ importers:
       '@vuepress/utils':
         specifier: 2.0.0-beta.61
         version: 2.0.0-beta.61
+      '@vueuse/core':
+        specifier: ^9.13.0
+        version: 9.13.0(vue@3.2.47)
       cac:
         specifier: ^6.7.14
         version: 6.7.14
@@ -1809,6 +1812,9 @@ importers:
       vue-router:
         specifier: ^4.1.6
         version: 4.1.6(vue@3.2.47)
+      vuepress-plugin-sass-palette:
+        specifier: workspace:*
+        version: link:../sass-palette
       vuepress-shared:
         specifier: workspace:*
         version: link:../shared

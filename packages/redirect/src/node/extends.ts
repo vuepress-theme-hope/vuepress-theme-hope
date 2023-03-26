@@ -5,7 +5,7 @@ import { isAbsoluteUrl } from "vuepress-shared/node";
 import { type RedirectOptions } from "./options.js";
 import { type RedirectPluginFrontmatterOption } from "./typings/index.js";
 
-export const handleRedirect = (
+export const handleRedirectTo = (
   { frontmatter }: Page<Record<string, never>, RedirectPluginFrontmatterOption>,
   app: App,
   options: RedirectOptions

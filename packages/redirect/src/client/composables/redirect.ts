@@ -1,55 +1,51 @@
 import { useRouteLocale } from "@vuepress/client";
 import { isLinkHttp } from "@vuepress/shared";
+import { usePreferredLanguages } from "@vueuse/core";
 import { computed, watch } from "vue";
 import { type RouteRecordNormalized, useRoute, useRouter } from "vue-router";
 import { entries } from "vuepress-shared/client";
 
 import { redirectConfig } from "@temp/redirect/config.js";
 
-import { type RedirectLocaleConfig } from "../../shared/index.js";
+import { redirectLocaleConfig, redirectLocaleEntries } from "../define.js";
 import { normalizePath } from "../utils/index.js";
 
-declare const REDIRECT_LOCALE_CONFIG: RedirectLocaleConfig | null;
-
-const enableLocaleRedirect = Boolean(REDIRECT_LOCALE_CONFIG);
-
 const {
+  autoLocale,
   defaultBehavior,
   defaultLocale: defaultLocalePath,
-  localeConfig,
   localeFallback,
-} = enableLocaleRedirect
-  ? REDIRECT_LOCALE_CONFIG!
-  : ({} as RedirectLocaleConfig);
+} = redirectLocaleConfig;
 
 /**
  * @description devServer only function to handle redirects
  */
 export const setupRedirect = (): void => {
-  const router = useRouter();
+  const languages = usePreferredLanguages();
   const route = useRoute();
+  const router = useRouter();
   const routeLocale = useRouteLocale();
 
   const isRootLocale = computed(() => routeLocale.value === "/");
 
   const handleLocaleRedirect = (routes: RouteRecordNormalized[]): void => {
-    const { languages } = window.navigator;
-
-    const defaultLocale = routes.some(
-      ({ path }) => path === route.path.replace("/", defaultLocalePath)
-    )
-      ? defaultLocalePath
-      : routes.find(
-          ({ path }) =>
-            route.path.split("/").length >= 3 &&
-            path === route.path.replace(/^\/[^/]+\//, "/")
-        )?.path;
+    const defaultLocale =
+      defaultLocalePath &&
+      routes.some(
+        ({ path }) => path === route.path.replace("/", defaultLocalePath)
+      )
+        ? defaultLocalePath
+        : routes.find(
+            ({ path }) =>
+              route.path.split("/").length >= 3 &&
+              path === route.path.replace(/^\/[^/]+\//, "/")
+          )?.path;
 
     let matchedLocalePath: string | null = null;
 
     // get matched locale
-    findLanguage: for (const lang of languages)
-      for (const [localePath, langs] of Object.entries(localeConfig))
+    findLanguage: for (const lang of languages.value)
+      for (const [localePath, langs] of redirectLocaleEntries)
         if (langs.includes(lang)) {
           if (
             localeFallback &&
@@ -106,7 +102,7 @@ export const setupRedirect = (): void => {
           if (isLinkHttp(to)) window.open(to);
           else void router.replace(to);
 
-      if (enableLocaleRedirect && isRootLocale.value)
+      if (autoLocale && isRootLocale.value)
         handleLocaleRedirect(router.getRoutes());
     },
     { immediate: true }

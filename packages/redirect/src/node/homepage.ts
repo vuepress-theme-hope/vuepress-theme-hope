@@ -1,10 +1,10 @@
 import { type App, createPage } from "@vuepress/core";
 
-import { type RedirectLocaleConfig } from "../shared/index.js";
+import { type LocaleRedirectConfig } from "../shared/index.js";
 
 export const ensureRootHomePage = async (
   app: App,
-  localeOptions: RedirectLocaleConfig
+  localeOptions: LocaleRedirectConfig
 ): Promise<void> => {
   if (
     // homepage not exists
@@ -20,6 +20,8 @@ export const ensureRootHomePage = async (
         frontmatter: { title: "Home" },
         // set markdown content
         content: `\
+Redirecting to the correct locale...
+
 <script setup>
 import { onMounted } from "vue";
 
