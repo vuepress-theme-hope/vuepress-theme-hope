@@ -2,6 +2,7 @@ import { type UserConfig, defineUserConfig } from "@vuepress/cli";
 import { type HeadConfig } from "@vuepress/core";
 import { docsearchPlugin } from "@vuepress/plugin-docsearch";
 import { getDirname, path } from "@vuepress/utils";
+import { redirectPlugin } from "vuepress-plugin-redirect";
 import { removePWAPlugin } from "vuepress-plugin-remove-pwa";
 import { addViteOptimizeDepsInclude } from "vuepress-shared/node";
 
@@ -159,7 +160,7 @@ export const config = (
           ]
         : []),
       ...(pwa === false ? [removePWAPlugin()] : []),
-
+      redirectPlugin({ switchLocale: "modal" }),
       ...plugins,
     ],
 

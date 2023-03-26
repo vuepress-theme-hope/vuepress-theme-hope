@@ -738,6 +738,9 @@ importers:
       vue:
         specifier: 3.2.47
         version: 3.2.47
+      vuepress-plugin-redirect:
+        specifier: workspace:*
+        version: link:../packages/redirect
       vuepress-plugin-remove-pwa:
         specifier: workspace:*
         version: link:../packages/remove-pwa
