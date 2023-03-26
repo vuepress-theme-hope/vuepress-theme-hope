@@ -317,17 +317,21 @@ tag:
 
     新增 `plugins.mdEnhance.include` 选项使用 `@include()` 将其他文件内容导入到 Markdown 中。
 
-    使用 `@include(filename)` 导入文件。
+    <!-- markdownlint-disable MD033 -->
+
+    使用 <code>&lt;!-- @include: filename --&gt;</code> 导入文件。
 
     如果要部分导入文件，你可以指定导入的行数
 
-    - `@include(filename{start-end})`
-    - `@include(filename{start-})`
-    - `@include(filename{-end})`
+    - <code>&lt;!-- @include: filename{start-end} --&gt;</code>
+    - <code>&lt;!-- @include: filename{start-} --&gt;</code>
+    - <code>&lt;!-- @include: filename{-end} --&gt;</code>
 
     同时你也可以导入文件区域:
 
-    - `@include(filename#region)`
+    - <code>&lt;!-- @include: filename#region --&gt;</code>
+
+    <!-- markdownlint-enable MD033 -->
 
   - 选项卡支持 ![新增](https://img.shields.io/badge/-新增-brightgreen)
 

@@ -7,7 +7,7 @@ This file contains all notable changes to `vuepress-theme-hope` and its plugins.
 
 <!-- more -->
 
-@include(../../../CHANGELOG.md#recent-beta)
+<!-- @include: ../../../CHANGELOG.md#recent-beta -->
 
 ## More
 

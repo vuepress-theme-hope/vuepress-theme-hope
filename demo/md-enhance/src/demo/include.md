@@ -4,14 +4,16 @@ title: Include Files
 
 ## Demo
 
-`@include(./demo.snippet.md)`:
+<!-- markdownlint-disable MD033 -->
 
-@include(./demo.snippet.md)
+<code>&lt;!-- @include:./demo.snippet.md --&gt;</code>:
 
-`@include(./demo.snippet.md{9-13})`:
+<!-- @include: ./demo.snippet.md -->
 
-@include(./demo.snippet.md{9-13})
+<code>&lt;!-- @include:./demo.snippet.md{9-13} --&gt;</code>:
 
-`@include(./demo.snippet.md#snippet)`:
+<!-- @include: ./demo.snippet.md{9-13} -->
 
-@include(./demo.snippet.md#snippet)
+<code>&lt;!-- @include:./demo.snippet.md#snippet --&gt;</code>:
+
+<!-- @include: ./demo.snippet.md#snippet -->

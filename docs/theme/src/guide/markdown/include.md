@@ -55,31 +55,35 @@ export default {
 
 ## Syntax
 
-Use `@include(filename)` to include a file.
+<!-- markdownlint-disable MD033 -->
+
+Use <code>&lt;!-- @include: filename --&gt;</code> to include a file.
 
 To partially import the file, you can specify the range of lines to be included:
 
-- `@include(filename{start-end})`
-- `@include(filename{start-})`
-- `@include(filename{-end})`
+- <code>&lt;!-- @include: filename{start-end} --&gt;</code>
+- <code>&lt;!-- @include: filename{start-} --&gt;</code>
+- <code>&lt;!-- @include: filename{-end} --&gt;</code>
 
 Also you can include file region:
 
-- `@include(filename#region)`
+- <code>&lt;!-- @include: filename#region --&gt;</code>
 
 ## Demo
 
-`@include(./demo.snippet.md)`:
+<code>&lt;!-- @include: ./demo.snippet.md --&gt;</code>:
 
-@include(./demo.snippet.md)
+<!-- @include: ./demo.snippet.md -->
 
-`@include(./demo.snippet.md{9-13})`:
+<code>&lt;!-- @include: ./demo.snippet.md{9-13} --&gt;</code>:
 
-@include(./demo.snippet.md{9-13})
+<!-- @include: ./demo.snippet.md{9-13} -->
 
-`@include(./demo.snippet.md#snippet)`:
+<code>&lt;!-- @include: ./demo.snippet.md#snippet --&gt;</code>:
 
-@include(./demo.snippet.md#snippet)
+<!-- @include: ./demo.snippet.md#snippet -->
+
+<!-- markdownlint-enable MD033 -->
 
 :::: info File region
 
@@ -151,7 +155,7 @@ const mdIt = MarkdownIt().use(include, {
 });
 // #endregion snippet
 
-mdIt.render("@include(./path/to/include/file.md)", {
+mdIt.render("<!-- @include: ./path/to/include/file.md -->", {
   filePath: "path/to/current/file.md",
 });
 ```
@@ -169,7 +173,7 @@ const mdIt = MarkdownIt().use(include, {
 });
 // #endregion snippet
 
-mdIt.render("@include(./path/to/include/file.md)", {
+mdIt.render("<!-- @include: ./path/to/include/file.md -->", {
   filePath: "path/to/current/file.md",
 });
 ```

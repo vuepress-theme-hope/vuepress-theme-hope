@@ -935,7 +935,7 @@ export default sidebar(/* Your sidebar configuration */);
 ```ts
 import { sidebar } from "vuepress-theme-hope";
 
-@include(../../.vuepress/sidebar/en.ts{3-})
+<!-- @include: ../../.vuepress/sidebar/en.ts{3-} -->
 ```
 
 @tab JS
@@ -943,7 +943,7 @@ import { sidebar } from "vuepress-theme-hope";
 ```js
 import { sidebar } from "vuepress-theme-hope";
 
-@include(../../.vuepress/sidebar/en.ts{3-})
+<!-- @include: ../../.vuepress/sidebar/en.ts{3-} -->
 ```
 
 :::

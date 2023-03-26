@@ -317,19 +317,23 @@ Move all plugin related options under `plugins`.
 
   - content include support ![New](https://img.shields.io/badge/-New-brightgreen)
 
+    <!-- markdownlint-disable MD033 -->
+
     use `@include()` to include other file content in Markdown via `plugins.mdEnhance.include` options.
 
-    Use `@include(filename)` to include a file.
+    Use <code>&lt;!-- @include: filename --&gt;</code> to include a file.
 
     To partially import the file, you can specify the range of lines to be included:
 
-    - `@include(filename{start-end})`
-    - `@include(filename{start-})`
-    - `@include(filename{-end})`
+    - <code>&lt;!-- @include: filename{start-end} --&gt;</code>
+    - <code>&lt;!-- @include: filename{start-} --&gt;</code>
+    - <code>&lt;!-- @include: filename{-end} --&gt;</code>
 
     Also you can include file region:
 
-    - `@include(filename#region)`
+    - <code>&lt;!-- @include: filename#region --&gt;</code>
+
+    <!-- markdownlint-enable MD033 -->
 
   - tabs support ![New](https://img.shields.io/badge/-New-brightgreen)
 

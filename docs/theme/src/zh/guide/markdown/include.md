@@ -54,17 +54,21 @@ export default {
 
 ## 语法
 
-使用 `@include(filename)` 导入文件。
+<!-- markdownlint-disable MD033 -->
+
+使用 <code>&lt;!-- @include: filename --&gt;</code> 导入文件。
 
 如果要部分导入文件，你可以指定导入的行数
 
-- `@include(filename{start-end})`
-- `@include(filename{start-})`
-- `@include(filename{-end})`
+- <code>&lt;!-- @include: filename{start-end} --&gt;</code>
+- <code>&lt;!-- @include: filename{start-} --&gt;</code>
+- <code>&lt;!-- @include: filename{-end} --&gt;</code>
 
 同时你也可以导入文件区域:
 
-- `@include(filename#region)`
+- <code>&lt;!-- @include: filename#region --&gt;</code>
+
+<!-- markdownlint-enable MD033 -->
 
 :::: info 文件区域
 
@@ -136,7 +140,7 @@ const mdIt = MarkdownIt().use(include, {
 });
 // #endregion snippet
 
-mdIt.render("@include(./path/to/include/file.md)", {
+mdIt.render("<!-- @include: ./path/to/include/file.md -->", {
   filePath: "path/to/current/file.md",
 });
 ```
@@ -154,7 +158,7 @@ const mdIt = MarkdownIt().use(include, {
 });
 // #endregion snippet
 
-mdIt.render("@include(./path/to/include/file.md)", {
+mdIt.render("<!-- @include: ./path/to/include/file.md -->", {
   filePath: "path/to/current/file.md",
 });
 ```
@@ -316,17 +320,21 @@ namespace HelloWorldApp {
 
 ## 演示
 
-`@include(./demo.snippet.md)`:
+<!-- markdownlint-disable MD033 -->
 
-@include(./demo.snippet.md)
+<code>&lt;!-- @include: ./demo.snippet.md --&gt;</code>:
 
-`@include(./demo.snippet.md{9-13})`:
+<!-- @include: ./demo.snippet.md -->
 
-@include(./demo.snippet.md{9-13})
+<code>&lt;!-- @include: ./demo.snippet.md{9-13} --&gt;</code>:
 
-`@include(./demo.snippet.md#snippet)`:
+<!-- @include: ./demo.snippet.md{9-13} -->
 
-@include(./demo.snippet.md#snippet)
+<code>&lt;!-- @include: ./demo.snippet.md#snippet --&gt;</code>:
+
+<!-- @include: ./demo.snippet.md#snippet -->
+
+<!-- markdownlint-enable MD033 -->
 
 ## 高级用法
 
