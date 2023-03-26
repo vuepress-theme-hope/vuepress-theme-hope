@@ -50,9 +50,6 @@ export default defineComponent({
     const input = ref("");
     const inputElement = ref<HTMLInputElement>();
 
-    const body = ref<HTMLElement>();
-    const isLocked = useScrollLock(body);
-
     watch(isActive, (value) => {
       if (value)
         void nextTick().then(() => {
@@ -65,15 +62,15 @@ export default defineComponent({
     });
 
     onMounted(() => {
-      body.value = document.body;
+      const isLocked = useScrollLock(document.body);
 
       watch(isActive, (value) => {
         isLocked.value = value;
       });
-    });
 
-    onUnmounted(() => {
-      isLocked.value = false;
+      onUnmounted(() => {
+        isLocked.value = false;
+      });
     });
 
     return (): VNode | null =>

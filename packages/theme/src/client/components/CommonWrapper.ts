@@ -70,9 +70,6 @@ export default defineComponent({
 
     const sidebarItems = useSidebarItems();
 
-    const body = ref<HTMLElement>();
-    const isLocked = useScrollLock(body);
-
     // navbar
     const hideNavbar = ref(false);
 
@@ -158,22 +155,23 @@ export default defineComponent({
       )
     );
 
-    watch(isMobileSidebarOpen, (value) => {
-      isLocked.value = value;
-    });
-
     watch(isMobile, (value) => {
       if (!value) toggleMobileSidebar(false);
     });
 
     onMounted(() => {
-      body.value = document.body;
+      const isLocked = useScrollLock(document.body);
+
+      watch(isMobileSidebarOpen, (value) => {
+        isLocked.value = value;
+      });
 
       const unregisterRouterHook = router.afterEach((): void => {
         toggleMobileSidebar(false);
       });
 
       onUnmounted(() => {
+        isLocked.value = false;
         unregisterRouterHook();
       });
     });

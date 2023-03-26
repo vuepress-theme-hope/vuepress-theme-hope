@@ -7,7 +7,6 @@ import {
   h,
   onMounted,
   onUnmounted,
-  ref,
   watch,
 } from "vue";
 
@@ -35,11 +34,8 @@ export default defineComponent({
     const page = usePageData();
     const { isMobile } = useWindowSize();
 
-    const body = ref<HTMLElement>();
-    const isLocked = useScrollLock(body);
-
     onMounted(() => {
-      body.value = document.body;
+      const isLocked = useScrollLock(document.body);
 
       watch(isMobile, (value) => {
         if (!value && props.show) {
@@ -47,6 +43,7 @@ export default defineComponent({
           emit("close");
         }
       });
+
       watch(
         () => page.value.path,
         () => {
@@ -54,10 +51,10 @@ export default defineComponent({
           emit("close");
         }
       );
-    });
 
-    onUnmounted(() => {
-      isLocked.value = false;
+      onUnmounted(() => {
+        isLocked.value = false;
+      });
     });
 
     return (): VNode =>
