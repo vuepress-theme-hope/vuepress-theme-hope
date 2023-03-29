@@ -10,6 +10,14 @@ All notable changes to this project will be documented in this file. See [Conven
 
 - Drop Node14 support
 
+  The project can actually run on Node.js 14 for now, but we update to pnpm@v8 in ci, which requires Node.js >= 16.
+
+  Since Node14 will be EOL in 2023-04-30, you must migrate your environment to Node.js 18 (or 16) ASAP.
+
+- **md-enhance**: use `<!-- @include: xxx -->` to include files
+
+  The syntax is consistent with the official VitePress, but how we find the syntax is different.
+
 ### Features
 
 - **md-enhance:** update include syntax ([2052033](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2052033f640c4d941d944a5b0c04f034e2ae55c4))
@@ -65,6 +73,8 @@ All notable changes to this project will be documented in this file. See [Conven
 ### ⚠ BREAKING CHANGES
 
 - **redirect:** rename `locale` to `autoLocale`
+
+  We are adding `switchLocale` option to redirect plugin, so we need to rename `locale` to `autoLocale` to avoid confusion.
 
 ### Features
 
