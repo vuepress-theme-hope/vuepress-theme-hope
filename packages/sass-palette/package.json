@@ -68,7 +68,6 @@
   "peerDependencies": {
     "sass-loader": "^13.2.0",
     "vuepress": "2.0.0-beta.61",
-    "vuepress-shared": "workspace:*",
     "vuepress-vite": "2.0.0-beta.61",
     "vuepress-webpack": "2.0.0-beta.61"
   },
@@ -77,9 +76,6 @@
       "optional": true
     },
     "vuepress": {
-      "optional": true
-    },
-    "vuepress-shared": {
       "optional": true
     },
     "vuepress-vite": {

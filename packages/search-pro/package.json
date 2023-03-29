@@ -63,28 +63,16 @@
     "@vuepress/core": "2.0.0-beta.61"
   },
   "peerDependencies": {
-    "@vuepress/client": "2.0.0-beta.61",
     "sass-loader": "^13.2.0",
     "vuepress": "2.0.0-beta.61",
-    "vuepress-plugin-sass-palette": "workspace:*",
-    "vuepress-shared": "workspace:*",
     "vuepress-vite": "2.0.0-beta.61",
     "vuepress-webpack": "2.0.0-beta.61"
   },
   "peerDependenciesMeta": {
-    "@vuepress/client": {
-      "optional": true
-    },
     "sass-loader": {
       "optional": true
     },
     "vuepress": {
-      "optional": true
-    },
-    "vuepress-plugin-sass-palette": {
-      "optional": true
-    },
-    "vuepress-shared": {
       "optional": true
     },
     "vuepress-vite": {
