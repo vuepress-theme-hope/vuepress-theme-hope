@@ -319,7 +319,7 @@ Move all plugin related options under `plugins`.
 
     <!-- markdownlint-disable MD033 -->
 
-    use `@include()` to include other file content in Markdown via `plugins.mdEnhance.include` options.
+    use `@include` to include other file content in Markdown via `plugins.mdEnhance.include` options.
 
     Use <code>&lt;!-- @include: filename --&gt;</code> to include a file.
 
