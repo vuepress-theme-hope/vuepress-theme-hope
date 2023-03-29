@@ -1941,6 +1941,9 @@ importers:
       cac:
         specifier: ^6.7.14
         version: 6.7.14
+      sass-loader:
+        specifier: ^13.2.0
+        version: 13.2.1(sass@1.60.0)
       vue:
         specifier: ^3.2.47
         version: 3.2.47
