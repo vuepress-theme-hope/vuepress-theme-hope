@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.200](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.199...v2.0.0-beta.200) (2023-03-29)
+
+### ⚠ BREAKING CHANGES
+
+- Drop Node14 support
+
+### Features
+
+- **md-enhance:** update include syntax ([2052033](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2052033f640c4d941d944a5b0c04f034e2ae55c4))
+- use pnpm@v8, drop node14 support ([5242809](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/524280971d30a0060d98bc0202bf3b86121c6263))
+
 ## [2.0.0-beta.199](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.198...v2.0.0-beta.199) (2023-03-26)
 
 ### Features
