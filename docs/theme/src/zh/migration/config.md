@@ -315,19 +315,19 @@ tag:
 
   - 包含文件支持 ![新增](https://img.shields.io/badge/-新增-brightgreen)
 
-    新增 `plugins.mdEnhance.include` 选项使用 `@include()` 将其他文件内容导入到 Markdown 中。
+    新增 `plugins.mdEnhance.include` 选项使用 `@include` 将其他文件内容导入到 Markdown 中。
 
-    使用 `@include(filename)` 导入文件。
+    使用 `<!-- @include: filename -->` 导入文件。
 
     如果要部分导入文件，你可以指定导入的行数
 
-    - `@include(filename{start-end})`
-    - `@include(filename{start-})`
-    - `@include(filename{-end})`
+    - `<!-- @include: filename{start-end} -->`
+    - `<!-- @include: filename{start-} -->`
+    - `<!-- @include: filename{-end} -->`
 
     同时你也可以导入文件区域:
 
-    - `@include(filename#region)`
+    - `<!-- @include: filename#region -->`
 
   - 选项卡支持 ![新增](https://img.shields.io/badge/-新增-brightgreen)
 

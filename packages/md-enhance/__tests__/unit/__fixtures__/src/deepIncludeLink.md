@@ -1,3 +1,3 @@
 ### Heading 3
 
-@include(relative/includeLink.md)
+<!-- @include: relative/includeLink.md -->

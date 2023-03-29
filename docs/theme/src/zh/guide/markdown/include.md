@@ -54,17 +54,17 @@ export default {
 
 ## 语法
 
-使用 `@include(filename)` 导入文件。
+使用 `<!-- @include: filename -->` 导入文件。
 
 如果要部分导入文件，你可以指定导入的行数
 
-- `@include(filename{start-end})`
-- `@include(filename{start-})`
-- `@include(filename{-end})`
+- `<!-- @include: filename{start-end} -->`
+- `<!-- @include: filename{start-} -->`
+- `<!-- @include: filename{-end} -->`
 
 同时你也可以导入文件区域:
 
-- `@include(filename#region)`
+- `<!-- @include: filename#region -->`
 
 :::: info 文件区域
 
@@ -136,7 +136,7 @@ const mdIt = MarkdownIt().use(include, {
 });
 // #endregion snippet
 
-mdIt.render("@include(./path/to/include/file.md)", {
+mdIt.render("<!-- @include: ./path/to/include/file.md -->", {
   filePath: "path/to/current/file.md",
 });
 ```
@@ -154,7 +154,7 @@ const mdIt = MarkdownIt().use(include, {
 });
 // #endregion snippet
 
-mdIt.render("@include(./path/to/include/file.md)", {
+mdIt.render("<!-- @include: ./path/to/include/file.md -->", {
   filePath: "path/to/current/file.md",
 });
 ```
@@ -316,17 +316,17 @@ namespace HelloWorldApp {
 
 ## 演示
 
-`@include(./demo.snippet.md)`:
+`<!-- @include: ./demo.snippet.md -->`:
 
-@include(./demo.snippet.md)
+<!-- @include: ./demo.snippet.md -->
 
-`@include(./demo.snippet.md{9-13})`:
+`<!-- @include: ./demo.snippet.md{9-13} -->`:
 
-@include(./demo.snippet.md{9-13})
+<!-- @include: ./demo.snippet.md{9-13} -->
 
-`@include(./demo.snippet.md#snippet)`:
+`<!-- @include: ./demo.snippet.md#snippet -->`:
 
-@include(./demo.snippet.md#snippet)
+<!-- @include: ./demo.snippet.md#snippet -->
 
 ## 高级用法
 

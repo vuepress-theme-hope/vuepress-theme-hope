@@ -85,19 +85,19 @@ You can pass the second argument `true` to enable legacy mode when calling `mdEn
 
 - content include support
 
-  use `@include()` to include other file content in Markdown via `include` options.
+  Use `<!-- @include: -->` to include other file content in Markdown via `include` options.
 
-  Use `@include(filename)` to include a file.
+  Use `<!-- @include: filename -->` to include a file.
 
   To partially import the file, you can specify the range of lines to be included:
 
-  - `@include(filename{start-end})`
-  - `@include(filename{start-})`
-  - `@include(filename{-end})`
+  - `<!-- @include: filename{start-end} -->`
+  - `<!-- @include: filename{start-} -->`
+  - `<!-- @include: filename{-end} -->`
 
   Also you can include file region:
 
-  - `@include(filename#region)`
+  - `<!-- @include: filename#region -->`
 
 - tabs support
 
