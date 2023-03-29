@@ -35,14 +35,16 @@ export const generateAutoLocaleRedirects = async (
       entries(localeRedirectMap).map(([rootPath, availableLocales]) => {
         const filePath = app.dir.dest(removeLeadingSlash(rootPath));
 
-        return fs
-          .ensureDir(path.dirname(filePath))
-          .then(() =>
-            fs.writeFile(
-              filePath,
-              getLocaleRedirectHTML(localeOptions, availableLocales)
-            )
-          );
+        return fs.existsSync(filePath)
+          ? Promise.resolve()
+          : fs
+              .ensureDir(path.dirname(filePath))
+              .then(() =>
+                fs.writeFile(
+                  filePath,
+                  getLocaleRedirectHTML(localeOptions, availableLocales)
+                )
+              );
       })
     )
   );
@@ -67,9 +69,11 @@ export const generateRedirects = async (
           ? `${resolvedHostname}${options.base}${removeLeadingSlash(to)}`
           : to;
 
-        return fs
-          .ensureDir(path.dirname(filePath))
-          .then(() => fs.writeFile(filePath, getRedirectHTML(redirectUrl)));
+        return fs.existsSync(filePath)
+          ? Promise.resolve()
+          : fs
+              .ensureDir(path.dirname(filePath))
+              .then(() => fs.writeFile(filePath, getRedirectHTML(redirectUrl)));
       })
     )
   );
