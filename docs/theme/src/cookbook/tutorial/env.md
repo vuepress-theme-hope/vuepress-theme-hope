@@ -86,5 +86,5 @@ Install pnpm by entering the following command in the terminal:
 
 ```sh
 corepack enable
-corepack prepare pnpm@7.28.0 --activate
+corepack prepare pnpm@latest --activate
 ```
