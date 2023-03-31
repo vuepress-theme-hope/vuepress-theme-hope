@@ -61,7 +61,9 @@ export const generateCatalog = async (
 ${
   iconComponent
     ? `
-  <template #icon="{icon}"><${iconComponent} :icon="icon" /></template>
+  <template #icon="{ icon }">
+    <${iconComponent} :icon="icon" />
+  </template>
 `
     : ""
 }\
