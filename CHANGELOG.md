@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.201](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.200...v2.0.0-beta.201) (2023-03-31)
+
+### Features
+
+- improve lifecycle, close [#2965](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2965) ([7f49c02](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7f49c026cc0216e764c7e1503ff823ec4023e1da))
+- **md-enhance:** add legacy include in compact code ([c835f01](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c835f01c39037b23d5ff2d7786fd172a081f74fe))
+
+### Bug Fixes
+
+- **components:** fix BiliBili component ([b762640](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b76264065c53ea21d42730c407f9d452a0276b76))
+- **md-enhance:** fix mermaid with pnpm ([da726a1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/da726a1d76374c1f6c190bdc8d27b1ce37df47c2))
+- **redirect:** ensure file not exist when generating redirect files ([f08e98c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f08e98c64d98efb35a3297b263a0d1f5674ec0d6))
+- **redirect:** improve modal appearance ([44c6f62](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/44c6f6275d98256736bc84f89cd697d3f2d79713))
+
 ## [2.0.0-beta.200](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.199...v2.0.0-beta.200) (2023-03-29)
 
 ### ⚠ BREAKING CHANGES
