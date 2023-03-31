@@ -1,7 +1,3 @@
-:root {
-  --lang-modal-width: 250px;
-}
-
 .lang-modal-fade-enter-active,
 .lang-modal-fade-leave-active {
   transition: opacity 0.5s;
@@ -38,7 +34,7 @@
 
   overflow: hidden;
 
-  width: var(--lang-modal-width);
+  max-width: 80vw;
   padding: 1rem 2rem;
   border-radius: 8px;
 
