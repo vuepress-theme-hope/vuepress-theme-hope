@@ -1,17 +1,21 @@
-import { type Page, type PluginFunction } from "@vuepress/core";
+import { type PluginFunction } from "@vuepress/core";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import { checkVersion, getLocales } from "vuepress-shared/node";
 
 import { convertOptions } from "./compact/index.js";
-import { handleRedirectTo } from "./extends.js";
 import { generateAutoLocaleRedirects, generateRedirects } from "./generate.js";
 import { ensureRootHomePage } from "./homepage.js";
 import { getLocaleConfig } from "./locale.js";
 import { redirectLocales } from "./locales.js";
 import { type RedirectOptions } from "./options.js";
 import { prepareRedirects } from "./prepare.js";
-import { type RedirectPluginFrontmatterOption } from "./typings/index.js";
-import { CLIENT_FOLDER, PLUGIN_NAME, getRedirectMap, logger } from "./utils.js";
+import {
+  CLIENT_FOLDER,
+  PLUGIN_NAME,
+  getRedirectMap,
+  handleRedirectTo,
+  logger,
+} from "./utils.js";
 
 export const redirectPlugin =
   (options: RedirectOptions = {}, legacy = true): PluginFunction =>
@@ -42,15 +46,11 @@ export const redirectPlugin =
         }),
       },
 
-      extendsPage: (page, app) =>
-        handleRedirectTo(
-          <Page<Record<string, never>, RedirectPluginFrontmatterOption>>page,
-          app,
-          options
-        ),
-
       onInitialized: async (app): Promise<void> => {
         redirectMap = getRedirectMap(app, options);
+
+        handleRedirectTo(app, options);
+
         if (localeConfig.autoLocale)
           await ensureRootHomePage(app, localeConfig);
       },

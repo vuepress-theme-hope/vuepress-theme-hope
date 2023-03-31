@@ -3,10 +3,12 @@ import {
   ensureEndingSlash,
   isArray,
   isFunction,
+  isLinkHttp,
   isPlainObject,
+  removeEndingSlash,
 } from "@vuepress/shared";
 import { getDirname, path } from "@vuepress/utils";
-import { Logger, fromEntries } from "vuepress-shared/node";
+import { Logger, fromEntries, isAbsoluteUrl } from "vuepress-shared/node";
 
 import { type RedirectOptions } from "./options.js";
 import { type RedirectPluginFrontmatterOption } from "./typings/index.js";
@@ -24,6 +26,37 @@ export const logger = new Logger(PLUGIN_NAME);
 
 const normalizePath = (url: string): string =>
   url.replace(/\/$/, "/index.html").replace(/(?:\.html)?$/, ".html");
+
+export const handleRedirectTo = (app: App, options: RedirectOptions): void => {
+  const { base } = app.options;
+
+  app.pages.forEach(({ frontmatter }) => {
+    const { redirectTo } = <RedirectPluginFrontmatterOption>frontmatter;
+
+    if (redirectTo) {
+      const redirectUrl = (
+        options.hostname && isAbsoluteUrl(redirectTo)
+          ? `${
+              isLinkHttp(options.hostname)
+                ? removeEndingSlash(options.hostname)
+                : `https://${removeEndingSlash(options.hostname)}`
+            }${base}${redirectTo}`
+          : redirectTo
+      )
+        .replace(/\.md$/, ".html")
+        .replace(/\/(README|index)\.html/, "/");
+
+      (frontmatter.head ??= []).unshift([
+        "script",
+        {},
+        `{\
+const anchor = window.location.hash.substr(1);\
+location.href=\`${redirectUrl}\${anchor?\`#\${anchor}\`:""}\`;\
+}`,
+      ]);
+    }
+  });
+};
 
 export const getRedirectMap = (
   app: App,

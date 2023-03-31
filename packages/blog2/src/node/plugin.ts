@@ -55,24 +55,27 @@ export const blogPlugin =
       }),
 
       extendsPage: (page): void => {
+        // generate page excerpt
         if (excerpt && excerptFilter(page))
           (<PageWithExcerpt>page).data["excerpt"] = getPageExcerpt(app, page, {
             isCustomElement,
             excerptSeparator,
             excerptLength,
           });
+      },
 
-        if (filter(page))
+      onInitialized: (app): Promise<void> => {
+        const pageMap = getPageMap(filter, app);
+
+        // inject meta information
+        app.pages.filter(filter).forEach((page) => {
           page.routeMeta = {
             ...(metaScope === ""
               ? getInfo(page)
               : { [metaScope]: getInfo(page) }),
             ...page.routeMeta,
           };
-      },
-
-      onInitialized: (app): Promise<void> => {
-        const pageMap = getPageMap(filter, app);
+        });
 
         return Promise.all([
           prepareCategory(app, { category, slugify }, pageMap, true).then(
