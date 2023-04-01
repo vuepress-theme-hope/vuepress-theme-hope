@@ -53,7 +53,7 @@
     "@typescript-eslint/parser": "5.56.0",
     "@vitest/coverage-c8": "0.29.7",
     "@vue/eslint-config-typescript": "11.0.2",
-    "bumpp": "9.0.0",
+    "bumpp": "9.1.0",
     "commit-and-tag-version": "11.2.0",
     "commitizen": "4.3.0",
     "concurrently": "7.6.0",
