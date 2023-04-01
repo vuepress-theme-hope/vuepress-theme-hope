@@ -26,7 +26,7 @@
     "axios": "1.3.4",
     "docs-shared": "workspace:*",
     "katex": "0.16.4",
-    "sass-loader": "13.2.1",
+    "sass-loader": "13.2.2",
     "vue": "3.2.47",
     "vuepress-plugin-copy-code2": "workspace:*",
     "vuepress-shared": "workspace:*",
