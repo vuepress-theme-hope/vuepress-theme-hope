@@ -214,20 +214,12 @@ A bilibili video:
 <BiliBili bvid="BV1kt411o7C3" />
 ```
 
-A bilibili video with start time and page:
-
-<BiliBili bvid="BV1kt411o7C3" ratio="16:9" time="60" page="2" />
-
-```md
-<BiliBili bvid="BV1kt411o7C3" ratio="16:9" time="60" page="2" />
-```
-
 A bilibili video with custom settings:
 
-<BiliBili bvid="BV1kt411o7C3" low-quality no-danmaku />
+<BiliBili aid="34304064" cid="109293122" ratio="9:16" time="60" autoplay page="2" />
 
 ```md
-<BiliBili bvid="BV1kt411o7C3" low-quality no-danmaku />
+<BiliBili aid="34304064" cid="109293122" ratio="9:16" time="60" autoplay page="2" />
 ```
 
 See <ProjectLink name="components" path="/guide/bilibili.html">BiliBili</ProjectLink> page for available props.

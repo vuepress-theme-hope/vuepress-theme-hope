@@ -82,7 +82,7 @@ CodePen 项目标题。
 
 ### height
 
-- 类型: `numbr`
+- 类型: `number`
 - 默认值: `380`
 
 以 px 为单位的编辑器高度。
