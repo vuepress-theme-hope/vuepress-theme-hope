@@ -40,6 +40,7 @@ import {
   legacyCodeDemo,
   legacyCodeGroup,
   legacyFlowchart,
+  legacyInclude,
 } from "./compact/index.js";
 import { markdownEnhanceLocales } from "./locales.js";
 import {
@@ -305,11 +306,16 @@ export const mdEnhancePlugin =
           });
         }
 
-        if (includeEnable)
+        if (includeEnable) {
           md.use(include, {
             currentPath: (env: MarkdownEnv) => env.filePath,
             ...(isPlainObject(options.include) ? options.include : {}),
           });
+          if (legacy)
+            md.use(legacyInclude, {
+              currentPath: (env: MarkdownEnv) => env.filePath,
+            });
+        }
 
         if (getStatus("stylize"))
           md.use(stylize, {

@@ -8,6 +8,10 @@ export const legacyCodeDemo: PluginSimple = (md) => {
   md.use(container, {
     name: "demo",
     openRender: (tokens: Token[], index: number): string => {
+      console.warn(
+        "demo container is deprecated, you should use normal-demo, react-demo and vue-demo container instead."
+      );
+
       const { info } = tokens[index];
       const type = /\[(.*)\]/u.exec(info);
       const title = /^ demo\s*(?:\[.*?\])?\s*(.*)\s*$/u.exec(info);
