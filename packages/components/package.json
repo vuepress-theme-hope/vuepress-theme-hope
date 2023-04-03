@@ -60,11 +60,15 @@
     "mpegts.js": "^1.7.2",
     "plyr": "^3.7.8",
     "qrcode": "^1.5.1",
+    "sass-loader": "^13.2.2",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6",
+    "vuepress": "2.0.0-beta.61",
     "vuepress-plugin-reading-time2": "workspace:*",
     "vuepress-plugin-sass-palette": "workspace:*",
-    "vuepress-shared": "workspace:*"
+    "vuepress-shared": "workspace:*",
+    "vuepress-vite": "2.0.0-beta.61",
+    "vuepress-webpack": "2.0.0-beta.61"
   },
   "devDependencies": {
     "@types/qrcode": "1.5.0",
@@ -72,7 +76,7 @@
     "@vuepress/core": "2.0.0-beta.61"
   },
   "peerDependencies": {
-    "sass-loader": "^13.2.0",
+    "sass-loader": "^13.2.2",
     "vuepress": "2.0.0-beta.61",
     "vuepress-vite": "2.0.0-beta.61",
     "vuepress-webpack": "2.0.0-beta.61"

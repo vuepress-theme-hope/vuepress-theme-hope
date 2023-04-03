@@ -50,7 +50,10 @@
     "@vuepress/shared": "2.0.0-beta.61",
     "@vuepress/utils": "2.0.0-beta.61",
     "sitemap": "^7.1.1",
-    "vuepress-shared": "workspace:*"
+    "vuepress": "2.0.0-beta.61",
+    "vuepress-shared": "workspace:*",
+    "vuepress-vite": "2.0.0-beta.61",
+    "vuepress-webpack": "2.0.0-beta.61"
   },
   "devDependencies": {
     "@vuepress/core": "2.0.0-beta.61",

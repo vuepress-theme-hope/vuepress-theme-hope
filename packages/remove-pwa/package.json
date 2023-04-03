@@ -49,7 +49,10 @@
     "@vuepress/client": "2.0.0-beta.61",
     "@vuepress/shared": "2.0.0-beta.61",
     "@vuepress/utils": "2.0.0-beta.61",
-    "vue": "^3.2.47"
+    "vue": "^3.2.47",
+    "vuepress": "2.0.0-beta.61",
+    "vuepress-vite": "2.0.0-beta.61",
+    "vuepress-webpack": "2.0.0-beta.61"
   },
   "devDependencies": {
     "@vuepress/core": "2.0.0-beta.61"

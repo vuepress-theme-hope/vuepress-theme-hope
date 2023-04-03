@@ -64,7 +64,10 @@
     "semver": "^7.3.8",
     "striptags": "^3.2.0",
     "vue": "^3.2.47",
-    "vue-router": "^4.1.6"
+    "vue-router": "^4.1.6",
+    "vuepress": "2.0.0-beta.61",
+    "vuepress-vite": "2.0.0-beta.61",
+    "vuepress-webpack": "2.0.0-beta.61"
   },
   "devDependencies": {
     "@types/connect": "3.4.35",

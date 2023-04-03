@@ -46,7 +46,10 @@
     "pnpm": ">=7"
   },
   "dependencies": {
-    "vuepress-shared": "workspace:*"
+    "vuepress": "2.0.0-beta.61",
+    "vuepress-shared": "workspace:*",
+    "vuepress-vite": "2.0.0-beta.61",
+    "vuepress-webpack": "2.0.0-beta.61"
   },
   "devDependencies": {
     "@vuepress/core": "2.0.0-beta.61"

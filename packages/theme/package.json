@@ -93,8 +93,10 @@
     "cheerio": "1.0.0-rc.12",
     "chokidar": "^3.5.3",
     "gray-matter": "^4.0.3",
+    "sass-loader": "^13.2.2",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6",
+    "vuepress": "2.0.0-beta.61",
     "vuepress-plugin-auto-catalog": "workspace:*",
     "vuepress-plugin-blog2": "workspace:*",
     "vuepress-plugin-comment2": "workspace:*",
@@ -110,7 +112,9 @@
     "vuepress-plugin-sass-palette": "workspace:*",
     "vuepress-plugin-seo2": "workspace:*",
     "vuepress-plugin-sitemap2": "workspace:*",
-    "vuepress-shared": "workspace:*"
+    "vuepress-shared": "workspace:*",
+    "vuepress-vite": "2.0.0-beta.61",
+    "vuepress-webpack": "2.0.0-beta.61"
   },
   "devDependencies": {
     "@vuepress/bundler-vite": "2.0.0-beta.61",
@@ -118,7 +122,7 @@
     "@vuepress/markdown": "2.0.0-beta.61"
   },
   "peerDependencies": {
-    "sass-loader": "^13.2.0",
+    "sass-loader": "^13.2.2",
     "vuepress": "2.0.0-beta.61",
     "vuepress-vite": "2.0.0-beta.61",
     "vuepress-webpack": "2.0.0-beta.61"

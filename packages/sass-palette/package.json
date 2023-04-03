@@ -58,7 +58,11 @@
     "@vuepress/utils": "2.0.0-beta.61",
     "chokidar": "^3.5.3",
     "sass": "^1.60.0",
-    "vuepress-shared": "workspace:*"
+    "sass-loader": "^13.2.2",
+    "vuepress": "2.0.0-beta.61",
+    "vuepress-shared": "workspace:*",
+    "vuepress-vite": "2.0.0-beta.61",
+    "vuepress-webpack": "2.0.0-beta.61"
   },
   "devDependencies": {
     "@vuepress/bundler-vite": "2.0.0-beta.61",
@@ -66,7 +70,7 @@
     "@vuepress/core": "2.0.0-beta.61"
   },
   "peerDependencies": {
-    "sass-loader": "^13.2.0",
+    "sass-loader": "^13.2.2",
     "vuepress": "2.0.0-beta.61",
     "vuepress-vite": "2.0.0-beta.61",
     "vuepress-webpack": "2.0.0-beta.61"
