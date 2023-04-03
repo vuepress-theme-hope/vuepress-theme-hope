@@ -214,21 +214,12 @@ export default {
 <BiliBili bvid="BV1kt411o7C3" />
 ```
 
-一个自定义分 P 和空降地址的 B 站视频:
+一个自定义空降地址且自动播放的 B 站视频:
 
-<BiliBili bvid="BV1kt411o7C3" ratio="16:9" time="60" page="2" />
+<BiliBili aid="34304064" cid="109293122" ratio="9:16" time="60" autoplay page="2" />
 
-```md
-<BiliBili bvid="BV1kt411o7C3" ratio="16:9" time="60" page="2" />
-```
-
-一个自定义设置的 B 站视频:
-
-<BiliBili bvid="BV1kt411o7C3" low-quality no-danmaku />
-
-```md
-<BiliBili bvid="BV1kt411o7C3" low-quality no-danmaku />
-```
+````md
+<BiliBili aid="34304064" cid="109293122" ratio="9:16" time="60" autoplay page="2" />```
 
 有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/bilibili.html">BiliBili</ProjectLink> 页面。
 
@@ -485,3 +476,4 @@ PDF 浏览器组件。
 ```
 
 有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/youtube.html">YouTube</ProjectLink> 页面。
+````

@@ -358,7 +358,7 @@ MSE 全称 Media Source Extensions， 详见 [Media Source Extensions API](https
   };
 
   const customPlayer = (player) => {
-    player.on("artplayerPluginDanmuku:emit", (danmu) => {
+    player.on("artplayerPluginDanmuku:emit", (danmuku) => {
       fetch(DANMAKU_API, {
         method: "POST",
         headers: {
@@ -367,8 +367,8 @@ MSE 全称 Media Source Extensions， 详见 [Media Source Extensions API](https
         },
         body: JSON.stringify({
           Id: DANMAKU_ID,
-          Referer: window.location.origin + window.location.pathname,
-          ...danmu,
+          Referrer: window.location.origin + window.location.pathname,
+          ...danmuku,
         }),
       });
     });
@@ -434,7 +434,7 @@ const artPlayerDanmukuConfig = {
 };
 
 const customPlayer = (player) => {
-  player.on("artplayerPluginDanmuku:emit", (danmu) => {
+  player.on("artplayerPluginDanmuku:emit", (danmuku) => {
     fetch(DANMAKU_API, {
       method: "POST",
       headers: {
@@ -443,8 +443,8 @@ const customPlayer = (player) => {
       },
       body: JSON.stringify({
         Id: DANMAKU_ID,
-        Referer: window.location.origin + window.location.pathname,
-        ...danmu,
+        Referrer: window.location.origin + window.location.pathname,
+        ...danmuku,
       }),
     });
   });

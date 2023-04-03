@@ -360,7 +360,7 @@ Here is a demo adding DanMuKu plugin:
   };
 
   const customPlayer = (player) => {
-    player.on("artplayerPluginDanmuku:emit", (danmu) => {
+    player.on("artplayerPluginDanmuku:emit", (danmuku) => {
       fetch(DANMAKU_API, {
         method: "POST",
         headers: {
@@ -369,8 +369,8 @@ Here is a demo adding DanMuKu plugin:
         },
         body: JSON.stringify({
           Id: DANMAKU_ID,
-          Referer: window.location.origin + window.location.pathname,
-          ...danmu,
+          Referrer: window.location.origin + window.location.pathname,
+          ...danmuku,
         }),
       });
     });
@@ -436,7 +436,7 @@ const artPlayerDanmukuConfig = {
 };
 
 const customPlayer = (player) => {
-  player.on("artplayerPluginDanmuku:emit", (danmu) => {
+  player.on("artplayerPluginDanmuku:emit", (danmuku) => {
     fetch(DANMAKU_API, {
       method: "POST",
       headers: {
@@ -445,8 +445,8 @@ const customPlayer = (player) => {
       },
       body: JSON.stringify({
         Id: DANMAKU_ID,
-        Referer: window.location.origin + window.location.pathname,
-        ...danmu,
+        Referrer: window.location.origin + window.location.pathname,
+        ...danmuku,
       }),
     });
   });
