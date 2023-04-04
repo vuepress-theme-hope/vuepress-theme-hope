@@ -30,6 +30,7 @@ import {
   addViteSsrNoExternal,
   checkVersion,
   deepAssign,
+  detectPackageManager,
   getBundlerName,
   getLocales,
 } from "vuepress-shared/node";
@@ -170,6 +171,16 @@ export const mdEnhancePlugin =
               options.vuePlayground
             )
           : DEFAULT_VUE_PLAYGROUND_OPTIONS,
+      }),
+
+      alias: (app): Record<string, string> => ({
+        // we can not let vite force optimize deps with pnpm, so we use a full bundle in devServer here
+        "@mermaid":
+          app.env.isDev &&
+          detectPackageManager() === "pnpm" &&
+          getBundlerName(app) === "vite"
+            ? "mermaid/dist/mermaid.esm.min.mjs"
+            : "mermaid",
       }),
 
       extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
