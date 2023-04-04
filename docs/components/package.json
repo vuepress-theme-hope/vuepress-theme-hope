@@ -24,7 +24,7 @@
     "artplayer-plugin-danmuku": "4.4.11",
     "axios": "1.3.4",
     "hls.js": "1.3.5",
-    "sass-loader": "13.2.1",
+    "sass-loader": "13.2.2",
     "vue": "3.2.47",
     "vuepress-plugin-components": "workspace:*",
     "vuepress-shared": "workspace:*",
