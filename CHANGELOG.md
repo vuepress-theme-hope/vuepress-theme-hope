@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.201](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.200...v2.0.0-beta.201) (2023-04-04)
+
+### Features
+
+- improve lifecycle, close [#2965](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2965) ([7f49c02](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7f49c026cc0216e764c7e1503ff823ec4023e1da))
+- **md-enhance:** add legacy include in compact code ([ab17c77](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ab17c77b1931a1cbfd885c51e8d2cfc7d4b78a29))
+
+### Bug Fixes
+
+- **components:** fix BiliBili component ([140105f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/140105fa8f7dab59761fe6d0891fbd45a1f86458))
+- **md-enhance:** use bundled mermaid to avoid pnpm issue with vite, close [#2986](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2986) ([7272bac](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7272bacac4a3d78e4b3dca14b6b09628d5d8b31c))
+- **redirect:** ensure file not exist when generating redirect files ([f08e98c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f08e98c64d98efb35a3297b263a0d1f5674ec0d6))
+- **redirect:** improve modal appearance ([44c6f62](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/44c6f6275d98256736bc84f89cd697d3f2d79713))
+
 ## [2.0.0-beta.200](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.199...v2.0.0-beta.200) (2023-03-29)
 
 ### ⚠ BREAKING CHANGES
