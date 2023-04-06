@@ -32,6 +32,11 @@ interface LocaleInfo {
   localePath: string;
 }
 
+const REDIRECT_LOCALE_STORAGE = useSessionStorage<Record<string, boolean>>(
+  "VUEPRESS_REDIRECT_LOCALES",
+  {}
+);
+
 export default defineComponent({
   name: "LanguageSwitch",
 
@@ -40,33 +45,24 @@ export default defineComponent({
     const route = useRoute();
     const router = useRouter();
     const routeLocale = useRouteLocale();
-    const storage = useSessionStorage<Record<string, boolean>>(
-      "VUEPRESS_REDIRECT_LOCALES",
-      {}
-    );
 
     const showModal = ref(false);
 
     const info = computed<LocaleInfo | null>(() => {
-      for (const language of languages.value)
-        for (const [localePath, langs] of redirectLocaleEntries)
-          if (langs.includes(language)) {
-            if (localePath === routeLocale.value) return null;
+      if (redirectLocaleEntries.some(([key]) => routeLocale.value === key))
+        for (const language of languages.value)
+          for (const [localePath, langs] of redirectLocaleEntries)
+            if (langs.includes(language)) {
+              if (localePath === routeLocale.value) return null;
 
-            return {
-              lang: language,
-              localePath,
-            };
-          }
+              return {
+                lang: language,
+                localePath,
+              };
+            }
 
       return null;
     });
-
-    const targetRoute = computed(() =>
-      info.value
-        ? route.path.replace(routeLocale.value, info.value.localePath)
-        : null
-    );
 
     const locale = computed(() => {
       if (info.value) {
@@ -88,23 +84,29 @@ export default defineComponent({
       return null;
     });
 
-    watch(
-      info,
-      () => {
-        if (!storage.value[routeLocale.value])
-          if (info.value) {
-            if (switchLocale === "direct")
-              void router.replace(targetRoute.value!);
-            else if (switchLocale === "modal") showModal.value = true;
-          } else {
-            showModal.value = false;
-          }
-      },
-      { immediate: true }
+    const targetRoute = computed(() =>
+      info.value
+        ? route.path.replace(routeLocale.value, info.value.localePath)
+        : null
     );
+
+    const updateStatus = (): void => {
+      REDIRECT_LOCALE_STORAGE.value[routeLocale.value] = true;
+      showModal.value = false;
+    };
 
     onMounted(() => {
       const isLocked = useScrollLock(document.body);
+
+      if (!REDIRECT_LOCALE_STORAGE.value[routeLocale.value])
+        if (info.value)
+          if (switchLocale === "direct")
+            void router.replace(targetRoute.value!);
+          else if (switchLocale === "modal") showModal.value = true;
+          else showModal.value = false;
+        else showModal.value = false;
+
+      console.log(showModal.value, info.value);
 
       watch(
         showModal,
@@ -143,7 +145,7 @@ export default defineComponent({
                           type: "button",
                           class: "lang-modal-action primary",
                           onClick: () => {
-                            storage.value[routeLocale.value] = true;
+                            updateStatus();
                             void router.replace(targetRoute.value!);
                           },
                         },
@@ -154,10 +156,7 @@ export default defineComponent({
                         {
                           type: "button",
                           class: "lang-modal-action",
-                          onClick: () => {
-                            storage.value[routeLocale.value] = true;
-                            showModal.value = false;
-                          },
+                          onClick: () => updateStatus(),
                         },
                         locale.value?.cancel
                       ),
