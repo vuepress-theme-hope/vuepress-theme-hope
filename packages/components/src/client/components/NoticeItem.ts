@@ -132,7 +132,7 @@ export default defineComponent({
     const close = (): void => {
       isVisible.value = false;
       (props.showOnce ? localStorage : sessionStorage).setItem(
-        "v2-notice",
+        key.value,
         "true"
       );
     };
