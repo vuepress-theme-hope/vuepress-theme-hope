@@ -155,9 +155,9 @@ Icon name
 
 我们默认使用 jsdelivr CDN 加载 fontawesome 免费图标的 V6 版本。 对于大多数开源项目来说，这应该足够了。
 
-此外，您还可以在 [fontawesome.com](https://fontawesome.com) 购买使用套件。
+此外，你还可以在 [fontawesome.com](https://fontawesome.com) 购买使用套件。
 
-具有专业功能的 Fontawesome 工具包支持专业图标、更多图标样式和上传您自己的图标。
+具有专业功能的 Fontawesome 工具包支持专业图标、更多图标样式和上传你自己的图标。
 
 ::: note
 

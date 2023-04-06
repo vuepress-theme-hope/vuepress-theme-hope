@@ -55,7 +55,7 @@ head:
 
 ### 设置图标资源
 
-您应该将图标相关资源设置为 `iconAssets`，您可以在其中设置：
+你应该将图标相关资源设置为 `iconAssets`，你可以在其中设置：
 
 - 图标资产关键词
 - css 和 js 格式的图标资源
@@ -139,9 +139,9 @@ export default defineUserConfig({
 
 ### 使用 Fontawesome Kit
 
-您可以在 [fontawesome.com](https://fontawesome.com) 购买使用套件。
+你可以在 [fontawesome.com](https://fontawesome.com) 购买使用套件。
 
-具有专业功能的 Fontawesome 工具包支持专业图标、更多图标样式和上传您自己的图标。
+具有专业功能的 Fontawesome 工具包支持专业图标、更多图标样式和上传你自己的图标。
 
 ::: note
 

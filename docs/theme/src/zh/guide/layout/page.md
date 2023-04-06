@@ -47,6 +47,18 @@ icon: home
 
 你也可以在特定页面的 frontmatter 中通过 `toc` 来指定它。
 
+### 设置标题深度
+
+你可以通过在主题选项和页面 frontmatter 中设置 headerDepth 来自定义标题列表的深度。
+
+::: note
+
+有效最大值取决于你通过 [markdown.headers.level](https://v2.vuepress.vuejs.org/zh/reference/config.html#markdown.headers) 提取了哪些级别的标题。
+
+由于 [markdown.headers.level](https://v2.vuepress.vuejs.org/zh/reference/config.html#markdown.headers) 的默认值是 `[2, 3]` ，因此 `headerDepth` 的默认最大值是 `2` 。
+
+:::
+
 ## 贡献者与最后更新时间
 
 详见 [页面元数据](../feature/meta.md) 章节。

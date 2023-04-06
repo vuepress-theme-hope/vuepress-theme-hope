@@ -38,7 +38,7 @@ description: 分享组件，将页面内容分享到社交媒体。
 
 ## 设置组件
 
-要提供 tree-shaking 支持，您应该在插件选项中设置 `componentOptions.share.services` 以及您想要在客户端使用的服务。 这将防止未使用的配置注入到客户端，并将减少客户端包的大小。
+要提供 tree-shaking 支持，你应该在插件选项中设置 `componentOptions.share.services` 以及你想要在客户端使用的服务。 这将防止未使用的配置注入到客户端，并将减少客户端包的大小。
 
 支持以下内置关键字:
 
@@ -58,7 +58,7 @@ description: 分享组件，将页面内容分享到社交媒体。
 - whatsapp
 - weibo
 
-除了内置关键字外，您还可以将自己的服务配置添加到 `componentOptions.share.services` 中。 每个配置都应该是一个具有以下属性的对象:
+除了内置关键字外，你还可以将自己的服务配置添加到 `componentOptions.share.services` 中。 每个配置都应该是一个具有以下属性的对象:
 
 - `name`: 服务名称
 - `link`: 分享链接，其中 `[]` 包裹的 `title`、`description`、`url`、`excerpt`、`summary`、`tags`、`cover` 和 `image` 将被替换为页面对应的值。
@@ -69,7 +69,7 @@ description: 分享组件，将页面内容分享到社交媒体。
 
 ::: tip
 
-如果您使用的是 Twitter，则可以使用您的 Twitter 用户名设置 `componentOptions.share.twitterUserName`。
+如果你使用的是 Twitter，则可以使用你的 Twitter 用户名设置 `componentOptions.share.twitterUserName`。
 
 :::
 

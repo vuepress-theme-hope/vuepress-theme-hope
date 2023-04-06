@@ -47,6 +47,18 @@ If you don’t want to display the title list on the right in desktop mode, plea
 
 You can also set it through `toc` in page frontmatter.
 
+### Setting header depth
+
+You can customize the depth of the header list by setting `headerDepth` in theme options and page frontmatter.
+
+::: note
+
+The valid maximum value depends on which levels of headers you have extracted via [markdown.headers.level](https://v2.vuepress.vuejs.org/reference/config.html#markdown-headers).
+
+Since the default value of [markdown.headers.level](https://v2.vuepress.vuejs.org/reference/config.html#markdown-headers) is `[2, 3]`, so The default maximum value for `headerDepth` is `2`.
+
+:::
+
 ## Contributors and Last Updated Time
 
 Please see [Page Meta](../feature/meta.md).
