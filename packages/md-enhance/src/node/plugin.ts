@@ -17,6 +17,7 @@ import { type ViteBundlerOptions } from "@vuepress/bundler-vite";
 import { type PluginFunction } from "@vuepress/core";
 import { type MarkdownEnv } from "@vuepress/markdown";
 import { isArray, isPlainObject } from "@vuepress/shared";
+import { colors } from "@vuepress/utils";
 import { type RollupWarning } from "rollup";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
@@ -119,7 +120,7 @@ export const mdEnhancePlugin =
 
     const shouldCheckLinks = getCheckLinksStatus(app, options);
 
-    const katexOptions: KatexOptions = {
+    const katexOptions: KatexOptions<MarkdownEnv> = {
       macros: {
         // support more symbols
         // eslint-disable-next-line @typescript-eslint/naming-convention
@@ -128,6 +129,25 @@ export const mdEnhancePlugin =
         "\\iiiint": "\\int\\!\\!\\!\\!\\iiint",
         // eslint-disable-next-line @typescript-eslint/naming-convention
         "\\idotsint": "\\int\\!\\cdots\\!\\int",
+      },
+      logger: (errorCode, errorMsg, token, { filePathRelative }) => {
+        // ignore this error
+        if (errorCode === "newLineInDisplayMode") return;
+
+        if (errorCode === "unicodeTextInMathMode")
+          logger.warn(
+            `Found unicode character ${token.text} inside tex${
+              filePathRelative ? ` in ${colors.cyan(filePathRelative)}` : ""
+            }. You should use ${colors.magenta(`\\text{${token.text}}`)}`
+          );
+        else
+          logger.warn(
+            `${errorMsg}.${
+              filePathRelative
+                ? `\nFound in ${colors.cyan(filePathRelative)}`
+                : ""
+            }`
+          );
       },
       ...(isPlainObject(options.katex) ? options.katex : {}),
     };
