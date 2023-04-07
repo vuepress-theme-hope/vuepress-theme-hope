@@ -70,10 +70,12 @@ export const prepareCategory = (
         const pageKeys: string[] = [];
         const getItemPath = isFunction(itemPath)
           ? itemPath
-          : (name: string): string =>
-              (itemPath || "")
+          : isString(itemPath)
+          ? (name: string): string =>
+              itemPath
                 .replace(/:key/g, slugify(key))
-                .replace(/:name/g, slugify(name));
+                .replace(/:name/g, slugify(name))
+          : (): null => null;
 
         for (const localePath in pageMap) {
           if (path) {

@@ -65,7 +65,7 @@ export const blogPlugin =
       },
 
       onInitialized: (app): Promise<void> => {
-        const pageMap = getPageMap(filter, app);
+        const pageMap = getPageMap(app, filter);
 
         // inject meta information
         app.pages.filter(filter).forEach((page) => {
@@ -106,7 +106,7 @@ export const blogPlugin =
           const updateBlog = (): Promise<void> => {
             const newGeneratedPageKeys: string[] = [];
 
-            const pageMap = getPageMap(filter, app);
+            const pageMap = getPageMap(app, filter);
 
             return Promise.all([
               prepareCategory(app, { category, slugify }, pageMap).then(
