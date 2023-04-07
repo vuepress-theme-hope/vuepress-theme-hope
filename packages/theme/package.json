@@ -63,9 +63,11 @@
     "build:gulp": "gulp -f gulpfile.cjs",
     "build:ts": "tsc -b tsconfig.release.json",
     "clean": "rimraf ./lib ./*.tsbuildinfo",
-    "copy": "cpx \"src/client/**/*.{css,scss,jpg}\" lib/client && cpx \"src/client/**/*.{css,jpg}\" lib/perf",
+    "copy": "pnpm copy:client && pnpm copy:perf",
+    "copy:client": "cpx \"src/client/**/*.{css,scss,jpg}\" lib/client",
+    "copy:perf": "cpx \"src/client/**/*.{css,jpg}\" lib/perf",
     "dev": "concurrently \"pnpm dev:copy\" \"pnpm dev:ts\"",
-    "dev:copy": "pnpm copy -w",
+    "dev:copy": "pnpm copy:client -w",
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "engines": {
