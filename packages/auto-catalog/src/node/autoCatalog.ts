@@ -73,22 +73,24 @@ ${
   pages.forEach(({ path: pagePath, pathLocale }) => {
     let catalogPath = pagePath;
 
-    while (catalogPath !== pathLocale) {
-      catalogPath = catalogPath.replace(/\/(?:[^/]+\/?)$/, "/");
+    // not 404 page
+    if (pagePath !== "/404.html")
+      while (catalogPath !== pathLocale) {
+        catalogPath = catalogPath.replace(/\/(?:[^/]+\/?)$/, "/");
 
-      if (
-        // not discovered yet
-        !pathToBeGenerated.has(catalogPath) &&
-        // not being excluded
-        exclude.every((pattern) => !catalogPath.match(pattern)) &&
-        // path not found
-        pages.every(({ path }) => path !== catalogPath)
-      ) {
-        if (isDebug) logger.info(`Generating catalog ${catalogPath}}`);
+        if (
+          // not discovered yet
+          !pathToBeGenerated.has(catalogPath) &&
+          // not being excluded
+          exclude.every((pattern) => !catalogPath.match(pattern)) &&
+          // path not found
+          pages.every(({ path }) => path !== catalogPath)
+        ) {
+          if (isDebug) logger.info(`Generating catalog ${catalogPath}}`);
 
-        pathToBeGenerated.add(catalogPath);
+          pathToBeGenerated.add(catalogPath);
+        }
       }
-    }
   });
 
   await Promise.all(
