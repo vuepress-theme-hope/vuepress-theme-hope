@@ -1,5 +1,6 @@
 import { useSiteLocaleData, withBase } from "@vuepress/client";
 import { type VNode, computed, defineComponent, h } from "vue";
+import { RouterLink } from "vue-router";
 import { getAuthor, keys } from "vuepress-shared/client";
 
 import { useNavigate, useThemeLocaleData } from "@theme-hope/composables/index";
@@ -96,19 +97,19 @@ export default defineComponent({
             ]
           ),
           h("div", { class: "num-wrapper" }, [
-            h("div", { onClick: () => navigate(articles.value.path) }, [
+            h(RouterLink, { to: articles.value.path }, () => [
               h("div", { class: "num" }, articles.value.items.length),
               h("div", locale.value.article),
             ]),
-            h("div", { onClick: () => navigate(categoryMap.value.path) }, [
+            h(RouterLink, { to: categoryMap.value.path }, () => [
               h("div", { class: "num" }, keys(categoryMap.value.map).length),
               h("div", locale.value.category),
             ]),
-            h("div", { onClick: () => navigate(tagMap.value.path) }, [
+            h(RouterLink, { to: tagMap.value.path }, () => [
               h("div", { class: "num" }, keys(tagMap.value.map).length),
               h("div", locale.value.tag),
             ]),
-            h("div", { onClick: () => navigate(timelines.value.path) }, [
+            h(RouterLink, { to: timelines.value.path }, () => [
               h("div", { class: "num" }, timelines.value.items.length),
               h("div", locale.value.timeline),
             ]),

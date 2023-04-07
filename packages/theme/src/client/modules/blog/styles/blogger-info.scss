@@ -38,8 +38,12 @@
     width: 80%;
     margin: 0 auto 1rem;
 
-    > div {
+    > a {
+      display: block;
+
       width: 25%;
+
+      color: inherit;
 
       font-size: 13px;
       text-align: center;
