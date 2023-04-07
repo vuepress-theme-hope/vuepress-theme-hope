@@ -2,6 +2,7 @@ import {
   type IncludeEnv,
   type MarkdownItIncludeOptions,
 } from "@mdit/plugin-include";
+import { type MarkdownEnv } from "@vuepress/markdown";
 import { fs, path } from "@vuepress/utils";
 import { type PluginWithOptions } from "markdown-it";
 import { type RuleCore } from "markdown-it/lib/parser_core.js";
@@ -25,6 +26,7 @@ interface IncludeInfo {
   cwd: string | null;
   includedFiles: string[];
   resolvedPath?: boolean;
+  currentPath?: string;
 }
 
 const REGIONS_RE = [
@@ -152,7 +154,7 @@ export const handleInclude = (
 export const resolveInclude = (
   content: string,
   options: Required<MarkdownItIncludeOptions>,
-  { cwd, includedFiles }: IncludeInfo
+  { currentPath, cwd, includedFiles }: IncludeInfo
 ): string =>
   content
     .split("\n")
@@ -163,7 +165,9 @@ export const resolveInclude = (
 
         if (result) {
           console.warn(
-            '"@include(file)" is deprecated, you should use "<!-- @include: file -->" instead.'
+            `"@include(file)" is deprecated, you should use "<!-- @include: file -->" instead.${
+              currentPath ? `\n Found in ${currentPath}.` : ""
+            }`
           );
 
           const [, includePath, region, lineStart, lineEnd] = result;
@@ -191,6 +195,7 @@ export const resolveInclude = (
                   : cwd
                   ? path.resolve(cwd, path.dirname(actualPath))
                   : null,
+                currentPath: currentPath ?? "",
                 includedFiles,
               })
             : content;
@@ -204,12 +209,13 @@ export const resolveInclude = (
 export const createIncludeCoreRule =
   (options: Required<MarkdownItIncludeOptions>): RuleCore =>
   (state): void => {
-    const env = <IncludeEnv>state.env;
+    const env = <IncludeEnv & MarkdownEnv>state.env;
     const includedFiles = env.includedFiles || (env.includedFiles = []);
     const currentPath = options.currentPath(env);
 
     state.src = resolveInclude(state.src, options, {
       cwd: currentPath ? path.dirname(currentPath) : null,
+      currentPath,
       includedFiles,
     });
   };
