@@ -23,7 +23,7 @@
     "@vuepress/client": "2.0.0-beta.61",
     "@vuepress/shared": "2.0.0-beta.61",
     "@vueuse/core": "9.13.0",
-    "axios": "1.3.4",
+    "axios": "1.3.5",
     "docs-shared": "workspace:*",
     "katex": "0.16.4",
     "sass-loader": "13.2.2",
