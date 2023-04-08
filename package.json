@@ -57,7 +57,7 @@
     "commit-and-tag-version": "11.2.0",
     "commitizen": "4.3.0",
     "concurrently": "8.0.1",
-    "cpx2": "4.2.2",
+    "cpx2": "4.2.3",
     "cross-env": "7.0.3",
     "cz-git": "1.6.1",
     "esbuild": "0.17.15",

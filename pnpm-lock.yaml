@@ -70,8 +70,8 @@ importers:
         specifier: 8.0.1
         version: 8.0.1
       cpx2:
-        specifier: 4.2.2
-        version: 4.2.2
+        specifier: 4.2.3
+        version: 4.2.3
       cross-env:
         specifier: 7.0.3
         version: 7.0.3
@@ -7205,8 +7205,8 @@ packages:
       parse-json: 5.2.0
       path-type: 4.0.0
 
-  /cpx2@4.2.2:
-    resolution: {integrity: sha512-pFYHCivwNALi+yM4kATIA4XQvA72lhjcBBlwHRHtrvTcHWlMQfpgyyUHhus+iC7pHVBYnoGpza7ZrWBsJJAg5Q==}
+  /cpx2@4.2.3:
+    resolution: {integrity: sha512-UM7Iza+OM8FZ2ntTml/mdb3RmSLK5I2DqFqDdMihlGyKZCAAnDP++H973Oyc/2TQpEMtg5JHeRNfewclE330EA==}
     engines: {node: '>=14'}
     hasBin: true
     dependencies:
@@ -7217,7 +7217,7 @@ packages:
       glob-gitignore: 1.0.14
       glob2base: 0.0.12
       ignore: 5.2.4
-      minimatch: 7.4.5
+      minimatch: 8.0.3
       p-map: 4.0.0
       resolve: 1.22.1
       safe-buffer: 5.2.1
@@ -10944,13 +10944,6 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       brace-expansion: 2.0.1
-
-  /minimatch@7.4.5:
-    resolution: {integrity: sha512-OzOamaOmNBJZUv2qqY1OSWa+++4YPpOkLgkc0w30Oov5ufKlWWXnFUl0l4dgmSv5Shq/zRVkEOXAe2NaqO4l5Q==}
-    engines: {node: '>=10'}
-    dependencies:
-      brace-expansion: 2.0.1
-    dev: true
 
   /minimatch@8.0.3:
     resolution: {integrity: sha512-tEEvU9TkZgnFDCtpnrEYnPsjT7iUx42aXfs4bzmQ5sMA09/6hZY0jeZcGkXyDagiBOvkUjNo8Viom+Me6+2x7g==}
