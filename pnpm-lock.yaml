@@ -61,8 +61,8 @@ importers:
         specifier: 9.1.0
         version: 9.1.0
       commit-and-tag-version:
-        specifier: 11.2.0
-        version: 11.2.0
+        specifier: 11.2.1
+        version: 11.2.1
       commitizen:
         specifier: 4.3.0
         version: 4.3.0
@@ -6806,8 +6806,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /commit-and-tag-version@11.2.0:
-    resolution: {integrity: sha512-cPMEvxIayRCTGw3k9WyRhGcI1snPNoXLXtOxKIS/hCGgVQZJ/Jn2zT8wMrTJw7kfqbWNA/kOukeIOHAJ+ZWy8g==}
+  /commit-and-tag-version@11.2.1:
+    resolution: {integrity: sha512-ruYCGsYtevfA+sueDJoMlb//v9IL2+WTjjqIX/IoAmd4SKilOz4HZHAl4QnxuDZN2Npvv0A8RgE97DfwzYxwDw==}
     engines: {node: '>=14'}
     hasBin: true
     dependencies:
@@ -6823,7 +6823,6 @@ packages:
       find-up: 5.0.0
       git-semver-tags: 4.1.1
       semver: 7.3.8
-      stringify-package: 1.0.1
       yargs: 17.7.1
     dev: true
 
@@ -12865,11 +12864,6 @@ packages:
       get-own-enumerable-property-symbols: 3.0.2
       is-obj: 1.0.1
       is-regexp: 1.0.0
-
-  /stringify-package@1.0.1:
-    resolution: {integrity: sha512-sa4DUQsYciMP1xhKWGuFM04fB0LG/9DlluZoSVywUMRNvzid6XucHK0/90xGxRoHrAaROrcHK1aPKaijCtSrhg==}
-    deprecated: This module is not used anymore, and has been replaced by @npmcli/package-json
-    dev: true
 
   /strip-ansi@3.0.1:
     resolution: {integrity: sha512-VhumSSbBqDTP8p2ZLKj40UjBCV4+v8bUSEpUb4KjRgWk9pbqGF4REFj6KEagidb2f/M6AzC0EmFyDNGaw9OCzg==}
