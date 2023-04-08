@@ -88,7 +88,7 @@
     "through2": "4.0.2",
     "tslib": "2.5.0",
     "tsx": "3.12.6",
-    "typescript": "5.0.3",
+    "typescript": "5.0.4",
     "vitest": "0.29.8"
   },
   "packageManager": "pnpm@8.1.1",
