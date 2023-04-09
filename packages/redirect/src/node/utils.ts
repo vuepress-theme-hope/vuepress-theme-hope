@@ -35,11 +35,13 @@ export const handleRedirectTo = (app: App, options: RedirectOptions): void => {
 
     if (redirectTo) {
       const redirectUrl = (
-        options.hostname && isAbsoluteUrl(redirectTo)
+        isAbsoluteUrl(redirectTo)
           ? `${
-              isLinkHttp(options.hostname)
-                ? removeEndingSlash(options.hostname)
-                : `https://${removeEndingSlash(options.hostname)}`
+              options.hostname
+                ? isLinkHttp(options.hostname)
+                  ? removeEndingSlash(options.hostname)
+                  : `https://${removeEndingSlash(options.hostname)}`
+                : ""
             }${base}${redirectTo}`
           : redirectTo
       )
