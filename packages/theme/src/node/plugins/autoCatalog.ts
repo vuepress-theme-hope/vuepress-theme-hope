@@ -1,9 +1,9 @@
 import { type Plugin } from "@vuepress/core";
-import { isPlainObject } from "@vuepress/shared";
 import {
   type AutoCatalogOptions,
   autoCatalogPlugin,
 } from "vuepress-plugin-auto-catalog";
+import { isPlainObject } from "vuepress-shared/node";
 
 /**
  * @private

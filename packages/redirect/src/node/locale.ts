@@ -1,7 +1,13 @@
 import { type App } from "@vuepress/core";
-import { isArray, isPlainObject } from "@vuepress/shared";
 import { colors } from "@vuepress/utils";
-import { deepAssign, entries, fromEntries, keys } from "vuepress-shared/node";
+import {
+  deepAssign,
+  entries,
+  fromEntries,
+  isArray,
+  isPlainObject,
+  keys,
+} from "vuepress-shared/node";
 
 import { type RedirectOptions } from "./options.js";
 import { logger } from "./utils.js";

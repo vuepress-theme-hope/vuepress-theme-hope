@@ -1,9 +1,10 @@
-import { isArray, isPlainObject } from "@vuepress/shared";
 import {
   encodeCDATA,
   encodeXMLContent,
   entries,
   fromEntries,
+  isArray,
+  isPlainObject,
 } from "vuepress-shared/node";
 import { type ElementCompact } from "xml-js";
 

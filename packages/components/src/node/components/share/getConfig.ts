@@ -1,4 +1,4 @@
-import { isPlainObject, isString } from "@vuepress/shared";
+import { isPlainObject, isString } from "vuepress-shared/node";
 
 import { AVAILABLE_SERVICES, SHARE_CONFIG } from "./config.js";
 import {

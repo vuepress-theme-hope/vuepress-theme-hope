@@ -1,14 +1,17 @@
 import { type App, type Page } from "@vuepress/core";
 import { type GitData } from "@vuepress/plugin-git";
+import { getDirname, path } from "@vuepress/utils";
 import {
+  deepAssign,
   ensureEndingSlash,
+  fromEntries,
   isArray,
   isLinkHttp,
+  keys,
   removeEndingSlash,
   removeLeadingSlash,
-} from "@vuepress/shared";
-import { getDirname, path } from "@vuepress/utils";
-import { deepAssign, fromEntries, keys, values } from "vuepress-shared/node";
+  values,
+} from "vuepress-shared/node";
 
 import {
   type BaseFeedOptions,

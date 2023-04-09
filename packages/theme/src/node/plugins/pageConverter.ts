@@ -1,6 +1,10 @@
 import { type App, type Page, type PluginObject } from "@vuepress/core";
-import { isPlainObject } from "@vuepress/shared";
-import { injectLocalizedDate, keys, startsWith } from "vuepress-shared/node";
+import {
+  injectLocalizedDate,
+  isPlainObject,
+  keys,
+  startsWith,
+} from "vuepress-shared/node";
 
 import {
   ArticleInfoType,

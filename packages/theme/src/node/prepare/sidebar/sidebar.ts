@@ -1,12 +1,13 @@
 import { type App } from "@vuepress/core";
+import { sanitizeFileName } from "@vuepress/utils";
 import {
   ensureEndingSlash,
+  entries,
+  fromEntries,
   isArray,
   isPlainObject,
   removeLeadingSlash,
-} from "@vuepress/shared";
-import { sanitizeFileName } from "@vuepress/utils";
-import { entries, fromEntries } from "vuepress-shared/node";
+} from "vuepress-shared/node";
 
 import { getSidebarInfo } from "./info.js";
 import { getSidebarSorter } from "./sorter.js";

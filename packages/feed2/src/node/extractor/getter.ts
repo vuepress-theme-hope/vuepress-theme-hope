@@ -1,6 +1,5 @@
 import { type App, type Page, type PageFrontmatter } from "@vuepress/core";
 import { type GitData } from "@vuepress/plugin-git";
-import { isArray, isFunction, isPlainObject } from "@vuepress/shared";
 import {
   type AuthorInfo,
   getAuthor,
@@ -8,6 +7,9 @@ import {
   getPageExcerpt,
   getPageText,
   isAbsoluteUrl,
+  isArray,
+  isFunction,
+  isPlainObject,
   isUrl,
 } from "vuepress-shared/node";
 

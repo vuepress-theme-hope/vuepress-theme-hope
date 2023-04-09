@@ -1,9 +1,9 @@
 import {
+  Logger,
   isLinkHttp,
   removeEndingSlash,
   removeLeadingSlash,
-} from "@vuepress/shared";
-import { Logger } from "vuepress-shared/node";
+} from "vuepress-shared/node";
 
 export const FEED_GENERATOR = "vuepress-plugin-feed2";
 

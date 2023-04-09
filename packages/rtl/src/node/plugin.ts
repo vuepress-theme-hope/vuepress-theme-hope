@@ -1,5 +1,5 @@
 import { type PluginObject } from "@vuepress/core";
-import { isArray } from "@vuepress/shared";
+import { isArray } from "vuepress-shared/node";
 
 import { type RTLOptions } from "./options.js";
 import { CLIENT_FOLDER } from "./utils.js";

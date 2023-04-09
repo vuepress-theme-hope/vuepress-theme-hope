@@ -1,7 +1,6 @@
 import { HeadersPluginOptions, type MarkdownOptions } from "@vuepress/markdown";
-import { isArray } from "@vuepress/shared";
 import { colors } from "@vuepress/utils";
-import { values } from "vuepress-shared/node";
+import { isArray, values } from "vuepress-shared/node";
 
 import { type ThemeData } from "../../shared/index.js";
 import { logger } from "../utils.js";

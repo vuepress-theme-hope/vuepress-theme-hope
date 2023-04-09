@@ -1,5 +1,5 @@
 import { type App } from "@vuepress/core";
-import { isArray, isString } from "@vuepress/shared";
+import { isArray, isString } from "vuepress-shared/node";
 
 import { getIconLinks, getNoticeOptions } from "./components/index.js";
 import { type ComponentOptions } from "./options/index.js";

@@ -1,8 +1,14 @@
 import { type App, type Page } from "@vuepress/core";
-import { isArray, isLinkHttp, removeEndingSlash } from "@vuepress/shared";
 import { fs } from "@vuepress/utils";
 import { type AnyNode, load } from "cheerio";
-import { HTML_TAGS, SVG_TAGS, isAbsoluteUrl } from "vuepress-shared/node";
+import {
+  HTML_TAGS,
+  SVG_TAGS,
+  isAbsoluteUrl,
+  isArray,
+  isLinkHttp,
+  removeEndingSlash,
+} from "vuepress-shared/node";
 
 const HEADING_TAGS = ["h1", "h2", "h3", "h4", "h5", "h6"];
 

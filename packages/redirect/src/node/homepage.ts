@@ -1,5 +1,5 @@
 import { type App, createPage } from "@vuepress/core";
-import { removeEndingSlash } from "@vuepress/shared";
+import { removeEndingSlash } from "vuepress-shared/node";
 
 import { type LocaleRedirectConfig } from "../shared/index.js";
 

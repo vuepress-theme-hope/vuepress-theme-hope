@@ -16,7 +16,6 @@ import { tasklist } from "@mdit/plugin-tasklist";
 import { type ViteBundlerOptions } from "@vuepress/bundler-vite";
 import { type PluginFunction } from "@vuepress/core";
 import { type MarkdownEnv } from "@vuepress/markdown";
-import { isArray, isPlainObject } from "@vuepress/shared";
 import { colors } from "@vuepress/utils";
 import { type RollupWarning } from "rollup";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
@@ -34,6 +33,8 @@ import {
   detectPackageManager,
   getBundlerName,
   getLocales,
+  isArray,
+  isPlainObject,
 } from "vuepress-shared/node";
 
 import { checkLinks, getCheckLinksStatus } from "./checkLink.js";

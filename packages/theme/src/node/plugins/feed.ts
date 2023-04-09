@@ -1,11 +1,11 @@
 import { type Plugin } from "@vuepress/core";
-import { isFunction } from "@vuepress/shared";
 import { type FeedOptions, feedPlugin } from "vuepress-plugin-feed2";
 import {
   deepAssign,
   entries,
   fromEntries,
   getAuthor,
+  isFunction,
   keys,
 } from "vuepress-shared/node";
 

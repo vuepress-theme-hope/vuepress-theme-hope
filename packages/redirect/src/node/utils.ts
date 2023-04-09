@@ -1,14 +1,16 @@
 import { type App, type Page } from "@vuepress/core";
+import { getDirname, path } from "@vuepress/utils";
 import {
+  Logger,
   ensureEndingSlash,
+  fromEntries,
+  isAbsoluteUrl,
   isArray,
   isFunction,
   isLinkHttp,
   isPlainObject,
   removeEndingSlash,
-} from "@vuepress/shared";
-import { getDirname, path } from "@vuepress/utils";
-import { Logger, fromEntries, isAbsoluteUrl } from "vuepress-shared/node";
+} from "vuepress-shared/node";
 
 import { type RedirectOptions } from "./options.js";
 import { type RedirectPluginFrontmatterOption } from "./typings/index.js";

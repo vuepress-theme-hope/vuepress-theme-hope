@@ -1,11 +1,12 @@
 import { type App } from "@vuepress/core";
+import { fs, path, withSpinner } from "@vuepress/utils";
 import {
+  entries,
+  isAbsoluteUrl,
   isLinkHttp,
   removeEndingSlash,
   removeLeadingSlash,
-} from "@vuepress/shared";
-import { fs, path, withSpinner } from "@vuepress/utils";
-import { entries, isAbsoluteUrl } from "vuepress-shared/node";
+} from "vuepress-shared/node";
 
 import { getLocaleRedirectHTML, getRedirectHTML } from "./utils.js";
 import { type LocaleRedirectConfig } from "../shared/index.js";

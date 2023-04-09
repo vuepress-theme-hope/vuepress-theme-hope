@@ -1,6 +1,6 @@
 import { type Page } from "@vuepress/core";
-import { isArray, isString } from "@vuepress/shared";
 import { colors } from "@vuepress/utils";
+import { isArray, isString } from "vuepress-shared/node";
 
 import {
   type ThemeBlogHomePageFrontmatter,

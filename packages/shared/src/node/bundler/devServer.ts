@@ -6,12 +6,12 @@ import {
   type WebpackDevServer,
 } from "@vuepress/bundler-webpack";
 import { type App } from "@vuepress/core";
-import { removeLeadingSlash } from "@vuepress/shared";
 import { type HandleFunction } from "connect";
 import { type Plugin } from "vite";
 
 import { getBundlerName } from "./getBundler.js";
 import { mergeViteConfig } from "./vite/index.js";
+import { removeLeadingSlash } from "../../shared/index.js";
 
 export interface CustomServerOptions {
   /**

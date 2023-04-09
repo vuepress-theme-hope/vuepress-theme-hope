@@ -4,8 +4,12 @@ import {
   type WebpackBundlerOptions,
 } from "@vuepress/bundler-webpack";
 import { type App } from "@vuepress/core";
-import { isFunction, isString } from "@vuepress/shared";
-import { getBundlerName, mergeViteConfig } from "vuepress-shared/node";
+import {
+  getBundlerName,
+  isFunction,
+  isString,
+  mergeViteConfig,
+} from "vuepress-shared/node";
 
 type LoaderContext = Exclude<
   LoaderOptions["additionalData"],

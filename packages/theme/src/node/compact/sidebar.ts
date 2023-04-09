@@ -1,6 +1,11 @@
-import { isArray, isPlainObject, isString } from "@vuepress/shared";
 import { colors } from "@vuepress/utils";
-import { entries, fromEntries } from "vuepress-shared/node";
+import {
+  entries,
+  fromEntries,
+  isArray,
+  isPlainObject,
+  isString,
+} from "vuepress-shared/node";
 
 import { deprecatedLogger, droppedLogger } from "./utils.js";
 import {

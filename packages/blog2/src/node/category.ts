@@ -1,6 +1,6 @@
 import { type App, type Page, createPage } from "@vuepress/core";
-import { isFunction, isString, removeLeadingSlash } from "@vuepress/shared";
 import { colors } from "@vuepress/utils";
+import { isFunction, isString, removeLeadingSlash } from "vuepress-shared/node";
 
 import { type BlogOptions } from "./options.js";
 import { type PageMap } from "./typings/index.js";

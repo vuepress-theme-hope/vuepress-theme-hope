@@ -1,11 +1,12 @@
 import { type PluginFunction } from "@vuepress/core";
-import { isArray, isString } from "@vuepress/shared";
 import { getDirname, path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   addViteSsrNoExternal,
   checkVersion,
   getLocales,
+  isArray,
+  isString,
 } from "vuepress-shared/node";
 
 import { copyCodeLocales } from "./locales.js";

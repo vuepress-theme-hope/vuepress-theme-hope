@@ -1,8 +1,8 @@
 import { type Page } from "@vuepress/core";
 import { type GitPluginPageData } from "@vuepress/plugin-git";
-import { isString } from "@vuepress/shared";
 
 import { dayjs, getLocale } from "./dayjs/index.js";
+import { isString } from "../../shared/index.js";
 
 export interface DateDetail {
   year?: number | undefined;

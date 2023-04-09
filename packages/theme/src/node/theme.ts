@@ -1,6 +1,6 @@
 import { type ThemeFunction } from "@vuepress/core";
-import { isPlainObject } from "@vuepress/shared";
 import { watch } from "chokidar";
+import { isPlainObject } from "vuepress-shared/node";
 
 import { getAlias } from "./alias.js";
 import { extendsBundlerOptions } from "./bundler.js";

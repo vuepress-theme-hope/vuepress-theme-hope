@@ -1,4 +1,3 @@
-import { isLinkHttp } from "@vuepress/shared";
 import {
   type PropType,
   TransitionGroup,
@@ -10,7 +9,7 @@ import {
   ref,
 } from "vue";
 import { useRoute, useRouter } from "vue-router";
-import { isAbsoluteUrl, startsWith } from "vuepress-shared/client";
+import { isAbsoluteUrl, isLinkHttp, startsWith } from "vuepress-shared/client";
 
 import { CloseIcon } from "./icons.js";
 import { type NoticeActionOption } from "../../shared/index.js";

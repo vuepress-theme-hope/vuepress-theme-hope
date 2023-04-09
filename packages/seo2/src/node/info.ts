@@ -1,12 +1,13 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { type App } from "@vuepress/core";
 import {
+  getAuthor,
+  getDateInfo,
   isArray,
   isFunction,
   isString,
   removeEndingSlash,
-} from "@vuepress/shared";
-import { getAuthor, getDateInfo } from "vuepress-shared/node";
+} from "vuepress-shared/node";
 
 import { type SeoOptions } from "./options.js";
 import {

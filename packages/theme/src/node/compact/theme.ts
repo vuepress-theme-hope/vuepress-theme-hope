@@ -1,6 +1,5 @@
-import { isArray, isPlainObject } from "@vuepress/shared";
 import { colors } from "@vuepress/utils";
-import { values } from "vuepress-shared/node";
+import { isArray, isPlainObject, values } from "vuepress-shared/node";
 
 import { convertNavbarOptions } from "./navbar.js";
 import { convertSidebarOptions } from "./sidebar.js";

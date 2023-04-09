@@ -1,5 +1,10 @@
-import { isArray, isLinkHttp, isString } from "@vuepress/shared";
-import { endsWith, isAbsoluteUrl } from "vuepress-shared/node";
+import {
+  endsWith,
+  isAbsoluteUrl,
+  isArray,
+  isLinkHttp,
+  isString,
+} from "vuepress-shared/node";
 
 import { type FontIconAssets } from "../options/index.js";
 import { logger } from "../utils.js";

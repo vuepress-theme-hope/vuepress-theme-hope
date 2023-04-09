@@ -1,7 +1,6 @@
 import { type App, type Page } from "@vuepress/core";
-import { isArray } from "@vuepress/shared";
 import { type AnyNode, type Element, load } from "cheerio";
-import { fromEntries, keys } from "vuepress-shared/node";
+import { fromEntries, isArray, keys } from "vuepress-shared/node";
 
 import {
   type SearchProCustomFieldOptions,

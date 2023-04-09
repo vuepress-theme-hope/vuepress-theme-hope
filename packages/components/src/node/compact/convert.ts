@@ -1,5 +1,5 @@
-import { isPlainObject } from "@vuepress/shared";
 import { colors } from "@vuepress/utils";
+import { isPlainObject } from "vuepress-shared/node";
 
 import { deprecatedLogger, droppedLogger } from "./utils.js";
 import { type ComponentOptions } from "../options/index.js";

@@ -1,10 +1,10 @@
 import { type ViteBundlerOptions } from "@vuepress/bundler-vite";
 import { type WebpackBundlerOptions } from "@vuepress/bundler-webpack";
 import { type App } from "@vuepress/core";
-import { isString } from "@vuepress/shared";
 import { colors } from "@vuepress/utils";
 
 import { getBundlerName } from "./getBundler.js";
+import { isString } from "../../shared/index.js";
 import { HTML_TAGS, SVG_TAGS } from "../utils/index.js";
 
 export const tagHint = (tag: string, isDebug = false): void => {

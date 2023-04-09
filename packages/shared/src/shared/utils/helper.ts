@@ -1,4 +1,14 @@
-import { isString } from "@vuepress/shared";
+import { isString } from "@vueuse/core";
+
+export { isArray, isPlainObject } from "@vuepress/shared";
+export {
+  isBoolean,
+  isDef,
+  isFunction,
+  isNumber,
+  isObject,
+  isString,
+} from "@vueuse/core";
 
 /* String helper */
 
