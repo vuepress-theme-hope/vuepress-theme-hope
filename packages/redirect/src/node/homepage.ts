@@ -1,4 +1,5 @@
 import { type App, createPage } from "@vuepress/core";
+import { removeEndingSlash } from "@vuepress/shared";
 
 import { type LocaleRedirectConfig } from "../shared/index.js";
 
@@ -6,15 +7,20 @@ export const ensureRootHomePage = async (
   app: App,
   localeOptions: LocaleRedirectConfig
 ): Promise<void> => {
+  const {
+    options: { base },
+    pages,
+  } = app;
+
   if (
     // homepage not exists
-    app.pages.every(({ path }) => path !== "/")
+    pages.every(({ path }) => path !== "/")
   ) {
-    const availableLocales = app.pages
+    const availableLocales = pages
       .filter(({ pathLocale, path }) => pathLocale === path)
       .map(({ pathLocale }) => pathLocale);
 
-    app.pages.push(
+    pages.push(
       await createPage(app, {
         path: "/",
         frontmatter: { title: "Home" },
@@ -29,7 +35,7 @@ if(!__VUEPRESS_DEV__)
   onMounted(() => {
     const { languages } = window.navigator;
     const { hash, origin } = window.location;
-    const anchor = hash.substr(1);
+    const anchor = hash.substring(1);
 
     const localeConfig = ${JSON.stringify(localeOptions.localeConfig)};
     const availableLocales = ${JSON.stringify(availableLocales)};
@@ -47,7 +53,7 @@ if(!__VUEPRESS_DEV__)
       ? `\
             if (!availableLocales.includes(localePath))
               continue;
-  `
+`
       : ``
   }\
             matchedLocalePath = localePath;
@@ -55,11 +61,15 @@ if(!__VUEPRESS_DEV__)
           }
     
     // default link
-    const defaultLink = defaultLocale? \`\${origin}\${defaultLocale}\${anchor?\`#\${anchor}\`:""}\`: null;
+    const defaultLink = defaultLocale? \`\${origin}${removeEndingSlash(
+      base
+    )}\${defaultLocale}\${anchor? \`#\${anchor}\`: ""}\`: null;
 
     // a locale homepage exists
     if (matchedLocalePath && availableLocales.includes(matchedLocalePath)) {
-      location.href = \`\${origin}\${matchedLocalePath}\${anchor?\`#\${anchor}\`:""}\`;
+      location.href = \`\${origin}${removeEndingSlash(
+        base
+      )}\${matchedLocalePath}\${anchor? \`#\${anchor}\`: ""}\`;
     }
     // we have a default page
     else if (defaultLink) {
@@ -67,7 +77,7 @@ if(!__VUEPRESS_DEV__)
     }
     // no homepage? WTF, just go to 404
     else {
-      location.href = \`\${origin}/404.html\`;
+      location.href = \`\${origin}${removeEndingSlash(base)}/404.html\`;
     }
   })
 </script>

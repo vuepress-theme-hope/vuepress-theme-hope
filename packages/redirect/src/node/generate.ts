@@ -11,15 +11,15 @@ import { getLocaleRedirectHTML, getRedirectHTML } from "./utils.js";
 import { type LocaleRedirectConfig } from "../shared/index.js";
 
 export const generateAutoLocaleRedirects = async (
-  app: App,
+  { dir, options, pages }: App,
   localeOptions: LocaleRedirectConfig
 ): Promise<void> => {
-  const rootPaths = app.pages
+  const rootPaths = pages
     .filter(({ pathLocale }) => pathLocale === "/")
     .map(({ path }) => path);
   const localeRedirectMap: Record<string, string[]> = {};
 
-  app.pages
+  pages
     .filter(({ pathLocale }) => pathLocale !== "/")
     .forEach(({ path, pathLocale }) => {
       const rootPath = path
@@ -33,7 +33,7 @@ export const generateAutoLocaleRedirects = async (
   await withSpinner("Generating locale redirect files")(() =>
     Promise.all(
       entries(localeRedirectMap).map(([rootPath, availableLocales]) => {
-        const filePath = app.dir.dest(removeLeadingSlash(rootPath));
+        const filePath = dir.dest(removeLeadingSlash(rootPath));
 
         return fs.existsSync(filePath)
           ? Promise.resolve()
@@ -42,7 +42,11 @@ export const generateAutoLocaleRedirects = async (
               .then(() =>
                 fs.writeFile(
                   filePath,
-                  getLocaleRedirectHTML(localeOptions, availableLocales)
+                  getLocaleRedirectHTML(
+                    localeOptions,
+                    availableLocales,
+                    options.base
+                  )
                 )
               );
       })

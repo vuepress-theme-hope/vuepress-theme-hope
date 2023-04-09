@@ -52,8 +52,8 @@ export const handleRedirectTo = (app: App, options: RedirectOptions): void => {
         "script",
         {},
         `{\
-const anchor = window.location.hash.substr(1);\
-location.href=\`${redirectUrl}\${anchor?\`#\${anchor}\`:""}\`;\
+const anchor = window.location.hash.substring(1);\
+location.href=\`${redirectUrl}\${anchor? \`#\${anchor}\`: ""}\`;\
 }`,
       ]);
     }
@@ -98,7 +98,8 @@ export const getLocaleRedirectHTML = (
     defaultLocale,
     localeFallback,
   }: LocaleRedirectConfig,
-  availableLocales: string[]
+  availableLocales: string[],
+  base: string
 ): string => `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -107,6 +108,7 @@ export const getLocaleRedirectHTML = (
   <title>Redirecting...</title>
   <script>
     const { hash, origin, pathname } = window.location;
+    const routePath = pathname.substring(${base.length});
     const { languages } = window.navigator;
     const anchor = hash.substring(1);
 
@@ -139,11 +141,15 @@ ${
           }
     
     // default link
-    const defaultLink = defaultLocale? \`\${origin}\${defaultLocale}\${pathname.substring(1)}\${anchor?\`#\${anchor}\`:""}\`: null;
+    const defaultLink = defaultLocale? \`\${origin}${removeEndingSlash(
+      base
+    )}\${defaultLocale}\${routePath}\${anchor? \`#\${anchor}\`: ""}\`: null;
 
     // a locale matches
     if (matchedLocalePath) {
-      const localeLink = \`\${origin}\${matchedLocalePath}\${pathname.substring(1)}\${anchor?\`#\${anchor}\`:""}\`;
+      const localeLink = \`\${origin}${removeEndingSlash(
+        base
+      )}\${matchedLocalePath}\${routePath}\${anchor? \`#\${anchor}\`: ""}\`;
 
       if (availableLocales.includes(matchedLocalePath)) {
         location.href = localeLink;
@@ -152,7 +158,9 @@ ${
       else {
         // locale homepage
         if (defaultBehavior === "homepage") {
-          location.href = \`\${origin}\${matchedLocalePath}\`;
+          location.href = \`\${origin}${removeEndingSlash(
+            base
+          )}\${matchedLocalePath}\`;
         }
         // default locale page
         else if (defaultBehavior === "defaultLocale" && defaultLink) {
@@ -169,7 +177,7 @@ ${
       location.href = defaultLink;
     }
     else {
-      location.href = \`\${origin}/404.html\`;
+      location.href = \`\${origin}${removeEndingSlash(base)}/404.html\`;
     }
   </script>
 </head>
@@ -188,8 +196,8 @@ export const getRedirectHTML = (redirectUrl: string): string => `<!DOCTYPE html>
   <link rel="canonical" href="${redirectUrl}">
   <title>Redirecting...</title>
   <script>
-    const anchor = window.location.hash.substr(1);
-    location.href = \`${redirectUrl}\${anchor?\`#\${anchor}\`:""}\`;
+    const anchor = window.location.hash.substring(1);
+    location.href = \`${redirectUrl}\${anchor? \`#\${anchor}\`: ""}\`;
   </script>
 </head>
 <body>
