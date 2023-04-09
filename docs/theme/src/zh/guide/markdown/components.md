@@ -477,4 +477,3 @@ PDF 浏览器组件。
 ```
 
 有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/youtube.html">YouTube</ProjectLink> 页面。
-````
