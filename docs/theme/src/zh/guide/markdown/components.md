@@ -218,8 +218,9 @@ export default {
 
 <BiliBili aid="34304064" cid="109293122" ratio="9:16" time="60" autoplay page="2" />
 
-````md
-<BiliBili aid="34304064" cid="109293122" ratio="9:16" time="60" autoplay page="2" />```
+```md
+<BiliBili aid="34304064" cid="109293122" ratio="9:16" time="60" autoplay page="2" />
+```
 
 有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/bilibili.html">BiliBili</ProjectLink> 页面。
 
@@ -476,4 +477,3 @@ PDF 浏览器组件。
 ```
 
 有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/youtube.html">YouTube</ProjectLink> 页面。
-````
