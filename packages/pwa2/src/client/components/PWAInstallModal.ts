@@ -25,7 +25,7 @@ export default defineComponent({
     useHint: Boolean,
   },
 
-  emits: ["canInstall", "hint", "toggle"],
+  emits: ["canInstall", "hint", "close"],
 
   setup(props, { emit }) {
     const locale = useLocaleConfig(locales);
@@ -85,12 +85,12 @@ export default defineComponent({
         if (choiceResult.outcome === "accepted") {
           console.info("PWA has been installed");
 
-          emit("toggle", false);
+          emit("close", false);
           emit("canInstall", false);
         } else {
           console.info("You choose to not install PWA");
 
-          emit("toggle", false);
+          emit("close", false);
           emit("canInstall", false);
         }
       }
@@ -109,10 +109,10 @@ export default defineComponent({
 
           emit("canInstall", true);
           event.preventDefault();
+        });
 
-          useEventListener("keyup", (event): void => {
-            if (event.key === "Escape") emit("toggle", false);
-          });
+        useEventListener("keyup", (event): void => {
+          if (event.key === "Escape") emit("close", false);
         });
 
         void getManifest();
@@ -121,7 +121,7 @@ export default defineComponent({
 
     return (): VNode =>
       h("div", { id: "install-modal-wrapper" }, [
-        h("div", { class: "background", onClick: () => emit("toggle", false) }),
+        h("div", { class: "background", onClick: () => emit("close", false) }),
 
         h("div", { class: "install-modal" }, [
           h("div", { class: "header" }, [
@@ -132,7 +132,7 @@ export default defineComponent({
                 type: "button",
                 class: "close-button",
                 "aria-label": locale.value.close,
-                onClick: () => emit("toggle", false),
+                onClick: () => emit("close", false),
               },
               h(CloseIcon)
             ),
@@ -220,7 +220,7 @@ export default defineComponent({
                   {
                     type: "button",
                     class: "cancel-button",
-                    onClick: () => emit("toggle", false),
+                    onClick: () => emit("close", false),
                   },
                   locale.value.cancel
                 ),

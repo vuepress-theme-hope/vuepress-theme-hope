@@ -109,7 +109,7 @@ export default defineComponent({
             canInstall.value = value;
           },
           onHint: () => hint(),
-          onToggle: toggleIsOpen,
+          onClose: () => toggleIsOpen(false),
         }),
       ]);
   },
