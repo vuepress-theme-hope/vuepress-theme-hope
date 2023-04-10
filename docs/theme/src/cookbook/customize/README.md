@@ -13,6 +13,12 @@ article: false
 
 This section shows you the relevant codes involved in common customization.
 
+## Adding Component
+
+Each markdown file will be converted to a Vue component in VuePress, so you and import and use Vue components easily.
+
+- [Adding Components](./component.md)
+
 ## How to Customize Styles
 
 You can create three files under `.vuepress/styles` folder in your own document for style customization.

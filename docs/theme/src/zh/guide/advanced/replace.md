@@ -1,7 +1,7 @@
 ---
 title: 替换主题组件
 icon: boxes-packing
-order: 3
+order: -1
 category:
   - 高级
 tag:

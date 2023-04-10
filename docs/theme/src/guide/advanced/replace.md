@@ -1,7 +1,7 @@
 ---
 title: Replacing Theme Components
 icon: boxes-packing
-order: 3
+order: -2
 category:
   - Advanced
 tag:

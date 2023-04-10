@@ -72,4 +72,4 @@ All theme components are registered and invoked through aliases, which means tha
 
 If you just want to add new content at a specific position on the page, then you can replace the component and reference the original component through the slot of the original component.
 
-See [Advanced → Replace theme components](../advanced/replace.md) for component aliases, component slots and replacement methods.
+See [Advanced → Replace theme components](../../guide/advanced/replace.md) for component aliases, component slots and replacement methods.

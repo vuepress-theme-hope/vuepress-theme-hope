@@ -1,7 +1,7 @@
 ---
 title: 主题继承
 icon: clone
-order: 4
+order: -2
 category:
   - 高级
 tag:

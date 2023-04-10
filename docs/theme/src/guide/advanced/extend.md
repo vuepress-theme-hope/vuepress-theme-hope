@@ -1,7 +1,7 @@
 ---
 title: Theme Extending
 icon: clone
-order: 4
+order: -1
 category:
   - Advanced
 tag:
