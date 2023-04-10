@@ -1,8 +1,8 @@
-import { type PhotoSwipeInitOptions } from "../shared/index.js";
+import { type SupportedPhotoSwipeOptions } from "../shared/index.js";
 
 declare const PHOTO_SWIPE_SELECTOR: string | string[];
 declare const PHOTO_SWIPE_DELAY: number;
-declare const PHOTO_SWIPE_OPTIONS: PhotoSwipeInitOptions;
+declare const PHOTO_SWIPE_OPTIONS: SupportedPhotoSwipeOptions;
 declare const PHOTO_SWIPE_LOCALES: Record<
   string,
   {

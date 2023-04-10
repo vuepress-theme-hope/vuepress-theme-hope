@@ -10,3 +10,31 @@
   width: 100vw;
   height: 100vh;
 }
+
+.photo-swipe-bullets-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  transform: translate(-50%, 0);
+}
+
+.photo-swipe-bullet {
+  width: 12px;
+  height: 6px;
+  margin: 0 5px;
+  border-radius: 3px;
+
+  background: #fff;
+
+  transition: width var(--vp-tt), color var(--vp-ct);
+
+  &.active {
+    width: 30px;
+    background: var(--vp-tc);
+  }
+}
