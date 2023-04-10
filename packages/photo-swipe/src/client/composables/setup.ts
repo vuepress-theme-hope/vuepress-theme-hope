@@ -1,10 +1,16 @@
 import { usePageData } from "@vuepress/client";
-import { useFullscreen } from "@vueuse/core";
+import { useEventListener, useFullscreen } from "@vueuse/core";
 import PhotoSwipe, { type SlideData } from "photoswipe";
 import { nextTick, onMounted, watch } from "vue";
 import { useLocaleConfig } from "vuepress-shared/client";
 
-import { delay, imageSelector, locales, options } from "../define.js";
+import {
+  delay,
+  imageSelector,
+  locales,
+  options,
+  scrollToClose,
+} from "../define.js";
 import { LOADING_ICON, getImageInfo, getImages } from "../utils/index.js";
 
 import "photoswipe/dist/photoswipe.css";
@@ -14,6 +20,8 @@ export const setupPhotoSwipe = (): void => {
   const { isSupported, toggle } = useFullscreen();
   const locale = useLocaleConfig(locales);
   const page = usePageData();
+
+  let instance: PhotoSwipe;
 
   const registerPhotoswipeUI = (photoSwipe: PhotoSwipe): void => {
     photoSwipe.on("uiRegister", () => {
@@ -102,7 +110,6 @@ export const setupPhotoSwipe = (): void => {
         element: image,
         msrc: image.src,
       }));
-      let instance: PhotoSwipe;
 
       images.forEach((image, index) => {
         const handler = (): void => {
@@ -113,6 +120,9 @@ export const setupPhotoSwipe = (): void => {
             ...options,
             dataSource,
             index,
+            ...(scrollToClose
+              ? { closeOnVerticalDrag: true, wheelToZoom: false }
+              : {}),
           });
 
           registerPhotoswipeUI(instance);
@@ -140,6 +150,11 @@ export const setupPhotoSwipe = (): void => {
     });
 
   onMounted(() => {
+    if (scrollToClose)
+      useEventListener("wheel", () => {
+        instance?.close();
+      });
+
     void initPhotoSwipe();
 
     watch(

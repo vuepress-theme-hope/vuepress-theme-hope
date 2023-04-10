@@ -10,6 +10,13 @@ icon: gears
 
 图片选择器
 
+## scrollToClose
+
+- 类型: `boolean`
+- 默认值: `true`
+
+是否在滚动时关闭当前图片。
+
 ## options
 
 传递给 [`photo-swipe`](http://photoswipe.com/) 的额外选项

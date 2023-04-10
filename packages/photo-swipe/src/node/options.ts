@@ -16,6 +16,15 @@ export interface PhotoSwipeOptions {
   selector?: string | string[];
 
   /**
+   * Whether close the current image when scrolling.
+   *
+   * 是否在滚动时关闭当前图片。
+   *
+   * @default true
+   */
+  scrollToClose?: boolean;
+
+  /**
    * The delay of photo-swipe fetching page images, in ms
    *
    * If the theme you are using has a switching animation, it is recommended to configure this option to `Switch animation duration + 200`
