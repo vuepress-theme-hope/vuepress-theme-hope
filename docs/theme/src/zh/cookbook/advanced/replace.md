@@ -293,6 +293,15 @@ import HopeHomePage from "vuepress-theme-hope/components/HomePage.js";
 - `HomePage`: `top`, `center`, `bottom`
 - `NormalPage`: `top`, `contentBefore`, `contentAfter`, `bottom`, `tocBefore`, `tocAfter`
 
+**博客**：
+
+- `ArticleItem`: `title`, `cover`, `info`, `excerpt`
+
+  - `title` 插槽将接收 `title` `isEncrypted` 和 `type` 属性。
+  - `excerpt` 插槽将接收 `excerpt` 属性。
+  - `cover` 插槽将接收 `cover` 属性。
+  - `info` 插槽将接收 `info` 属性。
+
 **导航栏**:
 
 - `DropdownLink`: `title`

@@ -288,6 +288,15 @@ Components that provide slots are as follows:
 - `HomePage`: `top`, `center`, `bottom`
 - `NormalPage`: `top`, `contentBefore`, `contentAfter`, `bottom`, `tocBefore`, `tocAfter`
 
+**Blog**:
+
+- `ArticleItem`: `title`, `cover`, `info`, `excerpt`
+
+  - `title` slot will receive `title` `isEncrypted` and `type` props.
+  - `excerpt` slot will receive `excerpt` props.
+  - `cover` slot will receive `cover` props.
+  - `info` slot will receive `info` props.
+
 **NavBar**:
 
 - `DropdownLink`: `title`
