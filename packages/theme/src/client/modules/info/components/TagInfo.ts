@@ -57,7 +57,7 @@ export default defineComponent({
             [
               h(TagIcon),
 
-              ...props.tag.map(({ name, path }) =>
+              props.tag.map(({ name, path }) =>
                 h(
                   "span",
                   {

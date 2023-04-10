@@ -142,7 +142,7 @@ export default defineComponent({
               ...(props.loop ? { loop: "" } : {}),
             },
             [
-              ...props.tracks.map((track) =>
+              props.tracks.map((track) =>
                 h("track", { ...track, src: getLink(track.src) })
               ),
               h("source", { src: getLink(props.src), type: props.type }),

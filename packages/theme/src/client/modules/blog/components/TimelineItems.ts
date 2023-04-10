@@ -44,7 +44,7 @@ export default defineComponent({
         h("ul", { class: "timeline-content" }, [
           h(DropTransition, () => h("li", { class: "motto" }, hint.value)),
           h(TOC, { items: items.value as unknown as PageHeader[] }),
-          ...timelines.value.config.map(({ year, items }, index) =>
+          timelines.value.config.map(({ year, items }, index) =>
             h(
               DropTransition,
               { appear: true, delay: 0.08 * (index + 1), type: "group" },

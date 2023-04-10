@@ -127,7 +127,7 @@ export default defineComponent({
                   : null,
 
                 // left ellipsis
-                ...(displayLeftEllipsis.value
+                displayLeftEllipsis.value
                   ? [
                       h(
                         "div",
@@ -139,10 +139,9 @@ export default defineComponent({
                       ),
                       h("div", { class: "ellipsis" }, "..."),
                     ]
-                  : []),
-
+                  : null,
                 // numbers
-                ...indexes.value.map((num) =>
+                indexes.value.map((num) =>
                   h(
                     "div",
                     {
@@ -156,7 +155,7 @@ export default defineComponent({
                 ),
 
                 // right ellipsis
-                ...(displayRightEllipsis.value
+                displayRightEllipsis.value
                   ? [
                       h("div", { class: "ellipsis" }, "..."),
                       h(
@@ -168,8 +167,7 @@ export default defineComponent({
                         totalPages.value
                       ),
                     ]
-                  : []),
-
+                  : null,
                 // next button
                 props.current < totalPages.value
                   ? h(

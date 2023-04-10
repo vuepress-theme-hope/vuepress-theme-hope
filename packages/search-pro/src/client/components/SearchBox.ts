@@ -35,7 +35,7 @@ export default defineComponent({
     const controlKeys = computed(() =>
       primaryKey
         ? [
-            ...(isMacOS.value
+            (isMacOS.value
               ? ["⌃", "⇧", "⌥", "⌘"]
               : ["Ctrl", "Shift", "Alt", "Win"]
             ).filter(

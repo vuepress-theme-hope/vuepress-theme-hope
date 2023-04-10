@@ -55,7 +55,7 @@ export default defineComponent({
             onClick: () => setThemeColor(),
           })
         ),
-        ...entries(props.themeColor).map(([color, value]) =>
+        entries(props.themeColor).map(([color, value]) =>
           h(
             "li",
             h("span", {
