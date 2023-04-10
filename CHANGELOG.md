@@ -4,6 +4,31 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.202](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.201...v2.0.0-beta.202) (2023-04-10)
+
+### Features
+
+- **md-enhance:** improve deprecate include logger ([672093f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/672093febf6ff12119d7a6832541bdc59c5e3642))
+- **md-enhance:** improve katex error msg ([eb538ad](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/eb538ad84ef01212a65b46bba6b5e4bcb195850e))
+- **photo-swipe:** add indicator and support zoom ([6951c27](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6951c27ddf879c77f394cfffcbdab4f7ef7e5bd4))
+- **photo-swipe:** add scrollToClose option ([a792e5e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a792e5e288b6f8c76d7440f6329bbacc6ba8719a))
+- **theme:** add `title`, `cover`, `info` and `excerpt` slot for article ([9a137c1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9a137c1fa68f07b42f3947369bf955d019ab6c24))
+- **theme:** improve a11y ([6d13051](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6d13051354f0e5124131ee52ea7dbd144cd408c8))
+- **theme:** support cover in article item ([03e5963](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/03e5963a1e649de84add2d2d35b00378d70bbe0f))
+
+### Bug Fixes
+
+- **auto-catalog:** do not generate root homepage as catalog if root locale not exists ([e5c9752](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e5c9752d4ff8a897008cc01eb4ddda82d9b746ef))
+- **blog2:** do not force generate root locale ([665332e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/665332eefca47bcc2767a2a912b5af8c9bd9653c))
+- **components:** fix iconify icon issue, close [#3006](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3006) ([b6cc535](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b6cc53515509d17b358fbc48c35e319a85040180))
+- **components:** fix Notice key ([79b49a0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/79b49a02200e1a3f88e2b08c484d6e33be71e6c2))
+- **deps:** update dependency axios to v1.3.5 ([#3001](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3001)) ([a31f99d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a31f99d7754bf7a65e9716607516a1f72d1db844))
+- **deps:** update dependency mermaid to v10.1.0 ([#3002](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3002)) ([bd3d056](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/bd3d056f77117915b7ad29d589301197877188b5))
+- **redirect:** fix issue with base ([92dfdda](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/92dfdda467bea2ee3e2020194c4b4a3b84613f49))
+- **redirect:** fix language modal, close [#3007](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3007) ([24e70ec](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/24e70ecc9f1131ff6ee533c3d0ad1e93c827c851))
+- **redirect:** improve behavior when hostname is not set ([0dc4951](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0dc495104b0a5a86243e70ada61c21afb0b6ddee))
+- **theme:** fix text clip in hero info ([b93d912](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b93d912814c63fc31b1fb72fb5bce6dfdaec1506))
+
 ## [2.0.0-beta.201](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.200...v2.0.0-beta.201) (2023-04-04)
 
 ### Features
