@@ -44,8 +44,10 @@ export default defineComponent({
     const info = toRef(props, "info");
     const { info: articleInfo, items } = useArticleInfo(props);
 
-    return (): VNode =>
-      h(
+    return (): VNode => {
+      const infoValue = info.value;
+
+      return h(
         "div",
         { class: "article-item" },
         h(
@@ -56,30 +58,36 @@ export default defineComponent({
             typeof: "Article",
           },
           [
-            info.value[ArticleInfoType.sticky] ? h(StickyIcon) : null,
+            infoValue[ArticleInfoType.sticky] ? h(StickyIcon) : null,
+            infoValue[ArticleInfoType.cover]
+              ? [
+                  h("img", {
+                    class: "article-cover",
+                    src: withBase(infoValue[ArticleInfoType.cover]!),
+                  }),
+                  h("meta", {
+                    property: "image",
+                    content: withBase(infoValue[ArticleInfoType.cover]),
+                  }),
+                ]
+              : [],
             h(RouterLink, { to: props.path }, () => [
               h("header", { class: "title" }, [
-                info.value[ArticleInfoType.isEncrypted] ? h(LockIcon) : null,
-                info.value[ArticleInfoType.type] === PageType.slide
+                infoValue[ArticleInfoType.isEncrypted] ? h(LockIcon) : null,
+                infoValue[ArticleInfoType.type] === PageType.slide
                   ? h(SlideIcon)
                   : null,
                 h(
                   "span",
                   { property: "headline" },
-                  info.value[ArticleInfoType.title]
+                  infoValue[ArticleInfoType.title]
                 ),
-                info.value[ArticleInfoType.cover]
-                  ? h("meta", {
-                      property: "image",
-                      content: withBase(info.value[ArticleInfoType.cover]!),
-                    })
-                  : null,
               ]),
             ]),
-            info.value[ArticleInfoType.excerpt]
+            infoValue[ArticleInfoType.excerpt]
               ? h("div", {
                   class: "article-excerpt",
-                  innerHTML: info.value[ArticleInfoType.excerpt],
+                  innerHTML: infoValue[ArticleInfoType.excerpt],
                 })
               : null,
             h("hr", { class: "hr" }),
@@ -90,5 +98,6 @@ export default defineComponent({
           ]
         )
       );
+    };
   },
 });

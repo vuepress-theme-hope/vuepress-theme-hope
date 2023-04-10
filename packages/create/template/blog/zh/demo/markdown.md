@@ -388,4 +388,4 @@ $$
 
 - [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/presentation.html)
 
-[md-enhance]: https://md-enhance.vuejs.press/zh/
+[md-enhance]: https://plugin-md-enhance.vuejs.press/zh/
