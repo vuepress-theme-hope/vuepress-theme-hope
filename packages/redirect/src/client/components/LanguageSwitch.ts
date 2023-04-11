@@ -106,8 +106,6 @@ export default defineComponent({
           else showModal.value = false;
         else showModal.value = false;
 
-      console.log(showModal.value, info.value);
-
       watch(
         showModal,
         (value) => {
