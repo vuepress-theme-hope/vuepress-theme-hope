@@ -1,6 +1,8 @@
 import { tab } from "@mdit/plugin-tab";
 import { type PluginSimple } from "markdown-it";
 
+import { stringifyProp } from "./utils.js";
+
 export const tabs: PluginSimple = (md) => {
   tab(md, {
     name: "tabs",
@@ -13,10 +15,9 @@ export const tabs: PluginSimple = (md) => {
         ...(id ? { id } : {}),
       }));
 
-      return `<Tabs id="${index}" :data='${
-        // single quote will break @vue/compiler-sfc
-        JSON.stringify(tabData).replace(/'/g, "&#39")
-      }'${active !== -1 ? ` :active="${active}"` : ""}${
+      return `<Tabs id="${index}" :data='${stringifyProp(tabData)}'${
+        active !== -1 ? ` :active="${active}"` : ""
+      }${
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         meta.id ? ` tab-id="${meta.id as string}"` : ""
       }>
