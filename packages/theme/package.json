@@ -29,10 +29,6 @@
   "type": "module",
   "exports": {
     ".": "./lib/node/index.js",
-    "./perf": {
-      "types": "./lib/node/perf.d.ts",
-      "default": "./lib/node/perf.js"
-    },
     "./client": "./lib/client/index.js",
     "./client/*": "./lib/client/*",
     "./components/*": "./lib/client/components/*",
@@ -63,9 +59,9 @@
     "build:gulp": "gulp -f gulpfile.cjs",
     "build:ts": "tsc -b tsconfig.release.json",
     "clean": "rimraf ./lib ./*.tsbuildinfo",
-    "copy": "pnpm copy:client && pnpm copy:perf",
+    "copy": "pnpm copy:client && pnpm copy:bundle",
+    "copy:bundle": "cpx \"src/client/**/*.{css,jpg}\" lib/bundle",
     "copy:client": "cpx \"src/client/**/*.{css,scss,jpg}\" lib/client",
-    "copy:perf": "cpx \"src/client/**/*.{css,jpg}\" lib/perf",
     "dev": "concurrently \"pnpm dev:copy\" \"pnpm dev:ts\"",
     "dev:copy": "pnpm copy:client -w",
     "dev:ts": "tsc -b tsconfig.build.json --watch"

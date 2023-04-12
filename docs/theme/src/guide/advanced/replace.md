@@ -9,7 +9,7 @@ tag:
   - Customize
 ---
 
-The theme imports components through `alias`, so you can use it to replace any component of the theme.
+When setting `{ custom: true }` in [Behavior options](../../config/theme/behavior.md), the theme will import components through `@theme-hope` alias, so you can use it to replace any component of the theme.
 
 <!-- more -->
 

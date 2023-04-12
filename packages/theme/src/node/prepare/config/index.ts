@@ -1,2 +1,2 @@
-export * from "./normal.js";
-export * from "./performance.js";
+export * from "./bundle.js";
+export * from "./separate.js";

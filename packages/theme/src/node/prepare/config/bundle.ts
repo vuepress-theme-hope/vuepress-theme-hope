@@ -4,14 +4,14 @@ import { type App } from "@vuepress/core";
 import { path } from "@vuepress/utils";
 
 import { type ThemeStatus } from "../../config/index.js";
-import { PERF_FOLDER } from "../../utils.js";
+import { BUNDLE_FOLDER } from "../../utils.js";
 
 const require = createRequire(import.meta.url);
 
 /**
  * @private
  */
-export const preparePerformanceConfigFile = (
+export const prepareBundleConfigFile = (
   app: App,
   { enableBlog, enableEncrypt, enableSlide }: ThemeStatus
 ): Promise<string> => {
@@ -22,8 +22,8 @@ export const preparePerformanceConfigFile = (
 
   if (enableBlog) {
     imports.push(
-      `import { BlogCategory, BlogHome, BlogType, BloggerInfo, Timeline, setupBlog } from "${PERF_FOLDER}modules/blog/export.js";`,
-      `import "${PERF_FOLDER}modules/blog/styles/all.scss";`
+      `import { BlogCategory, BlogHome, BlogType, BloggerInfo, Timeline, setupBlog } from "${BUNDLE_FOLDER}modules/blog/export.js";`,
+      `import "${BUNDLE_FOLDER}modules/blog/styles/all.scss";`
     );
 
     enhances.push(`app.component("BloggerInfo", BloggerInfo);`);
@@ -35,8 +35,8 @@ export const preparePerformanceConfigFile = (
 
   if (enableEncrypt) {
     imports.push(
-      `import { GlobalEncrypt, LocalEncrypt } from "${PERF_FOLDER}modules/encrypt/export.js";`,
-      `import "${PERF_FOLDER}modules/encrypt/styles/all.scss"`
+      `import { GlobalEncrypt, LocalEncrypt } from "${BUNDLE_FOLDER}modules/encrypt/export.js";`,
+      `import "${BUNDLE_FOLDER}modules/encrypt/styles/all.scss"`
     );
 
     enhances.push(
@@ -59,11 +59,11 @@ export const preparePerformanceConfigFile = (
     `\
 import { defineClientConfig } from "@vuepress/client";
 
-import { HopeIcon, Layout, NotFound, useScrollPromise, injectDarkmode, setupDarkmode, setupSidebarItems } from "${PERF_FOLDER}export.js";
+import { HopeIcon, Layout, NotFound, useScrollPromise, injectDarkmode, setupDarkmode, setupSidebarItems } from "${BUNDLE_FOLDER}export.js";
 
 ${imports.join("\n")}
 
-import "${PERF_FOLDER}styles/all.scss";
+import "${BUNDLE_FOLDER}styles/all.scss";
 
 export default defineClientConfig({
   enhance: ({ app, router }) => {

@@ -11,7 +11,7 @@ const require = createRequire(import.meta.url);
 /**
  * @private
  */
-export const prepareConfigFile = (
+export const prepareSeparatedConfigFile = (
   app: App,
   { enableBlog, enableEncrypt, enableSlide }: ThemeStatus
 ): Promise<string> => {
