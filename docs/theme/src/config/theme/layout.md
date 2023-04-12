@@ -33,9 +33,12 @@ Whether display icons in navbar.
 
 ### navbarLayout
 
-- Type: `HopeNavbarLayoutOptions`
+- Type: `NavbarLayoutOptions`
 
   ```ts
+  /**
+   * Navbar component
+   */
   type NavbarComponent =
     | "Brand"
     | "Links"
@@ -44,10 +47,13 @@ Whether display icons in navbar.
     | "Outlook"
     | "Repo";
 
-  interface HopeNavbarLayoutOptions {
-    start: NavbarComponent[];
-    center: NavbarComponent[];
-    end: NavbarComponent[];
+  /**
+   * Navbar layout options
+   */
+  interface NavbarLayoutOptions {
+    start?: (NavbarComponent | string)[];
+    center?: (NavbarComponent | string)[];
+    end?: (NavbarComponent | string)[];
   }
   ```
 

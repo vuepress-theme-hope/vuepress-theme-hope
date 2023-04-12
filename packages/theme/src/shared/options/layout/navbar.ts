@@ -35,9 +35,9 @@ export type NavbarComponent =
  * 导航栏布局选项
  */
 export interface NavbarLayoutOptions {
-  start: NavbarComponent[];
-  center: NavbarComponent[];
-  end: NavbarComponent[];
+  start?: (NavbarComponent | string)[];
+  center?: (NavbarComponent | string)[];
+  end?: (NavbarComponent | string)[];
 }
 
 export interface NavbarLocaleOptions {
