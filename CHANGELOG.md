@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.203](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.202...v2.0.0-beta.203) (2023-04-12)
+
+### ⚠ BREAKING CHANGES
+
+- **theme:** customizations now need extra config `{ custom: true }` now
+
+### Features
+
+- **md-enhance:** add card option ([d06e46b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d06e46b1e296b9a1c4465ff009bd38884fd9e3cc))
+- **theme:** improve feature panel when only 1 or 2 feature ([4856ec4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4856ec46340f302b31f83f4d5289d61d929e57d1))
+- **theme:** support globalComponent in navbarLayout ([04f3a2d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/04f3a2dcf2d04c643229d67f0016a5bd8b07171d))
+- **theme:** support page cover, close [#3011](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3011) ([8d4448f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8d4448fb55e9c682f56ee86a4b479226eb71bffa))
+- **theme:** use performance version by default ([92fc85e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/92fc85ec4e279afa7f9e9d258250de49279d71a9))
+
+### Bug Fixes
+
+- **components:** fix SiteInfo, close [#3015](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3015) ([6e6537c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6e6537cf9d6dd759cfc52f7a3892bd1c6096c7f6))
+
 ## [2.0.0-beta.202](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.201...v2.0.0-beta.202) (2023-04-10)
 
 ### Features
