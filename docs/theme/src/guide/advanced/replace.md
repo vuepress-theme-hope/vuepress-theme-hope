@@ -297,6 +297,8 @@ Components that provide slots are as follows:
   - `cover` slot will receive `cover` props.
   - `info` slot will receive `info` props.
 
+- `BlogHero`: `heroBg`, `heroInfo`
+
 **NavBar**:
 
 - `DropdownLink`: `title`

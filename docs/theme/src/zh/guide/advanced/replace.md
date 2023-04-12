@@ -302,6 +302,8 @@ import HopeHomePage from "vuepress-theme-hope/components/HomePage.js";
   - `cover` 插槽将接收 `cover` 属性。
   - `info` 插槽将接收 `info` 属性。
 
+- `BlogHero`: `heroBg`, `heroInfo`
+
 **导航栏**:
 
 - `DropdownLink`: `title`
