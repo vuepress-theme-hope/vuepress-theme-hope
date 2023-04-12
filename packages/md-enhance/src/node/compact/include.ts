@@ -8,6 +8,7 @@ import { type PluginWithOptions } from "markdown-it";
 import { type RuleCore } from "markdown-it/lib/parser_core.js";
 
 import { NEWLINES_RE } from "../markdown-it/utils.js";
+import { logger } from "../utils.js";
 
 interface ImportFileLineInfo {
   filePath: string;
@@ -108,7 +109,7 @@ export const handleInclude = (
     // if the importPath is relative path, we need to resolve it
     // according to the markdown filePath
     if (!cwd) {
-      console.error(`[include]: Error when resolving path: ${filePath}`);
+      logger.error(`[include]: Error when resolving path: ${filePath}`);
 
       return "\nError when resolving path\n";
     }
@@ -120,7 +121,7 @@ export const handleInclude = (
 
   // check file existence
   if (!fs.existsSync(realPath)) {
-    console.error(`Include: ${realPath} not found`);
+    logger.error(`Include: ${realPath} not found`);
 
     return "\nFile not found\n";
   }
@@ -164,7 +165,7 @@ export const resolveInclude = (
         const result = line.match(INCLUDE_RE);
 
         if (result) {
-          console.warn(
+          logger.warn(
             `"@include(file)" is deprecated, you should use "<!-- @include: file -->" instead.${
               currentPath ? `\n Found in ${currentPath}.` : ""
             }`
@@ -233,9 +234,11 @@ export const legacyInclude: PluginWithOptions<MarkdownItIncludeOptions> = (
     resolveImagePath = true,
   } = options || {};
 
-  if (typeof currentPath !== "function")
-    return console.error('[include]: "currentPath" is required');
+  if (typeof currentPath !== "function") {
+    logger.error('[include]: "currentPath" is required');
 
+    return;
+  }
   // add md_import core rule
   md.core.ruler.after(
     "normalize",
