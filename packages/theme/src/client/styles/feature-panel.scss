@@ -84,7 +84,7 @@
   }
 
   @media (max-width: hope-config.$tablet) {
-    flex-basis: calc(100%);
+    flex-basis: 100%;
     font-size: 0.95rem;
   }
 
@@ -117,6 +117,19 @@
     background-color: var(--bg-color-secondary);
     box-shadow: 0 2px 12px 0 var(--card-shadow);
     transform: scale(1.05);
+  }
+
+  &:only-child {
+    flex-basis: 100%;
+  }
+
+  &:first-child:nth-last-child(2),
+  &:nth-child(2):last-child {
+    flex-basis: calc(50% - 3rem);
+
+    @media (max-width: hope-config.$tablet) {
+      flex-basis: 100%;
+    }
   }
 
   .home.project:not(.pure) & {
