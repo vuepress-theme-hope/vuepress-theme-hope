@@ -49,6 +49,7 @@ import { markdownEnhanceLocales } from "./locales.js";
 import {
   CODE_DEMO_DEFAULT_SETTING,
   DEFAULT_VUE_PLAYGROUND_OPTIONS,
+  card,
   chart,
   codeTabs,
   echarts,
@@ -357,6 +358,7 @@ export const mdEnhancePlugin =
           });
 
         // features
+        if (getStatus("card")) md.use(card);
         if (getStatus("codetabs")) {
           md.use(codeTabs);
           // TODO: Remove this in v2 stable

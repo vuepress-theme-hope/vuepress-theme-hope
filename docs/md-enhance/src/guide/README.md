@@ -116,6 +116,18 @@ Support setting title, color scheme and size
 
 - [View Detail](image.md)
 
+### Card
+
+```card
+title: Mr.Hope
+desc: Where there is light, there is hope
+logo: https://mrhope.site/logo.svg
+link: https://mrhope.site
+color: rgba(253, 230, 138, 0.15)
+```
+
+- [View Detail](card.md)
+
 ### Chart
 
 ::: chart A Scatter Chart

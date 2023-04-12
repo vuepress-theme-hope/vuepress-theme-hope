@@ -21,6 +21,11 @@ export const prepareConfigFile = async (
       ? Boolean(options[key])
       : (gfm && "gfm" in options && options.gfm) || false;
 
+  if (getStatus("card")) {
+    imports.push(`import VPCard from "${CLIENT_FOLDER}components/VPCard.js";`);
+    enhances.push(`app.component("VPCard", VPCard)`);
+  }
+
   if (getStatus("chart")) {
     imports.push(
       `import ChartJS from "${CLIENT_FOLDER}components/ChartJS.js";`

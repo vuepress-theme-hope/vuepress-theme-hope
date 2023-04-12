@@ -64,6 +64,11 @@ features:
     details: 使用改进的语法指定图片大小与颜色模式
     link: /zh/guide/image.html
 
+  - title: 卡片支持
+    icon: square
+    details: 在 Markdown 中展示卡片
+    link: /zh/guide/card.html
+
   - title: 图表支持
     icon: chart-simple
     details: 在 Markdown 中展示图表

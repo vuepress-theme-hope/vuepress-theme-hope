@@ -274,6 +274,13 @@ Please see [source code](https://github.com/vuepress-theme-hope/vuepress-theme-h
 
 Whether to enable Markdown import support. You can pass in a function for path resolution.
 
+## card
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to enable card support
+
 ## chart
 
 - Type: `boolean`
@@ -529,7 +536,7 @@ Playground options.
      *
      * @default 'horizontal'
      */
-    layout?: "vertical" |layout?: "horizontal" | "vertical";
+    layout?: "horizontal" | "vertical";
 
     /**
      * Options to configure the `vue/compiler-sfc`

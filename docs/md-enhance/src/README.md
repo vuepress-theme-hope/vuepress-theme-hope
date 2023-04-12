@@ -64,6 +64,11 @@ features:
     details: improve syntax to specify size and color scheme
     link: /guide/image.html
 
+  - title: Card Support
+    icon: square
+    details: Add cards in Markdown
+    link: /guide/card.html
+
   - title: Chart Support
     icon: chart-simple
     details: Display charts in Markdown

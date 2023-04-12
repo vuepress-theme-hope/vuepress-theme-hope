@@ -1718,6 +1718,9 @@ importers:
       '@mdit/plugin-uml':
         specifier: ^0.4.3
         version: 0.4.3
+      '@types/js-yaml':
+        specifier: ^4.0.5
+        version: 4.0.5
       '@types/markdown-it':
         specifier: ^12.2.3
         version: 12.2.3
@@ -1748,6 +1751,9 @@ importers:
       flowchart.ts:
         specifier: ^0.1.2
         version: 0.1.2
+      js-yaml:
+        specifier: ^4.1.0
+        version: 4.1.0
       katex:
         specifier: ^0.16.4
         version: 0.16.4
@@ -4847,6 +4853,10 @@ packages:
   /@types/istanbul-lib-coverage@2.0.4:
     resolution: {integrity: sha512-z/QT1XN4K4KYuslS23k62yDIDLwLFkzxOuMplDtObz0+y7VqJCaO2o+SPwHCvLFZh7xazvvoor2tA/hPz9ee7g==}
     dev: true
+
+  /@types/js-yaml@4.0.5:
+    resolution: {integrity: sha512-FhpRzf927MNQdRZP0J5DLIdTXhjLYzeUTmLAu69mnVksLH9CJY3IuSeEgbKUki7GQZm0WqDkGzyxju2EZGD2wA==}
+    dev: false
 
   /@types/json-schema@7.0.11:
     resolution: {integrity: sha512-wOuvG1SN4Us4rez+tylwwwCV1psiNVOkJeM3AUWUNWg/jDQY2+HE/444y5gc+jBmRqASOm2Oeh5c1axHobwRKQ==}
