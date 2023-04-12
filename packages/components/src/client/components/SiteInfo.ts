@@ -103,55 +103,53 @@ export default defineComponent({
     );
 
     return (): VNode =>
-      h(
-        "div",
-        {
-          class: "site-info",
-          onClick: () => {
-            window.open(props.url, "_blank");
+      h("div", { class: "site-info" }, [
+        h("a", {
+          class: "site-info-navigator",
+          title: props.name,
+          href: props.url,
+          target: "_blank",
+        }),
+        h("div", {
+          class: "site-info-preview",
+          style: {
+            background: `url(${withBase(
+              props.preview
+            )}) center/cover no-repeat`,
           },
-        },
-        [
-          h("div", {
-            class: "site-info-preview",
-            style: {
-              background: `url(${withBase(
-                props.preview
-              )}) center/cover no-repeat`,
-            },
-          }),
-          h("div", { class: "site-info-detail" }, [
-            props.logo
-              ? h("img", {
-                  class: "site-info-logo",
-                  src: props.logo,
-                  loading: "lazy",
-                  "no-view": "",
-                })
-              : null,
-            h("div", { class: "site-info-name" }, props.name),
-            h("div", { class: "site-info-desc" }, props.desc),
-          ]),
-          props.repo
-            ? h(
-                "div",
-                { class: "site-info-source-wrapper" },
-                h(
-                  "a",
-                  {
-                    class: "site-info-source",
-                    href: props.repo,
-                    // hint text
-                    "aria-label": locale.value.source,
-                    "data-balloon-pos": "left",
-                    title: locale.value.source,
-                    target: "_blank",
-                  },
-                  h(resolveComponent(`${repoType.value!}Icon`))
-                )
-              )
+        }),
+        h("div", { class: "site-info-detail" }, [
+          props.logo
+            ? h("img", {
+                class: "site-info-logo",
+                src: props.logo,
+                alt: props.name,
+                loading: "lazy",
+                "no-view": "",
+              })
             : null,
-        ]
-      );
+          h("div", { class: "site-info-name" }, props.name),
+          h("div", { class: "site-info-desc" }, props.desc),
+        ]),
+        props.repo
+          ? h(
+              "div",
+              { class: "site-info-source-wrapper" },
+              h(
+                "a",
+                {
+                  class: "site-info-source",
+                  href: props.repo,
+                  // hint text
+                  "aria-label": locale.value.source,
+                  "data-balloon-pos": "left",
+                  title: locale.value.source,
+                  target: "_blank",
+                },
+                h(resolveComponent(`${repoType.value!}Icon`))
+              )
+            )
+          : null,
+      ]);
   },
 });
