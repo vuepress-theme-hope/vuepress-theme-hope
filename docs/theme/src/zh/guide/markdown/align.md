@@ -11,6 +11,10 @@ tag:
 通过对 `vuepress-plugin-container` 进行额外的配置注入，你可以使用
 
 ```md
+::: left
+要居左的段落
+:::
+
 ::: center
 要居中的段落
 :::
@@ -70,6 +74,10 @@ export default {
 :::: danger W.I.P
 vuepress-theme-hope v2 仍在制作中，API 可能会有
 
+::: left
+我是左对齐
+::: 
+
 ::: center
 重大的变动。
 :::
@@ -85,6 +93,10 @@ vuepress-theme-hope v2 仍在制作中，API 可能会有
 ```md
 :::: danger W.I.P
 vuepress-theme-hope v2 仍在制作中，API 可能会有
+
+::: left
+我是左对齐
+::: 
 
 ::: center
 重大的变动。

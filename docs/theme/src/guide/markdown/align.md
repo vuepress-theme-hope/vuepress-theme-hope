@@ -11,6 +11,10 @@ tag:
 By injecting configuration into vuepress-plugin-container, you can use
 
 ```md
+::: left
+Left paragraph
+:::
+
 ::: center
 Paragraph to center
 :::
@@ -70,6 +74,10 @@ export default {
 :::: danger
 vuepress-theme-hope v2 is still in W.I.P, the API may have
 
+::: left
+I am left aligned
+:::
+
 ::: center
 Significant changes.
 :::
@@ -84,6 +92,10 @@ If you meet a bug during usage, you can
 ```md
 :::: danger
 vuepress-theme-hope v2 is still in W.I.P, the API may have
+
+::: left
+I am left aligned
+:::
 
 ::: center
 Significant changes.
