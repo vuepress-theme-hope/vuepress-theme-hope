@@ -49,6 +49,26 @@ You can use icon in multiple places.
 
 - HomePage: set `icon` option in feature item
 
+## Adding Icons in Markdown
+
+You can use `<HopeIcon />` component to add icon in markdown.
+
+- `icon` prop accepts the same content as other `icon` options, i.e.: font class and image url
+- `color` prop accepts a css color value, which will be used as the icon color (optional)
+- `size` prop accepts a css size value, which will be used as the icon size (optional)
+
+::: details Demo
+
+- <HopeIcon icon="home" color="red" />
+- <HopeIcon icon="/logo.svg" size="4rem" />
+
+```md
+- <HopeIcon icon="home" color="red" />
+- <HopeIcon icon="/logo.svg" size="4rem" />
+```
+
+:::
+
 ## Global Settings
 
 You can set icon assets url and icon prefix globally via `iconAssets` and `iconPrefix`.

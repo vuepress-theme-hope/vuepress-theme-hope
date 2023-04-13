@@ -49,6 +49,26 @@ head:
 
 - 主页: 在功能项中设置 `icon` 选项
 
+## 在 Markdown 中添加图标
+
+你可以使用 `<HopeIcon />` 组件在 markdown 中添加图标。
+
+- `icon` 属性接受与其他 `icon` 选项相同的内容，即：字体类名和图像 url
+- `color` 属性接受一个 css 颜色值，它将用作图标颜色（可选）
+- `size` 属性接受一个 css 大小值，该值将用作图标大小（可选）
+
+::: details 案例
+
+- <HopeIcon icon="home" color="red" />
+- <HopeIcon icon="/logo.svg" size="4rem" />
+
+```MD
+- <HopeIcon icon="home" color="red" />
+- <HopeIcon icon="/logo.svg" size="4rem" />
+```
+
+:::
+
 ## 全局设置
 
 你可以通过 `iconAssets` 和 `iconPrefix` 全局设置图标资源 url 和图标前缀。
