@@ -8,7 +8,7 @@ import {
   isLinkHttp,
   removeEndingSlash,
 } from "../../shared/index.js";
-import { HTML_TAGS, SVG_TAGS } from "../utils/index.js";
+import { HTML_TAGS, MATHML_TAGS, SVG_TAGS } from "../utils/index.js";
 
 const HEADING_TAGS = ["h1", "h2", "h3", "h4", "h5", "h6"];
 
@@ -38,11 +38,11 @@ export interface PageExcerptOptions {
   /**
    * Tags which is considered as custom elements
    *
-   * @description This is used to determine whether a tag is a custom element since all vue components are removed in excerpt
+   * @description This is used to determine whether a tag is a custom element since all unknown tags are removed in excerpt.
    *
    * 被认为是自定义元素的标签
    *
-   * @description 用于判断一个标签是否是自定义元素，因为在摘要中，所有的 vue 组件都会被移除
+   * @description 用于判断一个标签是否是自定义元素，因为在摘要中，所有的未知标签都会被移除。
    */
   isCustomElement?: (tagName: string) => boolean;
 }
@@ -70,7 +70,11 @@ const handleNode = (
       return null;
 
     // standard tags can be returned
-    if (HTML_TAGS.includes(node.tagName) || SVG_TAGS.includes(node.tagName)) {
+    if (
+      HTML_TAGS.includes(node.tagName) ||
+      SVG_TAGS.includes(node.tagName) ||
+      MATHML_TAGS.includes(node.tagName)
+    ) {
       // remove heading id tabindex and anchor inside
       if (HEADING_TAGS.includes(node.tagName)) {
         delete node.attribs["id"];
