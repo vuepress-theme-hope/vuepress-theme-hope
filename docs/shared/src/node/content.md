@@ -29,7 +29,7 @@ export interface PageExcerptOptions {
   /**
    * Tags which is considered as custom elements
    *
-   * @description This is used to determine whether a tag is a custom element since all vue components are removed in excerpt
+   * @description This is used to determine whether a tag is a custom element since all unknown tags are removed in excerpt
    */
   isCustomElement?: (tagName: string) => boolean;
 }

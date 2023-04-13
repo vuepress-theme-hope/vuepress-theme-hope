@@ -221,7 +221,7 @@ Move all plugin related options under `plugins`.
 
 - move `feed` to `plugins.feed`
 
-  - Supports removing custom components and elements through `plugins.feed.removedElements` options ![NEW](https://img.shields.io/badge/-new-brightgreen)
+  - Supports removing custom components and elements through `plugins.feed.preservedElements` options ![NEW](https://img.shields.io/badge/-new-brightgreen)
 
   - Visualized atom and rss feeds, configurable with `plugins.feed.atomXslFilename` `plugins.feed.atomXslTemplate` `plugins.feed.rssXslFilename` and `plugins.feed.rssXslTemplate` ![NEW](https://img.shields.io/badge/-new-brightgreen)
 

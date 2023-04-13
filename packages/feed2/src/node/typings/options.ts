@@ -54,13 +54,11 @@ export interface BaseFeedOptions {
   count?: number;
 
   /**
-   * Custom component or element which needs to be removed
+   * Custom tags or elements which need to be preserved
    *
-   * 需要移除的自定义组件或元素
-   *
-   * @default ["ExternalLinkIcon"]
+   * 需要保留的的自定义组件或元素
    */
-  removedElements?: (string | RegExp)[] | ((tagName: string) => boolean);
+  preservedElements?: (string | RegExp)[] | ((tagName: string) => boolean);
 
   /**
    * A custom filter function, used to filter feed items.

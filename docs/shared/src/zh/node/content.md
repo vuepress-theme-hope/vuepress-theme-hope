@@ -29,7 +29,7 @@ export interface PageExcerptOptions {
   /**
    * 被认为是自定义元素的标签
    *
-   * @description 用于判断一个标签是否是自定义元素，因为在摘要中，所有的 vue 组件都会被移除
+   * @description 用于判断一个标签是否是自定义元素，因为在摘要中，所有的未知标签都会被移除
    */
   isCustomElement?: (tagName: string) => boolean;
 }

@@ -33,7 +33,7 @@ export class FeedInfo {
   private frontmatter: PageFrontmatter<FeedPluginFrontmatter>;
   private base: string;
   private getter: FeedGetter;
-  private shouldRemoveElement: (tagName: string) => boolean;
+  private isPreservedElement: (tagName: string) => boolean;
 
   constructor(
     private app: App,
@@ -48,15 +48,15 @@ export class FeedInfo {
     this.frontmatter = page.frontmatter;
     this.getter = options.getter || {};
     this.pageOptions = this.frontmatter.feed || {};
-    this.shouldRemoveElement = (tagName): boolean => {
-      const { removedElements } = this.options;
+    this.isPreservedElement = (tagName): boolean => {
+      const { preservedElements } = this.options;
 
-      return isArray(removedElements)
-        ? removedElements.some((item) =>
+      return isArray(preservedElements)
+        ? preservedElements.some((item) =>
             item instanceof RegExp ? item.test(tagName) : item === tagName
           )
-        : isFunction(removedElements)
-        ? removedElements(tagName)
+        : isFunction(preservedElements)
+        ? preservedElements(tagName)
         : false;
     };
   }
@@ -165,7 +165,7 @@ export class FeedInfo {
     if (this.pageOptions.summary) return this.pageOptions.summary;
 
     return getPageExcerpt(this.app, this.page, {
-      isCustomElement: this.shouldRemoveElement,
+      isCustomElement: this.isPreservedElement,
     });
   }
 
@@ -174,7 +174,7 @@ export class FeedInfo {
 
     if (this.pageOptions.content) return this.pageOptions.content;
 
-    return getPageRenderContent(this.app, this.page, this.shouldRemoveElement);
+    return getPageRenderContent(this.app, this.page, this.isPreservedElement);
   }
 
   get image(): string | null {

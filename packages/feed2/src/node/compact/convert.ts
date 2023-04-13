@@ -28,7 +28,13 @@ export const convertOptions = (
   deprecatedLogger({
     options,
     deprecatedOption: "customElements",
-    newOption: "removedElements",
+    newOption: "preservedElements",
+  });
+
+  deprecatedLogger({
+    options,
+    deprecatedOption: "removedElements",
+    newOption: "preservedElements",
   });
 
   droppedLogger(options, "output");

@@ -52,12 +52,18 @@ Set the maximum number of items in the feed. After all pages are sorted, the fir
 
 If your site has a lot of articles, you may consider this option to reduce feed file size.
 
-## removedElements
+## preservedElements
 
-- Type: `string[]`
-- Default: `["ExternalLinkIcon"]`
+- Type: `(RegExp | string)[] | (tagName: string) => boolean`
+- Default: `[]`
 
-Custom element or component which should be removed in feed.
+Custom element or component which should be preserved in feed.
+
+::: note
+
+By default, all unknown tags will be removed.
+
+:::
 
 ## filter
 

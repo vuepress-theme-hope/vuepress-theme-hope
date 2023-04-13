@@ -219,7 +219,7 @@ tag:
 
 - `feed` 移动至 `plugins.feed`
 
-  - 支持通过 `plugins.feed.removedElements` 选项移除自定义组件和元素 ![新增](https://img.shields.io/badge/-新增-brightgreen)
+  - 支持通过 `plugins.feed.preservedElements` 选项保留自定义组件和元素 ![新增](https://img.shields.io/badge/-新增-brightgreen)
 
   - 可视化的 Atom 和 RSS 流，支持通过 `plugins.feed.atomXslFilename` `plugins.feed.atomXslTemplate` `plugins.feed.rssXslFilename` 和 `plugins.feed.rssXslTemplate` 配置 ![新增](https://img.shields.io/badge/-新增-brightgreen)
 

@@ -396,7 +396,7 @@ This plugin provides a built-in excerpt generator, which can be enabled by setti
 
 An excerpt is an HTML fragment that is used to display a short description of an article in the blog list, so the excerpt has the following restrictions:
 
-- It doesn't support Vue components and other Vue syntax, so these contents will be removed when generating. If you have custom components (non-Vue components), set `isCustomElement` option.
+- It doesn't support any unknown tags (including all Vue components) and Vue syntax, so these contents will be removed when generating. If you have custom components (non-Vue components), set `isCustomElement` option.
 - Since the snippet is an HTML fragment, you will not be able to import any images via relative paths or aliases, they will be removed directly. If you want to keep images, please use absolute path based on `.vuepress/public` or full URL to ensure they can be accessed in other places.
 
 :::
