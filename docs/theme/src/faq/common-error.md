@@ -78,6 +78,12 @@ Also you can check these:
 
 - If you have this problem in all pages, please also follow the previous step to check the components you added in the layout or global components.
 
+## `You are not allowed to use plugin XXX yourself in vuepress config file.`
+
+This means you are calling a theme bundled plugin yourself in vuepress config file.
+
+In most cases, when you use some plugins with theme together, the theme will handle some of the plugin options automatically for you, so when you want to customize these plugins, you should set their options in `plugin.PLUGIN_NAME` under theme options to let the theme call those plugins for you. For details, see [Plugin Config](../config/plugins/intro.md).
+
 ## `FATAL ERROR: XXX - JavaScript heap out of memory`
 
 This means that your `max_old_space_size` setting of Node.js is too small to build this application. You can try to increase the `max_old_space_size` by setting the `NODE_OPTIONS` environment variable.

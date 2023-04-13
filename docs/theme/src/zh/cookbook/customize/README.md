@@ -17,7 +17,7 @@ article: false
 
 ## 添加组件
 
-每个 markdown 文件将在 VuePress 中转换为一个 Vue 组件，因此您可以轻松导入和使用 Vue 组件。
+每个 markdown 文件将在 VuePress 中转换为一个 Vue 组件，因此你可以轻松导入和使用 Vue 组件。
 
 - [添加组件](./component.md)
 

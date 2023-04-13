@@ -102,6 +102,12 @@ CloudFlare 的 Auto Minify 会错误的对 HTML 的空格和换行进行处理�
 
 - 如果你在所有页面都遇到了这个问题，请同样按照上一步检查你在布局或全局组件中添加的组件。
 
+## `You are not allowed to use plugin XXX yourself in vuepress config file.`
+
+这意味着你在 VuePress 配置文件中自己调用主题捆绑插件。
+
+大多数情况下，当你将一些插件与主题一起使用时，主题会自动为你处理一些插件选项，所以当你想自定义这些插件时，你应该在主题选项下的 `plugin.PLUGIN_NAME` 中将它们的选项设置为 让主题为你调用这些插件。详见 [插件配置](../config/plugins/intro.md)。
+
 ## `FATAL ERROR: XXX - JavaScript heap out of memory`
 
 这意味着你的 Node.js 的 `max_old_space_size` 设置太小而无法构建此应用程序。 你可以尝试通过设置 `NODE_OPTIONS` 环境变量来增加 `max_old_space_size`。

@@ -106,7 +106,7 @@ export 默认值 {
 
 默认情况下，主题将在性能模式下运行，所有文件都被捆绑并直接导入。
 
-如果您想通过覆盖组件和布局来自定义主题，请将此选项设置为 `true`，主题将加载带有 `@theme-hope` 别名的组件和布局。
+如果你想通过覆盖组件和布局来自定义主题，请将此选项设置为 `true`，主题将加载带有 `@theme-hope` 别名的组件和布局。
 
 ## debug
 
@@ -119,6 +119,6 @@ export 默认值 {
 
 这只是通过将 `app.env.isDebug` 设置为 `true` 来实现的。
 
-您还可以在运行 `vuepress dev` 或 `vuepress build` 时添加 `--debug` 标志以启用调试模式。(推荐)
+你还可以在运行 `vuepress dev` 或 `vuepress build` 时添加 `--debug` 标志以启用调试模式。(推荐)
 
 :::
