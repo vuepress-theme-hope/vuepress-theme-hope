@@ -22,20 +22,35 @@ export default defineComponent({
     const frontmatter = usePageFrontmatter<ThemeBlogHomePageFrontmatter>();
 
     const hero = ref<HTMLElement>();
-    const heroImage = computed(() => frontmatter.value.heroImage || null);
 
-    const isFullScreen = computed(
-      () => frontmatter.value.heroFullScreen || false
-    );
+    const heroInfo = computed(() => {
+      const {
+        heroText,
+        heroImage,
+        heroImageDark,
+        heroAlt,
+        heroFullScreen,
+        heroImageStyle,
+        tagline = null,
+        bgImage,
+        bgImageStyle,
+      } = frontmatter.value;
 
-    const bgImage = computed(() => {
-      const { bgImage } = frontmatter.value;
-
-      return isString(bgImage)
-        ? withBase(bgImage)
-        : bgImage === false
-        ? null
-        : defaultHeroBgImagePath;
+      return {
+        text: heroText === false ? null : heroText || title.value,
+        image: heroImage ? withBase(heroImage) : null,
+        imageDark: heroImageDark ? withBase(heroImageDark) : null,
+        imageStyle: heroImageStyle,
+        alt: heroAlt || "hero image",
+        tagline,
+        bgImage: isString(bgImage)
+          ? withBase(bgImage)
+          : bgImage === false
+          ? null
+          : defaultHeroBgImagePath,
+        bgImageStyle,
+        isFullScreen: heroFullScreen || false,
+      };
     });
 
     return (): VNode | null =>
@@ -48,50 +63,64 @@ export default defineComponent({
               class: [
                 "blog-hero",
                 {
-                  fullscreen: isFullScreen.value,
-                  "no-bg": !bgImage.value,
+                  fullscreen: heroInfo.value.isFullScreen,
+                  "no-bg": !heroInfo.value.bgImage,
                 },
               ],
             },
             [
               slots["heroBg"]?.() ||
-                (bgImage.value
+                (heroInfo.value.bgImage
                   ? h("div", {
                       class: "mask",
                       style: [
                         {
-                          background: `url(${bgImage.value}) center/cover no-repeat`,
+                          background: `url(${heroInfo.value.bgImage}) center/cover no-repeat`,
                         },
-                        frontmatter.value.bgImageStyle,
+                        heroInfo.value.bgImageStyle,
                       ],
                     })
                   : null),
-              slots["heroInfo"]?.() || [
-                h(DropTransition, { appear: true, delay: 0.04 }, () =>
-                  heroImage.value
-                    ? h("img", {
-                        class: "hero-image",
-                        style: frontmatter.value.heroImageStyle,
-                        src: withBase(heroImage.value),
-                        alt: frontmatter.value.heroAlt || "hero image",
-                      })
-                    : null
+              slots["heroInfo"]?.(heroInfo.value) || [
+                h(
+                  DropTransition,
+                  { appear: true, type: "group", delay: 0.04 },
+                  () => [
+                    heroInfo.value.image
+                      ? h("img", {
+                          class: [
+                            "hero-image",
+                            { light: heroInfo.value.imageDark },
+                          ],
+                          style: heroInfo.value.imageStyle,
+                          src: heroInfo.value.image,
+                          alt: heroInfo.value.alt,
+                        })
+                      : null,
+                    heroInfo.value.imageDark
+                      ? h("img", {
+                          key: "dark",
+                          class: "hero-image dark",
+                          style: heroInfo.value.imageStyle,
+                          src: heroInfo.value.imageDark,
+                          alt: heroInfo.value.alt,
+                        })
+                      : null,
+                  ]
                 ),
                 h(DropTransition, { appear: true, delay: 0.08 }, () =>
-                  frontmatter.value.heroText === false
-                    ? null
-                    : h("h1", frontmatter.value.heroText || title.value)
+                  heroInfo.value.text ? h("h1", heroInfo.value.text) : null
                 ),
                 h(DropTransition, { appear: true, delay: 0.12 }, () =>
-                  frontmatter.value.tagline
+                  heroInfo.value.tagline
                     ? h("p", {
                         class: "description",
-                        innerHTML: frontmatter.value.tagline,
+                        innerHTML: heroInfo.value.tagline,
                       })
                     : null
                 ),
               ],
-              isFullScreen.value
+              heroInfo.value.isFullScreen
                 ? h(
                     "button",
                     {

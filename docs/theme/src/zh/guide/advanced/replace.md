@@ -304,6 +304,8 @@ import HopeHomePage from "vuepress-theme-hope/components/HomePage.js";
 
 - `BlogHero`: `heroBg`, `heroInfo`
 
+  - `heroInfo` 插槽将接收 `text` `tagline` `image` `imageDark` `imageStyle` `alt` `bgImage` `bgImageStyle` 和 `isFullScreen` 属性。
+
 **导航栏**:
 
 - `DropdownLink`: `title`

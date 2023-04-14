@@ -79,6 +79,22 @@
     @media (max-width: hope-config.$tablet) {
       max-height: 12rem;
     }
+
+    &.light {
+      display: block;
+
+      #{hope-config.$dark-selector} & {
+        display: none;
+      }
+    }
+
+    &.dark {
+      display: none;
+
+      #{hope-config.$dark-selector} & {
+        display: block;
+      }
+    }
   }
 
   .hero-image + h1 {
