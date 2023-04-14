@@ -34,13 +34,7 @@ export const zhSidebarConfig = sidebar({
       text: "教程",
       icon: "signs-post",
       prefix: "cookbook/",
-      children: [
-        "tutorial/",
-        "markdown/",
-        "vuepress/",
-        "advanced/",
-        "customize/",
-      ],
+      children: ["tutorial/", "markdown/", "vuepress/", "customize/"],
     },
     {
       text: "迁移",
