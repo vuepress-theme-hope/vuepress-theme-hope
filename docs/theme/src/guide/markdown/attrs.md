@@ -83,12 +83,35 @@ will be rendered into:
 </p>
 ```
 
+::: tip Escaping
+
+Escaping can be done by adding `\` to escape the delimiter:
+
+```md
+### Heading \{#heading}
+```
+
+will be
+
+### Heading \{#heading}
+
+:::
+
 ## Advanced
 
 You can pass options to `plugins.mdEnhance.attrs` to customize plugin behavior.
 
 ```ts
-interface AttrsOptions {
+type MarkdownItAttrRuleName =
+  | "fence"
+  | "inline"
+  | "table"
+  | "list"
+  | "hr"
+  | "softbreak"
+  | "block";
+
+interface MarkdownItAttrsOptions {
   /**
    * left delimiter
    *
@@ -111,35 +134,49 @@ interface AttrsOptions {
    * @default []
    */
   allowed?: (string | RegExp)[];
+
+  /**
+   * Rules to enable
+   *
+   * @default "all"
+   */
+  rule?: "all" | boolean | MarkdownItAttrRuleName[];
 }
 ```
 
 ## Demo
 
-Text with `inline code`{.inline-code} and ![favicon](/favicon.ico){.image}, also supporting _emphasis_{.emphasis} and **bold**{.bold}.
+> ALl class are styled with `margin: 4px;padding: 4px;border: 1px solid red;` to show the effect.
 
-| Table   |
-| ------- |
-| content |
+### Inline (inline)
 
-{.table}
+Text with `inline code`{.inline-code} and ![favicon](/favicon.ico){.image}, also supporting _emphasis_{.inline-emphasis} and **bold**{.inline-bold}.
 
-- list item{.list-item}
+```md
+Text with `inline code`{.inline-code} and ![favicon](/favicon.ico){.image}, also supporting _emphasis_{.inline-emphasis} and **bold**{.inline-bold}.
+```
 
-  - nested list item
-    {.nested}
-
-{.list}
-
-A line with break  
-{.break}
-
---- {.horizontal}
+### Block (block)
 
 block content {.block}
 
 ```md
-Text with `inline code`{.inline-code} and ![favicon](/favicon.ico){.image}, also supporting _emphasis_{.emphasis} and **bold**{.bold}.
+block content {.block}
+```
+
+### Fence (fence)
+
+```js {.fence}
+const a = 1;
+```
+
+````md
+```js {.fence}
+const a = 1;
+```
+````
+
+### Table (table)
 
 | Table   |
 | ------- |
@@ -147,17 +184,65 @@ Text with `inline code`{.inline-code} and ![favicon](/favicon.ico){.image}, also
 
 {.table}
 
+```md
+| Table   |
+| ------- |
+| content |
+
+{.table}
+```
+
+### List (list)
+
 - list item{.list-item}
 
   - nested list item
     {.nested}
 
-{.list}
+{.list-wrapper}
+
+```md
+- list item{.list-item}
+
+  - nested list item
+    {.nested}
+
+{.list-wrapper}
+```
+
+### Horizontal (hr)
+
+--- {.horizontal}
+
+```md
+--- {.horizontal}
+```
+
+### Softbreak (softbreak)
 
 A line with break  
 {.break}
 
---- {.horizontal}
-
-block content {.block}
+```md
+A line with break  
+{.break}
 ```
+
+<style scope>
+.block,
+.break,
+.horizontal,
+.image,
+.inline-code,
+.list-wrapper,
+.list-item,
+.nested,
+.inline-emphasis,
+.inline-bold,
+.table,
+.fence {
+  margin: 4px;
+  padding: 4px;
+  border: 1px solid red;
+}
+</style>
