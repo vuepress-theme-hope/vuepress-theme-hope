@@ -1,6 +1,10 @@
 .sidebar-group {
   .sidebar-group {
-    padding-inline-start: 0.5em;
+    padding-inline-start: 0.75rem;
+
+    .sidebar-heading {
+      font-size: 1em;
+    }
   }
 
   &:not(.collapsible) {
@@ -11,6 +15,6 @@
   }
 
   .sidebar-link {
-    padding-inline-start: 1.5rem;
+    padding-inline-start: 1.25rem;
   }
 }
