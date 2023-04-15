@@ -46,6 +46,7 @@ export interface ThemeBlogHomePageFrontmatter extends ThemePageFrontmatter {
    */
   heroFullScreen?: boolean;
   heroImage?: string;
+  heroImageDark?: string;
   heroImageStyle?: Record<string, string> | string;
   heroAlt?: string;
   heroText?: string | false;
