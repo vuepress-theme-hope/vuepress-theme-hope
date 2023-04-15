@@ -299,6 +299,9 @@ Components that provide slots are as follows:
 
 - `BlogHero`: `heroBg`, `heroInfo`
 
+  - `heroInfo` slot will receive `text` `tagline` `image` `imageDark` `style` `alt` nd `isFullScreen` props.
+  - `heroBg` slot will receive `image` `style` and `isFullScreen` props.
+
 **NavBar**:
 
 - `DropdownLink`: `title`
