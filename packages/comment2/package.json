@@ -60,7 +60,7 @@
     "@waline/client": "^2.14.9",
     "artalk": "^2.5.4",
     "giscus": "^1.2.8",
-    "twikoo": "^1.6.11",
+    "twikoo": "^1.6.15",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6",
     "vuepress-plugin-sass-palette": "workspace:*",

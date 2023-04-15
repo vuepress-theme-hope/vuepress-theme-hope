@@ -97,6 +97,7 @@ export const prepareConfigFile = async (
 
   if (getStatus("presentation")) {
     imports.push(
+      `import "${path.resolve(require.resolve("reveal.js/dist/reveal.css"))}";`,
       `import Presentation from "${CLIENT_FOLDER}components/Presentation.js";`
     );
     enhances.push(`app.component("Presentation", Presentation);`);

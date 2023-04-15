@@ -1,14 +1,15 @@
-import { isString } from "@vueuse/core";
-
 export { isArray, isPlainObject } from "@vuepress/shared";
-export {
-  isBoolean,
-  isDef,
-  isFunction,
-  isNumber,
-  isObject,
-  isString,
-} from "@vueuse/core";
+export { isDef, isObject } from "@vueuse/core";
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const isBoolean = (val: any): val is boolean => typeof val === "boolean";
+// eslint-disable-next-line
+export const isFunction = <T extends Function>(val: any): val is T =>
+  typeof val === "function";
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const isNumber = (val: any): val is number => typeof val === "number";
+export const isString = (val: unknown): val is string =>
+  typeof val === "string";
 
 /* String helper */
 
