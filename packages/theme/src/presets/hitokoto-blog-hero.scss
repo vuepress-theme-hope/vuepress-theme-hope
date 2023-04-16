@@ -1,0 +1,59 @@
+@keyframes typing {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+.hitokoto {
+  margin: 1.2rem auto 0;
+  color: #fff;
+  font-weight: 600;
+}
+
+.hitokoto-text {
+  position: relative;
+  padding: 1rem 2.5rem;
+  text-align: center;
+
+  &::before {
+    content: "『";
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &::after {
+    content: "』";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+
+  span {
+    position: relative;
+    display: inline-block;
+    font-size: 1.8rem;
+
+    &::after {
+      content: "|";
+      font-size: 1.3rem;
+      animation: typing 0.8s infinite;
+    }
+  }
+}
+
+.hitokoto-author {
+  margin-top: 1rem;
+
+  font-weight: 400;
+  font-style: italic;
+  font-size: 1.2rem;
+  text-align: right;
+
+  transition: opacity var(--vp-ct);
+}
