@@ -1,6 +1,14 @@
 import { usePageFrontmatter } from "@vuepress/client";
-import { useWindowScroll } from "@vueuse/core";
-import { Transition, type VNode, computed, defineComponent, h } from "vue";
+import { useElementSize, useWindowScroll, useWindowSize } from "@vueuse/core";
+import {
+  Transition,
+  type VNode,
+  computed,
+  defineComponent,
+  h,
+  onMounted,
+  ref,
+} from "vue";
 import { useLocaleConfig } from "vuepress-shared/client";
 
 import { BackToTopIcon } from "./icons.js";
@@ -22,13 +30,21 @@ export default defineComponent({
      */
     threshold: {
       type: Number,
-      default: 300,
+      default: 100,
     },
+
+    /**
+     * 是否隐藏浏览进度条
+     */
+    noProgress: Boolean,
   },
 
   setup(props) {
     const pageFrontmatter = usePageFrontmatter<{ backToTop?: boolean }>();
     const locale = useLocaleConfig(BACK_TO_TOP_LOCALES);
+    const body = ref<HTMLBodyElement>();
+    const { height: bodyHeight } = useElementSize(body);
+    const { height: windowHeight } = useWindowSize();
 
     /** Scroll distance */
     const { y } = useWindowScroll();
@@ -38,6 +54,14 @@ export default defineComponent({
       () =>
         pageFrontmatter.value.backToTop !== false && y.value > props.threshold
     );
+
+    const progress = computed(
+      () => y.value / (bodyHeight.value - windowHeight.value)
+    );
+
+    onMounted(() => {
+      body.value = <HTMLBodyElement>document.body;
+    });
 
     return (): VNode =>
       h(Transition, { name: "fade" }, () =>
@@ -55,7 +79,25 @@ export default defineComponent({
                   window.scrollTo({ top: 0, behavior: "smooth" });
                 },
               },
-              h(BackToTopIcon)
+              [
+                props.noProgress
+                  ? null
+                  : h(
+                      "svg",
+                      { class: "scroll-progress" },
+                      h("circle", {
+                        cx: "50%",
+                        cy: "50%",
+                        r: "48%",
+                        style: {
+                          "stroke-dasharray": `${
+                            Math.PI * progress.value * 100
+                          }% ${Math.PI * 100}%`,
+                        },
+                      })
+                    ),
+                h(BackToTopIcon),
+              ]
             )
           : null
       );

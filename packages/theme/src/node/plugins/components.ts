@@ -40,10 +40,7 @@ export const getComponentsPlugin = (
         ...componentOptions,
       },
       rootComponents: {
-        backToTop:
-          typeof options.backToTop === "number"
-            ? options.backToTop
-            : options.backToTop !== false,
+        backToTop: options.backToTop ?? true,
         ...rootComponents,
       },
     },

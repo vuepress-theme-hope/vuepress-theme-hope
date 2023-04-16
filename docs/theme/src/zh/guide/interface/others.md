@@ -68,9 +68,27 @@ export default defineUserConfig({
 
 ## 返回顶部按钮
 
-`vuepress-theme-hope` 添加了一个返回顶部控件，默认情况下将在下滑 300px 后显示。
+`vuepress-theme-hope` 添加了一个带进度条的返回顶部按钮，默认向下滚动 100px 后显示。
 
-你可以在主题选项中设置 `backToTop: false` 来禁用它，或者是设置为一个数字以更改默认的触发距离。
+您可以在主题选项中设置 `backToTop: false` 来禁用它，或者用一个对象来设置它来自定义它的阈值距离和进度条显示：
+
+```ts
+interface BackToTopOptions {
+  /**
+   * 显示返回顶部按钮的滚动阈值距离（以像素为单位）
+   *
+   * @default 100
+   */
+  threshold?: number;
+
+  /**
+   * 是否显示滚动进度
+   *
+   * @default true
+   */
+  progress?: boolean;
+}
+```
 
 ## RTL 布局
 

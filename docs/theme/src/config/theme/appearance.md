@@ -82,13 +82,30 @@ Whether show the "full screen" button.
 
 ## backToTop <Badge text="Root only" type="warning" />
 
-- Type: `boolean | number`
+- Type: `BackToTopOptions | boolean`
+
+  ```ts
+  interface BackToTopOptions {
+    /**
+     * Scroll threshold distance to display back to top button (in pixels)
+     *
+     * @default 100
+     */
+    threshold?: number;
+
+    /**
+     * Whether display scroll progress
+     *
+     * @default true
+     */
+    progress?: boolean;
+  }
+  ```
+
 - Default: `true`
 - Details: [Interface → Back to top button](../../guide/interface/others.md#back-to-top-button)
 
-Whether show back to top button.
-
-The default trigger distance is 300px, which can be changed when you fill in the number. Filling in `false` disables the back to top button.
+Back to top button customization, setting it to `false` disables the button.
 
 ## mobileBreakPoint <Badge text="Root only" type="warning" />
 

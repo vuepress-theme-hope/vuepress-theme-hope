@@ -225,7 +225,7 @@ For more details, please see [Page → Footer Support](../../guide/layout/footer
 ## backToTop
 
 - Type: `boolean`
-- Default value: true
+- Default value: `true`
 
 Whether display the back to top button.
 

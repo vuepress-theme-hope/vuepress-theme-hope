@@ -1,3 +1,4 @@
+import { type BackToTopOptions } from "./backToTop.js";
 import { type NoticeOptions } from "../../shared/index.js";
 
 export interface RootComponentOptions {
@@ -9,16 +10,11 @@ export interface RootComponentOptions {
   addThis?: string;
 
   /**
-   * Whether enabling backToTop button
+   * Back to top button config
    *
-   *
-   * @description When setting a number, it will be used as backToTop button threshold distance (in pixels)
-   *
-   * 是否启用返回顶部按钮
-   *
-   * @description 当设置为数字时，将会作为返回顶部按钮距离阈值 (单位: 像素)
+   * 返回顶部按钮配置
    */
-  backToTop?: number | boolean;
+  backToTop?: BackToTopOptions | boolean;
 
   /**
    * Global notice config
