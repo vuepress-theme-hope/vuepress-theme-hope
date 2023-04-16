@@ -17,7 +17,7 @@ export interface BlogLocaleData extends Record<string, string> {
   all: string;
   /** 个人介绍 */
   intro: string;
-  /** 搜藏文字 */
+  /** 收藏文字 */
   star: string;
 }
 
