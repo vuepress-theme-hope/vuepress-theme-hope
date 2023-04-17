@@ -1,0 +1,5 @@
+@use "vuepress-shared/styles/shining";
+
+.home.project .feature-item {
+  @include shining.shining;
+}

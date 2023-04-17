@@ -12,89 +12,89 @@
   justify-content: flex-start;
 
   margin-bottom: 12px;
+}
 
-  .project {
+.project-card {
+  position: relative;
+
+  width: calc(33% - 40px);
+  margin: 6px 8px;
+  padding: 12px;
+  border-radius: 8px;
+
+  background: var(--bg-color-float);
+
+  transition: background var(--color-transition),
+    transform var(--transform-transition);
+
+  @media (max-width: hope-config.$pad) {
+    width: calc(50% - 40px);
+  }
+
+  @media (min-width: hope-config.$pc) {
+    width: calc(25% - 40px);
+  }
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(0.98, 0.98);
+  }
+
+  .name {
     position: relative;
+    z-index: 2;
 
-    width: calc(33% - 40px);
-    margin: 6px 8px;
-    padding: 12px;
-    border-radius: 8px;
+    color: var(--grey3);
 
-    background: var(--bg-color-float);
+    font-weight: 500;
+    font-size: 16px;
 
-    transition: background var(--color-transition),
-      transform var(--transform-transition);
+    transition: color var(--color-transition);
+  }
 
-    @media (max-width: hope-config.$pad) {
-      width: calc(50% - 40px);
+  .desc {
+    position: relative;
+    z-index: 2;
+
+    margin: 6px 0;
+
+    color: var(--dark-grey);
+
+    font-size: 13px;
+  }
+
+  .image {
+    position: relative;
+    z-index: 2;
+
+    float: right;
+
+    width: 40px;
+    height: 40px;
+
+    #{hope-config.$rtl-selector} & {
+      float: left;
     }
+  }
 
-    @media (min-width: hope-config.$pc) {
-      width: calc(25% - 40px);
-    }
+  .icon {
+    position: relative;
+    z-index: 2;
 
-    &:hover {
-      cursor: pointer;
-      transform: scale(0.98, 0.98);
-    }
+    float: right;
 
-    .name {
-      position: relative;
-      z-index: 2;
+    width: 20px;
+    height: 20px;
 
-      color: var(--grey3);
-
-      font-weight: 500;
-      font-size: 16px;
-
-      transition: color var(--color-transition);
-    }
-
-    .desc {
-      position: relative;
-      z-index: 2;
-
-      margin: 6px 0;
-
-      color: var(--dark-grey);
-
-      font-size: 13px;
-    }
-
-    .image {
-      position: relative;
-      z-index: 2;
-
-      float: right;
-
-      width: 40px;
-      height: 40px;
-
-      #{hope-config.$rtl-selector} & {
-        float: left;
-      }
-    }
-
-    .icon {
-      position: relative;
-      z-index: 2;
-
-      float: right;
-
-      width: 20px;
-      height: 20px;
-
-      #{hope-config.$rtl-selector} & {
-        float: left;
-      }
+    #{hope-config.$rtl-selector} & {
+      float: left;
     }
   }
 
   @each $color in hope-config.$colors {
     $index: list.index(hope-config.$colors, $color) - 1;
 
-    .project#{$index} {
+    &.project#{$index} {
       background: color.scale($color, $lightness: 90%);
 
       &:hover {
