@@ -4,6 +4,6 @@
     "rootDir": "./src",
     "outDir": "./lib"
   },
-  "include": ["./src/node", "./src/shared"],
+  "include": ["./src"],
   "references": [{ "path": "../shared/tsconfig.build.json" }]
 }
