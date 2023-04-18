@@ -29,8 +29,8 @@ export default defineComponent({
      * 阅读时间语言环境
      */
     readingTimeLocale: {
-      type: Object as PropType<ReadingTimeLocale>,
-      required: true,
+      type: Object as PropType<ReadingTimeLocale | null>,
+      default: () => null,
     },
 
     /**
@@ -45,7 +45,7 @@ export default defineComponent({
     const metaLocale = useMetaLocale();
 
     return (): VNode | null =>
-      props.readingTimeLocale.words
+      props.readingTimeLocale?.words
         ? h(
             "span",
             {
@@ -57,7 +57,7 @@ export default defineComponent({
             },
             [
               h(WordIcon),
-              h("span", props.readingTimeLocale.words),
+              h("span", props.readingTimeLocale?.words),
               h("meta", {
                 property: "wordCount",
                 content: props.readingTime?.words,

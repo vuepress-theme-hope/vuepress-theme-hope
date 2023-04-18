@@ -29,8 +29,8 @@ export default defineComponent({
      * 阅读时间语言环境
      */
     readingTimeLocale: {
-      type: Object as PropType<ReadingTimeLocale>,
-      required: true,
+      type: Object as PropType<ReadingTimeLocale | null>,
+      default: () => null,
     },
 
     /**
@@ -53,7 +53,7 @@ export default defineComponent({
     });
 
     return (): VNode | null =>
-      props.readingTimeLocale.time
+      props.readingTimeLocale?.time
         ? h(
             "span",
             {
@@ -65,7 +65,7 @@ export default defineComponent({
             },
             [
               h(TimerIcon),
-              h("span", props.readingTimeLocale.time),
+              h("span", props.readingTimeLocale?.time),
               h("meta", {
                 property: "timeRequired",
                 content: readingTimeMeta.value,
