@@ -161,7 +161,7 @@ export default defineComponent({
         ? renderChildren(page.value.headers, props.headerDepth)
         : null;
 
-      (tocHeaders?.children as VNode[]).push(
+      (tocHeaders?.children as VNode[] | null)?.push(
         h("div", {
           class: "toc-marker",
           id: "toc-marker", // ensure transitions
