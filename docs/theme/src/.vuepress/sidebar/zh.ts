@@ -48,7 +48,7 @@ export const zhSidebarConfig = sidebar({
       prefix: "faq/",
       children: ["", "troubleshooting", "common-error", "vite", "safari"],
     },
-    "demo",
+    "demo/",
     "changelog",
     "contribution",
   ],
@@ -58,4 +58,6 @@ export const zhSidebarConfig = sidebar({
   "/zh/config/": "structure",
 
   "/zh/cookbook/": "structure",
+
+  "/zh/demo/": "structure",
 });

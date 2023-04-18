@@ -1,8 +1,9 @@
 ---
-title: Demos
+title: Real Projects
 icon: splotch
 category:
   - Demo
+
 docs:
   - name: Fast Request
     desc: Born to simplify debugging APIs
@@ -111,11 +112,7 @@ blog:
     preview: /assets/image/oragekk.jpg
 ---
 
-## Living Demo
-
-- [stackblitz](https://stackblitz.com/fork/vuepress-theme-hope)
-
-## Docs
+## Docs using VuePress Theme Hope
 
 <SiteInfo
   v-for="item in $frontmatter.docs"
@@ -123,7 +120,7 @@ blog:
   v-bind="item"
 />
 
-## Blog
+## Blog using VuePress Theme Hope
 
 <SiteInfo
   v-for="item in $frontmatter.blog"

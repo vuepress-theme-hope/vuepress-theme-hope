@@ -53,5 +53,7 @@ export default config(
         "./components/ToggleRTLButton"
       ),
     },
+
+    clientConfigFile: path.resolve(__dirname, "./client.ts"),
   }
 );

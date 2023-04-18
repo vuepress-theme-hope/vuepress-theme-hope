@@ -19,7 +19,7 @@ export const enNavbarConfig = navbar([
     icon: "circle-info",
     children: [
       "/changelog",
-      "/demo",
+      "/demo/",
       "/contribution",
       {
         text: "Plugins",
