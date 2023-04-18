@@ -108,6 +108,31 @@ $headings: (2, 3, 4, 5, 6);
         left: unset;
       }
     }
+
+    .toc-marker {
+      content: " ";
+
+      position: absolute;
+      top: 0;
+
+      // NOTE: Compatible with Android Wechat
+      // inset-inline-start: -8px;
+      left: -8px;
+      z-index: 2;
+
+      width: 2px;
+      height: 1.7rem;
+
+      background: var(--theme-color);
+
+      transition-duration: 200ms;
+      transition-property: top;
+
+      #{hope-config.$rtl-selector} & {
+        right: -8px;
+        left: unset;
+      }
+    }
   }
 
   .toc-link {
@@ -145,28 +170,6 @@ $headings: (2, 3, 4, 5, 6);
 
     line-height: 1.7rem;
 
-    &::before {
-      content: " ";
-
-      position: absolute;
-      top: 0;
-      bottom: 0;
-
-      // NOTE: Compatible with Android Wechat
-      // inset-inline-start: -8px;
-      left: -8px;
-      z-index: 2;
-
-      width: 2px;
-
-      background: transparent;
-
-      #{hope-config.$rtl-selector} & {
-        right: -8px;
-        left: unset;
-      }
-    }
-
     &:hover {
       > .toc-link {
         color: var(--theme-color);
@@ -177,10 +180,6 @@ $headings: (2, 3, 4, 5, 6);
       > .toc-link {
         color: var(--theme-color);
         font-weight: bold;
-      }
-
-      &::before {
-        background: var(--theme-color);
       }
     }
   }

@@ -5,6 +5,7 @@ import {
   defineComponent,
   h,
   onMounted,
+  onUpdated,
   ref,
   watch,
 } from "vue";
@@ -134,12 +135,38 @@ export default defineComponent({
       );
     });
 
+    const updateTocMarker = (): void => {
+      if (!toc.value) return;
+      const tocTop = toc.value.getBoundingClientRect().top;
+      const tocScrollTop = toc.value.scrollTop;
+
+      const activeTocItem = document.querySelector(".toc-item.active");
+
+      if (!activeTocItem) return;
+      const activeTocItemTop = activeTocItem.getBoundingClientRect().top;
+
+      const tocMarker = document.querySelector(".toc-marker") as HTMLElement;
+
+      tocMarker.style.top = `${activeTocItemTop - tocTop + tocScrollTop}px`;
+    };
+
+    onUpdated(() => {
+      updateTocMarker();
+    });
+
     return (): VNode | null => {
       const tocHeaders = props.items.length
         ? renderChildren(props.items, props.headerDepth)
         : page.value.headers
         ? renderChildren(page.value.headers, props.headerDepth)
         : null;
+
+      (tocHeaders?.children as VNode[]).push(
+        h("div", {
+          class: "toc-marker",
+          id: "toc-marker", // ensure transitions
+        })
+      );
 
       return tocHeaders
         ? h("div", { class: "toc-place-holder" }, [
