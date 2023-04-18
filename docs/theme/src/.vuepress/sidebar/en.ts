@@ -48,7 +48,7 @@ export const enSidebarConfig = sidebar({
       prefix: "faq/",
       children: ["", "troubleshooting", "common-error", "vite", "safari"],
     },
-    "demo",
+    "demo/",
     "changelog",
     "contribution",
   ],
@@ -58,4 +58,6 @@ export const enSidebarConfig = sidebar({
   "/config/": "structure",
 
   "/cookbook/": "structure",
+
+  "/demo/": "structure",
 });

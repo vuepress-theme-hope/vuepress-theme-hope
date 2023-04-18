@@ -1,6 +1,7 @@
 import { type PropType, type VNode, computed, defineComponent, h } from "vue";
-import { RouterLink, useRoute } from "vue-router";
+import { useRoute } from "vue-router";
 
+import AutoLink from "@theme-hope/components/AutoLink";
 import HopeIcon from "@theme-hope/components/HopeIcon";
 import SidebarLinks from "@theme-hope/modules/sidebar/components/SidebarLinks";
 import { isActiveSidebarItem } from "@theme-hope/modules/sidebar/utils/index";
@@ -81,7 +82,11 @@ export default defineComponent({
             h(HopeIcon, { icon }),
             // title
             link
-              ? h(RouterLink, { to: link, class: "title" }, () => text)
+              ? h(AutoLink, {
+                  class: "title",
+                  config: { text, link },
+                  noExternalLinkIcon: true,
+                })
               : h("span", { class: "title" }, text),
             // arrow
             collapsible

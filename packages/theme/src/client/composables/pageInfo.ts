@@ -1,7 +1,11 @@
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import { type GitData } from "@vuepress/plugin-git";
 import { type ComputedRef, computed, inject } from "vue";
-import { type ReadingTime } from "vuepress-plugin-reading-time2";
+import {
+  type ReadingTime,
+  useReadingTimeData,
+  useReadingTimeLocale,
+} from "vuepress-plugin-reading-time2/client";
 import {
   type AuthorInfo,
   type BasePageFrontMatter,
@@ -104,6 +108,8 @@ export const usePageInfo = (): {
   const category = usePageCategory();
   const tag = usePageTag();
   const date = usePageDate();
+  const readingTimeData = useReadingTimeData();
+  const readingTimeLocale = useReadingTimeLocale();
 
   const info = computed(
     () =>
@@ -114,7 +120,8 @@ export const usePageInfo = (): {
         localizedDate: page.value.localizedDate,
         tag: tag.value,
         isOriginal: frontmatter.value.isOriginal || false,
-        readingTime: page.value.readingTime || null,
+        readingTime: readingTimeData.value,
+        readingTimeLocale: readingTimeLocale.value,
         pageview:
           "pageview" in frontmatter.value ? frontmatter.value.pageview : true,
       }

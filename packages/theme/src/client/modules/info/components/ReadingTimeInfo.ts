@@ -1,10 +1,11 @@
 import { type PropType, type VNode, computed, defineComponent, h } from "vue";
-import { type ReadingTime } from "vuepress-plugin-reading-time2";
-import { useLocaleConfig } from "vuepress-shared/client";
+import {
+  type ReadingTime,
+  type ReadingTimeLocale,
+} from "vuepress-plugin-reading-time2/client";
 
 import { TimerIcon } from "@theme-hope/modules/info/components/icons";
 import { useMetaLocale } from "@theme-hope/modules/info/composables/index";
-import { readingTimeLocales } from "@theme-hope/modules/info/utils/index";
 
 export default defineComponent({
   name: "ReadingTimeInfo",
@@ -23,6 +24,16 @@ export default defineComponent({
     },
 
     /**
+     * Reading time locale
+     *
+     * 阅读时间语言环境
+     */
+    readingTimeLocale: {
+      type: Object as PropType<ReadingTimeLocale | null>,
+      default: () => null,
+    },
+
+    /**
      * Whether in pure mode
      *
      * 是否处于纯净模式
@@ -32,26 +43,17 @@ export default defineComponent({
 
   setup(props) {
     const metaLocale = useMetaLocale();
-    const readingTimeLocale = useLocaleConfig(readingTimeLocales);
 
-    const readingTime = computed(() => {
+    const readingTimeMeta = computed(() => {
       if (!props.readingTime) return null;
 
       const { minutes } = props.readingTime;
 
-      return minutes < 1
-        ? { text: readingTimeLocale.value.less1Minute, time: "PT1M" }
-        : {
-            text: readingTimeLocale.value.time.replace(
-              "$time",
-              Math.round(minutes).toString()
-            ),
-            time: `PT${Math.round(minutes)}M`,
-          };
+      return minutes < 1 ? "PT1M" : `PT${Math.round(minutes)}M`;
     });
 
     return (): VNode | null =>
-      readingTime.value
+      props.readingTimeLocale?.time
         ? h(
             "span",
             {
@@ -63,10 +65,10 @@ export default defineComponent({
             },
             [
               h(TimerIcon),
-              h("span", readingTime.value.text),
+              h("span", props.readingTimeLocale?.time),
               h("meta", {
                 property: "timeRequired",
-                content: readingTime.value.time,
+                content: readingTimeMeta.value,
               }),
             ]
           )

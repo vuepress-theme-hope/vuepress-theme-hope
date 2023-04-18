@@ -1,8 +1,9 @@
 ---
-title: 项目案例
+title: 真实项目
 icon: splotch
 category:
   - 案例
+
 docs:
   - name: Fast Request
     desc: 为简化调试API而生
@@ -271,11 +272,7 @@ blog:
     preview: /assets/image/oragekk.jpg
 ---
 
-## 在线案例
-
-- [stackblitz](https://stackblitz.com/fork/vuepress-theme-hope)
-
-## 文档类
+## 使用 VuePress Theme Hope 的文档
 
 <SiteInfo
   v-for="item in $frontmatter.docs"
@@ -283,7 +280,7 @@ blog:
   v-bind="item"
 />
 
-## 博客
+## 使用 VuePress Theme Hope 的博客
 
 <SiteInfo
   v-for="item in $frontmatter.blog"

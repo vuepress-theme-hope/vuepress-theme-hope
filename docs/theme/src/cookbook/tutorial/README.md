@@ -1,6 +1,8 @@
 ---
 title: Step by Step Tutorial
 icon: signs-post
+star: true
+sticky: 10
 dir:
   order: 1
 category:

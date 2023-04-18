@@ -52,57 +52,34 @@ export default {
 
 ## 客户端侧
 
-你可以直接在客户端侧获取相关数据:
+您可以从 `vuepress-plugin-reading-time2` 导入 `useReadingTimeData` 和 `useReadingTimeLocale` 来获取当前页面的阅读时间数据和语言环境数据：
 
 ```vue
-<template>
-  <div>
-    <p>预计阅读时间: {{ page.readingTime.minutes }} 分钟</p>
-    <p>字数: {{ page.readingTime.words }} 字</p>
-  </div>
-</template>
-
 <script setup lang="ts">
-import { usePageData } from "@vuepress/client";
-import { computed } from "vue";
+import {
+  useReadingTimeData,
+  useReadingTimeLocale,
+} from "vuepress-plugin-reading-time2/client";
 
-const pageData = usePageData();
+const readingTimeData = useReadingTimeData();
+const readingTimeLocale = useReadingTimeLocale();
 </script>
 ```
 
-如果你希望和内置多语言嵌套使用，我们全局提供了多语言变量 `READING_TIME_LOCALES`，通过安装并引入 `vuepress-shared`，你可以自动为所有页面提供多语言文本:
+相关类型:
 
-```vue
-<template>
-  <div>
-    <p>{{ readingTimeInfo.time }}</p>
-    <p>{{ readingTimeInfo.word }}</p>
-  </div>
-</template>
+```ts
+interface ReadingTime {
+  minutes: number;
+  words: number;
+}
 
-<script setup lang="ts">
-import { usePageData } from "@vuepress/client";
-import { computed } from "vue";
-import { useLocaleConfig } from "vuepress-shared/client";
+export const useReadingTimeData: () => ComputedRef<ReadingTime | null>;
 
-const pageData = usePageData();
-const readingTimeLocale = useLocaleConfig(readingTimeLocales);
+interface ReadingTimeLocale {
+  time: string;
+  words: string;
+}
 
-// 多语言文本
-const readingTimeInfo = computed(() => {
-  const { minutes, words } = pageData.value.readingTime;
-
-  return {
-    time:
-      minutes < 1
-        ? // 小于一分钟有一个特殊的提示
-          readingTimeLocale.value.less1Minute
-        : readingTimeLocale.value.time.replace(
-            "$time",
-            Math.round(minutes).toString()
-          ),
-    word: readingTimeLocale.value.word.replace("$word", words),
-  };
-});
-</script>
+export const useReadingTimeLocale: () => ComputedRef<ReadingTimeLocale>;
 ```

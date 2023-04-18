@@ -20,7 +20,7 @@ export const zhNavbarConfig = navbar([
     prefix: "/zh/",
     children: [
       "changelog",
-      "demo",
+      "demo/",
       "contribution",
       {
         text: "插件",

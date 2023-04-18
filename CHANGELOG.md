@@ -4,6 +4,28 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.204](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.203...v2.0.0-beta.204) (2023-04-18)
+
+### ⚠ BREAKING CHANGES
+
+- **components:** backToTop option changes into an object
+- **feed2:** rename `customElements` to `preservedElements` which is the actual behavior
+
+### Features
+
+- **components:** add progress for backtotop ([79d682d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/79d682d1ac5028689dfb37669e170c0c1d9113a5))
+- **feed2:** correct option name ([8002ab3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8002ab3d9d3737885db2d544a23ce26b53adf0f7))
+- **reading-time2:** add composables, close [#3035](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3035) ([2439b9c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2439b9cd14a8a406abd7a44abdc13690ccdef10a))
+- **shared:** preserve math tags in excerpt ([d17c4af](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d17c4af34774ec97681594ef7c2c909b026dacf1))
+- **theme:** add `heroBg` and `heroInfo` slot for BlogHero ([f314ff0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f314ff0a8e0ba64d15680d807a66f9433cffbbf2))
+- **theme:** improve sidebar, close [#3019](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3019) ([122bcb5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/122bcb54a7f86750d1aa4f156e0d26765c744479))
+- **theme:** support color and size for HopeIcon ([7cb0d65](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7cb0d6580429f66580aa5a08fcf70c4d698ba2c5))
+
+### Bug Fixes
+
+- **theme:** fix sidebar group with external link ([bb64bd1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/bb64bd15729e48b6b42aa5f1cb61d9fcd0a25969))
+- **theme:** support heroImageDark and improve slots ([a0afc72](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a0afc729497d39326517930b0752667295b9aed8))
+
 ## [2.0.0-beta.203](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.202...v2.0.0-beta.203) (2023-04-12)
 
 ### ⚠ BREAKING CHANGES

@@ -1,6 +1,7 @@
 ---
 title: 常见问题
 icon: circle-question
+star: true
 category:
   - FAQ
 ---
