@@ -1907,6 +1907,12 @@ importers:
 
   packages/reading-time2:
     dependencies:
+      '@vuepress/client':
+        specifier: 2.0.0-beta.61
+        version: 2.0.0-beta.61
+      vue:
+        specifier: ^3.2.47
+        version: 3.2.47
       vuepress:
         specifier: 2.0.0-beta.61
         version: 2.0.0-beta.61(@types/node@18.15.11)(@vuepress/client@2.0.0-beta.61)(sass-loader@13.2.2)(sass@1.62.0)(ts-node@10.9.1)(vue@3.2.47)

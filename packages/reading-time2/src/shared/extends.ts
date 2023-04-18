@@ -5,6 +5,7 @@ export interface ReadingTime {
    * 期望的阅读时间
    */
   minutes: number;
+
   /**
    * words of current page
    *

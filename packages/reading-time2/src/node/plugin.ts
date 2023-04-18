@@ -4,8 +4,8 @@ import { checkVersion, getLocales } from "vuepress-shared/node";
 import { readingTimeLocales } from "./locales.js";
 import { type ReadingTimeOptions } from "./options.js";
 import { getReadingTime } from "./readingTime.js";
-import { type ReadingTime } from "./typings/index.js";
 import { PLUGIN_NAME, logger } from "./utils.js";
+import { type ReadingTime } from "../shared/index.js";
 
 /** Reading time plugin */
 export const readingTimePlugin =
