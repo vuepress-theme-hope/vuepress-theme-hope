@@ -60,7 +60,7 @@ jobs:
           - ubuntu-latest
           - windows-latest
           - macos-latest
-    name: Test demos using ${{ matrix.bundler }} with node ${{ matrix.node }} on ${{ matrix.env }}}
+    name: Test demos using ${{ matrix.bundler }} with node ${{ matrix.node }} on ${{ matrix.env }}
     runs-on: ${{ matrix.env }}
     if: inputs.strict-checking == true
     steps:
