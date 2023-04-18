@@ -107,7 +107,7 @@
     "echarts": "^5.4.2",
     "flowchart.ts": "^0.1.2",
     "js-yaml": "^4.1.0",
-    "katex": "^0.16.4",
+    "katex": "^0.16.6",
     "markdown-it": "^13.0.1",
     "mermaid": "10.1.0",
     "reveal.js": "^4.5.0",
