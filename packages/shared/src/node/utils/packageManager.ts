@@ -22,7 +22,9 @@ const isInstalled = (packageManager: PackageManager): boolean => {
 };
 
 /**
- * Check if a global package manager is available
+ * Check if a package manager is installed globally.
+ *
+ * @param packageManager package manager
  */
 export const hasGlobalInstallation = (
   packageManager: PackageManager
@@ -42,6 +44,13 @@ export const hasGlobalInstallation = (
   return false;
 };
 
+/**
+ * Get the type of lock file.
+ *
+ * @param cwd current working directory
+ * @param deep whether to search in parent directories
+ * @returns the type of lock file
+ */
 export const getTypeofLockFile = (
   cwd = process.cwd(),
   deep = true
@@ -99,6 +108,13 @@ export const getTypeofLockFile = (
   return null;
 };
 
+/**
+ * Detect the package manager used in the current project.
+ *
+ * @param cwd current working directory
+ * @param deep whether to search in parent directories
+ * @returns the type of package manager
+ */
 export const detectPackageManager = (
   cwd = process.cwd(),
   deep = true

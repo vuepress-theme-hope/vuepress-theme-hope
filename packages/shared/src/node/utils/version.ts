@@ -13,7 +13,14 @@ interface PackageJSON extends Record<string, unknown> {
   devDependencies?: Record<string, string>;
 }
 
-export const checkVersion = (app: App, name: string, range = "v2"): void => {
+/**
+ * Check if the version of VuePress is satisfied with the given range
+ *
+ * @param app VuePress app
+ * @param name current package name
+ * @param range version range
+ */
+export const checkVersion = (app: App, name: string, range = "v2"): boolean => {
   const sourceFolderPath = app.dir.source();
   const logger = new Logger(name);
   const require = createRequire(`${sourceFolderPath}/`);
@@ -46,15 +53,18 @@ export const checkVersion = (app: App, name: string, range = "v2"): void => {
   if (packageName) {
     const { version } = <PackageJSON>require(`${packageName}/package.json`);
 
-    if (!semver.satisfies(version, range))
-      logger.error(
-        `Package ${colors.magenta(name)} requires ${colors.cyan(
-          `vuepress@${range}`
-        )}, but found ${colors.cyan(version)}.`
-      );
+    if (semver.satisfies(version, range)) return true;
 
-    return;
+    logger.error(
+      `Package ${colors.magenta(name)} requires ${colors.cyan(
+        `vuepress@${range}`
+      )}, but found ${colors.cyan(version)}.`
+    );
+
+    return false;
   }
 
   logger.error("No VuePress package is found.");
+
+  return false;
 };

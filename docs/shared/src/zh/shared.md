@@ -75,6 +75,177 @@ encodeURIComponent(content); // '%0A%7B%0A%20%20%22type%22%3A%20%22bar%22%2C%0A%
 
 ## Utils
 
+### isDef
+
+判断值是否定义。
+
+```ts
+/**
+ * Check if a value is defined
+ */
+export const isDef: <T = any>(val?: T | undefined) => val is T;
+```
+
+### isBoolean
+
+判断值是否为布尔值。
+
+```ts
+/**
+ * Check if a value is boolean
+ */
+export const isBoolean: (val: unknown) => val is boolean;
+```
+
+### isString
+
+判断值是否为字符串。
+
+```ts
+/**
+ * Check if a value is string
+ */
+export const isString: (val: unknown) => val is string;
+```
+
+### isNumber
+
+判断值是否为数字。
+
+```ts
+/**
+ * Check if a value is number
+ */
+export const isNumber: (val: unknown) => val is number;
+```
+
+### isObject
+
+判断值是否为对象。
+
+```ts
+/**
+ * Check if a value is a object
+ */
+export const isObject: (val: unknown) => val is object;
+```
+
+### isPlainObject
+
+判断值是否为纯对象。
+
+```ts
+/**
+ * Check if a value is a plain object
+ */
+export const isPlainObject: <T extends Record<any, any> = Record<any, any>>(
+  val: unknown
+) => val is T;
+```
+
+### isFunction
+
+判断值是否为函数。
+
+```ts
+/**
+ * Check if a value is a function
+ */
+export const isFunction: (val: unknown) => val is Function;
+```
+
+### startsWith
+
+判断字符串是否以指定字符串开头。
+
+```ts
+/**
+ * Check if a string starts with another string
+ */
+export const startsWith: (str: string, prefix: string) => boolean;
+```
+
+### endsWith
+
+判断字符串是否以指定字符串结尾。
+
+```ts
+/**
+ * Check if a string ends with another string
+ */
+export const endsWith: (str: string, suffix: string) => boolean;
+```
+
+### entries
+
+将对象转换为键值对数组。
+
+```ts
+/**
+ * Get the entries of an object
+ */
+export const entries: {
+  <T>(
+    o:
+      | {
+          [s: string]: T;
+        }
+      | ArrayLike<T>
+  ): [string, T][];
+  (o: {}): [string, any][];
+};
+```
+
+### fromEntries
+
+将键值对数组转换为对象。
+
+```ts
+/**
+ * Create an object from an iterable of key-value pairs
+ */
+export const fromEntries: {
+  <T = any>(entries: Iterable<readonly [PropertyKey, T]>): {
+    [k: string]: T;
+  };
+  (entries: Iterable<readonly any[]>): any;
+};
+```
+
+### keys
+
+获取对象的键名。
+
+```ts
+/**
+ * Get the keys of an object
+ */
+export const keys: {
+  (o: object): string[];
+  (o: {}): string[];
+};
+```
+
+### values
+
+获取对象的键值。
+
+```ts
+/**
+ * Get the values of an object
+ */
+export const values: {
+  <T>(
+    o:
+      | {
+          [s: string]: T;
+        }
+      | ArrayLike<T>
+  ): T[];
+  (o: {}): any[];
+};
+```
+
 ### deepAssign
 
 `Object.assign` 的深度版本，对于将用户选项与默认选项合并很有用。
