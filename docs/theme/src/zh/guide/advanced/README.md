@@ -48,3 +48,5 @@ tag:
 - [替换主题组件](replace.md)
 
 - [主题继承](extend.md)
+
+- [预设](presets.md)
