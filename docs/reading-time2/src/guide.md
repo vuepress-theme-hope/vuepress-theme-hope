@@ -52,57 +52,34 @@ export default {
 
 ## Client Side
 
-You can get relevant data directly on the client side:
+You can import `useReadingTimeData` and `useReadingTimeLocale` from `vuepress-plugin-reading-time2` to get the reading time data and locale data of the current page:
 
 ```vue
-<template>
-  <div>
-    <p>Expect reading time: {{ page.readingTime.minutes }} minute(s)</p>
-    <p>Word count: {{ page.readingTime.words }} words</p>
-  </div>
-</template>
-
 <script setup lang="ts">
-import { usePageData } from "@vuepress/client";
-import { computed } from "vue";
+import {
+  useReadingTimeData,
+  useReadingTimeLocale,
+} from "vuepress-plugin-reading-time2/client";
 
-const pageData = usePageData();
+const readingTimeData = useReadingTimeData();
+const readingTimeLocale = useReadingTimeLocale();
 </script>
 ```
 
-If you want to use with different locales, we provide the multilingual variable `READING_TIME_LOCALES` globally. By installing and introducing `vuepress-shared`, you can automatically provide multilingual text for all pages:
+Related types:
 
-```vue
-<template>
-  <div>
-    <p>{{ readingTimeInfo.time }}</p>
-    <p>{{ readingTimeInfo.word }}</p>
-  </div>
-</template>
+```ts
+interface ReadingTime {
+  minutes: number;
+  words: number;
+}
 
-<script setup lang="ts">
-import { usePageData } from "@vuepress/client";
-import { computed } from "vue";
-import { useLocaleConfig } from "vuepress-shared/client";
+export const useReadingTimeData: () => ComputedRef<ReadingTime | null>;
 
-const pageData = usePageData();
-const readingTimeLocale = useLocaleConfig(readingTimeLocales);
+interface ReadingTimeLocale {
+  time: string;
+  words: string;
+}
 
-// locale text
-const readingTimeInfo = computed(() => {
-  const { minutes, words } = pageData.value.readingTime;
-
-  return {
-    time:
-      minutes < 1
-        ? // we have a special hint for < 1 min
-          readingTimeLocale.value.less1Minute
-        : readingTimeLocale.value.time.replace(
-            "$time",
-            Math.round(minutes).toString()
-          ),
-    word: readingTimeLocale.value.word.replace("$word", words),
-  };
-});
-</script>
+export const useReadingTimeLocale: () => ComputedRef<ReadingTimeLocale>;
 ```

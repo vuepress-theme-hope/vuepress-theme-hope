@@ -1,6 +1,8 @@
 ---
 title: 小白教程
 icon: lightbulb
+star: true
+sticky: 10
 dir:
   order: 1
 category:

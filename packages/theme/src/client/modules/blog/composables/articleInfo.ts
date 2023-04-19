@@ -1,5 +1,9 @@
 import { type ComputedRef, type Ref, computed, toRef } from "vue";
 import {
+  getReadingTimeLocale,
+  useReadingTimeLocaleConfig,
+} from "vuepress-plugin-reading-time2/client";
+import {
   type AuthorInfo,
   getAuthor,
   getCategory,
@@ -86,6 +90,7 @@ export const useArticleInfo = (props: {
   const category = useArticleCategory(articleInfo);
   const tag = useArticleTag(articleInfo);
   const date = useArticleDate(articleInfo);
+  const readingTimeLocaleConfig = useReadingTimeLocaleConfig();
 
   const info = computed(() => ({
     author: author.value,
@@ -95,6 +100,14 @@ export const useArticleInfo = (props: {
     tag: tag.value,
     isOriginal: articleInfo.value[ArticleInfoType.isOriginal] || false,
     readingTime: articleInfo.value[ArticleInfoType.readingTime] || null,
+    readingTimeLocale:
+      articleInfo.value[ArticleInfoType.readingTime] &&
+      readingTimeLocaleConfig.value
+        ? getReadingTimeLocale(
+            articleInfo.value[ArticleInfoType.readingTime],
+            readingTimeLocaleConfig.value
+          )
+        : null,
     pageview: props.path,
   }));
 
