@@ -126,8 +126,7 @@ $headings: (2, 3, 4, 5, 6);
 
     background: var(--theme-color);
 
-    transition-duration: 200ms;
-    transition-property: top;
+    transition: top var(--vp-tt);
 
     #{hope-config.$rtl-selector} & {
       right: 0;
