@@ -1,18 +1,12 @@
 ---
 title: 其他界面功能
 icon: ellipsis
-order: 6
+order: 7
 category:
   - 界面
 tag:
   - 界面
 ---
-
-## 样式定制
-
-主题允许你在 `.vuepress/styles/config.scss` 和 `.vuepress/styles/palette.scss` 中设置变量，来定制绝大部分颜色、响应式断点，页面布局尺寸等参数。
-
-详细的参数详见 [配置 → 样式自定义](../../config/style.md)。
 
 ## 打印按钮
 
