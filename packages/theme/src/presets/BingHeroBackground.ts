@@ -1,4 +1,4 @@
-import { usePageLang } from "@vuepress/client";
+import { ClientOnly, usePageLang } from "@vuepress/client";
 import { useStorage } from "@vueuse/core";
 import { type VNode, computed, defineComponent, h, onMounted } from "vue";
 
@@ -28,9 +28,6 @@ const bingStorage = useStorage<{
   data: [],
 });
 
-const LOCATION_SVG =
-  '<svg aria-hidden="true" viewBox="0 0 12 12"><path d="M6.5 3A1.5 1.5 0 1 0 8 4.5 1.5 1.5 0 0 0 6.5 3zm0-3A4.5 4.5 0 0 0 2 4.5a5.607 5.607 0 0 0 .087.873c.453 2.892 2.951 5.579 3.706 6.334a1 1 0 0 0 1.414 0c.755-.755 3.253-3.442 3.706-6.334A5.549 5.549 0 0 0 11 4.5 4.5 4.5 0 0 0 6.5 0zm3.425 5.218C9.565 7.514 7.632 9.868 6.5 11 5.369 9.868 3.435 7.514 3.075 5.218A4.694 4.694 0 0 1 3 4.5a3.5 3.5 0 0 1 7 0 4.634 4.634 0 0 1-.075.718z"/></svg>';
-
 export default defineComponent({
   name: "BingHeroBackground",
 
@@ -44,7 +41,9 @@ export default defineComponent({
 
     const currentWallpaper = computed(() => {
       const info = bingStorage.value.data[bingStorage.value.index];
-      const langCode = lang.value.toLowerCase().split("-").pop();
+      const langCode = lang.value.toLowerCase().split("-").shift();
+
+      console.log(lang.value, langCode);
 
       if (info) {
         const { url, wallpaper, downloadable, locales } = info;
@@ -80,44 +79,44 @@ export default defineComponent({
       });
     });
 
-    return (): VNode[] | null =>
-      currentWallpaper.value
-        ? [
-            h("div", {
-              class: "mask",
-              style: {
-                background: `url(${currentWallpaper.value.url}) center/cover no-repeat`,
-              },
-            }),
-            h("div", { class: "bing-switch" }, [
-              h(
-                "a",
-                {
-                  class: "bing-info",
-                  href: currentWallpaper.value.backstage,
-                  target: "_blank",
+    return (): VNode =>
+      h(ClientOnly, () =>
+        currentWallpaper.value
+          ? [
+              h("div", {
+                class: "mask",
+                style: {
+                  background: `url(${currentWallpaper.value.url}) center/cover no-repeat`,
                 },
-                [
-                  h("span", {
-                    class: "bing-location-icon",
-                    innerHTML: LOCATION_SVG,
-                  }),
-                  currentWallpaper.value.title,
-                ]
-              ),
-              h("button", {
-                class: "bing-switch-left",
-                disabled: bingStorage.value.index === 0,
-                onClick: () => prev(),
               }),
-              h("button", {
-                class: "bing-switch-right",
-                disabled:
-                  bingStorage.value.index === bingStorage.value.data.length - 1,
-                onClick: () => next(),
-              }),
-            ]),
-          ]
-        : null;
+              h("div", { class: "bing-switch" }, [
+                h(
+                  "a",
+                  {
+                    class: "bing-info",
+                    href: currentWallpaper.value.backstage,
+                    target: "_blank",
+                  },
+                  [
+                    h("span", { class: "bing-location-icon" }),
+                    currentWallpaper.value.title,
+                  ]
+                ),
+                h("button", {
+                  class: "bing-switch-left",
+                  disabled: bingStorage.value.index === 0,
+                  onClick: () => prev(),
+                }),
+                h("button", {
+                  class: "bing-switch-right",
+                  disabled:
+                    bingStorage.value.index ===
+                    bingStorage.value.data.length - 1,
+                  onClick: () => next(),
+                }),
+              ]),
+            ]
+          : null
+      );
   },
 });
