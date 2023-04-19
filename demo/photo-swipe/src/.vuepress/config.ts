@@ -2,7 +2,7 @@ import { defineUserConfig } from "@vuepress/cli";
 import { defaultTheme } from "@vuepress/theme-default";
 import { photoSwipePlugin } from "vuepress-plugin-photo-swipe";
 
-const base = <"/" | `/${string}/`>process.env.BASE || "/";
+const base = <"/" | `/${string}/`>process.env["BASE"] || "/";
 
 export default defineUserConfig({
   base,

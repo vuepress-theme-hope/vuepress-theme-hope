@@ -94,6 +94,11 @@ export const getNormalCode = (
   };
 };
 
+const VUE_TEMPLATE_REG = /<template>([\s\S]+)<\/template>/u;
+const VUE_SCRIPT_REG = /<script(\s*lang=(['"])(.*?)\2)?>([\s\S]+)<\/script>/u;
+const VUE_STYLE_REG =
+  /<style(\s*lang=(['"])(.*?)\2)?\s*(?:scoped)?>([\s\S]+)<\/style>/u;
+
 export const getVueCode = (
   code: CodeType,
   config: Partial<CodeDemoOptions>
@@ -101,14 +106,9 @@ export const getVueCode = (
   const codeConfig = getConfig(config);
 
   const vueTemplate = code.html[0] || "";
-  const htmlBlock = /<template>([\s\S]+)<\/template>/u.exec(vueTemplate);
-  const jsBlock = /<script(\s*lang=(['"])(.*?)\2)?>([\s\S]+)<\/script>/u.exec(
-    vueTemplate
-  );
-  const cssBlock =
-    /<style(\s*lang=(['"])(.*?)\2)?\s*(?:scoped)?>([\s\S]+)<\/style>/u.exec(
-      vueTemplate
-    );
+  const htmlBlock = VUE_TEMPLATE_REG.exec(vueTemplate);
+  const jsBlock = VUE_SCRIPT_REG.exec(vueTemplate);
+  const cssBlock = VUE_STYLE_REG.exec(vueTemplate);
   const html = htmlBlock ? htmlBlock[1].replace(/^\n|\n$/g, "") : "";
   const [js = "", jsLang = ""] = jsBlock
     ? [jsBlock[4].replace(/^\n|\n$/g, ""), jsBlock[3]]
