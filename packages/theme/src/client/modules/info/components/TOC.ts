@@ -87,9 +87,29 @@ export default defineComponent({
     const page = usePageData();
     const metaLocale = useMetaLocale();
     const toc = ref<HTMLElement>();
+    const tocMarkerTop = ref("-1.7rem");
 
     const scrollTo = (top: number): void => {
       toc.value?.scrollTo({ top, behavior: "smooth" });
+    };
+
+    const updateTocMarker = (): void => {
+      if (toc.value) {
+        const activeTocItem = document.querySelector(".toc-item.active");
+
+        if (activeTocItem)
+          tocMarkerTop.value = `${
+            // active toc item top
+            activeTocItem.getBoundingClientRect().top -
+            // toc top
+            toc.value.getBoundingClientRect().top +
+            // toc scroll top
+            toc.value.scrollTop
+          }px`;
+        else tocMarkerTop.value = "-1.7rem";
+      } else {
+        tocMarkerTop.value = "-1.7rem";
+      }
     };
 
     onMounted(() => {
@@ -132,6 +152,12 @@ export default defineComponent({
           }
         }
       );
+
+      watch(
+        () => route.fullPath,
+        () => updateTocMarker(),
+        { flush: "post", immediate: true }
+      );
     });
 
     return (): VNode | null => {
@@ -149,7 +175,15 @@ export default defineComponent({
                 metaLocale.value.toc,
                 h(PrintButton),
               ]),
-              h("div", { class: "toc-wrapper", ref: toc }, tocHeaders),
+              h("div", { class: "toc-wrapper", ref: toc }, [
+                tocHeaders,
+                h("div", {
+                  class: "toc-marker",
+                  style: {
+                    top: tocMarkerTop.value,
+                  },
+                }),
+              ]),
               slots["after"]?.(),
             ]),
           ])
