@@ -53,7 +53,7 @@ export default defineComponent({
     alt: { type: String, required: true },
 
     /** Hero image style */
-    style: {
+    heroStyle: {
       type: [String, Object] as PropType<string | Record<string, string>>,
       default: null,
     },
@@ -112,7 +112,7 @@ export default defineComponent({
           ? h("img", {
               key: "light",
               class: ["hero-image", { light: props.imageDark }],
-              style: props.style,
+              style: props.heroStyle,
               src: props.image,
               alt: props.alt,
             })
@@ -121,7 +121,7 @@ export default defineComponent({
           ? h("img", {
               key: "dark",
               class: "hero-image dark",
-              style: props.style,
+              style: props.heroStyle,
               src: props.imageDark,
               alt: props.alt,
             })

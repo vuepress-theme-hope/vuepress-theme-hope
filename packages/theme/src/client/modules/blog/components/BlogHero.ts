@@ -41,7 +41,7 @@ export default defineComponent({
         text: heroText === false ? null : heroText || title.value,
         image: heroImage ? withBase(heroImage) : null,
         imageDark: heroImageDark ? withBase(heroImageDark) : null,
-        style: heroImageStyle,
+        heroStyle: heroImageStyle,
         alt: heroAlt || "hero image",
         tagline,
         isFullScreen: isFullScreen.value,
@@ -57,7 +57,7 @@ export default defineComponent({
           : bgImage === false
           ? null
           : defaultHeroBgImagePath,
-        style: bgImageStyle,
+        bgStyle: bgImageStyle,
         isFullScreen: isFullScreen.value,
       };
     });
@@ -86,7 +86,7 @@ export default defineComponent({
                         {
                           background: `url(${bgInfo.value.image}) center/cover no-repeat`,
                         },
-                        bgInfo.value.style,
+                        bgInfo.value.bgStyle,
                       ],
                     })
                   : null),
@@ -102,7 +102,7 @@ export default defineComponent({
                             "hero-image",
                             { light: heroInfo.value.imageDark },
                           ],
-                          style: heroInfo.value.style,
+                          style: heroInfo.value.heroStyle,
                           src: heroInfo.value.image,
                           alt: heroInfo.value.alt,
                         })
@@ -111,7 +111,7 @@ export default defineComponent({
                       ? h("img", {
                           key: "dark",
                           class: "hero-image dark",
-                          style: heroInfo.value.style,
+                          style: heroInfo.value.heroStyle,
                           src: heroInfo.value.imageDark,
                           alt: heroInfo.value.alt,
                         })
