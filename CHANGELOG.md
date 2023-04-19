@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.205](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.204...v2.0.0-beta.205) (2023-04-19)
+
+### Features
+
+- **md-enhance:** expose `myChart` for echarts ([0b24ae0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0b24ae03cca9f62e2a9707a1749595d7c5ffe07e))
+- **shared:** improve type guard ([2348a53](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2348a53b9f3747c177c287cad16d6b084437d58a))
+- **theme:** add presets ([ac0d6dd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ac0d6dd757f171345e7dbbf1034a64d0142167e0))
+- **theme:** add transition for TOC active marker ([#3039](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3039)) ([b462659](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b4626592e30a9e8a98795999d89a429bbe033672))
+
+### Bug Fixes
+
+- **theme:** fix readingTime locale for blog ([04c966f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/04c966fd0e3f90ba7103346354a6e061decd3651))
+- **theme:** stop using style as prop ([39704fb](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/39704fb426b22e4a63e32e1a4dbd9733e588d802))
+
 ## [2.0.0-beta.204](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.203...v2.0.0-beta.204) (2023-04-18)
 
 ### ⚠ BREAKING CHANGES
