@@ -1,7 +1,7 @@
 ---
 title: 纯净模式
 icon: leaf
-order: 8
+order: -2
 category:
   - 界面
 tag:

@@ -60,7 +60,7 @@
     "build:gulp": "gulp -f gulpfile.cjs",
     "build:ts": "tsc -b tsconfig.release.json",
     "clean": "rimraf ./lib ./*.tsbuildinfo",
-    "copy": "pnpm copy:client && pnpm copy:bundle",
+    "copy": "pnpm copy:client && pnpm copy:bundle && pnpm copy:presets",
     "copy:bundle": "cpx \"src/client/**/*.{css,jpg}\" lib/bundle",
     "copy:client": "cpx \"src/client/**/*.{css,scss,jpg}\" lib/client",
     "copy:presets": "cpx \"src/presets/**/*.{css,scss}\" lib/presets",

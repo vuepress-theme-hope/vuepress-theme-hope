@@ -45,3 +45,10 @@ tag:
 ::: info
 
 关于完整的配置项目，请参见 [博客主页 Frontmatter 配置](../../config/frontmatter/blog-home.md)。
+
+:::
+
+## 即时案例
+
+- [当前文档的博客主页](../../demo/blog-home.md)
+- [当前文档的自定义博客主页](../../demo/custom-blog-home.md)

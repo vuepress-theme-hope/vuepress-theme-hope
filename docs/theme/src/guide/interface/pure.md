@@ -1,7 +1,7 @@
 ---
 title: Pure Mode
 icon: leaf
-order: 8
+order: -2
 category:
   - Interface
 tag:

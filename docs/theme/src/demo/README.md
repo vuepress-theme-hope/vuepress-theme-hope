@@ -13,7 +13,9 @@ icon: splotch
 
 ## Living Demo Pages
 
-- [Blog home](./blog-home.md)
+- [Blog Home](./blog-home.md)
+
+- [Custom Blog Home](./custom-blog-home.md)
 
 - [Encrypt Page](./encrypt.md) (Password: 1234)
 

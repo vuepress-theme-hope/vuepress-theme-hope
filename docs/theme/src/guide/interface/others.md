@@ -1,18 +1,12 @@
 ---
 title: Other features
 icon: ellipsis
-order: 6
+order: 7
 category:
   - Interface
 tag:
   - Interface
 ---
-
-## Style Customization
-
-The theme allows you to set variables in `.vuepress/styles/config.scss` and `.vuepress/styles/palette.scss` to customize most of the colors, responsive breakpoints, page layout size and other parameters.
-
-For detailed info, please see [Config → Style Customize](../../config/style.md)
 
 ## Print Button
 

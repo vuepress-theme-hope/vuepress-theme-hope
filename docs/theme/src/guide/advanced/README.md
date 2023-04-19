@@ -48,3 +48,5 @@ We do not want to "describe all the concepts involved and their usage to you" an
 - [Replacing Component](replace.md)
 
 - [Theme Extending](extend.md)
+
+- [Presets](presets.md)
