@@ -57,7 +57,7 @@
     "@vuepress/client": "2.0.0-beta.61",
     "@vuepress/shared": "2.0.0-beta.61",
     "@vuepress/utils": "2.0.0-beta.61",
-    "@waline/client": "^2.15.0",
+    "@waline/client": "^2.15.1",
     "artalk": "^2.5.4",
     "giscus": "^1.2.8",
     "twikoo": "^1.6.16",
