@@ -88,6 +88,7 @@ export default defineComponent({
     const page = usePageData();
     const metaLocale = useMetaLocale();
     const toc = ref<HTMLElement>();
+    const tocMarkerTop = ref(0);
 
     const scrollTo = (top: number): void => {
       toc.value?.scrollTo({ top, behavior: "smooth" });
@@ -145,9 +146,7 @@ export default defineComponent({
       if (!activeTocItem) return;
       const activeTocItemTop = activeTocItem.getBoundingClientRect().top;
 
-      const tocMarker = document.querySelector(".toc-marker") as HTMLElement;
-
-      tocMarker.style.top = `${activeTocItemTop - tocTop + tocScrollTop}px`;
+      tocMarkerTop.value = activeTocItemTop - tocTop + tocScrollTop;
     };
 
     onUpdated(() => {
@@ -165,6 +164,9 @@ export default defineComponent({
         h("div", {
           class: "toc-marker",
           id: "toc-marker", // ensure transitions
+          style: {
+            top: `${tocMarkerTop.value}px`,
+          },
         })
       );
 
