@@ -2,7 +2,7 @@
 home: true
 layout: CustomBlogHome
 icon: home
-title: 博客主页
+title: 自定义博客主页
 heroImage: /logo.svg
 heroText: 你博客的名称
 heroFullScreen: true
