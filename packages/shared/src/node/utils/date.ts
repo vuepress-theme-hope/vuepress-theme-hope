@@ -19,6 +19,9 @@ export interface DateInfo {
   value: Date | undefined;
 }
 
+const TIME_REG =
+  /(?:(\d{2,4})[/-](\d{1,2})[/-](\d{1,2}))?\s*(?:(\d{1,2}):(\d{1,2})(?::(\d{1,2}))?)?/u;
+
 /**
  * Get Date info
  *
@@ -65,9 +68,7 @@ export const getDateInfo = (
       };
     }
 
-    const timeRegPattern =
-      /(?:(\d{2,4})[/-](\d{1,2})[/-](\d{1,2}))?\s*(?:(\d{1,2}):(\d{1,2})(?::(\d{1,2}))?)?/u;
-    const result = timeRegPattern.exec((<string>date).trim());
+    const result = isString(date) ? TIME_REG.exec(date.trim()) : null;
 
     if (result) {
       const [, year, month, day, hour, minute, second] = result;
