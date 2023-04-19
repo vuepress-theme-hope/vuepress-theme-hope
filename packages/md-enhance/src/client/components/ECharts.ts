@@ -15,21 +15,45 @@ import "../styles/echarts.scss";
 
 declare const MARKDOWN_ENHANCE_DELAY: number;
 
+interface EchartsConfig {
+  width?: number;
+  height?: number;
+  option: EChartsOption;
+}
+
 const parseEChartsConfig = (
-  config: string,
-  type: "js" | "json"
-): EChartsOption => {
-  if (type === "js") {
-    const exports = {};
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  __echarts_config__: string,
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  __echarts_config_type__: "js" | "json",
+  // @ts-ignore
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  myChart: EChartsType
+): EchartsConfig => {
+  if (__echarts_config_type__ === "js") {
+    // provide globals
+    const exports: Partial<EchartsConfig> = {};
     const module = { exports };
 
-    eval(config);
+    // eslint-disable-next-line prefer-const
+    let option: EChartsOption | undefined = undefined;
+    // eslint-disable-next-line prefer-const
+    let width: number | undefined = undefined;
+    // eslint-disable-next-line prefer-const
+    let height: number | undefined = undefined;
 
-    // eslint-disable-next-line import/no-commonjs
-    return <EChartsOption>module.exports;
+    eval(__echarts_config__);
+
+    return <EchartsConfig>{
+      option,
+      width,
+      height,
+      // eslint-disable-next-line import/no-commonjs
+      ...module.exports,
+    };
   }
 
-  return <EChartsOption>JSON.parse(config);
+  return { option: <EChartsOption>JSON.parse(__echarts_config__) };
 };
 
 export default defineComponent({
@@ -66,10 +90,10 @@ export default defineComponent({
   },
 
   setup(props) {
-    const echartsContainer = ref<HTMLElement>();
-    let chart: EChartsType;
-
     const loading = ref(true);
+    const echartsContainer = ref<HTMLElement>();
+
+    let chart: EChartsType;
 
     useEventListener(
       "resize",
@@ -82,10 +106,16 @@ export default defineComponent({
         // delay
         new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
       ]).then(([echarts]) => {
-        const options = parseEChartsConfig(atou(props.config), props.type);
-
         chart = echarts.init(echartsContainer.value!);
-        chart.setOption(options);
+
+        const { option, ...size } = parseEChartsConfig(
+          atou(props.config),
+          props.type,
+          chart
+        );
+
+        chart.resize(size);
+        chart.setOption(option);
 
         loading.value = false;
       });
