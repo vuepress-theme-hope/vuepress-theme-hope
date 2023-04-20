@@ -173,6 +173,12 @@ docs:
     repo: https://github.com/zhuchunshu/sforum-docs
     preview: /assets/image/sforum.png
 
+  - name: SRE运维进阶之路
+    desc: SRE运维、云原生、可观测性、devops、负载均衡等技术
+    logo: https://clay-wangzhi.com/lufei.jpg
+    url: https://clay-wangzhi.com
+    repo: https://github.com/clay-wangzhi/wiki
+
 blog:
   - name: Mr.Hope’s Blog
     desc: Where there is light, there is hope
