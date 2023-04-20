@@ -23,7 +23,12 @@ All notable changes to this project will be documented in this file. See [Conven
 ### ⚠ BREAKING CHANGES
 
 - **components:** backToTop option changes into an object
+
+  A progress bar is added to the backToTop button, so now it has 2 configuration options.
+
 - **feed2:** rename `customElements` to `preservedElements` which is the actual behavior
+
+  The original option name could be confusing, as we are just preserving them.
 
 ### Features
 
@@ -45,6 +50,8 @@ All notable changes to this project will be documented in this file. See [Conven
 ### ⚠ BREAKING CHANGES
 
 - **theme:** customizations now need extra config `{ custom: true }` now
+
+  We are using bundled version by default as it has higher performance, so you now needs extra config to let theme use alias.
 
 ### Features
 
@@ -316,7 +323,9 @@ All notable changes to this project will be documented in this file. See [Conven
 
 ### ⚠ BREAKING CHANGES
 
-- **search-pro:** rename historyCount option to resultHistoryCount option
+- **search-pro:** rename `historyCount` option to `resultHistoryCount` option
+
+  We are adding `queryHistoryCount` option to redirect plugin, so we need to rename `historyCount` to avoid confusion.
 
 ### Features
 
@@ -381,6 +390,8 @@ All notable changes to this project will be documented in this file. See [Conven
 ### ⚠ BREAKING CHANGES
 
 - **md-enhance:** remove showCode option in vue playground, update layout default value
+
+  Users are having issues at first render, so we make some tweaks here.
 
 closed 2811
 
@@ -517,6 +528,8 @@ closed 2811
 
 - Catalog component is now inside auto-catalog plugin with name AutoCatalog
 
+  Most people want that catalog pages can be auto generated, and this is beyond a coponent, so we extract it into a plugin.
+
 ### Features
 
 - catalog component is now inside auto-catalog plugin ([760c686](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/760c686a9719e7cad4304e4168ffc02f83988b34))
@@ -578,6 +591,8 @@ closed 2811
 - **theme:** fix dropped logger ([cfe7381](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cfe73812917239172a411cc1ec8a07cb0d41e763))
 - **theme:** hide line-numbers on print mode ([0b39671](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0b396712c004d85be55e5150c8c2a2524cdd3647))
 - **theme:** improve legacy logger ([cb449e4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cb449e467cda6b5596e97dbb4b2a797e2e92f25d))
+
+<!-- #endregion recent-beta -->
 
 ## [2.0.0-beta.166](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.165...v2.0.0-beta.166) (2023-01-23)
 
@@ -927,8 +942,6 @@ closed 2811
 - **md-enhance:** fix cjk character issue with link check, fix [#2547](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2547) ([9d0f8d4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9d0f8d4dd232ac1323a010a3c2bc55ab7f2c06db))
 - **theme:** correctly hide figcaption in excerpt ([39f5be0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/39f5be07cfbb225e17119305e11d794e63fd11bf))
 - **theme:** fix article list excerpt, fix [#2544](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/2544) ([6853ad1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6853ad103bd2fc0c11de9f6fcc746a5551a2e29c))
-
-<!-- #endregion recent-beta -->
 
 ## [2.0.0-beta.141](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.140...v2.0.0-beta.141) (2022-12-11)
 
@@ -2274,25 +2287,6 @@ closed 2811
 
 ## [2.0.0-beta.48](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.47...v2.0.0-beta.48) (2022-05-03)
 
-### Features
-
-- add I18n support for slovak ([#1757](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1757)) ([c6d0971](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c6d097126be91af841b3f3d0359addf5b2008af3))
-- **comment2:** improve client ([bcfd815](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/bcfd815e1be03c1d071587d54899ff73d087a167))
-- compatible with latest vuepress ([64ba9e3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/64ba9e3a9cc7819e2941d6636ae605f395635a5b))
-- **create:** support pnpm ([a768280](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a768280da7dda25379ee3f607fb13a10c8e3053d))
-- **sass-palette:** improve inject ([95eb3a9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/95eb3a986725a7498d948c6c407f6a3683984987))
-- **shared:** add detectPackageManager ([777a2bb](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/777a2bb380d5d78ab1de2794192d15693722d138))
-- update demo ([836f1e4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/836f1e42ca6b39f76ec01eb6f99e0b1ec1fa0cc5))
-
-### Bug Fixes
-
-- **blog2:** fix frontmatter option type ([48448aa](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/48448aa48899b8d98560d4d8416e17effe1e7abc))
-- **comment2:** stop bundling @waline/client ([18ba045](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/18ba045471dfdaf2f6fcf30cb412732e1bb15c65))
-- **shared:** log error msg only in debug mode ([de726a0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/de726a004c2d9f145a7f0e6952e2888f55eeaa2a))
-- **theme:** fix footnote in except ([d495d68](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d495d68b2223cae3025f074e3c5b8bfde23f7d13))
-- **theme:** fix globalEncrypt ([1401242](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1401242ed87ce6bc7f995b5ba0defbab27cb0d2d))
-- **theme:** fix logoDark ([1df15f0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1df15f043188764bd3dd0dad3d16961aea61be6b))
-
 ### Breaking Changes
 
 To support pnpm, you should apply `vuepress-theme-hope` using new syntax:
@@ -2322,6 +2316,25 @@ Besides providing `hopeTheme`, all `defineXXXConfig` exports are removed, `vuepr
 - `objectSidebar`
 
 Since `vuepress` drop support for the `babel` way, `search` and `docsearch` options in `themeConfig.plugins` are removed. You need to install and call the plugins via `plugins` option in config file.
+
+### Features
+
+- add I18n support for slovak ([#1757](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/1757)) ([c6d0971](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c6d097126be91af841b3f3d0359addf5b2008af3))
+- **comment2:** improve client ([bcfd815](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/bcfd815e1be03c1d071587d54899ff73d087a167))
+- compatible with latest vuepress ([64ba9e3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/64ba9e3a9cc7819e2941d6636ae605f395635a5b))
+- **create:** support pnpm ([a768280](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a768280da7dda25379ee3f607fb13a10c8e3053d))
+- **sass-palette:** improve inject ([95eb3a9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/95eb3a986725a7498d948c6c407f6a3683984987))
+- **shared:** add detectPackageManager ([777a2bb](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/777a2bb380d5d78ab1de2794192d15693722d138))
+- update demo ([836f1e4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/836f1e42ca6b39f76ec01eb6f99e0b1ec1fa0cc5))
+
+### Bug Fixes
+
+- **blog2:** fix frontmatter option type ([48448aa](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/48448aa48899b8d98560d4d8416e17effe1e7abc))
+- **comment2:** stop bundling @waline/client ([18ba045](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/18ba045471dfdaf2f6fcf30cb412732e1bb15c65))
+- **shared:** log error msg only in debug mode ([de726a0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/de726a004c2d9f145a7f0e6952e2888f55eeaa2a))
+- **theme:** fix footnote in except ([d495d68](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d495d68b2223cae3025f074e3c5b8bfde23f7d13))
+- **theme:** fix globalEncrypt ([1401242](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1401242ed87ce6bc7f995b5ba0defbab27cb0d2d))
+- **theme:** fix logoDark ([1df15f0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1df15f043188764bd3dd0dad3d16961aea61be6b))
 
 ## [2.0.0-beta.47](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.46...v2.0.0-beta.47) (2022-04-24)
 
@@ -2400,6 +2413,12 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 
 ## [2.0.0-beta.39](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.38...v2.0.0-beta.39) (2022-04-12)
 
+### BREAKING CHANGES
+
+- **theme:** update breakpoint variable name
+
+  Now breakpoint variable name is easier to understand.
+
 ### Bug Fixes
 
 - **theme:** resolve sidebar link correctly ([c947699](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c947699aa2ff4fc28bc5f17404b7086b6bc94586))
@@ -2408,10 +2427,6 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 
 - **theme:** support git options ([32712de](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/32712de08263094043459f7d1931f19d4ee368db))
 - **theme:** update breakpoint variable name ([2761a5d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2761a5d6d45ed87cddf5285bef43808c8b8a0ffc))
-
-### BREAKING CHANGES
-
-- **theme:** update breakpoint variable name
 
 ## [2.0.0-beta.38](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.37...v2.0.0-beta.38) (2022-04-11)
 
@@ -2541,6 +2556,12 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 
 ## [2.0.0-beta.26](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.25...v2.0.0-beta.26) (2022-03-24)
 
+### BREAKING CHANGES
+
+- **theme:** rename `headingDepth` to `headerDepth`
+
+  VuePress use the word `headers` in page object and markdown plugin name, so we align them.
+
 ### Bug Fixes
 
 - **theme:** fix blog hero scroll ([ee6277c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ee6277c2538512826bb6169779fe3f1cfa3f0ff6))
@@ -2548,10 +2569,6 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 ### Features
 
 - **theme:** rename `headingDepth` to `headerDepth` ([de367cc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/de367ccd2fed642ded6dbf629ace08db2f133761))
-
-### BREAKING CHANGES
-
-- **theme:** rename `headingDepth` to `headerDepth`
 
 ## [2.0.0-beta.25](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.24...v2.0.0-beta.25) (2022-03-23)
 
@@ -2572,6 +2589,12 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 
 ## [2.0.0-beta.23](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.22...v2.0.0-beta.23) (2022-03-20)
 
+### BREAKING CHANGES
+
+- **components:** add `component` option and remove component name
+
+  Now component plugin is more customizable and tree-shakable.
+
 ### Bug Fixes
 
 - **md-enhance:** fix footnote anchor cover ([300fab9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/300fab9f89066c648550faf26e3626dad00b2e90))
@@ -2582,11 +2605,13 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **components:** update component options ([92c11b0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/92c11b01eabceebc93e714b8666e8f73a788129b))
 - **theme:** improve smooth scroll ([8e2dd70](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8e2dd70e21da4149fb80457d83915c528142a0ff))
 
+## [2.0.0-beta.22](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.21...v2.0.0-beta.22) (2022-03-19)
+
 ### BREAKING CHANGES
 
-- **components:** add `component` option and remove component name
+- use kebab-case variables in sass instead of camelCase
 
-## [2.0.0-beta.22](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.21...v2.0.0-beta.22) (2022-03-19)
+  Sass recommends kebab-case variables. So we change all the camelCase variables to kebab-case.
 
 ### Bug Fixes
 
@@ -2595,10 +2620,6 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 ### Features
 
 - use kebab-case variables in sass ([e8e52f0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e8e52f087f5d3dd8ca9b4f9bd1b33acdbe13638d))
-
-### BREAKING CHANGES
-
-- use kebab-case variables in sass instead of camelCase
 
 ## [2.0.0-beta.21](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.20...v2.0.0-beta.21) (2022-03-19)
 
@@ -2660,6 +2681,12 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 
 ## [2.0.0-beta.15](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.14...v2.0.0-beta.15) (2022-03-14)
 
+### BREAKING CHANGES
+
+- unify `fullScreen` to `fullscreen`
+
+  This aligns option across the project.
+
 ### Bug Fixes
 
 - **theme:** wrap a tag when necessary ([018c26e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/018c26ec93d18cbda806fe56b22be1773738055d))
@@ -2670,10 +2697,6 @@ Since `vuepress` drop support for the `babel` way, `search` and `docsearch` opti
 - **theme:** add light selector by default ([37f4afc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/37f4afc65ce3c7a50474b176de10093b9e0809f2))
 - **theme:** improve sidebar and try not throw errors with invalid config ([69b1c1b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/69b1c1bb23379cc57ea29517dee5d881875f5078))
 - unify fullScreen to fullscreen ([1aa014c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1aa014cf762e41ef9cc13e885dc103074fd3c0e0))
-
-### BREAKING CHANGES
-
-- unify `fullScreen` to `fullscreen`
 
 ## [2.0.0-beta.14](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.13...v2.0.0-beta.14) (2022-03-13)
 
