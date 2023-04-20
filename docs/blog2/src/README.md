@@ -82,7 +82,7 @@ export default {
 
 ## Migrating from V1
 
-This plugin wasn’t released in V1.
+This plugin wasn't released in V1.
 
 If you were using `@vuepress/plugin-blog` in VuePress1, you should know that this plugin is targeting a total different level with `@vuepress/plugin-blog`.
 

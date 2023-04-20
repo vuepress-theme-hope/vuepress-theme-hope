@@ -16,21 +16,21 @@ You can set information for page with the following frontmatter options.
 - Type: `string`
 - Required: No
 
-Current page’s title. Markdown’s first h1 by default.
+Current page's title. Markdown's first h1 by default.
 
 ## shortTitle
 
 - Type: `string`
 - Required: No
 
-Current page’s short title. Will be used as in navbar, sidebar and breadcrumb.
+Current page's short title. Will be used as in navbar, sidebar and breadcrumb.
 
 ## description
 
 - Type: `string`
 - Required: No
 
-Current page’s description.
+Current page's description.
 
 ## icon
 
@@ -70,7 +70,7 @@ FontClass / Image link of the current page icon (recommended).
 
 - Required: No
 
-Show the author of the current page. If you don’t fill it, you will fall back to the default author.
+Show the author of the current page. If you don't fill it, you will fall back to the default author.
 
 ::: tip
 
@@ -140,4 +140,4 @@ Whether to add the article to the timeline list.
 - Type: `string`
 - Required: No
 
-Current page’s image，needs an absolute path.
+Current page's image, needs an absolute path.

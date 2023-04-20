@@ -9,9 +9,9 @@ tag:
   - Style
 ---
 
-You can change the theme’s styles in `.vuepress/styles` by setting variable values in the `config.scss` and `palette.scss` files.
+You can change the theme's styles in `.vuepress/styles` by setting variable values in the `config.scss` and `palette.scss` files.
 
-Also you can add your own styles in `.vuepress/styles/index.scss`.
+Also, you can add your own styles in `.vuepress/styles/index.scss`.
 
 <!-- more -->
 

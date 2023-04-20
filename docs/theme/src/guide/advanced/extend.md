@@ -21,7 +21,7 @@ In your entry file, set `extends: hopeTheme(options)` to extend the `vuepress-th
 
 The aliases of the same name (`alias`) and layouts (`layouts`) of your own newly created theme has higher priority over the extended theme `vuepress-theme-hope`, which means that you can override `vuepress-theme-hope` components via `alias` option in theme api, and you can add or override layouts via `layouts` in client config file.
 
-The theme provide the following layouts:
+The theme provides the following layouts:
 
 - Layout
 - NotFound

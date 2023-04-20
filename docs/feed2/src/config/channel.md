@@ -68,7 +68,7 @@ Last update time of channel content
 - Type: `number`
 - Recommended to set manually: **Yes**
 
-The effective time of the content. It’s the time to keep the cache after request without making new requests.
+The effective time of the content. It's the time to keep the cache after request without making new requests.
 
 ## channel.image
 
@@ -82,7 +82,7 @@ A picture presenting the channel. A square picture with a size not smaller than 
 - Type: `string`
 - Recommended to set manually: **Yes**
 
-An icon representing a channel, a square picture, with not less than 128×128 in size, and transparent background color is recommended .
+An icon representing a channel, a square picture, with not less than 128×128 in size, and transparent background color is recommended.
 
 ## channel.author
 
@@ -97,12 +97,12 @@ The author of the channel.
 interface FeedAuthor {
   /** Author name */
   name: string;
-  /** Author’s email */
+  /** Author's email */
   email?: string;
-  /** Author’s site */
+  /** Author's site */
   url?: string;
   /**
-   * Author’s avatar address
+   * Author's avatar address
    *
    * Square, preferably not less than 128×128 with transparent background
    */

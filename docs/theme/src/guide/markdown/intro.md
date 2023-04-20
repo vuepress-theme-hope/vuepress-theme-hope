@@ -25,6 +25,6 @@ For detailed syntax, please see [Built-in Markdown Enhance](../../cookbook/vuepr
 
 ::: tip
 
-Don’t worry about the size of your site. If you don’t enable related features, the final code won’t include code for these features.
+Don't worry about the size of your site. If you don't enable related features, the final code won't include code for these features.
 
 :::

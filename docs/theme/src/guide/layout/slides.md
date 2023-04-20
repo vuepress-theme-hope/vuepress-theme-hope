@@ -26,7 +26,7 @@ You need to set `layout: Slide` in the frontmatter of the corresponding page to 
 
 ::: warning Enable presentation
 
-You should enable presentation feature in `vuepress-plugin-md-enhance` by setting `plugins.mdEnhance.presentation` in theme options, otherwise the layout won’t be rendered correctly.
+You should enable presentation feature in `vuepress-plugin-md-enhance` by setting `plugins.mdEnhance.presentation` in theme options, otherwise the layout won't be rendered correctly.
 
 :::
 

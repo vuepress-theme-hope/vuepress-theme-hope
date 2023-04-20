@@ -37,7 +37,7 @@ Whether display page views.
 
 ::: tip
 
-The pageviews feature requires you to have a valid Waline Comment Service config.
+The pageview feature requires you to have a valid Waline Comment Service config.
 
 :::
 
@@ -72,7 +72,7 @@ Page sidebar configuration options. Supports `"heading"` or `false`.
 - Type: `number`
 - Default: `2`
 
-The page’s sidebar heading rendering depth.
+The page's sidebar heading rendering depth.
 
 ## index
 

@@ -69,13 +69,13 @@ Comment feature is enabled globally by default, controlled by `plugins.comment.c
 
 ::: tip
 
-For the complete config item of the plugin ,please see <ProjectLink name="comment2">plugin documentation</ProjectLink>.
+For the complete config item of the plugin, please see <ProjectLink name="comment2">plugin documentation</ProjectLink>.
 
 :::
 
 ## Comment Provider
 
-Currently you can choose from Giscus, Waline, Twikoo and Artalk.
+Currently, you can choose from Giscus, Waline, Twikoo and Artalk.
 
 ::: tip Comment service selection
 

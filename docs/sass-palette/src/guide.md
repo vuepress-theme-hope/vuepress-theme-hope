@@ -9,7 +9,7 @@ This plugin is basically facing plugins and theme development.
 
 To get started, you should understand that this plugin is designed to take across plugins and theme (unlike the official one only for theme).
 
-We are providing `id` option to do that, and using this plugin (by calling `useSassPalette`) with same ID won’t have any side effects. Also, all the alias and module names have an ID prefix.
+We are providing `id` option to do that, and using this plugin (by calling `useSassPalette`) with same ID won't have any side effects. Also, all the alias and module names have an ID prefix.
 
 This will allow you to:
 
@@ -23,7 +23,7 @@ This will allow you to:
 
   :::
 
-- With different ID, plugins and theme won’t affect others. We recommend you to set the `id` variable with your plugin name.
+- With different ID, plugins and theme won't affect others. We recommend you to set the `id` variable with your plugin name.
 
   With the default settings, users will set your plugin style under `.vuepress/styles` directory with Sass files starting with your ID prefix. And you can access the variables you need with `${id}-config`.
 
@@ -35,7 +35,7 @@ This will allow you to:
 
 ## Styles
 
-We have three style concept here: config, palette and generator.
+We have three style concepts here: config, palette and generator.
 
 ## Config
 
@@ -88,7 +88,7 @@ We are using `additionalData` options to let `${id}-config` module available in 
 - `<style lang="scss">` block in component files
 - Scss files imported by script files directly (e.g.: `import "./a-scss-file.scss"` in client app enhance file).
 
-If the Scss file is not imported directly, but is imported through `@use` or `@import` api, the module won’t be available. So that in this case, you should import the module yourself using `@use "@sass-palette/${id}-config";`.
+If the Scss file is not imported directly, but is imported through `@use` or `@import` api, the module won't be available. So that in this case, you should import the module yourself using `@use "@sass-palette/${id}-config";`.
 
 ### Preserved Variables
 
@@ -195,7 +195,7 @@ Only colors (or color map), length and strings are allowed in palette. Any other
 
 :::: note Why only allow color and length besides strings
 
-In common situations, you probably only want to make calculations with color and length. So it’s quite safe to drop other type support, because any other value you want can be converted to string.
+In common situations, you probably only want to make calculations with color and length. So it's quite safe to drop other type support, because any other value you want can be converted to string.
 
 ::: details Example
 
@@ -263,7 +263,7 @@ Later, you should manually include user style file by importing `@sass-palette/$
 
 ::: note
 
-`@sass-palette/${id}-style` is an alias to user style file and you can import it in JS/TS/SASS.
+`@sass-palette/${id}-style` is an alias to user style file, and you can import it in JS/TS/SASS.
 
 :::
 

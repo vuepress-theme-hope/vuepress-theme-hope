@@ -16,7 +16,7 @@ VuePress theme can provide layouts, styles and many other features for you, help
 
 VuePress has a default theme out of the box, which is applied to our documentation site you are currently browsing.
 
-If you don’t specify the theme to use, the default theme will be used automatically.
+If you don't specify the theme to use, the default theme will be used automatically.
 
 To configure the default theme, you need to import and use it in your config file via the [theme](https://v2.vuepress.vuejs.org/reference/config.html#theme) option:
 
@@ -42,8 +42,8 @@ However, you might think it is not good enough. Or, you want to build a differen
 
 ## Community Theme
 
-Community users have created lots of theme and published them to [NPM](https://www.npmjs.com/search?q=keywords:vuepress-theme). You should check the theme's own documentation for detailed guide.
+Community users have created lots of themes and published them to [NPM](https://www.npmjs.com/search?q=keywords:vuepress-theme). You should check the theme's own documentation for detailed guide.
 
 ## Local Theme
 
-If you want to use your own custom theme but don’t want to publish it, you can create a local theme. Refer to [Advanced > Writing a Theme](https://v2.vuepress.vuejs.org/advanced/theme.html) for how to write your own theme.
+If you want to use your own custom theme but don't want to publish it, you can create a local theme. Refer to [Advanced > Writing a Theme](https://v2.vuepress.vuejs.org/advanced/theme.html) for how to write your own theme.

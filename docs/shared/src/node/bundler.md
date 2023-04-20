@@ -6,7 +6,7 @@ Bundler functions should be called at node side, you shall import them from `vue
 
 All functions should be called in `extendsBundlerOptions` lifecycle hook.
 
-We are omitting that in examples. the actual code should be like this:
+We are omitting that in examples. The actual code should be like this:
 
 ```ts
 // import functions you need

@@ -86,4 +86,4 @@ Start time of the video (in seconds).
 - Type: `boolean`
 - Default: `false`
 
-Video auto play.
+Video autoplay.

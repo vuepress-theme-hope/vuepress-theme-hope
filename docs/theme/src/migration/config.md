@@ -327,7 +327,7 @@ Move all plugin related options under `plugins`.
     - `<!-- @include: filename{start-} -->`
     - `<!-- @include: filename{-end} -->`
 
-    Also you can include file region:
+    Also, you can include file region:
 
     - `<!-- @include: filename#region -->`
 
@@ -355,7 +355,7 @@ Move all plugin related options under `plugins`.
 
   - remove `plugins.mdEnhance.enableAll` ![removed](https://img.shields.io/badge/-removed-red)
 
-    There are too many noob users who don’t know what they are doing, and they just enable this option without using all the feature provided, yet they complain about load speed.
+    There are too many noob users who don't know what they are doing, and they just enable this option without using all the feature provided, yet they complain about load speed.
 
   - remove `plugins.mdEnhance.lineNumbers` ![removed](https://img.shields.io/badge/-removed-red)
 
@@ -407,12 +407,11 @@ Move all plugin related options under `plugins`.
 
   - Canonical link ![New](https://img.shields.io/badge/-New-brightgreen)
 
-    You can set canonical link via `plugin.seo.canonicalLink` option. It's useful when your docs
+    You can set canonical link via `plugin.seo.canonicalLink` option. It's useful when your docs are deployed in several places.
 
   - `seo.customMeta` renamed to `plugin.seo.customHead` ![changed](https://img.shields.io/badge/-changed-yellow)
 
     Now you can edit all head tags instead of only meta in V1.
-    are deployed in several places.
 
 - move `sitemap` to `plugins.sitemap`
 

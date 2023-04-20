@@ -3,7 +3,7 @@ title: Guide
 icon: lightbulb
 ---
 
-With `vuepress-plugin-auto-catalog`, you can easily gets automatically generated catalog pages for your theme.
+With `vuepress-plugin-auto-catalog`, you can easily get automatically generated catalog pages for your theme.
 
 ## Controlling Catalog
 
@@ -34,7 +34,7 @@ The `exclude` option accepts an array of string or RegExp.
 
 ## Controlling Page Frontmatter
 
-By default, the plugin will generate catalog page title from folder name. However, sometimes you may want to make some customize, so you can set `frontmatter` option as a function which receives catalog page path as argument and you shall return a object containing the frontmatter you want.
+By default, the plugin will generate catalog page title from folder name. However, sometimes you may want to make some customize, so you can set `frontmatter` option as a function which receives catalog page path as argument and you shall return an object containing the frontmatter you want.
 
 ```ts
 // .vuepress/config.ts

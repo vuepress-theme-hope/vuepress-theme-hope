@@ -36,7 +36,7 @@ export default defineUserConfig({
 
   alias: {
     // Here you can redirect aliases to your own components
-    // For example, here we change the theme’s home page component to HomePage.vue under user .vuepress/components
+    // For example, here we change the theme's home page component to HomePage.vue under user .vuepress/components
     "@theme-hope/components/HomePage": path.resolve(
       __dirname,
       "./components/HomePage.vue"
@@ -61,7 +61,7 @@ export default {
 
   alias: {
     // Here you can redirect aliases to your own components
-    // For example, here we change the theme’s home page component to HomePage.vue under user .vuepress/components
+    // For example, here we change the theme's home page component to HomePage.vue under user .vuepress/components
     "@theme-hope/components/HomePage": path.resolve(
       __dirname,
       "./components/HomePage.vue"
@@ -251,7 +251,7 @@ export default defineUserConfig({
 
   alias: {
     // Here you can direct aliases to your own components
-    // For example, here we change the theme’s home page component to HomePage.vue under user .vuepress/components
+    // For example, here we change the theme's home page component to HomePage.vue under user .vuepress/components
     "@theme-hope/components/HomePage": path.resolve(
       __dirname,
       "./components/HomePage.vue"
@@ -299,7 +299,7 @@ Components that provide slots are as follows:
 
 - `BlogHero`: `heroBg`, `heroInfo`
 
-  - `heroInfo` slot will receive `text` `tagline` `image` `imageDark` `heroStyle` `alt` nd `isFullScreen` props.
+  - `heroInfo` slot will receive `text` `tagline` `image` `imageDark` `heroStyle` `alt` and `isFullScreen` props.
   - `heroBg` slot will receive `image` `bgStyle` and `isFullScreen` props.
 
 **NavBar**:

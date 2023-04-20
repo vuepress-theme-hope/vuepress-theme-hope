@@ -174,7 +174,7 @@ docs:
     preview: /assets/image/sforum.png
 
 blog:
-  - name: Mr.Hope’s Blog
+  - name: Mr.Hope's Blog
     desc: Where there is light, there is hope
     logo: https://mrhope.site/logo.svg
     url: https://mrhope.site

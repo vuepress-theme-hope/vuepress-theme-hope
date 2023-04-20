@@ -197,7 +197,7 @@ export default {
 
 :::
 
-## Step by Step Tutorial
+## Step-by-Step Tutorial
 
 - [Tutorial](cookbook/tutorial/README.md)
 

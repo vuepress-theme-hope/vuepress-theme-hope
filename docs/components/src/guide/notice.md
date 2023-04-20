@@ -95,7 +95,7 @@ Also, notice remembering is based on notice title and notice content, you can se
 
 By default, there will be a close button on the right of notice, and users can close it by clicking it.
 
-However if you want users to confirm the notice, you can set `confirm: true`, so that users can only close the notice by hitting action buttons.
+However, if you want users to confirm the notice, you can set `confirm: true`, so that users can only close the notice by hitting action buttons.
 
 :::
 

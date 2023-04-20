@@ -38,11 +38,11 @@ Please set `plugins.feed.atom`, `plugins.feed.json` or `plugins.feed.rss` to `tr
 
 ::: tip
 
-Of course you can enable them all. This is not a choose 1 from 3 situation.
+Of course, you can enable them all. This is not a "choose 1 from 3" situation.
 
 :::
 
-Considering that rare people stick to feed now, this plugin provides a minimal configuration to adjust the automatic generation of detailed feed files. Also it allows you to freely define the output content of the feed.
+Considering that rare people stick to feed now, this plugin provides a minimal configuration to adjust the automatic generation of detailed feed files. Also, it allows you to freely define the output content of the feed.
 
 ## Channel Settings
 

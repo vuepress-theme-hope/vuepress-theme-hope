@@ -11,7 +11,7 @@ category:
   - Get Started
 ---
 
-This is a step by step tutorial for newcomers.
+This is a step-by-step tutorial for newcomers.
 
 <!-- more -->
 

@@ -14,7 +14,7 @@ icon: gears
 
 Function getting article info.
 
-Article info will injected in route meta so that they will be available later in client composables.
+Article info will be injected in route meta so that they will be available later in client composables.
 
 ### filter
 
@@ -135,9 +135,9 @@ Whether enable hotReload in devServer.
 
 ::: note To theme developers
 
-It’s disabled by default because it does have performance impact in sites with a lot of categories and types. And it can slow down hotReload speed when editing Markdown.
+It's disabled by default because it does have performance impact in sites with a lot of categories and types. And it can slow down hotReload speed when editing Markdown.
 
-If users are adding or organizing your categories or tags, you may tell them to enable this, for the rest it’s better to keep it disabled.
+If users are adding or organizing your categories or tags, you may tell them to enable this, for the rest it's better to keep it disabled.
 
 Also, you can try to detect number of pages in users project and decide whether to enable it.
 
@@ -255,7 +255,7 @@ interface BlogTypeOptions {
 
 ## Composition API
 
-You can import the following api from `vuepress-plugin-blog2/client`.
+You can import the following API from `vuepress-plugin-blog2/client`.
 
 - Blog category
 

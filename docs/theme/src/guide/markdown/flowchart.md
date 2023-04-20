@@ -325,7 +325,7 @@ Items in `[]` are optional.
 
 ### Directions
 
-The following directions are available and define the direction the connection will leave the node from. If there are more than one specifiers, it is always the last. All nodes have a default direction making this an optional specification. `<direction>` will be used and one of the below list should be used in its place.
+The following directions are available and define the direction the connection will leave the node from. If there are more than one specifier, it is always the last. All nodes have a default direction making this an optional specification. `<direction>` will be used and one of the below list should be used in its place.
 
 - `left`
 - `right`
@@ -334,7 +334,7 @@ The following directions are available and define the direction the connection w
 
 ### Node Specific Specifiers by Type
 
-Each node variables has optional specifiers, like direction, and some have special specifiers depending on the node type that are defined below. Specifiers are added after the variable name in `()` and separated with `,` like `nodeVar(spec1, spec2)`.
+Each node variable has optional specifiers, like direction, and some have special specifiers depending on the node type that are defined below. Specifiers are added after the variable name in `()` and separated with `,` like `nodeVar(spec1, spec2)`.
 
 - **start**
   **operation**
@@ -376,7 +376,7 @@ Each node variables has optional specifiers, like direction, and some have speci
 
 ### Links
 
-A external link can be added to a node with the `:>` operator.
+An external link can be added to a node with the `:>` operator.
 
 The `st` node is linked with `http://www.google.com` and will open a new tab because `[blank]` is at the end of the URL.
 

@@ -12,7 +12,7 @@ Whether to enable content indexing.
 
 ::: tip
 
-By default only headings and excerpt of the page will be indexed along with your cutom fields, and the content of the page will not be indexed. If you need to index the content of the page, you can set this option to `true`
+By default, only headings and excerpt of the page will be indexed along with your custom fields, and the content of the page will not be indexed. If you need to index the content of the page, you can set this option to `true`
 
 :::
 

@@ -23,11 +23,11 @@ Please set `atom`, `json` or `rss` to `true` in the plugin options according to 
 
 ::: tip
 
-Of course you can enable them all. This is not a choose 1 from 3 situation.
+Of course, you can enable them all. This is not a "choose 1 from 3" situation.
 
 :::
 
-Considering that rare people stick to feed now, this plugin provides a minimal configuration to adjust the automatic generation of detailed feed files. Also it allows you to freely define the output content of the feed.
+Considering that rare people stick to feed now, this plugin provides a minimal configuration to adjust the automatic generation of detailed feed files. Also, it allows you to freely define the output content of the feed.
 
 To correctly generate the link address, you need to set `hostname` (deployment domain name) in the plugin options,
 
