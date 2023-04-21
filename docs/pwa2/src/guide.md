@@ -57,7 +57,7 @@ Based on the requirement of installable [^installable], the plugin provides rela
 
 ### Default cache
 
-By default, the plugin will pre-cache all the `js` `css` and `svg`.And only homepage and 404 `html` are cached.
+By default, the plugin will pre-cache all the `js` `css` and `svg`. And only homepage and 404 `html` are cached.
 
 At the same time, the plugin will cache font files: `**/*.{woff,woff2,eot,ttf,otf}`.
 
@@ -81,11 +81,11 @@ If you have small sites, and would like to make document fully offline available
 
 Though VuePress generates HTML files through SSG[^ssg] for all pages, these files are mainly used for SEO[^seo] and allow you to directly configure the backend without SPA[^spa] Visit any link.
 
-[^ssg]: **SSG**: **S**tatic **S**ite **G**neration,
+[^ssg]: **SSG**: **S**tatic **S**ite **G**eneration,
 [^seo]: **SEO**: **S**earch **E**ngine **O**ptimization.
 [^spa]: **SPA**: **S**ingle **P**age **A**pplication, most of them only have the homepage, and use history mode to handle routing instead of actually navigating between pages.
 
-VuePress is essentially a SPA. This means that you only need to cache the home page and enter from the home page to access all pages normally. Therefore, not caching other HTML by default can effectively reduce the cache size (40% smaller in size) and speed up the SW update speed.
+VuePress is essentially an SPA. This means that you only need to cache the home page and enter from the home page to access all pages normally. Therefore, not caching other HTML by default can effectively reduce the cache size (40% smaller in size) and speed up the SW update speed.
 
 But this also has the disadvantage. If the user enters the site directly from a non-home page, the HTML file for the first page still needs to be loaded from the internet. Also, in offline environment, users can only enter through the homepage and then navigate to the corresponding page by themselves. If they directly access a link, an inaccessible prompt will appear.
 
@@ -93,7 +93,7 @@ But this also has the disadvantage. If the user enters the site directly from a 
 
 ### Size Control
 
-To prevent large files from being included in the pre-cache list, any files larger than 2MB or pictures larger than 1MB will be deleted.
+To prevent large files from being included in the pre-cache list, any files larger than 2 MB or pictures larger than 1 MB will be deleted.
 
 You can customize the maximum file size of the cache (unit: KB) with the `maxSize` option, or change the size limit of the picture (unit: KB) with `maxPicSize`.
 
@@ -103,9 +103,9 @@ We provide the `update` option to control how users receive updates.
 
 The default value of the `update` option is `"available"`, which means that when new content available, the new SW will be installed silently in the background, and a pop-up window will prompt the user that the new content is ready after SW finish installing. Users can choose whether to refresh immediately to view new content.
 
-Under the default behavior, users will still read old content before the SW is ready and they will not be prompted. If your project is still in building stage and you want to alert the user that he may be reading outdated content, you can set this to `"hint"`. This allows users to be notified that new content has been published within seconds after visiting docs. But the negative effect of this is that if the user chooses to update before the new SW is ready, he will need to get all the resources of the page from the internet before the new SW installs and controls the page.
+Under the default behavior, users will still read old content before the SW is ready, and they will not be prompted. If your project is still in building stage, and you want to alert the user that he may be reading outdated content, you can set this to `"hint"`. This allows users to be notified that new content has been published within seconds after visiting docs. But the negative effect of this is that if the user chooses to update before the new SW is ready, he will need to get all the resources of the page from the internet before the new SW installs and controls the page.
 
-If your docs are stable, or you’re hosting a blog and don’t care much about users receiving the latest version right away, you can set this to `"disabled"`, which means that the new SW will be installed completely silently in the background and start waiting, when the pages controlled by the old version SW are all closed, the new SW will start to take control and provide users with new content the next time users visit. This setting can prevent users from being disturbed by the pop-up window in the bottom right corner during the visit.
+If your docs are stable, or you're hosting a blog and don't care much about users receiving the latest version right away, you can set this to `"disabled"`, which means that the new SW will be installed completely silently in the background and start waiting, when the pages controlled by the old version SW are all closed, the new SW will start to take control and provide users with new content the next time users visit. This setting can prevent users from being disturbed by the pop-up window in the bottom right corner during the visit.
 
 To speed up user access under weak or no network conditions through SW, but also want users to always access new content, you can set this option to `"force"`. The behavior of this option is to unregister old SW as soon as a new SW is detected and refresh the page to ensure the user is browsing the latest content. But we strongly recommend not using this option unless necessary, as after a new SW is released, all users will experience unexpected sudden refresh within seconds after entering the site, and they will have to access the document over the internet and install the whole latest SW.
 
@@ -151,9 +151,9 @@ If you already have a `manifest.webmanifest` or `manifest.json` in `.vuepress/pu
 
 ### Automatic Generation
 
-The plugin will use the information from the VuePress plugin API and set the fallback for fields in manifest as much as possible. So you don’t need to set most of the manifest fields.
+The plugin will use the information from the VuePress plugin API and set the fallback for fields in manifest as much as possible. So you don't need to set most of the manifest fields.
 
-If the following fields are not set, they will try to fallback to the following preset values in order.
+If the following fields are not set, they will try to fall back to the following preset values in order.
 
 | Options                     | Default value                                                                                           |
 | --------------------------- | ------------------------------------------------------------------------------------------------------- |

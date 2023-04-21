@@ -16,7 +16,7 @@ Whether to support full GFM syntax.
 
 For full GFM syntax, see [GFM](https://github.github.com/gfm/).
 
-We are not 100% supporting it to be honestly, we only supply it’s syntax including footnote, tasklist, code highlight, image mark and so on.
+We are not 100% supporting it to be honestly, we only supply its syntax including footnote, task list, code highlight, image mark and so on.
 
 Some of the behavior might be different, for example to support Vue syntax, we are not disallowing `<script>` tags. But in most situation, the behavior should be same.
 
@@ -40,7 +40,7 @@ Whether to enable custom container including
 
 ::: warning
 
-The last 4 items conflict with default theme and will override it’s style.
+The last 4 items conflict with default theme and will override its style.
 
 :::
 
@@ -171,7 +171,7 @@ Whether enable figure support.
 - Type: `boolean`
 - Default: `false`
 
-Whether to lazy load every images in page in native way.
+Whether to lazy load every image in page in native way.
 
 ## imgMark
 
@@ -613,7 +613,7 @@ CodePen editor status
 
 ### others
 
-The following are the library links used by the third-party code demo service. Unless your environment cannot visit unpkg or the speed is slow, you probably don’t need to override the default values.
+The following are the library links used by the third-party code demo service. Unless your environment cannot visit unpkg or the speed is slow, you probably don't need to override the default values.
 
 #### demo.babel
 

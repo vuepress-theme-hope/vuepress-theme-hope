@@ -17,7 +17,7 @@ You should create and write Markdown files, so that VuePress can convert them to
 
 ## Markdown Introduction
 
-If you are a new comer and don’t know how to write Markdown, please read [Markdown Intro](../../cookbook/markdown/README.md) and [Markdown Demo](../../cookbook/markdown/demo.md).
+If you are a newcomer and don't know how to write Markdown, please read [Markdown Intro](../../cookbook/markdown/README.md) and [Markdown Demo](../../cookbook/markdown/demo.md).
 
 ## Markdown Config
 
@@ -25,7 +25,7 @@ VuePress introduce configuration for each Markdown page using Frontmatter.
 
 ::: info
 
-Frontmatter is a important concept in VuePress. If you don’t know it, you need to read [Frontmatter Introduction](../../cookbook/vuepress/page.md#frontmatter).
+Frontmatter is an important concept in VuePress. If you don't know it, you need to read [Frontmatter Introduction](../../cookbook/vuepress/page.md#frontmatter).
 
 :::
 

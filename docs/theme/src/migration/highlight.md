@@ -9,14 +9,14 @@ We strongly recommend you to switch to V2 version, as V2 version provides the fo
 
 ## Overview
 
-V2 is coming come together with [_VuePress2_](https://v2.vuepress.vuejs.org), with the power of [_Vite4_](https://vitejs.dev) / [_Webpack5_](https://webpack.js.org) and [_Vue3_](https://vuejs.org).
+V2 is coming together with [_VuePress2_](https://v2.vuepress.vuejs.org), with the power of [_Vite4_](https://vitejs.dev) / [_Webpack5_](https://webpack.js.org) and [_Vue3_](https://vuejs.org).
 
 V2 is a full rewrite including:
 
 - All the components are rewritten with _Composition API in Vue3_
 - All the styles are migrated to _Sass_
 
-Also V2 has a better performance:🚀
+Also, V2 has a better performance:🚀
 
 - DevServer cold start time reduced by **50%**
 - Build memory usage reduced by **65%**
@@ -68,7 +68,7 @@ Also, we are adding new features to VuePressThemeHope@v2.
 
 #### Comment
 
-Valine and Vssue are not longer supported.
+Valine and Vssue are no longer supported.
 
 Instead, we add Artalk, Giscus and Twikoo support besides Waline.
 

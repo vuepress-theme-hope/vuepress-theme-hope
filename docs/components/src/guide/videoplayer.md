@@ -85,7 +85,7 @@ Video type.
 
 ::: note
 
-If your server cannot return a correct mime type for your video files, you should specific it. (e.g.: `video/mp4`)
+If your server cannot return a correct mime type for your video files, you should specify it. (e.g.: `video/mp4`)
 
 :::
 

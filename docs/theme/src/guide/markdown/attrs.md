@@ -57,13 +57,13 @@ export default {
 
 You can use `{attrs}` to add attrs to Markdown content.
 
-For example, if you want a heading2 "Hello World" with a id "say-hello-world", you can write:
+For example, if you want a heading2 "Hello World" with an id "say-hello-world", you can write:
 
 ```md
 ## Hello World {#say-hello-world}
 ```
 
-If you want a image with class "full-width", you can write:
+If you want an image with class "full-width", you can write:
 
 ```md
 ![img](link/to/image.png) {.full-width}
@@ -146,7 +146,7 @@ interface MarkdownItAttrsOptions {
 
 ## Demo
 
-> ALl class are styled with `margin: 4px;padding: 4px;border: 1px solid red;` to show the effect.
+> All class are styled with `margin: 4px;padding: 4px;border: 1px solid red;` to show the effect.
 
 ### Inline (inline)
 
@@ -220,11 +220,11 @@ const a = 1;
 
 ### Softbreak (softbreak)
 
-A line with break  
+A line with break
 {.break}
 
 ```md
-A line with break  
+A line with break
 {.break}
 ```
 

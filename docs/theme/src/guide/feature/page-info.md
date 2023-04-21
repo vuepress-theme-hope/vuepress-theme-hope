@@ -35,7 +35,7 @@ The optional values and corresponding contents of the entry are as follows:
 | `"Word"`        | Word count             | N/A (automatically generated)         | N/A                        |
 | `"PageView"`    | Pageviews              | `pageview` (only available in Waline) | `plugins.comment.pageview` |
 
-By default it will display "Author, Visit Number, Writing Date, Category, Tags, Expect Reading Time".
+By default, it will display "Author, Visit Number, Writing Date, Category, Tags, Expect Reading Time".
 
 ### author <Badge text="Support page config" />
 
@@ -74,7 +74,7 @@ interface AuthorInfo {
 
 ### Writing Date
 
-We recommended to fill it with a standard date format. A standard format is in the form of `xxxx-xx-xx`, such as "April 1, 2020" should be written as `2020-04-01`.
+We recommend filling it with a standard date format. A standard format is in the form of `xxxx-xx-xx`, such as "April 1, 2020" should be written as `2020-04-01`.
 
 Example:
 
@@ -86,7 +86,7 @@ date: 2020-01-01
 
 ::: note
 
-When running in a Git-based project, the writing date will fallback to first commit date of current file.
+When running in a Git-based project, the writing date will fall back to first commit date of current file.
 
 :::
 

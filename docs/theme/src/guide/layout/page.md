@@ -43,7 +43,7 @@ Please see [Breadcrumb](breadcrumb.md).
 
 In desktop mode, a list of article headers will automatically be displayed on the right side of the screen. (They will be placed in the sidebar on mobile devices)
 
-If you don’t want to display the title list on the right in desktop mode, please set `toc: false` in theme options.
+If you don't want to display the title list on the right in desktop mode, please set `toc: false` in theme options.
 
 You can also set it through `toc` in page frontmatter.
 
@@ -82,7 +82,7 @@ Please see [Comment section](../feature/comment.md) for details.
 
 ## Customize Layout
 
-By default the content of each `*.md` file is rendered in a `<div class="page">` container, along with the sidebar, auto-generated edit links and prev/next links. To use a fully custom component in place of the page, you can again specify the component to use using frontmatter:
+By default, the content of each `*.md` file is rendered in a `<div class="page">` container, along with the sidebar, auto-generated edit links and previous/next links. To use a fully custom component in place of the page, you can again specify the component using frontmatter:
 
 ```md
 ---

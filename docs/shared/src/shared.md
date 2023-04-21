@@ -121,7 +121,7 @@ export const isNumber: (val: unknown) => val is number;
 
 ### isObject
 
-Check if a value is a object.
+Check if a value is an object.
 
 ```ts
 /**

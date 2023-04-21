@@ -87,7 +87,7 @@ This option will be reverted to `false` as default value in stable version.
 - Type: `boolean`
 - Default: `true`
 
-Whether to compact historical versions (v1 latest version and v2 beta versions).
+Whether to compact historical versions (v1 the latest version and v2 beta versions).
 
 - Options which can still be polyfilled will keep working while leaving a warning in console.
 - Options which are dropped will leave an error in console.
@@ -105,7 +105,7 @@ This option will be reverted to `false` as default value in stable version.
 
 Whether enable customization support by importing components through alias.
 
-By default the theme will run on performance mode, which all files are bundled and imported directly.
+By default, the theme will run on performance mode, which all files are bundled and imported directly.
 
 If you want to customize theme by overriding components and layouts, set this option to `true` and the theme will load components and layouts with `@theme-hope` alias.
 

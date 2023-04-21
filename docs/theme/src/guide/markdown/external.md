@@ -14,7 +14,7 @@ To using new syntax inside Markdown to enhance content, you can also use `<ifram
 
 ## shields.io
 
-You can use [shields.io](https://shields.io/) to generate lots of dynamic badges, such as the project’s Stars, npm version number, downloads, etc.
+You can use [shields.io](https://shields.io/) to generate lots of dynamic badges, such as the project's Stars, npm version number, downloads, etc.
 
 Input:
 

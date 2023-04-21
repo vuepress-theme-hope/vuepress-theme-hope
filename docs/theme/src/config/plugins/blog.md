@@ -12,7 +12,7 @@ tag:
 
 ## Intro
 
-The theme provides blog feature, and it’s **not** enabled by default.
+The theme provides blog feature, and it's **not** enabled by default.
 
 You can enable blog feature by setting `plugins.blog` to `true` in theme options.
 

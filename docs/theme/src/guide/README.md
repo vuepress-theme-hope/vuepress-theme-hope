@@ -146,7 +146,7 @@ The theme includes the following plugins, you can use them in other themes or di
 
 - <ProjectLink name="md-enhance">vuepress-plugin-md-enhance</ProjectLink>: Provide more Markdown syntax
 
-- <ProjectLink name="photo-swipe">vuepress-plugin-photo-swipe</ProjectLink>: Make the site’s picture support click zoom
+- <ProjectLink name="photo-swipe">vuepress-plugin-photo-swipe</ProjectLink>: Make the site's picture support click zoom
 
 - <ProjectLink name="pwa2">vuepress-plugin-pwa2</ProjectLink>: Enhanced PWA support
 

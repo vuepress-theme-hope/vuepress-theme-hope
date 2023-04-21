@@ -24,6 +24,6 @@ tag:
 
 ## Demo
 
-You can check [theme docs’ config][docs-config].
+You can check [theme docs' config][docs-config].
 
 [docs-config]: https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/docs/theme/src/.vuepress/theme.ts

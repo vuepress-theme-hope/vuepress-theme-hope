@@ -12,7 +12,7 @@ tag:
 
 ## Intro
 
-The theme provide comment support using `vuepress-plugin-comment2`, and it pass `plugin.comment` in theme options to the plugin.
+The theme provide comment support using `vuepress-plugin-comment2`, and it passes `plugin.comment` in theme options to the plugin.
 
 `vuepress-plugin-comment2` currently supports 3 comment services:
 
@@ -23,7 +23,7 @@ The theme provide comment support using `vuepress-plugin-comment2`, and it pass 
 
 ::: note
 
-If you don’t need comment feature, ignore this option.
+If you don't need the comment feature, ignore this option.
 
 :::
 

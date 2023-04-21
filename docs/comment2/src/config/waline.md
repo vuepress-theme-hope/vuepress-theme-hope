@@ -70,7 +70,7 @@ Login mode status, optional values:
 - Type: `number | [number, number]`
 - Default: `0`
 
-Comment word s limit. When a single number is filled in, it 's the maximum number of comment words. No limit when set to `0`.
+Comment word s limit. When a single number is filled in, it's the maximum number of comment words. No limit when set to `0`.
 
 ## metaIcon
 
@@ -84,7 +84,7 @@ Whether import meta icon.
 - Type: `number`
 - Default: `10`
 
-number of comments per page.
+Number of comments per page.
 
 ## search
 

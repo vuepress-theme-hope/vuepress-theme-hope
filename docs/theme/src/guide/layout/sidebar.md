@@ -62,7 +62,7 @@ You can omit the `.md` extension, and paths ending with `/` are inferred as `/RE
 
 ### Object Format
 
-Just like navbar, if you are not satisfied with the page’s icon or feel that the page title is too long, you can configure an object instead. Available configuration items are:
+Just like navbar, if you are not satisfied with the page's icon or feel that the page title is too long, you can configure an object instead. Available configuration items are:
 
 - `text:`: item text
 - `link`: item link
@@ -645,7 +645,7 @@ However, recalculating the sidebar could be expensive for large sites, so the th
 
 During the automatic generation from structure, you can control whether files in the same folder are included through the `index` option in the page Frontmatter, and control how they are sorted through `order`.
 
-When you don’t want the page to be included in the sidebar, you need to set `index: false` in Frontmatter.
+When you don't want the page to be included in the sidebar, you need to set `index: false` in Frontmatter.
 
 By default, the sidebar will be sorted according to the current language according to the title text of the file name. You can control how they are sorted by `order`. When you set a positive number, they will appear at the front of the group, the smaller the more forward, when you set a negative number, it will appear at the back of the group, and the larger the more backward:
 
@@ -669,7 +669,7 @@ By default, the sidebar will be sorted according to the current language accordi
 
 ::: tip
 
-`README.md` is an exception, as long as you don’t disable it from the sidebar via `index: false` or make it as group link, it will always be the first item after sorting.
+`README.md` is an exception, as long as you don't disable it from the sidebar via `index: false` or make it as group link, it will always be the first item after sorting.
 
 :::
 
@@ -733,9 +733,9 @@ In addition to the above implementation, we also added a more powerful `sidebarS
 Available keywords are:
 
 - `readme`: `README.md` or `readme.md` first
-- `order`: positive order first with its value ascendingly, negative order last with its value descendingly
-- `date`: sort by date ascendingly
-- `date-desc`: sort by date descendingly
+- `order`: positive order first with its value ascending, negative order last with its value descending
+- `date`: sort by date ascending
+- `date-desc`: sort by date descending
 - `title`: alphabetically sort by title
 - `filename`: alphabetically sort by filename
 
@@ -824,7 +824,7 @@ Icon support is enabled in the sidebar by default, and the icon of the page will
 
 ## I18n Support
 
-The theme’s navbar supports [I18n](https://v2.vuepress.vuejs.org/guide/i18n.html), so you can set sidebar individually in each language:
+The theme's navbar supports [I18n](https://v2.vuepress.vuejs.org/guide/i18n.html), so you can set sidebar individually in each language:
 
 ::: code-tabs#language
 

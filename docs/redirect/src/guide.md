@@ -35,7 +35,7 @@ redirect({
 
 The plugin will redirect `/foo.html` to `https://example.com/bar.html` and `/baz.html` to `https://example.com/qux.html`.
 
-And when you don’t set `hostname` above, the plugin will redirect `/foo.html` to `/bar.html` and `/baz.html` to `https://example.com/qux.html`.
+And when you don't set `hostname` above, the plugin will redirect `/foo.html` to `/bar.html` and `/baz.html` to `https://example.com/qux.html`.
 
 :::
 
@@ -112,7 +112,7 @@ So when a user accesses `/` or `/page.html`, they are automatically redirected t
 
 Sometimes, users may add more than one language to the system settings. By default, when a site supports a preferred language, but the page not exists for the preferred language, the plugin attempts to match the alternate language set by the user.
 
-If you don't need to fallback to the user's alternate language, but directly match the user's preferred language, set `localeFallback: false` in the plugin options.
+If you don't need to fall back to the user's alternate language, but directly match the user's preferred language, set `localeFallback: false` in the plugin options.
 
 :::
 
@@ -177,4 +177,4 @@ Options:
 
 You need to pass in VuePress project source dir and also set the `hostname` option. The redirect helper cli will initialize your VuePress project to get pages, then generate and output the redirect html files to the output directory.
 
-By default the plugin will output to `.vuepress/redirect` directory under source directory. And you should upload it to your original site to provide redirection.
+By default, the plugin will output to `.vuepress/redirect` directory under source directory. And you should upload it to your original site to provide redirection.

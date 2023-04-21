@@ -69,7 +69,7 @@ We are enabling lazyload using native HTML5 features, so your browser must suppo
 
 ## Image Mark
 
-GFM supports marking pictures by ID suffix so that pictures are only displayed in a specific mode. We support both GitHub’s markup and the easy markup `#light` and `#dark`.
+GFM supports marking pictures by ID suffix so that pictures are only displayed in a specific mode. We support both GitHub's markup and the easy markup `#light` and `#dark`.
 
 You can enable it using `imgMark` option.
 

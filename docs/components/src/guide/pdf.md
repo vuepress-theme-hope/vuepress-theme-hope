@@ -28,9 +28,9 @@ PDF viewer starting with page 2 and without toolbar:
 
 ## PDFJS Viewer
 
-Not all browsers support embed PDf viewer (E.g.: No mobile browser supports this now), so we add support for PDFJS Viewer.
+Not all browsers support embed PDF viewer (E.g.: No mobile browser supports this now), so we add support for PDFJS Viewer.
 
-Since PDFJS Viewer is large, you will need to manually download it from [Github](https://github.com/mozilla/pdf.js/releases):
+Since PDFJS Viewer is large, you will need to manually download it from [GitHub](https://github.com/mozilla/pdf.js/releases):
 
 - If you only want to add support for modern browsers on mobile, download `pdfjs-3.1.81-dist.zip`
 - If you want to add support for most browsers, download `pdfjs-3.1.81-legacy-dist.zip`

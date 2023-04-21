@@ -71,7 +71,7 @@ Set social links.
 - If the social media icon is available below, you can set `MediaName: MediaLink` directly.
 - Otherwise, you should pass in a tuple `MediaName: [MediaLink , MediaSvgIconString or MediaSvgIconPath]`,
 
-  The second element in the tuple must be a valid SVG string or a full path of a existing SVG file.
+  The second element in the tuple must be a valid SVG string or a full path of an existing SVG file.
 
 ::: info Available Social Media
 
@@ -191,7 +191,7 @@ Whether to encrypt globally.
 - Type: `string | string []`
 - Required: No
 
-Admin password with highest authority, you can set multiple by using array.
+Admin password with the highest authority, you can set multiple ones by using array.
 
 ### encrypt.config
 

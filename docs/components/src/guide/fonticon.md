@@ -8,7 +8,7 @@ head:
 
 This component is used to display font icons.
 
-You can use it in Markdown to add an icon。
+You can use it in Markdown to add an icon.
 
 <!-- more -->
 
@@ -63,7 +63,7 @@ To keep it simple, we add built-in keywords `"iconfont"`, `"iconify"`, `"fontawe
 
 If you use this plugin for commercial project documentation, `iconfont` is **not recommended** as iconfont itself is a study/share platform for designers and developers.
 
-Every icon is uploaded by users and you must get authorized from the author for commercial usage. Also there could be chance where the uploader obeys usage term. and upload icons where its copyright is at 3rd party.
+Every icon is uploaded by users and you must get authorized from the author for commercial usage. Also, there could be chance where the uploader obeys usage term. And upload icons where its copyright is at 3rd party.
 
 :::
 
@@ -73,7 +73,7 @@ Every icon is uploaded by users and you must get authorized from the author for 
 
 Normally, there should be a common prefix for your icon class, for `iconfont` icon classes are `iconfont icon-<ICON-NAME>` and for fontawesome free icon classes are `fas fa-<icon-name>`. So when you are setting the above `assets` option with keywords or a single link generated from iconfont website, fontawesome kit or fontawesome CDN, the plugin recognize those and set prefix as `"iconfont icon-"` and `"fas fa-"` automatically for you.
 
-In other cases where you use iconify or your own url, you can manually set this options yourself. After all writing `icon: apple` is always better then something like `icon: iconfont icon-apple`, `icon: mdi:icon-apple` or `icon: fa-solid fa-apple`.
+In other cases where you use iconify or your own url, you can manually set this options yourself. After all writing `icon: apple` is always better than something like `icon: iconfont icon-apple`, `icon: mdi:icon-apple` or `icon: fa-solid fa-apple`.
 
 ## Browsing Icons
 
@@ -101,7 +101,7 @@ The designer uploads the icon to the Iconfont platform, and the user can customi
 
 #### How to use
 
-First, you need to create a new project to set and manage your website’s icons:
+First, you need to create a new project to set and manage your website's icons:
 
 1. Log in to Iconfont using GitHub or Weibo.
 1. Find "Resources → My Projects" at the top of the website, and click the "New Project" icon in the upper right corner.

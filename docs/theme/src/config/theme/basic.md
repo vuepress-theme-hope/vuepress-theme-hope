@@ -26,7 +26,7 @@ Domain which the site will be deployed to.
 
 ::: tip
 
-It should contain full protocol (eg: `https://example.com`).
+It should contain full protocol (e.g. `https://example.com`).
 
 :::
 
@@ -282,7 +282,7 @@ Normally, you will expect:
 - devServer can be started as soon as possible
 - changes in markdown can take effect fast on the devServer, and avoid restarting the entire VuePress application.
 
-In order to achieve this expectation, the theme needs to skip some time-consuming operations on the devServer, and it needs to disable some time-consuming functions that are triggered by page modifications on the devServer to improve the speed of project startup and hot update. At the same time, because some modifications will change the underlying raw data of VuePress, these modifications will cause the web page refresh and reload the entire VuePress application. In order to avoid frequent page reloads (i.e.: Page refresh is triggered and you are getting a blank screen for a few seconds) when modifying Markdown, the theme disables some features on the devServer.
+In order to achieve this expectation, the theme needs to skip some time-consuming operations on the devServer, and it needs to disable some time-consuming functions that are triggered by page modifications on the devServer to improve the speed of project startup and hot update. At the same time, because some modifications will change the underlying raw data of VuePress, these modifications will cause the web page refresh and reload the entire VuePress application. In order to avoid frequent page reloads (i.e.: Page refresh is triggered, and you are getting a blank screen for a few seconds) when modifying Markdown, the theme disables some features on the devServer.
 
 By default, devServer has the following limitations:
 
