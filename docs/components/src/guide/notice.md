@@ -14,8 +14,7 @@ You can set multiple notices for different paths in the site, to do this, set `r
 
 Each notice options needs to contain a `path` or `match` option, which is used to match the path. The `path` option is a string, which matches all paths starting with this, and the `match` option is a regular expression, which matches all paths that match.
 
-Other announcement configurations include:
-Notice configuration includes:
+Other notice configuration includes:
 
 - `title`: Notice title, support both text and HTMLString
 - `content`: Notice content, support both text and HTMLString
