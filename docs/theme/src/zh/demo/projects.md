@@ -178,6 +178,7 @@ docs:
     logo: https://clay-wangzhi.com/lufei.jpg
     url: https://clay-wangzhi.com
     repo: https://github.com/clay-wangzhi/wiki
+    preview: /assets/image/sre-clay.jpg
 
 blog:
   - name: Mr.Hope’s Blog
