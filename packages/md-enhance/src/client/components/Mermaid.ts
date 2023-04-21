@@ -16,6 +16,8 @@ import "../styles/mermaid.scss";
 declare const MARKDOWN_ENHANCE_DELAY: number;
 declare const MERMAID_OPTIONS: MermaidConfig;
 
+const DEFAULT_CHART_OPTIONS = { useMaxWidth: false };
+
 const getThemeVariables = (isDarkmode: boolean): Record<string, unknown> => {
   return {
     dark: isDarkmode,
@@ -101,18 +103,16 @@ export default defineComponent({
         import(/* webpackChunkName: "mermaid" */ "@mermaid"),
         new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
       ]).then(async ([{ default: mermaid }]) => {
-        const chartOptions = { useMaxWidth: false };
-
         mermaid.initialize({
           // @ts-ignore
           theme: "base",
           themeVariables: getThemeVariables(isDarkmode.value),
-          flowchart: chartOptions,
-          sequence: chartOptions,
-          journey: chartOptions,
-          gantt: chartOptions,
-          er: chartOptions,
-          pie: chartOptions,
+          flowchart: DEFAULT_CHART_OPTIONS,
+          sequence: DEFAULT_CHART_OPTIONS,
+          journey: DEFAULT_CHART_OPTIONS,
+          gantt: DEFAULT_CHART_OPTIONS,
+          er: DEFAULT_CHART_OPTIONS,
+          pie: DEFAULT_CHART_OPTIONS,
 
           ...MERMAID_OPTIONS,
           startOnLoad: false,

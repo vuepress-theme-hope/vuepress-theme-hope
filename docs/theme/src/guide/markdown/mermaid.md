@@ -67,6 +67,10 @@ export default {
 
 Please see [mermaid](https://mermaid.js.org/).
 
+## Advanced
+
+Besides setting `true` to enable mermaid, you can also pass in an object to customize the mermaid configuration.
+
 ## Demo
 
 ### Flowchart

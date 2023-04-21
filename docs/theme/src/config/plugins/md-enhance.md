@@ -328,7 +328,7 @@ Whether to enable flowchart support
 - Type: `MermaidConfig | boolean`
 - Default: `false`
 
-Whether to enable [Mermaid](https://mermaid.js.org/) support.
+Whether to enable [Mermaid](https://mermaid.js.org/) support, you can pass in a config object to customize the behavior of Mermaid.
 
 ### stylize
 

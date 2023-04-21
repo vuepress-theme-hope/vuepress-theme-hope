@@ -59,6 +59,10 @@ export default {
 
 详见 [mermaid 官方文档](https://mermaid.js.org/)。
 
+## 高级
+
+除了设置 `true` 以开启 Mermaid 之外，你可以传入一个对象来自定义 Mermaid 选项。
+
 ## 例子
 
 ### 流程图
