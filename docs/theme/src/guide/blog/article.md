@@ -21,7 +21,7 @@ All articles will be added to the article list by default and rendered under the
 ![Article list](./assets/article-list-light.png#light)
 ![Article list](./assets/article-list-dark.png#dark)
 
-If you don’t want the list to contain some specific articles, just set the `article` to `false` in the frontmatter of the article, or you may customize it through `plugins.blog.filter` in theme options.
+If you don't want the list to contain some specific articles, just set the `article` to `false` in the frontmatter of the article, or you may customize it through `plugins.blog.filter` in theme options.
 
 To sticky a specific article in the article list, just set `sticky` to `true` in the frontmatter of the article.
 
@@ -41,7 +41,7 @@ Meanwhile, if the excerpt you want to set is not what you want to show at the be
 
 ### Automatically Generate Excerpt
 
-By default, the theme extract article excerpts for you automatically,.
+By default, the theme extract article excerpts for you automatically.
 
 If you want the theme only display excerpt which you specify, set `plugins.blog.excerptLength: 0` in theme options.
 
@@ -91,7 +91,7 @@ By default, the type list path will be `/key/` (with `key` replaced by your actu
 
 :::
 
-Also you need to set `blogLocales[key]` in theme locales with the actual type name, so that the theme can display the type name correctly.
+Also, you need to set `blogLocales[key]` in theme locales with the actual type name, so that the theme can display the type name correctly.
 
 To get start with, we would like to show you some examples.
 
@@ -101,7 +101,7 @@ To get start with, we would like to show you some examples.
 
    All slide pages should have `layout: Slide` in frontmatter. And the sequence doesn't matter.
 
-1. Adding a original type.
+1. Adding an original type.
 
 You shall set the following options:
 

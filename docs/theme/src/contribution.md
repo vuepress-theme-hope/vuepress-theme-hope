@@ -100,7 +100,7 @@ The project is a monorepo, managed by pnpm.
 
 ## Document Modification
 
-You can find the corresponding project in the docs directory so you can modify the corresponding Markdown directly.
+You can find the corresponding project in the docs directory, so you can modify the corresponding Markdown directly.
 
 After ensuring that the `pnpm lint` and `pnpm lint:md` commands emit no errors, you can commit to GitHub to open a PR.
 
@@ -183,6 +183,6 @@ The project uses `husky` to add Git Hooks for verification:
 
 If you cannot pass the above Git Hooks, you will not be able to complete `git commit`.
 
-If you have already contributed something, but cannot make a commit and don’t know how to fix it, you can add the `--no-verify` flag when committing to bypass Git Hooks.
+If you have already contributed something, but cannot make a commit and don't know how to fix it, you can add the `--no-verify` flag when committing to bypass Git Hooks.
 
 :::

@@ -184,7 +184,7 @@ Markdown 也允许你只在整个段落的第一行最前面加上 `>` :
 > 1. This is the first list item.
 > 1. This is the second list item.
 >
-> Here’s some example code:
+> Here's some example code:
 >
 >     return shell_exec("echo $input | $markdown_script");
 ```
@@ -679,13 +679,13 @@ A backtick-delimited string in a code span: `` `foo` ``
 在代码码区段内，`&` 和方括号都会被转成 HTML 实体，这样会比较容易插入 HTML 原始码，Markdown 会把下面这段:
 
 ```md
-Please don’t use any `<blink>` tags.
+Please don't use any `<blink>` tags.
 ```
 
 转为:
 
 ```html
-<p>Please don’t use any <code>&lt;blink&gt;</code> tags.</p>
+<p>Please don't use any <code>&lt;blink&gt;</code> tags.</p>
 ```
 
 你也可以这样写:

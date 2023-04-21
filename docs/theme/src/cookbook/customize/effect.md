@@ -14,7 +14,7 @@ This tutorial guides you how to customize theme effects.
 
 ## Clear Effects
 
-By default the theme will:
+By default, the theme will:
 
 - Use color list to decorate categories and tags
 - Add animation when switching pages and elements

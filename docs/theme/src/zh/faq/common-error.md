@@ -114,9 +114,9 @@ CloudFlare 的 Auto Minify 会错误的对 HTML 的空格和换行进行处理�
 
 `max_old_space_size` 以 MB 为单位，默认情况下 `max_old_space_size` 是机器内存大小的一半。该值可以大于你机器的实际内存大小。
 
-- 对于小型项目，通常不会超过 2GB (2048MB)。
-- 对于大型项目，通常不会超过 4GB (4048MB)
-- 如果你在大型网站上同时启用博客功能和大量 Markdown 增强功能，通常不会超过 8GB (8192MB)
+- 对于小型项目，通常不会超过 2 GB (2048 MB)。
+- 对于大型项目，通常不会超过 4 GB (4048 MB)
+- 如果你在大型网站上同时启用博客功能和大量 Markdown 增强功能，通常不会超过 8 GB (8192 MB)
 
 ::: details 增加方法
 
@@ -133,7 +133,7 @@ CloudFlare 的 Auto Minify 会错误的对 HTML 的空格和换行进行处理�
 
 :::
 
-## `xxx isn’t assign with a lang, and will return 'en-US' instead.`
+## `xxx isn't assign with a lang, and will return 'en-US' instead.`
 
 如果你在开发进程启动时看到 `xxx is not assign with a lang, and will return 'en-US'.`，请检查是否为每种语言设置了语言。
 

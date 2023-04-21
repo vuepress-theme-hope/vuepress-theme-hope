@@ -1,6 +1,6 @@
 # Badge
 
-A badge which allows you to customize it’s color.
+A badge which allows you to customize it's color.
 
 You can use it in Markdown to add some status for titles or links.
 

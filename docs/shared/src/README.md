@@ -41,7 +41,7 @@ npm i -D vuepress-shared
 
 VuePress is running on both Node.js Side and Browser Side, we called it `node` and `client`.
 
-So you should be aware to import the correct file, as Node.js has build-in modules and has ability to access file system, and browser has global variables like `window` or `navigator`.
+So you should be aware to import the correct file, as Node.js has built-in modules and has ability to access file system, and browser has global variables like `window` or `navigator`.
 
 :::
 

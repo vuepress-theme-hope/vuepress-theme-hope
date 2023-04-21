@@ -6,7 +6,7 @@ article: false
 
 ## Tutorial
 
-Here is a step by step tutorial for newcomers:
+Here is a step-by-step tutorial for newcomers:
 
 1. [Runtime Setup](tutorial/env.md)
 

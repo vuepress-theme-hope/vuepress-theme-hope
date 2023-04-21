@@ -10,16 +10,16 @@ title: SiteInfo
 
 基础站点信息:
 
-<SiteInfo name="Mr.Hope’s Blog" url="https://mrhope.site" preview="https://theme-hope.vuejs.press/assets/image/mrhope.jpg" />
+<SiteInfo name="Mr.Hope's Blog" url="https://mrhope.site" preview="https://theme-hope.vuejs.press/assets/image/mrhope.jpg" />
 
 ```md
-<SiteInfo name="Mr.Hope’s Blog" url="https://mrhope.site" preview="https://theme-hope.vuejs.press/assets/image/mrhope.jpg" />
+<SiteInfo name="Mr.Hope's Blog" url="https://mrhope.site" preview="https://theme-hope.vuejs.press/assets/image/mrhope.jpg" />
 ```
 
 有更多属性的站点信息:
 
 <SiteInfo
-  name="Mr.Hope’s Blog"
+  name="Mr.Hope's Blog"
   desc="Where there is light, there is hope"
   url="https://mrhope.site"
   logo="https://mrhope.site/logo.svg"
@@ -29,7 +29,7 @@ title: SiteInfo
 
 ```md
 <SiteInfo
-  name="Mr.Hope’s Blog"
+  name="Mr.Hope's Blog"
   desc="Where there is light, there is hope"
   url="https://mrhope.site"
   logo="https://mrhope.site/logo.svg"

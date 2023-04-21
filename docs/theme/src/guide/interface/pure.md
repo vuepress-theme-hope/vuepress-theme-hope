@@ -8,6 +8,6 @@ tag:
   - Interface
 ---
 
-If your site is a documentation-only site and you prefer a clean style, you can enable pure mode by setting `pure: true` in theme options.
+If your site is a documentation-only site, and you prefer a clean style, you can enable pure mode by setting `pure: true` in theme options.
 
 In this mode, we disable some fancy animations and some colors and just provide functionality.

@@ -51,7 +51,7 @@ The following are the `<meta>` tags and their value injected into `<head>` by de
 
 ## Setting Tags Directly
 
-You can configure the `head` option in the page’s frontmatter to add specific tags to the page `<head>` to enhance SEO.
+You can configure the `head` option in the page's frontmatter to add specific tags to the page `<head>` to enhance SEO.
 For example:
 
 ```md
@@ -158,18 +158,18 @@ Please note that the plugin does not generate JSON-LD for non-article pages, so 
 
 ## Canonical Link
 
-If you are deploying your content to different sites, or same content under different URLs, you may need to set `canonical` option to provide a "Canonical Link" for your page. You can either set a string which will be append before page route link, or adding a custom function `(page: Page) => string | null` to return a canonical link if necessary.
+If you are deploying your content to different sites, or same content under different URLs, you may need to set `canonical` option to provide a "Canonical Link" for your page. You can either set a string which will be appended before page route link, or adding a custom function `(page: Page) => string | null` to return a canonical link if necessary.
 
 ::: tip Example
 
-If your sites are deploy under docs directory in `example.com`, but available in:
+If your sites are deployed under docs directory in `example.com`, but available in:
 
 - `http://example.com/docs/xxx`
 - `https://example.com/docs/xxx`
 - `http://www.example.com/docs/xxx`
 - `https://www.example.com/docs/xxx` (primary)
 
-To let search engine results always be the primary choice, you may need to set `canonical` to `https://www.example.com/docs/`, so that search engine will know that the fourth URl is prefered to be indexed.
+To let search engine results always be the primary choice, you may need to set `canonical` to `https://www.example.com/docs/`, so that search engine will know that the fourth URL is preferred to be indexed.
 
 :::
 
@@ -211,7 +211,7 @@ As an internet marketing strategy, SEO considers how search engines work, the co
 
 ## Related Documents
 
-- [Open Content Protocol OGP](https://ogp.me/) (**O**pen **G**raph **Pr**otocal)
+- [Open Content Protocol OGP](https://ogp.me/) (**O**pen **G**raph **Pr**otocol)
 
   This plugin perfectly supports this protocol and will automatically generate `<meta>` tags that conform to the protocol.
 
@@ -221,7 +221,7 @@ As an internet marketing strategy, SEO considers how search engines work, the co
 
 - [RDFa 1.1](https://www.w3.org/TR/rdfa-primer/)
 
-  RDFa mainly marks HTML structure. This is what the plugin cannot support. <ProjectLink type="theme" name="hope">vuepress-theme-hope</ProjectLink> uses this feature to pass Google’s rich media structure test. You can consider using it.
+  RDFa mainly marks HTML structure. This is what the plugin cannot support. <ProjectLink type="theme" name="hope">vuepress-theme-hope</ProjectLink> uses this feature to pass Google's rich media structure test. You can consider using it.
 
 - [Schema.Org](https://schema.org/)
 

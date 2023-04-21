@@ -64,7 +64,7 @@ export default defineUserConfig({
 
 `vuepress-theme-hope` adds a back-to-top button with progress bar which will display after scrolling down 100px by default.
 
-You can set `backToTop: false` in theme options to disable it, or set it with an object to customize it's threshold distance and progress bar display:
+You can set `backToTop: false` in theme options to disable it, or set it with an object to customize its threshold distance and progress bar display:
 
 ```ts
 interface BackToTopOptions {

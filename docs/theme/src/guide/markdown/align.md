@@ -75,7 +75,7 @@ Contents to align justify
 
 ::::: details Nesting and escaping
 
-- Nestings can be done by increasing marker number of outer container:
+- Nesting can be done by increasing marker number of outer container:
 
   ```md
   :::: center
@@ -92,7 +92,7 @@ Contents to align justify
   :::: center
   Center contents...
   ::: left
-  Left contents..
+  Left contents...
   :::
   Center contents...
   ::::

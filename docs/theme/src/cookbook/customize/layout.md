@@ -14,7 +14,7 @@ This tutorial guides you how to customize theme layout.
 
 ## Setting Theme Options
 
-The theme provide many layout-related options for you to customize the layout of the theme. For details about these options, see [Theme Configuration → Layout](../../config/theme/layout.md).
+The theme provides many layout-related options for you to customize the layout of the theme. For details about these options, see [Theme Configuration → Layout](../../config/theme/layout.md).
 
 ## Modify SCSS Variables
 

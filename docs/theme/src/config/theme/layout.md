@@ -204,9 +204,9 @@ You can:
 Available keywords are:
 
 - `readme`: `README.md` or `readme.md` first
-- `order`: positive order first with its value ascendingly, negative order last with its value descendingly
-- `date`: sort by date ascendingly
-- `date-desc`: sort by date descendingly
+- `order`: positive order first with its value ascending, negative order last with its value descending
+- `date`: sort by date ascending
+- `date-desc`: sort by date descending
 - `title`: alphabetically sort by title
 - `filename`: alphabetically sort by filename
 
@@ -305,7 +305,7 @@ Pattern of edit link. While `:repo` `:branch` `:path` will be automatically repl
 
 ::: note
 
-The theme provide built-in support for GitHub, Gitlab, Gitee and Bitbucket.
+The theme provides built-in support for GitHub, Gitlab, Gitee and Bitbucket.
 
 :::
 
@@ -367,7 +367,7 @@ Home path of current locale, used as the link of back-to-home and navbar logo.
 - Type: `boolean`
 - Default: `false`
 
-Whether use RTL layout.
+Whether to use RTL layout.
 
 ### toc {#toc-heading}
 

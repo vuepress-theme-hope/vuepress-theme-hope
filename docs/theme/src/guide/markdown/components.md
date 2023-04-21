@@ -27,7 +27,7 @@ Available components:
 
 By default, `<Badge />` and `<FontIcon />` is enabled.
 
-To enable components, you should set `plugin.components.components` with an array of components name.
+To enable components, you should set `plugin.components.components` with an array of components names.
 
 <!-- more -->
 
@@ -337,16 +337,16 @@ A repl link:
 
 Basic site info:
 
-<SiteInfo name="Mr.Hope’s Blog" url="https://mrhope.site" preview="https://theme-hope.vuejs.press/assets/image/mrhope.jpg" />
+<SiteInfo name="Mr.Hope's Blog" url="https://mrhope.site" preview="https://theme-hope.vuejs.press/assets/image/mrhope.jpg" />
 
 ```md
-<SiteInfo name="Mr.Hope’s Blog" url="https://mrhope.site" preview="https://theme-hope.vuejs.press/assets/image/mrhope.jpg" />
+<SiteInfo name="Mr.Hope's Blog" url="https://mrhope.site" preview="https://theme-hope.vuejs.press/assets/image/mrhope.jpg" />
 ```
 
 Site info with more properties:
 
 <SiteInfo
-  name="Mr.Hope’s Blog"
+  name="Mr.Hope's Blog"
   desc="Where there is light, there is hope"
   url="https://mrhope.site"
   logo="https://mrhope.site/logo.svg"
@@ -356,7 +356,7 @@ Site info with more properties:
 
 ```md
 <SiteInfo
-  name="Mr.Hope’s Blog"
+  name="Mr.Hope's Blog"
   desc="Where there is light, there is hope"
   url="https://mrhope.site"
   logo="https://mrhope.site/logo.svg"
