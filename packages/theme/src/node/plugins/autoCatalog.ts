@@ -5,6 +5,8 @@ import {
 } from "vuepress-plugin-auto-catalog";
 import { isPlainObject } from "vuepress-shared/node";
 
+import { ArticleInfoType } from "../index.js";
+
 /**
  * @private
  *
@@ -21,9 +23,9 @@ export const getAutoCatalogPlugin = (
     ...(isPlainObject(autoCatalog) ? autoCatalog : {}),
     // inject info
     iconComponent: "HopeIcon",
-    titleRouteMetaKey: "t",
-    iconRouteMetaKey: "i",
-    indexRouteMetaKey: "I",
-    orderRouteMetaKey: "O",
+    titleRouteMetaKey: ArticleInfoType.title,
+    iconRouteMetaKey: ArticleInfoType.icon,
+    indexRouteMetaKey: ArticleInfoType.index,
+    orderRouteMetaKey: ArticleInfoType.order,
   });
 };

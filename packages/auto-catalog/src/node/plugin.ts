@@ -19,10 +19,10 @@ export const autoCatalogPlugin =
     const {
       component,
       iconComponent,
-      iconRouteMetaKey = "i",
-      indexRouteMetaKey = "I",
+      iconRouteMetaKey = "icon",
+      indexRouteMetaKey = "index",
       locales,
-      orderRouteMetaKey = "O",
+      orderRouteMetaKey = "order",
       titleRouteMetaKey = "title",
     } = options;
 

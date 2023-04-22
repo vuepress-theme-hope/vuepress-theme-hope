@@ -9,11 +9,11 @@ export const injectCatalogInformation = (
   {
     component,
     iconGetter,
-    iconRouteMetaKey = "i",
+    iconRouteMetaKey = "icon",
     shouldIndex,
-    indexRouteMetaKey = "I",
+    indexRouteMetaKey = "index",
     orderGetter,
-    orderRouteMetaKey = "O",
+    orderRouteMetaKey = "order",
     titleGetter = (page): string => page.title,
     titleRouteMetaKey = "title",
   }: AutoCatalogOptions

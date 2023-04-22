@@ -1,5 +1,6 @@
 import { type App, type Page, type PluginObject } from "@vuepress/core";
 import {
+  endsWith,
   injectLocalizedDate,
   isPlainObject,
   keys,
@@ -56,17 +57,19 @@ export const injectPageInfo = (page: Page<ThemePageData>): void => {
     page.routeMeta[ArticleInfoType.icon] = frontmatter.icon;
 
   // catalog related
-  if (isPlainObject(frontmatter.dir)) {
-    if ("order" in frontmatter.dir)
-      page.routeMeta[ArticleInfoType.order] = (
-        frontmatter as ThemeNormalPageFrontmatter
-      ).dir!.order;
+  if (endsWith(page.path, "/")) {
+    if (isPlainObject(frontmatter.dir)) {
+      if ("order" in frontmatter.dir)
+        page.routeMeta[ArticleInfoType.order] = (
+          frontmatter as ThemeNormalPageFrontmatter
+        ).dir!.order;
 
-    if (
-      "index" in frontmatter.dir &&
-      (frontmatter as ThemeNormalPageFrontmatter).dir!.index === false
-    )
-      page.routeMeta[ArticleInfoType.index] = 0;
+      if (
+        "index" in frontmatter.dir &&
+        (frontmatter as ThemeNormalPageFrontmatter).dir!.index === false
+      )
+        page.routeMeta[ArticleInfoType.index] = 0;
+    }
   } else {
     if ("order" in frontmatter)
       page.routeMeta[ArticleInfoType.order] = frontmatter.order;
