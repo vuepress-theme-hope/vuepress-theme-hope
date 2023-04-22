@@ -52,7 +52,7 @@ title: Chart
 ::: chart A bar chart
 
 ```js
-module.exports = {
+const config = {
   type: "bar",
   data: {
     labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
@@ -95,7 +95,7 @@ module.exports = {
 ::: chart A bar chart
 
 ```javascript
-module.exports = {
+config = {
   type: "bar",
   data: {
     labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],

@@ -46,7 +46,7 @@ describe("echarts", () => {
 ::: echarts A line chart
 
 \`\`\`js
-module.exports = {
+const option = {
   xAxis: {
     type: "category",
     data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
@@ -80,7 +80,7 @@ module.exports = {
 ::: echarts A line chart
 
 \`\`\`javascript
-module.exports = {
+const option = {
   xAxis: {
     type: "category",
     data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],

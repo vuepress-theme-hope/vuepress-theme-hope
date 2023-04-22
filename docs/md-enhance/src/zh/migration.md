@@ -49,7 +49,7 @@ icon: code-compare
   ::: chart 标题
 
   ```js
-  module.exports = {
+  const config = {
     // chart.js 配置
   };
   ```
@@ -75,7 +75,7 @@ icon: code-compare
   ::: echarts 标题
 
   ```js
-  module.exports = {
+  const option = {
     // echarts 配置
   };
   ```

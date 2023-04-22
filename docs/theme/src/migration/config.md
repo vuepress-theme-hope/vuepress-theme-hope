@@ -281,7 +281,7 @@ Move all plugin related options under `plugins`.
     ::: chart Title
 
     ```js
-    module.exports = {
+    const config = {
       // chart.js config
     };
     ```
@@ -307,7 +307,7 @@ Move all plugin related options under `plugins`.
     ::: echarts Title
 
     ```js
-    module.exports = {
+    const option = {
       // chart.js config
     };
     ```

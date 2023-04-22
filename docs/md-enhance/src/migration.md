@@ -49,7 +49,7 @@ You can pass the second argument `true` to enable legacy mode when calling `mdEn
   ::: chart Title
 
   ```js
-  module.exports = {
+  const config = {
     // chart.js config
   };
   ```
@@ -75,7 +75,7 @@ You can pass the second argument `true` to enable legacy mode when calling `mdEn
   ::: echarts Title
 
   ```js
-  module.exports = {
+  const option = {
     // chart.js config
   };
   ```

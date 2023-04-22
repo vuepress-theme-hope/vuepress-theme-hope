@@ -4,6 +4,7 @@ export default [
   ...bundle("node/index", {
     external: [
       /^@mdit\/plugin-/,
+      "js-yaml",
       "markdown-it/lib/token.js",
       "markdown-it/lib/helpers/parse_link_label.js",
     ],
@@ -32,6 +33,7 @@ export default [
 
     {
       external: [
+        "@mermaid",
         "@vue/repl",
         "balloon-css/balloon.css",
         "chart.js/auto",

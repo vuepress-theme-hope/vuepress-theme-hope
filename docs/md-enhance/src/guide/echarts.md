@@ -93,7 +93,7 @@ const randomData = () => {
 
 for (let i = 0; i < 1000; i++) data.push(randomData());
 
-option = {
+const option = {
   tooltip: {
     trigger: "axis",
     formatter: function (params) {
@@ -195,7 +195,7 @@ const randomData = () => {
 
 for (let i = 0; i < 1000; i++) data.push(randomData());
 
-option = {
+const option = {
   tooltip: {
     trigger: "axis",
     formatter: function (params) {
@@ -284,7 +284,7 @@ const data = [];
 
 for (let i = 0; i < 5; i++) data.push(Math.round(Math.random() * 200));
 
-option = {
+const option = {
   xAxis: {
     max: "dataMax",
   },
@@ -363,7 +363,7 @@ const data = [];
 
 for (let i = 0; i < 5; i++) data.push(Math.round(Math.random() * 200));
 
-option = {
+const option = {
   xAxis: {
     max: "dataMax",
   },
@@ -651,9 +651,9 @@ for (let i = 0; i <= 100; i++) {
   data.push([r, theta]);
 }
 
-height = 450;
+const height = 450;
 
-option = {
+const option = {
   legend: {
     data: ["line"],
   },
@@ -696,9 +696,9 @@ for (let i = 0; i <= 100; i++) {
   data.push([r, theta]);
 }
 
-height = 450;
+const height = 450;
 
-option = {
+const option = {
   legend: {
     data: ["line"],
   },
@@ -864,7 +864,7 @@ const calculateMA = (dayCount) => {
 
   return result;
 };
-option = {
+const option = {
   tooltip: {
     trigger: "axis",
     axisPointer: {
@@ -1177,7 +1177,7 @@ const calculateMA = (dayCount) => {
 
   return result;
 };
-option = {
+const option = {
   tooltip: {
     trigger: "axis",
     axisPointer: {
@@ -1447,7 +1447,7 @@ option = {
 ::: echarts
 
 ```js
-option = {
+const option = {
   legend: {},
   tooltip: {
     trigger: "axis",
@@ -1510,7 +1510,7 @@ option = {
   ],
 };
 
-height = 800;
+const height = 800;
 ```
 
 :::
@@ -1521,7 +1521,7 @@ height = 800;
 ::: echarts
 
 ```js
-option = {
+const option = {
   legend: {},
   tooltip: {
     trigger: "axis",
@@ -1584,7 +1584,7 @@ option = {
   ],
 };
 
-height = 800;
+const height = 800;
 ```
 ````
 

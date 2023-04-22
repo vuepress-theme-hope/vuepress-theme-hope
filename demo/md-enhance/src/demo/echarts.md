@@ -32,7 +32,7 @@ title: ECharts
 ::: echarts A line chart
 
 ```javascript
-option = {
+const option = {
   xAxis: {
     type: "category",
     data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
@@ -74,7 +74,7 @@ const randomData = () => {
 
 for (let i = 0; i < 1000; i++) data.push(randomData());
 
-option = {
+const option = {
   tooltip: {
     trigger: "axis",
     formatter: function (params) {
@@ -160,7 +160,7 @@ const data = [];
 
 for (let i = 0; i < 5; i++) data.push(Math.round(Math.random() * 200));
 
-option = {
+const option = {
   xAxis: {
     max: "dataMax",
   },
@@ -363,9 +363,9 @@ for (let i = 0; i <= 100; i++) {
   data.push([r, theta]);
 }
 
-height = 450;
+const height = 450;
 
-option = {
+const option = {
   legend: {
     data: ["line"],
   },
@@ -525,7 +525,7 @@ const calculateMA = (dayCount) => {
 
   return result;
 };
-option = {
+const option = {
   tooltip: {
     trigger: "axis",
     axisPointer: {
@@ -748,7 +748,7 @@ option = {
 ::: echarts
 
 ```js
-option = {
+const option = {
   legend: {},
   tooltip: {
     trigger: "axis",
@@ -811,7 +811,7 @@ option = {
   ],
 };
 
-height = 800;
+const height = 800;
 ```
 
 :::

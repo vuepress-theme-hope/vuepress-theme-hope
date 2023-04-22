@@ -22,38 +22,28 @@ interface EchartsConfig {
 }
 
 const parseEChartsConfig = (
-  // eslint-disable-next-line @typescript-eslint/naming-convention
-  __echarts_config__: string,
-  // eslint-disable-next-line @typescript-eslint/naming-convention
-  __echarts_config_type__: "js" | "json",
-  // @ts-ignore
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  config: string,
+  type: "js" | "json",
   myChart: EChartsType
 ): EchartsConfig => {
-  if (__echarts_config_type__ === "js") {
-    // provide globals
-    const exports: Partial<EchartsConfig> = {};
-    const module = { exports };
+  if (type === "js") {
+    // eslint-disable-next-line @typescript-eslint/no-implied-eval
+    const runner = new Function(
+      "myChart",
+      `\
+let width,height,option,__echarts_config__;
+{
+${config}
+__echarts_config__={width,height,option};
+}
+return __echarts_config__;
+`
+    );
 
-    // eslint-disable-next-line prefer-const
-    let option: EChartsOption | undefined = undefined;
-    // eslint-disable-next-line prefer-const
-    let width: number | undefined = undefined;
-    // eslint-disable-next-line prefer-const
-    let height: number | undefined = undefined;
-
-    eval(__echarts_config__);
-
-    return <EchartsConfig>{
-      option,
-      width,
-      height,
-      // eslint-disable-next-line import/no-commonjs
-      ...module.exports,
-    };
+    return <EchartsConfig>runner(myChart);
   }
 
-  return { option: <EChartsOption>JSON.parse(__echarts_config__) };
+  return { option: <EChartsOption>JSON.parse(config) };
 };
 
 export default defineComponent({

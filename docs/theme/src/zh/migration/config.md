@@ -279,7 +279,7 @@ tag:
     ::: chart 标题
 
     ```js
-    module.exports = {
+    const config = {
       // chart.js 配置
     };
     ```
@@ -305,7 +305,7 @@ tag:
     ::: echarts 标题
 
     ```js
-    module.exports = {
+    const option = {
       // echarts 配置
     };
     ```

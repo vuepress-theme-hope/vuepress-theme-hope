@@ -13,17 +13,14 @@ import { stylize } from "@mdit/plugin-stylize";
 import { sub } from "@mdit/plugin-sub";
 import { sup } from "@mdit/plugin-sup";
 import { tasklist } from "@mdit/plugin-tasklist";
-import { type ViteBundlerOptions } from "@vuepress/bundler-vite";
 import { type PluginFunction } from "@vuepress/core";
 import { type MarkdownEnv } from "@vuepress/markdown";
 import { colors } from "@vuepress/utils";
-import { type RollupWarning } from "rollup";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   MATHML_TAGS,
   addChainWebpack,
   addCustomElement,
-  addViteConfig,
   addViteOptimizeDepsExclude,
   addViteOptimizeDepsInclude,
   addViteSsrExternal,
@@ -206,28 +203,6 @@ export const mdEnhancePlugin =
       }),
 
       extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
-        if (getBundlerName(app) === "vite") {
-          const bundlerConfig = <ViteBundlerOptions>bundlerOptions;
-
-          const originalOnWarn =
-            bundlerConfig.viteOptions?.build?.rollupOptions?.onwarn;
-
-          addViteConfig(bundlerOptions, app, {
-            build: {
-              rollupOptions: {
-                onwarn(
-                  warning: RollupWarning,
-                  warn: (warning: RollupWarning) => void
-                ) {
-                  if (warning.message.includes("Use of eval")) return;
-
-                  originalOnWarn?.(warning, warn);
-                },
-              },
-            },
-          });
-        }
-
         addViteSsrNoExternal(bundlerOptions, app, [
           "fflate",
           "vuepress-shared",
