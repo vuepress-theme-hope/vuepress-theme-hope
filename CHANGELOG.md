@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.206](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.205...v2.0.0-beta.206) (2023-04-22)
+
+### Bug Fixes
+
+- **components:** fix backToTop mobile ([04424c0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/04424c039950521438356be80ecfb85080f6144f))
+- **theme:** fix bing ssr mismatch ([0829ae1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0829ae10892eea9568e4a3bd822879aa4ab971d4))
+
+### Performance Improvements
+
+- **md-enhance:** stop using eval ([99ea82b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/99ea82b3faed4a343a214bb2ec1d8927045803f8))
+
 ## [2.0.0-beta.205](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.204...v2.0.0-beta.205) (2023-04-19)
 
 ### Features
