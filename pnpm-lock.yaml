@@ -1242,8 +1242,8 @@ importers:
         specifier: 2.0.0-beta.61
         version: 2.0.0-beta.61
       '@vueuse/core':
-        specifier: 10.0.2
-        version: 10.0.2(vue@3.3.0-beta.1)
+        specifier: 10.1.0
+        version: 10.1.0(vue@3.3.0-beta.1)
       docs-shared:
         specifier: workspace:*
         version: link:../../docs-shared
@@ -5677,6 +5677,18 @@ packages:
       - vue
     dev: false
 
+  /@vueuse/core@10.1.0(vue@3.3.0-beta.1):
+    resolution: {integrity: sha512-3Znoa5m5RO+z4/C9w6DRaKTR3wCVJvD5rav8HTDGsr+7rOZRHtcgFJ8NcCs0ZvIpmev2kExTa311ns5j2RbzDQ==}
+    dependencies:
+      '@types/web-bluetooth': 0.0.16
+      '@vueuse/metadata': 10.1.0
+      '@vueuse/shared': 10.1.0(vue@3.3.0-beta.1)
+      vue-demi: 0.14.0(vue@3.3.0-beta.1)
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
+    dev: false
+
   /@vueuse/core@9.13.0(vue@3.3.0-beta.1):
     resolution: {integrity: sha512-pujnclbeHWxxPRqXWmdkKV5OX4Wk4YeK7wusHqRwU0Q7EFusHoqNA/aPhB6KCh9hEqJkLAJo7bb0Lh9b+OIVzw==}
     dependencies:
@@ -5692,11 +5704,24 @@ packages:
     resolution: {integrity: sha512-APSjlABrV+Q74c+FR0kFETvcN9W2pAaT3XF3WwqWUuk4srmVxv7DY4WshZxK2KYk1+MVY0Fus6J1Hk/JXVm6Aw==}
     dev: false
 
+  /@vueuse/metadata@10.1.0:
+    resolution: {integrity: sha512-cM28HjDEw5FIrPE9rgSPFZvQ0ZYnOLAOr8hl1XM6tFl80U3WAR5ROdnAqiYybniwP5gt9MKKAJAqd/ab2aHkqg==}
+    dev: false
+
   /@vueuse/metadata@9.13.0:
     resolution: {integrity: sha512-gdU7TKNAUVlXXLbaF+ZCfte8BjRJQWPCa2J55+7/h+yDtzw3vOoGQDRXzI6pyKyo6bXFT5/QoPE4hAknExjRLQ==}
 
   /@vueuse/shared@10.0.2(vue@3.3.0-beta.1):
     resolution: {integrity: sha512-7W2l6qZaFvla3zAeEVo8hNHkNRKCezJa3JjZAKv3K4KsevXobHhVNr+RHaOVNK/6ETpFmtqiK+0pMIADbHjjag==}
+    dependencies:
+      vue-demi: 0.14.0(vue@3.3.0-beta.1)
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
+    dev: false
+
+  /@vueuse/shared@10.1.0(vue@3.3.0-beta.1):
+    resolution: {integrity: sha512-2X52ogu12i9DkKOQ01yeb/BKg9UO87RNnpm5sXkQvyORlbq8ONS5l39MYkjkeVWWjdT0teJru7a2S41dmHmqjQ==}
     dependencies:
       vue-demi: 0.14.0(vue@3.3.0-beta.1)
     transitivePeerDependencies:
