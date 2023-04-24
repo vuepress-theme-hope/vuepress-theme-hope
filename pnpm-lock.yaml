@@ -1420,8 +1420,8 @@ importers:
         specifier: ^10.0.2
         version: 10.0.2(vue@3.3.0-beta.1)
       artplayer:
-        specifier: ^4.6.2
-        version: 4.6.2
+        specifier: ^5.0.0
+        version: 5.0.0
       balloon-css:
         specifier: ^1.2.0
         version: 1.2.0
@@ -6202,8 +6202,8 @@ packages:
   /artplayer-plugin-danmuku@4.4.11:
     resolution: {integrity: sha512-/4F8IyB29Bdr1LV1RM3FM7CdiAMsVNOOJ/HY4jaJCXnMAKThQiGa++0PhCJ07nhyGvDcZGRL2/UWJRz9zZJFNw==}
 
-  /artplayer@4.6.2:
-    resolution: {integrity: sha512-9RMfFFy2wGgHUCnrwk+M2Z5OiLWQcBL+YzkSBwSi6IuJG6oM+TlfJJZt09RL2iag6DNQ+AUYtB879WUHxbqfIQ==}
+  /artplayer@5.0.0:
+    resolution: {integrity: sha512-uUonBFKiOjFQnayBa4JXo/HvB0LO/REdlnZJb+u+PdubTz0T1c3rxybuCuj0IG+FpNDIHIZk9NiN3cUiZgYmlA==}
     dependencies:
       option-validator: 2.0.6
     dev: false
