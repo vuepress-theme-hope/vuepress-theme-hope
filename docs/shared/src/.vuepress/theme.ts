@@ -1,6 +1,6 @@
 import { theme } from "docs-shared";
 
-export default theme("seo2", {
+export default theme("shared", {
   locales: {
     "/": {
       navbar: [
