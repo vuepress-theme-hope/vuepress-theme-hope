@@ -19,6 +19,8 @@ export interface ConfigOptions {
   pwa?: boolean;
 }
 
+const assetsBase = "https://theme-hope-assets.vuejs.press/";
+
 export const config = (
   {
     name,
@@ -48,7 +50,7 @@ export const config = (
               "link",
               {
                 rel: "icon",
-                href: `${docsBase}assets/icon/chrome-mask-512.png`,
+                href: `${assetsBase}icon/chrome-mask-512.png`,
                 type: "image/png",
                 sizes: "512x512",
               },
@@ -57,7 +59,7 @@ export const config = (
               "link",
               {
                 rel: "icon",
-                href: `${docsBase}assets/icon/chrome-mask-192.png`,
+                href: `${assetsBase}icon/chrome-mask-192.png`,
                 type: "image/png",
                 sizes: "512x512",
               },
@@ -66,7 +68,7 @@ export const config = (
               "link",
               {
                 rel: "icon",
-                href: `${docsBase}assets/icon/chrome-512.png`,
+                href: `${assetsBase}icon/chrome-512.png`,
                 type: "image/png",
                 sizes: "192x192",
               },
@@ -75,7 +77,7 @@ export const config = (
               "link",
               {
                 rel: "icon",
-                href: `${docsBase}assets/icon/chrome-192.png`,
+                href: `${assetsBase}icon/chrome-192.png`,
                 type: "image/png",
                 sizes: "192x192",
               },
@@ -85,7 +87,7 @@ export const config = (
               "link",
               {
                 rel: "apple-touch-icon",
-                href: `${docsBase}assets/icon/apple-icon-152.png`,
+                href: `${assetsBase}icon/apple-icon-152.png`,
               },
             ],
             [

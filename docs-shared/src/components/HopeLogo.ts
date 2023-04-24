@@ -18,6 +18,8 @@ import { useWindowSize } from "@theme-hope/composables/index";
 
 import "../styles/hope-logo.scss";
 
+const BASE = "https://theme-hope-assets.vuejs.press/model/";
+
 export default defineComponent({
   name: "HopeLogo",
 
@@ -45,9 +47,7 @@ export default defineComponent({
       const scene = new three.Scene();
       const stlLoader = new STLLoaderConstructor();
       const textureLoader = new three.TextureLoader();
-      const roughnessTexture = textureLoader.load(
-        withBase("/assets/model/roughness.jpeg")
-      );
+      const roughnessTexture = textureLoader.load(BASE + "roughness.jpeg");
       // Models
       let logo1: Mesh;
       let logo2: Mesh;
@@ -117,7 +117,7 @@ export default defineComponent({
 
       await Promise.all([
         new Promise<void>((resolve) =>
-          stlLoader.load(withBase("/assets/model/logo1.stl"), (geometry) => {
+          stlLoader.load(BASE + "logo1.stl", (geometry) => {
             const material = new three.MeshPhysicalMaterial({
               color: 0x284c39,
               metalness: 0.45,
@@ -140,7 +140,7 @@ export default defineComponent({
           })
         ),
         new Promise<void>((resolve) =>
-          stlLoader.load(withBase("/assets/model/logo2.stl"), (geometry) => {
+          stlLoader.load(BASE + "logo2.stl", (geometry) => {
             const material = new three.MeshPhysicalMaterial({
               color: 0x35495e,
               metalness: 0.7,
