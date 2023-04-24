@@ -120,15 +120,15 @@ import HitokotoBlogHero from "vuepress-theme-hope/presets/HitokotoBlogHero.js";
 
 ### 文档
 
-- `"vuepress-theme-hope/presets/shinning-feature-panel.js"`: 为项目主页的特性添加闪光效果。
+- `"vuepress-theme-hope/presets/shinning-feature-panel.scss"`: 为项目主页的特性添加闪光效果。
 
 ### 博客
 
-- `"vuepress-theme-hope/presets/left-blog-info.js"`: 将博主信息移动至文章列表的左侧。
+- `"vuepress-theme-hope/presets/left-blog-info.scss"`: 将博主信息移动至文章列表的左侧。
 
 ### 其他
 
-- `"vuepress-theme-hope/presets/bounce-icon.js"`: 为页面图标添加鼠标悬停的跳动效果。
+- `"vuepress-theme-hope/presets/bounce-icon.scss"`: 为页面图标添加鼠标悬停的跳动效果。
 
 ## 更多
 
