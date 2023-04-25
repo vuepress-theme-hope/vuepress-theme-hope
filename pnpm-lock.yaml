@@ -1611,6 +1611,8 @@ importers:
         specifier: 2.0.0-beta.61
         version: 2.0.0-beta.61
 
+  packages/i18n: {}
+
   packages/lightgallery:
     dependencies:
       '@vuepress/client':
