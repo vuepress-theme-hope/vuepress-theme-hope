@@ -120,15 +120,15 @@ You can create a client config file `.vuepress/client.{ts,js}` and import the fo
 
 ### Docs
 
-- `"vuepress-theme-hope/presets/shinning-feature-panel.js"`: Add shinning effect to the features of the project home page.
+- `"vuepress-theme-hope/presets/shinning-feature-panel.scss"`: Add shinning effect to the features of the project home page.
 
 ### Blog
 
-- `"vuepress-theme-hope/presets/left-blog-info.js"`: Move the blogger information to the left of the article list.
+- `"vuepress-theme-hope/presets/left-blog-info.scss"`: Move the blogger information to the left of the article list.
 
 ### Others
 
-- `"vuepress-theme-hope/presets/bounce-icon.js"`: Add a mouseover bounce effect to the page icon.
+- `"vuepress-theme-hope/presets/bounce-icon.scss"`: Add a mouseover bounce effect to the page icon.
 
 ## More
 
