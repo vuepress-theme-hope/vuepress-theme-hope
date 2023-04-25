@@ -1611,7 +1611,11 @@ importers:
         specifier: 2.0.0-beta.61
         version: 2.0.0-beta.61
 
-  packages/i18n: {}
+  packages/i18n:
+    dependencies:
+      '@vuepress/core':
+        specifier: 2.0.0-beta.61
+        version: 2.0.0-beta.61
 
   packages/lightgallery:
     dependencies:
