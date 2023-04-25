@@ -54,6 +54,11 @@ export default defineComponent({
      * 是否禁用侧边栏
      */
     noSidebar: Boolean,
+
+    /**
+     * Whether disable toc
+     */
+    noToc: Boolean,
   },
 
   setup(props, { slots }) {
@@ -100,6 +105,13 @@ export default defineComponent({
       );
     });
 
+    const enableToc = computed(() =>
+      props.noToc || frontmatter.value.home
+        ? false
+        : frontmatter.value.toc ||
+          (themeLocale.value.toc !== false && frontmatter.value.toc !== false)
+    );
+
     const touchStart = { x: 0, y: 0 };
     const onTouchStart = (e: TouchEvent): void => {
       touchStart.x = e.changedTouches[0].clientX;
@@ -117,13 +129,6 @@ export default defineComponent({
         if (dx > 0 && touchStart.x <= 80) toggleMobileSidebar(true);
         else toggleMobileSidebar(false);
     };
-
-    const enableToc = computed(() =>
-      frontmatter.value.home
-        ? false
-        : frontmatter.value.toc ||
-          (themeLocale.value.toc !== false && frontmatter.value.toc !== false)
-    );
 
     /** Get scroll distance */
     const getScrollTop = (): number =>
