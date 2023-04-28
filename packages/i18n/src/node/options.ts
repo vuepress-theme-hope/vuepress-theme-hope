@@ -10,4 +10,18 @@ export interface I18nOptions {
    * @returns Whether the page should be included
    */
   filter?: (page: Page) => boolean;
+
+  /**
+   * Location to inject tip component
+   *
+   * @default 'manual'
+   */
+  tipLocation?: "top" | "bottom" | "after-h1" | "manual";
+
+  /**
+   * I18n tip component
+   *
+   * @default "I18nTip"
+   */
+  tipComponent?: string;
 }
