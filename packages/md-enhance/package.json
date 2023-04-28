@@ -52,6 +52,7 @@
   "type": "module",
   "exports": {
     ".": "./lib/node/index.js",
+    "./client": "./lib/client/index.js",
     "./client/*": "./lib/client/*",
     "./SlidePage": "./lib/client/SlidePage.js",
     "./package.json": "./package.json"
@@ -105,7 +106,7 @@
     "balloon-css": "^1.2.0",
     "chart.js": "^4.2.1",
     "echarts": "^5.4.2",
-    "flowchart.ts": "^0.1.2",
+    "flowchart.ts": "0.1.2",
     "js-yaml": "^4.1.0",
     "katex": "^0.16.6",
     "markdown-it": "^13.0.1",

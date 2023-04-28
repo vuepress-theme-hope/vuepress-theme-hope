@@ -8,7 +8,7 @@ import ant from "./ant.js";
 import pie from "./pie.js";
 import vue from "./vue.js";
 
-export default {
+export const flowchartPresets = {
   ant,
   vue,
   pie,

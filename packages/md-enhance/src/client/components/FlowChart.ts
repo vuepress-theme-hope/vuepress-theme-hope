@@ -11,7 +11,7 @@ import {
 } from "vue";
 import { LoadingIcon, atou } from "vuepress-shared/client";
 
-import presets from "../flowchart-preset/index.js";
+import { flowchartPresets } from "../utils/index.js";
 
 import "../styles/flowchart.scss";
 
@@ -54,12 +54,12 @@ export default defineComponent({
     const scale = ref(1);
 
     const preset = computed<Record<string, unknown>>(() => {
-      const preset = presets[props.preset];
+      const preset = flowchartPresets[props.preset];
 
       if (!preset) {
         console.warn(`[md-enhance:flowchart] Unknown preset: ${props.preset}`);
 
-        return presets.vue;
+        return flowchartPresets.vue;
       }
 
       return preset;

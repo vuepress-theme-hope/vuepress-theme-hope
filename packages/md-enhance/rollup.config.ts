@@ -14,6 +14,7 @@ export default [
     {
       base: "client",
       files: [
+        "index",
         "compact/index",
         "components/ChartJS",
         "components/CodeDemo",
@@ -27,7 +28,6 @@ export default [
         "components/VPCard",
         "components/VuePlayground",
         "SlidePage",
-        "reveal/index",
       ],
     },
 
