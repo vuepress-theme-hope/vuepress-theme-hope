@@ -21,14 +21,17 @@ interface EchartsConfig {
   option: EChartsOption;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-empty-function
+const AsyncFunction = (async (): Promise<void> => {}).constructor;
+
 const parseEChartsConfig = (
   config: string,
   type: "js" | "json",
   myChart: EChartsType
-): EchartsConfig => {
+): Promise<EchartsConfig> => {
   if (type === "js") {
-    // eslint-disable-next-line @typescript-eslint/no-implied-eval
-    const runner = new Function(
+    // eslint-disable-next-line
+    const runner = AsyncFunction(
       "myChart",
       `\
 let width,height,option,__echarts_config__;
@@ -40,10 +43,11 @@ return __echarts_config__;
 `
     );
 
-    return <EchartsConfig>runner(myChart);
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+    return <Promise<EchartsConfig>>runner(myChart);
   }
 
-  return { option: <EChartsOption>JSON.parse(config) };
+  return Promise.resolve({ option: <EChartsOption>JSON.parse(config) });
 };
 
 export default defineComponent({
@@ -95,10 +99,10 @@ export default defineComponent({
         import(/* webpackChunkName: "echarts" */ "echarts"),
         // delay
         new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
-      ]).then(([echarts]) => {
+      ]).then(async ([echarts]) => {
         chart = echarts.init(echartsContainer.value!);
 
-        const { option, ...size } = parseEChartsConfig(
+        const { option, ...size } = await parseEChartsConfig(
           atou(props.config),
           props.type,
           chart
