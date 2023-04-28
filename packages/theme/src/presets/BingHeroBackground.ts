@@ -43,8 +43,6 @@ export default defineComponent({
       const info = bingStorage.value.data[bingStorage.value.index];
       const langCode = lang.value.toLowerCase().split("-").shift();
 
-      console.log(lang.value, langCode);
-
       if (info) {
         const { url, wallpaper, downloadable, locales } = info;
 
@@ -60,7 +58,7 @@ export default defineComponent({
     });
 
     const getImage = (): Promise<BingWallpaperInfo[]> => {
-      return fetch("//bing-wallpaper.vuejs.press/api/wallpaper").then(
+      return fetch("https://bing-wallpaper.vuejs.press/api/wallpaper").then(
         (response) => <Promise<BingWallpaperInfo[]>>response.json()
       );
     };
