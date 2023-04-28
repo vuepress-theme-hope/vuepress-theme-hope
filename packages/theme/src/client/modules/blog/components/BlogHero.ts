@@ -4,7 +4,7 @@ import {
   withBase,
 } from "@vuepress/client";
 import { isString } from "@vuepress/shared";
-import { type VNode, computed, defineComponent, h, ref } from "vue";
+import { type VNode, computed, defineComponent, h, shallowRef } from "vue";
 
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
 
@@ -21,7 +21,7 @@ export default defineComponent({
     const title = usePageHeadTitle();
     const frontmatter = usePageFrontmatter<ThemeBlogHomePageFrontmatter>();
 
-    const hero = ref<HTMLElement>();
+    const hero = shallowRef<HTMLElement>();
 
     const isFullScreen = computed(
       () => frontmatter.value.heroFullScreen ?? false

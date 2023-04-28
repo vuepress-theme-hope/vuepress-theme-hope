@@ -6,6 +6,7 @@ import {
   h,
   onMounted,
   ref,
+  shallowRef,
 } from "vue";
 import { LoadingIcon, atou } from "vuepress-shared/client";
 
@@ -80,8 +81,8 @@ export default defineComponent({
   },
 
   setup(props) {
-    const chartElement = ref<HTMLElement>();
-    const chartCanvasElement = ref<HTMLCanvasElement>();
+    const chartElement = shallowRef<HTMLElement>();
+    const chartCanvasElement = shallowRef<HTMLCanvasElement>();
 
     const loading = ref(true);
 

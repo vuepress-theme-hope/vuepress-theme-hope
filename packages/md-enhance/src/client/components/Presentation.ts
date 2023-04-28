@@ -11,6 +11,7 @@ import {
   onMounted,
   onUnmounted,
   ref,
+  shallowRef,
 } from "vue";
 import { LoadingIcon, atou } from "vuepress-shared/client";
 
@@ -68,7 +69,7 @@ export default defineComponent({
     const frontmatter = usePageFrontmatter<{ reveal: RevealOptions }>();
     const code = ref("");
     const loading = ref(true);
-    const presentationContainer = ref<HTMLElement>();
+    const presentationContainer = shallowRef<HTMLElement>();
 
     let reveal: Reveal | null = null;
 

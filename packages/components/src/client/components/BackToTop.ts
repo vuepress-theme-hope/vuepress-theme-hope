@@ -7,7 +7,7 @@ import {
   defineComponent,
   h,
   onMounted,
-  ref,
+  shallowRef,
 } from "vue";
 import { useLocaleConfig } from "vuepress-shared/client";
 
@@ -42,7 +42,7 @@ export default defineComponent({
   setup(props) {
     const pageFrontmatter = usePageFrontmatter<{ backToTop?: boolean }>();
     const locale = useLocaleConfig(BACK_TO_TOP_LOCALES);
-    const body = ref<HTMLBodyElement>();
+    const body = shallowRef<HTMLBodyElement>();
     const { height: bodyHeight } = useElementSize(body);
     const { height: windowHeight } = useWindowSize();
 

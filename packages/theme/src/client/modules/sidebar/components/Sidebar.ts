@@ -1,4 +1,11 @@
-import { type VNode, defineComponent, h, onMounted, ref, watch } from "vue";
+import {
+  type VNode,
+  defineComponent,
+  h,
+  onMounted,
+  shallowRef,
+  watch,
+} from "vue";
 import { useRoute } from "vue-router";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";
@@ -14,7 +21,8 @@ export default defineComponent({
     const route = useRoute();
     const themeLocale = useThemeLocaleData();
     const sidebarItems = useSidebarItems();
-    const sidebar = ref<HTMLElement>();
+
+    const sidebar = shallowRef<HTMLElement>();
 
     onMounted(() => {
       // scroll to active sidebar item

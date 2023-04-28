@@ -1,6 +1,6 @@
 import { Content } from "@vuepress/client";
 import { onClickOutside } from "@vueuse/core";
-import { type VNode, defineComponent, h, ref } from "vue";
+import { type VNode, defineComponent, h, ref, shallowRef } from "vue";
 import { useRouter } from "vue-router";
 
 import { BackIcon, HomeIcon } from "./components/icons.js";
@@ -13,7 +13,8 @@ export default defineComponent({
   setup() {
     const router = useRouter();
     const showMenu = ref(false);
-    const menu = ref<HTMLElement>();
+
+    const menu = shallowRef<HTMLElement>();
 
     const toggle = (): void => {
       showMenu.value = !showMenu.value;

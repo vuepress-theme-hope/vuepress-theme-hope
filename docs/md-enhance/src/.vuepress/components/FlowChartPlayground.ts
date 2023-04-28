@@ -9,6 +9,7 @@ import {
   h,
   onMounted,
   ref,
+  shallowRef,
   watch,
 } from "vue";
 import { LoadingIcon, useLocaleConfig } from "vuepress-shared/client";
@@ -64,7 +65,7 @@ export default () =>
               const locale = useLocaleConfig(locales);
 
               let flowchart: Chart | null = null;
-              const element = ref<HTMLDivElement>();
+              const element = shallowRef<HTMLDivElement>();
               const config = ref(DEFAULT_FLOWCHART);
               const preset = ref<"ant" | "pie" | "vue">("vue");
               const scale = ref(1);

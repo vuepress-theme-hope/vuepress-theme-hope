@@ -9,7 +9,7 @@ import {
   defineComponent,
   h,
   onMounted,
-  ref,
+  shallowRef,
   watch,
 } from "vue";
 import { RouterLink, useRouter } from "vue-router";
@@ -42,7 +42,7 @@ export default defineComponent({
     const frontmatter = usePageFrontmatter<ThemeNormalPageFrontmatter>();
     const themeLocale = useThemeLocaleData();
 
-    const config = ref<BreadCrumbConfig[]>([]);
+    const config = shallowRef<BreadCrumbConfig[]>([]);
 
     const enable = computed(
       () =>

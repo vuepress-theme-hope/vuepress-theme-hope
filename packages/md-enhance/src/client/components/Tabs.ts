@@ -6,6 +6,7 @@ import {
   h,
   onMounted,
   ref,
+  shallowRef,
   watch,
 } from "vue";
 
@@ -69,7 +70,7 @@ export default defineComponent({
     const activeIndex = ref(props.active);
 
     // refs of the tab buttons
-    const tabRefs = ref<HTMLUListElement[]>([]);
+    const tabRefs = shallowRef<HTMLUListElement[]>([]);
 
     // update store
     const updateStore = (): void => {

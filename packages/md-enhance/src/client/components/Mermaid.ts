@@ -7,6 +7,7 @@ import {
   h,
   onMounted,
   ref,
+  shallowRef,
   watch,
 } from "vue";
 import { LoadingIcon, atou } from "vuepress-shared/client";
@@ -91,7 +92,7 @@ export default defineComponent({
   },
 
   setup(props) {
-    const mermaidElement = ref<HTMLElement>();
+    const mermaidElement = shallowRef<HTMLElement>();
 
     const svgCode = ref("");
     const isDarkmode = ref(false);

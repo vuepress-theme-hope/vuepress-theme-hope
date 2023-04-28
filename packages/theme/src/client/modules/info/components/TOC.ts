@@ -6,6 +6,7 @@ import {
   h,
   onMounted,
   ref,
+  shallowRef,
   watch,
 } from "vue";
 import { RouterLink, useRoute } from "vue-router";
@@ -86,7 +87,8 @@ export default defineComponent({
     const route = useRoute();
     const page = usePageData();
     const metaLocale = useMetaLocale();
-    const toc = ref<HTMLElement>();
+
+    const toc = shallowRef<HTMLElement>();
     const tocMarkerTop = ref("-1.7rem");
 
     const scrollTo = (top: number): void => {
