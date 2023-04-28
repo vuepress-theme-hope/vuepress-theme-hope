@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.207](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.206...v2.0.0-beta.207) (2023-04-28)
+
+### Features
+
+- **components:** use artplayer v5 ([3bb68e5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3bb68e5bda83ef696a76d0eacadd05594bb3fe40))
+
+### Bug Fixes
+
+- **deps:** update dependency @vueuse/core to v10.1.0 ([#3057](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3057)) ([061a264](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/061a264f5fb89ebe2bf91f537c4696221eece03e))
+- **md-enhance:** use router-link to open internal path ([cad42fe](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cad42fe67ddba6227f999a249fcb14255c1e657b))
+- **theme:** add workaround for pagination, close [#3077](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3077) ([a7dadf6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a7dadf60dc2773b19b92fe6dff0a0b5c17a43a1b))
+- **theme:** ensure correct index and order is extracted ([f16d644](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f16d644144a400bd40008576c2dddfe9e09dcd80))
+- **theme:** fix bing wallpaper link ([859ca87](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/859ca8769e941cd698fb6ddd535cf1342629f9e6))
+- **theme:** fix blog layout ([9e297c2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9e297c225b67db6f40f6360b77948568974cc907))
+- **theme:** fix sidebar check, close [#3073](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3073) ([94721a9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/94721a9ecc957a3c8d08a20fdced18afe263c96a))
+- **theme:** fix sidebar group title, close [#3058](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3058) ([732b81d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/732b81d84fdc74ccc8fc434da7cc47979d4c29a3))
+
 ## [2.0.0-beta.206](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.205...v2.0.0-beta.206) (2023-04-22)
 
 ### Bug Fixes
