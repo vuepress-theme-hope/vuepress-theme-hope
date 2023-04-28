@@ -966,8 +966,8 @@ importers:
         specifier: 0.1.2
         version: 0.1.2
       katex:
-        specifier: 0.16.6
-        version: 0.16.6
+        specifier: 0.16.7
+        version: 0.16.7
       sass-loader:
         specifier: 13.2.2
         version: 13.2.2(sass@1.62.1)
@@ -1254,8 +1254,8 @@ importers:
         specifier: workspace:*
         version: link:../../docs-shared
       katex:
-        specifier: 0.16.6
-        version: 0.16.6
+        specifier: 0.16.7
+        version: 0.16.7
       sass-loader:
         specifier: 13.2.2
         version: 13.2.2(sass@1.62.1)
@@ -1756,8 +1756,8 @@ importers:
         specifier: ^4.1.0
         version: 4.1.0
       katex:
-        specifier: ^0.16.6
-        version: 0.16.6
+        specifier: ^0.16.7
+        version: 0.16.7
       markdown-it:
         specifier: ^13.0.1
         version: 13.0.1
@@ -2310,8 +2310,8 @@ importers:
         specifier: ^1.2.0
         version: 1.2.0
       bcrypt-ts:
-        specifier: ^3.0.0
-        version: 3.0.0
+        specifier: ^3.0.1
+        version: 3.0.1
       cheerio:
         specifier: 1.0.0-rc.12
         version: 1.0.0-rc.12
@@ -4469,7 +4469,7 @@ packages:
       '@mdit/plugin-tex': 0.4.3
       '@types/katex': 0.16.0(patch_hash=dnsp5eyvz2stjhzcvnk27ztvmm)
       '@types/markdown-it': 12.2.3
-      katex: 0.16.6
+      katex: 0.16.7
       markdown-it: 13.0.1
     dev: false
 
@@ -6353,8 +6353,8 @@ packages:
       is-decimal: 1.0.4
     dev: false
 
-  /bcrypt-ts@3.0.0:
-    resolution: {integrity: sha512-z4pqdPaAuuvBsHCwb77bisxT9qo5hRSbn78FXNhhTywHabqMzcIosDxjnKUrkPQbMyz2curUT+fJRith57rIvg==}
+  /bcrypt-ts@3.0.1:
+    resolution: {integrity: sha512-rRvmZZ+wAhsV8PA8bW+BQq5kWZzqmh20VdwqI19D2WdB7TLwNnYUB0wzFkp83WLvgpSqOF4L0w/uPr90Rao66g==}
     dev: false
 
   /big.js@5.2.2:
@@ -10354,8 +10354,8 @@ packages:
     resolution: {integrity: sha512-qpcRocdkUmf+UTNBYx5w6dexX5J31AKK1OmPwH630a83DdVVUIngk55RSAiIGpQyoH0dlr872VHfPjnQnK1qDQ==}
     dev: true
 
-  /katex@0.16.6:
-    resolution: {integrity: sha512-XVB7X8jEogjJ+OY+a9JdE+VOk9i7znela0HP6WaDbpB4sUh8ghrG0Ccluu2MA2tcJbFAViBC9aVXus2UvkEr8A==}
+  /katex@0.16.7:
+    resolution: {integrity: sha512-Xk9C6oGKRwJTfqfIbtr0Kes9OSv6IFsuhFGc7tW4urlpMJtuh+7YhzU6YEG9n8gmWKcMAFzkp7nr+r69kV0zrA==}
     hasBin: true
     dependencies:
       commander: 8.3.0
