@@ -426,7 +426,7 @@ import { hopeTheme } from "vuepress-theme-hope";
 
 export default defineUserConfig({
   // 现在任何带有 `.snippet.md` 扩展名的文件都不会呈现为页面
-  pagePatterns: ["**/*.md", "!*.snippet.md", "!.vuepress", "!node_modules"],
+  pagePatterns: ["**/*.md", "!**/*.snippet.md", "!.vuepress", "!node_modules"],
   theme: hopeTheme({
     plugins: {
       mdEnhance: {
@@ -445,7 +445,7 @@ import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
   // 现在任何带有 `.snippet.md` 扩展名的文件都不会呈现为页面
-  pagePatterns: ["**/*.md", "!*.snippet.md", "!.vuepress", "!node_modules"],
+  pagePatterns: ["**/*.md", "!**/*.snippet.md", "!.vuepress", "!node_modules"],
 
   theme: hopeTheme({
     plugins: {

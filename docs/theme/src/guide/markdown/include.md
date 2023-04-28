@@ -427,7 +427,7 @@ import { hopeTheme } from "vuepress-theme-hope";
 
 export default defineUserConfig({
   // now any file with `.snippet.md` extension will not be rendered as a page
-  pagePatterns: ["**/*.md", "!*.snippet.md", "!.vuepress", "!node_modules"],
+  pagePatterns: ["**/*.md", "!**/*.snippet.md", "!.vuepress", "!node_modules"],
 
   theme: hopeTheme({
     plugins: {
@@ -447,7 +447,7 @@ import { hopeTheme } from "vuepress-theme-hope";
 
 export default {
   // now any file with `.snippet.md` extension will not be rendered as a page
-  pagePatterns: ["**/*.md", "!*.snippet.md", "!.vuepress", "!node_modules"],
+  pagePatterns: ["**/*.md", "!**/*.snippet.md", "!.vuepress", "!node_modules"],
 
   theme: hopeTheme({
     plugins: {

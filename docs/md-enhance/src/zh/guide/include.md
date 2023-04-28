@@ -414,7 +414,7 @@ import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default defineConfig({
   // 现在任何带有 `.snippet.md` 扩展名的文件都不会呈现为页面
-  pagePatterns: ["**/*.md", "!*.snippet.md", "!.vuepress", "!node_modules"],
+  pagePatterns: ["**/*.md", "!**/*.snippet.md", "!.vuepress", "!node_modules"],
 
   plugins: [
     mdEnhancePlugin({
@@ -432,7 +432,7 @@ import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
   // 现在任何带有 `.snippet.md` 扩展名的文件都不会呈现为页面
-  pagePatterns: ["**/*.md", "!*.snippet.md", "!.vuepress", "!node_modules"],
+  pagePatterns: ["**/*.md", "!**/*.snippet.md", "!.vuepress", "!node_modules"],
 
   plugins: [
     mdEnhancePlugin({

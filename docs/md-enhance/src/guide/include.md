@@ -414,7 +414,7 @@ import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default defineConfig({
   // now any file with `.snippet.md` extension will not be rendered as a page
-  pagePatterns: ["**/*.md", "!*.snippet.md", "!.vuepress", "!node_modules"],
+  pagePatterns: ["**/*.md", "!**/*.snippet.md", "!.vuepress", "!node_modules"],
 
   plugins: [
     mdEnhancePlugin({
@@ -432,7 +432,7 @@ import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
   // now any file with `.snippet.md` extension will not be rendered as a page
-  pagePatterns: ["**/*.md", "!*.snippet.md", "!.vuepress", "!node_modules"],
+  pagePatterns: ["**/*.md", "!**/*.snippet.md", "!.vuepress", "!node_modules"],
 
   plugins: [
     mdEnhancePlugin({
