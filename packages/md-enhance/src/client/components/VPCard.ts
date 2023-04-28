@@ -1,4 +1,6 @@
+import { isLinkExternal } from "@vuepress/shared";
 import { type FunctionalComponent, h } from "vue";
+import { RouterLink } from "vue-router";
 
 import "../styles/vp-card.scss";
 
@@ -46,24 +48,39 @@ const VPCard: FunctionalComponent<CardProps> = ({
   logo = "",
   color = "",
   link = "",
-}) =>
-  h(
-    "a",
-    {
-      class: "vp-card",
-      href: link,
-      target: "_blank",
-      ...(color ? { style: { background: color } } : {}),
-    },
-    [
-      h("img", { class: "vp-card-logo", src: logo }),
-      h("div", { class: "vp-card-content" }, [
-        h("div", { class: "vp-card-title", innerHTML: title }),
-        h("hr"),
-        h("div", { class: "vp-card-desc", innerHTML: desc }),
-      ]),
-    ]
-  );
+}) => {
+  const children = [
+    h("img", { class: "vp-card-logo", src: logo }),
+    h("div", { class: "vp-card-content" }, [
+      h("div", { class: "vp-card-title", innerHTML: title }),
+      h("hr"),
+      h("div", { class: "vp-card-desc", innerHTML: desc }),
+    ]),
+  ];
+
+  const props: Record<string, unknown> = { class: "vp-card" };
+
+  if (color) props["style"] = { background: color };
+
+  return isLinkExternal(link)
+    ? h(
+        "a",
+        {
+          href: link,
+          target: "_blank",
+          ...props,
+        },
+        children
+      )
+    : h(
+        RouterLink,
+        {
+          to: link,
+          ...props,
+        },
+        children
+      );
+};
 
 VPCard.displayName = "VPCard";
 
