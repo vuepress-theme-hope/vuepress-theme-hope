@@ -14,6 +14,11 @@ actions:
     link: /config.html
 
 features:
+  - title: Links Check
+    icon: clipboard-check
+    details: Check markdown links
+    link: /guide/others.html#link-check
+
   - title: Custom Container
     icon: box-archive
     details: Decorate Markdown content with styles

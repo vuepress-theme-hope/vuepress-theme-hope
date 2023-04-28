@@ -14,6 +14,11 @@ actions:
     link: /zh/config.html
 
 features:
+  - title: 链接检查
+    icon: clipboard-check
+    details: 检查 Markdown 链接
+    link: /zh/guide/others.html#link-check
+
   - title: 自定义容器支持
     icon: box-archive
     details: 用样式装饰 Markdown 内容
