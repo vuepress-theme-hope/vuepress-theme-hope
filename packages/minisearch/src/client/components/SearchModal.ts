@@ -22,10 +22,13 @@ import {
   watch,
   watchEffect,
   type Ref,
+  VNode,
 } from "vue";
 import { useRouter } from "vitepress";
 
 import searchIndex from "@temp/minisearch/index";
+
+import "../styles/search-modal.scss";
 
 export default defineComponent({
   name: "SearchModal",
@@ -36,5 +39,7 @@ export default defineComponent({
     const el = shallowRef<HTMLElement>();
     const resultsEl = shallowRef<HTMLElement>();
     const body = shallowRef<HTMLElement>();
+
+    return (): VNode => h("div");
   },
 });

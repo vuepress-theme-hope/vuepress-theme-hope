@@ -1,0 +1,276 @@
+.VPLocalSearchBox {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  display: flex;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  background: var(--vp-backdrop-bg-color);
+  transition: opacity 0.5s;
+}
+
+.shell {
+  position: relative;
+  padding: 12px;
+  margin: 64px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: var(--vp-local-search-bg);
+  width: min(100vw - 60px, 900px);
+  height: min-content;
+  max-height: min(100vh - 128px, 900px);
+  border-radius: 6px;
+}
+
+@media (max-width: 768px) {
+  .shell {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    max-height: none;
+    border-radius: 0;
+  }
+}
+
+.search-bar {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  cursor: text;
+}
+
+@media (max-width: 768px) {
+  .search-bar {
+    padding: 0 8px;
+  }
+}
+
+.search-bar:focus-within {
+  border-color: var(--vp-c-brand);
+}
+
+.search-icon {
+  margin: 8px;
+}
+
+@media (max-width: 768px) {
+  .search-icon {
+    display: none;
+  }
+}
+
+.search-input {
+  padding: 6px 12px;
+  font-size: inherit;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .search-input {
+    padding: 6px 4px;
+  }
+}
+
+.search-actions {
+  display: flex;
+  gap: 4px;
+}
+
+@media (any-pointer: coarse) {
+  .search-actions {
+    gap: 8px;
+  }
+}
+
+@media (min-width: 769px) {
+  .search-actions.before {
+    display: none;
+  }
+}
+
+.search-actions button {
+  padding: 8px;
+}
+
+.search-actions button:hover,
+.toggle-layout-button.detailed-list {
+  color: var(--vp-c-brand);
+}
+
+.search-keyboard-shortcuts {
+  font-size: 0.8rem;
+  opacity: 75%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  line-height: 14px;
+}
+
+.search-keyboard-shortcuts span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+@media (max-width: 768px) {
+  .search-keyboard-shortcuts {
+    display: none;
+  }
+}
+
+.search-keyboard-shortcuts kbd {
+  background: rgba(128, 128, 128, 0.1);
+  border-radius: 4px;
+  padding: 3px 6px;
+  min-width: 24px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid rgba(128, 128, 128, 0.15);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.result {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 4px;
+  transition: none;
+  line-height: 1rem;
+  border: solid 2px var(--vp-local-search-result-border);
+}
+
+.result > div {
+  margin: 12px;
+  width: 100%;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .result > div {
+    margin: 8px;
+  }
+}
+
+.titles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  position: relative;
+  z-index: 1001;
+  padding: 2px 0;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.title.main {
+  font-weight: 500;
+}
+
+.title-icon {
+  opacity: 0.5;
+  font-weight: 500;
+  color: var(--vp-c-brand);
+}
+
+.title svg {
+  opacity: 0.5;
+}
+
+.result.selected {
+  --vp-local-search-result-bg: var(--vp-local-search-result-selected-bg);
+  border-color: var(--vp-local-search-result-selected-border);
+}
+
+.excerpt-wrapper {
+  position: relative;
+}
+
+.excerpt {
+  opacity: 75%;
+  pointer-events: none;
+  max-height: 140px;
+  overflow: hidden;
+  position: relative;
+  opacity: 0.5;
+  margin-top: 4px;
+}
+
+.result.selected .excerpt {
+  opacity: 1;
+}
+
+.excerpt :deep(*) {
+  font-size: 0.8rem !important;
+  line-height: 130% !important;
+}
+
+.titles :deep(mark),
+.excerpt :deep(mark) {
+  background-color: var(--vp-local-search-highlight-bg);
+  color: var(--vp-local-search-highlight-text);
+  border-radius: 2px;
+  padding: 0 2px;
+}
+
+.excerpt :deep(.vp-code-group) .tabs {
+  display: none;
+}
+
+.excerpt :deep(.vp-code-group) div[class*="language-"] {
+  border-radius: 8px !important;
+}
+
+.excerpt-gradient-bottom {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(transparent, var(--vp-local-search-result-bg));
+  z-index: 1000;
+}
+
+.excerpt-gradient-top {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(var(--vp-local-search-result-bg), transparent);
+  z-index: 1000;
+}
+
+.result.selected .titles,
+.result.selected .title-icon {
+  color: var(--vp-c-brand) !important;
+}
+
+.no-results {
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 12px;
+}
+
+svg {
+  flex: none;
+}
