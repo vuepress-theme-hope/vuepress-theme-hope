@@ -138,3 +138,9 @@ Mathjax:
 
 - [Tex 教程](https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes)
 - [Tex 速查表](https://mdit-plugins.github.io/zh/tex.html#tex-tutorial)
+
+<script setup lang="ts">
+import { defineAsyncComponent } from 'vue';
+
+const KatexPlayground = defineAsyncComponent(()=> import('@KatexPlayground'));
+</script>

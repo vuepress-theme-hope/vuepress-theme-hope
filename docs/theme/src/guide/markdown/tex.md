@@ -85,6 +85,8 @@ Escaping can be done by using `\` before the `$` character, or adding space both
 - The $a=1$ is a TeX equation, while $ a=1 $ and \$a=1$ is not.
 ```
 
+:::
+
 ## Demo
 
 Euler's identity $e^{i\pi}+1=0$ is a beautiful formula in $\mathbb{R}^2$.
@@ -150,5 +152,7 @@ Also, you can set `tex` option which is passed to TeX input parser, and you can 
 - [Tex Cheat Sheets](https://mdit-plugins.github.io/tex.html#tex-tutorial)
 
 <script setup lang="ts">
-import KatexPlayground from '@KatexPlayground';
+import { defineAsyncComponent } from 'vue';
+
+const KatexPlayground = defineAsyncComponent(()=> import('@KatexPlayground'));
 </script>
