@@ -1253,6 +1253,9 @@ importers:
       docs-shared:
         specifier: workspace:*
         version: link:../../docs-shared
+      flowchart.ts:
+        specifier: 0.1.2
+        version: 0.1.2
       katex:
         specifier: 0.16.7
         version: 0.16.7
