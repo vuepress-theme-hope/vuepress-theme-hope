@@ -1,27 +1,19 @@
-interface MiniSearchButtonLocaleOptions {
-  text?: string;
-  ariaLabel?: string;
+import { type RequiredLocaleConfig } from "vuepress-shared";
+
+export interface MinisearchLocaleData {
+  search: string;
+
+  detail: string;
+  reset: string;
+  back: string;
+  noResults: string;
+  select: string;
+  navigate: string;
+  close: string;
+  upKey: string;
+  downKey: string;
+  selectKey: string;
+  closeKey: string;
 }
 
-interface MiniSearchModalLocaleOptions {
-  detail?: string;
-  reset?: string;
-  back?: string;
-  noResults?: string;
-  footer?: FooterTranslations;
-}
-
-interface FooterTranslations {
-  select?: string;
-  selectAriaLabel?: string;
-  navigate?: string;
-  upAriaLabel?: string;
-  downAriaLabel?: string;
-  close?: string;
-  closeAriaLabel?: string;
-}
-
-export interface MiniSearchLocaleOptions {
-  button?: MiniSearchButtonLocaleOptions;
-  modal?: MiniSearchModalLocaleOptions;
-}
+export type MinisearchLocaleConfig = RequiredLocaleConfig<MinisearchLocaleData>;

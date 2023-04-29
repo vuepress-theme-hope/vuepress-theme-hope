@@ -1813,6 +1813,18 @@ importers:
 
   packages/minisearch:
     dependencies:
+      '@types/mark.js':
+        specifier: ^8.11.8
+        version: 8.11.8
+      '@vuepress/client':
+        specifier: 2.0.0-beta.61
+        version: 2.0.0-beta.61
+      '@vuepress/core':
+        specifier: 2.0.0-beta.61
+        version: 2.0.0-beta.61
+      '@vuepress/utils':
+        specifier: 2.0.0-beta.61
+        version: 2.0.0-beta.61
       '@vueuse/core':
         specifier: ^10.1.0
         version: 10.1.0(vue@3.3.0-beta.1)
@@ -1828,6 +1840,9 @@ importers:
       vue-router:
         specifier: ^4.1.6
         version: 4.1.6(vue@3.3.0-beta.1)
+      vuepress-shared:
+        specifier: workspace:*
+        version: link:../shared
 
   packages/photo-swipe:
     dependencies:
@@ -4886,6 +4901,12 @@ packages:
     resolution: {integrity: sha512-z/QT1XN4K4KYuslS23k62yDIDLwLFkzxOuMplDtObz0+y7VqJCaO2o+SPwHCvLFZh7xazvvoor2tA/hPz9ee7g==}
     dev: true
 
+  /@types/jquery@3.5.16:
+    resolution: {integrity: sha512-bsI7y4ZgeMkmpG9OM710RRzDFp+w4P1RGiIt30C1mSBT+ExCleeh4HObwgArnDFELmRrOpXgSYN9VF1hj+f1lw==}
+    dependencies:
+      '@types/sizzle': 2.3.3
+    dev: false
+
   /@types/js-yaml@4.0.5:
     resolution: {integrity: sha512-FhpRzf927MNQdRZP0J5DLIdTXhjLYzeUTmLAu69mnVksLH9CJY3IuSeEgbKUki7GQZm0WqDkGzyxju2EZGD2wA==}
     dev: false
@@ -4909,6 +4930,12 @@ packages:
 
   /@types/linkify-it@3.0.2:
     resolution: {integrity: sha512-HZQYqbiFVWufzCwexrvh694SOim8z2d+xJl5UNamcvQFejLY/2YUtzXHYi3cHdI7PMlS8ejH2slRAOJQ32aNbA==}
+
+  /@types/mark.js@8.11.8:
+    resolution: {integrity: sha512-BoWCd9ydi1hZxDfu/lF0v1hHMsNUjuxZEDJsdHlmm6GlKk4qxlLya7D3FS81QmabwFbYPpoDOh9603JESUkHbA==}
+    dependencies:
+      '@types/jquery': 3.5.16
+    dev: false
 
   /@types/markdown-it-emoji@2.0.2:
     resolution: {integrity: sha512-2ln8Wjbcj/0oRi/6VnuMeWEHHuK8uapFttvcLmDIe1GKCsFBLOLBX+D+xhDa9oWOQV0IpvxwrSfKKssAqqroog==}
@@ -5022,6 +5049,10 @@ packages:
     dependencies:
       '@types/mime': 3.0.1
       '@types/node': 18.16.2
+
+  /@types/sizzle@2.3.3:
+    resolution: {integrity: sha512-JYM8x9EGF163bEyhdJBpR2QX1R5naCJHC8ucJylJ3w9/CVBaskdQ8WqBf8MmQrd1kRvp/a4TS8HJ+bxzR7ZJYQ==}
+    dev: false
 
   /@types/sockjs@0.3.33:
     resolution: {integrity: sha512-f0KEEe05NvUnat+boPTZ0dgaLZ4SfSouXUgv5noUiefG2ajgKjmETo9ZJyuqsl7dfl2aHlLJUiki6B4ZYldiiw==}
