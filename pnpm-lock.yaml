@@ -963,8 +963,8 @@ importers:
         specifier: workspace:*
         version: link:../../docs-shared
       flowchart.ts:
-        specifier: 0.1.2
-        version: 0.1.2
+        specifier: 0.1.5
+        version: 0.1.5
       katex:
         specifier: 0.16.7
         version: 0.16.7
@@ -1254,8 +1254,8 @@ importers:
         specifier: workspace:*
         version: link:../../docs-shared
       flowchart.ts:
-        specifier: 0.1.2
-        version: 0.1.2
+        specifier: 0.1.5
+        version: 0.1.5
       katex:
         specifier: 0.16.7
         version: 0.16.7
@@ -1753,8 +1753,8 @@ importers:
         specifier: ^5.4.2
         version: 5.4.2
       flowchart.ts:
-        specifier: 0.1.2
-        version: 0.1.2
+        specifier: 0.1.5
+        version: 0.1.5
       js-yaml:
         specifier: ^4.1.0
         version: 4.1.0
@@ -8907,12 +8907,12 @@ packages:
     resolution: {integrity: sha512-5nqDSxl8nn5BSNxyR3n4I6eDmbolI6WT+QqR547RwxQapgjQBmtktdP+HTBb/a/zLsbzERTONyUB5pefh5TtjQ==}
     dev: true
 
-  /flowchart.ts@0.1.2:
-    resolution: {integrity: sha512-4N8U2gXTkWUYh57SkCYwnSBM2B9Djia+JjClx/rLA13m0xz2S5BZht/9DvTZH5yXGZkmk7NGxGB15tnbUSI6mg==}
+  /flowchart.ts@0.1.5:
+    resolution: {integrity: sha512-WUd0J7WkmOWpa3zTA1y3YB4wQGCEQReTvX/9Lyy74252kqqC9+25KhTxXztgJ5B0sf8henFNjuGPsEx8hwKMOA==}
     dependencies:
       '@types/raphael': 2.3.3
       raphael: 2.3.0
-      tslib: 2.4.1
+      tslib: 2.5.0
     dev: false
 
   /flush-write-stream@1.1.1:
@@ -13488,10 +13488,6 @@ packages:
 
   /tslib@2.3.0:
     resolution: {integrity: sha512-N82ooyxVNm6h1riLCoyS9e3fuJ3AMG2zIZs2Gd1ATcSFjSA23Q0fzjjZeh0jbJvWVDZ0cJT8yaNNaaXHzueNjg==}
-    dev: false
-
-  /tslib@2.4.1:
-    resolution: {integrity: sha512-tGyy4dAjRIEwI7BzsB0lynWgOpfqjUdq91XXAlIWD2OwKBH7oCl/GZG/HT4BOHrTlPMOASlMQ7veyTqpmRcrNA==}
     dev: false
 
   /tslib@2.5.0:
