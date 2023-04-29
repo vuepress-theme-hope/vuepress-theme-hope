@@ -18,6 +18,8 @@ export const minisearchPlugin =
           config: options.locales,
           default: minisearchLocales,
         }),
+        MINISEARCH_QUERY_HISTORY: options.queryHistory ?? true,
+        MINISEARCH_DETAILED_VIEW: options.detailedView ?? true,
       },
 
       clientConfigFile: `${CLIENT_FOLDER}config.js`,

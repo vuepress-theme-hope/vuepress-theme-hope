@@ -40,13 +40,13 @@ import {
   watch,
 } from "vue";
 import { useRouter } from "vue-router";
+import { useLocaleConfig } from "vuepress-shared/client";
 
 // TODO: Add hmr
 import { pagesComponents } from "@internal/pagesComponents";
 import { searchIndex } from "@temp/minisearch/database";
 
-import { type MinisearchModalLocaleOptions } from "../../shared/index.js";
-import { enableQueryHistory } from "../define.js";
+import { enableQueryHistory, minisearchLocales } from "../define.js";
 
 import "../styles/search-modal.scss";
 
@@ -55,6 +55,9 @@ interface IndexResult {
   titles: string[];
   text?: string;
 }
+
+const BACK_ICON =
+  '<svg width="18" height="18" aria-hidden="true" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m7 7-7-7 7-7"/></svg>';
 
 const HEADING_REGEXP = /<h(\d*).*?>.*?<a.*? href="#(.*?)".*?>.*?<\/a><\/h\1>/gi;
 
@@ -94,6 +97,7 @@ export default defineComponent({
     const lang = usePageLang();
     const routeLocale = useRouteLocale();
     const layout = usePageLayout();
+    const locale = useLocaleConfig(minisearchLocales);
 
     const el = shallowRef<HTMLElement>();
     const resultsElement = shallowRef<HTMLElement>();
@@ -126,8 +130,9 @@ export default defineComponent({
       )
     );
 
-    const results: Ref<(SearchResult & IndexResult & { id: string })[]> =
-      shallowRef([]);
+    const results: Ref<
+      (Omit<SearchResult, "id"> & IndexResult & { id: string })[]
+    > = shallowRef([]);
 
     const enableNoResults = ref(false);
 
@@ -135,6 +140,7 @@ export default defineComponent({
       enableNoResults.value = false;
     });
 
+    // eslint-disable-next-line @typescript-eslint/require-await
     const mark = computedAsync(async () => {
       if (!resultsElement.value) return;
 
@@ -214,6 +220,7 @@ export default defineComponent({
           for (let i = 0; i < sections.length; i += 3) {
             const anchor = sections[i + 1];
             const html = sections[i + 2];
+
             map.set(anchor, html);
           }
 
@@ -227,7 +234,7 @@ export default defineComponent({
           const map = c.get(id);
           const text = map?.get(anchor) ?? "";
 
-          for (const term in result.match) terms.add(term);
+          for (const term in result["match"]) terms.add(term);
 
           return { ...result, text };
         });
@@ -325,7 +332,7 @@ export default defineComponent({
       const selectedPackage = results.value[selectedIndex.value];
 
       if (selectedPackage) {
-        router.go(selectedPackage.id);
+        void router.push(selectedPackage.id);
         emit("close");
       }
     });
@@ -333,30 +340,6 @@ export default defineComponent({
     onKeyStroke("Escape", () => {
       emit("close");
     });
-
-    // Translations
-    const defaultTranslations: { modal: MinisearchModalLocaleOptions } = {
-      modal: {
-        displayDetails: "Display detailed list",
-        resetButtonTitle: "Reset search",
-        backButtonTitle: "Close search",
-        noResultsText: "No results for",
-        footer: {
-          selectText: "to select",
-          selectKeyAriaLabel: "enter",
-          navigateText: "to navigate",
-          navigateUpKeyAriaLabel: "up arrow",
-          navigateDownKeyAriaLabel: "down arrow",
-          closeText: "to close",
-          closeKeyAriaLabel: "escape",
-        },
-      },
-    };
-
-    const $t = createTranslate(
-      theme.value.search?.options,
-      defaultTranslations
-    );
 
     // Back
     useEventListener("popstate", (event) => {
@@ -380,6 +363,24 @@ export default defineComponent({
       window.history.pushState(null, "", null);
     });
 
-    return (): VNode => h("div");
+    return (): VNode =>
+      h("div", { ref: el, class: "VPLocalSearchBox", "aria-modal": "true" }, [
+        h("div", { class: "backdrop", onClick: () => emit("close") }),
+        h("div", { class: "shell" }, [
+          h("div", { class: "search-bar", onPointerUp: onSearchBarClick }, [
+            h(
+              "div",
+              { class: "search-actions before" },
+              h("button", {
+                class: "back-button",
+                title: locale.value.back,
+                onClick: () => emit("close"),
+                innerHTML: BACK_ICON,
+              })
+            ),
+            h("input", { ref: searchInput, placeholder: placeholder.value }),
+          ]),
+        ]),
+      ]);
   },
 });

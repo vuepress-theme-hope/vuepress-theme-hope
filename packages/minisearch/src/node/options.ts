@@ -6,6 +6,11 @@ export interface MinisearchOptions {
   /**
    * @default true
    */
+  detailedView?: boolean;
+
+  /**
+   * @default true
+   */
   queryHistory?: boolean;
 
   /**
