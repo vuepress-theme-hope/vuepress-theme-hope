@@ -1,7 +1,7 @@
 import { withBase } from "@vuepress/client";
 import { isString } from "@vuepress/shared";
 import { useMutationObserver } from "@vueuse/core";
-import { type VNode, defineComponent, h, ref } from "vue";
+import { type VNode, defineComponent, h, ref, shallowRef } from "vue";
 import { useRoute } from "vue-router";
 
 import { EyeIcon, FireIcon } from "@theme-hope/modules/info/components/icons";
@@ -35,7 +35,7 @@ export default defineComponent({
     const route = useRoute();
     const metaLocale = useMetaLocale();
 
-    const pageviewElement = ref<HTMLSpanElement>();
+    const pageviewElement = shallowRef<HTMLSpanElement>();
     const pageViews = ref(0);
 
     useMutationObserver(

@@ -1,5 +1,12 @@
 import { usePageData } from "@vuepress/client";
-import { type VNode, defineComponent, h, onMounted, ref, watch } from "vue";
+import {
+  type VNode,
+  defineComponent,
+  h,
+  onMounted,
+  shallowRef,
+  watch,
+} from "vue";
 
 import { useThemeLocaleData } from "@theme-hope/composables/index";
 
@@ -20,7 +27,7 @@ export default defineComponent({
     const page = usePageData();
     const themeLocale = useThemeLocaleData();
 
-    const skipToMainContent = ref<HTMLSpanElement>();
+    const skipToMainContent = shallowRef<HTMLSpanElement>();
 
     const focusMainContent = ({ target }: Event): void => {
       const el = document.querySelector(

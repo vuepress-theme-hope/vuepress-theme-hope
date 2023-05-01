@@ -6,6 +6,7 @@ import {
   h,
   onBeforeUpdate,
   ref,
+  shallowRef,
 } from "vue";
 
 import "../styles/code-group.scss";
@@ -41,7 +42,7 @@ export const CodeGroup = defineComponent({
     const activeIndex = ref(-1);
 
     // refs of the tab buttons
-    const tabRefs = ref<HTMLUListElement[]>([]);
+    const tabRefs = shallowRef<HTMLUListElement[]>([]);
 
     // after removing a code-group-item, we need to clear the ref
     // of the removed item to avoid issues caused by HMR

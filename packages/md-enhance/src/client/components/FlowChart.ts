@@ -8,6 +8,7 @@ import {
   h,
   onMounted,
   ref,
+  shallowRef,
 } from "vue";
 import { LoadingIcon, atou } from "vuepress-shared/client";
 
@@ -48,7 +49,7 @@ export default defineComponent({
 
   setup(props) {
     let flowchart: Chart | null = null;
-    const element = ref<HTMLDivElement>();
+    const element = shallowRef<HTMLDivElement>();
 
     const loading = ref(true);
     const scale = ref(1);

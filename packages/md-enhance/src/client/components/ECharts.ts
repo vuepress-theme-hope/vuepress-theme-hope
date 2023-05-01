@@ -8,6 +8,7 @@ import {
   onMounted,
   onUnmounted,
   ref,
+  shallowRef,
 } from "vue";
 import { LoadingIcon, atou } from "vuepress-shared/client";
 
@@ -85,7 +86,7 @@ export default defineComponent({
 
   setup(props) {
     const loading = ref(true);
-    const echartsContainer = ref<HTMLElement>();
+    const echartsContainer = shallowRef<HTMLElement>();
 
     let chart: EChartsType;
 

@@ -1,6 +1,6 @@
 import { withBase } from "@vuepress/client";
 import { useEventListener } from "@vueuse/core";
-import { type VNode, defineComponent, h, onMounted, ref } from "vue";
+import { type VNode, defineComponent, h, onMounted, shallowRef } from "vue";
 import { useLocaleConfig } from "vuepress-shared/client";
 
 import { ArrowLeftIcon, ArrowRightIcon, CloseIcon } from "./icons.js";
@@ -30,8 +30,8 @@ export default defineComponent({
   setup(props, { emit }) {
     const locale = useLocaleConfig(locales);
 
-    const manifest = ref<ManifestOption>({});
-    const deferredPrompt = ref<InstallPromptEvent>();
+    const manifest = shallowRef<ManifestOption>({});
+    const deferredPrompt = shallowRef<InstallPromptEvent>();
 
     const getManifest = async (): Promise<void> => {
       const manifestContent = localStorage.getItem("manifest");

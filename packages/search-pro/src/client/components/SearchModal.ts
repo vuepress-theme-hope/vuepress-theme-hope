@@ -10,6 +10,7 @@ import {
   onMounted,
   onUnmounted,
   ref,
+  shallowRef,
   watch,
 } from "vue";
 import { useIsMobile, useLocaleConfig } from "vuepress-shared/client";
@@ -48,7 +49,7 @@ export default defineComponent({
     const { enabled, queryHistory } = useSearchQueryHistory();
 
     const input = ref("");
-    const inputElement = ref<HTMLInputElement>();
+    const inputElement = shallowRef<HTMLInputElement>();
 
     watch(isActive, (value) => {
       if (value)
