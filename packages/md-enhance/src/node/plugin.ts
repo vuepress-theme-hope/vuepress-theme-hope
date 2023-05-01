@@ -34,7 +34,6 @@ import {
   isPlainObject,
 } from "vuepress-shared/node";
 
-import { checkLinks, getCheckLinksStatus } from "./checkLink.js";
 import {
   convertOptions,
   legacyCodeDemo,
@@ -42,6 +41,7 @@ import {
   legacyFlowchart,
   legacyInclude,
 } from "./compact/index.js";
+import { getLinksCheckStatus, linksCheck } from "./linksCheck.js";
 import { markdownEnhanceLocales } from "./locales.js";
 import {
   CODE_DEMO_DEFAULT_SETTING,
@@ -117,7 +117,10 @@ export const mdEnhancePlugin =
     const mathjaxEnable = getStatus("mathjax");
     const vuePlaygroundEnable = getStatus("vuePlayground");
 
-    const shouldCheckLinks = getCheckLinksStatus(app, options);
+    const { enabled: linksCheckEnabled, isIgnoreLink } = getLinksCheckStatus(
+      app,
+      options
+    );
 
     const katexOptions: KatexOptions<MarkdownEnv> = {
       macros: {
@@ -371,15 +374,16 @@ export const mdEnhancePlugin =
       },
 
       extendsPage: (page, app): void => {
-        if (shouldCheckLinks && isAppInitialized) checkLinks(page, app);
+        if (linksCheckEnabled && isAppInitialized)
+          linksCheck(page, app, isIgnoreLink);
         if (includeEnable)
           page.deps.push(...(<string[]>page.markdownEnv["includedFiles"]));
       },
 
       onInitialized: (app): void => {
         isAppInitialized = true;
-        if (shouldCheckLinks)
-          app.pages.forEach((page) => checkLinks(page, app));
+        if (linksCheckEnabled)
+          app.pages.forEach((page) => linksCheck(page, app, isIgnoreLink));
       },
 
       onPrepared: (app): Promise<void> =>

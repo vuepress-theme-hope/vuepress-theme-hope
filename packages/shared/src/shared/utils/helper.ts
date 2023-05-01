@@ -10,7 +10,7 @@ export const isFunction = <T extends Function>(val: any): val is T =>
 export const isNumber = (val: any): val is number => typeof val === "number";
 export const isString = (val: unknown): val is string =>
   typeof val === "string";
-
+export const isRegExp = (val: unknown): val is RegExp => val instanceof RegExp;
 /* String helper */
 
 export const startsWith = (str: unknown, prefix: string): boolean =>

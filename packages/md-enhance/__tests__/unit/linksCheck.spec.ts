@@ -3,7 +3,7 @@ import { path } from "@vuepress/utils";
 import { it } from "vitest";
 
 import { emptyTheme } from "./__fixtures__/theme/empty.js";
-import { checkLinks } from "../../src/node/checkLink.js";
+import { linksCheck } from "../../src/node/linksCheck.js";
 
 it("should check links correctly", async () => {
   const app = createBaseApp({
@@ -14,5 +14,5 @@ it("should check links correctly", async () => {
 
   await app.init();
 
-  app.pages.forEach((page) => checkLinks(page, app));
+  app.pages.forEach((page) => linksCheck(page, app, () => false));
 });
