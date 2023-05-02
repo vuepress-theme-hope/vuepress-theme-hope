@@ -24,6 +24,33 @@ export type GiscusTheme =
   | "preferred_color_scheme"
   | `https://${string}`;
 
+export const SUPPORTED_LANGUAGES = [
+  "ar",
+  "de",
+  "gsw",
+  "en",
+  "es",
+  "fa",
+  "fr",
+  "id",
+  "it",
+  "ja",
+  "ko",
+  "nl",
+  "pl",
+  "pt",
+  "ro",
+  "ru",
+  "th",
+  "tr",
+  "uk",
+  "vi",
+  "zh-CN",
+  "zh-TW",
+] as const;
+
+export type GiscusLang = (typeof SUPPORTED_LANGUAGES)[number];
+
 export interface GiscusOptions extends BaseCommentOptions {
   provider: "Giscus";
 
@@ -125,4 +152,13 @@ export interface GiscusOptions extends BaseCommentOptions {
    * @default "dark"
    */
   darkTheme?: GiscusTheme;
+
+  /**
+   * The language which giscus will be displayed in
+   *
+   * 语言 giscus 将显示在
+   *
+   * @default usePageLang().value
+   */
+  lang?: GiscusLang;
 }

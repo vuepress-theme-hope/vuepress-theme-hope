@@ -10,38 +10,19 @@ import { LoadingIcon } from "vuepress-shared/client";
 import {
   type CommentPluginFrontmatter,
   type GiscusInputPosition,
+  type GiscusLang,
   type GiscusMapping,
   type GiscusOptions,
   type GiscusRepo,
   type GiscusTheme,
+  SUPPORTED_LANGUAGES,
 } from "../../shared/index.js";
 
 import "../styles/giscus.scss";
 
 declare const COMMENT_OPTIONS: GiscusOptions;
 
-const SUPPORTED_LANGUAGES = [
-  "de",
-  "gsw",
-  "en",
-  "es",
-  "fr",
-  "id",
-  "it",
-  "ja",
-  "ko",
-  "pl",
-  "ro",
-  "ru",
-  "tr",
-  "vi",
-  "zh-CN",
-  "zh-TW",
-] as const;
-
 type BooleanString = "0" | "1";
-
-export type GiscusLang = (typeof SUPPORTED_LANGUAGES)[number];
 
 export type GiscusLoading = "lazy" | "eager";
 
@@ -90,7 +71,7 @@ export default defineComponent({
     const loaded = ref(false);
 
     const giscusLang = computed(() => {
-      const lang = usePageLang().value as GiscusLang;
+      const lang = (giscusOptions.lang || usePageLang().value) as GiscusLang;
 
       if (SUPPORTED_LANGUAGES.includes(lang)) return lang;
 

@@ -113,3 +113,37 @@ Should be a built-in theme keyword or a css link starting with `https://`.
 Giscus theme used in darkmode
 
 Should be a built-in theme keyword or a css link starting with `https://`.
+
+## lang
+
+- Type: `GiscusLang`
+
+  ```ts
+  type GiscusLang =
+    | "ar"
+    | "de"
+    | "gsw"
+    | "en"
+    | "es"
+    | "fa"
+    | "fr"
+    | "id"
+    | "it"
+    | "ja"
+    | "ko"
+    | "nl"
+    | "pl"
+    | "pt"
+    | "ro"
+    | "ru"
+    | "th"
+    | "tr"
+    | "uk"
+    | "vi"
+    | "zh-CN"
+    | "zh-TW";
+  ```
+
+- Default: `usePageLang().value || "en"`
+
+The language which giscus will be displayed in

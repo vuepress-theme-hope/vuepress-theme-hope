@@ -113,3 +113,37 @@ Giscus 在日间模式下使用的主题
 Giscus 在夜间模式下使用的主题
 
 应为一个内置主题关键词或者一个 CSS 链接。
+
+## lang
+
+- 类型: `GiscusLang`
+
+  ```ts
+  type GiscusLang =
+    | "ar"
+    | "de"
+    | "gsw"
+    | "en"
+    | "es"
+    | "fa"
+    | "fr"
+    | "id"
+    | "it"
+    | "ja"
+    | "ko"
+    | "nl"
+    | "pl"
+    | "pt"
+    | "ro"
+    | "ru"
+    | "th"
+    | "tr"
+    | "uk"
+    | "vi"
+    | "zh-CN"
+    | "zh-TW";
+  ```
+
+- 默认值: `usePageLang().value || "en"`
+
+语言 giscus 将显示在
