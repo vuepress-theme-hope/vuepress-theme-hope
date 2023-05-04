@@ -3,6 +3,7 @@ import { getDirname, path } from "@vuepress/utils";
 import {
   Logger,
   ensureEndingSlash,
+  entries,
   fromEntries,
   isAbsoluteUrl,
   isArray,
@@ -89,7 +90,12 @@ export const getRedirectMap = (
         )
         .flat()
     ),
-    ...config,
+    ...fromEntries(
+      entries(config).map(([from, to]) => [
+        normalizePath(from),
+        normalizePath(to),
+      ])
+    ),
   };
 };
 
