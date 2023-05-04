@@ -284,8 +284,8 @@ importers:
         specifier: 2.0.0-beta.61
         version: 2.0.0-beta.61(sass-loader@13.2.2)
       artplayer-plugin-danmuku:
-        specifier: 5.0.0
-        version: 5.0.0
+        specifier: 5.0.1
+        version: 5.0.1
       hls.js:
         specifier: 1.4.0
         version: 1.4.0
@@ -828,8 +828,8 @@ importers:
         specifier: 2.0.0-beta.61
         version: 2.0.0-beta.61
       artplayer-plugin-danmuku:
-        specifier: 5.0.0
-        version: 5.0.0
+        specifier: 5.0.1
+        version: 5.0.1
       docs-shared:
         specifier: workspace:*
         version: link:../../docs-shared
@@ -6199,8 +6199,8 @@ packages:
       marked: 4.3.0
     dev: false
 
-  /artplayer-plugin-danmuku@5.0.0:
-    resolution: {integrity: sha512-swnnTIHnwyAft4Pbh7uQtzjNNhqoiMffuEvZ3eUkMfFGWOEjoZ23TQ7rqXXY08iGJTIWt4Rn7iqUS5DdKsHy9g==}
+  /artplayer-plugin-danmuku@5.0.1:
+    resolution: {integrity: sha512-b6/Y4/+X0rNmnqS5+zzQgow+WW4iVT8eFv4LAUzJgIyORIcf5Gn00Dy0PZ+kwGb1VJy0CUCRK6gVVvh0tWsRAg==}
 
   /artplayer@5.0.4:
     resolution: {integrity: sha512-klX7v0OUa4S5C25IaBG1w9GkHKUf4qxK6K5pG96ksMH98lmm5gEJvh/xjDC7ZRGbOH5db7uFIHOJnJnMx2XTfA==}
