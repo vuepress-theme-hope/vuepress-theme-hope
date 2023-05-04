@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@types/katex": "0.16.0",
-    "@vueuse/core": "10.1.0",
+    "@vueuse/core": "10.1.2",
     "@vuepress/client": "2.0.0-beta.61",
     "docs-shared": "workspace:*",
     "flowchart.ts": "0.1.2",
