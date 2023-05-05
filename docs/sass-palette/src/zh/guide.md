@@ -69,7 +69,7 @@ $colorA: blue !default;
 $colorB: green !default;
 ```
 
-你可以在插件 Sass 文件中中获取到如下变量:
+你可以在插件 Sass 文件中获取到如下变量:
 
 ```scss
 // Vue 单文件组件的 <style lang="scss"> 块或脚本中直接导入的 Scss 文件中
