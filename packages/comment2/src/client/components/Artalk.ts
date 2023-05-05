@@ -11,7 +11,7 @@ import {
 } from "vue";
 import { isString } from "vuepress-shared/client";
 
-import { useArtalkOptions } from "../composables/index.js";
+import { useArtalkOptions } from "../helpers/index.js";
 
 import "artalk/dist/Artalk.css";
 import "../styles/artalk.scss";

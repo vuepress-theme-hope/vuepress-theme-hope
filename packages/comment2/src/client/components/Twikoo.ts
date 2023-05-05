@@ -10,7 +10,7 @@ import {
 } from "vue";
 import { LoadingIcon } from "vuepress-shared/client";
 
-import { useTwikooOptions } from "../composables/index.js";
+import { useTwikooOptions } from "../helpers/index.js";
 
 import "../styles/twikoo.scss";
 

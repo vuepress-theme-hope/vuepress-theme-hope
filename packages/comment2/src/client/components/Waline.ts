@@ -21,7 +21,7 @@ import {
   type CommentPluginFrontmatter,
   type WalineLocaleConfig,
 } from "../../shared/index.js";
-import { useWalineOptions } from "../composables/index.js";
+import { useWalineOptions } from "../helpers/index.js";
 
 import "@waline/client/dist/waline.css";
 import "../styles/waline.scss";

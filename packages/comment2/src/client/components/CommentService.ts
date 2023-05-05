@@ -3,7 +3,7 @@ import { type VNode, computed, defineComponent, h } from "vue";
 import CommentProvider from "vuepress-plugin-comment2/provider";
 
 import { type CommentPluginFrontmatter } from "../../shared/index.js";
-import { useCommentOptions } from "../composables/index.js";
+import { useCommentOptions } from "../helpers/index.js";
 
 export default defineComponent({
   name: "CommentService",

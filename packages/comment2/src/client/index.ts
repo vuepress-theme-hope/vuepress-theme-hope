@@ -1,1 +1,6 @@
-export * from "./composables/index.js";
+export {
+  defineArtalkConfig,
+  defineGiscusConfig,
+  defineTwikooConfig,
+  defineWalineConfig,
+} from "./helpers/index.js";

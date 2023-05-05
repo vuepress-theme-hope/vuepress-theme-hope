@@ -8,7 +8,7 @@ import {
   type GiscusRepo,
   type GiscusTheme,
 } from "../../shared/index.js";
-import { useGiscusOptions } from "../composables/index.js";
+import { useGiscusOptions } from "../helpers/index.js";
 
 import "../styles/giscus.scss";
 
