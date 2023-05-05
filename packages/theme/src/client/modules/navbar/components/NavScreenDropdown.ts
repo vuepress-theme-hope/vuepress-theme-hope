@@ -53,7 +53,7 @@ export default defineComponent({
     );
 
     const isLastItemOfArray = <T>(item: T, arr: T[]): boolean =>
-      arr[arr.length - 1] === item;
+      arr.at(-1) === item;
 
     return (): VNode[] => [
       h(
