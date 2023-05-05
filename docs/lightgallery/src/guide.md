@@ -21,6 +21,28 @@ If you are worried about this, please consider using <ProjectLink name="photo-sw
 
 :::
 
+## Customize Options
+
+You can pass options to [`lightgallery`](https://www.lightgalleryjs.com/) by importing and calling `defineLightGalleryConfig` in client config file:
+
+```ts
+// .vuepress/client.ts
+import { defineClientConfig } from "@vuepress/client";
+import { defineLightGalleryConfig } from "vuepress-plugin-lightgallery/client";
+
+defineLightGalleryConfig({
+  // lightgallery options here
+});
+
+export default defineClientConfig({
+  // ...
+});
+```
+
+## Operation Delay
+
+If your theme adds animations when switching pages, you may need to delay when lightgallery re-finds page images. You can configure this delay via the `delay` option, the default value is `800` (in milliseconds).
+
 ## Demo
 
 <!-- markdownlint-disable -->

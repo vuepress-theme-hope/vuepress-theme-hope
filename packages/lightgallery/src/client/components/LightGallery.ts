@@ -1,5 +1,4 @@
 import { usePageData } from "@vuepress/client";
-import { type LightGallerySettings } from "lightgallery/lg-settings.js";
 import { type GalleryItem } from "lightgallery/lg-utils.js";
 import { type LgQuery } from "lightgallery/lgQuery.js";
 import lightGallery from "lightgallery/lightgallery.es5.js";
@@ -15,6 +14,8 @@ import {
   watch,
 } from "vue";
 
+import { useLightGalleryOptions } from "../helpers/index.js";
+
 import "lightgallery/scss/lightgallery.scss";
 
 type LightGalleryPlugin<T = unknown> = {
@@ -23,7 +24,6 @@ type LightGalleryPlugin<T = unknown> = {
 
 declare const IMAGE_SELECTOR: string;
 declare const LIGHT_GALLERY_DELAY: number;
-declare const LIGHT_GALLERY_OPTIONS: LightGallerySettings;
 declare const LIGHT_GALLERY_AUTOPLAY: boolean;
 declare const LIGHT_GALLERY_FULLSCREEN: boolean;
 declare const LIGHT_GALLERY_PAGER: boolean;
@@ -48,6 +48,7 @@ export default defineComponent({
   name: "LightGallery",
 
   setup(_props, { slots }) {
+    const lightGalleryOptions = useLightGalleryOptions();
     const page = usePageData();
 
     const container = shallowRef<HTMLElement>();
@@ -185,7 +186,7 @@ export default defineComponent({
         );
 
         instance = new lightGallery(container.value!, {
-          ...LIGHT_GALLERY_OPTIONS,
+          ...lightGalleryOptions,
           dynamic: true,
           dynamicEl: getImages(images),
           // this is a licenseKey to make this project under MIT, special thanks to @Sachin

@@ -19,6 +19,28 @@ icon: lightbulb
 
 :::
 
+## 自定义 LightGallery 选项
+
+您可以通过在客户端配置文件中导入和调用 `defineLightGalleryConfig` 来将选项传递给 [`lightgallery`](https://www.lightgalleryjs.com/)：
+
+```ts
+// .vuepress/client.ts
+import { defineClientConfig } from "@vuepress/client";
+import { defineLightGalleryConfig } from "vuepress-plugin-lightgallery/client";
+
+defineLightGalleryConfig({
+  // 在此设置 lightgallery 选项
+});
+
+export default defineClientConfig({
+  // ...
+});
+```
+
+## 操作延迟
+
+如果你的主题在页面切换时会添加动画，你可能需要延迟 lightgallery 重新查找页面图片的时间点。你可以通过 `delay` 选项来配置这一延迟，默认的值为 `800` (单位为毫秒)。
+
 ## 演示
 
 <!-- markdownlint-disable -->

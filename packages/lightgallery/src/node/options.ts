@@ -1,5 +1,3 @@
-import { type LightGallerySettings } from "lightgallery/lg-settings.js";
-
 /**
  * LightGallery plugins
  */
@@ -57,11 +55,4 @@ export interface LightGalleryOptions {
    * @default 800
    */
   delay?: number;
-
-  /**
-   * 传递给 lightgallery 的额外选项
-   *
-   * Options which will pass to `lightgallery`
-   */
-  options?: LightGallerySettings;
 }
