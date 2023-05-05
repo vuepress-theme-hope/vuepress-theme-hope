@@ -53,7 +53,8 @@ const BOOLEAN_FALSE_ATTRS = [
   "subtitle-offset",
 ] as const;
 
-const SUPPORTED_LANG_NAME = ["en", "pl", "cs", "es", "fa"];
+// NOTE: This should be updated with https://github.com/zhw2590582/ArtPlayer/blob/master/packages/artplayer/src/i18n/index.js
+const SUPPORTED_LANG_NAME = ["en", "pl", "cs", "es", "fa", "fr", "id", "ru"];
 const SUPPORTED_LANG_CODE = ["zh-cn", "zh-tw"];
 
 type KebabCaseToCamelCase<
@@ -204,7 +205,6 @@ export default defineComponent({
         theme: "#3eaf7c",
         ...ART_PLAYER_OPTIONS,
         container: el.value!,
-        title: props.title,
         poster: props.poster,
         url: props.src,
         type: props.type || getTypeByUrl(props.src),

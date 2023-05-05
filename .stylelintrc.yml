@@ -5,3 +5,4 @@ rules:
     - true
     - ignoreShorthands:
         - /inset/
+  media-feature-range-notation: prefix

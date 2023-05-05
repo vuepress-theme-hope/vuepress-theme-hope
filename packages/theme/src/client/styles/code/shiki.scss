@@ -33,7 +33,7 @@
 
 div[class*="language-"] {
   pre {
-    // WARNING: force clearing the background color to be compatible with shiki
+    // force clearing the background color to be compatible with shiki
     background: transparent !important;
   }
 }

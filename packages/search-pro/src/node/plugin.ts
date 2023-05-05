@@ -23,7 +23,7 @@ import { CLIENT_FOLDER, PLUGIN_NAME, logger } from "./utils.js";
 export const searchProPlugin =
   (options: SearchProOptions, legacy = true): PluginFunction =>
   (app) => {
-    // TODO: Remove it
+    // TODO: Remove this in v2 stable
     if (legacy)
       convertOptions(options as SearchProOptions & Record<string, unknown>);
 

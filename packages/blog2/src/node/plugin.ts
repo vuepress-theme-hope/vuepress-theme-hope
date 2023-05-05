@@ -18,7 +18,7 @@ import { PLUGIN_NAME, getPageMap, logger } from "./utils.js";
 export const blogPlugin =
   (options: BlogOptions, legacy = true): PluginFunction =>
   (app) => {
-    // TODO: remove in V2 Stable
+    // TODO: Remove this in v2 stable
     if (legacy)
       convertOptions(options as BlogOptions & Record<string, unknown>);
 
