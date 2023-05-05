@@ -56,7 +56,15 @@ export default defineComponent({
     );
 
     const progress = computed(
-      () => y.value / (bodyHeight.value - windowHeight.value)
+      () => (
+        console.log(
+          y.value,
+          bodyHeight.value,
+          windowHeight.value,
+          y.value / (bodyHeight.value - windowHeight.value)
+        ),
+        y.value / (bodyHeight.value - windowHeight.value)
+      )
     );
 
     onMounted(() => {
@@ -90,9 +98,11 @@ export default defineComponent({
                         cy: "50%",
                         r: "calc(50% - 2px)",
                         style: {
-                          "stroke-dasharray": `${
+                          "stroke-dasharray": `calc(${
                             Math.PI * progress.value * 100
-                          }% ${Math.PI * 100}%`,
+                          }% - ${4 * Math.PI}px) calc(${Math.PI * 100}% - ${
+                            4 * Math.PI
+                          }px)`,
                         },
                       })
                     ),
