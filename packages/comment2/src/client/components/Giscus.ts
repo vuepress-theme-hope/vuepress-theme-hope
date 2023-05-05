@@ -1,24 +1,16 @@
-import {
-  usePageData,
-  usePageFrontmatter,
-  usePageLang,
-  withBase,
-} from "@vuepress/client";
+import { usePageData, usePageLang, withBase } from "@vuepress/client";
 import { type VNode, computed, defineComponent, h, onMounted, ref } from "vue";
 import { LoadingIcon } from "vuepress-shared/client";
 
 import {
-  type CommentPluginFrontmatter,
   type GiscusInputPosition,
   type GiscusMapping,
-  type GiscusOptions,
   type GiscusRepo,
   type GiscusTheme,
 } from "../../shared/index.js";
+import { useGiscusOptions } from "../composables/index.js";
 
 import "../styles/giscus.scss";
-
-declare const COMMENT_OPTIONS: GiscusOptions;
 
 // Note: Should be updated with https://github.com/giscus/giscus/tree/main/locales
 const SUPPORTED_LANGUAGES = [
@@ -69,16 +61,6 @@ export interface GiscusProps {
   loading?: GiscusLoading | undefined;
 }
 
-const giscusOptions = COMMENT_OPTIONS;
-const enableGiscus = Boolean(
-  giscusOptions.repo &&
-    giscusOptions.repoId &&
-    giscusOptions.category &&
-    giscusOptions.categoryId
-);
-
-const { repo, repoId, category, categoryId } = giscusOptions;
-
 export default defineComponent({
   name: "GiscusComment",
 
@@ -92,8 +74,18 @@ export default defineComponent({
   },
 
   setup(props) {
-    const frontmatter = usePageFrontmatter<CommentPluginFrontmatter>();
+    const giscusOptions = useGiscusOptions();
     const page = usePageData();
+
+    const enableGiscus = Boolean(
+      giscusOptions.repo &&
+        giscusOptions.repoId &&
+        giscusOptions.category &&
+        giscusOptions.categoryId
+    );
+
+    const { repo, repoId, category, categoryId } = giscusOptions;
+
     const loaded = ref(false);
 
     const giscusLang = computed(() => {
@@ -106,19 +98,6 @@ export default defineComponent({
       if (SUPPORTED_LANGUAGES.includes(shortCode)) return shortCode;
 
       return "en";
-    });
-
-    const enableComment = computed(() => {
-      if (!enableGiscus) return false;
-      const pluginConfig = giscusOptions.comment !== false;
-      const pageConfig = frontmatter.value.comment;
-
-      return (
-        // Enable in page
-        Boolean(pageConfig) ||
-        // not disabled in anywhere
-        (pluginConfig !== false && pageConfig !== false)
-      );
     });
 
     const config = computed(
@@ -148,20 +127,19 @@ export default defineComponent({
       loaded.value = true;
     });
 
-    return (): VNode =>
-      h(
-        "div",
-        {
-          class: [
-            "giscus-wrapper",
-            { "input-top": giscusOptions.inputPosition !== "bottom" },
-          ],
-          id: "comment",
-          style: {
-            display: enableComment.value ? "block" : "none",
-          },
-        },
-        loaded.value ? h("giscus-widget", config.value) : h(LoadingIcon)
-      );
+    return (): VNode | null =>
+      enableGiscus
+        ? h(
+            "div",
+            {
+              class: [
+                "giscus-wrapper",
+                { "input-top": giscusOptions.inputPosition !== "bottom" },
+              ],
+              id: "comment",
+            },
+            loaded.value ? h("giscus-widget", config.value) : h(LoadingIcon)
+          )
+        : null;
   },
 });

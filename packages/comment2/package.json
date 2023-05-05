@@ -31,6 +31,7 @@
   "type": "module",
   "exports": {
     ".": "./lib/node/index.js",
+    "./client": "./lib/client/index.js",
     "./client/*": "./lib/client/*",
     "./pageview": "./lib/client/pageview.js",
     "./package.json": "./package.json"

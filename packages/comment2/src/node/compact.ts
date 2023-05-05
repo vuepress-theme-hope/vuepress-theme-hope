@@ -1,9 +1,9 @@
+import { type CommentPluginOptions } from "./options.js";
 import { logger } from "./utils.js";
-import { type CommentOptions } from "../shared/index.js";
 
 /** @deprecated */
 export const convertOptions = (
-  options: CommentOptions & {
+  options: CommentPluginOptions & {
     /** @deprecated */
     type?: "waline" | "giscus" | "twikoo" | "none";
   }

@@ -5,6 +5,6 @@ icon: a
 
 详见 [Artalk 配置](https://artalk.js.org/guide/frontend/config.html)。
 
-`el` `pageTitle`, `pageKey` 和 `site` 选项为插件的保留选项。
+`el` `pageTitle`, `pageKey` 和 `site` 选项为插件的保留选项，将从 VuePress 配置中自动推断，不可设置。
 
-在 VuePress2 提供客户端配置前，暂不支持 `imgUploader` 和 `avatarURLBuilder` 这两个函数选项。
+`imgUploader` 和 `avatarURLBuilder` 这两个函数选项只能在客户端配置。

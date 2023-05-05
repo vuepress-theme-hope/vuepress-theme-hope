@@ -12,10 +12,42 @@ Waline 的服务端地址。
 
 ## emoji
 
-- 类型: `(string | WalineEmojiInfo)[] | false`
+- 类型: `(WalineEmojiInfo | WalineEmojiPresets)[] | false`
+
+  ```ts
+  type WalineEmojiPresets = `http://${string}` | `https://${string}`;
+
+  interface WalineEmojiInfo {
+    /**
+     * 选项卡上的 Emoji 名称
+     */
+    name: string;
+    /**
+     * 所在文件夹链接
+     */
+    folder?: string;
+    /**
+     * Emoji 通用路径前缀
+     */
+    prefix?: string;
+    /**
+     * Emoji 图片的类型，会作为文件扩展名使用
+     */
+    type?: string;
+    /**
+     * 选项卡显示的 Emoji 图标
+     */
+    icon: string;
+    /**
+     * Emoji 图片列表
+     */
+    items: string[];
+  }
+  ```
+
 - 默认值: `['//unpkg.com/@waline/emojis@1.1.0/weibo']`
 
-表情设置，详见 [自定义表情](https://waline.js.org/guide/client/emoji.html)
+表情设置，详见 [自定义表情](https://waline.js.org/guide/features/emoji.html)
 
 ## dark
 
@@ -38,7 +70,14 @@ Waline 的服务端地址。
 
 :::
 
-自定义样式与暗黑模式详见 [自定义样式](https://waline.js.org/guide/client/style.html)。
+自定义样式与暗黑模式详见 [自定义样式](https://waline.js.org/guide/features/style.html)。
+
+## commentSorting
+
+- 类型: `WalineCommentSorting`
+- 默认值: `'latest'`
+
+评论列表排序方式。可选值: `'latest'`, `'oldest'`, `'hottest'`
 
 ## meta
 
@@ -65,7 +104,7 @@ Waline 的服务端地址。
 
 登录模式状态，可选值:
 
-- `'enable'`: 启用登录
+- `'enable'`: 启用登录 (默认)
 - `'disable'`: 禁用登录，用户只能填写信息评论
 - `'force'`: 强制登录，用户必须注册并登录才可发布评论
 
@@ -76,13 +115,6 @@ Waline 的服务端地址。
 
 评论字数限制。填入单个数字时为最大字数限制。设置为 `0` 时无限制。
 
-## metaIcon
-
-- 类型: `boolean`
-- 默认值: `true`
-
-是否导入 Meta 图标。
-
 ## pageSize
 
 - 类型: `number`
@@ -90,9 +122,114 @@ Waline 的服务端地址。
 
 评论列表分页，每页条数。
 
-## search
+## imageUploader
 
-- 类型: `undefined | false`
+- 类型: `WalineImageUploader | false`
+- 必填: 否
+- 详情:
+
+  ```ts
+  type WalineImageUploader = (image: File) => Promise<string>;
+  ```
+
+- 参考:
+  - [Cookbook → 自定义图片上传](https://waline.js.org/cookbook/customize/upload-image.html)
+
+自定义图片上传方法。默认行为是将图片 Base 64 编码嵌入，你可以设置为 `false` 以禁用图片上传功能。
+
+函数应该接收图片对象，返回一个提供图片地址的 Promise。
+
+## highlighter <Badge text="仅限客户端配置" type="warning"/>
+
+- 类型: `WalineHighlighter | false`
+
+  ```ts
+  type WalineHighlighter = (code: string, lang: string) => string;
+  ```
+
+- 必填: 否
+
+- 详情:
+  - [Cookbook → 自定义代码高亮](https://waline.js.org/cookbook/customize/highlighter.html)
+
+**代码高亮**，默认使用一个 < 1kb 的简单高亮器。函数传入代码块的原始字符和代码块的语言。你应该直接返回一个字符串。
+
+你可以传入一个自己的代码高亮器，也可以设置为 `false` 以禁用代码高亮功能。
+
+## texRenderer <Badge text="仅限客户端配置" type="warning"/>
+
+- 类型: `WalineTexRenderer | false`
+
+  ```ts
+  type WalineTexRenderer = (blockMode: boolean, tex: string) => string;
+  ```
+
+- 必填: 否
+
+- 详情:
+
+  - [Cookbook → 自定义 $\TeX$ 渲染器](https://waline.js.org/cookbook/customize/tex-renderer.html)
+  - [MathJax](https://www.mathjax.org/)
+  - [KaTeX](https://katex.org/)
+
+自定义 $\TeX$ 渲染，默认行为是提示预览模式不支持 $\TeX$。函数提供两个参数，第一个参数表示渲染模式是否为块级，第二个参数是 $\TeX$ 的字符串，并返回一段 HTML 字符串作为渲染结果。
+
+你可以自行引入 $\TeX$ 渲染器并提供预览渲染，建议使用 Katex 或 MathJax，也可以设置为 `false` 以禁止渲染 $\TeX$。
+
+## search <Badge text="仅限客户端配置" type="warning"/>
+
+- 类型: `WalineSearchOptions | false`
+
+  ```ts
+  interface WalineSearchImageData extends Record<string, unknown> {
+    /**
+     * 图片链接
+     */
+    src: string;
+
+    /**
+     * 图片标题
+     *
+     * @description 用于图片的 alt 属性
+     */
+    title?: string;
+
+    /**
+     * 图片缩略图
+     *
+     * @description 为了更好的加载性能，我们会优先在列表中使用此缩略图
+     *
+     * @default src
+     */
+    preview?: string;
+  }
+
+  type WalineSearchResult = WalineSearchImageData[];
+
+  interface WalineSearchOptions {
+    /**
+     * 搜索操作
+     */
+    search: (word: string) => Promise<WalineSearchResult>;
+
+    /**
+     * 打开列表时展示的默认结果
+     *
+     * @default () => search('')
+     */
+    default?: () => Promise<WalineSearchResult>;
+
+    /**
+     * 获取更多的操作
+     *
+     * @description 会在列表滚动到底部时触发，如果你的搜索服务支持分页功能，你应该设置此项实现无限滚动
+     *
+     * @default (word) => search(word)
+     */
+    more?: (word: string, currentCount: number) => Promise<WalineSearchResult>;
+  }
+  ```
+
 - 必填: 否
 
 自定义搜索功能，设置 `false` 可禁用搜索。
@@ -124,7 +261,14 @@ reCAPTCHA V3 是 Google 提供的验证码服务，配置 reCAPTCHA V3 网站密
 
 为文章增加表情互动功能，设置为 `true` 提供默认表情，也可以通过设置表情地址数组来自定义表情图片，最大支持 8 个表情。
 
-## locales
+## metaIcon <Badge text="仅限插件选项" type="warning"/>
+
+- 类型: `boolean`
+- 默认值: `true`
+
+是否导入 Meta 图标。
+
+## locales <Badge text="仅限插件选项" type="warning"/>
 
 - 类型: `WalineLocales`
 

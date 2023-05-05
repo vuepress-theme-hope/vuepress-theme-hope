@@ -1,5 +1,8 @@
 import { type PluginObject } from "@vuepress/core";
-import { type CommentOptions, commentPlugin } from "vuepress-plugin-comment2";
+import {
+  type CommentPluginOptions,
+  commentPlugin,
+} from "vuepress-plugin-comment2";
 
 import { VERSION } from "../utils.js";
 
@@ -9,13 +12,13 @@ import { VERSION } from "../utils.js";
  * Resolve options for vuepress-plugin-comment2
  */
 export const getCommentPlugin = (
-  options?: Partial<CommentOptions> | false,
+  options?: Partial<CommentPluginOptions> | false,
   legacy = false
 ): PluginObject | null => {
   if (options === false || !options?.provider) return null;
 
   return commentPlugin(
-    <CommentOptions>{
+    <CommentPluginOptions>{
       provider: "None",
       ...(options?.provider === "Giscus"
         ? {

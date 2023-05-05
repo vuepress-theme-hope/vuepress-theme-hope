@@ -1,6 +1,6 @@
 import { type GitPluginOptions } from "@vuepress/plugin-git";
 import { type AutoCatalogOptions } from "vuepress-plugin-auto-catalog";
-import { type CommentOptions } from "vuepress-plugin-comment2";
+import { type CommentPluginOptions } from "vuepress-plugin-comment2";
 import { type ComponentOptions } from "vuepress-plugin-components";
 import { type CopyCodeOptions } from "vuepress-plugin-copy-code2";
 import { type CopyrightOptions } from "vuepress-plugin-copyright2";
@@ -67,7 +67,7 @@ export interface PluginsOptions {
    *
    * @see https://plugin-comment2.vuejs.press/zh/config/
    */
-  comment?: CommentOptions | false;
+  comment?: CommentPluginOptions | false;
 
   /**
    * code copy plugin options

@@ -13,24 +13,21 @@ import {
 import { getProvider } from "./alias.js";
 import { convertOptions } from "./compact.js";
 import { walineLocales } from "./locales.js";
-import { applyDemo } from "./options.js";
+import { type CommentPluginOptions } from "./options.js";
 import { PLUGIN_NAME, logger } from "./utils.js";
-import { type CommentOptions } from "../shared/index.js";
 
 const __dirname = getDirname(import.meta.url);
 
 /** Comment Plugin */
 export const commentPlugin =
-  (options: CommentOptions, legacy = true): PluginFunction =>
+  (options: CommentPluginOptions, legacy = true): PluginFunction =>
   (app) => {
     // TODO: Remove this in v2 stable
     if (legacy)
-      convertOptions(options as CommentOptions & Record<string, unknown>);
+      convertOptions(options as CommentPluginOptions & Record<string, unknown>);
     checkVersion(app, PLUGIN_NAME, "2.0.0-beta.61");
 
     if (app.env.isDebug) logger.info("Options:", options);
-
-    applyDemo(options, app);
 
     const userWalineLocales =
       options.provider === "Waline"

@@ -17,6 +17,7 @@ export default theme("comment2", {
   plugins: {
     mdEnhance: {
       codetabs: true,
+      tabs: true,
     },
   },
 });

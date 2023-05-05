@@ -20,20 +20,16 @@ import { LoadingIcon, useLocaleConfig } from "vuepress-shared/client";
 import {
   type CommentPluginFrontmatter,
   type WalineLocaleConfig,
-  type WalineOptions,
 } from "../../shared/index.js";
+import { useWalineOptions } from "../composables/index.js";
 
 import "@waline/client/dist/waline.css";
 import "../styles/waline.scss";
 
-declare const COMMENT_OPTIONS: WalineOptions;
-
 declare const WALINE_META: boolean;
 declare const WALINE_LOCALES: WalineLocaleConfig;
 
-const walineOption = COMMENT_OPTIONS;
 const walineLocales = WALINE_LOCALES;
-const enableWaline = Boolean(walineOption.serverURL);
 
 if (WALINE_META)
   import(
@@ -46,29 +42,18 @@ export default defineComponent({
   name: "WalineComment",
 
   setup() {
+    const walineOptions = useWalineOptions();
     const page = usePageData();
     const frontmatter = usePageFrontmatter<CommentPluginFrontmatter>();
     const lang = usePageLang();
     const walineLocale = useLocaleConfig(walineLocales);
 
     let abort: () => void;
-
-    const enableComment = computed(() => {
-      if (!enableWaline) return false;
-      const pluginConfig = walineOption.comment !== false;
-      const pageConfig = frontmatter.value.comment;
-
-      return (
-        // Enable in page
-        Boolean(pageConfig) ||
-        // not disabled in anywhere
-        (pluginConfig !== false && pageConfig !== false)
-      );
-    });
+    const enableWaline = Boolean(walineOptions.serverURL);
 
     const enablePageViews = computed(() => {
       if (!enableWaline) return false;
-      const pluginConfig = walineOption.pageview !== false;
+      const pluginConfig = walineOptions.pageview !== false;
       const pageConfig = frontmatter.value.pageview;
 
       return (
@@ -85,7 +70,7 @@ export default defineComponent({
       lang: lang.value === "zh-CN" ? "zh-CN" : "en",
       locale: walineLocale.value,
       dark: "html.dark",
-      ...walineOption,
+      ...walineOptions,
       path: walineKey.value,
     }));
 
@@ -99,10 +84,10 @@ export default defineComponent({
             void nextTick().then(() => {
               setTimeout(() => {
                 abort = pageviewCount({
-                  serverURL: walineOption.serverURL,
+                  serverURL: walineOptions.serverURL,
                   path: walineKey.value,
                 });
-              }, walineOption.delay || 800);
+              }, walineOptions.delay || 800);
             });
         },
         { immediate: true }
@@ -110,7 +95,7 @@ export default defineComponent({
     });
 
     return (): VNode | null =>
-      enableComment.value
+      enableWaline
         ? h(
             "div",
             { class: "waline-wrapper", id: "comment" },

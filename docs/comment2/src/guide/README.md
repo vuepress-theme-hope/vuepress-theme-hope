@@ -3,6 +3,68 @@ title: Guide
 icon: lightbulb
 ---
 
+## Setting Options
+
+You can both set options with plugin options on Node side and set options in client config file on Browser side.
+
+::: tabs
+
+@tab With Plugin Options
+
+```ts
+// .vuepress/config.ts
+module.exports = {
+  plugins: [
+    [
+      "@vuepress/comment2",
+      {
+        provider: "Artalk", // Artalk | Giscus | Waline | Twikoo
+
+        // other options here
+        // ...
+      },
+    ],
+  ],
+};
+```
+
+@tab With Client Config File
+
+```ts
+// .vuepress/client.ts
+import { defineClientConfig } from "@vuepress/client";
+import {
+  defineArtalkOptions,
+  // defineGiscusOptions,
+  // defineTwikooOptions,
+  // defineWalineOptions,
+} from "@vuepress/plugin-comment2";
+
+defineArtalkOptions({
+  // options
+});
+
+export default defineClientConfig({
+  // ...
+});
+```
+
+:::
+
+But there are some limitations you should remember:
+
+- `provider`, locales and other resource related option must be set in plugin options.
+
+  To ensure tree-shaking works, we must optimize entries at node so that bundler can understand which resource should be included in the final bundle.
+
+  These options will be marked with <Badge text="Plugin Option Only" type="warning"/> in config reference.
+
+- Options which can not be serialized to JSON must be set in client config.
+
+  Options that receive complicated values (e.g.: Function) can not be set in plugin options, as plugins are running under Node.js environment, so we can not pass these values and their contexts to browser.
+
+  These options will be marked with <Badge text="Client Config Only" type="warning"/> in config reference.
+
 ## Adding Comment
 
 This plugin globally registers a component `<CommentService />`.

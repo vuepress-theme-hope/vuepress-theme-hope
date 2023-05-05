@@ -25,8 +25,6 @@ export type GiscusTheme =
   | `https://${string}`;
 
 export interface GiscusOptions extends BaseCommentOptions {
-  provider: "Giscus";
-
   /**
    * The name of repository to store discussions.
    *

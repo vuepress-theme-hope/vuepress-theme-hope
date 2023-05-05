@@ -18,6 +18,4 @@ export interface TwikooInitOptions {
   region?: string;
 }
 
-export interface TwikooOptions extends BaseCommentOptions, TwikooInitOptions {
-  provider: "Twikoo";
-}
+export type TwikooOptions = BaseCommentOptions & TwikooInitOptions;
