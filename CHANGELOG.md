@@ -4,6 +4,36 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-beta -->
 
+## [2.0.0-beta.208](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.207...v2.0.0-beta.208) (2023-05-05)
+
+### ⚠ BREAKING CHANGES
+
+- **md-enhance:** you should use client config file to customize libs
+- **lightgallery:** to set options for lightgallery, you should use `defineLightGalleryConfig`
+- **photo-swipe:** You should now use `definePhotoSwipeConfig` to set advanced options for photoswipe
+
+### Features
+
+- **comment2:** support client config ([95ec836](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/95ec83652b559bf1421c53450227f88a18877401))
+- **comment2:** update `SUPPORTED_LANGUAGES` in Giscus ([#3099](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3099)) ([52149f5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/52149f52b14dff8076b8730d1976ebb8caee591f))
+- **lightgallery:** move lightgallery option to client ([fa09c76](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fa09c76c79181657c25e0fc13e9fc7de4cc12faf))
+- **md-enhance:** add preview and download button, close [#3079](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3079) ([d4b9850](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d4b98509eb13883d3ec0b824d45b94500c7d7fc1))
+- **md-enhance:** move mermaid, reveal and @vue/repl config to client ([f6ff7ea](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f6ff7ea37bcce87659e3b2344e8a3d2ecf66d344))
+- **photo-swipe:** move photoswipe option to client ([5daadc4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5daadc4989a41c0a03d68c083b120d338206dd67))
+- **theme:** update font size on pc ([7d78ad8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7d78ad83e7b93b5cea18caab82958856a1bd51aa))
+
+### Bug Fixes
+
+- **components:** fix backToTop progress ([f9df359](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f9df359c5455342967f08cba8118dbaa1bbf7eac))
+- **deps:** update dependency @types/three to v0.152.0 ([#3085](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/3085)) ([382019b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/382019b93297233facecb77902348d6e7b7e25f3))
+- **feed2:** fix image style ([5caf600](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5caf60074ad5d31e81f88a29d6b9ff4cbdc0b64a))
+- **md-enhance:** fix reveal code block style ([6f07b16](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6f07b16c5b3931d09419e81e9467a0117901e422))
+- **redirect:** normalize path for user config ([9750c05](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9750c052ffc4f39848461f740867fe9c3d5afa34))
+
+### Performance Improvements
+
+- **lightgallery:** optimize tree shaking ([6e0bb29](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6e0bb29ca7048ec6c6447cfd0c52fe8cddd5f60c))
+
 ## [2.0.0-beta.207](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-beta.206...v2.0.0-beta.207) (2023-05-01)
 
 ### ⚠ BREAKING CHANGES
