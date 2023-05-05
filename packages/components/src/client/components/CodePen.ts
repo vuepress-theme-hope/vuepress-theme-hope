@@ -142,6 +142,7 @@ export default defineComponent({
             ? h(
                 "button",
                 {
+                  type: "button",
                   class: "codepen-button",
                   onClick: () => {
                     window.__CPEmbed(`.codepen-${slugHash.value}`);

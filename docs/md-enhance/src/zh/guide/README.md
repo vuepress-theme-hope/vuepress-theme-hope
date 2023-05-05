@@ -116,6 +116,18 @@ npm i -D vuepress-plugin-md-enhance
 
 - [查看详情](image.md)
 
+### 卡片
+
+```card
+title: Mr.Hope
+desc: Where there is light, there is hope
+logo: https://mrhope.site/logo.svg
+link: https://mrhope.site
+color: rgba(253, 230, 138, 0.15)
+```
+
+- [查看详情](card.md)
+
 ### 图表
 
 ::: chart 一个散点图案例
@@ -226,7 +238,7 @@ $$
 
 ### 导入文件
 
-@include(./demo.snippet.md{9-13})
+<!-- @include: ./demo.snippet.md{9-13} -->
 
 - [查看详情](include.md)
 

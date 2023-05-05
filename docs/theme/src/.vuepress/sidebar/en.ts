@@ -34,13 +34,7 @@ export const enSidebarConfig = sidebar({
       text: "Cookbook",
       icon: "signs-post",
       prefix: "cookbook/",
-      children: [
-        "tutorial/",
-        "markdown/",
-        "vuepress/",
-        "advanced/",
-        "customize/",
-      ],
+      children: ["tutorial/", "markdown/", "vuepress/", "customize/"],
     },
     {
       text: "Migration",
@@ -54,7 +48,7 @@ export const enSidebarConfig = sidebar({
       prefix: "faq/",
       children: ["", "troubleshooting", "common-error", "vite", "safari"],
     },
-    "demo",
+    "demo/",
     "changelog",
     "contribution",
   ],
@@ -64,4 +58,6 @@ export const enSidebarConfig = sidebar({
   "/config/": "structure",
 
   "/cookbook/": "structure",
+
+  "/demo/": "structure",
 });

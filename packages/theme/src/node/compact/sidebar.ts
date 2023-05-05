@@ -1,6 +1,11 @@
-import { isArray, isPlainObject, isString } from "@vuepress/shared";
 import { colors } from "@vuepress/utils";
-import { entries, fromEntries } from "vuepress-shared/node";
+import {
+  entries,
+  fromEntries,
+  isArray,
+  isPlainObject,
+  isString,
+} from "vuepress-shared/node";
 
 import { deprecatedLogger, droppedLogger } from "./utils.js";
 import {
@@ -53,7 +58,8 @@ const handleArraySidebarOptions = (
 export const convertSidebarOptions = (
   config: SidebarOptions | unknown
 ): SidebarOptions | false => {
-  if (config === false || config === "structure") return config;
+  if (config === false || config === "structure" || config === "heading")
+    return config;
 
   if (isArray(config))
     return handleArraySidebarOptions(config as SidebarArrayOptions);

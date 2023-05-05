@@ -1,11 +1,14 @@
 import { type App, type Page } from "@vuepress/core";
 import {
+  Logger,
+  entries,
+  isAbsoluteUrl,
   isLinkHttp,
   isString,
+  isUrl,
   removeEndingSlash,
   removeLeadingSlash,
-} from "@vuepress/shared";
-import { Logger, entries, isAbsoluteUrl, isUrl } from "vuepress-shared/node";
+} from "vuepress-shared/node";
 
 import { type SeoOptions } from "./options.js";
 import { type ExtendPage } from "./typings/index.js";

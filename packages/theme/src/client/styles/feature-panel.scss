@@ -1,36 +1,22 @@
-@use "vuepress-shared/styles/shining";
-
 @keyframes bounce {
   0% {
     transform: scale(1) translateY(0);
   }
 
   10% {
-    transform: scale(
-        var(--bounce-start-scale-x, 1.1),
-        var(--bounce-start-scale-y, 0.9)
-      )
-      translateY(0);
+    transform: scale(1.1, 0.9) translateY(0);
   }
 
   30% {
-    transform: scale(
-        var(--bounce-jump-scale-x, 0.9),
-        var(--bounce-jump-scale-y, 1.1)
-      )
-      translateY(var(--bounce-height, -0.5em));
+    transform: scale(0.9, 1.1) translateY(-0.5em);
   }
 
   50% {
-    transform: scale(
-        var(--bounce-land-scale-x, 1.05),
-        var(--bounce-land-scale-y, 0.95)
-      )
-      translateY(0);
+    transform: scale(1.05, 0.95) translateY(0);
   }
 
   57% {
-    transform: scale(1) translateY(var(--bounce-rebound, -0.125em));
+    transform: scale(1) translateY(-0.125em);
   }
 
   64% {
@@ -84,7 +70,7 @@
   }
 
   @media (max-width: hope-config.$tablet) {
-    flex-basis: calc(100%);
+    flex-basis: 100%;
     font-size: 0.95rem;
   }
 
@@ -119,22 +105,16 @@
     transform: scale(1.05);
   }
 
-  .home.project:not(.pure) & {
-    @include shining.shining;
+  &:only-child {
+    flex-basis: 100%;
+  }
 
-    // stylelint-disable-next-line
-    &:hover {
-      // stylelint-disable-next-line
-      .icon {
-        animation-name: bounce;
-        animation-duration: var(--fa-animation-duration, 1s);
-        animation-timing-function: var(
-          --fa-animation-timing,
-          cubic-bezier(0.28, 0.84, 0.42, 1)
-        );
-        animation-delay: var(--fa-animation-delay, 0s);
-        animation-direction: var(--fa-animation-direction, normal);
-      }
+  &:first-child:nth-last-child(2),
+  &:nth-child(2):last-child {
+    flex-basis: calc(50% - 3rem);
+
+    @media (max-width: hope-config.$tablet) {
+      flex-basis: 100%;
     }
   }
 

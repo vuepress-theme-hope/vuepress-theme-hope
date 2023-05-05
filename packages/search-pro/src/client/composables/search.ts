@@ -1,6 +1,6 @@
 import { useRouteLocale } from "@vuepress/client";
 import { useDebounceFn } from "@vueuse/core";
-import { type Ref, ref, watch } from "vue";
+import { type Ref, ref, shallowRef, watch } from "vue";
 
 import { searchProOptions } from "../define.js";
 import { type Result } from "../utils/index.js";
@@ -17,7 +17,7 @@ export const useWorkerSearch = (query: Ref<string>): SearchRef => {
   const routeLocale = useRouteLocale();
 
   const searching = ref(false);
-  const results = ref<Result[]>([]);
+  const results = shallowRef<Result[]>([]);
 
   let worker: Worker | null;
 

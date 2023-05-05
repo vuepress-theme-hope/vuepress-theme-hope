@@ -94,7 +94,7 @@ Theme Color, default is theme green
 - Type: `number`
 - Default: `2048`
 
-Max size which allows to cache, with KB unit
+Max size allowed to be cached, with KB unit
 
 ::: warning
 
@@ -123,7 +123,7 @@ Whether cache pictures
 - Type: `number`
 - Default: `1024`
 
-Max picture size which allows to cache, with KB unit
+Max picture size allowed to be cached, with KB unit
 
 ### update
 
@@ -164,7 +164,7 @@ How docs are updated is controlled by a previous version, so the current option 
 
 Special settings for Apple
 
-> If you don’t want to make detailed settings, you can safely ignore it; if you don’t want your site compatible with safari on apple, please set it to `false`.
+> If you don't want to make detailed settings, you can safely ignore it; if you don't want your site compatible with safari on apple, please set it to `false`.
 
 #### apple.icon
 
@@ -178,7 +178,7 @@ Fill in the icon address used by Apple, the recommended size is 152×152
 - Type: `"black" | "white"`
 - Default: `"black"`
 
-Apple’s status bar color
+Apple's status bar color
 
 #### apple.maskIcon
 
@@ -191,7 +191,7 @@ Safari mask icon
 
 Special settings for Microsoft tiles
 
-> If you don’t want to make detailed settings, you can safely ignore it; if you don’t want your site compatible with windows, please set it to `false`.
+> If you don't want to make detailed settings, you can safely ignore it; if you don't want your site compatible with windows, please set it to `false`.
 
 #### msTile.image
 
@@ -205,7 +205,7 @@ Tile icon
 - Type: `string`
 - Default value: `themeColor`
 
-The tile color will automatically fall back to themeColor if you don’t set it.
+The tile color will automatically fall back to themeColor if you don't set it.
 
 ### hintComponent
 

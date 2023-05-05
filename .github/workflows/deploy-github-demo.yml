@@ -1,0 +1,57 @@
+name: Deploy GitHub Demo
+
+on:
+  workflow_call:
+    secrets:
+      ACCESS_TOKEN:
+        required: true
+
+jobs:
+  deploy-demo-to-gh-pages:
+    name: Deploy demo to GitHub Pages
+    runs-on: ubuntu-latest
+    # only deploy in main repo
+    if: github.repository == 'vuepress-theme-hope/vuepress-theme-hope'
+    strategy:
+      fail-fast: false
+      matrix:
+        name:
+          - blog
+          - docs
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Restore Build Result
+        uses: actions/download-artifact@v3
+        with:
+          name: build-result
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          run_install: true
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: pnpm
+
+      - name: Build GitHub Pages Demo
+        env:
+          BASE: /${{ matrix.name }}-demo/
+          HOSTNAME: https://vuepress-theme-hope.github.io/
+          NODE_OPTIONS: --max_old_space_size=4096
+        run: |-
+          pnpm --filter theme-${{ matrix.name }}-demo demo:vite-build
+          > demo/theme-${{ matrix.name }}/dist/.nojekyll
+
+      - name: Deploy to gh pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          repository-name: vuepress-theme-hope/${{ matrix.name }}-demo
+          branch: gh-pages
+          folder: demo/theme-${{ matrix.name }}/dist
+          token: ${{ secrets.ACCESS_TOKEN }}
+          single-commit: true

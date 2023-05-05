@@ -1,8 +1,16 @@
 import { type App } from "@vuepress/core";
-import { isArray, isString } from "@vuepress/shared";
+import {
+  isArray,
+  isNumber,
+  isPlainObject,
+  isString,
+} from "vuepress-shared/node";
 
 import { getIconLinks, getNoticeOptions } from "./components/index.js";
-import { type ComponentOptions } from "./options/index.js";
+import {
+  type BackToTopOptions,
+  type ComponentOptions,
+} from "./options/index.js";
 import { AVAILABLE_COMPONENTS, CLIENT_FOLDER } from "./utils.js";
 
 export const prepareConfigFile = (
@@ -56,22 +64,28 @@ if(!hasGlobalComponent("Catalog")) app.component("Catalog", Catalog);
   if (isString(rootComponents.addThis)) {
     shouldImportUseScriptTag = true;
     setups.push(
-      `useScriptTag(\`//s7.addthis.com/js/300/addthis_widget.js#pubid=${rootComponents.addThis}\`);`
+      `useScriptTag(\`https://s7.addthis.com/js/300/addthis_widget.js#pubid=${rootComponents.addThis}\`);`
     );
   }
 
   if (rootComponents.backToTop) {
+    const { threshold, progress } = isPlainObject(rootComponents.backToTop)
+      ? rootComponents.backToTop
+      : <BackToTopOptions>{};
+
     shouldImportH = true;
     imports.push(
       `import BackToTop from "${CLIENT_FOLDER}components/BackToTop.js";`
     );
-    configRootComponents.push(
-      `() => h(BackToTop, { threshold: ${
-        typeof rootComponents.backToTop === "number"
-          ? rootComponents.backToTop
-          : 300
-      } }),`
-    );
+
+    const config = isPlainObject(rootComponents.backToTop)
+      ? {
+          ...(isNumber(threshold) ? { threshold } : {}),
+          ...(progress === false ? { noProgress: true } : {}),
+        }
+      : {};
+
+    configRootComponents.push(`() => h(BackToTop, ${JSON.stringify(config)}),`);
   }
 
   if (isArray(rootComponents.notice)) {

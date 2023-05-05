@@ -32,6 +32,7 @@ export default defineComponent({
       h(
         "button",
         {
+          type: "button",
           id: "appearance-switch",
           onClick: () => toggleDarkMode(),
         },

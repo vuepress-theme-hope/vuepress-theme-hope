@@ -38,7 +38,7 @@ Imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Lectus nulla at vol
 
 ## Line Break
 
-I would like to line break at  
+I would like to line break at
 this point
 
 ::: tip
@@ -66,18 +66,18 @@ In codes above, two spaces are behind `at`.
 
     - Ac tristique libero volutpat at
     - Facilisis in pretium nisl aliquet
-    - Nulla volutpat aliquam velit  
+    - Nulla volutpat aliquam velit
       link break
 
       New paragraph
 
-- It’s easy!
+- It's easy!
 
 ### Ordered List
 
 1. Lorem ipsum dolor sit amet
-1. Consectetur adipiscing elit  
-   line break  
+1. Consectetur adipiscing elit
+   line break
    line break again
 1. Integer molestie lorem at massa
 

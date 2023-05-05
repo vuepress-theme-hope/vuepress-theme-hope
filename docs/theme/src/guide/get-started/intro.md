@@ -1,6 +1,7 @@
 ---
 title: Theme intro
 icon: circle-info
+star: true
 order: 1
 category:
   - Get Started
@@ -47,7 +48,7 @@ Based on such a dozen plugins, Mr.Hope can confidently say that `vuepress-theme-
 
 - ### Tree-shaking
 
-  With the help of Vue3’s composition API, the theme fully achieve "Tree-shaking" while remaining powerful.
+  With the help of Vue3's composition API, the theme fully achieve "Tree-shaking" while remaining powerful.
 
   The theme will only run with features you want, without being slowed down by other features or affecting the bundle size.
 
@@ -59,13 +60,13 @@ The theme provides a lot of extended syntax support for Markdown, allowing you t
 
 - If you are a literature lover and want to place some essays, the theme provides [Custom Alignment](../markdown/align.md) and [footnote](../markdown/footnote.md).
 
-- To store some knowledge notes, the theme provides [Custom container](../markdown/container.md), [Mark](../markdown/mark.md), [Badge](../markdown/components.md)、[Task list](../markdown/tasklist.md) and [Tex](../markdown/tex.md) support.
+- To store some knowledge notes, the theme provides [Custom container](../markdown/container.md), [Mark](../markdown/mark.md), [Badge](../markdown/components.md), [Task list](../markdown/tasklist.md) and [Tex](../markdown/tex.md) support.
 
 - If you are a programmer and need to show a lot of codes and demos, this theme provides light and dark themes for code blocks, [code tabs](../markdown/code-tabs.md) and the ["one-click copy" button](../feature/copy-code.md). At the same time, we also provide the [Code Demo](../markdown/demo.md), [Playground](../markdown/playground.md) and [Vue Playground](../markdown/vue-playground.md) functions, which is convenient for you to show your own Vue, React components or other demos and provide playground for visitors.
 
 - If you are providing product documentation and presentation, the theme provides [tabs](../markdown/tabs.md), [slide](../markdown/presentation.md), [chart](../markdown/chart.md), [flowchart](../markdown/flowchart.md), [mermaid diagram](../markdown/mermaid.md) functions.
 
-In short, anyone can enjoy the convenience of Markdown’s enhanced syntax.
+In short, anyone can enjoy the convenience of Markdown's enhanced syntax.
 
 ### UI Improvements
 
@@ -97,7 +98,7 @@ In short, anyone can enjoy the convenience of Markdown’s enhanced syntax.
 
 - [Homepage](../layout/home.md)
 
-  Brand new outlook, supports icons and links in features.
+  Brand-new outlook, supports icons and links in features.
 
 - [Catalog](../layout/catalog.md)
 
@@ -115,7 +116,7 @@ In short, anyone can enjoy the convenience of Markdown’s enhanced syntax.
 
 ### Blog Support
 
-The theme supports blogging layout, you can use the brand new [blog homepage](../blog/home.md).
+The theme supports blogging layout, you can use the brand-new [blog homepage](../blog/home.md).
 
 - Provides [categories, tags](../blog/category-and-tags.md), [timeline](../blog/timeline.md), [star articles](../blog/article.md) and other functions.
 

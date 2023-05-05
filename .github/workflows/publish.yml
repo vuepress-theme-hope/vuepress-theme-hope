@@ -1,9 +1,10 @@
-name: Publish packages
+name: Publish Packages
 
 on:
-  push:
-    tags:
-      - v2.**
+  workflow_call:
+    secrets:
+      NPM_TOKEN:
+        required: true
 
 jobs:
   publish:
@@ -13,22 +14,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Restore Build Result
+        uses: actions/download-artifact@v3
+        with:
+          name: build-result
+
       - name: Install pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: 7
           run_install: true
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: pnpm
-
-      - name: Build project
-        env:
-          NODE_OPTIONS: --max_old_space_size=8192
-        run: pnpm run build
 
       - name: Update npmrc
         run: |

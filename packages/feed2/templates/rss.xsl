@@ -140,6 +140,10 @@
             padding-inline-start: 1.2em;
           }
 
+          img {
+            max-width: 100%;
+          }
+
           blockquote {
             margin: 1rem 0;
             padding: 0.25rem 0 0.25rem 1rem;

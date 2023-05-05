@@ -47,3 +47,8 @@ You can set them via `projects`, which is an array where each element is an obje
 For complete configuration items, see [Blog Home Frontmatter Configuration](../../config/frontmatter/blog-home.md).
 
 :::
+
+## Living Demo
+
+- [A blog homepage for current docs](../../demo/blog-home.md)
+- [A customized blog homepage for current docs](../../demo/custom-blog-home.md)

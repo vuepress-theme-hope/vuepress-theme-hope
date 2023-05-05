@@ -59,7 +59,7 @@ export default defineComponent({
             [
               h(CategoryIcon),
 
-              ...props.category.map(({ name, path }) =>
+              props.category.map(({ name, path }) =>
                 h(
                   "span",
                   {

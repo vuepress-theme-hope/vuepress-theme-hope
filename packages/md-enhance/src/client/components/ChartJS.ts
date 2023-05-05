@@ -6,6 +6,7 @@ import {
   h,
   onMounted,
   ref,
+  shallowRef,
 } from "vue";
 import { LoadingIcon, atou } from "vuepress-shared/client";
 
@@ -19,13 +20,19 @@ const parseChartConfig = (
 ): ChartConfiguration => {
   if (type === "json") return <ChartConfiguration>JSON.parse(config);
 
-  const exports = {};
-  const module = { exports };
+  // eslint-disable-next-line @typescript-eslint/no-implied-eval
+  const runner = new Function(
+    `\
+let config,__chart_js_config__;
+{
+${config}
+__chart_js_config__=config;
+}
+return __chart_js_config__;\
+`
+  );
 
-  eval(config);
-
-  // eslint-disable-next-line import/no-commonjs
-  return <ChartConfiguration>module.exports;
+  return <ChartConfiguration>runner();
 };
 
 export default defineComponent({
@@ -74,8 +81,8 @@ export default defineComponent({
   },
 
   setup(props) {
-    const chartElement = ref<HTMLElement>();
-    const chartCanvasElement = ref<HTMLCanvasElement>();
+    const chartElement = shallowRef<HTMLElement>();
+    const chartCanvasElement = shallowRef<HTMLCanvasElement>();
 
     const loading = ref(true);
 

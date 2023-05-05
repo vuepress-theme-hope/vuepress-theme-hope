@@ -59,6 +59,10 @@ export default {
 
 Please see [mermaid](https://mermaid.js.org/).
 
+## Advanced
+
+Besides setting `true` to enable mermaid, you can also pass in an object to customize the mermaid configuration.
+
 ## Demo
 
 ### Flowchart
@@ -358,7 +362,7 @@ Add another diagram to demo page    :48h
 ### Pie Chart Diagrams
 
 ```pie
-title What Voldemort doesn’t have?
+title What Voldemort doesn't have?
   "FRIENDS" : 2
   "FAMILY" : 3
   "NOSE" : 45
@@ -368,7 +372,7 @@ title What Voldemort doesn’t have?
 
 ````md
 ```pie
-title What Voldemort doesn’t have?
+title What Voldemort doesn't have?
   "FRIENDS" : 2
   "FAMILY" : 3
   "NOSE" : 45

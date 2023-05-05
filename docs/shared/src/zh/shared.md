@@ -75,6 +75,177 @@ encodeURIComponent(content); // '%0A%7B%0A%20%20%22type%22%3A%20%22bar%22%2C%0A%
 
 ## Utils
 
+### isDef
+
+判断值是否定义。
+
+```ts
+/**
+ * Check if a value is defined
+ */
+export const isDef: <T = any>(val?: T | undefined) => val is T;
+```
+
+### isBoolean
+
+判断值是否为布尔值。
+
+```ts
+/**
+ * Check if a value is boolean
+ */
+export const isBoolean: (val: unknown) => val is boolean;
+```
+
+### isString
+
+判断值是否为字符串。
+
+```ts
+/**
+ * Check if a value is string
+ */
+export const isString: (val: unknown) => val is string;
+```
+
+### isNumber
+
+判断值是否为数字。
+
+```ts
+/**
+ * Check if a value is number
+ */
+export const isNumber: (val: unknown) => val is number;
+```
+
+### isObject
+
+判断值是否为对象。
+
+```ts
+/**
+ * Check if a value is a object
+ */
+export const isObject: (val: unknown) => val is object;
+```
+
+### isPlainObject
+
+判断值是否为纯对象。
+
+```ts
+/**
+ * Check if a value is a plain object
+ */
+export const isPlainObject: <T extends Record<any, any> = Record<any, any>>(
+  val: unknown
+) => val is T;
+```
+
+### isFunction
+
+判断值是否为函数。
+
+```ts
+/**
+ * Check if a value is a function
+ */
+export const isFunction: (val: unknown) => val is Function;
+```
+
+### startsWith
+
+判断字符串是否以指定字符串开头。
+
+```ts
+/**
+ * Check if a string starts with another string
+ */
+export const startsWith: (str: string, prefix: string) => boolean;
+```
+
+### endsWith
+
+判断字符串是否以指定字符串结尾。
+
+```ts
+/**
+ * Check if a string ends with another string
+ */
+export const endsWith: (str: string, suffix: string) => boolean;
+```
+
+### entries
+
+将对象转换为键值对数组。
+
+```ts
+/**
+ * Get the entries of an object
+ */
+export const entries: {
+  <T>(
+    o:
+      | {
+          [s: string]: T;
+        }
+      | ArrayLike<T>
+  ): [string, T][];
+  (o: {}): [string, any][];
+};
+```
+
+### fromEntries
+
+将键值对数组转换为对象。
+
+```ts
+/**
+ * Create an object from an iterable of key-value pairs
+ */
+export const fromEntries: {
+  <T = any>(entries: Iterable<readonly [PropertyKey, T]>): {
+    [k: string]: T;
+  };
+  (entries: Iterable<readonly any[]>): any;
+};
+```
+
+### keys
+
+获取对象的键名。
+
+```ts
+/**
+ * Get the keys of an object
+ */
+export const keys: {
+  (o: object): string[];
+  (o: {}): string[];
+};
+```
+
+### values
+
+获取对象的键值。
+
+```ts
+/**
+ * Get the values of an object
+ */
+export const values: {
+  <T>(
+    o:
+      | {
+          [s: string]: T;
+        }
+      | ArrayLike<T>
+  ): T[];
+  (o: {}): any[];
+};
+```
+
 ### deepAssign
 
 `Object.assign` 的深度版本，对于将用户选项与默认选项合并很有用。
@@ -127,146 +298,6 @@ deepAssign(defaultOptions, userOptions);
 //   optionB: false,
 //   optionC: "optionC",
 // }
-```
-
-:::
-
-### getDate
-
-从字符串或日期对象中获取日期信息。
-
-::: note
-
-当日期无效时，函数返回 null 而不是抛出错误。
-
-:::
-
-```ts
-export interface DateDetail {
-  year?: number | undefined;
-  month?: number | undefined;
-  day?: number | undefined;
-  hour?: number | undefined;
-  minute?: number | undefined;
-  second?: number | undefined;
-}
-
-export interface DateInfo {
-  type: "date" | "time" | "full";
-  info: DateDetail;
-  value: Date | undefined;
-}
-
-/**
- * 获取日期信息
- *
- * @param date Date or date info
- * @param timezone (optional) date timezone
- */
-export const getDate: (
-  date: string | Date | undefined,
-  timezone?: string
-) => DateInfo | null;
-```
-
-::: details 示例
-
-```ts
-// or vuepress-shared/client
-import { getDate } from "vuepress-shared/node";
-
-getDate("2021-01-01 12:34:56");
-// {
-//   value: Date("2021-01-01 12:34:56"),
-//   info: {
-//     year: 2021,
-//     month: 1,
-//     day: 1,
-//     hour: 12,
-//     minute: 34,
-//     second: 56,
-//   },
-//   type: "full",
-// }
-
-getDate("2021-01-01");
-// {
-//   value: Date("2021-01-01"),
-//   info: {
-//     year: 2021,
-//     month: 1,
-//     day: 1,
-//   },
-//   type: "date",
-// }
-
-getDate("12:34:56");
-// {
-//   value: undefined,
-//   info: {
-//     hour: 12,
-//     minute: 34,
-//     second: 56,
-//   },
-//   type: "time",
-// }
-
-// 如果你在 UTC 时区
-// Asia/Shanghai 是 +8
-getDate("12:34:56", "Asia/Shanghai");
-
-// 所以在 UTC 是 上午 4 点
-// {
-//   value: undefined,
-//   info: {
-//     hour: 4,
-//     minute: 34,
-//     second: 56,
-//   },
-//   type: "time",
-// }
-```
-
-:::
-
-### compareDate
-
-比较日期并将它们从最新到最旧排序。
-
-无效日期会出现在最后。
-
-```ts
-/**
- * Recent date will returns positive value, so dates will be latest to oldest after sorting
- */
-export const compareDate = (
-  dateA: Date | number | string | undefined,
-  dateB: Date | number | string | undefined
-) => number;
-```
-
-::: details 示例
-
-```ts
-// or vuepress-shared/client
-import { compareDate } from "vuepress-shared/node";
-
-const dates = [
-  "2021-01-01",
-  "2022-04-05 08:00:00",
-  "04:38:45",
-  "19999",
-  "2022-03-08",
-];
-
-dates.sort(compareDate);
-// [
-//   "2022-04-05 08:00:00",
-//   "2022-03-08",
-//   "2021-01-01",
-//   "04:38:45",
-//   "19999",
-// ];
 ```
 
 :::

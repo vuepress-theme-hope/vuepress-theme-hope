@@ -43,9 +43,21 @@ Please see [Breadcrumb](breadcrumb.md).
 
 In desktop mode, a list of article headers will automatically be displayed on the right side of the screen. (They will be placed in the sidebar on mobile devices)
 
-If you don’t want to display the title list on the right in desktop mode, please set `toc: false` in theme options.
+If you don't want to display the title list on the right in desktop mode, please set `toc: false` in theme options.
 
 You can also set it through `toc` in page frontmatter.
+
+### Setting header depth
+
+You can customize the depth of the header list by setting `headerDepth` in theme options and page frontmatter.
+
+::: note
+
+The valid maximum value depends on which levels of headers you have extracted via [markdown.headers.level](https://v2.vuepress.vuejs.org/reference/config.html#markdown-headers).
+
+Since the default value of [markdown.headers.level](https://v2.vuepress.vuejs.org/reference/config.html#markdown-headers) is `[2, 3]`, so The default maximum value for `headerDepth` is `2`.
+
+:::
 
 ## Contributors and Last Updated Time
 
@@ -70,7 +82,7 @@ Please see [Comment section](../feature/comment.md) for details.
 
 ## Customize Layout
 
-By default the content of each `*.md` file is rendered in a `<div class="page">` container, along with the sidebar, auto-generated edit links and prev/next links. To use a fully custom component in place of the page, you can again specify the component to use using frontmatter:
+By default, the content of each `*.md` file is rendered in a `<div class="page">` container, along with the sidebar, auto-generated edit links and previous/next links. To use a fully custom component in place of the page, you can again specify the component using frontmatter:
 
 ```md
 ---
@@ -89,7 +101,7 @@ Also the theme:
 - Provides a `Blog` layout when the blogging feature is enabled
 - Provides a `Slide` layout when the slideshow feature is enabled
 
-If you want to provide your own layout, please see [Theme Extending](../../cookbook/advanced/extend.md).
+If you want to provide your own layout, please see [Theme Extending](../advanced/extend.md).
 
 :::
 

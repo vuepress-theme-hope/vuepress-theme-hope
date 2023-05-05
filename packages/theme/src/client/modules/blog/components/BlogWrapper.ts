@@ -18,7 +18,7 @@ export default defineComponent({
       h(SkipLink),
       h(
         CommonWrapper,
-        { noSidebar: true },
+        { noSidebar: true, noToc: true },
         {
           default: () => slots["default"]?.(),
           navScreenBottom: () => h(BloggerInfo),

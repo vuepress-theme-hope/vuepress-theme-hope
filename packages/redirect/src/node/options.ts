@@ -1,48 +1,12 @@
-import { type App } from "@vuepress/core";
+import { type App, type LocaleConfig } from "@vuepress/core";
 
-export interface RedirectLocaleOptions {
-  /**
-   * Locale language config
-   *
-   * 多语言语言配置
-   */
-  localeConfig?: Record<string, string | string[]>;
+import {
+  type LocaleRedirectConfig,
+  type RedirectLocaleData,
+} from "../shared/index.js";
 
-  /**
-   * Whether fallback to other locales user defined
-   *
-   * 是否回退到用户定义的其他语言
-   *
-   * @default true
-   */
-  localeFallback?: boolean;
-
-  /**
-   * Behavior when a locale version is not available for current link
-   *
-   * @description `"homepage"` and `"404"` is only available when a locale is assigned to current language
-   *
-   * 当前链接没有可用的语言版本时的行为
-   *
-   * @description 只有当语言分配给当前语言时，`"homepage"` 和 `"404"` 才可用
-   *
-   * @default "defaultLocale"
-   */
-  defaultBehavior?: "defaultLocale" | "homepage" | "404";
-
-  /**
-   * Default locale path
-   *
-   * @description the first locale will be used if absent
-   *
-   * 默认语言路径
-   *
-   * @description 如果缺失，则使用第一个语言
-   */
-  defaultLocale?: string;
-}
-
-export interface RedirectOptions extends RedirectLocaleOptions {
+export interface RedirectOptions
+  extends Partial<Omit<LocaleRedirectConfig, "localeConfig">> {
   /**
    * Redirect mapping
    *
@@ -62,11 +26,20 @@ export interface RedirectOptions extends RedirectLocaleOptions {
   hostname?: string;
 
   /**
-   * Whether enable locales redirection
+   * Locale language config
    *
-   * 是否启用语言重定向
-   *
-   * @default false
+   * 多语言语言配置
    */
-  locale?: boolean;
+  localeConfig?: Record<string, string | string[]>;
+
+  /**
+   * Locales config
+   *
+   * @see [default config](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/redirect/src/node/locales.ts)
+   *
+   * 多语言选项
+   *
+   * @see [默认配置](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/redirect/src/node/locales.ts)
+   */
+  locales?: LocaleConfig<RedirectLocaleData>;
 }

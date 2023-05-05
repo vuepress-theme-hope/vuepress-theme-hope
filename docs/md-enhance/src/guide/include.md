@@ -47,17 +47,17 @@ export default {
 
 ## Syntax
 
-Use `@include(filename)` to include a file.
+Use `<!-- @include: filename -->` to include a file.
 
 To partially import the file, you can specify the range of lines to be included:
 
-- `@include(filename{start-end})`
-- `@include(filename{start-})`
-- `@include(filename{-end})`
+- `<!-- @include: filename{start-end} -->`
+- `<!-- @include: filename{start-} -->`
+- `<!-- @include: filename{-end} -->`
 
-Also you can include file region:
+Also, you can include file region:
 
-- `@include(filename#region)`
+- `<!-- @include: filename#region -->`
 
 :::: info File region
 
@@ -129,7 +129,7 @@ const mdIt = MarkdownIt().use(include, {
 });
 // #endregion snippet
 
-mdIt.render("@include(./path/to/include/file.md)", {
+mdIt.render("<!-- @include: ./path/to/include/file.md -->", {
   filePath: "path/to/current/file.md",
 });
 ```
@@ -147,7 +147,7 @@ const mdIt = MarkdownIt().use(include, {
 });
 // #endregion snippet
 
-mdIt.render("@include(./path/to/include/file.md)", {
+mdIt.render("<!-- @include: ./path/to/include/file.md -->", {
   filePath: "path/to/current/file.md",
 });
 ```
@@ -309,17 +309,17 @@ namespace HelloWorldApp {
 
 ## Demo
 
-`@include(./demo.snippet.md)`:
+`<!-- @include: ./demo.snippet.md -->`:
 
-@include(./demo.snippet.md)
+<!-- @include: ./demo.snippet.md -->
 
-`@include(./demo.snippet.md{9-13})`:
+`<!-- @include: ./demo.snippet.md{9-13} -->`:
 
-@include(./demo.snippet.md{9-13})
+<!-- @include: ./demo.snippet.md{9-13} -->
 
-`@include(./demo.snippet.md#snippet)`:
+`<!-- @include: ./demo.snippet.md#snippet -->`:
 
-@include(./demo.snippet.md#snippet)
+<!-- @include: ./demo.snippet.md#snippet -->
 
 ## Advanced
 
@@ -401,7 +401,7 @@ export default {
 
 :::
 
-Also, to place your Markdown files directly besides your actual files, but don’t want them rendered as pages, you can set `pagePatterns` options in VuePress config. See [pagePatterns](https://v2.vuepress.vuejs.org/reference/config.html#pagepatterns) for more details.
+Also, to place your Markdown files directly besides your actual files, but don't want them rendered as pages, you can set `pagePatterns` options in VuePress config. See [pagePatterns](https://v2.vuepress.vuejs.org/reference/config.html#pagepatterns) for more details.
 
 ::: code-tabs#language
 
@@ -414,7 +414,7 @@ import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default defineConfig({
   // now any file with `.snippet.md` extension will not be rendered as a page
-  pagePatterns: ["**/*.md", "!*.snippet.md", "!.vuepress", "!node_modules"],
+  pagePatterns: ["**/*.md", "!**/*.snippet.md", "!.vuepress", "!node_modules"],
 
   plugins: [
     mdEnhancePlugin({
@@ -432,7 +432,7 @@ import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
   // now any file with `.snippet.md` extension will not be rendered as a page
-  pagePatterns: ["**/*.md", "!*.snippet.md", "!.vuepress", "!node_modules"],
+  pagePatterns: ["**/*.md", "!**/*.snippet.md", "!.vuepress", "!node_modules"],
 
   plugins: [
     mdEnhancePlugin({

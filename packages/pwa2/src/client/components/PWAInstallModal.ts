@@ -1,6 +1,6 @@
 import { withBase } from "@vuepress/client";
 import { useEventListener } from "@vueuse/core";
-import { type VNode, defineComponent, h, onMounted, ref } from "vue";
+import { type VNode, defineComponent, h, onMounted, shallowRef } from "vue";
 import { useLocaleConfig } from "vuepress-shared/client";
 
 import { ArrowLeftIcon, ArrowRightIcon, CloseIcon } from "./icons.js";
@@ -25,13 +25,13 @@ export default defineComponent({
     useHint: Boolean,
   },
 
-  emits: ["canInstall", "hint", "toggle"],
+  emits: ["canInstall", "hint", "close"],
 
   setup(props, { emit }) {
     const locale = useLocaleConfig(locales);
 
-    const manifest = ref<ManifestOption>({});
-    const deferredPrompt = ref<InstallPromptEvent>();
+    const manifest = shallowRef<ManifestOption>({});
+    const deferredPrompt = shallowRef<InstallPromptEvent>();
 
     const getManifest = async (): Promise<void> => {
       const manifestContent = localStorage.getItem("manifest");
@@ -85,12 +85,12 @@ export default defineComponent({
         if (choiceResult.outcome === "accepted") {
           console.info("PWA has been installed");
 
-          emit("toggle", false);
+          emit("close", false);
           emit("canInstall", false);
         } else {
           console.info("You choose to not install PWA");
 
-          emit("toggle", false);
+          emit("close", false);
           emit("canInstall", false);
         }
       }
@@ -109,10 +109,10 @@ export default defineComponent({
 
           emit("canInstall", true);
           event.preventDefault();
+        });
 
-          useEventListener("keyup", (event): void => {
-            if (event.key === "Escape") emit("toggle", false);
-          });
+        useEventListener("keyup", (event): void => {
+          if (event.key === "Escape") emit("close", false);
         });
 
         void getManifest();
@@ -121,7 +121,7 @@ export default defineComponent({
 
     return (): VNode =>
       h("div", { id: "install-modal-wrapper" }, [
-        h("div", { class: "background", onClick: () => emit("toggle", false) }),
+        h("div", { class: "background", onClick: () => emit("close", false) }),
 
         h("div", { class: "install-modal" }, [
           h("div", { class: "header" }, [
@@ -129,9 +129,10 @@ export default defineComponent({
             h(
               "button",
               {
+                type: "button",
                 class: "close-button",
                 "aria-label": locale.value.close,
-                onClick: () => emit("toggle", false),
+                onClick: () => emit("close", false),
               },
               h(CloseIcon)
             ),
@@ -167,6 +168,7 @@ export default defineComponent({
                     h(
                       "button",
                       {
+                        type: "button",
                         "aria-label": locale.value.prevImage,
                         onClick: scrollToLeft,
                       },
@@ -186,6 +188,7 @@ export default defineComponent({
                     h(
                       "button",
                       {
+                        type: "button",
                         "aria-label": locale.value.nextImage,
                         onClick: scrollToRight,
                       },
@@ -204,18 +207,20 @@ export default defineComponent({
           props.useHint
             ? h("div", { class: "ios-text", onClick: hint }, [
                 h("p", locale.value.iOSInstall),
-                h("button", { class: "success" }, "Got it!"),
+                h("button", { type: "button", class: "success" }, "Got it!"),
               ])
             : h("div", { class: "button-wrapper" }, [
-                h("button", { class: "install-button", onClick: install }, [
-                  locale.value.install,
-                  h("span", manifest.value.short_name),
-                ]),
+                h(
+                  "button",
+                  { type: "button", class: "install-button", onClick: install },
+                  [locale.value.install, h("span", manifest.value.short_name)]
+                ),
                 h(
                   "button",
                   {
+                    type: "button",
                     class: "cancel-button",
-                    onClick: () => emit("toggle", false),
+                    onClick: () => emit("close", false),
                   },
                   locale.value.cancel
                 ),

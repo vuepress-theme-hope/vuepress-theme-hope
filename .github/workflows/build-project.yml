@@ -1,0 +1,36 @@
+name: Build Project
+
+on:
+  workflow_call:
+
+jobs:
+  build-project:
+    name: Build Project
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          run_install: true
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: pnpm
+
+      - name: Build project
+        env:
+          NODE_OPTIONS: --max_old_space_size=8192
+        run: pnpm run build
+
+      - name: Upload build result
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-result
+          path: |
+            docs-shared/lib/
+            packages/*/lib/

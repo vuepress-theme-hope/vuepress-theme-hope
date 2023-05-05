@@ -10,6 +10,13 @@ icon: gears
 
 Image selector
 
+## scrollToClose
+
+- Type: `boolean`
+- Default: `true`
+
+Whether close the current image when scrolling.
+
 ## options
 
 Options passed to [`photo-swipe`](http://photoswipe.com/)

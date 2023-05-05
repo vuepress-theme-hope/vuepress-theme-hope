@@ -2,7 +2,7 @@ import { defineUserConfig } from "@vuepress/cli";
 import { defaultTheme } from "@vuepress/theme-default";
 import { commentPlugin } from "vuepress-plugin-comment2";
 
-const base = <"/" | `/${string}/`>process.env.BASE || "/";
+const base = <"/" | `/${string}/`>process.env["BASE"] || "/";
 
 export default defineUserConfig({
   base,
@@ -20,9 +20,12 @@ export default defineUserConfig({
   }),
 
   plugins: [
-    // @ts-ignore
     commentPlugin({
       provider: "Giscus",
+      repo: "vuepress-theme-hope/giscus-discussions",
+      repoId: "R_kgDOG_Pt2A",
+      category: "Announcements",
+      categoryId: "DIC_kwDOG_Pt2M4COD69",
     }),
   ],
 });

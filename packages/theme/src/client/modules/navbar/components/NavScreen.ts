@@ -7,7 +7,7 @@ import {
   h,
   onMounted,
   onUnmounted,
-  ref,
+  shallowRef,
   watch,
 } from "vue";
 
@@ -35,7 +35,7 @@ export default defineComponent({
     const page = usePageData();
     const { isMobile } = useWindowSize();
 
-    const body = ref<HTMLElement>();
+    const body = shallowRef<HTMLElement>();
     const isLocked = useScrollLock(body);
 
     onMounted(() => {

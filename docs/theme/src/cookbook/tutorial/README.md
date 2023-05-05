@@ -1,6 +1,8 @@
 ---
 title: Step by Step Tutorial
 icon: signs-post
+star: true
+sticky: 10
 dir:
   order: 1
 category:
@@ -9,7 +11,7 @@ category:
   - Get Started
 ---
 
-This is a step by step tutorial for newcomers.
+This is a step-by-step tutorial for newcomers.
 
 <!-- more -->
 

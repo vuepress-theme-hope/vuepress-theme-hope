@@ -1,7 +1,6 @@
 import { type Page, type PluginFunction } from "@vuepress/core";
-import { isFunction } from "@vuepress/shared";
 import { getDirname, path } from "@vuepress/utils";
-import { checkVersion, getLocales } from "vuepress-shared/node";
+import { checkVersion, getLocales, isFunction } from "vuepress-shared/node";
 
 import { copyrightLocales } from "./locales.js";
 import { type CopyrightOptions } from "./options.js";

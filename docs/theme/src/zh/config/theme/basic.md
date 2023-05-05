@@ -252,7 +252,7 @@ tag:
 
 侧边栏配置
 
-## locales
+## locales <Badge text="仅限 Root" type="warning" />
 
 - 类型: `Record<string, ThemeLocaleOptions>`
 - 详情:
@@ -260,7 +260,13 @@ tag:
 
 主题的多语言配置，你可以在这里分别为每个语言设置单独的选项。
 
-## hotReload
+## extraLocales <Badge text="仅限 Root" type="warning" />
+
+- 类型: `Record<string, string>`
+
+站点的额外语言环境，其中键名是语言名称，值是站点路径，`:route` 将替换为当前路由路径。
+
+## hotReload <Badge text="仅限 Root" type="warning" />
 
 - 类型: `boolean`
 - 默认值: 是否在使用 `--debug` 标识

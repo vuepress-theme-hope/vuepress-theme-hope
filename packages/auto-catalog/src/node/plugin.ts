@@ -2,7 +2,7 @@ import { type PluginFunction } from "@vuepress/core";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import { checkVersion, getLocales } from "vuepress-shared/node";
 
-import { generateCatalog } from "./autoCatalog.js";
+import { generateCatalog, injectCatalogInformation } from "./autoCatalog.js";
 import { locales as defaultLocales } from "./locales.js";
 import { type AutoCatalogOptions } from "./options.js";
 import { CLIENT_FOLDER, PLUGIN_NAME, logger } from "./utils.js";
@@ -19,14 +19,10 @@ export const autoCatalogPlugin =
     const {
       component,
       iconComponent,
-      iconGetter,
-      iconRouteMetaKey = "i",
-      shouldIndex,
-      indexRouteMetaKey = "I",
+      iconRouteMetaKey = "icon",
+      indexRouteMetaKey = "index",
       locales,
-      orderGetter,
-      orderRouteMetaKey = "O",
-      titleGetter = (page): string => page.title,
+      orderRouteMetaKey = "order",
       titleRouteMetaKey = "title",
     } = options;
 
@@ -47,27 +43,10 @@ export const autoCatalogPlugin =
         AUTO_CATALOG_INDEX_META_KEY: indexRouteMetaKey,
       }),
 
-      extendsPage: (page): void => {
-        if (!component) {
-          const data: Record<string, unknown> = {};
-
-          const pageTitle = titleGetter?.(page);
-          const pageIcon = iconGetter?.(page);
-          const pageIndex = shouldIndex?.(page) ?? null;
-          const pageOrder = orderGetter?.(page) ?? null;
-
-          if (pageTitle) data[titleRouteMetaKey] = pageTitle;
-          if (pageIcon) data[iconRouteMetaKey] = pageIcon;
-          if (typeof pageIndex === "boolean")
-            data[indexRouteMetaKey] = pageIndex ? 1 : 0;
-          if (typeof pageOrder === "number")
-            data[orderRouteMetaKey] = pageOrder;
-
-          page.routeMeta = { ...page.routeMeta, ...data };
-        }
+      onInitialized: async (app): Promise<void> => {
+        injectCatalogInformation(app, options);
+        await generateCatalog(app, options);
       },
-
-      onInitialized: (app): Promise<void> => generateCatalog(app, options),
 
       ...(component ? {} : { clientConfigFile: `${CLIENT_FOLDER}config.js` }),
     };

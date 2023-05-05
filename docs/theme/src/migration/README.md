@@ -19,7 +19,7 @@ Upgrading to the latest version V1 is the first step in the migration. During th
 
 Now, in most cases you should be able to update `vuepress` and `vuepress-theme-hope` to latest v2 version, and run your v1 project directly.
 
-The migration helper automatically converts your v1 config to v2 config, and gives you hints about deprecated options it converted and not-supported options it dropped. Also frontmatter of all pages will be converted from v1 syntax to v2.
+The migration helper automatically converts your v1 config to v2 config, and gives you hints about deprecated options it converted and not-supported options it dropped. Also, frontmatter of all pages will be converted from v1 syntax to v2.
 
 All you need to do is:
 

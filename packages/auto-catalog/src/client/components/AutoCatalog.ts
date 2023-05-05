@@ -216,7 +216,7 @@ export default defineComponent({
       h("div", { class: "auto-catalog-wrapper" }, [
         h("h2", { class: "main-title" }, locale.value.title),
 
-        ...info.value.map(({ children = [], icon, path, title }, mainIndex) => [
+        info.value.map(({ children = [], icon, path, title }, mainIndex) => [
           h(
             "h3",
             {

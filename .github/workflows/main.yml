@@ -1,0 +1,79 @@
+name: Main Action
+
+on:
+  push:
+    branches:
+      - "**"
+    tags:
+      - v2.**
+  pull_request:
+    branches:
+      - main
+      - work
+
+jobs:
+  build-project:
+    name: Build Project
+    uses: ./.github/workflows/build-project.yml
+
+  test-demos:
+    needs:
+      - build-project
+    uses: ./.github/workflows/demo-test.yml
+    with:
+      # Check demos in all environments when pull request is made to main or work branch
+      strict-checking: ${{ github.base_ref == 'main' || github.base_ref == 'work' }}
+
+  linter-and-unit:
+    needs:
+      - build-project
+    uses: ./.github/workflows/linter-and-unit-test.yml
+
+  deploy-github-demo:
+    name: Deploy GitHub Demo
+    # Only triggered on main or work branch
+    if: github.ref_name == 'main' || github.ref_name == 'work'
+    needs:
+      - build-project
+      - test-demos
+      - linter-and-unit
+    uses: ./.github/workflows/deploy-github-demo.yml
+    secrets:
+      ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+
+  deploy-github-docs:
+    name: Deploy GitHub Docs
+    # Only triggered on main or work branch
+    if: github.ref_name == 'main' || github.ref_name == 'work'
+    needs:
+      - build-project
+      - test-demos
+      - linter-and-unit
+    uses: ./.github/workflows/deploy-github-docs.yml
+    secrets:
+      ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+
+  deploy-production:
+    name: Deploy Production Docs and Demo
+    # Only triggered by v2 tag push
+    if: github.event_name == 'push' && github.ref_type == 'tag' && startsWith(github.ref, 'refs/tags/v2.')
+    needs:
+      - build-project
+      - test-demos
+      - linter-and-unit
+    uses: ./.github/workflows/deploy-production.yml
+    secrets:
+      ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+
+  publish-packages:
+    name: Publish Packages
+    # Only triggered by v2 tag push
+    if: github.event_name == 'push' && github.ref_type == 'tag' && startsWith(github.ref, 'refs/tags/v2.')
+    needs:
+      - build-project
+      - test-demos
+      - linter-and-unit
+      - deploy-production
+    uses: ./.github/workflows/publish.yml
+    secrets:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

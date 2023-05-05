@@ -1,6 +1,11 @@
-import { isPlainObject } from "@vuepress/shared";
 import { type CompilerOptions } from "typescript";
-import { deepAssign, endsWith, entries, keys } from "vuepress-shared/node";
+import {
+  deepAssign,
+  endsWith,
+  entries,
+  isPlainObject,
+  keys,
+} from "vuepress-shared/node";
 
 import { compressToEncodedURIComponent } from "./ventors/lzstring.js";
 import { optionDeclarations } from "./ventors/optionDeclarations.js";
@@ -9,6 +14,7 @@ import {
   type PlaygroundOptions,
   type TSPresetPlaygroundOptions,
 } from "../../typings/index.js";
+import { logger } from "../../utils.js";
 
 /** Gets a query string representation (hash + queries) */
 export const getURL = (
@@ -53,7 +59,7 @@ export const getTSPlaygroundPreset = ({
     const tsfiles = keys(files).filter((key) => endsWith(key, ".ts"));
 
     if (tsfiles.length !== 1)
-      console.error("TS playground only support 1 ts file");
+      logger.error("TS playground only support 1 ts file");
 
     const link = `${service}${getURL(
       files[tsfiles[0]].content,

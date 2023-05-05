@@ -11,7 +11,7 @@ export const enNavbarConfig = navbar([
     text: "Cookbook",
     icon: "signs-post",
     prefix: "/cookbook/",
-    children: ["tutorial/", "markdown/", "vuepress/", "advanced/"],
+    children: ["tutorial/", "markdown/", "vuepress/", "customize/"],
   },
   "/migration/",
   {
@@ -19,7 +19,7 @@ export const enNavbarConfig = navbar([
     icon: "circle-info",
     children: [
       "/changelog",
-      "/demo",
+      "/demo/",
       "/contribution",
       {
         text: "Plugins",

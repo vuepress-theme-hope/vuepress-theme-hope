@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-seo2",
-  "version": "2.0.0-beta.195",
+  "version": "2.0.0-beta.207",
   "description": "SEO plugin for vuepress",
   "keywords": [
     "vuepress",
@@ -40,7 +40,7 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "engines": {
-    "node": "^14.18.0 || >=16.0.0",
+    "node": ">=16.0.0",
     "npm": ">=8",
     "pnpm": ">=7"
   },

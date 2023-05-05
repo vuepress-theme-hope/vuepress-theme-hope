@@ -1,6 +1,6 @@
 import { type App, type Page, createPage } from "@vuepress/core";
-import { isFunction, isString, removeLeadingSlash } from "@vuepress/shared";
 import { colors } from "@vuepress/utils";
+import { isFunction, isString, removeLeadingSlash } from "vuepress-shared/node";
 
 import { type BlogOptions } from "./options.js";
 import { type PageMap } from "./typings/index.js";
@@ -70,10 +70,12 @@ export const prepareCategory = (
         const pageKeys: string[] = [];
         const getItemPath = isFunction(itemPath)
           ? itemPath
-          : (name: string): string =>
-              (itemPath || "")
+          : isString(itemPath)
+          ? (name: string): string =>
+              itemPath
                 .replace(/:key/g, slugify(key))
-                .replace(/:name/g, slugify(name));
+                .replace(/:name/g, slugify(name))
+          : (): null => null;
 
         for (const localePath in pageMap) {
           if (path) {

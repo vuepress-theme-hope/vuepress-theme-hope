@@ -33,9 +33,12 @@ tag:
 
 ### navbarLayout
 
-- 类型: `HopeNavbarLayoutOptions`
+- 类型: `NavbarLayoutOptions`
 
   ```ts
+  /**
+   * 导航栏组件
+   */
   type NavbarComponent =
     | "Brand"
     | "Links"
@@ -44,10 +47,13 @@ tag:
     | "Outlook"
     | "Repo";
 
-  interface HopeNavbarLayoutOptions {
-    start: NavbarComponent[];
-    center: NavbarComponent[];
-    end: NavbarComponent[];
+  /**
+   * 导航栏布局选项
+   */
+  interface NavbarLayoutOptions {
+    start?: (NavbarComponent | string)[];
+    center?: (NavbarComponent | string)[];
+    end?: (NavbarComponent | string)[];
   }
   ```
 
@@ -128,7 +134,7 @@ tag:
 
 是否在侧边栏显示图标。
 
-### sidebarSorter <Badge text="仅限 Root" />
+### sidebarSorter <Badge text="仅限 Root" type="warning" />
 
 - 类型: `SidebarSorter`
 

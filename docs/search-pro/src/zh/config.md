@@ -172,7 +172,7 @@ export default defineUserConfig({
 - 类型: `boolean`
 - 默认值: 是否使用 `--debug` 标记
 
-是否在开发服务器中中启用实时热重载。
+是否在开发服务器中启用实时热重载。
 
 ::: note
 

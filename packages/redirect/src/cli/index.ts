@@ -9,9 +9,9 @@ import {
   transformUserConfigToPlugin,
 } from "@vuepress/cli";
 import { createBuildApp } from "@vuepress/core";
-import { removeEndingSlash, removeLeadingSlash } from "@vuepress/shared";
 import { fs, logger, path } from "@vuepress/utils";
 import { cac } from "cac";
+import { removeEndingSlash, removeLeadingSlash } from "vuepress-shared/node";
 
 import { getRedirectHTML } from "../node/utils.js";
 

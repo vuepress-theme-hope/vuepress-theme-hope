@@ -1,6 +1,8 @@
 ---
 # This is the title of the article
 title: Page Config
+# You can customize cover image
+cover: /assets/images/cover1.jpg
 # This is the icon of the page
 icon: page
 # This control sidebar order
@@ -32,7 +34,7 @@ Content before `more` comment is regarded as page excerpt.
 
 ## Page Information
 
-You can set page information in Markdown’s Frontmatter.
+You can set page information in Markdown's Frontmatter.
 
 - The author is Ms.Hope.
 - The writing date is January 1, 2020

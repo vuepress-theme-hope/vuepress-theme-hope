@@ -10,16 +10,16 @@ title: SiteInfo
 
 基础站点信息:
 
-<SiteInfo name="Mr.Hope’s Blog" url="https://mrhope.site" preview="https://theme-hope.vuejs.press/assets/image/mrhope.jpg" />
+<SiteInfo name="Mr.Hope's Blog" url="https://mrhope.site" preview="https://theme-hope.vuejs.press/assets/image/mrhope.jpg" />
 
 ```md
-<SiteInfo name="Mr.Hope’s Blog" url="https://mrhope.site" preview="https://theme-hope.vuejs.press/assets/image/mrhope.jpg" />
+<SiteInfo name="Mr.Hope's Blog" url="https://mrhope.site" preview="https://theme-hope.vuejs.press/assets/image/mrhope.jpg" />
 ```
 
 有更多属性的站点信息:
 
 <SiteInfo
-  name="Mr.Hope’s Blog"
+  name="Mr.Hope's Blog"
   desc="Where there is light, there is hope"
   url="https://mrhope.site"
   logo="https://mrhope.site/logo.svg"
@@ -29,7 +29,7 @@ title: SiteInfo
 
 ```md
 <SiteInfo
-  name="Mr.Hope’s Blog"
+  name="Mr.Hope's Blog"
   desc="Where there is light, there is hope"
   url="https://mrhope.site"
   logo="https://mrhope.site/logo.svg"
@@ -42,35 +42,35 @@ title: SiteInfo
 
 ### name
 
-- Type: `string`
-- Required: Yes
+- 类型: `string`
+- 必填: 是
 
-Name of the site.
+站点名称
 
 ### preview
 
-- Type: `string`
-- Required: Yes
+- 类型: `string`
+- 必填: 是
 
-Pewview image of the site. Must be absolute path or full URL.
+站点预览图，必须为绝对路径或完整 URL。
 
 ### desc
 
-- Type: `string`
-- Default: `''`
+- 类型: `string`
+- 默认值: `''`
 
-Description of the site.
+站点描述
 
 ### logo
 
-- Type: `string`
-- Default: `''`
+- 类型: `string`
+- 默认值: `''`
 
-Logo of the site.
+站点图标
 
 ### repo
 
-- Type: `string`
-- Default: `''`
+- 类型: `string`
+- 默认值: `''`
 
-Source repo of the site.
+站点源代码仓库。

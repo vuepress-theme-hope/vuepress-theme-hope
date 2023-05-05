@@ -19,12 +19,24 @@ Redirect map.
 
 Domain name to redirect to.
 
-## locale
+## autoLocale
 
 - Type: `boolean`
 - Default: `false`
+- Details:
+  - [Guide → Redirect Language](./guide.md#redirecting-locales)
 
 Whether enable locales redirection.
+
+## switchLocale
+
+- Type: `"direct" | "modal" | false`
+- Default: `false`
+
+Whether switch to a new locale based on user preference.
+
+- `"direct"`: redirect to the new locale directly without asking
+- `"modal"`: show a modal to let user choose whether to switch to the new locale
 
 ## localeConfig
 

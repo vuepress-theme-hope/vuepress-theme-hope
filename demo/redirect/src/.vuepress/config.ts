@@ -2,7 +2,7 @@ import { defineUserConfig } from "@vuepress/cli";
 import { defaultTheme } from "@vuepress/theme-default";
 import { redirectPlugin } from "vuepress-plugin-redirect";
 
-const base = <"/" | `/${string}/`>process.env.BASE || "/";
+const base = <"/" | `/${string}/`>process.env["BASE"] || "/";
 
 export default defineUserConfig({
   base,
@@ -10,6 +10,15 @@ export default defineUserConfig({
   title: "Redirect",
 
   description: "VuePress2 Redirect Plugin",
+
+  locales: {
+    "/en/": {
+      lang: "en-US",
+    },
+    "/zh/": {
+      lang: "zh-CN",
+    },
+  },
 
   theme: defaultTheme({
     logo: "/logo.svg",
@@ -19,6 +28,8 @@ export default defineUserConfig({
 
   plugins: [
     redirectPlugin({
+      autoLocale: true,
+      switchLocale: "modal",
       config: {
         "/homepage.html": "/",
       },

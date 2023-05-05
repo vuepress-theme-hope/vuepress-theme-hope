@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-photo-swipe",
-  "version": "2.0.0-beta.195",
+  "version": "2.0.0-beta.207",
   "description": "Photo Swipe plugin for vuepress",
   "keywords": [
     "vuepress",
@@ -46,7 +46,7 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "engines": {
-    "node": "^14.18.0 || >=16.0.0",
+    "node": ">=16.0.0",
     "npm": ">=8",
     "pnpm": ">=7"
   },
@@ -54,8 +54,8 @@
     "@vuepress/client": "2.0.0-beta.61",
     "@vuepress/shared": "2.0.0-beta.61",
     "@vuepress/utils": "2.0.0-beta.61",
-    "@vueuse/core": "^9.13.0",
-    "photoswipe": "^5.3.6",
+    "@vueuse/core": "^10.1.2",
+    "photoswipe": "^5.3.7",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6",
     "vuepress-plugin-sass-palette": "workspace:*",
@@ -65,28 +65,16 @@
     "@vuepress/core": "2.0.0-beta.61"
   },
   "peerDependencies": {
-    "@vuepress/client": "2.0.0-beta.61",
-    "sass-loader": "^13.2.0",
+    "sass-loader": "^13.2.2",
     "vuepress": "2.0.0-beta.61",
-    "vuepress-plugin-sass-palette": "workspace:*",
-    "vuepress-shared": "workspace:*",
     "vuepress-vite": "2.0.0-beta.61",
     "vuepress-webpack": "2.0.0-beta.61"
   },
   "peerDependenciesMeta": {
-    "@vuepress/client": {
-      "optional": true
-    },
     "sass-loader": {
       "optional": true
     },
     "vuepress": {
-      "optional": true
-    },
-    "vuepress-plugin-sass-palette": {
-      "optional": true
-    },
-    "vuepress-shared": {
       "optional": true
     },
     "vuepress-vite": {

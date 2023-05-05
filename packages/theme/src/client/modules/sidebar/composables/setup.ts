@@ -9,10 +9,13 @@ import {
 import { resolveSidebarItems } from "./resolveConfig.js";
 import { type ResolvedSidebarItem } from "../utils/index.js";
 
+declare const __VUEPRESS_DEV__: boolean;
+
 export type SidebarItemsRef = ComputedRef<ResolvedSidebarItem[]>;
 
-export const sidebarItemsSymbol: InjectionKey<SidebarItemsRef> =
-  Symbol("sidebarItems");
+export const sidebarItemsSymbol: InjectionKey<SidebarItemsRef> = Symbol(
+  __VUEPRESS_DEV__ ? "sidebarItems" : ""
+);
 
 /**
  * Create sidebar items ref and provide as global computed in setup

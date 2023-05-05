@@ -7,6 +7,7 @@ import {
   h,
   onMounted,
   ref,
+  shallowRef,
 } from "vue";
 import { LoadingIcon, atou } from "vuepress-shared/client";
 
@@ -84,8 +85,8 @@ export default defineComponent({
 
   setup(props, { slots }) {
     const [isExpanded, toggleIsExpand] = useToggle(false);
-    const demoWrapper = ref<HTMLDivElement>();
-    const codeContainer = ref<HTMLDivElement>();
+    const demoWrapper = shallowRef<HTMLDivElement>();
+    const codeContainer = shallowRef<HTMLDivElement>();
     const height = ref("0");
     const loaded = ref(false);
 
@@ -160,6 +161,9 @@ export default defineComponent({
         h("div", { class: "code-demo-header" }, [
           code.value.isLegal
             ? h("button", {
+                type: "button",
+                title: "toggle",
+                "aria-hidden": true,
                 class: ["toggle-button", isExpanded.value ? "down" : "end"],
                 onClick: () => {
                   height.value = isExpanded.value

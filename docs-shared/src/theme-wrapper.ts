@@ -97,5 +97,5 @@ export const theme = (
     ...options,
   };
 
-  return hopeTheme(themeOptions, false);
+  return hopeTheme(themeOptions, { custom: true });
 };

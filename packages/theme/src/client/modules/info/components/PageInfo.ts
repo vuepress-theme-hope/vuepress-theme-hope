@@ -5,11 +5,11 @@ import {
   h,
   resolveComponent,
 } from "vue";
-import { type ReadingTime } from "vuepress-plugin-reading-time2";
 import {
-  type AuthorInfo as AuthorInfoType,
-  type DateInfo as DateInfoType,
-} from "vuepress-shared/client";
+  type ReadingTime,
+  type ReadingTimeLocale,
+} from "vuepress-plugin-reading-time2/client";
+import { type AuthorInfo as AuthorInfoType } from "vuepress-shared/client";
 
 import { usePure } from "@theme-hope/composables/index";
 import AuthorInfo from "@theme-hope/modules/info/components/AuthorInfo";
@@ -60,7 +60,7 @@ export interface PageInfoProps {
    *
    * 写作日期
    */
-  date?: DateInfoType | null;
+  date?: Date | null;
 
   /**
    * Writing Date
@@ -93,6 +93,13 @@ export interface PageInfoProps {
    * 阅读时间
    */
   readingTime?: ReadingTime | null;
+
+  /**
+   * ReadingTime Locales
+   *
+   * 阅读时间多语言
+   */
+  readingTimeLocale?: ReadingTimeLocale | null;
 }
 
 export default defineComponent({

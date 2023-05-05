@@ -1,6 +1,7 @@
 ---
 title: FAQ
 icon: circle-question
+star: true
 category:
   - FAQ
 ---
@@ -33,7 +34,7 @@ If necessary, provide a minimal reproduction Repo[^minimal-reproduction-repo] li
 
 ::: warning Theme and Plugins in repo only
 
-- If you have questions about learning and using Vue, TypeScript, Sass, or you don’t know how to write what you want, you may want to ask questions on the Vue forums, Stack Overflow, etc.
+- If you have questions about learning and using Vue, TypeScript, Sass, or you don't know how to write what you want, you may want to ask questions on the Vue forums, Stack Overflow, etc.
 
 - If you have questions about VuePress, please [open a new discussion](https://github.com/vuepress/vuepress-next/discussions/new) in VuePress repo, as a member of the VuePress team, Mr.Hope will try to answer in his spare time.
 
@@ -47,13 +48,13 @@ Please only start discussions about the VuePress Theme Hope and plugins written 
   - error screenshot in browser console (if there are errors)
   - if your problem is related to display, please also provide related screenshots.
 
-- If there is something you don’t know how to solve, welcome to [open a discussion](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions/new). Questions are always welcome, no matter **they are simple or not**. You only need to make sure three points:
+- If there is something you don't know how to solve, welcome to [open a discussion](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions/new). Questions are always welcome, no matter **they are simple or not**. You only need to make sure three points:
 
   1. You have tried searching related docs through search box.
 
   1. You are providing a detailed description in the discussion.
 
-     - If you don’t know how to configure something, please describe what you want, and what you search or what section are you expecting to see the guidelines (so that we can improve our docs).
+     - If you don't know how to configure something, please describe what you want, and what you search or what section are you expecting to see the guidelines (so that we can improve our docs).
 
   1. You are not asking question unrelated to VuePress or asking for a "technical support".
 

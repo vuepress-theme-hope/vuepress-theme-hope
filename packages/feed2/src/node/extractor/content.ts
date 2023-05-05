@@ -1,15 +1,22 @@
 import { type App, type Page } from "@vuepress/core";
-import { isArray, isLinkHttp, removeEndingSlash } from "@vuepress/shared";
 import { fs } from "@vuepress/utils";
 import { type AnyNode, load } from "cheerio";
-import { HTML_TAGS, SVG_TAGS, isAbsoluteUrl } from "vuepress-shared/node";
+import {
+  HTML_TAGS,
+  MATHML_TAGS,
+  SVG_TAGS,
+  isAbsoluteUrl,
+  isArray,
+  isLinkHttp,
+  removeEndingSlash,
+} from "vuepress-shared/node";
 
 const HEADING_TAGS = ["h1", "h2", "h3", "h4", "h5", "h6"];
 
 const handleNode = (
   node: AnyNode,
   base: string,
-  shouldRemoveElement: (tagName: string) => boolean
+  isPreservedElement: (tagName: string) => boolean
 ): AnyNode | null => {
   if (node.type === "tag") {
     // image using relative urls shall be dropped
@@ -32,7 +39,11 @@ const handleNode = (
     if (node.tagName === "pre") return null;
 
     // standard tags can be returned
-    if (HTML_TAGS.includes(node.tagName) || SVG_TAGS.includes(node.tagName)) {
+    if (
+      HTML_TAGS.includes(node.tagName) ||
+      SVG_TAGS.includes(node.tagName) ||
+      MATHML_TAGS.includes(node.tagName)
+    ) {
       // remove heading id tabindex and anchor inside
       if (HEADING_TAGS.includes(node.tagName)) {
         delete node.attribs["id"];
@@ -48,7 +59,7 @@ const handleNode = (
       // remove `v-pre` attribute
       if (node.tagName === "code") delete node.attribs["v-pre"];
 
-      node.children = handleNodes(node.children, base, shouldRemoveElement);
+      node.children = handleNodes(node.children, base, isPreservedElement);
 
       return node;
     }
@@ -59,14 +70,14 @@ const handleNode = (
       node.attribs["href"] = `${removeEndingSlash(base)}${node.attribs["to"]}`;
       node.attribs["target"] = "blank";
       delete node.attribs["to"];
-      node.children = handleNodes(node.children, base, shouldRemoveElement);
+      node.children = handleNodes(node.children, base, isPreservedElement);
 
       return node;
     }
 
-    if (shouldRemoveElement(node.tagName)) return node;
+    if (isPreservedElement(node.tagName)) return node;
 
-    // other tags will be considered as vue components and will be dropped
+    // other unknown tags and will be dropped
     return null;
   }
 
@@ -76,11 +87,11 @@ const handleNode = (
 const handleNodes = (
   nodes: AnyNode[] | null,
   base: string,
-  shouldRemoveElement: (tagName: string) => boolean
+  isPreservedElement: (tagName: string) => boolean
 ): AnyNode[] =>
   isArray(nodes)
     ? nodes
-        .map((node) => handleNode(node, base, shouldRemoveElement))
+        .map((node) => handleNode(node, base, isPreservedElement))
         .filter((node): node is AnyNode => node !== null)
     : [];
 
@@ -89,7 +100,7 @@ const $ = load("");
 export const getPageRenderContent = (
   app: App,
   page: Page,
-  shouldRemoveElement: (tagName: string) => boolean
+  isPreservedElement: (tagName: string) => boolean
 ): string => {
   const pagePath = app.dir.dest(page.path);
   const pageContent = fs.existsSync(pagePath)
@@ -100,11 +111,7 @@ export const getPageRenderContent = (
   const rootNodes = $.parseHTML(pageContent) || [];
 
   for (const node of rootNodes) {
-    const resolvedNode = handleNode(
-      node,
-      app.options.base,
-      shouldRemoveElement
-    );
+    const resolvedNode = handleNode(node, app.options.base, isPreservedElement);
 
     if (resolvedNode) content += `${$.html(resolvedNode)}`;
   }

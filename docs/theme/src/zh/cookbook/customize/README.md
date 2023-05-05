@@ -15,6 +15,12 @@ article: false
 
 <!-- more -->
 
+## 添加组件
+
+每个 markdown 文件将在 VuePress 中转换为一个 Vue 组件，因此你可以轻松导入和使用 Vue 组件。
+
+- [添加组件](./component.md)
+
 ## 自定义样式的方式
 
 你可以在自己文档内的 `.vuepress/styles` 文件夹下放置三个文件进行样式配置。

@@ -52,10 +52,10 @@ tag:
 
 ## Text
 
-This sentence has **bold**、_italic_ and ~~delete~~ style text.
+This sentence has **bold**, _italic_ and ~~delete~~ style text.
 
 ```md
-This sentence has **bold**、_italic_ and ~~delete~~ style text.
+This sentence has **bold**, _italic_ and ~~delete~~ style text.
 ```
 
 ## Paragraph
@@ -72,11 +72,11 @@ This is another paragraph.
 
 ## Line Break
 
-I would like to line break at  
+I would like to line break at
 this point
 
 ```md
-I would like to line break at  
+I would like to line break at
 this point
 ```
 
@@ -113,12 +113,12 @@ In codes above, two spaces are behind `at`.
 
     - Ac tristique libero volutpat at
     - Facilisis in pretium nisl aliquet
-    - Nulla volutpat aliquam velit  
+    - Nulla volutpat aliquam velit
       link break
 
       New paragraph
 
-- It’s easy!
+- It's easy!
 
 ```md
 - Create a list by starting a line with `-`
@@ -128,7 +128,7 @@ In codes above, two spaces are behind `at`.
 
     - Ac tristique libero volutpat at
     - Facilisis in pretium nisl aliquet
-    - Nulla volutpat aliquam velit  
+    - Nulla volutpat aliquam velit
       link break
 
       New paragraph
@@ -139,15 +139,15 @@ In codes above, two spaces are behind `at`.
 ### Ordered List
 
 1. Lorem ipsum dolor sit amet
-1. Consectetur adipiscing elit  
-   line break  
+1. Consectetur adipiscing elit
+   line break
    line break again
 1. Integer molestie lorem at massa
 
 ```md
 1. Lorem ipsum dolor sit amet
-1. Consectetur adipiscing elit  
-   line break  
+1. Consectetur adipiscing elit
+   line break
    line break again
 1. Integer molestie lorem at massa
 ```

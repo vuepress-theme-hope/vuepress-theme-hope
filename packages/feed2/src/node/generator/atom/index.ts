@@ -1,4 +1,4 @@
-import { isArray } from "@vuepress/shared";
+import { isArray } from "vuepress-shared/node";
 import { js2xml } from "xml-js";
 
 import {

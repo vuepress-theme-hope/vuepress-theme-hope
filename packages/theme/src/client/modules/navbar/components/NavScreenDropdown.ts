@@ -53,14 +53,14 @@ export default defineComponent({
     );
 
     const isLastItemOfArray = <T>(item: T, arr: T[]): boolean =>
-      arr[arr.length - 1] === item;
+      arr.at(-1) === item;
 
     return (): VNode[] => [
       h(
         "button",
         {
-          class: ["nav-screen-dropdown-title", { active: open.value }],
           type: "button",
+          class: ["nav-screen-dropdown-title", { active: open.value }],
           "aria-label": dropdownAriaLabel.value,
           onClick: () => {
             open.value = !open.value;

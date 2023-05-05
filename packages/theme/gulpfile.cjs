@@ -15,6 +15,6 @@ const generateSass = () =>
         callback(null, file);
       })
     )
-    .pipe(dest("lib/perf"));
+    .pipe(dest("lib/bundle"));
 
 exports.default = generateSass;

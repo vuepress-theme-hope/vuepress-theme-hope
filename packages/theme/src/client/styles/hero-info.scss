@@ -45,7 +45,39 @@
     }
   }
 
-  h1,
+  h1 {
+    margin: 0.5rem 0;
+
+    background: linear-gradient(
+      120deg,
+      var(--theme-color-light),
+      var(--theme-color) 30%,
+      color.adjust(hope-config.$theme-color, $hue: 60deg) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    font-weight: bold;
+    font-size: 3.6rem;
+    line-height: 1.5;
+
+    -webkit-text-fill-color: transparent;
+
+    @media (max-width: hope-config.$tablet) {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    @media (max-width: hope-config.$pad) {
+      text-align: center;
+    }
+
+    @media (max-width: hope-config.$mobile) {
+      margin: 0 auto;
+      font-size: 2rem;
+    }
+  }
+
   .description,
   .actions {
     margin: 1.8rem 0;
@@ -61,30 +93,6 @@
 
     @media (max-width: hope-config.$mobile) {
       margin: 1.2rem 0;
-    }
-  }
-
-  h1 {
-    background: linear-gradient(
-      120deg,
-      var(--theme-color-light),
-      var(--theme-color) 30%,
-      color.adjust(hope-config.$theme-color, $hue: 60deg) 100%
-    );
-    -webkit-background-clip: text;
-    background-clip: text;
-
-    font-weight: bold;
-    font-size: 3.6rem;
-
-    -webkit-text-fill-color: transparent;
-
-    @media (max-width: hope-config.$tablet) {
-      font-size: 2.5rem;
-    }
-
-    @media (max-width: hope-config.$mobile) {
-      font-size: 2rem;
     }
   }
 

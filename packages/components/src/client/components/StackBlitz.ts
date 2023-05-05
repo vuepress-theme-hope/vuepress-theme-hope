@@ -216,6 +216,7 @@ export default defineComponent({
             h(
               "button",
               {
+                type: "button",
                 class: "stackblitz-button",
                 onClick: () => {
                   stackblitzSDK[

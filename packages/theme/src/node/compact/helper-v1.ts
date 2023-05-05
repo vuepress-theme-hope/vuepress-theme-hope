@@ -1,8 +1,13 @@
 import { type UserConfig } from "@vuepress/cli";
 import { type Plugin, type PluginConfig } from "@vuepress/core";
 import { type MarkdownOptions } from "@vuepress/markdown";
-import { isArray, isFunction, isPlainObject, isString } from "@vuepress/shared";
 import { colors } from "@vuepress/utils";
+import {
+  isArray,
+  isFunction,
+  isPlainObject,
+  isString,
+} from "vuepress-shared/node";
 
 import { defineHopeConfig } from "./helper-v2.js";
 import { convertThemeOptions } from "./theme.js";

@@ -1,6 +1,4 @@
-import { isString } from "@vuepress/shared";
-
-import { startsWith } from "./helper.js";
+import { isString, startsWith } from "./helper.js";
 
 /**
  * check if a variable is a valid url

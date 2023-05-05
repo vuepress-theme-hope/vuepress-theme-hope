@@ -1,6 +1,6 @@
 import { type Plugin } from "@vuepress/core";
-import { isPlainObject } from "@vuepress/shared";
 import { type PWAOptions, pwaPlugin } from "vuepress-plugin-pwa2";
+import { isPlainObject } from "vuepress-shared/node";
 
 /**
  * @private

@@ -60,7 +60,7 @@ You can omit the `.md` extension, and paths ending with `/` are inferred as `/RE
 
 ### Object Format
 
-If you are not satisfied with the page’s icon or feel that the page title is too long, you can configure an object instead. Available configuration items are:
+If you are not satisfied with the page's icon or feel that the page title is too long, you can configure an object instead. Available configuration items are:
 
 - `text:`: item text
 - `link`: item link
@@ -148,7 +148,7 @@ But you may have multiple folders with files under `/path/`. To avoid multiple d
 
 To display more links, you can group similar links into a dropdown list.
 
-You need use object format and provide the additional `children` option to nest links:
+You need to use object format and provide the additional `children` option to nest links:
 
 ::: code-tabs#language
 
@@ -242,7 +242,7 @@ export default {
 
 :::
 
-You can also have sub groups inside a dropdown by having nested `children`:
+You can also have subgroups inside a dropdown by having nested `children`:
 
 ::: code-tabs#language
 
@@ -446,7 +446,7 @@ You can set `logoDark` to display another logo in dark mode.
 
 ## I18n Support
 
-The theme’s navbar supports [I18n](https://v2.vuepress.vuejs.org/guide/i18n.html), so you can set navbar options mentioned above individually in each language:
+The theme's navbar supports [I18n](https://v2.vuepress.vuejs.org/guide/i18n.html), so you can set navbar options mentioned above individually in each language:
 
 ::: code-tabs#language
 
@@ -682,7 +682,7 @@ export default navbar([
 ```ts
 import { navbar } from "vuepress-theme-hope";
 
-@include(../../.vuepress/navbar/en.ts{3-})
+<!-- @include: ../../.vuepress/navbar/en.ts{3-} -->
 ```
 
 @tab JS
@@ -690,7 +690,7 @@ import { navbar } from "vuepress-theme-hope";
 ```js
 import { navbar } from "vuepress-theme-hope";
 
-@include(../../.vuepress/navbar/en.ts{3-})
+<!-- @include: ../../.vuepress/navbar/en.ts{3-} -->
 ```
 
 :::

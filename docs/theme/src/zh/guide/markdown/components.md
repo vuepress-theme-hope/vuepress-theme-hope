@@ -214,20 +214,12 @@ export default {
 <BiliBili bvid="BV1kt411o7C3" />
 ```
 
-一个自定义分 P 和空降地址的 B 站视频:
+一个自定义空降地址且自动播放的 B 站视频:
 
-<BiliBili bvid="BV1kt411o7C3" ratio="16:9" time="60" page="2" />
-
-```md
-<BiliBili bvid="BV1kt411o7C3" ratio="16:9" time="60" page="2" />
-```
-
-一个自定义设置的 B 站视频:
-
-<BiliBili bvid="BV1kt411o7C3" low-quality no-danmaku />
+<BiliBili aid="34304064" cid="109293122" ratio="9:16" time="60" autoplay page="2" />
 
 ```md
-<BiliBili bvid="BV1kt411o7C3" low-quality no-danmaku />
+<BiliBili aid="34304064" cid="109293122" ratio="9:16" time="60" autoplay page="2" />
 ```
 
 有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/bilibili.html">BiliBili</ProjectLink> 页面。
@@ -346,16 +338,16 @@ PDF 浏览器组件。
 
 基础站点信息:
 
-<SiteInfo name="Mr.Hope’s Blog" url="https://mrhope.site" preview="https://theme-hope.vuejs.press/assets/image/mrhope.jpg" />
+<SiteInfo name="Mr.Hope's Blog" url="https://mrhope.site" preview="https://theme-hope.vuejs.press/assets/image/mrhope.jpg" />
 
 ```md
-<SiteInfo name="Mr.Hope’s Blog" url="https://mrhope.site" preview="https://theme-hope.vuejs.press/assets/image/mrhope.jpg" />
+<SiteInfo name="Mr.Hope's Blog" url="https://mrhope.site" preview="https://theme-hope.vuejs.press/assets/image/mrhope.jpg" />
 ```
 
 有更多属性的站点信息:
 
 <SiteInfo
-  name="Mr.Hope’s Blog"
+  name="Mr.Hope's Blog"
   desc="Where there is light, there is hope"
   url="https://mrhope.site"
   logo="https://mrhope.site/logo.svg"
@@ -365,7 +357,7 @@ PDF 浏览器组件。
 
 ```md
 <SiteInfo
-  name="Mr.Hope’s Blog"
+  name="Mr.Hope's Blog"
   desc="Where there is light, there is hope"
   url="https://mrhope.site"
   logo="https://mrhope.site/logo.svg"

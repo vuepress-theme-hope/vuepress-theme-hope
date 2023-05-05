@@ -62,7 +62,7 @@ export default defineComponent({
                   "div",
                   {
                     class: [
-                      "project",
+                      "project-card",
                       // TODO: magic number 9 is tricky here
                       { [`project${index % 9}`]: !pure.value },
                     ],

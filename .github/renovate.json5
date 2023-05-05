@@ -1,0 +1,41 @@
+{
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
+  extends: [
+    "config:js-lib",
+    ":semanticPrefixChore",
+    ":prHourlyLimitNone",
+    ":prConcurrentLimitNone",
+    ":maintainLockFilesWeekly",
+  ],
+  schedule: ["every weekend"],
+  dependencyDashboard: true,
+  packageRules: [
+    // bump vuepress manually
+    {
+      enabled: false,
+      matchPackageNames: ["vuepress"],
+      matchPackagePrefixes: ["@vuepress/", "vuepress-"],
+    },
+    // auto merge devDependencies update
+    {
+      automerge: true,
+      matchDepTypes: ["devDependencies"],
+    },
+    // only bump patch for vite
+    {
+      automerge: true,
+      matchPackageNames: ["vite"],
+      matchUpdateTypes: ["patch"],
+    },
+  ],
+  // update lock file per week
+  lockFileMaintenance: {
+    commitMessageAction: "chore: update deps",
+    extends: ["group:all"],
+  },
+
+  // Raise PR when vulnerability alerts are detected.
+  vulnerabilityAlerts: {
+    enabled: true,
+  },
+}

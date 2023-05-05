@@ -1,10 +1,9 @@
 import { getResults } from "../client/utils/index.js";
 import { type SearchIndex } from "../shared/index.js";
 
-const searchIndex: SearchIndex = <SearchIndex>JSON.parse(
-  // @ts-ignore
-  SEARCH_PRO_INDEX as string
-);
+declare const SEARCH_PRO_INDEX: string;
+
+const searchIndex: SearchIndex = <SearchIndex>JSON.parse(SEARCH_PRO_INDEX);
 
 self.onmessage = ({
   data,

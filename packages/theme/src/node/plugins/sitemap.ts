@@ -1,7 +1,6 @@
 import { type Plugin } from "@vuepress/core";
-import { isPlainObject } from "@vuepress/shared";
 import { type SitemapOptions, sitemapPlugin } from "vuepress-plugin-sitemap2";
-import { keys } from "vuepress-shared/node";
+import { isPlainObject, keys } from "vuepress-shared/node";
 
 /**
  * @private

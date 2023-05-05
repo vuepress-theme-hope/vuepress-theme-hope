@@ -167,6 +167,18 @@ npm i -D vuepress-theme-hope
 
 - [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/image.html)
 
+#### 卡片
+
+```card
+title: Mr.Hope
+desc: Where there is light, there is hope
+logo: https://mrhope.site/logo.svg
+link: https://mrhope.site
+color: rgba(253, 230, 138, 0.15)
+```
+
+- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/card.html)
+
 #### 图表
 
 ::: chart 一个散点图案例
@@ -277,7 +289,7 @@ $$
 
 #### 导入文件
 
-@include(./README.md{11-17})
+<!-- @include: ./README.md{11-17} -->
 
 - [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/include.html)
 

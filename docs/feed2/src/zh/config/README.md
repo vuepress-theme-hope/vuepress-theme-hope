@@ -52,12 +52,18 @@ icon: gears
 
 如果你的站点文章很多，你应该考虑设置这个选项以减少 feed 文件大小。
 
-## removedElements
+## preservedElements
 
-- 类型: `string[]`
-- 默认值: `["ExternalLinkIcon"]`
+- 类型: `(RegExp | string)[] | (tagName: string) => boolean`
+- 默认值: `[]`
 
-应在 Feed 中删除的自定义元素或组件。
+应在 Feed 中保留的自定义元素或组件。
+
+::: note
+
+默认情况下，所有的未知标签都会被移除。
+
+:::
 
 ## filter
 

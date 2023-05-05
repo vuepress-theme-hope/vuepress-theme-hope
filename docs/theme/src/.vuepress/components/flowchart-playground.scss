@@ -1,0 +1,32 @@
+.flowchart-playground {
+  textarea {
+    width: 100%;
+    min-height: 240px;
+    border-color: var(--border-color);
+    border-radius: 0.5rem;
+
+    background: var(--bg-color-light);
+    color: var(--text-color);
+
+    font-size: 18px;
+
+    resize: vertical;
+
+    &:active,
+    &:focus-visible {
+      background: var(--bg-color-secondary);
+      outline: 1px solid var(--light-grey);
+    }
+  }
+
+  label {
+    margin-right: 1em;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  select {
+    border-radius: 0.25rem;
+    font-size: 1rem;
+  }
+}

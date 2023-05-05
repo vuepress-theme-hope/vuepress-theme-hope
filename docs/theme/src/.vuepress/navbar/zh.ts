@@ -11,7 +11,7 @@ export const zhNavbarConfig = navbar([
     text: "教程",
     icon: "signs-post",
     prefix: "/zh/cookbook/",
-    children: ["tutorial/", "markdown/", "vuepress/", "advanced/"],
+    children: ["tutorial/", "markdown/", "vuepress/", "customize/"],
   },
   "/zh/migration/",
   {
@@ -20,7 +20,7 @@ export const zhNavbarConfig = navbar([
     prefix: "/zh/",
     children: [
       "changelog",
-      "demo",
+      "demo/",
       "contribution",
       {
         text: "插件",

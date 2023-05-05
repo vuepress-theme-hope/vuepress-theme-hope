@@ -14,6 +14,11 @@ actions:
     link: /zh/config.html
 
 features:
+  - title: 链接检查
+    icon: clipboard-check
+    details: 检查 Markdown 链接
+    link: /zh/guide/others.html#link-check
+
   - title: 自定义容器支持
     icon: box-archive
     details: 用样式装饰 Markdown 内容
@@ -63,6 +68,11 @@ features:
     icon: image
     details: 使用改进的语法指定图片大小与颜色模式
     link: /zh/guide/image.html
+
+  - title: 卡片支持
+    icon: square
+    details: 在 Markdown 中展示卡片
+    link: /zh/guide/card.html
 
   - title: 图表支持
     icon: chart-simple

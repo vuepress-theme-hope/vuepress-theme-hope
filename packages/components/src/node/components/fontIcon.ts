@@ -1,5 +1,10 @@
-import { isArray, isLinkHttp, isString } from "@vuepress/shared";
-import { endsWith, isAbsoluteUrl } from "vuepress-shared/node";
+import {
+  endsWith,
+  isAbsoluteUrl,
+  isArray,
+  isLinkHttp,
+  isString,
+} from "vuepress-shared/node";
 
 import { type FontIconAssets } from "../options/index.js";
 import { logger } from "../utils.js";
@@ -63,7 +68,7 @@ const getFontAwesomeLink = (links: string[]): LinkInfo[] =>
     type: "script",
     content: `\
 useScriptTag(
-  \`//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/js/${item}.min.js\`,
+  \`https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/js/${item}.min.js\`,
   () => {},
   { attrs: { "data-auto-replace-svg": "nest" } }
 );
@@ -84,7 +89,7 @@ const getIconLink = (asset?: string): LinkInfo[] => {
           type: "style",
           content: `\
   useStyleTag(\`\\
-  @import url("//at.alicdn.com/t/c/font_2410206_5vb9zlyghj.css");
+  @import url("https://at.alicdn.com/t/c/font_2410206_5vb9zlyghj.css");
   \`);\
 `,
         },
@@ -96,7 +101,7 @@ const getIconLink = (asset?: string): LinkInfo[] => {
           type: "script",
           content: `\
 useScriptTag(
-  \`//cdn.jsdelivr.net/npm/iconify-icon@1\`
+  \`https://cdn.jsdelivr.net/npm/iconify-icon@1\`
 );\
 `,
         },

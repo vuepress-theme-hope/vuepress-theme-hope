@@ -21,4 +21,4 @@ A concise, safe and free static site commenting system, based on [Tencent Cloud 
 
 1. Go to Settings - Environment Variables, add the environment variable `MONGODB_URI`, the value is the database connection string in step 3
 1. Go to Overview, click the link under Domains, if the environment configuration is correct, you can see the prompt "Twikoo cloud function is running normally"
-1. Vercel Domains (with `https://` prefix, eg `https://xxx.vercel.app`) is your environment ID
+1. Vercel Domains (with `https://` prefix, e.g. `https://xxx.vercel.app`) is your environment ID

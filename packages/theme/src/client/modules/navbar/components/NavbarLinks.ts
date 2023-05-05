@@ -14,8 +14,10 @@ export default defineComponent({
 
     return (): VNode | null =>
       navbarConfig.value.length
-        ? h("nav", { class: "nav-links" }, [
-            ...navbarConfig.value.map((config) =>
+        ? h(
+            "nav",
+            { class: "nav-links" },
+            navbarConfig.value.map((config) =>
               h(
                 "div",
                 { class: "nav-item hide-in-mobile" },
@@ -23,8 +25,8 @@ export default defineComponent({
                   ? h(DropdownLink, { config })
                   : h(AutoLink, { config })
               )
-            ),
-          ])
+            )
+          )
         : null;
   },
 });

@@ -75,6 +75,177 @@ encodeURIComponent(content); // '%0A%7B%0A%20%20%22type%22%3A%20%22bar%22%2C%0A%
 
 ## Utils
 
+### isDef
+
+Check if a value is defined.
+
+```ts
+/**
+ * Check if a value is defined
+ */
+export const isDef: <T = any>(val?: T | undefined) => val is T;
+```
+
+### isBoolean
+
+Check if a value is a boolean.
+
+```ts
+/**
+ * Check if a value is a boolean
+ */
+export const isBoolean: (val: unknown) => val is boolean;
+```
+
+### isString
+
+Check if a value is a string.
+
+```ts
+/**
+ * Check if a value is a string
+ */
+export const isString: (val: unknown) => val is string;
+```
+
+### isNumber
+
+Check if a value is a number.
+
+```ts
+/**
+ * Check if a value is a number
+ */
+export const isNumber: (val: unknown) => val is number;
+```
+
+### isObject
+
+Check if a value is an object.
+
+```ts
+/**
+ * Check if a value is a object
+ */
+export const isObject: (val: unknown) => val is object;
+```
+
+### isPlainObject
+
+Check if a value is a plain object.
+
+```ts
+/**
+ * Check if a value is a plain object
+ */
+export const isPlainObject: <T extends Record<any, any> = Record<any, any>>(
+  val: unknown
+) => val is T;
+```
+
+### isFunction
+
+Check if a value is a function.
+
+```ts
+/**
+ * Check if a value is a function
+ */
+export const isFunction: (val: unknown) => val is Function;
+```
+
+### startsWith
+
+Check if a string starts with a given substring.
+
+```ts
+/**
+ * Check if a string starts with a given substring
+ */
+export const startsWith: (str: string, prefix: string) => boolean;
+```
+
+### endsWith
+
+Check if a string ends with a given substring.
+
+```ts
+/**
+ * Check if a string ends with a given substring
+ */
+export const endsWith: (str: string, suffix: string) => boolean;
+```
+
+### entries
+
+Get the entries of an object.
+
+```ts
+/**
+ * Get the entries of an object
+ */
+export const entries: {
+  <T>(
+    o:
+      | {
+          [s: string]: T;
+        }
+      | ArrayLike<T>
+  ): [string, T][];
+  (o: {}): [string, any][];
+};
+```
+
+### fromEntries
+
+Create an object from an iterable of key-value pairs.
+
+```ts
+/**
+ * Create an object from an iterable of key-value pairs
+ */
+export const fromEntries: {
+  <T = any>(entries: Iterable<readonly [PropertyKey, T]>): {
+    [k: string]: T;
+  };
+  (entries: Iterable<readonly any[]>): any;
+};
+```
+
+### keys
+
+Get the keys of an object.
+
+```ts
+/**
+ * Get the keys of an object
+ */
+export const keys: {
+  (o: object): string[];
+  (o: {}): string[];
+};
+```
+
+### values
+
+Get the values of an object.
+
+```ts
+/**
+ * Get the values of an object
+ */
+export const values: {
+  <T>(
+    o:
+      | {
+          [s: string]: T;
+        }
+      | ArrayLike<T>
+  ): T[];
+  (o: {}): any[];
+};
+```
+
 ### deepAssign
 
 Deep version of `Object.assign`, useful for merging user options with default options.
@@ -127,146 +298,6 @@ deepAssign(defaultOptions, userOptions);
 //   optionB: false,
 //   optionC: "optionC",
 // }
-```
-
-:::
-
-### getDate
-
-Get date info from a string or Date object.
-
-::: note
-
-The function returns null instead of throw error when the date is invalid.
-
-:::
-
-```ts
-export interface DateDetail {
-  year?: number | undefined;
-  month?: number | undefined;
-  day?: number | undefined;
-  hour?: number | undefined;
-  minute?: number | undefined;
-  second?: number | undefined;
-}
-
-export interface DateInfo {
-  type: "date" | "time" | "full";
-  info: DateDetail;
-  value: Date | undefined;
-}
-
-/**
- * Get Date info
- *
- * @param date Date or date info
- * @param timezone (optional) date timezone
- */
-export const getDate: (
-  date: string | Date | undefined,
-  timezone?: string
-) => DateInfo | null;
-```
-
-::: details Example
-
-```ts
-// or vuepress-shared/client
-import { getDate } from "vuepress-shared/node";
-
-getDate("2021-01-01 12:34:56");
-// {
-//   value: Date("2021-01-01 12:34:56"),
-//   info: {
-//     year: 2021,
-//     month: 1,
-//     day: 1,
-//     hour: 12,
-//     minute: 34,
-//     second: 56,
-//   },
-//   type: "full",
-// }
-
-getDate("2021-01-01");
-// {
-//   value: Date("2021-01-01"),
-//   info: {
-//     year: 2021,
-//     month: 1,
-//     day: 1,
-//   },
-//   type: "date",
-// }
-
-getDate("12:34:56");
-// {
-//   value: undefined,
-//   info: {
-//     hour: 12,
-//     minute: 34,
-//     second: 56,
-//   },
-//   type: "time",
-// }
-
-// if you are in UTC
-// Asia/Shanghai is +8
-getDate("12:34:56", "Asia/Shanghai");
-
-// It will be 4AM in UTC
-// {
-//   value: undefined,
-//   info: {
-//     hour: 4,
-//     minute: 34,
-//     second: 56,
-//   },
-//   type: "time",
-// }
-```
-
-:::
-
-### compareDate
-
-Compare dates and sort them from latest to oldest.
-
-Invalid date will appear at last.
-
-```ts
-/**
- * Recent date will returns positive value, so dates will be latest to oldest after sorting
- */
-export const compareDate: (
-  dateA: Date | number | string | undefined,
-  dateB: Date | number | string | undefined
-) => number;
-```
-
-::: details Example
-
-```ts
-// or vuepress-shared/client
-import { compareDate } from "vuepress-shared/node";
-
-const dates = [
-  "2021-01-01",
-  "2022-04-05 08:00:00",
-  "04:38:45",
-  "19999",
-  "2022-03-08",
-];
-
-dates.sort(compareDate);
-// [
-//   "2022-04-05 08:00:00",
-//   "2022-03-08",
-//   "2021-01-01",
-//   "04:38:45",
-//   "19999",
-// ];
 ```
 
 :::

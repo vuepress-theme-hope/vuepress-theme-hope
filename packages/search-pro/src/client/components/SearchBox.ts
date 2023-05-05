@@ -35,7 +35,7 @@ export default defineComponent({
     const controlKeys = computed(() =>
       primaryKey
         ? [
-            ...(isMacOS.value
+            (isMacOS.value
               ? ["⌃", "⇧", "⌥", "⌘"]
               : ["Ctrl", "Shift", "Alt", "Win"]
             ).filter(
@@ -77,6 +77,7 @@ export default defineComponent({
       h(
         "button",
         {
+          type: "button",
           class: "search-pro-button",
           role: "search",
           "aria-label": locale.value.search,

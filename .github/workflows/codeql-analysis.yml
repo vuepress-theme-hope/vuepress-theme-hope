@@ -1,12 +1,11 @@
-name: "CodeQL"
+name: CodeQL
 
 on:
   push:
-    branches:
-      - main
   pull_request:
     branches:
       - main
+      - work
   schedule:
     - cron: "30 7 * * 3"
 
@@ -30,7 +29,7 @@ jobs:
         with:
           languages: ${{ matrix.language }}
 
-      - name: Autobuild
+      - name: Auto Build
         uses: github/codeql-action/autobuild@v2
 
       - name: Perform CodeQL Analysis

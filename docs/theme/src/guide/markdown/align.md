@@ -8,19 +8,7 @@ tag:
   - Markdown
 ---
 
-By injecting configuration into vuepress-plugin-container, you can use
-
-```md
-::: center
-Paragraph to center
-:::
-
-::: right
-Right paragraph
-:::
-```
-
-To customize your paragraph alignment.
+Customize content alignment.
 
 <!-- more -->
 
@@ -64,6 +52,66 @@ export default {
 ```
 
 :::
+
+## Syntax
+
+```md
+::: left
+Contents to align left
+:::
+
+::: center
+Contents to align center
+:::
+
+::: right
+Contents to align right
+:::
+
+::: justify
+Contents to align justify
+:::
+```
+
+::::: details Nesting and escaping
+
+- Nesting can be done by increasing marker number of outer container:
+
+  ```md
+  :::: center
+  Center contents...
+  ::: left
+  Left contents..
+  :::
+  Center contents...
+  ::::
+  ```
+
+  will be
+
+  :::: center
+  Center contents...
+  ::: left
+  Left contents...
+  :::
+  Center contents...
+  ::::
+
+- Escaping can be done by adding `\` to escape the marker:
+
+  ```md
+  \::: left
+
+  :::
+  ```
+
+  will be
+
+  \::: left
+
+  :::
+
+:::::
 
 ## Demo
 

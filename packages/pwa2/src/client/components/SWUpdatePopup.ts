@@ -5,7 +5,7 @@ import {
   defineComponent,
   h,
   onMounted,
-  ref,
+  shallowRef,
 } from "vue";
 import { useLocaleConfig } from "vuepress-shared/client";
 
@@ -20,7 +20,7 @@ export default defineComponent({
 
   setup(_props, { slots }) {
     const locale = useLocaleConfig(locales);
-    const registration = ref<ServiceWorkerRegistration>();
+    const registration = shallowRef<ServiceWorkerRegistration>();
 
     const enabled = computed(() => Boolean(registration.value));
 
@@ -52,6 +52,7 @@ export default defineComponent({
             ? h(
                 "button",
                 {
+                  type: "button",
                   class: "sw-update-popup",
                   tabindex: 0,
                   onClick: () => reload(),

@@ -1,6 +1,6 @@
 import { theme } from "docs-shared";
 
-export default theme("seo2", {
+export default theme("shared", {
   locales: {
     "/": {
       navbar: [
@@ -10,7 +10,7 @@ export default theme("seo2", {
           text: "Node",
           icon: "fab fa-node-js",
           prefix: "/node/",
-          children: ["bundler", "locale", "content"],
+          children: ["bundler", "locale", "content", "date", "env"],
         },
         "/client",
       ],
@@ -26,7 +26,7 @@ export default theme("seo2", {
           text: "Node",
           icon: "fab fa-node-js",
           prefix: "/zh/node/",
-          children: ["bundler", "locale", "content"],
+          children: ["bundler", "locale", "content", "date", "env"],
         },
         "/zh/client",
       ],

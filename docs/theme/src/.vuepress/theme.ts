@@ -1,6 +1,8 @@
-import { theme } from "docs-shared";
+import { getDirname, theme, path } from "docs-shared";
 import { enNavbarConfig, zhNavbarConfig } from "./navbar/index.js";
 import { enSidebarConfig, zhSidebarConfig } from "./sidebar/index.js";
+
+const __dirname = getDirname(import.meta.url);
 
 const IS_NETLIFY = "NETLIFY" in process.env;
 
@@ -20,6 +22,10 @@ export default theme("theme", {
 
   fullscreen: true,
 
+  extraLocales: {
+    Русский: "https://theme-hope-ru.vuejs.press/:route",
+  },
+
   locales: {
     "/": {
       navbar: enNavbarConfig,
@@ -28,6 +34,13 @@ export default theme("theme", {
     "/zh/": {
       navbar: zhNavbarConfig,
       sidebar: zhSidebarConfig,
+    },
+  },
+
+  encrypt: {
+    config: {
+      "/demo/encrypt.html": "1234",
+      "/zh/demo/encrypt.html": "1234",
     },
   },
 
@@ -101,6 +114,7 @@ export default theme("theme", {
     mdEnhance: {
       align: true,
       attrs: true,
+      card: true,
       chart: true,
       codetabs: true,
       demo: true,
@@ -111,7 +125,17 @@ export default theme("theme", {
       imgLazyload: true,
       imgMark: true,
       imgSize: true,
-      include: true,
+      include: {
+        resolvePath: (file, cwd) => {
+          if (file.startsWith("@echarts"))
+            return file.replace(
+              "@echarts",
+              path.resolve(__dirname, "../echarts")
+            );
+
+          return file;
+        },
+      },
       mathjax: true,
       mark: true,
       mermaid: true,

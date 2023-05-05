@@ -14,6 +14,11 @@ actions:
     link: /config.html
 
 features:
+  - title: Links Check
+    icon: clipboard-check
+    details: Check markdown links
+    link: /guide/others.html#link-check
+
   - title: Custom Container
     icon: box-archive
     details: Decorate Markdown content with styles
@@ -63,6 +68,11 @@ features:
     icon: image
     details: improve syntax to specify size and color scheme
     link: /guide/image.html
+
+  - title: Card Support
+    icon: square
+    details: Add cards in Markdown
+    link: /guide/card.html
 
   - title: Chart Support
     icon: chart-simple

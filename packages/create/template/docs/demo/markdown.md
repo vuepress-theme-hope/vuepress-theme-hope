@@ -16,7 +16,7 @@ You should create and write Markdown files, so that VuePress can convert them to
 
 ## Markdown Introduction
 
-If you are a new learner and don’t know how to write Markdown, please read [Markdown Intro](https://theme-hope.vuejs.press/cookbook/markdown/) and [Markdown Demo](https://theme-hope.vuejs.press/cookbook/markdown/demo.html).
+If you are a new learner and don't know how to write Markdown, please read [Markdown Intro](https://theme-hope.vuejs.press/cookbook/markdown/) and [Markdown Demo](https://theme-hope.vuejs.press/cookbook/markdown/demo.html).
 
 ## Markdown Config
 
@@ -24,7 +24,7 @@ VuePress introduce configuration for each Markdown page using Frontmatter.
 
 ::: info
 
-Frontmatter is a important concept in VuePress. If you don’t know it, you need to read [Frontmatter Introduction](https://theme-hope.vuejs.press/cookbook/vuepress/page.html#front-matter).
+Frontmatter is a important concept in VuePress. If you don't know it, you need to read [Frontmatter Introduction](https://theme-hope.vuejs.press/cookbook/vuepress/page.html#front-matter).
 
 :::
 
@@ -187,6 +187,18 @@ Support setting color scheme and size
 
 - [View Detail](https://theme-hope.vuejs.press/guide/markdown/image.html)
 
+#### Card
+
+```card
+title: Mr.Hope
+desc: Where there is light, there is hope
+logo: https://mrhope.site/logo.svg
+link: https://mrhope.site
+color: rgba(253, 230, 138, 0.15)
+```
+
+- [View Detail](https://theme-hope.vuejs.press/guide/markdown/card.html)
+
 #### Chart
 
 ::: chart A Scatter Chart
@@ -297,7 +309,7 @@ $$
 
 #### Include files
 
-@include(./README.md{11-17})
+<!-- @include: ./README.md{11-17} -->
 
 - [View Detail](https://theme-hope.vuejs.press/guide/markdown/include.html)
 

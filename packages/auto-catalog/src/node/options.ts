@@ -101,7 +101,7 @@ export interface AutoCatalogOptions {
   ) => string | null | undefined;
 
   /**
-   * @default 'i'
+   * @default 'icon'
    */
   iconRouteMetaKey?: string;
 
@@ -137,7 +137,7 @@ export interface AutoCatalogOptions {
   ) => number | null | undefined;
 
   /**
-   * @default 'O'
+   * @default 'order'
    */
   orderRouteMetaKey?: string;
 
@@ -168,7 +168,7 @@ export interface AutoCatalogOptions {
   ) => boolean;
 
   /**
-   * @default 'I'
+   * @default 'index'
    */
   indexRouteMetaKey?: string;
 

@@ -1,9 +1,9 @@
 import { type Plugin } from "@vuepress/core";
-import { isString } from "@vuepress/shared";
 import {
   type ComponentOptions,
   componentsPlugin,
 } from "vuepress-plugin-components";
+import { isString } from "vuepress-shared/node";
 
 import { type ThemeOptions } from "../../shared/index.js";
 
@@ -40,10 +40,7 @@ export const getComponentsPlugin = (
         ...componentOptions,
       },
       rootComponents: {
-        backToTop:
-          typeof options.backToTop === "number"
-            ? options.backToTop
-            : options.backToTop !== false,
+        backToTop: options.backToTop ?? true,
         ...rootComponents,
       },
     },

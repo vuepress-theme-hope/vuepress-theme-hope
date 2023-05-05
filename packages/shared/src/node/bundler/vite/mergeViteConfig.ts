@@ -51,9 +51,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { isArray, isString } from "@vuepress/shared";
-
-import { endsWith, keys } from "../../../shared/index.js";
+import { endsWith, isArray, isString, keys } from "../../../shared/index.js";
 
 interface Alias {
   find: string | RegExp;

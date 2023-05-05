@@ -25,7 +25,7 @@ export default defineComponent({
     return (): VNode =>
       h(
         "button",
-        { class: "toggle-rtl-button", onClick: toggleRTL },
+        { type: "button", class: "toggle-rtl-button", onClick: toggleRTL },
         h("span", {
           key: isRTL.value ? "on" : "off",
           class: [`fas fa-fw fa-2xl fa-toggle-${isRTL.value ? "on" : "off"}`],

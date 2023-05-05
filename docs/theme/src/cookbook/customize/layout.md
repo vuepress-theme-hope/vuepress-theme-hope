@@ -14,7 +14,7 @@ This tutorial guides you how to customize theme layout.
 
 ## Setting Theme Options
 
-The theme provide many layout-related options for you to customize the layout of the theme. For details about these options, see [Theme Configuration → Layout](../../config/theme/layout.md).
+The theme provides many layout-related options for you to customize the layout of the theme. For details about these options, see [Theme Configuration → Layout](../../config/theme/layout.md).
 
 ## Modify SCSS Variables
 
@@ -72,4 +72,4 @@ All theme components are registered and invoked through aliases, which means tha
 
 If you just want to add new content at a specific position on the page, then you can replace the component and reference the original component through the slot of the original component.
 
-See [Advanced → Replace theme components](../advanced/replace.md) for component aliases, component slots and replacement methods.
+See [Advanced → Replace theme components](../../guide/advanced/replace.md) for component aliases, component slots and replacement methods.

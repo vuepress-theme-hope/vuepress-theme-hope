@@ -11,13 +11,13 @@ Although client-side search does not require a backend and is easy to add to doc
 
 1. You need to index your website during the build stage, which increases website deployment time and website bundle size.
 1. Users need to fetch the entire index database from your server before searching, which will bring additional traffic and bandwidth pressure to your server.
-1. The user must wait for the search index to be downloaded and parsed locally before traversing the index to search locally, which will consume unnecessary traffic for the user, and at the same time increase the client’s unnecessary calculation and power consumption.
+1. The user must wait for the search index to be downloaded and parsed locally before traversing the index to search locally, which will consume unnecessary traffic for the user, and at the same time increase the client's unnecessary calculation and power consumption.
 
 So you should choose a service provider to provide search services for your site if possible, such as [Algolia](https://www.algolia.com/), or choose an open source search crawler tool and host it on your own server to provide a search service and regularly craw your site. This is necessary for large sites because users send search terms to the search API via network requests and get search results directly.
 
 In particular, [DocSearch](https://docsearch.algolia.com/) is a free search service provided by Algolia for open source projects. If you are creating open source project documentation or an open source technical blog, you can [apply for it](https://docsearch.algolia.com/apply/), and use [`@vuepress/plugin-docsearch`](https://v2.vuepress.vuejs.org/reference/plugin/docsearch.html) plugin to provide search features.
 
-You should use client-side search only when you **do not meet the apply requirements for DocSearch** and **are not willing to pay for service providers**, **can not setup your own search service**.
+You should use client-side search only when you **do not meet the applying requirements for DocSearch** and **are not willing to pay for service providers**, **can not set up your own search service**.
 
 :::
 
@@ -69,13 +69,13 @@ export default defineUserConfig({
 });
 ```
 
-Simple isn't it?
+Simple, isn't it?
 
 :::
 
 ::: details A more complex but practical example
 
-Suppose you are using the `@vuepress/plugin-git` plugin and you add categories and tags to your articles in Frontmatter via `category` and `tag`.
+Suppose you are using the `@vuepress/plugin-git` plugin, and you add categories and tags to your articles in Frontmatter via `category` and `tag`.
 
 If you also put Chinese and English under `/zh/` and `/` respectively, you need to configure as follows:
 

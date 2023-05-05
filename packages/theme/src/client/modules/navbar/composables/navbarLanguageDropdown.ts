@@ -1,7 +1,7 @@
 import { useRouteLocale, useSiteLocaleData } from "@vuepress/client";
 import { type ComputedRef, computed } from "vue";
-import { useRouter } from "vue-router";
-import { keys } from "vuepress-shared/client";
+import { useRoute, useRouter } from "vue-router";
+import { entries, keys } from "vuepress-shared/client";
 
 import {
   useThemeData,
@@ -19,6 +19,7 @@ import {
 export const useNavbarLanguageDropdown =
   (): ComputedRef<NavGroup<AutoLinkOptions> | null> => {
     const router = useRouter();
+    const route = useRoute();
     const routeLocale = useRouteLocale();
     const siteLocale = useSiteLocaleData();
     const themeData = useThemeData();
@@ -36,43 +37,57 @@ export const useNavbarLanguageDropdown =
       const languageDropdown: NavGroup<AutoLinkOptions> = {
         text: "",
         ariaLabel: navbarLocales?.selectLangAriaLabel,
-        children: localePaths.map((targetLocalePath) => {
-          // target locale config of this language link
-          const targetSiteLocale =
-            siteLocale.value.locales?.[targetLocalePath] ?? {};
-          const targetThemeLocale =
-            themeData.value.locales?.[targetLocalePath] ?? {};
-          const targetLang = targetSiteLocale.lang || "";
+        children: [
+          ...localePaths.map((targetLocalePath) => {
+            // target locale config of this language link
+            const targetSiteLocale =
+              siteLocale.value.locales?.[targetLocalePath] ?? {};
+            const targetThemeLocale =
+              themeData.value.locales?.[targetLocalePath] ?? {};
+            const targetLang = targetSiteLocale.lang || "";
 
-          const text = targetThemeLocale.navbarLocales?.langName ?? targetLang;
-          let link;
+            const text =
+              targetThemeLocale.navbarLocales?.langName ?? targetLang;
+            let link;
 
-          // if the target language is current language
-          if (targetLang === siteLocale.value.lang) {
-            // stay at current link
-            link = path;
-          }
-          // if the target language is not current language
-          else {
-            const targetLocalePage = path.replace(
-              routeLocale.value,
-              targetLocalePath
-            );
+            // if the target language is current language
+            if (targetLang === siteLocale.value.lang) {
+              // stay at current link
+              link = path;
+            }
+            // if the target language is not current language
+            else {
+              const targetLocalePage = path.replace(
+                routeLocale.value,
+                targetLocalePath
+              );
 
-            link =
-              // try to link to the corresponding page of current page
-              router.getRoutes().some((item) => item.path === targetLocalePage)
-                ? // try to keep current hash across languages
-                  fullPath.replace(path, targetLocalePage)
-                : // or fallback to homepage
-                  targetThemeLocale.home ?? targetLocalePath;
-          }
+              link =
+                // try to link to the corresponding page of current page
+                router
+                  .getRoutes()
+                  .some((item) => item.path === targetLocalePage)
+                  ? // try to keep current hash across languages
+                    fullPath.replace(path, targetLocalePage)
+                  : // or fallback to homepage
+                    targetThemeLocale.home ?? targetLocalePath;
+            }
 
-          return {
-            text,
-            link,
-          };
-        }),
+            return {
+              text,
+              link,
+            };
+          }),
+          ...entries(themeData.value.extraLocales || {}).map(
+            ([text, path]) => ({
+              text,
+              link: path.replace(
+                ":route",
+                route.path.replace(routeLocale.value, "")
+              ),
+            })
+          ),
+        ],
       };
 
       return languageDropdown;

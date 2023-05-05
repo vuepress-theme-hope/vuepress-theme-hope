@@ -15,7 +15,7 @@ You can access the time page through `/timeline/`. On the page, you can view all
 
 ## Excluding Articles
 
-By default, all articles which has a writing date will be displayed in timeline. If you don’t want an article to be included, just set the `timeline` to `false` in the frontmatter of the article.
+By default, all articles which has a writing date will be displayed in timeline. If you don't want an article to be included, just set the `timeline` to `false` in the frontmatter of the article.
 
 ## Set Timeline title
 

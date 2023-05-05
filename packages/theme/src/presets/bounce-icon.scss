@@ -1,0 +1,15 @@
+// auto links
+.nav-link,
+// project home
+// project card
+.project-card,// page title
+.page-title h1,
+.home.project .feature-item {
+  &:hover .icon {
+    animation-name: bounce;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+    animation-delay: 0s;
+    animation-direction: normal;
+  }
+}

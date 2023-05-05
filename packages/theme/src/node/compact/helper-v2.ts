@@ -1,6 +1,6 @@
 import { type UserConfig } from "@vuepress/cli";
-import { isFunction, isPlainObject } from "@vuepress/shared";
 import { colors } from "@vuepress/utils";
+import { isFunction, isPlainObject } from "vuepress-shared/node";
 
 import { convertThemeOptions } from "./theme.js";
 import { deprecatedMsg } from "./utils.js";

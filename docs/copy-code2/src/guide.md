@@ -19,7 +19,7 @@ After the user clicks the copy button, a copy success message will be displayed 
 
 ## Pure Mode
 
-By default the plugin will show a big blue button, if you want to make the button and tooltip less "obvious" you can add the `pure: true` option.
+By default, the plugin will show a big blue button, if you want to make the button and tooltip less "obvious" you can add the `pure: true` option.
 
 ## Locale Customization
 

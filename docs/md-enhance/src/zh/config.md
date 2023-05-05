@@ -44,19 +44,31 @@ icon: gears
 
 :::
 
-## linkCheck
+## linksCheck
 
-- 类型: `"always" | "dev" | "build" | "never" | boolean`
-- 默认值: `"dev"`
+- 类型: `LinksCheckOptions`
+
+  ```ts
+  type LinksCheckStatus = "always" | "dev" | "build" | "never";
+
+  interface LinksCheckOptions {
+    /**
+     * 是否检查 Markdown 中的死链
+     *
+     * @default "dev"
+     */
+    status?: LinksCheckStatus;
+
+    /**
+     * 忽略的死链
+     */
+    ignore?: (string | RegExp)[] | ((link: string, isDev: boolean) => boolean);
+  }
+  ```
+
+- 默认值: `{ status: "dev" }`
 
 是否启用链接检查。
-
-::: note
-
-- `true` 等同于 `'always'`
-- `false` 等同于 `'never'`
-
-:::
 
 ## vPre
 
@@ -274,6 +286,13 @@ interface TaskListOptions {
 
 可用的选项，详见 [源代码](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/main/packages/md-enhance/src/shared/mathjax.ts)。
 
+## card
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否启用卡片支持。
+
 ## chart
 
 - 类型: `boolean`
@@ -300,7 +319,7 @@ interface TaskListOptions {
 - 类型: `MermaidConfig | boolean`
 - 默认值: `false`
 
-是否启用 [Mermaid](https://mermaid.js.org/) 支持。
+是否启用 [Mermaid](https://mermaid.js.org/) 支持，你可以传入一个对象作为 Mermaid 的配置选项。
 
 ## stylize
 
@@ -437,7 +456,7 @@ interface TaskListOptions {
     service?: string;
   }
 
-  export interface VuePresetPlaygroundOptions {
+  interface VuePresetPlaygroundOptions {
     /**
      * 交互演示外部地址
      *
@@ -533,7 +552,7 @@ interface TaskListOptions {
      *
      * @default 'horizontal'
      */
-    layout?: "vertical" |layout?: "horizontal" | "vertical";
+    layout?: "horizontal" | "vertical";
 
     /**
      * `vue/compiler-sfc` 配置项

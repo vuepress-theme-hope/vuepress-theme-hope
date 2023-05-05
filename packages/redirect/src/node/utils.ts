@@ -1,10 +1,103 @@
-import { Logger } from "vuepress-shared/node";
+import { type App, type Page } from "@vuepress/core";
+import { getDirname, path } from "@vuepress/utils";
+import {
+  Logger,
+  ensureEndingSlash,
+  entries,
+  fromEntries,
+  isAbsoluteUrl,
+  isArray,
+  isFunction,
+  isLinkHttp,
+  isPlainObject,
+  removeEndingSlash,
+} from "vuepress-shared/node";
 
-import { RedirectLocaleOptions } from "./options.js";
+import { type RedirectOptions } from "./options.js";
+import { type RedirectPluginFrontmatterOption } from "./typings/index.js";
+import { type LocaleRedirectConfig } from "../shared/index.js";
+
+const __dirname = getDirname(import.meta.url);
 
 export const PLUGIN_NAME = "vuepress-plugin-redirect";
 
+export const CLIENT_FOLDER = ensureEndingSlash(
+  path.resolve(__dirname, "../client")
+);
+
 export const logger = new Logger(PLUGIN_NAME);
+
+const normalizePath = (url: string): string =>
+  url.replace(/\/$/, "/index.html").replace(/(?:\.html)?$/, ".html");
+
+export const handleRedirectTo = (app: App, options: RedirectOptions): void => {
+  const { base } = app.options;
+
+  app.pages.forEach(({ frontmatter }) => {
+    const { redirectTo } = <RedirectPluginFrontmatterOption>frontmatter;
+
+    if (redirectTo) {
+      const redirectUrl = (
+        isAbsoluteUrl(redirectTo)
+          ? `${
+              options.hostname
+                ? isLinkHttp(options.hostname)
+                  ? removeEndingSlash(options.hostname)
+                  : `https://${removeEndingSlash(options.hostname)}`
+                : ""
+            }${base}${redirectTo}`
+          : redirectTo
+      )
+        .replace(/\.md$/, ".html")
+        .replace(/\/(README|index)\.html/, "/");
+
+      (frontmatter.head ??= []).unshift([
+        "script",
+        {},
+        `{\
+const anchor = window.location.hash.substring(1);\
+location.href=\`${redirectUrl}\${anchor? \`#\${anchor}\`: ""}\`;\
+}`,
+      ]);
+    }
+  });
+};
+
+export const getRedirectMap = (
+  app: App,
+  options: RedirectOptions
+): Record<string, string> => {
+  const config = isFunction(options.config)
+    ? options.config(app)
+    : isPlainObject(options.config)
+    ? options.config
+    : {};
+
+  return {
+    ...fromEntries(
+      (<Page<Record<string, never>, RedirectPluginFrontmatterOption>[]>(
+        app.pages
+      ))
+        .map<[string, string][]>(({ frontmatter, path }) =>
+          isArray(frontmatter.redirectFrom)
+            ? frontmatter.redirectFrom.map((from) => [
+                normalizePath(from),
+                path,
+              ])
+            : frontmatter.redirectFrom
+            ? [[normalizePath(frontmatter.redirectFrom), path]]
+            : []
+        )
+        .flat()
+    ),
+    ...fromEntries(
+      entries(config).map(([from, to]) => [
+        normalizePath(from),
+        normalizePath(to),
+      ])
+    ),
+  };
+};
 
 export const getLocaleRedirectHTML = (
   {
@@ -12,8 +105,9 @@ export const getLocaleRedirectHTML = (
     defaultBehavior,
     defaultLocale,
     localeFallback,
-  }: Required<RedirectLocaleOptions>,
-  availableLocales: string[]
+  }: LocaleRedirectConfig,
+  availableLocales: string[],
+  base: string
 ): string => `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,8 +116,9 @@ export const getLocaleRedirectHTML = (
   <title>Redirecting...</title>
   <script>
     const { hash, origin, pathname } = window.location;
+    const routePath = pathname.substring(${base.length});
     const { languages } = window.navigator;
-    const anchor = hash.substr(1);
+    const anchor = hash.substring(1);
 
     const localeConfig = ${JSON.stringify(localeConfig)};
     const availableLocales = ${JSON.stringify(availableLocales)};
@@ -34,40 +129,46 @@ export const getLocaleRedirectHTML = (
     };
     const defaultBehavior = ${JSON.stringify(defaultBehavior)}
 
-    let localePath = null;
+    let matchedLocalePath = null;
 
     // get matched locale
     findLanguage:
       for (const lang of languages)
-        for (const [path, langs] of Object.entries(localeConfig))
+        for (const [localePath, langs] of Object.entries(localeConfig))
           if (langs.includes(lang)) {
 ${
   localeFallback
     ? `\
-            if (!availableLocales.includes(path))
+            if (!availableLocales.includes(localePath))
               continue;
 `
     : ``
 }\
-            localePath = path;
+            matchedLocalePath = localePath;
             break findLanguage;
           }
     
     // default link
-    const defaultLink = defaultLocale? \`\${origin}\${defaultLocale}\${pathname.substring(1)}\${anchor?\`#\${anchor}\`:""}\`: null;
+    const defaultLink = defaultLocale? \`\${origin}${removeEndingSlash(
+      base
+    )}\${defaultLocale}\${routePath}\${anchor? \`#\${anchor}\`: ""}\`: null;
 
     // a locale matches
-    if (localePath) {
-      const localeLink = \`\${origin}\${localePath}\${pathname.substring(1)}\${anchor?\`#\${anchor}\`:""}\`;
+    if (matchedLocalePath) {
+      const localeLink = \`\${origin}${removeEndingSlash(
+        base
+      )}\${matchedLocalePath}\${routePath}\${anchor? \`#\${anchor}\`: ""}\`;
 
-      if (availableLocales.includes(localePath)) {
+      if (availableLocales.includes(matchedLocalePath)) {
         location.href = localeLink;
       }
       // the page does not exist
       else {
         // locale homepage
         if (defaultBehavior === "homepage") {
-          location.href = \`\${origin}\${localePath}\`;
+          location.href = \`\${origin}${removeEndingSlash(
+            base
+          )}\${matchedLocalePath}\`;
         }
         // default locale page
         else if (defaultBehavior === "defaultLocale" && defaultLink) {
@@ -84,7 +185,7 @@ ${
       location.href = defaultLink;
     }
     else {
-      location.href = \`\${origin}/404.html\`;
+      location.href = \`\${origin}${removeEndingSlash(base)}/404.html\`;
     }
   </script>
 </head>
@@ -103,8 +204,8 @@ export const getRedirectHTML = (redirectUrl: string): string => `<!DOCTYPE html>
   <link rel="canonical" href="${redirectUrl}">
   <title>Redirecting...</title>
   <script>
-    const anchor = window.location.hash.substr(1);
-    location.href = \`${redirectUrl}\${anchor?\`#\${anchor}\`:""}\`;
+    const anchor = window.location.hash.substring(1);
+    location.href = \`${redirectUrl}\${anchor? \`#\${anchor}\`: ""}\`;
   </script>
 </head>
 <body>

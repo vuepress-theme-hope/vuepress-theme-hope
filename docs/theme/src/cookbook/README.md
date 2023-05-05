@@ -6,7 +6,7 @@ article: false
 
 ## Tutorial
 
-Here is a step by step tutorial for newcomers:
+Here is a step-by-step tutorial for newcomers:
 
 1. [Runtime Setup](tutorial/env.md)
 
@@ -32,6 +32,8 @@ Here is a step by step tutorial for newcomers:
 
 ## Customizing
 
+- [Using Components](customize/component.md)
+
 - [Customizing layouts](customize/layout.md)
 
 - [Customizing colors](customize/color.md)
@@ -39,11 +41,3 @@ Here is a step by step tutorial for newcomers:
 - [Customizing fonts](customize/font.md)
 
 - [Customizing effects](customize/effect.md)
-
-## Advanced Tutorial
-
-- [Using Components](advanced/component.md)
-
-- [Replacing Component](advanced/replace.md)
-
-- [Theme Extending](advanced/extend.md)

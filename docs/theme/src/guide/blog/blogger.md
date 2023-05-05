@@ -22,7 +22,7 @@ You can config blogger avatar and name displayed through `blog.avatar` and `blog
 
 ::: note
 
-If you don’t set those options, they automatically fall back to the site logo (`logo` in theme options) and site name.
+If you don't set those options, they automatically fall back to the site logo (`logo` in theme options) and site name.
 
 :::
 
@@ -43,7 +43,7 @@ You can also config your social media links with `blog.medias` option.
 - If the social media icon is available below, you can set `MediaName: MediaLink` directly.
 - Otherwise, you should pass in a tuple `MediaName: [MediaLink , MediaSvgIconString or MediaSvgIconPath]`,
 
-  The second element in the tuple must be a valid SVG string or a full path of a existing SVG file.
+  The second element in the tuple must be a valid SVG string or a full path of an existing SVG file.
 
 ::: tip Available social media:
 

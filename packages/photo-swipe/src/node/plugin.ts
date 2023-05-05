@@ -32,6 +32,7 @@ export const photoSwipePlugin =
           options.selector ||
           ".theme-default-content :not(a) > img:not([no-view])",
         PHOTO_SWIPE_DELAY: options.delay || 800,
+        PHOTO_SWIPE_SCROLL_TO_CLOSE: options.scrollToClose ?? true,
         PHOTO_SWIPE_LOCALES: fromEntries(
           entries(
             getLocales({

@@ -38,7 +38,7 @@ For plugin options, please refer to <ProjectLink name="components" path="/config
 
 Controls `vuepress-plugin-copy-code2`, providing a code copy button.
 
-By default, no config is required. If you don’t need this feature, please set to `false`.
+By default, no config is required. If you don't need this feature, please set to `false`.
 
 ::: info
 
@@ -90,7 +90,7 @@ Prism.js theme used in darkmode.
 
 Controls `vuepress-plugin-photo-swipe`, providing picture browsing function.
 
-By default, no config is required. If you don’t need this feature, please set to `false`.
+By default, no config is required. If you don't need this feature, please set to `false`.
 
 ::: info
 
@@ -111,7 +111,7 @@ Words read per minute.
 
 ::: info
 
-For more plugin options, see <ProjectLink name="photo-swipe" path="/config.html">reading-time2 plugin options</ProjectLink>.
+For more plugin options, see <ProjectLink name="reading-time2" path="/config.html">reading-time2 plugin options</ProjectLink>.
 
 :::
 
@@ -119,7 +119,7 @@ For more plugin options, see <ProjectLink name="photo-swipe" path="/config.html"
 
 Controls `vuepress-plugin-seo2`, providing search engine enhancements.
 
-By default, no config is required. If you don’t need this feature, please set to `false`.
+By default, no config is required. If you don't need this feature, please set to `false`.
 
 ::: info
 
@@ -131,7 +131,7 @@ For plugin config, see <ProjectLink name="seo2" path="/config.html">seo2 plugin 
 
 Controls `vuepress-plugin-seo2`, providing automatically Sitemap generation.
 
-By default, no config is required. If you don’t need this feature, please set to `false`.
+By default, no config is required. If you don't need this feature, please set to `false`.
 
 ::: info
 

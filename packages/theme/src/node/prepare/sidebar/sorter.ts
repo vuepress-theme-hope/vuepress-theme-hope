@@ -1,5 +1,4 @@
-import { isArray, isFunction, isString } from "@vuepress/shared";
-import { keys } from "vuepress-shared/node";
+import { isArray, isFunction, isString, keys } from "vuepress-shared/node";
 
 import {
   type SidebarInfo,

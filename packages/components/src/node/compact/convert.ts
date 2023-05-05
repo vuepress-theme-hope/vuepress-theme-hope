@@ -1,5 +1,5 @@
-import { isPlainObject } from "@vuepress/shared";
 import { colors } from "@vuepress/utils";
+import { isNumber, isPlainObject } from "vuepress-shared/node";
 
 import { deprecatedLogger, droppedLogger } from "./utils.js";
 import { type ComponentOptions } from "../options/index.js";
@@ -32,13 +32,26 @@ export const convertOptions = (
 
   droppedLogger(options, "notice", "", "rootComponents.notice");
 
-  if (isPlainObject(options.rootComponents?.notice)) {
-    logger.error(
-      `"${colors.magenta(
-        "rootComponents.notice"
-      )}" no longer support object config, please check the docs at https://plugin-components.vuejs.press/guide/notice.html.`
-    );
-    delete options.rootComponents?.notice;
+  if (isPlainObject(options.rootComponents)) {
+    if (isNumber(options.rootComponents.backToTop)) {
+      logger.error(
+        `"${colors.magenta(
+          "rootComponents.backToTop"
+        )}" no longer support number, please check the docs at https://plugin-components.vuejs.press/guide/backtotop.html.`
+      );
+      options.rootComponents.backToTop = {
+        threshold: options.rootComponents.backToTop,
+      };
+    }
+
+    if (isPlainObject(options.rootComponents.notice)) {
+      logger.error(
+        `"${colors.magenta(
+          "rootComponents.notice"
+        )}" no longer support object config, please check the docs at https://plugin-components.vuejs.press/guide/notice.html.`
+      );
+      delete options.rootComponents.notice;
+    }
   }
 
   deprecatedLogger({

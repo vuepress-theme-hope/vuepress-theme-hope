@@ -67,6 +67,10 @@ export default {
 
 详见 [mermaid 官方文档](https://mermaid.js.org/)。
 
+## 高级
+
+除了设置 `true` 以开启 Mermaid 之外，你可以传入一个对象来自定义 Mermaid 选项。
+
 ## 例子
 
 ### 流程图
@@ -366,7 +370,7 @@ Add another diagram to demo page    :48h
 ### 饼图
 
 ```pie
-title What Voldemort doesn’t have?
+title What Voldemort doesn't have?
   "FRIENDS" : 2
   "FAMILY" : 3
   "NOSE" : 45
@@ -376,7 +380,7 @@ title What Voldemort doesn’t have?
 
 ````md
 ```pie
-title What Voldemort doesn’t have?
+title What Voldemort doesn't have?
   "FRIENDS" : 2
   "FAMILY" : 3
   "NOSE" : 45

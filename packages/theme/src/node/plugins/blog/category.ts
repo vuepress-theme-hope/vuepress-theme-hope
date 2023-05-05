@@ -1,6 +1,6 @@
 import { type GitData } from "@vuepress/plugin-git";
-import { isArray } from "@vuepress/shared";
 import { type BlogCategoryOptions } from "vuepress-plugin-blog2";
+import { isArray } from "vuepress-shared/node";
 
 import { defaultPageSorter } from "./utils.js";
 import {

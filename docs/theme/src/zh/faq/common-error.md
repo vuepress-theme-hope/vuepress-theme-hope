@@ -102,19 +102,25 @@ CloudFlare 的 Auto Minify 会错误的对 HTML 的空格和换行进行处理�
 
 - 如果你在所有页面都遇到了这个问题，请同样按照上一步检查你在布局或全局组件中添加的组件。
 
+## `You are not allowed to use plugin XXX yourself in vuepress config file.`
+
+这意味着你在 VuePress 配置文件中自己调用主题捆绑插件。
+
+大多数情况下，当你将一些插件与主题一起使用时，主题会自动为你处理一些插件选项，所以当你想自定义这些插件时，你应该在主题选项下的 `plugin.PLUGIN_NAME` 中将它们的选项设置为 让主题为你调用这些插件。详见 [插件配置](../config/plugins/intro.md)。
+
 ## `FATAL ERROR: XXX - JavaScript heap out of memory`
 
-这意味着您的 Node.js 的 `max_old_space_size` 设置太小而无法构建此应用程序。 您可以尝试通过设置 `NODE_OPTIONS` 环境变量来增加 `max_old_space_size`。
+这意味着你的 Node.js 的 `max_old_space_size` 设置太小而无法构建此应用程序。 你可以尝试通过设置 `NODE_OPTIONS` 环境变量来增加 `max_old_space_size`。
 
-`max_old_space_size` 以 MB 为单位，默认情况下 `max_old_space_size` 是机器内存大小的一半。该值可以大于您机器的实际内存大小。
+`max_old_space_size` 以 MB 为单位，默认情况下 `max_old_space_size` 是机器内存大小的一半。该值可以大于你机器的实际内存大小。
 
-- 对于小型项目，通常不会超过 2GB (2048MB)。
-- 对于大型项目，通常不会超过 4GB (4048MB)
-- 如果您在大型网站上同时启用博客功能和大量降价增强功能，通常不会超过 8GB (8192MB)
+- 对于小型项目，通常不会超过 2 GB (2048 MB)。
+- 对于大型项目，通常不会超过 4 GB (4048 MB)
+- 如果你在大型网站上同时启用博客功能和大量 Markdown 增强功能，通常不会超过 8 GB (8192 MB)
 
 ::: details 增加方法
 
-使用 GitHub 工作流时，在您的工作流文件中设置 `env`:
+使用 GitHub 工作流时，在你的工作流文件中设置 `env`:
 
 ```diff
   - name: Build project
@@ -127,7 +133,7 @@ CloudFlare 的 Auto Minify 会错误的对 HTML 的空格和换行进行处理�
 
 :::
 
-## `xxx isn’t assign with a lang, and will return 'en-US' instead.`
+## `xxx isn't assign with a lang, and will return 'en-US' instead.`
 
 如果你在开发进程启动时看到 `xxx is not assign with a lang, and will return 'en-US'.`，请检查是否为每种语言设置了语言。
 

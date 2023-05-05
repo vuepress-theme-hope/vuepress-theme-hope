@@ -6,7 +6,6 @@ export const useForceUpdate = (event: PWAEvent): void => {
       // check whether a valid service worker is active
       if (registration && registration.active)
         // force refresh
-
         // @ts-ignore
         window.location.reload(true);
     });

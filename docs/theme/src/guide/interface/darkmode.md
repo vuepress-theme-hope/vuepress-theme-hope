@@ -27,7 +27,7 @@ Available options:
 
 - `"switch"`: switch between dark, light and auto (default)
 - `"toggle"`: toggle between lightmode and darkmode
-- `"auto"`: Automatically decide whether to apply dark mode based on user device’s color-scheme or current time
+- `"auto"`: Automatically decide whether to apply dark mode based on user device's color-scheme or current time
 - `"enable"`: only dark mode
 - `"disable"`: disable dark mode
 

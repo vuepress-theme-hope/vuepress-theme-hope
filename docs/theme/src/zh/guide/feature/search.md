@@ -121,61 +121,6 @@ tag:
 
 :::
 
-### `@vuepress/plugin-search` 本地化翻译
-
-如果你正在提供中文文档，你可以将其设置到插件选项中的 `locales` 中。
-
-:::: details 中文多语言配置
-
-::: code-tabs#language
-
-@tab TS
-
-```ts
-// .vuepress/config.ts
-import { defineUserConfig } from "vuepress";
-import { searchPlugin } from "@vuepress/plugin-search";
-
-export default defineUserConfig({
-  plugins: [
-    searchPlugin({
-      // ...
-
-      locales: {
-        "/zh/": {
-          placeholder: "搜索",
-        },
-      },
-    }),
-  ],
-});
-```
-
-@tab JS
-
-```js
-// .vuepress/config.js
-import { searchPlugin } from "@vuepress/plugin-search";
-
-export default {
-  plugins: [
-    searchPlugin({
-      // ...
-
-      locales: {
-        "/zh/": {
-          placeholder: "搜索",
-        },
-      },
-    }),
-  ],
-};
-```
-
-:::
-
-::::
-
 ## 使用 `@vuepress/plugin-docsearch`
 
 1. 你需要 [提交你的网站 URL](https://docsearch.algolia.com/apply/) 来加入 DocSearch 项目。
@@ -593,6 +538,61 @@ export default {
 关于搜索插件的可用选项，详见 [插件文档][search]。
 
 :::
+
+### `@vuepress/plugin-search` 本地化翻译
+
+如果你正在提供中文文档，你可以将其设置到插件选项中的 `locales` 中。
+
+:::: details 中文多语言配置
+
+::: code-tabs#language
+
+@tab TS
+
+```ts
+// .vuepress/config.ts
+import { defineUserConfig } from "vuepress";
+import { searchPlugin } from "@vuepress/plugin-search";
+
+export default defineUserConfig({
+  plugins: [
+    searchPlugin({
+      // ...
+
+      locales: {
+        "/zh/": {
+          placeholder: "搜索",
+        },
+      },
+    }),
+  ],
+});
+```
+
+@tab JS
+
+```js
+// .vuepress/config.js
+import { searchPlugin } from "@vuepress/plugin-search";
+
+export default {
+  plugins: [
+    searchPlugin({
+      // ...
+
+      locales: {
+        "/zh/": {
+          placeholder: "搜索",
+        },
+      },
+    }),
+  ],
+};
+```
+
+:::
+
+::::
 
 [docsearch]: https://v2.vuepress.vuejs.org/zh/reference/plugin/docsearch.html
 [search]: https://v2.vuepress.vuejs.org/zh/reference/plugin/search.html

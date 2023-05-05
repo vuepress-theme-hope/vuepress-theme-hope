@@ -28,8 +28,25 @@
     }
 
     // stylelint-disable-next-line selector-max-compound-selectors
-    > a .external-link-icon {
-      display: none;
+    > a {
+      // add links after anchor
+      // stylelint-disable-next-line selector-max-compound-selectors
+      &[href^="http://"],
+      &[href^="https://"]
+      {
+        // stylelint-disable-next-line
+        &::after {
+          // stylelint-disable-next-line selector-max-compound-selectors
+          @media print {
+            content: "";
+          }
+        }
+      }
+
+      // stylelint-disable-next-line selector-max-compound-selectors
+      .external-link-icon {
+        display: none;
+      }
     }
 
     figcaption {

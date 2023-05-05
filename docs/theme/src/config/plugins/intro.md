@@ -12,7 +12,7 @@ tag:
 
 `vuepress-theme-hope` bundles many VuePress plugins.
 
-- Some plugins are automatically enabled, you can disable them in theme options if you don’t need them.
+- Some plugins are automatically enabled, you can disable them in theme options if you don't need them.
 - Some plugins are only enabled when you provide necessary options.
 
 ::: note

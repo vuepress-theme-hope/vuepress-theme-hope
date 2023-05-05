@@ -42,7 +42,6 @@ ${
       - name: ${lang === "简体中文" ? "安装 pnpm" : "Install pnpm"}
         uses: pnpm/action-setup@v2
         with:
-          version: 7
           run_install: true
 `
     : ""

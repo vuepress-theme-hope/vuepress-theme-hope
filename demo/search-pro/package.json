@@ -18,7 +18,7 @@
     "@vuepress/cli": "2.0.0-beta.61",
     "@vuepress/client": "2.0.0-beta.61",
     "@vuepress/theme-default": "2.0.0-beta.61",
-    "sass-loader": "13.2.1",
+    "sass-loader": "13.2.2",
     "vue": "3.2.47",
     "vuepress-plugin-search-pro": "workspace:*",
     "vuepress-vite": "2.0.0-beta.61",

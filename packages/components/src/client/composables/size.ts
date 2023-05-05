@@ -1,6 +1,16 @@
 import { isString } from "@vuepress/shared";
 import { type MaybeRef, useEventListener } from "@vueuse/core";
-import { type Ref, computed, isRef, onMounted, ref, unref, watch } from "vue";
+import {
+  type Ref,
+  type ShallowRef,
+  computed,
+  isRef,
+  onMounted,
+  ref,
+  shallowRef,
+  unref,
+  watch,
+} from "vue";
 
 const getValue = (value: string | number): string =>
   isString(value) ? value : `${value}px`;
@@ -12,7 +22,7 @@ export interface SizeOptions {
 }
 
 export interface SizeInfo<E extends HTMLElement> {
-  el: Ref<E | undefined>;
+  el: ShallowRef<E | undefined>;
   width: Ref<string>;
   height: Ref<string>;
 }
@@ -21,7 +31,7 @@ export const useSize = <E extends HTMLElement>(
   options: SizeOptions,
   extraHeight: MaybeRef<number> = 0
 ): SizeInfo<E> => {
-  const el = ref<E>();
+  const el = shallowRef<E>();
   const width = computed(() => getValue(unref(options.width) || "100%"));
   const height = ref("auto");
 

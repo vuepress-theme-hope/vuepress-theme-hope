@@ -1,6 +1,5 @@
-import { isArray, isPlainObject } from "@vuepress/shared";
 import { colors } from "@vuepress/utils";
-import { values } from "vuepress-shared/node";
+import { isArray, isPlainObject, values } from "vuepress-shared/node";
 
 import { convertNavbarOptions } from "./navbar.js";
 import { convertSidebarOptions } from "./sidebar.js";
@@ -112,8 +111,7 @@ const handleFooterOptions = (options: Record<string, unknown>): void => {
         '"footer.copyright" options is deprecated, please use "copyright" instead'
       );
 
-      // @ts-ignore
-      options["copyright"] = footer["copyright"];
+      options["copyright"] = <string>footer["copyright"];
     }
 
     if ("display" in footer) {
@@ -121,8 +119,7 @@ const handleFooterOptions = (options: Record<string, unknown>): void => {
         '"footer.display" options is deprecated, please use "displayFooter" instead'
       );
 
-      // @ts-ignore
-      options["displayFooter"] = footer["display"];
+      options["displayFooter"] = <boolean>footer["display"];
     }
 
     if ("content" in footer) {
@@ -130,8 +127,7 @@ const handleFooterOptions = (options: Record<string, unknown>): void => {
         '"footer.content" options is deprecated, please use "footer" instead'
       );
 
-      // @ts-ignore
-      options["footer"] = footer["content"];
+      options["footer"] = <string>footer["content"];
     } else {
       delete options["footer"];
     }

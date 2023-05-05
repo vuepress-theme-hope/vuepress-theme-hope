@@ -57,7 +57,7 @@ Audio type.
 
 ::: note
 
-If your server cannot return a correct mime type for your audio files, you should specific it. (e.g.: `audio/mp3`)
+If your server cannot return a correct mime type for your audio files, you should specify it. (e.g.: `audio/mp3`)
 
 :::
 

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { isArray } from "@vuepress/shared";
+import { isArray } from "vuepress-shared/node";
 
 import { type JSONAuthor, type JSONContent, type JSONItem } from "./typings.js";
 import { type FeedAuthor } from "../../typings/index.js";

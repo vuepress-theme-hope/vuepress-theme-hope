@@ -7,7 +7,7 @@ import {
   h,
   nextTick,
   onMounted,
-  ref,
+  shallowRef,
   watch,
 } from "vue";
 
@@ -43,7 +43,7 @@ export default defineComponent({
     const page = usePageData();
     const site = useSiteData();
 
-    const artalkContainer = ref<HTMLDivElement>();
+    const artalkContainer = shallowRef<HTMLDivElement>();
 
     let artalk: Artalk.default | null = null;
 

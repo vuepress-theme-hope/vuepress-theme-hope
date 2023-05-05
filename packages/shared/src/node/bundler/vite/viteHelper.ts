@@ -1,8 +1,8 @@
 import { type ViteBundlerOptions } from "@vuepress/bundler-vite";
 import { type App } from "@vuepress/core";
-import { isString } from "@vuepress/shared";
 
 import { mergeViteConfig } from "./mergeViteConfig.js";
+import { isString } from "../../../shared/index.js";
 import { detectPackageManager } from "../../utils/index.js";
 import { getBundlerName } from "../getBundler.js";
 

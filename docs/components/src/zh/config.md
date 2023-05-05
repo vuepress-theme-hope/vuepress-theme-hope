@@ -131,7 +131,26 @@ AddThis 的公开 ID。
 
 ### rootComponents.backToTop
 
-- 类型: `boolean | number`
+- 类型: `BackToTopOptions | boolean`
+
+  ```ts
+  interface BackToTopOptions {
+    /**
+     * 滚动距离阈值，用于显示返回顶部按钮 (单位: 像素)
+     *
+     * @default 100
+     */
+    threshold?: number;
+
+    /**
+     * 是否显示滚动进度
+     *
+     * @default true
+     */
+    progress?: boolean;
+  }
+  ```
+
 - 默认值: `false`
 - 详情:
   - [指南 → BackToTop](./guide/backtotop.md)

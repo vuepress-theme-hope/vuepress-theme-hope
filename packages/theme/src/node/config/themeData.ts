@@ -11,15 +11,12 @@ import {
 } from "../../shared/index.js";
 import { themeLocalesData } from "../locales/index.js";
 
-const rootAllowConfig = [
-  "blog",
-  "encrypt",
-  "print",
-  "pure",
-  "darkmode",
-  "themeColor",
-  "fullscreen",
-  "mobileBreakPoint",
+const ROOT_DISALLOW_CONFIG = [
+  "navbar",
+  "sidebar",
+  "rtl",
+  "langName",
+  "selectLangAriaLabel",
 ];
 
 /**
@@ -36,7 +33,9 @@ export const getThemeData = (
     encrypt: {},
     ...fromEntries(
       // only remain root allowed config
-      entries(themeOptions).filter(([key]) => rootAllowConfig.includes(key))
+      entries(themeOptions).filter(
+        ([key]) => !ROOT_DISALLOW_CONFIG.includes(key)
+      )
     ),
     locales:
       // assign locale data to `themeConfig`
@@ -47,10 +46,10 @@ export const getThemeData = (
           entries(themeLocalesData).map(([locale, config]) => {
             // remove blog locales if blog is not enabled
             if (!enableBlog) {
-              // @ts-ignore
+              // @ts-expect-error
               delete config.blogLocales;
 
-              // @ts-ignore
+              // @ts-expect-error
               delete config.paginationLocales;
             }
 
@@ -69,8 +68,8 @@ export const getThemeData = (
             <ThemeLocaleConfig>{
               // root config
               ...fromEntries(
-                entries(themeOptions).filter(
-                  ([key]) => key !== "locales" && !rootAllowConfig.includes(key)
+                entries(themeOptions).filter(([key]) =>
+                  ROOT_DISALLOW_CONFIG.includes(key)
                 )
               ),
               // locale options

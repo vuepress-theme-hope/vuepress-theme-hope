@@ -16,7 +16,7 @@ Whether to support full GFM syntax.
 
 For full GFM syntax, see [GFM](https://github.github.com/gfm/).
 
-We are not 100% supporting it to be honestly, we only supply it’s syntax including footnote, tasklist, code highlight, image mark and so on.
+We are not 100% supporting it to be honestly, we only supply its syntax including footnote, task list, code highlight, image mark and so on.
 
 Some of the behavior might be different, for example to support Vue syntax, we are not disallowing `<script>` tags. But in most situation, the behavior should be same.
 
@@ -40,23 +40,35 @@ Whether to enable custom container including
 
 ::: warning
 
-The last 4 items conflict with default theme and will override it’s style.
+The last 4 items conflict with default theme and will override its style.
 
 :::
 
-## linkCheck
+## linksCheck
 
-- Type: `"always" | "dev" | "build" | "never" | boolean`
-- Default: `"dev"`
+- Type: `LinksCheckOptions`
 
-Whether to enable link check.
+  ```ts
+  type LinksCheckStatus = "always" | "dev" | "build" | "never";
 
-::: note
+  interface LinksCheckOptions {
+    /**
+     * Whether check dead links in markdown
+     *
+     * @default "dev"
+     */
+    status?: LinksCheckStatus;
 
-- `true` equals to `'always'`
-- `false` equals to `'never'`
+    /**
+     * Dead links to ignore
+     */
+    ignore?: (string | RegExp)[] | ((link: string, isDev: boolean) => boolean);
+  }
+  ```
 
-:::
+- Default: `{ status: "dev" }`
+
+Whether to enable links check.
 
 ## vPre
 
@@ -171,7 +183,7 @@ Whether enable figure support.
 - Type: `boolean`
 - Default: `false`
 
-Whether to lazy load every images in page in native way.
+Whether to lazy load every image in page in native way.
 
 ## imgMark
 
@@ -274,6 +286,13 @@ Please see [source code](https://github.com/vuepress-theme-hope/vuepress-theme-h
 
 Whether to enable Markdown import support. You can pass in a function for path resolution.
 
+## card
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to enable card support
+
 ## chart
 
 - Type: `boolean`
@@ -300,7 +319,7 @@ Whether to enable flowchart support
 - Type: `MermaidConfig | boolean`
 - Default: `false`
 
-Whether to enable [Mermaid](https://mermaid.js.org/) support.
+Whether to enable [Mermaid](https://mermaid.js.org/) support, you can pass in a config object to customize the behavior of Mermaid.
 
 ## stylize
 
@@ -529,7 +548,7 @@ Playground options.
      *
      * @default 'horizontal'
      */
-    layout?: "vertical" |layout?: "horizontal" | "vertical";
+    layout?: "horizontal" | "vertical";
 
     /**
      * Options to configure the `vue/compiler-sfc`
@@ -606,7 +625,7 @@ CodePen editor status
 
 ### others
 
-The following are the library links used by the third-party code demo service. Unless your environment cannot visit unpkg or the speed is slow, you probably don’t need to override the default values.
+The following are the library links used by the third-party code demo service. Unless your environment cannot visit unpkg or the speed is slow, you probably don't need to override the default values.
 
 #### demo.babel
 

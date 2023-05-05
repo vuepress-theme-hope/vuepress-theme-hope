@@ -11,9 +11,9 @@ tag:
 
 ## 使用 Prism.js 高亮
 
-`vuepress-theme-hope` 捆绑了 `@vuepress/plugin-prismjs` 以默认支持代码高亮，我们允许您全局设置日间模式和夜间模式的代码块主题。
+`vuepress-theme-hope` 捆绑了 `@vuepress/plugin-prismjs` 以默认支持代码高亮，我们允许你全局设置日间模式和夜间模式的代码块主题。
 
-默认情况下，我们分别为在日间模式和夜间模式使用 `one-light` 和 `one-dark` 主题，您可以通过在 `plugin.prismjs` 中设置 `light` 和 `dark` 来更改它们。
+默认情况下，我们分别为在日间模式和夜间模式使用 `one-light` 和 `one-dark` 主题，你可以通过在 `plugin.prismjs` 中设置 `light` 和 `dark` 来更改它们。
 
 ::: tip
 
@@ -137,7 +137,7 @@ Prism.js 快速且轻量，但它无法正确高亮所有语法。如果你想�
 
    :::
 
-1. 根据您要使用的主题，通过在 `.vuepress/styles/config.scss` 中添加这些变量来设置代码块的背景颜色和字体颜色：
+1. 根据你要使用的主题，通过在 `.vuepress/styles/config.scss` 中添加这些变量来设置代码块的背景颜色和字体颜色：
 
    - `$code-bg-color`: 代码块的背景颜色
    - `$code-color`: 代码块的字体颜色

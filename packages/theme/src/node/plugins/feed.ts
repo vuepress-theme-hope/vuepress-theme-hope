@@ -1,5 +1,4 @@
 import { type Plugin } from "@vuepress/core";
-import { isFunction } from "@vuepress/shared";
 import { type FeedOptions, feedPlugin } from "vuepress-plugin-feed2";
 import {
   deepAssign,
@@ -10,40 +9,6 @@ import {
 } from "vuepress-shared/node";
 
 import { type ThemeData } from "../../shared/index.js";
-
-const themeComponents = [
-  // @vuepress/plugin-external-link
-  "ExternalLinkIcon",
-
-  // vuepress-plugin-auto-catalog
-  "AutoCatalog",
-
-  // vuepress-plugin-components
-  "ArtPlayer",
-  "AudioPlayer",
-  "Badge",
-  "BiliBili",
-  "CodePen",
-  "FontIcon",
-  "PDF",
-  "Replit",
-  "SiteInfo",
-  "StackBlitz",
-  "VideoPlayer",
-  "YouTube",
-
-  // vuepress-plugin-md-enhance
-  "ChartJS",
-  "CodeDemo",
-  "CodeTabs",
-  "ECharts",
-  "FlowChart",
-  "Mermaid",
-  "Playground",
-  "Presentation",
-  "Tabs",
-  "VuePlayground",
-];
 
 /**
  * @private
@@ -59,8 +24,6 @@ export const getFeedPlugin = (
 ): Plugin | null => {
   // disable feed if no options for feed plugin
   if (!keys(options).length) return null;
-
-  const { removedElements } = options;
 
   const globalAuthor = getAuthor(themeData.author);
 
@@ -95,14 +58,5 @@ export const getFeedPlugin = (
     ),
   };
 
-  return feedPlugin(
-    deepAssign(defaultOptions, options, {
-      // merge removedElements
-      removedElements: isFunction(removedElements)
-        ? (tagName: string): boolean =>
-            themeComponents.includes(tagName) || removedElements(tagName)
-        : [...themeComponents, ...(removedElements || [])],
-    }),
-    legacy
-  );
+  return feedPlugin(deepAssign(defaultOptions, options), legacy);
 };

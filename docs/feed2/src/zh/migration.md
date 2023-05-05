@@ -27,7 +27,7 @@ icon: code-compare
 
 ## 新增功能
 
-- 支持通过 `removedElements` 选项移除自定义组件和元素 ![新增](https://img.shields.io/badge/-新增-brightgreen)
+- 支持通过 `preservedElements` 选项移除自定义组件和元素 ![新增](https://img.shields.io/badge/-新增-brightgreen)
 
 - 可视化的 Atom 和 RSS 流，支持通过 `atomXslFilename` `atomXslTemplate` `rssXslFilename` 和 `rssXslTemplate` 配置 ![新增](https://img.shields.io/badge/-新增-brightgreen)
 

@@ -12,7 +12,7 @@ tag:
 
 ## Config File
 
-Without any configuration, the VuePress site is pretty minimal. To customize your site, let’s first create a `.vuepress` directory inside your docs directory. This is where all VuePress-specific files will be placed. Your project structure is probably like this:
+Without any configuration, the VuePress site is pretty minimal. To customize your site, let's first create a `.vuepress` directory inside your docs directory. This is where all VuePress-specific files will be placed. Your project structure is probably like this:
 
 ```
 ├─ docs
@@ -90,7 +90,7 @@ To use `vuepress-theme-hope`, you should import `hopeTheme` from it, passing in 
 
 ::: warning
 
-If you don’t specify the `theme` option of VuePress config, the default theme will be used.
+If you don't specify the `theme` option of VuePress config, the default theme will be used.
 
 :::
 

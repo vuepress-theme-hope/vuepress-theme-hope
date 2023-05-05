@@ -18,7 +18,7 @@ import { PLUGIN_NAME, getPageMap, logger } from "./utils.js";
 export const blogPlugin =
   (options: BlogOptions, legacy = true): PluginFunction =>
   (app) => {
-    // TODO: remove in V2 Stable
+    // TODO: Remove this in v2 stable
     if (legacy)
       convertOptions(options as BlogOptions & Record<string, unknown>);
 
@@ -55,24 +55,27 @@ export const blogPlugin =
       }),
 
       extendsPage: (page): void => {
+        // generate page excerpt
         if (excerpt && excerptFilter(page))
           (<PageWithExcerpt>page).data["excerpt"] = getPageExcerpt(app, page, {
             isCustomElement,
             excerptSeparator,
             excerptLength,
           });
+      },
 
-        if (filter(page))
+      onInitialized: (app): Promise<void> => {
+        const pageMap = getPageMap(app, filter);
+
+        // inject meta information
+        app.pages.filter(filter).forEach((page) => {
           page.routeMeta = {
             ...(metaScope === ""
               ? getInfo(page)
               : { [metaScope]: getInfo(page) }),
             ...page.routeMeta,
           };
-      },
-
-      onInitialized: (app): Promise<void> => {
-        const pageMap = getPageMap(filter, app);
+        });
 
         return Promise.all([
           prepareCategory(app, { category, slugify }, pageMap, true).then(
@@ -103,7 +106,7 @@ export const blogPlugin =
           const updateBlog = (): Promise<void> => {
             const newGeneratedPageKeys: string[] = [];
 
-            const pageMap = getPageMap(filter, app);
+            const pageMap = getPageMap(app, filter);
 
             return Promise.all([
               prepareCategory(app, { category, slugify }, pageMap).then(

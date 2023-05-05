@@ -77,7 +77,7 @@ npx vp-update
 
 Any official packages starting with `@vuepress/` should be upgrade to the same version as VuePress.
 
-I.E.: if you are using `@vuepress/plugin-search` and `@vuepress/utils` , you should ensure they have the same version number as `vuepress`.
+I.E.: if you are using `@vuepress/plugin-search` and `@vuepress/utils`, you should ensure they have the same version number as `vuepress`.
 
 Also, if you're using another third-party plugin, make sure it's compatible with the version of VuePress you're upgrading to.
 

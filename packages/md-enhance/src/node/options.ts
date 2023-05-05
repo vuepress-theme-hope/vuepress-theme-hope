@@ -21,6 +21,26 @@ import {
   type VuePlaygroundOptions,
 } from "../shared/index.js";
 
+export type LinksCheckStatus = "always" | "dev" | "build" | "never";
+
+export interface LinksCheckOptions {
+  /**
+   * Whether check dead links in markdown
+   *
+   * 是否检查 Markdown 中的死链
+   *
+   * @default "dev"
+   */
+  status?: LinksCheckStatus;
+
+  /**
+   * Dead links to ignore
+   *
+   * 忽略的死链
+   */
+  ignore?: (string | RegExp)[] | ((link: string, isDev: boolean) => boolean);
+}
+
 /**
  * md-enhance plugin configuration
  */
@@ -28,11 +48,9 @@ export interface MarkdownEnhanceOptions {
   /**
    * Whether check dead links in markdown
    *
-   * @description `true` equals to `"always"`, `false` equals to `"never"`
-   *
-   * @default "dev"
+   * @default { status: "dev"}
    */
-  linkCheck?: "always" | "dev" | "build" | "never" | boolean;
+  checkLinks?: LinksCheckOptions;
 
   /**
    * Whether enable standard GFM support
@@ -239,6 +257,15 @@ export interface MarkdownEnhanceOptions {
    * @default false
    */
   mathjax?: MathjaxOptions | boolean;
+
+  /**
+   * Whether to enable card support
+   *
+   * 是否启用卡片支持
+   *
+   * @default false
+   */
+  card?: boolean;
 
   /**
    * Whether to enable chart support

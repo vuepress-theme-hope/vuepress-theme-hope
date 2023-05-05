@@ -76,6 +76,28 @@ $headings: (2, 3, 4, 5, 6);
         background: #333;
       }
     }
+
+    &::before {
+      content: " ";
+
+      position: absolute;
+      top: 0;
+      bottom: 0;
+
+      // NOTE: Compatible with Android Wechat
+      // inset-inline-start: 0;
+      left: 0;
+      z-index: -1;
+
+      width: 2px;
+
+      background: var(--border-color);
+
+      #{hope-config.$rtl-selector} & {
+        right: 0;
+        left: unset;
+      }
+    }
   }
 
   .toc-list {
@@ -86,27 +108,29 @@ $headings: (2, 3, 4, 5, 6);
 
     // override ul default padding
     padding: 0;
+  }
 
-    &::before {
-      content: " ";
+  .toc-marker {
+    content: " ";
 
-      position: absolute;
-      top: 0;
-      bottom: 0;
+    position: absolute;
+    top: 0;
 
-      // NOTE: Compatible with Android Wechat
-      // inset-inline-start: -8px;
-      left: -8px;
-      z-index: -1;
+    // NOTE: Compatible with Android Wechat
+    // inset-inline-start: -8px;
+    left: 0;
+    z-index: 2;
 
-      width: 2px;
+    width: 2px;
+    height: 1.7rem;
 
-      background: var(--border-color);
+    background: var(--theme-color);
 
-      #{hope-config.$rtl-selector} & {
-        right: -8px;
-        left: unset;
-      }
+    transition: top var(--vp-tt);
+
+    #{hope-config.$rtl-selector} & {
+      right: 0;
+      left: unset;
     }
   }
 
@@ -145,28 +169,6 @@ $headings: (2, 3, 4, 5, 6);
 
     line-height: 1.7rem;
 
-    &::before {
-      content: " ";
-
-      position: absolute;
-      top: 0;
-      bottom: 0;
-
-      // NOTE: Compatible with Android Wechat
-      // inset-inline-start: -8px;
-      left: -8px;
-      z-index: 2;
-
-      width: 2px;
-
-      background: transparent;
-
-      #{hope-config.$rtl-selector} & {
-        right: -8px;
-        left: unset;
-      }
-    }
-
     &:hover {
       > .toc-link {
         color: var(--theme-color);
@@ -177,10 +179,6 @@ $headings: (2, 3, 4, 5, 6);
       > .toc-link {
         color: var(--theme-color);
         font-weight: bold;
-      }
-
-      &::before {
-        background: var(--theme-color);
       }
     }
   }

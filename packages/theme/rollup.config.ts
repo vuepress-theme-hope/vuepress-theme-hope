@@ -1,20 +1,14 @@
 import { bundle } from "../../scripts/rollup.js";
 
 export default [
-  ...bundle(
-    {
-      base: "node",
-      files: ["index", "perf"],
-    },
-    {
-      external: ["bcrypt-ts/node", "chokidar"],
-      moduleSideEffects: () => false,
-    }
-  ),
+  ...bundle("node/index", {
+    external: ["bcrypt-ts/node", "chokidar"],
+    moduleSideEffects: () => false,
+  }),
   ...bundle(
     {
       base: "client",
-      target: "perf",
+      target: "bundle",
       files: ["export", "modules/blog/export", "modules/encrypt/export"],
     },
     {
@@ -28,10 +22,12 @@ export default [
         "@vuepress/plugin-external-link-icon/client",
         "@vuepress/plugin-theme-data/client",
         "bcrypt-ts/browser",
+        "body-scroll-lock",
         "vuepress-plugin-blog2/client",
         "vuepress-plugin-comment2/pageview",
-        "body-scroll-lock",
         "vuepress-plugin-md-enhance/SlidePage",
+        "vuepress-plugin-reading-time2/client",
+        "vuepress-shared/noopModule",
         /\.jpg$/,
       ],
       dts: false,

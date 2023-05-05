@@ -8,7 +8,7 @@ import {
   h,
   onBeforeMount,
   onMounted,
-  ref,
+  shallowRef,
 } from "vue";
 
 import { getLink } from "../utils/index.js";
@@ -96,7 +96,7 @@ export default defineComponent({
 
   setup(props) {
     let player: Plyr | null = null;
-    const video = ref<HTMLVideoElement>();
+    const video = shallowRef<HTMLVideoElement>();
 
     const plyrOptions = computed(() => ({
       hideYouTubeDOMError: true,
@@ -142,7 +142,7 @@ export default defineComponent({
               ...(props.loop ? { loop: "" } : {}),
             },
             [
-              ...props.tracks.map((track) =>
+              props.tracks.map((track) =>
                 h("track", { ...track, src: getLink(track.src) })
               ),
               h("source", { src: getLink(props.src), type: props.type }),

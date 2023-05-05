@@ -1,0 +1,77 @@
+.lang-modal-fade-enter-active,
+.lang-modal-fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.lang-modal-fade-enter,
+.lang-modal-fade-leave-to {
+  opacity: 0;
+}
+
+.lang-modal-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1499;
+
+  width: 100vw;
+  height: 100vh;
+
+  backdrop-filter: blur(10px);
+
+  @media print {
+    display: none;
+  }
+}
+
+.lang-modal-wrapper {
+  position: fixed;
+  top: 80px;
+  top: 50vh;
+  right: 50vw;
+  left: unset;
+  z-index: 1500;
+
+  overflow: hidden;
+
+  max-width: 80vw;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+
+  background: var(--vp-bg);
+  box-shadow: 0 2px 6px 0 var(--card-shadow);
+
+  transform: translate(50%, -50%);
+
+  @media print {
+    display: none;
+  }
+}
+
+.lang-modal-action {
+  display: block;
+
+  width: 100%;
+  margin: 1rem 0;
+  padding: 0.5rem 0.75rem;
+  border: none;
+  border-radius: 8px;
+
+  background-color: var(--vp-bglt);
+  color: var(--vp-c);
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--vp-bgl);
+  }
+
+  &.primary {
+    background-color: var(--vp-tc);
+    color: var(--white);
+
+    &:hover {
+      background-color: var(--vp-tcl);
+    }
+  }
+}

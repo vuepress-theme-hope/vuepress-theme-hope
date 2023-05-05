@@ -40,12 +40,22 @@ export default defineComponent({
     path: { type: String, required: true },
   },
 
-  setup(props) {
-    const info = toRef(props, "info");
-    const { info: articleInfo, items } = useArticleInfo(props);
+  setup(props, { slots }) {
+    const articleInfo = toRef(props, "info");
+    const { info: pageInfo, items } = useArticleInfo(props);
 
-    return (): VNode =>
-      h(
+    return (): VNode => {
+      const {
+        [ArticleInfoType.title]: title,
+        [ArticleInfoType.type]: type,
+        [ArticleInfoType.isEncrypted]: isEncrypted,
+        [ArticleInfoType.cover]: cover,
+        [ArticleInfoType.excerpt]: excerpt,
+        [ArticleInfoType.sticky]: sticky,
+      } = articleInfo.value;
+      const info = pageInfo.value;
+
+      return h(
         "div",
         { class: "article-item" },
         h(
@@ -56,39 +66,47 @@ export default defineComponent({
             typeof: "Article",
           },
           [
-            info.value[ArticleInfoType.sticky] ? h(StickyIcon) : null,
-            h(RouterLink, { to: props.path }, () => [
-              h("header", { class: "title" }, [
-                info.value[ArticleInfoType.isEncrypted] ? h(LockIcon) : null,
-                info.value[ArticleInfoType.type] === PageType.slide
-                  ? h(SlideIcon)
-                  : null,
-                h(
-                  "span",
-                  { property: "headline" },
-                  info.value[ArticleInfoType.title]
-                ),
-                info.value[ArticleInfoType.cover]
-                  ? h("meta", {
+            slots["cover"]?.({ cover }) ||
+              (cover
+                ? [
+                    h("img", {
+                      class: "article-cover",
+                      src: withBase(cover),
+                    }),
+                    h("meta", {
                       property: "image",
-                      content: withBase(info.value[ArticleInfoType.cover]!),
-                    })
-                  : null,
-              ]),
-            ]),
-            info.value[ArticleInfoType.excerpt]
-              ? h("div", {
-                  class: "article-excerpt",
-                  innerHTML: info.value[ArticleInfoType.excerpt],
-                })
-              : null,
+                      content: withBase(cover),
+                    }),
+                  ]
+                : []),
+            sticky ? h(StickyIcon) : null,
+            h(
+              RouterLink,
+              { to: props.path },
+              () =>
+                slots["title"]?.({ title, isEncrypted, type }) ||
+                h("header", { class: "title" }, [
+                  isEncrypted ? h(LockIcon) : null,
+                  type === PageType.slide ? h(SlideIcon) : null,
+                  h("span", { property: "headline" }, title),
+                ])
+            ),
+            slots["excerpt"]?.({ excerpt }) ||
+              (excerpt
+                ? h("div", {
+                    class: "article-excerpt",
+                    innerHTML: excerpt,
+                  })
+                : null),
             h("hr", { class: "hr" }),
-            h(PageInfo, {
-              info: articleInfo.value,
-              ...(items.value ? { items: items.value } : {}),
-            }),
+            slots["info"]?.({ info }) ||
+              h(PageInfo, {
+                info,
+                ...(items.value ? { items: items.value } : {}),
+              }),
           ]
         )
       );
+    };
   },
 });

@@ -27,7 +27,7 @@ Available components:
 
 By default, `<Badge />` and `<FontIcon />` is enabled.
 
-To enable components, you should set `plugin.components.components` with an array of components name.
+To enable components, you should set `plugin.components.components` with an array of components names.
 
 <!-- more -->
 
@@ -214,20 +214,12 @@ A bilibili video:
 <BiliBili bvid="BV1kt411o7C3" />
 ```
 
-A bilibili video with start time and page:
-
-<BiliBili bvid="BV1kt411o7C3" ratio="16:9" time="60" page="2" />
-
-```md
-<BiliBili bvid="BV1kt411o7C3" ratio="16:9" time="60" page="2" />
-```
-
 A bilibili video with custom settings:
 
-<BiliBili bvid="BV1kt411o7C3" low-quality no-danmaku />
+<BiliBili aid="34304064" cid="109293122" ratio="9:16" time="60" autoplay page="2" />
 
 ```md
-<BiliBili bvid="BV1kt411o7C3" low-quality no-danmaku />
+<BiliBili aid="34304064" cid="109293122" ratio="9:16" time="60" autoplay page="2" />
 ```
 
 See <ProjectLink name="components" path="/guide/bilibili.html">BiliBili</ProjectLink> page for available props.
@@ -345,16 +337,16 @@ A repl link:
 
 Basic site info:
 
-<SiteInfo name="Mr.Hope’s Blog" url="https://mrhope.site" preview="https://theme-hope.vuejs.press/assets/image/mrhope.jpg" />
+<SiteInfo name="Mr.Hope's Blog" url="https://mrhope.site" preview="https://theme-hope.vuejs.press/assets/image/mrhope.jpg" />
 
 ```md
-<SiteInfo name="Mr.Hope’s Blog" url="https://mrhope.site" preview="https://theme-hope.vuejs.press/assets/image/mrhope.jpg" />
+<SiteInfo name="Mr.Hope's Blog" url="https://mrhope.site" preview="https://theme-hope.vuejs.press/assets/image/mrhope.jpg" />
 ```
 
 Site info with more properties:
 
 <SiteInfo
-  name="Mr.Hope’s Blog"
+  name="Mr.Hope's Blog"
   desc="Where there is light, there is hope"
   url="https://mrhope.site"
   logo="https://mrhope.site/logo.svg"
@@ -364,7 +356,7 @@ Site info with more properties:
 
 ```md
 <SiteInfo
-  name="Mr.Hope’s Blog"
+  name="Mr.Hope's Blog"
   desc="Where there is light, there is hope"
   url="https://mrhope.site"
   logo="https://mrhope.site/logo.svg"

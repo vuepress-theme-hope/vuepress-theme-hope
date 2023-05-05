@@ -27,7 +27,7 @@ Name changed from `@mr-hope/vuepress-feed` to `vuepress-plugin-feed2`. ⚠
 
 ## New Features
 
-- Supports removing custom components and elements through `removedElements` options ![NEW](https://img.shields.io/badge/-new-brightgreen)
+- Supports removing custom components and elements through `preservedElements` options ![NEW](https://img.shields.io/badge/-new-brightgreen)
 
 - Visualized atom and rss feeds, configurable with `atomXslFilename` `atomXslTemplate` `rssXslFilename` and `rssXslTemplate` ![NEW](https://img.shields.io/badge/-new-brightgreen)
 

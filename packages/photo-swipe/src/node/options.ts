@@ -1,8 +1,8 @@
 import { type LocaleConfig } from "@vuepress/core";
 
 import {
-  type PhotoSwipeInitOptions,
   type PhotoSwipeLocaleData,
+  type SupportedPhotoSwipeOptions,
 } from "../shared/index.js";
 
 export interface PhotoSwipeOptions {
@@ -14,6 +14,15 @@ export interface PhotoSwipeOptions {
    * @default ".theme-default-content :not(a) > img:not([no-view])"
    */
   selector?: string | string[];
+
+  /**
+   * Whether close the current image when scrolling.
+   *
+   * 是否在滚动时关闭当前图片。
+   *
+   * @default true
+   */
+  scrollToClose?: boolean;
 
   /**
    * The delay of photo-swipe fetching page images, in ms
@@ -33,7 +42,7 @@ export interface PhotoSwipeOptions {
    *
    * 传递给 photo-swipe 的额外选项
    */
-  options?: PhotoSwipeInitOptions;
+  options?: SupportedPhotoSwipeOptions;
 
   /**
    * Locale config

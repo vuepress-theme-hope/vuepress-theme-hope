@@ -116,9 +116,11 @@ By default, the title will be used as value of tab, but you can override it usin
 
 :::: info Switching together and persisting choice
 
-If you want to make some tab groups switch together, you can use same tab id to bind them. Here is an example:
+If you want to make some tab groups switch together, you can use same tab id to bind them.
 
 Also, your choice with that tab id will be stored and persisted.
+
+Here is an example:
 
 Choose a package manager:
 
@@ -130,16 +132,8 @@ npm should be installed with Node.js.
 
 @tab pnpm
 
-If you are using Node.js v16+, you can use corepack to enable pnpm:
-
 ```bash
-corepack prepare pnpm@7.28.0 --activated
-```
-
-Otherwise, you can install it with npm:
-
-```bash
-npm i -g pnpm
+corepack prepare pnpm@latest --activated
 ```
 
 :::

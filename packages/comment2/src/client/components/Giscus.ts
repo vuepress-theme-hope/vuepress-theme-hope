@@ -20,20 +20,27 @@ import "../styles/giscus.scss";
 
 declare const COMMENT_OPTIONS: GiscusOptions;
 
+// Note: Should be updated with https://github.com/giscus/giscus/tree/main/locales
 const SUPPORTED_LANGUAGES = [
+  "ar",
   "de",
   "gsw",
   "en",
   "es",
+  "fa",
   "fr",
   "id",
   "it",
   "ja",
   "ko",
+  "nl",
   "pl",
+  "pt",
   "ro",
   "ru",
+  "th",
   "tr",
+  "uk",
   "vi",
   "zh-CN",
   "zh-TW",

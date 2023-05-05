@@ -58,7 +58,7 @@ Get language of root directory
 export const getRootLangPath: (app: App) => string;
 ```
 
-Get the infer language path from root directory language
+Get the inferred language path from root directory language
 
 ### getLocalePaths
 
@@ -91,9 +91,9 @@ Get final locale config for client.
 
 ::: tip
 
-This is an useful util function, and we recommend to use this in every plugin which has client locale settings.
+This is a useful utility function, and we recommend using this in every plugin which has client locale settings.
 
-By using this, you can support as much locales as you like, while only pass necessary data to client.
+By using this, you can support as many locales as you like, while only pass necessary data to client.
 
 E.g.:
 

@@ -1,6 +1,5 @@
 import { type App } from "@vuepress/core";
-import { isPlainObject } from "@vuepress/shared";
-import { keys } from "vuepress-shared/node";
+import { isPlainObject, keys } from "vuepress-shared/node";
 
 import { type ThemeOptions } from "../../shared/index.js";
 

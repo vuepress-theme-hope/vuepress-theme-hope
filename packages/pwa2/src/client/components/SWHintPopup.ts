@@ -24,7 +24,6 @@ export default defineComponent({
     const uninstall = (): void => {
       if (enabled.value) {
         // force refresh
-
         // @ts-ignore
         window.location.reload(true);
         enabled.value = false;
@@ -59,6 +58,7 @@ export default defineComponent({
             ? h(
                 "button",
                 {
+                  type: "button",
                   class: "sw-hint-popup",
                   tabindex: 0,
                   onClick: () => uninstall(),

@@ -1,4 +1,5 @@
 export * from "./browser.js";
+export * from "./date.js";
 export * from "./hash.js";
 export * from "./message.js";
 export * from "./path.js";

@@ -1,6 +1,6 @@
 import { type PageData, usePageData } from "@vuepress/client";
-import { isFunction, isPlainObject, isString } from "@vuepress/shared";
 import { type PropType, type VNode, computed, defineComponent, h } from "vue";
+import { isFunction, isPlainObject, isString } from "vuepress-shared/client";
 
 import ShareService from "./ShareService.js";
 import { type ShareServiceOptions } from "../../shared/share.js";

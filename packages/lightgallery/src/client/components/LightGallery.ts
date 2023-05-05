@@ -11,7 +11,7 @@ import {
   nextTick,
   onMounted,
   onUnmounted,
-  ref,
+  shallowRef,
   watch,
 } from "vue";
 
@@ -50,7 +50,7 @@ export default defineComponent({
   setup(_props, { slots }) {
     const page = usePageData();
 
-    const container = ref<HTMLElement>();
+    const container = shallowRef<HTMLElement>();
 
     let instance: LightGallery | null = null;
     let id: number;

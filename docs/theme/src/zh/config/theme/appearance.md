@@ -82,12 +82,29 @@ tag:
 
 ## backToTop <Badge text="仅限 Root" type="warning" />
 
-- 类型: `boolean | number`
+- 类型: `BackToTopOptions | boolean`
+
+  ```ts
+  interface BackToTopOptions {
+    /**
+     * 滚动距离阈值，用于显示返回顶部按钮 (单位: 像素)
+     *
+     * @default 100
+     */
+    threshold?: number;
+
+    /**
+     * 是否显示滚动进度
+     *
+     * @default true
+     */
+    progress?: boolean;
+  }
+  ```
+
 - 默认值: `true`
 
-是否显示返回顶部按钮。
-
-如果设置为数字，则该数字为触发临界值 (默认临界值为 300px)。
+自定义返回顶部按钮，将其设置为 `false` 会禁用该按钮。
 
 ## mobileBreakPoint <Badge text="仅限 Root" type="warning" />
 

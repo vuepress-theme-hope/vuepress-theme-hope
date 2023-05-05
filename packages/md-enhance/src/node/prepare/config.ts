@@ -21,6 +21,11 @@ export const prepareConfigFile = async (
       ? Boolean(options[key])
       : (gfm && "gfm" in options && options.gfm) || false;
 
+  if (getStatus("card")) {
+    imports.push(`import VPCard from "${CLIENT_FOLDER}components/VPCard.js";`);
+    enhances.push(`app.component("VPCard", VPCard)`);
+  }
+
   if (getStatus("chart")) {
     imports.push(
       `import ChartJS from "${CLIENT_FOLDER}components/ChartJS.js";`
@@ -92,6 +97,7 @@ export const prepareConfigFile = async (
 
   if (getStatus("presentation")) {
     imports.push(
+      `import "${path.resolve(require.resolve("reveal.js/dist/reveal.css"))}";`,
       `import Presentation from "${CLIENT_FOLDER}components/Presentation.js";`
     );
     enhances.push(`app.component("Presentation", Presentation);`);

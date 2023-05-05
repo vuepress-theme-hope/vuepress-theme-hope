@@ -150,6 +150,22 @@
   }
 }
 
+.article-cover {
+  width: calc(100% + 2.5rem);
+  margin: -0.75rem -1.25rem 0.75rem;
+  border-top-left-radius: 0.4rem;
+  border-top-right-radius: 0.4rem;
+
+  @media (max-width: hope-config.$pad) {
+    width: calc(100% + 2rem);
+    margin: -0.75rem -1rem 0.75rem;
+  }
+
+  @media (max-width: hope-config.$mobile) {
+    border-radius: 0;
+  }
+}
+
 .article-excerpt {
   overflow: hidden;
   line-height: 1.6;

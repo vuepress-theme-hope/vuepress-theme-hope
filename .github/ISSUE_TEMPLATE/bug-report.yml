@@ -10,7 +10,7 @@ body:
     attributes:
       label: Checklist
       description: |-
-        Make sure that you follow these statements. (Otherwise the author may throw Fxxx words to you)
+        Make SURE that you follow these statements.
       options:
         - label: I am using **LTS** version of Node.js.
           required: true
@@ -21,10 +21,10 @@ body:
         - label: I am using the **latest v2 version** of vuepress-theme-hope and all plugins in this repo.
           required: true
 
-        - label: I am following the docs and I am sure I am using the correct configuration.
+        - label: I followed the docs and I double checked my configuration.
           required: true
 
-        - label: I have searched [FAQ](https://theme-hope.vuejs.press/faq/)
+        - label: I have searched [FAQ](https://theme-hope.vuejs.press/faq/) and I did not find the answer.
           required: true
 
   - type: input

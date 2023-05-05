@@ -1,0 +1,417 @@
+name: Deploy Production Docs and Demos
+
+on:
+  workflow_call:
+    secrets:
+      ACCESS_TOKEN:
+        required: true
+
+jobs:
+  deploy-netlify-docs:
+    name: Deploy V2 docs to Netlify
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          submodules: true
+
+      - name: Restore Build Result
+        uses: actions/download-artifact@v3
+        with:
+          name: build-result
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          run_install: true
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: pnpm
+
+      - name: Docs build
+        env:
+          NETLIFY: true
+          NODE_OPTIONS: --max_old_space_size=8192
+        run: pnpm run docs:vite-build
+
+      - name: Deploy auto-catalog docs
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          repository-name: vuepress-theme-hope/auto-catalog-docs
+          branch: netlify
+          folder: docs/auto-catalog/dist
+          token: ${{ secrets.ACCESS_TOKEN }}
+          single-commit: true
+
+      - name: Deploy blog2 docs
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          repository-name: vuepress-theme-hope/blog2-docs
+          branch: netlify
+          folder: docs/blog2/dist
+          token: ${{ secrets.ACCESS_TOKEN }}
+          single-commit: true
+
+      - name: Deploy comment2 docs
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          repository-name: vuepress-theme-hope/comment2-docs
+          branch: netlify
+          folder: docs/comment2/dist
+          token: ${{ secrets.ACCESS_TOKEN }}
+          single-commit: true
+
+      - name: Deploy components docs
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          repository-name: vuepress-theme-hope/components-docs
+          branch: netlify
+          folder: docs/components/dist
+          token: ${{ secrets.ACCESS_TOKEN }}
+          single-commit: true
+
+      - name: Deploy copy-code2 docs
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          repository-name: vuepress-theme-hope/copy-code2-docs
+          branch: netlify
+          folder: docs/copy-code2/dist
+          token: ${{ secrets.ACCESS_TOKEN }}
+          single-commit: true
+
+      - name: Deploy copyright2 docs
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          repository-name: vuepress-theme-hope/copyright2-docs
+          branch: netlify
+          folder: docs/copyright2/dist
+          token: ${{ secrets.ACCESS_TOKEN }}
+          single-commit: true
+
+      - name: Deploy feed2 docs
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          repository-name: vuepress-theme-hope/feed2-docs
+          branch: netlify
+          folder: docs/feed2/dist
+          token: ${{ secrets.ACCESS_TOKEN }}
+          single-commit: true
+
+      - name: Deploy lightgallery docs
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          repository-name: vuepress-theme-hope/lightgallery-docs
+          branch: netlify
+          folder: docs/lightgallery/dist
+          token: ${{ secrets.ACCESS_TOKEN }}
+          single-commit: true
+
+      - name: Deploy md-enhance docs
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          repository-name: vuepress-theme-hope/md-enhance-docs
+          branch: netlify
+          folder: docs/md-enhance/dist
+          token: ${{ secrets.ACCESS_TOKEN }}
+          single-commit: true
+
+      - name: Deploy photo-swipe docs
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          repository-name: vuepress-theme-hope/photo-swipe-docs
+          branch: netlify
+          folder: docs/photo-swipe/dist
+          token: ${{ secrets.ACCESS_TOKEN }}
+          single-commit: true
+
+      - name: Deploy pwa2 docs
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          repository-name: vuepress-theme-hope/pwa2-docs
+          branch: netlify
+          folder: docs/pwa2/dist
+          token: ${{ secrets.ACCESS_TOKEN }}
+          single-commit: true
+
+      - name: Deploy reading-time2 docs
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          repository-name: vuepress-theme-hope/reading-time2-docs
+          branch: netlify
+          folder: docs/reading-time2/dist
+          token: ${{ secrets.ACCESS_TOKEN }}
+          single-commit: true
+
+      - name: Deploy remove-pwa docs
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          repository-name: vuepress-theme-hope/remove-pwa-docs
+          branch: netlify
+          folder: docs/remove-pwa/dist
+          token: ${{ secrets.ACCESS_TOKEN }}
+          single-commit: true
+
+      - name: Deploy redirect docs
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          repository-name: vuepress-theme-hope/redirect-docs
+          branch: netlify
+          folder: docs/redirect/dist
+          token: ${{ secrets.ACCESS_TOKEN }}
+          single-commit: true
+
+      - name: Deploy rtl docs
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          repository-name: vuepress-theme-hope/rtl-docs
+          branch: netlify
+          folder: docs/rtl/dist
+          token: ${{ secrets.ACCESS_TOKEN }}
+          single-commit: true
+
+      - name: Deploy sass-palette docs
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          repository-name: vuepress-theme-hope/sass-palette-docs
+          branch: netlify
+          folder: docs/sass-palette/dist
+          token: ${{ secrets.ACCESS_TOKEN }}
+          single-commit: true
+
+      - name: Deploy search-pro docs
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          repository-name: vuepress-theme-hope/search-pro-docs
+          branch: netlify
+          folder: docs/search-pro/dist
+          token: ${{ secrets.ACCESS_TOKEN }}
+          single-commit: true
+
+      - name: Deploy seo2 docs
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          repository-name: vuepress-theme-hope/seo2-docs
+          branch: netlify
+          folder: docs/seo2/dist
+          token: ${{ secrets.ACCESS_TOKEN }}
+          single-commit: true
+
+      - name: Deploy shared docs
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          repository-name: vuepress-theme-hope/shared-docs
+          branch: netlify
+          folder: docs/shared/dist
+          token: ${{ secrets.ACCESS_TOKEN }}
+          single-commit: true
+
+      - name: Deploy sitemap2 docs
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          repository-name: vuepress-theme-hope/sitemap2-docs
+          branch: netlify
+          folder: docs/sitemap2/dist
+          token: ${{ secrets.ACCESS_TOKEN }}
+          single-commit: true
+
+      - name: Deploy theme docs
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          repository-name: vuepress-theme-hope/v2-theme-docs
+          branch: netlify
+          folder: docs/theme/dist
+          token: ${{ secrets.ACCESS_TOKEN }}
+          single-commit: true
+
+  deploy-gitee-docs:
+    name: Deploy V2 docs to Gitee
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          submodules: true
+
+      - name: Restore Build Result
+        uses: actions/download-artifact@v3
+        with:
+          name: build-result
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          run_install: true
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: pnpm
+
+      - name: Docs build
+        env:
+          GITEE: true
+          NODE_OPTIONS: --max_old_space_size=8192
+        run: pnpm run docs:vite-build
+
+      - name: Combine output
+        run: |
+          pnpm cpx "docs/auto-catalog/dist/**" dist/auto-catalog
+          pnpm cpx "docs/blog2/dist/**" dist/blog
+          pnpm cpx "docs/comment2/dist/**" dist/comment
+          pnpm cpx "docs/components/dist/**" dist/components
+          pnpm cpx "docs/copy-code2/dist/**" dist/copy-code
+          pnpm cpx "docs/copyright2/dist/**" dist/copyright
+          pnpm cpx "docs/feed2/dist/**" dist/feed
+          pnpm cpx "docs/lightgallery/dist/**" dist/lightgallery
+          pnpm cpx "docs/md-enhance/dist/**" dist/md-enhance
+          pnpm cpx "docs/photo-swipe/dist/**" dist/photo-swipe
+          pnpm cpx "docs/pwa2/dist/**" dist/pwa
+          pnpm cpx "docs/reading-time2/dist/**" dist/reading-time
+          pnpm cpx "docs/remove-pwa/dist/**" dist/remove-pwa
+          pnpm cpx "docs/redirect/dist/**" dist/redirect
+          pnpm cpx "docs/rtl/dist/**" dist/rtl
+          pnpm cpx "docs/sass-palette/dist/**" dist/sass-palette
+          pnpm cpx "docs/search-pro/dist/**" dist/search-pro
+          pnpm cpx "docs/seo2/dist/**" dist/seo
+          pnpm cpx "docs/shared/dist/**" dist/shared
+          pnpm cpx "docs/sitemap2/dist/**" dist/sitemap
+          pnpm cpx "docs/theme/dist/**" dist
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          repository-name: vuepress-theme-hope/v2
+          branch: gitee
+          folder: dist
+          token: ${{ secrets.ACCESS_TOKEN }}
+          single-commit: true
+
+  deploy-theme-demo:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        name:
+          - blog
+          - docs
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Restore Build Result
+        uses: actions/download-artifact@v3
+        with:
+          name: build-result
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          run_install: true
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: pnpm
+
+      - name: Build Netlify Demo
+        env:
+          NODE_OPTIONS: --max_old_space_size=4096
+        run: |-
+          pnpm --filter theme-${{ matrix.name }}-demo demo:vite-build
+          > demo/theme-${{ matrix.name }}/dist/.nojekyll
+
+      - name: Deploy to netlify
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          repository-name: vuepress-theme-hope/${{ matrix.name }}-demo
+          branch: netlify
+          folder: demo/theme-${{ matrix.name }}/dist
+          token: ${{ secrets.ACCESS_TOKEN }}
+          single-commit: true
+
+      - name: Build Gitee Demo
+        env:
+          BASE: /${{ matrix.name }}-demo/
+          HOSTNAME: https://vuepress-theme-hope.gitee.io/
+          NODE_OPTIONS: --max_old_space_size=4096
+        run: |-
+          pnpm --filter theme-${{ matrix.name }}-demo demo:vite-build
+          > demo/theme-${{ matrix.name }}/dist/.nojekyll
+
+      - name: Deploy to gitee
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          repository-name: vuepress-theme-hope/${{ matrix.name }}-demo
+          branch: gitee
+          folder: demo/theme-${{ matrix.name }}/dist
+          token: ${{ secrets.ACCESS_TOKEN }}
+          single-commit: true
+
+  deploy-plugin-demo:
+    name: Deploy ${{ matrix.plugin-name }} demo
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        plugin-name:
+          - auto-catalog
+          - blog2
+          - comment2
+          - components
+          - copy-code2
+          - copyright2
+          - feed2
+          - lightgallery
+          - md-enhance
+          - photo-swipe
+          - pwa2
+          - redirect
+          - sass-palette
+          - search-pro
+          - seo2
+          - sitemap2
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+
+      - name: Restore Build Result
+        uses: actions/download-artifact@v3
+        with:
+          name: build-result
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          run_install: true
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: pnpm
+
+      - name: Build ${{ matrix.plugin-name }} demo
+        env:
+          NODE_OPTIONS: --max_old_space_size=4096
+        run: |-
+          pnpm --filter ${{ matrix.plugin-name }}-demo demo:vite-build
+
+      - name: Deploy ${{ matrix.plugin-name }} demo
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          repository-name: vuepress-theme-hope/${{ matrix.plugin-name }}-demo
+          branch: netlify
+          folder: demo/${{ matrix.plugin-name }}/src/.vuepress/dist
+          token: ${{ secrets.ACCESS_TOKEN }}
+          single-commit: true

@@ -1,7 +1,6 @@
 import { HeadersPluginOptions, type MarkdownOptions } from "@vuepress/markdown";
-import { isArray } from "@vuepress/shared";
 import { colors } from "@vuepress/utils";
-import { values } from "vuepress-shared/node";
+import { isArray, values } from "vuepress-shared/node";
 
 import { type ThemeData } from "../../shared/index.js";
 import { logger } from "../utils.js";
@@ -23,9 +22,9 @@ export const checkHeader = (
     if (
       typeof level === "number" ||
       (isArray(level) &&
-        new Array(headerDepth)
-          .fill(0)
-          .some((_, index) => !level.includes(index + 1)))
+        Array.from({ length: headerDepth + 1 }, (_, index) => index + 1).some(
+          (_, index) => !level.includes(index + 1)
+        ))
     ) {
       logger.warn(
         `Max ${colors.magenta(
@@ -37,9 +36,10 @@ export const checkHeader = (
         )}, which does not extract header level ${headerDepth}.`
       );
 
-      markdownOptions.anchor.level = new Array(headerDepth + 1)
-        .fill(0)
-        .map((_, index) => index + 1);
+      markdownOptions.anchor.level = Array.from(
+        { length: headerDepth + 1 },
+        (_, index) => index + 1
+      );
     }
   } else if (markdownOptions.anchor === false && headerDepth !== 0) {
     logger.error(
@@ -57,7 +57,7 @@ export const checkHeader = (
       );
 
       markdownOptions.headers = {
-        level: new Array(headerDepth).fill(0).map((_, index) => index + 2),
+        level: Array.from({ length: headerDepth }, (_, index) => index + 2),
       };
     }
   } else {
@@ -66,9 +66,9 @@ export const checkHeader = (
     );
 
     if (
-      new Array(headerDepth)
-        .fill(0)
-        .some((_, index) => !level.includes(index + 2))
+      Array.from({ length: headerDepth }, (_, index) => index + 2).some(
+        (item) => !level.includes(item)
+      )
     ) {
       logger.warn(
         `Max ${colors.magenta(
@@ -80,9 +80,10 @@ export const checkHeader = (
         )}, which does not extract header level ${headerDepth}.`
       );
 
-      markdownOptions.headers.level = new Array(headerDepth)
-        .fill(0)
-        .map((_, index) => index + 2);
+      markdownOptions.headers.level = Array.from(
+        { length: headerDepth },
+        (_, index) => index + 2
+      );
     }
   }
 };

@@ -8,6 +8,7 @@ import {
   onMounted,
   onUnmounted,
   ref,
+  shallowRef,
 } from "vue";
 import { LoadingIcon, atou } from "vuepress-shared/client";
 
@@ -15,21 +16,39 @@ import "../styles/echarts.scss";
 
 declare const MARKDOWN_ENHANCE_DELAY: number;
 
+interface EchartsConfig {
+  width?: number;
+  height?: number;
+  option: EChartsOption;
+}
+
+// eslint-disable-next-line @typescript-eslint/no-empty-function
+const AsyncFunction = (async (): Promise<void> => {}).constructor;
+
 const parseEChartsConfig = (
   config: string,
-  type: "js" | "json"
-): EChartsOption => {
+  type: "js" | "json",
+  myChart: EChartsType
+): Promise<EchartsConfig> => {
   if (type === "js") {
-    const exports = {};
-    const module = { exports };
+    // eslint-disable-next-line
+    const runner = AsyncFunction(
+      "myChart",
+      `\
+let width,height,option,__echarts_config__;
+{
+${config}
+__echarts_config__={width,height,option};
+}
+return __echarts_config__;
+`
+    );
 
-    eval(config);
-
-    // eslint-disable-next-line import/no-commonjs
-    return <EChartsOption>module.exports;
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+    return <Promise<EchartsConfig>>runner(myChart);
   }
 
-  return <EChartsOption>JSON.parse(config);
+  return Promise.resolve({ option: <EChartsOption>JSON.parse(config) });
 };
 
 export default defineComponent({
@@ -66,10 +85,10 @@ export default defineComponent({
   },
 
   setup(props) {
-    const echartsContainer = ref<HTMLElement>();
-    let chart: EChartsType;
-
     const loading = ref(true);
+    const echartsContainer = shallowRef<HTMLElement>();
+
+    let chart: EChartsType;
 
     useEventListener(
       "resize",
@@ -81,11 +100,17 @@ export default defineComponent({
         import(/* webpackChunkName: "echarts" */ "echarts"),
         // delay
         new Promise((resolve) => setTimeout(resolve, MARKDOWN_ENHANCE_DELAY)),
-      ]).then(([echarts]) => {
-        const options = parseEChartsConfig(atou(props.config), props.type);
-
+      ]).then(async ([echarts]) => {
         chart = echarts.init(echartsContainer.value!);
-        chart.setOption(options);
+
+        const { option, ...size } = await parseEChartsConfig(
+          atou(props.config),
+          props.type,
+          chart
+        );
+
+        chart.resize(size);
+        chart.setOption(option);
 
         loading.value = false;
       });

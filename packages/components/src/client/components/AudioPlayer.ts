@@ -7,7 +7,7 @@ import {
   h,
   onBeforeMount,
   onMounted,
-  ref,
+  shallowRef,
 } from "vue";
 
 import { getLink } from "../utils/index.js";
@@ -85,7 +85,7 @@ export default defineComponent({
 
   setup(props) {
     let player: Plyr | null = null;
-    const audio = ref<HTMLAudioElement>();
+    const audio = shallowRef<HTMLAudioElement>();
 
     const plyrOptions = computed(() => ({
       hideYouTubeDOMError: true,

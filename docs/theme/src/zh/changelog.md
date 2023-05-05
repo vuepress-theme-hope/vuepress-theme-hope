@@ -7,7 +7,7 @@ icon: clock
 
 <!-- more -->
 
-@include(../../../../CHANGELOG.md#recent-beta)
+<!-- @include: ../../../../CHANGELOG.md#recent-beta -->
 
 ## 更多
 

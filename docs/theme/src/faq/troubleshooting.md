@@ -7,11 +7,11 @@ category:
 
 ## Ensure running under correct environment
 
-`vuepress-theme-hope` only supports node version of `^14.18.0 || >=16.0.0`.
+`vuepress-theme-hope` only supports node version of `>=16.0.0`.
 
-If the ouput of `node -v` doesnot satisfy the requirement, you should [download and install the LTS version of Node.js](../cookbook/tutorial/env.md#nodejs).
+If the output of `node -v` does not satisfy the requirement, you should [download and install the LTS version of Node.js](../cookbook/tutorial/env.md#nodejs).
 
-Also, you should use a package manger satisfying the following requirements:
+Also, you should use a package manager satisfying the following requirements:
 
 - npm: >= 8
 
@@ -31,7 +31,7 @@ Also, you should use a package manger satisfying the following requirements:
 
   Install: `npm i -g pnpm`
 
-## Ensure using latest version and having correct deps tree
+## Ensure using the latest version and having correct deps tree
 
 Please make sure you are using the latest `vuepress` and `vuepress-theme-hope` V2 version, because some bugs you encountered may have been fixed in new versions.
 
@@ -43,11 +43,11 @@ To let VuePress work correctly, there should only be one version of `@vuepress/x
 
 Any official packages starting with `@vuepress/` should be upgrade to the same version as VuePress.
 
-I.E.: if you are using `@vuepress/plugin-search` and `@vuepress/utils` , you should ensure they have the same version number as `vuepress`.
+I.E.: if you are using `@vuepress/plugin-search` and `@vuepress/utils`, you should ensure they have the same version number as `vuepress`.
 
 Besides, any plugin inside `vuepress-theme-hope` should be the same version as vuepress-theme-hope.
 
-Further more, if you're using another third-party plugin, make sure it's compatible with the version of VuePress you're upgrading to.
+Furthermore, if you're using another third-party plugin, make sure it's compatible with the version of VuePress you're upgrading to.
 
 :::
 

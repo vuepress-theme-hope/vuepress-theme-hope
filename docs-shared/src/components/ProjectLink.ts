@@ -1,5 +1,5 @@
-import { ensureLeadingSlash } from "@vuepress/shared";
 import { type FunctionalComponent, type PropType, h } from "vue";
+import { ensureLeadingSlash } from "vuepress-shared/client";
 
 declare const IS_NETLIFY: boolean;
 declare const IS_GITEE: boolean;

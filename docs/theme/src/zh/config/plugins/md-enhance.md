@@ -53,6 +53,8 @@ tag:
 
 - 类型: `boolean`
 - 默认值: `true`
+- 详情:
+  - [自定义容器](../../guide/markdown/container.md)
 
 是否启用自定义容器支持:
 
@@ -81,6 +83,8 @@ tag:
 
 - 类型: `boolean`
 - 默认值: `false`
+- 详情:
+  - [v-pre](../../guide/markdown/others.md#v-pre)
 
 是否启用 v-pre 容器。
 
@@ -88,6 +92,8 @@ tag:
 
 - 类型: `boolean`
 - 默认值: `false`
+- 详情:
+  - [选项卡](../../guide/markdown/tabs.md)
 
 是否启用选项卡。
 
@@ -95,6 +101,8 @@ tag:
 
 - 类型: `boolean`
 - 默认值: `false`
+- 详情:
+  - [代码组](../../guide/markdown/code-tabs.md)
 
 是否启用代码组。
 
@@ -102,10 +110,49 @@ tag:
 
 - 类型: `boolean`
 - 默认值: `false`
+- 详情:
+  - [自定义对齐](../../guide/markdown/align.md)
 
 是否启用自定义对齐格式支持。
 
-### sup
+### attrs
+
+- 类型: `AttrsOptions | boolean`
+
+  ```ts
+  interface AttrsOptions {
+    /**
+     * 左分隔符
+     *
+     * @default '{'
+     */
+    left?: string;
+
+    /**
+     * 右分隔符
+     *
+     * @default '}'
+     */
+    right?: string;
+
+    /**
+     * 允许的属性
+     *
+     * @description 设置空数组意味着允许所有属性
+     *
+     * @default []
+     */
+    allowed?: (string | RegExp)[];
+  }
+  ```
+
+- 默认值: `false`
+- 详情:
+  - [定义属性](../../guide/markdown/attrs.md)
+
+是否启用自定义属性支持。
+
+## sup
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -202,6 +249,32 @@ interface TaskListOptions {
 }
 ```
 
+### include
+
+- 类型: `IncludeOptions | boolean`
+
+  ```ts
+  interface IncludeOptions {
+    /**
+     * 处理 include 文件路径
+     *
+     * @default (path) => path
+     */
+    resolvePath?: (path: string, cwd: string) => string;
+
+    /**
+     * 是否深度导入包含的 Markdown 文件
+     *
+     * @default false
+     */
+    deep?: boolean;
+  }
+  ```
+
+- 默认值: `false`
+
+是否启用 Markdown 导入支持。你可以传入一个函数进行路径解析。
+
 ### katex
 
 - 类型: `KatexOptions | boolean`
@@ -222,6 +295,27 @@ interface TaskListOptions {
 
 可用的选项，详见 [源代码](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/main/packages/md-enhance/src/shared/mathjax.ts)。
 
+### card
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否启用卡片支持。
+
+### chart
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否启用图表支持。
+
+### echarts
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否启用 ECharts 图表支持。
+
 ### flowchart
 
 - 类型: `boolean`
@@ -231,10 +325,10 @@ interface TaskListOptions {
 
 ### mermaid
 
-- 类型: `boolean`
+- 类型: `MermaidConfig | boolean`
 - 默认值: `false`
 
-是否启用 [Mermaid](https://mermaid.js.org/) 支持。
+是否启用 [Mermaid](https://mermaid.js.org/) 支持，你可以传入一个对象作为 Mermaid 的配置选项。
 
 ### stylize
 
@@ -537,8 +631,8 @@ CodePen 编辑器布局
 
 #### demo.codepenEditors
 
-- Type: `string`
-- Default value: `"101"`
+- 类型: `string`
+- 默认值: `"101"`
 
 CodePen 编辑器状态
 

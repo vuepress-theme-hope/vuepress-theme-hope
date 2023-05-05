@@ -49,13 +49,33 @@ head:
 
 - 主页: 在功能项中设置 `icon` 选项
 
+## 在 Markdown 中添加图标
+
+你可以使用 `<HopeIcon />` 组件在 markdown 中添加图标。
+
+- `icon` 属性接受与其他 `icon` 选项相同的内容，即：字体类名和图像 url
+- `color` 属性接受一个 css 颜色值，它将用作图标颜色（可选）
+- `size` 属性接受一个 css 大小值，该值将用作图标大小（可选）
+
+::: details 案例
+
+- <HopeIcon icon="home" color="red" />
+- <HopeIcon icon="/logo.svg" size="4rem" />
+
+```MD
+- <HopeIcon icon="home" color="red" />
+- <HopeIcon icon="/logo.svg" size="4rem" />
+```
+
+:::
+
 ## 全局设置
 
 你可以通过 `iconAssets` 和 `iconPrefix` 全局设置图标资源 url 和图标前缀。
 
 ### 设置图标资源
 
-您应该将图标相关资源设置为 `iconAssets`，您可以在其中设置：
+你应该将图标相关资源设置为 `iconAssets`，你可以在其中设置：
 
 - 图标资产关键词
 - css 和 js 格式的图标资源
@@ -139,9 +159,9 @@ export default defineUserConfig({
 
 ### 使用 Fontawesome Kit
 
-您可以在 [fontawesome.com](https://fontawesome.com) 购买使用套件。
+你可以在 [fontawesome.com](https://fontawesome.com) 购买使用套件。
 
-具有专业功能的 Fontawesome 工具包支持专业图标、更多图标样式和上传您自己的图标。
+具有专业功能的 Fontawesome 工具包支持专业图标、更多图标样式和上传你自己的图标。
 
 ::: note
 

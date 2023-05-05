@@ -49,6 +49,10 @@ export default {
 
 ## 格式
 
+### 使用 JSON
+
+如果你可以很轻松的生成数据，你可以直接通过一个 JSON 代码块来提供 Echarts 配置:
+
 ````md
 ::: echarts 标题
 
@@ -61,372 +65,132 @@ export default {
 :::
 ````
 
-我们也支持 `js` 和 `javascript` 的代码块，你应当将导出对象赋值给 `module.exports`。
+### 使用脚本
 
-## 案例
+如果你需要通过脚本来获取数据，你可以使用 `js` 和 `javascript` 的代码块。
 
-### 折线图
-
-::: echarts 一个折线图案例
-
-```json
-{
-  "xAxis": {
-    "type": "category",
-    "data": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
-  },
-  "yAxis": {
-    "type": "value"
-  },
-  "series": [
-    {
-      "data": [150, 230, 224, 218, 135, 147, 260],
-      "type": "line"
-    }
-  ]
-}
-```
-
-:::
-
-:::: details 代码
+我们将通过 `myChart` 变量暴露 Echarts 实例，并且你应该将 Echart 配置赋值给 `option` 变量。同时，你也可以赋值 `width` 和 `height` 来设置图表大小。
 
 ````md
-::: echarts 一个折线图案例
+::: echarts Title
 
-```json
-{
-  "xAxis": {
-    "type": "category",
-    "data": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
-  },
-  "yAxis": {
-    "type": "value"
-  },
-  "series": [
-    {
-      "data": [150, 230, 224, 218, 135, 147, 260],
-      "type": "line"
-    }
-  ]
-}
+```js
+const option = {
+  // 此处为 ECharts 图表配置
+};
 ```
 
 :::
 ````
+
+::: tip
+
+你可以使用顶级 await 和 `fetch` 来从网络请求中获取数据。
+
+:::
+
+## 文档
+
+相关详情，详见 [ECharts 文档](https://echarts.apache.org/handbook/zh/get-started/).
+
+## 案例
+
+### 线图
+
+<!-- @include: @echarts/line.snippet.md#demo -->
+
+:::: details 代码
+
+<!-- @include: @echarts/line.snippet.md -->
 
 ::::
 
 ### 柱状图
 
-::: echarts 一个柱状图案例
+<!-- @include: @echarts/bar.snippet.md#demo -->
 
-```json
-{
-  "xAxis": {
-    "type": "category",
-    "data": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
-  },
-  "yAxis": {
-    "type": "value"
-  },
-  "series": [
-    {
-      "data": [120, 200, 150, 80, 70, 110, 130],
-      "type": "bar",
-      "showBackground": true,
-      "backgroundStyle": {
-        "color": "rgba(180, 180, 180, 0.2)"
-      }
-    }
-  ]
-}
-```
+:::: details Code
 
-:::
-
-:::: details 代码
-
-````md
-::: echarts 一个柱状图案例
-
-```json
-{
-  "xAxis": {
-    "type": "category",
-    "data": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
-  },
-  "yAxis": {
-    "type": "value"
-  },
-  "series": [
-    {
-      "data": [120, 200, 150, 80, 70, 110, 130],
-      "type": "bar",
-      "showBackground": true,
-      "backgroundStyle": {
-        "color": "rgba(180, 180, 180, 0.2)"
-      }
-    }
-  ]
-}
-```
-
-:::
-````
+<!-- @include: @echarts/bar.snippet.md -->
 
 ::::
 
 ### 饼图
 
-::: echarts 一个基础南丁格尔玫瑰图案例
+<!-- @include: @echarts/pie.snippet.md#demo -->
 
-```json
-{
-  "legend": {
-    "top": "bottom"
-  },
-  "toolbox": {
-    "show": true,
-    "feature": {
-      "mark": {
-        "show": true
-      },
-      "dataView": {
-        "show": true,
-        "readOnly": false
-      },
-      "restore": {
-        "show": true
-      },
-      "saveAsImage": {
-        "show": true
-      }
-    }
-  },
-  "series": [
-    {
-      "name": "Nightingale Chart",
-      "type": "pie",
-      "radius": [20, 100],
-      "center": ["50%", "50%"],
-      "roseType": "area",
-      "itemStyle": {
-        "borderRadius": 8
-      },
-      "data": [
-        {
-          "value": 40,
-          "name": "rose 1"
-        },
-        {
-          "value": 38,
-          "name": "rose 2"
-        },
-        {
-          "value": 32,
-          "name": "rose 3"
-        },
-        {
-          "value": 30,
-          "name": "rose 4"
-        },
-        {
-          "value": 28,
-          "name": "rose 5"
-        },
-        {
-          "value": 26,
-          "name": "rose 6"
-        },
-        {
-          "value": 22,
-          "name": "rose 7"
-        },
-        {
-          "value": 18,
-          "name": "rose 8"
-        }
-      ]
-    }
-  ]
-}
-```
+:::: details Code
 
-:::
-
-:::: details 代码
-
-````md
-::: echarts 一个基础南丁格尔玫瑰图案例
-
-```json
-{
-  "legend": {
-    "top": "bottom"
-  },
-  "toolbox": {
-    "show": true,
-    "feature": {
-      "mark": {
-        "show": true
-      },
-      "dataView": {
-        "show": true,
-        "readOnly": false
-      },
-      "restore": {
-        "show": true
-      },
-      "saveAsImage": {
-        "show": true
-      }
-    }
-  },
-  "series": [
-    {
-      "name": "Nightingale Chart",
-      "type": "pie",
-      "radius": [20, 100],
-      "center": ["50%", "50%"],
-      "roseType": "area",
-      "itemStyle": {
-        "borderRadius": 8
-      },
-      "data": [
-        {
-          "value": 40,
-          "name": "rose 1"
-        },
-        {
-          "value": 38,
-          "name": "rose 2"
-        },
-        {
-          "value": 32,
-          "name": "rose 3"
-        },
-        {
-          "value": 30,
-          "name": "rose 4"
-        },
-        {
-          "value": 28,
-          "name": "rose 5"
-        },
-        {
-          "value": 26,
-          "name": "rose 6"
-        },
-        {
-          "value": 22,
-          "name": "rose 7"
-        },
-        {
-          "value": 18,
-          "name": "rose 8"
-        }
-      ]
-    }
-  ]
-}
-```
-
-:::
-````
+<!-- @include: @echarts/pie.snippet.md -->
 
 ::::
 
 ### 散点图
 
-::: echarts 一个散点图案例
+<!-- @include: @echarts/scatter.snippet.md#demo -->
 
-```json
-{
-  "xAxis": {},
-  "yAxis": {},
-  "series": [
-    {
-      "symbolSize": 20,
-      "data": [
-        [10.0, 8.04],
-        [8.07, 6.95],
-        [13.0, 7.58],
-        [9.05, 8.81],
-        [11.0, 8.33],
-        [14.0, 7.66],
-        [13.4, 6.81],
-        [10.0, 6.33],
-        [14.0, 8.96],
-        [12.5, 6.82],
-        [9.15, 7.2],
-        [11.5, 7.2],
-        [3.03, 4.23],
-        [12.2, 7.83],
-        [2.02, 4.47],
-        [1.05, 3.33],
-        [4.05, 4.96],
-        [6.03, 7.24],
-        [12.0, 6.26],
-        [12.0, 8.84],
-        [7.08, 5.82],
-        [5.02, 5.68]
-      ],
-      "type": "scatter"
-    }
-  ]
-}
-```
+:::: details Code
 
-:::
-
-:::: details 代码
-
-````md
-::: echarts 一个散点图案例
-
-```json
-{
-  "xAxis": {},
-  "yAxis": {},
-  "series": [
-    {
-      "symbolSize": 20,
-      "data": [
-        [10.0, 8.04],
-        [8.07, 6.95],
-        [13.0, 7.58],
-        [9.05, 8.81],
-        [11.0, 8.33],
-        [14.0, 7.66],
-        [13.4, 6.81],
-        [10.0, 6.33],
-        [14.0, 8.96],
-        [12.5, 6.82],
-        [9.15, 7.2],
-        [11.5, 7.2],
-        [3.03, 4.23],
-        [12.2, 7.83],
-        [2.02, 4.47],
-        [1.05, 3.33],
-        [4.05, 4.96],
-        [6.03, 7.24],
-        [12.0, 6.26],
-        [12.0, 8.84],
-        [7.08, 5.82],
-        [5.02, 5.68]
-      ],
-      "type": "scatter"
-    }
-  ]
-}
-```
-
-:::
-````
+<!-- @include: @echarts/scatter.snippet.md -->
 
 ::::
 
-## 文档
+### 极坐标图
 
-相关详情，详见 [ECharts 文档](https://echarts.apache.org/handbook/zh/get-started/).
+<!-- @include: @echarts/polar.snippet.md#demo -->
+
+:::: details Code
+
+<!-- @include: @echarts/polar.snippet.md -->
+
+::::
+
+### 烛台图
+
+<!-- @include: @echarts/candlestick.snippet.md#demo -->
+
+:::: details Code
+
+<!-- @include: @echarts/candlestick.snippet.md -->
+
+::::
+
+### 雷达图
+
+<!-- @include: @echarts/radar.snippet.md#demo -->
+
+:::: details Code
+
+<!-- @include: @echarts/radar.snippet.md -->
+
+::::
+
+### 热力图
+
+<!-- @include: @echarts/heat-map.snippet.md#demo -->
+
+:::: details Code
+
+<!-- @include: @echarts/heat-map.snippet.md -->
+
+::::
+
+### 树图
+
+<!-- @include: @echarts/tree.snippet.md#demo -->
+
+:::: details Code
+
+<!-- @include: @echarts/tree.snippet.md -->
+
+::::
+
+### 多图
+
+<!-- @include: @echarts/multiple.snippet.md#demo -->
+
+:::: details Code
+
+<!-- @include: @echarts/multiple.snippet.md -->
+
+::::

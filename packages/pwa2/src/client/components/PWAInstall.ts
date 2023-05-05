@@ -91,8 +91,8 @@ export default defineComponent({
           ? h(
               "button",
               {
+                type: "button",
                 class: "modal-button",
-                useHint: useHint.value,
                 onClick: () => {
                   toggleIsOpen(true);
                 },
@@ -104,11 +104,12 @@ export default defineComponent({
           style: {
             display: isOpen.value ? "block" : "none",
           },
+          useHint: useHint.value,
           onCanInstall: (value: boolean) => {
             canInstall.value = value;
           },
           onHint: () => hint(),
-          onToggle: toggleIsOpen,
+          onClose: () => toggleIsOpen(false),
         }),
       ]);
   },

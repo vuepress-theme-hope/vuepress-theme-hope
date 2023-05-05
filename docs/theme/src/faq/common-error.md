@@ -37,11 +37,11 @@ npx vp-update
 
 Any official packages starting with `@vuepress/` should be upgrade to the same version as VuePress.
 
-I.E.: if you are using `@vuepress/plugin-search` and `@vuepress/utils` , you should ensure they have the same version number as `vuepress`.
+I.E.: if you are using `@vuepress/plugin-search` and `@vuepress/utils`, you should ensure they have the same version number as `vuepress`.
 
 Besides, any plugin inside `vuepress-theme-hope` should be the same version as vuepress-theme-hope.
 
-Further more, if you're using another third-party plugin, make sure it's compatible with the version of VuePress you're upgrading to.
+Furthermore, if you're using another third-party plugin, make sure it's compatible with the version of VuePress you're upgrading to.
 
 :::
 
@@ -67,7 +67,7 @@ Auto Minify in CloudFlare incorrectly handle HTML spaces and line breaks, which 
 
 :::
 
-Also you can check these:
+Also, you can check these:
 
 - If you only encounter this problem on certain pages, please check whether the page has additional components you added.
 
@@ -78,6 +78,12 @@ Also you can check these:
 
 - If you have this problem in all pages, please also follow the previous step to check the components you added in the layout or global components.
 
+## `You are not allowed to use plugin XXX yourself in vuepress config file.`
+
+This means you are calling a theme bundled plugin yourself in vuepress config file.
+
+In most cases, when you use some plugins with theme together, the theme will handle some of the plugin options automatically for you, so when you want to customize these plugins, you should set their options in `plugin.PLUGIN_NAME` under theme options to let the theme call those plugins for you. For details, see [Plugin Config](../config/plugins/intro.md).
+
 ## `FATAL ERROR: XXX - JavaScript heap out of memory`
 
 This means that your `max_old_space_size` setting of Node.js is too small to build this application. You can try to increase the `max_old_space_size` by setting the `NODE_OPTIONS` environment variable.
@@ -86,9 +92,9 @@ This means that your `max_old_space_size` setting of Node.js is too small to bui
 
 This value can be greater than the actual memory size of your machine.
 
-- For small projects, usually it won't take more that 2GB (2048MB).
-- For large projects, usually it won't take more that 4GB (4048MB)
-- If you are enabling blog feature together with lots of markdown enhance features on large sites, usually it won't take more that 8GB (8192MB)
+- For small projects, usually it won't take more than 2 GB (2048 MB).
+- For large projects, usually it won't take more than 4 GB (4048 MB)
+- If you are enabling blog feature together with lots of markdown enhance features on large sites, usually it won't take more than 8 GB (8192 MB)
 
 ::: details Ways of increasing
 
@@ -105,9 +111,9 @@ On windows, you can follow [this guide](https://www.technewstoday.com/how-to-set
 
 :::
 
-## `xxx isn’t assign with a lang, and will return 'en-US' instead.`
+## `xxx isn't assign with a lang, and will return 'en-US' instead.`
 
-If you see `xxx isn’t assign with a lang, and will return 'en-US' instead.` while the dev process is starting up, please check whether you set lang for every language.
+If you see `xxx isn't assign with a lang, and will return 'en-US' instead.` while the dev process is starting up, please check whether you set lang for every language.
 
 Even if you only have one language, you still need to [set language](../config/i18n.md#setting-language).
 
@@ -115,7 +121,7 @@ Even if you only have one language, you still need to [set language](../config/i
 
 Using object format sidebar config means you want to set different sidebar based on routes.
 
-- If you want to avoid this warning, you need to add sidebar config for rootLocale path, since all pages will fallback to that.
+- If you want to avoid this warning, you need to add sidebar config for rootLocale path, since all pages will fall back to that.
 - If you want to disable sidebar in current route, set `sidebar: false` in frontmatter.
 - If you want to disable sidebar in current folder, add `[currentFolderRoute]: false` in sidebar config.
 - If you want to tell theme that you only want sidebar in routes you set, add `[rootLocalePath]: false` in sidebar config to tell theme sidebar config is disabled by default.

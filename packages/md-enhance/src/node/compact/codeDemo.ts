@@ -3,11 +3,17 @@ import { type PluginSimple } from "markdown-it";
 import type Token from "markdown-it/lib/token.js";
 import { utoa } from "vuepress-shared/node";
 
+import { logger } from "../utils.js";
+
 /** @deprecated */
 export const legacyCodeDemo: PluginSimple = (md) => {
   md.use(container, {
     name: "demo",
     openRender: (tokens: Token[], index: number): string => {
+      logger.warn(
+        "demo container is deprecated, you should use normal-demo, react-demo and vue-demo container instead."
+      );
+
       const { info } = tokens[index];
       const type = /\[(.*)\]/u.exec(info);
       const title = /^ demo\s*(?:\[.*?\])?\s*(.*)\s*$/u.exec(info);
@@ -17,12 +23,18 @@ export const legacyCodeDemo: PluginSimple = (md) => {
 
       for (let i = index; i < tokens.length; i++) {
         const { type, content, info } = tokens[i];
+        const language = info
+          ? md.utils
+              .unescapeAll(info)
+              .trim()
+              .match(/^([^ :[{]+)/)?.[1] || "text"
+          : "";
 
         if (type === `container_demo_close`) break;
         if (!content) continue;
         if (type === "fence")
-          if (info === "json") config = utoa(content);
-          else code[info] = content;
+          if (language === "json") config = utoa(content);
+          else code[language] = content;
       }
 
       return `

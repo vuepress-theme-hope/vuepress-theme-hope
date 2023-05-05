@@ -718,7 +718,7 @@ interface SidebarDirInfo {
 }
 ```
 
-如果对应文件夹不存在 README.md 文件，则只有分组标题会从文件夹名称中生成。
+如果对应文件夹不存在 `README.md` 文件，则只有分组标题会从文件夹名称中生成。
 
 #### 自定义排序
 
@@ -931,7 +931,7 @@ export default sidebar(/* 你的侧边栏配置 */);
 ```ts
 import { sidebar } from "vuepress-theme-hope";
 
-@include(../../../.vuepress/sidebar/zh.ts{3-})
+<!-- @include: ../../../.vuepress/sidebar/zh.ts{3-} -->
 ```
 
 @tab JS
@@ -939,7 +939,7 @@ import { sidebar } from "vuepress-theme-hope";
 ```js
 import { sidebar } from "vuepress-theme-hope";
 
-@include(../../../.vuepress/sidebar/zh.ts{3-})
+<!-- @include: ../../../.vuepress/sidebar/zh.ts{3-} -->
 ```
 
 :::

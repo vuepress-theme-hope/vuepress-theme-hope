@@ -1,18 +1,12 @@
 ---
 title: Other features
 icon: ellipsis
-order: 6
+order: 7
 category:
   - Interface
 tag:
   - Interface
 ---
-
-## Style Customization
-
-The theme allows you to set variables in `.vuepress/styles/config.scss` and `.vuepress/styles/palette.scss` to customize most of the colors, responsive breakpoints, page layout size and other parameters.
-
-For detailed info, please see [Config → Style Customize](../../config/style.md)
 
 ## Print Button
 
@@ -68,9 +62,27 @@ export default defineUserConfig({
 
 ## Back to top button
 
-`vuepress-theme-hope` adds a back-to-top control which will display after scrolling down 300px by default.
+`vuepress-theme-hope` adds a back-to-top button with progress bar which will display after scrolling down 100px by default.
 
-You can set `backToTop: false` in theme options to disable it, or set it to a number to change the default trigger distance.
+You can set `backToTop: false` in theme options to disable it, or set it with an object to customize its threshold distance and progress bar display:
+
+```ts
+interface BackToTopOptions {
+  /**
+   * Scroll threshold distance to display back to top button (in pixels)
+   *
+   * @default 100
+   */
+  threshold?: number;
+
+  /**
+   * Whether display scroll progress
+   *
+   * @default true
+   */
+  progress?: boolean;
+}
+```
 
 ## RTL Layout
 

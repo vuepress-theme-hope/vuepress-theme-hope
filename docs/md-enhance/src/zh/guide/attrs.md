@@ -80,7 +80,16 @@ export default {
 你可以向 `attrs` 传递选项以自定义插件行为。
 
 ```ts
-interface AttrsOptions {
+type MarkdownItAttrRuleName =
+  | "fence"
+  | "inline"
+  | "table"
+  | "list"
+  | "hr"
+  | "softbreak"
+  | "block";
+
+interface MarkdownItAttrsOptions {
   /**
    * 左分隔符
    *
@@ -103,53 +112,115 @@ interface AttrsOptions {
    * @default []
    */
   allowed?: (string | RegExp)[];
+
+  /**
+   * 启用的规则
+   *
+   * @default "all"
+   */
+  rule?: "all" | boolean | MarkdownItAttrRuleName[];
 }
 ```
 
-## 案例
+## 示例
 
-包含 `行内代码`{.inline-code} 和 ![favicon](/favicon.ico){.image} 的文字，也支持 _强调_{.emphasis} 和 **加粗**{.bold}。
+> 所有的 class 都使用 `margin: 4px;padding: 4px;border: 1px solid red;` 进行显示以展示效果。
+
+### 行内元素 (inline)
+
+包含 `行内代码`{.inline-code} 和 ![favicon](/favicon.ico){.image} 的文字，也支持 _强调_{.inline-emphasis} 和 **加粗**{.inline-bold}。
+
+```md
+包含 `行内代码`{.inline-code} 和 ![favicon](/favicon.ico){.image} 的文字，也支持 _强调_{.inline-emphasis} 和 **加粗**{.inline-bold}。
+```
+
+### 块级元素 (block)
+
+块级元素 {.block}
+
+```md
+块级元素 {.block}
+```
+
+### 代码块 (fence)
+
+```js {.fence}
+const a = 1;
+```
+
+````md
+```js {.fence}
+const a = 1;
+```
+````
+
+### 表格 (table)
 
 | 表格 |
 | ---- |
 | 内容 |
 
 {.table}
+
+```md
+| 表格 |
+| ---- |
+| 内容 |
+
+{.table}
+```
+
+### 列表 (list)
 
 - 列表内容{.list-item}
 
   - 嵌套列表内容
     {.nested}
 
-{.list}
-
-一行换行的文字  
-{.break}
-
---- {.horizontal}
-
-块级元素 {.block}
+{.list-wrapper}
 
 ```md
-包含 `行内代码`{.inline-code} 和 ![favicon](/favicon.ico){.image} 的文字，也支持 _强调_{.emphasis} 和 **加粗**{.bold}。
+- 列表内容{.list-item}
 
-| 表格 |
-| ---- |
-| 内容 |
-
-{.table}
-
-- list item{.list-item}
-
-  - nested list item
+  - 嵌套列表内容
     {.nested}
 
-{.list}
+{.list-wrapper}
+```
+
+### 水平线 (hr)
+
+--- {.horizontal}
+
+```md
+--- {.horizontal}
+```
+
+### 换行 (softbreak)
 
 一行换行的文字  
 {.break}
 
---- {.horizontal}
-
-块级元素 {.block}
+```md
+一行换行的文字  
+{.break}
 ```
+
+<style scope>
+.block,
+.break,
+.horizontal,
+.image,
+.inline-code,
+.list-wrapper,
+.list-item,
+.nested,
+.inline-emphasis,
+.inline-bold,
+.table,
+.fence {
+  margin: 4px;
+  padding: 4px;
+  border: 1px solid red;
+}
+</style>

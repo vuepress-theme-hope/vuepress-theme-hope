@@ -1,9 +1,13 @@
 {
   "extends": "../../tsconfig.build.base.json",
   "compilerOptions": {
+    "lib": ["DOM", "ESNext"],
     "rootDir": "./src",
     "outDir": "./lib"
   },
-  "include": ["./src/cli", "./src/node", "./src/shared"],
-  "references": [{ "path": "../shared/tsconfig.build.json" }]
+  "include": ["./src", "./src/*.d.ts"],
+  "references": [
+    { "path": "../sass-palette/tsconfig.build.json" },
+    { "path": "../shared/tsconfig.build.json" }
+  ]
 }

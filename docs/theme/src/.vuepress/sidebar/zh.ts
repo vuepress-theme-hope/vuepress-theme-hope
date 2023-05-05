@@ -34,13 +34,7 @@ export const zhSidebarConfig = sidebar({
       text: "教程",
       icon: "signs-post",
       prefix: "cookbook/",
-      children: [
-        "tutorial/",
-        "markdown/",
-        "vuepress/",
-        "advanced/",
-        "customize/",
-      ],
+      children: ["tutorial/", "markdown/", "vuepress/", "customize/"],
     },
     {
       text: "迁移",
@@ -54,7 +48,7 @@ export const zhSidebarConfig = sidebar({
       prefix: "faq/",
       children: ["", "troubleshooting", "common-error", "vite", "safari"],
     },
-    "demo",
+    "demo/",
     "changelog",
     "contribution",
   ],
@@ -64,4 +58,6 @@ export const zhSidebarConfig = sidebar({
   "/zh/config/": "structure",
 
   "/zh/cookbook/": "structure",
+
+  "/zh/demo/": "structure",
 });

@@ -91,6 +91,14 @@ export default defineComponent({
           window.scrollTo(0, distance);
         }, 100);
       });
+
+      // FIXME: Workaround for https://github.com/vuepress/vuepress-next/issues/1249
+      watch(
+        () => route.query,
+        ({ page }) => {
+          updatePage(page ? Number(page) : 1);
+        }
+      );
     });
 
     return (): VNode =>

@@ -16,20 +16,12 @@ A bilibili video:
 <BiliBili bvid="BV1kt411o7C3" />
 ```
 
-A bilibili video with ratio, start time and page:
-
-<BiliBili bvid="BV1kt411o7C3" ratio="16:9" time="60" page="2" />
-
-```md
-<BiliBili bvid="BV1kt411o7C3" ratio="16:9" time="60" page="2" />
-```
-
 A bilibili video with custom settings:
 
-<BiliBili bvid="BV1kt411o7C3" ratio="16:9" low-quality no-danmaku />
+<BiliBili aid="34304064" cid="109293122" ratio="9:16" time="60" autoplay page="2" />
 
 ```md
-<BiliBili bvid="BV1kt411o7C3" ratio="16:9" low-quality no-danmaku />
+<BiliBili aid="34304064" cid="109293122" ratio="9:16" time="60" autoplay page="2" />
 ```
 
 ## Props
@@ -54,6 +46,12 @@ BiliBili video title
 - Default: `1`
 
 Part of the video.
+
+::: info
+
+When setting this option, you must provide `aid` and `cid` as well and you can omit `bvid` prop.
+
+:::
 
 ### width
 
@@ -83,16 +81,9 @@ BiliBili component ratio, ONLY valid when `height` not set.
 
 Start time of the video (in seconds).
 
-### lowQuality
+### autoplay
 
 - Type: `boolean`
 - Default: `false`
 
-Whether to use source having low quality.
-
-### noDanmaku
-
-- Type: `boolean`
-- Default: `false`
-
-Whether to disable danmaku
+Video autoplay.
