@@ -1,12 +1,10 @@
 import { type PluginFunction } from "@vuepress/core";
-import { getDirname, path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import { addViteOptimizeDepsExclude, checkVersion } from "vuepress-shared/node";
 
 import { type LightGalleryOptions } from "./options.js";
-import { PLUGIN_NAME, logger } from "./utils.js";
-
-const __dirname = getDirname(import.meta.url);
+import { prepareLightGalleryPlugins } from "./prepare.js";
+import { CLIENT_FOLDER, PLUGIN_NAME, logger } from "./utils.js";
 
 export const lightgalleryPlugin =
   (options: LightGalleryOptions = {}): PluginFunction =>
@@ -46,6 +44,9 @@ export const lightgalleryPlugin =
         addViteOptimizeDepsExclude(bundlerOptions, app, ["lightgallery"]);
       },
 
-      clientConfigFile: path.resolve(__dirname, "../client/config.js"),
+      onPrepared: (app): Promise<void> =>
+        prepareLightGalleryPlugins(app, options.plugins),
+
+      clientConfigFile: `${CLIENT_FOLDER}config.js`,
     };
   };
