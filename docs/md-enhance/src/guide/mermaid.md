@@ -61,7 +61,21 @@ Please see [mermaid](https://mermaid.js.org/).
 
 ## Advanced
 
-Besides setting `true` to enable mermaid, you can also pass in an object to customize the mermaid configuration.
+You can import and call `defineMermaidConfig` in client config file to customize mermaid:
+
+```ts
+// .vuepress/client.ts
+import { defineClientConfig } from "@vuepress/client";
+import { defineMermaidConfig } from "vuepress-plugin-md-enhance/client";
+
+defineMermaidConfig({
+  // mermaid options here
+});
+
+export default defineClientConfig({
+  // ...
+});
+```
 
 ## Demo
 

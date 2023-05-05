@@ -16,10 +16,7 @@ import {
   type TasklistOptions,
   type VuePresetPlaygroundOptions,
 } from "./typings/index.js";
-import {
-  type CodeDemoOptions,
-  type VuePlaygroundOptions,
-} from "../shared/index.js";
+import { type CodeDemoOptions } from "../shared/index.js";
 
 export type LinksCheckStatus = "always" | "dev" | "build" | "never";
 
@@ -350,7 +347,7 @@ export interface MarkdownEnhanceOptions {
    *
    * @default false
    */
-  vuePlayground?: VuePlaygroundOptions | boolean;
+  vuePlayground?: boolean;
 
   /**
    * The delay of operating dom, in ms

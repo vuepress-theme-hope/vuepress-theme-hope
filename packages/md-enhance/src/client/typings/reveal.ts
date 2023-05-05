@@ -103,9 +103,7 @@ export interface RevealOptions {
    * If you set this to "focused", we will only capture keyboard events
    * for embedded decks when they are in focus
    */
-  // Function is not supported here
-  // keyboardCondition: null | "focused" | ((event: KeyboardEvent) => boolean);
-  keyboardCondition: null | "focused";
+  keyboardCondition: null | "focused" | ((event: KeyboardEvent) => boolean);
 
   /**
    * Disables the default reveal.js slide layout (scaling and centering)
@@ -238,7 +236,6 @@ export interface RevealOptions {
    * can be overridden per-slide or per-element via data arguments
    */
   autoAnimateEasing: "ease" | "ease-in" | "ease-out" | "linear";
-
   autoAnimateDuration: number;
   autoAnimateUnmatched: boolean;
 

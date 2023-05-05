@@ -57,6 +57,24 @@ export default {
 
 你可以查看以下案例以查看更多详细信息。
 
+## 高级
+
+你可以在客户端配置文件中导入并使用 `defineVuePlaygroundConfig` 来自定义 Vue Playground 的默认配置:
+
+```ts
+// .vuepress/client.ts
+import { defineClientConfig } from "@vuepress/client";
+import { defineVuePlaygroundConfig } from "vuepress-plugin-md-enhance/client";
+
+defineVuePlaygroundConfig({
+  // 在此设置 @vue/repl 选项
+});
+
+export default defineClientConfig({
+  // ...
+});
+```
+
 ## 案例
 
 ::: vue-playground Vue 交互演示

@@ -1,5 +1,4 @@
 import { useMutationObserver } from "@vueuse/core";
-import { type MermaidConfig } from "mermaid";
 import {
   type VNode,
   computed,
@@ -12,10 +11,11 @@ import {
 } from "vue";
 import { LoadingIcon, atou } from "vuepress-shared/client";
 
+import { useMermaidOptions } from "../helpers/index.js";
+
 import "../styles/mermaid.scss";
 
 declare const MARKDOWN_ENHANCE_DELAY: number;
-declare const MERMAID_OPTIONS: MermaidConfig;
 
 const DEFAULT_CHART_OPTIONS = { useMaxWidth: false };
 
@@ -92,6 +92,7 @@ export default defineComponent({
   },
 
   setup(props) {
+    const mermaidOptions = useMermaidOptions();
     const mermaidElement = shallowRef<HTMLElement>();
 
     const svgCode = ref("");
@@ -114,8 +115,7 @@ export default defineComponent({
           gantt: DEFAULT_CHART_OPTIONS,
           er: DEFAULT_CHART_OPTIONS,
           pie: DEFAULT_CHART_OPTIONS,
-
-          ...MERMAID_OPTIONS,
+          ...mermaidOptions,
           startOnLoad: false,
         });
 

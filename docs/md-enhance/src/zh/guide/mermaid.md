@@ -61,7 +61,21 @@ export default {
 
 ## 高级
 
-除了设置 `true` 以开启 Mermaid 之外，你可以传入一个对象来自定义 Mermaid 选项。
+你可以在客户端配置文件中导入并使用 `defineMermaidConfig` 来自定义 Mermaid 配置:
+
+```ts
+// .vuepress/client.ts
+import { defineClientConfig } from "@vuepress/client";
+import { defineMermaidConfig } from "vuepress-plugin-md-enhance/client";
+
+defineMermaidConfig({
+  // 在此设置 mermaid 选项
+});
+
+export default defineClientConfig({
+  // ...
+});
+```
 
 ## 例子
 

@@ -26,7 +26,6 @@ import {
   addViteSsrExternal,
   addViteSsrNoExternal,
   checkVersion,
-  deepAssign,
   detectPackageManager,
   getBundlerName,
   getLocales,
@@ -45,7 +44,6 @@ import { getLinksCheckStatus, linksCheck } from "./linksCheck.js";
 import { markdownEnhanceLocales } from "./locales.js";
 import {
   CODE_DEMO_DEFAULT_SETTING,
-  DEFAULT_VUE_PLAYGROUND_OPTIONS,
   card,
   chart,
   codeTabs,
@@ -180,19 +178,6 @@ export const mdEnhancePlugin =
           ...CODE_DEMO_DEFAULT_SETTING,
           ...(isPlainObject(options.demo) ? options.demo : {}),
         },
-        MERMAID_OPTIONS: isPlainObject(options.mermaid) ? options.mermaid : {},
-        REVEAL_CONFIG:
-          isPlainObject(options.presentation) &&
-          isPlainObject(options.presentation.revealConfig)
-            ? options.presentation.revealConfig
-            : {},
-        VUE_PLAYGROUND_OPTIONS: isPlainObject(options.vuePlayground)
-          ? deepAssign(
-              {},
-              DEFAULT_VUE_PLAYGROUND_OPTIONS,
-              options.vuePlayground
-            )
-          : DEFAULT_VUE_PLAYGROUND_OPTIONS,
       }),
 
       alias: (app): Record<string, string> => ({

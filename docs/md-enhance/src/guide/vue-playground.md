@@ -57,6 +57,22 @@ In it, you can use 3 directives:
 
 You can see the below demos to see more details.
 
+You can import and call `defineVuePlaygroundConfig` in client config file to customize `@vue/repl`:
+
+```ts
+// .vuepress/client.ts
+import { defineClientConfig } from "@vuepress/client";
+import { defineVuePlaygroundConfig } from "vuepress-plugin-md-enhance/client";
+
+defineVuePlaygroundConfig({
+  // `@vue/repl` options here
+});
+
+export default defineClientConfig({
+  // ...
+});
+```
+
 ## Demo
 
 ::: vue-playground Vue Playground
