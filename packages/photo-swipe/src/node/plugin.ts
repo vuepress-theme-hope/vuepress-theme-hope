@@ -51,7 +51,6 @@ export const photoSwipePlugin =
             ),
           ])
         ),
-        PHOTO_SWIPE_OPTIONS: options.options || {},
       }),
 
       extendsBundlerOptions: (bundlerOptions: unknown, app): void => {

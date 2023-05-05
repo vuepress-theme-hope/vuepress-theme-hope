@@ -4,13 +4,8 @@ import PhotoSwipe, { type SlideData } from "photoswipe";
 import { nextTick, onMounted, watch } from "vue";
 import { useLocaleConfig } from "vuepress-shared/client";
 
-import {
-  delay,
-  imageSelector,
-  locales,
-  options,
-  scrollToClose,
-} from "../define.js";
+import { delay, imageSelector, locales, scrollToClose } from "../define.js";
+import { usePhotoSwipeOptions } from "../helpers/index.js";
 import { LOADING_ICON, getImageInfo, getImages } from "../utils/index.js";
 
 import "photoswipe/dist/photoswipe.css";
@@ -18,6 +13,7 @@ import "../styles/photo-swipe.scss";
 
 export const setupPhotoSwipe = (): void => {
   const { isSupported, toggle } = useFullscreen();
+  const photoSwipeOptions = usePhotoSwipeOptions();
   const locale = useLocaleConfig(locales);
   const page = usePageData();
 
@@ -117,7 +113,7 @@ export const setupPhotoSwipe = (): void => {
             preloaderDelay: 0,
             showHideAnimationType: "zoom",
             ...locale.value,
-            ...options,
+            ...photoSwipeOptions,
             dataSource,
             index,
             ...(scrollToClose

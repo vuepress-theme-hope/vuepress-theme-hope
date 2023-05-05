@@ -1,9 +1,6 @@
 import { type LocaleConfig } from "@vuepress/core";
 
-import {
-  type PhotoSwipeLocaleData,
-  type SupportedPhotoSwipeOptions,
-} from "../shared/index.js";
+import { type PhotoSwipeLocaleData } from "../shared/index.js";
 
 export interface PhotoSwipeOptions {
   /**
@@ -36,13 +33,6 @@ export interface PhotoSwipeOptions {
    * @default 800
    */
   delay?: number;
-
-  /**
-   * Options which will pass to `photo-swipe`
-   *
-   * 传递给 photo-swipe 的额外选项
-   */
-  options?: SupportedPhotoSwipeOptions;
 
   /**
    * Locale config
