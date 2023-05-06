@@ -56,15 +56,7 @@ export default defineComponent({
     );
 
     const progress = computed(
-      () => (
-        console.log(
-          y.value,
-          bodyHeight.value,
-          windowHeight.value,
-          y.value / (bodyHeight.value - windowHeight.value)
-        ),
-        y.value / (bodyHeight.value - windowHeight.value)
-      )
+      () => y.value / (bodyHeight.value - windowHeight.value)
     );
 
     onMounted(() => {
