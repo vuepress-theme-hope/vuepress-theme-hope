@@ -1,5 +1,4 @@
 import { type App } from "@vuepress/core";
-import { utoa } from "vuepress-shared/node";
 
 import { generatePageIndex, getSearchIndex } from "./generateIndex.js";
 import { type SearchProOptions } from "./options.js";
@@ -32,7 +31,7 @@ export const prepareSearchIndex = async (
 
     // search index file content
     const content = `\
-export const database = "${utoa(JSON.stringify(searchIndex))}";
+export const database = ${JSON.stringify(searchIndex)};
 
 ${HMR_CODE}
 `;
@@ -72,7 +71,7 @@ export const updateSearchIndex = async (
 
         // search index file content
         let content = `\
-export const database = "${utoa(JSON.stringify(previousSearchIndex))}"
+export const database = ${JSON.stringify(previousSearchIndex)}
 `;
 
         // inject HMR code
@@ -112,7 +111,7 @@ export const removeSearchIndex = async (
 
       // search index file content
       let content = `\
-export const database = "${utoa(JSON.stringify(previousSearchIndex))}"
+export const database = ${JSON.stringify(previousSearchIndex)}
 `;
 
       // inject HMR code

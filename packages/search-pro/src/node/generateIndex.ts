@@ -25,7 +25,7 @@ const HEADING_TAGS = "h2,h3,h4,h5,h6".split(",");
  * @description Not all the block tags are included, because some of them shall not be indexed
  */
 const CONTENT_BLOCK_TAGS =
-  "header,nav,section,div,dd,dl,dt,figcaption,figure,picture,hr,li,main,ol,p,ul,caption,table,thead,tbody,th,tr,td,datalist,fieldset,form,legend,optgroup,option,select,details,dialog,menu,menuitem,summary,blockquote,tfoot".split(
+  "header,nav,section,div,dd,dl,dt,figcaption,figure,picture,hr,li,main,ol,p,ul,caption,table,thead,tbody,tfoot,th,tr,td,datalist,fieldset,form,legend,optgroup,option,select,details,dialog,menu,menuitem,summary,blockquote,pre".split(
     ","
   );
 
@@ -63,7 +63,7 @@ export const generatePageIndex = (
   };
   let isContentBeforeFirstHeader = true;
 
-  const render = (node: AnyNode): void => {
+  const render = (node: AnyNode, preserveSpace = false): void => {
     if (node.type === "tag") {
       if (HEADING_TAGS.includes(node.name)) {
         if (currentContent && shouldIndexContent) {
@@ -121,12 +121,14 @@ export const generatePageIndex = (
           );
           currentContent = "";
         }
-        node.childNodes.forEach(render);
+        node.childNodes.forEach((item) =>
+          render(item, preserveSpace || node.name === "pre")
+        );
       } else if (CONTENT_INLINE_TAGS.includes(node.name)) {
-        node.childNodes.forEach(render);
+        node.childNodes.forEach((item) => render(item, preserveSpace));
       }
     } else if (node.type === "text") {
-      currentContent += node.data.trim() ? node.data : "";
+      currentContent += preserveSpace || node.data.trim() ? node.data : "";
     } else if (
       // we are expecting to stop at excerpt marker
       hasExcerpt &&
