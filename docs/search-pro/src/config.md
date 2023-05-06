@@ -127,7 +127,7 @@ export default defineUserConfig({
   }
   ```
 
-- Default: `[{key: 'k', ctrl: true}]`
+- Default: `[{ key: "k", ctrl: true }, { key: "/", ctrl: true }]`
 
 Specify the [event.key](http://keycode.info/) of the hotkeys.
 

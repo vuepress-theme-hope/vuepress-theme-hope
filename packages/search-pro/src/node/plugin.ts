@@ -58,7 +58,10 @@ export const searchProPlugin =
           delay: options.delay || 300,
           queryHistoryCount: options.queryHistoryCount || 5,
           resultHistoryCount: options.resultHistoryCount || 5,
-          hotKeys: options.hotKeys || [{ key: "k", ctrl: true }],
+          hotKeys: options.hotKeys || [
+            { key: "k", ctrl: true },
+            { key: "/", ctrl: true },
+          ],
           worker: options.worker || "search-pro.worker.js",
         },
       },

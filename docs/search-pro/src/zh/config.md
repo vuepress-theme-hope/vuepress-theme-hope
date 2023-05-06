@@ -127,7 +127,7 @@ export default defineUserConfig({
   }
   ```
 
-- 默认值: `[{key: 'k', ctrl: true}]`
+- 默认值: `[{ key: "k", ctrl: true }, { key: "/", ctrl: true }]`
 
 指定热键的 [event.key](http://keycode.info/)。
 

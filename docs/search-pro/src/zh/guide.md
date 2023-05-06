@@ -129,7 +129,7 @@ export default defineUserConfig({
 
 ## 搜索快捷键
 
-默认情况下，搜索快捷键为 `Ctrl + K`。你可以通过 `hotkeys` 选项来自定义搜索快捷键，参见 [配置 → 快捷键](./config.md#hotkeys)。
+默认情况下，搜索快捷键为 `Ctrl + K` 和 `Ctrl + /`。你可以通过 `hotkeys` 选项来自定义搜索快捷键，参见 [配置 → 快捷键](./config.md#hotkeys)。
 
 ## 开发服务器中的限制
 
