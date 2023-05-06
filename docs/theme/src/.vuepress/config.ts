@@ -43,10 +43,6 @@ export default config(
     ],
 
     alias: {
-      "@FlowChartPlayground": path.resolve(
-        __dirname,
-        "./components/FlowChartPlayground"
-      ),
       "@IconDisplay": path.resolve(__dirname, "./components/IconDisplay"),
       "@KatexPlayground": path.resolve(
         __dirname,

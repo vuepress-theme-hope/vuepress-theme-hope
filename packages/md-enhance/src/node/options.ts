@@ -287,6 +287,8 @@ export interface MarkdownEnhanceOptions {
    *
    * 是否启用 flowchart 流程图支持
    *
+   * @deprecated The lib is lack of maintenance, use mermaid instead.
+   *
    * @default false
    */
   flowchart?: boolean;
