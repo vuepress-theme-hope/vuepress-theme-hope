@@ -52,6 +52,7 @@ jobs:
         node:
           - "16"
           - "18"
+          - "20"
         bundler:
           - vite
           - webpack
