@@ -6,6 +6,7 @@ exports[`generateIndex > Should generate full index 1`] = `
     {
       "contents": [
         "Here is article excerpt.",
+        "const a = 1; ",
       ],
       "header": "",
       "slug": "",
@@ -16,6 +17,7 @@ exports[`generateIndex > Should generate full index 1`] = `
         "A",
         "B",
         "C",
+        "const a = 1; ",
       ],
       "header": "Content",
       "slug": "content",
@@ -163,7 +165,9 @@ exports[`generateIndex > Should generate full index 2`] = `
       "contents": [
         "Inline Code: code",
         "Block code:",
+        "Sample text here... ",
         "Syntax highlighting:",
+        "var foo = function (bar) { return bar++; }; console.log(foo(5)); ",
       ],
       "header": "Codes",
       "slug": "codes",
@@ -211,6 +215,7 @@ exports[`generateIndex > Should generate index 1`] = `
     {
       "contents": [
         "Here is article excerpt.",
+        "const a = 1; ",
       ],
       "header": "",
       "slug": "",
@@ -335,6 +340,7 @@ exports[`generateIndex > Should support customFields 1`] = `
     {
       "contents": [
         "Here is article excerpt.",
+        "const a = 1; ",
       ],
       "header": "",
       "slug": "",
@@ -474,6 +480,7 @@ exports[`generateIndex > Should support customFields with full index 1`] = `
     {
       "contents": [
         "Here is article excerpt.",
+        "const a = 1; ",
       ],
       "header": "",
       "slug": "",
@@ -484,6 +491,7 @@ exports[`generateIndex > Should support customFields with full index 1`] = `
         "A",
         "B",
         "C",
+        "const a = 1; ",
       ],
       "header": "Content",
       "slug": "content",
@@ -636,7 +644,9 @@ exports[`generateIndex > Should support customFields with full index 2`] = `
       "contents": [
         "Inline Code: code",
         "Block code:",
+        "Sample text here... ",
         "Syntax highlighting:",
+        "var foo = function (bar) { return bar++; }; console.log(foo(5)); ",
       ],
       "header": "Codes",
       "slug": "codes",
